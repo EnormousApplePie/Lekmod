@@ -1,0 +1,304 @@
+<trigger_system type="FGrannyTimedTriggerSystem">
+  <event_tracks>
+    <event_track ec="1000">
+      <track id="1" name="Sound" />
+      <track id="2" name="Effect" />
+      <track id="3" name="Transfer" />
+      <track id="4" name="Action" />
+    </event_track>
+    <event_track ec="1040">
+      <track id="1" name="Sound" />
+      <track id="2" name="Effect" />
+      <track id="3" name="Transfer" />
+      <track id="4" name="Action" />
+    </event_track>
+    <event_track ec="1120">
+      <track id="1" name="Sound" />
+      <track id="2" name="Effect" />
+      <track id="3" name="Transfer" />
+      <track id="4" name="Action" />
+    </event_track>
+    <event_track ec="1160">
+      <track id="1" name="Sound" />
+      <track id="2" name="Effect" />
+      <track id="3" name="Transfer" />
+      <track id="4" name="Action" />
+    </event_track>
+    <event_track ec="1200">
+      <track id="1" name="Sound" />
+      <track id="2" name="Effect" />
+      <track id="3" name="Transfer" />
+      <track id="4" name="Action" />
+    </event_track>
+    <event_track ec="1280">
+      <track id="1" name="Sound" />
+      <track id="2" name="Effect" />
+      <track id="3" name="Transfer" />
+      <track id="4" name="Action" />
+    </event_track>
+    <event_track ec="1400">
+      <track id="1" name="Sound" />
+      <track id="2" name="Effect" />
+      <track id="3" name="Transfer" />
+      <track id="4" name="Action" />
+    </event_track>
+    <event_track ec="1440">
+      <track id="1" name="Sound" />
+      <track id="2" name="Effect" />
+      <track id="3" name="Transfer" />
+      <track id="4" name="Action" />
+    </event_track>
+    <event_track ec="1520">
+      <track id="1" name="Sound" />
+      <track id="2" name="Effect" />
+      <track id="3" name="Transfer" />
+      <track id="4" name="Action" />
+    </event_track>
+    <event_track ec="1560">
+      <track id="1" name="Sound" />
+      <track id="2" name="Effect" />
+      <track id="3" name="Transfer" />
+      <track id="4" name="Action" />
+    </event_track>
+    <event_track ec="1600">
+      <track id="1" name="Sound" />
+      <track id="2" name="Effect" />
+      <track id="3" name="Transfer" />
+      <track id="4" name="Action" />
+    </event_track>
+    <event_track ec="1640">
+      <track id="1" name="Sound" />
+      <track id="2" name="Effect" />
+      <track id="3" name="Transfer" />
+      <track id="4" name="Action" />
+    </event_track>
+    <event_track ec="1800">
+      <track id="1" name="Sound" />
+      <track id="2" name="Effect" />
+      <track id="3" name="Transfer" />
+      <track id="4" name="Action" />
+    </event_track>
+    <event_track ec="2000">
+      <track id="1" name="Sound" />
+      <track id="2" name="Effect" />
+      <track id="3" name="Transfer" />
+      <track id="4" name="Action" />
+    </event_track>
+    <event_track ec="2040">
+      <track id="1" name="Sound" />
+      <track id="2" name="Effect" />
+      <track id="3" name="Transfer" />
+      <track id="4" name="Action" />
+    </event_track>
+    <event_track ec="2200">
+      <track id="1" name="Sound" />
+      <track id="2" name="Effect" />
+      <track id="3" name="Transfer" />
+      <track id="4" name="Action" />
+    </event_track>
+    <event_track ec="1290">
+      <track id="1" name="Sound" />
+      <track id="2" name="Effect" />
+      <track id="3" name="Transfer" />
+      <track id="4" name="Action" />
+    </event_track>
+    <event_track ec="1020">
+      <track id="1" name="Sound" />
+      <track id="2" name="Effect" />
+      <track id="3" name="Transfer" />
+      <track id="4" name="Action" />
+    </event_track>
+    <event_track ec="1100">
+      <track id="1" name="Sound" />
+      <track id="2" name="Effect" />
+      <track id="3" name="Transfer" />
+      <track id="4" name="Action" />
+    </event_track>
+    <event_track ec="1140">
+      <track id="1" name="Sound" />
+      <track id="2" name="Effect" />
+      <track id="3" name="Transfer" />
+      <track id="4" name="Action" />
+    </event_track>
+    <event_track ec="1220">
+      <track id="1" name="Sound" />
+      <track id="2" name="Effect" />
+      <track id="3" name="Transfer" />
+      <track id="4" name="Action" />
+    </event_track>
+    <event_track ec="1420">
+      <track id="1" name="Sound" />
+      <track id="2" name="Effect" />
+      <track id="3" name="Transfer" />
+      <track id="4" name="Action" />
+    </event_track>
+    <event_track ec="1500">
+      <track id="1" name="Sound" />
+      <track id="2" name="Effect" />
+      <track id="3" name="Transfer" />
+      <track id="4" name="Action" />
+    </event_track>
+    <event_track ec="1540">
+      <track id="1" name="Sound" />
+      <track id="2" name="Effect" />
+      <track id="3" name="Transfer" />
+      <track id="4" name="Action" />
+    </event_track>
+    <event_track ec="1580">
+      <track id="1" name="Sound" />
+      <track id="2" name="Effect" />
+      <track id="3" name="Transfer" />
+      <track id="4" name="Action" />
+    </event_track>
+    <event_track ec="1620">
+      <track id="1" name="Sound" />
+      <track id="2" name="Effect" />
+      <track id="3" name="Transfer" />
+      <track id="4" name="Action" />
+    </event_track>
+    <event_track ec="2020">
+      <track id="1" name="Sound" />
+      <track id="2" name="Effect" />
+      <track id="3" name="Transfer" />
+      <track id="4" name="Action" />
+    </event_track>
+    <event_track ec="2100">
+      <track id="1" name="Sound" />
+      <track id="2" name="Effect" />
+      <track id="3" name="Transfer" />
+      <track id="4" name="Action" />
+    </event_track>
+    <event_track ec="2220">
+      <track id="1" name="Sound" />
+      <track id="2" name="Effect" />
+      <track id="3" name="Transfer" />
+      <track id="4" name="Action" />
+    </event_track>
+    <event_track ec="1285">
+      <track id="1" name="Sound" />
+      <track id="2" name="Effect" />
+      <track id="3" name="Transfer" />
+      <track id="4" name="Action" />
+    </event_track>
+    <event_track ec="1110">
+      <track id="1" name="Sound" />
+      <track id="2" name="Effect" />
+      <track id="3" name="Transfer" />
+      <track id="4" name="Action" />
+    </event_track>
+    <event_track ec="1450">
+      <track id="1" name="Sound" />
+      <track id="2" name="Effect" />
+      <track id="3" name="Transfer" />
+      <track id="4" name="Action" />
+    </event_track>
+    <event_track ec="2440">
+      <track id="1" name="Sound" />
+      <track id="2" name="Effect" />
+      <track id="3" name="Transfer" />
+      <track id="4" name="Action" />
+    </event_track>
+    <event_track ec="1180">
+      <track id="1" name="Sound" />
+      <track id="2" name="Effect" />
+      <track id="3" name="Transfer" />
+      <track id="4" name="Action" />
+    </event_track>
+  </event_tracks>
+  <triggers>
+    <trigger type="FTimedTriggerSound" id="8" time="0.3608572" duration="0" repeat="0" ec="1200" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_FOOT_$(TERRAIN)" bone="" tier="0" />
+    <trigger type="FTimedTriggerSound" id="17" time="0.874576" duration="0" repeat="0" ec="2200" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_WOOD_POLE_DROP" bone="" tier="0" />
+    <trigger type="FTimedTriggerSound" id="3" time="0.337854952" duration="0" repeat="0" ec="1200" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_BODY_FALL_$(TERRAIN)" bone="" tier="-1" />
+    <trigger type="FTimedTriggerSound" id="44" time="0.251277" duration="0" repeat="0" ec="1400" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_FOOT_RUN_$(TERRAIN)" bone="" tier="0" />
+    <trigger type="FTimedTriggerEffect" id="53" time="0.325926" duration="0.57" repeat="0" ec="1160" track="2" event="ART_DEF_VEFFECT_MELEE_TORCH_PROJECTILE" bone="Base HumanRPalm" />
+    <trigger type="FTimedTriggerSound" id="30" time="0.551408" duration="0" repeat="0" ec="1400" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_LEATHER_CREAK_SHORT_RUN" bone="" tier="0" />
+    <trigger type="FTimedTriggerSound" id="39" time="0.244444" duration="0" repeat="0" ec="1200" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_WOOD_SHIELD_DROP" bone="" tier="0" />
+    <trigger type="FTimedTriggerSound" id="48" time="0.369024" duration="0" repeat="0" ec="2020" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_FOOT_$(TERRAIN)" bone="" tier="0" />
+    <trigger type="FTimedTriggerSound" id="25" time="0.373737" duration="0" repeat="0" ec="2020" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_STAFF_DIRT" bone="" tier="0" />
+    <trigger type="FTimedTriggerSound" id="34" time="0.882357" duration="0" repeat="0" ec="2200" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_LEATHER_CREAK_SHORT" bone="" tier="0" />
+    <trigger type="FTimedTriggerSound" id="11" time="0.318611" duration="0" repeat="0" ec="1140" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_LEATHER_CREAK_SHORT" bone="" tier="0" />
+    <trigger type="FTimedTriggerEffect" id="20" time="0" duration="0" repeat="0" ec="1200" track="2" event="ART_DEF_VEFFECT_BLUNT_HIT_SM" bone="Base HumanSpine1" />
+    <trigger type="FTimedTriggerSound" id="6" time="0.28" duration="0" repeat="0" ec="1140" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_FOOT_$(TERRAIN)" bone="" tier="0" />
+    <trigger type="FTimedTriggerSound" id="47" time="0.358783036" duration="0" repeat="0" ec="1100" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_SWORD_SWING_LOW" bone="" tier="0" />
+    <trigger type="FTimedTriggerSound" id="56" time="0.814815" duration="0" repeat="0" ec="1160" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_ATTACK_VOX_A" bone="" tier="0" />
+    <trigger type="FTimedTriggerSound" id="56" time="0.814815" duration="0" repeat="0" ec="1160" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_THROW_TORCH_T1" bone="" tier="1" />
+    <trigger type="FTimedTriggerSound" id="56" time="0.814815" duration="0" repeat="0" ec="1160" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_THROW_TORCH_T2" bone="" tier="2" />
+    <trigger type="FTimedTriggerSound" id="1" time="0.474069059" duration="0" repeat="0" ec="2100" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_SWORD_SWING_LOW" bone="" tier="0" />
+    <trigger type="FTimedTriggerSound" id="42" time="0.235287" duration="0" repeat="0" ec="1800" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_FOOT_$(TERRAIN)" bone="" tier="0" />
+    <trigger type="FTimedTriggerSound" id="51" time="0.254142" duration="0" repeat="0" ec="1120" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_FOOT_$(TERRAIN)" bone="" tier="0" />
+    <trigger type="FTimedTriggerSound" id="28" time="0.540299" duration="0" repeat="0" ec="1500" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_STAFF_TAP" bone="" tier="0" />
+    <trigger type="FTimedTriggerSound" id="37" time="0.877612" duration="0" repeat="0" ec="2200" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_BODY_FALL_$(TERRAIN)" bone="" tier="-1" />
+    <trigger type="FTimedTriggerSound" id="14" time="0.363517672" duration="0" repeat="0" ec="1100" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_ATTACK_VOX_A" bone="" tier="0" />
+    <trigger type="FTimedTriggerSound" id="23" time="0.249831" duration="0" repeat="0" ec="1800" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_WOOD_SHIELD_DROP_20" bone="" tier="0" />
+    <trigger type="FTimedTriggerSound" id="32" time="0.559684" duration="0" repeat="0" ec="1120" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_LEATHER_CREAK_SHORT" bone="" tier="0" />
+    <trigger type="FTimedTriggerSound" id="9" time="0.312825" duration="0" repeat="0" ec="1100" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_FOOT_$(TERRAIN)" bone="" tier="0" />
+    <trigger type="FTimedTriggerSound" id="18" time="0.4" duration="0" repeat="0" ec="2200" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_FOOT_$(TERRAIN)" bone="" tier="0" />
+    <trigger type="FTimedTriggerSound" id="4" time="0.431481481" duration="0" repeat="0" ec="2100" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_ATTACK_VOX_A" bone="" tier="0" />
+    <trigger type="FTimedTriggerSound" id="45" time="0.256231" duration="0" repeat="0" ec="1120" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_LEATHER_CREAK_SHORT" bone="" tier="0" />
+    <trigger type="FTimedTriggerTransfer" id="54" time="0.87037003" duration="0" repeat="0" ec="1160" track="3" refid="53" speed="42.3383" tangent.x="0.137044773" tangent.y="-0.9654278" tangent.z="0.221738547" />
+    <trigger type="FTimedTriggerSound" id="31" time="0.436377" duration="0" repeat="0" ec="1200" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_WOOD_POLE_DROP_20" bone="" tier="0" />
+    <trigger type="FTimedTriggerSound" id="40" time="0.562109" duration="0" repeat="0" ec="1120" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_FOOT_$(TERRAIN)" bone="" tier="0" />
+    <trigger type="FTimedTriggerSound" id="49" time="0.259834" duration="0" repeat="0" ec="1120" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_STAFF_TAP" bone="" tier="0" />
+    <trigger type="FTimedTriggerSound" id="26" time="0.556606" duration="0" repeat="0" ec="1400" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_FOOT_RUN_$(TERRAIN)" bone="" tier="0" />
+    <trigger type="FTimedTriggerSound" id="35" time="0.23562" duration="0" repeat="0" ec="1400" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_WOOD_POLE_DROP_20_RUN" bone="" tier="0" />
+    <trigger type="FTimedTriggerSound" id="12" time="0.548019" duration="0" repeat="0" ec="1120" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_WOOD_POLE_DROP_20" bone="" tier="0" />
+    <trigger type="FTimedTriggerSound" id="21" time="0.020896" duration="0" repeat="0" ec="1200" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_IMPACT_$(WEAPON)" bone="" tier="-1" />
+    <trigger type="FTimedTriggerAction" id="62" time="0.364814848" duration="0" repeat="0" ec="1100" track="4" action="1" />
+    <trigger type="FTimedTriggerSound" id="7" time="0.48" duration="0" repeat="0" ec="1500" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_LEATHER_CREAK_SHORT" bone="" tier="0" />
+    <trigger type="FTimedTriggerSound" id="16" time="0.272282" duration="0" repeat="0" ec="1100" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_LEATHER_CREAK_SHORT" bone="" tier="0" />
+    <trigger type="FTimedTriggerSound" id="57" time="0.792593" duration="0" repeat="0" ec="1160" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_SWORD_SWING_LOW" bone="" tier="0" />
+    <trigger type="FTimedTriggerSound" id="2" time="0.056716" duration="0" repeat="0" ec="1500" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_FORTIFY" bone="" tier="-1" />
+    <trigger type="FTimedTriggerSound" id="43" time="0.535593" duration="0" repeat="0" ec="2200" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_WOOD_POLE_DROP_20" bone="" tier="0" />
+    <trigger type="FTimedTriggerSound" id="52" time="0.264646" duration="0" repeat="0" ec="1800" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_VICTORY_VOX_A" bone="" tier="0" />
+    <trigger type="FTimedTriggerSound" id="29" time="0.076423" duration="0" repeat="0" ec="1200" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_LEATHER_CREAK_SHORT" bone="" tier="0" />
+    <trigger type="FTimedTriggerSound" id="38" time="0.577294" duration="0" repeat="0" ec="1400" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_STAFF_TAP_RUN" bone="" tier="0" />
+    <trigger type="FTimedTriggerSound" id="15" time="0.432836" duration="0" repeat="0" ec="1500" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_STAFF_DIRT" bone="" tier="0" />
+    <trigger type="FTimedTriggerSound" id="24" time="0.23574" duration="0" repeat="0" ec="1400" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_LEATHER_CREAK_SHORT_RUN" bone="" tier="0" />
+    <trigger type="FTimedTriggerSound" id="33" time="0.447924" duration="0" repeat="0" ec="1500" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_FOOT_$(TERRAIN)" bone="" tier="0" />
+    <trigger type="FTimedTriggerSound" id="10" time="0.32072" duration="0" repeat="0" ec="2100" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_LEATHER_CREAK_SHORT" bone="" tier="0" />
+    <trigger type="FTimedTriggerSound" id="19" time="0.279675" duration="0" repeat="0" ec="1140" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_ATTACK_VOX_A" bone="" tier="0" />
+    <trigger type="FTimedTriggerSound" id="5" time="0.2765626" duration="0" repeat="0" ec="2100" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_FOOT_$(TERRAIN)" bone="" tier="0" />
+    <trigger type="FTimedTriggerEffect" id="46" time="0" duration="0" repeat="0" ec="2200" track="2" event="ART_DEF_VEFFECT_BLUNT_HIT_SM" bone="Base HumanSpine2" />
+    <trigger type="FTimedTriggerSound" id="55" time="0.872222" duration="0" repeat="0" ec="1160" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_THROW_TORCH" bone="" tier="0" />
+    <trigger type="FTimedTriggerAction" id="64" time="0.311111" duration="0" repeat="0" ec="1140" track="4" action="1" />
+    <trigger type="FTimedTriggerSound" id="41" time="0.016946" duration="0" repeat="0" ec="2200" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_IMPACT_$(WEAPON)" bone="" tier="-1" />
+    <trigger type="FTimedTriggerSound" id="50" time="0.022466" duration="0" repeat="0" ec="1200" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_DEATH_VOX_A" bone="" tier="-1" />
+    <trigger type="FTimedTriggerSound" id="27" time="0.033293" duration="0" repeat="0" ec="2200" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_DEATH_VOX_A" bone="" tier="-1" />
+    <trigger type="FTimedTriggerSound" id="36" time="0.4" duration="0" repeat="0" ec="2200" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_ANIMAL_FOOT_DIRT" bone="" tier="0" />
+    <trigger type="FTimedTriggerSound" id="13" time="0.471642" duration="0" repeat="0" ec="1500" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_FORTIFY_VOX_A" bone="" tier="0" />
+    <trigger type="FTimedTriggerSound" id="22" time="0.153846" duration="0" repeat="0" ec="2200" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_LEATHER_CREAK_SHORT" bone="" tier="0" />
+    <trigger type="FTimedTriggerSound" id="61" time="0" duration="1.16666675" repeat="0" ec="2100" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_BAT_AMB_T1_$(WEAPON)" bone="" tier="1" />
+    <trigger type="FTimedTriggerSound" id="61" time="0" duration="1.16666675" repeat="0" ec="2100" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_BAT_AMB_T2_$(WEAPON)" bone="" tier="2" />
+    <trigger type="FTimedTriggerSound" id="61" time="0" duration="1.16666675" repeat="0" ec="2100" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_BATTLE_AMB_VOX_T1" bone="" tier="1" />
+    <trigger type="FTimedTriggerSound" id="61" time="0.00185186416" duration="1.16666675" repeat="0" ec="2100" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_BATTLE_AMB_VOX_T2" bone="" tier="2" />
+    <trigger type="FTimedTriggerSound" id="49" time="0" duration="1.16666675" repeat="0" ec="1100" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_BAT_AMB_T1_$(WEAPON)" bone="" tier="1" />
+    <trigger type="FTimedTriggerSound" id="49" time="0" duration="1.16666675" repeat="0" ec="1100" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_BAT_AMB_T2_$(WEAPON)" bone="" tier="2" />
+    <trigger type="FTimedTriggerSound" id="49" time="0" duration="1.16666675" repeat="0" ec="1100" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_BATTLE_AMB_VOX_T1" bone="" tier="1" />
+    <trigger type="FTimedTriggerSound" id="49" time="0.1" duration="1.16666675" repeat="0" ec="1100" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_BATTLE_AMB_VOX_T2" bone="" tier="2" />
+    <trigger type="FTimedTriggerSound" id="62" time="0.1" duration="0" repeat="0" ec="1120" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_RUN_CHRG_VOX_T1" bone="" tier="1" />
+    <trigger type="FTimedTriggerSound" id="63" time="0" duration="1.16666675" repeat="0" ec="1140" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_BAT_AMB_T1_$(WEAPON)" bone="" tier="1" />
+    <trigger type="FTimedTriggerSound" id="63" time="0.00185185182" duration="1.16666675" repeat="0" ec="1140" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_BAT_AMB_T2_$(WEAPON)" bone="" tier="2" />
+    <trigger type="FTimedTriggerSound" id="63" time="0.00370370364" duration="1.16666675" repeat="0" ec="1140" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_BATTLE_AMB_VOX_T1" bone="" tier="1" />
+    <trigger type="FTimedTriggerSound" id="63" time="0" duration="1.16666675" repeat="0" ec="1140" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_BATTLE_AMB_VOX_T2" bone="" tier="2" />
+    <trigger type="FTimedTriggerSound" id="62" time="0.1" duration="0" repeat="0" ec="1120" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_RUN_CHRG_VOX_T2" bone="" tier="2" />
+    <trigger type="FTimedTriggerSound" id="44" time="0.00370370364" duration="0.662963" repeat="0" ec="1400" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_T1_RUN_$(TERRAIN)" bone="" tier="1" />
+    <trigger type="FTimedTriggerSound" id="44" time="0" duration="0.662963" repeat="0" ec="1400" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_T2_RUN_$(TERRAIN)" bone="" tier="2" />
+    <trigger type="FTimedTriggerSound" id="5" time="0" duration="0.662963" repeat="0" ec="1400" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_RUN_T1" bone="" tier="1" />
+    <trigger type="FTimedTriggerSound" id="5" time="0" duration="0.662963" repeat="0" ec="1400" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_RUN_T2" bone="" tier="2" />
+    <trigger type="FTimedTriggerAction" id="63" time="0.303704" duration="0" repeat="0" ec="2100" track="4" action="1" />
+    <trigger type="FTimedTriggerEffect" id="58" time="0.325926" duration="0.57" repeat="0" ec="1180" track="2" event="ART_DEF_VEFFECT_MELEE_TORCH_PROJECTILE" bone="Base HumanRPalm" />
+    <trigger type="FTimedTriggerSound" id="59" time="0.87037015" duration="0" repeat="0" ec="1180" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_THROW_TORCH" bone="" tier="0" />
+    <trigger type="FTimedTriggerSound" id="60" time="0.814815" duration="0" repeat="0" ec="1180" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_ATTACK_VOX_A" bone="" tier="0" />
+    <trigger type="FTimedTriggerSound" id="60" time="0.814815" duration="0" repeat="0" ec="1180" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_THROW_TORCH_T1" bone="" tier="1" />
+    <trigger type="FTimedTriggerSound" id="60" time="0.814815" duration="0" repeat="0" ec="1180" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_THROW_TORCH_T2" bone="" tier="2" />
+    <trigger type="FTimedTriggerSound" id="67" time="0.794444859" duration="0" repeat="0" ec="1180" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_SWORD_SWING_LOW" bone="" tier="0" />
+    <trigger type="FTimedTriggerTransfer" id="68" time="0.8722219" duration="0" repeat="0" ec="1180" track="3" refid="58" speed="42.3383" tangent.x="0.156735212" tangent.y="-0.967188835" tangent.z="0.1999496" />
+    <trigger type="FTimedTriggerSound" id="66" time="0.381481469" duration="0" repeat="0" ec="1280" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_FOOT_ALWAYS_$(TERRAIN)" bone="" tier="-1" />
+    <trigger type="FTimedTriggerSound" id="69" time="0.5388889" duration="0" repeat="0" ec="1280" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_FOOT_ALWAYS_$(TERRAIN)" bone="" tier="-1" />
+    <trigger type="FTimedTriggerSound" id="70" time="0.549999952" duration="0" repeat="0" ec="1280" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_FORTIFY_VOX_A" bone="" tier="-1" />
+    <trigger type="FTimedTriggerSound" id="71" time="0.266666651" duration="0" repeat="0" ec="1600" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_FOOT_ALWAYS_$(TERRAIN)" bone="" tier="-1" />
+    <trigger type="FTimedTriggerSound" id="72" time="0.4462963" duration="0" repeat="0" ec="1600" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_FOOT_ALWAYS_$(TERRAIN)" bone="" tier="-1" />
+    <trigger type="FTimedTriggerSound" id="73" time="0.466666669" duration="0" repeat="0" ec="1600" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_FORTIFY_VOX_A" bone="" tier="-1" />
+    <trigger type="FTimedTriggerSound" id="65" time="0.258783" duration="0" repeat="0" ec="1140" track="1" event="AS3D_UNIT_U_SUMERIAN_PHALANX_SWORD_SWING_LOW" bone="" tier="0" />
+  </triggers>
+</trigger_system>

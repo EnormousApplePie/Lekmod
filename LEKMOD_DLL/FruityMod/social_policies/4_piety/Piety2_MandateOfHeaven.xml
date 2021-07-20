@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 6/11/2015 10:51:49 PM -->
+<GameData>
+
+	<!-- MANDATE OF HEAVEN -->
+	<Policy_BuildingClassYieldChanges>
+		<Row>
+			<PolicyType>POLICY_MANDATE_OF_HEAVEN</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<YieldChange>1</YieldChange>
+		</Row>
+	</Policy_BuildingClassYieldChanges>
+	<Policy_BuildingClassHappiness>
+		<Row>
+			<PolicyType>POLICY_MANDATE_OF_HEAVEN</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_TEMPLE</BuildingClassType>
+			<Happiness>1</Happiness>
+		</Row>
+	</Policy_BuildingClassHappiness>
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_POLICY_MANDATE_OF_HEAVEN_HELP" />
+		<Row Tag="TXT_KEY_POLICY_MANDATE_OF_HEAVEN_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Mandate of Heaven[ENDCOLOR][NEWLINE]+1 [ICON_PEACE] Faith in the Capital and +1 [ICON_HAPPINESS_1] Happiness from each Temple. 20% discount on all purchases of religious units and buildings with [ICON_PEACE] Faith.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_POLICY_MANDATE_OF_HEAVEN_HELP" />
+		<Row Tag="TXT_KEY_POLICY_MANDATE_OF_HEAVEN_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Mandate of Heaven[ENDCOLOR][NEWLINE]+1 [ICON_PEACE] Faith in the Capital and +1 [ICON_HAPPINESS_1] Happiness from each Temple. 20% discount on all purchases of religious units and buildings with [ICON_PEACE] Faith.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_POLICY_MANDATE_OF_HEAVEN_HELP" />
+		<Row Tag="TXT_KEY_POLICY_MANDATE_OF_HEAVEN_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Mandate of Heaven[ENDCOLOR][NEWLINE]+1 [ICON_PEACE] Faith in the Capital and +1 [ICON_HAPPINESS_1] Happiness from each Temple. 20% discount on all purchases of religious units and buildings with [ICON_PEACE] Faith.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_POLICY_MANDATE_OF_HEAVEN_HELP" />
+		<Row Tag="TXT_KEY_POLICY_MANDATE_OF_HEAVEN_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Mandate of Heaven[ENDCOLOR][NEWLINE]+1 [ICON_PEACE] Faith in the Capital and +1 [ICON_HAPPINESS_1] Happiness from each Temple. 20% discount on all purchases of religious units and buildings with [ICON_PEACE] Faith.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

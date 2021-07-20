@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mod id="684ce03a-e1d4-4df9-84f8-f4543d6a435d" version="48">
+  <Properties>
+    <Name>Kongo (Brave New World)</Name>
+    <Teaser>Adds Kongo to the base game. Requires the Brave New World expansion.</Teaser>
+    <Description>Adds Kongo to the base game.
+[NEWLINE]
+[NEWLINE]~~~
+[NEWLINE]
+[NEWLINE]Note: 
+[NEWLINE]- This civilization requires the Brave New World expansion.
+[NEWLINE]- Updates to the Mod will most likely break save games. Please do not update until you are ready to begin a new game.
+[NEWLINE]
+[NEWLINE]~~~
+[NEWLINE]
+[NEWLINE]Leader: Nzinga Mbande
+[NEWLINE]UA: Glory of the Manikongo
+[NEWLINE]UU: Pombo
+[NEWLINE]UB: Raffia Mil</Description>
+    <Authors>Tomatekh, Cyon, iamaplayer, Pouakai, Leugi</Authors>
+    <HideSetupGame>0</HideSetupGame>
+    <Homepage>http://forums.civfanatics.com/showthread.php?t=472751</Homepage>
+    <AffectsSavedGames>1</AffectsSavedGames>
+    <MinCompatibleSaveVersion>43</MinCompatibleSaveVersion>
+    <SupportsSinglePlayer>1</SupportsSinglePlayer>
+    <SupportsMultiplayer>1</SupportsMultiplayer>
+    <SupportsHotSeat>1</SupportsHotSeat>
+    <SupportsMac>1</SupportsMac>
+    <ReloadAudioSystem>1</ReloadAudioSystem>
+    <ReloadLandmarkSystem>0</ReloadLandmarkSystem>
+    <ReloadStrategicViewSystem>1</ReloadStrategicViewSystem>
+    <ReloadUnitSystem>1</ReloadUnitSystem>
+  </Properties>
+  <Dependencies>
+    <Dlc id="6DA07636-4123-4018-B643-6575B4EC336B" minversion="0" maxversion="999" />
+  </Dependencies>
+  <References>
+    <Dlc id="0E3751A1-F840-4e1b-9706-519BF484E59D" minversion="0" maxversion="999" />
+    <Mod id="36e88483-48fe-4545-b85f-bafc50dde315" minversion="0" maxversion="999" title="YnAEMP" />
+    <Mod id="7fdd72a5-d4ae-441c-bc4e-2e3d2a26cff4" minversion="0" maxversion="999" title="Ethnic Units" />
+    <Mod id="1f941088-b185-4159-865c-472df81247b2" minversion="0" maxversion="999" title="Events and Decisions" />
+    <Mod id="e576894a-ed2b-4033-be14-ed1c8ceb81d3" minversion="0" maxversion="999" title="Map Labels" />
+    <Mod id="31a31d1c-b9d7-45e1-842c-23232d66cd47" minversion="0" maxversion="999" title="Cultural Diversity" />
+    <Mod id="43868e8d-de88-48a1-a8d9-ce144e07f5e0" minversion="0" maxversion="999" title="ExCE" />
+    <Mod id="01c131ef-2162-4a7b-b845-763a4e675940" minversion="0" maxversion="999" title="Cultural Influence" />
+    <Mod id="d1b6328c-ff44-4b0d-aad7-c657f83610cd" minversion="0" maxversion="999" title="C. Patch" />
+    <Mod id="8411a7a8-dad3-4622-a18e-fcc18324c799" minversion="0" maxversion="999" title="C. Balance Patch" />
+    <Mod id="8670da15-d435-44ea-9758-7438cb321411" minversion="0" maxversion="999" title="R.E.D." />
+    <Mod id="eea66053-7579-481a-bb8d-2f3959b59974" minversion="0" maxversion="999" title="Piety" />
+    <Mod id="ce8aa614-7ef7-4a45-a179-5329869e8d6d" minversion="0" maxversion="999" title="Enlightenment" />
+    <Mod id="d99bf7aa-51ac-4bef-bd88-d765b28e260e" minversion="0" maxversion="999" title="Sovereignty" />
+    <Mod id="a19351c5-c0b3-4b07-8695-4affaa199949" minversion="0" maxversion="999" title="Mercenaries" />
+    <Dlc id="B685D5DE-7CCA-4e75-81B4-2F60754E6330" minversion="0" maxversion="999" />
+  </References>
+  <Blocks>
+    <Mod id="2626e6a3-a0fd-478d-a5ab-0d9dee67ed0a" minversion="0" maxversion="999" title="YnAEMP Patch" />
+  </Blocks>
+  <Files>
+    <File md5="EBA165614353CD0D1E6B18CF8B99C58F" import="1">Art/Atlases/Alpha/KongoAlphaAtlas128.dds</File>
+    <File md5="7A3B466D926887B81B34B7E204BBBA84" import="1">Art/Atlases/Alpha/KongoAlphaAtlas16.dds</File>
+    <File md5="D3C2875E7886E9620DA378CEE7CC5CAD" import="1">Art/Atlases/Alpha/KongoAlphaAtlas24.dds</File>
+    <File md5="64B83812627190F773C2C2EEC4A910BF" import="1">Art/Atlases/Alpha/KongoAlphaAtlas32.dds</File>
+    <File md5="08730CF0E30B9DF51B63BFF5E33FFD31" import="1">Art/Atlases/Alpha/KongoAlphaAtlas48.dds</File>
+    <File md5="291ACF1C26A0AB2BA335BA410D5DCA8C" import="1">Art/Atlases/Alpha/KongoAlphaAtlas64.dds</File>
+    <File md5="F89ED65874223E2E2A678F2D3825DC49" import="1">Art/Atlases/KongoIconAtlas128.dds</File>
+    <File md5="201DBF86DEF90302DAF948EFA4A4DAFA" import="1">Art/Atlases/KongoIconAtlas214.dds</File>
+    <File md5="F16451D7938FBA153A8B037C501238DE" import="1">Art/Atlases/KongoIconAtlas256.dds</File>
+    <File md5="9BA78D132EA17B67ACA02F1E14EE581A" import="1">Art/Atlases/KongoIconAtlas32.dds</File>
+    <File md5="18874A8712221D80798A83D98A53C582" import="1">Art/Atlases/KongoIconAtlas45.dds</File>
+    <File md5="9B965C73C0DB4C083B67F0236FB2CBFC" import="1">Art/Atlases/KongoIconAtlas64.dds</File>
+    <File md5="1C1A189321A4A020A4C5AE7EDF194BD3" import="1">Art/Atlases/KongoIconAtlas80.dds</File>
+    <File md5="B082B50C9D3CDEB17A300732472D9801" import="1">Art/Leader/Kongo_Mod_Diplo.dds</File>
+    <File md5="39974E081DB12047365DF74477FECA32" import="1">Art/Leader/Kongo_Mod_DOM.dds</File>
+    <File md5="0C4EA27186405037497F7952DD828028" import="1">Art/Leader/Kongo_Mod_Map.dds</File>
+    <File md5="D8469CFA15D5174DE2F6934E7B58B214" import="1">Art/Resources/Rafia_FontIcon.dds</File>
+    <File md5="7A9D7EF78ADF485832854E5EFEDEEF0D" import="1">Art/Resources/Rafia_FontIcon.ggxml</File>
+    <File md5="1D0DA351C4D3421CCA586EFC34D834AF" import="1">Art/Units/PomboAlphaAtlas.dds</File>
+    <File md5="DC3B4E092D8EFAC1CA8A90D32AD7040B" import="1">Art/Units/Skin/EthiopiaSpearman.dds</File>
+    <File md5="35A70C4E21BF8B0E88CFCD85BA8EE747" import="1">Art/Units/Skin/EthiopiaSpearman.fbx</File>
+    <File md5="C256716200301D1EB3D4CEC26B92A275" import="1">Art/Units/Skin/EthiopiaSpearman.fxsxml</File>
+    <File md5="E5D78C453655C7C33E510372EBED2656" import="1">Art/Units/Skin/EthiopiaSpearman.gr2</File>
+    <File md5="3BBB17018C0693F51BB80D900F3DBD16" import="1">Art/Units/Skin/EthiopiaSpearman_sref.dds</File>
+    <File md5="CEDEE1A0AAA63F1EA44A0F720EB05C12" import="1">Art/Units/Skin/EthiopiaSpearman_Template.blend</File>
+    <File md5="B7295CD30ECE7A55953E59E3C920DF46" import="1">Art/Units/sv_Pombo_Kongo_Mod.dds</File>
+    <File md5="9C77E162A0437C8F9901A54610F5380A" import="0">Decisions/Kongo Decisions SQL.sql</File>
+    <File md5="E7208D62773E9FE477B54EF2070F261A" import="0">Decisions/Kongo Decisions Support.xml</File>
+    <File md5="D86122897700DCD1002BA3226FFA38AD" import="1">Decisions/TomatekhKongoDecisions.lua</File>
+    <File md5="65082CEED3616249E751D3695292D42E" import="1">LUA/Kongo Scripts.lua</File>
+    <File md5="CBBBF5F2D1F267618F9F9BD346B14F0D" import="0">LUA/Kongo Scripts Check.lua</File>
+    <File md5="18C96888C1C9E1C917B5788EFD231183" import="1">Sounds/EwuareWar1.mp3</File>
+    <File md5="F1622A0D2682B35CC360EA82A157F083" import="1">Sounds/NzingaDoM.mp3</File>
+    <File md5="DF7DD83118400EE9FB975BD81C20D28E" import="1">Sounds/NzingaWar.mp3</File>
+    <File md5="6BDFDFF1F30FE8D55DE803B772047C43" import="0">SQL/Kongo Mod Support.sql</File>
+    <File md5="F5630CCBC5F52707ECF09995716BC771" import="1">SQL/Kongo Pombo Mod.sql</File>
+    <File md5="3FC7F80C0C55106E4361BE682F27518B" import="1">XML/Art/civ5artdefines_units.xml</File>
+    <File md5="C184E07BA086F236BA0D5BD77385C779" import="1">XML/Art/civ5artdefines_unitmembers.xml</File>
+    <File md5="ACCDD1F114108B125DC79D870ECB4D9A" import="0">XML/Art/Kongo Atlas Mod.xml</File>
+    <File md5="980FF61367406906A14D252F7FAFBF6A" import="0">XML/Art/Kongo Strategic View Mod.xml</File>
+    <File md5="6C67B53F7B9F82F4BFB467DF885E050B" import="1">XML/Art/Kongo_Leader_Scene_Mod.xml</File>
+    <File md5="2E6022B4852A92BE8C0891FFEA0136D9" import="0">XML/Buildings/Kongo Mod Buildingclass.xml</File>
+    <File md5="5ABA15A2B300350B95AB625013C34CB6" import="0">XML/Buildings/Kongo Mod Buildings.xml</File>
+    <File md5="4864C2A83638DCD75506A0F43B4FD3AE" import="0">XML/City-State Update/Kongo City-State Update.xml</File>
+    <File md5="F9C990385559C31EA499038B30C684B8" import="0">XML/Civilizations/Kongo Civilizations Mod.xml</File>
+    <File md5="192A1B35267C4ED12B76D251AA1B2761" import="0">XML/Civilizations/Kongo Leader Mod.xml</File>
+    <File md5="D9E930867321C53815F9E191B5199371" import="0">XML/Civilizations/Kongo Traits Mod.xml</File>
+    <File md5="A14C2C77B2CAEB921CCE9254938B6EC0" import="0">XML/Diplomacy/Kongo Diplomacy Mod.xml</File>
+    <File md5="3319106C43ED6BD870BACB32DA8A0137" import="0">XML/Sounds/Kongo Sound Mod.xml</File>
+    <File md5="F38AD5803071BDC8565469EC80C45044" import="0">XML/Terrain/Kongo Resource Mod.xml</File>
+    <File md5="501AFA4CD6FFDE5EBBB5F620B694878A" import="0">XML/Text/Kongo Mod Game Text.xml</File>
+    <File md5="FE8E9B2815F6F1B4E1CE22593A406033" import="0">XML/Text/Non English XML Tags/Kongo Game Text DE_DE.xml</File>
+    <File md5="66EA6E35A1154C08D2887BE9C2879008" import="0">XML/Text/Non English XML Tags/Kongo Game Text ES_ES.xml</File>
+    <File md5="2D336AB17D9138222A236519231DF13D" import="0">XML/Text/Non English XML Tags/Kongo Game Text FR_FR.xml</File>
+    <File md5="33454303EDD7ECD871FDEAF06E469429" import="0">XML/Text/Non English XML Tags/Kongo Game Text IT_IT.xml</File>
+    <File md5="41DED97F40B0A69EF6AD3F930DA68474" import="0">XML/Text/Non English XML Tags/Kongo Game Text JA_JP.xml</File>
+    <File md5="D27A5A397A3CBBB693E845E353885148" import="0">XML/Text/Non English XML Tags/Kongo Game Text KO_KR.xml</File>
+    <File md5="01AF804F66A6A0151574B03ED7F2AF2F" import="0">XML/Text/Non English XML Tags/Kongo Game Text PL_PL.xml</File>
+    <File md5="187BFF7DA2F72898FA7DDEC66B6FC967" import="0">XML/Text/Non English XML Tags/Kongo Game Text RU_RU.xml</File>
+    <File md5="91273FB1AC5570F57213598FBE9B05FA" import="0">XML/Units/Kongo Promotions Mod.xml</File>
+    <File md5="7C0592318F0DC6C7CA19CA07EA441EDA" import="0">XML/Units/Kongo Unit Mod.xml</File>
+    <File md5="EC90A3EB29218788F792EA5951DF5898" import="0">YnAEMP/Kongo YnAEMP Compatability.sql</File>
+  </Files>
+  <Actions>
+    <OnModActivated>
+      <UpdateDatabase>SQL/Kongo Pombo Mod.sql</UpdateDatabase>
+      <UpdateDatabase>XML/Art/Kongo Atlas Mod.xml</UpdateDatabase>
+      <UpdateDatabase>XML/Art/Kongo Strategic View Mod.xml</UpdateDatabase>
+      <UpdateDatabase>XML/Terrain/Kongo Resource Mod.xml</UpdateDatabase>
+      <UpdateDatabase>XML/Text/Kongo Mod Game Text.xml</UpdateDatabase>
+      <UpdateDatabase>XML/City-State Update/Kongo City-State Update.xml</UpdateDatabase>
+      <UpdateDatabase>XML/Buildings/Kongo Mod Buildingclass.xml</UpdateDatabase>
+      <UpdateDatabase>XML/Text/Non English XML Tags/Kongo Game Text DE_DE.xml</UpdateDatabase>
+      <UpdateDatabase>XML/Text/Non English XML Tags/Kongo Game Text ES_ES.xml</UpdateDatabase>
+      <UpdateDatabase>XML/Text/Non English XML Tags/Kongo Game Text FR_FR.xml</UpdateDatabase>
+      <UpdateDatabase>XML/Text/Non English XML Tags/Kongo Game Text IT_IT.xml</UpdateDatabase>
+      <UpdateDatabase>XML/Text/Non English XML Tags/Kongo Game Text JA_JP.xml</UpdateDatabase>
+      <UpdateDatabase>XML/Text/Non English XML Tags/Kongo Game Text KO_KR.xml</UpdateDatabase>
+      <UpdateDatabase>XML/Text/Non English XML Tags/Kongo Game Text PL_PL.xml</UpdateDatabase>
+      <UpdateDatabase>XML/Text/Non English XML Tags/Kongo Game Text RU_RU.xml</UpdateDatabase>
+      <UpdateDatabase>XML/Buildings/Kongo Mod Buildings.xml</UpdateDatabase>
+      <UpdateDatabase>XML/Units/Kongo Unit Mod.xml</UpdateDatabase>
+      <UpdateDatabase>XML/Units/Kongo Promotions Mod.xml</UpdateDatabase>
+      <UpdateDatabase>XML/Civilizations/Kongo Traits Mod.xml</UpdateDatabase>
+      <UpdateDatabase>XML/Diplomacy/Kongo Diplomacy Mod.xml</UpdateDatabase>
+      <UpdateDatabase>XML/Civilizations/Kongo Civilizations Mod.xml</UpdateDatabase>
+      <UpdateDatabase>XML/Civilizations/Kongo Leader Mod.xml</UpdateDatabase>
+      <UpdateDatabase>XML/Sounds/Kongo Sound Mod.xml</UpdateDatabase>
+      <UpdateDatabase>YnAEMP/Kongo YnAEMP Compatability.sql</UpdateDatabase>
+      <UpdateDatabase>Decisions/Kongo Decisions SQL.sql</UpdateDatabase>
+      <UpdateDatabase>Decisions/Kongo Decisions Support.xml</UpdateDatabase>
+      <UpdateDatabase>SQL/Kongo Mod Support.sql</UpdateDatabase>
+    </OnModActivated>
+  </Actions>
+  <EntryPoints>
+    <EntryPoint type="InGameUIAddin" file="LUA/Kongo Scripts Check.lua">
+      <Name>Raffia Script</Name>
+      <Description>Jungle Adjacent Mod</Description>
+    </EntryPoint>
+  </EntryPoints>
+</Mod>

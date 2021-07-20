@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 4/22/2016 5:17:59 PM -->
+<GameData>
+
+	<!-- Add +2 base movement to Great Generals and Khans -->
+	<Units>
+		<Update>
+			<Set Moves="4" />
+			<Where Type="UNIT_GREAT_GENERAL" />
+		</Update>
+		<Update>
+			<Set Moves="7" />
+			<Where Type="UNIT_MONGOLIAN_KHAN" />
+		</Update>
+	</Units>
+	
+</GameData>

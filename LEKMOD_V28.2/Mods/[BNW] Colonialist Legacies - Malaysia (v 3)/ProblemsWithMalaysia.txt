@@ -1,0 +1,31 @@
+PROBLEMS WITH MALAYSIA:
+
+Purchasing Peltsat with culture doesn't work:  Runtime Error: C:\Users\Christopher\Documents\My Games\Sid Meier's Civilization 5\MODS\[BNW] Colonialist Legacies - Malaysia (v 2)\Lua/CL_Malaysia_Functions.lua:153: attempt to index field 'BGBlock' (a nil value) FIXED
+
+Kaumpangs can be built even without resources; change to being built on resources/atolls? FIXED - Instead the worker is killed
+
+Workers can upgrade regardless of enemy units FIXED
+
+Admiral decision will become availiable just for having two trade units; Cargo Ships may then be counted as a naval unit. FIXED
+
+Reduce culture - half it? FIXED - Seems more balanced
+
+Their CulDiv soundtrack is updated to... Central? Hm... FIXED
+
+Noticed an odd issue where the UA food bonus was being given by resources outside the borders - but I really don't know why... FIXED - Issue with code
+
+Culture from food text is really hard to read FIXED - Unified into one single message each turn
+
+Food from Naval is really hard to read FIXED - Now in MCIS
+
+Food from Naval isn't actually added to culture FIXED
+
+Move Food from Naval back to PlayerDoTurn, but move it above Culture still. FIXED... Probably. Can't really remember what this issue was...
+
+Add Cultural Development DONE
+
+Change CulDiv splashscreens to Oceanic DONE - SEE Fixaraysia2.sql
+
+Support for CID/Mercs and Renaissance Era Revised DONE
+
+Some other stuff between making this file and release DONE :p

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 6/2/2015 11:21:22 PM -->
+<GameData>
+	
+	<!-- Scholasticism Science per friend/ally changed to new formula based on era -->
+	<!-- PER FRIEND: 0/1/2/3/4/5/6/7 -->
+	<!-- PER ALLY: 0/1/3/6/10/15/21/28 -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_POLICY_SCHOLASTICISM_HELP" />
+		<Row Tag="TXT_KEY_POLICY_SCHOLASTICISM_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Scholasticism[ENDCOLOR][NEWLINE]All City-States which are [COLOR_POSITIVE_TEXT]Friends[ENDCOLOR] or [COLOR_POSITIVE_TEXT]Allies[ENDCOLOR] provide bonus [ICON_RESEARCH] Science per turn based on your current Era. The bonus from [COLOR_POSITIVE_TEXT]Allies[ENDCOLOR] is higher.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_SCHOLASTICISM_TEXT" />
+		<Row Tag="TXT_KEY_POLICY_SCHOLASTICISM_TEXT">
+			<Text>Scholasticism is a style of teaching employed in medieval European universities from around 1000-1500 AD. The method emphasized critical reasoning and debate. The teacher would choose a book for study, and then he and the students would debate the meaning of the book, examine other books on the same topic, examine any criticism of the work, and so forth, by so doing gaining a fuller understanding of the topic than might be gained by rote memorization. The movement was largely fueled by the rediscovery of the works of Greek philosophers and subsequent attempts to integrate them with Christianity.[NEWLINE][NEWLINE]City State [COLOR_POSITIVE_TEXT]Friends[ENDCOLOR] bonus per turn (per [COLOR_POSITIVE_TEXT]Friend[ENDCOLOR]):[NEWLINE]1 [ICON_RESEARCH] in Classical Era[NEWLINE]2 [ICON_RESEARCH] in Medieval Era[NEWLINE]3 [ICON_RESEARCH] in Renaissance Era[NEWLINE]4 [ICON_RESEARCH] in Industrial Era[NEWLINE]5 [ICON_RESEARCH] in Modern Era[NEWLINE]6 [ICON_RESEARCH] in Atomic Era[NEWLINE]7 [ICON_RESEARCH] in Information Era[NEWLINE][NEWLINE]City State [COLOR_POSITIVE_TEXT]Allies[ENDCOLOR] bonus per turn (per [COLOR_POSITIVE_TEXT]Ally[ENDCOLOR]):[NEWLINE]1 [ICON_RESEARCH] in Classical Era[NEWLINE]3 [ICON_RESEARCH] in Medieval Era[NEWLINE]6 [ICON_RESEARCH] in Renaissance Era[NEWLINE]10 [ICON_RESEARCH] in Industrial Era[NEWLINE]15 [ICON_RESEARCH] in Modern Era[NEWLINE]21 [ICON_RESEARCH] in Atomic Era[NEWLINE]28 [ICON_RESEARCH] in Information Era</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_POLICY_SCHOLASTICISM_HELP" />
+		<Row Tag="TXT_KEY_POLICY_SCHOLASTICISM_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Scholasticism[ENDCOLOR][NEWLINE]All City-States which are [COLOR_POSITIVE_TEXT]Friends[ENDCOLOR] or [COLOR_POSITIVE_TEXT]Allies[ENDCOLOR] provide bonus [ICON_RESEARCH] Science per turn based on your current Era. The bonus from [COLOR_POSITIVE_TEXT]Allies[ENDCOLOR] is higher.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_SCHOLASTICISM_TEXT" />
+		<Row Tag="TXT_KEY_POLICY_SCHOLASTICISM_TEXT">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Scholasticism is a style of teaching employed in medieval European universities from around 1000-1500 AD. The method emphasized critical reasoning and debate. The teacher would choose a book for study, and then he and the students would debate the meaning of the book, examine other books on the same topic, examine any criticism of the work, and so forth, by so doing gaining a fuller understanding of the topic than might be gained by rote memorization. The movement was largely fueled by the rediscovery of the works of Greek philosophers and subsequent attempts to integrate them with Christianity.[NEWLINE][NEWLINE]City State [COLOR_POSITIVE_TEXT]Friends[ENDCOLOR] bonus per turn (per [COLOR_POSITIVE_TEXT]Friend[ENDCOLOR]):[NEWLINE]1 [ICON_RESEARCH] in Classical Era[NEWLINE]2 [ICON_RESEARCH] in Medieval Era[NEWLINE]3 [ICON_RESEARCH] in Renaissance Era[NEWLINE]4 [ICON_RESEARCH] in Industrial Era[NEWLINE]5 [ICON_RESEARCH] in Modern Era[NEWLINE]6 [ICON_RESEARCH] in Atomic Era[NEWLINE]7 [ICON_RESEARCH] in Information Era[NEWLINE][NEWLINE]City State [COLOR_POSITIVE_TEXT]Allies[ENDCOLOR] bonus per turn (per [COLOR_POSITIVE_TEXT]Ally[ENDCOLOR]):[NEWLINE]1 [ICON_RESEARCH] in Classical Era[NEWLINE]3 [ICON_RESEARCH] in Medieval Era[NEWLINE]6 [ICON_RESEARCH] in Renaissance Era[NEWLINE]10 [ICON_RESEARCH] in Industrial Era[NEWLINE]15 [ICON_RESEARCH] in Modern Era[NEWLINE]21 [ICON_RESEARCH] in Atomic Era[NEWLINE]28 [ICON_RESEARCH] in Information Era</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_POLICY_SCHOLASTICISM_HELP" />
+		<Row Tag="TXT_KEY_POLICY_SCHOLASTICISM_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Scholasticism[ENDCOLOR][NEWLINE]All City-States which are [COLOR_POSITIVE_TEXT]Friends[ENDCOLOR] or [COLOR_POSITIVE_TEXT]Allies[ENDCOLOR] provide bonus [ICON_RESEARCH] Science per turn based on your current Era. The bonus from [COLOR_POSITIVE_TEXT]Allies[ENDCOLOR] is higher.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_SCHOLASTICISM_TEXT" />
+		<Row Tag="TXT_KEY_POLICY_SCHOLASTICISM_TEXT">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Scholasticism is a style of teaching employed in medieval European universities from around 1000-1500 AD. The method emphasized critical reasoning and debate. The teacher would choose a book for study, and then he and the students would debate the meaning of the book, examine other books on the same topic, examine any criticism of the work, and so forth, by so doing gaining a fuller understanding of the topic than might be gained by rote memorization. The movement was largely fueled by the rediscovery of the works of Greek philosophers and subsequent attempts to integrate them with Christianity.[NEWLINE][NEWLINE]City State [COLOR_POSITIVE_TEXT]Friends[ENDCOLOR] bonus per turn (per [COLOR_POSITIVE_TEXT]Friend[ENDCOLOR]):[NEWLINE]1 [ICON_RESEARCH] in Classical Era[NEWLINE]2 [ICON_RESEARCH] in Medieval Era[NEWLINE]3 [ICON_RESEARCH] in Renaissance Era[NEWLINE]4 [ICON_RESEARCH] in Industrial Era[NEWLINE]5 [ICON_RESEARCH] in Modern Era[NEWLINE]6 [ICON_RESEARCH] in Atomic Era[NEWLINE]7 [ICON_RESEARCH] in Information Era[NEWLINE][NEWLINE]City State [COLOR_POSITIVE_TEXT]Allies[ENDCOLOR] bonus per turn (per [COLOR_POSITIVE_TEXT]Ally[ENDCOLOR]):[NEWLINE]1 [ICON_RESEARCH] in Classical Era[NEWLINE]3 [ICON_RESEARCH] in Medieval Era[NEWLINE]6 [ICON_RESEARCH] in Renaissance Era[NEWLINE]10 [ICON_RESEARCH] in Industrial Era[NEWLINE]15 [ICON_RESEARCH] in Modern Era[NEWLINE]21 [ICON_RESEARCH] in Atomic Era[NEWLINE]28 [ICON_RESEARCH] in Information Era</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_POLICY_SCHOLASTICISM_HELP" />
+		<Row Tag="TXT_KEY_POLICY_SCHOLASTICISM_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Scholasticism[ENDCOLOR][NEWLINE]All City-States which are [COLOR_POSITIVE_TEXT]Friends[ENDCOLOR] or [COLOR_POSITIVE_TEXT]Allies[ENDCOLOR] provide bonus [ICON_RESEARCH] Science per turn based on your current Era. The bonus from [COLOR_POSITIVE_TEXT]Allies[ENDCOLOR] is higher.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_SCHOLASTICISM_TEXT" />
+		<Row Tag="TXT_KEY_POLICY_SCHOLASTICISM_TEXT">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Scholasticism is a style of teaching employed in medieval European universities from around 1000-1500 AD. The method emphasized critical reasoning and debate. The teacher would choose a book for study, and then he and the students would debate the meaning of the book, examine other books on the same topic, examine any criticism of the work, and so forth, by so doing gaining a fuller understanding of the topic than might be gained by rote memorization. The movement was largely fueled by the rediscovery of the works of Greek philosophers and subsequent attempts to integrate them with Christianity.[NEWLINE][NEWLINE]City State [COLOR_POSITIVE_TEXT]Friends[ENDCOLOR] bonus per turn (per [COLOR_POSITIVE_TEXT]Friend[ENDCOLOR]):[NEWLINE]1 [ICON_RESEARCH] in Classical Era[NEWLINE]2 [ICON_RESEARCH] in Medieval Era[NEWLINE]3 [ICON_RESEARCH] in Renaissance Era[NEWLINE]4 [ICON_RESEARCH] in Industrial Era[NEWLINE]5 [ICON_RESEARCH] in Modern Era[NEWLINE]6 [ICON_RESEARCH] in Atomic Era[NEWLINE]7 [ICON_RESEARCH] in Information Era[NEWLINE][NEWLINE]City State [COLOR_POSITIVE_TEXT]Allies[ENDCOLOR] bonus per turn (per [COLOR_POSITIVE_TEXT]Ally[ENDCOLOR]):[NEWLINE]1 [ICON_RESEARCH] in Classical Era[NEWLINE]3 [ICON_RESEARCH] in Medieval Era[NEWLINE]6 [ICON_RESEARCH] in Renaissance Era[NEWLINE]10 [ICON_RESEARCH] in Industrial Era[NEWLINE]15 [ICON_RESEARCH] in Modern Era[NEWLINE]21 [ICON_RESEARCH] in Atomic Era[NEWLINE]28 [ICON_RESEARCH] in Information Era</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

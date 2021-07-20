@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 8/23/2016 4:12:30 PM -->
+<GameData>
+	
+	<!-- Legalism: Now also provides +2 Culture from National Wonders. -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_POLICY_LEGALISM_HELP" />
+		<Row Tag="TXT_KEY_POLICY_LEGALISM_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Legalism[ENDCOLOR][NEWLINE]Provides a free culture building in your first 4 cities. +2 [ICON_CULTURE] Culture from National Wonders.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_POLICY_LEGALISM_HELP" />
+		<Row Tag="TXT_KEY_POLICY_LEGALISM_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Legalism[ENDCOLOR][NEWLINE]Provides a free culture building in your first 4 cities. +2 [ICON_CULTURE] Culture from National Wonders.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_POLICY_LEGALISM_HELP" />
+		<Row Tag="TXT_KEY_POLICY_LEGALISM_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Legalism[ENDCOLOR][NEWLINE]Provides a free culture building in your first 4 cities. +2 [ICON_CULTURE] Culture from National Wonders.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_POLICY_LEGALISM_HELP" />
+		<Row Tag="TXT_KEY_POLICY_LEGALISM_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Legalism[ENDCOLOR][NEWLINE]Provides a free culture building in your first 4 cities. +2 [ICON_CULTURE] Culture from National Wonders.</Text>
+		</Row>
+	</Language_RU_RU>
+	<Policy_BuildingClassCultureChanges>
+		<!-- Circus Maximus -->
+		<Row>
+			<PolicyType>POLICY_LEGALISM</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_CIRCUS_MAXIMUS</BuildingClassType>
+			<CultureChange>2</CultureChange>
+		</Row>
+		<!-- East India Company -->
+		<Row>
+			<PolicyType>POLICY_LEGALISM</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_NATIONAL_TREASURY</BuildingClassType>
+			<CultureChange>2</CultureChange>
+		</Row>
+		<!-- Grand Temple -->
+		<Row>
+			<PolicyType>POLICY_LEGALISM</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_GRAND_TEMPLE</BuildingClassType>
+			<CultureChange>2</CultureChange>
+		</Row>
+		<!-- Hermitage -->
+		<Row>
+			<PolicyType>POLICY_LEGALISM</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_HERMITAGE</BuildingClassType>
+			<CultureChange>2</CultureChange>
+		</Row>
+		<!-- Heroic Epic -->
+		<Row>
+			<PolicyType>POLICY_LEGALISM</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_HEROIC_EPIC</BuildingClassType>
+			<CultureChange>2</CultureChange>
+		</Row>
+		<!-- Ironworks -->
+		<Row>
+			<PolicyType>POLICY_LEGALISM</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_IRONWORKS</BuildingClassType>
+			<CultureChange>2</CultureChange>
+		</Row>
+		<!-- National College -->
+		<Row>
+			<PolicyType>POLICY_LEGALISM</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_NATIONAL_COLLEGE</BuildingClassType>
+			<CultureChange>2</CultureChange>
+		</Row>
+		<!-- National Epic -->
+		<Row>
+			<PolicyType>POLICY_LEGALISM</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_NATIONAL_EPIC</BuildingClassType>
+			<CultureChange>2</CultureChange>
+		</Row>
+		<!-- National Intelligence Agency -->
+		<Row>
+			<PolicyType>POLICY_LEGALISM</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_INTELLIGENCE_AGENCY</BuildingClassType>
+			<CultureChange>2</CultureChange>
+		</Row>
+		<!-- National Visitor Center -->
+		<Row>
+			<PolicyType>POLICY_LEGALISM</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_TOURIST_CENTER</BuildingClassType>
+			<CultureChange>2</CultureChange>
+		</Row>
+		<!-- Oxford University -->
+		<Row>
+			<PolicyType>POLICY_LEGALISM</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_OXFORD_UNIVERSITY</BuildingClassType>
+			<CultureChange>2</CultureChange>
+		</Row>
+	</Policy_BuildingClassCultureChanges>
+
+</GameData>

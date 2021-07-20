@@ -1,0 +1,324 @@
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Michael Curran (Firaxis Games) -->
+<trigger_system type="FGrannyTimedTriggerSystem">
+  <event_tracks>
+    <event_track ec="1160">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Action"/>
+    </event_track>
+    <event_track ec="1480">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Action"/>
+    </event_track>
+    <event_track ec="1800">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Action"/>
+    </event_track>
+    <event_track ec="1580">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Action"/>
+    </event_track>
+    <event_track ec="2220">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Action"/>
+    </event_track>
+    <event_track ec="1200">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Action"/>
+    </event_track>
+    <event_track ec="1520">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Action"/>
+    </event_track>
+    <event_track ec="1620">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Action"/>
+    </event_track>
+    <event_track ec="1400">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Action"/>
+    </event_track>
+    <event_track ec="2040">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Action"/>
+    </event_track>
+    <event_track ec="1450">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Action"/>
+    </event_track>
+    <event_track ec="1180">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Action"/>
+    </event_track>
+    <event_track ec="1500">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Action"/>
+    </event_track>
+    <event_track ec="1120">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Effect"/>
+      <track id="5" name="Action"/>
+    </event_track>
+    <event_track ec="1440">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Action"/>
+    </event_track>
+    <event_track ec="1220">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Action"/>
+    </event_track>
+    <event_track ec="1540">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Action"/>
+    </event_track>
+    <event_track ec="1000">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Action"/>
+    </event_track>
+    <event_track ec="1640">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Action"/>
+    </event_track>
+    <event_track ec="1100">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Action"/>
+    </event_track>
+    <event_track ec="1420">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Action"/>
+    </event_track>
+    <event_track ec="1040">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Action"/>
+    </event_track>
+    <event_track ec="2000">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Action"/>
+    </event_track>
+    <event_track ec="1140">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Effect"/>
+      <track id="5" name="Action"/>
+    </event_track>
+    <event_track ec="1460">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Action"/>
+    </event_track>
+    <event_track ec="2100">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Action"/>
+    </event_track>
+    <event_track ec="1560">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Action"/>
+    </event_track>
+    <event_track ec="2200">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Action"/>
+    </event_track>
+    <event_track ec="1290">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Action"/>
+    </event_track>
+    <event_track ec="1020">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Action"/>
+    </event_track>
+    <event_track ec="1285">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Action"/>
+    </event_track>
+    <event_track ec="1280">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Action"/>
+    </event_track>
+    <event_track ec="1600">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Action"/>
+    </event_track>
+    <event_track ec="2020">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Action"/>
+    </event_track>
+    <event_track ec="1110">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Action"/>
+    </event_track>
+    <event_track ec="2440">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Action"/>
+    </event_track>
+  </event_tracks>
+  <triggers>
+    <trigger type="FTimedTriggerSound" id="72" time="0.261765" duration="0" repeat="0" ec="1120" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_CHAR_WHL_SQUEAK_LOW" bone=""/>
+    <trigger type="FTimedTriggerSound" id="17" time="0.468800217" duration="0" repeat="0" ec="1140" track="1" tier="-1" event="AS3D_UNIT_ARCHER_BOW_RATTLE" bone=""/>
+    <trigger type="FTimedTriggerSound" id="58" time="0.00396" duration="0" repeat="0" ec="1500" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_FORTIFY" bone=""/>
+    <trigger type="FTimedTriggerSound" id="67" time="0.355372" duration="0" repeat="0" ec="1800" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_VICTORY_VOX_D" bone=""/>
+    <trigger type="FTimedTriggerSound" id="44" time="0.31750524" duration="0" repeat="0" ec="1200" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_CHAR_ARCH_DIE_WHEEL" bone=""/>
+    <trigger type="FTimedTriggerSound" id="53" time="0.278931946" duration="0" repeat="0" ec="2200" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_CHAR_ARCH_DIE_WHEEL" bone=""/>
+    <trigger type="FTimedTriggerSound" id="30" time="1.07407" duration="0" repeat="0" ec="2100" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_ARROW_PULL" bone=""/>
+    <trigger type="FTimedTriggerSound" id="39" time="0.558621" duration="0" repeat="0" ec="1180" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_BOW_RATTLE" bone=""/>
+    <trigger type="FTimedTriggerSound" id="48" time="0.740777" duration="0" repeat="0" ec="1200" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_WOOD_SHIELD_DROP_20" bone=""/>
+    <trigger type="FTimedTriggerSound" id="25" time="0.940741" duration="0" repeat="0" ec="1100" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_ARROW_PULL" bone=""/>
+    <trigger type="FTimedTriggerSound" id="89" time="0.435045" duration="0" repeat="0" ec="1140" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_CHAR_WHL_SQUEAK_HIGH" bone=""/>
+    <trigger type="FTimedTriggerSound" id="34" time="0.562963" duration="0" repeat="0" ec="1160" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_BOW_RATTLE" bone=""/>
+    <trigger type="FTimedTriggerTransfer" id="98" time="0.5051967" duration="0" repeat="0" ec="1100" track="3" tier="0" refid="97" speed="52.7632" tangent.x="0.0517986566" tangent.y="-0.993882358" tangent.z="0.09754385"/>
+    <trigger type="FTimedTriggerSound" id="20" time="0.535664" duration="0" repeat="0" ec="1140" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_HORSE_RUN_$(TERRAIN)" bone=""/>
+    <trigger type="FTimedTriggerSound" id="84" time="0.785852" duration="0" repeat="0" ec="1440" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_HORSE_FOOT_DPMT_$(TERRAIN)" bone=""/>
+    <trigger type="FTimedTriggerSound" id="61" time="0.08764275" duration="0" repeat="0" ec="1400" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_HORSE_RUN_$(TERRAIN)" bone=""/>
+    <trigger type="FTimedTriggerEffect" id="6" time="0" duration="0.533333" repeat="0" ec="1460" track="2" tier="0" event="ART_DEF_VEFFECT_CHARIOT_DUST_TRAIL_SM" bone="point_WORLD"/>
+    <trigger type="FTimedTriggerSound" id="70" time="0.6317462" duration="0" repeat="0" ec="1140" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_CHAR_WHL_SQUEAK_LOW" bone=""/>
+    <trigger type="FTimedTriggerSound" id="47" time="0.487073243" duration="0" repeat="0" ec="1200" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_CHARIOT_HIT" bone=""/>
+    <trigger type="FTimedTriggerSound" id="56" time="0.5994755" duration="0" repeat="0" ec="2200" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_BODY_FALL_$(TERRAIN)" bone=""/>
+    <trigger type="FTimedTriggerSound" id="42" time="0.112168133" duration="0" repeat="0" ec="1200" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_DEATH_VOX_D" bone=""/>
+    <trigger type="FTimedTriggerSound" id="28" time="0.456651241" duration="0" repeat="0" ec="2100" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_BOW_WHOOSH" bone=""/>
+    <trigger type="FTimedTriggerSound" id="37" time="0.397701" duration="0" repeat="0" ec="1180" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_BOW_TWANG" bone=""/>
+    <trigger type="FTimedTriggerSound" id="14" time="0.022222" duration="0" repeat="0" ec="1140" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_BOW_CREAK_SHORT" bone=""/>
+    <trigger type="FTimedTriggerSound" id="23" time="0.396679" duration="0" repeat="0" ec="1100" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_BOW_WHOOSH" bone=""/>
+    <trigger type="FTimedTriggerSound" id="32" time="0.377778" duration="0" repeat="0" ec="1160" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_BOW_TWANG" bone=""/>
+    <trigger type="FTimedTriggerTransfer" id="96" time="0.411829859" duration="0" repeat="0" ec="1140" track="3" tier="0" refid="95" speed="117.299" tangent.x="0.0455693938" tangent.y="-0.9949624" tangent.z="0.08929295"/>
+    <trigger type="FTimedTriggerSound" id="18" time="0.76773" duration="0" repeat="0" ec="1140" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_ARROW_PULL" bone=""/>
+    <trigger type="FTimedTriggerSound" id="59" time="0.398746133" duration="0" repeat="0" ec="1500" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_FORTIFY_VOX_D" bone=""/>
+    <trigger type="FTimedTriggerSound" id="68" time="0.615808" duration="0" repeat="0" ec="1800" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_HORSE_WHINNY_SHORT" bone=""/>
+    <trigger type="FTimedTriggerSound" id="45" time="0.48674" duration="0" repeat="0" ec="1200" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_ANIMAL_BODY_FALL_$(TERRAIN)" bone=""/>
+    <trigger type="FTimedTriggerSound" id="54" time="0.4803247" duration="0" repeat="0" ec="2200" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_ANIMAL_BODY_FALL_$(TERRAIN)" bone=""/>
+    <trigger type="FTimedTriggerSound" id="31" time="0.022222" duration="0" repeat="0" ec="1160" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_BOW_CREAK_SHORT" bone=""/>
+    <trigger type="FTimedTriggerSound" id="40" time="0.914943" duration="0" repeat="0" ec="1180" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_ARROW_PULL" bone=""/>
+    <trigger type="FTimedTriggerTransfer" id="104" time="0.485185564" duration="0" repeat="0" ec="1180" track="3" tier="0" refid="103" speed="120.235" tangent.x="0.131718829" tangent.y="-0.763346" tangent.z="0.632418454"/>
+    <trigger type="FTimedTriggerSound" id="49" time="0.112582147" duration="0" repeat="0" ec="2200" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_IMPACT_$(WEAPON)" bone=""/>
+    <trigger type="FTimedTriggerSound" id="26" time="0.133062154" duration="0" repeat="0" ec="2100" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_LEATHER_CREAK_SHORT" bone=""/>
+    <trigger type="FTimedTriggerSound" id="90" time="0.348768234" duration="0" repeat="0" ec="1400" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_CHAR_WHL_SQUEAK_HIGH" bone=""/>
+    <trigger type="FTimedTriggerSound" id="35" time="0.888889" duration="0" repeat="0" ec="1160" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_ARROW_PULL" bone=""/>
+    <trigger type="FTimedTriggerSound" id="21" time="0.007407" duration="0" repeat="0" ec="1100" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_BOW_CREAK_SHORT" bone=""/>
+    <trigger type="FTimedTriggerSound" id="85" time="0.177143" duration="0" repeat="0" ec="1800" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_LEATHER_CREAK_SHORT" bone=""/>
+    <trigger type="FTimedTriggerSound" id="62" time="0.06256526" duration="0" repeat="0" ec="1120" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_HORSE_RUN_$(TERRAIN)" bone=""/>
+    <trigger type="FTimedTriggerSound" id="71" time="0.14244023" duration="0" repeat="0" ec="1400" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_CHAR_WHL_SQUEAK_LOW" bone=""/>
+    <trigger type="FTimedTriggerSound" id="16" time="0.398808181" duration="0" repeat="0" ec="1140" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_BOW_WHOOSH" bone=""/>
+    <trigger type="FTimedTriggerSound" id="57" time="0.909901" duration="0" repeat="0" ec="2200" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_WOOD_SHIELD_DROP_20" bone=""/>
+    <trigger type="FTimedTriggerEffect" id="2" time="0" duration="0.533333" repeat="0" ec="1400" track="2" tier="0" event="ART_DEF_VEFFECT_CHARIOT_DUST_TRAIL_SM" bone="point_WORLD"/>
+    <trigger type="FTimedTriggerSound" id="29" time="0.561616" duration="0" repeat="0" ec="2100" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_BOW_RATTLE" bone=""/>
+    <trigger type="FTimedTriggerTransfer" id="102" time="0.480071425" duration="0" repeat="0" ec="1160" track="3" tier="0" refid="101" speed="111.265" tangent.x="0.141261965" tangent.y="-0.6351023" tangent.z="0.7594012"/>
+    <trigger type="FTimedTriggerSound" id="15" time="0.3222223" duration="0" repeat="0" ec="1140" track="1" tier="-1" event="AS3D_UNIT_ARCHER_BOW_TWANG" bone=""/>
+    <trigger type="FTimedTriggerSound" id="24" time="0.543806" duration="0" repeat="0" ec="1100" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_BOW_RATTLE" bone=""/>
+    <trigger type="FTimedTriggerSound" id="33" time="0.422222" duration="0" repeat="0" ec="1160" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_BOW_WHOOSH" bone=""/>
+    <trigger type="FTimedTriggerEffect" id="10" time="0" duration="1" repeat="0" ec="1140" track="4" tier="0" event="ART_DEF_VEFFECT_CHARIOT_DUST_TRAIL_MD" bone="point_WORLD"/>
+    <trigger type="FTimedTriggerSound" id="74" time="0.123037472" duration="0" repeat="0" ec="1440" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_HORSE_FOOT_DPMT_$(TERRAIN)" bone=""/>
+    <trigger type="FTimedTriggerSound" id="19" time="0.07226066" duration="0" repeat="0" ec="1140" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_HORSE_RUN_$(TERRAIN)" bone=""/>
+    <trigger type="FTimedTriggerSound" id="60" time="0.368317" duration="0" repeat="0" ec="1500" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_ARROW_PULL" bone=""/>
+    <trigger type="FTimedTriggerEffect" id="5" time="0" duration="0.533333" repeat="0" ec="1480" track="2" tier="0" event="ART_DEF_VEFFECT_CHARIOT_DUST_TRAIL_SM" bone="point_WORLD"/>
+    <trigger type="FTimedTriggerSound" id="69" time="0.89127636" duration="0" repeat="0" ec="1500" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_BOW_RATTLE" bone=""/>
+    <trigger type="FTimedTriggerSound" id="46" time="0.5762493" duration="0" repeat="0" ec="1200" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_BODY_FALL_$(TERRAIN)" bone=""/>
+    <trigger type="FTimedTriggerSound" id="55" time="0.418290764" duration="0" repeat="0" ec="2200" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_CHARIOT_HIT" bone=""/>
+    <trigger type="FTimedTriggerSound" id="41" time="0.111110687" duration="0" repeat="0" ec="1200" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_IMPACT_$(WEAPON)" bone=""/>
+    <trigger type="FTimedTriggerSound" id="50" time="0.114334449" duration="0" repeat="0" ec="2200" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_DEATH_VOX_D" bone=""/>
+    <trigger type="FTimedTriggerSound" id="27" time="0.410217" duration="0" repeat="0" ec="2100" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_BOW_TWANG" bone=""/>
+    <trigger type="FTimedTriggerSound" id="91" time="0.173677176" duration="0" repeat="0" ec="1120" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_CHAR_WHL_SQUEAK_HIGH" bone=""/>
+    <trigger type="FTimedTriggerSound" id="36" time="0.022222" duration="0" repeat="0" ec="1180" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_BOW_CREAK_SHORT" bone=""/>
+    <trigger type="FTimedTriggerTransfer" id="100" time="0.4893307" duration="0" repeat="0" ec="2100" track="3" tier="0" refid="99" speed="108.984" tangent.x="0.0449742" tangent.y="-0.9948265" tangent.z="0.09109142"/>
+    <trigger type="FTimedTriggerEffect" id="13" time="0" duration="0.533333" repeat="0" ec="1120" track="4" tier="0" event="ART_DEF_VEFFECT_CHARIOT_DUST_TRAIL_MD" bone="point_WORLD"/>
+    <trigger type="FTimedTriggerSound" id="22" time="0.37037" duration="0" repeat="0" ec="1100" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_BOW_TWANG" bone=""/>
+    <trigger type="FTimedTriggerSound" id="86" time="0.797143" duration="0" repeat="0" ec="1800" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_LEATHER_CREAK_SHORT" bone=""/>
+    <trigger type="FTimedTriggerSound" id="58" time="0" duration="0.53" repeat="0" ec="1400" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_RUN" bone=""/>
+    <trigger type="FTimedTriggerSound" id="63" time="0.276866" duration="0" repeat="0" ec="1400" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_ARROW_QUIVER_RUN" bone=""/>
+    <trigger type="FTimedTriggerSound" id="3" time="0.298148185" duration="0" repeat="0" ec="1280" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_FORTIFY_VOX_D" bone=""/>
+    <trigger type="FTimedTriggerSound" id="9" time="0.383333385" duration="0" repeat="0" ec="1280" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_ARROW_QUIVER" bone=""/>
+    <trigger type="FTimedTriggerSound" id="65" time="0.401851982" duration="0" repeat="0" ec="1280" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_HORSE_FOOT_DPMT_$(TERRAIN)" bone=""/>
+    <trigger type="FTimedTriggerSound" id="79" time="0.3515342" duration="0" repeat="0" ec="1600" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_ARROW_PULL" bone=""/>
+    <trigger type="FTimedTriggerSound" id="83" time="0.3896804" duration="0" repeat="0" ec="1600" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_FORTIFY_VOX_D" bone=""/>
+    <trigger type="FTimedTriggerSound" id="92" time="0.464015037" duration="0" repeat="0" ec="1600" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_ARROW_QUIVER" bone=""/>
+    <trigger type="FTimedTriggerSound" id="93" time="0.366666675" duration="0" repeat="0" ec="1100" track="1" tier="1" event="AS3D_UNIT_CHARIOT_ARCHER_ARROW_FIRE_T1" bone=""/>
+    <trigger type="FTimedTriggerSound" id="94" time="0.366666675" duration="0" repeat="0" ec="1100" track="1" tier="2" event="AS3D_UNIT_CHARIOT_ARCHER_ARROW_FIRE_T2" bone=""/>
+    <trigger type="FTimedTriggerSound" id="119" time="0.377777785" duration="0" repeat="0" ec="1160" track="1" tier="1" event="AS3D_UNIT_CHARIOT_ARCHER_FLAMING_ARROW_T1" bone=""/>
+    <trigger type="FTimedTriggerSound" id="124" time="0.377777785" duration="0" repeat="0" ec="1160" track="1" tier="2" event="AS3D_UNIT_CHARIOT_ARCHER_FLAMING_ARROW_T2" bone=""/>
+    <trigger type="FTimedTriggerSound" id="127" time="0.396296322" duration="0" repeat="0" ec="1180" track="1" tier="1" event="AS3D_UNIT_CHARIOT_ARCHER_ARROW_FIRE_T1" bone=""/>
+    <trigger type="FTimedTriggerSound" id="128" time="0.396296322" duration="0" repeat="0" ec="1180" track="1" tier="2" event="AS3D_UNIT_CHARIOT_ARCHER_ARROW_FIRE_T2" bone=""/>
+    <trigger type="FTimedTriggerSound" id="129" time="0" duration="0.53" repeat="0" ec="1400" track="1" tier="2" event="AS3D_UNIT_CHARIOT_ARCHER_T2_RUN_$(TERRAIN)" bone=""/>
+    <trigger type="FTimedTriggerSound" id="130" time="0.177778423" duration="0" repeat="0" ec="1440" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_HORSE_FOOT_DPMT_$(TERRAIN)" bone=""/>
+    <trigger type="FTimedTriggerSound" id="131" time="0.375236839" duration="0" repeat="0" ec="1440" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_HORSE_FOOT_DPMT_$(TERRAIN)" bone=""/>
+    <trigger type="FTimedTriggerSound" id="132" time="0.544347346" duration="0" repeat="0" ec="1440" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_HORSE_FOOT_DPMT_$(TERRAIN)" bone=""/>
+    <trigger type="FTimedTriggerSound" id="133" time="0.00195503421" duration="0" repeat="0" ec="1440" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_CHARIOT_ARCHER_STOP_RUN_$(TERRAIN)" bone=""/>
+    <trigger type="FTimedTriggerSound" id="134" time="0.0394474752" duration="0" repeat="0" ec="2100" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_BOW_CREAK_SHORT" bone=""/>
+    <trigger type="FTimedTriggerSound" id="135" time="0.408825129" duration="0" repeat="0" ec="2100" track="1" tier="1" event="AS3D_UNIT_CHARIOT_ARCHER_ARROW_FIRE_T1" bone=""/>
+    <trigger type="FTimedTriggerSound" id="136" time="0.408825129" duration="0" repeat="0" ec="2100" track="1" tier="2" event="AS3D_UNIT_CHARIOT_ARCHER_ARROW_FIRE_T2" bone=""/>
+    <trigger type="FTimedTriggerSound" id="137" time="0.703204036" duration="0" repeat="0" ec="2200" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_STAFF_DIRT" bone=""/>
+    <trigger type="FTimedTriggerSound" id="138" time="0.00195503421" duration="0" repeat="0" ec="2440" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_CHARIOT_ARCHER_STOP_RUN_$(TERRAIN)" bone=""/>
+    <trigger type="FTimedTriggerSound" id="139" time="0.123037472" duration="0" repeat="0" ec="2440" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_HORSE_FOOT_DPMT_$(TERRAIN)" bone=""/>
+    <trigger type="FTimedTriggerSound" id="140" time="0.177778423" duration="0" repeat="0" ec="2440" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_HORSE_FOOT_DPMT_$(TERRAIN)" bone=""/>
+    <trigger type="FTimedTriggerSound" id="141" time="0.375236839" duration="0" repeat="0" ec="2440" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_HORSE_FOOT_DPMT_$(TERRAIN)" bone=""/>
+    <trigger type="FTimedTriggerSound" id="142" time="0.544347346" duration="0" repeat="0" ec="2440" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_HORSE_FOOT_DPMT_$(TERRAIN)" bone=""/>
+    <trigger type="FTimedTriggerSound" id="143" time="0.785852" duration="0" repeat="0" ec="2440" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_HORSE_FOOT_DPMT_$(TERRAIN)" bone=""/>
+    <trigger type="FTimedTriggerSound" id="43" time="0.609259248" duration="0" repeat="0" ec="1160" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_THROW_TORCH" bone=""/>
+    <trigger type="FTimedTriggerSound" id="51" time="0.4846106" duration="0" repeat="0" ec="1180" track="1" tier="-1" event="AS3D_UNIT_CHARIOT_ARCHER_BOW_WHOOSH" bone=""/>
+  </triggers>
+</trigger_system>

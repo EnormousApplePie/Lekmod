@@ -1,0 +1,12 @@
+<Asset>
+  <Mesh file="HB_Anc_Sulfur_Quarry.gr2" source="Max" />
+  <Texture file="ANC_Quarry_DIFF.dds" source="Max" />
+  <Texture file="ANC_Quarry_SREF.dds" source="Max" />
+  <Texture file="Sulfur_Decal_DIFF.dds" source="Max" />
+  <Texture file="Sulfur_Ore_DIFF.dds" source="Max" />
+  <Texture file="Sulfur_Ore_Decal_H.dds" source="Max" />
+  <Texture file="Sulfur_Ore_SREF.dds" source="Max" />
+  <Texture file="Unit_Environment_Dull.dds" source="Max" />
+  <Texture file="Unit_Environment_Sharp.dds" source="Max" />
+  <Texture file="Unit_Irradiance.dds" source="Max" />
+</Asset>

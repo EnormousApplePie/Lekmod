@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 4/22/2016 9:09:36 AM -->
+<GameData>
+
+	<!-- Embassies allowed from game start. -->
+	<Technologies>
+		<Update>
+			<Set AllowEmbassyTradingAllowed="false" />
+			<Where Type="TECH_WRITING" />
+		</Update>
+		<Update>
+			<Set AllowEmbassyTradingAllowed="true" />
+			<Where Type="TECH_AGRICULTURE" />
+		</Update>
+	</Technologies>
+
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_CONCEPT_DIPLOMACY_EMBASSY_SUMMARY" />
+		<Row Tag="TXT_KEY_CONCEPT_DIPLOMACY_EMBASSY_SUMMARY">
+			<Text>Establishing an Embassy is one of the first diplomatic actions available after meeting another civilization. Embassies are necessary for trading Open Borders or making Defensive Pacts or Research Agreements, and once set up, will also show you the location of an opposing player's capital. If you have Writing and the other player does not, you can still establish an Embassy in their civilization without reciprocating, although they may ask for a small sum of gold as compensation. Going to war will immediately close down opposing embassies.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_CONCEPT_DIPLOMACY_EMBASSY_SUMMARY" />
+		<Row Tag="TXT_KEY_CONCEPT_DIPLOMACY_EMBASSY_SUMMARY">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Establishing an Embassy is one of the first diplomatic actions available after meeting another civilization. Embassies are necessary for trading Open Borders or making Defensive Pacts or Research Agreements, and once set up, will also show you the location of an opposing player's capital. If you have Writing and the other player does not, you can still establish an Embassy in their civilization without reciprocating, although they may ask for a small sum of gold as compensation. Going to war will immediately close down opposing embassies.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_CONCEPT_DIPLOMACY_EMBASSY_SUMMARY" />
+		<Row Tag="TXT_KEY_CONCEPT_DIPLOMACY_EMBASSY_SUMMARY">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Establishing an Embassy is one of the first diplomatic actions available after meeting another civilization. Embassies are necessary for trading Open Borders or making Defensive Pacts or Research Agreements, and once set up, will also show you the location of an opposing player's capital. If you have Writing and the other player does not, you can still establish an Embassy in their civilization without reciprocating, although they may ask for a small sum of gold as compensation. Going to war will immediately close down opposing embassies.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_CONCEPT_DIPLOMACY_EMBASSY_SUMMARY" />
+		<Row Tag="TXT_KEY_CONCEPT_DIPLOMACY_EMBASSY_SUMMARY">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Establishing an Embassy is one of the first diplomatic actions available after meeting another civilization. Embassies are necessary for trading Open Borders or making Defensive Pacts or Research Agreements, and once set up, will also show you the location of an opposing player's capital. If you have Writing and the other player does not, you can still establish an Embassy in their civilization without reciprocating, although they may ask for a small sum of gold as compensation. Going to war will immediately close down opposing embassies.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

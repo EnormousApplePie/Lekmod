@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mod id="fbac25ab-1e98-4a4a-ad61-42839229f769" version="2">
+  <Properties>
+    <Name>JFD's The Nri Kingdom</Name>
+    <Teaser>Adds the [COLOR_POSITIVE_TEXT]The Nri Kingdom[ENDCOLOR] with Eri to the game.</Teaser>
+    <Description>See Steam Workshop or CivFanatics for full details.</Description>
+    <Authors>JFD, Janboruta, Moriboe, Leugi, Tomatekh</Authors>
+    <SpecialThanks>Gedemon, Whoward</SpecialThanks>
+    <HideSetupGame>0</HideSetupGame>
+    <AffectsSavedGames>1</AffectsSavedGames>
+    <MinCompatibleSaveVersion>0</MinCompatibleSaveVersion>
+    <SupportsSinglePlayer>1</SupportsSinglePlayer>
+    <SupportsMultiplayer>1</SupportsMultiplayer>
+    <SupportsHotSeat>1</SupportsHotSeat>
+    <SupportsMac>1</SupportsMac>
+    <ReloadAudioSystem>1</ReloadAudioSystem>
+    <ReloadLandmarkSystem>0</ReloadLandmarkSystem>
+    <ReloadStrategicViewSystem>1</ReloadStrategicViewSystem>
+    <ReloadUnitSystem>1</ReloadUnitSystem>
+  </Properties>
+  <Dependencies />
+  <References>
+    <Mod id="31a31d1c-b9d7-45e1-842c-23232d66cd47" minversion="0" maxversion="999" title="JFD's Cultural Diversity (Core)" />
+    <Mod id="eea66053-7579-481a-bb8d-2f3959b59974" minversion="0" maxversion="999" title="JFD’s Rise to Power" />
+    <Mod id="1f941088-b185-4159-865c-472df81247b2" minversion="0" maxversion="999" title="Sukritact’s Events &amp; Decisions" />
+    <Mod id="36e88483-48fe-4545-b85f-bafc50dde315" minversion="0" maxversion="999" title="Yet (not) Another Earth Map Pack" />
+    <Mod id="e576894a-ed2b-4033-be14-ed1c8ceb81d3" minversion="0" maxversion="999" title="Map Labels" />
+    <Mod id="7fdd72a5-d4ae-441c-bc4e-2e3d2a26cff4" minversion="0" maxversion="999" title="Ethnic Units" />
+    <Mod id="1153b26a-69fd-4cd5-899c-a8ba8e0e5e5d" minversion="0" maxversion="999" title="Civ IV Leader Traits in Civ V" />
+    <Mod id="10e9728f-d61c-4317-be4f-7d52d6bae6f4" minversion="0" maxversion="999" title="JFD's Cities in Development" />
+    <Mod id="d1b6328c-ff44-4b0d-aad7-c657f83610cd" minversion="0" maxversion="999" title="Community Patch" />
+    <Mod id="8411a7a8-dad3-4622-a18e-fcc18324c799" minversion="0" maxversion="999" title="Community Balance Patch" />
+    <Mod id="8670da15-d435-44ea-9758-7438cb321411" minversion="0" maxversion="999" title="R.E.D. Modpack" />
+    <Mod id="eead0050-1e3f-4178-a91f-26cf1881ac39" minversion="0" maxversion="999" title="(3) City-State Diplomacy Mod for CBP" />
+  </References>
+  <Blocks />
+  <Files>
+    <File md5="992ADADCEC002EE55B0434935996FE62" import="1">Art/Diplomacy/Janboruta_Eri_Diplo.dds</File>
+    <File md5="EEC5902E723241641E4A5742B88192B0" import="1">Art/Diplomacy/Janboruta_Eri_Diplo.xml</File>
+    <File md5="AD12ED11A7668CF216173F950AE558FA" import="1">Art/FontIcons/JFD_ReligionOdinaniFontIcons_22.dds</File>
+    <File md5="3519A9196592DFC225B9E715895CEF9D" import="1">Art/FontIcons/JFD_ReligionOdinaniFontIcons_22.ggxml</File>
+    <File md5="D2C5AE5A78D818F607F6EEECB451453D" import="1">Art/Graphics/Mburichi/Mburichi.fxsxml</File>
+    <File md5="3ED73EA75C8E7DCA50D2440ED71F5BA5" import="1">Art/Graphics/Mburichi/Mburichi.gr2</File>
+    <File md5="22349EA2FEE07F5968384BEE80366B25" import="1">Art/Graphics/Mburichi/Mburichi_diff.dds</File>
+    <File md5="35057209ACA27FEA6099BF60786182A0" import="1">Art/Graphics/Mburichi/Mburichi_sref.dds</File>
+    <File md5="7E8FF0A8440C44D5CD5DFCB8D36C8670" import="1">Art/Graphics/Mburichi/sv_Mburichi.dds</File>
+    <File md5="C27D75CA71410D59CA680FF464F1AFA0" import="1">Art/IconAtlas/JFD_MburichiUnitFlag_32.dds</File>
+    <File md5="947D3E6F94C67D23F87A0682EFE01A93" import="1">Art/IconAtlas/JFD_NriAlphaAtlas_128.dds</File>
+    <File md5="5ED3610AB830FB98E471FEDEEF234DC8" import="1">Art/IconAtlas/JFD_NriAlphaAtlas_16.dds</File>
+    <File md5="1F8130EF36F8E2E8CF84A4321F687DC1" import="1">Art/IconAtlas/JFD_NriAlphaAtlas_24.dds</File>
+    <File md5="1A22E70ACC23D0C711865BB1DDFF3A92" import="1">Art/IconAtlas/JFD_NriAlphaAtlas_32.dds</File>
+    <File md5="2031244D32FFF4FECA6FF2A9085A8135" import="1">Art/IconAtlas/JFD_NriAlphaAtlas_45.dds</File>
+    <File md5="B0FC666EE1C7873C3031600D04270DF5" import="1">Art/IconAtlas/JFD_NriAlphaAtlas_48.dds</File>
+    <File md5="F8C258E31F928306DAC7D3283F249D5E" import="1">Art/IconAtlas/JFD_NriAlphaAtlas_64.dds</File>
+    <File md5="25B8371B5ADADD119EC26FBB96B7534C" import="1">Art/IconAtlas/JFD_NriAlphaAtlas_80.dds</File>
+    <File md5="5B7EB89C88EC7778C4D19132F3007678" import="1">Art/IconAtlas/JFD_NriAtlas_128.dds</File>
+    <File md5="969049D572811B9C2DF65F26A7983EDD" import="1">Art/IconAtlas/JFD_NriAtlas_256.dds</File>
+    <File md5="9D6C8FB4486D4AA5A6CEB7D135F24188" import="1">Art/IconAtlas/JFD_NriAtlas_32.dds</File>
+    <File md5="8AE87780969E2BC1234C23E7A403BA34" import="1">Art/IconAtlas/JFD_NriAtlas_45.dds</File>
+    <File md5="1340A3441C05C1C176528944517DF519" import="1">Art/IconAtlas/JFD_NriAtlas_64.dds</File>
+    <File md5="BD157DA41BDDE3F19E20659811C3AF34" import="1">Art/IconAtlas/JFD_NriAtlas_80.dds</File>
+    <File md5="636407D5FDCE17D353DCB63B6BB0A5B0" import="1">Art/IconAtlas/JFD_NriReligionAtlas_128.dds</File>
+    <File md5="770538D7E9CCF809A983150697BE3718" import="1">Art/IconAtlas/JFD_NriReligionAtlas_16.dds</File>
+    <File md5="EB3E2A9421D67F6E8482F4DBA18F1115" import="1">Art/IconAtlas/JFD_NriReligionAtlas_214.dds</File>
+    <File md5="FA46C3D01367FE6DDCA08F4822C30038" import="1">Art/IconAtlas/JFD_NriReligionAtlas_24.dds</File>
+    <File md5="45807C98598EC50FADD32DD846BE7446" import="1">Art/IconAtlas/JFD_NriReligionAtlas_256.dds</File>
+    <File md5="957D5CE68012039EAD4D849257E5C379" import="1">Art/IconAtlas/JFD_NriReligionAtlas_32.dds</File>
+    <File md5="E755446EABE655F9494BF2BF08C4F7A6" import="1">Art/IconAtlas/JFD_NriReligionAtlas_45.dds</File>
+    <File md5="25A29E66B754F5D8BEDCD4694F7D49B6" import="1">Art/IconAtlas/JFD_NriReligionAtlas_48.dds</File>
+    <File md5="E7C0DCDED165FCBB53C6710922C54A39" import="1">Art/IconAtlas/JFD_NriReligionAtlas_64.dds</File>
+    <File md5="D6CC0778B2DCE141B0055E44977096EB" import="1">Art/IconAtlas/JFD_NriReligionAtlas_80.dds</File>
+    <File md5="E98F87D1A5C0E77177C7E903CF68A0B3" import="1">Art/Images/Era_JFD_Nri_Enlightenment.dds</File>
+    <File md5="319CD06E12F832A5880B130D9947F22D" import="1">Art/Images/Era_JFD_Nri_Renissance.dds</File>
+    <File md5="77631A2673FB905F00ED6967427F3110" import="1">Art/Images/Era_JFD_Nri_Medievel.dds</File>
+    <File md5="20805183B0D24845339933A4DFC37FBA" import="1">Art/Images/Era_JFD_Nri_Atomic.dds</File>
+    <File md5="8426E0F8D52CEB901F0F57F4E55AD869" import="1">Art/Images/Era_JFD_Nri_Future.dds</File>
+    <File md5="BCDD30AD7BB0D6EC702898AED93CC01B" import="1">Art/Images/Era_JFD_Nri_Modern.dds</File>
+    <File md5="762B6CE2E8E84C179E1F07F54A08F44D" import="1">Art/Images/Era_JFD_Nri_Industrial.dds</File>
+    <File md5="8C66EE81CAF8B34CF58AABC3EF5AB5B7" import="1">Art/Images/Era_JFD_Nri_Classical.dds</File>
+    <File md5="44BDF60AA06973BD9C83529559D782FB" import="1">Art/Map/Janboruta_Nri_DOM.dds</File>
+    <File md5="7648A2C2159C7FB69676EC3E03FE6513" import="1">Art/Map/Tomatekh_MapNri512.dds</File>
+    <File md5="1272F8F3F9734CE0C00223BB15B126DA" import="1">Audio/Eri_Peace.mp3</File>
+    <File md5="1E0C8F0A7E65087C5BC58CB9AB29E913" import="1">Audio/Eri_War.mp3</File>
+    <File md5="4AA4BEAFE165876D46DEB41F4C27FFB2" import="0">Core/Nri_ArtDefines.sql</File>
+    <File md5="9DA8D4FBD65FD17476724B5B89A6AF46" import="0">Core/Nri_GameDefines.sql</File>
+    <File md5="84EE8857769339D5FF12A09DE3C1C1C7" import="0">Core/Nri_GameDefines_Diplomacy.sql</File>
+    <File md5="D573519A471B8280BF897B72CA2F276B" import="0">Core/Nri_GameDefines_ModSupport.sql</File>
+    <File md5="FCDB72D2E5CDA1A6B2FDDB195C3DC3FD" import="0">Core/Nri_GameText.xml</File>
+    <File md5="64C8A7ECFE1F5B22DD942B4A64D72C25" import="0">Core/Nri_GameText_Diplomacy.xml</File>
+    <File md5="03824A87D0A624B5EDAB0E987E8A00FD" import="0">Core/Nri_GameText_ModSupport.xml</File>
+    <File md5="0129111891E2919FD0B8822556B4E4A2" import="0">Core/Nri_JFD_ReligiousTheme.sql</File>
+    <File md5="F936F5C9B4BF632C7ABF85BFE7C1F881" import="0">JFD_Nri_UserSettings.sql</File>
+    <File md5="1C0AA722BBF3811C07DD9A98C3957483" import="1">Lua/JFD_Nri_Decisions.lua</File>
+    <File md5="9A64B4A5E859C2C4147B507AF968EFCB" import="1">Lua/JFD_Nri_Events.lua</File>
+    <File md5="BEC709B43B4C268EA82712560A406867" import="0">Lua/JFD_Nri_Functions.lua</File>
+    <File md5="9DCDFFAD3E7E77D899F33BE5E545B89D" import="0">Lua/JFD_Nri_Functions.xml</File>
+    <File md5="D63DC8BB6AA0F310DD55B264DB49C7E2" import="1">Lua/Utilities/PlotIterators.lua</File>
+    <File md5="794D6796923E46791B0299D8E15A3E30" import="0">RandomSupport.txt</File>
+  </Files>
+  <Actions>
+    <OnModActivated>
+      <UpdateDatabase>JFD_Nri_UserSettings.sql</UpdateDatabase>
+      <UpdateDatabase>Core/Nri_JFD_ReligiousTheme.sql</UpdateDatabase>
+      <UpdateDatabase>Core/Nri_ArtDefines.sql</UpdateDatabase>
+      <UpdateDatabase>Core/Nri_GameDefines.sql</UpdateDatabase>
+      <UpdateDatabase>Core/Nri_GameDefines_Diplomacy.sql</UpdateDatabase>
+      <UpdateDatabase>Core/Nri_GameDefines_ModSupport.sql</UpdateDatabase>
+      <UpdateDatabase>Core/Nri_GameText.xml</UpdateDatabase>
+      <UpdateDatabase>Core/Nri_GameText_Diplomacy.xml</UpdateDatabase>
+      <UpdateDatabase>Core/Nri_GameText_ModSupport.xml</UpdateDatabase>
+    </OnModActivated>
+  </Actions>
+  <EntryPoints>
+    <EntryPoint type="InGameUIAddin" file="Lua/JFD_Nri_Functions.lua">
+      <Name>JFD_NriFunctions</Name>
+      <Description>
+      </Description>
+    </EntryPoint>
+  </EntryPoints>
+</Mod>

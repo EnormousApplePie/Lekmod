@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 5/4/2016 8:39:17 AM -->
+<GameData>
+
+	<!-- Museums now need Amphitheaters instead of Opera Houses. -->
+	<Building_ClassesNeededInCity>
+		<Update>
+			<Set BuildingClassType="BUILDINGCLASS_AMPHITHEATER" />
+			<Where BuildingType="BUILDING_MUSEUM" />
+		</Update>
+	</Building_ClassesNeededInCity>
+	
+</GameData>

@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mod id="573a8c5f-b6a5-4a22-8068-fdcbf7c07062" version="43">
+  <Properties>
+    <Name>Champa (Brave New World)</Name>
+    <Teaser>Adds Champa to the base game. Requires the Brave New World expansion.</Teaser>
+    <Description>Adds Champa to the base game.
+[NEWLINE][NEWLINE]~~~
+[NEWLINE][NEWLINE]Note: 
+[NEWLINE]- Requires the Brave New World expansion.
+[NEWLINE]- Updates to the Mod will most likely break save games. Please do not update until you are ready to begin a new game.
+[NEWLINE][NEWLINE]~~~
+[NEWLINE][NEWLINE]Leader: Che Bong Nga
+[NEWLINE][NEWLINE]UA: Pirates of the South Sea
+[NEWLINE]UU: Ballista Elephant
+[NEWLINE]UI: Square Well</Description>
+    <Authors>Tomatekh</Authors>
+    <SpecialThanks>Janboruta, Leugi, Sukritact, LastSword, Guys</SpecialThanks>
+    <HideSetupGame>0</HideSetupGame>
+    <Homepage>http://forums.civfanatics.com/showthread.php?t=472751</Homepage>
+    <AffectsSavedGames>1</AffectsSavedGames>
+    <MinCompatibleSaveVersion>43</MinCompatibleSaveVersion>
+    <SupportsSinglePlayer>1</SupportsSinglePlayer>
+    <SupportsMultiplayer>1</SupportsMultiplayer>
+    <SupportsHotSeat>1</SupportsHotSeat>
+    <SupportsMac>1</SupportsMac>
+    <ReloadAudioSystem>1</ReloadAudioSystem>
+    <ReloadLandmarkSystem>1</ReloadLandmarkSystem>
+    <ReloadStrategicViewSystem>1</ReloadStrategicViewSystem>
+    <ReloadUnitSystem>1</ReloadUnitSystem>
+  </Properties>
+  <Dependencies>
+    <Dlc id="6DA07636-4123-4018-B643-6575B4EC336B" minversion="0" maxversion="999" />
+  </Dependencies>
+  <References>
+    <Dlc id="0E3751A1-F840-4e1b-9706-519BF484E59D" minversion="0" maxversion="999" />
+    <Mod id="36e88483-48fe-4545-b85f-bafc50dde315" minversion="0" maxversion="999" title="YnAEMP" />
+    <Mod id="1f941088-b185-4159-865c-472df81247b2" minversion="0" maxversion="999" title="Events and Decisions" />
+    <Mod id="7fdd72a5-d4ae-441c-bc4e-2e3d2a26cff4" minversion="0" maxversion="999" title="Ethnic Units" />
+    <Mod id="e576894a-ed2b-4033-be14-ed1c8ceb81d3" minversion="0" maxversion="999" title="Map Labels" />
+    <Mod id="31a31d1c-b9d7-45e1-842c-23232d66cd47" minversion="0" maxversion="999" title="Cultural Diversity" />
+    <Mod id="43868e8d-de88-48a1-a8d9-ce144e07f5e0" minversion="0" maxversion="999" title="ExCE" />
+    <Mod id="01c131ef-2162-4a7b-b845-763a4e675940" minversion="0" maxversion="999" title="Cultural Influence" />
+    <Mod id="d1b6328c-ff44-4b0d-aad7-c657f83610cd" minversion="0" maxversion="999" title="C. Patch" />
+    <Mod id="8411a7a8-dad3-4622-a18e-fcc18324c799" minversion="0" maxversion="999" title="C. Balance Patch" />
+    <Mod id="8670da15-d435-44ea-9758-7438cb321411" minversion="0" maxversion="999" title="R.E.D." />
+    <Mod id="eea66053-7579-481a-bb8d-2f3959b59974" minversion="0" maxversion="999" title="Piety" />
+    <Mod id="ce8aa614-7ef7-4a45-a179-5329869e8d6d" minversion="0" maxversion="999" title="Enlightenment" />
+    <Mod id="d99bf7aa-51ac-4bef-bd88-d765b28e260e" minversion="0" maxversion="999" title="Sovereignty" />
+    <Mod id="a19351c5-c0b3-4b07-8695-4affaa199949" minversion="0" maxversion="999" title="Mercenaries" />
+  </References>
+  <Blocks>
+    <Mod id="2626e6a3-a0fd-478d-a5ab-0d9dee67ed0a" minversion="0" maxversion="999" title="YnAEMP Patch" />
+  </Blocks>
+  <Files>
+    <File md5="07E23065DB9B024EB74A6FFE37D83051" import="1">Art/Alpha/ChampaAlphaAtlas128.dds</File>
+    <File md5="6D52C74825F5EAA1A2BDAAA4B64A60C2" import="1">Art/Alpha/ChampaAlphaAtlas16.dds</File>
+    <File md5="6C41555E3594923FDE035F3A669B20E1" import="1">Art/Alpha/ChampaAlphaAtlas24.dds</File>
+    <File md5="F1325AF33A3DB94DED8DEA2B29E9F409" import="1">Art/Alpha/ChampaAlphaAtlas32.dds</File>
+    <File md5="0A5F60F95EEC44927BAED7CBE23C97AB" import="1">Art/Alpha/ChampaAlphaAtlas48.dds</File>
+    <File md5="048CDAC31F71C94B8A0E7C76183D9D8E" import="1">Art/Alpha/ChampaAlphaAtlas64.dds</File>
+    <File md5="40A1742C5203CAF0E49070B44A5B0EED" import="1">Art/Atlas/ChampaModAtlas128.dds</File>
+    <File md5="1A2A34AADF293FC696AF6EBA440112B8" import="1">Art/Atlas/ChampaModAtlas214.dds</File>
+    <File md5="1E634C06033AC03AA92CC357BE481927" import="1">Art/Atlas/ChampaModAtlas256.dds</File>
+    <File md5="19F2D937F41BE8AC27C5862EA1F6068D" import="1">Art/Atlas/ChampaModAtlas32.dds</File>
+    <File md5="764F21DBB3190CFFC1BE1D793A46CAE2" import="1">Art/Atlas/ChampaModAtlas45.dds</File>
+    <File md5="38E8CDDAE103A31C44FCB945CF061D98" import="1">Art/Atlas/ChampaModAtlas64.dds</File>
+    <File md5="4AD9CD36DBB1137245004E24DACD8551" import="1">Art/Atlas/ChampaModAtlas80.dds</File>
+    <File md5="DA2E540CAE15A90273E95CD3451A2334" import="1">Art/Improvement/champawell.fxsxml</File>
+    <File md5="27DE4008BDCD796F28A838465AD4B7DD" import="1">Art/Improvement/champawell.gr2</File>
+    <File md5="A0A18FD2547D73B1CEA15F3FC67D4EAD" import="1">Art/Improvement/champawell_hb.fxsxml</File>
+    <File md5="047C0BA31C42997EF7C87193560D70FC" import="1">Art/Improvement/champawell_hb.gr2</File>
+    <File md5="9835C6AC869C3C5FAA242BCBBD38CB12" import="1">Art/Improvement/champawell_pl.fxsxml</File>
+    <File md5="E69A31CE87558DB5F381460FB8916B44" import="1">Art/Improvement/champawell_pl.gr2</File>
+    <File md5="2D559919593FC8742794A5F377C08F85" import="1">Art/Improvement/chamwell_diff.dds</File>
+    <File md5="D32591A9077F7A9184726455247CC54A" import="1">Art/Improvement/chamwell_pl_diff.dds</File>
+    <File md5="542C3484A217BEF902BED0C0F3C2B4D6" import="1">Art/Improvement/sv_Square_Well.dds</File>
+    <File md5="D1981EBA374F5AF2FF24A5391320C384" import="1">Art/PoBinosaurDoMMod.dds</File>
+    <File md5="6879A5C45C117746C26DE3A8F53357E9" import="1">Art/ChampaMapMod.dds</File>
+    <File md5="3140059929710B7161C143F9D832FECC" import="1">Art/Improvement/Champa_Build_45.dds</File>
+    <File md5="E7FAA5A7AF999889F87D9CD33882F6E0" import="1">Art/Improvement/Champa_Build_64.dds</File>
+    <File md5="542E13B84D070066420E652E229AE8AD" import="1">Art/Improvement/Champa_Gold_Build_45.dds</File>
+    <File md5="535EEBE4EDD264CB2EE04D5DFE40CC86" import="1">Art/Improvement/Champa_Gold_Build_64.dds</File>
+    <File md5="CADB13D3B8FE5A19520272359515DE9F" import="1">Art/PoBinosaurSceneMod.dds</File>
+    <File md5="E500DB9B2DD7154A7C68DBDAD7880141" import="1">Art/Unit/ChamUnitAlphaAtlas.dds</File>
+    <File md5="B1CEF5351ED28207752E7A6637A1FCF7" import="1">Art/Unit/fx_triggers_khmer_elephant.ftsxml</File>
+    <File md5="F5E3F1F56C80222114EFA011D0A45DE9" import="1">Art/Unit/KhmerCar_diff.dds</File>
+    <File md5="5F9FFAD0AD04B20BC6E646CD3F0C1808" import="1">Art/Unit/KhmerCar_sref.dds</File>
+    <File md5="F8AB84FBD3AE675E1488417F687E72FB" import="1">Art/Unit/KhmerElephant_diff.dds</File>
+    <File md5="B354552E3A3F7B09218182AACAA92673" import="1">Art/Unit/KhmerElephant_sref.dds</File>
+    <File md5="A8CC5F6909842DC842DF0CEC2F651B6C" import="1">Art/Unit/KhmerRider_diff.dds</File>
+    <File md5="FDB274899B240C4AA07C831A98337984" import="1">Art/Unit/KhmerRider_sref.dds</File>
+    <File md5="318EBD501455651CF27D30AD319CFBC1" import="1">Art/Unit/khmer_elephant.fxsxml</File>
+    <File md5="6F03D9B9BE33CB35F0C06EF3F57E3852" import="1">Art/Unit/khmer_elephant.gr2</File>
+    <File md5="8B6ADFBD86874CB7CBA63C0096B616AC" import="1">Art/Unit/sv_ChamUnitMod.dds</File>
+    <File md5="43022EBD84D302EE206C8018E45B52AD" import="0">Decisions/Champa Decisions SQL.sql</File>
+    <File md5="EF4C4A6F995325A94A3DB688FED660AA" import="0">Decisions/Champa Decisions Support.xml</File>
+    <File md5="62C5531CDF7F8FD2D4C2B506C58AC76E" import="1">Decisions/TomatekhChampaDecisions.lua</File>
+    <File md5="60F10406CE909AB00DEB4CDF5BE0E6FB" import="1">Lua/Cham Lua Scripts.lua</File>
+    <File md5="A6CA4328BF93C6E17772DE29BCFB6530" import="1">Lua/Cham Top Panel Edits.lua</File>
+    <File md5="6BCDB598E7806C1373892C166D408F3C" import="0">Lua/Champa Check.lua</File>
+    <File md5="4813BABDCAC0671575B734791870C960" import="1">Sounds/CheBongNgaDoM.mp3</File>
+    <File md5="D57F333EDF8607821508EB206C12F50F" import="1">Sounds/CheBongNgaPeace.mp3</File>
+    <File md5="2EC81EE7D6A41E8FCAD26EF60FC9C698" import="1">Sounds/CheBongNgaWar.mp3</File>
+    <File md5="7CAA29D7349CBC762D2CB05B0611EB2D" import="1">SQL/Cham Polynesia Check.sql</File>
+    <File md5="9D070AF567CDF0E96CCB8AE00743DC46" import="1">SQL/Cham Unit Mod.sql</File>
+    <File md5="8A9ABD5A791C7C623CA2393D6B6BA6F8" import="1">SQL/ChampaWellDefine.sql</File>
+    <File md5="511E1B50956EF9EDDC085BB646FDA5EA" import="0">XML/Art/Champa Atlas Mod.xml</File>
+    <File md5="A129CE81E15733C9532141AA93241F88" import="0">XML/Art/Champa Strategic View Mod.xml</File>
+    <File md5="46D8F4D09C37178351F436FB84D4CD46" import="1">XML/Art/Champa_Leader_Scene_Mod.xml</File>
+    <File md5="2D41D0B828783256A0268FA831168568" import="1">XML/Art/civ5artdefines_unitmembers.xml</File>
+    <File md5="6033DD85FD1FDE11760D0DFF159DA03C" import="1">XML/Art/civ5artdefines_units.xml</File>
+    <File md5="581EFB4D5FA82B26B09E7C232773BBED" import="0">XML/Buildings/Champa Building Class Mod.xml</File>
+    <File md5="92B8071B542A26B1F74CF438043A8A69" import="0">XML/Buildings/Champa Buildings Mod.xml</File>
+    <File md5="60C6E77505F20A18AC5B5F4F9D2E8AD7" import="0">XML/Civilizations/Champa Civilizations Mod.xml</File>
+    <File md5="145B001E7E37CF2E64F3511069602DA5" import="0">XML/Civilizations/Champa Leaders Mod.xml</File>
+    <File md5="2520F702F5ABD951E4E4B942465DCEB2" import="0">XML/Civilizations/Champa Traits Mod.xml</File>
+    <File md5="232DFC414ACB6F520485F33DF6EB0DC4" import="0">XML/Diplomacy/Champa Diplomacy Mod.xml</File>
+    <File md5="FBC8D1C316046BB9F1F4E8ADF6CB54B2" import="0">XML/Sounds/Champa Sound Mod.xml</File>
+    <File md5="835DD2C2E529ED57A698130230D602FB" import="0">XML/Terrain/Champa Improvements Mod.xml</File>
+    <File md5="AF10C6B5C9DD75B01264E79A89460160" import="0">XML/Text/Champa Mod Text.xml</File>
+    <File md5="B6D3FDA5B90AF142551AFAB26CCC0847" import="0">XML/Text/Non-English XML Tags/Champa Game Text DE_DE.xml</File>
+    <File md5="74B9044875DAEBD57A9E66125E09AD73" import="0">XML/Text/Non-English XML Tags/Champa Game Text ES_ES.xml</File>
+    <File md5="41C586659A0385ED237A8A8247FFC2CF" import="0">XML/Text/Non-English XML Tags/Champa Game Text FR_FR.xml</File>
+    <File md5="A3D8CD8485B6775FA849E6F6B0397652" import="0">XML/Text/Non-English XML Tags/Champa Game Text IT_IT.xml</File>
+    <File md5="569832DBD03D63A50F0EE8ABE8A81627" import="0">XML/Text/Non-English XML Tags/Champa Game Text JA_JP.xml</File>
+    <File md5="83CD594785E6EEE0ABC0575B3A5FC6C6" import="0">XML/Text/Non-English XML Tags/Champa Game Text KO_KR.xml</File>
+    <File md5="0385F9C6B122C540BF25BAC1C979EAD7" import="0">XML/Text/Non-English XML Tags/Champa Game Text PL_PL.xml</File>
+    <File md5="625D1258F20D1B8103D1C5A505C2B7EA" import="0">XML/Text/Non-English XML Tags/Champa Game Text RU_RU.xml</File>
+    <File md5="757DB0525FCA77EAC9D27AEBE49D2888" import="0">XML/Units/Champa Promotions Mod.xml</File>
+    <File md5="CDC701A38CB7FB7D6981490CA89E8048" import="0">XML/Units/Champa Unitclass Mod.xml</File>
+    <File md5="A355B1319E34FE69312319118322A190" import="0">XML/Units/Champa Units Mod.xml</File>
+    <File md5="96A013CA29C569B242C5E2BCEB1E2363" import="0">YnAEMP/Champa YnAEMP Compatability.sql</File>
+  </Files>
+  <Actions>
+    <OnModActivated>
+      <UpdateDatabase>SQL/Cham Unit Mod.sql</UpdateDatabase>
+      <UpdateDatabase>XML/Art/Champa Strategic View Mod.xml</UpdateDatabase>
+      <UpdateDatabase>XML/Civilizations/Champa Civilizations Mod.xml</UpdateDatabase>
+      <UpdateDatabase>XML/Buildings/Champa Buildings Mod.xml</UpdateDatabase>
+      <UpdateDatabase>XML/Buildings/Champa Building Class Mod.xml</UpdateDatabase>
+      <UpdateDatabase>XML/Text/Champa Mod Text.xml</UpdateDatabase>
+      <UpdateDatabase>XML/Civilizations/Champa Leaders Mod.xml</UpdateDatabase>
+      <UpdateDatabase>XML/Units/Champa Promotions Mod.xml</UpdateDatabase>
+      <UpdateDatabase>XML/Units/Champa Unitclass Mod.xml</UpdateDatabase>
+      <UpdateDatabase>XML/Units/Champa Units Mod.xml</UpdateDatabase>
+      <UpdateDatabase>XML/Diplomacy/Champa Diplomacy Mod.xml</UpdateDatabase>
+      <UpdateDatabase>XML/Terrain/Champa Improvements Mod.xml</UpdateDatabase>
+      <UpdateDatabase>XML/Civilizations/Champa Traits Mod.xml</UpdateDatabase>
+      <UpdateDatabase>XML/Art/Champa Atlas Mod.xml</UpdateDatabase>
+      <UpdateDatabase>XML/Text/Non-English XML Tags/Champa Game Text DE_DE.xml</UpdateDatabase>
+      <UpdateDatabase>XML/Text/Non-English XML Tags/Champa Game Text ES_ES.xml</UpdateDatabase>
+      <UpdateDatabase>XML/Text/Non-English XML Tags/Champa Game Text FR_FR.xml</UpdateDatabase>
+      <UpdateDatabase>XML/Text/Non-English XML Tags/Champa Game Text IT_IT.xml</UpdateDatabase>
+      <UpdateDatabase>XML/Text/Non-English XML Tags/Champa Game Text JA_JP.xml</UpdateDatabase>
+      <UpdateDatabase>XML/Text/Non-English XML Tags/Champa Game Text KO_KR.xml</UpdateDatabase>
+      <UpdateDatabase>XML/Text/Non-English XML Tags/Champa Game Text PL_PL.xml</UpdateDatabase>
+      <UpdateDatabase>XML/Text/Non-English XML Tags/Champa Game Text RU_RU.xml</UpdateDatabase>
+      <UpdateDatabase>YnAEMP/Champa YnAEMP Compatability.sql</UpdateDatabase>
+      <UpdateDatabase>XML/Sounds/Champa Sound Mod.xml</UpdateDatabase>
+      <UpdateDatabase>SQL/ChampaWellDefine.sql</UpdateDatabase>
+      <UpdateDatabase>SQL/Cham Polynesia Check.sql</UpdateDatabase>
+      <UpdateDatabase>Decisions/Champa Decisions SQL.sql</UpdateDatabase>
+      <UpdateDatabase>Decisions/Champa Decisions Support.xml</UpdateDatabase>
+    </OnModActivated>
+  </Actions>
+  <EntryPoints>
+    <EntryPoint type="InGameUIAddin" file="Lua/Champa Check.lua">
+      <Name>Cham</Name>
+      <Description>Cham</Description>
+    </EntryPoint>
+  </EntryPoints>
+</Mod>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 6/6/2015 4:51:27 PM -->
+<GameData>
+
+	<!-- New Exploration Tree
+	
+				   Silk Road		 Mercenary Army
+					  |  |_________________|
+	  			 	  |				       |
+				Entrepreneurship	  Mercantilism
+										   |
+										   |
+									 Protectionism
+					
+	-->
+
+	<Policies>
+		<Update>
+			<Set GridX="4" GridY="1" />
+			<Where Type="POLICY_TRADE_UNIONS" />
+		</Update>
+		<Update>
+			<Set GridX="2" GridY="1" />
+			<Where Type="POLICY_CARAVANS" />
+		</Update>
+		<Update>
+			<Set GridX="4" GridY="2" />
+			<Where Type="POLICY_MERCANTILISM" />
+		</Update>
+		<Update>
+			<Set GridX="2" GridY="2" />
+			<Where Type="POLICY_ENTREPRENEURSHIP" />
+		</Update>
+		<Update>
+			<Set GridX="4" GridY="3" />
+			<Where Type="POLICY_PROTECTIONISM" />
+		</Update>
+	</Policies>
+	<Policy_PrereqPolicies>
+		<Delete PolicyType="POLICY_TRADE_UNIONS" />
+		<Delete PolicyType="POLICY_CARAVANS" />
+		<Delete PolicyType="POLICY_MERCANTILISM" />
+		<Delete PolicyType="POLICY_ENTREPRENEURSHIP" />
+		<Delete PolicyType="POLICY_PROTECTIONISM" />
+		<Row>
+			<PolicyType>POLICY_ENTREPRENEURSHIP</PolicyType>
+			<PrereqPolicy>POLICY_CARAVANS</PrereqPolicy>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_MERCANTILISM</PolicyType>
+			<PrereqPolicy>POLICY_CARAVANS</PrereqPolicy>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_MERCANTILISM</PolicyType>
+			<PrereqPolicy>POLICY_TRADE_UNIONS</PrereqPolicy>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_PROTECTIONISM</PolicyType>
+			<PrereqPolicy>POLICY_MERCANTILISM</PrereqPolicy>
+		</Row>
+	</Policy_PrereqPolicies>
+
+</GameData>

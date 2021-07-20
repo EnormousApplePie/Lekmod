@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2016-09-03 21:59:06 -->
+<GameData>
+
+	<!-- UA no longer provides War Canoes promotion. -->
+	<Trait_FreePromotionUnitCombats>
+		<Delete PromotionType="PROMOTION_WAR_CANOES" TraitType="TRAIT_AMPHIB_WARLORD" />
+	</Trait_FreePromotionUnitCombats>
+	
+	<!-- UA now allows faster river movement. -->
+	<Traits>
+		<Update>
+			<Set FasterAlongRiver="true" />
+			<Where Type="TRAIT_AMPHIB_WARLORD" />
+		</Update>
+	</Traits>
+	
+	<!-- River Bias (instead of Avoid Tundra) -->
+	<Civilization_Start_Region_Avoid>
+		<Delete CivilizationType="CIVILIZATION_SONGHAI" RegionType="REGION_TUNDRA" />
+	</Civilization_Start_Region_Avoid>
+	<Civilization_Start_Along_River>
+		<Row>
+			<CivilizationType>CIVILIZATION_SONGHAI</CivilizationType>
+			<StartAlongRiver>true</StartAlongRiver>
+		</Row>
+	</Civilization_Start_Along_River>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_TRAIT_AMPHIB_WARLORD" />
+		<Row Tag="TXT_KEY_TRAIT_AMPHIB_WARLORD">
+			<Text>Receive triple [ICON_GOLD] Gold from Barbarian encampments and pillaging Cities. Land units gain the Amphibious promotion and ignore terrain costs when traveling along or across rivers.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_TRAIT_AMPHIB_WARLORD" />
+		<Row Tag="TXT_KEY_TRAIT_AMPHIB_WARLORD">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Receive triple [ICON_GOLD] Gold from Barbarian encampments and pillaging Cities. Land units gain the Amphibious promotion and ignore terrain costs when traveling along or across rivers.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_TRAIT_AMPHIB_WARLORD" />
+		<Row Tag="TXT_KEY_TRAIT_AMPHIB_WARLORD">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Receive triple [ICON_GOLD] Gold from Barbarian encampments and pillaging Cities. Land units gain the Amphibious promotion and ignore terrain costs when traveling along or across rivers.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_TRAIT_AMPHIB_WARLORD" />
+		<Row Tag="TXT_KEY_TRAIT_AMPHIB_WARLORD">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Receive triple [ICON_GOLD] Gold from Barbarian encampments and pillaging Cities. Land units gain the Amphibious promotion and ignore terrain costs when traveling along or across rivers.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

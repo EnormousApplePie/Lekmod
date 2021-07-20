@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mod id="d4d41747-f4f3-4861-9346-928634c8c68e" version="2">
+  <Properties>
+    <Name>MC's Greek Civilisation Split</Name>
+    <Teaser>Splits Greece into [COLOR_POSITIVE_TEXT]Athens, Macedon, Pergamon[ENDCOLOR] and [COLOR_POSITIVE_TEXT]Sparta[ENDCOLOR]</Teaser>
+    <Description>Splits Greece into [COLOR_POSITIVE_TEXT]Athens, Macedon, Pergamon[ENDCOLOR] and [COLOR_POSITIVE_TEXT]Sparta[ENDCOLOR]</Description>
+    <Authors>More Civilisations</Authors>
+    <HideSetupGame>0</HideSetupGame>
+    <AffectsSavedGames>1</AffectsSavedGames>
+    <MinCompatibleSaveVersion>0</MinCompatibleSaveVersion>
+    <SupportsSinglePlayer>1</SupportsSinglePlayer>
+    <SupportsMultiplayer>1</SupportsMultiplayer>
+    <SupportsHotSeat>1</SupportsHotSeat>
+    <SupportsMac>1</SupportsMac>
+    <ReloadAudioSystem>1</ReloadAudioSystem>
+    <ReloadLandmarkSystem>0</ReloadLandmarkSystem>
+    <ReloadStrategicViewSystem>1</ReloadStrategicViewSystem>
+    <ReloadUnitSystem>1</ReloadUnitSystem>
+  </Properties>
+  <Dependencies>
+    <Dlc id="6DA07636-4123-4018-B643-6575B4EC336B" minversion="0" maxversion="999" />
+  </Dependencies>
+  <References>
+    <Mod id="31a31d1c-b9d7-45e1-842c-23232d66cd47" minversion="0" maxversion="999" title="JFD's Cultural Diversity" />
+    <Mod id="eea66053-7579-481a-bb8d-2f3959b59974" minversion="0" maxversion="999" title="JFD's Rise to Power" />
+    <Mod id="1f941088-b185-4159-865c-472df81247b2" minversion="0" maxversion="999" title="Sukritact's Events and Decisions" />
+    <Mod id="36e88483-48fe-4545-b85f-bafc50dde315" minversion="0" maxversion="999" title="Yet not Another Earth Map Pack" />
+    <Mod id="e576894a-ed2b-4033-be14-ed1c8ceb81d3" minversion="0" maxversion="999" title="Hazel's Map Labels" />
+    <Mod id="7fdd72a5-d4ae-441c-bc4e-2e3d2a26cff4" minversion="0" maxversion="999" title="Ethnic Units" />
+    <Mod id="8670da15-d435-44ea-9758-7438cb321411" minversion="0" maxversion="999" title="RED Modpack" />
+    <Mod id="d1b6328c-ff44-4b0d-aad7-c657f83610cd" minversion="0" maxversion="999" title="Community Patch" />
+    <Mod id="1153b26a-69fd-4cd5-899c-a8ba8e0e5e5d" minversion="0" maxversion="999" title="Civ IV Traits" />
+    <Mod id="6676902b-b907-45f1-8db5-32dcb2135eee" minversion="0" maxversion="999" title="JFD's ExCE" />
+    <Mod id="6010e6f6-918e-48b8-9332-d60783bd8fb5" minversion="0" maxversion="999" title="Historical Religions" />
+    <Mod id="a19351c5-c0b3-4b07-8695-4affaa199949" minversion="0" maxversion="999" title="JFD and Pouakai's Mercenaries" />
+    <Mod id="10e9728f-d61c-4317-be4f-7d52d6bae6f4" minversion="0" maxversion="999" title="JFD's Cities in Development" />
+  </References>
+  <Blocks />
+  <Files>
+    <File md5="800580FE2364F00A0B8AB388E20BF263" import="1">Art/Atlases/MC_GreeceAlphaAtlas_128.dds</File>
+    <File md5="12183AB70031463DDD4A26EC56943973" import="1">Art/Atlases/MC_GreeceAlphaAtlas_16.dds</File>
+    <File md5="06A300E7F52518843180DBFF5850CC1C" import="1">Art/Atlases/MC_GreeceAlphaAtlas_22.dds</File>
+    <File md5="1385A37F9C00CC7B4DAD1FF49EB15DE0" import="1">Art/Atlases/MC_GreeceAlphaAtlas_24.dds</File>
+    <File md5="09D71A705EEB6FC5B367658FF0FA2EC4" import="1">Art/Atlases/MC_GreeceAlphaAtlas_256.dds</File>
+    <File md5="C17B4F366BC91B0F7DF4FEB3FDE25C6C" import="1">Art/Atlases/MC_GreeceAlphaAtlas_32.dds</File>
+    <File md5="C80B22208991641A23452C50CD66F83E" import="1">Art/Atlases/MC_GreeceAlphaAtlas_45.dds</File>
+    <File md5="6DF8FCE539BCC4EFCB9EEA2187F9D6DD" import="1">Art/Atlases/MC_GreeceAlphaAtlas_48.dds</File>
+    <File md5="7ACCB7BB004406C9B4E60C9C3FE9E52C" import="1">Art/Atlases/MC_GreeceAlphaAtlas_64.dds</File>
+    <File md5="37D48734A9650069FF3F7BDA4DF1A48F" import="1">Art/Atlases/MC_GreeceAlphaAtlas_80.dds</File>
+    <File md5="32194B9A0887CA7FD9B2B11527EAC813" import="1">Art/Atlases/MC_GreeceAtlas_128.dds</File>
+    <File md5="4A43FC98E90EBF3AD723CEE32C1C1B80" import="1">Art/Atlases/MC_GreeceAtlas_256.dds</File>
+    <File md5="31137107C440C2D26993FD56AB6B1552" import="1">Art/Atlases/MC_GreeceAtlas_32.dds</File>
+    <File md5="9FDF6960232B65B9122BEF7FA11D75A1" import="1">Art/Atlases/MC_GreeceAtlas_45.dds</File>
+    <File md5="A191FC2F46C86E9387BA21CF30704BBE" import="1">Art/Atlases/MC_GreeceAtlas_64.dds</File>
+    <File md5="619D4D31E34D835C5ED248B52081FC8B" import="1">Art/Atlases/MC_GreeceAtlas_80.dds</File>
+    <File md5="A7CBEB0112664B5D9D621690416A11A5" import="1">Art/Scenes/MC_Athens_DOM.dds</File>
+    <File md5="1FB47869ADDCBCA39393BF1BAFBC6E3E" import="1">Art/Scenes/MC_Athens_Map.dds</File>
+    <File md5="13552CCEEAB0DCB4EC590C2AE70ADD77" import="1">Art/Scenes/MC_Pergamon_DOM.dds</File>
+    <File md5="8E95BB1492652A46CC32DC150EDBD093" import="1">Art/Scenes/MC_Pergamon_Leaderhead.dds</File>
+    <File md5="D3E5552C0311581F48A369DEC77966BC" import="1">Art/Scenes/MC_Sparta_DOM.dds</File>
+    <File md5="1E933C2BE653BF40E2109218E8454FDA" import="1">Art/Scenes/MC_Sparta_Map.dds</File>
+    <File md5="DFE0BCDE1D32880F1F5DDD9E30CFA128" import="1">Art/Scenes/MC_Sparta_Leaderhead.dds</File>
+    <File md5="A97F6A171104E29C4669F23A806D02B0" import="1">Art/Scenes/MC_Pergamon_Map.dds</File>
+    <File md5="676E39D5ACD10B4B0D1B598233245E7D" import="1">Art/Scenes/MC_Athens_Leaderhead.dds</File>
+    <File md5="FB547D0A6A66BAC267D6DBFCDBFD2AD8" import="1">Art/Unit Models/Assault Trieres/Epibatas_Naval.fxsxml</File>
+    <File md5="F61DD09C7B805F20505BD7D8F9072A34" import="1">Art/Unit Models/Assault Trieres/Epibatas_Naval.gr2</File>
+    <File md5="6C12F30D6991BAB755130EC9EE594463" import="1">Art/Unit Models/Assault Trieres/epibatas_naval_diff.dds</File>
+    <File md5="9309774C33232FFC6E47E09F56BDD3C5" import="1">Art/Unit Models/Edited_Animations/edited_aim_attack_city_to_run.dge</File>
+    <File md5="FA9CE373BB700CFCD8F0FA3A955B1E69" import="1">Art/Unit Models/Edited_Animations/edited_aim_attack_to_run_graph.dge</File>
+    <File md5="BA4F6AEB27527AB47CC284B27C8288A8" import="1">Art/Unit Models/Edited_Animations/edited_aim_bombard_defend_loop_graph.dge</File>
+    <File md5="933E4A224EFE615D537517EFE06B34BC" import="1">Art/Unit Models/Edited_Animations/edited_aim_civilian_activate_captured.dge</File>
+    <File md5="87476FD4384999BCCBF43AEEF9B3A652" import="1">Art/Unit Models/Edited_Animations/edited_aim_civilian_death_final.dge</File>
+    <File md5="9AB143ED19D8B61A7794C90D5D65EE97" import="1">Art/Unit Models/Edited_Animations/edited_aim_civilian_enter_bombard_defend.dge</File>
+    <File md5="7BCAF33AE57FA6E4F56F767E1799955E" import="1">Art/Unit Models/Edited_Animations/edited_aim_civilian_state_01.fsmxml</File>
+    <File md5="CD02EC91E73F396297C2B3434A8BA034" import="1">Art/Unit Models/Edited_Animations/edited_aim_combat_ready_graph.dge</File>
+    <File md5="6B4338103039DFBD431A44C89DA198D6" import="1">Art/Unit Models/Edited_Animations/edited_aim_death_final_graph.dge</File>
+    <File md5="F9F109E1E43FD75DFC765D9B3A43CE48" import="1">Art/Unit Models/Edited_Animations/edited_aim_death_graph.dge</File>
+    <File md5="014FBFBCB17012BEC0B32D9FFDBF721E" import="1">Art/Unit Models/Edited_Animations/edited_aim_enter_bombard_defend_graph.dge</File>
+    <File md5="7A5A0ADFBBB05D6E4FB126383988B264" import="1">Art/Unit Models/Edited_Animations/edited_aim_enter_combat_ready_graph.dge</File>
+    <File md5="34488A641F9D948D865BBECF8B3878DF" import="1">Art/Unit Models/Edited_Animations/edited_aim_enter_fortify.dge</File>
+    <File md5="ADAECB630FF73EEFBBE3EE3661F1819C" import="1">Art/Unit Models/Edited_Animations/edited_aim_enter_sleep_civilian.dge</File>
+    <File md5="F245B80AAC985C0011FEE5CBF3FB25DF" import="1">Art/Unit Models/Edited_Animations/edited_aim_fidgets_graph.dge</File>
+    <File md5="65FED4E2E20D7512D6B5E92C1CD37EF7" import="1">Art/Unit Models/Edited_Animations/edited_aim_fortify_fidget_graph.dge</File>
+    <File md5="F758D65157483D32C6763F817B216937" import="1">Art/Unit Models/Edited_Animations/edited_aim_fortify_graph.dge</File>
+    <File md5="C2C8D0ADFA388980A03E814BF2B335F5" import="1">Art/Unit Models/Edited_Animations/edited_aim_fortify_leave_graph.dge</File>
+    <File md5="AD4E2A013238410D8FCE2666AEB1DC08" import="1">Art/Unit Models/Edited_Animations/edited_aim_fortify_to_idle_a.dge</File>
+    <File md5="EF6168FF0903555EDCBB9FD626CFB00F" import="1">Art/Unit Models/Edited_Animations/edited_aim_idle_graph.dge</File>
+    <File md5="268797759660DA55A0F792A966EB586B" import="1">Art/Unit Models/Edited_Animations/edited_aim_idle_offset_continue_true_graph.dge</File>
+    <File md5="C4D8B3EB164B5525B92514645521D0C3" import="1">Art/Unit Models/Edited_Animations/edited_aim_leave_bombard_defend_trans_idle_a_graph.dge</File>
+    <File md5="189E34C23C7A19F2C190E1ACB4212C91" import="1">Art/Unit Models/Edited_Animations/edited_aim_leave_combat_ready.dge</File>
+    <File md5="225D164523FE1270306005CCD71B075A" import="1">Art/Unit Models/Edited_Animations/edited_aim_melee_attacks.dge</File>
+    <File md5="71E511A38054110B5D9A23B311AC0104" import="1">Art/Unit Models/Edited_Animations/edited_aim_modern_ship_attacks.dge</File>
+    <File md5="BA0D234DE017F5CEB6DEF37CE7DFE384" import="1">Art/Unit Models/Edited_Animations/edited_aim_ms_attack_city_to_run.dge</File>
+    <File md5="75D8FBC3A2C4D56B1089F20A2E9D9DA1" import="1">Art/Unit Models/Edited_Animations/edited_aim_ms_attack_to_run_graph.dge</File>
+    <File md5="82C3CE94F7827159DEA80CCF8AAF5D9E" import="1">Art/Unit Models/Edited_Animations/edited_aim_ms_bombard_defend_loop_graph.dge</File>
+    <File md5="FF8A929D15C8ECE5089A806AFBC80C8E" import="1">Art/Unit Models/Edited_Animations/edited_aim_ms_civilian_activate_captured.dge</File>
+    <File md5="1AE83D5303F9671277D4FEC7F327A2BB" import="1">Art/Unit Models/Edited_Animations/edited_aim_ms_civilian_death_final.dge</File>
+    <File md5="0021307C276C3516A57BBADDAC07ACE7" import="1">Art/Unit Models/Edited_Animations/edited_aim_ms_civilian_enter_bombard_defend.dge</File>
+    <File md5="C3686411D2E96A715267F9A5C72A5EB1" import="1">Art/Unit Models/Edited_Animations/edited_aim_ms_combat_ready_graph.dge</File>
+    <File md5="FE5B902745DEE0860ECEE5BA421D141F" import="1">Art/Unit Models/Edited_Animations/edited_aim_ms_death_final_graph.dge</File>
+    <File md5="21659FCED7A08D6FB464A693D0E82597" import="1">Art/Unit Models/Edited_Animations/edited_aim_ms_death_graph.dge</File>
+    <File md5="B66FF4B10706BE666A916B917D14AC83" import="1">Art/Unit Models/Edited_Animations/edited_aim_ms_enter_bombard_defend_graph.dge</File>
+    <File md5="9B18015ACB470CD66C3294FDA203C27E" import="1">Art/Unit Models/Edited_Animations/edited_aim_ms_enter_combat_ready_graph.dge</File>
+    <File md5="FD1B5EABA624344B944CD37BD71DE110" import="1">Art/Unit Models/Edited_Animations/edited_aim_ms_enter_fortify.dge</File>
+    <File md5="2470ABA98F462C27DD3C1AC013BD3AC6" import="1">Art/Unit Models/Edited_Animations/edited_aim_ms_enter_sleep_civilian.dge</File>
+    <File md5="04680D47D3519A5FFB950F1147D7B1D4" import="1">Art/Unit Models/Edited_Animations/edited_aim_ms_fidgets_graph.dge</File>
+    <File md5="327CB90C3BCF5BAC71F77DA677997631" import="1">Art/Unit Models/Edited_Animations/edited_aim_ms_fortify_fidget_graph.dge</File>
+    <File md5="998F9D5F9FCAFE31E97022C5C50C67E8" import="1">Art/Unit Models/Edited_Animations/edited_aim_ms_fortify_graph.dge</File>
+    <File md5="39370F05801D7D017D605CE224EE11E7" import="1">Art/Unit Models/Edited_Animations/edited_aim_ms_fortify_leave_graph.dge</File>
+    <File md5="7BC464D9DF686D87145362DEE0F68A04" import="1">Art/Unit Models/Edited_Animations/edited_aim_ms_fortify_to_idle_a.dge</File>
+    <File md5="EF3E7C919600B18CDC0D6F1BCDD45F64" import="1">Art/Unit Models/Edited_Animations/edited_aim_ms_idle_graph.dge</File>
+    <File md5="2F7C2570D10BD4E5879F105F9BB3BC53" import="1">Art/Unit Models/Edited_Animations/edited_aim_ms_idle_offset_continue_true_graph.dge</File>
+    <File md5="7AAA31587E2E15A0B887A31C861D4B45" import="1">Art/Unit Models/Edited_Animations/edited_aim_ms_leave_bombard_defend_trans_idle_a_graph.dge</File>
+    <File md5="4BB9881AAB8B9F3571AA787BB89B4FF1" import="1">Art/Unit Models/Edited_Animations/edited_aim_ms_leave_combat_ready.dge</File>
+    <File md5="2937CE1A002CB18C85FA2E3E63221139" import="1">Art/Unit Models/Edited_Animations/edited_aim_ms_melee_attacks.dge</File>
+    <File md5="E538938BAD81B88082C8DF076514653E" import="1">Art/Unit Models/Edited_Animations/edited_aim_ms_modern_ship_attacks.dge</File>
+    <File md5="DBFC96AE4406957395EC439CEFF8584A" import="1">Art/Unit Models/Edited_Animations/edited_aim_ms_running_loop.dge</File>
+    <File md5="BD96EBE9953A41BD78D450DC26561AFC" import="1">Art/Unit Models/Edited_Animations/edited_aim_ms_run_no_charge_loop.dge</File>
+    <File md5="91A772D3D07C64329ED801632EB689C7" import="1">Art/Unit Models/Edited_Animations/edited_aim_ms_run_start_civilian.dge</File>
+    <File md5="C017AA3F2D83AAB3B6B939B6418071A3" import="1">Art/Unit Models/Edited_Animations/edited_aim_ms_start_running.dge</File>
+    <File md5="34D584D857E6CBA51D87EE2FD6950EC6" import="1">Art/Unit Models/Edited_Animations/edited_aim_ms_stop_running.dge</File>
+    <File md5="8D3450B63AF23F48CF9DEDC3B586B022" import="1">Art/Unit Models/Edited_Animations/edited_aim_ms_stop_running_civilian.dge</File>
+    <File md5="500F6DEDBDB767CAE8C964DBEE647459" import="1">Art/Unit Models/Edited_Animations/edited_aim_ms_transitions_for_idles.dge</File>
+    <File md5="A64E86033B61613B4F39979D5603E65F" import="1">Art/Unit Models/Edited_Animations/edited_aim_running_loop.dge</File>
+    <File md5="E38EAF3E95C835B93C7E7849A7F4F23B" import="1">Art/Unit Models/Edited_Animations/edited_aim_run_no_charge_loop.dge</File>
+    <File md5="9432853873B222F5AEF1CE53C1CD98DA" import="1">Art/Unit Models/Edited_Animations/edited_aim_run_start_civilian.dge</File>
+    <File md5="BCF1F945C0CBE7A1C9F62E5B46F84F99" import="1">Art/Unit Models/Edited_Animations/edited_aim_start_running.dge</File>
+    <File md5="7B0232A8BE345EB899FF221FBD7BDCFB" import="1">Art/Unit Models/Edited_Animations/edited_aim_stop_running.dge</File>
+    <File md5="38B813F99CCD01B77FB798D2AFE91571" import="1">Art/Unit Models/Edited_Animations/edited_aim_stop_running_civilian.dge</File>
+    <File md5="2506D6C118D6A9FB915723F731C95FD4" import="1">Art/Unit Models/Edited_Animations/edited_aim_transitions_for_idles.dge</File>
+    <File md5="E38F763EEDD8E5CA2320278CC1641F42" import="1">Art/Unit Models/Edited_Animations/edited_fx_triggers_antiair_vehicle_1gun.ftsxml</File>
+    <File md5="1091C411BFCA66D5EE74CEFFD6EE64DC" import="1">Art/Unit Models/Edited_Animations/edited_fx_triggers_antiair_vehicle_2gun.ftsxml</File>
+    <File md5="948F20768997973457FAD6CF0F58645E" import="1">Art/Unit Models/Edited_Animations/edited_fx_triggers_antiair_vehicle_3gun.ftsxml</File>
+    <File md5="76CCDC691B5CBE0C4F3A85BF0E796AA5" import="1">Art/Unit Models/Edited_Animations/edited_fx_triggers_antiair_vehicle_4gun.ftsxml</File>
+    <File md5="EDA5989385F1C83D85AD44E2B8028A1E" import="1">Art/Unit Models/Edited_Animations/edited_fx_triggers_artillery.ftsxml</File>
+    <File md5="AB180DC6BFF8E18757D23D554F80784A" import="1">Art/Unit Models/Edited_Animations/edited_fx_triggers_battleship.ftsxml</File>
+    <File md5="15D16F16B2DA12C59E1DB7565EBAC0ED" import="1">Art/Unit Models/Edited_Animations/edited_fx_triggers_battleship_4turret.ftsxml</File>
+    <File md5="57B853C5D7F32E9A1000E2F1341916A0" import="1">Art/Unit Models/Edited_Animations/edited_fx_triggers_Cruiser.ftsxml</File>
+    <File md5="6E0AFDF33543EE37A4770E8903EF3DCB" import="1">Art/Unit Models/Edited_Animations/edited_fx_triggers_destroyer.ftsxml</File>
+    <File md5="206D2B57E712C46A9B2B06BC024BA5F4" import="1">Art/Unit Models/Edited_Animations/edited_fx_triggers_EarlyJet.ftsxml</File>
+    <File md5="DE8146AC44DE6C704F0728782C1AE500" import="1">Art/Unit Models/Edited_Animations/edited_fx_triggers_EarlyTank_1gun.ftsxml</File>
+    <File md5="609CE0B64FB4B5781695009F0D913A51" import="1">Art/Unit Models/Edited_Animations/edited_fx_triggers_EarlyTank_2gun.ftsxml</File>
+    <File md5="6903919CC91F1C38BC07B661FDCF73AB" import="1">Art/Unit Models/Edited_Animations/edited_fx_triggers_fighter_2Propellers.ftsxml</File>
+    <File md5="57E688AF2606E958CA088BD229D43F5B" import="1">Art/Unit Models/Edited_Animations/edited_fx_triggers_infantry.ftsxml</File>
+    <File md5="5B811AF5596286D7B6DAD0FE8E8FA53B" import="1">Art/Unit Models/Edited_Animations/edited_fx_triggers_jetfighter.ftsxml</File>
+    <File md5="DD04F56BC976D1CC6D925C1677DCF2A2" import="1">Art/Unit Models/Edited_Animations/edited_fx_triggers_Katyusha.ftsxml</File>
+    <File md5="A08730646EFA18C9E3385EE7D59EA9DC" import="1">Art/Unit Models/Edited_Animations/edited_fx_triggers_modernarmor.ftsxml</File>
+    <File md5="6E33E758B853E1114BB487111B8FA075" import="1">Art/Unit Models/Edited_Animations/edited_fx_triggers_paratrooper.ftsxml</File>
+    <File md5="212745C0D1059F32FAC334A46B790713" import="1">Art/Unit Models/Edited_Animations/edited_fx_triggers_paratrooper_mg.ftsxml</File>
+    <File md5="108FD3B4BAAB4A605BF70CCD44F20E8B" import="1">Art/Unit Models/Edited_Animations/edited_fx_triggers_tank.ftsxml</File>
+    <File md5="2B8DD37B99816431055263F820529E18" import="1">Art/Unit Models/Edited_Animations/edited_fx_triggers_tank_lightfire.ftsxml</File>
+    <File md5="2C9B80EF7FD70EFAA250F616A4316DC2" import="1">Art/Unit Models/Edited_Animations/edited_fx_triggers_tank_mg_1gun.ftsxml</File>
+    <File md5="CCEE19B5A0E7AE186838E1A5A0EE0D33" import="1">Art/Unit Models/Edited_Animations/edited_fx_triggers_tank_mg_2gun.ftsxml</File>
+    <File md5="B233D27FC1FA1DB1127E263DC20D30DB" import="1">Art/Unit Models/Edited_Animations/edited_mechanized_aim_state_01.fsmxml</File>
+    <File md5="75C5BA4CEC139C9EAFA47AE912EAB3EC" import="1">Art/Unit Models/Edited_Animations/edited_modern_ship_aim_state_01.fsmxml</File>
+    <File md5="1BC5A1913DE2319B07AB4E6235327A9A" import="1">Art/Unit Models/MC_AthensAssaultTrieresFlag_32.dds</File>
+    <File md5="84826AD888BB9F29409912BEF9A963BB" import="1">Art/Unit Models/MC_MacedonPhalangitaiFlag_32.dds</File>
+    <File md5="0EEAD08DDE683416EAD862782194AE8D" import="1">Art/Unit Models/MC_PergamonRhodianSlingerFlag_32.dds</File>
+    <File md5="5464654ED623EF67404CF9A858AC6848" import="1">Art/Unit Models/Pergamene Slinger/u_pergamene_slinger.fxsxml</File>
+    <File md5="437BA5F73B7F143FD8DFAD60A9B8D109" import="1">Art/Unit Models/Pergamene Slinger/u_pergamene_slinger.gr2</File>
+    <File md5="D0D509397F104DF295E54AAF75560E5B" import="1">Art/Unit Models/Pergamene Slinger/u_pergamene_slinger_diff.dds</File>
+    <File md5="FE512B685A46436BED7945704064EEC5" import="1">Art/Unit Models/Phalangitai/Pikeman_Greece.blend</File>
+    <File md5="68306D2A9C378131D05FF015CD8DC845" import="1">Art/Unit Models/Phalangitai/Pikeman_Greece.dds</File>
+    <File md5="96BA511FBD7B719A1A1E5689FC5ED8CE" import="1">Art/Unit Models/Phalangitai/Pikeman_Greece.fxsxml</File>
+    <File md5="07CCF319CEDF9625C00CFD26E2601736" import="1">Art/Unit Models/Phalangitai/Pikeman_Greece.gr2</File>
+    <File md5="21A8A542450644107119EC0662AC6B5A" import="1">Art/Unit Models/Phalangitai/Pikeman_Greece_gloss.dds</File>
+    <File md5="5649611B34A1CAC34B2022FF88B7FE06" import="1">Art/Unit Models/sv_AthensAssaultTrieres.dds</File>
+    <File md5="40E3051A886E9A95B938E9A833C66F78" import="1">Art/Unit Models/sv_MacedonPhalangitai.dds</File>
+    <File md5="CB187D0CC53DA04D4C8B2D6BB35990CA" import="1">Art/Unit Models/sv_PergamonRhodianSlinger.dds</File>
+    <File md5="2A8CE4C3F1D60B68BFE9E30990111B09" import="0">Core/Art/ArtDefines/MC_AssaultTrieresDefines.sql</File>
+    <File md5="B034FB3472DA9C3B856449CD5047C409" import="0">Core/Art/ArtDefines/MC_RhodianSlingerDefines.sql</File>
+    <File md5="EE3C429E1F60D1D3B08AF0A93BCC22CB" import="0">Core/Art/ArtDefines/MC_PhalangitaiDefines.sql</File>
+    <File md5="8392D978D6F03DF0188F03065845E9F7" import="1">Core/Art/MC_Athens_Leaderhead.xml</File>
+    <File md5="C872738CA42EEEC446FA0118A6793B41" import="1">Core/Art/MC_Pergamon_Leaderhead.xml</File>
+    <File md5="17D9427D3F60FEC9C67D2614B1B54A88" import="1">Core/Art/MC_Sparta_Leaderhead.xml</File>
+    <File md5="ADE5AB706AD14066D208A4708191E824" import="0">Core/Buildings/MC_Greece_Buildings.xml</File>
+    <File md5="1D6321106016F7ACEC66325BFBA9E216" import="0">Core/Civilizations/MC_Greece_MinorCivFlavours.sql</File>
+    <File md5="36E3C2E085FED4C2D34A7908DEBA02BC" import="0">Core/Civilizations/MC_Greece_Civilizations.xml</File>
+    <File md5="7A16611EFAB397068840F6D683711410" import="0">Core/Civilizations/MC_Greece_MinorCivilizations.xml</File>
+    <File md5="6FCEC998DA38382BE21FF1C260F3EB86" import="0">Core/GameInfo/MC_Greece_Sounds.xml</File>
+    <File md5="07E35AD28A7BB9F9BC29CFD143B20C64" import="0">Core/GameInfo/MC_Greece_IconTextureAtlases.xml</File>
+    <File md5="FDC50AACA9292D5926F58209A1CDD6FF" import="0">Core/GameInfo/MC_Greece_Traits.xml</File>
+    <File md5="FA192E6AAEE28396FBBDFFADB5AD6013" import="0">Core/GameInfo/MC_Greece_Traits.sql</File>
+    <File md5="56CE284533B9EBC501D4895736930428" import="0">Core/Leaders/MC_Greece_LeaderFlavors.sql</File>
+    <File md5="B7764A638D58F81AF465FB36382D9617" import="0">Core/Leaders/MC_Greece_Leader.xml</File>
+    <File md5="222B62B729F4DAFAFC922070D251D627" import="0">Core/Text/MC_Greece_Text.xml</File>
+    <File md5="773CA943033FADC840E9041AA3EE7B8D" import="0">Core/Units/MC_Greece_UnitClasses.xml</File>
+    <File md5="38A4524BDB4BAA6F8E1DFD59716BC2DE" import="0">Core/Units/MC_Greece_Units.xml</File>
+    <File md5="392562745EB5077901FA6038840190B2" import="0">Core/Units/MC_Greece_UnitPromotions.xml</File>
+    <File md5="BB649E45F94B1E90CBD0AFB2E0B20690" import="1">Lua/Macedonian GG code/MacedonGAAtlas45.dds</File>
+    <File md5="D6BE45F4218DD19813B23BBD639A566B" import="1">Lua/Macedonian GG code/MacedonGAAtlas64.dds</File>
+    <File md5="CE97ECF08A96A5B22C18862EDCD66BD8" import="0">Lua/Macedonian GG code/MC_Macedon_GG_GA.lua</File>
+    <File md5="15206C888F7AFBBE5E8F1E67A9D528B2" import="0">Lua/Macedonian GG code/MC_Macedon_GG_GA.sql</File>
+    <File md5="1CF2DDD6CBC9800E492535A5ECEF41B2" import="1">Lua/Macedonian GG code/MC_Macedon_GG_GA.xml</File>
+    <File md5="E31AB6F0730CAC3333F2D28682DF8B36" import="1">Lua/Macedonian GG code/MC_Macedon_GG_GA_Bonus.lua</File>
+    <File md5="306F135F39305D3EA07372A2CFFFEC64" import="0">Lua/MC_AthensFunctions.lua</File>
+    <File md5="CCDC06541658921102F156149D064964" import="0">Lua/MC_MacedonFunctions.lua</File>
+    <File md5="2960731D3ED1ED80C1C389DE5C3EA515" import="0">Lua/MC_PergamonFunctions.lua</File>
+    <File md5="EA65843F0535FDEDE004924E5FD15737" import="0">Lua/MC_SpartaFunctions.lua</File>
+    <File md5="D63DC8BB6AA0F310DD55B264DB49C7E2" import="1">Lua/PlotIterators.lua</File>
+    <File md5="5754B1BE6E37A2F9D04D9D4149E5CDDF" import="1">Lua/SaveUtils.lua</File>
+    <File md5="7266002376FC8BFA79400DAB10FC7E9E" import="1">Sounds/MC_AthensPeace.mp3</File>
+    <File md5="29AE76C415658763BD97930BB425760B" import="1">Sounds/MC_AthensWar.mp3</File>
+    <File md5="048C3B1AE819AD7B2922D072DAA8ECF6" import="1">Sounds/MC_MacedonDoM.mp3</File>
+    <File md5="3D214A3D0FBFDF78D06F89BF82C876C5" import="1">Sounds/Alexander_Peace.mp3</File>
+    <File md5="20DA090C5A7E9E1CA815C88183449C94" import="1">Sounds/Alexander_War.mp3</File>
+    <File md5="26B60EFDA9D8F6514AE772E6D74F76F6" import="1">Sounds/MC_PergamonPeace.mp3</File>
+    <File md5="AEBC26F435C3453C847B638C28C801E0" import="1">Sounds/MC_PergamonWar.mp3</File>
+    <File md5="8AE492E8BBAE7184C59C829865E409A2" import="1">Sounds/MC_SpartaPeace.mp3</File>
+    <File md5="BA0B74BB2B34D3494096B80DCF1800EF" import="1">Sounds/MC_SpartaWar.mp3</File>
+    <File md5="4DF9A52C4C9B0828506D09C9E160BD9B" import="1">Sounds/MC_SpartaDoM.mp3</File>
+    <File md5="533ED268A4D9AB59093A527F2EEBDC9A" import="1">Sounds/MC_AthensDoM.mp3</File>
+    <File md5="709D6DFAC8D721364E977A8238B0FF8E" import="1">Sounds/MC_PergamonDoM.mp3</File>
+    <File md5="E6F65C00788BF7A81F8FC4E7EB7A1C2E" import="1">Support/event_mc_eleusinian.dds</File>
+    <File md5="B0EC1D77FBC73FE2CEB941D689C3BFF5" import="1">Support/event_mc_olympics.dds</File>
+    <File md5="3FA4FD4AC290D5C741BFEB436082EA09" import="1">Support/event_mc_thesmophoria.dds</File>
+    <File md5="336618C0D0435EA7DB454178F115FA56" import="1">Support/gw_mc_dying_gaul.dds</File>
+    <File md5="20324880256E21E124843DD14F88B44F" import="1">Support/MC_Greece_Decisions.lua</File>
+    <File md5="A97F9DEE49BF1C07E6D540821E091EC3" import="0">Support/MC_Greece_ModSupport.xml</File>
+    <File md5="73A86AC73279A12023DD58DC9F8B2DB2" import="1">Support/MC_Greece_Events.lua</File>
+    <File md5="42851D7FBD5421DF3749D779B9FEE2C0" import="0">Support/MC_Greece_ModSupport.sql</File>
+  </Files>
+  <Actions>
+    <OnModActivated>
+      <UpdateDatabase>Core/Art/MC_Athens_Leaderhead.xml</UpdateDatabase>
+      <UpdateDatabase>Core/Art/MC_Pergamon_Leaderhead.xml</UpdateDatabase>
+      <UpdateDatabase>Core/Art/MC_Sparta_Leaderhead.xml</UpdateDatabase>
+      <UpdateDatabase>Core/Art/ArtDefines/MC_AssaultTrieresDefines.sql</UpdateDatabase>
+      <UpdateDatabase>Core/Art/ArtDefines/MC_PhalangitaiDefines.sql</UpdateDatabase>
+      <UpdateDatabase>Core/Art/ArtDefines/MC_RhodianSlingerDefines.sql</UpdateDatabase>
+      <UpdateDatabase>Core/Buildings/MC_Greece_Buildings.xml</UpdateDatabase>
+      <UpdateDatabase>Core/Civilizations/MC_Greece_Civilizations.xml</UpdateDatabase>
+      <UpdateDatabase>Core/Civilizations/MC_Greece_MinorCivFlavours.sql</UpdateDatabase>
+      <UpdateDatabase>Core/Civilizations/MC_Greece_MinorCivilizations.xml</UpdateDatabase>
+      <UpdateDatabase>Core/GameInfo/MC_Greece_IconTextureAtlases.xml</UpdateDatabase>
+      <UpdateDatabase>Core/GameInfo/MC_Greece_Sounds.xml</UpdateDatabase>
+      <UpdateDatabase>Core/GameInfo/MC_Greece_Traits.sql</UpdateDatabase>
+      <UpdateDatabase>Core/GameInfo/MC_Greece_Traits.xml</UpdateDatabase>
+      <UpdateDatabase>Core/Leaders/MC_Greece_Leader.xml</UpdateDatabase>
+      <UpdateDatabase>Core/Leaders/MC_Greece_LeaderFlavors.sql</UpdateDatabase>
+      <UpdateDatabase>Core/Text/MC_Greece_Text.xml</UpdateDatabase>
+      <UpdateDatabase>Core/Units/MC_Greece_UnitClasses.xml</UpdateDatabase>
+      <UpdateDatabase>Core/Units/MC_Greece_UnitPromotions.xml</UpdateDatabase>
+      <UpdateDatabase>Core/Units/MC_Greece_Units.xml</UpdateDatabase>
+      <UpdateDatabase>Lua/Macedonian GG code/MC_Macedon_GG_GA.sql</UpdateDatabase>
+      <UpdateDatabase>Support/MC_Greece_ModSupport.xml</UpdateDatabase>
+      <UpdateDatabase>Support/MC_Greece_ModSupport.sql</UpdateDatabase>
+    </OnModActivated>
+  </Actions>
+  <EntryPoints>
+    <EntryPoint type="InGameUIAddin" file="Lua/MC_MacedonFunctions.lua">
+      <Name>MacedonFunctions</Name>
+      <Description>Stuff for Macedon</Description>
+    </EntryPoint>
+    <EntryPoint type="InGameUIAddin" file="Lua/MC_PergamonFunctions.lua">
+      <Name>PergamonFunctions</Name>
+      <Description>Stuff for Pergamon</Description>
+    </EntryPoint>
+    <EntryPoint type="InGameUIAddin" file="Lua/MC_SpartaFunctions.lua">
+      <Name>SpartaFunctions</Name>
+      <Description>Stuff for Sparta</Description>
+    </EntryPoint>
+    <EntryPoint type="InGameUIAddin" file="Lua/MC_AthensFunctions.lua">
+      <Name>AthensFunctions</Name>
+      <Description>Stuff for Athens</Description>
+    </EntryPoint>
+    <EntryPoint type="InGameUIAddin" file="Lua/Macedonian GG code/MC_Macedon_GG_GA.lua">
+      <Name>Macedon_GG_GA</Name>
+      <Description>Golden Ages from Great Generals for Macedon</Description>
+    </EntryPoint>
+  </EntryPoints>
+</Mod>

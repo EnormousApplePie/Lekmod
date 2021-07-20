@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 6/9/2015 11:33:25 PM -->
+<GameData>
+
+	<!-- WARRIOR CODE -->
+	<Policies>
+		<Update>
+			<Set BaseFreeUnits="4" GoldFromKills="100" GreatGeneralRateModifier="0" />
+			<Where Type="POLICY_WARRIOR_CODE" />
+		</Update>
+	</Policies>
+	<Policy_FreeUnitClasses>
+		<Delete PolicyType="POLICY_WARRIOR_CODE" UnitClassType="UNITCLASS_GREAT_GENERAL" />
+		<Row>
+			<PolicyType>POLICY_WARRIOR_CODE</PolicyType>
+			<UnitClassType>UNITCLASS_WARRIOR</UnitClassType>
+			<Count>2</Count>
+		</Row>
+	</Policy_FreeUnitClasses>
+	<Policy_UnitCombatProductionModifiers>
+		<Delete PolicyType="POLICY_WARRIOR_CODE" UnitCombatType="UNITCOMBAT_MELEE" />
+	</Policy_UnitCombatProductionModifiers>
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_POLICY_WARRIOR_CODE_HELP" />
+		<Row Tag="TXT_KEY_POLICY_WARRIOR_CODE_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Warrior Code[ENDCOLOR][NEWLINE]4 units are maintenance free, and receive 2 Warriors immediately. Gain [ICON_GOLD] Gold for each enemy unit killed.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_POLICY_WARRIOR_CODE_HELP" />
+		<Row Tag="TXT_KEY_POLICY_WARRIOR_CODE_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Warrior Code[ENDCOLOR][NEWLINE]4 units are maintenance free, and receive 2 Warriors immediately. Gain [ICON_GOLD] Gold for each enemy unit killed.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_POLICY_WARRIOR_CODE_HELP" />
+		<Row Tag="TXT_KEY_POLICY_WARRIOR_CODE_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Warrior Code[ENDCOLOR][NEWLINE]4 units are maintenance free, and receive 2 Warriors immediately. Gain [ICON_GOLD] Gold for each enemy unit killed.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_POLICY_WARRIOR_CODE_HELP" />
+		<Row Tag="TXT_KEY_POLICY_WARRIOR_CODE_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Warrior Code[ENDCOLOR][NEWLINE]4 units are maintenance free, and receive 2 Warriors immediately. Gain [ICON_GOLD] Gold for each enemy unit killed.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

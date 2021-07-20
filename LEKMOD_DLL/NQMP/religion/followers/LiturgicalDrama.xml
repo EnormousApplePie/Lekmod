@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2016-09-25 05:44:53 -->
+<GameData>
+
+	<!-- May purchase Amphitheaters, Opera Houses, and Broadcast Towers with Faith -->
+	<Beliefs>
+		<Update>
+			<Set MinFollowers="0" />
+			<Where Type="BELIEF_LITURGICAL_DRAMA" />
+		</Update>
+	</Beliefs>
+	<Belief_BuildingClassFaithPurchase>
+		<Row>
+			<BeliefType>BELIEF_LITURGICAL_DRAMA</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_AMPHITHEATER</BuildingClassType>
+		</Row>
+		<Row>
+			<BeliefType>BELIEF_LITURGICAL_DRAMA</BeliefType>
+			<BuildingClassType>BUILDING_CEILIDH_HALL</BuildingClassType>
+		</Row>
+		<Row>
+			<BeliefType>BELIEF_LITURGICAL_DRAMA</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_OPERA_HOUSE</BuildingClassType>
+		</Row>
+		<Row>
+			<BeliefType>BELIEF_LITURGICAL_DRAMA</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_BROADCAST_TOWER</BuildingClassType>
+		</Row>
+	</Belief_BuildingClassFaithPurchase>
+	<Buildings>
+		<Update>
+			<Set FaithCost="100" UnlockedByBelief="true" />
+			<Where Type="BUILDING_AMPHITHEATER" />
+		</Update>
+		<Update>
+			<Set FaithCost="200" UnlockedByBelief="true" />
+			<Where Type="BUILDING_OPERA_HOUSE" />
+		</Update>
+		<Update>
+			<Set FaithCost="200" UnlockedByBelief="true" />
+			<Where Type="BUILDING_CEILIDH_HALL" />
+		</Update>
+		<Update>
+			<Set FaithCost="500" UnlockedByBelief="true" />
+			<Where Type="BUILDING_BROADCAST_TOWER" />
+		</Update>
+	</Buildings>
+	
+	<Belief_BuildingClassYieldChanges>
+		<Delete BeliefType="BELIEF_LITURGICAL_DRAMA" />
+	</Belief_BuildingClassYieldChanges>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_BELIEF_LITURGICAL_DRAMA" />
+		<Row Tag="TXT_KEY_BELIEF_LITURGICAL_DRAMA">
+			<Text>May purchase Amphitheaters, Opera Houses, and Broadcast Towers with [ICON_PEACE] Faith</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_BELIEF_LITURGICAL_DRAMA" />
+		<Row Tag="TXT_KEY_BELIEF_LITURGICAL_DRAMA">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]May purchase Amphitheaters, Opera Houses, and Broadcast Towers with [ICON_PEACE] Faith</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_BELIEF_LITURGICAL_DRAMA" />
+		<Row Tag="TXT_KEY_BELIEF_LITURGICAL_DRAMA">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]May purchase Amphitheaters, Opera Houses, and Broadcast Towers with [ICON_PEACE] Faith</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_BELIEF_LITURGICAL_DRAMA" />
+		<Row Tag="TXT_KEY_BELIEF_LITURGICAL_DRAMA">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]May purchase Amphitheaters, Opera Houses, and Broadcast Towers with [ICON_PEACE] Faith</Text>
+		</Row>
+	</Language_RU_RU>
+	
+</GameData>

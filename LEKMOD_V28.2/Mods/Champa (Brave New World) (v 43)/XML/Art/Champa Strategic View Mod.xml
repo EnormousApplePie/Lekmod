@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by Tomatekh-->
+<GameData>
+	<ArtDefine_StrategicView>
+		<Replace>
+			<StrategicViewType>ART_DEF_UNIT_U_CHAM_SIEGE_ELEPHANT</StrategicViewType>
+			<TileType>Unit</TileType>
+			<Asset>sv_ChamUnitMod.dds</Asset>
+		</Replace>
+		<Replace>
+			<StrategicViewType>ART_DEF_IMPROVEMENT_CHAMPA_WELL</StrategicViewType>
+			<TileType>Improvement</TileType>
+			<Asset>sv_Square_Well.dds</Asset>
+		</Replace>
+	</ArtDefine_StrategicView>
+</GameData>

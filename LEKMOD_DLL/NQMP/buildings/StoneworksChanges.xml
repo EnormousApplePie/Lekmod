@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 4/22/2015 10:50:33 PM -->
+<GameData>
+	
+	<!-- Allow Stoneworks on Plains -->
+	<Buildings>
+		<Update>
+			<Set ProhibitedCityTerrain="NULL" />
+			<Where BuildingClass="BUILDINGCLASS_STONE_WORKS" />
+		</Update>
+	</Buildings>
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_BUILDING_STONE_WORKS_HELP" />
+		<Row Tag="TXT_KEY_BUILDING_STONE_WORKS_HELP">
+			<Text>Each source of [ICON_RES_MARBLE] Marble and [ICON_RES_STONE] Stone worked by this City produce +1 [ICON_PRODUCTION] Production.[NEWLINE][NEWLINE]City must have at least one of these resources improved with a Quarry.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_BUILDING_STONE_WORKS_STRATEGY" />
+		<Row Tag="TXT_KEY_BUILDING_STONE_WORKS_STRATEGY">
+			<Text>Stone Works can only be constructed in a city near an improved [ICON_RES_STONE] Stone or [ICON_RES_MARBLE] Marble resource. Stone Works increase a city's [ICON_PRODUCTION] production.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_BUILDING_STONE_WORKS_HELP" />
+		<Row Tag="TXT_KEY_BUILDING_STONE_WORKS_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Each source of [ICON_RES_MARBLE] Marble and [ICON_RES_STONE] Stone worked by this City produce +1 [ICON_PRODUCTION] Production.[NEWLINE][NEWLINE]City must have at least one of these resources improved with a Quarry.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_BUILDING_STONE_WORKS_STRATEGY" />
+		<Row Tag="TXT_KEY_BUILDING_STONE_WORKS_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Stone Works can only be constructed in a city near an improved [ICON_RES_STONE] Stone or [ICON_RES_MARBLE] Marble resource. Stone Works increase a city's [ICON_PRODUCTION] production.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_BUILDING_STONE_WORKS_HELP" />
+		<Row Tag="TXT_KEY_BUILDING_STONE_WORKS_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Each source of [ICON_RES_MARBLE] Marble and [ICON_RES_STONE] Stone worked by this City produce +1 [ICON_PRODUCTION] Production.[NEWLINE][NEWLINE]City must have at least one of these resources improved with a Quarry.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_BUILDING_STONE_WORKS_STRATEGY" />
+		<Row Tag="TXT_KEY_BUILDING_STONE_WORKS_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Stone Works can only be constructed in a city near an improved [ICON_RES_STONE] Stone or [ICON_RES_MARBLE] Marble resource. Stone Works increase a city's [ICON_PRODUCTION] production.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_BUILDING_STONE_WORKS_HELP" />
+		<Row Tag="TXT_KEY_BUILDING_STONE_WORKS_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Each source of [ICON_RES_MARBLE] Marble and [ICON_RES_STONE] Stone worked by this City produce +1 [ICON_PRODUCTION] Production.[NEWLINE][NEWLINE]City must have at least one of these resources improved with a Quarry.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_BUILDING_STONE_WORKS_STRATEGY" />
+		<Row Tag="TXT_KEY_BUILDING_STONE_WORKS_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Stone Works can only be constructed in a city near an improved [ICON_RES_STONE] Stone or [ICON_RES_MARBLE] Marble resource. Stone Works increase a city's [ICON_PRODUCTION] production.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2016-09-24 14:15:24 -->
+<GameData>
+
+	<!-- +1 Production from Fishing Boats and Atolls. -->
+	<Beliefs>
+		<Row>
+			<Type>BELIEF_OCEANS_BOUNTY</Type>
+			<Description>TXT_KEY_BELIEF_OCEANS_BOUNTY</Description>
+			<ShortDescription>TXT_KEY_BELIEF_OCEANS_BOUNTY_SHORT</ShortDescription>
+			<Pantheon>true</Pantheon>
+		</Row>
+	</Beliefs>
+	<Belief_ImprovementYieldChanges>
+		<Row>
+			<BeliefType>BELIEF_OCEANS_BOUNTY</BeliefType>
+			<ImprovementType>IMPROVEMENT_FISHING_BOATS</ImprovementType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>1</Yield>
+		</Row>
+	</Belief_ImprovementYieldChanges>
+	<Belief_FeatureYieldChanges>
+		<Row>
+			<BeliefType>BELIEF_OCEANS_BOUNTY</BeliefType>
+			<FeatureType>FEATURE_ATOLL</FeatureType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>1</Yield>
+		</Row>
+	</Belief_FeatureYieldChanges>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Row Tag="TXT_KEY_BELIEF_OCEANS_BOUNTY">
+			<Text>+1 [ICON_PRODUCTION] Production from Fishing Boats and Atolls</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BELIEF_OCEANS_BOUNTY_SHORT">
+			<Text>Ocean's Bounty</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Row Tag="TXT_KEY_BELIEF_OCEANS_BOUNTY">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]+1 [ICON_PRODUCTION] Production from Fishing Boats and Atolls</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BELIEF_OCEANS_BOUNTY_SHORT">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Ocean's Bounty</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Row Tag="TXT_KEY_BELIEF_OCEANS_BOUNTY">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]+1 [ICON_PRODUCTION] Production from Fishing Boats and Atolls</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BELIEF_OCEANS_BOUNTY_SHORT">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Ocean's Bounty</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Row Tag="TXT_KEY_BELIEF_OCEANS_BOUNTY">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]+1 [ICON_PRODUCTION] Production from Fishing Boats and Atolls</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BELIEF_OCEANS_BOUNTY_SHORT">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Ocean's Bounty</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

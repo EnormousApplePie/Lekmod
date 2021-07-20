@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 5/4/2017 6:06:08 PM -->
+<GameData>
+
+	<!-- Shrines (and unique Pyramid) are now 0 gold maintenance. Pyramid nerfed to +1 Science (down from +2). -->
+	<Buildings>
+		<Update>
+			<Set GoldMaintenance="0" />
+			<Where Type="BUILDING_SHRINE" />
+		</Update>
+		<Update>
+			<Set GoldMaintenance="0" />
+			<Where Type="BUILDING_MAYA_PYRAMID" />
+		</Update>
+	</Buildings>
+	<Building_YieldChanges>
+		<Update>
+			<Set Yield="1" />
+			<Where BuildingType="BUILDING_MAYA_PYRAMID" YieldType="YIELD_SCIENCE" />
+		</Update>
+	</Building_YieldChanges>
+	
+</GameData>

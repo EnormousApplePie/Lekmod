@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<!-- Table data 
+	<GameOptions>
+		<Row>
+			<Type>GAMEOPTION_ENABLE_RANGED_COUNTERATTACKS</Type>
+			<Description>TXT_KEY_GAME_OPTION_ENABLE_RANGED_COUNTERATTACKS</Description>
+			<Help>TXT_KEY_GAME_OPTION_ENABLE_RANGED_COUNTERATTACKS_HELP</Help>
+		</Row>
+	</GameOptions>
+	<Language_en_US>
+		<Row Tag="TXT_KEY_GAME_OPTION_ENABLE_RANGED_COUNTERATTACKS">
+			<Text>Enable Ranged Counterattacks (EXPERIMENTAL)</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_ENABLE_RANGED_COUNTERATTACKS_HELP">
+			<Text>Units and cities can now receive instant counterattacks from ranged attacks. If a ranged unit or a city is attacked by a ranged unit or city, if they could attack back right away, they instantly counterattack similar to melee combat. Melee units counterattack similarly, i.e. they need to be adjacent to the attacker and able to attack the tile, but their counterattacks trigger only after the ranged unit/city has dealt its damage. If a melee unit counterattacks a city, they counterattack at a -60% multiplicative strength penalty identical to the one cities have when attacking. Cities cannot die from being counterattacked. Contact Delnar_Ersike if you encounter any bugs.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Row Tag="TXT_KEY_GAME_OPTION_ENABLE_RANGED_COUNTERATTACKS">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Enable Ranged Counterattacks (EXPERIMENTAL)</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_ENABLE_RANGED_COUNTERATTACKS_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Units and cities can now receive instant counterattacks from ranged attacks. If a ranged unit or a city is attacked by a ranged unit or city, if they could attack back right away, they instantly counterattack similar to melee combat. Melee units counterattack similarly, i.e. they need to be adjacent to the attacker and able to attack the tile, but their counterattacks trigger only after the ranged unit/city has dealt its damage. If a melee unit counterattacks a city, they counterattack at a -60% multiplicative strength penalty identical to the one cities have when attacking. Cities cannot die from being counterattacked. Contact Delnar_Ersike if you encounter any bugs.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_ES_ES>
+		<Row Tag="TXT_KEY_GAME_OPTION_ENABLE_RANGED_COUNTERATTACKS">
+			<Text>[COLOR_WARNING_TEXT](ES_ES text) [ENDCOLOR]Enable Ranged Counterattacks (EXPERIMENTAL)</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_ENABLE_RANGED_COUNTERATTACKS_HELP">
+			<Text>[COLOR_WARNING_TEXT](ES_ES text) [ENDCOLOR]Units and cities can now receive instant counterattacks from ranged attacks. If a ranged unit or a city is attacked by a ranged unit or city, if they could attack back right away, they instantly counterattack similar to melee combat. Melee units counterattack similarly, i.e. they need to be adjacent to the attacker and able to attack the tile, but their counterattacks trigger only after the ranged unit/city has dealt its damage. If a melee unit counterattacks a city, they counterattack at a -60% multiplicative strength penalty identical to the one cities have when attacking. Cities cannot die from being counterattacked. Contact Delnar_Ersike if you encounter any bugs.</Text>
+		</Row>
+	</Language_ES_ES>
+	<Language_FR_FR>
+		<Row Tag="TXT_KEY_GAME_OPTION_ENABLE_RANGED_COUNTERATTACKS">
+			<Text>[COLOR_WARNING_TEXT](FR_FR text) [ENDCOLOR]Enable Ranged Counterattacks (EXPERIMENTAL)</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_ENABLE_RANGED_COUNTERATTACKS_HELP">
+			<Text>[COLOR_WARNING_TEXT](FR_FR text) [ENDCOLOR]Units and cities can now receive instant counterattacks from ranged attacks. If a ranged unit or a city is attacked by a ranged unit or city, if they could attack back right away, they instantly counterattack similar to melee combat. Melee units counterattack similarly, i.e. they need to be adjacent to the attacker and able to attack the tile, but their counterattacks trigger only after the ranged unit/city has dealt its damage. If a melee unit counterattacks a city, they counterattack at a -60% multiplicative strength penalty identical to the one cities have when attacking. Cities cannot die from being counterattacked. Contact Delnar_Ersike if you encounter any bugs.</Text>
+		</Row>
+	</Language_FR_FR>
+	<Language_PL_PL>
+		<Row Tag="TXT_KEY_GAME_OPTION_ENABLE_RANGED_COUNTERATTACKS">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Enable Ranged Counterattacks (EXPERIMENTAL)</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_ENABLE_RANGED_COUNTERATTACKS_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Units and cities can now receive instant counterattacks from ranged attacks. If a ranged unit or a city is attacked by a ranged unit or city, if they could attack back right away, they instantly counterattack similar to melee combat. Melee units counterattack similarly, i.e. they need to be adjacent to the attacker and able to attack the tile, but their counterattacks trigger only after the ranged unit/city has dealt its damage. If a melee unit counterattacks a city, they counterattack at a -60% multiplicative strength penalty identical to the one cities have when attacking. Cities cannot die from being counterattacked. Contact Delnar_Ersike if you encounter any bugs.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Row Tag="TXT_KEY_GAME_OPTION_ENABLE_RANGED_COUNTERATTACKS">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Enable Ranged Counterattacks (EXPERIMENTAL)</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_ENABLE_RANGED_COUNTERATTACKS_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Units and cities can now receive instant counterattacks from ranged attacks. If a ranged unit or a city is attacked by a ranged unit or city, if they could attack back right away, they instantly counterattack similar to melee combat. Melee units counterattack similarly, i.e. they need to be adjacent to the attacker and able to attack the tile, but their counterattacks trigger only after the ranged unit/city has dealt its damage. If a melee unit counterattacks a city, they counterattack at a -60% multiplicative strength penalty identical to the one cities have when attacking. Cities cannot die from being counterattacked. Contact Delnar_Ersike if you encounter any bugs.</Text>
+		</Row>
+	</Language_RU_RU>-->
+</GameData>

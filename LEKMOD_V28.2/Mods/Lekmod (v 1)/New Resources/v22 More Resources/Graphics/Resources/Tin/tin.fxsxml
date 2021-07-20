@@ -1,0 +1,11 @@
+<Asset>
+  <Mesh file="Tin.gr2" source="Max" />
+  <Texture file="Stone_ore_Decal_H.dds" source="Max" />
+  <Texture file="Generic_Grey_8.dds" source="Max" />
+  <Texture file="Tin_Decal_DIFF.dds" source="Max" />
+  <Texture file="Tin_ore_DIFF.dds" source="Max" />
+  <Texture file="Copper_ore_SREF.dds" source="Max" />
+  <Texture file="Unit_Environment_Dull.dds" source="Max" />
+  <Texture file="Unit_Environment_Sharp.dds" source="Max" />
+  <Texture file="Unit_Irradiance.dds" source="Max" />
+</Asset>

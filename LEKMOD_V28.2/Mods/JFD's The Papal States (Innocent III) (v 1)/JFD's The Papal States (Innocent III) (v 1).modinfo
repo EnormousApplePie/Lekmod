@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mod id="963a5eba-fed9-4945-8d1c-3a61b91eebb0" version="1">
+  <Properties>
+    <Name>JFD's The Papal States (Innocent III)</Name>
+    <Teaser>Adds the [COLOR_POSITIVE_TEXT]The Papal States[ENDCOLOR] to the game under Innocent III.</Teaser>
+    <Description>See CivFanatics or Steam Workshop for full details.</Description>
+    <Authors>JFD, Janboruta</Authors>
+    <SpecialThanks>Kesler, Uighur_Caesar, Shadow Pope</SpecialThanks>
+    <HideSetupGame>0</HideSetupGame>
+    <AffectsSavedGames>1</AffectsSavedGames>
+    <MinCompatibleSaveVersion>0</MinCompatibleSaveVersion>
+    <SupportsSinglePlayer>1</SupportsSinglePlayer>
+    <SupportsMultiplayer>1</SupportsMultiplayer>
+    <SupportsHotSeat>1</SupportsHotSeat>
+    <SupportsMac>1</SupportsMac>
+    <ReloadAudioSystem>1</ReloadAudioSystem>
+    <ReloadLandmarkSystem>0</ReloadLandmarkSystem>
+    <ReloadStrategicViewSystem>1</ReloadStrategicViewSystem>
+    <ReloadUnitSystem>1</ReloadUnitSystem>
+  </Properties>
+  <Dependencies />
+  <References>
+    <Mod id="31a31d1c-b9d7-45e1-842c-23232d66cd47" minversion="0" maxversion="999" title="JFD's Cultural Diversity (Core)" />
+    <Mod id="6676902b-b907-45f1-8db5-32dcb2135eee" minversion="0" maxversion="999" title="JFD's Exploration Continued Expanded" />
+    <Mod id="1f941088-b185-4159-865c-472df81247b2" minversion="0" maxversion="999" title="Sukritact’s Events &amp; Decisions" />
+    <Mod id="36e88483-48fe-4545-b85f-bafc50dde315" minversion="0" maxversion="999" title="Yet (not) Another Earth Map Pack" />
+    <Mod id="e576894a-ed2b-4033-be14-ed1c8ceb81d3" minversion="0" maxversion="999" title="Map Labels" />
+    <Mod id="7fdd72a5-d4ae-441c-bc4e-2e3d2a26cff4" minversion="0" maxversion="999" title="Ethnic Units" />
+    <Mod id="8670da15-d435-44ea-9758-7438cb321411" minversion="0" maxversion="999" title="R.E.D. Modpack    " />
+    <Mod id="8411a7a8-dad3-4622-a18e-fcc18324c799" minversion="0" maxversion="999" title="Community Balance Patch" />
+    <Mod id="1153b26a-69fd-4cd5-899c-a8ba8e0e5e5d" minversion="0" maxversion="999" title="Civ IV Leader Traits in Civ V" />
+    <Mod id="10e9728f-d61c-4317-be4f-7d52d6bae6f4" minversion="0" maxversion="999" title="JFD's Cities in Development" />
+    <Mod id="eea66053-7579-481a-bb8d-2f3959b59974" minversion="0" maxversion="999" title="JFD's Rise to Power" />
+  </References>
+  <Blocks />
+  <Files>
+    <File md5="C564578B014CF249AD451F9D85F5E3AE" import="1">Art/Graphics/FX_Triggers_GreatCross.ftsxml</File>
+    <File md5="9395F46D1635A84ECB579CAE6A8F36FF" import="1">Art/Graphics/GreatCross.fxsxml</File>
+    <File md5="C8327B1A3EBB98C1D4718876C306528B" import="1">Art/Graphics/GreatCross.gr2</File>
+    <File md5="FD8FCB4102D708FC1476B56D73997ABC" import="1">Art/Graphics/GreatCross_Human.dds</File>
+    <File md5="DE6F00530BA6D05DA6664BF3338489D4" import="1">Art/Graphics/GreatCross_Human_gloss.dds</File>
+    <File md5="040179FB44D61B0C5358BDAF6232D960" import="1">Art/Graphics/GreatCross_Material.dds</File>
+    <File md5="B5838738301D4D689242922E3666E82C" import="1">Art/Graphics/GreatCross_Material_gloss.dds</File>
+    <File md5="BDEBAF66C4439C20109BA28C568F5C57" import="1">Art/Graphics/sv_Carroccio.dds</File>
+    <File md5="332BB19051F4BAEB3BC8E5CD49CABA07" import="1">Art/IconAtlas/JFD_PapalStatesInnocentIIIAlphaAtlas_128.dds</File>
+    <File md5="53C6CDBFDCAC91B45D31AF4FFA6EC508" import="1">Art/IconAtlas/JFD_PapalStatesInnocentIIIAlphaAtlas_16.dds</File>
+    <File md5="153920244845DD07A16DA343D6166C35" import="1">Art/IconAtlas/JFD_PapalStatesInnocentIIIAlphaAtlas_22.dds</File>
+    <File md5="9C431D2BF3D5EA56170D521B2369CC88" import="1">Art/IconAtlas/JFD_PapalStatesInnocentIIIAlphaAtlas_24.dds</File>
+    <File md5="115608B9375B4B330FC48BD15151F93B" import="1">Art/IconAtlas/JFD_PapalStatesInnocentIIIAlphaAtlas_256.dds</File>
+    <File md5="776856E8A7E941CCA97342090B656577" import="1">Art/IconAtlas/JFD_PapalStatesInnocentIIIAlphaAtlas_32.dds</File>
+    <File md5="949D5B2A03F74BFE9972A786AA5A15EA" import="1">Art/IconAtlas/JFD_PapalStatesInnocentIIIAlphaAtlas_45.dds</File>
+    <File md5="BEEAD6C847C3AA1918B61DE39BC0EA91" import="1">Art/IconAtlas/JFD_PapalStatesInnocentIIIAlphaAtlas_48.dds</File>
+    <File md5="2EAEA1C8357A22154CD6D218A8900106" import="1">Art/IconAtlas/JFD_PapalStatesInnocentIIIAlphaAtlas_64.dds</File>
+    <File md5="3F69080EE396CD509985451A940EA5F2" import="1">Art/IconAtlas/JFD_PapalStatesInnocentIIIAlphaAtlas_80.dds</File>
+    <File md5="C3190026E8C74D3CD5F0C498F6534973" import="1">Art/IconAtlas/JFD_PapalStatesInnocentIIIAtlas_128.dds</File>
+    <File md5="520E8E3A87577B061FA1512FB79E08C7" import="1">Art/IconAtlas/JFD_PapalStatesInnocentIIIAtlas_256.dds</File>
+    <File md5="33FE7CA77D48DAE43FF54416C1FA0434" import="1">Art/IconAtlas/JFD_PapalStatesInnocentIIIAtlas_32.dds</File>
+    <File md5="012C61CB35FCFA20A2CB4F40F9B3CC60" import="1">Art/IconAtlas/JFD_PapalStatesInnocentIIIAtlas_45.dds</File>
+    <File md5="8BCBBA45DF591353B8185BF2D3B0CFE8" import="1">Art/IconAtlas/JFD_PapalStatesInnocentIIIAtlas_64.dds</File>
+    <File md5="E11C6960250FCA72523434F0BBE3B7B9" import="1">Art/IconAtlas/JFD_PapalStatesInnocentIIIAtlas_80.dds</File>
+    <File md5="530DF0E01155D4EBF8D1737B83E8F24F" import="1">Art/IconAtlas/JFD_UnitFlagCarroccio_32.dds</File>
+    <File md5="105D5940A23DD2CFA453D441683045CB" import="1">Art/IconAtlas/JFD_PapalStatesInnocentIIINotificationAtlas_80.dds</File>
+    <File md5="33E16394CF999929D244115E80885977" import="1">Art/Images/ChurchStates.dds</File>
+    <File md5="5A016E21EEB4999CC32F9A420BF4E6E3" import="1">Art/Leaderscene/Janboruta_InnocentIII_Diplo.dds</File>
+    <File md5="4DFD4BB9D9B89B559B02B566661035B0" import="1">Art/Leaderscene/Janboruta_InnocentIII_Scene.xml</File>
+    <File md5="370634E82A10F005D3930A3E9EA032B4" import="1">Art/Map/Janboruta_MapPapalStatesInnocentIII512.dds</File>
+    <File md5="57E20F9701AB7D8055D4A93E216C5305" import="1">Art/Map/Janboruta_PapalStatesInnocentIII_DOM.dds</File>
+    <File md5="C19139A5BF1EF6937EA958BF3E9C634C" import="1">Audio/EcclesiasticCourt.mp3</File>
+    <File md5="0E1456F080E90D52A23B506E583E43ED" import="1">Audio/InnocentIII_Peace.mp3</File>
+    <File md5="24E0E2F8170571929C52C59432EE88DA" import="0">Audio/InnocentIII_War.mp3</File>
+    <File md5="0E2CE907B5981C4651B60B55EA09AD60" import="0">Core/PapalStatesInnocent_ArtDefines.sql</File>
+    <File md5="1A70402D05AB92CD130E5D6EA178F4DE" import="0">Core/PapalStatesInnocent_GameDefines.sql</File>
+    <File md5="BC13BAEC051CCF0B996FF3028EABAD41" import="0">Core/PapalStatesInnocent_GameDefines_Diplomacy.sql</File>
+    <File md5="3E9DCC7711FF0C77FDCC49879A359722" import="0">Core/PapalStatesInnocent_GameDefines_ModSupport.sql</File>
+    <File md5="E3AB9511D29361DA18606C0FFD47EBA2" import="0">Core/PapalStatesInnocent_GameText.xml</File>
+    <File md5="3DF0AE5F59837A6BE4AE3615D5012880" import="0">Core/PapalStatesInnocent_GameText_Diplomacy.xml</File>
+    <File md5="A0AC793D5A61D9D51CAFB40C768A2CB2" import="0">Core/PapalStatesInnocent_GameText_ModSupport.xml</File>
+    <File md5="3665EA7314EC7714D3F5520365D7702A" import="0">DeleteMissingReferences.xml</File>
+    <File md5="B4500A241A117412E4EAAE4122F437CC" import="1">Lua/JFD_PapalStatesInnocent_Decisions.lua</File>
+    <File md5="46DD7BB84F3CDD88648D27955093AE9C" import="0">Lua/JFD_PapalStatesInnocent_Functions.lua</File>
+    <File md5="2CE7B6703E972E3EF3CE5D9C5F6EE391" import="0">Lua/JFD_PapalStatesInnocent_Functions.xml</File>
+    <File md5="B835E05D9947DD54908359444E15A2CD" import="0">Lua/UI/GenericPopup.lua</File>
+    <File md5="F339D5C62EAB52094F98C1FB2DE71068" import="0">Lua/UI/GenericPopup.xml</File>
+    <File md5="28CB427F43E861F286CD1E700E77E6CE" import="0">Lua/UI/PuppetCityPopup.lua</File>
+    <File md5="A8ACA51C675D428C3A406B9D798F44D2" import="0">Lua/Utilities/JFD_ChurchStates_Utils.lua</File>
+    <File md5="00650B1FF67713C4C601031ECECBE0D9" import="1">Lua/Utilities/PlotIterators.lua</File>
+    <File md5="2297E5454ADB350F79D37075856FF6D6" import="1">Lua/Utilities/UniqueDiplomacyUtils.lua</File>
+  </Files>
+  <Actions>
+    <OnModActivated>
+      <UpdateDatabase>Core/PapalStatesInnocent_ArtDefines.sql</UpdateDatabase>
+      <UpdateDatabase>Core/PapalStatesInnocent_GameDefines.sql</UpdateDatabase>
+      <UpdateDatabase>Core/PapalStatesInnocent_GameDefines_Diplomacy.sql</UpdateDatabase>
+      <UpdateDatabase>Core/PapalStatesInnocent_GameDefines_ModSupport.sql</UpdateDatabase>
+      <UpdateDatabase>Core/PapalStatesInnocent_GameText.xml</UpdateDatabase>
+      <UpdateDatabase>Core/PapalStatesInnocent_GameText_Diplomacy.xml</UpdateDatabase>
+      <UpdateDatabase>Core/PapalStatesInnocent_GameText_ModSupport.xml</UpdateDatabase>
+    </OnModActivated>
+  </Actions>
+  <EntryPoints>
+    <EntryPoint type="InGameUIAddin" file="Lua/JFD_PapalStatesInnocent_Functions.lua">
+      <Name>JFD_PapalStatesInnocent_Functions</Name>
+      <Description>
+      </Description>
+    </EntryPoint>
+  </EntryPoints>
+</Mod>

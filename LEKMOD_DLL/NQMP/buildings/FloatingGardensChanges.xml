@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2017-11-15 14:28:12 -->
+<GameData>
+
+	<!-- FLoating Gardens now provides +1 Food (down from +2). Production cost reduced by 20%. -->
+	<Buildings>
+		<Update>
+			<Where Type="BUILDING_FLOATING_GARDENS" />
+			<Set Cost="60" />
+		</Update>
+	</Buildings>
+	<Building_YieldChanges>
+		<Update>
+			<Where BuildingType="BUILDING_FLOATING_GARDENS" YieldType="YIELD_FOOD" />
+			<Set Yield="1" />
+		</Update>
+	</Building_YieldChanges>
+
+</GameData>

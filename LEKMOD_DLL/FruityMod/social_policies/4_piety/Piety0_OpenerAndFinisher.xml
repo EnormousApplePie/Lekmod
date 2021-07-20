@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 6/11/2015 7:43:29 PM -->
+<GameData>
+	
+	<!-- Branch Tooltip -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_POLICY_BRANCH_PIETY_HELP" />
+		<Row Tag="TXT_KEY_POLICY_BRANCH_PIETY_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Piety[ENDCOLOR] increases the [ICON_PEACE] Faith of empires.[NEWLINE][NEWLINE]Adopting Piety provides you with +1 [ICON_CULTURE] Culture and +1 [ICON_PEACE] Faith in the [ICON_CAPITAL] Capital and allows you to build Shrines and Temples in half the usual time. Unlocks building Stonehenge.[NEWLINE][NEWLINE]Adopting all Policies in the Piety tree causes a Great Prophet to appear and provides +4 [ICON_PRODUCTION] from the Grand Temple. Holy Sites provide +1 [ICON_FOOD] Food and +3 [ICON_CULTURE] Culture.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_POLICY_BRANCH_PIETY_HELP" />
+		<Row Tag="TXT_KEY_POLICY_BRANCH_PIETY_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Piety[ENDCOLOR] increases the [ICON_PEACE] Faith of empires.[NEWLINE][NEWLINE]Adopting Piety provides you with +1 [ICON_CULTURE] Culture and +1 [ICON_PEACE] Faith in the [ICON_CAPITAL] Capital and allows you to build Shrines and Temples in half the usual time. Unlocks building Stonehenge.[NEWLINE][NEWLINE]Adopting all Policies in the Piety tree causes a Great Prophet to appear and provides +4 [ICON_PRODUCTION] from the Grand Temple. Holy Sites provide +1 [ICON_FOOD] Food and +3 [ICON_CULTURE] Culture.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_POLICY_BRANCH_PIETY_HELP" />
+		<Row Tag="TXT_KEY_POLICY_BRANCH_PIETY_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Piety[ENDCOLOR] increases the [ICON_PEACE] Faith of empires.[NEWLINE][NEWLINE]Adopting Piety provides you with +1 [ICON_CULTURE] Culture and +1 [ICON_PEACE] Faith in the [ICON_CAPITAL] Capital and allows you to build Shrines and Temples in half the usual time. Unlocks building Stonehenge.[NEWLINE][NEWLINE]Adopting all Policies in the Piety tree causes a Great Prophet to appear and provides +4 [ICON_PRODUCTION] from the Grand Temple. Holy Sites provide +1 [ICON_FOOD] Food and +3 [ICON_CULTURE] Culture.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_POLICY_BRANCH_PIETY_HELP" />
+		<Row Tag="TXT_KEY_POLICY_BRANCH_PIETY_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Piety[ENDCOLOR] increases the [ICON_PEACE] Faith of empires.[NEWLINE][NEWLINE]Adopting Piety provides you with +1 [ICON_CULTURE] Culture and +1 [ICON_PEACE] Faith in the [ICON_CAPITAL] Capital and allows you to build Shrines and Temples in half the usual time. Unlocks building Stonehenge.[NEWLINE][NEWLINE]Adopting all Policies in the Piety tree causes a Great Prophet to appear and provides +4 [ICON_PRODUCTION] from the Grand Temple. Holy Sites provide +1 [ICON_FOOD] Food and +3 [ICON_CULTURE] Culture.</Text>
+		</Row>
+	</Language_RU_RU>
+
+
+	<!-- PIETY OPENER -->
+	<Buildings>
+		<Update>
+			<Where Type="BUILDING_MOSQUE_OF_DJENNE"/>
+			<Set PolicyBranchType="NULL"/>
+		</Update>
+		<Update>
+			<Where Type="BUILDING_STONEHENGE"/>
+			<Set PolicyBranchType="POLICY_BRANCH_PIETY"/>
+		</Update>
+	</Buildings>
+	<Policy_BuildingClassYieldChanges>
+		<Row>
+			<PolicyType>POLICY_PIETY</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<YieldChange>1</YieldChange>
+		</Row>
+	</Policy_BuildingClassYieldChanges>
+	<Policy_BuildingClassCultureChanges>
+		<Row>
+			<PolicyType>POLICY_PIETY</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
+			<CultureChange>1</CultureChange>
+		</Row>
+	</Policy_BuildingClassCultureChanges>
+	<Buildings>
+		<Update>
+			<Set Help="TXT_KEY_WONDER_STONEHENGE_HELP" />
+			<Where Type="BUILDING_STONEHENGE" />
+		</Update>
+	</Buildings>
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_WONDER_MOSQUE_OF_DJENNE_HELP" />
+		<Row Tag="TXT_KEY_WONDER_MOSQUE_OF_DJENNE_HELP">
+			<Text>All Missionaries born in this city can spread religion three times. Provides a free Mosque in the city in which it is built.</Text>
+		</Row>
+		<!-- This is now updated in /wonders_world/StonehengeChanges.xml
+		<Delete Tag="TXT_KEY_WONDER_STONEHENGE_HELP" />
+		<Row Tag="TXT_KEY_WONDER_STONEHENGE_HELP">
+			<Text>Requires Piety.</Text>
+		</Row>
+		-->
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_WONDER_MOSQUE_OF_DJENNE_HELP" />
+		<Row Tag="TXT_KEY_WONDER_MOSQUE_OF_DJENNE_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]All Missionaries born in this city can spread religion three times. Provides a free Mosque in the city in which it is built.</Text>
+		</Row>
+		<!-- This is now updated in /wonders_world/StonehengeChanges.xml
+		<Delete Tag="TXT_KEY_WONDER_STONEHENGE_HELP" />
+		<Row Tag="TXT_KEY_WONDER_STONEHENGE_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Requires Piety.</Text>
+		</Row>
+		-->
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_WONDER_MOSQUE_OF_DJENNE_HELP" />
+		<Row Tag="TXT_KEY_WONDER_MOSQUE_OF_DJENNE_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]All Missionaries born in this city can spread religion three times. Provides a free Mosque in the city in which it is built.</Text>
+		</Row>
+		<!-- This is now updated in /wonders_world/StonehengeChanges.xml
+		<Delete Tag="TXT_KEY_WONDER_STONEHENGE_HELP" />
+		<Row Tag="TXT_KEY_WONDER_STONEHENGE_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Requires Piety.</Text>
+		</Row>
+		-->
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_WONDER_MOSQUE_OF_DJENNE_HELP" />
+		<Row Tag="TXT_KEY_WONDER_MOSQUE_OF_DJENNE_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]All Missionaries born in this city can spread religion three times. Provides a free Mosque in the city in which it is built.</Text>
+		</Row>
+		<!-- This is now updated in /wonders_world/StonehengeChanges.xml
+		<Delete Tag="TXT_KEY_WONDER_STONEHENGE_HELP" />
+		<Row Tag="TXT_KEY_WONDER_STONEHENGE_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Requires Piety.</Text>
+		</Row>
+		-->
+	</Language_RU_RU>
+
+
+	<!-- PIETY FINISHER -->
+	<Policy_BuildingClassYieldChanges>
+		<Row>
+			<PolicyType>POLICY_PIETY_FINISHER</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_GRAND_TEMPLE</BuildingClassType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<YieldChange>4</YieldChange>
+		</Row>
+	</Policy_BuildingClassYieldChanges>
+	<Policy_ImprovementYieldChanges>
+		<Row>
+			<PolicyType>POLICY_PIETY_FINISHER</PolicyType>
+			<ImprovementType>IMPROVEMENT_HOLY_SITE</ImprovementType>
+			<YieldType>YIELD_FOOD</YieldType>
+			<Yield>1</Yield>
+		</Row>
+	</Policy_ImprovementYieldChanges>
+
+</GameData>

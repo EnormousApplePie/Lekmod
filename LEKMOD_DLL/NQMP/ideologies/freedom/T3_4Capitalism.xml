@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 3/22/2017 7:10:02 PM -->
+<GameData>
+
+	<!-- Capitalism: Specialists provide +1 Production and produce half the normal amount of Unhappiness. -->
+	<Policies>
+		<Update>
+			<Set Level="3" HalfSpecialistUnhappiness="true" />
+			<Where Type="POLICY_CAPITALISM" />
+		</Update>
+	</Policies>
+	<Policy_BuildingClassHappiness>
+		<Delete PolicyType="POLICY_CAPITALISM" />
+	</Policy_BuildingClassHappiness>
+	<Policy_SpecialistExtraYields>
+		<Row>
+			<PolicyType>POLICY_CAPITALISM</PolicyType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>1</Yield>
+		</Row>
+	</Policy_SpecialistExtraYields>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_POLICY_CAPITALISM_HELP" />
+		<Row Tag="TXT_KEY_POLICY_CAPITALISM_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Capitalism[ENDCOLOR][NEWLINE]Specialists provide +1 [ICON_PRODUCTION] Production and produce half the normal amount of [ICON_HAPPINESS_4] Unhappiness.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_POLICY_CAPITALISM_HELP" />
+		<Row Tag="TXT_KEY_POLICY_CAPITALISM_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Capitalism[ENDCOLOR][NEWLINE]Specialists provide +1 [ICON_PRODUCTION] Production and produce half the normal amount of [ICON_HAPPINESS_4] Unhappiness.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_POLICY_CAPITALISM_HELP" />
+		<Row Tag="TXT_KEY_POLICY_CAPITALISM_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Capitalism[ENDCOLOR][NEWLINE]Specialists provide +1 [ICON_PRODUCTION] Production and produce half the normal amount of [ICON_HAPPINESS_4] Unhappiness.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_POLICY_CAPITALISM_HELP" />
+		<Row Tag="TXT_KEY_POLICY_CAPITALISM_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Capitalism[ENDCOLOR][NEWLINE]Specialists provide +1 [ICON_PRODUCTION] Production and produce half the normal amount of [ICON_HAPPINESS_4] Unhappiness.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

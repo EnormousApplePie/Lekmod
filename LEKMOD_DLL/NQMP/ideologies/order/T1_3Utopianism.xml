@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2017-02-12 15:58:45 -->
+<GameData>
+	
+	<!-- Utopianism (replaces Hero of the People): +6 Tourism in each City. -->
+	<Policies>
+		<Update>
+			<Set Level="1" GreatPeopleRateModifier="0" TourismPerCity="6" />
+			<Where Type="POLICY_HERO_OF_THE_PEOPLE" />
+		</Update>
+	</Policies>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Row Tag="TXT_KEY_CO_TOURISM_PER_CITY">
+			<Text>{1_Num} [ICON_TOURISM] Tourism per City from Policies</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_HERO_OF_THE_PEOPLE" />
+		<Row Tag="TXT_KEY_POLICY_HERO_OF_THE_PEOPLE">
+			<Text>Utopianism</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_HERO_OF_THE_PEOPLE_HELP" />
+		<Row Tag="TXT_KEY_POLICY_HERO_OF_THE_PEOPLE_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Utopianism[ENDCOLOR][NEWLINE]+6 [ICON_TOURISM] Tourism in each City.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_HERO_OF_THE_PEOPLE_TEXT" />
+		<Row Tag="TXT_KEY_POLICY_HERO_OF_THE_PEOPLE_TEXT">
+			<Text>[COLOR_POSITIVE_TEXT]Source: Wikipedia (https://en.wikipedia.org/wiki/Utopian_socialism)[ENDCOLOR][NEWLINE][NEWLINE]Utopian socialism is a label used to define the first currents of modern socialist thought as exemplified by the work of Henri de Saint-Simon, Charles Fourier, Étienne Cabet, and Robert Owen. Utopian socialism is often described as the presentation of visions and outlines for imaginary or futuristic ideal societies, with positive ideals being the main reason for moving society in such a direction. Later socialists and critics of utopian socialism viewed "utopian socialism" as not being grounded in actual material conditions of existing society, and in some cases, as reactionary. These visions of ideal societies competed with Marxist-inspired revolutionary social democratic movements.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Row Tag="TXT_KEY_CO_TOURISM_PER_CITY">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]{1_Num} [ICON_TOURISM] Tourism per City from Policies</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_HERO_OF_THE_PEOPLE" />
+		<Row Tag="TXT_KEY_POLICY_HERO_OF_THE_PEOPLE">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Utopianism</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_HERO_OF_THE_PEOPLE_HELP" />
+		<Row Tag="TXT_KEY_POLICY_HERO_OF_THE_PEOPLE_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Utopianism[ENDCOLOR][NEWLINE]+6 [ICON_TOURISM] Tourism in each City.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_HERO_OF_THE_PEOPLE_TEXT" />
+		<Row Tag="TXT_KEY_POLICY_HERO_OF_THE_PEOPLE_TEXT">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Source: Wikipedia (https://en.wikipedia.org/wiki/Utopian_socialism)[ENDCOLOR][NEWLINE][NEWLINE]Utopian socialism is a label used to define the first currents of modern socialist thought as exemplified by the work of Henri de Saint-Simon, Charles Fourier, Étienne Cabet, and Robert Owen. Utopian socialism is often described as the presentation of visions and outlines for imaginary or futuristic ideal societies, with positive ideals being the main reason for moving society in such a direction. Later socialists and critics of utopian socialism viewed "utopian socialism" as not being grounded in actual material conditions of existing society, and in some cases, as reactionary. These visions of ideal societies competed with Marxist-inspired revolutionary social democratic movements.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Row Tag="TXT_KEY_CO_TOURISM_PER_CITY">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]{1_Num} [ICON_TOURISM] Tourism per City from Policies</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_HERO_OF_THE_PEOPLE" />
+		<Row Tag="TXT_KEY_POLICY_HERO_OF_THE_PEOPLE">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Utopianism</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_HERO_OF_THE_PEOPLE_HELP" />
+		<Row Tag="TXT_KEY_POLICY_HERO_OF_THE_PEOPLE_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Utopianism[ENDCOLOR][NEWLINE]+6 [ICON_TOURISM] Tourism in each City.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_HERO_OF_THE_PEOPLE_TEXT" />
+		<Row Tag="TXT_KEY_POLICY_HERO_OF_THE_PEOPLE_TEXT">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Source: Wikipedia (https://en.wikipedia.org/wiki/Utopian_socialism)[ENDCOLOR][NEWLINE][NEWLINE]Utopian socialism is a label used to define the first currents of modern socialist thought as exemplified by the work of Henri de Saint-Simon, Charles Fourier, Étienne Cabet, and Robert Owen. Utopian socialism is often described as the presentation of visions and outlines for imaginary or futuristic ideal societies, with positive ideals being the main reason for moving society in such a direction. Later socialists and critics of utopian socialism viewed "utopian socialism" as not being grounded in actual material conditions of existing society, and in some cases, as reactionary. These visions of ideal societies competed with Marxist-inspired revolutionary social democratic movements.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Row Tag="TXT_KEY_CO_TOURISM_PER_CITY">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]{1_Num} [ICON_TOURISM] Tourism per City from Policies</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_HERO_OF_THE_PEOPLE" />
+		<Row Tag="TXT_KEY_POLICY_HERO_OF_THE_PEOPLE">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Utopianism</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_HERO_OF_THE_PEOPLE_HELP" />
+		<Row Tag="TXT_KEY_POLICY_HERO_OF_THE_PEOPLE_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Utopianism[ENDCOLOR][NEWLINE]+6 [ICON_TOURISM] Tourism in each City.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_HERO_OF_THE_PEOPLE_TEXT" />
+		<Row Tag="TXT_KEY_POLICY_HERO_OF_THE_PEOPLE_TEXT">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Source: Wikipedia (https://en.wikipedia.org/wiki/Utopian_socialism)[ENDCOLOR][NEWLINE][NEWLINE]Utopian socialism is a label used to define the first currents of modern socialist thought as exemplified by the work of Henri de Saint-Simon, Charles Fourier, Étienne Cabet, and Robert Owen. Utopian socialism is often described as the presentation of visions and outlines for imaginary or futuristic ideal societies, with positive ideals being the main reason for moving society in such a direction. Later socialists and critics of utopian socialism viewed "utopian socialism" as not being grounded in actual material conditions of existing society, and in some cases, as reactionary. These visions of ideal societies competed with Marxist-inspired revolutionary social democratic movements.</Text>
+		</Row>
+	</Language_RU_RU>
+	
+</GameData>

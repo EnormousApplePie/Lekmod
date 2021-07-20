@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mod id="55522485-5d90-4a15-969c-b910c99f1519" version="2">
+  <Properties>
+    <Name>Hungary (Matthias Corvinus) (BNW)</Name>
+    <Teaser>Adds the Kingdom of Hungary to the game led by Matthias Corvinus to the game as a playable civilization.</Teaser>
+    <Description>Adds the Kingdom of Hungary to the game led by Matthias Corvinus to the game as a playable civilization.[NEWLINE][NEWLINE]
+
+UA: Bibliotheca Corviniana - May expend any [ICON_GREAT_PEOPLE] Great Person to create a [ICON_RES_DJSH_CORVINA_CODEX] Corvina Codex, which boosts global [ICON_RESEARCH] Science output. +5% [ICON_GREAT_PEOPLE] Great People Generation in the [ICON_CAPITAL] Capital for every active [ICON_CITY_STATE] City-State Contest (+10% if Hungary is leading it).[NEWLINE][NEWLINE]
+
+UB: Gyogyfurdo (Garden) - +2 [ICON_HAPPINESS_1] Happiness. No maintenance cost. Triggers a [ICON_CITY_STATE] City-State Contest upon construction. NOTE: a Contest will not trigger if an insufficient number of major Civilizations have met the random [ICON_CITY_STATE] City-State in question.[NEWLINE][NEWLINE]
+
+UU: Black Army (Landsknecht) - Does not require the Policy 'Mercenary Army'. May spend [ICON_MOVES] Movement Points to gain +33% Combat Strength against a Unit Combat Type of your choice.</Description>
+    <Authors>Davey</Authors>
+    <HideSetupGame>0</HideSetupGame>
+    <AffectsSavedGames>1</AffectsSavedGames>
+    <MinCompatibleSaveVersion>0</MinCompatibleSaveVersion>
+    <SupportsSinglePlayer>1</SupportsSinglePlayer>
+    <SupportsMultiplayer>1</SupportsMultiplayer>
+    <SupportsHotSeat>1</SupportsHotSeat>
+    <SupportsMac>1</SupportsMac>
+    <ReloadAudioSystem>1</ReloadAudioSystem>
+    <ReloadLandmarkSystem>1</ReloadLandmarkSystem>
+    <ReloadStrategicViewSystem>1</ReloadStrategicViewSystem>
+    <ReloadUnitSystem>1</ReloadUnitSystem>
+  </Properties>
+  <Dependencies />
+  <References>
+    <Mod id="7fdd72a5-d4ae-441c-bc4e-2e3d2a26cff4" minversion="0" maxversion="999" title="Ethnic Units" />
+    <Mod id="36e88483-48fe-4545-b85f-bafc50dde315" minversion="0" maxversion="999" title="Gedemon's Yet (not) Another Earth Map Pack" />
+    <Mod id="1153b26a-69fd-4cd5-899c-a8ba8e0e5e5d" minversion="0" maxversion="999" title="Bingles' Civ IV Traits in Civ V" />
+    <Mod id="01c131ef-2162-4a7b-b845-763a4e675940" minversion="0" maxversion="999" title="Ryoga's Unique Cultural Influence" />
+    <Mod id="e576894a-ed2b-4033-be14-ed1c8ceb81d3" minversion="0" maxversion="999" title="hazel16's Map Labels" />
+    <Mod id="31a31d1c-b9d7-45e1-842c-23232d66cd47" minversion="0" maxversion="999" title="JFD's Cultural Diversity (Core)" />
+    <Mod id="10e9728f-d61c-4317-be4f-7d52d6bae6f4" minversion="0" maxversion="999" title="JFD's Cities in Development" />
+    <Mod id="6676902b-b907-45f1-8db5-32dcb2135eee" minversion="0" maxversion="999" title="JFD's Exploration Continued Expanded" />
+    <Mod id="eea66053-7579-481a-bb8d-2f3959b59974" minversion="0" maxversion="999" title="JFD's Rise to Power" />
+    <Mod id="a19351c5-c0b3-4b07-8695-4affaa199949" minversion="0" maxversion="999" title="JFD's and Pouakai's Mercenaries" />
+    <Mod id="fe245559-0525-41bb-9e1c-b281e018b5fc" minversion="0" maxversion="999" title="LeeS' Civilization Appropriate Great General and Admiral Names" />
+    <Mod id="1f941088-b185-4159-865c-472df81247b2" minversion="0" maxversion="999" title="Sukritact's Events and Decisions" />
+  </References>
+  <Blocks />
+  <Files>
+    <File md5="7D75D4C370460E6102E89E338FBBAE94" import="1">Art/DJSH Black Army Graphics/BlackArmyMusket.fxsxml</File>
+    <File md5="F2B046926EEF7D3AFEC712FE7AB546F4" import="1">Art/DJSH Black Army Graphics/BlackArmyMusket.gr2</File>
+    <File md5="F42B8C83383336A4285E3CB86082ACE9" import="1">Art/DJSH Black Army Graphics/BlackArmyMusket_diff.dds</File>
+    <File md5="0E5BDB52FAF93132743E7E6936F8D28F" import="1">Art/DJSH Black Army Graphics/BlackArmyMusket_sref.dds</File>
+    <File md5="33F1188555B491C4D022C733437F05E9" import="1">Art/DJSH Black Army Graphics/Longswordsman_BlackArmy.fxsxml</File>
+    <File md5="906AC748D43F3347C0C7B69631F94F3C" import="1">Art/DJSH Black Army Graphics/Longswordsman_BlackArmy.gr2</File>
+    <File md5="5AE8F2F7EEAD4F4E4CFD0ADC1A413351" import="1">Art/DJSH Black Army Graphics/Pikeman_BlackArmy.dds</File>
+    <File md5="C4929CDA4C80EAD553A6082EA2A235DD" import="1">Art/DJSH Black Army Graphics/Pikeman_BlackArmy.fxsxml</File>
+    <File md5="D76F909392CCB76ED737152E2B05F803" import="1">Art/DJSH Black Army Graphics/Pikeman_BlackArmy.gr2</File>
+    <File md5="5BFE4DFB0A636B30F79C4948002EC094" import="1">Art/DJSH Black Army Graphics/Pikeman_BlackArmy_gloss.dds</File>
+    <File md5="7D80F440675BD1F04E5FBE889D3058D0" import="1">Art/DJSHCorvinus_Alpha128.dds</File>
+    <File md5="2C8AF16F181CE33282DAF59086C993DD" import="1">Art/DJSHCorvinus_Alpha16.dds</File>
+    <File md5="DE9F8988F229EA527D3DA44D974AD42E" import="1">Art/DJSHCorvinus_Alpha24.dds</File>
+    <File md5="6C1CC9FC6B25BC29106A11C0AB854065" import="1">Art/DJSHCorvinus_Alpha256.dds</File>
+    <File md5="BC4D661293AAC894D8ED128D5DB7DB61" import="1">Art/DJSHCorvinus_Alpha32.dds</File>
+    <File md5="5D4DC9EF5EC32CE3ECDF195C490B184D" import="1">Art/DJSHCorvinus_Alpha45.dds</File>
+    <File md5="C709221323E55E8E3B749A1A31ABB660" import="1">Art/DJSHCorvinus_Alpha48.dds</File>
+    <File md5="25AB1FD325AD2306E11C83C03BC57AAF" import="1">Art/DJSHCorvinus_Alpha64.dds</File>
+    <File md5="B70A9A70E0F22BC74CF964890A914284" import="1">Art/DJSHCorvinus_Alpha80.dds</File>
+    <File md5="BBA9FC24B026A3E0815BA1C972E385F7" import="1">Art/DJSHCorvinus_FontIcon.dds</File>
+    <File md5="1599385013969DF6BB876AD4A575CAC5" import="1">Art/DJSHCorvinus_diplo.dds</File>
+    <File md5="9B515798F46E3CFF1AD6F20D0F7A9A8E" import="1">Art/DJSHCorvinus_DOM.dds</File>
+    <File md5="E85AA2797EBD9578BADDAF73F48B57D0" import="1">Art/DJSHCorvinus_Scene.xml</File>
+    <File md5="91CC3A4A620B093F48DD98F1E9F633C4" import="1">Art/DJSH_CorvinusIcons128.dds</File>
+    <File md5="D23E3168AD47B42D0EE452B18E06AA8E" import="1">Art/DJSH_CorvinusIcons256.dds</File>
+    <File md5="CA28A57BFC571EEF869B67C25C1759EA" import="1">Art/DJSH_CorvinusIcons32.dds</File>
+    <File md5="0C643E97714A1CD5E3D100849CEAAC75" import="1">Art/DJSH_CorvinusIcons45.dds</File>
+    <File md5="0C7ADE209FDFB2695A0A6C895D0A016F" import="1">Art/DJSH_CorvinusIcons64.dds</File>
+    <File md5="1C019530E45D7E3CCC80943D73E742CD" import="1">Art/DJSH_CorvinusIcons80.dds</File>
+    <File md5="D02BCB79DD634E3C0AD2A1FE166DBF30" import="1">Art/FlagDJSHBlackArmy.dds</File>
+    <File md5="717386E41897F6F820C12F18EB0D4D12" import="1">Art/MapDJSHCorvinus512.dds</File>
+    <File md5="15ED8F994F1D1E9192CBCC8F9204F1D3" import="0">DJSHCorvinus Mod Support/Civilization Appropriate Great General and Great Admiral Names.xml</File>
+    <File md5="9CD5A670EC308F85D0B63813ECF4B69C" import="0">DJSHCorvinus Mod Support/DJSHCorvinus Mod Support Gametext.xml</File>
+    <File md5="22B70B5BEDC8D7C3027187EACA837661" import="0">DJSHCorvinus Mod Support/DJSHCorvinus Mod Support.sql</File>
+    <File md5="5064979B371A2C45B9F85F200C230E0B" import="1">DJSHCorvinus Mod Support/DJSHCorvinus Decisions.lua</File>
+    <File md5="FC7BDF71EEBC11F8FEEEE92950CBD929" import="0">DJSHCorvinus Mod Support/DJSHCorvinus Decisions.xml</File>
+    <File md5="968964D97D7E0F0179484041DF1C04FD" import="0">Lua/Matthias Corvinus Functions.lua</File>
+    <File md5="7B80E11E3C5C1996E8D0D2FF965F9CE8" import="0">Lua/Matthias Corvinus AI.lua</File>
+    <File md5="5754B1BE6E37A2F9D04D9D4149E5CDDF" import="1">Lua/SaveUtils.lua</File>
+    <File md5="6713A937F1A1ABCBD24F9BB634F442C2" import="1">Music/DJSHCorvinusWar.mp3</File>
+    <File md5="2D13AD9DEC4892959953D31F1791F7A8" import="1">Music/DJSHCorvinusPeace.mp3</File>
+    <File md5="8B8701468D6CE5B41C9A63A594F24515" import="0">SQL/DJSHCorvinus Great People Table.sql</File>
+    <File md5="1B5A9CEF2A58B05CC68C5568BA18ACB8" import="0">UI/DJSH Create Corvina Codex UI/Matthias Corvinus UI.lua</File>
+    <File md5="2F1400C21990B4A34720A644ECBA776A" import="0">UI/DJSH Create Corvina Codex UI/Matthias Corvinus UI.xml</File>
+    <File md5="5E5B46A1EE28CE3D3508979272903AF8" import="0">XML/DJSHCorvinus Buildings.xml</File>
+    <File md5="97E3583F6E1B7A447E6E7C27875084B4" import="0">XML/DJSHCorvinus Civilization.xml</File>
+    <File md5="0FB0E046CDF3080681472F228F234966" import="0">XML/DJSHCorvinus Colors.xml</File>
+    <File md5="7E0AAAECD861CDAC00A0C5F85A5F093A" import="0">XML/DJSHCorvinus Diplomacy.xml</File>
+    <File md5="22429057CCE58D420D85C5B508CF07D6" import="0">XML/DJSHCorvinus GameText.xml</File>
+    <File md5="DFF1746732C04E68C150F8FE522B8A78" import="0">XML/DJSHCorvinus IconTextureAtlases.xml</File>
+    <File md5="190681829FF79C185543FE3514E7C037" import="0">XML/DJSHCorvinus Leader.xml</File>
+    <File md5="6EE2C25A0EEDAC389CC8242F030CD50B" import="0">XML/DJSHCorvinus Music.xml</File>
+    <File md5="C94E2E28D1737BA891606609FAAC72A3" import="0">XML/DJSHCorvinus Traits.xml</File>
+    <File md5="CFCE1E2AF5C81BC7E42151A21B77BC37" import="0">XML/DJSHCorvinus Unit Art Define.xml</File>
+    <File md5="5051CF5D08D9D7A35C62A725933C8B51" import="0">XML/DJSHCorvinus UnitPromotions.xml</File>
+    <File md5="6147E7F376AA4D2EE7266178619D5216" import="0">XML/DJSHCorvinus Units.xml</File>
+    <File md5="A9B12F4CA1057ADC841CCDE8EB683BC9" import="1">XML/DJSHCorvinus Resources.xml</File>
+    <File md5="20884D16494521C5B99FB63197FD4DBA" import="1">XML/DJSHCorvinus_FontIcon.ggxml</File>
+  </Files>
+  <Actions>
+    <OnModActivated>
+      <UpdateDatabase>Art/DJSHCorvinus_Scene.xml</UpdateDatabase>
+      <UpdateDatabase>SQL/DJSHCorvinus Great People Table.sql</UpdateDatabase>
+      <UpdateDatabase>XML/DJSHCorvinus Buildings.xml</UpdateDatabase>
+      <UpdateDatabase>XML/DJSHCorvinus Civilization.xml</UpdateDatabase>
+      <UpdateDatabase>XML/DJSHCorvinus Colors.xml</UpdateDatabase>
+      <UpdateDatabase>XML/DJSHCorvinus Diplomacy.xml</UpdateDatabase>
+      <UpdateDatabase>XML/DJSHCorvinus GameText.xml</UpdateDatabase>
+      <UpdateDatabase>XML/DJSHCorvinus Resources.xml</UpdateDatabase>
+      <UpdateDatabase>XML/DJSHCorvinus IconTextureAtlases.xml</UpdateDatabase>
+      <UpdateDatabase>XML/DJSHCorvinus Leader.xml</UpdateDatabase>
+      <UpdateDatabase>XML/DJSHCorvinus Traits.xml</UpdateDatabase>
+      <UpdateDatabase>XML/DJSHCorvinus UnitPromotions.xml</UpdateDatabase>
+      <UpdateDatabase>XML/DJSHCorvinus Units.xml</UpdateDatabase>
+      <UpdateDatabase>XML/DJSHCorvinus Unit Art Define.xml</UpdateDatabase>
+      <UpdateDatabase>XML/DJSHCorvinus Music.xml</UpdateDatabase>
+      <UpdateDatabase>DJSHCorvinus Mod Support/Civilization Appropriate Great General and Great Admiral Names.xml</UpdateDatabase>
+      <UpdateDatabase>DJSHCorvinus Mod Support/DJSHCorvinus Mod Support Gametext.xml</UpdateDatabase>
+      <UpdateDatabase>DJSHCorvinus Mod Support/DJSHCorvinus Mod Support.sql</UpdateDatabase>
+      <UpdateDatabase>DJSHCorvinus Mod Support/DJSHCorvinus Decisions.xml</UpdateDatabase>
+    </OnModActivated>
+  </Actions>
+  <EntryPoints>
+    <EntryPoint type="InGameUIAddin" file="UI/DJSH Create Corvina Codex UI/Matthias Corvinus UI.lua">
+      <Name>DJSH Create Corvina Codex UI Lua</Name>
+      <Description>
+      </Description>
+    </EntryPoint>
+    <EntryPoint type="InGameUIAddin" file="Lua/Matthias Corvinus Functions.lua">
+      <Name>Matthiaaa</Name>
+      <Description>
+      </Description>
+    </EntryPoint>
+    <EntryPoint type="InGameUIAddin" file="Lua/Matthias Corvinus AI.lua">
+      <Name>Matthias Corvinus AI</Name>
+      <Description>
+      </Description>
+    </EntryPoint>
+  </EntryPoints>
+</Mod>

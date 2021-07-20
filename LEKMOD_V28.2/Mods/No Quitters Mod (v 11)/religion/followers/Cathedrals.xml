@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2016-09-25 05:44:53 -->
+<GameData>
+
+	<!-- May use Faith to purchase Cathedrals (+1 Faith / +1 Culture, 1 Great Work of Art slot, +50% Tourism from Great Works) -->
+	<Buildings>
+		<Update>
+			<Set Happiness="0" FaithCost="300" SpecialistType="SPECIALIST_ARTIST" SpecialistCount="1" Help="TXT_KEY_BUILDING_CATHDEDRAL_HELP" />
+			<Where Type="BUILDING_CATHEDRAL" />
+		</Update>
+	</Buildings>
+	<Building_YieldChanges>
+		<Update>
+			<Set Yield="3"/>
+			<Where BuildingType="BUILDING_CATHEDRAL" YieldType="YIELD_CULTURE"/>
+		</Update>
+	</Building_YieldChanges>
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_BELIEF_CATHEDRALS" />
+		<Row Tag="TXT_KEY_BELIEF_CATHEDRALS">
+			<Text>Use 200 [ICON_PEACE] Faith to purchase Cathedrals (+1 [ICON_PEACE] Faith, +3 [ICON_CULTURE] Culture, 1 Artist Specialist)</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_CATHDEDRAL_HELP">
+			<Text>Weed</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_BELIEF_MISSIONARY_ZEAL" />
+		<Row Tag="TXT_KEY_BELIEF_MISSIONARY_ZEAL">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Use [ICON_PEACE] Faith to purchase Cathedrals (+1 [ICON_PEACE] Faith, +3 [ICON_CULTURE] Culture, 1 Great Work of Art slot, extra Tourism from Great Works)</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_CATHDEDRAL_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]+50% [ICON_TOURISM] Tourism output from Great Works.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_BELIEF_MISSIONARY_ZEAL" />
+		<Row Tag="TXT_KEY_BELIEF_MISSIONARY_ZEAL">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Use [ICON_PEACE] Faith to purchase Cathedrals (+1 [ICON_PEACE] Faith, +1 [ICON_CULTURE] Culture, 1 Great Work of Art slot, extra Tourism from Great Works)</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_CATHDEDRAL_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]+50% [ICON_TOURISM] Tourism output from Great Works.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_BELIEF_MISSIONARY_ZEAL" />
+		<Row Tag="TXT_KEY_BELIEF_MISSIONARY_ZEAL">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Use [ICON_PEACE] Faith to purchase Cathedrals (+1 [ICON_PEACE] Faith, +1 [ICON_CULTURE] Culture, 1 Great Work of Art slot, extra Tourism from Great Works)</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_CATHDEDRAL_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]+50% [ICON_TOURISM] Tourism output from Great Works.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

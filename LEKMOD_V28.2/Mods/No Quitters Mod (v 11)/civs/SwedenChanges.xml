@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 8/20/2016 2:43:04 PM -->
+<GameData>
+
+	<!-- [Updated UA] Nobel Prize: +20% Great Person points in all Cities. Gain Science whenever a Great Person is born. -->
+	<Traits>
+		<Update>
+			<Set GreatPersonGiftInfluence="0" DOFGreatPersonModifier="0" GreatPeopleRateModifier="20" SciencePerGreatPersonBorn="0" />
+			<Where Type="TRAIT_DIPLOMACY_GREAT_PEOPLE" />
+		</Update>
+	</Traits>
+	
+	<!-- remove Hakkapeliitta and Carolean, add Great Humanitarian and Falu Gruva -->
+	<Civilization_UnitClassOverrides>
+		<Delete UnitType="UNIT_SWEDISH_HAKKAPELIITTA" />
+	</Civilization_UnitClassOverrides>
+	<Civilization_BuildingClassOverrides>
+		<Row>
+			<CivilizationType>CIVILIZATION_SWEDEN</CivilizationType>
+			<BuildingClassType>BUILDINGCLASS_IRONWORKS</BuildingClassType>
+			<BuildingType>BUILDING_FALU_GRUVA</BuildingType>
+		</Row>
+	</Civilization_BuildingClassOverrides>
+
+
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_TRAIT_DIPLOMACY_GREAT_PEOPLE" />
+		<Row Tag="TXT_KEY_TRAIT_DIPLOMACY_GREAT_PEOPLE">
+			<Text>+20% [ICON_GREAT_PEOPLE] Great Person points in all Cities.</Text>
+		</Row>
+	</Language_en_US>
+	
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_TRAIT_DIPLOMACY_GREAT_PEOPLE" />
+		<Row Tag="TXT_KEY_TRAIT_DIPLOMACY_GREAT_PEOPLE">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]+20% [ICON_GREAT_PEOPLE] Great Person points in all Cities. Gain [ICON_RESEARCH] Science whenever a Great Person is born.</Text>
+		</Row>
+	</Language_DE_DE>
+	
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_TRAIT_DIPLOMACY_GREAT_PEOPLE" />
+		<Row Tag="TXT_KEY_TRAIT_DIPLOMACY_GREAT_PEOPLE">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]+20% [ICON_GREAT_PEOPLE] Great Person points in all Cities. Gain [ICON_RESEARCH] Science whenever a Great Person is born.</Text>
+		</Row>
+	</Language_PL_PL>
+	
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_TRAIT_DIPLOMACY_GREAT_PEOPLE" />
+		<Row Tag="TXT_KEY_TRAIT_DIPLOMACY_GREAT_PEOPLE">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]+20% [ICON_GREAT_PEOPLE] Great Person points in all Cities. Gain [ICON_RESEARCH] Science whenever a Great Person is born.</Text>
+		</Row>
+	</Language_RU_RU>	
+	
+</GameData>

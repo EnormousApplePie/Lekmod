@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 6/4/2015 2:38:57 PM -->
+<GameData>
+	
+	<!-- Change National Intelligence Agency to require Constabularies instead of Police Stations -->
+	<Building_ClassesNeededInCity>
+		<Update>
+			<Set BuildingClassType="BUILDINGCLASS_CONSTABLE" />
+			<Where BuildingType="BUILDING_INTELLIGENCE_AGENCY" />
+		</Update>
+	</Building_ClassesNeededInCity>
+	<Building_PrereqBuildingClasses>
+		<Update>
+			<Set BuildingClassType="BUILDINGCLASS_CONSTABLE" />
+			<Where BuildingType="BUILDING_INTELLIGENCE_AGENCY" />
+		</Update>
+	</Building_PrereqBuildingClasses>
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_BUILDING_INTELLIGENCE_AGENCY" />
+		<Row Tag="TXT_KEY_BUILDING_INTELLIGENCE_AGENCY">
+			<Text>National Intelligence Agency [COLOR_CYAN]*[ENDCOLOR]</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_BUILDING_INTELLIGENCE_AGENCY_HELP" />
+		<Row Tag="TXT_KEY_BUILDING_INTELLIGENCE_AGENCY_HELP">
+			<Text>[COLOR_CYAN]* National Wonder (each player may build one)[ENDCOLOR][NEWLINE][NEWLINE]Provides an additional spy and levels up all your existing spies. Also provides a 15% reduction in enemy spy effectiveness. Must have a Constabulary in all cities.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_BUILDING_INTELLIGENCE_AGENCY" />
+		<Row Tag="TXT_KEY_BUILDING_INTELLIGENCE_AGENCY">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]National Intelligence Agency [COLOR_CYAN]*[ENDCOLOR]</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_BUILDING_INTELLIGENCE_AGENCY_HELP" />
+		<Row Tag="TXT_KEY_BUILDING_INTELLIGENCE_AGENCY_HELP">
+			<Text>[COLOR_CYAN]* National Wonder (each player may build one)[ENDCOLOR][NEWLINE][NEWLINE][COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Provides an additional spy and levels up all your existing spies. Also provides a 15% reduction in enemy spy effectiveness. Must have a Constabulary in all cities.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_BUILDING_INTELLIGENCE_AGENCY" />
+		<Row Tag="TXT_KEY_BUILDING_INTELLIGENCE_AGENCY">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]National Intelligence Agency [COLOR_CYAN]*[ENDCOLOR]</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_BUILDING_INTELLIGENCE_AGENCY_HELP" />
+		<Row Tag="TXT_KEY_BUILDING_INTELLIGENCE_AGENCY_HELP">
+			<Text>[COLOR_CYAN]* National Wonder (each player may build one)[ENDCOLOR][NEWLINE][NEWLINE][COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Provides an additional spy and levels up all your existing spies. Also provides a 15% reduction in enemy spy effectiveness. Must have a Constabulary in all cities.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_BUILDING_INTELLIGENCE_AGENCY" />
+		<Row Tag="TXT_KEY_BUILDING_INTELLIGENCE_AGENCY">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]National Intelligence Agency [COLOR_CYAN]*[ENDCOLOR]</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_BUILDING_INTELLIGENCE_AGENCY_HELP" />
+		<Row Tag="TXT_KEY_BUILDING_INTELLIGENCE_AGENCY_HELP">
+			<Text>[COLOR_CYAN]* National Wonder (each player may build one)[ENDCOLOR][NEWLINE][NEWLINE][COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Provides an additional spy and levels up all your existing spies. Also provides a 15% reduction in enemy spy effectiveness. Must have a Constabulary in all cities.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 6/11/2015 7:35:44 PM -->
+<GameData>
+
+	<!-- New Piety Tree
+	
+	Organized Religion		Mandate of Heaven		Religious Tolerance
+	  		|_____________	  _____|
+	  		|		      |  |
+	   Reformation		Theocracy
+					
+	-->
+
+	<Policies>
+		<Update>
+			<Set GridX="1" GridY="1" />
+			<Where Type="POLICY_ORGANIZED_RELIGION" />
+		</Update>
+		<Update>
+			<Set GridX="3" GridY="1" />
+			<Where Type="POLICY_MANDATE_OF_HEAVEN" />
+		</Update>
+		<Update>
+			<Set GridX="5" GridY="1" />
+			<Where Type="POLICY_FREE_RELIGION" />
+		</Update>
+		<Update>
+			<Set GridX="1" GridY="2" />
+			<Where Type="POLICY_REFORMATION" />
+		</Update>
+		<Update>
+			<Set GridX="3" GridY="2" />
+			<Where Type="POLICY_THEOCRACY" />
+		</Update>
+	</Policies>
+	<Policy_PrereqPolicies>
+		<Delete PolicyType="POLICY_ORGANIZED_RELIGION" />
+		<Delete PolicyType="POLICY_MANDATE_OF_HEAVEN" />
+		<Delete PolicyType="POLICY_FREE_RELIGION" />
+		<Delete PolicyType="POLICY_REFORMATION" />
+		<Delete PolicyType="POLICY_THEOCRACY" />
+		<Row>
+			<PolicyType>POLICY_REFORMATION</PolicyType>
+			<PrereqPolicy>POLICY_ORGANIZED_RELIGION</PrereqPolicy>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_THEOCRACY</PolicyType>
+			<PrereqPolicy>POLICY_ORGANIZED_RELIGION</PrereqPolicy>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_THEOCRACY</PolicyType>
+			<PrereqPolicy>POLICY_MANDATE_OF_HEAVEN</PrereqPolicy>
+		</Row>
+	</Policy_PrereqPolicies>
+
+</GameData>

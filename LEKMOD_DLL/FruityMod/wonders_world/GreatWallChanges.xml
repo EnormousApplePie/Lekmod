@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 6/8/2015 7:12:58 PM -->
+<GameData>
+	
+	<!-- Great Wall: Now builds a Watch Tower in every city (duplicate of Walls) and Walls in this city. -->
+	<Buildings>
+		<Update>
+			<Set ObsoleteTech="NULL" />
+			<Where Type="BUILDING_GREAT_WALL" />
+		</Update>
+	</Buildings>
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_WONDER_GREAT_WALL_HELP" />
+		<Row Tag="TXT_KEY_WONDER_GREAT_WALL_HELP">
+			<Text>Provides a Watch Tower for free in all cities. Also provides Walls for free in the city in which it is built.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_WONDER_GREAT_WALL_HELP" />
+		<Row Tag="TXT_KEY_WONDER_GREAT_WALL_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Provides a Watch Tower for free in all cities. Also provides Walls for free in the city in which it is built.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_WONDER_GREAT_WALL_HELP" />
+		<Row Tag="TXT_KEY_WONDER_GREAT_WALL_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Provides a Watch Tower for free in all cities. Also provides Walls for free in the city in which it is built.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_WONDER_GREAT_WALL_HELP" />
+		<Row Tag="TXT_KEY_WONDER_GREAT_WALL_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Provides a Watch Tower for free in all cities. Also provides Walls for free in the city in which it is built.</Text>
+		</Row>
+	</Language_RU_RU>
+
+	<!-- Great Wall Watch Tower -->
+	<BuildingClasses>
+		<Row>
+			<Type>BUILDINGCLASS_WATCH_TOWER</Type>
+			<DefaultBuilding>BUILDING_WATCH_TOWER</DefaultBuilding>
+			<Description>TXT_KEY_BUILDING_WATCH_TOWER_DESC</Description>
+		</Row>
+	</BuildingClasses>
+	<Buildings>
+		<Row>
+			<Type>BUILDING_WATCH_TOWER</Type>
+			<BuildingClass>BUILDINGCLASS_WATCH_TOWER</BuildingClass>
+			<Cost>-1</Cost>
+			<Help>TXT_KEY_BUILDING_WATCH_TOWER_STRATEGY</Help>
+			<Description>TXT_KEY_BUILDING_WATCH_TOWER</Description>
+			<Civilopedia>TXT_KEY_CIV5_BUILDINGS_WATCH_TOWER_TEXT</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_WATCH_TOWER_STRATEGY</Strategy>
+			<ArtDefineTag>ART_DEF_BUILDING_WALLS</ArtDefineTag>
+			<MinAreaSize>-1</MinAreaSize>
+			<AllowsRangeStrike>true</AllowsRangeStrike>
+			<Defense>500</Defense>
+			<ExtraCityHitPoints>50</ExtraCityHitPoints>
+			<NeverCapture>true</NeverCapture>
+			<IconAtlas>BW_ATLAS_2</IconAtlas>
+			<PortraitIndex>7</PortraitIndex>
+		</Row>
+	</Buildings>
+	<Language_en_US>
+		<Row Tag="TXT_KEY_BUILDING_WATCH_TOWER">
+			<Text>Watch Tower</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_WATCH_TOWER_DESC">
+			<Text>Watch Tower</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_WATCH_TOWER_PEDIA">
+			<Text>This is one of the many Watch Towers built along the Great Wall.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_WATCH_TOWER_STRATEGY">
+			<Text>Watch Towers increase a city's Defense Strength by 5 and Hit Points by 50.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Row Tag="TXT_KEY_BUILDING_WATCH_TOWER">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Watch Tower</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_WATCH_TOWER_DESC">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Watch Tower</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_WATCH_TOWER_PEDIA">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]This is one of the many Watch Towers built along the Great Wall.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_WATCH_TOWER_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Watch Towers increase a city's Defense Strength by 5 and Hit Points by 50.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Row Tag="TXT_KEY_BUILDING_WATCH_TOWER">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Watch Tower</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_WATCH_TOWER_DESC">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Watch Tower</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_WATCH_TOWER_PEDIA">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]This is one of the many Watch Towers built along the Great Wall.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_WATCH_TOWER_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Watch Towers increase a city's Defense Strength by 5 and Hit Points by 50.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Row Tag="TXT_KEY_BUILDING_WATCH_TOWER">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Watch Tower</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_WATCH_TOWER_DESC">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Watch Tower</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_WATCH_TOWER_PEDIA">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]This is one of the many Watch Towers built along the Great Wall.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_WATCH_TOWER_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Watch Towers increase a city's Defense Strength by 5 and Hit Points by 50.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

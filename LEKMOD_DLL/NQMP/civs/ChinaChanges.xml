@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2016-09-14 20:53:27 -->
+<GameData>
+	
+	<!-- UA no longer provides +50% GG points or extra combat strength. Instead, now any unit that starts it turn on or adjacent to a GG gets +1 movement for the turn. -->
+	<Traits>
+		<Update>
+			<Set GreatGeneralRateModifier="0" GreatGeneralExtraBonus="0" />
+			<Where Type="TRAIT_ART_OF_WAR" />
+		</Update>
+	</Traits>
+	<UnitPromotions>
+		<Row>
+			<Type>PROMOTION_ART_OF_WAR</Type>
+			<Description>TXT_KEY_PROMOTION_ART_OF_WAR</Description>
+			<Help>TXT_KEY_PROMOTION_ART_OF_WAR_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CannotBeChosen>true</CannotBeChosen>
+			<GreatGeneralOnOrAdjacentConfersMovement>1</GreatGeneralOnOrAdjacentConfersMovement>
+			<PortraitIndex>59</PortraitIndex>
+			<IconAtlas>ABILITY_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_ART_OF_WAR</PediaEntry>
+		</Row>
+	</UnitPromotions>
+	<Trait_FreePromotionUnitCombats>
+		<Row>
+			<TraitType>TRAIT_ART_OF_WAR</TraitType>
+			<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
+			<PromotionType>PROMOTION_ART_OF_WAR</PromotionType>
+		</Row>
+		<Row>
+			<TraitType>TRAIT_ART_OF_WAR</TraitType>
+			<UnitCombatType>UNITCOMBAT_ARCHER</UnitCombatType>
+			<PromotionType>PROMOTION_ART_OF_WAR</PromotionType>
+		</Row>
+		<Row>
+			<TraitType>TRAIT_ART_OF_WAR</TraitType>
+			<UnitCombatType>UNITCOMBAT_RECON</UnitCombatType>
+			<PromotionType>PROMOTION_ART_OF_WAR</PromotionType>
+		</Row>
+		<Row>
+			<TraitType>TRAIT_ART_OF_WAR</TraitType>
+			<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
+			<PromotionType>PROMOTION_ART_OF_WAR</PromotionType>
+		</Row>
+		<Row>
+			<TraitType>TRAIT_ART_OF_WAR</TraitType>
+			<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
+			<PromotionType>PROMOTION_ART_OF_WAR</PromotionType>
+		</Row>
+		<Row>
+			<TraitType>TRAIT_ART_OF_WAR</TraitType>
+			<UnitCombatType>UNITCOMBAT_GUN</UnitCombatType>
+			<PromotionType>PROMOTION_ART_OF_WAR</PromotionType>
+		</Row>
+		<Row>
+			<TraitType>TRAIT_ART_OF_WAR</TraitType>
+			<UnitCombatType>UNITCOMBAT_ARMOR</UnitCombatType>
+			<PromotionType>PROMOTION_ART_OF_WAR</PromotionType>
+		</Row>
+	</Trait_FreePromotionUnitCombats>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_TRAIT_ART_OF_WAR" />
+		<Row Tag="TXT_KEY_TRAIT_ART_OF_WAR">
+			<Text>Military land units that start the turn on or adjacent to a Great General have +1 [ICON_MOVES] Movement.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_ART_OF_WAR">
+			<Text>Art of War</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_ART_OF_WAR_HELP">
+			<Text>+1 [ICON_MOVES] Movement if the turn was started adjacent to a Great General</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_TRAIT_ART_OF_WAR" />
+		<Row Tag="TXT_KEY_TRAIT_ART_OF_WAR">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Military land units that start the turn on or adjacent to a Great General have +1 [ICON_MOVES] Movement.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_ART_OF_WAR">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Art of War</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_ART_OF_WAR_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]+1 [ICON_MOVES] Movement if the turn was started adjacent to a Great General</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_TRAIT_ART_OF_WAR" />
+		<Row Tag="TXT_KEY_TRAIT_ART_OF_WAR">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Military land units that start the turn on or adjacent to a Great General have +1 [ICON_MOVES] Movement.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_ART_OF_WAR">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Art of War</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_ART_OF_WAR_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]+1 [ICON_MOVES] Movement if the turn was started adjacent to a Great General</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_TRAIT_ART_OF_WAR" />
+		<Row Tag="TXT_KEY_TRAIT_ART_OF_WAR">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Military land units that start the turn on or adjacent to a Great General have +1 [ICON_MOVES] Movement.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_ART_OF_WAR">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Art of War</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_ART_OF_WAR_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]+1 [ICON_MOVES] Movement if the turn was started adjacent to a Great General</Text>
+		</Row>
+	</Language_RU_RU>
+	
+</GameData>

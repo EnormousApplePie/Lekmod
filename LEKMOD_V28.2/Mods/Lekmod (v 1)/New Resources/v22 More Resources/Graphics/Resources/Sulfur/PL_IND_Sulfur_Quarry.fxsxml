@@ -1,0 +1,22 @@
+<Asset>
+  <Mesh file="PL_IND_Sulfur_Quarry.gr2" source="Max" />
+  <Texture file="PL_IND_Quarry_DIFF.dds" source="Max" />
+  <Texture file="PL_IND_Quarry_SREF.dds" source="Max" />
+  <Texture file="PL_Quarry_Decal_D.dds" source="Max" />
+  <Texture file="PL_Sulfur_Quarry_Rock_D.dds" source="Max" />
+  <Texture file="PL_Sulfur_Quarry_Rock_S.dds" source="Max" />
+  <Texture file="Sulfur_Quarry_Decal_H.dds" source="Max" />
+  <Texture file="CityBase_SREF.dds" source="Max" />
+  <Texture file="Environment_Steel_Dull_32.dds" source="Max" />
+  <Texture file="Generic_Grey_8.dds" source="Max" />
+  <Texture file="Plantation_MID_DIFF.dds" source="Max" />
+  <Texture file="Plantation_MID_SREF.dds" source="Max" />
+  <Texture file="Resource_Irradiance.dds" source="Max" />
+  <Texture file="resource_Environment_Sharp.dds" source="Max" />
+  <Texture file="resources_Environment_Dull.dds" source="Max" />
+  <DecisionTree file="StaticLandmarkDecisionTree.ddtxml" source="Tool" />
+  <BoneUsage>
+    <Bone name="FX_PillagedSmoke" />
+  </BoneUsage>
+  <TimedTrigger file="FX_Triggers_PL_IND_Sulfur_Quarry.ftsxml" source="Tool" model="Quarry01" state="0,1,2,3" />
+</Asset>

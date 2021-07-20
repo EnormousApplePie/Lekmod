@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 9/15/2015 11:07:52 PM -->
+<GameData>
+
+	<Building_HurryModifiers>
+		<Update>
+			<Set HurryCostModifier="-12" />
+			<Where BuildingType="BUILDING_BIG_BEN" HurryType="HURRY_GOLD" />
+		</Update>
+	</Building_HurryModifiers>
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_WONDER_BIG_BEN_HELP" />
+		<Row Tag="TXT_KEY_WONDER_BIG_BEN_HELP">
+			<Text>Requires Commerce. Cost of [ICON_GOLD] Gold purchasing in all cities reduced by 12%.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_WONDER_BIG_BEN_HELP" />
+		<Row Tag="TXT_KEY_WONDER_BIG_BEN_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Requires Commerce. Cost of [ICON_GOLD] Gold purchasing in all cities reduced by 12%.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_WONDER_BIG_BEN_HELP" />
+		<Row Tag="TXT_KEY_WONDER_BIG_BEN_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Requires Commerce. Cost of [ICON_GOLD] Gold purchasing in all cities reduced by 12%.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_WONDER_BIG_BEN_HELP" />
+		<Row Tag="TXT_KEY_WONDER_BIG_BEN_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Requires Commerce. Cost of [ICON_GOLD] Gold purchasing in all cities reduced by 12%.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

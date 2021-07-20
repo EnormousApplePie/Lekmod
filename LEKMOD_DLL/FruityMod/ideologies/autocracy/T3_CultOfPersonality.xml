@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2/15/2016 3:15:40 PM -->
+<GameData>
+
+	<!-- Cult of Personality now gives 0-100% boost based on your relative military strength in demographics -->
+	<Policies>
+		<Update>
+			<Set CommonFoeTourismModifier="100" />
+			<Where Type="POLICY_CULT_PERSONALITY" />
+		</Update>
+	</Policies>
+
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_POLICY_CULT_PERSONALITY_HELP" />
+		<Row Tag="TXT_KEY_POLICY_CULT_PERSONALITY_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Cult of Personality[ENDCOLOR][NEWLINE]Gain up to +100% Tourism [ICON_TOURISM] depending on your military strength (Soldiers) relative to other players.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_POLICY_CULT_PERSONALITY_HELP" />
+		<Row Tag="TXT_KEY_POLICY_CULT_PERSONALITY_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Cult of Personality[ENDCOLOR][NEWLINE]Gain up to +100% Tourism [ICON_TOURISM] depending on your military strength (Soldiers) relative to other players.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_POLICY_CULT_PERSONALITY_HELP" />
+		<Row Tag="TXT_KEY_POLICY_CULT_PERSONALITY_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Cult of Personality[ENDCOLOR][NEWLINE]Gain up to +100% Tourism [ICON_TOURISM] depending on your military strength (Soldiers) relative to other players.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_POLICY_CULT_PERSONALITY_HELP" />
+		<Row Tag="TXT_KEY_POLICY_CULT_PERSONALITY_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Cult of Personality[ENDCOLOR][NEWLINE]Gain up to +100% Tourism [ICON_TOURISM] depending on your military strength (Soldiers) relative to other players.</Text>
+		</Row>
+	</Language_RU_RU>
+
+
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_CO_CITY_TOURISM_COMMON_FOE_BONUS" />
+		<Row Tag="TXT_KEY_CO_CITY_TOURISM_COMMON_FOE_BONUS">
+			<Text>+{1_Num}% Bonus for Cult of Personality[NEWLINE]</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_CO_CITY_TOURISM_COMMON_FOE_BONUS" />
+		<Row Tag="TXT_KEY_CO_CITY_TOURISM_COMMON_FOE_BONUS">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]+{1_Num}% Bonus for Cult of Personality[NEWLINE]</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_CO_CITY_TOURISM_COMMON_FOE_BONUS" />
+		<Row Tag="TXT_KEY_CO_CITY_TOURISM_COMMON_FOE_BONUS">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]+{1_Num}% Bonus for Cult of Personality[NEWLINE]</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_CO_CITY_TOURISM_COMMON_FOE_BONUS" />
+		<Row Tag="TXT_KEY_CO_CITY_TOURISM_COMMON_FOE_BONUS">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]+{1_Num}% Bonus for Cult of Personality[NEWLINE]</Text>
+		</Row>
+	</Language_RU_RU>
+
+	
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_CO_PLAYER_TOURISM_COMMON_FOE" />
+		<Row Tag="TXT_KEY_CO_PLAYER_TOURISM_COMMON_FOE">
+			<Text>+{1_Num}% Bonus for Cult of Personality[NEWLINE]</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_CO_PLAYER_TOURISM_COMMON_FOE" />
+		<Row Tag="TXT_KEY_CO_PLAYER_TOURISM_COMMON_FOE">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]+{1_Num}% Bonus for Cult of Personality[NEWLINE]</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_CO_PLAYER_TOURISM_COMMON_FOE" />
+		<Row Tag="TXT_KEY_CO_PLAYER_TOURISM_COMMON_FOE">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]+{1_Num}% Bonus for Cult of Personality[NEWLINE]</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_CO_PLAYER_TOURISM_COMMON_FOE" />
+		<Row Tag="TXT_KEY_CO_PLAYER_TOURISM_COMMON_FOE">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]+{1_Num}% Bonus for Cult of Personality[NEWLINE]</Text>
+		</Row>
+	</Language_RU_RU>
+	
+</GameData>

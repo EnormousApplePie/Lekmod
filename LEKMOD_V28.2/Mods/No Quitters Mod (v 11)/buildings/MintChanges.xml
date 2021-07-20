@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 6/13/2015 6:39:25 PM -->
+<GameData>
+	
+	<!-- Mint now works with Copper as well. -->
+	<Building_LocalResourceOrs>
+		<Row>
+			<BuildingType>BUILDING_MINT</BuildingType>
+			<ResourceType>RESOURCE_COPPER</ResourceType>
+		</Row>
+	</Building_LocalResourceOrs>
+	<Building_ResourceYieldChanges>
+		<Row>
+			<BuildingType>BUILDING_MINT</BuildingType>
+			<ResourceType>RESOURCE_COPPER</ResourceType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<Yield>2</Yield>
+		</Row>
+	</Building_ResourceYieldChanges>
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_BUILDING_MINT_STRATEGY" />
+		<Row Tag="TXT_KEY_BUILDING_MINT_STRATEGY">
+			<Text>The Mint can only be constructed in a city with improved gold, silver, or copper resources nearby. The Mint increases the [ICON_GOLD] Gold output of each such resource the city has access to.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_BUILDING_MINT_HELP" />
+		<Row Tag="TXT_KEY_BUILDING_MINT_HELP">
+			<Text>Each source of [ICON_RES_GOLD] Gold, [ICON_RES_SILVER] Silver, and [ICON_RES_COPPER] Copper worked by this City produces +2 [ICON_GOLD] Gold.[NEWLINE][NEWLINE]City must have at least one of these resources mined nearby.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_BUILDING_MINT_STRATEGY" />
+		<Row Tag="TXT_KEY_BUILDING_MINT_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]The Mint can only be constructed in a city with improved gold, silver, or copper resources nearby. The Mint increases the [ICON_GOLD] Gold output of each such resource the city has access to.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_BUILDING_MINT_HELP" />
+		<Row Tag="TXT_KEY_BUILDING_MINT_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Each source of [ICON_RES_GOLD] Gold, [ICON_RES_SILVER] Silver, and [ICON_RES_COPPER] Copper worked by this City produces +2 [ICON_GOLD] Gold.[NEWLINE][NEWLINE]City must have at least one of these resources mined nearby.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_BUILDING_MINT_STRATEGY" />
+		<Row Tag="TXT_KEY_BUILDING_MINT_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]The Mint can only be constructed in a city with improved gold, silver, or copper resources nearby. The Mint increases the [ICON_GOLD] Gold output of each such resource the city has access to.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_BUILDING_MINT_HELP" />
+		<Row Tag="TXT_KEY_BUILDING_MINT_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Each source of [ICON_RES_GOLD] Gold, [ICON_RES_SILVER] Silver, and [ICON_RES_COPPER] Copper worked by this City produces +2 [ICON_GOLD] Gold.[NEWLINE][NEWLINE]City must have at least one of these resources mined nearby.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_BUILDING_MINT_STRATEGY" />
+		<Row Tag="TXT_KEY_BUILDING_MINT_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]The Mint can only be constructed in a city with improved gold, silver, or copper resources nearby. The Mint increases the [ICON_GOLD] Gold output of each such resource the city has access to.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_BUILDING_MINT_HELP" />
+		<Row Tag="TXT_KEY_BUILDING_MINT_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Each source of [ICON_RES_GOLD] Gold, [ICON_RES_SILVER] Silver, and [ICON_RES_COPPER] Copper worked by this City produces +2 [ICON_GOLD] Gold.[NEWLINE][NEWLINE]City must have at least one of these resources mined nearby.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>
