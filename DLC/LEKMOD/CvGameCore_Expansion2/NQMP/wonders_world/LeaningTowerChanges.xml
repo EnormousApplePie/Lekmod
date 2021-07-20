@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2017-05-16 18:21:31 -->
+<GameData>
+
+	<!-- no longer gives a free great person -->
+	<Buildings>
+		<Update>
+			<Set FreeGreatPeople="0" />
+			<Where Type="BUILDING_LEANING_TOWER" />
+		</Update>
+	</Buildings>
+
+	<!-- localizaion -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_WONDER_LEANING_TOWER_HELP" />
+		<Row Tag="TXT_KEY_WONDER_LEANING_TOWER_HELP">
+			<Text>+25% generation of [ICON_GREAT_PEOPLE] Great People in all Cities.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_WONDER_LEANING_TOWER_HELP" />
+		<Row Tag="TXT_KEY_WONDER_LEANING_TOWER_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]+25% generation of [ICON_GREAT_PEOPLE] Great People in all Cities.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_WONDER_LEANING_TOWER_HELP" />
+		<Row Tag="TXT_KEY_WONDER_LEANING_TOWER_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]+25% generation of [ICON_GREAT_PEOPLE] Great People in all Cities.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_WONDER_LEANING_TOWER_HELP" />
+		<Row Tag="TXT_KEY_WONDER_LEANING_TOWER_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]+25% generation of [ICON_GREAT_PEOPLE] Great People in all Cities.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

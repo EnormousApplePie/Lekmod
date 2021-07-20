@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2017-11-15 14:34:16 -->
+<GameData>
+	
+	<!-- Market (and Bazaar) now gains all the previous benefits of Caravansary (+50% Trade Route range and +2 Gold when connecting externally). -->
+	<Buildings>
+		<Update>
+			<Set TradeRouteLandDistanceModifier="50" TradeRouteLandGoldBonus="200" />
+			<Where Type="BUILDING_MARKET" />
+		</Update>
+		<Update>
+			<Set TradeRouteLandDistanceModifier="50" TradeRouteLandGoldBonus="200" />
+			<Where Type="BUILDING_BAZAAR" />
+		</Update>
+	</Buildings>
+
+	<!-- localizaion -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_BUILDING_MARKET_STRATEGY" />
+		<Row Tag="TXT_KEY_BUILDING_MARKET_STRATEGY">
+			<Text>Markets increase the amount of [ICON_GOLD] Gold a city generates. Trade routes other players make to a city with a Market will generate an extra 1 [ICON_GOLD] Gold for the city owner and the trade route owner gains an additional 1 [ICON_GOLD] Gold for the trade route. Land trade routes originating from this city have a 50% increase in range and produce an additional 2 [ICON_GOLD] Gold when connecting to another civilization.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_BUILDING_MARKET_STRATEGY" />
+		<Row Tag="TXT_KEY_BUILDING_MARKET_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Markets increase the amount of [ICON_GOLD] Gold a city generates. Trade routes other players make to a city with a Market will generate an extra 1 [ICON_GOLD] Gold for the city owner and the trade route owner gains an additional 1 [ICON_GOLD] Gold for the trade route. Land trade routes originating from this city have a 50% increase in range and produce an additional 2 [ICON_GOLD] Gold when connecting to another civilization.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_BUILDING_MARKET_STRATEGY" />
+		<Row Tag="TXT_KEY_BUILDING_MARKET_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Markets increase the amount of [ICON_GOLD] Gold a city generates. Trade routes other players make to a city with a Market will generate an extra 1 [ICON_GOLD] Gold for the city owner and the trade route owner gains an additional 1 [ICON_GOLD] Gold for the trade route. Land trade routes originating from this city have a 50% increase in range and produce an additional 2 [ICON_GOLD] Gold when connecting to another civilization.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_BUILDING_MARKET_STRATEGY" />
+		<Row Tag="TXT_KEY_BUILDING_MARKET_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Markets increase the amount of [ICON_GOLD] Gold a city generates. Trade routes other players make to a city with a Market will generate an extra 1 [ICON_GOLD] Gold for the city owner and the trade route owner gains an additional 1 [ICON_GOLD] Gold for the trade route. Land trade routes originating from this city have a 50% increase in range and produce an additional 2 [ICON_GOLD] Gold when connecting to another civilization.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

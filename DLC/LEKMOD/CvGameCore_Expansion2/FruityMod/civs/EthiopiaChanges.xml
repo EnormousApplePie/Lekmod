@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 6/4/2015 1:33:16 PM -->
+<GameData>
+	
+	<!-- Recolored Ethiopia slightly so it's not as close to barbarian colors -->
+	<Colors>
+		<Delete Type="COLOR_PLAYER_ETHIOPIA_BACKGROUND"/>
+		<Row>
+			<Type>COLOR_PLAYER_ETHIOPIA_BACKGROUND</Type>
+			<Red>0.01953125</Red>
+			<Green>0.37890625</Green>
+			<Blue>0.140625</Blue>
+			<Alpha>1</Alpha>
+		</Row>
+	</Colors>
+	
+</GameData>

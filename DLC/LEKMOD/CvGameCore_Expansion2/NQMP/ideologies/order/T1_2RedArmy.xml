@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2017-02-12 16:10:33 -->
+<GameData>
+
+	<!-- Red Army: +12% Combat Strength for Gunpowder units with an adjacent Gunpowder unit. -->
+	<Policies>
+		<Row>
+			<Type>POLICY_RED_ARMY</Type>
+			<Description>TXT_KEY_POLICY_RED_ARMY</Description>
+			<Civilopedia>TXT_KEY_POLICY_RED_ARMY_TEXT</Civilopedia>
+			<Help>TXT_KEY_POLICY_RED_ARMY_HELP</Help>
+			<PolicyBranchType>POLICY_BRANCH_ORDER</PolicyBranchType>
+			<CultureCost>10</CultureCost>
+			<CombatBonusVsSmallerCiv>0</CombatBonusVsSmallerCiv>
+			<Level>1</Level>
+			<PortraitIndex>11</PortraitIndex>
+			<IconAtlas>POLICY_ATLAS_EXP2</IconAtlas>
+			<IconAtlasAchieved>POLICY_A_ATLAS_EXP2</IconAtlasAchieved>
+		</Row>
+	</Policies>
+	<Policy_FreePromotions>
+		<Row>
+			<PolicyType>POLICY_RED_ARMY</PolicyType>
+			<PromotionType>PROMOTION_RED_ARMY</PromotionType>
+		</Row>
+	</Policy_FreePromotions>
+	<Policy_Flavors>
+		<Row>
+			<PolicyType>POLICY_HONOR</PolicyType>
+			<FlavorType>FLAVOR_OFFENSE</FlavorType>
+			<Flavor>10</Flavor>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_HONOR</PolicyType>
+			<FlavorType>FLAVOR_DEFENSE</FlavorType>
+			<Flavor>10</Flavor>
+		</Row>
+	</Policy_Flavors>
+
+	<!-- Red Army Promotion -->
+	<UnitPromotions>
+		<Row>
+			<Type>PROMOTION_RED_ARMY</Type>
+			<Description>TXT_KEY_PROMOTION_RED_ARMY</Description>
+			<Help>TXT_KEY_PROMOTION_RED_ARMY_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CannotBeChosen>true</CannotBeChosen>
+			<AdjacentMod>12</AdjacentMod>
+			<PortraitIndex>59</PortraitIndex>
+			<IconAtlas>ABILITY_ATLAS</IconAtlas>
+			<PediaType>PEDIA_SHARED</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_RED_ARMY</PediaEntry>
+		</Row>
+	</UnitPromotions>
+	<UnitPromotions_UnitCombats>
+		<Row>
+			<PromotionType>PROMOTION_RED_ARMY</PromotionType>
+			<UnitCombatType>UNITCOMBAT_GUN</UnitCombatType>
+		</Row>
+	</UnitPromotions_UnitCombats>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Row Tag="TXT_KEY_POLICY_RED_ARMY">
+			<Text>Red Army</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POLICY_RED_ARMY_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Red Army[ENDCOLOR][NEWLINE]+12% [ICON_STRENGTH] Combat Strength for Gunpowder units adjacent to another Gunpowder unit.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POLICY_RED_ARMY_TEXT">
+			<Text>[COLOR_POSITIVE_TEXT]Source: Wikipedia (https://en.wikipedia.org/wiki/Red_Army)[ENDCOLOR][NEWLINE][NEWLINE]The Workers' and Peasants' Red Army (also in critical literature and folklore of that epoch - Red Horde, Army of Work) was the army and the air force of the Russian Soviet Federative Socialist Republic, and after 1922 the Union of Soviet Socialist Republics. The army was established immediately after the 1917 October Revolution (Red October or Bolshevik Revolution). The Bolsheviks raised an army to oppose the military confederations (especially the various groups collectively known as the White Army) of their adversaries during the Russian Civil War. Beginning in February 1946, the Red Army, along with the Soviet Navy, embodied the main component of the Soviet Armed Forces; taking the official name of "Soviet Army" until its dissolution in December 1991.[NEWLINE][NEWLINE]The Red Army is credited as being the decisive land force in the Allied victory in the European theatre of World War II. During operations on the Eastern Front, it fought 75%–80% of the German land forces (Wehrmacht Heer and Waffen-SS) deployed in the war, inflicting the vast majority of all German losses and ultimately capturing the German capital.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_EUPANEL_TRAIT_LARGE_SIZE_BONUS">
+			<Text>Bonus Against Smaller Civ</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_RED_ARMY_HELP">
+			<Text>+12% [ICON_STRENGTH] Combat Strength if adjacent to a Gunpowder unit.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_RED_ARMY">
+			<Text>Red Army</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Row Tag="TXT_KEY_POLICY_RED_ARMY">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Red Army</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POLICY_RED_ARMY_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Red Army[ENDCOLOR][NEWLINE]+12% [ICON_STRENGTH] Combat Strength for Gunpowder units adjacent to another Gunpowder unit.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POLICY_RED_ARMY_TEXT">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Source: Wikipedia (https://en.wikipedia.org/wiki/Red_Army)[ENDCOLOR][NEWLINE][NEWLINE]The Workers' and Peasants' Red Army (also in critical literature and folklore of that epoch - Red Horde, Army of Work) was the army and the air force of the Russian Soviet Federative Socialist Republic, and after 1922 the Union of Soviet Socialist Republics. The army was established immediately after the 1917 October Revolution (Red October or Bolshevik Revolution). The Bolsheviks raised an army to oppose the military confederations (especially the various groups collectively known as the White Army) of their adversaries during the Russian Civil War. Beginning in February 1946, the Red Army, along with the Soviet Navy, embodied the main component of the Soviet Armed Forces; taking the official name of "Soviet Army" until its dissolution in December 1991.[NEWLINE][NEWLINE]The Red Army is credited as being the decisive land force in the Allied victory in the European theatre of World War II. During operations on the Eastern Front, it fought 75%–80% of the German land forces (Wehrmacht Heer and Waffen-SS) deployed in the war, inflicting the vast majority of all German losses and ultimately capturing the German capital.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_EUPANEL_TRAIT_LARGE_SIZE_BONUS">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Bonus Against Smaller Civ</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_RED_ARMY_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]+12% [ICON_STRENGTH] Combat Strength if adjacent to a Gunpowder unit.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_RED_ARMY">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Red Army</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Row Tag="TXT_KEY_POLICY_RED_ARMY">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Red Army</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POLICY_RED_ARMY_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Red Army[ENDCOLOR][NEWLINE]+12% [ICON_STRENGTH] Combat Strength for Gunpowder units adjacent to another Gunpowder unit.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POLICY_RED_ARMY_TEXT">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Source: Wikipedia (https://en.wikipedia.org/wiki/Red_Army)[ENDCOLOR][NEWLINE][NEWLINE]The Workers' and Peasants' Red Army (also in critical literature and folklore of that epoch - Red Horde, Army of Work) was the army and the air force of the Russian Soviet Federative Socialist Republic, and after 1922 the Union of Soviet Socialist Republics. The army was established immediately after the 1917 October Revolution (Red October or Bolshevik Revolution). The Bolsheviks raised an army to oppose the military confederations (especially the various groups collectively known as the White Army) of their adversaries during the Russian Civil War. Beginning in February 1946, the Red Army, along with the Soviet Navy, embodied the main component of the Soviet Armed Forces; taking the official name of "Soviet Army" until its dissolution in December 1991.[NEWLINE][NEWLINE]The Red Army is credited as being the decisive land force in the Allied victory in the European theatre of World War II. During operations on the Eastern Front, it fought 75%–80% of the German land forces (Wehrmacht Heer and Waffen-SS) deployed in the war, inflicting the vast majority of all German losses and ultimately capturing the German capital.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_EUPANEL_TRAIT_LARGE_SIZE_BONUS">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Bonus Against Smaller Civ</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_RED_ARMY_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]+12% [ICON_STRENGTH] Combat Strength if adjacent to a Gunpowder unit.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_RED_ARMY">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Red Army</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Row Tag="TXT_KEY_POLICY_RED_ARMY">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Red Army</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POLICY_RED_ARMY_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Red Army[ENDCOLOR][NEWLINE]+12% [ICON_STRENGTH] Combat Strength for Gunpowder units adjacent to another Gunpowder unit.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POLICY_RED_ARMY_TEXT">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Source: Wikipedia (https://en.wikipedia.org/wiki/Red_Army)[ENDCOLOR][NEWLINE][NEWLINE]The Workers' and Peasants' Red Army (also in critical literature and folklore of that epoch - Red Horde, Army of Work) was the army and the air force of the Russian Soviet Federative Socialist Republic, and after 1922 the Union of Soviet Socialist Republics. The army was established immediately after the 1917 October Revolution (Red October or Bolshevik Revolution). The Bolsheviks raised an army to oppose the military confederations (especially the various groups collectively known as the White Army) of their adversaries during the Russian Civil War. Beginning in February 1946, the Red Army, along with the Soviet Navy, embodied the main component of the Soviet Armed Forces; taking the official name of "Soviet Army" until its dissolution in December 1991.[NEWLINE][NEWLINE]The Red Army is credited as being the decisive land force in the Allied victory in the European theatre of World War II. During operations on the Eastern Front, it fought 75%–80% of the German land forces (Wehrmacht Heer and Waffen-SS) deployed in the war, inflicting the vast majority of all German losses and ultimately capturing the German capital.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_EUPANEL_TRAIT_LARGE_SIZE_BONUS">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Bonus Against Smaller Civ</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_RED_ARMY_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]+12% [ICON_STRENGTH] Combat Strength if adjacent to a Gunpowder unit.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_RED_ARMY">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Red Army</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

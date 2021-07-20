@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 5/5/2016 6:01:19 AM -->
+<GameData>
+
+	<!-- Haakkaakakakakawhatever it is now has 5 movement and also gets Charge to run around like a crazy person killing already damaged things. -->
+	<Units>
+		<Update>
+			<Set Moves="5" />
+			<Where Type="UNIT_SWEDISH_HAKKAPELIITTA" />
+		</Update>
+	</Units>
+	<Unit_FreePromotions>
+		<Row>
+			<UnitType>UNIT_SWEDISH_HAKKAPELIITTA</UnitType>
+			<PromotionType>PROMOTION_CHARGE</PromotionType>
+		</Row>
+	</Unit_FreePromotions>
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_UNIT_HELP_SWEDISH_HAKKAPELIITTA" />
+		<Row Tag="TXT_KEY_UNIT_HELP_SWEDISH_HAKKAPELIITTA">
+			<Text>Elite mounted Unit that specializes in working with Great Generals. It starts with extra movement compared to the Lancer it replaces and it deals extra damage to units that are already wounded. Only the Swedish may build it.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_UNIT_HELP_SWEDISH_HAKKAPELIITTA" />
+		<Row Tag="TXT_KEY_UNIT_HELP_SWEDISH_HAKKAPELIITTA">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Elite mounted Unit that specializes in working with Great Generals. It starts with extra movement compared to the Lancer it replaces and it deals extra damage to units that are already wounded. Only the Swedish may build it.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_UNIT_HELP_SWEDISH_HAKKAPELIITTA" />
+		<Row Tag="TXT_KEY_UNIT_HELP_SWEDISH_HAKKAPELIITTA">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Elite mounted Unit that specializes in working with Great Generals. It starts with extra movement compared to the Lancer it replaces and it deals extra damage to units that are already wounded. Only the Swedish may build it.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_UNIT_HELP_SWEDISH_HAKKAPELIITTA" />
+		<Row Tag="TXT_KEY_UNIT_HELP_SWEDISH_HAKKAPELIITTA">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Elite mounted Unit that specializes in working with Great Generals. It starts with extra movement compared to the Lancer it replaces and it deals extra damage to units that are already wounded. Only the Swedish may build it.</Text>
+		</Row>
+	</Language_RU_RU>
+
+
+</GameData>

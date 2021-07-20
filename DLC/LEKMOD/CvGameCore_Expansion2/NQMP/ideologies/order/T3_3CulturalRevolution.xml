@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2017-02-12 16:10:43 -->
+<GameData>
+
+	<!-- Cultural Revolution: The Empire gains bonus % for Great Musician points equal to its Production output. -->
+	<Policies>
+		<Update>
+			<Set Level="3" SharedIdeologyTourismModifier="0" ProductionToGreatMusiciansModifier="100" />
+			<Where Type="POLICY_CULTURAL_REVOLUTION" />
+		</Update>
+	</Policies>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_POLICY_CULTURAL_REVOLUTION_HELP" />
+		<Row Tag="TXT_KEY_POLICY_CULTURAL_REVOLUTION_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Cultural Revolution[ENDCOLOR][NEWLINE]The Empire gains bonus % for [ICON_GREAT_PEOPLE] Great Musician points equal to its [ICON_PRODUCTION] Production output.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_POLICY_CULTURAL_REVOLUTION_HELP" />
+		<Row Tag="TXT_KEY_POLICY_CULTURAL_REVOLUTION_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Cultural Revolution[ENDCOLOR][NEWLINE]The Empire gains bonus % for [ICON_GREAT_PEOPLE] Great Musician points equal to its [ICON_PRODUCTION] Production output.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_POLICY_CULTURAL_REVOLUTION_HELP" />
+		<Row Tag="TXT_KEY_POLICY_CULTURAL_REVOLUTION_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Cultural Revolution[ENDCOLOR][NEWLINE]The Empire gains bonus % for [ICON_GREAT_PEOPLE] Great Musician points equal to its [ICON_PRODUCTION] Production output.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_POLICY_CULTURAL_REVOLUTION_HELP" />
+		<Row Tag="TXT_KEY_POLICY_CULTURAL_REVOLUTION_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Cultural Revolution[ENDCOLOR][NEWLINE]The Empire gains bonus % for [ICON_GREAT_PEOPLE] Great Musician points equal to its [ICON_PRODUCTION] Production output.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 6/12/2015 3:35:42 AM -->
+<GameData>
+
+	<!-- Entrepreneurship -->
+	<Policies>
+		<Update>
+			<Set TradeMissionGoldModifier="0" GreatMerchantRateModifier="0" RouteGoldMaintenanceMod="-50" BuildingGoldMaintenanceMod="-25" />
+			<Where Type="POLICY_ENTREPRENEURSHIP" />
+		</Update>
+	</Policies>
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_POLICY_ENTREPRENEURSHIP_HELP" />
+		<Row Tag="TXT_KEY_POLICY_ENTREPRENEURSHIP_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Entrepreneurship[ENDCOLOR][NEWLINE]Maintenance paid on Roads and Railroads reduced by 50%. Maintenance paid on Buildings reduced by 25%. +2 [ICON_INTERNATIONAL_TRADE] Trade Routes.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_POLICY_ENTREPRENEURSHIP_HELP" />
+		<Row Tag="TXT_KEY_POLICY_ENTREPRENEURSHIP_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Entrepreneurship[ENDCOLOR][NEWLINE]Maintenance paid on Roads and Railroads reduced by 50%. Maintenance paid on Buildings reduced by 25%. +2 [ICON_INTERNATIONAL_TRADE] Trade Routes.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_POLICY_ENTREPRENEURSHIP_HELP" />
+		<Row Tag="TXT_KEY_POLICY_ENTREPRENEURSHIP_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Entrepreneurship[ENDCOLOR][NEWLINE]Maintenance paid on Roads and Railroads reduced by 50%. Maintenance paid on Buildings reduced by 25%. +2 [ICON_INTERNATIONAL_TRADE] Trade Routes.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_POLICY_ENTREPRENEURSHIP_HELP" />
+		<Row Tag="TXT_KEY_POLICY_ENTREPRENEURSHIP_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Entrepreneurship[ENDCOLOR][NEWLINE]Maintenance paid on Roads and Railroads reduced by 50%. Maintenance paid on Buildings reduced by 25%. +2 [ICON_INTERNATIONAL_TRADE] Trade Routes.</Text>
+		</Row>
+	</Language_RU_RU>
+	
+
+	<!-- Grand Bazaar is gifted in Capital when Entrepreneurship is selected. This is all done in the Lua file. -->
+	<!-- Commerce: Grand Bazaar -->
+	<BuildingClasses>
+		<Row>
+			<Type>BUILDINGCLASS_GRAND_BAZAAR</Type>
+			<DefaultBuilding>BUILDING_GRAND_BAZAAR</DefaultBuilding>
+			<Description>TXT_KEY_BUILDING_GRAND_BAZAAR</Description>
+		</Row>
+	</BuildingClasses>
+	<Buildings>
+		<Row>
+			<Type>BUILDING_GRAND_BAZAAR</Type>
+			<BuildingClass>BUILDINGCLASS_GRAND_BAZAAR</BuildingClass>
+			<Cost>-1</Cost>
+			<HurryCostModifier>-1</HurryCostModifier>
+			<NukeImmune>true</NukeImmune>
+			<NumTradeRouteBonus>2</NumTradeRouteBonus>
+			<Help>TXT_KEY_BUILDING_GRAND_BAZAAR_HELP</Help>
+			<Description>TXT_KEY_BUILDING_GRAND_BAZAAR</Description>
+			<Strategy>TXT_KEY_BUILDING_GRAND_BAZAAR_HELP</Strategy>
+			<ArtDefineTag>ART_DEF_BUILDING_MARKET</ArtDefineTag>
+			<MinAreaSize>-1</MinAreaSize>
+			<PortraitIndex>2</PortraitIndex>
+			<IconAtlas>EXPANSION_TECH_ATLAS_1</IconAtlas>
+		</Row>
+	</Buildings>
+	<Language_en_US>
+		<Row Tag="TXT_KEY_BUILDING_GRAND_BAZAAR">
+			<Text>Grand Bazaar</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_GRAND_BAZAAR_HELP">
+			<Text>The Grand Bazaar is your reward when you unlock Entrepreneurship in the Commerce Tree. It grants you 2 additional [ICON_INTERNATIONAL_TRADE] Trade Route slots.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Row Tag="TXT_KEY_BUILDING_GRAND_BAZAAR">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Grand Bazaar</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_GRAND_BAZAAR_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]The Grand Bazaar is your reward when you unlock Entrepreneurship in the Commerce Tree. It grants you 2 additional [ICON_INTERNATIONAL_TRADE] Trade Route slots.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Row Tag="TXT_KEY_BUILDING_GRAND_BAZAAR">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Grand Bazaar</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_GRAND_BAZAAR_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]The Grand Bazaar is your reward when you unlock Entrepreneurship in the Commerce Tree. It grants you 2 additional [ICON_INTERNATIONAL_TRADE] Trade Route slots.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Row Tag="TXT_KEY_BUILDING_GRAND_BAZAAR">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Grand Bazaar</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_GRAND_BAZAAR_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]The Grand Bazaar is your reward when you unlock Entrepreneurship in the Commerce Tree. It grants you 2 additional [ICON_INTERNATIONAL_TRADE] Trade Route slots.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

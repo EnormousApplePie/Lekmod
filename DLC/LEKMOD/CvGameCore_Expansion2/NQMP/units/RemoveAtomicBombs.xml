@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 3/30/2015 10:15:25 PM -->
+<GameData>
+	<!-- Remove Atomic Bombs -->
+	<Units>
+		<Delete Type="UNIT_ATOMIC_BOMB" />
+	</Units>
+	<UnitClasses>
+		<Delete Type="UNITCLASS_ATOMIC_BOMB" />
+	</UnitClasses>
+	<Unit_AITypes>
+		<Delete UnitType="UNIT_ATOMIC_BOMB" />
+	</Unit_AITypes>
+	<Unit_FreePromotions>
+		<Delete UnitType="UNIT_ATOMIC_BOMB" />
+	</Unit_FreePromotions>
+	<Unit_Flavors>
+		<Delete UnitType="UNIT_ATOMIC_BOMB" />
+	</Unit_Flavors>
+	<Unit_ResourceQuantityREquirements>
+		<Delete UnitType="UNIT_ATOMIC_BOMB" />
+	</Unit_ResourceQuantityREquirements>
+	<UnitGameplay2DScripts>
+		<Delete UnitType="UNIT_ATOMIC_BOMB" />
+	</UnitGameplay2DScripts>
+</GameData>

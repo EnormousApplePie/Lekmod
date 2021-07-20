@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2017-02-11 01:28:45 -->
+<GameData>
+
+	<!-- Optics now available in column 2, costs reduced to match. -->
+	<Technologies>
+		<Update>
+			<Set GridX="2" Cost="55" Era="ERA_ANCIENT" />
+			<Where Type="TECH_OPTICS" />
+		</Update>
+	</Technologies>
+
+</GameData>

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 6/2/2015 9:37:04 PM -->
+<GameData>
+
+	<!-- Finisher now also provides +50% Production towards National Wonders and +15% Production towards buildings required for National Wonders. -->
+	<Policy_BuildingClassProductionModifiers>
+
+		<!-- *** NATIONAL WONDERS *** -->
+		<!-- Circus Maximus -->
+		<Row>
+			<PolicyType>POLICY_LIBERTY_FINISHER</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_CIRCUS_MAXIMUS</BuildingClassType>
+			<ProductionModifier>33</ProductionModifier>
+		</Row>
+		<!-- East India Company -->
+		<Row>
+			<PolicyType>POLICY_LIBERTY_FINISHER</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_NATIONAL_TREASURY</BuildingClassType>
+			<ProductionModifier>33</ProductionModifier>
+		</Row>
+		<!-- Grand Temple -->
+		<Row>
+			<PolicyType>POLICY_LIBERTY_FINISHER</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_GRAND_TEMPLE</BuildingClassType>
+			<ProductionModifier>33</ProductionModifier>
+		</Row>
+		<!-- Hermitage -->
+		<Row>
+			<PolicyType>POLICY_LIBERTY_FINISHER</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_HERMITAGE</BuildingClassType>
+			<ProductionModifier>33</ProductionModifier>
+		</Row>
+		<!-- Heroic Epic -->
+		<Row>
+			<PolicyType>POLICY_LIBERTY_FINISHER</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_HEROIC_EPIC</BuildingClassType>
+			<ProductionModifier>33</ProductionModifier>
+		</Row>
+		<!-- Ironworks -->
+		<Row>
+			<PolicyType>POLICY_LIBERTY_FINISHER</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_IRONWORKS</BuildingClassType>
+			<ProductionModifier>33</ProductionModifier>
+		</Row>
+		<!-- National College -->
+		<Row>
+			<PolicyType>POLICY_LIBERTY_FINISHER</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_NATIONAL_COLLEGE</BuildingClassType>
+			<ProductionModifier>33</ProductionModifier>
+		</Row>
+		<!-- National Epic -->
+		<Row>
+			<PolicyType>POLICY_LIBERTY_FINISHER</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_NATIONAL_EPIC</BuildingClassType>
+			<ProductionModifier>33</ProductionModifier>
+		</Row>
+		<!-- National Intelligence Agency -->
+		<Row>
+			<PolicyType>POLICY_LIBERTY_FINISHER</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_INTELLIGENCE_AGENCY</BuildingClassType>
+			<ProductionModifier>33</ProductionModifier>
+		</Row>
+		<!-- National Visitor Center -->
+		<Row>
+			<PolicyType>POLICY_LIBERTY_FINISHER</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_TOURIST_CENTER</BuildingClassType>
+			<ProductionModifier>33</ProductionModifier>
+		</Row>
+		<!-- Oxford University -->
+		<Row>
+			<PolicyType>POLICY_LIBERTY_FINISHER</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_OXFORD_UNIVERSITY</BuildingClassType>
+			<ProductionModifier>33</ProductionModifier>
+		</Row>
+
+		<!-- *** BUILDINGS REQUIRED FOR NATIONAL WONDERS *** -->
+		<!-- Colosseum -->
+		<Row>
+			<PolicyType>POLICY_LIBERTY_FINISHER</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_COLOSSEUM</BuildingClassType>
+			<ProductionModifier>15</ProductionModifier>
+		</Row>
+		<!-- Market -->
+		<Row>
+			<PolicyType>POLICY_LIBERTY_FINISHER</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_MARKET</BuildingClassType>
+			<ProductionModifier>15</ProductionModifier>
+		</Row>
+		<!-- Temple -->
+		<Row>
+			<PolicyType>POLICY_LIBERTY_FINISHER</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_TEMPLE</BuildingClassType>
+			<ProductionModifier>15</ProductionModifier>
+		</Row>
+		<!-- Opera House -->
+		<Row>
+			<PolicyType>POLICY_LIBERTY_FINISHER</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_OPERA_HOUSE</BuildingClassType>
+			<ProductionModifier>15</ProductionModifier>
+		</Row>
+		<!-- Barracks -->
+		<Row>
+			<PolicyType>POLICY_LIBERTY_FINISHER</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_BARRACKS</BuildingClassType>
+			<ProductionModifier>15</ProductionModifier>
+		</Row>
+		<!-- Workshop -->
+		<Row>
+			<PolicyType>POLICY_LIBERTY_FINISHER</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_WORKSHOP</BuildingClassType>
+			<ProductionModifier>15</ProductionModifier>
+		</Row>
+		<!-- Library -->
+		<Row>
+			<PolicyType>POLICY_LIBERTY_FINISHER</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_LIBRARY</BuildingClassType>
+			<ProductionModifier>15</ProductionModifier>
+		</Row>
+		<!-- Monument -->
+		<Row>
+			<PolicyType>POLICY_LIBERTY_FINISHER</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_MONUMENT</BuildingClassType>
+			<ProductionModifier>15</ProductionModifier>
+		</Row>
+		<!-- Police Station -->
+		<Row>
+			<PolicyType>POLICY_LIBERTY_FINISHER</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_CONSTABLE</BuildingClassType>
+			<ProductionModifier>15</ProductionModifier>
+		</Row>
+		<!-- Hotel -->
+		<Row>
+			<PolicyType>POLICY_LIBERTY_FINISHER</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_HOTEL</BuildingClassType>
+			<ProductionModifier>15</ProductionModifier>
+		</Row>
+		<!-- University -->
+		<Row>
+			<PolicyType>POLICY_LIBERTY_FINISHER</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_UNIVERSITY</BuildingClassType>
+			<ProductionModifier>15</ProductionModifier>
+		</Row>
+	</Policy_BuildingClassProductionModifiers>
+
+
+	<!-- Localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_POLICY_BRANCH_LIBERTY_HELP" />
+		<Row Tag="TXT_KEY_POLICY_BRANCH_LIBERTY_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Liberty[ENDCOLOR] is best for civilizations which desire rapid expansion.[NEWLINE][NEWLINE]Adopting Liberty will provide 1 [ICON_CULTURE] Culture per city. Unlocks building the Pyramids.[NEWLINE][NEWLINE]Adopting all policies in the Liberty tree will grant a free Great Person of your choice near the [ICON_CAPITAL] Capital. All cities gain +33% [ICON_PRODUCTION] Production towards National Wonders and +15% [ICON_PRODUCTION] Production towards any building required for a National Wonder.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_POLICY_BRANCH_LIBERTY_HELP" />
+		<Row Tag="TXT_KEY_POLICY_BRANCH_LIBERTY_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Liberty[ENDCOLOR] is best for civilizations which desire rapid expansion.[NEWLINE][NEWLINE]Adopting Liberty will provide 1 [ICON_CULTURE] Culture per city. Unlocks building the Pyramids.[NEWLINE][NEWLINE]Adopting all policies in the Liberty tree will grant a free Great Person of your choice near the [ICON_CAPITAL] Capital. All cities gain +33% [ICON_PRODUCTION] Production towards National Wonders and +15% [ICON_PRODUCTION] Production towards any building required for a National Wonder.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_POLICY_BRANCH_LIBERTY_HELP" />
+		<Row Tag="TXT_KEY_POLICY_BRANCH_LIBERTY_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Liberty[ENDCOLOR] is best for civilizations which desire rapid expansion.[NEWLINE][NEWLINE]Adopting Liberty will provide 1 [ICON_CULTURE] Culture per city. Unlocks building the Pyramids.[NEWLINE][NEWLINE]Adopting all policies in the Liberty tree will grant a free Great Person of your choice near the [ICON_CAPITAL] Capital. All cities gain +33% [ICON_PRODUCTION] Production towards National Wonders and +15% [ICON_PRODUCTION] Production towards any building required for a National Wonder.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_POLICY_BRANCH_LIBERTY_HELP" />
+		<Row Tag="TXT_KEY_POLICY_BRANCH_LIBERTY_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Liberty[ENDCOLOR] is best for civilizations which desire rapid expansion.[NEWLINE][NEWLINE]Adopting Liberty will provide 1 [ICON_CULTURE] Culture per city. Unlocks building the Pyramids.[NEWLINE][NEWLINE]Adopting all policies in the Liberty tree will grant a free Great Person of your choice near the [ICON_CAPITAL] Capital. All cities gain +33% [ICON_PRODUCTION] Production towards National Wonders and +15% [ICON_PRODUCTION] Production towards any building required for a National Wonder.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

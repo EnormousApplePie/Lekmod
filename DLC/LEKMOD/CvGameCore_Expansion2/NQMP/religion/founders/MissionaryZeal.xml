@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2016-09-25 05:44:53 -->
+<GameData>
+
+	<!-- Missionaries cost 50% less Faith and have 1 extra Spread Religion charge. -->
+	<Beliefs>
+		<Update>
+			<Set MissionaryStrengthModifier="0" MissionaryCostModifier="-50" Enhancer="false" Founder="true" MissionaryExtraSpreads="1" />
+			<Where Type="BELIEF_MISSIONARY_ZEAL" />
+		</Update>
+	</Beliefs>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_BELIEF_MISSIONARY_ZEAL" />
+		<Row Tag="TXT_KEY_BELIEF_MISSIONARY_ZEAL">
+			<Text>Missionaries cost 50% less [ICON_PEACE] Faith and can spread this religion one extra time</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_BELIEF_MISSIONARY_ZEAL" />
+		<Row Tag="TXT_KEY_BELIEF_MISSIONARY_ZEAL">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Missionaries cost 50% less [ICON_PEACE] Faith and can spread this religion one extra time</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_BELIEF_MISSIONARY_ZEAL" />
+		<Row Tag="TXT_KEY_BELIEF_MISSIONARY_ZEAL">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Missionaries cost 50% less [ICON_PEACE] Faith and can spread this religion one extra time</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_BELIEF_MISSIONARY_ZEAL" />
+		<Row Tag="TXT_KEY_BELIEF_MISSIONARY_ZEAL">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Missionaries cost 50% less [ICON_PEACE] Faith and can spread this religion one extra time</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

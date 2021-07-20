@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 5/6/2015 1:35:23 AM -->
+<GameData>
+	
+	<!-- Added "Can Move After Attacking" promotion to Trireme (Galley, Quinquereme), Caravel (Turtle Ship, Nau), Privateer (Sea Beggar), Ironclad, Destroyer -->
+	
+	<Unit_FreePromotions>
+		<Row>
+			<UnitType>UNIT_TRIREME</UnitType>
+			<PromotionType>PROMOTION_CAN_MOVE_AFTER_ATTACKING</PromotionType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_GALLEY</UnitType>
+			<PromotionType>PROMOTION_CAN_MOVE_AFTER_ATTACKING</PromotionType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_CARTHAGINIAN_QUINQUEREME</UnitType>
+			<PromotionType>PROMOTION_CAN_MOVE_AFTER_ATTACKING</PromotionType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_CARAVEL</UnitType>
+			<PromotionType>PROMOTION_CAN_MOVE_AFTER_ATTACKING</PromotionType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_KOREAN_TURTLE_SHIP</UnitType>
+			<PromotionType>PROMOTION_CAN_MOVE_AFTER_ATTACKING</PromotionType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_PORTUGUESE_NAU</UnitType>
+			<PromotionType>PROMOTION_CAN_MOVE_AFTER_ATTACKING</PromotionType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_PRIVATEER</UnitType>
+			<PromotionType>PROMOTION_CAN_MOVE_AFTER_ATTACKING</PromotionType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_DUTCH_SEA_BEGGAR</UnitType>
+			<PromotionType>PROMOTION_CAN_MOVE_AFTER_ATTACKING</PromotionType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_IRONCLAD</UnitType>
+			<PromotionType>PROMOTION_CAN_MOVE_AFTER_ATTACKING</PromotionType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_DESTROYER</UnitType>
+			<PromotionType>PROMOTION_CAN_MOVE_AFTER_ATTACKING</PromotionType>
+		</Row>
+	</Unit_FreePromotions>
+	
+</GameData>

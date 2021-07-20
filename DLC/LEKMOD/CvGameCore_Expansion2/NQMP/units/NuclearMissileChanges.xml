@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 7/18/2015 7:56:47 PM -->
+<GameData>
+
+	<!-- Nukes can no longer be purchased with Gold. -->
+	<Units>
+		<Update>
+			<Set HurryCostModifier="-1" />
+			<Where Class="UNITCLASS_NUCLEAR_MISSILE" />
+		</Update>
+	</Units>
+  
+</GameData>

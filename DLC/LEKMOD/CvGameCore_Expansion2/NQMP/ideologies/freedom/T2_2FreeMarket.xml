@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 3/22/2017 7:09:46 PM -->
+<GameData>
+
+	<!-- Free Market (replaces Urbanization): 12% of the Empire's Gold income each turn is converted to bonus Science. -->
+	<Policies>
+		<Update>
+			<Set Level="2" GoldToScience="12" />
+			<Where Type="POLICY_URBANIZATION" />
+		</Update>
+	</Policies>
+	<Policy_BuildingClassHappiness>
+		<Delete PolicyType="POLICY_URBANIZATION" />
+	</Policy_BuildingClassHappiness>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_POLICY_URBANIZATION" />
+		<Row Tag="TXT_KEY_POLICY_URBANIZATION">
+			<Text>Free Market</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_URBANIZATION_HELP" />
+		<Row Tag="TXT_KEY_POLICY_URBANIZATION_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Free Market[ENDCOLOR][NEWLINE]12% of the Empire's [ICON_GOLD] Gold income each turn is converted to bonus [ICON_RESEARCH] Science.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_TP_SCIENCE_FROM_GOLD">
+			<Text>[ICON_BULLET][COLOR_POSITIVE_TEXT]+{1_Num}[ENDCOLOR] [ICON_RESEARCH] from Gold income.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_POLICY_URBANIZATION" />
+		<Row Tag="TXT_KEY_POLICY_URBANIZATION">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Free Market</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_URBANIZATION_HELP" />
+		<Row Tag="TXT_KEY_POLICY_URBANIZATION_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Free Market[ENDCOLOR][NEWLINE]12% of the Empire's [ICON_GOLD] Gold income each turn is converted to bonus [ICON_RESEARCH] Science.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_TP_SCIENCE_FROM_GOLD">
+			<Text>[ICON_BULLET][COLOR_POSITIVE_TEXT]+{1_Num}[ENDCOLOR] [ICON_RESEARCH] from Gold income.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_POLICY_URBANIZATION" />
+		<Row Tag="TXT_KEY_POLICY_URBANIZATION">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Free Market</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_URBANIZATION_HELP" />
+		<Row Tag="TXT_KEY_POLICY_URBANIZATION_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Free Market[ENDCOLOR][NEWLINE]12% of the Empire's [ICON_GOLD] Gold income each turn is converted to bonus [ICON_RESEARCH] Science.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_TP_SCIENCE_FROM_GOLD">
+			<Text>[ICON_BULLET][COLOR_POSITIVE_TEXT]+{1_Num}[ENDCOLOR] [ICON_RESEARCH] from Gold income.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_POLICY_URBANIZATION" />
+		<Row Tag="TXT_KEY_POLICY_URBANIZATION">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Free Market</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_URBANIZATION_HELP" />
+		<Row Tag="TXT_KEY_POLICY_URBANIZATION_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Free Market[ENDCOLOR][NEWLINE]12% of the Empire's [ICON_GOLD] Gold income each turn is converted to bonus [ICON_RESEARCH] Science.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_TP_SCIENCE_FROM_GOLD">
+			<Text>[ICON_BULLET][COLOR_POSITIVE_TEXT]+{1_Num}[ENDCOLOR] [ICON_RESEARCH] from Gold income.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

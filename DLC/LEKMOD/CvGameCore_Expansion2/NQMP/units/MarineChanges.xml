@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2016-09-21 13:06:57 -->
+<GameData>
+
+	<Units>
+		<Update>
+			<Set Combat="75" />
+			<Where Type="UNIT_MARINE" />
+		</Update>
+	</Units>
+	
+</GameData>

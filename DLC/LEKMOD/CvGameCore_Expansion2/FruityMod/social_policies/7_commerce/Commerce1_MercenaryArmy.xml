@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 6/12/2015 3:19:34 AM -->
+<GameData>
+
+	<!-- Mercenary Army -->
+	<Units>
+		<Update>
+			<Set Class="UNITCLASS_FOREIGNLEGION" Cost="256" PolicyType="POLICY_TRADE_UNIONS" FaithCost="0" RequiresFaithPurchaseEnabled="false" ObsoleteTech="NULL" PurchaseOnly="true" MoveAfterPurchase="true" />
+			<Where Type="UNIT_FRENCH_FOREIGNLEGION" />
+		</Update>
+	</Units>
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_POLICY_TRADE_UNIONS_HELP" />
+		<Row Tag="TXT_KEY_POLICY_TRADE_UNIONS_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Mercenary Army[ENDCOLOR][NEWLINE]Allows the purchasing of Landsknechts at Civil Service and Foreign Legions at Replaceable Parts.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_POLICY_TRADE_UNIONS_HELP" />
+		<Row Tag="TXT_KEY_POLICY_TRADE_UNIONS_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Mercenary Army[ENDCOLOR][NEWLINE]Allows the purchasing of Landsknechts at Civil Service and Foreign Legions at Replaceable Parts.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_POLICY_TRADE_UNIONS_HELP" />
+		<Row Tag="TXT_KEY_POLICY_TRADE_UNIONS_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Mercenary Army[ENDCOLOR][NEWLINE]Allows the purchasing of Landsknechts at Civil Service and Foreign Legions at Replaceable Parts.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_POLICY_TRADE_UNIONS_HELP" />
+		<Row Tag="TXT_KEY_POLICY_TRADE_UNIONS_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Mercenary Army[ENDCOLOR][NEWLINE]Allows the purchasing of Landsknechts at Civil Service and Foreign Legions at Replaceable Parts.</Text>
+		</Row>
+	</Language_RU_RU>
+	
+</GameData>

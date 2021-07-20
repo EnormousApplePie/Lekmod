@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 5/5/2016 8:24:28 AM -->
+<GameData>
+	
+	<!-- Remove Norwegian Ski Infantry -->
+	<Civilization_UnitClassOverrides>
+		<Delete UnitType="UNIT_DANISH_SKI_INFANTRY" />
+	</Civilization_UnitClassOverrides>
+	
+	<!-- New UU for Denmark: Longship (replaces Trireme) - Gets +2 Movement and transfers movement to embarked units on its tile at turn start. -->
+	<Units>
+		<Row>
+			<Class>UNITCLASS_TRIREME</Class>
+			<Type>UNIT_DANISH_LONGSHIP</Type>
+			<PrereqTech>TECH_SAILING</PrereqTech>
+			<Combat>10</Combat>
+			<Cost>45</Cost>
+			<Moves>6</Moves>
+			<CombatClass>UNITCOMBAT_NAVALMELEE</CombatClass>
+			<Domain>DOMAIN_SEA</Domain>
+			<DefaultUnitAI>UNITAI_ATTACK_SEA</DefaultUnitAI>
+			<Description>TXT_KEY_UNIT_DANISH_LONGSHIP</Description>
+			<Civilopedia>TXT_KEY_CIV5_DANISH_LONGSHIP_TEXT</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_DANISH_LONGSHIP_STRATEGY</Strategy>
+			<Help>TXT_KEY_UNIT_HELP_DANISH_LONGSHIP</Help>
+			<MilitarySupport>true</MilitarySupport>
+			<MilitaryProduction>true</MilitaryProduction>
+			<Pillage>true</Pillage>
+			<Mechanized>true</Mechanized>
+			<ObsoleteTech>TECH_ASTRONOMY</ObsoleteTech>
+			<AdvancedStartCost>30</AdvancedStartCost>
+			<MinAreaSize>10</MinAreaSize>
+			<XPValueAttack>3</XPValueAttack>
+			<XPValueDefense>3</XPValueDefense>
+			<UnitArtInfo>ART_DEF_UNIT_BARBARIAN_GALLEY</UnitArtInfo>
+			<UnitFlagAtlas>UNIT_FLAG_ATLAS</UnitFlagAtlas>
+			<UnitFlagIconOffset>23</UnitFlagIconOffset>
+			<IconAtlas>UNIT_ATLAS_1</IconAtlas>
+			<PortraitIndex>23</PortraitIndex>
+			<MoveRate>WOODEN_BOAT</MoveRate>
+		</Row>
+	</Units>
+	<Unit_AITypes>
+		<Row>
+			<UnitType>UNIT_DANISH_LONGSHIP</UnitType>
+			<UnitAIType>UNITAI_ATTACK_SEA</UnitAIType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_DANISH_LONGSHIP</UnitType>
+			<UnitAIType>UNITAI_RESERVE_SEA</UnitAIType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_DANISH_LONGSHIP</UnitType>
+			<UnitAIType>UNITAI_ESCORT_SEA</UnitAIType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_DANISH_LONGSHIP</UnitType>
+			<UnitAIType>UNITAI_EXPLORE_SEA</UnitAIType>
+		</Row>
+	</Unit_AITypes>
+	<Unit_ClassUpgrades>
+		<Row>
+			<UnitType>UNIT_DANISH_LONGSHIP</UnitType>
+			<UnitClassType>UNITCLASS_CARAVEL</UnitClassType>
+		</Row>
+	</Unit_ClassUpgrades>
+	<Unit_Flavors>
+		<Row>
+			<UnitType>UNIT_DANISH_LONGSHIP</UnitType>
+			<FlavorType>FLAVOR_NAVAL</FlavorType>
+			<Flavor>8</Flavor>
+		</Row>
+		<Row>
+			<UnitType>UNIT_DANISH_LONGSHIP</UnitType>
+			<FlavorType>FLAVOR_NAVAL_RECON</FlavorType>
+			<Flavor>4</Flavor>
+		</Row>
+	</Unit_Flavors>
+	<Language_en_US>
+		<Row Tag="TXT_KEY_UNIT_DANISH_LONGSHIP">
+			<Text>Longship</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_HELP_DANISH_LONGSHIP">
+			<Text>Ancient Era Naval Unit that is faster than the Trireme it replaces and also transfers its movement to any embarked units it escorts. Only Denmark may build it.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_DANISH_LONGSHIP_STRATEGY">
+			<Text>Only Denmark may build this unit. It is a faster version of the Trireme. Like the Trireme it is a melee attack unit, engaging units at sea or cities (but it has no ranged attack). It also transfers its movement speed to any embarked units it escorts, so Denmark can use this tactic to speed up embarked units for exploration or coastal raiding. The Longship cannot enter Deep Ocean tiles outside of the city borders.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_DANISH_LONGSHIP_TEXT">
+			<Text>[COLOR_POSITIVE_TEXT]Source: Wikipedia (https://en.wikipedia.org/wiki/Longship)[ENDCOLOR][NEWLINE][NEWLINE]Longships were a type of ship invented and used by the Norsemen for trade, commerce, exploration, and warfare during the Viking Age. The longship's design evolved over many centuries, beginning in the Stone Age with the invention of the umiak and continuing up until the 6th century with clinker built ships like Nydam and Kvalsund. The longship appeared in its complete form between the 9th and 13th centuries. The character and appearance of these ships have been reflected in Scandinavian boat-building traditions until today. The particular skills and methods employed in making longships are still used worldwide, often with modern adaptations. They were all made out of wood, with cloth sails (woven wool) and had numerous details and carvings on the hull.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Row Tag="TXT_KEY_UNIT_DANISH_LONGSHIP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Longship</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_HELP_DANISH_LONGSHIP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Ancient Era Naval Unit that is faster than the Trireme it replaces and also transfers its movement to any embarked units it escorts. Only Denmark may build it.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_DANISH_LONGSHIP_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Only Denmark may build this unit. It is a faster version of the Trireme. Like the Trireme it is a melee attack unit, engaging units at sea or cities (but it has no ranged attack). It also transfers its movement speed to any embarked units it escorts, so Denmark can use this tactic to speed up embarked units for exploration or coastal raiding. The Longship cannot enter Deep Ocean tiles outside of the city borders.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_DANISH_LONGSHIP_TEXT">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Source: Wikipedia (https://en.wikipedia.org/wiki/Longship)[ENDCOLOR][NEWLINE][NEWLINE]Longships were a type of ship invented and used by the Norsemen for trade, commerce, exploration, and warfare during the Viking Age. The longship's design evolved over many centuries, beginning in the Stone Age with the invention of the umiak and continuing up until the 6th century with clinker built ships like Nydam and Kvalsund. The longship appeared in its complete form between the 9th and 13th centuries. The character and appearance of these ships have been reflected in Scandinavian boat-building traditions until today. The particular skills and methods employed in making longships are still used worldwide, often with modern adaptations. They were all made out of wood, with cloth sails (woven wool) and had numerous details and carvings on the hull.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Row Tag="TXT_KEY_UNIT_DANISH_LONGSHIP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Longship</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_HELP_DANISH_LONGSHIP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Ancient Era Naval Unit that is faster than the Trireme it replaces and also transfers its movement to any embarked units it escorts. Only Denmark may build it.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_DANISH_LONGSHIP_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Only Denmark may build this unit. It is a faster version of the Trireme. Like the Trireme it is a melee attack unit, engaging units at sea or cities (but it has no ranged attack). It also transfers its movement speed to any embarked units it escorts, so Denmark can use this tactic to speed up embarked units for exploration or coastal raiding. The Longship cannot enter Deep Ocean tiles outside of the city borders.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_DANISH_LONGSHIP_TEXT">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Source: Wikipedia (https://en.wikipedia.org/wiki/Longship)[ENDCOLOR][NEWLINE][NEWLINE]Longships were a type of ship invented and used by the Norsemen for trade, commerce, exploration, and warfare during the Viking Age. The longship's design evolved over many centuries, beginning in the Stone Age with the invention of the umiak and continuing up until the 6th century with clinker built ships like Nydam and Kvalsund. The longship appeared in its complete form between the 9th and 13th centuries. The character and appearance of these ships have been reflected in Scandinavian boat-building traditions until today. The particular skills and methods employed in making longships are still used worldwide, often with modern adaptations. They were all made out of wood, with cloth sails (woven wool) and had numerous details and carvings on the hull.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Row Tag="TXT_KEY_UNIT_DANISH_LONGSHIP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Longship</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_HELP_DANISH_LONGSHIP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Ancient Era Naval Unit that is faster than the Trireme it replaces and also transfers its movement to any embarked units it escorts. Only Denmark may build it.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_DANISH_LONGSHIP_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Only Denmark may build this unit. It is a faster version of the Trireme. Like the Trireme it is a melee attack unit, engaging units at sea or cities (but it has no ranged attack). It also transfers its movement speed to any embarked units it escorts, so Denmark can use this tactic to speed up embarked units for exploration or coastal raiding. The Longship cannot enter Deep Ocean tiles outside of the city borders.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_DANISH_LONGSHIP_TEXT">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Source: Wikipedia (https://en.wikipedia.org/wiki/Longship)[ENDCOLOR][NEWLINE][NEWLINE]Longships were a type of ship invented and used by the Norsemen for trade, commerce, exploration, and warfare during the Viking Age. The longship's design evolved over many centuries, beginning in the Stone Age with the invention of the umiak and continuing up until the 6th century with clinker built ships like Nydam and Kvalsund. The longship appeared in its complete form between the 9th and 13th centuries. The character and appearance of these ships have been reflected in Scandinavian boat-building traditions until today. The particular skills and methods employed in making longships are still used worldwide, often with modern adaptations. They were all made out of wood, with cloth sails (woven wool) and had numerous details and carvings on the hull.</Text>
+		</Row>
+	</Language_RU_RU>
+	
+
+	<!-- Add Longship as new unique Danish unit -->
+	<Civilization_UnitClassOverrides>
+		<Row>
+			<CivilizationType>CIVILIZATION_DENMARK</CivilizationType>
+			<UnitClassType>UNITCLASS_TRIREME</UnitClassType>
+			<UnitType>UNIT_DANISH_LONGSHIP</UnitType>
+		</Row>
+	</Civilization_UnitClassOverrides>
+
+	<!-- New Promotion that transfers movement to embarked units -->
+	<UnitPromotions>
+		<Row>
+			<Type>PROMOTION_MOVEMENT_TO_EMBARKED</Type>
+			<Description>TXT_KEY_PROMOTION_MOVEMENT_TO_EMBARKED</Description>
+			<Help>TXT_KEY_PROMOTION_MOVEMENT_TO_EMBARKED_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CannotBeChosen>true</CannotBeChosen>
+			<EmbarkedUnitReceivesMovement>true</EmbarkedUnitReceivesMovement>
+			<PortraitIndex>59</PortraitIndex>
+			<IconAtlas>ABILITY_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_MOVEMENT_TO_EMBARKED</PediaEntry>
+		</Row>
+	</UnitPromotions>
+	<Language_en_US>
+		<Row Tag="TXT_KEY_PROMOTION_MOVEMENT_TO_EMBARKED">
+			<Text>Transfer Movement to Embarked Units</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_MOVEMENT_TO_EMBARKED_HELP">
+			<Text>Embarked units move at rate of this unit if they start the turn escorted.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Row Tag="TXT_KEY_PROMOTION_MOVEMENT_TO_EMBARKED">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Transfer Movement to Embarked Units</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_MOVEMENT_TO_EMBARKED_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Embarked units move at rate of this unit if they start the turn escorted.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Row Tag="TXT_KEY_PROMOTION_MOVEMENT_TO_EMBARKED">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Transfer Movement to Embarked Units</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_MOVEMENT_TO_EMBARKED_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Embarked units move at rate of this unit if they start the turn escorted.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Row Tag="TXT_KEY_PROMOTION_MOVEMENT_TO_EMBARKED">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Transfer Movement to Embarked Units</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_MOVEMENT_TO_EMBARKED_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Embarked units move at rate of this unit if they start the turn escorted.</Text>
+		</Row>
+	</Language_RU_RU>
+	
+	<!-- Give Embarked Unit movement transfer promotion to Longship and prevent it from entering Deep Ocean -->
+	<Unit_FreePromotions>
+		<Row>
+			<UnitType>UNIT_DANISH_LONGSHIP</UnitType>
+			<PromotionType>PROMOTION_MOVEMENT_TO_EMBARKED</PromotionType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_DANISH_LONGSHIP</UnitType>
+			<PromotionType>PROMOTION_OCEAN_IMPASSABLE</PromotionType>
+		</Row>
+	</Unit_FreePromotions>
+
+</GameData>

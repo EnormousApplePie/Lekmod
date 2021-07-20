@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+
+	<!-- Tradition Finisher now provides +10% Growth (down from +15%). -->
+	<Policies>
+		<Update>
+			<Where Type="POLICY_TRADITION_FINISHER" />
+			<Set CityGrowthMod="10" />
+		</Update>
+	</Policies>
+	
+	<!-- Localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_POLICY_BRANCH_TRADITION_HELP" />
+		<Row Tag="TXT_KEY_POLICY_BRANCH_TRADITION_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Tradition[ENDCOLOR] is best for small empires.[NEWLINE][NEWLINE]Adopting Tradition greatly increases the rate of border expansion in cities and also grants 3 [ICON_CULTURE] Culture in the [ICON_CAPITAL] Capital. Unlocks building the Hanging Gardens.[NEWLINE][NEWLINE]Adopting all Policies in the Tradition tree will grant +10% [ICON_FOOD] Growth and a free Aqueduct in your first 4 cities. It also allows the purchase of Great Engineers with [ICON_PEACE] Faith starting in the Industrial Era.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_POLICY_BRANCH_TRADITION_HELP" />
+		<Row Tag="TXT_KEY_POLICY_BRANCH_TRADITION_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Tradition[ENDCOLOR] is best for small empires.[NEWLINE][NEWLINE]Adopting Tradition greatly increases the rate of border expansion in cities and also grants 3 [ICON_CULTURE] Culture in the [ICON_CAPITAL] Capital. Unlocks building the Hanging Gardens.[NEWLINE][NEWLINE]Adopting all Policies in the Tradition tree will grant +10% [ICON_FOOD] Growth and a free Aqueduct in your first 4 cities. It also allows the purchase of Great Engineers with [ICON_PEACE] Faith starting in the Industrial Era.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_POLICY_BRANCH_TRADITION_HELP" />
+		<Row Tag="TXT_KEY_POLICY_BRANCH_TRADITION_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Tradition[ENDCOLOR] is best for small empires.[NEWLINE][NEWLINE]Adopting Tradition greatly increases the rate of border expansion in cities and also grants 3 [ICON_CULTURE] Culture in the [ICON_CAPITAL] Capital. Unlocks building the Hanging Gardens.[NEWLINE][NEWLINE]Adopting all Policies in the Tradition tree will grant +10% [ICON_FOOD] Growth and a free Aqueduct in your first 4 cities. It also allows the purchase of Great Engineers with [ICON_PEACE] Faith starting in the Industrial Era.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_POLICY_BRANCH_TRADITION_HELP" />
+		<Row Tag="TXT_KEY_POLICY_BRANCH_TRADITION_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Tradition[ENDCOLOR] is best for small empires.[NEWLINE][NEWLINE]Adopting Tradition greatly increases the rate of border expansion in cities and also grants 3 [ICON_CULTURE] Culture in the [ICON_CAPITAL] Capital. Unlocks building the Hanging Gardens.[NEWLINE][NEWLINE]Adopting all Policies in the Tradition tree will grant +10% [ICON_FOOD] Growth and a free Aqueduct in your first 4 cities. It also allows the purchase of Great Engineers with [ICON_PEACE] Faith starting in the Industrial Era.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

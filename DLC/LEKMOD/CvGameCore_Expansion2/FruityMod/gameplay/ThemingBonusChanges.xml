@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 4/22/2015 7:24:06 PM -->
+<GameData>
+	
+	<!-- OXFORD UNIVERSITY -->
+	<Building_ThemingBonuses>
+		<Update>
+			<Set RequiresAnyButOwner="false" />
+			<Where BuildingType="BUILDING_OXFORD_UNIVERSITY" />
+		</Update>
+	</Building_ThemingBonuses>
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_OXFORD_UNIVERSITY_THEMING_BONUS_HELP" />
+		<Row Tag="TXT_KEY_OXFORD_UNIVERSITY_THEMING_BONUS_HELP">
+			<Text>To maximize your bonus, make sure the Great Work Slots are all filled with Writings from different Eras.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_OXFORD_UNIVERSITY_THEMING_BONUS_HELP" />
+		<Row Tag="TXT_KEY_OXFORD_UNIVERSITY_THEMING_BONUS_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]To maximize your bonus, make sure the Great Work Slots are all filled with Writings from different Eras.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_OXFORD_UNIVERSITY_THEMING_BONUS_HELP" />
+		<Row Tag="TXT_KEY_OXFORD_UNIVERSITY_THEMING_BONUS_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]To maximize your bonus, make sure the Great Work Slots are all filled with Writings from different Eras.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_OXFORD_UNIVERSITY_THEMING_BONUS_HELP" />
+		<Row Tag="TXT_KEY_OXFORD_UNIVERSITY_THEMING_BONUS_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]To maximize your bonus, make sure the Great Work Slots are all filled with Writings from different Eras.</Text>
+		</Row>
+	</Language_RU_RU>
+
+
+	<!-- HERMITAGE -->
+	<Building_ThemingBonuses>
+		<Update>
+			<Set RequiresUniquePlayers="false" />
+			<Where BuildingType="BUILDING_HERMITAGE" />
+		</Update>
+	</Building_ThemingBonuses>
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_HERMITAGE_THEMING_BONUS_HELP" />
+		<Row Tag="TXT_KEY_HERMITAGE_THEMING_BONUS_HELP">
+			<Text>To maximize your bonus, make sure the Great Work Slots are all filled with Art from different Eras.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_HERMITAGE_THEMING_BONUS_HELP" />
+		<Row Tag="TXT_KEY_HERMITAGE_THEMING_BONUS_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]To maximize your bonus, make sure the Great Work Slots are all filled with Art from different Eras.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_HERMITAGE_THEMING_BONUS_HELP" />
+		<Row Tag="TXT_KEY_HERMITAGE_THEMING_BONUS_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]To maximize your bonus, make sure the Great Work Slots are all filled with Art from different Eras.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_HERMITAGE_THEMING_BONUS_HELP" />
+		<Row Tag="TXT_KEY_HERMITAGE_THEMING_BONUS_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]To maximize your bonus, make sure the Great Work Slots are all filled with Art from different Eras.</Text>
+		</Row>
+	</Language_RU_RU>
+
+
+	<!-- GREAT LIBRARY -->
+	<Building_ThemingBonuses>
+		<Update>
+			<Set RequiresUniquePlayers="false" />
+			<Where BuildingType="BUILDING_GREAT_LIBRARY" />
+		</Update>
+	</Building_ThemingBonuses>
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_GREAT_LIBRARY_THEMING_BONUS_HELP" />
+		<Row Tag="TXT_KEY_GREAT_LIBRARY_THEMING_BONUS_HELP">
+			<Text>To maximize your bonus, make sure the Great Work Slots are all filled with Writings from different Eras.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_GREAT_LIBRARY_THEMING_BONUS_HELP" />
+		<Row Tag="TXT_KEY_GREAT_LIBRARY_THEMING_BONUS_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]To maximize your bonus, make sure the Great Work Slots are all filled with Writings from different Eras.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_GREAT_LIBRARY_THEMING_BONUS_HELP" />
+		<Row Tag="TXT_KEY_GREAT_LIBRARY_THEMING_BONUS_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]To maximize your bonus, make sure the Great Work Slots are all filled with Writings from different Eras.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_GREAT_LIBRARY_THEMING_BONUS_HELP" />
+		<Row Tag="TXT_KEY_GREAT_LIBRARY_THEMING_BONUS_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]To maximize your bonus, make sure the Great Work Slots are all filled with Writings from different Eras.</Text>
+		</Row>
+	</Language_RU_RU>
+
+
+	<!-- LOUVRE -->
+	<Building_ThemingBonuses>
+		<Update>
+			<Set RequiresUniquePlayers="false" />
+			<Where BuildingType="BUILDING_LOUVRE" />
+		</Update>
+	</Building_ThemingBonuses>
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_LOUVRE_THEMING_BONUS_HELP" />
+		<Row Tag="TXT_KEY_LOUVRE_THEMING_BONUS_HELP">
+			<Text>To maximize your bonus, make sure the Great Work Slots are filled with 2 Great Works of Art and 2 Artifacts with all 4 being from different Eras.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_LOUVRE_THEMING_BONUS_HELP" />
+		<Row Tag="TXT_KEY_LOUVRE_THEMING_BONUS_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]To maximize your bonus, make sure the Great Work Slots are filled with 2 Great Works of Art and 2 Artifacts with all 4 being from different Eras.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_LOUVRE_THEMING_BONUS_HELP" />
+		<Row Tag="TXT_KEY_LOUVRE_THEMING_BONUS_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]To maximize your bonus, make sure the Great Work Slots are filled with 2 Great Works of Art and 2 Artifacts with all 4 being from different Eras.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_BUILDING_STONE_WORKS_HELP" />
+		<Row Tag="TXT_KEY_BUILDING_STONE_WORKS_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]To maximize your bonus, make sure the Great Work Slots are filled with 2 Great Works of Art and 2 Artifacts with all 4 being from different Eras.</Text>
+		</Row>
+	</Language_RU_RU>
+
+
+</GameData>

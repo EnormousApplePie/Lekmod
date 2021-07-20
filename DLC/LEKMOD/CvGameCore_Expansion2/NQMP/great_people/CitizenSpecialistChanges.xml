@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 5/5/2017 12:04:04 AM -->
+<GameData>
+	
+	<!-- Unemployed Citizens renamed to Laborers and now provide +2 Production (up from +1). -->
+	<SpecialistYields>
+		<Update>
+			<Set Yield="2" />
+			<Where SpecialistType="SPECIALIST_CITIZEN" YieldType="YIELD_PRODUCTION" />
+		</Update>
+	</SpecialistYields>
+	
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_SPECIALIST_CITIZEN" />
+		<Row Tag="TXT_KEY_SPECIALIST_CITIZEN">
+			<Text>Laborer|Laborers</Text>
+			<Plurality>1|2</Plurality>
+		</Row>
+		<Delete Tag="TXT_KEY_CITYVIEW_UNEMPLOYED_TEXT" />
+		<Row Tag="TXT_KEY_CITYVIEW_UNEMPLOYED_TEXT">
+			<Text>Laborers</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_SPECIALIST_CITIZEN" />
+		<Row Tag="TXT_KEY_SPECIALIST_CITIZEN">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Laborer|Laborers</Text>
+			<Plurality>1|2</Plurality>
+		</Row>
+		<Delete Tag="TXT_KEY_CITYVIEW_UNEMPLOYED_TEXT" />
+		<Row Tag="TXT_KEY_CITYVIEW_UNEMPLOYED_TEXT">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Laborers</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_SPECIALIST_CITIZEN" />
+		<Row Tag="TXT_KEY_SPECIALIST_CITIZEN">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Laborer|Laborers</Text>
+			<Plurality>1|2</Plurality>
+		</Row>
+		<Delete Tag="TXT_KEY_CITYVIEW_UNEMPLOYED_TEXT" />
+		<Row Tag="TXT_KEY_CITYVIEW_UNEMPLOYED_TEXT">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Laborers</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_SPECIALIST_CITIZEN" />
+		<Row Tag="TXT_KEY_SPECIALIST_CITIZEN">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Laborer|Laborers</Text>
+			<Plurality>1|2</Plurality>
+		</Row>
+		<Delete Tag="TXT_KEY_CITYVIEW_UNEMPLOYED_TEXT" />
+		<Row Tag="TXT_KEY_CITYVIEW_UNEMPLOYED_TEXT">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Laborers</Text>
+		</Row>
+	</Language_RU_RU>
+
+
+</GameData>
