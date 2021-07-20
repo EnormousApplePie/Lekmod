@@ -5,6 +5,7 @@
 
 # allow these exact files:
 !.gitignore
+!readme.md
 !*/
 #!/DLC/readme.md
 
