@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 4/25/2015 7:50:18 PM -->
+<GameData>
+	
+	<!-- Armored units now get +50% vs Land units. -->
+	<UnitPromotions>
+		<Row>
+			<Type>PROMOTION_ARMOR_VS_LAND</Type>
+			<Description>TXT_KEY_PROMOTION_ARMOR_VS_LAND</Description>
+			<Help>TXT_KEY_PROMOTION_ARMOR_VS_LAND_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CannotBeChosen>true</CannotBeChosen>
+			<PortraitIndex>59</PortraitIndex>
+			<IconAtlas>ABILITY_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_ARMOR_VS_LAND_HELP</PediaEntry>
+		</Row>
+	</UnitPromotions>
+	<UnitPromotions_Domains>
+		<Row>
+			<PromotionType>PROMOTION_ARMOR_VS_LAND</PromotionType>
+			<DomainType>DOMAIN_LAND</DomainType>
+			<Modifier>50</Modifier>
+		</Row>
+	</UnitPromotions_Domains>
+	<Unit_FreePromotions>
+		<Row>
+			<UnitType>UNIT_MECH</UnitType>
+			<PromotionType>PROMOTION_ARMOR_VS_LAND</PromotionType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_MODERN_ARMOR</UnitType>
+			<PromotionType>PROMOTION_ARMOR_VS_LAND</PromotionType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_TANK</UnitType>
+			<PromotionType>PROMOTION_ARMOR_VS_LAND</PromotionType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_GERMAN_PANZER</UnitType>
+			<PromotionType>PROMOTION_ARMOR_VS_LAND</PromotionType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_WWI_TANK</UnitType>
+			<PromotionType>PROMOTION_ARMOR_VS_LAND</PromotionType>
+		</Row>
+	</Unit_FreePromotions>
+	<Language_en_US>
+		<Row Tag="TXT_KEY_PROMOTION_ARMOR_VS_LAND">
+			<Text>Bonus vs Land Units (50)</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_ARMOR_VS_LAND_HELP">
+			<Text>+50% [ICON_STRENGTH] Combat Strength against [COLOR_POSITIVE_TEXT]Land Units[ENDCOLOR].</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Row Tag="TXT_KEY_PROMOTION_ARMOR_VS_LAND">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Bonus vs Land Units (50)</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_ARMOR_VS_LAND_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]+50% [ICON_STRENGTH] Combat Strength against [COLOR_POSITIVE_TEXT]Land Units[ENDCOLOR].</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Row Tag="TXT_KEY_PROMOTION_ARMOR_VS_LAND">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Bonus vs Land Units (50)</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_ARMOR_VS_LAND_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]+50% [ICON_STRENGTH] Combat Strength against [COLOR_POSITIVE_TEXT]Land Units[ENDCOLOR].</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Row Tag="TXT_KEY_PROMOTION_ARMOR_VS_LAND">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Bonus vs Land Units (50)</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_ARMOR_VS_LAND_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]+50% [ICON_STRENGTH] Combat Strength against [COLOR_POSITIVE_TEXT]Land Units[ENDCOLOR].</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

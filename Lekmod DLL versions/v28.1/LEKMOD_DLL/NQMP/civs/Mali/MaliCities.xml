@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 5/12/2017 2:29:58 PM -->
+<GameData>
+
+	<Civilization_CityNames>
+		<Row>
+			<CivilizationType>CIVILIZATION_MALI</CivilizationType>
+			<CityName>TXT_KEY_CITY_NAME_NIANI</CityName>
+		</Row>
+		<Row>
+			<CivilizationType>CIVILIZATION_MALI</CivilizationType>
+			<CityName>TXT_KEY_CITY_NAME_TIMBUKTU</CityName> <!-- Already in game but unused -->
+		</Row>
+		<Row>
+			<CivilizationType>CIVILIZATION_MALI</CivilizationType>
+			<CityName>TXT_KEY_CITY_NAME_DJENNE</CityName> <!-- Already in game but unused -->
+		</Row>
+		<Row>
+			<CivilizationType>CIVILIZATION_MALI</CivilizationType>
+			<CityName>TXT_KEY_CITY_NAME_KOUMBI_SALEH</CityName>
+		</Row>
+		<Row>
+			<CivilizationType>CIVILIZATION_MALI</CivilizationType>
+			<CityName>TXT_KEY_SONG_CITY_NAME_GAO</CityName> <!-- used by songhai, I guess this works? -->
+		</Row>
+		<Row>
+			<CivilizationType>CIVILIZATION_MALI</CivilizationType>
+			<CityName>TXT_KEY_CITY_NAME_OUALATA</CityName>
+		</Row>
+		<Row>
+			<CivilizationType>CIVILIZATION_MALI</CivilizationType>
+			<CityName>TXT_KEY_CITY_NAME_AOUDAGHOST</CityName>
+		</Row>
+		<Row>
+			<CivilizationType>CIVILIZATION_MALI</CivilizationType>
+			<CityName>TXT_KEY_CITY_NAME_TADMEKKA</CityName>
+		</Row>
+		<Row>
+			<CivilizationType>CIVILIZATION_MALI</CivilizationType>
+			<CityName>TXT_KEY_CITY_NAME_TAKEDDA</CityName>
+		</Row>
+		<Row>
+			<CivilizationType>CIVILIZATION_MALI</CivilizationType>
+			<CityName>TXT_KEY_CITY_NAME_AWLIL</CityName>
+		</Row>
+		<Row>
+			<CivilizationType>CIVILIZATION_MALI</CivilizationType>
+			<CityName>TXT_KEY_CITY_NAME_WADAN</CityName>
+		</Row>
+		<Row>
+			<CivilizationType>CIVILIZATION_MALI</CivilizationType>
+			<CityName>TXT_KEY_CITY_NAME_AGADES</CityName>
+		</Row>
+		<Row>
+			<CivilizationType>CIVILIZATION_MALI</CivilizationType>
+			<CityName>TXT_KEY_CITY_NAME_TEODENI</CityName>
+		</Row>
+		<Row>
+			<CivilizationType>CIVILIZATION_MALI</CivilizationType>
+			<CityName>TXT_KEY_CITY_NAME_TEGHAZA</CityName>
+		</Row>
+		<Row>
+			<CivilizationType>CIVILIZATION_MALI</CivilizationType>
+			<CityName>TXT_KEY_CITY_NAME_KATSINA</CityName>
+		</Row>
+		<Row>
+			<CivilizationType>CIVILIZATION_MALI</CivilizationType>
+			<CityName>TXT_KEY_SONG_CITY_NAME_KANO</CityName> <!-- also used by Songhai -->
+		</Row>
+		<Row>
+			<CivilizationType>CIVILIZATION_MALI</CivilizationType>
+			<CityName>TXT_KEY_CITY_NAME_ZARIA</CityName>
+		</Row>
+		<Row>
+			<CivilizationType>CIVILIZATION_MALI</CivilizationType>
+			<CityName>TXT_KEY_CITY_NAME_BILMA</CityName>
+		</Row>
+		<Row>
+			<CivilizationType>CIVILIZATION_MALI</CivilizationType>
+			<CityName>TXT_KEY_CITY_NAME_NGAZARGAMU</CityName>
+		</Row>
+		<Row>
+			<CivilizationType>CIVILIZATION_MALI</CivilizationType>
+			<CityName>TXT_KEY_CITY_NAME_KANGABA</CityName>
+		</Row>
+		<Row>
+			<CivilizationType>CIVILIZATION_MALI</CivilizationType>
+			<CityName>TXT_KEY_CITY_NAME_DIA</CityName>
+		</Row>
+		<Row>
+			<CivilizationType>CIVILIZATION_MALI</CivilizationType>
+			<CityName>TXT_KEY_CITY_NAME_TIRAQQA</CityName>
+		</Row>
+		<Row>
+			<CivilizationType>CIVILIZATION_MALI</CivilizationType>
+			<CityName>TXT_KEY_CITY_NAME_AWKAR</CityName>
+		</Row>
+		<Row>
+			<CivilizationType>CIVILIZATION_MALI</CivilizationType>
+			<CityName>TXT_KEY_CITY_NAME_KUKIYA</CityName>
+		</Row>
+		<Row>
+			<CivilizationType>CIVILIZATION_MALI</CivilizationType>
+			<CityName>TXT_KEY_CITY_NAME_TAKRUR</CityName>
+		</Row>
+		<Row>
+			<CivilizationType>CIVILIZATION_MALI</CivilizationType>
+			<CityName>TXT_KEY_CITY_NAME_ARAWAN</CityName>
+		</Row>
+		<Row>
+			<CivilizationType>CIVILIZATION_MALI</CivilizationType>
+			<CityName>TXT_KEY_CITY_NAME_SYA</CityName>
+		</Row>
+		<Row>
+			<CivilizationType>CIVILIZATION_MALI</CivilizationType>
+			<CityName>TXT_KEY_CITY_NAME_TAOUDENNI</CityName>
+		</Row>
+		<Row>
+			<CivilizationType>CIVILIZATION_MALI</CivilizationType>
+			<CityName>TXT_KEY_CITY_NAME_BAMBOUK</CityName>
+		</Row>
+		<Row>
+			<CivilizationType>CIVILIZATION_MALI</CivilizationType>
+			<CityName>TXT_KEY_CITY_NAME_KIRINA</CityName>
+		</Row>
+		<Row>
+			<CivilizationType>CIVILIZATION_MALI</CivilizationType>
+			<CityName>TXT_KEY_CITY_NAME_BOURE</CityName>
+		</Row>
+		<Row>
+			<CivilizationType>CIVILIZATION_MALI</CivilizationType>
+			<CityName>TXT_KEY_CITY_NAME_GALAM</CityName>
+		</Row>
+	</Civilization_CityNames>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Row Tag="TXT_KEY_CITY_NAME_NIANI">
+			<Text>Niani</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_KOUMBI_SALEH">
+			<Text>Koumbi Saleh</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_OUALATA">
+			<Text>Oualata</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_AOUDAGHOST">
+			<Text>Aoudaghost</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_TADMEKKA">
+			<Text>Tadmekka</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_TAKEDDA">
+			<Text>Takedda</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_AWLIL">
+			<Text>Awlil</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_WADAN">
+			<Text>Wadan</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_AGADES">
+			<Text>Agades</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_TEODENI">
+			<Text>Teodeni</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_TEGHAZA">
+			<Text>Teghaza</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_KATSINA">
+			<Text>Katsina</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_ZARIA">
+			<Text>Zaria</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_BILMA">
+			<Text>Bilma</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_NGAZARGAMU">
+			<Text>Ngazargamu</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_KANGABA">
+			<Text>Kangaba</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_DIA">
+			<Text>Dia</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_TIRAQQA">
+			<Text>Tiraqqa</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_AWKAR">
+			<Text>Awkar</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_KUKIYA">
+			<Text>Kukiya</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_TAKRUR">
+			<Text>Takrur</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_ARAWAN">
+			<Text>Arawan</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_SYA">
+			<Text>Sya</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_TAOUDENNI">
+			<Text>Taoudenni</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_BAMBOUK">
+			<Text>Bambouk</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_KIRINA">
+			<Text>Kirina</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_BOURE">
+			<Text>Boure</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_GALAM">
+			<Text>Galam</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Row Tag="TXT_KEY_CITY_NAME_NIANI">
+			<Text>Niani</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_KOUMBI_SALEH">
+			<Text>Koumbi Saleh</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_OUALATA">
+			<Text>Oualata</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_AOUDAGHOST">
+			<Text>Aoudaghost</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_TADMEKKA">
+			<Text>Tadmekka</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_TAKEDDA">
+			<Text>Takedda</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_AWLIL">
+			<Text>Awlil</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_WADAN">
+			<Text>Wadan</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_AGADES">
+			<Text>Agades</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_TEODENI">
+			<Text>Teodeni</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_TEGHAZA">
+			<Text>Teghaza</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_KATSINA">
+			<Text>Katsina</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_ZARIA">
+			<Text>Zaria</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_BILMA">
+			<Text>Bilma</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_NGAZARGAMU">
+			<Text>Ngazargamu</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_KANGABA">
+			<Text>Kangaba</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_DIA">
+			<Text>Dia</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_TIRAQQA">
+			<Text>Tiraqqa</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_AWKAR">
+			<Text>Awkar</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_KUKIYA">
+			<Text>Kukiya</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_TAKRUR">
+			<Text>Takrur</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_ARAWAN">
+			<Text>Arawan</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_SYA">
+			<Text>Sya</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_TAOUDENNI">
+			<Text>Taoudenni</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_BAMBOUK">
+			<Text>Bambouk</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_KIRINA">
+			<Text>Kirina</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_BOURE">
+			<Text>Boure</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_GALAM">
+			<Text>Galam</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Row Tag="TXT_KEY_CITY_NAME_NIANI">
+			<Text>Niani</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_KOUMBI_SALEH">
+			<Text>Koumbi Saleh</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_OUALATA">
+			<Text>Oualata</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_AOUDAGHOST">
+			<Text>Aoudaghost</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_TADMEKKA">
+			<Text>Tadmekka</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_TAKEDDA">
+			<Text>Takedda</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_AWLIL">
+			<Text>Awlil</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_WADAN">
+			<Text>Wadan</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_AGADES">
+			<Text>Agades</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_TEODENI">
+			<Text>Teodeni</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_TEGHAZA">
+			<Text>Teghaza</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_KATSINA">
+			<Text>Katsina</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_ZARIA">
+			<Text>Zaria</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_BILMA">
+			<Text>Bilma</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_NGAZARGAMU">
+			<Text>Ngazargamu</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_KANGABA">
+			<Text>Kangaba</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_DIA">
+			<Text>Dia</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_TIRAQQA">
+			<Text>Tiraqqa</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_AWKAR">
+			<Text>Awkar</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_KUKIYA">
+			<Text>Kukiya</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_TAKRUR">
+			<Text>Takrur</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_ARAWAN">
+			<Text>Arawan</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_SYA">
+			<Text>Sya</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_TAOUDENNI">
+			<Text>Taoudenni</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_BAMBOUK">
+			<Text>Bambouk</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_KIRINA">
+			<Text>Kirina</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_BOURE">
+			<Text>Boure</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_GALAM">
+			<Text>Galam</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Row Tag="TXT_KEY_CITY_NAME_NIANI">
+			<Text>Niani</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_KOUMBI_SALEH">
+			<Text>Koumbi Saleh</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_OUALATA">
+			<Text>Oualata</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_AOUDAGHOST">
+			<Text>Aoudaghost</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_TADMEKKA">
+			<Text>Tadmekka</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_TAKEDDA">
+			<Text>Takedda</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_AWLIL">
+			<Text>Awlil</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_WADAN">
+			<Text>Wadan</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_AGADES">
+			<Text>Agades</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_TEODENI">
+			<Text>Teodeni</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_TEGHAZA">
+			<Text>Teghaza</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_KATSINA">
+			<Text>Katsina</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_ZARIA">
+			<Text>Zaria</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_BILMA">
+			<Text>Bilma</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_NGAZARGAMU">
+			<Text>Ngazargamu</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_KANGABA">
+			<Text>Kangaba</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_DIA">
+			<Text>Dia</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_TIRAQQA">
+			<Text>Tiraqqa</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_AWKAR">
+			<Text>Awkar</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_KUKIYA">
+			<Text>Kukiya</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_TAKRUR">
+			<Text>Takrur</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_ARAWAN">
+			<Text>Arawan</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_SYA">
+			<Text>Sya</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_TAOUDENNI">
+			<Text>Taoudenni</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_BAMBOUK">
+			<Text>Bambouk</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_KIRINA">
+			<Text>Kirina</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_BOURE">
+			<Text>Boure</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_GALAM">
+			<Text>Galam</Text>
+		</Row>
+	</Language_RU_RU>
+
+
+
+
+</GameData>

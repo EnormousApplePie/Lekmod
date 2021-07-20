@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 5/11/2017 12:15:28 AM -->
+<GameData>
+	
+	<!-- University (and Wat) now provides +20% Science (down from +33%). Scientist specialist slots reduced to 1 (down from 2). -->
+	<Buildings>
+		<Update>
+			<Set SpecialistCount="1" />
+			<Where Type="BUILDING_UNIVERSITY" />
+		</Update>
+		<Update>
+			<Set SpecialistCount="1" />
+			<Where Type="BUILDING_WAT" />
+		</Update>
+	</Buildings>
+	<Building_YieldModifiers>
+		<Update>
+			<Set Yield="20" />
+			<Where BuildingType="BUILDING_UNIVERSITY" YieldType="YIELD_SCIENCE" />
+		</Update>
+		<Update>
+			<Set Yield="20" />
+			<Where BuildingType="BUILDING_WAT" YieldType="YIELD_SCIENCE" />
+		</Update>
+	</Building_YieldModifiers>
+	<Building_FeatureYieldChanges>
+		<Update>
+			<Set Yield="1" />
+			<Where BuildingType="BUILDING_UNIVERSITY" YieldType="YIELD_SCIENCE" FeatureType="FEATURE_JUNGLE" />
+		</Update>
+		<Update>
+			<Set Yield="1" />
+			<Where BuildingType="BUILDING_WAT" YieldType="YIELD_SCIENCE" FeatureType="FEATURE_JUNGLE" />
+		</Update>
+	</Building_FeatureYieldChanges>
+	
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_BUILDING_UNIVERSITY_HELP" />
+		<Row Tag="TXT_KEY_BUILDING_UNIVERSITY_HELP">
+			<Text>+1 [ICON_RESEARCH] Science from Jungle tiles worked by this City.[NEWLINE][NEWLINE]City must have a Library.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_BUILDING_WAT_HELP" />
+		<Row Tag="TXT_KEY_BUILDING_WAT_HELP">
+			<Text>+1 [ICON_RESEARCH] Science from Jungle tiles worked by this City.[NEWLINE][NEWLINE]City must have a Library.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_BUILDING_UNIVERSITY_HELP" />
+		<Row Tag="TXT_KEY_BUILDING_UNIVERSITY_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]+1 [ICON_RESEARCH] Science from Jungle tiles worked by this City.[NEWLINE][NEWLINE]City must have a Library.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_BUILDING_WAT_HELP" />
+		<Row Tag="TXT_KEY_BUILDING_WAT_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]+1 [ICON_RESEARCH] Science from Jungle tiles worked by this City.[NEWLINE][NEWLINE]City must have a Library.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_BUILDING_UNIVERSITY_HELP" />
+		<Row Tag="TXT_KEY_BUILDING_UNIVERSITY_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]+1 [ICON_RESEARCH] Science from Jungle tiles worked by this City.[NEWLINE][NEWLINE]City must have a Library.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_BUILDING_WAT_HELP" />
+		<Row Tag="TXT_KEY_BUILDING_WAT_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]+1 [ICON_RESEARCH] Science from Jungle tiles worked by this City.[NEWLINE][NEWLINE]City must have a Library.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_BUILDING_UNIVERSITY_HELP" />
+		<Row Tag="TXT_KEY_BUILDING_UNIVERSITY_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]+1 [ICON_RESEARCH] Science from Jungle tiles worked by this City.[NEWLINE][NEWLINE]City must have a Library.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_BUILDING_WAT_HELP" />
+		<Row Tag="TXT_KEY_BUILDING_WAT_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]+1 [ICON_RESEARCH] Science from Jungle tiles worked by this City.[NEWLINE][NEWLINE]City must have a Library.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

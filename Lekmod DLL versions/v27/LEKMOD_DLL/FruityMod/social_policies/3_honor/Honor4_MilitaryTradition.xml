@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 6/9/2015 11:44:21 PM -->
+<GameData>
+
+	<!-- MILITARY TRADITION -->
+	<Policies>
+		<Update>
+			<Set ExpModifier="0" UnitUpgradeCostMod="-25" />
+			<Where Type="POLICY_MILITARY_TRADITION" />
+		</Update>
+	</Policies>
+	<Policy_BuildingClassProductionModifiers>
+		<Row>
+			<PolicyType>POLICY_MILITARY_TRADITION</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_COURTHOUSE</BuildingClassType>
+			<ProductionModifier>100</ProductionModifier>
+		</Row>
+	</Policy_BuildingClassProductionModifiers>
+	<Policy_BuildingClassYieldChanges>
+		<Row>
+			<PolicyType>POLICY_MILITARY_TRADITION</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_COURTHOUSE</BuildingClassType>
+			<YieldType>YIELD_FOOD</YieldType>
+			<YieldChange>4</YieldChange>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_MILITARY_TRADITION</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_COURTHOUSE</BuildingClassType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<YieldChange>4</YieldChange>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_MILITARY_TRADITION</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_COURTHOUSE</BuildingClassType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<YieldChange>4</YieldChange>
+		</Row>
+	</Policy_BuildingClassYieldChanges>
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_POLICY_MILITARY_TRADITION_HELP" />
+		<Row Tag="TXT_KEY_POLICY_MILITARY_TRADITION_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Military Tradition[ENDCOLOR][NEWLINE]Gold cost of upgrading Military Units reduced by 25%. Courthouses provide +4 [ICON_FOOD] Food, +4 [ICON_PRODUCTION] Production, and +4 [ICON_GOLD] Gold and are built in half the usual time.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_POLICY_MILITARY_TRADITION_HELP" />
+		<Row Tag="TXT_KEY_POLICY_MILITARY_TRADITION_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Military Tradition[ENDCOLOR][NEWLINE]Gold cost of upgrading Military Units reduced by 25%. Courthouses provide +4 [ICON_FOOD] Food, +4 [ICON_PRODUCTION] Production, and +4 [ICON_GOLD] Gold and are built in half the usual time.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_POLICY_MILITARY_TRADITION_HELP" />
+		<Row Tag="TXT_KEY_POLICY_MILITARY_TRADITION_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Military Tradition[ENDCOLOR][NEWLINE]Gold cost of upgrading Military Units reduced by 25%. Courthouses provide +4 [ICON_FOOD] Food, +4 [ICON_PRODUCTION] Production, and +4 [ICON_GOLD] Gold and are built in half the usual time.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_POLICY_MILITARY_TRADITION_HELP" />
+		<Row Tag="TXT_KEY_POLICY_MILITARY_TRADITION_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Military Tradition[ENDCOLOR][NEWLINE]Gold cost of upgrading Military Units reduced by 25%. Courthouses provide +4 [ICON_FOOD] Food, +4 [ICON_PRODUCTION] Production, and +4 [ICON_GOLD] Gold and are built in half the usual time.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

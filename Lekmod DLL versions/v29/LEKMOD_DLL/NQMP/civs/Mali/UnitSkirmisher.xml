@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 5/12/2017 2:00:10 PM -->
+<GameData>
+
+	<Civilization_UnitClassOverrides>
+		<Row>
+			<CivilizationType>CIVILIZATION_MALI</CivilizationType>
+			<UnitClassType>UNITCLASS_COMPOSITE_BOWMAN</UnitClassType>
+			<UnitType>UNIT_MALIAN_SKIRMISHER</UnitType>
+		</Row>
+	</Civilization_UnitClassOverrides>
+	<Units>
+		<Row>
+			<Class>UNITCLASS_COMPOSITE_BOWMAN</Class>
+			<Type>UNIT_MALIAN_SKIRMISHER</Type>
+			<PrereqTech>TECH_CONSTRUCTION</PrereqTech>
+			<Combat>7</Combat>
+			<RangedCombat>11</RangedCombat>
+			<Cost>75</Cost>
+			<FaithCost>150</FaithCost>
+			<RequiresFaithPurchaseEnabled>true</RequiresFaithPurchaseEnabled>
+			<Moves>2</Moves>
+			<Range>2</Range>
+			<CombatClass>UNITCOMBAT_ARCHER</CombatClass>
+			<Domain>DOMAIN_LAND</Domain>
+			<DefaultUnitAI>UNITAI_RANGED</DefaultUnitAI>
+			<Description>TXT_KEY_UNIT_MALIAN_SKIRMISHER</Description>
+			<Civilopedia>TXT_KEY_CIV5_MALIAN_SKIRMISHER_TEXT</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_MALIAN_SKIRMISHER_STRATEGY</Strategy>
+			<Help>TXT_KEY_UNIT_HELP_MALIAN_SKIRMISHER</Help>
+			<MilitarySupport>true</MilitarySupport>
+			<MilitaryProduction>true</MilitaryProduction>
+			<Pillage>true</Pillage>
+			<ObsoleteTech>TECH_MACHINERY</ObsoleteTech>
+			<GoodyHutUpgradeUnitClass>UNITCLASS_CROSSBOWMAN</GoodyHutUpgradeUnitClass>
+			<AdvancedStartCost>20</AdvancedStartCost>
+			<XPValueAttack>3</XPValueAttack>
+			<XPValueDefense>3</XPValueDefense>
+			<UnitArtInfo>ART_DEF_UNIT_COMPOSITE_BOWMAN</UnitArtInfo>
+			<UnitFlagAtlas>NQ_UNIT_FLAG_ATLAS</UnitFlagAtlas>
+			<UnitFlagIconOffset>0</UnitFlagIconOffset>
+			<IconAtlas>NQ_ATLAS</IconAtlas>
+			<PortraitIndex>2</PortraitIndex>
+		</Row>
+	</Units>
+	<Unit_AITypes>
+		<Row>
+			<UnitType>UNIT_MALIAN_SKIRMISHER</UnitType>
+			<UnitAIType>UNITAI_RANGED</UnitAIType>
+		</Row>
+	</Unit_AITypes>
+	<Unit_ClassUpgrades>
+		<Row>
+			<UnitType>UNIT_MALIAN_SKIRMISHER</UnitType>
+			<UnitClassType>UNITCLASS_CROSSBOWMAN</UnitClassType>
+		</Row>
+	</Unit_ClassUpgrades>
+	<Unit_Flavors>
+		<Row>
+			<UnitType>UNIT_MALIAN_SKIRMISHER</UnitType>
+			<FlavorType>FLAVOR_OFFENSE</FlavorType>
+			<Flavor>3</Flavor>
+		</Row>
+		<Row>
+			<UnitType>UNIT_MALIAN_SKIRMISHER</UnitType>
+			<FlavorType>FLAVOR_DEFENSE</FlavorType>
+			<Flavor>3</Flavor>
+		</Row>
+		<Row>
+			<UnitType>UNIT_MALIAN_SKIRMISHER</UnitType>
+			<FlavorType>FLAVOR_RANGED</FlavorType>
+			<Flavor>6</Flavor>
+		</Row>
+	</Unit_Flavors>
+	<Unit_FreePromotions>
+		<Row>
+			<UnitType>UNIT_MALIAN_SKIRMISHER</UnitType>
+			<PromotionType>PROMOTION_IGNORE_TERRAIN_COST</PromotionType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_MALIAN_SKIRMISHER</UnitType>
+			<PromotionType>PROMOTION_ONLY_DEFENSIVE</PromotionType>
+		</Row>
+	</Unit_FreePromotions>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Row Tag="TXT_KEY_UNIT_MALIAN_SKIRMISHER">
+			<Text>Skirmisher</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_HELP_MALIAN_SKIRMISHER">
+			<Text>Classical ranged infantry Unit. Ignores terrain costs. Only Mali can build it.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_MALIAN_SKIRMISHER_TEXT">
+			<Text>The Skirmisher is the unique Malian replacement for the Composite Bowman. Its ability to ignore terrain costs makes it flexible for both offense and defense, able to move and shoot in the same turn even in rough terrain. Use them for suprise volleys against vulnerable enemy units, or bait enemies into chasing you through rough terrain while you rain shots from one step father each turn.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_MALIAN_SKIRMISHER_STRATEGY">
+			<Text>At its height, the Mali Empire stretched halfway across Africa, and included many subordinate tribes. To keep order, the Mali employed a huge standing army. During war, the Mali often fought as "skirmishers" - soldiers who fan out in loose formation to protect the main force's flanks or front. The Mali skirmishers were lightly-armed archers in that force, famed for their courage and their marksmanship.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Row Tag="TXT_KEY_UNIT_MALIAN_SKIRMISHER">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Skirmisher</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_HELP_MALIAN_SKIRMISHER">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Classical ranged infantry Unit. Ignores terrain costs. Only Mali can build it.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_MALIAN_SKIRMISHER_TEXT">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]The Skirmisher is the unique Malian replacement for the Composite Bowman. Its ability to ignore terrain costs makes it flexible for both offense and defense, able to move and shoot in the same turn even in rough terrain. Use them for suprise volleys against vulnerable enemy units, or bait enemies into chasing you through rough terrain while you rain shots from one step father each turn.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_MALIAN_SKIRMISHER_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]At its height, the Mali Empire stretched halfway across Africa, and included many subordinate tribes. To keep order, the Mali employed a huge standing army. During war, the Mali often fought as "skirmishers" - soldiers who fan out in loose formation to protect the main force's flanks or front. The Mali skirmishers were lightly-armed archers in that force, famed for their courage and their marksmanship.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Row Tag="TXT_KEY_UNIT_MALIAN_SKIRMISHER">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Skirmisher</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_HELP_MALIAN_SKIRMISHER">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Classical ranged infantry Unit. Ignores terrain costs. Only Mali can build it.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_MALIAN_SKIRMISHER_TEXT">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]The Skirmisher is the unique Malian replacement for the Composite Bowman. Its ability to ignore terrain costs makes it flexible for both offense and defense, able to move and shoot in the same turn even in rough terrain. Use them for suprise volleys against vulnerable enemy units, or bait enemies into chasing you through rough terrain while you rain shots from one step father each turn.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_MALIAN_SKIRMISHER_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]At its height, the Mali Empire stretched halfway across Africa, and included many subordinate tribes. To keep order, the Mali employed a huge standing army. During war, the Mali often fought as "skirmishers" - soldiers who fan out in loose formation to protect the main force's flanks or front. The Mali skirmishers were lightly-armed archers in that force, famed for their courage and their marksmanship.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Row Tag="TXT_KEY_UNIT_MALIAN_SKIRMISHER">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Skirmisher</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_HELP_MALIAN_SKIRMISHER">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Classical ranged infantry Unit. Ignores terrain costs. Only Mali can build it.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_MALIAN_SKIRMISHER_TEXT">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]The Skirmisher is the unique Malian replacement for the Composite Bowman. Its ability to ignore terrain costs makes it flexible for both offense and defense, able to move and shoot in the same turn even in rough terrain. Use them for suprise volleys against vulnerable enemy units, or bait enemies into chasing you through rough terrain while you rain shots from one step father each turn.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_MALIAN_SKIRMISHER_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]At its height, the Mali Empire stretched halfway across Africa, and included many subordinate tribes. To keep order, the Mali employed a huge standing army. During war, the Mali often fought as "skirmishers" - soldiers who fan out in loose formation to protect the main force's flanks or front. The Mali skirmishers were lightly-armed archers in that force, famed for their courage and their marksmanship.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2016-09-25 05:44:53 -->
+<GameData>
+
+	<!-- +2 Science from City Connections -->
+	<Beliefs>
+		<Update>
+			<Set Pantheon="false" Follower="true" />
+			<Where Type="BELIEF_MESSENGER_GODS" />
+		</Update>
+	</Beliefs>
+	<Belief_YieldChangeTradeRoute>
+		<Update>
+			<Set Yield="3" />
+			<Where BeliefType="BELIEF_MESSENGER_GODS" YieldType="YIELD_SCIENCE" />
+		</Update>
+	</Belief_YieldChangeTradeRoute>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_BELIEF_MESSENGER_GODS_SHORT" />
+		<Row Tag="TXT_KEY_BELIEF_MESSENGER_GODS_SHORT">
+			<Text>Spiritual Dialogue</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_BELIEF_MESSENGER_GODS" />
+		<Row Tag="TXT_KEY_BELIEF_MESSENGER_GODS">
+			<Text>+3 [ICON_RESEARCH] Science in Cities [ICON_CONNECTED] connected to the [ICON_CAPITAL] Capital</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_BELIEF_MESSENGER_GODS_SHORT" />
+		<Row Tag="TXT_KEY_BELIEF_MESSENGER_GODS_SHORT">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Spiritual Dialogue</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_BELIEF_MESSENGER_GODS" />
+		<Row Tag="TXT_KEY_BELIEF_MESSENGER_GODS">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]+3 [ICON_RESEARCH] Science in Cities [ICON_CONNECTED] connected to the [ICON_CAPITAL] Capital</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_BELIEF_MESSENGER_GODS_SHORT" />
+		<Row Tag="TXT_KEY_BELIEF_MESSENGER_GODS_SHORT">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Spiritual Dialogue</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_BELIEF_MESSENGER_GODS" />
+		<Row Tag="TXT_KEY_BELIEF_MESSENGER_GODS">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]+3 [ICON_RESEARCH] Science in Cities [ICON_CONNECTED] connected to the [ICON_CAPITAL] Capital</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_BELIEF_MESSENGER_GODS_SHORT" />
+		<Row Tag="TXT_KEY_BELIEF_MESSENGER_GODS_SHORT">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Spiritual Dialogue</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_BELIEF_MESSENGER_GODS" />
+		<Row Tag="TXT_KEY_BELIEF_MESSENGER_GODS">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]+3 [ICON_RESEARCH] Science in Cities [ICON_CONNECTED] connected to the [ICON_CAPITAL] Capital</Text>
+		</Row>
+	</Language_RU_RU>
+	
+</GameData>

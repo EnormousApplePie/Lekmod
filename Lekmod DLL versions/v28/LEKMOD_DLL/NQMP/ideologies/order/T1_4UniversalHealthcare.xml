@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2017-02-12 15:58:58 -->
+<GameData>
+
+	<!-- Universal Healthcare: Now also affects Guilds (in addition to National Wonders). -->
+	<Policy_BuildingClassHappiness>
+		<Row>
+			<PolicyType>POLICY_UNIVERSAL_HEALTHCARE_O</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_WRITERS_GUILD</BuildingClassType>
+			<Happiness>1</Happiness>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_UNIVERSAL_HEALTHCARE_O</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_ARTISTS_GUILD</BuildingClassType>
+			<Happiness>1</Happiness>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_UNIVERSAL_HEALTHCARE_O</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_MUSICIANS_GUILD</BuildingClassType>
+			<Happiness>1</Happiness>
+		</Row>
+	</Policy_BuildingClassHappiness>
+	
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_POLICY_UNIVERSAL_HEALTHCARE_HELP" />
+		<Row Tag="TXT_KEY_POLICY_UNIVERSAL_HEALTHCARE_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Universal Healthcare[ENDCOLOR][NEWLINE]+1 [ICON_HAPPINESS_1] Local Happiness from every National Wonder and Guild.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_POLICY_UNIVERSAL_HEALTHCARE_HELP" />
+		<Row Tag="TXT_KEY_POLICY_UNIVERSAL_HEALTHCARE_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Universal Healthcare[ENDCOLOR][NEWLINE]+1 [ICON_HAPPINESS_1] Local Happiness from every National Wonder and Guild.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_POLICY_UNIVERSAL_HEALTHCARE_HELP" />
+		<Row Tag="TXT_KEY_POLICY_UNIVERSAL_HEALTHCARE_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Universal Healthcare[ENDCOLOR][NEWLINE]+1 [ICON_HAPPINESS_1] Local Happiness from every National Wonder and Guild.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_POLICY_UNIVERSAL_HEALTHCARE_HELP" />
+		<Row Tag="TXT_KEY_POLICY_UNIVERSAL_HEALTHCARE_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Universal Healthcare[ENDCOLOR][NEWLINE]+1 [ICON_HAPPINESS_1] Local Happiness from every National Wonder and Guild.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

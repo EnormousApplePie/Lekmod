@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2017-09-27 21:03:47 -->
+<GameData>
+	
+	<!-- Oracle no longer provides +1 Great Scientist point per turn. -->
+	<Buildings>
+		<Update>
+			<Set GreatPeopleRateChange="0" />
+			<Where Type="BUILDING_ORACLE" />
+		</Update>
+	</Buildings>
+	
+</GameData>

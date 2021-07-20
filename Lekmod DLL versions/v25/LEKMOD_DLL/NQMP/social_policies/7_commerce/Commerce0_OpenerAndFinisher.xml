@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 6/12/2015 3:04:23 AM -->
+<GameData>
+
+	<!-- Commerce Opener -->
+	<Policies>
+		<Update>
+			<Set GreatMerchantRateModifier="50" />
+			<Where Type="POLICY_COMMERCE" />
+		</Update>
+	</Policies>
+	<Policy_CapitalYieldModifiers>
+		<Delete PolicyType="POLICY_COMMERCE" />
+	</Policy_CapitalYieldModifiers>
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_POLICY_BRANCH_COMMERCE_HELP" />
+		<Row Tag="TXT_KEY_POLICY_BRANCH_COMMERCE_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Commerce[ENDCOLOR] provides bonuses to empires focused on [ICON_GOLD] Gold.[NEWLINE][NEWLINE]Adopting Commerce allows you to earn Great Merchants 50% faster. Unlocks building Big Ben.[NEWLINE][NEWLINE]Adopting all Policies in the Commerce tree will grant you 2 free Great Merchants and double [ICON_GOLD] Gold from Great Merchant Trade Missions. It also provides +1 [ICON_GOLD] Gold from Trading Posts and allows the purchase of Great Merchants with [ICON_PEACE] Faith starting in the Industrial Era.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_POLICY_BRANCH_COMMERCE_HELP" />
+		<Row Tag="TXT_KEY_POLICY_BRANCH_COMMERCE_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Commerce[ENDCOLOR] provides bonuses to empires focused on [ICON_GOLD] Gold.[NEWLINE][NEWLINE]Adopting Commerce allows you to earn Great Merchants 50% faster. Unlocks building Big Ben.[NEWLINE][NEWLINE]Adopting all Policies in the Commerce tree will grant you 2 free Great Merchants and double [ICON_GOLD] Gold from Great Merchant Trade Missions. It also provides +1 [ICON_GOLD] Gold from Trading Posts and allows the purchase of Great Merchants with [ICON_PEACE] Faith starting in the Industrial Era.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_POLICY_BRANCH_COMMERCE_HELP" />
+		<Row Tag="TXT_KEY_POLICY_BRANCH_COMMERCE_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Commerce[ENDCOLOR] provides bonuses to empires focused on [ICON_GOLD] Gold.[NEWLINE][NEWLINE]Adopting Commerce allows you to earn Great Merchants 50% faster. Unlocks building Big Ben.[NEWLINE][NEWLINE]Adopting all Policies in the Commerce tree will grant you 2 free Great Merchants and double [ICON_GOLD] Gold from Great Merchant Trade Missions. It also provides +1 [ICON_GOLD] Gold from Trading Posts and allows the purchase of Great Merchants with [ICON_PEACE] Faith starting in the Industrial Era.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_POLICY_BRANCH_COMMERCE_HELP" />
+		<Row Tag="TXT_KEY_POLICY_BRANCH_COMMERCE_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Commerce[ENDCOLOR] provides bonuses to empires focused on [ICON_GOLD] Gold.[NEWLINE][NEWLINE]Adopting Commerce allows you to earn Great Merchants 50% faster. Unlocks building Big Ben.[NEWLINE][NEWLINE]Adopting all Policies in the Commerce tree will grant you 2 free Great Merchants and double [ICON_GOLD] Gold from Great Merchant Trade Missions. It also provides +1 [ICON_GOLD] Gold from Trading Posts and allows the purchase of Great Merchants with [ICON_PEACE] Faith starting in the Industrial Era.</Text>
+		</Row>
+	</Language_RU_RU>
+
+
+	<!-- Commerce Finisher -->
+	<!-- NOTE: tooltip is updated in opener -->
+	<Policies>
+		<Update>
+			<Set TradeMissionGoldModifier="100" IncludesOneShotFreeUnits="true" />
+			<Where Type="POLICY_COMMERCE_FINISHER" />
+		</Update>
+	</Policies>
+	<Policy_FreeUnitClasses>
+		<Row>
+			<PolicyType>POLICY_COMMERCE_FINISHER</PolicyType>
+			<UnitClassType>UNITCLASS_MERCHANT</UnitClassType>
+			<Count>2</Count>
+		</Row>
+	</Policy_FreeUnitClasses>
+
+
+</GameData>

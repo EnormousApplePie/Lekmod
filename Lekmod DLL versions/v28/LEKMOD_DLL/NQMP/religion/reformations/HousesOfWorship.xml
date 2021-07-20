@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2016-09-26 23:38:28 -->
+<GameData>
+
+	<!-- May purchase Churches (+1 Happiness, +1 Faith from Wheat/Cotton), Chantries (+1 Happiness, +1 Faith from Gold/Silver), Monastaries (+1 Happiness, +1 Faith from Incense/Wine) with Faith. -->
+	<Beliefs>
+		<Row>
+			<Type>BELIEF_HOUSES_OF_WORSHIP</Type>
+			<Description>TXT_KEY_BELIEF_HOUSES_OF_WORSHIP</Description>
+			<ShortDescription>TXT_KEY_BELIEF_HOUSES_OF_WORSHIP_SHORT</ShortDescription>
+			<Reformation>true</Reformation>
+		</Row>
+	</Beliefs>
+	<Belief_BuildingClassFaithPurchase>
+		<Row>
+			<BeliefType>BELIEF_HOUSES_OF_WORSHIP</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_CHURCH</BuildingClassType>
+		</Row>
+		<Row>
+			<BeliefType>BELIEF_HOUSES_OF_WORSHIP</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_CHANTRY</BuildingClassType>
+		</Row>
+		<Row>
+			<BeliefType>BELIEF_HOUSES_OF_WORSHIP</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_MONASTERY</BuildingClassType>
+		</Row>
+	</Belief_BuildingClassFaithPurchase>
+
+	<!-- Church, Chantry, and Monastery buildings -->
+	<BuildingClasses>
+		<Row>
+			<Type>BUILDINGCLASS_CHURCH</Type>
+			<DefaultBuilding>BUILDING_CHURCH</DefaultBuilding>
+			<Description>TXT_KEY_BUILDING_CHURCH</Description>
+		</Row>
+		<Row>
+			<Type>BUILDINGCLASS_CHANTRY</Type>
+			<DefaultBuilding>BUILDING_CHANTRY</DefaultBuilding>
+			<Description>TXT_KEY_BUILDING_CHANTRY</Description>
+		</Row>
+	</BuildingClasses>
+	<Buildings>
+		<Row>
+			<Type>BUILDING_CHURCH</Type>
+			<BuildingClass>BUILDINGCLASS_CHURCH</BuildingClass>
+			<Cost>-1</Cost>
+			<FaithCost>150</FaithCost>
+			<UnlockedByBelief>true</UnlockedByBelief>
+			<Description>TXT_KEY_BUILDING_CHURCH</Description>
+			<Civilopedia>TXT_KEY_CIV5_BUILDINGS_CHURCH_TEXT</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_HOUSES_OF_WORSHIP_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_CHURCH_HELP</Help>
+			<Happiness>1</Happiness>
+			<ConquestProb>100</ConquestProb>
+			<ArtDefineTag>MONASTERY</ArtDefineTag>
+			<MinAreaSize>-1</MinAreaSize>
+			<!-- stave church -->
+			<IconAtlas>EXPANSION_SCEN_BUILDING_ATLAS</IconAtlas>
+			<PortraitIndex>0</PortraitIndex>
+			<!--<IconAtlas>BW_ATLAS_1</IconAtlas>-->
+			<!--<PortraitIndex>38</PortraitIndex>-->
+		</Row>
+		<Row>
+			<Type>BUILDING_CHANTRY</Type>
+			<BuildingClass>BUILDINGCLASS_CHANTRY</BuildingClass>
+			<Cost>-1</Cost>
+			<FaithCost>150</FaithCost>
+			<UnlockedByBelief>true</UnlockedByBelief>
+			<Description>TXT_KEY_BUILDING_CHANTRY</Description>
+			<Civilopedia>TXT_KEY_CIV5_BUILDINGS_CHANTRY_TEXT</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_HOUSES_OF_WORSHIP_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_CHANTRY_HELP</Help>
+			<ConquestProb>100</ConquestProb>
+			<ArtDefineTag>MONASTERY</ArtDefineTag>
+			<MinAreaSize>-1</MinAreaSize>
+			<PortraitIndex>38</PortraitIndex>
+			<IconAtlas>BW_ATLAS_1</IconAtlas>
+			<Happiness>1</Happiness>
+		</Row>
+		<Update>
+			<Set ConquestProb="100" Happiness="1" Strategy="TXT_KEY_BUILDING_HOUSES_OF_WORSHIP_STRATEGY" />
+			<Where Type="BUILDING_MONASTERY" />
+		</Update>
+	</Buildings>
+	<Building_Flavors>
+		<Row>
+			<BuildingType>BUILDING_CHURCH</BuildingType>
+			<FlavorType>FLAVOR_RELIGION</FlavorType>
+			<Flavor>2</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_CHURCH</BuildingType>
+			<FlavorType>FLAVOR_HAPPINESS</FlavorType>
+			<Flavor>2</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_CHANTRY</BuildingType>
+			<FlavorType>FLAVOR_RELIGION</FlavorType>
+			<Flavor>2</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_CHANTRY</BuildingType>
+			<FlavorType>FLAVOR_HAPPINESS</FlavorType>
+			<Flavor>2</Flavor>
+		</Row>
+		<Update>
+			<Set Flavor="2" />
+			<Where BuildingType="BUILDING_MONASTERY" FlavorType="FLAVOR_RELIGION" />
+		</Update>
+		<Update>
+			<Set FlavorType="FLAVOR_HAPPINESS" Flavor="2" />
+			<Where BuildingType="BUILDING_MONASTERY" FlavorType="FLAVOR_CULTURE" />
+		</Update>
+	</Building_Flavors>
+	<Building_ResourceYieldChanges>
+		<Row>
+			<BuildingType>BUILDING_CHURCH</BuildingType>
+			<ResourceType>RESOURCE_WHEAT</ResourceType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_CHURCH</BuildingType>
+			<ResourceType>RESOURCE_COTTON</ResourceType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_CHANTRY</BuildingType>
+			<ResourceType>RESOURCE_GOLD</ResourceType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_CHANTRY</BuildingType>
+			<ResourceType>RESOURCE_SILVER</ResourceType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Delete BuildingType="BUILDING_MONASTERY" ResourceType="RESOURCE_INCENSE" YieldType="YIELD_CULTURE" />
+		<Delete BuildingType="BUILDING_MONASTERY" ResourceType="RESOURCE_WINE" YieldType="YIELD_CULTURE" />
+	</Building_ResourceYieldChanges>
+	<Building_YieldChanges>
+		<Delete BuildingType="BUILDING_MONASTERY" />
+	</Building_YieldChanges>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Row Tag="TXT_KEY_BELIEF_HOUSES_OF_WORSHIP">
+			<Text>Use [ICON_PEACE] Faith to purchase Churches (+1 [ICON_PEACE] Faith from Wheat and Cotton, +1 [ICON_HAPPINESS_1] Happiness), Chantries (+1 [ICON_PEACE] Faith from Gold and Silver, +1 [ICON_HAPPINESS_1] Happiness), and Monasteries (+1 [ICON_PEACE] Faith from Incense and Wine, +1 [ICON_HAPPINESS_1] Happiness)</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BELIEF_HOUSES_OF_WORSHIP_SHORT">
+			<Text>Houses of Worship</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_CHURCH">
+			<Text>Church</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_CHURCH_HELP">
+			<Text>Each source of [ICON_RES_WHEAT] Wheat and [ICON_RES_COTTON] Cotton worked by this City produce +1 [ICON_PEACE] Faith.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_BUILDINGS_CHURCH_TEXT">
+			<Text>[COLOR_POSITIVE_TEXT]Source: Wikipedia (https://en.wikipedia.org/wiki/Church_(building))[ENDCOLOR][NEWLINE][NEWLINE]A church building, often simply called a church, is a building used for Christian religious activities, particularly worship services. The term in its architectural sense is most often used by Christians to refer to their religious buildings, but it is sometimes used (by analogy) for buildings of other religions. In traditional Christian architecture, the church is often arranged in the shape of a Christian cross. When viewed from plan view the longest part of a cross is represented by the aisle and the junction of the cross is located at the altar area.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_CHANTRY">
+			<Text>Chantry</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_CHANTRY_HELP">
+			<Text>Each source of [ICON_RES_GOLD] Gold and [ICON_RES_SILVER] Silver worked by this City produce +1 [ICON_PEACE] Faith.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_BUILDINGS_CHANTRY_TEXT">
+			<Text>[COLOR_POSITIVE_TEXT]Source: Wikipedia (https://en.wikipedia.org/wiki/Chantry)[ENDCOLOR][NEWLINE][NEWLINE]A chantry or (from Latin) obiit ("he has departed"; may also refer to the mass or masses themselves) was a form of trust fund established during the pre-Reformation medieval era in England for the purpose of employing one or more priests to sing a stipulated number of masses for the benefit of the soul of a specified deceased person, usually the donor who had established the chantry in his will, during a stipulated period of time immediately following his death. It was believed such masses would speed the deceased's soul through its undesirable and indeterminate period in Purgatory onwards to eternal rest in Heaven. Clearly once the soul had reached Heaven the ideal state for the Christian human soul had been attained, and the saying of masses would serve no further function. Thus the concept of Purgatory was central to the perceived need for chantries. Chantries were commonly established in England and were endowed with lands, rents from specified properties and other assets by the donor, usually in his will. The income from these assets maintained the chantry priest.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_BUILDING_MONASTERY_HELP" />
+		<Row Tag="TXT_KEY_BUILDING_MONASTERY_HELP">
+			<Text>Each source of [ICON_RES_INCENSE] Incense and [ICON_RES_WINE] Wine worked by this City produce +1 [ICON_PEACE] Faith.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_HOUSES_OF_WORSHIP_STRATEGY">
+			<Text>Can only be built in cities following a religion with the Houses of Worship belief. Construct this building by purchasing it with [ICON_PEACE] Faith.</Text>
+		</Row>
+	</Language_en_US>
+
+
+	<!-- 
+	<Language_DE_DE>
+		<Row Tag="TXT_KEY_BELIEF_HOUSES_OF_WORSHIP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Use [ICON_PEACE] Faith to purchase Churches (+1 [ICON_PEACE] Faith from Wheat and Cotton, +1 [ICON_HAPPINESS_1] Happiness), Chantries (+1 [ICON_PEACE] Faith from Gold and Silver, +1 [ICON_HAPPINESS_1] Happiness), and Monasteries (+1 [ICON_PEACE] Faith from Incense and Wine, +1 [ICON_HAPPINESS_1] Happiness)</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BELIEF_HOUSES_OF_WORSHIP_SHORT">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Houses of Worship</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_CHURCH">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Church</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_CHURCH_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Each source of [ICON_RES_WHEAT] Wheat and [ICON_RES_COTTON] Cotton worked by this City produce +1 [ICON_PEACE] Faith.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_BUILDINGS_CHURCH_TEXT">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Source: Wikipedia (https://en.wikipedia.org/wiki/Church_(building))[ENDCOLOR][NEWLINE][NEWLINE]A church building, often simply called a church, is a building used for Christian religious activities, particularly worship services. The term in its architectural sense is most often used by Christians to refer to their religious buildings, but it is sometimes used (by analogy) for buildings of other religions. In traditional Christian architecture, the church is often arranged in the shape of a Christian cross. When viewed from plan view the longest part of a cross is represented by the aisle and the junction of the cross is located at the altar area.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_CHANTRY">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Chantry</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_CHANTRY_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Each source of [ICON_RES_GOLD] Gold and [ICON_RES_SILVER] Silver worked by this City produce +1 [ICON_PEACE] Faith.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_BUILDINGS_CHANTRY_TEXT">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Source: Wikipedia (https://en.wikipedia.org/wiki/Chantry)[ENDCOLOR][NEWLINE][NEWLINE]A chantry or (from Latin) obiit ("he has departed"; may also refer to the mass or masses themselves) was a form of trust fund established during the pre-Reformation medieval era in England for the purpose of employing one or more priests to sing a stipulated number of masses for the benefit of the soul of a specified deceased person, usually the donor who had established the chantry in his will, during a stipulated period of time immediately following his death. It was believed such masses would speed the deceased's soul through its undesirable and indeterminate period in Purgatory onwards to eternal rest in Heaven. Clearly once the soul had reached Heaven the ideal state for the Christian human soul had been attained, and the saying of masses would serve no further function. Thus the concept of Purgatory was central to the perceived need for chantries. Chantries were commonly established in England and were endowed with lands, rents from specified properties and other assets by the donor, usually in his will. The income from these assets maintained the chantry priest.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_BUILDING_MONASTERY_HELP" />
+		<Row Tag="TXT_KEY_BUILDING_MONASTERY_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Each source of [ICON_RES_INCENSE] Incense and [ICON_RES_WINE] Wine worked by this City produce +1 [ICON_PEACE] Faith.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_HOUSES_OF_WORSHIP_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Can only be built in cities following a religion with the Houses of Worship belief. Construct this building by purchasing it with [ICON_PEACE] Faith.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Row Tag="TXT_KEY_BELIEF_HOUSES_OF_WORSHIP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Use [ICON_PEACE] Faith to purchase Churches (+1 [ICON_PEACE] Faith from Wheat and Cotton, +1 [ICON_HAPPINESS_1] Happiness), Chantries (+1 [ICON_PEACE] Faith from Gold and Silver, +1 [ICON_HAPPINESS_1] Happiness), and Monasteries (+1 [ICON_PEACE] Faith from Incense and Wine, +1 [ICON_HAPPINESS_1] Happiness)</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BELIEF_HOUSES_OF_WORSHIP_SHORT">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Houses of Worship</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_CHURCH">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Church</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_CHURCH_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Each source of [ICON_RES_WHEAT] Wheat and [ICON_RES_COTTON] Cotton worked by this City produce +1 [ICON_PEACE] Faith.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_BUILDINGS_CHURCH_TEXT">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Source: Wikipedia (https://en.wikipedia.org/wiki/Church_(building))[ENDCOLOR][NEWLINE][NEWLINE]A church building, often simply called a church, is a building used for Christian religious activities, particularly worship services. The term in its architectural sense is most often used by Christians to refer to their religious buildings, but it is sometimes used (by analogy) for buildings of other religions. In traditional Christian architecture, the church is often arranged in the shape of a Christian cross. When viewed from plan view the longest part of a cross is represented by the aisle and the junction of the cross is located at the altar area.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_CHANTRY">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Chantry</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_CHANTRY_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Each source of [ICON_RES_GOLD] Gold and [ICON_RES_SILVER] Silver worked by this City produce +1 [ICON_PEACE] Faith.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_BUILDINGS_CHANTRY_TEXT">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Source: Wikipedia (https://en.wikipedia.org/wiki/Chantry)[ENDCOLOR][NEWLINE][NEWLINE]A chantry or (from Latin) obiit ("he has departed"; may also refer to the mass or masses themselves) was a form of trust fund established during the pre-Reformation medieval era in England for the purpose of employing one or more priests to sing a stipulated number of masses for the benefit of the soul of a specified deceased person, usually the donor who had established the chantry in his will, during a stipulated period of time immediately following his death. It was believed such masses would speed the deceased's soul through its undesirable and indeterminate period in Purgatory onwards to eternal rest in Heaven. Clearly once the soul had reached Heaven the ideal state for the Christian human soul had been attained, and the saying of masses would serve no further function. Thus the concept of Purgatory was central to the perceived need for chantries. Chantries were commonly established in England and were endowed with lands, rents from specified properties and other assets by the donor, usually in his will. The income from these assets maintained the chantry priest.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_BUILDING_MONASTERY_HELP" />
+		<Row Tag="TXT_KEY_BUILDING_MONASTERY_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Each source of [ICON_RES_INCENSE] Incense and [ICON_RES_WINE] Wine worked by this City produce +1 [ICON_PEACE] Faith.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_HOUSES_OF_WORSHIP_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Can only be built in cities following a religion with the Houses of Worship belief. Construct this building by purchasing it with [ICON_PEACE] Faith.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Row Tag="TXT_KEY_BELIEF_HOUSES_OF_WORSHIP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Use [ICON_PEACE] Faith to purchase Churches (+1 [ICON_PEACE] Faith from Wheat and Cotton, +1 [ICON_HAPPINESS_1] Happiness), Chantries (+1 [ICON_PEACE] Faith from Gold and Silver, +1 [ICON_HAPPINESS_1] Happiness), and Monasteries (+1 [ICON_PEACE] Faith from Incense and Wine, +1 [ICON_HAPPINESS_1] Happiness)</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BELIEF_HOUSES_OF_WORSHIP_SHORT">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Houses of Worship</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_CHURCH">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Church</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_CHURCH_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Each source of [ICON_RES_WHEAT] Wheat and [ICON_RES_COTTON] Cotton worked by this City produce +1 [ICON_PEACE] Faith.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_BUILDINGS_CHURCH_TEXT">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Source: Wikipedia (https://en.wikipedia.org/wiki/Church_(building))[ENDCOLOR][NEWLINE][NEWLINE]A church building, often simply called a church, is a building used for Christian religious activities, particularly worship services. The term in its architectural sense is most often used by Christians to refer to their religious buildings, but it is sometimes used (by analogy) for buildings of other religions. In traditional Christian architecture, the church is often arranged in the shape of a Christian cross. When viewed from plan view the longest part of a cross is represented by the aisle and the junction of the cross is located at the altar area.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_CHANTRY">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Chantry</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_CHANTRY_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Each source of [ICON_RES_GOLD] Gold and [ICON_RES_SILVER] Silver worked by this City produce +1 [ICON_PEACE] Faith.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_BUILDINGS_CHANTRY_TEXT">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Source: Wikipedia (https://en.wikipedia.org/wiki/Chantry)[ENDCOLOR][NEWLINE][NEWLINE]A chantry or (from Latin) obiit ("he has departed"; may also refer to the mass or masses themselves) was a form of trust fund established during the pre-Reformation medieval era in England for the purpose of employing one or more priests to sing a stipulated number of masses for the benefit of the soul of a specified deceased person, usually the donor who had established the chantry in his will, during a stipulated period of time immediately following his death. It was believed such masses would speed the deceased's soul through its undesirable and indeterminate period in Purgatory onwards to eternal rest in Heaven. Clearly once the soul had reached Heaven the ideal state for the Christian human soul had been attained, and the saying of masses would serve no further function. Thus the concept of Purgatory was central to the perceived need for chantries. Chantries were commonly established in England and were endowed with lands, rents from specified properties and other assets by the donor, usually in his will. The income from these assets maintained the chantry priest.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_BUILDING_MONASTERY_HELP" />
+		<Row Tag="TXT_KEY_BUILDING_MONASTERY_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Each source of [ICON_RES_INCENSE] Incense and [ICON_RES_WINE] Wine worked by this City produce +1 [ICON_PEACE] Faith.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_HOUSES_OF_WORSHIP_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Can only be built in cities following a religion with the Houses of Worship belief. Construct this building by purchasing it with [ICON_PEACE] Faith.</Text>
+		</Row>
+	</Language_RU_RU>
+	-->
+
+</GameData>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 4/22/2015 4:42:24 PM -->
+<GameData>
+
+	<!-- Update Angkor Wat to provide a free University and 3 Culture (up from 1) -->
+	<Buildings>
+		<Update>
+			<Set FreeBuildingThisCity="BUILDINGCLASS_UNIVERSITY" PrereqTech="TECH_THEOLOGY" Cost="300" GlobalPlotCultureCostModifier="0" GlobalPlotBuyCostModifier="0" />
+			<Where BuildingClass="BUILDINGCLASS_ANGKOR_WAT" />
+		</Update>
+	</Buildings>
+	<Building_YieldChanges>
+		<Update>
+			<Set Yield="3" />
+			<Where BuildingType="BUILDING_ANGKOR_WAT" YieldType="YIELD_CULTURE" />
+		</Update>
+	</Building_YieldChanges>
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_WONDER_ANGKOR_WAT_HELP" />
+		<Row Tag="TXT_KEY_WONDER_ANGKOR_WAT_HELP">
+			<Text>Provides a free University in the city in which it is built.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_WONDER_ANGKOR_WAT_HELP" />
+		<Row Tag="TXT_KEY_WONDER_ANGKOR_WAT_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Provides a free University in the city in which it is built.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_WONDER_ANGKOR_WAT_HELP" />
+		<Row Tag="TXT_KEY_WONDER_ANGKOR_WAT_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Provides a free University in the city in which it is built.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_WONDER_ANGKOR_WAT_HELP" />
+		<Row Tag="TXT_KEY_WONDER_ANGKOR_WAT_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Provides a free University in the city in which it is built.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

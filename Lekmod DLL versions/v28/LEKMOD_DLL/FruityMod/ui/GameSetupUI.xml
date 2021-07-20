@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 12/19/2015 11:36:21 PM -->
+<GameData>
+	<Language_en_US>
+		<!--
+		<Delete Tag="TXT_KEY_RANDOM_LEADER" />
+		<Row Tag="TXT_KEY_RANDOM_LEADER">
+			<Text>(NQMOD v10) Random Leader</Text>
+		</Row>
+
+		<Delete Tag="TXT_KEY_RANDOM_CIV" />
+		<Row Tag="TXT_KEY_RANDOM_CIV">
+			<Text>(NQMOD v10) Random Civilization</Text>
+		</Row>
+		-->
+
+		<Row Tag="TXT_KEY_RANDOM_CIV_LEADER">
+			<Text>{2_Civ} - {1_Leader}</Text>
+		</Row>
+
+		<Update>
+			<Set Text="Aztecs" />
+			<Where Tag="TXT_KEY_CIV_AZTEC_SHORT_DESC" />
+		</Update>
+		<Update>
+			<Set Text="Iroquois" />
+			<Where Tag="TXT_KEY_CIV_IROQUOIS_SHORT_DESC" />
+		</Update>
+		<Update>
+			<Set Text="Ottomans" />
+			<Where Tag="TXT_KEY_CIV_OTTOMAN_SHORT_DESC" />
+		</Update>
+		<Update>
+			<Set Text="Shoshone" />
+			<Where Tag="TXT_KEY_CIV_SHOSHONE_SHORT_DESC" />
+		</Update>
+		<Update>
+			<Set Text="Zulus" />
+			<Where Tag="TXT_KEY_CIV_ZULU_SHORT_DESC" />
+		</Update>
+		<Update>
+			<Set Text="Celts" />
+			<Where Tag="TXT_KEY_CIV_CELTS_SHORT_DESC" />
+		</Update>
+		<Update>
+			<Set Text="Huns" />
+			<Where Tag="TXT_KEY_CIV_HUNS_SHORT_DESC" />
+		</Update>
+		<Update>
+			<Set Text="Maya" />
+			<Where Tag="TXT_KEY_CIV_MAYA_SHORT_DESC" />
+		</Update>
+		<Update>
+			<Set Text="Netherlands" />
+			<Where Tag="TXT_KEY_CIV_NETHERLANDS_SHORT_DESC" />
+		</Update>
+		<Update>
+			<Set Text="Inca" />
+			<Where Tag="TXT_KEY_CIV_INCA_SHORT_DESC" />
+		</Update>
+		
+	</Language_en_US>
+	
+</GameData>

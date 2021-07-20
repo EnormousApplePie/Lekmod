@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 8/17/2016 5:44:42 PM -->
+<GameData>
+
+	<!-- Opener: +1 Food, +1 Production, +1 Culture, +1 Gold, and +1 Science in the Capital. -->
+	<!-- Finisher: +1 Food from Farms. -->
+	<Policies>
+		<Update>
+			<Set PlotCultureExponentModifier="0" />
+			<Where Type="POLICY_TRADITION" />
+		</Update>
+		<Update>
+			<Set CityGrowthMod="0" NumCitiesFreeFoodBuilding="0" />
+			<Where Type="POLICY_TRADITION_FINISHER" />
+		</Update>
+	</Policies>
+	<Policy_BuildingClassYieldChanges>
+		<Row>
+			<PolicyType>POLICY_TRADITION</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
+			<YieldType>YIELD_FOOD</YieldType>
+			<YieldChange>1</YieldChange>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_TRADITION</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<YieldChange>1</YieldChange>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_TRADITION</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<YieldChange>1</YieldChange>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_TRADITION</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
+			<YieldType>YIELD_SCIENCE</YieldType>
+			<YieldChange>1</YieldChange>
+		</Row>
+	</Policy_BuildingClassYieldChanges>
+	<Policy_BuildingClassCultureChanges>
+		<Update>
+			<Set CultureChange="1" />
+			<Where PolicyType="POLICY_TRADITION" BuildingClassType="BUILDINGCLASS_PALACE" />
+		</Update>
+	</Policy_BuildingClassCultureChanges>
+	<Policy_ImprovementYieldChanges>
+		<Row>
+			<PolicyType>POLICY_TRADITION_FINISHER</PolicyType>
+			<ImprovementType>IMPROVEMENT_FARM</ImprovementType>
+			<YieldType>YIELD_FOOD</YieldType>
+			<Yield>1</Yield>
+		</Row>
+	</Policy_ImprovementYieldChanges>
+
+	<!-- Localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_POLICY_BRANCH_TRADITION_HELP" />
+		<Row Tag="TXT_KEY_POLICY_BRANCH_TRADITION_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Tradition[ENDCOLOR] is best for civilizations that want to focus on the [ICON_CAPITAL] Capital and grow high populations.[NEWLINE][NEWLINE]Adopting Tradition will provide +1 [ICON_FOOD] Food, +1 [ICON_PRODUCTION] Production, +1 [ICON_GOLD] Gold, +1 [ICON_CULTURE] Culture, and +1 [ICON_RESEARCH] Science in the [ICON_CAPITAL] Capital.[NEWLINE][NEWLINE]Adopting all policies in the Tradition tree will provide +1 [ICON_FOOD] Food from Farms.</Text>
+		</Row>
+	</Language_en_US>
+
+	<!-- TODO: Flavors -->
+	
+</GameData>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 1/20/2016 12:05:35 AM -->
+<GameData>
+	
+	<!-- Brazilwood Camp moved to Bronze Working, now provides +1 Production. Gains +2 Gold at Machinery and +2 Culture at Acoustics. -->
+	<Builds>
+		<Update>
+			<Set PrereqTech="TECH_BRONZE_WORKING" />
+			<Where Type="BUILD_BRAZILWOOD_CAMP" />
+		</Update>
+	</Builds>
+	<Improvement_Yields>
+		<Delete YieldType="YIELD_GOLD" ImprovementType="IMPROVEMENT_BRAZILWOOD_CAMP" />
+		<Row>
+			<ImprovementType>IMPROVEMENT_BRAZILWOOD_CAMP</ImprovementType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>1</Yield>
+		</Row>
+	</Improvement_Yields>
+	<Improvement_TechYieldChanges>
+		<Row>
+			<ImprovementType>IMPROVEMENT_BRAZILWOOD_CAMP</ImprovementType>
+			<TechType>TECH_MACHINERY</TechType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<Yield>2</Yield>
+		</Row>
+	</Improvement_TechYieldChanges>
+	
+	<!-- TXT_KEY_CIV5_IMPROVEMENTS_BRAZILWOOD_CAMP_HELP -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_CIV5_IMPROVEMENTS_BRAZILWOOD_CAMP_HELP" />
+		<Row Tag="TXT_KEY_CIV5_IMPROVEMENTS_BRAZILWOOD_CAMP_HELP">
+			<Text>A Brazilwood Camp can only be built on a Jungle tile.  It provides additional [ICON_PRODUCTION] Production. After the Machinery technology is researched it also provides extra [ICON_GOLD] Gold, and after the Acoustics technology is researched it also provides extra [ICON_CULTURE] Culture.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_CIV5_IMPROVEMENTS_BRAZILWOOD_CAMP_HELP" />
+		<Row Tag="TXT_KEY_CIV5_IMPROVEMENTS_BRAZILWOOD_CAMP_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]A Brazilwood Camp can only be built on a Jungle tile.  It provides additional [ICON_PRODUCTION] Production. After the Machinery technology is researched it also provides extra [ICON_GOLD] Gold, and after the Acoustics technology is researched it also provides extra [ICON_CULTURE] Culture.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_CIV5_IMPROVEMENTS_BRAZILWOOD_CAMP_HELP" />
+		<Row Tag="TXT_KEY_CIV5_IMPROVEMENTS_BRAZILWOOD_CAMP_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]A Brazilwood Camp can only be built on a Jungle tile.  It provides additional [ICON_PRODUCTION] Production. After the Machinery technology is researched it also provides extra [ICON_GOLD] Gold, and after the Acoustics technology is researched it also provides extra [ICON_CULTURE] Culture.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_CIV5_IMPROVEMENTS_BRAZILWOOD_CAMP_HELP" />
+		<Row Tag="TXT_KEY_CIV5_IMPROVEMENTS_BRAZILWOOD_CAMP_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]A Brazilwood Camp can only be built on a Jungle tile.  It provides additional [ICON_PRODUCTION] Production. After the Machinery technology is researched it also provides extra [ICON_GOLD] Gold, and after the Acoustics technology is researched it also provides extra [ICON_CULTURE] Culture.</Text>
+		</Row>
+	</Language_RU_RU>
+	
+	<!-- TXT_KEY_CIV5_IMPROVEMENTS_BRAZILWOOD_CAMP_TEXT -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_CIV5_IMPROVEMENTS_BRAZILWOOD_CAMP_TEXT" />
+		<Row Tag="TXT_KEY_CIV5_IMPROVEMENTS_BRAZILWOOD_CAMP_TEXT">
+			<Text>Brazilwood is a tropical hardwood whose bark produces a bright crimson and deep purple extract used in dyes. Its wood is dense, and is prized for crafting stringed instruments (especially the bows) and cabinetry. The harvesting of brazilwood did not cease until 1875, by which time synthetic dyes dominated the textile industry and other hardwoods had been found to be better for musical instruments.[NEWLINE][NEWLINE]A Brazilwood Camp can only be built on a Jungle tile, and will also generate +2 [ICON_GOLD] once Machinery is researched and +2 [ICON_CULTURE] Gold Culture once Acoustics is researched.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_CIV5_IMPROVEMENTS_BRAZILWOOD_CAMP_TEXT" />
+		<Row Tag="TXT_KEY_CIV5_IMPROVEMENTS_BRAZILWOOD_CAMP_TEXT">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Brazilwood is a tropical hardwood whose bark produces a bright crimson and deep purple extract used in dyes. Its wood is dense, and is prized for crafting stringed instruments (especially the bows) and cabinetry. The harvesting of brazilwood did not cease until 1875, by which time synthetic dyes dominated the textile industry and other hardwoods had been found to be better for musical instruments.[NEWLINE][NEWLINE]A Brazilwood Camp can only be built on a Jungle tile, and will also generate +2 [ICON_GOLD] Gold once Machinery is researched and +2 [ICON_CULTURE] Culture once Acoustics is researched.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_CIV5_IMPROVEMENTS_BRAZILWOOD_CAMP_TEXT" />
+		<Row Tag="TXT_KEY_CIV5_IMPROVEMENTS_BRAZILWOOD_CAMP_TEXT">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Brazilwood is a tropical hardwood whose bark produces a bright crimson and deep purple extract used in dyes. Its wood is dense, and is prized for crafting stringed instruments (especially the bows) and cabinetry. The harvesting of brazilwood did not cease until 1875, by which time synthetic dyes dominated the textile industry and other hardwoods had been found to be better for musical instruments.[NEWLINE][NEWLINE]A Brazilwood Camp can only be built on a Jungle tile, and will also generate +2 [ICON_GOLD] Gold once Machinery is researched and +2 [ICON_CULTURE] Culture once Acoustics is researched.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_CIV5_IMPROVEMENTS_BRAZILWOOD_CAMP_TEXT" />
+		<Row Tag="TXT_KEY_CIV5_IMPROVEMENTS_BRAZILWOOD_CAMP_TEXT">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Brazilwood is a tropical hardwood whose bark produces a bright crimson and deep purple extract used in dyes. Its wood is dense, and is prized for crafting stringed instruments (especially the bows) and cabinetry. The harvesting of brazilwood did not cease until 1875, by which time synthetic dyes dominated the textile industry and other hardwoods had been found to be better for musical instruments.[NEWLINE][NEWLINE]A Brazilwood Camp can only be built on a Jungle tile, and will also generate +2 [ICON_GOLD] Gold once Machinery is researched and +2 [ICON_CULTURE] Culture once Acoustics is researched.</Text>
+		</Row>
+	</Language_RU_RU>
+
+	<!-- TXT_KEY_BUILD_BRAZILWOOD_CAMP_HELP -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_BUILD_BRAZILWOOD_CAMP_HELP" />
+		<Row Tag="TXT_KEY_BUILD_BRAZILWOOD_CAMP_HELP">
+			<Text>Constructs a Brazilwood Camp, which increases the amount of [ICON_PRODUCTION] Production provided by this tile, while keeping the Jungle intact. Also provides [ICON_GOLD] Gold once Machinery has been researched and [ICON_CULTURE] Culture once Acoustics has been researched.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_BUILD_BRAZILWOOD_CAMP_HELP" />
+		<Row Tag="TXT_KEY_BUILD_BRAZILWOOD_CAMP_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Constructs a Brazilwood Camp, which increases the amount of [ICON_PRODUCTION] Production provided by this tile, while keeping the Jungle intact. Also provides [ICON_GOLD] Gold once Machinery has been researched and [ICON_CULTURE] Culture once Acoustics has been researched.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_BUILD_BRAZILWOOD_CAMP_HELP" />
+		<Row Tag="TXT_KEY_BUILD_BRAZILWOOD_CAMP_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Constructs a Brazilwood Camp, which increases the amount of [ICON_PRODUCTION] Production provided by this tile, while keeping the Jungle intact. Also provides [ICON_GOLD] Gold once Machinery has been researched and [ICON_CULTURE] Culture once Acoustics has been researched.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_BUILD_BRAZILWOOD_CAMP_HELP" />
+		<Row Tag="TXT_KEY_BUILD_BRAZILWOOD_CAMP_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Constructs a Brazilwood Camp, which increases the amount of [ICON_PRODUCTION] Production provided by this tile, while keeping the Jungle intact. Also provides [ICON_GOLD] Gold once Machinery has been researched and [ICON_CULTURE] Culture once Acoustics has been researched.</Text>
+		</Row>
+	</Language_RU_RU>
+	
+	<!-- TXT_KEY_BUILD_BRAZILWOOD_CAMP_REC -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_BUILD_BRAZILWOOD_CAMP_REC" />
+		<Row Tag="TXT_KEY_BUILD_BRAZILWOOD_CAMP_REC">
+			<Text>It will increase the amount of [ICON_PRODUCTION] Production provided by this tile, while keeping the Jungle intact. Also provides [ICON_GOLD] Gold once Machinery has been researched and [ICON_CULTURE] Culture once Acoustics has been researched.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_BUILD_BRAZILWOOD_CAMP_REC" />
+		<Row Tag="TXT_KEY_BUILD_BRAZILWOOD_CAMP_REC">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]It will increase the amount of [ICON_PRODUCTION] Production provided by this tile, while keeping the Jungle intact. Also provides [ICON_GOLD] Gold once Machinery has been researched and [ICON_CULTURE] Culture once Acoustics has been researched.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_BUILD_BRAZILWOOD_CAMP_REC" />
+		<Row Tag="TXT_KEY_BUILD_BRAZILWOOD_CAMP_REC">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]It will increase the amount of [ICON_PRODUCTION] Production provided by this tile, while keeping the Jungle intact. Also provides [ICON_GOLD] Gold once Machinery has been researched and [ICON_CULTURE] Culture once Acoustics has been researched.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_BUILD_BRAZILWOOD_CAMP_REC" />
+		<Row Tag="TXT_KEY_BUILD_BRAZILWOOD_CAMP_REC">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]It will increase the amount of [ICON_PRODUCTION] Production provided by this tile, while keeping the Jungle intact. Also provides [ICON_GOLD] Gold once Machinery has been researched and [ICON_CULTURE] Culture once Acoustics has been researched.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

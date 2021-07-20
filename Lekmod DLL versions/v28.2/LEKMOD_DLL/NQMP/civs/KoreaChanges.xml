@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 10/2/2015 2:47:45 AM -->
+<GameData>
+
+	<Trait_SpecialistYieldChanges>
+		<Update>
+			<Set Yield="1" />
+			<Where TraitType="TRAIT_SCHOLARS_JADE_HALL" YieldType="YIELD_SCIENCE" />
+		</Update>
+	</Trait_SpecialistYieldChanges>
+
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_TRAIT_SCHOLARS_JADE_HALL" />
+		<Row Tag="TXT_KEY_TRAIT_SCHOLARS_JADE_HALL">
+			<Text>+1 [ICON_RESEARCH] science for all specialists and +2 [ICON_RESEARCH] science for all Great Person tile improvements. Receive a tech boost each time a scientific building/Wonder is built in the Korean capital.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_TRAIT_SCHOLARS_JADE_HALL" />
+		<Row Tag="TXT_KEY_TRAIT_SCHOLARS_JADE_HALL">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]+1 [ICON_RESEARCH] science for all specialists and +2 [ICON_RESEARCH] science for all Great Person tile improvements. Receive a tech boost each time a scientific building/Wonder is built in the Korean capital.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_TRAIT_SCHOLARS_JADE_HALL" />
+		<Row Tag="TXT_KEY_TRAIT_SCHOLARS_JADE_HALL">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]+1 [ICON_RESEARCH] science for all specialists and +2 [ICON_RESEARCH] science for all Great Person tile improvements. Receive a tech boost each time a scientific building/Wonder is built in the Korean capital.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_TRAIT_SCHOLARS_JADE_HALL" />
+		<Row Tag="TXT_KEY_TRAIT_SCHOLARS_JADE_HALL">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]+1 [ICON_RESEARCH] science for all specialists and +2 [ICON_RESEARCH] science for all Great Person tile improvements. Receive a tech boost each time a scientific building/Wonder is built in the Korean capital.</Text>
+		</Row>
+	</Language_RU_RU>
+	
+</GameData>

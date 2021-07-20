@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 4/30/2017 7:02:39 PM -->
+<GameData>
+
+	<!-- Statue of Liberty: 1 free Social Policy. +1 Culture, +5 Population, and +5 Happiness in this City. -->
+	
+	<Building_SpecialistYieldChanges>
+		<Delete BuildingType="BUILDING_STATUE_OF_LIBERTY" />
+	</Building_SpecialistYieldChanges>
+	<Buildings>
+		<Update>
+			<Set UnmoddedHappiness="5" LocalPopulationChange="5" />
+			<Where Type="BUILDING_STATUE_OF_LIBERTY" />
+		</Update>
+	</Buildings>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_WONDER_STATUE_OF_LIBERTY_HELP" />
+		<Row Tag="TXT_KEY_WONDER_STATUE_OF_LIBERTY_HELP">
+			<Text>Requires Freedom. 1 Free Social Policy. +5 [ICON_CITIZEN] Population.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_WONDER_STATUE_OF_LIBERTY_HELP" />
+		<Row Tag="TXT_KEY_WONDER_STATUE_OF_LIBERTY_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Requires Freedom. 1 Free Social Policy. +5 [ICON_CITIZEN] Population.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_WONDER_STATUE_OF_LIBERTY_HELP" />
+		<Row Tag="TXT_KEY_WONDER_STATUE_OF_LIBERTY_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Requires Freedom. 1 Free Social Policy. +5 [ICON_CITIZEN] Population.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_WONDER_STATUE_OF_LIBERTY_HELP" />
+		<Row Tag="TXT_KEY_WONDER_STATUE_OF_LIBERTY_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Requires Freedom. 1 Free Social Policy. +5 [ICON_CITIZEN] Population.</Text>
+		</Row>
+	</Language_RU_RU>
+	
+</GameData>

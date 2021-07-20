@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 6/6/2015 4:51:27 PM -->
+<GameData>
+
+	<!-- Navigation School: +10% Combat strength for Naval units. +3 Science in coastal Cities. -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_POLICY_NAVIGATION_SCHOOL_HELP" />
+		<Row Tag="TXT_KEY_POLICY_NAVIGATION_SCHOOL_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Navigation School[ENDCOLOR][NEWLINE]+3 [ICON_RESEARCH] Science in all coastal cities. +10% [ICON_STRENGTH] Combat Strength for Naval combat units.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_POLICY_NAVIGATION_SCHOOL_HELP" />
+		<Row Tag="TXT_KEY_POLICY_NAVIGATION_SCHOOL_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Navigation School[ENDCOLOR][NEWLINE]+3 [ICON_RESEARCH] Science in all coastal cities. +10% [ICON_STRENGTH] Combat Strength for Naval combat units.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_POLICY_NAVIGATION_SCHOOL_HELP" />
+		<Row Tag="TXT_KEY_POLICY_NAVIGATION_SCHOOL_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Navigation School[ENDCOLOR][NEWLINE]+3 [ICON_RESEARCH] Science in all coastal cities. +10% [ICON_STRENGTH] Combat Strength for Naval combat units.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_POLICY_NAVIGATION_SCHOOL_HELP" />
+		<Row Tag="TXT_KEY_POLICY_NAVIGATION_SCHOOL_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Navigation School[ENDCOLOR][NEWLINE]+3 [ICON_RESEARCH] Science in all coastal cities. +10% [ICON_STRENGTH] Combat Strength for Naval combat units.</Text>
+		</Row>
+	</Language_RU_RU>
+
+	<Policies>
+		<Update>
+			<Set IncludesOneShotFreeUnits="false" GreatAdmiralRateModifier="0" />
+			<Where Type="POLICY_NAVIGATION_SCHOOL" />
+		</Update>
+	</Policies>
+	<Policy_CoastalCityYieldChanges>
+		<Row>
+			<PolicyType>POLICY_NAVIGATION_SCHOOL</PolicyType>
+			<YieldType>YIELD_SCIENCE</YieldType>
+			<Yield>3</Yield>
+		</Row>
+	</Policy_CoastalCityYieldChanges>
+	<Policy_FreePromotions>
+		<Delete PolicyType="POLICY_NAVIGATION_SCHOOL" PromotionType="PROMOTION_FAST_ADMIRAL" />
+		<Row>
+			<PolicyType>POLICY_NAVIGATION_SCHOOL</PolicyType>
+			<PromotionType>PROMOTION_NAVIGATION_SCHOOL</PromotionType>
+		</Row>
+	</Policy_FreePromotions>
+	<Policy_FreeUnitClasses>
+		<Delete PolicyType="POLICY_NAVIGATION_SCHOOL" />
+	</Policy_FreeUnitClasses>
+	
+	<!-- Naval Tradition promotion -->
+	<UnitPromotions>
+		<Row>
+			<Type>PROMOTION_NAVIGATION_SCHOOL</Type>
+			<Description>TXT_KEY_PROMOTION_NAVIGATION_SCHOOL_BOOST</Description>
+			<Help>TXT_KEY_PROMOTION_NAVIGATION_SCHOOL_BOOST_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CannotBeChosen>true</CannotBeChosen>
+			<PortraitIndex>59</PortraitIndex>
+			<IconAtlas>ABILITY_ATLAS</IconAtlas>
+			<PediaType>PEDIA_SHARED</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_NAVIGATION_SCHOOL_BOOST</PediaEntry>
+			<CombatPercent>10</CombatPercent>
+		</Row>
+	</UnitPromotions>
+	<UnitPromotions_UnitCombats>
+		<Row>
+			<PromotionType>PROMOTION_NAVIGATION_SCHOOL</PromotionType>
+			<UnitCombatType>UNITCOMBAT_NAVALRANGED</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_NAVIGATION_SCHOOL</PromotionType>
+			<UnitCombatType>UNITCOMBAT_NAVALMELEE</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_NAVIGATION_SCHOOL</PromotionType>
+			<UnitCombatType>UNITCOMBAT_CARRIER</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_NAVIGATION_SCHOOL</PromotionType>
+			<UnitCombatType>UNITCOMBAT_SUBMARINE</UnitCombatType>
+		</Row>
+	</UnitPromotions_UnitCombats>
+	<Language_en_US>
+		<Row Tag="TXT_KEY_PROMOTION_NAVIGATION_SCHOOL_BOOST">
+			<Text>Navigation School</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_NAVIGATION_SCHOOL_BOOST_HELP">
+			<Text>+10% [ICON_STRENGTH] Combat Strength</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Row Tag="TXT_KEY_PROMOTION_NAVIGATION_SCHOOL_BOOST">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Navigation School</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_NAVIGATION_SCHOOL_BOOST_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]+10% [ICON_STRENGTH] Combat Strength</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Row Tag="TXT_KEY_PROMOTION_NAVIGATION_SCHOOL_BOOST">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Navigation School</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_NAVIGATION_SCHOOL_BOOST_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]+10% [ICON_STRENGTH] Combat Strength</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Row Tag="TXT_KEY_PROMOTION_NAVIGATION_SCHOOL_BOOST">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Navigation School</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_NAVIGATION_SCHOOL_BOOST_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]+10% [ICON_STRENGTH] Combat Strength</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

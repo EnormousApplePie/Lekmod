@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 6/12/2015 4:16:04 AM -->
+<GameData>
+
+	<!-- Branch Tooltip -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_POLICY_BRANCH_RATIONALISM_HELP" />
+		<Row Tag="TXT_KEY_POLICY_BRANCH_RATIONALISM_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Rationalism[ENDCOLOR] improves the ability to use and generate [ICON_RESEARCH] Science.[NEWLINE][NEWLINE]Adopting Rationalism allows you to earn Great Scientists 25% faster. Unlocks building the Porcelain Tower.[NEWLINE][NEWLINE]Adopting all Policies in the Rationalism tree will grant +10% [ICON_RESEARCH] Science while the empire is [ICON_HAPPINESS_1] Happy. It also allows the purchase of Great Scientists with [ICON_PEACE] Faith starting in the Industrial Era.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_POLICY_BRANCH_RATIONALISM_HELP" />
+		<Row Tag="TXT_KEY_POLICY_BRANCH_RATIONALISM_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Rationalism[ENDCOLOR] improves the ability to use and generate [ICON_RESEARCH] Science.[NEWLINE][NEWLINE]Adopting Rationalism allows you to earn Great Scientists 25% faster. Unlocks building the Porcelain Tower.[NEWLINE][NEWLINE]Adopting all Policies in the Rationalism tree will grant +10% [ICON_RESEARCH] Science while the empire is [ICON_HAPPINESS_1] Happy. It also allows the purchase of Great Scientists with [ICON_PEACE] Faith starting in the Industrial Era.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_POLICY_BRANCH_RATIONALISM_HELP" />
+		<Row Tag="TXT_KEY_POLICY_BRANCH_RATIONALISM_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Rationalism[ENDCOLOR] improves the ability to use and generate [ICON_RESEARCH] Science.[NEWLINE][NEWLINE]Adopting Rationalism allows you to earn Great Scientists 25% faster. Unlocks building the Porcelain Tower.[NEWLINE][NEWLINE]Adopting all Policies in the Rationalism tree will grant +10% [ICON_RESEARCH] Science while the empire is [ICON_HAPPINESS_1] Happy. It also allows the purchase of Great Scientists with [ICON_PEACE] Faith starting in the Industrial Era.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_POLICY_BRANCH_RATIONALISM_HELP" />
+		<Row Tag="TXT_KEY_POLICY_BRANCH_RATIONALISM_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Rationalism[ENDCOLOR] improves the ability to use and generate [ICON_RESEARCH] Science.[NEWLINE][NEWLINE]Adopting Rationalism allows you to earn Great Scientists 25% faster. Unlocks building the Porcelain Tower.[NEWLINE][NEWLINE]Adopting all Policies in the Rationalism tree will grant +10% [ICON_RESEARCH] Science while the empire is [ICON_HAPPINESS_1] Happy. It also allows the purchase of Great Scientists with [ICON_PEACE] Faith starting in the Industrial Era.</Text>
+		</Row>
+	</Language_RU_RU>
+
+
+	<!-- RATIONALISM OPENER -->
+	<Policies>
+		<Update>
+			<Set HappinessToScience="0" GreatScientistRateModifier="25" />
+			<Where Type="POLICY_RATIONALISM" />
+		</Update>
+	</Policies>
+	
+
+	<!-- RATIONALISM FINISHER -->
+	<!-- Note: Tooltip updated in the opener. -->
+	<Policies>
+		<Update>
+			<Set NumFreeTechs="0" HappinessToScience="10" />
+			<Where Type="POLICY_RATIONALISM_FINISHER" />
+		</Update>
+	</Policies>
+
+</GameData>

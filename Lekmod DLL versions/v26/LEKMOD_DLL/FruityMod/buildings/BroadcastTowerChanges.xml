@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 5/4/2016 8:39:17 AM -->
+<GameData>
+
+	<!-- Broadcast Towers now need Opera Houses instead of Museums. -->
+	<Building_ClassesNeededInCity>
+		<Update>
+			<Set BuildingClassType="BUILDINGCLASS_OPERA_HOUSE" />
+			<Where BuildingType="BUILDING_BROADCAST_TOWER" />
+		</Update>
+	</Building_ClassesNeededInCity>
+
+</GameData>

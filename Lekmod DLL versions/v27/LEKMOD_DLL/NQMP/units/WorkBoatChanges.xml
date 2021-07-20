@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 5/6/2015 3:03:56 AM -->
+<GameData>
+
+	<!-- Workboat production cost reduced by 40% to 20 (from 33 on quick speed) -->
+	<Units>
+		<Update>
+			<Set Cost="30" />
+			<Where Class="UNITCLASS_WORKBOAT" />
+		</Update>
+	</Units>
+	
+</GameData>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	
+	<!-- Adjusts the tech cost discount gained from having met teams who have a given tech so that the discount matches its original value for 6 player FFAs -->
+	<Defines>
+		<Update>
+			<Set Value="25" />
+			<Where Name="TECH_COST_TOTAL_KNOWN_TEAM_MODIFIER" />
+		</Update>
+	</Defines>
+	
+</GameData>

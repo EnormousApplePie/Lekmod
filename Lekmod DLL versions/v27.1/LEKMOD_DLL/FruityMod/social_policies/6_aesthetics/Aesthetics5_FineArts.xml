@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 4/19/2015 12:35:24 PM -->
+<GameData>
+
+	<!-- Fine Arts -->
+	<Policies>
+		<Update>
+			<Set HappinessToCulture="0" NumCitiesFreeAestheticsSchools="4" />
+			<Where Type="POLICY_FINE_ARTS" />
+		</Update>
+	</Policies>
+	<Policy_BuildingClassTourismModifiers>
+		<Row>
+			<PolicyType>POLICY_FINE_ARTS</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_AMPHITHEATER</BuildingClassType>
+			<TourismModifier>25</TourismModifier>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_FINE_ARTS</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_OPERA_HOUSE</BuildingClassType>
+			<TourismModifier>25</TourismModifier>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_FINE_ARTS</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_MUSEUM</BuildingClassType>
+			<TourismModifier>25</TourismModifier>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_FINE_ARTS</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_BROADCAST_TOWER</BuildingClassType>
+			<TourismModifier>25</TourismModifier>
+		</Row>
+	</Policy_BuildingClassTourismModifiers>
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_POLICY_FINE_ARTS_HELP" />
+		<Row Tag="TXT_KEY_POLICY_FINE_ARTS_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Fine Arts[ENDCOLOR][NEWLINE]Provides a free Scriptorium, Gallery, and Conservatory in your first 4 cities. Amphitheaters, Opera Houses, Museums, and Broadcast Towers increase city [ICON_TOURISM] Tourism output by 25%.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_POLICY_FINE_ARTS_HELP" />
+		<Row Tag="TXT_KEY_POLICY_FINE_ARTS_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Fine Arts[ENDCOLOR][NEWLINE]Provides a free Scriptorium, Gallery, and Conservatory in your first 4 cities. Amphitheaters, Opera Houses, Museums, and Broadcast Towers increase city [ICON_TOURISM] Tourism output by 25%.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_POLICY_FINE_ARTS_HELP" />
+		<Row Tag="TXT_KEY_POLICY_FINE_ARTS_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Fine Arts[ENDCOLOR][NEWLINE]Provides a free Scriptorium, Gallery, and Conservatory in your first 4 cities. Amphitheaters, Opera Houses, Museums, and Broadcast Towers increase city [ICON_TOURISM] Tourism output by 25%.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_POLICY_FINE_ARTS_HELP" />
+		<Row Tag="TXT_KEY_POLICY_FINE_ARTS_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Fine Arts[ENDCOLOR][NEWLINE]Provides a free Scriptorium, Gallery, and Conservatory in your first 4 cities. Amphitheaters, Opera Houses, Museums, and Broadcast Towers increase city [ICON_TOURISM] Tourism output by 25%.</Text>
+		</Row>
+	</Language_RU_RU>
+
+
+	<!-- Fine Arts: Scriptorium -->
+	<BuildingClasses>
+		<Row>
+			<Type>BUILDINGCLASS_SCRIPTORIUM</Type>
+			<DefaultBuilding>BUILDING_SCRIPTORIUM</DefaultBuilding>
+			<Description>TXT_KEY_BUILDING_SCRIPTORIUM_DESC</Description>
+		</Row>
+	</BuildingClasses>
+	<Buildings>
+		<Row>
+			<Type>BUILDING_SCRIPTORIUM</Type>
+			<BuildingClass>BUILDINGCLASS_SCRIPTORIUM</BuildingClass>
+			<Cost>-1</Cost>
+			<HurryCostModifier>-1</HurryCostModifier>
+			<ConquestProb>100</ConquestProb>
+			<NukeImmune>true</NukeImmune>
+			<Help>TXT_KEY_BUILDING_SCRIPTORIUM_STRATEGY</Help>
+			<Description>TXT_KEY_BUILDING_SCRIPTORIUM_DESC</Description>
+			<Strategy>TXT_KEY_BUILDING_SCRIPTORIUM_STRATEGY</Strategy>
+			<SpecialistType>SPECIALIST_WRITER</SpecialistType>
+			<SpecialistCount>1</SpecialistCount>
+			<ArtDefineTag>ART_DEF_BUILDING_WRITERS_GUILD</ArtDefineTag>
+			<MinAreaSize>-1</MinAreaSize>
+			<PortraitIndex>21</PortraitIndex>
+			<IconAtlas>TECH_ATLAS_1</IconAtlas>
+		</Row>
+	</Buildings>
+	<Building_YieldChanges>
+		<Row>
+			<BuildingType>BUILDING_SCRIPTORIUM</BuildingType>
+			<YieldType>YIELD_CULTURE</YieldType>
+			<Yield>1</Yield>
+		</Row>
+	</Building_YieldChanges>
+	<Language_en_US>
+		<Row Tag="TXT_KEY_BUILDING_SCRIPTORIUM_DESC">
+			<Text>Scriptorium</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_SCRIPTORIUM_STRATEGY">
+			<Text>Civilizations that adopt Fine Arts will receive a Scriptorium in their first 4 cities, which provides 1 [ICON_CULTURE] Culture as well as a Writer Specialist Slot.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Row Tag="TXT_KEY_BUILDING_SCRIPTORIUM_DESC">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Scriptorium</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_SCRIPTORIUM_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Civilizations that adopt Fine Arts will receive a Scriptorium in their first 4 cities, which provides 1 [ICON_CULTURE] Culture as well as a Writer Specialist Slot.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Row Tag="TXT_KEY_BUILDING_SCRIPTORIUM_DESC">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Scriptorium</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_SCRIPTORIUM_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Civilizations that adopt Fine Arts will receive a Scriptorium in their first 4 cities, which provides 1 [ICON_CULTURE] Culture as well as a Writer Specialist Slot.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Row Tag="TXT_KEY_BUILDING_SCRIPTORIUM_DESC">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Scriptorium</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_SCRIPTORIUM_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Civilizations that adopt Fine Arts will receive a Scriptorium in their first 4 cities, which provides 1 [ICON_CULTURE] Culture as well as a Writer Specialist Slot.</Text>
+		</Row>
+	</Language_RU_RU>
+
+
+	<!-- Fine Arts: Gallery -->
+	<BuildingClasses>
+		<Row>
+			<Type>BUILDINGCLASS_GALLERY</Type>
+			<DefaultBuilding>BUILDING_GALLERY</DefaultBuilding>
+			<Description>TXT_KEY_BUILDING_GALLERY_DESC</Description>
+		</Row>
+	</BuildingClasses>
+	<Buildings>
+		<Row>
+			<Type>BUILDING_GALLERY</Type>
+			<BuildingClass>BUILDINGCLASS_GALLERY</BuildingClass>
+			<Cost>-1</Cost>
+			<HurryCostModifier>-1</HurryCostModifier>
+			<ConquestProb>100</ConquestProb>
+			<NukeImmune>true</NukeImmune>
+			<Help>TXT_KEY_BUILDING_GALLERY_STRATEGY</Help>
+			<Description>TXT_KEY_BUILDING_GALLERY_DESC</Description>
+			<Strategy>TXT_KEY_BUILDING_GALLERY_STRATEGY</Strategy>
+			<SpecialistType>SPECIALIST_ARTIST</SpecialistType>
+			<SpecialistCount>1</SpecialistCount>
+			<Happiness>1</Happiness>
+			<ArtDefineTag>ART_DEF_BUILDING_ARTISTS_GUILD</ArtDefineTag>
+			<MinAreaSize>-1</MinAreaSize>
+			<PortraitIndex>4</PortraitIndex>
+			<IconAtlas>TECH_ATLAS_1</IconAtlas>
+		</Row>
+	</Buildings>
+	<Language_en_US>
+		<Row Tag="TXT_KEY_BUILDING_GALLERY_DESC">
+			<Text>Gallery</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_GALLERY_STRATEGY">
+			<Text>Civilizations that adopt Fine Arts will receive a Gallery in their first 4 cities, which provides 1 [ICON_HAPPINESS_1] Happiness as well as an Artist Specialist Slot.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Row Tag="TXT_KEY_BUILDING_GALLERY_DESC">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Gallery</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_GALLERY_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Civilizations that adopt Fine Arts will receive a Gallery in their first 4 cities, which provides 1 [ICON_HAPPINESS_1] Happiness as well as an Artist Specialist Slot.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Row Tag="TXT_KEY_BUILDING_GALLERY_DESC">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Gallery</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_GALLERY_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Civilizations that adopt Fine Arts will receive a Gallery in their first 4 cities, which provides 1 [ICON_HAPPINESS_1] Happiness as well as an Artist Specialist Slot.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Row Tag="TXT_KEY_BUILDING_GALLERY_DESC">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Gallery</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_GALLERY_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Civilizations that adopt Fine Arts will receive a Gallery in their first 4 cities, which provides 1 [ICON_HAPPINESS_1] Happiness as well as an Artist Specialist Slot.</Text>
+		</Row>
+	</Language_RU_RU>
+
+
+	<!-- Fine Arts: Conservatory -->
+	<BuildingClasses>
+		<Row>
+			<Type>BUILDINGCLASS_CONSERVATORY</Type>
+			<DefaultBuilding>BUILDING_CONSERVATORY</DefaultBuilding>
+			<Description>TXT_KEY_BUILDING_CONSERVATORY_DESC</Description>
+		</Row>
+	</BuildingClasses>
+	<Buildings>
+		<Row>
+			<Type>BUILDING_CONSERVATORY</Type>
+			<BuildingClass>BUILDINGCLASS_CONSERVATORY</BuildingClass>
+			<Cost>-1</Cost>
+			<HurryCostModifier>-1</HurryCostModifier>
+			<ConquestProb>100</ConquestProb>
+			<NukeImmune>true</NukeImmune>
+			<Help>TXT_KEY_BUILDING_CONSERVATORY_STRATEGY</Help>
+			<Description>TXT_KEY_BUILDING_CONSERVATORY_DESC</Description>
+			<Strategy>TXT_KEY_BUILDING_CONSERVATORY_STRATEGY</Strategy>
+			<SpecialistType>SPECIALIST_MUSICIAN</SpecialistType>
+			<SpecialistCount>1</SpecialistCount>
+			<EnhancedYieldTech>TECH_AGRICULTURE</EnhancedYieldTech>
+			<TechEnhancedTourism>1</TechEnhancedTourism>
+			<ArtDefineTag>ART_DEF_BUILDING_MUSICIANS_GUILD</ArtDefineTag>
+			<MinAreaSize>-1</MinAreaSize>
+			<PortraitIndex>14</PortraitIndex>
+			<IconAtlas>TECH_ATLAS_2</IconAtlas>
+		</Row>
+	</Buildings>
+	<Language_en_US>
+		<Row Tag="TXT_KEY_BUILDING_CONSERVATORY_DESC">
+			<Text>Conservatory</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_CONSERVATORY_STRATEGY">
+			<Text>Civilizations that adopt Fine Arts will receive a Conservatory in their first 4 cities, which provides 1 [ICON_TOURISM] Tourism as well as a Musician Specialist Slot.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Row Tag="TXT_KEY_BUILDING_CONSERVATORY_DESC">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Conservatory</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_CONSERVATORY_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Civilizations that adopt Fine Arts will receive a Conservatory in their first 4 cities, which provides 1 [ICON_TOURISM] Tourism as well as a Musician Specialist Slot.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Row Tag="TXT_KEY_BUILDING_CONSERVATORY_DESC">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Conservatory</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_CONSERVATORY_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Civilizations that adopt Fine Arts will receive a Conservatory in their first 4 cities, which provides 1 [ICON_TOURISM] Tourism as well as a Musician Specialist Slot.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Row Tag="TXT_KEY_BUILDING_CONSERVATORY_DESC">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Conservatory</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_CONSERVATORY_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Civilizations that adopt Fine Arts will receive a Conservatory in their first 4 cities, which provides 1 [ICON_TOURISM] Tourism as well as a Musician Specialist Slot.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

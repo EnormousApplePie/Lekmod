@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 3/15/2015 1:09:50 AM -->
+<GameData>
+	
+	<!-- THEOCRACY -->
+	<Policy_BuildingClassYieldModifiers>
+		<Update>
+			<Set BuildingClassType="BUILDINGCLASS_GRAND_TEMPLE" YieldMod="50" />
+			<Where PolicyType="POLICY_THEOCRACY" BuildingClassType="BUILDINGCLASS_TEMPLE" />
+		</Update>
+	</Policy_BuildingClassYieldModifiers>
+	<Policy_BuildingClassYieldChanges>
+		<Row>
+			<PolicyType>POLICY_THEOCRACY</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_SHRINE</BuildingClassType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<YieldChange>1</YieldChange>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_THEOCRACY</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_TEMPLE</BuildingClassType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<YieldChange>1</YieldChange>
+		</Row>
+	</Policy_BuildingClassYieldChanges>
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_POLICY_THEOCRACY_HELP" />
+		<Row Tag="TXT_KEY_POLICY_THEOCRACY_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Theocracy[ENDCOLOR][NEWLINE]+1 [ICON_GOLD] Gold from each Shrine and Temple.[NEWLINE]Holy Sites provide +3 [ICON_GOLD] Gold.[NEWLINE]The Grand Temple boosts [ICON_GOLD] Gold output in its city by 50%.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_POLICY_THEOCRACY_HELP" />
+		<Row Tag="TXT_KEY_POLICY_THEOCRACY_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Theocracy[ENDCOLOR][NEWLINE]+1 [ICON_GOLD] Gold from each Shrine and Temple.[NEWLINE]Holy Sites provide +3 [ICON_GOLD] Gold.[NEWLINE]The Grand Temple boosts [ICON_GOLD] Gold output in its city by 50%.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_POLICY_THEOCRACY_HELP" />
+		<Row Tag="TXT_KEY_POLICY_THEOCRACY_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Theocracy[ENDCOLOR][NEWLINE]+1 [ICON_GOLD] Gold from each Shrine and Temple.[NEWLINE]Holy Sites provide +3 [ICON_GOLD] Gold.[NEWLINE]The Grand Temple boosts [ICON_GOLD] Gold output in its city by 50%.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_POLICY_THEOCRACY_HELP" />
+		<Row Tag="TXT_KEY_POLICY_THEOCRACY_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Theocracy[ENDCOLOR][NEWLINE]+1 [ICON_GOLD] Gold from each Shrine and Temple.[NEWLINE]Holy Sites provide +3 [ICON_GOLD] Gold.[NEWLINE]The Grand Temple boosts [ICON_GOLD] Gold output in its city by 50%.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

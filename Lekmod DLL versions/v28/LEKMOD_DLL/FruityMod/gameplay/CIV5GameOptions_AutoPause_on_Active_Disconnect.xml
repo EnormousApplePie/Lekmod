@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<!-- Table data -->
+	<GameOptions>
+		<Row>
+			<Type>GAMEOPTION_AUTOPAUSE_ON_ACTIVE_DISCONNECT</Type>
+			<Description>TXT_KEY_GAME_OPTION_AUTOPAUSE_ON_ACTIVE_DISCONNECT</Description>
+			<Help>TXT_KEY_GAME_OPTION_AUTOPAUSE_ON_ACTIVE_DISCONNECT_HELP</Help>
+			<SupportsSinglePlayer>false</SupportsSinglePlayer>
+		</Row>
+	</GameOptions>
+	<Language_en_US>
+		<Row Tag="TXT_KEY_GAME_OPTION_RELATIVE_TURN_TIMERS">
+			<Text>Auto-Pause on Disconnect</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_RELATIVE_TURN_TIMERS_HELP">
+			<Text>Automatically pauses the game when a non-observer human player who has not been eliminated or kicked disconnects from the game. Kicking the player will unpause the game if they are the only one who is disconnected. Only works with simultaneous or hybrid turn mode.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Row Tag="TXT_KEY_GAME_OPTION_RELATIVE_TURN_TIMERS">
+			<Text>Auto-Pause on Disconnect</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_RELATIVE_TURN_TIMERS_HELP">
+			<Text>Automatically pauses the game when a non-observer human player who has not been eliminated or kicked disconnects from the game. Kicking the player will unpause the game if they are the only one who is disconnected. Only works with simultaneous or hybrid turn mode.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_ES_ES>
+		<Row Tag="TXT_KEY_GAME_OPTION_RELATIVE_TURN_TIMERS">
+			<Text>Auto-Pause on Disconnect</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_RELATIVE_TURN_TIMERS_HELP">
+			<Text>Automatically pauses the game when a non-observer human player who has not been eliminated or kicked disconnects from the game. Kicking the player will unpause the game if they are the only one who is disconnected. Only works with simultaneous or hybrid turn mode.</Text>
+		</Row>
+	</Language_ES_ES>
+	<Language_FR_FR>
+		<Row Tag="TXT_KEY_GAME_OPTION_RELATIVE_TURN_TIMERS">
+			<Text>Auto-Pause on Disconnect</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_RELATIVE_TURN_TIMERS_HELP">
+			<Text>Automatically pauses the game when a non-observer human player who has not been eliminated or kicked disconnects from the game. Kicking the player will unpause the game if they are the only one who is disconnected. Only works with simultaneous or hybrid turn mode.</Text>
+		</Row>
+	</Language_FR_FR>
+	<Language_PL_PL>
+		<Row Tag="TXT_KEY_GAME_OPTION_RELATIVE_TURN_TIMERS">
+			<Text>Auto-Pause on Disconnect</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_RELATIVE_TURN_TIMERS_HELP">
+			<Text>Automatically pauses the game when a non-observer human player who has not been eliminated or kicked disconnects from the game. Kicking the player will unpause the game if they are the only one who is disconnected. Only works with simultaneous or hybrid turn mode.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Row Tag="TXT_KEY_GAME_OPTION_RELATIVE_TURN_TIMERS">
+			<Text>Auto-Pause on Disconnect</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_RELATIVE_TURN_TIMERS_HELP">
+			<Text>Automatically pauses the game when a non-observer human player who has not been eliminated or kicked disconnects from the game. Kicking the player will unpause the game if they are the only one who is disconnected. Only works with simultaneous or hybrid turn mode.</Text>
+		</Row>
+	</Language_RU_RU>
+</GameData>

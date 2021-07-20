@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 5/5/2017 12:50:47 PM -->
+<GameData>
+	
+	<!-- Chu-ko-nus now use Logistics promotion instead of their special one, preventing 3 possible attacks. -->
+	<Unit_FreePromotions>
+		<Update>
+			<Set PromotionType="PROMOTION_LOGISTICS" />
+			<Where UnitType="UNIT_CHINESE_CHUKONU" PromotionType="PROMOTION_SECOND_ATTACK" />
+		</Update>
+	</Unit_FreePromotions>
+	
+</GameData>

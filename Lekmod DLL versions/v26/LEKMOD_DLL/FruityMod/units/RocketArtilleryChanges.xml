@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 5/6/2015 3:08:26 AM -->
+<GameData>
+	
+	<!-- Removed Aluminum requirement for Rocket Artillery -->
+	<Unit_ResourceQuantityRequirements>
+		<Delete UnitType="UNIT_ROCKET_ARTILLERY" />
+	</Unit_ResourceQuantityRequirements>
+	
+</GameData>

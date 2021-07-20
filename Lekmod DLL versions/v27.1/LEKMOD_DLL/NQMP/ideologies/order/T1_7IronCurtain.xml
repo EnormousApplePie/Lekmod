@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2017-02-12 15:59:52 -->
+<GameData>
+	
+	<!-- Iron Curtain: +4 Production from Internal Trade Routes. -->
+	<Policies>
+		<Update>
+			<Set Level="1" InternalTradeRouteYieldModifier="0" InternalTradeRouteProductionYieldChange="400" FreeBuildingOnConquest="NULL" />
+			<Where Type="POLICY_IRON_CURTAIN" />
+		</Update>
+	</Policies>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_POLICY_IRON_CURTAIN_HELP" />
+		<Row Tag="TXT_KEY_POLICY_IRON_CURTAIN_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Iron Curtain[ENDCOLOR][NEWLINE]+4 [ICON_PRODUCTION] Production from internal [ICON_INTERNATIONAL_TRADE] Trade Routes.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_POLICY_IRON_CURTAIN_HELP" />
+		<Row Tag="TXT_KEY_POLICY_IRON_CURTAIN_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Iron Curtain[ENDCOLOR][NEWLINE]+4 [ICON_PRODUCTION] Production from internal [ICON_INTERNATIONAL_TRADE] Trade Routes.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_POLICY_IRON_CURTAIN_HELP" />
+		<Row Tag="TXT_KEY_POLICY_IRON_CURTAIN_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Iron Curtain[ENDCOLOR][NEWLINE]+4 [ICON_PRODUCTION] Production from internal [ICON_INTERNATIONAL_TRADE] Trade Routes.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_POLICY_IRON_CURTAIN_HELP" />
+		<Row Tag="TXT_KEY_POLICY_IRON_CURTAIN_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Iron Curtain[ENDCOLOR][NEWLINE]+4 [ICON_PRODUCTION] Production from internal [ICON_INTERNATIONAL_TRADE] Trade Routes.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 3/30/2015 10:09:18 PM -->
+<GameData>
+	<Units>
+		<Update>
+			<Set Found="true" Capture="UNITCLASS_WORKER" />
+			<Where Type="UNIT_VENETIAN_MERCHANT" />
+		</Update>
+	</Units>
+	<Language_en_US>
+		<Update>
+			<Set Text="The Merchant of Venice is a unique Great Merchant replacement. Aside from the normal Great Merchant abilities, the Merchant of Venice can acquire a City-State outright, bringing it under Venetian control as a puppet. The Merchant of Venice is expended when used in this way. The Merchant of Venice can also settle new cities as permanent puppets."/>
+			<Where Tag="TXT_KEY_UNIT_VENETIAN_MERCHANT_STRATEGY" />
+		</Update>
+		<Update>
+			<Set Text="This Venetian unique Great Person replaces the Great Merchant. Aside from the ability to Conduct a Trade Mission, the Merchant of Venice can purchase City-States outright, bringing them under Venetian control as a Puppet. The Merchant of Venice can also settle new cities as permanent puppets."/>
+			<Where Tag="TXT_KEY_UNIT_HELP_VENETIAN_MERCHANT" />
+		</Update>
+	</Language_en_US>
+</GameData>

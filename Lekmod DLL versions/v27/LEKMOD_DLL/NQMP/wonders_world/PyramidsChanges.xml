@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2017-11-30 02:35:54 -->
+<GameData>
+	
+	<!-- Pyramids now provides 3 workers (up from 2). -->
+	<Building_FreeUnits>
+		<Update>
+			<Set NumUnits="3" />
+			<Where BuildingType="BUILDING_PYRAMID" UnitType="UNIT_WORKER" />
+		</Update>
+	</Building_FreeUnits>
+	
+</GameData>

@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 8/7/2014 3:30:27 PM -->
+
+<GameData>
+	<!-- A lot of rows had to be deleted and rewritten instead of using Update because indexing isn't clear in this table.
+		BNW-specific naval formations weren't modified to maintain compatibility with non-BNW versions -->
+	<MultiUnitFormation_SlotEntries>
+		<!-- no longer putting melee units in ranged units' spots -->
+		<Update>
+			<Set SecondaryUnitType="UNITAI_RANGED" />
+			<Where MultiUnitPositionType="MUPOSITION_BOMBARD" SecondaryUnitType="UNITAI_DEFENSE"/>
+		</Update>
+		
+		<!-- changes Bigger City Attack Force -->
+		<Update>
+			<Set SecondaryUnitType="UNITAI_DEFENSE" />
+			<Where MultiUnitFormationType="MUFORMATION_BIGGER_CITY_ATTACK_FORCE" MultiUnitPositionType="MUPOSITION_BOMBARD" PrimaryUnitType="UNITAI_ATTACK" SecondaryUnitType="UNITAI_RANGED"/>
+		</Update>
+		<Update>
+			<Set PrimaryUnitType="UNITAI_DEFENSE" />
+			<Where MultiUnitFormationType="MUFORMATION_BIGGER_CITY_ATTACK_FORCE" MultiUnitPositionType="MUPOSITION_FRONT_LINE" PrimaryUnitType="UNITAI_RANGED"/>
+		</Update>
+
+		<!-- Less required slots, more bombard-ranged instead of bombard-bombard, and a single attackSea-attack -->
+		<Delete MultiUnitFormationType="MUFORMATION_BASIC_CITY_ATTACK_FORCE"/>
+		<Row>
+			<MultiUnitFormationType>MUFORMATION_BASIC_CITY_ATTACK_FORCE</MultiUnitFormationType>
+			<PrimaryUnitType>UNITAI_CITY_BOMBARD</PrimaryUnitType>
+			<SecondaryUnitType>UNITAI_RANGED</SecondaryUnitType>
+			<MultiUnitPositionType>MUPOSITION_BOMBARD</MultiUnitPositionType>
+			<RequiredSlot>true</RequiredSlot>
+		</Row>
+		<Row>
+			<MultiUnitFormationType>MUFORMATION_BASIC_CITY_ATTACK_FORCE</MultiUnitFormationType>
+			<PrimaryUnitType>UNITAI_CITY_BOMBARD</PrimaryUnitType>
+			<SecondaryUnitType>UNITAI_RANGED</SecondaryUnitType>
+			<MultiUnitPositionType>MUPOSITION_BOMBARD</MultiUnitPositionType>
+			<RequiredSlot>true</RequiredSlot>
+		</Row>
+		<Row>
+			<MultiUnitFormationType>MUFORMATION_BASIC_CITY_ATTACK_FORCE</MultiUnitFormationType>
+			<PrimaryUnitType>UNITAI_CITY_BOMBARD</PrimaryUnitType>
+			<SecondaryUnitType>UNITAI_RANGED</SecondaryUnitType>
+			<MultiUnitPositionType>MUPOSITION_BOMBARD</MultiUnitPositionType>
+		</Row>
+		<Row>
+			<MultiUnitFormationType>MUFORMATION_BASIC_CITY_ATTACK_FORCE</MultiUnitFormationType>
+			<PrimaryUnitType>UNITAI_CITY_BOMBARD</PrimaryUnitType>
+			<SecondaryUnitType>UNITAI_RANGED</SecondaryUnitType>
+			<MultiUnitPositionType>MUPOSITION_BOMBARD</MultiUnitPositionType>
+		</Row>
+		<Row>
+			<MultiUnitFormationType>MUFORMATION_BASIC_CITY_ATTACK_FORCE</MultiUnitFormationType>
+			<PrimaryUnitType>UNITAI_CITY_BOMBARD</PrimaryUnitType>
+			<SecondaryUnitType>UNITAI_CITY_BOMBARD</SecondaryUnitType>
+			<MultiUnitPositionType>MUPOSITION_BOMBARD</MultiUnitPositionType>
+		</Row>
+		<Row>
+			<MultiUnitFormationType>MUFORMATION_BASIC_CITY_ATTACK_FORCE</MultiUnitFormationType>
+			<PrimaryUnitType>UNITAI_CITY_BOMBARD</PrimaryUnitType>
+			<SecondaryUnitType>UNITAI_CITY_BOMBARD</SecondaryUnitType>
+			<MultiUnitPositionType>MUPOSITION_BOMBARD</MultiUnitPositionType>
+		</Row>
+		<Row>
+			<MultiUnitFormationType>MUFORMATION_BASIC_CITY_ATTACK_FORCE</MultiUnitFormationType>
+			<PrimaryUnitType>UNITAI_ATTACK</PrimaryUnitType>
+			<SecondaryUnitType>UNITAI_DEFENSE</SecondaryUnitType>
+			<MultiUnitPositionType>MUPOSITION_FRONT_LINE</MultiUnitPositionType>
+			<RequiredSlot>true</RequiredSlot>
+		</Row>
+		<Row>
+			<MultiUnitFormationType>MUFORMATION_BASIC_CITY_ATTACK_FORCE</MultiUnitFormationType>
+			<PrimaryUnitType>UNITAI_ATTACK</PrimaryUnitType>
+			<SecondaryUnitType>UNITAI_COUNTER</SecondaryUnitType>
+			<MultiUnitPositionType>MUPOSITION_FRONT_LINE</MultiUnitPositionType>
+			<RequiredSlot>true</RequiredSlot>
+		</Row>
+		<Row>
+			<MultiUnitFormationType>MUFORMATION_BASIC_CITY_ATTACK_FORCE</MultiUnitFormationType>
+			<PrimaryUnitType>UNITAI_ATTACK</PrimaryUnitType>
+			<SecondaryUnitType>UNITAI_COUNTER</SecondaryUnitType>
+			<MultiUnitPositionType>MUPOSITION_FRONT_LINE</MultiUnitPositionType>
+			<RequiredSlot>true</RequiredSlot>
+		</Row>
+		<Row>
+			<MultiUnitFormationType>MUFORMATION_BASIC_CITY_ATTACK_FORCE</MultiUnitFormationType>
+			<PrimaryUnitType>UNITAI_ATTACK</PrimaryUnitType>
+			<SecondaryUnitType>UNITAI_DEFENSE</SecondaryUnitType>
+			<MultiUnitPositionType>MUPOSITION_FRONT_LINE</MultiUnitPositionType>
+			<RequiredSlot>true</RequiredSlot>
+		</Row>
+		<Row>
+			<MultiUnitFormationType>MUFORMATION_BASIC_CITY_ATTACK_FORCE</MultiUnitFormationType>
+			<PrimaryUnitType>UNITAI_ATTACK</PrimaryUnitType>
+			<SecondaryUnitType>UNITAI_DEFENSE</SecondaryUnitType>
+			<MultiUnitPositionType>MUPOSITION_FRONT_LINE</MultiUnitPositionType>
+		</Row>
+		<Row>
+			<MultiUnitFormationType>MUFORMATION_BASIC_CITY_ATTACK_FORCE</MultiUnitFormationType>
+			<PrimaryUnitType>UNITAI_ATTACK</PrimaryUnitType>
+			<SecondaryUnitType>UNITAI_DEFENSE</SecondaryUnitType>
+			<MultiUnitPositionType>MUPOSITION_FRONT_LINE</MultiUnitPositionType>
+		</Row>
+		<Row>
+			<MultiUnitFormationType>MUFORMATION_BASIC_CITY_ATTACK_FORCE</MultiUnitFormationType>
+			<PrimaryUnitType>UNITAI_GENERAL</PrimaryUnitType>
+			<SecondaryUnitType>UNITAI_GENERAL</SecondaryUnitType>
+			<MultiUnitPositionType>MUPOSITION_CIVILIAN_SUPPORT</MultiUnitPositionType>
+		</Row>
+
+		<!-- Single attackSea-attack -->
+		<Row>
+			<MultiUnitFormationType>MUFORMATION_BIGGER_CITY_ATTACK_FORCE</MultiUnitFormationType>
+			<PrimaryUnitType>UNITAI_ATTACK</PrimaryUnitType>
+			<SecondaryUnitType>UNITAI_DEFENSE</SecondaryUnitType>
+			<MultiUnitPositionType>MUPOSITION_FRONT_LINE</MultiUnitPositionType>
+		</Row>
+
+		<!-- Less required slots, more bombard-ranged instead of bombard-bombard, and a single attackSea-attack -->
+		<Delete MultiUnitFormationType="MUFORMATION_CITY_STATE_ATTACK_FORCE"/>
+		<Row>
+			<MultiUnitFormationType>MUFORMATION_CITY_STATE_ATTACK_FORCE</MultiUnitFormationType>
+			<PrimaryUnitType>UNITAI_CITY_BOMBARD</PrimaryUnitType>
+			<SecondaryUnitType>UNITAI_RANGED</SecondaryUnitType>
+			<MultiUnitPositionType>MUPOSITION_BOMBARD</MultiUnitPositionType>
+			<RequiredSlot>true</RequiredSlot>
+		</Row>
+		<Row>
+			<MultiUnitFormationType>MUFORMATION_CITY_STATE_ATTACK_FORCE</MultiUnitFormationType>
+			<PrimaryUnitType>UNITAI_CITY_BOMBARD</PrimaryUnitType>
+			<SecondaryUnitType>UNITAI_RANGED</SecondaryUnitType>
+			<MultiUnitPositionType>MUPOSITION_BOMBARD</MultiUnitPositionType>
+			<RequiredSlot>true</RequiredSlot>
+		</Row>
+		<Row>
+			<MultiUnitFormationType>MUFORMATION_CITY_STATE_ATTACK_FORCE</MultiUnitFormationType>
+			<PrimaryUnitType>UNITAI_CITY_BOMBARD</PrimaryUnitType>
+			<SecondaryUnitType>UNITAI_RANGED</SecondaryUnitType>
+			<MultiUnitPositionType>MUPOSITION_BOMBARD</MultiUnitPositionType>
+		</Row>
+		<Row>
+			<MultiUnitFormationType>MUFORMATION_CITY_STATE_ATTACK_FORCE</MultiUnitFormationType>
+			<PrimaryUnitType>UNITAI_CITY_BOMBARD</PrimaryUnitType>
+			<SecondaryUnitType>UNITAI_CITY_BOMBARD</SecondaryUnitType>
+			<MultiUnitPositionType>MUPOSITION_BOMBARD</MultiUnitPositionType>
+		</Row>
+		<Row>
+			<MultiUnitFormationType>MUFORMATION_CITY_STATE_ATTACK_FORCE</MultiUnitFormationType>
+			<PrimaryUnitType>UNITAI_CITY_BOMBARD</PrimaryUnitType>
+			<SecondaryUnitType>UNITAI_CITY_BOMBARD</SecondaryUnitType>
+			<MultiUnitPositionType>MUPOSITION_BOMBARD</MultiUnitPositionType>
+		</Row>
+		<Row>
+			<MultiUnitFormationType>MUFORMATION_CITY_STATE_ATTACK_FORCE</MultiUnitFormationType>
+			<PrimaryUnitType>UNITAI_ATTACK</PrimaryUnitType>
+			<SecondaryUnitType>UNITAI_DEFENSE</SecondaryUnitType>
+			<MultiUnitPositionType>MUPOSITION_FRONT_LINE</MultiUnitPositionType>
+			<RequiredSlot>true</RequiredSlot>
+		</Row>
+		<Row>
+			<MultiUnitFormationType>MUFORMATION_CITY_STATE_ATTACK_FORCE</MultiUnitFormationType>
+			<PrimaryUnitType>UNITAI_ATTACK</PrimaryUnitType>
+			<SecondaryUnitType>UNITAI_DEFENSE</SecondaryUnitType>
+			<MultiUnitPositionType>MUPOSITION_FRONT_LINE</MultiUnitPositionType>
+			<RequiredSlot>true</RequiredSlot>
+		</Row>
+		<Row>
+			<MultiUnitFormationType>MUFORMATION_CITY_STATE_ATTACK_FORCE</MultiUnitFormationType>
+			<PrimaryUnitType>UNITAI_ATTACK</PrimaryUnitType>
+			<SecondaryUnitType>UNITAI_DEFENSE</SecondaryUnitType>
+			<MultiUnitPositionType>MUPOSITION_FRONT_LINE</MultiUnitPositionType>
+			<RequiredSlot>true</RequiredSlot>
+		</Row>
+		<Row>
+			<MultiUnitFormationType>MUFORMATION_CITY_STATE_ATTACK_FORCE</MultiUnitFormationType>
+			<PrimaryUnitType>UNITAI_ATTACK</PrimaryUnitType>
+			<SecondaryUnitType>UNITAI_DEFENSE</SecondaryUnitType>
+			<MultiUnitPositionType>MUPOSITION_FRONT_LINE</MultiUnitPositionType>
+		</Row>
+		<Row>
+			<MultiUnitFormationType>MUFORMATION_CITY_STATE_ATTACK_FORCE</MultiUnitFormationType>
+			<PrimaryUnitType>UNITAI_ATTACK</PrimaryUnitType>
+			<SecondaryUnitType>UNITAI_DEFENSE</SecondaryUnitType>
+			<MultiUnitPositionType>MUPOSITION_FRONT_LINE</MultiUnitPositionType>
+		</Row>
+		<Row>
+			<MultiUnitFormationType>MUFORMATION_CITY_STATE_ATTACK_FORCE</MultiUnitFormationType>
+			<PrimaryUnitType>UNITAI_ATTACK</PrimaryUnitType>
+			<SecondaryUnitType>UNITAI_DEFENSE</SecondaryUnitType>
+			<MultiUnitPositionType>MUPOSITION_FRONT_LINE</MultiUnitPositionType>
+		</Row>
+		<Row>
+			<MultiUnitFormationType>MUFORMATION_CITY_STATE_ATTACK_FORCE</MultiUnitFormationType>
+			<PrimaryUnitType>UNITAI_GENERAL</PrimaryUnitType>
+			<SecondaryUnitType>UNITAI_GENERAL</SecondaryUnitType>
+			<MultiUnitPositionType>MUPOSITION_CIVILIAN_SUPPORT</MultiUnitPositionType>
+		</Row>
+
+		<!-- Changed fast pillagers to only use fast movers -->
+		<Delete MultiUnitFormationType="MUFORMATION_FAST_PILLAGERS"/>
+		<Row>
+			<MultiUnitFormationType>MUFORMATION_FAST_PILLAGERS</MultiUnitFormationType>
+			<PrimaryUnitType>UNITAI_FAST_ATTACK</PrimaryUnitType>
+			<SecondaryUnitType>UNITAI_FAST_ATTACK</SecondaryUnitType>
+			<MultiUnitPositionType>MUPOSITION_FRONT_LINE</MultiUnitPositionType>
+			<RequiredSlot>true</RequiredSlot>
+		</Row>
+		<Row>
+			<MultiUnitFormationType>MUFORMATION_FAST_PILLAGERS</MultiUnitFormationType>
+			<PrimaryUnitType>UNITAI_FAST_ATTACK</PrimaryUnitType>
+			<SecondaryUnitType>UNITAI_FAST_ATTACK</SecondaryUnitType>
+			<MultiUnitPositionType>MUPOSITION_FRONT_LINE</MultiUnitPositionType>
+		</Row>
+		<Row>
+			<MultiUnitFormationType>MUFORMATION_FAST_PILLAGERS</MultiUnitFormationType>
+			<PrimaryUnitType>UNITAI_FAST_ATTACK</PrimaryUnitType>
+			<SecondaryUnitType>UNITAI_FAST_ATTACK</SecondaryUnitType>
+			<MultiUnitPositionType>MUPOSITION_FRONT_LINE</MultiUnitPositionType>
+		</Row>
+
+		<!-- More flexibility, less required slots -->
+		<Delete MultiUnitFormationType="MUFORMATION_ANTI_BARBARIAN_TEAM"/>
+		<Row>
+			<MultiUnitFormationType>MUFORMATION_ANTI_BARBARIAN_TEAM</MultiUnitFormationType>
+			<PrimaryUnitType>UNITAI_RANGED</PrimaryUnitType>
+			<SecondaryUnitType>UNITAI_CITY_BOMBARD</SecondaryUnitType>
+			<MultiUnitPositionType>MUPOSITION_BOMBARD</MultiUnitPositionType>
+		</Row>
+		<Row>
+			<MultiUnitFormationType>MUFORMATION_ANTI_BARBARIAN_TEAM</MultiUnitFormationType>
+			<PrimaryUnitType>UNITAI_FAST_ATTACK</PrimaryUnitType>
+			<SecondaryUnitType>UNITAI_DEFENSE</SecondaryUnitType>
+			<MultiUnitPositionType>MUPOSITION_FRONT_LINE</MultiUnitPositionType>
+			<RequiredSlot>true</RequiredSlot>
+		</Row>
+		<Row>
+			<MultiUnitFormationType>MUFORMATION_ANTI_BARBARIAN_TEAM</MultiUnitFormationType>
+			<PrimaryUnitType>UNITAI_FAST_ATTACK</PrimaryUnitType>
+			<SecondaryUnitType>UNITAI_DEFENSE</SecondaryUnitType>
+			<MultiUnitPositionType>MUPOSITION_FRONT_LINE</MultiUnitPositionType>
+		</Row>
+		<Row>
+			<MultiUnitFormationType>MUFORMATION_ANTI_BARBARIAN_TEAM</MultiUnitFormationType>
+			<PrimaryUnitType>UNITAI_FAST_ATTACK</PrimaryUnitType>
+			<SecondaryUnitType>UNITAI_DEFENSE</SecondaryUnitType>
+			<MultiUnitPositionType>MUPOSITION_FRONT_LINE</MultiUnitPositionType>
+		</Row>
+
+		<!-- disallow melee units in ranged units' slots -->
+		<Update>
+			<Set SecondaryUnitType="UNITAI_RANGED" />
+			<Where MultiUnitFormationType="MUFORMATION_RAPID_RESPONSE_FORCE" PrimaryUnitType="UNITAI_RANGED"/>
+		</Update>
+		<Update>
+			<Set SecondaryUnitType="UNITAI_CITY_BOMBARD" />
+			<Where MultiUnitFormationType="MUFORMATION_CLOSE_CITY_DEFENSE" PrimaryUnitType="UNITAI_RANGED"/>
+		</Update>
+
+		<!-- Less required slots, more bombard-ranged instead of bombard-bombard, and a single attackSea-attack -->
+		<Delete MultiUnitFormationType="MUFORMATION_SMALL_CITY_ATTACK_FORCE"/>
+		<Row>
+			<MultiUnitFormationType>MUFORMATION_SMALL_CITY_ATTACK_FORCE</MultiUnitFormationType>
+			<PrimaryUnitType>UNITAI_CITY_BOMBARD</PrimaryUnitType>
+			<SecondaryUnitType>UNITAI_RANGED</SecondaryUnitType>
+			<MultiUnitPositionType>MUPOSITION_BOMBARD</MultiUnitPositionType>
+			<RequiredSlot>true</RequiredSlot>
+		</Row>
+		<Row>
+			<MultiUnitFormationType>MUFORMATION_SMALL_CITY_ATTACK_FORCE</MultiUnitFormationType>
+			<PrimaryUnitType>UNITAI_CITY_BOMBARD</PrimaryUnitType>
+			<SecondaryUnitType>UNITAI_RANGED</SecondaryUnitType>
+			<MultiUnitPositionType>MUPOSITION_BOMBARD</MultiUnitPositionType>
+		</Row>
+		<Row>
+			<MultiUnitFormationType>MUFORMATION_SMALL_CITY_ATTACK_FORCE</MultiUnitFormationType>
+			<PrimaryUnitType>UNITAI_CITY_BOMBARD</PrimaryUnitType>
+			<SecondaryUnitType>UNITAI_RANGED</SecondaryUnitType>
+			<MultiUnitPositionType>MUPOSITION_BOMBARD</MultiUnitPositionType>
+			<RequiredSlot>true</RequiredSlot>
+		</Row>
+		<Row>
+			<MultiUnitFormationType>MUFORMATION_SMALL_CITY_ATTACK_FORCE</MultiUnitFormationType>
+			<PrimaryUnitType>UNITAI_CITY_BOMBARD</PrimaryUnitType>
+			<SecondaryUnitType>UNITAI_CITY_BOMBARD</SecondaryUnitType>
+			<MultiUnitPositionType>MUPOSITION_BOMBARD</MultiUnitPositionType>
+		</Row>
+		<Row>
+			<MultiUnitFormationType>MUFORMATION_SMALL_CITY_ATTACK_FORCE</MultiUnitFormationType>
+			<PrimaryUnitType>UNITAI_ATTACK</PrimaryUnitType>
+			<SecondaryUnitType>UNITAI_DEFENSE</SecondaryUnitType>
+			<MultiUnitPositionType>MUPOSITION_FRONT_LINE</MultiUnitPositionType>
+			<RequiredSlot>true</RequiredSlot>
+		</Row>
+		<Row>
+			<MultiUnitFormationType>MUFORMATION_SMALL_CITY_ATTACK_FORCE</MultiUnitFormationType>
+			<PrimaryUnitType>UNITAI_ATTACK</PrimaryUnitType>
+			<SecondaryUnitType>UNITAI_DEFENSE</SecondaryUnitType>
+			<MultiUnitPositionType>MUPOSITION_FRONT_LINE</MultiUnitPositionType>
+			<RequiredSlot>true</RequiredSlot>
+		</Row>
+		<Row>
+			<MultiUnitFormationType>MUFORMATION_SMALL_CITY_ATTACK_FORCE</MultiUnitFormationType>
+			<PrimaryUnitType>UNITAI_ATTACK</PrimaryUnitType>
+			<SecondaryUnitType>UNITAI_DEFENSE</SecondaryUnitType>
+			<MultiUnitPositionType>MUPOSITION_FRONT_LINE</MultiUnitPositionType>
+		</Row>
+		<Row>
+			<MultiUnitFormationType>MUFORMATION_SMALL_CITY_ATTACK_FORCE</MultiUnitFormationType>
+			<PrimaryUnitType>UNITAI_ATTACK</PrimaryUnitType>
+			<SecondaryUnitType>UNITAI_DEFENSE</SecondaryUnitType>
+			<MultiUnitPositionType>MUPOSITION_FRONT_LINE</MultiUnitPositionType>
+		</Row>
+		<Row>
+			<MultiUnitFormationType>MUFORMATION_SMALL_CITY_ATTACK_FORCE</MultiUnitFormationType>
+			<PrimaryUnitType>UNITAI_ATTACK</PrimaryUnitType>
+			<SecondaryUnitType>UNITAI_DEFENSE</SecondaryUnitType>
+			<MultiUnitPositionType>MUPOSITION_FRONT_LINE</MultiUnitPositionType>
+		</Row>
+		<Row>
+			<MultiUnitFormationType>MUFORMATION_SMALL_CITY_ATTACK_FORCE</MultiUnitFormationType>
+			<PrimaryUnitType>UNITAI_GENERAL</PrimaryUnitType>
+			<SecondaryUnitType>UNITAI_GENERAL</SecondaryUnitType>
+			<MultiUnitPositionType>MUPOSITION_CIVILIAN_SUPPORT</MultiUnitPositionType>
+		</Row>
+
+		<!-- Slightly more flexible, so the AI can start the rush earlier, then complete missing units as the rush progresses -->
+		<Delete MultiUnitFormationType="MUFORMATION_EARLY_RUSH"/>
+		<Row>
+			<MultiUnitFormationType>MUFORMATION_EARLY_RUSH</MultiUnitFormationType>
+			<PrimaryUnitType>UNITAI_ATTACK</PrimaryUnitType>
+			<SecondaryUnitType>UNITAI_DEFENSE</SecondaryUnitType>
+			<MultiUnitPositionType>MUPOSITION_FRONT_LINE</MultiUnitPositionType>
+			<RequiredSlot>true</RequiredSlot>
+		</Row>
+		<Row>
+			<MultiUnitFormationType>MUFORMATION_EARLY_RUSH</MultiUnitFormationType>
+			<PrimaryUnitType>UNITAI_ATTACK</PrimaryUnitType>
+			<SecondaryUnitType>UNITAI_DEFENSE</SecondaryUnitType>
+			<MultiUnitPositionType>MUPOSITION_FRONT_LINE</MultiUnitPositionType>
+			<RequiredSlot>true</RequiredSlot>
+		</Row>
+		<Row>
+			<MultiUnitFormationType>MUFORMATION_EARLY_RUSH</MultiUnitFormationType>
+			<PrimaryUnitType>UNITAI_ATTACK</PrimaryUnitType>
+			<SecondaryUnitType>UNITAI_DEFENSE</SecondaryUnitType>
+			<MultiUnitPositionType>MUPOSITION_FRONT_LINE</MultiUnitPositionType>
+			<RequiredSlot>true</RequiredSlot>
+		</Row>
+		<Row>
+			<MultiUnitFormationType>MUFORMATION_EARLY_RUSH</MultiUnitFormationType>
+			<PrimaryUnitType>UNITAI_ATTACK</PrimaryUnitType>
+			<SecondaryUnitType>UNITAI_DEFENSE</SecondaryUnitType>
+			<MultiUnitPositionType>MUPOSITION_FRONT_LINE</MultiUnitPositionType>
+		</Row>
+		<Row>
+			<MultiUnitFormationType>MUFORMATION_EARLY_RUSH</MultiUnitFormationType>
+			<PrimaryUnitType>UNITAI_ATTACK</PrimaryUnitType>
+			<SecondaryUnitType>UNITAI_DEFENSE</SecondaryUnitType>
+			<MultiUnitPositionType>MUPOSITION_FRONT_LINE</MultiUnitPositionType>
+		</Row>
+		<Row>
+			<MultiUnitFormationType>MUFORMATION_EARLY_RUSH</MultiUnitFormationType>
+			<PrimaryUnitType>UNITAI_ATTACK</PrimaryUnitType>
+			<SecondaryUnitType>UNITAI_DEFENSE</SecondaryUnitType>
+			<MultiUnitPositionType>MUPOSITION_FRONT_LINE</MultiUnitPositionType>
+		</Row>
+		<Row>
+			<MultiUnitFormationType>MUFORMATION_EARLY_RUSH</MultiUnitFormationType>
+			<PrimaryUnitType>UNITAI_CITY_BOMBARD</PrimaryUnitType>
+			<SecondaryUnitType>UNITAI_RANGED</SecondaryUnitType>
+			<MultiUnitPositionType>MUPOSITION_BOMBARD</MultiUnitPositionType>
+			<RequiredSlot>true</RequiredSlot>
+		</Row>
+		<Row>
+			<MultiUnitFormationType>MUFORMATION_EARLY_RUSH</MultiUnitFormationType>
+			<PrimaryUnitType>UNITAI_CITY_BOMBARD</PrimaryUnitType>
+			<SecondaryUnitType>UNITAI_RANGED</SecondaryUnitType>
+			<MultiUnitPositionType>MUPOSITION_BOMBARD</MultiUnitPositionType>
+			<RequiredSlot>true</RequiredSlot>
+		</Row>
+		<Row>
+			<MultiUnitFormationType>MUFORMATION_EARLY_RUSH</MultiUnitFormationType>
+			<PrimaryUnitType>UNITAI_CITY_BOMBARD</PrimaryUnitType>
+			<SecondaryUnitType>UNITAI_RANGED</SecondaryUnitType>
+			<MultiUnitPositionType>MUPOSITION_BOMBARD</MultiUnitPositionType>
+		</Row>
+		<Row>
+			<MultiUnitFormationType>MUFORMATION_EARLY_RUSH</MultiUnitFormationType>
+			<PrimaryUnitType>UNITAI_CITY_BOMBARD</PrimaryUnitType>
+			<SecondaryUnitType>UNITAI_RANGED</SecondaryUnitType>
+			<MultiUnitPositionType>MUPOSITION_BOMBARD</MultiUnitPositionType>
+		</Row>
+		<Row>
+			<MultiUnitFormationType>MUFORMATION_EARLY_RUSH</MultiUnitFormationType>
+			<PrimaryUnitType>UNITAI_GENERAL</PrimaryUnitType>
+			<SecondaryUnitType>UNITAI_GENERAL</SecondaryUnitType>
+			<MultiUnitPositionType>MUPOSITION_CIVILIAN_SUPPORT</MultiUnitPositionType>
+		</Row>
+	</MultiUnitFormation_SlotEntries>
+</GameData>

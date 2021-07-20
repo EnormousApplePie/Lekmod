@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2016-09-25 05:44:53 -->
+<GameData>
+
+	<!-- Gain 50 Faith (on Quick Speed) whenever a Great Person is expended -->
+	<Beliefs>
+		<Update>
+			<Set GreatPersonExpendedFaith="75" />
+			<Where Type="BELIEF_RELIQUARY" />
+		</Update>
+	</Beliefs>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_BELIEF_RELIQUARY" />
+		<Row Tag="TXT_KEY_BELIEF_RELIQUARY">
+			<Text>Gain 50 Faith (on Quick Speed) whenever a Great Person is expended</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_BELIEF_RELIQUARY" />
+		<Row Tag="TXT_KEY_BELIEF_RELIQUARY">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Gain 50 Faith (on Quick Speed) whenever a Great Person is expended</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_BELIEF_RELIQUARY" />
+		<Row Tag="TXT_KEY_BELIEF_RELIQUARY">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Gain 50 Faith (on Quick Speed) whenever a Great Person is expended</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_BELIEF_RELIQUARY" />
+		<Row Tag="TXT_KEY_BELIEF_RELIQUARY">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Gain 50 Faith (on Quick Speed) whenever a Great Person is expended</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

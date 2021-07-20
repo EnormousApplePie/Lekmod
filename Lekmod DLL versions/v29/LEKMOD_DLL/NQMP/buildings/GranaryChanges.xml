@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 6/13/2015 6:48:49 PM -->
+<GameData>
+
+	<!-- Granary no longer provides a bonus from Bananas or Deer. Flat food reduced to +1 (down from +2). Cost reduced by 20%. -->
+	<Buildings>
+		<Update>
+			<Where Type="BUILDING_GRANARY" />
+			<Set Cost="48" />
+		</Update>
+	</Buildings>
+	<Building_YieldChanges>
+		<Update>
+			<Where BuildingType="BUILDING_GRANARY" YieldType="YIELD_FOOD" />
+			<Set Yield="1" />
+		</Update>
+	</Building_YieldChanges>
+	<Building_ResourceYieldChanges>
+		<Delete BuildingType="BUILDING_GRANARY" ResourceType="RESOURCE_DEER" YieldType="YIELD_FOOD" />
+		<Delete BuildingType="BUILDING_GRANARY" ResourceType="RESOURCE_BANANA" YieldType="YIELD_FOOD" />
+	</Building_ResourceYieldChanges>
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_BUILDING_GRANARY_HELP" />
+		<Row Tag="TXT_KEY_BUILDING_GRANARY_HELP">
+			<Text>Each source of [ICON_RES_WHEAT] Wheat worked by this City produce +1 [ICON_FOOD] Food.[NEWLINE][NEWLINE]Allows [ICON_FOOD] Food to be moved from this city along trade routes inside your civilization.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_BUILDING_GRANARY_HELP" />
+		<Row Tag="TXT_KEY_BUILDING_GRANARY_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Each source of [ICON_RES_WHEAT] Wheat worked by this City produce +1 [ICON_FOOD] Food.[NEWLINE][NEWLINE]Allows [ICON_FOOD] Food to be moved from this city along trade routes inside your civilization.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_BUILDING_GRANARY_HELP" />
+		<Row Tag="TXT_KEY_BUILDING_GRANARY_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Each source of [ICON_RES_WHEAT] Wheat worked by this City produce +1 [ICON_FOOD] Food.[NEWLINE][NEWLINE]Allows [ICON_FOOD] Food to be moved from this city along trade routes inside your civilization.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_BUILDING_GRANARY_HELP" />
+		<Row Tag="TXT_KEY_BUILDING_GRANARY_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Each source of [ICON_RES_WHEAT] Wheat worked by this City produce +1 [ICON_FOOD] Food.[NEWLINE][NEWLINE]Allows [ICON_FOOD] Food to be moved from this city along trade routes inside your civilization.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

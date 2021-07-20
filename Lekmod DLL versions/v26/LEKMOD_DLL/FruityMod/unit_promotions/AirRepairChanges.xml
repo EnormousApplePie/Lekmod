@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 4/8/2015 2:03:27 PM -->
+<GameData>
+	<UnitPromotions>
+		<Update>
+			<Set PromotionPrereqOr1="PROMOTION_INTERCEPTION_3" PromotionPrereqOr2="PROMOTION_DOGFIGHTING_3" PromotionPrereqOr3="PROMOTION_AIR_SIEGE_3" PromotionPrereqOr4="PROMOTION_BOMBARDMENT_3" />
+			<Where Type="PROMOTION_AIR_REPAIR" />
+		</Update>
+	</UnitPromotions>
+</GameData>

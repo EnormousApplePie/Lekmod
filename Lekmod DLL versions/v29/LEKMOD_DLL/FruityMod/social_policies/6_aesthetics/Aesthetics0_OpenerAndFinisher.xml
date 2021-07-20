@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 6/11/2015 11:53:40 PM -->
+<GameData>
+
+	<!-- Branch Tooltip -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_POLICY_BRANCH_AESTHETICS_HELP" />
+		<Row Tag="TXT_KEY_POLICY_BRANCH_AESTHETICS_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Aesthetics[ENDCOLOR] improves the civilization's ability to generate [ICON_CULTURE] Culture.[NEWLINE][NEWLINE]Adopting Aesthetics allows you to earn Great Writers, Artists, and Musicians 25% faster. Unlocks building Uffizi.[NEWLINE][NEWLINE]Adopting all policies doubles both the speed at which Archaeologists are trained and the theming bonus you receive from Museums and Wonders. It also reveals Hidden Antiquity Sites and and allows the purchase of Great Writers, Artists, or Musicians with [ICON_PEACE] Faith starting in the Industrial Era. Grants 1 free Social Policy upon completing the tree.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_POLICY_BRANCH_AESTHETICS_HELP" />
+		<Row Tag="TXT_KEY_POLICY_BRANCH_AESTHETICS_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Aesthetics[ENDCOLOR] improves the civilization's ability to generate [ICON_CULTURE] Culture.[NEWLINE][NEWLINE]Adopting Aesthetics allows you to earn Great Writers, Artists, and Musicians 25% faster. Unlocks building Uffizi.[NEWLINE][NEWLINE]Adopting all policies doubles both the speed at which Archaeologists are trained and the theming bonus you receive from Museums and Wonders. It also reveals Hidden Antiquity Sites and and allows the purchase of Great Writers, Artists, or Musicians with [ICON_PEACE] Faith starting in the Industrial Era. Grants 1 free Social Policy upon completing the tree.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_POLICY_BRANCH_AESTHETICS_HELP" />
+		<Row Tag="TXT_KEY_POLICY_BRANCH_AESTHETICS_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Aesthetics[ENDCOLOR] improves the civilization's ability to generate [ICON_CULTURE] Culture.[NEWLINE][NEWLINE]Adopting Aesthetics allows you to earn Great Writers, Artists, and Musicians 25% faster. Unlocks building Uffizi.[NEWLINE][NEWLINE]Adopting all policies doubles both the speed at which Archaeologists are trained and the theming bonus you receive from Museums and Wonders. It also reveals Hidden Antiquity Sites and and allows the purchase of Great Writers, Artists, or Musicians with [ICON_PEACE] Faith starting in the Industrial Era. Grants 1 free Social Policy upon completing the tree.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_POLICY_BRANCH_AESTHETICS_HELP" />
+		<Row Tag="TXT_KEY_POLICY_BRANCH_AESTHETICS_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Aesthetics[ENDCOLOR] improves the civilization's ability to generate [ICON_CULTURE] Culture.[NEWLINE][NEWLINE]Adopting Aesthetics allows you to earn Great Writers, Artists, and Musicians 25% faster. Unlocks building Uffizi.[NEWLINE][NEWLINE]Adopting all policies doubles both the speed at which Archaeologists are trained and the theming bonus you receive from Museums and Wonders. It also reveals Hidden Antiquity Sites and and allows the purchase of Great Writers, Artists, or Musicians with [ICON_PEACE] Faith starting in the Industrial Era. Grants 1 free Social Policy upon completing the tree.</Text>
+		</Row>
+	</Language_RU_RU>
+
+
+	<!-- Aesthetics Opener -->
+	<!-- No changes. -->
+	
+
+	<!-- Aesthetics Finisher -->
+	<!-- NOTE: tooltip is updated in opener -->
+	<Resources>
+		<Update>
+			<Set PolicyReveal="POLICY_AESTHETICS_FINISHER" />
+			<Where Type="RESOURCE_HIDDEN_ARTIFACTS" />
+		</Update>
+	</Resources>
+	<UnitCombatInfos>
+		<Row>
+			<Type>UNITCOMBAT_ARCHAEOLOGIST</Type>
+			<Description>TXT_KEY_UNITCOMBAT_ARCHAEOLOGIST</Description>
+		</Row>
+	</UnitCombatInfos>
+	<Units>
+		<Update>
+			<Set CombatClass="UNITCOMBAT_ARCHAEOLOGIST" />
+			<Where Class="UNITCLASS_ARCHAEOLOGIST" />
+		</Update>
+	</Units>
+	<Policy_UnitCombatProductionModifiers>
+		<Row>
+			<PolicyType>POLICY_AESTHETICS_FINISHER</PolicyType>
+			<UnitCombatType>UNITCOMBAT_ARCHAEOLOGIST</UnitCombatType>
+			<ProductionModifier>100</ProductionModifier>
+		</Row>
+	</Policy_UnitCombatProductionModifiers>
+	<BuildingClasses>
+		<Row>
+			<Type>BUILDINGCLASS_GRAND_MONUMENT</Type>
+			<DefaultBuilding>BUILDING_GRAND_MONUMENT</DefaultBuilding>
+			<Description>TXT_KEY_BUILDING_GRAND_MONUMENT_DESC</Description>
+			<MaxPlayerInstances>1</MaxPlayerInstances>
+		</Row>
+	</BuildingClasses>
+	<Buildings>
+		<Row>
+			<Type>BUILDING_GRAND_MONUMENT</Type>
+			<BuildingClass>BUILDINGCLASS_GRAND_MONUMENT</BuildingClass>
+			<Cost>-1</Cost>
+			<HurryCostModifier>-1</HurryCostModifier>
+			<NukeImmune>true</NukeImmune>
+			<FreePolicies>1</FreePolicies>
+			<Help>TXT_KEY_BUILDING_GRAND_MONUMENT_STRATEGY</Help>
+			<Description>TXT_KEY_BUILDING_GRAND_MONUMENT_DESC</Description>
+			<Civilopedia>TXT_KEY_BUILDING_GRAND_MONUMENT_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_GRAND_MONUMENT_STRATEGY</Strategy>
+			<ArtDefineTag>MONUMENT</ArtDefineTag>
+			<MinAreaSize>-1</MinAreaSize>
+			<IconAtlas>BW_ATLAS_2</IconAtlas>
+			<NeverCapture>true</NeverCapture>
+			<PortraitIndex>43</PortraitIndex>
+		</Row>
+	</Buildings>
+	<Policy_GreatWorkYieldChanges>
+		<Row>
+			<PolicyType>POLICY_AESTHETICS_FINISHER</PolicyType>
+			<YieldType>YIELD_TOURISM</YieldType>
+			<Yield>2</Yield>
+		</Row>
+	</Policy_GreatWorkYieldChanges>
+	<Language_en_US>
+		<Row Tag="TXT_KEY_BUILDING_GRAND_MONUMENT_DESC">
+			<Text>Grand Monument</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_GRAND_MONUMENT_PEDIA">
+			<Text>The Grand Monument is your reward when you complete the Aesthetics Social Policy Tree. It grants you 1 free Social Policy.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_GRAND_MONUMENT_STRATEGY">
+			<Text>The Grand Monument is your reward when you complete the Aesthetics Social Policy Tree. It grants you 1 free Social Policy.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNITCOMBAT_ARCHAEOLOGIST">
+			<Text>Archaeologist Units</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Row Tag="TXT_KEY_BUILDING_GRAND_MONUMENT_DESC">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Grand Monument</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_GRAND_MONUMENT_PEDIA">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]The Grand Monument is your reward when you complete the Aesthetics Social Policy Tree. It grants you 1 free Social Policy.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_GRAND_MONUMENT_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]The Grand Monument is your reward when you complete the Aesthetics Social Policy Tree. It grants you 1 free Social Policy.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNITCOMBAT_ARCHAEOLOGIST">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Archaeologist Units</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Row Tag="TXT_KEY_BUILDING_GRAND_MONUMENT_DESC">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Grand Monument</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_GRAND_MONUMENT_PEDIA">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]The Grand Monument is your reward when you complete the Aesthetics Social Policy Tree. It grants you 1 free Social Policy.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_GRAND_MONUMENT_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]The Grand Monument is your reward when you complete the Aesthetics Social Policy Tree. It grants you 1 free Social Policy.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNITCOMBAT_ARCHAEOLOGIST">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Archaeologist Units</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Row Tag="TXT_KEY_BUILDING_GRAND_MONUMENT_DESC">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Grand Monument</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_GRAND_MONUMENT_PEDIA">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]The Grand Monument is your reward when you complete the Aesthetics Social Policy Tree. It grants you 1 free Social Policy.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_GRAND_MONUMENT_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]The Grand Monument is your reward when you complete the Aesthetics Social Policy Tree. It grants you 1 free Social Policy.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNITCOMBAT_ARCHAEOLOGIST">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Archaeologist Units</Text>
+		</Row>
+	</Language_RU_RU>
+	
+	<!-- Fix tooltips for Hidden Antiquity Sites that reference Exploration tree. -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_RESOURCE_HIDDEN_ARTIFACTS_HELP" />
+		<Row Tag="TXT_KEY_RESOURCE_HIDDEN_ARTIFACTS_HELP">
+			<Text>When improved with an Archaeological Dig, a Hidden Antiquity Site can then yield an Artifact that can be placed in a Great Work of Art slot, or be transformed into a Landmark improvement. Hidden Antiquity Sites are only visible to civs that have all the policies in the Aesthetics policy tree.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_CULTURE_ANTIQUITY_HEADING2_BODY" />
+		<Row Tag="TXT_KEY_CULTURE_ANTIQUITY_HEADING2_BODY">
+			<Text>To take advantage of an Antiquity Site, you must first build an Archaeologist. Archaeologists are units that can only be constructed in a city with a University. Once built, send him to any Antiquity Site (Open Borders are required for other civilizations), and once they arrive, select the "Construct Archaeological Dig" option on the Unit panel. After a set number of turns, you will have the option to either extract an Artifact, or create a Landmark.[NEWLINE][NEWLINE]If you complete the Aesthetics Social Policy tree, you will also reveal Hidden Antiquity Sites. These special Antiquity sites not only yield up Artifacts like regular Antiquity Sites, but there is also a chance you will find a special Great Work of Writing Artifact, like the Rosetta Stone. You can use this like a Great Work of Writing, or you can choose to start a Cultural Renaissance, which will grant you a large amount of Culture.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_RESOURCE_HIDDEN_ARTIFACTS_HELP" />
+		<Row Tag="TXT_KEY_RESOURCE_HIDDEN_ARTIFACTS_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]When improved with an Archaeological Dig, a Hidden Antiquity Site can then yield an Artifact that can be placed in a Great Work of Art slot, or be transformed into a Landmark improvement. Hidden Antiquity Sites are only visible to civs that have all the policies in the Aesthetics policy tree.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_CULTURE_ANTIQUITY_HEADING2_BODY" />
+		<Row Tag="TXT_KEY_CULTURE_ANTIQUITY_HEADING2_BODY">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]To take advantage of an Antiquity Site, you must first build an Archaeologist. Archaeologists are units that can only be constructed in a city with a University. Once built, send him to any Antiquity Site (Open Borders are required for other civilizations), and once they arrive, select the "Construct Archaeological Dig" option on the Unit panel. After a set number of turns, you will have the option to either extract an Artifact, or create a Landmark.[NEWLINE][NEWLINE]If you complete the Aesthetics Social Policy tree, you will also reveal Hidden Antiquity Sites. These special Antiquity sites not only yield up Artifacts like regular Antiquity Sites, but there is also a chance you will find a special Great Work of Writing Artifact, like the Rosetta Stone. You can use this like a Great Work of Writing, or you can choose to start a Cultural Renaissance, which will grant you a large amount of Culture.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_RESOURCE_HIDDEN_ARTIFACTS_HELP" />
+		<Row Tag="TXT_KEY_RESOURCE_HIDDEN_ARTIFACTS_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]When improved with an Archaeological Dig, a Hidden Antiquity Site can then yield an Artifact that can be placed in a Great Work of Art slot, or be transformed into a Landmark improvement. Hidden Antiquity Sites are only visible to civs that have all the policies in the Aesthetics policy tree.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_CULTURE_ANTIQUITY_HEADING2_BODY" />
+		<Row Tag="TXT_KEY_CULTURE_ANTIQUITY_HEADING2_BODY">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]To take advantage of an Antiquity Site, you must first build an Archaeologist. Archaeologists are units that can only be constructed in a city with a University. Once built, send him to any Antiquity Site (Open Borders are required for other civilizations), and once they arrive, select the "Construct Archaeological Dig" option on the Unit panel. After a set number of turns, you will have the option to either extract an Artifact, or create a Landmark.[NEWLINE][NEWLINE]If you complete the Aesthetics Social Policy tree, you will also reveal Hidden Antiquity Sites. These special Antiquity sites not only yield up Artifacts like regular Antiquity Sites, but there is also a chance you will find a special Great Work of Writing Artifact, like the Rosetta Stone. You can use this like a Great Work of Writing, or you can choose to start a Cultural Renaissance, which will grant you a large amount of Culture.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_RESOURCE_HIDDEN_ARTIFACTS_HELP" />
+		<Row Tag="TXT_KEY_RESOURCE_HIDDEN_ARTIFACTS_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]When improved with an Archaeological Dig, a Hidden Antiquity Site can then yield an Artifact that can be placed in a Great Work of Art slot, or be transformed into a Landmark improvement. Hidden Antiquity Sites are only visible to civs that have all the policies in the Aesthetics policy tree.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_CULTURE_ANTIQUITY_HEADING2_BODY" />
+		<Row Tag="TXT_KEY_CULTURE_ANTIQUITY_HEADING2_BODY">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]To take advantage of an Antiquity Site, you must first build an Archaeologist. Archaeologists are units that can only be constructed in a city with a University. Once built, send him to any Antiquity Site (Open Borders are required for other civilizations), and once they arrive, select the "Construct Archaeological Dig" option on the Unit panel. After a set number of turns, you will have the option to either extract an Artifact, or create a Landmark.[NEWLINE][NEWLINE]If you complete the Aesthetics Social Policy tree, you will also reveal Hidden Antiquity Sites. These special Antiquity sites not only yield up Artifacts like regular Antiquity Sites, but there is also a chance you will find a special Great Work of Writing Artifact, like the Rosetta Stone. You can use this like a Great Work of Writing, or you can choose to start a Cultural Renaissance, which will grant you a large amount of Culture.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

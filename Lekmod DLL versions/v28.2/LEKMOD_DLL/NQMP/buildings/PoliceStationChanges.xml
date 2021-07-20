@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2017-02-11 00:47:45 -->
+<GameData>
+
+	<!-- Police Station now also gives +2 Happiness -->
+	<Buildings>
+		<Update>
+			<Set Happiness="2" />
+			<Where Type="BUILDING_POLICE_STATION" />
+		</Update>
+	</Buildings>
+	<Building_Flavors>
+		<Row>
+			<BuildingType>BUILDING_POLICE_STATION</BuildingType>
+			<FlavorType>FLAVOR_HAPPINESS</FlavorType>
+			<Flavor>30</Flavor>
+		</Row>
+	</Building_Flavors>
+
+</GameData>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 6/2/2015 11:22:00 PM -->
+<GameData>
+	
+	<!-- New Policy Tree
+	
+					   Philanthropy
+			 _______________|___________________
+			|			    |					|
+	Scholasticism	Cultural Diplomacy	Merchant Confederacy
+						    |
+						    |
+						Consulates
+	-->
+
+	<Policies>
+		<Update>
+			<Set GridX="3" GridY="1" />
+			<Where Type="POLICY_PHILANTHROPY" />
+		</Update>
+		<Update>
+			<Set GridX="1" GridY="2" />
+			<Where Type="POLICY_SCHOLASTICISM" />
+		</Update>
+		<Update>
+			<Set GridX="5" GridY="2" />
+			<Where Type="POLICY_MERCHANT_CONFEDERACY" />
+		</Update>
+		<Update>
+			<Set GridX="3" GridY="2" />
+			<Where Type="POLICY_CULTURAL_DIPLOMACY" />
+		</Update>
+		<Update>
+			<Set GridX="3" GridY="3" />
+			<Where Type="POLICY_CONSULATES" />
+		</Update>
+	</Policies>
+	<Policy_PrereqPolicies>
+		<Delete PolicyType="POLICY_PHILANTHROPY" />
+		<Delete PolicyType="POLICY_SCHOLASTICISM" />
+		<Delete PolicyType="POLICY_MERCHANT_CONFEDERACY" />
+		<Delete PolicyType="POLICY_CULTURAL_DIPLOMACY" />
+		<Delete PolicyType="POLICY_CONSULATES" />
+		<Row>
+			<PolicyType>POLICY_SCHOLASTICISM</PolicyType>
+			<PrereqPolicy>POLICY_PHILANTHROPY</PrereqPolicy>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_MERCHANT_CONFEDERACY</PolicyType>
+			<PrereqPolicy>POLICY_PHILANTHROPY</PrereqPolicy>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_CULTURAL_DIPLOMACY</PolicyType>
+			<PrereqPolicy>POLICY_PHILANTHROPY</PrereqPolicy>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_CONSULATES</PolicyType>
+			<PrereqPolicy>POLICY_CULTURAL_DIPLOMACY</PrereqPolicy>
+		</Row>
+	</Policy_PrereqPolicies>
+
+</GameData>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2016-09-25 05:44:53 -->
+<GameData>
+
+	<!-- +7 Culture in the Empire -->
+	<Beliefs>
+		<Row>
+			<Type>BELIEF_DALAI_LAMA</Type>
+			<Description>TXT_KEY_BELIEF_DALAI_LAMA</Description>
+			<ShortDescription>TXT_KEY_BELIEF_DALAI_LAMA_SHORT</ShortDescription>
+			<Enhancer>true</Enhancer>
+		</Row>
+	</Beliefs>
+	<Belief_HolyCityYieldChanges>
+		<Row>
+			<BeliefType>BELIEF_DALAI_LAMA</BeliefType>
+			<YieldType>YIELD_CULTURE</YieldType>
+			<Yield>7</Yield>
+		</Row>
+	</Belief_HolyCityYieldChanges>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Row Tag="TXT_KEY_BELIEF_DALAI_LAMA">
+			<Text>+7 [ICON_CULTURE] Culture in the Empire</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BELIEF_DALAI_LAMA_SHORT">
+			<Text>Dalai Lama</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Row Tag="TXT_KEY_BELIEF_DALAI_LAMA">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]+7 [ICON_CULTURE] Culture in the Empire</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BELIEF_DALAI_LAMA_SHORT">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Dalai Lama</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Row Tag="TXT_KEY_BELIEF_DALAI_LAMA">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]+7 [ICON_CULTURE] Culture in the Empire</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BELIEF_DALAI_LAMA_SHORT">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Dalai Lama</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Row Tag="TXT_KEY_BELIEF_DALAI_LAMA">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]+7 [ICON_CULTURE] Culture in the Empire</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BELIEF_DALAI_LAMA_SHORT">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Dalai Lama</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

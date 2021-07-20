@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 10/8/2016 10:34:05 PM -->
+<GameData>
+
+	<!-- Ceilidh Halls (replaces Opera House) now provide +2 Culture by default. -->
+	<Building_YieldChanges>
+		<Update>
+			<Set Yield="2" />
+			<Where BuildingType="BUILDING_CEILIDH_HALL" YieldType="YIELD_CULTURE" />
+		</Update>
+	</Building_YieldChanges>
+
+
+</GameData>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 4/7/2017 11:56:53 AM -->
+<GameData>
+
+	<Units>
+		<Update>
+			<Set Cost="75" HurryCostModifier="0" />
+			<Where Type="UNIT_ARCHAEOLOGIST" />
+		</Update>
+	</Units>
+	
+</GameData>

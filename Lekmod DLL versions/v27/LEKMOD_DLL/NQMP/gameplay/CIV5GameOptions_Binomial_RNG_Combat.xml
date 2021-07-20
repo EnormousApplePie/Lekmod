@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<!-- Table data 
+	<GameOptions>
+		<Row>
+			<Type>GAMEOPTION_USE_BINOM_RNG_FOR_COMBAT_ROLLS</Type>
+			<Description>TXT_KEY_GAME_OPTION_USE_BINOM_RNG_FOR_COMBAT_ROLLS</Description>
+			<Help>TXT_KEY_GAME_OPTION_USE_BINOM_RNG_FOR_COMBAT_ROLLS_HELP</Help>
+		</Row>
+	</GameOptions>
+	<Language_en_US>
+		<Row Tag="TXT_KEY_GAME_OPTION_USE_BINOM_RNG_FOR_COMBAT_ROLLS">
+			<Text>Binomial RNG for Combat Rolls</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_USE_BINOM_RNG_FOR_COMBAT_ROLLS_HELP">
+			<Text>[COLOR_WARNING_TEXT](Possible Lag Warning)[ENDCOLOR] Combat rolls are generated in a binomial distribution instead of in a flat distribution. This means players are much more likely to get rolls near the expected average than rolls faraway from it. Range of combat rolls is extended so that the original range represents a range of ±3σ. Lag warning because every combat roll requires 160001 RNG computations instead of 1.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Row Tag="TXT_KEY_GAME_OPTION_USE_BINOM_RNG_FOR_COMBAT_ROLLS">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Binomial RNG for Combat Rolls</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_USE_BINOM_RNG_FOR_COMBAT_ROLLS_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) (Possible Lag Warning)[ENDCOLOR] Combat rolls are generated in a binomial distribution instead of in a flat distribution. This means players are much more likely to get rolls near the expected average than rolls faraway from it. Range of combat rolls is extended so that the original range represents a range of ±3σ. Lag warning because every combat roll requires 160001 RNG computations instead of 1.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_ES_ES>
+		<Row Tag="TXT_KEY_GAME_OPTION_USE_BINOM_RNG_FOR_COMBAT_ROLLS">
+			<Text>[COLOR_WARNING_TEXT](ES_ES text) [ENDCOLOR]Binomial RNG for Combat Rolls</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_USE_BINOM_RNG_FOR_COMBAT_ROLLS_HELP">
+			<Text>[COLOR_WARNING_TEXT](ES_ES text) (Possible Lag Warning)[ENDCOLOR] Combat rolls are generated in a binomial distribution instead of in a flat distribution. This means players are much more likely to get rolls near the expected average than rolls faraway from it. Range of combat rolls is extended so that the original range represents a range of ±3σ. Lag warning because every combat roll requires 160001 RNG computations instead of 1.</Text>
+		</Row>
+	</Language_ES_ES>
+	<Language_FR_FR>
+		<Row Tag="TXT_KEY_GAME_OPTION_USE_BINOM_RNG_FOR_COMBAT_ROLLS">
+			<Text>[COLOR_WARNING_TEXT](FR_FR text) [ENDCOLOR]Binomial RNG for Combat Rolls</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_USE_BINOM_RNG_FOR_COMBAT_ROLLS_HELP">
+			<Text>[COLOR_WARNING_TEXT](FR_FR text) (Possible Lag Warning)[ENDCOLOR] Combat rolls are generated in a binomial distribution instead of in a flat distribution. This means players are much more likely to get rolls near the expected average than rolls faraway from it. Range of combat rolls is extended so that the original range represents a range of ±3σ. Lag warning because every combat roll requires 160001 RNG computations instead of 1.</Text>
+		</Row>
+	</Language_FR_FR>
+	<Language_PL_PL>
+		<Row Tag="TXT_KEY_GAME_OPTION_USE_BINOM_RNG_FOR_COMBAT_ROLLS">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Binomial RNG for Combat Rolls</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_USE_BINOM_RNG_FOR_COMBAT_ROLLS_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) (Possible Lag Warning)[ENDCOLOR] Combat rolls are generated in a binomial distribution instead of in a flat distribution. This means players are much more likely to get rolls near the expected average than rolls faraway from it. Range of combat rolls is extended so that the original range represents a range of ±3σ. Lag warning because every combat roll requires 160001 RNG computations instead of 1.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Row Tag="TXT_KEY_GAME_OPTION_USE_BINOM_RNG_FOR_COMBAT_ROLLS">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Binomial RNG for Combat Rolls</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_USE_BINOM_RNG_FOR_COMBAT_ROLLS_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) (Possible Lag Warning)[ENDCOLOR] Combat rolls are generated in a binomial distribution instead of in a flat distribution. This means players are much more likely to get rolls near the expected average than rolls faraway from it. Range of combat rolls is extended so that the original range represents a range of ±3σ. Lag warning because every combat roll requires 160001 RNG computations instead of 1.</Text>
+		</Row>
+	</Language_RU_RU>-->
+</GameData>

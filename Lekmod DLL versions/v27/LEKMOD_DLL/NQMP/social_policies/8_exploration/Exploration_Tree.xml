@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 6/6/2015 4:51:27 PM -->
+<GameData>
+	
+	<!-- New Policy Tree
+	
+				Maritime Infrastructure				 Colonialism
+	  			  __________|___________				   |
+	  			 |					    |				   |
+		Naval Tradition			 Navigation School		   |
+				 						|__________________|
+												  |
+										   Treasure Fleets
+					
+		RENAMES:
+		Merchant Navy -> Colonialism
+	-->
+
+	<Policies>
+		<Update>
+			<Set GridX="5" GridY="1" />
+			<Where Type="POLICY_MERCHANT_NAVY" />
+		</Update>
+		<Update>
+			<Set GridX="2" GridY="1" />
+			<Where Type="POLICY_MARITIME_INFRASTRUCTURE" />
+		</Update>
+		<Update>
+			<Set GridX="3" GridY="2" />
+			<Where Type="POLICY_NAVIGATION_SCHOOL" />
+		</Update>
+		<Update>
+			<Set GridX="1" GridY="2" />
+			<Where Type="POLICY_NAVAL_TRADITION" />
+		</Update>
+		<Update>
+			<Set GridX="4" GridY="3" />
+			<Where Type="POLICY_TREASURE_FLEETS" />
+		</Update>
+	</Policies>
+	<Policy_PrereqPolicies>
+		<Delete PolicyType="POLICY_MERCHANT_NAVY" />
+		<Delete PolicyType="POLICY_NAVIGATION_SCHOOL" />
+		<Delete PolicyType="POLICY_MARITIME_INFRASTRUCTURE" />
+		<Delete PolicyType="POLICY_NAVAL_TRADITION" />
+		<Delete PolicyType="POLICY_TREASURE_FLEETS" />
+		<Row>
+			<PolicyType>POLICY_NAVIGATION_SCHOOL</PolicyType>
+			<PrereqPolicy>POLICY_MARITIME_INFRASTRUCTURE</PrereqPolicy>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_NAVAL_TRADITION</PolicyType>
+			<PrereqPolicy>POLICY_MARITIME_INFRASTRUCTURE</PrereqPolicy>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_TREASURE_FLEETS</PolicyType>
+			<PrereqPolicy>POLICY_MERCHANT_NAVY</PrereqPolicy>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_TREASURE_FLEETS</PolicyType>
+			<PrereqPolicy>POLICY_NAVIGATION_SCHOOL</PrereqPolicy>
+		</Row>
+	</Policy_PrereqPolicies>
+
+</GameData>

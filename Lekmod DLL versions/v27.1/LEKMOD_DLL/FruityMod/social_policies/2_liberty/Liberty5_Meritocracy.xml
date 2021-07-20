@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 6/2/2015 9:36:44 PM -->
+<GameData>
+	
+	<!-- Meritocracy now also provides +15% Gold from City Connections. -->
+	
+	<!-- Gameplay -->
+	<Policies>
+		<Update>
+			<Set CityConnectionTradeRouteGoldModifier="15" />
+			<Where Type="POLICY_MERITOCRACY" />
+		</Update>
+	</Policies>
+
+
+
+	<!-- Localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_POLICY_MERITOCRACY_HELP" />
+		<Row Tag="TXT_KEY_POLICY_MERITOCRACY_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Meritocracy[ENDCOLOR][NEWLINE]+1 [ICON_HAPPINESS_1] Happiness and +15% [ICON_GOLD] Gold income from [ICON_CONNECTED] City Connections. -5% [ICON_HAPPINESS_4] Unhappiness from [ICON_CITIZEN] Citizens in non-occupied Cities.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_POLICY_MERITOCRACY_HELP" />
+		<Row Tag="TXT_KEY_POLICY_MERITOCRACY_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Meritocracy[ENDCOLOR][NEWLINE]+1 [ICON_HAPPINESS_1] Happiness and +15% [ICON_GOLD] Gold income from [ICON_CONNECTED] City Connections. -5% [ICON_HAPPINESS_4] Unhappiness from [ICON_CITIZEN] Citizens in non-occupied Cities.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_POLICY_MERITOCRACY_HELP" />
+		<Row Tag="TXT_KEY_POLICY_MERITOCRACY_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Meritocracy[ENDCOLOR][NEWLINE]+1 [ICON_HAPPINESS_1] Happiness and +15% [ICON_GOLD] Gold income from [ICON_CONNECTED] City Connections. -5% [ICON_HAPPINESS_4] Unhappiness from [ICON_CITIZEN] Citizens in non-occupied Cities.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_POLICY_MERITOCRACY_HELP" />
+		<Row Tag="TXT_KEY_POLICY_MERITOCRACY_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Meritocracy[ENDCOLOR][NEWLINE]+1 [ICON_HAPPINESS_1] Happiness and +15% [ICON_GOLD] Gold income from [ICON_CONNECTED] City Connections. -5% [ICON_HAPPINESS_4] Unhappiness from [ICON_CITIZEN] Citizens in non-occupied Cities.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 3/22/2017 7:10:11 PM -->
+<GameData>
+
+	<!-- Universal Suffrage: +20% Great People points in all Cities. -->
+	<Policies>
+		<Update>
+			<Set Level="2" GreatPeopleRateModifier="20" HalfSpecialistUnhappiness="false" GoldenAgeDurationMod="0" />
+			<Where Type="POLICY_UNIVERSAL_SUFFRAGE" />
+		</Update>
+	</Policies>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_POLICY_UNIVERSAL_SUFFRAGE_HELP" />
+		<Row Tag="TXT_KEY_POLICY_UNIVERSAL_SUFFRAGE_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Universal Suffrage[ENDCOLOR][NEWLINE]+20% [ICON_GREAT_PEOPLE] Great People points in all Cities.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_POLICY_UNIVERSAL_SUFFRAGE_HELP" />
+		<Row Tag="TXT_KEY_POLICY_UNIVERSAL_SUFFRAGE_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Universal Suffrage[ENDCOLOR][NEWLINE]+20% [ICON_GREAT_PEOPLE] Great People points in all Cities.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_POLICY_UNIVERSAL_SUFFRAGE_HELP" />
+		<Row Tag="TXT_KEY_POLICY_UNIVERSAL_SUFFRAGE_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Universal Suffrage[ENDCOLOR][NEWLINE]+20% [ICON_GREAT_PEOPLE] Great People points in all Cities.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_POLICY_UNIVERSAL_SUFFRAGE_HELP" />
+		<Row Tag="TXT_KEY_POLICY_UNIVERSAL_SUFFRAGE_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Universal Suffrage[ENDCOLOR][NEWLINE]+20% [ICON_GREAT_PEOPLE] Great People points in all Cities.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

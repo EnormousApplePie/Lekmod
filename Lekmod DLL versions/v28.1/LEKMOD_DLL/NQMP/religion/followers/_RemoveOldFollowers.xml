@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2016-09-25 05:38:26 -->
+<GameData>
+
+	<!-- Removed or moved the following Followers: Asceticism, Choral Music, Monasteries, Peace Gardens, Religious Art, Swords Into Plowshares -->
+	<Beliefs>
+		<Delete Type="BELIEF_ASCETISM" />
+		<Delete Type="BELIEF_CHORAL_MUSIC" />
+		<Delete Type="BELIEF_MONASTERIES" />	<!-- the Monastery building is now purchased via Houses of Worship reformation belief -->
+		<Delete Type="BELIEF_PEACE_GARDENS" />
+		<Delete Type="BELIEF_RELIGIOUS_ART" />
+		<!-- BELIEF_SWORD_PLOWSHARES moved to Reformation in /religion/reformations/SwordsIntoPlowshares.xml -->
+	</Beliefs>
+	<Belief_BuildingClassHappiness>
+		<Delete BeliefType="BELIEF_ASCETISM" />
+		<Delete BeliefType="BELIEF_PEACE_GARDENS" />
+	</Belief_BuildingClassHappiness>
+	<Belief_BuildingClassYieldChanges>
+		<Delete BeliefType="BELIEF_CHORAL_MUSIC" />
+		<Delete BeliefType="BELIEF_RELIGIOUS_ART" />
+	</Belief_BuildingClassYieldChanges>
+	<Belief_BuildingClassFaithPurchase>
+		<Delete BeliefType="BELIEF_MONASTERIES" />
+	</Belief_BuildingClassFaithPurchase>
+	<Belief_BuildingClassTourism>
+		<Delete BeliefType="BELIEF_RELIGIOUS_ART" />
+	</Belief_BuildingClassTourism>
+
+</GameData>

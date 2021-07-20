@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 1/20/2016 11:35:01 PM -->
+<GameData>
+	
+	<!-- Great Engineer equation set to (50 + (24 * pop)) instead of (200 + (20 * pop)) on quick speed -->
+	<Units>
+		<Update>
+			<Set BaseHurry="75" HurryMultiplier="36" />
+			<Where Class="UNITCLASS_ENGINEER" />
+		</Update>
+	</Units>
+	
+</GameData>

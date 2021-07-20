@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 4/22/2015 4:42:24 PM -->
+<GameData>
+
+	<!-- Angkor Wat: +8 Science, +3 Culture, +1 Great Engineer point -->
+	<Buildings>
+		<Update>
+			<Set PrereqTech="TECH_THEOLOGY" Cost="300" GlobalPlotCultureCostModifier="0" GlobalPlotBuyCostModifier="0" Help="NULL" />
+			<Where Type="BUILDING_ANGKOR_WAT" />
+		</Update>
+	</Buildings>
+	<Building_YieldChanges>
+		<Row>
+			<BuildingType>BUILDING_ANGKOR_WAT</BuildingType>
+			<YieldType>YIELD_SCIENCE</YieldType>
+			<Yield>8</Yield>
+		</Row>
+		<Update>
+			<Set Yield="3" />
+			<Where BuildingType="BUILDING_ANGKOR_WAT" YieldType="YIELD_CULTURE" />
+		</Update>
+	</Building_YieldChanges>
+
+</GameData>

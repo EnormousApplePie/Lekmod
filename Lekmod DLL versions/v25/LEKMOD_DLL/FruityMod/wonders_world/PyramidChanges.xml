@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2/8/2016 12:07:49 PM -->
+<GameData>
+	
+	<!-- Pyramids nerf - make it so Roads can't be built in 1 turn on Quick Speed -->
+	<Builds>
+		<Update>
+			<Set Time="440" />
+			<Where Type="BUILD_ROAD" />
+		</Update>
+	</Builds>
+	<Buildings>
+		<Update>
+			<Set WorkerSpeedModifier="20" />
+			<Where BuildingClass="BUILDINGCLASS_PYRAMID" />
+		</Update>
+	</Buildings>
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_WONDER_CHICHEN_ITZA_HELP" />
+		<Row Tag="TXT_KEY_WONDER_CHICHEN_ITZA_HELP">
+			<Text>Requires Liberty. Tile improvement construction speed increased by 20% and two Workers appear near the City.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_WONDER_CHICHEN_ITZA_HELP" />
+		<Row Tag="TXT_KEY_WONDER_CHICHEN_ITZA_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Requires Liberty. Tile improvement construction speed increased by 20% and two Workers appear near the City.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_WONDER_CHICHEN_ITZA_HELP" />
+		<Row Tag="TXT_KEY_WONDER_CHICHEN_ITZA_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Requires Liberty. Tile improvement construction speed increased by 20% and two Workers appear near the City.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_WONDER_CHICHEN_ITZA_HELP" />
+		<Row Tag="TXT_KEY_WONDER_CHICHEN_ITZA_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Requires Liberty. Tile improvement construction speed increased by 20% and two Workers appear near the City.</Text>
+		</Row>
+	</Language_RU_RU>
+	
+</GameData>

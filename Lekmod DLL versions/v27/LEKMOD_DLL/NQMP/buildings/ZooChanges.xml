@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2017-02-11 00:47:28 -->
+<GameData>
+
+	<!-- Zoo now gives +3 Happiness (up from +2) -->
+	<Buildings>
+		<Update>
+			<Set Happiness="3" />
+			<Where Type="BUILDING_THEATRE" />
+		</Update>
+	</Buildings>
+	
+</GameData>

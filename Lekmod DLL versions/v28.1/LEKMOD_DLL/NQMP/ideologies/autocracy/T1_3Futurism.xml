@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 3/22/2017 7:17:12 PM -->
+<GameData>
+
+	<!-- Futurism: Gain 250 Tourism (on Quick Speed) with all known Civilizations whenever a Great Writer, Great Artist, or Great Musician is born. -->
+	<Policy_TourismOnUnitCreation>
+		<Update>
+			<!-- Futurism: fixed scaling bug with slower game speeds, so value increased to keep it identical on quick -->
+			<Set Tourism="375" />
+			<Where PolicyType="POLICY_FUTURISM" />
+		</Update>
+	</Policy_TourismOnUnitCreation>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_POLICY_FUTURISM_HELP" />
+		<Row Tag="TXT_KEY_POLICY_FUTURISM_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Futurism[ENDCOLOR][NEWLINE]Gain 250 global [ICON_TOURISM] Tourism (on Quick Speed) whenever a Great Writer, Great Artist, or Great Musician is born.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_POLICY_FUTURISM_HELP" />
+		<Row Tag="TXT_KEY_POLICY_FUTURISM_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Futurism[ENDCOLOR][NEWLINE]Gain 250 global [ICON_TOURISM] Tourism (on Quick Speed) whenever a Great Writer, Great Artist, or Great Musician is born.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_POLICY_FUTURISM_HELP" />
+		<Row Tag="TXT_KEY_POLICY_FUTURISM_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Futurism[ENDCOLOR][NEWLINE]Gain 250 global [ICON_TOURISM] Tourism (on Quick Speed) whenever a Great Writer, Great Artist, or Great Musician is born.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_POLICY_FUTURISM_HELP" />
+		<Row Tag="TXT_KEY_POLICY_FUTURISM_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Futurism[ENDCOLOR][NEWLINE]Gain 250 global [ICON_TOURISM] Tourism (on Quick Speed) whenever a Great Writer, Great Artist, or Great Musician is born.</Text>
+		</Row>
+	</Language_RU_RU>
+	
+</GameData>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 6/2/2015 11:22:00 PM -->
+<GameData>
+
+	<!-- 
+
+                     *** FRUITY DIPLOMACY ***
+	  ________________     _______________      _________
+     |Cultural Centers|   |Artistic Genius|    |Fine Arts|
+             |                                      |
+     ________|________                          ____|__________________
+    |Cultural Exchange|                        |Flourishing of the Arts|
+	
+	
+	Cultural Exchange = POLICY_ETHICS
+	
+	-->
+
+	<!-- positions -->
+	<Policies>
+		<Update>
+			<Set GridX="1" GridY="1" />
+			<Where Type="POLICY_CULTURAL_CENTERS" />
+		</Update>
+		<Update>
+			<Set GridX="3" GridY="1" />
+			<Where Type="POLICY_ARTISTIC_GENIUS" />
+		</Update>
+		<Update>
+			<Set GridX="5" GridY="1" />
+			<Where Type="POLICY_FINE_ARTS" />
+		</Update>
+		<Update>
+			<Set GridX="1" GridY="2" />
+			<Where Type="POLICY_ETHICS" />
+		</Update>
+		<Update>
+			<Set GridX="5" GridY="2" />
+			<Where Type="POLICY_FLOURISHING_OF_ARTS" />
+		</Update>
+	</Policies>
+
+	<!-- prerequisites -->
+	<Policy_PrereqPolicies>
+		<Delete PolicyType="POLICY_ARTISTIC_GENIUS"		PrereqPolicy="POLICY_FINE_ARTS"				/>
+		<Delete PolicyType="POLICY_FLOURISHING_OF_ARTS"	PrereqPolicy="POLICY_CULTURAL_CENTERS"		/>
+		<Delete PolicyType="POLICY_FLOURISHING_OF_ARTS"	PrereqPolicy="POLICY_FINE_ARTS"				/>
+		<Delete PolicyType="POLICY_ETHICS"				PrereqPolicy="POLICY_FLOURISHING_OF_ARTS"	/>
+		<Row>
+			<PolicyType>POLICY_ETHICS</PolicyType>
+			<PrereqPolicy>POLICY_CULTURAL_CENTERS</PrereqPolicy>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_FLOURISHING_OF_ARTS</PolicyType>
+			<PrereqPolicy>POLICY_FINE_ARTS</PrereqPolicy>
+		</Row>
+	</Policy_PrereqPolicies>
+
+</GameData>

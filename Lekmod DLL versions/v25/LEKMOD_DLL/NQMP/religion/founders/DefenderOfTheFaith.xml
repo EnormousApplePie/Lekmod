@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2016-09-25 05:44:53 -->
+<GameData>
+
+	<!-- +15% Combat Strength near friendly Cities that follow this Religion. -->
+	<Beliefs>
+		<Update>
+			<Set Enhancer="false" Founder="true" CombatModifierFriendlyCities="15" />
+			<Where Type="BELIEF_DEFENDER_FAITH" />
+		</Update>
+	</Beliefs>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_BELIEF_DEFENDER_FAITH" />
+		<Row Tag="TXT_KEY_BELIEF_DEFENDER_FAITH">
+			<Text>+15% [ICON_STRENGTH] Combat Strength near friendly cities that follow this religion</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_BELIEF_DEFENDER_FAITH" />
+		<Row Tag="TXT_KEY_BELIEF_DEFENDER_FAITH">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]+15% [ICON_STRENGTH] Combat Strength near friendly cities that follow this religion</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_BELIEF_DEFENDER_FAITH" />
+		<Row Tag="TXT_KEY_BELIEF_DEFENDER_FAITH">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]+15% [ICON_STRENGTH] Combat Strength near friendly cities that follow this religion</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_BELIEF_DEFENDER_FAITH" />
+		<Row Tag="TXT_KEY_BELIEF_DEFENDER_FAITH">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]+15% [ICON_STRENGTH] Combat Strength near friendly cities that follow this religion</Text>
+		</Row>
+	</Language_RU_RU>
+	
+</GameData>

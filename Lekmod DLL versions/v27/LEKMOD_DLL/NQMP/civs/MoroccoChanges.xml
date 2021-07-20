@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 5/5/2016 9:23:29 PM -->
+<GameData>
+	
+	<!-- Morocco bonus yield per trade partner now also increases by +1 Gold / +1 Culture per era. -->
+	
+	<!-- This will eventually be implemented correctly. For now it's hard coded to be +1 in CvTraitClasses.h - GetTradePartnerYieldFlatBonusPerEra() -->
+	<!--
+	<Traits>
+		<Update>
+			<Set TradePartnerYieldFlatBonusPerEra="1" />
+			<Where Type="TRAIT_GATEWAY_AFRICA" />
+		</Update>
+	</Traits>
+	-->
+	
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_TRAIT_GATEWAY_AFRICA" />
+		<Row Tag="TXT_KEY_TRAIT_GATEWAY_AFRICA">
+			<Text>+3 Gold [ICON_GOLD] and +1 [ICON_CULTURE] Culture for each Trade Route with a different civ or City-State, increasing by +1 Gold [ICON_GOLD] and +1 [ICON_CULTURE] each Era. Other civs gain +2 [ICON_GOLD] Gold for each Trade Route sent to Morocco.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_TRAIT_GATEWAY_AFRICA" />
+		<Row Tag="TXT_KEY_TRAIT_GATEWAY_AFRICA">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]+3 Gold [ICON_GOLD] and +1 [ICON_CULTURE] Culture for each Trade Route with a different civ or City-State, increasing by +1 Gold [ICON_GOLD] and +1 [ICON_CULTURE] each Era. Other civs gain +2 [ICON_GOLD] Gold for each Trade Route sent to Morocco.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_TRAIT_GATEWAY_AFRICA" />
+		<Row Tag="TXT_KEY_TRAIT_GATEWAY_AFRICA">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]+3 Gold [ICON_GOLD] and +1 [ICON_CULTURE] Culture for each Trade Route with a different civ or City-State, increasing by +1 Gold [ICON_GOLD] and +1 [ICON_CULTURE] each Era. Other civs gain +2 [ICON_GOLD] Gold for each Trade Route sent to Morocco.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_TRAIT_GATEWAY_AFRICA" />
+		<Row Tag="TXT_KEY_TRAIT_GATEWAY_AFRICA">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]+3 Gold [ICON_GOLD] and +1 [ICON_CULTURE] Culture for each Trade Route with a different civ or City-State, increasing by +1 Gold [ICON_GOLD] and +1 [ICON_CULTURE] each Era. Other civs gain +2 [ICON_GOLD] Gold for each Trade Route sent to Morocco.</Text>
+		</Row>
+	</Language_RU_RU>
+	
+</GameData>

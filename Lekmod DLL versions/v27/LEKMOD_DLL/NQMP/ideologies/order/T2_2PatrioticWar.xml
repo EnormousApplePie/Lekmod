@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2017-02-12 15:58:13 -->
+<GameData>
+  
+	<!-- Patriotic War: +33% Production towards Gunpowder units. -->
+	<Policies>
+		<Update>
+			<Set Level="2" IsDoubleTrainedMilitaryLandUnits="false" />
+			<Where Type="POLICY_PATRIOTIC_WAR" />
+		</Update>
+	</Policies>
+	<Policy_UnitCombatProductionModifiers>
+		<Row>
+			<PolicyType>POLICY_PATRIOTIC_WAR</PolicyType>
+			<UnitCombatType>UNITCOMBAT_GUN</UnitCombatType>
+			<ProductionModifier>33</ProductionModifier>
+		</Row>
+	</Policy_UnitCombatProductionModifiers>
+	<Policy_FreePromotions>
+		<Delete PolicyType="POLICY_PATRIOTIC_WAR" />
+	</Policy_FreePromotions>
+	<Policy_Flavors>
+		<Row>
+			<PolicyType>POLICY_PATRIOTIC_WAR</PolicyType>
+			<FlavorType>FLAVOR_OFFENSE</FlavorType>
+			<Flavor>33</Flavor>
+		</Row>
+	</Policy_Flavors>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_POLICY_PATRIOTIC_WAR" />
+		<Row Tag="TXT_KEY_POLICY_PATRIOTIC_WAR">
+			<Text>Patriotic War</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_PATRIOTIC_WAR_HELP" />
+		<Row Tag="TXT_KEY_POLICY_PATRIOTIC_WAR_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Patriotic War[ENDCOLOR][NEWLINE]+33% [ICON_PRODUCTION] Production towards Gunpowder units.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_POLICY_PATRIOTIC_WAR" />
+		<Row Tag="TXT_KEY_POLICY_PATRIOTIC_WAR">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Patriotic War</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_PATRIOTIC_WAR_HELP" />
+		<Row Tag="TXT_KEY_POLICY_PATRIOTIC_WAR_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Patriotic War[ENDCOLOR][NEWLINE]+33% [ICON_PRODUCTION] Production towards Gunpowder units.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_POLICY_PATRIOTIC_WAR" />
+		<Row Tag="TXT_KEY_POLICY_PATRIOTIC_WAR">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Patriotic War</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_PATRIOTIC_WAR_HELP" />
+		<Row Tag="TXT_KEY_POLICY_PATRIOTIC_WAR_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Patriotic War[ENDCOLOR][NEWLINE]+33% [ICON_PRODUCTION] Production towards Gunpowder units.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_POLICY_PATRIOTIC_WAR" />
+		<Row Tag="TXT_KEY_POLICY_PATRIOTIC_WAR">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Patriotic War</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_PATRIOTIC_WAR_HELP" />
+		<Row Tag="TXT_KEY_POLICY_PATRIOTIC_WAR_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Patriotic War[ENDCOLOR][NEWLINE]+33% [ICON_PRODUCTION] Production towards Gunpowder units.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 6/10/2015 5:53:24 AM -->
+<GameData>
+
+	<!-- *** CHANGE EXISTING FOUNDER BELIEFS *** -->
+
+	<!-- Peace Loving: Name changed to "Baptisms" and no longer requires peace. -->
+	<!-- NOTE: Code change is in the DLL under "new Peace Loving" -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_BELIEF_PEACE_LOVING_SHORT" />
+		<Row Tag="TXT_KEY_BELIEF_PEACE_LOVING_SHORT">
+			<Text>Baptisms</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_BELIEF_PEACE_LOVING" />
+		<Row Tag="TXT_KEY_BELIEF_PEACE_LOVING">
+			<Text>+1 [ICON_HAPPINESS_1] Global Happiness for every 8 followers of this religion in foreign cities</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_BELIEF_PEACE_LOVING_SHORT" />
+		<Row Tag="TXT_KEY_BELIEF_PEACE_LOVING_SHORT">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Baptisms</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_BELIEF_PEACE_LOVING" />
+		<Row Tag="TXT_KEY_BELIEF_PEACE_LOVING">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]+1 [ICON_HAPPINESS_1] Global Happiness for every 8 followers of this religion in foreign cities</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_BELIEF_PEACE_LOVING_SHORT" />
+		<Row Tag="TXT_KEY_BELIEF_PEACE_LOVING_SHORT">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Baptisms</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_BELIEF_PEACE_LOVING" />
+		<Row Tag="TXT_KEY_BELIEF_PEACE_LOVING">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]+1 [ICON_HAPPINESS_1] Global Happiness for every 8 followers of this religion in foreign cities</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_BELIEF_PEACE_LOVING_SHORT" />
+		<Row Tag="TXT_KEY_BELIEF_PEACE_LOVING_SHORT">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Baptisms</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_BELIEF_PEACE_LOVING" />
+		<Row Tag="TXT_KEY_BELIEF_PEACE_LOVING">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]+1 [ICON_HAPPINESS_1] Global Happiness for every 8 followers of this religion in foreign cities</Text>
+		</Row>
+	</Language_RU_RU>
+
+
+</GameData>

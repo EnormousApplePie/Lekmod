@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 4/10/2017 10:31:35 PM -->
+<GameData>
+
+	<!-- Worlds Fair now scales with game speed, and slightly reduced in length on normal (12/18/27/54 turns now) -->
+	<LeagueProjectRewards>
+		<Update>
+			<Set CultureBonusTurns="18" />
+			<Where Type="LEAGUE_PROJECT_REWARD_WORLD_FAIR_3" />
+		</Update>
+	</LeagueProjectRewards>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_LEAGUE_PROJECT_REWARD_WORLD_FAIR_3_HELP" />
+		<Row Tag="TXT_KEY_LEAGUE_PROJECT_REWARD_WORLD_FAIR_3_HELP">
+			<Text>[ICON_CULTURE] Culture increases by 100% for 12 Turns (on Quick Speed).</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_LEAGUE_PROJECT_REWARD_WORLD_FAIR_3_HELP" />
+		<Row Tag="TXT_KEY_LEAGUE_PROJECT_REWARD_WORLD_FAIR_3_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][ICON_CULTURE] Culture increases by 100% for 12 Turns (on Quick Speed).</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_LEAGUE_PROJECT_REWARD_WORLD_FAIR_3_HELP" />
+		<Row Tag="TXT_KEY_LEAGUE_PROJECT_REWARD_WORLD_FAIR_3_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][ICON_CULTURE] Culture increases by 100% for 12 Turns (on Quick Speed).</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_LEAGUE_PROJECT_REWARD_WORLD_FAIR_3_HELP" />
+		<Row Tag="TXT_KEY_LEAGUE_PROJECT_REWARD_WORLD_FAIR_3_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][ICON_CULTURE] Culture increases by 100% for 12 Turns (on Quick Speed).</Text>
+		</Row>
+	</Language_RU_RU>
+
+
+</GameData>

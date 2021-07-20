@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2017-02-11 02:52:02 -->
+<GameData>
+	
+	<!-- Visually compensate by moving Particle Physics and	its prereq Advanced Ballistics, and a few others for looking nice -->
+	<Technologies>
+		<Update>
+			<Set GridY="3" />
+			<Where Type="TECH_PARTICLE_PHYSICS" />
+		</Update>
+		<Update>
+			<Set GridY="3" />
+			<Where Type="TECH_ADVANCED_BALLISTICS" />
+		</Update>
+		<Update>
+			<Set GridY="1" />
+			<Where Type="TECH_INTERNET" />
+		</Update>
+		<Update>
+			<Set GridY="2" />
+			<Where Type="TECH_GLOBALIZATION" />
+		</Update>
+	</Technologies>
+
+</GameData>

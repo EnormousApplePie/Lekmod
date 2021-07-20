@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2016-09-13 23:03:23 -->
+<GameData>
+	
+	<!-- Carthage African Forest Elephant starts with Heavy Charge Downhill: If attacking from higher elevation to lower elevation gives the unit +X% Combat Strength and Knockback ability (like Winged Hussars). -->
+	<UnitPromotions>
+		<Row>
+			<Type>PROMOTION_HEAVY_CHARGE_DOWNHILL</Type>
+			<Description>TXT_KEY_PROMOTION_HEAVY_CHARGE_DOWNHILL</Description>
+			<Help>TXT_KEY_PROMOTION_HEAVY_CHARGE_DOWNHILL_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<PortraitIndex>4</PortraitIndex>
+			<IconAtlas>EXPANSION2_PROMOTION_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_HEAVY_CHARGE_DOWNHILL</PediaEntry>
+			<CannotBeChosen>true</CannotBeChosen>
+			<HeavyChargeDownhill>20</HeavyChargeDownhill>
+		</Row>
+	</UnitPromotions>
+	<Unit_FreePromotions>
+		<Row>
+			<UnitType>UNIT_CARTHAGINIAN_FOREST_ELEPHANT</UnitType>
+			<PromotionType>PROMOTION_HEAVY_CHARGE_DOWNHILL</PromotionType>
+		</Row>
+	</Unit_FreePromotions>
+	
+	<!-- localization -->
+	<Language_en_US>
+		<Row Tag="TXT_KEY_PROMOTION_HEAVY_CHARGE_DOWNHILL">
+			<Text>Hannibal's Charge</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_HEAVY_CHARGE_DOWNHILL_HELP">
+			<Text>If attacking from higher elevation into lower elevation, gains +20% Combat Strength and forces defender to retreat if it inflicts more damage than it receives. A defender who cannot retreat takes 50% additional damage.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Row Tag="TXT_KEY_PROMOTION_HEAVY_CHARGE_DOWNHILL">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Hannibal's Charge</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_HEAVY_CHARGE_DOWNHILL_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]If attacking from higher elevation into lower elevation, gains +20% Combat Strength and forces defender to retreat if it inflicts more damage than it receives. A defender who cannot retreat takes 50% additional damage.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Row Tag="TXT_KEY_PROMOTION_HEAVY_CHARGE_DOWNHILL">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Hannibal's Charge</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_HEAVY_CHARGE_DOWNHILL_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]If attacking from higher elevation into lower elevation, gains +20% Combat Strength and forces defender to retreat if it inflicts more damage than it receives. A defender who cannot retreat takes 50% additional damage.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Row Tag="TXT_KEY_PROMOTION_HEAVY_CHARGE_DOWNHILL">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Hannibal's Charge</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_HEAVY_CHARGE_DOWNHILL_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]If attacking from higher elevation into lower elevation, gains +20% Combat Strength and forces defender to retreat if it inflicts more damage than it receives. A defender who cannot retreat takes 50% additional damage.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

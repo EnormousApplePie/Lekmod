@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 1/19/2016 11:58:49 PM -->
+<GameData>
+	
+	<!-- Move Iron from Bronze Working to Mining -->
+	<Resources>
+		<Update>
+			<Set TechReveal="TECH_MINING" TechCityTrade="TECH_MINING" />
+			<Where Type="RESOURCE_IRON" />
+		</Update>
+	</Resources>
+	
+	<!-- TXT_KEY_TECH_BRONZE_WORKING_HELP -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_TECH_BRONZE_WORKING_HELP" />
+		<Row Tag="TXT_KEY_TECH_BRONZE_WORKING_HELP">
+			<Text>Allows your Workers to [COLOR_POSITIVE_TEXT]Chop Jungle[ENDCOLOR], clearing the map tile so other improvements can be constructed. Also allows you to build the [COLOR_POSITIVE_TEXT]Spearman[ENDCOLOR], a military unit strong against mounted enemies.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_TECH_BRONZE_WORKING_HELP" />
+		<Row Tag="TXT_KEY_TECH_BRONZE_WORKING_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Allows your Workers to [COLOR_POSITIVE_TEXT]Chop Jungle[ENDCOLOR], clearing the map tile so other improvements can be constructed. Also allows you to build the [COLOR_POSITIVE_TEXT]Spearman[ENDCOLOR], a military unit strong against mounted enemies.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_TECH_BRONZE_WORKING_HELP" />
+		<Row Tag="TXT_KEY_TECH_BRONZE_WORKING_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Allows your Workers to [COLOR_POSITIVE_TEXT]Chop Jungle[ENDCOLOR], clearing the map tile so other improvements can be constructed. Also allows you to build the [COLOR_POSITIVE_TEXT]Spearman[ENDCOLOR], a military unit strong against mounted enemies.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_TECH_BRONZE_WORKING_HELP" />
+		<Row Tag="TXT_KEY_TECH_BRONZE_WORKING_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Allows your Workers to [COLOR_POSITIVE_TEXT]Chop Jungle[ENDCOLOR], clearing the map tile so other improvements can be constructed. Also allows you to build the [COLOR_POSITIVE_TEXT]Spearman[ENDCOLOR], a military unit strong against mounted enemies.</Text>
+		</Row>
+	</Language_RU_RU>
+
+	<!-- TXT_KEY_TECH_MINING_HELP -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_TECH_MINING_HELP" />
+		<Row Tag="TXT_KEY_TECH_MINING_HELP">
+			<Text>Reveals [ICON_RES_IRON] [COLOR_POSITIVE_TEXT]Iron[ENDCOLOR]. Allows Workers to construct [COLOR_POSITIVE_TEXT]Mines[ENDCOLOR] to increase the [ICON_PRODUCTION] Production of map tiles, and [COLOR_POSITIVE_TEXT]Chop Forests[ENDCOLOR], allowing the construction of other improvements.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_TECH_MINING_HELP" />
+		<Row Tag="TXT_KEY_TECH_MINING_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Reveals [ICON_RES_IRON] [COLOR_POSITIVE_TEXT]Iron[ENDCOLOR]. Allows Workers to construct [COLOR_POSITIVE_TEXT]Mines[ENDCOLOR] to increase the [ICON_PRODUCTION] Production of map tiles, and [COLOR_POSITIVE_TEXT]Chop Forests[ENDCOLOR], allowing the construction of other improvements.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_TECH_MINING_HELP" />
+		<Row Tag="TXT_KEY_TECH_MINING_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Reveals [ICON_RES_IRON] [COLOR_POSITIVE_TEXT]Iron[ENDCOLOR]. Allows Workers to construct [COLOR_POSITIVE_TEXT]Mines[ENDCOLOR] to increase the [ICON_PRODUCTION] Production of map tiles, and [COLOR_POSITIVE_TEXT]Chop Forests[ENDCOLOR], allowing the construction of other improvements.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_TECH_MINING_HELP" />
+		<Row Tag="TXT_KEY_TECH_MINING_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Reveals [ICON_RES_IRON] [COLOR_POSITIVE_TEXT]Iron[ENDCOLOR]. Allows Workers to construct [COLOR_POSITIVE_TEXT]Mines[ENDCOLOR] to increase the [ICON_PRODUCTION] Production of map tiles, and [COLOR_POSITIVE_TEXT]Chop Forests[ENDCOLOR], allowing the construction of other improvements.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

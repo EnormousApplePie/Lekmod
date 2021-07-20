@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 5/10/2017 12:15:35 AM -->
+<GameData>
+	
+	<Defines>
+
+		<!-- Cultural City States: Now provide +2/4 in Ancient, +5/8 in Medieval, and +10/15 in Industrial (down from +3/6, +6/12, +13/26) based on Friends/Allies status. -->
+		<Update>
+			<Set Value="2" />
+			<Where Name="FRIENDS_CULTURE_BONUS_AMOUNT_ANCIENT" />
+		</Update>
+		<Update>
+			<Set Value="2" />
+			<Where Name="ALLIES_CULTURE_BONUS_AMOUNT_ANCIENT" />
+		</Update>
+		<Update>
+			<Set Value="5" />
+			<Where Name="FRIENDS_CULTURE_BONUS_AMOUNT_MEDIEVAL" />
+		</Update>
+		<Update>
+			<Set Value="3" />
+			<Where Name="ALLIES_CULTURE_BONUS_AMOUNT_MEDIEVAL" />
+		</Update>
+		<Update>
+			<Set Value="10" />
+			<Where Name="FRIENDS_CULTURE_BONUS_AMOUNT_INDUSTRIAL" />
+		</Update>
+		<Update>
+			<Set Value="5" />
+			<Where Name="ALLIES_CULTURE_BONUS_AMOUNT_INDUSTRIAL" />
+		</Update>
+
+		<!-- Maritime City States: If Friends, provides +2 Food in Capital. If Allies provides +4 Food in Capital pre-Renaissance and +6 Food post-Renaissance. -->
+		<Update>
+			<Set Value="0" />
+			<Where Name="ALLIES_OTHER_CITIES_FOOD_BONUS_AMOUNT" />
+		</Update>
+		<Update>
+			<Set Value="200" />
+			<Where Name="ALLIES_CAPITAL_FOOD_BONUS_AMOUNT" />
+		</Update>
+		
+	</Defines>
+</GameData>

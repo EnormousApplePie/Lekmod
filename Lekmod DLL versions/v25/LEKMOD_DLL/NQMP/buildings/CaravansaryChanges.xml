@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2017-11-15 14:34:07 -->
+<GameData>
+	
+	<!-- Caravansary is removed from the game (its effects are rolled into the Market now). -->
+	<Buildings>
+		<Delete Type="BUILDING_CARAVANSARY" />
+	</Buildings>
+	<Building_Flavors>
+		<Delete BuildingType="BUILDING_CARAVANSARY" />
+	</Building_Flavors>
+	<BuildingClasses>
+		<Delete Type="BUILDINGCLASS_CARAVANSARY" />
+	</BuildingClasses>
+	
+</GameData>

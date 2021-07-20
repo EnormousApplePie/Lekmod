@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2016-09-07 00:40:30 -->
+<GameData>
+	
+	<!-- Opera Houses now provide +2 Culture by default. -->
+	<Building_YieldChanges>
+		<Update>
+			<Set Yield="2" />
+			<Where BuildingType="BUILDING_OPERA_HOUSE" YieldType="YIELD_CULTURE" />
+		</Update>
+	</Building_YieldChanges>
+	
+</GameData>

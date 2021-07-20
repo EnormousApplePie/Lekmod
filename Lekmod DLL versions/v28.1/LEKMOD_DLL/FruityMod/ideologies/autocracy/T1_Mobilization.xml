@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 9/15/2015 11:26:24 PM -->
+<GameData>
+
+	<!-- T1: Mobilization -->
+	<Policies>
+		<Update>
+			<Set UnitPurchaseCostModifier="-25" />
+			<Where Type="POLICY_MOBILIZATION" />
+		</Update>
+	</Policies>
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_POLICY_MOBILIZATION_HELP" />
+		<Row Tag="TXT_KEY_POLICY_MOBILIZATION_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Mobilization[ENDCOLOR][NEWLINE][ICON_GOLD] Gold cost of purchasing units reduced by 25%.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_POLICY_MOBILIZATION_HELP" />
+		<Row Tag="TXT_KEY_POLICY_MOBILIZATION_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][NEWLINE][ICON_GOLD] Gold cost of purchasing units reduced by 25%.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_POLICY_MOBILIZATION_HELP" />
+		<Row Tag="TXT_KEY_POLICY_MOBILIZATION_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][NEWLINE][ICON_GOLD] Gold cost of purchasing units reduced by 25%.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_POLICY_MOBILIZATION_HELP" />
+		<Row Tag="TXT_KEY_POLICY_MOBILIZATION_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][NEWLINE][ICON_GOLD] Gold cost of purchasing units reduced by 25%.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2016-09-25 05:44:53 -->
+<GameData>
+
+	<!-- Gain 2 Inquisitors, 2 mounted units, 2 ranged units, and 2 siege units -->
+	<Beliefs>
+		<Row>
+			<Type>BELIEF_DEUS_VULT</Type>
+			<Description>TXT_KEY_BELIEF_DEUS_VULT</Description>
+			<ShortDescription>TXT_KEY_BELIEF_DEUS_VULT_SHORT</ShortDescription>
+			<Enhancer>true</Enhancer>
+			<DeusVult>true</DeusVult>
+		</Row>
+	</Beliefs>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Row Tag="TXT_KEY_BELIEF_DEUS_VULT">
+			<Text>Gain 2 Inquisitors, 2 mounted units, 2 ranged units, and 2 siege units</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BELIEF_DEUS_VULT_SHORT">
+			<Text>Deus Vult</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Row Tag="TXT_KEY_BELIEF_DEUS_VULT">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Gain 2 Inquisitors, 2 mounted units, 2 ranged units, and 2 siege units</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BELIEF_DEUS_VULT_SHORT">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Deus Vult</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Row Tag="TXT_KEY_BELIEF_DEUS_VULT">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Gain 2 Inquisitors, 2 mounted units, 2 ranged units, and 2 siege units</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BELIEF_DEUS_VULT_SHORT">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Deus Vult</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Row Tag="TXT_KEY_BELIEF_DEUS_VULT">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Gain 2 Inquisitors, 2 mounted units, 2 ranged units, and 2 siege units</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BELIEF_DEUS_VULT_SHORT">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Deus Vult</Text>
+		</Row>
+	</Language_RU_RU>
+	
+</GameData>

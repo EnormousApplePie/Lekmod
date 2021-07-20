@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 8/17/2016 7:22:54 PM -->
+<GameData>
+
+	<!-- Aristocracy: Capital receives +1 Culture per unique Luxury in the Empire. -->
+	<Policies>
+		<Update>
+			<Set WonderProductionModifier="0" HappinessPerXPopulation="0" CapitalCulturePerUniqueLuxury="1" />
+			<Where Type="POLICY_ARISTOCRACY" />
+		</Update>
+	</Policies>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_POLICY_ARISTOCRACY_HELP" />
+		<Row Tag="TXT_KEY_POLICY_ARISTOCRACY_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Aristocracy[ENDCOLOR][NEWLINE]+1 [ICON_CULTURE] Culture in the [ICON_CAPITAL] Capital for each unique Luxury in the Empire.</Text>
+		</Row>
+	</Language_en_US>
+	
+	<!-- TODO: Flavors -->
+
+</GameData>

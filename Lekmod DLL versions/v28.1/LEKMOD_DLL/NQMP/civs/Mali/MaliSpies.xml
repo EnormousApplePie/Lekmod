@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 5/12/2017 2:21:06 PM -->
+<GameData>
+
+	<Civilization_SpyNames>
+		<Row>
+			<CivilizationType>CIVILIZATION_MALI</CivilizationType>
+			<SpyName>TXT_KEY_SPY_NAME_MALI_0</SpyName>
+		</Row>
+		<Row>
+			<CivilizationType>CIVILIZATION_MALI</CivilizationType>
+			<SpyName>TXT_KEY_SPY_NAME_MALI_1</SpyName>
+		</Row>
+		<Row>
+			<CivilizationType>CIVILIZATION_MALI</CivilizationType>
+			<SpyName>TXT_KEY_SPY_NAME_MALI_2</SpyName>
+		</Row>
+		<Row>
+			<CivilizationType>CIVILIZATION_MALI</CivilizationType>
+			<SpyName>TXT_KEY_SPY_NAME_MALI_3</SpyName>
+		</Row>
+		<Row>
+			<CivilizationType>CIVILIZATION_MALI</CivilizationType>
+			<SpyName>TXT_KEY_SPY_NAME_MALI_4</SpyName>
+		</Row>
+		<Row>
+			<CivilizationType>CIVILIZATION_MALI</CivilizationType>
+			<SpyName>TXT_KEY_SPY_NAME_MALI_5</SpyName>
+		</Row>
+		<Row>
+			<CivilizationType>CIVILIZATION_MALI</CivilizationType>
+			<SpyName>TXT_KEY_SPY_NAME_MALI_6</SpyName>
+		</Row>
+		<Row>
+			<CivilizationType>CIVILIZATION_MALI</CivilizationType>
+			<SpyName>TXT_KEY_SPY_NAME_MALI_7</SpyName>
+		</Row>
+		<Row>
+			<CivilizationType>CIVILIZATION_MALI</CivilizationType>
+			<SpyName>TXT_KEY_SPY_NAME_MALI_8</SpyName>
+		</Row>
+		<Row>
+			<CivilizationType>CIVILIZATION_MALI</CivilizationType>
+			<SpyName>TXT_KEY_SPY_NAME_MALI_9</SpyName>
+		</Row>
+	</Civilization_SpyNames>
+	
+	<!-- localization -->
+	<Language_en_US>
+		<Row Tag="TXT_KEY_SPY_NAME_MALI_0">
+			<Text>Ahmad</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SPY_NAME_MALI_1">
+			<Text>Mohammed</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SPY_NAME_MALI_2">
+			<Text>Abdoulaye</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SPY_NAME_MALI_3">
+			<Text>Mahmud</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SPY_NAME_MALI_4">
+			<Text>Yaya</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SPY_NAME_MALI_5">
+			<Text>Fatoumata</Text>
+			<Gender>feminine</Gender>
+		</Row>
+		<Row Tag="TXT_KEY_SPY_NAME_MALI_6">
+			<Text>Hawa</Text>
+			<Gender>feminine</Gender>
+		</Row>
+		<Row Tag="TXT_KEY_SPY_NAME_MALI_7">
+			<Text>Mariam</Text>
+			<Gender>feminine</Gender>
+		</Row>
+		<Row Tag="TXT_KEY_SPY_NAME_MALI_8">
+			<Text>Aminata</Text>
+			<Gender>feminine</Gender>
+		</Row>
+		<Row Tag="TXT_KEY_SPY_NAME_MALI_9">
+			<Text>Fanta</Text>
+			<Gender>feminine</Gender>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Row Tag="TXT_KEY_SPY_NAME_MALI_0">
+			<Text>Ahmad</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SPY_NAME_MALI_1">
+			<Text>Mohammed</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SPY_NAME_MALI_2">
+			<Text>Abdoulaye</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SPY_NAME_MALI_3">
+			<Text>Mahmud</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SPY_NAME_MALI_4">
+			<Text>Yaya</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SPY_NAME_MALI_5">
+			<Text>Fatoumata</Text>
+			<Gender>feminine</Gender>
+		</Row>
+		<Row Tag="TXT_KEY_SPY_NAME_MALI_6">
+			<Text>Hawa</Text>
+			<Gender>feminine</Gender>
+		</Row>
+		<Row Tag="TXT_KEY_SPY_NAME_MALI_7">
+			<Text>Mariam</Text>
+			<Gender>feminine</Gender>
+		</Row>
+		<Row Tag="TXT_KEY_SPY_NAME_MALI_8">
+			<Text>Aminata</Text>
+			<Gender>feminine</Gender>
+		</Row>
+		<Row Tag="TXT_KEY_SPY_NAME_MALI_9">
+			<Text>Fanta</Text>
+			<Gender>feminine</Gender>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Row Tag="TXT_KEY_SPY_NAME_MALI_0">
+			<Text>Ahmad</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SPY_NAME_MALI_1">
+			<Text>Mohammed</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SPY_NAME_MALI_2">
+			<Text>Abdoulaye</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SPY_NAME_MALI_3">
+			<Text>Mahmud</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SPY_NAME_MALI_4">
+			<Text>Yaya</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SPY_NAME_MALI_5">
+			<Text>Fatoumata</Text>
+			<Gender>feminine</Gender>
+		</Row>
+		<Row Tag="TXT_KEY_SPY_NAME_MALI_6">
+			<Text>Hawa</Text>
+			<Gender>feminine</Gender>
+		</Row>
+		<Row Tag="TXT_KEY_SPY_NAME_MALI_7">
+			<Text>Mariam</Text>
+			<Gender>feminine</Gender>
+		</Row>
+		<Row Tag="TXT_KEY_SPY_NAME_MALI_8">
+			<Text>Aminata</Text>
+			<Gender>feminine</Gender>
+		</Row>
+		<Row Tag="TXT_KEY_SPY_NAME_MALI_9">
+			<Text>Fanta</Text>
+			<Gender>feminine</Gender>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Row Tag="TXT_KEY_SPY_NAME_MALI_0">
+			<Text>Ahmad</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SPY_NAME_MALI_1">
+			<Text>Mohammed</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SPY_NAME_MALI_2">
+			<Text>Abdoulaye</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SPY_NAME_MALI_3">
+			<Text>Mahmud</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SPY_NAME_MALI_4">
+			<Text>Yaya</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SPY_NAME_MALI_5">
+			<Text>Fatoumata</Text>
+			<Gender>feminine</Gender>
+		</Row>
+		<Row Tag="TXT_KEY_SPY_NAME_MALI_6">
+			<Text>Hawa</Text>
+			<Gender>feminine</Gender>
+		</Row>
+		<Row Tag="TXT_KEY_SPY_NAME_MALI_7">
+			<Text>Mariam</Text>
+			<Gender>feminine</Gender>
+		</Row>
+		<Row Tag="TXT_KEY_SPY_NAME_MALI_8">
+			<Text>Aminata</Text>
+			<Gender>feminine</Gender>
+		</Row>
+		<Row Tag="TXT_KEY_SPY_NAME_MALI_9">
+			<Text>Fanta</Text>
+			<Gender>feminine</Gender>
+		</Row>
+	</Language_RU_RU>
+
+
+
+</GameData>

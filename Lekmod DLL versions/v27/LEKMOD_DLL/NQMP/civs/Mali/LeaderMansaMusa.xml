@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 5/12/2017 2:19:38 PM -->
+<GameData>
+
+	<Civilization_Leaders>
+		<Row>
+			<CivilizationType>CIVILIZATION_MALI</CivilizationType>
+			<LeaderheadType>LEADER_MANSA_MUSA</LeaderheadType>
+		</Row>
+	</Civilization_Leaders>
+	<Leaders>
+		<Row>
+			<Type>LEADER_MANSA_MUSA</Type>
+			<Description>TXT_KEY_LEADER_MANSA_MUSA</Description>
+			<!-- ADD <Civilopedia>TXT_KEY_LEADER_MANSA_MUSA_PEDIA</Civilopedia>-->
+			<CivilopediaTag>TXT_KEY_CIVILOPEDIA_LEADERS_MANSA_MUSA</CivilopediaTag>
+			<ArtDefineTag>Mali_Mansa_Musa_Scene.xml</ArtDefineTag>
+			<VictoryCompetitiveness>5</VictoryCompetitiveness>
+			<WonderCompetitiveness>4</WonderCompetitiveness>
+			<MinorCivCompetitiveness>5</MinorCivCompetitiveness>
+			<Boldness>4</Boldness>
+			<DiploBalance>5</DiploBalance>
+			<WarmongerHate>5</WarmongerHate>
+			<DenounceWillingness>5</DenounceWillingness>
+			<DoFWillingness>6</DoFWillingness>
+			<Loyalty>6</Loyalty>
+			<Neediness>6</Neediness>
+			<Forgiveness>5</Forgiveness>
+			<Chattiness>6</Chattiness>
+			<Meanness>5</Meanness>
+			<PortraitIndex>1</PortraitIndex>
+			<IconAtlas>NQ_ATLAS</IconAtlas>
+		</Row>
+	</Leaders>
+	<Leader_MajorCivApproachBiases>
+		<Row>
+			<LeaderType>LEADER_MANSA_MUSA</LeaderType>
+			<MajorCivApproachType>MAJOR_CIV_APPROACH_WAR</MajorCivApproachType>
+			<Bias>5</Bias>
+		</Row>
+		<Row>
+			<LeaderType>LEADER_MANSA_MUSA</LeaderType>
+			<MajorCivApproachType>MAJOR_CIV_APPROACH_HOSTILE</MajorCivApproachType>
+			<Bias>4</Bias>
+		</Row>
+		<Row>
+			<LeaderType>LEADER_MANSA_MUSA</LeaderType>
+			<MajorCivApproachType>MAJOR_CIV_APPROACH_DECEPTIVE</MajorCivApproachType>
+			<Bias>5</Bias>
+		</Row>
+		<Row>
+			<LeaderType>LEADER_MANSA_MUSA</LeaderType>
+			<MajorCivApproachType>MAJOR_CIV_APPROACH_GUARDED</MajorCivApproachType>
+			<Bias>6</Bias>
+		</Row>
+		<Row>
+			<LeaderType>LEADER_MANSA_MUSA</LeaderType>
+			<MajorCivApproachType>MAJOR_CIV_APPROACH_AFRAID</MajorCivApproachType>
+			<Bias>5</Bias>
+		</Row>
+		<Row>
+			<LeaderType>LEADER_MANSA_MUSA</LeaderType>
+			<MajorCivApproachType>MAJOR_CIV_APPROACH_FRIENDLY</MajorCivApproachType>
+			<Bias>8</Bias>
+		</Row>
+		<Row>
+			<LeaderType>LEADER_MANSA_MUSA</LeaderType>
+			<MajorCivApproachType>MAJOR_CIV_APPROACH_NEUTRAL</MajorCivApproachType>
+			<Bias>5</Bias>
+		</Row>
+	</Leader_MajorCivApproachBiases>
+	<Leader_MinorCivApproachBiases>
+		<Row>
+			<LeaderType>LEADER_MANSA_MUSA</LeaderType>
+			<MinorCivApproachType>MINOR_CIV_APPROACH_IGNORE</MinorCivApproachType>
+			<Bias>4</Bias>
+		</Row>
+		<Row>
+			<LeaderType>LEADER_MANSA_MUSA</LeaderType>
+			<MinorCivApproachType>MINOR_CIV_APPROACH_FRIENDLY</MinorCivApproachType>
+			<Bias>6</Bias>
+		</Row>
+		<Row>
+			<LeaderType>LEADER_MANSA_MUSA</LeaderType>
+			<MinorCivApproachType>MINOR_CIV_APPROACH_PROTECTIVE</MinorCivApproachType>
+			<Bias>6</Bias>
+		</Row>
+		<Row>
+			<LeaderType>LEADER_MANSA_MUSA</LeaderType>
+			<MinorCivApproachType>MINOR_CIV_APPROACH_CONQUEST</MinorCivApproachType>
+			<Bias>4</Bias>
+		</Row>
+		<Row>
+			<LeaderType>LEADER_MANSA_MUSA</LeaderType>
+			<MinorCivApproachType>MINOR_CIV_APPROACH_BULLY</MinorCivApproachType>
+			<Bias>4</Bias>
+		</Row>
+	</Leader_MinorCivApproachBiases>
+	<Leader_Flavors>
+		<Row>
+			<LeaderType>LEADER_MANSA_MUSA</LeaderType>
+			<FlavorType>FLAVOR_OFFENSE</FlavorType>
+			<Flavor>5</Flavor>
+		</Row>
+		<Row>
+			<LeaderType>LEADER_MANSA_MUSA</LeaderType>
+			<FlavorType>FLAVOR_DEFENSE</FlavorType>
+			<Flavor>7</Flavor>
+		</Row>
+		<Row>
+			<LeaderType>LEADER_MANSA_MUSA</LeaderType>
+			<FlavorType>FLAVOR_CITY_DEFENSE</FlavorType>
+			<Flavor>6</Flavor>
+		</Row>
+		<Row>
+			<LeaderType>LEADER_MANSA_MUSA</LeaderType>
+			<FlavorType>FLAVOR_MILITARY_TRAINING</FlavorType>
+			<Flavor>5</Flavor>
+		</Row>
+		<Row>
+			<LeaderType>LEADER_MANSA_MUSA</LeaderType>
+			<FlavorType>FLAVOR_RECON</FlavorType>
+			<Flavor>3</Flavor>
+		</Row>
+		<Row>
+			<LeaderType>LEADER_MANSA_MUSA</LeaderType>
+			<FlavorType>FLAVOR_RANGED</FlavorType>
+			<Flavor>5</Flavor>
+		</Row>
+		<Row>
+			<LeaderType>LEADER_MANSA_MUSA</LeaderType>
+			<FlavorType>FLAVOR_MOBILE</FlavorType>
+			<Flavor>7</Flavor>
+		</Row>
+		<Row>
+			<LeaderType>LEADER_MANSA_MUSA</LeaderType>
+			<FlavorType>FLAVOR_NAVAL</FlavorType>
+			<Flavor>5</Flavor>
+		</Row>
+		<Row>
+			<LeaderType>LEADER_MANSA_MUSA</LeaderType>
+			<FlavorType>FLAVOR_NAVAL_RECON</FlavorType>
+			<Flavor>5</Flavor>
+		</Row>
+		<Row>
+			<LeaderType>LEADER_MANSA_MUSA</LeaderType>
+			<FlavorType>FLAVOR_NAVAL_GROWTH</FlavorType>
+			<Flavor>5</Flavor>
+		</Row>
+		<Row>
+			<LeaderType>LEADER_MANSA_MUSA</LeaderType>
+			<FlavorType>FLAVOR_NAVAL_TILE_IMPROVEMENT</FlavorType>
+			<Flavor>5</Flavor>
+		</Row>
+		<Row>
+			<LeaderType>LEADER_MANSA_MUSA</LeaderType>
+			<FlavorType>FLAVOR_AIR</FlavorType>
+			<Flavor>6</Flavor>
+		</Row>
+		<Row>
+			<LeaderType>LEADER_MANSA_MUSA</LeaderType>
+			<FlavorType>FLAVOR_EXPANSION</FlavorType>
+			<Flavor>4</Flavor>
+		</Row>
+		<Row>
+			<LeaderType>LEADER_MANSA_MUSA</LeaderType>
+			<FlavorType>FLAVOR_GROWTH</FlavorType>
+			<Flavor>6</Flavor>
+		</Row>
+		<Row>
+			<LeaderType>LEADER_MANSA_MUSA</LeaderType>
+			<FlavorType>FLAVOR_TILE_IMPROVEMENT</FlavorType>
+			<Flavor>7</Flavor>
+		</Row>
+		<Row>
+			<LeaderType>LEADER_MANSA_MUSA</LeaderType>
+			<FlavorType>FLAVOR_INFRASTRUCTURE</FlavorType>
+			<Flavor>6</Flavor>
+		</Row>
+		<Row>
+			<LeaderType>LEADER_MANSA_MUSA</LeaderType>
+			<FlavorType>FLAVOR_PRODUCTION</FlavorType>
+			<Flavor>6</Flavor>
+		</Row>
+		<Row>
+			<LeaderType>LEADER_MANSA_MUSA</LeaderType>
+			<FlavorType>FLAVOR_GOLD</FlavorType>
+			<Flavor>5</Flavor>
+		</Row>
+		<Row>
+			<LeaderType>LEADER_MANSA_MUSA</LeaderType>
+			<FlavorType>FLAVOR_SCIENCE</FlavorType>
+			<Flavor>5</Flavor>
+		</Row>
+		<Row>
+			<LeaderType>LEADER_MANSA_MUSA</LeaderType>
+			<FlavorType>FLAVOR_CULTURE</FlavorType>
+			<Flavor>7</Flavor>
+		</Row>
+		<Row>
+			<LeaderType>LEADER_MANSA_MUSA</LeaderType>
+			<FlavorType>FLAVOR_HAPPINESS</FlavorType>
+			<Flavor>5</Flavor>
+		</Row>
+		<Row>
+			<LeaderType>LEADER_MANSA_MUSA</LeaderType>
+			<FlavorType>FLAVOR_GREAT_PEOPLE</FlavorType>
+			<Flavor>4</Flavor>
+		</Row>
+		<Row>
+			<LeaderType>LEADER_MANSA_MUSA</LeaderType>
+			<FlavorType>FLAVOR_WONDER</FlavorType>
+			<Flavor>4</Flavor>
+		</Row>
+		<Row>
+			<LeaderType>LEADER_MANSA_MUSA</LeaderType>
+			<FlavorType>FLAVOR_RELIGION</FlavorType>
+			<Flavor>6</Flavor>
+		</Row>
+		<Row>
+			<LeaderType>LEADER_MANSA_MUSA</LeaderType>
+			<FlavorType>FLAVOR_DIPLOMACY</FlavorType>
+			<Flavor>5</Flavor>
+		</Row>
+		<Row>
+			<LeaderType>LEADER_MANSA_MUSA</LeaderType>
+			<FlavorType>FLAVOR_SPACESHIP</FlavorType>
+			<Flavor>5</Flavor>
+		</Row>
+		<Row>
+			<LeaderType>LEADER_MANSA_MUSA</LeaderType>
+			<FlavorType>FLAVOR_WATER_CONNECTION</FlavorType>
+			<Flavor>5</Flavor>
+		</Row>
+		<Row>
+			<LeaderType>LEADER_MANSA_MUSA</LeaderType>
+			<FlavorType>FLAVOR_NUKE</FlavorType>
+			<Flavor>5</Flavor>
+		</Row>
+		<Row>
+			<LeaderType>LEADER_MANSA_MUSA</LeaderType>
+			<FlavorType>FLAVOR_USE_NUKE</FlavorType>
+			<Flavor>6</Flavor>
+		</Row>
+		<Row>
+			<LeaderType>LEADER_MANSA_MUSA</LeaderType>
+			<FlavorType>FLAVOR_ESPIONAGE</FlavorType>
+			<Flavor>8</Flavor>
+		</Row>
+		<Row>
+			<LeaderType>LEADER_MANSA_MUSA</LeaderType>
+			<FlavorType>FLAVOR_ANTIAIR</FlavorType>
+			<Flavor>5</Flavor>
+		</Row>
+		<Row>
+			<LeaderType>LEADER_MANSA_MUSA</LeaderType>
+			<FlavorType>FLAVOR_AIR_CARRIER</FlavorType>
+			<Flavor>5</Flavor>
+		</Row>
+		<Row>
+			<LeaderType>LEADER_MANSA_MUSA</LeaderType>
+			<FlavorType>FLAVOR_I_LAND_TRADE_ROUTE</FlavorType>
+			<Flavor>5</Flavor>
+		</Row>
+		<Row>
+			<LeaderType>LEADER_MANSA_MUSA</LeaderType>
+			<FlavorType>FLAVOR_I_SEA_TRADE_ROUTE</FlavorType>
+			<Flavor>5</Flavor>
+		</Row>
+		<Row>
+			<LeaderType>LEADER_MANSA_MUSA</LeaderType>
+			<FlavorType>FLAVOR_ARCHAEOLOGY</FlavorType>
+			<Flavor>5</Flavor>
+		</Row>
+		<Row>
+			<LeaderType>LEADER_MANSA_MUSA</LeaderType>
+			<FlavorType>FLAVOR_I_TRADE_ORIGIN</FlavorType>
+			<Flavor>5</Flavor>
+		</Row>
+		<Row>
+			<LeaderType>LEADER_MANSA_MUSA</LeaderType>
+			<FlavorType>FLAVOR_I_TRADE_DESTINATION</FlavorType>
+			<Flavor>5</Flavor>
+		</Row>
+		<Row>
+			<LeaderType>LEADER_MANSA_MUSA</LeaderType>
+			<FlavorType>FLAVOR_AIRLIFT</FlavorType>
+			<Flavor>5</Flavor>
+		</Row>
+	</Leader_Flavors>
+
+	<Diplomacy_Responses>
+		<Row LeaderType="LEADER_MANSA_MUSA">
+			<ResponseType>RESPONSE_FIRST_GREETING</ResponseType>
+			<Response>TXT_KEY_LEADER_MANSA_MUSA_FIRSTGREETING%</Response>
+		</Row>
+		<Row LeaderType="LEADER_MANSA_MUSA">
+			<ResponseType>RESPONSE_DEFEATED</ResponseType>
+			<Response>TXT_KEY_LEADER_MANSA_MUSA_DEFEATED%</Response>
+		</Row>
+	</Diplomacy_Responses>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Row Tag="TXT_KEY_LEADER_MANSA_MUSA">
+			<Text>Mansa Musa</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIVILOPEDIA_LEADERS_MANSA_MUSA_NAME">
+			<Text>Mansa Musa</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIVILOPEDIA_LEADERS_MANSA_MUSA_SUBTITLE">
+			<Text>Mansa of Mali</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIVILOPEDIA_LEADERS_MANSA_MUSA_LIVED">
+			<Text>	c. 1312 – 1337 C.E.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIVILOPEDIA_LEADERS_MANSA_MUSA_HEADING_1">
+			<Text>Credits</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIVILOPEDIA_LEADERS_MANSA_MUSA_TEXT_1">
+			<Text>All information was gathered from Civilization 4 and Wikipedia:[NEWLINE][NEWLINE][COLOR_POSITIVE_TEXT]https://en.wikipedia.org/wiki/Mali_Empire [ENDCOLOR][NEWLINE][COLOR_POSITIVE_TEXT]https://en.wikipedia.org/wiki/Mali [ENDCOLOR][NEWLINE][COLOR_POSITIVE_TEXT]https://en.wikipedia.org/wiki/Musa_I_of_Mali [ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIVILOPEDIA_LEADERS_MANSA_MUSA_HEADING_2">
+			<Text>History</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIVILOPEDIA_LEADERS_MANSA_MUSA_TEXT_2">
+			<Text>Musa was the grandson of Sundiata Keita, the Muslim founder of the Mali Empire, which existed on the Mandinka plateau in West Africa from the 14th to the 17th centuries. At the time Mali was the source of over half of the world's gold, and Musa was fabulously wealthy. During his famous hajj (pilgrimage to Mecca) in 1324, Musa gave away so much gold in Cairo that the price of gold there was depressed for the next twenty years. He gave away so much treasure, in fact, that he had to borrow money to pay for his return trip. Legend has it that Musa was accompanied on his journey by a huge retinue and honor guard, not to mention 60,000 porters to carry the supplies.[NEWLINE][NEWLINE]Called "Musa the Magnificent," Mansa was celebrated for his enlightenment and piety. He added the important towns of Timbuktu and Gao to his kingdom. Upon reaching the throne, Musa became a feverish Muslim, and he built countless mosques across the country and made Islam the state religion, though he did not persecute other religions in his country.[NEWLINE][NEWLINE]Musa encouraged trade between Mali and the world beyond, using his country's vast resources of kola nuts, ivory, salt, and gold to attain goods from three continents. A believer in knowledge, Musa made the city of Timbuktu into a center of learning and craftsmanship, and Sankore University was one of the great schools in the Muslim world. Students came from all over to receive a free education there.[NEWLINE][NEWLINE]Musa died in 1337, after ruling Mali for twenty-five years. A contemporary historian said of Mansa Musa, that, of all of the leaders in West Africa, he was, "the most powerful, the richest, the most fortunate, and the most feared by his enemies and the most able to do good for those around him."</Text>
+		</Row>
+		<Row Tag="TXT_KEY_LEADER_MANSA_MUSA_FIRSTGREETING_1">
+			<Text>Greetings, stranger! You stand before Mansa Musa of Mali, Emir of Melle, Lord of the Mines of Wangara, and Conqueror of Ghanata. Tell me of your lands!</Text>
+		</Row>
+		<Row Tag="TXT_KEY_LEADER_MANSA_MUSA_DEFEATED_1">
+			<Text>Enough! You have won. The riches of Mali are yours. Treat my people with mercy and they will serve you faithfully.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Row Tag="TXT_KEY_LEADER_MANSA_MUSA">
+			<Text>Mansa Musa</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIVILOPEDIA_LEADERS_MANSA_MUSA_NAME">
+			<Text>Mansa Musa</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIVILOPEDIA_LEADERS_MANSA_MUSA_SUBTITLE">
+			<Text>Mansa of Mali</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIVILOPEDIA_LEADERS_MANSA_MUSA_LIVED">
+			<Text>	c. 1312 – 1337 C.E.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIVILOPEDIA_LEADERS_MANSA_MUSA_HEADING_1">
+			<Text>Credits</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIVILOPEDIA_LEADERS_MANSA_MUSA_TEXT_1">
+			<Text>All information was gathered from Civilization 4 and Wikipedia:[NEWLINE][NEWLINE][COLOR_POSITIVE_TEXT]https://en.wikipedia.org/wiki/Mali_Empire [ENDCOLOR][NEWLINE][COLOR_POSITIVE_TEXT]https://en.wikipedia.org/wiki/Mali [ENDCOLOR][NEWLINE][COLOR_POSITIVE_TEXT]https://en.wikipedia.org/wiki/Musa_I_of_Mali [ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIVILOPEDIA_LEADERS_MANSA_MUSA_HEADING_2">
+			<Text>History</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIVILOPEDIA_LEADERS_MANSA_MUSA_TEXT_2">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Musa was the grandson of Sundiata Keita, the Muslim founder of the Mali Empire, which existed on the Mandinka plateau in West Africa from the 14th to the 17th centuries. At the time Mali was the source of over half of the world's gold, and Musa was fabulously wealthy. During his famous hajj (pilgrimage to Mecca) in 1324, Musa gave away so much gold in Cairo that the price of gold there was depressed for the next twenty years. He gave away so much treasure, in fact, that he had to borrow money to pay for his return trip. Legend has it that Musa was accompanied on his journey by a huge retinue and honor guard, not to mention 60,000 porters to carry the supplies.[NEWLINE][NEWLINE]Called "Musa the Magnificent," Mansa was celebrated for his enlightenment and piety. He added the important towns of Timbuktu and Gao to his kingdom. Upon reaching the throne, Musa became a feverish Muslim, and he built countless mosques across the country and made Islam the state religion, though he did not persecute other religions in his country.[NEWLINE][NEWLINE]Musa encouraged trade between Mali and the world beyond, using his country's vast resources of kola nuts, ivory, salt, and gold to attain goods from three continents. A believer in knowledge, Musa made the city of Timbuktu into a center of learning and craftsmanship, and Sankore University was one of the great schools in the Muslim world. Students came from all over to receive a free education there.[NEWLINE][NEWLINE]Musa died in 1337, after ruling Mali for twenty-five years. A contemporary historian said of Mansa Musa, that, of all of the leaders in West Africa, he was, "the most powerful, the richest, the most fortunate, and the most feared by his enemies and the most able to do good for those around him."</Text>
+		</Row>
+		<Row Tag="TXT_KEY_LEADER_MANSA_MUSA_FIRSTGREETING_1">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Greetings, stranger! You stand before Mansa Musa of Mali, Emir of Melle, Lord of the Mines of Wangara, and Conqueror of Ghanata. Tell me of your lands!</Text>
+		</Row>
+		<Row Tag="TXT_KEY_LEADER_MANSA_MUSA_DEFEATED_1">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Enough! You have won. The riches of Mali are yours. Treat my people with mercy and they will serve you faithfully.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Row Tag="TXT_KEY_LEADER_MANSA_MUSA">
+			<Text>Mansa Musa</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIVILOPEDIA_LEADERS_MANSA_MUSA_NAME">
+			<Text>Mansa Musa</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIVILOPEDIA_LEADERS_MANSA_MUSA_SUBTITLE">
+			<Text>Mansa of Mali</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIVILOPEDIA_LEADERS_MANSA_MUSA_LIVED">
+			<Text>	c. 1312 – 1337 C.E.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIVILOPEDIA_LEADERS_MANSA_MUSA_HEADING_1">
+			<Text>Credits</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIVILOPEDIA_LEADERS_MANSA_MUSA_TEXT_1">
+			<Text>All information was gathered from Civilization 4 and Wikipedia:[NEWLINE][NEWLINE][COLOR_POSITIVE_TEXT]https://en.wikipedia.org/wiki/Mali_Empire [ENDCOLOR][NEWLINE][COLOR_POSITIVE_TEXT]https://en.wikipedia.org/wiki/Mali [ENDCOLOR][NEWLINE][COLOR_POSITIVE_TEXT]https://en.wikipedia.org/wiki/Musa_I_of_Mali [ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIVILOPEDIA_LEADERS_MANSA_MUSA_HEADING_2">
+			<Text>History</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIVILOPEDIA_LEADERS_MANSA_MUSA_TEXT_2">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Musa was the grandson of Sundiata Keita, the Muslim founder of the Mali Empire, which existed on the Mandinka plateau in West Africa from the 14th to the 17th centuries. At the time Mali was the source of over half of the world's gold, and Musa was fabulously wealthy. During his famous hajj (pilgrimage to Mecca) in 1324, Musa gave away so much gold in Cairo that the price of gold there was depressed for the next twenty years. He gave away so much treasure, in fact, that he had to borrow money to pay for his return trip. Legend has it that Musa was accompanied on his journey by a huge retinue and honor guard, not to mention 60,000 porters to carry the supplies.[NEWLINE][NEWLINE]Called "Musa the Magnificent," Mansa was celebrated for his enlightenment and piety. He added the important towns of Timbuktu and Gao to his kingdom. Upon reaching the throne, Musa became a feverish Muslim, and he built countless mosques across the country and made Islam the state religion, though he did not persecute other religions in his country.[NEWLINE][NEWLINE]Musa encouraged trade between Mali and the world beyond, using his country's vast resources of kola nuts, ivory, salt, and gold to attain goods from three continents. A believer in knowledge, Musa made the city of Timbuktu into a center of learning and craftsmanship, and Sankore University was one of the great schools in the Muslim world. Students came from all over to receive a free education there.[NEWLINE][NEWLINE]Musa died in 1337, after ruling Mali for twenty-five years. A contemporary historian said of Mansa Musa, that, of all of the leaders in West Africa, he was, "the most powerful, the richest, the most fortunate, and the most feared by his enemies and the most able to do good for those around him."</Text>
+		</Row>
+		<Row Tag="TXT_KEY_LEADER_MANSA_MUSA_FIRSTGREETING_1">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Greetings, stranger! You stand before Mansa Musa of Mali, Emir of Melle, Lord of the Mines of Wangara, and Conqueror of Ghanata. Tell me of your lands!</Text>
+		</Row>
+		<Row Tag="TXT_KEY_LEADER_MANSA_MUSA_DEFEATED_1">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Enough! You have won. The riches of Mali are yours. Treat my people with mercy and they will serve you faithfully.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Row Tag="TXT_KEY_LEADER_MANSA_MUSA">
+			<Text>Mansa Musa</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIVILOPEDIA_LEADERS_MANSA_MUSA_NAME">
+			<Text>Mansa Musa</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIVILOPEDIA_LEADERS_MANSA_MUSA_SUBTITLE">
+			<Text>Mansa of Mali</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIVILOPEDIA_LEADERS_MANSA_MUSA_LIVED">
+			<Text>	c. 1312 – 1337 C.E.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIVILOPEDIA_LEADERS_MANSA_MUSA_HEADING_1">
+			<Text>Credits</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIVILOPEDIA_LEADERS_MANSA_MUSA_TEXT_1">
+			<Text>All information was gathered from Civilization 4 and Wikipedia:[NEWLINE][NEWLINE][COLOR_POSITIVE_TEXT]https://en.wikipedia.org/wiki/Mali_Empire [ENDCOLOR][NEWLINE][COLOR_POSITIVE_TEXT]https://en.wikipedia.org/wiki/Mali [ENDCOLOR][NEWLINE][COLOR_POSITIVE_TEXT]https://en.wikipedia.org/wiki/Musa_I_of_Mali [ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIVILOPEDIA_LEADERS_MANSA_MUSA_HEADING_2">
+			<Text>History</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIVILOPEDIA_LEADERS_MANSA_MUSA_TEXT_2">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Musa was the grandson of Sundiata Keita, the Muslim founder of the Mali Empire, which existed on the Mandinka plateau in West Africa from the 14th to the 17th centuries. At the time Mali was the source of over half of the world's gold, and Musa was fabulously wealthy. During his famous hajj (pilgrimage to Mecca) in 1324, Musa gave away so much gold in Cairo that the price of gold there was depressed for the next twenty years. He gave away so much treasure, in fact, that he had to borrow money to pay for his return trip. Legend has it that Musa was accompanied on his journey by a huge retinue and honor guard, not to mention 60,000 porters to carry the supplies.[NEWLINE][NEWLINE]Called "Musa the Magnificent," Mansa was celebrated for his enlightenment and piety. He added the important towns of Timbuktu and Gao to his kingdom. Upon reaching the throne, Musa became a feverish Muslim, and he built countless mosques across the country and made Islam the state religion, though he did not persecute other religions in his country.[NEWLINE][NEWLINE]Musa encouraged trade between Mali and the world beyond, using his country's vast resources of kola nuts, ivory, salt, and gold to attain goods from three continents. A believer in knowledge, Musa made the city of Timbuktu into a center of learning and craftsmanship, and Sankore University was one of the great schools in the Muslim world. Students came from all over to receive a free education there.[NEWLINE][NEWLINE]Musa died in 1337, after ruling Mali for twenty-five years. A contemporary historian said of Mansa Musa, that, of all of the leaders in West Africa, he was, "the most powerful, the richest, the most fortunate, and the most feared by his enemies and the most able to do good for those around him."</Text>
+		</Row>
+		<Row Tag="TXT_KEY_LEADER_MANSA_MUSA_FIRSTGREETING_1">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Greetings, stranger! You stand before Mansa Musa of Mali, Emir of Melle, Lord of the Mines of Wangara, and Conqueror of Ghanata. Tell me of your lands!</Text>
+		</Row>
+		<Row Tag="TXT_KEY_LEADER_MANSA_MUSA_DEFEATED_1">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Enough! You have won. The riches of Mali are yours. Treat my people with mercy and they will serve you faithfully.</Text>
+		</Row>
+	</Language_RU_RU>
+
+
+
+
+</GameData>

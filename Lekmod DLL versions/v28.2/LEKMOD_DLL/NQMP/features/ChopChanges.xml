@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 5/4/2017 1:39:05 PM -->
+<GameData>
+
+	<!-- Marsh chop now gives food, and Jungle chop now gives 1/2 food + 1/2 production -->
+	<BuildFeatures>
+		<Update>
+			<Set Food="20" />
+			<Where BuildType="BUILD_REMOVE_MARSH" />
+		</Update>
+		<Update>
+			<Set Food="10" Production="10" />
+			<Where BuildType="BUILD_REMOVE_JUNGLE" />
+		</Update>
+	</BuildFeatures>
+
+	<Language_en_US>
+		<Row Tag="TXT_KEY_MISC_CLEARING_FEATURE_FOOD">
+			<Text>Clearing {TXT_KEY_GRAMMAR_A_AN &lt;&lt; {@1_FeatName}} has created {2_Num} [ICON_FOOD] for {@3_CityName}.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILD_FEATURE_PRODUCTION_AND_FOOD">
+			<Text>, providing {1_Num} [ICON_PRODUCTION] Production and {2_Num} [ICON_FOOD] Food to the nearest City.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILD_FEATURE_FOOD">
+			<Text>, providing {1_Num} [ICON_FOOD] Food to the nearest City.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Row Tag="TXT_KEY_MISC_CLEARING_FEATURE_FOOD">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Clearing {TXT_KEY_GRAMMAR_A_AN &lt;&lt; {@1_FeatName}} has created {2_Num} [ICON_FOOD] for {@3_CityName}.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILD_FEATURE_PRODUCTION_AND_FOOD">
+			<Text>, [COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]providing {1_Num} [ICON_PRODUCTION] Production and {2_Num} [ICON_FOOD] Food to the nearest City.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILD_FEATURE_FOOD">
+			<Text>, [COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]providing {1_Num} [ICON_FOOD] Food to the nearest City.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Row Tag="TXT_KEY_MISC_CLEARING_FEATURE_FOOD">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Clearing {TXT_KEY_GRAMMAR_A_AN &lt;&lt; {@1_FeatName}} has created {2_Num} [ICON_FOOD] for {@3_CityName}.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILD_FEATURE_PRODUCTION_AND_FOOD">
+			<Text>, [COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]providing {1_Num} [ICON_PRODUCTION] Production and {2_Num} [ICON_FOOD] Food to the nearest City.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILD_FEATURE_FOOD">
+			<Text>, [COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]providing {1_Num} [ICON_FOOD] Food to the nearest City.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Row Tag="TXT_KEY_MISC_CLEARING_FEATURE_FOOD">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Clearing {TXT_KEY_GRAMMAR_A_AN &lt;&lt; {@1_FeatName}} has created {2_Num} [ICON_FOOD] for {@3_CityName}.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILD_FEATURE_PRODUCTION_AND_FOOD">
+			<Text>, [COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]providing {1_Num} [ICON_PRODUCTION] Production and {2_Num} [ICON_FOOD] Food to the nearest City.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILD_FEATURE_FOOD">
+			<Text>, [COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]providing {1_Num} [ICON_FOOD] Food to the nearest City.</Text>
+		</Row>
+	</Language_RU_RU>
+	
+</GameData>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 6/7/2015 12:55:40 AM -->
+<GameData>
+
+	<!-- Conquistador -->
+	<UnitClasses>
+		<Row>
+			<Type>UNITCLASS_CONQUISTADOR</Type>
+			<Description>TXT_KEY_UNIT_CONQUISTADOR</Description>
+			<DefaultUnit>UNIT_SPANISH_CONQUISTADOR</DefaultUnit>
+		</Row>
+	</UnitClasses>
+	<Units>
+		<Update>
+			<Set Moves="4" Combat="16" Cost="32" FoundAbroad="false" Found="true" PrereqTech="NULL" Class="UNITCLASS_CONQUISTADOR" ObsoleteTech="NULL" GoodyHutUpgradeUnitClass="NULL" />
+			<Where Type="UNIT_SPANISH_CONQUISTADOR" />
+		</Update>
+	</Units>
+	<Unit_ResourceQuantityRequirements>
+		<Delete UnitType="UNIT_SPANISH_CONQUISTADOR" />
+	</Unit_ResourceQuantityRequirements>
+	<Unit_FreePromotions>
+		<Row>
+			<UnitType>UNIT_SPANISH_CONQUISTADOR</UnitType>
+			<PromotionType>PROMOTION_CITY_PENALTY</PromotionType>
+		</Row>
+	</Unit_FreePromotions>
+	<Unit_ClassUpgrades>
+		<Delete UnitType="UNIT_SPANISH_CONQUISTADOR" />
+	</Unit_ClassUpgrades>
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_NO_ACTION_SETTLER_SIZE_LIMIT" />
+		<Row Tag="TXT_KEY_NO_ACTION_SETTLER_SIZE_LIMIT">
+			<Text>[NEWLINE]Units that can settle new Cities may only be built in Cities with at least {1_Num} [ICON_CITIZEN] Citizens.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_MISSION_BUILD_CITY_HELP" />
+		<Row Tag="TXT_KEY_MISSION_BUILD_CITY_HELP">
+			<Text>Order this unit to found a city in its current location. It is consumed in the process.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_CIV5_SPAIN_CONQUISTADOR_HELP" />
+		<Row Tag="TXT_KEY_CIV5_SPAIN_CONQUISTADOR_HELP">
+			<Text>Medieval Era unit that specializes in scouting and colonizing new lands. Unlocked by opening the Exploration social policy tree.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_CIV5_SPAIN_CONQUISTADOR_STRATEGY" />
+		<Row Tag="TXT_KEY_CIV5_SPAIN_CONQUISTADOR_STRATEGY">
+			<Text>The Conquistador, which is only available by opening the Exploration social policy tree, is a multi-purpose unit that serves as an exceptional scout on land with extra visibility and the ability to found new cities. In the water, the Conquistador has the defensive embarkation promotion that allows it to defend itself against naval units.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_NO_ACTION_SETTLER_SIZE_LIMIT" />
+		<Row Tag="TXT_KEY_NO_ACTION_SETTLER_SIZE_LIMIT">
+			<Text>[NEWLINE][COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Units that can settle new Cities may only be built in Cities with at least {1_Num} [ICON_CITIZEN] Citizens.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_MISSION_BUILD_CITY_HELP" />
+		<Row Tag="TXT_KEY_MISSION_BUILD_CITY_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Order this unit to found a city in its current location. It is consumed in the process.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_CIV5_SPAIN_CONQUISTADOR_HELP" />
+		<Row Tag="TXT_KEY_CIV5_SPAIN_CONQUISTADOR_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Medieval Era unit that specializes in scouting and colonizing new lands. Unlocked by opening the Exploration social policy tree.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_CIV5_SPAIN_CONQUISTADOR_STRATEGY" />
+		<Row Tag="TXT_KEY_CIV5_SPAIN_CONQUISTADOR_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]The Conquistador, which is only available by opening the Exploration social policy tree, is a multi-purpose unit that serves as an exceptional scout on land with extra visibility and the ability to found new cities. In the water, the Conquistador has the defensive embarkation promotion that allows it to defend itself against naval units.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_NO_ACTION_SETTLER_SIZE_LIMIT" />
+		<Row Tag="TXT_KEY_NO_ACTION_SETTLER_SIZE_LIMIT">
+			<Text>[NEWLINE][COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Units that can settle new Cities may only be built in Cities with at least {1_Num} [ICON_CITIZEN] Citizens.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_MISSION_BUILD_CITY_HELP" />
+		<Row Tag="TXT_KEY_MISSION_BUILD_CITY_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Order this unit to found a city in its current location. It is consumed in the process.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_CIV5_SPAIN_CONQUISTADOR_HELP" />
+		<Row Tag="TXT_KEY_CIV5_SPAIN_CONQUISTADOR_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Medieval Era unit that specializes in scouting and colonizing new lands. Unlocked by opening the Exploration social policy tree.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_CIV5_SPAIN_CONQUISTADOR_STRATEGY" />
+		<Row Tag="TXT_KEY_CIV5_SPAIN_CONQUISTADOR_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]The Conquistador, which is only available by opening the Exploration social policy tree, is a multi-purpose unit that serves as an exceptional scout on land with extra visibility and the ability to found new cities. In the water, the Conquistador has the defensive embarkation promotion that allows it to defend itself against naval units.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_NO_ACTION_SETTLER_SIZE_LIMIT" />
+		<Row Tag="TXT_KEY_NO_ACTION_SETTLER_SIZE_LIMIT">
+			<Text>[NEWLINE][COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Units that can settle new Cities may only be built in Cities with at least {1_Num} [ICON_CITIZEN] Citizens.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_MISSION_BUILD_CITY_HELP" />
+		<Row Tag="TXT_KEY_MISSION_BUILD_CITY_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Order this unit to found a city in its current location. It is consumed in the process.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_CIV5_SPAIN_CONQUISTADOR_HELP" />
+		<Row Tag="TXT_KEY_CIV5_SPAIN_CONQUISTADOR_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Medieval Era unit that specializes in scouting and colonizing new lands. Unlocked by opening the Exploration social policy tree.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_CIV5_SPAIN_CONQUISTADOR_STRATEGY" />
+		<Row Tag="TXT_KEY_CIV5_SPAIN_CONQUISTADOR_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]The Conquistador, which is only available by opening the Exploration social policy tree, is a multi-purpose unit that serves as an exceptional scout on land with extra visibility and the ability to found new cities. In the water, the Conquistador has the defensive embarkation promotion that allows it to defend itself against naval units.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

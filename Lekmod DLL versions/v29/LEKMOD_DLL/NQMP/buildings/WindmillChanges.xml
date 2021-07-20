@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2016-09-29 02:49:55 -->
+<GameData>
+	
+	<!-- Windmills no longer require flat land -->
+	<Buildings>
+		<Update>
+			<Set Flat="false" />
+			<Where Type="BUILDING_WINDMILL" />
+		</Update>
+	</Buildings>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_BUILDING_WINDMILL_HELP" />
+		<Row Tag="TXT_KEY_BUILDING_WINDMILL_HELP">
+			<Text>+10% [ICON_PRODUCTION] Production when constructing Buildings.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_BUILDING_WINDMILL_HELP" />
+		<Row Tag="TXT_KEY_BUILDING_WINDMILL_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]+10% [ICON_PRODUCTION] Production when constructing Buildings.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_BUILDING_WINDMILL_HELP" />
+		<Row Tag="TXT_KEY_BUILDING_WINDMILL_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]+10% [ICON_PRODUCTION] Production when constructing Buildings.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_BUILDING_WINDMILL_HELP" />
+		<Row Tag="TXT_KEY_BUILDING_WINDMILL_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]+10% [ICON_PRODUCTION] Production when constructing Buildings.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

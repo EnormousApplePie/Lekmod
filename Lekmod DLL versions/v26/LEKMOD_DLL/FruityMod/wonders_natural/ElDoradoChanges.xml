@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by HellBlazer on 17/7/2015 15:00 -->
+<GameData>
+	
+	<!-- Reduce bonus gold to 75 (down from 500) -->
+	<Features>
+		<Update>
+			<Set FirstFinderGold="75" />
+			<Where Type="FEATURE_EL_DORADO" />
+		</Update>
+	</Features>
+
+	<!-- Increase spawn rate to 5 (up from 2) -->
+	<Natural_Wonder_Placement>
+		<Update>
+			<Where NaturalWonderType="FEATURE_EL_DORADO"/>
+			<Set OccurrenceFrequency="5"/>
+		</Update>
+	</Natural_Wonder_Placement>
+	
+</GameData>

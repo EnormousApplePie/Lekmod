@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2017-02-12 15:57:43 -->
+<GameData>
+	
+	<!-- T1 Worker's Faculties: +2 Science from Workshops, Factories, Solar Plants, Nuclear Plants, and Spaceship Factories. -->
+	<Policies>
+		<Update>
+			<Set Level="2" />
+			<Where Type="POLICY_WORKERS_FACULTIES" />
+		</Update>
+	</Policies>
+	<Policy_BuildingClassYieldModifiers>
+		<Delete PolicyType="POLICY_WORKERS_FACULTIES" BuildingClassType="BUILDINGCLASS_FACTORY" YieldType="YIELD_SCIENCE" YieldMod="25" />
+	</Policy_BuildingClassYieldModifiers>
+	<Policy_BuildingClassProductionModifiers>
+		<Delete PolicyType="POLICY_WORKERS_FACULTIES" BuildingClassType="BUILDINGCLASS_FACTORY" ProductionModifier="100" />
+	</Policy_BuildingClassProductionModifiers>
+	<Policy_BuildingClassYieldChanges>
+		<Row>
+			<PolicyType>POLICY_WORKERS_FACULTIES</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_WORKSHOP</BuildingClassType>
+			<YieldType>YIELD_SCIENCE</YieldType>
+			<YieldChange>2</YieldChange>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_WORKERS_FACULTIES</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_FACTORY</BuildingClassType>
+			<YieldType>YIELD_SCIENCE</YieldType>
+			<YieldChange>2</YieldChange>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_WORKERS_FACULTIES</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_SOLAR_PLANT</BuildingClassType>
+			<YieldType>YIELD_SCIENCE</YieldType>
+			<YieldChange>2</YieldChange>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_WORKERS_FACULTIES</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_NUCLEAR_PLANT</BuildingClassType>
+			<YieldType>YIELD_SCIENCE</YieldType>
+			<YieldChange>2</YieldChange>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_WORKERS_FACULTIES</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_SPACESHIP_FACTORY</BuildingClassType>
+			<YieldType>YIELD_SCIENCE</YieldType>
+			<YieldChange>2</YieldChange>
+		</Row>
+	</Policy_BuildingClassYieldChanges>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_POLICY_WORKERS_FACULTIES_HELP" />
+		<Row Tag="TXT_KEY_POLICY_WORKERS_FACULTIES_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Workers' Faculties[ENDCOLOR][NEWLINE]+2 [ICON_RESEARCH] Science from Workshops, Factories, Solar Plants, Nuclear Plants, and Spaceship Factories.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_POLICY_WORKERS_FACULTIES_HELP" />
+		<Row Tag="TXT_KEY_POLICY_WORKERS_FACULTIES_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Workers' Faculties[ENDCOLOR][NEWLINE]+2 [ICON_RESEARCH] Science from Workshops, Factories, Solar Plants, Nuclear Plants, and Spaceship Factories.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_POLICY_WORKERS_FACULTIES_HELP" />
+		<Row Tag="TXT_KEY_POLICY_WORKERS_FACULTIES_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Workers' Faculties[ENDCOLOR][NEWLINE]+2 [ICON_RESEARCH] Science from Workshops, Factories, Solar Plants, Nuclear Plants, and Spaceship Factories.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_POLICY_WORKERS_FACULTIES_HELP" />
+		<Row Tag="TXT_KEY_POLICY_WORKERS_FACULTIES_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Workers' Faculties[ENDCOLOR][NEWLINE]+2 [ICON_RESEARCH] Science from Workshops, Factories, Solar Plants, Nuclear Plants, and Spaceship Factories.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

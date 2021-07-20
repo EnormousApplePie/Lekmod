@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 10/6/2015 11:13:22 PM -->
+<GameData>
+
+	<Defines>
+		<Update>
+			<Set Value="23" />
+			<Where Name="RELIGION_MIN_FAITH_FIRST_PANTHEON" />
+		</Update>
+		<Update>
+			<Set Value="0" />
+			<Where Name="RELIGION_GAME_FAITH_DELTA_NEXT_PANTHEON" />
+		</Update>
+	</Defines>
+	
+</GameData>

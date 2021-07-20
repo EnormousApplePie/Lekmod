@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<!-- Table data -->
+	<GameOptions>
+		<Row>
+			<Type>GAMEOPTION_RELATIVE_TURN_TIMER</Type>
+			<Description>TXT_KEY_GAME_OPTION_RELATIVE_TURN_TIMERS</Description>
+			<Help>TXT_KEY_GAME_OPTION_RELATIVE_TURN_TIMERS_HELP</Help>
+			<SupportsSinglePlayer>false</SupportsSinglePlayer>
+		</Row>
+	</GameOptions>
+	<Language_en_US>
+		<Row Tag="TXT_KEY_GAME_OPTION_RELATIVE_TURN_TIMERS">
+			<Text>Custom Turn Timer is Relative</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_RELATIVE_TURN_TIMERS_HELP">
+			<Text>The value entered as the custom turn time length acts as a multiplier to default turn times' scaling. For example, 100 keeps the default scaling times, 50 halves the default scaling times, 150 multiplies default scaling times by 1.5, etc.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Row Tag="TXT_KEY_GAME_OPTION_RELATIVE_TURN_TIMERS">
+			<Text>Custom Turn Timer is Relative</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_RELATIVE_TURN_TIMERS_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]The value entered as the custom turn time length acts as a multiplier to default turn times' scaling. For example, 100 keeps the default scaling times, 50 halves the default scaling times, 150 multiplies default scaling times by 1.5, etc.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_ES_ES>
+		<Row Tag="TXT_KEY_GAME_OPTION_RELATIVE_TURN_TIMERS">
+			<Text>Custom Turn Timer is Relative</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_RELATIVE_TURN_TIMERS_HELP">
+			<Text>[COLOR_WARNING_TEXT](ES_ES text) [ENDCOLOR]The value entered as the custom turn time length acts as a multiplier to default turn times' scaling. For example, 100 keeps the default scaling times, 50 halves the default scaling times, 150 multiplies default scaling times by 1.5, etc.</Text>
+		</Row>
+	</Language_ES_ES>
+	<Language_FR_FR>
+		<Row Tag="TXT_KEY_GAME_OPTION_RELATIVE_TURN_TIMERS">
+			<Text>Custom Turn Timer is Relative</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_RELATIVE_TURN_TIMERS_HELP">
+			<Text>[COLOR_WARNING_TEXT](FR_FR text) [ENDCOLOR]The value entered as the custom turn time length acts as a multiplier to default turn times' scaling. For example, 100 keeps the default scaling times, 50 halves the default scaling times, 150 multiplies default scaling times by 1.5, etc.</Text>
+		</Row>
+	</Language_FR_FR>
+	<Language_PL_PL>
+		<Row Tag="TXT_KEY_GAME_OPTION_RELATIVE_TURN_TIMERS">
+			<Text>Custom Turn Timer is Relative</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_RELATIVE_TURN_TIMERS_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]The value entered as the custom turn time length acts as a multiplier to default turn times' scaling. For example, 100 keeps the default scaling times, 50 halves the default scaling times, 150 multiplies default scaling times by 1.5, etc.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Row Tag="TXT_KEY_GAME_OPTION_RELATIVE_TURN_TIMERS">
+			<Text>Custom Turn Timer is Relative</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_RELATIVE_TURN_TIMERS_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]The value entered as the custom turn time length acts as a multiplier to default turn times. For example, 100 keeps the default turn times, 50 halves the default turn times, 150 multiplies default turn times by 1.5, etc.</Text>
+		</Row>
+	</Language_RU_RU>
+</GameData>

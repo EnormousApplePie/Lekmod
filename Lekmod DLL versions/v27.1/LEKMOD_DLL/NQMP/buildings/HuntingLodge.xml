@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 5/7/2017 9:54:31 PM -->
+<GameData>
+	
+	<!-- [NEW BUILDING] Hunting Lodge (Archery tech): +1 flat Food. +1 Food from Deer and Bison. Allows Food trade routes. -->
+	<BuildingClasses>
+		<Row>
+			<Type>BUILDINGCLASS_HUNTING_LODGE</Type>
+			<DefaultBuilding>BUILDING_HUNTING_LODGE</DefaultBuilding>
+			<Description>TXT_KEY_BUILDING_HUNTING_LODGE</Description>
+		</Row>
+	</BuildingClasses>
+	<Buildings>
+		<Row>
+			<Type>BUILDING_HUNTING_LODGE</Type>
+			<BuildingClass>BUILDINGCLASS_HUNTING_LODGE</BuildingClass>
+			<FreeStartEra>ERA_RENAISSANCE</FreeStartEra>
+			<Cost>48</Cost>
+			<GoldMaintenance>1</GoldMaintenance>
+			<PrereqTech>TECH_ARCHERY</PrereqTech>
+			<Help>TXT_KEY_BUILDING_HUNTING_LODGE_HELP</Help>
+			<Description>TXT_KEY_BUILDING_HUNTING_LODGE</Description>
+			<Civilopedia>TXT_KEY_CIV5_BUILDINGS_HUNTING_LODGE_TEXT</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_HUNTING_LODGE_STRATEGY</Strategy>
+			<ArtDefineTag>ART_DEF_BUILDING_HUNTING_LODGE</ArtDefineTag>
+			<MinAreaSize>-1</MinAreaSize>
+			<ConquestProb>66</ConquestProb>
+			<HurryCostModifier>25</HurryCostModifier>
+			<AllowsFoodTradeRoutes>true</AllowsFoodTradeRoutes>
+			<IconAtlas>TECH_ATLAS_2</IconAtlas>
+			<PortraitIndex>13</PortraitIndex>
+		</Row>
+	</Buildings>
+	<Building_Flavors>
+		<Row>
+			<BuildingType>BUILDING_HUNTING_LODGE</BuildingType>
+			<FlavorType>FLAVOR_GROWTH</FlavorType>
+			<Flavor>18</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_HUNTING_LODGE</BuildingType>
+			<FlavorType>FLAVOR_SCIENCE</FlavorType>
+			<Flavor>5</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_HUNTING_LODGE</BuildingType>
+			<FlavorType>FLAVOR_PRODUCTION</FlavorType>
+			<Flavor>5</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_HUNTING_LODGE</BuildingType>
+			<FlavorType>FLAVOR_EXPANSION</FlavorType>
+			<Flavor>5</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_HUNTING_LODGE</BuildingType>
+			<FlavorType>FLAVOR_I_LAND_TRADE_ROUTE</FlavorType>
+			<Flavor>5</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_HUNTING_LODGE</BuildingType>
+			<FlavorType>FLAVOR_I_SEA_TRADE_ROUTE</FlavorType>
+			<Flavor>5</Flavor>
+		</Row>
+	</Building_Flavors>
+	<Building_ResourceYieldChanges>
+		<Row>
+			<BuildingType>BUILDING_HUNTING_LODGE</BuildingType>
+			<ResourceType>RESOURCE_DEER</ResourceType>
+			<YieldType>YIELD_FOOD</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_HUNTING_LODGE</BuildingType>
+			<ResourceType>RESOURCE_BISON</ResourceType>
+			<YieldType>YIELD_FOOD</YieldType>
+			<Yield>1</Yield>
+		</Row>
+	</Building_ResourceYieldChanges>
+	<Building_YieldChanges>
+		<Row>
+			<BuildingType>BUILDING_HUNTING_LODGE</BuildingType>
+			<YieldType>YIELD_FOOD</YieldType>
+			<Yield>1</Yield>
+		</Row>
+	</Building_YieldChanges>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Row Tag="TXT_KEY_BUILDING_HUNTING_LODGE">
+			<Text>Hunting Lodge</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_HUNTING_LODGE_HELP">
+			<Text>Each source of [ICON_RES_DEER] Deer and [ICON_RES_BISON] Bison worked by this City produce +1 [ICON_FOOD] Food.[NEWLINE][NEWLINE]Allows [ICON_FOOD] Food to be moved from this city along trade routes inside your civilization.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_HUNTING_LODGE_STRATEGY">
+			<Text>The Hunting Lodge increases the [ICON_FOOD] Food intake of a city, especially in typically low food areas like Tundra. Build them to create a large city fast.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_BUILDINGS_HUNTING_LODGE_TEXT">
+			<Text>[COLOR_POSITIVE_TEXT]Source: Wikipedia (https://en.wikipedia.org/wiki/Hunting)[ENDCOLOR][NEWLINE][NEWLINE]Hunting is the practice of killing or trapping animals, or pursuing or tracking them with the intent of doing so. Hunting wildlife or feral animals is most commonly done by humans for food, recreation, to remove predators that are dangerous to humans or domestic animals, or for trade. Lawful hunting is distinguished from poaching, which is the illegal killing, trapping or capture of the hunted species. The species that are hunted are referred to as game or prey and are usually mammals and birds.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Row Tag="TXT_KEY_BUILDING_HUNTING_LODGE">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Hunting Lodge</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_HUNTING_LODGE_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Each source of [ICON_RES_DEER] Deer and [ICON_RES_BISON] Bison worked by this City produce +1 [ICON_FOOD] Food.[NEWLINE][NEWLINE]Allows [ICON_FOOD] Food to be moved from this city along trade routes inside your civilization.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_HUNTING_LODGE_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]The Hunting Lodge increases the [ICON_FOOD] Food intake of a city, especially in typically low food areas like Tundra. Build them to create a large city fast.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_BUILDINGS_HUNTING_LODGE_TEXT">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Source: Wikipedia (https://en.wikipedia.org/wiki/Hunting)[ENDCOLOR][NEWLINE][NEWLINE]Hunting is the practice of killing or trapping animals, or pursuing or tracking them with the intent of doing so. Hunting wildlife or feral animals is most commonly done by humans for food, recreation, to remove predators that are dangerous to humans or domestic animals, or for trade. Lawful hunting is distinguished from poaching, which is the illegal killing, trapping or capture of the hunted species. The species that are hunted are referred to as game or prey and are usually mammals and birds.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Row Tag="TXT_KEY_BUILDING_HUNTING_LODGE">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Hunting Lodge</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_HUNTING_LODGE_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Each source of [ICON_RES_DEER] Deer and [ICON_RES_BISON] Bison worked by this City produce +1 [ICON_FOOD] Food.[NEWLINE][NEWLINE]Allows [ICON_FOOD] Food to be moved from this city along trade routes inside your civilization.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_HUNTING_LODGE_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]The Hunting Lodge increases the [ICON_FOOD] Food intake of a city, especially in typically low food areas like Tundra. Build them to create a large city fast.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_BUILDINGS_HUNTING_LODGE_TEXT">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Source: Wikipedia (https://en.wikipedia.org/wiki/Hunting)[ENDCOLOR][NEWLINE][NEWLINE]Hunting is the practice of killing or trapping animals, or pursuing or tracking them with the intent of doing so. Hunting wildlife or feral animals is most commonly done by humans for food, recreation, to remove predators that are dangerous to humans or domestic animals, or for trade. Lawful hunting is distinguished from poaching, which is the illegal killing, trapping or capture of the hunted species. The species that are hunted are referred to as game or prey and are usually mammals and birds.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Row Tag="TXT_KEY_BUILDING_HUNTING_LODGE">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Hunting Lodge</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_HUNTING_LODGE_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Each source of [ICON_RES_DEER] Deer and [ICON_RES_BISON] Bison worked by this City produce +1 [ICON_FOOD] Food.[NEWLINE][NEWLINE]Allows [ICON_FOOD] Food to be moved from this city along trade routes inside your civilization.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_HUNTING_LODGE_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]The Hunting Lodge increases the [ICON_FOOD] Food intake of a city, especially in typically low food areas like Tundra. Build them to create a large city fast.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_BUILDINGS_HUNTING_LODGE_TEXT">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Source: Wikipedia (https://en.wikipedia.org/wiki/Hunting)[ENDCOLOR][NEWLINE][NEWLINE]Hunting is the practice of killing or trapping animals, or pursuing or tracking them with the intent of doing so. Hunting wildlife or feral animals is most commonly done by humans for food, recreation, to remove predators that are dangerous to humans or domestic animals, or for trade. Lawful hunting is distinguished from poaching, which is the illegal killing, trapping or capture of the hunted species. The species that are hunted are referred to as game or prey and are usually mammals and birds.</Text>
+		</Row>
+	</Language_RU_RU>
+	
+</GameData>

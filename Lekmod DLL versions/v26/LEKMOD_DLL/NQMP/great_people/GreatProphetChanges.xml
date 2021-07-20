@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 4/2/2017 11:38:35 PM -->
+<GameData>
+
+	<!-- movement increased to 4 -->
+	<Units>
+		<Update>
+			<Set Moves="4" />
+			<Where Type="UNIT_PROPHET" />
+		</Update>
+	</Units>
+
+</GameData>

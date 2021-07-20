@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 5/7/2017 2:12:31 PM -->
+<GameData>
+
+	<!-- Goddess of Love: +12 Faith (on Quick Speed) when a new Citizen is born. -->
+	<Beliefs>
+		<Update>
+			<Set MinPopulation="0" HappinessPerCity="0" FlatFaithPerCitizenBorn="18" />
+			<Where Type="BELIEF_GODDESS_LOVE" />
+		</Update>
+	</Beliefs>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_BELIEF_GODDESS_LOVE" />
+		<Row Tag="TXT_KEY_BELIEF_GODDESS_LOVE">
+			<Text>Gain 12 [ICON_PEACE] Faith (on Quick Speed) when a new [ICON_CITIZEN] Citizen is born</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_BELIEF_GODDESS_LOVE" />
+		<Row Tag="TXT_KEY_BELIEF_GODDESS_LOVE">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Gain 12 [ICON_PEACE] Faith (on Quick Speed) when a new [ICON_CITIZEN] Citizen is born</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_BELIEF_GODDESS_LOVE" />
+		<Row Tag="TXT_KEY_BELIEF_GODDESS_LOVE">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Gain 12 [ICON_PEACE] Faith (on Quick Speed) when a new [ICON_CITIZEN] Citizen is born</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_BELIEF_GODDESS_LOVE" />
+		<Row Tag="TXT_KEY_BELIEF_GODDESS_LOVE">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Gain 12 [ICON_PEACE] Faith (on Quick Speed) when a new [ICON_CITIZEN] Citizen is born</Text>
+		</Row>
+	</Language_RU_RU>
+	
+</GameData>

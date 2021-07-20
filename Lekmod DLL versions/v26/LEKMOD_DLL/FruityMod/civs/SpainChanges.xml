@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 6/7/2015 3:49:05 AM -->
+<GameData>
+	
+	<!-- Spain now gets 100 gold per Natural Wonder discovered, regardless if whether or not it's the first discovery. -->
+	<Traits>
+		<Update>
+			<Set NaturalWonderFirstFinderGold="100" />
+			<Where Type="TRAIT_SEVEN_CITIES" />
+		</Update>
+	</Traits>
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_TRAIT_SEVEN_CITIES" />
+		<Row Tag="TXT_KEY_TRAIT_SEVEN_CITIES">
+			<Text>Gain [ICON_GOLD] 100 Gold whenever you discover a Natural Wonder. [ICON_CULTURE] Culture, [ICON_HAPPINESS_1] Happiness, and tile yields from Natural Wonders doubled.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_TRAIT_SEVEN_CITIES" />
+		<Row Tag="TXT_KEY_TRAIT_SEVEN_CITIES">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][NEWLINE]Gain [ICON_GOLD] 100 Gold whenever you discover a Natural Wonder. [ICON_CULTURE] Culture, [ICON_HAPPINESS_1] Happiness, and tile yields from Natural Wonders doubled.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_TRAIT_SEVEN_CITIES" />
+		<Row Tag="TXT_KEY_TRAIT_SEVEN_CITIES">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][NEWLINE]Gain 100 [ICON_GOLD] Gold whenever you discover a Natural Wonder. [ICON_CULTURE] Culture, [ICON_HAPPINESS_1] Happiness, and tile yields from Natural Wonders doubled.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_TRAIT_SEVEN_CITIES" />
+		<Row Tag="TXT_KEY_TRAIT_SEVEN_CITIES">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][NEWLINE]Gain 100 [ICON_GOLD] Gold whenever you discover a Natural Wonder. [ICON_CULTURE] Culture, [ICON_HAPPINESS_1] Happiness, and tile yields from Natural Wonders doubled.</Text>
+		</Row>
+	</Language_RU_RU>
+	
+	
+	<!-- Replace Conquistador for Spain with New Unique -->
+	<!-- PLAZA DE TOROS (Unique Building): Replaces Circus. Provides an additional +2 Culture and can also be constructed with an improved source of Cows. -->
+	<Civilization_UnitClassOverrides>
+		<Delete UnitType="UNIT_SPANISH_CONQUISTADOR" />
+	</Civilization_UnitClassOverrides>
+	<Buildings>
+		<Row>
+			<Type>BUILDING_PLAZA_DE_TOROS</Type>
+			<BuildingClass>BUILDINGCLASS_CIRCUS</BuildingClass>
+			<Cost>75</Cost>
+			<PrereqTech>TECH_TRAPPING</PrereqTech>
+			<Description>TXT_KEY_BUILDING_PLAZA_DE_TOROS</Description>
+			<Civilopedia>TXT_KEY_CIV5_BUILDINGS_PLAZA_DE_TOROS_TEXT</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_PLAZA_DE_TOROS_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_PLAZA_DE_TOROS_HELP</Help>
+			<ArtDefineTag>ART_DEF_BUILDING_CIRCUS</ArtDefineTag>
+			<MinAreaSize>-1</MinAreaSize>
+			<ConquestProb>66</ConquestProb>
+			<Happiness>2</Happiness>
+			<HurryCostModifier>25</HurryCostModifier>
+			<IconAtlas>BW_ATLAS_1</IconAtlas>
+			<PortraitIndex>20</PortraitIndex>
+		</Row>
+	</Buildings>
+	<Building_LocalResourceOrs>
+		<Row>
+			<BuildingType>BUILDING_PLAZA_DE_TOROS</BuildingType>
+			<ResourceType>RESOURCE_HORSE</ResourceType>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_PLAZA_DE_TOROS</BuildingType>
+			<ResourceType>RESOURCE_IVORY</ResourceType>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_PLAZA_DE_TOROS</BuildingType>
+			<ResourceType>RESOURCE_COW</ResourceType>
+		</Row>
+	</Building_LocalResourceOrs>
+	<Building_YieldChanges>
+		<Row>
+			<BuildingType>BUILDING_PLAZA_DE_TOROS</BuildingType>
+			<YieldType>YIELD_CULTURE</YieldType>
+			<Yield>2</Yield>
+		</Row>
+	</Building_YieldChanges>
+	<Civilization_BuildingClassOverrides>
+		<Row>
+			<CivilizationType>CIVILIZATION_SPAIN</CivilizationType>
+			<BuildingClassType>BUILDINGCLASS_CIRCUS</BuildingClassType>
+			<BuildingType>BUILDING_PLAZA_DE_TOROS</BuildingType>
+		</Row>
+	</Civilization_BuildingClassOverrides>
+	<Language_en_US>
+		<Row Tag="TXT_KEY_BUILDING_PLAZA_DE_TOROS">
+			<Text>Plaza de Toros</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_PLAZA_DE_TOROS_HELP">
+			<Text>City must have an improved source of [ICON_RES_HORSE] Horses, [ICON_RES_IVORY] Ivory, or [ICON_RES_COW] Cows nearby.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_PLAZA_DE_TOROS_STRATEGY">
+			<Text>The Plaza de Toros is a unique building for Spain which can only be constructed in a city with an improved source of [ICON_RES_HORSE] Horses, [ICON_RES_IVORY] Ivory, or [ICON_RES_COW] Cows nearby. The Plaza de Toros increases a civilization's [ICON_HAPPINESS_1] Happiness and [ICON_CULTURE] Culture.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_BUILDINGS_PLAZA_DE_TOROS_TEXT">
+			<Text>[COLOR_POSITIVE_TEXT]Source: Wikipedia (http://en.wikipedia.org/wiki/Bullring)[ENDCOLOR][NEWLINE][NEWLINE] The classic bullring is an enclosed, roughly circular amphitheatre with tiered rows of stands that surround an open central space. The open space forms the arena or ruedo, a field of densely packed crushed rock (albero) that is the stage for the bullfight. Also on the ground level, the central arena is surrounded by a staging area where the bullfighters prepare and take refuge, called the callejón (alley). The callejón is separated from the arena by a wall or other structure, usually made of wood and roughly 140 cm high. The partition wall has doors for the entrance and exit of the bull (puerta de los toriles) and human participants (puerta de cuadrilla), although the form, number, and placement of these doors will vary from one bullring to another. In regular places, the wall is pushed outwards leaving splits (burladero, from burlar: to evade, to dodge) that allow the bullfighters to go in the arena and to take refuge but are too narrow for the bull. Nevertheless, on rare occasions the bull jumps the wall causing havoc in the corridor. The walls also have a type of stirrup or foothold that aids in crossing over to the central arena, and sometimes stirrups on the arena side as well; these are used mostly by event staff if they need to intervene quickly in the case of an emergency. The arena is surrounded by climbing rows of seats. The seats are priced differently according to the position of the sun during the show, normally in the afternoon. The hot sol, "sun", is cheaper than the fresher sombra, "shade".</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Row Tag="TXT_KEY_BUILDING_PLAZA_DE_TOROS">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Plaza de Toros</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_PLAZA_DE_TOROS_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]City must have an improved source of [ICON_RES_HORSE] Horses, [ICON_RES_IVORY] Ivory, or [ICON_RES_COW] Cows nearby.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_PLAZA_DE_TOROS_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]The Plaza de Toros is a unique building for Spain which can only be constructed in a city with an improved source of [ICON_RES_HORSE] Horses, [ICON_RES_IVORY] Ivory, or [ICON_RES_COW] Cows nearby. The Plaza de Toros increases a civilization's [ICON_HAPPINESS_1] Happiness and [ICON_CULTURE] Culture.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_BUILDINGS_PLAZA_DE_TOROS_TEXT">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Source: Wikipedia (http://en.wikipedia.org/wiki/Bullring)[ENDCOLOR][NEWLINE][NEWLINE] [COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]The classic bullring is an enclosed, roughly circular amphitheatre with tiered rows of stands that surround an open central space. The open space forms the arena or ruedo, a field of densely packed crushed rock (albero) that is the stage for the bullfight. Also on the ground level, the central arena is surrounded by a staging area where the bullfighters prepare and take refuge, called the callejón (alley). The callejón is separated from the arena by a wall or other structure, usually made of wood and roughly 140 cm high. The partition wall has doors for the entrance and exit of the bull (puerta de los toriles) and human participants (puerta de cuadrilla), although the form, number, and placement of these doors will vary from one bullring to another. In regular places, the wall is pushed outwards leaving splits (burladero, from burlar: to evade, to dodge) that allow the bullfighters to go in the arena and to take refuge but are too narrow for the bull. Nevertheless, on rare occasions the bull jumps the wall causing havoc in the corridor. The walls also have a type of stirrup or foothold that aids in crossing over to the central arena, and sometimes stirrups on the arena side as well; these are used mostly by event staff if they need to intervene quickly in the case of an emergency. The arena is surrounded by climbing rows of seats. The seats are priced differently according to the position of the sun during the show, normally in the afternoon. The hot sol, "sun", is cheaper than the fresher sombra, "shade".</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Row Tag="TXT_KEY_BUILDING_PLAZA_DE_TOROS">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Plaza de Toros</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_PLAZA_DE_TOROS_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]City must have an improved source of [ICON_RES_HORSE] Horses, [ICON_RES_IVORY] Ivory, or [ICON_RES_COW] Cows nearby.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_PLAZA_DE_TOROS_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]The Plaza de Toros is a unique building for Spain which can only be constructed in a city with an improved source of [ICON_RES_HORSE] Horses, [ICON_RES_IVORY] Ivory, or [ICON_RES_COW] Cows nearby. The Plaza de Toros increases a civilization's [ICON_HAPPINESS_1] Happiness and [ICON_CULTURE] Culture.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_BUILDINGS_PLAZA_DE_TOROS_TEXT">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Source: Wikipedia (http://en.wikipedia.org/wiki/Bullring)[ENDCOLOR][NEWLINE][NEWLINE] The classic bullring is an enclosed, roughly circular amphitheatre with tiered rows of stands that surround an open central space. The open space forms the arena or ruedo, a field of densely packed crushed rock (albero) that is the stage for the bullfight. Also on the ground level, the central arena is surrounded by a staging area where the bullfighters prepare and take refuge, called the callejón (alley). The callejón is separated from the arena by a wall or other structure, usually made of wood and roughly 140 cm high. The partition wall has doors for the entrance and exit of the bull (puerta de los toriles) and human participants (puerta de cuadrilla), although the form, number, and placement of these doors will vary from one bullring to another. In regular places, the wall is pushed outwards leaving splits (burladero, from burlar: to evade, to dodge) that allow the bullfighters to go in the arena and to take refuge but are too narrow for the bull. Nevertheless, on rare occasions the bull jumps the wall causing havoc in the corridor. The walls also have a type of stirrup or foothold that aids in crossing over to the central arena, and sometimes stirrups on the arena side as well; these are used mostly by event staff if they need to intervene quickly in the case of an emergency. The arena is surrounded by climbing rows of seats. The seats are priced differently according to the position of the sun during the show, normally in the afternoon. The hot sol, "sun", is cheaper than the fresher sombra, "shade".</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Row Tag="TXT_KEY_BUILDING_PLAZA_DE_TOROS">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Plaza de Toros</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_PLAZA_DE_TOROS_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]City must have an improved source of [ICON_RES_HORSE] Horses, [ICON_RES_IVORY] Ivory, or [ICON_RES_COW] Cows nearby.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_PLAZA_DE_TOROS_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]The Plaza de Toros is a unique building for Spain which can only be constructed in a city with an improved source of [ICON_RES_HORSE] Horses, [ICON_RES_IVORY] Ivory, or [ICON_RES_COW] Cows nearby. The Plaza de Toros increases a civilization's [ICON_HAPPINESS_1] Happiness and [ICON_CULTURE] Culture.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_BUILDINGS_PLAZA_DE_TOROS_TEXT">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Source: Wikipedia (http://en.wikipedia.org/wiki/Bullring)[ENDCOLOR][NEWLINE][NEWLINE] The classic bullring is an enclosed, roughly circular amphitheatre with tiered rows of stands that surround an open central space. The open space forms the arena or ruedo, a field of densely packed crushed rock (albero) that is the stage for the bullfight. Also on the ground level, the central arena is surrounded by a staging area where the bullfighters prepare and take refuge, called the callejón (alley). The callejón is separated from the arena by a wall or other structure, usually made of wood and roughly 140 cm high. The partition wall has doors for the entrance and exit of the bull (puerta de los toriles) and human participants (puerta de cuadrilla), although the form, number, and placement of these doors will vary from one bullring to another. In regular places, the wall is pushed outwards leaving splits (burladero, from burlar: to evade, to dodge) that allow the bullfighters to go in the arena and to take refuge but are too narrow for the bull. Nevertheless, on rare occasions the bull jumps the wall causing havoc in the corridor. The walls also have a type of stirrup or foothold that aids in crossing over to the central arena, and sometimes stirrups on the arena side as well; these are used mostly by event staff if they need to intervene quickly in the case of an emergency. The arena is surrounded by climbing rows of seats. The seats are priced differently according to the position of the sun during the show, normally in the afternoon. The hot sol, "sun", is cheaper than the fresher sombra, "shade".</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

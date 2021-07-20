@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2017-11-15 16:04:01 -->
+<GameData>
+	<Audio_Sounds>
+		<Row>
+			<SoundID>SND_LEADER_MUSIC_MANSA_MUSA_PEACE</SoundID>
+			<Filename>MansaMusaPeace</Filename>
+			<LoadType>DynamicResident</LoadType>
+		</Row>
+		<Row>
+			<SoundID>SND_LEADER_MUSIC_MANSA_MUSA_WAR</SoundID>
+			<Filename>MansaMusaWar</Filename>
+			<LoadType>DynamicResident</LoadType>
+		</Row>
+	</Audio_Sounds>
+	<Audio_2DSounds>
+		<Row>
+			<ScriptID>AS2D_LEADER_MUSIC_MANSA_MUSA_PEACE</ScriptID>
+			<SoundID>SND_LEADER_MUSIC_MANSA_MUSA_PEACE</SoundID>
+			<SoundType>GAME_MUSIC</SoundType>
+			<IsMusic>true</IsMusic>
+		</Row>
+		<Row>
+			<ScriptID>AS2D_LEADER_MUSIC_MANSA_MUSA_WAR</ScriptID>
+			<SoundID>SND_LEADER_MUSIC_MANSA_MUSA_WAR</SoundID>
+			<SoundType>GAME_MUSIC</SoundType>
+			<IsMusic>true</IsMusic>
+		</Row>
+	</Audio_2DSounds>
+</GameData>

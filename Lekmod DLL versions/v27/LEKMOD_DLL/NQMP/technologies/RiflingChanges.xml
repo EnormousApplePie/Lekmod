@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2017-09-27 21:13:23 -->
+<GameData>
+	
+	<!-- Rifling no longer requires Economics. -->
+	<Technologies>
+		<Update>
+			<Set GridY="7" />
+			<Where Type="TECH_RIFLING" />
+		</Update>
+	</Technologies>
+	<Technology_PrereqTechs>
+		<Delete TechType="TECH_RIFLING" PrereqTech="TECH_ECONOMICS" />
+	</Technology_PrereqTechs>
+	
+</GameData>

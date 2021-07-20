@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2016-09-27 21:14:08 -->
+<GameData>
+	
+	<!-- Removed or moved the following Enhancers: Defender of the Faith, Holy Order, Itinerant Preachers, Messiah, Missionary Zeal, Religious Texts, Religious Unity -->
+	<Beliefs>
+		<!-- BELIEF_DEFENDER_FAITH moved to Founder in /religion/founders/DefenderOfTheFaith.xml -->
+		<Delete Type="BELIEF_HOLY_ORDER" />
+		<Delete Type="BELIEF_ITINERANT_PREACHERS" />
+		<!-- BELIEF_MESSIAH moved to Founder in /religion/founders/Messiah.xml -->
+		<!-- BELIEF_MISSIONARY_ZEAL moved to Founder in /religion/founders/MissionaryZeal.xml -->
+		<Delete Type="BELIEF_RELIGIOUS_TEXTS" />
+		<!-- BELIEF_RELIGIOUS_UNITY moved to Reformation in /religion/reformations/ReligiousUnity.xml -->
+	</Beliefs>
+
+</GameData>

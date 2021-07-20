@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 6/2/2015 11:40:37 PM -->
+<GameData>
+	
+	<!-- Finisher now also increases City State Food/Faith/Culture gifts by 50% and military City States gift 2 units at a time (instead of 1). -->
+	<Policies>
+		<Update>
+			<Set MinorMilitaryNumExtraUnitsToGift="1" CityStateBonusModifier="50" />
+			<Where Type="POLICY_PATRONAGE_FINISHER" />
+		</Update>
+	</Policies>
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_POLICY_BRANCH_PATRONAGE_HELP" />
+		<Row Tag="TXT_KEY_POLICY_BRANCH_PATRONAGE_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Patronage[ENDCOLOR] enhances the benefits of City-State friendship.[NEWLINE][NEWLINE]Adopting Patronage will cause [ICON_INFLUENCE] Influence with City-States to degrade 25% slower than normal. Unlocks building the Forbidden Palace.[NEWLINE][NEWLINE]Adopting all policies in the Patronage tree will cause all [COLOR_POSITIVE_TEXT]Allied[ENDCOLOR] City-States to occasionally gift you [ICON_GREAT_PEOPLE] Great People. [COLOR_POSITIVE_TEXT]Friendly[ENDCOLOR] and [COLOR_POSITIVE_TEXT]Allied[ENDCOLOR] City-State gifts of [ICON_FOOD] Food, [ICON_CULTURE] Culture, and [ICON_PEACE] Faith are increased by 50%, and Militaristic City-States send two units per gift.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_POLICY_BRANCH_PATRONAGE_HELP" />
+		<Row Tag="TXT_KEY_POLICY_BRANCH_PATRONAGE_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Patronage[ENDCOLOR] enhances the benefits of City-State friendship.[NEWLINE][NEWLINE]Adopting Patronage will cause [ICON_INFLUENCE] Influence with City-States to degrade 25% slower than normal. Unlocks building the Forbidden Palace.[NEWLINE][NEWLINE]Adopting all policies in the Patronage tree will cause all [COLOR_POSITIVE_TEXT]Allied[ENDCOLOR] City-States to occasionally gift you [ICON_GREAT_PEOPLE] Great People. [COLOR_POSITIVE_TEXT]Friendly[ENDCOLOR] and [COLOR_POSITIVE_TEXT]Allied[ENDCOLOR] City-State gifts of [ICON_FOOD] Food, [ICON_CULTURE] Culture, and [ICON_PEACE] Faith are increased by 50%, and Militaristic City-States send two units per gift.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_POLICY_BRANCH_PATRONAGE_HELP" />
+		<Row Tag="TXT_KEY_POLICY_BRANCH_PATRONAGE_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Patronage[ENDCOLOR] enhances the benefits of City-State friendship.[NEWLINE][NEWLINE]Adopting Patronage will cause [ICON_INFLUENCE] Influence with City-States to degrade 25% slower than normal. Unlocks building the Forbidden Palace.[NEWLINE][NEWLINE]Adopting all policies in the Patronage tree will cause all [COLOR_POSITIVE_TEXT]Allied[ENDCOLOR] City-States to occasionally gift you [ICON_GREAT_PEOPLE] Great People. [COLOR_POSITIVE_TEXT]Friendly[ENDCOLOR] and [COLOR_POSITIVE_TEXT]Allied[ENDCOLOR] City-State gifts of [ICON_FOOD] Food, [ICON_CULTURE] Culture, and [ICON_PEACE] Faith are increased by 50%, and Militaristic City-States send two units per gift.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_POLICY_BRANCH_PATRONAGE_HELP" />
+		<Row Tag="TXT_KEY_POLICY_BRANCH_PATRONAGE_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Patronage[ENDCOLOR] enhances the benefits of City-State friendship.[NEWLINE][NEWLINE]Adopting Patronage will cause [ICON_INFLUENCE] Influence with City-States to degrade 25% slower than normal. Unlocks building the Forbidden Palace.[NEWLINE][NEWLINE]Adopting all policies in the Patronage tree will cause all [COLOR_POSITIVE_TEXT]Allied[ENDCOLOR] City-States to occasionally gift you [ICON_GREAT_PEOPLE] Great People. [COLOR_POSITIVE_TEXT]Friendly[ENDCOLOR] and [COLOR_POSITIVE_TEXT]Allied[ENDCOLOR] City-State gifts of [ICON_FOOD] Food, [ICON_CULTURE] Culture, and [ICON_PEACE] Faith are increased by 50%, and Militaristic City-States send two units per gift.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

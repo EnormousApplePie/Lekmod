@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 5/8/2017 11:32:51 PM -->
+<GameData>
+	
+	<!-- [UA Remake] Diplomatic Marriage: Other Civilizations may not send Gold gifts to City States that have been your Ally for the last 5 turns.-->
+	
+	<Traits>
+		<Update>
+			<Set AbleToAnnexCityStates="false" NumTurnsBeforeMinorAlliesRefuseBribes="5" />
+			<Where Type="TRAIT_ANNEX_CITY_STATE" />
+		</Update>
+	</Traits>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_TRAIT_ANNEX_CITY_STATE" />
+		<Row Tag="TXT_KEY_TRAIT_ANNEX_CITY_STATE">
+			<Text>Other Civilizations may not send [ICON_GOLD] Gold gifts to City States that have been your Ally for the last 5 turns.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_TRAIT_ANNEX_CITY_STATE" />
+		<Row Tag="TXT_KEY_TRAIT_ANNEX_CITY_STATE">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Other Civilizations may not send [ICON_GOLD] Gold gifts to City States that have been your Ally for the last 5 turns.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_TRAIT_ANNEX_CITY_STATE" />
+		<Row Tag="TXT_KEY_TRAIT_ANNEX_CITY_STATE">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Other Civilizations may not send [ICON_GOLD] Gold gifts to City States that have been your Ally for the last 5 turns.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_TRAIT_ANNEX_CITY_STATE" />
+		<Row Tag="TXT_KEY_TRAIT_ANNEX_CITY_STATE">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Other Civilizations may not send [ICON_GOLD] Gold gifts to City States that have been your Ally for the last 5 turns.</Text>
+		</Row>
+	</Language_RU_RU>
+	
+</GameData>

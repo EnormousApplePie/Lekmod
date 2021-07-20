@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2016-09-25 05:44:53 -->
+<GameData>
+
+	<!-- Units adjacent to the city heal 30 HP -->
+	<Beliefs>
+		<Update>
+			<Set Pantheon="false" Follower="true" />
+			<Where Type="BELIEF_FAITH_HEALERS" />
+		</Update>
+	</Beliefs>
+
+</GameData>

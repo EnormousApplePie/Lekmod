@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 12/24/2015 10:59:11 PM -->
+<GameData>
+	
+	<!-- Royal Library now gives 15 XP instead of 10, and 1 Great Writer point per turn. -->
+	<Building_DomainFreeExperiencePerGreatWork>
+		<Update>
+			<Set Experience="15" />
+			<Where BuildingType="BUILDING_ROYAL_LIBRARY" />
+		</Update>
+	</Building_DomainFreeExperiencePerGreatWork>
+	<Buildings>
+		<Update>
+			<Set SpecialistType="SPECIALIST_WRITER" SpecialistCount="0" GreatPeopleRateChange="1" />
+			<Where Type="BUILDING_ROYAL_LIBRARY" />
+		</Update>
+	</Buildings>
+
+	<!-- TXT_KEY_BUILDING_ROYAL_LIBRARY_HELP -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_BUILDING_ROYAL_LIBRARY_HELP" />
+		<Row Tag="TXT_KEY_BUILDING_ROYAL_LIBRARY_HELP">
+			<Text>Unique Assyrian Library replacement. +1 [ICON_RESEARCH] Science for every 2 [ICON_CITIZEN] Citizens in this City and provides 1 [ICON_GREAT_PEOPLE] Great Person Point (GPP) towards a Great Writer. Also has a slot for a Great Work of Writing which, when filled, gives 15 extra XP to trained Units.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_BUILDING_ROYAL_LIBRARY_HELP" />
+		<Row Tag="TXT_KEY_BUILDING_ROYAL_LIBRARY_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Unique Assyrian Library replacement. +1 [ICON_RESEARCH] Science for every 2 [ICON_CITIZEN] Citizens in this City and provides 1 [ICON_GREAT_PEOPLE] Great Person Point (GPP) towards a Great Writer. Also has a slot for a Great Work of Writing which, when filled, gives 15 extra XP to trained Units.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_BUILDING_ROYAL_LIBRARY_HELP" />
+		<Row Tag="TXT_KEY_BUILDING_ROYAL_LIBRARY_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Unique Assyrian Library replacement. +1 [ICON_RESEARCH] Science for every 2 [ICON_CITIZEN] Citizens in this City and provides 1 [ICON_GREAT_PEOPLE] Great Person Point (GPP) towards a Great Writer. Also has a slot for a Great Work of Writing which, when filled, gives 15 extra XP to trained Units.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_BUILDING_ROYAL_LIBRARY_HELP" />
+		<Row Tag="TXT_KEY_BUILDING_ROYAL_LIBRARY_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Unique Assyrian Library replacement. +1 [ICON_RESEARCH] Science for every 2 [ICON_CITIZEN] Citizens in this City and provides 1 [ICON_GREAT_PEOPLE] Great Person Point (GPP) towards a Great Writer. Also has a slot for a Great Work of Writing which, when filled, gives 15 extra XP to trained Units.</Text>
+		</Row>
+	</Language_RU_RU>
+	
+	<!-- TXT_KEY_BUILDING_ROYAL_LIBRARY_STRATEGY -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_BUILDING_ROYAL_LIBRARY_STRATEGY" />
+		<Row Tag="TXT_KEY_BUILDING_ROYAL_LIBRARY_STRATEGY">
+			<Text>In addition to the [ICON_RESEARCH] Science output of the Library it replaces, the Royal Library also provides 1 [ICON_GREAT_PEOPLE] Great Person Point (GPP) towards a Great Writer and has a Great Work of Writing slot. Once filled with a Great Work, it provides 15 extra XP to Units trained in this city, so place a Great Work here as soon as possible for the maximum benefit. Only the Assyrians may build it.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_BUILDING_ROYAL_LIBRARY_STRATEGY" />
+		<Row Tag="TXT_KEY_BUILDING_ROYAL_LIBRARY_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]In addition to the [ICON_RESEARCH] Science output of the Library it replaces, the Royal Library also provides 1 [ICON_GREAT_PEOPLE] Great Person Point (GPP) towards a Great Writer and has a Great Work of Writing slot. Once filled with a Great Work, it provides 15 extra XP to Units trained in this city, so place a Great Work here as soon as possible for the maximum benefit. Only the Assyrians may build it.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_BUILDING_ROYAL_LIBRARY_STRATEGY" />
+		<Row Tag="TXT_KEY_BUILDING_ROYAL_LIBRARY_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]In addition to the [ICON_RESEARCH] Science output of the Library it replaces, the Royal Library also provides 1 [ICON_GREAT_PEOPLE] Great Person Point (GPP) towards a Great Writer and has a Great Work of Writing slot. Once filled with a Great Work, it provides 15 extra XP to Units trained in this city, so place a Great Work here as soon as possible for the maximum benefit. Only the Assyrians may build it.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_BUILDING_ROYAL_LIBRARY_STRATEGY" />
+		<Row Tag="TXT_KEY_BUILDING_ROYAL_LIBRARY_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]In addition to the [ICON_RESEARCH] Science output of the Library it replaces, the Royal Library also provides 1 [ICON_GREAT_PEOPLE] Great Person Point (GPP) towards a Great Writer and has a Great Work of Writing slot. Once filled with a Great Work, it provides 15 extra XP to Units trained in this city, so place a Great Work here as soon as possible for the maximum benefit. Only the Assyrians may build it.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

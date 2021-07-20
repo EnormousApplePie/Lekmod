@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 7/18/2015 12:05:54 PM -->
+<GameData>
+
+	<!-- Landsknechts now have 3 movement instead of 2. -->
+	<Units>
+		<Update>
+			<Set Moves="3" />
+			<Where Type="UNIT_GERMAN_LANDSKNECHT" />
+		</Update>
+	</Units>
+
+</GameData>

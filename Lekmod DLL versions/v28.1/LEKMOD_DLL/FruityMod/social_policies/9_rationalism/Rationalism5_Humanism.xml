@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 4/18/2015 9:47:01 AM -->
+<GameData>
+
+	<!-- HUMANISM -->
+	<Policies>
+		<Update>
+			<Set GreatScientistRateModifier="0" />
+			<Where Type="POLICY_HUMANISM" />
+		</Update>
+	</Policies>
+	<Policy_BuildingClassYieldModifiers>
+		<Row>
+			<PolicyType>POLICY_HUMANISM</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_UNIVERSITY</BuildingClassType>
+			<YieldType>YIELD_SCIENCE</YieldType>
+			<YieldMod>17</YieldMod>
+		</Row>
+	</Policy_BuildingClassYieldModifiers>
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_POLICY_HUMANISM_HELP" />
+		<Row Tag="TXT_KEY_POLICY_HUMANISM_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Humanism[ENDCOLOR][NEWLINE]+17% [ICON_RESEARCH] Science from Universities.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_POLICY_HUMANISM_HELP" />
+		<Row Tag="TXT_KEY_POLICY_HUMANISM_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Humanism[ENDCOLOR][NEWLINE]+17% [ICON_RESEARCH] Science from Universities.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_POLICY_HUMANISM_HELP" />
+		<Row Tag="TXT_KEY_POLICY_HUMANISM_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Humanism[ENDCOLOR][NEWLINE]+17% [ICON_RESEARCH] Science from Universities.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_POLICY_HUMANISM_HELP" />
+		<Row Tag="TXT_KEY_POLICY_HUMANISM_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Humanism[ENDCOLOR][NEWLINE]+17% [ICON_RESEARCH] Science from Universities.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

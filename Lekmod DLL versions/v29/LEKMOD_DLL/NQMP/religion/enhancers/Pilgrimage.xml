@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2016-09-25 05:44:53 -->
+<GameData>
+
+	<!-- +1 Trade Route and foreign Trade Routes provide +2 Faith -->
+	<Beliefs>
+		<Update>
+			<Set Enhancer="true" Founder="false" ExtraTradeRoutes="1" FaithPerForeignTradeRoute="2" />
+			<Where Type="BELIEF_PILGRIMAGE" />
+		</Update>
+	</Beliefs>
+	<Belief_YieldChangePerForeignCity>
+		<Delete BeliefType="BELIEF_PILGRIMAGE" />
+	</Belief_YieldChangePerForeignCity>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_BELIEF_PILGRIMAGE" />
+		<Row Tag="TXT_KEY_BELIEF_PILGRIMAGE">
+			<Text>+1 [ICON_CONNECTED] Trade Route and foreign Trade Routes provide +2 [ICON_PEACE] Faith</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_BELIEF_PILGRIMAGE" />
+		<Row Tag="TXT_KEY_BELIEF_PILGRIMAGE">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]+1 [ICON_CONNECTED] Trade Route and foreign Trade Routes provide +2 [ICON_PEACE] Faith</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_BELIEF_PILGRIMAGE" />
+		<Row Tag="TXT_KEY_BELIEF_PILGRIMAGE">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]+1 [ICON_CONNECTED] Trade Route and foreign Trade Routes provide +2 [ICON_PEACE] Faith</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_BELIEF_PILGRIMAGE" />
+		<Row Tag="TXT_KEY_BELIEF_PILGRIMAGE">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]+1 [ICON_CONNECTED] Trade Route and foreign Trade Routes provide +2 [ICON_PEACE] Faith</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

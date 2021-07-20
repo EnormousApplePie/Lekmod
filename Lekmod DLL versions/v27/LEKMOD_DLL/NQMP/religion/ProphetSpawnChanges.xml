@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 4/8/2015 7:01:21 PM -->
+<GameData>
+	<Defines>
+		<Update>
+			<Set Value="100" />
+			<Where Name="RELIGION_BASE_CHANCE_PROPHET_SPAWN" />
+		</Update>
+		<Update>
+			<Set Value="300" />
+			<Where Name="RELIGION_MIN_FAITH_FIRST_PROPHET" />
+		</Update>
+	</Defines>
+</GameData>

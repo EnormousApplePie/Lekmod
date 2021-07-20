@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<Defines>
+		<!-- Each of these multipliers are fairly straightforward: (amount of stuff) * (relevant multiplier) gets added to the player's score -->
+		<Row>
+			<Name>NEW_SCORE_CITY_MULTIPLIER</Name>
+			<Value>6</Value> <!-- Was 8 -->
+		</Row>
+		<Row>
+			<Name>NEW_SCORE_POPULATION_MULTIPLIER</Name>
+			<Value>6</Value> <!-- Was 4 -->
+		</Row>
+		<Row>
+			<Name>NEW_SCORE_WONDER_MULTIPLIER</Name>
+			<Value>10</Value> <!-- Was 25 -->
+		</Row>
+		<Row>
+			<Name>NEW_SCORE_TECH_MULTIPLIER</Name>
+			<Value>10</Value> <!-- Was 4 -->
+		</Row>
+		<Row>
+			<Name>NEW_SCORE_FUTURE_TECH_MULTIPLIER</Name>
+			<Value>5</Value> <!-- Was 10 -->
+		</Row>
+		<Row>
+			<Name>NEW_SCORE_POLICY_MULTIPLIER</Name>
+			<Value>8</Value> <!-- Was 4 -->
+		</Row>
+		<Row>
+			<Name>NEW_SCORE_GREAT_WORK_MULTIPLIER</Name>
+			<Value>1</Value> <!-- Was 4 -->
+		</Row>
+		<Row>
+			<Name>NEW_SCORE_BELIEF_MULTIPLIER</Name>
+			<Value>4</Value> <!-- Was 20 -->
+		</Row>
+	</Defines>
+	<GameOptions>
+		<Row>
+			<Type>GAMEOPTION_TWEAKED_SCORING</Type>
+			<Description>TXT_KEY_GAME_OPTION_TWEAKED_SCORING</Description>
+			<Help>TXT_KEY_GAME_OPTION_TWEAKED_SCORING_HELP</Help>
+		</Row>
+	</GameOptions>
+	<Language_en_US>
+		<Row Tag="TXT_KEY_GAME_OPTION_TWEAKED_SCORING">
+			<Text>Alternate Score Calculations</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_TWEAKED_SCORING_HELP">
+			<Text>Alters the parameters used to calculate score to emphasize population, tech level, and policy count more, and emphasize city count, wonder count, religion belief count, and great work count less.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Row Tag="TXT_KEY_GAME_OPTION_TWEAKED_SCORING">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Alternate Score Calculations</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_TWEAKED_SCORING_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Alters the parameters used to calculate score to emphasize population, tech level, and policy count more, and emphasize city count, wonder count, religion belief count, and great work count less.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_ES_ES>
+		<Row Tag="TXT_KEY_GAME_OPTION_TWEAKED_SCORING">
+			<Text>[COLOR_WARNING_TEXT](ES_ES text) [ENDCOLOR]Alternate Score Calculations</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_TWEAKED_SCORING_HELP">
+			<Text>[COLOR_WARNING_TEXT](ES_EX text) [ENDCOLOR]Alters the parameters used to calculate score to emphasize population, tech level, and policy count more, and emphasize city count, wonder count, religion belief count, and great work count less.</Text>
+		</Row>
+	</Language_ES_ES>
+	<Language_FR_FR>
+		<Row Tag="TXT_KEY_GAME_OPTION_TWEAKED_SCORING">
+			<Text>[COLOR_WARNING_TEXT](FR_FR text) [ENDCOLOR]Alternate Score Calculations</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_TWEAKED_SCORING_HELP">
+			<Text>[COLOR_WARNING_TEXT](FR_FR text) [ENDCOLOR]Alters the parameters used to calculate score to emphasize population, tech level, and policy count more, and emphasize city count, wonder count, religion belief count, and great work count less.</Text>
+		</Row>
+	</Language_FR_FR>
+	<Language_PL_PL>
+		<Row Tag="TXT_KEY_GAME_OPTION_TWEAKED_SCORING">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Alternate Score Calculations</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_TWEAKED_SCORING_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Alters the parameters used to calculate score to emphasize population, tech level, and policy count more, and emphasize city count, wonder count, religion belief count, and great work count less.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Row Tag="TXT_KEY_GAME_OPTION_TWEAKED_SCORING">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Alternate Score Calculations</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_TWEAKED_SCORING_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Alters the parameters used to calculate score to emphasize population, tech level, and policy count more, and emphasize city count, wonder count, religion belief count, and great work count less.</Text>
+		</Row>
+	</Language_RU_RU>
+</GameData>

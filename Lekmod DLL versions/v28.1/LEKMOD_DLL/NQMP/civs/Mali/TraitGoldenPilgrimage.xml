@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 5/12/2017 2:34:05 PM -->
+<GameData>
+
+	<Leader_Traits>
+		<Row>
+			<LeaderType>LEADER_MANSA_MUSA</LeaderType>
+			<TraitType>TRAIT_GOLDEN_PILGRIMAGE</TraitType>
+		</Row>
+	</Leader_Traits>
+	<Traits>
+		<Row>
+			<Type>TRAIT_GOLDEN_PILGRIMAGE</Type>
+			<Description>TXT_KEY_TRAIT_GOLDEN_PILGRIMAGE</Description>
+			<ShortDescription>TXT_KEY_TRAIT_GOLDEN_PILGRIMAGE_SHORT</ShortDescription>
+			<GoldenAgeTileBonusFaith>1</GoldenAgeTileBonusFaith>
+		</Row>
+	</Traits>
+	<Trait_ImprovementYieldChanges>
+		<Row>
+			<TraitType>TRAIT_GOLDEN_PILGRIMAGE</TraitType>
+			<ImprovementType>IMPROVEMENT_MINE</ImprovementType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<Yield>1</Yield>
+		</Row>
+	</Trait_ImprovementYieldChanges>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Row Tag="TXT_KEY_TRAIT_GOLDEN_PILGRIMAGE_SHORT">
+			<Text>Golden Hajj</Text>
+		</Row>
+		<Row Tag="TXT_KEY_TRAIT_GOLDEN_PILGRIMAGE">
+			<Text>+1 [ICON_GOLD] Gold from Mines. During [ICON_GOLDEN_AGE] Golden Ages, any tile that produces at least 1 [ICON_GOLD] Gold also produces 1 [ICON_PEACE] Faith.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Row Tag="TXT_KEY_TRAIT_GOLDEN_PILGRIMAGE_SHORT">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Golden Hajj</Text>
+		</Row>
+		<Row Tag="TXT_KEY_TRAIT_GOLDEN_PILGRIMAGE">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]+1 [ICON_GOLD] Gold from Mines. During [ICON_GOLDEN_AGE] Golden Ages, any tile that produces at least 1 [ICON_GOLD] Gold also produces 1 [ICON_PEACE] Faith.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Row Tag="TXT_KEY_TRAIT_GOLDEN_PILGRIMAGE_SHORT">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Golden Hajj</Text>
+		</Row>
+		<Row Tag="TXT_KEY_TRAIT_GOLDEN_PILGRIMAGE">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]+1 [ICON_GOLD] Gold from Mines. During [ICON_GOLDEN_AGE] Golden Ages, any tile that produces at least 1 [ICON_GOLD] Gold also produces 1 [ICON_PEACE] Faith.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Row Tag="TXT_KEY_TRAIT_GOLDEN_PILGRIMAGE_SHORT">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Golden Hajj</Text>
+		</Row>
+		<Row Tag="TXT_KEY_TRAIT_GOLDEN_PILGRIMAGE">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]+1 [ICON_GOLD] Gold from Mines. During [ICON_GOLDEN_AGE] Golden Ages, any tile that produces at least 1 [ICON_GOLD] Gold also produces 1 [ICON_PEACE] Faith.</Text>
+		</Row>
+	</Language_RU_RU>
+
+
+</GameData>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 10/8/2016 9:59:16 PM -->
+<GameData>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_BUILDING_WRITERS_GUILD" />
+		<Row Tag="TXT_KEY_BUILDING_WRITERS_GUILD">
+			<Text>Writers' Guild [COLOR_MAGENTA]*[ENDCOLOR]</Text>
+			<Gender>neuter:the</Gender>
+		</Row>
+		<Delete Tag="TXT_KEY_BUILDING_WRITERS_GUILD_HELP" />
+		<Row Tag="TXT_KEY_BUILDING_WRITERS_GUILD_HELP">
+			<Text>[COLOR_MAGENTA]* National Guild (each player may build one)[ENDCOLOR][NEWLINE][NEWLINE]Provides 1 [ICON_GREAT_PEOPLE] Great Person Point (GPP) towards a Great Writer. Add up to two specialists to this building to gain [ICON_CULTURE] Culture and increase the rate of Great Writer acquisition (3 [ICON_CULTURE] Culture and 3 [ICON_GREAT_PEOPLE] GPP per specialist).</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_BUILDING_WRITERS_GUILD" />
+		<Row Tag="TXT_KEY_BUILDING_WRITERS_GUILD">
+			<Text>Writers' Guild [COLOR_MAGENTA]*[ENDCOLOR]</Text>
+			<Gender>neuter:the</Gender>
+		</Row>
+		<Delete Tag="TXT_KEY_BUILDING_WRITERS_GUILD_HELP" />
+		<Row Tag="TXT_KEY_BUILDING_WRITERS_GUILD_HELP">
+			<Text>[COLOR_MAGENTA]* National Guild (each player may build one)[ENDCOLOR][NEWLINE][NEWLINE][COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Provides 1 [ICON_GREAT_PEOPLE] Great Person Point (GPP) towards a Great Writer. Add up to two specialists to this building to gain [ICON_CULTURE] Culture and increase the rate of Great Writer acquisition (3 [ICON_CULTURE] Culture and 3 [ICON_GREAT_PEOPLE] GPP per specialist).</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_BUILDING_WRITERS_GUILD" />
+		<Row Tag="TXT_KEY_BUILDING_WRITERS_GUILD">
+			<Text>Writers' Guild [COLOR_MAGENTA]*[ENDCOLOR]</Text>
+			<Gender>neuter:the</Gender>
+		</Row>
+		<Delete Tag="TXT_KEY_BUILDING_WRITERS_GUILD_HELP" />
+		<Row Tag="TXT_KEY_BUILDING_WRITERS_GUILD_HELP">
+			<Text>[COLOR_MAGENTA]* National Guild (each player may build one)[ENDCOLOR][NEWLINE][NEWLINE][COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Provides 1 [ICON_GREAT_PEOPLE] Great Person Point (GPP) towards a Great Writer. Add up to two specialists to this building to gain [ICON_CULTURE] Culture and increase the rate of Great Writer acquisition (3 [ICON_CULTURE] Culture and 3 [ICON_GREAT_PEOPLE] GPP per specialist).</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_BUILDING_WRITERS_GUILD" />
+		<Row Tag="TXT_KEY_BUILDING_WRITERS_GUILD">
+			<Text>Writers' Guild [COLOR_MAGENTA]*[ENDCOLOR]</Text>
+			<Gender>neuter:the</Gender>
+		</Row>
+		<Delete Tag="TXT_KEY_BUILDING_WRITERS_GUILD_HELP" />
+		<Row Tag="TXT_KEY_BUILDING_WRITERS_GUILD_HELP">
+			<Text>[COLOR_MAGENTA]* National Guild (each player may build one)[ENDCOLOR][NEWLINE][NEWLINE][COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Provides 1 [ICON_GREAT_PEOPLE] Great Person Point (GPP) towards a Great Writer. Add up to two specialists to this building to gain [ICON_CULTURE] Culture and increase the rate of Great Writer acquisition (3 [ICON_CULTURE] Culture and 3 [ICON_GREAT_PEOPLE] GPP per specialist).</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

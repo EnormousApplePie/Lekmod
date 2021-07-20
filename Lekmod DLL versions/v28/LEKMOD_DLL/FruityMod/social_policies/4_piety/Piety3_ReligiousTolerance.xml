@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 6/11/2015 10:53:28 PM -->
+<GameData>
+
+	<!-- RELIGIOUS TOLERANCE -->
+	<Policy_BuildingClassYieldChanges>
+		<Row>
+			<PolicyType>POLICY_FREE_RELIGION</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_TEMPLE</BuildingClassType>
+			<YieldType>YIELD_SCIENCE</YieldType>
+			<YieldChange>2</YieldChange>
+		</Row>
+	</Policy_BuildingClassYieldChanges>
+	<Policy_BuildingClassYieldModifiers>
+		<Row>
+			<PolicyType>POLICY_FREE_RELIGION</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_GRAND_TEMPLE</BuildingClassType>
+			<YieldType>YIELD_SCIENCE</YieldType>
+			<YieldMod>25</YieldMod>
+		</Row>
+	</Policy_BuildingClassYieldModifiers>
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_POLICY_FREE_RELIGION_HELP" />
+		<Row Tag="TXT_KEY_POLICY_FREE_RELIGION_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Religious Tolerance[ENDCOLOR][NEWLINE]Cities with a majority religion also get the Pantheon belief bonus of the second most popular religion.[NEWLINE]+2 [ICON_RESEARCH] Science from each Temple.[NEWLINE]+25% [ICON_RESEARCH] Science from the Grand Temple.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_POLICY_FREE_RELIGION_HELP" />
+		<Row Tag="TXT_KEY_POLICY_FREE_RELIGION_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Religious Tolerance[ENDCOLOR][NEWLINE]Cities with a majority religion also get the Pantheon belief bonus of the second most popular religion.[NEWLINE]+2 [ICON_RESEARCH] Science from each Temple.[NEWLINE]+25% [ICON_RESEARCH] Science from the Grand Temple.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_POLICY_FREE_RELIGION_HELP" />
+		<Row Tag="TXT_KEY_POLICY_FREE_RELIGION_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Religious Tolerance[ENDCOLOR][NEWLINE]Cities with a majority religion also get the Pantheon belief bonus of the second most popular religion.[NEWLINE]+2 [ICON_RESEARCH] Science from each Temple.[NEWLINE]+25% [ICON_RESEARCH] Science from the Grand Temple.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_POLICY_FREE_RELIGION_HELP" />
+		<Row Tag="TXT_KEY_POLICY_FREE_RELIGION_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Religious Tolerance[ENDCOLOR][NEWLINE]Cities with a majority religion also get the Pantheon belief bonus of the second most popular religion.[NEWLINE]+2 [ICON_RESEARCH] Science from each Temple.[NEWLINE]+25% [ICON_RESEARCH] Science from the Grand Temple.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

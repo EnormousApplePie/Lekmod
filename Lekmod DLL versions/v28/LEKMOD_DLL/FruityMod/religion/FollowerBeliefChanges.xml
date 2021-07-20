@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 6/10/2015 6:13:01 AM -->
+<GameData>
+
+	<!-- Move Swords To Plowshares to Reformation belief -->
+	<Beliefs>
+		<Update>
+			<Set Follower="false" Reformation="true" />
+			<Where Type="BELIEF_SWORD_PLOWSHARES" />
+		</Update>
+	</Beliefs>
+
+	<!-- *** CHANGE EXISTING FOLLOWER BELIEFS *** -->
+	
+	<!-- Feed The World: Provides +2 Food from Temples (instead of +1). -->
+	<Belief_BuildingClassYieldChanges>
+		<Update>
+			<Set YieldChange="2" />
+			<Where BeliefType="BELIEF_FEED_WORLD" BuildingClassType="BUILDINGCLASS_TEMPLE" YieldType="YIELD_FOOD" />
+		</Update>
+	</Belief_BuildingClassYieldChanges>
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_BELIEF_FEED_WORLD" />
+		<Row Tag="TXT_KEY_BELIEF_FEED_WORLD">
+			<Text>Shrines provide +1 [ICON_FOOD] Food and Temples provide +2 [ICON_FOOD] Food</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_BELIEF_FEED_WORLD" />
+		<Row Tag="TXT_KEY_BELIEF_FEED_WORLD">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Shrines provide +1 [ICON_FOOD] Food and Temples provide +2 [ICON_FOOD] Food</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_BELIEF_FEED_WORLD" />
+		<Row Tag="TXT_KEY_BELIEF_FEED_WORLD">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Shrines provide +1 [ICON_FOOD] Food and Temples provide +2 [ICON_FOOD] Food</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_BELIEF_FEED_WORLD" />
+		<Row Tag="TXT_KEY_BELIEF_FEED_WORLD">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Shrines provide +1 [ICON_FOOD] Food and Temples provide +2 [ICON_FOOD] Food</Text>
+		</Row>
+	</Language_RU_RU>
+
+
+	<!-- Liturgical Drama: Amphitheaters and Opera Houses now provide +2 Faith and +2 Culture and Population requirement waived (up from +1 Faith at 3+ pop). -->
+	<Beliefs>
+		<Update>
+			<Set MinFollowers="0" />
+			<Where Type="BELIEF_LITURGICAL_DRAMA" />
+		</Update>
+	</Beliefs>
+	<Belief_BuildingClassYieldChanges>
+		<Update>
+			<Set YieldChange="2" />
+			<Where BeliefType="BELIEF_LITURGICAL_DRAMA" BuildingClassType="BUILDINGCLASS_AMPHITHEATER" YieldType="YIELD_FAITH" />
+		</Update>
+		<Row>
+			<BeliefType>BELIEF_LITURGICAL_DRAMA</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_OPERA_HOUSE</BuildingClassType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<YieldChange>2</YieldChange>
+		</Row>
+		<Row>
+			<BeliefType>BELIEF_LITURGICAL_DRAMA</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_AMPHITHEATER</BuildingClassType>
+			<YieldType>YIELD_CULTURE</YieldType>
+			<YieldChange>1</YieldChange>
+		</Row>
+		<Row>
+			<BeliefType>BELIEF_LITURGICAL_DRAMA</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_OPERA_HOUSE</BuildingClassType>
+			<YieldType>YIELD_CULTURE</YieldType>
+			<YieldChange>1</YieldChange>
+		</Row>
+	</Belief_BuildingClassYieldChanges>
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_BELIEF_LITURGICAL_DRAMA" />
+		<Row Tag="TXT_KEY_BELIEF_LITURGICAL_DRAMA">
+			<Text>Ampitheaters and Opera Houses provide +2 [ICON_PEACE] Faith and +1 [ICON_CULTURE] Culture</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_BELIEF_LITURGICAL_DRAMA" />
+		<Row Tag="TXT_KEY_BELIEF_LITURGICAL_DRAMA">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Ampitheaters and Opera Houses provide +2 [ICON_PEACE] Faith and +1 [ICON_CULTURE] Culture</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_BELIEF_LITURGICAL_DRAMA" />
+		<Row Tag="TXT_KEY_BELIEF_LITURGICAL_DRAMA">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Ampitheaters and Opera Houses provide +2 [ICON_PEACE] Faith and +1 [ICON_CULTURE] Culture</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_BELIEF_LITURGICAL_DRAMA" />
+		<Row Tag="TXT_KEY_BELIEF_LITURGICAL_DRAMA">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Ampitheaters and Opera Houses provide +2 [ICON_PEACE] Faith and +1 [ICON_CULTURE] Culture</Text>
+		</Row>
+	</Language_RU_RU>
+
+
+	<!-- Pagodas: Now provide +2 Food, +2 Faith, +1 Culture, +1 Happiness (instead of +2 Faith, +2 Culture, +2 Happines) -->
+	<Buildings>
+		<Update>
+			<Set Happiness="1" />
+			<Where Type="BUILDING_PAGODA" />
+		</Update>
+	</Buildings>
+	<Building_YieldChanges>
+		<Update>
+			<Set Yield="2" />
+			<Where BuildingType="BUILDING_PAGODA" YieldType="YIELD_CULTURE" />
+		</Update>
+		<Row>
+			<BuildingType>BUILDING_PAGODA</BuildingType>
+			<YieldType>YIELD_FOOD</YieldType>
+			<Yield>1</Yield>
+		</Row>
+	</Building_YieldChanges>
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_BELIEF_PAGODAS" />
+		<Row Tag="TXT_KEY_BELIEF_PAGODAS">
+			<Text>Use [ICON_PEACE] Faith to purchase Pagodas (+1 [ICON_FOOD] Food, +2 [ICON_PEACE] Faith, +2 [ICON_CULTURE] Culture, +1 [ICON_HAPPINESS_1] Happiness)</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_BELIEF_PAGODAS" />
+		<Row Tag="TXT_KEY_BELIEF_PAGODAS">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Use [ICON_PEACE] Faith to purchase Pagodas (+1 [ICON_FOOD] Food, +2 [ICON_PEACE] Faith, +2 [ICON_CULTURE] Culture, +1 [ICON_HAPPINESS_1] Happiness)</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_BELIEF_PAGODAS" />
+		<Row Tag="TXT_KEY_BELIEF_PAGODAS">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Use [ICON_PEACE] Faith to purchase Pagodas (+1 [ICON_FOOD] Food, +2 [ICON_PEACE] Faith, +2 [ICON_CULTURE] Culture, +1 [ICON_HAPPINESS_1] Happiness)</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_BELIEF_PAGODAS" />
+		<Row Tag="TXT_KEY_BELIEF_PAGODAS">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Use [ICON_PEACE] Faith to purchase Pagodas (+1 [ICON_FOOD] Food, +2 [ICON_PEACE] Faith, +2 [ICON_CULTURE] Culture, +1 [ICON_HAPPINESS_1] Happiness)</Text>
+		</Row>
+	</Language_RU_RU>
+
+
+	<!-- Religious Center: Now provides +1 Happiness (down from +2) but also an additional +1 Production and +1 Gold. -->
+	<Belief_BuildingClassHappiness>
+		<Update>
+			<Set Happiness="1" />
+			<Where BeliefType="BELIEF_RELIGIOUS_CENTER" />
+		</Update>
+	</Belief_BuildingClassHappiness>
+	<Belief_BuildingClassYieldChanges>
+		<Row>
+			<BeliefType>BELIEF_RELIGIOUS_CENTER</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_TEMPLE</BuildingClassType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<YieldChange>1</YieldChange>
+		</Row>
+		<Row>
+			<BeliefType>BELIEF_RELIGIOUS_CENTER</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_TEMPLE</BuildingClassType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<YieldChange>1</YieldChange>
+		</Row>
+	</Belief_BuildingClassYieldChanges>
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_BELIEF_RELIGIOUS_CENTER" />
+		<Row Tag="TXT_KEY_BELIEF_RELIGIOUS_CENTER">
+			<Text>Temples provide +1 [ICON_HAPPINESS_1] Happiness, +1 [ICON_PRODUCTION] Production, and +1 Gold [ICON_GOLD] in cities with 5 followers</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_BELIEF_RELIGIOUS_CENTER" />
+		<Row Tag="TXT_KEY_BELIEF_RELIGIOUS_CENTER">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Temples provide +1 [ICON_HAPPINESS_1] Happiness, +1 [ICON_PRODUCTION] Production, and +1 Gold [ICON_GOLD] in cities with 5 followers</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_BELIEF_RELIGIOUS_CENTER" />
+		<Row Tag="TXT_KEY_BELIEF_RELIGIOUS_CENTER">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Temples provide +1 [ICON_HAPPINESS_1] Happiness, +1 [ICON_PRODUCTION] Production, and +1 Gold [ICON_GOLD] in cities with 5 followers</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_BELIEF_RELIGIOUS_CENTER" />
+		<Row Tag="TXT_KEY_BELIEF_RELIGIOUS_CENTER">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Temples provide +1 [ICON_HAPPINESS_1] Happiness, +1 [ICON_PRODUCTION] Production, and +1 Gold [ICON_GOLD] in cities with 5 followers</Text>
+		</Row>
+	</Language_RU_RU>
+
+
+	<!-- Swords Into Plowshares: Now provides +1 Food and +25% Growth without a Peace requirement (instead of just +15% Growth while at Peace). -->
+	<Beliefs>
+		<Update>
+			<Set RequiresPeace="false" CityGrowthModifier="25" />
+			<Where Type="BELIEF_SWORD_PLOWSHARES" />
+		</Update>
+	</Beliefs>
+	<Belief_CityYieldChanges>
+		<Row>
+			<BeliefType>BELIEF_SWORD_PLOWSHARES</BeliefType>
+			<YieldType>YIELD_FOOD</YieldType>
+			<Yield>1</Yield>
+		</Row>
+	</Belief_CityYieldChanges>
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_BELIEF_SWORD_PLOWSHARES" />
+		<Row Tag="TXT_KEY_BELIEF_SWORD_PLOWSHARES">
+			<Text>+1 [ICON_FOOD] Food and 25% faster [ICON_FOOD] Growth Rate for all cities</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_BELIEF_SWORD_PLOWSHARES" />
+		<Row Tag="TXT_KEY_BELIEF_SWORD_PLOWSHARES">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]+1 [ICON_FOOD] Food and 25% faster [ICON_FOOD] Growth Rate for all cities</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_BELIEF_SWORD_PLOWSHARES" />
+		<Row Tag="TXT_KEY_BELIEF_SWORD_PLOWSHARES">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]+1 [ICON_FOOD] Food and 25% faster [ICON_FOOD] Growth Rate for all cities</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_BELIEF_SWORD_PLOWSHARES" />
+		<Row Tag="TXT_KEY_BELIEF_SWORD_PLOWSHARES">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]+1 [ICON_FOOD] Food and 25% faster [ICON_FOOD] Growth Rate for all cities</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

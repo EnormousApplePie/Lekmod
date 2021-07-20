@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 6/2/2015 11:21:33 PM -->
+<GameData>
+	
+	<!-- Merchant Confederacy now also gives +2 Production, +2 Food, and +1 Influence per turn. -->
+	<Policies>
+		<Update>
+			<Set ProtectedMinorPerTurnInfluence="100" />
+			<Where Type="POLICY_MERCHANT_CONFEDERACY" />
+		</Update>
+	</Policies>
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_POLICY_MERCHANT_CONFEDERACY_HELP" />
+		<Row Tag="TXT_KEY_POLICY_MERCHANT_CONFEDERACY_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Merchant Confederacy[ENDCOLOR][NEWLINE]+2 [ICON_FOOD] Food, +2 [ICON_PRODUCTION] Production, +2 [ICON_GOLD] Gold, and +1 [ICON_INFLUENCE] Influence per turn for trade routes with City-States.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_POLICY_MERCHANT_CONFEDERACY_HELP" />
+		<Row Tag="TXT_KEY_POLICY_MERCHANT_CONFEDERACY_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Merchant Confederacy[ENDCOLOR][NEWLINE]+2 [ICON_FOOD] Food, +2 [ICON_PRODUCTION] Production, +2 [ICON_GOLD] Gold, and +1 [ICON_INFLUENCE] Influence per turn for trade routes with City-States.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_POLICY_MERCHANT_CONFEDERACY_HELP" />
+		<Row Tag="TXT_KEY_POLICY_MERCHANT_CONFEDERACY_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Merchant Confederacy[ENDCOLOR][NEWLINE]+2 [ICON_FOOD] Food, +2 [ICON_PRODUCTION] Production, +2 [ICON_GOLD] Gold, and +1 [ICON_INFLUENCE] Influence per turn for trade routes with City-States.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_POLICY_MERCHANT_CONFEDERACY_HELP" />
+		<Row Tag="TXT_KEY_POLICY_MERCHANT_CONFEDERACY_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Merchant Confederacy[ENDCOLOR][NEWLINE]+2 [ICON_FOOD] Food, +2 [ICON_PRODUCTION] Production, +2 [ICON_GOLD] Gold, and +1 [ICON_INFLUENCE] Influence per turn for trade routes with City-States.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

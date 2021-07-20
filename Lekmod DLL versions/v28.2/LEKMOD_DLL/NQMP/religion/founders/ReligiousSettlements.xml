@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2017-01-12 18:01:06 -->
+<GameData>
+
+	<!-- Gain a Missionary, 2 Settlers, and 2 Workers. -->
+	<Beliefs>
+		<Update>
+			<Set Pantheon="false" Founder="true" NumFreeSettlers="2" PlotCultureCostModifier="-25" />
+			<Where Type="BELIEF_RELIGIOUS_SETTLEMENTS" />
+		</Update>
+	</Beliefs>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_BELIEF_RELIGIOUS_SETTLEMENTS" />
+		<Row Tag="TXT_KEY_BELIEF_RELIGIOUS_SETTLEMENTS">
+			<Text>Gain 2 Settlers. 25% faster border growth in your Cities following this Religion.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_BELIEF_RELIGIOUS_SETTLEMENTS" />
+		<Row Tag="TXT_KEY_BELIEF_RELIGIOUS_SETTLEMENTS">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Gain 2 Settlers. 25% faster border growth in your Cities following this Religion.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_BELIEF_RELIGIOUS_SETTLEMENTS" />
+		<Row Tag="TXT_KEY_BELIEF_RELIGIOUS_SETTLEMENTS">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Gain 2 Settlers. 25% faster border growth in your Cities following this Religion.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_BELIEF_RELIGIOUS_SETTLEMENTS" />
+		<Row Tag="TXT_KEY_BELIEF_RELIGIOUS_SETTLEMENTS">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Gain 2 Settlers. 25% faster border growth in your Cities following this Religion.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

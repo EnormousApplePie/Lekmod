@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 3/4/2015 8:15:12 PM -->
+
+<GameData>
+
+	<!-- Updates Longhouse to also provide the flat 10% bonus to production that Workshops do. -->
+	<Building_YieldModifiers>
+		<Row>
+			<BuildingType>BUILDING_LONGHOUSE</BuildingType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>10</Yield>
+		</Row>
+	</Building_YieldModifiers>
+
+</GameData>
+

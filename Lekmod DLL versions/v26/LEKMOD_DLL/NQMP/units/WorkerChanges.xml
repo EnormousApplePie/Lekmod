@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 4/21/2016 3:03:56 AM -->
+<GameData>
+
+	<!-- Worker production cost reduced by ~30% to 32 (from 47 on quick speed) -->
+	<Units>
+		<Update>
+			<Set Cost="48" />
+			<Where Class="UNITCLASS_WORKER" />
+		</Update>
+	</Units>
+
+</GameData>

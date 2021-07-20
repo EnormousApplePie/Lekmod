@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 6/7/2015 12:54:16 AM -->
+<GameData>
+
+	<!-- NOTE: This new unit is not used due to problems explained in Exploration__Icebreaker.lua -->
+	<!-- Icebreaker Ship -->
+	<UnitClasses>
+		<Row>
+			<Type>UNITCLASS_ICEBREAKER</Type>
+			<Description>TXT_KEY_UNIT_ICEBREAKER</Description>
+			<DefaultUnit>UNIT_ICEBREAKER</DefaultUnit>
+		</Row>
+	</UnitClasses>
+	<Units>
+		<Row>
+			<Class>UNITCLASS_ICEBREAKER</Class>
+			<Type>UNIT_ICEBREAKER</Type>
+			<Cost>36</Cost>
+			<Moves>4</Moves>
+			<CivilianAttackPriority>CIVILIAN_ATTACK_PRIORITY_LOW</CivilianAttackPriority>
+			<Domain>DOMAIN_SEA</Domain>
+			<DefaultUnitAI>UNITAI_WORKER_SEA</DefaultUnitAI>
+			<Description>TXT_KEY_UNIT_ICEBREAKER</Description>
+			<Civilopedia>TXT_KEY_CIV5_ICEBREAKER_TEXT</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_ICEBREAKER_STRATEGY</Strategy>
+			<Help>TXT_KEY_UNIT_HELP_ICEBREAKER</Help>
+			<MilitarySupport>true</MilitarySupport>
+			<MilitaryProduction>true</MilitaryProduction>
+			<PrereqResources>true</PrereqResources>
+			<Mechanized>true</Mechanized>
+			<AdvancedStartCost>10</AdvancedStartCost>
+			<CombatLimit>0</CombatLimit>
+			<XPValueDefense>3</XPValueDefense>
+			<UnitArtInfoEraVariation>true</UnitArtInfoEraVariation>
+			<UnitArtInfo>ART_DEF_UNIT_WORKBOAT</UnitArtInfo>
+			<UnitFlagIconOffset>3</UnitFlagIconOffset>
+			<UnitFlagAtlas>CIVIL_WAR_UNIT_FLAG_ATLAS</UnitFlagAtlas>
+			<PortraitIndex>13</PortraitIndex>
+			<IconAtlas>TECH_ATLAS_1</IconAtlas>
+			<MoveRate>WOODEN_BOAT</MoveRate>
+			<PolicyType>POLICY_EXPLORATION</PolicyType>
+		</Row>
+	</Units>
+	<Unit_FreePromotions>
+		<Row>
+			<UnitType>UNIT_ICEBREAKER</UnitType>
+			<PromotionType>PROMOTION_CAN_MOVE_IMPASSABLE</PromotionType>
+		</Row>
+	</Unit_FreePromotions>
+	<Language_en_US>
+		<Row Tag="TXT_KEY_UNIT_ICEBREAKER">
+			<Text>Icebreaker Ship</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_HELP_ICEBREAKER">
+			<Text>When it ends its turn next to any ice, the Icebreaker Ship is consumed and all adjacent ice is destroyed.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_ICEBREAKER_STRATEGY">
+			<Text>This unit can only be constructed in coastal cities. Use Icebreaker Ships to clear ice that blocks your naval units and trade routes.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_ICEBREAKER_TEXT">
+			<Text>[COLOR_POSITIVE_TEXT]Source: Wikipedia (http://en.wikipedia.org/wiki/Icebreaker)[ENDCOLOR][NEWLINE][NEWLINE]An icebreaker is a special-purpose ship or boat designed to move and navigate through ice-covered waters, and provide safe waterways for other boats and ships. Although the term usually refers to ice-breaking ships, it may also refer to smaller vessels, such as the icebreaking boats that were once used on the canals of the United Kingdom.[NEWLINE][NEWLINE]For a ship to be considered an icebreaker, it requires three traits most normal ships lack: a strengthened hull, an ice-clearing shape, and the power to push through sea ice.[NEWLINE][NEWLINE]Icebreakers clear paths by pushing straight into ice pockets. The bending strength of sea ice is so low that usually the ice breaks without noticeable change in the vessel's trim. In cases of very thick ice, an icebreaker can drive its bow onto the ice to break it under the weight of the ship. Because a buildup of broken ice in front of a ship can slow it down much more than the breaking of the ice itself, icebreakers have a specially designed hull to direct the broken ice around or under the vessel. The external components of the ship's propulsion system (propellers, propeller shafts, etc.) are at even greater risk of damage than the vessel's hull, so the ability of an icebreaker to propel itself onto the ice, break it, and clear the debris from its path successfully is essential for its safety.
+			</Text>
+		</Row>
+	</Language_en_US>
+
+</GameData>

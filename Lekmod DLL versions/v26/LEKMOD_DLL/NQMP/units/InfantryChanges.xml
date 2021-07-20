@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 3/30/2015 11:26:13 PM -->
+<GameData>
+	<Units>
+		<Update>
+			<Set PrereqTech="TECH_ELECTRONICS" />
+			<Where Class="UNITCLASS_INFANTRY" />
+		</Update>
+		<Update>
+			<Set ObsoleteTech="TECH_ELECTRONICS" />
+			<Where Class="UNITCLASS_GREAT_WAR_INFANTRY" />
+		</Update>
+	</Units>
+</GameData>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 4/21/2015 11:42:59 PM -->
+<GameData>
+	
+	<!-- Merge Map + Barb ruin, and make them do a map 5 tiles radius from the ruin, with no empty spaces -->
+	<GoodyHuts>
+		<Update>
+			<Set RevealNearbyBarbariansRange="5" MapOffset="1" MapRange="5" MapProb="100" />
+			<Where Type="GOODY_MAP" />
+		</Update>
+	</GoodyHuts>
+	<HandicapInfo_Goodies>
+		<Delete GoodyType="GOODY_REVEAL_NEARBY_BARBS" />
+	</HandicapInfo_Goodies>
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_GOODY_MAP" />
+		<Row Tag="TXT_KEY_GOODY_MAP">
+			<Text>You discover a crudely-drawn map which outlines nearby terrain and and evidence of recent barbarian activity!</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_GOODY_CHOOSE_MAP" />
+		<Row Tag="TXT_KEY_GOODY_CHOOSE_MAP">
+			<Text>Study their maps of nearby territory and barbarians.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_GOODY_MAP" />
+		<Row Tag="TXT_KEY_GOODY_MAP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][NEWLINE]You discover a crudely-drawn map which outlines nearby terrain and and evidence of recent barbarian activity!</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_GOODY_CHOOSE_MAP" />
+		<Row Tag="TXT_KEY_GOODY_CHOOSE_MAP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][NEWLINE]Study their maps of nearby territory and barbarians.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_GOODY_MAP" />
+		<Row Tag="TXT_KEY_GOODY_MAP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][NEWLINE]You discover a crudely-drawn map which outlines nearby terrain and and evidence of recent barbarian activity!</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_GOODY_CHOOSE_MAP" />
+		<Row Tag="TXT_KEY_GOODY_CHOOSE_MAP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][NEWLINE]Study their maps of nearby territory and barbarians.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_GOODY_MAP" />
+		<Row Tag="TXT_KEY_GOODY_MAP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][NEWLINE]You discover a crudely-drawn map which outlines nearby terrain and and evidence of recent barbarian activity!</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_GOODY_CHOOSE_MAP" />
+		<Row Tag="TXT_KEY_GOODY_CHOOSE_MAP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][NEWLINE]Study their maps of nearby territory and barbarians.</Text>
+		</Row>
+	</Language_RU_RU>
+
+	<!-- Culture Ruins delayed to turn 12 in DLL (ID: NQMP_1_GJS) -->
+	
+</GameData>

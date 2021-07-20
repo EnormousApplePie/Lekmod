@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 3/30/2015 11:10:55 PM -->
+<GameData>
+	<!-- Nerf Frigate & SotL -->
+	<Units>
+		<Update>
+			<Set Combat="23" RangedCombat="25" />
+			<Where Type="UNIT_FRIGATE" />
+		</Update>
+		<Update>
+			<Set Combat="25" RangedCombat="30" />
+			<Where Type="UNIT_ENGLISH_SHIPOFTHELINE" />
+		</Update>
+	</Units>
+</GameData>

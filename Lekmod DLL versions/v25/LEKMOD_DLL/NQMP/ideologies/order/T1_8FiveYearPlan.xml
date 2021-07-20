@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2017-02-12 16:00:13 -->
+<GameData>
+
+	<!-- Five Year Plan: +1 Production from every Mine and Quarry, and +4 Production from every Manufactory. -->
+	<Policies>
+		<Update>
+			<Set Level="1" BuildingProductionModifier="0" />
+			<Where Type="POLICY_FIVE_YEAR_PLAN" />
+		</Update>
+	</Policies>
+	<Policy_CityYieldChanges>
+		<Delete PolicyType="POLICY_FIVE_YEAR_PLAN" YieldType="YIELD_PRODUCTION" />
+	</Policy_CityYieldChanges>
+	<Policy_ImprovementYieldChanges>
+		<Row>
+			<PolicyType>POLICY_FIVE_YEAR_PLAN</PolicyType>
+			<ImprovementType>IMPROVEMENT_MANUFACTORY</ImprovementType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>4</Yield>
+		</Row>
+	</Policy_ImprovementYieldChanges>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_POLICY_FIVE_YEAR_PLAN_HELP" />
+		<Row Tag="TXT_KEY_POLICY_FIVE_YEAR_PLAN_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Five-Year Plan[ENDCOLOR][NEWLINE]+1 [ICON_PRODUCTION] Production from each Mine and Quarry, and +4 [ICON_PRODUCTION] Production from each Manufactory.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_POLICY_FIVE_YEAR_PLAN_HELP" />
+		<Row Tag="TXT_KEY_POLICY_FIVE_YEAR_PLAN_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Five-Year Plan[ENDCOLOR][NEWLINE]+1 [ICON_PRODUCTION] Production from each Mine and Quarry, and +4 [ICON_PRODUCTION] Production from each Manufactory.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_POLICY_FIVE_YEAR_PLAN_HELP" />
+		<Row Tag="TXT_KEY_POLICY_FIVE_YEAR_PLAN_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Five-Year Plan[ENDCOLOR][NEWLINE]+1 [ICON_PRODUCTION] Production from each Mine and Quarry, and +4 [ICON_PRODUCTION] Production from each Manufactory.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_POLICY_FIVE_YEAR_PLAN_HELP" />
+		<Row Tag="TXT_KEY_POLICY_FIVE_YEAR_PLAN_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Five-Year Plan[ENDCOLOR][NEWLINE]+1 [ICON_PRODUCTION] Production from each Mine and Quarry, and +4 [ICON_PRODUCTION] Production from each Manufactory.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

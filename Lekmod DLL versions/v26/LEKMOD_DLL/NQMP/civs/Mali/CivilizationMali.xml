@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 5/12/2017 1:51:20 PM -->
+<GameData>
+
+	<Civilizations>
+		<Row>
+			<Type>CIVILIZATION_MALI</Type>
+			<Description>TXT_KEY_CIV_MALI_DESC</Description>
+			<ShortDescription>TXT_KEY_CIV_MALI_SHORT_DESC</ShortDescription>
+			<Adjective>TXT_KEY_CIV_MALI_ADJECTIVE</Adjective>
+			<CivilopediaTag>TXT_KEY_CIV5_MALI</CivilopediaTag>
+			<DefaultPlayerColor>PLAYERCOLOR_MALI</DefaultPlayerColor>
+			<!-- FIX --><ArtDefineTag>ART_DEF_CIVILIZATION_MOROCCO</ArtDefineTag>
+			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
+			<ArtStyleSuffix>_AFRI</ArtStyleSuffix>
+			<ArtStylePrefix>AFRICAN </ArtStylePrefix>
+			<PortraitIndex>0</PortraitIndex>
+			<IconAtlas>NQ_ATLAS</IconAtlas>
+			<AlphaIconAtlas>NQ_MALI_ALPHA_ATLAS</AlphaIconAtlas>
+			<MapImage>MapMali360x412.dds</MapImage>
+			<DawnOfManQuote>TXT_KEY_CIV5_DAWN_MALI_TEXT</DawnOfManQuote>
+			<DawnOfManImage>DOM_Mansa_Musa.dds</DawnOfManImage>
+			<SoundtrackTag>Songhai</SoundtrackTag>
+			<!-- FIX <DawnOfManAudio>AS2D_DOM_SPEECH_MOROCCO</DawnOfManAudio>-->
+		</Row>
+	</Civilizations>
+	<Civilization_FreeTechs>
+		<Row>
+			<CivilizationType>CIVILIZATION_MALI</CivilizationType>
+			<TechType>TECH_AGRICULTURE</TechType>
+		</Row>
+	</Civilization_FreeTechs>
+	<Civilization_FreeUnits>
+		<Row>
+			<CivilizationType>CIVILIZATION_MALI</CivilizationType>
+			<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
+			<Count>1</Count>
+			<UnitAIType>UNITAI_SETTLE</UnitAIType>
+		</Row>
+	</Civilization_FreeUnits>
+	<Civilization_FreeBuildingClasses>
+		<Row>
+			<CivilizationType>CIVILIZATION_MALI</CivilizationType>
+			<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
+		</Row>
+	</Civilization_FreeBuildingClasses>
+	<Civilization_Religions>
+		<Row>
+			<CivilizationType>CIVILIZATION_MALI</CivilizationType>
+			<ReligionType>RELIGION_ISLAM</ReligionType>
+		</Row>
+	</Civilization_Religions>
+	<Civilization_Start_Region_Avoid>
+		<Row>
+			<CivilizationType>CIVILIZATION_MALI</CivilizationType>
+			<RegionType>REGION_TUNDRA</RegionType>
+		</Row>
+	</Civilization_Start_Region_Avoid>
+	
+	<!-- localization -->
+	<Language_en_US>
+		<Row Tag="TXT_KEY_CIV_MALI_SHORT_DESC">
+			<Text>Mali</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV_MALI_ADJECTIVE">
+			<Text>Malian</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV_MALI_DESC">
+			<Text>Malian Empire</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_DAWN_MALI_TEXT">
+			<Text>Blessings of God be upon you, Mansa Musa, Emir of Melle, Lord of the Mines of Wangara, Conqueror of Ghanata, and Lion of Mali! The Mali Empire began as a small Mandinka kingdom at the upper reaches of the Niger River, but by the 13th century grew to encompass the largest empire West Africa has ever seen. The riches of your gold mines became known to the world through Trans-Saharan trade and your famous pilgrimage to Mecca. Your wealth, generosity, and piousness inspired awe and respect in kingdoms far and wide. Through your diligent efforts, the Mali Empire flourished at the height of its power with a trading empire that stretched across Africa and into Europe, the Middle East, and Asia. The Empire would last until the 17th century, where infighting over succession split the empire apart and kept your people divided until the colonial overlordship of western European powers came into dominance.[NEWLINE][NEWLINE]Oh great Mansa, your people yearn to return to the time of prosperity, where Malian riches and the righteousness of the mansas were famed throughout the world. Will you restore the legacy of your Empire and bring Mali glory once more? Can you build a civilization that will stand the test of time?</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_DAWN_MALI_TITLE">
+			<Text>Mali</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Row Tag="TXT_KEY_CIV_MALI_SHORT_DESC">
+			<Text>Mali</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV_MALI_ADJECTIVE">
+			<Text>Malian</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV_MALI_DESC">
+			<Text>Malian Empire</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_DAWN_MALI_TEXT">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Blessings of God be upon you, Mansa Musa, Emir of Melle, Lord of the Mines of Wangara, Conqueror of Ghanata, and Lion of Mali! The Mali Empire began as a small Mandinka kingdom at the upper reaches of the Niger River, but by the 13th century grew to encompass the largest empire West Africa has ever seen. The riches of your gold mines became known to the world through Trans-Saharan trade and your famous pilgrimage to Mecca. Your wealth, generosity, and piousness inspired awe and respect in kingdoms far and wide. Through your diligent efforts, the Mali Empire flourished at the height of its power with a trading empire that stretched across Africa and into Europe, the Middle East, and Asia. The Empire would last until the 17th century, where infighting over succession split the empire apart and kept your people divided until the colonial overlordship of western European powers came into dominance.[NEWLINE][NEWLINE]Oh great Mansa, your people yearn to return to the time of prosperity, where Malian riches and the righteousness of the mansas were famed throughout the world. Will you restore the legacy of your Empire and bring Mali glory once more? Can you build a civilization that will stand the test of time?</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_DAWN_MALI_TITLE">
+			<Text>Mali</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Row Tag="TXT_KEY_CIV_MALI_SHORT_DESC">
+			<Text>Mali</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV_MALI_ADJECTIVE">
+			<Text>Malian</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV_MALI_DESC">
+			<Text>Malian Empire</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_DAWN_MALI_TEXT">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Blessings of God be upon you, Mansa Musa, Emir of Melle, Lord of the Mines of Wangara, Conqueror of Ghanata, and Lion of Mali! The Mali Empire began as a small Mandinka kingdom at the upper reaches of the Niger River, but by the 13th century grew to encompass the largest empire West Africa has ever seen. The riches of your gold mines became known to the world through Trans-Saharan trade and your famous pilgrimage to Mecca. Your wealth, generosity, and piousness inspired awe and respect in kingdoms far and wide. Through your diligent efforts, the Mali Empire flourished at the height of its power with a trading empire that stretched across Africa and into Europe, the Middle East, and Asia. The Empire would last until the 17th century, where infighting over succession split the empire apart and kept your people divided until the colonial overlordship of western European powers came into dominance.[NEWLINE][NEWLINE]Oh great Mansa, your people yearn to return to the time of prosperity, where Malian riches and the righteousness of the mansas were famed throughout the world. Will you restore the legacy of your Empire and bring Mali glory once more? Can you build a civilization that will stand the test of time?</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_DAWN_MALI_TITLE">
+			<Text>Mali</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Row Tag="TXT_KEY_CIV_MALI_SHORT_DESC">
+			<Text>Mali</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV_MALI_ADJECTIVE">
+			<Text>Malian</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV_MALI_DESC">
+			<Text>Malian Empire</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_DAWN_MALI_TEXT">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Blessings of God be upon you, Mansa Musa, Emir of Melle, Lord of the Mines of Wangara, Conqueror of Ghanata, and Lion of Mali! The Mali Empire began as a small Mandinka kingdom at the upper reaches of the Niger River, but by the 13th century grew to encompass the largest empire West Africa has ever seen. The riches of your gold mines became known to the world through Trans-Saharan trade and your famous pilgrimage to Mecca. Your wealth, generosity, and piousness inspired awe and respect in kingdoms far and wide. Through your diligent efforts, the Mali Empire flourished at the height of its power with a trading empire that stretched across Africa and into Europe, the Middle East, and Asia. The Empire would last until the 17th century, where infighting over succession split the empire apart and kept your people divided until the colonial overlordship of western European powers came into dominance.[NEWLINE][NEWLINE]Oh great Mansa, your people yearn to return to the time of prosperity, where Malian riches and the righteousness of the mansas were famed throughout the world. Will you restore the legacy of your Empire and bring Mali glory once more? Can you build a civilization that will stand the test of time?</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_DAWN_MALI_TITLE">
+			<Text>Mali</Text>
+		</Row>
+	</Language_RU_RU>
+
+
+
+</GameData>

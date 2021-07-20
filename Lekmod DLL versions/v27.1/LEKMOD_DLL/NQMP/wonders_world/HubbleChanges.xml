@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 12/25/2015 2:38:42 AM -->
+<GameData>
+
+	<!-- Update Hubble:
+			No longer provides any free Great Scientists.
+			Now provides a free Recycling Center (instead of a free Spaceship Factory) in the city in which it is built.
+			Bonus to Spaceship Part construction increased to +200% (from +25%).
+			Now provides +10 flat science boost in the city in which it is built.
+			Now provides +3 Great Scientist points per turn (up from +1). -->
+	<Buildings>
+		<Update>
+			<Set GlobalSpaceProductionModifier="200" FreeBuildingThisCity="BUILDINGCLASS_RECYCLING_CENTER" GreatPeopleRateChange="3" />
+			<Where Type="BUILDING_HUBBLE" />
+		</Update>
+	</Buildings>
+	<Building_YieldChanges>
+		<Row>
+			<BuildingType>BUILDING_HUBBLE</BuildingType>
+			<YieldType>YIELD_SCIENCE</YieldType>
+			<Yield>10</Yield>
+		</Row>
+	</Building_YieldChanges>
+	<Building_FreeUnits>
+		<Delete BuildingType="BUILDING_HUBBLE" />
+	</Building_FreeUnits>
+
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_WONDER_HUBBLE_HELP" />
+		<Row Tag="TXT_KEY_WONDER_HUBBLE_HELP">
+			<Text>Provides a free Recycling Center in the city in which it is built. +200% [ICON_PRODUCTION] Production when building Spaceship Parts.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_WONDER_HUBBLE_HELP" />
+		<Row Tag="TXT_KEY_WONDER_HUBBLE_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Provides a free Recycling Center in the city in which it is built. +200% [ICON_PRODUCTION] Production when building Spaceship Parts.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_WONDER_HUBBLE_HELP" />
+		<Row Tag="TXT_KEY_WONDER_HUBBLE_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Provides a free Recycling Center in the city in which it is built. +200% [ICON_PRODUCTION] Production when building Spaceship Parts.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_WONDER_HUBBLE_HELP" />
+		<Row Tag="TXT_KEY_WONDER_HUBBLE_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Provides a free Recycling Center in the city in which it is built. +200% [ICON_PRODUCTION] Production when building Spaceship Parts.</Text>
+		</Row>
+	</Language_RU_RU>
+	
+</GameData>

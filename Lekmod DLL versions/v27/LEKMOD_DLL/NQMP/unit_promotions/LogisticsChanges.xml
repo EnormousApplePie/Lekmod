@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 5/5/2017 1:09:55 PM -->
+<GameData>
+
+	<!-- Logistics (and other promotions with extra attacks) no longer allows moving after attacking - instead all units keep moving by default until they finish all attacks. The fix for this is in the C++ under define NQ_UNIT_TURN_ENDS_ON_FINAL_ATTACK. -->
+	<UnitPromotions>
+		<Update>
+			<Set CanMoveAfterAttacking="false" />
+			<Where Type="PROMOTION_LOGISTICS" />
+		</Update>
+		<Update>
+			<Set CanMoveAfterAttacking="false" />
+			<Where Type="PROMOTION_BLITZ" />
+		</Update>
+		<Update>
+			<Set CanMoveAfterAttacking="false" />
+			<Where Type="PROMOTION_AIR_LOGISTICS" />
+		</Update>
+	</UnitPromotions>
+
+</GameData>

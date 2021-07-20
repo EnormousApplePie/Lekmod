@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2016-09-25 05:44:53 -->
+<GameData>
+
+	<!-- Use Faith to purchase land units -->
+	<Belief_EraFaithUnitPurchase>
+		<Row>
+			<BeliefType>BELIEF_HOLY_WARRIORS</BeliefType>
+			<EraType>ERA_INDUSTRIAL</EraType>
+		</Row>
+		<Row>
+			<BeliefType>BELIEF_HOLY_WARRIORS</BeliefType>
+			<EraType>ERA_MODERN</EraType>
+		</Row>
+		<Row>
+			<BeliefType>BELIEF_HOLY_WARRIORS</BeliefType>
+			<EraType>ERA_POSTMODERN</EraType>
+		</Row>
+		<Row>
+			<BeliefType>BELIEF_HOLY_WARRIORS</BeliefType>
+			<EraType>ERA_FUTURE</EraType>
+		</Row>
+	</Belief_EraFaithUnitPurchase>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_BELIEF_HOLY_WARRIORS" />
+		<Row Tag="TXT_KEY_BELIEF_HOLY_WARRIORS">
+			<Text>Use [ICON_PEACE] Faith to purchase land units</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_BELIEF_HOLY_WARRIORS" />
+		<Row Tag="TXT_KEY_BELIEF_HOLY_WARRIORS">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Use [ICON_PEACE] Faith to purchase land units</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_BELIEF_HOLY_WARRIORS" />
+		<Row Tag="TXT_KEY_BELIEF_HOLY_WARRIORS">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Use [ICON_PEACE] Faith to purchase land units</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_BELIEF_HOLY_WARRIORS" />
+		<Row Tag="TXT_KEY_BELIEF_HOLY_WARRIORS">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Use [ICON_PEACE] Faith to purchase land units</Text>
+		</Row>
+	</Language_RU_RU>
+	
+</GameData>

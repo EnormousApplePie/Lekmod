@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 5/11/2017 6:04:42 PM -->
+<GameData>
+
+	<Builds>
+		
+		<!-- Roads/Railroads will always take 2 turns on Quick Speed, even with +50% speed (Liberty + Pyramids). -->
+		<Update>
+			<Set Time="300" />
+			<Where Type="BUILD_ROAD" />
+		</Update>
+		<Update>
+			<Set Time="300" />
+			<Where Type="BUILD_RAILROAD" />
+		</Update>
+		
+		<!-- Remove Road is always 1 turn for everyone on quick AND standard speed -->
+		<Update>
+			<Set Time="100" />
+			<Where Type="BUILD_REMOVE_ROUTE" />
+		</Update>
+		
+		<!-- Repairing is 1 turn on quick if you have either liberty policy or pyramids (or both) -->
+		<Update>
+			<Set Time="175" />
+			<Where Type="BUILD_REPAIR" />
+		</Update>
+
+		<!-- Build time of all improvements capped to 4/3/3 (6/5/4 with chop) on Quick -->
+		<Update>
+			<Set Time="555" />
+			<Where Time="700" />
+		</Update>
+		<Update>
+			<Set Time="555" />
+			<Where Time="800" />
+		</Update>
+		<Update>
+			<Set Time="555" />
+			<Where Time="900" />
+		</Update>
+
+	</Builds>
+
+	<!-- Jungle, Forest, and Marsh chops are all 2/2/1 turns now -->
+	<BuildFeatures>
+		<Update>
+			<Set Time="210" />
+			<Where Time="400" />
+		</Update>
+		<Update>
+			<Set Time="210" />
+			<Where Time="600" />
+		</Update>
+		<Update>
+			<Set Time="210" />
+			<Where Time="700" />
+		</Update>
+	</BuildFeatures>
+	
+</GameData>

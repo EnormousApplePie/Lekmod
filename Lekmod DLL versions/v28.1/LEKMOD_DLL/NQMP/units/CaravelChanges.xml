@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 4/22/2016 5:40:00 PM -->
+<GameData>
+
+	<!-- Change flavors to prevent CS from ever building Caravels -->
+	<Unit_Flavors>
+		<Update>
+			<Set Flavor="0" />
+			<Where UnitType="UNIT_CARAVEL" FlavorType="FLAVOR_NAVAL" />
+		</Update>
+		<Update>
+			<Set Flavor="12" />
+			<Where UnitType="UNIT_CARAVEL" FlavorType="FLAVOR_NAVAL_RECON" />
+		</Update>
+	</Unit_Flavors>
+	
+</GameData>

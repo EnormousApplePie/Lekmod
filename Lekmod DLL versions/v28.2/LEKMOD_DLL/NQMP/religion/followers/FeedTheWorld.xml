@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2016-09-25 05:44:53 -->
+<GameData>
+
+	<!-- +1 Food from Shrines and +2 Food from Temples -->
+	<Belief_BuildingClassYieldChanges>
+		<!-- already provides +1 Food from Shrines by default -->
+		<Update>
+			<Set YieldChange="2" />
+			<Where BeliefType="BELIEF_FEED_WORLD" BuildingClassType="BUILDINGCLASS_TEMPLE" YieldType="YIELD_FOOD" />
+		</Update>
+	</Belief_BuildingClassYieldChanges>
+	
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_BELIEF_FEED_WORLD" />
+		<Row Tag="TXT_KEY_BELIEF_FEED_WORLD">
+			<Text>+1 [ICON_FOOD] Food from Shrines and +2 [ICON_FOOD] Food from Temples</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_BELIEF_FEED_WORLD" />
+		<Row Tag="TXT_KEY_BELIEF_FEED_WORLD">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]+1 [ICON_FOOD] Food from Shrines and +2 [ICON_FOOD] Food from Temples</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_BELIEF_FEED_WORLD" />
+		<Row Tag="TXT_KEY_BELIEF_FEED_WORLD">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]+1 [ICON_FOOD] Food from Shrines and +2 [ICON_FOOD] Food from Temples</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_BELIEF_FEED_WORLD" />
+		<Row Tag="TXT_KEY_BELIEF_FEED_WORLD">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]+1 [ICON_FOOD] Food from Shrines and +2 [ICON_FOOD] Food from Temples</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

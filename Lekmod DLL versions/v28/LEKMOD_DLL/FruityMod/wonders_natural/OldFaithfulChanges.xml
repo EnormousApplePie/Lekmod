@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by HellBlazer on 17/7/2015 15:00 -->
+<GameData>
+
+	<!-- Now provides +4 Science (up from +2) -->
+	<Feature_YieldChanges>
+		<Update>
+			<Where FeatureType ="FEATURE_GEYSER" YieldType="YIELD_SCIENCE"/>
+			<Set Yield="4"/>
+		</Update>
+	</Feature_YieldChanges>
+
+</GameData>

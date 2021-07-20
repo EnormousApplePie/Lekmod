@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2016-09-26 00:15:53 -->
+<GameData>
+	
+	<!-- Gold gifts to City States earn 30% more Influence. -->
+	<Beliefs>
+		<Update>
+			<Set Reformation="false" Founder="true" />
+			<Where Type="BELIEF_CHARITABLE_MISSIONS" />
+		</Update>
+	</Beliefs>
+	
+</GameData>

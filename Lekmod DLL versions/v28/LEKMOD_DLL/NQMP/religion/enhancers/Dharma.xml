@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2016-09-25 05:44:53 -->
+<GameData>
+
+	<!-- Starts a Golden Age -->
+	<Beliefs>
+		<Row>
+			<Type>BELIEF_DHARMA</Type>
+			<Description>TXT_KEY_BELIEF_DHARMA</Description>
+			<ShortDescription>TXT_KEY_BELIEF_DHARMA_SHORT</ShortDescription>
+			<Enhancer>true</Enhancer>
+			<GoldenAgeTurns>10</GoldenAgeTurns>
+		</Row>
+	</Beliefs>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Row Tag="TXT_KEY_BELIEF_DHARMA">
+			<Text>Starts a [ICON_GOLDEN_AGE] Golden Age</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BELIEF_DHARMA_SHORT">
+			<Text>Dharma</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Row Tag="TXT_KEY_BELIEF_DHARMA">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Starts a [ICON_GOLDEN_AGE] Golden Age</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BELIEF_DHARMA_SHORT">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Dharma</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Row Tag="TXT_KEY_BELIEF_DHARMA">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Starts a [ICON_GOLDEN_AGE] Golden Age</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BELIEF_DHARMA_SHORT">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Dharma</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Row Tag="TXT_KEY_BELIEF_DHARMA">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Starts a [ICON_GOLDEN_AGE] Golden Age</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BELIEF_DHARMA_SHORT">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Dharma</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

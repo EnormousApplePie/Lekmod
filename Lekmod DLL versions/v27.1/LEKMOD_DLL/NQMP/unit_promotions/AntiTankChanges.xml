@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 5/6/2015 4:32:58 AM -->
+<GameData>
+
+	<!-- Anti Tank Guns and Helicopter Gunships have +200% vs Armored (up from +100%) to compensate for the buff to Armored units vs Land units -->
+	<UnitPromotions_UnitCombatMods>
+		<Update>
+			<Set Modifier="200" />
+			<Where PromotionType="PROMOTION_ANTI_TANK" UnitCombatType="UNITCOMBAT_ARMOR" />
+		</Update>
+	</UnitPromotions_UnitCombatMods>
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_PROMOTION_ANTI_TANK" />
+		<Row Tag="TXT_KEY_PROMOTION_ANTI_TANK">
+			<Text>Bonus vs Tanks (200)</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_PEDIA_PROMOTION_ANTI_TANK" />
+		<Row Tag="TXT_KEY_PEDIA_PROMOTION_ANTI_TANK">
+			<Text>Bonus vs Tanks (200)</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_PROMOTION_ANTI_TANK" />
+		<Row Tag="TXT_KEY_PROMOTION_ANTI_TANK">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Bonus vs Tanks (200)</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_PEDIA_PROMOTION_ANTI_TANK" />
+		<Row Tag="TXT_KEY_PEDIA_PROMOTION_ANTI_TANK">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Bonus vs Tanks (200)</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_PROMOTION_ANTI_TANK" />
+		<Row Tag="TXT_KEY_PROMOTION_ANTI_TANK">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Bonus vs Tanks (200)</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_PEDIA_PROMOTION_ANTI_TANK" />
+		<Row Tag="TXT_KEY_PEDIA_PROMOTION_ANTI_TANK">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Bonus vs Tanks (200)</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_PROMOTION_ANTI_TANK" />
+		<Row Tag="TXT_KEY_PROMOTION_ANTI_TANK">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Bonus vs Tanks (200)</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_PEDIA_PROMOTION_ANTI_TANK" />
+		<Row Tag="TXT_KEY_PEDIA_PROMOTION_ANTI_TANK">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Bonus vs Tanks (200)</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2016-09-09 22:19:38 -->
+<GameData>
+
+	<!-- new Drydock improvement, built by Great Admiral, provides 100% defense to naval units in its tile
+			and +2 Production, +2 Gold from the tile. Must be built adjacent to city and not on resources,
+			available at Compass. -->
+
+	<ArtDefine_Landmarks>
+		<Update>
+			<Where ImprovementType="ART_DEF_IMPROVEMENT_CITADEL"/>
+			<Set Scale="0.7"/>
+		</Update>
+	</ArtDefine_Landmarks>
+	<Units>
+		<Update>
+			<Where Type="UNIT_GREAT_ADMIRAL"/>
+			<Set WorkRate="1"/>
+		</Update>
+	</Units>
+	<Improvements>
+		<Row>
+			<Type>IMPROVEMENT_DRYDOCK</Type>
+			<Description>TXT_KEY_IMPROVEMENT_DRYDOCK</Description>
+			<Civilopedia>TXT_KEY_IMPROVEMENT_DRYDOCK_TEXT</Civilopedia>
+			<Help>TXT_KEY_IMPROVEMENT_DRYDOCK_HELP</Help>
+			<ArtDefineTag>ART_DEF_IMPROVEMENT_CITADEL</ArtDefineTag>
+			<!--ArtDefineTag>ART_DEF_IMPROVEMENT_PONTOON_BRIDGE</ArtDefineTag-->
+			<Water>true</Water>
+			<CreatedByGreatPerson>true</CreatedByGreatPerson>
+			<RequiresXAdjacentLand>1</RequiresXAdjacentLand>
+			<PortraitIndex>0</PortraitIndex>
+			<IconAtlas>CIVIL_WAR_IMPROVEMENT_ICON_ATLAS</IconAtlas>
+		</Row>
+	</Improvements>
+
+	<Improvement_ValidTerrains>
+		<Row>
+			<ImprovementType>IMPROVEMENT_DRYDOCK</ImprovementType>
+			<TerrainType>TERRAIN_COAST</TerrainType>
+		</Row>
+	</Improvement_ValidTerrains>
+
+	<Unit_Builds>
+		<Row>
+			<UnitType>UNIT_GREAT_ADMIRAL</UnitType>
+			<BuildType>BUILD_DRYDOCK</BuildType>
+		</Row>
+	</Unit_Builds>
+
+	<Builds>
+		<Row>
+			<Type>BUILD_DRYDOCK</Type>
+			<ImprovementType>IMPROVEMENT_DRYDOCK</ImprovementType>
+			<Description>TXT_KEY_BUILD_DRYDOCK</Description>
+			<Help>TXT_KEY_BUILD_DRYDOCK_HELP</Help>
+			<Recommendation>TXT_KEY_BUILD_DRYDOCK_REC</Recommendation>
+			<Water>true</Water>
+			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
+			<Kill>1</Kill>
+			<HotKey>KB_C</HotKey>
+			<OrderPriority>96</OrderPriority>
+			<CtrlDown>1</CtrlDown>
+			<IconIndex>51</IconIndex>
+			<IconAtlas>UNIT_ACTION_ATLAS</IconAtlas>
+		</Row>
+	</Builds>
+	<Improvement_Yields>
+		<Row>
+			<ImprovementType>IMPROVEMENT_DRYDOCK</ImprovementType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>2</Yield>
+		</Row>
+		<Row>
+			<ImprovementType>IMPROVEMENT_DRYDOCK</ImprovementType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<Yield>2</Yield>
+		</Row>
+	</Improvement_Yields>
+
+	<Language_en_US>
+		<Row Tag="TXT_KEY_IMPROVEMENT_AQUATIC_FORTRESS">
+			<Text>Drydock</Text>
+		</Row>
+		<!--
+		<Row Tag="TXT_KEY_CIV5_IMPROVEMENTS_AQUATIC_FORTRESS_HELP">
+			<Text>An Aquatic Fortress can only be built on a Coastal tile.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_IMPROVEMENTS_AQUATIC_FORTRESS_TEXT">
+			<Text>Aquatic Fortresses are coastal fortifications that provide protection against attacks by military and naval forces at or near the shoreline. Although most coastal fortifications are on the coast, not all are. Instead, some are off the coast on islands, artificial islands, or are specially built structures.[NEWLINE][NEWLINE]An Aquatic Fortress can only be built on Coastal tiles (even if it has a feature).</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILD_AQUATIC_FORTRESS_HELP">
+			<Text>Constructs an Aquatic Fortress, which increases the amount of [ICON_DEFENSE] Defense to units in this tile. Adds every tile around it to your territory. 30 damage to adjacent enemy units every turn.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILD_AQUATIC_FORTRESS_REC">
+			<Text>Units in this tile have increased [ICON_DEFENSE] Defense. Enemy units take damage if they end their turn near the aquafort.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILD_AQUATIC_FORTRESS">
+			<Text>Construct an [LINK=IMPROVEMENT_AQUATIC_FORTRESS]Aquatic Fortress[\LINK]</Text>
+		</Row>
+		-->
+	</Language_en_US>
+
+
+
+
+
+
+	<!--
+	<Improvements>
+		<Row>
+			<Type>IMPROVEMENT_DRYDOCK</Type>
+			<Description>TXT_KEY_IMPROVEMENT_DRYDOCK</Description>
+			<Civilopedia>TXT_KEY_CIV5_IMPROVEMENTS_DRYDOCK_TEXT</Civilopedia>
+			<ArtDefineTag>ART_DEF_IMPROVEMENT_PONTOON_BRIDGE</ArtDefineTag>
+			<BuildableOnResources>false</BuildableOnResources>
+			<DefenseModifier>100</DefenseModifier>
+			<Water>true</Water>
+			<CreatedByGreatPerson>true</CreatedByGreatPerson>
+			<PortraitIndex>0</PortraitIndex>
+			<IconAtlas>CIVIL_WAR_IMPROVEMENT_ICON_ATLAS</IconAtlas>
+		</Row>
+	</Improvements>
+	<Improvement_ValidTerrains>
+		<Row>
+			<ImprovementType>IMPROVEMENT_DRYDOCK</ImprovementType>
+			<TerrainType>TERRAIN_COAST</TerrainType>
+		</Row>
+		<Row>
+			<ImprovementType>IMPROVEMENT_DRYDOCK</ImprovementType>
+			<TerrainType>TERRAIN_OCEAN</TerrainType>
+		</Row>
+	</Improvement_ValidTerrains>
+	<Builds>
+		<Row>
+			<Type>BUILD_DRYDOCK</Type>
+			<PrereqTech>TECH_COMPASS</PrereqTech>
+			<ImprovementType>IMPROVEMENT_DRYDOCK</ImprovementType>
+			<Description>TXT_KEY_BUILD_PONTOON_BRIDGE</Description>
+			<Help>TXT_KEY_BUILD_PONTOON_BRIDGE_HELP</Help>
+			<Recommendation>TXT_KEY_BUILD_PONTOON_BRIDGE_REC</Recommendation>
+			<Water>true</Water>
+			<CanBeEmbarked>true</CanBeEmbarked>
+			<Kill>true</Kill>
+			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
+			<HotKey>KB_Z</HotKey>
+			<OrderPriority>98</OrderPriority>
+			<IconIndex>0</IconIndex>
+			<IconAtlas>CIVIL_WAR_UNIT_ACTION_ICON_ATLAS</IconAtlas>
+		</Row>
+	</Builds>
+	<Unit_Builds>
+		<Row>
+			<UnitType>UNIT_GREAT_ADMIRAL</UnitType>
+			<BuildType>BUILD_DRYDOCK</BuildType>
+		</Row>
+	</Unit_Builds>-->
+	
+</GameData>

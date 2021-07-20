@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 7/8/2014 11:45:39 PM -->
+<GameData>
+	<AIEconomicStrategies>
+		<Update>
+			<Set FirstTurnExecuted="1"/>
+			<Where AIEconomicStrategyType="ECONOMICAISTRATEGY_NEED_RECON" />
+		</Update>
+		<Update>
+			<Set FirstTurnExecuted="1"/>
+			<Where AIEconomicStrategyType="ECONOMICAISTRATEGY_ENOUGH_RECON" />
+		</Update>
+		<Update>
+			<Set FirstTurnExecuted="1"/>
+			<Where AIEconomicStrategyType="ECONOMICAISTRATEGY_NEED_RECON_SEA" />
+		</Update>
+		<Update>
+			<Set FirstTurnExecuted="1"/>
+			<Where AIEconomicStrategyType="ECONOMICAISTRATEGY_ENOUGH_RECON_SEA" />
+		</Update>
+		<Update>
+			<Set MinimumNumTurnsExecuted="1" CheckTriggerTurnCount="1" />
+			<Where AIEconomicStrategyType="ECONOMICAISTRATEGY_LOSING_MONEY" />
+		</Update>
+		<Update>
+			<Set CheckTriggerTurnCount="1" />
+		</Update>
+	</AIEconomicStrategies>
+	<AIEconomicStrategy_Player_Flavors>
+	<!-- Old value of 10 isn't exactly "like crazy". Now 75, that's more like it! -->
+		<Update>
+			<Set Flavor="75" />
+			<Where AIEconomicStrategyType="ECONOMICAISTRATEGY_EXPAND_LIKE_CRAZY" />
+		</Update>
+		<Update>
+			<Set Flavor="75" />
+			<Where AIEconomicStrategyType="ECONOMICAISTRATEGY_GROW_LIKE_CRAZY" />
+		</Update>
+		<!-- AI more likely to create escort for their first settler -->
+		<Row>
+			<AIEconomicStrategyType>ECONOMICAISTRATEGY_EARLY_EXPANSION</AIEconomicStrategyType>
+			<FlavorType>FLAVOR_DEFENSE</FlavorType>
+			<Flavor>10</Flavor>
+		</Row>
+		<!-- Greater Gold flavor and more military flavor adjustments needed to make sure AI builds gold buildings -->
+		<Update>
+			<Set Flavor="40" />
+			<Where AIEconomicStrategyType="ECONOMICAISTRATEGY_LOSING_MONEY" FlavorType="FLAVOR_GOLD" />
+		</Update>
+		<Row>
+			<AIEconomicStrategyType>ECONOMICAISTRATEGY_LOSING_MONEY</AIEconomicStrategyType>
+			<FlavorType>FLAVOR_NAVAL</FlavorType>
+			<Flavor>-10</Flavor>
+		</Row>
+		<Row>
+			<AIEconomicStrategyType>ECONOMICAISTRATEGY_LOSING_MONEY</AIEconomicStrategyType>
+			<FlavorType>FLAVOR_RANGED</FlavorType>
+			<Flavor>-10</Flavor>
+		</Row>
+		<Row>
+			<AIEconomicStrategyType>ECONOMICAISTRATEGY_LOSING_MONEY</AIEconomicStrategyType>
+			<FlavorType>FLAVOR_MOBILE</FlavorType>
+			<Flavor>-10</Flavor>
+		</Row>
+		<!-- Conquest Grand Strategy had some odd omissions and oddly low priorities -->
+		<Update>
+			<Set Flavor="10" />
+			<Where AIEconomicStrategyType="ECONOMICAISTRATEGY_GS_CONQUEST" FlavorType="FLAVOR_AIR" />
+		</Update>
+		<Row>
+			<AIEconomicStrategyType>ECONOMICAISTRATEGY_GS_CONQUEST</AIEconomicStrategyType>
+			<FlavorType>FLAVOR_MOBILE</FlavorType>
+			<Flavor>5</Flavor>
+		</Row>
+		<!-- Helps with unit upkeep -->
+		<Row>
+			<AIEconomicStrategyType>ECONOMICAISTRATEGY_GS_CONQUEST</AIEconomicStrategyType>
+			<FlavorType>FLAVOR_GOLD</FlavorType>
+			<Flavor>5</Flavor>
+		</Row>
+		<Row>
+			<AIEconomicStrategyType>ECONOMICAISTRATEGY_GS_CULTURE</AIEconomicStrategyType>
+			<FlavorType>FLAVOR_TOURISM</FlavorType>
+			<Flavor>35</Flavor>
+		</Row>
+		<!-- Population = Science -->
+		<Row>
+			<AIEconomicStrategyType>ECONOMICAISTRATEGY_GS_SPACESHIP</AIEconomicStrategyType>
+			<FlavorType>FLAVOR_GROWTH</FlavorType>
+			<Flavor>20</Flavor>
+		</Row>
+		<!-- Both an equalizer and helps Freedom civs -->
+		<Row>
+			<AIEconomicStrategyType>ECONOMICAISTRATEGY_GS_SPACESHIP</AIEconomicStrategyType>
+			<FlavorType>FLAVOR_GOLD</FlavorType>
+			<Flavor>5</Flavor>
+		</Row>
+		<!-- Homestretch activates when parts are being built, so science flavor makes sure all parts are unlocked in time -->
+		<Update>
+			<Set Flavor="40" />
+			<Where AIEconomicStrategyType="ECONOMICAISTRATEGY_GS_SPACESHIP_HOMESTRETCH" FlavorType="FLAVOR_SCIENCE" />
+		</Update>
+		<Row>
+			<AIEconomicStrategyType>ECONOMICAISTRATEGY_GS_SPACESHIP_HOMESTRETCH</AIEconomicStrategyType>
+			<FlavorType>FLAVOR_GOLD</FlavorType>
+			<Flavor>10</Flavor>
+		</Row>
+		<Row>
+			<AIEconomicStrategyType>ECONOMICAISTRATEGY_GS_SPACESHIP_HOMESTRETCH</AIEconomicStrategyType>
+			<FlavorType>FLAVOR_PRODUCTION</FlavorType>
+			<Flavor>15</Flavor>
+		</Row>
+	</AIEconomicStrategy_Player_Flavors>
+	<AIEconomicStrategy_City_Flavors>
+	<!-- Old value of 10 isn't exactly "like crazy". Now 75, that's more like it! -->
+		<Update>
+			<Set Flavor="75" />
+			<Where AIEconomicStrategyType="ECONOMICAISTRATEGY_EXPAND_LIKE_CRAZY" />
+		</Update>
+		<Update>
+			<Set Flavor="75" />
+			<Where AIEconomicStrategyType="ECONOMICAISTRATEGY_GROW_LIKE_CRAZY" />
+		</Update>
+		<!-- AI more likely to create escort for their first settler -->
+		<Row>
+			<AIEconomicStrategyType>ECONOMICAISTRATEGY_EARLY_EXPANSION</AIEconomicStrategyType>
+			<FlavorType>FLAVOR_DEFENSE</FlavorType>
+			<Flavor>10</Flavor>
+		</Row>
+		<!-- Greater Gold flavor and more military flavor adjustments needed to make sure AI builds gold buildings -->
+		<Update>
+			<Set Flavor="40" />
+			<Where AIEconomicStrategyType="ECONOMICAISTRATEGY_LOSING_MONEY" FlavorType="FLAVOR_GOLD" />
+		</Update>
+		<Row>
+			<AIEconomicStrategyType>ECONOMICAISTRATEGY_LOSING_MONEY</AIEconomicStrategyType>
+			<FlavorType>FLAVOR_NAVAL</FlavorType>
+			<Flavor>-10</Flavor>
+		</Row>
+		<Row>
+			<AIEconomicStrategyType>ECONOMICAISTRATEGY_LOSING_MONEY</AIEconomicStrategyType>
+			<FlavorType>FLAVOR_RANGED</FlavorType>
+			<Flavor>-10</Flavor>
+		</Row>
+		<Row>
+			<AIEconomicStrategyType>ECONOMICAISTRATEGY_LOSING_MONEY</AIEconomicStrategyType>
+			<FlavorType>FLAVOR_MOBILE</FlavorType>
+			<Flavor>-10</Flavor>
+		</Row>
+		<!-- Conquest Grand Strategy had some odd omissions and oddly low priorities -->
+		<Update>
+			<Set Flavor="10" />
+			<Where AIEconomicStrategyType="ECONOMICAISTRATEGY_GS_CONQUEST" FlavorType="FLAVOR_AIR" />
+		</Update>
+		<Row>
+			<AIEconomicStrategyType>ECONOMICAISTRATEGY_GS_CONQUEST</AIEconomicStrategyType>
+			<FlavorType>FLAVOR_MOBILE</FlavorType>
+			<Flavor>5</Flavor>
+		</Row>
+		<!-- Helps with unit upkeep -->
+		<Row>
+			<AIEconomicStrategyType>ECONOMICAISTRATEGY_GS_CONQUEST</AIEconomicStrategyType>
+			<FlavorType>FLAVOR_GOLD</FlavorType>
+			<Flavor>5</Flavor>
+		</Row>
+		<Row>
+			<AIEconomicStrategyType>ECONOMICAISTRATEGY_GS_CULTURE</AIEconomicStrategyType>
+			<FlavorType>FLAVOR_TOURISM</FlavorType>
+			<Flavor>45</Flavor>
+		</Row>
+		<!-- Population = Science -->
+		<Row>
+			<AIEconomicStrategyType>ECONOMICAISTRATEGY_GS_SPACESHIP</AIEconomicStrategyType>
+			<FlavorType>FLAVOR_GROWTH</FlavorType>
+			<Flavor>20</Flavor>
+		</Row>
+		<!-- Both an equalizer and helps Freedom civs -->
+		<Row>
+			<AIEconomicStrategyType>ECONOMICAISTRATEGY_GS_SPACESHIP</AIEconomicStrategyType>
+			<FlavorType>FLAVOR_GOLD</FlavorType>
+			<Flavor>5</Flavor>
+		</Row>
+		<!-- Homestretch activates when parts are being built, so science flavor makes sure all parts are unlocked in time -->
+		<Update>
+			<Set Flavor="40" />
+			<Where AIEconomicStrategyType="ECONOMICAISTRATEGY_GS_SPACESHIP_HOMESTRETCH" FlavorType="FLAVOR_SCIENCE" />
+		</Update>
+		<Row>
+			<AIEconomicStrategyType>ECONOMICAISTRATEGY_GS_SPACESHIP_HOMESTRETCH</AIEconomicStrategyType>
+			<FlavorType>FLAVOR_GOLD</FlavorType>
+			<Flavor>10</Flavor>
+		</Row>
+		<Row>
+			<AIEconomicStrategyType>ECONOMICAISTRATEGY_GS_SPACESHIP_HOMESTRETCH</AIEconomicStrategyType>
+			<FlavorType>FLAVOR_PRODUCTION</FlavorType>
+			<Flavor>15</Flavor>
+		</Row>
+		<Row>
+			<AIEconomicStrategyType>ECONOMICAISTRATEGY_NEED_MUSEUMS</AIEconomicStrategyType>
+			<FlavorType>FLAVOR_TOURISM</FlavorType>
+			<Flavor>40</Flavor>
+		</Row>
+	</AIEconomicStrategy_City_Flavors>
+	<AIEconomicStrategy_Flavors>
+		<!-- Old value of 10 isn't exactly "like crazy". Now 75, that's more like it! -->
+		<Update>
+			<Set Flavor="75" />
+			<Where AIEconomicStrategyType="ECONOMICAISTRATEGY_EXPAND_LIKE_CRAZY" />
+		</Update>
+		<Update>
+			<Set Flavor="75" />
+			<Where AIEconomicStrategyType="ECONOMICAISTRATEGY_GROW_LIKE_CRAZY" />
+		</Update>
+		<!-- AI more likely to create escort for their first settler -->
+		<Row>
+			<AIEconomicStrategyType>ECONOMICAISTRATEGY_EARLY_EXPANSION</AIEconomicStrategyType>
+			<FlavorType>FLAVOR_DEFENSE</FlavorType>
+			<Flavor>10</Flavor>
+		</Row>
+		<!-- Greater Gold flavor and more military flavor adjustments needed to make sure AI builds gold buildings -->
+		<Update>
+			<Set Flavor="40" />
+			<Where AIEconomicStrategyType="ECONOMICAISTRATEGY_LOSING_MONEY" FlavorType="FLAVOR_GOLD" />
+		</Update>
+		<Row>
+			<AIEconomicStrategyType>ECONOMICAISTRATEGY_LOSING_MONEY</AIEconomicStrategyType>
+			<FlavorType>FLAVOR_NAVAL</FlavorType>
+			<Flavor>-10</Flavor>
+		</Row>
+		<Row>
+			<AIEconomicStrategyType>ECONOMICAISTRATEGY_LOSING_MONEY</AIEconomicStrategyType>
+			<FlavorType>FLAVOR_RANGED</FlavorType>
+			<Flavor>-10</Flavor>
+		</Row>
+		<Row>
+			<AIEconomicStrategyType>ECONOMICAISTRATEGY_LOSING_MONEY</AIEconomicStrategyType>
+			<FlavorType>FLAVOR_MOBILE</FlavorType>
+			<Flavor>-10</Flavor>
+		</Row>
+		<!-- Conquest Grand Strategy had some odd omissions and oddly low priorities -->
+		<Update>
+			<Set Flavor="10" />
+			<Where AIEconomicStrategyType="ECONOMICAISTRATEGY_GS_CONQUEST" FlavorType="FLAVOR_AIR" />
+		</Update>
+		<Row>
+			<AIEconomicStrategyType>ECONOMICAISTRATEGY_GS_CONQUEST</AIEconomicStrategyType>
+			<FlavorType>FLAVOR_MOBILE</FlavorType>
+			<Flavor>5</Flavor>
+		</Row>
+		<!-- Helps with unit upkeep -->
+		<Row>
+			<AIEconomicStrategyType>ECONOMICAISTRATEGY_GS_CONQUEST</AIEconomicStrategyType>
+			<FlavorType>FLAVOR_GOLD</FlavorType>
+			<Flavor>5</Flavor>
+		</Row>
+		<!-- Population = Science -->
+		<Row>
+			<AIEconomicStrategyType>ECONOMICAISTRATEGY_GS_SPACESHIP</AIEconomicStrategyType>
+			<FlavorType>FLAVOR_GROWTH</FlavorType>
+			<Flavor>20</Flavor>
+		</Row>
+		<!-- Both an equalizer and helps Freedom civs -->
+		<Row>
+			<AIEconomicStrategyType>ECONOMICAISTRATEGY_GS_SPACESHIP</AIEconomicStrategyType>
+			<FlavorType>FLAVOR_GOLD</FlavorType>
+			<Flavor>5</Flavor>
+		</Row>
+		<!-- Homestretch activates when parts are being built, so science flavor makes sure all parts are unlocked in time -->
+		<Update>
+			<Set Flavor="40" />
+			<Where AIEconomicStrategyType="ECONOMICAISTRATEGY_GS_SPACESHIP_HOMESTRETCH" FlavorType="FLAVOR_SCIENCE" />
+		</Update>
+		<Row>
+			<AIEconomicStrategyType>ECONOMICAISTRATEGY_GS_SPACESHIP_HOMESTRETCH</AIEconomicStrategyType>
+			<FlavorType>FLAVOR_GOLD</FlavorType>
+			<Flavor>10</Flavor>
+		</Row>
+		<Row>
+			<AIEconomicStrategyType>ECONOMICAISTRATEGY_GS_SPACESHIP_HOMESTRETCH</AIEconomicStrategyType>
+			<FlavorType>FLAVOR_PRODUCTION</FlavorType>
+			<Flavor>15</Flavor>
+		</Row>
+	</AIEconomicStrategy_Flavors>
+</GameData>

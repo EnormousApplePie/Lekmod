@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2017-05-08 18:07:30 -->
+<GameData>
+	
+	<!-- UA no longer adds Unhappiness from number of Cities. Unhappiness from Population lowered by 20% (down from 50%). -->
+	<Traits>
+		<Update>
+			<Set CityUnhappinessModifier="0" PopulationUnhappinessModifier="-20" />
+			<Where Type="TRAIT_POPULATION_GROWTH" />
+		</Update>
+	</Traits>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_TRAIT_POPULATION_GROWTH" />
+		<Row Tag="TXT_KEY_TRAIT_POPULATION_GROWTH">
+			<Text>[ICON_HAPPINESS_4] Unhappiness from number of [ICON_CITIZEN] Citizens reduced by 20%.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_TRAIT_POPULATION_GROWTH" />
+		<Row Tag="TXT_KEY_TRAIT_POPULATION_GROWTH">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][ICON_HAPPINESS_4] Unhappiness from number of [ICON_CITIZEN] Citizens reduced by 20%.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_TRAIT_POPULATION_GROWTH" />
+		<Row Tag="TXT_KEY_TRAIT_POPULATION_GROWTH">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][ICON_HAPPINESS_4] Unhappiness from number of [ICON_CITIZEN] Citizens reduced by 20%.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_TRAIT_POPULATION_GROWTH" />
+		<Row Tag="TXT_KEY_TRAIT_POPULATION_GROWTH">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][ICON_HAPPINESS_4] Unhappiness from number of [ICON_CITIZEN] Citizens reduced by 20%.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

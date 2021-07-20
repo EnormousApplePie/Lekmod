@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2017-09-27 20:48:11 -->
+<GameData>
+
+	<!-- Now provide +4 Science and +40% Science. Now has 2 Scientist slots. -->
+	<Building_YieldChanges>
+		<Update>
+			<Set Yield="4" />
+			<Where BuildingType="BUILDING_LABORATORY" YieldType="YIELD_SCIENCE" />
+		</Update>
+	</Building_YieldChanges>
+	<Building_YieldModifiers>
+		<Update>
+			<Set Yield="40" />
+			<Where BuildingType="BUILDING_LABORATORY" YieldType="YIELD_SCIENCE" />
+		</Update>
+	</Building_YieldModifiers>
+	<Buildings>
+		<Update>
+			<Set SpecialistCount="2" />
+			<Where Type="BUILDING_LABORATORY" />
+		</Update>
+	</Buildings>
+
+</GameData>

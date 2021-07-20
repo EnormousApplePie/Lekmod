@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 9/19/2014 3:25:24 PM -->
+<GameData>
+	<Defines>
+		<!-- More prone to gobbling up a few (1-2) city states each game -->
+		<Update>
+			<Set Value="5" />
+			<Where Name="MINOR_APPROACH_WAR_CONQUEST_GRAND_STRATEGY" />
+		</Update>
+		<Update>
+			<Set Value="20" />
+			<Where Name="MINOR_APPROACH_WAR_CONQUEST_GRAND_STRATEGY_NEIGHBORS" />
+		</Update>
+		<Update>
+			<Set Value="2" />
+			<Where Name="MINOR_APPROACH_CONQUEST_PROXIMITY_NEIGHBORS" />
+		</Update>
+		<Update>
+			<Set Value="0" />
+			<Where Name="MINOR_APPROACH_WAR_TARGET_IMPOSSIBLE" />
+		</Update>
+		<Update>
+			<Set Value="10" />
+			<Where Name="MINOR_APPROACH_WAR_TARGET_BAD" />
+		</Update>
+		<Update>
+			<Set Value="50" />
+			<Where Name="MINOR_APPROACH_WAR_TARGET_AVERAGE" />
+		</Update>
+		<Update>
+			<Set Value="100" />
+			<Where Name="MINOR_APPROACH_WAR_TARGET_FAVORABLE" />
+		</Update>
+		<Update>
+			<Set Value="150" />
+			<Where Name="MINOR_APPROACH_WAR_TARGET_SOFT" />
+		</Update>
+		<!-- Land disputes should lead to wars -->
+		<Update>
+			<Set Value="-1" />
+			<Where Name="OPINION_WEIGHT_LAND_NONE" />
+		</Update>
+		<Update>
+			<Set Value="5" />
+			<Where Name="OPINION_WEIGHT_LAND_WEAK" />
+		</Update>
+		<Update>
+			<Set Value="25" />
+			<Where Name="OPINION_WEIGHT_LAND_STRONG" />
+		</Update>
+		<Update>
+			<Set Value="125" />
+			<Where Name="OPINION_WEIGHT_LAND_FIERCE" />
+		</Update>
+
+		<!-- Attempted victories should most definitely lead to wars -->
+		<Update>
+			<Set Value="-1" />
+			<Where Name="OPINION_WEIGHT_VICTORY_NONE" />
+		</Update>
+		<Update>
+			<Set Value="5" />
+			<Where Name="OPINION_WEIGHT_VICTORY_WEAK" />
+		</Update>
+		<Update>
+			<Set Value="25" />
+			<Where Name="OPINION_WEIGHT_VICTORY_STRONG" />
+		</Update>
+		<Update>
+			<Set Value="125" />
+			<Where Name="OPINION_WEIGHT_VICTORY_FIERCE" />
+		</Update>
+
+		<!-- Wonder races aren't as important for wars -->
+		<Update>
+			<Set Value="0" />
+			<Where Name="OPINION_WEIGHT_WONDER_NONE" />
+		</Update>
+		<Update>
+			<Set Value="5" />
+			<Where Name="OPINION_WEIGHT_WONDER_WEAK" />
+		</Update>
+		<Update>
+			<Set Value="10" />
+			<Where Name="OPINION_WEIGHT_WONDER_STRONG" />
+		</Update>
+		<Update>
+			<Set Value="20" />
+			<Where Name="OPINION_WEIGHT_WONDER_FIERCE" />
+		</Update>
+
+		<!-- Fights over spheres of influence should concentrate on the fiercest areas -->
+		<Update>
+			<Set Value="0" />
+			<Where Name="OPINION_WEIGHT_MINOR_CIV_NONE" />
+		</Update>
+		<Update>
+			<Set Value="4" />
+			<Where Name="OPINION_WEIGHT_MINOR_CIV_WEAK" />
+		</Update>
+		<Update>
+			<Set Value="16" />
+			<Where Name="OPINION_WEIGHT_MINOR_CIV_STRONG" />
+		</Update>
+		<Update>
+			<Set Value="64" />
+			<Where Name="OPINION_WEIGHT_MINOR_CIV_FIERCE" />
+		</Update>
+
+		<!-- If AI desires conquest, no amount of superficial diplomacy should stop them -->
+		<Update>
+			<Set Value="10" />
+			<Where Name="EVALUATE_WAR_CONQUEST_GRAND_STRATEGY" />
+		</Update>
+		<Update>
+			<!-- AI wants to be prepared for war -->
+			<Set Value="-150" />
+			<Where Name="EVALUATE_WAR_NOT_PREPARED" />
+		</Update>
+		<!-- Following 5 make the AI a lot more ready to declare war against threats, possibly as a coalition -->
+		<Update>
+			<Set Value="10" />
+			<Where Name="EVALUATE_WAR_GAME_THREAT_NONE" />
+		</Update>
+		<Update>
+			<Set Value="25" />
+			<Where Name="EVALUATE_WAR_GAME_THREAT_MINOR" />
+		</Update>
+		<Update>
+			<Set Value="75" />
+			<Where Name="EVALUATE_WAR_GAME_THREAT_MAJOR" />
+		</Update>
+		<Update>
+			<Set Value="150" />
+			<Where Name="EVALUATE_WAR_GAME_THREAT_SEVERE" />
+		</Update>
+		<Update>
+			<Set Value="300" />
+			<Where Name="EVALUATE_WAR_GAME_THREAT_CRITICAL" />
+		</Update>
+		<!-- Following 5 make the AI more opportunistic and pragmatic when it comes to war targets -->
+		<Update>
+			<Set Value="200" />
+			<Where Name="EVALUATE_WAR_SOFT_TARGET" />
+		</Update>
+		<Update>
+			<Set Value="100" />
+			<Where Name="EVALUATE_WAR_FAVORABLE_TARGET" />
+		</Update>
+		<Update>
+			<Set Value="-25" />
+			<Where Name="EVALUATE_WAR_AVERAGE_TARGET" />
+		</Update>
+		<Update>
+			<Set Value="-150" />
+			<Where Name="EVALUATE_WAR_BAD_TARGET" />
+		</Update>
+		<Update>
+			<Set Value="-300" />
+			<Where Name="EVALUATE_WAR_IMPOSSIBLE_TARGET" />
+		</Update>
+
+		<!-- AI gets ticked off by aggressiveness much easier -->
+		<Update>
+			<Set Value="5" />
+			<Where Name="MILITARY_AGGRESSIVE_POSTURE_THRESHOLD_LOW" />
+		</Update>
+		<Update>
+			<Set Value="15" />
+			<Where Name="MILITARY_AGGRESSIVE_POSTURE_THRESHOLD_MEDIUM" />
+		</Update>
+		<Update>
+			<Set Value="25" />
+			<Where Name="MILITARY_AGGRESSIVE_POSTURE_THRESHOLD_HIGH" />
+		</Update>
+		<Update>
+			<Set Value="35" />
+			<Where Name="MILITARY_AGGRESSIVE_POSTURE_THRESHOLD_INCREDIBLE" />
+		</Update>
+		
+		<!-- Better safe than sorry. -->
+		<Update>
+			<Set Value="125" />
+			<Where Name="MILITARY_STRENGTH_RATIO_MULTIPLIER" />
+		</Update>
+		<!-- Better safe than sorry. -->
+		<Update>
+			<Set Value="110" />
+			<Where Name="ECONOMIC_STRENGTH_RATIO_MULTIPLIER" />
+		</Update>
+	</Defines>
+</GameData>

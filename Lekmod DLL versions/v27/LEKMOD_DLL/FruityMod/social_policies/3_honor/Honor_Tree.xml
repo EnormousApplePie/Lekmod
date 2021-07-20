@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 4/18/2015 1:40:34 PM -->
+<GameData>
+
+	<!--
+	
+	          *** FRUITY HONOR ***
+	 ____________      _________________
+	|Warrior Code|    |Professional Army|
+                       ________|________
+                ______|_______      ____|_____
+	           |Military Caste|    |Discipline|
+	
+	
+	NOTE: Military Tradition policy recycled -> moved to Imperialism (new Exploration)
+	
+	-->
+
+	<!-- positions -->
+	<Policies>
+		<Update>
+			<Set GridX="1" GridY="1" />
+			<Where Type="POLICY_WARRIOR_CODE" />
+		</Update>
+		<Update>
+			<Set GridX="3" GridY="1" />
+			<Where Type="POLICY_PROFESSIONAL_ARMY" />
+		</Update>
+		<Update>
+			<Set GridX="2" GridY="2" />
+			<Where Type="POLICY_MILITARY_CASTE" />
+		</Update>
+		<Update>
+			<Set GridX="4" GridY="2" />
+			<Where Type="POLICY_DISCIPLINE" />
+		</Update>
+	</Policies>
+
+	<!-- prerequisites -->
+	<Policy_PrereqPolicies>
+		<!-- <Delete PolicyType="POLICY_MILITARY_TRADITION"	PrereqPolicy="POLICY_WARRIOR_CODE"		/> ...Deleted in Exploration_Tree.xml -->
+		<Delete PolicyType="POLICY_MILITARY_CASTE"			PrereqPolicy="POLICY_DISCIPLINE"		/>
+		<Delete PolicyType="POLICY_PROFESSIONAL_ARMY"		PrereqPolicy="POLICY_MILITARY_CASTE"	/>
+		<Row>
+			<PolicyType>POLICY_MILITARY_CASTE</PolicyType>
+			<PrereqPolicy>POLICY_PROFESSIONAL_ARMY</PrereqPolicy>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_DISCIPLINE</PolicyType>
+			<PrereqPolicy>POLICY_PROFESSIONAL_ARMY</PrereqPolicy>
+		</Row>
+	</Policy_PrereqPolicies>
+
+</GameData>

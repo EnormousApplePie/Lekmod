@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2/15/2016 3:04:13 AM -->
+<GameData>
+
+	<Policies>
+		<Update>
+			<Set LessHappyTourismModifier="0" NumCitiesResearchCostDiscount="-50" />
+			<Where Type="POLICY_DICTATORSHIP_PROLETARIAT" />
+		</Update>
+	</Policies>
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_POLICY_DICTATORSHIP_PROLETARIAT" />
+		<Row Tag="TXT_KEY_POLICY_DICTATORSHIP_PROLETARIAT">
+			<Text>Communism</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_DICTATORSHIP_PROLETARIAT_HELP" />
+		<Row Tag="TXT_KEY_POLICY_DICTATORSHIP_PROLETARIAT_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Communism[ENDCOLOR][NEWLINE]Increased [ICON_RESEARCH] Science costs for number of cities reduced by half.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_DICTATORSHIP_PROLETARIAT_TEXT" />
+		<Row Tag="TXT_KEY_POLICY_DICTATORSHIP_PROLETARIAT_TEXT">
+			<Text>[COLOR_POSITIVE_TEXT]Source: Wikipedia (https://en.wikipedia.org/wiki/Communism)[ENDCOLOR][NEWLINE][NEWLINE]In political and social sciences, communism (from Latin communis, "common, universal") is a social, political, and economic ideology and movement whose ultimate goal is the establishment of the communist society, which is a socioeconomic order structured upon the common ownership of the means of production and the absence of social classes, money, and the state.[NEWLINE][NEWLINE]Communism includes a variety of schools of thought, which broadly include Marxism, anarchism (anarchist communism), and the political ideologies grouped around both. All these hold in common the analysis that the current order of society stems from its economic system, capitalism, that in this system, there are two major social classes: the working class – who must work to survive, and who make up a majority of society – and the capitalist class – a minority who derive profit from employing the proletariat, through private ownership of the means of production (the physical and institutional means with which commodities are produced and distributed), and that political, social and economic conflict between these two classes will trigger a fundamental change in the economic system, and by extension a wide-ranging transformation of society. The primary element which will enable this transformation, according to this analysis, is the social ownership of the means of production.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_POLICY_DICTATORSHIP_PROLETARIAT" />
+		<Row Tag="TXT_KEY_POLICY_DICTATORSHIP_PROLETARIAT">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Communism</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_DICTATORSHIP_PROLETARIAT_HELP" />
+		<Row Tag="TXT_KEY_POLICY_DICTATORSHIP_PROLETARIAT_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Communism[ENDCOLOR][NEWLINE]Increased [ICON_RESEARCH] Science costs for number of cities reduced by half.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_DICTATORSHIP_PROLETARIAT_TEXT" />
+		<Row Tag="TXT_KEY_POLICY_DICTATORSHIP_PROLETARIAT_TEXT">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Source: Wikipedia (https://en.wikipedia.org/wiki/Communism)[ENDCOLOR][NEWLINE][NEWLINE]In political and social sciences, communism (from Latin communis, "common, universal") is a social, political, and economic ideology and movement whose ultimate goal is the establishment of the communist society, which is a socioeconomic order structured upon the common ownership of the means of production and the absence of social classes, money, and the state.[NEWLINE][NEWLINE]Communism includes a variety of schools of thought, which broadly include Marxism, anarchism (anarchist communism), and the political ideologies grouped around both. All these hold in common the analysis that the current order of society stems from its economic system, capitalism, that in this system, there are two major social classes: the working class – who must work to survive, and who make up a majority of society – and the capitalist class – a minority who derive profit from employing the proletariat, through private ownership of the means of production (the physical and institutional means with which commodities are produced and distributed), and that political, social and economic conflict between these two classes will trigger a fundamental change in the economic system, and by extension a wide-ranging transformation of society. The primary element which will enable this transformation, according to this analysis, is the social ownership of the means of production.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_POLICY_DICTATORSHIP_PROLETARIAT" />
+		<Row Tag="TXT_KEY_POLICY_DICTATORSHIP_PROLETARIAT">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Communism</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_DICTATORSHIP_PROLETARIAT_HELP" />
+		<Row Tag="TXT_KEY_POLICY_DICTATORSHIP_PROLETARIAT_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Communism[ENDCOLOR][NEWLINE]Increased [ICON_RESEARCH] Science costs for number of cities reduced by half.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_DICTATORSHIP_PROLETARIAT_TEXT" />
+		<Row Tag="TXT_KEY_POLICY_DICTATORSHIP_PROLETARIAT_TEXT">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Source: Wikipedia (https://en.wikipedia.org/wiki/Communism)[ENDCOLOR][NEWLINE][NEWLINE]In political and social sciences, communism (from Latin communis, "common, universal") is a social, political, and economic ideology and movement whose ultimate goal is the establishment of the communist society, which is a socioeconomic order structured upon the common ownership of the means of production and the absence of social classes, money, and the state.[NEWLINE][NEWLINE]Communism includes a variety of schools of thought, which broadly include Marxism, anarchism (anarchist communism), and the political ideologies grouped around both. All these hold in common the analysis that the current order of society stems from its economic system, capitalism, that in this system, there are two major social classes: the working class – who must work to survive, and who make up a majority of society – and the capitalist class – a minority who derive profit from employing the proletariat, through private ownership of the means of production (the physical and institutional means with which commodities are produced and distributed), and that political, social and economic conflict between these two classes will trigger a fundamental change in the economic system, and by extension a wide-ranging transformation of society. The primary element which will enable this transformation, according to this analysis, is the social ownership of the means of production.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_POLICY_DICTATORSHIP_PROLETARIAT" />
+		<Row Tag="TXT_KEY_POLICY_DICTATORSHIP_PROLETARIAT">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Communism</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_DICTATORSHIP_PROLETARIAT_HELP" />
+		<Row Tag="TXT_KEY_POLICY_DICTATORSHIP_PROLETARIAT_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Communism[ENDCOLOR][NEWLINE]Increased [ICON_RESEARCH] Science costs for number of cities reduced by half.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_DICTATORSHIP_PROLETARIAT_TEXT" />
+		<Row Tag="TXT_KEY_POLICY_DICTATORSHIP_PROLETARIAT_TEXT">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Source: Wikipedia (https://en.wikipedia.org/wiki/Communism)[ENDCOLOR][NEWLINE][NEWLINE]In political and social sciences, communism (from Latin communis, "common, universal") is a social, political, and economic ideology and movement whose ultimate goal is the establishment of the communist society, which is a socioeconomic order structured upon the common ownership of the means of production and the absence of social classes, money, and the state.[NEWLINE][NEWLINE]Communism includes a variety of schools of thought, which broadly include Marxism, anarchism (anarchist communism), and the political ideologies grouped around both. All these hold in common the analysis that the current order of society stems from its economic system, capitalism, that in this system, there are two major social classes: the working class – who must work to survive, and who make up a majority of society – and the capitalist class – a minority who derive profit from employing the proletariat, through private ownership of the means of production (the physical and institutional means with which commodities are produced and distributed), and that political, social and economic conflict between these two classes will trigger a fundamental change in the economic system, and by extension a wide-ranging transformation of society. The primary element which will enable this transformation, according to this analysis, is the social ownership of the means of production.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

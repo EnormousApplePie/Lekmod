@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<!-- Table data -->
+	<GameOptions>
+		<Row>
+			<Type>GAMEOPTION_DISABLE_RECKLESS_EXPANDER</Type>
+			<Description>TXT_KEY_GAME_OPTION_DISABLE_RECKLESS_EXPANDER</Description>
+			<Help>TXT_KEY_GAME_OPTION_DISABLE_RECKLESS_EXPANDER_HELP</Help>
+			<SupportsSinglePlayer>true</SupportsSinglePlayer>
+		</Row>
+	</GameOptions>
+	<Language_en_US>
+		<Row Tag="TXT_KEY_GAME_OPTION_DISABLE_RECKLESS_EXPANDER">
+			<Text>Disable Aggressive City Expanding Modifier</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_DISABLE_RECKLESS_EXPANDER_HELP">
+			<Text>If this option is on, the AI will no longer give a diplomatic penalty for the player settling too many cities.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Row Tag="TXT_KEY_GAME_OPTION_DISABLE_RECKLESS_EXPANDER">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Disable Aggressive City Expanding Modifier</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_DISABLE_RECKLESS_EXPANDER_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]If this option is on, the AI will no longer give a diplomatic penalty for the player settling too many cities.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_ES_ES>
+		<Row Tag="TXT_KEY_GAME_OPTION_DISABLE_RECKLESS_EXPANDER">
+			<Text>[COLOR_WARNING_TEXT](ES_ES text) [ENDCOLOR]Disable Aggressive City Expanding Modifier</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_DISABLE_RECKLESS_EXPANDER_HELP">
+			<Text>[COLOR_WARNING_TEXT](ES_ES text) [ENDCOLOR]If this option is on, the AI will no longer give a diplomatic penalty for the player settling too many cities.</Text>
+		</Row>
+	</Language_ES_ES>
+	<Language_FR_FR>
+		<Row Tag="TXT_KEY_GAME_OPTION_DISABLE_RECKLESS_EXPANDER">
+			<Text>[COLOR_WARNING_TEXT](FR_FR text) [ENDCOLOR]Disable Aggressive City Expanding Modifier</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_DISABLE_RECKLESS_EXPANDER_HELP">
+			<Text>[COLOR_WARNING_TEXT](FR_FR text) [ENDCOLOR]If this option is on, the AI will no longer give a diplomatic penalty for the player settling too many cities.</Text>
+		</Row>
+	</Language_FR_FR>
+	<Language_PL_PL>
+		<Row Tag="TXT_KEY_GAME_OPTION_DISABLE_RECKLESS_EXPANDER">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Disable Aggressive City Expanding Modifier</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_DISABLE_RECKLESS_EXPANDER_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]If this option is on, the AI will no longer give a diplomatic penalty for the player settling too many cities.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Row Tag="TXT_KEY_GAME_OPTION_DISABLE_RECKLESS_EXPANDER">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Disable Aggressive City Expanding Modifier</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_DISABLE_RECKLESS_EXPANDER_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]If this option is on, the AI will no longer give a diplomatic penalty for the player settling too many cities.</Text>
+		</Row>
+	</Language_RU_RU>
+</GameData>

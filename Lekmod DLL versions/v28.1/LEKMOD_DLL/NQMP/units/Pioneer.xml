@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2016-09-14 20:40:54 -->
+<GameData>
+
+	<!-- [New UU] Pioneer (replaces Settler): Ignores terrain costs, has combat value of 5, defense only, cheaper to build -->
+	<Units>
+		<Row>
+			<Class>UNITCLASS_SETTLER</Class>
+			<Type>UNIT_AMERICAN_PIONEER</Type>
+			<FinalProductionCostModifier>-25</FinalProductionCostModifier>
+			<Moves>2</Moves>
+			<Combat>5</Combat>
+			<Capture>UNITCLASS_WORKER</Capture>
+			<CivilianAttackPriority>CIVILIAN_ATTACK_PRIORITY_HIGH_EARLY_GAME_ONLY</CivilianAttackPriority>
+			<HurryCostModifier>20</HurryCostModifier>
+			<CombatClass>UNITCOMBAT_MELEE</CombatClass>
+			<Domain>DOMAIN_LAND</Domain>
+			<DefaultUnitAI>UNITAI_SETTLE</DefaultUnitAI>
+			<Description>TXT_KEY_UNIT_PIONEER</Description>
+			<Civilopedia>TXT_KEY_CIV5_ANTIQUITY_PIONEER_TEXT</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_PIONEER_STRATEGY</Strategy>
+			<Help>TXT_KEY_UNIT_HELP_PIONEER</Help>
+			<Requirements>TXT_KEY_NO_ACTION_SETTLER_SIZE_LIMIT_HARDCODED</Requirements>
+			<Food>true</Food>
+			<Found>true</Found>
+			<CombatLimit>0</CombatLimit>
+			<UnitArtInfo>ART_DEF_UNIT_HAND_AXE_BARBARIAN</UnitArtInfo>
+			<UnitFlagAtlas>EXPANSION2_UNIT_FLAG_ATLAS</UnitFlagAtlas>
+			<UnitFlagIconOffset>9</UnitFlagIconOffset>
+			<IconAtlas>NQ_ATLAS</IconAtlas>
+			<PortraitIndex>10</PortraitIndex>
+		</Row>
+	</Units>
+	<Unit_FreePromotions>
+		<Row>
+			<UnitType>UNIT_AMERICAN_PIONEER</UnitType>
+			<PromotionType>PROMOTION_IGNORE_TERRAIN_COST</PromotionType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_AMERICAN_PIONEER</UnitType>
+			<PromotionType>PROMOTION_ONLY_DEFENSIVE</PromotionType>
+		</Row>
+	</Unit_FreePromotions>
+	<Unit_AITypes>
+		<Row>
+			<UnitType>UNIT_AMERICAN_PIONEER</UnitType>
+			<UnitAIType>UNITAI_SETTLE</UnitAIType>
+		</Row>
+	</Unit_AITypes>
+	<Unit_Flavors>
+		<Row>
+			<UnitType>UNIT_AMERICAN_PIONEER</UnitType>
+			<FlavorType>FLAVOR_EXPANSION</FlavorType>
+			<Flavor>21</Flavor>
+		</Row>
+	</Unit_Flavors>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Row Tag="TXT_KEY_UNIT_PIONEER">
+			<Text>Pioneer</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_HELP_PIONEER">
+			<Text>Ignores terrain costs.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_ANTIQUITY_PIONEER_TEXT">
+			<Text>[COLOR_POSITIVE_TEXT]Source: Wikipedia (https://en.wikipedia.org/wiki/American_pioneer)[ENDCOLOR][NEWLINE][NEWLINE]American pioneers are any of the people in American history who migrated west to join in settling and developing new areas. The term especially refers to those who were going to settle any territory which had previously not been settled or developed by European or American society, although the territory may have been inhabited by or utilized by Native Americans.[NEWLINE][NEWLINE]The pioneer concept and ethos greatly predate the migration to parts of the United States now called Western, as many places now considered as East were also settled by pioneers from the coast. For example, Daniel Boone, a key figure in American history, settled in Kentucky, when that "Dark and Bloody Ground" was still undeveloped.[NEWLINE][NEWLINE]One important development in the Western settlement was the Homestead Act, which provided formal legislation which regulated the settlement process.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_PIONEER_STRATEGY">
+			<Text>Use Pioneers to expand quickly and get your empire running faster than other civilizations.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Row Tag="TXT_KEY_UNIT_PIONEER">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Pioneer</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_HELP_PIONEER">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Ignores terrain costs.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_ANTIQUITY_PIONEER_TEXT">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Source: Wikipedia (https://en.wikipedia.org/wiki/American_pioneer)[ENDCOLOR][NEWLINE][NEWLINE]American pioneers are any of the people in American history who migrated west to join in settling and developing new areas. The term especially refers to those who were going to settle any territory which had previously not been settled or developed by European or American society, although the territory may have been inhabited by or utilized by Native Americans.[NEWLINE][NEWLINE]The pioneer concept and ethos greatly predate the migration to parts of the United States now called Western, as many places now considered as East were also settled by pioneers from the coast. For example, Daniel Boone, a key figure in American history, settled in Kentucky, when that "Dark and Bloody Ground" was still undeveloped.[NEWLINE][NEWLINE]One important development in the Western settlement was the Homestead Act, which provided formal legislation which regulated the settlement process.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_PIONEER_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Use Pioneers to expand quickly and get your empire running faster than other civilizations.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Row Tag="TXT_KEY_UNIT_PIONEER">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Pioneer</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_HELP_PIONEER">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Ignores terrain costs.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_ANTIQUITY_PIONEER_TEXT">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Source: Wikipedia (https://en.wikipedia.org/wiki/American_pioneer)[ENDCOLOR][NEWLINE][NEWLINE]American pioneers are any of the people in American history who migrated west to join in settling and developing new areas. The term especially refers to those who were going to settle any territory which had previously not been settled or developed by European or American society, although the territory may have been inhabited by or utilized by Native Americans.[NEWLINE][NEWLINE]The pioneer concept and ethos greatly predate the migration to parts of the United States now called Western, as many places now considered as East were also settled by pioneers from the coast. For example, Daniel Boone, a key figure in American history, settled in Kentucky, when that "Dark and Bloody Ground" was still undeveloped.[NEWLINE][NEWLINE]One important development in the Western settlement was the Homestead Act, which provided formal legislation which regulated the settlement process.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_PIONEER_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Use Pioneers to expand quickly and get your empire running faster than other civilizations.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Row Tag="TXT_KEY_UNIT_PIONEER">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Pioneer</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_HELP_PIONEER">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Ignores terrain costs.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_ANTIQUITY_PIONEER_TEXT">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Source: Wikipedia (https://en.wikipedia.org/wiki/American_pioneer)[ENDCOLOR][NEWLINE][NEWLINE]American pioneers are any of the people in American history who migrated west to join in settling and developing new areas. The term especially refers to those who were going to settle any territory which had previously not been settled or developed by European or American society, although the territory may have been inhabited by or utilized by Native Americans.[NEWLINE][NEWLINE]The pioneer concept and ethos greatly predate the migration to parts of the United States now called Western, as many places now considered as East were also settled by pioneers from the coast. For example, Daniel Boone, a key figure in American history, settled in Kentucky, when that "Dark and Bloody Ground" was still undeveloped.[NEWLINE][NEWLINE]One important development in the Western settlement was the Homestead Act, which provided formal legislation which regulated the settlement process.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_PIONEER_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Use Pioneers to expand quickly and get your empire running faster than other civilizations.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

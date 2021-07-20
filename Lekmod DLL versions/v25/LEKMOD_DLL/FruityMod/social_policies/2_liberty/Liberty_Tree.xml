@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 4/18/2015 1:40:34 PM -->
+<GameData>
+
+	<!--
+	
+	            *** FRUITY LIBERTY ***
+           ___________       _______________
+	      |Citizenship|     |Collective Rule|
+                |                  |
+          ______|_______        ___|____
+	     |Representation|      |Republic|
+	
+	
+	NOTE: Meritocracy policy recycled -> moved to Rationalism
+	
+	-->
+
+	<!-- positions -->
+	<Policies>
+		<Update>
+			<Set GridX="2" GridY="1" />
+			<Where Type="POLICY_CITIZENSHIP" />
+		</Update>
+		<Update>
+			<Set GridX="4" GridY="1" />
+			<Where Type="POLICY_COLLECTIVE_RULE" />
+		</Update>
+		<Update>
+			<Set GridX="2" GridY="2" />
+			<Where Type="POLICY_REPRESENTATION" />
+		</Update>
+		<Update>
+			<Set GridX="4" GridY="2" />
+			<Where Type="POLICY_REPUBLIC" />
+		</Update>
+	</Policies>
+
+	<!-- prerequisites -->
+	<Policy_PrereqPolicies>
+		<Delete PolicyType="POLICY_COLLECTIVE_RULE"		PrereqPolicy="POLICY_REPUBLIC"		/>
+		<!-- <Delete PolicyType="POLICY_MERITOCRACY"			PrereqPolicy="POLICY_CITIZENSHIP"	/> ...moved to Rationalism -->
+		<!-- <Delete PolicyType="POLICY_REPRESENTATION"			PrereqPolicy="POLICY_CITIZENSHIP"	/> ...Purposely not deleted since it's accurate. -->
+		<Row>
+			<PolicyType>POLICY_REPUBLIC</PolicyType>
+			<PrereqPolicy>POLICY_COLLECTIVE_RULE</PrereqPolicy>
+		</Row>
+	</Policy_PrereqPolicies>
+
+</GameData>

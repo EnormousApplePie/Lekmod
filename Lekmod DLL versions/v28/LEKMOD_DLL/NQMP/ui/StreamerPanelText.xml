@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 5/4/2017 3:00:30 AM -->
+<GameData>
+
+	<Language_en_US>
+		<Row Tag="TXT_KEY_TOGGLE_STREAMER_PANEL_OPEN">
+			<Text>Open Streamer Panel</Text>
+		</Row>
+		<Row Tag="TXT_KEY_TOGGLE_STREAMER_PANEL_CLOSE">
+			<Text>Close Streamer Panel</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Row Tag="TXT_KEY_TOGGLE_STREAMER_PANEL_OPEN">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Open Streamer Panel</Text>
+		</Row>
+		<Row Tag="TXT_KEY_TOGGLE_STREAMER_PANEL_CLOSE">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Close Streamer Panel</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Row Tag="TXT_KEY_TOGGLE_STREAMER_PANEL_OPEN">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Open Streamer Panel</Text>
+		</Row>
+		<Row Tag="TXT_KEY_TOGGLE_STREAMER_PANEL_CLOSE">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Close Streamer Panel</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Row Tag="TXT_KEY_TOGGLE_STREAMER_PANEL_OPEN">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Open Streamer Panel</Text>
+		</Row>
+		<Row Tag="TXT_KEY_TOGGLE_STREAMER_PANEL_CLOSE">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Close Streamer Panel</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

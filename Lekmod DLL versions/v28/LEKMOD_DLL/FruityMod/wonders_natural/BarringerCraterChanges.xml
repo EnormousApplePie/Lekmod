@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by HellBlazer on 17/7/2015 15:00 -->
+<GameData>
+
+	<!-- Now also provides +2 Production -->
+	<Feature_YieldChanges>
+		<Row FeatureType="FEATURE_CRATER">
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>2</Yield>
+		</Row>
+	</Feature_YieldChanges>
+
+</GameData>

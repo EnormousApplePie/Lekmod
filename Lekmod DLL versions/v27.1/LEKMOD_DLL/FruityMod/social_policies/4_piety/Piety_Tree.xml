@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 4/18/2015 1:40:34 PM -->
+<GameData>
+
+	<!--
+	
+	                    *** FRUITY PIETY ***
+	          __________________     _________________
+	         |Organized Religion|   |Mandate of Heaven|
+               _______|________       ______|_______
+     _________|_________      _|_____|_      _______|_______
+	|Religious Education|    |Theocracy|    |Religious Unity|
+	
+	
+	Religious Eduction	= POLICY_REFORMATION
+	Religious Unity		= POLICY_FREE_RELIGION
+	
+	-->
+
+	<!-- Piety now available starting in Classical Era -->
+	<PolicyBranchTypes>
+		<Update>
+			<Set EraPrereq="ERA_CLASSICAL" />
+			<Where Type="POLICY_BRANCH_PIETY" />
+		</Update>
+	</PolicyBranchTypes>
+
+	<!-- positions -->
+	<Policies>
+		<Update>
+			<Set GridX="2" GridY="1" />
+			<Where Type="POLICY_ORGANIZED_RELIGION" />
+		</Update>
+		<Update>
+			<Set GridX="4" GridY="1" />
+			<Where Type="POLICY_MANDATE_OF_HEAVEN" />
+		</Update>
+		<Update>
+			<Set GridX="1" GridY="2" />
+			<Where Type="POLICY_REFORMATION" />
+		</Update>
+		<Update>
+			<Set GridX="3" GridY="2" />
+			<Where Type="POLICY_THEOCRACY" />
+		</Update>
+		<Update>
+			<Set GridX="5" GridY="2" />
+			<Where Type="POLICY_FREE_RELIGION" />
+		</Update>
+	</Policies>
+
+	<!-- prerequisites -->
+	<Policy_PrereqPolicies>
+		<Delete PolicyType="POLICY_THEOCRACY"		PrereqPolicy="POLICY_ORGANIZED_RELIGION"	/>
+		<Delete PolicyType="POLICY_FREE_RELIGION"	PrereqPolicy="POLICY_ORGANIZED_RELIGION"	/>
+		<Delete PolicyType="POLICY_REFORMATION"		PrereqPolicy="POLICY_FREE_RELIGION"			/>
+		<Row>
+			<PolicyType>POLICY_REFORMATION</PolicyType>
+			<PrereqPolicy>POLICY_ORGANIZED_RELIGION</PrereqPolicy>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_THEOCRACY</PolicyType>
+			<PrereqPolicy>POLICY_ORGANIZED_RELIGION</PrereqPolicy>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_THEOCRACY</PolicyType>
+			<PrereqPolicy>POLICY_MANDATE_OF_HEAVEN</PrereqPolicy>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_FREE_RELIGION</PolicyType>
+			<PrereqPolicy>POLICY_MANDATE_OF_HEAVEN</PrereqPolicy>
+		</Row>
+	</Policy_PrereqPolicies>
+
+</GameData>

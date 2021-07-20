@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2017-10-02 22:40:24 -->
+<GameData>
+	
+	<!-- Gunpowder Units starting with Rifleman can now build Roads (like Roman Legion). This includes Rifleman, Mehal Sefari, Carolean, Norwegian Ski Infantry, Foreign Legion, Great War Infantry, Infantry, Pracinha, Marine, and Mechanized Infantry. -->
+	-->
+	<Unit_Builds>
+		<Row>
+			<UnitType>UNIT_RIFLEMAN</UnitType>
+			<BuildType>BUILD_ROAD</BuildType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_ETHIOPIAN_MEHAL_SEFARI</UnitType>
+			<BuildType>BUILD_ROAD</BuildType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_SWEDISH_CAROLEAN</UnitType>
+			<BuildType>BUILD_ROAD</BuildType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_DANISH_SKI_INFANTRY</UnitType>
+			<BuildType>BUILD_ROAD</BuildType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_FRENCH_FOREIGNLEGION</UnitType>
+			<BuildType>BUILD_ROAD</BuildType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_GREAT_WAR_INFANTRY</UnitType>
+			<BuildType>BUILD_ROAD</BuildType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_INFANTRY</UnitType>
+			<BuildType>BUILD_ROAD</BuildType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_BRAZILIAN_PRACINHA</UnitType>
+			<BuildType>BUILD_ROAD</BuildType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_MARINE</UnitType>
+			<BuildType>BUILD_ROAD</BuildType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_MECHANIZED_INFANTRY</UnitType>
+			<BuildType>BUILD_ROAD</BuildType>
+		</Row>
+	</Unit_Builds>
+	<Units>
+		<Update>
+			<Set WorkRate="100" />
+			<Where Type="UNIT_RIFLEMAN" />
+		</Update>
+		<Update>
+			<Set WorkRate="100" />
+			<Where Type="UNIT_ETHIOPIAN_MEHAL_SEFARI" />
+		</Update>
+		<Update>
+			<Set WorkRate="100" />
+			<Where Type="UNIT_SWEDISH_CAROLEAN" />
+		</Update>
+		<Update>
+			<Set WorkRate="100" />
+			<Where Type="UNIT_DANISH_SKI_INFANTRY" />
+		</Update>
+		<Update>
+			<Set WorkRate="100" />
+			<Where Type="UNIT_FRENCH_FOREIGNLEGION" />
+		</Update>
+		<Update>
+			<Set WorkRate="100" />
+			<Where Type="UNIT_GREAT_WAR_INFANTRY" />
+		</Update>
+		<Update>
+			<Set WorkRate="100" />
+			<Where Type="UNIT_INFANTRY" />
+		</Update>
+		<Update>
+			<Set WorkRate="100" />
+			<Where Type="UNIT_BRAZILIAN_PRACINHA" />
+		</Update>
+		<Update>
+			<Set WorkRate="100" />
+			<Where Type="UNIT_MARINE" />
+		</Update>
+		<Update>
+			<Set WorkRate="100" />
+			<Where Type="UNIT_MECHANIZED_INFANTRY" />
+		</Update>
+	</Units>
+	<Unit_AITypes>
+		<Row>
+			<UnitType>UNIT_RIFLEMAN</UnitType>
+			<UnitAIType>UNITAI_WORKER</UnitAIType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_ETHIOPIAN_MEHAL_SEFARI</UnitType>
+			<UnitAIType>UNITAI_WORKER</UnitAIType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_SWEDISH_CAROLEAN</UnitType>
+			<UnitAIType>UNITAI_WORKER</UnitAIType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_DANISH_SKI_INFANTRY</UnitType>
+			<UnitAIType>UNITAI_WORKER</UnitAIType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_FRENCH_FOREIGNLEGION</UnitType>
+			<UnitAIType>UNITAI_WORKER</UnitAIType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_GREAT_WAR_INFANTRY</UnitType>
+			<UnitAIType>UNITAI_WORKER</UnitAIType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_INFANTRY</UnitType>
+			<UnitAIType>UNITAI_WORKER</UnitAIType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_BRAZILIAN_PRACINHA</UnitType>
+			<UnitAIType>UNITAI_WORKER</UnitAIType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_MARINE</UnitType>
+			<UnitAIType>UNITAI_WORKER</UnitAIType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_MECHANIZED_INFANTRY</UnitType>
+			<UnitAIType>UNITAI_WORKER</UnitAIType>
+		</Row>
+	</Unit_AITypes>
+	
+</GameData>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 5/1/2017 1:04:14 PM -->
+<GameData>
+	
+	<!-- localization -->
+	<Language_en_US>
+		<Row Tag="TXT_KEY_POPUP_MINOR_BULLY_GOLD_AMOUNT_GAIN_INFLUENCE">
+			<Text>Take {1_NumGold} [ICON_GOLD] Gold - will gain {2_NumInfluence} [ICON_INFLUENCE] Influence</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_MINOR_REFUSES_BRIBES">
+			<Text>Refuses [ICON_GOLD] Gold gifts</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_MINOR_REFUSE_BRIBE_REASON">
+			<Text>[COLOR_NEGATIVE_TEXT]This City State has a diplomatic marriage with {1_CivName} and refuses to accept any [ICON_GOLD] Gold gifts from other Civilizations.[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_MINOR_WE_ARE_MARRIED">
+			<Text>[COLOR_POSITIVE_TEXT]You have been allied with this City State long enough to arrange a diplomatic marriage. They will refuse to accept any [ICON_GOLD] Gold gifts from other Civilizations.[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_MINOR_DIPLOMATIC_MARRIAGE">
+			<Text>Diplomatic Marriage</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_MINOR_FAITH_GIFT_AMOUNT">
+			<Text>{1_NumGold} [ICON_PEACE] Faith - will earn {2_NumFriendship} [ICON_INFLUENCE] Influence</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_MINOR_CANNOT_FAITH_GIFT_REASON">
+			<Text>Your Religion does not have the ability to gift [ICON_PEACE] Faith to City States.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_MINOR_NOT_ENOUGH_GOLD">
+			<Text>You do not have enough [ICON_GOLD] Gold to select this option.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_MINOR_NOT_ENOUGH_FAITH">
+			<Text>You do not have enough [ICON_PEACE] Faith to select this option.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_MINOR_IS_SAME_RELIGION">
+			<Text>[COLOR_POSITIVE_TEXT]You share the same Religion, tripling [ICON_INFLUENCE] from Faith gifts.[ENDCOLOR]</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Row Tag="TXT_KEY_POPUP_MINOR_BULLY_GOLD_AMOUNT_GAIN_INFLUENCE">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Take {1_NumGold} [ICON_GOLD] Gold - will gain {2_NumInfluence} [ICON_INFLUENCE] Influence</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_MINOR_REFUSES_BRIBES">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Refuses [ICON_GOLD] Gold gifts</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_MINOR_REFUSE_BRIBE_REASON">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_NEGATIVE_TEXT]This City State has a diplomatic marriage with {1_CivName} and refuses to accept any [ICON_GOLD] Gold gifts from other Civilizations.[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_MINOR_WE_ARE_MARRIED">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]You have been allied with this City State long enough to arrange a diplomatic marriage. They will refuse to accept any [ICON_GOLD] Gold gifts from other Civilizations.[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_MINOR_DIPLOMATIC_MARRIAGE">
+			<Text>Diplomatic Marriage</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_MINOR_FAITH_GIFT_AMOUNT">
+			<Text>{1_NumGold} [ICON_PEACE] Faith - will earn {2_NumFriendship} [ICON_INFLUENCE] Influence</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_MINOR_CANNOT_FAITH_GIFT_REASON">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Your Religion does not have the ability to gift [ICON_PEACE] Faith to City States.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_MINOR_NOT_ENOUGH_GOLD">
+			<Text>You do not have enough [ICON_GOLD] Gold to select this option.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_MINOR_NOT_ENOUGH_FAITH">
+			<Text>You do not have enough [ICON_PEACE] Faith to select this option.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_MINOR_IS_SAME_RELIGION">
+			<Text>[COLOR_POSITIVE_TEXT]You share the same Religion, tripling [ICON_INFLUENCE] from Faith gifts.[ENDCOLOR]</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Row Tag="TXT_KEY_POPUP_MINOR_BULLY_GOLD_AMOUNT_GAIN_INFLUENCE">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Take {1_NumGold} [ICON_GOLD] Gold - will gain {2_NumInfluence} [ICON_INFLUENCE] Influence</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_MINOR_REFUSES_BRIBES">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Refuses [ICON_GOLD] Gold gifts</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_MINOR_REFUSE_BRIBE_REASON">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_NEGATIVE_TEXT]This City State has a diplomatic marriage with {1_CivName} and refuses to accept any [ICON_GOLD] Gold gifts from other Civilizations.[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_MINOR_WE_ARE_MARRIED">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]You have been allied with this City State long enough to arrange a diplomatic marriage. They will refuse to accept any [ICON_GOLD] Gold gifts from other Civilizations.[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_MINOR_DIPLOMATIC_MARRIAGE">
+			<Text>Diplomatic Marriage</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_MINOR_FAITH_GIFT_AMOUNT">
+			<Text>{1_NumGold} [ICON_PEACE] Faith - will earn {2_NumFriendship} [ICON_INFLUENCE] Influence</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_MINOR_CANNOT_FAITH_GIFT_REASON">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Your Religion does not have the ability to gift [ICON_PEACE] Faith to City States.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_MINOR_NOT_ENOUGH_GOLD">
+			<Text>You do not have enough [ICON_GOLD] Gold to select this option.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_MINOR_NOT_ENOUGH_FAITH">
+			<Text>You do not have enough [ICON_PEACE] Faith to select this option.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_MINOR_IS_SAME_RELIGION">
+			<Text>[COLOR_POSITIVE_TEXT]You share the same Religion, tripling [ICON_INFLUENCE] from Faith gifts.[ENDCOLOR]</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Row Tag="TXT_KEY_POPUP_MINOR_BULLY_GOLD_AMOUNT_GAIN_INFLUENCE">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Take {1_NumGold} [ICON_GOLD] Gold - will gain {2_NumInfluence} [ICON_INFLUENCE] Influence</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_MINOR_REFUSES_BRIBES">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Refuses [ICON_GOLD] Gold gifts</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_MINOR_REFUSE_BRIBE_REASON">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_NEGATIVE_TEXT]This City State has a diplomatic marriage with {1_CivName} and refuses to accept any [ICON_GOLD] Gold gifts from other Civilizations.[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_MINOR_WE_ARE_MARRIED">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]You have been allied with this City State long enough to arrange a diplomatic marriage. They will refuse to accept any [ICON_GOLD] Gold gifts from other Civilizations.[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_MINOR_DIPLOMATIC_MARRIAGE">
+			<Text>Diplomatic Marriage</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_MINOR_FAITH_GIFT_AMOUNT">
+			<Text>{1_NumGold} [ICON_PEACE] Faith - will earn {2_NumFriendship} [ICON_INFLUENCE] Influence</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_MINOR_CANNOT_FAITH_GIFT_REASON">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Your Religion does not have the ability to gift [ICON_PEACE] Faith to City States.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_MINOR_NOT_ENOUGH_GOLD">
+			<Text>You do not have enough [ICON_GOLD] Gold to select this option.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_MINOR_NOT_ENOUGH_FAITH">
+			<Text>You do not have enough [ICON_PEACE] Faith to select this option.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POPUP_MINOR_IS_SAME_RELIGION">
+			<Text>[COLOR_POSITIVE_TEXT]You share the same Religion, tripling [ICON_INFLUENCE] from Faith gifts.[ENDCOLOR]</Text>
+		</Row>
+	</Language_RU_RU>
+	
+</GameData>

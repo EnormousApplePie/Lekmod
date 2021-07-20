@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 3/22/2017 7:17:12 PM -->
+<GameData>
+
+	<!-- Gunboat Diplomacy: Gain 50 Influence when you tribute Gold from a City State (instead of losing Influence). -->
+	<Policies>
+		<Update>
+			<Set Level="1" MinorFriendshipGainBullyGoldSuccess="5000" MinorBullyScoreModifier="0" AfraidMinorPerTurnInfluence="0" />
+			<Where Type="POLICY_GUNBOAT_DIPLOMACY" />
+		</Update>
+	</Policies>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_POLICY_GUNBOAT_DIPLOMACY_HELP" />
+		<Row Tag="TXT_KEY_POLICY_GUNBOAT_DIPLOMACY_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Gunboat Diplomacy[ENDCOLOR][NEWLINE]Gain 50 [ICON_INFLUENCE] Influence when you tribute Gold from a City State (instead of losing [ICON_INFLUENCE] Influence).</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_POLICY_GUNBOAT_DIPLOMACY_HELP" />
+		<Row Tag="TXT_KEY_POLICY_GUNBOAT_DIPLOMACY_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Gunboat Diplomacy[ENDCOLOR][NEWLINE]Gain 50 [ICON_INFLUENCE] Influence when you tribute Gold from a City State (instead of losing [ICON_INFLUENCE] Influence).</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_POLICY_GUNBOAT_DIPLOMACY_HELP" />
+		<Row Tag="TXT_KEY_POLICY_GUNBOAT_DIPLOMACY_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Gunboat Diplomacy[ENDCOLOR][NEWLINE]Gain 50 [ICON_INFLUENCE] Influence when you tribute Gold from a City State (instead of losing [ICON_INFLUENCE] Influence).</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_POLICY_GUNBOAT_DIPLOMACY_HELP" />
+		<Row Tag="TXT_KEY_POLICY_GUNBOAT_DIPLOMACY_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Gunboat Diplomacy[ENDCOLOR][NEWLINE]Gain 50 [ICON_INFLUENCE] Influence when you tribute Gold from a City State (instead of losing [ICON_INFLUENCE] Influence).</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

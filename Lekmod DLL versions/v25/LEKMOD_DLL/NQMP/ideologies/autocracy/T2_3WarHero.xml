@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 3/22/2017 7:17:12 PM -->
+<GameData>
+
+	<!-- War Hero (replaces Militarism): Gain a free Great Artist with every Great General, and a free Great General appears. -->
+	<Policies>
+		<Update>
+			<Set Level="2" IsWarHero="true" IncludesOneShotFreeUnits="true" />
+			<Where Type="POLICY_MILITARISM" />
+		</Update>
+	</Policies>
+	<Policy_FreeUnitClasses>
+		<Row>
+			<PolicyType>POLICY_MILITARISM</PolicyType>
+			<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
+			<Count>1</Count>
+		</Row>
+	</Policy_FreeUnitClasses>
+	<Policy_BuildingClassHappiness>
+		<Delete PolicyType="POLICY_MILITARISM" />
+	</Policy_BuildingClassHappiness>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_POLICY_MILITARISM" />
+		<Row Tag="TXT_KEY_POLICY_MILITARISM">
+			<Text>War Hero</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_MILITARISM_HELP" />
+		<Row Tag="TXT_KEY_POLICY_MILITARISM_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]War Hero[ENDCOLOR][NEWLINE]Gain a free Great Artist with every Great General, and a free Great General appears.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_POLICY_MILITARISM" />
+		<Row Tag="TXT_KEY_POLICY_MILITARISM">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]War Hero</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_MILITARISM_HELP" />
+		<Row Tag="TXT_KEY_POLICY_MILITARISM_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]War Hero[ENDCOLOR][NEWLINE]Gain a free Great Artist with every Great General, and a free Great General appears.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_POLICY_MILITARISM" />
+		<Row Tag="TXT_KEY_POLICY_MILITARISM">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]War Hero</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_MILITARISM_HELP" />
+		<Row Tag="TXT_KEY_POLICY_MILITARISM_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]War Hero[ENDCOLOR][NEWLINE]Gain a free Great Artist with every Great General, and a free Great General appears.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_POLICY_MILITARISM" />
+		<Row Tag="TXT_KEY_POLICY_MILITARISM">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]War Hero</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_MILITARISM_HELP" />
+		<Row Tag="TXT_KEY_POLICY_MILITARISM_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]War Hero[ENDCOLOR][NEWLINE]Gain a free Great Artist with every Great General, and a free Great General appears.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

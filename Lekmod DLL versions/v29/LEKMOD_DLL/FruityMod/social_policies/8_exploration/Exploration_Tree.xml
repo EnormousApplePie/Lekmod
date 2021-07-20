@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 6/6/2015 4:51:27 PM -->
+<GameData>
+
+	<!-- Note: Exploration is now called Imperialism.
+
+                *** FRUITY IMPERIALISM ***
+	         ___________            __________________
+            |Sovereignty|          |Military Tradition|
+           _______|_______                  |
+     _____|_____     _____|______     ______|______
+    |Nationalism|   |Expansionism|   |Protectorates|
+                           |________________|
+                              _____|_____
+                             |Colonialism|
+	
+	
+	Note: Military Tradition moved here from Honor
+	
+	Sovereignty		= POLICY_MERCHANT_NAVY
+	Protectorates	= POLICY_NAVAL_TRADITION
+	Expansionism	= POLICY_MARITIME_INFRASTRUCTURE
+	Nationalism		= POLICY_NAVIGATION_SCHOOL
+	Colonialism		= POLICY_TREASURE_FLEETS
+	
+	-->
+	
+	<!-- positions & move Military Tradition here -->
+	<Policies>
+		<Update>
+			<Set GridX="2" GridY="1" />
+			<Where Type="POLICY_MERCHANT_NAVY" />
+		</Update>
+		<Update>
+			<Set GridX="5" GridY="1" PolicyBranchType="POLICY_BRANCH_EXPLORATION" />
+			<Where Type="POLICY_MILITARY_TRADITION" />
+		</Update>
+		<Update>
+			<Set GridX="1" GridY="2" />
+			<Where Type="POLICY_NAVIGATION_SCHOOL" />
+		</Update>
+		<Update>
+			<Set GridX="3" GridY="2" />
+			<Where Type="POLICY_MARITIME_INFRASTRUCTURE" />
+		</Update>
+		<Update>
+			<Set GridX="5" GridY="2" />
+			<Where Type="POLICY_NAVAL_TRADITION" />
+		</Update>
+		<Update>
+			<Set GridX="4" GridY="3" />
+			<Where Type="POLICY_TREASURE_FLEETS" />
+		</Update>
+	</Policies>
+
+	<!-- prerequisites -->
+	<Policy_PrereqPolicies>
+		<Delete PolicyType="POLICY_MILITARY_TRADITION"	PrereqPolicy="POLICY_WARRIOR_CODE"				/>
+		<Delete PolicyType="POLICY_MERCHANT_NAVY"		PrereqPolicy="POLICY_NAVAL_TRADITION"			/>
+		<Delete PolicyType="POLICY_MERCHANT_NAVY"		PrereqPolicy="POLICY_MARITIME_INFRASTRUCTURE"	/>
+		<Delete PolicyType="POLICY_NAVIGATION_SCHOOL"	PrereqPolicy="POLICY_NAVAL_TRADITION"			/>
+		<Delete PolicyType="POLICY_TREASURE_FLEETS"		PrereqPolicy="POLICY_MERCHANT_NAVY"				/>
+		<Row>
+			<PolicyType>POLICY_MARITIME_INFRASTRUCTURE</PolicyType>
+			<PrereqPolicy>POLICY_MERCHANT_NAVY</PrereqPolicy>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_NAVIGATION_SCHOOL</PolicyType>
+			<PrereqPolicy>POLICY_MERCHANT_NAVY</PrereqPolicy>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_NAVAL_TRADITION</PolicyType>
+			<PrereqPolicy>POLICY_MILITARY_TRADITION</PrereqPolicy>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_TREASURE_FLEETS</PolicyType>
+			<PrereqPolicy>POLICY_MARITIME_INFRASTRUCTURE</PrereqPolicy>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_TREASURE_FLEETS</PolicyType>
+			<PrereqPolicy>POLICY_NAVAL_TRADITION</PrereqPolicy>
+		</Row>
+	</Policy_PrereqPolicies>
+
+</GameData>

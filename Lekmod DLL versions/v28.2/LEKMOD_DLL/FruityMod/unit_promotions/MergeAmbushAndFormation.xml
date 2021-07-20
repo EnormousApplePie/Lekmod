@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 6/9/2015 12:35:25 AM -->
+<GameData>
+
+	<!-- New promotion which is good against both Mounted (previously Formation) AND Armored (previously Ambush) ... "Ambush Formation" lol ... -->
+	<UnitPromotions>
+		<Row>
+			<Type>PROMOTION_AMBUSH_FORMATION_1</Type>
+			<Description>TXT_KEY_PROMOTION_AMBUSH_FORMATION_1</Description>
+			<Help>TXT_KEY_PROMOTION_AMBUSH_FORMATION_1_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<PromotionPrereqOr1>PROMOTION_SHOCK_1</PromotionPrereqOr1>
+			<PromotionPrereqOr2>PROMOTION_DRILL_1</PromotionPrereqOr2>
+			<OrderPriority>6</OrderPriority>
+			<PortraitIndex>24</PortraitIndex>
+			<IconAtlas>PROMOTION_ATLAS</IconAtlas>
+			<PediaType>PEDIA_MELEE</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_AMBUSH_FORMATION_1</PediaEntry>
+		</Row>
+		<Row>
+			<Type>PROMOTION_AMBUSH_FORMATION_2</Type>
+			<Description>TXT_KEY_PROMOTION_AMBUSH_FORMATION_2</Description>
+			<Help>TXT_KEY_PROMOTION_AMBUSH_FORMATION_2_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<PromotionPrereqOr1>PROMOTION_AMBUSH_FORMATION_1</PromotionPrereqOr1>
+			<OrderPriority>6</OrderPriority>
+			<PortraitIndex>25</PortraitIndex>
+			<IconAtlas>PROMOTION_ATLAS</IconAtlas>
+			<PediaType>PEDIA_MELEE</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_AMBUSH_FORMATION_2</PediaEntry>
+		</Row>
+	</UnitPromotions>
+	<UnitPromotions_UnitCombatMods>
+		<Row>
+			<PromotionType>PROMOTION_AMBUSH_FORMATION_1</PromotionType>
+			<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
+			<Modifier>33</Modifier>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_AMBUSH_FORMATION_2</PromotionType>
+			<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
+			<Modifier>33</Modifier>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_AMBUSH_FORMATION_1</PromotionType>
+			<UnitCombatType>UNITCOMBAT_ARMOR</UnitCombatType>
+			<Modifier>33</Modifier>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_AMBUSH_FORMATION_2</PromotionType>
+			<UnitCombatType>UNITCOMBAT_ARMOR</UnitCombatType>
+			<Modifier>33</Modifier>
+		</Row>
+	</UnitPromotions_UnitCombatMods>
+	<UnitPromotions_UnitCombats>
+		<Row>
+			<PromotionType>PROMOTION_AMBUSH_FORMATION_1</PromotionType>
+			<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_AMBUSH_FORMATION_1</PromotionType>
+			<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_AMBUSH_FORMATION_1</PromotionType>
+			<UnitCombatType>UNITCOMBAT_GUN</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_AMBUSH_FORMATION_1</PromotionType>
+			<UnitCombatType>UNITCOMBAT_ARMOR</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_AMBUSH_FORMATION_2</PromotionType>
+			<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_AMBUSH_FORMATION_2</PromotionType>
+			<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_AMBUSH_FORMATION_2</PromotionType>
+			<UnitCombatType>UNITCOMBAT_GUN</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_AMBUSH_FORMATION_2</PromotionType>
+			<UnitCombatType>UNITCOMBAT_ARMOR</UnitCombatType>
+		</Row>
+	</UnitPromotions_UnitCombats>
+	<Language_en_US>
+		<Row Tag="TXT_KEY_PROMOTION_AMBUSH_FORMATION_1">
+			<Text>Ambush Formation I</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_AMBUSH_FORMATION_1_HELP">
+			<Text>+33% [ICON_STRENGTH] Combat Strength VS [COLOR_POSITIVE_TEXT]Mounted[ENDCOLOR] and [COLOR_POSITIVE_TEXT]Armor[ENDCOLOR] units.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_AMBUSH_FORMATION_2">
+			<Text>Ambush Formation II</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_AMBUSH_FORMATION_2_HELP">
+			<Text>+33% [ICON_STRENGTH] Combat Strength VS [COLOR_POSITIVE_TEXT]Mounted[ENDCOLOR] and [COLOR_POSITIVE_TEXT]Armor[ENDCOLOR] units.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Row Tag="TXT_KEY_PROMOTION_AMBUSH_FORMATION_1">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Ambush Formation I</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_AMBUSH_FORMATION_1_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]+33% [ICON_STRENGTH] Combat Strength VS [COLOR_POSITIVE_TEXT]Mounted[ENDCOLOR] and [COLOR_POSITIVE_TEXT]Armor[ENDCOLOR] units.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_AMBUSH_FORMATION_2">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Ambush Formation II</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_AMBUSH_FORMATION_2_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]+33% [ICON_STRENGTH] Combat Strength VS [COLOR_POSITIVE_TEXT]Mounted[ENDCOLOR] and [COLOR_POSITIVE_TEXT]Armor[ENDCOLOR] units.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Row Tag="TXT_KEY_PROMOTION_AMBUSH_FORMATION_1">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Ambush Formation I</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_AMBUSH_FORMATION_1_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]+33% [ICON_STRENGTH] Combat Strength VS [COLOR_POSITIVE_TEXT]Mounted[ENDCOLOR] and [COLOR_POSITIVE_TEXT]Armor[ENDCOLOR] units.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_AMBUSH_FORMATION_2">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Ambush Formation II</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_AMBUSH_FORMATION_2_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]+33% [ICON_STRENGTH] Combat Strength VS [COLOR_POSITIVE_TEXT]Mounted[ENDCOLOR] and [COLOR_POSITIVE_TEXT]Armor[ENDCOLOR] units.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Row Tag="TXT_KEY_PROMOTION_AMBUSH_FORMATION_1">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Ambush Formation I</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_AMBUSH_FORMATION_1_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]+33% [ICON_STRENGTH] Combat Strength VS [COLOR_POSITIVE_TEXT]Mounted[ENDCOLOR] and [COLOR_POSITIVE_TEXT]Armor[ENDCOLOR] units.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_AMBUSH_FORMATION_2">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Ambush Formation II</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_AMBUSH_FORMATION_2_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]+33% [ICON_STRENGTH] Combat Strength VS [COLOR_POSITIVE_TEXT]Mounted[ENDCOLOR] and [COLOR_POSITIVE_TEXT]Armor[ENDCOLOR] units.</Text>
+		</Row>
+	</Language_RU_RU>
+
+
+	<!-- Remove old Ambush & Formation promotions -->
+	<UnitPromotions>
+		<Delete Type="PROMOTION_FORMATION_1" />
+		<Delete Type="PROMOTION_FORMATION_2" />
+		<Delete Type="PROMOTION_AMBUSH_1" />
+		<Delete Type="PROMOTION_AMBUSH_2" />
+	</UnitPromotions>
+	<UnitPromotions_UnitCombatMods>
+		<Delete PromotionType="PROMOTION_FORMATION_1" />
+		<Delete PromotionType="PROMOTION_FORMATION_2" />
+		<Delete PromotionType="PROMOTION_AMBUSH_1" />
+		<Delete PromotionType="PROMOTION_AMBUSH_2" />
+	</UnitPromotions_UnitCombatMods>
+	<UnitPromotions_UnitCombats>
+		<Delete PromotionType="PROMOTION_FORMATION_1" />
+		<Delete PromotionType="PROMOTION_AMBUSH_1" />
+	</UnitPromotions_UnitCombats>
+	<Unit_FreePromotions>
+		<Delete PromotionType="PROMOTION_FORMATION_1" />
+		<Delete PromotionType="PROMOTION_FORMATION_2" />
+		<Delete PromotionType="PROMOTION_AMBUSH_1" />
+		<Delete PromotionType="PROMOTION_AMBUSH_2" />
+	</Unit_FreePromotions>
+
+	<!-- Foreign Legions now start with Ambush Formation I for free. -->
+	<Unit_FreePromotions>
+		<Row>
+			<UnitType>UNIT_FRENCH_FOREIGNLEGION</UnitType>
+			<PromotionType>PROMOTION_AMBUSH_FORMATION_1</PromotionType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_LANCER</UnitType>
+			<PromotionType>PROMOTION_AMBUSH_FORMATION_1</PromotionType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_OTTOMAN_SIPAHI</UnitType>
+			<PromotionType>PROMOTION_AMBUSH_FORMATION_1</PromotionType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_POLISH_WINGED_HUSSAR</UnitType>
+			<PromotionType>PROMOTION_AMBUSH_FORMATION_1</PromotionType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_SWEDISH_HAKKAPELIITTA</UnitType>
+			<PromotionType>PROMOTION_AMBUSH_FORMATION_1</PromotionType>
+		</Row>
+	</Unit_FreePromotions>
+
+</GameData>

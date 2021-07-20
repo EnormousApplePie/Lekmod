@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2017-09-22 23:34:59 -->
+<GameData>
+	
+	<!-- Watermill now provides +1 Food and +1 Production but only costs 1 Gold maintenance. Production cost reduced by 20%. -->
+	<Buildings>
+		<Update>
+			<Where Type="BUILDING_WATERMILL" />
+			<Set Cost="60" GoldMaintenance="1" />
+		</Update>
+	</Buildings>
+	<Building_YieldChanges>
+		<Update>
+			<Where BuildingType="BUILDING_WATERMILL" YieldType="YIELD_FOOD" />
+			<Set Yield="1" />
+		</Update>
+	</Building_YieldChanges>
+
+</GameData>

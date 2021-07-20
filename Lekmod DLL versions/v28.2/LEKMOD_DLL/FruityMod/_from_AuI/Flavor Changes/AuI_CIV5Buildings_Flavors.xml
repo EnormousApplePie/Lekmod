@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<Building_Flavors>
+		<Update>
+			<Set Flavor="20" />
+			<Where BuildingType="BUILDING_STELE" FlavorType="FLAVOR_CULTURE" />
+		</Update>
+		<Delete BuildingType="BUILDING_CATHEDRAL" />
+		<Delete BuildingType="BUILDING_MOSQUE" />
+		<Delete BuildingType="BUILDING_PAGODA" />
+		<Row>
+			<BuildingType>BUILDING_CATHEDRAL</BuildingType>
+			<FlavorType>FLAVOR_RELIGION</FlavorType>
+			<Flavor>10</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_CATHEDRAL</BuildingType>
+			<FlavorType>FLAVOR_CULTURE</FlavorType>
+			<Flavor>10</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_CATHEDRAL</BuildingType>
+			<FlavorType>FLAVOR_TOURISM</FlavorType>
+			<Flavor>10</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_CATHEDRAL</BuildingType>
+			<FlavorType>FLAVOR_GREAT_PEOPLE</FlavorType>
+			<Flavor>5</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_CATHEDRAL</BuildingType>
+			<FlavorType>FLAVOR_HAPPINESS</FlavorType>
+			<Flavor>10</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_MOSQUE</BuildingType>
+			<FlavorType>FLAVOR_RELIGION</FlavorType>
+			<Flavor>30</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_MOSQUE</BuildingType>
+			<FlavorType>FLAVOR_CULTURE</FlavorType>
+			<Flavor>20</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_MOSQUE</BuildingType>
+			<FlavorType>FLAVOR_HAPPINESS</FlavorType>
+			<Flavor>10</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_PAGODA</BuildingType>
+			<FlavorType>FLAVOR_RELIGION</FlavorType>
+			<Flavor>20</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_PAGODA</BuildingType>
+			<FlavorType>FLAVOR_CULTURE</FlavorType>
+			<Flavor>20</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_PAGODA</BuildingType>
+			<FlavorType>FLAVOR_HAPPINESS</FlavorType>
+			<Flavor>20</Flavor>
+		</Row>
+		
+		<Update>
+			<Set Flavor="35" />
+			<Where BuildingType="BUILDING_MUSEUM" FlavorType="FLAVOR_CULTURE" />
+		</Update>
+		<Row>
+			<BuildingType>BUILDING_MUSEUM</BuildingType>
+			<FlavorType>FLAVOR_TOURISM</FlavorType>
+			<Flavor>20</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_HERMITAGE</BuildingType>
+			<FlavorType>FLAVOR_TOURISM</FlavorType>
+			<Flavor>20</Flavor>
+		</Row>
+		<Update>
+			<Set Flavor="40" />
+			<Where BuildingType="BUILDING_LOUVRE" FlavorType="FLAVOR_CULTURE" />
+		</Update>
+		<Row>
+			<BuildingType>BUILDING_LOUVRE</BuildingType>
+			<FlavorType>FLAVOR_TOURISM</FlavorType>
+			<Flavor>35</Flavor>
+		</Row>
+		
+		<Update>
+			<Set Flavor="20" />
+			<Where BuildingType="BUILDING_MONASTERY" FlavorType="FLAVOR_CULTURE" />
+		</Update>
+		<Update>
+			<Set Flavor="20" />
+			<Where BuildingType="BUILDING_MONASTERY" FlavorType="FLAVOR_RELIGION" />
+		</Update>
+		
+		<Update>
+			<Set FlavorType="FLAVOR_TOURISM" />
+			<Where BuildingType="BUILDING_ROYAL_LIBRARY" FlavorType="FLAVOR_CULTURE" />
+		</Update>
+		<Update>
+			<Set FlavorType="FLAVOR_TOURISM" />
+			<Where BuildingType="BUILDING_HOTEL" FlavorType="FLAVOR_CULTURE" />
+		</Update>
+		<Update>
+			<Set FlavorType="FLAVOR_TOURISM" />
+			<Where BuildingType="BUILDING_AIRPORT" FlavorType="FLAVOR_CULTURE" />
+		</Update>
+		<Update>
+			<Set FlavorType="FLAVOR_TOURISM" />
+			<Where BuildingType="BUILDING_TOURIST_CENTER" FlavorType="FLAVOR_CULTURE" />
+		</Update>
+		<Update>
+			<Set Flavor="25" />
+			<Where BuildingType="BUILDING_UFFIZI" FlavorType="FLAVOR_CULTURE" />
+		</Update>
+		<Row>
+			<BuildingType>BUILDING_UFFIZI</BuildingType>
+			<FlavorType>FLAVOR_TOURISM</FlavorType>
+			<Flavor>50</Flavor>
+		</Row>
+		<Update>
+			<Set Flavor="35" />
+			<Where BuildingType="BUILDING_GLOBE_THEATER" FlavorType="FLAVOR_CULTURE" />
+		</Update>
+		<Row>
+			<BuildingType>BUILDING_GLOBE_THEATER</BuildingType>
+			<FlavorType>FLAVOR_TOURISM</FlavorType>
+			<Flavor>40</Flavor>
+		</Row>
+		<Update>
+			<Set Flavor="15" />
+			<Where BuildingType="BUILDING_BROADWAY" FlavorType="FLAVOR_CULTURE" />
+		</Update>
+		<Row>
+			<BuildingType>BUILDING_BROADWAY</BuildingType>
+			<FlavorType>FLAVOR_TOURISM</FlavorType>
+			<Flavor>60</Flavor>
+		</Row>
+		<Update>
+			<Set Flavor="60" />
+			<Where BuildingType="BUILDING_PARTHENON" FlavorType="FLAVOR_CULTURE" />
+		</Update>
+		<Row>
+			<BuildingType>BUILDING_PARTHENON</BuildingType>
+			<FlavorType>FLAVOR_TOURISM</FlavorType>
+			<Flavor>15</Flavor>
+		</Row>
+		
+		<Update>
+			<Set Flavor="60" />
+			<Where BuildingType="BUILDING_WRITERS_GUILD" FlavorType="FLAVOR_CULTURE" />
+		</Update>
+		<Row>
+			<BuildingType>BUILDING_WRITERS_GUILD</BuildingType>
+			<FlavorType>FLAVOR_TOURISM</FlavorType>
+			<Flavor>40</Flavor>
+		</Row>
+		<Update>
+			<Set Flavor="50" />
+			<Where BuildingType="BUILDING_ARTISTS_GUILD" FlavorType="FLAVOR_CULTURE" />
+		</Update>
+		<Row>
+			<BuildingType>BUILDING_ARTISTS_GUILD</BuildingType>
+			<FlavorType>FLAVOR_TOURISM</FlavorType>
+			<Flavor>40</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_ARTISTS_GUILD</BuildingType>
+			<FlavorType>FLAVOR_HAPPINESS</FlavorType>
+			<Flavor>10</Flavor>
+		</Row>
+		<Update>
+			<Set Flavor="25" />
+			<Where BuildingType="BUILDING_MUSICIANS_GUILD" FlavorType="FLAVOR_CULTURE" />
+		</Update>
+		<Row>
+			<BuildingType>BUILDING_MUSICIANS_GUILD</BuildingType>
+			<FlavorType>FLAVOR_TOURISM</FlavorType>
+			<Flavor>75</Flavor>
+		</Row>
+		
+		<!-- Now covered in Lua -->
+		<Delete BuildingType="BUILDING_PETRA" FlavorType="FLAVOR_GROWTH" />
+		<Delete BuildingType="BUILDING_PETRA" FlavorType="FLAVOR_PRODUCTION" />
+		<Delete BuildingType="BUILDING_STATUE_OF_LIBERTY" FlavorType="FLAVOR_PRODUCTION" />
+		<Delete BuildingType="BUILDING_SISTINE_CHAPEL" FlavorType="FLAVOR_CULTURE" />
+		<Delete BuildingType="BUILDING_CN_TOWER" FlavorType="FLAVOR_GROWTH" />
+		<Delete BuildingType="BUILDING_CN_TOWER" FlavorType="FLAVOR_HAPPINESS" />
+		<Update>
+			<Set Flavor="20" />
+			<Where BuildingType="BUILDING_RED_FORT" FlavorType="FLAVOR_CITY_DEFENSE" />
+		</Update>
+		<Update>
+			<Set Flavor="20" />
+			<Where BuildingType="BUILDING_PRORA" FlavorType="FLAVOR_HAPPINESS" />
+		</Update>
+		
+		<!-- Now covered by the catcher for free buildings and Terracotta free units in the DLL -->
+		<Delete BuildingType="BUILDING_CN_TOWER" FlavorType="FLAVOR_CULTURE" />
+		<Delete BuildingType="BUILDING_TERRACOTTA_ARMY" FlavorType="FLAVOR_OFFENSE" />
+		<Delete BuildingType="BUILDING_TERRACOTTA_ARMY" FlavorType="FLAVOR_DEFENSE" />
+		<Update>
+			<Set Flavor="35" />
+			<Where BuildingType="BUILDING_MOSQUE_OF_DJENNE" FlavorType="FLAVOR_RELIGION" />
+		</Update>
+		<Delete BuildingType="BUILDING_ALHAMBRA" FlavorType="FLAVOR_CITY_DEFENSE" />
+		<Update>
+			<Set Flavor="30" />
+			<Where BuildingType="BUILDING_ALHAMBRA" FlavorType="FLAVOR_MILITARY_TRAINING" />
+		</Update>
+		<Update>
+			<Set Flavor="5" />
+			<Where BuildingType="BUILDING_HANGING_GARDEN" FlavorType="FLAVOR_GREAT_PEOPLE" />
+		</Update>
+		<Update>
+			<Set Flavor="60" />
+			<Where BuildingType="BUILDING_HANGING_GARDEN" FlavorType="FLAVOR_GROWTH" />
+		</Update>
+		<Delete BuildingType="BUILDING_GREAT_WALL" FlavorType="FLAVOR_CITY_DEFENSE" />
+		<Update>
+			<Set Flavor="80" />
+			<Where BuildingType="BUILDING_GREAT_WALL" FlavorType="FLAVOR_DEFENSE" />
+		</Update>
+		<Update>
+			<Set Flavor="40" />
+			<Where BuildingType="BUILDING_GREAT_LIBRARY" FlavorType="FLAVOR_SCIENCE" />
+		</Update>
+		
+		<!-- Was originally missing from the game files -->
+		<Row>
+			<BuildingType>BUILDING_NEUSCHWANSTEIN</BuildingType>
+			<FlavorType>FLAVOR_GOLD</FlavorType>
+			<Flavor>65</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_NEUSCHWANSTEIN</BuildingType>
+			<FlavorType>FLAVOR_CULTURE</FlavorType>
+			<Flavor>40</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_NEUSCHWANSTEIN</BuildingType>
+			<FlavorType>FLAVOR_HAPPINESS</FlavorType>
+			<Flavor>20</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_NEUSCHWANSTEIN</BuildingType>
+			<FlavorType>FLAVOR_WONDER</FlavorType>
+			<Flavor>20</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_NEUSCHWANSTEIN</BuildingType>
+			<FlavorType>FLAVOR_GREAT_PEOPLE</FlavorType>
+			<Flavor>5</Flavor>
+		</Row>
+	</Building_Flavors>
+</GameData>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 7/15/2015 4:52:28 PM -->
+<GameData>
+	
+	<!-- Cost to purchase with Faith no longer increases as eras progress. -->
+	<Eras>
+		<Update>
+			<Set FaithCostMultiplier="100" />
+		</Update>
+	</Eras>
+	
+	<!-- Removed but kept commented in case we need to go back to this. -->
+	<!-- Increased base cost of Universities, Public Schools, and Research Labs to compensate. -->
+	<Buildings>
+		<Update>
+			<Set FaithCost="280" />
+			<Where BuildingClass="BUILDINGCLASS_UNIVERSITY" />
+		</Update>
+		<Update>
+			<Set FaithCost="380" />
+			<Where BuildingClass="BUILDINGCLASS_PUBLIC_SCHOOL" />
+		</Update>
+		<Update>
+			<Set FaithCost="480" />
+			<Where BuildingClass="BUILDINGCLASS_LABORATORY" />
+		</Update>
+	</Buildings>
+  
+</GameData>

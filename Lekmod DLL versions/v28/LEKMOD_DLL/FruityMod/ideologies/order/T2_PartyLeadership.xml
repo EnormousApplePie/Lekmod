@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2/14/2016 11:18:17 PM -->
+<GameData>
+
+	<!-- change all Party Leadership yeilds from +1 to +3 -->
+	<Policy_CityYieldChanges>
+		<Update>
+			<Set Yield="2" />
+			<Where PolicyType="POLICY_PARTY_LEADERSHIP" YieldType="YIELD_FOOD" />
+		</Update>
+		<Update>
+			<Set Yield="2" />
+			<Where PolicyType="POLICY_PARTY_LEADERSHIP" YieldType="YIELD_PRODUCTION" />
+		</Update>
+		<Update>
+			<Set Yield="2" />
+			<Where PolicyType="POLICY_PARTY_LEADERSHIP" YieldType="YIELD_SCIENCE" />
+		</Update>
+		<Update>
+			<Set Yield="2" />
+			<Where PolicyType="POLICY_PARTY_LEADERSHIP" YieldType="YIELD_GOLD" />
+		</Update>
+		<Update>
+			<Set Yield="0" />
+			<Where PolicyType="POLICY_PARTY_LEADERSHIP" YieldType="YIELD_CULTURE" />
+		</Update>
+	</Policy_CityYieldChanges>
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_POLICY_PARTY_LEADERSHIP_HELP" />
+		<Row Tag="TXT_KEY_POLICY_PARTY_LEADERSHIP_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Party Leadership[ENDCOLOR][NEWLINE]+2 [ICON_FOOD] Food, +2 [ICON_PRODUCTION] Production, +2 [ICON_RESEARCH] Science, and +2 [ICON_GOLD] Gold per city.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_POLICY_PARTY_LEADERSHIP_HELP" />
+		<Row Tag="TXT_KEY_POLICY_PARTY_LEADERSHIP_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Party Leadership[ENDCOLOR][NEWLINE]+2 [ICON_FOOD] Food, +2 [ICON_PRODUCTION] Production, +2 [ICON_RESEARCH] Science, and +2 [ICON_GOLD] Gold per city.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_POLICY_PARTY_LEADERSHIP_HELP" />
+		<Row Tag="TXT_KEY_POLICY_PARTY_LEADERSHIP_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Party Leadership[ENDCOLOR][NEWLINE]+2 [ICON_FOOD] Food, +2 [ICON_PRODUCTION] Production, +2 [ICON_RESEARCH] Science, and +2 [ICON_GOLD] Gold per city.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_POLICY_PARTY_LEADERSHIP_HELP" />
+		<Row Tag="TXT_KEY_POLICY_PARTY_LEADERSHIP_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Party Leadership[ENDCOLOR][NEWLINE]+2 [ICON_FOOD] Food, +2 [ICON_PRODUCTION] Production, +2 [ICON_RESEARCH] Science, and +2 [ICON_GOLD] Gold per city.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

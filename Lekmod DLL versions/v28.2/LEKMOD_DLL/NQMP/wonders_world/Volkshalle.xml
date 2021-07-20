@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 5/1/2017 1:40:41 AM -->
+<GameData>
+
+	<!-- Volkshalle (replaces Prora): 1 free Social Policy. +1 Culture, +6 Happiness. Golden Ages last 25% longer.-->
+	<Buildings>
+		<Update>
+			<Set Water="false" HappinessPerXPolicies="0" UnmoddedHappiness="6" GoldenAgeModifier="25" Quote="" />
+			<Where Type="BUILDING_PRORA_RESORT" />
+		</Update>
+	</Buildings>
+	<Building_YieldChanges>
+		<Row>
+			<BuildingType>BUILDING_PRORA_RESORT</BuildingType>
+			<YieldType>YIELD_CULTURE</YieldType>
+			<Yield>1</Yield>
+		</Row>
+	</Building_YieldChanges>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_BUILDING_PRORA_RESORT" />
+		<Row Tag="TXT_KEY_BUILDING_PRORA_RESORT">
+			<Text>Volkshalle</Text>
+			<Gender>neuter:no_article</Gender>
+		</Row>
+		<Delete Tag="TXT_KEY_WONDER_PRORA_RESORT_HELP" />
+		<Row Tag="TXT_KEY_WONDER_PRORA_RESORT_HELP">
+			<Text>Requires Autocracy. 1 Free Social Policy. [ICON_GOLDEN_AGE] Golden Ages last 25% longer.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_CIV5_BUILDINGS_PRORA_RESORT_TEXT" />
+		<Row Tag="TXT_KEY_CIV5_BUILDINGS_PRORA_RESORT_TEXT">
+			<Text>Source: Wikipedia (https://en.wikipedia.org/wiki/Volkshalle)[ENDCOLOR][NEWLINE][NEWLINE]The Volkshalle ("People's Hall"), also called Große Halle ("Great Hall") or Ruhmeshalle ("Hall of Glory"), was a huge domed monumental building planned by Adolf Hitler and his architect Albert Speer for Germania in Berlin. The project was never realized.[NEWLINE][NEWLINE]The word Volk had a particular resonance in Nazi thinking. The term völkisch movement, which can be translated to English as "the people's movement" or "the folkish movement", derives from Volk but also implies a particularly racial undertone. Before the First World War, völkisch thought had developed an attitude to the arts as the German Volk; that is, from an organically linked Aryan or Nordic community (Volksgemeinschaft), racially unpolluted and with its roots in the German soil of the Heimat (homeland).</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_BUILDING_PRORA_RESORT" />
+		<Row Tag="TXT_KEY_BUILDING_PRORA_RESORT">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Volkshalle</Text>
+			<Gender>neuter:no_article</Gender>
+		</Row>
+		<Delete Tag="TXT_KEY_WONDER_PRORA_RESORT_HELP" />
+		<Row Tag="TXT_KEY_WONDER_PRORA_RESORT_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Requires Autocracy. 1 Free Social Policy. [ICON_GOLDEN_AGE] Golden Ages last 25% longer.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_CIV5_BUILDINGS_PRORA_RESORT_TEXT" />
+		<Row Tag="TXT_KEY_CIV5_BUILDINGS_PRORA_RESORT_TEXT">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Source: Wikipedia (https://en.wikipedia.org/wiki/Volkshalle)[ENDCOLOR][NEWLINE][NEWLINE]The Volkshalle ("People's Hall"), also called Große Halle ("Great Hall") or Ruhmeshalle ("Hall of Glory"), was a huge domed monumental building planned by Adolf Hitler and his architect Albert Speer for Germania in Berlin. The project was never realized.[NEWLINE][NEWLINE]The word Volk had a particular resonance in Nazi thinking. The term völkisch movement, which can be translated to English as "the people's movement" or "the folkish movement", derives from Volk but also implies a particularly racial undertone. Before the First World War, völkisch thought had developed an attitude to the arts as the German Volk; that is, from an organically linked Aryan or Nordic community (Volksgemeinschaft), racially unpolluted and with its roots in the German soil of the Heimat (homeland).</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_BUILDING_PRORA_RESORT" />
+		<Row Tag="TXT_KEY_BUILDING_PRORA_RESORT">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Volkshalle</Text>
+			<Gender>neuter:no_article</Gender>
+		</Row>
+		<Delete Tag="TXT_KEY_WONDER_PRORA_RESORT_HELP" />
+		<Row Tag="TXT_KEY_WONDER_PRORA_RESORT_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Requires Autocracy. 1 Free Social Policy. [ICON_GOLDEN_AGE] Golden Ages last 25% longer.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_CIV5_BUILDINGS_PRORA_RESORT_TEXT" />
+		<Row Tag="TXT_KEY_CIV5_BUILDINGS_PRORA_RESORT_TEXT">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Source: Wikipedia (https://en.wikipedia.org/wiki/Volkshalle)[ENDCOLOR][NEWLINE][NEWLINE]The Volkshalle ("People's Hall"), also called Große Halle ("Great Hall") or Ruhmeshalle ("Hall of Glory"), was a huge domed monumental building planned by Adolf Hitler and his architect Albert Speer for Germania in Berlin. The project was never realized.[NEWLINE][NEWLINE]The word Volk had a particular resonance in Nazi thinking. The term völkisch movement, which can be translated to English as "the people's movement" or "the folkish movement", derives from Volk but also implies a particularly racial undertone. Before the First World War, völkisch thought had developed an attitude to the arts as the German Volk; that is, from an organically linked Aryan or Nordic community (Volksgemeinschaft), racially unpolluted and with its roots in the German soil of the Heimat (homeland).</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_BUILDING_PRORA_RESORT" />
+		<Row Tag="TXT_KEY_BUILDING_PRORA_RESORT">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Volkshalle</Text>
+			<Gender>neuter:no_article</Gender>
+		</Row>
+		<Delete Tag="TXT_KEY_WONDER_PRORA_RESORT_HELP" />
+		<Row Tag="TXT_KEY_WONDER_PRORA_RESORT_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Requires Autocracy. 1 Free Social Policy. [ICON_GOLDEN_AGE] Golden Ages last 25% longer.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_CIV5_BUILDINGS_PRORA_RESORT_TEXT" />
+		<Row Tag="TXT_KEY_CIV5_BUILDINGS_PRORA_RESORT_TEXT">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Source: Wikipedia (https://en.wikipedia.org/wiki/Volkshalle)[ENDCOLOR][NEWLINE][NEWLINE]The Volkshalle ("People's Hall"), also called Große Halle ("Great Hall") or Ruhmeshalle ("Hall of Glory"), was a huge domed monumental building planned by Adolf Hitler and his architect Albert Speer for Germania in Berlin. The project was never realized.[NEWLINE][NEWLINE]The word Volk had a particular resonance in Nazi thinking. The term völkisch movement, which can be translated to English as "the people's movement" or "the folkish movement", derives from Volk but also implies a particularly racial undertone. Before the First World War, völkisch thought had developed an attitude to the arts as the German Volk; that is, from an organically linked Aryan or Nordic community (Volksgemeinschaft), racially unpolluted and with its roots in the German soil of the Heimat (homeland).</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

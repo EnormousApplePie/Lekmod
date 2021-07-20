@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by HellBlazer on 17/7/2015 15:00 -->
+<GameData>
+
+	<!-- Now also provides +1 Food -->
+	<Feature_YieldChanges>
+		<Row FeatureType="FEATURE_VOLCANO">
+			<YieldType>YIELD_FOOD</YieldType>
+			<Yield>1</Yield>
+		</Row>
+	</Feature_YieldChanges>
+
+	<!-- Fix spawn location -->
+	<Natural_Wonder_Placement>
+		<Update>
+			<Where NaturalWonderType="FEATURE_VOLCANO"/>
+			<Set AdjacentTilesCareAboutTerrainTypes="true"
+			RequiredNumberOfAdjacentShallowWater ="4"
+			CoreTileCanBeAnyTerrainType="false"
+			CoreTileCanBeShallowWater="true"/>
+		</Update>
+	</Natural_Wonder_Placement>
+
+</GameData>

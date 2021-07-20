@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2016-09-03 08:28:06 -->
+<GameData>
+	
+	<!-- remove B17, replaced with Pioneer -->
+	<Civilization_UnitClassOverrides>
+		<Delete UnitType="UNIT_AMERICAN_B17" />
+		<Row>
+			<CivilizationType>CIVILIZATION_AMERICA</CivilizationType>
+			<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
+			<UnitType>UNIT_AMERICAN_PIONEER</UnitType>
+		</Row>
+	</Civilization_UnitClassOverrides>
+
+	
+</GameData>

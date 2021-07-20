@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 6/9/2015 11:18:24 PM -->
+<GameData>
+
+	<!-- New Honor Tree
+	
+				 Warrior Code			  Professional Army
+	  		 __________|__________	   __________|___________
+	  		|				      |	  |						 |
+	  Military Caste		Military Tradition			 Discipline
+					
+	-->
+
+	<Policies>
+		<Update>
+			<Set GridX="2" GridY="1" />
+			<Where Type="POLICY_WARRIOR_CODE" />
+		</Update>
+		<Update>
+			<Set GridX="4" GridY="1" />
+			<Where Type="POLICY_PROFESSIONAL_ARMY" />
+		</Update>
+		<Update>
+			<Set GridX="1" GridY="2" />
+			<Where Type="POLICY_MILITARY_CASTE" />
+		</Update>
+		<Update>
+			<Set GridX="3" GridY="2" />
+			<Where Type="POLICY_MILITARY_TRADITION" />
+		</Update>
+		<Update>
+			<Set GridX="5" GridY="2" />
+			<Where Type="POLICY_DISCIPLINE" />
+		</Update>
+	</Policies>
+	<Policy_PrereqPolicies>
+		<Delete PolicyType="POLICY_WARRIOR_CODE" />
+		<Delete PolicyType="POLICY_MILITARY_CASTE" />
+		<Delete PolicyType="POLICY_DISCIPLINE" />
+		<Delete PolicyType="POLICY_MILITARY_TRADITION" />
+		<Delete PolicyType="POLICY_PROFESSIONAL_ARMY" />
+		<Row>
+			<PolicyType>POLICY_MILITARY_CASTE</PolicyType>
+			<PrereqPolicy>POLICY_WARRIOR_CODE</PrereqPolicy>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_MILITARY_TRADITION</PolicyType>
+			<PrereqPolicy>POLICY_WARRIOR_CODE</PrereqPolicy>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_MILITARY_TRADITION</PolicyType>
+			<PrereqPolicy>POLICY_PROFESSIONAL_ARMY</PrereqPolicy>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_DISCIPLINE</PolicyType>
+			<PrereqPolicy>POLICY_PROFESSIONAL_ARMY</PrereqPolicy>
+		</Row>
+	</Policy_PrereqPolicies>
+
+</GameData>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2017-09-27 21:00:32 -->
+<GameData>
+
+	<!-- Now provide +2 Science (down from +3). -->
+	<Building_YieldChanges>
+		<Update>
+			<Set Yield="2" />
+			<Where BuildingType="BUILDING_GREAT_LIBRARY" YieldType="YIELD_SCIENCE" />
+		</Update>
+	</Building_YieldChanges>
+
+</GameData>

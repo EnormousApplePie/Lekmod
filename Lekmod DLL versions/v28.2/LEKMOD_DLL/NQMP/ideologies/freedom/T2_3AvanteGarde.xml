@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 3/22/2017 7:09:54 PM -->
+<GameData>
+
+	<!-- Avante Garde: +2 Culture and +2 Tourism from each Great Work and World Wonder. -->
+	<Policies>
+		<Update>
+			<Set Level="2" GreatPeopleRateModifier="0" ExtraTourismPerGreatWork="2" CulturePerWonder="2" TourismPerWonder="2" />
+			<Where Type="POLICY_OPEN_SOCIETY" />
+		</Update>
+	</Policies>
+	<Policy_GreatWorkYieldChanges>
+		<Row>
+			<PolicyType>POLICY_OPEN_SOCIETY</PolicyType>
+			<YieldType>YIELD_CULTURE</YieldType>
+			<Yield>2</Yield>
+		</Row>
+	</Policy_GreatWorkYieldChanges>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_POLICY_OPEN_SOCIETY_HELP" />
+		<Row Tag="TXT_KEY_POLICY_OPEN_SOCIETY_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Avante Garde[ENDCOLOR][NEWLINE]+2 [ICON_CULTURE] Culture and +2 [ICON_TOURISM] Tourism from each Great Work and World Wonder.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_POLICY_OPEN_SOCIETY_HELP" />
+		<Row Tag="TXT_KEY_POLICY_OPEN_SOCIETY_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Avante Garde[ENDCOLOR][NEWLINE]+2 [ICON_CULTURE] Culture and +2 [ICON_TOURISM] Tourism from each Great Work and World Wonder.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_POLICY_OPEN_SOCIETY_HELP" />
+		<Row Tag="TXT_KEY_POLICY_OPEN_SOCIETY_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Avante Garde[ENDCOLOR][NEWLINE]+2 [ICON_CULTURE] Culture and +2 [ICON_TOURISM] Tourism from each Great Work and World Wonder.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_POLICY_OPEN_SOCIETY_HELP" />
+		<Row Tag="TXT_KEY_POLICY_OPEN_SOCIETY_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Avante Garde[ENDCOLOR][NEWLINE]+2 [ICON_CULTURE] Culture and +2 [ICON_TOURISM] Tourism from each Great Work and World Wonder.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

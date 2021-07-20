@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 6/9/2015 11:46:09 PM -->
+<GameData>
+
+	<!-- PROFESSIONAL ARMY -->
+	<Policies>
+		<Update>
+			<Set UnitUpgradeCostMod="0" />
+			<Where Type="POLICY_PROFESSIONAL_ARMY" />
+		</Update>
+	</Policies>
+	<Policy_BuildingClassProductionModifiers>
+		<Update>
+			<Set ProductionModifier="100" />
+			<Where PolicyType="POLICY_PROFESSIONAL_ARMY" />
+		</Update>
+	</Policy_BuildingClassProductionModifiers>
+	<Policy_BuildingClassCultureChanges>
+		<Row>
+			<PolicyType>POLICY_PROFESSIONAL_ARMY</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_BARRACKS</BuildingClassType>
+			<CultureChange>1</CultureChange>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_PROFESSIONAL_ARMY</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_ARMORY</BuildingClassType>
+			<CultureChange>1</CultureChange>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_PROFESSIONAL_ARMY</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_MILITARY_ACADEMY</BuildingClassType>
+			<CultureChange>1</CultureChange>
+		</Row>
+	</Policy_BuildingClassCultureChanges>
+	<Policy_BuildingClassYieldChanges>
+		<Row>
+			<PolicyType>POLICY_PROFESSIONAL_ARMY</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_BARRACKS</BuildingClassType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<YieldChange>1</YieldChange>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_PROFESSIONAL_ARMY</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_ARMORY</BuildingClassType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<YieldChange>1</YieldChange>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_PROFESSIONAL_ARMY</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_MILITARY_ACADEMY</BuildingClassType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<YieldChange>1</YieldChange>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_PROFESSIONAL_ARMY</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_BARRACKS</BuildingClassType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<YieldChange>1</YieldChange>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_PROFESSIONAL_ARMY</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_ARMORY</BuildingClassType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<YieldChange>1</YieldChange>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_PROFESSIONAL_ARMY</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_MILITARY_ACADEMY</BuildingClassType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<YieldChange>1</YieldChange>
+		</Row>
+	</Policy_BuildingClassYieldChanges>
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_POLICY_PROFESSIONAL_ARMY_HELP" />
+		<Row Tag="TXT_KEY_POLICY_PROFESSIONAL_ARMY_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Professional Army[ENDCOLOR][NEWLINE]Barracks, Armories, and Military Academies are built twice as fast, and they each provide +1 [ICON_PRODUCTION] Production, +1 [ICON_CULTURE] Culture, and +1 [ICON_GOLD] Gold.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_POLICY_PROFESSIONAL_ARMY_HELP" />
+		<Row Tag="TXT_KEY_POLICY_PROFESSIONAL_ARMY_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Professional Army[ENDCOLOR][NEWLINE]Barracks, Armories, and Military Academies are built twice as fast, and they each provide +1 [ICON_PRODUCTION] Production, +1 [ICON_CULTURE] Culture, and +1 [ICON_GOLD] Gold.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_POLICY_PROFESSIONAL_ARMY_HELP" />
+		<Row Tag="TXT_KEY_POLICY_PROFESSIONAL_ARMY_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Professional Army[ENDCOLOR][NEWLINE]Barracks, Armories, and Military Academies are built twice as fast, and they each provide +1 [ICON_PRODUCTION] Production, +1 [ICON_CULTURE] Culture, and +1 [ICON_GOLD] Gold.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_POLICY_PROFESSIONAL_ARMY_HELP" />
+		<Row Tag="TXT_KEY_POLICY_PROFESSIONAL_ARMY_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Professional Army[ENDCOLOR][NEWLINE]Barracks, Armories, and Military Academies are built twice as fast, and they each provide +1 [ICON_PRODUCTION] Production, +1 [ICON_CULTURE] Culture, and +1 [ICON_GOLD] Gold.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2016-09-25 05:44:53 -->
+<GameData>
+
+	<!-- Great Prophets earned with 25% less Faith. -->
+	<Beliefs>
+		<Update>
+			<Set ProphetStrengthModifier="0" ProphetCostModifier="-25" Enhancer="false" Founder="true" />
+			<Where Type="BELIEF_MESSIAH" />
+		</Update>
+	</Beliefs>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_BELIEF_MESSIAH" />
+		<Row Tag="TXT_KEY_BELIEF_MESSIAH">
+			<Text>Prophets are earned with 25% less [ICON_PEACE] Faith</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_BELIEF_MESSIAH" />
+		<Row Tag="TXT_KEY_BELIEF_MESSIAH">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Prophets are earned with 25% less [ICON_PEACE] Faith</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_BELIEF_MESSIAH" />
+		<Row Tag="TXT_KEY_BELIEF_MESSIAH">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Prophets are earned with 25% less [ICON_PEACE] Faith</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_BELIEF_MESSIAH" />
+		<Row Tag="TXT_KEY_BELIEF_MESSIAH">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Prophets are earned with 25% less [ICON_PEACE] Faith</Text>
+		</Row>
+	</Language_RU_RU>
+	
+</GameData>

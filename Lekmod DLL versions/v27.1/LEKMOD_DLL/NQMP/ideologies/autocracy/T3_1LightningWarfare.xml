@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 3/22/2017 7:17:12 PM -->
+<GameData>
+
+	<!-- Lightning Warfare: Land Military Units gain +1 Movement and ignore Zone of Control. -->
+	<Policies>
+		<Update>
+			<Set Level="3" />
+			<Where Type="POLICY_LIGHTNING_WARFARE" />
+		</Update>
+	</Policies>
+	<Policy_FreePromotions>
+		<Delete PolicyType="POLICY_LIGHTNING_WARFARE" PromotionType="PROMOTION_FAST_GENERAL" />
+	</Policy_FreePromotions>
+	<UnitPromotions>
+		<Update>
+			<Set OpenAttack="0" RoughAttack="0" />
+			<Where Type="PROMOTION_LIGHTNING_WARFARE" />
+		</Update>
+	</UnitPromotions>
+	<UnitPromotions_UnitCombats>
+		<Row>
+			<PromotionType>PROMOTION_LIGHTNING_WARFARE</PromotionType>
+			<UnitCombatType>UNITCOMBAT_RECON</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_LIGHTNING_WARFARE</PromotionType>
+			<UnitCombatType>UNITCOMBAT_ARCHER</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_LIGHTNING_WARFARE</PromotionType>
+			<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_LIGHTNING_WARFARE</PromotionType>
+			<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_LIGHTNING_WARFARE</PromotionType>
+			<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_LIGHTNING_WARFARE</PromotionType>
+			<UnitCombatType>UNITCOMBAT_GUN</UnitCombatType>
+		</Row>
+		<!-- already applies to Armor in base game -->
+		<!--Row>
+			<PromotionType>PROMOTION_LIGHTNING_WARFARE</PromotionType>
+			<UnitCombatType>UNITCOMBAT_ARMOR</UnitCombatType>
+		</Row-->
+		<Row>
+			<PromotionType>PROMOTION_LIGHTNING_WARFARE</PromotionType>
+			<UnitCombatType>UNITCOMBAT_PARADROPPER</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_LIGHTNING_WARFARE</PromotionType>
+			<UnitCombatType>UNITCOMBAT_MOUNTED_RANGED</UnitCombatType>
+		</Row>
+	</UnitPromotions_UnitCombats>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_POLICY_LIGHTNING_WARFARE_HELP" />
+		<Row Tag="TXT_KEY_POLICY_LIGHTNING_WARFARE_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Lightning Warfare[ENDCOLOR][NEWLINE]Land Military Units gain +1 [ICON_MOVES] Movement and ignore Zone of Control.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_PROMOTION_LIGHTNING_WARFARE_HELP" />
+		<Row Tag="TXT_KEY_PROMOTION_LIGHTNING_WARFARE_HELP">
+			<Text>+10% Combat Bonus when attacking. +1 [ICON_MOVES] Movement. Ignore enemy Zones of Control.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_POLICY_LIGHTNING_WARFARE_HELP" />
+		<Row Tag="TXT_KEY_POLICY_LIGHTNING_WARFARE_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Lightning Warfare[ENDCOLOR][NEWLINE]Land Military Units gain +1 [ICON_MOVES] Movement and ignore Zone of Control.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_PROMOTION_LIGHTNING_WARFARE_HELP" />
+		<Row Tag="TXT_KEY_PROMOTION_LIGHTNING_WARFARE_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]+10% Combat Bonus when attacking. +1 [ICON_MOVES] Movement. Ignore enemy Zones of Control.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_POLICY_LIGHTNING_WARFARE_HELP" />
+		<Row Tag="TXT_KEY_POLICY_LIGHTNING_WARFARE_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Lightning Warfare[ENDCOLOR][NEWLINE]Land Military Units gain +1 [ICON_MOVES] Movement and ignore Zone of Control.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_PROMOTION_LIGHTNING_WARFARE_HELP" />
+		<Row Tag="TXT_KEY_PROMOTION_LIGHTNING_WARFARE_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]+10% Combat Bonus when attacking. +1 [ICON_MOVES] Movement. Ignore enemy Zones of Control.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_POLICY_LIGHTNING_WARFARE_HELP" />
+		<Row Tag="TXT_KEY_POLICY_LIGHTNING_WARFARE_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Lightning Warfare[ENDCOLOR][NEWLINE]Land Military Units gain +1 [ICON_MOVES] Movement and ignore Zone of Control.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_PROMOTION_LIGHTNING_WARFARE_HELP" />
+		<Row Tag="TXT_KEY_PROMOTION_LIGHTNING_WARFARE_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]+10% Combat Bonus when attacking. +1 [ICON_MOVES] Movement. Ignore enemy Zones of Control.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

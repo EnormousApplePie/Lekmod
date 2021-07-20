@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 3/22/2017 7:09:38 PM -->
+<GameData>
+
+	<!-- Voice of Democracy (replaces Arsenal of Democracy): Gain 8 Influence with every known City State whenever a Great Person is born. -->
+	<Policies>
+		<Update>
+			<Set Level="2" MilitaryProductionModifier="0" MilitaryUnitGiftExtraInfluence="0" InfluenceBoostPerGreatPersonBorn="8" />
+			<Where Type="POLICY_ARSENAL_DEMOCRACY" />
+		</Update>
+	</Policies>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_POLICY_ARSENAL_DEMOCRACY" />
+		<Row Tag="TXT_KEY_POLICY_ARSENAL_DEMOCRACY">
+			<Text>Voice of Democracy</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_ARSENAL_DEMOCRACY_HELP" />
+		<Row Tag="TXT_KEY_POLICY_ARSENAL_DEMOCRACY_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Voice of Democracy[ENDCOLOR][NEWLINE]Gain 8 [ICON_INFLUENCE] Influence with every known City State whenever a Great Person is born.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_POLICY_ARSENAL_DEMOCRACY" />
+		<Row Tag="TXT_KEY_POLICY_ARSENAL_DEMOCRACY">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Voice of Democracy</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_ARSENAL_DEMOCRACY_HELP" />
+		<Row Tag="TXT_KEY_POLICY_ARSENAL_DEMOCRACY_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Voice of Democracy[ENDCOLOR][NEWLINE]Gain 8 [ICON_INFLUENCE] Influence with every known City State whenever a Great Person is born.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_POLICY_ARSENAL_DEMOCRACY" />
+		<Row Tag="TXT_KEY_POLICY_ARSENAL_DEMOCRACY">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Voice of Democracy</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_ARSENAL_DEMOCRACY_HELP" />
+		<Row Tag="TXT_KEY_POLICY_ARSENAL_DEMOCRACY_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Voice of Democracy[ENDCOLOR][NEWLINE]Gain 8 [ICON_INFLUENCE] Influence with every known City State whenever a Great Person is born.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_POLICY_ARSENAL_DEMOCRACY" />
+		<Row Tag="TXT_KEY_POLICY_ARSENAL_DEMOCRACY">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Voice of Democracy</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_ARSENAL_DEMOCRACY_HELP" />
+		<Row Tag="TXT_KEY_POLICY_ARSENAL_DEMOCRACY_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Voice of Democracy[ENDCOLOR][NEWLINE]Gain 8 [ICON_INFLUENCE] Influence with every known City State whenever a Great Person is born.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

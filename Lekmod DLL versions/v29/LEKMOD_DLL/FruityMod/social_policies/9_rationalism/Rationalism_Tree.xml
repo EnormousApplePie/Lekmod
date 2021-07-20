@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 6/6/2015 4:51:27 PM -->
+<GameData>
+
+	<!-- 
+
+                  *** FRUITY RATIONALISM ***
+					 
+      ________      _____________________        ________
+     |Legalism|    |Scientific Revolution|      |Humanism|
+          |                  |                       |
+     _____|_____       ______|______        _________|___________
+    |Meritocracy|     |Free Throught|      |Scholars In Residence|
+                             |
+                       ______|_______
+                      |Englightenment|
+	
+	
+	Note: Legalism and Meritocracy moved here from Tradition and Liberty, respectively
+	
+	Scholars In Residence	= POLICY_SOVEREIGNTY
+	Enlightenment			= POLICY_SECULARISM
+	
+	-->
+
+	<!-- positions & move Legalism and Meritocracy here -->
+	<Policies>
+		<Update>
+			<Set GridX="1" GridY="1" PolicyBranchType="POLICY_BRANCH_RATIONALISM" />
+			<Where Type="POLICY_LEGALISM" />
+		</Update>
+		<Update>
+			<Set GridX="3" GridY="1" />
+			<Where Type="POLICY_SCIENTIFIC_REVOLUTION" />
+		</Update>
+		<Update>
+			<Set GridX="5" GridY="1" />
+			<Where Type="POLICY_HUMANISM" />
+		</Update>
+		<Update>
+			<Set GridX="1" GridY="2" PolicyBranchType="POLICY_BRANCH_RATIONALISM" />
+			<Where Type="POLICY_MERITOCRACY" />
+		</Update>
+		<Update>
+			<Set GridX="3" GridY="2" />
+			<Where Type="POLICY_FREE_THOUGHT" />
+		</Update>
+		<Update>
+			<Set GridX="5" GridY="2" />
+			<Where Type="POLICY_SOVEREIGNTY" />
+		</Update>
+		<Update>
+			<Set GridX="3" GridY="3" />
+			<Where Type="POLICY_SECULARISM" />
+		</Update>
+	</Policies>
+
+	<!-- prerequisites -->
+	<Policy_PrereqPolicies>
+		<Delete PolicyType="POLICY_LEGALISM"				PrereqPolicy="POLICY_OLIGARCHY"		/>
+		<Delete PolicyType="POLICY_MERITOCRACY"				PrereqPolicy="POLICY_CITIZENSHIP"	/>
+		<Delete PolicyType="POLICY_FREE_THOUGHT"			PrereqPolicy="POLICY_HUMANISM"		/>
+		<Delete PolicyType="POLICY_SOVEREIGNTY"				PrereqPolicy="POLICY_SECULARISM"	/>
+		<Delete PolicyType="POLICY_SCIENTIFIC_REVOLUTION"	PrereqPolicy="POLICY_SOVEREIGNTY"	/>
+		
+		<Row>
+			<PolicyType>POLICY_MERITOCRACY</PolicyType>
+			<PrereqPolicy>POLICY_LEGALISM</PrereqPolicy>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_FREE_THOUGHT</PolicyType>
+			<PrereqPolicy>POLICY_SCIENTIFIC_REVOLUTION</PrereqPolicy>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_SOVEREIGNTY</PolicyType>
+			<PrereqPolicy>POLICY_HUMANISM</PrereqPolicy>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_SECULARISM</PolicyType>
+			<PrereqPolicy>POLICY_FREE_THOUGHT</PrereqPolicy>
+		</Row>
+	</Policy_PrereqPolicies>
+
+</GameData>

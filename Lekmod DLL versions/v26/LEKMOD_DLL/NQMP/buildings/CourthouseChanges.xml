@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	
+	<!-- Courthouse now costs 50% less Production. -->
+	<Buildings>
+		<Update>
+			<Where Type="BUILDING_COURTHOUSE" />
+			<Set Cost="50" />
+		</Update>
+	</Buildings>
+
+</GameData>

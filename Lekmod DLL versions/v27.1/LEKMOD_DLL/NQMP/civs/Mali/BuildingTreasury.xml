@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 5/12/2017 2:00:49 PM -->
+<GameData>
+	
+	<Civilization_BuildingClassOverrides>
+		<Row>
+			<CivilizationType>CIVILIZATION_MALI</CivilizationType>
+			<BuildingClassType>BUILDINGCLASS_MINT</BuildingClassType>
+			<BuildingType>BUILDING_MALIAN_TREASURY</BuildingType>
+		</Row>
+	</Civilization_BuildingClassOverrides>
+	<Buildings>
+		<Row>
+			<Type>BUILDING_MALIAN_TREASURY</Type>
+			<BuildingClass>BUILDINGCLASS_MINT</BuildingClass>
+			<Cost>100</Cost>
+			<PrereqTech>TECH_CURRENCY</PrereqTech>
+			<Description>TXT_KEY_BUILDING_MALIAN_TREASURY</Description>
+			<Civilopedia>TXT_KEY_CIV5_BUILDINGS_MALIAN_TREASURY_TEXT</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_MALIAN_TREASURY_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_MALIAN_TREASURY_HELP</Help>
+			<ArtDefineTag>ART_DEF_BUILDING_BANK</ArtDefineTag>
+			<MinAreaSize>-1</MinAreaSize>
+			<ConquestProb>66</ConquestProb>
+			<HurryCostModifier>25</HurryCostModifier>
+			<IconAtlas>NQ_ATLAS</IconAtlas>
+			<PortraitIndex>3</PortraitIndex>
+			<MaliTreasury>true</MaliTreasury>
+		</Row>
+	</Buildings>
+	<Building_Flavors>
+		<Row>
+			<BuildingType>BUILDING_MALIAN_TREASURY</BuildingType>
+			<FlavorType>FLAVOR_GOLD</FlavorType>
+			<Flavor>100</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_MALIAN_TREASURY</BuildingType>
+			<FlavorType>FLAVOR_HAPPINESS</FlavorType>
+			<Flavor>20</Flavor>
+		</Row>
+	</Building_Flavors>
+	<Building_ResourceYieldChanges>
+		<Row>
+			<BuildingType>BUILDING_MALIAN_TREASURY</BuildingType>
+			<ResourceType>RESOURCE_GOLD</ResourceType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<Yield>2</Yield>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_MALIAN_TREASURY</BuildingType>
+			<ResourceType>RESOURCE_SILVER</ResourceType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<Yield>2</Yield>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_MALIAN_TREASURY</BuildingType>
+			<ResourceType>RESOURCE_COPPER</ResourceType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<Yield>2</Yield>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_MALIAN_TREASURY</BuildingType>
+			<ResourceType>RESOURCE_SALT</ResourceType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<Yield>2</Yield>
+		</Row>
+	</Building_ResourceYieldChanges>
+	
+	<!-- localization -->
+	<Language_en_US>
+		<Row Tag="TXT_KEY_BUILDING_MALIAN_TREASURY">
+			<Text>Treasury</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_MALIAN_TREASURY_HELP">
+			<Text>Each source of [ICON_RES_GOLD] Gold, [ICON_RES_SILVER] Silver, [ICON_RES_COPPER] Copper, and [ICON_RES_SALT] Salt worked by this City produces +2 [ICON_GOLD] Gold.[NEWLINE][NEWLINE]When constructed, reveals a new source of one of these resources on an appropriate unimproved tile within the City's borders (if possible). Unlike the Mint which it replaces, the Treasury may be built in any City regardless of nearby resources. Only Mali may build it.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_BUILDINGS_MALIAN_TREASURY_TEXT">
+			<Text>[COLOR_POSITIVE_TEXT]Source: Wikipedia (https://en.wikipedia.org/wiki/Mali_Empire)[ENDCOLOR][NEWLINE][NEWLINE]Gold nuggets were the exclusive property of the mansa, and were illegal to trade within his borders. All gold was immediately handed over to the imperial treasury in return for an equal value of gold dust. Gold dust had been weighed and bagged for use at least since the time of the Ghana Empire. Mali borrowed the practice to stem inflation of the substance, since it was so prominent in the region. The most common measure for gold within the realm was the ambiguous mithqal (4.5 grams of gold). This term was used interchangeably with dinar, though it is unclear if coined currency was used in the empire. Gold dust was used all over the empire, but was not valued equally in all regions.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_MALIAN_TREASURY_STRATEGY">
+			<Text>The Treasury increases the [ICON_GOLD] Gold output of the city as long as there is a copy of [ICON_RES_GOLD] Gold, [ICON_RES_SILVER] Silver, [ICON_RES_COPPER] Copper, and [ICON_RES_SALT] Salt. If there isn't, just make sure that the City's borders include an unimproved tile that can support discovery of one of these resources when it is built.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_TREASURY_RESOURCE_FOUND">
+			<Text>A source of {@1_ResourceName} has been discovered near the Treasury in {@2_CityName}</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Row Tag="TXT_KEY_BUILDING_MALIAN_TREASURY">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Treasury</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_MALIAN_TREASURY_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Each source of [ICON_RES_GOLD] Gold, [ICON_RES_SILVER] Silver, [ICON_RES_COPPER] Copper, and [ICON_RES_SALT] Salt worked by this City produces +2 [ICON_GOLD] Gold.[NEWLINE][NEWLINE]When constructed, reveals a new source of one of these resources on an appropriate unimproved tile within the City's borders (if possible). Unlike the Mint which it replaces, the Treasury may be built in any City regardless of nearby resources. Only Mali may build it.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_BUILDINGS_MALIAN_TREASURY_TEXT">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Source: Wikipedia (https://en.wikipedia.org/wiki/Mali_Empire)[ENDCOLOR][NEWLINE][NEWLINE]Gold nuggets were the exclusive property of the mansa, and were illegal to trade within his borders. All gold was immediately handed over to the imperial treasury in return for an equal value of gold dust. Gold dust had been weighed and bagged for use at least since the time of the Ghana Empire. Mali borrowed the practice to stem inflation of the substance, since it was so prominent in the region. The most common measure for gold within the realm was the ambiguous mithqal (4.5 grams of gold). This term was used interchangeably with dinar, though it is unclear if coined currency was used in the empire. Gold dust was used all over the empire, but was not valued equally in all regions.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_MALIAN_TREASURY_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]The Treasury increases the [ICON_GOLD] Gold output of the city as long as there is a copy of [ICON_RES_GOLD] Gold, [ICON_RES_SILVER] Silver, [ICON_RES_COPPER] Copper, and [ICON_RES_SALT] Salt. If there isn't, just make sure that the City's borders include an unimproved tile that can support discovery of one of these resources when it is built.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_TREASURY_RESOURCE_FOUND">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]A source of {@1_ResourceName} has been discovered near the Treasury in {@2_CityName}</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Row Tag="TXT_KEY_BUILDING_MALIAN_TREASURY">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Treasury</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_MALIAN_TREASURY_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Each source of [ICON_RES_GOLD] Gold, [ICON_RES_SILVER] Silver, [ICON_RES_COPPER] Copper, and [ICON_RES_SALT] Salt worked by this City produces +2 [ICON_GOLD] Gold.[NEWLINE][NEWLINE]When constructed, reveals a new source of one of these resources on an appropriate unimproved tile within the City's borders (if possible). Unlike the Mint which it replaces, the Treasury may be built in any City regardless of nearby resources. Only Mali may build it.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_BUILDINGS_MALIAN_TREASURY_TEXT">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Source: Wikipedia (https://en.wikipedia.org/wiki/Mali_Empire)[ENDCOLOR][NEWLINE][NEWLINE]Gold nuggets were the exclusive property of the mansa, and were illegal to trade within his borders. All gold was immediately handed over to the imperial treasury in return for an equal value of gold dust. Gold dust had been weighed and bagged for use at least since the time of the Ghana Empire. Mali borrowed the practice to stem inflation of the substance, since it was so prominent in the region. The most common measure for gold within the realm was the ambiguous mithqal (4.5 grams of gold). This term was used interchangeably with dinar, though it is unclear if coined currency was used in the empire. Gold dust was used all over the empire, but was not valued equally in all regions.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_MALIAN_TREASURY_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]The Treasury increases the [ICON_GOLD] Gold output of the city as long as there is a copy of [ICON_RES_GOLD] Gold, [ICON_RES_SILVER] Silver, [ICON_RES_COPPER] Copper, and [ICON_RES_SALT] Salt. If there isn't, just make sure that the City's borders include an unimproved tile that can support discovery of one of these resources when it is built.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_TREASURY_RESOURCE_FOUND">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]A source of {@1_ResourceName} has been discovered near the Treasury in {@2_CityName}</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Row Tag="TXT_KEY_BUILDING_MALIAN_TREASURY">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Treasury</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_MALIAN_TREASURY_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Each source of [ICON_RES_GOLD] Gold, [ICON_RES_SILVER] Silver, [ICON_RES_COPPER] Copper, and [ICON_RES_SALT] Salt worked by this City produces +2 [ICON_GOLD] Gold.[NEWLINE][NEWLINE]When constructed, reveals a new source of one of these resources on an appropriate unimproved tile within the City's borders (if possible). Unlike the Mint which it replaces, the Treasury may be built in any City regardless of nearby resources. Only Mali may build it.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_BUILDINGS_MALIAN_TREASURY_TEXT">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Source: Wikipedia (https://en.wikipedia.org/wiki/Mali_Empire)[ENDCOLOR][NEWLINE][NEWLINE]Gold nuggets were the exclusive property of the mansa, and were illegal to trade within his borders. All gold was immediately handed over to the imperial treasury in return for an equal value of gold dust. Gold dust had been weighed and bagged for use at least since the time of the Ghana Empire. Mali borrowed the practice to stem inflation of the substance, since it was so prominent in the region. The most common measure for gold within the realm was the ambiguous mithqal (4.5 grams of gold). This term was used interchangeably with dinar, though it is unclear if coined currency was used in the empire. Gold dust was used all over the empire, but was not valued equally in all regions.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_MALIAN_TREASURY_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]The Treasury increases the [ICON_GOLD] Gold output of the city as long as there is a copy of [ICON_RES_GOLD] Gold, [ICON_RES_SILVER] Silver, [ICON_RES_COPPER] Copper, and [ICON_RES_SALT] Salt. If there isn't, just make sure that the City's borders include an unimproved tile that can support discovery of one of these resources when it is built.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_TREASURY_RESOURCE_FOUND">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]A source of {@1_ResourceName} has been discovered near the Treasury in {@2_CityName}</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 3/30/2015 9:38:24 PM -->
+<GameData>
+	
+	<!-- Stealth bomber now requires 2 Aluminum (instead of 1) and has 75% Evasion (instead of 100%) -->
+	<Unit_ResourceQuantityRequirements>
+		<Update>
+			<Set Cost="2" />
+			<Where UnitType="UNIT_STEALTH_BOMBER" ResourceType="RESOURCE_ALUMINUM" />
+		</Update>
+	</Unit_ResourceQuantityRequirements>
+	
+</GameData>

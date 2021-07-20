@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2/14/2016 3:12:36 PM -->
+<GameData>
+	<Resolutions>
+		<Update>
+			<Set OtherIdeologyRebellionMod="1" />
+			<Where Type="RESOLUTION_WORLD_IDEOLOGY" />
+		</Update>
+	</Resolutions>
+</GameData>

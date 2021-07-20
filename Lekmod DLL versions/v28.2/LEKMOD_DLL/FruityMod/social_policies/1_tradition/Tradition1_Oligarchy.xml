@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 6/4/2015 2:14:17 AM -->
+<GameData>
+	
+	<!-- Oligarchy: +100% Production towards Granaries and Aqueducts. -->
+	<Policies>
+		<Update>
+			<Set GarrisonFreeMaintenance="false" GarrisonedCityRangeStrikeModifier="0" />
+			<Where Type="POLICY_OLIGARCHY" />
+		</Update>
+	</Policies>
+	<Policy_BuildingClassProductionModifiers>
+		<Row>
+			<PolicyType>POLICY_OLIGARCHY</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_GRANARY</BuildingClassType>
+			<ProductionModifier>100</ProductionModifier>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_OLIGARCHY</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_AQUEDUCT</BuildingClassType>
+			<ProductionModifier>100</ProductionModifier>
+		</Row>
+	</Policy_BuildingClassProductionModifiers>
+	
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_POLICY_OLIGARCHY_HELP" />
+		<Row Tag="TXT_KEY_POLICY_OLIGARCHY_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Oligarchy[ENDCOLOR][NEWLINE]+100% Production towards Granaries and Aqueducts.</Text>
+		</Row>
+	</Language_en_US>
+	
+	<!-- TODO: Flavors -->
+
+</GameData>
