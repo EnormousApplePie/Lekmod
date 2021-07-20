@@ -24,6 +24,69 @@
   <Blocks />
   <Files>
   
+	<!-- v29 Maurya & Mysore -->
+	<File md5="40AAE6ECB0EC1F1F69F8D2BADEC55939" import="1">New Civs/Indian Collection/Atlases/MC_IndiaAlpha_128.dds</File>
+    <File md5="8CFE8C52E700B8D1E25551749F32B9F0" import="1">New Civs/Indian Collection/Atlases/MC_IndiaAlpha_16.dds</File>
+    <File md5="388076B43D805C23A72B7377E807D940" import="1">New Civs/Indian Collection/Atlases/MC_IndiaAlpha_24.dds</File>
+    <File md5="B3470F017435ADAAD31CC8C6F15E2BCC" import="1">New Civs/Indian Collection/Atlases/MC_IndiaAlpha_32.dds</File>
+    <File md5="EF0CBBC1A07B11EF7AB9D24621192A9C" import="1">New Civs/Indian Collection/Atlases/MC_IndiaAlpha_48.dds</File>
+    <File md5="B97DB880C5A95202C88D2F26A2262214" import="1">New Civs/Indian Collection/Atlases/MC_IndiaAlpha_64.dds</File>
+    <File md5="0D13EBE440439617C0FB83DE5829ED82" import="1">New Civs/Indian Collection/Atlases/MC_India_128.dds</File>
+    <File md5="1B8A59238D91D61D2FCD86542783A93F" import="1">New Civs/Indian Collection/Atlases/MC_India_16.dds</File>
+    <File md5="88D08857101787B97DE9FE5942EC17EB" import="1">New Civs/Indian Collection/Atlases/MC_India_24.dds</File>
+    <File md5="A0B826A35E0E65FB8144536623E33A99" import="1">New Civs/Indian Collection/Atlases/MC_India_256.dds</File>
+    <File md5="5E3230CBDDA8F217104B1C4867768767" import="1">New Civs/Indian Collection/Atlases/MC_India_32.dds</File>
+    <File md5="D7203DB2847A2DEC723B0CAA65838AE9" import="1">New Civs/Indian Collection/Atlases/MC_India_45.dds</File>
+    <File md5="098034218CB01BE492831319EB2C19CC" import="1">New Civs/Indian Collection/Atlases/MC_India_48.dds</File>
+    <File md5="B6B50BBA6ED7EB5740D8AAC32C207F5B" import="1">New Civs/Indian Collection/Atlases/MC_India_64.dds</File>
+    <File md5="240063BF1380C2C4051775EC86CA8B7A" import="1">New Civs/Indian Collection/Atlases/MC_India_80.dds</File>
+    <File md5="EB6BAFB52C6FD629B96ECAE72972D4BF" import="1">New Civs/Indian Collection/Atlases/MC_Raigad_128.dds</File>
+    <File md5="8254D0FE65EC24A3CD1C2C61659C1DD5" import="1">New Civs/Indian Collection/Atlases/MC_Raigad_256.dds</File>
+    <File md5="23FB9F8487CDF262C72261F0FE8F1476" import="1">New Civs/Indian Collection/Atlases/MC_Raigad_45.dds</File>
+    <File md5="8C380021D72AE53732BB8A39495E31C1" import="1">New Civs/Indian Collection/Atlases/MC_Raigad_64.dds</File>
+    <File md5="BE89B4A9DE88B133634CFBD3287CC1BD" import="1">New Civs/Indian Collection/Atlases/MC_Raigad_80.dds</File>
+    <File md5="263238877B81B8B3E314A9CCA6EDB60F" import="1">New Civs/Indian Collection/Scenes/MC_Chola_Leaderhead.dds</File>
+    <File md5="361C78CBAEA452A31DEA3F7980B0F511" import="1">New Civs/Indian Collection/Scenes/MC_Mughal_Leaderhead.dds</File>
+    <File md5="1A2411ED7F309F21A4F4362D403640BA" import="1">New Civs/Indian Collection/Scenes/MC_Maurya_Leaderhead.dds</File>
+    <File md5="277C0D90C2BF3D51F2301FCED741AD05" import="1">New Civs/Indian Collection/Scenes/MC_Chola_DoM.dds</File>
+    <File md5="27F2A856CEE89C4988996C3242FEB669" import="1">New Civs/Indian Collection/Scenes/MC_Chola_Map.dds</File>
+    <File md5="3FC1FC8CBFFFBCA1E1397CC7130252CF" import="1">New Civs/Indian Collection/Scenes/MC_Maratha_DoM.dds</File>
+    <File md5="0B59D0DD578F62417129FB826F8B1CE0" import="1">New Civs/Indian Collection/Scenes/MC_Maratha_Map.dds</File>
+    <File md5="B010C53A91265DE934451A5E260AB52C" import="1">New Civs/Indian Collection/Scenes/MC_Maurya_DoM.dds</File>
+    <File md5="26B2D73406F494267FDC0B41775F625B" import="1">New Civs/Indian Collection/Scenes/MC_Maurya_Map.dds</File>
+    <File md5="76648FD65729C60641E86D222D0E4179" import="1">New Civs/Indian Collection/Scenes/MC_Mughal_DoM.dds</File>
+    <File md5="17F97EC2D9823D47D2E7C52766CCFCA5" import="1">New Civs/Indian Collection/Scenes/MC_Mughal_Map.dds</File>
+    <File md5="587442E2C1695C56E57AF90A9CAA3594" import="1">New Civs/Indian Collection/Scenes/MC_Maratha_Leaderhead.dds</File>
+    <File md5="CF9D7FD547F8FD2CF58088B5CE53CF6B" import="1">New Civs/Indian Collection/Atlases/flag_pindari.dds</File>
+	<File md5="8A7F3FE8FAED8567AE84BD2027336C0B" import="1">New Civs/Indian Collection/Leaderscenes/MC_Chola_Leaderhead.xml</File>
+    <File md5="AF8DFA3C6498B4FF473191D24310F26C" import="1">New Civs/Indian Collection/Leaderscenes/MC_Maratha_Leaderhead.xml</File>
+    <File md5="DCA4115662ED7BAFE7D45C39DCA15329" import="1">New Civs/Indian Collection/Leaderscenes/MC_Maurya_Leaderhead.xml</File>
+    <File md5="9E8852A7D407288106A2CFC02793BFF8" import="1">New Civs/Indian Collection/Leaderscenes/MC_Mughal_Leaderhead.xml</File>
+  
+	<!-- v29 Philippines -->
+	
+	<File md5="C9C2040CFD6CFF92FAF3C233D15DB989" import="1">New Civs/Philippines/Art/agatlas128.dds</File>
+    <File md5="DA2B1FAB98100CE11DDA0648583C703D" import="1">New Civs/Philippines/Art/agatlas256.dds</File>
+    <File md5="7BEF67D9481DDCFA5C1A7BF13B8EC192" import="1">New Civs/Philippines/Art/agatlas32.dds</File>
+    <File md5="B29885C3EFB647B09D1D45952E69186F" import="1">New Civs/Philippines/Art/agatlas45.dds</File>
+    <File md5="7A4D5F6505965C30F14CCA162480BBBA" import="1">New Civs/Philippines/Art/agatlas64.dds</File>
+    <File md5="13CA7AC25F1E1DFE14727BA0615CA25C" import="1">New Civs/Philippines/Art/agatlas80.dds</File>
+    <File md5="53B81D456F2AEECF4E4C76215DF8F8EE" import="1">New Civs/Philippines/Art/aguinaldodiplo.dds</File>
+    <File md5="5B49342BFC91F14EA027C51C9FC078EB" import="1">New Civs/Philippines/Art/AguinaldoAlpha24.dds</File>
+    <File md5="E2B56214C21BC693787406F158FB11B5" import="1">New Civs/Philippines/Art/AguinaldoAlpha32.dds</File>
+    <File md5="F25B75843DE28DE6BA52A8E78FF504DA" import="1">New Civs/Philippines/Art/AguinaldoAlpha48.dds</File>
+    <File md5="BA53F7C6468D6C7461D273D34EBDE8A5" import="1">New Civs/Philippines/Art/AguinaldoAlpha64.dds</File>
+    <File md5="B4E6A318F01EE732654483F162946B08" import="1">New Civs/Philippines/Art/aguinaldodom.dds</File>
+    <File md5="E867C80B36AAE6C86CC0B09DF656A5A0" import="1">New Civs/Philippines/Art/aguinaldomap.dds</File>
+    <File md5="3006F7141C64AAEDF554D319645C6169" import="1">New Civs/Philippines/Art/AguinaldoScene.xml</File>
+	
+	<File md5="1E19C18265FBE7C0F8F467F9A2CE96F7" import="1">New Civs/Philippines/Art/flag_gerilya.dds</File>
+	<File md5="F6A6CD633B14B151D086D685D639BF9B" import="1">New Civs/Philippines/Art/MagsaysayColorAtlas128.dds</File>
+    <File md5="7EEE4E2CEA3E801652AA941CBE8F7011" import="1">New Civs/Philippines/Art/MagsaysayColorAtlas256.dds</File>
+    <File md5="003AAB94C97B6673804E6C9CC688395E" import="1">New Civs/Philippines/Art/MagsaysayColorAtlas32.dds</File>
+    <File md5="FEBF0E081094FC3DEC4016074029638E" import="1">New Civs/Philippines/Art/MagsaysayColorAtlas45.dds</File>
+    <File md5="0233D701D3DD1607E1DCCCCE8DAC7A70" import="1">New Civs/Philippines/Art/MagsaysayColorAtlas64.dds</File>
+    <File md5="497EE261800E6E8FEF5EB1D213CAC670" import="1">New Civs/Philippines/Art/MagsaysayColorAtlas80.dds</File>
 	<!-- v28 Nabatea -->
 	
 	<File md5="5C07377E7C4D50BF6DB9C997E1B8F328" import="1">New Civs/Nabatea/Atlas/MC_Zabonah_32.dds</File>

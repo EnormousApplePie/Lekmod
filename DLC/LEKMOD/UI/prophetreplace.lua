@@ -70,6 +70,70 @@ end
 --=================================================================================================================
 --=================================================================================================================
 
+-- Maurya UA
+
+local iCiv = GameInfoTypes["LEADER_MC_ASHOKA"]
+local bIsActive = JFD_IsCivilisationActive(iCiv)
+
+-- from JFD
+function MauryaHeal(playerID, unitID, unitX, unitY)
+	local player = Players[playerID]
+	if player:GetCivilizationType() == GameInfoTypes["CIVILIZATION_MC_MAURYA"] and player:IsAlive() then
+		local inFriendlyTerritory = false
+		local unit = player:GetUnitByID(unitID)
+		if not unit:IsDead() then
+				if Map.GetPlot(unit:GetX(), unit:GetY()):GetOwner() == playerID then
+					inFriendlyTerritory = true
+				end
+		end
+		
+		if inFriendlyTerritory then
+			if not unit:IsHasPromotion(GameInfoTypes["PROMOTION_INSCRIPTIONS_HEAL"]) then
+				unit:SetHasPromotion(GameInfoTypes["PROMOTION_INSCRIPTIONS_HEAL"], true)
+			end
+		else
+			if unit:IsHasPromotion(GameInfoTypes["PROMOTION_INSCRIPTIONS_HEAL"]) then
+				unit:SetHasPromotion(GameInfoTypes["PROMOTION_INSCRIPTIONS_HEAL"], false)
+			end
+		end
+	end
+end
+if bIsActive then
+GameEvents.UnitSetXY.Add(MauryaHeal) 
+end
+
+-- Philippine ua
+local iCiv = GameInfoTypes["CIVILIZATION_CB_AGUINALDOPH"]
+local bIsActive = JFD_IsCivilisationActive(iCiv)
+
+-- From JFD
+function PhilippineMovementBonus(playerID, unitID, unitX, unitY)
+	local player = Players[playerID]
+	if player:GetCivilizationType() == GameInfoTypes["CIVILIZATION_CB_AGUINALDOPH"] and player:IsAlive() then
+		local inFriendlyTerritory = false
+		local unit = player:GetUnitByID(unitID)
+		if not unit:IsDead() then
+			if (unit:GetUnitClassType() == GameInfoTypes["UNITCLASS_WORKER"] or unit:GetUnitClassType() == GameInfoTypes["UNITCLASS_SETTLER"] or unit:GetDomainType() == GameInfoTypes["DOMAIN_SEA"]) then
+				if Map.GetPlot(unit:GetX(), unit:GetY()):GetOwner() == playerID then
+					inFriendlyTerritory = true
+				end
+			end
+		end
+		
+		if inFriendlyTerritory then
+			if not unit:IsHasPromotion(GameInfoTypes["PROMOTION_GOOD_FIGHT"]) then
+				unit:SetHasPromotion(GameInfoTypes["PROMOTION_GOOD_FIGHT"], true)
+			end
+		else
+			if unit:IsHasPromotion(GameInfoTypes["PROMOTION_GOOD_FIGHT"]) then
+				unit:SetHasPromotion(GameInfoTypes["PROMOTION_GOOD_FIGHT"], false)
+			end
+		end
+	end
+end
+if bIsActive then
+GameEvents.UnitSetXY.Add(PhilippineMovementBonus) 
+end
 -- Nabatea UU
 local iCiv = GameInfoTypes["CIVILIZATION_MC_NABATEA"]
 local bIsActive = JFD_IsCivilisationActive(iCiv)
@@ -480,7 +544,7 @@ function IsPersonExpended(iPlayer, iUnit)
 					print("found the Unit -> Artist")
 					pCity:SetNumRealBuilding(GameInfoTypes["BUILDING_BOLIVIA_TRAIT_PRODUCTION"], 1);
 					pCity:SetNumRealBuilding(GameInfoTypes["BUILDING_BOLIVIA_TRAIT_FOOD"], 0);
-					if pPlayer:IsHuman() and pPlayer:GetCivilizationType() == iCiv then
+					if pPlayer:IsHuman() and pPlayer:GetCivilizationType() == iCiv and Game.GetActivePlayer() == iPlayer then
 					Events.GameplayAlertMessage(Locale.ConvertTextKey("TXT_KEY_THP_BOLIVIA_BUTTON_TITLE_RIGHT"))
 					end
 				end
@@ -1110,7 +1174,31 @@ end
 ----------------------------------------------------------
 -------------------- DUMMY POLICIES ----------------------
 ----------------------------------------------------------
--- 'Nam dummy policy
+
+
+-- Mysore dummy Policy
+local iCiv = GameInfoTypes["CIVILIZATION_MYSORE"]
+local bIsActive = JFD_IsCivilisationActive(iCiv)
+
+print("dummy policy loaded - Vietnam")
+function DummyPolicy(player)
+	print("working - Vietnam")
+	for playerID, player in pairs(Players) do
+		local player = Players[playerID];
+		if player:GetCivilizationType() == GameInfoTypes["CIVILIZATION_MYSORE"] then
+			if not player:HasPolicy(GameInfoTypes["POLICY_DUMMY_MYSORE"]) then
+				
+				player:SetNumFreePolicies(1)
+				player:SetNumFreePolicies(0)
+				player:SetHasPolicy(GameInfoTypes["POLICY_DUMMY_MYSORE"], true)	
+			end
+		end
+	end 
+end
+if bIsActive then
+Events.SequenceGameInitComplete.Add(DummyPolicy)
+end
+-- Cuba dummy policy
 
 --local iCiv = GameInfoTypes["CIVILIZATION_UC_CUBA_BATISTA"]
 --local bIsActive = JFD_IsCivilisationActive(iCiv)
