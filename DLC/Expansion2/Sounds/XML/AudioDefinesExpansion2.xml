@@ -1,0 +1,158 @@
+<AudioDefinesFile>
+  <SoundDatas>
+    <!--Unit and Interface SFX-->
+    <SoundData>
+      <SoundID>SND_UNIT_MUSICIAN_ACTIVATE</SoundID>
+      <Filename>GreatMusician_Activate</Filename>
+      <bDontCache />
+      <bOnlyLoadOneVariationEachTime />
+      <LoadType>DYNAMIC_RES</LoadType>
+    </SoundData>
+    <SoundData>
+      <SoundID>SND_UNIT_WRITER_EARLY_ACTIVATE</SoundID>
+      <Filename>GreatWriter_Early_Activate</Filename>
+      <bDontCache />
+      <bOnlyLoadOneVariationEachTime />
+      <LoadType>DYNAMIC_RES</LoadType>
+    </SoundData>
+    <SoundData>
+      <SoundID>SND_UNIT_WRITER_LATE_ACTIVATE</SoundID>
+      <Filename>GreatWriter_Late_Activate</Filename>
+      <bDontCache />
+      <bOnlyLoadOneVariationEachTime />
+      <LoadType>DYNAMIC_RES</LoadType>
+    </SoundData>
+    <SoundData>
+      <SoundID>SND_UNIT_HEAVY_PLASMA</SoundID>
+      <Filename>HeavyPlasma</Filename>
+      <bDontCache />
+      <bOnlyLoadOneVariationEachTime />
+      <LoadType>DYNAMIC_RES</LoadType>
+    </SoundData>
+    <SoundData>
+      <SoundID>SND_UNIT_HEAVY_PLASMA_T1</SoundID>
+      <Filename>HeavyPlasmaT1</Filename>
+      <bDontCache />
+      <bOnlyLoadOneVariationEachTime />
+      <LoadType>DYNAMIC_RES</LoadType>
+    </SoundData>
+    <SoundData>
+      <SoundID>SND_UNIT_SKY_RANGER_FLYOVER</SoundID>
+      <Filename>SkyRangerFlyover</Filename>
+      <bDontCache />
+      <bOnlyLoadOneVariationEachTime />
+      <LoadType>DYNAMIC_RES</LoadType>
+    </SoundData>
+    <SoundData>
+      <SoundID>SND_UNIT_ARCHANGEL_JET_PACK</SoundID>
+      <Filename>ArchangelJetPack</Filename>
+      <bDontCache />
+      <bOnlyLoadOneVariationEachTime />
+      <LoadType>DYNAMIC_RES</LoadType>
+    </SoundData>
+    <SoundData>
+      <SoundID>SND_UNIT_ARCHEOLOGIST_DUST</SoundID>
+      <Filename>ArcheologistDust</Filename>
+      <bDontCache />
+      <bOnlyLoadOneVariationEachTime />
+      <LoadType>DYNAMIC_RES</LoadType>
+    </SoundData>
+    <SoundData>
+      <SoundID>SND_UNIT_ARCHEOLOGIST_SHOVEL</SoundID>
+      <Filename>Shovel</Filename>
+      <bDontCache />
+      <bOnlyLoadOneVariationEachTime />
+      <LoadType>DYNAMIC_RES</LoadType>
+    </SoundData>
+    <SoundData>
+      <SoundID>SND_UNIT_ARCHEOLOGIST_SHOVEL_TOSS</SoundID>
+      <Filename>ShovelToss</Filename>
+      <bDontCache />
+      <bOnlyLoadOneVariationEachTime />
+      <LoadType>DYNAMIC_RES</LoadType>
+    </SoundData>
+    <SoundData>
+      <SoundID>SND_UNIT_ARCHEOLOGIST_GRAB_SHOVEL</SoundID>
+      <Filename>ShovelGrab</Filename>
+      <bDontCache />
+      <bOnlyLoadOneVariationEachTime />
+      <LoadType>DYNAMIC_RES</LoadType>
+    </SoundData>
+    <SoundData>
+      <SoundID>SND_UNIT_ARCHEOLOGIST_PICKAXE</SoundID>
+      <Filename>Pickaxe</Filename>
+      <bDontCache />
+      <bOnlyLoadOneVariationEachTime />
+      <LoadType>DYNAMIC_RES</LoadType>
+    </SoundData>
+    <SoundData>
+      <SoundID>SND_UNIT_ARCHEOLOGIST_SWING_CABLE</SoundID>
+      <Filename>SwingCable</Filename>
+      <bDontCache />
+      <bOnlyLoadOneVariationEachTime />
+      <LoadType>DYNAMIC_RES</LoadType>
+    </SoundData>
+    <SoundData>
+      <SoundID>SND_UNIT_MUSICIAN_LATE_ACTIVATE_TWINKLE</SoundID>
+      <Filename>MusicianLateActivateTwinkle</Filename>
+      <bDontCache />
+      <bOnlyLoadOneVariationEachTime />
+      <LoadType>DYNAMIC_RES</LoadType>
+    </SoundData>
+    <SoundData>
+      <SoundID>SND_UNIT_MUSICIAN_LATE_ACTIVATE</SoundID>
+      <Filename>MusicianLateActivate</Filename>
+      <bDontCache />
+      <bOnlyLoadOneVariationEachTime />
+      <LoadType>DYNAMIC_RES</LoadType>
+    </SoundData>
+    <SoundData>
+      <SoundID>SND_UNIT_CW_GENERAL_EARLY_ACTIVATE</SoundID>
+      <Filename>GeneralEarlyActivate</Filename>
+      <bDontCache />
+      <bOnlyLoadOneVariationEachTime />
+      <LoadType>DYNAMIC_RES</LoadType>
+    </SoundData>
+    <SoundData>
+      <SoundID>SND_UNIT_JAVELIN_WHOOSH_ZULU</SoundID>
+      <Filename>BowWhoosh</Filename>
+      <bDontCache />
+      <bOnlyLoadOneVariationEachTime />
+      <LoadType>DYNAMIC_RES</LoadType>
+    </SoundData>
+    <SoundData>
+      <SoundID>SND_UNIT_JAVELIN_WHOOSH_ZULU_T1</SoundID>
+      <Filename>JavelinWhooshT1</Filename>
+      <bDontCache />
+      <bOnlyLoadOneVariationEachTime />
+      <LoadType>DYNAMIC_RES</LoadType>
+    </SoundData>
+    <SoundData>
+      <SoundID>SND_UNIT_JAVELIN_WHOOSH_ZULU_T2</SoundID>
+      <Filename>JavelinWhooshT2</Filename>
+      <bDontCache />
+      <bOnlyLoadOneVariationEachTime />
+      <LoadType>DYNAMIC_RES</LoadType>
+    </SoundData>
+    <SoundData>
+      <SoundID>SND_AMBIENCE_DANDOLO_AMBIENCE</SoundID>
+      <Filename>DandoloAmbience</Filename>
+      <bDontCache/>
+      <bOnlyLoadOneVariationEachTime/>
+      <LoadType>DYNAMIC_RES</LoadType>
+    </SoundData>
+    <SoundData>
+      <SoundID>SND_INTERFACE_CARAVAN_TRADE_ROUTE</SoundID>
+      <Filename>CaravanTradeRoute</Filename>
+      <bDontCache/>
+      <bOnlyLoadOneVariationEachTime/>
+      <LoadType>DYNAMIC_RES</LoadType>
+    </SoundData>
+    <!-- Menu Music -->
+    <SoundData>
+      <SoundID>SND_MUSIC_MAIN_MENU_EXP2</SoundID>
+      <Filename>OpeningMenu_Exp2</Filename>
+      <LoadType>STREAMED</LoadType>
+    </SoundData>
+  </SoundDatas>
+</AudioDefinesFile>
