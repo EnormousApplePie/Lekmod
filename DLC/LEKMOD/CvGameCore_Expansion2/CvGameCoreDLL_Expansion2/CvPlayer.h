@@ -901,8 +901,11 @@ public:
 #endif
 
 	int getHalfSpecialistUnhappinessCount() const;
+	int getHalfMoreSpecialistUnhappinessCount() const;
 	bool isHalfSpecialistUnhappiness() const;
+	bool isHalfMoreSpecialistUnhappiness() const;
 	void changeHalfSpecialistUnhappinessCount(int iChange);
+	void changeHalfMoreSpecialistUnhappinessCount(int iChange);
 
 	int getHalfSpecialistFoodCount() const;
 	bool isHalfSpecialistFood() const;
@@ -1933,6 +1936,7 @@ protected:
 	FAutoVariable<int, CvPlayer> m_iGoldToScience;
 #endif
 	FAutoVariable<int, CvPlayer> m_iHalfSpecialistUnhappinessCount;
+	FAutoVariable<int, CvPlayer> m_iHalfMoreSpecialistUnhappinessCount;
 	FAutoVariable<int, CvPlayer> m_iHalfSpecialistFoodCount;
 	FAutoVariable<int, CvPlayer> m_iMilitaryFoodProductionCount;
 	int m_iGoldenAgeCultureBonusDisabledCount;

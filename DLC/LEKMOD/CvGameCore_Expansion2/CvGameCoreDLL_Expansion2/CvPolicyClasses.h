@@ -223,6 +223,7 @@ public:
 	int GetNumCitiesFreeCultureBuilding() const;
 	int GetNumCitiesFreeFoodBuilding() const;
 	bool IsHalfSpecialistUnhappiness() const;
+	bool IsHalfMoreSpecialistUnhappiness() const;
 	bool IsHalfSpecialistFood() const;
 	bool IsMilitaryFoodProduction() const;
 	int GetWoundedUnitDamageMod() const;
@@ -507,6 +508,7 @@ private:
 	int m_iNumCitiesFreeFoodBuilding;
 
 	bool m_bHalfSpecialistUnhappiness;
+	bool m_bHalfMoreSpecialistUnhappiness;
 	bool m_bHalfSpecialistFood;
 	bool m_bMilitaryFoodProduction;
 	bool m_bAlwaysSeeBarbCamps;

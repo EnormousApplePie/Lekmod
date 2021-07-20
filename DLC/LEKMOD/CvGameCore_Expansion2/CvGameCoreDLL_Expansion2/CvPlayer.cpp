@@ -274,6 +274,7 @@ CvPlayer::CvPlayer() :
 	, m_iGoldToScience("CvPlayer::m_iGoldToScience", m_syncArchive)
 #endif
 	, m_iHalfSpecialistUnhappinessCount("CvPlayer::m_iHalfSpecialistUnhappinessCount", m_syncArchive)
+	, m_iHalfMoreSpecialistUnhappinessCount("CvPlayer::m_iHalfMoreSpecialistUnhappinessCount", m_syncArchive)
 	, m_iHalfSpecialistFoodCount("CvPlayer::m_iHalfSpecialistFoodCount", m_syncArchive)
 	, m_iMilitaryFoodProductionCount("CvPlayer::m_iMilitaryFoodProductionCount", m_syncArchive)
 	, m_iGoldenAgeCultureBonusDisabledCount(0)
@@ -971,6 +972,7 @@ void CvPlayer::uninit()
 	m_iGoldToScience = 0;
 #endif
 	m_iHalfSpecialistUnhappinessCount = 0;
+	m_iHalfMoreSpecialistUnhappinessCount = 0;
 	m_iHalfSpecialistFoodCount = 0;
 	m_iMilitaryFoodProductionCount = 0;
 	m_iGoldenAgeCultureBonusDisabledCount = 0;
@@ -7386,6 +7388,7 @@ void CvPlayer::AwardFreeBuildings(CvCity* pCity)
 		BuildingTypes ePietyGarden = pCity->ChooseFreeGardenBuilding();
 		if (ePietyGarden != NO_BUILDING)
 		{
+			pCity->GetCityBuildings()->SetNumFreeBuilding(ePietyGarden, 0);
 			pCity->GetCityBuildings()->SetNumFreeBuilding(ePietyGarden, 1);
 		}
 		ChangeNumCitiesFreePietyGardens(-1);
@@ -12923,6 +12926,12 @@ int CvPlayer::GetUnhappinessFromCityForUI(CvCity* pCity) const
 		int iSpecialistCount = pCity->GetCityCitizens()->GetTotalSpecialistCount() * 100;
 		iPopulation -= (iSpecialistCount / 2);
 	}
+	// No Unhappiness from Specialist Pop? (Policies, etc.)
+	if(isHalfMoreSpecialistUnhappiness())
+	{
+		int iSpecialistCount = pCity->GetCityCitizens()->GetTotalSpecialistCount() * 100;
+		iPopulation -= (iSpecialistCount * 1.5);
+	}
 
 	// Occupied?
 	if(pCity->IsOccupied() && !pCity->IsIgnoreCityForHappiness()) // // NQMP GJS - new Military Caste
@@ -13137,6 +13146,17 @@ int CvPlayer::GetUnhappinessFromCityPopulation(CvCity* pAssumeCityAnnexed, CvCit
 #endif
 				iPopulation -= (iSpecialistCount / 2);
 			}
+			// More Unhappiness from Specialist Pop? (Policies, etc.)
+			if(isHalfMoreSpecialistUnhappiness())
+			{
+				iSpecialistCount = pLoopCity->GetCityCitizens()->GetTotalSpecialistCount();
+				iSpecialistCount++; // Round up
+#if defined(AUI_CITIZENS_FIX_FORCED_AVOID_GROWTH_ONLY_WHEN_GROWING_LOWERS_HAPPINESS) || defined(AUI_CITIZENS_UNHARDCODE_SPECIALIST_VALUE_HAPPINESS)
+				if (pLoopCity == pAssumeCityExtraSpecialist)
+					iSpecialistCount++;
+#endif
+				iPopulation -= (iSpecialistCount * 1.5);
+			}
 
 			iUnhappinessFromThisCity = iPopulation * iUnhappinessPerPop;
 
@@ -13264,6 +13284,11 @@ int CvPlayer::GetUnhappinessFromCitySpecialists(CvCity* pAssumeCityAnnexed, CvCi
 				iPopulation++; // Round up
 				iPopulation /= 2;
 			}
+			if(isHalfMoreSpecialistUnhappiness())
+			{
+				iPopulation++; // Round up
+				iPopulation *= 1.5;
+			}
 
 			iUnhappinessFromThisCity = iPopulation * iUnhappinessPerPop;
 
@@ -13344,6 +13369,16 @@ int CvPlayer::GetUnhappinessFromOccupiedCities(CvCity* pAssumeCityAnnexed, CvCit
 					iSpecialistCount++;
 #endif
 				iPopulation -= (iSpecialistCount / 2);
+			}
+			if(isHalfMoreSpecialistUnhappiness())
+			{
+				iSpecialistCount = pLoopCity->GetCityCitizens()->GetTotalSpecialistCount();
+				iSpecialistCount++; // Round up
+#if defined(AUI_CITIZENS_FIX_FORCED_AVOID_GROWTH_ONLY_WHEN_GROWING_LOWERS_HAPPINESS) || defined(AUI_CITIZENS_UNHARDCODE_SPECIALIST_VALUE_HAPPINESS)
+				if (pLoopCity == pAssumeCityExtraSpecialist)
+					iSpecialistCount++;
+#endif
+				iPopulation -= (iSpecialistCount * 1.5);
 			}
 
 			iUnhappinessFromThisCity = int(double(iPopulation) * fUnhappinessPerPop);
@@ -15940,6 +15975,12 @@ int CvPlayer::getHalfSpecialistUnhappinessCount() const
 {
 	return m_iHalfSpecialistUnhappinessCount;
 }
+//	--------------------------------------------------------------------------------
+int CvPlayer::getHalfMoreSpecialistUnhappinessCount() const
+{
+	return m_iHalfMoreSpecialistUnhappinessCount;
+}
+
 
 
 //	--------------------------------------------------------------------------------
@@ -15947,7 +15988,11 @@ bool CvPlayer::isHalfSpecialistUnhappiness() const
 {
 	return (getHalfSpecialistUnhappinessCount() > 0);
 }
-
+//	--------------------------------------------------------------------------------
+bool CvPlayer::isHalfMoreSpecialistUnhappiness() const
+{
+	return (getHalfMoreSpecialistUnhappinessCount() > 0);
+}
 
 //	--------------------------------------------------------------------------------
 void CvPlayer::changeHalfSpecialistUnhappinessCount(int iChange)
@@ -15956,6 +16001,15 @@ void CvPlayer::changeHalfSpecialistUnhappinessCount(int iChange)
 	{
 		m_iHalfSpecialistUnhappinessCount = (m_iHalfSpecialistUnhappinessCount + iChange);
 		CvAssert(getHalfSpecialistUnhappinessCount() >= 0);
+	}
+}
+//	--------------------------------------------------------------------------------
+void CvPlayer::changeHalfMoreSpecialistUnhappinessCount(int iChange)
+{
+	if(iChange != 0)
+	{
+		m_iHalfMoreSpecialistUnhappinessCount = (m_iHalfMoreSpecialistUnhappinessCount + iChange);
+		CvAssert(getHalfMoreSpecialistUnhappinessCount() >= 0);
 	}
 }
 
@@ -23506,6 +23560,7 @@ void CvPlayer::processPolicies(PolicyTypes ePolicy, int iChange)
 	changeGoldToScience(pPolicy->GetGoldToScience() * iChange);
 #endif
 	changeHalfSpecialistUnhappinessCount((pPolicy->IsHalfSpecialistUnhappiness()) ? iChange : 0);
+	changeHalfMoreSpecialistUnhappinessCount((pPolicy->IsHalfMoreSpecialistUnhappiness()) ? iChange : 0);
 	changeHalfSpecialistFoodCount((pPolicy->IsHalfSpecialistFood()) ? iChange : 0);
 	changeMilitaryFoodProductionCount((pPolicy->IsMilitaryFoodProduction()) ? iChange : 0);
 	ChangeGoldenAgeCultureBonusDisabledCount((pPolicy->IsGoldenAgeCultureBonusDisabled()) ? iChange : 0);
@@ -24664,6 +24719,7 @@ void CvPlayer::Read(FDataStream& kStream)
 	kStream >> m_iGoldToScience;
 #endif
 	kStream >> m_iHalfSpecialistUnhappinessCount;
+	kStream >> m_iHalfMoreSpecialistUnhappinessCount;
 	kStream >> m_iHalfSpecialistFoodCount;
 	kStream >> m_iMilitaryFoodProductionCount;
 	kStream >> m_iGoldenAgeCultureBonusDisabledCount;
@@ -25238,6 +25294,7 @@ void CvPlayer::Write(FDataStream& kStream) const
 	kStream << m_iGoldToScience;
 #endif
 	kStream << m_iHalfSpecialistUnhappinessCount;
+	kStream << m_iHalfMoreSpecialistUnhappinessCount;
 	kStream << m_iHalfSpecialistFoodCount;
 	kStream << m_iMilitaryFoodProductionCount;
 	kStream << m_iGoldenAgeCultureBonusDisabledCount;

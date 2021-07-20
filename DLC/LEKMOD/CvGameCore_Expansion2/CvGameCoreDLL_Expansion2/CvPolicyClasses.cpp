@@ -235,6 +235,7 @@ CvPolicyEntry::CvPolicyEntry(void):
 	m_iNumCitiesFreeCultureBuilding(0),
 	m_iNumCitiesFreeFoodBuilding(0),
 	m_bHalfSpecialistUnhappiness(false),
+	m_bHalfMoreSpecialistUnhappiness(false),
 	m_bHalfSpecialistFood(false),
 	m_bMilitaryFoodProduction(false),
 	m_iWoundedUnitDamageMod(0),
@@ -457,6 +458,7 @@ bool CvPolicyEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility&
 	m_iNumCitiesFreeCultureBuilding = kResults.GetInt("NumCitiesFreeCultureBuilding");
 	m_iNumCitiesFreeFoodBuilding = kResults.GetInt("NumCitiesFreeFoodBuilding");
 	m_bHalfSpecialistUnhappiness = kResults.GetBool("HalfSpecialistUnhappiness");
+	m_bHalfMoreSpecialistUnhappiness = kResults.GetBool("HalfMoreSpecialistUnhappiness");
 	m_bHalfSpecialistFood = kResults.GetBool("HalfSpecialistFood");
 	m_bMilitaryFoodProduction = kResults.GetBool("MilitaryFoodProduction");
 	m_iMaxConscript = kResults.GetInt("MaxConscript");
@@ -1832,7 +1834,11 @@ bool CvPolicyEntry::IsHalfSpecialistUnhappiness() const
 {
 	return m_bHalfSpecialistUnhappiness;
 }
-
+/// More Unhappiness from Specialist Population
+bool CvPolicyEntry::IsHalfMoreSpecialistUnhappiness() const
+{
+	return m_bHalfMoreSpecialistUnhappiness;
+}
 /// Specialists don't eat food
 bool CvPolicyEntry::IsHalfSpecialistFood() const
 {
