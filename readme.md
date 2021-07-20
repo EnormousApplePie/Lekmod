@@ -24,7 +24,12 @@
 
 
 
-[Markdown Examples](https://markdown-it.github.io/)
+[Markdown Examples](https://markdown-it.github.io/) below this line.
+___
+
+---
+
+***
 
 
 ---
