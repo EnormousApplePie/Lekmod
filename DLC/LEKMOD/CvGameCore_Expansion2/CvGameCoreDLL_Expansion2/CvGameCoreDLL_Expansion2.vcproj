@@ -18,7 +18,7 @@
 	<Configurations>
 		<Configuration
 			Name="Mod|Win32"
-			OutputDirectory="$(SolutionDir)\BuildOutput\VS2008_$(ConfigurationName)$(PlatformName)\"
+			OutputDirectory="$(SolutionDir)\..\"
 			IntermediateDirectory="$(SolutionDir)\BuildTemp\VS2008_$(ProjectName)$(ConfigurationName)$(PlatformName)\"
 			ConfigurationType="2"
 			CharacterSet="2"
