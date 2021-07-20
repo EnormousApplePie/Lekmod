@@ -10,7 +10,15 @@
 !readme.md
 
 # lekmod data changes
+# all files in LEKMOD folder
 !/DLC/LEKMOD/**
+
+# lekmod map changes
+# anything starting with HB
+!/Maps/HB*
+# anything starting with Lekmap
+!/Maps/Lekmap*
+
 # text
 #!/DLC/LEKMOD_V28.2/Override/CIV5Units_Mongol.xml
 
