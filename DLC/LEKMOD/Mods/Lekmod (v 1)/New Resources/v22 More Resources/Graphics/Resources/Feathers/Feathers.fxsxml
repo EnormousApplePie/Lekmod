@@ -1,0 +1,20 @@
+<Asset>
+  <Mesh file="Feathers.gr2" source="Max" />
+  <Animation file="Feathers_Idle.gr2" name="Idle" ec="1000" source="Max" />
+  <Texture file="Feathers_DIFF.dds" source="Max" />
+  <Texture file="Feathers_SREF.dds" source="Max" />
+  <Texture file="Unit_Environment_Dull.dds" source="Max" />
+  <Texture file="Unit_Environment_Sharp.dds" source="Max" />
+  <Texture file="Unit_Irradiance.dds" source="Max" />
+  <DecisionTree file="LandmarkDecisionTree.ddtxml" source="Tool" />
+  <BoneUsage>
+    <Bone name="FX_FishSurfaceDummy" />
+    <Bone name="World" />
+    <Bone name="Bone_Crane" />
+    <Bone name="Bone_Body" />
+    <Bone name="Bone_Net_Ful" />
+    <Bone name="Dummy_Workboat" />
+    <Bone name="Bone_Main" />
+    <Bone name="Bone_Net_Center" />
+  </BoneUsage>
+</Asset>

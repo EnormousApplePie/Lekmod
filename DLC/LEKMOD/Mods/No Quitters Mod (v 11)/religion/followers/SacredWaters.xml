@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2016-09-25 05:44:53 -->
+<GameData>
+
+	<!-- +1 Happiness from Cities on Rivers and +2 Faith from Gardens -->
+	<Beliefs>
+		<Update>
+			<Set Pantheon="false" Follower="true" />
+			<Where Type="BELIEF_SACRED_WATERS" />
+		</Update>
+	</Beliefs>
+	<Belief_BuildingClassYieldChanges>
+		<Row>
+			<BeliefType>BELIEF_SACRED_WATERS</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_GARDEN</BuildingClassType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<YieldChange>2</YieldChange>
+		</Row>
+	</Belief_BuildingClassYieldChanges>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_BELIEF_SACRED_WATERS" />
+		<Row Tag="TXT_KEY_BELIEF_SACRED_WATERS">
+			<Text>+1 [ICON_HAPPINESS_1] Happiness in cities on rivers and +2 [ICON_PEACE] Faith from Gardens</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_BELIEF_SACRED_WATERS" />
+		<Row Tag="TXT_KEY_BELIEF_SACRED_WATERS">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]+1 [ICON_HAPPINESS_1] Happiness in cities on rivers and +2 [ICON_PEACE] Faith from Gardens</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_BELIEF_SACRED_WATERS" />
+		<Row Tag="TXT_KEY_BELIEF_SACRED_WATERS">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]+1 [ICON_HAPPINESS_1] Happiness in cities on rivers and +2 [ICON_PEACE] Faith from Gardens</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_BELIEF_SACRED_WATERS" />
+		<Row Tag="TXT_KEY_BELIEF_SACRED_WATERS">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]+1 [ICON_HAPPINESS_1] Happiness in cities on rivers and +2 [ICON_PEACE] Faith from Gardens</Text>
+		</Row>
+	</Language_RU_RU>
+	
+</GameData>

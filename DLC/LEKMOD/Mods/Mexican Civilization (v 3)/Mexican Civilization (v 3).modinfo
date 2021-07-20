@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mod id="990b9608-d4db-43bb-b620-e82e1c9ee606" version="3">
+  <Properties>
+    <Name>Mexican Civilization</Name>
+    <Teaser>Located at the boundary between North and Central America, Mexico has experienced drastic territorial changes since gaining ind</Teaser>
+    <Description>Located at the boundary between North and Central America, Mexico has experienced drastic territorial changes since gaining independance from Spain in 1821. The political composition of Mexico has ranged from empire to republic, and has on times threatened the country herself. Mexico's strong nationalistic heritage has ensured that the country has remained strong since independence, despite threats from both abroad and within.</Description>
+    <Authors>Pouakai, Janboruta, Leugi, Sukritact, Proffy</Authors>
+    <HideSetupGame>0</HideSetupGame>
+    <AffectsSavedGames>1</AffectsSavedGames>
+    <MinCompatibleSaveVersion>0</MinCompatibleSaveVersion>
+    <SupportsSinglePlayer>1</SupportsSinglePlayer>
+    <SupportsMultiplayer>1</SupportsMultiplayer>
+    <SupportsHotSeat>1</SupportsHotSeat>
+    <SupportsMac>1</SupportsMac>
+    <ReloadAudioSystem>1</ReloadAudioSystem>
+    <ReloadLandmarkSystem>0</ReloadLandmarkSystem>
+    <ReloadStrategicViewSystem>1</ReloadStrategicViewSystem>
+    <ReloadUnitSystem>1</ReloadUnitSystem>
+  </Properties>
+  <Dependencies>
+    <Dlc id="6DA07636-4123-4018-B643-6575B4EC336B" minversion="0" maxversion="999" />
+  </Dependencies>
+  <References>
+    <Mod id="36e88483-48fe-4545-b85f-bafc50dde315" minversion="0" maxversion="999" title="YnAEMP " />
+  </References>
+  <Blocks />
+  <Files>
+    <File md5="9C1FECF8E07A7BE3A72463E6B54830C3" import="1">Art/Atlases/MexicoAlpha_128.dds</File>
+    <File md5="2AEC5596E6F45ED83E4CC175DBEDFCF1" import="1">Art/Atlases/MexicoAlpha_16.dds</File>
+    <File md5="4014F7D0352C6F32DC03A5D8DBA42A4A" import="1">Art/Atlases/MexicoAlpha_214.dds</File>
+    <File md5="B1867B913EA790E84AABBD139AC3E4D1" import="1">Art/Atlases/MexicoAlpha_24.dds</File>
+    <File md5="805F26C0C9D74E0F22B744BADEEE5531" import="1">Art/Atlases/MexicoAlpha_256.dds</File>
+    <File md5="F91EC9187B98A99977095F21524F398E" import="1">Art/Atlases/MexicoAlpha_32.dds</File>
+    <File md5="5980AF7D704FAD16029F2889450D57F9" import="1">Art/Atlases/MexicoAlpha_48.dds</File>
+    <File md5="F1C2C7A4392C5ED12BC0DF8D6769BC86" import="1">Art/Atlases/MexicoAlpha_64.dds</File>
+    <File md5="96A10E4449B78AF13F38FB16F49674FA" import="1">Art/Atlases/Mexico_128.dds</File>
+    <File md5="8CBA6243435D93BC64719E36E023B1BD" import="1">Art/Atlases/Mexico_16.dds</File>
+    <File md5="644B5D2F9F4D0F8D2E47E0A282FBCFCE" import="1">Art/Atlases/Mexico_214.dds</File>
+    <File md5="D23B7753ED28AF7328D4B994EA6FD14F" import="1">Art/Atlases/Mexico_24.dds</File>
+    <File md5="EADA3DE98EED6D968150E2A1779AF7FC" import="1">Art/Atlases/Mexico_256.dds</File>
+    <File md5="EE1A3D936FF0EA835E23E16D08372977" import="1">Art/Atlases/Mexico_32.dds</File>
+    <File md5="E4B8FFF801AB8A00B248040868BC5702" import="1">Art/Atlases/Mexico_45.dds</File>
+    <File md5="51F1F027E47155A7994BD8125BD85A76" import="1">Art/Atlases/Mexico_48.dds</File>
+    <File md5="B7B10B7913C60C5149720B5BD862F28D" import="1">Art/Atlases/Mexico_64.dds</File>
+    <File md5="B1C1D0BA06A45DD28D34830CD6B17785" import="1">Art/Atlases/Mexico_80.dds</File>
+    <File md5="8DBFCDE93D8E0B4F87B5DFDDFA11E943" import="1">Art/Scenes/Mexico_Leaderhead.xml</File>
+    <File md5="96A8C591FC462265A15696A3A32F5FF0" import="1">Art/Scenes/Guadalupe_Diplo.dds</File>
+    <File md5="232C444E928FAE06B46348DDED876728" import="1">Art/Scenes/Mexico_Map.dds</File>
+    <File md5="6BD438F9F283A55BF6F0FFE0688A5364" import="1">Art/Scenes/Mexico_DoM.dds</File>
+    <File md5="9783692ACCCD310E5057AE4DF2F6289A" import="1">Art/Unit art/flag_rural.dds</File>
+    <File md5="38F78E1290F8C110B178C1D972BF1C49" import="1">Art/Unit art/flag_zapatista.dds</File>
+    <File md5="CBB7EC70E773B7A33F39F9058962FE47" import="1">Art/Unit art/rural.dds</File>
+    <File md5="B71ACEA823089F9DC96229CF9F622F53" import="1">Art/Unit art/rural.fxsxml</File>
+    <File md5="E75DA1EB74249238B093A2DB762F362F" import="1">Art/Unit art/rural.gr2</File>
+    <File md5="B2B7881876AE17016FABE35B84239EF3" import="1">Art/Unit art/sv_rural.dds</File>
+    <File md5="57DD7D586D6CEFDD888CD15E2AADC46C" import="1">Art/Unit art/sv_zapatista.dds</File>
+    <File md5="AAD7DB64460C787C7107CCD675F3DE88" import="1">Art/Unit art/zapatista.fxsxml</File>
+    <File md5="21E24CF70AD8203286DF727D7D4B5B9E" import="1">Art/Unit art/zapatista.gr2</File>
+    <File md5="6E0A095905518B6F06B6C1A06E71BF40" import="1">Art/Unit art/zapatista_diff.dds</File>
+    <File md5="8CD95FF2CE08468DCADCC7257E867328" import="0">Lua/BonusOnPillaged.lua</File>
+    <File md5="AA7466F968A90AD6FD23AA372095F7D8" import="0">Lua/BuildingYieldFromArtifact.lua</File>
+    <File md5="76C0103036A9CD37A9BD51D9244C42E3" import="0">Lua/MexicoScripts.lua</File>
+    <File md5="5754B1BE6E37A2F9D04D9D4149E5CDDF" import="1">Lua/SaveUtils.lua</File>
+    <File md5="85322ABCCDDB8C9088AB232DE804C345" import="1">Music/GuadalupePeace.mp3</File>
+    <File md5="0A8DC2BD14ADB3747E03982B6998B35F" import="1">Music/GuadalupeWar.mp3</File>
+    <File md5="DE55174D748CAED4A34E0C4E684C4933" import="0">SQL/Mexico UA.sql</File>
+    <File md5="A30338C946CBD58866F0E1AD4C6F822B" import="1">SQL/ruraldef.sql</File>
+    <File md5="49FD2ABF1A60983FB9F3B6DC04626CC2" import="1">SQL/zapatista_def.sql</File>
+    <File md5="E750EF6124BA4C9926E7F4FB819E6BCF" import="0">XML/Buildings/Mexico_BuildingClasses.xml</File>
+    <File md5="781D25F70A52E862E5F475DECADE5182" import="0">XML/Buildings/Mexico_Buildings.xml</File>
+    <File md5="835E98998A13546AFBC04EFCA29D52AC" import="0">XML/Civilizations/Mexico_Civilizations.xml</File>
+    <File md5="39D9C232824C915C502A7A3B486C37F9" import="0">XML/Civilizations/Mexico_Strategic.xml</File>
+    <File md5="FA88B386AE31F530CAC709A6F3F39503" import="0">XML/GameInfo/Mexico_TSL.xml</File>
+    <File md5="84B8BB9B1D29585D1975B40F1DB4A1DE" import="0">XML/GameInfo/Mexico_IconTextureAtlases.xml</File>
+    <File md5="53F11885DA4DB7C86CD29C7A769D9F23" import="0">XML/GameInfo/Mexico_Traits.xml</File>
+    <File md5="8F839743DB8C20B9D7E290350A59C121" import="0">XML/GameInfo/Mexico_Music.xml</File>
+    <File md5="FEB060F306B339D9271FC14F3046B1D2" import="0">XML/Leaders/Mexico_Leader.xml</File>
+    <File md5="A93B9C3DA87971B64C01E3FED7977652" import="0">XML/Text/Mexico_Text.xml</File>
+    <File md5="74AC9EBB419B9ABB29BA5E7E939E11A0" import="0">XML/Units/Mexico_Units.xml</File>
+    <File md5="79E4A77D0A2A39209C9233DEAB5E3B4D" import="0">XML/Units/Mexico_UnitPromotions.xml</File>
+  </Files>
+  <Actions>
+    <OnModActivated>
+      <UpdateDatabase>SQL/Mexico UA.sql</UpdateDatabase>
+      <UpdateDatabase>SQL/ruraldef.sql</UpdateDatabase>
+      <UpdateDatabase>SQL/zapatista_def.sql</UpdateDatabase>
+      <UpdateDatabase>XML/Buildings/Mexico_BuildingClasses.xml</UpdateDatabase>
+      <UpdateDatabase>XML/Buildings/Mexico_Buildings.xml</UpdateDatabase>
+      <UpdateDatabase>XML/Civilizations/Mexico_Civilizations.xml</UpdateDatabase>
+      <UpdateDatabase>XML/Civilizations/Mexico_Strategic.xml</UpdateDatabase>
+      <UpdateDatabase>XML/GameInfo/Mexico_IconTextureAtlases.xml</UpdateDatabase>
+      <UpdateDatabase>XML/GameInfo/Mexico_Music.xml</UpdateDatabase>
+      <UpdateDatabase>XML/GameInfo/Mexico_Traits.xml</UpdateDatabase>
+      <UpdateDatabase>XML/Leaders/Mexico_Leader.xml</UpdateDatabase>
+      <UpdateDatabase>Art/Scenes/Mexico_Leaderhead.xml</UpdateDatabase>
+      <UpdateDatabase>XML/Text/Mexico_Text.xml</UpdateDatabase>
+      <UpdateDatabase>XML/Units/Mexico_UnitPromotions.xml</UpdateDatabase>
+      <UpdateDatabase>XML/Units/Mexico_Units.xml</UpdateDatabase>
+      <UpdateDatabase>XML/GameInfo/Mexico_TSL.xml</UpdateDatabase>
+    </OnModActivated>
+  </Actions>
+  <EntryPoints>
+    <EntryPoint type="InGameUIAddin" file="Lua/BonusOnPillaged.lua">
+      <Name>BonusOnPillaged</Name>
+      <Description>Gives the Zapatista a combat bonus when fighting on pillaged tiles</Description>
+    </EntryPoint>
+    <EntryPoint type="InGameUIAddin" file="Lua/BuildingYieldFromArtifact.lua">
+      <Name>BuildingYieldFromArtifact</Name>
+      <Description>Allows a building to give a yield in the capital based on the number of artifacts in the empire</Description>
+    </EntryPoint>
+    <EntryPoint type="InGameUIAddin" file="Lua/MexicoScripts.lua">
+      <Name>MexicoScripts</Name>
+      <Description>Happiness for the Rurales and allowing a dummy building in the capital only while still being hidden</Description>
+    </EntryPoint>
+  </EntryPoints>
+</Mod>

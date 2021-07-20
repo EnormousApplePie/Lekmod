@@ -1,0 +1,30 @@
+<Asset>
+  <Mesh file="PL_MED_Mine_Titanium_Heavy.gr2" source="Max" />
+  <Texture file="Dirt_Rubble_DIFF.dds" source="Max" />
+  <Texture file="Dirt_Rubble_SREF.dds" source="Max" />
+  <Texture file="Generic_Grey_8.dds" source="Max" />
+  <Texture file="Titanium_Rubble_DIFF.dds" source="Max" />
+  <Texture file="MID_Mine_Hill_DIFF.dds" source="Max" />
+  <Texture file="MID_Mine_Hill_SREF.dds" source="Max" />
+  <Texture file="PL_MED_Mine_DIFF.dds" source="Max" />
+  <Texture file="PL_MED_Mine_SREF.dds" source="Max" />
+  <Texture file="PL_Super_Titanium_Mine_Decal.dds" source="Max" />
+  <Texture file="Plantation_MID_DIFF.dds" source="Max" />
+  <Texture file="Plantation_MID_SREF.dds" source="Max" />
+  <Texture file="Resource_Irradiance.dds" source="Max" />
+  <Texture file="Rubble_SREF.dds" source="Max" />
+  <Texture file="SUPER_Mine_Decal_S.dds" source="Max" />
+  <Texture file="Super_Mine_Decal_H.dds" source="Max" />
+  <Texture file="Titanium_ore_DIFF.dds" source="Max" />
+  <Texture file="Titanium_ore_SREF.dds" source="Max" />
+  <Texture file="resource_EnvTitaniumment_Sharp.dds" source="Max" />
+  <Texture file="resources_EnvTitaniumment_Dull.dds" source="Max" />
+  <Texture file="Unit_EnvTitaniumment_Dull.dds" source="Max" />
+  <Texture file="Unit_EnvTitaniumment_Sharp.dds" source="Max" />
+  <Texture file="Unit_Irradiance.dds" source="Max" />
+  <BoneUsage>
+    <Bone name="FX_PillagedSmoke" />
+  </BoneUsage>
+  <TimedTrigger file="FX_Triggers_PL_MED_Mine_Titanium_Heavy.ftsxml" source="Tool" model="Mine_Building04_unique" state="0,1,2,3" />
+  <DecisionTree file="StaticLandmarkDecisionTree.ddtxml" source="Tool" />
+</Asset>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2016-09-25 05:44:53 -->
+<GameData>
+
+	<!-- +2 Faith from Amphitheaters and Opera Houses -->
+	<Beliefs>
+		<Update>
+			<Set MinFollowers="0" />
+			<Where Type="BELIEF_LITURGICAL_DRAMA" />
+		</Update>
+	</Beliefs>
+	<Belief_BuildingClassYieldChanges>
+		<Update>
+			<Set YieldChange="2" />
+			<Where BeliefType="BELIEF_LITURGICAL_DRAMA" BuildingClassType="BUILDINGCLASS_AMPHITHEATER" YieldType="YIELD_FAITH" />
+		</Update>
+		<Row>
+			<BeliefType>BELIEF_LITURGICAL_DRAMA</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_OPERA_HOUSE</BuildingClassType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<YieldChange>2</YieldChange>
+		</Row>
+		<Row>
+			<BeliefType>BELIEF_LITURGICAL_DRAMA</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_AMPHITHEATER</BuildingClassType>
+			<YieldType>YIELD_CULTURE</YieldType>
+			<YieldChange>1</YieldChange>
+		</Row>
+		<Row>
+			<BeliefType>BELIEF_LITURGICAL_DRAMA</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_OPERA_HOUSE</BuildingClassType>
+			<YieldType>YIELD_CULTURE</YieldType>
+			<YieldChange>1</YieldChange>
+		</Row>
+	</Belief_BuildingClassYieldChanges>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_BELIEF_LITURGICAL_DRAMA" />
+		<Row Tag="TXT_KEY_BELIEF_LITURGICAL_DRAMA">
+			<Text>+2 [ICON_PEACE] Faith and +1 [ICON_CULTURE] Culture from Amphitheaters and Opera Houses</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_BELIEF_LITURGICAL_DRAMA" />
+		<Row Tag="TXT_KEY_BELIEF_LITURGICAL_DRAMA">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]+2 [ICON_PEACE] Faith from Amphitheaters and Opera Houses</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_BELIEF_LITURGICAL_DRAMA" />
+		<Row Tag="TXT_KEY_BELIEF_LITURGICAL_DRAMA">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]+2 [ICON_PEACE] Faith from Amphitheaters and Opera Houses</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_BELIEF_LITURGICAL_DRAMA" />
+		<Row Tag="TXT_KEY_BELIEF_LITURGICAL_DRAMA">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]+2 [ICON_PEACE] Faith from Amphitheaters and Opera Houses</Text>
+		</Row>
+	</Language_RU_RU>
+	
+</GameData>

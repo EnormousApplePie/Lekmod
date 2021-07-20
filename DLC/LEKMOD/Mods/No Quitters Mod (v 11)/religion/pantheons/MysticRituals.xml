@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2016-09-24 14:15:24 -->
+<GameData>
+
+	<!-- +1 Culture and +1 Faith from Cotton, Silk, Dyes, and Incense. -->
+	<Beliefs>
+		<Row>
+			<Type>BELIEF_MYSTIC_RITUALS</Type>
+			<Description>TXT_KEY_BELIEF_MYSTIC_RITUALS</Description>
+			<ShortDescription>TXT_KEY_BELIEF_MYSTIC_RITUALS_SHORT</ShortDescription>
+			<Pantheon>true</Pantheon>
+		</Row>
+	</Beliefs>
+	<Belief_ResourceYieldChanges>
+		<Row>
+			<BeliefType>BELIEF_MYSTIC_RITUALS</BeliefType>
+			<ResourceType>RESOURCE_SILK</ResourceType>
+			<YieldType>YIELD_CULTURE</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BeliefType>BELIEF_MYSTIC_RITUALS</BeliefType>
+			<ResourceType>RESOURCE_SILK</ResourceType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BeliefType>BELIEF_MYSTIC_RITUALS</BeliefType>
+			<ResourceType>RESOURCE_DYE</ResourceType>
+			<YieldType>YIELD_CULTURE</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BeliefType>BELIEF_MYSTIC_RITUALS</BeliefType>
+			<ResourceType>RESOURCE_DYE</ResourceType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BeliefType>BELIEF_MYSTIC_RITUALS</BeliefType>
+			<ResourceType>RESOURCE_PERFUME</ResourceType>
+			<YieldType>YIELD_CULTURE</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BeliefType>BELIEF_MYSTIC_RITUALS</BeliefType>
+			<ResourceType>RESOURCE_PERFUME</ResourceType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BeliefType>BELIEF_MYSTIC_RITUALS</BeliefType>
+			<ResourceType>RESOURCE_TOBACCO</ResourceType>
+			<YieldType>YIELD_CULTURE</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BeliefType>BELIEF_MYSTIC_RITUALS</BeliefType>
+			<ResourceType>RESOURCE_TOBACCO</ResourceType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>1</Yield>
+		</Row>
+	</Belief_ResourceYieldChanges>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Row Tag="TXT_KEY_BELIEF_MYSTIC_RITUALS">
+			<Text>+1 [ICON_CULTURE] and +1 [ICON_PEACE] Faith from Silk, Dyes, Perfume, and Tobacco</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BELIEF_MYSTIC_RITUALS_SHORT">
+			<Text>Mystic Rituals</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Row Tag="TXT_KEY_BELIEF_MYSTIC_RITUALS">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]+1 [ICON_CULTURE] and +1 [ICON_PEACE] Faith from Cotton, Silk, Dyes, and Incense</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BELIEF_MYSTIC_RITUALS_SHORT">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Mystic Rituals</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Row Tag="TXT_KEY_BELIEF_MYSTIC_RITUALS">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]+1 [ICON_CULTURE] and +1 [ICON_PEACE] Faith from Cotton, Silk, Dyes, and Incense</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BELIEF_MYSTIC_RITUALS_SHORT">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Mystic Rituals</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Row Tag="TXT_KEY_BELIEF_MYSTIC_RITUALS">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]+1 [ICON_CULTURE] and +1 [ICON_PEACE] Faith from Cotton, Silk, Dyes, and Incense</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BELIEF_MYSTIC_RITUALS_SHORT">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Mystic Rituals</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

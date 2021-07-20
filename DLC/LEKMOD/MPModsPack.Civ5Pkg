@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Civ5Package>
+  <GUID>{b5932ae4-0f4f-498f-9333-e2d31b20e095}</GUID>
+	<SteamApp>235580</SteamApp>
+  <Version>1</Version>
+  <Priority>300</Priority>
+  <Key>bf6d34a0074b7ad4b1d1716475f7f7fe</Key>
+  <PTags>
+	<Tag>Version</Tag>
+  </PTags>
+  <Name>
+	<Value language="en_US">MP ModsPack</Value>
+  </Name>
+  <Description>
+	<Value language="en_US">Multiplayer Modspack</Value>
+  </Description>
+  <UISkin name="Expansion2Primary" set="Expansion2" platform="Common">
+	<GameplaySkin>
+		<Directory>UI</Directory>
+		<Directory>Mods</Directory>
+	</GameplaySkin>
+  </UISkin>	
+</Civ5Package>

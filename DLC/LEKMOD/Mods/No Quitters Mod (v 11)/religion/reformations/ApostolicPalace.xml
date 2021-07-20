@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2016-09-26 23:38:28 -->
+<GameData>
+	
+	<!-- Grand Temple provides +5 Food, +5 Production, +5 Culture, +5 Science, +5 Gold, +5 Faith, and +5 Happiness. -->
+	<Beliefs>
+		<Row>
+			<Type>BELIEF_APOSTOLIC_PALACE</Type>
+			<Description>TXT_KEY_BELIEF_APOSTOLIC_PALACE</Description>
+			<ShortDescription>TXT_KEY_BELIEF_APOSTOLIC_PALACE_SHORT</ShortDescription>
+			<Reformation>true</Reformation>
+		</Row>
+	</Beliefs>
+	<Belief_BuildingClassYieldChanges>
+		<Row>
+			<BeliefType>BELIEF_APOSTOLIC_PALACE</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_GRAND_TEMPLE</BuildingClassType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<YieldChange>4</YieldChange>
+		</Row>
+		<Row>
+			<BeliefType>BELIEF_APOSTOLIC_PALACE</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_GRAND_TEMPLE</BuildingClassType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<YieldChange>4</YieldChange>
+		</Row>
+		<Row>
+			<BeliefType>BELIEF_APOSTOLIC_PALACE</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_GRAND_TEMPLE</BuildingClassType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<YieldChange>4</YieldChange>
+		</Row>
+		<Row>
+			<BeliefType>BELIEF_APOSTOLIC_PALACE</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_GRAND_TEMPLE</BuildingClassType>
+			<YieldType>YIELD_SCIENCE</YieldType>
+			<YieldChange>4</YieldChange>
+		</Row>
+		<Row>
+			<BeliefType>BELIEF_APOSTOLIC_PALACE</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_GRAND_TEMPLE</BuildingClassType>
+			<YieldType>YIELD_FOOD</YieldType>
+			<YieldChange>4</YieldChange>
+		</Row>
+		<Row>
+			<BeliefType>BELIEF_APOSTOLIC_PALACE</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_GRAND_TEMPLE</BuildingClassType>
+			<YieldType>YIELD_CULTURE</YieldType>
+			<YieldChange>4</YieldChange>
+		</Row>
+	</Belief_BuildingClassYieldChanges>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Row Tag="TXT_KEY_BELIEF_APOSTOLIC_PALACE">
+			<Text>The Grand Temple provides +4 [ICON_PRODUCTION] Production, +4 [ICON_GOLD] Gold, +4 [ICON_PEACE] Faith, +4 [ICON_CULTURE] Culture, +4 [ICON_FOOD] Food, and +4 [ICON_RESEARCH] Science</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BELIEF_APOSTOLIC_PALACE_SHORT">
+			<Text>Apostolic Palace</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Row Tag="TXT_KEY_BELIEF_APOSTOLIC_PALACE">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Grand Temple provides +5 [ICON_FOOD] Food, +5 [ICON_PRODUCTION] Production, +5 [ICON_RESEARCH] Science, +5 [ICON_CULTURE] Culture, +5 [ICON_GOLD] Gold, +5 [ICON_PEACE] Faith, and +5 [ICON_HAPPINESS_1] Happiness</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BELIEF_APOSTOLIC_PALACE_SHORT">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Apostolic Palace</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Row Tag="TXT_KEY_BELIEF_APOSTOLIC_PALACE">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Grand Temple provides +5 [ICON_FOOD] Food, +5 [ICON_PRODUCTION] Production, +5 [ICON_RESEARCH] Science, +5 [ICON_CULTURE] Culture, +5 [ICON_GOLD] Gold, +5 [ICON_PEACE] Faith, and +5 [ICON_HAPPINESS_1] Happiness</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BELIEF_APOSTOLIC_PALACE_SHORT">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Apostolic Palace</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Row Tag="TXT_KEY_BELIEF_APOSTOLIC_PALACE">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Grand Temple provides +5 [ICON_FOOD] Food, +5 [ICON_PRODUCTION] Production, +5 [ICON_RESEARCH] Science, +5 [ICON_CULTURE] Culture, +5 [ICON_GOLD] Gold, +5 [ICON_PEACE] Faith, and +5 [ICON_HAPPINESS_1] Happiness</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BELIEF_APOSTOLIC_PALACE_SHORT">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Apostolic Palace</Text>
+		</Row>
+	</Language_RU_RU>
+	
+</GameData>

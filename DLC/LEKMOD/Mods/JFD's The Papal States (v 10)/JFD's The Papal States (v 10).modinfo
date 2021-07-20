@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mod id="bd7a401f-830a-49f0-b806-3da61bc05f2b" version="10">
+  <Properties>
+    <Name>JFD's The Papal States</Name>
+    <Teaser>Adds the [COLOR_POSITIVE_TEXT]The Papal States[ENDCOLOR] with Pius IX to the game.</Teaser>
+    <Description>See Steam Workshop or CivFanatics for full details</Description>
+    <Authors>JFD, Janboruta</Authors>
+    <SpecialThanks>whoward69</SpecialThanks>
+    <HideSetupGame>0</HideSetupGame>
+    <AffectsSavedGames>1</AffectsSavedGames>
+    <MinCompatibleSaveVersion>0</MinCompatibleSaveVersion>
+    <SupportsSinglePlayer>1</SupportsSinglePlayer>
+    <SupportsMultiplayer>1</SupportsMultiplayer>
+    <SupportsHotSeat>1</SupportsHotSeat>
+    <SupportsMac>1</SupportsMac>
+    <ReloadAudioSystem>1</ReloadAudioSystem>
+    <ReloadLandmarkSystem>0</ReloadLandmarkSystem>
+    <ReloadStrategicViewSystem>1</ReloadStrategicViewSystem>
+    <ReloadUnitSystem>1</ReloadUnitSystem>
+  </Properties>
+  <Dependencies>
+    <Dlc id="6DA07636-4123-4018-B643-6575B4EC336B" minversion="0" maxversion="999" />
+  </Dependencies>
+  <References>
+    <Mod id="7fdd72a5-d4ae-441c-bc4e-2e3d2a26cff4" minversion="0" maxversion="999" title="Ethnic Units" />
+    <Mod id="88cf706d-7bf9-431a-b8e1-aa8a8514c462" minversion="0" maxversion="999" title="Community Patch" />
+    <Mod id="d1b6328c-ff44-4b0d-aad7-c657f83610cd" minversion="0" maxversion="999" title="DLL - Various Mod Components" />
+    <Mod id="1f941088-b185-4159-865c-472df81247b2" minversion="0" maxversion="999" title="Events and Decisions" />
+    <Mod id="36e88483-48fe-4545-b85f-bafc50dde315" minversion="0" maxversion="999" title="Yet (not) Another Earth Maps Pack" />
+    <Mod id="31a31d1c-b9d7-45e1-842c-23232d66cd47" minversion="0" maxversion="999" title="JFD's Cultural Diversity (Core)" />
+    <Mod id="eea66053-7579-481a-bb8d-2f3959b59974" minversion="0" maxversion="999" title="JFD’s Piety &amp;amp; Prestige" />
+    <Mod id="8670da15-d435-44ea-9758-7438cb321411" minversion="0" maxversion="999" title="R.E.D. Modpack" />
+    <Mod id="d1b6328c-ff44-4b0d-aad7-c657f83610cd" minversion="0" maxversion="999" title="DLL - Various Mod Components" />
+    <Mod id="495d7410-8208-4f4a-9ed1-1f528cc87299" minversion="0" maxversion="999" title="Rebalances Social Policies and Ideologies." />
+    <Mod id="5f36d178-6435-4a05-897b-4224ed58a079" minversion="0" maxversion="999" title="Reform and Rule (BNW)" />
+    <Mod id="4e438310-09c9-4776-a0eb-b2f9a0504fb8" minversion="0" maxversion="999" title="9 Ages of Social Policies" />
+    <Mod id="8411a7a8-dad3-4622-a18e-fcc18324c799" minversion="0" maxversion="999" title="Community Balance Patch" />
+    <Mod id="43868e8d-de88-48a1-a8d9-ce144e07f5e0" minversion="0" maxversion="999" title="JFD's Exploration Continued Expanded" />
+  </References>
+  <Blocks />
+  <Files>
+    <File md5="CF8FFD7E3E6380DBAD07D1039A5EB903" import="1">Art/Diplomacy/Pius_diplo.dds</File>
+    <File md5="B4FAE294730DB207F898771A52081CF6" import="1">Art/Diplomacy/Pius_Scene.xml</File>
+    <File md5="594C06F52E01A6490D442CA73DC14F42" import="1">Art/Graphics/sv_Disciple.dds</File>
+    <File md5="A6CCDE935AFD654B6803717FFF4773C6" import="1">Art/Graphics/Swiss Guard/reislaufer.fxsxml</File>
+    <File md5="54466258F5A615864E2F2FC808E6ACF6" import="1">Art/Graphics/Swiss Guard/reislaufer.gr2</File>
+    <File md5="DD4DBB6FB2E7E11ADBE9B37D53560428" import="1">Art/Graphics/Swiss Guard/reislaufer_diff.dds</File>
+    <File md5="C17C1A9359A378E1F1FF8A47F4D40308" import="1">Art/Graphics/Swiss Guard/reislaufer_sref.dds</File>
+    <File md5="5632FD033DFBC01D596860C64D09DAA7" import="1">Art/Graphics/Swiss Guard/sv_Swissguard.dds</File>
+    <File md5="731D49D279AF20F7396EBDC71831FD4B" import="1">Art/Great Works of Art/GW_Bartolomew_Esteban_Murillo--Liberation_of_St_Peter.dds</File>
+    <File md5="5E005F4D34CB667C41DFF33A0015BF8E" import="1">Art/Great Works of Art/GW_Caravaggio--The_Crucifixtion_of_Saint_Peter.dds</File>
+    <File md5="EA6EFC8A65F95D6D8F35EAF7564912BB" import="1">Art/Great Works of Art/GW_El_Greco--Saint_Peter_in_Penitence.dds</File>
+    <File md5="5DB9635F9CABD98AA4ECD7E7B6B94E11" import="1">Art/Great Works of Art/GW_Enguerrand_Quarton--Coronation_of_the_Virgin.dds</File>
+    <File md5="DC5095A431DCC16956A64AFBAD07BFE0" import="1">Art/Great Works of Art/GW_Fra_Angelico--Madonna_of_Humility.dds</File>
+    <File md5="24062FCF73E625B3E4261D4F70E17742" import="1">Art/Great Works of Art/GW_Fra_Angelico--St_Dominic.dds</File>
+    <File md5="F6373E6D80B1A105CC1A473B86D845E7" import="1">Art/Great Works of Art/GW_Gwen_John--The_Nun.dds</File>
+    <File md5="B5DAEF7483D5D3DAFCA898CDBCFAE705" import="1">Art/Great Works of Art/GW_Man_of_Sorrows_Meister_Francke.dds</File>
+    <File md5="D59EDE5A60774267417141F506B2B315" import="1">Art/Great Works of Art/GW_Memling--Last_Judgement.dds</File>
+    <File md5="36F3551F2900B2E5E83EB8F72FB0DAC7" import="1">Art/Great Works of Art/GW_Michelangelo--Fresco_of_the_Last_Judgement.dds</File>
+    <File md5="4DEE15A517CF7F19B5BDBB337941C38D" import="1">Art/Great Works of Art/GW_Murillo--Immaculate_Conception.dds</File>
+    <File md5="4EB600B7D2DAEA975009E958AAB09437" import="1">Art/Great Works of Art/GW_Paolo_de_Matteis--The_Annunciation.dds</File>
+    <File md5="FD49B96566C747F7B8CECD9BF761DFAD" import="1">Art/Great Works of Art/GW_Paolo_Veronese--The_Weddeding_at_Cana.dds</File>
+    <File md5="347824CFABAFF7D4ABBFADE0972A91FE" import="1">Art/Great Works of Art/GW_Raphael--Madonna.dds</File>
+    <File md5="D088136C31732ACF867ADE3174DADC30" import="1">Art/Great Works of Art/GW_Rembrant--Adoration_of_the_Magi.dds</File>
+    <File md5="7DF37BD0882F4B79894DDAA698AF54ED" import="1">Art/Great Works of Art/GW_Rembrant--The_Stoning_of_Saint_Stephen.dds</File>
+    <File md5="1042220E2200B67DAEA38D03C587F327" import="1">Art/Great Works of Art/GW_Sandro_Botticellii--St.Sebastian.dds</File>
+    <File md5="157DB00B308950CF8725E678CA9D83DE" import="1">Art/Great Works of Art/GW_Scipione_Pulzone--Lamentation.dds</File>
+    <File md5="8B51CD62C31BA43353B66EFC96DBE03E" import="1">Art/Icon Atlas/JFD_PapalStatesAlphaAtlas_128.dds</File>
+    <File md5="8670343A21F573A7BBE04C0DB5D5BC0E" import="1">Art/Icon Atlas/JFD_PapalStatesAlphaAtlas_16.dds</File>
+    <File md5="512CC705891355768E70638BCAF93040" import="1">Art/Icon Atlas/JFD_PapalStatesAlphaAtlas_22.dds</File>
+    <File md5="ED6357F1E2BE8D5F984528F51D596253" import="1">Art/Icon Atlas/JFD_PapalStatesAlphaAtlas_24.dds</File>
+    <File md5="3DFACF856DB5C5108BFB6324B073DC13" import="1">Art/Icon Atlas/JFD_PapalStatesAlphaAtlas_32.dds</File>
+    <File md5="8696AC004DDD6F688337836B39126FD1" import="1">Art/Icon Atlas/JFD_PapalStatesAlphaAtlas_45.dds</File>
+    <File md5="1453B9E8F88D0CF712D2F06343D16688" import="1">Art/Icon Atlas/JFD_PapalStatesAlphaAtlas_48.dds</File>
+    <File md5="0CB64F7B047389E1164E2A557F63FD6F" import="1">Art/Icon Atlas/JFD_PapalStatesAlphaAtlas_64.dds</File>
+    <File md5="F78D460008A3F5FBF3AC56E90ED9527A" import="1">Art/Icon Atlas/JFD_PapalStatesAlphaAtlas_80.dds</File>
+    <File md5="DA5BEB0C5FAD493BE3AB8FDA0351D931" import="1">Art/Icon Atlas/JFD_PapalStatesAtlas_128.dds</File>
+    <File md5="19B6F915479CB41BD4A421143636245F" import="1">Art/Icon Atlas/JFD_PapalStatesAtlas_256.dds</File>
+    <File md5="25F0359A3101B9326135673637F254C2" import="1">Art/Icon Atlas/JFD_PapalStatesAtlas_32.dds</File>
+    <File md5="62C5575228E1EB8B45B6553325A940EB" import="1">Art/Icon Atlas/JFD_PapalStatesAtlas_45.dds</File>
+    <File md5="64918E4C5B25DD644479C86CCEED151E" import="1">Art/Icon Atlas/JFD_PapalStatesAtlas_64.dds</File>
+    <File md5="0F19EB8036A760DF0FDB5C0FB34E2607" import="1">Art/Icon Atlas/JFD_PapalStatesAtlas_80.dds</File>
+    <File md5="F9F4EE5B0DA0C3977CE52AB6B3883748" import="1">Art/Icon Atlas/Unit_Disciple_Flag_32.dds</File>
+    <File md5="C1D745CF91073EECDB731752F9F6DD92" import="1">Art/Icon Atlas/Unit_SwissGuard_Flag_32.dds</File>
+    <File md5="B2E6FBF623C5B94781FC17728301BC8E" import="1">Art/Map/PapalStatesMap512.dds</File>
+    <File md5="5B6510880819B0A3E2453BAE0ACE4BCE" import="1">Art/Map/Pius_DOM.dds</File>
+    <File md5="27BDC496CB2F437C43A8E6E5877C249C" import="1">Art/Splashscreens/Era_JFD_MediterraneanPapal_Atomic.dds</File>
+    <File md5="9E2D14F116EC8D75C66B0A87D62EDECC" import="1">Art/Splashscreens/Era_JFD_MediterraneanPapal_Classical.dds</File>
+    <File md5="0C436F2393E3714D9B02DD7DB831219A" import="1">Art/Splashscreens/Era_JFD_MediterraneanPapal_Enlightenment.dds</File>
+    <File md5="76E0C912CD2992EF0BC8948F27B2CDA2" import="1">Art/Splashscreens/Era_JFD_MediterraneanPapal_Future.dds</File>
+    <File md5="905BBE6C045BC2FEB505A30B6F5E9603" import="1">Art/Splashscreens/Era_JFD_MediterraneanPapal_Industrial.dds</File>
+    <File md5="63CEB03E2C64891865CF7B1DAC08E5DA" import="1">Art/Splashscreens/Era_JFD_MediterraneanPapal_Medievel.dds</File>
+    <File md5="905BBE6C045BC2FEB505A30B6F5E9603" import="1">Art/Splashscreens/Era_JFD_MediterraneanPapal_Modern.dds</File>
+    <File md5="CEF1DCFACF2A7B50E108FE1E6E1ACA84" import="1">Art/Splashscreens/Era_JFD_MediterraneanPapal_Renissance.dds</File>
+    <File md5="FE3B65095B6DC1225479C2F8F44FC25A" import="1">Audio/Great Works of Music/GW_Antoine_Brumel--Missa_Et_ecce_terrae_motus_Gloria.mp3</File>
+    <File md5="B09286251DF5205C6EAD5B632CB8CDDD" import="1">Audio/Great Works of Music/GW_Art_Writing--O Bone Jesu.mp3</File>
+    <File md5="CBE598BA6021D0FC5FF7186BA71363AC" import="1">Audio/Great Works of Music/GW_Franz_Schubert--Ave_Maria.mp3</File>
+    <File md5="B0C4A26F186C2A7BC273C238505909F1" import="1">Audio/Great Works of Music/GW_Gregorio_Allegri--Misererei Mei, Deus.mp3</File>
+    <File md5="4EEDC67FBC3AB9F1EF7D0CF194103043" import="1">Audio/Great Works of Music/GW_Jheronimus_Vinders--O_Mors_Inevitabilis.mp3</File>
+    <File md5="B6D0F76F1498BF061E7B11AABB8A1B46" import="1">Audio/Great Works of Music/GW_Johannes_Ockeghem--Intemerata.mp3</File>
+    <File md5="D230C0F5CB7AF86B13B07B718580C2A2" import="1">Audio/Great Works of Music/GW_John_Sheppard--Media_Vita.mp3</File>
+    <File md5="0FC87E00CB0980573834906F630142D2" import="1">Audio/Great Works of Music/GW_Mozart_Requiem.mp3</File>
+    <File md5="6D1847C3106F4CB543402AD60F66F3E7" import="1">Audio/Great Works of Music/GW_Palestrina--Alma_Redemptoris_Mater.mp3</File>
+    <File md5="821D3D54E3B1734AC3BBF53684899337" import="1">Audio/Great Works of Music/GW_Palestrina--Missa Papae Marcelli_ III_ Credo.mp3</File>
+    <File md5="4EB5A4587105745BE2E92CA5EC86472B" import="1">Audio/Great Works of Music/GW_Verdi_Dies_Irae.mp3</File>
+    <File md5="6A91B4BCED611BBFE389AA1036299148" import="1">Audio/Pius_Peace.mp3</File>
+    <File md5="24E0E2F8170571929C52C59432EE88DA" import="1">Audio/Pius_War.mp3</File>
+    <File md5="FD99CDAFAD84D0F499D384D6C499CE1A" import="0">Audio/Sound.xml</File>
+    <File md5="A533C2392C0BCDE7186A8496B5F17C06" import="0">Core/JFD_PapalStates_ArtDefines.sql</File>
+    <File md5="601040B2918331CA943EAB1D3C15ADF4" import="0">Core/JFD_PapalStates_GameDefines.sql</File>
+    <File md5="717D9859C009341A743874082F474B6C" import="0">Core/JFD_PapalStates_GameDefines_Diplomacy.sql</File>
+    <File md5="AB380368A94B5D7B74015F805F2FC4EC" import="0">Core/JFD_PapalStates_GameDefines_ModSupport.sql</File>
+    <File md5="6A743B4EA5E1E03E8B1E6FEC41526BCF" import="0">Core/JFD_PapalStates_GameText.xml</File>
+    <File md5="BD175BBD41F2E0E7AA6283955DBE62DB" import="0">Core/JFD_PapalStates_GameText_Diplomacy.xml</File>
+    <File md5="9165CFA3436BE52338BA7518893F5231" import="0">Core/JFD_PapalStates_GameText_ModSupport.xml</File>
+    <File md5="D5C5BD0C59757735517D96FAB438377B" import="0">DeleteMissingReferences.xml</File>
+    <File md5="FF2CD8B41A61E672EC224F985034B75A" import="1">Lua/JFD_PapalStates_Decisions.lua</File>
+    <File md5="9CE8DF5E81C78A2BE8C5B4355553075E" import="1">Lua/JFD_PapalStates_Events.lua</File>
+    <File md5="F4FE5EEAEFBAC55489826640BB4323A6" import="0">Lua/JFD_PapalStates_Functions.lua</File>
+    <File md5="BCE3061A155668AF5D155AE02F0F3A53" import="0">Lua/JFD_PapalStates_Functions.xml</File>
+    <File md5="64DF635BD57CDEB13DC1038934568A7E" import="0">Lua/Sukritact's MCIS/CityInfoStack.lua</File>
+    <File md5="4E7C5E4894BC0A0E0CBA1743787E1015" import="0">Lua/Sukritact's MCIS/CityInfoStack.xml</File>
+    <File md5="4006FE07EFBC07CD74767D0A3AD9302C" import="0">Lua/Sukritact's MCIS/JFD_PapalStates_SwissGuard_CityInfo.lua</File>
+    <File md5="E43C569D2687522D8F075C5C362E9D2E" import="0">Lua/Sukritact's MCIS/JFD_PapalStates_SwissGuard_CityInfo.xml</File>
+    <File md5="4486E05E92C6A1829D1BD4FC8EAB80DE" import="1">Lua/UI/InGame/Popups/CultureOverview.lua</File>
+    <File md5="BF85D174CA9D4F2EC2AD7E3FBB6C0D6D" import="1">Lua/UI/InGame/Popups/CultureOverview.xml</File>
+    <File md5="3B7B1EE92949FC3B7B9308074F036BEB" import="1">Lua/Utilities/NewSaveUtils.lua</File>
+    <File md5="2AAEFCE9788ABC5C6FDC338E9A845AD9" import="0">Readme.txt</File>
+  </Files>
+  <Actions>
+    <OnModActivated>
+      <UpdateDatabase>Audio/Sound.xml</UpdateDatabase>
+      <UpdateDatabase>Core/JFD_PapalStates_ArtDefines.sql</UpdateDatabase>
+      <UpdateDatabase>Core/JFD_PapalStates_GameDefines.sql</UpdateDatabase>
+      <UpdateDatabase>Core/JFD_PapalStates_GameDefines_Diplomacy.sql</UpdateDatabase>
+      <UpdateDatabase>Core/JFD_PapalStates_GameDefines_ModSupport.sql</UpdateDatabase>
+      <UpdateDatabase>Core/JFD_PapalStates_GameText.xml</UpdateDatabase>
+      <UpdateDatabase>Core/JFD_PapalStates_GameText_Diplomacy.xml</UpdateDatabase>
+      <UpdateDatabase>Core/JFD_PapalStates_GameText_ModSupport.xml</UpdateDatabase>
+      <UpdateDatabase>DeleteMissingReferences.xml</UpdateDatabase>
+    </OnModActivated>
+  </Actions>
+  <EntryPoints>
+    <EntryPoint type="InGameUIAddin" file="Lua/Sukritact's MCIS/CityInfoStack.lua">
+      <Name>Sukritact's City Info Stack</Name>
+      <Description>
+      </Description>
+    </EntryPoint>
+    <EntryPoint type="InGameUIAddin" file="Lua/Sukritact's MCIS/JFD_PapalStates_SwissGuard_CityInfo.lua">
+      <Name>JFD_PapalStates_SwissGuard_CityInfo</Name>
+      <Description>
+      </Description>
+    </EntryPoint>
+    <EntryPoint type="InGameUIAddin" file="Lua/JFD_PapalStates_Functions.lua">
+      <Name>JFD_PapalStates_Functions</Name>
+      <Description>
+      </Description>
+    </EntryPoint>
+  </EntryPoints>
+</Mod>

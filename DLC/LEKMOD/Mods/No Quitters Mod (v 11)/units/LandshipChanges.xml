@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2016-09-24 19:11:52 -->
+<GameData>
+
+	<!-- Landships can now be purchased with Faith. -->
+	<Units>
+		<Update>
+			<Set FaithCost="700" RequiresFaithPurchaseEnabled="true" />
+			<Where Type="UNIT_WWI_TANK" />
+		</Update>
+	</Units>
+	
+</GameData>

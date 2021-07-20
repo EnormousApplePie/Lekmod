@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2/13/2016 1:27:56 AM -->
+<GameData>
+	<!-- Representation: Now also provides +1 Gold per Monument. -->
+	<Policy_BuildingClassYieldChanges>
+		<Row>
+			<PolicyType>POLICY_REPRESENTATION</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_MONUMENT</BuildingClassType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<YieldChange>1</YieldChange>
+		</Row>
+	</Policy_BuildingClassYieldChanges>
+	
+</GameData>

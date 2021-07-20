@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2/15/2016 7:59:53 PM -->
+<GameData>
+
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_TRAIT_PHOENICIAN_HERITAGE" />
+		<Row Tag="TXT_KEY_TRAIT_PHOENICIAN_HERITAGE">
+			<Text>All coastal Cities get a free Harbor. Units may cross mountains, taking 50 HP damage if they end a turn on a mountain.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_TRAIT_PHOENICIAN_HERITAGE" />
+		<Row Tag="TXT_KEY_TRAIT_PHOENICIAN_HERITAGE">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]All coastal Cities get a free Harbor. Units may cross mountains, taking 50 HP damage if they end a turn on a mountain.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_TRAIT_PHOENICIAN_HERITAGE" />
+		<Row Tag="TXT_KEY_TRAIT_PHOENICIAN_HERITAGE">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]All coastal Cities get a free Harbor. Units may cross mountains, taking 50 HP damage if they end a turn on a mountain.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_TRAIT_PHOENICIAN_HERITAGE" />
+		<Row Tag="TXT_KEY_TRAIT_PHOENICIAN_HERITAGE">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]All coastal Cities get a free Harbor. Units may cross mountains, taking 50 HP damage if they end a turn on a mountain.</Text>
+		</Row>
+	</Language_RU_RU>
+
+
+</GameData>

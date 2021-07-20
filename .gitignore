@@ -1,16 +1,16 @@
 
-# ignore all
+# ignore all files by default
 *
 # not sure why this is needed for next part, but it is
-
-# allow these exact files:
-!.gitignore
-!readme.md
 !*/
-#!/DLC/readme.md
 
-# most data
-#!/DLC/LEKMOD_V28.2/Override/CIV5Units.xml
+# allow this git ignore file
+!.gitignore
+# allow the readme file
+!readme.md
+
+# lekmod data changes
+!/DLC/LEKMOD/**
 # text
 #!/DLC/LEKMOD_V28.2/Override/CIV5Units_Mongol.xml
 

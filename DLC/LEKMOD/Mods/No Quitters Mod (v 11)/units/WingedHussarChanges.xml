@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2016-09-14 13:02:31 -->
+<GameData>
+
+	<!-- remove Shock I from winged hussar -->
+	<Unit_FreePromotions>
+		<Delete UnitType="UNIT_POLISH_WINGED_HUSSAR" PromotionType="PROMOTION_SHOCK_1" />
+	</Unit_FreePromotions>
+	
+</GameData>
