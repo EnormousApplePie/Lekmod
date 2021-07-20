@@ -6,38 +6,37 @@
 # allow these exact files:
 !.gitignore
 !*/
-!/DLC/readme.md
+#!/DLC/readme.md
 
 # most data
-!/DLC/LEKMOD_V28.2/Override/CIV5Units.xml
+#!/DLC/LEKMOD_V28.2/Override/CIV5Units.xml
 # text
-!/DLC/LEKMOD_V28.2/Override/CIV5Units_Mongol.xml
+#!/DLC/LEKMOD_V28.2/Override/CIV5Units_Mongol.xml
 
 # main menu background and music
-!/DLC/LEKMOD_V28.2/UI/policy_buildings.lua
-!/DLC/LEKMOD_V28.2/UI/CityBannerManager.lua
-!/DLC/LEKMOD_V28.2/UI/InGame.lua
+#!/DLC/LEKMOD_V28.2/UI/policy_buildings.lua
+#!/DLC/LEKMOD_V28.2/UI/CityBannerManager.lua
+#!/DLC/LEKMOD_V28.2/UI/InGame.lua
 # tourism combat mod
-!/DLC/LEKMOD_V28.2/Mods/No Quitters Mod (v 11)/ui/EnemyUnitPanel.lua
+#!/DLC/LEKMOD_V28.2/Mods/No Quitters Mod (v 11)/ui/EnemyUnitPanel.lua
 # remove old exploration policy behavior
-!/DLC/LEKMOD_V28.2/Mods/No Quitters Mod (v 11)/social_policies/8_exploration/*.lua
+#!/DLC/LEKMOD_V28.2/Mods/No Quitters Mod (v 11)/social_policies/8_exploration/*.lua
 # demographics screen
-!/DLC/LEKMOD_V28.2/UI/InGame/Popups/Demographics.lua
+#!/DLC/LEKMOD_V28.2/UI/InGame/Popups/Demographics.lua
 
 # main menu background and music
-!/DLC/Expansion2/**/AudioDefinesExpansion2.xml
-!/DLC/LEKMOD_V28.2/civilzationvatlas-vanilla.dds
-!/UI/FrontEnd/FrontEnd.lua
+#!/DLC/Expansion2/**/AudioDefinesExpansion2.xml
+#!/DLC/LEKMOD_V28.2/civilzationvatlas-vanilla.dds
+#!/UI/FrontEnd/FrontEnd.lua
 
 # dlls
-!/DLC/LEKMOD_V28.2/CvGameCore_Expansion2*
+#!/DLC/LEKMOD_V28.2/CvGameCore_Expansion2*
 # dll code
-!/DLC/LEKMOD_V28.2/nqmod-vs2008-master/**
+#!/DLC/LEKMOD_V28.2/nqmod-vs2008-master/**
 # dll compile residue
-**.pdb
-**.obj
-**.asm
-**.ncb
-**.suo
-**.user
-**/BuildTemp
+#**.obj
+#**.asm
+#**.ncb
+#**.suo
+#**.user
+#**/BuildTemp
