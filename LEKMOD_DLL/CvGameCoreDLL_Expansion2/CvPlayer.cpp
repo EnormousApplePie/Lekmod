@@ -13287,7 +13287,7 @@ int CvPlayer::GetUnhappinessFromCitySpecialists(CvCity* pAssumeCityAnnexed, CvCi
 			if(isHalfMoreSpecialistUnhappiness())
 			{
 				iPopulation++; // Round up
-				iPopulation *= 1.5;
+				iPopulation *= 0.5;
 			}
 
 			iUnhappinessFromThisCity = iPopulation * iUnhappinessPerPop;
