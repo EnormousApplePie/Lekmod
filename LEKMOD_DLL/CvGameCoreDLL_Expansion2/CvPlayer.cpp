@@ -12930,7 +12930,7 @@ int CvPlayer::GetUnhappinessFromCityForUI(CvCity* pCity) const
 	if(isHalfMoreSpecialistUnhappiness())
 	{
 		int iSpecialistCount = pCity->GetCityCitizens()->GetTotalSpecialistCount() * 100;
-		iPopulation -= (iSpecialistCount * 1.5);
+		iPopulation += (iSpecialistCount / 2);
 	}
 
 	// Occupied?
@@ -13155,7 +13155,7 @@ int CvPlayer::GetUnhappinessFromCityPopulation(CvCity* pAssumeCityAnnexed, CvCit
 				if (pLoopCity == pAssumeCityExtraSpecialist)
 					iSpecialistCount++;
 #endif
-				iPopulation -= (iSpecialistCount * 1.5);
+				iPopulation += (iSpecialistCount / 2);
 			}
 
 			iUnhappinessFromThisCity = iPopulation * iUnhappinessPerPop;
@@ -13378,7 +13378,7 @@ int CvPlayer::GetUnhappinessFromOccupiedCities(CvCity* pAssumeCityAnnexed, CvCit
 				if (pLoopCity == pAssumeCityExtraSpecialist)
 					iSpecialistCount++;
 #endif
-				iPopulation -= (iSpecialistCount * 1.5);
+				iPopulation += (iSpecialistCount / 2);
 			}
 
 			iUnhappinessFromThisCity = int(double(iPopulation) * fUnhappinessPerPop);
