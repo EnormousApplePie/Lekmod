@@ -72,28 +72,32 @@ end
 
 -- Maurya UA
 
-local iCiv = GameInfoTypes["LEADER_MC_ASHOKA"]
+local iCiv = GameInfoTypes["CIVILIZATION_MC_MAURYA"]
 local bIsActive = JFD_IsCivilisationActive(iCiv)
 
 -- from JFD
 function MauryaHeal(playerID, unitID, unitX, unitY)
 	local player = Players[playerID]
 	if player:GetCivilizationType() == GameInfoTypes["CIVILIZATION_MC_MAURYA"] and player:IsAlive() then
+		print("Found Maurya")
 		local inFriendlyTerritory = false
 		local unit = player:GetUnitByID(unitID)
 		if not unit:IsDead() then
 				if Map.GetPlot(unit:GetX(), unit:GetY()):GetOwner() == playerID then
 					inFriendlyTerritory = true
+					print("Found Unit in territory")
 				end
 		end
 		
 		if inFriendlyTerritory then
 			if not unit:IsHasPromotion(GameInfoTypes["PROMOTION_INSCRIPTIONS_HEAL"]) then
 				unit:SetHasPromotion(GameInfoTypes["PROMOTION_INSCRIPTIONS_HEAL"], true)
+				print("Set Promo Maurya true")
 			end
 		else
 			if unit:IsHasPromotion(GameInfoTypes["PROMOTION_INSCRIPTIONS_HEAL"]) then
 				unit:SetHasPromotion(GameInfoTypes["PROMOTION_INSCRIPTIONS_HEAL"], false)
+				print("Set Promo Maurya false")
 			end
 		end
 	end
