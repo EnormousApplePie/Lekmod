@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2017-02-11 01:28:45 -->
+<GameData>
+	
+	<!-- Sailing now available in column 1, directly off of Agriculture, cost reduced to match. -->
+	<Technologies>
+		<Update>
+			<Set GridX="1" Cost="35" />
+			<Where Type="TECH_SAILING" />
+		</Update>
+		
+		<!-- move Agriculture and Pottery around to visually compensate for this -->
+		<Update>
+			<Set GridY="4" />
+			<Where Type="TECH_AGRICULTURE" />
+		</Update>
+		<Update>
+			<Set GridY="2" />
+			<Where Type="TECH_POTTERY" />
+		</Update>
+		
+	</Technologies>
+	<Technology_PrereqTechs>
+		<Update>
+			<Set PrereqTech="TECH_AGRICULTURE" />
+			<Where TechType="TECH_SAILING" PrereqTech="TECH_POTTERY" />
+		</Update>
+	</Technology_PrereqTechs>
+
+	<!-- move Trireme, Dromon, and Quinquereme to Optics so that they aren't available so fast -->
+	<Units>
+		<Update>
+			<Set PrereqTech="TECH_OPTICS" />
+			<Where Type="UNIT_TRIREME" />
+		</Update>
+		<Update>
+			<Set PrereqTech="TECH_OPTICS" />
+			<Where Type="UNIT_BYZANTINE_DROMON" />
+		</Update>
+		<Update>
+			<Set PrereqTech="TECH_OPTICS" />
+			<Where Type="UNIT_CARTHAGINIAN_QUINQUEREME" />
+		</Update>
+	</Units>
+
+</GameData>

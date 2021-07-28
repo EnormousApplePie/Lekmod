@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2017-02-12 15:59:23 -->
+<GameData>
+	
+	<!-- Collectivization (replaces Young Pioneers): +1 Food from Farms and Terrace Farms. -->
+	<Policies>
+		<Update>
+			<Set Level="1" />
+			<Where Type="POLICY_YOUNG_PIONEERS" />
+		</Update>
+	</Policies>
+	<Policy_BuildingClassHappiness>
+		<Delete PolicyType="POLICY_YOUNG_PIONEERS" />
+	</Policy_BuildingClassHappiness>
+	<Policy_ImprovementYieldChanges>
+		<Row>
+			<PolicyType>POLICY_YOUNG_PIONEERS</PolicyType>
+			<ImprovementType>IMPROVEMENT_FARM</ImprovementType>
+			<YieldType>YIELD_FOOD</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_YOUNG_PIONEERS</PolicyType>
+			<ImprovementType>IMPROVEMENT_TERRACE_FARM</ImprovementType>
+			<YieldType>YIELD_FOOD</YieldType>
+			<Yield>1</Yield>
+		</Row>
+	</Policy_ImprovementYieldChanges>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_POLICY_YOUNG_PIONEERS" />
+		<Row Tag="TXT_KEY_POLICY_YOUNG_PIONEERS">
+			<Text>Collectivization</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_YOUNG_PIONEERS_HELP" />
+		<Row Tag="TXT_KEY_POLICY_YOUNG_PIONEERS_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Collectivization[ENDCOLOR][NEWLINE]+1 [ICON_FOOD] Food from Farms and Terrace Farms.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_POLICY_YOUNG_PIONEERS" />
+		<Row Tag="TXT_KEY_POLICY_YOUNG_PIONEERS">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Collectivization</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_YOUNG_PIONEERS_HELP" />
+		<Row Tag="TXT_KEY_POLICY_YOUNG_PIONEERS_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Collectivization[ENDCOLOR][NEWLINE]+1 [ICON_FOOD] Food from Farms and Terrace Farms.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_POLICY_YOUNG_PIONEERS" />
+		<Row Tag="TXT_KEY_POLICY_YOUNG_PIONEERS">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Collectivization</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_YOUNG_PIONEERS_HELP" />
+		<Row Tag="TXT_KEY_POLICY_YOUNG_PIONEERS_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Collectivization[ENDCOLOR][NEWLINE]+1 [ICON_FOOD] Food from Farms and Terrace Farms.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_POLICY_YOUNG_PIONEERS" />
+		<Row Tag="TXT_KEY_POLICY_YOUNG_PIONEERS">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Collectivization</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_YOUNG_PIONEERS_HELP" />
+		<Row Tag="TXT_KEY_POLICY_YOUNG_PIONEERS_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Collectivization[ENDCOLOR][NEWLINE]+1 [ICON_FOOD] Food from Farms and Terrace Farms.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

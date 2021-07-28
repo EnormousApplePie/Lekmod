@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 6/2/2015 11:43:13 PM -->
+<GameData>
+	
+	<!-- Consulates now creates a building in your Capital that gives you votes based on Era (1 vote + 1 vote per era after Renaissance. -->
+	<Policies>
+		<Update>
+			<Set MinorFriendshipMinimum="0" />
+			<Where Type="POLICY_CONSULATES" />
+		</Update>
+	</Policies>
+	
+	<!-- Consulats Localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_POLICY_CONSULATES_HELP" />
+		<Row Tag="TXT_KEY_POLICY_CONSULATES_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Consulates[ENDCOLOR][NEWLINE]Gain 1 additional Delegate in the World Congress, and 1 additional Delegate for each Era you advance past the Renaissance.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_RENAISSANCE_CONSULATE_DESC">
+			<Text>Consulate</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_RENAISSANCE_CONSULATE_STRATEGY">
+			<Text>Grants you 1 additional Delegate in the World Congress.[NEWLINE][NEWLINE]This building appears for free when you choose the Consulates Social Policy in the Patronage tree.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_INDUSTRIAL_CONSULATE_DESC">
+			<Text>Consulate Wing 1</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_INDUSTRIAL_CONSULATE_STRATEGY">
+			<Text>Grants you 1 additional Delegate in the World Congress.[NEWLINE][NEWLINE]This building appears for free when you choose the Consulates Social Policy in the Patronage tree and you have advanced to the Industrial Era.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_MODERN_CONSULATE_DESC">
+			<Text>Consulate Wing 2</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_MODERN_CONSULATE_STRATEGY">
+			<Text>Grants you 1 additional Delegate in the World Congress.[NEWLINE][NEWLINE]This building appears for free when you choose the Consulates Social Policy in the Patronage tree and you have advanced to the Modern Era.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_ATOMIC_CONSULATE_DESC">
+			<Text>Consulate Wing 3</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_ATOMIC_CONSULATE_STRATEGY">
+			<Text>Grants you 1 additional Delegate in the World Congress.[NEWLINE][NEWLINE]This building appears for free when you choose the Consulates Social Policy in the Patronage tree and you have advanced to the Atomic Era.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_INFORMATION_CONSULATE_DESC">
+			<Text>Consulate Wing 4</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_INFORMATION_CONSULATE_STRATEGY">
+			<Text>Grants you 1 additional Delegate in the World Congress.[NEWLINE][NEWLINE]This building appears for free when you choose the Consulates Social Policy in the Patronage tree and you have advanced to the Information Era.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_POLICY_CONSULATES_HELP" />
+		<Row Tag="TXT_KEY_POLICY_CONSULATES_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Consulates[ENDCOLOR][NEWLINE]Gain 1 additional Delegate in the World Congress, and 1 additional Delegate for each Era you advance past the Renaissance.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_RENAISSANCE_CONSULATE_DESC">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Consulate</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_RENAISSANCE_CONSULATE_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Grants you 1 additional Delegate in the World Congress.[NEWLINE][NEWLINE]This building appears for free when you choose the Consulates Social Policy in the Patronage tree.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_INDUSTRIAL_CONSULATE_DESC">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Consulate Wing 1</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_INDUSTRIAL_CONSULATE_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Grants you 1 additional Delegate in the World Congress.[NEWLINE][NEWLINE]This building appears for free when you choose the Consulates Social Policy in the Patronage tree and you have advanced to the Industrial Era.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_MODERN_CONSULATE_DESC">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Consulate Wing 2</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_MODERN_CONSULATE_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Grants you 1 additional Delegate in the World Congress.[NEWLINE][NEWLINE]This building appears for free when you choose the Consulates Social Policy in the Patronage tree and you have advanced to the Modern Era.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_ATOMIC_CONSULATE_DESC">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Consulate Wing 3</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_ATOMIC_CONSULATE_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Grants you 1 additional Delegate in the World Congress.[NEWLINE][NEWLINE]This building appears for free when you choose the Consulates Social Policy in the Patronage tree and you have advanced to the Atomic Era.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_INFORMATION_CONSULATE_DESC">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Consulate Wing 4</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_INFORMATION_CONSULATE_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Grants you 1 additional Delegate in the World Congress.[NEWLINE][NEWLINE]This building appears for free when you choose the Consulates Social Policy in the Patronage tree and you have advanced to the Information Era.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_POLICY_CONSULATES_HELP" />
+		<Row Tag="TXT_KEY_POLICY_CONSULATES_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Consulates[ENDCOLOR][NEWLINE]Gain 1 additional Delegate in the World Congress, and 1 additional Delegate for each Era you advance past the Renaissance.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_RENAISSANCE_CONSULATE_DESC">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Consulate</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_RENAISSANCE_CONSULATE_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Grants you 1 additional Delegate in the World Congress.[NEWLINE][NEWLINE]This building appears for free when you choose the Consulates Social Policy in the Patronage tree.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_INDUSTRIAL_CONSULATE_DESC">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Consulate Wing 1</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_INDUSTRIAL_CONSULATE_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Grants you 1 additional Delegate in the World Congress.[NEWLINE][NEWLINE]This building appears for free when you choose the Consulates Social Policy in the Patronage tree and you have advanced to the Industrial Era.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_MODERN_CONSULATE_DESC">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Consulate Wing 2</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_MODERN_CONSULATE_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Grants you 1 additional Delegate in the World Congress.[NEWLINE][NEWLINE]This building appears for free when you choose the Consulates Social Policy in the Patronage tree and you have advanced to the Modern Era.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_ATOMIC_CONSULATE_DESC">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Consulate Wing 3</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_ATOMIC_CONSULATE_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Grants you 1 additional Delegate in the World Congress.[NEWLINE][NEWLINE]This building appears for free when you choose the Consulates Social Policy in the Patronage tree and you have advanced to the Atomic Era.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_INFORMATION_CONSULATE_DESC">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Consulate Wing 4</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_INFORMATION_CONSULATE_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Grants you 1 additional Delegate in the World Congress.[NEWLINE][NEWLINE]This building appears for free when you choose the Consulates Social Policy in the Patronage tree and you have advanced to the Information Era.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_POLICY_CONSULATES_HELP" />
+		<Row Tag="TXT_KEY_POLICY_CONSULATES_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Consulates[ENDCOLOR][NEWLINE]Gain 1 additional Delegate in the World Congress, and 1 additional Delegate for each Era you advance past the Renaissance.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_RENAISSANCE_CONSULATE_DESC">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Consulate</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_RENAISSANCE_CONSULATE_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Grants you 1 additional Delegate in the World Congress.[NEWLINE][NEWLINE]This building appears for free when you choose the Consulates Social Policy in the Patronage tree.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_INDUSTRIAL_CONSULATE_DESC">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Consulate Wing 1</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_INDUSTRIAL_CONSULATE_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Grants you 1 additional Delegate in the World Congress.[NEWLINE][NEWLINE]This building appears for free when you choose the Consulates Social Policy in the Patronage tree and you have advanced to the Industrial Era.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_MODERN_CONSULATE_DESC">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Consulate Wing 2</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_MODERN_CONSULATE_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Grants you 1 additional Delegate in the World Congress.[NEWLINE][NEWLINE]This building appears for free when you choose the Consulates Social Policy in the Patronage tree and you have advanced to the Modern Era.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_ATOMIC_CONSULATE_DESC">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Consulate Wing 3</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_ATOMIC_CONSULATE_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Grants you 1 additional Delegate in the World Congress.[NEWLINE][NEWLINE]This building appears for free when you choose the Consulates Social Policy in the Patronage tree and you have advanced to the Atomic Era.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_INFORMATION_CONSULATE_DESC">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Consulate Wing 4</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_INFORMATION_CONSULATE_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Grants you 1 additional Delegate in the World Congress.[NEWLINE][NEWLINE]This building appears for free when you choose the Consulates Social Policy in the Patronage tree and you have advanced to the Information Era.</Text>
+		</Row>
+	</Language_RU_RU>
+
+	<!-- BuildingClasses for Consulates -->
+	<BuildingClasses>
+		<Row>
+			<Type>BUILDINGCLASS_RENAISSANCE_CONSULATE</Type>
+			<DefaultBuilding>BUILDING_RENAISSANCE_CONSULATE</DefaultBuilding>
+			<Description>TXT_KEY_BUILDING_RENAISSANCE_CONSULATE_DESC</Description>
+		</Row>
+		<Row>
+			<Type>BUILDINGCLASS_INDUSTRIAL_CONSULATE</Type>
+			<DefaultBuilding>BUILDING_INDUSTRIAL_CONSULATE</DefaultBuilding>
+			<Description>TXT_KEY_BUILDING_INDUSTRIAL_CONSULATE_DESC</Description>
+		</Row>
+		<Row>
+			<Type>BUILDINGCLASS_MODERN_CONSULATE</Type>
+			<DefaultBuilding>BUILDING_MODERN_CONSULATE</DefaultBuilding>
+			<Description>TXT_KEY_BUILDING_MODERN_CONSULATE_DESC</Description>
+		</Row>
+				<Row>
+			<Type>BUILDINGCLASS_ATOMIC_CONSULATE</Type>
+			<DefaultBuilding>BUILDING_ATOMIC_CONSULATE</DefaultBuilding>
+			<Description>TXT_KEY_BUILDING_ATOMIC_CONSULATE_DESC</Description>
+		</Row>
+		<Row>
+			<Type>BUILDINGCLASS_INFORMATION_CONSULATE</Type>
+			<DefaultBuilding>BUILDING_INFORMATION_CONSULATE</DefaultBuilding>
+			<Description>TXT_KEY_BUILDING_INFORMATION_CONSULATE_DESC</Description>
+		</Row>
+	</BuildingClasses>
+	
+	<!-- Building Entries for Consulates -->
+	<Buildings>
+		<Row>
+			<Type>BUILDING_RENAISSANCE_CONSULATE</Type>
+			<BuildingClass>BUILDINGCLASS_RENAISSANCE_CONSULATE</BuildingClass>
+			<Cost>-1</Cost>
+			<HurryCostModifier>-1</HurryCostModifier>
+			<NukeImmune>true</NukeImmune>
+			<ExtraLeagueVotes>1</ExtraLeagueVotes>
+			<Help>TXT_KEY_BUILDING_RENAISSANCE_CONSULATE_STRATEGY</Help>
+			<Description>TXT_KEY_BUILDING_RENAISSANCE_CONSULATE_DESC</Description>
+			<Strategy>TXT_KEY_BUILDING_RENAISSANCE_CONSULATE_STRATEGY</Strategy>
+			<ArtDefineTag>PALACE</ArtDefineTag>
+			<MinAreaSize>-1</MinAreaSize>
+			<IconAtlas>TECH_ATLAS_1</IconAtlas>
+			<PortraitIndex>35</PortraitIndex>
+		</Row>
+		<Row>
+			<Type>BUILDING_INDUSTRIAL_CONSULATE</Type>
+			<BuildingClass>BUILDINGCLASS_INDUSTRIAL_CONSULATE</BuildingClass>
+			<Cost>-1</Cost>
+			<HurryCostModifier>-1</HurryCostModifier>
+			<NukeImmune>true</NukeImmune>
+			<ExtraLeagueVotes>1</ExtraLeagueVotes>
+			<Help>TXT_KEY_BUILDING_INDUSTRIAL_CONSULATE_STRATEGY</Help>
+			<Description>TXT_KEY_BUILDING_INDUSTRIAL_CONSULATE_DESC</Description>
+			<Strategy>TXT_KEY_BUILDING_INDUSTRIAL_CONSULATE_STRATEGY</Strategy>
+			<ArtDefineTag>PALACE</ArtDefineTag>
+			<MinAreaSize>-1</MinAreaSize>
+			<IconAtlas>TECH_ATLAS_1</IconAtlas>
+			<PortraitIndex>35</PortraitIndex>
+		</Row>
+		<Row>
+			<Type>BUILDING_MODERN_CONSULATE</Type>
+			<BuildingClass>BUILDINGCLASS_MODERN_CONSULATE</BuildingClass>
+			<Cost>-1</Cost>
+			<HurryCostModifier>-1</HurryCostModifier>
+			<NukeImmune>true</NukeImmune>
+			<ExtraLeagueVotes>1</ExtraLeagueVotes>
+			<Help>TXT_KEY_BUILDING_MODERN_CONSULATE_STRATEGY</Help>
+			<Description>TXT_KEY_BUILDING_MODERN_CONSULATE_DESC</Description>
+			<Strategy>TXT_KEY_BUILDING_MODERN_CONSULATE_STRATEGY</Strategy>
+			<ArtDefineTag>PALACE</ArtDefineTag>
+			<MinAreaSize>-1</MinAreaSize>
+			<IconAtlas>TECH_ATLAS_1</IconAtlas>
+			<PortraitIndex>35</PortraitIndex>
+		</Row>
+		<Row>
+			<Type>BUILDING_ATOMIC_CONSULATE</Type>
+			<BuildingClass>BUILDINGCLASS_ATOMIC_CONSULATE</BuildingClass>
+			<Cost>-1</Cost>
+			<HurryCostModifier>-1</HurryCostModifier>
+			<NukeImmune>true</NukeImmune>
+			<ExtraLeagueVotes>1</ExtraLeagueVotes>
+			<Help>TXT_KEY_BUILDING_ATOMIC_CONSULATE_STRATEGY</Help>
+			<Description>TXT_KEY_BUILDING_ATOMIC_CONSULATE_DESC</Description>
+			<Strategy>TXT_KEY_BUILDING_ATOMIC_CONSULATE_STRATEGY</Strategy>
+			<ArtDefineTag>PALACE</ArtDefineTag>
+			<MinAreaSize>-1</MinAreaSize>
+			<IconAtlas>TECH_ATLAS_1</IconAtlas>
+			<PortraitIndex>35</PortraitIndex>
+		</Row>
+		<Row>
+			<Type>BUILDING_INFORMATION_CONSULATE</Type>
+			<BuildingClass>BUILDINGCLASS_INFORMATION_CONSULATE</BuildingClass>
+			<Cost>-1</Cost>
+			<HurryCostModifier>-1</HurryCostModifier>
+			<NukeImmune>true</NukeImmune>
+			<ExtraLeagueVotes>1</ExtraLeagueVotes>
+			<Help>TXT_KEY_BUILDING_INFORMATION_CONSULATE_STRATEGY</Help>
+			<Description>TXT_KEY_BUILDING_INFORMATION_CONSULATE_DESC</Description>
+			<Strategy>TXT_KEY_BUILDING_INFORMATION_CONSULATE_STRATEGY</Strategy>
+			<ArtDefineTag>PALACE</ArtDefineTag>
+			<MinAreaSize>-1</MinAreaSize>
+			<IconAtlas>TECH_ATLAS_1</IconAtlas>
+			<PortraitIndex>35</PortraitIndex>
+		</Row>
+	</Buildings>
+
+</GameData>

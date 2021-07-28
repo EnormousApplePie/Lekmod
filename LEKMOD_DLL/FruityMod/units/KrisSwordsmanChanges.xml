@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 10/2/2015 3:44:21 PM -->
+<GameData>
+
+	<!-- Increase combat strength to 15 and eliminate Enemy Sword and Evil Spirits promotion possibilties -->
+	<Units>
+		<Update>
+			<Set Combat="15" />
+			<Where Type="UNIT_KRIS_SWORDSMAN" />
+		</Update>
+	</Units>
+	<UnitPromotions_PostCombatRandomPromotion>
+		<Delete PromotionType="PROMOTION_MYSTIC_BLADE" NewPromotion="PROMOTION_ENEMY_BLADE" />
+		<Delete PromotionType="PROMOTION_MYSTIC_BLADE" NewPromotion="PROMOTION_EVIL_SPIRITS" />
+	</UnitPromotions_PostCombatRandomPromotion>
+
+</GameData>

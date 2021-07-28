@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 6/12/2015 3:29:33 AM -->
+<GameData>
+
+	<!-- Mercantilism -->
+	<Policy_BuildingClassYieldChanges>
+		<Update>
+			<Set YieldChange="2" />
+			<Where PolicyType="POLICY_MERCANTILISM" BuildingClassType="BUILDINGCLASS_MINT" YieldType="YIELD_SCIENCE" />
+		</Update>
+		<Update>
+			<Set YieldChange="2" />
+			<Where PolicyType="POLICY_MERCANTILISM" BuildingClassType="BUILDINGCLASS_MARKET" YieldType="YIELD_SCIENCE" />
+		</Update>
+		<Update>
+			<Set YieldChange="2" />
+			<Where PolicyType="POLICY_MERCANTILISM" BuildingClassType="BUILDINGCLASS_BANK" YieldType="YIELD_SCIENCE" />
+		</Update>
+		<Update>
+			<Set YieldChange="2" />
+			<Where PolicyType="POLICY_MERCANTILISM" BuildingClassType="BUILDINGCLASS_STOCK_EXCHANGE" YieldType="YIELD_SCIENCE" />
+		</Update>
+	</Policy_BuildingClassYieldChanges>
+	<Policy_HurryModifiers>
+		<Update>
+			<Set HurryCostModifier="-20" />
+			<Where PolicyType="POLICY_MERCANTILISM" HurryType="HURRY_GOLD" />
+		</Update>
+	</Policy_HurryModifiers>
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_POLICY_MERCANTILISM_HELP" />
+		<Row Tag="TXT_KEY_POLICY_MERCANTILISM_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Mercantilism[ENDCOLOR][NEWLINE]Purchasing items in Cities requires 20% less [ICON_GOLD] Gold. +2 [ICON_RESEARCH] Science from every Mint, Market, Bank, and Stock Exchange.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_POLICY_MERCANTILISM_HELP" />
+		<Row Tag="TXT_KEY_POLICY_MERCANTILISM_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Mercantilism[ENDCOLOR][NEWLINE]Purchasing items in Cities requires 20% less [ICON_GOLD] Gold. +2 [ICON_RESEARCH] Science from every Mint, Market, Bank, and Stock Exchange.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_POLICY_MERCANTILISM_HELP" />
+		<Row Tag="TXT_KEY_POLICY_MERCANTILISM_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Mercantilism[ENDCOLOR][NEWLINE]Purchasing items in Cities requires 20% less [ICON_GOLD] Gold. +2 [ICON_RESEARCH] Science from every Mint, Market, Bank, and Stock Exchange.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_POLICY_MERCANTILISM_HELP" />
+		<Row Tag="TXT_KEY_POLICY_MERCANTILISM_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Mercantilism[ENDCOLOR][NEWLINE]Purchasing items in Cities requires 20% less [ICON_GOLD] Gold. +2 [ICON_RESEARCH] Science from every Mint, Market, Bank, and Stock Exchange.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

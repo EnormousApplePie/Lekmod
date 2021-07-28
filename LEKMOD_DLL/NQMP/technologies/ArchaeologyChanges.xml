@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 5/4/2016 8:01:34 AM -->
+<GameData>
+
+	<!-- Archaeology no longer requires Architecture -->
+	<Technology_PrereqTechs>
+		<Delete TechType="TECH_ARCHAEOLOGY" PrereqTech="TECH_ARCHITECTURE" />
+	</Technology_PrereqTechs>
+	
+</GameData>

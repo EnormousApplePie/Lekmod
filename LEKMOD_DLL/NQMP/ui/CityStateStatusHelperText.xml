@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 4/4/2017 1:44:04 PM -->
+<GameData>
+	
+	<!-- localization -->
+	<Language_en_US>
+		<Row Tag="TXT_KEY_BASE_INFLUENCE_DESPITE_WAR">
+			<Text>(If you were at peace, your [ICON_INFLUENCE] Influence would be at {1_baseNumber}.)</Text>
+		</Row>
+		<Row Tag="TXT_KEY_INFLUENCE_TOO_LOW_FOR_PEACE_CSTATE_TT">
+			<Text>Your Influence with {1_CityStateName:textkey} is below -50, so they will not make peace with you!</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Row Tag="TXT_KEY_BASE_INFLUENCE_DESPITE_WAR">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR](If you were at peace, your [ICON_INFLUENCE] Influence would be at {1_baseNumber}.)</Text>
+		</Row>
+		<Row Tag="TXT_KEY_INFLUENCE_TOO_LOW_FOR_PEACE_CSTATE_TT">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Your Influence with {1_CityStateName:textkey} is below -50, so they will not make peace with you!</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Row Tag="TXT_KEY_BASE_INFLUENCE_DESPITE_WAR">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR](If you were at peace, your [ICON_INFLUENCE] Influence would be at {1_baseNumber}.)</Text>
+		</Row>
+		<Row Tag="TXT_KEY_INFLUENCE_TOO_LOW_FOR_PEACE_CSTATE_TT">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Your Influence with {1_CityStateName:textkey} is below -50, so they will not make peace with you!</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Row Tag="TXT_KEY_BASE_INFLUENCE_DESPITE_WAR">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR](If you were at peace, your [ICON_INFLUENCE] Influence would be at {1_baseNumber}.)</Text>
+		</Row>
+		<Row Tag="TXT_KEY_INFLUENCE_TOO_LOW_FOR_PEACE_CSTATE_TT">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Your Influence with {1_CityStateName:textkey} is below -50, so they will not make peace with you!</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

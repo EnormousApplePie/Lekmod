@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 3/30/2015 10:09:18 PM -->
+<GameData>
+	<Civilizations>
+		<Update>
+			<Set Playable="false" AIPlayable="false" />
+			<Where Type="CIVILIZATION_VENICE" />
+		</Update>
+	</Civilizations>
+</GameData>

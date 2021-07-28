@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 4/8/2015 2:55:29 PM -->
+<GameData>
+	
+	<!-- WARNING: This file needs to come before most of the other civ/unit/promotion changes since it adds a new class of units. -->
+	
+	<!-- Create new unit type -->
+	<UnitCombatInfos>
+		<Row>
+			<Type>UNITCOMBAT_PARADROPPER</Type>
+			<Description>TXT_KEY_UNITCOMBAT_PARADROPPER</Description>
+		</Row>
+	</UnitCombatInfos>
+	<Language_en_US>
+		<Row Tag="TXT_KEY_UNITCOMBAT_PARADROPPER">
+			<Text>Paradropping Units</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Row Tag="TXT_KEY_UNITCOMBAT_PARADROPPER">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Paradropping Units</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Row Tag="TXT_KEY_UNITCOMBAT_PARADROPPER">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Paradropping Units</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Row Tag="TXT_KEY_UNITCOMBAT_PARADROPPER">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Paradropping Units</Text>
+		</Row>
+	</Language_RU_RU>
+
+	<!-- Make Paradroppers and XCom Squads use the new type -->
+	<Units>
+		<Update>
+			<Set CombatClass="UNITCOMBAT_PARADROPPER" />
+			<Where Class="UNITCLASS_PARATROOPER" />
+		</Update>
+		<Update>
+			<Set CombatClass="UNITCOMBAT_PARADROPPER" />
+			<Where Class="UNITCLASS_XCOM_SQUAD" />
+		</Update>
+	</Units>
+	
+	<!-- Apply free American/Songhai/Shoshone promotions to this new unit type -->
+	<Trait_FreePromotionUnitCombats>
+		<Row>
+			<TraitType>TRAIT_RIVER_EXPANSION</TraitType>
+			<UnitCombatType>UNITCOMBAT_PARADROPPER</UnitCombatType>
+			<PromotionType>PROMOTION_SENTRY</PromotionType>
+		</Row>
+		<Row>
+			<TraitType>TRAIT_AMPHIB_WARLORD</TraitType>
+			<UnitCombatType>UNITCOMBAT_PARADROPPER</UnitCombatType>
+			<PromotionType>PROMOTION_AMPHIBIOUS</PromotionType>
+		</Row>
+		<Row>
+			<TraitType>TRAIT_AMPHIB_WARLORD</TraitType>
+			<UnitCombatType>UNITCOMBAT_PARADROPPER</UnitCombatType>
+			<PromotionType>PROMOTION_WAR_CANOES</PromotionType>
+		</Row>
+		<Row>
+			<TraitType>TRAIT_GREAT_EXPANSE</TraitType>
+			<UnitCombatType>UNITCOMBAT_PARADROPPER</UnitCombatType>
+			<PromotionType>PROMOTION_HOMELAND_GUARDIAN_BOOGALOO</PromotionType>
+		</Row>
+	</Trait_FreePromotionUnitCombats>
+
+	<!-- Everything in Civ5UnitPromotions_Inhereted_Expansion2.xml that already applies to UNITCOMBAT_GUN (except Blitz) should apply to this unit type as well -->
+	<UnitPromotions_UnitCombats>
+		<Row>
+			<PromotionType>PROMOTION_STATUE_ZEUS</PromotionType>
+			<UnitCombatType>UNITCOMBAT_PARADROPPER</UnitCombatType>
+		</Row>
+	</UnitPromotions_UnitCombats>
+	
+	<!-- Everything in Civ5UnitPromotions_Expansion2.xml that already applies to UNITCOMBAT_GUN (except Blitz) should apply to this unit type as well -->
+	<UnitPromotions_UnitCombats>
+		<Row>
+			<PromotionType>PROMOTION_ALTITUDE_TRAINING</PromotionType>
+			<UnitCombatType>UNITCOMBAT_PARADROPPER</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_HOMELAND_GUARDIAN_BOOGALOO</PromotionType>
+			<UnitCombatType>UNITCOMBAT_PARADROPPER</UnitCombatType>
+		</Row>
+	</UnitPromotions_UnitCombats>
+	<UnitPromotions_UnitCombatMods>
+		<Row>
+			<PromotionType>PROMOTION_ANTI_GUNPOWDER</PromotionType>
+			<UnitCombatType>UNITCOMBAT_PARADROPPER</UnitCombatType>
+			<Modifier>25</Modifier>
+		</Row>
+	</UnitPromotions_UnitCombatMods>
+
+	<!-- Everything in Civ5UnitPromotions.xml that already applies to UNITCOMBAT_GUN (except Blitz) should apply to this unit type as well -->
+	<UnitPromotions_UnitCombats>
+		<Row>
+			<PromotionType>PROMOTION_EMBARKATION</PromotionType>
+			<UnitCombatType>UNITCOMBAT_PARADROPPER</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_DEFENSIVE_EMBARKATION</PromotionType>
+			<UnitCombatType>UNITCOMBAT_PARADROPPER</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_ALLWATER_EMBARKATION</PromotionType>
+			<UnitCombatType>UNITCOMBAT_PARADROPPER</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_INSTA_HEAL</PromotionType>
+			<UnitCombatType>UNITCOMBAT_PARADROPPER</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_SHOCK_1</PromotionType>
+			<UnitCombatType>UNITCOMBAT_PARADROPPER</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_SHOCK_2</PromotionType>
+			<UnitCombatType>UNITCOMBAT_PARADROPPER</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_SHOCK_3</PromotionType>
+			<UnitCombatType>UNITCOMBAT_PARADROPPER</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_DRILL_1</PromotionType>
+			<UnitCombatType>UNITCOMBAT_PARADROPPER</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_DRILL_2</PromotionType>
+			<UnitCombatType>UNITCOMBAT_PARADROPPER</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_DRILL_3</PromotionType>
+			<UnitCombatType>UNITCOMBAT_PARADROPPER</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_SIEGE</PromotionType>
+			<UnitCombatType>UNITCOMBAT_PARADROPPER</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_MEDIC</PromotionType>
+			<UnitCombatType>UNITCOMBAT_PARADROPPER</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_MEDIC_II</PromotionType>
+			<UnitCombatType>UNITCOMBAT_PARADROPPER</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_AMPHIBIOUS</PromotionType>
+			<UnitCombatType>UNITCOMBAT_PARADROPPER</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_COVER_1</PromotionType>
+			<UnitCombatType>UNITCOMBAT_PARADROPPER</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_COVER_2</PromotionType>
+			<UnitCombatType>UNITCOMBAT_PARADROPPER</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_FORMATION_1</PromotionType>
+			<UnitCombatType>UNITCOMBAT_PARADROPPER</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_AMBUSH_1</PromotionType>
+			<UnitCombatType>UNITCOMBAT_PARADROPPER</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_MARCH</PromotionType>
+			<UnitCombatType>UNITCOMBAT_PARADROPPER</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_WOODSMAN</PromotionType>
+			<UnitCombatType>UNITCOMBAT_PARADROPPER</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_MORALE</PromotionType>
+			<UnitCombatType>UNITCOMBAT_PARADROPPER</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_ADJACENT_BONUS</PromotionType>
+			<UnitCombatType>UNITCOMBAT_PARADROPPER</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_HIMEJI_CASTLE</PromotionType>
+			<UnitCombatType>UNITCOMBAT_PARADROPPER</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_NATIONALISM</PromotionType>
+			<UnitCombatType>UNITCOMBAT_PARADROPPER</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_FASTER_HEAL</PromotionType>
+			<UnitCombatType>UNITCOMBAT_PARADROPPER</UnitCombatType>
+		</Row>
+	</UnitPromotions_UnitCombats>
+</GameData>

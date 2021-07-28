@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<!-- Table data 
+	<GameOptions>
+		<Row>
+			<Type>GAMEOPTION_ALLOW_CAPITOL_GIFTING</Type>
+			<Description>TXT_KEY_GAME_OPTION_ALLOW_CAPITOL_GIFTING</Description>
+			<Help>TXT_KEY_GAME_OPTION_ALLOW_CAPITOL_GIFTING_HELP</Help>
+		</Row>
+	</GameOptions>
+	<Language_en_US>
+		<Row Tag="TXT_KEY_GAME_OPTION_ALLOW_CAPITOL_GIFTING">
+			<Text>Allow Capitol Gifting</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_ALLOW_CAPITOL_GIFTING_HELP">
+			<Text>Players are allowed to gift their capitols to other players, potentially as an alternative or supplement to being voted irrelevant. AI players can also gift capitols, but will only do so if they wish to completely capitulate.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Row Tag="TXT_KEY_GAME_OPTION_ALLOW_CAPITOL_GIFTING">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Allow Capitol Gifting</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_ALLOW_CAPITOL_GIFTING_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Players are allowed to gift their capitols to other players, potentially as an alternative or supplement to being voted irrelevant. AI players can also gift capitols, but will only do so if they wish to completely capitulate.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_ES_ES>
+		<Row Tag="TXT_KEY_GAME_OPTION_ALLOW_CAPITOL_GIFTING">
+			<Text>[COLOR_WARNING_TEXT](ES_ES text) [ENDCOLOR]Allow Capitol Gifting</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_ALLOW_CAPITOL_GIFTING_HELP">
+			<Text>[COLOR_WARNING_TEXT](ES_ES text) [ENDCOLOR]Players are allowed to gift their capitols to other players, potentially as an alternative or supplement to being voted irrelevant. AI players can also gift capitols, but will only do so if they wish to completely capitulate.</Text>
+		</Row>
+	</Language_ES_ES>
+	<Language_FR_FR>
+		<Row Tag="TXT_KEY_GAME_OPTION_ALLOW_CAPITOL_GIFTING">
+			<Text>[COLOR_WARNING_TEXT](FR_FR text) [ENDCOLOR]Allow Capitol Gifting</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_ALLOW_CAPITOL_GIFTING_HELP">
+			<Text>[COLOR_WARNING_TEXT](FR_FR text) [ENDCOLOR]Players are allowed to gift their capitols to other players, potentially as an alternative or supplement to being voted irrelevant. AI players can also gift capitols, but will only do so if they wish to completely capitulate.</Text>
+		</Row>
+	</Language_FR_FR>
+	<Language_PL_PL>
+		<Row Tag="TXT_KEY_GAME_OPTION_ALLOW_CAPITOL_GIFTING">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Allow Capitol Gifting</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_ALLOW_CAPITOL_GIFTING_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Players are allowed to gift their capitols to other players, potentially as an alternative or supplement to being voted irrelevant. AI players can also gift capitols, but will only do so if they wish to completely capitulate.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Row Tag="TXT_KEY_GAME_OPTION_ALLOW_CAPITOL_GIFTING">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Allow Capitol Gifting</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_ALLOW_CAPITOL_GIFTING_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Players are allowed to gift their capitols to other players, potentially as an alternative or supplement to being voted irrelevant. AI players can also gift capitols, but will only do so if they wish to completely capitulate.</Text>
+		</Row>
+	</Language_RU_RU>-->
+</GameData>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2016-09-03 23:17:45 -->
+<GameData>
+
+	<!-- Feitorias now available at Compass instead of Navigation. -->
+	<Builds>
+		<Update>
+			<Set PrereqTech="TECH_COMPASS" />
+			<Where Type="BUILD_FEITORIA" />
+		</Update>
+	</Builds>
+	
+</GameData>

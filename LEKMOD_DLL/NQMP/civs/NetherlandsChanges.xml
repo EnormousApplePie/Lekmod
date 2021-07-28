@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by HellBlazer on 7/18/2015 9:53:11 PM -->
+<GameData>
+	
+	<!-- Give Netherlands a Wetlands Bias for Hellblazer's map scripts -->
+	<Civilization_Start_Region_Priority>
+		<Update>
+			<Where CivilizationType="CIVILIZATION_NETHERLANDS"/>
+			<Set RegionType="REGION_WETLANDS"/>
+		</Update>
+	</Civilization_Start_Region_Priority>
+	
+	<!-- New Dutch UA gives +1 Happiness per Luxury and +1 Gold per Luxury Resource -->
+	<Table name="Trait_YieldChangesLuxuryResources">
+		<Column name="TraitType" type="text" reference="Traits(Type)"/>
+		<Column name="YieldType" type="text" reference="Yields(Type)"/>
+		<Column name="Yield" type="integer"/>
+	</Table>
+	<Traits>
+		<Update>
+			<Set ExtraHappinessPerLuxury="1" LuxuryHappinessRetention="0" />
+			<Where Type="TRAIT_LUXURY_RETENTION" />
+		</Update>
+	</Traits>
+	<Trait_YieldChangesLuxuryResources>
+		<Row>
+			<TraitType>TRAIT_LUXURY_RETENTION</TraitType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<Yield>1</Yield>
+		</Row>
+	</Trait_YieldChangesLuxuryResources>
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_TRAIT_LUXURY_RETENTION" />
+		<Row Tag="TXT_KEY_TRAIT_LUXURY_RETENTION">
+			<Text>Each unique Luxury is worth +1 [ICON_HAPPINESS_1] Happiness for the empire, and Luxury Resource tiles produce +1 [ICON_GOLD] Gold.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_TRAIT_LUXURY_RETENTION" />
+		<Row Tag="TXT_KEY_TRAIT_LUXURY_RETENTION">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Each unique Luxury is worth +1 [ICON_HAPPINESS_1] Happiness for the empire, and Luxury Resource tiles produce +1 [ICON_GOLD] Gold.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_TRAIT_LUXURY_RETENTION" />
+		<Row Tag="TXT_KEY_TRAIT_LUXURY_RETENTION">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Each unique Luxury is worth +1 [ICON_HAPPINESS_1] Happiness for the empire, and Luxury Resource tiles produce +1 [ICON_GOLD] Gold.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_TRAIT_LUXURY_RETENTION" />
+		<Row Tag="TXT_KEY_TRAIT_LUXURY_RETENTION">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Each unique Luxury is worth +1 [ICON_HAPPINESS_1] Happiness for the empire, and Luxury Resource tiles produce +1 [ICON_GOLD] Gold.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>
