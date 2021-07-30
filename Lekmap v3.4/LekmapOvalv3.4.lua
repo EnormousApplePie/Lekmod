@@ -8,7 +8,7 @@
 ------------------------------------------------------------------------------
 
 include("HBMapGenerator");
-include("FractalWorld");
+include("HBFractalWorld");
 include("HBFeatureGenerator");
 include("HBTerrainGenerator");
 include("IslandMaker");
@@ -18,10 +18,10 @@ include("MultilayeredFractal");
 function GetMapScriptInfo()
 	local world_age, temperature, rainfall, sea_level, resources = GetCoreMapOptions()
 	return {
-		Name = "Lekmap: Archipelago (v3.33)",
-		Description = "A map script made for Lekmod based of HB's Mapscript v8.1. Archipelago",
+		Name = "Lekmap: Oval (v3.4)",
+		Description = "A map script made for Lekmod based of HB's Mapscript v8.1. Oval",
 		IsAdvancedMap = false,
-		IconIndex = 2,
+		IconIndex = 15,
 		SortIndex = 2,
 		SupportsMultiplayer = true,
 	CustomOptions = {
@@ -205,7 +205,7 @@ function GetMapScriptInfo()
 					"110",
 				},
 
-				DefaultValue = 17,
+				DefaultValue = 8,
 				SortPriority = -89,
 			},
 
@@ -244,7 +244,7 @@ function GetMapScriptInfo()
 
 				},
 
-				DefaultValue = 16,
+				DefaultValue = 13,
 				SortPriority = -88,
 			},
 
@@ -276,6 +276,39 @@ function GetMapScriptInfo()
 
 				DefaultValue = 1,
 				SortPriority = -90,
+			},
+			{
+				Name = "Coastal Spawns",	-- Can inland civ spawn on the coast (15)
+				Values = {
+					"Coastal Civs Only",
+					"Random",
+					"Random+ (~2 coastals)",
+				},
+
+				DefaultValue = 1,
+				SortPriority = -85,
+			},
+
+			{
+				Name = "Coastal Luxes",	-- Can coast spawns have non-coastal luxes (16)
+				Values = {
+					"Guaranteed",
+					"Random",
+				},
+
+				DefaultValue = 1,
+				SortPriority = -84,
+			},
+
+			{
+				Name = "Inland Sea Spawns",	-- Can coastal civ spawn on inland seas (17)
+				Values = {
+					"Allowed",
+					"Not Allowed for Coastal Civs",
+				},
+
+				DefaultValue = 2,
+				SortPriority = -83,
 			},
 		},
 	};
@@ -312,90 +345,126 @@ function GetMapInitData(worldSize)
 end
 ------------------------------------------------------------------------------
 ------------------------------------------------------------------------------
-function GeneratePlotTypes()
-	print("Generating Plot Types (Lua Archipelago) ...");
+function MultilayeredFractal:GeneratePlotsByRegion()
+	-- Sirian's MultilayeredFractal controlling function.
+	-- You -MUST- customize this function for each script using MultilayeredFractal.
+	--
+	-- This implementation is specific to Oval.
+	local iW, iH = Map.GetGridSize();
+	local fracFlags = {FRAC_POLAR = true};
 
-	-- Fetch Sea Level and World Age user selections.
-	local sea = Map.GetCustomOption(4)
-	if sea == 4 then
-		sea = 1 + Map.Rand(3, "Random Sea Level - Lua");
+	local sea_level = Map.GetCustomOption(4)
+	if sea_level == 4 then
+		sea_level = 1 + Map.Rand(3, "Random Sea Level - Lua");
 	end
-	local age = Map.GetCustomOption(1)
-	if age == 4 then
-		age = 1 + Map.Rand(3, "Random World Age - Lua");
+	local world_age = Map.GetCustomOption(1)
+	if world_age == 4 then
+		world_age = 1 + Map.Rand(3, "Random World Age - Lua");
 	end
+	local axis_list = {0.87, 0.81, 0.75};
+	local axis_multiplier = axis_list[sea_level];
+	local cohesion_list = {0.41, 0.38, 0.35};
+	local cohesion_multiplier = cohesion_list[sea_level];
 
-	local fractal_world = FractalWorld.Create();
-	fractal_world:InitFractal{
-		continent_grain = 4};
+	-- Fill all rows with water plots.
+	self.wholeworldPlotTypes = table.fill(PlotTypes.PLOT_OCEAN, iW * iH);
 
-	local args = {
-		sea_level = sea,
-		world_age = age,
-		sea_level_low = 72,
-		sea_level_normal = 78,
-		sea_level_high = 83,
-		extra_mountains = 10,
-		adjust_plates = 2,
-		tectonic_islands = true
-		}
-	local plotTypes = fractal_world:GeneratePlotTypes(args);
+	-- Add the main oval as land plots.
+	local centerX = iW / 2;
+	local centerY = iH / 2;
+	local majorAxis = centerX * axis_multiplier;
+	local minorAxis = centerY * axis_multiplier;
+	local majorAxisSquared = majorAxis * majorAxis;
+	local minorAxisSquared = minorAxis * minorAxis;
+	for x = 0, iW - 1 do
+		for y = 0, iH - 1 do
+			local deltaX = x - centerX;
+			local deltaY = y - centerY;
+			local deltaXSquared = deltaX * deltaX;
+			local deltaYSquared = deltaY * deltaY;
+			local d = deltaXSquared/majorAxisSquared + deltaYSquared/minorAxisSquared;
+			if d <= 1 then
+				local i = y * iW + x + 1;
+				self.wholeworldPlotTypes[i] = PlotTypes.PLOT_LAND;
+			end
+		end
+	end
 	
-	SetPlotTypes(plotTypes);
+	-- Now add bays, fjords, inland seas, etc, but not inside the cohesion area.
+	local baysFrac = Fractal.Create(iW, iH, 3, fracFlags, -1, -1);
+	local iBaysThreshold = baysFrac:GetHeight(82);
+	local centerX = iW / 2;
+	local centerY = iH / 2;
+	local majorAxis = centerX * cohesion_multiplier;
+	local minorAxis = centerY * cohesion_multiplier;
+	local majorAxisSquared = majorAxis * majorAxis;
+	local minorAxisSquared = minorAxis * minorAxis;
+	for y = 0, iH - 1 do
+		for x = 0, iW - 1 do
+			local deltaX = x - centerX;
+			local deltaY = y - centerY;
+			local deltaXSquared = deltaX * deltaX;
+			local deltaYSquared = deltaY * deltaY;
+			local d = deltaXSquared/majorAxisSquared + deltaYSquared/minorAxisSquared;
+			if d > 1 then
+				local i = y * iW + x + 1;
+				local baysVal = baysFrac:GetHeight(x, y);
+				if baysVal >= iBaysThreshold then
+					self.wholeworldPlotTypes[i] = PlotTypes.PLOT_OCEAN;
+				end
+			end
+		end
+	end
 
-	local args = {expansion_diceroll_table = {10, 4, 4}};
+	-- Land and water are set. Now apply hills and mountains.
+	local args = {
+		adjust_plates = 1.5,
+		world_age = world_age,
+	};
+	self:ApplyTectonics(args)
+		
+	-- Plot Type generation completed. Return global plot array.
+	return self.wholeworldPlotTypes
+end
+------------------------------------------------------------------------------
+function GeneratePlotTypes()
+	print("Setting Plot Types (Lua Oval) ...");
+
+	local layered_world = MultilayeredFractal.Create();
+	local plot_list = layered_world:GeneratePlotsByRegion();
+	
+	SetPlotTypes(plot_list);
+
+	local args = {bExpandCoasts = false};
 	GenerateCoasts(args);
 end
 ------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------
 function GenerateTerrain()
-
-	local DesertPercent = 28;
-
+	print("Adding Terrain (Lua Oval) ...");
+	
 	-- Get Temperature setting input by user.
 	local temp = Map.GetCustomOption(2)
 	if temp == 4 then
 		temp = 1 + Map.Rand(3, "Random Temperature - Lua");
 	end
 
-	local grassMoist = Map.GetCustomOption(8);
-
-	local args = {
-			temperature = temp,
-			iDesertPercent = DesertPercent,
-			iGrassMoist = grassMoist,
-			};
-
+	local args = {temperature = temp};
 	local terraingen = TerrainGenerator.Create(args);
 
 	terrainTypes = terraingen:GenerateTerrain();
 	
 	SetTerrainTypes(terrainTypes);
-
-
 end
-
-------------------------------------------------------------------------------
-function AddFeatures()
-
-	-- Get Rainfall setting input by user.
-	local rain = Map.GetCustomOption(3)
-	if rain == 4 then
-		rain = 1 + Map.Rand(3, "Random Rainfall - Lua");
-	end
-	
-	local args = {rainfall = rain}
-	local featuregen = FeatureGenerator.Create(args);
-
-	-- False parameter removes mountains from coastlines.
-	featuregen:AddFeatures(false);
-end
-------------------------------------------------------------------------------
 
 ------------------------------------------------------------------------------
 function StartPlotSystem()
-	local RegionalMethod = 3;
+
+	local RegionalMethod = 1;
 
 	-- Get Resources setting input by user.
+	local AllowInlandSea = Map.GetCustomOption(17)
 	local res = Map.GetCustomOption(13)
 	local starts = Map.GetCustomOption(5)
 	--if starts == 7 then
@@ -404,9 +473,27 @@ function StartPlotSystem()
 
 	-- Handle coastal spawns and start bias
 	MixedBias = false;
-	BalancedCoastal = false;
-	OnlyCoastal = false;
-	CoastLux = false;
+	if Map.GetCustomOption(15) == 1 then
+		OnlyCoastal = true;
+		BalancedCoastal = false;
+	end	
+	if Map.GetCustomOption(15) == 2 then
+		BalancedCoastal = false;
+		OnlyCoastal = false;
+	end
+	
+	if Map.GetCustomOption(15) == 3 then
+		OnlyCoastal = true;
+		BalancedCoastal = true;
+	end
+	
+	if Map.GetCustomOption(16) == 1 then
+	CoastLux = true
+	end
+
+	if Map.GetCustomOption(16) == 2 then
+	CoastLux = false
+	end
 
 	print("Creating start plot database.");
 	local start_plot_database = AssignStartingPlots.Create()
@@ -417,6 +504,7 @@ function StartPlotSystem()
 		method = RegionalMethod,
 		start_locations = starts,
 		resources = res,
+		AllowInlandSea = AllowInlandSea,
 		CoastLux = CoastLux,
 		NoCoastInland = OnlyCoastal,
 		BalancedCoastal = BalancedCoastal,
@@ -447,11 +535,5 @@ function StartPlotSystem()
 	start_plot_database:PlaceNaturalWonders(wonderargs);
 	print("Placing Resources and City States.");
 	start_plot_database:PlaceResourcesAndCityStates()
-
-	-- tell the AI that we should treat this as a naval expansion map
-	Map.ChangeAIMapHint(1+4);
-	if (PreGame.IsMultiplayerGame()) then
-    	Network.SendChat("[COLOR_POSITIVE_TEXT]Lekmap v3.3[ENDCOLOR]", -1, -1 );
-	end
 end
 ------------------------------------------------------------------------------

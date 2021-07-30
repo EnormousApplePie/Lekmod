@@ -18,10 +18,10 @@ include("MultilayeredFractal");
 function GetMapScriptInfo()
 	local world_age, temperature, rainfall, sea_level, resources = GetCoreMapOptions()
 	return {
-		Name = "Lekmap: Tiny Islands (v3.33)",
-		Description = "A map script made for Lekmod based of HB's Mapscript v8.1. Tiny Islands",
+		Name = "Lekmap: Archipelago (v3.4)",
+		Description = "A map script made for Lekmod based of HB's Mapscript v8.1. Archipelago",
 		IsAdvancedMap = false,
-		IconIndex = 17,
+		IconIndex = 2,
 		SortIndex = 2,
 		SupportsMultiplayer = true,
 	CustomOptions = {
@@ -332,11 +332,11 @@ function GeneratePlotTypes()
 	local args = {
 		sea_level = sea,
 		world_age = age,
-		sea_level_low = 73,
+		sea_level_low = 72,
 		sea_level_normal = 78,
-		sea_level_high = 82,
-		extra_mountains = 15,
-		adjust_plates = 2.5,
+		sea_level_high = 83,
+		extra_mountains = 10,
+		adjust_plates = 2,
 		tectonic_islands = true
 		}
 	local plotTypes = fractal_world:GeneratePlotTypes(args);
@@ -393,7 +393,6 @@ end
 
 ------------------------------------------------------------------------------
 function StartPlotSystem()
-
 	local RegionalMethod = 3;
 
 	-- Get Resources setting input by user.
@@ -451,6 +450,8 @@ function StartPlotSystem()
 
 	-- tell the AI that we should treat this as a naval expansion map
 	Map.ChangeAIMapHint(1+4);
-
+	if (PreGame.IsMultiplayerGame()) then
+    	Network.SendChat("[COLOR_POSITIVE_TEXT]Lekmap v3.3[ENDCOLOR]", -1, -1 );
+	end
 end
 ------------------------------------------------------------------------------

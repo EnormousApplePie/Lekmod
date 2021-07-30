@@ -18,10 +18,10 @@ include("MultilayeredFractal");
 function GetMapScriptInfo()
 	local world_age, temperature, rainfall, sea_level, resources = GetCoreMapOptions()
 	return {
-		Name = "Lekmap: Oval (v3.33)",
-		Description = "A map script made for Lekmod based of HB's Mapscript v8.1. Oval",
+		Name = "Lekmap: Inland Sea (v3.4)",
+		Description = "A map script made for Lekmod based of HB's Mapscript v8.1. Inland Sea",
 		IsAdvancedMap = false,
-		IconIndex = 15,
+		IconIndex = 12,
 		SortIndex = 2,
 		SupportsMultiplayer = true,
 	CustomOptions = {
@@ -160,8 +160,11 @@ function GetMapScriptInfo()
 			},
 
 			{
-				Name = "Land Size X",	-- add setting for land type (11) +28
+				Name = "Land Size X",	-- add setting for land type (11) +22
 				Values = {
+					"24",
+					"26",
+					"28",
 					"30",
 					"32",
 					"34",
@@ -200,18 +203,17 @@ function GetMapScriptInfo()
 					"100",
 					"102",
 					"104",
-					"106",
-					"108",
-					"110",
 				},
 
-				DefaultValue = 8,
+				DefaultValue = 9,
 				SortPriority = -89,
 			},
 
 			{
-				Name = "Land Size Y",	-- add setting for land type (12) +18
+				Name = "Land Size Y",	-- add setting for land type (12) +14
 				Values = {
+					"16",
+					"18",
 					"20",
 					"22",
 					"24",
@@ -238,13 +240,9 @@ function GetMapScriptInfo()
 					"66",
 					"68",
 					"70",
-					"72",
-					"74",
-					"76",
-
 				},
 
-				DefaultValue = 13,
+				DefaultValue = 5,
 				SortPriority = -88,
 			},
 
@@ -277,6 +275,7 @@ function GetMapScriptInfo()
 				DefaultValue = 1,
 				SortPriority = -90,
 			},
+
 			{
 				Name = "Coastal Spawns",	-- Can inland civ spawn on the coast (15)
 				Values = {
@@ -299,25 +298,14 @@ function GetMapScriptInfo()
 				DefaultValue = 1,
 				SortPriority = -84,
 			},
-
-			{
-				Name = "Inland Sea Spawns",	-- Can coastal civ spawn on inland seas (17)
-				Values = {
-					"Allowed",
-					"Not Allowed for Coastal Civs",
-				},
-
-				DefaultValue = 2,
-				SortPriority = -83,
-			},
 		},
 	};
 end
 ------------------------------------------------------------------------------
 function GetMapInitData(worldSize)
 	
-	local LandSizeX = 28 + (Map.GetCustomOption(11) * 2);
-	local LandSizeY = 18 + (Map.GetCustomOption(12) * 2);
+	local LandSizeX = 22 + (Map.GetCustomOption(11) * 2);
+	local LandSizeY = 14 + (Map.GetCustomOption(12) * 2);
 
 	local worldsizes = {};
 
@@ -338,111 +326,107 @@ function GetMapInitData(worldSize)
 		return {
 			Width = grid_size[1],
 			Height = grid_size[2],
-			WrapX = true,
+			WrapX = false,
 		}; 
 	end
 
 end
 ------------------------------------------------------------------------------
-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
 function MultilayeredFractal:GeneratePlotsByRegion()
 	-- Sirian's MultilayeredFractal controlling function.
 	-- You -MUST- customize this function for each script using MultilayeredFractal.
 	--
-	-- This implementation is specific to Oval.
+	-- This implementation is specific to Inland Sea.
 	local iW, iH = Map.GetGridSize();
+
+	-- Fill all rows with land plots.
+	self.wholeworldPlotTypes = table.fill(PlotTypes.PLOT_LAND, iW * iH);
+
+	-- Generate the inland sea.
+	local iWestX = math.floor(iW * 0.18) - 1;
+	local iEastX = math.ceil(iW * 0.82) - 1;
+	local iWidth = iEastX - iWestX;
+	local iSouthY = math.floor(iH * 0.28) - 1;
+	local iNorthY = math.ceil(iH * 0.72) - 1;
+	local iHeight = iNorthY - iSouthY;
 	local fracFlags = {FRAC_POLAR = true};
-
-	local sea_level = Map.GetCustomOption(4)
-	if sea_level == 4 then
-		sea_level = 1 + Map.Rand(3, "Random Sea Level - Lua");
-	end
-	local world_age = Map.GetCustomOption(1)
-	if world_age == 4 then
-		world_age = 1 + Map.Rand(3, "Random World Age - Lua");
-	end
-	local axis_list = {0.87, 0.81, 0.75};
-	local axis_multiplier = axis_list[sea_level];
-	local cohesion_list = {0.41, 0.38, 0.35};
-	local cohesion_multiplier = cohesion_list[sea_level];
-
-	-- Fill all rows with water plots.
-	self.wholeworldPlotTypes = table.fill(PlotTypes.PLOT_OCEAN, iW * iH);
-
-	-- Add the main oval as land plots.
-	local centerX = iW / 2;
-	local centerY = iH / 2;
-	local majorAxis = centerX * axis_multiplier;
-	local minorAxis = centerY * axis_multiplier;
-	local majorAxisSquared = majorAxis * majorAxis;
-	local minorAxisSquared = minorAxis * minorAxis;
-	for x = 0, iW - 1 do
-		for y = 0, iH - 1 do
-			local deltaX = x - centerX;
-			local deltaY = y - centerY;
-			local deltaXSquared = deltaX * deltaX;
-			local deltaYSquared = deltaY * deltaY;
-			local d = deltaXSquared/majorAxisSquared + deltaYSquared/minorAxisSquared;
-			if d <= 1 then
-				local i = y * iW + x + 1;
-				self.wholeworldPlotTypes[i] = PlotTypes.PLOT_LAND;
+	local grain = 1 + Map.Rand(2, "Inland Sea ocean grain - LUA");
+	local seaFrac = Fractal.Create(iWidth, iHeight, grain, fracFlags, -1, -1)
+	local seaThreshold = seaFrac:GetHeight(47);
+	
+	for region_y = 0, iHeight - 1 do
+		for region_x = 0, iWidth - 1 do
+			local val = seaFrac:GetHeight(region_x, region_y);
+			if val >= seaThreshold then
+				local x = region_x + iWestX;
+				local y = region_y + iSouthY;
+				local i = y * iW + x + 1; -- add one because Lua arrays start at 1
+				self.wholeworldPlotTypes[i] = PlotTypes.PLOT_OCEAN;
 			end
 		end
 	end
-	
-	-- Now add bays, fjords, inland seas, etc, but not inside the cohesion area.
-	local baysFrac = Fractal.Create(iW, iH, 3, fracFlags, -1, -1);
-	local iBaysThreshold = baysFrac:GetHeight(82);
-	local centerX = iW / 2;
-	local centerY = iH / 2;
-	local majorAxis = centerX * cohesion_multiplier;
-	local minorAxis = centerY * cohesion_multiplier;
-	local majorAxisSquared = majorAxis * majorAxis;
-	local minorAxisSquared = minorAxis * minorAxis;
-	for y = 0, iH - 1 do
-		for x = 0, iW - 1 do
+
+	-- Second, oval layer to ensure one main body of water.
+	local centerX = (iW / 2) - 1;
+	local centerY = (iH / 2) - 1;
+	local xAxis = centerX / 2;
+	local yAxis = centerY * 0.35;
+	local xAxisSquared = xAxis * xAxis;
+	local yAxisSquared = yAxis * yAxis;
+	for x = 0, iW - 1 do
+		for y = 0, iH - 1 do
+			local i = y * iW + x + 1;
 			local deltaX = x - centerX;
 			local deltaY = y - centerY;
 			local deltaXSquared = deltaX * deltaX;
 			local deltaYSquared = deltaY * deltaY;
-			local d = deltaXSquared/majorAxisSquared + deltaYSquared/minorAxisSquared;
-			if d > 1 then
-				local i = y * iW + x + 1;
-				local baysVal = baysFrac:GetHeight(x, y);
-				if baysVal >= iBaysThreshold then
-					self.wholeworldPlotTypes[i] = PlotTypes.PLOT_OCEAN;
-				end
+			local oval_value = deltaXSquared / xAxisSquared + deltaYSquared / yAxisSquared;
+			if oval_value <= 1 then
+				self.wholeworldPlotTypes[i] = PlotTypes.PLOT_OCEAN;
 			end
 		end
 	end
 
 	-- Land and water are set. Now apply hills and mountains.
-	local args = {
-		adjust_plates = 1.5,
-		world_age = world_age,
-	};
+	local world_age = Map.GetCustomOption(1)
+	if world_age == 4 then
+		world_age = 1 + Map.Rand(3, "Random World Age - Lua");
+	end
+	local args = {world_age = world_age};
 	self:ApplyTectonics(args)
-		
+
 	-- Plot Type generation completed. Return global plot array.
 	return self.wholeworldPlotTypes
 end
 ------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------
 function GeneratePlotTypes()
-	print("Setting Plot Types (Lua Oval) ...");
+	print("Setting Plot Types (Lua Inland Sea) ...");
 
 	local layered_world = MultilayeredFractal.Create();
-	local plot_list = layered_world:GeneratePlotsByRegion();
+	local plotsIS = layered_world:GeneratePlotsByRegion();
 	
-	SetPlotTypes(plot_list);
+	SetPlotTypes(plotsIS);
 
-	local args = {bExpandCoasts = false};
-	GenerateCoasts(args);
+	GenerateCoasts();
+end
+----------------------------------------------------------------------------------
+function TerrainGenerator:GetLatitudeAtPlot(iX, iY)
+	local lat = math.abs((self.iHeight / 2) - iY) / (self.iHeight / 2);
+	lat = lat + (128 - self.variation:GetHeight(iX, iY))/(255.0 * 5.0);
+	lat = math.clamp(lat, 0, 1);
+
+	-- For Inland Sea only, adjust latitude to cut out Tundra and most Jungle.
+	local adjusted_lat = 0.07 + 0.52 * lat;
+	
+	return adjusted_lat;
 end
 ------------------------------------------------------------------------------
-
-------------------------------------------------------------------------------
 function GenerateTerrain()
-	print("Adding Terrain (Lua Oval) ...");
+	print("Generating Terrain (Lua Inland Sea) ...");
 	
 	-- Get Temperature setting input by user.
 	local temp = Map.GetCustomOption(2)
@@ -457,6 +441,177 @@ function GenerateTerrain()
 	
 	SetTerrainTypes(terrainTypes);
 end
+------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------
+function GetRiverValueAtPlot(plot)
+	-- Custom method to force rivers to flow toward the map center.
+	local iW, iH = Map.GetGridSize()
+	local x = plot:GetX()
+	local y = plot:GetY()
+	local random_factor = Map.Rand(3, "River direction random factor - Inland Sea LUA");
+	local direction_influence_value = (math.abs(x - (iW / 2)) + math.abs(y - (iH / 2))) * random_factor;
+
+	local numPlots = PlotTypes.NUM_PLOT_TYPES;
+	local sum = ((numPlots - plot:GetPlotType()) * 20) + direction_influence_value;
+
+	local numDirections = DirectionTypes.NUM_DIRECTION_TYPES;
+	for direction = 0, numDirections - 1, 1 do
+		local adjacentPlot = Map.PlotDirection(plot:GetX(), plot:GetY(), direction);
+		if (adjacentPlot ~= nil) then
+			sum = sum + (numPlots - adjacentPlot:GetPlotType());
+		else
+			sum = sum + (numPlots * 10);
+		end
+	end
+	sum = sum + Map.Rand(10, "River Rand");
+
+	return sum;
+end
+------------------------------------------------------------------------------
+function AddRivers()
+	-- Customization for Inland Sea, to keep river starts away from map edges and set river "original flow direction".
+	local iW, iH = Map.GetGridSize()
+	print("Inland Sea - Adding Rivers");
+	local passConditions = {
+		function(plot)
+			return plot:IsHills() or plot:IsMountain();
+		end,
+		
+		function(plot)
+			return (not plot:IsCoastalLand()) and (Map.Rand(8, "MapGenerator AddRivers") == 0);
+		end,
+		
+		function(plot)
+			local area = plot:Area();
+			local plotsPerRiverEdge = GameDefines["PLOTS_PER_RIVER_EDGE"];
+			return (plot:IsHills() or plot:IsMountain()) and (area:GetNumRiverEdges() <	((area:GetNumTiles() / plotsPerRiverEdge) + 1));
+		end,
+		
+		function(plot)
+			local area = plot:Area();
+			local plotsPerRiverEdge = GameDefines["PLOTS_PER_RIVER_EDGE"];
+			return (area:GetNumRiverEdges() < (area:GetNumTiles() / plotsPerRiverEdge) + 1);
+		end
+	}
+	for iPass, passCondition in ipairs(passConditions) do
+		local riverSourceRange;
+		local seaWaterRange;
+		if (iPass <= 2) then
+			riverSourceRange = GameDefines["RIVER_SOURCE_MIN_RIVER_RANGE"];
+			seaWaterRange = GameDefines["RIVER_SOURCE_MIN_SEAWATER_RANGE"];
+		else
+			riverSourceRange = (GameDefines["RIVER_SOURCE_MIN_RIVER_RANGE"] / 2);
+			seaWaterRange = (GameDefines["RIVER_SOURCE_MIN_SEAWATER_RANGE"] / 2);
+		end
+		for i, plot in Plots() do
+			local current_x = plot:GetX()
+			local current_y = plot:GetY()
+			if current_x < 1 or current_x >= iW - 2 or current_y < 2 or current_y >= iH - 1 then
+				-- Plot too close to edge, ignore it.
+			elseif(not plot:IsWater()) then
+				if(passCondition(plot)) then
+					if (not Map.FindWater(plot, riverSourceRange, true)) then
+						if (not Map.FindWater(plot, seaWaterRange, false)) then
+							local inlandCorner = plot:GetInlandCorner();
+							if(inlandCorner) then
+								local start_x = inlandCorner:GetX()
+								local start_y = inlandCorner:GetY()
+								local orig_direction;
+								if start_y < iH / 2 then -- South half of map
+									if start_x < iW / 3 then -- SW Corner
+										orig_direction = FlowDirectionTypes.FLOWDIRECTION_NORTHEAST;
+									elseif start_x > iW * 0.66 then -- SE Corner
+										orig_direction = FlowDirectionTypes.FLOWDIRECTION_NORTHWEST;
+									else -- South, middle
+										orig_direction = FlowDirectionTypes.FLOWDIRECTION_NORTH;
+									end
+								else -- North half of map
+									if start_x < iW / 3 then -- NW corner
+										orig_direction = FlowDirectionTypes.FLOWDIRECTION_SOUTHEAST;
+									elseif start_x > iW * 0.66 then -- NE corner
+										orig_direction = FlowDirectionTypes.FLOWDIRECTION_SOUTHWEST;
+									else -- North, middle
+										orig_direction = FlowDirectionTypes.FLOWDIRECTION_SOUTH;
+									end
+								end
+								DoRiver(inlandCorner, nil, orig_direction, nil);
+							end
+						end
+					end
+				end			
+			end
+		end
+	end		
+end
+------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------
+function FeatureGenerator:GetLatitudeAtPlot(iX, iY)
+	local lat = math.abs((self.iGridH/2) - iY)/(self.iGridH/2);
+
+	-- For Inland Sea only, adjust latitude to cut out Tundra and most Jungle.
+	local adjusted_lat = 0.07 + 0.52 * lat;
+	
+	return adjusted_lat
+end
+------------------------------------------------------------------------------
+function FeatureGenerator:AddIceAtPlot(plot, iX, iY, lat)
+	return
+end
+------------------------------------------------------------------------------
+function AddFeatures()
+	print("Adding Features (Lua Inland Sea) ...");
+
+	-- Get Rainfall setting input by user.
+	local rain = Map.GetCustomOption(3)
+	if rain == 4 then
+		rain = 1 + Map.Rand(3, "Random Rainfall - Lua");
+	end
+	
+	local args = {rainfall = rain}
+	local featuregen = FeatureGenerator.Create(args);
+
+	-- False parameter removes mountains from coastlines.
+	featuregen:AddFeatures(false);
+end
+------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------
+function AssignStartingPlots:CanPlaceCityStateAt(x, y, area_ID, force_it, ignore_collisions)
+	-- Overriding default city state placement to prevent city states from being placed too close to map edges.
+	local iW, iH = Map.GetGridSize();
+	local plot = Map.GetPlot(x, y)
+	local area = plot:GetArea()
+	
+	-- Adding this check for Inland Sea
+	if x < 1 or x >= iW - 1 or y < 1 or y >= iH - 1 then
+		return false
+	end
+	--
+	
+	if area ~= area_ID and area_ID ~= -1 then
+		return false
+	end
+	local plotType = plot:GetPlotType()
+	if plotType == PlotTypes.PLOT_OCEAN or plotType == PlotTypes.PLOT_MOUNTAIN then
+		return false
+	end
+	local terrainType = plot:GetTerrainType()
+	if terrainType == TerrainTypes.TERRAIN_SNOW then
+		return false
+	end
+	local plotIndex = y * iW + x + 1;
+	if self.cityStateData[plotIndex] > 0 and force_it == false then
+		return false
+	end
+	local plotIndex = y * iW + x + 1;
+	if self.playerCollisionData[plotIndex] == true and ignore_collisions == false then
+		print("-"); print("City State candidate plot rejected: collided with already-placed civ or City State at", x, y);
+		return false
+	end
+	return true
+end
 
 ------------------------------------------------------------------------------
 function StartPlotSystem()
@@ -464,7 +619,6 @@ function StartPlotSystem()
 	local RegionalMethod = 1;
 
 	-- Get Resources setting input by user.
-	local AllowInlandSea = Map.GetCustomOption(17)
 	local res = Map.GetCustomOption(13)
 	local starts = Map.GetCustomOption(5)
 	--if starts == 7 then
@@ -504,7 +658,6 @@ function StartPlotSystem()
 		method = RegionalMethod,
 		start_locations = starts,
 		resources = res,
-		AllowInlandSea = AllowInlandSea,
 		CoastLux = CoastLux,
 		NoCoastInland = OnlyCoastal,
 		BalancedCoastal = BalancedCoastal,

@@ -18,7 +18,7 @@ include("MultilayeredFractal");
 function GetMapScriptInfo()
 	local world_age, temperature, rainfall, sea_level, resources = GetCoreMapOptions()
 	return {
-		Name = "Lekmap: Small Continents (v3.33)",
+		Name = "Lekmap: Small Continents (v3.4)",
 		Description = "A map script made for Lekmod based of HB's Mapscript v8.1. Small Continents",
 		IsAdvancedMap = false,
 		IconIndex = 1,

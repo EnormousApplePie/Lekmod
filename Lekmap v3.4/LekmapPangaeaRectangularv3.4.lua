@@ -7,9 +7,9 @@
 --	Copyright (c) 2011 Firaxis Games, Inc. All rights reserved.
 ------------------------------------------------------------------------------
 
-include("HBMapGenerator");
+include("HBMapGeneratorRectangular");
 include("HBFractalWorld");
-include("HBFeatureGenerator");
+include("HBFeatureGeneratorRectangular");
 include("HBTerrainGenerator");
 include("IslandMaker");
 include("MultilayeredFractal");
@@ -18,10 +18,10 @@ include("MultilayeredFractal");
 function GetMapScriptInfo()
 	local world_age, temperature, rainfall, sea_level, resources = GetCoreMapOptions()
 	return {
-		Name = "Lekmap: Continents (v3.33)",
-		Description = "A map script made for Lekmod based of HB's Mapscript v8.1. Continents",
+		Name = "Lekmap: Pangaea - Rectangular (v3.4)",
+		Description = "A map script made for Lekmod based of HB's Mapscript v8.1. Pangaea - Rectangular",
 		IsAdvancedMap = false,
-		IconIndex = 1,
+		IconIndex = 0,
 		SortIndex = 2,
 		SupportsMultiplayer = true,
 	CustomOptions = {
@@ -65,12 +65,14 @@ function GetMapScriptInfo()
 			{
 				Name = "TXT_KEY_MAP_OPTION_SEA_LEVEL",	-- 4 add sea level defaults to random.
 				Values = {
+					"Very Low",
 					"TXT_KEY_MAP_OPTION_LOW",
 					"TXT_KEY_MAP_OPTION_MEDIUM",
 					"TXT_KEY_MAP_OPTION_HIGH",
+					"Very High",
 					"TXT_KEY_MAP_OPTION_RANDOM",
 				},
-				DefaultValue = 2,
+				DefaultValue = 3,
 				SortPriority = -96,
 			},
 
@@ -205,7 +207,7 @@ function GetMapScriptInfo()
 					"110",
 				},
 
-				DefaultValue = 17,
+				DefaultValue = 14,
 				SortPriority = -89,
 			},
 
@@ -244,7 +246,7 @@ function GetMapScriptInfo()
 
 				},
 
-				DefaultValue = 16,
+				DefaultValue = 14,
 				SortPriority = -88,
 			},
 
@@ -344,6 +346,19 @@ function GetMapScriptInfo()
 				DefaultValue = 2,
 				SortPriority = -83,
 			},
+
+			{
+				Name = "Lakes",	-- add setting for Lakes (19)
+				Values = {
+					"Sparse",
+					"Average",
+					"Plentiful",
+				},
+
+				DefaultValue = 1,
+				SortPriority = -82,
+			},
+
 		},
 	};
 end
@@ -378,12 +393,15 @@ function GetMapInitData(worldSize)
 
 end
 ------------------------------------------------------------------------------
--- START OF CONTINENTS CREATION CODE
+
 ------------------------------------------------------------------------------
-ContinentsFractalWorld = {};
+-- START OF RECTANGULAR PANGAEA CREATION CODE
 ------------------------------------------------------------------------------
-function ContinentsFractalWorld.Create(fracXExp, fracYExp)
+RectangularFractalWorld = {};
+------------------------------------------------------------------------------
+function RectangularFractalWorld.Create(fracXExp, fracYExp)
 	local gridWidth, gridHeight = Map.GetGridSize();
+	local landHeight = (gridHeight - math.floor(gridHeight * 0.20));
 	
 	local data = {
 		InitFractal = FractalWorld.InitFractal,
@@ -392,242 +410,483 @@ function ContinentsFractalWorld.Create(fracXExp, fracYExp)
 		DetermineXShift = FractalWorld.DetermineXShift,
 		DetermineYShift = FractalWorld.DetermineYShift,
 		GenerateCenterRift = FractalWorld.GenerateCenterRift,
-		GeneratePlotTypes = ContinentsFractalWorld.GeneratePlotTypes,	-- Custom method
+		GeneratePlotTypes = RectangularFractalWorld.GeneratePlotTypes,	-- Custom method
 		
 		iFlags = Map.GetFractalFlags(),
 		
 		fracXExp = fracXExp,
 		fracYExp = fracYExp,
-		
+
 		iNumPlotsX = gridWidth,
 		iNumPlotsY = gridHeight,
+		--iNumPlotsY = landHeight,
 		plotTypes = table.fill(PlotTypes.PLOT_OCEAN, gridWidth * gridHeight)
 	};
 		
 	return data;
-end	
+end
 
 ------------------------------------------------------------------------------
-function ContinentsFractalWorld:GeneratePlotTypes(args)
+function RectangularFractalWorld:GeneratePlotTypes(args)
 	if(args == nil) then args = {}; end
 	
-	local sea_level_low = 67;
-	local sea_level_normal = 72;
-	local sea_level_high = 76;
-	local world_age_old = 2;
-	local world_age_normal = 5;
-	local world_age_new = 15;
-	--
-	local extra_mountains = 25;
-	local grain_amount = 0;
-	local adjust_plates = 1.3;
-	local shift_plot_types = true;
-	local tectonic_islands = false;
-	local hills_ridge_flags = self.iFlags;
-	local peaks_ridge_flags = self.iFlags;
-	local has_center_rift = true;
-	local adjadj = 1.4;
+	local iW, iH = Map.GetGridSize();
 
-	local sea_level = Map.GetCustomOption(4)
-	if sea_level == 4 then
-		sea_level = 1 + Map.Rand(3, "Random Sea Level - Lua");
-	end
-	local world_age = Map.GetCustomOption(1)
-	if world_age == 5 then
-		world_age = 1 + Map.Rand(3, "Random World Age - Lua");
-	end
+	print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ MAP SIZE @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+	print("Map X: " .. iW);
+	print("Map Y: " .. iH);
+	print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
 
-	-- Set Sea Level according to user selection.
-	local water_percent = sea_level_normal;
-	if sea_level == 1 then -- Low Sea Level
-		water_percent = sea_level_low
-	elseif sea_level == 3 then -- High Sea Level
-		water_percent = sea_level_high
-	else -- Normal Sea Level
-	end
+	local allcomplete = false;
 
-	-- Set values for hills and mountains according to World Age chosen by user.
-	local adjustment = world_age_normal;
-	if world_age == 4 then -- No Moutains
+	while allcomplete == false do
+		local waterBorder = 7
+		local smallBaysLow = 2;
+		local smallBaysHigh = 3;
+		local largeBaysLow = 5;
+		local largeBaysHigh = 7;
+		local smallBaysNS = 15;
+		local smallBaysEW = 10;
+		local largeBaysNS = 4;
+		local largeBaysEW = 2;
+
+		local world_age_old = 2;
+		local world_age_normal = 3;
+		local world_age_new = 15;
+		--
+		local extra_mountains = 25;
+		local grain_amount = 0;
+		local adjust_plates = 1.3;
+		local shift_plot_types = true;
+		local tectonic_islands = true;
+		local hills_ridge_flags = self.iFlags;
+		local peaks_ridge_flags = self.iFlags;
+		local has_center_rift = true;
+		local adjadj = 1.4;
+		local xshift = 0;
+		local yshift = 0;
+		local yshiftamt = 0;
+		local xshiftamt = 0;
+		local xstart, xend = 0,0;
+		local ystart, yend = 0,0;
+
+		local sea_level = Map.GetCustomOption(4)
+		if sea_level == 6 then
+			sea_level = 1 + Map.Rand(5, "Random Sea Level - Lua");
+		end
+		local world_age = Map.GetCustomOption(1)
+		if world_age == 5 then
+			world_age = 1 + Map.Rand(3, "Random World Age - Lua");
+		end
+
+		-- Set Sea Level according to user selection.
+		if sea_level == 1 then -- Very Low Sea Level
+			waterBorder = 5;
+		elseif sea_level == 2 then -- Low Sea Level
+			waterBorder = 6;
+		elseif sea_level == 4 then -- High Sea Level
+			waterBorder = 8;
+		elseif sea_level == 5 then -- Very High Sea Level
+			waterBorder = 9;
+		end
+
+		local waterCenter = waterBorder;
+
+		--set the bays roughness based on user setting
+		local Roughness = Map.GetCustomOption(19)
+
+		if Roughness == 1 then
+			smallBaysLow = 1;
+			smallBaysHigh = 2;
+			largeBaysLow = 3;
+			largeBaysHigh = 5;
+			smallBaysNS = 7;
+			smallBaysEW = 5;
+			largeBaysNS = 2;
+			largeBaysEW = 1;
+		elseif Roughness == 3 then
+			smallBaysLow = 4;
+			smallBaysHigh = 6;
+			largeBaysLow = 8;
+			largeBaysHigh = 10;
+			smallBaysNS = 20;
+			smallBaysEW = 15;
+			largeBaysNS = 6;
+			largeBaysEW = 4;
+		end
+
+		-- Set values for hills and mountains according to World Age chosen by user.
+		local adjustment = world_age_normal;
+		if world_age == 4 then -- No Moutains
 			adjustment = world_age_old;
 			adjust_plates = adjust_plates * 0.5;
-	elseif world_age == 3 then -- 5 Billion Years
-		adjustment = world_age_old;
-		adjust_plates = adjust_plates * 0.5;
-	elseif world_age == 1 then -- 3 Billion Years
-		adjustment = world_age_new;
-		adjust_plates = adjust_plates * 1;
-	else -- 4 Billion Years
-	end
-	-- Apply adjustment to hills and peaks settings.
-	local hillsBottom1 = 28 - (adjustment * adjadj);
-	local hillsTop1 = 28 + (adjustment * adjadj);
-	local hillsBottom2 = 72 - (adjustment * adjadj);
-	local hillsTop2 = 72 + (adjustment * adjadj);
-	local hillsClumps = 1 + (adjustment * adjadj);
-	local hillsNearMountains = 120 - (adjustment * 2) - extra_mountains;
-	local mountains = 100 - adjustment - extra_mountains;
+		elseif world_age == 3 then -- 5 Billion Years
+			adjustment = world_age_old;
+			adjust_plates = adjust_plates * 0.5;
+		elseif world_age == 1 then -- 3 Billion Years
+			adjustment = world_age_new;
+			adjust_plates = adjust_plates * 1;
+		else -- 4 Billion Years
+		end
+		-- Apply adjustment to hills and peaks settings.
+		local hillsBottom1 = 20 - (adjustment * adjadj);
+		local hillsTop1 = 20 + (adjustment * adjadj);
+		local hillsBottom2 = 62 - (adjustment * adjadj);
+		local hillsTop2 = 62 + (adjustment * adjadj);
+		local hillsClumps = 1 + (adjustment * adjadj);
+		local hillsNearMountains = 120 - (adjustment * 2) - extra_mountains;
+		local mountains = 100 - adjustment - extra_mountains;
+	
+		if world_age == 4 then
+			mountains = 300 - adjustment - extra_mountains;
+		end
 
-	if world_age == 4 then
-		mountains = 300 - adjustment - extra_mountains;
-	end
+		-- Hills and Mountains handled differently according to map size - Bob
+		local WorldSizeTypes = {};
+		for row in GameInfo.Worlds() do
+			WorldSizeTypes[row.Type] = row.ID;
+		end
+		local sizekey = Map.GetWorldSize();
+		-- Fractal Grains
+		local sizevalues = {
+			[WorldSizeTypes.WORLDSIZE_DUEL]     = 3,
+			[WorldSizeTypes.WORLDSIZE_TINY]     = 3,
+			[WorldSizeTypes.WORLDSIZE_SMALL]    = 3,
+			[WorldSizeTypes.WORLDSIZE_STANDARD] = 3,
+			[WorldSizeTypes.WORLDSIZE_LARGE]    = 3,
+			[WorldSizeTypes.WORLDSIZE_HUGE]		= 3
+		};
+		local grain = sizevalues[sizekey] or 3;
+		-- Tectonics Plate Counts
+		local platevalues = {
+			[WorldSizeTypes.WORLDSIZE_DUEL]		= 100,
+			[WorldSizeTypes.WORLDSIZE_TINY]     = 100,
+			[WorldSizeTypes.WORLDSIZE_SMALL]    = 100,
+			[WorldSizeTypes.WORLDSIZE_STANDARD] = 100,
+			[WorldSizeTypes.WORLDSIZE_LARGE]    = 100,
+			[WorldSizeTypes.WORLDSIZE_HUGE]     = 100
+		};
+		local numPlates = platevalues[sizekey] or 5;
+		-- Add in any plate count modifications passed in from the map script. - Bob
+		numPlates = numPlates * adjust_plates;
 
-	-- Hills and Mountains handled differently according to map size
-	local WorldSizeTypes = {};
-	for row in GameInfo.Worlds() do
-		WorldSizeTypes[row.Type] = row.ID;
-	end
-	local sizekey = Map.GetWorldSize();
-	-- Fractal Grains
-	local sizevalues = {
-		[WorldSizeTypes.WORLDSIZE_DUEL]     = 3,
-		[WorldSizeTypes.WORLDSIZE_TINY]     = 3,
-		[WorldSizeTypes.WORLDSIZE_SMALL]    = 3,
-		[WorldSizeTypes.WORLDSIZE_STANDARD] = 3,
-		[WorldSizeTypes.WORLDSIZE_LARGE]    = 3,
-		[WorldSizeTypes.WORLDSIZE_HUGE]		= 3
-	};
-	local grain = sizevalues[sizekey] or 3;
-	-- Tectonics Plate Counts
-	local platevalues = {
-		[WorldSizeTypes.WORLDSIZE_DUEL]		= 100,
-		[WorldSizeTypes.WORLDSIZE_TINY]     = 100,
-		[WorldSizeTypes.WORLDSIZE_SMALL]    = 100,
-		[WorldSizeTypes.WORLDSIZE_STANDARD] = 100,
-		[WorldSizeTypes.WORLDSIZE_LARGE]    = 100,
-		[WorldSizeTypes.WORLDSIZE_HUGE]     = 100
-	};
-	local numPlates = platevalues[sizekey] or 5;
-	-- Add in any plate count modifications passed in from the map script.
-	numPlates = numPlates * adjust_plates;
-
-	-- Generate continental fractal layer and examine the largest landmass. Reject
-	-- the result until the largest landmass occupies 45% to 55% of the total land.
-	local done = false;
-	local iAttempts = 0;
-	local iWaterThreshold, biggest_area, iNumTotalLandTiles, iNumBiggestAreaTiles, iBiggestID;
-	while done == false do
-		local plusminus = 0.3;
-		local grain_dice = Map.Rand(7, "Continental Grain roll - LUA Continents");
+		-- Generate continental fractal layer and examine the largest landmass. Reject
+		-- the result until the largest landmass occupies 90% or more of the total land.
+		local iWaterThreshold, biggest_area, iNumTotalLandTiles, iNumBiggestAreaTiles, iBiggestID;
+		local grain_dice = Map.Rand(7, "Continental Grain roll - LUA Pangaea");
 		if grain_dice < 4 then
 			grain_dice = 1;
 		else
 			grain_dice = 2;
 		end
-		local rift_dice = Map.Rand(3, "Rift Grain roll - LUA Continents");
+		local rift_dice = Map.Rand(3, "Rift Grain roll - LUA Pangaea");
 		if rift_dice < 1 then
 			rift_dice = -1;
 		end
-		
+
 		rift_dice = -1;
-		grain_dice = 1;
+		grain_dice = 5;
 
 		self.continentsFrac = nil;
 		self:InitFractal{continent_grain = grain_dice, rift_grain = rift_dice};
 		iWaterThreshold = self.continentsFrac:GetHeight(water_percent);
-		
+
 		iNumTotalLandTiles = 0;
 		for x = 0, self.iNumPlotsX - 1 do
 			for y = 0, self.iNumPlotsY - 1 do
 				local i = y * self.iNumPlotsX + x;
-				local val = self.continentsFrac:GetHeight(x, y);
-				if(val <= iWaterThreshold) then
-					self.plotTypes[i] = PlotTypes.PLOT_OCEAN;
-				else
 					self.plotTypes[i] = PlotTypes.PLOT_LAND;
 					iNumTotalLandTiles = iNumTotalLandTiles + 1;
-				end
 			end
 		end
 
-		self:ShiftPlotTypes();
-		self:GenerateCenterRift()
-
 		SetPlotTypes(self.plotTypes);
 		Map.RecalculateAreas();
-		
-		biggest_area = Map.FindBiggestArea(false);
-		iNumBiggestAreaTiles = biggest_area:GetNumTiles();
-		-- Now test the biggest landmass to see if it is large enough.
-		if (iNumBiggestAreaTiles <= (iNumTotalLandTiles * 0.53)) and (iNumBiggestAreaTiles >= (iNumTotalLandTiles * 0.47)) then
-			done = true;
-			iBiggestID = biggest_area:GetID();
-		end
-		iAttempts = iAttempts + 1;
-		
-		-- Printout for debug use only
-		print("-"); print("--- Continents landmass generation, Attempt#", iAttempts, "---");
-		print("- This attempt successful: ", done);
-		print("- Total Land Plots in world:", iNumTotalLandTiles);
-		print("- Land Plots belonging to biggest landmass:", iNumBiggestAreaTiles);
-		print("- Percentage of land belonging to biggest: ", 100 * iNumBiggestAreaTiles / iNumTotalLandTiles);
-		print("- Continent Grain for this attempt: ", grain_dice);
-		print("- Rift Grain for this attempt: ", rift_dice);
-		print("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
-		print(".");
-		
-	end
+
+		-- Generate fractals to govern hills and mountains
+		self.hillsFrac = Fractal.Create(self.iNumPlotsX, self.iNumPlotsY, grain, self.iFlags, self.fracXExp, self.fracYExp);
+		self.mountainsFrac = Fractal.Create(self.iNumPlotsX, self.iNumPlotsY, grain, self.iFlags, self.fracXExp, self.fracYExp);
+		self.hillsFrac:BuildRidges(numPlates, hills_ridge_flags, 2, 1);
+		self.mountainsFrac:BuildRidges((numPlates * 2) / 3, peaks_ridge_flags, 4, 1);
+		-- Get height values
+		local iHillsBottom1 = self.hillsFrac:GetHeight(hillsBottom1);
+		local iHillsTop1 = self.hillsFrac:GetHeight(hillsTop1);
+		local iHillsBottom2 = self.hillsFrac:GetHeight(hillsBottom2);
+		local iHillsTop2 = self.hillsFrac:GetHeight(hillsTop2);
+		local iHillsClumps = self.mountainsFrac:GetHeight(hillsClumps);
+		local iHillsNearMountains = self.mountainsFrac:GetHeight(hillsNearMountains);
+		local iMountainThreshold = self.mountainsFrac:GetHeight(mountains);
+		local iPassThreshold = self.hillsFrac:GetHeight(hillsNearMountains);
+		-- Get height values for tectonic islands
+		local iMountain100 = self.mountainsFrac:GetHeight(100);
+		local iMountain99 = self.mountainsFrac:GetHeight(99);
+		local iMountain97 = self.mountainsFrac:GetHeight(97);
+		local iMountain95 = self.mountainsFrac:GetHeight(95);
+
+		-- Because we haven't yet shifted the plot types, we will not be able to take advantage 
+		-- of having water and flatland plots already set. We still have to generate all data
+		-- for hills and mountains, too, then shift everything, then set plots one more time.
+		for x = 0, self.iNumPlotsX - 1 do
+			for y = 0, self.iNumPlotsY - 1 do
 	
-	-- Generate fractals to govern hills and mountains
-	self.hillsFrac = Fractal.Create(self.iNumPlotsX, self.iNumPlotsY, grain, self.iFlags, self.fracXExp, self.fracYExp);
-	self.mountainsFrac = Fractal.Create(self.iNumPlotsX, self.iNumPlotsY, grain, self.iFlags, self.fracXExp, self.fracYExp);
-	self.hillsFrac:BuildRidges(numPlates, hills_ridge_flags, 1, 2);
-	self.mountainsFrac:BuildRidges((numPlates * 2) / 3, peaks_ridge_flags, 6, 1);
-	-- Get height values
-	local iHillsBottom1 = self.hillsFrac:GetHeight(hillsBottom1);
-	local iHillsTop1 = self.hillsFrac:GetHeight(hillsTop1);
-	local iHillsBottom2 = self.hillsFrac:GetHeight(hillsBottom2);
-	local iHillsTop2 = self.hillsFrac:GetHeight(hillsTop2);
-	local iHillsClumps = self.mountainsFrac:GetHeight(hillsClumps);
-	local iHillsNearMountains = self.mountainsFrac:GetHeight(hillsNearMountains);
-	local iMountainThreshold = self.mountainsFrac:GetHeight(mountains);
-	local iPassThreshold = self.hillsFrac:GetHeight(hillsNearMountains);
-	
-	-- Set Hills and Mountains
-	for x = 0, self.iNumPlotsX - 1 do
-		for y = 0, self.iNumPlotsY - 1 do
-			local plot = Map.GetPlot(x, y);
-			local i = y * self.iNumPlotsX + x;
-			local val = self.continentsFrac:GetHeight(x, y);
-			local mountainVal = self.mountainsFrac:GetHeight(x, y);
-			local hillVal = self.hillsFrac:GetHeight(x, y);
-	
-			if plot:GetPlotType() ~= PlotTypes.PLOT_OCEAN then
-						if (mountainVal >= iMountainThreshold) then
-							if (hillVal >= iPassThreshold) then -- Mountain Pass though the ridgeline - Brian
-								self.plotTypes[i] = PlotTypes.PLOT_HILLS;
-							else -- Mountain
-								-- set some randomness to moutains next to each other
-								local iIsMount = Map.Rand(100, "Mountain Spwan Chance");
-								--print("-"); print("Mountain Spawn Chance: ", iIsMount);
-								local iIsMountAdj = 55 - adjustment;
-								if iIsMount >= iIsMountAdj then
-									self.plotTypes[i] = PlotTypes.PLOT_MOUNTAIN;
-								else
-									-- set some randomness to hills or flat land next to the mountain
-									local iIsHill = Map.Rand(100, "Hill Spwan Chance");
-									--print("-"); print("Mountain Spawn Chance: ", iIsMount);
-									local iIsHillAdj = 40 - adjustment;
-									if iIsHillAdj >= iIsHill then
-										self.plotTypes[i] = PlotTypes.PLOT_HILLS;
-									else
-										self.plotTypes[i] = PlotTypes.PLOT_LAND;
-									end
-								end
-							end
-						elseif (mountainVal >= iHillsNearMountains) then
-							self.plotTypes[i] = PlotTypes.PLOT_HILLS; -- Foot hills - Bob
+				local i = y * self.iNumPlotsX + x;
+				local val = self.continentsFrac:GetHeight(x, y);
+				local mountainVal = self.mountainsFrac:GetHeight(x, y);
+				local hillVal = self.hillsFrac:GetHeight(x, y);
+
+				if (mountainVal >= iMountainThreshold) then
+					if (hillVal >= iPassThreshold) then -- Mountain Pass though the ridgeline - Brian
+						self.plotTypes[i] = PlotTypes.PLOT_HILLS;
+					else -- Mountain
+						-- set some randomness to moutains next to each other
+						local iIsMount = Map.Rand(100, "Mountain Spwan Chance");
+						--print("-"); print("Mountain Spawn Chance: ", iIsMount);
+						local iIsMountAdj = 83 - adjustment;
+						if iIsMount >= iIsMountAdj then
+							self.plotTypes[i] = PlotTypes.PLOT_MOUNTAIN;
 						else
-							if ((hillVal >= iHillsBottom1 and hillVal <= iHillsTop1) or (hillVal >= iHillsBottom2 and hillVal <= iHillsTop2)) then
+							-- set some randomness to hills or flat land next to the mountain
+							local iIsHill = Map.Rand(100, "Hill Spwan Chance");
+							--print("-"); print("Mountain Spawn Chance: ", iIsMount);
+							local iIsHillAdj = 67 - adjustment;
+							if iIsHillAdj >= iIsHill then
 								self.plotTypes[i] = PlotTypes.PLOT_HILLS;
 							else
 								self.plotTypes[i] = PlotTypes.PLOT_LAND;
 							end
 						end
+					end
+				elseif (mountainVal >= iHillsNearMountains) then
+					self.plotTypes[i] = PlotTypes.PLOT_HILLS; -- Foot hills - Bob
+				else
+					if ((hillVal >= iHillsBottom1 and hillVal <= iHillsTop1) or (hillVal >= iHillsBottom2 and hillVal <= iHillsTop2)) then
+						self.plotTypes[i] = PlotTypes.PLOT_HILLS;
+					else
+						self.plotTypes[i] = PlotTypes.PLOT_LAND;
+					end
+				end
 			end
 		end
-	end
-	self:ShiftPlotTypes();
+		-- Add water around top and bottom of map 
+		for x = 0, self.iNumPlotsX - 1 do
+			for y = 0, waterBorder do
+				local i = y * self.iNumPlotsX + x;
+				self.plotTypes[i] = PlotTypes.PLOT_OCEAN;
+			end
+		end
+
+		local mapTop = self.iNumPlotsY - 1;
+
+		for x = 0, self.iNumPlotsX - 1 do
+			for y = (mapTop - waterBorder), mapTop do
+				local i = y * self.iNumPlotsX + x;
+				self.plotTypes[i] = PlotTypes.PLOT_OCEAN;
+			end
+		end
+
+		-- add water at the edges of the map (W & E) to split the land
+		for x = 0, waterCenter do
+			for y = 0, self.iNumPlotsY - 1 do
+				local i = y * self.iNumPlotsX + x;
+				self.plotTypes[i] = PlotTypes.PLOT_OCEAN;
+			end
+		end
+
+		local edgeBorder = self.iNumPlotsX - 1;
+
+		for x = (edgeBorder - waterCenter), edgeBorder do
+			for y = 0, self.iNumPlotsY - 1 do
+				local i = y * self.iNumPlotsX + x;
+				self.plotTypes[i] = PlotTypes.PLOT_OCEAN;
+			end
+		end
+
+		-- Now add some variance to the edge of the map
+		local baysBorder = Map.Rand((smallBaysHigh + 1) - smallBaysLow, "") + smallBaysLow;
+		
+		local nsBays = smallBaysNS;
+		local ewBays = smallBaysEW;
+
+		local baysInsetNorth = (mapTop - waterBorder - baysBorder);
+		local baysInsetNorth2 = mapTop - (waterBorder + 1);
+
+		local baysInsetSouth = (waterBorder + baysBorder);
+		local baysInsetSouth2 = (waterBorder + 1);
+
+		local bayInsetEast = ((iW - 1) - waterCenter - baysBorder);
+		local bayInsetEast2 = 	(iW - 1) - (waterCenter + 1);
+
+		local bayInsetWest = (waterCenter + 1  + baysBorder);
+		local bayInsetWest2 = (waterCenter + 1);
+
+		-- add some bays in the north
+		for bayCount = 1, nsBays do
+
+			local x1 = Map.Rand((bayInsetEast2 + 1) - bayInsetWest2, "") + bayInsetWest2;
+			local y1 = Map.Rand((baysInsetNorth2 + 2) - baysInsetNorth, "") + baysInsetNorth;
+			local x2 = x1;
+
+			for y = y1, baysInsetNorth2 do
+				for x = x1, x2 do
+					local i = y * self.iNumPlotsX + x;
+					self.plotTypes[i] = PlotTypes.PLOT_OCEAN;
+				end
+
+				x1 = x1 - 1;
+				x2 = x2 + 1;
+			end
+		end
+
+		-- add some bays in the south
+		for bayCount = 1, nsBays do
+
+			local x1 = Map.Rand((bayInsetEast2 + 1) - bayInsetWest2, "") + bayInsetWest2;
+			local y1 = Map.Rand((baysInsetSouth + 2) - baysInsetSouth2, "") + baysInsetSouth2;
+			local x2 = x1;
+
+			for y = y1, baysInsetSouth2, -1 do
+				for x = x1, x2 do
+					local i = y * self.iNumPlotsX + x;
+					self.plotTypes[i] = PlotTypes.PLOT_OCEAN;
+				end
+
+				x1 = x1 - 1;
+				x2 = x2 + 1;
+			end
+		end
+
+		-- add some bays in the west
+		for bayCount = 1, ewBays do
+
+			local x1 = Map.Rand((bayInsetWest + 1) - bayInsetWest2, "") + bayInsetWest2;
+			local y1 = Map.Rand((baysInsetNorth2 + 1) - baysInsetSouth2, "") + baysInsetSouth2;
+			local y2 = y1;
+
+			for x = x1, bayInsetWest2, -1 do
+				for y = y1, y2 do
+					local i = y * self.iNumPlotsX + x;
+					self.plotTypes[i] = PlotTypes.PLOT_OCEAN;
+				end
+
+				y1 = y1 - 1;
+				y2 = y2 + 1;
+			end
+		end
+
+		-- add some bays in the east
+		for bayCount = 1, ewBays do
+
+			local x1 = Map.Rand((bayInsetEast2 + 1) - bayInsetEast, "") + bayInsetEast;
+			local y1 = Map.Rand((baysInsetNorth2 + 1) - baysInsetSouth2, "") + baysInsetSouth2;
+			local y2 = y1;
+
+			for x = x1, bayInsetEast2 do
+				for y = y1, y2 do
+					local i = y * self.iNumPlotsX + x;
+					self.plotTypes[i] = PlotTypes.PLOT_OCEAN;
+				end
+
+				y1 = y1 - 1;
+				y2 = y2 + 1;
+			end
+		end
+
+		--#####################
+
+		-- Now add some variance to the edge of the map
+		local baysBorder = Map.Rand((largeBaysHigh + 1) - largeBaysLow, "") + largeBaysLow;
+		
+		local nsBays = largeBaysNS;
+		local ewBays = largeBaysEW;
+
+		local baysInsetNorth = (mapTop - waterBorder - baysBorder);
+		local baysInsetNorth2 = mapTop - (waterBorder + 1);
+
+		local baysInsetSouth = (waterBorder + baysBorder);
+		local baysInsetSouth2 = (waterBorder + 1);
+
+		local bayInsetEast = ((iW - 1) - waterCenter - baysBorder);
+		local bayInsetEast2 = 	(iW - 1) - (waterCenter + 1);
+
+		local bayInsetWest = (waterCenter + 1  + baysBorder);
+		local bayInsetWest2 = (waterCenter + 1);
+
+		-- add some bays in the north
+		for bayCount = 1, nsBays do
+
+			local x1 = Map.Rand((bayInsetEast2 + 1) - bayInsetWest2, "") + bayInsetWest2;
+			local y1 = Map.Rand((baysInsetNorth2 + 2) - baysInsetNorth, "") + baysInsetNorth;
+			local x2 = x1;
+
+			for y = y1, baysInsetNorth2 do
+				for x = x1, x2 do
+					local i = y * self.iNumPlotsX + x;
+					self.plotTypes[i] = PlotTypes.PLOT_OCEAN;
+				end
+
+				x1 = x1 - 1;
+				x2 = x2 + 1;
+			end
+		end
+
+		-- add some bays in the south
+		for bayCount = 1, nsBays do
+
+			local x1 = Map.Rand((bayInsetEast2 + 1) - bayInsetWest2, "") + bayInsetWest2;
+			local y1 = Map.Rand((baysInsetSouth + 2) - baysInsetSouth2, "") + baysInsetSouth2;
+			local x2 = x1;
+
+			for y = y1, baysInsetSouth2, -1 do
+				for x = x1, x2 do
+					local i = y * self.iNumPlotsX + x;
+					self.plotTypes[i] = PlotTypes.PLOT_OCEAN;
+				end
+
+				x1 = x1 - 1;
+				x2 = x2 + 1;
+			end
+		end
+
+		-- add some bays in the west
+		for bayCount = 1, ewBays do
+
+			local x1 = Map.Rand((bayInsetWest + 1) - bayInsetWest2, "") + bayInsetWest2;
+			local y1 = Map.Rand((baysInsetNorth2 + 1) - baysInsetSouth2, "") + baysInsetSouth2;
+			local y2 = y1;
+
+			for x = x1, bayInsetWest2, -1 do
+				for y = y1, y2 do
+					local i = y * self.iNumPlotsX + x;
+					self.plotTypes[i] = PlotTypes.PLOT_OCEAN;
+				end
+
+				y1 = y1 - 1;
+				y2 = y2 + 1;
+			end
+		end
+
+		-- add some bays in the east
+		for bayCount = 1, ewBays do
+
+			local x1 = Map.Rand((bayInsetEast2 + 1) - bayInsetEast, "") + bayInsetEast;
+			local y1 = Map.Rand((baysInsetNorth2 + 1) - baysInsetSouth2, "") + baysInsetSouth2;
+			local y2 = y1;
+
+			for x = x1, bayInsetEast2 do
+				for y = y1, y2 do
+					local i = y * self.iNumPlotsX + x;
+					self.plotTypes[i] = PlotTypes.PLOT_OCEAN;
+				end
+
+				y1 = y1 - 1;
+				y2 = y2 + 1;
+			end
+		end
+
+		self:ShiftPlotTypes();
+
+		--#####################
+
 		-- Create islands. Try to make more useful islands than the default code.
 		-- pick a random tile and check if it is ocean, if it is check tiles around it
 		-- to see how big an island we can make, then make an island from size 1 up to the biggest we can make
@@ -918,59 +1177,61 @@ function ContinentsFractalWorld:GeneratePlotTypes(args)
 		end
 
 		print("######### Finished Islands #########");
-		
+
+		--check to make sure map has not failed
+		local iNumLandTilesInUse = 0;
 		local iW, iH = Map.GetGridSize();
-		local centerX = iW / 2;
-		local centerY = iH / 2;
-		local fracFlags = {FRAC_POLAR = true};
-		local baysFrac = Fractal.Create(iW, iH, 3, fracFlags, -1, -1);
-		local iBaysThreshold = baysFrac:GetHeight(96);  --lakes lavel size
-		local axis_list = {0.87, 0.81, 0.75};
-		local axis_multiplier = axis_list[sea_level];
-		local cohesion_list = {0.36, 0.33, 0.30};
-		local cohesion_multiplier = cohesion_list[sea_level];
-		majorAxis = centerX * cohesion_multiplier;
-		minorAxis = centerY * cohesion_multiplier;
-		majorAxisSquared = majorAxis * majorAxis;
-		minorAxisSquared = minorAxis * minorAxis;
+		local iPercent = (iW * iH) * 0.35;
+
 		for y = 0, iH - 1 do
 			for x = 0, iW - 1 do
-				local deltaX = x - centerX;
-				local deltaY = y - centerY;
-				local deltaXSquared = deltaX * deltaX;
-				local deltaYSquared = deltaY * deltaY;
-				local d = deltaXSquared/majorAxisSquared + deltaYSquared/minorAxisSquared;
-				if d > 1 then
-					local i = y * iW + x + 1;
-					local baysVal = baysFrac:GetHeight(x, y);
-					if baysVal >= iBaysThreshold then
-						self.plotTypes[i] = PlotTypes.PLOT_OCEAN;
-					end
+				local i = iW * y + x;
+				if self.plotTypes[i] ~= PlotTypes.PLOT_OCEAN then
+					iNumLandTilesInUse = iNumLandTilesInUse + 1;
 				end
 			end
 		end
+
+		redoMap = false;
+
+		print("######### Map Failure Check #########");
+		print("35% Of Map Area: ", iPercent);
+		print("Map Land Tiles: ", iNumLandTilesInUse);
+
+		if iNumLandTilesInUse >= iPercent and redoMap == false then
+			allcomplete = true;
+			print("######### Map Pass #########");
+		else
+			print("######### Map Failure #########");
+		end
+	end
+
 	return self.plotTypes;
 end
+
+
+
+
+
+
+
 ------------------------------------------------------------------------------
-
-
-
 
 ------------------------------------------------------------------------------
 function GeneratePlotTypes()
 	-- Plot generation customized to ensure enough land belongs to the Pangaea.
-	print("Generating Plot Types (Lua Continents) ...");
+	print("Generating Plot Types (Lua Pangaea) ...");
 	
-	local fractal_world = ContinentsFractalWorld.Create();
+	local fractal_world = RectangularFractalWorld.Create();
 	local plotTypes = fractal_world:GeneratePlotTypes();
-
-	SetPlotTypes(plotTypes);	
+	
+	SetPlotTypes(plotTypes);
 	GenerateCoasts();
 end
 ------------------------------------------------------------------------------
 function GenerateTerrain()
 
-	local DesertPercent = 28;
+	local DesertPercent = 22;
 
 	-- Get Temperature setting input by user.
 	local temp = Map.GetCustomOption(2)
@@ -1046,7 +1307,7 @@ end
 ------------------------------------------------------------------------------
 function StartPlotSystem()
 
-	local RegionalMethod = 2;
+	local RegionalMethod = 1;
 
 	-- Get Resources setting input by user.
 	local AllowInlandSea = Map.GetCustomOption(18)
