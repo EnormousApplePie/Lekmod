@@ -18,6 +18,7 @@
 	<GameplaySkin>
 		<Directory>UI</Directory>
 		<Directory>Mods</Directory>
+		<Directory>CultureOverview</Directory>
 	</GameplaySkin>
   </UISkin>	
 </Civ5Package>
