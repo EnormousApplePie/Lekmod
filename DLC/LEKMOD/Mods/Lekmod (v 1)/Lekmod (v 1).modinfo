@@ -25,6 +25,14 @@
   <Files>
   
 	<!-- v29 Maurya & Mysore -->
+	<File md5="A28985166F8FCACD4CF43D1BCE64ABB0" import="1">New Civs/Indian Collection/Atlases/Fast_Worker_256.dds</File>
+	<File md5="B0EF7E30AC30B25212910696FB740076" import="1">New Civs/Indian Collection/Atlases/Fast_Worker_128.dds</File>
+	<File md5="A331FB6DD2AF4C4AD14210F1CBEB41ED" import="1">New Civs/Indian Collection/Atlases/Fast_Worker_80.dds</File>
+	<File md5="E226D2B497457C530E66C5E6DBFFACAE" import="1">New Civs/Indian Collection/Atlases/Fast_Worker_64.dds</File>
+	<File md5="84136117C796A622614F250CC69265C0" import="1">New Civs/Indian Collection/Atlases/Fast_Worker_45.dds</File>
+	<File md5="E556DFF3AE3DA73277F69749FAC3E5CB" import="1">New Civs/Indian Collection/Atlases/Fast_Worker_32.dds</File>
+	<File md5="E912F81B50832131B414213984EF27BF" import="1">New Civs/Indian Collection/Atlases/Fast_Worker_24.dds</File>
+	<File md5="F3F003B337EBB4C7619470A6BFC44673" import="1">New Civs/Indian Collection/Atlases/Fast_Worker_16.dds</File>
 	<File md5="40AAE6ECB0EC1F1F69F8D2BADEC55939" import="1">New Civs/Indian Collection/Atlases/MC_IndiaAlpha_128.dds</File>
     <File md5="8CFE8C52E700B8D1E25551749F32B9F0" import="1">New Civs/Indian Collection/Atlases/MC_IndiaAlpha_16.dds</File>
     <File md5="388076B43D805C23A72B7377E807D940" import="1">New Civs/Indian Collection/Atlases/MC_IndiaAlpha_24.dds</File>
