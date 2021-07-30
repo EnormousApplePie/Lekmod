@@ -64,6 +64,49 @@ function JFD_GetNumDomesticRoutesFromThisCity(player, city) -- for both Sea and 
 	
 	return numDomesticRoutes
 end
+
+function Sukritact_PlaceResource(startingPlot, resourceID)
+    local plots = {}
+    for loopPlot in PlotAreaSweepIterator(startingPlot, 3, SECTOR_NORTH, DIRECTION_CLOCKWISE, DIRECTION_OUTWARDS, CENTRE_EXCLUDE) do
+        table.insert(plots, loopPlot)
+    end
+	
+    for iVal = 1, 1 do
+		local isPlaced = false
+		while (not isPlaced) and #plots > 0 do
+			local randomNumber = GetRandom(1, #plots)
+			local plot = plots[randomNumber]
+			if (plot:IsWater() and plot:GetNumResource() == 0 and not plot:IsLake()) then
+				plot:SetResourceType(resourceID, 1)
+				plot:SetFeatureType(-1)
+				isPlaced = true
+				print("placed some fish")
+			end
+			
+			table.remove(plots, randomNumber)
+		end
+	end
+end
+
+--====================================================================================================================
+											--GLOBAL EFFECTS 
+
+--====================================================================================================================
+local resourceSheepID = GameInfoTypes["RESOURCE_FISH"]
+local placeRes = false
+function JFD_InitFlanders()
+	for playerID = 0, GameDefines.MAX_MAJOR_CIVS - 1 do
+		local player = Players[playerID]
+		if (player:IsEverAlive()) then
+			if (not placeRes == true) then
+				Sukritact_PlaceResource(player:GetStartingPlot(), resourceSheepID)
+				placeRes = true
+			end
+		end
+	end
+end
+
+Events.LoadScreenClose.Add(JFD_InitFlanders)
 --=================================================================================================================
 --=================================================================================================================
 --									UA					UB				UU			
