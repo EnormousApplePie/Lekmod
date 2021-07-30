@@ -4451,8 +4451,7 @@ function AssignStartingPlots:AttemptToPlaceBonusResourceAtPlot(x, y, bAllowOasis
 	--print("-"); print("Attempting to place a Bonus at: ", x, y);
 	local plot = Map.GetPlot(x, y);
 	local maxNumGranary = 4
-
-
+	--local maxFishPlace = 3
 	if plot == nil then
 		--print("Placement failed, plot was nil.");
 		return false
@@ -4474,8 +4473,21 @@ function AssignStartingPlots:AttemptToPlaceBonusResourceAtPlot(x, y, bAllowOasis
 	local plotType = plot:GetPlotType()
 	--
 	
-	
+	-- Made by EAP
 	-- Note: a lot of this code doesn't do anything, yet, lot of it is for if you increase the iNumFoodBonusNeeded above 3 at the end of the iNumFoodBonusNeeded calculations
+	-- Here we place possible fish
+	--[[if plotType == PlotTypes.PLOT_OCEAN then
+		if maxNumGranary > 0 and maxFishPlace > 0 then
+			if terrainType == TerrainTypes.TERRAIN_COAST and featureType == FeatureTypes.NO_FEATURE then
+				if plot:IsLake() == false then -- Place Fish
+					plot:SetResourceType(self.fish_ID, 1);
+					print("Placed Fish.");
+					self.amounts_of_resources_placed[self.fish_ID + 1] = self.amounts_of_resources_placed[self.fish_ID + 1] + 1;
+					maxFishPlace = maxFishPlace - 1;
+					return true, false, true
+				end
+			end
+		end --]]
 	if featureType == FeatureTypes.FEATURE_JUNGLE then -- Place Banana
 		if maxNumGranary > 0 then
 		plot:SetResourceType(self.banana_ID, 1);
@@ -4588,7 +4600,13 @@ function AssignStartingPlots:AttemptToPlaceBonusResourceAtPlot(x, y, bAllowOasis
 		else
 			return false
 		end
-	
+	-- Place Wheat on Floodplains
+	elseif terrainType == TerrainTypes.TERRAIN_DESERT and plotType == PlotTypes.PLOT_LAND and featureType == FeatureTypes.FEATURE_FLOOD_PLAINS then
+		-- Place Wheat
+		plot:SetResourceType(self.wheat_ID, 1);
+		print("Placed Wheat.");
+		self.amounts_of_resources_placed[self.wheat_ID + 1] = self.amounts_of_resources_placed[self.wheat_ID + 1] + 1;
+		return true, false, false
 	elseif plotType == PlotTypes.PLOT_LAND and featureType == FeatureTypes.NO_FEATURE and terrainType == TerrainTypes.TERRAIN_PLAINS then
 		plot:SetResourceType(self.cow_ID, 1);
 		print("Placed Cow.");
@@ -4616,6 +4634,7 @@ function AssignStartingPlots:AttemptToPlaceBonusResourceAtPlot(x, y, bAllowOasis
 					print("Placed Hardwood.");
 					self.amounts_of_resources_placed[self.hardwood_ID + 1] = self.amounts_of_resources_placed[self.hardwood_ID + 1] + 1;
 					return true, false, false
+	-- Place Wheat on Desert
 	elseif terrainType == TerrainTypes.TERRAIN_DESERT and plotType == PlotTypes.PLOT_LAND and featureType == FeatureTypes.NO_FEATURE then 
 		if plot:IsFreshWater() then
 			-- Place Wheat
@@ -4630,16 +4649,8 @@ function AssignStartingPlots:AttemptToPlaceBonusResourceAtPlot(x, y, bAllowOasis
 		else
 					print("Not allowed to place any more Oasis help at this site.");
 		end
-	elseif plotType == PlotTypes.PLOT_OCEAN then
-		if terrainType == TerrainTypes.TERRAIN_COAST and featureType == FeatureTypes.NO_FEATURE then
-			if plot:IsLake() == false then -- Place Fish
-				plot:SetResourceType(self.fish_ID, 1);
-				print("Placed Fish.");
-				self.amounts_of_resources_placed[self.fish_ID + 1] = self.amounts_of_resources_placed[self.fish_ID + 1] + 1;
-				return true, false, true
-			end
-		end
-	end	
+	end
+	
 	-- Nothing placed.
 	return false, false, false
 end
@@ -5247,7 +5258,7 @@ function AssignStartingPlots:NormalizeStartLocation(region_number)
 						innerFourFood = innerFourFood + 1;
 						iNumGrass = iNumGrass + 1;
 						if featureType ~= FeatureTypes.FEATURE_MARSH then
-							innerTwoFood = innerTwoFood + 1;
+							--innerTwoFood = innerTwoFood + 1;
 							innerCanHaveBonus = innerCanHaveBonus + 1;
 						end
 						if featureType == FeatureTypes.FEATURE_FOREST then
@@ -5286,7 +5297,7 @@ function AssignStartingPlots:NormalizeStartLocation(region_number)
 						innerThreeFood = innerThreeFood + 1;
 						iNumGrass = iNumGrass + 1;
 						if featureType ~= FeatureTypes.FEATURE_MARSH then
-							innerTwoFood = innerTwoFood + 1;
+							--innerTwoFood = innerTwoFood + 1;
 							innerCanHaveBonus = innerCanHaveBonus + 1;
 						end
 						if featureType == FeatureTypes.FEATURE_FOREST then
@@ -5392,7 +5403,7 @@ function AssignStartingPlots:NormalizeStartLocation(region_number)
 						outerFourFood = outerFourFood + 1;
 						iNumGrass = iNumGrass + 1;
 						if featureType ~= FeatureTypes.FEATURE_MARSH then
-							outerTwoFood = outerTwoFood + 1;
+							--outerTwoFood = outerTwoFood + 1;
 							outerCanHaveBonus = outerCanHaveBonus + 1;
 						end
 						if featureType == FeatureTypes.FEATURE_FOREST then
@@ -5431,7 +5442,7 @@ function AssignStartingPlots:NormalizeStartLocation(region_number)
 						outerThreeFood = outerThreeFood + 1;
 						iNumGrass = iNumGrass + 1;
 						if featureType ~= FeatureTypes.FEATURE_MARSH then
-							outerTwoFood = outerTwoFood + 1;
+							--outerTwoFood = outerTwoFood + 1;
 							outerCanHaveBonus = outerCanHaveBonus + 1;
 						end
 						if featureType == FeatureTypes.FEATURE_FOREST then
