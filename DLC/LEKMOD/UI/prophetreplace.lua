@@ -70,6 +70,30 @@ end
 --=================================================================================================================
 --=================================================================================================================
 
+
+-- chile UA
+
+
+local iCiv = GameInfoTypes["CIVILIZATION_CHILE"]
+local bIsActive = JFD_IsCivilisationActive(iCiv)
+if bIsActive then
+GameEvents.TeamSetHasTech.Add(function(iTeam, iTech, bAdopted)
+	print("working: chile ontechbonus")
+	for playerID, player in pairs(Players) do
+		local player = Players[playerID];
+		if player:GetCivilizationType() == GameInfoTypes["CIVILIZATION_CHILE"] then
+			if player:GetTeam() == iTeam then
+				if (iTech == GameInfoTypes["TECH_OPTICS"]) then
+					local pCity = player:GetCapitalCity();
+					pCity:SetNumRealBuilding(GameInfoTypes["BUILDING_CHILE_TRAIT"], 1);
+				end
+			end
+		end
+	end
+end);
+end
+
+
 -- Maurya UA
 
 local iCiv = GameInfoTypes["CIVILIZATION_MC_MAURYA"]
@@ -79,25 +103,21 @@ local bIsActive = JFD_IsCivilisationActive(iCiv)
 function MauryaHeal(playerID, unitID, unitX, unitY)
 	local player = Players[playerID]
 	if player:GetCivilizationType() == GameInfoTypes["CIVILIZATION_MC_MAURYA"] and player:IsAlive() then
-		print("Found Maurya")
 		local inFriendlyTerritory = false
 		local unit = player:GetUnitByID(unitID)
 		if not unit:IsDead() then
 				if Map.GetPlot(unit:GetX(), unit:GetY()):GetOwner() == playerID then
 					inFriendlyTerritory = true
-					print("Found Unit in territory")
 				end
 		end
 		
 		if inFriendlyTerritory then
 			if not unit:IsHasPromotion(GameInfoTypes["PROMOTION_INSCRIPTIONS_HEAL"]) then
 				unit:SetHasPromotion(GameInfoTypes["PROMOTION_INSCRIPTIONS_HEAL"], true)
-				print("Set Promo Maurya true")
 			end
 		else
 			if unit:IsHasPromotion(GameInfoTypes["PROMOTION_INSCRIPTIONS_HEAL"]) then
 				unit:SetHasPromotion(GameInfoTypes["PROMOTION_INSCRIPTIONS_HEAL"], false)
-				print("Set Promo Maurya false")
 			end
 		end
 	end
@@ -110,6 +130,23 @@ end
 local iCiv = GameInfoTypes["CIVILIZATION_CB_AGUINALDOPH"]
 local bIsActive = JFD_IsCivilisationActive(iCiv)
 
+local iBuilding = GameInfoTypes["BUILDING_PHILIPPINES_TRAIT"]
+local iNumCities = 2
+
+function PhilippineExpandsBonus(playerID, iX, iY) -- Thanks Chrisy for always fixing my lua
+    local pPlayer = Players[playerID]
+    if pPlayer:GetCivilizationType() == GameInfoTypes["CIVILIZATION_CB_AGUINALDOPH"] and pPlayer:IsAlive() and pPlayer:CountNumBuildings(iBuilding) < iNumCities then
+        local pPlot = Map.GetPlot(iX, iY)
+        local pCity = pPlot:GetPlotCity()
+        if not pCity:IsCapital() then
+            pCity:SetNumRealBuilding(iBuilding, 1)
+        end
+    end
+end
+
+
+
+
 -- From JFD
 function PhilippineMovementBonus(playerID, unitID, unitX, unitY)
 	local player = Players[playerID]
@@ -117,9 +154,11 @@ function PhilippineMovementBonus(playerID, unitID, unitX, unitY)
 		local inFriendlyTerritory = false
 		local unit = player:GetUnitByID(unitID)
 		if not unit:IsDead() then
-			if (unit:GetUnitClassType() == GameInfoTypes["UNITCLASS_WORKER"] or unit:GetUnitClassType() == GameInfoTypes["UNITCLASS_SETTLER"] or unit:GetDomainType() == GameInfoTypes["DOMAIN_SEA"]) then
-				if Map.GetPlot(unit:GetX(), unit:GetY()):GetOwner() == playerID then
-					inFriendlyTerritory = true
+			if unit ~= nil then
+				if (unit:GetUnitClassType() == GameInfoTypes["UNITCLASS_WORKER"] or unit:GetUnitClassType() == GameInfoTypes["UNITCLASS_SETTLER"] or unit:GetDomainType() == GameInfoTypes["DOMAIN_SEA"]) then
+					if Map.GetPlot(unit:GetX(), unit:GetY()):GetOwner() == playerID then
+						inFriendlyTerritory = true
+					end
 				end
 			end
 		end
@@ -137,6 +176,7 @@ function PhilippineMovementBonus(playerID, unitID, unitX, unitY)
 end
 if bIsActive then
 GameEvents.UnitSetXY.Add(PhilippineMovementBonus) 
+GameEvents.PlayerCityFounded.Add(PhilippineExpandsBonus)
 end
 -- Nabatea UU
 local iCiv = GameInfoTypes["CIVILIZATION_MC_NABATEA"]
@@ -161,7 +201,7 @@ function ZabonahDiscovery(iPlayer, iUnit, iX, iY) -- from Sukritact
 
 				local iReward = 0
 				local iRewardExp = 0
-				if pCity:IsCapital() then iReward = 10 end
+				if pCity:IsCapital() then iReward = 15 end
 				if pCity:IsCapital() then iRewardExp = 5 end
 
 				pPlayer:ChangeGold(iReward)
@@ -228,7 +268,7 @@ function MoorsEraUA(playerID)
 			local player = Players[playerID];
 			local pCity = player:GetCapitalCity();
 			if pCity ~= nil then
-				if (player:GetCivilizationType() == GameInfoTypes["CIVILIZATION_MC_LITE_MOOR"] and player:GetCurrentEra() == GameInfoTypes["ERA_RENAISSANCE"]) then
+				if (player:GetCivilizationType() == GameInfoTypes["CIVILIZATION_MC_LITE_MOOR"] and player:GetCurrentEra() == GameInfoTypes["ERA_MEDIEVAL"]) then
 					
 					pCity:SetNumRealBuilding(GameInfoTypes["BUILDING_MOORS_TRAIT"], 1);
 					for pCity in player:Cities() do
@@ -244,9 +284,32 @@ function MoorsEraUA(playerID)
 			end
 	end
 end
+function MoorsEraUA2(playerID)
+
+	for playerID, player in pairs(Players) do
+			local player = Players[playerID];
+			local pCity = player:GetCapitalCity();
+			if pCity ~= nil then
+				if (player:GetCivilizationType() == GameInfoTypes["CIVILIZATION_MC_LITE_MOOR"] and player:GetCurrentEra() == GameInfoTypes["ERA_RENAISSANCE"]) then
+					
+					pCity:SetNumRealBuilding(GameInfoTypes["BUILDING_MOORS_TRAIT_2"], 1);
+					for pCity in player:Cities() do
+					pCity:SetNumRealBuilding(GameInfoTypes["BUILDING_MOORS_TRAIT_2"], 1);
+					end
+				else
+					
+					pCity:SetNumRealBuilding(GameInfoTypes["BUILDING_MOORS_TRAIT_2"], 0);
+					for pCity in player:Cities() do
+					pCity:SetNumRealBuilding(GameInfoTypes["BUILDING_MOORS_TRAIT_2"], 0);
+					end
+				end
+			end
+	end
+end
 
 
 if bIsActive then
+GameEvents.PlayerDoTurn.Add(MoorsEraUA2)
 GameEvents.PlayerDoTurn.Add(MoorsEraUA)
 end
 --- UAE UA
@@ -498,7 +561,7 @@ function CubaCultureYoink(iPlayer) --- Fixed my original broken code by LeeS(Mas
                     if (pOtPlayer ~= nil) and pOtPlayer:IsEverAlive() and pOtPlayer:IsAlive() and (pOtPlayer:GetCapitalCity() ~= nil) and Teams[player:GetTeam()]:IsHasMet(pOtPlayer:GetTeam()) then
                         print("has met a civ, begin stealing their culture...")
                         local otherCapital = pOtPlayer:GetCapitalCity()
-                        iNumToSet = (iNumToSet +  math.floor(otherCapital:GetBaseJONSCulturePerTurn() * .125) )
+                        iNumToSet = (iNumToSet +  math.floor(otherCapital:GetBaseJONSCulturePerTurn() * .20) )
                     end
                 end
             end
@@ -542,7 +605,7 @@ function IsPersonExpended(iPlayer, iUnit)
 		print("found a civ")
         if pPlayer:GetCivilizationType() == GameInfoTypes["CIVILIZATION_LEU_BOLIVIA_BELZU"] then
 			print("found Bolivia")
-			if Teams[pPlayer:GetTeam()]:IsHasTech(GameInfoTypes["TECH_CHEMISTRY"]) then
+			if Teams[pPlayer:GetTeam()]:IsHasTech(GameInfoTypes["TECH_BANKING"]) then
 				local ArtUnitID = GameInfoTypes["UNIT_ARTIST"]
 				if (iUnit == ArtUnitID) then
 					print("found the Unit -> Artist")
@@ -713,14 +776,18 @@ GameEvents.PlayerDoTurn.Add(EAP_Embark_Fix)
 local iCiv = GameInfoTypes["CIVILIZATION_MC_NEW_ZEALAND"]
 local bIsActive = JFD_IsCivilisationActive(iCiv)
      
-function JFD_Tonga(playerMetID, playerID)
+function NZMeetBonus(playerMetID, playerID)
+			local newzciv = GameInfoTypes["CIVILIZATION_MC_NEW_ZEALAND"]
 			local player = Players[playerID]
             local playerMet = Players[playerMetID]
-            local majorsMet = Teams[playerMet:GetTeam()]:GetHasMetCivCount(true)
-            local rewardCulture = 8
-            local rewardScience = 12
+            local rewardCulture = 12
+            local rewardScience = 24
             local rewardGold = 40
             local rewardFaith = 14
+			if playerMet:GetCivilizationType() == GameInfoTypes["CIVILIZATION_MC_NEW_ZEALAND"] then
+				for newzciv in newzciv do NZMeetBonus() end
+			end
+
             if player:GetCivilizationType() == GameInfoTypes["CIVILIZATION_MC_NEW_ZEALAND"] then
                     local random = GetRandom(1, 4)
                     if random == 1 then
@@ -830,7 +897,7 @@ function JFD_NewZealand_Defender_PlayerDoTurn(playerID)
 end
 
 if bIsActive then
-	GameEvents.TeamMeet.Add(JFD_Tonga)
+	GameEvents.TeamMeet.Add(NZMeetBonus)
 	GameEvents.PlayerDoTurn.Add(MC_MaoriBattalion)
 	GameEvents.PlayerDoTurn.Add(JFD_NewZealand_Defender_PlayerDoTurn)
 end
@@ -924,9 +991,6 @@ end
 local iCiv = GameInfoTypes["CIVILIZATION_MC_KILWA"]
 local bIsActive = JFD_IsCivilisationActive(iCiv)
 
-if JFD_IsCivilisationActive(iCiv) then
-	print("Kilwa is in this game")
-end
 
 -- Kilwa UA function 
 function GetTradeRoutesNumber(player, city)
@@ -948,7 +1012,7 @@ local buildingTraitKilwaID = GameInfoTypes["BUILDING_KILWA_TRAIT"]
 function KilwaTrait(playerID)
 	print("working: kilwa 2")
 	local player = Players[playerID]
-    if player:IsEverAlive() and player:GetCivilizationType() == civilisationID then 
+    if player:IsEverAlive() and player:GetCivilizationType() == GameInfoTypes["CIVILIZATION_MC_KILWA"] then 
 		for city in player:Cities() do
 			city:SetNumRealBuilding(buildingTraitKilwaID, math.min(GetTradeRoutesNumber(player, city), 420)) -- I wonder if this will work (note: it does)
 		end
@@ -1179,6 +1243,29 @@ end
 -------------------- DUMMY POLICIES ----------------------
 ----------------------------------------------------------
 
+-- 'Nam dummy policy
+
+local iCiv = GameInfoTypes["CIVILIZATION_JURCHEN"]
+local bIsActive = JFD_IsCivilisationActive(iCiv)
+
+print("dummy policy loaded - Manchuria")
+function DummyPolicy(player)
+	print("working - Manchuria")
+	for playerID, player in pairs(Players) do
+		local player = Players[playerID];
+		if player:GetCivilizationType() == GameInfoTypes["CIVILIZATION_JURCHEN"] then
+			if not player:HasPolicy(GameInfoTypes["POLICY_DUMMY_MANCHURIA"]) then
+				
+				player:SetNumFreePolicies(1)
+				player:SetNumFreePolicies(0)
+				player:SetHasPolicy(GameInfoTypes["POLICY_DUMMY_MANCHURIA"], true)	
+			end
+		end
+	end 
+end
+if bIsActive then
+Events.SequenceGameInitComplete.Add(DummyPolicy)
+end
 
 -- Mysore dummy Policy
 local iCiv = GameInfoTypes["CIVILIZATION_MYSORE"]
