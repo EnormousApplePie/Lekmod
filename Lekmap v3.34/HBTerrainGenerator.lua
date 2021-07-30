@@ -33,7 +33,7 @@ function TerrainGenerator.Create(args)
 	
 	-- Set terrain bands.
 	local iDesertPercent = args.iDesertPercent or 32;
-	local iPlainsPercent = args.iPlainsPercent or 50; -- Deserts are processed first, so Plains will take this percentage of whatever remains. - Bob
+	local iPlainsPercent = args.iPlainsPercent or 65; -- Deserts are processed first, so Plains will take this percentage of whatever remains. - Bob
 
 	if grassMoist == 1 then
 		iPlainsPercent = 50;
