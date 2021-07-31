@@ -65,7 +65,7 @@ function JFD_GetNumDomesticRoutesFromThisCity(player, city) -- for both Sea and 
 	return numDomesticRoutes
 end
 
-function Sukritact_PlaceResource(startingPlot, resourceID)
+function PlaceExtraJuiceResource(startingPlot, resourceID)
     local plots = {}
     for loopPlot in PlotAreaSweepIterator(startingPlot, 3, SECTOR_NORTH, DIRECTION_CLOCKWISE, DIRECTION_OUTWARDS, CENTRE_EXCLUDE) do
         table.insert(plots, loopPlot)
@@ -92,21 +92,21 @@ end
 											--GLOBAL EFFECTS 
 
 --====================================================================================================================
-local resourceSheepID = GameInfoTypes["RESOURCE_FISH"]
+local FishID = GameInfoTypes["RESOURCE_FISH"]
 local placeRes = false
-function JFD_InitFlanders()
-	for playerID = 0, GameDefines.MAX_MAJOR_CIVS - 1 do
-		local player = Players[playerID]
-		if (player:IsEverAlive()) then
-			if (not placeRes == true) then
-				Sukritact_PlaceResource(player:GetStartingPlot(), resourceSheepID)
-				placeRes = true
-			end
-		end
-	end
+function PlaceExtraJuice()
+	if Game.GetGameTurn() > Game.GetStartTurn() then return end
+    if (placeRes) then return end
+    for playerID = 0, GameDefines.MAX_MAJOR_CIVS - 1 do
+        local player = Players[playerID]
+        if (player:IsEverAlive()) then
+             PlaceExtraJuiceResource(player:GetStartingPlot(), FishID)
+        end
+    end
+    placeRes = true
 end
 
-Events.LoadScreenClose.Add(JFD_InitFlanders)
+Events.LoadScreenClose.Add(PlaceExtraJuice)
 --=================================================================================================================
 --=================================================================================================================
 --									UA					UB				UU			
@@ -148,7 +148,7 @@ function MauryaHeal(playerID, unitID, unitX, unitY)
 	if player:GetCivilizationType() == GameInfoTypes["CIVILIZATION_MC_MAURYA"] and player:IsAlive() then
 		local inFriendlyTerritory = false
 		local unit = player:GetUnitByID(unitID)
-		if not unit:IsDead() then
+		if not unit:IsDead() and not unit:GetDomainType() == GameInfoTypes["DOMAIN_AIR"]) then
 				if Map.GetPlot(unit:GetX(), unit:GetY()):GetOwner() == playerID then
 					inFriendlyTerritory = true
 				end
