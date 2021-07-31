@@ -148,7 +148,8 @@ function MauryaHeal(playerID, unitID, unitX, unitY)
 	if player:GetCivilizationType() == GameInfoTypes["CIVILIZATION_MC_MAURYA"] and player:IsAlive() then
 		local inFriendlyTerritory = false
 		local unit = player:GetUnitByID(unitID)
-		if not unit:IsDead() and not unit:GetDomainType() == GameInfoTypes["DOMAIN_AIR"]) then
+		if ( not unit:IsDead() ) then
+			if unit:GetDomainType() == GameInfoTypes["DOMAIN_AIR"] then return end
 				if Map.GetPlot(unit:GetX(), unit:GetY()):GetOwner() == playerID then
 					inFriendlyTerritory = true
 				end
