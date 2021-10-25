@@ -23,7 +23,36 @@
   <References />
   <Blocks />
   <Files>
-  
+	<!-- v30 Colombia -->
+    <File md5="3F4D7014DB94AE2BA3388BDC3F4B1199" import="1">New Civs/Colombia/Icons/flag_libertador.dds</File>
+    <File md5="123E116B5CB3C0BBD1E4FCD53A67DBA6" import="1">New Civs/Colombia/Icons/flag_llanero.dds</File>
+    <File md5="D3380D75E9A191939262B222F3A4F6BD" import="1">New Civs/Colombia/Icons/GranColombiaIcons128.dds</File>
+    <File md5="8EC90D4D4C6DA0143A8D9D1BE4BCE627" import="1">New Civs/Colombia/Icons/GranColombiaIcons16.dds</File>
+    <File md5="783A631B284A53BA859099E41ECDB657" import="1">New Civs/Colombia/Icons/GranColombiaIcons24.dds</File>
+    <File md5="CC7DEEC48236B630FECD5218E3A309FE" import="1">New Civs/Colombia/Icons/GranColombiaIcons256.dds</File>
+    <File md5="402A0BEA636008EF59231A7D65D33037" import="1">New Civs/Colombia/Icons/GranColombiaIcons32.dds</File>
+    <File md5="25A4030ED5524C44F10EE280AB385A0F" import="1">New Civs/Colombia/Icons/GranColombiaIcons45.dds</File>
+    <File md5="5E3FD5209EE24567A1D62E3AC67F0D7C" import="1">New Civs/Colombia/Icons/GranColombiaIcons48.dds</File>
+    <File md5="DABC267D41624DEA743E9B42D37DA5D3" import="1">New Civs/Colombia/Icons/GranColombiaIcons64.dds</File>
+    <File md5="53E00F26900F802AEB4EC9CCFCC7D22F" import="1">New Civs/Colombia/Icons/GranColombiaIcons80.dds</File>
+    <File md5="12261CFC4689550E60A4B58413BAC456" import="1">New Civs/Colombia/Icons/LibertadorAction_45.dds</File>
+    <File md5="D27785F55CDD224F9D3EA2B579914B9E" import="1">New Civs/Colombia/Icons/LibertadorAction_64.dds</File>
+    <File md5="65DCA61FDB58BD8487ECF3A4218B2CF7" import="1">New Civs/Colombia/Icons/sv_libertador.dds</File>
+    <File md5="3FCB513BAAC9CF93A31DA25E34CC4283" import="1">New Civs/Colombia/Icons/sv_llanero.dds</File>
+    <File md5="9307D13C5F082C92ECE1190A44F89C65" import="1">New Civs/Colombia/Models/independist.dds</File>
+    <File md5="FE7666ECDC2A1FDD80F349FCC9330E2F" import="1">New Civs/Colombia/Models/independist.fxsxml</File>
+    <File md5="E49AF6F43740D4418BFA20030DC3F3BB" import="1">New Civs/Colombia/Models/independist.gr2</File>
+    <File md5="265FCEB3E3AF30BD8632A237868F631F" import="1">New Civs/Colombia/Models/independist_sref.dds</File>
+    <File md5="8D187DDE531DE97416B8AEBDD4D6B9B8" import="1">New Civs/Colombia/Models/Llanero.dds</File>
+    <File md5="2295F752239D49657EE6165CEC8DE582" import="1">New Civs/Colombia/Models/Llanero.fxsxml</File>
+    <File md5="70C46E0708A978FDE9BDDCC7FAD1B81F" import="1">New Civs/Colombia/Models/Llanero.gr2</File>
+    <File md5="C52348B54F94859816323E6B2352117C" import="1">New Civs/Colombia/Models/Llanero_gloss.dds</File>
+    <File md5="EF22E34CAE3CAD8F98198D4BE0EBBBB6" import="1">New Civs/Colombia/Models/Llanero_Horse.dds</File>
+    <File md5="AC41C06BA721315512F26433220FEDF7" import="1">New Civs/Colombia/Models/no_gloss.dds</File>
+    <File md5="09C0576F85176400504DFFC5F3ED8341" import="1">New Civs/Colombia/Other/Bolivar.dds</File>
+    <File md5="D9BD81E8E1519EAAA670C947CDBD8E62" import="1">New Civs/Colombia/Other/DOM_Bolivar.dds</File>
+    <File md5="2F0C4710238D8CA3960854408980944B" import="1">New Civs/Colombia/Other/Bolivar_Scene.xml</File>
+    <File md5="022D1A6CF2EE79FE43F6DE47AAACD169" import="1">New Civs/Colombia/Other/Map_Colombia.dds</File>
 	<!-- v29 Maurya & Mysore -->
 	<File md5="A28985166F8FCACD4CF43D1BCE64ABB0" import="1">New Civs/Indian Collection/Atlases/Fast_Worker_256.dds</File>
 	<File md5="B0EF7E30AC30B25212910696FB740076" import="1">New Civs/Indian Collection/Atlases/Fast_Worker_128.dds</File>
