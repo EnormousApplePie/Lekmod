@@ -23,8 +23,15 @@
   <References />
   <Blocks />
   <Files>
+	<File md5="11ad257462be14c751eaad639126266a" import="1">Art/Non_Civ/noncivicons_32.dds</File>
+	<File md5="91503281471073bdfcdab935843992db" import="1">Art/Non_Civ/noncivicons_45.dds</File>
+	<File md5="5ff26231cb30d09f99fa267688561595" import="1">Art/Non_Civ/noncivicons_64.dds</File>
+	<File md5="4b5f27b20f8fb84eccc35648e12c3a40" import="1">Art/Non_Civ/noncivicons_80.dds</File>
+	<File md5="00dddd16ee0c194d201c2ce4a74bceda" import="1">Art/Non_Civ/noncivicons_128.dds</File>
+	<File md5="405da40ce67eaa2a2e52d4d768cc5e5c" import="1">Art/Non_Civ/noncivicons_256.dds</File>
+	<File md5="4d75958010f701b20568bf09e0044989" import="1">Art/Non_Civ/althing_big.dds</File>
 	<!-- v30 Colombia -->
-    <File md5="3F4D7014DB94AE2BA3388BDC3F4B1199" import="1">New Civs/Colombia/Icons/flag_libertador.dds</File>
+   
     <File md5="123E116B5CB3C0BBD1E4FCD53A67DBA6" import="1">New Civs/Colombia/Icons/flag_llanero.dds</File>
     <File md5="D3380D75E9A191939262B222F3A4F6BD" import="1">New Civs/Colombia/Icons/GranColombiaIcons128.dds</File>
     <File md5="8EC90D4D4C6DA0143A8D9D1BE4BCE627" import="1">New Civs/Colombia/Icons/GranColombiaIcons16.dds</File>
