@@ -44,6 +44,7 @@ CvTechEntry::CvTechEntry(void):
 	m_bRepeat(false),
 	m_bTrade(false),
 	m_bDisable(false),
+	m_bDisableTechSteal(false),
 	m_bGoodyTech(false),
 	m_bExtraWaterSeeFrom(false),
 	m_bMapCentering(false),
@@ -108,6 +109,7 @@ bool CvTechEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility& k
 	m_bRepeat = kResults.GetBool("Repeat");
 	m_bTrade = kResults.GetBool("Trade");
 	m_bDisable = kResults.GetBool("Disable");
+	m_bDisableTechSteal = kResults.GetBool("DisableTechSteal");
 	m_bGoodyTech = kResults.GetBool("GoodyTech");
 	m_bTriggersArchaeologicalSites = kResults.GetBool("TriggersArchaeologicalSites");
 	m_bAllowsWorldCongress = kResults.GetBool("AllowsWorldCongress");
@@ -353,6 +355,7 @@ bool CvTechEntry::IsDisable() const
 {
 	return m_bDisable;
 }
+
 
 /// Can you receive it from a goody hut?
 bool CvTechEntry::IsGoodyTech() const

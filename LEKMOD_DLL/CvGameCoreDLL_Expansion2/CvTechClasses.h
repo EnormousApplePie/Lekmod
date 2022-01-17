@@ -61,6 +61,7 @@ public:
 	bool IsRepeat() const;
 	bool IsTrade() const;
 	bool IsDisable() const;
+	bool IsDisableTechSteal() const;
 	bool IsGoodyTech() const;
 	bool IsExtraWaterSeeFrom() const;
 	bool IsMapCentering() const;
@@ -126,6 +127,7 @@ private:
 	bool m_bRepeat;
 	bool m_bTrade;
 	bool m_bDisable;
+	bool m_bDisableTechSteal;
 	bool m_bGoodyTech;
 	bool m_bExtraWaterSeeFrom;
 	bool m_bMapCentering;

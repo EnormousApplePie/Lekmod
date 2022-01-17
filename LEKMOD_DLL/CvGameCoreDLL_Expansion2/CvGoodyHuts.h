@@ -11,7 +11,7 @@
 
 #pragma once
 
-#define NUM_GOODIES_REMEMBERED (3)
+#define NUM_GOODIES_REMEMBERED (4)
 
 class CvGoodyHuts
 {

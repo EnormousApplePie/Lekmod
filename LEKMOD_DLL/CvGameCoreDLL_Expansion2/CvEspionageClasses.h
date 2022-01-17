@@ -162,6 +162,9 @@ public:
 
 	const char* GetSpyRankName(int iRank) const;
 
+	bool IsDisableTechSteal() const;
+	bool m_bDisableTechSteal;
+
 	bool HasEstablishedSurveillance(uint uiSpyIndex);
 	bool HasEstablishedSurveillanceInCity(CvCity* pCity);
 	bool IsAnySurveillanceEstablished(PlayerTypes eTargetPlayer);

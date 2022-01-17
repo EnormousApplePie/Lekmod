@@ -92,6 +92,16 @@ FDataStream& operator<<(FDataStream& saveTo, const CvEspionageSpy& readFrom)
 
 	return saveTo;
 }
+//=====================================
+// EAP Protect techs from being stolen
+/// 
+bool CvTechEntry::IsDisableTechSteal() const
+{
+	return m_bDisableTechSteal;
+}
+//=====================================
+
+
 
 //=====================================
 // CvPlayerEspionage
@@ -2293,6 +2303,13 @@ void CvPlayerEspionage::BuildStealableTechList(PlayerTypes ePlayer)
 
 		// can we not research this tech?
 		if(!pMyPlayerTechs->CanResearch(eTech))
+		{
+			continue;
+		}
+
+		// can it be stolen? ~EAP
+		CvTechEntry* pkTechInfo = GC.getTechInfo(eTech);
+		if (pkTechInfo->IsDisableTechSteal())
 		{
 			continue;
 		}
@@ -5034,6 +5051,12 @@ void CvEspionageAI::BuildOffenseCityList(EspionageCityList& aOffenseCityList)
 		const TechTypes eTech = static_cast<TechTypes>(iTechLoop);
 		CvTechEntry* pkTechInfo = GC.getTechInfo(eTech);
 		if(!pkTechInfo)
+		{
+			continue;
+		}
+		
+		//check if it is disabled for spy stealing
+		if (!pkTechInfo->IsDisableTechSteal())
 		{
 			continue;
 		}
