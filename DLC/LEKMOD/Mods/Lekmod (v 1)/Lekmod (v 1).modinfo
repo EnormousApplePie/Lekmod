@@ -23,6 +23,15 @@
   <References />
   <Blocks />
   <Files>
+	<File md5="FBC97C021A2845486727081FF42392D0" import="1">New Wonders/Templo_icon128.dds</File>
+    <File md5="20396AB4051688C58C73ADBF5A09A1E3" import="1">New Wonders/Templo_icon256.dds</File>
+    <File md5="4D432C382C4BB5A04F37CD93F3934246" import="1">New Wonders/Templo_icon45.dds</File>
+    <File md5="6A2C7C9DAF695ACE22A03D77F48146EC" import="1">New Wonders/Templo_icon64.dds</File>
+    <File md5="9783E3E4BAFEA34B3DB6317647A3DF01" import="1">New Wonders/Templo_icon80.dds</File>
+    <File md5="D5C6E052CA9DB4EAEF4E6638DFAEDC12" import="1">New Wonders/Templo_splash.dds</File>
+	
+  
+  
 	<File md5="11ad257462be14c751eaad639126266a" import="1">Art/Non_Civ/noncivicons_32.dds</File>
 	<File md5="91503281471073bdfcdab935843992db" import="1">Art/Non_Civ/noncivicons_45.dds</File>
 	<File md5="5ff26231cb30d09f99fa267688561595" import="1">Art/Non_Civ/noncivicons_64.dds</File>
@@ -30,6 +39,26 @@
 	<File md5="00dddd16ee0c194d201c2ce4a74bceda" import="1">Art/Non_Civ/noncivicons_128.dds</File>
 	<File md5="405da40ce67eaa2a2e52d4d768cc5e5c" import="1">Art/Non_Civ/noncivicons_256.dds</File>
 	<File md5="4d75958010f701b20568bf09e0044989" import="1">Art/Non_Civ/althing_big.dds</File>
+	
+	<File md5="021aaa7ff276d52bc3f0182cd23cd51d" import="1">Art/Buildings/buildings_icons_45.dds</File>
+	<File md5="e52a009136da317036793720bf77534d" import="1">Art/Buildings/buildings_icons_64.dds</File>
+	<File md5="85a2fd24b27d134e90bad0ddd32202f7" import="1">Art/Buildings/buildings_icons_128.dds</File>
+	<File md5="4dcf3df557164e8d3513c6d4dde9a0a0" import="1">Art/Buildings/buildings_icons_256.dds</File>
+	
+	<File md5="4e50b736bc7703c3ac2f5593b9b1526c" import="1">Art/Units/units_icons_45.dds</File>
+	<File md5="a23801d106ff90377a84b0c510d8e2b4" import="1">Art/Units/units_icons_64.dds</File>
+	<File md5="3c1b71cdd3710a5076a516f879e7a444" import="1">Art/Units/units_icons_80.dds</File>
+	<File md5="b2bfb640a37e41d2cf4816cc8266155c" import="1">Art/Units/units_icons_128.dds</File>
+	<File md5="c2ab3171bdfe7bc92a746fb7a9660abe" import="1">Art/Units/units_icons_256.dds</File>
+	
+	<File md5="ec15aa500ec302a216dd329ccc8628bf" import="1">Art/Technologies/tech_icons_45.dds</File>
+	<File md5="0fccab397d96ee44434a922e99a3b71a" import="1">Art/Technologies/tech_icons_64.dds</File>
+	<File md5="7484bbdc53c7917f44e89d826047b007" import="1">Art/Technologies/tech_icons_80.dds</File>
+	<File md5="ca37df089e34edecad4928f00129af8a" import="1">Art/Technologies/tech_icons_128.dds</File>
+	<File md5="6437c48337305e3258c1b3a0334ddbf3" import="1">Art/Technologies/tech_icons_214.dds</File>
+	<File md5="bcc78914a1ff3bf0f2b8e4b65f433943" import="1">Art/Technologies/tech_icons_256.dds</File>
+	
+	
 	<!-- v30 Colombia -->
    
     <File md5="123E116B5CB3C0BBD1E4FCD53A67DBA6" import="1">New Civs/Colombia/Icons/flag_llanero.dds</File>

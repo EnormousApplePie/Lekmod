@@ -102,7 +102,7 @@ function PlaceExtraJuice()
         if (player:IsEverAlive()) then
              PlaceExtraJuiceResource(player:GetStartingPlot(), FishID)
         end
-    end
+	end
     placeRes = true
 end
 
@@ -636,7 +636,7 @@ if bIsActive then
 end
 
 
--- bolivia UA. Couldn't bother with the button UI, too much of a time sink ~EAP
+-- bolivia UA. Couldn't bother with the button UI, too much of a time sink ~EAP ---- UPDATE, didn't work in the end anyways. ~EAP
 local iCiv = GameInfoTypes["CIVILIZATION_LEU_BOLIVIA_BELZU"]
 local bIsActive = JFD_IsCivilisationActive(iCiv)
 
@@ -649,7 +649,7 @@ function IsPersonExpended(iPlayer, iUnit)
 		print("found a civ")
         if pPlayer:GetCivilizationType() == GameInfoTypes["CIVILIZATION_LEU_BOLIVIA_BELZU"] then
 			print("found Bolivia")
-			if Teams[pPlayer:GetTeam()]:IsHasTech(GameInfoTypes["TECH_BANKING"]) then
+			if (pPlayer:GetCurrentEra() == GameInfoTypes["ERA_MEDIEVAL"] or pPlayer:GetCurrentEra() == GameInfoTypes["ERA_RENAISSANCE"] or pPlayer:GetCurrentEra() == GameInfoTypes["ERA_INDUSTRIAL"] or pPlayer:GetCurrentEra() == GameInfoTypes["ERA_MODERN"] or pPlayer:GetCurrentEra() == GameInfoTypes["ERA_POSTMODERN"] or pPlayer:GetCurrentEra() == GameInfoTypes["ERA_FUTURE"]) then
 				local ArtUnitID = GameInfoTypes["UNIT_ARTIST"]
 				if (iUnit == ArtUnitID) then
 					print("found the Unit -> Artist")
@@ -820,43 +820,69 @@ GameEvents.PlayerDoTurn.Add(EAP_Embark_Fix)
 local iCiv = GameInfoTypes["CIVILIZATION_MC_NEW_ZEALAND"]
 local bIsActive = JFD_IsCivilisationActive(iCiv)
      
-function NZMeetBonus(playerMetID, playerID)
-			local newzciv = GameInfoTypes["CIVILIZATION_MC_NEW_ZEALAND"]
-			local player = Players[playerID]
-            local playerMet = Players[playerMetID]
-            local rewardCulture = 12
-            local rewardScience = 24
-            local rewardGold = 40
-            local rewardFaith = 14
-			if playerMet:GetCivilizationType() == GameInfoTypes["CIVILIZATION_MC_NEW_ZEALAND"] then
-				for newzciv in newzciv do NZMeetBonus() end
-			end
+function GiveBonus(nzPlayer, oPlayer)
+	print("[GiveBonus] A meeting bonus has been granted")
+        local rewardCulture = 12
+        local rewardScience = 24
+        local rewardGold = 40
+        local rewardFaith = 14
+	local random = GetRandom(1, 4)
+        if random == 1 then
+        	nzPlayer:ChangeFaith(rewardFaith)
+		if nzPlayer:IsHuman() and nzPlayer:GetCivilizationType() == GameInfoTypes["CIVILIZATION_MC_NEW_ZEALAND"] and Game.GetActivePlayer() == nzPlayer:GetID() then
+			Events.GameplayAlertMessage(Locale.ConvertTextKey("You receive [COLOR_POSITIVE_TEXT]{1_Num} [ICON_PEACE] Faith[ENDCOLOR] from meeting [COLOR_POSITIVE_TEXT]{2_CivName}[ENDCOLOR]", rewardFaith, oPlayer:GetName()))
+		end
 
-            if player:GetCivilizationType() == GameInfoTypes["CIVILIZATION_MC_NEW_ZEALAND"] then
-                    local random = GetRandom(1, 4)
-                    if random == 1 then
-                            player:ChangeFaith(rewardFaith)
-							if player:IsHuman() and player:GetCivilizationType() == GameInfoTypes["CIVILIZATION_MC_NEW_ZEALAND"] and Game.GetActivePlayer() == playerID then
-								Events.GameplayAlertMessage(Locale.ConvertTextKey("You receive [COLOR_POSITIVE_TEXT]{1_Num} [ICON_PEACE] Faith[ENDCOLOR] from meeting [COLOR_POSITIVE_TEXT]{2_CivName}[ENDCOLOR]", rewardFaith, playerMet:GetName()))
-							end
-                    elseif random == 2 then
-                            player:ChangeJONSCulture(rewardCulture)
-							if player:IsHuman() and player:GetCivilizationType() == GameInfoTypes["CIVILIZATION_MC_NEW_ZEALAND"] and Game.GetActivePlayer() == playerID then
-								Events.GameplayAlertMessage(Locale.ConvertTextKey("You receive [COLOR_POSITIVE_TEXT]{1_Num} [ICON_CULTURE] Culture[ENDCOLOR] from meeting [COLOR_POSITIVE_TEXT]{2_CivName}[ENDCOLOR]", rewardCulture, playerMet:GetName()))
-							end
-                    elseif random == 3 then
-                            Teams[player:GetTeam()]:GetTeamTechs():ChangeResearchProgress(player:GetCurrentResearch(), rewardScience, playerID)
-							if player:IsHuman() and player:GetCivilizationType() == GameInfoTypes["CIVILIZATION_MC_NEW_ZEALAND"] and Game.GetActivePlayer() == playerID then
-								Events.GameplayAlertMessage(Locale.ConvertTextKey("You receive [COLOR_POSITIVE_TEXT]{1_Num} [ICON_RESEARCH] Science[ENDCOLOR] from meeting [COLOR_POSITIVE_TEXT]{2_CivName}[ENDCOLOR]", rewardScience, playerMet:GetName()))
-							end
-                    else
-                            player:ChangeGold(rewardGold)
-							if player:IsHuman() and player:GetCivilizationType() == GameInfoTypes["CIVILIZATION_MC_NEW_ZEALAND"] and Game.GetActivePlayer() == playerID then
-								 Events.GameplayAlertMessage(Locale.ConvertTextKey("You receive [COLOR_POSITIVE_TEXT]{1_Num} [ICON_GOLD] Gold[ENDCOLOR] from meeting [COLOR_POSITIVE_TEXT]{2_CivName}[ENDCOLOR]", rewardGold, playerMet:GetName()))
-							end
-                          
-                    end
-            end
+                elseif random == 2 then
+                	nzPlayer:ChangeJONSCulture(rewardCulture)
+			if nzPlayer:IsHuman() and nzPlayer:GetCivilizationType() == GameInfoTypes["CIVILIZATION_MC_NEW_ZEALAND"] and Game.GetActivePlayer() == nzPlayer:GetID() then
+				Events.GameplayAlertMessage(Locale.ConvertTextKey("You receive [COLOR_POSITIVE_TEXT]{1_Num} [ICON_CULTURE] Culture[ENDCOLOR] from meeting [COLOR_POSITIVE_TEXT]{2_CivName}[ENDCOLOR]", rewardCulture, oPlayer:GetName()))
+			end
+                elseif random == 3 then
+                        Teams[nzPlayer:GetTeam()]:GetTeamTechs():ChangeResearchProgress(nzPlayer:GetCurrentResearch(), rewardScience, playerID)
+			if nzPlayer:IsHuman() and nzPlayer:GetCivilizationType() == GameInfoTypes["CIVILIZATION_MC_NEW_ZEALAND"] and Game.GetActivePlayer() == nzPlayer:GetID() then
+				Events.GameplayAlertMessage(Locale.ConvertTextKey("You receive [COLOR_POSITIVE_TEXT]{1_Num} [ICON_RESEARCH] Science[ENDCOLOR] from meeting [COLOR_POSITIVE_TEXT]{2_CivName}[ENDCOLOR]", rewardScience, oPlayer:GetName()))
+			end
+                else
+                        nzPlayer:ChangeGold(rewardGold)
+			if nzPlayer:IsHuman() and nzPlayer:GetCivilizationType() == GameInfoTypes["CIVILIZATION_MC_NEW_ZEALAND"] and Game.GetActivePlayer() == nzPlayer:GetID() then
+				Events.GameplayAlertMessage(Locale.ConvertTextKey("You receive [COLOR_POSITIVE_TEXT]{1_Num} [ICON_GOLD] Gold[ENDCOLOR] from meeting [COLOR_POSITIVE_TEXT]{2_CivName}[ENDCOLOR]", rewardGold, oPlayer:GetName()))
+			end            
+         end
+end
+     
+function NZMeetBonus(iTeamMet, iTeam)
+	local pTeam = Teams[iTeam]
+	local pTeamMet = Teams[iTeamMet]
+	local newzPlayerID = 21
+	for oPlayerID = 0, GameDefines.MAX_MAJOR_CIVS-1, 1 do
+		local oPlayer = Players[oPlayerID]
+		if oPlayer:GetCivilizationType() == GameInfoTypes["CIVILIZATION_MC_NEW_ZEALAND"] then
+			newzPlayerID = oPlayer:GetID()
+		end
+	end
+
+	local oTeamID = 21
+	local newzPlayer = Players[newzPlayerID]
+	if newzPlayer:GetTeam() == iTeam then
+		oTeamID = iTeamMet
+	elseif newzPlayer:GetTeam() == iTeamMet then
+		oTeamID = iTeam
+	else
+		return
+	end
+
+	local oTeam = Teams[oTeamID]
+	if oTeam:IsMinorCiv() then
+		GiveBonus(newzPlayer, oTeam)
+	else	
+		for oPlayerID = 0, GameDefines.MAX_MAJOR_CIVS-1, 1 do
+			local oPlayer = Players[oPlayerID]
+			if oPlayer:GetTeam() == oTeamID then
+				GiveBonus(newzPlayer, oPlayer)
+			end
+		end
+	end
 end
 
 -- New Zealand UU infantry Influence
@@ -1283,11 +1309,36 @@ GameEvents.TeamSetHasTech.Add(function(iTeam, iTech, bAdopted)
 end)
 end
 
-----------------------------------------------------------
--------------------- DUMMY POLICIES ----------------------
-----------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------- DUMMY POLICIES ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- Tonga dummy policy
 
--- 'Nam dummy policy
+local iCiv = GameInfoTypes["CIVILIZATION_MC_TONGA"]
+local bIsActive = JFD_IsCivilisationActive(iCiv)
+
+print("dummy policy loaded - Tonga")
+function DummyPolicy(player)
+	print("working - Tonga")
+	for playerID, player in pairs(Players) do
+		local player = Players[playerID];
+		if player:GetCivilizationType() == GameInfoTypes["CIVILIZATION_MC_TONGA"] then
+			if not player:HasPolicy(GameInfoTypes["POLICY_DUMMY_TONGA"]) then
+				
+				player:SetNumFreePolicies(1)
+				player:SetNumFreePolicies(0)
+				player:SetHasPolicy(GameInfoTypes["POLICY_DUMMY_TONGA"], true)	
+			end
+		end
+	end 
+end
+if bIsActive then
+Events.SequenceGameInitComplete.Add(DummyPolicy)
+end
+
+
+
+-- Manchuria dummy policy
 
 local iCiv = GameInfoTypes["CIVILIZATION_JURCHEN"]
 local bIsActive = JFD_IsCivilisationActive(iCiv)
@@ -2111,9 +2162,131 @@ Events.SerialEventUnitCreated.Add(ChileAdmiralROverride)
 
 
 
+--========================================================================================
+--========================================================================================
 ---------------------
 -- On Policy Adopted stuff (uncludes UA's , easier for me to copy pasta stuff <3)
 ---------------
+--========================================================================================
+--========================================================================================
+
+
+--================
+-- RESETTLEMENTS
+--================
+
+local iKilwa = GameInfo.Civilizations["CIVILIZATION_MC_KILWA"].ID
+local iIroq = GameInfo.Civilizations["CIVILIZATION_IROQUOIS"].ID
+
+local iBulg = GameInfo.Civilizations["CIVILIZATION_BULGARIA"].ID
+local iColom = GameInfo.Civilizations["CIVILIZATION_COLOMBIA"].ID
+local iTonga = GameInfo.Civilizations["CIVILIZATION_MC_TONGA"].ID
+
+local iMaurya = GameInfo.Civilizations["CIVILIZATION_MC_MAURYA"].ID
+local iEtho = GameInfo.Civilizations["CIVILIZATION_ETHIOPIA"].ID
+
+local iAkkad = GameInfo.Civilizations["CIVILIZATION_LITE_AKKAD"].ID
+local iAssy = GameInfo.Civilizations["CIVILIZATION_ASSYRIA"].ID
+
+-- Add ResettlementsBuilding to newly founded cities
+function ResettlementsNewCities(iPlayer, iCityX, iCityY)
+    local player = Players[iPlayer]
+    if (player:HasPolicy(GameInfo.Policies["POLICY_RESETTLEMENT"].ID)) then
+        for loopCity in player:Cities() do
+            if (loopCity:GetX() == iCityX) then
+                if (loopCity:GetY() == iCityY) then
+					if player:GetCivilizationType() == iKilwa then 
+						loopCity:SetNumRealBuilding(GameInfoTypes["BUILDING_CORALSHOP"], 1)
+					elseif player:GetCivilizationType() == iIroq then
+						loopCity:SetNumRealBuilding(GameInfoTypes["BUILDING_LONGHOUSE"], 1)
+					else
+						loopCity:SetNumRealBuilding(GameInfoTypes["BUILDING_WORKSHOP"], 1)
+					end
+					if player:GetCivilizationType() == iBulg then 
+						loopCity:SetNumRealBuilding(GameInfoTypes["BUILDING_KHAMBAR"], 1)
+					elseif player:GetCivilizationType() == iColom then
+						loopCity:SetNumRealBuilding(GameInfoTypes["BUILDING_COLOMBIAN_GRANARY"], 1)
+					elseif player:GetCivilizationType() == iTonga then
+						loopCity:SetNumRealBuilding(GameInfoTypes["BUILDING_MC_TONGAN_MALAE"], 1)
+					else
+						loopCity:SetNumRealBuilding(GameInfoTypes["BUILDING_GRANARY"], 1)
+					end
+					if player:GetCivilizationType() == iMaurya then 
+						loopCity:SetNumRealBuilding(GameInfoTypes["BUILDING_ASHOKA"], 1)
+					elseif player:GetCivilizationType() == iEtho then
+						loopCity:SetNumRealBuilding(GameInfoTypes["BUILDING_STELE"], 1)
+					else
+						loopCity:SetNumRealBuilding(GameInfoTypes["BUILDING_MONUMENT"], 1)
+					end
+					if player:GetCivilizationType() == iAkkad then 
+						loopCity:SetNumRealBuilding(GameInfoTypes["BUILDING_AKKAD_LIBRARY"], 1)
+					elseif player:GetCivilizationType() == iAssy then
+						loopCity:SetNumRealBuilding(GameInfoTypes["BUILDING_ROYAL_LIBRARY"], 1)
+					else
+						loopCity:SetNumRealBuilding(GameInfoTypes["BUILDING_LIBRARY"], 1)
+					end
+					loopCity:SetNumRealBuilding(GameInfoTypes["BUILDING_AQUEDUCT"], 1)
+                end
+            end
+        end
+    end
+end
+GameEvents.PlayerCityFounded.Add(ResettlementsNewCities)
+
+
+--================
+-- ECONOMIC UNION
+--================
+
+function EconomicUnionTradeRouteUpdate(iPlayer)
+	local player = Players[iPlayer]
+	local pCapital = player:GetCapitalCity()
+
+	-- destroy Building
+	for pCity in player:Cities() do
+		if (pCity ~= pCapital) then
+			if (pCity:GetNumRealBuilding(GameInfoTypes["BUILDING_ECONOMIC_UNION_TRADE"]) > 0) then
+				pCity:SetNumRealBuilding(GameInfoTypes["BUILDING_ECONOMIC_UNION_TRADE"], 0)
+			end
+		end
+	end
+
+	-- add It back to the capital if needed
+	if (pCapital:GetNumRealBuilding(GameInfoTypes["BUILDING_ECONOMIC_UNION_TRADE"]) < 1) then
+		pCapital:SetNumRealBuilding(GameInfoTypes["BUILDING_ECONOMIC_UNION_TRADE"], 1)
+	end
+
+end
+
+function EconomicUnionTradeRoute_PlayerDoTurn(iPlayer)
+
+	local player = Players[iPlayer]
+	if (player:IsEverAlive()) then
+		if (player:HasPolicy(GameInfo.Policies["POLICY_ECONOMIC_UNION"].ID)) then
+			EconomicUnionTradeRouteUpdate(iPlayer)
+		end
+	end
+
+end
+GameEvents.PlayerDoTurn.Add(EconomicUnionTradeRoute_PlayerDoTurn);
+
+function EconomicUnionTradeRoute_OnAdopt(playerID, policyID)
+
+	local player = Players[playerID]
+	if (policyID == GameInfo.Policies["POLICY_ECONOMIC_UNION"].ID) then
+		EconomicUnionTradeRouteUpdate(playerID)
+	end
+
+end
+GameEvents.PlayerAdoptPolicy.Add(EconomicUnionTradeRoute_OnAdopt)
+
+
+
+
+
+
+
+
 
 -- Notes, do realize that this is coded keeping policy requirements/paths in mind, so if you change any of the policy paths in the future, if anyone besides me is doing policies stuff, DONT FORGET TO CHECK THIS! thnx! ~EAP
 
