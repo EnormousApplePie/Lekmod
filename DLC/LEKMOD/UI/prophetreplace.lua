@@ -336,15 +336,15 @@ function MoorsEraUA2(playerID)
 			if pCity ~= nil then
 				if (player:GetCivilizationType() == GameInfoTypes["CIVILIZATION_MC_LITE_MOOR"] and player:GetCurrentEra() == GameInfoTypes["ERA_RENAISSANCE"]) then
 					
-					pCity:SetNumRealBuilding(GameInfoTypes["BUILDING_MOORS_TRAIT_2"], 1);
+					pCity:SetNumRealBuilding(GameInfoTypes["BUILDING_MOORS_TRAIT2"], 1);
 					for pCity in player:Cities() do
-					pCity:SetNumRealBuilding(GameInfoTypes["BUILDING_MOORS_TRAIT_2"], 1);
+					pCity:SetNumRealBuilding(GameInfoTypes["BUILDING_MOORS_TRAIT2"], 1);
 					end
 				else
 					
-					pCity:SetNumRealBuilding(GameInfoTypes["BUILDING_MOORS_TRAIT_2"], 0);
+					pCity:SetNumRealBuilding(GameInfoTypes["BUILDING_MOORS_TRAIT2"], 0);
 					for pCity in player:Cities() do
-					pCity:SetNumRealBuilding(GameInfoTypes["BUILDING_MOORS_TRAIT_2"], 0);
+					pCity:SetNumRealBuilding(GameInfoTypes["BUILDING_MOORS_TRAIT2"], 0);
 					end
 				end
 			end
@@ -649,7 +649,7 @@ function IsPersonExpended(iPlayer, iUnit)
 		print("found a civ")
         if pPlayer:GetCivilizationType() == GameInfoTypes["CIVILIZATION_LEU_BOLIVIA_BELZU"] then
 			print("found Bolivia")
-			if (pPlayer:GetCurrentEra() == GameInfoTypes["ERA_MEDIEVAL"] or pPlayer:GetCurrentEra() == GameInfoTypes["ERA_RENAISSANCE"] or pPlayer:GetCurrentEra() == GameInfoTypes["ERA_INDUSTRIAL"] or pPlayer:GetCurrentEra() == GameInfoTypes["ERA_MODERN"] or pPlayer:GetCurrentEra() == GameInfoTypes["ERA_POSTMODERN"] or pPlayer:GetCurrentEra() == GameInfoTypes["ERA_FUTURE"]) then
+			if (pPlayer:GetCurrentEra() == GameInfoTypes["ERA_RENAISSANCE"] or pPlayer:GetCurrentEra() == GameInfoTypes["ERA_INDUSTRIAL"] or pPlayer:GetCurrentEra() == GameInfoTypes["ERA_MODERN"] or pPlayer:GetCurrentEra() == GameInfoTypes["ERA_POSTMODERN"] or pPlayer:GetCurrentEra() == GameInfoTypes["ERA_FUTURE"]) then
 				local ArtUnitID = GameInfoTypes["UNIT_ARTIST"]
 				if (iUnit == ArtUnitID) then
 					print("found the Unit -> Artist")
