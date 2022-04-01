@@ -114,8 +114,28 @@ Events.LoadScreenClose.Add(PlaceExtraJuice)
 --=================================================================================================================
 
 
--- chile UA
+-- mexico UA
 
+local iCiv = GameInfoTypes["CIVILIZATION_LEXICO"]
+local bIsActive = JFD_IsCivilisationActive(iCiv)
+if bIsActive then
+GameEvents.TeamSetHasTech.Add(function(iTeam, iTech, bAdopted)
+	print("working: chile ontechbonus")
+	for playerID, player in pairs(Players) do
+		local player = Players[playerID];
+		if player:GetCivilizationType() == GameInfoTypes["CIVILIZATION_LEXICO"] then
+			if player:GetTeam() == iTeam then
+				if (iTech == GameInfoTypes["TECH_CALENDAR"]) then
+					local pCity = player:GetCapitalCity();
+					pCity:SetNumRealBuilding(GameInfoTypes["BUILDING_MEXICO_TRAIT"], 1);
+				end
+			end
+		end
+	end
+end);
+end
+
+-- chile UA
 
 local iCiv = GameInfoTypes["CIVILIZATION_CHILE"]
 local bIsActive = JFD_IsCivilisationActive(iCiv)
@@ -287,7 +307,7 @@ GameEvents.TeamSetHasTech.Add(function(iPlayer)
 			print("removed dummy")
 		end
 	end
-	if (player:GetCivilizationType() == GameInfoTypes["CIVILIZATION_MC_NABATEA"] and Teams[player:GetTeam()]:IsHasTech(GameInfoTypes["TECH_MATHEMATICS"])) then
+	if (player:GetCivilizationType() == GameInfoTypes["CIVILIZATION_MC_NABATEA"] and Teams[player:GetTeam()]:IsHasTech(GameInfoTypes["TECH_CURRENCY"])) then
 		if (not Teams[player:GetTeam()]:IsHasTech(GameInfoTypes["TECH_CIVIL_SERVICE"])) then
 			Teams[player:GetTeam()]:SetHasTech(GameInfoTypes["TECH_CIVIL_DUMMY"], true);
 			print("applied dummy")
@@ -1445,22 +1465,22 @@ end
 if bIsActive then
 Events.SequenceGameInitComplete.Add(DummyPolicy)
 end
--- Mexico dummy policy
+-- Golden Horde dummy policy
 
-local iCiv = GameInfoTypes["CIVILIZATION_LEXICO"]
+local iCiv = GameInfoTypes["CIVILIZATION_HORDE"]
 local bIsActive = JFD_IsCivilisationActive(iCiv)
 
-print("dummy policy loaded - Mexico")
+print("dummy policy loaded - Horde")
 function DummyPolicy(player)
 	print("working - Mexico")
 	for playerID, player in pairs(Players) do
 		local player = Players[playerID];
-		if player:GetCivilizationType() == GameInfoTypes["CIVILIZATION_LEXICO"] then
-			if not player:HasPolicy(GameInfoTypes["POLICY_DUMMY_LEXICO"]) then
+		if player:GetCivilizationType() == GameInfoTypes["CIVILIZATION_HORDE"] then
+			if not player:HasPolicy(GameInfoTypes["POLICY_DUMMY_HORDE"]) then
 				
 				player:SetNumFreePolicies(1)
 				player:SetNumFreePolicies(0)
-				player:SetHasPolicy(GameInfoTypes["POLICY_DUMMY_LEXICO"], true)	
+				player:SetHasPolicy(GameInfoTypes["POLICY_DUMMY_HORDE"], true)	
 			end
 		end
 	end 

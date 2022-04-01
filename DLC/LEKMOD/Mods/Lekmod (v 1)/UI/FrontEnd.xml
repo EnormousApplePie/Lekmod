@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Context ColorSet="Beige_Black_Alpha" Font="TwCenMT22" FontStyle="Shadow" Name="FrontEnd" >
+
+    <Box Anchor="C,C" Size="Full,Full" Color="0,0,0,255" />
+    <Image Anchor="C,C" Offset="0,0"  Size="1920,1200" ID="AtlasLogo" />
+
+
+    <!-- Child Screens -->
+    <LuaContext FileName="Assets/UI/FrontEnd/LegalScreen" ID="LegalScreen" Hidden="1" />
+    <LuaContext FileName="Assets/UI/FrontEnd/MainMenu" ID="MainMenu" Hidden="1" />
+
+    <LuaContext FileName="Assets/UI/FrontEnd/FrontEndPopup" Hidden="1" />
+    <LuaContext FileName="Assets/UI/FrontEnd/ExitConfirm" Hidden="1" />
+		<LuaContext FileName="Assets/UI/FrontEnd/ContentSwitch" ID="ContentSwitch" Hidden="1" />
+</Context>

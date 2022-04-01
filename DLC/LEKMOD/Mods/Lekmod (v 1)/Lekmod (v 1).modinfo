@@ -23,6 +23,29 @@
   <References />
   <Blocks />
   <Files>
+  
+	<File md5="7166B27E7F41E0C90E1AB7B6CE87084E" import="1">UI/City_States/CityStateDiploPopup.lua</File>
+    <File md5="9F0C9E40EF263F7EB32EBC45B9DBD6BD" import="1">UI/City_States/CityStateDiploPopup.xml</File>
+    <File md5="8AE50D1B0E3FE3104E5901185ECF4432" import="1">UI/City_States/CityStateDiploPopupText.xml</File>
+    <File md5="35F531495579E51663DBC89B959E0C06" import="1">UI/City_States/CityStateStatusHelper.lua</File>
+    <File md5="5BF1773EE0A9A8EC6CAB6AD5BE96B01A" import="1">UI/City_States/CityStateStatusHelperText.xml</File>
+	<File md5="457f9d0d49e66f296684bade879b1a82" import="1">UI/lekmodlogo.dds</File>
+	<File md5="07d70334e89a9fc0dffd4b275803684e" import="1">UI/StagingRoom.lua</File>
+	<File md5="606a1bd988cf90e689316930c97fda7a" import="1">UI/StagingRoom.xml</File>
+	<File md5="e1b61c8288ffa31ecf331998af69db0a" import="1">UI/FrontEnd.xml</File>
+	<File md5="fac048edd900df07550572484db145b0" import="1">UI/FrontEnd.lua</File>
+	<File md5="9689dc1232330ecf56754939d28b16bf" import="1">UI/civilzationvatlas_vanilla.dds</File>
+	
+	<File md5="9ecfd5835409beb1c70aa571bb8b2989" import="1">UI/Lobby.xml</File>
+	<File md5="ae82bf05211de7ee19d3f8a66d811481" import="1">UI/Lobby.lua</File>
+	<File md5="445f9657c4e2d1193095c1c8c9703504" import="1">UI/MPGameSetupScreen.xml</File>
+	<File md5="19974596e94c42fc2f6500b0817dc55a" import="1">UI/MPGameSetupScreen.lua</File>
+	<File md5="de9975ed9e98280d40bd2dadb354fb59" import="1">UI/JoiningRoom.xml</File>
+	<File md5="8b267292bd02d06babafe8b543212ee3" import="1">UI/JoiningRoom.lua</File>
+	
+  
+  
+
 	<File md5="FBC97C021A2845486727081FF42392D0" import="1">New Wonders/Templo_icon128.dds</File>
     <File md5="20396AB4051688C58C73ADBF5A09A1E3" import="1">New Wonders/Templo_icon256.dds</File>
     <File md5="4D432C382C4BB5A04F37CD93F3934246" import="1">New Wonders/Templo_icon45.dds</File>
@@ -2382,6 +2405,18 @@
     <OnModActivated>
       <UpdateDatabase>Override/CIV5Units.xml</UpdateDatabase>
       <UpdateDatabase>Override/CIV5Units_Mongol.xml</UpdateDatabase>
+	  <UpdateDatabase>UI/City_States/CityStateDiploPopupText.xml</UpdateDatabase>
+      <UpdateDatabase>UI/City_States/CityStateStatusHelperText.xml</UpdateDatabase>
+	  <UpdateDatabase>UI/City_States/StagingRoom.xml</UpdateDatabase>
+	  <UpdateDatabase>UI/City_States/StagingRoom.lua</UpdateDatabase>
+	  <UpdateDatabase>UI/FrontEnd.xml</UpdateDatabase>
+	  <UpdateDatabase>UI/FrontEnd.lua</UpdateDatabase>
+	  <UpdateDatabase>UI/Lobby.xml</UpdateDatabase>
+	  <UpdateDatabase>UI/Lobby.lua</UpdateDatabase>
+	  <UpdateDatabase>UI/MPGameSetupScreen.xml</UpdateDatabase>
+	  <UpdateDatabase>UI/MPGameSetupScreen.lua</UpdateDatabase>
+	  <UpdateDatabase>UI/JoiningRoom.xml</UpdateDatabase>
+	  <UpdateDatabase>UI/JoiningRoom.lua</UpdateDatabase>
     </OnModActivated>
   </Actions>
  <EntryPoints>
