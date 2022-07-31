@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 6/2/2015 11:22:00 PM -->
+<GameData>
+
+	<!-- New Policy Tree
+	
+			             Cultural Centers
+			           _________|___________
+			          | 			        |
+	            Cultural Exchange	  Artistic Genius
+			          |    |________________|
+                      |				  |
+	            Flourishing of     Fine Arts
+	              the Arts
+	   
+	-->
+
+	<Policies>
+		<Update>
+			<Set GridX="2" GridY="3" />
+			<Where Type="POLICY_FLOURISHING_OF_ARTS" />
+		</Update>
+		<Update>
+			<Set GridX="3" GridY="1" />
+			<Where Type="POLICY_CULTURAL_CENTERS" />
+		</Update>
+		<Update>
+			<Set GridX="2" GridY="2" />
+			<Where Type="POLICY_ETHICS" />
+		</Update>
+		<Update>
+			<Set GridX="4" GridY="2" />
+			<Where Type="POLICY_ARTISTIC_GENIUS" />
+		</Update>
+		<Update>
+			<Set GridX="4" GridY="3" />
+			<Where Type="POLICY_FINE_ARTS" />
+		</Update>
+	</Policies>
+	<Policy_PrereqPolicies>
+		<Delete PolicyType="POLICY_FLOURISHING_OF_ARTS" />
+		<Delete PolicyType="POLICY_CULTURAL_CENTERS" />
+		<Delete PolicyType="POLICY_ETHICS" />
+		<Delete PolicyType="POLICY_ARTISTIC_GENIUS" />
+		<Delete PolicyType="POLICY_FINE_ARTS" />
+		<Row>
+			<PolicyType>POLICY_ETHICS</PolicyType>
+			<PrereqPolicy>POLICY_CULTURAL_CENTERS</PrereqPolicy>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_ARTISTIC_GENIUS</PolicyType>
+			<PrereqPolicy>POLICY_CULTURAL_CENTERS</PrereqPolicy>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_FINE_ARTS</PolicyType>
+			<PrereqPolicy>POLICY_ETHICS</PrereqPolicy>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_FINE_ARTS</PolicyType>
+			<PrereqPolicy>POLICY_ARTISTIC_GENIUS</PrereqPolicy>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_FLOURISHING_OF_ARTS</PolicyType>
+			<PrereqPolicy>POLICY_ETHICS</PrereqPolicy>
+		</Row>
+	</Policy_PrereqPolicies>
+
+</GameData>

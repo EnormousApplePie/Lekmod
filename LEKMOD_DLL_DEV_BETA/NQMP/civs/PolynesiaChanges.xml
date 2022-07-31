@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2016-09-09 15:50:01 -->
+<GameData>
+	
+	<!-- UA now also gives +1 movement to embarked units and stronger defense (like War Canoes from Songhai) -->
+	<Traits>
+		<Update>
+			<Set ExtraEmbarkMoves="1" />
+			<Where Type="TRAIT_WAYFINDING" />
+		</Update>
+	</Traits>
+	<Trait_FreePromotionUnitCombats>
+		<Row>
+			<TraitType>TRAIT_WAYFINDING</TraitType>
+			<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
+			<PromotionType>PROMOTION_WAR_CANOES</PromotionType>
+		</Row>
+		<Row>
+			<TraitType>TRAIT_WAYFINDING</TraitType>
+			<UnitCombatType>UNITCOMBAT_ARCHER</UnitCombatType>
+			<PromotionType>PROMOTION_WAR_CANOES</PromotionType>
+		</Row>
+		<Row>
+			<TraitType>TRAIT_WAYFINDING</TraitType>
+			<UnitCombatType>UNITCOMBAT_RECON</UnitCombatType>
+			<PromotionType>PROMOTION_WAR_CANOES</PromotionType>
+		</Row>
+		<Row>
+			<TraitType>TRAIT_WAYFINDING</TraitType>
+			<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
+			<PromotionType>PROMOTION_WAR_CANOES</PromotionType>
+		</Row>
+		<Row>
+			<TraitType>TRAIT_WAYFINDING</TraitType>
+			<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
+			<PromotionType>PROMOTION_WAR_CANOES</PromotionType>
+		</Row>
+		<Row>
+			<TraitType>TRAIT_WAYFINDING</TraitType>
+			<UnitCombatType>UNITCOMBAT_GUN</UnitCombatType>
+			<PromotionType>PROMOTION_WAR_CANOES</PromotionType>
+		</Row>
+		<Row>
+			<TraitType>TRAIT_WAYFINDING</TraitType>
+			<UnitCombatType>UNITCOMBAT_ARMOR</UnitCombatType>
+			<PromotionType>PROMOTION_WAR_CANOES</PromotionType>
+		</Row>
+	</Trait_FreePromotionUnitCombats>
+	<UnitPromotions>
+		<Update>
+			<Set EmbarkExtraVisibility="0" />
+			<Where Type="PROMOTION_WAR_CANOES" />
+		</Update>
+	</UnitPromotions>
+
+	<!-- Polynesian Maori Warrior now has 9 Combat Strength (up from 8) -->
+	<Units>
+		<Update>
+			<Set Combat="9" />
+			<Where Type="UNIT_POLYNESIAN_MAORI_WARRIOR" />
+		</Update>
+	</Units>
+
+
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_TRAIT_WAYFINDING" />
+		<Row Tag="TXT_KEY_TRAIT_WAYFINDING">
+			<Text>Can embark and move over Oceans immediately. +1 Sight, +1 Movement, and extra defense when embarked. +10% [ICON_STRENGTH] Combat Strength bonus if within 2 tiles of a Moai.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_PROMOTION_WAR_CANOES" />
+		<Row Tag="TXT_KEY_PROMOTION_WAR_CANOES">
+			<Text>Wayfinding</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_TRAIT_WAYFINDING" />
+		<Row Tag="TXT_KEY_TRAIT_WAYFINDING">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Can embark and move over Oceans immediately. +1 Sight, +1 Movement, and extra defense when embarked. +10% [ICON_STRENGTH] Combat Strength bonus if within 2 tiles of a Moai.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_PROMOTION_WAR_CANOES" />
+		<Row Tag="TXT_KEY_PROMOTION_WAR_CANOES">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Wayfinding</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_TRAIT_WAYFINDING" />
+		<Row Tag="TXT_KEY_TRAIT_WAYFINDING">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Can embark and move over Oceans immediately. +1 Sight, +1 Movement, and extra defense when embarked. +10% [ICON_STRENGTH] Combat Strength bonus if within 2 tiles of a Moai.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_PROMOTION_WAR_CANOES" />
+		<Row Tag="TXT_KEY_PROMOTION_WAR_CANOES">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Wayfinding</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_TRAIT_WAYFINDING" />
+		<Row Tag="TXT_KEY_TRAIT_WAYFINDING">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Can embark and move over Oceans immediately. +1 Sight, +1 Movement, and extra defense when embarked. +10% [ICON_STRENGTH] Combat Strength bonus if within 2 tiles of a Moai.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_PROMOTION_WAR_CANOES" />
+		<Row Tag="TXT_KEY_PROMOTION_WAR_CANOES">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Wayfinding</Text>
+		</Row>
+	</Language_RU_RU>
+
+
+</GameData>

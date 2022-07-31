@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2016-09-04 01:43:38 -->
+<GameData>
+
+	<!-- Game option to allow all players to found religions regardless of map size. -->
+	<GameOptions>
+		<Row>
+			<Type>GAMEOPTION_ALLOW_EXTRA_RELIGIONS</Type>
+			<Description>TXT_KEY_GAME_OPTION_ALLOW_EXTRA_RELIGIONS</Description>
+			<Help>TXT_KEY_GAME_OPTION_ALLOW_EXTRA_RELIGIONS_HELP</Help>
+		</Row>
+	</GameOptions>
+	<Language_en_US>
+		<Row Tag="TXT_KEY_GAME_OPTION_ALLOW_EXTRA_RELIGIONS">
+			<Text>All Players Can Found Religions</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_ALLOW_EXTRA_RELIGIONS_HELP">
+			<Text>Removes the cap on the amount of players that can found a religion.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Row Tag="TXT_KEY_GAME_OPTION_ALLOW_EXTRA_RELIGIONS">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]All Players Can Found Religions</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_ALLOW_EXTRA_RELIGIONS_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Removes the cap on the amount of players that can found a religion.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Row Tag="TXT_KEY_GAME_OPTION_ALLOW_EXTRA_RELIGIONS">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]All Players Can Found Religions</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_ALLOW_EXTRA_RELIGIONS_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Removes the cap on the amount of players that can found a religion.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Row Tag="TXT_KEY_GAME_OPTION_ALLOW_EXTRA_RELIGIONS">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]All Players Can Found Religions</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_ALLOW_EXTRA_RELIGIONS_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Removes the cap on the amount of players that can found a religion.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

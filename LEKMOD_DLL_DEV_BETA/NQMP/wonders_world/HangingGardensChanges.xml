@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 8/23/2016 9:52:55 PM -->
+<GameData>
+	
+	<!-- Now provides +1 Great Engineer point per turn. -->
+	<Buildings>
+		<Update>
+			<Set SpecialistType="SPECIALIST_ENGINEER" GreatPeopleRateChange="1" />
+			<Where Type="BUILDING_HANGING_GARDEN" />
+		</Update>
+	</Buildings>
+	
+</GameData>

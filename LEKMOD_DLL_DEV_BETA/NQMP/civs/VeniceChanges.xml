@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 3/30/2015 10:09:18 PM -->
+<GameData>	
+	<Language_en_US>
+		<Update>
+			<Set Text="Cannot gain settlers nor annex cities. Double the normal number of trade routes available. A Merchant of Venice appears after researching Optics. May purchase in puppeted cities. Puppets do not produce less science, gold, and faith than normal. Conquistadors can only settle abroad."/>
+			<Where Tag="TXT_KEY_TRAIT_SUPER_CITY_STATE" />
+		</Update>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Update>
+			<Set Text="[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Cannot gain settlers nor annex cities. Double the normal number of trade routes available. A Merchant of Venice appears after researching Optics. May purchase in puppeted cities. Puppets do not produce less science, gold, and faith than normal. Conquistadors can only settle abroad."/>
+			<Where Tag="TXT_KEY_TRAIT_SUPER_CITY_STATE" />
+		</Update>
+	</Language_DE_DE>
+	<Language_ES_ES>
+		<Update>
+			<Set Text="[COLOR_WARNING_TEXT](ES_ES text) [ENDCOLOR]Cannot gain settlers nor annex cities. Double the normal number of trade routes available. A Merchant of Venice appears after researching Optics. May purchase in puppeted cities. Puppets do not produce less science, gold, and faith than normal. Conquistadors can only settle abroad."/>
+			<Where Tag="TXT_KEY_TRAIT_SUPER_CITY_STATE" />
+		</Update>
+	</Language_ES_ES>
+	<Language_FR_FR>
+		<Update>
+			<Set Text="[COLOR_WARNING_TEXT](FR_FR text) [ENDCOLOR]Cannot gain settlers nor annex cities. Double the normal number of trade routes available. A Merchant of Venice appears after researching Optics. May purchase in puppeted cities. Puppets do not produce less science, gold, and faith than normal. Conquistadors can only settle abroad."/>
+			<Where Tag="TXT_KEY_TRAIT_SUPER_CITY_STATE" />
+		</Update>
+	</Language_FR_FR>
+	<Language_PL_PL>
+		<Update>
+			<Set Text="[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Cannot gain settlers nor annex cities. Double the normal number of trade routes available. A Merchant of Venice appears after researching Optics. May purchase in puppeted cities. Puppets do not produce less science, gold, and faith than normal. Conquistadors can only settle abroad."/>
+			<Where Tag="TXT_KEY_TRAIT_SUPER_CITY_STATE" />
+		</Update>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Update>
+			<Set Text="[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Cannot gain settlers nor annex cities. Double the normal number of trade routes available. A Merchant of Venice appears after researching Optics. May purchase in puppeted cities. Puppets do not produce less science, gold, and faith than normal. Conquistadors can only settle abroad."/>
+			<Where Tag="TXT_KEY_TRAIT_SUPER_CITY_STATE" />
+		</Update>
+	</Language_RU_RU>
+</GameData>

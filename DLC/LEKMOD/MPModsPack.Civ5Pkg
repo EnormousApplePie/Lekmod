@@ -21,15 +21,5 @@
 		<Directory>CultureOverview</Directory>
 		<Directory>NewUI</Directory>
 	</GameplaySkin>
-  </UISkin>
-  <!--  <EntryPoints>
-    <EntryPoint type="InGameUIAddin" file="InGameUIAddins/GTAS_PlaceCityItems.lua">
-      <Name>GTAS_PlaceCityItems</Name>
-      <Description>GTAS_PlaceCityItems</Description>
-    </EntryPoint>
-  </EntryPoints> -->
-  <Files>
-    <File md5="4486E05E92C6A1829D1BD4FC8EAB80DE" import="1">CultureOverview/CultureOverview.lua</File>
-    <File md5="BF85D174CA9D4F2EC2AD7E3FBB6C0D6D" import="1">CultureOverview/CultureOverview.xml</File>
-  </Files>
+  </UISkin>	
 </Civ5Package>

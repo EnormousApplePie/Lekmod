@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2016-09-23 22:48:02 -->
+<GameData>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_BUILDING_IRONWORKS" />
+		<Row Tag="TXT_KEY_BUILDING_IRONWORKS">
+			<Text>Ironworks [COLOR_CYAN]*[ENDCOLOR]</Text>
+			<Gender>neuter:an</Gender>
+			<Plurality>2</Plurality>
+		</Row>
+		<Delete Tag="TXT_KEY_BUILDING_IRONWORKS_HELP" />
+		<Row Tag="TXT_KEY_BUILDING_IRONWORKS_HELP">
+			<Text>[COLOR_CYAN]* National Wonder (each player may build one)[ENDCOLOR][NEWLINE][NEWLINE]Must have built a Workshop in all Cities. The cost goes up the more cities there are in the empire.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_BUILDING_IRONWORKS" />
+		<Row Tag="TXT_KEY_BUILDING_IRONWORKS">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Ironworks [COLOR_CYAN]*[ENDCOLOR]</Text>
+			<Gender>neuter:an</Gender>
+			<Plurality>2</Plurality>
+		</Row>
+		<Delete Tag="TXT_KEY_BUILDING_IRONWORKS_HELP" />
+		<Row Tag="TXT_KEY_BUILDING_IRONWORKS_HELP">
+			<Text>[COLOR_CYAN]* National Wonder (each player may build one)[ENDCOLOR][NEWLINE][NEWLINE][COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Must have built a Workshop in all Cities. The cost goes up the more cities there are in the empire.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_BUILDING_IRONWORKS" />
+		<Row Tag="TXT_KEY_BUILDING_IRONWORKS">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Ironworks [COLOR_CYAN]*[ENDCOLOR]</Text>
+			<Gender>neuter:an</Gender>
+			<Plurality>2</Plurality>
+		</Row>
+		<Delete Tag="TXT_KEY_BUILDING_IRONWORKS_HELP" />
+		<Row Tag="TXT_KEY_BUILDING_IRONWORKS_HELP">
+			<Text>[COLOR_CYAN]* National Wonder (each player may build one)[ENDCOLOR][NEWLINE][NEWLINE][COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Must have built a Workshop in all Cities. The cost goes up the more cities there are in the empire.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_BUILDING_IRONWORKS" />
+		<Row Tag="TXT_KEY_BUILDING_IRONWORKS">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Ironworks [COLOR_CYAN]*[ENDCOLOR]</Text>
+			<Gender>neuter:an</Gender>
+			<Plurality>2</Plurality>
+		</Row>
+		<Delete Tag="TXT_KEY_BUILDING_IRONWORKS_HELP" />
+		<Row Tag="TXT_KEY_BUILDING_IRONWORKS_HELP">
+			<Text>[COLOR_CYAN]* National Wonder (each player may build one)[ENDCOLOR][NEWLINE][NEWLINE][COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Must have built a Workshop in all Cities. The cost goes up the more cities there are in the empire.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

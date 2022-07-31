@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2017-02-12 16:01:48 -->
+<GameData>
+	
+	<!-- Satellite States (replaces Skyscrapers): +4% Food and Production in all Cities for each Courthouse in the Empire. -->
+	<Policies>
+		<Update>
+			<Set Level="3" BuildingPurchaseCostModifier="0" />
+			<Where Type="POLICY_SKYSCRAPERS" />
+		</Update>
+	</Policies>
+	<Policy_Flavors>
+		<Update>
+			<Set FlavorType="FLAVOR_OFFENSE" Flavor="25" />
+			<Where PolicyType="POLICY_SKYSCRAPERS" FlavorType="FLAVOR_GOLD" />
+		</Update>
+	</Policy_Flavors>
+	
+	<!-- Satellite States dummy building -->
+	<BuildingClasses>
+		<Row>
+			<Type>DUMMY_BUILDINGCLASS_T3_2_SATELLITE_STATES</Type>
+			<DefaultBuilding>DUMMY_BUILDING_T3_2_SATELLITE_STATES</DefaultBuilding>
+			<Description>Satellite States Dummy BuildingClass</Description>
+		</Row>
+	</BuildingClasses>
+	<Buildings>
+		<Row>
+			<Type>DUMMY_BUILDING_T3_2_SATELLITE_STATES</Type>
+			<BuildingClass>DUMMY_BUILDINGCLASS_T3_2_SATELLITE_STATES</BuildingClass>
+			<Description>Free Trade Dummy Building</Description>
+			<GreatWorkCount>-1</GreatWorkCount>
+			<Cost>-1</Cost>
+			<FaithCost>-1</FaithCost>
+			<PrereqTech>NULL</PrereqTech>
+			<NeverCapture>true</NeverCapture>
+		</Row>
+	</Buildings>
+	<Building_GlobalYieldModifiers>
+		<Row>
+			<BuildingType>DUMMY_BUILDING_T3_2_SATELLITE_STATES</BuildingType>
+			<YieldType>YIELD_FOOD</YieldType>
+			<Yield>4</Yield>
+		</Row>
+		<Row>
+			<BuildingType>DUMMY_BUILDING_T3_2_SATELLITE_STATES</BuildingType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>4</Yield>
+		</Row>
+	</Building_GlobalYieldModifiers>
+	
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_POLICY_SKYSCRAPERS" />
+		<Row Tag="TXT_KEY_POLICY_SKYSCRAPERS">
+			<Text>Satellite States</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_SKYSCRAPERS_HELP" />
+		<Row Tag="TXT_KEY_POLICY_SKYSCRAPERS_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Satellite States[ENDCOLOR][NEWLINE]+4% [ICON_FOOD] Food and [ICON_PRODUCTION] Production in all Cities for each Courthouse in the Empire.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_SKYSCRAPERS_TEXT" />
+		<Row Tag="TXT_KEY_POLICY_SKYSCRAPERS_TEXT">
+			<Text>[COLOR_POSITIVE_TEXT]Source: Wikipedia (https://en.wikipedia.org/wiki/Satellite_state)[ENDCOLOR][NEWLINE][NEWLINE]The term satellite state designates a country that is formally independent in the world, but under heavy political, economic and military influence or control from another country. The term was coined by analogy to planetary objects orbiting a larger object, such as smaller moons revolving around larger planets, and is used mainly to refer to Central and Eastern European countries of the Warsaw Pact during the Cold War or to Mongolia between 1924 and 1990, for example. As used for Central and Eastern European countries it implies that the countries in question were "satellites" under the hegemony of the Soviet Union. In some contexts it also refers to other countries in the Soviet sphere of influence during the Cold War—such as North Korea (especially in the years surrounding the Korean War of 1950–1953) and Cuba (particularly after it joined the Comecon in 1972). In Western usage, the term has seldom been applied to states other than those in the Soviet orbit. In Soviet usage, the term applied to the states in the orbit of Nazi Germany and Fascist Italy.[NEWLINE][NEWLINE]In times of war or political tension, satellite states sometimes serve as buffers between an enemy country and the nation exerting control over the satellites. "Satellite state" is one of several contentious terms used to describe the (alleged) subordination of one state to another. Other such terms include puppet state and neo-colony. In general, the term "satellite state" implies deep ideological and military allegiance to the hegemonic power, whereas "puppet state" implies political and military dependence, and "neo-colony" implies (often abject) economic dependence. Depending on which aspect of dependence is being emphasised, a state may fall into more than one category.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_POLICY_SKYSCRAPERS" />
+		<Row Tag="TXT_KEY_POLICY_SKYSCRAPERS">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Satellite States</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_SKYSCRAPERS_HELP" />
+		<Row Tag="TXT_KEY_POLICY_SKYSCRAPERS_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Satellite States[ENDCOLOR][NEWLINE]+4% [ICON_FOOD] Food and [ICON_PRODUCTION] Production in all Cities for each Courthouse in the Empire.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_SKYSCRAPERS_TEXT" />
+		<Row Tag="TXT_KEY_POLICY_SKYSCRAPERS_TEXT">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Source: Wikipedia (https://en.wikipedia.org/wiki/Satellite_state)[ENDCOLOR][NEWLINE][NEWLINE]The term satellite state designates a country that is formally independent in the world, but under heavy political, economic and military influence or control from another country. The term was coined by analogy to planetary objects orbiting a larger object, such as smaller moons revolving around larger planets, and is used mainly to refer to Central and Eastern European countries of the Warsaw Pact during the Cold War or to Mongolia between 1924 and 1990, for example. As used for Central and Eastern European countries it implies that the countries in question were "satellites" under the hegemony of the Soviet Union. In some contexts it also refers to other countries in the Soviet sphere of influence during the Cold War—such as North Korea (especially in the years surrounding the Korean War of 1950–1953) and Cuba (particularly after it joined the Comecon in 1972). In Western usage, the term has seldom been applied to states other than those in the Soviet orbit. In Soviet usage, the term applied to the states in the orbit of Nazi Germany and Fascist Italy.[NEWLINE][NEWLINE]In times of war or political tension, satellite states sometimes serve as buffers between an enemy country and the nation exerting control over the satellites. "Satellite state" is one of several contentious terms used to describe the (alleged) subordination of one state to another. Other such terms include puppet state and neo-colony. In general, the term "satellite state" implies deep ideological and military allegiance to the hegemonic power, whereas "puppet state" implies political and military dependence, and "neo-colony" implies (often abject) economic dependence. Depending on which aspect of dependence is being emphasised, a state may fall into more than one category.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_POLICY_SKYSCRAPERS" />
+		<Row Tag="TXT_KEY_POLICY_SKYSCRAPERS">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Satellite States</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_SKYSCRAPERS_HELP" />
+		<Row Tag="TXT_KEY_POLICY_SKYSCRAPERS_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Satellite States[ENDCOLOR][NEWLINE]+4% [ICON_FOOD] Food and [ICON_PRODUCTION] Production in all Cities for each Courthouse in the Empire.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_SKYSCRAPERS_TEXT" />
+		<Row Tag="TXT_KEY_POLICY_SKYSCRAPERS_TEXT">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Source: Wikipedia (https://en.wikipedia.org/wiki/Satellite_state)[ENDCOLOR][NEWLINE][NEWLINE]The term satellite state designates a country that is formally independent in the world, but under heavy political, economic and military influence or control from another country. The term was coined by analogy to planetary objects orbiting a larger object, such as smaller moons revolving around larger planets, and is used mainly to refer to Central and Eastern European countries of the Warsaw Pact during the Cold War or to Mongolia between 1924 and 1990, for example. As used for Central and Eastern European countries it implies that the countries in question were "satellites" under the hegemony of the Soviet Union. In some contexts it also refers to other countries in the Soviet sphere of influence during the Cold War—such as North Korea (especially in the years surrounding the Korean War of 1950–1953) and Cuba (particularly after it joined the Comecon in 1972). In Western usage, the term has seldom been applied to states other than those in the Soviet orbit. In Soviet usage, the term applied to the states in the orbit of Nazi Germany and Fascist Italy.[NEWLINE][NEWLINE]In times of war or political tension, satellite states sometimes serve as buffers between an enemy country and the nation exerting control over the satellites. "Satellite state" is one of several contentious terms used to describe the (alleged) subordination of one state to another. Other such terms include puppet state and neo-colony. In general, the term "satellite state" implies deep ideological and military allegiance to the hegemonic power, whereas "puppet state" implies political and military dependence, and "neo-colony" implies (often abject) economic dependence. Depending on which aspect of dependence is being emphasised, a state may fall into more than one category.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_POLICY_SKYSCRAPERS" />
+		<Row Tag="TXT_KEY_POLICY_SKYSCRAPERS">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Satellite States</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_SKYSCRAPERS_HELP" />
+		<Row Tag="TXT_KEY_POLICY_SKYSCRAPERS_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Satellite States[ENDCOLOR][NEWLINE]+4% [ICON_FOOD] Food and [ICON_PRODUCTION] Production in all Cities for each Courthouse in the Empire.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_SKYSCRAPERS_TEXT" />
+		<Row Tag="TXT_KEY_POLICY_SKYSCRAPERS_TEXT">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Source: Wikipedia (https://en.wikipedia.org/wiki/Satellite_state)[ENDCOLOR][NEWLINE][NEWLINE]The term satellite state designates a country that is formally independent in the world, but under heavy political, economic and military influence or control from another country. The term was coined by analogy to planetary objects orbiting a larger object, such as smaller moons revolving around larger planets, and is used mainly to refer to Central and Eastern European countries of the Warsaw Pact during the Cold War or to Mongolia between 1924 and 1990, for example. As used for Central and Eastern European countries it implies that the countries in question were "satellites" under the hegemony of the Soviet Union. In some contexts it also refers to other countries in the Soviet sphere of influence during the Cold War—such as North Korea (especially in the years surrounding the Korean War of 1950–1953) and Cuba (particularly after it joined the Comecon in 1972). In Western usage, the term has seldom been applied to states other than those in the Soviet orbit. In Soviet usage, the term applied to the states in the orbit of Nazi Germany and Fascist Italy.[NEWLINE][NEWLINE]In times of war or political tension, satellite states sometimes serve as buffers between an enemy country and the nation exerting control over the satellites. "Satellite state" is one of several contentious terms used to describe the (alleged) subordination of one state to another. Other such terms include puppet state and neo-colony. In general, the term "satellite state" implies deep ideological and military allegiance to the hegemonic power, whereas "puppet state" implies political and military dependence, and "neo-colony" implies (often abject) economic dependence. Depending on which aspect of dependence is being emphasised, a state may fall into more than one category.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<!-- Table data -->
+	<GameOptions>
+		<Row>
+			<Type>GAMEOPTION_NO_TECH_COST_TOTAL_KNOWN_TEAM_MODIFIER</Type>
+			<Description>TXT_KEY_GAME_OPTION_NO_TECH_COST_TOTAL_KNOWN_TEAM_MODIFIER</Description>
+			<Help>TXT_KEY_GAME_OPTION_NO_TECH_COST_TOTAL_KNOWN_TEAM_MODIFIER_HELP</Help>
+		</Row>
+	</GameOptions>
+	<Language_en_US>
+		<Row Tag="TXT_KEY_GAME_OPTION_NO_TECH_COST_TOTAL_KNOWN_TEAM_MODIFIER">
+			<Text>No Known Tech Cost Discount</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_NO_TECH_COST_TOTAL_KNOWN_TEAM_MODIFIER_HELP">
+			<Text>Disables the tech cost discount awarded to teams that is based on the fraction of teams in the game that already have the tech.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Row Tag="TXT_KEY_GAME_OPTION_NO_TECH_COST_TOTAL_KNOWN_TEAM_MODIFIER">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]No Known Tech Cost Discount</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_NO_TECH_COST_TOTAL_KNOWN_TEAM_MODIFIER_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Disables the tech cost discount awarded to teams that is based on the fraction of teams in the game that already have the tech.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_ES_ES>
+		<Row Tag="TXT_KEY_GAME_OPTION_NO_TECH_COST_TOTAL_KNOWN_TEAM_MODIFIER">
+			<Text>[COLOR_WARNING_TEXT](ES_ES text) [ENDCOLOR]No Known Tech Cost Discount</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_NO_TECH_COST_TOTAL_KNOWN_TEAM_MODIFIER_HELP">
+			<Text>[COLOR_WARNING_TEXT](ES_ES text) [ENDCOLOR]Disables the tech cost discount awarded to teams that is based on the fraction of teams in the game that already have the tech.</Text>
+		</Row>
+	</Language_ES_ES>
+	<Language_FR_FR>
+		<Row Tag="TXT_KEY_GAME_OPTION_NO_TECH_COST_TOTAL_KNOWN_TEAM_MODIFIER">
+			<Text>[COLOR_WARNING_TEXT](FR_FR text) [ENDCOLOR]No Known Tech Cost Discount</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_NO_TECH_COST_TOTAL_KNOWN_TEAM_MODIFIER_HELP">
+			<Text>[COLOR_WARNING_TEXT](FR_FR text) [ENDCOLOR]Disables the tech cost discount awarded to teams that is based on the fraction of teams in the game that already have the tech.</Text>
+		</Row>
+	</Language_FR_FR>
+	<Language_PL_PL>
+		<Row Tag="TXT_KEY_GAME_OPTION_NO_TECH_COST_TOTAL_KNOWN_TEAM_MODIFIER">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]No Known Tech Cost Discount</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_NO_TECH_COST_TOTAL_KNOWN_TEAM_MODIFIER_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Disables the tech cost discount awarded to teams that is based on the fraction of teams in the game that already have the tech.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Row Tag="TXT_KEY_GAME_OPTION_NO_TECH_COST_TOTAL_KNOWN_TEAM_MODIFIER">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]No Known Tech Cost Discount</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_NO_TECH_COST_TOTAL_KNOWN_TEAM_MODIFIER_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Disables the tech cost discount awarded to teams that is based on the fraction of teams in the game that already have the tech.</Text>
+		</Row>
+	</Language_RU_RU>
+</GameData>

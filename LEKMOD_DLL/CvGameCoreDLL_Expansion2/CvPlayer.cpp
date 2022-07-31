@@ -7449,7 +7449,9 @@ void CvPlayer::AwardFreeBuildings(CvCity* pCity)
 		BuildingTypes eBuilding = pCity->ChooseFreeFoodBuilding();
 		if(eBuilding != NO_BUILDING)
 		{
+#ifdef AQUEDUCT_FIX
 			pCity->GetCityBuildings()->SetNumRealBuilding(eBuilding, 0);
+#endif
 			pCity->GetCityBuildings()->SetNumFreeBuilding(eBuilding, 1);
 		}
 
@@ -23785,6 +23787,7 @@ void CvPlayer::processPolicies(PolicyTypes ePolicy, int iChange)
 			BuildingTypes ePietyGarden = pLoopCity->ChooseFreeGardenBuilding();
 			if (ePietyGarden != NO_BUILDING)
 			{
+				pLoopCity->GetCityBuildings()->SetNumRealBuilding(ePietyGarden, 0);
 				pLoopCity->GetCityBuildings()->SetNumFreeBuilding(ePietyGarden, 1);
 				if (pLoopCity->getFirstBuildingOrder(ePietyGarden) == 0)
 				{

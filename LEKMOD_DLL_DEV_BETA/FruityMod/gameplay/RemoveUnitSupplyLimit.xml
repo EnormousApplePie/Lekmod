@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 6/4/2015 1:22:11 PM -->
+<GameData>
+	
+	<!-- Remove unit supply limit (effectively) -->
+	<HandicapInfos>
+		<Update>
+			<Set ProductionFreeUnits="99999" />
+		</Update>
+	</HandicapInfos>
+	
+</GameData>

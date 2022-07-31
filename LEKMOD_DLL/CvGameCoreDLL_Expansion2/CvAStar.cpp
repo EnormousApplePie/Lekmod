@@ -1164,7 +1164,7 @@ int PathDestValid(int iToX, int iToY, const void* pointer, CvAStar* finder)
 		return TRUE;
 	}
 
-#ifndef AUI_ASTAR_FIX_PATH_VALID_PATH_PEAKS_FOR_NONHUMAN
+#ifndef ASTAR_AI_CONTROL_FIX_RADAR
 	if(pToPlot->isMountain() && (!pCacheData->isHuman() || pCacheData->IsAutomated()))
 	{
 		return FALSE;
@@ -1180,7 +1180,7 @@ int PathDestValid(int iToX, int iToY, const void* pointer, CvAStar* finder)
 	{
 		return FALSE;
 	}
-
+#ifndef ASTAR_AI_CONTROL_FIX_RADAR
 #ifdef AUI_ASTAR_MINOR_OPTIMIZATION
 	bool bAIControl = pCacheData->IsAutomated();
 #else
@@ -1218,7 +1218,7 @@ int PathDestValid(int iToX, int iToY, const void* pointer, CvAStar* finder)
 			}
 		}
 	}
-
+#endif
 	TeamTypes eTeam = pCacheData->getTeam();
 	bool bToPlotRevealed = pToPlot->isRevealed(eTeam);
 	if(!bToPlotRevealed)
@@ -1241,7 +1241,11 @@ int PathDestValid(int iToX, int iToY, const void* pointer, CvAStar* finder)
 		}
 	}
 
+#ifdef ASTAR_AI_CONTROL_FIX_RADAR
+	if(bToPlotRevealed)
+#else
 	if(bAIControl || bToPlotRevealed)
+#endif
 	{
 		// assume that we can change our embarking state
 		byte bMoveFlags = CvUnit::MOVEFLAG_DESTINATION | CvUnit::MOVEFLAG_PRETEND_CORRECT_EMBARK_STATE;
@@ -2147,7 +2151,7 @@ int PathValid(CvAStarNode* parent, CvAStarNode* node, int data, const void* poin
 			}
 		}
 	}
-
+#ifndef ASTAR_AI_CONTROL_FIX_RADAR
 	if(bAIControl)
 	{
 		if((parent->m_iData2 > 1) || (parent->m_iData1 == 0))
@@ -2181,10 +2185,10 @@ int PathValid(CvAStarNode* parent, CvAStarNode* node, int data, const void* poin
 			}
 		}
 	}
-
+#endif
 	// slewis - added AI check and embark check to prevent units from moving into unexplored areas
-#ifdef AUI_ASTAR_FIX_CAN_ENTER_TERRAIN_NO_DUPLICATE_CALLS
-	if (bAIControl || kFromNodeCacheData.bIsRevealedToTeam || !bIsHuman)
+#ifdef ASTAR_AI_CONTROL_FIX_RADAR
+	if(kFromNodeCacheData.bIsRevealedToTeam || pCacheData->isEmbarked() || !bIsHuman)
 #else
 	if(bAIControl || kFromNodeCacheData.bIsRevealedToTeam || pCacheData->isEmbarked() || !bIsHuman)
 #endif
@@ -2386,7 +2390,7 @@ int IgnoreUnitsDestValid(int iToX, int iToY, const void* pointer, CvAStar* finde
 		return FALSE;
 	}
 
-#ifndef AUI_ASTAR_FIX_PATH_VALID_PATH_PEAKS_FOR_NONHUMAN
+#ifndef ASTAR_AI_CONTROL_FIX_RADAR
 	if(pToPlot->isMountain() && (!pCacheData->isHuman() || pCacheData->IsAutomated()))
 	{
 		return FALSE;
@@ -2403,7 +2407,7 @@ int IgnoreUnitsDestValid(int iToX, int iToY, const void* pointer, CvAStar* finde
 #else
 	bAIControl = pCacheData->IsAutomated();
 #endif
-
+#ifndef ASTAR_AI_CONTROL_FIX_RADAR
 	if(bAIControl)
 	{
 		if(pCacheData->getDomainType() == DOMAIN_LAND)
@@ -2418,6 +2422,7 @@ int IgnoreUnitsDestValid(int iToX, int iToY, const void* pointer, CvAStar* finde
 			}
 		}
 	}
+#endif
 
 	TeamTypes eUnitTeam = pUnit->getTeam();
 
@@ -2429,7 +2434,11 @@ int IgnoreUnitsDestValid(int iToX, int iToY, const void* pointer, CvAStar* finde
 		}
 	}
 
+#ifdef ASTAR_AI_CONTROL_FIX_RADAR
+	if(pToPlot->isRevealed(eUnitTeam))
+#else
 	if(bAIControl || pToPlot->isRevealed(eUnitTeam))
+#endif
 	{
 #ifdef AUI_ASTAR_FIX_IGNORE_UNITS_PATHFINDER_TERRITORY_CHECK
 		if (!pUnit->canEnterTerrain(*pToPlot, CvUnit::MOVEFLAG_PRETEND_CORRECT_EMBARK_STATE) || !pUnit->canEnterTerritory(pToPlot->getTeam(), false, false, pUnit->IsDeclareWar() || (finder->GetInfo() & MOVE_DECLARE_WAR)))
@@ -2983,8 +2992,8 @@ int IgnoreUnitsValid(CvAStarNode* parent, CvAStarNode* node, int data, const voi
 	{
 		if (!kToNodeCacheData.bCanEnterTerrain || !kToNodeCacheData.bIsMountain) // Recycling bIsMountain for Borders check (only for IgnoreUnits Pathfinder!)
 #else
-#ifdef AUI_ASTAR_MINOR_OPTIMIZATION
-	if (bIsAIControl || (pFromPlot->isRevealed(eUnitTeam) || pCacheData->isEmbarked()))
+#ifdef ASTAR_AI_CONTROL_FIX_RADAR
+	if((pFromPlot->isRevealed(eUnitTeam) || pCacheData->isEmbarked()) || !pCacheData->isHuman())
 #else
 	if(bAIControl || (pFromPlot->isRevealed(eUnitTeam) || pCacheData->isEmbarked()) || !pCacheData->isHuman())
 #endif
@@ -5268,7 +5277,7 @@ int TacticalAnalysisMapPathValid(CvAStarNode* parent, CvAStarNode* node, int dat
 			}
 		}
 	}
-
+#ifndef ASTAR_AI_CONTROL_FIX_RADAR
 	if(bAIControl)
 	{
 		if((parent->m_iData2 > 1) || (parent->m_iData1 == 0))
@@ -5302,10 +5311,10 @@ int TacticalAnalysisMapPathValid(CvAStarNode* parent, CvAStarNode* node, int dat
 			}
 		}
 	}
-
+#endif
 	// slewis - added AI check and embark check to prevent units from moving into unexplored areas
-#ifdef AUI_ASTAR_FIX_CAN_ENTER_TERRAIN_NO_DUPLICATE_CALLS
-	if (bAIControl || !bIsHuman || kFromNodeCacheData.bIsRevealedToTeam)
+#ifdef ASTAR_AI_CONTROL_FIX_RADAR
+	if(!bIsHuman || kFromNodeCacheData.bIsRevealedToTeam || pCacheData->isEmbarked())
 #else
 	if(bAIControl || !bIsHuman || kFromNodeCacheData.bIsRevealedToTeam || pCacheData->isEmbarked())
 #endif

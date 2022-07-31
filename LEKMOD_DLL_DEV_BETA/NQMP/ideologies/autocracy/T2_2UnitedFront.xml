@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 3/22/2017 7:17:12 PM -->
+<GameData>
+
+	<!-- United Front: +25% Combat Strength for Land and Naval Units near City States that are friendly, allied or can be liberated. -->
+	<Policies>
+		<Update>
+			<Set Level="2" CityStateUnitFrequencyModifier="0" />
+			<Where Type="POLICY_UNITED_FRONT" />
+		</Update>
+	</Policies>
+
+	<!-- new promotion -->
+	<UnitPromotions>
+		<Row>
+			<Type>PROMOTION_UNITED_FRONT</Type>
+			<Description>TXT_KEY_PROMOTION_UNITED_FRONT</Description>
+			<Help>TXT_KEY_PROMOTION_UNITED_FRONT_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<OrderPriority>6</OrderPriority>
+			<PortraitIndex>59</PortraitIndex>
+			<IconAtlas>ABILITY_ATLAS</IconAtlas>
+			<PediaType>PEDIA_MELEE</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_UNITED_FRONT</PediaEntry>
+			<CannotBeChosen>true</CannotBeChosen>
+			<CombatStrengthNearFriendlyMinor>25</CombatStrengthNearFriendlyMinor>
+		</Row>
+	</UnitPromotions>
+	<Policy_FreePromotions>
+		<Row>
+			<PolicyType>POLICY_UNITED_FRONT</PolicyType>
+			<PromotionType>PROMOTION_UNITED_FRONT</PromotionType>
+		</Row>
+	</Policy_FreePromotions>
+	<UnitPromotions_UnitCombats>
+		<Row>
+			<PromotionType>PROMOTION_UNITED_FRONT</PromotionType>
+			<UnitCombatType>UNITCOMBAT_RECON</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_UNITED_FRONT</PromotionType>
+			<UnitCombatType>UNITCOMBAT_ARCHER</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_UNITED_FRONT</PromotionType>
+			<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_UNITED_FRONT</PromotionType>
+			<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_UNITED_FRONT</PromotionType>
+			<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_UNITED_FRONT</PromotionType>
+			<UnitCombatType>UNITCOMBAT_GUN</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_UNITED_FRONT</PromotionType>
+			<UnitCombatType>UNITCOMBAT_ARMOR</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_UNITED_FRONT</PromotionType>
+			<UnitCombatType>UNITCOMBAT_NAVALRANGED</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_UNITED_FRONT</PromotionType>
+			<UnitCombatType>UNITCOMBAT_NAVALMELEE</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_UNITED_FRONT</PromotionType>
+			<UnitCombatType>UNITCOMBAT_SUBMARINE</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_UNITED_FRONT</PromotionType>
+			<UnitCombatType>UNITCOMBAT_CARRIER</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_UNITED_FRONT</PromotionType>
+			<UnitCombatType>UNITCOMBAT_PARADROPPER</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_UNITED_FRONT</PromotionType>
+			<UnitCombatType>UNITCOMBAT_MOUNTED_RANGED</UnitCombatType>
+		</Row>
+	</UnitPromotions_UnitCombats>
+	
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_POLICY_UNITED_FRONT_HELP" />
+		<Row Tag="TXT_KEY_POLICY_UNITED_FRONT_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]United Front[ENDCOLOR][NEWLINE]+25% [ICON_STRENGTH] Combat Strength for Land and Naval Units near City States that are friendly, allied or can be liberated.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_EUPANEL_COMBAT_STRENGTH_NEAR_FRIENDLY_MINOR">
+			<Text>United Front near City State</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_UNITED_FRONT">
+			<Text>United Front</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_UNITED_FRONT_HELP">
+			<Text>+25% [ICON_STRENGTH] Combat Strength near City States that are friendly, allied or can be liberated.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_POLICY_UNITED_FRONT_HELP" />
+		<Row Tag="TXT_KEY_POLICY_UNITED_FRONT_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]United Front[ENDCOLOR][NEWLINE]+25% [ICON_STRENGTH] Combat Strength for Land and Naval Units near City States that are friendly, allied or can be liberated.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_EUPANEL_COMBAT_STRENGTH_NEAR_FRIENDLY_MINOR">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]United Front near City State</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_UNITED_FRONT">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]United Front</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_UNITED_FRONT_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]+25% [ICON_STRENGTH] Combat Strength near City States that are friendly, allied or can be liberated.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_POLICY_UNITED_FRONT_HELP" />
+		<Row Tag="TXT_KEY_POLICY_UNITED_FRONT_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]United Front[ENDCOLOR][NEWLINE]+25% [ICON_STRENGTH] Combat Strength for Land and Naval Units near City States that are friendly, allied or can be liberated.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_EUPANEL_COMBAT_STRENGTH_NEAR_FRIENDLY_MINOR">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]United Front near City State</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_UNITED_FRONT">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]United Front</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_UNITED_FRONT_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]+25% [ICON_STRENGTH] Combat Strength near City States that are friendly, allied or can be liberated.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_POLICY_UNITED_FRONT_HELP" />
+		<Row Tag="TXT_KEY_POLICY_UNITED_FRONT_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]United Front[ENDCOLOR][NEWLINE]+25% [ICON_STRENGTH] Combat Strength for Land and Naval Units near City States that are friendly, allied or can be liberated.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_EUPANEL_COMBAT_STRENGTH_NEAR_FRIENDLY_MINOR">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]United Front near City State</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_UNITED_FRONT">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]United Front</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_UNITED_FRONT_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]+25% [ICON_STRENGTH] Combat Strength near City States that are friendly, allied or can be liberated.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

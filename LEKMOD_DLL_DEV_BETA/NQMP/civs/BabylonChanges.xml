@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 10/2/2015 2:35:34 AM -->
+<GameData>
+
+	<Traits>
+		<Update>
+			<Set FreeUnitPrereqTech="TECH_PHILOSOPHY" />
+			<Where Type="TRAIT_INGENIOUS" />
+		</Update>
+	</Traits>
+
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_TRAIT_INGENIOUS" />
+		<Row Tag="TXT_KEY_TRAIT_INGENIOUS">
+			<Text>Receive free Great Scientist when you discover Philosophy. Earn Great Scientists 50% faster.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_TRAIT_INGENIOUS" />
+		<Row Tag="TXT_KEY_TRAIT_INGENIOUS">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Receive free Great Scientist when you discover Philosophy. Earn Great Scientists 50% faster.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_TRAIT_INGENIOUS" />
+		<Row Tag="TXT_KEY_TRAIT_INGENIOUS">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Receive free Great Scientist when you discover Philosophy. Earn Great Scientists 50% faster.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_TRAIT_INGENIOUS" />
+		<Row Tag="TXT_KEY_TRAIT_INGENIOUS">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Receive free Great Scientist when you discover Philosophy. Earn Great Scientists 50% faster.</Text>
+		</Row>
+	</Language_RU_RU>
+	
+</GameData>

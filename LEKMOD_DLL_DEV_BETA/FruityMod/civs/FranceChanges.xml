@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 10/1/2015 9:25:16 PM -->
+<GameData>
+
+	<Traits>
+		<Update>
+			<Set CapitalThemingBonusModifier="0" EarnsGreatPersonOnSlotOrGuild="true" />
+			<Where Type="TRAIT_ENHANCED_CULTURE" />
+		</Update>
+	</Traits>
+
+	<Buildings>
+		
+		<!-- Guilds -->
+		<Update>
+			<Set GrantsFreeCulturalGreatPersonWithTrait="true" />
+			<Where BuildingClass="BUILDINGCLASS_WRITERS_GUILD" />
+		</Update>
+		<Update>
+			<Set GrantsFreeCulturalGreatPersonWithTrait="true" />
+			<Where BuildingClass="BUILDINGCLASS_ARTISTS_GUILD" />
+		</Update>
+		<Update>
+			<Set GrantsFreeCulturalGreatPersonWithTrait="true" />
+			<Where BuildingClass="BUILDINGCLASS_MUSICIANS_GUILD" />
+		</Update>
+
+		<!-- Wonders -->
+		<Update>
+			<Set GrantsFreeCulturalGreatPersonWithTrait="true" />
+			<Where BuildingClass="BUILDINGCLASS_GREAT_LIBRARY" />
+		</Update>
+		<Update>
+			<Set GrantsFreeCulturalGreatPersonWithTrait="true" />
+			<Where BuildingClass="BUILDINGCLASS_PARTHENON" />
+		</Update>
+		<Update>
+			<Set GrantsFreeCulturalGreatPersonWithTrait="true" />
+			<Where BuildingClass="BUILDINGCLASS_GLOBE_THEATER" />
+		</Update>
+		<Update>
+			<Set GrantsFreeCulturalGreatPersonWithTrait="true" />
+			<Where BuildingClass="BUILDINGCLASS_SISTINE_CHAPEL" />
+		</Update>
+		<Update>
+			<Set GrantsFreeCulturalGreatPersonWithTrait="true" />
+			<Where BuildingClass="BUILDINGCLASS_UFFIZI" />
+		</Update>
+		<Update>
+			<Set GrantsFreeCulturalGreatPersonWithTrait="true" />
+			<Where BuildingClass="BUILDINGCLASS_LOUVRE" />
+		</Update>
+		<Update>
+			<Set GrantsFreeCulturalGreatPersonWithTrait="true" />
+			<Where BuildingClass="BUILDINGCLASS_BROADWAY" />
+		</Update>
+		<Update>
+			<Set GrantsFreeCulturalGreatPersonWithTrait="true" />
+			<Where BuildingClass="BUILDINGCLASS_SYDNEY_OPERA_HOUSE" />
+		</Update>
+
+	</Buildings>
+
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_TRAIT_ENHANCED_CULTURE" />
+		<Row Tag="TXT_KEY_TRAIT_ENHANCED_CULTURE">
+			<Text>Whenever a Guild or a World Wonder with Great Work slots is built in the Capital, gain one free cultural Great Person of the matching type.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_TRAIT_ENHANCED_CULTURE" />
+		<Row Tag="TXT_KEY_TRAIT_ENHANCED_CULTURE">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Whenever a Guild or a World Wonder with Great Work slots is built in the Capital, gain one free cultural Great Person of the matching type.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_TRAIT_ENHANCED_CULTURE" />
+		<Row Tag="TXT_KEY_TRAIT_ENHANCED_CULTURE">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Whenever a Guild or a World Wonder with Great Work slots is built in the Capital, gain one free cultural Great Person of the matching type.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_TRAIT_ENHANCED_CULTURE" />
+		<Row Tag="TXT_KEY_TRAIT_ENHANCED_CULTURE">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Whenever a Guild or a World Wonder with Great Work slots is built in the Capital, gain one free cultural Great Person of the matching type.</Text>
+		</Row>
+	</Language_RU_RU>
+	
+</GameData>

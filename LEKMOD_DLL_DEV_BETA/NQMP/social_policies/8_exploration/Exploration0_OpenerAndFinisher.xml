@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 6/6/2015 4:51:27 PM -->
+<GameData>
+
+	<!-- Opener allows training of Conquistadors and unlocks Chichen Itza. -->
+	<!-- Finisher gives +2 Happiness per Luxury, free Great Admiral, +100% Great Admiral points, and ability to Faith purchase Great Admirals. -->
+
+	<!-- Tooltips -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_POLICY_BRANCH_EXPLORATION_HELP" />
+		<Row Tag="TXT_KEY_POLICY_BRANCH_EXPLORATION_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Exploration[ENDCOLOR] enhances your abilties to spread your empire, especially over the seas.[NEWLINE][NEWLINE]Adopting Exploration gives +1 [ICON_MOVES] Movement for Naval units and +1 Sight for Naval combat units. It also allows you to train Conquistadors and unlocks building the Louvre.[NEWLINE][NEWLINE]Adopting all policies provides +1 [ICON_HAPPINESS_1] Happiness from each Luxury resource and causes a Great Admiral to appear. Great Admirals are earned twice as fast and may be purchased with [ICON_PEACE] Faith starting in the Industrial Era.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_POLICY_BRANCH_EXPLORATION_HELP" />
+		<Row Tag="TXT_KEY_POLICY_BRANCH_EXPLORATION_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Exploration[ENDCOLOR] enhances your abilties to spread your empire, especially over the seas.[NEWLINE][NEWLINE]Adopting Exploration gives +1 [ICON_MOVES] Movement for Naval units and +1 Sight for Naval combat units. It also allows you to train Conquistadors and unlocks building the Louvre.[NEWLINE][NEWLINE]Adopting all policies provides +1 [ICON_HAPPINESS_1] Happiness from each Luxury resource and causes a Great Admiral to appear. Great Admirals are earned twice as fast and may be purchased with [ICON_PEACE] Faith starting in the Industrial Era.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_POLICY_BRANCH_EXPLORATION_HELP" />
+		<Row Tag="TXT_KEY_POLICY_BRANCH_EXPLORATION_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Exploration[ENDCOLOR] enhances your abilties to spread your empire, especially over the seas.[NEWLINE][NEWLINE]Adopting Exploration gives +1 [ICON_MOVES] Movement for Naval units and +1 Sight for Naval combat units. It also allows you to train Conquistadors and unlocks building the Louvre.[NEWLINE][NEWLINE]Adopting all policies provides +1 [ICON_HAPPINESS_1] Happiness from each Luxury resource and causes a Great Admiral to appear. Great Admirals are earned twice as fast and may be purchased with [ICON_PEACE] Faith starting in the Industrial Era.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_POLICY_BRANCH_EXPLORATION_HELP" />
+		<Row Tag="TXT_KEY_POLICY_BRANCH_EXPLORATION_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Exploration[ENDCOLOR] enhances your abilties to spread your empire, especially over the seas.[NEWLINE][NEWLINE]Adopting Exploration gives +1 [ICON_MOVES] Movement for Naval units and +1 Sight for Naval combat units. It also allows you to train Conquistadors and unlocks building the Louvre.[NEWLINE][NEWLINE]Adopting all policies provides +1 [ICON_HAPPINESS_1] Happiness from each Luxury resource and causes a Great Admiral to appear. Great Admirals are earned twice as fast and may be purchased with [ICON_PEACE] Faith starting in the Industrial Era.</Text>
+		</Row>
+	</Language_RU_RU>
+	
+
+	<!-- Unlock Conquistadors -->
+	<Units>
+		<Update>
+			<Set PolicyType="POLICY_EXPLORATION" />
+			<Where Type="UNIT_SPANISH_CONQUISTADOR" />
+		</Update>
+	</Units>
+	
+	<!-- Finisher now gives +1 Happiness per luxury, free Great Admiral and doubles points earned towards them -->
+	<!-- Hidden Antiquity Sites now revealed by Aesthetics -->
+	<Policies>
+		<Update>
+			<Set ExtraHappinessPerLuxury="1" IncludesOneShotFreeUnits="true" GreatAdmiralRateModifier="100" />
+			<Where Type="POLICY_EXPLORATION_FINISHER" />
+		</Update>
+	</Policies>
+	<Policy_FreeUnitClasses>
+		<Row>
+			<PolicyType>POLICY_EXPLORATION_FINISHER</PolicyType>
+			<UnitClassType>UNITCLASS_GREAT_ADMIRAL</UnitClassType>
+			<Count>1</Count>
+		</Row>
+	</Policy_FreeUnitClasses>
+
+</GameData>

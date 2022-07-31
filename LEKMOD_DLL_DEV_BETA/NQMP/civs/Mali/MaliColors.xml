@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 5/12/2017 2:50:24 PM -->
+<GameData>
+
+	<PlayerColors>
+		<Row>
+			<Type>PLAYERCOLOR_MALI</Type>
+			<PrimaryColor>COLOR_PLAYER_MALI_ICON</PrimaryColor>
+			<SecondaryColor>COLOR_PLAYER_MALI_BACKGROUND</SecondaryColor>
+			<TextColor>COLOR_PLAYER_WHITE_TEXT</TextColor>
+		</Row>
+	</PlayerColors>
+	<Colors>
+		<Row>
+			<Type>COLOR_PLAYER_MALI_ICON</Type>
+			<Red>0.05</Red>
+			<Green>0.35</Green>
+			<Blue>0.02</Blue>
+			<Alpha>1</Alpha>
+		</Row>
+		<Row>
+			<Type>COLOR_PLAYER_MALI_BACKGROUND</Type>
+			<Red>0.8</Red>
+			<Green>0.65</Green>
+			<Blue>0.3</Blue>
+			<Alpha>1</Alpha>
+		</Row>
+	</Colors>
+	
+</GameData>

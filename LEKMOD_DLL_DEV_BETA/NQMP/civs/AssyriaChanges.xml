@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 12/24/2015 10:59:11 PM -->
+<GameData>
+	
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_TRAIT_SLAYER_OF_TIAMAT" />
+		<Row Tag="TXT_KEY_TRAIT_SLAYER_OF_TIAMAT">
+			<Text>When a city is conquered, gain a free Great Work if you have any available slots.  Gaining a city through a trade deal does not count, and it can only happen once per enemy city.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GREAT_WORK_FROM_CONQUEST">
+			<Text>{@1_PlyrName} has discovered {@2_WndrName} while sacking a City!</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_TRAIT_SLAYER_OF_TIAMAT" />
+		<Row Tag="TXT_KEY_TRAIT_SLAYER_OF_TIAMAT">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]When a city is conquered, gain a free Great Work if you have any available slots.  Gaining a city through a trade deal does not count, and it can only happen once per enemy city.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GREAT_WORK_FROM_CONQUEST">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]{@1_PlyrName} has discovered {@2_WndrName} while sacking a City!</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_TRAIT_SLAYER_OF_TIAMAT" />
+		<Row Tag="TXT_KEY_TRAIT_SLAYER_OF_TIAMAT">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]When a city is conquered, gain a free Great Work if you have any available slots.  Gaining a city through a trade deal does not count, and it can only happen once per enemy city.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GREAT_WORK_FROM_CONQUEST">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]{@1_PlyrName} has discovered {@2_WndrName} while sacking a City!</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_TRAIT_SLAYER_OF_TIAMAT" />
+		<Row Tag="TXT_KEY_TRAIT_SLAYER_OF_TIAMAT">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]When a city is conquered, gain a free Great Work if you have any available slots.  Gaining a city through a trade deal does not count, and it can only happen once per enemy city.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GREAT_WORK_FROM_CONQUEST">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]{@1_PlyrName} has discovered {@2_WndrName} while sacking a City!</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

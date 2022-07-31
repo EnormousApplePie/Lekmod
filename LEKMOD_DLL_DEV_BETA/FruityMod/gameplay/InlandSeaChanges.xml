@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 9/12/2015 9:06:37 PM -->
+<GameData>
+	<Defines>
+		<Update>
+			<Where Name="LAKE_MAX_AREA_SIZE"/>
+			<Set Value ="5"/>
+		</Update>
+
+		<Update>
+			<Where Name="MIN_WATER_SIZE_FOR_OCEAN"/>
+			<Set Value ="6"/>
+		</Update>
+	</Defines>
+
+	<!-- allow production of naval units in those cities -->
+	<Units>
+		<Update>
+			<Set MinAreaSize="6" />
+			<Where Domain="DOMAIN_SEA" />
+		</Update>
+	</Units>
+	
+	<!-- allow production of coastal buildings in those cities -->
+	<Buildings>
+		<!--Normal Buildings-->
+		<Update>
+			<Where Type="BUILDING_LIGHTHOUSE"/>
+			<Set MinAreaSize="6"/>
+		</Update>
+
+		<Update>
+			<Where Type="BUILDING_HARBOR"/>
+			<Set MinAreaSize="6"/>
+		</Update>
+
+		<Update>
+			<Where Type="BUILDING_SEAPORT"/>
+			<Set MinAreaSize="6"/>
+		</Update>
+
+		<!--Wonders-->
+		<Update>
+			<Where Type="BUILDING_GREAT_LIGHTHOUSE"/>
+			<Set MinAreaSize="6"/>
+		</Update>
+
+		<Update>
+			<Where Type="BUILDING_COLOSSUS"/>
+			<Set MinAreaSize="6"/>
+		</Update>
+
+		<Update>
+			<Where Type="BUILDING_SYDNEY_OPERA_HOUSE"/>
+			<Set MinAreaSize="6"/>
+		</Update>
+	</Buildings>
+</GameData>

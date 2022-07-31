@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 4/20/2016 7:55:48 PM -->
+<GameData>
+	
+	<!-- First Ideology free tenets reduced to 1 (down from 2). -->
+	<PolicyBranchTypes>
+		<Update>
+			<Set FirstAdopterFreePolicies="1" />
+			<Where Type="POLICY_BRANCH_FREEDOM" />
+		</Update>
+		<Update>
+			<Set FirstAdopterFreePolicies="1" />
+			<Where Type="POLICY_BRANCH_ORDER" />
+		</Update>
+		<Update>
+			<Set FirstAdopterFreePolicies="1" />
+			<Where Type="POLICY_BRANCH_AUTOCRACY" />
+		</Update>
+	</PolicyBranchTypes>
+	<Defines>
+		<Update>
+			<Where Name="SWITCH_POLICY_BRANCHES_TENETS_LOST"/>
+			<Set Value="1"/>
+		</Update>
+	</Defines>
+	
+	<!-- Localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_NOTIFICATION_CHOOSE_IDEOLOGY_FACTORIES" />
+		<Row Tag="TXT_KEY_NOTIFICATION_CHOOSE_IDEOLOGY_FACTORIES">
+			<Text>You have a Center of Progress. The ideas of the Industrial Revolution now permeate your society. Your people clamor for you to pick an Ideology for your civilization.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICYSCREEN_IDEOLOGY_NOT_STARTED" />
+		<Row Tag="TXT_KEY_POLICYSCREEN_IDEOLOGY_NOT_STARTED">
+			<Text>Ideological tenets may not be purchased until you have chosen an Ideology. This choice becomes available when you build a Center of Progress (requires Factories in every City) or enter the Modern Era, whichever comes first.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_SOCIALPOLICY_ORDER_HEADING3_BODY" />
+		<Row Tag="TXT_KEY_SOCIALPOLICY_ORDER_HEADING3_BODY">
+			<Text>Players interested in creating massive, sprawling civs should turn to the Order ideology, as the strength of the empire is determined by the total number of cities it contains. Order becomes available for exploration upon completing a Center of Progress (requires a Factory in every City) or entering the Modern Era.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_SOCIALPOLICY_AUTOCRACY_HEADING3_BODY" />
+		<Row Tag="TXT_KEY_SOCIALPOLICY_AUTOCRACY_HEADING3_BODY">
+			<Text>The Autocracy ideology is well suited for those wishing nothing more than to crush their foes under the weight of their iron-plated boots. This ideology unlocks upon completing a Center of Progress (requires a Factory in every City) or entering the Modern Era, and cannot be active at the same time as Freedom or Order.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_SOCIALPOLICY_FREEDOM_HEADING3_BODY" />
+		<Row Tag="TXT_KEY_SOCIALPOLICY_FREEDOM_HEADING3_BODY">
+			<Text>The Freedom ideology provides bonuses for Culture, Tourism, Specialist production, and more. Freedom becomes available upon completing a Center of Progress (requires a Factory in every City) or entering the Modern Era, and cannot be active at the same time as Autocracy or Order.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_NOTIFICATION_CHOOSE_IDEOLOGY_FACTORIES" />
+		<Row Tag="TXT_KEY_NOTIFICATION_CHOOSE_IDEOLOGY_FACTORIES">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]You have a Center of Progress. The ideas of the Industrial Revolution now permeate your society. Your people clamor for you to pick an Ideology for your civilization.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICYSCREEN_IDEOLOGY_NOT_STARTED" />
+		<Row Tag="TXT_KEY_POLICYSCREEN_IDEOLOGY_NOT_STARTED">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Ideological tenets may not be purchased until you have chosen an Ideology. This choice becomes available when you build a Center of Progress (requires Factories in every City) or enter the Modern Era, whichever comes first.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_SOCIALPOLICY_ORDER_HEADING3_BODY" />
+		<Row Tag="TXT_KEY_SOCIALPOLICY_ORDER_HEADING3_BODY">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Players interested in creating massive, sprawling civs should turn to the Order ideology, as the strength of the empire is determined by the total number of cities it contains. Order becomes available for exploration upon completing a Center of Progress (requires a Factory in every City) or entering the Modern Era.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_SOCIALPOLICY_AUTOCRACY_HEADING3_BODY" />
+		<Row Tag="TXT_KEY_SOCIALPOLICY_AUTOCRACY_HEADING3_BODY">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]The Autocracy ideology is well suited for those wishing nothing more than to crush their foes under the weight of their iron-plated boots. This ideology unlocks upon completing a Center of Progress (requires a Factory in every City) or entering the Modern Era, and cannot be active at the same time as Freedom or Order.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_SOCIALPOLICY_FREEDOM_HEADING3_BODY" />
+		<Row Tag="TXT_KEY_SOCIALPOLICY_FREEDOM_HEADING3_BODY">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]The Freedom ideology provides bonuses for Culture, Tourism, Specialist production, and more. Freedom becomes available upon completing a Center of Progress (requires a Factory in every City) or entering the Modern Era, and cannot be active at the same time as Autocracy or Order.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_NOTIFICATION_CHOOSE_IDEOLOGY_FACTORIES" />
+		<Row Tag="TXT_KEY_NOTIFICATION_CHOOSE_IDEOLOGY_FACTORIES">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]You have a Center of Progress. The ideas of the Industrial Revolution now permeate your society. Your people clamor for you to pick an Ideology for your civilization.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICYSCREEN_IDEOLOGY_NOT_STARTED" />
+		<Row Tag="TXT_KEY_POLICYSCREEN_IDEOLOGY_NOT_STARTED">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Ideological tenets may not be purchased until you have chosen an Ideology. This choice becomes available when you build a Center of Progress (requires Factories in every City) or enter the Modern Era, whichever comes first.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_SOCIALPOLICY_ORDER_HEADING3_BODY" />
+		<Row Tag="TXT_KEY_SOCIALPOLICY_ORDER_HEADING3_BODY">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Players interested in creating massive, sprawling civs should turn to the Order ideology, as the strength of the empire is determined by the total number of cities it contains. Order becomes available for exploration upon completing a Center of Progress (requires a Factory in every City) or entering the Modern Era.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_SOCIALPOLICY_AUTOCRACY_HEADING3_BODY" />
+		<Row Tag="TXT_KEY_SOCIALPOLICY_AUTOCRACY_HEADING3_BODY">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]The Autocracy ideology is well suited for those wishing nothing more than to crush their foes under the weight of their iron-plated boots. This ideology unlocks upon completing a Center of Progress (requires a Factory in every City) or entering the Modern Era, and cannot be active at the same time as Freedom or Order.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_SOCIALPOLICY_FREEDOM_HEADING3_BODY" />
+		<Row Tag="TXT_KEY_SOCIALPOLICY_FREEDOM_HEADING3_BODY">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]The Freedom ideology provides bonuses for Culture, Tourism, Specialist production, and more. Freedom becomes available upon completing a Center of Progress (requires a Factory in every City) or entering the Modern Era, and cannot be active at the same time as Autocracy or Order.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_NOTIFICATION_CHOOSE_IDEOLOGY_FACTORIES" />
+		<Row Tag="TXT_KEY_NOTIFICATION_CHOOSE_IDEOLOGY_FACTORIES">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]You have a Center of Progress. The ideas of the Industrial Revolution now permeate your society. Your people clamor for you to pick an Ideology for your civilization.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICYSCREEN_IDEOLOGY_NOT_STARTED" />
+		<Row Tag="TXT_KEY_POLICYSCREEN_IDEOLOGY_NOT_STARTED">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Ideological tenets may not be purchased until you have chosen an Ideology. This choice becomes available when you build a Center of Progress (requires Factories in every City) or enter the Modern Era, whichever comes first.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_SOCIALPOLICY_ORDER_HEADING3_BODY" />
+		<Row Tag="TXT_KEY_SOCIALPOLICY_ORDER_HEADING3_BODY">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Players interested in creating massive, sprawling civs should turn to the Order ideology, as the strength of the empire is determined by the total number of cities it contains. Order becomes available for exploration upon completing a Center of Progress (requires a Factory in every City) or entering the Modern Era.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_SOCIALPOLICY_AUTOCRACY_HEADING3_BODY" />
+		<Row Tag="TXT_KEY_SOCIALPOLICY_AUTOCRACY_HEADING3_BODY">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]The Autocracy ideology is well suited for those wishing nothing more than to crush their foes under the weight of their iron-plated boots. This ideology unlocks upon completing a Center of Progress (requires a Factory in every City) or entering the Modern Era, and cannot be active at the same time as Freedom or Order.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_SOCIALPOLICY_FREEDOM_HEADING3_BODY" />
+		<Row Tag="TXT_KEY_SOCIALPOLICY_FREEDOM_HEADING3_BODY">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]The Freedom ideology provides bonuses for Culture, Tourism, Specialist production, and more. Freedom becomes available upon completing a Center of Progress (requires a Factory in every City) or entering the Modern Era, and cannot be active at the same time as Autocracy or Order.</Text>
+		</Row>
+	</Language_RU_RU>
+	
+	<!-- Center of Progress -->
+	<BuildingClasses>
+		<Row>
+			<Type>BUILDINGCLASS_CENTER_OF_PROGRESS</Type>
+			<DefaultBuilding>BUILDING_CENTER_OF_PROGRESS</DefaultBuilding>
+			<Description>TXT_KEY_BUILDING_CENTER_OF_PROGRESS</Description>
+			<MaxPlayerInstances>1</MaxPlayerInstances>
+		</Row>
+	</BuildingClasses>
+	<Buildings>
+		<Update>
+			<Set XBuiltTriggersIdeologyChoice="0" />
+			<Where BuildingClass="BUILDINGCLASS_FACTORY" />
+		</Update>
+		<Row>
+			<Type>BUILDING_CENTER_OF_PROGRESS</Type>
+			<BuildingClass>BUILDINGCLASS_CENTER_OF_PROGRESS</BuildingClass>
+			<Cost>30</Cost>
+			<PrereqTech>TECH_INDUSTRIALIZATION</PrereqTech>
+			<Help>TXT_KEY_BUILDING_CENTER_OF_PROGRESS_STRATEGY</Help>
+			<Description>TXT_KEY_BUILDING_CENTER_OF_PROGRESS_HELP</Description>
+			<ArtDefineTag>ART_DEF_BUILDING_NATIONAL_COLLEGE</ArtDefineTag>
+			<NukeImmune>true</NukeImmune>
+			<NumCityCostMod>0</NumCityCostMod>
+			<XBuiltTriggersIdeologyChoice>1</XBuiltTriggersIdeologyChoice>
+			<HurryCostModifier>-1</HurryCostModifier>
+			<MinAreaSize>-1</MinAreaSize>
+			<NeverCapture>true</NeverCapture>
+			<IconAtlas>EXPANSION_TECH_ATLAS_1</IconAtlas>
+			<PortraitIndex>5</PortraitIndex>
+		</Row>
+	</Buildings>
+	<Building_ClassesNeededInCity>
+		<Row>
+			<BuildingType>BUILDING_CENTER_OF_PROGRESS</BuildingType>
+			<BuildingClassType>BUILDINGCLASS_FACTORY</BuildingClassType>
+		</Row>
+	</Building_ClassesNeededInCity>
+	<Building_PrereqBuildingClasses>
+		<Row>
+			<BuildingType>BUILDING_CENTER_OF_PROGRESS</BuildingType>
+			<BuildingClassType>BUILDINGCLASS_FACTORY</BuildingClassType>
+			<NumBuildingNeeded>-1</NumBuildingNeeded>
+		</Row>
+	</Building_PrereqBuildingClasses>
+	<Building_Flavors>
+		<Row>
+			<BuildingType>BUILDING_CENTER_OF_PROGRESS</BuildingType>
+			<FlavorType>FLAVOR_PRODUCTION</FlavorType>
+			<Flavor>100</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_CENTER_OF_PROGRESS</BuildingType>
+			<FlavorType>FLAVOR_GOLD</FlavorType>
+			<Flavor>100</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_CENTER_OF_PROGRESS</BuildingType>
+			<FlavorType>FLAVOR_GROWTH</FlavorType>
+			<Flavor>100</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_CENTER_OF_PROGRESS</BuildingType>
+			<FlavorType>FLAVOR_HAPPINESS</FlavorType>
+			<Flavor>100</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_CENTER_OF_PROGRESS</BuildingType>
+			<FlavorType>FLAVOR_GREAT_PEOPLE</FlavorType>
+			<Flavor>100</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_CENTER_OF_PROGRESS</BuildingType>
+			<FlavorType>FLAVOR_SCIENCE</FlavorType>
+			<Flavor>100</Flavor>
+		</Row>
+	</Building_Flavors>
+	<Language_en_US>
+		<Row Tag="TXT_KEY_BUILDING_CENTER_OF_PROGRESS_HELP">
+			<Text>Center of Progress</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_CENTER_OF_PROGRESS_STRATEGY">
+			<Text>Building the Center of Progress unlocks an Ideology for your civilization.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Row Tag="TXT_KEY_BUILDING_CENTER_OF_PROGRESS_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Center of Progress</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_CENTER_OF_PROGRESS_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Building the Center of Progress unlocks an Ideology for your civilization.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Row Tag="TXT_KEY_BUILDING_CENTER_OF_PROGRESS_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Center of Progress</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_CENTER_OF_PROGRESS_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Building the Center of Progress unlocks an Ideology for your civilization.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Row Tag="TXT_KEY_BUILDING_CENTER_OF_PROGRESS_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Center of Progress</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_CENTER_OF_PROGRESS_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Building the Center of Progress unlocks an Ideology for your civilization.</Text>
+		</Row>
+	</Language_RU_RU>
+</GameData>

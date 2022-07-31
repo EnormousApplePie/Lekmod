@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 3/22/2017 7:17:12 PM -->
+<GameData>
+
+	<!-- Police State: Barracks, Armories, Military Academies, and Courthouses each provide +2 Happiness. -->
+	<Policies>
+		<Update>
+			<Set Level="3" />
+			<Where Type="POLICY_POLICE_STATE" />
+		</Update>
+	</Policies>
+	<Policy_BuildingClassProductionModifiers>
+		<Delete PolicyType="POLICY_POLICE_STATE" />
+	</Policy_BuildingClassProductionModifiers>
+	<Policy_BuildingClassHappiness>
+		<Update>
+			<Set Happiness="2" />
+			<Where PolicyType="POLICY_POLICE_STATE" BuildingClassType="BUILDINGCLASS_COURTHOUSE" />
+		</Update>
+		<Row>
+			<PolicyType>POLICY_POLICE_STATE</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_BARRACKS</BuildingClassType>
+			<Happiness>2</Happiness>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_POLICE_STATE</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_ARMORY</BuildingClassType>
+			<Happiness>2</Happiness>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_POLICE_STATE</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_MILITARY_ACADEMY</BuildingClassType>
+			<Happiness>2</Happiness>
+		</Row>
+	</Policy_BuildingClassHappiness>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_POLICY_POLICE_STATE_HELP" />
+		<Row Tag="TXT_KEY_POLICY_POLICE_STATE_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Police State[ENDCOLOR][NEWLINE]Barracks, Armories, Military Academies, and Courthouses each provide [ICON_HAPPINESS_1] +2 Happiness.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_POLICY_POLICE_STATE_HELP" />
+		<Row Tag="TXT_KEY_POLICY_POLICE_STATE_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Police State[ENDCOLOR][NEWLINE]Barracks, Armories, Military Academies, and Courthouses each provide [ICON_HAPPINESS_1] +2 Happiness.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_POLICY_POLICE_STATE_HELP" />
+		<Row Tag="TXT_KEY_POLICY_POLICE_STATE_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Police State[ENDCOLOR][NEWLINE]Barracks, Armories, Military Academies, and Courthouses each provide [ICON_HAPPINESS_1] +2 Happiness.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_POLICY_POLICE_STATE_HELP" />
+		<Row Tag="TXT_KEY_POLICY_POLICE_STATE_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Police State[ENDCOLOR][NEWLINE]Barracks, Armories, Military Academies, and Courthouses each provide [ICON_HAPPINESS_1] +2 Happiness.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

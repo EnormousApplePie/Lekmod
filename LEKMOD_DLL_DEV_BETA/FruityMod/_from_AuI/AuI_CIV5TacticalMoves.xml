@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 7/9/2014 12:17:24 AM -->
+<GameData>
+	<TacticalMoves>
+		<!-- Following moves can now be recruited from -->
+		<Update>
+			<Set OperationsCanRecruit="true" />
+			<Where Type="TACTICAL_PILLAGE" />
+		</Update>
+		<Update>
+			<Set OperationsCanRecruit="true" />
+			<Where Type="TACTICAL_SAFE_BOMBARDS" />
+		</Update>
+		<Update>
+			<Set OperationsCanRecruit="true" />
+			<Where Type="TACTICAL_BASTION_ALREADY_THERE" />
+		</Update>
+		<Update>
+			<Set OperationsCanRecruit="true" />
+			<Where Type="TACTICAL_GARRISON_ALREADY_THERE" />
+		</Update>
+		<Update>
+			<Set OperationsCanRecruit="true" />
+			<Where Type="TACTICAL_GUARD_IMPROVEMENT_ALREADY_THERE" />
+		</Update>
+		<Update>
+			<Set OperationsCanRecruit="true" />
+			<Where Type="TACTICAL_PILLAGE_CITADEL" />
+		</Update>
+		<Update>
+			<Set OperationsCanRecruit="true" />
+			<Where Type="TACTICAL_PILLAGE_RESOURCE" />
+		</Update>
+		<Update>
+			<Set OperationsCanRecruit="true" />
+			<Where Type="TACTICAL_PILLAGE_CITADEL_NEXT_TURN" />
+		</Update>
+		<Update>
+			<Set OperationsCanRecruit="true" />
+			<Where Type="TACTICAL_PILLAGE_RESOURCE_NEXT_TURN" />
+		</Update>
+		<Update>
+			<Set OperationsCanRecruit="true" />
+			<Where Type="TACTICAL_PILLAGE_NEXT_TURN" />
+		</Update>
+		<!-- Places Move to Safety above Pillage Resource, Attrition, and Damage City -->
+		<Update>
+			<Set Priority="20" />
+			<Where Type="TACTICAL_TO_SAFETY" />
+		</Update>
+		<!-- Places Heal above Park on Trade Route and equal to Low Priority Attrition -->
+		<Update>
+			<Set Priority="10" />
+			<Where Type="TACTICAL_HEAL" />
+		</Update>
+		<!-- Places Damage City closer to Heal, allowing exchange considering randomness (+- 3 relative priority) -->
+		<Update>
+			<Set Priority="12" />
+			<Where Type="TACTICAL_DAMAGE_CITY" />
+		</Update>
+		<!-- Places Low Priority Attrition above Heal and below damage city, both exchangeable with random -->
+		<Update>
+			<Set Priority="11" />
+			<Where Type="TACTICAL_ATTRIT_LOW_UNIT" />
+		</Update>
+		<!-- Places Barbarian Camp above damage city, exchangeable with random -->
+		<Update>
+			<Set Priority="13" />
+			<Where Type="TACTICAL_BARBARIAN_CAMP" />
+		</Update>
+	</TacticalMoves>
+</GameData>

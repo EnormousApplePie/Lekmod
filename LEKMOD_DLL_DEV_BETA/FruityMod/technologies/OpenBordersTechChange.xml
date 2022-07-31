@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 4/22/2016 9:09:36 AM -->
+<GameData>
+
+	<!-- Open Borders allowed from game start. -->
+	<Technologies>
+		<Update>
+			<Set OpenBordersTradingAllowed="false" />
+			<Where Type="TECH_CIVIL_SERVICE" />
+		</Update>
+		<Update>
+			<Set OpenBordersTradingAllowed="true" />
+			<Where Type="TECH_AGRICULTURE" />
+		</Update>
+	</Technologies>
+
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_DIPLOMACY_OPENBORDERS_HEADING3_BODY" />
+		<Row Tag="TXT_KEY_DIPLOMACY_OPENBORDERS_HEADING3_BODY">
+			<Text>You can enter into an Open Borders agreement with any civ where you have established an Embassy. (City-States can't make Open Borders agreements.) While an Open Borders agreement is in effect, the other civ's units can enter your territory without automatically triggering war. If the agreement is mutual, either civ's units can enter the other's territory freely; however it doesn't have to be mutual: one civ can grant another Open Borders without automatically receiving it in return.[NEWLINE][NEWLINE]An Open Borders agreement lasts for 20 turns. When 20 turns have passed, the agreement must be renegotiated or it lapses.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_DIPLOMACY_OPENBORDERS_HEADING3_BODY" />
+		<Row Tag="TXT_KEY_DIPLOMACY_OPENBORDERS_HEADING3_BODY">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]You can enter into an Open Borders agreement with any civ where you have established an Embassy. (City-States can't make Open Borders agreements.) While an Open Borders agreement is in effect, the other civ's units can enter your territory without automatically triggering war. If the agreement is mutual, either civ's units can enter the other's territory freely; however it doesn't have to be mutual: one civ can grant another Open Borders without automatically receiving it in return.[NEWLINE][NEWLINE]An Open Borders agreement lasts for 20 turns. When 20 turns have passed, the agreement must be renegotiated or it lapses.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_DIPLOMACY_OPENBORDERS_HEADING3_BODY" />
+		<Row Tag="TXT_KEY_DIPLOMACY_OPENBORDERS_HEADING3_BODY">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]You can enter into an Open Borders agreement with any civ where you have established an Embassy. (City-States can't make Open Borders agreements.) While an Open Borders agreement is in effect, the other civ's units can enter your territory without automatically triggering war. If the agreement is mutual, either civ's units can enter the other's territory freely; however it doesn't have to be mutual: one civ can grant another Open Borders without automatically receiving it in return.[NEWLINE][NEWLINE]An Open Borders agreement lasts for 20 turns. When 20 turns have passed, the agreement must be renegotiated or it lapses.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_DIPLOMACY_OPENBORDERS_HEADING3_BODY" />
+		<Row Tag="TXT_KEY_DIPLOMACY_OPENBORDERS_HEADING3_BODY">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]You can enter into an Open Borders agreement with any civ where you have established an Embassy. (City-States can't make Open Borders agreements.) While an Open Borders agreement is in effect, the other civ's units can enter your territory without automatically triggering war. If the agreement is mutual, either civ's units can enter the other's territory freely; however it doesn't have to be mutual: one civ can grant another Open Borders without automatically receiving it in return.[NEWLINE][NEWLINE]An Open Borders agreement lasts for 20 turns. When 20 turns have passed, the agreement must be renegotiated or it lapses.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

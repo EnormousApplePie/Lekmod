@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2/14/2016 11:49:57 PM -->
+<GameData>
+
+	<Policies>
+		<Update>
+			<Set InternalTradeRouteYieldModifier="200" FreeBuildingOnConquest="NULL" />
+			<Where Type="POLICY_IRON_CURTAIN" />
+		</Update>
+	</Policies>
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_POLICY_IRON_CURTAIN_HELP" />
+		<Row Tag="TXT_KEY_POLICY_IRON_CURTAIN_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Iron Curtain[ENDCOLOR][NEWLINE]Internal trade routes provide +10 more [ICON_FOOD] Food or [ICON_PRODUCTION] Production, and an additional +1 extra per era after Industrial.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_POLICY_IRON_CURTAIN_HELP" />
+		<Row Tag="TXT_KEY_POLICY_IRON_CURTAIN_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Iron Curtain[ENDCOLOR][NEWLINE]Internal trade routes provide +10 more [ICON_FOOD] Food or [ICON_PRODUCTION] Production, and an additional +1 extra per era after Industrial.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_POLICY_IRON_CURTAIN_HELP" />
+		<Row Tag="TXT_KEY_POLICY_IRON_CURTAIN_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Iron Curtain[ENDCOLOR][NEWLINE]Internal trade routes provide +10 more [ICON_FOOD] Food or [ICON_PRODUCTION] Production, and an additional +1 extra per era after Industrial.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_POLICY_IRON_CURTAIN_HELP" />
+		<Row Tag="TXT_KEY_POLICY_IRON_CURTAIN_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Iron Curtain[ENDCOLOR][NEWLINE]Internal trade routes provide +10 more [ICON_FOOD] Food or [ICON_PRODUCTION] Production, and an additional +1 extra per era after Industrial.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

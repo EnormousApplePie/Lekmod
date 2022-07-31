@@ -6843,6 +6843,11 @@ bool CvUnit::IsPlunderBlockedByOpposingTrait() const
 //	--------------------------------------------------------------------------------
 bool CvUnit::canPlunderTradeRoute(const CvPlot* pPlot, bool bOnlyTestVisibility) const
 {
+	//EAP: Disable pillage on units also disabled trade route plunder
+	if(!(getUnitInfo().IsPillage()))
+	{
+		return false;
+	}
 	if (!IsCombatUnit())
 	{
 		return false;

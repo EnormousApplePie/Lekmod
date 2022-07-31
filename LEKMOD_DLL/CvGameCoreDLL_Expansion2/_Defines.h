@@ -872,7 +872,13 @@
 // GAME OPTIONS: AI CANNOT Spread minor (city-state
 #define NQ_AI_GIMP_NO_MINOR_SPREAD
 
-// Resource production similar to Marble additions for v28 -- From Community Patch DLL
+
+// Fixed a bug related to Aqueduct duping when finishing tradition
+#define AQUEDUCT_FIX
+
+/// Fixes some leftover radar issues
+#define ASTAR_AI_CONTROL_FIX_RADAR
+
 
 
 // from ImmoS

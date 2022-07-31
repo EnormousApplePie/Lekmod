@@ -114,29 +114,64 @@ Events.LoadScreenClose.Add(PlaceExtraJuice)
 --=================================================================================================================
 
 
--- mexico UA
+--Tonga ua
 
-local iCiv = GameInfoTypes["CIVILIZATION_LEXICO"]
-local bIsActive = JFD_IsCivilisationActive(iCiv)
-if bIsActive then
-GameEvents.TeamSetHasTech.Add(function(iTeam, iTech, bAdopted)
-	print("working: chile ontechbonus")
-	for playerID, player in pairs(Players) do
-		local player = Players[playerID];
-		if player:GetCivilizationType() == GameInfoTypes["CIVILIZATION_LEXICO"] then
-			if player:GetTeam() == iTeam then
-				if (iTech == GameInfoTypes["TECH_CALENDAR"]) then
-					local pCity = player:GetCapitalCity();
-					pCity:SetNumRealBuilding(GameInfoTypes["BUILDING_MEXICO_TRAIT"], 1);
+local civTonga = GameInfoTypes["CIVILIZATION_MC_TONGA"];
+local tongaIsActive = JFD_IsCivilisationActive(civTonga);
+
+
+function ExploreTonga(playerID)
+	local player = Players[playerID];
+	local pTeam = player:GetTeam();
+	local startPlot = player:GetStartingPlot()
+
+	for pPlot in PlotAreaSpiralIterator(startPlot, 12, SECTOR_NORTH, DIRECTION_CLOCKWISE, DIRECTION_OUTWARDS, CENTRE_EXCLUDE) do
+		if pPlot:Area() ~= startPlot:Area() and pPlot:IsCoastalLand() and not pPlot:IsLake() then
+			for islandPlot in PlotAreaSweepIterator(pPlot, 5, SECTOR_NORTH, DIRECTION_CLOCKWISE, DIRECTION_OUTWARDS, CENTRE_EXCLUDE) do
+				if islandPlot:Area() == pPlot:Area() then
+					for revealPlot in PlotAreaSweepIterator(islandPlot, 1, SECTOR_NORTH, DIRECTION_CLOCKWISE, DIRECTION_OUTWARDS, CENTRE_EXCLUDE) do
+						revealPlot:SetRevealed(pTeam, true);
+					end
 				end
 			end
 		end
 	end
-end);
+	
+	for pPlot in PlotAreaSpiralIterator(startPlot, 6, SECTOR_NORTH, DIRECTION_CLOCKWISE, DIRECTION_OUTWARDS, CENTRE_EXCLUDE) do
+		local noLake = true;
+		for lakeTest in PlotAreaSweepIterator(pPlot, 1, SECTOR_NORTH, DIRECTION_CLOCKWISE, DIRECTION_OUTWARDS, CENTRE_EXCLUDE) do
+			if lakeTest:IsLake() then
+				noLake = false;
+			end
+		end
+		if pPlot:IsCoastalLand() and noLake then
+			for revealPlot in PlotAreaSweepIterator(pPlot, 1, SECTOR_NORTH, DIRECTION_CLOCKWISE, DIRECTION_OUTWARDS, CENTRE_EXCLUDE) do
+				if revealPlot:IsCoastalLand() or revealPlot:IsWater() then
+					revealPlot:SetRevealed(pTeam, true);
+				end
+			end
+		end
+	end
+end
+
+function TongaUA(playerID)
+	for playerID, player in pairs(Players) do
+		local player = Players[playerID];
+	
+		if player:GetCivilizationType() == civTonga then
+			ExploreTonga(playerID);
+		end
+	end
+end
+
+if tongaIsActive then
+--GameEvents.PlayerDoTurn.Add(TongaUA);
+Events.SequenceGameInitComplete.Add(TongaUA);
 end
 
 -- chile UA
 
+/*
 local iCiv = GameInfoTypes["CIVILIZATION_CHILE"]
 local bIsActive = JFD_IsCivilisationActive(iCiv)
 if bIsActive then
@@ -147,15 +182,15 @@ GameEvents.TeamSetHasTech.Add(function(iTeam, iTech, bAdopted)
 		if player:GetCivilizationType() == GameInfoTypes["CIVILIZATION_CHILE"] then
 			if player:GetTeam() == iTeam then
 				if (iTech == GameInfoTypes["TECH_OPTICS"]) then
-					local pCity = player:GetCapitalCity();
-					pCity:SetNumRealBuilding(GameInfoTypes["BUILDING_CHILE_TRAIT"], 1);
+					
+					
 				end
 			end
 		end
 	end
 end);
 end
-
+*/
 
 -- Maurya UA
 
@@ -265,8 +300,8 @@ function ZabonahDiscovery(iPlayer, iUnit, iX, iY) -- from Sukritact
 
 				local iReward = 0
 				local iRewardExp = 0
-				if pCity:IsCapital() then iReward = 15 end
-				if pCity:IsCapital() then iRewardExp = 5 end
+				if pCity:IsCapital() then iReward = 10 end
+				if pCity:IsCapital() then iRewardExp = 0 end
 
 				pPlayer:ChangeGold(iReward)
 				pUnit:ChangeExperience(iRewardExp)
@@ -307,7 +342,7 @@ GameEvents.TeamSetHasTech.Add(function(iPlayer)
 			print("removed dummy")
 		end
 	end
-	if (player:GetCivilizationType() == GameInfoTypes["CIVILIZATION_MC_NABATEA"] and Teams[player:GetTeam()]:IsHasTech(GameInfoTypes["TECH_CURRENCY"])) then
+	if (player:GetCivilizationType() == GameInfoTypes["CIVILIZATION_MC_NABATEA"] and Teams[player:GetTeam()]:IsHasTech(GameInfoTypes["TECH_MATHEMATICS"])) then
 		if (not Teams[player:GetTeam()]:IsHasTech(GameInfoTypes["TECH_CIVIL_SERVICE"])) then
 			Teams[player:GetTeam()]:SetHasTech(GameInfoTypes["TECH_CIVIL_DUMMY"], true);
 			print("applied dummy")
@@ -842,10 +877,10 @@ local bIsActive = JFD_IsCivilisationActive(iCiv)
      
 function GiveBonus(nzPlayer, oPlayer)
 	print("[GiveBonus] A meeting bonus has been granted")
-        local rewardCulture = 12
-        local rewardScience = 24
+        local rewardCulture = 8
+        local rewardScience = 16
         local rewardGold = 40
-        local rewardFaith = 14
+        local rewardFaith = 10
 	local random = GetRandom(1, 4)
         if random == 1 then
         	nzPlayer:ChangeFaith(rewardFaith)
@@ -1133,66 +1168,50 @@ GameEvents.TeamSetHasTech.Add(function(iTeam, iTech, bAdopted)
 	end
 end);
 end
--- Turks Unit Promotion 
 
-include("PlotIterators")
-local civID = GameInfoTypes["CIVILIZATION_UC_TURKEY"]
-local promoID = GameInfoTypes["PROMOTION_UNIT_TURKISH_GWI"]
-function TurksGeneralreset(playerID)
-	local player = Players[playerID]
-	if player:GetCivilizationType() == civID then
-		local greatGenerals = {}
-		for unit in player:Units() do
-			if unit:IsHasPromotion(promoID) then
-				unit:SetHasPromotion(promoID, false)
-			end
-			if unit:IsHasPromotion(GameInfoTypes["PROMOTION_GREAT_GENERAL"]) then
-				table.insert(greatGenerals, unit)
-			end
-		end
-		for key,greatGeneral in pairs(greatGenerals) do 
-			local plot = greatGeneral:GetPlot()
-			for loopPlot in PlotAreaSweepIterator(plot, 2, SECTOR_NORTH, DIRECTION_CLOCKWISE, DIRECTION_OUTWARDS, CENTRE_INCLUDE) do
-				for i = 0, loopPlot:GetNumUnits() - 1, 1 do  
-					local otherUnit = loopPlot:GetUnit(i)
-					if otherUnit and otherUnit:GetOwner() == playerID and otherUnit:IsCombatUnit() then
-						otherUnit:SetHasPromotion(promoID, true)
-					end
+-- Wales UA 
+
+local iCiv = GameInfoTypes["CIVILIZATION_US_WALES"]
+local bIsActive = JFD_IsCivilisationActive(iCiv)
+if bIsActive then
+GameEvents.TeamSetHasTech.Add(function(iTeam, iTech, bAdopted)
+	print("working: ukraine ontechbonus")
+	for playerID, player in pairs(Players) do
+		local player = Players[playerID];
+		if player:GetCivilizationType() == GameInfoTypes["CIVILIZATION_US_WALES"] then
+			if player:GetTeam() == iTeam then
+				if (iTech == GameInfoTypes["TECH_ANIMAL_HUSBANDRY"]) then
+					local pCity = player:GetCapitalCity();
+					pCity:SetNumRealBuilding(GameInfoTypes["BUILDING_WALES_TRAIT"], 1);
 				end
 			end
 		end
 	end
+end);
 end
-GameEvents.PlayerDoTurn.Add(TurksGeneralreset)
 
-function TurksGeneralbonus(playerID, unitID, unitX, unitY)
-	local player = Players[playerID]
-	if player:GetCivilizationType() == civID and (player:GetUnitClassCount(GameInfoTypes["UNITCLASS_GREAT_GENERAL"]) > 0) then
-		local unit = player:GetUnitByID(unitID)
-		local plot = unit:GetPlot()
-		if unit:IsHasPromotion(GameInfoTypes["PROMOTION_GREAT_GENERAL"]) then
-			for loopPlot in PlotAreaSweepIterator(plot, 2, SECTOR_NORTH, DIRECTION_CLOCKWISE, DIRECTION_OUTWARDS, CENTRE_INCLUDE) do
-				for i = 0, loopPlot:GetNumUnits() - 1, 1 do  
-					local otherUnit = loopPlot:GetUnit(i)
-					if otherUnit and otherUnit:GetOwner() == playerID and otherUnit:IsCombatUnit() and unit:IsHasPromotion(GameInfoTypes.PROMOTION_FREE_UPGRADE_TURKISH) then
-						otherUnit:SetHasPromotion(promoID, true)
-					end
-				end
-			end
-		elseif unit:IsCombatUnit() and unit:IsHasPromotion(GameInfoTypes.PROMOTION_FREE_UPGRADE_TURKISH) then
-			unit:SetHasPromotion(promoID, false)
-			for loopPlot in PlotAreaSweepIterator(plot, 2, SECTOR_NORTH, DIRECTION_CLOCKWISE, DIRECTION_OUTWARDS, CENTRE_INCLUDE) do
-				for i = 0, loopPlot:GetNumUnits() - 1, 1 do  
-					local otherUnit = loopPlot:GetUnit(i)
-					if otherUnit and otherUnit:GetOwner() == playerID and otherUnit:IsHasPromotion(GameInfoTypes["PROMOTION_GREAT_GENERAL"]) then
-						unit:SetHasPromotion(promoID, true)
-					end
+-- GAULS UA 
+
+local iCiv = GameInfoTypes["CIVILIZATION_GAUL"]
+local bIsActive = JFD_IsCivilisationActive(iCiv)
+if bIsActive then
+GameEvents.TeamSetHasTech.Add(function(iTeam, iTech, bAdopted)
+	print("working: ukraine ontechbonus")
+	for playerID, player in pairs(Players) do
+		local player = Players[playerID];
+		if player:GetCivilizationType() == GameInfoTypes["CIVILIZATION_GAUL"] then
+			if player:GetTeam() == iTeam then
+				if (iTech == GameInfoTypes["TECH_MASONRY"]) then
+					local pCity = player:GetCapitalCity();
+					pCity:SetNumRealBuilding(GameInfoTypes["BUILDING_MURUS_GALLICUS"], 1);
 				end
 			end
 		end
 	end
+end);
 end
-GameEvents.UnitSetXY.Add(TurksGeneralbonus)
+
+
 
 -- Ottoman new UA addition
 -- Code by Uighur_Caesar
@@ -1329,9 +1348,35 @@ GameEvents.TeamSetHasTech.Add(function(iTeam, iTech, bAdopted)
 end)
 end
 
+
+
+
+GameEvents.TeamSetHasTech.Add(function(iTeam, iTech, bAdopted)
+	for playerID, player in pairs(Players) do
+		local player = Players[playerID];
+		if	(player:HasPolicy(GameInfoTypes["POLICY_THEOCRACY"])
+				and player:HasPolicy(GameInfoTypes["POLICY_MANDATE_OF_HEAVEN"])
+				and player:HasPolicy(GameInfoTypes["POLICY_FREE_RELIGION"])
+				and player:HasPolicy(GameInfoTypes["POLICY_REFORMATION"])) then
+					print("boo!")
+			if player:GetTeam() == iTeam then
+				
+				print("boo boo")
+				if (iTech == GameInfoTypes["TECH_ARCHAEOLOGY"] or iTech == GameInfoTypes["TECH_INDUSTRIALIZATION"] or iTech == GameInfoTypes["TECH_SCIENTIFIC_THEORY"] or iTech == GameInfoTypes["TECH_RIFLING"] or iTech == GameInfoTypes["TECH_MILITARY_SCIENCE"] or iTech == GameInfoTypes["TECH_FERTILIZER"]) then
+					local pCity = player:GetCapitalCity();
+					pCity:SetNumRealBuilding(GameInfoTypes["BUILDING_PIETY_FINISHER"], 1);
+				end
+			end
+		end
+	end
+end)
+
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -------------------- DUMMY POLICIES ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
 -- Tonga dummy policy
 
 local iCiv = GameInfoTypes["CIVILIZATION_MC_TONGA"]
@@ -1465,22 +1510,22 @@ end
 if bIsActive then
 Events.SequenceGameInitComplete.Add(DummyPolicy)
 end
--- Golden Horde dummy policy
+-- Mexico dummy policy
 
-local iCiv = GameInfoTypes["CIVILIZATION_HORDE"]
+local iCiv = GameInfoTypes["CIVILIZATION_LEXICO"]
 local bIsActive = JFD_IsCivilisationActive(iCiv)
 
-print("dummy policy loaded - Horde")
+print("dummy policy loaded - Mexico")
 function DummyPolicy(player)
 	print("working - Mexico")
 	for playerID, player in pairs(Players) do
 		local player = Players[playerID];
-		if player:GetCivilizationType() == GameInfoTypes["CIVILIZATION_HORDE"] then
-			if not player:HasPolicy(GameInfoTypes["POLICY_DUMMY_HORDE"]) then
+		if player:GetCivilizationType() == GameInfoTypes["CIVILIZATION_LEXICO"] then
+			if not player:HasPolicy(GameInfoTypes["POLICY_DUMMY_LEXICO"]) then
 				
 				player:SetNumFreePolicies(1)
 				player:SetNumFreePolicies(0)
-				player:SetHasPolicy(GameInfoTypes["POLICY_DUMMY_HORDE"], true)	
+				player:SetHasPolicy(GameInfoTypes["POLICY_DUMMY_LEXICO"], true)	
 			end
 		end
 	end 
@@ -2564,50 +2609,8 @@ end
 -- DateCreated: 10/17/2019 1:22:18 AM
 --------------------------------------------------------------
 
-function Piety_OnPolicyAdopted(playerID, policyID)
 
-	local player = Players[playerID]
 
-	-- Piety finisher
-
-	if	(policyID == GameInfo.Policies["POLICY_THEOCRACY"].ID 
-		and player:HasPolicy(GameInfo.Policies["POLICY_MANDATE_OF_HEAVEN"].ID)
-		and player:HasPolicy(GameInfo.Policies["POLICY_FREE_RELIGION"].ID)
-		and player:HasPolicy(GameInfo.Policies["POLICY_REFORMATION"].ID)) or
-		(policyID == GameInfo.Policies["POLICY_MANDATE_OF_HEAVEN"].ID 
-		and player:HasPolicy(GameInfo.Policies["POLICY_THEOCRACY"].ID)
-		and player:HasPolicy(GameInfo.Policies["POLICY_FREE_RELIGION"].ID)
-		and player:HasPolicy(GameInfo.Policies["POLICY_REFORMATION"].ID)) or
-		(policyID == GameInfo.Policies["POLICY_FREE_RELIGION"].ID 
-		and player:HasPolicy(GameInfo.Policies["POLICY_MANDATE_OF_HEAVEN"].ID)
-		and player:HasPolicy(GameInfo.Policies["POLICY_THEOCRACY"].ID)
-		and player:HasPolicy(GameInfo.Policies["POLICY_REFORMATION"].ID)) or
-		(policyID == GameInfo.Policies["POLICY_REFORMATION"].ID 
-		and player:HasPolicy(GameInfo.Policies["POLICY_MANDATE_OF_HEAVEN"].ID)
-		and player:HasPolicy(GameInfo.Policies["POLICY_FREE_RELIGION"].ID)
-		and player:HasPolicy(GameInfo.Policies["POLICY_THEOCRACY"].ID)) then
-
-		-- The player has finished Piety. Add a Grand Monument to the capital, gives allows buying great people.
-		local pCity = player:GetCapitalCity();
-		pCity:SetNumRealBuilding(GameInfoTypes["BUILDING_PIETY_FINISHER"], 1);
-
-		--[[
-		local i = 0
-		local iIndo = GameInfo.Civilizations["CIVILIZATION_INDONESIA"].ID
-		local iKhmer = GameInfo.Civilizations["CIVILIZATION_KHMER"].ID
-		local iRoma = GameInfo.Civilizations["CIVILIZATION_MC_ROMANIA"].ID
-		for pCity in player:Cities() do
-			if i >= 4 then break end
-			if (player:GetCivilizationType() == iIndo) then pCity:SetNumRealBuilding(GameInfoTypes["BUILDING_CANDI"], 1) 
-			elseif (player:GetCivilizationType() == iKhmer) then pCity:SetNumRealBuilding(GameInfoTypes["BUILDING_BARAY"], 1)
-			elseif (player:GetCivilizationType() == iRoma) then pCity:SetNumRealBuilding(GameInfoTypes["BUILDING_MC_ROMANIAN_PAINTED_MONASTERY"], 1)
-			else pCity:SetNumRealBuilding(GameInfoTypes["BUILDING_GARDEN"], 1) end
-			i = i + 1
-		end
-		--]]
-	end
-end
-GameEvents.PlayerAdoptPolicy.Add(Piety_OnPolicyAdopted);
 
 -- HonorChanges
 -- Author: Cirra
@@ -2636,4 +2639,34 @@ function Honor_OnPolicyAdopted(playerID, policyID)
 	end
 
 end
-GameEvents.PlayerAdoptPolicy.Add(Honor_OnPolicyAdopted);
+GameEvents.PlayerAdoptPolicy.Add(Honor_OnPolicyAdopted)
+
+local lakeWonder = GameInfoTypes["BUILDING_LAKE_WONDER"]
+
+function LakeWonderRequireLake(playerID, cityID, buildingType)
+    local player = Players[playerID]
+    local pCity = player:GetCityByID(cityID)
+    
+    if buildingType == lakeWonder then
+        local isNearLake = false
+            
+        for pAdjacentPlot in PlotAreaSweepIterator(pCity:Plot(), 1, SECTOR_NORTH, DIRECTION_CLOCKWISE, DIRECTION_OUTWARDS, CENTRE_EXCLUDE) do
+            if pAdjacentPlot:IsLake() and pAdjacentPlot:GetOwner() == playerID then
+                isNearLake = true
+            end
+            if isNearLake then
+                break
+            end
+        end
+        
+        if isNearLake then
+            return true
+        else
+            return false
+        end
+    end
+    
+    return true
+end
+
+GameEvents.CityCanConstruct.Add(LakeWonderRequireLake);

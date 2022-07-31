@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 10/8/2016 10:08:36 PM -->
+<GameData>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_BUILDING_ARTISTS_GUILD" />
+		<Row Tag="TXT_KEY_BUILDING_ARTISTS_GUILD">
+			<Text>Artists' Guild [COLOR_MAGENTA]*[ENDCOLOR]</Text>
+			<Gender>neuter:the</Gender>
+		</Row>
+		<Delete Tag="TXT_KEY_BUILDING_ARTISTS_GUILD_HELP" />
+		<Row Tag="TXT_KEY_BUILDING_ARTISTS_GUILD_HELP">
+			<Text>[COLOR_MAGENTA]* National Guild (each player may build one)[ENDCOLOR][NEWLINE][NEWLINE]Provides 2 [ICON_GREAT_PEOPLE] Great Person Points (GPP) towards a Great Artist. Add up to two specialists to this building to gain [ICON_CULTURE] Culture and increase the rate of Great Artist acquisition (3 [ICON_CULTURE] Culture and 3 [ICON_GREAT_PEOPLE] GPP per specialist).</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_BUILDING_ARTISTS_GUILD" />
+		<Row Tag="TXT_KEY_BUILDING_ARTISTS_GUILD">
+			<Text>Artists' Guild [COLOR_MAGENTA]*[ENDCOLOR]</Text>
+			<Gender>neuter:the</Gender>
+		</Row>
+		<Delete Tag="TXT_KEY_BUILDING_ARTISTS_GUILD_HELP" />
+		<Row Tag="TXT_KEY_BUILDING_ARTISTS_GUILD_HELP">
+			<Text>[COLOR_MAGENTA]* National Guild (each player may build one)[ENDCOLOR][NEWLINE][NEWLINE][COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Provides 2 [ICON_GREAT_PEOPLE] Great Person Points (GPP) towards a Great Artist. Add up to two specialists to this building to gain [ICON_CULTURE] Culture and increase the rate of Great Artist acquisition (3 [ICON_CULTURE] Culture and 3 [ICON_GREAT_PEOPLE] GPP per specialist).</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_BUILDING_ARTISTS_GUILD" />
+		<Row Tag="TXT_KEY_BUILDING_ARTISTS_GUILD">
+			<Text>Artists' Guild [COLOR_MAGENTA]*[ENDCOLOR]</Text>
+			<Gender>neuter:the</Gender>
+		</Row>
+		<Delete Tag="TXT_KEY_BUILDING_ARTISTS_GUILD_HELP" />
+		<Row Tag="TXT_KEY_BUILDING_ARTISTS_GUILD_HELP">
+			<Text>[COLOR_MAGENTA]* National Guild (each player may build one)[ENDCOLOR][NEWLINE][NEWLINE][COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Provides 2 [ICON_GREAT_PEOPLE] Great Person Points (GPP) towards a Great Artist. Add up to two specialists to this building to gain [ICON_CULTURE] Culture and increase the rate of Great Artist acquisition (3 [ICON_CULTURE] Culture and 3 [ICON_GREAT_PEOPLE] GPP per specialist).</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_BUILDING_ARTISTS_GUILD" />
+		<Row Tag="TXT_KEY_BUILDING_ARTISTS_GUILD">
+			<Text>Artists' Guild [COLOR_MAGENTA]*[ENDCOLOR]</Text>
+			<Gender>neuter:the</Gender>
+		</Row>
+		<Delete Tag="TXT_KEY_BUILDING_ARTISTS_GUILD_HELP" />
+		<Row Tag="TXT_KEY_BUILDING_ARTISTS_GUILD_HELP">
+			<Text>[COLOR_MAGENTA]* National Guild (each player may build one)[ENDCOLOR][NEWLINE][NEWLINE][COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Provides 2 [ICON_GREAT_PEOPLE] Great Person Points (GPP) towards a Great Artist. Add up to two specialists to this building to gain [ICON_CULTURE] Culture and increase the rate of Great Artist acquisition (3 [ICON_CULTURE] Culture and 3 [ICON_GREAT_PEOPLE] GPP per specialist).</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>
