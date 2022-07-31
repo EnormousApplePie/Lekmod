@@ -169,29 +169,6 @@ if tongaIsActive then
 Events.SequenceGameInitComplete.Add(TongaUA);
 end
 
--- chile UA
-
-/*
-local iCiv = GameInfoTypes["CIVILIZATION_CHILE"]
-local bIsActive = JFD_IsCivilisationActive(iCiv)
-if bIsActive then
-GameEvents.TeamSetHasTech.Add(function(iTeam, iTech, bAdopted)
-	print("working: chile ontechbonus")
-	for playerID, player in pairs(Players) do
-		local player = Players[playerID];
-		if player:GetCivilizationType() == GameInfoTypes["CIVILIZATION_CHILE"] then
-			if player:GetTeam() == iTeam then
-				if (iTech == GameInfoTypes["TECH_OPTICS"]) then
-					
-					
-				end
-			end
-		end
-	end
-end);
-end
-*/
-
 -- Maurya UA
 
 local iCiv = GameInfoTypes["CIVILIZATION_MC_MAURYA"]
