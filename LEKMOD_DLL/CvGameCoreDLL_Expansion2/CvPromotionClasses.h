@@ -50,6 +50,10 @@ public:
 	int	GetPrereqOrPromotion9() const;
 	void	SetPrereqOrPromotion9(int i);
 
+	//EAP: adding an additional promotion thing
+	int	GetPrereqOrPromotion10() const;
+	void	SetPrereqOrPromotion10(int i);
+
 	int  GetTechPrereq() const;
 	int  GetInvisibleType() const;
 	int  GetSeeInvisibleType() const;
@@ -249,6 +253,7 @@ protected:
 	int m_iPrereqOrPromotion7;
 	int m_iPrereqOrPromotion8;
 	int m_iPrereqOrPromotion9;
+	int m_iPrereqOrPromotion10;
 
 	int m_iTechPrereq;
 	int m_iInvisibleType;

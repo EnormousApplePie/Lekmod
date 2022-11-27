@@ -10,24 +10,24 @@ INCLUDELIB MSVCRT
 INCLUDELIB OLDNAMES
 
 CONST	SEGMENT
-$SG217957 DB	'*** PROTOCOL ERROR *** : PushMission invoked for a human'
+$SG217999 DB	'*** PROTOCOL ERROR *** : PushMission invoked for a human'
 	DB	' controlled player outside of a network message!', 00H
 	ORG $+3
-$SG217974 DB	'FEATURE_FOREST', 00H
+$SG218016 DB	'FEATURE_FOREST', 00H
 	ORG $+1
-$SG217978 DB	'FEATURE_JUNGLE', 00H
+$SG218020 DB	'FEATURE_JUNGLE', 00H
 	ORG $+1
-$SG217982 DB	'FEATURE_MARSH', 00H
+$SG218024 DB	'FEATURE_MARSH', 00H
 	ORG $+2
-$SG217986 DB	'FEATURE_FALLOUT', 00H
+$SG218028 DB	'FEATURE_FALLOUT', 00H
 	ORG $+4
-$SG218111 DB	'*** PROTOCOL ERROR *** : PushMission invoked for a human'
+$SG218153 DB	'*** PROTOCOL ERROR *** : PushMission invoked for a human'
 	DB	' controlled player outside of a network message!', 00H
 	ORG $+3
-$SG218162 DB	'TXT_KEY_ADVISOR_CITY_ATTACK_BODY', 00H
+$SG218204 DB	'TXT_KEY_ADVISOR_CITY_ATTACK_BODY', 00H
 	ORG $+3
-$SG218173 DB	'TXT_KEY_ADVISOR_BAD_ATTACK_BODY', 00H
-$SG218371 DB	'CanStartMission', 00H
+$SG218215 DB	'TXT_KEY_ADVISOR_BAD_ATTACK_BODY', 00H
+$SG218413 DB	'CanStartMission', 00H
 CONST	ENDS
 PUBLIC	??_7bad_alloc@std@@6B@				; std::bad_alloc::`vftable'
 PUBLIC	??0bad_alloc@std@@QAE@PBD@Z			; std::bad_alloc::bad_alloc
@@ -2018,8 +2018,8 @@ __TI2?AVbad_alloc@std@@ DD 00H
 xdata$x	ENDS
 ;	COMDAT ??$_Allocate@U_Node@?$_Tree_nod@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@std@@@std@@YAPAU_Node@?$_Tree_nod@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@0@IPAU120@@Z
 _TEXT	SEGMENT
-$T219734 = -12						; size = 12
-$T219739 = 8						; size = 4
+$T219776 = -12						; size = 12
+$T219781 = 8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ??$_Allocate@U_Node@?$_Tree_nod@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@std@@@std@@YAPAU_Node@?$_Tree_nod@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@0@IPAU120@@Z PROC ; std::_Allocate<std::_Tree_nod<std::_Tset_traits<FAutoVariableBase *,std::less<FAutoVariableBase *>,std::allocator<FAutoVariableBase *>,0> >::_Node>, COMDAT
@@ -2063,15 +2063,15 @@ $LN3@Allocate:
 
 ; 40   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T219739[esp+8]
+	lea	eax, DWORD PTR $T219781[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T219734[esp+16]
-	mov	DWORD PTR $T219739[esp+12], 0
+	lea	ecx, DWORD PTR $T219776[esp+16]
+	mov	DWORD PTR $T219781[esp+12], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T219734[esp+16]
+	lea	ecx, DWORD PTR $T219776[esp+16]
 	push	ecx
-	mov	DWORD PTR $T219734[esp+20], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T219776[esp+20], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN9@Allocate:
 $LN8@Allocate:
@@ -3577,8 +3577,8 @@ __ehfuncinfo$?CanStartMission@CvUnitMission@@SA_NV?$FObjectHandle@VCvUnit@@@@HHH
 xdata$x	ENDS
 ;	COMDAT ?CanStartMission@CvUnitMission@@SA_NV?$FObjectHandle@VCvUnit@@@@HHHPAVCvPlot@@_N@Z
 _TEXT	SEGMENT
-_bResult$218369 = -25					; size = 1
-_args$218368 = -24					; size = 4
+_bResult$218411 = -25					; size = 1
+_args$218410 = -24					; size = 4
 _pTargetUnit$ = -20					; size = 8
 __$EHRec$ = -12						; size = 12
 _hUnit$ = 8						; size = 8
@@ -3664,14 +3664,14 @@ $LN145@CanStartMi:
 ; 879  : 	{
 ; 880  : 		CvLuaArgsHandle args;
 
-	lea	ecx, DWORD PTR _args$218368[esp+40]
+	lea	ecx, DWORD PTR _args$218410[esp+40]
 	call	??0CvLuaArgsHandle@@QAE@XZ		; CvLuaArgsHandle::CvLuaArgsHandle
 
 ; 881  : 		args->Push(hUnit->getOwner());
 
 	mov	eax, DWORD PTR _hUnit$[esp+36]
 	mov	eax, DWORD PTR [eax+40]
-	mov	ecx, DWORD PTR _args$218368[esp+40]
+	mov	ecx, DWORD PTR _args$218410[esp+40]
 	mov	edx, DWORD PTR [ecx]
 	push	eax
 	mov	eax, DWORD PTR [edx+8]
@@ -3682,7 +3682,7 @@ $LN145@CanStartMi:
 
 	mov	ecx, DWORD PTR _hUnit$[esp+36]
 	mov	eax, DWORD PTR [ecx+100]
-	mov	ecx, DWORD PTR _args$218368[esp+40]
+	mov	ecx, DWORD PTR _args$218410[esp+40]
 	mov	edx, DWORD PTR [ecx]
 	push	eax
 	mov	eax, DWORD PTR [edx+8]
@@ -3690,7 +3690,7 @@ $LN145@CanStartMi:
 
 ; 883  : 		args->Push(iMission);
 
-	mov	ecx, DWORD PTR _args$218368[esp+40]
+	mov	ecx, DWORD PTR _args$218410[esp+40]
 	mov	edx, DWORD PTR [ecx]
 	mov	eax, DWORD PTR [edx+8]
 	push	esi
@@ -3702,13 +3702,13 @@ $LN145@CanStartMi:
 ; 887  : 		bool bResult = false;
 ; 888  : 		if(LuaSupport::CallTestAll(pkScriptSystem, "CanStartMission", args.get(), bResult))
 
-	mov	edx, DWORD PTR _args$218368[esp+40]
-	lea	ecx, DWORD PTR _bResult$218369[esp+40]
+	mov	edx, DWORD PTR _args$218410[esp+40]
+	lea	ecx, DWORD PTR _bResult$218411[esp+40]
 	push	ecx
 	push	edx
-	push	OFFSET $SG218371
+	push	OFFSET $SG218413
 	push	edi
-	mov	BYTE PTR _bResult$218369[esp+56], 0
+	mov	BYTE PTR _bResult$218411[esp+56], 0
 	call	?CallTestAll@LuaSupport@@YA_NPAVICvEngineScriptSystem1@@PBDPAVICvEngineScriptSystemArgs1@@AA_N@Z ; LuaSupport::CallTestAll
 	add	esp, 16					; 00000010H
 	test	al, al
@@ -3718,13 +3718,13 @@ $LN145@CanStartMi:
 ; 890  : 			// Check the result.
 ; 891  : 			if(bResult == false)
 
-	cmp	BYTE PTR _bResult$218369[esp+40], 0
+	cmp	BYTE PTR _bResult$218411[esp+40], 0
 	jne	SHORT $LN142@CanStartMi
 
 ; 892  : 			{
 ; 893  : 				return false;
 
-	lea	ecx, DWORD PTR _args$218368[esp+40]
+	lea	ecx, DWORD PTR _args$218410[esp+40]
 	mov	BYTE PTR __$EHRec$[esp+48], 1
 	call	??1CvLuaArgsHandle@@QAE@XZ		; CvLuaArgsHandle::~CvLuaArgsHandle
 	mov	ecx, DWORD PTR _hUnit$[esp+36]
@@ -3750,7 +3750,7 @@ $LN142@CanStartMi:
 ; 895  : 		}
 ; 896  : 	}
 
-	lea	ecx, DWORD PTR _args$218368[esp+40]
+	lea	ecx, DWORD PTR _args$218410[esp+40]
 	mov	BYTE PTR __$EHRec$[esp+48], 1
 	call	??1CvLuaArgsHandle@@QAE@XZ		; CvLuaArgsHandle::~CvLuaArgsHandle
 $LN144@CanStartMi:
@@ -4977,7 +4977,7 @@ __unwindfunclet$?CanStartMission@CvUnitMission@@SA_NV?$FObjectHandle@VCvUnit@@@@
 	lea	ecx, DWORD PTR _pTargetUnit$[ebp]
 	jmp	??1?$FObjectHandle@VCvUnit@@@@QAE@XZ	; FObjectHandle<CvUnit>::~FObjectHandle<CvUnit>
 __unwindfunclet$?CanStartMission@CvUnitMission@@SA_NV?$FObjectHandle@VCvUnit@@@@HHHPAVCvPlot@@_N@Z$2:
-	lea	ecx, DWORD PTR _args$218368[ebp]
+	lea	ecx, DWORD PTR _args$218410[ebp]
 	jmp	??1CvLuaArgsHandle@@QAE@XZ		; CvLuaArgsHandle::~CvLuaArgsHandle
 __ehhandler$?CanStartMission@CvUnitMission@@SA_NV?$FObjectHandle@VCvUnit@@@@HHHPAVCvPlot@@_N@Z:
 	mov	eax, OFFSET __ehfuncinfo$?CanStartMission@CvUnitMission@@SA_NV?$FObjectHandle@VCvUnit@@@@HHHPAVCvPlot@@_N@Z
@@ -5009,7 +5009,7 @@ __ehfuncinfo$?DeactivateHeadMission@CvUnitMission@@CAXV?$FObjectHandle@VCvUnit@@
 xdata$x	ENDS
 ;	COMDAT ?DeactivateHeadMission@CvUnitMission@@CAXV?$FObjectHandle@VCvUnit@@@@H@Z
 _TEXT	SEGMENT
-$T221558 = -16						; size = 4
+$T221600 = -16						; size = 4
 __$EHRec$ = -12						; size = 12
 _hUnit$ = 8						; size = 8
 _iUnitCycleTimer$ = 16					; size = 4
@@ -5096,10 +5096,10 @@ $LN4@Deactivate:
 
 	mov	eax, 1
 	cmp	DWORD PTR _iUnitCycleTimer$[esp+12], eax
-	mov	DWORD PTR $T221558[esp+16], eax
+	mov	DWORD PTR $T221600[esp+16], eax
 	lea	eax, DWORD PTR _iUnitCycleTimer$[esp+12]
 	jl	SHORT $LN38@Deactivate
-	lea	eax, DWORD PTR $T221558[esp+16]
+	lea	eax, DWORD PTR $T221600[esp+16]
 $LN38@Deactivate:
 	mov	eax, DWORD PTR [eax]
 	jmp	SHORT $LN1@Deactivate
@@ -5522,7 +5522,7 @@ __ehfuncinfo$?HasCompletedMoveMission@CvUnitMission@@SA_NV?$FObjectHandle@VCvUni
 xdata$x	ENDS
 ;	COMDAT ?HasCompletedMoveMission@CvUnitMission@@SA_NV?$FObjectHandle@VCvUnit@@@@@Z
 _TEXT	SEGMENT
-_pTargetUnit$218939 = -20				; size = 8
+_pTargetUnit$218981 = -20				; size = 8
 __$EHRec$ = -12						; size = 12
 _hUnit$ = 8						; size = 8
 ?HasCompletedMoveMission@CvUnitMission@@SA_NV?$FObjectHandle@VCvUnit@@@@@Z PROC ; CvUnitMission::HasCompletedMoveMission, COMDAT
@@ -5587,8 +5587,8 @@ $LN6@HasComplet:
 	push	eax
 	call	?getUnit@CvPlayer@@QAEPAVCvUnit@@H@Z	; CvPlayer::getUnit
 	mov	esi, eax
-	mov	DWORD PTR _pTargetUnit$218939[esp+36], esi
-	mov	BYTE PTR _pTargetUnit$218939[esp+40], 0
+	mov	DWORD PTR _pTargetUnit$218981[esp+36], esi
+	mov	BYTE PTR _pTargetUnit$218981[esp+40], 0
 	test	esi, esi
 	je	SHORT $LN30@HasComplet
 	mov	ecx, esi
@@ -5761,7 +5761,7 @@ __unwindfunclet$?HasCompletedMoveMission@CvUnitMission@@SA_NV?$FObjectHandle@VCv
 	lea	ecx, DWORD PTR _hUnit$[ebp-4]
 	jmp	??1?$FObjectHandle@VCvUnit@@@@QAE@XZ	; FObjectHandle<CvUnit>::~FObjectHandle<CvUnit>
 __unwindfunclet$?HasCompletedMoveMission@CvUnitMission@@SA_NV?$FObjectHandle@VCvUnit@@@@@Z$1:
-	lea	ecx, DWORD PTR _pTargetUnit$218939[ebp]
+	lea	ecx, DWORD PTR _pTargetUnit$218981[ebp]
 	jmp	??1?$FObjectHandle@VCvUnit@@@@QAE@XZ	; FObjectHandle<CvUnit>::~FObjectHandle<CvUnit>
 __ehhandler$?HasCompletedMoveMission@CvUnitMission@@SA_NV?$FObjectHandle@VCvUnit@@@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?HasCompletedMoveMission@CvUnitMission@@SA_NV?$FObjectHandle@VCvUnit@@@@@Z
@@ -6124,7 +6124,7 @@ xdata$x	ENDS
 ;	COMDAT ?CalculateMissionTimer@CvUnitMission@@SAHV?$FObjectHandle@VCvUnit@@@@H@Z
 _TEXT	SEGMENT
 _iTime$ = -28						; size = 4
-$T222276 = -24						; size = 4
+$T222318 = -24						; size = 4
 _pTargetUnit$ = -20					; size = 8
 __$EHRec$ = -12						; size = 12
 _hUnit$ = 8						; size = 8
@@ -6367,8 +6367,8 @@ $LN3@CalculateM:
 ; 1834 : 			iTime = std::min(iTime, 1);
 
 	cmp	edi, 1
-	mov	DWORD PTR $T222276[esp+40], 1
-	lea	eax, DWORD PTR $T222276[esp+40]
+	mov	DWORD PTR $T222318[esp+40], 1
+	lea	eax, DWORD PTR $T222318[esp+40]
 	jg	SHORT $LN103@CalculateM
 	lea	eax, DWORD PTR _iTime$[esp+40]
 $LN103@CalculateM:
@@ -6449,7 +6449,7 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 __$EHRec$ = -12						; size = 12
 _hUnit$ = 8						; size = 8
-$T222524 = 16						; size = 4
+$T222566 = 16						; size = 4
 _iSteps$ = 16						; size = 4
 ?UpdateMissionTimer@CvUnitMission@@SAXV?$FObjectHandle@VCvUnit@@@@H@Z PROC ; CvUnitMission::UpdateMissionTimer, COMDAT
 
@@ -6473,7 +6473,7 @@ _iSteps$ = 16						; size = 4
 	mov	BYTE PTR [eax+4], dl
 	mov	eax, ecx
 	mov	DWORD PTR __$EHRec$[esp+32], 0
-	mov	DWORD PTR $T222524[esp+20], esp
+	mov	DWORD PTR $T222566[esp+20], esp
 	test	eax, eax
 	je	SHORT $LN8@UpdateMiss
 	call	?getDestructionNotification@CvUnit@@QAEAAU?$DestructionNotification@V?$FObjectHandle@VCvUnit@@@@@@XZ ; CvUnit::getDestructionNotification
@@ -6764,8 +6764,8 @@ __ehfuncinfo$?_Insert@?$_Tree@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVF
 xdata$x	ENDS
 ;	COMDAT ?_Insert@?$_Tree@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@std@@IAE?AViterator@12@_NPAU_Node@?$_Tree_nod@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@2@ABQAVFAutoVariableBase@@@Z
 _TEXT	SEGMENT
-$T222646 = -80						; size = 28
-$T222645 = -52						; size = 40
+$T222688 = -80						; size = 28
+$T222687 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
 __Addleft$ = 12						; size = 1
@@ -6793,22 +6793,22 @@ __Val$ = 20						; size = 4
 ; 1189 : 			_THROW(length_error, "map/set<T> too long");
 
 	push	OFFSET ??_C@_0BE@JONHPENG@map?1set?$DMT?$DO?5too?5long?$AA@
-	lea	ecx, DWORD PTR $T222646[esp+88]
+	lea	ecx, DWORD PTR $T222688[esp+88]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T222645[esp+84]
+	lea	ecx, DWORD PTR $T222687[esp+84]
 	mov	DWORD PTR __$EHRec$[esp+92], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T222646[esp+84]
+	lea	eax, DWORD PTR $T222688[esp+84]
 	push	eax
-	lea	ecx, DWORD PTR $T222645[esp+100]
+	lea	ecx, DWORD PTR $T222687[esp+100]
 	mov	BYTE PTR __$EHRec$[esp+96], 1
-	mov	DWORD PTR $T222645[esp+88], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T222687[esp+88], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVlength_error@std@@
-	lea	ecx, DWORD PTR $T222645[esp+88]
+	lea	ecx, DWORD PTR $T222687[esp+88]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+100], 0
-	mov	DWORD PTR $T222645[esp+92], OFFSET ??_7length_error@std@@6B@
+	mov	DWORD PTR $T222687[esp+92], OFFSET ??_7length_error@std@@6B@
 	call	__CxxThrowException@8
 $LN228@Insert:
 $LN17@Insert:
@@ -7127,10 +7127,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Insert@?$_Tree@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@std@@IAE?AViterator@12@_NPAU_Node@?$_Tree_nod@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@2@ABQAVFAutoVariableBase@@@Z$0:
-	lea	ecx, DWORD PTR $T222646[ebp]
+	lea	ecx, DWORD PTR $T222688[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Insert@?$_Tree@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@std@@IAE?AViterator@12@_NPAU_Node@?$_Tree_nod@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@2@ABQAVFAutoVariableBase@@@Z$2:
-	lea	ecx, DWORD PTR $T222645[ebp]
+	lea	ecx, DWORD PTR $T222687[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Insert@?$_Tree@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@std@@IAE?AViterator@12@_NPAU_Node@?$_Tree_nod@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@2@ABQAVFAutoVariableBase@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?_Insert@?$_Tree@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@std@@IAE?AViterator@12@_NPAU_Node@?$_Tree_nod@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@2@ABQAVFAutoVariableBase@@@Z
@@ -7257,7 +7257,7 @@ __ehfuncinfo$?LastMissionPlot@CvUnitMission@@SAPAVCvPlot@@V?$FObjectHandle@VCvUn
 xdata$x	ENDS
 ;	COMDAT ?LastMissionPlot@CvUnitMission@@SAPAVCvPlot@@V?$FObjectHandle@VCvUnit@@@@@Z
 _TEXT	SEGMENT
-_pTargetUnit$218783 = -20				; size = 8
+_pTargetUnit$218825 = -20				; size = 8
 __$EHRec$ = -12						; size = 12
 _hUnit$ = 8						; size = 8
 ?LastMissionPlot@CvUnitMission@@SAPAVCvPlot@@V?$FObjectHandle@VCvUnit@@@@@Z PROC ; CvUnitMission::LastMissionPlot, COMDAT
@@ -7331,8 +7331,8 @@ $LL7@LastMissio:
 	push	eax
 	call	?getUnit@CvPlayer@@QAEPAVCvUnit@@H@Z	; CvPlayer::getUnit
 	mov	edi, eax
-	mov	DWORD PTR _pTargetUnit$218783[esp+32], edi
-	mov	BYTE PTR _pTargetUnit$218783[esp+36], 0
+	mov	DWORD PTR _pTargetUnit$218825[esp+32], edi
+	mov	BYTE PTR _pTargetUnit$218825[esp+36], 0
 	test	edi, edi
 	je	SHORT $LN74@LastMissio
 	mov	ecx, edi
@@ -7497,7 +7497,7 @@ __unwindfunclet$?LastMissionPlot@CvUnitMission@@SAPAVCvPlot@@V?$FObjectHandle@VC
 	lea	ecx, DWORD PTR _hUnit$[ebp-4]
 	jmp	??1?$FObjectHandle@VCvUnit@@@@QAE@XZ	; FObjectHandle<CvUnit>::~FObjectHandle<CvUnit>
 __unwindfunclet$?LastMissionPlot@CvUnitMission@@SAPAVCvPlot@@V?$FObjectHandle@VCvUnit@@@@@Z$1:
-	lea	ecx, DWORD PTR _pTargetUnit$218783[ebp]
+	lea	ecx, DWORD PTR _pTargetUnit$218825[ebp]
 	jmp	??1?$FObjectHandle@VCvUnit@@@@QAE@XZ	; FObjectHandle<CvUnit>::~FObjectHandle<CvUnit>
 __ehhandler$?LastMissionPlot@CvUnitMission@@SAPAVCvPlot@@V?$FObjectHandle@VCvUnit@@@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?LastMissionPlot@CvUnitMission@@SAPAVCvPlot@@V?$FObjectHandle@VCvUnit@@@@@Z
@@ -7878,9 +7878,9 @@ PUBLIC	?insert@?$_Tree@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVar
 _TEXT	SEGMENT
 __Addleft$ = -4						; size = 1
 ___$ReturnUdt$ = 8					; size = 4
-$T223538 = 12						; size = 4
-$T223536 = 12						; size = 4
-__Where$198734 = 12					; size = 4
+$T223580 = 12						; size = 4
+$T223578 = 12						; size = 4
+__Where$198776 = 12					; size = 4
 __Val$ = 12						; size = 4
 ?insert@?$_Tree@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@std@@QAE?AU?$pair@Viterator@?$_Tree@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@std@@_N@2@ABQAVFAutoVariableBase@@@Z PROC ; std::_Tree<std::_Tset_traits<FAutoVariableBase *,std::less<FAutoVariableBase *>,std::allocator<FAutoVariableBase *>,0> >::insert, COMDAT
 ; _this$ = ecx
@@ -7947,7 +7947,7 @@ $LN9@insert:
 ; 646  : 			iterator _Where = _TREE_ITERATOR(_Wherenode);
 
 	mov	edx, esi
-	mov	DWORD PTR __Where$198734[esp+12], edx
+	mov	DWORD PTR __Where$198776[esp+12], edx
 
 ; 647  : 			if (!_Addleft)
 
@@ -7961,7 +7961,7 @@ $LN9@insert:
 
 ; 650  : 				return (_Pairib(_Insert(true, _Wherenode, _Val), true));
 
-	lea	ecx, DWORD PTR $T223536[esp+12]
+	lea	ecx, DWORD PTR $T223578[esp+12]
 	cmp	esi, DWORD PTR [eax]
 	jne	SHORT $LN4@insert
 	push	ebp
@@ -7993,7 +7993,7 @@ $LN4@insert:
 ; 652  : 				--_Where;	// need to test if insert before is okay
 
 	call	?_Dec@const_iterator@?$_Tree@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@std@@QAEXXZ ; std::_Tree<std::_Tset_traits<FAutoVariableBase *,std::less<FAutoVariableBase *>,std::allocator<FAutoVariableBase *>,0> >::const_iterator::_Dec
-	mov	edx, DWORD PTR __Where$198734[esp+12]
+	mov	edx, DWORD PTR __Where$198776[esp+12]
 $LN57@insert:
 
 ; 653  : 
@@ -8010,7 +8010,7 @@ $LN57@insert:
 	push	ebp
 	push	esi
 	push	ecx
-	lea	edx, DWORD PTR $T223538[esp+24]
+	lea	edx, DWORD PTR $T223580[esp+24]
 	push	edx
 	mov	ecx, edi
 	call	?_Insert@?$_Tree@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@std@@IAE?AViterator@12@_NPAU_Node@?$_Tree_nod@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@2@ABQAVFAutoVariableBase@@@Z ; std::_Tree<std::_Tset_traits<FAutoVariableBase *,std::less<FAutoVariableBase *>,std::allocator<FAutoVariableBase *>,0> >::_Insert
@@ -8073,7 +8073,7 @@ xdata$x	ENDS
 ;	COMDAT ?WaitFor@CvUnitMission@@SAXV?$FObjectHandle@VCvUnit@@@@0@Z
 _TEXT	SEGMENT
 _mission$ = -60						; size = 20
-$T223667 = -40						; size = 28
+$T223709 = -40						; size = 28
 __$EHRec$ = -12						; size = 12
 _hUnit$ = 8						; size = 8
 _hWaitForUnit$ = 16					; size = 8
@@ -8109,17 +8109,17 @@ _hWaitForUnit$ = 16					; size = 8
 
 ; 333  : 			gDLL->netMessageDebugLog("*** PROTOCOL ERROR *** : PushMission invoked for a human controlled player outside of a network message!");
 
-	push	OFFSET $SG218111
-	lea	ecx, DWORD PTR $T223667[esp+64]
+	push	OFFSET $SG218153
+	lea	ecx, DWORD PTR $T223709[esp+64]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8564
 	mov	edx, DWORD PTR [ecx]
 	mov	edx, DWORD PTR [edx+76]
-	lea	eax, DWORD PTR $T223667[esp+60]
+	lea	eax, DWORD PTR $T223709[esp+60]
 	push	eax
 	mov	BYTE PTR __$EHRec$[esp+72], 2
 	call	edx
-	lea	ecx, DWORD PTR $T223667[esp+60]
+	lea	ecx, DWORD PTR $T223709[esp+60]
 	mov	BYTE PTR __$EHRec$[esp+68], 1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 $LN2@WaitFor:
@@ -8287,7 +8287,7 @@ __unwindfunclet$?WaitFor@CvUnitMission@@SAXV?$FObjectHandle@VCvUnit@@@@0@Z$1:
 	lea	ecx, DWORD PTR _hUnit$[ebp-4]
 	jmp	??1?$FObjectHandle@VCvUnit@@@@QAE@XZ	; FObjectHandle<CvUnit>::~FObjectHandle<CvUnit>
 __unwindfunclet$?WaitFor@CvUnitMission@@SAXV?$FObjectHandle@VCvUnit@@@@0@Z$2:
-	lea	ecx, DWORD PTR $T223667[ebp]
+	lea	ecx, DWORD PTR $T223709[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __ehhandler$?WaitFor@CvUnitMission@@SAXV?$FObjectHandle@VCvUnit@@@@0@Z:
 	mov	eax, OFFSET __ehfuncinfo$?WaitFor@CvUnitMission@@SAXV?$FObjectHandle@VCvUnit@@@@0@Z
@@ -8316,8 +8316,8 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 __$EHRec$ = -12						; size = 12
 _hUnit$ = 8						; size = 8
-$T223821 = 16						; size = 4
-$T223820 = 16						; size = 4
+$T223863 = 16						; size = 4
+$T223862 = 16						; size = 4
 _pNode$ = 16						; size = 4
 ?DeleteMissionQueueNode@CvUnitMission@@CAPAUMissionData@@V?$FObjectHandle@VCvUnit@@@@PAU2@@Z PROC ; CvUnitMission::DeleteMissionQueueNode, COMDAT
 
@@ -8367,7 +8367,7 @@ $LN14@DeleteMiss:
 	mov	cl, BYTE PTR _hUnit$[esp+36]
 	mov	BYTE PTR [eax+4], cl
 	mov	eax, DWORD PTR [eax]
-	mov	DWORD PTR $T223820[esp+32], esp
+	mov	DWORD PTR $T223862[esp+32], esp
 	test	eax, eax
 	je	SHORT $LN25@DeleteMiss
 	mov	ecx, eax
@@ -8479,7 +8479,7 @@ $LN55@DeleteMiss:
 	mov	dl, BYTE PTR _hUnit$[esp+32]
 	mov	BYTE PTR [eax+4], dl
 	mov	eax, ecx
-	mov	DWORD PTR $T223821[esp+28], esp
+	mov	DWORD PTR $T223863[esp+28], esp
 	test	eax, eax
 	je	SHORT $LN66@DeleteMiss
 	call	?getDestructionNotification@CvUnit@@QAEAAU?$DestructionNotification@V?$FObjectHandle@VCvUnit@@@@@@XZ ; CvUnit::getDestructionNotification
@@ -8569,8 +8569,8 @@ PUBLIC	?touch@FAutoArchive@@QAEXAAVFAutoVariableBase@@@Z ; FAutoArchive::touch
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\fireplace\include\fireworks\fautoarchive.h
 ;	COMDAT ?touch@FAutoArchive@@QAEXAAVFAutoVariableBase@@@Z
 _TEXT	SEGMENT
-$T224053 = -8						; size = 8
-$T224052 = 8						; size = 4
+$T224095 = -8						; size = 8
+$T224094 = 8						; size = 4
 _dirtyVariable$ = 8					; size = 4
 ?touch@FAutoArchive@@QAEXAAVFAutoVariableBase@@@Z PROC	; FAutoArchive::touch, COMDAT
 ; _this$ = ecx
@@ -8585,10 +8585,10 @@ _dirtyVariable$ = 8					; size = 4
 ; 59   : 		m_deltas.insert(&dirtyVariable);
 
 	mov	eax, DWORD PTR _dirtyVariable$[esp+4]
-	lea	edx, DWORD PTR $T224052[esp+4]
-	mov	DWORD PTR $T224052[esp+4], eax
+	lea	edx, DWORD PTR $T224094[esp+4]
+	mov	DWORD PTR $T224094[esp+4], eax
 	push	edx
-	lea	eax, DWORD PTR $T224053[esp+12]
+	lea	eax, DWORD PTR $T224095[esp+12]
 	push	eax
 	add	ecx, 20					; 00000014H
 	call	?insert@?$_Tree@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@std@@QAE?AU?$pair@Viterator@?$_Tree@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@std@@_N@2@ABQAVFAutoVariableBase@@@Z ; std::_Tree<std::_Tset_traits<FAutoVariableBase *,std::less<FAutoVariableBase *>,std::allocator<FAutoVariableBase *>,0> >::insert
@@ -8604,8 +8604,8 @@ PUBLIC	?set@?$FAutoVariable@HVCvUnit@@@@QAEXABH@Z	; FAutoVariable<int,CvUnit>::s
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\fireplace\include\fireworks\fautovariable.h
 ;	COMDAT ?set@?$FAutoVariable@HVCvUnit@@@@QAEXABH@Z
 _TEXT	SEGMENT
-$T224063 = -8						; size = 8
-$T224062 = 8						; size = 4
+$T224105 = -8						; size = 8
+$T224104 = 8						; size = 4
 _source$ = 8						; size = 4
 ?set@?$FAutoVariable@HVCvUnit@@@@QAEXABH@Z PROC		; FAutoVariable<int,CvUnit>::set, COMDAT
 ; _this$ = ecx
@@ -8627,13 +8627,13 @@ _source$ = 8						; size = 4
 ; 227  : 	{
 ; 228  : 		m_owner.touch(*this);
 
-	lea	ecx, DWORD PTR $T224062[esp+12]
+	lea	ecx, DWORD PTR $T224104[esp+12]
 	push	ecx
 	mov	ecx, DWORD PTR [esi+8]
-	lea	edx, DWORD PTR $T224063[esp+20]
+	lea	edx, DWORD PTR $T224105[esp+20]
 	push	edx
 	add	ecx, 20					; 00000014H
-	mov	DWORD PTR $T224062[esp+20], esi
+	mov	DWORD PTR $T224104[esp+20], esi
 	call	?insert@?$_Tree@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@std@@QAE?AU?$pair@Viterator@?$_Tree@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@std@@_N@2@ABQAVFAutoVariableBase@@@Z ; std::_Tree<std::_Tset_traits<FAutoVariableBase *,std::less<FAutoVariableBase *>,std::allocator<FAutoVariableBase *>,0> >::insert
 
 ; 229  : 		m_value = source;
@@ -8686,9 +8686,9 @@ __ehfuncinfo$?PopMission@CvUnitMission@@SAXV?$FObjectHandle@VCvUnit@@@@@Z DD 019
 xdata$x	ENDS
 ;	COMDAT ?PopMission@CvUnitMission@@SAXV?$FObjectHandle@VCvUnit@@@@@Z
 _TEXT	SEGMENT
-$T224072 = -16						; size = 4
-$T224069 = -16						; size = 4
-_pDllUnit$218091 = -16					; size = 4
+$T224114 = -16						; size = 4
+$T224111 = -16						; size = 4
+_pDllUnit$218133 = -16					; size = 4
 __$EHRec$ = -12						; size = 12
 _hUnit$ = 8						; size = 8
 ?PopMission@CvUnitMission@@SAXV?$FObjectHandle@VCvUnit@@@@@Z PROC ; CvUnitMission::PopMission, COMDAT
@@ -8881,7 +8881,7 @@ $LN8@PopMission:
 	push	12					; 0000000cH
 	call	??2CvDllUnit@@SAPAXI@Z			; CvDllUnit::operator new
 	add	esp, 4
-	mov	DWORD PTR $T224069[esp+28], eax
+	mov	DWORD PTR $T224111[esp+28], eax
 	mov	BYTE PTR __$EHRec$[esp+36], 1
 	test	eax, eax
 	je	SHORT $LN18@PopMission
@@ -8894,7 +8894,7 @@ $LN8@PopMission:
 $LN18@PopMission:
 	xor	esi, esi
 $LN19@PopMission:
-	mov	DWORD PTR _pDllUnit$218091[esp+28], esi
+	mov	DWORD PTR _pDllUnit$218133[esp+28], esi
 
 ; 314  : 		gDLL->GameplayUnitWork(pDllUnit.get(), -1);
 
@@ -8944,7 +8944,7 @@ $LN46@PopMission:
 	mov	cl, BYTE PTR _hUnit$[esp+40]
 	mov	BYTE PTR [eax+4], cl
 	mov	eax, DWORD PTR [eax]
-	mov	DWORD PTR $T224072[esp+40], esp
+	mov	DWORD PTR $T224114[esp+40], esp
 	test	eax, eax
 	je	SHORT $LN64@PopMission
 	mov	ecx, eax
@@ -8977,13 +8977,13 @@ __unwindfunclet$?PopMission@CvUnitMission@@SAXV?$FObjectHandle@VCvUnit@@@@@Z$0:
 	lea	ecx, DWORD PTR _hUnit$[ebp-4]
 	jmp	??1?$FObjectHandle@VCvUnit@@@@QAE@XZ	; FObjectHandle<CvUnit>::~FObjectHandle<CvUnit>
 __unwindfunclet$?PopMission@CvUnitMission@@SAXV?$FObjectHandle@VCvUnit@@@@@Z$1:
-	mov	eax, DWORD PTR $T224069[ebp]
+	mov	eax, DWORD PTR $T224111[ebp]
 	push	eax
 	call	??3CvDllUnit@@SAXPAX@Z			; CvDllUnit::operator delete
 	pop	ecx
 	ret	0
 __unwindfunclet$?PopMission@CvUnitMission@@SAXV?$FObjectHandle@VCvUnit@@@@@Z$2:
-	lea	ecx, DWORD PTR _pDllUnit$218091[ebp]
+	lea	ecx, DWORD PTR _pDllUnit$218133[ebp]
 	jmp	??1?$auto_ptr@VICvUnit1@@@std@@QAE@XZ	; std::auto_ptr<ICvUnit1>::~auto_ptr<ICvUnit1>
 __ehhandler$?PopMission@CvUnitMission@@SAXV?$FObjectHandle@VCvUnit@@@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?PopMission@CvUnitMission@@SAXV?$FObjectHandle@VCvUnit@@@@@Z
@@ -9010,8 +9010,8 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 __$EHRec$ = -12						; size = 12
 _hUnit$ = 8						; size = 8
-$T224193 = 16						; size = 4
-$T224192 = 16						; size = 4
+$T224235 = 16						; size = 4
+$T224234 = 16						; size = 4
 _iUnitCycleTimerOverride$ = 16				; size = 4
 ?ClearMissionQueue@CvUnitMission@@SAXV?$FObjectHandle@VCvUnit@@@@H@Z PROC ; CvUnitMission::ClearMissionQueue, COMDAT
 
@@ -9039,7 +9039,7 @@ _iUnitCycleTimerOverride$ = 16				; size = 4
 	mov	BYTE PTR [eax+4], dl
 	mov	eax, ecx
 	mov	DWORD PTR __$EHRec$[esp+36], 0
-	mov	DWORD PTR $T224192[esp+24], esp
+	mov	DWORD PTR $T224234[esp+24], esp
 	test	eax, eax
 	je	SHORT $LN12@ClearMissi
 	call	?getDestructionNotification@CvUnit@@QAEAAU?$DestructionNotification@V?$FObjectHandle@VCvUnit@@@@@@XZ ; CvUnit::getDestructionNotification
@@ -9065,7 +9065,7 @@ $LL3@ClearMissi:
 	mov	cl, BYTE PTR _hUnit$[esp+24]
 	mov	BYTE PTR [eax+4], cl
 	mov	eax, DWORD PTR [eax]
-	mov	DWORD PTR $T224193[esp+20], esp
+	mov	DWORD PTR $T224235[esp+20], esp
 	test	eax, eax
 	je	SHORT $LN23@ClearMissi
 	mov	ecx, eax
@@ -9158,8 +9158,8 @@ PUBLIC	??4?$FAutoVariable@HVCvUnit@@@@QAEAAHABH@Z	; FAutoVariable<int,CvUnit>::o
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\fireplace\include\fireworks\fautovariable.h
 ;	COMDAT ??4?$FAutoVariable@HVCvUnit@@@@QAEAAHABH@Z
 _TEXT	SEGMENT
-$T224297 = -8						; size = 8
-$T224296 = 8						; size = 4
+$T224339 = -8						; size = 8
+$T224338 = 8						; size = 4
 _rhs$ = 8						; size = 4
 ??4?$FAutoVariable@HVCvUnit@@@@QAEAAHABH@Z PROC		; FAutoVariable<int,CvUnit>::operator=, COMDAT
 ; _this$ = ecx
@@ -9181,11 +9181,11 @@ _rhs$ = 8						; size = 4
 ; 203  : 	{
 ; 204  : 		set(rhs);
 
-	mov	DWORD PTR $T224296[esp+12], ecx
+	mov	DWORD PTR $T224338[esp+12], ecx
 	mov	ecx, DWORD PTR [ecx+8]
-	lea	edx, DWORD PTR $T224296[esp+12]
+	lea	edx, DWORD PTR $T224338[esp+12]
 	push	edx
-	lea	eax, DWORD PTR $T224297[esp+20]
+	lea	eax, DWORD PTR $T224339[esp+20]
 	push	eax
 	add	ecx, 20					; 00000014H
 	call	?insert@?$_Tree@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@std@@QAE?AU?$pair@Viterator@?$_Tree@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@std@@_N@2@ABQAVFAutoVariableBase@@@Z ; std::_Tree<std::_Tset_traits<FAutoVariableBase *,std::less<FAutoVariableBase *>,std::allocator<FAutoVariableBase *>,0> >::insert
@@ -9272,26 +9272,26 @@ __unwindtable$?ContinueMission@CvUnitMission@@SAXV?$FObjectHandle@VCvUnit@@@@HH@
 xdata$x	ENDS
 ;	COMDAT ?ContinueMission@CvUnitMission@@SAXV?$FObjectHandle@VCvUnit@@@@HH@Z
 _TEXT	SEGMENT
-_bDone$218133 = -594					; size = 1
-_bAction$218134 = -593					; size = 1
+_bDone$218175 = -594					; size = 1
+_bAction$218176 = -593					; size = 1
 tv1646 = -592						; size = 4
-$T224359 = -592						; size = 4
-$T224423 = -592						; size = 4
-_pDllPlot$218310 = -592					; size = 4
-$T224308 = -592						; size = 4
-_bBadAttackInterrupt$218149 = -585			; size = 1
-$T225457 = -584						; size = 4
-$T224315 = -584						; size = 4
-$T224312 = -584						; size = 4
-_pDllUnit$218337 = -584					; size = 4
-$T224309 = -584						; size = 4
-_pTargetUnit$218244 = -580				; size = 8
-$T224307 = -572						; size = 8
-$T225458 = -564						; size = 8
-$T224360 = -564						; size = 8
-_pTargetUnit$218211 = -556				; size = 8
-_kPopup$218172 = -548					; size = 536
-_kPopup$218156 = -548					; size = 536
+$T224401 = -592						; size = 4
+$T224465 = -592						; size = 4
+_pDllPlot$218352 = -592					; size = 4
+$T224350 = -592						; size = 4
+_bBadAttackInterrupt$218191 = -585			; size = 1
+$T225499 = -584						; size = 4
+$T224357 = -584						; size = 4
+$T224354 = -584						; size = 4
+_pDllUnit$218379 = -584					; size = 4
+$T224351 = -584						; size = 4
+_pTargetUnit$218286 = -580				; size = 8
+$T224349 = -572						; size = 8
+$T225500 = -564						; size = 8
+$T224402 = -564						; size = 8
+_pTargetUnit$218253 = -556				; size = 8
+_kPopup$218214 = -548					; size = 536
+_kPopup$218198 = -548					; size = 536
 __$EHRec$ = -12						; size = 12
 _hUnit$ = 8						; size = 8
 _iSteps$ = 16						; size = 4
@@ -9340,17 +9340,17 @@ $LL109@ContinueMi:
 	mov	esi, DWORD PTR [ecx+1364]
 	or	esi, 1
 	lea	edi, DWORD PTR [ecx+1360]
-	mov	BYTE PTR _bDone$218133[esp+612], 0
-	mov	BYTE PTR _bAction$218134[esp+612], 0
+	mov	BYTE PTR _bDone$218175[esp+612], 0
+	mov	BYTE PTR _bAction$218176[esp+612], 0
 	cmp	esi, DWORD PTR [edi+4]
 	je	SHORT $LN135@ContinueMi
 	mov	eax, DWORD PTR [edi+8]
-	lea	ecx, DWORD PTR $T224359[esp+612]
+	lea	ecx, DWORD PTR $T224401[esp+612]
 	push	ecx
-	lea	edx, DWORD PTR $T224360[esp+616]
+	lea	edx, DWORD PTR $T224402[esp+616]
 	push	edx
 	lea	ecx, DWORD PTR [eax+20]
-	mov	DWORD PTR $T224359[esp+620], edi
+	mov	DWORD PTR $T224401[esp+620], edi
 	call	?insert@?$_Tree@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@std@@QAE?AU?$pair@Viterator@?$_Tree@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@std@@_N@2@ABQAVFAutoVariableBase@@@Z ; std::_Tree<std::_Tset_traits<FAutoVariableBase *,std::less<FAutoVariableBase *>,std::allocator<FAutoVariableBase *>,0> >::insert
 	mov	DWORD PTR [edi+4], esi
 	mov	ecx, DWORD PTR _hUnit$[esp+608]
@@ -9380,7 +9380,7 @@ $LN135@ContinueMi:
 ; 430  : 		if(iSteps >= 100)
 
 	cmp	DWORD PTR _iSteps$[esp+608], 100	; 00000064H
-	jge	$ContinueMissionExit$218137
+	jge	$ContinueMissionExit$218179
 
 ; 431  : 			goto ContinueMissionExit;
 ; 432  : 
@@ -9399,7 +9399,7 @@ $LN667@ContinueMi:
 ; 435  : 		if(pkMissionData->iPushTurn == GC.getGame().getGameTurn() || (pkMissionData->iFlags & MOVE_UNITS_THROUGH_ENEMY))
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
-	mov	DWORD PTR $T224423[esp+612], edi
+	mov	DWORD PTR $T224465[esp+612], edi
 	call	?getGameTurn@CvGame@@QAEHXZ		; CvGame::getGameTurn
 	cmp	DWORD PTR [edi+16], eax
 	je	SHORT $LN102@ContinueMi
@@ -9489,7 +9489,7 @@ $LN202@ContinueMi:
 	jl	SHORT $LN182@ContinueMi
 	cmp	edx, edi
 	jge	SHORT $LN182@ContinueMi
-	mov	edi, DWORD PTR $T224423[esp+612]
+	mov	edi, DWORD PTR $T224465[esp+612]
 	imul	ecx, edx
 	add	ecx, esi
 	imul	ecx, 484				; 000001e4H
@@ -9497,7 +9497,7 @@ $LN202@ContinueMi:
 	mov	esi, ecx
 	jmp	SHORT $LN180@ContinueMi
 $LN182@ContinueMi:
-	mov	edi, DWORD PTR $T224423[esp+612]
+	mov	edi, DWORD PTR $T224465[esp+612]
 $LN178@ContinueMi:
 	xor	esi, esi
 $LN180@ContinueMi:
@@ -9549,7 +9549,7 @@ $LN100@ContinueMi:
 ; 453  : 					if(hUnit->isHuman() && !CvPreGame::isNetworkMultiplayerGame() && !GC.getGame().IsCombatWarned() && (bCityAttackInterrupt || bBadAttackInterrupt))
 
 	mov	ecx, DWORD PTR _hUnit$[esp+608]
-	mov	BYTE PTR _bBadAttackInterrupt$218149[esp+612], al
+	mov	BYTE PTR _bBadAttackInterrupt$218191[esp+612], al
 	call	?isHuman@CvUnit@@QBE_NXZ		; CvUnit::isHuman
 	test	al, al
 	je	$LN86@ContinueMi
@@ -9562,7 +9562,7 @@ $LN100@ContinueMi:
 	jne	$LN86@ContinueMi
 	test	bl, bl
 	jne	SHORT $LN97@ContinueMi
-	cmp	BYTE PTR _bBadAttackInterrupt$218149[esp+612], bl
+	cmp	BYTE PTR _bBadAttackInterrupt$218191[esp+612], bl
 	je	$LN86@ContinueMi
 $LN97@ContinueMi:
 
@@ -9625,47 +9625,47 @@ $LN97@ContinueMi:
 ; 468  : 										kPopup.iData2 = pPlot->GetPlotIndex();
 
 	mov	ecx, esi
-	mov	DWORD PTR _kPopup$218156[esp+616], eax
-	mov	DWORD PTR _kPopup$218156[esp+620], eax
-	mov	DWORD PTR _kPopup$218156[esp+624], 0
-	mov	BYTE PTR _kPopup$218156[esp+628], 0
-	mov	BYTE PTR _kPopup$218156[esp+629], 0
-	mov	DWORD PTR _kPopup$218156[esp+632], 72	; 00000048H
-	mov	BYTE PTR _kPopup$218156[esp+636], 0
-	mov	DWORD PTR _kPopup$218156[esp+612], 0
+	mov	DWORD PTR _kPopup$218198[esp+616], eax
+	mov	DWORD PTR _kPopup$218198[esp+620], eax
+	mov	DWORD PTR _kPopup$218198[esp+624], 0
+	mov	BYTE PTR _kPopup$218198[esp+628], 0
+	mov	BYTE PTR _kPopup$218198[esp+629], 0
+	mov	DWORD PTR _kPopup$218198[esp+632], 72	; 00000048H
+	mov	BYTE PTR _kPopup$218198[esp+636], 0
+	mov	DWORD PTR _kPopup$218198[esp+612], 0
 	call	?GetPlotIndex@CvPlot@@QBEHXZ		; CvPlot::GetPlotIndex
 
 ; 469  : 										kPopup.iData3 = hUnit->plot()->GetPlotIndex();
 
 	mov	ecx, DWORD PTR _hUnit$[esp+608]
-	mov	DWORD PTR _kPopup$218156[esp+616], eax
+	mov	DWORD PTR _kPopup$218198[esp+616], eax
 	call	?plot@CvUnit@@QBEPAVCvPlot@@XZ		; CvUnit::plot
 	mov	ecx, eax
 	call	?GetPlotIndex@CvPlot@@QBEHXZ		; CvPlot::GetPlotIndex
 
 ; 470  : 										strcpy_s(kPopup.szText, "TXT_KEY_ADVISOR_CITY_ATTACK_BODY");
 
-	lea	ecx, DWORD PTR _kPopup$218156[esp+636]
-	push	OFFSET $SG218162
+	lea	ecx, DWORD PTR _kPopup$218198[esp+636]
+	push	OFFSET $SG218204
 	push	ecx
-	mov	DWORD PTR _kPopup$218156[esp+628], eax
+	mov	DWORD PTR _kPopup$218198[esp+628], eax
 	call	??$strcpy_s@$0CAA@@@YAHAAY0CAA@DPBD@Z	; strcpy_s<512>
 
 ; 471  : 										kPopup.bOption1 = true;
 ; 472  : 										GC.GetEngineUserInterface()->AddPopup(kPopup);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
-	mov	BYTE PTR _kPopup$218156[esp+636], 1
+	mov	BYTE PTR _kPopup$218198[esp+636], 1
 	mov	edx, DWORD PTR [ecx]
 	mov	edx, DWORD PTR [edx+180]
 	add	esp, 8
-	lea	eax, DWORD PTR _kPopup$218156[esp+612]
+	lea	eax, DWORD PTR _kPopup$218198[esp+612]
 	push	eax
 	call	edx
 
 ; 473  : 										goto ContinueMissionExit;
 
-	jmp	$ContinueMissionExit$218137
+	jmp	$ContinueMissionExit$218179
 $LN95@ContinueMi:
 
 ; 474  : 									}
@@ -9673,7 +9673,7 @@ $LN95@ContinueMi:
 ; 476  : 							}
 ; 477  : 							else if(bBadAttackInterrupt)
 
-	cmp	BYTE PTR _bBadAttackInterrupt$218149[esp+612], 0
+	cmp	BYTE PTR _bBadAttackInterrupt$218191[esp+612], 0
 	je	SHORT $LN86@ContinueMi
 
 ; 478  : 							{
@@ -9744,7 +9744,7 @@ $LN668@ContinueMi:
 ; 505  : 					{
 ; 506  : 						bDone = true;
 
-	mov	BYTE PTR _bDone$218133[esp+612], 1
+	mov	BYTE PTR _bDone$218175[esp+612], 1
 $LN84@ContinueMi:
 
 ; 507  : 					}
@@ -9774,7 +9774,7 @@ $LN84@ContinueMi:
 ; 522  : 		//   then try to follow the misision
 ; 523  : 		if(!bDone && hUnit->canMove() && !hUnit->IsDoingPartialMove())
 
-	cmp	BYTE PTR _bDone$218133[esp+612], 0
+	cmp	BYTE PTR _bDone$218175[esp+612], 0
 	jne	$LN36@ContinueMi
 	call	?canMove@CvUnit@@QBE_NXZ		; CvUnit::canMove
 	test	al, al
@@ -9837,7 +9837,7 @@ $LN288@ContinueMi:
 ; 560  : 				{
 ; 561  : 					bAction = true;
 
-	mov	BYTE PTR _bAction$218134[esp+612], 1
+	mov	BYTE PTR _bAction$218176[esp+612], 1
 
 ; 562  : 				}
 ; 563  : 				else
@@ -9944,7 +9944,7 @@ $LN330@ContinueMi:
 	mov	edi, eax
 	call	?getNumUnits@CvPlot@@QBEHXZ		; CvPlot::getNumUnits
 	cmp	eax, 1
-	jl	$ContinueMissionExit$218137
+	jl	$ContinueMissionExit$218179
 
 ; 582  : 					{
 ; 583  : 						bAction = false;
@@ -10026,7 +10026,7 @@ $LL65@ContinueMi:
 
 ; 604  : 							bDone = true;
 
-	mov	BYTE PTR _bDone$218133[esp+612], 1
+	mov	BYTE PTR _bDone$218175[esp+612], 1
 $LN64@ContinueMi:
 	mov	ecx, ebp
 	inc	ebx
@@ -10086,21 +10086,21 @@ $LN68@ContinueMi:
 	push	0
 	push	-1
 	push	eax
-	lea	eax, DWORD PTR $T224307[esp+640]
+	lea	eax, DWORD PTR $T224349[esp+640]
 	push	eax
 	call	?plot@CvUnit@@QBEPAVCvPlot@@XZ		; CvUnit::plot
 	mov	ecx, eax
 	call	?getBestDefender@CvPlot@@QAE?AV?$FObjectHandle@VCvUnit@@@@W4PlayerTypes@@0PBVCvUnit@@_N222@Z ; CvPlot::getBestDefender
 	mov	ecx, DWORD PTR [eax]
 	cmp	ecx, DWORD PTR _hUnit$[esp+608]
-	mov	ecx, DWORD PTR $T224307[esp+612]
+	mov	ecx, DWORD PTR $T224349[esp+612]
 	sete	bl
 	test	ecx, ecx
 	je	SHORT $LN377@ContinueMi
 	call	?getDestructionNotification@CvUnit@@QAEAAU?$DestructionNotification@V?$FObjectHandle@VCvUnit@@@@@@XZ ; CvUnit::getDestructionNotification
 $LN377@ContinueMi:
 	test	bl, bl
-	jne	$ContinueMissionExit$218137
+	jne	$ContinueMissionExit$218179
 $LN58@ContinueMi:
 
 ; 615  : 					{
@@ -10118,12 +10118,12 @@ $LN58@ContinueMi:
 	push	edx
 	call	?getUnit@CvPlayer@@QAEPAVCvUnit@@H@Z	; CvPlayer::getUnit
 	push	eax
-	lea	ecx, DWORD PTR _pTargetUnit$218211[esp+616]
+	lea	ecx, DWORD PTR _pTargetUnit$218253[esp+616]
 	call	??0?$FObjectHandle@VCvUnit@@@@QAE@PAVCvUnit@@@Z ; FObjectHandle<CvUnit>::FObjectHandle<CvUnit>
 
 ; 622  : 				if(pTargetUnit)
 
-	mov	edi, DWORD PTR _pTargetUnit$218211[esp+612]
+	mov	edi, DWORD PTR _pTargetUnit$218253[esp+612]
 	mov	BYTE PTR __$EHRec$[esp+620], 1
 	test	edi, edi
 	je	$LN57@ContinueMi
@@ -10214,7 +10214,7 @@ $LN52@ContinueMi:
 ; 642  : 					{
 ; 643  : 						bAction = true;
 
-	mov	BYTE PTR _bAction$218134[esp+612], 1
+	mov	BYTE PTR _bAction$218176[esp+612], 1
 
 ; 644  : 					}
 ; 645  : 					else
@@ -10230,7 +10230,7 @@ $LN57@ContinueMi:
 ; 651  : 				{
 ; 652  : 					bDone = true;
 
-	mov	BYTE PTR _bDone$218133[esp+612], 1
+	mov	BYTE PTR _bDone$218175[esp+612], 1
 $LN49@ContinueMi:
 
 ; 653  : 				}
@@ -10384,7 +10384,7 @@ $LN78@ContinueMi:
 ; 540  : 					{
 ; 541  : 						bAction = true;
 
-	mov	BYTE PTR _bAction$218134[esp+612], 1
+	mov	BYTE PTR _bAction$218176[esp+612], 1
 
 ; 542  : 					}
 ; 543  : 					else
@@ -10395,7 +10395,7 @@ $LN76@ContinueMi:
 ; 544  : 					{
 ; 545  : 						bDone = true;
 
-	mov	BYTE PTR _bDone$218133[esp+612], 1
+	mov	BYTE PTR _bDone$218175[esp+612], 1
 $LN75@ContinueMi:
 
 ; 546  : 					}
@@ -10420,7 +10420,7 @@ $LN74@ContinueMi:
 ; 681  : 		// check to see if mission is done
 ; 682  : 		if(!bDone && (hUnit->HeadMissionQueueNode() != NULL))
 
-	cmp	BYTE PTR _bDone$218133[esp+612], 0
+	cmp	BYTE PTR _bDone$218175[esp+612], 0
 	jne	$LN36@ContinueMi
 $LN640@ContinueMi:
 	mov	ecx, DWORD PTR _hUnit$[esp+608]
@@ -10526,12 +10526,12 @@ $LN34@ContinueMi:
 	push	eax
 	call	?getUnit@CvPlayer@@QAEPAVCvUnit@@H@Z	; CvPlayer::getUnit
 	push	eax
-	lea	ecx, DWORD PTR _pTargetUnit$218244[esp+616]
+	lea	ecx, DWORD PTR _pTargetUnit$218286[esp+616]
 	call	??0?$FObjectHandle@VCvUnit@@@@QAE@PAVCvUnit@@@Z ; FObjectHandle<CvUnit>::FObjectHandle<CvUnit>
 
 ; 718  : 				if((!pTargetUnit) ||hUnit-> plot() == pTargetUnit->plot())
 
-	mov	esi, DWORD PTR _pTargetUnit$218244[esp+612]
+	mov	esi, DWORD PTR _pTargetUnit$218286[esp+612]
 	mov	BYTE PTR __$EHRec$[esp+620], 2
 	test	esi, esi
 	je	SHORT $LN28@ContinueMi
@@ -10548,7 +10548,7 @@ $LN28@ContinueMi:
 ; 719  : 				{
 ; 720  : 					bDone = true;
 
-	mov	BYTE PTR _bDone$218133[esp+612], 1
+	mov	BYTE PTR _bDone$218175[esp+612], 1
 $LN29@ContinueMi:
 
 ; 721  : 				}
@@ -10758,7 +10758,7 @@ $LN669@ContinueMi:
 ; 692  : 				{
 ; 693  : 					bDone = true;
 
-	mov	BYTE PTR _bDone$218133[esp+612], 1
+	mov	BYTE PTR _bDone$218175[esp+612], 1
 $LN36@ContinueMi:
 
 ; 772  : 				}
@@ -10768,17 +10768,17 @@ $LN36@ContinueMi:
 ; 776  : 		if(HeadMissionQueueNode(kMissionQueue) != NULL)
 
 	cmp	DWORD PTR [ebp+4], 0
-	jbe	$ContinueMissionExit$218137
+	jbe	$ContinueMissionExit$218179
 	cmp	DWORD PTR [ebp], 0
-	je	$ContinueMissionExit$218137
+	je	$ContinueMissionExit$218179
 
 ; 777  : 		{
 ; 778  : 			// if there is an action, if it's done or there are not moves left, and a player is watching, watch the movement
 ; 779  : 			if(bAction && (bDone || !hUnit->canMove()) && hUnit->plot()->isVisibleToWatchingHuman())
 
-	cmp	BYTE PTR _bAction$218134[esp+612], 0
+	cmp	BYTE PTR _bAction$218176[esp+612], 0
 	je	$LN517@ContinueMi
-	cmp	BYTE PTR _bDone$218133[esp+612], 0
+	cmp	BYTE PTR _bDone$218175[esp+612], 0
 	jne	SHORT $LN17@ContinueMi
 	mov	ecx, DWORD PTR _hUnit$[esp+608]
 	call	?canMove@CvUnit@@QBE_NXZ		; CvUnit::canMove
@@ -10800,7 +10800,7 @@ $LN17@ContinueMi:
 	sub	esp, 8
 	lea	eax, DWORD PTR _hUnit$[esp+620]
 	mov	ecx, esp
-	mov	DWORD PTR $T224308[esp+624], esp
+	mov	DWORD PTR $T224350[esp+624], esp
 	push	eax
 	call	??0?$FObjectHandle@VCvUnit@@@@QAE@ABV0@@Z ; FObjectHandle<CvUnit>::FObjectHandle<CvUnit>
 	call	?UpdateMissionTimer@CvUnitMission@@SAXV?$FObjectHandle@VCvUnit@@@@H@Z ; CvUnitMission::UpdateMissionTimer
@@ -10837,14 +10837,14 @@ $LN17@ContinueMi:
 	mov	ecx, DWORD PTR _hUnit$[esp+608]
 	call	?plot@CvUnit@@QBEPAVCvPlot@@XZ		; CvUnit::plot
 	push	eax
-	lea	edx, DWORD PTR $T224309[esp+616]
+	lea	edx, DWORD PTR $T224351[esp+616]
 	push	edx
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?WrapPlotPointer@CvGlobals@@QAE?AV?$auto_ptr@VICvPlot1@@@std@@PAVCvPlot@@@Z ; CvGlobals::WrapPlotPointer
 	mov	esi, DWORD PTR [eax]
 	mov	DWORD PTR [eax], 0
-	mov	DWORD PTR _pDllPlot$218310[esp+612], esi
-	mov	eax, DWORD PTR $T224309[esp+612]
+	mov	DWORD PTR _pDllPlot$218352[esp+612], esi
+	mov	eax, DWORD PTR $T224351[esp+612]
 	mov	BYTE PTR __$EHRec$[esp+620], 3
 	test	eax, eax
 	je	SHORT $LN508@ContinueMi
@@ -10878,7 +10878,7 @@ $LN517@ContinueMi:
 ; 789  : 
 ; 790  : 			if(bDone)
 
-	cmp	BYTE PTR _bDone$218133[esp+612], 0
+	cmp	BYTE PTR _bDone$218175[esp+612], 0
 	jne	SHORT $LN643@ContinueMi
 $LN15@ContinueMi:
 
@@ -10919,7 +10919,7 @@ $LN643@ContinueMi:
 	push	12					; 0000000cH
 	call	??2CvDllUnit@@SAPAXI@Z			; CvDllUnit::operator new
 	add	esp, 4
-	mov	DWORD PTR $T224312[esp+612], eax
+	mov	DWORD PTR $T224354[esp+612], eax
 	mov	BYTE PTR __$EHRec$[esp+620], 4
 	test	eax, eax
 	je	SHORT $LN112@ContinueMi
@@ -10932,7 +10932,7 @@ $LN643@ContinueMi:
 $LN112@ContinueMi:
 	xor	esi, esi
 $LN113@ContinueMi:
-	mov	DWORD PTR _pDllUnit$218337[esp+612], esi
+	mov	DWORD PTR _pDllUnit$218379[esp+612], esi
 
 ; 795  : 					gDLL->GameplayUnitWork(pDllUnit.get(), -1);
 
@@ -10961,11 +10961,11 @@ $LN532@ContinueMi:
 	mov	ecx, DWORD PTR _hUnit$[esp+608]
 	call	?GetMissionTimer@CvUnit@@QBEHXZ		; CvUnit::GetMissionTimer
 	test	eax, eax
-	jne	$ContinueMissionExit$218137
+	jne	$ContinueMissionExit$218179
 	mov	ecx, DWORD PTR _hUnit$[esp+608]
 	call	?isInCombat@CvUnit@@QBE_NXZ		; CvUnit::isInCombat
 	test	al, al
-	jne	$ContinueMissionExit$218137
+	jne	$ContinueMissionExit$218179
 
 ; 799  : 				{
 ; 800  : 					if(hUnit->getOwner() == GC.getGame().getActivePlayer() && hUnit->IsSelected())
@@ -11095,7 +11095,7 @@ $LN581@ContinueMi:
 	sub	esp, 8
 	lea	edx, DWORD PTR _hUnit$[esp+620]
 	mov	ecx, esp
-	mov	DWORD PTR $T224315[esp+624], esp
+	mov	DWORD PTR $T224357[esp+624], esp
 	push	edx
 	call	??0?$FObjectHandle@VCvUnit@@@@QAE@ABV0@@Z ; FObjectHandle<CvUnit>::FObjectHandle<CvUnit>
 	call	?DeleteMissionQueueNode@CvUnitMission@@CAPAUMissionData@@V?$FObjectHandle@VCvUnit@@@@PAU2@@Z ; CvUnitMission::DeleteMissionQueueNode
@@ -11105,7 +11105,7 @@ $LN581@ContinueMi:
 ; 837  : 			}
 ; 838  : 			else
 
-	jmp	$ContinueMissionExit$218137
+	jmp	$ContinueMissionExit$218179
 $LN3@ContinueMi:
 
 ; 845  : 				}
@@ -11114,17 +11114,17 @@ $LN3@ContinueMi:
 	mov	ecx, DWORD PTR _hUnit$[esp+608]
 	call	?IsBusy@CvUnit@@QBE_NXZ			; CvUnit::IsBusy
 	test	al, al
-	jne	$ContinueMissionExit$218137
+	jne	$ContinueMissionExit$218179
 	mov	eax, DWORD PTR _hUnit$[esp+608]
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	mov	esi, DWORD PTR [eax+40]
 	call	?getActivePlayer@CvGame@@QBE?AW4PlayerTypes@@XZ ; CvGame::getActivePlayer
 	cmp	esi, eax
-	jne	$ContinueMissionExit$218137
+	jne	$ContinueMissionExit$218179
 	mov	ecx, DWORD PTR _hUnit$[esp+608]
 	call	?IsSelected@CvUnit@@QBE_NXZ		; CvUnit::IsSelected
 	test	al, al
-	je	$ContinueMissionExit$218137
+	je	$ContinueMissionExit$218179
 
 ; 847  : 				{
 ; 848  : 					GC.GetEngineUserInterface()->changeCycleSelectionCounter(1);
@@ -11134,7 +11134,7 @@ $LN3@ContinueMi:
 	mov	eax, DWORD PTR [edx+224]
 	push	1
 	call	eax
-	jmp	$ContinueMissionExit$218137
+	jmp	$ContinueMissionExit$218179
 $LN630@ContinueMi:
 
 ; 423  : 		{
@@ -11146,7 +11146,7 @@ $LN630@ContinueMi:
 
 ; 426  : 			goto ContinueMissionExit;
 
-	jmp	$ContinueMissionExit$218137
+	jmp	$ContinueMissionExit$218179
 $LN633@ContinueMi:
 
 ; 486  : 										{
@@ -11167,29 +11167,29 @@ $LN633@ContinueMi:
 ; 490  : 											kPopup.iData2 = pPlot->GetPlotIndex();
 
 	mov	ecx, esi
-	mov	DWORD PTR _kPopup$218172[esp+616], eax
-	mov	DWORD PTR _kPopup$218172[esp+620], eax
-	mov	DWORD PTR _kPopup$218172[esp+624], edi
-	mov	BYTE PTR _kPopup$218172[esp+628], 0
-	mov	BYTE PTR _kPopup$218172[esp+629], 0
-	mov	DWORD PTR _kPopup$218172[esp+632], 72	; 00000048H
-	mov	BYTE PTR _kPopup$218172[esp+636], 0
-	mov	DWORD PTR _kPopup$218172[esp+612], edi
+	mov	DWORD PTR _kPopup$218214[esp+616], eax
+	mov	DWORD PTR _kPopup$218214[esp+620], eax
+	mov	DWORD PTR _kPopup$218214[esp+624], edi
+	mov	BYTE PTR _kPopup$218214[esp+628], 0
+	mov	BYTE PTR _kPopup$218214[esp+629], 0
+	mov	DWORD PTR _kPopup$218214[esp+632], 72	; 00000048H
+	mov	BYTE PTR _kPopup$218214[esp+636], 0
+	mov	DWORD PTR _kPopup$218214[esp+612], edi
 	call	?GetPlotIndex@CvPlot@@QBEHXZ		; CvPlot::GetPlotIndex
 
 ; 491  : 											kPopup.iData3 = hUnit->plot()->GetPlotIndex();
 
 	mov	ecx, DWORD PTR _hUnit$[esp+608]
-	mov	DWORD PTR _kPopup$218172[esp+616], eax
+	mov	DWORD PTR _kPopup$218214[esp+616], eax
 	call	?plot@CvUnit@@QBEPAVCvPlot@@XZ		; CvUnit::plot
 	mov	ecx, eax
 	call	?GetPlotIndex@CvPlot@@QBEHXZ		; CvPlot::GetPlotIndex
-	mov	DWORD PTR _kPopup$218172[esp+620], eax
+	mov	DWORD PTR _kPopup$218214[esp+620], eax
 
 ; 492  : 											strcpy_s(kPopup.szText, "TXT_KEY_ADVISOR_BAD_ATTACK_BODY");
 
-	lea	eax, DWORD PTR _kPopup$218172[esp+636]
-	push	OFFSET $SG218173
+	lea	eax, DWORD PTR _kPopup$218214[esp+636]
+	push	OFFSET $SG218215
 	push	eax
 	call	??$strcpy_s@$0CAA@@@YAHAAY0CAA@DPBD@Z	; strcpy_s<512>
 
@@ -11197,17 +11197,17 @@ $LN633@ContinueMi:
 ; 494  : 											GC.GetEngineUserInterface()->AddPopup(kPopup);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
-	mov	BYTE PTR _kPopup$218172[esp+636], 0
+	mov	BYTE PTR _kPopup$218214[esp+636], 0
 	mov	edx, DWORD PTR [ecx]
 	mov	edx, DWORD PTR [edx+180]
 	add	esp, 8
-	lea	eax, DWORD PTR _kPopup$218172[esp+612]
+	lea	eax, DWORD PTR _kPopup$218214[esp+612]
 	push	eax
 	call	edx
 
 ; 495  : 											goto ContinueMissionExit;
 
-	jmp	SHORT $ContinueMissionExit$218137
+	jmp	SHORT $ContinueMissionExit$218179
 $LN637@ContinueMi:
 
 ; 632  : 								{
@@ -11218,7 +11218,7 @@ $LN637@ContinueMi:
 	mov	ecx, edi
 	mov	BYTE PTR __$EHRec$[esp+620], 0
 	call	?getDestructionNotification@CvUnit@@QAEAAU?$DestructionNotification@V?$FObjectHandle@VCvUnit@@@@@@XZ ; CvUnit::getDestructionNotification
-$ContinueMissionExit$218137:
+$ContinueMissionExit$218179:
 
 ; 849  : 				}
 ; 850  : 			}
@@ -11234,12 +11234,12 @@ $ContinueMissionExit$218137:
 	cmp	esi, DWORD PTR [edi+4]
 	je	SHORT $LN616@ContinueMi
 	mov	eax, DWORD PTR [edi+8]
-	lea	ecx, DWORD PTR $T225457[esp+612]
+	lea	ecx, DWORD PTR $T225499[esp+612]
 	push	ecx
-	lea	edx, DWORD PTR $T225458[esp+616]
+	lea	edx, DWORD PTR $T225500[esp+616]
 	push	edx
 	lea	ecx, DWORD PTR [eax+20]
-	mov	DWORD PTR $T225457[esp+620], edi
+	mov	DWORD PTR $T225499[esp+620], edi
 	call	?insert@?$_Tree@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@std@@QAE?AU?$pair@Viterator@?$_Tree@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@std@@_N@2@ABQAVFAutoVariableBase@@@Z ; std::_Tree<std::_Tset_traits<FAutoVariableBase *,std::less<FAutoVariableBase *>,std::allocator<FAutoVariableBase *>,0> >::insert
 	mov	DWORD PTR [edi+4], esi
 $LN616@ContinueMi:
@@ -11273,22 +11273,22 @@ __unwindfunclet$?ContinueMission@CvUnitMission@@SAXV?$FObjectHandle@VCvUnit@@@@H
 	lea	ecx, DWORD PTR _hUnit$[ebp-4]
 	jmp	??1?$FObjectHandle@VCvUnit@@@@QAE@XZ	; FObjectHandle<CvUnit>::~FObjectHandle<CvUnit>
 __unwindfunclet$?ContinueMission@CvUnitMission@@SAXV?$FObjectHandle@VCvUnit@@@@HH@Z$7:
-	lea	ecx, DWORD PTR _pTargetUnit$218211[ebp]
+	lea	ecx, DWORD PTR _pTargetUnit$218253[ebp]
 	jmp	??1?$FObjectHandle@VCvUnit@@@@QAE@XZ	; FObjectHandle<CvUnit>::~FObjectHandle<CvUnit>
 __unwindfunclet$?ContinueMission@CvUnitMission@@SAXV?$FObjectHandle@VCvUnit@@@@HH@Z$8:
-	lea	ecx, DWORD PTR _pTargetUnit$218244[ebp]
+	lea	ecx, DWORD PTR _pTargetUnit$218286[ebp]
 	jmp	??1?$FObjectHandle@VCvUnit@@@@QAE@XZ	; FObjectHandle<CvUnit>::~FObjectHandle<CvUnit>
 __unwindfunclet$?ContinueMission@CvUnitMission@@SAXV?$FObjectHandle@VCvUnit@@@@HH@Z$11:
-	lea	ecx, DWORD PTR _pDllPlot$218310[ebp]
+	lea	ecx, DWORD PTR _pDllPlot$218352[ebp]
 	jmp	??1?$auto_ptr@VICvPlot1@@@std@@QAE@XZ	; std::auto_ptr<ICvPlot1>::~auto_ptr<ICvPlot1>
 __unwindfunclet$?ContinueMission@CvUnitMission@@SAXV?$FObjectHandle@VCvUnit@@@@HH@Z$12:
-	mov	eax, DWORD PTR $T224312[ebp]
+	mov	eax, DWORD PTR $T224354[ebp]
 	push	eax
 	call	??3CvDllUnit@@SAXPAX@Z			; CvDllUnit::operator delete
 	pop	ecx
 	ret	0
 __unwindfunclet$?ContinueMission@CvUnitMission@@SAXV?$FObjectHandle@VCvUnit@@@@HH@Z$13:
-	lea	ecx, DWORD PTR _pDllUnit$218337[ebp]
+	lea	ecx, DWORD PTR _pDllUnit$218379[ebp]
 	jmp	??1?$auto_ptr@VICvUnit1@@@std@@QAE@XZ	; std::auto_ptr<ICvUnit1>::~auto_ptr<ICvUnit1>
 __ehhandler$?ContinueMission@CvUnitMission@@SAXV?$FObjectHandle@VCvUnit@@@@HH@Z:
 	mov	eax, OFFSET __ehfuncinfo$?ContinueMission@CvUnitMission@@SAXV?$FObjectHandle@VCvUnit@@@@HH@Z
@@ -11375,21 +11375,21 @@ _bAction$ = -22						; size = 1
 _bDelete$ = -21						; size = 1
 tv1387 = -20						; size = 4
 tv1304 = -20						; size = 4
-$T225548 = -20						; size = 4
-$T225545 = -20						; size = 4
-_pDllUnit$218739 = -20					; size = 4
-$T225541 = -20						; size = 4
-_pDllUnit$218731 = -20					; size = 4
-$T225537 = -20						; size = 4
-_pDllUnit$218647 = -20					; size = 4
-$T225535 = -20						; size = 4
-$T225532 = -20						; size = 4
-_pDllUnit$218632 = -20					; size = 4
-$T225530 = -20						; size = 4
-$T225529 = -20						; size = 4
-$T225528 = -20						; size = 4
-$T225550 = -16						; size = 4
-$T225549 = -16						; size = 4
+$T225590 = -20						; size = 4
+$T225587 = -20						; size = 4
+_pDllUnit$218781 = -20					; size = 4
+$T225583 = -20						; size = 4
+_pDllUnit$218773 = -20					; size = 4
+$T225579 = -20						; size = 4
+_pDllUnit$218689 = -20					; size = 4
+$T225577 = -20						; size = 4
+$T225574 = -20						; size = 4
+_pDllUnit$218674 = -20					; size = 4
+$T225572 = -20						; size = 4
+$T225571 = -20						; size = 4
+$T225570 = -20						; size = 4
+$T225592 = -16						; size = 4
+$T225591 = -16						; size = 4
 _kUnitOwner$ = -16					; size = 4
 __$EHRec$ = -12						; size = 12
 _hUnit$ = 8						; size = 8
@@ -11542,7 +11542,7 @@ $LN539@StartMissi:
 	mov	dl, BYTE PTR _hUnit$[esp+48]
 	mov	BYTE PTR [eax+4], dl
 	mov	eax, ecx
-	mov	DWORD PTR $T225528[esp+48], esp
+	mov	DWORD PTR $T225570[esp+48], esp
 	test	eax, eax
 	je	SHORT $LN216@StartMissi
 	call	?getDestructionNotification@CvUnit@@QAEAAU?$DestructionNotification@V?$FObjectHandle@VCvUnit@@@@@@XZ ; CvUnit::getDestructionNotification
@@ -11716,7 +11716,7 @@ $LN540@StartMissi:
 	mov	BYTE PTR [eax+4], dl
 	mov	eax, ecx
 	mov	BYTE PTR _bDelete$[esp+48], 1
-	mov	DWORD PTR $T225529[esp+48], esp
+	mov	DWORD PTR $T225571[esp+48], esp
 	test	eax, eax
 	je	SHORT $LN237@StartMissi
 	call	?getDestructionNotification@CvUnit@@QAEAAU?$DestructionNotification@V?$FObjectHandle@VCvUnit@@@@@@XZ ; CvUnit::getDestructionNotification
@@ -11990,7 +11990,7 @@ $LN118@StartMissi:
 	sub	esp, 8
 	lea	eax, DWORD PTR _hUnit$[esp+48]
 	mov	ecx, esp
-	mov	DWORD PTR $T225530[esp+52], esp
+	mov	DWORD PTR $T225572[esp+52], esp
 	push	eax
 	call	??0?$FObjectHandle@VCvUnit@@@@QAE@ABV0@@Z ; FObjectHandle<CvUnit>::FObjectHandle<CvUnit>
 	call	?CalculateMissionTimer@CvUnitMission@@SAHV?$FObjectHandle@VCvUnit@@@@H@Z ; CvUnitMission::CalculateMissionTimer
@@ -12005,7 +12005,7 @@ $LN111@StartMissi:
 	push	12					; 0000000cH
 	call	??2CvDllUnit@@SAPAXI@Z			; CvDllUnit::operator new
 	add	esp, 4
-	mov	DWORD PTR $T225532[esp+40], eax
+	mov	DWORD PTR $T225574[esp+40], eax
 	mov	BYTE PTR __$EHRec$[esp+48], 1
 	test	eax, eax
 	je	SHORT $LN156@StartMissi
@@ -12018,7 +12018,7 @@ $LN111@StartMissi:
 $LN156@StartMissi:
 	xor	esi, esi
 $LN157@StartMissi:
-	mov	DWORD PTR _pDllUnit$218632[esp+40], esi
+	mov	DWORD PTR _pDllUnit$218674[esp+40], esi
 	mov	BYTE PTR __$EHRec$[esp+48], 2
 
 ; 1420 : 						gDLL->GameplayUnitMissionEnd(pDllUnit.get());
@@ -12104,7 +12104,7 @@ $LN109@StartMissi:
 	sub	esp, 8
 	lea	edx, DWORD PTR _hUnit$[esp+48]
 	mov	ecx, esp
-	mov	DWORD PTR $T225535[esp+52], esp
+	mov	DWORD PTR $T225577[esp+52], esp
 	push	edx
 	call	??0?$FObjectHandle@VCvUnit@@@@QAE@ABV0@@Z ; FObjectHandle<CvUnit>::FObjectHandle<CvUnit>
 	call	?CalculateMissionTimer@CvUnitMission@@SAHV?$FObjectHandle@VCvUnit@@@@H@Z ; CvUnitMission::CalculateMissionTimer
@@ -12119,7 +12119,7 @@ $LN103@StartMissi:
 	push	12					; 0000000cH
 	call	??2CvDllUnit@@SAPAXI@Z			; CvDllUnit::operator new
 	add	esp, 4
-	mov	DWORD PTR $T225537[esp+40], eax
+	mov	DWORD PTR $T225579[esp+40], eax
 	mov	BYTE PTR __$EHRec$[esp+48], 3
 	test	eax, eax
 	je	SHORT $LN158@StartMissi
@@ -12132,7 +12132,7 @@ $LN103@StartMissi:
 $LN158@StartMissi:
 	xor	esi, esi
 $LN159@StartMissi:
-	mov	DWORD PTR _pDllUnit$218647[esp+40], esi
+	mov	DWORD PTR _pDllUnit$218689[esp+40], esi
 	mov	BYTE PTR __$EHRec$[esp+48], 4
 $LN544@StartMissi:
 
@@ -12896,7 +12896,7 @@ $LN34@StartMissi:
 	push	12					; 0000000cH
 	call	??2CvDllUnit@@SAPAXI@Z			; CvDllUnit::operator new
 	add	esp, 4
-	mov	DWORD PTR $T225541[esp+40], eax
+	mov	DWORD PTR $T225583[esp+40], eax
 	mov	BYTE PTR __$EHRec$[esp+48], 5
 	test	eax, eax
 	je	SHORT $LN160@StartMissi
@@ -12909,7 +12909,7 @@ $LN34@StartMissi:
 $LN160@StartMissi:
 	xor	esi, esi
 $LN161@StartMissi:
-	mov	DWORD PTR _pDllUnit$218731[esp+40], esi
+	mov	DWORD PTR _pDllUnit$218773[esp+40], esi
 
 ; 1645 : 				gDLL->GameplayUnitWork(pDllUnit.get(), (hUnit->HeadMissionQueueNode()->iData1));
 
@@ -12941,7 +12941,7 @@ $LN31@StartMissi:
 	push	12					; 0000000cH
 	call	??2CvDllUnit@@SAPAXI@Z			; CvDllUnit::operator new
 	add	esp, 4
-	mov	DWORD PTR $T225545[esp+40], eax
+	mov	DWORD PTR $T225587[esp+40], eax
 	mov	BYTE PTR __$EHRec$[esp+48], 7
 	test	eax, eax
 	je	SHORT $LN162@StartMissi
@@ -12954,7 +12954,7 @@ $LN31@StartMissi:
 $LN162@StartMissi:
 	xor	esi, esi
 $LN163@StartMissi:
-	mov	DWORD PTR _pDllUnit$218739[esp+40], esi
+	mov	DWORD PTR _pDllUnit$218781[esp+40], esi
 
 ; 1651 : 				gDLL->GameplayUnitWork(pDllUnit.get(), 0);
 
@@ -13197,7 +13197,7 @@ $LN11@StartMissi:
 	sub	esp, 8
 	lea	eax, DWORD PTR _hUnit$[esp+48]
 	mov	ecx, esp
-	mov	DWORD PTR $T225548[esp+52], esp
+	mov	DWORD PTR $T225590[esp+52], esp
 	push	eax
 	call	??0?$FObjectHandle@VCvUnit@@@@QAE@ABV0@@Z ; FObjectHandle<CvUnit>::FObjectHandle<CvUnit>
 	call	?UpdateMissionTimer@CvUnitMission@@SAXV?$FObjectHandle@VCvUnit@@@@H@Z ; CvUnitMission::UpdateMissionTimer
@@ -13270,7 +13270,7 @@ $LN3@StartMissi:
 	mov	dl, BYTE PTR _hUnit$[esp+52]
 	mov	BYTE PTR [eax+4], dl
 	mov	eax, ecx
-	mov	DWORD PTR $T225549[esp+52], esp
+	mov	DWORD PTR $T225591[esp+52], esp
 	test	eax, eax
 	je	SHORT $LN514@StartMissi
 	call	?getDestructionNotification@CvUnit@@QAEAAU?$DestructionNotification@V?$FObjectHandle@VCvUnit@@@@@@XZ ; CvUnit::getDestructionNotification
@@ -13295,7 +13295,7 @@ $LN5@StartMissi:
 	sub	esp, 8
 	lea	eax, DWORD PTR _hUnit$[esp+52]
 	mov	ecx, esp
-	mov	DWORD PTR $T225550[esp+56], esp
+	mov	DWORD PTR $T225592[esp+56], esp
 	push	eax
 	call	??0?$FObjectHandle@VCvUnit@@@@QAE@ABV0@@Z ; FObjectHandle<CvUnit>::FObjectHandle<CvUnit>
 	call	?ContinueMission@CvUnitMission@@SAXV?$FObjectHandle@VCvUnit@@@@HH@Z ; CvUnitMission::ContinueMission
@@ -13333,40 +13333,40 @@ __unwindfunclet$?StartMission@CvUnitMission@@SAXV?$FObjectHandle@VCvUnit@@@@@Z$0
 	lea	ecx, DWORD PTR _hUnit$[ebp-4]
 	jmp	??1?$FObjectHandle@VCvUnit@@@@QAE@XZ	; FObjectHandle<CvUnit>::~FObjectHandle<CvUnit>
 __unwindfunclet$?StartMission@CvUnitMission@@SAXV?$FObjectHandle@VCvUnit@@@@@Z$4:
-	mov	eax, DWORD PTR $T225532[ebp]
+	mov	eax, DWORD PTR $T225574[ebp]
 	push	eax
 	call	??3CvDllUnit@@SAXPAX@Z			; CvDllUnit::operator delete
 	pop	ecx
 	ret	0
 __unwindfunclet$?StartMission@CvUnitMission@@SAXV?$FObjectHandle@VCvUnit@@@@@Z$5:
-	lea	ecx, DWORD PTR _pDllUnit$218632[ebp]
+	lea	ecx, DWORD PTR _pDllUnit$218674[ebp]
 	jmp	??1?$auto_ptr@VICvUnit1@@@std@@QAE@XZ	; std::auto_ptr<ICvUnit1>::~auto_ptr<ICvUnit1>
 __unwindfunclet$?StartMission@CvUnitMission@@SAXV?$FObjectHandle@VCvUnit@@@@@Z$7:
-	mov	eax, DWORD PTR $T225537[ebp]
+	mov	eax, DWORD PTR $T225579[ebp]
 	push	eax
 	call	??3CvDllUnit@@SAXPAX@Z			; CvDllUnit::operator delete
 	pop	ecx
 	ret	0
 __unwindfunclet$?StartMission@CvUnitMission@@SAXV?$FObjectHandle@VCvUnit@@@@@Z$8:
-	lea	ecx, DWORD PTR _pDllUnit$218647[ebp]
+	lea	ecx, DWORD PTR _pDllUnit$218689[ebp]
 	jmp	??1?$auto_ptr@VICvUnit1@@@std@@QAE@XZ	; std::auto_ptr<ICvUnit1>::~auto_ptr<ICvUnit1>
 __unwindfunclet$?StartMission@CvUnitMission@@SAXV?$FObjectHandle@VCvUnit@@@@@Z$9:
-	mov	eax, DWORD PTR $T225541[ebp]
+	mov	eax, DWORD PTR $T225583[ebp]
 	push	eax
 	call	??3CvDllUnit@@SAXPAX@Z			; CvDllUnit::operator delete
 	pop	ecx
 	ret	0
 __unwindfunclet$?StartMission@CvUnitMission@@SAXV?$FObjectHandle@VCvUnit@@@@@Z$10:
-	lea	ecx, DWORD PTR _pDllUnit$218731[ebp]
+	lea	ecx, DWORD PTR _pDllUnit$218773[ebp]
 	jmp	??1?$auto_ptr@VICvUnit1@@@std@@QAE@XZ	; std::auto_ptr<ICvUnit1>::~auto_ptr<ICvUnit1>
 __unwindfunclet$?StartMission@CvUnitMission@@SAXV?$FObjectHandle@VCvUnit@@@@@Z$11:
-	mov	eax, DWORD PTR $T225545[ebp]
+	mov	eax, DWORD PTR $T225587[ebp]
 	push	eax
 	call	??3CvDllUnit@@SAXPAX@Z			; CvDllUnit::operator delete
 	pop	ecx
 	ret	0
 __unwindfunclet$?StartMission@CvUnitMission@@SAXV?$FObjectHandle@VCvUnit@@@@@Z$12:
-	lea	ecx, DWORD PTR _pDllUnit$218739[ebp]
+	lea	ecx, DWORD PTR _pDllUnit$218781[ebp]
 	jmp	??1?$auto_ptr@VICvUnit1@@@std@@QAE@XZ	; std::auto_ptr<ICvUnit1>::~auto_ptr<ICvUnit1>
 __ehhandler$?StartMission@CvUnitMission@@SAXV?$FObjectHandle@VCvUnit@@@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?StartMission@CvUnitMission@@SAXV?$FObjectHandle@VCvUnit@@@@@Z
@@ -13390,7 +13390,7 @@ __ehfuncinfo$?ActivateHeadMission@CvUnitMission@@CAXV?$FObjectHandle@VCvUnit@@@@
 xdata$x	ENDS
 ;	COMDAT ?ActivateHeadMission@CvUnitMission@@CAXV?$FObjectHandle@VCvUnit@@@@@Z
 _TEXT	SEGMENT
-$T226338 = -16						; size = 4
+$T226380 = -16						; size = 4
 __$EHRec$ = -12						; size = 12
 _hUnit$ = 8						; size = 8
 ?ActivateHeadMission@CvUnitMission@@CAXV?$FObjectHandle@VCvUnit@@@@@Z PROC ; CvUnitMission::ActivateHeadMission, COMDAT
@@ -13432,7 +13432,7 @@ _hUnit$ = 8						; size = 8
 	mov	dl, BYTE PTR _hUnit$[esp+24]
 	mov	BYTE PTR [eax+4], dl
 	mov	eax, ecx
-	mov	DWORD PTR $T226338[esp+24], esp
+	mov	DWORD PTR $T226380[esp+24], esp
 	test	eax, eax
 	je	SHORT $LN14@ActivateHe
 	call	?getDestructionNotification@CvUnit@@QAEAAU?$DestructionNotification@V?$FObjectHandle@VCvUnit@@@@@@XZ ; CvUnit::getDestructionNotification
@@ -13491,8 +13491,8 @@ __ehfuncinfo$?AutoMission@CvUnitMission@@SAXV?$FObjectHandle@VCvUnit@@@@@Z DD 01
 xdata$x	ENDS
 ;	COMDAT ?AutoMission@CvUnitMission@@SAXV?$FObjectHandle@VCvUnit@@@@@Z
 _TEXT	SEGMENT
-$T226378 = -16						; size = 4
-$T226377 = -16						; size = 4
+$T226420 = -16						; size = 4
+$T226419 = -16						; size = 4
 __$EHRec$ = -12						; size = 12
 _hUnit$ = 8						; size = 8
 ?AutoMission@CvUnitMission@@SAXV?$FObjectHandle@VCvUnit@@@@@Z PROC ; CvUnitMission::AutoMission, COMDAT
@@ -13617,7 +13617,7 @@ $LN4@AutoMissio:
 	sub	esp, 8
 	lea	eax, DWORD PTR _hUnit$[esp+32]
 	mov	ecx, esp
-	mov	DWORD PTR $T226377[esp+36], esp
+	mov	DWORD PTR $T226419[esp+36], esp
 	push	eax
 	call	??0?$FObjectHandle@VCvUnit@@@@QAE@ABV0@@Z ; FObjectHandle<CvUnit>::FObjectHandle<CvUnit>
 	call	?ContinueMission@CvUnitMission@@SAXV?$FObjectHandle@VCvUnit@@@@HH@Z ; CvUnitMission::ContinueMission
@@ -13635,7 +13635,7 @@ $LN2@AutoMissio:
 	sub	esp, 8
 	lea	edx, DWORD PTR _hUnit$[esp+24]
 	mov	ecx, esp
-	mov	DWORD PTR $T226378[esp+28], esp
+	mov	DWORD PTR $T226420[esp+28], esp
 	push	edx
 	call	??0?$FObjectHandle@VCvUnit@@@@QAE@ABV0@@Z ; FObjectHandle<CvUnit>::FObjectHandle<CvUnit>
 	call	?StartMission@CvUnitMission@@SAXV?$FObjectHandle@VCvUnit@@@@@Z ; CvUnitMission::StartMission
@@ -13682,7 +13682,7 @@ PUBLIC	?UpdateMission@CvUnitMission@@SAXAAV?$FObjectHandle@VCvUnit@@@@@Z ; CvUni
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?UpdateMission@CvUnitMission@@SAXAAV?$FObjectHandle@VCvUnit@@@@@Z
 _TEXT	SEGMENT
-$T226513 = 8						; size = 4
+$T226555 = 8						; size = 4
 _hUnit$ = 8						; size = 4
 ?UpdateMission@CvUnitMission@@SAXAAV?$FObjectHandle@VCvUnit@@@@@Z PROC ; CvUnitMission::UpdateMission, COMDAT
 
@@ -13735,7 +13735,7 @@ _hUnit$ = 8						; size = 4
 	mov	dl, BYTE PTR [esi+4]
 	mov	BYTE PTR [eax+4], dl
 	mov	eax, ecx
-	mov	DWORD PTR $T226513[esp+16], esp
+	mov	DWORD PTR $T226555[esp+16], esp
 	test	eax, eax
 	je	SHORT $LN20@UpdateMiss@2
 	call	?getDestructionNotification@CvUnit@@QAEAAU?$DestructionNotification@V?$FObjectHandle@VCvUnit@@@@@@XZ ; CvUnit::getDestructionNotification
@@ -13807,7 +13807,7 @@ __ehfuncinfo$?InsertAtEndMissionQueue@CvUnitMission@@CAXV?$FObjectHandle@VCvUnit
 xdata$x	ENDS
 ;	COMDAT ?InsertAtEndMissionQueue@CvUnitMission@@CAXV?$FObjectHandle@VCvUnit@@@@UMissionData@@_N@Z
 _TEXT	SEGMENT
-$T226565 = -16						; size = 4
+$T226607 = -16						; size = 4
 __$EHRec$ = -12						; size = 12
 _hUnit$ = 8						; size = 8
 _mission$ = 16						; size = 20
@@ -13860,7 +13860,7 @@ _bStart$ = 36						; size = 1
 	mov	dl, BYTE PTR _hUnit$[esp+28]
 	mov	BYTE PTR [eax+4], dl
 	mov	eax, ecx
-	mov	DWORD PTR $T226565[esp+28], esp
+	mov	DWORD PTR $T226607[esp+28], esp
 	test	eax, eax
 	je	SHORT $LN20@InsertAtEn
 	call	?getDestructionNotification@CvUnit@@QAEAAU?$DestructionNotification@V?$FObjectHandle@VCvUnit@@@@@@XZ ; CvUnit::getDestructionNotification
@@ -13967,19 +13967,19 @@ __ehfuncinfo$?PushMission@CvUnitMission@@SAXV?$FObjectHandle@VCvUnit@@@@W4Missio
 xdata$x	ENDS
 ;	COMDAT ?PushMission@CvUnitMission@@SAXV?$FObjectHandle@VCvUnit@@@@W4MissionTypes@@HHH_N2W4MissionAITypes@@PAVCvPlot@@PAVCvUnit@@@Z
 _TEXT	SEGMENT
-$T226655 = -64						; size = 4
-$T226654 = -64						; size = 4
-$T226652 = -64						; size = 4
-_removeMission$217972 = -60				; size = 20
-$T226651 = -40						; size = 28
+$T226697 = -64						; size = 4
+$T226696 = -64						; size = 4
+$T226694 = -64						; size = 4
+_removeMission$218014 = -60				; size = 20
+$T226693 = -40						; size = 28
 __$EHRec$ = -12						; size = 12
 _hUnit$ = 8						; size = 8
 _eMission$ = 16						; size = 4
 _iData1$ = 20						; size = 4
 _iData2$ = 24						; size = 4
 _iFlags$ = 28						; size = 4
-$T226656 = 32						; size = 4
-_pkBuildInfo$217965 = 32				; size = 4
+$T226698 = 32						; size = 4
+_pkBuildInfo$218007 = 32				; size = 4
 _bAppend$ = 32						; size = 1
 _bManual$ = 36						; size = 1
 _eMissionAI$ = 40					; size = 4
@@ -14021,17 +14021,17 @@ _pMissionAIUnit$ = 48					; size = 4
 
 ; 87   : 			gDLL->netMessageDebugLog("*** PROTOCOL ERROR *** : PushMission invoked for a human controlled player outside of a network message!");
 
-	push	OFFSET $SG217957
-	lea	ecx, DWORD PTR $T226651[esp+84]
+	push	OFFSET $SG217999
+	lea	ecx, DWORD PTR $T226693[esp+84]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8564
 	mov	edx, DWORD PTR [ecx]
 	mov	edx, DWORD PTR [edx+76]
-	lea	eax, DWORD PTR $T226651[esp+80]
+	lea	eax, DWORD PTR $T226693[esp+80]
 	push	eax
 	mov	BYTE PTR __$EHRec$[esp+92], 1
 	call	edx
-	lea	ecx, DWORD PTR $T226651[esp+80]
+	lea	ecx, DWORD PTR $T226693[esp+80]
 	mov	BYTE PTR __$EHRec$[esp+88], 0
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 $LN30@PushMissio:
@@ -14095,7 +14095,7 @@ $LN28@PushMissio:
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getBuildInfo@CvGlobals@@QAEPAVCvBuildInfo@@W4BuildTypes@@@Z ; CvGlobals::getBuildInfo
 	mov	edi, eax
-	mov	DWORD PTR _pkBuildInfo$217965[esp+76], edi
+	mov	DWORD PTR _pkBuildInfo$218007[esp+76], edi
 
 ; 111  : 			if(pkBuildInfo)
 
@@ -14174,10 +14174,10 @@ $LN23@PushMissio:
 ; 127  : 						MissionData removeMission;
 
 	xor	eax, eax
-	mov	DWORD PTR _removeMission$217972[esp+84], eax
-	mov	DWORD PTR _removeMission$217972[esp+88], eax
-	mov	DWORD PTR _removeMission$217972[esp+92], eax
-	mov	DWORD PTR _removeMission$217972[esp+96], eax
+	mov	DWORD PTR _removeMission$218014[esp+84], eax
+	mov	DWORD PTR _removeMission$218014[esp+88], eax
+	mov	DWORD PTR _removeMission$218014[esp+92], eax
+	mov	DWORD PTR _removeMission$218014[esp+96], eax
 
 ; 128  : 						removeMission.eMissionType = eMission;
 ; 129  : 						if(iData1 != 15 && strcmp(feature->GetType(), "FEATURE_FOREST") == 0)
@@ -14185,7 +14185,7 @@ $LN23@PushMissio:
 	cmp	ebp, 15					; 0000000fH
 	je	$LN21@PushMissio
 	lea	ecx, DWORD PTR [edi+176]
-	mov	esi, OFFSET $SG217974
+	mov	esi, OFFSET $SG218016
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	npad	5
 $LL149@PushMissio:
@@ -14252,7 +14252,7 @@ $LN152@PushMissio:
 	mov	DWORD PTR [eax+16], edi
 	lea	eax, DWORD PTR _hUnit$[esp+108]
 	mov	ecx, esp
-	mov	DWORD PTR $T226652[esp+112], esp
+	mov	DWORD PTR $T226694[esp+112], esp
 	push	eax
 
 ; 137  : 							bAppend = true;
@@ -14266,7 +14266,7 @@ $LN21@PushMissio:
 	cmp	ebp, 14					; 0000000eH
 	je	SHORT $LN19@PushMissio
 	lea	ecx, DWORD PTR [edi+176]
-	mov	esi, OFFSET $SG217978
+	mov	esi, OFFSET $SG218020
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 $LL153@PushMissio:
 	mov	cl, BYTE PTR [eax]
@@ -14312,7 +14312,7 @@ $LN19@PushMissio:
 	cmp	ebp, 16					; 00000010H
 	je	$LN17@PushMissio
 	lea	ecx, DWORD PTR [edi+176]
-	mov	esi, OFFSET $SG217982
+	mov	esi, OFFSET $SG218024
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 $LL157@PushMissio:
 	mov	cl, BYTE PTR [eax]
@@ -14378,7 +14378,7 @@ $LN160@PushMissio:
 	mov	DWORD PTR [eax+16], edi
 	lea	eax, DWORD PTR _hUnit$[esp+108]
 	mov	ecx, esp
-	mov	DWORD PTR $T226654[esp+112], esp
+	mov	DWORD PTR $T226696[esp+112], esp
 	push	eax
 
 ; 157  : 							bAppend = true;
@@ -14392,7 +14392,7 @@ $LN17@PushMissio:
 	cmp	ebp, 17					; 00000011H
 	je	$LN15@PushMissio
 	lea	ecx, DWORD PTR [edi+176]
-	mov	esi, OFFSET $SG217986
+	mov	esi, OFFSET $SG218028
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	npad	7
 $LL161@PushMissio:
@@ -14461,7 +14461,7 @@ $LN176@PushMissio:
 	mov	DWORD PTR [eax+12], ecx
 	lea	edx, DWORD PTR _hUnit$[esp+108]
 	mov	ecx, esp
-	mov	DWORD PTR $T226655[esp+112], esp
+	mov	DWORD PTR $T226697[esp+112], esp
 	push	edx
 	mov	DWORD PTR [eax+16], edi
 $LN174@PushMissio:
@@ -14484,7 +14484,7 @@ $LN15@PushMissio:
 ; 175  : 
 ; 176  : 				if(pkBuildInfo->getImprovement() != NO_IMPROVEMENT)
 
-	mov	esi, DWORD PTR _pkBuildInfo$217965[esp+76]
+	mov	esi, DWORD PTR _pkBuildInfo$218007[esp+76]
 	or	ebp, -1
 	mov	ecx, esi
 	or	edi, ebp
@@ -14682,7 +14682,7 @@ $LN10@PushMissio:
 	mov	dl, BYTE PTR _hUnit$[esp+112]
 	mov	BYTE PTR [eax+4], dl
 	mov	eax, ecx
-	mov	DWORD PTR $T226656[esp+108], esp
+	mov	DWORD PTR $T226698[esp+108], esp
 	test	eax, eax
 	je	SHORT $LN122@PushMissio
 	call	?getDestructionNotification@CvUnit@@QAEAAU?$DestructionNotification@V?$FObjectHandle@VCvUnit@@@@@@XZ ; CvUnit::getDestructionNotification
@@ -14781,7 +14781,7 @@ __unwindfunclet$?PushMission@CvUnitMission@@SAXV?$FObjectHandle@VCvUnit@@@@W4Mis
 	lea	ecx, DWORD PTR _hUnit$[ebp-4]
 	jmp	??1?$FObjectHandle@VCvUnit@@@@QAE@XZ	; FObjectHandle<CvUnit>::~FObjectHandle<CvUnit>
 __unwindfunclet$?PushMission@CvUnitMission@@SAXV?$FObjectHandle@VCvUnit@@@@W4MissionTypes@@HHH_N2W4MissionAITypes@@PAVCvPlot@@PAVCvUnit@@@Z$1:
-	lea	ecx, DWORD PTR $T226651[ebp]
+	lea	ecx, DWORD PTR $T226693[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __ehhandler$?PushMission@CvUnitMission@@SAXV?$FObjectHandle@VCvUnit@@@@W4MissionTypes@@HHH_N2W4MissionAITypes@@PAVCvPlot@@PAVCvUnit@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?PushMission@CvUnitMission@@SAXV?$FObjectHandle@VCvUnit@@@@W4MissionTypes@@HHH_N2W4MissionAITypes@@PAVCvPlot@@PAVCvUnit@@@Z

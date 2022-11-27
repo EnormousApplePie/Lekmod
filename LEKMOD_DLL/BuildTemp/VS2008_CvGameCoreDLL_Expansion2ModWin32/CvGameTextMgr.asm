@@ -10,60 +10,60 @@ INCLUDELIB MSVCRT
 INCLUDELIB OLDNAMES
 
 CONST	SEGMENT
-$SG217593 DB	'%04d', 00H
+$SG217635 DB	'%04d', 00H
 	ORG $+3
-$SG217594 DB	'%04d', 00H
+$SG217636 DB	'%04d', 00H
 	ORG $+3
-$SG217595 DB	'TXT_KEY_TIME_BC_SAVE', 00H
+$SG217637 DB	'TXT_KEY_TIME_BC_SAVE', 00H
 	ORG $+3
-$SG217603 DB	'TXT_KEY_TIME_BC', 00H
-$SG217612 DB	'%04d', 00H
+$SG217645 DB	'TXT_KEY_TIME_BC', 00H
+$SG217654 DB	'%04d', 00H
 	ORG $+3
-$SG217613 DB	'%04d', 00H
+$SG217655 DB	'%04d', 00H
 	ORG $+3
-$SG217614 DB	'TXT_KEY_TIME_AD_SAVE', 00H
+$SG217656 DB	'TXT_KEY_TIME_AD_SAVE', 00H
 	ORG $+3
-$SG217617 DB	'TXT_KEY_TIME_AD', 00H
-$SG217630 DB	'%04d', 00H
+$SG217659 DB	'TXT_KEY_TIME_AD', 00H
+$SG217672 DB	'%04d', 00H
 	ORG $+3
-$SG217631 DB	'0001', 00H
+$SG217673 DB	'0001', 00H
 	ORG $+3
-$SG217632 DB	'TXT_KEY_TIME_AD_SAVE', 00H
+$SG217674 DB	'TXT_KEY_TIME_AD_SAVE', 00H
 	ORG $+3
-$SG217635 DB	'TXT_KEY_TIME_AD', 00H
-$SG217648 DB	'Months', 00H
+$SG217677 DB	'TXT_KEY_TIME_AD', 00H
+$SG217690 DB	'Months', 00H
 	ORG $+1
-$SG217650 DB	'Seasons', 00H
-$SG217662 DB	'Months', 00H
+$SG217692 DB	'Seasons', 00H
+$SG217704 DB	'Months', 00H
 	ORG $+1
-$SG217669 DB	'-', 00H
+$SG217711 DB	'-', 00H
 	ORG $+2
-$SG217674 DB	', ', 00H
+$SG217716 DB	', ', 00H
 	ORG $+1
-$SG217678 DB	'TXT_KEY_TIME_TURN', 00H
+$SG217720 DB	'TXT_KEY_TIME_TURN', 00H
 	ORG $+2
-$SG217682 DB	'Seasons', 00H
-$SG217688 DB	'-', 00H
+$SG217724 DB	'Seasons', 00H
+$SG217730 DB	'-', 00H
 	ORG $+2
-$SG217694 DB	', ', 00H
+$SG217736 DB	', ', 00H
 	ORG $+1
-$SG217698 DB	'Months', 00H
+$SG217740 DB	'Months', 00H
 	ORG $+1
-$SG217704 DB	'-', 00H
+$SG217746 DB	'-', 00H
 	ORG $+2
-$SG217710 DB	', ', 00H
+$SG217752 DB	', ', 00H
 	ORG $+1
-$SG217713 DB	'TXT_KEY_TIME_WEEK', 00H
+$SG217755 DB	'TXT_KEY_TIME_WEEK', 00H
 	ORG $+2
-$SG217717 DB	'Months', 00H
+$SG217759 DB	'Months', 00H
 	ORG $+1
-$SG217725 DB	'-', 00H
+$SG217767 DB	'-', 00H
 	ORG $+2
-$SG217726 DB	'-', 00H
+$SG217768 DB	'-', 00H
 	ORG $+2
-$SG217733 DB	', ', 00H
+$SG217775 DB	', ', 00H
 	ORG $+1
-$SG217734 DB	', ', 00H
+$SG217776 DB	', ', 00H
 CONST	ENDS
 PUBLIC	??1SingleResult@Database@@UAE@XZ		; Database::SingleResult::~SingleResult
 EXTRN	__imp_??1Results@Database@@UAE@XZ:PROC
@@ -450,7 +450,7 @@ __ehfuncinfo$?format@CvString@@SA?AV1@PBDZZ DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?format@CvString@@SA?AV1@PBDZZ
 _TEXT	SEGMENT
-$T218012 = -44						; size = 4
+$T218054 = -44						; size = 4
 _result$ = -40						; size = 28
 __$EHRec$ = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
@@ -470,7 +470,7 @@ _fmt$ = 12						; size = 4
 ; 244  : 	std::string result;
 
 	lea	ecx, DWORD PTR _result$[esp+48]
-	mov	DWORD PTR $T218012[esp+48], 0
+	mov	DWORD PTR $T218054[esp+48], 0
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
 ; 245  : 	va_list args;
@@ -496,7 +496,7 @@ _fmt$ = 12						; size = 4
 	mov	ecx, esi
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	lea	ecx, DWORD PTR _result$[esp+48]
-	mov	DWORD PTR $T218012[esp+48], 1
+	mov	DWORD PTR $T218054[esp+48], 1
 	mov	BYTE PTR __$EHRec$[esp+56], 0
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -515,10 +515,10 @@ __unwindfunclet$?format@CvString@@SA?AV1@PBDZZ$0:
 	lea	ecx, DWORD PTR _result$[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?format@CvString@@SA?AV1@PBDZZ$1:
-	mov	eax, DWORD PTR $T218012[ebp]
+	mov	eax, DWORD PTR $T218054[ebp]
 	and	eax, 1
 	je	$LN5@format
-	and	DWORD PTR $T218012[ebp], -2		; fffffffeH
+	and	DWORD PTR $T218054[ebp], -2		; fffffffeH
 	mov	ecx, DWORD PTR ___$ReturnUdt$[ebp-4]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 $LN5@format:
@@ -766,7 +766,7 @@ xdata$x	ENDS
 ;	COMDAT ??$GetLocalizedText@PBDPBD@@YA?AVCvString@@PBDABQBD1@Z
 _TEXT	SEGMENT
 _bytes$ = -100						; size = 4
-$T218115 = -96						; size = 4
+$T218157 = -96						; size = 4
 _text$ = -92						; size = 80
 __$EHRec$ = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
@@ -795,7 +795,7 @@ _arg2$ = 20						; size = 4
 	xor	ebx, ebx
 	push	ecx
 	mov	DWORD PTR __$EHRec$[esp+128], ebx
-	mov	DWORD PTR $T218115[esp+120], ebx
+	mov	DWORD PTR $T218157[esp+120], ebx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
 
@@ -839,7 +839,7 @@ _arg2$ = 20						; size = 4
 	push	ecx
 	push	edi
 	mov	ecx, esi
-	mov	DWORD PTR $T218115[esp+120], 1
+	mov	DWORD PTR $T218157[esp+120], 1
 	call	DWORD PTR __imp_?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBDI@Z
 	lea	ecx, DWORD PTR _text$[esp+112]
 	mov	BYTE PTR __$EHRec$[esp+120], bl
@@ -862,10 +862,10 @@ __unwindfunclet$??$GetLocalizedText@PBDPBD@@YA?AVCvString@@PBDABQBD1@Z$0:
 	lea	ecx, DWORD PTR _text$[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$??$GetLocalizedText@PBDPBD@@YA?AVCvString@@PBDABQBD1@Z$1:
-	mov	eax, DWORD PTR $T218115[ebp]
+	mov	eax, DWORD PTR $T218157[ebp]
 	and	eax, 1
 	je	$LN5@GetLocaliz
-	and	DWORD PTR $T218115[ebp], -2		; fffffffeH
+	and	DWORD PTR $T218157[ebp], -2		; fffffffeH
 	mov	ecx, DWORD PTR ___$ReturnUdt$[ebp-4]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 $LN5@GetLocaliz:
@@ -896,7 +896,7 @@ xdata$x	ENDS
 ;	COMDAT ??$GetLocalizedText@H@@YA?AVCvString@@PBDH@Z
 _TEXT	SEGMENT
 _bytes$ = -100						; size = 4
-$T218138 = -96						; size = 4
+$T218180 = -96						; size = 4
 _text$ = -92						; size = 80
 __$EHRec$ = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
@@ -924,7 +924,7 @@ _arg1$ = 16						; size = 4
 	xor	ebx, ebx
 	push	ecx
 	mov	DWORD PTR __$EHRec$[esp+128], ebx
-	mov	DWORD PTR $T218138[esp+120], ebx
+	mov	DWORD PTR $T218180[esp+120], ebx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
 
@@ -961,7 +961,7 @@ _arg1$ = 16						; size = 4
 	push	ecx
 	push	edi
 	mov	ecx, esi
-	mov	DWORD PTR $T218138[esp+120], 1
+	mov	DWORD PTR $T218180[esp+120], 1
 	call	DWORD PTR __imp_?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBDI@Z
 	lea	ecx, DWORD PTR _text$[esp+112]
 	mov	BYTE PTR __$EHRec$[esp+120], bl
@@ -984,10 +984,10 @@ __unwindfunclet$??$GetLocalizedText@H@@YA?AVCvString@@PBDH@Z$0:
 	lea	ecx, DWORD PTR _text$[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$??$GetLocalizedText@H@@YA?AVCvString@@PBDH@Z$1:
-	mov	eax, DWORD PTR $T218138[ebp]
+	mov	eax, DWORD PTR $T218180[ebp]
 	and	eax, 1
 	je	$LN5@GetLocaliz@2
-	and	DWORD PTR $T218138[ebp], -2		; fffffffeH
+	and	DWORD PTR $T218180[ebp], -2		; fffffffeH
 	mov	ecx, DWORD PTR ___$ReturnUdt$[ebp-4]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 $LN5@GetLocaliz@2:
@@ -1018,7 +1018,7 @@ xdata$x	ENDS
 ;	COMDAT ??$GetLocalizedText@$$BY04$$CBDPBD@@YA?AVCvString@@PBDAAY04$$CBDABQBD@Z
 _TEXT	SEGMENT
 _bytes$ = -100						; size = 4
-$T218158 = -96						; size = 4
+$T218200 = -96						; size = 4
 _text$ = -92						; size = 80
 __$EHRec$ = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
@@ -1047,7 +1047,7 @@ _arg2$ = 20						; size = 4
 	xor	ebx, ebx
 	push	ecx
 	mov	DWORD PTR __$EHRec$[esp+128], ebx
-	mov	DWORD PTR $T218158[esp+120], ebx
+	mov	DWORD PTR $T218200[esp+120], ebx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
 
@@ -1090,7 +1090,7 @@ _arg2$ = 20						; size = 4
 	push	eax
 	push	edi
 	mov	ecx, esi
-	mov	DWORD PTR $T218158[esp+120], 1
+	mov	DWORD PTR $T218200[esp+120], 1
 	call	DWORD PTR __imp_?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBDI@Z
 	lea	ecx, DWORD PTR _text$[esp+112]
 	mov	BYTE PTR __$EHRec$[esp+120], bl
@@ -1113,10 +1113,10 @@ __unwindfunclet$??$GetLocalizedText@$$BY04$$CBDPBD@@YA?AVCvString@@PBDAAY04$$CBD
 	lea	ecx, DWORD PTR _text$[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$??$GetLocalizedText@$$BY04$$CBDPBD@@YA?AVCvString@@PBDAAY04$$CBDABQBD@Z$1:
-	mov	eax, DWORD PTR $T218158[ebp]
+	mov	eax, DWORD PTR $T218200[ebp]
 	and	eax, 1
 	je	$LN5@GetLocaliz@3
-	and	DWORD PTR $T218158[ebp], -2		; fffffffeH
+	and	DWORD PTR $T218200[ebp], -2		; fffffffeH
 	mov	ecx, DWORD PTR ___$ReturnUdt$[ebp-4]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 $LN5@GetLocaliz@3:
@@ -1165,22 +1165,22 @@ __unwindtable$?setYearStr@CvGameTextMgr@@SAXAAVCvString@@H_NW4CalendarTypes@@HW4
 xdata$x	ENDS
 ;	COMDAT ?setYearStr@CvGameTextMgr@@SAXAAVCvString@@H_NW4CalendarTypes@@HW4GameSpeedTypes@@@Z
 _TEXT	SEGMENT
-$T218187 = -132						; size = 4
-$T218179 = -132						; size = 4
-$T218191 = -128						; size = 4
-$T218185 = -128						; size = 4
-$T218181 = -128						; size = 4
-$T218186 = -124						; size = 28
-$T218183 = -124						; size = 28
-$T218192 = -96						; size = 28
-$T218188 = -96						; size = 28
-$T218182 = -96						; size = 28
-$T218193 = -68						; size = 28
-$T218190 = -68						; size = 28
-$T218189 = -68						; size = 28
-$T218184 = -68						; size = 28
-$T218180 = -68						; size = 28
-$T218194 = -40						; size = 28
+$T218229 = -132						; size = 4
+$T218221 = -132						; size = 4
+$T218233 = -128						; size = 4
+$T218227 = -128						; size = 4
+$T218223 = -128						; size = 4
+$T218228 = -124						; size = 28
+$T218225 = -124						; size = 28
+$T218234 = -96						; size = 28
+$T218230 = -96						; size = 28
+$T218224 = -96						; size = 28
+$T218235 = -68						; size = 28
+$T218232 = -68						; size = 28
+$T218231 = -68						; size = 28
+$T218226 = -68						; size = 28
+$T218222 = -68						; size = 28
+$T218236 = -40						; size = 28
 __$EHRec$ = -12						; size = 12
 _strString$ = 8						; size = 4
 _iGameTurn$ = 12					; size = 4
@@ -1232,8 +1232,8 @@ _eSpeed$ = 28						; size = 4
 ; 29   : 			strString = GetLocalizedText("TXT_KEY_TIME_BC_SAVE", CvString::format("%04d", -iTurnYear).GetCString(), CvString::format("%04d", iGameTurn).GetCString());
 
 	push	edi
-	lea	eax, DWORD PTR $T218180[esp+148]
-	push	OFFSET $SG217593
+	lea	eax, DWORD PTR $T218222[esp+148]
+	push	OFFSET $SG217635
 	push	eax
 	call	?format@CvString@@SA?AV1@PBDZZ		; CvString::format
 	add	esp, 12					; 0000000cH
@@ -1242,23 +1242,23 @@ _eSpeed$ = 28						; size = 4
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	neg	esi
 	push	esi
-	lea	ecx, DWORD PTR $T218182[esp+148]
-	push	OFFSET $SG217594
+	lea	ecx, DWORD PTR $T218224[esp+148]
+	push	OFFSET $SG217636
 	push	ecx
-	mov	DWORD PTR $T218179[esp+156], eax
+	mov	DWORD PTR $T218221[esp+156], eax
 	call	?format@CvString@@SA?AV1@PBDZZ		; CvString::format
 	add	esp, 12					; 0000000cH
 	mov	bl, 1
 	mov	ecx, eax
 	mov	BYTE PTR __$EHRec$[esp+152], bl
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
-	lea	edx, DWORD PTR $T218179[esp+144]
+	lea	edx, DWORD PTR $T218221[esp+144]
 	push	edx
-	mov	DWORD PTR $T218181[esp+148], eax
-	lea	eax, DWORD PTR $T218181[esp+148]
+	mov	DWORD PTR $T218223[esp+148], eax
+	lea	eax, DWORD PTR $T218223[esp+148]
 	push	eax
-	lea	ecx, DWORD PTR $T218183[esp+152]
-	push	OFFSET $SG217595
+	lea	ecx, DWORD PTR $T218225[esp+152]
+	push	OFFSET $SG217637
 	push	ecx
 	call	??$GetLocalizedText@PBDPBD@@YA?AVCvString@@PBDABQBD1@Z ; GetLocalizedText<char const *,char const *>
 	add	esp, 16					; 00000010H
@@ -1266,13 +1266,13 @@ _eSpeed$ = 28						; size = 4
 	push	eax
 	mov	BYTE PTR __$EHRec$[esp+156], 2
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T218183[esp+144]
+	lea	ecx, DWORD PTR $T218225[esp+144]
 	mov	BYTE PTR __$EHRec$[esp+152], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T218182[esp+144]
+	lea	ecx, DWORD PTR $T218224[esp+144]
 	mov	BYTE PTR __$EHRec$[esp+152], 0
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T218180[esp+144]
+	lea	ecx, DWORD PTR $T218222[esp+144]
 
 ; 30   : 		}
 ; 31   : 		else
@@ -1285,8 +1285,8 @@ $LN9@setYearStr:
 
 	neg	esi
 	push	esi
-	lea	edx, DWORD PTR $T218184[esp+148]
-	push	OFFSET $SG217603
+	lea	edx, DWORD PTR $T218226[esp+148]
+	push	OFFSET $SG217645
 	push	edx
 	call	??$GetLocalizedText@H@@YA?AVCvString@@PBDH@Z ; GetLocalizedText<int>
 	add	esp, 12					; 0000000cH
@@ -1294,7 +1294,7 @@ $LN9@setYearStr:
 	push	eax
 	mov	DWORD PTR __$EHRec$[esp+156], 3
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T218184[esp+144]
+	lea	ecx, DWORD PTR $T218226[esp+144]
 
 ; 34   : 		}
 
@@ -1316,8 +1316,8 @@ $LN80@setYearStr:
 ; 40   : 			strString = GetLocalizedText("TXT_KEY_TIME_AD_SAVE", CvString::format("%04d", iTurnYear).GetCString(), CvString::format("%04d", iGameTurn).GetCString());
 
 	push	edi
-	lea	eax, DWORD PTR $T218186[esp+148]
-	push	OFFSET $SG217612
+	lea	eax, DWORD PTR $T218228[esp+148]
+	push	OFFSET $SG217654
 	push	eax
 	call	?format@CvString@@SA?AV1@PBDZZ		; CvString::format
 	add	esp, 12					; 0000000cH
@@ -1325,23 +1325,23 @@ $LN80@setYearStr:
 	mov	DWORD PTR __$EHRec$[esp+152], 4
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	esi
-	lea	ecx, DWORD PTR $T218188[esp+148]
-	push	OFFSET $SG217613
+	lea	ecx, DWORD PTR $T218230[esp+148]
+	push	OFFSET $SG217655
 	push	ecx
-	mov	DWORD PTR $T218185[esp+156], eax
+	mov	DWORD PTR $T218227[esp+156], eax
 	call	?format@CvString@@SA?AV1@PBDZZ		; CvString::format
 	add	esp, 12					; 0000000cH
 	mov	bl, 5
 	mov	ecx, eax
 	mov	BYTE PTR __$EHRec$[esp+152], bl
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
-	lea	edx, DWORD PTR $T218185[esp+144]
+	lea	edx, DWORD PTR $T218227[esp+144]
 	push	edx
-	mov	DWORD PTR $T218187[esp+148], eax
-	lea	eax, DWORD PTR $T218187[esp+148]
+	mov	DWORD PTR $T218229[esp+148], eax
+	lea	eax, DWORD PTR $T218229[esp+148]
 	push	eax
-	lea	ecx, DWORD PTR $T218189[esp+152]
-	push	OFFSET $SG217614
+	lea	ecx, DWORD PTR $T218231[esp+152]
+	push	OFFSET $SG217656
 	push	ecx
 	call	??$GetLocalizedText@PBDPBD@@YA?AVCvString@@PBDABQBD1@Z ; GetLocalizedText<char const *,char const *>
 	add	esp, 16					; 00000010H
@@ -1349,13 +1349,13 @@ $LN80@setYearStr:
 	push	eax
 	mov	BYTE PTR __$EHRec$[esp+156], 6
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T218189[esp+144]
+	lea	ecx, DWORD PTR $T218231[esp+144]
 	mov	BYTE PTR __$EHRec$[esp+152], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T218188[esp+144]
+	lea	ecx, DWORD PTR $T218230[esp+144]
 	mov	BYTE PTR __$EHRec$[esp+152], 4
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T218186[esp+144]
+	lea	ecx, DWORD PTR $T218228[esp+144]
 
 ; 41   : 		}
 ; 42   : 		else
@@ -1367,8 +1367,8 @@ $LN5@setYearStr:
 ; 44   : 			strString = GetLocalizedText("TXT_KEY_TIME_AD", iTurnYear);
 
 	push	esi
-	lea	edx, DWORD PTR $T218190[esp+148]
-	push	OFFSET $SG217617
+	lea	edx, DWORD PTR $T218232[esp+148]
+	push	OFFSET $SG217659
 	push	edx
 	call	??$GetLocalizedText@H@@YA?AVCvString@@PBDH@Z ; GetLocalizedText<int>
 	add	esp, 12					; 0000000cH
@@ -1376,7 +1376,7 @@ $LN5@setYearStr:
 	push	eax
 	mov	DWORD PTR __$EHRec$[esp+156], 7
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T218190[esp+144]
+	lea	ecx, DWORD PTR $T218232[esp+144]
 
 ; 45   : 		}
 ; 46   : 	}
@@ -1395,8 +1395,8 @@ $LN6@setYearStr:
 ; 51   : 			strString = GetLocalizedText("TXT_KEY_TIME_AD_SAVE", "0001", CvString::format("%04d", iGameTurn).GetCString());
 
 	push	edi
-	lea	eax, DWORD PTR $T218192[esp+148]
-	push	OFFSET $SG217630
+	lea	eax, DWORD PTR $T218234[esp+148]
+	push	OFFSET $SG217672
 	push	eax
 	call	?format@CvString@@SA?AV1@PBDZZ		; CvString::format
 	add	esp, 12					; 0000000cH
@@ -1404,23 +1404,23 @@ $LN6@setYearStr:
 	mov	ecx, eax
 	mov	DWORD PTR __$EHRec$[esp+152], ebx
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
-	lea	ecx, DWORD PTR $T218191[esp+144]
+	lea	ecx, DWORD PTR $T218233[esp+144]
 	push	ecx
-	push	OFFSET $SG217631
-	lea	edx, DWORD PTR $T218193[esp+152]
-	push	OFFSET $SG217632
+	push	OFFSET $SG217673
+	lea	edx, DWORD PTR $T218235[esp+152]
+	push	OFFSET $SG217674
 	push	edx
-	mov	DWORD PTR $T218191[esp+160], eax
+	mov	DWORD PTR $T218233[esp+160], eax
 	call	??$GetLocalizedText@$$BY04$$CBDPBD@@YA?AVCvString@@PBDAAY04$$CBDABQBD@Z ; GetLocalizedText<char const [5],char const *>
 	add	esp, 16					; 00000010H
 	mov	ecx, DWORD PTR _strString$[esp+140]
 	push	eax
 	mov	BYTE PTR __$EHRec$[esp+156], 9
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T218193[esp+144]
+	lea	ecx, DWORD PTR $T218235[esp+144]
 	mov	BYTE PTR __$EHRec$[esp+152], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T218192[esp+144]
+	lea	ecx, DWORD PTR $T218234[esp+144]
 
 ; 52   : 		}
 ; 53   : 		else
@@ -1432,8 +1432,8 @@ $LN2@setYearStr:
 ; 55   : 			strString = GetLocalizedText("TXT_KEY_TIME_AD", 1);
 
 	push	1
-	lea	eax, DWORD PTR $T218194[esp+148]
-	push	OFFSET $SG217635
+	lea	eax, DWORD PTR $T218236[esp+148]
+	push	OFFSET $SG217677
 	push	eax
 	call	??$GetLocalizedText@H@@YA?AVCvString@@PBDH@Z ; GetLocalizedText<int>
 	add	esp, 12					; 0000000cH
@@ -1441,7 +1441,7 @@ $LN2@setYearStr:
 	push	eax
 	mov	DWORD PTR __$EHRec$[esp+156], 10	; 0000000aH
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T218194[esp+144]
+	lea	ecx, DWORD PTR $T218236[esp+144]
 $LN81@setYearStr:
 	mov	DWORD PTR __$EHRec$[esp+152], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
@@ -1461,37 +1461,37 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?setYearStr@CvGameTextMgr@@SAXAAVCvString@@H_NW4CalendarTypes@@HW4GameSpeedTypes@@@Z$0:
-	lea	ecx, DWORD PTR $T218180[ebp]
+	lea	ecx, DWORD PTR $T218222[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?setYearStr@CvGameTextMgr@@SAXAAVCvString@@H_NW4CalendarTypes@@HW4GameSpeedTypes@@@Z$1:
-	lea	ecx, DWORD PTR $T218182[ebp]
+	lea	ecx, DWORD PTR $T218224[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?setYearStr@CvGameTextMgr@@SAXAAVCvString@@H_NW4CalendarTypes@@HW4GameSpeedTypes@@@Z$2:
-	lea	ecx, DWORD PTR $T218183[ebp]
+	lea	ecx, DWORD PTR $T218225[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?setYearStr@CvGameTextMgr@@SAXAAVCvString@@H_NW4CalendarTypes@@HW4GameSpeedTypes@@@Z$3:
-	lea	ecx, DWORD PTR $T218184[ebp]
+	lea	ecx, DWORD PTR $T218226[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?setYearStr@CvGameTextMgr@@SAXAAVCvString@@H_NW4CalendarTypes@@HW4GameSpeedTypes@@@Z$4:
-	lea	ecx, DWORD PTR $T218186[ebp]
+	lea	ecx, DWORD PTR $T218228[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?setYearStr@CvGameTextMgr@@SAXAAVCvString@@H_NW4CalendarTypes@@HW4GameSpeedTypes@@@Z$5:
-	lea	ecx, DWORD PTR $T218188[ebp]
+	lea	ecx, DWORD PTR $T218230[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?setYearStr@CvGameTextMgr@@SAXAAVCvString@@H_NW4CalendarTypes@@HW4GameSpeedTypes@@@Z$6:
-	lea	ecx, DWORD PTR $T218189[ebp]
+	lea	ecx, DWORD PTR $T218231[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?setYearStr@CvGameTextMgr@@SAXAAVCvString@@H_NW4CalendarTypes@@HW4GameSpeedTypes@@@Z$7:
-	lea	ecx, DWORD PTR $T218190[ebp]
+	lea	ecx, DWORD PTR $T218232[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?setYearStr@CvGameTextMgr@@SAXAAVCvString@@H_NW4CalendarTypes@@HW4GameSpeedTypes@@@Z$8:
-	lea	ecx, DWORD PTR $T218192[ebp]
+	lea	ecx, DWORD PTR $T218234[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?setYearStr@CvGameTextMgr@@SAXAAVCvString@@H_NW4CalendarTypes@@HW4GameSpeedTypes@@@Z$9:
-	lea	ecx, DWORD PTR $T218193[ebp]
+	lea	ecx, DWORD PTR $T218235[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?setYearStr@CvGameTextMgr@@SAXAAVCvString@@H_NW4CalendarTypes@@HW4GameSpeedTypes@@@Z$10:
-	lea	ecx, DWORD PTR $T218194[ebp]
+	lea	ecx, DWORD PTR $T218236[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?setYearStr@CvGameTextMgr@@SAXAAVCvString@@H_NW4CalendarTypes@@HW4GameSpeedTypes@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?setYearStr@CvGameTextMgr@@SAXAAVCvString@@H_NW4CalendarTypes@@HW4GameSpeedTypes@@@Z
@@ -1612,48 +1612,48 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 _iNumSeasons$ = -1372					; size = 4
 _strYearBuffer$ = -1368					; size = 28
-_kResult$217716 = -1340					; size = 64
-_kResult$217697 = -1340					; size = 64
-_kResult$217681 = -1340					; size = 64
-_kResult$217660 = -1340					; size = 64
+_kResult$217758 = -1340					; size = 64
+_kResult$217739 = -1340					; size = 64
+_kResult$217723 = -1340					; size = 64
+_kResult$217702 = -1340					; size = 64
 _strWeekBuffer$ = -1276					; size = 28
-_strMonth$217665 = -1248				; size = 28
-$T218319 = -1220					; size = 28
-$T218323 = -1192					; size = 28
-$T218322 = -1164					; size = 28
-$T218308 = -1136					; size = 28
-$T218321 = -1108					; size = 28
-$T218310 = -1080					; size = 28
-$T218325 = -1052					; size = 28
-$T218312 = -1024					; size = 28
-$T218330 = -996						; size = 28
-$T218317 = -968						; size = 28
-$T218329 = -940						; size = 28
-$T218315 = -912						; size = 28
-$T218328 = -884						; size = 28
-$T218320 = -856						; size = 28
-$T218327 = -828						; size = 28
-$T218318 = -800						; size = 28
-$T218326 = -772						; size = 28
-$T218309 = -744						; size = 28
-$T218335 = -716						; size = 28
-$T218313 = -688						; size = 28
-$T218334 = -660						; size = 28
-$T218316 = -632						; size = 28
-$T218333 = -604						; size = 28
-$T218306 = -576						; size = 28
-$T218332 = -548						; size = 28
-$T218307 = -520						; size = 28
-$T218331 = -492						; size = 28
-$T218314 = -464						; size = 28
-$T218305 = -436						; size = 28
-$T218311 = -408						; size = 28
-$T218324 = -380						; size = 28
-_kCalendarInfo$217715 = -352				; size = 260
-_kMonthInfo$217696 = -352				; size = 260
-_kSeasonInfo$217680 = -352				; size = 260
-_kInfo$217661 = -352					; size = 260
-_lstrMonth$217663 = -92					; size = 80
+_strMonth$217707 = -1248				; size = 28
+$T218361 = -1220					; size = 28
+$T218365 = -1192					; size = 28
+$T218364 = -1164					; size = 28
+$T218350 = -1136					; size = 28
+$T218363 = -1108					; size = 28
+$T218352 = -1080					; size = 28
+$T218367 = -1052					; size = 28
+$T218354 = -1024					; size = 28
+$T218372 = -996						; size = 28
+$T218359 = -968						; size = 28
+$T218371 = -940						; size = 28
+$T218357 = -912						; size = 28
+$T218370 = -884						; size = 28
+$T218362 = -856						; size = 28
+$T218369 = -828						; size = 28
+$T218360 = -800						; size = 28
+$T218368 = -772						; size = 28
+$T218351 = -744						; size = 28
+$T218377 = -716						; size = 28
+$T218355 = -688						; size = 28
+$T218376 = -660						; size = 28
+$T218358 = -632						; size = 28
+$T218375 = -604						; size = 28
+$T218348 = -576						; size = 28
+$T218374 = -548						; size = 28
+$T218349 = -520						; size = 28
+$T218373 = -492						; size = 28
+$T218356 = -464						; size = 28
+$T218347 = -436						; size = 28
+$T218353 = -408						; size = 28
+$T218366 = -380						; size = 28
+_kCalendarInfo$217757 = -352				; size = 260
+_kMonthInfo$217738 = -352				; size = 260
+_kSeasonInfo$217722 = -352				; size = 260
+_kInfo$217703 = -352					; size = 260
+_lstrMonth$217705 = -92					; size = 80
 __$EHRec$ = -12						; size = 12
 _strString$ = 8						; size = 4
 _iGameTurn$ = 12					; size = 4
@@ -1717,14 +1717,14 @@ _eSpeed$ = 28						; size = 4
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+912
 	add	esp, 24					; 00000018H
 	push	1
-	push	OFFSET $SG217648
+	push	OFFSET $SG217690
 	call	DWORD PTR __imp_?Count@Connection@Database@@QAEHPBD_N@Z
 
 ; 70   : 	const int iNumSeasons = DB.Count("Seasons");
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+912
 	push	1
-	push	OFFSET $SG217650
+	push	OFFSET $SG217692
 	mov	edi, eax
 	call	DWORD PTR __imp_?Count@Connection@Database@@QAEHPBD_N@Z
 	mov	DWORD PTR _iNumSeasons$[esp+1388], eax
@@ -1793,21 +1793,21 @@ $LN16@setDateStr:
 ; 85   : 			Database::SingleResult kResult;
 
 	push	0
-	lea	ecx, DWORD PTR _kResult$217660[esp+1392]
+	lea	ecx, DWORD PTR _kResult$217702[esp+1392]
 	mov	esi, edx
 	call	DWORD PTR __imp_??0SingleResult@Database@@QAE@PBD@Z
 
 ; 86   : 			CvBaseInfo kInfo;
 
-	lea	ecx, DWORD PTR _kInfo$217661[esp+1388]
+	lea	ecx, DWORD PTR _kInfo$217703[esp+1388]
 	mov	BYTE PTR __$EHRec$[esp+1396], 2
 	call	??0CvBaseInfo@@QAE@XZ			; CvBaseInfo::CvBaseInfo
 
 ; 87   : 			DB.SelectAt(kResult, "Months", iMonth);
 
 	push	esi
-	push	OFFSET $SG217662
-	lea	ecx, DWORD PTR _kResult$217660[esp+1396]
+	push	OFFSET $SG217704
+	lea	ecx, DWORD PTR _kResult$217702[esp+1396]
 	push	ecx
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+912
 	mov	BYTE PTR __$EHRec$[esp+1408], 3
@@ -1815,29 +1815,29 @@ $LN16@setDateStr:
 
 ; 88   : 			kInfo.CacheResult(kResult);
 
-	lea	edx, DWORD PTR _kResult$217660[esp+1388]
+	lea	edx, DWORD PTR _kResult$217702[esp+1388]
 	push	edx
-	lea	ecx, DWORD PTR _kInfo$217661[esp+1392]
+	lea	ecx, DWORD PTR _kInfo$217703[esp+1392]
 	call	?CacheResult@CvBaseInfo@@QAE_NAAVResults@Database@@@Z ; CvBaseInfo::CacheResult
 
 ; 89   : 
 ; 90   : 			Localization::String lstrMonth = Localization::Lookup(kInfo.GetDescription());
 
-	lea	ecx, DWORD PTR _kInfo$217661[esp+1424]
+	lea	ecx, DWORD PTR _kInfo$217703[esp+1424]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
-	lea	eax, DWORD PTR _lstrMonth$217663[esp+1392]
+	lea	eax, DWORD PTR _lstrMonth$217705[esp+1392]
 	push	eax
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
 
 ; 91   : 			CvString strMonth = lstrMonth.toUTF8();
 
-	lea	ecx, DWORD PTR _lstrMonth$217663[esp+1388]
+	lea	ecx, DWORD PTR _lstrMonth$217705[esp+1388]
 	mov	BYTE PTR __$EHRec$[esp+1396], 4
 	call	DWORD PTR __imp_?toUTF8@String@Localization@@QAEPBDXZ
 	push	eax
-	lea	ecx, DWORD PTR _strMonth$217665[esp+1392]
+	lea	ecx, DWORD PTR _strMonth$217707[esp+1392]
 	call	??0CvString@@QAE@PBD@Z			; CvString::CvString
 	mov	BYTE PTR __$EHRec$[esp+1396], 5
 
@@ -1850,16 +1850,16 @@ $LN16@setDateStr:
 ; 94   : 			{
 ; 95   : 				strString = (strYearBuffer + "-" + strMonth);
 
-	push	OFFSET $SG217669
+	push	OFFSET $SG217711
 	lea	ecx, DWORD PTR _strYearBuffer$[esp+1392]
 	push	ecx
-	lea	edx, DWORD PTR $T218305[esp+1396]
+	lea	edx, DWORD PTR $T218347[esp+1396]
 	push	edx
 	call	DWORD PTR __imp_??$?HDU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@ABV10@PBD@Z
-	lea	ecx, DWORD PTR _strMonth$217665[esp+1400]
+	lea	ecx, DWORD PTR _strMonth$217707[esp+1400]
 	push	ecx
 	push	eax
-	lea	edx, DWORD PTR $T218306[esp+1408]
+	lea	edx, DWORD PTR $T218348[esp+1408]
 	push	edx
 	mov	BYTE PTR __$EHRec$[esp+1420], 6
 	call	DWORD PTR __imp_??$?HDU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@ABV10@0@Z
@@ -1868,10 +1868,10 @@ $LN16@setDateStr:
 	push	eax
 	mov	BYTE PTR __$EHRec$[esp+1400], 7
 	call	??4CvString@@QAEAAV0@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z ; CvString::operator=
-	lea	ecx, DWORD PTR $T218306[esp+1388]
+	lea	ecx, DWORD PTR $T218348[esp+1388]
 	mov	BYTE PTR __$EHRec$[esp+1396], 6
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T218305[esp+1388]
+	lea	ecx, DWORD PTR $T218347[esp+1388]
 
 ; 96   : 			}
 ; 97   : 			else
@@ -1882,21 +1882,21 @@ $LN14@setDateStr:
 ; 98   : 			{
 ; 99   : 				strString = (strMonth + CvString(", ") + strYearBuffer);
 
-	push	OFFSET $SG217674
-	lea	ecx, DWORD PTR $T218307[esp+1392]
+	push	OFFSET $SG217716
+	lea	ecx, DWORD PTR $T218349[esp+1392]
 	call	??0CvString@@QAE@PBD@Z			; CvString::CvString
 	mov	esi, DWORD PTR __imp_??$?HDU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@ABV10@0@Z
 	push	eax
-	lea	eax, DWORD PTR _strMonth$217665[esp+1392]
+	lea	eax, DWORD PTR _strMonth$217707[esp+1392]
 	push	eax
-	lea	ecx, DWORD PTR $T218308[esp+1396]
+	lea	ecx, DWORD PTR $T218350[esp+1396]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+1408], 8
 	call	esi
 	lea	edx, DWORD PTR _strYearBuffer$[esp+1400]
 	push	edx
 	push	eax
-	lea	eax, DWORD PTR $T218309[esp+1408]
+	lea	eax, DWORD PTR $T218351[esp+1408]
 	mov	bl, 9
 	push	eax
 	mov	BYTE PTR __$EHRec$[esp+1420], bl
@@ -1906,13 +1906,13 @@ $LN14@setDateStr:
 	push	eax
 	mov	BYTE PTR __$EHRec$[esp+1400], 10	; 0000000aH
 	call	??4CvString@@QAEAAV0@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z ; CvString::operator=
-	lea	ecx, DWORD PTR $T218309[esp+1388]
+	lea	ecx, DWORD PTR $T218351[esp+1388]
 	mov	BYTE PTR __$EHRec$[esp+1396], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T218308[esp+1388]
+	lea	ecx, DWORD PTR $T218350[esp+1388]
 	mov	BYTE PTR __$EHRec$[esp+1396], 8
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T218307[esp+1388]
+	lea	ecx, DWORD PTR $T218349[esp+1388]
 $LN160@setDateStr:
 	mov	BYTE PTR __$EHRec$[esp+1396], 5
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
@@ -1920,16 +1920,16 @@ $LN160@setDateStr:
 ; 100  : 			}
 ; 101  : 		}
 
-	lea	ecx, DWORD PTR _strMonth$217665[esp+1388]
+	lea	ecx, DWORD PTR _strMonth$217707[esp+1388]
 	mov	BYTE PTR __$EHRec$[esp+1396], 4
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR _lstrMonth$217663[esp+1388]
+	lea	ecx, DWORD PTR _lstrMonth$217705[esp+1388]
 	mov	BYTE PTR __$EHRec$[esp+1396], 3
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
-	lea	ecx, DWORD PTR _kInfo$217661[esp+1388]
+	lea	ecx, DWORD PTR _kInfo$217703[esp+1388]
 	mov	BYTE PTR __$EHRec$[esp+1396], 2
 	call	??1CvBaseInfo@@QAE@XZ
-	lea	ecx, DWORD PTR _kResult$217660[esp+1388]
+	lea	ecx, DWORD PTR _kResult$217702[esp+1388]
 	mov	BYTE PTR __$EHRec$[esp+1396], 1
 	call	DWORD PTR __imp_??1Results@Database@@UAE@XZ
 
@@ -1959,8 +1959,8 @@ $LN11@setDateStr:
 
 	inc	esi
 	push	esi
-	lea	edx, DWORD PTR $T218310[esp+1392]
-	push	OFFSET $SG217678
+	lea	edx, DWORD PTR $T218352[esp+1392]
+	push	OFFSET $SG217720
 	push	edx
 	call	??$GetLocalizedText@H@@YA?AVCvString@@PBDH@Z ; GetLocalizedText<int>
 	add	esp, 12					; 0000000cH
@@ -1968,7 +1968,7 @@ $LN11@setDateStr:
 	push	eax
 	mov	BYTE PTR __$EHRec$[esp+1400], 11	; 0000000bH
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T218310[esp+1388]
+	lea	ecx, DWORD PTR $T218352[esp+1388]
 	mov	BYTE PTR __$EHRec$[esp+1396], 1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -1982,13 +1982,13 @@ $LN10@setDateStr:
 ; 114  : 	{
 ; 115  : 		CvBaseInfo kSeasonInfo;
 
-	lea	ecx, DWORD PTR _kSeasonInfo$217680[esp+1388]
+	lea	ecx, DWORD PTR _kSeasonInfo$217722[esp+1388]
 	call	??0CvBaseInfo@@QAE@XZ			; CvBaseInfo::CvBaseInfo
 
 ; 116  : 		Database::SingleResult kResult;
 
 	push	0
-	lea	ecx, DWORD PTR _kResult$217681[esp+1392]
+	lea	ecx, DWORD PTR _kResult$217723[esp+1392]
 	mov	BYTE PTR __$EHRec$[esp+1400], 12	; 0000000cH
 	call	DWORD PTR __imp_??0SingleResult@Database@@QAE@PBD@Z
 
@@ -1998,23 +1998,23 @@ $LN10@setDateStr:
 	cdq
 	idiv	DWORD PTR _iNumSeasons$[esp+1388]
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+912
-	lea	eax, DWORD PTR _kResult$217681[esp+1388]
+	lea	eax, DWORD PTR _kResult$217723[esp+1388]
 	mov	BYTE PTR __$EHRec$[esp+1396], 13	; 0000000dH
 	push	edx
-	push	OFFSET $SG217682
+	push	OFFSET $SG217724
 	push	eax
 	call	DWORD PTR __imp_?SelectAt@Connection@Database@@QAE_NAAVResults@2@PBDH@Z
 
 ; 118  : 		kSeasonInfo.CacheResult(kResult);
 
-	lea	ecx, DWORD PTR _kResult$217681[esp+1388]
+	lea	ecx, DWORD PTR _kResult$217723[esp+1388]
 	push	ecx
-	lea	ecx, DWORD PTR _kSeasonInfo$217680[esp+1392]
+	lea	ecx, DWORD PTR _kSeasonInfo$217722[esp+1392]
 	call	?CacheResult@CvBaseInfo@@QAE_NAAVResults@Database@@@Z ; CvBaseInfo::CacheResult
 
 ; 119  : 		const char* Desc = kSeasonInfo.GetDescription();
 
-	lea	ecx, DWORD PTR _kSeasonInfo$217680[esp+1424]
+	lea	ecx, DWORD PTR _kSeasonInfo$217722[esp+1424]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	mov	esi, eax
 
@@ -2027,19 +2027,19 @@ $LN10@setDateStr:
 ; 122  : 			strString = (strYearBuffer + "-" + CvString(Desc));
 
 	push	esi
-	lea	ecx, DWORD PTR $T218311[esp+1392]
+	lea	ecx, DWORD PTR $T218353[esp+1392]
 	call	??0CvString@@QAE@PBD@Z			; CvString::CvString
 	mov	esi, eax
-	push	OFFSET $SG217688
+	push	OFFSET $SG217730
 	lea	edx, DWORD PTR _strYearBuffer$[esp+1392]
 	push	edx
-	lea	eax, DWORD PTR $T218312[esp+1396]
+	lea	eax, DWORD PTR $T218354[esp+1396]
 	push	eax
 	mov	BYTE PTR __$EHRec$[esp+1408], 14	; 0000000eH
 	call	DWORD PTR __imp_??$?HDU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@ABV10@PBD@Z
 	push	esi
 	push	eax
-	lea	ecx, DWORD PTR $T218313[esp+1408]
+	lea	ecx, DWORD PTR $T218355[esp+1408]
 	mov	bl, 15					; 0000000fH
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+1420], bl
@@ -2049,13 +2049,13 @@ $LN10@setDateStr:
 	push	eax
 	mov	BYTE PTR __$EHRec$[esp+1400], 16	; 00000010H
 	call	??4CvString@@QAEAAV0@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z ; CvString::operator=
-	lea	ecx, DWORD PTR $T218313[esp+1388]
+	lea	ecx, DWORD PTR $T218355[esp+1388]
 	mov	BYTE PTR __$EHRec$[esp+1396], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T218312[esp+1388]
+	lea	ecx, DWORD PTR $T218354[esp+1388]
 	mov	BYTE PTR __$EHRec$[esp+1396], 14	; 0000000eH
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T218311[esp+1388]
+	lea	ecx, DWORD PTR $T218353[esp+1388]
 
 ; 123  : 		}
 ; 124  : 		else
@@ -2066,25 +2066,25 @@ $LN9@setDateStr:
 ; 125  : 		{
 ; 126  : 			strString = (CvString(Desc) + CvString(", ") + strYearBuffer);
 
-	push	OFFSET $SG217694
-	lea	ecx, DWORD PTR $T218314[esp+1392]
+	push	OFFSET $SG217736
+	lea	ecx, DWORD PTR $T218356[esp+1392]
 	call	??0CvString@@QAE@PBD@Z			; CvString::CvString
 	mov	edi, eax
 	push	esi
-	lea	ecx, DWORD PTR $T218315[esp+1392]
+	lea	ecx, DWORD PTR $T218357[esp+1392]
 	mov	BYTE PTR __$EHRec$[esp+1400], 17	; 00000011H
 	call	??0CvString@@QAE@PBD@Z			; CvString::CvString
 	mov	esi, DWORD PTR __imp_??$?HDU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@ABV10@0@Z
 	push	edi
 	push	eax
-	lea	edx, DWORD PTR $T218316[esp+1396]
+	lea	edx, DWORD PTR $T218358[esp+1396]
 	push	edx
 	mov	BYTE PTR __$EHRec$[esp+1408], 18	; 00000012H
 	call	esi
 	lea	ecx, DWORD PTR _strYearBuffer$[esp+1400]
 	push	ecx
 	push	eax
-	lea	edx, DWORD PTR $T218317[esp+1408]
+	lea	edx, DWORD PTR $T218359[esp+1408]
 	mov	bl, 19					; 00000013H
 	push	edx
 	mov	BYTE PTR __$EHRec$[esp+1420], bl
@@ -2094,16 +2094,16 @@ $LN9@setDateStr:
 	push	eax
 	mov	BYTE PTR __$EHRec$[esp+1400], 20	; 00000014H
 	call	??4CvString@@QAEAAV0@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z ; CvString::operator=
-	lea	ecx, DWORD PTR $T218317[esp+1388]
+	lea	ecx, DWORD PTR $T218359[esp+1388]
 	mov	BYTE PTR __$EHRec$[esp+1396], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T218316[esp+1388]
+	lea	ecx, DWORD PTR $T218358[esp+1388]
 	mov	BYTE PTR __$EHRec$[esp+1396], 18	; 00000012H
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T218315[esp+1388]
+	lea	ecx, DWORD PTR $T218357[esp+1388]
 	mov	BYTE PTR __$EHRec$[esp+1396], 17	; 00000011H
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T218314[esp+1388]
+	lea	ecx, DWORD PTR $T218356[esp+1388]
 $LN161@setDateStr:
 	mov	BYTE PTR __$EHRec$[esp+1396], 13	; 0000000dH
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
@@ -2124,13 +2124,13 @@ $LN7@setDateStr:
 ; 133  : 	{
 ; 134  : 		CvBaseInfo kMonthInfo;
 
-	lea	ecx, DWORD PTR _kMonthInfo$217696[esp+1388]
+	lea	ecx, DWORD PTR _kMonthInfo$217738[esp+1388]
 	call	??0CvBaseInfo@@QAE@XZ			; CvBaseInfo::CvBaseInfo
 
 ; 135  : 		Database::SingleResult kResult;
 
 	push	0
-	lea	ecx, DWORD PTR _kResult$217697[esp+1392]
+	lea	ecx, DWORD PTR _kResult$217739[esp+1392]
 	mov	BYTE PTR __$EHRec$[esp+1400], 21	; 00000015H
 	call	DWORD PTR __imp_??0SingleResult@Database@@QAE@PBD@Z
 
@@ -2140,24 +2140,24 @@ $LN7@setDateStr:
 	cdq
 	idiv	edi
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+912
-	lea	eax, DWORD PTR _kResult$217697[esp+1388]
+	lea	eax, DWORD PTR _kResult$217739[esp+1388]
 	mov	BYTE PTR __$EHRec$[esp+1396], 22	; 00000016H
 	push	edx
-	push	OFFSET $SG217698
+	push	OFFSET $SG217740
 	push	eax
 	call	DWORD PTR __imp_?SelectAt@Connection@Database@@QAE_NAAVResults@2@PBDH@Z
 
 ; 137  : 		kMonthInfo.CacheResult(kResult);
 
-	lea	ecx, DWORD PTR _kResult$217697[esp+1388]
+	lea	ecx, DWORD PTR _kResult$217739[esp+1388]
 	push	ecx
-	lea	ecx, DWORD PTR _kMonthInfo$217696[esp+1392]
+	lea	ecx, DWORD PTR _kMonthInfo$217738[esp+1392]
 	call	?CacheResult@CvBaseInfo@@QAE_NAAVResults@Database@@@Z ; CvBaseInfo::CacheResult
 
 ; 138  : 
 ; 139  : 		const char* Descr = kMonthInfo.GetDescription();
 
-	lea	ecx, DWORD PTR _kMonthInfo$217696[esp+1424]
+	lea	ecx, DWORD PTR _kMonthInfo$217738[esp+1424]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	mov	esi, eax
 
@@ -2171,19 +2171,19 @@ $LN7@setDateStr:
 ; 143  : 			strString = (strYearBuffer + "-" + CvString(Descr));
 
 	push	esi
-	lea	ecx, DWORD PTR $T218318[esp+1392]
+	lea	ecx, DWORD PTR $T218360[esp+1392]
 	call	??0CvString@@QAE@PBD@Z			; CvString::CvString
 	mov	esi, eax
-	push	OFFSET $SG217704
+	push	OFFSET $SG217746
 	lea	edx, DWORD PTR _strYearBuffer$[esp+1392]
 	push	edx
-	lea	eax, DWORD PTR $T218319[esp+1396]
+	lea	eax, DWORD PTR $T218361[esp+1396]
 	push	eax
 	mov	BYTE PTR __$EHRec$[esp+1408], 23	; 00000017H
 	call	DWORD PTR __imp_??$?HDU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@ABV10@PBD@Z
 	push	esi
 	push	eax
-	lea	ecx, DWORD PTR $T218320[esp+1408]
+	lea	ecx, DWORD PTR $T218362[esp+1408]
 	mov	bl, 24					; 00000018H
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+1420], bl
@@ -2193,13 +2193,13 @@ $LN7@setDateStr:
 	push	eax
 	mov	BYTE PTR __$EHRec$[esp+1400], 25	; 00000019H
 	call	??4CvString@@QAEAAV0@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z ; CvString::operator=
-	lea	ecx, DWORD PTR $T218320[esp+1388]
+	lea	ecx, DWORD PTR $T218362[esp+1388]
 	mov	BYTE PTR __$EHRec$[esp+1396], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T218319[esp+1388]
+	lea	ecx, DWORD PTR $T218361[esp+1388]
 	mov	BYTE PTR __$EHRec$[esp+1396], 23	; 00000017H
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T218318[esp+1388]
+	lea	ecx, DWORD PTR $T218360[esp+1388]
 
 ; 144  : 		}
 ; 145  : 		else
@@ -2210,25 +2210,25 @@ $LN6@setDateStr:
 ; 146  : 		{
 ; 147  : 			strString = (CvString(Descr) + CvString(", ") + strYearBuffer);
 
-	push	OFFSET $SG217710
-	lea	ecx, DWORD PTR $T218321[esp+1392]
+	push	OFFSET $SG217752
+	lea	ecx, DWORD PTR $T218363[esp+1392]
 	call	??0CvString@@QAE@PBD@Z			; CvString::CvString
 	mov	edi, eax
 	push	esi
-	lea	ecx, DWORD PTR $T218322[esp+1392]
+	lea	ecx, DWORD PTR $T218364[esp+1392]
 	mov	BYTE PTR __$EHRec$[esp+1400], 26	; 0000001aH
 	call	??0CvString@@QAE@PBD@Z			; CvString::CvString
 	mov	esi, DWORD PTR __imp_??$?HDU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@ABV10@0@Z
 	push	edi
 	push	eax
-	lea	edx, DWORD PTR $T218323[esp+1396]
+	lea	edx, DWORD PTR $T218365[esp+1396]
 	push	edx
 	mov	BYTE PTR __$EHRec$[esp+1408], 27	; 0000001bH
 	call	esi
 	lea	ecx, DWORD PTR _strYearBuffer$[esp+1400]
 	push	ecx
 	push	eax
-	lea	edx, DWORD PTR $T218324[esp+1408]
+	lea	edx, DWORD PTR $T218366[esp+1408]
 	mov	bl, 28					; 0000001cH
 	push	edx
 	mov	BYTE PTR __$EHRec$[esp+1420], bl
@@ -2238,16 +2238,16 @@ $LN6@setDateStr:
 	push	eax
 	mov	BYTE PTR __$EHRec$[esp+1400], 29	; 0000001dH
 	call	??4CvString@@QAEAAV0@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z ; CvString::operator=
-	lea	ecx, DWORD PTR $T218324[esp+1388]
+	lea	ecx, DWORD PTR $T218366[esp+1388]
 	mov	BYTE PTR __$EHRec$[esp+1396], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T218323[esp+1388]
+	lea	ecx, DWORD PTR $T218365[esp+1388]
 	mov	BYTE PTR __$EHRec$[esp+1396], 27	; 0000001bH
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T218322[esp+1388]
+	lea	ecx, DWORD PTR $T218364[esp+1388]
 	mov	BYTE PTR __$EHRec$[esp+1396], 26	; 0000001aH
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T218321[esp+1388]
+	lea	ecx, DWORD PTR $T218363[esp+1388]
 $LN163@setDateStr:
 	mov	BYTE PTR __$EHRec$[esp+1396], 22	; 00000016H
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
@@ -2272,10 +2272,10 @@ $LN4@setDateStr:
 	mov	eax, esi
 	cdq
 	idiv	DWORD PTR ?gGlobals@@3VCvGlobals@@A+6184
-	lea	eax, DWORD PTR $T218325[esp+1388]
+	lea	eax, DWORD PTR $T218367[esp+1388]
 	inc	edx
 	push	edx
-	push	OFFSET $SG217713
+	push	OFFSET $SG217755
 	push	eax
 	call	??$GetLocalizedText@H@@YA?AVCvString@@PBDH@Z ; GetLocalizedText<int>
 	add	esp, 12					; 0000000cH
@@ -2283,7 +2283,7 @@ $LN4@setDateStr:
 	lea	ecx, DWORD PTR _strWeekBuffer$[esp+1392]
 	mov	BYTE PTR __$EHRec$[esp+1400], 30	; 0000001eH
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T218325[esp+1388]
+	lea	ecx, DWORD PTR $T218367[esp+1388]
 	mov	BYTE PTR __$EHRec$[esp+1396], 1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -2297,7 +2297,7 @@ $LN4@setDateStr:
 ; 159  : 
 ; 160  : 		CvBaseInfo kCalendarInfo;
 
-	lea	ecx, DWORD PTR _kCalendarInfo$217715[esp+1388]
+	lea	ecx, DWORD PTR _kCalendarInfo$217757[esp+1388]
 	cdq
 	idiv	edi
 	mov	esi, edx
@@ -2306,7 +2306,7 @@ $LN4@setDateStr:
 ; 161  : 		Database::SingleResult kResult;
 
 	push	0
-	lea	ecx, DWORD PTR _kResult$217716[esp+1392]
+	lea	ecx, DWORD PTR _kResult$217758[esp+1392]
 	mov	BYTE PTR __$EHRec$[esp+1400], 31	; 0000001fH
 	call	DWORD PTR __imp_??0SingleResult@Database@@QAE@PBD@Z
 
@@ -2314,8 +2314,8 @@ $LN4@setDateStr:
 ; 163  : 		DB.SelectAt(kResult, "Months", idx);
 
 	push	esi
-	push	OFFSET $SG217717
-	lea	ecx, DWORD PTR _kResult$217716[esp+1396]
+	push	OFFSET $SG217759
+	lea	ecx, DWORD PTR _kResult$217758[esp+1396]
 	push	ecx
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+912
 	mov	BYTE PTR __$EHRec$[esp+1408], 32	; 00000020H
@@ -2323,15 +2323,15 @@ $LN4@setDateStr:
 
 ; 164  : 		kCalendarInfo.CacheResult(kResult);
 
-	lea	edx, DWORD PTR _kResult$217716[esp+1388]
+	lea	edx, DWORD PTR _kResult$217758[esp+1388]
 	push	edx
-	lea	ecx, DWORD PTR _kCalendarInfo$217715[esp+1392]
+	lea	ecx, DWORD PTR _kCalendarInfo$217757[esp+1392]
 	call	?CacheResult@CvBaseInfo@@QAE_NAAVResults@Database@@@Z ; CvBaseInfo::CacheResult
 
 ; 165  : 
 ; 166  : 		const char* Descr = kCalendarInfo.GetDescription();
 
-	lea	ecx, DWORD PTR _kCalendarInfo$217715[esp+1424]
+	lea	ecx, DWORD PTR _kCalendarInfo$217757[esp+1424]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 
 ; 167  : 
@@ -2343,34 +2343,34 @@ $LN4@setDateStr:
 	push	eax
 	test	bl, bl
 	je	$LN3@setDateStr
-	lea	ecx, DWORD PTR $T218326[esp+1392]
+	lea	ecx, DWORD PTR $T218368[esp+1392]
 	call	??0CvString@@QAE@PBD@Z			; CvString::CvString
 	mov	esi, eax
 	mov	edi, DWORD PTR __imp_??$?HDU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@ABV10@PBD@Z
-	push	OFFSET $SG217726
+	push	OFFSET $SG217768
 	lea	eax, DWORD PTR _strYearBuffer$[esp+1392]
 	push	eax
-	lea	ecx, DWORD PTR $T218327[esp+1396]
+	lea	ecx, DWORD PTR $T218369[esp+1396]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+1408], 33	; 00000021H
 	call	edi
 	push	esi
 	mov	esi, DWORD PTR __imp_??$?HDU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@ABV10@0@Z
 	push	eax
-	lea	edx, DWORD PTR $T218328[esp+1408]
+	lea	edx, DWORD PTR $T218370[esp+1408]
 	push	edx
 	mov	BYTE PTR __$EHRec$[esp+1420], 34	; 00000022H
 	call	esi
-	push	OFFSET $SG217725
+	push	OFFSET $SG217767
 	push	eax
-	lea	eax, DWORD PTR $T218329[esp+1420]
+	lea	eax, DWORD PTR $T218371[esp+1420]
 	push	eax
 	mov	BYTE PTR __$EHRec$[esp+1432], 35	; 00000023H
 	call	edi
 	lea	ecx, DWORD PTR _strWeekBuffer$[esp+1424]
 	push	ecx
 	push	eax
-	lea	edx, DWORD PTR $T218330[esp+1432]
+	lea	edx, DWORD PTR $T218372[esp+1432]
 	mov	bl, 36					; 00000024H
 	push	edx
 	mov	BYTE PTR __$EHRec$[esp+1444], bl
@@ -2380,19 +2380,19 @@ $LN4@setDateStr:
 	push	eax
 	mov	BYTE PTR __$EHRec$[esp+1400], 37	; 00000025H
 	call	??4CvString@@QAEAAV0@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z ; CvString::operator=
-	lea	ecx, DWORD PTR $T218330[esp+1388]
+	lea	ecx, DWORD PTR $T218372[esp+1388]
 	mov	BYTE PTR __$EHRec$[esp+1396], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T218329[esp+1388]
+	lea	ecx, DWORD PTR $T218371[esp+1388]
 	mov	BYTE PTR __$EHRec$[esp+1396], 35	; 00000023H
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T218328[esp+1388]
+	lea	ecx, DWORD PTR $T218370[esp+1388]
 	mov	BYTE PTR __$EHRec$[esp+1396], 34	; 00000022H
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T218327[esp+1388]
+	lea	ecx, DWORD PTR $T218369[esp+1388]
 	mov	BYTE PTR __$EHRec$[esp+1396], 33	; 00000021H
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T218326[esp+1388]
+	lea	ecx, DWORD PTR $T218368[esp+1388]
 
 ; 172  : 		}
 ; 173  : 		else
@@ -2403,34 +2403,34 @@ $LN3@setDateStr:
 ; 174  : 		{
 ; 175  : 			strString = (strWeekBuffer + ", " + CvString(Descr) + ", " + strYearBuffer);
 
-	lea	ecx, DWORD PTR $T218331[esp+1392]
+	lea	ecx, DWORD PTR $T218373[esp+1392]
 	call	??0CvString@@QAE@PBD@Z			; CvString::CvString
 	mov	esi, eax
 	mov	edi, DWORD PTR __imp_??$?HDU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@ABV10@PBD@Z
-	push	OFFSET $SG217734
+	push	OFFSET $SG217776
 	lea	eax, DWORD PTR _strWeekBuffer$[esp+1392]
 	push	eax
-	lea	ecx, DWORD PTR $T218332[esp+1396]
+	lea	ecx, DWORD PTR $T218374[esp+1396]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+1408], 38	; 00000026H
 	call	edi
 	push	esi
 	mov	esi, DWORD PTR __imp_??$?HDU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@ABV10@0@Z
 	push	eax
-	lea	edx, DWORD PTR $T218333[esp+1408]
+	lea	edx, DWORD PTR $T218375[esp+1408]
 	push	edx
 	mov	BYTE PTR __$EHRec$[esp+1420], 39	; 00000027H
 	call	esi
-	push	OFFSET $SG217733
+	push	OFFSET $SG217775
 	push	eax
-	lea	eax, DWORD PTR $T218334[esp+1420]
+	lea	eax, DWORD PTR $T218376[esp+1420]
 	push	eax
 	mov	BYTE PTR __$EHRec$[esp+1432], 40	; 00000028H
 	call	edi
 	lea	ecx, DWORD PTR _strYearBuffer$[esp+1424]
 	push	ecx
 	push	eax
-	lea	edx, DWORD PTR $T218335[esp+1432]
+	lea	edx, DWORD PTR $T218377[esp+1432]
 	mov	bl, 41					; 00000029H
 	push	edx
 	mov	BYTE PTR __$EHRec$[esp+1444], bl
@@ -2440,19 +2440,19 @@ $LN3@setDateStr:
 	push	eax
 	mov	BYTE PTR __$EHRec$[esp+1400], 42	; 0000002aH
 	call	??4CvString@@QAEAAV0@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z ; CvString::operator=
-	lea	ecx, DWORD PTR $T218335[esp+1388]
+	lea	ecx, DWORD PTR $T218377[esp+1388]
 	mov	BYTE PTR __$EHRec$[esp+1396], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T218334[esp+1388]
+	lea	ecx, DWORD PTR $T218376[esp+1388]
 	mov	BYTE PTR __$EHRec$[esp+1396], 40	; 00000028H
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T218333[esp+1388]
+	lea	ecx, DWORD PTR $T218375[esp+1388]
 	mov	BYTE PTR __$EHRec$[esp+1396], 39	; 00000027H
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T218332[esp+1388]
+	lea	ecx, DWORD PTR $T218374[esp+1388]
 	mov	BYTE PTR __$EHRec$[esp+1396], 38	; 00000026H
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T218331[esp+1388]
+	lea	ecx, DWORD PTR $T218373[esp+1388]
 $LN164@setDateStr:
 	mov	BYTE PTR __$EHRec$[esp+1396], 32	; 00000020H
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
@@ -2462,9 +2462,9 @@ $LN164@setDateStr:
 
 	mov	BYTE PTR __$EHRec$[esp+1396], 31	; 0000001fH
 $LN162@setDateStr:
-	lea	ecx, DWORD PTR _kResult$217716[esp+1388]
+	lea	ecx, DWORD PTR _kResult$217758[esp+1388]
 	call	DWORD PTR __imp_??1Results@Database@@UAE@XZ
-	lea	ecx, DWORD PTR _kCalendarInfo$217715[esp+1388]
+	lea	ecx, DWORD PTR _kCalendarInfo$217757[esp+1388]
 	mov	BYTE PTR __$EHRec$[esp+1396], 1
 	call	??1CvBaseInfo@@QAE@XZ
 $LN1@setDateStr:
@@ -2509,127 +2509,127 @@ __unwindfunclet$?setDateStr@CvGameTextMgr@@SAXAAVCvString@@H_NW4CalendarTypes@@H
 	lea	ecx, DWORD PTR _strWeekBuffer$[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?setDateStr@CvGameTextMgr@@SAXAAVCvString@@H_NW4CalendarTypes@@HW4GameSpeedTypes@@@Z$2:
-	lea	ecx, DWORD PTR _kResult$217660[ebp]
+	lea	ecx, DWORD PTR _kResult$217702[ebp]
 	jmp	??1SingleResult@Database@@UAE@XZ
 __unwindfunclet$?setDateStr@CvGameTextMgr@@SAXAAVCvString@@H_NW4CalendarTypes@@HW4GameSpeedTypes@@@Z$3:
-	lea	ecx, DWORD PTR _kInfo$217661[ebp]
+	lea	ecx, DWORD PTR _kInfo$217703[ebp]
 	jmp	??1CvBaseInfo@@QAE@XZ
 __unwindfunclet$?setDateStr@CvGameTextMgr@@SAXAAVCvString@@H_NW4CalendarTypes@@HW4GameSpeedTypes@@@Z$4:
-	lea	ecx, DWORD PTR _lstrMonth$217663[ebp]
+	lea	ecx, DWORD PTR _lstrMonth$217705[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?setDateStr@CvGameTextMgr@@SAXAAVCvString@@H_NW4CalendarTypes@@HW4GameSpeedTypes@@@Z$5:
-	lea	ecx, DWORD PTR _strMonth$217665[ebp]
+	lea	ecx, DWORD PTR _strMonth$217707[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?setDateStr@CvGameTextMgr@@SAXAAVCvString@@H_NW4CalendarTypes@@HW4GameSpeedTypes@@@Z$6:
-	lea	ecx, DWORD PTR $T218305[ebp]
+	lea	ecx, DWORD PTR $T218347[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?setDateStr@CvGameTextMgr@@SAXAAVCvString@@H_NW4CalendarTypes@@HW4GameSpeedTypes@@@Z$7:
-	lea	ecx, DWORD PTR $T218306[ebp]
+	lea	ecx, DWORD PTR $T218348[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?setDateStr@CvGameTextMgr@@SAXAAVCvString@@H_NW4CalendarTypes@@HW4GameSpeedTypes@@@Z$8:
-	lea	ecx, DWORD PTR $T218307[ebp]
+	lea	ecx, DWORD PTR $T218349[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?setDateStr@CvGameTextMgr@@SAXAAVCvString@@H_NW4CalendarTypes@@HW4GameSpeedTypes@@@Z$9:
-	lea	ecx, DWORD PTR $T218308[ebp]
+	lea	ecx, DWORD PTR $T218350[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?setDateStr@CvGameTextMgr@@SAXAAVCvString@@H_NW4CalendarTypes@@HW4GameSpeedTypes@@@Z$10:
-	lea	ecx, DWORD PTR $T218309[ebp]
+	lea	ecx, DWORD PTR $T218351[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?setDateStr@CvGameTextMgr@@SAXAAVCvString@@H_NW4CalendarTypes@@HW4GameSpeedTypes@@@Z$11:
-	lea	ecx, DWORD PTR $T218310[ebp]
+	lea	ecx, DWORD PTR $T218352[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?setDateStr@CvGameTextMgr@@SAXAAVCvString@@H_NW4CalendarTypes@@HW4GameSpeedTypes@@@Z$12:
-	lea	ecx, DWORD PTR _kSeasonInfo$217680[ebp]
+	lea	ecx, DWORD PTR _kSeasonInfo$217722[ebp]
 	jmp	??1CvBaseInfo@@QAE@XZ
 __unwindfunclet$?setDateStr@CvGameTextMgr@@SAXAAVCvString@@H_NW4CalendarTypes@@HW4GameSpeedTypes@@@Z$13:
-	lea	ecx, DWORD PTR _kResult$217681[ebp]
+	lea	ecx, DWORD PTR _kResult$217723[ebp]
 	jmp	??1SingleResult@Database@@UAE@XZ
 __unwindfunclet$?setDateStr@CvGameTextMgr@@SAXAAVCvString@@H_NW4CalendarTypes@@HW4GameSpeedTypes@@@Z$14:
-	lea	ecx, DWORD PTR $T218311[ebp]
+	lea	ecx, DWORD PTR $T218353[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?setDateStr@CvGameTextMgr@@SAXAAVCvString@@H_NW4CalendarTypes@@HW4GameSpeedTypes@@@Z$15:
-	lea	ecx, DWORD PTR $T218312[ebp]
+	lea	ecx, DWORD PTR $T218354[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?setDateStr@CvGameTextMgr@@SAXAAVCvString@@H_NW4CalendarTypes@@HW4GameSpeedTypes@@@Z$16:
-	lea	ecx, DWORD PTR $T218313[ebp]
+	lea	ecx, DWORD PTR $T218355[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?setDateStr@CvGameTextMgr@@SAXAAVCvString@@H_NW4CalendarTypes@@HW4GameSpeedTypes@@@Z$17:
-	lea	ecx, DWORD PTR $T218314[ebp]
+	lea	ecx, DWORD PTR $T218356[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?setDateStr@CvGameTextMgr@@SAXAAVCvString@@H_NW4CalendarTypes@@HW4GameSpeedTypes@@@Z$18:
-	lea	ecx, DWORD PTR $T218315[ebp]
+	lea	ecx, DWORD PTR $T218357[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?setDateStr@CvGameTextMgr@@SAXAAVCvString@@H_NW4CalendarTypes@@HW4GameSpeedTypes@@@Z$19:
-	lea	ecx, DWORD PTR $T218316[ebp]
+	lea	ecx, DWORD PTR $T218358[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?setDateStr@CvGameTextMgr@@SAXAAVCvString@@H_NW4CalendarTypes@@HW4GameSpeedTypes@@@Z$20:
-	lea	ecx, DWORD PTR $T218317[ebp]
+	lea	ecx, DWORD PTR $T218359[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?setDateStr@CvGameTextMgr@@SAXAAVCvString@@H_NW4CalendarTypes@@HW4GameSpeedTypes@@@Z$21:
-	lea	ecx, DWORD PTR _kMonthInfo$217696[ebp]
+	lea	ecx, DWORD PTR _kMonthInfo$217738[ebp]
 	jmp	??1CvBaseInfo@@QAE@XZ
 __unwindfunclet$?setDateStr@CvGameTextMgr@@SAXAAVCvString@@H_NW4CalendarTypes@@HW4GameSpeedTypes@@@Z$22:
-	lea	ecx, DWORD PTR _kResult$217697[ebp]
+	lea	ecx, DWORD PTR _kResult$217739[ebp]
 	jmp	??1SingleResult@Database@@UAE@XZ
 __unwindfunclet$?setDateStr@CvGameTextMgr@@SAXAAVCvString@@H_NW4CalendarTypes@@HW4GameSpeedTypes@@@Z$23:
-	lea	ecx, DWORD PTR $T218318[ebp]
+	lea	ecx, DWORD PTR $T218360[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?setDateStr@CvGameTextMgr@@SAXAAVCvString@@H_NW4CalendarTypes@@HW4GameSpeedTypes@@@Z$24:
-	lea	ecx, DWORD PTR $T218319[ebp]
+	lea	ecx, DWORD PTR $T218361[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?setDateStr@CvGameTextMgr@@SAXAAVCvString@@H_NW4CalendarTypes@@HW4GameSpeedTypes@@@Z$25:
-	lea	ecx, DWORD PTR $T218320[ebp]
+	lea	ecx, DWORD PTR $T218362[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?setDateStr@CvGameTextMgr@@SAXAAVCvString@@H_NW4CalendarTypes@@HW4GameSpeedTypes@@@Z$26:
-	lea	ecx, DWORD PTR $T218321[ebp]
+	lea	ecx, DWORD PTR $T218363[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?setDateStr@CvGameTextMgr@@SAXAAVCvString@@H_NW4CalendarTypes@@HW4GameSpeedTypes@@@Z$27:
-	lea	ecx, DWORD PTR $T218322[ebp]
+	lea	ecx, DWORD PTR $T218364[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?setDateStr@CvGameTextMgr@@SAXAAVCvString@@H_NW4CalendarTypes@@HW4GameSpeedTypes@@@Z$28:
-	lea	ecx, DWORD PTR $T218323[ebp]
+	lea	ecx, DWORD PTR $T218365[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?setDateStr@CvGameTextMgr@@SAXAAVCvString@@H_NW4CalendarTypes@@HW4GameSpeedTypes@@@Z$29:
-	lea	ecx, DWORD PTR $T218324[ebp]
+	lea	ecx, DWORD PTR $T218366[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?setDateStr@CvGameTextMgr@@SAXAAVCvString@@H_NW4CalendarTypes@@HW4GameSpeedTypes@@@Z$30:
-	lea	ecx, DWORD PTR $T218325[ebp]
+	lea	ecx, DWORD PTR $T218367[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?setDateStr@CvGameTextMgr@@SAXAAVCvString@@H_NW4CalendarTypes@@HW4GameSpeedTypes@@@Z$31:
-	lea	ecx, DWORD PTR _kCalendarInfo$217715[ebp]
+	lea	ecx, DWORD PTR _kCalendarInfo$217757[ebp]
 	jmp	??1CvBaseInfo@@QAE@XZ
 __unwindfunclet$?setDateStr@CvGameTextMgr@@SAXAAVCvString@@H_NW4CalendarTypes@@HW4GameSpeedTypes@@@Z$32:
-	lea	ecx, DWORD PTR _kResult$217716[ebp]
+	lea	ecx, DWORD PTR _kResult$217758[ebp]
 	jmp	??1SingleResult@Database@@UAE@XZ
 __unwindfunclet$?setDateStr@CvGameTextMgr@@SAXAAVCvString@@H_NW4CalendarTypes@@HW4GameSpeedTypes@@@Z$33:
-	lea	ecx, DWORD PTR $T218326[ebp]
+	lea	ecx, DWORD PTR $T218368[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?setDateStr@CvGameTextMgr@@SAXAAVCvString@@H_NW4CalendarTypes@@HW4GameSpeedTypes@@@Z$34:
-	lea	ecx, DWORD PTR $T218327[ebp]
+	lea	ecx, DWORD PTR $T218369[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?setDateStr@CvGameTextMgr@@SAXAAVCvString@@H_NW4CalendarTypes@@HW4GameSpeedTypes@@@Z$35:
-	lea	ecx, DWORD PTR $T218328[ebp]
+	lea	ecx, DWORD PTR $T218370[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?setDateStr@CvGameTextMgr@@SAXAAVCvString@@H_NW4CalendarTypes@@HW4GameSpeedTypes@@@Z$36:
-	lea	ecx, DWORD PTR $T218329[ebp]
+	lea	ecx, DWORD PTR $T218371[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?setDateStr@CvGameTextMgr@@SAXAAVCvString@@H_NW4CalendarTypes@@HW4GameSpeedTypes@@@Z$37:
-	lea	ecx, DWORD PTR $T218330[ebp]
+	lea	ecx, DWORD PTR $T218372[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?setDateStr@CvGameTextMgr@@SAXAAVCvString@@H_NW4CalendarTypes@@HW4GameSpeedTypes@@@Z$38:
-	lea	ecx, DWORD PTR $T218331[ebp]
+	lea	ecx, DWORD PTR $T218373[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?setDateStr@CvGameTextMgr@@SAXAAVCvString@@H_NW4CalendarTypes@@HW4GameSpeedTypes@@@Z$39:
-	lea	ecx, DWORD PTR $T218332[ebp]
+	lea	ecx, DWORD PTR $T218374[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?setDateStr@CvGameTextMgr@@SAXAAVCvString@@H_NW4CalendarTypes@@HW4GameSpeedTypes@@@Z$40:
-	lea	ecx, DWORD PTR $T218333[ebp]
+	lea	ecx, DWORD PTR $T218375[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?setDateStr@CvGameTextMgr@@SAXAAVCvString@@H_NW4CalendarTypes@@HW4GameSpeedTypes@@@Z$41:
-	lea	ecx, DWORD PTR $T218334[ebp]
+	lea	ecx, DWORD PTR $T218376[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?setDateStr@CvGameTextMgr@@SAXAAVCvString@@H_NW4CalendarTypes@@HW4GameSpeedTypes@@@Z$42:
-	lea	ecx, DWORD PTR $T218335[ebp]
+	lea	ecx, DWORD PTR $T218377[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __ehhandler$?setDateStr@CvGameTextMgr@@SAXAAVCvString@@H_NW4CalendarTypes@@HW4GameSpeedTypes@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?setDateStr@CvGameTextMgr@@SAXAAVCvString@@H_NW4CalendarTypes@@HW4GameSpeedTypes@@@Z

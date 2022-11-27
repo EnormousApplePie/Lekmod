@@ -296,8 +296,8 @@ EXTRN	?GetMaxConscript@CvPolicyEntry@@QBEHXZ:PROC	; CvPolicyEntry::GetMaxConscri
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredll_expansion2\cvinternalgamecoreutils.cpp
 ;	COMDAT ?getWorldSizeMaxConscript@@YAHABVCvPolicyEntry@@@Z
 _TEXT	SEGMENT
-$T217216 = -8						; size = 4
-$T217217 = -4						; size = 4
+$T217258 = -8						; size = 4
+$T217259 = -4						; size = 4
 _kPolicy$ = 8						; size = 4
 ?getWorldSizeMaxConscript@@YAHABVCvPolicyEntry@@@Z PROC	; getWorldSizeMaxConscript, COMDAT
 
@@ -320,12 +320,12 @@ _kPolicy$ = 8						; size = 4
 	mov	ecx, eax
 	call	?getMaxConscriptModifier@CvWorldInfo@@QBEHXZ ; CvWorldInfo::getMaxConscriptModifier
 	add	eax, 100				; 00000064H
-	mov	DWORD PTR $T217216[esp+12], eax
+	mov	DWORD PTR $T217258[esp+12], eax
 	test	eax, eax
-	mov	DWORD PTR $T217217[esp+12], 0
-	lea	eax, DWORD PTR $T217216[esp+12]
+	mov	DWORD PTR $T217259[esp+12], 0
+	lea	eax, DWORD PTR $T217258[esp+12]
 	jg	SHORT $LN8@getWorldSi
-	lea	eax, DWORD PTR $T217217[esp+12]
+	lea	eax, DWORD PTR $T217259[esp+12]
 $LN8@getWorldSi:
 	mov	ecx, DWORD PTR [eax]
 	imul	ecx, esi

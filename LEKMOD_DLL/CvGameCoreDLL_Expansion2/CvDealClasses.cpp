@@ -658,12 +658,16 @@ bool CvDeal::IsPossibleToTradeItem(PlayerTypes ePlayer, PlayerTypes eToPlayer, T
 	// Defensive Pact
 	else if(eItem == TRADE_ITEM_DEFENSIVE_PACT)
 	{
+		
+#ifndef NEW_DEFENSIVE_PACT //EAP: from Immos
 		// Neither of us yet has the Tech for DP
 		if(!pFromTeam->isDefensivePactTradingAllowed() && !pToTeam->isDefensivePactTradingAllowed())
 			return false;
 		// Embassy has not been established
 		if(!pFromTeam->HasEmbassyAtTeam(eToTeam) || !pToTeam->HasEmbassyAtTeam(eFromTeam))
 			return false;
+
+#endif
 		// Already has DP
 #ifdef AUI_YIELDS_APPLIED_AFTER_TURN_NOT_BEFORE
 		bool bConsiderExistingDefensivePact = true;
@@ -702,6 +706,15 @@ bool CvDeal::IsPossibleToTradeItem(PlayerTypes ePlayer, PlayerTypes eToPlayer, T
 		if(pFromTeam->IsHasDefensivePact(eToTeam))
 #endif
 			return false;
+#ifdef NEW_DEFENSIVE_PACT
+		// EAP: can send if at war
+		if(pFromTeam->isAtWar(eToTeam))
+			return true;
+
+		if(pToTeam->isAtWar(eFromTeam))
+			return true;
+
+#endif
 		// Same Team
 		if(eFromTeam == eToTeam)
 			return false;
@@ -1333,7 +1346,11 @@ void CvDeal::AddDefensivePact(PlayerTypes eFrom, int iDuration)
 	{
 		CvTradedItem item;
 		item.m_eItemType = TRADE_ITEM_DEFENSIVE_PACT;
+#ifdef NEW_DEFENSIVE_PACT // EAP: From Immos, but we want the turn amount to always be 10.
+		item.m_iDuration = 10;
+#else
 		item.m_iDuration = iDuration;
+#endif
 		//item.m_iFinalTurn = iDuration + GC.getGame().getGameTurn();
 #ifdef AUI_YIELDS_APPLIED_AFTER_TURN_NOT_BEFORE
 		item.m_iTurnsRemaining = -1;
@@ -2876,7 +2893,13 @@ void CvGameDeals::DoTurn()
 						bUnbreakable = true;
 						break;
 					}
-
+#ifdef NEW_DEFENSIVE_PACT //EAP: From Immos: Sets DP to unbreakable 
+					else if(itemIter->m_eItemType == TRADE_ITEM_DEFENSIVE_PACT)
+					{
+						bUnbreakable = true;
+						break;
+					}
+#endif
 					if(!bHaveEnoughGold || !bHaveEnoughResource)
 					{
 						bInvalidDeal = true;

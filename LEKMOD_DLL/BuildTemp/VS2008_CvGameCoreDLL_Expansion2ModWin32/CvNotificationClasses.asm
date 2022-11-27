@@ -10,9 +10,9 @@ INCLUDELIB MSVCRT
 INCLUDELIB OLDNAMES
 
 CONST	SEGMENT
-$SG217553 DB	00H
+$SG217595 DB	00H
 	ORG $+3
-$SG217563 DB	'NotificationType', 00H
+$SG217605 DB	'NotificationType', 00H
 CONST	ENDS
 PUBLIC	?GetTypeName@CvNotificationEntry@@QAEPBDXZ	; CvNotificationEntry::GetTypeName
 EXTRN	__imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ:PROC
@@ -1637,8 +1637,8 @@ __TI2?AVbad_alloc@std@@ DD 00H
 xdata$x	ENDS
 ;	COMDAT ??$_Allocate@PAVCvNotificationEntry@@@std@@YAPAPAVCvNotificationEntry@@IPAPAV1@@Z
 _TEXT	SEGMENT
-$T219199 = -12						; size = 12
-$T219204 = 8						; size = 4
+$T219241 = -12						; size = 12
+$T219246 = 8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ??$_Allocate@PAVCvNotificationEntry@@@std@@YAPAPAVCvNotificationEntry@@IPAPAV1@@Z PROC ; std::_Allocate<CvNotificationEntry *>, COMDAT
@@ -1680,15 +1680,15 @@ $LN3@Allocate:
 
 ; 40   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T219204[esp+8]
+	lea	eax, DWORD PTR $T219246[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T219199[esp+16]
-	mov	DWORD PTR $T219204[esp+12], 0
+	lea	ecx, DWORD PTR $T219241[esp+16]
+	mov	DWORD PTR $T219246[esp+12], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T219199[esp+16]
+	lea	ecx, DWORD PTR $T219241[esp+16]
 	push	ecx
-	mov	DWORD PTR $T219199[esp+20], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T219241[esp+20], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN9@Allocate:
 $LN8@Allocate:
@@ -1735,8 +1735,8 @@ PUBLIC	??$_Allocate@U_Node@?$_Tree_nod@V?$_Tmap_traits@IHU?$less@I@std@@V?$alloc
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Allocate@U_Node@?$_Tree_nod@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@@std@@YAPAU_Node@?$_Tree_nod@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@0@IPAU120@@Z
 _TEXT	SEGMENT
-$T219216 = -12						; size = 12
-$T219220 = 8						; size = 4
+$T219258 = -12						; size = 12
+$T219262 = 8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ??$_Allocate@U_Node@?$_Tree_nod@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@@std@@YAPAU_Node@?$_Tree_nod@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@0@IPAU120@@Z PROC ; std::_Allocate<std::_Tree_nod<std::_Tmap_traits<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> >,0> >::_Node>, COMDAT
@@ -1781,15 +1781,15 @@ $LN3@Allocate@2:
 
 ; 40   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T219220[esp+8]
+	lea	eax, DWORD PTR $T219262[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T219216[esp+16]
-	mov	DWORD PTR $T219220[esp+12], 0
+	lea	ecx, DWORD PTR $T219258[esp+16]
+	mov	DWORD PTR $T219262[esp+12], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T219216[esp+16]
+	lea	ecx, DWORD PTR $T219258[esp+16]
 	push	ecx
-	mov	DWORD PTR $T219216[esp+20], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T219258[esp+20], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN9@Allocate@2:
 $LN8@Allocate@2:
@@ -2224,7 +2224,7 @@ __$EHRec$ = -12						; size = 12
 
 ; 19   : 	m_strNotificationType = "";
 
-	push	OFFSET $SG217553
+	push	OFFSET $SG217595
 	mov	ecx, edi
 	mov	DWORD PTR __$EHRec$[esp+36], 0
 	call	DWORD PTR __imp_?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBD@Z
@@ -2284,7 +2284,7 @@ ___formal$ = 12						; size = 4
 ; 30   : 	m_strNotificationType = kResults.GetText("NotificationType");
 
 	mov	ecx, DWORD PTR _kResults$[esp]
-	push	OFFSET $SG217563
+	push	OFFSET $SG217605
 	call	DWORD PTR __imp_?GetText@Results@Database@@QAEPBDPBD@Z
 	lea	ecx, DWORD PTR [esi+4]
 	pop	esi
@@ -2779,8 +2779,8 @@ __ehfuncinfo$?_Xlen@?$vector@PAVCvNotificationEntry@@V?$allocator@PAVCvNotificat
 xdata$x	ENDS
 ;	COMDAT ?_Xlen@?$vector@PAVCvNotificationEntry@@V?$allocator@PAVCvNotificationEntry@@@std@@@std@@KAXXZ
 _TEXT	SEGMENT
-$T219502 = -80						; size = 28
-$T219501 = -52						; size = 40
+$T219544 = -80						; size = 28
+$T219543 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ?_Xlen@?$vector@PAVCvNotificationEntry@@V?$allocator@PAVCvNotificationEntry@@@std@@@std@@KAXXZ PROC ; std::vector<CvNotificationEntry *,std::allocator<CvNotificationEntry *> >::_Xlen, COMDAT
 
@@ -2796,22 +2796,22 @@ __$EHRec$ = -12						; size = 12
 ; 1260 : 		_THROW(length_error, "vector<T> too long");
 
 	push	OFFSET ??_C@_0BD@OLBABOEK@vector?$DMT?$DO?5too?5long?$AA@
-	lea	ecx, DWORD PTR $T219502[esp+84]
+	lea	ecx, DWORD PTR $T219544[esp+84]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T219501[esp+80]
+	lea	ecx, DWORD PTR $T219543[esp+80]
 	mov	DWORD PTR __$EHRec$[esp+88], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T219502[esp+80]
+	lea	eax, DWORD PTR $T219544[esp+80]
 	push	eax
-	lea	ecx, DWORD PTR $T219501[esp+96]
+	lea	ecx, DWORD PTR $T219543[esp+96]
 	mov	BYTE PTR __$EHRec$[esp+92], 1
-	mov	DWORD PTR $T219501[esp+84], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T219543[esp+84], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVlength_error@std@@
-	lea	ecx, DWORD PTR $T219501[esp+84]
+	lea	ecx, DWORD PTR $T219543[esp+84]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+96], 0
-	mov	DWORD PTR $T219501[esp+88], OFFSET ??_7length_error@std@@6B@
+	mov	DWORD PTR $T219543[esp+88], OFFSET ??_7length_error@std@@6B@
 	call	__CxxThrowException@8
 $LN13@Xlen:
 $LN12@Xlen:
@@ -2820,10 +2820,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Xlen@?$vector@PAVCvNotificationEntry@@V?$allocator@PAVCvNotificationEntry@@@std@@@std@@KAXXZ$0:
-	lea	ecx, DWORD PTR $T219502[ebp]
+	lea	ecx, DWORD PTR $T219544[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Xlen@?$vector@PAVCvNotificationEntry@@V?$allocator@PAVCvNotificationEntry@@@std@@@std@@KAXXZ$2:
-	lea	ecx, DWORD PTR $T219501[ebp]
+	lea	ecx, DWORD PTR $T219543[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Xlen@?$vector@PAVCvNotificationEntry@@V?$allocator@PAVCvNotificationEntry@@@std@@@std@@KAXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?_Xlen@?$vector@PAVCvNotificationEntry@@V?$allocator@PAVCvNotificationEntry@@@std@@@std@@KAXXZ
@@ -3463,8 +3463,8 @@ xdata$x	ENDS
 ;	COMDAT ?erase@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@@Z
 _TEXT	SEGMENT
 __Erasednode$ = -84					; size = 4
-$T219811 = -80						; size = 28
-$T219810 = -52						; size = 40
+$T219853 = -80						; size = 28
+$T219852 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
 __Where$ = 12						; size = 4
@@ -3500,22 +3500,22 @@ __Where$ = 12						; size = 4
 ; 775  : 			_THROW(out_of_range, "invalid map/set<T> iterator");
 
 	push	OFFSET ??_C@_0BM@PAPJHAGI@invalid?5map?1set?$DMT?$DO?5iterator?$AA@
-	lea	ecx, DWORD PTR $T219811[esp+92]
+	lea	ecx, DWORD PTR $T219853[esp+92]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T219810[esp+88]
+	lea	ecx, DWORD PTR $T219852[esp+88]
 	mov	DWORD PTR __$EHRec$[esp+96], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T219811[esp+88]
+	lea	eax, DWORD PTR $T219853[esp+88]
 	push	eax
-	lea	ecx, DWORD PTR $T219810[esp+104]
+	lea	ecx, DWORD PTR $T219852[esp+104]
 	mov	BYTE PTR __$EHRec$[esp+100], 1
-	mov	DWORD PTR $T219810[esp+92], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T219852[esp+92], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVout_of_range@std@@
-	lea	ecx, DWORD PTR $T219810[esp+92]
+	lea	ecx, DWORD PTR $T219852[esp+92]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+104], 0
-	mov	DWORD PTR $T219810[esp+96], OFFSET ??_7out_of_range@std@@6B@
+	mov	DWORD PTR $T219852[esp+96], OFFSET ??_7out_of_range@std@@6B@
 	call	__CxxThrowException@8
 $LN293@erase:
 $LN40@erase:
@@ -4109,10 +4109,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?erase@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@@Z$0:
-	lea	ecx, DWORD PTR $T219811[ebp]
+	lea	ecx, DWORD PTR $T219853[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?erase@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@@Z$2:
-	lea	ecx, DWORD PTR $T219810[ebp]
+	lea	ecx, DWORD PTR $T219852[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?erase@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?erase@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@@Z
@@ -4345,7 +4345,7 @@ PUBLIC	?find@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBI
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xtree
 ;	COMDAT ?find@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@QAE?AViterator@12@ABI@Z
 _TEXT	SEGMENT
-$T220454 = -4						; size = 4
+$T220496 = -4						; size = 4
 ___$ReturnUdt$ = 8					; size = 4
 __Where$ = 12						; size = 4
 __Keyval$ = 12						; size = 4
@@ -4409,8 +4409,8 @@ $LN3@find:
 ; 981  : 				_Keyval, _Key(_Where._Mynode()))
 ; 982  : 					? end() : _Where);
 
-	mov	DWORD PTR $T220454[esp+8], eax
-	lea	eax, DWORD PTR $T220454[esp+8]
+	mov	DWORD PTR $T220496[esp+8], eax
+	lea	eax, DWORD PTR $T220496[esp+8]
 	mov	edx, DWORD PTR [eax]
 	mov	eax, DWORD PTR ___$ReturnUdt$[esp+4]
 	mov	DWORD PTR [eax], edx
@@ -4884,7 +4884,7 @@ PUBLIC	?erase@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CB
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xtree
 ;	COMDAT ?erase@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@0@Z
 _TEXT	SEGMENT
-$T221171 = -4						; size = 4
+$T221213 = -4						; size = 4
 ___$ReturnUdt$ = 8					; size = 4
 __First$ = 12						; size = 4
 __Last$ = 16						; size = 4
@@ -4985,7 +4985,7 @@ $LN63@erase@3:
 	mov	DWORD PTR __First$[esp+4], eax
 $LN65@erase@3:
 	push	edx
-	lea	eax, DWORD PTR $T221171[esp+12]
+	lea	eax, DWORD PTR $T221213[esp+12]
 	push	eax
 	mov	ecx, esi
 	call	?erase@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@@Z ; std::_Tree<std::_Tmap_traits<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> >,0> >::erase
@@ -5139,7 +5139,7 @@ PUBLIC	?_Tidy@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CB
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?_Tidy@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@IAEXXZ
 _TEXT	SEGMENT
-$T222055 = -4						; size = 4
+$T222097 = -4						; size = 4
 ?_Tidy@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@IAEXXZ PROC ; std::_Tree<std::_Tmap_traits<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> >,0> >::_Tidy, COMDAT
 ; _this$ = ecx
 
@@ -5155,7 +5155,7 @@ $T222055 = -4						; size = 4
 	mov	ecx, DWORD PTR [eax]
 	push	eax
 	push	ecx
-	lea	eax, DWORD PTR $T222055[esp+16]
+	lea	eax, DWORD PTR $T222097[esp+16]
 	push	eax
 	mov	ecx, esi
 	call	?erase@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@0@Z ; std::_Tree<std::_Tmap_traits<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> >,0> >::erase
@@ -5187,7 +5187,7 @@ PUBLIC	??1?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@s
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??1?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@QAE@XZ
 _TEXT	SEGMENT
-$T222189 = -4						; size = 4
+$T222242 = -4						; size = 4
 ??1?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@QAE@XZ PROC ; std::_Tree<std::_Tmap_traits<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> >,0> >::~_Tree<std::_Tmap_traits<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> >,0> >, COMDAT
 ; _this$ = ecx
 
@@ -5203,7 +5203,7 @@ $T222189 = -4						; size = 4
 	mov	ecx, DWORD PTR [eax]
 	push	eax
 	push	ecx
-	lea	eax, DWORD PTR $T222189[esp+16]
+	lea	eax, DWORD PTR $T222242[esp+16]
 	push	eax
 	mov	ecx, esi
 	call	?erase@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@0@Z ; std::_Tree<std::_Tmap_traits<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> >,0> >::erase
@@ -5226,7 +5226,7 @@ PUBLIC	??1?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@QAE@X
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??1?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@QAE@XZ
 _TEXT	SEGMENT
-$T222321 = -4						; size = 4
+$T222363 = -4						; size = 4
 ??1?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@QAE@XZ PROC ; std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >::~map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >, COMDAT
 ; _this$ = ecx
 	push	ecx
@@ -5236,7 +5236,7 @@ $T222321 = -4						; size = 4
 	mov	ecx, DWORD PTR [eax]
 	push	eax
 	push	ecx
-	lea	eax, DWORD PTR $T222321[esp+16]
+	lea	eax, DWORD PTR $T222363[esp+16]
 	push	eax
 	mov	ecx, esi
 	call	?erase@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@0@Z ; std::_Tree<std::_Tmap_traits<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> >,0> >::erase
@@ -5273,7 +5273,7 @@ xdata$x	ENDS
 ;	COMDAT ??1CvNotificationXMLEntries@@QAE@XZ
 _TEXT	SEGMENT
 _this$ = -20						; size = 4
-$T222492 = -16						; size = 4
+$T222534 = -16						; size = 4
 __$EHRec$ = -12						; size = 12
 ??1CvNotificationXMLEntries@@QAE@XZ PROC		; CvNotificationXMLEntries::~CvNotificationXMLEntries, COMDAT
 ; _this$ = ecx
@@ -5304,7 +5304,7 @@ __$EHRec$ = -12						; size = 12
 	lea	esi, DWORD PTR [edi+16]
 	push	eax
 	push	ecx
-	lea	eax, DWORD PTR $T222492[esp+40]
+	lea	eax, DWORD PTR $T222534[esp+40]
 	xor	ebx, ebx
 	push	eax
 	mov	ecx, esi

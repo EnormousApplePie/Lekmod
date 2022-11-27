@@ -852,7 +852,7 @@ _eTeam$ = 8						; size = 4
 ; 31   : 		return m_aTeams[eTeam];
 
 	mov	eax, DWORD PTR _eTeam$[esp-4]
-	imul	eax, 2980				; 00000ba4H
+	imul	eax, 2984				; 00000ba8H
 	add	eax, DWORD PTR ?m_aTeams@CvTeam@@1PAV1@A ; CvTeam::m_aTeams
 
 ; 32   : 	}
@@ -2848,7 +2848,7 @@ $LN33@ModifyDang:
 $LN43@ModifyDang:
 	or	ecx, -1
 $LN44@ModifyDang:
-	imul	ecx, 2980				; 00000ba4H
+	imul	ecx, 2984				; 00000ba8H
 	add	ecx, DWORD PTR ?m_aTeams@CvTeam@@1PAV1@A ; CvTeam::m_aTeams
 	push	eax
 	call	?isAtWar@CvTeam@@QBE_NW4TeamTypes@@@Z	; CvTeam::isAtWar
@@ -2922,7 +2922,7 @@ $LN61@ModifyDang:
 $LN71@ModifyDang:
 	or	eax, -1
 $LN72@ModifyDang:
-	imul	eax, 2980				; 00000ba4H
+	imul	eax, 2984				; 00000ba8H
 	add	eax, DWORD PTR ?m_aTeams@CvTeam@@1PAV1@A ; CvTeam::m_aTeams
 	push	edi
 	mov	ecx, eax
@@ -3258,7 +3258,7 @@ $LN55@IsDangerBy:
 $LN65@IsDangerBy:
 	or	ecx, -1
 $LN66@IsDangerBy:
-	imul	ecx, 2980				; 00000ba4H
+	imul	ecx, 2984				; 00000ba8H
 	add	ecx, DWORD PTR ?m_aTeams@CvTeam@@1PAV1@A ; CvTeam::m_aTeams
 	push	eax
 	call	?isAtWar@CvTeam@@QBE_NW4TeamTypes@@@Z	; CvTeam::isAtWar
@@ -3345,7 +3345,7 @@ $LN83@IsDangerBy:
 $LN93@IsDangerBy:
 	or	eax, -1
 $LN94@IsDangerBy:
-	imul	eax, 2980				; 00000ba4H
+	imul	eax, 2984				; 00000ba8H
 	add	eax, DWORD PTR ?m_aTeams@CvTeam@@1PAV1@A ; CvTeam::m_aTeams
 	push	esi
 	mov	ecx, eax
@@ -3815,7 +3815,7 @@ $LN3@ShouldIgno:
 
 ; 601  : 			if (!GET_TEAM(eMajorTeam).isAtWar(eMinorTeam))
 
-	imul	eax, 2980				; 00000ba4H
+	imul	eax, 2984				; 00000ba8H
 	add	eax, DWORD PTR ?m_aTeams@CvTeam@@1PAV1@A ; CvTeam::m_aTeams
 	push	esi
 	mov	ecx, eax
@@ -4230,10 +4230,10 @@ EXTRN	?GetBaseCombatStrengthConsideringDamage@CvUnit@@QBEHXZ:PROC ; CvUnit::GetB
 _TEXT	SEGMENT
 _iBaseUnitCombatValue$ = -12				; size = 4
 _this$ = -8						; size = 4
-_iPlotY$222361 = -4					; size = 4
-$T224260 = 8						; size = 4
+_iPlotY$222403 = -4					; size = 4
+$T224302 = 8						; size = 4
 _pUnit$ = 8						; size = 4
-_iTurnsAway$222364 = 12					; size = 4
+_iTurnsAway$222406 = 12					; size = 4
 _pPlot$ = 12						; size = 4
 ?AssignUnitDangerValue@CvDangerPlots@@QAEXPAVCvUnit@@PAVCvPlot@@@Z PROC ; CvDangerPlots::AssignUnitDangerValue, COMDAT
 ; _this$ = ecx
@@ -4317,7 +4317,7 @@ $LN10@AssignUnit:
 	push	eax
 	push	ecx
 	mov	ecx, edi
-	mov	DWORD PTR _iPlotY$222361[esp+52], edx
+	mov	DWORD PTR _iPlotY$222403[esp+52], edx
 	call	?GeneratePath@CvAStar@@QAE_NHHHHH_N@Z	; CvAStar::GeneratePath
 	test	al, al
 	je	SHORT $LN36@AssignUnit
@@ -4331,15 +4331,15 @@ $LN10@AssignUnit:
 
 	mov	eax, DWORD PTR [edi+96]
 	mov	eax, DWORD PTR [eax+16]
-	mov	DWORD PTR _iTurnsAway$222364[esp+24], eax
+	mov	DWORD PTR _iTurnsAway$222406[esp+24], eax
 
 ; 744  : 			iTurnsAway = max(iTurnsAway, 1);
 
 	cmp	eax, 1
-	mov	DWORD PTR $T224260[esp+24], 1
-	lea	eax, DWORD PTR $T224260[esp+24]
+	mov	DWORD PTR $T224302[esp+24], 1
+	lea	eax, DWORD PTR $T224302[esp+24]
 	jl	SHORT $LN30@AssignUnit
-	lea	eax, DWORD PTR _iTurnsAway$222364[esp+24]
+	lea	eax, DWORD PTR _iTurnsAway$222406[esp+24]
 $LN30@AssignUnit:
 	mov	edi, DWORD PTR [eax]
 
@@ -4367,7 +4367,7 @@ $LN30@AssignUnit:
 	movzx	edx, cl
 	push	edx
 	push	eax
-	mov	eax, DWORD PTR _iPlotY$222361[esp+36]
+	mov	eax, DWORD PTR _iPlotY$222403[esp+36]
 	push	eax
 	push	ebx
 	mov	ecx, esi
@@ -4781,20 +4781,20 @@ EXTRN	?firstUnit@CvPlayer@@QAEPAVCvUnit@@PAH_N@Z:PROC	; CvPlayer::firstUnit
 ;	COMDAT ?UpdateDanger@CvDangerPlots@@QAEX_N0@Z
 _TEXT	SEGMENT
 _this$ = -56						; size = 4
-_pCityPlot$222157 = -52					; size = 4
-_iRange$222136 = -52					; size = 4
+_pCityPlot$222199 = -52					; size = 4
+_iRange$222178 = -52					; size = 4
 tv1146 = -48						; size = 4
 tv1110 = -48						; size = 4
 tv1161 = -44						; size = 4
 tv1125 = -44						; size = 4
-_loopPlayer$222125 = -40				; size = 4
-$T224651 = -36						; size = 4
-_iLoop$222130 = -32					; size = 4
-_iPlayer$222119 = -28					; size = 4
+_loopPlayer$222167 = -40				; size = 4
+$T224693 = -36						; size = 4
+_iLoop$222172 = -32					; size = 4
+_iPlayer$222161 = -28					; size = 4
 tv1175 = -24						; size = 4
 _iPlotLoop$ = -20					; size = 4
-_iRange$222156 = -20					; size = 4
-_pUnitPlot$222138 = -20					; size = 4
+_iRange$222198 = -20					; size = 4
+_pUnitPlot$222180 = -20					; size = 4
 _thisPlayer$ = -16					; size = 4
 _iLoopCity$ = -12					; size = 4
 tv1135 = -8						; size = 4
@@ -4802,7 +4802,7 @@ tv1070 = -8						; size = 4
 tv804 = -8						; size = 4
 tv1171 = -4						; size = 4
 tv733 = -4						; size = 4
-_uiOffset$224992 = -4					; size = 4
+_uiOffset$225034 = -4					; size = 4
 tv1190 = 8						; size = 4
 _bPretendWarWithAllCivs$ = 8				; size = 1
 _bIgnoreVisibility$ = 12				; size = 1
@@ -4880,17 +4880,17 @@ $LN45@UpdateDang:
 	mov	ecx, DWORD PTR ?sr_TeamTypes@CvPreGame@@3ABV?$vector@W4TeamTypes@@V?$allocator@W4TeamTypes@@@std@@@std@@B ; CvPreGame::sr_TeamTypes
 	mov	edx, DWORD PTR [ecx+4]
 	mov	eax, DWORD PTR [edx+eax*4]
-	mov	DWORD PTR $T224651[esp+72], eax
+	mov	DWORD PTR $T224693[esp+72], eax
 	jmp	SHORT $LN64@UpdateDang
 $LN63@UpdateDang:
-	mov	DWORD PTR $T224651[esp+72], -1
+	mov	DWORD PTR $T224693[esp+72], -1
 $LN64@UpdateDang:
 
 ; 120  : 
 ; 121  : 	// for each opposing civ
 ; 122  : 	for(int iPlayer = 0; iPlayer < MAX_PLAYERS; iPlayer++)
 
-	mov	DWORD PTR _iPlayer$222119[esp+72], esi
+	mov	DWORD PTR _iPlayer$222161[esp+72], esi
 	mov	DWORD PTR tv1175[esp+72], esi
 	npad	9
 $LL250@UpdateDang:
@@ -4906,7 +4906,7 @@ $LL250@UpdateDang:
 
 	mov	eax, DWORD PTR [ecx+edx+44]
 	add	ecx, edx
-	mov	DWORD PTR _loopPlayer$222125[esp+72], ecx
+	mov	DWORD PTR _loopPlayer$222167[esp+72], ecx
 	cmp	eax, 63					; 0000003fH
 	ja	SHORT $LN74@UpdateDang
 	mov	edx, DWORD PTR ?sr_TeamTypes@CvPreGame@@3ABV?$vector@W4TeamTypes@@V?$allocator@W4TeamTypes@@@std@@@std@@B ; CvPreGame::sr_TeamTypes
@@ -4929,7 +4929,7 @@ $LN75@UpdateDang:
 ; 132  : 
 ; 133  : 		if(eTeam == thisTeam)
 
-	cmp	eax, DWORD PTR $T224651[esp+72]
+	cmp	eax, DWORD PTR $T224693[esp+72]
 	je	$LN43@UpdateDang
 
 ; 134  : 		{
@@ -4938,7 +4938,7 @@ $LN75@UpdateDang:
 ; 137  : 
 ; 138  : 		if(ShouldIgnorePlayer(ePlayer) && !bPretendWarWithAllCivs)
 
-	mov	eax, DWORD PTR _iPlayer$222119[esp+72]
+	mov	eax, DWORD PTR _iPlayer$222161[esp+72]
 	mov	ecx, DWORD PTR _this$[esp+72]
 	push	eax
 	call	?ShouldIgnorePlayer@CvDangerPlots@@QAE_NW4PlayerTypes@@@Z ; CvDangerPlots::ShouldIgnorePlayer
@@ -4958,9 +4958,9 @@ $LN249@UpdateDang:
 ; 146  : 		for(pLoopUnit = loopPlayer.firstUnit(&iLoop); pLoopUnit != NULL; pLoopUnit = loopPlayer.nextUnit(&iLoop))
 
 	push	0
-	lea	ecx, DWORD PTR _iLoop$222130[esp+76]
+	lea	ecx, DWORD PTR _iLoop$222172[esp+76]
 	push	ecx
-	mov	ecx, DWORD PTR _loopPlayer$222125[esp+80]
+	mov	ecx, DWORD PTR _loopPlayer$222167[esp+80]
 	call	?firstUnit@CvPlayer@@QAEPAVCvUnit@@PAH_N@Z ; CvPlayer::firstUnit
 	mov	ebx, eax
 	test	ebx, ebx
@@ -4994,7 +4994,7 @@ $LL38@UpdateDang:
 
 	mov	ecx, ebx
 	mov	esi, eax
-	mov	DWORD PTR _iRange$222136[esp+72], eax
+	mov	DWORD PTR _iRange$222178[esp+72], eax
 	call	?canRangeStrike@CvUnit@@QBE_NXZ		; CvUnit::canRangeStrike
 	test	al, al
 	je	SHORT $LN34@UpdateDang
@@ -5005,7 +5005,7 @@ $LL38@UpdateDang:
 	mov	ecx, ebx
 	call	?GetRange@CvUnit@@QBEHXZ		; CvUnit::GetRange
 	add	esi, eax
-	mov	DWORD PTR _iRange$222136[esp+72], esi
+	mov	DWORD PTR _iRange$222178[esp+72], esi
 $LN34@UpdateDang:
 
 ; 157  : 			}
@@ -5020,7 +5020,7 @@ $LN34@UpdateDang:
 	push	eax
 	push	ebx
 	mov	ecx, edi
-	mov	DWORD PTR _pUnitPlot$222138[esp+80], eax
+	mov	DWORD PTR _pUnitPlot$222180[esp+80], eax
 	call	?AssignUnitDangerValue@CvDangerPlots@@QAEXPAVCvUnit@@PAVCvPlot@@@Z ; CvDangerPlots::AssignUnitDangerValue
 
 ; 161  : 			CvPlot* pLoopPlot = NULL;
@@ -5051,7 +5051,7 @@ $LL33@UpdateDang:
 ; 174  : 				for(int iDY = -(iRange); iDY <= iRange; iDY++)
 
 	mov	edi, DWORD PTR tv1135[esp+72]
-	cmp	edi, DWORD PTR _iRange$222136[esp+72]
+	cmp	edi, DWORD PTR _iRange$222178[esp+72]
 	jg	$LN32@UpdateDang
 
 ; 175  : 				{
@@ -5096,9 +5096,9 @@ $LN99@UpdateDang:
 	jl	SHORT $LN100@UpdateDang
 	mov	eax, ecx
 $LN100@UpdateDang:
-	cmp	eax, DWORD PTR _iRange$222136[esp+72]
+	cmp	eax, DWORD PTR _iRange$222178[esp+72]
 	jg	SHORT $LN29@UpdateDang
-	mov	eax, DWORD PTR _pUnitPlot$222138[esp+72]
+	mov	eax, DWORD PTR _pUnitPlot$222180[esp+72]
 	movsx	edx, WORD PTR [eax+2]
 	movsx	eax, WORD PTR [eax]
 	push	edi
@@ -5114,7 +5114,7 @@ $LN100@UpdateDang:
 
 	test	esi, esi
 	je	SHORT $LN29@UpdateDang
-	cmp	esi, DWORD PTR _pUnitPlot$222138[esp+72]
+	cmp	esi, DWORD PTR _pUnitPlot$222180[esp+72]
 	je	SHORT $LN29@UpdateDang
 
 ; 179  : 					{
@@ -5154,7 +5154,7 @@ $LN25@UpdateDang:
 $LN29@UpdateDang:
 	dec	DWORD PTR tv1110[esp+72]
 	inc	edi
-	cmp	edi, DWORD PTR _iRange$222136[esp+72]
+	cmp	edi, DWORD PTR _iRange$222178[esp+72]
 	jle	$LL30@UpdateDang
 $LN32@UpdateDang:
 
@@ -5173,7 +5173,7 @@ $LN32@UpdateDang:
 
 	dec	DWORD PTR tv1125[esp+72]
 	inc	ebp
-	cmp	ebp, DWORD PTR _iRange$222136[esp+72]
+	cmp	ebp, DWORD PTR _iRange$222178[esp+72]
 	jle	$LL33@UpdateDang
 $LN37@UpdateDang:
 
@@ -5187,9 +5187,9 @@ $LN37@UpdateDang:
 ; 146  : 		for(pLoopUnit = loopPlayer.firstUnit(&iLoop); pLoopUnit != NULL; pLoopUnit = loopPlayer.nextUnit(&iLoop))
 
 	push	0
-	lea	ecx, DWORD PTR _iLoop$222130[esp+76]
+	lea	ecx, DWORD PTR _iLoop$222172[esp+76]
 	push	ecx
-	mov	ecx, DWORD PTR _loopPlayer$222125[esp+80]
+	mov	ecx, DWORD PTR _loopPlayer$222167[esp+80]
 	call	?nextUnit@CvPlayer@@QAEPAVCvUnit@@PAH_N@Z ; CvPlayer::nextUnit
 	mov	ebx, eax
 	test	ebx, ebx
@@ -5204,9 +5204,9 @@ $LN244@UpdateDang:
 ; 194  : 		CvCity* pLoopCity;
 ; 195  : 		for(pLoopCity = loopPlayer.firstCity(&iLoop); pLoopCity != NULL; pLoopCity = loopPlayer.nextCity(&iLoop))
 
-	mov	ecx, DWORD PTR _loopPlayer$222125[esp+72]
+	mov	ecx, DWORD PTR _loopPlayer$222167[esp+72]
 	push	0
-	lea	edx, DWORD PTR _iLoop$222130[esp+76]
+	lea	edx, DWORD PTR _iLoop$222172[esp+76]
 	push	edx
 	call	?firstCity@CvPlayer@@QAEPAVCvCity@@PAH_N@Z ; CvPlayer::firstCity
 	mov	ebx, eax
@@ -5253,7 +5253,7 @@ $LN106@UpdateDang:
 ; 203  : 			CvPlot* pCityPlot = pLoopCity->plot();
 
 	mov	ecx, ebx
-	mov	DWORD PTR _iRange$222156[esp+72], esi
+	mov	DWORD PTR _iRange$222198[esp+72], esi
 	call	?plot@CvCity@@QBEPAVCvPlot@@XZ		; CvCity::plot
 	mov	edi, eax
 
@@ -5261,7 +5261,7 @@ $LN106@UpdateDang:
 
 	push	0
 	mov	ecx, ebx
-	mov	DWORD PTR _pCityPlot$222157[esp+76], edi
+	mov	DWORD PTR _pCityPlot$222199[esp+76], edi
 	call	?getStrengthValue@CvCity@@QBEH_N@Z	; CvCity::getStrengthValue
 	mov	ecx, DWORD PTR [ebx+84]
 	push	eax
@@ -5358,7 +5358,7 @@ $LN159@UpdateDang:
 $LN160@UpdateDang:
 	cmp	eax, esi
 	jg	SHORT $LN16@UpdateDang
-	mov	eax, DWORD PTR _pCityPlot$222157[esp+72]
+	mov	eax, DWORD PTR _pCityPlot$222199[esp+72]
 	movsx	edx, WORD PTR [eax+2]
 	movsx	eax, WORD PTR [eax]
 	push	edi
@@ -5405,7 +5405,7 @@ $LN172@UpdateDang:
 	lea	ecx, DWORD PTR [edx+ecx*4]
 $LN245@UpdateDang:
 	mov	edx, DWORD PTR tv1146[esp+72]
-	mov	esi, DWORD PTR _iRange$222156[esp+72]
+	mov	esi, DWORD PTR _iRange$222198[esp+72]
 $LN16@UpdateDang:
 	inc	edi
 	dec	edx
@@ -5442,9 +5442,9 @@ $LN23@UpdateDang:
 ; 194  : 		CvCity* pLoopCity;
 ; 195  : 		for(pLoopCity = loopPlayer.firstCity(&iLoop); pLoopCity != NULL; pLoopCity = loopPlayer.nextCity(&iLoop))
 
-	mov	ecx, DWORD PTR _loopPlayer$222125[esp+72]
+	mov	ecx, DWORD PTR _loopPlayer$222167[esp+72]
 	push	0
-	lea	eax, DWORD PTR _iLoop$222130[esp+76]
+	lea	eax, DWORD PTR _iLoop$222172[esp+76]
 	push	eax
 	call	?nextCity@CvPlayer@@QAEPAVCvCity@@PAH_N@Z ; CvPlayer::nextCity
 	mov	ebx, eax
@@ -5457,7 +5457,7 @@ $LN43@UpdateDang:
 ; 122  : 	for(int iPlayer = 0; iPlayer < MAX_PLAYERS; iPlayer++)
 
 	mov	eax, DWORD PTR tv1175[esp+72]
-	inc	DWORD PTR _iPlayer$222119[esp+72]
+	inc	DWORD PTR _iPlayer$222161[esp+72]
 	add	eax, 63236				; 0000f704H
 	cmp	eax, 4047104				; 003dc100H
 	mov	DWORD PTR tv1175[esp+72], eax
@@ -5494,7 +5494,7 @@ $LN43@UpdateDang:
 	cmp	DWORD PTR [edx+4028], 0
 	mov	DWORD PTR _iPlotLoop$[esp+72], 0
 	jle	$LN246@UpdateDang
-	mov	ecx, DWORD PTR $T224651[esp+72]
+	mov	ecx, DWORD PTR $T224693[esp+72]
 	mov	ebx, ecx
 	shr	ebx, 5
 
@@ -5508,7 +5508,7 @@ $LN43@UpdateDang:
 	sub	ecx, eax
 	mov	ebp, 1
 	shl	ebp, cl
-	mov	DWORD PTR _uiOffset$224992[esp+72], ebx
+	mov	DWORD PTR _uiOffset$225034[esp+72], ebx
 	mov	DWORD PTR tv1190[esp+68], 0
 	mov	DWORD PTR tv1070[esp+72], ebp
 	npad	1
@@ -5521,7 +5521,7 @@ $LL13@UpdateDang:
 ; 247  : 		{
 ; 248  : 			ImprovementTypes eImprovement = pPlot->getRevealedImprovementType(thisTeam);
 
-	mov	ecx, DWORD PTR $T224651[esp+72]
+	mov	ecx, DWORD PTR $T224693[esp+72]
 	push	ecx
 	mov	ecx, esi
 	call	?getRevealedImprovementType@CvPlot@@QBE?AW4ImprovementTypes@@W4TeamTypes@@@Z ; CvPlot::getRevealedImprovementType
@@ -5588,7 +5588,7 @@ $LN243@UpdateDang:
 	mov	eax, DWORD PTR _this$[esp+72]
 	mov	eax, DWORD PTR [eax+96]
 	add	DWORD PTR [eax+ecx*4], edx
-	mov	ebx, DWORD PTR _uiOffset$224992[esp+72]
+	mov	ebx, DWORD PTR _uiOffset$225034[esp+72]
 	lea	eax, DWORD PTR [eax+ecx*4]
 $LN6@UpdateDang:
 	inc	ebp
@@ -5743,7 +5743,7 @@ PUBLIC	?Init@CvDangerPlots@@QAEXW4PlayerTypes@@_N@Z	; CvDangerPlots::Init
 ;	COMDAT ?Init@CvDangerPlots@@QAEXW4PlayerTypes@@_N@Z
 _TEXT	SEGMENT
 _ePlayer$ = 8						; size = 4
-$T225142 = 12						; size = 4
+$T225184 = 12						; size = 4
 _bAllocate$ = 12					; size = 1
 ?Init@CvDangerPlots@@QAEXW4PlayerTypes@@_N@Z PROC	; CvDangerPlots::Init, COMDAT
 ; _this$ = ecx
@@ -5781,7 +5781,7 @@ _bAllocate$ = 12					; size = 1
 
 	lea	edi, DWORD PTR [ebp+96]
 	lea	ebx, DWORD PTR [edi+8]
-	mov	DWORD PTR $T225142[esp+12], esi
+	mov	DWORD PTR $T225184[esp+12], esi
 	cmp	DWORD PTR [ebx], esi
 	jae	SHORT $LN26@Init
 	push	esi
@@ -5790,7 +5790,7 @@ _bAllocate$ = 12					; size = 1
 	cmp	DWORD PTR [ebx], esi
 	jb	SHORT $LN27@Init
 $LN26@Init:
-	lea	ebx, DWORD PTR $T225142[esp+12]
+	lea	ebx, DWORD PTR $T225184[esp+12]
 $LN27@Init:
 	mov	edx, DWORD PTR [ebx]
 
@@ -5833,7 +5833,7 @@ EXTRN	??5@YAAAVFDataStream@@AAV0@AAW4PlayerTypes@@@Z:PROC ; operator>>
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?Read@CvDangerPlots@@QAEXAAVFDataStream@@@Z
 _TEXT	SEGMENT
-$T225183 = -8						; size = 4
+$T225225 = -8						; size = 4
 _uiVersion$ = -4					; size = 4
 _iGridSize$ = 8						; size = 4
 _kStream$ = 8						; size = 4
@@ -5901,7 +5901,7 @@ _kStream$ = 8						; size = 4
 	mov	eax, DWORD PTR _iGridSize$[esp+20]
 	lea	ebp, DWORD PTR [ebx+96]
 	lea	esi, DWORD PTR [ebp+8]
-	mov	DWORD PTR $T225183[esp+24], eax
+	mov	DWORD PTR $T225225[esp+24], eax
 	cmp	DWORD PTR [esi], eax
 	jae	SHORT $LN12@Read
 	push	eax
@@ -5909,10 +5909,10 @@ _kStream$ = 8						; size = 4
 	call	?GrowSize@?$FFastVector@I$00$0BCJ@$0A@UFDefaultFastVectorAllocator@?$BaseVector@I$00@@@@IAEXI@Z ; FFastVector<unsigned int,1,297,0,BaseVector<unsigned int,1>::FDefaultFastVectorAllocator>::GrowSize
 	mov	eax, DWORD PTR _iGridSize$[esp+20]
 $LN12@Read:
-	mov	ecx, DWORD PTR $T225183[esp+24]
+	mov	ecx, DWORD PTR $T225225[esp+24]
 	cmp	DWORD PTR [esi], ecx
 	jb	SHORT $LN18@Read
-	lea	esi, DWORD PTR $T225183[esp+24]
+	lea	esi, DWORD PTR $T225225[esp+24]
 $LN18@Read:
 	mov	edx, DWORD PTR [esi]
 

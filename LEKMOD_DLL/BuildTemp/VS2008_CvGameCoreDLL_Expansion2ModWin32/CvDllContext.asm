@@ -15,7 +15,7 @@ _BSS	SEGMENT
 ?s_pSingleton@CvDllGameContext@@0PAV1@A DD 01H DUP (?)	; CvDllGameContext::s_pSingleton
 _BSS	ENDS
 _DATA	SEGMENT
-_CIV5_XP2_DLL_VERSION DD FLAT:$SG217118
+_CIV5_XP2_DLL_VERSION DD FLAT:$SG217160
 ?s_hHeap@CvDllGameContext@@0PAXA DD 0ffffffffH		; CvDllGameContext::s_hHeap
 _DATA	ENDS
 CONST	SEGMENT
@@ -30,90 +30,90 @@ _CIV5_XP2_DLL_GUID DD 013c6ca53H
 	DB	090H
 	DB	0c6H
 	DB	084H
-$SG217118 DB	'1.0.0', 00H
-$SG222878 DB	00H
-$SG222880 DB	00H
-$SG222859 DB	'net_message_debug.log', 00H
+$SG217160 DB	'1.0.0', 00H
+$SG222920 DB	00H
+$SG222922 DB	00H
+$SG222901 DB	'net_message_debug.log', 00H
 	ORG $+2
-$SG222861 DB	00H, 00H
+$SG222903 DB	00H, 00H
 	ORG $+2
-$SG222863 DB	'Game Random Number Generators are out of sync : local.se'
+$SG222905 DB	'Game Random Number Generators are out of sync : local.se'
 	DB	'ed=', 00H
-$SG222870 DB	', remote.seed=', 00H
+$SG222912 DB	', remote.seed=', 00H
 	ORG $+1
-$SG222871 DB	0aH, 09H, 'local.callCount=', 00H
+$SG222913 DB	0aH, 09H, 'local.callCount=', 00H
 	ORG $+1
-$SG222872 DB	', remote.callCount=', 00H
-$SG222873 DB	0aH, 09H, 'local.resetCount=', 00H
-$SG222874 DB	', remote.resetCount=', 00H
+$SG222914 DB	', remote.callCount=', 00H
+$SG222915 DB	0aH, 09H, 'local.resetCount=', 00H
+$SG222916 DB	', remote.resetCount=', 00H
 	ORG $+3
-$SG222875 DB	0aH, 00H
+$SG222917 DB	0aH, 00H
 	ORG $+2
-$SG223322 DB	'At Call #', 00H
+$SG223364 DB	'At Call #', 00H
 	ORG $+2
-$SG223323 DB	' random number seeds are different.', 0aH, 00H
+$SG223365 DB	' random number seeds are different.', 0aH, 00H
 	ORG $+3
-$SG223325 DB	'Call #', 00H
+$SG223367 DB	'Call #', 00H
 	ORG $+1
-$SG223326 DB	0aH, 'Local:', 0aH, 00H
+$SG223368 DB	0aH, 'Local:', 0aH, 00H
 	ORG $+3
-$SG223327 DB	0aH, 'Remote:', 0aH, 00H
+$SG223369 DB	0aH, 'Remote:', 0aH, 00H
 	ORG $+2
-$SG223328 DB	'Call #', 00H
+$SG223370 DB	'Call #', 00H
 	ORG $+1
-$SG223329 DB	0aH, 'Local:', 0aH, 00H
+$SG223371 DB	0aH, 'Local:', 0aH, 00H
 	ORG $+3
-$SG223330 DB	0aH, 'Remote:', 0aH, 00H
+$SG223372 DB	0aH, 'Remote:', 0aH, 00H
 	ORG $+6
-$SG223334 DB	0aH, 'Local random number generator called more than remo'
+$SG223376 DB	0aH, 'Local random number generator called more than remo'
 	DB	'te at call #', 00H
 	ORG $+3
-$SG223335 DB	0aH, 00H
+$SG223377 DB	0aH, 00H
 	ORG $+2
-$SG223337 DB	'Local CallStack:', 0aH, 00H
+$SG223379 DB	'Local CallStack:', 0aH, 00H
 	ORG $+6
-$SG223342 DB	0aH, 'remote random number generator called more than loc'
+$SG223384 DB	0aH, 'remote random number generator called more than loc'
 	DB	'al at call #', 00H
 	ORG $+3
-$SG223343 DB	0aH, 00H
+$SG223385 DB	0aH, 00H
 	ORG $+2
-$SG223345 DB	'remote CallStack:', 0aH, 00H
+$SG223387 DB	'remote CallStack:', 0aH, 00H
 	ORG $+1
-$SG223468 DB	0aH, 'First different callstack at call #', 00H
+$SG223510 DB	0aH, 'First different callstack at call #', 00H
 	ORG $+3
-$SG223469 DB	0aH, 00H
+$SG223511 DB	0aH, 00H
 	ORG $+2
-$SG223470 DB	'Local :', 0aH, 00H
+$SG223512 DB	'Local :', 0aH, 00H
 	ORG $+3
-$SG223471 DB	'Remote :', 0aH, 00H
+$SG223513 DB	'Remote :', 0aH, 00H
 	ORG $+2
-$SG223474 DB	0aH, 'Debug dump:', 0aH, 00H
+$SG223516 DB	0aH, 'Debug dump:', 0aH, 00H
 	ORG $+2
-$SG223475 DB	'Seed History -', 0aH, 00H
-$SG223484 DB	09H, ' Call #', 00H
+$SG223517 DB	'Seed History -', 0aH, 00H
+$SG223526 DB	09H, ' Call #', 00H
 	ORG $+3
-$SG223485 DB	' LOCAL=', 00H
-$SG223488 DB	09H, 'REMOTE=', 00H
+$SG223527 DB	' LOCAL=', 00H
+$SG223530 DB	09H, 'REMOTE=', 00H
 	ORG $+3
-$SG223491 DB	0aH, 00H
+$SG223533 DB	0aH, 00H
 	ORG $+2
-$SG223492 DB	0aH, 'Local callstack history', 0aH, 00H
+$SG223534 DB	0aH, 'Local callstack history', 0aH, 00H
 	ORG $+2
-$SG223507 DB	'Last message repeated ', 00H
+$SG223549 DB	'Last message repeated ', 00H
 	ORG $+1
-$SG223508 DB	' times', 0aH, 00H
-$SG223509 DB	'Call #', 00H
+$SG223550 DB	' times', 0aH, 00H
+$SG223551 DB	'Call #', 00H
 	ORG $+1
-$SG223510 DB	0aH, 00H
+$SG223552 DB	0aH, 00H
 	ORG $+2
-$SG223512 DB	0aH, 'Remote callstack history', 0aH, 00H
+$SG223554 DB	0aH, 'Remote callstack history', 0aH, 00H
 	ORG $+1
-$SG223520 DB	'Last message repeated ', 00H
+$SG223562 DB	'Last message repeated ', 00H
 	ORG $+1
-$SG223521 DB	' times', 0aH, 00H
-$SG223522 DB	'Call #', 00H
+$SG223563 DB	' times', 0aH, 00H
+$SG223564 DB	'Call #', 00H
 	ORG $+1
-$SG223523 DB	0aH, 00H
+$SG223565 DB	0aH, 00H
 	ORG $+2
 _guidICvUnknown DD 0d89ba82fH
 	DW	09fa3H
@@ -661,7 +661,7 @@ __ehfuncinfo$?GetPreGame@CvDllGameContext@@UAGPAVICvPreGame1@@XZ DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?GetPreGame@CvDllGameContext@@UAGPAVICvPreGame1@@XZ
 _TEXT	SEGMENT
-$T227320 = -16						; size = 4
+$T227362 = -16						; size = 4
 __$EHRec$ = -12						; size = 12
 _this$ = 8						; size = 4
 ?GetPreGame@CvDllGameContext@@UAGPAVICvPreGame1@@XZ PROC ; CvDllGameContext::GetPreGame, COMDAT
@@ -680,7 +680,7 @@ _this$ = 8						; size = 4
 	push	4
 	call	??2CvDllPreGame@@SAPAXI@Z		; CvDllPreGame::operator new
 	add	esp, 4
-	mov	DWORD PTR $T227320[esp+16], eax
+	mov	DWORD PTR $T227362[esp+16], eax
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	eax, eax
 	je	SHORT $LN3@GetPreGame
@@ -703,7 +703,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetPreGame@CvDllGameContext@@UAGPAVICvPreGame1@@XZ$0:
-	mov	eax, DWORD PTR $T227320[ebp]
+	mov	eax, DWORD PTR $T227362[ebp]
 	push	eax
 	call	??3CvDllPreGame@@SAXPAX@Z		; CvDllPreGame::operator delete
 	pop	ecx
@@ -1293,7 +1293,7 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 __$EHRec$ = -12						; size = 12
 _this$ = 8						; size = 4
-$T227427 = 12						; size = 4
+$T227469 = 12						; size = 4
 _eBuildNum$ = 12					; size = 4
 ?GetBuildInfo@CvDllGameContext@@UAGPAVICvBuildInfo1@@W4BuildTypes@@@Z PROC ; CvDllGameContext::GetBuildInfo, COMDAT
 
@@ -1321,7 +1321,7 @@ _eBuildNum$ = 12					; size = 4
 	push	12					; 0000000cH
 	call	??2CvDllBuildInfo@@SAPAXI@Z		; CvDllBuildInfo::operator new
 	add	esp, 4
-	mov	DWORD PTR $T227427[esp+12], eax
+	mov	DWORD PTR $T227469[esp+12], eax
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	eax, eax
 	je	SHORT $LN5@GetBuildIn
@@ -1347,7 +1347,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetBuildInfo@CvDllGameContext@@UAGPAVICvBuildInfo1@@W4BuildTypes@@@Z$0:
-	mov	eax, DWORD PTR $T227427[ebp-4]
+	mov	eax, DWORD PTR $T227469[ebp-4]
 	push	eax
 	call	??3CvDllBuildInfo@@SAXPAX@Z		; CvDllBuildInfo::operator delete
 	pop	ecx
@@ -1379,7 +1379,7 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 __$EHRec$ = -12						; size = 12
 _this$ = 8						; size = 4
-$T227443 = 12						; size = 4
+$T227485 = 12						; size = 4
 _eBuilding$ = 12					; size = 4
 ?GetBuildingInfo@CvDllGameContext@@UAGPAVICvBuildingInfo1@@W4BuildingTypes@@@Z PROC ; CvDllGameContext::GetBuildingInfo, COMDAT
 
@@ -1407,7 +1407,7 @@ _eBuilding$ = 12					; size = 4
 	push	12					; 0000000cH
 	call	??2CvDllBuildingInfo@@SAPAXI@Z		; CvDllBuildingInfo::operator new
 	add	esp, 4
-	mov	DWORD PTR $T227443[esp+12], eax
+	mov	DWORD PTR $T227485[esp+12], eax
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	eax, eax
 	je	SHORT $LN5@GetBuildin
@@ -1433,7 +1433,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetBuildingInfo@CvDllGameContext@@UAGPAVICvBuildingInfo1@@W4BuildingTypes@@@Z$0:
-	mov	eax, DWORD PTR $T227443[ebp-4]
+	mov	eax, DWORD PTR $T227485[ebp-4]
 	push	eax
 	call	??3CvDllBuildingInfo@@SAXPAX@Z		; CvDllBuildingInfo::operator delete
 	pop	ecx
@@ -1465,7 +1465,7 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 __$EHRec$ = -12						; size = 12
 _this$ = 8						; size = 4
-$T227459 = 12						; size = 4
+$T227501 = 12						; size = 4
 _eCivilizationNum$ = 12					; size = 4
 ?GetCivilizationInfo@CvDllGameContext@@UAGPAVICvCivilizationInfo1@@W4CivilizationTypes@@@Z PROC ; CvDllGameContext::GetCivilizationInfo, COMDAT
 
@@ -1493,7 +1493,7 @@ _eCivilizationNum$ = 12					; size = 4
 	push	12					; 0000000cH
 	call	??2CvDllCivilizationInfo@@SAPAXI@Z	; CvDllCivilizationInfo::operator new
 	add	esp, 4
-	mov	DWORD PTR $T227459[esp+12], eax
+	mov	DWORD PTR $T227501[esp+12], eax
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	eax, eax
 	je	SHORT $LN5@GetCiviliz
@@ -1519,7 +1519,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetCivilizationInfo@CvDllGameContext@@UAGPAVICvCivilizationInfo1@@W4CivilizationTypes@@@Z$0:
-	mov	eax, DWORD PTR $T227459[ebp-4]
+	mov	eax, DWORD PTR $T227501[ebp-4]
 	push	eax
 	call	??3CvDllCivilizationInfo@@SAXPAX@Z	; CvDllCivilizationInfo::operator delete
 	pop	ecx
@@ -1551,7 +1551,7 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 __$EHRec$ = -12						; size = 12
 _this$ = 8						; size = 4
-$T227475 = 12						; size = 4
+$T227517 = 12						; size = 4
 _e$ = 12						; size = 4
 ?GetColorInfo@CvDllGameContext@@UAGPAVICvColorInfo1@@W4ColorTypes@@@Z PROC ; CvDllGameContext::GetColorInfo, COMDAT
 
@@ -1579,7 +1579,7 @@ _e$ = 12						; size = 4
 	push	12					; 0000000cH
 	call	??2CvDllColorInfo@@SAPAXI@Z		; CvDllColorInfo::operator new
 	add	esp, 4
-	mov	DWORD PTR $T227475[esp+12], eax
+	mov	DWORD PTR $T227517[esp+12], eax
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	eax, eax
 	je	SHORT $LN5@GetColorIn
@@ -1605,7 +1605,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetColorInfo@CvDllGameContext@@UAGPAVICvColorInfo1@@W4ColorTypes@@@Z$0:
-	mov	eax, DWORD PTR $T227475[ebp-4]
+	mov	eax, DWORD PTR $T227517[ebp-4]
 	push	eax
 	call	??3CvDllColorInfo@@SAXPAX@Z		; CvDllColorInfo::operator delete
 	pop	ecx
@@ -1637,7 +1637,7 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 __$EHRec$ = -12						; size = 12
 _this$ = 8						; size = 4
-$T227491 = 12						; size = 4
+$T227533 = 12						; size = 4
 _eEraNum$ = 12						; size = 4
 ?GetEraInfo@CvDllGameContext@@UAGPAVICvEraInfo1@@W4EraTypes@@@Z PROC ; CvDllGameContext::GetEraInfo, COMDAT
 
@@ -1665,7 +1665,7 @@ _eEraNum$ = 12						; size = 4
 	push	12					; 0000000cH
 	call	??2CvDllEraInfo@@SAPAXI@Z		; CvDllEraInfo::operator new
 	add	esp, 4
-	mov	DWORD PTR $T227491[esp+12], eax
+	mov	DWORD PTR $T227533[esp+12], eax
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	eax, eax
 	je	SHORT $LN5@GetEraInfo
@@ -1691,7 +1691,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetEraInfo@CvDllGameContext@@UAGPAVICvEraInfo1@@W4EraTypes@@@Z$0:
-	mov	eax, DWORD PTR $T227491[ebp-4]
+	mov	eax, DWORD PTR $T227533[ebp-4]
 	push	eax
 	call	??3CvDllEraInfo@@SAXPAX@Z		; CvDllEraInfo::operator delete
 	pop	ecx
@@ -1723,7 +1723,7 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 __$EHRec$ = -12						; size = 12
 _this$ = 8						; size = 4
-$T227507 = 12						; size = 4
+$T227549 = 12						; size = 4
 _eFeatureNum$ = 12					; size = 4
 ?GetFeatureInfo@CvDllGameContext@@UAGPAVICvFeatureInfo1@@W4FeatureTypes@@@Z PROC ; CvDllGameContext::GetFeatureInfo, COMDAT
 
@@ -1751,7 +1751,7 @@ _eFeatureNum$ = 12					; size = 4
 	push	12					; 0000000cH
 	call	??2CvDllFeatureInfo@@SAPAXI@Z		; CvDllFeatureInfo::operator new
 	add	esp, 4
-	mov	DWORD PTR $T227507[esp+12], eax
+	mov	DWORD PTR $T227549[esp+12], eax
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	eax, eax
 	je	SHORT $LN5@GetFeature
@@ -1777,7 +1777,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetFeatureInfo@CvDllGameContext@@UAGPAVICvFeatureInfo1@@W4FeatureTypes@@@Z$0:
-	mov	eax, DWORD PTR $T227507[ebp-4]
+	mov	eax, DWORD PTR $T227549[ebp-4]
 	push	eax
 	call	??3CvDllFeatureInfo@@SAXPAX@Z		; CvDllFeatureInfo::operator delete
 	pop	ecx
@@ -1809,7 +1809,7 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 __$EHRec$ = -12						; size = 12
 _this$ = 8						; size = 4
-$T227523 = 12						; size = 4
+$T227565 = 12						; size = 4
 _eGameOptionNum$ = 12					; size = 4
 ?GetGameOptionInfo@CvDllGameContext@@UAGPAVICvGameOptionInfo1@@W4GameOptionTypes@@@Z PROC ; CvDllGameContext::GetGameOptionInfo, COMDAT
 
@@ -1837,7 +1837,7 @@ _eGameOptionNum$ = 12					; size = 4
 	push	12					; 0000000cH
 	call	??2CvDllGameOptionInfo@@SAPAXI@Z	; CvDllGameOptionInfo::operator new
 	add	esp, 4
-	mov	DWORD PTR $T227523[esp+12], eax
+	mov	DWORD PTR $T227565[esp+12], eax
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	eax, eax
 	je	SHORT $LN5@GetGameOpt
@@ -1863,7 +1863,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetGameOptionInfo@CvDllGameContext@@UAGPAVICvGameOptionInfo1@@W4GameOptionTypes@@@Z$0:
-	mov	eax, DWORD PTR $T227523[ebp-4]
+	mov	eax, DWORD PTR $T227565[ebp-4]
 	push	eax
 	call	??3CvDllGameOptionInfo@@SAXPAX@Z	; CvDllGameOptionInfo::operator delete
 	pop	ecx
@@ -1895,7 +1895,7 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 __$EHRec$ = -12						; size = 12
 _this$ = 8						; size = 4
-$T227539 = 12						; size = 4
+$T227581 = 12						; size = 4
 _eGameSpeedNum$ = 12					; size = 4
 ?GetGameSpeedInfo@CvDllGameContext@@UAGPAVICvGameSpeedInfo1@@W4GameSpeedTypes@@@Z PROC ; CvDllGameContext::GetGameSpeedInfo, COMDAT
 
@@ -1923,7 +1923,7 @@ _eGameSpeedNum$ = 12					; size = 4
 	push	12					; 0000000cH
 	call	??2CvDllGameSpeedInfo@@SAPAXI@Z		; CvDllGameSpeedInfo::operator new
 	add	esp, 4
-	mov	DWORD PTR $T227539[esp+12], eax
+	mov	DWORD PTR $T227581[esp+12], eax
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	eax, eax
 	je	SHORT $LN5@GetGameSpe
@@ -1949,7 +1949,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetGameSpeedInfo@CvDllGameContext@@UAGPAVICvGameSpeedInfo1@@W4GameSpeedTypes@@@Z$0:
-	mov	eax, DWORD PTR $T227539[ebp-4]
+	mov	eax, DWORD PTR $T227581[ebp-4]
 	push	eax
 	call	??3CvDllGameSpeedInfo@@SAXPAX@Z		; CvDllGameSpeedInfo::operator delete
 	pop	ecx
@@ -1981,7 +1981,7 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 __$EHRec$ = -12						; size = 12
 _this$ = 8						; size = 4
-$T227555 = 12						; size = 4
+$T227597 = 12						; size = 4
 _eHandicapNum$ = 12					; size = 4
 ?GetHandicapInfo@CvDllGameContext@@UAGPAVICvHandicapInfo1@@W4HandicapTypes@@@Z PROC ; CvDllGameContext::GetHandicapInfo, COMDAT
 
@@ -2009,7 +2009,7 @@ _eHandicapNum$ = 12					; size = 4
 	push	12					; 0000000cH
 	call	??2CvDllHandicapInfo@@SAPAXI@Z		; CvDllHandicapInfo::operator new
 	add	esp, 4
-	mov	DWORD PTR $T227555[esp+12], eax
+	mov	DWORD PTR $T227597[esp+12], eax
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	eax, eax
 	je	SHORT $LN5@GetHandica
@@ -2035,7 +2035,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetHandicapInfo@CvDllGameContext@@UAGPAVICvHandicapInfo1@@W4HandicapTypes@@@Z$0:
-	mov	eax, DWORD PTR $T227555[ebp-4]
+	mov	eax, DWORD PTR $T227597[ebp-4]
 	push	eax
 	call	??3CvDllHandicapInfo@@SAXPAX@Z		; CvDllHandicapInfo::operator delete
 	pop	ecx
@@ -2067,7 +2067,7 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 __$EHRec$ = -12						; size = 12
 _this$ = 8						; size = 4
-$T227571 = 12						; size = 4
+$T227613 = 12						; size = 4
 _e$ = 12						; size = 4
 ?GetInterfaceModeInfo@CvDllGameContext@@UAGPAVICvInterfaceModeInfo1@@W4InterfaceModeTypes@@@Z PROC ; CvDllGameContext::GetInterfaceModeInfo, COMDAT
 
@@ -2095,7 +2095,7 @@ _e$ = 12						; size = 4
 	push	12					; 0000000cH
 	call	??2CvDllInterfaceModeInfo@@SAPAXI@Z	; CvDllInterfaceModeInfo::operator new
 	add	esp, 4
-	mov	DWORD PTR $T227571[esp+12], eax
+	mov	DWORD PTR $T227613[esp+12], eax
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	eax, eax
 	je	SHORT $LN5@GetInterfa
@@ -2121,7 +2121,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetInterfaceModeInfo@CvDllGameContext@@UAGPAVICvInterfaceModeInfo1@@W4InterfaceModeTypes@@@Z$0:
-	mov	eax, DWORD PTR $T227571[ebp-4]
+	mov	eax, DWORD PTR $T227613[ebp-4]
 	push	eax
 	call	??3CvDllInterfaceModeInfo@@SAXPAX@Z	; CvDllInterfaceModeInfo::operator delete
 	pop	ecx
@@ -2153,7 +2153,7 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 __$EHRec$ = -12						; size = 12
 _this$ = 8						; size = 4
-$T227587 = 12						; size = 4
+$T227629 = 12						; size = 4
 _eImprovement$ = 12					; size = 4
 ?GetImprovementInfo@CvDllGameContext@@UAGPAVICvImprovementInfo1@@W4ImprovementTypes@@@Z PROC ; CvDllGameContext::GetImprovementInfo, COMDAT
 
@@ -2181,7 +2181,7 @@ _eImprovement$ = 12					; size = 4
 	push	12					; 0000000cH
 	call	??2CvDllImprovementInfo@@SAPAXI@Z	; CvDllImprovementInfo::operator new
 	add	esp, 4
-	mov	DWORD PTR $T227587[esp+12], eax
+	mov	DWORD PTR $T227629[esp+12], eax
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	eax, eax
 	je	SHORT $LN5@GetImprove
@@ -2207,7 +2207,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetImprovementInfo@CvDllGameContext@@UAGPAVICvImprovementInfo1@@W4ImprovementTypes@@@Z$0:
-	mov	eax, DWORD PTR $T227587[ebp-4]
+	mov	eax, DWORD PTR $T227629[ebp-4]
 	push	eax
 	call	??3CvDllImprovementInfo@@SAXPAX@Z	; CvDllImprovementInfo::operator delete
 	pop	ecx
@@ -2239,7 +2239,7 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 __$EHRec$ = -12						; size = 12
 _this$ = 8						; size = 4
-$T227603 = 12						; size = 4
+$T227645 = 12						; size = 4
 _eLeaderHeadNum$ = 12					; size = 4
 ?GetLeaderHeadInfo@CvDllGameContext@@UAGPAVICvLeaderHeadInfo1@@W4LeaderHeadTypes@@@Z PROC ; CvDllGameContext::GetLeaderHeadInfo, COMDAT
 
@@ -2267,7 +2267,7 @@ _eLeaderHeadNum$ = 12					; size = 4
 	push	12					; 0000000cH
 	call	??2CvDllLeaderHeadInfo@@SAPAXI@Z	; CvDllLeaderHeadInfo::operator new
 	add	esp, 4
-	mov	DWORD PTR $T227603[esp+12], eax
+	mov	DWORD PTR $T227645[esp+12], eax
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	eax, eax
 	je	SHORT $LN5@GetLeaderH
@@ -2293,7 +2293,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetLeaderHeadInfo@CvDllGameContext@@UAGPAVICvLeaderHeadInfo1@@W4LeaderHeadTypes@@@Z$0:
-	mov	eax, DWORD PTR $T227603[ebp-4]
+	mov	eax, DWORD PTR $T227645[ebp-4]
 	push	eax
 	call	??3CvDllLeaderHeadInfo@@SAXPAX@Z	; CvDllLeaderHeadInfo::operator delete
 	pop	ecx
@@ -2325,7 +2325,7 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 __$EHRec$ = -12						; size = 12
 _this$ = 8						; size = 4
-$T227619 = 12						; size = 4
+$T227661 = 12						; size = 4
 _eMinorCiv$ = 12					; size = 4
 ?GetMinorCivInfo@CvDllGameContext@@UAGPAVICvMinorCivInfo1@@W4MinorCivTypes@@@Z PROC ; CvDllGameContext::GetMinorCivInfo, COMDAT
 
@@ -2353,7 +2353,7 @@ _eMinorCiv$ = 12					; size = 4
 	push	12					; 0000000cH
 	call	??2CvDllMinorCivInfo@@SAPAXI@Z		; CvDllMinorCivInfo::operator new
 	add	esp, 4
-	mov	DWORD PTR $T227619[esp+12], eax
+	mov	DWORD PTR $T227661[esp+12], eax
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	eax, eax
 	je	SHORT $LN5@GetMinorCi
@@ -2379,7 +2379,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetMinorCivInfo@CvDllGameContext@@UAGPAVICvMinorCivInfo1@@W4MinorCivTypes@@@Z$0:
-	mov	eax, DWORD PTR $T227619[ebp-4]
+	mov	eax, DWORD PTR $T227661[ebp-4]
 	push	eax
 	call	??3CvDllMinorCivInfo@@SAXPAX@Z		; CvDllMinorCivInfo::operator delete
 	pop	ecx
@@ -2411,7 +2411,7 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 __$EHRec$ = -12						; size = 12
 _this$ = 8						; size = 4
-$T227635 = 12						; size = 4
+$T227677 = 12						; size = 4
 _eMission$ = 12						; size = 4
 ?GetMissionInfo@CvDllGameContext@@UAGPAVICvMissionInfo1@@W4MissionTypes@@@Z PROC ; CvDllGameContext::GetMissionInfo, COMDAT
 
@@ -2439,7 +2439,7 @@ _eMission$ = 12						; size = 4
 	push	12					; 0000000cH
 	call	??2CvDllMissionInfo@@SAPAXI@Z		; CvDllMissionInfo::operator new
 	add	esp, 4
-	mov	DWORD PTR $T227635[esp+12], eax
+	mov	DWORD PTR $T227677[esp+12], eax
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	eax, eax
 	je	SHORT $LN5@GetMission
@@ -2465,7 +2465,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetMissionInfo@CvDllGameContext@@UAGPAVICvMissionInfo1@@W4MissionTypes@@@Z$0:
-	mov	eax, DWORD PTR $T227635[ebp-4]
+	mov	eax, DWORD PTR $T227677[ebp-4]
 	push	eax
 	call	??3CvDllMissionInfo@@SAXPAX@Z		; CvDllMissionInfo::operator delete
 	pop	ecx
@@ -2497,7 +2497,7 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 __$EHRec$ = -12						; size = 12
 _this$ = 8						; size = 4
-$T227651 = 12						; size = 4
+$T227693 = 12						; size = 4
 _e$ = 12						; size = 4
 ?GetPlayerColorInfo@CvDllGameContext@@UAGPAVICvPlayerColorInfo1@@W4PlayerColorTypes@@@Z PROC ; CvDllGameContext::GetPlayerColorInfo, COMDAT
 
@@ -2525,7 +2525,7 @@ _e$ = 12						; size = 4
 	push	12					; 0000000cH
 	call	??2CvDllPlayerColorInfo@@SAPAXI@Z	; CvDllPlayerColorInfo::operator new
 	add	esp, 4
-	mov	DWORD PTR $T227651[esp+12], eax
+	mov	DWORD PTR $T227693[esp+12], eax
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	eax, eax
 	je	SHORT $LN5@GetPlayerC
@@ -2551,7 +2551,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetPlayerColorInfo@CvDllGameContext@@UAGPAVICvPlayerColorInfo1@@W4PlayerColorTypes@@@Z$0:
-	mov	eax, DWORD PTR $T227651[ebp-4]
+	mov	eax, DWORD PTR $T227693[ebp-4]
 	push	eax
 	call	??3CvDllPlayerColorInfo@@SAXPAX@Z	; CvDllPlayerColorInfo::operator delete
 	pop	ecx
@@ -2583,7 +2583,7 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 __$EHRec$ = -12						; size = 12
 _this$ = 8						; size = 4
-$T227667 = 12						; size = 4
+$T227709 = 12						; size = 4
 _ePlayerOptionNum$ = 12					; size = 4
 ?GetPlayerOptionInfo@CvDllGameContext@@UAGPAVICvPlayerOptionInfo1@@W4PlayerOptionTypes@@@Z PROC ; CvDllGameContext::GetPlayerOptionInfo, COMDAT
 
@@ -2611,7 +2611,7 @@ _ePlayerOptionNum$ = 12					; size = 4
 	push	12					; 0000000cH
 	call	??2CvDllPlayerOptionInfo@@SAPAXI@Z	; CvDllPlayerOptionInfo::operator new
 	add	esp, 4
-	mov	DWORD PTR $T227667[esp+12], eax
+	mov	DWORD PTR $T227709[esp+12], eax
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	eax, eax
 	je	SHORT $LN5@GetPlayerO
@@ -2637,7 +2637,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetPlayerOptionInfo@CvDllGameContext@@UAGPAVICvPlayerOptionInfo1@@W4PlayerOptionTypes@@@Z$0:
-	mov	eax, DWORD PTR $T227667[ebp-4]
+	mov	eax, DWORD PTR $T227709[ebp-4]
 	push	eax
 	call	??3CvDllPlayerOptionInfo@@SAXPAX@Z	; CvDllPlayerOptionInfo::operator delete
 	pop	ecx
@@ -2669,7 +2669,7 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 __$EHRec$ = -12						; size = 12
 _this$ = 8						; size = 4
-$T227683 = 12						; size = 4
+$T227725 = 12						; size = 4
 _ePolicy$ = 12						; size = 4
 ?GetPolicyInfo@CvDllGameContext@@UAGPAVICvPolicyInfo1@@W4PolicyTypes@@@Z PROC ; CvDllGameContext::GetPolicyInfo, COMDAT
 
@@ -2697,7 +2697,7 @@ _ePolicy$ = 12						; size = 4
 	push	12					; 0000000cH
 	call	??2CvDllPolicyInfo@@SAPAXI@Z		; CvDllPolicyInfo::operator new
 	add	esp, 4
-	mov	DWORD PTR $T227683[esp+12], eax
+	mov	DWORD PTR $T227725[esp+12], eax
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	eax, eax
 	je	SHORT $LN5@GetPolicyI
@@ -2723,7 +2723,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetPolicyInfo@CvDllGameContext@@UAGPAVICvPolicyInfo1@@W4PolicyTypes@@@Z$0:
-	mov	eax, DWORD PTR $T227683[ebp-4]
+	mov	eax, DWORD PTR $T227725[ebp-4]
 	push	eax
 	call	??3CvDllPolicyInfo@@SAXPAX@Z		; CvDllPolicyInfo::operator delete
 	pop	ecx
@@ -2755,7 +2755,7 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 __$EHRec$ = -12						; size = 12
 _this$ = 8						; size = 4
-$T227699 = 12						; size = 4
+$T227741 = 12						; size = 4
 _ePromotion$ = 12					; size = 4
 ?GetPromotionInfo@CvDllGameContext@@UAGPAVICvPromotionInfo1@@W4PromotionTypes@@@Z PROC ; CvDllGameContext::GetPromotionInfo, COMDAT
 
@@ -2783,7 +2783,7 @@ _ePromotion$ = 12					; size = 4
 	push	12					; 0000000cH
 	call	??2CvDllPromotionInfo@@SAPAXI@Z		; CvDllPromotionInfo::operator new
 	add	esp, 4
-	mov	DWORD PTR $T227699[esp+12], eax
+	mov	DWORD PTR $T227741[esp+12], eax
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	eax, eax
 	je	SHORT $LN5@GetPromoti
@@ -2809,7 +2809,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetPromotionInfo@CvDllGameContext@@UAGPAVICvPromotionInfo1@@W4PromotionTypes@@@Z$0:
-	mov	eax, DWORD PTR $T227699[ebp-4]
+	mov	eax, DWORD PTR $T227741[ebp-4]
 	push	eax
 	call	??3CvDllPromotionInfo@@SAXPAX@Z		; CvDllPromotionInfo::operator delete
 	pop	ecx
@@ -2841,7 +2841,7 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 __$EHRec$ = -12						; size = 12
 _this$ = 8						; size = 4
-$T227715 = 12						; size = 4
+$T227757 = 12						; size = 4
 _eResourceNum$ = 12					; size = 4
 ?GetResourceInfo@CvDllGameContext@@UAGPAVICvResourceInfo1@@W4ResourceTypes@@@Z PROC ; CvDllGameContext::GetResourceInfo, COMDAT
 
@@ -2869,7 +2869,7 @@ _eResourceNum$ = 12					; size = 4
 	push	12					; 0000000cH
 	call	??2CvDllResourceInfo@@SAPAXI@Z		; CvDllResourceInfo::operator new
 	add	esp, 4
-	mov	DWORD PTR $T227715[esp+12], eax
+	mov	DWORD PTR $T227757[esp+12], eax
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	eax, eax
 	je	SHORT $LN5@GetResourc
@@ -2895,7 +2895,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetResourceInfo@CvDllGameContext@@UAGPAVICvResourceInfo1@@W4ResourceTypes@@@Z$0:
-	mov	eax, DWORD PTR $T227715[ebp-4]
+	mov	eax, DWORD PTR $T227757[ebp-4]
 	push	eax
 	call	??3CvDllResourceInfo@@SAXPAX@Z		; CvDllResourceInfo::operator delete
 	pop	ecx
@@ -2927,7 +2927,7 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 __$EHRec$ = -12						; size = 12
 _this$ = 8						; size = 4
-$T227731 = 12						; size = 4
+$T227773 = 12						; size = 4
 _eTech$ = 12						; size = 4
 ?GetTechInfo@CvDllGameContext@@UAGPAVICvTechInfo1@@W4TechTypes@@@Z PROC ; CvDllGameContext::GetTechInfo, COMDAT
 
@@ -2955,7 +2955,7 @@ _eTech$ = 12						; size = 4
 	push	12					; 0000000cH
 	call	??2CvDllTechInfo@@SAPAXI@Z		; CvDllTechInfo::operator new
 	add	esp, 4
-	mov	DWORD PTR $T227731[esp+12], eax
+	mov	DWORD PTR $T227773[esp+12], eax
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	eax, eax
 	je	SHORT $LN5@GetTechInf
@@ -2981,7 +2981,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetTechInfo@CvDllGameContext@@UAGPAVICvTechInfo1@@W4TechTypes@@@Z$0:
-	mov	eax, DWORD PTR $T227731[ebp-4]
+	mov	eax, DWORD PTR $T227773[ebp-4]
 	push	eax
 	call	??3CvDllTechInfo@@SAXPAX@Z		; CvDllTechInfo::operator delete
 	pop	ecx
@@ -3013,7 +3013,7 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 __$EHRec$ = -12						; size = 12
 _this$ = 8						; size = 4
-$T227747 = 12						; size = 4
+$T227789 = 12						; size = 4
 _eTerrainNum$ = 12					; size = 4
 ?GetTerrainInfo@CvDllGameContext@@UAGPAVICvTerrainInfo1@@W4TerrainTypes@@@Z PROC ; CvDllGameContext::GetTerrainInfo, COMDAT
 
@@ -3041,7 +3041,7 @@ _eTerrainNum$ = 12					; size = 4
 	push	12					; 0000000cH
 	call	??2CvDllTerrainInfo@@SAPAXI@Z		; CvDllTerrainInfo::operator new
 	add	esp, 4
-	mov	DWORD PTR $T227747[esp+12], eax
+	mov	DWORD PTR $T227789[esp+12], eax
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	eax, eax
 	je	SHORT $LN5@GetTerrain
@@ -3067,7 +3067,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetTerrainInfo@CvDllGameContext@@UAGPAVICvTerrainInfo1@@W4TerrainTypes@@@Z$0:
-	mov	eax, DWORD PTR $T227747[ebp-4]
+	mov	eax, DWORD PTR $T227789[ebp-4]
 	push	eax
 	call	??3CvDllTerrainInfo@@SAXPAX@Z		; CvDllTerrainInfo::operator delete
 	pop	ecx
@@ -3099,7 +3099,7 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 __$EHRec$ = -12						; size = 12
 _this$ = 8						; size = 4
-$T227763 = 12						; size = 4
+$T227805 = 12						; size = 4
 _eUnit$ = 12						; size = 4
 ?GetUnitInfo@CvDllGameContext@@UAGPAVICvUnitInfo1@@W4UnitTypes@@@Z PROC ; CvDllGameContext::GetUnitInfo, COMDAT
 
@@ -3127,7 +3127,7 @@ _eUnit$ = 12						; size = 4
 	push	12					; 0000000cH
 	call	??2CvDllUnitInfo@@SAPAXI@Z		; CvDllUnitInfo::operator new
 	add	esp, 4
-	mov	DWORD PTR $T227763[esp+12], eax
+	mov	DWORD PTR $T227805[esp+12], eax
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	eax, eax
 	je	SHORT $LN5@GetUnitInf
@@ -3153,7 +3153,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetUnitInfo@CvDllGameContext@@UAGPAVICvUnitInfo1@@W4UnitTypes@@@Z$0:
-	mov	eax, DWORD PTR $T227763[ebp-4]
+	mov	eax, DWORD PTR $T227805[ebp-4]
 	push	eax
 	call	??3CvDllUnitInfo@@SAXPAX@Z		; CvDllUnitInfo::operator delete
 	pop	ecx
@@ -3185,7 +3185,7 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 __$EHRec$ = -12						; size = 12
 _this$ = 8						; size = 4
-$T227779 = 12						; size = 4
+$T227821 = 12						; size = 4
 _eUnitCombat$ = 12					; size = 4
 ?GetUnitCombatClassInfo@CvDllGameContext@@UAGPAVICvUnitCombatClassInfo1@@W4UnitCombatTypes@@@Z PROC ; CvDllGameContext::GetUnitCombatClassInfo, COMDAT
 
@@ -3213,7 +3213,7 @@ _eUnitCombat$ = 12					; size = 4
 	push	12					; 0000000cH
 	call	??2CvDllUnitCombatClassInfo@@SAPAXI@Z	; CvDllUnitCombatClassInfo::operator new
 	add	esp, 4
-	mov	DWORD PTR $T227779[esp+12], eax
+	mov	DWORD PTR $T227821[esp+12], eax
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	eax, eax
 	je	SHORT $LN5@GetUnitCom
@@ -3239,7 +3239,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetUnitCombatClassInfo@CvDllGameContext@@UAGPAVICvUnitCombatClassInfo1@@W4UnitCombatTypes@@@Z$0:
-	mov	eax, DWORD PTR $T227779[ebp-4]
+	mov	eax, DWORD PTR $T227821[ebp-4]
 	push	eax
 	call	??3CvDllUnitCombatClassInfo@@SAXPAX@Z	; CvDllUnitCombatClassInfo::operator delete
 	pop	ecx
@@ -3379,7 +3379,7 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 __$EHRec$ = -12						; size = 12
 _this$ = 8						; size = 4
-$T227798 = 12						; size = 4
+$T227840 = 12						; size = 4
 _eVictoryType$ = 12					; size = 4
 ?GetVictoryInfo@CvDllGameContext@@UAGPAVICvVictoryInfo1@@W4VictoryTypes@@@Z PROC ; CvDllGameContext::GetVictoryInfo, COMDAT
 
@@ -3407,7 +3407,7 @@ _eVictoryType$ = 12					; size = 4
 	push	12					; 0000000cH
 	call	??2CvDllVictoryInfo@@SAPAXI@Z		; CvDllVictoryInfo::operator new
 	add	esp, 4
-	mov	DWORD PTR $T227798[esp+12], eax
+	mov	DWORD PTR $T227840[esp+12], eax
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	eax, eax
 	je	SHORT $LN5@GetVictory
@@ -3433,7 +3433,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetVictoryInfo@CvDllGameContext@@UAGPAVICvVictoryInfo1@@W4VictoryTypes@@@Z$0:
-	mov	eax, DWORD PTR $T227798[ebp-4]
+	mov	eax, DWORD PTR $T227840[ebp-4]
 	push	eax
 	call	??3CvDllVictoryInfo@@SAXPAX@Z		; CvDllVictoryInfo::operator delete
 	pop	ecx
@@ -5236,8 +5236,8 @@ __ehfuncinfo$?_Xlen@?$vector@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDll
 xdata$x	ENDS
 ;	COMDAT ?_Xlen@?$vector@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@std@@KAXXZ
 _TEXT	SEGMENT
-$T228070 = -80						; size = 28
-$T228069 = -52						; size = 40
+$T228112 = -80						; size = 28
+$T228111 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ?_Xlen@?$vector@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@std@@KAXXZ PROC ; std::vector<CvDllPathFinderUpdateListData,std::allocator<CvDllPathFinderUpdateListData> >::_Xlen, COMDAT
 
@@ -5253,22 +5253,22 @@ __$EHRec$ = -12						; size = 12
 ; 1260 : 		_THROW(length_error, "vector<T> too long");
 
 	push	OFFSET ??_C@_0BD@OLBABOEK@vector?$DMT?$DO?5too?5long?$AA@
-	lea	ecx, DWORD PTR $T228070[esp+84]
+	lea	ecx, DWORD PTR $T228112[esp+84]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T228069[esp+80]
+	lea	ecx, DWORD PTR $T228111[esp+80]
 	mov	DWORD PTR __$EHRec$[esp+88], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T228070[esp+80]
+	lea	eax, DWORD PTR $T228112[esp+80]
 	push	eax
-	lea	ecx, DWORD PTR $T228069[esp+96]
+	lea	ecx, DWORD PTR $T228111[esp+96]
 	mov	BYTE PTR __$EHRec$[esp+92], 1
-	mov	DWORD PTR $T228069[esp+84], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T228111[esp+84], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVlength_error@std@@
-	lea	ecx, DWORD PTR $T228069[esp+84]
+	lea	ecx, DWORD PTR $T228111[esp+84]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+96], 0
-	mov	DWORD PTR $T228069[esp+88], OFFSET ??_7length_error@std@@6B@
+	mov	DWORD PTR $T228111[esp+88], OFFSET ??_7length_error@std@@6B@
 	call	__CxxThrowException@8
 $LN13@Xlen:
 $LN12@Xlen:
@@ -5277,10 +5277,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Xlen@?$vector@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@std@@KAXXZ$0:
-	lea	ecx, DWORD PTR $T228070[ebp]
+	lea	ecx, DWORD PTR $T228112[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Xlen@?$vector@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@std@@KAXXZ$2:
-	lea	ecx, DWORD PTR $T228069[ebp]
+	lea	ecx, DWORD PTR $T228111[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Xlen@?$vector@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@std@@KAXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?_Xlen@?$vector@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@std@@KAXXZ
@@ -5702,8 +5702,8 @@ __ehfuncinfo$?_Xlen@?$vector@U?$pair@IPAVCvRandom@@@std@@V?$allocator@U?$pair@IP
 xdata$x	ENDS
 ;	COMDAT ?_Xlen@?$vector@U?$pair@IPAVCvRandom@@@std@@V?$allocator@U?$pair@IPAVCvRandom@@@std@@@2@@std@@KAXXZ
 _TEXT	SEGMENT
-$T228141 = -80						; size = 28
-$T228140 = -52						; size = 40
+$T228183 = -80						; size = 28
+$T228182 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ?_Xlen@?$vector@U?$pair@IPAVCvRandom@@@std@@V?$allocator@U?$pair@IPAVCvRandom@@@std@@@2@@std@@KAXXZ PROC ; std::vector<std::pair<unsigned int,CvRandom *>,std::allocator<std::pair<unsigned int,CvRandom *> > >::_Xlen, COMDAT
 
@@ -5719,22 +5719,22 @@ __$EHRec$ = -12						; size = 12
 ; 1260 : 		_THROW(length_error, "vector<T> too long");
 
 	push	OFFSET ??_C@_0BD@OLBABOEK@vector?$DMT?$DO?5too?5long?$AA@
-	lea	ecx, DWORD PTR $T228141[esp+84]
+	lea	ecx, DWORD PTR $T228183[esp+84]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T228140[esp+80]
+	lea	ecx, DWORD PTR $T228182[esp+80]
 	mov	DWORD PTR __$EHRec$[esp+88], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T228141[esp+80]
+	lea	eax, DWORD PTR $T228183[esp+80]
 	push	eax
-	lea	ecx, DWORD PTR $T228140[esp+96]
+	lea	ecx, DWORD PTR $T228182[esp+96]
 	mov	BYTE PTR __$EHRec$[esp+92], 1
-	mov	DWORD PTR $T228140[esp+84], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T228182[esp+84], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVlength_error@std@@
-	lea	ecx, DWORD PTR $T228140[esp+84]
+	lea	ecx, DWORD PTR $T228182[esp+84]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+96], 0
-	mov	DWORD PTR $T228140[esp+88], OFFSET ??_7length_error@std@@6B@
+	mov	DWORD PTR $T228182[esp+88], OFFSET ??_7length_error@std@@6B@
 	call	__CxxThrowException@8
 $LN13@Xlen@2:
 $LN12@Xlen@2:
@@ -5743,10 +5743,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Xlen@?$vector@U?$pair@IPAVCvRandom@@@std@@V?$allocator@U?$pair@IPAVCvRandom@@@std@@@2@@std@@KAXXZ$0:
-	lea	ecx, DWORD PTR $T228141[ebp]
+	lea	ecx, DWORD PTR $T228183[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Xlen@?$vector@U?$pair@IPAVCvRandom@@@std@@V?$allocator@U?$pair@IPAVCvRandom@@@std@@@2@@std@@KAXXZ$2:
-	lea	ecx, DWORD PTR $T228140[ebp]
+	lea	ecx, DWORD PTR $T228182[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Xlen@?$vector@U?$pair@IPAVCvRandom@@@std@@V?$allocator@U?$pair@IPAVCvRandom@@@std@@@2@@std@@KAXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?_Xlen@?$vector@U?$pair@IPAVCvRandom@@@std@@V?$allocator@U?$pair@IPAVCvRandom@@@std@@@2@@std@@KAXXZ
@@ -5828,8 +5828,8 @@ __ehfuncinfo$?_Xlen@?$vector@U?$pair@IPAVCvDllNetInitInfo@@@std@@V?$allocator@U?
 xdata$x	ENDS
 ;	COMDAT ?_Xlen@?$vector@U?$pair@IPAVCvDllNetInitInfo@@@std@@V?$allocator@U?$pair@IPAVCvDllNetInitInfo@@@std@@@2@@std@@KAXXZ
 _TEXT	SEGMENT
-$T228175 = -80						; size = 28
-$T228174 = -52						; size = 40
+$T228217 = -80						; size = 28
+$T228216 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ?_Xlen@?$vector@U?$pair@IPAVCvDllNetInitInfo@@@std@@V?$allocator@U?$pair@IPAVCvDllNetInitInfo@@@std@@@2@@std@@KAXXZ PROC ; std::vector<std::pair<unsigned int,CvDllNetInitInfo *>,std::allocator<std::pair<unsigned int,CvDllNetInitInfo *> > >::_Xlen, COMDAT
 
@@ -5845,22 +5845,22 @@ __$EHRec$ = -12						; size = 12
 ; 1260 : 		_THROW(length_error, "vector<T> too long");
 
 	push	OFFSET ??_C@_0BD@OLBABOEK@vector?$DMT?$DO?5too?5long?$AA@
-	lea	ecx, DWORD PTR $T228175[esp+84]
+	lea	ecx, DWORD PTR $T228217[esp+84]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T228174[esp+80]
+	lea	ecx, DWORD PTR $T228216[esp+80]
 	mov	DWORD PTR __$EHRec$[esp+88], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T228175[esp+80]
+	lea	eax, DWORD PTR $T228217[esp+80]
 	push	eax
-	lea	ecx, DWORD PTR $T228174[esp+96]
+	lea	ecx, DWORD PTR $T228216[esp+96]
 	mov	BYTE PTR __$EHRec$[esp+92], 1
-	mov	DWORD PTR $T228174[esp+84], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T228216[esp+84], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVlength_error@std@@
-	lea	ecx, DWORD PTR $T228174[esp+84]
+	lea	ecx, DWORD PTR $T228216[esp+84]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+96], 0
-	mov	DWORD PTR $T228174[esp+88], OFFSET ??_7length_error@std@@6B@
+	mov	DWORD PTR $T228216[esp+88], OFFSET ??_7length_error@std@@6B@
 	call	__CxxThrowException@8
 $LN13@Xlen@3:
 $LN12@Xlen@3:
@@ -5869,10 +5869,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Xlen@?$vector@U?$pair@IPAVCvDllNetInitInfo@@@std@@V?$allocator@U?$pair@IPAVCvDllNetInitInfo@@@std@@@2@@std@@KAXXZ$0:
-	lea	ecx, DWORD PTR $T228175[ebp]
+	lea	ecx, DWORD PTR $T228217[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Xlen@?$vector@U?$pair@IPAVCvDllNetInitInfo@@@std@@V?$allocator@U?$pair@IPAVCvDllNetInitInfo@@@std@@@2@@std@@KAXXZ$2:
-	lea	ecx, DWORD PTR $T228174[ebp]
+	lea	ecx, DWORD PTR $T228216[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Xlen@?$vector@U?$pair@IPAVCvDllNetInitInfo@@@std@@V?$allocator@U?$pair@IPAVCvDllNetInitInfo@@@std@@@2@@std@@KAXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?_Xlen@?$vector@U?$pair@IPAVCvDllNetInitInfo@@@std@@V?$allocator@U?$pair@IPAVCvDllNetInitInfo@@@std@@@2@@std@@KAXXZ
@@ -5954,8 +5954,8 @@ __ehfuncinfo$?_Xlen@?$vector@U?$pair@IPAVCvDllNetLoadGameInfo@@@std@@V?$allocato
 xdata$x	ENDS
 ;	COMDAT ?_Xlen@?$vector@U?$pair@IPAVCvDllNetLoadGameInfo@@@std@@V?$allocator@U?$pair@IPAVCvDllNetLoadGameInfo@@@std@@@2@@std@@KAXXZ
 _TEXT	SEGMENT
-$T228209 = -80						; size = 28
-$T228208 = -52						; size = 40
+$T228251 = -80						; size = 28
+$T228250 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ?_Xlen@?$vector@U?$pair@IPAVCvDllNetLoadGameInfo@@@std@@V?$allocator@U?$pair@IPAVCvDllNetLoadGameInfo@@@std@@@2@@std@@KAXXZ PROC ; std::vector<std::pair<unsigned int,CvDllNetLoadGameInfo *>,std::allocator<std::pair<unsigned int,CvDllNetLoadGameInfo *> > >::_Xlen, COMDAT
 
@@ -5971,22 +5971,22 @@ __$EHRec$ = -12						; size = 12
 ; 1260 : 		_THROW(length_error, "vector<T> too long");
 
 	push	OFFSET ??_C@_0BD@OLBABOEK@vector?$DMT?$DO?5too?5long?$AA@
-	lea	ecx, DWORD PTR $T228209[esp+84]
+	lea	ecx, DWORD PTR $T228251[esp+84]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T228208[esp+80]
+	lea	ecx, DWORD PTR $T228250[esp+80]
 	mov	DWORD PTR __$EHRec$[esp+88], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T228209[esp+80]
+	lea	eax, DWORD PTR $T228251[esp+80]
 	push	eax
-	lea	ecx, DWORD PTR $T228208[esp+96]
+	lea	ecx, DWORD PTR $T228250[esp+96]
 	mov	BYTE PTR __$EHRec$[esp+92], 1
-	mov	DWORD PTR $T228208[esp+84], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T228250[esp+84], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVlength_error@std@@
-	lea	ecx, DWORD PTR $T228208[esp+84]
+	lea	ecx, DWORD PTR $T228250[esp+84]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+96], 0
-	mov	DWORD PTR $T228208[esp+88], OFFSET ??_7length_error@std@@6B@
+	mov	DWORD PTR $T228250[esp+88], OFFSET ??_7length_error@std@@6B@
 	call	__CxxThrowException@8
 $LN13@Xlen@4:
 $LN12@Xlen@4:
@@ -5995,10 +5995,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Xlen@?$vector@U?$pair@IPAVCvDllNetLoadGameInfo@@@std@@V?$allocator@U?$pair@IPAVCvDllNetLoadGameInfo@@@std@@@2@@std@@KAXXZ$0:
-	lea	ecx, DWORD PTR $T228209[ebp]
+	lea	ecx, DWORD PTR $T228251[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Xlen@?$vector@U?$pair@IPAVCvDllNetLoadGameInfo@@@std@@V?$allocator@U?$pair@IPAVCvDllNetLoadGameInfo@@@std@@@2@@std@@KAXXZ$2:
-	lea	ecx, DWORD PTR $T228208[ebp]
+	lea	ecx, DWORD PTR $T228250[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Xlen@?$vector@U?$pair@IPAVCvDllNetLoadGameInfo@@@std@@V?$allocator@U?$pair@IPAVCvDllNetLoadGameInfo@@@std@@@2@@std@@KAXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?_Xlen@?$vector@U?$pair@IPAVCvDllNetLoadGameInfo@@@std@@V?$allocator@U?$pair@IPAVCvDllNetLoadGameInfo@@@std@@@2@@std@@KAXXZ
@@ -6543,8 +6543,8 @@ __TI2?AVbad_alloc@std@@ DD 00H
 xdata$x	ENDS
 ;	COMDAT ??$_Allocate@UCvDllPathFinderUpdateListData@@@std@@YAPAUCvDllPathFinderUpdateListData@@IPAU1@@Z
 _TEXT	SEGMENT
-$T228307 = -12						; size = 12
-$T228311 = 8						; size = 4
+$T228349 = -12						; size = 12
+$T228353 = 8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ??$_Allocate@UCvDllPathFinderUpdateListData@@@std@@YAPAUCvDllPathFinderUpdateListData@@IPAU1@@Z PROC ; std::_Allocate<CvDllPathFinderUpdateListData>, COMDAT
@@ -6588,15 +6588,15 @@ $LN3@Allocate:
 
 ; 40   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T228311[esp+8]
+	lea	eax, DWORD PTR $T228353[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T228307[esp+16]
-	mov	DWORD PTR $T228311[esp+12], 0
+	lea	ecx, DWORD PTR $T228349[esp+16]
+	mov	DWORD PTR $T228353[esp+12], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T228307[esp+16]
+	lea	ecx, DWORD PTR $T228349[esp+16]
 	push	ecx
-	mov	DWORD PTR $T228307[esp+20], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T228349[esp+20], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN9@Allocate:
 $LN8@Allocate:
@@ -6607,8 +6607,8 @@ PUBLIC	??$_Allocate@U?$pair@IPAVCvRandom@@@std@@@std@@YAPAU?$pair@IPAVCvRandom@@
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Allocate@U?$pair@IPAVCvRandom@@@std@@@std@@YAPAU?$pair@IPAVCvRandom@@@0@IPAU10@@Z
 _TEXT	SEGMENT
-$T228317 = -12						; size = 12
-$T228321 = 8						; size = 4
+$T228359 = -12						; size = 12
+$T228363 = 8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ??$_Allocate@U?$pair@IPAVCvRandom@@@std@@@std@@YAPAU?$pair@IPAVCvRandom@@@0@IPAU10@@Z PROC ; std::_Allocate<std::pair<unsigned int,CvRandom *> >, COMDAT
@@ -6650,15 +6650,15 @@ $LN3@Allocate@2:
 
 ; 40   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T228321[esp+8]
+	lea	eax, DWORD PTR $T228363[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T228317[esp+16]
-	mov	DWORD PTR $T228321[esp+12], 0
+	lea	ecx, DWORD PTR $T228359[esp+16]
+	mov	DWORD PTR $T228363[esp+12], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T228317[esp+16]
+	lea	ecx, DWORD PTR $T228359[esp+16]
 	push	ecx
-	mov	DWORD PTR $T228317[esp+20], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T228359[esp+20], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN9@Allocate@2:
 $LN8@Allocate@2:
@@ -6669,8 +6669,8 @@ PUBLIC	??$_Allocate@U?$pair@IPAVCvDllNetInitInfo@@@std@@@std@@YAPAU?$pair@IPAVCv
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Allocate@U?$pair@IPAVCvDllNetInitInfo@@@std@@@std@@YAPAU?$pair@IPAVCvDllNetInitInfo@@@0@IPAU10@@Z
 _TEXT	SEGMENT
-$T228327 = -12						; size = 12
-$T228331 = 8						; size = 4
+$T228369 = -12						; size = 12
+$T228373 = 8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ??$_Allocate@U?$pair@IPAVCvDllNetInitInfo@@@std@@@std@@YAPAU?$pair@IPAVCvDllNetInitInfo@@@0@IPAU10@@Z PROC ; std::_Allocate<std::pair<unsigned int,CvDllNetInitInfo *> >, COMDAT
@@ -6712,15 +6712,15 @@ $LN3@Allocate@3:
 
 ; 40   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T228331[esp+8]
+	lea	eax, DWORD PTR $T228373[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T228327[esp+16]
-	mov	DWORD PTR $T228331[esp+12], 0
+	lea	ecx, DWORD PTR $T228369[esp+16]
+	mov	DWORD PTR $T228373[esp+12], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T228327[esp+16]
+	lea	ecx, DWORD PTR $T228369[esp+16]
 	push	ecx
-	mov	DWORD PTR $T228327[esp+20], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T228369[esp+20], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN9@Allocate@3:
 $LN8@Allocate@3:
@@ -6731,8 +6731,8 @@ PUBLIC	??$_Allocate@U?$pair@IPAVCvDllNetLoadGameInfo@@@std@@@std@@YAPAU?$pair@IP
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Allocate@U?$pair@IPAVCvDllNetLoadGameInfo@@@std@@@std@@YAPAU?$pair@IPAVCvDllNetLoadGameInfo@@@0@IPAU10@@Z
 _TEXT	SEGMENT
-$T228337 = -12						; size = 12
-$T228341 = 8						; size = 4
+$T228379 = -12						; size = 12
+$T228383 = 8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ??$_Allocate@U?$pair@IPAVCvDllNetLoadGameInfo@@@std@@@std@@YAPAU?$pair@IPAVCvDllNetLoadGameInfo@@@0@IPAU10@@Z PROC ; std::_Allocate<std::pair<unsigned int,CvDllNetLoadGameInfo *> >, COMDAT
@@ -6774,15 +6774,15 @@ $LN3@Allocate@4:
 
 ; 40   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T228341[esp+8]
+	lea	eax, DWORD PTR $T228383[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T228337[esp+16]
-	mov	DWORD PTR $T228341[esp+12], 0
+	lea	ecx, DWORD PTR $T228379[esp+16]
+	mov	DWORD PTR $T228383[esp+12], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T228337[esp+16]
+	lea	ecx, DWORD PTR $T228379[esp+16]
 	push	ecx
-	mov	DWORD PTR $T228337[esp+20], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T228379[esp+20], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN9@Allocate@4:
 $LN8@Allocate@4:
@@ -7989,12 +7989,12 @@ PUBLIC	?GetInterfaceId@ICvUnknown@@SG?AU_GUID@@XZ	; ICvUnknown::GetInterfaceId
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredllutil\include\cvdllinterfaces.h
 ;	COMDAT ?GetInterfaceId@ICvUnknown@@SG?AU_GUID@@XZ
 _TEXT	SEGMENT
-$T228532 = 8						; size = 4
+$T228574 = 8						; size = 4
 ?GetInterfaceId@ICvUnknown@@SG?AU_GUID@@XZ PROC		; ICvUnknown::GetInterfaceId, COMDAT
 
 ; 306  : 	static GUID DLLCALL GetInterfaceId(){ return guidICvUnknown; }
 
-	mov	eax, DWORD PTR $T228532[esp-4]
+	mov	eax, DWORD PTR $T228574[esp-4]
 	mov	ecx, DWORD PTR _guidICvUnknown
 	mov	edx, DWORD PTR _guidICvUnknown+4
 	mov	DWORD PTR [eax], ecx
@@ -8039,12 +8039,12 @@ PUBLIC	?GetInterfaceId@ICvGameContext1@@SG?AU_GUID@@XZ	; ICvGameContext1::GetInt
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?GetInterfaceId@ICvGameContext1@@SG?AU_GUID@@XZ
 _TEXT	SEGMENT
-$T228539 = 8						; size = 4
+$T228581 = 8						; size = 4
 ?GetInterfaceId@ICvGameContext1@@SG?AU_GUID@@XZ PROC	; ICvGameContext1::GetInterfaceId, COMDAT
 
 ; 637  : 	static GUID DLLCALL GetInterfaceId() { return guidICvGameContext1; }
 
-	mov	eax, DWORD PTR $T228539[esp-4]
+	mov	eax, DWORD PTR $T228581[esp-4]
 	mov	ecx, DWORD PTR _guidICvGameContext1
 	mov	edx, DWORD PTR _guidICvGameContext1+4
 	mov	DWORD PTR [eax], ecx
@@ -8060,12 +8060,12 @@ PUBLIC	?GetInterfaceId@ICvNetMessageHandler1@@SG?AU_GUID@@XZ ; ICvNetMessageHand
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?GetInterfaceId@ICvNetMessageHandler1@@SG?AU_GUID@@XZ
 _TEXT	SEGMENT
-$T228543 = 8						; size = 4
+$T228585 = 8						; size = 4
 ?GetInterfaceId@ICvNetMessageHandler1@@SG?AU_GUID@@XZ PROC ; ICvNetMessageHandler1::GetInterfaceId, COMDAT
 
 ; 1175 : 	static GUID DLLCALL GetInterfaceId() { return guidICvNetMessageHandler1; }
 
-	mov	eax, DWORD PTR $T228543[esp-4]
+	mov	eax, DWORD PTR $T228585[esp-4]
 	mov	ecx, DWORD PTR _guidICvNetMessageHandler1
 	mov	edx, DWORD PTR _guidICvNetMessageHandler1+4
 	mov	DWORD PTR [eax], ecx
@@ -8082,12 +8082,12 @@ PUBLIC	?GetInterfaceId@ICvGameContext2@@SG?AU_GUID@@XZ	; ICvGameContext2::GetInt
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredllutil\include\cvdllinterfaces2.h
 ;	COMDAT ?GetInterfaceId@ICvGameContext2@@SG?AU_GUID@@XZ
 _TEXT	SEGMENT
-$T228547 = 8						; size = 4
+$T228589 = 8						; size = 4
 ?GetInterfaceId@ICvGameContext2@@SG?AU_GUID@@XZ PROC	; ICvGameContext2::GetInterfaceId, COMDAT
 
 ; 154  : 	static GUID DLLCALL GetInterfaceId() { return guidICvGameContext2; }
 
-	mov	eax, DWORD PTR $T228547[esp-4]
+	mov	eax, DWORD PTR $T228589[esp-4]
 	mov	ecx, DWORD PTR _guidICvGameContext2
 	mov	edx, DWORD PTR _guidICvGameContext2+4
 	mov	DWORD PTR [eax], ecx
@@ -8103,12 +8103,12 @@ PUBLIC	?GetInterfaceId@ICvGameContext3@@SG?AU_GUID@@XZ	; ICvGameContext3::GetInt
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?GetInterfaceId@ICvGameContext3@@SG?AU_GUID@@XZ
 _TEXT	SEGMENT
-$T228551 = 8						; size = 4
+$T228593 = 8						; size = 4
 ?GetInterfaceId@ICvGameContext3@@SG?AU_GUID@@XZ PROC	; ICvGameContext3::GetInterfaceId, COMDAT
 
 ; 162  : 	static GUID DLLCALL GetInterfaceId() {return guidICvGameContext3; }
 
-	mov	eax, DWORD PTR $T228551[esp-4]
+	mov	eax, DWORD PTR $T228593[esp-4]
 	mov	ecx, DWORD PTR _guidICvGameContext3
 	mov	edx, DWORD PTR _guidICvGameContext3+4
 	mov	DWORD PTR [eax], ecx
@@ -8125,12 +8125,12 @@ PUBLIC	?GetInterfaceId@ICvEngineUtility4@@SG?AU_GUID@@XZ ; ICvEngineUtility4::Ge
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredllutil\include\icvdllutility.h
 ;	COMDAT ?GetInterfaceId@ICvEngineUtility4@@SG?AU_GUID@@XZ
 _TEXT	SEGMENT
-$T228555 = 8						; size = 4
+$T228597 = 8						; size = 4
 ?GetInterfaceId@ICvEngineUtility4@@SG?AU_GUID@@XZ PROC	; ICvEngineUtility4::GetInterfaceId, COMDAT
 
 ; 401  : 	static GUID DLLCALL GetInterfaceId() { return guidICvEngineUtility4; }
 
-	mov	eax, DWORD PTR $T228555[esp-4]
+	mov	eax, DWORD PTR $T228597[esp-4]
 	mov	ecx, DWORD PTR _guidICvEngineUtility4
 	mov	edx, DWORD PTR _guidICvEngineUtility4+4
 	mov	DWORD PTR [eax], ecx
@@ -8673,7 +8673,7 @@ _eTeam$ = 8						; size = 4
 ; 31   : 		return m_aTeams[eTeam];
 
 	mov	eax, DWORD PTR _eTeam$[esp-4]
-	imul	eax, 2980				; 00000ba4H
+	imul	eax, 2984				; 00000ba8H
 	add	eax, DWORD PTR ?m_aTeams@CvTeam@@1PAV1@A ; CvTeam::m_aTeams
 
 ; 32   : 	}
@@ -9068,10 +9068,10 @@ PUBLIC	?QueryInterface@CvDllGameContext@@UAGPAXU_GUID@@@Z ; CvDllGameContext::Qu
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredll_expansion2\cvdllcontext.cpp
 ;	COMDAT ?QueryInterface@CvDllGameContext@@UAGPAXU_GUID@@@Z
 _TEXT	SEGMENT
-$T228701 = -16						; size = 16
-$T228699 = -16						; size = 16
-$T228697 = -16						; size = 16
-$T228695 = -16						; size = 16
+$T228743 = -16						; size = 16
+$T228741 = -16						; size = 16
+$T228739 = -16						; size = 16
+$T228737 = -16						; size = 16
 _this$ = 8						; size = 4
 _guidInterface$ = 12					; size = 16
 ?QueryInterface@CvDllGameContext@@UAGPAXU_GUID@@@Z PROC	; CvDllGameContext::QueryInterface, COMDAT
@@ -9088,15 +9088,15 @@ _guidInterface$ = 12					; size = 16
 	mov	ecx, DWORD PTR _guidICvUnknown+4
 	mov	edx, DWORD PTR _guidICvUnknown+8
 	mov	eax, DWORD PTR _guidICvUnknown
-	mov	DWORD PTR $T228695[esp+20], ecx
-	lea	ecx, DWORD PTR $T228695[esp+16]
-	mov	DWORD PTR $T228695[esp+24], edx
-	mov	DWORD PTR $T228695[esp+16], eax
+	mov	DWORD PTR $T228737[esp+20], ecx
+	lea	ecx, DWORD PTR $T228737[esp+16]
+	mov	DWORD PTR $T228737[esp+24], edx
+	mov	DWORD PTR $T228737[esp+16], eax
 	mov	eax, DWORD PTR _guidICvUnknown+12
 	push	ecx
 	lea	edx, DWORD PTR _guidInterface$[esp+16]
 	push	edx
-	mov	DWORD PTR $T228695[esp+36], eax
+	mov	DWORD PTR $T228737[esp+36], eax
 	call	_IsEqualGUID
 	add	esp, 8
 	test	eax, eax
@@ -9104,15 +9104,15 @@ _guidInterface$ = 12					; size = 16
 	mov	ecx, DWORD PTR _guidICvGameContext1+4
 	mov	edx, DWORD PTR _guidICvGameContext1+8
 	mov	eax, DWORD PTR _guidICvGameContext1
-	mov	DWORD PTR $T228697[esp+20], ecx
-	lea	ecx, DWORD PTR $T228697[esp+16]
-	mov	DWORD PTR $T228697[esp+24], edx
-	mov	DWORD PTR $T228697[esp+16], eax
+	mov	DWORD PTR $T228739[esp+20], ecx
+	lea	ecx, DWORD PTR $T228739[esp+16]
+	mov	DWORD PTR $T228739[esp+24], edx
+	mov	DWORD PTR $T228739[esp+16], eax
 	mov	eax, DWORD PTR _guidICvGameContext1+12
 	push	ecx
 	lea	edx, DWORD PTR _guidInterface$[esp+16]
 	push	edx
-	mov	DWORD PTR $T228697[esp+36], eax
+	mov	DWORD PTR $T228739[esp+36], eax
 	call	_IsEqualGUID
 	add	esp, 8
 	test	eax, eax
@@ -9120,15 +9120,15 @@ _guidInterface$ = 12					; size = 16
 	mov	ecx, DWORD PTR _guidICvGameContext2+4
 	mov	edx, DWORD PTR _guidICvGameContext2+8
 	mov	eax, DWORD PTR _guidICvGameContext2
-	mov	DWORD PTR $T228699[esp+20], ecx
-	lea	ecx, DWORD PTR $T228699[esp+16]
-	mov	DWORD PTR $T228699[esp+24], edx
-	mov	DWORD PTR $T228699[esp+16], eax
+	mov	DWORD PTR $T228741[esp+20], ecx
+	lea	ecx, DWORD PTR $T228741[esp+16]
+	mov	DWORD PTR $T228741[esp+24], edx
+	mov	DWORD PTR $T228741[esp+16], eax
 	mov	eax, DWORD PTR _guidICvGameContext2+12
 	push	ecx
 	lea	edx, DWORD PTR _guidInterface$[esp+16]
 	push	edx
-	mov	DWORD PTR $T228699[esp+36], eax
+	mov	DWORD PTR $T228741[esp+36], eax
 	call	_IsEqualGUID
 	add	esp, 8
 	test	eax, eax
@@ -9136,15 +9136,15 @@ _guidInterface$ = 12					; size = 16
 	mov	ecx, DWORD PTR _guidICvGameContext3+4
 	mov	edx, DWORD PTR _guidICvGameContext3+8
 	mov	eax, DWORD PTR _guidICvGameContext3
-	mov	DWORD PTR $T228701[esp+20], ecx
-	lea	ecx, DWORD PTR $T228701[esp+16]
-	mov	DWORD PTR $T228701[esp+24], edx
-	mov	DWORD PTR $T228701[esp+16], eax
+	mov	DWORD PTR $T228743[esp+20], ecx
+	lea	ecx, DWORD PTR $T228743[esp+16]
+	mov	DWORD PTR $T228743[esp+24], edx
+	mov	DWORD PTR $T228743[esp+16], eax
 	mov	eax, DWORD PTR _guidICvGameContext3+12
 	push	ecx
 	lea	edx, DWORD PTR _guidInterface$[esp+16]
 	push	edx
-	mov	DWORD PTR $T228701[esp+36], eax
+	mov	DWORD PTR $T228743[esp+36], eax
 	call	_IsEqualGUID
 	add	esp, 8
 	test	eax, eax
@@ -9227,7 +9227,7 @@ __ehfuncinfo$?GetGame@CvDllGameContext@@UAGPAVICvGame1@@XZ DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?GetGame@CvDllGameContext@@UAGPAVICvGame1@@XZ
 _TEXT	SEGMENT
-$T228744 = -16						; size = 4
+$T228786 = -16						; size = 4
 __$EHRec$ = -12						; size = 12
 _this$ = 8						; size = 4
 ?GetGame@CvDllGameContext@@UAGPAVICvGame1@@XZ PROC	; CvDllGameContext::GetGame, COMDAT
@@ -9256,7 +9256,7 @@ _this$ = 8						; size = 4
 	push	12					; 0000000cH
 	call	??2CvDllGame@@SAPAXI@Z			; CvDllGame::operator new
 	add	esp, 4
-	mov	DWORD PTR $T228744[esp+20], eax
+	mov	DWORD PTR $T228786[esp+20], eax
 	mov	DWORD PTR __$EHRec$[esp+28], 0
 	test	eax, eax
 	je	SHORT $LN1@GetGame
@@ -9283,7 +9283,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetGame@CvDllGameContext@@UAGPAVICvGame1@@XZ$0:
-	mov	eax, DWORD PTR $T228744[ebp]
+	mov	eax, DWORD PTR $T228786[ebp]
 	push	eax
 	call	??3CvDllGame@@SAXPAX@Z			; CvDllGame::operator delete
 	pop	ecx
@@ -9314,7 +9314,7 @@ __ehfuncinfo$?GetGameAsynch@CvDllGameContext@@UAGPAVICvGameAsynch1@@XZ DD 019930
 xdata$x	ENDS
 ;	COMDAT ?GetGameAsynch@CvDllGameContext@@UAGPAVICvGameAsynch1@@XZ
 _TEXT	SEGMENT
-$T228761 = -16						; size = 4
+$T228803 = -16						; size = 4
 __$EHRec$ = -12						; size = 12
 _this$ = 8						; size = 4
 ?GetGameAsynch@CvDllGameContext@@UAGPAVICvGameAsynch1@@XZ PROC ; CvDllGameContext::GetGameAsynch, COMDAT
@@ -9343,7 +9343,7 @@ _this$ = 8						; size = 4
 	push	12					; 0000000cH
 	call	??2CvDllGameAsynch@@SAPAXI@Z		; CvDllGameAsynch::operator new
 	add	esp, 4
-	mov	DWORD PTR $T228761[esp+20], eax
+	mov	DWORD PTR $T228803[esp+20], eax
 	mov	DWORD PTR __$EHRec$[esp+28], 0
 	test	eax, eax
 	je	SHORT $LN1@GetGameAsy
@@ -9370,7 +9370,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetGameAsynch@CvDllGameContext@@UAGPAVICvGameAsynch1@@XZ$0:
-	mov	eax, DWORD PTR $T228761[ebp]
+	mov	eax, DWORD PTR $T228803[ebp]
 	push	eax
 	call	??3CvDllGameAsynch@@SAXPAX@Z		; CvDllGameAsynch::operator delete
 	pop	ecx
@@ -9401,7 +9401,7 @@ __ehfuncinfo$?GetMap@CvDllGameContext@@UAGPAVICvMap1@@XZ DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?GetMap@CvDllGameContext@@UAGPAVICvMap1@@XZ
 _TEXT	SEGMENT
-$T228778 = -16						; size = 4
+$T228820 = -16						; size = 4
 __$EHRec$ = -12						; size = 12
 _this$ = 8						; size = 4
 ?GetMap@CvDllGameContext@@UAGPAVICvMap1@@XZ PROC	; CvDllGameContext::GetMap, COMDAT
@@ -9430,7 +9430,7 @@ _this$ = 8						; size = 4
 	push	12					; 0000000cH
 	call	??2CvDllMap@@SAPAXI@Z			; CvDllMap::operator new
 	add	esp, 4
-	mov	DWORD PTR $T228778[esp+20], eax
+	mov	DWORD PTR $T228820[esp+20], eax
 	mov	DWORD PTR __$EHRec$[esp+28], 0
 	test	eax, eax
 	je	SHORT $LN1@GetMap
@@ -9457,7 +9457,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetMap@CvDllGameContext@@UAGPAVICvMap1@@XZ$0:
-	mov	eax, DWORD PTR $T228778[ebp]
+	mov	eax, DWORD PTR $T228820[ebp]
 	push	eax
 	call	??3CvDllMap@@SAXPAX@Z			; CvDllMap::operator delete
 	pop	ecx
@@ -9490,7 +9490,7 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 __$EHRec$ = -12						; size = 12
 _this$ = 8						; size = 4
-$T228795 = 12						; size = 4
+$T228837 = 12						; size = 4
 _eTeam$ = 12						; size = 4
 ?GetTeam@CvDllGameContext@@UAGPAVICvTeam1@@W4TeamTypes@@@Z PROC ; CvDllGameContext::GetTeam, COMDAT
 
@@ -9512,7 +9512,7 @@ _eTeam$ = 12						; size = 4
 ; 238  : 	{
 ; 239  : 		CvTeam& kTeam = CvTeam::getTeam(eTeam);
 
-	imul	eax, 2980				; 00000ba4H
+	imul	eax, 2984				; 00000ba8H
 	add	eax, DWORD PTR ?m_aTeams@CvTeam@@1PAV1@A ; CvTeam::m_aTeams
 
 ; 240  : 		return new CvDllTeam(&kTeam);
@@ -9521,7 +9521,7 @@ _eTeam$ = 12						; size = 4
 	mov	esi, eax
 	call	??2CvDllTeam@@SAPAXI@Z			; CvDllTeam::operator new
 	add	esp, 4
-	mov	DWORD PTR $T228795[esp+12], eax
+	mov	DWORD PTR $T228837[esp+12], eax
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	eax, eax
 	je	SHORT $LN1@GetTeam
@@ -9550,7 +9550,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetTeam@CvDllGameContext@@UAGPAVICvTeam1@@W4TeamTypes@@@Z$0:
-	mov	eax, DWORD PTR $T228795[ebp-4]
+	mov	eax, DWORD PTR $T228837[ebp-4]
 	push	eax
 	call	??3CvDllTeam@@SAXPAX@Z			; CvDllTeam::operator delete
 	pop	ecx
@@ -9581,7 +9581,7 @@ __ehfuncinfo$?GetDefineSTRING@CvDllGameContext@@UAG_NPADIPBD_N@Z DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?GetDefineSTRING@CvDllGameContext@@UAG_NPADIPBD_N@Z
 _TEXT	SEGMENT
-_strDefine$222630 = -40					; size = 28
+_strDefine$222672 = -40					; size = 28
 __$EHRec$ = -12						; size = 12
 _this$ = 8						; size = 4
 _szBuffer$ = 12						; size = 4
@@ -9617,26 +9617,26 @@ _bReportErrors$ = 24					; size = 1
 	mov	ecx, DWORD PTR _szName$[esp+44]
 	push	eax
 	push	ecx
-	lea	edx, DWORD PTR _strDefine$222630[esp+56]
+	lea	edx, DWORD PTR _strDefine$222672[esp+56]
 	push	edx
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getDefineSTRING@CvGlobals@@QAE?AVCvString@@PBD_N@Z ; CvGlobals::getDefineSTRING
 
 ; 545  : 		if(strDefine.size() < lenBuffer)
 
-	lea	ecx, DWORD PTR _strDefine$222630[esp+48]
+	lea	ecx, DWORD PTR _strDefine$222672[esp+48]
 	mov	DWORD PTR __$EHRec$[esp+56], 0
 	call	DWORD PTR __imp_?size@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEIXZ
 
 ; 546  : 		{
 ; 547  : 			strncpy_s(szBuffer, lenBuffer, strDefine.c_str(), strDefine.size());
 
-	lea	ecx, DWORD PTR _strDefine$222630[esp+48]
+	lea	ecx, DWORD PTR _strDefine$222672[esp+48]
 	cmp	eax, esi
 	jae	SHORT $LN1@GetDefineS
 	call	DWORD PTR __imp_?size@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEIXZ
 	push	eax
-	lea	ecx, DWORD PTR _strDefine$222630[esp+52]
+	lea	ecx, DWORD PTR _strDefine$222672[esp+52]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
 	push	esi
@@ -9646,7 +9646,7 @@ _bReportErrors$ = 24					; size = 1
 
 ; 548  : 			return true;
 
-	lea	ecx, DWORD PTR _strDefine$222630[esp+48]
+	lea	ecx, DWORD PTR _strDefine$222672[esp+48]
 	mov	DWORD PTR __$EHRec$[esp+56], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 	pop	edi
@@ -9685,7 +9685,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetDefineSTRING@CvDllGameContext@@UAG_NPADIPBD_N@Z$0:
-	lea	ecx, DWORD PTR _strDefine$222630[ebp]
+	lea	ecx, DWORD PTR _strDefine$222672[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?GetDefineSTRING@CvDllGameContext@@UAG_NPADIPBD_N@Z:
 	mov	eax, OFFSET __ehfuncinfo$?GetDefineSTRING@CvDllGameContext@@UAG_NPADIPBD_N@Z
@@ -12161,18 +12161,18 @@ __ehfuncinfo$?RandomNumberGeneratorSyncCheck@CvDllGameContext@@UAG_NW4PlayerType
 xdata$x	ENDS
 ;	COMDAT ?RandomNumberGeneratorSyncCheck@CvDllGameContext@@UAG_NW4PlayerTypes@@PAVICvRandom1@@_N@Z
 _TEXT	SEGMENT
-_rngLogMessage$222862 = -280				; size = 28
-_localCallStacks$222885 = -252				; size = 4
-_remoteCallStacks$222890 = -248				; size = 4
-_remoteSeedHistory$222900 = -244			; size = 4
-_localSeedHistory$222895 = -240				; size = 4
-_remoteSeedIterator$223310 = -236			; size = 4
-_logFile$222858 = -232					; size = 4
-$T229891 = -228						; size = 4
-_lastCallStackLogged$223493 = -224			; size = 28
-_formatBuf$222860 = -196				; size = 128
-_remoteCallStack$222879 = -68				; size = 28
-_localCallStack$222877 = -40				; size = 28
+_rngLogMessage$222904 = -280				; size = 28
+_localCallStacks$222927 = -252				; size = 4
+_remoteCallStacks$222932 = -248				; size = 4
+_remoteSeedHistory$222942 = -244			; size = 4
+_localSeedHistory$222937 = -240				; size = 4
+_remoteSeedIterator$223352 = -236			; size = 4
+_logFile$222900 = -232					; size = 4
+$T229933 = -228						; size = 4
+_lastCallStackLogged$223535 = -224			; size = 28
+_formatBuf$222902 = -196				; size = 128
+_remoteCallStack$222921 = -68				; size = 28
+_localCallStack$222919 = -40				; size = 28
 __$EHRec$ = -12						; size = 12
 _this$ = 8						; size = 4
 _ePlayer$ = 12						; size = 4
@@ -12226,7 +12226,7 @@ _bIsHost$ = 20						; size = 1
 	push	0
 	mov	ecx, eax
 	mov	eax, DWORD PTR [edx+12]
-	push	OFFSET $SG222859
+	push	OFFSET $SG222901
 	call	eax
 
 ; 894  : 
@@ -12235,18 +12235,18 @@ _bIsHost$ = 20						; size = 1
 	xor	ecx, ecx
 	push	126					; 0000007eH
 	push	ecx
-	lea	edx, DWORD PTR _formatBuf$222860[esp+306]
+	lea	edx, DWORD PTR _formatBuf$222902[esp+306]
 	mov	ebx, eax
 	push	edx
-	mov	DWORD PTR _logFile$222858[esp+308], ebx
-	mov	WORD PTR _formatBuf$222860[esp+308], cx
+	mov	DWORD PTR _logFile$222900[esp+308], ebx
+	mov	WORD PTR _formatBuf$222902[esp+308], cx
 	call	_memset
 	add	esp, 12					; 0000000cH
 
 ; 896  : 		std::string rngLogMessage = "Game Random Number Generators are out of sync : local.seed=";
 
-	push	OFFSET $SG222863
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	push	OFFSET $SG222905
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 
 ; 897  : #ifdef AUI_WARNING_FIXES
@@ -12283,19 +12283,19 @@ _bIsHost$ = 20						; size = 1
 	mov	edi, DWORD PTR __imp___itoa_s
 	push	10					; 0000000aH
 	push	128					; 00000080H
-	lea	ecx, DWORD PTR _formatBuf$222860[esp+304]
+	lea	ecx, DWORD PTR _formatBuf$222902[esp+304]
 	push	ecx
 	push	eax
 	call	edi
 	add	esp, 16					; 00000010H
 	push	eax
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@D@Z
 
 ; 924  : 		rngLogMessage += ", remote.seed=";
 
-	push	OFFSET $SG222870
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	push	OFFSET $SG222912
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
 ; 925  : 		rngLogMessage += _itoa_s(pkRandom->getSeed(), formatBuf, 10);
@@ -12304,19 +12304,19 @@ _bIsHost$ = 20						; size = 1
 	call	?getSeed@CvRandom@@QBEKXZ		; CvRandom::getSeed
 	push	10					; 0000000aH
 	push	128					; 00000080H
-	lea	edx, DWORD PTR _formatBuf$222860[esp+304]
+	lea	edx, DWORD PTR _formatBuf$222902[esp+304]
 	push	edx
 	push	eax
 	call	edi
 	add	esp, 16					; 00000010H
 	push	eax
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@D@Z
 
 ; 926  : 		rngLogMessage += "\n\tlocal.callCount=";
 
-	push	OFFSET $SG222871
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	push	OFFSET $SG222913
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
 ; 927  : 		rngLogMessage += _itoa_s(localSimRandomNumberGenerator.getCallCount(), formatBuf, 10);
@@ -12325,19 +12325,19 @@ _bIsHost$ = 20						; size = 1
 	call	?getCallCount@CvRandom@@QBEKXZ		; CvRandom::getCallCount
 	push	10					; 0000000aH
 	push	128					; 00000080H
-	lea	ecx, DWORD PTR _formatBuf$222860[esp+304]
+	lea	ecx, DWORD PTR _formatBuf$222902[esp+304]
 	push	ecx
 	push	eax
 	call	edi
 	add	esp, 16					; 00000010H
 	push	eax
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@D@Z
 
 ; 928  : 		rngLogMessage += ", remote.callCount=";
 
-	push	OFFSET $SG222872
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	push	OFFSET $SG222914
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
 ; 929  : 		rngLogMessage += _itoa_s(pkRandom->getCallCount(), formatBuf, 10);
@@ -12346,19 +12346,19 @@ _bIsHost$ = 20						; size = 1
 	call	?getCallCount@CvRandom@@QBEKXZ		; CvRandom::getCallCount
 	push	10					; 0000000aH
 	push	128					; 00000080H
-	lea	edx, DWORD PTR _formatBuf$222860[esp+304]
+	lea	edx, DWORD PTR _formatBuf$222902[esp+304]
 	push	edx
 	push	eax
 	call	edi
 	add	esp, 16					; 00000010H
 	push	eax
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@D@Z
 
 ; 930  : 		rngLogMessage += "\n\tlocal.resetCount=";
 
-	push	OFFSET $SG222873
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	push	OFFSET $SG222915
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
 ; 931  : 		rngLogMessage += _itoa_s(localSimRandomNumberGenerator.getResetCount(), formatBuf, 10);
@@ -12367,19 +12367,19 @@ _bIsHost$ = 20						; size = 1
 	call	?getResetCount@CvRandom@@QBEKXZ		; CvRandom::getResetCount
 	push	10					; 0000000aH
 	push	128					; 00000080H
-	lea	ecx, DWORD PTR _formatBuf$222860[esp+304]
+	lea	ecx, DWORD PTR _formatBuf$222902[esp+304]
 	push	ecx
 	push	eax
 	call	edi
 	add	esp, 16					; 00000010H
 	push	eax
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@D@Z
 
 ; 932  : 		rngLogMessage += ", remote.resetCount=";
 
-	push	OFFSET $SG222874
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	push	OFFSET $SG222916
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
 ; 933  : 		rngLogMessage += _itoa_s(pkRandom->getResetCount(), formatBuf, 10);
@@ -12388,20 +12388,20 @@ _bIsHost$ = 20						; size = 1
 	call	?getResetCount@CvRandom@@QBEKXZ		; CvRandom::getResetCount
 	push	10					; 0000000aH
 	push	128					; 00000080H
-	lea	edx, DWORD PTR _formatBuf$222860[esp+304]
+	lea	edx, DWORD PTR _formatBuf$222902[esp+304]
 	push	edx
 	push	eax
 	call	edi
 	add	esp, 16					; 00000010H
 	push	eax
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@D@Z
 
 ; 934  : #endif
 ; 935  : 		rngLogMessage += "\n";
 
-	push	OFFSET $SG222875
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	push	OFFSET $SG222917
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
 ; 936  : 
@@ -12420,14 +12420,14 @@ _bIsHost$ = 20						; size = 1
 ; 939  : #ifndef AUI_WARNING_FIXES
 ; 940  : 			std::string localCallStack("");
 
-	push	OFFSET $SG222878
-	lea	ecx, DWORD PTR _localCallStack$222877[esp+300]
+	push	OFFSET $SG222920
+	lea	ecx, DWORD PTR _localCallStack$222919[esp+300]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 
 ; 941  : 			std::string remoteCallStack("");
 
-	push	OFFSET $SG222880
-	lea	ecx, DWORD PTR _remoteCallStack$222879[esp+300]
+	push	OFFSET $SG222922
+	lea	ecx, DWORD PTR _remoteCallStack$222921[esp+300]
 	mov	BYTE PTR __$EHRec$[esp+308], 1
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 
@@ -12446,20 +12446,20 @@ _bIsHost$ = 20						; size = 1
 ; 945  : 			const std::vector<std::string>& remoteCallStacks =  pkRandom->getResolvedCallStacks();
 
 	mov	ecx, ebp
-	mov	DWORD PTR _localCallStacks$222885[esp+296], eax
+	mov	DWORD PTR _localCallStacks$222927[esp+296], eax
 	call	?getResolvedCallStacks@CvRandom@@QBEABV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ ; CvRandom::getResolvedCallStacks
 
 ; 946  : 			const std::vector<unsigned long>& localSeedHistory = localSimRandomNumberGenerator.getSeedHistory();
 
 	mov	ecx, esi
-	mov	DWORD PTR _remoteCallStacks$222890[esp+296], eax
+	mov	DWORD PTR _remoteCallStacks$222932[esp+296], eax
 	call	?getSeedHistory@CvRandom@@QBEABV?$vector@KV?$allocator@K@std@@@std@@XZ ; CvRandom::getSeedHistory
 	mov	ebx, eax
 
 ; 947  : 			const std::vector<unsigned long>& remoteSeedHistory = pkRandom->getSeedHistory();
 
 	mov	ecx, ebp
-	mov	DWORD PTR _localSeedHistory$222895[esp+296], ebx
+	mov	DWORD PTR _localSeedHistory$222937[esp+296], ebx
 	call	?getSeedHistory@CvRandom@@QBEABV?$vector@KV?$allocator@K@std@@@std@@XZ ; CvRandom::getSeedHistory
 
 ; 948  : 			std::vector<unsigned long>::const_iterator localSeedIterator = localSeedHistory.begin();
@@ -12471,15 +12471,15 @@ _bIsHost$ = 20						; size = 1
 	mov	ebx, DWORD PTR [ebx+8]
 	mov	ecx, DWORD PTR [eax+4]
 	xor	esi, esi
-	mov	DWORD PTR _remoteSeedHistory$222900[esp+296], eax
-	mov	DWORD PTR _remoteSeedIterator$223310[esp+296], ecx
+	mov	DWORD PTR _remoteSeedHistory$222942[esp+296], eax
+	mov	DWORD PTR _remoteSeedIterator$223352[esp+296], ecx
 	cmp	ebp, ebx
 	je	$LN34@RandomNumb
 	mov	edx, DWORD PTR [eax+8]
-	mov	DWORD PTR $T229891[esp+296], edx
+	mov	DWORD PTR $T229933[esp+296], edx
 	npad	5
 $LL316@RandomNumb:
-	cmp	ecx, DWORD PTR $T229891[esp+296]
+	cmp	ecx, DWORD PTR $T229933[esp+296]
 	je	$LN34@RandomNumb
 
 ; 952  : 			{
@@ -12492,7 +12492,7 @@ $LL316@RandomNumb:
 ; 954  : 				{
 ; 955  : 					if(callNumber < localCallStacks.size() && callNumber < remoteCallStacks.size())
 
-	mov	eax, DWORD PTR _localCallStacks$222885[esp+296]
+	mov	eax, DWORD PTR _localCallStacks$222927[esp+296]
 	mov	ecx, DWORD PTR [eax+8]
 	sub	ecx, DWORD PTR [eax+4]
 	mov	eax, -1840700269			; 92492493H
@@ -12504,7 +12504,7 @@ $LL316@RandomNumb:
 	add	eax, edx
 	cmp	esi, eax
 	jae	SHORT $LN308@RandomNumb
-	mov	eax, DWORD PTR _remoteCallStacks$222890[esp+296]
+	mov	eax, DWORD PTR _remoteCallStacks$222932[esp+296]
 	mov	ecx, DWORD PTR [eax+8]
 	sub	ecx, DWORD PTR [eax+4]
 	mov	eax, -1840700269			; 92492493H
@@ -12517,13 +12517,13 @@ $LL316@RandomNumb:
 	cmp	esi, ecx
 	jb	SHORT $LN302@RandomNumb
 $LN308@RandomNumb:
-	mov	ecx, DWORD PTR _remoteSeedIterator$223310[esp+296]
-	mov	eax, DWORD PTR _remoteSeedHistory$222900[esp+296]
+	mov	ecx, DWORD PTR _remoteSeedIterator$223352[esp+296]
+	mov	eax, DWORD PTR _remoteSeedHistory$222942[esp+296]
 $LN35@RandomNumb:
 	add	ebp, 4
 	add	ecx, 4
 	inc	esi
-	mov	DWORD PTR _remoteSeedIterator$223310[esp+296], ecx
+	mov	DWORD PTR _remoteSeedIterator$223352[esp+296], ecx
 	cmp	ebp, ebx
 	jne	SHORT $LL316@RandomNumb
 
@@ -12536,8 +12536,8 @@ $LN302@RandomNumb:
 ; 956  : 					{
 ; 957  : 						rngLogMessage += "At Call #";
 
-	push	OFFSET $SG223322
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	push	OFFSET $SG223364
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
 ; 958  : #ifdef AUI_WARNING_FIXES
@@ -12561,19 +12561,19 @@ $LN302@RandomNumb:
 ; 976  : 						rngLogMessage += _itoa_s(callNumber, formatBuf, 10);
 
 	push	10					; 0000000aH
-	lea	edx, DWORD PTR _formatBuf$222860[esp+300]
+	lea	edx, DWORD PTR _formatBuf$222902[esp+300]
 	push	edx
 	push	esi
 	call	??$_itoa_s@$0IA@@@YAHHAAY0IA@DH@Z	; _itoa_s<128>
 	add	esp, 12					; 0000000cH
 	push	eax
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@D@Z
 
 ; 977  : 						rngLogMessage += " random number seeds are different.\n";
 
-	push	OFFSET $SG223323
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	push	OFFSET $SG223365
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
 ; 978  : 						if(callNumber > 0)
@@ -12584,32 +12584,32 @@ $LN302@RandomNumb:
 ; 979  : 						{
 ; 980  : 							rngLogMessage += "Call #";
 
-	push	OFFSET $SG223325
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	push	OFFSET $SG223367
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
 ; 981  : 							rngLogMessage += _itoa_s(callNumber - 1, formatBuf, 10);
 
 	push	10					; 0000000aH
-	lea	eax, DWORD PTR _formatBuf$222860[esp+300]
+	lea	eax, DWORD PTR _formatBuf$222902[esp+300]
 	push	eax
 	lea	ecx, DWORD PTR [esi-1]
 	push	ecx
 	call	??$_itoa_s@$0IA@@@YAHHAAY0IA@DH@Z	; _itoa_s<128>
 	add	esp, 12					; 0000000cH
 	push	eax
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@D@Z
 
 ; 982  : 							rngLogMessage += "\nLocal:\n";
 
-	push	OFFSET $SG223326
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	push	OFFSET $SG223368
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
 ; 983  : 							rngLogMessage += localCallStacks[callNumber - 1];
 
-	mov	edx, DWORD PTR _localCallStacks$222885[esp+296]
+	mov	edx, DWORD PTR _localCallStacks$222927[esp+296]
 	mov	eax, DWORD PTR [edx+4]
 	lea	ebx, DWORD PTR [esi*8]
 	sub	ebx, esi
@@ -12617,54 +12617,54 @@ $LN302@RandomNumb:
 	add	ebx, ebx
 	lea	ecx, DWORD PTR [eax+ebx-28]
 	push	ecx
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
 
 ; 984  : 							rngLogMessage += "\nRemote:\n";
 
-	push	OFFSET $SG223327
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	push	OFFSET $SG223369
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
 ; 985  : 							rngLogMessage += remoteCallStacks[callNumber - 1];
 
-	mov	edx, DWORD PTR _remoteCallStacks$222890[esp+296]
+	mov	edx, DWORD PTR _remoteCallStacks$222932[esp+296]
 	mov	eax, DWORD PTR [edx+4]
 	lea	ecx, DWORD PTR [eax+ebx-28]
 	push	ecx
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
 $LN31@RandomNumb:
 
 ; 986  : 						}
 ; 987  : 						rngLogMessage += "Call #";
 
-	push	OFFSET $SG223328
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	push	OFFSET $SG223370
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
 ; 988  : 						rngLogMessage += _itoa_s(callNumber, formatBuf, 10);
 
 	push	10					; 0000000aH
-	lea	edx, DWORD PTR _formatBuf$222860[esp+300]
+	lea	edx, DWORD PTR _formatBuf$222902[esp+300]
 	push	edx
 	push	esi
 	call	??$_itoa_s@$0IA@@@YAHHAAY0IA@DH@Z	; _itoa_s<128>
 	add	esp, 12					; 0000000cH
 	push	eax
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@D@Z
 
 ; 989  : #endif
 ; 990  : 						rngLogMessage += "\nLocal:\n";
 
-	push	OFFSET $SG223329
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	push	OFFSET $SG223371
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
 ; 991  : 						rngLogMessage += localCallStacks[callNumber];
 
-	mov	eax, DWORD PTR _localCallStacks$222885[esp+296]
+	mov	eax, DWORD PTR _localCallStacks$222927[esp+296]
 	mov	ecx, DWORD PTR [eax+4]
 	lea	ebx, DWORD PTR [esi*8]
 	sub	ebx, esi
@@ -12672,25 +12672,25 @@ $LN31@RandomNumb:
 	add	ebx, ebx
 	add	ecx, ebx
 	push	ecx
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
 
 ; 992  : 						rngLogMessage += "\nRemote:\n";
 
-	push	OFFSET $SG223330
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	push	OFFSET $SG223372
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
 ; 993  : 						rngLogMessage += remoteCallStacks[callNumber];
 
-	mov	edx, DWORD PTR _remoteCallStacks$222890[esp+296]
+	mov	edx, DWORD PTR _remoteCallStacks$222932[esp+296]
 	mov	eax, DWORD PTR [edx+4]
 	add	eax, ebx
 	push	eax
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	mov	ecx, DWORD PTR _remoteSeedIterator$223310[esp+296]
-	mov	eax, DWORD PTR _remoteSeedHistory$222900[esp+296]
+	mov	ecx, DWORD PTR _remoteSeedIterator$223352[esp+296]
+	mov	eax, DWORD PTR _remoteSeedHistory$222942[esp+296]
 $LN34@RandomNumb:
 
 ; 994  : 						break;
@@ -12699,7 +12699,7 @@ $LN34@RandomNumb:
 ; 997  : 			}
 ; 998  : 			if(localSeedIterator != localSeedHistory.end() && remoteSeedIterator == remoteSeedHistory.end())
 
-	mov	ebx, DWORD PTR _localSeedHistory$222895[esp+296]
+	mov	ebx, DWORD PTR _localSeedHistory$222937[esp+296]
 	mov	edx, DWORD PTR [ebx+8]
 	cmp	ebp, edx
 	je	SHORT $LN30@RandomNumb
@@ -12709,8 +12709,8 @@ $LN34@RandomNumb:
 ; 999  : 			{
 ; 1000 : 				rngLogMessage += "\nLocal random number generator called more than remote at call #";
 
-	push	OFFSET $SG223334
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	push	OFFSET $SG223376
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
 ; 1001 : #ifdef AUI_WARNING_FIXES
@@ -12721,20 +12721,20 @@ $LN34@RandomNumb:
 
 	push	10					; 0000000aH
 	push	128					; 00000080H
-	lea	ecx, DWORD PTR _formatBuf$222860[esp+304]
+	lea	ecx, DWORD PTR _formatBuf$222902[esp+304]
 	push	ecx
 	push	esi
 	call	edi
 	add	esp, 16					; 00000010H
 	push	eax
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@D@Z
 
 ; 1006 : #endif
 ; 1007 : 				rngLogMessage += "\n";
 
-	push	OFFSET $SG223335
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	push	OFFSET $SG223377
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
 ; 1008 : 				if(callNumber < localSeedHistory.size())
@@ -12748,13 +12748,13 @@ $LN34@RandomNumb:
 ; 1009 : 				{
 ; 1010 : 					rngLogMessage += "Local CallStack:\n";
 
-	push	OFFSET $SG223337
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	push	OFFSET $SG223379
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
 ; 1011 : 					rngLogMessage += localCallStacks[callNumber];
 
-	mov	ecx, DWORD PTR _localCallStacks$222885[esp+296]
+	mov	ecx, DWORD PTR _localCallStacks$222927[esp+296]
 
 ; 1012 : 				}
 ; 1013 : 			}
@@ -12773,8 +12773,8 @@ $LN319@RandomNumb:
 ; 1015 : 			{
 ; 1016 : 				rngLogMessage += "\nremote random number generator called more than local at call #";
 
-	push	OFFSET $SG223342
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	push	OFFSET $SG223384
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
 ; 1017 : #ifdef AUI_WARNING_FIXES
@@ -12785,25 +12785,25 @@ $LN319@RandomNumb:
 
 	push	10					; 0000000aH
 	push	128					; 00000080H
-	lea	ecx, DWORD PTR _formatBuf$222860[esp+304]
+	lea	ecx, DWORD PTR _formatBuf$222902[esp+304]
 	push	ecx
 	push	esi
 	call	edi
 	add	esp, 16					; 00000010H
 	push	eax
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@D@Z
 
 ; 1022 : #endif
 ; 1023 : 				rngLogMessage += "\n";
 
-	push	OFFSET $SG223343
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	push	OFFSET $SG223385
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
 ; 1024 : 				if(callNumber < remoteSeedHistory.size())
 
-	mov	eax, DWORD PTR _remoteSeedHistory$222900[esp+296]
+	mov	eax, DWORD PTR _remoteSeedHistory$222942[esp+296]
 	mov	edx, DWORD PTR [eax+8]
 	sub	edx, DWORD PTR [eax+4]
 	sar	edx, 2
@@ -12813,20 +12813,20 @@ $LN319@RandomNumb:
 ; 1025 : 				{
 ; 1026 : 					rngLogMessage += "remote CallStack:\n";
 
-	push	OFFSET $SG223345
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	push	OFFSET $SG223387
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
 ; 1027 : 					rngLogMessage += remoteCallStacks[callNumber];
 
-	mov	ecx, DWORD PTR _remoteCallStacks$222890[esp+296]
+	mov	ecx, DWORD PTR _remoteCallStacks$222932[esp+296]
 $LN320@RandomNumb:
 	mov	edx, DWORD PTR [ecx+4]
 	lea	eax, DWORD PTR [esi*8]
 	sub	eax, esi
 	lea	eax, DWORD PTR [edx+eax*4]
 	push	eax
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
 $LN309@RandomNumb:
 
@@ -12838,9 +12838,9 @@ $LN309@RandomNumb:
 ; 1033 : 			std::vector<std::string>::const_iterator remoteCallStackIterator;
 ; 1034 : 			for(localCallStackIterator = localCallStacks.begin(), remoteCallStackIterator = remoteCallStacks.begin(), callNumber = 0; localCallStackIterator != localCallStacks.end() && remoteCallStackIterator != remoteCallStacks.end(); ++localCallStackIterator, ++remoteCallStackIterator, ++callNumber)
 
-	mov	ecx, DWORD PTR _localCallStacks$222885[esp+296]
+	mov	ecx, DWORD PTR _localCallStacks$222927[esp+296]
 	mov	esi, DWORD PTR [ecx+4]
-	mov	edx, DWORD PTR _remoteCallStacks$222890[esp+296]
+	mov	edx, DWORD PTR _remoteCallStacks$222932[esp+296]
 	mov	ebp, DWORD PTR [edx+4]
 	mov	eax, ecx
 	mov	eax, DWORD PTR [eax+8]
@@ -12849,7 +12849,7 @@ $LN309@RandomNumb:
 	je	$LN23@RandomNumb
 	npad	7
 $LL311@RandomNumb:
-	mov	ecx, DWORD PTR _remoteCallStacks$222890[esp+296]
+	mov	ecx, DWORD PTR _remoteCallStacks$222932[esp+296]
 	cmp	ebp, DWORD PTR [ecx+8]
 	je	$LN23@RandomNumb
 
@@ -12862,7 +12862,7 @@ $LL311@RandomNumb:
 	add	esp, 8
 	test	al, al
 	jne	SHORT $LN303@RandomNumb
-	mov	edx, DWORD PTR _localCallStacks$222885[esp+296]
+	mov	edx, DWORD PTR _localCallStacks$222927[esp+296]
 	add	esi, 28					; 0000001cH
 	add	ebp, 28					; 0000001cH
 	inc	ebx
@@ -12874,8 +12874,8 @@ $LN303@RandomNumb:
 ; 1037 : 				{
 ; 1038 : 					rngLogMessage += "\nFirst different callstack at call #";
 
-	push	OFFSET $SG223468
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	push	OFFSET $SG223510
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
 ; 1039 : #ifdef AUI_WARNING_FIXES
@@ -12886,44 +12886,44 @@ $LN303@RandomNumb:
 
 	push	10					; 0000000aH
 	push	128					; 00000080H
-	lea	eax, DWORD PTR _formatBuf$222860[esp+304]
+	lea	eax, DWORD PTR _formatBuf$222902[esp+304]
 	push	eax
 	push	ebx
 	call	edi
 	add	esp, 16					; 00000010H
 	push	eax
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@D@Z
 
 ; 1044 : #endif
 ; 1045 : 					rngLogMessage += "\n";
 
-	push	OFFSET $SG223469
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	push	OFFSET $SG223511
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
 ; 1046 : 					rngLogMessage += "Local :\n";
 
-	push	OFFSET $SG223470
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	push	OFFSET $SG223512
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
 ; 1047 : 					rngLogMessage += *localCallStackIterator;
 
 	push	esi
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
 
 ; 1048 : 					rngLogMessage += "Remote :\n";
 
-	push	OFFSET $SG223471
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	push	OFFSET $SG223513
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
 ; 1049 : 					rngLogMessage += *remoteCallStackIterator;
 
 	push	ebp
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
 $LN23@RandomNumb:
 
@@ -12933,7 +12933,7 @@ $LN23@RandomNumb:
 ; 1053 : 
 ; 1054 : 			if(logFile)
 
-	mov	ebx, DWORD PTR _logFile$222858[esp+296]
+	mov	ebx, DWORD PTR _logFile$222900[esp+296]
 	test	ebx, ebx
 	je	$LN20@RandomNumb
 
@@ -12941,7 +12941,7 @@ $LN23@RandomNumb:
 ; 1056 : 				logFile->DebugMsg(rngLogMessage.c_str());
 
 	mov	esi, DWORD PTR [ebx]
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+296]
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+296]
 	add	esi, 4
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	mov	ecx, DWORD PTR [esi]
@@ -12958,8 +12958,8 @@ $LN23@RandomNumb:
 ; 1062 : 			{
 ; 1063 : 				rngLogMessage = "\nDebug dump:\n";
 
-	push	OFFSET $SG223474
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	push	OFFSET $SG223516
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
 ; 1064 : 
@@ -12967,17 +12967,17 @@ $LN23@RandomNumb:
 ; 1066 : 				// add full history
 ; 1067 : 				rngLogMessage += "Seed History -\n";
 
-	push	OFFSET $SG223475
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	push	OFFSET $SG223517
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
 ; 1068 : 				localSeedIterator = localSeedHistory.begin();
 
-	mov	edx, DWORD PTR _localSeedHistory$222895[esp+296]
+	mov	edx, DWORD PTR _localSeedHistory$222937[esp+296]
 
 ; 1069 : 				remoteSeedIterator = remoteSeedHistory.begin();
 
-	mov	eax, DWORD PTR _remoteSeedHistory$222900[esp+296]
+	mov	eax, DWORD PTR _remoteSeedHistory$222942[esp+296]
 	mov	esi, DWORD PTR [edx+4]
 	mov	ebp, DWORD PTR [eax+4]
 
@@ -12989,10 +12989,10 @@ $LL19@RandomNumb:
 
 ; 1071 : 				while(localSeedIterator != localSeedHistory.end() || remoteSeedIterator != remoteSeedHistory.end())
 
-	mov	ecx, DWORD PTR _localSeedHistory$222895[esp+296]
+	mov	ecx, DWORD PTR _localSeedHistory$222937[esp+296]
 	cmp	esi, DWORD PTR [ecx+8]
 	jne	SHORT $LN17@RandomNumb
-	mov	edx, DWORD PTR _remoteSeedHistory$222900[esp+296]
+	mov	edx, DWORD PTR _remoteSeedHistory$222942[esp+296]
 	cmp	ebp, DWORD PTR [edx+8]
 	je	$LN18@RandomNumb
 $LN17@RandomNumb:
@@ -13001,8 +13001,8 @@ $LN17@RandomNumb:
 ; 1073 : 					++callNumber;
 ; 1074 : 					rngLogMessage += "\t Call #";
 
-	push	OFFSET $SG223484
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	push	OFFSET $SG223526
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	inc	ebx
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
@@ -13014,25 +13014,25 @@ $LN17@RandomNumb:
 
 	push	10					; 0000000aH
 	push	128					; 00000080H
-	lea	eax, DWORD PTR _formatBuf$222860[esp+304]
+	lea	eax, DWORD PTR _formatBuf$222902[esp+304]
 	push	eax
 	push	ebx
 	call	edi
 	add	esp, 16					; 00000010H
 	push	eax
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@D@Z
 
 ; 1080 : #endif
 ; 1081 : 					rngLogMessage += " LOCAL=";
 
-	push	OFFSET $SG223485
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	push	OFFSET $SG223527
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
 ; 1082 : 					if(localSeedIterator != localSeedHistory.end())
 
-	mov	ecx, DWORD PTR _localSeedHistory$222895[esp+296]
+	mov	ecx, DWORD PTR _localSeedHistory$222937[esp+296]
 	cmp	esi, DWORD PTR [ecx+8]
 	je	SHORT $LN231@RandomNumb
 
@@ -13046,13 +13046,13 @@ $LN17@RandomNumb:
 	mov	eax, DWORD PTR [esi]
 	push	10					; 0000000aH
 	push	128					; 00000080H
-	lea	edx, DWORD PTR _formatBuf$222860[esp+304]
+	lea	edx, DWORD PTR _formatBuf$222902[esp+304]
 	push	edx
 	push	eax
 	call	edi
 	add	esp, 16					; 00000010H
 	push	eax
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@D@Z
 
 ; 1089 : #endif
@@ -13064,13 +13064,13 @@ $LN231@RandomNumb:
 ; 1091 : 					}
 ; 1092 : 					rngLogMessage += "\tREMOTE=";
 
-	push	OFFSET $SG223488
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	push	OFFSET $SG223530
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
 ; 1093 : 					if(remoteSeedIterator != remoteSeedHistory.end())
 
-	mov	eax, DWORD PTR _remoteSeedHistory$222900[esp+296]
+	mov	eax, DWORD PTR _remoteSeedHistory$222942[esp+296]
 	cmp	ebp, DWORD PTR [eax+8]
 	je	SHORT $LN245@RandomNumb
 
@@ -13084,13 +13084,13 @@ $LN231@RandomNumb:
 	mov	eax, DWORD PTR [ebp]
 	push	10					; 0000000aH
 	push	128					; 00000080H
-	lea	ecx, DWORD PTR _formatBuf$222860[esp+304]
+	lea	ecx, DWORD PTR _formatBuf$222902[esp+304]
 	push	ecx
 	push	eax
 	call	edi
 	add	esp, 16					; 00000010H
 	push	eax
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@D@Z
 
 ; 1100 : #endif
@@ -13102,8 +13102,8 @@ $LN245@RandomNumb:
 ; 1102 : 					}
 ; 1103 : 					rngLogMessage += "\n";
 
-	push	OFFSET $SG223491
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	push	OFFSET $SG223533
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
 ; 1104 : 				}
@@ -13114,14 +13114,14 @@ $LN18@RandomNumb:
 ; 1105 : 
 ; 1106 : 				rngLogMessage += "\nLocal callstack history\n";
 
-	push	OFFSET $SG223492
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	push	OFFSET $SG223534
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
 ; 1107 : 				callNumber = 0;
 ; 1108 : 				std::string lastCallStackLogged;
 
-	lea	ecx, DWORD PTR _lastCallStackLogged$223493[esp+296]
+	lea	ecx, DWORD PTR _lastCallStackLogged$223535[esp+296]
 	xor	ebx, ebx
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -13129,7 +13129,7 @@ $LN18@RandomNumb:
 ; 1110 : 				std::vector<std::string>::const_iterator i;
 ; 1111 : 				for(i = localCallStacks.begin(); i != localCallStacks.end(); ++i)
 
-	mov	eax, DWORD PTR _localCallStacks$222885[esp+296]
+	mov	eax, DWORD PTR _localCallStacks$222927[esp+296]
 	mov	esi, DWORD PTR [eax+4]
 	xor	ebp, ebp
 	mov	BYTE PTR __$EHRec$[esp+304], 3
@@ -13140,7 +13140,7 @@ $LL253@RandomNumb:
 ; 1112 : 				{
 ; 1113 : 					if(lastCallStackLogged != *i)
 
-	lea	edx, DWORD PTR _lastCallStackLogged$223493[esp+296]
+	lea	edx, DWORD PTR _lastCallStackLogged$223535[esp+296]
 	push	esi
 	push	edx
 	call	DWORD PTR __imp_??$?9DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@0@Z
@@ -13157,8 +13157,8 @@ $LL253@RandomNumb:
 ; 1116 : 						{
 ; 1117 : 							rngLogMessage += "Last message repeated ";
 
-	push	OFFSET $SG223507
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	push	OFFSET $SG223549
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
 ; 1118 : #ifdef AUI_WARNING_FIXES
@@ -13169,28 +13169,28 @@ $LL253@RandomNumb:
 
 	push	10					; 0000000aH
 	push	128					; 00000080H
-	lea	eax, DWORD PTR _formatBuf$222860[esp+304]
+	lea	eax, DWORD PTR _formatBuf$222902[esp+304]
 	push	eax
 	push	ebp
 	call	edi
 	add	esp, 16					; 00000010H
 	push	eax
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@D@Z
 
 ; 1123 : #endif
 ; 1124 : 							rngLogMessage += " times\n";
 
-	push	OFFSET $SG223508
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	push	OFFSET $SG223550
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 $LN312@RandomNumb:
 
 ; 1125 : 						}
 ; 1126 : 						rngLogMessage += "Call #";
 
-	push	OFFSET $SG223509
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	push	OFFSET $SG223551
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
 ; 1127 : #ifdef AUI_WARNING_FIXES
@@ -13201,32 +13201,32 @@ $LN312@RandomNumb:
 
 	push	10					; 0000000aH
 	push	128					; 00000080H
-	lea	ecx, DWORD PTR _formatBuf$222860[esp+304]
+	lea	ecx, DWORD PTR _formatBuf$222902[esp+304]
 	push	ecx
 	push	ebx
 	call	edi
 	add	esp, 16					; 00000010H
 	push	eax
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@D@Z
 
 ; 1132 : #endif
 ; 1133 : 						rngLogMessage += "\n";
 
-	push	OFFSET $SG223510
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	push	OFFSET $SG223552
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
 ; 1134 : 						rngLogMessage += *i;
 
 	push	esi
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
 
 ; 1135 : 						lastCallStackLogged = *i;
 
 	push	esi
-	lea	ecx, DWORD PTR _lastCallStackLogged$223493[esp+300]
+	lea	ecx, DWORD PTR _lastCallStackLogged$223535[esp+300]
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
 
 ; 1136 : 						repeatCount = 0;
@@ -13249,7 +13249,7 @@ $LN9@RandomNumb:
 ; 1110 : 				std::vector<std::string>::const_iterator i;
 ; 1111 : 				for(i = localCallStacks.begin(); i != localCallStacks.end(); ++i)
 
-	mov	edx, DWORD PTR _localCallStacks$222885[esp+296]
+	mov	edx, DWORD PTR _localCallStacks$222927[esp+296]
 	add	esi, 28					; 0000001cH
 
 ; 1141 : 					}
@@ -13264,15 +13264,15 @@ $LN313@RandomNumb:
 ; 1144 : 
 ; 1145 : 				rngLogMessage += "\nRemote callstack history\n";
 
-	push	OFFSET $SG223512
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	push	OFFSET $SG223554
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
 ; 1146 : 				callNumber = 0;
 ; 1147 : 				repeatCount = 0;
 ; 1148 : 				for(i = remoteCallStacks.begin(); i != remoteCallStacks.end(); ++i)
 
-	mov	eax, DWORD PTR _remoteCallStacks$222890[esp+296]
+	mov	eax, DWORD PTR _remoteCallStacks$222932[esp+296]
 	mov	esi, DWORD PTR [eax+4]
 	xor	ebx, ebx
 	xor	ebp, ebp
@@ -13283,7 +13283,7 @@ $LL277@RandomNumb:
 ; 1149 : 				{
 ; 1150 : 					if(lastCallStackLogged != *i)
 
-	lea	eax, DWORD PTR _lastCallStackLogged$223493[esp+296]
+	lea	eax, DWORD PTR _lastCallStackLogged$223535[esp+296]
 	push	esi
 	push	eax
 	call	DWORD PTR __imp_??$?9DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@0@Z
@@ -13300,8 +13300,8 @@ $LL277@RandomNumb:
 ; 1153 : 						{
 ; 1154 : 							rngLogMessage += "Last message repeated ";
 
-	push	OFFSET $SG223520
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	push	OFFSET $SG223562
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
 ; 1155 : #ifdef AUI_WARNING_FIXES
@@ -13312,28 +13312,28 @@ $LL277@RandomNumb:
 
 	push	10					; 0000000aH
 	push	128					; 00000080H
-	lea	ecx, DWORD PTR _formatBuf$222860[esp+304]
+	lea	ecx, DWORD PTR _formatBuf$222902[esp+304]
 	push	ecx
 	push	ebp
 	call	edi
 	add	esp, 16					; 00000010H
 	push	eax
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@D@Z
 
 ; 1160 : #endif
 ; 1161 : 							rngLogMessage += " times\n";
 
-	push	OFFSET $SG223521
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	push	OFFSET $SG223563
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 $LN314@RandomNumb:
 
 ; 1162 : 						}
 ; 1163 : 						rngLogMessage += "Call #";
 
-	push	OFFSET $SG223522
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	push	OFFSET $SG223564
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
 ; 1164 : #ifdef AUI_WARNING_FIXES
@@ -13344,32 +13344,32 @@ $LN314@RandomNumb:
 
 	push	10					; 0000000aH
 	push	128					; 00000080H
-	lea	edx, DWORD PTR _formatBuf$222860[esp+304]
+	lea	edx, DWORD PTR _formatBuf$222902[esp+304]
 	push	edx
 	push	ebx
 	call	edi
 	add	esp, 16					; 00000010H
 	push	eax
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@D@Z
 
 ; 1169 : #endif
 ; 1170 : 						rngLogMessage += "\n";
 
-	push	OFFSET $SG223523
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	push	OFFSET $SG223565
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
 ; 1171 : 						rngLogMessage += *i;
 
 	push	esi
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+300]
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+300]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
 
 ; 1172 : 						lastCallStackLogged = *i;
 
 	push	esi
-	lea	ecx, DWORD PTR _lastCallStackLogged$223493[esp+300]
+	lea	ecx, DWORD PTR _lastCallStackLogged$223535[esp+300]
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
 
 ; 1173 : 						repeatCount = 0;
@@ -13392,7 +13392,7 @@ $LN3@RandomNumb:
 ; 1147 : 				repeatCount = 0;
 ; 1148 : 				for(i = remoteCallStacks.begin(); i != remoteCallStacks.end(); ++i)
 
-	mov	eax, DWORD PTR _remoteCallStacks$222890[esp+296]
+	mov	eax, DWORD PTR _remoteCallStacks$222932[esp+296]
 	add	esi, 28					; 0000001cH
 
 ; 1178 : 					}
@@ -13406,9 +13406,9 @@ $LN6@RandomNumb:
 ; 1180 : 				}
 ; 1181 : 				logFile->DebugMsg(rngLogMessage.c_str());
 
-	mov	edi, DWORD PTR _logFile$222858[esp+296]
+	mov	edi, DWORD PTR _logFile$222900[esp+296]
 	mov	esi, DWORD PTR [edi]
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+296]
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+296]
 	add	esi, 4
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	mov	ecx, DWORD PTR [esi]
@@ -13419,7 +13419,7 @@ $LN6@RandomNumb:
 
 ; 1182 : 			}
 
-	lea	ecx, DWORD PTR _lastCallStackLogged$223493[esp+296]
+	lea	ecx, DWORD PTR _lastCallStackLogged$223535[esp+296]
 	mov	BYTE PTR __$EHRec$[esp+304], 2
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 $LN20@RandomNumb:
@@ -13427,10 +13427,10 @@ $LN20@RandomNumb:
 ; 1183 : 
 ; 1184 : 		}
 
-	lea	ecx, DWORD PTR _remoteCallStack$222879[esp+296]
+	lea	ecx, DWORD PTR _remoteCallStack$222921[esp+296]
 	mov	BYTE PTR __$EHRec$[esp+304], 1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR _localCallStack$222877[esp+296]
+	lea	ecx, DWORD PTR _localCallStack$222919[esp+296]
 	mov	BYTE PTR __$EHRec$[esp+304], 0
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -13449,7 +13449,7 @@ $LN37@RandomNumb:
 ; 1189 : 				logFile->DebugMsg(rngLogMessage.c_str());
 
 	mov	esi, DWORD PTR [ebx]
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+296]
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+296]
 	add	esi, 4
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	mov	edx, DWORD PTR [esi]
@@ -13477,7 +13477,7 @@ $LN1@RandomNumb:
 ; 1205 : 		*/
 ; 1206 : 		return false;
 
-	lea	ecx, DWORD PTR _rngLogMessage$222862[esp+296]
+	lea	ecx, DWORD PTR _rngLogMessage$222904[esp+296]
 	mov	DWORD PTR __$EHRec$[esp+304], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 	pop	edi
@@ -13505,16 +13505,16 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?RandomNumberGeneratorSyncCheck@CvDllGameContext@@UAG_NW4PlayerTypes@@PAVICvRandom1@@_N@Z$0:
-	lea	ecx, DWORD PTR _rngLogMessage$222862[ebp]
+	lea	ecx, DWORD PTR _rngLogMessage$222904[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?RandomNumberGeneratorSyncCheck@CvDllGameContext@@UAG_NW4PlayerTypes@@PAVICvRandom1@@_N@Z$1:
-	lea	ecx, DWORD PTR _localCallStack$222877[ebp]
+	lea	ecx, DWORD PTR _localCallStack$222919[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?RandomNumberGeneratorSyncCheck@CvDllGameContext@@UAG_NW4PlayerTypes@@PAVICvRandom1@@_N@Z$2:
-	lea	ecx, DWORD PTR _remoteCallStack$222879[ebp]
+	lea	ecx, DWORD PTR _remoteCallStack$222921[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?RandomNumberGeneratorSyncCheck@CvDllGameContext@@UAG_NW4PlayerTypes@@PAVICvRandom1@@_N@Z$3:
-	lea	ecx, DWORD PTR _lastCallStackLogged$223493[ebp]
+	lea	ecx, DWORD PTR _lastCallStackLogged$223535[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __ehhandler$?RandomNumberGeneratorSyncCheck@CvDllGameContext@@UAG_NW4PlayerTypes@@PAVICvRandom1@@_N@Z:
 	mov	eax, OFFSET __ehfuncinfo$?RandomNumberGeneratorSyncCheck@CvDllGameContext@@UAG_NW4PlayerTypes@@PAVICvRandom1@@_N@Z
@@ -14826,8 +14826,8 @@ PUBLIC	??$unchecked_uninitialized_copy@PAU?$pair@IPAVCvRandom@@@std@@PAU12@V?$al
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ??$unchecked_uninitialized_copy@PAU?$pair@IPAVCvRandom@@@std@@PAU12@V?$allocator@U?$pair@IPAVCvRandom@@@std@@@2@@stdext@@YAPAU?$pair@IPAVCvRandom@@@std@@PAU12@00AAV?$allocator@U?$pair@IPAVCvRandom@@@std@@@2@@Z
 _TEXT	SEGMENT
-$T231188 = -4						; size = 1
-__Cat$231192 = -4					; size = 1
+$T231230 = -4						; size = 1
+__Cat$231234 = -4					; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
@@ -14843,9 +14843,9 @@ __Al$ = 20						; size = 4
 ; 822  : 		_STD _Ptr_cat(_First, _Dest), _STD _Range_checked_iterator_tag()));
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T231188[esp+4], 0
-	mov	eax, DWORD PTR $T231188[esp+4]
-	mov	ecx, DWORD PTR __Cat$231192[esp+4]
+	mov	BYTE PTR $T231230[esp+4], 0
+	mov	eax, DWORD PTR $T231230[esp+4]
+	mov	ecx, DWORD PTR __Cat$231234[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -14867,8 +14867,8 @@ PUBLIC	??$unchecked_uninitialized_copy@PAU?$pair@IPAVCvDllNetInitInfo@@@std@@PAU
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$unchecked_uninitialized_copy@PAU?$pair@IPAVCvDllNetInitInfo@@@std@@PAU12@V?$allocator@U?$pair@IPAVCvDllNetInitInfo@@@std@@@2@@stdext@@YAPAU?$pair@IPAVCvDllNetInitInfo@@@std@@PAU12@00AAV?$allocator@U?$pair@IPAVCvDllNetInitInfo@@@std@@@2@@Z
 _TEXT	SEGMENT
-$T231197 = -4						; size = 1
-__Cat$231201 = -4					; size = 1
+$T231239 = -4						; size = 1
+__Cat$231243 = -4					; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
@@ -14884,9 +14884,9 @@ __Al$ = 20						; size = 4
 ; 822  : 		_STD _Ptr_cat(_First, _Dest), _STD _Range_checked_iterator_tag()));
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T231197[esp+4], 0
-	mov	eax, DWORD PTR $T231197[esp+4]
-	mov	ecx, DWORD PTR __Cat$231201[esp+4]
+	mov	BYTE PTR $T231239[esp+4], 0
+	mov	eax, DWORD PTR $T231239[esp+4]
+	mov	ecx, DWORD PTR __Cat$231243[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -14908,8 +14908,8 @@ PUBLIC	??$unchecked_uninitialized_copy@PAU?$pair@IPAVCvDllNetLoadGameInfo@@@std@
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$unchecked_uninitialized_copy@PAU?$pair@IPAVCvDllNetLoadGameInfo@@@std@@PAU12@V?$allocator@U?$pair@IPAVCvDllNetLoadGameInfo@@@std@@@2@@stdext@@YAPAU?$pair@IPAVCvDllNetLoadGameInfo@@@std@@PAU12@00AAV?$allocator@U?$pair@IPAVCvDllNetLoadGameInfo@@@std@@@2@@Z
 _TEXT	SEGMENT
-$T231206 = -4						; size = 1
-__Cat$231210 = -4					; size = 1
+$T231248 = -4						; size = 1
+__Cat$231252 = -4					; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
@@ -14925,9 +14925,9 @@ __Al$ = 20						; size = 4
 ; 822  : 		_STD _Ptr_cat(_First, _Dest), _STD _Range_checked_iterator_tag()));
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T231206[esp+4], 0
-	mov	eax, DWORD PTR $T231206[esp+4]
-	mov	ecx, DWORD PTR __Cat$231210[esp+4]
+	mov	BYTE PTR $T231248[esp+4], 0
+	mov	eax, DWORD PTR $T231248[esp+4]
+	mov	ecx, DWORD PTR __Cat$231252[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -14949,8 +14949,8 @@ PUBLIC	??$unchecked_uninitialized_copy@PAUCvDllPathFinderUpdateListData@@PAU1@V?
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$unchecked_uninitialized_copy@PAUCvDllPathFinderUpdateListData@@PAU1@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@stdext@@YAPAUCvDllPathFinderUpdateListData@@PAU1@00AAV?$allocator@UCvDllPathFinderUpdateListData@@@std@@@Z
 _TEXT	SEGMENT
-$T231215 = -4						; size = 1
-__Cat$231219 = -4					; size = 1
+$T231257 = -4						; size = 1
+__Cat$231261 = -4					; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
@@ -14966,9 +14966,9 @@ __Al$ = 20						; size = 4
 ; 822  : 		_STD _Ptr_cat(_First, _Dest), _STD _Range_checked_iterator_tag()));
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T231215[esp+4], 0
-	mov	eax, DWORD PTR $T231215[esp+4]
-	mov	ecx, DWORD PTR __Cat$231219[esp+4]
+	mov	BYTE PTR $T231257[esp+4], 0
+	mov	eax, DWORD PTR $T231257[esp+4]
+	mov	ecx, DWORD PTR __Cat$231261[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -15267,7 +15267,7 @@ xdata$x	ENDS
 ;	COMDAT ?GetRandomNumberGenerator@CvDllGameContext@@UAGPAVICvRandom1@@I@Z
 _TEXT	SEGMENT
 __$EHRec$ = -12						; size = 12
-$T231308 = 8						; size = 4
+$T231350 = 8						; size = 4
 _this$ = 8						; size = 4
 _index$ = 12						; size = 4
 ?GetRandomNumberGenerator@CvDllGameContext@@UAGPAVICvRandom1@@I@Z PROC ; CvDllGameContext::GetRandomNumberGenerator, COMDAT
@@ -15324,7 +15324,7 @@ $LN39@GetRandomN:
 	push	12					; 0000000cH
 	call	??2CvDllRandom@@SAPAXI@Z		; CvDllRandom::operator new
 	add	esp, 4
-	mov	DWORD PTR $T231308[esp+12], eax
+	mov	DWORD PTR $T231350[esp+12], eax
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	eax, eax
 	je	SHORT $LN2@GetRandomN
@@ -15344,7 +15344,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetRandomNumberGenerator@CvDllGameContext@@UAGPAVICvRandom1@@I@Z$0:
-	mov	eax, DWORD PTR $T231308[ebp-4]
+	mov	eax, DWORD PTR $T231350[ebp-4]
 	push	eax
 	call	??3CvDllRandom@@SAXPAX@Z		; CvDllRandom::operator delete
 	pop	ecx
@@ -15592,8 +15592,8 @@ PUBLIC	??$unchecked_uninitialized_fill_n@PAU?$pair@IPAVCvRandom@@@std@@IU12@V?$a
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ??$unchecked_uninitialized_fill_n@PAU?$pair@IPAVCvRandom@@@std@@IU12@V?$allocator@U?$pair@IPAVCvRandom@@@std@@@2@@stdext@@YAXPAU?$pair@IPAVCvRandom@@@std@@IABU12@AAV?$allocator@U?$pair@IPAVCvRandom@@@std@@@2@@Z
 _TEXT	SEGMENT
-$T231965 = -4						; size = 1
-__Cat$231969 = -4					; size = 1
+$T232007 = -4						; size = 1
+__Cat$232011 = -4					; size = 1
 __First$ = 8						; size = 4
 __Count$ = 12						; size = 4
 __Val$ = 16						; size = 4
@@ -15608,9 +15608,9 @@ __Al$ = 20						; size = 4
 ; 942  : 		_STD _Ptr_cat(_First, _First), _STD _Range_checked_iterator_tag());
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T231965[esp+4], 0
-	mov	eax, DWORD PTR $T231965[esp+4]
-	mov	ecx, DWORD PTR __Cat$231969[esp+4]
+	mov	BYTE PTR $T232007[esp+4], 0
+	mov	eax, DWORD PTR $T232007[esp+4]
+	mov	ecx, DWORD PTR __Cat$232011[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Val$[esp+4]
 	push	ecx
@@ -15649,8 +15649,8 @@ PUBLIC	??$unchecked_uninitialized_fill_n@PAU?$pair@IPAVCvDllNetInitInfo@@@std@@I
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ??$unchecked_uninitialized_fill_n@PAU?$pair@IPAVCvDllNetInitInfo@@@std@@IU12@V?$allocator@U?$pair@IPAVCvDllNetInitInfo@@@std@@@2@@stdext@@YAXPAU?$pair@IPAVCvDllNetInitInfo@@@std@@IABU12@AAV?$allocator@U?$pair@IPAVCvDllNetInitInfo@@@std@@@2@@Z
 _TEXT	SEGMENT
-$T231982 = -4						; size = 1
-__Cat$231986 = -4					; size = 1
+$T232024 = -4						; size = 1
+__Cat$232028 = -4					; size = 1
 __First$ = 8						; size = 4
 __Count$ = 12						; size = 4
 __Val$ = 16						; size = 4
@@ -15665,9 +15665,9 @@ __Al$ = 20						; size = 4
 ; 942  : 		_STD _Ptr_cat(_First, _First), _STD _Range_checked_iterator_tag());
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T231982[esp+4], 0
-	mov	eax, DWORD PTR $T231982[esp+4]
-	mov	ecx, DWORD PTR __Cat$231986[esp+4]
+	mov	BYTE PTR $T232024[esp+4], 0
+	mov	eax, DWORD PTR $T232024[esp+4]
+	mov	ecx, DWORD PTR __Cat$232028[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Val$[esp+4]
 	push	ecx
@@ -15706,8 +15706,8 @@ PUBLIC	??$unchecked_uninitialized_fill_n@PAU?$pair@IPAVCvDllNetLoadGameInfo@@@st
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ??$unchecked_uninitialized_fill_n@PAU?$pair@IPAVCvDllNetLoadGameInfo@@@std@@IU12@V?$allocator@U?$pair@IPAVCvDllNetLoadGameInfo@@@std@@@2@@stdext@@YAXPAU?$pair@IPAVCvDllNetLoadGameInfo@@@std@@IABU12@AAV?$allocator@U?$pair@IPAVCvDllNetLoadGameInfo@@@std@@@2@@Z
 _TEXT	SEGMENT
-$T231999 = -4						; size = 1
-__Cat$232003 = -4					; size = 1
+$T232041 = -4						; size = 1
+__Cat$232045 = -4					; size = 1
 __First$ = 8						; size = 4
 __Count$ = 12						; size = 4
 __Val$ = 16						; size = 4
@@ -15722,9 +15722,9 @@ __Al$ = 20						; size = 4
 ; 942  : 		_STD _Ptr_cat(_First, _First), _STD _Range_checked_iterator_tag());
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T231999[esp+4], 0
-	mov	eax, DWORD PTR $T231999[esp+4]
-	mov	ecx, DWORD PTR __Cat$232003[esp+4]
+	mov	BYTE PTR $T232041[esp+4], 0
+	mov	eax, DWORD PTR $T232041[esp+4]
+	mov	ecx, DWORD PTR __Cat$232045[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Val$[esp+4]
 	push	ecx
@@ -15763,8 +15763,8 @@ PUBLIC	??$unchecked_uninitialized_fill_n@PAUCvDllPathFinderUpdateListData@@IU1@V
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ??$unchecked_uninitialized_fill_n@PAUCvDllPathFinderUpdateListData@@IU1@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@stdext@@YAXPAUCvDllPathFinderUpdateListData@@IABU1@AAV?$allocator@UCvDllPathFinderUpdateListData@@@std@@@Z
 _TEXT	SEGMENT
-$T232016 = -4						; size = 1
-__Cat$232020 = -4					; size = 1
+$T232058 = -4						; size = 1
+__Cat$232062 = -4					; size = 1
 __First$ = 8						; size = 4
 __Count$ = 12						; size = 4
 __Val$ = 16						; size = 4
@@ -15779,9 +15779,9 @@ __Al$ = 20						; size = 4
 ; 942  : 		_STD _Ptr_cat(_First, _First), _STD _Range_checked_iterator_tag());
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T232016[esp+4], 0
-	mov	eax, DWORD PTR $T232016[esp+4]
-	mov	ecx, DWORD PTR __Cat$232020[esp+4]
+	mov	BYTE PTR $T232058[esp+4], 0
+	mov	eax, DWORD PTR $T232058[esp+4]
+	mov	ecx, DWORD PTR __Cat$232062[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Val$[esp+4]
 	push	ecx
@@ -15863,10 +15863,10 @@ PUBLIC	??$_Uninit_move@PAU?$pair@IPAVCvRandom@@@std@@PAU12@V?$allocator@U?$pair@
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ??$_Uninit_move@PAU?$pair@IPAVCvRandom@@@std@@PAU12@V?$allocator@U?$pair@IPAVCvRandom@@@std@@@2@U_Undefined_move_tag@2@@std@@YAPAU?$pair@IPAVCvRandom@@@0@PAU10@00AAV?$allocator@U?$pair@IPAVCvRandom@@@std@@@0@U_Undefined_move_tag@0@U_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
-$T232098 = -4						; size = 1
+$T232140 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$232101 = 16					; size = 1
+__Cat$232143 = 16					; size = 1
 __Dest$ = 16						; size = 4
 __Al$ = 20						; size = 4
 ___formal$ = 24						; size = 1
@@ -15879,10 +15879,10 @@ ___formal$ = 28						; size = 1
 
 ; 207  : 	return (_STDEXT unchecked_uninitialized_copy(_First, _Last, _Dest, _Al));
 
-	mov	ecx, DWORD PTR __Cat$232101[esp]
+	mov	ecx, DWORD PTR __Cat$232143[esp]
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T232098[esp+4], 0
-	mov	eax, DWORD PTR $T232098[esp+4]
+	mov	BYTE PTR $T232140[esp+4], 0
+	mov	eax, DWORD PTR $T232140[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -15904,10 +15904,10 @@ PUBLIC	??$_Uninit_move@PAU?$pair@IPAVCvDllNetInitInfo@@@std@@PAU12@V?$allocator@
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Uninit_move@PAU?$pair@IPAVCvDllNetInitInfo@@@std@@PAU12@V?$allocator@U?$pair@IPAVCvDllNetInitInfo@@@std@@@2@U_Undefined_move_tag@2@@std@@YAPAU?$pair@IPAVCvDllNetInitInfo@@@0@PAU10@00AAV?$allocator@U?$pair@IPAVCvDllNetInitInfo@@@std@@@0@U_Undefined_move_tag@0@U_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
-$T232117 = -4						; size = 1
+$T232159 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$232120 = 16					; size = 1
+__Cat$232162 = 16					; size = 1
 __Dest$ = 16						; size = 4
 __Al$ = 20						; size = 4
 ___formal$ = 24						; size = 1
@@ -15920,10 +15920,10 @@ ___formal$ = 28						; size = 1
 
 ; 207  : 	return (_STDEXT unchecked_uninitialized_copy(_First, _Last, _Dest, _Al));
 
-	mov	ecx, DWORD PTR __Cat$232120[esp]
+	mov	ecx, DWORD PTR __Cat$232162[esp]
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T232117[esp+4], 0
-	mov	eax, DWORD PTR $T232117[esp+4]
+	mov	BYTE PTR $T232159[esp+4], 0
+	mov	eax, DWORD PTR $T232159[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -15945,10 +15945,10 @@ PUBLIC	??$_Uninit_move@PAU?$pair@IPAVCvDllNetLoadGameInfo@@@std@@PAU12@V?$alloca
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Uninit_move@PAU?$pair@IPAVCvDllNetLoadGameInfo@@@std@@PAU12@V?$allocator@U?$pair@IPAVCvDllNetLoadGameInfo@@@std@@@2@U_Undefined_move_tag@2@@std@@YAPAU?$pair@IPAVCvDllNetLoadGameInfo@@@0@PAU10@00AAV?$allocator@U?$pair@IPAVCvDllNetLoadGameInfo@@@std@@@0@U_Undefined_move_tag@0@U_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
-$T232136 = -4						; size = 1
+$T232178 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$232139 = 16					; size = 1
+__Cat$232181 = 16					; size = 1
 __Dest$ = 16						; size = 4
 __Al$ = 20						; size = 4
 ___formal$ = 24						; size = 1
@@ -15961,10 +15961,10 @@ ___formal$ = 28						; size = 1
 
 ; 207  : 	return (_STDEXT unchecked_uninitialized_copy(_First, _Last, _Dest, _Al));
 
-	mov	ecx, DWORD PTR __Cat$232139[esp]
+	mov	ecx, DWORD PTR __Cat$232181[esp]
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T232136[esp+4], 0
-	mov	eax, DWORD PTR $T232136[esp+4]
+	mov	BYTE PTR $T232178[esp+4], 0
+	mov	eax, DWORD PTR $T232178[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -15986,10 +15986,10 @@ PUBLIC	??$_Uninit_move@PAUCvDllPathFinderUpdateListData@@PAU1@V?$allocator@UCvDl
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Uninit_move@PAUCvDllPathFinderUpdateListData@@PAU1@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@U_Undefined_move_tag@3@@std@@YAPAUCvDllPathFinderUpdateListData@@PAU1@00AAV?$allocator@UCvDllPathFinderUpdateListData@@@0@U_Undefined_move_tag@0@U_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
-$T232155 = -4						; size = 1
+$T232197 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$232158 = 16					; size = 1
+__Cat$232200 = 16					; size = 1
 __Dest$ = 16						; size = 4
 __Al$ = 20						; size = 4
 ___formal$ = 24						; size = 1
@@ -16002,10 +16002,10 @@ ___formal$ = 28						; size = 1
 
 ; 207  : 	return (_STDEXT unchecked_uninitialized_copy(_First, _Last, _Dest, _Al));
 
-	mov	ecx, DWORD PTR __Cat$232158[esp]
+	mov	ecx, DWORD PTR __Cat$232200[esp]
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T232155[esp+4], 0
-	mov	eax, DWORD PTR $T232155[esp+4]
+	mov	BYTE PTR $T232197[esp+4], 0
+	mov	eax, DWORD PTR $T232197[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -16027,8 +16027,8 @@ PUBLIC	??$unchecked_uninitialized_copy@V?$_Vector_iterator@UCvDllPathFinderUpdat
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$unchecked_uninitialized_copy@V?$_Vector_iterator@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@std@@PAUCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@2@@stdext@@YAPAUCvDllPathFinderUpdateListData@@V?$_Vector_iterator@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@std@@0PAU1@AAV?$allocator@UCvDllPathFinderUpdateListData@@@3@@Z
 _TEXT	SEGMENT
-$T232165 = -4						; size = 1
-__Cat$232169 = -4					; size = 1
+$T232207 = -4						; size = 1
+__Cat$232211 = -4					; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
@@ -16044,9 +16044,9 @@ __Al$ = 20						; size = 4
 ; 822  : 		_STD _Ptr_cat(_First, _Dest), _STD _Range_checked_iterator_tag()));
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T232165[esp+4], 0
-	mov	eax, DWORD PTR $T232165[esp+4]
-	mov	ecx, DWORD PTR __Cat$232169[esp+4]
+	mov	BYTE PTR $T232207[esp+4], 0
+	mov	eax, DWORD PTR $T232207[esp+4]
+	mov	ecx, DWORD PTR __Cat$232211[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -16129,10 +16129,10 @@ PUBLIC	?_Ufill@?$vector@U?$pair@IPAVCvRandom@@@std@@V?$allocator@U?$pair@IPAVCvR
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?_Ufill@?$vector@U?$pair@IPAVCvRandom@@@std@@V?$allocator@U?$pair@IPAVCvRandom@@@std@@@2@@std@@IAEPAU?$pair@IPAVCvRandom@@@2@PAU32@IABU32@@Z
 _TEXT	SEGMENT
-$T232193 = -4						; size = 1
+$T232235 = -4						; size = 1
 __Ptr$ = 8						; size = 4
 __Count$ = 12						; size = 4
-__Cat$232196 = 16					; size = 1
+__Cat$232238 = 16					; size = 1
 __Val$ = 16						; size = 4
 ?_Ufill@?$vector@U?$pair@IPAVCvRandom@@@std@@V?$allocator@U?$pair@IPAVCvRandom@@@std@@@2@@std@@IAEPAU?$pair@IPAVCvRandom@@@2@PAU32@IABU32@@Z PROC ; std::vector<std::pair<unsigned int,CvRandom *>,std::allocator<std::pair<unsigned int,CvRandom *> > >::_Ufill, COMDAT
 ; _this$ = ecx
@@ -16143,13 +16143,13 @@ __Val$ = 16						; size = 4
 
 ; 1254 : 		_STDEXT unchecked_uninitialized_fill_n(_Ptr, _Count, _Val, this->_Alval);
 
-	mov	edx, DWORD PTR __Cat$232196[esp]
+	mov	edx, DWORD PTR __Cat$232238[esp]
 	push	esi
 	mov	esi, DWORD PTR __Count$[esp+4]
 	push	edi
 	mov	edi, DWORD PTR __Ptr$[esp+8]
-	mov	BYTE PTR $T232193[esp+12], 0
-	mov	eax, DWORD PTR $T232193[esp+12]
+	mov	BYTE PTR $T232235[esp+12], 0
+	mov	eax, DWORD PTR $T232235[esp+12]
 	push	eax
 	mov	eax, DWORD PTR __Val$[esp+12]
 	push	edx
@@ -16236,10 +16236,10 @@ PUBLIC	?_Ufill@?$vector@U?$pair@IPAVCvDllNetInitInfo@@@std@@V?$allocator@U?$pair
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?_Ufill@?$vector@U?$pair@IPAVCvDllNetInitInfo@@@std@@V?$allocator@U?$pair@IPAVCvDllNetInitInfo@@@std@@@2@@std@@IAEPAU?$pair@IPAVCvDllNetInitInfo@@@2@PAU32@IABU32@@Z
 _TEXT	SEGMENT
-$T232222 = -4						; size = 1
+$T232264 = -4						; size = 1
 __Ptr$ = 8						; size = 4
 __Count$ = 12						; size = 4
-__Cat$232225 = 16					; size = 1
+__Cat$232267 = 16					; size = 1
 __Val$ = 16						; size = 4
 ?_Ufill@?$vector@U?$pair@IPAVCvDllNetInitInfo@@@std@@V?$allocator@U?$pair@IPAVCvDllNetInitInfo@@@std@@@2@@std@@IAEPAU?$pair@IPAVCvDllNetInitInfo@@@2@PAU32@IABU32@@Z PROC ; std::vector<std::pair<unsigned int,CvDllNetInitInfo *>,std::allocator<std::pair<unsigned int,CvDllNetInitInfo *> > >::_Ufill, COMDAT
 ; _this$ = ecx
@@ -16250,13 +16250,13 @@ __Val$ = 16						; size = 4
 
 ; 1254 : 		_STDEXT unchecked_uninitialized_fill_n(_Ptr, _Count, _Val, this->_Alval);
 
-	mov	edx, DWORD PTR __Cat$232225[esp]
+	mov	edx, DWORD PTR __Cat$232267[esp]
 	push	esi
 	mov	esi, DWORD PTR __Count$[esp+4]
 	push	edi
 	mov	edi, DWORD PTR __Ptr$[esp+8]
-	mov	BYTE PTR $T232222[esp+12], 0
-	mov	eax, DWORD PTR $T232222[esp+12]
+	mov	BYTE PTR $T232264[esp+12], 0
+	mov	eax, DWORD PTR $T232264[esp+12]
 	push	eax
 	mov	eax, DWORD PTR __Val$[esp+12]
 	push	edx
@@ -16343,10 +16343,10 @@ PUBLIC	?_Ufill@?$vector@U?$pair@IPAVCvDllNetLoadGameInfo@@@std@@V?$allocator@U?$
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?_Ufill@?$vector@U?$pair@IPAVCvDllNetLoadGameInfo@@@std@@V?$allocator@U?$pair@IPAVCvDllNetLoadGameInfo@@@std@@@2@@std@@IAEPAU?$pair@IPAVCvDllNetLoadGameInfo@@@2@PAU32@IABU32@@Z
 _TEXT	SEGMENT
-$T232251 = -4						; size = 1
+$T232294 = -4						; size = 1
 __Ptr$ = 8						; size = 4
 __Count$ = 12						; size = 4
-__Cat$232254 = 16					; size = 1
+__Cat$232297 = 16					; size = 1
 __Val$ = 16						; size = 4
 ?_Ufill@?$vector@U?$pair@IPAVCvDllNetLoadGameInfo@@@std@@V?$allocator@U?$pair@IPAVCvDllNetLoadGameInfo@@@std@@@2@@std@@IAEPAU?$pair@IPAVCvDllNetLoadGameInfo@@@2@PAU32@IABU32@@Z PROC ; std::vector<std::pair<unsigned int,CvDllNetLoadGameInfo *>,std::allocator<std::pair<unsigned int,CvDllNetLoadGameInfo *> > >::_Ufill, COMDAT
 ; _this$ = ecx
@@ -16357,13 +16357,13 @@ __Val$ = 16						; size = 4
 
 ; 1254 : 		_STDEXT unchecked_uninitialized_fill_n(_Ptr, _Count, _Val, this->_Alval);
 
-	mov	edx, DWORD PTR __Cat$232254[esp]
+	mov	edx, DWORD PTR __Cat$232297[esp]
 	push	esi
 	mov	esi, DWORD PTR __Count$[esp+4]
 	push	edi
 	mov	edi, DWORD PTR __Ptr$[esp+8]
-	mov	BYTE PTR $T232251[esp+12], 0
-	mov	eax, DWORD PTR $T232251[esp+12]
+	mov	BYTE PTR $T232294[esp+12], 0
+	mov	eax, DWORD PTR $T232294[esp+12]
 	push	eax
 	mov	eax, DWORD PTR __Val$[esp+12]
 	push	edx
@@ -16450,10 +16450,10 @@ PUBLIC	?_Ufill@?$vector@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathF
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?_Ufill@?$vector@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@std@@IAEPAUCvDllPathFinderUpdateListData@@PAU3@IABU3@@Z
 _TEXT	SEGMENT
-$T232281 = -4						; size = 1
+$T232323 = -4						; size = 1
 __Ptr$ = 8						; size = 4
 __Count$ = 12						; size = 4
-__Cat$232284 = 16					; size = 1
+__Cat$232326 = 16					; size = 1
 __Val$ = 16						; size = 4
 ?_Ufill@?$vector@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@std@@IAEPAUCvDllPathFinderUpdateListData@@PAU3@IABU3@@Z PROC ; std::vector<CvDllPathFinderUpdateListData,std::allocator<CvDllPathFinderUpdateListData> >::_Ufill, COMDAT
 ; _this$ = ecx
@@ -16464,13 +16464,13 @@ __Val$ = 16						; size = 4
 
 ; 1254 : 		_STDEXT unchecked_uninitialized_fill_n(_Ptr, _Count, _Val, this->_Alval);
 
-	mov	edx, DWORD PTR __Cat$232284[esp]
+	mov	edx, DWORD PTR __Cat$232326[esp]
 	push	esi
 	mov	esi, DWORD PTR __Count$[esp+4]
 	push	edi
 	mov	edi, DWORD PTR __Ptr$[esp+8]
-	mov	BYTE PTR $T232281[esp+12], 0
-	mov	eax, DWORD PTR $T232281[esp+12]
+	mov	BYTE PTR $T232323[esp+12], 0
+	mov	eax, DWORD PTR $T232323[esp+12]
 	push	eax
 	mov	eax, DWORD PTR __Val$[esp+12]
 	push	edx
@@ -16499,7 +16499,7 @@ PUBLIC	??$reverse@V?$_Vector_iterator@UCvDllPathFinderUpdateListData@@V?$allocat
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\algorithm
 ;	COMDAT ??$reverse@V?$_Vector_iterator@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@std@@@std@@YAXV?$_Vector_iterator@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@0@0@Z
 _TEXT	SEGMENT
-$T232290 = -4						; size = 1
+$T232332 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 ??$reverse@V?$_Vector_iterator@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@std@@@std@@YAXV?$_Vector_iterator@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@0@0@Z PROC ; std::reverse<std::_Vector_iterator<CvDllPathFinderUpdateListData,std::allocator<CvDllPathFinderUpdateListData> > >, COMDAT
@@ -16510,7 +16510,7 @@ __Last$ = 12						; size = 4
 
 ; 1583 : 	_Reverse(_CHECKED_BASE(_First), _CHECKED_BASE(_Last), _Iter_cat(_First));
 
-	mov	eax, DWORD PTR $T232290[esp+4]
+	mov	eax, DWORD PTR $T232332[esp+4]
 	mov	ecx, DWORD PTR __Last$[esp]
 	mov	edx, DWORD PTR __First$[esp]
 	push	eax
@@ -16529,10 +16529,10 @@ PUBLIC	??$_Unchecked_uninitialized_move@PAU?$pair@IPAVCvRandom@@@std@@PAU12@V?$a
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ??$_Unchecked_uninitialized_move@PAU?$pair@IPAVCvRandom@@@std@@PAU12@V?$allocator@U?$pair@IPAVCvRandom@@@std@@@2@@stdext@@YAPAU?$pair@IPAVCvRandom@@@std@@PAU12@00AAV?$allocator@U?$pair@IPAVCvRandom@@@std@@@2@@Z
 _TEXT	SEGMENT
-$T232324 = -4						; size = 1
+$T232366 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$232327 = 16					; size = 1
+__Cat$232369 = 16					; size = 1
 __Dest$ = 16						; size = 4
 __Al$ = 20						; size = 4
 ??$_Unchecked_uninitialized_move@PAU?$pair@IPAVCvRandom@@@std@@PAU12@V?$allocator@U?$pair@IPAVCvRandom@@@std@@@2@@stdext@@YAPAU?$pair@IPAVCvRandom@@@std@@PAU12@00AAV?$allocator@U?$pair@IPAVCvRandom@@@std@@@2@@Z PROC ; stdext::_Unchecked_uninitialized_move<std::pair<unsigned int,CvRandom *> *,std::pair<unsigned int,CvRandom *> *,std::allocator<std::pair<unsigned int,CvRandom *> > >, COMDAT
@@ -16545,10 +16545,10 @@ __Al$ = 20						; size = 4
 ; 863  : 		_CHECKED_BASE(_Last), _Dest, _Al,
 ; 864  : 		_STD _Move_cat(_Dest), _STD _Range_checked_iterator_tag()));
 
-	mov	ecx, DWORD PTR __Cat$232327[esp]
+	mov	ecx, DWORD PTR __Cat$232369[esp]
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T232324[esp+4], 0
-	mov	eax, DWORD PTR $T232324[esp+4]
+	mov	BYTE PTR $T232366[esp+4], 0
+	mov	eax, DWORD PTR $T232366[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -16570,10 +16570,10 @@ PUBLIC	??$_Unchecked_uninitialized_move@PAU?$pair@IPAVCvDllNetInitInfo@@@std@@PA
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Unchecked_uninitialized_move@PAU?$pair@IPAVCvDllNetInitInfo@@@std@@PAU12@V?$allocator@U?$pair@IPAVCvDllNetInitInfo@@@std@@@2@@stdext@@YAPAU?$pair@IPAVCvDllNetInitInfo@@@std@@PAU12@00AAV?$allocator@U?$pair@IPAVCvDllNetInitInfo@@@std@@@2@@Z
 _TEXT	SEGMENT
-$T232361 = -4						; size = 1
+$T232403 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$232364 = 16					; size = 1
+__Cat$232406 = 16					; size = 1
 __Dest$ = 16						; size = 4
 __Al$ = 20						; size = 4
 ??$_Unchecked_uninitialized_move@PAU?$pair@IPAVCvDllNetInitInfo@@@std@@PAU12@V?$allocator@U?$pair@IPAVCvDllNetInitInfo@@@std@@@2@@stdext@@YAPAU?$pair@IPAVCvDllNetInitInfo@@@std@@PAU12@00AAV?$allocator@U?$pair@IPAVCvDllNetInitInfo@@@std@@@2@@Z PROC ; stdext::_Unchecked_uninitialized_move<std::pair<unsigned int,CvDllNetInitInfo *> *,std::pair<unsigned int,CvDllNetInitInfo *> *,std::allocator<std::pair<unsigned int,CvDllNetInitInfo *> > >, COMDAT
@@ -16586,10 +16586,10 @@ __Al$ = 20						; size = 4
 ; 863  : 		_CHECKED_BASE(_Last), _Dest, _Al,
 ; 864  : 		_STD _Move_cat(_Dest), _STD _Range_checked_iterator_tag()));
 
-	mov	ecx, DWORD PTR __Cat$232364[esp]
+	mov	ecx, DWORD PTR __Cat$232406[esp]
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T232361[esp+4], 0
-	mov	eax, DWORD PTR $T232361[esp+4]
+	mov	BYTE PTR $T232403[esp+4], 0
+	mov	eax, DWORD PTR $T232403[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -16611,10 +16611,10 @@ PUBLIC	??$_Unchecked_uninitialized_move@PAU?$pair@IPAVCvDllNetLoadGameInfo@@@std
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Unchecked_uninitialized_move@PAU?$pair@IPAVCvDllNetLoadGameInfo@@@std@@PAU12@V?$allocator@U?$pair@IPAVCvDllNetLoadGameInfo@@@std@@@2@@stdext@@YAPAU?$pair@IPAVCvDllNetLoadGameInfo@@@std@@PAU12@00AAV?$allocator@U?$pair@IPAVCvDllNetLoadGameInfo@@@std@@@2@@Z
 _TEXT	SEGMENT
-$T232399 = -4						; size = 1
+$T232441 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$232402 = 16					; size = 1
+__Cat$232444 = 16					; size = 1
 __Dest$ = 16						; size = 4
 __Al$ = 20						; size = 4
 ??$_Unchecked_uninitialized_move@PAU?$pair@IPAVCvDllNetLoadGameInfo@@@std@@PAU12@V?$allocator@U?$pair@IPAVCvDllNetLoadGameInfo@@@std@@@2@@stdext@@YAPAU?$pair@IPAVCvDllNetLoadGameInfo@@@std@@PAU12@00AAV?$allocator@U?$pair@IPAVCvDllNetLoadGameInfo@@@std@@@2@@Z PROC ; stdext::_Unchecked_uninitialized_move<std::pair<unsigned int,CvDllNetLoadGameInfo *> *,std::pair<unsigned int,CvDllNetLoadGameInfo *> *,std::allocator<std::pair<unsigned int,CvDllNetLoadGameInfo *> > >, COMDAT
@@ -16627,10 +16627,10 @@ __Al$ = 20						; size = 4
 ; 863  : 		_CHECKED_BASE(_Last), _Dest, _Al,
 ; 864  : 		_STD _Move_cat(_Dest), _STD _Range_checked_iterator_tag()));
 
-	mov	ecx, DWORD PTR __Cat$232402[esp]
+	mov	ecx, DWORD PTR __Cat$232444[esp]
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T232399[esp+4], 0
-	mov	eax, DWORD PTR $T232399[esp+4]
+	mov	BYTE PTR $T232441[esp+4], 0
+	mov	eax, DWORD PTR $T232441[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -16652,10 +16652,10 @@ PUBLIC	??$_Unchecked_uninitialized_move@PAUCvDllPathFinderUpdateListData@@PAU1@V
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Unchecked_uninitialized_move@PAUCvDllPathFinderUpdateListData@@PAU1@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@stdext@@YAPAUCvDllPathFinderUpdateListData@@PAU1@00AAV?$allocator@UCvDllPathFinderUpdateListData@@@std@@@Z
 _TEXT	SEGMENT
-$T232436 = -4						; size = 1
+$T232476 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$232439 = 16					; size = 1
+__Cat$232480 = 16					; size = 1
 __Dest$ = 16						; size = 4
 __Al$ = 20						; size = 4
 ??$_Unchecked_uninitialized_move@PAUCvDllPathFinderUpdateListData@@PAU1@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@stdext@@YAPAUCvDllPathFinderUpdateListData@@PAU1@00AAV?$allocator@UCvDllPathFinderUpdateListData@@@std@@@Z PROC ; stdext::_Unchecked_uninitialized_move<CvDllPathFinderUpdateListData *,CvDllPathFinderUpdateListData *,std::allocator<CvDllPathFinderUpdateListData> >, COMDAT
@@ -16668,10 +16668,10 @@ __Al$ = 20						; size = 4
 ; 863  : 		_CHECKED_BASE(_Last), _Dest, _Al,
 ; 864  : 		_STD _Move_cat(_Dest), _STD _Range_checked_iterator_tag()));
 
-	mov	ecx, DWORD PTR __Cat$232439[esp]
+	mov	ecx, DWORD PTR __Cat$232480[esp]
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T232436[esp+4], 0
-	mov	eax, DWORD PTR $T232436[esp+4]
+	mov	BYTE PTR $T232476[esp+4], 0
+	mov	eax, DWORD PTR $T232476[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -16693,10 +16693,10 @@ PUBLIC	??$_Uninit_move@V?$_Vector_iterator@UCvDllPathFinderUpdateListData@@V?$al
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Uninit_move@V?$_Vector_iterator@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@std@@PAUCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@2@U_Undefined_move_tag@2@@std@@YAPAUCvDllPathFinderUpdateListData@@V?$_Vector_iterator@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@0@0PAU1@AAV?$allocator@UCvDllPathFinderUpdateListData@@@0@U_Undefined_move_tag@0@U_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
-$T232459 = -4						; size = 1
+$T232497 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$232456 = 16					; size = 1
+__Cat$232501 = 16					; size = 1
 __Dest$ = 16						; size = 4
 __Al$ = 20						; size = 4
 ___formal$ = 24						; size = 1
@@ -16709,10 +16709,10 @@ ___formal$ = 28						; size = 1
 
 ; 207  : 	return (_STDEXT unchecked_uninitialized_copy(_First, _Last, _Dest, _Al));
 
-	mov	ecx, DWORD PTR __Cat$232456[esp]
+	mov	ecx, DWORD PTR __Cat$232501[esp]
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T232459[esp+4], 0
-	mov	eax, DWORD PTR $T232459[esp+4]
+	mov	BYTE PTR $T232497[esp+4], 0
+	mov	eax, DWORD PTR $T232497[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -17225,10 +17225,10 @@ PUBLIC	??$_Umove@PAU?$pair@IPAVCvRandom@@@std@@@?$vector@U?$pair@IPAVCvRandom@@@
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Umove@PAU?$pair@IPAVCvRandom@@@std@@@?$vector@U?$pair@IPAVCvRandom@@@std@@V?$allocator@U?$pair@IPAVCvRandom@@@std@@@2@@std@@IAEPAU?$pair@IPAVCvRandom@@@1@PAU21@00@Z
 _TEXT	SEGMENT
-$T233003 = -4						; size = 1
+$T233045 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$233006 = 16					; size = 1
+__Cat$233048 = 16					; size = 1
 __Ptr$ = 16						; size = 4
 ??$_Umove@PAU?$pair@IPAVCvRandom@@@std@@@?$vector@U?$pair@IPAVCvRandom@@@std@@V?$allocator@U?$pair@IPAVCvRandom@@@std@@@2@@std@@IAEPAU?$pair@IPAVCvRandom@@@1@PAU21@00@Z PROC ; std::vector<std::pair<unsigned int,CvRandom *>,std::allocator<std::pair<unsigned int,CvRandom *> > >::_Umove<std::pair<unsigned int,CvRandom *> *>, COMDAT
 ; _this$ = ecx
@@ -17241,9 +17241,9 @@ __Ptr$ = 16						; size = 4
 ; 1147 : 		return (_STDEXT _Unchecked_uninitialized_move(_First, _Last,
 ; 1148 : 			_Ptr, this->_Alval));
 
-	mov	edx, DWORD PTR __Cat$233006[esp]
-	mov	BYTE PTR $T233003[esp+4], 0
-	mov	eax, DWORD PTR $T233003[esp+4]
+	mov	edx, DWORD PTR __Cat$233048[esp]
+	mov	BYTE PTR $T233045[esp+4], 0
+	mov	eax, DWORD PTR $T233045[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Ptr$[esp+4]
 	push	edx
@@ -17265,10 +17265,10 @@ PUBLIC	??$_Umove@PAU?$pair@IPAVCvDllNetInitInfo@@@std@@@?$vector@U?$pair@IPAVCvD
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Umove@PAU?$pair@IPAVCvDllNetInitInfo@@@std@@@?$vector@U?$pair@IPAVCvDllNetInitInfo@@@std@@V?$allocator@U?$pair@IPAVCvDllNetInitInfo@@@std@@@2@@std@@IAEPAU?$pair@IPAVCvDllNetInitInfo@@@1@PAU21@00@Z
 _TEXT	SEGMENT
-$T233058 = -4						; size = 1
+$T233100 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$233061 = 16					; size = 1
+__Cat$233103 = 16					; size = 1
 __Ptr$ = 16						; size = 4
 ??$_Umove@PAU?$pair@IPAVCvDllNetInitInfo@@@std@@@?$vector@U?$pair@IPAVCvDllNetInitInfo@@@std@@V?$allocator@U?$pair@IPAVCvDllNetInitInfo@@@std@@@2@@std@@IAEPAU?$pair@IPAVCvDllNetInitInfo@@@1@PAU21@00@Z PROC ; std::vector<std::pair<unsigned int,CvDllNetInitInfo *>,std::allocator<std::pair<unsigned int,CvDllNetInitInfo *> > >::_Umove<std::pair<unsigned int,CvDllNetInitInfo *> *>, COMDAT
 ; _this$ = ecx
@@ -17281,9 +17281,9 @@ __Ptr$ = 16						; size = 4
 ; 1147 : 		return (_STDEXT _Unchecked_uninitialized_move(_First, _Last,
 ; 1148 : 			_Ptr, this->_Alval));
 
-	mov	edx, DWORD PTR __Cat$233061[esp]
-	mov	BYTE PTR $T233058[esp+4], 0
-	mov	eax, DWORD PTR $T233058[esp+4]
+	mov	edx, DWORD PTR __Cat$233103[esp]
+	mov	BYTE PTR $T233100[esp+4], 0
+	mov	eax, DWORD PTR $T233100[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Ptr$[esp+4]
 	push	edx
@@ -17305,10 +17305,10 @@ PUBLIC	??$_Umove@PAU?$pair@IPAVCvDllNetLoadGameInfo@@@std@@@?$vector@U?$pair@IPA
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Umove@PAU?$pair@IPAVCvDllNetLoadGameInfo@@@std@@@?$vector@U?$pair@IPAVCvDllNetLoadGameInfo@@@std@@V?$allocator@U?$pair@IPAVCvDllNetLoadGameInfo@@@std@@@2@@std@@IAEPAU?$pair@IPAVCvDllNetLoadGameInfo@@@1@PAU21@00@Z
 _TEXT	SEGMENT
-$T233113 = -4						; size = 1
+$T233155 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$233116 = 16					; size = 1
+__Cat$233158 = 16					; size = 1
 __Ptr$ = 16						; size = 4
 ??$_Umove@PAU?$pair@IPAVCvDllNetLoadGameInfo@@@std@@@?$vector@U?$pair@IPAVCvDllNetLoadGameInfo@@@std@@V?$allocator@U?$pair@IPAVCvDllNetLoadGameInfo@@@std@@@2@@std@@IAEPAU?$pair@IPAVCvDllNetLoadGameInfo@@@1@PAU21@00@Z PROC ; std::vector<std::pair<unsigned int,CvDllNetLoadGameInfo *>,std::allocator<std::pair<unsigned int,CvDllNetLoadGameInfo *> > >::_Umove<std::pair<unsigned int,CvDllNetLoadGameInfo *> *>, COMDAT
 ; _this$ = ecx
@@ -17321,9 +17321,9 @@ __Ptr$ = 16						; size = 4
 ; 1147 : 		return (_STDEXT _Unchecked_uninitialized_move(_First, _Last,
 ; 1148 : 			_Ptr, this->_Alval));
 
-	mov	edx, DWORD PTR __Cat$233116[esp]
-	mov	BYTE PTR $T233113[esp+4], 0
-	mov	eax, DWORD PTR $T233113[esp+4]
+	mov	edx, DWORD PTR __Cat$233158[esp]
+	mov	BYTE PTR $T233155[esp+4], 0
+	mov	eax, DWORD PTR $T233155[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Ptr$[esp+4]
 	push	edx
@@ -17345,10 +17345,10 @@ PUBLIC	??$_Umove@PAUCvDllPathFinderUpdateListData@@@?$vector@UCvDllPathFinderUpd
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Umove@PAUCvDllPathFinderUpdateListData@@@?$vector@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@std@@IAEPAUCvDllPathFinderUpdateListData@@PAU2@00@Z
 _TEXT	SEGMENT
-$T233168 = -4						; size = 1
+$T233210 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$233171 = 16					; size = 1
+__Cat$233213 = 16					; size = 1
 __Ptr$ = 16						; size = 4
 ??$_Umove@PAUCvDllPathFinderUpdateListData@@@?$vector@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@std@@IAEPAUCvDllPathFinderUpdateListData@@PAU2@00@Z PROC ; std::vector<CvDllPathFinderUpdateListData,std::allocator<CvDllPathFinderUpdateListData> >::_Umove<CvDllPathFinderUpdateListData *>, COMDAT
 ; _this$ = ecx
@@ -17361,9 +17361,9 @@ __Ptr$ = 16						; size = 4
 ; 1147 : 		return (_STDEXT _Unchecked_uninitialized_move(_First, _Last,
 ; 1148 : 			_Ptr, this->_Alval));
 
-	mov	edx, DWORD PTR __Cat$233171[esp]
-	mov	BYTE PTR $T233168[esp+4], 0
-	mov	eax, DWORD PTR $T233168[esp+4]
+	mov	edx, DWORD PTR __Cat$233213[esp]
+	mov	BYTE PTR $T233210[esp+4], 0
+	mov	eax, DWORD PTR $T233210[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Ptr$[esp+4]
 	push	edx
@@ -17386,10 +17386,10 @@ PUBLIC	??$_Unchecked_uninitialized_move@V?$_Vector_iterator@UCvDllPathFinderUpda
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ??$_Unchecked_uninitialized_move@V?$_Vector_iterator@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@std@@PAUCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@2@@stdext@@YAPAUCvDllPathFinderUpdateListData@@V?$_Vector_iterator@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@std@@0PAU1@AAV?$allocator@UCvDllPathFinderUpdateListData@@@3@@Z
 _TEXT	SEGMENT
-$T233204 = -4						; size = 1
+$T233247 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$233207 = 16					; size = 1
+__Cat$233250 = 16					; size = 1
 __Dest$ = 16						; size = 4
 __Al$ = 20						; size = 4
 ??$_Unchecked_uninitialized_move@V?$_Vector_iterator@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@std@@PAUCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@2@@stdext@@YAPAUCvDllPathFinderUpdateListData@@V?$_Vector_iterator@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@std@@0PAU1@AAV?$allocator@UCvDllPathFinderUpdateListData@@@3@@Z PROC ; stdext::_Unchecked_uninitialized_move<std::_Vector_iterator<CvDllPathFinderUpdateListData,std::allocator<CvDllPathFinderUpdateListData> >,CvDllPathFinderUpdateListData *,std::allocator<CvDllPathFinderUpdateListData> >, COMDAT
@@ -17402,10 +17402,10 @@ __Al$ = 20						; size = 4
 ; 863  : 		_CHECKED_BASE(_Last), _Dest, _Al,
 ; 864  : 		_STD _Move_cat(_Dest), _STD _Range_checked_iterator_tag()));
 
-	mov	ecx, DWORD PTR __Cat$233207[esp]
+	mov	ecx, DWORD PTR __Cat$233250[esp]
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T233204[esp+4], 0
-	mov	eax, DWORD PTR $T233204[esp+4]
+	mov	BYTE PTR $T233247[esp+4], 0
+	mov	eax, DWORD PTR $T233247[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -17661,10 +17661,10 @@ xdata$x	ENDS
 ;	COMDAT ??0CvDllGameContext@@IAE@XZ
 _TEXT	SEGMENT
 _this$ = -20						; size = 4
-$T233229 = -16						; size = 4
-$T233225 = -16						; size = 4
-$T233221 = -16						; size = 4
-$T233217 = -16						; size = 4
+$T233271 = -16						; size = 4
+$T233267 = -16						; size = 4
+$T233263 = -16						; size = 4
+$T233259 = -16						; size = 4
 __$EHRec$ = -12						; size = 12
 ??0CvDllGameContext@@IAE@XZ PROC			; CvDllGameContext::CvDllGameContext, COMDAT
 ; _this$ = ecx
@@ -17705,7 +17705,7 @@ __$EHRec$ = -12						; size = 12
 	mov	DWORD PTR [esi+76], edi
 	call	??2CvDllNetworkSyncronization@@SAPAXI@Z	; CvDllNetworkSyncronization::operator new
 	add	esp, 4
-	mov	DWORD PTR $T233217[esp+32], eax
+	mov	DWORD PTR $T233259[esp+32], eax
 	mov	BYTE PTR __$EHRec$[esp+40], 3
 	cmp	eax, edi
 	je	SHORT $LN3@CvDllGameC
@@ -17723,7 +17723,7 @@ $LN4@CvDllGameC:
 	mov	DWORD PTR [esi+4], eax
 	call	??2CvDllNetMessageHandler@@SAPAXI@Z	; CvDllNetMessageHandler::operator new
 	add	esp, 4
-	mov	DWORD PTR $T233221[esp+32], eax
+	mov	DWORD PTR $T233263[esp+32], eax
 	mov	BYTE PTR __$EHRec$[esp+40], 4
 	cmp	eax, edi
 	je	SHORT $LN5@CvDllGameC
@@ -17741,7 +17741,7 @@ $LN6@CvDllGameC:
 	mov	DWORD PTR [esi+8], eax
 	call	??2CvDllScriptSystemUtility@@SAPAXI@Z	; CvDllScriptSystemUtility::operator new
 	add	esp, 4
-	mov	DWORD PTR $T233225[esp+32], eax
+	mov	DWORD PTR $T233267[esp+32], eax
 	mov	BYTE PTR __$EHRec$[esp+40], 5
 	cmp	eax, edi
 	je	SHORT $LN7@CvDllGameC
@@ -17759,7 +17759,7 @@ $LN8@CvDllGameC:
 	mov	DWORD PTR [esi+12], eax
 	call	??2CvDllWorldBuilderMapLoader@@SAPAXI@Z	; CvDllWorldBuilderMapLoader::operator new
 	add	esp, 4
-	mov	DWORD PTR $T233229[esp+32], eax
+	mov	DWORD PTR $T233271[esp+32], eax
 	mov	BYTE PTR __$EHRec$[esp+40], 6
 	cmp	eax, edi
 	je	SHORT $LN9@CvDllGameC
@@ -17803,25 +17803,25 @@ __unwindfunclet$??0CvDllGameContext@@IAE@XZ$2:
 	add	ecx, 60					; 0000003cH
 	jmp	??1?$vector@U?$pair@IPAVCvDllNetLoadGameInfo@@@std@@V?$allocator@U?$pair@IPAVCvDllNetLoadGameInfo@@@std@@@2@@std@@QAE@XZ ; std::vector<std::pair<unsigned int,CvDllNetLoadGameInfo *>,std::allocator<std::pair<unsigned int,CvDllNetLoadGameInfo *> > >::~vector<std::pair<unsigned int,CvDllNetLoadGameInfo *>,std::allocator<std::pair<unsigned int,CvDllNetLoadGameInfo *> > >
 __unwindfunclet$??0CvDllGameContext@@IAE@XZ$3:
-	mov	eax, DWORD PTR $T233217[ebp]
+	mov	eax, DWORD PTR $T233259[ebp]
 	push	eax
 	call	??3CvDllNetworkSyncronization@@SAXPAX@Z	; CvDllNetworkSyncronization::operator delete
 	pop	ecx
 	ret	0
 __unwindfunclet$??0CvDllGameContext@@IAE@XZ$4:
-	mov	eax, DWORD PTR $T233221[ebp]
+	mov	eax, DWORD PTR $T233263[ebp]
 	push	eax
 	call	??3CvDllNetMessageHandler@@SAXPAX@Z	; CvDllNetMessageHandler::operator delete
 	pop	ecx
 	ret	0
 __unwindfunclet$??0CvDllGameContext@@IAE@XZ$5:
-	mov	eax, DWORD PTR $T233225[ebp]
+	mov	eax, DWORD PTR $T233267[ebp]
 	push	eax
 	call	??3CvDllScriptSystemUtility@@SAXPAX@Z	; CvDllScriptSystemUtility::operator delete
 	pop	ecx
 	ret	0
 __unwindfunclet$??0CvDllGameContext@@IAE@XZ$6:
-	mov	eax, DWORD PTR $T233229[ebp]
+	mov	eax, DWORD PTR $T233271[ebp]
 	push	eax
 	call	??3CvDllWorldBuilderMapLoader@@SAXPAX@Z	; CvDllWorldBuilderMapLoader::operator delete
 	pop	ecx
@@ -17849,8 +17849,8 @@ __ehfuncinfo$?InitializeSingleton@CvDllGameContext@@SAXXZ DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?InitializeSingleton@CvDllGameContext@@SAXXZ
 _TEXT	SEGMENT
-$T233689 = -16						; size = 4
-_HeapInformation$222229 = -16				; size = 4
+$T233731 = -16						; size = 4
+_HeapInformation$222271 = -16				; size = 4
 __$EHRec$ = -12						; size = 12
 ?InitializeSingleton@CvDllGameContext@@SAXXZ PROC	; CvDllGameContext::InitializeSingleton, COMDAT
 
@@ -17889,12 +17889,12 @@ __$EHRec$ = -12						; size = 12
 ; 145  : 		                   sizeof(HeapInformation));
 
 	push	4
-	lea	ecx, DWORD PTR _HeapInformation$222229[esp+20]
+	lea	ecx, DWORD PTR _HeapInformation$222271[esp+20]
 	push	ecx
 	push	0
 	push	eax
 	mov	DWORD PTR ?s_hHeap@CvDllGameContext@@0PAXA, eax ; CvDllGameContext::s_hHeap
-	mov	DWORD PTR _HeapInformation$222229[esp+32], 2
+	mov	DWORD PTR _HeapInformation$222271[esp+32], 2
 	call	DWORD PTR __imp__HeapSetInformation@16
 $LN1@Initialize:
 
@@ -17905,7 +17905,7 @@ $LN1@Initialize:
 	push	80					; 00000050H
 	call	??2@YAPAXI@Z				; operator new
 	add	esp, 4
-	mov	DWORD PTR $T233689[esp+16], eax
+	mov	DWORD PTR $T233731[esp+16], eax
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	eax, eax
 	je	SHORT $LN4@Initialize
@@ -17930,7 +17930,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?InitializeSingleton@CvDllGameContext@@SAXXZ$0:
-	mov	eax, DWORD PTR $T233689[ebp]
+	mov	eax, DWORD PTR $T233731[ebp]
 	push	eax
 	call	??3ICvUnknown@@SGXPAX@Z			; ICvUnknown::operator delete
 	ret	0
@@ -18358,18 +18358,18 @@ __tryblocktable$?_Insert_n@?$vector@U?$pair@IPAVCvRandom@@@std@@V?$allocator@U?$
 xdata$x	ENDS
 ;	COMDAT ?_Insert_n@?$vector@U?$pair@IPAVCvRandom@@@std@@V?$allocator@U?$pair@IPAVCvRandom@@@std@@@2@@std@@IAEXV?$_Vector_const_iterator@U?$pair@IPAVCvRandom@@@std@@V?$allocator@U?$pair@IPAVCvRandom@@@std@@@2@@2@IABU?$pair@IPAVCvRandom@@@2@@Z
 _TEXT	SEGMENT
-__Tmp$224490 = -24					; size = 8
-__Tmp$224472 = -24					; size = 8
+__Tmp$224532 = -24					; size = 8
+__Tmp$224514 = -24					; size = 8
 __Capacity$ = -20					; size = 4
 __$EHRec$ = -16						; size = 16
-__Cat$235008 = 8					; size = 1
-__Cat$234936 = 8					; size = 1
+__Cat$235050 = 8					; size = 1
+__Cat$234978 = 8					; size = 1
 __Where$ = 8						; size = 4
-__Newvec$224457 = 12					; size = 4
+__Newvec$224499 = 12					; size = 4
 __Count$ = 12						; size = 4
 tv515 = 16						; size = 4
-$T235004 = 16						; size = 1
-$T234932 = 16						; size = 1
+$T235046 = 16						; size = 1
+$T234974 = 16						; size = 1
 __Val$ = 16						; size = 4
 ?_Insert_n@?$vector@U?$pair@IPAVCvRandom@@@std@@V?$allocator@U?$pair@IPAVCvRandom@@@std@@@2@@std@@IAEXV?$_Vector_const_iterator@U?$pair@IPAVCvRandom@@@std@@V?$allocator@U?$pair@IPAVCvRandom@@@std@@@2@@2@IABU?$pair@IPAVCvRandom@@@2@@Z PROC ; std::vector<std::pair<unsigned int,CvRandom *>,std::allocator<std::pair<unsigned int,CvRandom *> > >::_Insert_n, COMDAT
 ; _this$ = ecx
@@ -18495,7 +18495,7 @@ $LN9@Insert_n:
 	lea	edx, DWORD PTR [eax+edi*8]
 	push	edx
 	mov	ecx, esi
-	mov	DWORD PTR __Newvec$224457[ebp], eax
+	mov	DWORD PTR __Newvec$224499[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+12], 0
 	call	?_Ufill@?$vector@U?$pair@IPAVCvRandom@@@std@@V?$allocator@U?$pair@IPAVCvRandom@@@std@@@2@@std@@IAEPAU?$pair@IPAVCvRandom@@@2@PAU32@IABU32@@Z ; std::vector<std::pair<unsigned int,CvRandom *>,std::allocator<std::pair<unsigned int,CvRandom *> > >::_Ufill
 
@@ -18503,12 +18503,12 @@ $LN9@Insert_n:
 ; 1180 : 			_Umove(this->_Myfirst, _VEC_ITER_BASE(_Where),
 ; 1181 : 				_Newvec);	// move prefix
 
-	mov	edx, DWORD PTR __Cat$234936[ebp]
+	mov	edx, DWORD PTR __Cat$234978[ebp]
 	mov	eax, DWORD PTR [esi+4]
-	mov	BYTE PTR $T234932[ebp], 0
-	mov	ecx, DWORD PTR $T234932[ebp]
+	mov	BYTE PTR $T234974[ebp], 0
+	mov	ecx, DWORD PTR $T234974[ebp]
 	push	ecx
-	mov	ecx, DWORD PTR __Newvec$224457[ebp]
+	mov	ecx, DWORD PTR __Newvec$224499[ebp]
 	push	edx
 	mov	edx, DWORD PTR __Where$[ebp]
 	push	esi
@@ -18523,13 +18523,13 @@ $LN9@Insert_n:
 
 	mov	eax, DWORD PTR [esi+8]
 	add	esp, 24					; 00000018H
-	mov	BYTE PTR $T235004[ebp], 0
-	mov	edx, DWORD PTR $T235004[ebp]
+	mov	BYTE PTR $T235046[ebp], 0
+	mov	edx, DWORD PTR $T235046[ebp]
 	push	edx
-	mov	edx, DWORD PTR __Cat$235008[ebp]
+	mov	edx, DWORD PTR __Cat$235050[ebp]
 	push	edx
 	lea	ecx, DWORD PTR [edi+ebx]
-	mov	edi, DWORD PTR __Newvec$224457[ebp]
+	mov	edi, DWORD PTR __Newvec$224499[ebp]
 	push	esi
 	lea	ecx, DWORD PTR [edi+ecx*8]
 	push	ecx
@@ -18604,7 +18604,7 @@ __catch$?_Insert_n@?$vector@U?$pair@IPAVCvRandom@@@std@@V?$allocator@U?$pair@IPA
 ; 1189 : 				_Destroy(_Newvec + _Whereoff, _Newvec + _Whereoff + _Count);
 ; 1190 : 			this->_Alval.deallocate(_Newvec, _Capacity);
 
-	mov	edx, DWORD PTR __Newvec$224457[ebp]
+	mov	edx, DWORD PTR __Newvec$224499[ebp]
 	push	edx
 	call	??3@YAXPAX@Z				; operator delete
 	add	esp, 4
@@ -18634,7 +18634,7 @@ $LN10@Insert_n:
 	mov	ecx, DWORD PTR __Val$[ebp]
 	mov	edx, DWORD PTR [ecx]
 	mov	ecx, DWORD PTR [ecx+4]
-	mov	DWORD PTR __Tmp$224472[ebp+4], ecx
+	mov	DWORD PTR __Tmp$224514[ebp+4], ecx
 
 ; 1212 : 
 ; 1213 : 			_Umove(_VEC_ITER_BASE(_Where), _Mylast,
@@ -18647,7 +18647,7 @@ $LN10@Insert_n:
 	push	edi
 	push	eax
 	mov	ecx, esi
-	mov	DWORD PTR __Tmp$224472[ebp], edx
+	mov	DWORD PTR __Tmp$224514[ebp], edx
 	call	??$_Umove@PAU?$pair@IPAVCvRandom@@@std@@@?$vector@U?$pair@IPAVCvRandom@@@std@@V?$allocator@U?$pair@IPAVCvRandom@@@std@@@2@@std@@IAEPAU?$pair@IPAVCvRandom@@@1@PAU21@00@Z ; std::vector<std::pair<unsigned int,CvRandom *>,std::allocator<std::pair<unsigned int,CvRandom *> > >::_Umove<std::pair<unsigned int,CvRandom *> *>
 
 ; 1215 : 
@@ -18658,7 +18658,7 @@ $LN10@Insert_n:
 	mov	eax, DWORD PTR [esi+8]
 	mov	ecx, eax
 	sub	ecx, DWORD PTR __Where$[ebp]
-	lea	edx, DWORD PTR __Tmp$224472[ebp]
+	lea	edx, DWORD PTR __Tmp$224514[ebp]
 	sar	ecx, 3
 	push	edx
 	sub	ebx, ecx
@@ -18687,7 +18687,7 @@ $LN10@Insert_n:
 ; 1230 : 			std::fill(_VEC_ITER_BASE(_Where), _Mylast - _Count,
 ; 1231 : 				_Tmp);	// insert up to old end
 
-	lea	edx, DWORD PTR __Tmp$224472[ebp]
+	lea	edx, DWORD PTR __Tmp$224514[ebp]
 	push	edx
 	sub	esi, eax
 	mov	eax, DWORD PTR __Where$[ebp]
@@ -18728,10 +18728,10 @@ $LN3@Insert_n:
 	mov	ebx, edi
 	sub	ebx, eax
 	push	edi
-	mov	DWORD PTR __Tmp$224490[ebp], ecx
+	mov	DWORD PTR __Tmp$224532[ebp], ecx
 	push	ebx
 	mov	ecx, esi
-	mov	DWORD PTR __Tmp$224490[ebp+4], edx
+	mov	DWORD PTR __Tmp$224532[ebp+4], edx
 	mov	DWORD PTR tv515[ebp], eax
 	call	??$_Umove@PAU?$pair@IPAVCvRandom@@@std@@@?$vector@U?$pair@IPAVCvRandom@@@std@@V?$allocator@U?$pair@IPAVCvRandom@@@std@@@2@@std@@IAEPAU?$pair@IPAVCvRandom@@@1@PAU21@00@Z ; std::vector<std::pair<unsigned int,CvRandom *>,std::allocator<std::pair<unsigned int,CvRandom *> > >::_Umove<std::pair<unsigned int,CvRandom *> *>
 
@@ -18755,7 +18755,7 @@ $LN3@Insert_n:
 
 	mov	eax, DWORD PTR __Where$[ebp]
 	mov	edx, DWORD PTR tv515[ebp]
-	lea	ecx, DWORD PTR __Tmp$224490[ebp]
+	lea	ecx, DWORD PTR __Tmp$224532[ebp]
 	push	ecx
 	add	edx, eax
 	push	edx
@@ -18827,18 +18827,18 @@ __tryblocktable$?_Insert_n@?$vector@U?$pair@IPAVCvDllNetInitInfo@@@std@@V?$alloc
 xdata$x	ENDS
 ;	COMDAT ?_Insert_n@?$vector@U?$pair@IPAVCvDllNetInitInfo@@@std@@V?$allocator@U?$pair@IPAVCvDllNetInitInfo@@@std@@@2@@std@@IAEXV?$_Vector_const_iterator@U?$pair@IPAVCvDllNetInitInfo@@@std@@V?$allocator@U?$pair@IPAVCvDllNetInitInfo@@@std@@@2@@2@IABU?$pair@IPAVCvDllNetInitInfo@@@2@@Z
 _TEXT	SEGMENT
-__Tmp$224561 = -24					; size = 8
-__Tmp$224543 = -24					; size = 8
+__Tmp$224603 = -24					; size = 8
+__Tmp$224585 = -24					; size = 8
 __Capacity$ = -20					; size = 4
 __$EHRec$ = -16						; size = 16
-__Cat$235243 = 8					; size = 1
-__Cat$235170 = 8					; size = 1
+__Cat$235285 = 8					; size = 1
+__Cat$235212 = 8					; size = 1
 __Where$ = 8						; size = 4
-__Newvec$224528 = 12					; size = 4
+__Newvec$224570 = 12					; size = 4
 __Count$ = 12						; size = 4
 tv515 = 16						; size = 4
-$T235240 = 16						; size = 1
-$T235167 = 16						; size = 1
+$T235282 = 16						; size = 1
+$T235209 = 16						; size = 1
 __Val$ = 16						; size = 4
 ?_Insert_n@?$vector@U?$pair@IPAVCvDllNetInitInfo@@@std@@V?$allocator@U?$pair@IPAVCvDllNetInitInfo@@@std@@@2@@std@@IAEXV?$_Vector_const_iterator@U?$pair@IPAVCvDllNetInitInfo@@@std@@V?$allocator@U?$pair@IPAVCvDllNetInitInfo@@@std@@@2@@2@IABU?$pair@IPAVCvDllNetInitInfo@@@2@@Z PROC ; std::vector<std::pair<unsigned int,CvDllNetInitInfo *>,std::allocator<std::pair<unsigned int,CvDllNetInitInfo *> > >::_Insert_n, COMDAT
 ; _this$ = ecx
@@ -18964,7 +18964,7 @@ $LN9@Insert_n@2:
 	lea	edx, DWORD PTR [eax+edi*8]
 	push	edx
 	mov	ecx, esi
-	mov	DWORD PTR __Newvec$224528[ebp], eax
+	mov	DWORD PTR __Newvec$224570[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+12], 0
 	call	?_Ufill@?$vector@U?$pair@IPAVCvDllNetInitInfo@@@std@@V?$allocator@U?$pair@IPAVCvDllNetInitInfo@@@std@@@2@@std@@IAEPAU?$pair@IPAVCvDllNetInitInfo@@@2@PAU32@IABU32@@Z ; std::vector<std::pair<unsigned int,CvDllNetInitInfo *>,std::allocator<std::pair<unsigned int,CvDllNetInitInfo *> > >::_Ufill
 
@@ -18972,12 +18972,12 @@ $LN9@Insert_n@2:
 ; 1180 : 			_Umove(this->_Myfirst, _VEC_ITER_BASE(_Where),
 ; 1181 : 				_Newvec);	// move prefix
 
-	mov	edx, DWORD PTR __Cat$235170[ebp]
+	mov	edx, DWORD PTR __Cat$235212[ebp]
 	mov	eax, DWORD PTR [esi+4]
-	mov	BYTE PTR $T235167[ebp], 0
-	mov	ecx, DWORD PTR $T235167[ebp]
+	mov	BYTE PTR $T235209[ebp], 0
+	mov	ecx, DWORD PTR $T235209[ebp]
 	push	ecx
-	mov	ecx, DWORD PTR __Newvec$224528[ebp]
+	mov	ecx, DWORD PTR __Newvec$224570[ebp]
 	push	edx
 	mov	edx, DWORD PTR __Where$[ebp]
 	push	esi
@@ -18992,13 +18992,13 @@ $LN9@Insert_n@2:
 
 	mov	eax, DWORD PTR [esi+8]
 	add	esp, 24					; 00000018H
-	mov	BYTE PTR $T235240[ebp], 0
-	mov	edx, DWORD PTR $T235240[ebp]
+	mov	BYTE PTR $T235282[ebp], 0
+	mov	edx, DWORD PTR $T235282[ebp]
 	push	edx
-	mov	edx, DWORD PTR __Cat$235243[ebp]
+	mov	edx, DWORD PTR __Cat$235285[ebp]
 	push	edx
 	lea	ecx, DWORD PTR [edi+ebx]
-	mov	edi, DWORD PTR __Newvec$224528[ebp]
+	mov	edi, DWORD PTR __Newvec$224570[ebp]
 	push	esi
 	lea	ecx, DWORD PTR [edi+ecx*8]
 	push	ecx
@@ -19073,7 +19073,7 @@ __catch$?_Insert_n@?$vector@U?$pair@IPAVCvDllNetInitInfo@@@std@@V?$allocator@U?$
 ; 1189 : 				_Destroy(_Newvec + _Whereoff, _Newvec + _Whereoff + _Count);
 ; 1190 : 			this->_Alval.deallocate(_Newvec, _Capacity);
 
-	mov	edx, DWORD PTR __Newvec$224528[ebp]
+	mov	edx, DWORD PTR __Newvec$224570[ebp]
 	push	edx
 	call	??3@YAXPAX@Z				; operator delete
 	add	esp, 4
@@ -19103,7 +19103,7 @@ $LN10@Insert_n@2:
 	mov	ecx, DWORD PTR __Val$[ebp]
 	mov	edx, DWORD PTR [ecx]
 	mov	ecx, DWORD PTR [ecx+4]
-	mov	DWORD PTR __Tmp$224543[ebp+4], ecx
+	mov	DWORD PTR __Tmp$224585[ebp+4], ecx
 
 ; 1212 : 
 ; 1213 : 			_Umove(_VEC_ITER_BASE(_Where), _Mylast,
@@ -19116,7 +19116,7 @@ $LN10@Insert_n@2:
 	push	edi
 	push	eax
 	mov	ecx, esi
-	mov	DWORD PTR __Tmp$224543[ebp], edx
+	mov	DWORD PTR __Tmp$224585[ebp], edx
 	call	??$_Umove@PAU?$pair@IPAVCvDllNetInitInfo@@@std@@@?$vector@U?$pair@IPAVCvDllNetInitInfo@@@std@@V?$allocator@U?$pair@IPAVCvDllNetInitInfo@@@std@@@2@@std@@IAEPAU?$pair@IPAVCvDllNetInitInfo@@@1@PAU21@00@Z ; std::vector<std::pair<unsigned int,CvDllNetInitInfo *>,std::allocator<std::pair<unsigned int,CvDllNetInitInfo *> > >::_Umove<std::pair<unsigned int,CvDllNetInitInfo *> *>
 
 ; 1215 : 
@@ -19127,7 +19127,7 @@ $LN10@Insert_n@2:
 	mov	eax, DWORD PTR [esi+8]
 	mov	ecx, eax
 	sub	ecx, DWORD PTR __Where$[ebp]
-	lea	edx, DWORD PTR __Tmp$224543[ebp]
+	lea	edx, DWORD PTR __Tmp$224585[ebp]
 	sar	ecx, 3
 	push	edx
 	sub	ebx, ecx
@@ -19156,7 +19156,7 @@ $LN10@Insert_n@2:
 ; 1230 : 			std::fill(_VEC_ITER_BASE(_Where), _Mylast - _Count,
 ; 1231 : 				_Tmp);	// insert up to old end
 
-	lea	edx, DWORD PTR __Tmp$224543[ebp]
+	lea	edx, DWORD PTR __Tmp$224585[ebp]
 	push	edx
 	sub	esi, eax
 	mov	eax, DWORD PTR __Where$[ebp]
@@ -19197,10 +19197,10 @@ $LN3@Insert_n@2:
 	mov	ebx, edi
 	sub	ebx, eax
 	push	edi
-	mov	DWORD PTR __Tmp$224561[ebp], ecx
+	mov	DWORD PTR __Tmp$224603[ebp], ecx
 	push	ebx
 	mov	ecx, esi
-	mov	DWORD PTR __Tmp$224561[ebp+4], edx
+	mov	DWORD PTR __Tmp$224603[ebp+4], edx
 	mov	DWORD PTR tv515[ebp], eax
 	call	??$_Umove@PAU?$pair@IPAVCvDllNetInitInfo@@@std@@@?$vector@U?$pair@IPAVCvDllNetInitInfo@@@std@@V?$allocator@U?$pair@IPAVCvDllNetInitInfo@@@std@@@2@@std@@IAEPAU?$pair@IPAVCvDllNetInitInfo@@@1@PAU21@00@Z ; std::vector<std::pair<unsigned int,CvDllNetInitInfo *>,std::allocator<std::pair<unsigned int,CvDllNetInitInfo *> > >::_Umove<std::pair<unsigned int,CvDllNetInitInfo *> *>
 
@@ -19224,7 +19224,7 @@ $LN3@Insert_n@2:
 
 	mov	eax, DWORD PTR __Where$[ebp]
 	mov	edx, DWORD PTR tv515[ebp]
-	lea	ecx, DWORD PTR __Tmp$224561[ebp]
+	lea	ecx, DWORD PTR __Tmp$224603[ebp]
 	push	ecx
 	add	edx, eax
 	push	edx
@@ -19296,18 +19296,18 @@ __tryblocktable$?_Insert_n@?$vector@U?$pair@IPAVCvDllNetLoadGameInfo@@@std@@V?$a
 xdata$x	ENDS
 ;	COMDAT ?_Insert_n@?$vector@U?$pair@IPAVCvDllNetLoadGameInfo@@@std@@V?$allocator@U?$pair@IPAVCvDllNetLoadGameInfo@@@std@@@2@@std@@IAEXV?$_Vector_const_iterator@U?$pair@IPAVCvDllNetLoadGameInfo@@@std@@V?$allocator@U?$pair@IPAVCvDllNetLoadGameInfo@@@std@@@2@@2@IABU?$pair@IPAVCvDllNetLoadGameInfo@@@2@@Z
 _TEXT	SEGMENT
-__Tmp$224632 = -24					; size = 8
-__Tmp$224614 = -24					; size = 8
+__Tmp$224674 = -24					; size = 8
+__Tmp$224656 = -24					; size = 8
 __Capacity$ = -20					; size = 4
 __$EHRec$ = -16						; size = 16
-__Cat$235478 = 8					; size = 1
-__Cat$235406 = 8					; size = 1
+__Cat$235520 = 8					; size = 1
+__Cat$235448 = 8					; size = 1
 __Where$ = 8						; size = 4
-__Newvec$224599 = 12					; size = 4
+__Newvec$224641 = 12					; size = 4
 __Count$ = 12						; size = 4
 tv515 = 16						; size = 4
-$T235475 = 16						; size = 1
-$T235403 = 16						; size = 1
+$T235517 = 16						; size = 1
+$T235445 = 16						; size = 1
 __Val$ = 16						; size = 4
 ?_Insert_n@?$vector@U?$pair@IPAVCvDllNetLoadGameInfo@@@std@@V?$allocator@U?$pair@IPAVCvDllNetLoadGameInfo@@@std@@@2@@std@@IAEXV?$_Vector_const_iterator@U?$pair@IPAVCvDllNetLoadGameInfo@@@std@@V?$allocator@U?$pair@IPAVCvDllNetLoadGameInfo@@@std@@@2@@2@IABU?$pair@IPAVCvDllNetLoadGameInfo@@@2@@Z PROC ; std::vector<std::pair<unsigned int,CvDllNetLoadGameInfo *>,std::allocator<std::pair<unsigned int,CvDllNetLoadGameInfo *> > >::_Insert_n, COMDAT
 ; _this$ = ecx
@@ -19433,7 +19433,7 @@ $LN9@Insert_n@3:
 	lea	edx, DWORD PTR [eax+edi*8]
 	push	edx
 	mov	ecx, esi
-	mov	DWORD PTR __Newvec$224599[ebp], eax
+	mov	DWORD PTR __Newvec$224641[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+12], 0
 	call	?_Ufill@?$vector@U?$pair@IPAVCvDllNetLoadGameInfo@@@std@@V?$allocator@U?$pair@IPAVCvDllNetLoadGameInfo@@@std@@@2@@std@@IAEPAU?$pair@IPAVCvDllNetLoadGameInfo@@@2@PAU32@IABU32@@Z ; std::vector<std::pair<unsigned int,CvDllNetLoadGameInfo *>,std::allocator<std::pair<unsigned int,CvDllNetLoadGameInfo *> > >::_Ufill
 
@@ -19441,12 +19441,12 @@ $LN9@Insert_n@3:
 ; 1180 : 			_Umove(this->_Myfirst, _VEC_ITER_BASE(_Where),
 ; 1181 : 				_Newvec);	// move prefix
 
-	mov	edx, DWORD PTR __Cat$235406[ebp]
+	mov	edx, DWORD PTR __Cat$235448[ebp]
 	mov	eax, DWORD PTR [esi+4]
-	mov	BYTE PTR $T235403[ebp], 0
-	mov	ecx, DWORD PTR $T235403[ebp]
+	mov	BYTE PTR $T235445[ebp], 0
+	mov	ecx, DWORD PTR $T235445[ebp]
 	push	ecx
-	mov	ecx, DWORD PTR __Newvec$224599[ebp]
+	mov	ecx, DWORD PTR __Newvec$224641[ebp]
 	push	edx
 	mov	edx, DWORD PTR __Where$[ebp]
 	push	esi
@@ -19461,13 +19461,13 @@ $LN9@Insert_n@3:
 
 	mov	eax, DWORD PTR [esi+8]
 	add	esp, 24					; 00000018H
-	mov	BYTE PTR $T235475[ebp], 0
-	mov	edx, DWORD PTR $T235475[ebp]
+	mov	BYTE PTR $T235517[ebp], 0
+	mov	edx, DWORD PTR $T235517[ebp]
 	push	edx
-	mov	edx, DWORD PTR __Cat$235478[ebp]
+	mov	edx, DWORD PTR __Cat$235520[ebp]
 	push	edx
 	lea	ecx, DWORD PTR [edi+ebx]
-	mov	edi, DWORD PTR __Newvec$224599[ebp]
+	mov	edi, DWORD PTR __Newvec$224641[ebp]
 	push	esi
 	lea	ecx, DWORD PTR [edi+ecx*8]
 	push	ecx
@@ -19542,7 +19542,7 @@ __catch$?_Insert_n@?$vector@U?$pair@IPAVCvDllNetLoadGameInfo@@@std@@V?$allocator
 ; 1189 : 				_Destroy(_Newvec + _Whereoff, _Newvec + _Whereoff + _Count);
 ; 1190 : 			this->_Alval.deallocate(_Newvec, _Capacity);
 
-	mov	edx, DWORD PTR __Newvec$224599[ebp]
+	mov	edx, DWORD PTR __Newvec$224641[ebp]
 	push	edx
 	call	??3@YAXPAX@Z				; operator delete
 	add	esp, 4
@@ -19572,7 +19572,7 @@ $LN10@Insert_n@3:
 	mov	ecx, DWORD PTR __Val$[ebp]
 	mov	edx, DWORD PTR [ecx]
 	mov	ecx, DWORD PTR [ecx+4]
-	mov	DWORD PTR __Tmp$224614[ebp+4], ecx
+	mov	DWORD PTR __Tmp$224656[ebp+4], ecx
 
 ; 1212 : 
 ; 1213 : 			_Umove(_VEC_ITER_BASE(_Where), _Mylast,
@@ -19585,7 +19585,7 @@ $LN10@Insert_n@3:
 	push	edi
 	push	eax
 	mov	ecx, esi
-	mov	DWORD PTR __Tmp$224614[ebp], edx
+	mov	DWORD PTR __Tmp$224656[ebp], edx
 	call	??$_Umove@PAU?$pair@IPAVCvDllNetLoadGameInfo@@@std@@@?$vector@U?$pair@IPAVCvDllNetLoadGameInfo@@@std@@V?$allocator@U?$pair@IPAVCvDllNetLoadGameInfo@@@std@@@2@@std@@IAEPAU?$pair@IPAVCvDllNetLoadGameInfo@@@1@PAU21@00@Z ; std::vector<std::pair<unsigned int,CvDllNetLoadGameInfo *>,std::allocator<std::pair<unsigned int,CvDllNetLoadGameInfo *> > >::_Umove<std::pair<unsigned int,CvDllNetLoadGameInfo *> *>
 
 ; 1215 : 
@@ -19596,7 +19596,7 @@ $LN10@Insert_n@3:
 	mov	eax, DWORD PTR [esi+8]
 	mov	ecx, eax
 	sub	ecx, DWORD PTR __Where$[ebp]
-	lea	edx, DWORD PTR __Tmp$224614[ebp]
+	lea	edx, DWORD PTR __Tmp$224656[ebp]
 	sar	ecx, 3
 	push	edx
 	sub	ebx, ecx
@@ -19625,7 +19625,7 @@ $LN10@Insert_n@3:
 ; 1230 : 			std::fill(_VEC_ITER_BASE(_Where), _Mylast - _Count,
 ; 1231 : 				_Tmp);	// insert up to old end
 
-	lea	edx, DWORD PTR __Tmp$224614[ebp]
+	lea	edx, DWORD PTR __Tmp$224656[ebp]
 	push	edx
 	sub	esi, eax
 	mov	eax, DWORD PTR __Where$[ebp]
@@ -19666,10 +19666,10 @@ $LN3@Insert_n@3:
 	mov	ebx, edi
 	sub	ebx, eax
 	push	edi
-	mov	DWORD PTR __Tmp$224632[ebp], ecx
+	mov	DWORD PTR __Tmp$224674[ebp], ecx
 	push	ebx
 	mov	ecx, esi
-	mov	DWORD PTR __Tmp$224632[ebp+4], edx
+	mov	DWORD PTR __Tmp$224674[ebp+4], edx
 	mov	DWORD PTR tv515[ebp], eax
 	call	??$_Umove@PAU?$pair@IPAVCvDllNetLoadGameInfo@@@std@@@?$vector@U?$pair@IPAVCvDllNetLoadGameInfo@@@std@@V?$allocator@U?$pair@IPAVCvDllNetLoadGameInfo@@@std@@@2@@std@@IAEPAU?$pair@IPAVCvDllNetLoadGameInfo@@@1@PAU21@00@Z ; std::vector<std::pair<unsigned int,CvDllNetLoadGameInfo *>,std::allocator<std::pair<unsigned int,CvDllNetLoadGameInfo *> > >::_Umove<std::pair<unsigned int,CvDllNetLoadGameInfo *> *>
 
@@ -19693,7 +19693,7 @@ $LN3@Insert_n@3:
 
 	mov	eax, DWORD PTR __Where$[ebp]
 	mov	edx, DWORD PTR tv515[ebp]
-	lea	ecx, DWORD PTR __Tmp$224632[ebp]
+	lea	ecx, DWORD PTR __Tmp$224674[ebp]
 	push	ecx
 	add	edx, eax
 	push	edx
@@ -19765,19 +19765,19 @@ __tryblocktable$?_Insert_n@?$vector@UCvDllPathFinderUpdateListData@@V?$allocator
 xdata$x	ENDS
 ;	COMDAT ?_Insert_n@?$vector@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@std@@IAEXV?$_Vector_const_iterator@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@2@IABUCvDllPathFinderUpdateListData@@@Z
 _TEXT	SEGMENT
-__Tmp$224693 = -32					; size = 12
-__Tmp$224683 = -32					; size = 12
+__Tmp$224735 = -32					; size = 12
+__Tmp$224725 = -32					; size = 12
 __Capacity$ = -20					; size = 4
 __$EHRec$ = -16						; size = 16
-__Cat$235711 = 8					; size = 1
-__Cat$235639 = 8					; size = 1
+__Cat$235753 = 8					; size = 1
+__Cat$235681 = 8					; size = 1
 __Where$ = 8						; size = 4
-__Newvec$224668 = 12					; size = 4
+__Newvec$224710 = 12					; size = 4
 __Count$ = 12						; size = 4
 tv525 = 16						; size = 4
 tv515 = 16						; size = 4
-$T235707 = 16						; size = 1
-$T235635 = 16						; size = 1
+$T235749 = 16						; size = 1
+$T235677 = 16						; size = 1
 __Val$ = 16						; size = 4
 ?_Insert_n@?$vector@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@std@@IAEXV?$_Vector_const_iterator@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@2@IABUCvDllPathFinderUpdateListData@@@Z PROC ; std::vector<CvDllPathFinderUpdateListData,std::allocator<CvDllPathFinderUpdateListData> >::_Insert_n, COMDAT
 ; _this$ = ecx
@@ -19918,7 +19918,7 @@ $LN9@Insert_n@4:
 	lea	edx, DWORD PTR [ebx+ebx*2]
 	lea	eax, DWORD PTR [ecx+edx*4]
 	push	edi
-	mov	DWORD PTR __Newvec$224668[ebp], ecx
+	mov	DWORD PTR __Newvec$224710[ebp], ecx
 	push	eax
 	mov	ecx, esi
 	mov	DWORD PTR __$EHRec$[ebp+12], 0
@@ -19928,12 +19928,12 @@ $LN9@Insert_n@4:
 ; 1180 : 			_Umove(this->_Myfirst, _VEC_ITER_BASE(_Where),
 ; 1181 : 				_Newvec);	// move prefix
 
-	mov	edx, DWORD PTR __Cat$235639[ebp]
+	mov	edx, DWORD PTR __Cat$235681[ebp]
 	mov	eax, DWORD PTR [esi+4]
-	mov	BYTE PTR $T235635[ebp], 0
-	mov	ecx, DWORD PTR $T235635[ebp]
+	mov	BYTE PTR $T235677[ebp], 0
+	mov	ecx, DWORD PTR $T235677[ebp]
 	push	ecx
-	mov	ecx, DWORD PTR __Newvec$224668[ebp]
+	mov	ecx, DWORD PTR __Newvec$224710[ebp]
 	push	edx
 	mov	edx, DWORD PTR __Where$[ebp]
 	push	esi
@@ -19946,16 +19946,16 @@ $LN9@Insert_n@4:
 ; 1183 : 			_Umove(_VEC_ITER_BASE(_Where), this->_Mylast,
 ; 1184 : 				_Newvec + (_Whereoff + _Count));	// move suffix
 
-	mov	edx, DWORD PTR __Newvec$224668[ebp]
+	mov	edx, DWORD PTR __Newvec$224710[ebp]
 	mov	eax, DWORD PTR [esi+8]
 	add	esp, 24					; 00000018H
 	add	ebx, edi
 	lea	ecx, DWORD PTR [ebx+ebx*2]
 	lea	ecx, DWORD PTR [edx+ecx*4]
-	mov	BYTE PTR $T235707[ebp], 0
-	mov	edx, DWORD PTR $T235707[ebp]
+	mov	BYTE PTR $T235749[ebp], 0
+	mov	edx, DWORD PTR $T235749[ebp]
 	push	edx
-	mov	edx, DWORD PTR __Cat$235711[ebp]
+	mov	edx, DWORD PTR __Cat$235753[ebp]
 	push	edx
 	push	esi
 	push	ecx
@@ -20004,7 +20004,7 @@ $LN81@Insert_n@4:
 
 	mov	eax, DWORD PTR __Capacity$[ebp]
 	lea	edx, DWORD PTR [eax+eax*2]
-	mov	eax, DWORD PTR __Newvec$224668[ebp]
+	mov	eax, DWORD PTR __Newvec$224710[ebp]
 	lea	ecx, DWORD PTR [eax+edx*4]
 
 ; 1206 : 			_Mylast = _Newvec + _Count;
@@ -20038,7 +20038,7 @@ __catch$?_Insert_n@?$vector@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllP
 ; 1189 : 				_Destroy(_Newvec + _Whereoff, _Newvec + _Whereoff + _Count);
 ; 1190 : 			this->_Alval.deallocate(_Newvec, _Capacity);
 
-	mov	edx, DWORD PTR __Newvec$224668[ebp]
+	mov	edx, DWORD PTR __Newvec$224710[ebp]
 	push	edx
 	call	??3@YAXPAX@Z				; operator delete
 	add	esp, 4
@@ -20072,10 +20072,10 @@ $LN10@Insert_n@4:
 	mov	eax, DWORD PTR __Val$[ebp]
 	jae	$LN3@Insert_n@4
 	mov	edx, DWORD PTR [eax]
-	mov	DWORD PTR __Tmp$224683[ebp], edx
+	mov	DWORD PTR __Tmp$224725[ebp], edx
 	mov	edx, DWORD PTR [eax+4]
 	mov	eax, DWORD PTR [eax+8]
-	mov	DWORD PTR __Tmp$224683[ebp+8], eax
+	mov	DWORD PTR __Tmp$224725[ebp+8], eax
 
 ; 1212 : 
 ; 1213 : 			_Umove(_VEC_ITER_BASE(_Where), _Mylast,
@@ -20090,7 +20090,7 @@ $LN10@Insert_n@4:
 	push	ebx
 	push	ecx
 	mov	ecx, esi
-	mov	DWORD PTR __Tmp$224683[ebp+4], edx
+	mov	DWORD PTR __Tmp$224725[ebp+4], edx
 	call	??$_Umove@PAUCvDllPathFinderUpdateListData@@@?$vector@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@std@@IAEPAUCvDllPathFinderUpdateListData@@PAU2@00@Z ; std::vector<CvDllPathFinderUpdateListData,std::allocator<CvDllPathFinderUpdateListData> >::_Umove<CvDllPathFinderUpdateListData *>
 
 ; 1215 : 
@@ -20099,7 +20099,7 @@ $LN10@Insert_n@4:
 ; 1218 : 				_Tmp);	// insert new stuff off end
 
 	mov	ebx, DWORD PTR [esi+8]
-	lea	ecx, DWORD PTR __Tmp$224683[ebp]
+	lea	ecx, DWORD PTR __Tmp$224725[ebp]
 	push	ecx
 	mov	ecx, ebx
 	sub	ecx, DWORD PTR __Where$[ebp]
@@ -20136,7 +20136,7 @@ $LN10@Insert_n@4:
 ; 1231 : 				_Tmp);	// insert up to old end
 
 	mov	edx, DWORD PTR __Where$[ebp]
-	lea	ecx, DWORD PTR __Tmp$224683[ebp]
+	lea	ecx, DWORD PTR __Tmp$224725[ebp]
 	push	ecx
 	sub	esi, eax
 	push	esi
@@ -20172,17 +20172,17 @@ $LN3@Insert_n@4:
 ; 1239 : 				_Mylast);	// copy suffix
 
 	lea	edi, DWORD PTR [edi+edi*2]
-	mov	DWORD PTR __Tmp$224693[ebp+8], eax
+	mov	DWORD PTR __Tmp$224735[ebp+8], eax
 	add	edi, edi
 	push	ebx
 	add	edi, edi
 	mov	eax, ebx
 	sub	eax, edi
 	push	ebx
-	mov	DWORD PTR __Tmp$224693[ebp], ecx
+	mov	DWORD PTR __Tmp$224735[ebp], ecx
 	push	eax
 	mov	ecx, esi
-	mov	DWORD PTR __Tmp$224693[ebp+4], edx
+	mov	DWORD PTR __Tmp$224735[ebp+4], edx
 	mov	DWORD PTR tv525[ebp], eax
 	call	??$_Umove@PAUCvDllPathFinderUpdateListData@@@?$vector@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@std@@IAEPAUCvDllPathFinderUpdateListData@@PAU2@00@Z ; std::vector<CvDllPathFinderUpdateListData,std::allocator<CvDllPathFinderUpdateListData> >::_Umove<CvDllPathFinderUpdateListData *>
 
@@ -20205,7 +20205,7 @@ $LN3@Insert_n@4:
 ; 1247 : 			std::fill(_VEC_ITER_BASE(_Where), _VEC_ITER_BASE(_Where) + _Count,
 ; 1248 : 				_Tmp);	// insert into hole
 
-	lea	eax, DWORD PTR __Tmp$224693[ebp]
+	lea	eax, DWORD PTR __Tmp$224735[ebp]
 	push	eax
 	mov	eax, DWORD PTR __Where$[ebp]
 	add	edi, eax
@@ -20239,10 +20239,10 @@ PUBLIC	??$_Umove@V?$_Vector_iterator@UCvDllPathFinderUpdateListData@@V?$allocato
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Umove@V?$_Vector_iterator@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@std@@@?$vector@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@std@@IAEPAUCvDllPathFinderUpdateListData@@V?$_Vector_iterator@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@1@0PAU2@@Z
 _TEXT	SEGMENT
-$T235787 = -4						; size = 1
+$T235830 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$235790 = 16					; size = 1
+__Cat$235833 = 16					; size = 1
 __Ptr$ = 16						; size = 4
 ??$_Umove@V?$_Vector_iterator@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@std@@@?$vector@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@std@@IAEPAUCvDllPathFinderUpdateListData@@V?$_Vector_iterator@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@1@0PAU2@@Z PROC ; std::vector<CvDllPathFinderUpdateListData,std::allocator<CvDllPathFinderUpdateListData> >::_Umove<std::_Vector_iterator<CvDllPathFinderUpdateListData,std::allocator<CvDllPathFinderUpdateListData> > >, COMDAT
 ; _this$ = ecx
@@ -20255,9 +20255,9 @@ __Ptr$ = 16						; size = 4
 ; 1147 : 		return (_STDEXT _Unchecked_uninitialized_move(_First, _Last,
 ; 1148 : 			_Ptr, this->_Alval));
 
-	mov	edx, DWORD PTR __Cat$235790[esp]
-	mov	BYTE PTR $T235787[esp+4], 0
-	mov	eax, DWORD PTR $T235787[esp+4]
+	mov	edx, DWORD PTR __Cat$235833[esp]
+	mov	BYTE PTR $T235830[esp+4], 0
+	mov	eax, DWORD PTR $T235830[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Ptr$[esp+4]
 	push	edx
@@ -20624,10 +20624,10 @@ __ehfuncinfo$?reserve@?$vector@UCvDllPathFinderUpdateListData@@V?$allocator@UCvD
 xdata$x	ENDS
 ;	COMDAT ?reserve@?$vector@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@std@@QAEXI@Z
 _TEXT	SEGMENT
-$T236919 = -24						; size = 1
-__Ptr$224062 = -20					; size = 4
+$T236962 = -24						; size = 1
+__Ptr$224104 = -20					; size = 4
 __$EHRec$ = -16						; size = 16
-__Cat$236922 = 8					; size = 1
+__Cat$236965 = 8					; size = 1
 __Count$ = 8						; size = 4
 ?reserve@?$vector@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@std@@QAEXI@Z PROC ; std::vector<CvDllPathFinderUpdateListData,std::allocator<CvDllPathFinderUpdateListData> >::reserve, COMDAT
 ; _this$ = ecx
@@ -20691,16 +20691,16 @@ $LN21@reserve:
 
 	mov	ecx, DWORD PTR [esi+8]
 	mov	edx, DWORD PTR [esi+4]
-	mov	BYTE PTR $T236919[ebp], 0
-	mov	edi, DWORD PTR $T236919[ebp]
+	mov	BYTE PTR $T236962[ebp], 0
+	mov	edi, DWORD PTR $T236962[ebp]
 	push	edi
-	mov	edi, DWORD PTR __Cat$236922[ebp]
+	mov	edi, DWORD PTR __Cat$236965[ebp]
 	push	edi
 	push	esi
 	push	eax
 	push	ecx
 	push	edx
-	mov	DWORD PTR __Ptr$224062[ebp], eax
+	mov	DWORD PTR __Ptr$224104[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+12], 0
 	call	??$_Uninit_copy@V?$_Vector_iterator@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@std@@PAUCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@2@@std@@YAPAUCvDllPathFinderUpdateListData@@V?$_Vector_iterator@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@0@0PAU1@AAV?$allocator@UCvDllPathFinderUpdateListData@@@0@U_Nonscalar_ptr_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z ; std::_Uninit_copy<std::_Vector_iterator<CvDllPathFinderUpdateListData,std::allocator<CvDllPathFinderUpdateListData> >,CvDllPathFinderUpdateListData *,std::allocator<CvDllPathFinderUpdateListData> >
 
@@ -20743,7 +20743,7 @@ $LN52@reserve:
 
 	mov	eax, DWORD PTR __Count$[ebp]
 	lea	ecx, DWORD PTR [eax+eax*2]
-	mov	eax, DWORD PTR __Ptr$224062[ebp]
+	mov	eax, DWORD PTR __Ptr$224104[ebp]
 	lea	edx, DWORD PTR [eax+ecx*4]
 
 ; 628  : 			_Mylast = _Ptr + _Size;
@@ -20774,7 +20774,7 @@ __catch$?reserve@?$vector@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPat
 ; 611  : 			_CATCH_ALL
 ; 612  : 			this->_Alval.deallocate(_Ptr, _Count);
 
-	mov	eax, DWORD PTR __Ptr$224062[ebp]
+	mov	eax, DWORD PTR __Ptr$224104[ebp]
 	push	eax
 	call	??3@YAXPAX@Z				; operator delete
 	add	esp, 4
@@ -21056,8 +21056,8 @@ PUBLIC	?push_back@?$vector@U?$pair@IPAVCvRandom@@@std@@V?$allocator@U?$pair@IPAV
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?push_back@?$vector@U?$pair@IPAVCvRandom@@@std@@V?$allocator@U?$pair@IPAVCvRandom@@@std@@@2@@std@@QAEXABU?$pair@IPAVCvRandom@@@2@@Z
 _TEXT	SEGMENT
-$T237240 = -4						; size = 1
-__Cat$237243 = 8					; size = 1
+$T237282 = -4						; size = 1
+__Cat$237285 = 8					; size = 1
 __Val$ = 8						; size = 4
 ?push_back@?$vector@U?$pair@IPAVCvRandom@@@std@@V?$allocator@U?$pair@IPAVCvRandom@@@std@@@2@@std@@QAEXABU?$pair@IPAVCvRandom@@@2@@Z PROC ; std::vector<std::pair<unsigned int,CvRandom *>,std::allocator<std::pair<unsigned int,CvRandom *> > >::push_back, COMDAT
 ; _this$ = ecx
@@ -21098,10 +21098,10 @@ $LN10@push_back:
 ; 818  :  #else /* _HAS_ITERATOR_DEBUGGING */
 ; 819  : 			_Mylast = _Ufill(_Mylast, 1, _Val);
 
-	mov	ecx, DWORD PTR __Cat$237243[esp+8]
+	mov	ecx, DWORD PTR __Cat$237285[esp+8]
 	mov	edx, DWORD PTR __Val$[esp+8]
-	mov	BYTE PTR $T237240[esp+12], 0
-	mov	eax, DWORD PTR $T237240[esp+12]
+	mov	BYTE PTR $T237282[esp+12], 0
+	mov	eax, DWORD PTR $T237282[esp+12]
 	push	eax
 	push	ecx
 	push	esi
@@ -21145,8 +21145,8 @@ PUBLIC	?push_back@?$vector@U?$pair@IPAVCvDllNetInitInfo@@@std@@V?$allocator@U?$p
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?push_back@?$vector@U?$pair@IPAVCvDllNetInitInfo@@@std@@V?$allocator@U?$pair@IPAVCvDllNetInitInfo@@@std@@@2@@std@@QAEXABU?$pair@IPAVCvDllNetInitInfo@@@2@@Z
 _TEXT	SEGMENT
-$T237389 = -4						; size = 1
-__Cat$237392 = 8					; size = 1
+$T237431 = -4						; size = 1
+__Cat$237434 = 8					; size = 1
 __Val$ = 8						; size = 4
 ?push_back@?$vector@U?$pair@IPAVCvDllNetInitInfo@@@std@@V?$allocator@U?$pair@IPAVCvDllNetInitInfo@@@std@@@2@@std@@QAEXABU?$pair@IPAVCvDllNetInitInfo@@@2@@Z PROC ; std::vector<std::pair<unsigned int,CvDllNetInitInfo *>,std::allocator<std::pair<unsigned int,CvDllNetInitInfo *> > >::push_back, COMDAT
 ; _this$ = ecx
@@ -21187,10 +21187,10 @@ $LN10@push_back@2:
 ; 818  :  #else /* _HAS_ITERATOR_DEBUGGING */
 ; 819  : 			_Mylast = _Ufill(_Mylast, 1, _Val);
 
-	mov	ecx, DWORD PTR __Cat$237392[esp+8]
+	mov	ecx, DWORD PTR __Cat$237434[esp+8]
 	mov	edx, DWORD PTR __Val$[esp+8]
-	mov	BYTE PTR $T237389[esp+12], 0
-	mov	eax, DWORD PTR $T237389[esp+12]
+	mov	BYTE PTR $T237431[esp+12], 0
+	mov	eax, DWORD PTR $T237431[esp+12]
 	push	eax
 	push	ecx
 	push	esi
@@ -21234,8 +21234,8 @@ PUBLIC	?push_back@?$vector@U?$pair@IPAVCvDllNetLoadGameInfo@@@std@@V?$allocator@
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?push_back@?$vector@U?$pair@IPAVCvDllNetLoadGameInfo@@@std@@V?$allocator@U?$pair@IPAVCvDllNetLoadGameInfo@@@std@@@2@@std@@QAEXABU?$pair@IPAVCvDllNetLoadGameInfo@@@2@@Z
 _TEXT	SEGMENT
-$T237537 = -4						; size = 1
-__Cat$237540 = 8					; size = 1
+$T237578 = -4						; size = 1
+__Cat$237581 = 8					; size = 1
 __Val$ = 8						; size = 4
 ?push_back@?$vector@U?$pair@IPAVCvDllNetLoadGameInfo@@@std@@V?$allocator@U?$pair@IPAVCvDllNetLoadGameInfo@@@std@@@2@@std@@QAEXABU?$pair@IPAVCvDllNetLoadGameInfo@@@2@@Z PROC ; std::vector<std::pair<unsigned int,CvDllNetLoadGameInfo *>,std::allocator<std::pair<unsigned int,CvDllNetLoadGameInfo *> > >::push_back, COMDAT
 ; _this$ = ecx
@@ -21276,10 +21276,10 @@ $LN10@push_back@3:
 ; 818  :  #else /* _HAS_ITERATOR_DEBUGGING */
 ; 819  : 			_Mylast = _Ufill(_Mylast, 1, _Val);
 
-	mov	ecx, DWORD PTR __Cat$237540[esp+8]
+	mov	ecx, DWORD PTR __Cat$237581[esp+8]
 	mov	edx, DWORD PTR __Val$[esp+8]
-	mov	BYTE PTR $T237537[esp+12], 0
-	mov	eax, DWORD PTR $T237537[esp+12]
+	mov	BYTE PTR $T237578[esp+12], 0
+	mov	eax, DWORD PTR $T237578[esp+12]
 	push	eax
 	push	ecx
 	push	esi
@@ -21323,9 +21323,9 @@ PUBLIC	?push_back@?$vector@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPa
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?push_back@?$vector@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@std@@QAEXABUCvDllPathFinderUpdateListData@@@Z
 _TEXT	SEGMENT
-$T237685 = -4						; size = 1
-__Cat$237689 = 8					; size = 1
-$T237655 = 8						; size = 4
+$T237727 = -4						; size = 1
+__Cat$237731 = 8					; size = 1
+$T237697 = 8						; size = 4
 __Val$ = 8						; size = 4
 ?push_back@?$vector@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@std@@QAEXABUCvDllPathFinderUpdateListData@@@Z PROC ; std::vector<CvDllPathFinderUpdateListData,std::allocator<CvDllPathFinderUpdateListData> >::push_back, COMDAT
 ; _this$ = ecx
@@ -21377,10 +21377,10 @@ $LN10@push_back@4:
 ; 818  :  #else /* _HAS_ITERATOR_DEBUGGING */
 ; 819  : 			_Mylast = _Ufill(_Mylast, 1, _Val);
 
-	mov	edx, DWORD PTR __Cat$237689[esp+12]
+	mov	edx, DWORD PTR __Cat$237731[esp+12]
 	mov	eax, DWORD PTR __Val$[esp+12]
-	mov	BYTE PTR $T237685[esp+16], 0
-	mov	ecx, DWORD PTR $T237685[esp+16]
+	mov	BYTE PTR $T237727[esp+16], 0
+	mov	ecx, DWORD PTR $T237727[esp+16]
 	push	ecx
 	push	edx
 	push	esi
@@ -21409,7 +21409,7 @@ $LN2@push_back@4:
 	mov	ecx, DWORD PTR __Val$[esp+12]
 	push	ecx
 	push	edi
-	lea	edx, DWORD PTR $T237655[esp+20]
+	lea	edx, DWORD PTR $T237697[esp+20]
 	push	edx
 	mov	ecx, esi
 	call	?insert@?$vector@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@std@@QAE?AV?$_Vector_iterator@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@2@V?$_Vector_const_iterator@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@2@ABUCvDllPathFinderUpdateListData@@@Z ; std::vector<CvDllPathFinderUpdateListData,std::allocator<CvDllPathFinderUpdateListData> >::insert
@@ -21520,7 +21520,7 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 _entry$ = -20						; size = 8
 __$EHRec$ = -12						; size = 12
-$T237768 = 8						; size = 4
+$T237810 = 8						; size = 4
 _this$ = 8						; size = 4
 ?CreateRandomNumberGenerator@CvDllGameContext@@UAGIXZ PROC ; CvDllGameContext::CreateRandomNumberGenerator, COMDAT
 
@@ -21547,7 +21547,7 @@ _this$ = 8						; size = 4
 	mov	DWORD PTR [edi+36], eax
 	call	??2@YAPAXI@Z				; operator new
 	add	esp, 4
-	mov	DWORD PTR $T237768[esp+24], eax
+	mov	DWORD PTR $T237810[esp+24], eax
 	mov	DWORD PTR __$EHRec$[esp+36], 0
 	test	eax, eax
 	je	SHORT $LN3@CreateRand
@@ -21583,7 +21583,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?CreateRandomNumberGenerator@CvDllGameContext@@UAGIXZ$0:
-	mov	eax, DWORD PTR $T237768[ebp-4]
+	mov	eax, DWORD PTR $T237810[ebp-4]
 	push	eax
 	call	??3@YAXPAX@Z				; operator delete
 	pop	ecx
@@ -21614,7 +21614,7 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 _entry$ = -20						; size = 8
 __$EHRec$ = -12						; size = 12
-$T237786 = 8						; size = 4
+$T237828 = 8						; size = 4
 _this$ = 8						; size = 4
 ?CreateNetInitInfo@CvDllGameContext@@UAGIXZ PROC	; CvDllGameContext::CreateNetInitInfo, COMDAT
 
@@ -21641,7 +21641,7 @@ _this$ = 8						; size = 4
 	mov	DWORD PTR [edi+56], eax
 	call	??2CvDllNetInitInfo@@SAPAXI@Z		; CvDllNetInitInfo::operator new
 	add	esp, 4
-	mov	DWORD PTR $T237786[esp+24], eax
+	mov	DWORD PTR $T237828[esp+24], eax
 	mov	DWORD PTR __$EHRec$[esp+36], 0
 	test	eax, eax
 	je	SHORT $LN3@CreateNetI
@@ -21677,7 +21677,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?CreateNetInitInfo@CvDllGameContext@@UAGIXZ$0:
-	mov	eax, DWORD PTR $T237786[ebp-4]
+	mov	eax, DWORD PTR $T237828[ebp-4]
 	push	eax
 	call	??3CvDllNetInitInfo@@SAXPAX@Z		; CvDllNetInitInfo::operator delete
 	pop	ecx
@@ -21708,7 +21708,7 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 _entry$ = -20						; size = 8
 __$EHRec$ = -12						; size = 12
-$T237804 = 8						; size = 4
+$T237846 = 8						; size = 4
 _this$ = 8						; size = 4
 ?CreateNetLoadGameInfo@CvDllGameContext@@UAGIXZ PROC	; CvDllGameContext::CreateNetLoadGameInfo, COMDAT
 
@@ -21735,7 +21735,7 @@ _this$ = 8						; size = 4
 	mov	DWORD PTR [edi+76], eax
 	call	??2CvDllNetLoadGameInfo@@SAPAXI@Z	; CvDllNetLoadGameInfo::operator new
 	add	esp, 4
-	mov	DWORD PTR $T237804[esp+24], eax
+	mov	DWORD PTR $T237846[esp+24], eax
 	mov	DWORD PTR __$EHRec$[esp+36], 0
 	test	eax, eax
 	je	SHORT $LN3@CreateNetL
@@ -21771,7 +21771,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?CreateNetLoadGameInfo@CvDllGameContext@@UAGIXZ$0:
-	mov	eax, DWORD PTR $T237804[ebp-4]
+	mov	eax, DWORD PTR $T237846[ebp-4]
 	push	eax
 	call	??3CvDllNetLoadGameInfo@@SAXPAX@Z	; CvDllNetLoadGameInfo::operator delete
 	pop	ecx
@@ -21803,12 +21803,12 @@ __ehfuncinfo$?TEMPCalculatePathFinderUpdates@CvDllGameContext@@UAGPAVICvEnumerat
 xdata$x	ENDS
 ;	COMDAT ?TEMPCalculatePathFinderUpdates@CvDllGameContext@@UAGPAVICvEnumerator@@PAVICvUnit1@@HH@Z
 _TEXT	SEGMENT
-_update$223729 = -40					; size = 12
-_pUpdateData$223724 = -28				; size = 16
+_update$223771 = -40					; size = 12
+_pUpdateData$223766 = -28				; size = 16
 __$EHRec$ = -12						; size = 12
 _this$ = 8						; size = 4
-$T238035 = 12						; size = 1
-$T237824 = 12						; size = 4
+$T238077 = 12						; size = 1
+$T237866 = 12						; size = 4
 _pHeadSelectedUnit$ = 12				; size = 4
 _iMouseMapX$ = 16					; size = 4
 _iMouseMapY$ = 20					; size = 4
@@ -21919,15 +21919,15 @@ $LN3@TEMPCalcul:
 ; 1408 : 
 ; 1409 : 		std::vector<CvDllPathFinderUpdateListData> pUpdateData;
 
-	mov	DWORD PTR _pUpdateData$223724[esp+56], ebx
-	mov	DWORD PTR _pUpdateData$223724[esp+60], ebx
-	mov	DWORD PTR _pUpdateData$223724[esp+64], ebx
+	mov	DWORD PTR _pUpdateData$223766[esp+56], ebx
+	mov	DWORD PTR _pUpdateData$223766[esp+60], ebx
+	mov	DWORD PTR _pUpdateData$223766[esp+64], ebx
 
 ; 1410 : 
 ; 1411 : 		pUpdateData.reserve(size);
 
 	push	ecx
-	lea	ecx, DWORD PTR _pUpdateData$223724[esp+56]
+	lea	ecx, DWORD PTR _pUpdateData$223766[esp+56]
 	mov	DWORD PTR __$EHRec$[esp+64], ebx
 	call	?reserve@?$vector@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@std@@QAEXI@Z ; std::vector<CvDllPathFinderUpdateListData,std::allocator<CvDllPathFinderUpdateListData> >::reserve
 
@@ -21955,16 +21955,16 @@ $LL2@TEMPCalcul:
 ; 1421 : 			update.iTurnNumber = pathNode->m_iData2;
 
 	mov	edx, DWORD PTR [esi+16]
-	mov	DWORD PTR _update$223729[esp+52], eax
+	mov	DWORD PTR _update$223771[esp+52], eax
 
 ; 1422 : 
 ; 1423 : 			pUpdateData.push_back(update);
 
-	lea	eax, DWORD PTR _update$223729[esp+52]
-	mov	DWORD PTR _update$223729[esp+56], ecx
+	lea	eax, DWORD PTR _update$223771[esp+52]
+	mov	DWORD PTR _update$223771[esp+56], ecx
 	push	eax
-	lea	ecx, DWORD PTR _pUpdateData$223724[esp+56]
-	mov	DWORD PTR _update$223729[esp+64], edx
+	lea	ecx, DWORD PTR _pUpdateData$223766[esp+56]
+	mov	DWORD PTR _update$223771[esp+64], edx
 	call	?push_back@?$vector@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@std@@QAEXABUCvDllPathFinderUpdateListData@@@Z ; std::vector<CvDllPathFinderUpdateListData,std::allocator<CvDllPathFinderUpdateListData> >::push_back
 
 ; 1424 : 
@@ -21980,9 +21980,9 @@ $LN1@TEMPCalcul:
 ; 1428 : 
 ; 1429 : 		std::reverse(pUpdateData.begin(), pUpdateData.end());
 
-	mov	ecx, DWORD PTR $T238035[esp+48]
-	mov	edx, DWORD PTR _pUpdateData$223724[esp+60]
-	mov	eax, DWORD PTR _pUpdateData$223724[esp+56]
+	mov	ecx, DWORD PTR $T238077[esp+48]
+	mov	edx, DWORD PTR _pUpdateData$223766[esp+60]
+	mov	eax, DWORD PTR _pUpdateData$223766[esp+56]
 	push	ecx
 	push	edx
 	push	eax
@@ -21993,11 +21993,11 @@ $LN1@TEMPCalcul:
 	push	28					; 0000001cH
 	call	??2CvDllPathFinderUpdateList@@SAPAXI@Z	; CvDllPathFinderUpdateList::operator new
 	add	esp, 16					; 00000010H
-	mov	DWORD PTR $T237824[esp+48], eax
+	mov	DWORD PTR $T237866[esp+48], eax
 	mov	BYTE PTR __$EHRec$[esp+60], 1
 	cmp	eax, ebx
 	je	SHORT $LN8@TEMPCalcul
-	lea	ecx, DWORD PTR _pUpdateData$223724[esp+52]
+	lea	ecx, DWORD PTR _pUpdateData$223766[esp+52]
 	push	ecx
 	mov	ecx, eax
 	call	??0CvDllPathFinderUpdateList@@QAE@ABV?$vector@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@std@@@Z ; CvDllPathFinderUpdateList::CvDllPathFinderUpdateList
@@ -22006,7 +22006,7 @@ $LN1@TEMPCalcul:
 $LN8@TEMPCalcul:
 	xor	esi, esi
 $LN9@TEMPCalcul:
-	mov	eax, DWORD PTR _pUpdateData$223724[esp+56]
+	mov	eax, DWORD PTR _pUpdateData$223766[esp+56]
 	cmp	eax, ebx
 	je	SHORT $LN86@TEMPCalcul
 	push	eax
@@ -22040,10 +22040,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?TEMPCalculatePathFinderUpdates@CvDllGameContext@@UAGPAVICvEnumerator@@PAVICvUnit1@@HH@Z$0:
-	lea	ecx, DWORD PTR _pUpdateData$223724[ebp]
+	lea	ecx, DWORD PTR _pUpdateData$223766[ebp]
 	jmp	??1?$vector@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@std@@QAE@XZ ; std::vector<CvDllPathFinderUpdateListData,std::allocator<CvDllPathFinderUpdateListData> >::~vector<CvDllPathFinderUpdateListData,std::allocator<CvDllPathFinderUpdateListData> >
 __unwindfunclet$?TEMPCalculatePathFinderUpdates@CvDllGameContext@@UAGPAVICvEnumerator@@PAVICvUnit1@@HH@Z$1:
-	mov	eax, DWORD PTR $T237824[ebp-4]
+	mov	eax, DWORD PTR $T237866[ebp-4]
 	push	eax
 	call	??3CvDllPathFinderUpdateList@@SAXPAX@Z	; CvDllPathFinderUpdateList::operator delete
 	pop	ecx

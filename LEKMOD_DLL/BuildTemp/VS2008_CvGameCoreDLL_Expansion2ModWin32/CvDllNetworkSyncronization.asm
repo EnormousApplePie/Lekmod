@@ -10,10 +10,10 @@ INCLUDELIB MSVCRT
 INCLUDELIB OLDNAMES
 
 _DATA	SEGMENT
-_CIV5_XP2_DLL_VERSION DD FLAT:$SG217148
+_CIV5_XP2_DLL_VERSION DD FLAT:$SG217190
 _DATA	ENDS
 CONST	SEGMENT
-$SG217148 DB	'1.0.0', 00H
+$SG217190 DB	'1.0.0', 00H
 	ORG $+2
 _guidICvUnknown DD 0d89ba82fH
 	DW	09fa3H
@@ -469,12 +469,12 @@ PUBLIC	?GetInterfaceId@ICvUnknown@@SG?AU_GUID@@XZ	; ICvUnknown::GetInterfaceId
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredllutil\include\cvdllinterfaces.h
 ;	COMDAT ?GetInterfaceId@ICvUnknown@@SG?AU_GUID@@XZ
 _TEXT	SEGMENT
-$T218492 = 8						; size = 4
+$T218534 = 8						; size = 4
 ?GetInterfaceId@ICvUnknown@@SG?AU_GUID@@XZ PROC		; ICvUnknown::GetInterfaceId, COMDAT
 
 ; 306  : 	static GUID DLLCALL GetInterfaceId(){ return guidICvUnknown; }
 
-	mov	eax, DWORD PTR $T218492[esp-4]
+	mov	eax, DWORD PTR $T218534[esp-4]
 	mov	ecx, DWORD PTR _guidICvUnknown
 	mov	edx, DWORD PTR _guidICvUnknown+4
 	mov	DWORD PTR [eax], ecx
@@ -490,12 +490,12 @@ PUBLIC	?GetInterfaceId@ICvNetworkSyncronization1@@SG?AU_GUID@@XZ ; ICvNetworkSyn
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?GetInterfaceId@ICvNetworkSyncronization1@@SG?AU_GUID@@XZ
 _TEXT	SEGMENT
-$T218496 = 8						; size = 4
+$T218538 = 8						; size = 4
 ?GetInterfaceId@ICvNetworkSyncronization1@@SG?AU_GUID@@XZ PROC ; ICvNetworkSyncronization1::GetInterfaceId, COMDAT
 
 ; 1242 : 	static GUID DLLCALL GetInterfaceId() { return guidICvNetworkSyncronization1; }
 
-	mov	eax, DWORD PTR $T218496[esp-4]
+	mov	eax, DWORD PTR $T218538[esp-4]
 	mov	ecx, DWORD PTR _guidICvNetworkSyncronization1
 	mov	edx, DWORD PTR _guidICvNetworkSyncronization1+4
 	mov	DWORD PTR [eax], ecx
@@ -564,8 +564,8 @@ _TEXT	SEGMENT
 _TEXT	ENDS
 ;	COMDAT ?QueryInterface@CvDllNetworkSyncronization@@UAGPAXU_GUID@@@Z
 _TEXT	SEGMENT
-$T218511 = -16						; size = 16
-$T218509 = -16						; size = 16
+$T218553 = -16						; size = 16
+$T218551 = -16						; size = 16
 _this$ = 8						; size = 4
 _guidInterface$ = 12					; size = 16
 ?QueryInterface@CvDllNetworkSyncronization@@UAGPAXU_GUID@@@Z PROC ; CvDllNetworkSyncronization::QueryInterface, COMDAT
@@ -580,15 +580,15 @@ _guidInterface$ = 12					; size = 16
 	mov	ecx, DWORD PTR _guidICvUnknown+4
 	mov	edx, DWORD PTR _guidICvUnknown+8
 	mov	eax, DWORD PTR _guidICvUnknown
-	mov	DWORD PTR $T218509[esp+20], ecx
-	lea	ecx, DWORD PTR $T218509[esp+16]
-	mov	DWORD PTR $T218509[esp+24], edx
-	mov	DWORD PTR $T218509[esp+16], eax
+	mov	DWORD PTR $T218551[esp+20], ecx
+	lea	ecx, DWORD PTR $T218551[esp+16]
+	mov	DWORD PTR $T218551[esp+24], edx
+	mov	DWORD PTR $T218551[esp+16], eax
 	mov	eax, DWORD PTR _guidICvUnknown+12
 	push	ecx
 	lea	edx, DWORD PTR _guidInterface$[esp+16]
 	push	edx
-	mov	DWORD PTR $T218509[esp+36], eax
+	mov	DWORD PTR $T218551[esp+36], eax
 	call	_IsEqualGUID
 	add	esp, 8
 	test	eax, eax
@@ -596,15 +596,15 @@ _guidInterface$ = 12					; size = 16
 	mov	ecx, DWORD PTR _guidICvNetworkSyncronization1+4
 	mov	edx, DWORD PTR _guidICvNetworkSyncronization1+8
 	mov	eax, DWORD PTR _guidICvNetworkSyncronization1
-	mov	DWORD PTR $T218511[esp+20], ecx
-	lea	ecx, DWORD PTR $T218511[esp+16]
-	mov	DWORD PTR $T218511[esp+24], edx
-	mov	DWORD PTR $T218511[esp+16], eax
+	mov	DWORD PTR $T218553[esp+20], ecx
+	lea	ecx, DWORD PTR $T218553[esp+16]
+	mov	DWORD PTR $T218553[esp+24], edx
+	mov	DWORD PTR $T218553[esp+16], eax
 	mov	eax, DWORD PTR _guidICvNetworkSyncronization1+12
 	push	ecx
 	lea	edx, DWORD PTR _guidInterface$[esp+16]
 	push	edx
-	mov	DWORD PTR $T218511[esp+36], eax
+	mov	DWORD PTR $T218553[esp+36], eax
 	call	_IsEqualGUID
 	add	esp, 8
 	test	eax, eax

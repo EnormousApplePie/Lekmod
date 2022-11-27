@@ -10,30 +10,30 @@ INCLUDELIB MSVCRT
 INCLUDELIB OLDNAMES
 
 CONST	SEGMENT
-$SG217378 DB	'_PABE_', 00H
+$SG217420 DB	'_PABE_', 00H
 	ORG $+1
-$SG217387 DB	'select %s.ID from %s inner join %s on %s = %s.Type where'
+$SG217429 DB	'select %s.ID from %s inner join %s on %s = %s.Type where'
 	DB	' %s = ?', 00H
-$SG217412 DB	'_PABE_', 00H
+$SG217454 DB	'_PABE_', 00H
 	ORG $+1
-$SG217416 DB	'select %s.ID from %s inner join %s on %s = %s.Type where'
+$SG217458 DB	'select %s.ID from %s inner join %s on %s = %s.Type where'
 	DB	' %s = ?', 00H
-$SG217440 DB	'_PABV_', 00H
+$SG217482 DB	'_PABV_', 00H
 	ORG $+1
-$SG217444 DB	'select %s.ID, %s from %s inner join %s on %s = %s.Type w'
+$SG217486 DB	'select %s.ID, %s from %s inner join %s on %s = %s.Type w'
 	DB	'here %s = ?', 00H
-$SG217463 DB	'Flavor', 00H
+$SG217505 DB	'Flavor', 00H
 	ORG $+1
-$SG217464 DB	'FlavorType', 00H
+$SG217506 DB	'FlavorType', 00H
 	ORG $+1
-$SG217465 DB	'Flavors', 00H
-$SG217473 DB	'Yield', 00H
+$SG217507 DB	'Flavors', 00H
+$SG217515 DB	'Yield', 00H
 	ORG $+2
-$SG217474 DB	'YieldType', 00H
+$SG217516 DB	'YieldType', 00H
 	ORG $+2
-$SG217475 DB	'Yields', 00H
+$SG217517 DB	'Yields', 00H
 	ORG $+1
-$SG217486 DB	'SELECT max(rowid) from %s', 00H
+$SG217528 DB	'SELECT max(rowid) from %s', 00H
 CONST	ENDS
 PUBLIC	?Initialize2DArray@CvDatabaseUtility@@QAEXAAPAPAHIIH@Z ; CvDatabaseUtility::Initialize2DArray
 EXTRN	??_U@YAPAXI@Z:PROC				; operator new[]
@@ -1266,8 +1266,8 @@ __ehfuncinfo$?_Xlen@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_strin
 xdata$x	ENDS
 ;	COMDAT ?_Xlen@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@@3@@std@@KAXXZ
 _TEXT	SEGMENT
-$T219400 = -80						; size = 28
-$T219399 = -52						; size = 40
+$T219442 = -80						; size = 28
+$T219441 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ?_Xlen@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@@3@@std@@KAXXZ PROC ; std::vector<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *> > >::_Iterator<0>,std::allocator<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *> > >::_Iterator<0> > >::_Xlen, COMDAT
 
@@ -1283,22 +1283,22 @@ __$EHRec$ = -12						; size = 12
 ; 1260 : 		_THROW(length_error, "vector<T> too long");
 
 	push	OFFSET ??_C@_0BD@OLBABOEK@vector?$DMT?$DO?5too?5long?$AA@
-	lea	ecx, DWORD PTR $T219400[esp+84]
+	lea	ecx, DWORD PTR $T219442[esp+84]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T219399[esp+80]
+	lea	ecx, DWORD PTR $T219441[esp+80]
 	mov	DWORD PTR __$EHRec$[esp+88], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T219400[esp+80]
+	lea	eax, DWORD PTR $T219442[esp+80]
 	push	eax
-	lea	ecx, DWORD PTR $T219399[esp+96]
+	lea	ecx, DWORD PTR $T219441[esp+96]
 	mov	BYTE PTR __$EHRec$[esp+92], 1
-	mov	DWORD PTR $T219399[esp+84], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T219441[esp+84], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVlength_error@std@@
-	lea	ecx, DWORD PTR $T219399[esp+84]
+	lea	ecx, DWORD PTR $T219441[esp+84]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+96], 0
-	mov	DWORD PTR $T219399[esp+88], OFFSET ??_7length_error@std@@6B@
+	mov	DWORD PTR $T219441[esp+88], OFFSET ??_7length_error@std@@6B@
 	call	__CxxThrowException@8
 $LN13@Xlen:
 $LN12@Xlen:
@@ -1307,10 +1307,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Xlen@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@@3@@std@@KAXXZ$0:
-	lea	ecx, DWORD PTR $T219400[ebp]
+	lea	ecx, DWORD PTR $T219442[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Xlen@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@@3@@std@@KAXXZ$2:
-	lea	ecx, DWORD PTR $T219399[ebp]
+	lea	ecx, DWORD PTR $T219441[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Xlen@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@@3@@std@@KAXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?_Xlen@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@@3@@std@@KAXXZ
@@ -1702,8 +1702,8 @@ __TI2?AVbad_alloc@std@@ DD 00H
 xdata$x	ENDS
 ;	COMDAT ??$_Allocate@U_Node@?$_List_nod@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@@std@@YAPAU_Node@?$_List_nod@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@0@IPAU120@@Z
 _TEXT	SEGMENT
-$T219485 = -12						; size = 12
-$T219489 = 8						; size = 4
+$T219527 = -12						; size = 12
+$T219531 = 8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ??$_Allocate@U_Node@?$_List_nod@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@@std@@YAPAU_Node@?$_List_nod@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@0@IPAU120@@Z PROC ; std::_Allocate<std::_List_nod<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *> > >::_Node>, COMDAT
@@ -1748,15 +1748,15 @@ $LN3@Allocate:
 
 ; 40   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T219489[esp+8]
+	lea	eax, DWORD PTR $T219531[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T219485[esp+16]
-	mov	DWORD PTR $T219489[esp+12], 0
+	lea	ecx, DWORD PTR $T219527[esp+16]
+	mov	DWORD PTR $T219531[esp+12], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T219485[esp+16]
+	lea	ecx, DWORD PTR $T219527[esp+16]
 	push	ecx
-	mov	DWORD PTR $T219485[esp+20], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T219527[esp+20], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN9@Allocate:
 $LN8@Allocate:
@@ -1791,8 +1791,8 @@ PUBLIC	??$_Allocate@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$cha
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Allocate@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@@std@@YAPAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@0@IPAV120@@Z
 _TEXT	SEGMENT
-$T219504 = -12						; size = 12
-$T219508 = 8						; size = 4
+$T219546 = -12						; size = 12
+$T219550 = 8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ??$_Allocate@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@@std@@YAPAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@0@IPAV120@@Z PROC ; std::_Allocate<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *> > >::_Iterator<0> >, COMDAT
@@ -1834,15 +1834,15 @@ $LN3@Allocate@2:
 
 ; 40   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T219508[esp+8]
+	lea	eax, DWORD PTR $T219550[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T219504[esp+16]
-	mov	DWORD PTR $T219508[esp+12], 0
+	lea	ecx, DWORD PTR $T219546[esp+16]
+	mov	DWORD PTR $T219550[esp+12], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T219504[esp+16]
+	lea	ecx, DWORD PTR $T219546[esp+16]
 	push	ecx
-	mov	DWORD PTR $T219504[esp+20], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T219546[esp+20], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN9@Allocate@2:
 $LN8@Allocate@2:
@@ -2540,7 +2540,7 @@ _szTableName$ = 8					; size = 4
 	mov	ecx, DWORD PTR _szTableName$[esp+344]
 	push	ecx
 	lea	edx, DWORD PTR _szSQL$[esp+352]
-	push	OFFSET $SG217486
+	push	OFFSET $SG217528
 	push	edx
 	call	??$sprintf_s@$0BAA@@@YAHAAY0BAA@DPBDZZ	; sprintf_s<256>
 	add	esp, 24					; 00000018H
@@ -3229,7 +3229,7 @@ __ehfuncinfo$??$_Construct@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?
 xdata$x	ENDS
 ;	COMDAT ??$_Construct@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@U12@@std@@YAXPAU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@0@ABU10@@Z
 _TEXT	SEGMENT
-$T219890 = -16						; size = 4
+$T219932 = -16						; size = 4
 __$EHRec$ = -12						; size = 12
 __Vptr$ = 8						; size = 4
 __Ptr$ = 8						; size = 4
@@ -3253,7 +3253,7 @@ __Val$ = 12						; size = 4
 
 ; 52   : 	::new (_Vptr) _T1(_Val);
 
-	mov	DWORD PTR $T219890[esp+20], esi
+	mov	DWORD PTR $T219932[esp+20], esi
 	mov	DWORD PTR __$EHRec$[esp+28], 0
 	test	esi, esi
 	je	SHORT $LN3@Construct@3
@@ -3280,7 +3280,7 @@ text$x	SEGMENT
 __unwindfunclet$??$_Construct@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@U12@@std@@YAXPAU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@0@ABU10@@Z$0:
 	mov	eax, DWORD PTR __Vptr$[ebp-4]
 	push	eax
-	mov	ecx, DWORD PTR $T219890[ebp]
+	mov	ecx, DWORD PTR $T219932[ebp]
 	push	ecx
 	call	??3@YAXPAX0@Z				; operator delete
 	add	esp, 8
@@ -4030,8 +4030,8 @@ __ehfuncinfo$?_Incsize@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@
 xdata$x	ENDS
 ;	COMDAT ?_Incsize@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@IAEXI@Z
 _TEXT	SEGMENT
-$T220317 = -80						; size = 28
-$T220316 = -52						; size = 40
+$T220359 = -80						; size = 28
+$T220358 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 __Count$ = 8						; size = 4
 ?_Incsize@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@IAEXI@Z PROC ; std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *> > >::_Incsize, COMDAT
@@ -4060,22 +4060,22 @@ __Count$ = 8						; size = 4
 ; 1241 : 			_THROW(length_error, "list<T> too long");
 
 	push	OFFSET ??_C@_0BB@MOGOBHAF@list?$DMT?$DO?5too?5long?$AA@
-	lea	ecx, DWORD PTR $T220317[esp+84]
+	lea	ecx, DWORD PTR $T220359[esp+84]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T220316[esp+80]
+	lea	ecx, DWORD PTR $T220358[esp+80]
 	mov	DWORD PTR __$EHRec$[esp+88], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T220317[esp+80]
+	lea	eax, DWORD PTR $T220359[esp+80]
 	push	eax
-	lea	ecx, DWORD PTR $T220316[esp+96]
+	lea	ecx, DWORD PTR $T220358[esp+96]
 	mov	BYTE PTR __$EHRec$[esp+92], 1
-	mov	DWORD PTR $T220316[esp+84], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T220358[esp+84], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVlength_error@std@@
-	lea	ecx, DWORD PTR $T220316[esp+84]
+	lea	ecx, DWORD PTR $T220358[esp+84]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+96], 0
-	mov	DWORD PTR $T220316[esp+88], OFFSET ??_7length_error@std@@6B@
+	mov	DWORD PTR $T220358[esp+88], OFFSET ??_7length_error@std@@6B@
 	call	__CxxThrowException@8
 $LN20@Incsize:
 $LN1@Incsize:
@@ -4096,10 +4096,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Incsize@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@IAEXI@Z$0:
-	lea	ecx, DWORD PTR $T220317[ebp]
+	lea	ecx, DWORD PTR $T220359[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Incsize@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@IAEXI@Z$2:
-	lea	ecx, DWORD PTR $T220316[ebp]
+	lea	ecx, DWORD PTR $T220358[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Incsize@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@IAEXI@Z:
 	mov	eax, OFFSET __ehfuncinfo$?_Incsize@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@IAEXI@Z
@@ -4307,8 +4307,8 @@ PUBLIC	??$unchecked_uninitialized_copy@PAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$unchecked_uninitialized_copy@PAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@PAV123@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@@3@@stdext@@YAPAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@PAV123@00AAV?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@@3@@Z
 _TEXT	SEGMENT
-$T220536 = -4						; size = 1
-__Cat$220541 = -4					; size = 1
+$T220578 = -4						; size = 1
+__Cat$220583 = -4					; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
@@ -4324,9 +4324,9 @@ __Al$ = 20						; size = 4
 ; 822  : 		_STD _Ptr_cat(_First, _Dest), _STD _Range_checked_iterator_tag()));
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T220536[esp+4], 0
-	mov	eax, DWORD PTR $T220536[esp+4]
-	mov	ecx, DWORD PTR __Cat$220541[esp+4]
+	mov	BYTE PTR $T220578[esp+4], 0
+	mov	eax, DWORD PTR $T220578[esp+4]
+	mov	ecx, DWORD PTR __Cat$220583[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -4743,8 +4743,8 @@ PUBLIC	??$unchecked_uninitialized_fill_n@PAV?$_Iterator@$0A@@?$list@U?$pair@$$CB
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ??$unchecked_uninitialized_fill_n@PAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@IV123@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@@3@@stdext@@YAXPAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@IABV123@AAV?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@@3@@Z
 _TEXT	SEGMENT
-$T221028 = -4						; size = 1
-__Cat$221032 = -4					; size = 1
+$T221070 = -4						; size = 1
+__Cat$221074 = -4					; size = 1
 __First$ = 8						; size = 4
 __Count$ = 12						; size = 4
 __Val$ = 16						; size = 4
@@ -4759,9 +4759,9 @@ __Al$ = 20						; size = 4
 ; 942  : 		_STD _Ptr_cat(_First, _First), _STD _Range_checked_iterator_tag());
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T221028[esp+4], 0
-	mov	eax, DWORD PTR $T221028[esp+4]
-	mov	ecx, DWORD PTR __Cat$221032[esp+4]
+	mov	BYTE PTR $T221070[esp+4], 0
+	mov	eax, DWORD PTR $T221070[esp+4]
+	mov	ecx, DWORD PTR __Cat$221074[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Val$[esp+4]
 	push	ecx
@@ -4783,10 +4783,10 @@ PUBLIC	??$_Uninit_move@PAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Uninit_move@PAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@PAV123@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@@3@U_Undefined_move_tag@3@@std@@YAPAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@0@PAV120@00AAV?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@@0@U_Undefined_move_tag@0@U_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
-$T221046 = -4						; size = 1
+$T221088 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$221049 = 16					; size = 1
+__Cat$221091 = 16					; size = 1
 __Dest$ = 16						; size = 4
 __Al$ = 20						; size = 4
 ___formal$ = 24						; size = 1
@@ -4799,10 +4799,10 @@ ___formal$ = 28						; size = 1
 
 ; 207  : 	return (_STDEXT unchecked_uninitialized_copy(_First, _Last, _Dest, _Al));
 
-	mov	ecx, DWORD PTR __Cat$221049[esp]
+	mov	ecx, DWORD PTR __Cat$221091[esp]
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T221046[esp+4], 0
-	mov	eax, DWORD PTR $T221046[esp+4]
+	mov	BYTE PTR $T221088[esp+4], 0
+	mov	eax, DWORD PTR $T221088[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -4901,7 +4901,7 @@ PUBLIC	?lower_bound@?$_Hash@V?$_Hmap_traits@V?$basic_string@DU?$char_traits@D@st
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xhash
 ;	COMDAT ?lower_bound@?$_Hash@V?$_Hmap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@V?$hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@$0A@@stdext@@@stdext@@QAE?AV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@5@@Z
 _TEXT	SEGMENT
-$T221121 = -4						; size = 4
+$T221163 = -4						; size = 4
 ___$ReturnUdt$ = 8					; size = 4
 __Where$ = 12						; size = 4
 __Keyval$ = 12						; size = 4
@@ -4987,9 +4987,9 @@ $LN70@lower_boun:
 	test	al, al
 	je	SHORT $LN7@lower_boun
 	mov	eax, DWORD PTR [edi+8]
-	mov	DWORD PTR $T221121[esp+20], eax
+	mov	DWORD PTR $T221163[esp+20], eax
 	pop	edi
-	lea	eax, DWORD PTR $T221121[esp+16]
+	lea	eax, DWORD PTR $T221163[esp+16]
 	mov	ecx, DWORD PTR [eax]
 	mov	eax, DWORD PTR ___$ReturnUdt$[esp+12]
 	pop	esi
@@ -5534,10 +5534,10 @@ PUBLIC	?_Ufill@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\vector
 ;	COMDAT ?_Ufill@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@@3@@std@@IAEPAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@2@PAV342@IABV342@@Z
 _TEXT	SEGMENT
-$T222125 = -4						; size = 1
+$T222167 = -4						; size = 1
 __Ptr$ = 8						; size = 4
 __Count$ = 12						; size = 4
-__Cat$222128 = 16					; size = 1
+__Cat$222170 = 16					; size = 1
 __Val$ = 16						; size = 4
 ?_Ufill@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@@3@@std@@IAEPAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@2@PAV342@IABV342@@Z PROC ; std::vector<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *> > >::_Iterator<0>,std::allocator<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *> > >::_Iterator<0> > >::_Ufill, COMDAT
 ; _this$ = ecx
@@ -5548,13 +5548,13 @@ __Val$ = 16						; size = 4
 
 ; 1254 : 		_STDEXT unchecked_uninitialized_fill_n(_Ptr, _Count, _Val, this->_Alval);
 
-	mov	edx, DWORD PTR __Cat$222128[esp]
+	mov	edx, DWORD PTR __Cat$222170[esp]
 	push	esi
 	mov	esi, DWORD PTR __Count$[esp+4]
 	push	edi
 	mov	edi, DWORD PTR __Ptr$[esp+8]
-	mov	BYTE PTR $T222125[esp+12], 0
-	mov	eax, DWORD PTR $T222125[esp+12]
+	mov	BYTE PTR $T222167[esp+12], 0
+	mov	eax, DWORD PTR $T222167[esp+12]
 	push	eax
 	mov	eax, DWORD PTR __Val$[esp+12]
 	push	edx
@@ -5606,7 +5606,7 @@ __ehfuncinfo$??$_Insert@V?$_Const_iterator@$0A@@?$list@U?$pair@$$CBV?$basic_stri
 xdata$x	ENDS
 ;	COMDAT ??$_Insert@V?$_Const_iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@QAEXV?$_Const_iterator@$0A@@01@00Uforward_iterator_tag@1@@Z
 _TEXT	SEGMENT
-$T222134 = -24						; size = 4
+$T222176 = -24						; size = 4
 _this$ = -24						; size = 4
 __Next$ = -20						; size = 4
 __$EHRec$ = -16						; size = 16
@@ -5697,7 +5697,7 @@ $LL38@Insert:
 	mov	eax, DWORD PTR __Where$[ebp]
 	mov	eax, DWORD PTR [eax+4]
 	push	eax
-	lea	ecx, DWORD PTR $T222134[ebp]
+	lea	ecx, DWORD PTR $T222176[ebp]
 	push	ecx
 	mov	ecx, edi
 	call	?erase@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@QAE?AV?$_Iterator@$0A@@12@V?$_Const_iterator@$0A@@12@@Z ; std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *> > >::erase
@@ -5740,10 +5740,10 @@ PUBLIC	??$_Unchecked_uninitialized_move@PAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ??$_Unchecked_uninitialized_move@PAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@PAV123@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@@3@@stdext@@YAPAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@PAV123@00AAV?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@@3@@Z
 _TEXT	SEGMENT
-$T222261 = -4						; size = 1
+$T222303 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$222265 = 16					; size = 1
+__Cat$222307 = 16					; size = 1
 __Dest$ = 16						; size = 4
 __Al$ = 20						; size = 4
 ??$_Unchecked_uninitialized_move@PAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@PAV123@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@@3@@stdext@@YAPAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@PAV123@00AAV?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@@3@@Z PROC ; stdext::_Unchecked_uninitialized_move<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *> > >::_Iterator<0> *,std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *> > >::_Iterator<0> *,std::allocator<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *> > >::_Iterator<0> > >, COMDAT
@@ -5756,10 +5756,10 @@ __Al$ = 20						; size = 4
 ; 863  : 		_CHECKED_BASE(_Last), _Dest, _Al,
 ; 864  : 		_STD _Move_cat(_Dest), _STD _Range_checked_iterator_tag()));
 
-	mov	ecx, DWORD PTR __Cat$222265[esp]
+	mov	ecx, DWORD PTR __Cat$222307[esp]
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T222261[esp+4], 0
-	mov	eax, DWORD PTR $T222261[esp+4]
+	mov	BYTE PTR $T222303[esp+4], 0
+	mov	eax, DWORD PTR $T222303[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -5932,7 +5932,7 @@ PUBLIC	??$insert@V?$_Const_iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$
 _TEXT	SEGMENT
 __Where$ = 8						; size = 4
 __First$ = 12						; size = 4
-$T222367 = 16						; size = 1
+$T222409 = 16						; size = 1
 __Last$ = 16						; size = 4
 ??$insert@V?$_Const_iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@QAEXV?$_Const_iterator@$0A@@01@00@Z PROC ; std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *> > >::insert<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *> > >::_Const_iterator<0> >, COMDAT
 ; _this$ = ecx
@@ -5940,7 +5940,7 @@ __Last$ = 16						; size = 4
 ; 731  : 		{	// insert [_First, _Last) at _Where
 ; 732  : 		_Insert(_Where, _First, _Last, _Iter_cat(_First));
 
-	mov	eax, DWORD PTR $T222367[esp-4]
+	mov	eax, DWORD PTR $T222409[esp-4]
 	mov	edx, DWORD PTR __Last$[esp-4]
 	push	eax
 	mov	eax, DWORD PTR __First$[esp]
@@ -5960,10 +5960,10 @@ PUBLIC	??$_Umove@PAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\vector
 ;	COMDAT ??$_Umove@PAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@@3@@std@@IAEPAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@1@PAV231@00@Z
 _TEXT	SEGMENT
-$T222418 = -4						; size = 1
+$T222460 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$222422 = 16					; size = 1
+__Cat$222464 = 16					; size = 1
 __Ptr$ = 16						; size = 4
 ??$_Umove@PAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@@3@@std@@IAEPAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@1@PAV231@00@Z PROC ; std::vector<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *> > >::_Iterator<0>,std::allocator<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *> > >::_Iterator<0> > >::_Umove<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *> > >::_Iterator<0> *>, COMDAT
 ; _this$ = ecx
@@ -5976,9 +5976,9 @@ __Ptr$ = 16						; size = 4
 ; 1147 : 		return (_STDEXT _Unchecked_uninitialized_move(_First, _Last,
 ; 1148 : 			_Ptr, this->_Alval));
 
-	mov	edx, DWORD PTR __Cat$222422[esp]
-	mov	BYTE PTR $T222418[esp+4], 0
-	mov	eax, DWORD PTR $T222418[esp+4]
+	mov	edx, DWORD PTR __Cat$222464[esp]
+	mov	BYTE PTR $T222460[esp+4], 0
+	mov	eax, DWORD PTR $T222460[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Ptr$[esp+4]
 	push	edx
@@ -6002,7 +6002,7 @@ EXTRN	__imp_?Reset@Results@Database@@QAE_NXZ:PROC
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredll_expansion2\cvdatabaseutility.cpp
 ;	COMDAT ?GetResults@CvDatabaseUtility@@QAEPAVResults@Database@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
 _TEXT	SEGMENT
-$T222430 = 8						; size = 4
+$T222472 = 8						; size = 4
 _strKey$ = 8						; size = 4
 ?GetResults@CvDatabaseUtility@@QAEPAVResults@Database@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z PROC ; CvDatabaseUtility::GetResults, COMDAT
 ; _this$ = ecx
@@ -6014,14 +6014,14 @@ _strKey$ = 8						; size = 4
 	push	edi
 	mov	esi, ecx
 	push	eax
-	lea	ecx, DWORD PTR $T222430[esp+8]
+	lea	ecx, DWORD PTR $T222472[esp+8]
 	push	ecx
 	mov	ecx, esi
 	call	?lower_bound@?$_Hash@V?$_Hmap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@V?$hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@$0A@@stdext@@@stdext@@QAE?AV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@5@@Z ; stdext::_Hash<stdext::_Hmap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,Database::Results *,stdext::hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::less<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *> >,0> >::lower_bound
 
 ; 50   : 	if(it != m_storedResults.end())
 
-	mov	edi, DWORD PTR $T222430[esp+4]
+	mov	edi, DWORD PTR $T222472[esp+4]
 	cmp	edi, DWORD PTR [esi+8]
 	je	SHORT $LN1@GetResults
 
@@ -6242,16 +6242,16 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 __Capacity$ = -20					; size = 4
 __$EHRec$ = -16						; size = 16
-__Cat$222817 = 8					; size = 1
-__Cat$222745 = 8					; size = 1
+__Cat$222859 = 8					; size = 1
+__Cat$222787 = 8					; size = 1
 __Where$ = 8						; size = 4
-__Tmp$218300 = 12					; size = 4
-__Tmp$218290 = 12					; size = 4
-__Newvec$218275 = 12					; size = 4
+__Tmp$218342 = 12					; size = 4
+__Tmp$218332 = 12					; size = 4
+__Newvec$218317 = 12					; size = 4
 __Count$ = 12						; size = 4
 tv515 = 16						; size = 4
-$T222813 = 16						; size = 1
-$T222741 = 16						; size = 1
+$T222855 = 16						; size = 1
+$T222783 = 16						; size = 1
 __Val$ = 16						; size = 4
 ?_Insert_n@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@@3@@std@@IAEXV?$_Vector_const_iterator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@@3@@2@IABV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@2@@Z PROC ; std::vector<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *> > >::_Iterator<0>,std::allocator<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *> > >::_Iterator<0> > >::_Insert_n, COMDAT
 ; _this$ = ecx
@@ -6377,7 +6377,7 @@ $LN9@Insert_n:
 	lea	edx, DWORD PTR [eax+ebx*4]
 	push	edx
 	mov	ecx, esi
-	mov	DWORD PTR __Newvec$218275[ebp], eax
+	mov	DWORD PTR __Newvec$218317[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+12], 0
 	call	?_Ufill@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@@3@@std@@IAEPAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@2@PAV342@IABV342@@Z ; std::vector<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *> > >::_Iterator<0>,std::allocator<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *> > >::_Iterator<0> > >::_Ufill
 
@@ -6385,12 +6385,12 @@ $LN9@Insert_n:
 ; 1180 : 			_Umove(this->_Myfirst, _VEC_ITER_BASE(_Where),
 ; 1181 : 				_Newvec);	// move prefix
 
-	mov	edx, DWORD PTR __Cat$222745[ebp]
+	mov	edx, DWORD PTR __Cat$222787[ebp]
 	mov	eax, DWORD PTR [esi+4]
-	mov	BYTE PTR $T222741[ebp], 0
-	mov	ecx, DWORD PTR $T222741[ebp]
+	mov	BYTE PTR $T222783[ebp], 0
+	mov	ecx, DWORD PTR $T222783[ebp]
 	push	ecx
-	mov	ecx, DWORD PTR __Newvec$218275[ebp]
+	mov	ecx, DWORD PTR __Newvec$218317[ebp]
 	push	edx
 	mov	edx, DWORD PTR __Where$[ebp]
 	push	esi
@@ -6405,13 +6405,13 @@ $LN9@Insert_n:
 
 	mov	eax, DWORD PTR [esi+8]
 	add	esp, 24					; 00000018H
-	mov	BYTE PTR $T222813[ebp], 0
-	mov	edx, DWORD PTR $T222813[ebp]
+	mov	BYTE PTR $T222855[ebp], 0
+	mov	edx, DWORD PTR $T222855[ebp]
 	push	edx
-	mov	edx, DWORD PTR __Cat$222817[ebp]
+	mov	edx, DWORD PTR __Cat$222859[ebp]
 	push	edx
 	lea	ecx, DWORD PTR [ebx+edi]
-	mov	ebx, DWORD PTR __Newvec$218275[ebp]
+	mov	ebx, DWORD PTR __Newvec$218317[ebp]
 	push	esi
 	lea	ecx, DWORD PTR [ebx+ecx*4]
 	push	ecx
@@ -6486,7 +6486,7 @@ __catch$?_Insert_n@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string
 ; 1189 : 				_Destroy(_Newvec + _Whereoff, _Newvec + _Whereoff + _Count);
 ; 1190 : 			this->_Alval.deallocate(_Newvec, _Capacity);
 
-	mov	edx, DWORD PTR __Newvec$218275[ebp]
+	mov	edx, DWORD PTR __Newvec$218317[ebp]
 	push	edx
 	call	??3@YAXPAX@Z				; operator delete
 	add	esp, 4
@@ -6515,7 +6515,7 @@ $LN10@Insert_n:
 
 	mov	edx, DWORD PTR __Val$[ebp]
 	mov	ecx, DWORD PTR [edx]
-	mov	DWORD PTR __Tmp$218290[ebp], ecx
+	mov	DWORD PTR __Tmp$218332[ebp], ecx
 
 ; 1212 : 
 ; 1213 : 			_Umove(_VEC_ITER_BASE(_Where), _Mylast,
@@ -6538,7 +6538,7 @@ $LN10@Insert_n:
 	mov	eax, DWORD PTR [esi+8]
 	mov	ecx, eax
 	sub	ecx, DWORD PTR __Where$[ebp]
-	lea	edx, DWORD PTR __Tmp$218290[ebp]
+	lea	edx, DWORD PTR __Tmp$218332[ebp]
 	sar	ecx, 2
 	push	edx
 	sub	edi, ecx
@@ -6567,7 +6567,7 @@ $LN10@Insert_n:
 ; 1230 : 			std::fill(_VEC_ITER_BASE(_Where), _Mylast - _Count,
 ; 1231 : 				_Tmp);	// insert up to old end
 
-	lea	edx, DWORD PTR __Tmp$218290[ebp]
+	lea	edx, DWORD PTR __Tmp$218332[ebp]
 	push	edx
 	sub	esi, eax
 	mov	eax, DWORD PTR __Where$[ebp]
@@ -6609,7 +6609,7 @@ $LN3@Insert_n:
 	push	ebx
 	push	edi
 	mov	ecx, esi
-	mov	DWORD PTR __Tmp$218300[ebp], edx
+	mov	DWORD PTR __Tmp$218342[ebp], edx
 	mov	DWORD PTR tv515[ebp], eax
 	call	??$_Umove@PAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@@3@@std@@IAEPAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@1@PAV231@00@Z ; std::vector<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *> > >::_Iterator<0>,std::allocator<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *> > >::_Iterator<0> > >::_Umove<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *> > >::_Iterator<0> *>
 
@@ -6633,7 +6633,7 @@ $LN3@Insert_n:
 
 	mov	eax, DWORD PTR __Where$[ebp]
 	mov	edx, DWORD PTR tv515[ebp]
-	lea	ecx, DWORD PTR __Tmp$218300[ebp]
+	lea	ecx, DWORD PTR __Tmp$218342[ebp]
 	push	ecx
 	add	edx, eax
 	push	edx
@@ -6903,7 +6903,7 @@ PUBLIC	?_Init@?$_Hash@V?$_Hmap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xhash
 ;	COMDAT ?_Init@?$_Hash@V?$_Hmap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@V?$hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@$0A@@stdext@@@stdext@@IAEXI@Z
 _TEXT	SEGMENT
-$T223225 = -4						; size = 4
+$T223267 = -4						; size = 4
 __Buckets$ = 8						; size = 4
 ?_Init@?$_Hash@V?$_Hmap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@V?$hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@$0A@@stdext@@@stdext@@IAEXI@Z PROC ; stdext::_Hash<stdext::_Hmap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,Database::Results *,stdext::hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::less<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *> >,0> >::_Init, COMDAT
 ; _this$ = ecx
@@ -6919,12 +6919,12 @@ __Buckets$ = 8						; size = 4
 	mov	edi, DWORD PTR __Buckets$[esp+8]
 	mov	esi, ecx
 	mov	eax, DWORD PTR [esi+8]
-	lea	ecx, DWORD PTR $T223225[esp+12]
+	lea	ecx, DWORD PTR $T223267[esp+12]
 	push	ecx
 	lea	edx, DWORD PTR [edi+1]
 	push	edx
 	lea	ecx, DWORD PTR [esi+16]
-	mov	DWORD PTR $T223225[esp+20], eax
+	mov	DWORD PTR $T223267[esp+20], eax
 	call	?_Assign_n@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@@3@@std@@IAEXIABV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@2@@Z ; std::vector<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *> > >::_Iterator<0>,std::allocator<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *> > >::_Iterator<0> > >::_Assign_n
 
 ; 831  : 		_Mask = _Buckets - 1;
@@ -6951,11 +6951,11 @@ PUBLIC	?_Insert@?$_Hash@V?$_Hmap_traits@V?$basic_string@DU?$char_traits@D@std@@V
 _TEXT	SEGMENT
 tv929 = -4						; size = 4
 tv926 = -4						; size = 4
-$T223659 = -4						; size = 4
+$T223701 = -4						; size = 4
 ___$ReturnUdt$ = 8					; size = 4
-__Tmp$224103 = 12					; size = 4
-$T223636 = 12						; size = 4
-$T223260 = 12						; size = 4
+__Tmp$224145 = 12					; size = 4
+$T223678 = 12						; size = 4
+$T223302 = 12						; size = 4
 __Bucket$ = 12						; size = 4
 __Val$ = 12						; size = 4
 __Where$ = 16						; size = 4
@@ -7076,7 +7076,7 @@ $LN14@Insert@2:
 ; 852  : 					_List.erase(_Where);
 
 	push	eax
-	lea	ecx, DWORD PTR $T223260[esp+20]
+	lea	ecx, DWORD PTR $T223302[esp+20]
 	push	ecx
 	lea	ecx, DWORD PTR [edi+4]
 	call	?erase@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@QAE?AV?$_Iterator@$0A@@12@V?$_Const_iterator@$0A@@12@@Z ; std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *> > >::erase
@@ -7160,7 +7160,7 @@ $LN285@Insert@2:
 	fild	DWORD PTR [edi+12]
 	mov	eax, DWORD PTR [edi+40]
 	mov	esi, DWORD PTR [edi+36]
-	mov	DWORD PTR $T223636[esp+16], eax
+	mov	DWORD PTR $T223678[esp+16], eax
 	test	ecx, ecx
 	jge	SHORT $LN286@Insert@2
 	fadd	DWORD PTR __real@4f800000
@@ -7173,9 +7173,9 @@ $LN286@Insert@2:
 	fadd	DWORD PTR __real@4f800000
 $LN287@Insert@2:
 	fdivp	ST(1), ST(0)
-	fstp	DWORD PTR $T223659[esp+20]
-	fld	DWORD PTR $T223636[esp+16]
-	fld	DWORD PTR $T223659[esp+20]
+	fstp	DWORD PTR $T223701[esp+20]
+	fld	DWORD PTR $T223678[esp+16]
+	fld	DWORD PTR $T223701[esp+20]
 	fcompp
 	fnstsw	ax
 	test	ah, 65					; 00000041H
@@ -7209,7 +7209,7 @@ $LN1@Insert@2:
 	mov	edx, DWORD PTR [edi+8]
 	mov	ebx, DWORD PTR [edi+20]
 	lea	ecx, DWORD PTR [edi+16]
-	mov	DWORD PTR __Tmp$224103[esp+16], edx
+	mov	DWORD PTR __Tmp$224145[esp+16], edx
 	mov	edx, DWORD PTR [ecx+8]
 	cmp	ebx, edx
 	je	SHORT $LN204@Insert@2
@@ -7228,7 +7228,7 @@ $LN229@Insert@2:
 	mov	DWORD PTR [ecx+8], ebx
 $LN204@Insert@2:
 	mov	eax, DWORD PTR [ecx+4]
-	lea	edx, DWORD PTR __Tmp$224103[esp+16]
+	lea	edx, DWORD PTR __Tmp$224145[esp+16]
 	push	edx
 	lea	edx, DWORD PTR [esi+1]
 	push	edx
@@ -7267,7 +7267,7 @@ $LN4@Insert@2:
 _TEXT	ENDS
 ;	COMDAT ?_Reinsert@?$_Hash@V?$_Hmap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@V?$hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@$0A@@stdext@@@stdext@@IAEXXZ
 _TEXT	SEGMENT
-$T224190 = -8						; size = 8
+$T224232 = -8						; size = 8
 ?_Reinsert@?$_Hash@V?$_Hmap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@V?$hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@$0A@@stdext@@@stdext@@IAEXXZ PROC ; stdext::_Hash<stdext::_Hmap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,Database::Results *,stdext::hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::less<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *> >,0> >::_Reinsert, COMDAT
 ; _this$ = ecx
 
@@ -7292,7 +7292,7 @@ $LL2@Reinsert:
 	push	eax
 	add	eax, 8
 	push	eax
-	lea	edx, DWORD PTR $T224190[esp+20]
+	lea	edx, DWORD PTR $T224232[esp+20]
 	push	edx
 	mov	ecx, esi
 	call	?_Insert@?$_Hash@V?$_Hmap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@V?$hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@$0A@@stdext@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@4@@Z ; stdext::_Hash<stdext::_Hmap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,Database::Results *,stdext::hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::less<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *> >,0> >::_Insert
@@ -7314,7 +7314,7 @@ PUBLIC	?clear@?$_Hash@V?$_Hmap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?clear@?$_Hash@V?$_Hmap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@V?$hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@$0A@@stdext@@@stdext@@QAEXXZ
 _TEXT	SEGMENT
-$T224287 = -4						; size = 4
+$T224329 = -4						; size = 4
 ?clear@?$_Hash@V?$_Hmap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@V?$hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@$0A@@stdext@@@stdext@@QAEXXZ PROC ; stdext::_Hash<stdext::_Hmap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,Database::Results *,stdext::hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::less<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *> >,0> >::clear, COMDAT
 ; _this$ = ecx
 
@@ -7332,11 +7332,11 @@ $T224287 = -4						; size = 4
 ; 615  : 		_Init();
 
 	mov	eax, DWORD PTR [esi+8]
-	lea	ecx, DWORD PTR $T224287[esp+8]
+	lea	ecx, DWORD PTR $T224329[esp+8]
 	push	ecx
 	push	9
 	lea	ecx, DWORD PTR [esi+16]
-	mov	DWORD PTR $T224287[esp+16], eax
+	mov	DWORD PTR $T224329[esp+16], eax
 	call	?_Assign_n@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@@3@@std@@IAEXIABV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@2@@Z ; std::vector<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *> > >::_Iterator<0>,std::allocator<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *> > >::_Iterator<0> > >::_Assign_n
 	mov	DWORD PTR [esi+32], 7
 	mov	DWORD PTR [esi+36], 8
@@ -7370,7 +7370,7 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 _this$ = -16						; size = 4
 __$EHRec$ = -12						; size = 12
-$T224598 = 8						; size = 4
+$T224640 = 8						; size = 4
 __Parg$ = 8						; size = 4
 __Al$ = 12						; size = 4
 ??0?$_Hash@V?$_Hmap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@V?$hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@$0A@@stdext@@@stdext@@QAE@ABV?$hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@1@ABV?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@std@@@Z PROC ; stdext::_Hash<stdext::_Hmap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,Database::Results *,stdext::hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::less<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *> >,0> >::_Hash<stdext::_Hmap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,Database::Results *,stdext::hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::less<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *> >,0> >, COMDAT
@@ -7406,12 +7406,12 @@ __Al$ = 12						; size = 4
 ; 344  : 		_Init();
 
 	mov	edx, DWORD PTR [esi+8]
-	lea	eax, DWORD PTR $T224598[esp+20]
+	lea	eax, DWORD PTR $T224640[esp+20]
 	push	eax
 	push	9
 	mov	BYTE PTR __$EHRec$[esp+40], 1
 	mov	DWORD PTR [esi+40], 1082130432		; 40800000H
-	mov	DWORD PTR $T224598[esp+28], edx
+	mov	DWORD PTR $T224640[esp+28], edx
 	call	?_Assign_n@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@@3@@std@@IAEXIABV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@2@@Z ; std::vector<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *> > >::_Iterator<0>,std::allocator<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *> > >::_Iterator<0> > >::_Assign_n
 
 ; 345  : 		}
@@ -7472,8 +7472,8 @@ PUBLIC	?erase@?$_Hash@V?$_Hmap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?erase@?$_Hash@V?$_Hmap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@V?$hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@$0A@@stdext@@@stdext@@QAE?AV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@V?$_Const_iterator@$0A@@45@0@Z
 _TEXT	SEGMENT
-$T224762 = -4						; size = 4
-$T224651 = -4						; size = 4
+$T224804 = -4						; size = 4
+$T224693 = -4						; size = 4
 ___$ReturnUdt$ = 8					; size = 4
 __First$ = 12						; size = 4
 __Last$ = 16						; size = 4
@@ -7503,11 +7503,11 @@ __Last$ = 16						; size = 4
 	lea	ecx, DWORD PTR [esi+4]
 	call	?clear@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@QAEXXZ ; std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *> > >::clear
 	mov	eax, DWORD PTR [esi+8]
-	lea	ecx, DWORD PTR $T224762[esp+8]
+	lea	ecx, DWORD PTR $T224804[esp+8]
 	push	ecx
 	push	9
 	lea	ecx, DWORD PTR [esi+16]
-	mov	DWORD PTR $T224762[esp+16], eax
+	mov	DWORD PTR $T224804[esp+16], eax
 	call	?_Assign_n@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@@3@@std@@IAEXIABV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@2@@Z ; std::vector<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *> > >::_Iterator<0>,std::allocator<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *> > >::_Iterator<0> > >::_Assign_n
 
 ; 585  : 			return (begin());
@@ -7544,7 +7544,7 @@ $LL2@erase@5:
 	mov	edx, DWORD PTR [ecx]
 	mov	eax, ecx
 	push	eax
-	lea	eax, DWORD PTR $T224651[esp+12]
+	lea	eax, DWORD PTR $T224693[esp+12]
 	push	eax
 	mov	ecx, esi
 	mov	DWORD PTR __First$[esp+12], edx
@@ -7572,7 +7572,7 @@ PUBLIC	?ClearResults@CvDatabaseUtility@@QAEXXZ		; CvDatabaseUtility::ClearResult
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredll_expansion2\cvdatabaseutility.cpp
 ;	COMDAT ?ClearResults@CvDatabaseUtility@@QAEXXZ
 _TEXT	SEGMENT
-__Tmp$225509 = -4					; size = 4
+__Tmp$225522 = -4					; size = 4
 ?ClearResults@CvDatabaseUtility@@QAEXXZ PROC		; CvDatabaseUtility::ClearResults, COMDAT
 ; _this$ = ecx
 
@@ -7638,7 +7638,7 @@ $LN42@ClearResul:
 	mov	edi, DWORD PTR [esi+20]
 	mov	eax, DWORD PTR [esi+8]
 	lea	ecx, DWORD PTR [esi+16]
-	mov	DWORD PTR __Tmp$225509[esp+16], eax
+	mov	DWORD PTR __Tmp$225522[esp+16], eax
 	cmp	edi, edx
 	je	SHORT $LN96@ClearResul
 	mov	eax, edx
@@ -7655,7 +7655,7 @@ $LN121@ClearResul:
 	mov	DWORD PTR [ecx+8], edi
 $LN96@ClearResul:
 	mov	eax, DWORD PTR [ecx+4]
-	lea	edx, DWORD PTR __Tmp$225509[esp+16]
+	lea	edx, DWORD PTR __Tmp$225522[esp+16]
 	push	edx
 	push	9
 	push	eax
@@ -7677,8 +7677,8 @@ PUBLIC	??0?$hash_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@st
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\hash_map
 ;	COMDAT ??0?$hash_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@V?$hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@stdext@@QAE@XZ
 _TEXT	SEGMENT
-$T225583 = -1						; size = 1
-$T225582 = -1						; size = 1
+$T225625 = -1						; size = 1
+$T225624 = -1						; size = 1
 ??0?$hash_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@V?$hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@stdext@@QAE@XZ PROC ; stdext::hash_map<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,Database::Results *,stdext::hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::less<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *> > >::hash_map<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,Database::Results *,stdext::hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::less<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *> > >, COMDAT
 ; _this$ = ecx
 
@@ -7687,9 +7687,9 @@ $T225582 = -1						; size = 1
 	push	ecx
 	push	esi
 	mov	esi, ecx
-	lea	eax, DWORD PTR $T225582[esp+8]
+	lea	eax, DWORD PTR $T225624[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T225583[esp+12]
+	lea	ecx, DWORD PTR $T225625[esp+12]
 	push	ecx
 	mov	ecx, esi
 	call	??0?$_Hash@V?$_Hmap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@V?$hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@$0A@@stdext@@@stdext@@QAE@ABV?$hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@1@ABV?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@std@@@Z ; stdext::_Hash<stdext::_Hmap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,Database::Results *,stdext::hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::less<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *> >,0> >::_Hash<stdext::_Hmap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,Database::Results *,stdext::hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::less<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *> >,0> >
@@ -7720,8 +7720,8 @@ __ehfuncinfo$??A?$hash_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D
 xdata$x	ENDS
 ;	COMDAT ??A?$hash_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@V?$hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@stdext@@QAEAAPAVResults@Database@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
 _TEXT	SEGMENT
-$T225597 = -52						; size = 8
-$T225595 = -44						; size = 32
+$T225639 = -52						; size = 8
+$T225637 = -44						; size = 32
 __$EHRec$ = -12						; size = 12
 __Where$ = 8						; size = 4
 __Keyval$ = 8						; size = 4
@@ -7758,21 +7758,21 @@ __Keyval$ = 8						; size = 4
 ; 160  : 			_Where = this->insert(value_type(_Keyval, mapped_type())).first;
 
 	push	edi
-	lea	ecx, DWORD PTR $T225595[esp+64]
+	lea	ecx, DWORD PTR $T225637[esp+64]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	xor	eax, eax
-	mov	DWORD PTR $T225595[esp+88], eax
+	mov	DWORD PTR $T225637[esp+88], eax
 	mov	DWORD PTR __$EHRec$[esp+68], eax
 	mov	eax, DWORD PTR [esi+8]
 	push	eax
-	lea	ecx, DWORD PTR $T225595[esp+64]
+	lea	ecx, DWORD PTR $T225637[esp+64]
 	push	ecx
-	lea	edx, DWORD PTR $T225597[esp+68]
+	lea	edx, DWORD PTR $T225639[esp+68]
 	push	edx
 	mov	ecx, esi
 	call	?_Insert@?$_Hash@V?$_Hmap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@V?$hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@$0A@@stdext@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@4@@Z ; stdext::_Hash<stdext::_Hmap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,Database::Results *,stdext::hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::less<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *> >,0> >::_Insert
-	mov	esi, DWORD PTR $T225597[esp+60]
-	lea	ecx, DWORD PTR $T225595[esp+60]
+	mov	esi, DWORD PTR $T225639[esp+60]
+	lea	ecx, DWORD PTR $T225637[esp+60]
 	mov	DWORD PTR __$EHRec$[esp+68], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 	pop	edi
@@ -7806,7 +7806,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$??A?$hash_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@V?$hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@stdext@@QAEAAPAVResults@Database@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z$0:
-	lea	ecx, DWORD PTR $T225595[ebp]
+	lea	ecx, DWORD PTR $T225637[ebp]
 	jmp	??1?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@QAE@XZ
 __ehhandler$??A?$hash_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@V?$hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@stdext@@QAEAAPAVResults@Database@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$??A?$hash_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@V?$hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@stdext@@QAEAAPAVResults@Database@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -7819,7 +7819,7 @@ PUBLIC	?erase@?$_Hash@V?$_Hmap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$
 ;	COMDAT ?erase@?$_Hash@V?$_Hmap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@V?$hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@$0A@@stdext@@@stdext@@QAEIABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
 _TEXT	SEGMENT
 __Where$ = -8						; size = 8
-$T225701 = 8						; size = 4
+$T225743 = 8						; size = 4
 __Keyval$ = 8						; size = 4
 ?erase@?$_Hash@V?$_Hmap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@V?$hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@$0A@@stdext@@@stdext@@QAEIABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z PROC ; stdext::_Hash<stdext::_Hmap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,Database::Results *,stdext::hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::less<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *> >,0> >::erase, COMDAT
 ; _this$ = ecx
@@ -7857,7 +7857,7 @@ $LN7@erase@6:
 
 	push	ecx
 	push	edx
-	lea	edx, DWORD PTR $T225701[esp+20]
+	lea	edx, DWORD PTR $T225743[esp+20]
 	push	edx
 	mov	ecx, edi
 	call	?erase@?$_Hash@V?$_Hmap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@V?$hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@$0A@@stdext@@@stdext@@QAE?AV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@V?$_Const_iterator@$0A@@45@0@Z ; stdext::_Hash<stdext::_Hmap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,Database::Results *,stdext::hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::less<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *> >,0> >::erase
@@ -7879,8 +7879,8 @@ PUBLIC	??0CvDatabaseUtility@@QAE@XZ			; CvDatabaseUtility::CvDatabaseUtility
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredll_expansion2\cvdatabaseutility.cpp
 ;	COMDAT ??0CvDatabaseUtility@@QAE@XZ
 _TEXT	SEGMENT
-$T225790 = -1						; size = 1
-$T225789 = -1						; size = 1
+$T225832 = -1						; size = 1
+$T225831 = -1						; size = 1
 ??0CvDatabaseUtility@@QAE@XZ PROC			; CvDatabaseUtility::CvDatabaseUtility, COMDAT
 ; _this$ = ecx
 
@@ -7889,9 +7889,9 @@ $T225789 = -1						; size = 1
 	push	ecx
 	push	esi
 	mov	esi, ecx
-	lea	eax, DWORD PTR $T225789[esp+8]
+	lea	eax, DWORD PTR $T225831[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T225790[esp+12]
+	lea	ecx, DWORD PTR $T225832[esp+12]
 	push	ecx
 	mov	ecx, esi
 	call	??0?$_Hash@V?$_Hmap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@V?$hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@$0A@@stdext@@@stdext@@QAE@ABV?$hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@1@ABV?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@std@@@Z ; stdext::_Hash<stdext::_Hmap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,Database::Results *,stdext::hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::less<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *> >,0> >::_Hash<stdext::_Hmap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,Database::Results *,stdext::hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::less<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *> >,0> >
@@ -7990,7 +7990,7 @@ PUBLIC	?ClearResults@CvDatabaseUtility@@QAEXABV?$basic_string@DU?$char_traits@D@
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?ClearResults@CvDatabaseUtility@@QAEXABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
 _TEXT	SEGMENT
-$T225982 = 8						; size = 4
+$T226024 = 8						; size = 4
 _strKey$ = 8						; size = 4
 ?ClearResults@CvDatabaseUtility@@QAEXABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z PROC ; CvDatabaseUtility::ClearResults, COMDAT
 ; _this$ = ecx
@@ -8005,11 +8005,11 @@ _strKey$ = 8						; size = 4
 	push	esi
 	push	edi
 	push	ebx
-	lea	eax, DWORD PTR $T225982[esp+12]
+	lea	eax, DWORD PTR $T226024[esp+12]
 	push	eax
 	mov	esi, ecx
 	call	?lower_bound@?$_Hash@V?$_Hmap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@V?$hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@$0A@@stdext@@@stdext@@QAE?AV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@5@@Z ; stdext::_Hash<stdext::_Hmap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,Database::Results *,stdext::hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::less<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *> >,0> >::lower_bound
-	mov	edi, DWORD PTR $T225982[esp+8]
+	mov	edi, DWORD PTR $T226024[esp+8]
 	cmp	edi, DWORD PTR [esi+8]
 	je	SHORT $LN1@ClearResul@2
 	mov	ecx, DWORD PTR [edi+36]
@@ -8065,10 +8065,10 @@ __ehfuncinfo$?PrepareResults@CvDatabaseUtility@@QAEPAVResults@Database@@ABV?$bas
 xdata$x	ENDS
 ;	COMDAT ?PrepareResults@CvDatabaseUtility@@QAEPAVResults@Database@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PBD@Z
 _TEXT	SEGMENT
-$T226014 = -16						; size = 4
+$T226056 = -16						; size = 4
 __$EHRec$ = -12						; size = 12
 _strKey$ = 8						; size = 4
-$T226103 = 12						; size = 4
+$T226145 = 12						; size = 4
 _szStmt$ = 12						; size = 4
 ?PrepareResults@CvDatabaseUtility@@QAEPAVResults@Database@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PBD@Z PROC ; CvDatabaseUtility::PrepareResults, COMDAT
 ; _this$ = ecx
@@ -8090,7 +8090,7 @@ _szStmt$ = 12						; size = 4
 	mov	ebx, ecx
 	call	DWORD PTR __imp_??2Results@Database@@SAPAXI@Z
 	add	esp, 4
-	mov	DWORD PTR $T226014[esp+24], eax
+	mov	DWORD PTR $T226056[esp+24], eax
 	mov	DWORD PTR __$EHRec$[esp+32], 0
 	test	eax, eax
 	je	SHORT $LN6@PrepareRes
@@ -8123,11 +8123,11 @@ $LN7@PrepareRes:
 	mov	ebp, DWORD PTR _strKey$[esp+24]
 	push	edi
 	push	ebp
-	lea	ecx, DWORD PTR $T226103[esp+32]
+	lea	ecx, DWORD PTR $T226145[esp+32]
 	push	ecx
 	mov	ecx, ebx
 	call	?lower_bound@?$_Hash@V?$_Hmap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@V?$hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@$0A@@stdext@@@stdext@@QAE?AV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@5@@Z ; stdext::_Hash<stdext::_Hmap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,Database::Results *,stdext::hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::less<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *> >,0> >::lower_bound
-	mov	edi, DWORD PTR $T226103[esp+28]
+	mov	edi, DWORD PTR $T226145[esp+28]
 	cmp	edi, DWORD PTR [ebx+8]
 	je	SHORT $LN8@PrepareRes
 	mov	ecx, DWORD PTR [edi+36]
@@ -8206,7 +8206,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?PrepareResults@CvDatabaseUtility@@QAEPAVResults@Database@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PBD@Z$0:
-	mov	eax, DWORD PTR $T226014[ebp]
+	mov	eax, DWORD PTR $T226056[ebp]
 	push	eax
 	call	DWORD PTR __imp_??3Results@Database@@SAXPAX@Z
 	pop	ecx
@@ -8236,9 +8236,9 @@ __ehfuncinfo$?PopulateArrayByExistence@CvDatabaseUtility@@QAE_NAAPA_NPBD1111@Z D
 xdata$x	ENDS
 ;	COMDAT ?PopulateArrayByExistence@CvDatabaseUtility@@QAE_NAAPA_NPBD1111@Z
 _TEXT	SEGMENT
-$T226217 = -556						; size = 4
+$T226259 = -556						; size = 4
 _strKey$ = -552						; size = 28
-_szSQL$217381 = -524					; size = 512
+_szSQL$217423 = -524					; size = 512
 __$EHRec$ = -12						; size = 12
 _pArray$ = 8						; size = 4
 _szTypeTableName$ = 12					; size = 4
@@ -8278,7 +8278,7 @@ _szFilterValue$ = 28					; size = 4
 ; 198  : 
 ; 199  : 	std::string strKey = "_PABE_";
 
-	push	OFFSET $SG217378
+	push	OFFSET $SG217420
 	lea	ecx, DWORD PTR _strKey$[esp+576]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 
@@ -8308,12 +8308,12 @@ _szFilterValue$ = 28					; size = 4
 
 	lea	edx, DWORD PTR _strKey$[esp+572]
 	push	edx
-	lea	eax, DWORD PTR $T226217[esp+576]
+	lea	eax, DWORD PTR $T226259[esp+576]
 	push	eax
 	mov	ecx, edi
 	call	?lower_bound@?$_Hash@V?$_Hmap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@V?$hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@$0A@@stdext@@@stdext@@QAE?AV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@5@@Z ; stdext::_Hash<stdext::_Hmap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,Database::Results *,stdext::hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::less<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *> >,0> >::lower_bound
 	mov	eax, DWORD PTR [edi+8]
-	mov	esi, DWORD PTR $T226217[esp+572]
+	mov	esi, DWORD PTR $T226259[esp+572]
 	cmp	esi, eax
 	je	SHORT $LN40@PopulateAr
 	mov	ecx, DWORD PTR [esi+36]
@@ -8339,8 +8339,8 @@ $LN40@PopulateAr:
 	push	ebx
 	push	eax
 	push	ebx
-	lea	ecx, DWORD PTR _szSQL$217381[esp+596]
-	push	OFFSET $SG217387
+	lea	ecx, DWORD PTR _szSQL$217423[esp+596]
+	push	OFFSET $SG217429
 	push	ecx
 	call	??$sprintf_s@$0CAA@@@YAHAAY0CAA@DPBDZZ	; sprintf_s<512>
 	add	esp, 32					; 00000020H
@@ -8348,7 +8348,7 @@ $LN40@PopulateAr:
 ; 209  : 
 ; 210  : 		pResults = PrepareResults(strKey, szSQL);
 
-	lea	edx, DWORD PTR _szSQL$217381[esp+572]
+	lea	edx, DWORD PTR _szSQL$217423[esp+572]
 	push	edx
 	lea	eax, DWORD PTR _strKey$[esp+576]
 	push	eax
@@ -8474,9 +8474,9 @@ __ehfuncinfo$?PopulateArrayByExistence@CvDatabaseUtility@@QAE_NAAPAHPBD1111@Z DD
 xdata$x	ENDS
 ;	COMDAT ?PopulateArrayByExistence@CvDatabaseUtility@@QAE_NAAPAHPBD1111@Z
 _TEXT	SEGMENT
-$T226366 = -556						; size = 4
+$T226387 = -556						; size = 4
 _strKey$ = -552						; size = 28
-_szSQL$217415 = -524					; size = 512
+_szSQL$217457 = -524					; size = 512
 __$EHRec$ = -12						; size = 12
 _pArray$ = 8						; size = 4
 _szTypeTableName$ = 12					; size = 4
@@ -8533,7 +8533,7 @@ $LN9@PopulateAr@2:
 ; 235  : 
 ; 236  : 	std::string strKey = "_PABE_";
 
-	push	OFFSET $SG217412
+	push	OFFSET $SG217454
 	lea	ecx, DWORD PTR _strKey$[esp+576]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 
@@ -8563,12 +8563,12 @@ $LN9@PopulateAr@2:
 
 	lea	ecx, DWORD PTR _strKey$[esp+572]
 	push	ecx
-	lea	edx, DWORD PTR $T226366[esp+576]
+	lea	edx, DWORD PTR $T226387[esp+576]
 	push	edx
 	mov	ecx, edi
 	call	?lower_bound@?$_Hash@V?$_Hmap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@V?$hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@$0A@@stdext@@@stdext@@QAE?AV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@5@@Z ; stdext::_Hash<stdext::_Hmap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,Database::Results *,stdext::hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::less<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *> >,0> >::lower_bound
 	mov	eax, DWORD PTR [edi+8]
-	mov	esi, DWORD PTR $T226366[esp+572]
+	mov	esi, DWORD PTR $T226387[esp+572]
 	cmp	esi, eax
 	je	SHORT $LN49@PopulateAr@2
 	mov	ecx, DWORD PTR [esi+36]
@@ -8594,15 +8594,15 @@ $LN49@PopulateAr@2:
 	push	ebp
 	push	edx
 	push	ebp
-	lea	eax, DWORD PTR _szSQL$217415[esp+596]
-	push	OFFSET $SG217416
+	lea	eax, DWORD PTR _szSQL$217457[esp+596]
+	push	OFFSET $SG217458
 	push	eax
 	call	??$sprintf_s@$0CAA@@@YAHAAY0CAA@DPBDZZ	; sprintf_s<512>
 	add	esp, 32					; 00000020H
 
 ; 246  : 		pResults = PrepareResults(strKey, szSQL);
 
-	lea	ecx, DWORD PTR _szSQL$217415[esp+572]
+	lea	ecx, DWORD PTR _szSQL$217457[esp+572]
 	push	ecx
 	lea	edx, DWORD PTR _strKey$[esp+576]
 	push	edx
@@ -8729,9 +8729,9 @@ __ehfuncinfo$?PopulateArrayByValue@CvDatabaseUtility@@QAE_NAAPAHPBD11111HH@Z DD 
 xdata$x	ENDS
 ;	COMDAT ?PopulateArrayByValue@CvDatabaseUtility@@QAE_NAAPAHPBD11111HH@Z
 _TEXT	SEGMENT
-$T226468 = -556						; size = 4
+$T226510 = -556						; size = 4
 _strKey$ = -552						; size = 28
-_szSQL$217443 = -524					; size = 512
+_szSQL$217485 = -524					; size = 512
 __$EHRec$ = -12						; size = 12
 _pArray$ = 8						; size = 4
 _szTypeTableName$ = 12					; size = 4
@@ -8783,7 +8783,7 @@ $LN8@PopulateAr@3:
 ; 272  : 
 ; 273  : 	std::string strKey = "_PABV_";
 
-	push	OFFSET $SG217440
+	push	OFFSET $SG217482
 	lea	ecx, DWORD PTR _strKey$[esp+576]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 
@@ -8820,12 +8820,12 @@ $LN8@PopulateAr@3:
 
 	lea	edx, DWORD PTR _strKey$[esp+572]
 	push	edx
-	lea	eax, DWORD PTR $T226468[esp+576]
+	lea	eax, DWORD PTR $T226510[esp+576]
 	push	eax
 	mov	ecx, edi
 	call	?lower_bound@?$_Hash@V?$_Hmap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@V?$hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@$0A@@stdext@@@stdext@@QAE?AV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVResults@Database@@@std@@@2@@std@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@5@@Z ; stdext::_Hash<stdext::_Hmap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,Database::Results *,stdext::hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::less<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,Database::Results *> >,0> >::lower_bound
 	mov	eax, DWORD PTR [edi+8]
-	mov	esi, DWORD PTR $T226468[esp+572]
+	mov	esi, DWORD PTR $T226510[esp+572]
 	cmp	esi, eax
 	je	SHORT $LN42@PopulateAr@3
 	mov	ecx, DWORD PTR [esi+36]
@@ -8853,15 +8853,15 @@ $LN42@PopulateAr@3:
 	push	eax
 	push	ecx
 	push	ebx
-	lea	edx, DWORD PTR _szSQL$217443[esp+600]
-	push	OFFSET $SG217444
+	lea	edx, DWORD PTR _szSQL$217485[esp+600]
+	push	OFFSET $SG217486
 	push	edx
 	call	??$sprintf_s@$0CAA@@@YAHAAY0CAA@DPBDZZ	; sprintf_s<512>
 	add	esp, 36					; 00000024H
 
 ; 284  : 		pResults = PrepareResults(strKey, szSQL);
 
-	lea	eax, DWORD PTR _szSQL$217443[esp+572]
+	lea	eax, DWORD PTR _szSQL$217485[esp+572]
 	push	eax
 	lea	ecx, DWORD PTR _strKey$[esp+576]
 	push	ecx
@@ -8994,14 +8994,14 @@ _iDefaultValue$ = 24					; size = 4
 	push	0
 	push	eax
 	mov	eax, DWORD PTR _szFilterColumn$[esp+4]
-	push	OFFSET $SG217463
+	push	OFFSET $SG217505
 	push	edx
 	mov	edx, DWORD PTR _szTableName$[esp+12]
 	push	eax
 	mov	eax, DWORD PTR _pFlavorsArray$[esp+16]
-	push	OFFSET $SG217464
+	push	OFFSET $SG217506
 	push	edx
-	push	OFFSET $SG217465
+	push	OFFSET $SG217507
 	push	eax
 	call	?PopulateArrayByValue@CvDatabaseUtility@@QAE_NAAPAHPBD11111HH@Z ; CvDatabaseUtility::PopulateArrayByValue
 
@@ -9028,14 +9028,14 @@ _szFilterValue$ = 20					; size = 4
 	mov	edx, DWORD PTR _szFilterColumn$[esp-4]
 	push	0
 	push	0
-	push	OFFSET $SG217473
+	push	OFFSET $SG217515
 	push	eax
 	mov	eax, DWORD PTR _szTableName$[esp+12]
 	push	edx
 	mov	edx, DWORD PTR _pYieldsArray$[esp+16]
-	push	OFFSET $SG217474
+	push	OFFSET $SG217516
 	push	eax
-	push	OFFSET $SG217475
+	push	OFFSET $SG217517
 	push	edx
 	call	?PopulateArrayByValue@CvDatabaseUtility@@QAE_NAAPAHPBD11111HH@Z ; CvDatabaseUtility::PopulateArrayByValue
 

@@ -3667,6 +3667,10 @@ CvBuildInfo::CvBuildInfo() :
 	m_bKill(false),
 	m_bRepair(false),
 	m_bRemoveRoute(false),
+	//EAP Civ req to builds
+	m_bSpecificCivRequired(false),
+	m_eRequiredCivilization(NO_CIVILIZATION),
+//
 	m_bWater(false),
 	m_bCanBeEmbarked(false),
 	m_paiFeatureTech(NULL),
@@ -3753,6 +3757,19 @@ bool CvBuildInfo::IsRemoveRoute() const
 {
 	return m_bRemoveRoute;
 }
+
+//EAP: Civ req builds
+//------------------------------------------------------------------------------
+bool CvBuildInfo::IsSpecificCivRequired() const
+{
+	return m_bSpecificCivRequired;
+}
+
+CivilizationTypes CvBuildInfo::GetRequiredCivilization() const
+{
+	return m_eRequiredCivilization;
+}
+
 //------------------------------------------------------------------------------
 bool CvBuildInfo::IsWater() const
 {
@@ -3829,6 +3846,15 @@ bool CvBuildInfo::CacheResults(Database::Results& kResults, CvDatabaseUtility& k
 	m_bRemoveRoute = kResults.GetBool("RemoveRoute");
 	m_bWater = kResults.GetBool("Water");
 	m_bCanBeEmbarked = kResults.GetBool("CanBeEmbarked");
+	//EAP: Adding Civ req to builds as well
+	m_bSpecificCivRequired = kResults.GetBool("SpecificCivRequired");
+
+	const char* szCivilizationType = kResults.GetText("CivilizationType");
+	m_eRequiredCivilization = (CivilizationTypes)GC.getInfoTypeForString(szCivilizationType, true);
+
+
+	///
+
 
 	const char* szPrereqTech = kResults.GetText("PrereqTech");
 	m_iTechPrereq = GC.getInfoTypeForString(szPrereqTech, true);

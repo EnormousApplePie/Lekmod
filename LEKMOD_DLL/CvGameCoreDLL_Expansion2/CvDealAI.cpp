@@ -560,7 +560,7 @@ bool CvDealAI::IsDealWithHumanAcceptable(CvDeal* pDeal, PlayerTypes eOtherPlayer
 	{
 #ifdef NQM_AI_GIMP_ALWAYS_WHITE_PEACE
 		int iPeaceValueRequired = GetCachedValueOfPeaceWithHuman();
-		if (GC.getGame().isOption("GAMEOPTION_AI_GIMP_ALWAYS_WHITE_PEACE") && iPeaceValueRequired > 0 && GET_PLAYER(eOtherPlayer).isHuman())
+		if ((GC.getGame().isOption("GAMEOPTION_AI_TWEAKS") || GC.getGame().isOption("GAMEOPTION_AI_GIMP_ALWAYS_WHITE_PEACE")) && iPeaceValueRequired > 0 && GET_PLAYER(eOtherPlayer).isHuman())
 			iPeaceValueRequired = 0;
 		if (iTotalValueToMe >= iPeaceValueRequired)
 #else
@@ -3276,7 +3276,19 @@ bool CvDealAI::IsOfferPeace(PlayerTypes eOtherPlayer, CvDeal* pDeal, bool bEqual
 		}
 
 		// Add the peace items to the deal so that we actually stop the war
+#ifdef AI_PEACE_TURNS
+		int iPeaceTreatyLength;
+		if (GET_PLAYER(eMyPlayer).isHuman() && GET_PLAYER(eOtherPlayer).isHuman())
+		{
+			iPeaceTreatyLength = GC.getGame().getGameSpeedInfo().getPeaceDealDuration();
+		}
+		else
+		{
+			iPeaceTreatyLength = 5 /*GC.getGame().getGameSpeedInfo().getPeaceDealDuration()*/;
+		}
+#else
 		int iPeaceTreatyLength = GC.getGame().getGameSpeedInfo().getPeaceDealDuration();
+#endif
 		pDeal->AddPeaceTreaty(eMyPlayer, iPeaceTreatyLength);
 		pDeal->AddPeaceTreaty(eOtherPlayer, iPeaceTreatyLength);
 
@@ -3324,7 +3336,19 @@ bool CvDealAI::IsOfferPeace(PlayerTypes eOtherPlayer, CvDeal* pDeal, bool bEqual
 			DoAddPlayersAlliesToTreaty(eOtherPlayer, pDeal);
 		}
 
+#ifdef AI_PEACE_TURNS
+		int iPeaceTreatyLength;
+		if (GET_PLAYER(eMyPlayer).isHuman() && GET_PLAYER(eOtherPlayer).isHuman())
+		{
+			iPeaceTreatyLength = GC.getGame().getGameSpeedInfo().getPeaceDealDuration();
+		}
+		else
+		{
+			iPeaceTreatyLength = 5 /*GC.getGame().getGameSpeedInfo().getPeaceDealDuration()*/;
+		}
+#else
 		int iPeaceTreatyLength = GC.getGame().getGameSpeedInfo().getPeaceDealDuration();
+#endif
 		pDeal->AddPeaceTreaty(eMyPlayer, iPeaceTreatyLength);
 		pDeal->AddPeaceTreaty(eOtherPlayer, iPeaceTreatyLength);
 
@@ -3976,8 +4000,22 @@ void CvDealAI::DoTradeScreenOpened()
 			// Now add peace items to the UI deal so that it's ready for us to make an offer
 			pkUIDeal->SetFromPlayer(eActivePlayer);	// The order of these is very important!
 			pkUIDeal->SetToPlayer(eMyPlayer);	// The order of these is very important!
+#ifdef AI_PEACE_TURNS
+			int iPeaceTreatyLength;
+			if (GET_PLAYER(eMyPlayer).isHuman() && GET_PLAYER(eActivePlayer).isHuman())
+			{
+				iPeaceTreatyLength = GC.getGame().getGameSpeedInfo().getPeaceDealDuration();
+			}
+			else
+			{
+				iPeaceTreatyLength = 5 /*GC.getGame().getGameSpeedInfo().getPeaceDealDuration()*/;
+			}
+			pkUIDeal->AddPeaceTreaty(eMyPlayer, iPeaceTreatyLength);
+			pkUIDeal->AddPeaceTreaty(eActivePlayer, iPeaceTreatyLength);
+#else
 			pkUIDeal->AddPeaceTreaty(eMyPlayer, GC.getGame().getGameSpeedInfo().getPeaceDealDuration());
 			pkUIDeal->AddPeaceTreaty(eActivePlayer, GC.getGame().getGameSpeedInfo().getPeaceDealDuration());
+#endif
 			
 			// slewis - adding third party city-states into the deal automatically
 			DoAddPlayersAlliesToTreaty(eActivePlayer, pkUIDeal);

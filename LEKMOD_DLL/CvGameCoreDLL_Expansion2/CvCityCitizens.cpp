@@ -999,6 +999,12 @@ bool CvCityCitizens::IsAIWantSpecialistRightNow()
 					{
 						iWeight *= 3;
 					}
+#ifdef LEK_TRAIT_SPECIALIST_YIELD_MAX_ONE
+					if(GetPlayer()->GetPlayerTraits()->GetAnySpecificSpecialistYieldChange(eSpecialist, YIELD_SCIENCE) > 0)
+					{
+						iWeight *= 3;
+					}
+#endif
 				}
 			}
 		}
@@ -1035,6 +1041,12 @@ bool CvCityCitizens::IsAIWantSpecialistRightNow()
 						{
 							iWeight *= 2;
 						}
+#ifdef LEK_TRAIT_SPECIALIST_YIELD_MAX_ONE
+						if(GetPlayer()->GetPlayerTraits()->GetAnySpecificSpecialistYieldChange(eSpecialist, YIELD_PRODUCTION) > 0)
+						{
+							iWeight *= 2;
+						}
+#endif
 					}
 				}
 			}
@@ -1131,6 +1143,12 @@ bool CvCityCitizens::IsAIWantSpecialistRightNow()
 						{
 							iWeight *= 2;
 						}
+#ifdef LEK_TRAIT_SPECIALIST_YIELD_MAX_ONE
+						if(GetPlayer()->GetPlayerTraits()->GetAnySpecificSpecialistYieldChange(eSpecialist, YIELD_GOLD) > 0)
+						{
+							iWeight *= 2;
+						}
+#endif
 					}
 				}
 			}
@@ -3635,11 +3653,7 @@ int CvCityCitizens::GetSpecialistUpgradeThreshold(UnitClassTypes eUnitClass)
 }
 
 /// Create a GP!
-#ifdef AUI_DLLNETMESSAGEHANDLER_FIX_RESPAWN_PROPHET_IF_BEATEN_TO_LAST_RELIGION
-void CvCityCitizens::DoSpawnGreatPerson(UnitTypes eUnit, bool bIncrementCount, bool bCountAsProphet, bool bSpawnWithNoExpendedTrigger)
-#else
 void CvCityCitizens::DoSpawnGreatPerson(UnitTypes eUnit, bool bIncrementCount, bool bCountAsProphet)
-#endif
 {
 	CvAssert(eUnit != NO_UNIT);
 

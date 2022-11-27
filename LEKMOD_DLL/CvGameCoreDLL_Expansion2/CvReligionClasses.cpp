@@ -2455,7 +2455,21 @@ bool CvGameReligions::IsPreferredByCivInGame(ReligionTypes eReligion)
 /// Time to spawn a Great Prophet?
 bool CvGameReligions::CheckSpawnGreatProphet(CvPlayer& kPlayer)
 {
+#ifdef LEK_UNIQUE_FAITH_UNIT_FIX
+	UnitClassTypes eUnitClass = (UnitClassTypes) GC.getInfoTypeForString("UNITCLASS_PROPHET", true);
+	UnitTypes eUnit = (UnitTypes) kPlayer.getCivilizationInfo().getCivilizationUnits(eUnitClass);
+#else
 	UnitTypes eUnit = (UnitTypes)GC.getInfoTypeForString("UNIT_PROPHET", true);
+#endif
+
+
+#ifdef LEK_UNIQUE_FAITH_UNIT_FIX
+	
+	if (eUnitClass == NO_UNITCLASS)
+    {
+        return false;
+    }
+#endif
 	if (eUnit == NO_UNIT)
 	{
 		return false;
@@ -2499,7 +2513,11 @@ bool CvGameReligions::CheckSpawnGreatProphet(CvPlayer& kPlayer)
 
 	if(pSpawnCity != NULL && pSpawnCity->getOwner() == kPlayer.GetID())
 	{
+#ifdef LEK_UNIQUE_FAITH_UNIT_FIX
 		pSpawnCity->GetCityCitizens()->DoSpawnGreatPerson(eUnit, false /*bIncrementCount*/, true);
+#else
+		pSpawnCity->GetCityCitizens()->DoSpawnGreatPerson(eUnit, false /*bIncrementCount*/, true);
+#endif
 #ifdef NQ_SPAWN_PROPHETS_REMOVE_ONLY_REQUIRED_FAITH
 		kPlayer.ChangeFaith(-iCost);
 #else
@@ -2511,7 +2529,11 @@ bool CvGameReligions::CheckSpawnGreatProphet(CvPlayer& kPlayer)
 		pSpawnCity = kPlayer.getCapitalCity();
 		if(pSpawnCity != NULL)
 		{
-			pSpawnCity->GetCityCitizens()->DoSpawnGreatPerson(eUnit, false /*bIncrementCount*/, true);
+#ifdef LEK_UNIQUE_FAITH_UNIT_FIX
+		pSpawnCity->GetCityCitizens()->DoSpawnGreatPerson(eUnit, false /*bIncrementCount*/, true);
+#else
+		pSpawnCity->GetCityCitizens()->DoSpawnGreatPerson(eUnit, false /*bIncrementCount*/, true);
+#endif
 #ifdef NQ_SPAWN_PROPHETS_REMOVE_ONLY_REQUIRED_FAITH
 			kPlayer.ChangeFaith(-iCost);
 #else
@@ -5495,11 +5517,11 @@ CvCity *CvReligionAI::ChooseProphetConversionCity(bool bOnlyBetterThanEnhancingR
 			if(kLoopPlayer.isAlive() && iPlayerLoop != m_pPlayer->GetID())
 			{
 #ifdef NQM_AI_GIMP_NO_RELIGION_SPREAD
-				if (GC.getGame().isOption("GAMEOPTION_AI_GIMP_NO_RELIGION_SPREAD") && kLoopPlayer.isHuman())
+				if ((GC.getGame().isOption("GAMEOPTION_AI_TWEAKS") || GC.getGame().isOption("GAMEOPTION_AI_GIMP_NO_RELIGION_SPREAD")) && kLoopPlayer.isHuman())
 					continue;
 #endif
 #ifdef NQ_AI_GIMP_NO_MINOR_SPREAD // NQMP_Bing - AI cannot spread religion to City-States
-				if (GC.getGame().isOption("GAMEOPTION_AI_GIMP_NO_MINOR_RELIGION_SPREAD") && kLoopPlayer.isMinorCiv())
+				if ((GC.getGame().isOption("GAMEOPTION_AI_TWEAKS") || GC.getGame().isOption("GAMEOPTION_AI_GIMP_NO_MINOR_RELIGION_SPREAD")) && kLoopPlayer.isMinorCiv())
 					continue;
 #endif
 #ifdef AUI_RELIGION_FIX_CHOOSE_PROPHET_CONVERSION_CITY_HONOR_NONCONVERT_PROMISE
@@ -6631,7 +6653,7 @@ int CvReligionAI::ScoreCityForMissionary(CvCity* pCity, UnitHandle pUnit)
 	if (!GET_PLAYER(pCity->getOwner()).isMinorCiv())
 	{
 #ifdef NQM_AI_GIMP_NO_RELIGION_SPREAD
-		if (GC.getGame().isOption("GAMEOPTION_AI_GIMP_NO_RELIGION_SPREAD") && GET_PLAYER(pCity->getOwner()).isHuman())
+		if ((GC.getGame().isOption("GAMEOPTION_AI_TWEAKS") || GC.getGame().isOption("GAMEOPTION_AI_GIMP_NO_RELIGION_SPREAD")) && GET_PLAYER(pCity->getOwner()).isHuman())
 			return 0;
 #endif
 		if (m_pPlayer->GetDiplomacyAI()->IsPlayerAgreeNotToConvert(pCity->getOwner()))
@@ -6639,10 +6661,10 @@ int CvReligionAI::ScoreCityForMissionary(CvCity* pCity, UnitHandle pUnit)
 			return 0;
 		}
 	}
-#ifdef NQ_AI_GIMP_NO_MINOR_SPREAD // From Bing much love bro - AI cannot spread religion to City-States
+#ifdef NQ_AI_GIMP_NO_MINOR_SPREAD //EAP: From Bing with love - AI cannot spread religion to City-States
 	else
 	{
-		if (GC.getGame().isOption("GAMEOPTION_AI_GIMP_NO_MINOR_RELIGION_SPREAD"))
+		if (GC.getGame().isOption("GAMEOPTION_AI_TWEAKS") || GC.getGame().isOption("GAMEOPTION_AI_GIMP_NO_MINOR_RELIGION_SPREAD"))
 		{
 			return 0;
 		}
@@ -6830,8 +6852,8 @@ bool CvReligionAI::HaveNearbyConversionTarget(ReligionTypes eReligion, bool bCan
 		{
 			if(kPlayer.isMinorCiv())
 			{
-#ifdef NQ_AI_GIMP_NO_MINOR_SPREAD // NQMP_Bing - AI cannot spread religion to City-States
-				if (GC.getGame().isOption("GAMEOPTION_AI_GIMP_NO_MINOR_RELIGION_SPREAD"))
+#ifdef NQ_AI_GIMP_NO_MINOR_SPREAD //EAP:  NQMP_Bing - AI cannot spread religion to City-States
+				if (GC.getGame().isOption("GAMEOPTION_AI_TWEAKS") || GC.getGame().isOption("GAMEOPTION_AI_GIMP_NO_MINOR_RELIGION_SPREAD"))
 					continue;
 #endif
 				bStartedOwnReligion = false;
@@ -6841,7 +6863,7 @@ bool CvReligionAI::HaveNearbyConversionTarget(ReligionTypes eReligion, bool bCan
 				if (!kPlayer.isBarbarian())
 				{
 #ifdef NQM_AI_GIMP_NO_RELIGION_SPREAD
-					if (GC.getGame().isOption("GAMEOPTION_AI_GIMP_NO_RELIGION_SPREAD") && kPlayer.isHuman())
+					if ((GC.getGame().isOption("GAMEOPTION_AI_TWEAKS") || GC.getGame().isOption("GAMEOPTION_AI_GIMP_NO_RELIGION_SPREAD")) && kPlayer.isHuman())
 						continue;
 #endif
 					if (m_pPlayer->GetDiplomacyAI()->IsPlayerAgreeNotToConvert(ePlayer))

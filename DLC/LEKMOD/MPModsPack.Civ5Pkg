@@ -19,7 +19,12 @@
 		<Directory>UI</Directory>
 		<Directory>Mods</Directory>
 		<Directory>CultureOverview</Directory>
-		<Directory>NewUI</Directory>
 	</GameplaySkin>
-  </UISkin>	
+  </UISkin>
+  <!--  <EntryPoints>
+    <EntryPoint type="InGameUIAddin" file="InGameUIAddins/GTAS_PlaceCityItems.lua">
+      <Name>GTAS_PlaceCityItems</Name>
+      <Description>GTAS_PlaceCityItems</Description>
+    </EntryPoint>
+  </EntryPoints> -->
 </Civ5Package>

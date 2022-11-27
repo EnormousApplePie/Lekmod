@@ -386,7 +386,7 @@ BuildingTypes CvWonderProductionAI::ChooseWonder(bool bUseAsyncRandom, bool bAdj
 			CvBuildingEntry& kBuilding = *pkBuildingInfo;
 			const CvBuildingClassInfo& kBuildingClassInfo = kBuilding.GetBuildingClassInfo();
 #ifdef NQM_AI_GIMP_NO_WORLD_WONDERS
-			if (GC.getGame().isOption("GAMEOPTION_AI_GIMP_NO_WORLD_WONDER") && isWorldWonderClass(kBuildingClassInfo))
+			if ((GC.getGame().isOption("GAMEOPTION_AI_TWEAKS") || GC.getGame().isOption("GAMEOPTION_AI_GIMP_NO_WORLD_WONDER")) && isWorldWonderClass(kBuildingClassInfo))
 			{
 				continue;
 			}
@@ -546,7 +546,7 @@ BuildingTypes CvWonderProductionAI::ChooseWonderForGreatEngineer(bool bUseAsyncR
 		{
 			CvBuildingEntry& kBuilding = *pkBuildingInfo;
 #ifdef NQM_AI_GIMP_NO_WORLD_WONDERS
-			if (GC.getGame().isOption("GAMEOPTION_AI_GIMP_NO_WORLD_WONDER") && isWorldWonderClass(kBuilding.GetBuildingClassInfo()))
+			if ((GC.getGame().isOption("GAMEOPTION_AI_TWEAKS") || GC.getGame().isOption("GAMEOPTION_AI_GIMP_NO_WORLD_WONDER")) && isWorldWonderClass(kBuilding.GetBuildingClassInfo()))
 			{
 				continue;
 			}

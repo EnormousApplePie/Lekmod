@@ -10,27 +10,27 @@ INCLUDELIB MSVCRT
 INCLUDELIB OLDNAMES
 
 CONST	SEGMENT
-$SG217233 DB	'FRAC_WRAP_X', 00H
-$SG217235 DB	'FRAC_WRAP_Y', 00H
-$SG217237 DB	'FRAC_PERCENT', 00H
+$SG217275 DB	'FRAC_WRAP_X', 00H
+$SG217277 DB	'FRAC_WRAP_Y', 00H
+$SG217279 DB	'FRAC_PERCENT', 00H
 	ORG $+3
-$SG217239 DB	'FRAC_POLAR', 00H
+$SG217281 DB	'FRAC_POLAR', 00H
 	ORG $+1
-$SG217241 DB	'FRAC_CENTER_RIFT', 00H
+$SG217283 DB	'FRAC_CENTER_RIFT', 00H
 	ORG $+3
-$SG217243 DB	'FRAC_INVERT_HEIGHTS', 00H
-$SG217250 DB	'Fractal', 00H
-$SG217252 DB	'Fractal', 00H
-$SG217253 DB	'Create', 00H
+$SG217285 DB	'FRAC_INVERT_HEIGHTS', 00H
+$SG217292 DB	'Fractal', 00H
+$SG217294 DB	'Fractal', 00H
+$SG217295 DB	'Create', 00H
 	ORG $+1
-$SG217254 DB	'CreateRifts', 00H
-$SG217276 DB	'GetHeight', 00H
+$SG217296 DB	'CreateRifts', 00H
+$SG217318 DB	'GetHeight', 00H
 	ORG $+2
-$SG217277 DB	'BuildRidges', 00H
-$SG217278 DB	'__index', 00H
-$SG217279 DB	'__gc', 00H
+$SG217319 DB	'BuildRidges', 00H
+$SG217320 DB	'__index', 00H
+$SG217321 DB	'__gc', 00H
 	ORG $+3
-$SG217329 DB	'Invalid number of arguments.', 00H
+$SG217371 DB	'Invalid number of arguments.', 00H
 CONST	ENDS
 PUBLIC	?HasFlag@@YA_NPAUlua_State@@HPBD@Z		; HasFlag
 EXTRN	_lua_type:PROC
@@ -109,7 +109,7 @@ _idx$ = 12						; size = 4
 ; 42   : 
 ; 43   : 	if(HasFlag(L, idx, "FRAC_WRAP_X"))
 
-	push	OFFSET $SG217233
+	push	OFFSET $SG217275
 	push	edi
 	push	esi
 	mov	ebp, eax
@@ -129,7 +129,7 @@ $LN6@GetFractal:
 ; 45   : 
 ; 46   : 	if(HasFlag(L, idx, "FRAC_WRAP_Y"))
 
-	push	OFFSET $SG217235
+	push	OFFSET $SG217277
 	push	edi
 	push	esi
 	call	_lua_getfield
@@ -148,7 +148,7 @@ $LN5@GetFractal:
 ; 48   : 
 ; 49   : 	if(HasFlag(L, idx, "FRAC_PERCENT"))
 
-	push	OFFSET $SG217237
+	push	OFFSET $SG217279
 	push	edi
 	push	esi
 	call	_lua_getfield
@@ -167,7 +167,7 @@ $LN4@GetFractal:
 ; 51   : 
 ; 52   : 	if(HasFlag(L, idx, "FRAC_POLAR"))
 
-	push	OFFSET $SG217239
+	push	OFFSET $SG217281
 	push	edi
 	push	esi
 	call	_lua_getfield
@@ -186,7 +186,7 @@ $LN3@GetFractal:
 ; 54   : 
 ; 55   : 	if(HasFlag(L, idx, "FRAC_CENTER_RIFT"))
 
-	push	OFFSET $SG217241
+	push	OFFSET $SG217283
 	push	edi
 	push	esi
 	call	_lua_getfield
@@ -205,7 +205,7 @@ $LN2@GetFractal:
 ; 57   : 
 ; 58   : 	if(HasFlag(L, idx, "FRAC_INVERT_HEIGHTS"))
 
-	push	OFFSET $SG217243
+	push	OFFSET $SG217285
 	push	edi
 	push	esi
 	call	_lua_getfield
@@ -344,7 +344,7 @@ _L$ = 8							; size = 4
 ; 215  : 	default:
 ; 216  : 		luaL_error(L, "Invalid number of arguments.");
 
-	push	OFFSET $SG217329
+	push	OFFSET $SG217371
 	push	esi
 	call	_luaL_error
 	add	esp, 8
@@ -620,7 +620,7 @@ xdata$x	ENDS
 ;	COMDAT ?CreateFractal@CvLuaFractal@@KAPAVCvFractal@@PAUlua_State@@@Z
 _TEXT	SEGMENT
 _ptr$ = -20						; size = 4
-$T217400 = -16						; size = 4
+$T217442 = -16						; size = 4
 __$EHRec$ = -12						; size = 12
 _L$ = 8							; size = 4
 ?CreateFractal@CvLuaFractal@@KAPAVCvFractal@@PAUlua_State@@@Z PROC ; CvLuaFractal::CreateFractal, COMDAT
@@ -648,7 +648,7 @@ _L$ = 8							; size = 4
 
 ; 112  : 	CvFractal* pFractal = new(ptr) CvFractal();
 
-	mov	DWORD PTR $T217400[esp+28], eax
+	mov	DWORD PTR $T217442[esp+28], eax
 	mov	DWORD PTR __$EHRec$[esp+36], 0
 	test	eax, eax
 	je	SHORT $LN3@CreateFrac
@@ -693,7 +693,7 @@ $LN4@CreateFrac:
 
 ; 121  : 	lua_setfield(L, -2, "GetHeight");
 
-	push	OFFSET $SG217276
+	push	OFFSET $SG217318
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -715,7 +715,7 @@ $LN4@CreateFrac:
 
 ; 125  : 	lua_setfield(L, -2, "BuildRidges");
 
-	push	OFFSET $SG217277
+	push	OFFSET $SG217319
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -723,7 +723,7 @@ $LN4@CreateFrac:
 ; 126  : 
 ; 127  : 	lua_setfield(L, -2, "__index");
 
-	push	OFFSET $SG217278
+	push	OFFSET $SG217320
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -739,7 +739,7 @@ $LN4@CreateFrac:
 
 ; 131  : 	lua_setfield(L, -2, "__gc");
 
-	push	OFFSET $SG217279
+	push	OFFSET $SG217321
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -769,7 +769,7 @@ text$x	SEGMENT
 __unwindfunclet$?CreateFractal@CvLuaFractal@@KAPAVCvFractal@@PAUlua_State@@@Z$0:
 	mov	eax, DWORD PTR _ptr$[ebp]
 	push	eax
-	mov	ecx, DWORD PTR $T217400[ebp]
+	mov	ecx, DWORD PTR $T217442[ebp]
 	push	ecx
 	call	??3@YAXPAX0@Z				; operator delete
 	add	esp, 8
@@ -1052,7 +1052,7 @@ _L$ = 8							; size = 4
 ; 74   : 	lua_getglobal(L, "Fractal");
 
 	mov	esi, DWORD PTR _L$[esp]
-	push	OFFSET $SG217250
+	push	OFFSET $SG217292
 	push	-10002					; ffffd8eeH
 	push	esi
 	call	_lua_getfield
@@ -1088,7 +1088,7 @@ _L$ = 8							; size = 4
 
 ; 80   : 		lua_setglobal(L, "Fractal");
 
-	push	OFFSET $SG217252
+	push	OFFSET $SG217294
 	push	-10002					; ffffd8eeH
 	push	esi
 	call	_lua_setfield
@@ -1106,7 +1106,7 @@ $LN1@pRegister:
 
 ; 84   : 	lua_setfield(L, -2, "Create");
 
-	push	OFFSET $SG217253
+	push	OFFSET $SG217295
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -1121,7 +1121,7 @@ $LN1@pRegister:
 
 ; 87   : 	lua_setfield(L, -2, "CreateRifts");
 
-	push	OFFSET $SG217254
+	push	OFFSET $SG217296
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield

@@ -12,8 +12,8 @@ INCLUDELIB OLDNAMES
 PUBLIC	?NO_QUEST_DATA@CvMinorCivQuest@@2HB		; CvMinorCivQuest::NO_QUEST_DATA
 PUBLIC	?NO_TURN@CvMinorCivQuest@@2HB			; CvMinorCivQuest::NO_TURN
 CONST	SEGMENT
-$SG220744 DB	00H
-$SG220745 DB	00H
+$SG220786 DB	00H
+$SG220787 DB	00H
 CONST	ENDS
 _DATA	SEGMENT
 _V1_IndexToHash DD 0be9725c6H
@@ -1095,8 +1095,8 @@ __ehfuncinfo$?_Xlen@?$vector@UNotification@CvNotifications@@V?$allocator@UNotifi
 xdata$x	ENDS
 ;	COMDAT ?_Xlen@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@KAXXZ
 _TEXT	SEGMENT
-$T223227 = -80						; size = 28
-$T223226 = -52						; size = 40
+$T223269 = -80						; size = 28
+$T223268 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ?_Xlen@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@KAXXZ PROC ; std::vector<CvNotifications::Notification,std::allocator<CvNotifications::Notification> >::_Xlen, COMDAT
 
@@ -1112,22 +1112,22 @@ __$EHRec$ = -12						; size = 12
 ; 1260 : 		_THROW(length_error, "vector<T> too long");
 
 	push	OFFSET ??_C@_0BD@OLBABOEK@vector?$DMT?$DO?5too?5long?$AA@
-	lea	ecx, DWORD PTR $T223227[esp+84]
+	lea	ecx, DWORD PTR $T223269[esp+84]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T223226[esp+80]
+	lea	ecx, DWORD PTR $T223268[esp+80]
 	mov	DWORD PTR __$EHRec$[esp+88], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T223227[esp+80]
+	lea	eax, DWORD PTR $T223269[esp+80]
 	push	eax
-	lea	ecx, DWORD PTR $T223226[esp+96]
+	lea	ecx, DWORD PTR $T223268[esp+96]
 	mov	BYTE PTR __$EHRec$[esp+92], 1
-	mov	DWORD PTR $T223226[esp+84], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T223268[esp+84], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVlength_error@std@@
-	lea	ecx, DWORD PTR $T223226[esp+84]
+	lea	ecx, DWORD PTR $T223268[esp+84]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+96], 0
-	mov	DWORD PTR $T223226[esp+88], OFFSET ??_7length_error@std@@6B@
+	mov	DWORD PTR $T223268[esp+88], OFFSET ??_7length_error@std@@6B@
 	call	__CxxThrowException@8
 $LN13@Xlen:
 $LN12@Xlen:
@@ -1136,10 +1136,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Xlen@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@KAXXZ$0:
-	lea	ecx, DWORD PTR $T223227[ebp]
+	lea	ecx, DWORD PTR $T223269[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Xlen@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@KAXXZ$2:
-	lea	ecx, DWORD PTR $T223226[ebp]
+	lea	ecx, DWORD PTR $T223268[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Xlen@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@KAXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?_Xlen@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@KAXXZ
@@ -1413,8 +1413,8 @@ __TI2?AVbad_alloc@std@@ DD 00H
 xdata$x	ENDS
 ;	COMDAT ??$_Allocate@UNotification@CvNotifications@@@std@@YAPAUNotification@CvNotifications@@IPAU12@@Z
 _TEXT	SEGMENT
-$T223286 = -12						; size = 12
-$T223290 = 8						; size = 4
+$T223328 = -12						; size = 12
+$T223332 = 8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ??$_Allocate@UNotification@CvNotifications@@@std@@YAPAUNotification@CvNotifications@@IPAU12@@Z PROC ; std::_Allocate<CvNotifications::Notification>, COMDAT
@@ -1456,15 +1456,15 @@ $LN3@Allocate:
 
 ; 40   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T223290[esp+8]
+	lea	eax, DWORD PTR $T223332[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T223286[esp+16]
-	mov	DWORD PTR $T223290[esp+12], 0
+	lea	ecx, DWORD PTR $T223328[esp+16]
+	mov	DWORD PTR $T223332[esp+12], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T223286[esp+16]
+	lea	ecx, DWORD PTR $T223328[esp+16]
 	push	ecx
-	mov	DWORD PTR $T223286[esp+20], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T223328[esp+20], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN9@Allocate:
 $LN8@Allocate:
@@ -2141,7 +2141,7 @@ _eTeam$ = 8						; size = 4
 ; 31   : 		return m_aTeams[eTeam];
 
 	mov	eax, DWORD PTR _eTeam$[esp-4]
-	imul	eax, 2980				; 00000ba4H
+	imul	eax, 2984				; 00000ba8H
 	add	eax, DWORD PTR ?m_aTeams@CvTeam@@1PAV1@A ; CvTeam::m_aTeams
 
 ; 32   : 	}
@@ -2795,14 +2795,14 @@ _TEXT	SEGMENT
 
 ; 217  : 	m_strMessage = "";
 
-	push	OFFSET $SG220744
+	push	OFFSET $SG220786
 	lea	ecx, DWORD PTR [esi+8]
 	mov	DWORD PTR [esi], edi
 	call	DWORD PTR __imp_?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBD@Z
 
 ; 218  : 	m_strSummary = "";
 
-	push	OFFSET $SG220745
+	push	OFFSET $SG220787
 	lea	ecx, DWORD PTR [esi+36]
 	call	DWORD PTR __imp_?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBD@Z
 
@@ -4359,7 +4359,7 @@ PUBLIC	?GetNotificationStr@CvNotifications@@QAE?AVCvString@@H@Z ; CvNotification
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?GetNotificationStr@CvNotifications@@QAE?AVCvString@@H@Z
 _TEXT	SEGMENT
-$T223800 = -4						; size = 4
+$T223842 = -4						; size = 4
 ___$ReturnUdt$ = 8					; size = 4
 _iZeroBasedIndex$ = 12					; size = 4
 ?GetNotificationStr@CvNotifications@@QAE?AVCvString@@H@Z PROC ; CvNotifications::GetNotificationStr, COMDAT
@@ -4390,7 +4390,7 @@ _iZeroBasedIndex$ = 12					; size = 4
 
 	mov	eax, DWORD PTR [ecx+8]
 	mov	esi, DWORD PTR ___$ReturnUdt$[esp+4]
-	mov	DWORD PTR $T223800[esp+8], 0
+	mov	DWORD PTR $T223842[esp+8], 0
 	imul	edx, 92					; 0000005cH
 	lea	ecx, DWORD PTR [edx+eax+8]
 	push	ecx
@@ -4409,7 +4409,7 @@ PUBLIC	?GetNotificationSummary@CvNotifications@@QAE?AVCvString@@H@Z ; CvNotifica
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?GetNotificationSummary@CvNotifications@@QAE?AVCvString@@H@Z
 _TEXT	SEGMENT
-$T223818 = -4						; size = 4
+$T223860 = -4						; size = 4
 ___$ReturnUdt$ = 8					; size = 4
 _iZeroBasedIndex$ = 12					; size = 4
 ?GetNotificationSummary@CvNotifications@@QAE?AVCvString@@H@Z PROC ; CvNotifications::GetNotificationSummary, COMDAT
@@ -4440,7 +4440,7 @@ _iZeroBasedIndex$ = 12					; size = 4
 
 	mov	eax, DWORD PTR [ecx+8]
 	mov	esi, DWORD PTR ___$ReturnUdt$[esp+4]
-	mov	DWORD PTR $T223818[esp+8], 0
+	mov	DWORD PTR $T223860[esp+8], 0
 	imul	edx, 92					; 0000005cH
 	lea	ecx, DWORD PTR [edx+eax+36]
 	push	ecx
@@ -5829,7 +5829,7 @@ __ehfuncinfo$??$_Construct@UNotification@CvNotifications@@U12@@std@@YAXPAUNotifi
 xdata$x	ENDS
 ;	COMDAT ??$_Construct@UNotification@CvNotifications@@U12@@std@@YAXPAUNotification@CvNotifications@@ABU12@@Z
 _TEXT	SEGMENT
-$T224128 = -16						; size = 4
+$T224170 = -16						; size = 4
 __$EHRec$ = -12						; size = 12
 __Vptr$ = 8						; size = 4
 __Ptr$ = 8						; size = 4
@@ -5852,7 +5852,7 @@ __Val$ = 12						; size = 4
 
 ; 52   : 	::new (_Vptr) _T1(_Val);
 
-	mov	DWORD PTR $T224128[esp+16], ecx
+	mov	DWORD PTR $T224170[esp+16], ecx
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	ecx, ecx
 	je	SHORT $LN3@Construct
@@ -5873,7 +5873,7 @@ text$x	SEGMENT
 __unwindfunclet$??$_Construct@UNotification@CvNotifications@@U12@@std@@YAXPAUNotification@CvNotifications@@ABU12@@Z$0:
 	mov	eax, DWORD PTR __Vptr$[ebp-4]
 	push	eax
-	mov	ecx, DWORD PTR $T224128[ebp]
+	mov	ecx, DWORD PTR $T224170[ebp]
 	push	ecx
 	call	??3@YAXPAX0@Z				; operator delete
 	add	esp, 8
@@ -6402,41 +6402,41 @@ __unwindtable$?Activate@CvNotifications@@QAEXAAUNotification@1@@Z DD 0ffffffffH
 xdata$x	ENDS
 ;	COMDAT ?Activate@CvNotifications@@QAEXAAUNotification@1@@Z
 _TEXT	SEGMENT
-$T224558 = -584						; size = 4
-$T224310 = -584						; size = 4
-_pDllPlot$221278 = -580					; size = 4
-_pDllPlot$221141 = -580					; size = 4
-$T224312 = -580						; size = 4
-_pDllPlot$221120 = -580					; size = 4
-_pDllPlot$221090 = -580					; size = 4
-_pDllUnit$221191 = -576					; size = 4
-_iQuestFlags$221116 = -576				; size = 4
-$T224315 = -572						; size = 4
-$T224313 = -568						; size = 4
-$T224308 = -564						; size = 4
-$T224318 = -560						; size = 4
-_kPopup$221273 = -556					; size = 536
-_kPopup$221264 = -556					; size = 536
-_kPopup$221260 = -556					; size = 536
-_kPopup$221256 = -556					; size = 536
-_kPopup$221252 = -556					; size = 536
-_kPopup$221235 = -556					; size = 536
-_kPopup$221232 = -556					; size = 536
-_kPopup$221229 = -556					; size = 536
-_kPopup$221227 = -556					; size = 536
-_kPopup$221223 = -556					; size = 536
-_kPopup$221221 = -556					; size = 536
-_kPopup$221219 = -556					; size = 536
-_kPopup$221217 = -556					; size = 536
-_kPopupInfo$221131 = -556				; size = 536
+$T224600 = -584						; size = 4
+$T224352 = -584						; size = 4
+_pDllPlot$221320 = -580					; size = 4
+_pDllPlot$221183 = -580					; size = 4
+$T224354 = -580						; size = 4
+_pDllPlot$221162 = -580					; size = 4
+_pDllPlot$221132 = -580					; size = 4
+_pDllUnit$221233 = -576					; size = 4
+_iQuestFlags$221158 = -576				; size = 4
+$T224357 = -572						; size = 4
+$T224355 = -568						; size = 4
+$T224350 = -564						; size = 4
+$T224360 = -560						; size = 4
+_kPopup$221315 = -556					; size = 536
+_kPopup$221306 = -556					; size = 536
+_kPopup$221302 = -556					; size = 536
+_kPopup$221298 = -556					; size = 536
+_kPopup$221294 = -556					; size = 536
+_kPopup$221277 = -556					; size = 536
+_kPopup$221274 = -556					; size = 536
+_kPopup$221271 = -556					; size = 536
+_kPopup$221269 = -556					; size = 536
+_kPopup$221265 = -556					; size = 536
+_kPopup$221263 = -556					; size = 536
+_kPopup$221261 = -556					; size = 536
+_kPopup$221259 = -556					; size = 536
+_kPopupInfo$221173 = -556				; size = 536
+_kPopup$221169 = -556					; size = 536
+_kPopup$221156 = -556					; size = 536
+_kPopup$221154 = -556					; size = 536
+_kPopup$221152 = -556					; size = 536
+_kPopup$221144 = -556					; size = 536
 _kPopup$221127 = -556					; size = 536
-_kPopup$221114 = -556					; size = 536
-_kPopup$221112 = -556					; size = 536
-_kPopup$221110 = -556					; size = 536
-_kPopup$221102 = -556					; size = 536
-_kPopup$221085 = -556					; size = 536
-_kPopup$221082 = -556					; size = 536
-_pUnit$221136 = -20					; size = 8
+_kPopup$221124 = -556					; size = 536
+_pUnit$221178 = -20					; size = 8
 __$EHRec$ = -12						; size = 12
 _notification$ = 8					; size = 4
 ?Activate@CvNotifications@@QAEXAAUNotification@1@@Z PROC ; CvNotifications::Activate, COMDAT
@@ -6533,9 +6533,9 @@ _notification$ = 8					; size = 4
 ; 1089 : 			CvPopupInfo kPopup(BUTTONPOPUP_CHOOSE_ARCHAEOLOGY, m_ePlayer);
 
 	mov	ecx, DWORD PTR [edi]
-	mov	DWORD PTR _kPopup$221260[esp+600], ecx
+	mov	DWORD PTR _kPopup$221302[esp+600], ecx
 	or	eax, -1
-	mov	DWORD PTR _kPopup$221260[esp+620], 122879934 ; 0752ffbeH
+	mov	DWORD PTR _kPopup$221302[esp+620], 122879934 ; 0752ffbeH
 
 ; 1090 : 			GC.GetEngineUserInterface()->AddPopup(kPopup);
 ; 1091 : 		}
@@ -6571,11 +6571,11 @@ $LN12@Activate:
 ; 1064 : 			CvPopupInfo kPopup(BUTTONPOPUP_LEAGUE_OVERVIEW, eLeague);
 
 	or	eax, -1
-	mov	DWORD PTR _kPopup$221252[esp+600], esi
-	mov	DWORD PTR _kPopup$221252[esp+604], eax
-	mov	DWORD PTR _kPopup$221252[esp+608], eax
-	mov	BYTE PTR _kPopup$221252[esp+616], bl
-	mov	DWORD PTR _kPopup$221252[esp+620], 1104213538 ; 41d0f622H
+	mov	DWORD PTR _kPopup$221294[esp+600], esi
+	mov	DWORD PTR _kPopup$221294[esp+604], eax
+	mov	DWORD PTR _kPopup$221294[esp+608], eax
+	mov	BYTE PTR _kPopup$221294[esp+616], bl
+	mov	DWORD PTR _kPopup$221294[esp+620], 1104213538 ; 41d0f622H
 
 ; 1065 : 			GC.GetEngineUserInterface()->AddPopup(kPopup);
 ; 1066 : 		}
@@ -6600,14 +6600,14 @@ $LN23@Activate:
 	push	ecx
 	push	edx
 	push	80					; 00000050H
-	lea	ecx, DWORD PTR _kPopup$221229[esp+628]
+	lea	ecx, DWORD PTR _kPopup$221271[esp+628]
 	call	??0CvPopupInfo@@QAE@W4ButtonPopupTypes@@HHHH_N1@Z ; CvPopupInfo::CvPopupInfo
 
 ; 997  : 		strcpy(kPopup.szText, notification.m_strMessage);
 
 	mov	ecx, ebp
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
-	lea	edx, DWORD PTR _kPopup$221229[esp+624]
+	lea	edx, DWORD PTR _kPopup$221271[esp+624]
 $LL55@Activate:
 	mov	cl, BYTE PTR [eax]
 	mov	BYTE PTR [edx], cl
@@ -6678,7 +6678,7 @@ $LN15@Activate:
 	lea	ebp, DWORD PTR [ebx+eax]
 	call	?getTeam@CvPlayer@@QBE?AW4TeamTypes@@XZ	; CvPlayer::getTeam
 	mov	esi, eax
-	imul	esi, 2980				; 00000ba4H
+	imul	esi, 2984				; 00000ba8H
 	add	esi, DWORD PTR ?m_aTeams@CvTeam@@1PAV1@A ; CvTeam::m_aTeams
 	mov	ecx, ebp
 	call	?getTeam@CvPlayer@@QBE?AW4TeamTypes@@XZ	; CvPlayer::getTeam
@@ -6721,7 +6721,7 @@ $LN50@Activate:
 	push	eax
 	push	ecx
 	push	69					; 00000045H
-	lea	ecx, DWORD PTR _kPopup$221082[esp+628]
+	lea	ecx, DWORD PTR _kPopup$221124[esp+628]
 	call	??0CvPopupInfo@@QAE@W4ButtonPopupTypes@@HHHH_N1@Z ; CvPopupInfo::CvPopupInfo
 
 ; 819  : 		GC.GetEngineUserInterface()->AddPopup(kPopup);
@@ -6729,7 +6729,7 @@ $LN50@Activate:
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
 	mov	edx, DWORD PTR [ecx]
 	mov	edx, DWORD PTR [edx+180]
-	lea	eax, DWORD PTR _kPopup$221082[esp+600]
+	lea	eax, DWORD PTR _kPopup$221124[esp+600]
 	push	eax
 	call	edx
 
@@ -6766,7 +6766,7 @@ $LN31@Activate:
 	push	ecx
 	push	edx
 	push	75					; 0000004bH
-	lea	ecx, DWORD PTR _kPopup$221217[esp+628]
+	lea	ecx, DWORD PTR _kPopup$221259[esp+628]
 	call	??0CvPopupInfo@@QAE@W4ButtonPopupTypes@@HHHH_N1@Z ; CvPopupInfo::CvPopupInfo
 
 ; 948  : 			GC.GetEngineUserInterface()->AddPopup(kPopup);
@@ -6796,8 +6796,8 @@ $LN41@Activate:
 	mov	ecx, DWORD PTR [esi+76]
 	mov	edx, DWORD PTR [esi+68]
 	xor	ebx, ebx
-	mov	DWORD PTR _iQuestFlags$221116[esp+600], ecx
-	mov	DWORD PTR $T224558[esp+600], edx
+	mov	DWORD PTR _iQuestFlags$221158[esp+600], ecx
+	mov	DWORD PTR $T224600[esp+600], edx
 	cmp	edi, -2147483647			; 80000001H
 	je	$LN192@Activate
 	cmp	edx, -2147483647			; 80000001H
@@ -6826,7 +6826,7 @@ $LN143@Activate:
 	mov	edx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+52
 	mov	al, BYTE PTR [edx+4057]
 	mov	ebp, DWORD PTR [edx+4024]
-	mov	edx, DWORD PTR $T224558[esp+600]
+	mov	edx, DWORD PTR $T224600[esp+600]
 	cmp	al, bl
 	je	SHORT $LN153@Activate
 	cmp	edx, ebx
@@ -6866,14 +6866,14 @@ $LN153@Activate:
 ; 876  : 			auto_ptr<ICvPlot1> pDllPlot = GC.WrapPlotPointer(pPlot);
 
 	push	ecx
-	lea	ecx, DWORD PTR $T224310[esp+604]
+	lea	ecx, DWORD PTR $T224352[esp+604]
 	push	ecx
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?WrapPlotPointer@CvGlobals@@QAE?AV?$auto_ptr@VICvPlot1@@@std@@PAVCvPlot@@@Z ; CvGlobals::WrapPlotPointer
 	mov	edi, DWORD PTR [eax]
 	mov	DWORD PTR [eax], ebx
-	mov	DWORD PTR _pDllPlot$221120[esp+600], edi
-	mov	eax, DWORD PTR $T224310[esp+600]
+	mov	DWORD PTR _pDllPlot$221162[esp+600], edi
+	mov	eax, DWORD PTR $T224352[esp+600]
 	mov	DWORD PTR __$EHRec$[esp+608], 1
 	cmp	eax, ebx
 	je	SHORT $LN179@Activate
@@ -6931,7 +6931,7 @@ $LN192@Activate:
 	sub	esp, 28					; 0000001cH
 	lea	eax, DWORD PTR [esi+8]
 	mov	ecx, esp
-	mov	DWORD PTR $T224312[esp+628], esp
+	mov	DWORD PTR $T224354[esp+628], esp
 	push	eax
 	call	??0CvString@@QAE@ABV0@@Z
 	mov	edx, DWORD PTR [edi]
@@ -6942,11 +6942,11 @@ $LN192@Activate:
 ; 885  : 			CvPopupInfo kPopup(BUTTONPOPUP_CITY_STATE_MESSAGE, notification.m_iGameDataIndex, iQuestFlags);
 
 	mov	ecx, DWORD PTR [esi+72]
-	mov	edx, DWORD PTR _iQuestFlags$221116[esp+600]
-	mov	DWORD PTR _kPopup$221127[esp+600], ecx
-	mov	DWORD PTR _kPopup$221127[esp+604], edx
-	mov	BYTE PTR _kPopup$221127[esp+616], bl
-	mov	DWORD PTR _kPopup$221127[esp+620], 62	; 0000003eH
+	mov	edx, DWORD PTR _iQuestFlags$221158[esp+600]
+	mov	DWORD PTR _kPopup$221169[esp+600], ecx
+	mov	DWORD PTR _kPopup$221169[esp+604], edx
+	mov	BYTE PTR _kPopup$221169[esp+616], bl
+	mov	DWORD PTR _kPopup$221169[esp+620], 62	; 0000003eH
 
 ; 886  : 			GC.GetEngineUserInterface()->AddPopup(kPopup);
 ; 887  : 		}
@@ -7010,14 +7010,14 @@ $LN57@Activate:
 	mov	ecx, eax
 	call	?plot@CvCity@@QBEPAVCvPlot@@XZ		; CvCity::plot
 	push	eax
-	lea	eax, DWORD PTR $T224308[esp+604]
+	lea	eax, DWORD PTR $T224350[esp+604]
 	push	eax
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?WrapPlotPointer@CvGlobals@@QAE?AV?$auto_ptr@VICvPlot1@@@std@@PAVCvPlot@@@Z ; CvGlobals::WrapPlotPointer
 	mov	esi, DWORD PTR [eax]
 	mov	DWORD PTR [eax], ebx
-	mov	DWORD PTR _pDllPlot$221090[esp+600], esi
-	mov	eax, DWORD PTR $T224308[esp+600]
+	mov	DWORD PTR _pDllPlot$221132[esp+600], esi
+	mov	eax, DWORD PTR $T224350[esp+600]
 	mov	DWORD PTR __$EHRec$[esp+608], ebx
 	cmp	eax, ebx
 	je	SHORT $LN103@Activate
@@ -7077,7 +7077,7 @@ $LN49@Activate:
 	push	ecx
 	push	edx
 	push	1031589465				; 3d7cce59H
-	lea	ecx, DWORD PTR _kPopup$221085[esp+628]
+	lea	ecx, DWORD PTR _kPopup$221127[esp+628]
 	call	??0CvPopupInfo@@QAE@W4ButtonPopupTypes@@HHHH_N1@Z ; CvPopupInfo::CvPopupInfo
 
 ; 825  : 			GC.GetEngineUserInterface()->AddPopup(kPopup);
@@ -7186,14 +7186,14 @@ $LN10@Activate:
 ; 1079 : 			CvPopupInfo kPopup(BUTTONPOPUP_CULTURE_OVERVIEW);
 
 	or	eax, -1
-	mov	DWORD PTR _kPopup$221256[esp+600], eax
-	mov	DWORD PTR _kPopup$221256[esp+608], eax
-	mov	BYTE PTR _kPopup$221256[esp+616], bl
-	mov	DWORD PTR _kPopup$221256[esp+620], -401251415 ; e81563a9H
+	mov	DWORD PTR _kPopup$221298[esp+600], eax
+	mov	DWORD PTR _kPopup$221298[esp+608], eax
+	mov	BYTE PTR _kPopup$221298[esp+616], bl
+	mov	DWORD PTR _kPopup$221298[esp+620], -401251415 ; e81563a9H
 
 ; 1080 : 			kPopup.iData2 = 3; // Tab to select
 
-	mov	DWORD PTR _kPopup$221256[esp+604], 3
+	mov	DWORD PTR _kPopup$221298[esp+604], 3
 
 ; 1081 : 			GC.GetEngineUserInterface()->AddPopup(kPopup);
 ; 1082 : 		}
@@ -7223,7 +7223,7 @@ $LN45@Activate:
 	push	eax
 	push	ecx
 	push	68					; 00000044H
-	lea	ecx, DWORD PTR _kPopup$221110[esp+628]
+	lea	ecx, DWORD PTR _kPopup$221152[esp+628]
 	call	??0CvPopupInfo@@QAE@W4ButtonPopupTypes@@HHHH_N1@Z ; CvPopupInfo::CvPopupInfo
 
 ; 852  : 			strcpy_s(kPopup.szText, notification.m_strMessage);
@@ -7231,7 +7231,7 @@ $LN45@Activate:
 	mov	ecx, ebp
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
-	lea	edx, DWORD PTR _kPopup$221110[esp+628]
+	lea	edx, DWORD PTR _kPopup$221152[esp+628]
 	push	edx
 	call	??$strcpy_s@$0CAA@@@YAHAAY0CAA@DPBD@Z	; strcpy_s<512>
 	add	esp, 8
@@ -7251,10 +7251,10 @@ $LN28@Activate:
 
 	mov	ecx, DWORD PTR [edi]
 	xor	ebx, ebx
-	mov	DWORD PTR _kPopup$221221[esp+600], ecx
-	mov	DWORD PTR _kPopup$221221[esp+604], ebx
-	mov	DWORD PTR _kPopup$221221[esp+608], -1
-	mov	DWORD PTR _kPopup$221221[esp+620], 76	; 0000004cH
+	mov	DWORD PTR _kPopup$221263[esp+600], ecx
+	mov	DWORD PTR _kPopup$221263[esp+604], ebx
+	mov	DWORD PTR _kPopup$221263[esp+608], -1
+	mov	DWORD PTR _kPopup$221263[esp+620], 76	; 0000004cH
 
 ; 962  : 		GC.GetEngineUserInterface()->AddPopup(kPopup);
 ; 963  : 	}
@@ -7296,10 +7296,10 @@ $LN56@Activate:
 ; 1109 : 			LeagueProjectTypes eProject = (LeagueProjectTypes) notification.m_iExtraGameData;
 ; 1110 : 			CvPopupInfo kPopup(BUTTONPOPUP_LEAGUE_PROJECT_COMPLETED, eLeague, eProject);
 
-	mov	DWORD PTR _kPopup$221273[esp+600], eax
+	mov	DWORD PTR _kPopup$221315[esp+600], eax
 	mov	eax, DWORD PTR [esi+76]
-	mov	DWORD PTR _kPopup$221273[esp+608], -1
-	mov	DWORD PTR _kPopup$221273[esp+620], -895157342 ; caa4fba2H
+	mov	DWORD PTR _kPopup$221315[esp+608], -1
+	mov	DWORD PTR _kPopup$221315[esp+620], -895157342 ; caa4fba2H
 
 ; 1111 : 			GC.GetEngineUserInterface()->AddPopup(kPopup);
 ; 1112 : 		}
@@ -7334,7 +7334,7 @@ $LN22@Activate:
 	push	ecx
 	push	edx
 	push	81					; 00000051H
-	lea	ecx, DWORD PTR _kPopup$221232[esp+628]
+	lea	ecx, DWORD PTR _kPopup$221274[esp+628]
 	call	??0CvPopupInfo@@QAE@W4ButtonPopupTypes@@HHHH_N1@Z ; CvPopupInfo::CvPopupInfo
 
 ; 1007 : 			GC.GetEngineUserInterface()->AddPopup(kPopup);
@@ -7355,8 +7355,8 @@ $LN24@Activate:
 ; 989  : 		CvPopupInfo kPopup(BUTTONPOPUP_ESPIONAGE_OVERVIEW, m_ePlayer);
 
 	mov	ecx, DWORD PTR [edi]
-	mov	DWORD PTR _kPopup$221227[esp+600], ecx
-	mov	DWORD PTR _kPopup$221227[esp+620], 78	; 0000004eH
+	mov	DWORD PTR _kPopup$221269[esp+600], ecx
+	mov	DWORD PTR _kPopup$221269[esp+620], 78	; 0000004eH
 
 ; 990  : 		GC.GetEngineUserInterface()->AddPopup(kPopup);
 ; 991  : 	}
@@ -7388,9 +7388,9 @@ $LN6@Activate:
 ; 1098 : 			CvPopupInfo kPopup(BUTTONPOPUP_CHOOSE_IDEOLOGY, m_ePlayer);
 
 	mov	eax, DWORD PTR [edi]
-	mov	DWORD PTR _kPopup$221264[esp+600], eax
+	mov	DWORD PTR _kPopup$221306[esp+600], eax
 	or	eax, -1
-	mov	DWORD PTR _kPopup$221264[esp+620], -167467402 ; f604a676H
+	mov	DWORD PTR _kPopup$221306[esp+620], -167467402 ; f604a676H
 
 ; 1099 : 			GC.GetEngineUserInterface()->AddPopup(kPopup);
 ; 1100 : 		}
@@ -7416,30 +7416,30 @@ $LN43@Activate:
 ; 859  : 	{
 ; 860  : 		CvPopupInfo kPopup(BUTTONPOPUP_CHOOSEPOLICY, m_ePlayer);
 
-	mov	DWORD PTR _kPopup$221112[esp+620], 17	; 00000011H
+	mov	DWORD PTR _kPopup$221154[esp+620], 17	; 00000011H
 $LN468@Activate:
 	mov	eax, DWORD PTR [edi]
-	mov	DWORD PTR _kPopup$221112[esp+600], eax
+	mov	DWORD PTR _kPopup$221154[esp+600], eax
 $LN467@Activate:
 	or	eax, -1
 	xor	ebx, ebx
 $LN463@Activate:
-	mov	DWORD PTR _kPopup$221112[esp+608], eax
+	mov	DWORD PTR _kPopup$221154[esp+608], eax
 $LN466@Activate:
-	mov	DWORD PTR _kPopup$221112[esp+604], eax
+	mov	DWORD PTR _kPopup$221154[esp+604], eax
 $LN465@Activate:
-	mov	BYTE PTR _kPopup$221112[esp+616], bl
-	mov	DWORD PTR _kPopup$221112[esp+612], ebx
-	mov	BYTE PTR _kPopup$221112[esp+624], bl
+	mov	BYTE PTR _kPopup$221154[esp+616], bl
+	mov	DWORD PTR _kPopup$221154[esp+612], ebx
+	mov	BYTE PTR _kPopup$221154[esp+624], bl
 $LN470@Activate:
 
 ; 861  : 		GC.GetEngineUserInterface()->AddPopup(kPopup);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
-	mov	BYTE PTR _kPopup$221112[esp+617], bl
+	mov	BYTE PTR _kPopup$221154[esp+617], bl
 	mov	edx, DWORD PTR [ecx]
 	mov	edx, DWORD PTR [edx+180]
-	lea	eax, DWORD PTR _kPopup$221112[esp+600]
+	lea	eax, DWORD PTR _kPopup$221154[esp+600]
 	push	eax
 	call	edx
 
@@ -7474,7 +7474,7 @@ $LN46@Activate:
 	push	ecx
 	push	edx
 	push	11					; 0000000bH
-	lea	ecx, DWORD PTR _kPopup$221102[esp+628]
+	lea	ecx, DWORD PTR _kPopup$221144[esp+628]
 	call	??0CvPopupInfo@@QAE@W4ButtonPopupTypes@@HHHH_N1@Z ; CvPopupInfo::CvPopupInfo
 
 ; 843  : 		strcpy_s(kPopup.szText, notification.m_strMessage);
@@ -7482,7 +7482,7 @@ $LN46@Activate:
 	mov	ecx, ebp
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
-	lea	eax, DWORD PTR _kPopup$221102[esp+628]
+	lea	eax, DWORD PTR _kPopup$221144[esp+628]
 	push	eax
 	call	??$strcpy_s@$0CAA@@@YAHAAY0CAA@DPBD@Z	; strcpy_s<512>
 
@@ -7492,7 +7492,7 @@ $LN46@Activate:
 	mov	edx, DWORD PTR [ecx]
 	mov	edx, DWORD PTR [edx+180]
 	add	esp, 8
-	lea	eax, DWORD PTR _kPopup$221102[esp+600]
+	lea	eax, DWORD PTR _kPopup$221144[esp+600]
 	push	eax
 	call	edx
 
@@ -7542,7 +7542,7 @@ $LN64@Activate:
 	push	ecx
 	push	edx
 	push	82					; 00000052H
-	lea	ecx, DWORD PTR _kPopup$221235[esp+628]
+	lea	ecx, DWORD PTR _kPopup$221277[esp+628]
 	call	??0CvPopupInfo@@QAE@W4ButtonPopupTypes@@HHHH_N1@Z ; CvPopupInfo::CvPopupInfo
 
 ; 1017 : 			GC.GetEngineUserInterface()->AddPopup(kPopup);
@@ -7558,11 +7558,11 @@ $LN29@Activate:
 ; 954  : 		CvPopupInfo kPopup(BUTTONPOPUP_FOUND_PANTHEON, m_ePlayer, true /*bPantheonBelief*/);
 
 	mov	ecx, DWORD PTR [edi]
-	mov	DWORD PTR _kPopup$221219[esp+604], ebx
-	mov	DWORD PTR _kPopup$221219[esp+600], ecx
-	mov	DWORD PTR _kPopup$221219[esp+608], -1
+	mov	DWORD PTR _kPopup$221261[esp+604], ebx
+	mov	DWORD PTR _kPopup$221261[esp+600], ecx
+	mov	DWORD PTR _kPopup$221261[esp+608], -1
 	xor	ebx, ebx
-	mov	DWORD PTR _kPopup$221219[esp+620], 76	; 0000004cH
+	mov	DWORD PTR _kPopup$221261[esp+620], 76	; 0000004cH
 
 ; 955  : 		GC.GetEngineUserInterface()->AddPopup(kPopup);
 ; 956  : 	}
@@ -7592,12 +7592,12 @@ $LN36@Activate:
 	push	eax
 	call	?getUnit@CvPlayer@@QAEPAVCvUnit@@H@Z	; CvPlayer::getUnit
 	push	eax
-	lea	ecx, DWORD PTR _pUnit$221136[esp+604]
+	lea	ecx, DWORD PTR _pUnit$221178[esp+604]
 	call	??0?$FObjectHandle@VCvUnit@@@@QAE@PAVCvUnit@@@Z ; FObjectHandle<CvUnit>::FObjectHandle<CvUnit>
 
 ; 918  : 		if(pUnit)
 
-	mov	ebp, DWORD PTR _pUnit$221136[esp+600]
+	mov	ebp, DWORD PTR _pUnit$221178[esp+600]
 	xor	ebx, ebx
 	mov	DWORD PTR __$EHRec$[esp+608], 2
 	cmp	ebp, ebx
@@ -7618,14 +7618,14 @@ $LN36@Activate:
 ; 923  : 				auto_ptr<ICvPlot1> pDllPlot = GC.WrapPlotPointer(pPlot);
 
 	push	eax
-	lea	ecx, DWORD PTR $T224313[esp+604]
+	lea	ecx, DWORD PTR $T224355[esp+604]
 	push	ecx
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?WrapPlotPointer@CvGlobals@@QAE?AV?$auto_ptr@VICvPlot1@@@std@@PAVCvPlot@@@Z ; CvGlobals::WrapPlotPointer
 	mov	esi, DWORD PTR [eax]
 	mov	DWORD PTR [eax], ebx
-	mov	DWORD PTR _pDllPlot$221141[esp+600], esi
-	mov	eax, DWORD PTR $T224313[esp+600]
+	mov	DWORD PTR _pDllPlot$221183[esp+600], esi
+	mov	eax, DWORD PTR $T224355[esp+600]
 	mov	BYTE PTR __$EHRec$[esp+608], 3
 	cmp	eax, ebx
 	je	SHORT $LN269@Activate
@@ -7638,14 +7638,14 @@ $LN269@Activate:
 ; 924  : 				auto_ptr<ICvUnit1> pDllUnit = GC.WrapUnitPointer(pUnit.pointer());
 
 	push	ebp
-	lea	ecx, DWORD PTR $T224315[esp+604]
+	lea	ecx, DWORD PTR $T224357[esp+604]
 	push	ecx
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?WrapUnitPointer@CvGlobals@@QAE?AV?$auto_ptr@VICvUnit1@@@std@@PAVCvUnit@@@Z ; CvGlobals::WrapUnitPointer
 	mov	edi, DWORD PTR [eax]
 	mov	DWORD PTR [eax], ebx
-	mov	DWORD PTR _pDllUnit$221191[esp+600], edi
-	mov	eax, DWORD PTR $T224315[esp+600]
+	mov	DWORD PTR _pDllUnit$221233[esp+600], edi
+	mov	eax, DWORD PTR $T224357[esp+600]
 	mov	BYTE PTR __$EHRec$[esp+608], 4
 	cmp	eax, ebx
 	je	SHORT $LN282@Activate
@@ -7822,9 +7822,9 @@ $LN211@Activate:
 ; 898  : 		CvPopupInfo kPopupInfo(BUTTONPOPUP_CHOOSEPRODUCTION);
 
 	or	ecx, -1
-	mov	DWORD PTR _kPopupInfo$221131[esp+600], ecx
-	mov	DWORD PTR _kPopupInfo$221131[esp+604], ecx
-	mov	DWORD PTR _kPopupInfo$221131[esp+608], ecx
+	mov	DWORD PTR _kPopupInfo$221173[esp+600], ecx
+	mov	DWORD PTR _kPopupInfo$221173[esp+604], ecx
+	mov	DWORD PTR _kPopupInfo$221173[esp+608], ecx
 
 ; 899  : 
 ; 900  : 		kPopupInfo.iData1 = pCity->GetID();
@@ -7840,16 +7840,16 @@ $LN211@Activate:
 ; 910  : 		kPopupInfo.iData3 = iItemID;
 
 	mov	ecx, DWORD PTR [esi+76]
-	mov	DWORD PTR _kPopupInfo$221131[esp+612], ebx
-	mov	BYTE PTR _kPopupInfo$221131[esp+616], bl
-	mov	BYTE PTR _kPopupInfo$221131[esp+617], bl
-	mov	DWORD PTR _kPopupInfo$221131[esp+620], 16 ; 00000010H
-	mov	BYTE PTR _kPopupInfo$221131[esp+624], bl
+	mov	DWORD PTR _kPopupInfo$221173[esp+612], ebx
+	mov	BYTE PTR _kPopupInfo$221173[esp+616], bl
+	mov	BYTE PTR _kPopupInfo$221173[esp+617], bl
+	mov	DWORD PTR _kPopupInfo$221173[esp+620], 16 ; 00000010H
+	mov	BYTE PTR _kPopupInfo$221173[esp+624], bl
 	mov	edx, DWORD PTR [eax+120]
 	mov	eax, DWORD PTR [esi+72]
-	mov	DWORD PTR _kPopupInfo$221131[esp+600], edx
-	mov	DWORD PTR _kPopupInfo$221131[esp+604], eax
-	mov	DWORD PTR _kPopupInfo$221131[esp+608], ecx
+	mov	DWORD PTR _kPopupInfo$221173[esp+600], edx
+	mov	DWORD PTR _kPopupInfo$221173[esp+604], eax
+	mov	DWORD PTR _kPopupInfo$221173[esp+608], ecx
 
 ; 911  : 
 ; 912  : 		GC.GetEngineUserInterface()->AddPopup(kPopupInfo);
@@ -7863,7 +7863,7 @@ $LN42@Activate:
 ; 865  : 	{
 ; 866  : 		CvPopupInfo kPopup(BUTTONPOPUP_DIPLO_VOTE, m_ePlayer);
 
-	mov	DWORD PTR _kPopup$221114[esp+620], 65	; 00000041H
+	mov	DWORD PTR _kPopup$221156[esp+620], 65	; 00000041H
 
 ; 867  : 		GC.GetEngineUserInterface()->AddPopup(kPopup);
 ; 868  : 	}
@@ -7960,14 +7960,14 @@ $LN412@Activate:
 ; 1121 : 			auto_ptr<ICvPlot1> pDllPlot = GC.WrapPlotPointer(pPlot);
 
 	push	ecx
-	lea	eax, DWORD PTR $T224318[esp+604]
+	lea	eax, DWORD PTR $T224360[esp+604]
 	push	eax
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?WrapPlotPointer@CvGlobals@@QAE?AV?$auto_ptr@VICvPlot1@@@std@@PAVCvPlot@@@Z ; CvGlobals::WrapPlotPointer
 	mov	esi, DWORD PTR [eax]
 	mov	DWORD PTR [eax], ebx
-	mov	DWORD PTR _pDllPlot$221278[esp+600], esi
-	mov	eax, DWORD PTR $T224318[esp+600]
+	mov	DWORD PTR _pDllPlot$221320[esp+600], esi
+	mov	eax, DWORD PTR $T224360[esp+600]
 	mov	DWORD PTR __$EHRec$[esp+608], 5
 	cmp	eax, ebx
 	je	SHORT $LN434@Activate
@@ -8025,11 +8025,11 @@ $LN27@Activate:
 ; 973  : 		if(notification.m_eNotificationType == NOTIFICATION_FOUND_RELIGION)
 
 	cmp	eax, 2128612861				; 7ee00dfdH
-	mov	DWORD PTR _kPopup$221223[esp+600], edx
+	mov	DWORD PTR _kPopup$221265[esp+600], edx
 	sete	dl
-	mov	DWORD PTR _kPopup$221223[esp+620], 77	; 0000004dH
-	mov	DWORD PTR _kPopup$221223[esp+604], ecx
-	mov	BYTE PTR _kPopup$221223[esp+616], dl
+	mov	DWORD PTR _kPopup$221265[esp+620], 77	; 0000004dH
+	mov	DWORD PTR _kPopup$221265[esp+604], ecx
+	mov	BYTE PTR _kPopup$221265[esp+616], dl
 $LN457@Activate:
 
 ; 965  : 
@@ -8038,11 +8038,11 @@ $LN457@Activate:
 ; 968  : 	{
 ; 969  : 		CvPopupInfo kPopup(BUTTONPOPUP_FOUND_RELIGION, m_ePlayer);
 
-	mov	DWORD PTR _kPopup$221223[esp+608], -1
+	mov	DWORD PTR _kPopup$221265[esp+608], -1
 $LN459@Activate:
-	mov	BYTE PTR _kPopup$221223[esp+624], bl
-	mov	BYTE PTR _kPopup$221223[esp+617], bl
-	mov	DWORD PTR _kPopup$221223[esp+612], ebx
+	mov	BYTE PTR _kPopup$221265[esp+624], bl
+	mov	BYTE PTR _kPopup$221265[esp+617], bl
+	mov	DWORD PTR _kPopup$221265[esp+612], ebx
 $LN456@Activate:
 
 ; 974  : 		{
@@ -8057,7 +8057,7 @@ $LN456@Activate:
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
 	mov	eax, DWORD PTR [ecx]
 	mov	eax, DWORD PTR [eax+180]
-	lea	edx, DWORD PTR _kPopup$221223[esp+600]
+	lea	edx, DWORD PTR _kPopup$221265[esp+600]
 	push	edx
 	call	eax
 $LN51@Activate:
@@ -8077,22 +8077,22 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?Activate@CvNotifications@@QAEXAAUNotification@1@@Z$3:
-	lea	ecx, DWORD PTR _pDllPlot$221120[ebp]
+	lea	ecx, DWORD PTR _pDllPlot$221162[ebp]
 	jmp	??1?$auto_ptr@VICvPlot1@@@std@@QAE@XZ	; std::auto_ptr<ICvPlot1>::~auto_ptr<ICvPlot1>
 __unwindfunclet$?Activate@CvNotifications@@QAEXAAUNotification@1@@Z$1:
-	lea	ecx, DWORD PTR _pDllPlot$221090[ebp]
+	lea	ecx, DWORD PTR _pDllPlot$221132[ebp]
 	jmp	??1?$auto_ptr@VICvPlot1@@@std@@QAE@XZ	; std::auto_ptr<ICvPlot1>::~auto_ptr<ICvPlot1>
 __unwindfunclet$?Activate@CvNotifications@@QAEXAAUNotification@1@@Z$5:
-	lea	ecx, DWORD PTR _pUnit$221136[ebp]
+	lea	ecx, DWORD PTR _pUnit$221178[ebp]
 	jmp	??1?$FObjectHandle@VCvUnit@@@@QAE@XZ	; FObjectHandle<CvUnit>::~FObjectHandle<CvUnit>
 __unwindfunclet$?Activate@CvNotifications@@QAEXAAUNotification@1@@Z$7:
-	lea	ecx, DWORD PTR _pDllPlot$221141[ebp]
+	lea	ecx, DWORD PTR _pDllPlot$221183[ebp]
 	jmp	??1?$auto_ptr@VICvPlot1@@@std@@QAE@XZ	; std::auto_ptr<ICvPlot1>::~auto_ptr<ICvPlot1>
 __unwindfunclet$?Activate@CvNotifications@@QAEXAAUNotification@1@@Z$9:
-	lea	ecx, DWORD PTR _pDllUnit$221191[ebp]
+	lea	ecx, DWORD PTR _pDllUnit$221233[ebp]
 	jmp	??1?$auto_ptr@VICvUnit1@@@std@@QAE@XZ	; std::auto_ptr<ICvUnit1>::~auto_ptr<ICvUnit1>
 __unwindfunclet$?Activate@CvNotifications@@QAEXAAUNotification@1@@Z$11:
-	lea	ecx, DWORD PTR _pDllPlot$221278[ebp]
+	lea	ecx, DWORD PTR _pDllPlot$221320[ebp]
 	jmp	??1?$auto_ptr@VICvPlot1@@@std@@QAE@XZ	; std::auto_ptr<ICvPlot1>::~auto_ptr<ICvPlot1>
 __ehhandler$?Activate@CvNotifications@@QAEXAAUNotification@1@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?Activate@CvNotifications@@QAEXAAUNotification@1@@Z
@@ -9426,11 +9426,11 @@ $LN1@RemoveOlde:
 	imul	esi, 92					; 0000005cH
 	add	esi, DWORD PTR [edi+8]
 	or	ebp, -1
-	push	OFFSET $SG220744
+	push	OFFSET $SG220786
 	lea	ecx, DWORD PTR [esi+8]
 	mov	DWORD PTR [esi], ebp
 	call	DWORD PTR __imp_?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBD@Z
-	push	OFFSET $SG220745
+	push	OFFSET $SG220787
 	lea	ecx, DWORD PTR [esi+36]
 	call	DWORD PTR __imp_?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBD@Z
 	mov	DWORD PTR [esi+64], ebp
@@ -9634,9 +9634,9 @@ PUBLIC	??$unchecked_copy@PAUNotification@CvNotifications@@PAU12@@stdext@@YAPAUNo
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xutility
 ;	COMDAT ??$unchecked_copy@PAUNotification@CvNotifications@@PAU12@@stdext@@YAPAUNotification@CvNotifications@@PAU12@00@Z
 _TEXT	SEGMENT
-$T225535 = -4						; size = 1
-__Cat$225541 = -4					; size = 1
-$T225537 = -4						; size = 1
+$T225577 = -4						; size = 1
+__Cat$225583 = -4					; size = 1
+$T225579 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
@@ -9649,10 +9649,10 @@ __Dest$ = 16						; size = 4
 ; 3605 : 		return (_STD _Copy_opt(_CHECKED_BASE(_First), _CHECKED_BASE(_Last), _Dest,
 ; 3606 : 			_STD _Iter_random(_First, _Dest), _STD _Ptr_cat(_First, _Dest), _STD _Range_checked_iterator_tag()));
 
-	mov	BYTE PTR $T225535[esp+4], 0
-	mov	eax, DWORD PTR $T225535[esp+4]
-	mov	ecx, DWORD PTR __Cat$225541[esp+4]
-	mov	edx, DWORD PTR $T225537[esp+4]
+	mov	BYTE PTR $T225577[esp+4], 0
+	mov	eax, DWORD PTR $T225577[esp+4]
+	mov	ecx, DWORD PTR __Cat$225583[esp+4]
+	mov	edx, DWORD PTR $T225579[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -9688,8 +9688,8 @@ PUBLIC	??$_Move_backward_opt@PAUNotification@CvNotifications@@PAU12@Urandom_acce
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Move_backward_opt@PAUNotification@CvNotifications@@PAU12@Urandom_access_iterator_tag@std@@U_Undefined_move_tag@4@@std@@YAPAUNotification@CvNotifications@@PAU12@00Urandom_access_iterator_tag@0@U_Undefined_move_tag@0@U_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
-$T225553 = -4						; size = 1
-__Cat$225558 = -4					; size = 1
+$T225595 = -4						; size = 1
+__Cat$225600 = -4					; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
@@ -9706,9 +9706,9 @@ ___formal$ = 28						; size = 1
 ; 2754 : 		_First_dest_cat, _Ptr_cat(_First, _Dest), _Range_checked_iterator_tag());
 
 	mov	edx, DWORD PTR __First_dest_cat$[esp]
-	mov	BYTE PTR $T225553[esp+4], 0
-	mov	eax, DWORD PTR $T225553[esp+4]
-	mov	ecx, DWORD PTR __Cat$225558[esp+4]
+	mov	BYTE PTR $T225595[esp+4], 0
+	mov	eax, DWORD PTR $T225595[esp+4]
+	mov	ecx, DWORD PTR __Cat$225600[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -9762,9 +9762,9 @@ __ehfuncinfo$?construct@?$allocator@UNotification@CvNotifications@@@std@@QAEXPAU
 xdata$x	ENDS
 ;	COMDAT ?construct@?$allocator@UNotification@CvNotifications@@@std@@QAEXPAUNotification@CvNotifications@@ABU34@@Z
 _TEXT	SEGMENT
-$T225578 = -16						; size = 4
+$T225620 = -16						; size = 4
 __$EHRec$ = -12						; size = 12
-__Vptr$225584 = 8					; size = 4
+__Vptr$225626 = 8					; size = 4
 __Ptr$ = 8						; size = 4
 __Val$ = 12						; size = 4
 ?construct@?$allocator@UNotification@CvNotifications@@@std@@QAEXPAUNotification@CvNotifications@@ABU34@@Z PROC ; std::allocator<CvNotifications::Notification>::construct, COMDAT
@@ -9782,8 +9782,8 @@ __Val$ = 12						; size = 4
 ; 155  : 		_Construct(_Ptr, _Val);
 
 	mov	ecx, DWORD PTR __Ptr$[esp+12]
-	mov	DWORD PTR __Vptr$225584[esp+12], ecx
-	mov	DWORD PTR $T225578[esp+16], ecx
+	mov	DWORD PTR __Vptr$225626[esp+12], ecx
+	mov	DWORD PTR $T225620[esp+16], ecx
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	ecx, ecx
 	je	SHORT $LN5@construct
@@ -9802,9 +9802,9 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?construct@?$allocator@UNotification@CvNotifications@@@std@@QAEXPAUNotification@CvNotifications@@ABU34@@Z$0:
-	mov	eax, DWORD PTR __Vptr$225584[ebp-4]
+	mov	eax, DWORD PTR __Vptr$225626[ebp-4]
 	push	eax
-	mov	ecx, DWORD PTR $T225578[ebp]
+	mov	ecx, DWORD PTR $T225620[ebp]
 	push	ecx
 	call	??3@YAXPAX0@Z				; operator delete
 	add	esp, 8
@@ -9859,8 +9859,8 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 _newNotification$ = -104				; size = 92
 __$EHRec$ = -12						; size = 12
-$T225604 = 8						; size = 4
-_pDllPlot$220921 = 8					; size = 4
+$T225646 = 8						; size = 4
+_pDllPlot$220963 = 8					; size = 4
 _eNotificationType$ = 8					; size = 4
 _strMessage$ = 12					; size = 4
 _strSummary$ = 16					; size = 4
@@ -10232,7 +10232,7 @@ $LN75@Add:
 	push	12					; 0000000cH
 	call	??2CvDllPlot@@SAPAXI@Z			; CvDllPlot::operator new
 	add	esp, 4
-	mov	DWORD PTR $T225604[esp+116], eax
+	mov	DWORD PTR $T225646[esp+116], eax
 	mov	BYTE PTR __$EHRec$[esp+128], 1
 	test	eax, eax
 	je	SHORT $LN14@Add
@@ -10244,7 +10244,7 @@ $LN75@Add:
 $LN14@Add:
 	xor	edi, edi
 $LN15@Add:
-	mov	DWORD PTR _pDllPlot$220921[esp+116], edi
+	mov	DWORD PTR _pDllPlot$220963[esp+116], edi
 
 ; 462  : 					gDLL->GameplayDoFX(pDllPlot.get());
 
@@ -10349,13 +10349,13 @@ __unwindfunclet$?Add@CvNotifications@@QAEHW4NotificationTypes@@PBD1HHHH@Z$0:
 	lea	ecx, DWORD PTR _newNotification$[ebp]
 	jmp	??1Notification@CvNotifications@@QAE@XZ
 __unwindfunclet$?Add@CvNotifications@@QAEHW4NotificationTypes@@PBD1HHHH@Z$1:
-	mov	eax, DWORD PTR $T225604[ebp-4]
+	mov	eax, DWORD PTR $T225646[ebp-4]
 	push	eax
 	call	??3CvDllPlot@@SAXPAX@Z			; CvDllPlot::operator delete
 	pop	ecx
 	ret	0
 __unwindfunclet$?Add@CvNotifications@@QAEHW4NotificationTypes@@PBD1HHHH@Z$2:
-	lea	ecx, DWORD PTR _pDllPlot$220921[ebp-4]
+	lea	ecx, DWORD PTR _pDllPlot$220963[ebp-4]
 	jmp	??1?$auto_ptr@VICvPlot1@@@std@@QAE@XZ	; std::auto_ptr<ICvPlot1>::~auto_ptr<ICvPlot1>
 __ehhandler$?Add@CvNotifications@@QAEHW4NotificationTypes@@PBD1HHHH@Z:
 	mov	eax, OFFSET __ehfuncinfo$?Add@CvNotifications@@QAEHW4NotificationTypes@@PBD1HHHH@Z
@@ -10566,11 +10566,11 @@ PUBLIC	??$_Unchecked_move_backward@PAUNotification@CvNotifications@@PAU12@@stdex
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xutility
 ;	COMDAT ??$_Unchecked_move_backward@PAUNotification@CvNotifications@@PAU12@@stdext@@YAPAUNotification@CvNotifications@@PAU12@00@Z
 _TEXT	SEGMENT
-$T225971 = -4						; size = 1
+$T226013 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$225974 = 16					; size = 1
-$T225953 = 16						; size = 1
+__Cat$226016 = 16					; size = 1
+$T225995 = 16						; size = 1
 __Dest$ = 16						; size = 4
 ??$_Unchecked_move_backward@PAUNotification@CvNotifications@@PAU12@@stdext@@YAPAUNotification@CvNotifications@@PAU12@00@Z PROC ; stdext::_Unchecked_move_backward<CvNotifications::Notification *,CvNotifications::Notification *>, COMDAT
 
@@ -10581,10 +10581,10 @@ __Dest$ = 16						; size = 4
 ; 3695 : 		return (_STD _Move_backward_opt(_CHECKED_BASE(_First), _CHECKED_BASE(_Last), _Dest,
 ; 3696 : 			_STD _Iter_random(_First, _Dest), _STD _Move_cat(_Dest), _STD _Range_checked_iterator_tag()));
 
-	mov	ecx, DWORD PTR __Cat$225974[esp]
-	mov	edx, DWORD PTR $T225953[esp]
-	mov	BYTE PTR $T225971[esp+4], 0
-	mov	eax, DWORD PTR $T225971[esp+4]
+	mov	ecx, DWORD PTR __Cat$226016[esp]
+	mov	edx, DWORD PTR $T225995[esp]
+	mov	BYTE PTR $T226013[esp+4], 0
+	mov	eax, DWORD PTR $T226013[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -10667,10 +10667,10 @@ __ehfuncinfo$??$_Uninit_copy@PAUNotification@CvNotifications@@PAU12@V?$allocator
 xdata$x	ENDS
 ;	COMDAT ??$_Uninit_copy@PAUNotification@CvNotifications@@PAU12@V?$allocator@UNotification@CvNotifications@@@std@@@std@@YAPAUNotification@CvNotifications@@PAU12@00AAV?$allocator@UNotification@CvNotifications@@@0@U_Nonscalar_ptr_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
-$T226033 = -24						; size = 4
+$T226075 = -24						; size = 4
 __Next$ = -20						; size = 4
 __$EHRec$ = -16						; size = 16
-__Vptr$226030 = 8					; size = 4
+__Vptr$226072 = 8					; size = 4
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
@@ -10717,8 +10717,8 @@ $LL6@Uninit_cop:
 
 ; 131  : 		_Al.construct(_Dest, *_First);
 
-	mov	DWORD PTR __Vptr$226030[ebp], esi
-	mov	DWORD PTR $T226033[ebp], esi
+	mov	DWORD PTR __Vptr$226072[ebp], esi
+	mov	DWORD PTR $T226075[ebp], esi
 	mov	BYTE PTR __$EHRec$[ebp+12], 1
 	cmp	esi, ebx
 	je	SHORT $LN18@Uninit_cop
@@ -10778,9 +10778,9 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$??$_Uninit_copy@PAUNotification@CvNotifications@@PAU12@V?$allocator@UNotification@CvNotifications@@@std@@@std@@YAPAUNotification@CvNotifications@@PAU12@00AAV?$allocator@UNotification@CvNotifications@@@0@U_Nonscalar_ptr_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z$2:
-	mov	eax, DWORD PTR __Vptr$226030[ebp]
+	mov	eax, DWORD PTR __Vptr$226072[ebp]
 	push	eax
-	mov	ecx, DWORD PTR $T226033[ebp]
+	mov	ecx, DWORD PTR $T226075[ebp]
 	push	ecx
 	call	??3@YAXPAX0@Z				; operator delete
 	add	esp, 8
@@ -10978,11 +10978,11 @@ __ehfuncinfo$??$_Uninit_fill_n@PAUNotification@CvNotifications@@IU12@V?$allocato
 xdata$x	ENDS
 ;	COMDAT ??$_Uninit_fill_n@PAUNotification@CvNotifications@@IU12@V?$allocator@UNotification@CvNotifications@@@std@@@std@@YAXPAUNotification@CvNotifications@@IABU12@AAV?$allocator@UNotification@CvNotifications@@@0@U_Nonscalar_ptr_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
-$T226173 = -24						; size = 4
+$T226215 = -24						; size = 4
 __Next$ = -20						; size = 4
 __$EHRec$ = -16						; size = 16
 __First$ = 8						; size = 4
-__Vptr$226170 = 12					; size = 4
+__Vptr$226212 = 12					; size = 4
 __Count$ = 12						; size = 4
 __Val$ = 16						; size = 4
 __Al$ = 20						; size = 4
@@ -11032,8 +11032,8 @@ $LL6@Uninit_fil:
 
 ; 404  : 		_Al.construct(_First, _Val);
 
-	mov	DWORD PTR __Vptr$226170[ebp], esi
-	mov	DWORD PTR $T226173[ebp], esi
+	mov	DWORD PTR __Vptr$226212[ebp], esi
+	mov	DWORD PTR $T226215[ebp], esi
 	mov	BYTE PTR __$EHRec$[ebp+12], 1
 	cmp	esi, ebx
 	je	SHORT $LN18@Uninit_fil
@@ -11092,9 +11092,9 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$??$_Uninit_fill_n@PAUNotification@CvNotifications@@IU12@V?$allocator@UNotification@CvNotifications@@@std@@@std@@YAXPAUNotification@CvNotifications@@IABU12@AAV?$allocator@UNotification@CvNotifications@@@0@U_Nonscalar_ptr_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z$2:
-	mov	eax, DWORD PTR __Vptr$226170[ebp]
+	mov	eax, DWORD PTR __Vptr$226212[ebp]
 	push	eax
-	mov	ecx, DWORD PTR $T226173[ebp]
+	mov	ecx, DWORD PTR $T226215[ebp]
 	push	ecx
 	call	??3@YAXPAX0@Z				; operator delete
 	add	esp, 8
@@ -11108,8 +11108,8 @@ PUBLIC	??$unchecked_uninitialized_copy@PAUNotification@CvNotifications@@PAU12@V?
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$unchecked_uninitialized_copy@PAUNotification@CvNotifications@@PAU12@V?$allocator@UNotification@CvNotifications@@@std@@@stdext@@YAPAUNotification@CvNotifications@@PAU12@00AAV?$allocator@UNotification@CvNotifications@@@std@@@Z
 _TEXT	SEGMENT
-$T226212 = -4						; size = 1
-__Cat$226216 = -4					; size = 1
+$T226254 = -4						; size = 1
+__Cat$226258 = -4					; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
@@ -11125,9 +11125,9 @@ __Al$ = 20						; size = 4
 ; 822  : 		_STD _Ptr_cat(_First, _Dest), _STD _Range_checked_iterator_tag()));
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T226212[esp+4], 0
-	mov	eax, DWORD PTR $T226212[esp+4]
-	mov	ecx, DWORD PTR __Cat$226216[esp+4]
+	mov	BYTE PTR $T226254[esp+4], 0
+	mov	eax, DWORD PTR $T226254[esp+4]
+	mov	ecx, DWORD PTR __Cat$226258[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -11196,7 +11196,7 @@ PUBLIC	??$_Destroy_range@V?$allocator@UNotification@CvNotifications@@@std@@@std@
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xmemory
 ;	COMDAT ??$_Destroy_range@V?$allocator@UNotification@CvNotifications@@@std@@@std@@YAXPAUNotification@CvNotifications@@0AAV?$allocator@UNotification@CvNotifications@@@0@@Z
 _TEXT	SEGMENT
-__Cat$226232 = -4					; size = 1
+__Cat$226274 = -4					; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Al$ = 16						; size = 4
@@ -11208,7 +11208,7 @@ __Al$ = 16						; size = 4
 
 ; 225  : 	_Destroy_range(_First, _Last, _Al, _Ptr_cat(_First, _Last));
 
-	mov	eax, DWORD PTR __Cat$226232[esp+4]
+	mov	eax, DWORD PTR __Cat$226274[esp+4]
 	mov	ecx, DWORD PTR __Al$[esp]
 	mov	edx, DWORD PTR __Last$[esp]
 	push	eax
@@ -11229,8 +11229,8 @@ PUBLIC	??$unchecked_uninitialized_fill_n@PAUNotification@CvNotifications@@IU12@V
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ??$unchecked_uninitialized_fill_n@PAUNotification@CvNotifications@@IU12@V?$allocator@UNotification@CvNotifications@@@std@@@stdext@@YAXPAUNotification@CvNotifications@@IABU12@AAV?$allocator@UNotification@CvNotifications@@@std@@@Z
 _TEXT	SEGMENT
-$T226237 = -4						; size = 1
-__Cat$226241 = -4					; size = 1
+$T226279 = -4						; size = 1
+__Cat$226283 = -4					; size = 1
 __First$ = 8						; size = 4
 __Count$ = 12						; size = 4
 __Val$ = 16						; size = 4
@@ -11245,9 +11245,9 @@ __Al$ = 20						; size = 4
 ; 942  : 		_STD _Ptr_cat(_First, _First), _STD _Range_checked_iterator_tag());
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T226237[esp+4], 0
-	mov	eax, DWORD PTR $T226237[esp+4]
-	mov	ecx, DWORD PTR __Cat$226241[esp+4]
+	mov	BYTE PTR $T226279[esp+4], 0
+	mov	eax, DWORD PTR $T226279[esp+4]
+	mov	ecx, DWORD PTR __Cat$226283[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Val$[esp+4]
 	push	ecx
@@ -11269,10 +11269,10 @@ PUBLIC	??$_Uninit_move@PAUNotification@CvNotifications@@PAU12@V?$allocator@UNoti
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Uninit_move@PAUNotification@CvNotifications@@PAU12@V?$allocator@UNotification@CvNotifications@@@std@@U_Undefined_move_tag@4@@std@@YAPAUNotification@CvNotifications@@PAU12@00AAV?$allocator@UNotification@CvNotifications@@@0@U_Undefined_move_tag@0@U_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
-$T226255 = -4						; size = 1
+$T226297 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$226258 = 16					; size = 1
+__Cat$226300 = 16					; size = 1
 __Dest$ = 16						; size = 4
 __Al$ = 20						; size = 4
 ___formal$ = 24						; size = 1
@@ -11285,10 +11285,10 @@ ___formal$ = 28						; size = 1
 
 ; 207  : 	return (_STDEXT unchecked_uninitialized_copy(_First, _Last, _Dest, _Al));
 
-	mov	ecx, DWORD PTR __Cat$226258[esp]
+	mov	ecx, DWORD PTR __Cat$226300[esp]
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T226255[esp+4], 0
-	mov	eax, DWORD PTR $T226255[esp+4]
+	mov	BYTE PTR $T226297[esp+4], 0
+	mov	eax, DWORD PTR $T226297[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -11343,14 +11343,14 @@ PUBLIC	?_Destroy@?$vector@UNotification@CvNotifications@@V?$allocator@UNotificat
 ;	COMDAT ?_Destroy@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@IAEXPAUNotification@CvNotifications@@0@Z
 _TEXT	SEGMENT
 __First$ = 8						; size = 4
-__Cat$226289 = 12					; size = 1
+__Cat$226331 = 12					; size = 1
 __Last$ = 12						; size = 4
 ?_Destroy@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@IAEXPAUNotification@CvNotifications@@0@Z PROC ; std::vector<CvNotifications::Notification,std::allocator<CvNotifications::Notification> >::_Destroy, COMDAT
 ; _this$ = ecx
 
 ; 1119 : 		_Destroy_range(_First, _Last, this->_Alval);
 
-	mov	eax, DWORD PTR __Cat$226289[esp-4]
+	mov	eax, DWORD PTR __Cat$226331[esp-4]
 	mov	edx, DWORD PTR __First$[esp-4]
 	push	eax
 	push	ecx
@@ -11369,10 +11369,10 @@ PUBLIC	?_Ufill@?$vector@UNotification@CvNotifications@@V?$allocator@UNotificatio
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?_Ufill@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@IAEPAUNotification@CvNotifications@@PAU34@IABU34@@Z
 _TEXT	SEGMENT
-$T226305 = -4						; size = 1
+$T226346 = -4						; size = 1
 __Ptr$ = 8						; size = 4
 __Count$ = 12						; size = 4
-__Cat$226308 = 16					; size = 1
+__Cat$226350 = 16					; size = 1
 __Val$ = 16						; size = 4
 ?_Ufill@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@IAEPAUNotification@CvNotifications@@PAU34@IABU34@@Z PROC ; std::vector<CvNotifications::Notification,std::allocator<CvNotifications::Notification> >::_Ufill, COMDAT
 ; _this$ = ecx
@@ -11383,13 +11383,13 @@ __Val$ = 16						; size = 4
 
 ; 1254 : 		_STDEXT unchecked_uninitialized_fill_n(_Ptr, _Count, _Val, this->_Alval);
 
-	mov	edx, DWORD PTR __Cat$226308[esp]
+	mov	edx, DWORD PTR __Cat$226350[esp]
 	push	esi
 	mov	esi, DWORD PTR __Count$[esp+4]
 	push	edi
 	mov	edi, DWORD PTR __Ptr$[esp+8]
-	mov	BYTE PTR $T226305[esp+12], 0
-	mov	eax, DWORD PTR $T226305[esp+12]
+	mov	BYTE PTR $T226346[esp+12], 0
+	mov	eax, DWORD PTR $T226346[esp+12]
 	push	eax
 	mov	eax, DWORD PTR __Val$[esp+12]
 	push	edx
@@ -11419,10 +11419,10 @@ PUBLIC	??$_Unchecked_uninitialized_move@PAUNotification@CvNotifications@@PAU12@V
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ??$_Unchecked_uninitialized_move@PAUNotification@CvNotifications@@PAU12@V?$allocator@UNotification@CvNotifications@@@std@@@stdext@@YAPAUNotification@CvNotifications@@PAU12@00AAV?$allocator@UNotification@CvNotifications@@@std@@@Z
 _TEXT	SEGMENT
-$T226339 = -4						; size = 1
+$T226381 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$226343 = 16					; size = 1
+__Cat$226385 = 16					; size = 1
 __Dest$ = 16						; size = 4
 __Al$ = 20						; size = 4
 ??$_Unchecked_uninitialized_move@PAUNotification@CvNotifications@@PAU12@V?$allocator@UNotification@CvNotifications@@@std@@@stdext@@YAPAUNotification@CvNotifications@@PAU12@00AAV?$allocator@UNotification@CvNotifications@@@std@@@Z PROC ; stdext::_Unchecked_uninitialized_move<CvNotifications::Notification *,CvNotifications::Notification *,std::allocator<CvNotifications::Notification> >, COMDAT
@@ -11435,10 +11435,10 @@ __Al$ = 20						; size = 4
 ; 863  : 		_CHECKED_BASE(_Last), _Dest, _Al,
 ; 864  : 		_STD _Move_cat(_Dest), _STD _Range_checked_iterator_tag()));
 
-	mov	ecx, DWORD PTR __Cat$226343[esp]
+	mov	ecx, DWORD PTR __Cat$226385[esp]
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T226339[esp+4], 0
-	mov	eax, DWORD PTR $T226339[esp+4]
+	mov	BYTE PTR $T226381[esp+4], 0
+	mov	eax, DWORD PTR $T226381[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -11512,11 +11512,11 @@ __ehfuncinfo$?IsNotificationExpired@CvNotifications@@QAE_NH@Z DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?IsNotificationExpired@CvNotifications@@QAE_NH@Z
 _TEXT	SEGMENT
-_pUnit$221470 = -52					; size = 8
-$T226353 = -44						; size = 16
-$T226355 = -28						; size = 16
+_pUnit$221512 = -52					; size = 8
+$T226395 = -44						; size = 16
+$T226397 = -28						; size = 16
 __$EHRec$ = -12						; size = 12
-_pkPlayerTechs$221433 = 8				; size = 4
+_pkPlayerTechs$221475 = 8				; size = 4
 _iIndex$ = 8						; size = 4
 ?IsNotificationExpired@CvNotifications@@QAE_NH@Z PROC	; CvNotifications::IsNotificationExpired, COMDAT
 ; _this$ = ecx
@@ -11861,14 +11861,14 @@ $LN81@IsNotifica@3:
 
 ; 1731 : 		if (pkReligions->GetAvailableEnhancerBeliefs().size() == 0)
 
-	lea	eax, DWORD PTR $T226353[esp+68]
+	lea	eax, DWORD PTR $T226395[esp+68]
 	push	eax
 	mov	ecx, edi
 	call	?GetAvailableEnhancerBeliefs@CvGameReligions@@QAE?AV?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@XZ ; CvGameReligions::GetAvailableEnhancerBeliefs
 	mov	ecx, DWORD PTR [eax+8]
 	sub	ecx, DWORD PTR [eax+4]
 	test	ecx, -4					; fffffffcH
-	lea	ecx, DWORD PTR $T226353[esp+68]
+	lea	ecx, DWORD PTR $T226395[esp+68]
 	sete	bl
 	call	??1?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@QAE@XZ ; std::vector<enum BeliefTypes,std::allocator<enum BeliefTypes> >::~vector<enum BeliefTypes,std::allocator<enum BeliefTypes> >
 	test	bl, bl
@@ -11879,14 +11879,14 @@ $LN81@IsNotifica@3:
 
 ; 1733 : 		if (pkReligions->GetAvailableFollowerBeliefs().size() == 0)
 
-	lea	edx, DWORD PTR $T226355[esp+68]
+	lea	edx, DWORD PTR $T226397[esp+68]
 	push	edx
 	mov	ecx, edi
 	call	?GetAvailableFollowerBeliefs@CvGameReligions@@QAE?AV?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@XZ ; CvGameReligions::GetAvailableFollowerBeliefs
 	mov	ecx, DWORD PTR [eax+8]
 	sub	ecx, DWORD PTR [eax+4]
 	test	ecx, -4					; fffffffcH
-	lea	ecx, DWORD PTR $T226355[esp+68]
+	lea	ecx, DWORD PTR $T226397[esp+68]
 	sete	bl
 	call	??1?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@QAE@XZ ; std::vector<enum BeliefTypes,std::allocator<enum BeliefTypes> >::~vector<enum BeliefTypes,std::allocator<enum BeliefTypes> >
 	test	bl, bl
@@ -12549,7 +12549,7 @@ $LN63@IsNotifica@3:
 ; 1511 : 		if(pkPlayerTechs->GetCurrentResearch() != NO_TECH)
 
 	mov	ecx, ebx
-	mov	DWORD PTR _pkPlayerTechs$221433[esp+64], ebx
+	mov	DWORD PTR _pkPlayerTechs$221475[esp+64], ebx
 	call	?GetCurrentResearch@CvPlayerTechs@@QBE?AW4TechTypes@@XZ ; CvPlayerTechs::GetCurrentResearch
 	cmp	eax, -1
 
@@ -12624,7 +12624,7 @@ $LN57@IsNotifica@3:
 ; 1520 : 			{
 ; 1521 : 				if(!m_aNotifications[iNotificationIndex].m_bDismissed)
 
-	mov	ebx, DWORD PTR _pkPlayerTechs$221433[esp+64]
+	mov	ebx, DWORD PTR _pkPlayerTechs$221475[esp+64]
 $LN60@IsNotifica@3:
 
 ; 1531 : 			}
@@ -12832,12 +12832,12 @@ $LN33@IsNotifica@3:
 	push	edx
 	call	?getUnit@CvPlayer@@QAEPAVCvUnit@@H@Z	; CvPlayer::getUnit
 	push	eax
-	lea	ecx, DWORD PTR _pUnit$221470[esp+72]
+	lea	ecx, DWORD PTR _pUnit$221512[esp+72]
 	call	??0?$FObjectHandle@VCvUnit@@@@QAE@PAVCvUnit@@@Z ; FObjectHandle<CvUnit>::FObjectHandle<CvUnit>
 
 ; 1660 : 		if(!pUnit || !pUnit->isPromotionReady())
 
-	mov	esi, DWORD PTR _pUnit$221470[esp+68]
+	mov	esi, DWORD PTR _pUnit$221512[esp+68]
 	mov	DWORD PTR __$EHRec$[esp+76], 0
 	test	esi, esi
 	je	SHORT $LN31@IsNotifica@3
@@ -13155,7 +13155,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?IsNotificationExpired@CvNotifications@@QAE_NH@Z$0:
-	lea	ecx, DWORD PTR _pUnit$221470[ebp]
+	lea	ecx, DWORD PTR _pUnit$221512[ebp]
 	jmp	??1?$FObjectHandle@VCvUnit@@@@QAE@XZ	; FObjectHandle<CvUnit>::~FObjectHandle<CvUnit>
 __ehhandler$?IsNotificationExpired@CvNotifications@@QAE_NH@Z:
 	mov	eax, OFFSET __ehfuncinfo$?IsNotificationExpired@CvNotifications@@QAE_NH@Z
@@ -13167,11 +13167,11 @@ PUBLIC	?erase@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\vector
 ;	COMDAT ?erase@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@QAE?AV?$_Vector_iterator@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@2@V?$_Vector_const_iterator@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@2@0@Z
 _TEXT	SEGMENT
-$T227039 = 8						; size = 1
+$T227081 = 8						; size = 1
 ___$ReturnUdt$ = 8					; size = 4
-__Cat$227071 = 12					; size = 1
-__Cat$227043 = 12					; size = 1
-$T227041 = 12						; size = 1
+__Cat$227114 = 12					; size = 1
+__Cat$227085 = 12					; size = 1
+$T227083 = 12						; size = 1
 __First_arg$ = 12					; size = 4
 __Last_arg$ = 16					; size = 4
 ?erase@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@QAE?AV?$_Vector_iterator@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@2@V?$_Vector_const_iterator@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@2@0@Z PROC ; std::vector<CvNotifications::Notification,std::allocator<CvNotifications::Notification> >::erase, COMDAT
@@ -13210,12 +13210,12 @@ __Last_arg$ = 16					; size = 4
 
 	mov	ecx, DWORD PTR [esi+8]
 	push	edi
-	mov	BYTE PTR $T227039[esp+8], 0
-	mov	edi, DWORD PTR $T227039[esp+8]
+	mov	BYTE PTR $T227081[esp+8], 0
+	mov	edi, DWORD PTR $T227081[esp+8]
 	push	edi
-	mov	edi, DWORD PTR __Cat$227043[esp+12]
+	mov	edi, DWORD PTR __Cat$227085[esp+12]
 	push	edi
-	mov	edi, DWORD PTR $T227041[esp+16]
+	mov	edi, DWORD PTR $T227083[esp+16]
 	push	edi
 	push	eax
 	push	ecx
@@ -13228,7 +13228,7 @@ __Last_arg$ = 16					; size = 4
 
 	mov	ecx, DWORD PTR [esi+8]
 	mov	edi, eax
-	mov	eax, DWORD PTR __Cat$227071[esp+32]
+	mov	eax, DWORD PTR __Cat$227114[esp+32]
 	push	eax
 	push	esi
 	push	ecx
@@ -13262,7 +13262,7 @@ PUBLIC	?_Tidy@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?_Tidy@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@IAEXXZ
 _TEXT	SEGMENT
-__Cat$227099 = -4					; size = 1
+__Cat$227142 = -4					; size = 1
 ?_Tidy@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@IAEXXZ PROC ; std::vector<CvNotifications::Notification,std::allocator<CvNotifications::Notification> >::_Tidy, COMDAT
 ; _this$ = ecx
 
@@ -13286,7 +13286,7 @@ __Cat$227099 = -4					; size = 1
 ; 1130 : 
 ; 1131 : 			_Destroy(_Myfirst, _Mylast);
 
-	mov	ecx, DWORD PTR __Cat$227099[esp+8]
+	mov	ecx, DWORD PTR __Cat$227142[esp+8]
 	mov	edx, DWORD PTR [esi+8]
 	push	ecx
 	push	esi
@@ -13320,10 +13320,10 @@ PUBLIC	??$_Umove@PAUNotification@CvNotifications@@@?$vector@UNotification@CvNoti
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Umove@PAUNotification@CvNotifications@@@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@IAEPAUNotification@CvNotifications@@PAU23@00@Z
 _TEXT	SEGMENT
-$T227158 = -4						; size = 1
+$T227200 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$227161 = 16					; size = 1
+__Cat$227203 = 16					; size = 1
 __Ptr$ = 16						; size = 4
 ??$_Umove@PAUNotification@CvNotifications@@@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@IAEPAUNotification@CvNotifications@@PAU23@00@Z PROC ; std::vector<CvNotifications::Notification,std::allocator<CvNotifications::Notification> >::_Umove<CvNotifications::Notification *>, COMDAT
 ; _this$ = ecx
@@ -13336,9 +13336,9 @@ __Ptr$ = 16						; size = 4
 ; 1147 : 		return (_STDEXT _Unchecked_uninitialized_move(_First, _Last,
 ; 1148 : 			_Ptr, this->_Alval));
 
-	mov	edx, DWORD PTR __Cat$227161[esp]
-	mov	BYTE PTR $T227158[esp+4], 0
-	mov	eax, DWORD PTR $T227158[esp+4]
+	mov	edx, DWORD PTR __Cat$227203[esp]
+	mov	BYTE PTR $T227200[esp+4], 0
+	mov	eax, DWORD PTR $T227200[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Ptr$[esp+4]
 	push	edx
@@ -13566,7 +13566,7 @@ PUBLIC	??1?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvN
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\vector
 ;	COMDAT ??1?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@QAE@XZ
 _TEXT	SEGMENT
-__Cat$227238 = -4					; size = 1
+__Cat$227281 = -4					; size = 1
 ??1?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@QAE@XZ PROC ; std::vector<CvNotifications::Notification,std::allocator<CvNotifications::Notification> >::~vector<CvNotifications::Notification,std::allocator<CvNotifications::Notification> >, COMDAT
 ; _this$ = ecx
 
@@ -13581,7 +13581,7 @@ __Cat$227238 = -4					; size = 1
 	mov	eax, DWORD PTR [esi+4]
 	test	eax, eax
 	je	SHORT $LN12@vector@2
-	mov	ecx, DWORD PTR __Cat$227238[esp+8]
+	mov	ecx, DWORD PTR __Cat$227281[esp+8]
 	mov	edx, DWORD PTR [esi+8]
 	push	ecx
 	push	esi
@@ -13608,7 +13608,7 @@ PUBLIC	?clear@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?clear@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@QAEXXZ
 _TEXT	SEGMENT
-$T227252 = -4						; size = 4
+$T227294 = -4						; size = 4
 ?clear@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@QAEXXZ PROC ; std::vector<CvNotifications::Notification,std::allocator<CvNotifications::Notification> >::clear, COMDAT
 ; _this$ = ecx
 
@@ -13622,7 +13622,7 @@ $T227252 = -4						; size = 4
 	mov	edx, DWORD PTR [ecx+4]
 	push	eax
 	push	edx
-	lea	eax, DWORD PTR $T227252[esp+12]
+	lea	eax, DWORD PTR $T227294[esp+12]
 	push	eax
 	call	?erase@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@QAE?AV?$_Vector_iterator@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@2@V?$_Vector_const_iterator@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@2@0@Z ; std::vector<CvNotifications::Notification,std::allocator<CvNotifications::Notification> >::erase
 
@@ -13679,22 +13679,22 @@ __unwindtable$?_Insert_n@?$vector@UNotification@CvNotifications@@V?$allocator@UN
 xdata$x	ENDS
 ;	COMDAT ?_Insert_n@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@IAEXV?$_Vector_const_iterator@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@2@IABUNotification@CvNotifications@@@Z
 _TEXT	SEGMENT
-__Tmp$222214 = -108					; size = 92
+__Tmp$222256 = -108					; size = 92
 __$EHRec$ = -16						; size = 16
-__Tmp$222204 = 0					; size = 92
-__Ncopied$222191 = 92					; size = 4
+__Tmp$222246 = 0					; size = 92
+__Ncopied$222233 = 92					; size = 4
 _this$ = 96						; size = 4
 tv493 = 100						; size = 4
-__Whereoff$222190 = 100					; size = 4
-__Newvec$222189 = 104					; size = 4
-__Cat$227524 = 116					; size = 1
-__Cat$227492 = 116					; size = 1
-__Cat$227420 = 116					; size = 1
+__Whereoff$222232 = 100					; size = 4
+__Newvec$222231 = 104					; size = 4
+__Cat$227567 = 116					; size = 1
+__Cat$227534 = 116					; size = 1
+__Cat$227462 = 116					; size = 1
 __Where$ = 116						; size = 4
 tv527 = 120						; size = 4
 __Count$ = 120						; size = 4
-$T227488 = 124						; size = 1
-$T227416 = 124						; size = 1
+$T227530 = 124						; size = 1
+$T227458 = 124						; size = 1
 __Val$ = 124						; size = 4
 ?_Insert_n@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@IAEXV?$_Vector_const_iterator@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@2@IABUNotification@CvNotifications@@@Z PROC ; std::vector<CvNotifications::Notification,std::allocator<CvNotifications::Notification> >::_Insert_n, COMDAT
 ; _this$ = ecx
@@ -13815,7 +13815,7 @@ $LN9@Insert_n:
 
 	mov	ecx, DWORD PTR __Where$[ebp]
 	sub	ecx, DWORD PTR [esi+4]
-	mov	DWORD PTR __Newvec$222189[ebp], eax
+	mov	DWORD PTR __Newvec$222231[ebp], eax
 	mov	eax, -1307163959			; b21642c9H
 	imul	ecx
 	add	edx, ecx
@@ -13823,7 +13823,7 @@ $LN9@Insert_n:
 	mov	eax, edx
 	shr	eax, 31					; 0000001fH
 	add	eax, edx
-	mov	DWORD PTR __Whereoff$222190[ebp], eax
+	mov	DWORD PTR __Whereoff$222232[ebp], eax
 
 ; 1175 : 			int _Ncopied = 0;
 ; 1176 : 
@@ -13831,10 +13831,10 @@ $LN9@Insert_n:
 ; 1178 : 			_Ufill(_Newvec + _Whereoff, _Count, _Val);	// add new stuff
 
 	imul	eax, 92					; 0000005cH
-	add	eax, DWORD PTR __Newvec$222189[ebp]
+	add	eax, DWORD PTR __Newvec$222231[ebp]
 	xor	ecx, ecx
 	add	esp, 8
-	mov	DWORD PTR __Ncopied$222191[ebp], ecx
+	mov	DWORD PTR __Ncopied$222233[ebp], ecx
 	mov	DWORD PTR __$EHRec$[ebp+12], ecx
 	mov	ecx, DWORD PTR __Val$[ebp]
 	push	ecx
@@ -13847,42 +13847,42 @@ $LN9@Insert_n:
 ; 1180 : 			_Umove(this->_Myfirst, _VEC_ITER_BASE(_Where),
 ; 1181 : 				_Newvec);	// move prefix
 
-	mov	ecx, DWORD PTR __Cat$227420[ebp]
+	mov	ecx, DWORD PTR __Cat$227462[ebp]
 	mov	eax, DWORD PTR [esi+4]
-	mov	BYTE PTR $T227416[ebp], 0
-	mov	edx, DWORD PTR $T227416[ebp]
+	mov	BYTE PTR $T227458[ebp], 0
+	mov	edx, DWORD PTR $T227458[ebp]
 	push	edx
-	mov	edx, DWORD PTR __Newvec$222189[ebp]
+	mov	edx, DWORD PTR __Newvec$222231[ebp]
 	push	ecx
 	mov	ecx, DWORD PTR __Where$[ebp]
 	push	esi
 	push	edx
 	push	ecx
 	push	eax
-	mov	DWORD PTR __Ncopied$222191[ebp], 1
+	mov	DWORD PTR __Ncopied$222233[ebp], 1
 	call	??$_Uninit_copy@PAUNotification@CvNotifications@@PAU12@V?$allocator@UNotification@CvNotifications@@@std@@@std@@YAPAUNotification@CvNotifications@@PAU12@00AAV?$allocator@UNotification@CvNotifications@@@0@U_Nonscalar_ptr_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z ; std::_Uninit_copy<CvNotifications::Notification *,CvNotifications::Notification *,std::allocator<CvNotifications::Notification> >
 
 ; 1182 : 			++_Ncopied;
 ; 1183 : 			_Umove(_VEC_ITER_BASE(_Where), this->_Mylast,
 ; 1184 : 				_Newvec + (_Whereoff + _Count));	// move suffix
 
-	mov	edx, DWORD PTR __Whereoff$222190[ebp]
+	mov	edx, DWORD PTR __Whereoff$222232[ebp]
 	mov	ecx, DWORD PTR [esi+8]
 	lea	eax, DWORD PTR [edx+edi]
 	imul	eax, 92					; 0000005cH
-	add	eax, DWORD PTR __Newvec$222189[ebp]
+	add	eax, DWORD PTR __Newvec$222231[ebp]
 	add	esp, 24					; 00000018H
-	mov	BYTE PTR $T227488[ebp], 0
-	mov	edx, DWORD PTR $T227488[ebp]
+	mov	BYTE PTR $T227530[ebp], 0
+	mov	edx, DWORD PTR $T227530[ebp]
 	push	edx
-	mov	edx, DWORD PTR __Cat$227492[ebp]
+	mov	edx, DWORD PTR __Cat$227534[ebp]
 	push	edx
 	push	esi
 	push	eax
 	mov	eax, DWORD PTR __Where$[ebp]
 	push	ecx
 	push	eax
-	mov	DWORD PTR __Ncopied$222191[ebp], 2
+	mov	DWORD PTR __Ncopied$222233[ebp], 2
 	call	??$_Uninit_copy@PAUNotification@CvNotifications@@PAU12@V?$allocator@UNotification@CvNotifications@@@std@@@std@@YAPAUNotification@CvNotifications@@PAU12@00AAV?$allocator@UNotification@CvNotifications@@@0@U_Nonscalar_ptr_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z ; std::_Uninit_copy<CvNotifications::Notification *,CvNotifications::Notification *,std::allocator<CvNotifications::Notification> >
 
 ; 1192 : 			_CATCH_END
@@ -13912,7 +13912,7 @@ $LN9@Insert_n:
 ; 1196 : 				{	// destroy and deallocate old array
 ; 1197 : 				_Destroy(_Myfirst, _Mylast);
 
-	mov	edx, DWORD PTR __Cat$227524[ebp]
+	mov	edx, DWORD PTR __Cat$227567[ebp]
 	mov	ecx, DWORD PTR [esi+8]
 	push	edx
 	push	esi
@@ -13936,7 +13936,7 @@ $LN89@Insert_n:
 ; 1204 : 
 ; 1205 : 			_Myend = _Newvec + _Capacity;
 
-	mov	eax, DWORD PTR __Newvec$222189[ebp]
+	mov	eax, DWORD PTR __Newvec$222231[ebp]
 	imul	ebx, 92					; 0000005cH
 
 ; 1206 : 			_Mylast = _Newvec + _Count;
@@ -13956,13 +13956,13 @@ __catch$?_Insert_n@?$vector@UNotification@CvNotifications@@V?$allocator@UNotific
 ; 1185 : 			_CATCH_ALL
 ; 1186 : 			if (1 < _Ncopied)
 
-	mov	ebx, DWORD PTR __Ncopied$222191[ebp]
+	mov	ebx, DWORD PTR __Ncopied$222233[ebp]
 	cmp	ebx, 1
 
 ; 1187 : 				_Destroy(_Newvec, _Newvec + _Whereoff);
 
-	mov	esi, DWORD PTR __Whereoff$222190[ebp]
-	mov	edi, DWORD PTR __Newvec$222189[ebp]
+	mov	esi, DWORD PTR __Whereoff$222232[ebp]
+	mov	edi, DWORD PTR __Newvec$222231[ebp]
 	jle	SHORT $LN7@Insert_n
 	mov	ecx, DWORD PTR _this$[ebp]
 	mov	eax, esi
@@ -14026,7 +14026,7 @@ $LN10@Insert_n:
 
 	mov	ecx, DWORD PTR __Val$[ebp]
 	push	ecx
-	lea	ecx, DWORD PTR __Tmp$222204[ebp]
+	lea	ecx, DWORD PTR __Tmp$222246[ebp]
 	call	??0Notification@CvNotifications@@QAE@ABU01@@Z
 
 ; 1212 : 
@@ -14052,7 +14052,7 @@ $LN10@Insert_n:
 
 	mov	ecx, DWORD PTR [esi+8]
 	sub	ecx, DWORD PTR __Where$[ebp]
-	lea	edx, DWORD PTR __Tmp$222204[ebp]
+	lea	edx, DWORD PTR __Tmp$222246[ebp]
 	push	edx
 	mov	eax, -1307163959			; b21642c9H
 	imul	ecx
@@ -14085,7 +14085,7 @@ $LN10@Insert_n:
 ; 1231 : 				_Tmp);	// insert up to old end
 
 	mov	edx, DWORD PTR __Where$[ebp]
-	lea	ecx, DWORD PTR __Tmp$222204[ebp]
+	lea	ecx, DWORD PTR __Tmp$222246[ebp]
 	push	ecx
 	sub	esi, ebx
 	push	esi
@@ -14096,7 +14096,7 @@ $LN10@Insert_n:
 
 ; 1232 : 			}
 
-	lea	ecx, DWORD PTR __Tmp$222204[ebp]
+	lea	ecx, DWORD PTR __Tmp$222246[ebp]
 
 ; 1233 : 		else
 
@@ -14130,7 +14130,7 @@ $LN3@Insert_n:
 
 	mov	eax, DWORD PTR __Val$[ebp]
 	push	eax
-	lea	ecx, DWORD PTR __Tmp$222214[ebp]
+	lea	ecx, DWORD PTR __Tmp$222256[ebp]
 	call	??0Notification@CvNotifications@@QAE@ABU01@@Z
 
 ; 1236 : 
@@ -14169,7 +14169,7 @@ $LN3@Insert_n:
 ; 1247 : 			std::fill(_VEC_ITER_BASE(_Where), _VEC_ITER_BASE(_Where) + _Count,
 ; 1248 : 				_Tmp);	// insert into hole
 
-	lea	eax, DWORD PTR __Tmp$222214[ebp]
+	lea	eax, DWORD PTR __Tmp$222256[ebp]
 	push	eax
 	mov	eax, DWORD PTR __Where$[ebp]
 	add	edi, eax
@@ -14180,7 +14180,7 @@ $LN3@Insert_n:
 
 ; 1249 : 			}
 
-	lea	ecx, DWORD PTR __Tmp$222214[ebp]
+	lea	ecx, DWORD PTR __Tmp$222256[ebp]
 $LN100@Insert_n:
 	mov	DWORD PTR __$EHRec$[ebp+12], -1
 	call	??1Notification@CvNotifications@@QAE@XZ
@@ -14202,10 +14202,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Insert_n@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@IAEXV?$_Vector_const_iterator@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@2@IABUNotification@CvNotifications@@@Z$4:
-	lea	ecx, DWORD PTR __Tmp$222204[ebp]
+	lea	ecx, DWORD PTR __Tmp$222246[ebp]
 	jmp	??1Notification@CvNotifications@@QAE@XZ
 __unwindfunclet$?_Insert_n@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@IAEXV?$_Vector_const_iterator@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@2@IABUNotification@CvNotifications@@@Z$5:
-	lea	ecx, DWORD PTR __Tmp$222214[ebp]
+	lea	ecx, DWORD PTR __Tmp$222256[ebp]
 	jmp	??1Notification@CvNotifications@@QAE@XZ
 __ehhandler$?_Insert_n@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@IAEXV?$_Vector_const_iterator@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@2@IABUNotification@CvNotifications@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?_Insert_n@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@IAEXV?$_Vector_const_iterator@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@2@IABUNotification@CvNotifications@@@Z
@@ -14217,7 +14217,7 @@ PUBLIC	?Uninit@CvNotifications@@QAEXXZ			; CvNotifications::Uninit
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredll_expansion2\cvnotifications.cpp
 ;	COMDAT ?Uninit@CvNotifications@@QAEXXZ
 _TEXT	SEGMENT
-$T227604 = -4						; size = 4
+$T227646 = -4						; size = 4
 ?Uninit@CvNotifications@@QAEXXZ PROC			; CvNotifications::Uninit, COMDAT
 ; _this$ = ecx
 
@@ -14238,7 +14238,7 @@ $T227604 = -4						; size = 4
 	mov	edx, DWORD PTR [ecx+4]
 	push	eax
 	push	edx
-	lea	eax, DWORD PTR $T227604[esp+16]
+	lea	eax, DWORD PTR $T227646[esp+16]
 	push	eax
 	call	?erase@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@QAE?AV?$_Vector_iterator@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@2@V?$_Vector_const_iterator@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@2@0@Z ; std::vector<CvNotifications::Notification,std::allocator<CvNotifications::Notification> >::erase
 
@@ -14279,7 +14279,7 @@ xdata$x	ENDS
 ;	COMDAT ?resize@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@QAEXIUNotification@CvNotifications@@@Z
 _TEXT	SEGMENT
 __$EHRec$ = -12						; size = 12
-$T227629 = 8						; size = 4
+$T227671 = 8						; size = 4
 __Newsize$ = 8						; size = 4
 __Val$ = 12						; size = 92
 ?resize@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@QAEXIUNotification@CvNotifications@@@Z PROC ; std::vector<CvNotifications::Notification,std::allocator<CvNotifications::Notification> >::resize, COMDAT
@@ -14335,7 +14335,7 @@ $LN48@resize:
 	push	edi
 	add	edx, ebx
 	push	edx
-	lea	eax, DWORD PTR $T227629[esp+28]
+	lea	eax, DWORD PTR $T227671[esp+28]
 	push	eax
 	call	?erase@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@QAE?AV?$_Vector_iterator@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@2@V?$_Vector_const_iterator@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@2@0@Z ; std::vector<CvNotifications::Notification,std::allocator<CvNotifications::Notification> >::erase
 $LN1@resize:
@@ -14387,7 +14387,7 @@ xdata$x	ENDS
 ;	COMDAT ??0CvNotifications@@QAE@XZ
 _TEXT	SEGMENT
 _this$ = -20						; size = 4
-$T227938 = -16						; size = 4
+$T227980 = -16						; size = 4
 __$EHRec$ = -12						; size = 12
 ??0CvNotifications@@QAE@XZ PROC				; CvNotifications::CvNotifications, COMDAT
 ; _this$ = ecx
@@ -14418,7 +14418,7 @@ __$EHRec$ = -12						; size = 12
 	mov	edx, DWORD PTR [ecx+4]
 	push	eax
 	push	edx
-	lea	eax, DWORD PTR $T227938[esp+32]
+	lea	eax, DWORD PTR $T227980[esp+32]
 	push	eax
 	call	?erase@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@QAE?AV?$_Vector_iterator@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@2@V?$_Vector_const_iterator@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@2@0@Z ; std::vector<CvNotifications::Notification,std::allocator<CvNotifications::Notification> >::erase
 
@@ -14463,8 +14463,8 @@ xdata$x	ENDS
 ;	COMDAT ??1CvNotifications@@QAE@XZ
 _TEXT	SEGMENT
 _this$ = -20						; size = 4
-__Cat$228096 = -16					; size = 1
-$T228029 = -16						; size = 4
+__Cat$228139 = -16					; size = 1
+$T228071 = -16						; size = 4
 __$EHRec$ = -12						; size = 12
 ??1CvNotifications@@QAE@XZ PROC				; CvNotifications::~CvNotifications, COMDAT
 ; _this$ = ecx
@@ -14493,7 +14493,7 @@ __$EHRec$ = -12						; size = 12
 	mov	ecx, DWORD PTR [esi+4]
 	push	eax
 	push	ecx
-	lea	eax, DWORD PTR $T228029[esp+40]
+	lea	eax, DWORD PTR $T228071[esp+40]
 	push	eax
 	mov	ecx, esi
 	mov	DWORD PTR __$EHRec$[esp+52], ebp
@@ -14507,7 +14507,7 @@ __$EHRec$ = -12						; size = 12
 	mov	DWORD PTR __$EHRec$[esp+40], -1
 	cmp	eax, ebp
 	je	SHORT $LN31@CvNotifica
-	mov	ecx, DWORD PTR __Cat$228096[esp+32]
+	mov	ecx, DWORD PTR __Cat$228139[esp+32]
 	mov	edx, DWORD PTR [esi+8]
 	push	ecx
 	push	esi
@@ -14559,8 +14559,8 @@ __ehfuncinfo$?resize@?$vector@UNotification@CvNotifications@@V?$allocator@UNotif
 xdata$x	ENDS
 ;	COMDAT ?resize@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@QAEXI@Z
 _TEXT	SEGMENT
-$T228134 = -16						; size = 4
-$T228113 = -16						; size = 4
+$T228176 = -16						; size = 4
+$T228155 = -16						; size = 4
 __$EHRec$ = -12						; size = 12
 __Newsize$ = 8						; size = 4
 ?resize@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@QAEXI@Z PROC ; std::vector<CvNotifications::Notification,std::allocator<CvNotifications::Notification> >::resize, COMDAT
@@ -14582,9 +14582,9 @@ __Newsize$ = 8						; size = 4
 	sub	esp, 92					; 0000005cH
 	mov	esi, esp
 	mov	edi, ecx
-	mov	DWORD PTR $T228113[esp+116], esp
+	mov	DWORD PTR $T228155[esp+116], esp
 	lea	ecx, DWORD PTR [esi+8]
-	mov	DWORD PTR $T228134[esp+116], esi
+	mov	DWORD PTR $T228176[esp+116], esi
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 	lea	ecx, DWORD PTR [esi+36]
 	mov	DWORD PTR __$EHRec$[esp+124], 0
@@ -14607,7 +14607,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?resize@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@QAEXI@Z$1:
-	mov	ecx, DWORD PTR $T228134[ebp]
+	mov	ecx, DWORD PTR $T228176[ebp]
 	add	ecx, 8
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?resize@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@QAEXI@Z:
@@ -14620,8 +14620,8 @@ PUBLIC	?Init@CvNotifications@@QAEXW4PlayerTypes@@@Z	; CvNotifications::Init
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredll_expansion2\cvnotifications.cpp
 ;	COMDAT ?Init@CvNotifications@@QAEXW4PlayerTypes@@@Z
 _TEXT	SEGMENT
-$T228211 = -4						; size = 4
-_ui$220758 = -4						; size = 4
+$T228253 = -4						; size = 4
+_ui$220800 = -4						; size = 4
 tv303 = 8						; size = 4
 _ePlayer$ = 8						; size = 4
 ?Init@CvNotifications@@QAEXW4PlayerTypes@@@Z PROC	; CvNotifications::Init, COMDAT
@@ -14647,7 +14647,7 @@ _ePlayer$ = 8						; size = 4
 	mov	ecx, DWORD PTR [edi+4]
 	push	eax
 	push	ecx
-	lea	eax, DWORD PTR $T228211[esp+28]
+	lea	eax, DWORD PTR $T228253[esp+28]
 	push	eax
 	mov	ecx, edi
 	call	?erase@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@QAE?AV?$_Vector_iterator@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@2@V?$_Vector_const_iterator@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@2@0@Z ; std::vector<CvNotifications::Notification,std::allocator<CvNotifications::Notification> >::erase
@@ -14677,7 +14677,7 @@ _ePlayer$ = 8						; size = 4
 	mov	eax, edx
 	shr	eax, 31					; 0000001fH
 	add	eax, edx
-	mov	DWORD PTR _ui$220758[esp+20], esi
+	mov	DWORD PTR _ui$220800[esp+20], esi
 	je	SHORT $LN38@Init
 
 ; 244  : 	Uninit();
@@ -14690,11 +14690,11 @@ $LL39@Init:
 
 	mov	esi, DWORD PTR [ebp+8]
 	add	esi, DWORD PTR tv303[esp+16]
-	push	OFFSET $SG220744
+	push	OFFSET $SG220786
 	lea	ecx, DWORD PTR [esi+8]
 	mov	DWORD PTR [esi], ebx
 	call	DWORD PTR __imp_?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBD@Z
-	push	OFFSET $SG220745
+	push	OFFSET $SG220787
 	lea	ecx, DWORD PTR [esi+36]
 	call	DWORD PTR __imp_?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBD@Z
 	add	DWORD PTR tv303[esp+16], 92		; 0000005cH
@@ -14708,7 +14708,7 @@ $LL39@Init:
 	mov	BYTE PTR [esi+90], 0
 	mov	ecx, DWORD PTR [edi+8]
 	sub	ecx, DWORD PTR [edi+4]
-	mov	esi, DWORD PTR _ui$220758[esp+20]
+	mov	esi, DWORD PTR _ui$220800[esp+20]
 	mov	eax, -1307163959			; b21642c9H
 	imul	ecx
 	add	edx, ecx
@@ -14717,7 +14717,7 @@ $LL39@Init:
 	shr	ecx, 31					; 0000001fH
 	inc	esi
 	add	ecx, edx
-	mov	DWORD PTR _ui$220758[esp+20], esi
+	mov	DWORD PTR _ui$220800[esp+20], esi
 	cmp	esi, ecx
 	jb	SHORT $LL39@Init
 	pop	edi

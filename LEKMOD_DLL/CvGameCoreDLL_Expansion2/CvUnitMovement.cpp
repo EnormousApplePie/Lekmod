@@ -163,6 +163,8 @@ void CvUnitMovement::GetCostsForMove(const CvUnit* pUnit, const CvPlot* pFromPlo
 			iRouteFlatCost = iRegularCost;
 		}
 
+	
+
 	// NQMP GJS - Great Wall fix
 	/*
 	TeamTypes eTeam = pToPlot->getTeam();
@@ -249,6 +251,9 @@ int CvUnitMovement::MovementCostNoZOC(const CvUnit* pUnit, const CvPlot* pFromPl
 //	---------------------------------------------------------------------------
 bool CvUnitMovement::ConsumesAllMoves(const CvUnit* pUnit, const CvPlot* pFromPlot, const CvPlot* pToPlot)
 {
+
+	
+
 	if(!pToPlot->isRevealed(pUnit->getTeam()) && pUnit->isHuman())
 	{
 		return true;
@@ -272,28 +277,20 @@ bool CvUnitMovement::ConsumesAllMoves(const CvUnit* pUnit, const CvPlot* pFromPl
 			return true;
 	}
 
-#ifdef AUI_UNIT_FIX_HOVERING_EMBARK
-	bool bToPlotNeedEmbark = !pToPlot->IsAllowsWalkWater();
-	bool bFromPlotNeedEmbark = !pFromPlot->IsAllowsWalkWater();
-	if (pUnit->IsHoveringUnit())
-	{
-		bToPlotNeedEmbark = bToPlotNeedEmbark && pToPlot->getTerrainType() == GC.getDEEP_WATER_TERRAIN();
-		bFromPlotNeedEmbark = bFromPlotNeedEmbark && pFromPlot->getTerrainType() == GC.getDEEP_WATER_TERRAIN();
-	}
-	else
-	{
-		bToPlotNeedEmbark = bToPlotNeedEmbark && pToPlot->isWater();
-		bFromPlotNeedEmbark = bFromPlotNeedEmbark && pFromPlot->isWater();
-	}
-
-	if (pUnit->CanEverEmbark() && bToPlotNeedEmbark != bFromPlotNeedEmbark)
-#elif defined(AUI_UNIT_MOVEMENT_FIX_BAD_ALLOWS_WATER_WALK_CHECK)
-	// if the unit can embark and we are transitioning from land to water or vice versa
-	if ((pToPlot->isWater() && !pToPlot->IsAllowsWalkWater()) != (pFromPlot->isWater() && !pFromPlot->IsAllowsWalkWater()) && pUnit->CanEverEmbark())
-#else
 	if(pToPlot->isWater() != pFromPlot->isWater() && pUnit->CanEverEmbark())
-#endif
+
 	{
+#ifdef LEK_EMBARK_1_MOVEMENT
+		//EAP: Embarking now costs 1 movement
+
+		if (pToPlot->isWater() && !pFromPlot->isWater() && pUnit->CanEverEmbark())
+		{
+			return false;
+		}
+#endif
+
+		//
+		
 		// Is the unit from a civ that can disembark for just 1 MP?
 #ifdef AUI_UNIT_FIX_HOVERING_EMBARK
 		if (bFromPlotNeedEmbark && GET_PLAYER(pUnit->getOwner()).GetPlayerTraits()->IsEmbarkedToLandFlatCost())
@@ -306,11 +303,14 @@ bool CvUnitMovement::ConsumesAllMoves(const CvUnit* pUnit, const CvPlot* pFromPl
 			return false;	// Then no, it does not.
 		}
 
+		
+		
 		if(!pUnit->canMoveAllTerrain())
 		{
 			return true;
 		}
 	}
+	
 
 	return false;
 }
@@ -318,6 +318,7 @@ bool CvUnitMovement::ConsumesAllMoves(const CvUnit* pUnit, const CvPlot* pFromPl
 //	---------------------------------------------------------------------------
 bool CvUnitMovement::CostsOnlyOne(const CvUnit* pUnit, const CvPlot* pFromPlot, const CvPlot* pToPlot)
 {
+	
 	if(!pToPlot->isValidDomainForAction(*pUnit))
 	{
 		// If we are a land unit that can embark, then do further tests.
@@ -327,6 +328,7 @@ bool CvUnitMovement::CostsOnlyOne(const CvUnit* pUnit, const CvPlot* pFromPlot, 
 
 	CvAssert(!pUnit->IsImmobile());
 
+	
 	if(pUnit->flatMovementCost() || pUnit->getDomainType() == DOMAIN_AIR)
 	{
 		return true;
@@ -356,6 +358,8 @@ bool CvUnitMovement::CostsOnlyOne(const CvUnit* pUnit, const CvPlot* pFromPlot, 
 	{
 		return true;
 	}
+
+	
 
 	return false;
 }

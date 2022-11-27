@@ -164,6 +164,8 @@ void CvTeam::uninit()
 	m_iBorderObstacleCount = 0;
 	m_iVictoryPoints = 0;
 	m_iEmbarkedExtraMoves = 0;
+	//EAP: Extra embarked visibility on tech
+	m_iEmbarkedExtraSight = 0;
 	m_iCanEmbarkCount = 0;
 	m_iDefensiveEmbarkCount = 0;
 	m_iEmbarkedAllWaterPassageCount = 0;
@@ -1074,6 +1076,15 @@ bool CvTeam::canDeclareWar(TeamTypes eTeam) const
 	{
 		return false;
 	}
+#ifdef AI_CANT_DECLARE_WAR
+	if(GC.getGame().isOption("GAMEOPTION_AI_TWEAKS"))
+	{
+		if(!isHuman())
+		{
+			return false;
+		}
+	}
+#endif
 
 	if(!(isAlive()) || !(GET_TEAM(eTeam).isAlive()))
 	{
@@ -1104,6 +1115,13 @@ bool CvTeam::canDeclareWar(TeamTypes eTeam) const
 	{
 		return false;
 	}
+
+#ifdef NEW_DEFENSIVE_PACT
+	if(GET_TEAM(eTeam).IsHasDefensivePact(GetID()))
+	{
+		return false;
+	}
+#endif
 
 	// First, obtain the Lua script system.
 	ICvEngineScriptSystem1* pkScriptSystem = gDLL->GetScriptSystem();
@@ -1156,7 +1174,11 @@ void CvTeam::DoDeclareWar(TeamTypes eTeam, bool bDefensivePact, bool bMinorAllyP
 	if (!isBarbarian())
 	{
 		// Since we declared war, all of OUR Defensive Pacts are nullified
+
+		
+#ifndef NEW_DEFENSIVE_PACT //EAP: DP is now a peace treaty
 		cancelDefensivePacts();
+#endif
 		GC.getGame().GetGameTrade()->DoAutoWarPlundering(m_eID, eTeam);
 #ifdef NQM_TEAM_TRADE_ROUTES_CANCELLED_NOT_DESTROYED_FOR_WAR_DEFENDER_ON_DOW
 		if (bDefensivePact)
@@ -1196,6 +1218,7 @@ void CvTeam::DoDeclareWar(TeamTypes eTeam, bool bDefensivePact, bool bMinorAllyP
 			}
 		}
 
+#ifndef NEW_DEFENSIVE_PACT // EAP: Defensive Pact is now a peace treaty
 		// Auto War for Defensive Pacts
 		for (iI = 0; iI < MAX_TEAMS; iI++)
 		{
@@ -1207,6 +1230,7 @@ void CvTeam::DoDeclareWar(TeamTypes eTeam, bool bDefensivePact, bool bMinorAllyP
 				}
 			}
 		}
+#endif
 	}
 
 	// Cancel Trade Deals, RAs, diplomats
@@ -3401,7 +3425,10 @@ void CvTeam::changeCanEmbarkCount(int iChange)
 								// Civilian unit or the unit can acquire this promotion
 								PromotionTypes ePromotionEmbarkation = GET_PLAYER((PlayerTypes)iI).GetEmbarkationPromotion();
 								if(!pLoopUnit->IsCombatUnit() || ::IsPromotionValidForUnitCombatType(ePromotionEmbarkation, pLoopUnit->getUnitType()))
+								{
 									pLoopUnit->setHasPromotion(ePromotionEmbarkation, true);
+								}
+									
 							}
 						}
 					}
@@ -3412,6 +3439,11 @@ void CvTeam::changeCanEmbarkCount(int iChange)
 
 	CvAssert(getCanEmbarkCount() >= 0);
 }
+
+//----------------------------------------------------------------------------------
+
+
+
 
 //	--------------------------------------------------------------------------------
 bool CvTeam::canDefensiveEmbark() const
@@ -3548,7 +3580,21 @@ void CvTeam::changeEmbarkedExtraMoves(int iChange)
 	m_iEmbarkedExtraMoves = (m_iEmbarkedExtraMoves + iChange);
 }
 
+//	--------------------------------------------------------------------------------
+//EAP: Extra Embarked Visibility on Tech
+int CvTeam::getEmbarkedExtraSight() const
+{
+	return m_iEmbarkedExtraSight;
+}
 
+//	--------------------------------------------------------------------------------
+
+void CvTeam::changeEmbarkedExtraSight(int iChange)
+{
+	m_iEmbarkedExtraSight = (m_iEmbarkedExtraSight + iChange);
+}
+
+// END
 //	--------------------------------------------------------------------------------
 bool CvTeam::isHasMet(TeamTypes eIndex)	const
 {
@@ -6477,6 +6523,13 @@ void CvTeam::processTech(TechTypes eTech, int iChange)
 		changeEmbarkedExtraMoves(pTech->GetEmbarkedMoveChange() * iChange);
 	}
 
+	//EAP: Add Embarked Visibility Extra on Techs
+
+	if(pTech->GetEmbarkedSightChange() != 0)
+	{
+		changeEmbarkedExtraSight(pTech->GetEmbarkedSightChange() * iChange);
+	}
+
 	for(iI = 0; iI < GC.getNumRouteInfos(); iI++)
 	{
 		changeRouteChange(((RouteTypes)iI), (GC.getRouteInfo((RouteTypes) iI)->getTechMovementChange(eTech) * iChange));
@@ -7450,6 +7503,8 @@ void CvTeam::Read(FDataStream& kStream)
 	kStream >> m_iBorderObstacleCount;
 	kStream >> m_iVictoryPoints;
 	kStream >> m_iEmbarkedExtraMoves;
+	//EAP: Extra embarked visiblity on tech
+	kStream >> m_iEmbarkedExtraSight;
 	kStream >> m_iCanEmbarkCount;
 	kStream >> m_iDefensiveEmbarkCount;
 	kStream >> m_iEmbarkedAllWaterPassageCount;
@@ -7630,6 +7685,8 @@ void CvTeam::Write(FDataStream& kStream) const
 	kStream << m_iBorderObstacleCount;
 	kStream << m_iVictoryPoints;
 	kStream << m_iEmbarkedExtraMoves;
+	//EAP: Extra embarked sight on tech
+	kStream << m_iEmbarkedExtraSight;
 	kStream << m_iCanEmbarkCount;
 	kStream << m_iDefensiveEmbarkCount;
 	kStream << m_iEmbarkedAllWaterPassageCount;

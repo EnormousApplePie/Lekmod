@@ -10,289 +10,289 @@ INCLUDELIB MSVCRT
 INCLUDELIB OLDNAMES
 
 CONST	SEGMENT
-$SG217998 DB	'Cost', 00H
+$SG218040 DB	'Cost', 00H
 	ORG $+3
-$SG217999 DB	'FinalProductionCostModifier', 00H
-$SG218000 DB	'FaithCost', 00H
+$SG218041 DB	'FinalProductionCostModifier', 00H
+$SG218042 DB	'FaithCost', 00H
 	ORG $+2
-$SG218001 DB	'RequiresFaithPurchaseEnabled', 00H
+$SG218043 DB	'RequiresFaithPurchaseEnabled', 00H
 	ORG $+3
-$SG218002 DB	'PurchaseOnly', 00H
+$SG218044 DB	'PurchaseOnly', 00H
 	ORG $+3
-$SG218003 DB	'MoveAfterPurchase', 00H
+$SG218045 DB	'MoveAfterPurchase', 00H
 	ORG $+2
-$SG218004 DB	'HurryCostModifier', 00H
+$SG218046 DB	'HurryCostModifier', 00H
 	ORG $+2
-$SG218005 DB	'AdvancedStartCost', 00H
+$SG218047 DB	'AdvancedStartCost', 00H
 	ORG $+2
-$SG218006 DB	'MinAreaSize', 00H
-$SG218007 DB	'Moves', 00H
+$SG218048 DB	'MinAreaSize', 00H
+$SG218049 DB	'Moves', 00H
 	ORG $+2
-$SG218008 DB	'Immobile', 00H
+$SG218050 DB	'Immobile', 00H
 	ORG $+3
-$SG218009 DB	'BaseSightRange', 00H
+$SG218051 DB	'BaseSightRange', 00H
 	ORG $+1
-$SG218010 DB	'Range', 00H
+$SG218052 DB	'Range', 00H
 	ORG $+2
-$SG218011 DB	'AirInterceptRange', 00H
+$SG218053 DB	'AirInterceptRange', 00H
 	ORG $+2
-$SG218012 DB	'AirUnitCap', 00H
+$SG218054 DB	'AirUnitCap', 00H
 	ORG $+1
-$SG218013 DB	'NukeDamageLevel', 00H
-$SG218014 DB	'WorkRate', 00H
+$SG218055 DB	'NukeDamageLevel', 00H
+$SG218056 DB	'WorkRate', 00H
 	ORG $+3
-$SG218015 DB	'NumFreeTechs', 00H
+$SG218057 DB	'NumFreeTechs', 00H
 	ORG $+3
-$SG218016 DB	'BaseBeakersTurnsToCount', 00H
-$SG218017 DB	'BaseCultureTurnsToCount', 00H
-$SG218018 DB	'BaseHurry', 00H
+$SG218058 DB	'BaseBeakersTurnsToCount', 00H
+$SG218059 DB	'BaseCultureTurnsToCount', 00H
+$SG218060 DB	'BaseHurry', 00H
 	ORG $+2
-$SG218019 DB	'HurryMultiplier', 00H
-$SG218020 DB	'RushBuilding', 00H
+$SG218061 DB	'HurryMultiplier', 00H
+$SG218062 DB	'RushBuilding', 00H
 	ORG $+3
-$SG218021 DB	'BaseGold', 00H
+$SG218063 DB	'BaseGold', 00H
 	ORG $+3
-$SG218022 DB	'NumGoldPerEra', 00H
+$SG218064 DB	'NumGoldPerEra', 00H
 	ORG $+2
-$SG218023 DB	'SpreadReligion', 00H
+$SG218065 DB	'SpreadReligion', 00H
 	ORG $+1
-$SG218024 DB	'RemoveHeresy', 00H
+$SG218066 DB	'RemoveHeresy', 00H
 	ORG $+3
-$SG218025 DB	'ReligionSpreads', 00H
-$SG218026 DB	'ReligiousStrength', 00H
+$SG218067 DB	'ReligionSpreads', 00H
+$SG218068 DB	'ReligiousStrength', 00H
 	ORG $+2
-$SG218027 DB	'FoundReligion', 00H
+$SG218069 DB	'FoundReligion', 00H
 	ORG $+2
-$SG218028 DB	'RequiresEnhancedReligion', 00H
+$SG218070 DB	'RequiresEnhancedReligion', 00H
 	ORG $+3
-$SG218029 DB	'ProhibitsSpread', 00H
-$SG218030 DB	'CanBuyCityState', 00H
-$SG218031 DB	'Combat', 00H
+$SG218071 DB	'ProhibitsSpread', 00H
+$SG218072 DB	'CanBuyCityState', 00H
+$SG218073 DB	'Combat', 00H
 	ORG $+1
-$SG218032 DB	'CombatLimit', 00H
-$SG218033 DB	'RangedCombat', 00H
+$SG218074 DB	'CombatLimit', 00H
+$SG218075 DB	'RangedCombat', 00H
 	ORG $+3
-$SG218034 DB	'RangedCombatLimit', 00H
+$SG218076 DB	'RangedCombatLimit', 00H
 	ORG $+2
-$SG218035 DB	'XPValueAttack', 00H
+$SG218077 DB	'XPValueAttack', 00H
 	ORG $+2
-$SG218036 DB	'XPValueDefense', 00H
+$SG218078 DB	'XPValueDefense', 00H
 	ORG $+1
-$SG218037 DB	'Conscription', 00H
+$SG218079 DB	'Conscription', 00H
 	ORG $+3
-$SG218038 DB	'ExtraMaintenanceCost', 00H
+$SG218080 DB	'ExtraMaintenanceCost', 00H
 	ORG $+3
-$SG218039 DB	'NoMaintenance', 00H
+$SG218081 DB	'NoMaintenance', 00H
 	ORG $+2
-$SG218040 DB	'Unhappiness', 00H
-$SG218041 DB	'UnitFlagIconOffset', 00H
+$SG218082 DB	'Unhappiness', 00H
+$SG218083 DB	'UnitFlagIconOffset', 00H
 	ORG $+1
-$SG218042 DB	'PortraitIndex', 00H
+$SG218084 DB	'PortraitIndex', 00H
 	ORG $+2
-$SG218043 DB	'LeaderExperience', 00H
+$SG218085 DB	'LeaderExperience', 00H
 	ORG $+3
-$SG218044 DB	'Food', 00H
+$SG218086 DB	'Food', 00H
 	ORG $+3
-$SG218045 DB	'NoBadGoodies', 00H
+$SG218087 DB	'NoBadGoodies', 00H
 	ORG $+3
-$SG218046 DB	'RivalTerritory', 00H
+$SG218088 DB	'RivalTerritory', 00H
 	ORG $+1
-$SG218047 DB	'MilitarySupport', 00H
-$SG218048 DB	'MilitaryProduction', 00H
+$SG218089 DB	'MilitarySupport', 00H
+$SG218090 DB	'MilitaryProduction', 00H
 	ORG $+1
-$SG218049 DB	'Pillage', 00H
-$SG218050 DB	'Found', 00H
+$SG218091 DB	'Pillage', 00H
+$SG218092 DB	'Found', 00H
 	ORG $+2
-$SG218051 DB	'FoundAbroad', 00H
-$SG218052 DB	'CultureBombRadius', 00H
+$SG218093 DB	'FoundAbroad', 00H
+$SG218094 DB	'CultureBombRadius', 00H
 	ORG $+2
-$SG218053 DB	'GoldenAgeTurns', 00H
+$SG218095 DB	'GoldenAgeTurns', 00H
 	ORG $+1
-$SG218054 DB	'FreePolicies', 00H
+$SG218096 DB	'FreePolicies', 00H
 	ORG $+3
-$SG218055 DB	'OneShotTourism', 00H
+$SG218097 DB	'OneShotTourism', 00H
 	ORG $+1
-$SG218056 DB	'OneShotTourismPercentOthers', 00H
-$SG218057 DB	'IgnoreBuildingDefense', 00H
+$SG218098 DB	'OneShotTourismPercentOthers', 00H
+$SG218099 DB	'IgnoreBuildingDefense', 00H
 	ORG $+2
-$SG218058 DB	'PrereqResources', 00H
-$SG218059 DB	'Mechanized', 00H
+$SG218100 DB	'PrereqResources', 00H
+$SG218101 DB	'Mechanized', 00H
 	ORG $+1
-$SG218060 DB	'Suicide', 00H
-$SG218061 DB	'CaptureWhileEmbarked', 00H
+$SG218102 DB	'Suicide', 00H
+$SG218103 DB	'CaptureWhileEmbarked', 00H
 	ORG $+3
-$SG218062 DB	'RangeAttackOnlyInDomain', 00H
-$SG218063 DB	'Trade', 00H
+$SG218104 DB	'RangeAttackOnlyInDomain', 00H
+$SG218105 DB	'Trade', 00H
 	ORG $+2
-$SG218064 DB	'NumExoticGoods', 00H
+$SG218106 DB	'NumExoticGoods', 00H
 	ORG $+1
-$SG218065 DB	'UnitArtInfo', 00H
-$SG218066 DB	'UnitArtInfoCulturalVariation', 00H
+$SG218107 DB	'UnitArtInfo', 00H
+$SG218108 DB	'UnitArtInfoCulturalVariation', 00H
 	ORG $+3
-$SG218067 DB	'UnitArtInfoEraVariation', 00H
-$SG218069 DB	'Class', 00H
+$SG218109 DB	'UnitArtInfoEraVariation', 00H
+$SG218111 DB	'Class', 00H
 	ORG $+2
-$SG218070 DB	'Special', 00H
-$SG218071 DB	'Capture', 00H
-$SG218072 DB	'CombatClass', 00H
-$SG218073 DB	'Domain', 00H
+$SG218112 DB	'Special', 00H
+$SG218113 DB	'Capture', 00H
+$SG218114 DB	'CombatClass', 00H
+$SG218115 DB	'Domain', 00H
 	ORG $+1
-$SG218074 DB	'CivilianAttackPriority', 00H
+$SG218116 DB	'CivilianAttackPriority', 00H
 	ORG $+1
-$SG218075 DB	'DefaultUnitAI', 00H
+$SG218117 DB	'DefaultUnitAI', 00H
 	ORG $+2
-$SG218076 DB	'PillagePrereqTech', 00H
+$SG218118 DB	'PillagePrereqTech', 00H
 	ORG $+2
-$SG218077 DB	'PrereqTech', 00H
+$SG218119 DB	'PrereqTech', 00H
 	ORG $+1
-$SG218078 DB	'ObsoleteTech', 00H
+$SG218120 DB	'ObsoleteTech', 00H
 	ORG $+3
-$SG218079 DB	'PolicyType', 00H
+$SG218121 DB	'PolicyType', 00H
 	ORG $+1
-$SG218080 DB	'GoodyHutUpgradeUnitClass', 00H
+$SG218122 DB	'GoodyHutUpgradeUnitClass', 00H
 	ORG $+3
-$SG218081 DB	'SpecialCargo', 00H
+$SG218123 DB	'SpecialCargo', 00H
 	ORG $+3
-$SG218082 DB	'DomainCargo', 00H
-$SG218083 DB	'ProjectPrereq', 00H
+$SG218124 DB	'DomainCargo', 00H
+$SG218125 DB	'ProjectPrereq', 00H
 	ORG $+2
-$SG218084 DB	'SpaceshipProject', 00H
+$SG218126 DB	'SpaceshipProject', 00H
 	ORG $+3
-$SG218085 DB	'LeaderPromotion', 00H
-$SG218087 DB	'UnitType', 00H
-	ORG $+3
-$SG218088 DB	'Unit_Flavors', 00H
-	ORG $+3
-$SG218089 DB	'Trait', 00H
-	ORG $+2
-$SG218090 DB	'UnitType', 00H
-	ORG $+3
-$SG218091 DB	'TraitType', 00H
-	ORG $+2
-$SG218092 DB	'Unit_ProductionTraits', 00H
-	ORG $+2
-$SG218093 DB	'Traits', 00H
-	ORG $+1
-$SG218094 DB	'Cost', 00H
-	ORG $+3
-$SG218095 DB	'UnitType', 00H
-	ORG $+3
-$SG218096 DB	'ResourceType', 00H
-	ORG $+3
-$SG218097 DB	'Unit_ResourceQuantityRequirements', 00H
-	ORG $+2
-$SG218098 DB	'Resources', 00H
-	ORG $+2
-$SG218099 DB	'ProductionModifier', 00H
-	ORG $+1
-$SG218100 DB	'UnitType', 00H
-	ORG $+3
-$SG218101 DB	'BuildingType', 00H
-	ORG $+3
-$SG218102 DB	'Unit_ProductionModifierBuildings', 00H
-	ORG $+3
-$SG218103 DB	'Buildings', 00H
-	ORG $+2
-$SG218104 DB	'Yield', 00H
-	ORG $+2
-$SG218105 DB	'UnitType', 00H
-	ORG $+3
-$SG218106 DB	'YieldType', 00H
-	ORG $+2
-$SG218107 DB	'Unit_YieldFromKills', 00H
-$SG218108 DB	'Yields', 00H
-	ORG $+1
-$SG218109 DB	'UnitType', 00H
-	ORG $+3
-$SG218110 DB	'PromotionType', 00H
-	ORG $+2
-$SG218111 DB	'Unit_FreePromotions', 00H
-$SG218112 DB	'UnitPromotions', 00H
-	ORG $+1
-$SG218113 DB	'UnitType', 00H
-	ORG $+3
-$SG218114 DB	'UnitClassType', 00H
-	ORG $+2
-$SG218115 DB	'Unit_ClassUpgrades', 00H
-	ORG $+1
-$SG218116 DB	'UnitClasses', 00H
-$SG218117 DB	'UnitType', 00H
-	ORG $+3
-$SG218118 DB	'UnitAIType', 00H
-	ORG $+1
-$SG218119 DB	'Unit_AITypes', 00H
-	ORG $+3
-$SG218120 DB	'UnitAIInfos', 00H
-$SG218121 DB	'UnitType', 00H
-	ORG $+3
-$SG218122 DB	'UnitAIType', 00H
-	ORG $+1
-$SG218123 DB	'Unit_NotAITypes', 00H
-$SG218124 DB	'UnitAIInfos', 00H
-$SG218125 DB	'UnitType', 00H
-	ORG $+3
-$SG218126 DB	'BuildType', 00H
-	ORG $+2
-$SG218127 DB	'Unit_Builds', 00H
-$SG218128 DB	'Builds', 00H
-	ORG $+1
+$SG218127 DB	'LeaderPromotion', 00H
 $SG218129 DB	'UnitType', 00H
 	ORG $+3
-$SG218130 DB	'GreatPersonType', 00H
-$SG218131 DB	'Unit_GreatPersons', 00H
+$SG218130 DB	'Unit_Flavors', 00H
+	ORG $+3
+$SG218131 DB	'Trait', 00H
 	ORG $+2
-$SG218132 DB	'Specialists', 00H
-$SG218133 DB	'UnitType', 00H
+$SG218132 DB	'UnitType', 00H
 	ORG $+3
-$SG218134 DB	'BuildingType', 00H
-	ORG $+3
-$SG218135 DB	'Unit_Buildings', 00H
+$SG218133 DB	'TraitType', 00H
+	ORG $+2
+$SG218134 DB	'Unit_ProductionTraits', 00H
+	ORG $+2
+$SG218135 DB	'Traits', 00H
 	ORG $+1
-$SG218136 DB	'Buildings', 00H
-	ORG $+2
+$SG218136 DB	'Cost', 00H
+	ORG $+3
 $SG218137 DB	'UnitType', 00H
 	ORG $+3
-$SG218138 DB	'BuildingClassType', 00H
-	ORG $+2
-$SG218139 DB	'Unit_BuildingClassRequireds', 00H
-$SG218140 DB	'BuildingClasses', 00H
-$SG218147 DB	'Technologies', 00H
+$SG218138 DB	'ResourceType', 00H
 	ORG $+3
-$SG218149 DB	'Units - TechTypes', 00H
+$SG218139 DB	'Unit_ResourceQuantityRequirements', 00H
 	ORG $+2
-$SG218152 DB	'select Technologies.ID from Unit_TechTypes inner join Te'
+$SG218140 DB	'Resources', 00H
+	ORG $+2
+$SG218141 DB	'ProductionModifier', 00H
+	ORG $+1
+$SG218142 DB	'UnitType', 00H
+	ORG $+3
+$SG218143 DB	'BuildingType', 00H
+	ORG $+3
+$SG218144 DB	'Unit_ProductionModifierBuildings', 00H
+	ORG $+3
+$SG218145 DB	'Buildings', 00H
+	ORG $+2
+$SG218146 DB	'Yield', 00H
+	ORG $+2
+$SG218147 DB	'UnitType', 00H
+	ORG $+3
+$SG218148 DB	'YieldType', 00H
+	ORG $+2
+$SG218149 DB	'Unit_YieldFromKills', 00H
+$SG218150 DB	'Yields', 00H
+	ORG $+1
+$SG218151 DB	'UnitType', 00H
+	ORG $+3
+$SG218152 DB	'PromotionType', 00H
+	ORG $+2
+$SG218153 DB	'Unit_FreePromotions', 00H
+$SG218154 DB	'UnitPromotions', 00H
+	ORG $+1
+$SG218155 DB	'UnitType', 00H
+	ORG $+3
+$SG218156 DB	'UnitClassType', 00H
+	ORG $+2
+$SG218157 DB	'Unit_ClassUpgrades', 00H
+	ORG $+1
+$SG218158 DB	'UnitClasses', 00H
+$SG218159 DB	'UnitType', 00H
+	ORG $+3
+$SG218160 DB	'UnitAIType', 00H
+	ORG $+1
+$SG218161 DB	'Unit_AITypes', 00H
+	ORG $+3
+$SG218162 DB	'UnitAIInfos', 00H
+$SG218163 DB	'UnitType', 00H
+	ORG $+3
+$SG218164 DB	'UnitAIType', 00H
+	ORG $+1
+$SG218165 DB	'Unit_NotAITypes', 00H
+$SG218166 DB	'UnitAIInfos', 00H
+$SG218167 DB	'UnitType', 00H
+	ORG $+3
+$SG218168 DB	'BuildType', 00H
+	ORG $+2
+$SG218169 DB	'Unit_Builds', 00H
+$SG218170 DB	'Builds', 00H
+	ORG $+1
+$SG218171 DB	'UnitType', 00H
+	ORG $+3
+$SG218172 DB	'GreatPersonType', 00H
+$SG218173 DB	'Unit_GreatPersons', 00H
+	ORG $+2
+$SG218174 DB	'Specialists', 00H
+$SG218175 DB	'UnitType', 00H
+	ORG $+3
+$SG218176 DB	'BuildingType', 00H
+	ORG $+3
+$SG218177 DB	'Unit_Buildings', 00H
+	ORG $+1
+$SG218178 DB	'Buildings', 00H
+	ORG $+2
+$SG218179 DB	'UnitType', 00H
+	ORG $+3
+$SG218180 DB	'BuildingClassType', 00H
+	ORG $+2
+$SG218181 DB	'Unit_BuildingClassRequireds', 00H
+$SG218182 DB	'BuildingClasses', 00H
+$SG218189 DB	'Technologies', 00H
+	ORG $+3
+$SG218191 DB	'Units - TechTypes', 00H
+	ORG $+2
+$SG218194 DB	'select Technologies.ID from Unit_TechTypes inner join Te'
 	DB	'chnologies on TechType = Technologies.Type where UnitType = ?'
 	DB	00H
 	ORG $+2
-$SG218158 DB	'Units - UniqueNameCount', 00H
-$SG218161 DB	'select count(*) from Unit_UniqueNames where UnitType = ?'
+$SG218200 DB	'Units - UniqueNameCount', 00H
+$SG218203 DB	'select count(*) from Unit_UniqueNames where UnitType = ?'
 	DB	00H
 	ORG $+3
-$SG218173 DB	'Units - UniqueNames', 00H
-$SG218176 DB	'select UniqueName, GreatWorkType from Unit_UniqueNames w'
+$SG218215 DB	'Units - UniqueNames', 00H
+$SG218218 DB	'select UniqueName, GreatWorkType from Unit_UniqueNames w'
 	DB	'here UnitType = ? ORDER BY rowid', 00H
 	ORG $+3
-$SG218186 DB	'Units - MovementRates', 00H
+$SG218228 DB	'Units - MovementRates', 00H
 	ORG $+2
-$SG218189 DB	'SELECT * FROM MovementRates where Type = ? ORDER BY NumH'
+$SG218231 DB	'SELECT * FROM MovementRates where Type = ? ORDER BY NumH'
 	DB	'exes', 00H
 	ORG $+3
-$SG218191 DB	'MoveRate', 00H
+$SG218233 DB	'MoveRate', 00H
 	ORG $+3
-$SG218196 DB	'NumHexes', 00H
+$SG218238 DB	'NumHexes', 00H
 	ORG $+3
-$SG218198 DB	'TotalTime', 00H
+$SG218240 DB	'TotalTime', 00H
 	ORG $+2
-$SG218200 DB	'EaseIn', 00H
+$SG218242 DB	'EaseIn', 00H
 	ORG $+1
-$SG218202 DB	'EaseOut', 00H
-$SG218204 DB	'IndividualOffset', 00H
+$SG218244 DB	'EaseOut', 00H
+$SG218246 DB	'IndividualOffset', 00H
 	ORG $+3
-$SG218206 DB	'RowOffset', 00H
+$SG218248 DB	'RowOffset', 00H
 	ORG $+2
-$SG218208 DB	'CurveRoll', 00H
+$SG218250 DB	'CurveRoll', 00H
 	ORG $+2
-$SG218210 DB	'PathSubdivision', 00H
+$SG218252 DB	'PathSubdivision', 00H
 CONST	ENDS
 PUBLIC	??_H@YGXPAXIHP6EPAX0@Z@Z			; `vector constructor iterator'
 ; Function compile flags: /Ogtpy
@@ -3269,8 +3269,8 @@ __ehfuncinfo$?_Xlen@?$vector@PAVCvUnitEntry@@V?$allocator@PAVCvUnitEntry@@@std@@
 xdata$x	ENDS
 ;	COMDAT ?_Xlen@?$vector@PAVCvUnitEntry@@V?$allocator@PAVCvUnitEntry@@@std@@@std@@KAXXZ
 _TEXT	SEGMENT
-$T220036 = -80						; size = 28
-$T220035 = -52						; size = 40
+$T220078 = -80						; size = 28
+$T220077 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ?_Xlen@?$vector@PAVCvUnitEntry@@V?$allocator@PAVCvUnitEntry@@@std@@@std@@KAXXZ PROC ; std::vector<CvUnitEntry *,std::allocator<CvUnitEntry *> >::_Xlen, COMDAT
 
@@ -3286,22 +3286,22 @@ __$EHRec$ = -12						; size = 12
 ; 1260 : 		_THROW(length_error, "vector<T> too long");
 
 	push	OFFSET ??_C@_0BD@OLBABOEK@vector?$DMT?$DO?5too?5long?$AA@
-	lea	ecx, DWORD PTR $T220036[esp+84]
+	lea	ecx, DWORD PTR $T220078[esp+84]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T220035[esp+80]
+	lea	ecx, DWORD PTR $T220077[esp+80]
 	mov	DWORD PTR __$EHRec$[esp+88], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T220036[esp+80]
+	lea	eax, DWORD PTR $T220078[esp+80]
 	push	eax
-	lea	ecx, DWORD PTR $T220035[esp+96]
+	lea	ecx, DWORD PTR $T220077[esp+96]
 	mov	BYTE PTR __$EHRec$[esp+92], 1
-	mov	DWORD PTR $T220035[esp+84], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T220077[esp+84], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVlength_error@std@@
-	lea	ecx, DWORD PTR $T220035[esp+84]
+	lea	ecx, DWORD PTR $T220077[esp+84]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+96], 0
-	mov	DWORD PTR $T220035[esp+88], OFFSET ??_7length_error@std@@6B@
+	mov	DWORD PTR $T220077[esp+88], OFFSET ??_7length_error@std@@6B@
 	call	__CxxThrowException@8
 $LN13@Xlen:
 $LN12@Xlen:
@@ -3310,10 +3310,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Xlen@?$vector@PAVCvUnitEntry@@V?$allocator@PAVCvUnitEntry@@@std@@@std@@KAXXZ$0:
-	lea	ecx, DWORD PTR $T220036[ebp]
+	lea	ecx, DWORD PTR $T220078[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Xlen@?$vector@PAVCvUnitEntry@@V?$allocator@PAVCvUnitEntry@@@std@@@std@@KAXXZ$2:
-	lea	ecx, DWORD PTR $T220035[ebp]
+	lea	ecx, DWORD PTR $T220077[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Xlen@?$vector@PAVCvUnitEntry@@V?$allocator@PAVCvUnitEntry@@@std@@@std@@KAXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?_Xlen@?$vector@PAVCvUnitEntry@@V?$allocator@PAVCvUnitEntry@@@std@@@std@@KAXXZ
@@ -3568,8 +3568,8 @@ __TI2?AVbad_alloc@std@@ DD 00H
 xdata$x	ENDS
 ;	COMDAT ??$_Allocate@PAVCvUnitEntry@@@std@@YAPAPAVCvUnitEntry@@IPAPAV1@@Z
 _TEXT	SEGMENT
-$T220097 = -12						; size = 12
-$T220101 = 8						; size = 4
+$T220139 = -12						; size = 12
+$T220143 = 8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ??$_Allocate@PAVCvUnitEntry@@@std@@YAPAPAVCvUnitEntry@@IPAPAV1@@Z PROC ; std::_Allocate<CvUnitEntry *>, COMDAT
@@ -3611,15 +3611,15 @@ $LN3@Allocate:
 
 ; 40   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T220101[esp+8]
+	lea	eax, DWORD PTR $T220143[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T220097[esp+16]
-	mov	DWORD PTR $T220101[esp+12], 0
+	lea	ecx, DWORD PTR $T220139[esp+16]
+	mov	DWORD PTR $T220143[esp+12], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T220097[esp+16]
+	lea	ecx, DWORD PTR $T220139[esp+16]
 	push	ecx
-	mov	DWORD PTR $T220097[esp+20], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T220139[esp+20], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN9@Allocate:
 $LN8@Allocate:
@@ -4430,8 +4430,8 @@ __ehfuncinfo$?GetUnitNames@CvUnitEntry@@QBEPBDH@Z DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?GetUnitNames@CvUnitEntry@@QBEPBDH@Z
 _TEXT	SEGMENT
-$T220273 = -44						; size = 4
-$T220270 = -40						; size = 28
+$T220315 = -44						; size = 4
+$T220312 = -40						; size = 28
 __$EHRec$ = -12						; size = 12
 _i$ = 8							; size = 4
 ?GetUnitNames@CvUnitEntry@@QBEPBDH@Z PROC		; CvUnitEntry::GetUnitNames, COMDAT
@@ -4452,7 +4452,7 @@ _i$ = 8							; size = 4
 ; 1143 : 	CvAssertMsg(i > -1, "Index out of bounds");
 ; 1144 : 	return (m_paszUnitNames) ? m_paszUnitNames[i] : NULL;
 
-	mov	DWORD PTR $T220273[esp+48], ebx
+	mov	DWORD PTR $T220315[esp+48], ebx
 	mov	eax, DWORD PTR [ecx+1008]
 	push	esi
 	cmp	eax, ebx
@@ -4464,11 +4464,11 @@ _i$ = 8							; size = 4
 	jmp	SHORT $LN4@GetUnitNam
 $LN3@GetUnitNam:
 	push	ebx
-	lea	ecx, DWORD PTR $T220270[esp+56]
+	lea	ecx, DWORD PTR $T220312[esp+56]
 	call	??0CvString@@QAE@H@Z			; CvString::CvString
 	mov	DWORD PTR __$EHRec$[esp+60], ebx
 	mov	ebx, 1
-	mov	DWORD PTR $T220273[esp+52], ebx
+	mov	DWORD PTR $T220315[esp+52], ebx
 $LN4@GetUnitNam:
 	mov	ecx, eax
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
@@ -4476,7 +4476,7 @@ $LN4@GetUnitNam:
 	mov	DWORD PTR __$EHRec$[esp+60], -1
 	test	bl, 1
 	je	SHORT $LN13@GetUnitNam
-	lea	ecx, DWORD PTR $T220270[esp+52]
+	lea	ecx, DWORD PTR $T220312[esp+52]
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 $LN13@GetUnitNam:
 
@@ -4493,11 +4493,11 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetUnitNames@CvUnitEntry@@QBEPBDH@Z$0:
-	mov	eax, DWORD PTR $T220273[ebp]
+	mov	eax, DWORD PTR $T220315[ebp]
 	and	eax, 1
 	je	$LN6@GetUnitNam
-	and	DWORD PTR $T220273[ebp], -2		; fffffffeH
-	lea	ecx, DWORD PTR $T220270[ebp]
+	and	DWORD PTR $T220315[ebp], -2		; fffffffeH
+	lea	ecx, DWORD PTR $T220312[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 $LN6@GetUnitNam:
 	ret	0
@@ -4537,12 +4537,12 @@ __real@3ff0000000000000 DQ 03ff0000000000000r	; 1
 CONST	ENDS
 ;	COMDAT ?DoUpdatePower@CvUnitEntry@@QAEXXZ
 _TEXT	SEGMENT
-$T220299 = -20						; size = 4
-_iPromotionLoop$218626 = -20				; size = 4
+$T220341 = -20						; size = 4
+_iPromotionLoop$218668 = -20				; size = 4
 _iPower$ = -20						; size = 4
-$T220303 = -16						; size = 4
-$T220294 = -16						; size = 8
-$T220295 = -8						; size = 8
+$T220345 = -16						; size = 4
+$T220336 = -16						; size = 8
+$T220337 = -8						; size = 8
 ?DoUpdatePower@CvUnitEntry@@QAEXXZ PROC			; CvUnitEntry::DoUpdatePower, COMDAT
 ; _this$ = ecx
 
@@ -4568,8 +4568,8 @@ $T220295 = -8						; size = 8
 ; 1213 : 	iPower = int(pow((double) GetCombat(), 1.5));
 
 	mov	eax, DWORD PTR [ebp+372]
-	mov	DWORD PTR $T220299[esp+64], eax
-	fild	DWORD PTR $T220299[esp+64]
+	mov	DWORD PTR $T220341[esp+64], eax
+	fild	DWORD PTR $T220341[esp+64]
 	sub	esp, 8
 	mov	eax, esp
 	xor	ebx, ebx
@@ -4588,8 +4588,8 @@ $T220295 = -8						; size = 8
 	mov	esi, eax
 	add	esp, 8
 	mov	eax, esp
-	mov	DWORD PTR $T220303[esp+72], ecx
-	fild	DWORD PTR $T220303[esp+72]
+	mov	DWORD PTR $T220345[esp+72], ecx
+	fild	DWORD PTR $T220345[esp+72]
 	mov	DWORD PTR [eax], 858993459		; 33333333H
 	sub	esp, 8
 	mov	DWORD PTR [eax+4], 1073165107		; 3ff73333H
@@ -4638,16 +4638,16 @@ $LN39@DoUpdatePo:
 ; 1231 : 	iPower = int((float) iPower * pow(min(1.0,(double) GetMoves()), 0.3));
 
 	fild	DWORD PTR [ebp+288]
-	mov	DWORD PTR $T220295[esp+64], ebx
-	mov	DWORD PTR $T220295[esp+68], 1072693248	; 3ff00000H
-	lea	ecx, DWORD PTR $T220294[esp+64]
-	fstp	QWORD PTR $T220294[esp+64]
+	mov	DWORD PTR $T220337[esp+64], ebx
+	mov	DWORD PTR $T220337[esp+68], 1072693248	; 3ff00000H
+	lea	ecx, DWORD PTR $T220336[esp+64]
+	fstp	QWORD PTR $T220336[esp+64]
 	fld1
-	fcomp	QWORD PTR $T220294[esp+64]
+	fcomp	QWORD PTR $T220336[esp+64]
 	fnstsw	ax
 	test	ah, 65					; 00000041H
 	je	SHORT $LN54@DoUpdatePo
-	lea	ecx, DWORD PTR $T220295[esp+64]
+	lea	ecx, DWORD PTR $T220337[esp+64]
 $LN54@DoUpdatePo:
 	mov	edx, DWORD PTR [ecx]
 	mov	ecx, DWORD PTR [ecx+4]
@@ -4716,7 +4716,7 @@ $LN37@DoUpdatePo:
 ; 1261 : 	for(int iPromotionLoop = 0; iPromotionLoop < GC.getNumPromotionInfos(); iPromotionLoop++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	mov	DWORD PTR _iPromotionLoop$218626[esp+64], ebx
+	mov	DWORD PTR _iPromotionLoop$218668[esp+64], ebx
 	call	?getNumPromotionInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumPromotionInfos
 	test	eax, eax
 	jle	$LN77@DoUpdatePo
@@ -5383,7 +5383,7 @@ $LN3@DoUpdatePo:
 ; 1398 : 
 ; 1399 : 			for(iLoop = 0; iLoop < NUM_DOMAIN_TYPES; iLoop++)
 
-	mov	ebx, DWORD PTR _iPromotionLoop$218626[esp+64]
+	mov	ebx, DWORD PTR _iPromotionLoop$218668[esp+64]
 $LN35@DoUpdatePo:
 
 ; 1247 : 	}
@@ -5404,7 +5404,7 @@ $LN35@DoUpdatePo:
 
 	inc	ebx
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	mov	DWORD PTR _iPromotionLoop$218626[esp+64], ebx
+	mov	DWORD PTR _iPromotionLoop$218668[esp+64], ebx
 	call	?getNumPromotionInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumPromotionInfos
 	cmp	ebx, eax
 	jl	$LN36@DoUpdatePo
@@ -5735,10 +5735,10 @@ EXTRN	?ReadHashed@CvInfosSerializationHelper@@YAHAAVFDataStream@@PA_N@Z:PROC ; C
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredll_expansion2\cvinfosserializationhelper.h
 ;	COMDAT ??$ReadHashedDataArray@H@CvInfosSerializationHelper@@YAXAAVFDataStream@@PAHH@Z
 _TEXT	SEGMENT
-_bValid$219032 = -13					; size = 1
+_bValid$219074 = -13					; size = 1
 _uiNumEntries$ = -12					; size = 4
-_tValue$219035 = -8					; size = 4
-_tValue$219040 = -4					; size = 4
+_tValue$219077 = -8					; size = 4
+_tValue$219082 = -4					; size = 4
 _kStream$ = 8						; size = 4
 _paArray$ = 12						; size = 4
 _iArraySize$ = 16					; size = 4
@@ -5775,7 +5775,7 @@ $LL7@ReadHashed:
 ; 255  : 		bool bValid;
 ; 256  : 		int iType = ReadHashed(kStream, &bValid);
 
-	lea	ecx, DWORD PTR _bValid$219032[esp+32]
+	lea	ecx, DWORD PTR _bValid$219074[esp+32]
 	push	ecx
 	push	edi
 	call	?ReadHashed@CvInfosSerializationHelper@@YAHAAVFDataStream@@PA_N@Z ; CvInfosSerializationHelper::ReadHashed
@@ -5791,7 +5791,7 @@ $LL7@ReadHashed:
 ; 259  : 			TData tValue;
 ; 260  : 			kStream >> tValue;
 
-	lea	edx, DWORD PTR _tValue$219035[esp+32]
+	lea	edx, DWORD PTR _tValue$219077[esp+32]
 	push	edx
 	mov	ecx, edi
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
@@ -5803,7 +5803,7 @@ $LL7@ReadHashed:
 
 ; 262  : 				paArray[iType] = tValue;
 
-	mov	eax, DWORD PTR _tValue$219035[esp+32]
+	mov	eax, DWORD PTR _tValue$219077[esp+32]
 	mov	ecx, DWORD PTR _paArray$[esp+28]
 	mov	DWORD PTR [ecx+esi*4], eax
 
@@ -5814,14 +5814,14 @@ $LN4@ReadHashed:
 
 ; 264  : 		else if(!bValid)
 
-	cmp	BYTE PTR _bValid$219032[esp+32], 0
+	cmp	BYTE PTR _bValid$219074[esp+32], 0
 	jne	SHORT $LN6@ReadHashed
 
 ; 265  : 		{
 ; 266  : 			TData tValue;
 ; 267  : 			kStream >> tValue;
 
-	lea	edx, DWORD PTR _tValue$219040[esp+32]
+	lea	edx, DWORD PTR _tValue$219082[esp+32]
 	push	edx
 	mov	ecx, edi
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
@@ -6529,26 +6529,26 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 tv1619 = -84						; size = 4
 tv1606 = -84						; size = 4
-_f3$218201 = -84					; size = 4
-_f4$218203 = -80					; size = 4
-_f5$218205 = -76					; size = 4
-_f6$218207 = -72					; size = 4
-$T220792 = -72						; size = 4
-_strKey$218172 = -68					; size = 28
-_strKey$218157 = -68					; size = 28
-_strKey$218148 = -68					; size = 28
-_strKey$218185 = -40					; size = 28
+_f3$218243 = -84					; size = 4
+_f4$218245 = -80					; size = 4
+_f5$218247 = -76					; size = 4
+_f6$218249 = -72					; size = 4
+$T220834 = -72						; size = 4
+_strKey$218214 = -68					; size = 28
+_strKey$218199 = -68					; size = 28
+_strKey$218190 = -68					; size = 28
+_strKey$218227 = -40					; size = 28
 __$EHRec$ = -12						; size = 12
 tv1617 = 8						; size = 4
 tv1369 = 8						; size = 4
 tv1365 = 8						; size = 4
-_count$220834 = 8					; size = 4
-_f2$218199 = 8						; size = 4
-_pResults$218174 = 8					; size = 4
-_pUnitNameCount$218159 = 8				; size = 4
-_pResults$218150 = 8					; size = 4
+_count$220876 = 8					; size = 4
+_f2$218241 = 8						; size = 4
+_pResults$218216 = 8					; size = 4
+_pUnitNameCount$218201 = 8				; size = 4
+_pResults$218192 = 8					; size = 4
 _kResults$ = 8						; size = 4
-_f1$218197 = 12						; size = 4
+_f1$218239 = 12						; size = 4
 _kUtility$ = 12						; size = 4
 ?CacheResults@CvUnitEntry@@UAE_NAAVResults@Database@@AAVCvDatabaseUtility@@@Z PROC ; CvUnitEntry::CacheResults, COMDAT
 ; _this$ = ecx
@@ -6595,14 +6595,14 @@ $LN15@CacheResul:
 ; 169  : 	m_iProductionCost = kResults.GetInt("Cost");
 
 	mov	ebp, DWORD PTR __imp_?GetInt@Results@Database@@QAEHPBD@Z
-	push	OFFSET $SG217998
+	push	OFFSET $SG218040
 	mov	ecx, edi
 	call	ebp
 
 ; 170  : #ifdef NQ_UNIT_FINAL_PRODUCTION_COST_MODIFIER
 ; 171  : 	m_iFinalProductionCostModifier = kResults.GetInt("FinalProductionCostModifier");
 
-	push	OFFSET $SG217999
+	push	OFFSET $SG218041
 	mov	ecx, edi
 	mov	DWORD PTR [esi+260], eax
 	call	ebp
@@ -6610,7 +6610,7 @@ $LN15@CacheResul:
 ; 172  : #endif
 ; 173  : 	m_iFaithCost = kResults.GetInt("FaithCost");
 
-	push	OFFSET $SG218000
+	push	OFFSET $SG218042
 	mov	ecx, edi
 	mov	DWORD PTR [esi+264], eax
 	call	ebp
@@ -6618,56 +6618,56 @@ $LN15@CacheResul:
 ; 174  : 	m_bRequiresFaithPurchaseEnabled = kResults.GetBool("RequiresFaithPurchaseEnabled");
 
 	mov	ebx, DWORD PTR __imp_?GetBool@Results@Database@@QAE_NPBD@Z
-	push	OFFSET $SG218001
+	push	OFFSET $SG218043
 	mov	ecx, edi
 	mov	DWORD PTR [esi+268], eax
 	call	ebx
 
 ; 175  : 	m_bPurchaseOnly = kResults.GetBool("PurchaseOnly");
 
-	push	OFFSET $SG218002
+	push	OFFSET $SG218044
 	mov	ecx, edi
 	mov	BYTE PTR [esi+272], al
 	call	ebx
 
 ; 176  : 	m_bMoveAfterPurchase = kResults.GetBool("MoveAfterPurchase");
 
-	push	OFFSET $SG218003
+	push	OFFSET $SG218045
 	mov	ecx, edi
 	mov	BYTE PTR [esi+273], al
 	call	ebx
 
 ; 177  : 	m_iHurryCostModifier = kResults.GetInt("HurryCostModifier");
 
-	push	OFFSET $SG218004
+	push	OFFSET $SG218046
 	mov	ecx, edi
 	mov	BYTE PTR [esi+274], al
 	call	ebp
 
 ; 178  : 	m_iAdvancedStartCost = kResults.GetInt("AdvancedStartCost");
 
-	push	OFFSET $SG218005
+	push	OFFSET $SG218047
 	mov	ecx, edi
 	mov	DWORD PTR [esi+276], eax
 	call	ebp
 
 ; 179  : 	m_iMinAreaSize = kResults.GetInt("MinAreaSize");
 
-	push	OFFSET $SG218006
+	push	OFFSET $SG218048
 	mov	ecx, edi
 	mov	DWORD PTR [esi+280], eax
 	call	ebp
 
 ; 180  : 	m_iMoves = kResults.GetInt("Moves");
 
-	push	OFFSET $SG218007
+	push	OFFSET $SG218049
 	mov	ecx, edi
 	mov	DWORD PTR [esi+284], eax
 	call	ebp
 
 ; 181  : 	m_bMoves = kResults.GetInt("Immobile");
 
-	push	OFFSET $SG218008
+	push	OFFSET $SG218050
 	mov	ecx, edi
 	mov	DWORD PTR [esi+288], eax
 	call	ebp
@@ -6677,83 +6677,83 @@ $LN15@CacheResul:
 
 ; 182  : 	m_iBaseSightRange = kResults.GetInt("BaseSightRange");
 
-	push	OFFSET $SG218009
+	push	OFFSET $SG218051
 	mov	ecx, edi
 	call	ebp
 
 ; 183  : 	m_iRange = kResults.GetInt("Range");
 
-	push	OFFSET $SG218010
+	push	OFFSET $SG218052
 	mov	ecx, edi
 	mov	DWORD PTR [esi+296], eax
 	call	ebp
 
 ; 184  : 	m_iAirInterceptRange = kResults.GetInt("AirInterceptRange");
 
-	push	OFFSET $SG218011
+	push	OFFSET $SG218053
 	mov	ecx, edi
 	mov	DWORD PTR [esi+300], eax
 	call	ebp
 
 ; 185  : 	m_iAirUnitCap = kResults.GetInt("AirUnitCap");
 
-	push	OFFSET $SG218012
+	push	OFFSET $SG218054
 	mov	ecx, edi
 	mov	DWORD PTR [esi+304], eax
 	call	ebp
 
 ; 186  : 	m_iNukeDamageLevel = kResults.GetInt("NukeDamageLevel");
 
-	push	OFFSET $SG218013
+	push	OFFSET $SG218055
 	mov	ecx, edi
 	mov	DWORD PTR [esi+308], eax
 	call	ebp
 
 ; 187  : 	m_iWorkRate = kResults.GetInt("WorkRate");
 
-	push	OFFSET $SG218014
+	push	OFFSET $SG218056
 	mov	ecx, edi
 	mov	DWORD PTR [esi+312], eax
 	call	ebp
 
 ; 188  : 	m_iNumFreeTechs = kResults.GetInt("NumFreeTechs");
 
-	push	OFFSET $SG218015
+	push	OFFSET $SG218057
 	mov	ecx, edi
 	mov	DWORD PTR [esi+316], eax
 	call	ebp
 
 ; 189  : 	m_iBaseBeakersTurnsToCount = kResults.GetInt("BaseBeakersTurnsToCount");
 
-	push	OFFSET $SG218016
+	push	OFFSET $SG218058
 	mov	ecx, edi
 	mov	DWORD PTR [esi+320], eax
 	call	ebp
 
 ; 190  : 	m_iBaseCultureTurnsToCount = kResults.GetInt("BaseCultureTurnsToCount");
 
-	push	OFFSET $SG218017
+	push	OFFSET $SG218059
 	mov	ecx, edi
 	mov	DWORD PTR [esi+324], eax
 	call	ebp
 
 ; 191  : 	m_iBaseHurry = kResults.GetInt("BaseHurry");
 
-	push	OFFSET $SG218018
+	push	OFFSET $SG218060
 	mov	ecx, edi
 	mov	DWORD PTR [esi+328], eax
 	call	ebp
 
 ; 192  : 	m_iHurryMultiplier = kResults.GetInt("HurryMultiplier");
 
-	push	OFFSET $SG218019
+	push	OFFSET $SG218061
 	mov	ecx, edi
 	mov	DWORD PTR [esi+332], eax
 	call	ebp
 
 ; 193  : 	m_bRushBuilding= kResults.GetInt("RushBuilding");
 
-	push	OFFSET $SG218020
+	push	OFFSET $SG218062
 	mov	ecx, edi
 	mov	DWORD PTR [esi+336], eax
 	call	ebp
@@ -6762,105 +6762,105 @@ $LN15@CacheResul:
 
 ; 194  : 	m_iBaseGold = kResults.GetInt("BaseGold");
 
-	push	OFFSET $SG218021
+	push	OFFSET $SG218063
 	mov	ecx, edi
 	mov	BYTE PTR [esi+340], dl
 	call	ebp
 
 ; 195  : 	m_iNumGoldPerEra = kResults.GetInt("NumGoldPerEra");
 
-	push	OFFSET $SG218022
+	push	OFFSET $SG218064
 	mov	ecx, edi
 	mov	DWORD PTR [esi+344], eax
 	call	ebp
 
 ; 196  : 	m_bSpreadReligion = kResults.GetBool("SpreadReligion");
 
-	push	OFFSET $SG218023
+	push	OFFSET $SG218065
 	mov	ecx, edi
 	mov	DWORD PTR [esi+348], eax
 	call	ebx
 
 ; 197  : 	m_bRemoveHeresy = kResults.GetBool("RemoveHeresy");
 
-	push	OFFSET $SG218024
+	push	OFFSET $SG218066
 	mov	ecx, edi
 	mov	BYTE PTR [esi+352], al
 	call	ebx
 
 ; 198  : 	m_iReligionSpreads = kResults.GetInt("ReligionSpreads");
 
-	push	OFFSET $SG218025
+	push	OFFSET $SG218067
 	mov	ecx, edi
 	mov	BYTE PTR [esi+367], al
 	call	ebp
 
 ; 199  : 	m_iReligiousStrength = kResults.GetInt("ReligiousStrength");
 
-	push	OFFSET $SG218026
+	push	OFFSET $SG218068
 	mov	ecx, edi
 	mov	DWORD PTR [esi+356], eax
 	call	ebp
 
 ; 200  : 	m_bFoundReligion = kResults.GetBool("FoundReligion");
 
-	push	OFFSET $SG218027
+	push	OFFSET $SG218069
 	mov	ecx, edi
 	mov	DWORD PTR [esi+360], eax
 	call	ebx
 
 ; 201  : 	m_bRequiresEnhancedReligion = kResults.GetBool("RequiresEnhancedReligion");
 
-	push	OFFSET $SG218028
+	push	OFFSET $SG218070
 	mov	ecx, edi
 	mov	BYTE PTR [esi+364], al
 	call	ebx
 
 ; 202  : 	m_bProhibitsSpread = kResults.GetBool("ProhibitsSpread");
 
-	push	OFFSET $SG218029
+	push	OFFSET $SG218071
 	mov	ecx, edi
 	mov	BYTE PTR [esi+365], al
 	call	ebx
 
 ; 203  : 	m_bCanBuyCityState = kResults.GetBool("CanBuyCityState");
 
-	push	OFFSET $SG218030
+	push	OFFSET $SG218072
 	mov	ecx, edi
 	mov	BYTE PTR [esi+366], al
 	call	ebx
 
 ; 204  : 	m_iCombat = kResults.GetInt("Combat");
 
-	push	OFFSET $SG218031
+	push	OFFSET $SG218073
 	mov	ecx, edi
 	mov	BYTE PTR [esi+368], al
 	call	ebp
 
 ; 205  : 	m_iCombatLimit = kResults.GetInt("CombatLimit");
 
-	push	OFFSET $SG218032
+	push	OFFSET $SG218074
 	mov	ecx, edi
 	mov	DWORD PTR [esi+372], eax
 	call	ebp
 
 ; 206  : 	m_iRangedCombat = kResults.GetInt("RangedCombat");
 
-	push	OFFSET $SG218033
+	push	OFFSET $SG218075
 	mov	ecx, edi
 	mov	DWORD PTR [esi+376], eax
 	call	ebp
 
 ; 207  : 	m_iRangedCombatLimit = kResults.GetInt("RangedCombatLimit");
 
-	push	OFFSET $SG218034
+	push	OFFSET $SG218076
 	mov	ecx, edi
 	mov	DWORD PTR [esi+380], eax
 	call	ebp
 
 ; 208  : 	m_iXPValueAttack = kResults.GetInt("XPValueAttack");
 
-	push	OFFSET $SG218035
+	push	OFFSET $SG218077
 	mov	ecx, edi
 	mov	DWORD PTR [esi+384], eax
 	call	ebp
@@ -6868,202 +6868,202 @@ $LN15@CacheResul:
 
 ; 209  : 	m_iXPValueDefense = kResults.GetInt("XPValueDefense");
 
-	push	OFFSET $SG218036
+	push	OFFSET $SG218078
 	mov	ecx, edi
 	call	ebp
 
 ; 210  : 	m_iConscriptionValue = kResults.GetInt("Conscription");
 
-	push	OFFSET $SG218037
+	push	OFFSET $SG218079
 	mov	ecx, edi
 	mov	DWORD PTR [esi+392], eax
 	call	ebp
 
 ; 211  : 	m_iExtraMaintenanceCost = kResults.GetInt("ExtraMaintenanceCost");
 
-	push	OFFSET $SG218038
+	push	OFFSET $SG218080
 	mov	ecx, edi
 	mov	DWORD PTR [esi+404], eax
 	call	ebp
 
 ; 212  : 	m_bNoMaintenance = kResults.GetBool("NoMaintenance");
 
-	push	OFFSET $SG218039
+	push	OFFSET $SG218081
 	mov	ecx, edi
 	mov	DWORD PTR [esi+408], eax
 	call	ebx
 
 ; 213  : 	m_iUnhappiness = kResults.GetInt("Unhappiness");
 
-	push	OFFSET $SG218040
+	push	OFFSET $SG218082
 	mov	ecx, edi
 	mov	BYTE PTR [esi+412], al
 	call	ebp
 
 ; 214  : 	m_iUnitFlagIconOffset = kResults.GetInt("UnitFlagIconOffset");
 
-	push	OFFSET $SG218041
+	push	OFFSET $SG218083
 	mov	ecx, edi
 	mov	DWORD PTR [esi+416], eax
 	call	ebp
 
 ; 215  : 	m_iUnitPortraitOffset = kResults.GetInt("PortraitIndex");
 
-	push	OFFSET $SG218042
+	push	OFFSET $SG218084
 	mov	ecx, edi
 	mov	DWORD PTR [esi+560], eax
 	call	ebp
 
 ; 216  : 	m_iLeaderExperience = kResults.GetInt("LeaderExperience");
 
-	push	OFFSET $SG218043
+	push	OFFSET $SG218085
 	mov	ecx, edi
 	mov	DWORD PTR [esi+564], eax
 	call	ebp
 
 ; 217  : 	m_bFoodProduction = kResults.GetBool("Food");
 
-	push	OFFSET $SG218044
+	push	OFFSET $SG218086
 	mov	ecx, edi
 	mov	DWORD PTR [esi+492], eax
 	call	ebx
 
 ; 218  : 	m_bNoBadGoodies = kResults.GetBool("NoBadGoodies");
 
-	push	OFFSET $SG218045
+	push	OFFSET $SG218087
 	mov	ecx, edi
 	mov	BYTE PTR [esi+496], al
 	call	ebx
 
 ; 219  : 	m_bRivalTerritory = kResults.GetBool("RivalTerritory");
 
-	push	OFFSET $SG218046
+	push	OFFSET $SG218088
 	mov	ecx, edi
 	mov	BYTE PTR [esi+497], al
 	call	ebx
 
 ; 220  : 	m_bMilitarySupport = kResults.GetBool("MilitarySupport");
 
-	push	OFFSET $SG218047
+	push	OFFSET $SG218089
 	mov	ecx, edi
 	mov	BYTE PTR [esi+498], al
 	call	ebx
 
 ; 221  : 	m_bMilitaryProduction = kResults.GetBool("MilitaryProduction");
 
-	push	OFFSET $SG218048
+	push	OFFSET $SG218090
 	mov	ecx, edi
 	mov	BYTE PTR [esi+499], al
 	call	ebx
 
 ; 222  : 	m_bPillage = kResults.GetBool("Pillage");
 
-	push	OFFSET $SG218049
+	push	OFFSET $SG218091
 	mov	ecx, edi
 	mov	BYTE PTR [esi+500], al
 	call	ebx
 
 ; 223  : 	m_bFound = kResults.GetBool("Found");
 
-	push	OFFSET $SG218050
+	push	OFFSET $SG218092
 	mov	ecx, edi
 	mov	BYTE PTR [esi+501], al
 	call	ebx
 
 ; 224  : 	m_bFoundAbroad = kResults.GetBool("FoundAbroad");
 
-	push	OFFSET $SG218051
+	push	OFFSET $SG218093
 	mov	ecx, edi
 	mov	BYTE PTR [esi+502], al
 	call	ebx
 
 ; 225  : 	m_iCultureBombRadius = kResults.GetInt("CultureBombRadius");
 
-	push	OFFSET $SG218052
+	push	OFFSET $SG218094
 	mov	ecx, edi
 	mov	BYTE PTR [esi+503], al
 	call	ebp
 
 ; 226  : 	m_iGoldenAgeTurns = kResults.GetInt("GoldenAgeTurns");
 
-	push	OFFSET $SG218053
+	push	OFFSET $SG218095
 	mov	ecx, edi
 	mov	DWORD PTR [esi+504], eax
 	call	ebp
 
 ; 227  : 	m_iFreePolicies = kResults.GetInt("FreePolicies");
 
-	push	OFFSET $SG218054
+	push	OFFSET $SG218096
 	mov	ecx, edi
 	mov	DWORD PTR [esi+512], eax
 	call	ebp
 
 ; 228  : 	m_iOneShotTourism = kResults.GetInt("OneShotTourism");
 
-	push	OFFSET $SG218055
+	push	OFFSET $SG218097
 	mov	ecx, edi
 	mov	DWORD PTR [esi+516], eax
 	call	ebp
 
 ; 229  : 	m_iOneShotTourismPercentOthers = kResults.GetInt("OneShotTourismPercentOthers");
 
-	push	OFFSET $SG218056
+	push	OFFSET $SG218098
 	mov	ecx, edi
 	mov	DWORD PTR [esi+520], eax
 	call	ebp
 
 ; 230  : 	m_bIgnoreBuildingDefense = kResults.GetBool("IgnoreBuildingDefense");
 
-	push	OFFSET $SG218057
+	push	OFFSET $SG218099
 	mov	ecx, edi
 	mov	DWORD PTR [esi+524], eax
 	call	ebx
 
 ; 231  : 	m_bPrereqResources = kResults.GetBool("PrereqResources");
 
-	push	OFFSET $SG218058
+	push	OFFSET $SG218100
 	mov	ecx, edi
 	mov	BYTE PTR [esi+528], al
 	call	ebx
 
 ; 232  : 	m_bMechanized = kResults.GetBool("Mechanized");
 
-	push	OFFSET $SG218059
+	push	OFFSET $SG218101
 	mov	ecx, edi
 	mov	BYTE PTR [esi+529], al
 	call	ebx
 
 ; 233  : 	m_bSuicide = kResults.GetBool("Suicide");
 
-	push	OFFSET $SG218060
+	push	OFFSET $SG218102
 	mov	ecx, edi
 	mov	BYTE PTR [esi+530], al
 	call	ebx
 
 ; 234  : 	m_bCaptureWhileEmbarked = kResults.GetBool("CaptureWhileEmbarked");
 
-	push	OFFSET $SG218061
+	push	OFFSET $SG218103
 	mov	ecx, edi
 	mov	BYTE PTR [esi+531], al
 	call	ebx
 
 ; 235  : 	m_bRangeAttackOnlyInDomain = kResults.GetBool("RangeAttackOnlyInDomain");
 
-	push	OFFSET $SG218062
+	push	OFFSET $SG218104
 	mov	ecx, edi
 	mov	BYTE PTR [esi+532], al
 	call	ebx
 
 ; 236  : 	m_bTrade = kResults.GetBool("Trade");
 
-	push	OFFSET $SG218063
+	push	OFFSET $SG218105
 	mov	ecx, edi
 	mov	BYTE PTR [esi+533], al
 	call	ebx
 
 ; 237  : 	m_iNumExoticGoods = kResults.GetInt("NumExoticGoods");
 
-	push	OFFSET $SG218064
+	push	OFFSET $SG218106
 	mov	ecx, edi
 	mov	BYTE PTR [esi+548], al
 	call	ebp
@@ -7072,7 +7072,7 @@ $LN15@CacheResul:
 ; 239  : 	m_strUnitArtInfoTag = kResults.GetText("UnitArtInfo");
 
 	mov	ebp, DWORD PTR __imp_?GetText@Results@Database@@QAEPBDPBD@Z
-	push	OFFSET $SG218065
+	push	OFFSET $SG218107
 	mov	ecx, edi
 	mov	DWORD PTR [esi+552], eax
 	call	ebp
@@ -7088,13 +7088,13 @@ $LN25@CacheResul:
 
 ; 240  : 	m_bUnitArtInfoCulturalVariation = kResults.GetBool("UnitArtInfoCulturalVariation");
 
-	push	OFFSET $SG218066
+	push	OFFSET $SG218108
 	mov	ecx, edi
 	call	ebx
 
 ; 241  : 	m_bUnitArtInfoEraVariation = kResults.GetBool("UnitArtInfoEraVariation");
 
-	push	OFFSET $SG218067
+	push	OFFSET $SG218109
 	mov	ecx, edi
 	mov	BYTE PTR [esi+596], al
 	call	ebx
@@ -7104,7 +7104,7 @@ $LN25@CacheResul:
 ; 244  : 	const char* szTextVal = NULL;
 ; 245  : 	szTextVal = kResults.GetText("Class");
 
-	push	OFFSET $SG218069
+	push	OFFSET $SG218111
 	mov	ecx, edi
 	mov	BYTE PTR [esi+597], al
 	call	ebp
@@ -7119,7 +7119,7 @@ $LN25@CacheResul:
 ; 247  : 
 ; 248  : 	szTextVal = kResults.GetText("Special");
 
-	push	OFFSET $SG218070
+	push	OFFSET $SG218112
 	mov	ecx, edi
 	mov	DWORD PTR [esi+420], eax
 	call	ebp
@@ -7134,7 +7134,7 @@ $LN25@CacheResul:
 ; 250  : 
 ; 251  : 	szTextVal = kResults.GetText("Capture");
 
-	push	OFFSET $SG218071
+	push	OFFSET $SG218113
 	mov	ecx, edi
 	mov	DWORD PTR [esi+424], eax
 	call	ebp
@@ -7149,7 +7149,7 @@ $LN25@CacheResul:
 ; 253  : 
 ; 254  : 	szTextVal = kResults.GetText("CombatClass");
 
-	push	OFFSET $SG218072
+	push	OFFSET $SG218114
 	mov	ecx, edi
 	mov	DWORD PTR [esi+428], eax
 	call	ebp
@@ -7164,7 +7164,7 @@ $LN25@CacheResul:
 ; 256  : 
 ; 257  : 	szTextVal = kResults.GetText("Domain");
 
-	push	OFFSET $SG218073
+	push	OFFSET $SG218115
 	mov	ecx, edi
 	mov	DWORD PTR [esi+432], eax
 	call	ebp
@@ -7179,7 +7179,7 @@ $LN25@CacheResul:
 ; 259  : 
 ; 260  : 	szTextVal = kResults.GetText("CivilianAttackPriority");
 
-	push	OFFSET $SG218074
+	push	OFFSET $SG218116
 	mov	ecx, edi
 	mov	DWORD PTR [esi+436], eax
 	call	ebp
@@ -7194,7 +7194,7 @@ $LN25@CacheResul:
 ; 262  : 
 ; 263  : 	szTextVal = kResults.GetText("DefaultUnitAI");
 
-	push	OFFSET $SG218075
+	push	OFFSET $SG218117
 	mov	ecx, edi
 	mov	DWORD PTR [esi+440], eax
 	call	ebp
@@ -7209,7 +7209,7 @@ $LN25@CacheResul:
 ; 265  : 
 ; 266  : 	szTextVal = kResults.GetText("PillagePrereqTech");
 
-	push	OFFSET $SG218076
+	push	OFFSET $SG218118
 	mov	ecx, edi
 	mov	DWORD PTR [esi+444], eax
 	call	ebp
@@ -7224,7 +7224,7 @@ $LN25@CacheResul:
 ; 268  : 	
 ; 269  : 	szTextVal = kResults.GetText("PrereqTech");
 
-	push	OFFSET $SG218077
+	push	OFFSET $SG218119
 	mov	ecx, edi
 	mov	DWORD PTR [esi+448], eax
 	call	ebp
@@ -7240,7 +7240,7 @@ $LN25@CacheResul:
 ; 271  : 
 ; 272  : 	szTextVal = kResults.GetText("ObsoleteTech");
 
-	push	OFFSET $SG218078
+	push	OFFSET $SG218120
 	mov	ecx, edi
 	call	ebp
 
@@ -7254,7 +7254,7 @@ $LN25@CacheResul:
 ; 274  : 
 ; 275  : 	szTextVal = kResults.GetText("PolicyType");
 
-	push	OFFSET $SG218079
+	push	OFFSET $SG218121
 	mov	ecx, edi
 	mov	DWORD PTR [esi+456], eax
 	call	ebp
@@ -7269,7 +7269,7 @@ $LN25@CacheResul:
 ; 277  : 
 ; 278  : 	szTextVal = kResults.GetText("GoodyHutUpgradeUnitClass");
 
-	push	OFFSET $SG218080
+	push	OFFSET $SG218122
 	mov	ecx, edi
 	mov	DWORD PTR [esi+460], eax
 	call	ebp
@@ -7284,7 +7284,7 @@ $LN25@CacheResul:
 ; 280  : 
 ; 281  : 	szTextVal = kResults.GetText("SpecialCargo");
 
-	push	OFFSET $SG218081
+	push	OFFSET $SG218123
 	mov	ecx, edi
 	mov	DWORD PTR [esi+464], eax
 	call	ebp
@@ -7299,7 +7299,7 @@ $LN25@CacheResul:
 ; 283  : 
 ; 284  : 	szTextVal = kResults.GetText("DomainCargo");
 
-	push	OFFSET $SG218082
+	push	OFFSET $SG218124
 	mov	ecx, edi
 	mov	DWORD PTR [esi+396], eax
 	call	ebp
@@ -7314,7 +7314,7 @@ $LN25@CacheResul:
 ; 286  : 
 ; 287  : 	szTextVal = kResults.GetText("ProjectPrereq");
 
-	push	OFFSET $SG218083
+	push	OFFSET $SG218125
 	mov	ecx, edi
 	mov	DWORD PTR [esi+400], eax
 	call	ebp
@@ -7329,7 +7329,7 @@ $LN25@CacheResul:
 ; 289  : 
 ; 290  : 	szTextVal = kResults.GetText("SpaceshipProject");
 
-	push	OFFSET $SG218084
+	push	OFFSET $SG218126
 	mov	ecx, edi
 	mov	DWORD PTR [esi+536], eax
 	call	ebp
@@ -7344,7 +7344,7 @@ $LN25@CacheResul:
 ; 292  : 
 ; 293  : 	szTextVal = kResults.GetText("LeaderPromotion");
 
-	push	OFFSET $SG218085
+	push	OFFSET $SG218127
 	mov	ecx, edi
 	mov	DWORD PTR [esi+540], eax
 	call	ebp
@@ -7371,8 +7371,8 @@ $LN25@CacheResul:
 	push	0
 	mov	ebx, eax
 	push	ebx
-	push	OFFSET $SG218087
-	push	OFFSET $SG218088
+	push	OFFSET $SG218129
+	push	OFFSET $SG218130
 	lea	eax, DWORD PTR [esi+948]
 	push	eax
 	call	?SetFlavors@CvDatabaseUtility@@QAE_NAAPAHPBD11H@Z ; CvDatabaseUtility::SetFlavors
@@ -7382,12 +7382,12 @@ $LN25@CacheResul:
 
 	push	0
 	push	0
-	push	OFFSET $SG218089
+	push	OFFSET $SG218131
 	push	ebx
-	push	OFFSET $SG218090
-	push	OFFSET $SG218091
-	push	OFFSET $SG218092
-	push	OFFSET $SG218093
+	push	OFFSET $SG218132
+	push	OFFSET $SG218133
+	push	OFFSET $SG218134
+	push	OFFSET $SG218135
 	lea	ecx, DWORD PTR [esi+944]
 	push	ecx
 	mov	ecx, DWORD PTR _kUtility$[esp+132]
@@ -7399,12 +7399,12 @@ $LN25@CacheResul:
 	mov	ecx, DWORD PTR _kUtility$[esp+96]
 	push	0
 	push	0
-	push	OFFSET $SG218094
+	push	OFFSET $SG218136
 	push	ebx
-	push	OFFSET $SG218095
-	push	OFFSET $SG218096
-	push	OFFSET $SG218097
-	push	OFFSET $SG218098
+	push	OFFSET $SG218137
+	push	OFFSET $SG218138
+	push	OFFSET $SG218139
+	push	OFFSET $SG218140
 	lea	edx, DWORD PTR [esi+940]
 	push	edx
 	call	?PopulateArrayByValue@CvDatabaseUtility@@QAE_NAAPAHPBD11111HH@Z ; CvDatabaseUtility::PopulateArrayByValue
@@ -7414,12 +7414,12 @@ $LN25@CacheResul:
 	mov	ecx, DWORD PTR _kUtility$[esp+96]
 	push	0
 	push	0
-	push	OFFSET $SG218099
+	push	OFFSET $SG218141
 	push	ebx
-	push	OFFSET $SG218100
-	push	OFFSET $SG218101
-	push	OFFSET $SG218102
-	push	OFFSET $SG218103
+	push	OFFSET $SG218142
+	push	OFFSET $SG218143
+	push	OFFSET $SG218144
+	push	OFFSET $SG218145
 	lea	eax, DWORD PTR [esi+956]
 	push	eax
 	call	?PopulateArrayByValue@CvDatabaseUtility@@QAE_NAAPAHPBD11111HH@Z ; CvDatabaseUtility::PopulateArrayByValue
@@ -7428,12 +7428,12 @@ $LN25@CacheResul:
 
 	push	0
 	push	0
-	push	OFFSET $SG218104
+	push	OFFSET $SG218146
 	push	ebx
-	push	OFFSET $SG218105
-	push	OFFSET $SG218106
-	push	OFFSET $SG218107
-	push	OFFSET $SG218108
+	push	OFFSET $SG218147
+	push	OFFSET $SG218148
+	push	OFFSET $SG218149
+	push	OFFSET $SG218150
 	lea	ecx, DWORD PTR [esi+960]
 	push	ecx
 	mov	ecx, DWORD PTR _kUtility$[esp+132]
@@ -7443,10 +7443,10 @@ $LN25@CacheResul:
 
 	mov	ecx, DWORD PTR _kUtility$[esp+96]
 	push	ebx
-	push	OFFSET $SG218109
-	push	OFFSET $SG218110
-	push	OFFSET $SG218111
-	push	OFFSET $SG218112
+	push	OFFSET $SG218151
+	push	OFFSET $SG218152
+	push	OFFSET $SG218153
+	push	OFFSET $SG218154
 	lea	edx, DWORD PTR [esi+992]
 	push	edx
 	call	?PopulateArrayByExistence@CvDatabaseUtility@@QAE_NAAPA_NPBD1111@Z ; CvDatabaseUtility::PopulateArrayByExistence
@@ -7456,10 +7456,10 @@ $LN25@CacheResul:
 
 	mov	ecx, DWORD PTR _kUtility$[esp+96]
 	push	ebx
-	push	OFFSET $SG218113
-	push	OFFSET $SG218114
-	push	OFFSET $SG218115
-	push	OFFSET $SG218116
+	push	OFFSET $SG218155
+	push	OFFSET $SG218156
+	push	OFFSET $SG218157
+	push	OFFSET $SG218158
 	lea	eax, DWORD PTR [esi+964]
 	push	eax
 	call	?PopulateArrayByExistence@CvDatabaseUtility@@QAE_NAAPA_NPBD1111@Z ; CvDatabaseUtility::PopulateArrayByExistence
@@ -7468,10 +7468,10 @@ $LN25@CacheResul:
 ; 310  : 	kUtility.PopulateArrayByExistence(m_pbUnitAIType, "UnitAIInfos", "Unit_AITypes", "UnitAIType", "UnitType", szUnitType);
 
 	push	ebx
-	push	OFFSET $SG218117
-	push	OFFSET $SG218118
-	push	OFFSET $SG218119
-	push	OFFSET $SG218120
+	push	OFFSET $SG218159
+	push	OFFSET $SG218160
+	push	OFFSET $SG218161
+	push	OFFSET $SG218162
 	lea	ecx, DWORD PTR [esi+968]
 	push	ecx
 	mov	ecx, DWORD PTR _kUtility$[esp+120]
@@ -7481,10 +7481,10 @@ $LN25@CacheResul:
 
 	mov	ecx, DWORD PTR _kUtility$[esp+96]
 	push	ebx
-	push	OFFSET $SG218121
-	push	OFFSET $SG218122
-	push	OFFSET $SG218123
-	push	OFFSET $SG218124
+	push	OFFSET $SG218163
+	push	OFFSET $SG218164
+	push	OFFSET $SG218165
+	push	OFFSET $SG218166
 	lea	edx, DWORD PTR [esi+972]
 	push	edx
 	call	?PopulateArrayByExistence@CvDatabaseUtility@@QAE_NAAPA_NPBD1111@Z ; CvDatabaseUtility::PopulateArrayByExistence
@@ -7493,11 +7493,11 @@ $LN25@CacheResul:
 ; 313  : 	kUtility.PopulateArrayByExistence(m_pbBuilds, "Builds", "Unit_Builds", "BuildType", "UnitType", szUnitType);
 
 	push	ebx
-	push	OFFSET $SG218125
-	push	OFFSET $SG218126
-	push	OFFSET $SG218127
+	push	OFFSET $SG218167
+	push	OFFSET $SG218168
+	push	OFFSET $SG218169
 	mov	ecx, DWORD PTR _kUtility$[esp+112]
-	push	OFFSET $SG218128
+	push	OFFSET $SG218170
 	lea	eax, DWORD PTR [esi+976]
 	push	eax
 	call	?PopulateArrayByExistence@CvDatabaseUtility@@QAE_NAAPA_NPBD1111@Z ; CvDatabaseUtility::PopulateArrayByExistence
@@ -7505,10 +7505,10 @@ $LN25@CacheResul:
 ; 314  : 	kUtility.PopulateArrayByExistence(m_pbGreatPeoples, "Specialists", "Unit_GreatPersons", "GreatPersonType", "UnitType", szUnitType);
 
 	push	ebx
-	push	OFFSET $SG218129
-	push	OFFSET $SG218130
-	push	OFFSET $SG218131
-	push	OFFSET $SG218132
+	push	OFFSET $SG218171
+	push	OFFSET $SG218172
+	push	OFFSET $SG218173
+	push	OFFSET $SG218174
 	lea	ecx, DWORD PTR [esi+980]
 	push	ecx
 	mov	ecx, DWORD PTR _kUtility$[esp+120]
@@ -7518,10 +7518,10 @@ $LN25@CacheResul:
 
 	mov	ecx, DWORD PTR _kUtility$[esp+96]
 	push	ebx
-	push	OFFSET $SG218133
-	push	OFFSET $SG218134
-	push	OFFSET $SG218135
-	push	OFFSET $SG218136
+	push	OFFSET $SG218175
+	push	OFFSET $SG218176
+	push	OFFSET $SG218177
+	push	OFFSET $SG218178
 	lea	edx, DWORD PTR [esi+984]
 	push	edx
 	call	?PopulateArrayByExistence@CvDatabaseUtility@@QAE_NAAPA_NPBD1111@Z ; CvDatabaseUtility::PopulateArrayByExistence
@@ -7530,10 +7530,10 @@ $LN25@CacheResul:
 
 	mov	ecx, DWORD PTR _kUtility$[esp+96]
 	push	ebx
-	push	OFFSET $SG218137
-	push	OFFSET $SG218138
-	push	OFFSET $SG218139
-	push	OFFSET $SG218140
+	push	OFFSET $SG218179
+	push	OFFSET $SG218180
+	push	OFFSET $SG218181
+	push	OFFSET $SG218182
 	lea	eax, DWORD PTR [esi+988]
 	push	eax
 	call	?PopulateArrayByExistence@CvDatabaseUtility@@QAE_NAAPA_NPBD1111@Z ; CvDatabaseUtility::PopulateArrayByExistence
@@ -7545,13 +7545,13 @@ $LN25@CacheResul:
 ; 321  : 		kUtility.InitializeArray(m_piPrereqAndTechs, "Technologies", (int)NO_TECH);
 
 	mov	ecx, DWORD PTR _kUtility$[esp+96]
-	push	OFFSET $SG218147
+	push	OFFSET $SG218189
 	call	?MaxRows@CvDatabaseUtility@@QAEHPBD@Z	; CvDatabaseUtility::MaxRows
-	mov	DWORD PTR _count$220834[esp+96], eax
+	mov	DWORD PTR _count$220876[esp+96], eax
 	test	eax, eax
 	jne	SHORT $LN31@CacheResul
-	mov	DWORD PTR _count$220834[esp+96], 1
-	mov	eax, DWORD PTR _count$220834[esp+96]
+	mov	DWORD PTR _count$220876[esp+96], 1
+	mov	eax, DWORD PTR _count$220876[esp+96]
 $LN31@CacheResul:
 	xor	ecx, ecx
 	mov	edx, 4
@@ -7561,7 +7561,7 @@ $LN31@CacheResul:
 	or	ecx, eax
 	push	ecx
 	call	??_U@YAPAXI@Z				; operator new[]
-	mov	ecx, DWORD PTR _count$220834[esp+100]
+	mov	ecx, DWORD PTR _count$220876[esp+100]
 	mov	DWORD PTR [esi+936], eax
 	add	esp, 4
 	xor	eax, eax
@@ -7579,18 +7579,18 @@ $LN34@CacheResul:
 ; 322  : 
 ; 323  : 		std::string strKey = "Units - TechTypes";
 
-	push	OFFSET $SG218149
-	lea	ecx, DWORD PTR _strKey$218148[esp+104]
+	push	OFFSET $SG218191
+	lea	ecx, DWORD PTR _strKey$218190[esp+104]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 
 ; 324  : 		Database::Results* pResults = kUtility.GetResults(strKey);
 
 	mov	ecx, DWORD PTR _kUtility$[esp+96]
-	lea	eax, DWORD PTR _strKey$218148[esp+100]
+	lea	eax, DWORD PTR _strKey$218190[esp+100]
 	push	eax
 	mov	DWORD PTR __$EHRec$[esp+112], 0
 	call	?GetResults@CvDatabaseUtility@@QAEPAVResults@Database@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z ; CvDatabaseUtility::GetResults
-	mov	DWORD PTR _pResults$218150[esp+96], eax
+	mov	DWORD PTR _pResults$218192[esp+96], eax
 
 ; 325  : 		if(pResults == NULL)
 
@@ -7600,12 +7600,12 @@ $LN34@CacheResul:
 ; 326  : 		{
 ; 327  : 			pResults = kUtility.PrepareResults(strKey, "select Technologies.ID from Unit_TechTypes inner join Technologies on TechType = Technologies.Type where UnitType = ?");
 
-	push	OFFSET $SG218152
-	lea	ecx, DWORD PTR _strKey$218148[esp+104]
+	push	OFFSET $SG218194
+	lea	ecx, DWORD PTR _strKey$218190[esp+104]
 	push	ecx
 	mov	ecx, DWORD PTR _kUtility$[esp+104]
 	call	?PrepareResults@CvDatabaseUtility@@QAEPAVResults@Database@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PBD@Z ; CvDatabaseUtility::PrepareResults
-	mov	DWORD PTR _pResults$218150[esp+96], eax
+	mov	DWORD PTR _pResults$218192[esp+96], eax
 $LN14@CacheResul:
 
 ; 328  : 		}
@@ -7623,7 +7623,7 @@ $LN14@CacheResul:
 ; 332  : 		int i = 0;
 ; 333  : 		while(pResults->Step())
 
-	mov	ecx, DWORD PTR _pResults$218150[esp+96]
+	mov	ecx, DWORD PTR _pResults$218192[esp+96]
 	call	DWORD PTR __imp_?Step@Results@Database@@QAE_NXZ
 	test	al, al
 	je	SHORT $LN12@CacheResul
@@ -7639,7 +7639,7 @@ $LL13@CacheResul:
 ; 334  : 		{
 ; 335  : 			m_piPrereqAndTechs[i++] = pResults->GetInt(0);
 
-	mov	ecx, DWORD PTR _pResults$218150[esp+96]
+	mov	ecx, DWORD PTR _pResults$218192[esp+96]
 	push	0
 	call	DWORD PTR __imp_?GetInt@Results@Database@@QAEHH@Z
 	mov	ecx, DWORD PTR tv1606[esp+100]
@@ -7647,7 +7647,7 @@ $LL13@CacheResul:
 	mov	DWORD PTR [ecx+edx], eax
 	add	ecx, 4
 	mov	DWORD PTR tv1606[esp+100], ecx
-	mov	ecx, DWORD PTR _pResults$218150[esp+96]
+	mov	ecx, DWORD PTR _pResults$218192[esp+96]
 	call	DWORD PTR __imp_?Step@Results@Database@@QAE_NXZ
 	test	al, al
 	jne	SHORT $LL13@CacheResul
@@ -7657,12 +7657,12 @@ $LN12@CacheResul:
 ; 337  : 
 ; 338  : 		pResults->Reset();
 
-	mov	ecx, DWORD PTR _pResults$218150[esp+96]
+	mov	ecx, DWORD PTR _pResults$218192[esp+96]
 	call	DWORD PTR __imp_?Reset@Results@Database@@QAE_NXZ
 
 ; 339  : 	}
 
-	lea	ecx, DWORD PTR _strKey$218148[esp+100]
+	lea	ecx, DWORD PTR _strKey$218190[esp+100]
 	mov	DWORD PTR __$EHRec$[esp+108], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -7671,18 +7671,18 @@ $LN12@CacheResul:
 ; 342  : 	{
 ; 343  : 		std::string strKey = "Units - UniqueNameCount";
 
-	push	OFFSET $SG218158
-	lea	ecx, DWORD PTR _strKey$218157[esp+104]
+	push	OFFSET $SG218200
+	lea	ecx, DWORD PTR _strKey$218199[esp+104]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 
 ; 344  : 		Database::Results* pUnitNameCount = kUtility.GetResults(strKey);
 
 	mov	ecx, DWORD PTR _kUtility$[esp+96]
-	lea	eax, DWORD PTR _strKey$218157[esp+100]
+	lea	eax, DWORD PTR _strKey$218199[esp+100]
 	push	eax
 	mov	DWORD PTR __$EHRec$[esp+112], 1
 	call	?GetResults@CvDatabaseUtility@@QAEPAVResults@Database@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z ; CvDatabaseUtility::GetResults
-	mov	DWORD PTR _pUnitNameCount$218159[esp+96], eax
+	mov	DWORD PTR _pUnitNameCount$218201[esp+96], eax
 
 ; 345  : 		if(pUnitNameCount == NULL)
 
@@ -7692,12 +7692,12 @@ $LN12@CacheResul:
 ; 346  : 		{
 ; 347  : 			pUnitNameCount = kUtility.PrepareResults(strKey, "select count(*) from Unit_UniqueNames where UnitType = ?");
 
-	push	OFFSET $SG218161
-	lea	ecx, DWORD PTR _strKey$218157[esp+104]
+	push	OFFSET $SG218203
+	lea	ecx, DWORD PTR _strKey$218199[esp+104]
 	push	ecx
 	mov	ecx, DWORD PTR _kUtility$[esp+104]
 	call	?PrepareResults@CvDatabaseUtility@@QAEPAVResults@Database@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PBD@Z ; CvDatabaseUtility::PrepareResults
-	mov	DWORD PTR _pUnitNameCount$218159[esp+96], eax
+	mov	DWORD PTR _pUnitNameCount$218201[esp+96], eax
 $LN11@CacheResul:
 
 ; 348  : 		}
@@ -7714,25 +7714,25 @@ $LN11@CacheResul:
 ; 351  : 
 ; 352  : 		pUnitNameCount->Step();
 
-	mov	ecx, DWORD PTR _pUnitNameCount$218159[esp+96]
+	mov	ecx, DWORD PTR _pUnitNameCount$218201[esp+96]
 	call	DWORD PTR __imp_?Step@Results@Database@@QAE_NXZ
 
 ; 353  : 		m_iNumUnitNames = pUnitNameCount->GetInt(0);
 
-	mov	ecx, DWORD PTR _pUnitNameCount$218159[esp+96]
+	mov	ecx, DWORD PTR _pUnitNameCount$218201[esp+96]
 	push	0
 	call	DWORD PTR __imp_?GetInt@Results@Database@@QAEHH@Z
 
 ; 354  : 
 ; 355  : 		pUnitNameCount->Reset();
 
-	mov	ecx, DWORD PTR _pUnitNameCount$218159[esp+96]
+	mov	ecx, DWORD PTR _pUnitNameCount$218201[esp+96]
 	mov	DWORD PTR [esi+484], eax
 	call	DWORD PTR __imp_?Reset@Results@Database@@QAE_NXZ
 
 ; 356  : 	}
 
-	lea	ecx, DWORD PTR _strKey$218157[esp+100]
+	lea	ecx, DWORD PTR _strKey$218199[esp+100]
 	mov	DWORD PTR __$EHRec$[esp+108], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -7767,7 +7767,7 @@ $LN11@CacheResul:
 	push	eax
 	call	??_U@YAPAXI@Z				; operator new[]
 	add	esp, 4
-	mov	DWORD PTR $T220792[esp+100], eax
+	mov	DWORD PTR $T220834[esp+100], eax
 	mov	DWORD PTR __$EHRec$[esp+108], 2
 	test	eax, eax
 	je	SHORT $LN18@CacheResul
@@ -7805,19 +7805,19 @@ $LN19@CacheResul:
 ; 368  : 
 ; 369  : 			std::string strKey = "Units - UniqueNames";
 
-	push	OFFSET $SG218173
-	lea	ecx, DWORD PTR _strKey$218172[esp+104]
+	push	OFFSET $SG218215
+	lea	ecx, DWORD PTR _strKey$218214[esp+104]
 	mov	DWORD PTR [esi+1012], eax
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 
 ; 370  : 			Database::Results* pResults = kUtility.GetResults(strKey);
 
 	mov	ecx, DWORD PTR _kUtility$[esp+96]
-	lea	eax, DWORD PTR _strKey$218172[esp+100]
+	lea	eax, DWORD PTR _strKey$218214[esp+100]
 	push	eax
 	mov	DWORD PTR __$EHRec$[esp+112], 3
 	call	?GetResults@CvDatabaseUtility@@QAEPAVResults@Database@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z ; CvDatabaseUtility::GetResults
-	mov	DWORD PTR _pResults$218174[esp+96], eax
+	mov	DWORD PTR _pResults$218216[esp+96], eax
 
 ; 371  : 			if(pResults == NULL)
 
@@ -7827,12 +7827,12 @@ $LN19@CacheResul:
 ; 372  : 			{
 ; 373  : 				pResults = kUtility.PrepareResults(strKey, "select UniqueName, GreatWorkType from Unit_UniqueNames where UnitType = ? ORDER BY rowid");
 
-	push	OFFSET $SG218176
-	lea	ecx, DWORD PTR _strKey$218172[esp+104]
+	push	OFFSET $SG218218
+	lea	ecx, DWORD PTR _strKey$218214[esp+104]
 	push	ecx
 	mov	ecx, DWORD PTR _kUtility$[esp+104]
 	call	?PrepareResults@CvDatabaseUtility@@QAEPAVResults@Database@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PBD@Z ; CvDatabaseUtility::PrepareResults
-	mov	DWORD PTR _pResults$218174[esp+96], eax
+	mov	DWORD PTR _pResults$218216[esp+96], eax
 $LN9@CacheResul:
 
 ; 374  : 			}
@@ -7850,7 +7850,7 @@ $LN9@CacheResul:
 ; 378  : 			int i = 0;
 ; 379  : 			while(pResults->Step())
 
-	mov	ebx, DWORD PTR _pResults$218174[esp+96]
+	mov	ebx, DWORD PTR _pResults$218216[esp+96]
 	mov	ecx, ebx
 	call	DWORD PTR __imp_?Step@Results@Database@@QAE_NXZ
 	test	al, al
@@ -7936,7 +7936,7 @@ $LN7@CacheResul:
 
 ; 397  : 		}
 
-	lea	ecx, DWORD PTR _strKey$218172[esp+100]
+	lea	ecx, DWORD PTR _strKey$218214[esp+100]
 	mov	DWORD PTR __$EHRec$[esp+108], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 $LN53@CacheResul:
@@ -7947,14 +7947,14 @@ $LN53@CacheResul:
 ; 401  : 	{
 ; 402  : 		std::string strKey = "Units - MovementRates";
 
-	push	OFFSET $SG218186
-	lea	ecx, DWORD PTR _strKey$218185[esp+104]
+	push	OFFSET $SG218228
+	lea	ecx, DWORD PTR _strKey$218227[esp+104]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 
 ; 403  : 		Database::Results* pMovementRates = kUtility.GetResults(strKey);
 
 	mov	ecx, DWORD PTR _kUtility$[esp+96]
-	lea	eax, DWORD PTR _strKey$218185[esp+100]
+	lea	eax, DWORD PTR _strKey$218227[esp+100]
 	push	eax
 	mov	DWORD PTR __$EHRec$[esp+112], 4
 	call	?GetResults@CvDatabaseUtility@@QAEPAVResults@Database@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z ; CvDatabaseUtility::GetResults
@@ -7968,8 +7968,8 @@ $LN53@CacheResul:
 ; 405  : 		{
 ; 406  : 			pMovementRates = kUtility.PrepareResults(strKey, "SELECT * FROM MovementRates where Type = ? ORDER BY NumHexes");
 
-	push	OFFSET $SG218189
-	lea	ecx, DWORD PTR _strKey$218185[esp+104]
+	push	OFFSET $SG218231
+	lea	ecx, DWORD PTR _strKey$218227[esp+104]
 	push	ecx
 	mov	ecx, DWORD PTR _kUtility$[esp+104]
 	call	?PrepareResults@CvDatabaseUtility@@QAEPAVResults@Database@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PBD@Z ; CvDatabaseUtility::PrepareResults
@@ -7980,7 +7980,7 @@ $LN4@CacheResul:
 ; 408  : 
 ; 409  : 		const char* szMovementRate = kResults.GetText("MoveRate");
 
-	push	OFFSET $SG218191
+	push	OFFSET $SG218233
 	mov	ecx, edi
 	call	ebp
 
@@ -8006,57 +8006,57 @@ $LL3@CacheResul:
 ; 413  : 			int f0 = pMovementRates->GetInt("NumHexes") - 1;
 
 	mov	ebp, DWORD PTR __imp_?GetInt@Results@Database@@QAEHPBD@Z
-	push	OFFSET $SG218196
+	push	OFFSET $SG218238
 	mov	ecx, ebx
 	call	ebp
 	mov	edi, eax
 
 ; 414  : 			float f1 = pMovementRates->GetFloat("TotalTime");
 
-	push	OFFSET $SG218198
+	push	OFFSET $SG218240
 	mov	ecx, ebx
 	dec	edi
 	call	DWORD PTR __imp_?GetFloat@Results@Database@@QAEMPBD@Z
-	fstp	DWORD PTR _f1$218197[esp+96]
+	fstp	DWORD PTR _f1$218239[esp+96]
 
 ; 415  : 			float f2 = pMovementRates->GetFloat("EaseIn");
 
-	push	OFFSET $SG218200
+	push	OFFSET $SG218242
 	mov	ecx, ebx
 	call	DWORD PTR __imp_?GetFloat@Results@Database@@QAEMPBD@Z
-	fstp	DWORD PTR _f2$218199[esp+96]
+	fstp	DWORD PTR _f2$218241[esp+96]
 
 ; 416  : 			float f3 = pMovementRates->GetFloat("EaseOut");
 
-	push	OFFSET $SG218202
+	push	OFFSET $SG218244
 	mov	ecx, ebx
 	call	DWORD PTR __imp_?GetFloat@Results@Database@@QAEMPBD@Z
-	fstp	DWORD PTR _f3$218201[esp+100]
+	fstp	DWORD PTR _f3$218243[esp+100]
 
 ; 417  : 			float f4 = pMovementRates->GetFloat("IndividualOffset");
 
-	push	OFFSET $SG218204
+	push	OFFSET $SG218246
 	mov	ecx, ebx
 	call	DWORD PTR __imp_?GetFloat@Results@Database@@QAEMPBD@Z
-	fstp	DWORD PTR _f4$218203[esp+100]
+	fstp	DWORD PTR _f4$218245[esp+100]
 
 ; 418  : 			float f5 = pMovementRates->GetFloat("RowOffset");
 
-	push	OFFSET $SG218206
+	push	OFFSET $SG218248
 	mov	ecx, ebx
 	call	DWORD PTR __imp_?GetFloat@Results@Database@@QAEMPBD@Z
-	fstp	DWORD PTR _f5$218205[esp+100]
+	fstp	DWORD PTR _f5$218247[esp+100]
 
 ; 419  : 			float f6 = pMovementRates->GetFloat("CurveRoll");
 
-	push	OFFSET $SG218208
+	push	OFFSET $SG218250
 	mov	ecx, ebx
 	call	DWORD PTR __imp_?GetFloat@Results@Database@@QAEMPBD@Z
-	fstp	DWORD PTR _f6$218207[esp+100]
+	fstp	DWORD PTR _f6$218249[esp+100]
 
 ; 420  : 			int   iPathSubdivision = pMovementRates->GetInt("PathSubdivision");
 
-	push	OFFSET $SG218210
+	push	OFFSET $SG218252
 	mov	ecx, ebx
 	call	ebp
 
@@ -8071,22 +8071,22 @@ $LL3@CacheResul:
 	lea	edx, DWORD PTR [edi*8]
 	sub	edx, edi
 	lea	ecx, DWORD PTR [esi+edx*4]
-	mov	edx, DWORD PTR _f1$218197[esp+96]
+	mov	edx, DWORD PTR _f1$218239[esp+96]
 	mov	DWORD PTR [ecx+600], edx
 
 ; 424  : 				m_unitMoveRate[f0].m_fEaseIn           = f2;
 
-	mov	edx, DWORD PTR _f2$218199[esp+96]
+	mov	edx, DWORD PTR _f2$218241[esp+96]
 	mov	DWORD PTR [ecx+604], edx
 
 ; 425  : 				m_unitMoveRate[f0].m_fEaseOut          = f3;
 
-	mov	edx, DWORD PTR _f3$218201[esp+100]
+	mov	edx, DWORD PTR _f3$218243[esp+100]
 	mov	DWORD PTR [ecx+608], edx
 
 ; 426  : 				m_unitMoveRate[f0].m_fIndividualOffset = f4;
 
-	mov	edx, DWORD PTR _f4$218203[esp+100]
+	mov	edx, DWORD PTR _f4$218245[esp+100]
 	mov	DWORD PTR [ecx+612], edx
 
 ; 427  : 				m_unitMoveRate[f0].m_fRowOffset        = f5;
@@ -8094,12 +8094,12 @@ $LL3@CacheResul:
 	lea	edx, DWORD PTR [edi+22]
 	lea	edi, DWORD PTR [edx*8]
 	sub	edi, edx
-	mov	edx, DWORD PTR _f5$218205[esp+100]
+	mov	edx, DWORD PTR _f5$218247[esp+100]
 	mov	DWORD PTR [esi+edi*4], edx
 
 ; 428  : 				m_unitMoveRate[f0].m_fCurveRoll        = f6;
 
-	mov	edx, DWORD PTR _f6$218207[esp+100]
+	mov	edx, DWORD PTR _f6$218249[esp+100]
 	mov	DWORD PTR [ecx+620], edx
 
 ; 429  : 				m_unitMoveRate[f0].m_iPathSubdivision  = iPathSubdivision;
@@ -8122,7 +8122,7 @@ $LN2@CacheResul:
 ; 433  : 
 ; 434  : 	}
 
-	lea	ecx, DWORD PTR _strKey$218185[esp+100]
+	lea	ecx, DWORD PTR _strKey$218227[esp+100]
 	mov	DWORD PTR __$EHRec$[esp+108], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -8150,22 +8150,22 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?CacheResults@CvUnitEntry@@UAE_NAAVResults@Database@@AAVCvDatabaseUtility@@@Z$0:
-	lea	ecx, DWORD PTR _strKey$218148[ebp]
+	lea	ecx, DWORD PTR _strKey$218190[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?CacheResults@CvUnitEntry@@UAE_NAAVResults@Database@@AAVCvDatabaseUtility@@@Z$1:
-	lea	ecx, DWORD PTR _strKey$218157[ebp]
+	lea	ecx, DWORD PTR _strKey$218199[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?CacheResults@CvUnitEntry@@UAE_NAAVResults@Database@@AAVCvDatabaseUtility@@@Z$2:
-	mov	eax, DWORD PTR $T220792[ebp]
+	mov	eax, DWORD PTR $T220834[ebp]
 	push	eax
 	call	??_V@YAXPAX@Z				; operator delete[]
 	pop	ecx
 	ret	0
 __unwindfunclet$?CacheResults@CvUnitEntry@@UAE_NAAVResults@Database@@AAVCvDatabaseUtility@@@Z$3:
-	lea	ecx, DWORD PTR _strKey$218172[ebp]
+	lea	ecx, DWORD PTR _strKey$218214[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?CacheResults@CvUnitEntry@@UAE_NAAVResults@Database@@AAVCvDatabaseUtility@@@Z$4:
-	lea	ecx, DWORD PTR _strKey$218185[ebp]
+	lea	ecx, DWORD PTR _strKey$218227[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __ehhandler$?CacheResults@CvUnitEntry@@UAE_NAAVResults@Database@@AAVCvDatabaseUtility@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?CacheResults@CvUnitEntry@@UAE_NAAVResults@Database@@AAVCvDatabaseUtility@@@Z

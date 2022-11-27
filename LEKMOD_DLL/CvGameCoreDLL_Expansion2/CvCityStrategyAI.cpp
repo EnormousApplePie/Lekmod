@@ -958,7 +958,7 @@ EndHarborLoop:;
 			}
 
 #ifdef NQM_AI_GIMP_NO_WORLD_WONDERS
-			if (GC.getGame().isOption("GAMEOPTION_AI_GIMP_NO_WORLD_WONDER") && isWorldWonderClass(pkBuildingInfo->GetBuildingClassInfo()))
+			if ((GC.getGame().isOption("GAMEOPTION_AI_TWEAKS") || GC.getGame().isOption("GAMEOPTION_AI_GIMP_NO_WORLD_WONDER")) && isWorldWonderClass(pkBuildingInfo->GetBuildingClassInfo()))
 			{
 				iTempWeight = 0;
 				continue;
@@ -1103,7 +1103,7 @@ EndHarborLoop:;
 		for(iProjectLoop = 0; iProjectLoop < GC.GetGameProjects()->GetNumProjects(); iProjectLoop++)
 		{
 #ifdef NQM_AI_GIMP_NO_WORLD_WONDERS
-			if (GC.getGame().isOption("GAMEOPTION_AI_GIMP_NO_WORLD_WONDER") && isWorldProject((ProjectTypes)iProjectLoop))
+			if ((GC.getGame().isOption("GAMEOPTION_AI_TWEAKS") || GC.getGame().isOption("GAMEOPTION_AI_GIMP_NO_WORLD_WONDER")) && isWorldProject((ProjectTypes)iProjectLoop))
 				continue;
 #endif
 			if(m_pCity->canCreate((ProjectTypes)iProjectLoop))

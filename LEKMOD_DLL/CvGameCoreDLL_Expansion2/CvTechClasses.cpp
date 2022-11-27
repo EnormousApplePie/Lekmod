@@ -31,6 +31,9 @@ CvTechEntry::CvTechEntry(void):
 	m_iFirstFreeUnitClass(NO_UNITCLASS),
 	m_iFirstFreeTechs(0),
 	m_iEmbarkedMoveChange(0),
+
+	//EAP: Extra embark sight on tech
+	m_iEmbarkedSightChange(0),
 	m_iInternationalTradeRoutesChange(0),
 	m_iInfluenceSpreadModifier(0),
 	m_iExtraVotesPerDiplomat(0),
@@ -38,6 +41,10 @@ CvTechEntry::CvTechEntry(void):
 	m_iGridY(0),
 	m_bEndsGame(false),
 	m_bAllowsEmbarking(false),
+
+	//EAP: Civilian Embark
+	m_bAllowsEmbarkingCivilian(false),
+
 	m_bAllowsDefensiveEmbarking(false),
 	m_bEmbarkedAllWaterPassage(false),
 	m_bAllowsBarbarianBoats(false),
@@ -98,11 +105,18 @@ bool CvTechEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility& k
 	m_iWorkerSpeedModifier = kResults.GetInt("WorkerSpeedModifier");
 	m_iFirstFreeTechs = kResults.GetInt("FirstFreeTechs");
 	m_iEmbarkedMoveChange = kResults.GetInt("EmbarkedMoveChange");
+	//EAP: Extra sight for embarked units on tech
+	m_iEmbarkedSightChange = kResults.GetInt("EmbarkedSightChange");
+
 	m_iInternationalTradeRoutesChange = kResults.GetInt("InternationalTradeRoutesChange");
 	m_iInfluenceSpreadModifier = kResults.GetInt("InfluenceSpreadModifier");
 	m_iExtraVotesPerDiplomat = kResults.GetInt("ExtraVotesPerDiplomat");
 	m_bEndsGame = kResults.GetBool("EndsGame");
 	m_bAllowsEmbarking = kResults.GetBool("AllowsEmbarking");
+
+	//EAP: Civilian Embark
+	m_bAllowsEmbarkingCivilian = kResults.GetBool("AllowsEmbarkingCivilian");
+
 	m_bAllowsDefensiveEmbarking = kResults.GetBool("AllowsDefensiveEmbarking");
 	m_bEmbarkedAllWaterPassage = kResults.GetBool("EmbarkedAllWaterPassage");
 	m_bAllowsBarbarianBoats = kResults.GetBool("AllowsBarbarianBoats");
@@ -278,6 +292,12 @@ int CvTechEntry::GetEmbarkedMoveChange() const
 	return m_iEmbarkedMoveChange;
 }
 
+/// EAP: Number of additional sight provided to land Unit embarked on the wotuh
+int CvTechEntry::GetEmbarkedSightChange() const
+{
+	return m_iEmbarkedSightChange;
+}
+
 /// Number of additional land trade routes provided
 int CvTechEntry::GetNumInternationalTradeRoutesChange (void) const
 {
@@ -318,6 +338,12 @@ bool CvTechEntry::IsEndsGame() const
 bool CvTechEntry::IsAllowsEmbarking() const
 {
 	return m_bAllowsEmbarking;
+}
+
+/// EAP: Unlocks the ability to embark land Civilian Units onto self-carried boats
+bool CvTechEntry::IsAllowsEmbarkingCivilian() const
+{
+	return m_bAllowsEmbarkingCivilian;
 }
 
 /// Allows embarked units to defend themselves

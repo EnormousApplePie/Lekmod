@@ -10,22 +10,22 @@ INCLUDELIB MSVCRT
 INCLUDELIB OLDNAMES
 
 CONST	SEGMENT
-$SG217148 DB	'NO_YIELD', 00H
+$SG217190 DB	'NO_YIELD', 00H
 	ORG $+3
-$SG217151 DB	'YIELD_FOOD', 00H
+$SG217193 DB	'YIELD_FOOD', 00H
 	ORG $+1
-$SG217154 DB	'YIELD_PRODUCTION', 00H
+$SG217196 DB	'YIELD_PRODUCTION', 00H
 	ORG $+3
-$SG217157 DB	'YIELD_GOLD', 00H
+$SG217199 DB	'YIELD_GOLD', 00H
 	ORG $+1
-$SG217160 DB	'YIELD_SCIENCE', 00H
+$SG217202 DB	'YIELD_SCIENCE', 00H
 	ORG $+2
-$SG217163 DB	'YIELD_CULTURE', 00H
+$SG217205 DB	'YIELD_CULTURE', 00H
 	ORG $+2
-$SG217166 DB	'YIELD_FAITH', 00H
-$SG217169 DB	'INVALID ENUM VALUE', 00H
+$SG217208 DB	'YIELD_FAITH', 00H
+$SG217211 DB	'INVALID ENUM VALUE', 00H
 	ORG $+1
-$SG217171 DB	'INVALID ENUM VALUE', 00H
+$SG217213 DB	'INVALID ENUM VALUE', 00H
 CONST	ENDS
 PUBLIC	?toString@FSerialization@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABW4YieldTypes@@@Z ; FSerialization::toString
 EXTRN	__imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z:PROC
@@ -33,7 +33,7 @@ EXTRN	__imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredll_expansion2\cvgamecoreenumserialization.cpp
 ;	COMDAT ?toString@FSerialization@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABW4YieldTypes@@@Z
 _TEXT	SEGMENT
-$T217267 = -4						; size = 4
+$T217309 = -4						; size = 4
 ___$ReturnUdt$ = 8					; size = 4
 _v$ = 12						; size = 4
 ?toString@FSerialization@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABW4YieldTypes@@@Z PROC ; FSerialization::toString, COMDAT
@@ -48,7 +48,7 @@ _v$ = 12						; size = 4
 	mov	eax, DWORD PTR [eax]
 	inc	eax
 	push	esi
-	mov	DWORD PTR $T217267[esp+8], 0
+	mov	DWORD PTR $T217309[esp+8], 0
 	cmp	eax, 6
 	ja	$LN1@toString
 	jmp	DWORD PTR $LN16@toString[eax*4]
@@ -80,7 +80,7 @@ $LN8@toString:
 ; 53   : 		return std::string("INVALID ENUM VALUE");
 
 	mov	esi, DWORD PTR ___$ReturnUdt$[esp+4]
-	push	OFFSET $SG217148
+	push	OFFSET $SG217190
 	mov	ecx, esi
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	mov	eax, esi
@@ -123,7 +123,7 @@ $LN7@toString:
 ; 53   : 		return std::string("INVALID ENUM VALUE");
 
 	mov	esi, DWORD PTR ___$ReturnUdt$[esp+4]
-	push	OFFSET $SG217151
+	push	OFFSET $SG217193
 	mov	ecx, esi
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	mov	eax, esi
@@ -166,7 +166,7 @@ $LN6@toString:
 ; 53   : 		return std::string("INVALID ENUM VALUE");
 
 	mov	esi, DWORD PTR ___$ReturnUdt$[esp+4]
-	push	OFFSET $SG217154
+	push	OFFSET $SG217196
 	mov	ecx, esi
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	mov	eax, esi
@@ -209,7 +209,7 @@ $LN5@toString:
 ; 53   : 		return std::string("INVALID ENUM VALUE");
 
 	mov	esi, DWORD PTR ___$ReturnUdt$[esp+4]
-	push	OFFSET $SG217157
+	push	OFFSET $SG217199
 	mov	ecx, esi
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	mov	eax, esi
@@ -252,7 +252,7 @@ $LN4@toString:
 ; 53   : 		return std::string("INVALID ENUM VALUE");
 
 	mov	esi, DWORD PTR ___$ReturnUdt$[esp+4]
-	push	OFFSET $SG217160
+	push	OFFSET $SG217202
 	mov	ecx, esi
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	mov	eax, esi
@@ -295,7 +295,7 @@ $LN3@toString:
 ; 53   : 		return std::string("INVALID ENUM VALUE");
 
 	mov	esi, DWORD PTR ___$ReturnUdt$[esp+4]
-	push	OFFSET $SG217163
+	push	OFFSET $SG217205
 	mov	ecx, esi
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	mov	eax, esi
@@ -338,7 +338,7 @@ $LN2@toString:
 ; 53   : 		return std::string("INVALID ENUM VALUE");
 
 	mov	esi, DWORD PTR ___$ReturnUdt$[esp+4]
-	push	OFFSET $SG217166
+	push	OFFSET $SG217208
 	mov	ecx, esi
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	mov	eax, esi
@@ -381,7 +381,7 @@ $LN1@toString:
 ; 53   : 		return std::string("INVALID ENUM VALUE");
 
 	mov	esi, DWORD PTR ___$ReturnUdt$[esp+4]
-	push	OFFSET $SG217169
+	push	OFFSET $SG217211
 	mov	ecx, esi
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	mov	eax, esi
@@ -482,7 +482,7 @@ PUBLIC	??6@YAAAVFDataStream@@AAV0@ABW4YieldTypes@@@Z	; operator<<
 ;	COMDAT ??6@YAAAVFDataStream@@AAV0@ABW4YieldTypes@@@Z
 _TEXT	SEGMENT
 _saveTo$ = 8						; size = 4
-$T217282 = 12						; size = 4
+$T217324 = 12						; size = 4
 _readFrom$ = 12						; size = 4
 ??6@YAAAVFDataStream@@AAV0@ABW4YieldTypes@@@Z PROC	; operator<<, COMDAT
 
@@ -492,8 +492,8 @@ _readFrom$ = 12						; size = 4
 	mov	ecx, DWORD PTR [eax]
 	push	esi
 	mov	esi, DWORD PTR _saveTo$[esp]
-	lea	edx, DWORD PTR $T217282[esp]
-	mov	DWORD PTR $T217282[esp], ecx
+	lea	edx, DWORD PTR $T217324[esp]
+	mov	DWORD PTR $T217324[esp], ecx
 	push	edx
 	mov	ecx, esi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write

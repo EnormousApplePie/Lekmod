@@ -23,6 +23,16 @@
   <References />
   <Blocks />
   <Files>
+  
+	<!-- temp -->
+	
+	<File md5="D3858C1C5913DC0739470D08B8BFA5FA" import="1">Art/Observer/BannerBody.dds</File>
+    <File md5="21561ACE763D15645C30051A1B8E75D4" import="1">Art/Observer/BannerHeader.dds</File>
+    <File md5="745AFEF96BFBBC809954934FC537EA1B" import="1">Art/Observer/BannerHeaderDesature.dds</File>
+    <File md5="6725A4A0D1512F67946212DBB1204066" import="1">Art/Observer/civsymbolsframe32.dds</File>
+    <File md5="907529ACDF38E85E90CFABCD58B5C842" import="1">Art/Observer/TurnBanner.dds</File>
+	<!-- -->
+  
 	<File md5="FBC97C021A2845486727081FF42392D0" import="1">Art/generic_map.dds</File>
 	<File md5="FBC97C021A2845486727081FF42392D0" import="1">Art/generic_DoM.dds</File>
 	

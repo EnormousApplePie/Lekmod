@@ -3730,7 +3730,14 @@ void CvUnit::move(CvPlot& targetPlot, bool bShow)
 					PublishQueuedVisualizationMoves();
 
 				embark(pOldPlot);
+
+				
+				changeMoves(-iMoveCost);
+#ifndef LEK_EMBARK_1_MOVEMENT
+				//EAP: Embark to 1 movement
 				finishMoves();
+#endif
+				//finishMoves();
 				bShouldDeductCost = false;
 			}
 		}
@@ -8976,7 +8983,7 @@ bool CvUnit::canBuyCityState(const CvPlot* pPlot, bool bTestVisible) const
 	}
 
 #ifdef NQM_AI_GIMP_NO_BUILDING_SETTLERS
-	if ((GET_PLAYER(getOwner()).isHuman() && GC.getGame().isOption(GAMEOPTION_ONE_CITY_CHALLENGE)) || (!GET_PLAYER(getOwner()).isHuman() && GC.getGame().isOption("GAMEOPTION_AI_GIMP_NO_BUILDING_SETTLERS")))
+	if ((GET_PLAYER(getOwner()).isHuman() && GC.getGame().isOption(GAMEOPTION_ONE_CITY_CHALLENGE)) || (!GET_PLAYER(getOwner()).isHuman() && (GC.getGame().isOption("GAMEOPTION_AI_TWEAKS") || GC.getGame().isOption("GAMEOPTION_AI_GIMP_NO_BUILDING_SETTLERS"))))
 #else
 	if (GC.getGame().isOption(GAMEOPTION_ONE_CITY_CHALLENGE) && GET_PLAYER(getOwner()).isHuman())
 #endif
@@ -9153,6 +9160,11 @@ bool CvUnit::repairFleet()
 bool CvUnit::CanBuildSpaceship(const CvPlot* pPlot, bool bVisible) const
 {
 	VALIDATE_OBJECT
+
+#ifdef NO_AI_PROJECTS
+	if(!GET_PLAYER(getOwner()).isHuman() && GC.getGame().isOption("GAMEOPTION_AI_TWEAKS"))
+		return false;
+#endif
 
 	// Delayed death
 	if(isDelayedDeath())
@@ -11045,14 +11057,23 @@ bool CvUnit::IsBarbarianUnitThreateningMinor(PlayerTypes eMinor)
 int CvUnit::visibilityRange() const
 {
 	VALIDATE_OBJECT
+	//EAP: Embarked Visibility on tech, we need to get the team for the tech check, because techs are handled on a tech level.
+	CvTeam& thisTeam = GET_TEAM(getTeam());
 
 	int iRtnValue;
 
+#ifdef LEK_EMBARK_VISIBILITY_FIX
 	if(isEmbarked())
 	{
-		iRtnValue = GC.getEMBARKED_VISIBILITY_RANGE() + m_iEmbarkExtraVisibility;
+		iRtnValue = max(1,GC.getEMBARKED_VISIBILITY_RANGE()) + m_iEmbarkExtraVisibility + thisTeam.getEmbarkedExtraSight();
 	}
-
+#else
+	//EAP: Added embarked sight check
+	if(isEmbarked())
+	{
+		iRtnValue = GC.getEMBARKED_VISIBILITY_RANGE() + m_iEmbarkExtraVisibility + thisTeam.getEmbarkedExtraSight();
+	}
+#endif
 	else
 	{
 		iRtnValue = m_pUnitInfo->GetBaseSightRange() + m_iExtraVisibilityRange;
@@ -12363,7 +12384,14 @@ int CvUnit::GetEmbarkedUnitDefense() const
 		iRtnValue /= 100;
 	}
 
+#ifdef NO_EMBARKED_CIVILIAN_DEFENSE
+	if (IsCombatUnit())
+		return iRtnValue;
+	else
+		return 0;
+#else
 	return iRtnValue;
+#endif
 }
 
 //	--------------------------------------------------------------------------------
@@ -15000,8 +15028,10 @@ void CvUnit::setXY(int iX, int iY, bool bGroup, bool bUpdate, bool bShow, bool b
 										// Unit was killed instead
 										else
 										{
+#ifndef NO_EMBARKED_CIVILIAN_DEFENSE
 											if(pLoopUnit->isEmbarked())
 												changeExperience(1);
+#endif
 
 											CvString strBuffer = GetLocalizedText("TXT_KEY_MISC_YOU_UNIT_DESTROYED_ENEMY", getNameKey(), 0, pLoopUnit->getNameKey());
 											DLLUI->AddUnitMessage(0, GetIDInfo(), getOwner(), true, GC.getEVENT_MESSAGE_TIME(), strBuffer/*, GC.getEraInfo(GC.getGame().getCurrentEra())->getAudioUnitVictoryScript(), MESSAGE_TYPE_INFO, NULL, (ColorTypes)GC.getInfoTypeForString("COLOR_GREEN"), pkTargetPlot->getX(), pkTargetPlot->getY()*/);
@@ -15016,9 +15046,10 @@ void CvUnit::setXY(int iX, int iY, bool bGroup, bool bUpdate, bool bShow, bool b
 										CvNotifications* pNotification = GET_PLAYER(pLoopUnit->getOwner()).GetNotifications();
 										if(pNotification)
 											pNotification->Add(NOTIFICATION_UNIT_DIED, strMessage.toUTF8(), strSummary.toUTF8(), pLoopUnit->getX(), pLoopUnit->getY(), (int) pLoopUnit->getUnitType(), pLoopUnit->getOwner());
-
+#ifndef NO_EMBARKED_CIVILIAN_DEFENSE
 										if(pLoopUnit->isEmbarked())
 											setMadeAttack(true);
+#endif
 
 										// If we're capturing the unit, we want to delay the capture, else as the unit is converted to our side, it will be the first unit on our
 										// side in the plot and can end up taking over a city, rather than the advancing unit

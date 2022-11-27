@@ -10,10 +10,10 @@ INCLUDELIB MSVCRT
 INCLUDELIB OLDNAMES
 
 _DATA	SEGMENT
-_CIV5_XP2_DLL_VERSION DD FLAT:$SG217448
+_CIV5_XP2_DLL_VERSION DD FLAT:$SG217490
 _DATA	ENDS
 CONST	SEGMENT
-$SG217448 DB	'1.0.0', 00H
+$SG217490 DB	'1.0.0', 00H
 	ORG $+2
 _guidICvUnknown DD 0d89ba82fH
 	DW	09fa3H
@@ -1315,12 +1315,12 @@ PUBLIC	?GetInterfaceId@ICvUnknown@@SG?AU_GUID@@XZ	; ICvUnknown::GetInterfaceId
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredllutil\include\cvdllinterfaces.h
 ;	COMDAT ?GetInterfaceId@ICvUnknown@@SG?AU_GUID@@XZ
 _TEXT	SEGMENT
-$T219967 = 8						; size = 4
+$T220009 = 8						; size = 4
 ?GetInterfaceId@ICvUnknown@@SG?AU_GUID@@XZ PROC		; ICvUnknown::GetInterfaceId, COMDAT
 
 ; 306  : 	static GUID DLLCALL GetInterfaceId(){ return guidICvUnknown; }
 
-	mov	eax, DWORD PTR $T219967[esp-4]
+	mov	eax, DWORD PTR $T220009[esp-4]
 	mov	ecx, DWORD PTR _guidICvUnknown
 	mov	edx, DWORD PTR _guidICvUnknown+4
 	mov	DWORD PTR [eax], ecx
@@ -1336,12 +1336,12 @@ PUBLIC	?GetInterfaceId@ICvNetLoadGameInfo1@@SG?AU_GUID@@XZ ; ICvNetLoadGameInfo1
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?GetInterfaceId@ICvNetLoadGameInfo1@@SG?AU_GUID@@XZ
 _TEXT	SEGMENT
-$T219971 = 8						; size = 4
+$T220013 = 8						; size = 4
 ?GetInterfaceId@ICvNetLoadGameInfo1@@SG?AU_GUID@@XZ PROC ; ICvNetLoadGameInfo1::GetInterfaceId, COMDAT
 
 ; 530  : 	static GUID DLLCALL GetInterfaceId() { return guidICvNetLoadGameInfo1; }
 
-	mov	eax, DWORD PTR $T219971[esp-4]
+	mov	eax, DWORD PTR $T220013[esp-4]
 	mov	ecx, DWORD PTR _guidICvNetLoadGameInfo1
 	mov	edx, DWORD PTR _guidICvNetLoadGameInfo1+4
 	mov	DWORD PTR [eax], ecx
@@ -1489,8 +1489,8 @@ PUBLIC	?QueryInterface@CvDllNetLoadGameInfo@@UAGPAXU_GUID@@@Z ; CvDllNetLoadGame
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredll_expansion2\cvdllnetloadgameinfo.cpp
 ;	COMDAT ?QueryInterface@CvDllNetLoadGameInfo@@UAGPAXU_GUID@@@Z
 _TEXT	SEGMENT
-$T219989 = -16						; size = 16
-$T219987 = -16						; size = 16
+$T220031 = -16						; size = 16
+$T220029 = -16						; size = 16
 _this$ = 8						; size = 4
 _guidInterface$ = 12					; size = 16
 ?QueryInterface@CvDllNetLoadGameInfo@@UAGPAXU_GUID@@@Z PROC ; CvDllNetLoadGameInfo::QueryInterface, COMDAT
@@ -1505,15 +1505,15 @@ _guidInterface$ = 12					; size = 16
 	mov	ecx, DWORD PTR _guidICvUnknown+4
 	mov	edx, DWORD PTR _guidICvUnknown+8
 	mov	eax, DWORD PTR _guidICvUnknown
-	mov	DWORD PTR $T219987[esp+20], ecx
-	lea	ecx, DWORD PTR $T219987[esp+16]
-	mov	DWORD PTR $T219987[esp+24], edx
-	mov	DWORD PTR $T219987[esp+16], eax
+	mov	DWORD PTR $T220029[esp+20], ecx
+	lea	ecx, DWORD PTR $T220029[esp+16]
+	mov	DWORD PTR $T220029[esp+24], edx
+	mov	DWORD PTR $T220029[esp+16], eax
 	mov	eax, DWORD PTR _guidICvUnknown+12
 	push	ecx
 	lea	edx, DWORD PTR _guidInterface$[esp+16]
 	push	edx
-	mov	DWORD PTR $T219987[esp+36], eax
+	mov	DWORD PTR $T220029[esp+36], eax
 	call	_IsEqualGUID
 	add	esp, 8
 	test	eax, eax
@@ -1521,15 +1521,15 @@ _guidInterface$ = 12					; size = 16
 	mov	ecx, DWORD PTR _guidICvNetLoadGameInfo1+4
 	mov	edx, DWORD PTR _guidICvNetLoadGameInfo1+8
 	mov	eax, DWORD PTR _guidICvNetLoadGameInfo1
-	mov	DWORD PTR $T219989[esp+20], ecx
-	lea	ecx, DWORD PTR $T219989[esp+16]
-	mov	DWORD PTR $T219989[esp+24], edx
-	mov	DWORD PTR $T219989[esp+16], eax
+	mov	DWORD PTR $T220031[esp+20], ecx
+	lea	ecx, DWORD PTR $T220031[esp+16]
+	mov	DWORD PTR $T220031[esp+24], edx
+	mov	DWORD PTR $T220031[esp+16], eax
 	mov	eax, DWORD PTR _guidICvNetLoadGameInfo1+12
 	push	ecx
 	lea	edx, DWORD PTR _guidInterface$[esp+16]
 	push	edx
-	mov	DWORD PTR $T219989[esp+36], eax
+	mov	DWORD PTR $T220031[esp+36], eax
 	call	_IsEqualGUID
 	add	esp, 8
 	test	eax, eax
@@ -1684,8 +1684,8 @@ __ehfuncinfo$?_Xlen@?$vector@W4SlotStatus@@V?$allocator@W4SlotStatus@@@std@@@std
 xdata$x	ENDS
 ;	COMDAT ?_Xlen@?$vector@W4SlotStatus@@V?$allocator@W4SlotStatus@@@std@@@std@@KAXXZ
 _TEXT	SEGMENT
-$T220044 = -80						; size = 28
-$T220043 = -52						; size = 40
+$T220086 = -80						; size = 28
+$T220085 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ?_Xlen@?$vector@W4SlotStatus@@V?$allocator@W4SlotStatus@@@std@@@std@@KAXXZ PROC ; std::vector<enum SlotStatus,std::allocator<enum SlotStatus> >::_Xlen, COMDAT
 
@@ -1701,22 +1701,22 @@ __$EHRec$ = -12						; size = 12
 ; 1260 : 		_THROW(length_error, "vector<T> too long");
 
 	push	OFFSET ??_C@_0BD@OLBABOEK@vector?$DMT?$DO?5too?5long?$AA@
-	lea	ecx, DWORD PTR $T220044[esp+84]
+	lea	ecx, DWORD PTR $T220086[esp+84]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T220043[esp+80]
+	lea	ecx, DWORD PTR $T220085[esp+80]
 	mov	DWORD PTR __$EHRec$[esp+88], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T220044[esp+80]
+	lea	eax, DWORD PTR $T220086[esp+80]
 	push	eax
-	lea	ecx, DWORD PTR $T220043[esp+96]
+	lea	ecx, DWORD PTR $T220085[esp+96]
 	mov	BYTE PTR __$EHRec$[esp+92], 1
-	mov	DWORD PTR $T220043[esp+84], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T220085[esp+84], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVlength_error@std@@
-	lea	ecx, DWORD PTR $T220043[esp+84]
+	lea	ecx, DWORD PTR $T220085[esp+84]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+96], 0
-	mov	DWORD PTR $T220043[esp+88], OFFSET ??_7length_error@std@@6B@
+	mov	DWORD PTR $T220085[esp+88], OFFSET ??_7length_error@std@@6B@
 	call	__CxxThrowException@8
 $LN13@Xlen:
 $LN12@Xlen:
@@ -1725,10 +1725,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Xlen@?$vector@W4SlotStatus@@V?$allocator@W4SlotStatus@@@std@@@std@@KAXXZ$0:
-	lea	ecx, DWORD PTR $T220044[ebp]
+	lea	ecx, DWORD PTR $T220086[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Xlen@?$vector@W4SlotStatus@@V?$allocator@W4SlotStatus@@@std@@@std@@KAXXZ$2:
-	lea	ecx, DWORD PTR $T220043[ebp]
+	lea	ecx, DWORD PTR $T220085[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Xlen@?$vector@W4SlotStatus@@V?$allocator@W4SlotStatus@@@std@@@std@@KAXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?_Xlen@?$vector@W4SlotStatus@@V?$allocator@W4SlotStatus@@@std@@@std@@KAXXZ
@@ -1919,8 +1919,8 @@ __TI2?AVbad_alloc@std@@ DD 00H
 xdata$x	ENDS
 ;	COMDAT ??$_Allocate@W4SlotStatus@@@std@@YAPAW4SlotStatus@@IPAW41@@Z
 _TEXT	SEGMENT
-$T220123 = -12						; size = 12
-$T220127 = 8						; size = 4
+$T220165 = -12						; size = 12
+$T220169 = 8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ??$_Allocate@W4SlotStatus@@@std@@YAPAW4SlotStatus@@IPAW41@@Z PROC ; std::_Allocate<enum SlotStatus>, COMDAT
@@ -1962,15 +1962,15 @@ $LN3@Allocate:
 
 ; 40   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T220127[esp+8]
+	lea	eax, DWORD PTR $T220169[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T220123[esp+16]
-	mov	DWORD PTR $T220127[esp+12], 0
+	lea	ecx, DWORD PTR $T220165[esp+16]
+	mov	DWORD PTR $T220169[esp+12], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T220123[esp+16]
+	lea	ecx, DWORD PTR $T220165[esp+16]
 	push	ecx
-	mov	DWORD PTR $T220123[esp+20], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T220165[esp+20], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN9@Allocate:
 $LN8@Allocate:
@@ -1999,7 +1999,7 @@ PUBLIC	??0?$SerializeFromSequenceContainer@$$CBW4SlotStatus@@$$CBV?$vector@W4Slo
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\fireplace\include\fireworks\fstlcontainerserialization.h
 ;	COMDAT ??0?$SerializeFromSequenceContainer@$$CBW4SlotStatus@@$$CBV?$vector@W4SlotStatus@@V?$allocator@W4SlotStatus@@@std@@@std@@@@QAE@AAVFDataStream@@ABV?$vector@W4SlotStatus@@V?$allocator@W4SlotStatus@@@std@@@std@@@Z
 _TEXT	SEGMENT
-$T220137 = 8						; size = 4
+$T220179 = 8						; size = 4
 _saveTo$ = 8						; size = 4
 _container$ = 12					; size = 4
 ??0?$SerializeFromSequenceContainer@$$CBW4SlotStatus@@$$CBV?$vector@W4SlotStatus@@V?$allocator@W4SlotStatus@@@std@@@std@@@@QAE@AAVFDataStream@@ABV?$vector@W4SlotStatus@@V?$allocator@W4SlotStatus@@@std@@@std@@@Z PROC ; SerializeFromSequenceContainer<enum SlotStatus const ,std::vector<enum SlotStatus,std::allocator<enum SlotStatus> > const >::SerializeFromSequenceContainer<enum SlotStatus const ,std::vector<enum SlotStatus,std::allocator<enum SlotStatus> > const >, COMDAT
@@ -2018,10 +2018,10 @@ _container$ = 12					; size = 4
 
 	mov	edx, DWORD PTR [eax+8]
 	sub	edx, DWORD PTR [eax+4]
-	lea	eax, DWORD PTR $T220137[esp]
+	lea	eax, DWORD PTR $T220179[esp]
 	sar	edx, 2
 	push	eax
-	mov	DWORD PTR $T220137[esp+4], edx
+	mov	DWORD PTR $T220179[esp+4], edx
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 
 ; 71   : 	}
@@ -2312,7 +2312,7 @@ PUBLIC	??$?6W4SlotStatus@@@@YAAAVFDataStream@@AAV0@ABV?$vector@W4SlotStatus@@V?$
 ;	COMDAT ??$?6W4SlotStatus@@@@YAAAVFDataStream@@AAV0@ABV?$vector@W4SlotStatus@@V?$allocator@W4SlotStatus@@@std@@@std@@@Z
 _TEXT	SEGMENT
 _saveTo$ = 8						; size = 4
-$T220278 = 12						; size = 4
+$T220320 = 12						; size = 4
 _readFrom$ = 12						; size = 4
 ??$?6W4SlotStatus@@@@YAAAVFDataStream@@AAV0@ABV?$vector@W4SlotStatus@@V?$allocator@W4SlotStatus@@@std@@@std@@@Z PROC ; operator<<<enum SlotStatus>, COMDAT
 
@@ -2328,11 +2328,11 @@ _readFrom$ = 12						; size = 4
 	mov	eax, DWORD PTR [esi+8]
 	sub	eax, DWORD PTR [esi+4]
 	push	edi
-	lea	ecx, DWORD PTR $T220278[esp+8]
+	lea	ecx, DWORD PTR $T220320[esp+8]
 	sar	eax, 2
 	push	ecx
 	mov	ecx, ebx
-	mov	DWORD PTR $T220278[esp+12], eax
+	mov	DWORD PTR $T220320[esp+12], eax
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 	mov	edi, DWORD PTR [esi+8]
 	mov	esi, DWORD PTR [esi+4]
@@ -2701,8 +2701,8 @@ PUBLIC	??$unchecked_uninitialized_fill_n@PAW4SlotStatus@@IW41@V?$allocator@W4Slo
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$unchecked_uninitialized_fill_n@PAW4SlotStatus@@IW41@V?$allocator@W4SlotStatus@@@std@@@stdext@@YAXPAW4SlotStatus@@IABW41@AAV?$allocator@W4SlotStatus@@@std@@@Z
 _TEXT	SEGMENT
-$T220540 = -4						; size = 1
-__Cat$220544 = -4					; size = 1
+$T220582 = -4						; size = 1
+__Cat$220586 = -4					; size = 1
 __First$ = 8						; size = 4
 __Count$ = 12						; size = 4
 __Val$ = 16						; size = 4
@@ -2717,9 +2717,9 @@ __Al$ = 20						; size = 4
 ; 942  : 		_STD _Ptr_cat(_First, _First), _STD _Range_checked_iterator_tag());
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T220540[esp+4], 0
-	mov	eax, DWORD PTR $T220540[esp+4]
-	mov	ecx, DWORD PTR __Cat$220544[esp+4]
+	mov	BYTE PTR $T220582[esp+4], 0
+	mov	eax, DWORD PTR $T220582[esp+4]
+	mov	ecx, DWORD PTR __Cat$220586[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Val$[esp+4]
 	push	ecx
@@ -2900,8 +2900,8 @@ PUBLIC	??$unchecked_uninitialized_copy@PAW4SlotStatus@@PAW41@V?$allocator@W4Slot
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ??$unchecked_uninitialized_copy@PAW4SlotStatus@@PAW41@V?$allocator@W4SlotStatus@@@std@@@stdext@@YAPAW4SlotStatus@@PAW41@00AAV?$allocator@W4SlotStatus@@@std@@@Z
 _TEXT	SEGMENT
-$T220747 = -4						; size = 1
-__Cat$220751 = -4					; size = 1
+$T220789 = -4						; size = 1
+__Cat$220793 = -4					; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
@@ -2917,9 +2917,9 @@ __Al$ = 20						; size = 4
 ; 822  : 		_STD _Ptr_cat(_First, _Dest), _STD _Range_checked_iterator_tag()));
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T220747[esp+4], 0
-	mov	eax, DWORD PTR $T220747[esp+4]
-	mov	ecx, DWORD PTR __Cat$220751[esp+4]
+	mov	BYTE PTR $T220789[esp+4], 0
+	mov	eax, DWORD PTR $T220789[esp+4]
+	mov	ecx, DWORD PTR __Cat$220793[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -2942,10 +2942,10 @@ PUBLIC	?_Ufill@?$vector@W4SlotStatus@@V?$allocator@W4SlotStatus@@@std@@@std@@IAE
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\vector
 ;	COMDAT ?_Ufill@?$vector@W4SlotStatus@@V?$allocator@W4SlotStatus@@@std@@@std@@IAEPAW4SlotStatus@@PAW43@IABW43@@Z
 _TEXT	SEGMENT
-$T220765 = -4						; size = 1
+$T220807 = -4						; size = 1
 __Ptr$ = 8						; size = 4
 __Count$ = 12						; size = 4
-__Cat$220768 = 16					; size = 1
+__Cat$220810 = 16					; size = 1
 __Val$ = 16						; size = 4
 ?_Ufill@?$vector@W4SlotStatus@@V?$allocator@W4SlotStatus@@@std@@@std@@IAEPAW4SlotStatus@@PAW43@IABW43@@Z PROC ; std::vector<enum SlotStatus,std::allocator<enum SlotStatus> >::_Ufill, COMDAT
 ; _this$ = ecx
@@ -2956,13 +2956,13 @@ __Val$ = 16						; size = 4
 
 ; 1254 : 		_STDEXT unchecked_uninitialized_fill_n(_Ptr, _Count, _Val, this->_Alval);
 
-	mov	edx, DWORD PTR __Cat$220768[esp]
+	mov	edx, DWORD PTR __Cat$220810[esp]
 	push	esi
 	mov	esi, DWORD PTR __Count$[esp+4]
 	push	edi
 	mov	edi, DWORD PTR __Ptr$[esp+8]
-	mov	BYTE PTR $T220765[esp+12], 0
-	mov	eax, DWORD PTR $T220765[esp+12]
+	mov	BYTE PTR $T220807[esp+12], 0
+	mov	eax, DWORD PTR $T220807[esp+12]
 	push	eax
 	mov	eax, DWORD PTR __Val$[esp+12]
 	push	edx
@@ -2990,10 +2990,10 @@ PUBLIC	??$_Uninit_move@PAW4SlotStatus@@PAW41@V?$allocator@W4SlotStatus@@@std@@U_
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ??$_Uninit_move@PAW4SlotStatus@@PAW41@V?$allocator@W4SlotStatus@@@std@@U_Undefined_move_tag@3@@std@@YAPAW4SlotStatus@@PAW41@00AAV?$allocator@W4SlotStatus@@@0@U_Undefined_move_tag@0@U_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
-$T220783 = -4						; size = 1
+$T220825 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$220786 = 16					; size = 1
+__Cat$220828 = 16					; size = 1
 __Dest$ = 16						; size = 4
 __Al$ = 20						; size = 4
 ___formal$ = 24						; size = 1
@@ -3006,10 +3006,10 @@ ___formal$ = 28						; size = 1
 
 ; 207  : 	return (_STDEXT unchecked_uninitialized_copy(_First, _Last, _Dest, _Al));
 
-	mov	ecx, DWORD PTR __Cat$220786[esp]
+	mov	ecx, DWORD PTR __Cat$220828[esp]
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T220783[esp+4], 0
-	mov	eax, DWORD PTR $T220783[esp+4]
+	mov	BYTE PTR $T220825[esp+4], 0
+	mov	eax, DWORD PTR $T220825[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -3099,10 +3099,10 @@ PUBLIC	??$_Ucopy@PAW4SlotStatus@@@?$vector@W4SlotStatus@@V?$allocator@W4SlotStat
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Ucopy@PAW4SlotStatus@@@?$vector@W4SlotStatus@@V?$allocator@W4SlotStatus@@@std@@@std@@IAEPAW4SlotStatus@@PAW42@00@Z
 _TEXT	SEGMENT
-$T220976 = -4						; size = 1
+$T221018 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$220979 = 16					; size = 1
+__Cat$221021 = 16					; size = 1
 __Ptr$ = 16						; size = 4
 ??$_Ucopy@PAW4SlotStatus@@@?$vector@W4SlotStatus@@V?$allocator@W4SlotStatus@@@std@@@std@@IAEPAW4SlotStatus@@PAW42@00@Z PROC ; std::vector<enum SlotStatus,std::allocator<enum SlotStatus> >::_Ucopy<enum SlotStatus *>, COMDAT
 ; _this$ = ecx
@@ -3115,9 +3115,9 @@ __Ptr$ = 16						; size = 4
 ; 1140 : 		return (_STDEXT unchecked_uninitialized_copy(_First, _Last,
 ; 1141 : 			_Ptr, this->_Alval));
 
-	mov	edx, DWORD PTR __Cat$220979[esp]
-	mov	BYTE PTR $T220976[esp+4], 0
-	mov	eax, DWORD PTR $T220976[esp+4]
+	mov	edx, DWORD PTR __Cat$221021[esp]
+	mov	BYTE PTR $T221018[esp+4], 0
+	mov	eax, DWORD PTR $T221018[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Ptr$[esp+4]
 	push	edx
@@ -3140,10 +3140,10 @@ PUBLIC	??$_Unchecked_uninitialized_move@PAW4SlotStatus@@PAW41@V?$allocator@W4Slo
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ??$_Unchecked_uninitialized_move@PAW4SlotStatus@@PAW41@V?$allocator@W4SlotStatus@@@std@@@stdext@@YAPAW4SlotStatus@@PAW41@00AAV?$allocator@W4SlotStatus@@@std@@@Z
 _TEXT	SEGMENT
-$T221013 = -4						; size = 1
+$T221055 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$221016 = 16					; size = 1
+__Cat$221058 = 16					; size = 1
 __Dest$ = 16						; size = 4
 __Al$ = 20						; size = 4
 ??$_Unchecked_uninitialized_move@PAW4SlotStatus@@PAW41@V?$allocator@W4SlotStatus@@@std@@@stdext@@YAPAW4SlotStatus@@PAW41@00AAV?$allocator@W4SlotStatus@@@std@@@Z PROC ; stdext::_Unchecked_uninitialized_move<enum SlotStatus *,enum SlotStatus *,std::allocator<enum SlotStatus> >, COMDAT
@@ -3156,10 +3156,10 @@ __Al$ = 20						; size = 4
 ; 863  : 		_CHECKED_BASE(_Last), _Dest, _Al,
 ; 864  : 		_STD _Move_cat(_Dest), _STD _Range_checked_iterator_tag()));
 
-	mov	ecx, DWORD PTR __Cat$221016[esp]
+	mov	ecx, DWORD PTR __Cat$221058[esp]
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T221013[esp+4], 0
-	mov	eax, DWORD PTR $T221013[esp+4]
+	mov	BYTE PTR $T221055[esp+4], 0
+	mov	eax, DWORD PTR $T221055[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -3533,10 +3533,10 @@ PUBLIC	??$_Umove@PAW4SlotStatus@@@?$vector@W4SlotStatus@@V?$allocator@W4SlotStat
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Umove@PAW4SlotStatus@@@?$vector@W4SlotStatus@@V?$allocator@W4SlotStatus@@@std@@@std@@IAEPAW4SlotStatus@@PAW42@00@Z
 _TEXT	SEGMENT
-$T221385 = -4						; size = 1
+$T221427 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$221388 = 16					; size = 1
+__Cat$221430 = 16					; size = 1
 __Ptr$ = 16						; size = 4
 ??$_Umove@PAW4SlotStatus@@@?$vector@W4SlotStatus@@V?$allocator@W4SlotStatus@@@std@@@std@@IAEPAW4SlotStatus@@PAW42@00@Z PROC ; std::vector<enum SlotStatus,std::allocator<enum SlotStatus> >::_Umove<enum SlotStatus *>, COMDAT
 ; _this$ = ecx
@@ -3549,9 +3549,9 @@ __Ptr$ = 16						; size = 4
 ; 1147 : 		return (_STDEXT _Unchecked_uninitialized_move(_First, _Last,
 ; 1148 : 			_Ptr, this->_Alval));
 
-	mov	edx, DWORD PTR __Cat$221388[esp]
-	mov	BYTE PTR $T221385[esp+4], 0
-	mov	eax, DWORD PTR $T221385[esp+4]
+	mov	edx, DWORD PTR __Cat$221430[esp]
+	mov	BYTE PTR $T221427[esp+4], 0
+	mov	eax, DWORD PTR $T221427[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Ptr$[esp+4]
 	push	edx
@@ -3799,16 +3799,16 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 __Capacity$ = -20					; size = 4
 __$EHRec$ = -16						; size = 16
-__Cat$221891 = 8					; size = 1
-__Cat$221819 = 8					; size = 1
+__Cat$221933 = 8					; size = 1
+__Cat$221861 = 8					; size = 1
 __Where$ = 8						; size = 4
-__Tmp$219315 = 12					; size = 4
-__Tmp$219305 = 12					; size = 4
-__Newvec$219290 = 12					; size = 4
+__Tmp$219357 = 12					; size = 4
+__Tmp$219347 = 12					; size = 4
+__Newvec$219332 = 12					; size = 4
 __Count$ = 12						; size = 4
 tv515 = 16						; size = 4
-$T221888 = 16						; size = 1
-$T221816 = 16						; size = 1
+$T221930 = 16						; size = 1
+$T221858 = 16						; size = 1
 __Val$ = 16						; size = 4
 ?_Insert_n@?$vector@W4SlotStatus@@V?$allocator@W4SlotStatus@@@std@@@std@@IAEXV?$_Vector_const_iterator@W4SlotStatus@@V?$allocator@W4SlotStatus@@@std@@@2@IABW4SlotStatus@@@Z PROC ; std::vector<enum SlotStatus,std::allocator<enum SlotStatus> >::_Insert_n, COMDAT
 ; _this$ = ecx
@@ -3934,7 +3934,7 @@ $LN9@Insert_n:
 	lea	edx, DWORD PTR [eax+ebx*4]
 	push	edx
 	mov	ecx, esi
-	mov	DWORD PTR __Newvec$219290[ebp], eax
+	mov	DWORD PTR __Newvec$219332[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+12], 0
 	call	?_Ufill@?$vector@W4SlotStatus@@V?$allocator@W4SlotStatus@@@std@@@std@@IAEPAW4SlotStatus@@PAW43@IABW43@@Z ; std::vector<enum SlotStatus,std::allocator<enum SlotStatus> >::_Ufill
 
@@ -3942,12 +3942,12 @@ $LN9@Insert_n:
 ; 1180 : 			_Umove(this->_Myfirst, _VEC_ITER_BASE(_Where),
 ; 1181 : 				_Newvec);	// move prefix
 
-	mov	edx, DWORD PTR __Cat$221819[ebp]
+	mov	edx, DWORD PTR __Cat$221861[ebp]
 	mov	eax, DWORD PTR [esi+4]
-	mov	BYTE PTR $T221816[ebp], 0
-	mov	ecx, DWORD PTR $T221816[ebp]
+	mov	BYTE PTR $T221858[ebp], 0
+	mov	ecx, DWORD PTR $T221858[ebp]
 	push	ecx
-	mov	ecx, DWORD PTR __Newvec$219290[ebp]
+	mov	ecx, DWORD PTR __Newvec$219332[ebp]
 	push	edx
 	mov	edx, DWORD PTR __Where$[ebp]
 	push	esi
@@ -3962,13 +3962,13 @@ $LN9@Insert_n:
 
 	mov	eax, DWORD PTR [esi+8]
 	add	esp, 24					; 00000018H
-	mov	BYTE PTR $T221888[ebp], 0
-	mov	edx, DWORD PTR $T221888[ebp]
+	mov	BYTE PTR $T221930[ebp], 0
+	mov	edx, DWORD PTR $T221930[ebp]
 	push	edx
-	mov	edx, DWORD PTR __Cat$221891[ebp]
+	mov	edx, DWORD PTR __Cat$221933[ebp]
 	push	edx
 	lea	ecx, DWORD PTR [ebx+edi]
-	mov	ebx, DWORD PTR __Newvec$219290[ebp]
+	mov	ebx, DWORD PTR __Newvec$219332[ebp]
 	push	esi
 	lea	ecx, DWORD PTR [ebx+ecx*4]
 	push	ecx
@@ -4043,7 +4043,7 @@ __catch$?_Insert_n@?$vector@W4SlotStatus@@V?$allocator@W4SlotStatus@@@std@@@std@
 ; 1189 : 				_Destroy(_Newvec + _Whereoff, _Newvec + _Whereoff + _Count);
 ; 1190 : 			this->_Alval.deallocate(_Newvec, _Capacity);
 
-	mov	edx, DWORD PTR __Newvec$219290[ebp]
+	mov	edx, DWORD PTR __Newvec$219332[ebp]
 	push	edx
 	call	??3@YAXPAX@Z				; operator delete
 	add	esp, 4
@@ -4072,7 +4072,7 @@ $LN10@Insert_n:
 
 	mov	edx, DWORD PTR __Val$[ebp]
 	mov	ecx, DWORD PTR [edx]
-	mov	DWORD PTR __Tmp$219305[ebp], ecx
+	mov	DWORD PTR __Tmp$219347[ebp], ecx
 
 ; 1212 : 
 ; 1213 : 			_Umove(_VEC_ITER_BASE(_Where), _Mylast,
@@ -4095,7 +4095,7 @@ $LN10@Insert_n:
 	mov	eax, DWORD PTR [esi+8]
 	mov	ecx, eax
 	sub	ecx, DWORD PTR __Where$[ebp]
-	lea	edx, DWORD PTR __Tmp$219305[ebp]
+	lea	edx, DWORD PTR __Tmp$219347[ebp]
 	sar	ecx, 2
 	push	edx
 	sub	edi, ecx
@@ -4124,7 +4124,7 @@ $LN10@Insert_n:
 ; 1230 : 			std::fill(_VEC_ITER_BASE(_Where), _Mylast - _Count,
 ; 1231 : 				_Tmp);	// insert up to old end
 
-	lea	edx, DWORD PTR __Tmp$219305[ebp]
+	lea	edx, DWORD PTR __Tmp$219347[ebp]
 	push	edx
 	sub	esi, eax
 	mov	eax, DWORD PTR __Where$[ebp]
@@ -4166,7 +4166,7 @@ $LN3@Insert_n:
 	push	ebx
 	push	edi
 	mov	ecx, esi
-	mov	DWORD PTR __Tmp$219315[ebp], edx
+	mov	DWORD PTR __Tmp$219357[ebp], edx
 	mov	DWORD PTR tv515[ebp], eax
 	call	??$_Umove@PAW4SlotStatus@@@?$vector@W4SlotStatus@@V?$allocator@W4SlotStatus@@@std@@@std@@IAEPAW4SlotStatus@@PAW42@00@Z ; std::vector<enum SlotStatus,std::allocator<enum SlotStatus> >::_Umove<enum SlotStatus *>
 
@@ -4190,7 +4190,7 @@ $LN3@Insert_n:
 
 	mov	eax, DWORD PTR __Where$[ebp]
 	mov	edx, DWORD PTR tv515[ebp]
-	lea	ecx, DWORD PTR __Tmp$219315[ebp]
+	lea	ecx, DWORD PTR __Tmp$219357[ebp]
 	push	ecx
 	add	edx, eax
 	push	edx
@@ -4278,8 +4278,8 @@ PUBLIC	?push_back@?$vector@W4SlotStatus@@V?$allocator@W4SlotStatus@@@std@@@std@@
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?push_back@?$vector@W4SlotStatus@@V?$allocator@W4SlotStatus@@@std@@@std@@QAEXABW4SlotStatus@@@Z
 _TEXT	SEGMENT
-$T222015 = -4						; size = 1
-__Cat$222018 = 8					; size = 1
+$T222057 = -4						; size = 1
+__Cat$222060 = 8					; size = 1
 __Val$ = 8						; size = 4
 ?push_back@?$vector@W4SlotStatus@@V?$allocator@W4SlotStatus@@@std@@@std@@QAEXABW4SlotStatus@@@Z PROC ; std::vector<enum SlotStatus,std::allocator<enum SlotStatus> >::push_back, COMDAT
 ; _this$ = ecx
@@ -4320,10 +4320,10 @@ $LN10@push_back:
 ; 818  :  #else /* _HAS_ITERATOR_DEBUGGING */
 ; 819  : 			_Mylast = _Ufill(_Mylast, 1, _Val);
 
-	mov	ecx, DWORD PTR __Cat$222018[esp+8]
+	mov	ecx, DWORD PTR __Cat$222060[esp+8]
 	mov	edx, DWORD PTR __Val$[esp+8]
-	mov	BYTE PTR $T222015[esp+12], 0
-	mov	eax, DWORD PTR $T222015[esp+12]
+	mov	BYTE PTR $T222057[esp+12], 0
+	mov	eax, DWORD PTR $T222057[esp+12]
 	push	eax
 	push	ecx
 	push	esi
@@ -4369,11 +4369,11 @@ EXTRN	??5@YAAAVFDataStream@@AAV0@AAW4SlotStatus@@@Z:PROC ; operator>>
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\fireplace\include\fireworks\fstlcontainerserialization.h
 ;	COMDAT ??$SerializeToSequenceContainer@W4SlotStatus@@V?$vector@W4SlotStatus@@V?$allocator@W4SlotStatus@@@std@@@std@@@@YAXAAVFDataStream@@AAV?$vector@W4SlotStatus@@V?$allocator@W4SlotStatus@@@std@@@std@@@Z
 _TEXT	SEGMENT
-_v$219179 = -12						; size = 4
+_v$219221 = -12						; size = 4
 _i$ = -8						; size = 4
-$T222508 = -4						; size = 1
+$T222550 = -4						; size = 1
 _loadFrom$ = 8						; size = 4
-__Cat$222511 = 12					; size = 1
+__Cat$222553 = 12					; size = 1
 _count$ = 12						; size = 4
 _container$ = 12					; size = 4
 ??$SerializeToSequenceContainer@W4SlotStatus@@V?$vector@W4SlotStatus@@V?$allocator@W4SlotStatus@@@std@@@std@@@@YAXAAVFDataStream@@AAV?$vector@W4SlotStatus@@V?$allocator@W4SlotStatus@@@std@@@std@@@Z PROC ; SerializeToSequenceContainer<enum SlotStatus,std::vector<enum SlotStatus,std::allocator<enum SlotStatus> > >, COMDAT
@@ -4424,7 +4424,7 @@ $LN20@SerializeT:
 	cmp	DWORD PTR _count$[esp+20], ebx
 	jbe	SHORT $LN1@SerializeT
 	push	ebp
-	mov	ebp, DWORD PTR __Cat$222511[esp+24]
+	mov	ebp, DWORD PTR __Cat$222553[esp+24]
 $LL104@SerializeT:
 
 ; 89   : 	{
@@ -4432,7 +4432,7 @@ $LL104@SerializeT:
 ; 91   : 		loadFrom >> v;
 
 	mov	edx, DWORD PTR _loadFrom$[esp+24]
-	lea	ecx, DWORD PTR _v$219179[esp+28]
+	lea	ecx, DWORD PTR _v$219221[esp+28]
 	push	ecx
 	push	edx
 	call	??5@YAAAVFDataStream@@AAV0@AAW4SlotStatus@@@Z ; operator>>
@@ -4456,12 +4456,12 @@ $LN61@SerializeT:
 	sar	edx, 2
 	cmp	edx, eax
 	jae	SHORT $LN53@SerializeT
-	mov	BYTE PTR $T222508[esp+28], bl
-	mov	eax, DWORD PTR $T222508[esp+28]
+	mov	BYTE PTR $T222550[esp+28], bl
+	mov	eax, DWORD PTR $T222550[esp+28]
 	push	eax
 	push	ebp
 	push	esi
-	lea	ecx, DWORD PTR _v$219179[esp+40]
+	lea	ecx, DWORD PTR _v$219221[esp+40]
 	push	ecx
 	push	1
 	push	edi
@@ -4471,7 +4471,7 @@ $LN61@SerializeT:
 	mov	DWORD PTR [esi+8], edi
 	jmp	SHORT $LN2@SerializeT
 $LN53@SerializeT:
-	lea	edx, DWORD PTR _v$219179[esp+28]
+	lea	edx, DWORD PTR _v$219221[esp+28]
 	push	edx
 	push	1
 	push	edi

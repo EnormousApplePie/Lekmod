@@ -10,10 +10,10 @@ INCLUDELIB MSVCRT
 INCLUDELIB OLDNAMES
 
 _DATA	SEGMENT
-_CIV5_XP2_DLL_VERSION DD FLAT:$SG217500
+_CIV5_XP2_DLL_VERSION DD FLAT:$SG217542
 _DATA	ENDS
 CONST	SEGMENT
-$SG217500 DB	'1.0.0', 00H
+$SG217542 DB	'1.0.0', 00H
 	ORG $+2
 _guidICvUnknown DD 0d89ba82fH
 	DW	09fa3H
@@ -1551,12 +1551,12 @@ PUBLIC	?GetInterfaceId@ICvUnknown@@SG?AU_GUID@@XZ	; ICvUnknown::GetInterfaceId
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredllutil\include\cvdllinterfaces.h
 ;	COMDAT ?GetInterfaceId@ICvUnknown@@SG?AU_GUID@@XZ
 _TEXT	SEGMENT
-$T220011 = 8						; size = 4
+$T220053 = 8						; size = 4
 ?GetInterfaceId@ICvUnknown@@SG?AU_GUID@@XZ PROC		; ICvUnknown::GetInterfaceId, COMDAT
 
 ; 306  : 	static GUID DLLCALL GetInterfaceId(){ return guidICvUnknown; }
 
-	mov	eax, DWORD PTR $T220011[esp-4]
+	mov	eax, DWORD PTR $T220053[esp-4]
 	mov	ecx, DWORD PTR _guidICvUnknown
 	mov	edx, DWORD PTR _guidICvUnknown+4
 	mov	DWORD PTR [eax], ecx
@@ -1572,12 +1572,12 @@ PUBLIC	?GetInterfaceId@ICvEnumerator@@SG?AU_GUID@@XZ	; ICvEnumerator::GetInterfa
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?GetInterfaceId@ICvEnumerator@@SG?AU_GUID@@XZ
 _TEXT	SEGMENT
-$T220015 = 8						; size = 4
+$T220057 = 8						; size = 4
 ?GetInterfaceId@ICvEnumerator@@SG?AU_GUID@@XZ PROC	; ICvEnumerator::GetInterfaceId, COMDAT
 
 ; 332  : 	static GUID DLLCALL GetInterfaceId(){ return guidICvEnumerator; }
 
-	mov	eax, DWORD PTR $T220015[esp-4]
+	mov	eax, DWORD PTR $T220057[esp-4]
 	mov	ecx, DWORD PTR _guidICvEnumerator
 	mov	edx, DWORD PTR _guidICvEnumerator+4
 	mov	DWORD PTR [eax], ecx
@@ -1593,12 +1593,12 @@ PUBLIC	?GetInterfaceId@ICvPathFinderUpdate1@@SG?AU_GUID@@XZ ; ICvPathFinderUpdat
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?GetInterfaceId@ICvPathFinderUpdate1@@SG?AU_GUID@@XZ
 _TEXT	SEGMENT
-$T220019 = 8						; size = 4
+$T220061 = 8						; size = 4
 ?GetInterfaceId@ICvPathFinderUpdate1@@SG?AU_GUID@@XZ PROC ; ICvPathFinderUpdate1::GetInterfaceId, COMDAT
 
 ; 1259 : 	static GUID DLLCALL GetInterfaceId() { return guidICvPathFinderUpdate1; }
 
-	mov	eax, DWORD PTR $T220019[esp-4]
+	mov	eax, DWORD PTR $T220061[esp-4]
 	mov	ecx, DWORD PTR _guidICvPathFinderUpdate1
 	mov	edx, DWORD PTR _guidICvPathFinderUpdate1+4
 	mov	DWORD PTR [eax], ecx
@@ -1644,8 +1644,8 @@ _TEXT	SEGMENT
 _TEXT	ENDS
 ;	COMDAT ?QueryInterface@CvDllPathFinderUpdate@@UAGPAXU_GUID@@@Z
 _TEXT	SEGMENT
-$T220031 = -16						; size = 16
-$T220029 = -16						; size = 16
+$T220073 = -16						; size = 16
+$T220071 = -16						; size = 16
 _this$ = 8						; size = 4
 _guidInterface$ = 12					; size = 16
 ?QueryInterface@CvDllPathFinderUpdate@@UAGPAXU_GUID@@@Z PROC ; CvDllPathFinderUpdate::QueryInterface, COMDAT
@@ -1660,15 +1660,15 @@ _guidInterface$ = 12					; size = 16
 	mov	ecx, DWORD PTR _guidICvUnknown+4
 	mov	edx, DWORD PTR _guidICvUnknown+8
 	mov	eax, DWORD PTR _guidICvUnknown
-	mov	DWORD PTR $T220029[esp+20], ecx
-	lea	ecx, DWORD PTR $T220029[esp+16]
-	mov	DWORD PTR $T220029[esp+24], edx
-	mov	DWORD PTR $T220029[esp+16], eax
+	mov	DWORD PTR $T220071[esp+20], ecx
+	lea	ecx, DWORD PTR $T220071[esp+16]
+	mov	DWORD PTR $T220071[esp+24], edx
+	mov	DWORD PTR $T220071[esp+16], eax
 	mov	eax, DWORD PTR _guidICvUnknown+12
 	push	ecx
 	lea	edx, DWORD PTR _guidInterface$[esp+16]
 	push	edx
-	mov	DWORD PTR $T220029[esp+36], eax
+	mov	DWORD PTR $T220071[esp+36], eax
 	call	_IsEqualGUID
 	add	esp, 8
 	test	eax, eax
@@ -1676,15 +1676,15 @@ _guidInterface$ = 12					; size = 16
 	mov	ecx, DWORD PTR _guidICvPathFinderUpdate1+4
 	mov	edx, DWORD PTR _guidICvPathFinderUpdate1+8
 	mov	eax, DWORD PTR _guidICvPathFinderUpdate1
-	mov	DWORD PTR $T220031[esp+20], ecx
-	lea	ecx, DWORD PTR $T220031[esp+16]
-	mov	DWORD PTR $T220031[esp+24], edx
-	mov	DWORD PTR $T220031[esp+16], eax
+	mov	DWORD PTR $T220073[esp+20], ecx
+	lea	ecx, DWORD PTR $T220073[esp+16]
+	mov	DWORD PTR $T220073[esp+24], edx
+	mov	DWORD PTR $T220073[esp+16], eax
 	mov	eax, DWORD PTR _guidICvPathFinderUpdate1+12
 	push	ecx
 	lea	edx, DWORD PTR _guidInterface$[esp+16]
 	push	edx
-	mov	DWORD PTR $T220031[esp+36], eax
+	mov	DWORD PTR $T220073[esp+36], eax
 	call	_IsEqualGUID
 	add	esp, 8
 	test	eax, eax
@@ -1741,8 +1741,8 @@ PUBLIC	?QueryInterface@CvDllPathFinderUpdateList@@UAGPAXU_GUID@@@Z ; CvDllPathFi
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?QueryInterface@CvDllPathFinderUpdateList@@UAGPAXU_GUID@@@Z
 _TEXT	SEGMENT
-$T220065 = -16						; size = 16
-$T220063 = -16						; size = 16
+$T220107 = -16						; size = 16
+$T220105 = -16						; size = 16
 _this$ = 8						; size = 4
 _guidInterface$ = 12					; size = 16
 ?QueryInterface@CvDllPathFinderUpdateList@@UAGPAXU_GUID@@@Z PROC ; CvDllPathFinderUpdateList::QueryInterface, COMDAT
@@ -1757,15 +1757,15 @@ _guidInterface$ = 12					; size = 16
 	mov	ecx, DWORD PTR _guidICvUnknown+4
 	mov	edx, DWORD PTR _guidICvUnknown+8
 	mov	eax, DWORD PTR _guidICvUnknown
-	mov	DWORD PTR $T220063[esp+20], ecx
-	lea	ecx, DWORD PTR $T220063[esp+16]
-	mov	DWORD PTR $T220063[esp+24], edx
-	mov	DWORD PTR $T220063[esp+16], eax
+	mov	DWORD PTR $T220105[esp+20], ecx
+	lea	ecx, DWORD PTR $T220105[esp+16]
+	mov	DWORD PTR $T220105[esp+24], edx
+	mov	DWORD PTR $T220105[esp+16], eax
 	mov	eax, DWORD PTR _guidICvUnknown+12
 	push	ecx
 	lea	edx, DWORD PTR _guidInterface$[esp+16]
 	push	edx
-	mov	DWORD PTR $T220063[esp+36], eax
+	mov	DWORD PTR $T220105[esp+36], eax
 	call	_IsEqualGUID
 	add	esp, 8
 	test	eax, eax
@@ -1773,15 +1773,15 @@ _guidInterface$ = 12					; size = 16
 	mov	ecx, DWORD PTR _guidICvEnumerator+4
 	mov	edx, DWORD PTR _guidICvEnumerator+8
 	mov	eax, DWORD PTR _guidICvEnumerator
-	mov	DWORD PTR $T220065[esp+20], ecx
-	lea	ecx, DWORD PTR $T220065[esp+16]
-	mov	DWORD PTR $T220065[esp+24], edx
-	mov	DWORD PTR $T220065[esp+16], eax
+	mov	DWORD PTR $T220107[esp+20], ecx
+	lea	ecx, DWORD PTR $T220107[esp+16]
+	mov	DWORD PTR $T220107[esp+24], edx
+	mov	DWORD PTR $T220107[esp+16], eax
 	mov	eax, DWORD PTR _guidICvEnumerator+12
 	push	ecx
 	lea	edx, DWORD PTR _guidInterface$[esp+16]
 	push	edx
-	mov	DWORD PTR $T220065[esp+36], eax
+	mov	DWORD PTR $T220107[esp+36], eax
 	call	_IsEqualGUID
 	add	esp, 8
 	test	eax, eax
@@ -2099,8 +2099,8 @@ __ehfuncinfo$?_Xlen@?$vector@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDll
 xdata$x	ENDS
 ;	COMDAT ?_Xlen@?$vector@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@std@@KAXXZ
 _TEXT	SEGMENT
-$T220172 = -80						; size = 28
-$T220171 = -52						; size = 40
+$T220214 = -80						; size = 28
+$T220213 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ?_Xlen@?$vector@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@std@@KAXXZ PROC ; std::vector<CvDllPathFinderUpdateListData,std::allocator<CvDllPathFinderUpdateListData> >::_Xlen, COMDAT
 
@@ -2116,22 +2116,22 @@ __$EHRec$ = -12						; size = 12
 ; 1260 : 		_THROW(length_error, "vector<T> too long");
 
 	push	OFFSET ??_C@_0BD@OLBABOEK@vector?$DMT?$DO?5too?5long?$AA@
-	lea	ecx, DWORD PTR $T220172[esp+84]
+	lea	ecx, DWORD PTR $T220214[esp+84]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T220171[esp+80]
+	lea	ecx, DWORD PTR $T220213[esp+80]
 	mov	DWORD PTR __$EHRec$[esp+88], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T220172[esp+80]
+	lea	eax, DWORD PTR $T220214[esp+80]
 	push	eax
-	lea	ecx, DWORD PTR $T220171[esp+96]
+	lea	ecx, DWORD PTR $T220213[esp+96]
 	mov	BYTE PTR __$EHRec$[esp+92], 1
-	mov	DWORD PTR $T220171[esp+84], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T220213[esp+84], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVlength_error@std@@
-	lea	ecx, DWORD PTR $T220171[esp+84]
+	lea	ecx, DWORD PTR $T220213[esp+84]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+96], 0
-	mov	DWORD PTR $T220171[esp+88], OFFSET ??_7length_error@std@@6B@
+	mov	DWORD PTR $T220213[esp+88], OFFSET ??_7length_error@std@@6B@
 	call	__CxxThrowException@8
 $LN13@Xlen:
 $LN12@Xlen:
@@ -2140,10 +2140,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Xlen@?$vector@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@std@@KAXXZ$0:
-	lea	ecx, DWORD PTR $T220172[ebp]
+	lea	ecx, DWORD PTR $T220214[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Xlen@?$vector@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@std@@KAXXZ$2:
-	lea	ecx, DWORD PTR $T220171[ebp]
+	lea	ecx, DWORD PTR $T220213[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Xlen@?$vector@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@std@@KAXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?_Xlen@?$vector@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@std@@KAXXZ
@@ -2259,8 +2259,8 @@ __TI2?AVbad_alloc@std@@ DD 00H
 xdata$x	ENDS
 ;	COMDAT ??$_Allocate@UCvDllPathFinderUpdateListData@@@std@@YAPAUCvDllPathFinderUpdateListData@@IPAU1@@Z
 _TEXT	SEGMENT
-$T220212 = -12						; size = 12
-$T220216 = 8						; size = 4
+$T220254 = -12						; size = 12
+$T220258 = 8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ??$_Allocate@UCvDllPathFinderUpdateListData@@@std@@YAPAUCvDllPathFinderUpdateListData@@IPAU1@@Z PROC ; std::_Allocate<CvDllPathFinderUpdateListData>, COMDAT
@@ -2304,15 +2304,15 @@ $LN3@Allocate:
 
 ; 40   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T220216[esp+8]
+	lea	eax, DWORD PTR $T220258[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T220212[esp+16]
-	mov	DWORD PTR $T220216[esp+12], 0
+	lea	ecx, DWORD PTR $T220254[esp+16]
+	mov	DWORD PTR $T220258[esp+12], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T220212[esp+16]
+	lea	ecx, DWORD PTR $T220254[esp+16]
 	push	ecx
-	mov	DWORD PTR $T220212[esp+20], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T220254[esp+20], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN9@Allocate:
 $LN8@Allocate:
@@ -3008,8 +3008,8 @@ PUBLIC	??$unchecked_uninitialized_copy@PAUCvDllPathFinderUpdateListData@@PAU1@V?
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$unchecked_uninitialized_copy@PAUCvDllPathFinderUpdateListData@@PAU1@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@stdext@@YAPAUCvDllPathFinderUpdateListData@@PAU1@00AAV?$allocator@UCvDllPathFinderUpdateListData@@@std@@@Z
 _TEXT	SEGMENT
-$T220551 = -4						; size = 1
-__Cat$220556 = -4					; size = 1
+$T220593 = -4						; size = 1
+__Cat$220597 = -4					; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
@@ -3025,9 +3025,9 @@ __Al$ = 20						; size = 4
 ; 822  : 		_STD _Ptr_cat(_First, _Dest), _STD _Range_checked_iterator_tag()));
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T220551[esp+4], 0
-	mov	eax, DWORD PTR $T220551[esp+4]
-	mov	ecx, DWORD PTR __Cat$220556[esp+4]
+	mov	BYTE PTR $T220593[esp+4], 0
+	mov	eax, DWORD PTR $T220593[esp+4]
+	mov	ecx, DWORD PTR __Cat$220597[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -3066,8 +3066,8 @@ PUBLIC	??$unchecked_uninitialized_copy@V?$_Vector_const_iterator@UCvDllPathFinde
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ??$unchecked_uninitialized_copy@V?$_Vector_const_iterator@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@std@@PAUCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@2@@stdext@@YAPAUCvDllPathFinderUpdateListData@@V?$_Vector_const_iterator@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@std@@0PAU1@AAV?$allocator@UCvDllPathFinderUpdateListData@@@3@@Z
 _TEXT	SEGMENT
-$T220563 = -4						; size = 1
-__Cat$220567 = -4					; size = 1
+$T220605 = -4						; size = 1
+__Cat$220609 = -4					; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
@@ -3083,9 +3083,9 @@ __Al$ = 20						; size = 4
 ; 822  : 		_STD _Ptr_cat(_First, _Dest), _STD _Range_checked_iterator_tag()));
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T220563[esp+4], 0
-	mov	eax, DWORD PTR $T220563[esp+4]
-	mov	ecx, DWORD PTR __Cat$220567[esp+4]
+	mov	BYTE PTR $T220605[esp+4], 0
+	mov	eax, DWORD PTR $T220605[esp+4]
+	mov	ecx, DWORD PTR __Cat$220609[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -3107,10 +3107,10 @@ PUBLIC	??$_Uninit_move@PAUCvDllPathFinderUpdateListData@@PAU1@V?$allocator@UCvDl
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Uninit_move@PAUCvDllPathFinderUpdateListData@@PAU1@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@U_Undefined_move_tag@3@@std@@YAPAUCvDllPathFinderUpdateListData@@PAU1@00AAV?$allocator@UCvDllPathFinderUpdateListData@@@0@U_Undefined_move_tag@0@U_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
-$T220581 = -4						; size = 1
+$T220623 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$220585 = 16					; size = 1
+__Cat$220626 = 16					; size = 1
 __Dest$ = 16						; size = 4
 __Al$ = 20						; size = 4
 ___formal$ = 24						; size = 1
@@ -3123,10 +3123,10 @@ ___formal$ = 28						; size = 1
 
 ; 207  : 	return (_STDEXT unchecked_uninitialized_copy(_First, _Last, _Dest, _Al));
 
-	mov	ecx, DWORD PTR __Cat$220585[esp]
+	mov	ecx, DWORD PTR __Cat$220626[esp]
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T220581[esp+4], 0
-	mov	eax, DWORD PTR $T220581[esp+4]
+	mov	BYTE PTR $T220623[esp+4], 0
+	mov	eax, DWORD PTR $T220623[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -3194,10 +3194,10 @@ PUBLIC	??$_Ucopy@V?$_Vector_const_iterator@UCvDllPathFinderUpdateListData@@V?$al
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Ucopy@V?$_Vector_const_iterator@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@std@@@?$vector@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@std@@IAEPAUCvDllPathFinderUpdateListData@@V?$_Vector_const_iterator@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@1@0PAU2@@Z
 _TEXT	SEGMENT
-$T220608 = -4						; size = 1
+$T220650 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$220611 = 16					; size = 1
+__Cat$220653 = 16					; size = 1
 __Ptr$ = 16						; size = 4
 ??$_Ucopy@V?$_Vector_const_iterator@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@std@@@?$vector@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@std@@IAEPAUCvDllPathFinderUpdateListData@@V?$_Vector_const_iterator@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@1@0PAU2@@Z PROC ; std::vector<CvDllPathFinderUpdateListData,std::allocator<CvDllPathFinderUpdateListData> >::_Ucopy<std::_Vector_const_iterator<CvDllPathFinderUpdateListData,std::allocator<CvDllPathFinderUpdateListData> > >, COMDAT
 ; _this$ = ecx
@@ -3210,9 +3210,9 @@ __Ptr$ = 16						; size = 4
 ; 1140 : 		return (_STDEXT unchecked_uninitialized_copy(_First, _Last,
 ; 1141 : 			_Ptr, this->_Alval));
 
-	mov	edx, DWORD PTR __Cat$220611[esp]
-	mov	BYTE PTR $T220608[esp+4], 0
-	mov	eax, DWORD PTR $T220608[esp+4]
+	mov	edx, DWORD PTR __Cat$220653[esp]
+	mov	BYTE PTR $T220650[esp+4], 0
+	mov	eax, DWORD PTR $T220650[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Ptr$[esp+4]
 	push	edx
@@ -3235,10 +3235,10 @@ PUBLIC	??$_Unchecked_uninitialized_move@PAUCvDllPathFinderUpdateListData@@PAU1@V
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ??$_Unchecked_uninitialized_move@PAUCvDllPathFinderUpdateListData@@PAU1@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@stdext@@YAPAUCvDllPathFinderUpdateListData@@PAU1@00AAV?$allocator@UCvDllPathFinderUpdateListData@@@std@@@Z
 _TEXT	SEGMENT
-$T220645 = -4						; size = 1
+$T220687 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$220649 = 16					; size = 1
+__Cat$220690 = 16					; size = 1
 __Dest$ = 16						; size = 4
 __Al$ = 20						; size = 4
 ??$_Unchecked_uninitialized_move@PAUCvDllPathFinderUpdateListData@@PAU1@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@stdext@@YAPAUCvDllPathFinderUpdateListData@@PAU1@00AAV?$allocator@UCvDllPathFinderUpdateListData@@@std@@@Z PROC ; stdext::_Unchecked_uninitialized_move<CvDllPathFinderUpdateListData *,CvDllPathFinderUpdateListData *,std::allocator<CvDllPathFinderUpdateListData> >, COMDAT
@@ -3251,10 +3251,10 @@ __Al$ = 20						; size = 4
 ; 863  : 		_CHECKED_BASE(_Last), _Dest, _Al,
 ; 864  : 		_STD _Move_cat(_Dest), _STD _Range_checked_iterator_tag()));
 
-	mov	ecx, DWORD PTR __Cat$220649[esp]
+	mov	ecx, DWORD PTR __Cat$220690[esp]
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T220645[esp+4], 0
-	mov	eax, DWORD PTR $T220645[esp+4]
+	mov	BYTE PTR $T220687[esp+4], 0
+	mov	eax, DWORD PTR $T220687[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -3308,10 +3308,10 @@ PUBLIC	??$_Umove@PAUCvDllPathFinderUpdateListData@@@?$vector@UCvDllPathFinderUpd
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Umove@PAUCvDllPathFinderUpdateListData@@@?$vector@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@std@@IAEPAUCvDllPathFinderUpdateListData@@PAU2@00@Z
 _TEXT	SEGMENT
-$T220715 = -4						; size = 1
+$T220757 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$220719 = 16					; size = 1
+__Cat$220760 = 16					; size = 1
 __Ptr$ = 16						; size = 4
 ??$_Umove@PAUCvDllPathFinderUpdateListData@@@?$vector@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@std@@IAEPAUCvDllPathFinderUpdateListData@@PAU2@00@Z PROC ; std::vector<CvDllPathFinderUpdateListData,std::allocator<CvDllPathFinderUpdateListData> >::_Umove<CvDllPathFinderUpdateListData *>, COMDAT
 ; _this$ = ecx
@@ -3324,9 +3324,9 @@ __Ptr$ = 16						; size = 4
 ; 1147 : 		return (_STDEXT _Unchecked_uninitialized_move(_First, _Last,
 ; 1148 : 			_Ptr, this->_Alval));
 
-	mov	edx, DWORD PTR __Cat$220719[esp]
-	mov	BYTE PTR $T220715[esp+4], 0
-	mov	eax, DWORD PTR $T220715[esp+4]
+	mov	edx, DWORD PTR __Cat$220760[esp]
+	mov	BYTE PTR $T220757[esp+4], 0
+	mov	eax, DWORD PTR $T220757[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Ptr$[esp+4]
 	push	edx
@@ -3489,16 +3489,16 @@ __ehfuncinfo$??$_Insert@V?$_Vector_const_iterator@UCvDllPathFinderUpdateListData
 xdata$x	ENDS
 ;	COMDAT ??$_Insert@V?$_Vector_const_iterator@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@std@@@?$vector@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@std@@QAEXV?$_Vector_const_iterator@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@1@00Uforward_iterator_tag@1@@Z
 _TEXT	SEGMENT
-$T221074 = -24						; size = 1
-$T221036 = -24						; size = 1
-$T220965 = -24						; size = 1
-$T220938 = -24						; size = 1
-__Newvec$219213 = -20					; size = 4
+$T221116 = -24						; size = 1
+$T221078 = -24						; size = 1
+$T221007 = -24						; size = 1
+$T220980 = -24						; size = 1
+__Newvec$219255 = -20					; size = 4
 __$EHRec$ = -16						; size = 16
-__Cat$221077 = 8					; size = 1
-__Cat$221040 = 8					; size = 1
-__Cat$220968 = 8					; size = 1
-__Cat$220942 = 8					; size = 1
+__Cat$221119 = 8					; size = 1
+__Cat$221081 = 8					; size = 1
+__Cat$221010 = 8					; size = 1
+__Cat$220983 = 8					; size = 1
 __Where$ = 8						; size = 4
 __First$ = 12						; size = 4
 __Last$ = 16						; size = 4
@@ -3635,14 +3635,14 @@ $LN4@Insert:
 ; 955  : 				_Newvec);	// copy prefix
 
 	mov	ecx, DWORD PTR [esi+4]
-	mov	BYTE PTR $T220938[ebp], 0
-	mov	edx, DWORD PTR $T220938[ebp]
+	mov	BYTE PTR $T220980[ebp], 0
+	mov	edx, DWORD PTR $T220980[ebp]
 	push	edx
-	mov	edx, DWORD PTR __Cat$220942[ebp]
+	mov	edx, DWORD PTR __Cat$220983[ebp]
 	push	edx
 	push	esi
 	push	eax
-	mov	DWORD PTR __Newvec$219213[ebp], eax
+	mov	DWORD PTR __Newvec$219255[ebp], eax
 	mov	eax, DWORD PTR __Where$[ebp]
 	push	eax
 	push	ecx
@@ -3651,10 +3651,10 @@ $LN4@Insert:
 
 ; 956  : 			_Ptr = _Ucopy(_First, _Last, _Ptr);	// add new stuff
 
-	mov	edx, DWORD PTR __Cat$220968[ebp]
+	mov	edx, DWORD PTR __Cat$221010[ebp]
 	add	esp, 32					; 00000020H
-	mov	BYTE PTR $T220965[ebp], 0
-	mov	ecx, DWORD PTR $T220965[ebp]
+	mov	BYTE PTR $T221007[ebp], 0
+	mov	ecx, DWORD PTR $T221007[ebp]
 	push	ecx
 	mov	ecx, DWORD PTR __First$[ebp]
 	push	edx
@@ -3669,10 +3669,10 @@ $LN4@Insert:
 
 	mov	ecx, DWORD PTR [esi+8]
 	add	esp, 24					; 00000018H
-	mov	BYTE PTR $T221036[ebp], 0
-	mov	edx, DWORD PTR $T221036[ebp]
+	mov	BYTE PTR $T221078[ebp], 0
+	mov	edx, DWORD PTR $T221078[ebp]
 	push	edx
-	mov	edx, DWORD PTR __Cat$221040[ebp]
+	mov	edx, DWORD PTR __Cat$221081[ebp]
 	push	edx
 	push	esi
 	push	eax
@@ -3719,7 +3719,7 @@ $LN86@Insert:
 ; 974  : 
 ; 975  : 			_Myend = _Newvec + _Capacity;
 
-	mov	eax, DWORD PTR __Newvec$219213[ebp]
+	mov	eax, DWORD PTR __Newvec$219255[ebp]
 	lea	ecx, DWORD PTR [ebx+ebx*2]
 	lea	edx, DWORD PTR [eax+ecx*4]
 
@@ -3756,7 +3756,7 @@ __catch$??$_Insert@V?$_Vector_const_iterator@UCvDllPathFinderUpdateListData@@V?$
 ; 959  : 			_Destroy(_Newvec, _Ptr);
 ; 960  : 			this->_Alval.deallocate(_Newvec, _Capacity);
 
-	mov	eax, DWORD PTR __Newvec$219213[ebp]
+	mov	eax, DWORD PTR __Newvec$219255[ebp]
 	push	eax
 	call	??3@YAXPAX@Z				; operator delete
 	add	esp, 4
@@ -3774,10 +3774,10 @@ $LN5@Insert:
 ; 980  : 			{	// new stuff fits, append and rotate into place
 ; 981  : 			_Ucopy(_First, _Last, _Mylast);
 
-	mov	edx, DWORD PTR __Cat$221077[ebp]
+	mov	edx, DWORD PTR __Cat$221119[ebp]
 	mov	eax, DWORD PTR [esi+8]
-	mov	BYTE PTR $T221074[ebp], 0
-	mov	ecx, DWORD PTR $T221074[ebp]
+	mov	BYTE PTR $T221116[ebp], 0
+	mov	ecx, DWORD PTR $T221116[ebp]
 	push	ecx
 	mov	ecx, DWORD PTR __First$[ebp]
 	push	edx
@@ -3972,7 +3972,7 @@ PUBLIC	??$insert@V?$_Vector_const_iterator@UCvDllPathFinderUpdateListData@@V?$al
 _TEXT	SEGMENT
 __Where$ = 8						; size = 4
 __First$ = 12						; size = 4
-$T221228 = 16						; size = 1
+$T221270 = 16						; size = 1
 __Last$ = 16						; size = 4
 ??$insert@V?$_Vector_const_iterator@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@std@@@?$vector@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@std@@QAEXV?$_Vector_const_iterator@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@1@00@Z PROC ; std::vector<CvDllPathFinderUpdateListData,std::allocator<CvDllPathFinderUpdateListData> >::insert<std::_Vector_const_iterator<CvDllPathFinderUpdateListData,std::allocator<CvDllPathFinderUpdateListData> > >, COMDAT
 ; _this$ = ecx
@@ -3980,7 +3980,7 @@ __Last$ = 16						; size = 4
 ; 888  : 		{	// insert [_First, _Last) at _Where
 ; 889  : 		_Insert(_Where, _First, _Last, _Iter_cat(_First));
 
-	mov	eax, DWORD PTR $T221228[esp-4]
+	mov	eax, DWORD PTR $T221270[esp-4]
 	mov	edx, DWORD PTR __Last$[esp-4]
 	push	eax
 	mov	eax, DWORD PTR __First$[esp]
@@ -4028,7 +4028,7 @@ _TEXT	SEGMENT
 _this$ = -20						; size = 4
 __$EHRec$ = -16						; size = 16
 __First$ = 8						; size = 4
-$T221339 = 12						; size = 1
+$T221381 = 12						; size = 1
 __Last$ = 12						; size = 4
 ___formal$ = 16						; size = 1
 ??$_Construct@V?$_Vector_const_iterator@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@std@@@?$vector@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@std@@QAEXV?$_Vector_const_iterator@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@1@0Uinput_iterator_tag@1@@Z PROC ; std::vector<CvDllPathFinderUpdateListData,std::allocator<CvDllPathFinderUpdateListData> >::_Construct<std::_Vector_const_iterator<CvDllPathFinderUpdateListData,std::allocator<CvDllPathFinderUpdateListData> > >, COMDAT
@@ -4051,7 +4051,7 @@ ___formal$ = 16						; size = 1
 ; 536  : 		_TRY_BEGIN
 ; 537  : 		insert(begin(), _First, _Last);
 
-	mov	edx, DWORD PTR $T221339[ebp]
+	mov	edx, DWORD PTR $T221381[ebp]
 	push	ebx
 	push	esi
 	push	edi
@@ -4111,14 +4111,14 @@ PUBLIC	??$?0V?$_Vector_const_iterator@UCvDllPathFinderUpdateListData@@V?$allocat
 ;	COMDAT ??$?0V?$_Vector_const_iterator@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@std@@@?$vector@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@std@@QAE@V?$_Vector_const_iterator@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@1@0@Z
 _TEXT	SEGMENT
 __First$ = 8						; size = 4
-$T221359 = 12						; size = 1
+$T221401 = 12						; size = 1
 __Last$ = 12						; size = 4
 ??$?0V?$_Vector_const_iterator@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@std@@@?$vector@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@std@@QAE@V?$_Vector_const_iterator@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@1@0@Z PROC ; std::vector<CvDllPathFinderUpdateListData,std::allocator<CvDllPathFinderUpdateListData> >::vector<CvDllPathFinderUpdateListData,std::allocator<CvDllPathFinderUpdateListData> ><std::_Vector_const_iterator<CvDllPathFinderUpdateListData,std::allocator<CvDllPathFinderUpdateListData> > >, COMDAT
 ; _this$ = ecx
 
 ; 514  : 		_Construct(_First, _Last, _Iter_cat(_First));
 
-	mov	eax, DWORD PTR $T221359[esp-4]
+	mov	eax, DWORD PTR $T221401[esp-4]
 	mov	edx, DWORD PTR __First$[esp-4]
 	push	esi
 	mov	esi, ecx
@@ -4141,7 +4141,7 @@ PUBLIC	??0CvDllPathFinderUpdateList@@QAE@ABV?$vector@UCvDllPathFinderUpdateListD
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredll_expansion2\cvdllpathfinderupdate.cpp
 ;	COMDAT ??0CvDllPathFinderUpdateList@@QAE@ABV?$vector@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@std@@@Z
 _TEXT	SEGMENT
-$T221461 = 8						; size = 1
+$T221503 = 8						; size = 1
 _updates$ = 8						; size = 4
 ??0CvDllPathFinderUpdateList@@QAE@ABV?$vector@UCvDllPathFinderUpdateListData@@V?$allocator@UCvDllPathFinderUpdateListData@@@std@@@std@@@Z PROC ; CvDllPathFinderUpdateList::CvDllPathFinderUpdateList, COMDAT
 ; _this$ = ecx
@@ -4149,7 +4149,7 @@ _updates$ = 8						; size = 4
 ; 96   : {
 
 	mov	eax, DWORD PTR _updates$[esp-4]
-	mov	edx, DWORD PTR $T221461[esp-4]
+	mov	edx, DWORD PTR $T221503[esp-4]
 	push	esi
 	mov	esi, ecx
 	mov	DWORD PTR [esi], OFFSET ??_7CvDllPathFinderUpdateList@@6B@

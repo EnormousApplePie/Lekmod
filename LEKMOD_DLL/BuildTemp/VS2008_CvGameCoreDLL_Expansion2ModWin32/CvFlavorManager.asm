@@ -12,24 +12,24 @@ INCLUDELIB OLDNAMES
 PUBLIC	?NO_QUEST_DATA@CvMinorCivQuest@@2HB		; CvMinorCivQuest::NO_QUEST_DATA
 PUBLIC	?NO_TURN@CvMinorCivQuest@@2HB			; CvMinorCivQuest::NO_TURN
 CONST	SEGMENT
-$SG218592 DB	'FLAVOR_EXPANSION', 00H
+$SG218634 DB	'FLAVOR_EXPANSION', 00H
 	ORG $+3
-$SG218594 DB	'FLAVOR_GROWTH', 00H
+$SG218636 DB	'FLAVOR_GROWTH', 00H
 	ORG $+2
-$SG218633 DB	'Adjusting Personality Flavor', 00H
+$SG218675 DB	'Adjusting Personality Flavor', 00H
 	ORG $+3
-$SG218678 DB	'.csv', 00H
+$SG218720 DB	'.csv', 00H
 	ORG $+3
-$SG218679 DB	'FlavorAILog_', 00H
+$SG218721 DB	'FlavorAILog_', 00H
 	ORG $+3
-$SG218681 DB	'FlavorAILog.csv', 00H
-$SG218683 DB	'%03d, ', 00H
+$SG218723 DB	'FlavorAILog.csv', 00H
+$SG218725 DB	'%03d, ', 00H
 	ORG $+1
-$SG218685 DB	', ', 00H
+$SG218727 DB	', ', 00H
 	ORG $+1
-$SG218693 DB	'Flavor, %s, %d', 00H
+$SG218735 DB	'Flavor, %s, %d', 00H
 	ORG $+1
-$SG218696 DB	'Flavor, %s, %d', 00H
+$SG218738 DB	'Flavor, %s, %d', 00H
 CONST	ENDS
 ;	COMDAT ?NO_TURN@CvMinorCivQuest@@2HB
 CONST	SEGMENT
@@ -1849,7 +1849,7 @@ _iMax$ = 20						; size = 4
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	esi
 	mov	esi, DWORD PTR _iPlusMinus$[esp]
-	push	OFFSET $SG218633
+	push	OFFSET $SG218675
 	lea	eax, DWORD PTR [esi+esi+1]
 	push	eax
 	call	?getJonRandNum@CvGame@@QAEHHPBD@Z	; CvGame::getJonRandNum
@@ -1958,16 +1958,16 @@ __unwindtable$?LogFlavors@CvFlavorManager@@AAEXW4FlavorTypes@@@Z DD 0ffffffffH
 xdata$x	ENDS
 ;	COMDAT ?LogFlavors@CvFlavorManager@@AAEXW4FlavorTypes@@@Z
 _TEXT	SEGMENT
-$T219560 = -236						; size = 28
-$T219559 = -236						; size = 28
-$T219558 = -236						; size = 28
-$T219556 = -236						; size = 28
+$T219602 = -236						; size = 28
+$T219601 = -236						; size = 28
+$T219600 = -236						; size = 28
+$T219598 = -236						; size = 28
 _strOutBuf$ = -208					; size = 28
 _playerName$ = -180					; size = 28
 _strTemp$ = -152					; size = 28
 _strBaseString$ = -124					; size = 28
 _strLogName$ = -96					; size = 28
-$T219557 = -68						; size = 28
+$T219599 = -68						; size = 28
 _strDesc$ = -40						; size = 28
 __$EHRec$ = -12						; size = 12
 _eFlavor$ = 8						; size = 4
@@ -2065,13 +2065,13 @@ $LN40@LogFlavors:
 
 	lea	eax, DWORD PTR _playerName$[esp+244]
 	push	eax
-	lea	ecx, DWORD PTR $T219556[esp+248]
-	push	OFFSET $SG218679
+	lea	ecx, DWORD PTR $T219598[esp+248]
+	push	OFFSET $SG218721
 	push	ecx
 	call	DWORD PTR __imp_??$?HDU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PBDABV10@@Z
-	push	OFFSET $SG218678
+	push	OFFSET $SG218720
 	push	eax
-	lea	edx, DWORD PTR $T219557[esp+264]
+	lea	edx, DWORD PTR $T219599[esp+264]
 	push	edx
 	mov	BYTE PTR __$EHRec$[esp+276], 6
 	call	ebp
@@ -2082,10 +2082,10 @@ $LN40@LogFlavors:
 	push	eax
 	lea	ecx, DWORD PTR _strLogName$[esp+248]
 	call	DWORD PTR __imp_?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBD@Z
-	lea	ecx, DWORD PTR $T219557[esp+244]
+	lea	ecx, DWORD PTR $T219599[esp+244]
 	mov	BYTE PTR __$EHRec$[esp+252], 6
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T219556[esp+244]
+	lea	ecx, DWORD PTR $T219598[esp+244]
 	mov	BYTE PTR __$EHRec$[esp+252], 5
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -2098,7 +2098,7 @@ $LN7@LogFlavors:
 ; 596  : 		{
 ; 597  : 			strLogName = "FlavorAILog.csv";
 
-	push	OFFSET $SG218681
+	push	OFFSET $SG218723
 	lea	ecx, DWORD PTR _strLogName$[esp+248]
 	call	DWORD PTR __imp_?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBD@Z
 $LN46@LogFlavors:
@@ -2131,16 +2131,16 @@ $LN46@LogFlavors:
 	call	?getElapsedGameTurns@CvGame@@QBEHXZ	; CvGame::getElapsedGameTurns
 	push	eax
 	lea	ecx, DWORD PTR _strBaseString$[esp+256]
-	push	OFFSET $SG218683
+	push	OFFSET $SG218725
 	push	ecx
 	call	?Format@CvString@@QAAXPBDZZ		; CvString::Format
 
 ; 605  : 		strBaseString += playerName + ", ";
 
-	push	OFFSET $SG218685
+	push	OFFSET $SG218727
 	lea	edx, DWORD PTR _playerName$[esp+268]
 	push	edx
-	lea	eax, DWORD PTR $T219558[esp+272]
+	lea	eax, DWORD PTR $T219600[esp+272]
 	push	eax
 	call	ebp
 	add	esp, 24					; 00000018H
@@ -2148,7 +2148,7 @@ $LN46@LogFlavors:
 	lea	ecx, DWORD PTR _strBaseString$[esp+256]
 	mov	BYTE PTR __$EHRec$[esp+264], 8
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T219558[esp+252]
+	lea	ecx, DWORD PTR $T219600[esp+252]
 	mov	BYTE PTR __$EHRec$[esp+260], 5
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -2183,7 +2183,7 @@ $LL4@LogFlavors:
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
 	lea	eax, DWORD PTR _strTemp$[esp+260]
-	push	OFFSET $SG218693
+	push	OFFSET $SG218735
 	push	eax
 	call	?Format@CvString@@QAAXPBDZZ		; CvString::Format
 
@@ -2193,7 +2193,7 @@ $LL4@LogFlavors:
 	push	ecx
 	lea	edx, DWORD PTR _strBaseString$[esp+272]
 	push	edx
-	lea	eax, DWORD PTR $T219559[esp+276]
+	lea	eax, DWORD PTR $T219601[esp+276]
 	push	eax
 	call	DWORD PTR __imp_??$?HDU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@ABV10@0@Z
 	add	esp, 28					; 0000001cH
@@ -2203,7 +2203,7 @@ $LL4@LogFlavors:
 	push	eax
 	lea	ecx, DWORD PTR _strOutBuf$[esp+256]
 	call	DWORD PTR __imp_?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBD@Z
-	lea	ecx, DWORD PTR $T219559[esp+252]
+	lea	ecx, DWORD PTR $T219601[esp+252]
 	mov	BYTE PTR __$EHRec$[esp+260], 5
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -2243,7 +2243,7 @@ $LN5@LogFlavors:
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
 	lea	ecx, DWORD PTR _strTemp$[esp+260]
-	push	OFFSET $SG218696
+	push	OFFSET $SG218738
 	push	ecx
 	call	?Format@CvString@@QAAXPBDZZ		; CvString::Format
 
@@ -2253,7 +2253,7 @@ $LN5@LogFlavors:
 	push	edx
 	lea	eax, DWORD PTR _strBaseString$[esp+272]
 	push	eax
-	lea	ecx, DWORD PTR $T219560[esp+276]
+	lea	ecx, DWORD PTR $T219602[esp+276]
 	push	ecx
 	call	DWORD PTR __imp_??$?HDU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@ABV10@0@Z
 	add	esp, 28					; 0000001cH
@@ -2263,7 +2263,7 @@ $LN5@LogFlavors:
 	push	eax
 	lea	ecx, DWORD PTR _strOutBuf$[esp+256]
 	call	DWORD PTR __imp_?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBD@Z
-	lea	ecx, DWORD PTR $T219560[esp+252]
+	lea	ecx, DWORD PTR $T219602[esp+252]
 	mov	BYTE PTR __$EHRec$[esp+260], 5
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -2332,19 +2332,19 @@ __unwindfunclet$?LogFlavors@CvFlavorManager@@AAEXW4FlavorTypes@@@Z$5:
 	lea	ecx, DWORD PTR _strLogName$[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?LogFlavors@CvFlavorManager@@AAEXW4FlavorTypes@@@Z$6:
-	lea	ecx, DWORD PTR $T219556[ebp]
+	lea	ecx, DWORD PTR $T219598[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?LogFlavors@CvFlavorManager@@AAEXW4FlavorTypes@@@Z$7:
-	lea	ecx, DWORD PTR $T219557[ebp]
+	lea	ecx, DWORD PTR $T219599[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?LogFlavors@CvFlavorManager@@AAEXW4FlavorTypes@@@Z$8:
-	lea	ecx, DWORD PTR $T219558[ebp]
+	lea	ecx, DWORD PTR $T219600[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?LogFlavors@CvFlavorManager@@AAEXW4FlavorTypes@@@Z$9:
-	lea	ecx, DWORD PTR $T219559[ebp]
+	lea	ecx, DWORD PTR $T219601[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?LogFlavors@CvFlavorManager@@AAEXW4FlavorTypes@@@Z$10:
-	lea	ecx, DWORD PTR $T219560[ebp]
+	lea	ecx, DWORD PTR $T219602[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __ehhandler$?LogFlavors@CvFlavorManager@@AAEXW4FlavorTypes@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?LogFlavors@CvFlavorManager@@AAEXW4FlavorTypes@@@Z
@@ -3017,7 +3017,7 @@ PUBLIC	?Write@CvFlavorManager@@QAEXAAVFDataStream@@@Z	; CvFlavorManager::Write
 ;	COMDAT ?Write@CvFlavorManager@@QAEXAAVFDataStream@@@Z
 _TEXT	SEGMENT
 _uiVersion$ = -4					; size = 4
-$T219969 = 8						; size = 4
+$T220011 = 8						; size = 4
 _kStream$ = 8						; size = 4
 ?Write@CvFlavorManager@@QAEXAAVFDataStream@@@Z PROC	; CvFlavorManager::Write, COMDAT
 ; _this$ = ecx
@@ -3045,8 +3045,8 @@ _kStream$ = 8						; size = 4
 ; 281  : 	kStream << GC.getNumFlavorTypes();
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+1764
-	lea	edx, DWORD PTR $T219969[esp+16]
-	mov	DWORD PTR $T219969[esp+16], ecx
+	lea	edx, DWORD PTR $T220011[esp+16]
+	mov	DWORD PTR $T220011[esp+16], ecx
 	push	edx
 	mov	ecx, esi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
@@ -3160,7 +3160,7 @@ $LL24@RandomizeW:
 ; 483  : 			m_piPersonalityFlavor[iI] = GetAdjustedValue(m_piPersonalityFlavor[iI], iPlusMinus, iMin, iMax);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
-	push	OFFSET $SG218633
+	push	OFFSET $SG218675
 	lea	eax, DWORD PTR [ebx+ebx+1]
 	push	eax
 	call	?getJonRandNum@CvGame@@QAEHHPBD@Z	; CvGame::getJonRandNum
@@ -4223,7 +4223,7 @@ PUBLIC	?erase@?$FFastList@PAVCvFlavorRecipient@@$0BCJ@$0A@@@QAE?AViterator@1@V21
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?erase@?$FFastList@PAVCvFlavorRecipient@@$0BCJ@$0A@@@QAE?AViterator@1@V21@@Z
 _TEXT	SEGMENT
-$T220798 = -8						; size = 8
+$T220840 = -8						; size = 8
 ___$ReturnUdt$ = 8					; size = 4
 _it$ = 12						; size = 8
 ?erase@?$FFastList@PAVCvFlavorRecipient@@$0BCJ@$0A@@@QAE?AViterator@1@V21@@Z PROC ; FFastList<CvFlavorRecipient *,297,0>::erase, COMDAT
@@ -4238,7 +4238,7 @@ _it$ = 12						; size = 8
 	mov	ecx, DWORD PTR _it$[esp+8]
 	push	eax
 	push	ecx
-	lea	edx, DWORD PTR $T220798[esp+20]
+	lea	edx, DWORD PTR $T220840[esp+20]
 	push	edx
 	mov	ecx, esi
 	call	?erase@?$FCustomList_Core@U?$MultiListNodePolicy@PAVCvFlavorRecipient@@@@V?$FFastAllocator@U?$MultiListNodePolicy@PAVCvFlavorRecipient@@@@$0A@$0BCJ@$0A@UFDefaultFastVectorAllocator@?$BaseVector@U?$MultiListNodePolicy@PAVCvFlavorRecipient@@@@$0A@@@@@V?$FCustomList_Tail_Member@V?$FFastAllocator@U?$MultiListNodePolicy@PAVCvFlavorRecipient@@@@$0A@$0BCJ@$0A@UFDefaultFastVectorAllocator@?$BaseVector@U?$MultiListNodePolicy@PAVCvFlavorRecipient@@@@$0A@@@@@@@@@QAE?AViterator@1@V21@@Z ; FCustomList_Core<MultiListNodePolicy<CvFlavorRecipient *>,FFastAllocator<MultiListNodePolicy<CvFlavorRecipient *>,0,297,0,BaseVector<MultiListNodePolicy<CvFlavorRecipient *>,0>::FDefaultFastVectorAllocator>,FCustomList_Tail_Member<FFastAllocator<MultiListNodePolicy<CvFlavorRecipient *>,0,297,0,BaseVector<MultiListNodePolicy<CvFlavorRecipient *>,0>::FDefaultFastVectorAllocator> > >::erase
@@ -4517,8 +4517,8 @@ PUBLIC	?RemoveFlavorRecipient@CvFlavorManager@@QAEXPAVCvFlavorRecipient@@@Z ; Cv
 _TEXT	SEGMENT
 _iter$ = -24						; size = 8
 _end$ = -16						; size = 8
-$T221224 = -8						; size = 8
-$T221223 = -8						; size = 8
+$T221266 = -8						; size = 8
+$T221265 = -8						; size = 8
 _pTargetObject$ = 8					; size = 4
 ?RemoveFlavorRecipient@CvFlavorManager@@QAEXPAVCvFlavorRecipient@@@Z PROC ; CvFlavorManager::RemoveFlavorRecipient, COMDAT
 ; _this$ = ecx
@@ -4580,7 +4580,7 @@ $LL3@RemoveFlav:
 ; 321  : 		iter++;
 
 	push	0
-	lea	eax, DWORD PTR $T221224[esp+44]
+	lea	eax, DWORD PTR $T221266[esp+44]
 	push	eax
 	lea	ecx, DWORD PTR _iter$[esp+48]
 	call	??E?$base_iterator@Vbase_iterator_tail@?$FCustomList_Core@U?$MultiListNodePolicy@PAVCvFlavorRecipient@@@@V?$FFastAllocator@U?$MultiListNodePolicy@PAVCvFlavorRecipient@@@@$0A@$0BCJ@$0A@UFDefaultFastVectorAllocator@?$BaseVector@U?$MultiListNodePolicy@PAVCvFlavorRecipient@@@@$0A@@@@@V?$FCustomList_Tail_Member@V?$FFastAllocator@U?$MultiListNodePolicy@PAVCvFlavorRecipient@@@@$0A@$0BCJ@$0A@UFDefaultFastVectorAllocator@?$BaseVector@U?$MultiListNodePolicy@PAVCvFlavorRecipient@@@@$0A@@@@@@@@@@?$FCustomList_Core@U?$MultiListNodePolicy@PAVCvFlavorRecipient@@@@V?$FFastAllocator@U?$MultiListNodePolicy@PAVCvFlavorRecipient@@@@$0A@$0BCJ@$0A@UFDefaultFastVectorAllocator@?$BaseVector@U?$MultiListNodePolicy@PAVCvFlavorRecipient@@@@$0A@@@@@V?$FCustomList_Tail_Member@V?$FFastAllocator@U?$MultiListNodePolicy@PAVCvFlavorRecipient@@@@$0A@$0BCJ@$0A@UFDefaultFastVectorAllocator@?$BaseVector@U?$MultiListNodePolicy@PAVCvFlavorRecipient@@@@$0A@@@@@@@@@QAE?BV01@H@Z ; FCustomList_Core<MultiListNodePolicy<CvFlavorRecipient *>,FFastAllocator<MultiListNodePolicy<CvFlavorRecipient *>,0,297,0,BaseVector<MultiListNodePolicy<CvFlavorRecipient *>,0>::FDefaultFastVectorAllocator>,FCustomList_Tail_Member<FFastAllocator<MultiListNodePolicy<CvFlavorRecipient *>,0,297,0,BaseVector<MultiListNodePolicy<CvFlavorRecipient *>,0>::FDefaultFastVectorAllocator> > >::base_iterator<FCustomList_Core<MultiListNodePolicy<CvFlavorRecipient *>,FFastAllocator<MultiListNodePolicy<CvFlavorRecipient *>,0,297,0,BaseVector<MultiListNodePolicy<CvFlavorRecipient *>,0>::FDefaultFastVectorAllocator>,FCustomList_Tail_Member<FFastAllocator<MultiListNodePolicy<CvFlavorRecipient *>,0,297,0,BaseVector<MultiListNodePolicy<CvFlavorRecipient *>,0>::FDefaultFastVectorAllocator> > >::base_iterator_tail>::operator++
@@ -4605,7 +4605,7 @@ $LN21@RemoveFlav:
 
 	push	eax
 	push	ecx
-	lea	ecx, DWORD PTR $T221223[esp+48]
+	lea	ecx, DWORD PTR $T221265[esp+48]
 	push	ecx
 	mov	ecx, esi
 	call	?erase@?$FFastList@PAVCvFlavorRecipient@@$0BCJ@$0A@@@QAE?AViterator@1@V21@@Z ; FFastList<CvFlavorRecipient *,297,0>::erase
@@ -4628,9 +4628,9 @@ PUBLIC	?BroadcastFlavors@CvFlavorManager@@AAEXPAH_N@Z	; CvFlavorManager::Broadca
 ;	COMDAT ?BroadcastFlavors@CvFlavorManager@@AAEXPAH_N@Z
 _TEXT	SEGMENT
 _it$ = -24						; size = 8
-$T221270 = -16						; size = 8
-$T221267 = -16						; size = 8
-$T221268 = -8						; size = 8
+$T221312 = -16						; size = 8
+$T221309 = -16						; size = 8
+$T221310 = -8						; size = 8
 _piDeltaFlavorValues$ = 8				; size = 4
 _bPlayerLevelUpdate$ = 12				; size = 1
 ?BroadcastFlavors@CvFlavorManager@@AAEXPAH_N@Z PROC	; CvFlavorManager::BroadcastFlavors, COMDAT
@@ -4654,13 +4654,13 @@ _bPlayerLevelUpdate$ = 12				; size = 1
 ; 547  : 	for(it = m_FlavorTargetList.begin(); it != m_FlavorTargetList.end(); it++)
 
 	lea	ebx, DWORD PTR [ecx+12]
-	lea	eax, DWORD PTR $T221267[esp+40]
+	lea	eax, DWORD PTR $T221309[esp+40]
 	push	eax
 	mov	ecx, ebx
 	call	?begin@?$FFastList@PAVCvFlavorRecipient@@$0BCJ@$0A@@@QAE?AViterator@1@XZ ; FFastList<CvFlavorRecipient *,297,0>::begin
 	mov	edi, DWORD PTR [eax]
 	mov	esi, DWORD PTR [eax+4]
-	lea	ecx, DWORD PTR $T221270[esp+40]
+	lea	ecx, DWORD PTR $T221312[esp+40]
 	push	ecx
 	mov	ecx, ebx
 	mov	DWORD PTR _it$[esp+44], edi
@@ -4711,11 +4711,11 @@ $LN70@BroadcastF:
 	call	?ChangeFlavors@CvFlavorRecipient@@QAEXPAH_N@Z ; CvFlavorRecipient::ChangeFlavors
 $LN5@BroadcastF:
 	push	0
-	lea	eax, DWORD PTR $T221268[esp+44]
+	lea	eax, DWORD PTR $T221310[esp+44]
 	push	eax
 	lea	ecx, DWORD PTR _it$[esp+48]
 	call	??E?$base_iterator@Vbase_iterator_tail@?$FCustomList_Core@U?$MultiListNodePolicy@PAVCvFlavorRecipient@@@@V?$FFastAllocator@U?$MultiListNodePolicy@PAVCvFlavorRecipient@@@@$0A@$0BCJ@$0A@UFDefaultFastVectorAllocator@?$BaseVector@U?$MultiListNodePolicy@PAVCvFlavorRecipient@@@@$0A@@@@@V?$FCustomList_Tail_Member@V?$FFastAllocator@U?$MultiListNodePolicy@PAVCvFlavorRecipient@@@@$0A@$0BCJ@$0A@UFDefaultFastVectorAllocator@?$BaseVector@U?$MultiListNodePolicy@PAVCvFlavorRecipient@@@@$0A@@@@@@@@@@?$FCustomList_Core@U?$MultiListNodePolicy@PAVCvFlavorRecipient@@@@V?$FFastAllocator@U?$MultiListNodePolicy@PAVCvFlavorRecipient@@@@$0A@$0BCJ@$0A@UFDefaultFastVectorAllocator@?$BaseVector@U?$MultiListNodePolicy@PAVCvFlavorRecipient@@@@$0A@@@@@V?$FCustomList_Tail_Member@V?$FFastAllocator@U?$MultiListNodePolicy@PAVCvFlavorRecipient@@@@$0A@$0BCJ@$0A@UFDefaultFastVectorAllocator@?$BaseVector@U?$MultiListNodePolicy@PAVCvFlavorRecipient@@@@$0A@@@@@@@@@QAE?BV01@H@Z ; FCustomList_Core<MultiListNodePolicy<CvFlavorRecipient *>,FFastAllocator<MultiListNodePolicy<CvFlavorRecipient *>,0,297,0,BaseVector<MultiListNodePolicy<CvFlavorRecipient *>,0>::FDefaultFastVectorAllocator>,FCustomList_Tail_Member<FFastAllocator<MultiListNodePolicy<CvFlavorRecipient *>,0,297,0,BaseVector<MultiListNodePolicy<CvFlavorRecipient *>,0>::FDefaultFastVectorAllocator> > >::base_iterator<FCustomList_Core<MultiListNodePolicy<CvFlavorRecipient *>,FFastAllocator<MultiListNodePolicy<CvFlavorRecipient *>,0,297,0,BaseVector<MultiListNodePolicy<CvFlavorRecipient *>,0>::FDefaultFastVectorAllocator>,FCustomList_Tail_Member<FFastAllocator<MultiListNodePolicy<CvFlavorRecipient *>,0,297,0,BaseVector<MultiListNodePolicy<CvFlavorRecipient *>,0>::FDefaultFastVectorAllocator> > >::base_iterator_tail>::operator++
-	lea	ecx, DWORD PTR $T221270[esp+40]
+	lea	ecx, DWORD PTR $T221312[esp+40]
 	push	ecx
 	mov	ecx, ebx
 	call	?end@?$FFastList@PAVCvFlavorRecipient@@$0BCJ@$0A@@@QAE?AViterator@1@XZ ; FFastList<CvFlavorRecipient *,297,0>::end
@@ -4741,9 +4741,9 @@ PUBLIC	?BroadcastBaseFlavors@CvFlavorManager@@AAEXXZ	; CvFlavorManager::Broadcas
 ;	COMDAT ?BroadcastBaseFlavors@CvFlavorManager@@AAEXXZ
 _TEXT	SEGMENT
 _it$ = -24						; size = 8
-$T221445 = -16						; size = 8
-$T221442 = -16						; size = 8
-$T221443 = -8						; size = 8
+$T221487 = -16						; size = 8
+$T221484 = -16						; size = 8
+$T221485 = -8						; size = 8
 ?BroadcastBaseFlavors@CvFlavorManager@@AAEXXZ PROC	; CvFlavorManager::BroadcastBaseFlavors, COMDAT
 ; _this$ = ecx
 
@@ -4766,14 +4766,14 @@ $T221443 = -8						; size = 8
 ; 568  : #else
 ; 569  : 	for(it = m_FlavorTargetList.begin(); it != m_FlavorTargetList.end(); it++)
 
-	lea	eax, DWORD PTR $T221442[esp+40]
+	lea	eax, DWORD PTR $T221484[esp+40]
 	lea	ebx, DWORD PTR [edi+12]
 	push	eax
 	mov	ecx, ebx
 	call	?begin@?$FFastList@PAVCvFlavorRecipient@@$0BCJ@$0A@@@QAE?AViterator@1@XZ ; FFastList<CvFlavorRecipient *,297,0>::begin
 	mov	ecx, DWORD PTR [eax]
 	mov	esi, DWORD PTR [eax+4]
-	lea	edx, DWORD PTR $T221445[esp+40]
+	lea	edx, DWORD PTR $T221487[esp+40]
 	mov	DWORD PTR _it$[esp+40], ecx
 	push	edx
 	mov	ecx, ebx
@@ -4812,11 +4812,11 @@ $LN29@BroadcastB:
 	call	eax
 $LN2@BroadcastB:
 	push	0
-	lea	ecx, DWORD PTR $T221443[esp+44]
+	lea	ecx, DWORD PTR $T221485[esp+44]
 	push	ecx
 	lea	ecx, DWORD PTR _it$[esp+48]
 	call	??E?$base_iterator@Vbase_iterator_tail@?$FCustomList_Core@U?$MultiListNodePolicy@PAVCvFlavorRecipient@@@@V?$FFastAllocator@U?$MultiListNodePolicy@PAVCvFlavorRecipient@@@@$0A@$0BCJ@$0A@UFDefaultFastVectorAllocator@?$BaseVector@U?$MultiListNodePolicy@PAVCvFlavorRecipient@@@@$0A@@@@@V?$FCustomList_Tail_Member@V?$FFastAllocator@U?$MultiListNodePolicy@PAVCvFlavorRecipient@@@@$0A@$0BCJ@$0A@UFDefaultFastVectorAllocator@?$BaseVector@U?$MultiListNodePolicy@PAVCvFlavorRecipient@@@@$0A@@@@@@@@@@?$FCustomList_Core@U?$MultiListNodePolicy@PAVCvFlavorRecipient@@@@V?$FFastAllocator@U?$MultiListNodePolicy@PAVCvFlavorRecipient@@@@$0A@$0BCJ@$0A@UFDefaultFastVectorAllocator@?$BaseVector@U?$MultiListNodePolicy@PAVCvFlavorRecipient@@@@$0A@@@@@V?$FCustomList_Tail_Member@V?$FFastAllocator@U?$MultiListNodePolicy@PAVCvFlavorRecipient@@@@$0A@$0BCJ@$0A@UFDefaultFastVectorAllocator@?$BaseVector@U?$MultiListNodePolicy@PAVCvFlavorRecipient@@@@$0A@@@@@@@@@QAE?BV01@H@Z ; FCustomList_Core<MultiListNodePolicy<CvFlavorRecipient *>,FFastAllocator<MultiListNodePolicy<CvFlavorRecipient *>,0,297,0,BaseVector<MultiListNodePolicy<CvFlavorRecipient *>,0>::FDefaultFastVectorAllocator>,FCustomList_Tail_Member<FFastAllocator<MultiListNodePolicy<CvFlavorRecipient *>,0,297,0,BaseVector<MultiListNodePolicy<CvFlavorRecipient *>,0>::FDefaultFastVectorAllocator> > >::base_iterator<FCustomList_Core<MultiListNodePolicy<CvFlavorRecipient *>,FFastAllocator<MultiListNodePolicy<CvFlavorRecipient *>,0,297,0,BaseVector<MultiListNodePolicy<CvFlavorRecipient *>,0>::FDefaultFastVectorAllocator>,FCustomList_Tail_Member<FFastAllocator<MultiListNodePolicy<CvFlavorRecipient *>,0,297,0,BaseVector<MultiListNodePolicy<CvFlavorRecipient *>,0>::FDefaultFastVectorAllocator> > >::base_iterator_tail>::operator++
-	lea	edx, DWORD PTR $T221445[esp+40]
+	lea	edx, DWORD PTR $T221487[esp+40]
 	push	edx
 	lea	ecx, DWORD PTR [edi+12]
 	call	?end@?$FFastList@PAVCvFlavorRecipient@@$0BCJ@$0A@@@QAE?AViterator@1@XZ ; FFastList<CvFlavorRecipient *,297,0>::end
@@ -4950,7 +4950,7 @@ PUBLIC	?ChangeFlavors@CvFlavorManager@@QAEXPAH_N@Z	; CvFlavorManager::ChangeFlav
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredll_expansion2\cvflavormanager.cpp
 ;	COMDAT ?ChangeFlavors@CvFlavorManager@@QAEXPAH_N@Z
 _TEXT	SEGMENT
-_iNumFlavors$218558 = -4				; size = 4
+_iNumFlavors$218600 = -4				; size = 4
 _piDeltaFlavorValues$ = 8				; size = 4
 _bPlayerLevelUpdate$ = 12				; size = 1
 ?ChangeFlavors@CvFlavorManager@@QAEXPAH_N@Z PROC	; CvFlavorManager::ChangeFlavors, COMDAT
@@ -4992,7 +4992,7 @@ _bPlayerLevelUpdate$ = 12				; size = 1
 ; 339  : 		for(int iI = 0; iI < iNumFlavors; iI++)
 
 	xor	esi, esi
-	mov	DWORD PTR _iNumFlavors$218558[esp+20], eax
+	mov	DWORD PTR _iNumFlavors$218600[esp+20], eax
 	test	eax, eax
 	jle	SHORT $LN20@ChangeFlav@2
 $LL7@ChangeFlav@2:
@@ -5051,7 +5051,7 @@ $LN1@ChangeFlav@2:
 	push	esi
 	mov	ecx, edi
 	call	?LogFlavors@CvFlavorManager@@AAEXW4FlavorTypes@@@Z ; CvFlavorManager::LogFlavors
-	mov	eax, DWORD PTR _iNumFlavors$218558[esp+20]
+	mov	eax, DWORD PTR _iNumFlavors$218600[esp+20]
 	mov	edx, DWORD PTR _piDeltaFlavorValues$[esp+16]
 $LN6@ChangeFlav@2:
 	inc	esi
@@ -5130,11 +5130,11 @@ EXTRN	__ftol2_sse_excpt:PROC
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?AdjustWeightsForMap@CvFlavorManager@@QAEXXZ
 _TEXT	SEGMENT
-_iNumFlavorTypes$218584 = -20				; size = 4
+_iNumFlavorTypes$218626 = -20				; size = 4
 _iTilesPerPlayer$ = -16					; size = 8
 _iTotalLandTiles$ = -16					; size = 4
-$T221852 = -8						; size = 4
-_iFlavorMinValue$218590 = -8				; size = 4
+$T221894 = -8						; size = 4
+_iFlavorMinValue$218632 = -8				; size = 4
 _fAdjust$ = -8						; size = 8
 _iNumPlayers$ = -8					; size = 4
 ?AdjustWeightsForMap@CvFlavorManager@@QAEXXZ PROC	; CvFlavorManager::AdjustWeightsForMap, COMDAT
@@ -5192,16 +5192,16 @@ _iNumPlayers$ = -8					; size = 4
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8092
 	sub	esp, 8
 	fidiv	DWORD PTR _iNumPlayers$[esp+44]
-	mov	DWORD PTR _iNumFlavorTypes$218584[esp+44], eax
+	mov	DWORD PTR _iNumFlavorTypes$218626[esp+44], eax
 	mov	eax, esp
-	mov	DWORD PTR $T221852[esp+44], ecx
+	mov	DWORD PTR $T221894[esp+44], ecx
 	fstp	QWORD PTR _iTilesPerPlayer$[esp+44]
 	mov	edx, DWORD PTR _iTilesPerPlayer$[esp+44]
 	mov	ecx, DWORD PTR _iTilesPerPlayer$[esp+48]
 	mov	DWORD PTR [eax], edx
 	mov	DWORD PTR [eax+4], ecx
 	call	_log10
-	fsub	DWORD PTR $T221852[esp+44]
+	fsub	DWORD PTR $T221894[esp+44]
 	add	esp, 8
 	fstp	QWORD PTR _fAdjust$[esp+36]
 
@@ -5227,16 +5227,16 @@ _iNumPlayers$ = -8					; size = 4
 ; 406  : 		int iExpansionIndex = GC.getInfoTypeForString("FLAVOR_EXPANSION");
 
 	push	0
-	push	OFFSET $SG218592
+	push	OFFSET $SG218634
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	ebx, eax
-	mov	DWORD PTR _iFlavorMinValue$218590[esp+44], edx
+	mov	DWORD PTR _iFlavorMinValue$218632[esp+44], edx
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 
 ; 407  : 		int iGrowthIndex = GC.getInfoTypeForString("FLAVOR_GROWTH");
 
 	push	0
-	push	OFFSET $SG218594
+	push	OFFSET $SG218636
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	esi, eax
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
@@ -5248,7 +5248,7 @@ _iNumPlayers$ = -8					; size = 4
 
 	test	esi, esi
 	jl	SHORT $LN31@AdjustWeig
-	cmp	esi, DWORD PTR _iNumFlavorTypes$218584[esp+36]
+	cmp	esi, DWORD PTR _iNumFlavorTypes$218626[esp+36]
 	jge	SHORT $LN31@AdjustWeig
 
 ; 412  : 		{
@@ -5280,7 +5280,7 @@ $LN31@AdjustWeig:
 
 	test	eax, eax
 	jl	SHORT $LN1@AdjustWeig
-	cmp	eax, DWORD PTR _iNumFlavorTypes$218584[esp+36]
+	cmp	eax, DWORD PTR _iNumFlavorTypes$218626[esp+36]
 	jge	SHORT $LN1@AdjustWeig
 
 ; 423  : 		{
@@ -5293,7 +5293,7 @@ $LN31@AdjustWeig:
 
 	mov	edx, DWORD PTR [edi]
 	lea	ecx, DWORD PTR [ecx+eax*4]
-	mov	ecx, DWORD PTR _iFlavorMinValue$218590[esp+36]
+	mov	ecx, DWORD PTR _iFlavorMinValue$218632[esp+36]
 	cmp	DWORD PTR [edx+eax*4], ecx
 	lea	eax, DWORD PTR [edx+eax*4]
 	jge	SHORT $LN1@AdjustWeig
@@ -5381,7 +5381,7 @@ PUBLIC	?push_back@?$FFastList@PAVCvFlavorRecipient@@$0BCJ@$0A@@@QAEIABQAVCvFlavo
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?push_back@?$FFastList@PAVCvFlavorRecipient@@$0BCJ@$0A@@@QAEIABQAVCvFlavorRecipient@@@Z
 _TEXT	SEGMENT
-$T221983 = -12						; size = 12
+$T222025 = -12						; size = 12
 _x$ = 8							; size = 4
 ?push_back@?$FFastList@PAVCvFlavorRecipient@@$0BCJ@$0A@@@QAEIABQAVCvFlavorRecipient@@@Z PROC ; FFastList<CvFlavorRecipient *,297,0>::push_back, COMDAT
 ; _this$ = ecx
@@ -5397,8 +5397,8 @@ _x$ = 8							; size = 4
 	mov	esi, ecx
 	mov	ecx, DWORD PTR [eax]
 	push	edi
-	lea	edx, DWORD PTR $T221983[esp+20]
-	mov	DWORD PTR $T221983[esp+28], ecx
+	lea	edx, DWORD PTR $T222025[esp+20]
+	mov	DWORD PTR $T222025[esp+28], ecx
 	push	edx
 	mov	ecx, esi
 	call	?Alloc@?$FFastAllocator@U?$MultiListNodePolicy@PAVCvFlavorRecipient@@@@$0A@$0BCJ@$0A@UFDefaultFastVectorAllocator@?$BaseVector@U?$MultiListNodePolicy@PAVCvFlavorRecipient@@@@$0A@@@@@QAEIABU?$MultiListNodePolicy@PAVCvFlavorRecipient@@@@@Z ; FFastAllocator<MultiListNodePolicy<CvFlavorRecipient *>,0,297,0,BaseVector<MultiListNodePolicy<CvFlavorRecipient *>,0>::FDefaultFastVectorAllocator>::Alloc
@@ -5500,8 +5500,8 @@ EXTRN	?slotStatus@CvPreGame@@YA?AW4SlotStatus@@W4PlayerTypes@@@Z:PROC ; CvPreGam
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?Init@CvFlavorManager@@QAEXPAVCvPlayer@@@Z
 _TEXT	SEGMENT
-_uiNumFlavorTypes$218332 = -4				; size = 4
-_iDefaultFlavorValue$218331 = 8				; size = 4
+_uiNumFlavorTypes$218374 = -4				; size = 4
+_iDefaultFlavorValue$218373 = 8				; size = 4
 _pPlayer$ = 8						; size = 4
 ?Init@CvFlavorManager@@QAEXPAVCvPlayer@@@Z PROC		; CvFlavorManager::Init, COMDAT
 ; _this$ = ecx
@@ -5650,7 +5650,7 @@ $LN67@Init:
 ; 181  : 						int iDefaultFlavorValue = GC.getDEFAULT_FLAVOR_VALUE();
 
 	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+1864
-	mov	DWORD PTR _iDefaultFlavorValue$218331[esp+16], eax
+	mov	DWORD PTR _iDefaultFlavorValue$218373[esp+16], eax
 
 ; 182  : 						unsigned int uiNumFlavorTypes = GC.getNumFlavorTypes();
 
@@ -5660,7 +5660,7 @@ $LN67@Init:
 ; 184  : 						for(iI = 0; iI < uiNumFlavorTypes; iI++)
 
 	xor	edi, edi
-	mov	DWORD PTR _uiNumFlavorTypes$218332[esp+20], eax
+	mov	DWORD PTR _uiNumFlavorTypes$218374[esp+20], eax
 	test	eax, eax
 	jbe	SHORT $LN71@Init
 $LL11@Init:
@@ -5719,11 +5719,11 @@ $LN7@Init:
 ; 199  : 							{
 ; 200  : 								m_piPersonalityFlavor[iI] = iDefaultFlavorValue;
 
-	mov	ecx, DWORD PTR _iDefaultFlavorValue$218331[esp+16]
+	mov	ecx, DWORD PTR _iDefaultFlavorValue$218373[esp+16]
 	mov	DWORD PTR [eax], ecx
 $LN10@Init:
 	inc	edi
-	cmp	edi, DWORD PTR _uiNumFlavorTypes$218332[esp+20]
+	cmp	edi, DWORD PTR _uiNumFlavorTypes$218374[esp+20]
 	jb	SHORT $LL11@Init
 $LN71@Init:
 	pop	ebx
@@ -5837,7 +5837,7 @@ PUBLIC	?AddFlavorRecipient@CvFlavorManager@@QAEXPAVCvFlavorRecipient@@_N@Z ; CvF
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?AddFlavorRecipient@CvFlavorManager@@QAEXPAVCvFlavorRecipient@@_N@Z
 _TEXT	SEGMENT
-$T222623 = -12						; size = 12
+$T222665 = -12						; size = 12
 _pTargetObject$ = 8					; size = 4
 _bPropegateFlavorValues$ = 12				; size = 1
 ?AddFlavorRecipient@CvFlavorManager@@QAEXPAVCvFlavorRecipient@@_N@Z PROC ; CvFlavorManager::AddFlavorRecipient, COMDAT
@@ -5855,11 +5855,11 @@ _bPropegateFlavorValues$ = 12				; size = 1
 	push	esi
 	push	edi
 	mov	edi, ecx
-	lea	eax, DWORD PTR $T222623[esp+24]
+	lea	eax, DWORD PTR $T222665[esp+24]
 	lea	esi, DWORD PTR [edi+12]
 	push	eax
 	mov	ecx, esi
-	mov	DWORD PTR $T222623[esp+36], ebx
+	mov	DWORD PTR $T222665[esp+36], ebx
 	call	?Alloc@?$FFastAllocator@U?$MultiListNodePolicy@PAVCvFlavorRecipient@@@@$0A@$0BCJ@$0A@UFDefaultFastVectorAllocator@?$BaseVector@U?$MultiListNodePolicy@PAVCvFlavorRecipient@@@@$0A@@@@@QAEIABU?$MultiListNodePolicy@PAVCvFlavorRecipient@@@@@Z ; FFastAllocator<MultiListNodePolicy<CvFlavorRecipient *>,0,297,0,BaseVector<MultiListNodePolicy<CvFlavorRecipient *>,0>::FDefaultFastVectorAllocator>::Alloc
 	inc	DWORD PTR [esi+20]
 	cmp	DWORD PTR [esi+24], 268435455		; 0fffffffH

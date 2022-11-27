@@ -10,538 +10,538 @@ INCLUDELIB MSVCRT
 INCLUDELIB OLDNAMES
 
 CONST	SEGMENT
-$SG221572 DB	'Game', 00H
+$SG221614 DB	'Game', 00H
 	ORG $+3
-$SG221580 DB	'CanHandleAction', 00H
-$SG221581 DB	'HandleAction', 00H
+$SG221622 DB	'CanHandleAction', 00H
+$SG221623 DB	'HandleAction', 00H
 	ORG $+3
-$SG221582 DB	'UpdateScore', 00H
-$SG221583 DB	'CycleCities', 00H
-$SG221584 DB	'CycleUnits', 00H
+$SG221624 DB	'UpdateScore', 00H
+$SG221625 DB	'CycleCities', 00H
+$SG221626 DB	'CycleUnits', 00H
 	ORG $+1
-$SG221585 DB	'CyclePlotUnits', 00H
+$SG221627 DB	'CyclePlotUnits', 00H
 	ORG $+1
-$SG221586 DB	'SelectionListMove', 00H
+$SG221628 DB	'SelectionListMove', 00H
 	ORG $+2
-$SG221587 DB	'SelectionListGameNetMessage', 00H
-$SG221588 DB	'SelectedCitiesGameNetMessage', 00H
+$SG221629 DB	'SelectionListGameNetMessage', 00H
+$SG221630 DB	'SelectedCitiesGameNetMessage', 00H
 	ORG $+3
-$SG221589 DB	'CityPushOrder', 00H
+$SG221631 DB	'CityPushOrder', 00H
 	ORG $+2
-$SG221590 DB	'CityPurchaseUnit', 00H
+$SG221632 DB	'CityPurchaseUnit', 00H
 	ORG $+3
-$SG221591 DB	'CityPurchaseBuilding', 00H
+$SG221633 DB	'CityPurchaseBuilding', 00H
 	ORG $+3
-$SG221592 DB	'CityPurchaseProject', 00H
-$SG221593 DB	'GetProductionPerPopulation', 00H
+$SG221634 DB	'CityPurchaseProject', 00H
+$SG221635 DB	'GetProductionPerPopulation', 00H
 	ORG $+1
-$SG221594 DB	'GetAdjustedPopulationPercent', 00H
+$SG221636 DB	'GetAdjustedPopulationPercent', 00H
 	ORG $+3
-$SG221595 DB	'GetAdjustedLandPercent', 00H
+$SG221637 DB	'GetAdjustedLandPercent', 00H
 	ORG $+1
-$SG221596 DB	'GetUnitedNationsCountdown', 00H
+$SG221638 DB	'GetUnitedNationsCountdown', 00H
 	ORG $+2
-$SG221597 DB	'SetUnitedNationsCountdown', 00H
+$SG221639 DB	'SetUnitedNationsCountdown', 00H
 	ORG $+2
-$SG221598 DB	'CountCivPlayersAlive', 00H
+$SG221640 DB	'CountCivPlayersAlive', 00H
 	ORG $+3
-$SG221599 DB	'CountCivPlayersEverAlive', 00H
+$SG221641 DB	'CountCivPlayersEverAlive', 00H
 	ORG $+3
-$SG221600 DB	'CountCivTeamsAlive', 00H
+$SG221642 DB	'CountCivTeamsAlive', 00H
 	ORG $+1
-$SG221601 DB	'CountCivTeamsEverAlive', 00H
+$SG221643 DB	'CountCivTeamsEverAlive', 00H
 	ORG $+1
-$SG221602 DB	'CountHumanPlayersAlive', 00H
+$SG221644 DB	'CountHumanPlayersAlive', 00H
 	ORG $+1
-$SG221603 DB	'CountHumanPlayersEverAlive', 00H
+$SG221645 DB	'CountHumanPlayersEverAlive', 00H
 	ORG $+1
-$SG221604 DB	'CountTotalCivPower', 00H
+$SG221646 DB	'CountTotalCivPower', 00H
 	ORG $+1
-$SG221605 DB	'CountTotalNukeUnits', 00H
-$SG221606 DB	'CountKnownTechNumTeams', 00H
+$SG221647 DB	'CountTotalNukeUnits', 00H
+$SG221648 DB	'CountKnownTechNumTeams', 00H
 	ORG $+1
-$SG221607 DB	'GoldenAgeLength', 00H
-$SG221608 DB	'VictoryDelay', 00H
+$SG221649 DB	'GoldenAgeLength', 00H
+$SG221650 DB	'VictoryDelay', 00H
 	ORG $+3
-$SG221609 DB	'GetImprovementUpgradeTime', 00H
+$SG221651 DB	'GetImprovementUpgradeTime', 00H
 	ORG $+2
-$SG221610 DB	'CanTrainNukes', 00H
+$SG221652 DB	'CanTrainNukes', 00H
 	ORG $+2
-$SG221611 DB	'GetCurrentEra', 00H
+$SG221653 DB	'GetCurrentEra', 00H
 	ORG $+2
-$SG221612 DB	'GetDiploResponse', 00H
+$SG221654 DB	'GetDiploResponse', 00H
 	ORG $+3
-$SG221613 DB	'GetActiveTeam', 00H
+$SG221655 DB	'GetActiveTeam', 00H
 	ORG $+2
-$SG221614 DB	'GetActiveCivilizationType', 00H
+$SG221656 DB	'GetActiveCivilizationType', 00H
 	ORG $+2
-$SG221615 DB	'IsNetworkMultiPlayer', 00H
+$SG221657 DB	'IsNetworkMultiPlayer', 00H
 	ORG $+3
-$SG221616 DB	'IsGameMultiPlayer', 00H
+$SG221658 DB	'IsGameMultiPlayer', 00H
 	ORG $+2
-$SG221617 DB	'IsTeamGame', 00H
+$SG221659 DB	'IsTeamGame', 00H
 	ORG $+1
-$SG221618 DB	'ReviveActivePlayer', 00H
+$SG221660 DB	'ReviveActivePlayer', 00H
 	ORG $+1
-$SG221619 DB	'GetNumHumanPlayers', 00H
+$SG221661 DB	'GetNumHumanPlayers', 00H
 	ORG $+1
-$SG221620 DB	'GetNumSequentialHumans', 00H
+$SG221662 DB	'GetNumSequentialHumans', 00H
 	ORG $+1
-$SG221621 DB	'GetGameTurn', 00H
-$SG221622 DB	'SetGameTurn', 00H
-$SG221623 DB	'GetTurnYear', 00H
-$SG221624 DB	'GetGameTurnYear', 00H
-$SG221625 DB	'GetTurnString', 00H
+$SG221663 DB	'GetGameTurn', 00H
+$SG221664 DB	'SetGameTurn', 00H
+$SG221665 DB	'GetTurnYear', 00H
+$SG221666 DB	'GetGameTurnYear', 00H
+$SG221667 DB	'GetTurnString', 00H
 	ORG $+2
-$SG221626 DB	'GetElapsedGameTurns', 00H
-$SG221627 DB	'GetMaxTurns', 00H
-$SG221628 DB	'SetMaxTurns', 00H
-$SG221629 DB	'ChangeMaxTurns', 00H
+$SG221668 DB	'GetElapsedGameTurns', 00H
+$SG221669 DB	'GetMaxTurns', 00H
+$SG221670 DB	'SetMaxTurns', 00H
+$SG221671 DB	'ChangeMaxTurns', 00H
 	ORG $+1
-$SG221630 DB	'GetMaxCityElimination', 00H
+$SG221672 DB	'GetMaxCityElimination', 00H
 	ORG $+2
-$SG221631 DB	'SetMaxCityElimination', 00H
+$SG221673 DB	'SetMaxCityElimination', 00H
 	ORG $+2
-$SG221632 DB	'GetNumAdvancedStartPoints', 00H
+$SG221674 DB	'GetNumAdvancedStartPoints', 00H
 	ORG $+2
-$SG221633 DB	'SetNumAdvancedStartPoints', 00H
+$SG221675 DB	'SetNumAdvancedStartPoints', 00H
 	ORG $+2
-$SG221634 DB	'GetStartTurn', 00H
+$SG221676 DB	'GetStartTurn', 00H
 	ORG $+3
-$SG221635 DB	'GetWinningTurn', 00H
+$SG221677 DB	'GetWinningTurn', 00H
 	ORG $+1
-$SG221636 DB	'GetStartYear', 00H
+$SG221678 DB	'GetStartYear', 00H
 	ORG $+3
-$SG221637 DB	'SetStartYear', 00H
+$SG221679 DB	'SetStartYear', 00H
 	ORG $+3
-$SG221638 DB	'GetEstimateEndTurn', 00H
+$SG221680 DB	'GetEstimateEndTurn', 00H
 	ORG $+1
-$SG221639 DB	'SetEstimateEndTurn', 00H
+$SG221681 DB	'SetEstimateEndTurn', 00H
 	ORG $+1
-$SG221640 DB	'GetTurnSlice', 00H
+$SG221682 DB	'GetTurnSlice', 00H
 	ORG $+3
-$SG221641 DB	'GetMinutesPlayed', 00H
+$SG221683 DB	'GetMinutesPlayed', 00H
 	ORG $+3
-$SG221642 DB	'GetTargetScore', 00H
+$SG221684 DB	'GetTargetScore', 00H
 	ORG $+1
-$SG221643 DB	'SetTargetScore', 00H
+$SG221685 DB	'SetTargetScore', 00H
 	ORG $+1
-$SG221644 DB	'IsStaticTutorialActive', 00H
+$SG221686 DB	'IsStaticTutorialActive', 00H
 	ORG $+1
-$SG221645 DB	'SetStaticTutorialActive', 00H
-$SG221646 DB	'IsEverRightClickMoved', 00H
+$SG221687 DB	'SetStaticTutorialActive', 00H
+$SG221688 DB	'IsEverRightClickMoved', 00H
 	ORG $+2
-$SG221647 DB	'SetEverRightClickMoved', 00H
+$SG221689 DB	'SetEverRightClickMoved', 00H
 	ORG $+1
-$SG221648 DB	'IsTutorialLogging', 00H
+$SG221690 DB	'IsTutorialLogging', 00H
 	ORG $+2
-$SG221649 DB	'IsTutorialDebugging', 00H
-$SG221650 DB	'GetTutorialLevel', 00H
+$SG221691 DB	'IsTutorialDebugging', 00H
+$SG221692 DB	'GetTutorialLevel', 00H
 	ORG $+3
-$SG221651 DB	'HasAdvisorMessageBeenSeen', 00H
+$SG221693 DB	'HasAdvisorMessageBeenSeen', 00H
 	ORG $+2
-$SG221652 DB	'SetAdvisorMessageHasBeenSeen', 00H
+$SG221694 DB	'SetAdvisorMessageHasBeenSeen', 00H
 	ORG $+3
-$SG221653 DB	'SetAdvisorBadAttackInterrupt', 00H
+$SG221695 DB	'SetAdvisorBadAttackInterrupt', 00H
 	ORG $+3
-$SG221654 DB	'SetAdvisorCityAttackInterrupt', 00H
+$SG221696 DB	'SetAdvisorCityAttackInterrupt', 00H
 	ORG $+2
-$SG221655 DB	'GetAllowRClickMovementWhileScrolling', 00H
+$SG221697 DB	'GetAllowRClickMovementWhileScrolling', 00H
 	ORG $+3
-$SG221656 DB	'GetNumGameTurnActive', 00H
+$SG221698 DB	'GetNumGameTurnActive', 00H
 	ORG $+3
-$SG221657 DB	'CountNumHumanGameTurnActive', 00H
-$SG221658 DB	'GetNumCities', 00H
+$SG221699 DB	'CountNumHumanGameTurnActive', 00H
+$SG221700 DB	'GetNumCities', 00H
 	ORG $+3
-$SG221659 DB	'GetNumCivCities', 00H
-$SG221660 DB	'GetTotalPopulation', 00H
+$SG221701 DB	'GetNumCivCities', 00H
+$SG221702 DB	'GetTotalPopulation', 00H
 	ORG $+1
-$SG221661 DB	'GetNoNukesCount', 00H
-$SG221662 DB	'IsNoNukes', 00H
+$SG221703 DB	'GetNoNukesCount', 00H
+$SG221704 DB	'IsNoNukes', 00H
 	ORG $+2
-$SG221663 DB	'ChangeNoNukesCount', 00H
+$SG221705 DB	'ChangeNoNukesCount', 00H
 	ORG $+1
-$SG221664 DB	'GetNukesExploded', 00H
+$SG221706 DB	'GetNukesExploded', 00H
 	ORG $+3
-$SG221665 DB	'ChangeNukesExploded', 00H
-$SG221666 DB	'GetMaxPopulation', 00H
+$SG221707 DB	'ChangeNukesExploded', 00H
+$SG221708 DB	'GetMaxPopulation', 00H
 	ORG $+3
-$SG221667 DB	'GetInitPopulation', 00H
+$SG221709 DB	'GetInitPopulation', 00H
 	ORG $+2
-$SG221668 DB	'GetInitLand', 00H
-$SG221669 DB	'GetInitTech', 00H
-$SG221670 DB	'GetInitWonders', 00H
+$SG221710 DB	'GetInitLand', 00H
+$SG221711 DB	'GetInitTech', 00H
+$SG221712 DB	'GetInitWonders', 00H
 	ORG $+1
-$SG221671 DB	'GetNumWorldWonders', 00H
+$SG221713 DB	'GetNumWorldWonders', 00H
 	ORG $+1
-$SG221672 DB	'GetAIAutoPlay', 00H
+$SG221714 DB	'GetAIAutoPlay', 00H
 	ORG $+2
-$SG221673 DB	'SetAIAutoPlay', 00H
+$SG221715 DB	'SetAIAutoPlay', 00H
 	ORG $+2
-$SG221674 DB	'IsScoreDirty', 00H
+$SG221716 DB	'IsScoreDirty', 00H
 	ORG $+3
-$SG221675 DB	'SetScoreDirty', 00H
+$SG221717 DB	'SetScoreDirty', 00H
 	ORG $+2
-$SG221676 DB	'IsCircumnavigated', 00H
+$SG221718 DB	'IsCircumnavigated', 00H
 	ORG $+2
-$SG221677 DB	'MakeCircumnavigated', 00H
-$SG221678 DB	'DoFromUIDiploEvent', 00H
+$SG221719 DB	'MakeCircumnavigated', 00H
+$SG221720 DB	'DoFromUIDiploEvent', 00H
 	ORG $+1
-$SG221679 DB	'IsDebugMode', 00H
-$SG221680 DB	'SetDebugMode', 00H
+$SG221721 DB	'IsDebugMode', 00H
+$SG221722 DB	'SetDebugMode', 00H
 	ORG $+3
-$SG221681 DB	'ToggleDebugMode', 00H
-$SG221682 DB	'UpdateFOW', 00H
+$SG221723 DB	'ToggleDebugMode', 00H
+$SG221724 DB	'UpdateFOW', 00H
 	ORG $+2
-$SG221683 DB	'GetPitbossTurnTime', 00H
+$SG221725 DB	'GetPitbossTurnTime', 00H
 	ORG $+1
-$SG221684 DB	'SetPitbossTurnTime', 00H
+$SG221726 DB	'SetPitbossTurnTime', 00H
 	ORG $+1
-$SG221685 DB	'IsHotSeat', 00H
+$SG221727 DB	'IsHotSeat', 00H
 	ORG $+2
-$SG221686 DB	'IsPbem', 00H
+$SG221728 DB	'IsPbem', 00H
 	ORG $+1
-$SG221687 DB	'IsPitboss', 00H
+$SG221729 DB	'IsPitboss', 00H
 	ORG $+2
-$SG221688 DB	'IsSimultaneousTeamTurns', 00H
-$SG221689 DB	'IsFinalInitialized', 00H
+$SG221730 DB	'IsSimultaneousTeamTurns', 00H
+$SG221731 DB	'IsFinalInitialized', 00H
 	ORG $+1
-$SG221690 DB	'GetActivePlayer', 00H
-$SG221691 DB	'SetActivePlayer', 00H
-$SG221692 DB	'GetPausePlayer', 00H
+$SG221732 DB	'GetActivePlayer', 00H
+$SG221733 DB	'SetActivePlayer', 00H
+$SG221734 DB	'GetPausePlayer', 00H
 	ORG $+1
-$SG221693 DB	'SetPausePlayer', 00H
+$SG221735 DB	'SetPausePlayer', 00H
 	ORG $+1
-$SG221694 DB	'IsPaused', 00H
+$SG221736 DB	'IsPaused', 00H
 	ORG $+3
-$SG221695 DB	'GetBestLandUnit', 00H
-$SG221696 DB	'GetBestLandUnitCombat', 00H
+$SG221737 DB	'GetBestLandUnit', 00H
+$SG221738 DB	'GetBestLandUnitCombat', 00H
 	ORG $+2
-$SG221697 DB	'GetFaithCost', 00H
+$SG221739 DB	'GetFaithCost', 00H
 	ORG $+3
-$SG221698 DB	'GetWinner', 00H
+$SG221740 DB	'GetWinner', 00H
 	ORG $+2
-$SG221699 DB	'GetVictory', 00H
+$SG221741 DB	'GetVictory', 00H
 	ORG $+1
-$SG221700 DB	'SetWinner', 00H
+$SG221742 DB	'SetWinner', 00H
 	ORG $+2
-$SG221701 DB	'GetGameState', 00H
+$SG221743 DB	'GetGameState', 00H
 	ORG $+3
-$SG221702 DB	'SetGameState', 00H
+$SG221744 DB	'SetGameState', 00H
 	ORG $+3
-$SG221703 DB	'GetVotesNeededForDiploVictory', 00H
+$SG221745 DB	'GetVotesNeededForDiploVictory', 00H
 	ORG $+2
-$SG221704 DB	'IsUnitedNationsActive', 00H
+$SG221746 DB	'IsUnitedNationsActive', 00H
 	ORG $+2
-$SG221705 DB	'GetNumVictoryVotesTallied', 00H
+$SG221747 DB	'GetNumVictoryVotesTallied', 00H
 	ORG $+2
-$SG221706 DB	'GetVoteCast', 00H
-$SG221707 DB	'GetPreviousVoteCast', 00H
-$SG221708 DB	'GetNumVotesForTeam', 00H
+$SG221748 DB	'GetVoteCast', 00H
+$SG221749 DB	'GetPreviousVoteCast', 00H
+$SG221750 DB	'GetNumVotesForTeam', 00H
 	ORG $+1
-$SG221709 DB	'SetNumVotesForTeam', 00H
+$SG221751 DB	'SetNumVotesForTeam', 00H
 	ORG $+1
-$SG221710 DB	'ChangeNumVotesForTeam', 00H
+$SG221752 DB	'ChangeNumVotesForTeam', 00H
 	ORG $+2
-$SG221711 DB	'GetHandicapType', 00H
-$SG221712 DB	'GetCalendar', 00H
-$SG221713 DB	'GetStartEra', 00H
-$SG221714 DB	'GetGameSpeedType', 00H
+$SG221753 DB	'GetHandicapType', 00H
+$SG221754 DB	'GetCalendar', 00H
+$SG221755 DB	'GetStartEra', 00H
+$SG221756 DB	'GetGameSpeedType', 00H
 	ORG $+3
-$SG221715 DB	'GetRankPlayer', 00H
+$SG221757 DB	'GetRankPlayer', 00H
 	ORG $+2
-$SG221716 DB	'GetPlayerRank', 00H
+$SG221758 DB	'GetPlayerRank', 00H
 	ORG $+2
-$SG221717 DB	'GetPlayerScore', 00H
+$SG221759 DB	'GetPlayerScore', 00H
 	ORG $+1
-$SG221718 DB	'GetRankTeam', 00H
-$SG221719 DB	'GetTeamRank', 00H
-$SG221720 DB	'GetTeamScore', 00H
+$SG221760 DB	'GetRankTeam', 00H
+$SG221761 DB	'GetTeamRank', 00H
+$SG221762 DB	'GetTeamScore', 00H
 	ORG $+3
-$SG221721 DB	'IsOption', 00H
+$SG221763 DB	'IsOption', 00H
 	ORG $+3
-$SG221722 DB	'SetOption', 00H
+$SG221764 DB	'SetOption', 00H
 	ORG $+2
-$SG221723 DB	'IsMPOption', 00H
+$SG221765 DB	'IsMPOption', 00H
 	ORG $+1
-$SG221724 DB	'GetUnitCreatedCount', 00H
-$SG221725 DB	'GetUnitClassCreatedCount', 00H
+$SG221766 DB	'GetUnitCreatedCount', 00H
+$SG221767 DB	'GetUnitClassCreatedCount', 00H
 	ORG $+3
-$SG221726 DB	'IsUnitClassMaxedOut', 00H
-$SG221727 DB	'GetBuildingClassCreatedCount', 00H
+$SG221768 DB	'IsUnitClassMaxedOut', 00H
+$SG221769 DB	'GetBuildingClassCreatedCount', 00H
 	ORG $+3
-$SG221728 DB	'IsBuildingClassMaxedOut', 00H
-$SG221729 DB	'GetProjectCreatedCount', 00H
+$SG221770 DB	'IsBuildingClassMaxedOut', 00H
+$SG221771 DB	'GetProjectCreatedCount', 00H
 	ORG $+1
-$SG221730 DB	'IsProjectMaxedOut', 00H
+$SG221772 DB	'IsProjectMaxedOut', 00H
 	ORG $+2
-$SG221731 DB	'IsVictoryValid', 00H
+$SG221773 DB	'IsVictoryValid', 00H
 	ORG $+1
-$SG221732 DB	'SetVictoryValid', 00H
-$SG221733 DB	'IsSpecialUnitValid', 00H
+$SG221774 DB	'SetVictoryValid', 00H
+$SG221775 DB	'IsSpecialUnitValid', 00H
 	ORG $+1
-$SG221734 DB	'MakeSpecialUnitValid', 00H
+$SG221776 DB	'MakeSpecialUnitValid', 00H
 	ORG $+3
-$SG221735 DB	'IsNukesValid', 00H
+$SG221777 DB	'IsNukesValid', 00H
 	ORG $+3
-$SG221736 DB	'MakeNukesValid', 00H
+$SG221778 DB	'MakeNukesValid', 00H
 	ORG $+1
-$SG221737 DB	'IsInAdvancedStart', 00H
+$SG221779 DB	'IsInAdvancedStart', 00H
 	ORG $+2
-$SG221738 DB	'SetName', 00H
-$SG221739 DB	'GetName', 00H
-$SG221740 DB	'Rand', 00H
+$SG221780 DB	'SetName', 00H
+$SG221781 DB	'GetName', 00H
+$SG221782 DB	'Rand', 00H
 	ORG $+3
-$SG221741 DB	'CalculateSyncChecksum', 00H
+$SG221783 DB	'CalculateSyncChecksum', 00H
 	ORG $+2
-$SG221742 DB	'CalculateOptionsChecksum', 00H
+$SG221784 DB	'CalculateOptionsChecksum', 00H
 	ORG $+3
-$SG221743 DB	'GetReplayMessage', 00H
+$SG221785 DB	'GetReplayMessage', 00H
 	ORG $+3
-$SG221744 DB	'GetReplayMessages', 00H
+$SG221786 DB	'GetReplayMessages', 00H
 	ORG $+2
-$SG221745 DB	'GetNumReplayMessages', 00H
+$SG221787 DB	'GetNumReplayMessages', 00H
 	ORG $+3
-$SG221746 DB	'GetReplayInfo', 00H
+$SG221788 DB	'GetReplayInfo', 00H
 	ORG $+2
-$SG221747 DB	'SaveReplay', 00H
+$SG221789 DB	'SaveReplay', 00H
 	ORG $+1
-$SG221748 DB	'AddPlayer', 00H
+$SG221790 DB	'AddPlayer', 00H
 	ORG $+2
-$SG221749 DB	'SetPlotExtraYield', 00H
+$SG221791 DB	'SetPlotExtraYield', 00H
 	ORG $+2
-$SG221750 DB	'ChangePlotExtraCost', 00H
-$SG221751 DB	'IsCivEverActive', 00H
-$SG221752 DB	'IsLeaderEverActive', 00H
+$SG221792 DB	'ChangePlotExtraCost', 00H
+$SG221793 DB	'IsCivEverActive', 00H
+$SG221794 DB	'IsLeaderEverActive', 00H
 	ORG $+1
-$SG221753 DB	'IsUnitEverActive', 00H
+$SG221795 DB	'IsUnitEverActive', 00H
 	ORG $+3
-$SG221754 DB	'IsBuildingEverActive', 00H
+$SG221796 DB	'IsBuildingEverActive', 00H
 	ORG $+3
-$SG221755 DB	'CanDoControl', 00H
+$SG221797 DB	'CanDoControl', 00H
 	ORG $+3
-$SG221756 DB	'DoControl', 00H
+$SG221798 DB	'DoControl', 00H
 	ORG $+2
-$SG221757 DB	'DoMinorPledgeProtection', 00H
-$SG221758 DB	'DoMinorGoldGift', 00H
-$SG221759 DB	'DoMinorGiftGold', 00H
-$SG221760 DB	'DoMinorGiftTileImprovement', 00H
+$SG221799 DB	'DoMinorPledgeProtection', 00H
+$SG221800 DB	'DoMinorGoldGift', 00H
+$SG221801 DB	'DoMinorGiftGold', 00H
+$SG221802 DB	'DoMinorGiftTileImprovement', 00H
 	ORG $+1
-$SG221761 DB	'DoMinorBullyGold', 00H
+$SG221803 DB	'DoMinorBullyGold', 00H
 	ORG $+3
-$SG221762 DB	'DoMinorBullyUnit', 00H
+$SG221804 DB	'DoMinorBullyUnit', 00H
 	ORG $+3
-$SG221763 DB	'DoMinorBuyout', 00H
+$SG221805 DB	'DoMinorBuyout', 00H
 	ORG $+2
-$SG221764 DB	'GetBestWondersPlayer', 00H
+$SG221806 DB	'GetBestWondersPlayer', 00H
 	ORG $+3
-$SG221765 DB	'GetBestPoliciesPlayer', 00H
+$SG221807 DB	'GetBestPoliciesPlayer', 00H
 	ORG $+2
-$SG221766 DB	'GetBestGreatPeoplePlayer', 00H
+$SG221808 DB	'GetBestGreatPeoplePlayer', 00H
 	ORG $+3
-$SG221767 DB	'IsEverAttackedTutorial', 00H
+$SG221809 DB	'IsEverAttackedTutorial', 00H
 	ORG $+1
-$SG221768 DB	'GameplayDiplomacyAILeaderMessage', 00H
+$SG221810 DB	'GameplayDiplomacyAILeaderMessage', 00H
 	ORG $+3
-$SG221769 DB	'GetResourceUsageType', 00H
+$SG221811 DB	'GetResourceUsageType', 00H
 	ORG $+3
-$SG221770 DB	'GetNumResourceRequiredForUnit', 00H
+$SG221812 DB	'GetNumResourceRequiredForUnit', 00H
 	ORG $+2
-$SG221771 DB	'GetNumResourceRequiredForBuilding', 00H
+$SG221813 DB	'GetNumResourceRequiredForBuilding', 00H
 	ORG $+2
-$SG221772 DB	'IsCombatWarned', 00H
+$SG221814 DB	'IsCombatWarned', 00H
 	ORG $+1
-$SG221773 DB	'SetCombatWarned', 00H
-$SG221774 DB	'GetAdvisorCounsel', 00H
+$SG221815 DB	'SetCombatWarned', 00H
+$SG221816 DB	'GetAdvisorCounsel', 00H
 	ORG $+2
-$SG221775 DB	'SetAdvisorRecommenderCity', 00H
+$SG221817 DB	'SetAdvisorRecommenderCity', 00H
 	ORG $+2
-$SG221776 DB	'IsUnitRecommended', 00H
+$SG221818 DB	'IsUnitRecommended', 00H
 	ORG $+2
-$SG221777 DB	'IsBuildingRecommended', 00H
+$SG221819 DB	'IsBuildingRecommended', 00H
 	ORG $+2
-$SG221778 DB	'IsProjectRecommended', 00H
+$SG221820 DB	'IsProjectRecommended', 00H
 	ORG $+3
-$SG221779 DB	'SetAdvisorRecommenderTech', 00H
+$SG221821 DB	'SetAdvisorRecommenderTech', 00H
 	ORG $+2
-$SG221780 DB	'IsTechRecommended', 00H
+$SG221822 DB	'IsTechRecommended', 00H
 	ORG $+2
-$SG221781 DB	'GetVariableCitySizeFromPopulation', 00H
+$SG221823 DB	'GetVariableCitySizeFromPopulation', 00H
 	ORG $+2
-$SG221782 DB	'GetResearchAgreementCost', 00H
+$SG221824 DB	'GetResearchAgreementCost', 00H
 	ORG $+3
-$SG221783 DB	'GetCustomOption', 00H
-$SG221784 DB	'GetNumCitiesPolicyCostMod', 00H
+$SG221825 DB	'GetCustomOption', 00H
+$SG221826 DB	'GetNumCitiesPolicyCostMod', 00H
 	ORG $+2
-$SG221785 DB	'GetNumCitiesTechCostMod', 00H
-$SG221786 DB	'GetBuildingYieldChange', 00H
+$SG221827 DB	'GetNumCitiesTechCostMod', 00H
+$SG221828 DB	'GetBuildingYieldChange', 00H
 	ORG $+1
-$SG221787 DB	'GetBuildingYieldModifier', 00H
+$SG221829 DB	'GetBuildingYieldModifier', 00H
 	ORG $+3
-$SG221788 DB	'GetWorldNumCitiesUnhappinessPercent', 00H
-$SG221789 DB	'GetDealDuration', 00H
-$SG221790 DB	'GetPeaceDuration', 00H
+$SG221830 DB	'GetWorldNumCitiesUnhappinessPercent', 00H
+$SG221831 DB	'GetDealDuration', 00H
+$SG221832 DB	'GetPeaceDuration', 00H
 	ORG $+3
-$SG221791 DB	'GetUnitUpgradesTo', 00H
+$SG221833 DB	'GetUnitUpgradesTo', 00H
 	ORG $+2
-$SG221792 DB	'GetCombatPrediction', 00H
-$SG221793 DB	'GetTimeString', 00H
+$SG221834 DB	'GetCombatPrediction', 00H
+$SG221835 DB	'GetTimeString', 00H
 	ORG $+2
-$SG221794 DB	'GetMinimumFaithNextPantheon', 00H
-$SG221795 DB	'SetMinimumFaithNextPantheon', 00H
-$SG221796 DB	'GetAvailablePantheonBeliefs', 00H
-$SG221797 DB	'GetAvailableFounderBeliefs', 00H
+$SG221836 DB	'GetMinimumFaithNextPantheon', 00H
+$SG221837 DB	'SetMinimumFaithNextPantheon', 00H
+$SG221838 DB	'GetAvailablePantheonBeliefs', 00H
+$SG221839 DB	'GetAvailableFounderBeliefs', 00H
 	ORG $+1
-$SG221798 DB	'GetAvailableFollowerBeliefs', 00H
-$SG221799 DB	'GetAvailableEnhancerBeliefs', 00H
-$SG221800 DB	'GetAvailableBonusBeliefs', 00H
+$SG221840 DB	'GetAvailableFollowerBeliefs', 00H
+$SG221841 DB	'GetAvailableEnhancerBeliefs', 00H
+$SG221842 DB	'GetAvailableBonusBeliefs', 00H
 	ORG $+3
-$SG221801 DB	'GetAvailableReformationBeliefs', 00H
+$SG221843 DB	'GetAvailableReformationBeliefs', 00H
 	ORG $+1
-$SG221802 DB	'GetNumFollowers', 00H
-$SG221803 DB	'GetNumCitiesFollowing', 00H
+$SG221844 DB	'GetNumFollowers', 00H
+$SG221845 DB	'GetNumCitiesFollowing', 00H
 	ORG $+2
-$SG221804 DB	'GetBeliefsInReligion', 00H
+$SG221846 DB	'GetBeliefsInReligion', 00H
 	ORG $+3
-$SG221805 DB	'GetNumReligionsStillToFound', 00H
-$SG221806 DB	'GetNumReligionsFounded', 00H
+$SG221847 DB	'GetNumReligionsStillToFound', 00H
+$SG221848 DB	'GetNumReligionsFounded', 00H
 	ORG $+1
-$SG221807 DB	'GetHolyCityForReligion', 00H
+$SG221849 DB	'GetHolyCityForReligion', 00H
 	ORG $+1
-$SG221808 DB	'GetReligionName', 00H
-$SG221809 DB	'GetFounderBenefitsReligion', 00H
+$SG221850 DB	'GetReligionName', 00H
+$SG221851 DB	'GetFounderBenefitsReligion', 00H
 	ORG $+1
-$SG221810 DB	'FoundPantheon', 00H
+$SG221852 DB	'FoundPantheon', 00H
 	ORG $+2
-$SG221811 DB	'FoundReligion', 00H
+$SG221853 DB	'FoundReligion', 00H
 	ORG $+2
-$SG221812 DB	'EnhanceReligion', 00H
-$SG221813 DB	'SetHolyCity', 00H
-$SG221814 DB	'GetFounder', 00H
+$SG221854 DB	'EnhanceReligion', 00H
+$SG221855 DB	'SetHolyCity', 00H
+$SG221856 DB	'GetFounder', 00H
 	ORG $+1
-$SG221815 DB	'SetFounder', 00H
+$SG221857 DB	'SetFounder', 00H
 	ORG $+1
-$SG221816 DB	'GetTurnsBetweenMinorCivElections', 00H
+$SG221858 DB	'GetTurnsBetweenMinorCivElections', 00H
 	ORG $+3
-$SG221817 DB	'GetTurnsUntilMinorCivElection', 00H
+$SG221859 DB	'GetTurnsUntilMinorCivElection', 00H
 	ORG $+2
-$SG221818 DB	'GetNumActiveLeagues', 00H
-$SG221819 DB	'GetNumLeaguesEverFounded', 00H
+$SG221860 DB	'GetNumActiveLeagues', 00H
+$SG221861 DB	'GetNumLeaguesEverFounded', 00H
 	ORG $+3
-$SG221820 DB	'GetLeague', 00H
+$SG221862 DB	'GetLeague', 00H
 	ORG $+2
-$SG221821 DB	'GetActiveLeague', 00H
-$SG221822 DB	'IsProcessingMessages', 00H
+$SG221863 DB	'GetActiveLeague', 00H
+$SG221864 DB	'IsProcessingMessages', 00H
 	ORG $+3
-$SG221823 DB	'GetGreatWorkTooltip', 00H
-$SG221824 DB	'GetGreatWorkName', 00H
+$SG221865 DB	'GetGreatWorkTooltip', 00H
+$SG221866 DB	'GetGreatWorkName', 00H
 	ORG $+3
-$SG221825 DB	'GetGreatWorkType', 00H
+$SG221867 DB	'GetGreatWorkType', 00H
 	ORG $+3
-$SG221826 DB	'GetGreatWorkClass', 00H
+$SG221868 DB	'GetGreatWorkClass', 00H
 	ORG $+2
-$SG221827 DB	'GetGreatWorkArtist', 00H
+$SG221869 DB	'GetGreatWorkArtist', 00H
 	ORG $+1
-$SG221828 DB	'GetGreatWorkEra', 00H
-$SG221829 DB	'GetGreatWorkEraAbbreviation', 00H
-$SG221830 DB	'GetGreatWorkEraShort', 00H
+$SG221870 DB	'GetGreatWorkEra', 00H
+$SG221871 DB	'GetGreatWorkEraAbbreviation', 00H
+$SG221872 DB	'GetGreatWorkEraShort', 00H
 	ORG $+3
-$SG221831 DB	'GetGreatWorkCreator', 00H
-$SG221832 DB	'GetGreatWorkController', 00H
+$SG221873 DB	'GetGreatWorkCreator', 00H
+$SG221874 DB	'GetGreatWorkController', 00H
 	ORG $+1
-$SG221833 DB	'GetGreatWorkCurrentThemingBonus', 00H
-$SG221834 DB	'GetArtifactName', 00H
-$SG221835 DB	'GetNumFreePolicies', 00H
+$SG221875 DB	'GetGreatWorkCurrentThemingBonus', 00H
+$SG221876 DB	'GetArtifactName', 00H
+$SG221877 DB	'GetNumFreePolicies', 00H
 	ORG $+1
-$SG221836 DB	'GetLongestCityConnectionPlots', 00H
+$SG221878 DB	'GetLongestCityConnectionPlots', 00H
 	ORG $+2
-$SG221837 DB	'SelectedUnit_SpeculativePopupTradeRoute_Display', 00H
-$SG221838 DB	'SelectedUnit_SpeculativePopupTradeRoute_Hide', 00H
+$SG221879 DB	'SelectedUnit_SpeculativePopupTradeRoute_Display', 00H
+$SG221880 DB	'SelectedUnit_SpeculativePopupTradeRoute_Hide', 00H
 	ORG $+3
-$SG221839 DB	'MouseoverUnit', 00H
+$SG221881 DB	'MouseoverUnit', 00H
 	ORG $+2
-$SG221840 DB	'GetNumArchaeologySites', 00H
+$SG221882 DB	'GetNumArchaeologySites', 00H
 	ORG $+1
-$SG221841 DB	'GetNumHiddenArchaeologySites', 00H
+$SG221883 DB	'GetNumHiddenArchaeologySites', 00H
 	ORG $+3
-$SG223569 DB	'NYI', 00H
-$SG223592 DB	'Player', 00H
+$SG223611 DB	'NYI', 00H
+$SG223634 DB	'Player', 00H
 	ORG $+1
-$SG223593 DB	'Turn', 00H
+$SG223635 DB	'Turn', 00H
 	ORG $+3
-$SG223594 DB	'Type', 00H
+$SG223636 DB	'Type', 00H
 	ORG $+3
-$SG223597 DB	'Text', 00H
+$SG223639 DB	'Text', 00H
 	ORG $+3
-$SG223609 DB	'X', 00H
+$SG223651 DB	'X', 00H
 	ORG $+2
-$SG223610 DB	'Y', 00H
+$SG223652 DB	'Y', 00H
 	ORG $+2
-$SG223611 DB	'Plots', 00H
+$SG223653 DB	'Plots', 00H
 	ORG $+2
-$SG223625 DB	'Player', 00H
+$SG223667 DB	'Player', 00H
 	ORG $+1
-$SG223626 DB	'Turn', 00H
+$SG223668 DB	'Turn', 00H
 	ORG $+3
-$SG223627 DB	'Type', 00H
+$SG223669 DB	'Type', 00H
 	ORG $+3
-$SG223630 DB	'Text', 00H
+$SG223672 DB	'Text', 00H
 	ORG $+3
-$SG223642 DB	'X', 00H
+$SG223684 DB	'X', 00H
 	ORG $+2
-$SG223643 DB	'Y', 00H
+$SG223685 DB	'Y', 00H
 	ORG $+2
-$SG223644 DB	'Plots', 00H
+$SG223686 DB	'Plots', 00H
 	ORG $+2
-$SG223667 DB	'NYI', 00H
-$SG224172 DB	'TEMP', 00H
+$SG223709 DB	'NYI', 00H
+$SG224214 DB	'TEMP', 00H
 	ORG $+3
-$SG224191 DB	'Unit row at ID %d is empty.', 00H
-$SG224339 DB	'Unit row at ID %d is empty.', 00H
-$SG225309 DB	'CIVILIZATION_ENGLAND', 00H
+$SG224233 DB	'Unit row at ID %d is empty.', 00H
+$SG224381 DB	'Unit row at ID %d is empty.', 00H
+$SG225351 DB	'CIVILIZATION_ENGLAND', 00H
 	ORG $+3
-$SG225440 DB	'__instances', 00H
-$SG225441 DB	'__mode', 00H
+$SG225482 DB	'__instances', 00H
+$SG225483 DB	'__mode', 00H
 	ORG $+1
-$SG225442 DB	'v', 00H
+$SG225484 DB	'v', 00H
 	ORG $+2
-$SG225444 DB	'__instances', 00H
-$SG225447 DB	'__instance', 00H
+$SG225486 DB	'__instances', 00H
+$SG225489 DB	'__instance', 00H
 	ORG $+1
-$SG225448 DB	'__index', 00H
-$SG225463 DB	'__instance', 00H
-	ORG $+5
-$SG225469 DB	'Not a valid instance.  Either the instance is NULL or yo'
-	DB	'u used ''.'' instead of '':''.', 00H
-	ORG $+1
-$SG225498 DB	'__instances', 00H
-$SG225499 DB	'__mode', 00H
-	ORG $+1
-$SG225500 DB	'v', 00H
-	ORG $+2
-$SG225502 DB	'__instances', 00H
+$SG225490 DB	'__index', 00H
 $SG225505 DB	'__instance', 00H
-	ORG $+1
-$SG225506 DB	'__index', 00H
-$SG225521 DB	'__instance', 00H
-	ORG $+1
-$SG225527 DB	'Not a valid instance.  Either the instance is NULL or yo'
+	ORG $+5
+$SG225511 DB	'Not a valid instance.  Either the instance is NULL or yo'
 	DB	'u used ''.'' instead of '':''.', 00H
 	ORG $+1
-$SG225541 DB	'__instance', 00H
+$SG225540 DB	'__instances', 00H
+$SG225541 DB	'__mode', 00H
 	ORG $+1
-$SG225547 DB	'Not a valid instance.  Either the instance is NULL or yo'
-	DB	'u used ''.'' instead of '':''.', 00H
-	ORG $+1
-$SG225558 DB	'__instances', 00H
-$SG225559 DB	'__mode', 00H
-	ORG $+1
-$SG225560 DB	'v', 00H
+$SG225542 DB	'v', 00H
 	ORG $+2
-$SG225562 DB	'__instances', 00H
-$SG225565 DB	'__instance', 00H
+$SG225544 DB	'__instances', 00H
+$SG225547 DB	'__instance', 00H
 	ORG $+1
-$SG225566 DB	'__index', 00H
+$SG225548 DB	'__index', 00H
+$SG225563 DB	'__instance', 00H
+	ORG $+1
+$SG225569 DB	'Not a valid instance.  Either the instance is NULL or yo'
+	DB	'u used ''.'' instead of '':''.', 00H
+	ORG $+1
+$SG225583 DB	'__instance', 00H
+	ORG $+1
+$SG225589 DB	'Not a valid instance.  Either the instance is NULL or yo'
+	DB	'u used ''.'' instead of '':''.', 00H
+	ORG $+1
+$SG225600 DB	'__instances', 00H
+$SG225601 DB	'__mode', 00H
+	ORG $+1
+$SG225602 DB	'v', 00H
+	ORG $+2
+$SG225604 DB	'__instances', 00H
+$SG225607 DB	'__instance', 00H
+	ORG $+1
+$SG225608 DB	'__index', 00H
 $SG92498 DB	'f2eb1642-3334-4d2c-8db1-08e6aede3532', 00H
 	ORG $+3
 _CIV5_XP2_SCENARIO2_MODID DD FLAT:$SG92498
@@ -731,7 +731,7 @@ _TEXT	SEGMENT
 
 ; 35   : 	return "Game";
 
-	mov	eax, OFFSET $SG221572
+	mov	eax, OFFSET $SG221614
 
 ; 36   : }
 
@@ -834,7 +834,7 @@ _L$ = 8							; size = 4
 ; 1510 : 	luaL_error(L, "NYI");
 
 	mov	eax, DWORD PTR _L$[esp-4]
-	push	OFFSET $SG223569
+	push	OFFSET $SG223611
 	push	eax
 	call	_luaL_error
 	add	esp, 8
@@ -858,7 +858,7 @@ _L$ = 8							; size = 4
 ; 1667 : 	luaL_error(L, "NYI");
 
 	mov	eax, DWORD PTR _L$[esp-4]
-	push	OFFSET $SG223667
+	push	OFFSET $SG223709
 	push	eax
 	call	_luaL_error
 	add	esp, 8
@@ -1007,7 +1007,7 @@ _L$ = 8							; size = 4
 ; 1848 : 		luaL_error(L, "Unit row at ID %d is empty.", eUnit);
 
 	push	edi
-	push	OFFSET $SG224191
+	push	OFFSET $SG224233
 	push	esi
 	call	_luaL_error
 	add	esp, 12					; 0000000cH
@@ -1425,7 +1425,7 @@ _L$ = 8							; size = 4
 ; 2103 : 		luaL_error(L, "Unit row at ID %d is empty.", eUnit);
 
 	push	esi
-	push	OFFSET $SG224339
+	push	OFFSET $SG224381
 	push	ebp
 	call	_luaL_error
 	add	esp, 12					; 0000000cH
@@ -1856,7 +1856,7 @@ _pkType$ = 12						; size = 4
 ; 61   : 			//Create weak __instances table.
 ; 62   : 			lua_pushstring(L, "__instances");
 
-	push	OFFSET $SG225440
+	push	OFFSET $SG225482
 	push	esi
 	call	_lua_pushstring
 
@@ -1878,13 +1878,13 @@ _pkType$ = 12						; size = 4
 
 ; 67   : 			lua_pushstring(L, "__mode");
 
-	push	OFFSET $SG225441
+	push	OFFSET $SG225483
 	push	esi
 	call	_lua_pushstring
 
 ; 68   : 			lua_pushstring(L, "v");
 
-	push	OFFSET $SG225442
+	push	OFFSET $SG225484
 	push	esi
 	call	_lua_pushstring
 	add	esp, 68					; 00000044H
@@ -1944,7 +1944,7 @@ $LN7@Push:
 ; 81   : 
 ; 82   : 		lua_pushstring(L, "__instances");
 
-	push	OFFSET $SG225444
+	push	OFFSET $SG225486
 	push	esi
 	mov	ebx, eax
 	call	_lua_pushstring
@@ -2010,7 +2010,7 @@ $LN7@Push:
 
 ; 98   : 			lua_setfield(L, -2, "__instance");
 
-	push	OFFSET $SG225447
+	push	OFFSET $SG225489
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -2025,7 +2025,7 @@ $LN7@Push:
 
 ; 101  : 			lua_pushstring(L, "__index");
 
-	push	OFFSET $SG225448
+	push	OFFSET $SG225490
 	push	esi
 	call	_lua_pushstring
 
@@ -2160,7 +2160,7 @@ _bErrorOnFail$ = 16					; size = 1
 ; 134  : 		lua_getfield(L, idx, "__instance");
 
 	mov	ecx, DWORD PTR _idx$[esp+12]
-	push	OFFSET $SG225463
+	push	OFFSET $SG225505
 	push	ecx
 	push	esi
 	call	_lua_getfield
@@ -2221,7 +2221,7 @@ $LN3@GetInstanc:
 
 ; 150  : 			luaL_error(L, "Not a valid instance.  Either the instance is NULL or you used '.' instead of ':'.");
 
-	push	OFFSET $SG225469
+	push	OFFSET $SG225511
 	push	esi
 	call	_luaL_error
 	add	esp, 8
@@ -2358,7 +2358,7 @@ _pkType$ = 12						; size = 4
 ; 61   : 			//Create weak __instances table.
 ; 62   : 			lua_pushstring(L, "__instances");
 
-	push	OFFSET $SG225498
+	push	OFFSET $SG225540
 	push	esi
 	call	_lua_pushstring
 
@@ -2380,13 +2380,13 @@ _pkType$ = 12						; size = 4
 
 ; 67   : 			lua_pushstring(L, "__mode");
 
-	push	OFFSET $SG225499
+	push	OFFSET $SG225541
 	push	esi
 	call	_lua_pushstring
 
 ; 68   : 			lua_pushstring(L, "v");
 
-	push	OFFSET $SG225500
+	push	OFFSET $SG225542
 	push	esi
 	call	_lua_pushstring
 	add	esp, 68					; 00000044H
@@ -2446,7 +2446,7 @@ $LN7@Push@2:
 ; 81   : 
 ; 82   : 		lua_pushstring(L, "__instances");
 
-	push	OFFSET $SG225502
+	push	OFFSET $SG225544
 	push	esi
 	mov	ebx, eax
 	call	_lua_pushstring
@@ -2512,7 +2512,7 @@ $LN7@Push@2:
 
 ; 98   : 			lua_setfield(L, -2, "__instance");
 
-	push	OFFSET $SG225505
+	push	OFFSET $SG225547
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -2527,7 +2527,7 @@ $LN7@Push@2:
 
 ; 101  : 			lua_pushstring(L, "__index");
 
-	push	OFFSET $SG225506
+	push	OFFSET $SG225548
 	push	esi
 	call	_lua_pushstring
 
@@ -2661,7 +2661,7 @@ _bErrorOnFail$ = 16					; size = 1
 ; 134  : 		lua_getfield(L, idx, "__instance");
 
 	mov	ecx, DWORD PTR _idx$[esp+12]
-	push	OFFSET $SG225521
+	push	OFFSET $SG225563
 	push	ecx
 	push	esi
 	call	_lua_getfield
@@ -2722,7 +2722,7 @@ $LN3@GetInstanc@2:
 
 ; 150  : 			luaL_error(L, "Not a valid instance.  Either the instance is NULL or you used '.' instead of ':'.");
 
-	push	OFFSET $SG225527
+	push	OFFSET $SG225569
 	push	esi
 	call	_luaL_error
 	add	esp, 8
@@ -2792,7 +2792,7 @@ _bErrorOnFail$ = 16					; size = 1
 ; 134  : 		lua_getfield(L, idx, "__instance");
 
 	mov	ecx, DWORD PTR _idx$[esp+12]
-	push	OFFSET $SG225541
+	push	OFFSET $SG225583
 	push	ecx
 	push	esi
 	call	_lua_getfield
@@ -2853,7 +2853,7 @@ $LN3@GetInstanc@3:
 
 ; 150  : 			luaL_error(L, "Not a valid instance.  Either the instance is NULL or you used '.' instead of ':'.");
 
-	push	OFFSET $SG225547
+	push	OFFSET $SG225589
 	push	esi
 	call	_luaL_error
 	add	esp, 8
@@ -2953,7 +2953,7 @@ _pkType$ = 12						; size = 4
 ; 61   : 			//Create weak __instances table.
 ; 62   : 			lua_pushstring(L, "__instances");
 
-	push	OFFSET $SG225558
+	push	OFFSET $SG225600
 	push	esi
 	call	_lua_pushstring
 
@@ -2975,13 +2975,13 @@ _pkType$ = 12						; size = 4
 
 ; 67   : 			lua_pushstring(L, "__mode");
 
-	push	OFFSET $SG225559
+	push	OFFSET $SG225601
 	push	esi
 	call	_lua_pushstring
 
 ; 68   : 			lua_pushstring(L, "v");
 
-	push	OFFSET $SG225560
+	push	OFFSET $SG225602
 	push	esi
 	call	_lua_pushstring
 	add	esp, 68					; 00000044H
@@ -3041,7 +3041,7 @@ $LN7@Push@3:
 ; 81   : 
 ; 82   : 		lua_pushstring(L, "__instances");
 
-	push	OFFSET $SG225562
+	push	OFFSET $SG225604
 	push	esi
 	mov	ebx, eax
 	call	_lua_pushstring
@@ -3107,7 +3107,7 @@ $LN7@Push@3:
 
 ; 98   : 			lua_setfield(L, -2, "__instance");
 
-	push	OFFSET $SG225565
+	push	OFFSET $SG225607
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -3122,7 +3122,7 @@ $LN7@Push@3:
 
 ; 101  : 			lua_pushstring(L, "__index");
 
-	push	OFFSET $SG225566
+	push	OFFSET $SG225608
 	push	esi
 	call	_lua_pushstring
 
@@ -4708,7 +4708,7 @@ _L$ = 8							; size = 4
 	add	esp, 20					; 00000014H
 	cmp	eax, 5
 	jne	SHORT $LN5@lCanHandle
-	push	OFFSET $SG225521
+	push	OFFSET $SG225563
 	push	2
 	push	esi
 	call	_lua_getfield
@@ -4831,7 +4831,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lCyclePlot
-	push	OFFSET $SG225521
+	push	OFFSET $SG225563
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -4856,7 +4856,7 @@ $LN5@lCyclePlot:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN4@lCyclePlot
-	push	OFFSET $SG225527
+	push	OFFSET $SG225569
 	push	esi
 	call	_luaL_error
 	push	esi
@@ -4954,7 +4954,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lSelection
-	push	OFFSET $SG225521
+	push	OFFSET $SG225563
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -4979,7 +4979,7 @@ $LN5@lSelection:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN4@lSelection
-	push	OFFSET $SG225527
+	push	OFFSET $SG225569
 	push	esi
 	call	_luaL_error
 	push	esi
@@ -5282,7 +5282,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lCityPushO
-	push	OFFSET $SG225463
+	push	OFFSET $SG225505
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -5307,7 +5307,7 @@ $LN5@lCityPushO:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN4@lCityPushO
-	push	OFFSET $SG225469
+	push	OFFSET $SG225511
 	push	esi
 	call	_luaL_error
 	push	esi
@@ -5412,7 +5412,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lCityPurch
-	push	OFFSET $SG225463
+	push	OFFSET $SG225505
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -5437,7 +5437,7 @@ $LN5@lCityPurch:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN4@lCityPurch
-	push	OFFSET $SG225469
+	push	OFFSET $SG225511
 	push	esi
 	call	_luaL_error
 	push	esi
@@ -5511,7 +5511,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lCityPurch@2
-	push	OFFSET $SG225463
+	push	OFFSET $SG225505
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -5536,7 +5536,7 @@ $LN5@lCityPurch@2:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN4@lCityPurch@2
-	push	OFFSET $SG225469
+	push	OFFSET $SG225511
 	push	esi
 	call	_luaL_error
 	push	esi
@@ -5610,7 +5610,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lCityPurch@3
-	push	OFFSET $SG225463
+	push	OFFSET $SG225505
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -5635,7 +5635,7 @@ $LN5@lCityPurch@3:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN4@lCityPurch@3
-	push	OFFSET $SG225469
+	push	OFFSET $SG225511
 	push	esi
 	call	_luaL_error
 	push	esi
@@ -6760,11 +6760,11 @@ EXTRN	?getNumReplayMessages@CvGame@@QBEIXZ:PROC	; CvGame::getNumReplayMessages
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?lGetReplayMessage@CvLuaGame@@KAHPAUlua_State@@@Z
 _TEXT	SEGMENT
-_i$223602 = -20						; size = 4
-_nPlots$223598 = -16					; size = 4
-_iPlotX$223606 = -12					; size = 4
-_iPlotY$223607 = -8					; size = 4
-_t$223591 = -4						; size = 4
+_i$223644 = -20						; size = 4
+_nPlots$223640 = -16					; size = 4
+_iPlotX$223648 = -12					; size = 4
+_iPlotY$223649 = -8					; size = 4
+_t$223633 = -4						; size = 4
 _L$ = 8							; size = 4
 ?lGetReplayMessage@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetReplayMessage, COMDAT
 
@@ -6827,7 +6827,7 @@ _L$ = 8							; size = 4
 ; 1550 : 		lua_pushinteger(L, pMessage->getPlayer());
 
 	mov	ecx, ebx
-	mov	DWORD PTR _t$223591[esp+36], edi
+	mov	DWORD PTR _t$223633[esp+36], edi
 	call	?getPlayer@CvReplayMessage@@QBE?AW4PlayerTypes@@XZ ; CvReplayMessage::getPlayer
 	push	eax
 	push	esi
@@ -6835,7 +6835,7 @@ _L$ = 8							; size = 4
 
 ; 1551 : 		lua_setfield(L, t, "Player");
 
-	push	OFFSET $SG223592
+	push	OFFSET $SG223634
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -6852,7 +6852,7 @@ _L$ = 8							; size = 4
 
 ; 1554 : 		lua_setfield(L, t, "Turn");
 
-	push	OFFSET $SG223593
+	push	OFFSET $SG223635
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -6869,7 +6869,7 @@ _L$ = 8							; size = 4
 
 ; 1557 : 		lua_setfield(L, t, "Type");
 
-	push	OFFSET $SG223594
+	push	OFFSET $SG223636
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -6900,7 +6900,7 @@ _L$ = 8							; size = 4
 
 ; 1563 : 			lua_setfield(L, t, "Text");
 
-	push	OFFSET $SG223597
+	push	OFFSET $SG223639
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -6913,7 +6913,7 @@ $LN6@lGetReplay:
 
 	mov	ecx, ebx
 	call	?getNumPlots@CvReplayMessage@@QBEIXZ	; CvReplayMessage::getNumPlots
-	mov	DWORD PTR _nPlots$223598[esp+36], eax
+	mov	DWORD PTR _nPlots$223640[esp+36], eax
 
 ; 1567 : 		if(nPlots > 0)
 
@@ -6939,9 +6939,9 @@ $LN6@lGetReplay:
 ; 1572 : 
 ; 1573 : 			for(unsigned int i = 0; i < nPlots; i++)
 
-	cmp	DWORD PTR _nPlots$223598[esp+36], 0
+	cmp	DWORD PTR _nPlots$223640[esp+36], 0
 	mov	ebp, eax
-	mov	DWORD PTR _i$223602[esp+36], 0
+	mov	DWORD PTR _i$223644[esp+36], 0
 	jbe	SHORT $LN2@lGetReplay
 $LL16@lGetReplay:
 
@@ -6949,10 +6949,10 @@ $LL16@lGetReplay:
 ; 1575 : 				int iPlotX, iPlotY;
 ; 1576 : 				if(pMessage->getPlot(i, iPlotX, iPlotY))
 
-	mov	edx, DWORD PTR _i$223602[esp+36]
-	lea	eax, DWORD PTR _iPlotY$223607[esp+36]
+	mov	edx, DWORD PTR _i$223644[esp+36]
+	lea	eax, DWORD PTR _iPlotY$223649[esp+36]
 	push	eax
-	lea	ecx, DWORD PTR _iPlotX$223606[esp+40]
+	lea	ecx, DWORD PTR _iPlotX$223648[esp+40]
 	push	ecx
 	push	edx
 	mov	ecx, ebx
@@ -6970,28 +6970,28 @@ $LL16@lGetReplay:
 
 ; 1579 : 					lua_pushinteger(L, iPlotX);
 
-	mov	eax, DWORD PTR _iPlotX$223606[esp+48]
+	mov	eax, DWORD PTR _iPlotX$223648[esp+48]
 	push	eax
 	push	esi
 	call	_lua_pushinteger
 
 ; 1580 : 					lua_setfield(L, -2, "X");
 
-	push	OFFSET $SG223609
+	push	OFFSET $SG223651
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
 
 ; 1581 : 					lua_pushinteger(L, iPlotY);
 
-	mov	ecx, DWORD PTR _iPlotY$223607[esp+68]
+	mov	ecx, DWORD PTR _iPlotY$223649[esp+68]
 	push	ecx
 	push	esi
 	call	_lua_pushinteger
 
 ; 1582 : 					lua_setfield(L, -2, "Y");
 
-	push	OFFSET $SG223610
+	push	OFFSET $SG223652
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -7005,10 +7005,10 @@ $LL16@lGetReplay:
 	add	esp, 64					; 00000040H
 	inc	edi
 $LN3@lGetReplay:
-	mov	eax, DWORD PTR _i$223602[esp+36]
+	mov	eax, DWORD PTR _i$223644[esp+36]
 	inc	eax
-	mov	DWORD PTR _i$223602[esp+36], eax
-	cmp	eax, DWORD PTR _nPlots$223598[esp+36]
+	mov	DWORD PTR _i$223644[esp+36], eax
+	cmp	eax, DWORD PTR _nPlots$223640[esp+36]
 	jb	SHORT $LL16@lGetReplay
 $LN2@lGetReplay:
 
@@ -7017,8 +7017,8 @@ $LN2@lGetReplay:
 ; 1586 : 
 ; 1587 : 			lua_setfield(L, t, "Plots");
 
-	mov	edx, DWORD PTR _t$223591[esp+36]
-	push	OFFSET $SG223611
+	mov	edx, DWORD PTR _t$223633[esp+36]
+	push	OFFSET $SG223653
 	push	edx
 	push	esi
 	call	_lua_setfield
@@ -7060,13 +7060,13 @@ PUBLIC	?lGetReplayMessages@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetRepla
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?lGetReplayMessages@CvLuaGame@@KAHPAUlua_State@@@Z
 _TEXT	SEGMENT
-_j$223635 = -36						; size = 4
-_i$223619 = -32						; size = 4
-_nPlots$223631 = -28					; size = 4
+_j$223677 = -36						; size = 4
+_i$223661 = -32						; size = 4
+_nPlots$223673 = -28					; size = 4
 _game$ = -24						; size = 4
-_iPlotX$223639 = -20					; size = 4
-_iPlotY$223640 = -16					; size = 4
-_plots_idx$223634 = -12					; size = 4
+_iPlotX$223681 = -20					; size = 4
+_iPlotY$223682 = -16					; size = 4
+_plots_idx$223676 = -12					; size = 4
 _messages_t$ = -8					; size = 4
 _nMessages$ = -4					; size = 4
 _L$ = 8							; size = 4
@@ -7111,7 +7111,7 @@ _L$ = 8							; size = 4
 ; 1604 : 
 ; 1605 : 	for(unsigned int i = 0; i < nMessages; i++)
 
-	mov	DWORD PTR _i$223619[esp+48], 0
+	mov	DWORD PTR _i$223661[esp+48], 0
 	test	ebx, ebx
 	jbe	$LN20@lGetReplay@2
 	push	ebp
@@ -7124,7 +7124,7 @@ $LN9@lGetReplay@2:
 ; 1606 : 	{
 ; 1607 : 		const CvReplayMessage* pMessage = game.getReplayMessage(i);
 
-	mov	eax, DWORD PTR _i$223619[esp+52]
+	mov	eax, DWORD PTR _i$223661[esp+52]
 	push	eax
 	mov	ecx, edi
 	call	?getReplayMessage@CvGame@@QBEPBVCvReplayMessage@@I@Z ; CvGame::getReplayMessage
@@ -7156,7 +7156,7 @@ $LN9@lGetReplay@2:
 
 ; 1613 : 		lua_setfield(L, t, "Player");
 
-	push	OFFSET $SG223625
+	push	OFFSET $SG223667
 	push	ebp
 	push	esi
 	call	_lua_setfield
@@ -7173,7 +7173,7 @@ $LN9@lGetReplay@2:
 
 ; 1616 : 		lua_setfield(L, t, "Turn");
 
-	push	OFFSET $SG223626
+	push	OFFSET $SG223668
 	push	ebp
 	push	esi
 	call	_lua_setfield
@@ -7190,7 +7190,7 @@ $LN9@lGetReplay@2:
 
 ; 1619 : 		lua_setfield(L, t, "Type");
 
-	push	OFFSET $SG223627
+	push	OFFSET $SG223669
 	push	ebp
 	push	esi
 	call	_lua_setfield
@@ -7221,7 +7221,7 @@ $LN9@lGetReplay@2:
 
 ; 1625 : 			lua_setfield(L, t, "Text");
 
-	push	OFFSET $SG223630
+	push	OFFSET $SG223672
 	push	ebp
 	push	esi
 	call	_lua_setfield
@@ -7234,7 +7234,7 @@ $LN6@lGetReplay@2:
 
 	mov	ecx, edi
 	call	?getNumPlots@CvReplayMessage@@QBEIXZ	; CvReplayMessage::getNumPlots
-	mov	DWORD PTR _nPlots$223631[esp+52], eax
+	mov	DWORD PTR _nPlots$223673[esp+52], eax
 
 ; 1629 : 		if(nPlots > 0)
 
@@ -7260,9 +7260,9 @@ $LN6@lGetReplay@2:
 ; 1634 : 
 ; 1635 : 			for(unsigned int j = 0; j < nPlots; j++)
 
-	cmp	DWORD PTR _nPlots$223631[esp+52], 0
-	mov	DWORD PTR _plots_idx$223634[esp+52], eax
-	mov	DWORD PTR _j$223635[esp+52], 0
+	cmp	DWORD PTR _nPlots$223673[esp+52], 0
+	mov	DWORD PTR _plots_idx$223676[esp+52], eax
+	mov	DWORD PTR _j$223677[esp+52], 0
 	jbe	SHORT $LN2@lGetReplay@2
 	npad	2
 $LL22@lGetReplay@2:
@@ -7271,10 +7271,10 @@ $LL22@lGetReplay@2:
 ; 1637 : 				int iPlotX, iPlotY;
 ; 1638 : 				if(pMessage->getPlot(j, iPlotX, iPlotY))
 
-	mov	eax, DWORD PTR _j$223635[esp+52]
-	lea	ecx, DWORD PTR _iPlotY$223640[esp+52]
+	mov	eax, DWORD PTR _j$223677[esp+52]
+	lea	ecx, DWORD PTR _iPlotY$223682[esp+52]
 	push	ecx
-	lea	edx, DWORD PTR _iPlotX$223639[esp+56]
+	lea	edx, DWORD PTR _iPlotX$223681[esp+56]
 	push	edx
 	push	eax
 	mov	ecx, edi
@@ -7292,35 +7292,35 @@ $LL22@lGetReplay@2:
 
 ; 1641 : 					lua_pushinteger(L, iPlotX);
 
-	mov	ecx, DWORD PTR _iPlotX$223639[esp+64]
+	mov	ecx, DWORD PTR _iPlotX$223681[esp+64]
 	push	ecx
 	push	esi
 	call	_lua_pushinteger
 
 ; 1642 : 					lua_setfield(L, -2, "X");
 
-	push	OFFSET $SG223642
+	push	OFFSET $SG223684
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
 
 ; 1643 : 					lua_pushinteger(L, iPlotY);
 
-	mov	edx, DWORD PTR _iPlotY$223640[esp+84]
+	mov	edx, DWORD PTR _iPlotY$223682[esp+84]
 	push	edx
 	push	esi
 	call	_lua_pushinteger
 
 ; 1644 : 					lua_setfield(L, -2, "Y");
 
-	push	OFFSET $SG223643
+	push	OFFSET $SG223685
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
 
 ; 1645 : 					lua_rawseti(L, plots_idx, idx++);
 
-	mov	eax, DWORD PTR _plots_idx$223634[esp+104]
+	mov	eax, DWORD PTR _plots_idx$223676[esp+104]
 	push	ebx
 	push	eax
 	push	esi
@@ -7328,10 +7328,10 @@ $LL22@lGetReplay@2:
 	add	esp, 64					; 00000040H
 	inc	ebx
 $LN3@lGetReplay@2:
-	mov	eax, DWORD PTR _j$223635[esp+52]
+	mov	eax, DWORD PTR _j$223677[esp+52]
 	inc	eax
-	mov	DWORD PTR _j$223635[esp+52], eax
-	cmp	eax, DWORD PTR _nPlots$223631[esp+52]
+	mov	DWORD PTR _j$223677[esp+52], eax
+	cmp	eax, DWORD PTR _nPlots$223673[esp+52]
 	jb	SHORT $LL22@lGetReplay@2
 $LN2@lGetReplay@2:
 
@@ -7340,7 +7340,7 @@ $LN2@lGetReplay@2:
 ; 1648 : 
 ; 1649 : 			lua_setfield(L, t, "Plots");
 
-	push	OFFSET $SG223644
+	push	OFFSET $SG223686
 	push	ebp
 	push	esi
 	call	_lua_setfield
@@ -7351,7 +7351,7 @@ $LN5@lGetReplay@2:
 ; 1651 : 
 ; 1652 : 		lua_rawseti(L, messages_t, messages_idx++);
 
-	mov	edi, DWORD PTR _i$223619[esp+52]
+	mov	edi, DWORD PTR _i$223661[esp+52]
 	mov	ecx, DWORD PTR _messages_t$[esp+52]
 	inc	edi
 	push	edi
@@ -7359,7 +7359,7 @@ $LN5@lGetReplay@2:
 	push	esi
 	call	_lua_rawseti
 	add	esp, 12					; 0000000cH
-	mov	DWORD PTR _i$223619[esp+52], edi
+	mov	DWORD PTR _i$223661[esp+52], edi
 	cmp	edi, DWORD PTR _nMessages$[esp+52]
 	jb	$LL21@lGetReplay@2
 	pop	ebp
@@ -7628,7 +7628,7 @@ _L$ = 8							; size = 4
 	push	eax
 	mov	eax, DWORD PTR [edx+736]
 	push	ebx
-	push	OFFSET $SG224172
+	push	OFFSET $SG224214
 	push	0
 	push	edi
 	call	eax
@@ -7716,7 +7716,7 @@ EXTRN	?getActivePlayer@CvGame@@QBE?AW4PlayerTypes@@XZ:PROC ; CvGame::getActivePl
 ;	COMDAT ?lGetAdvisorCounsel@CvLuaGame@@KAHPAUlua_State@@@Z
 _TEXT	SEGMENT
 _bTableOpen$ = -13					; size = 1
-_ui$224221 = -12					; size = 4
+_ui$224263 = -12					; size = 4
 _eCurrentAdvisorType$ = -8				; size = 4
 _iTopLevelLua$ = -4					; size = 4
 _L$ = 8							; size = 4
@@ -7771,7 +7771,7 @@ _L$ = 8							; size = 4
 	or	ebp, -1
 	xor	edi, edi
 	mov	BYTE PTR _bTableOpen$[esp+32], bl
-	mov	DWORD PTR _ui$224221[esp+32], ebx
+	mov	DWORD PTR _ui$224263[esp+32], ebx
 	call	?GetAdvisorCounsel@CvGame@@QAEPAVCvAdvisorCounsel@@XZ ; CvGame::GetAdvisorCounsel
 	cmp	DWORD PTR [eax+4], ebx
 	jbe	$LN34@lGetAdviso
@@ -7873,7 +7873,7 @@ $LN4@lGetAdviso:
 	push	esi
 	call	_lua_rawseti
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
-	inc	DWORD PTR _ui$224221[esp+52]
+	inc	DWORD PTR _ui$224263[esp+52]
 	add	esp, 20					; 00000014H
 
 ; 1932 : 		iAdvisorIndex++;
@@ -7881,7 +7881,7 @@ $LN4@lGetAdviso:
 	inc	edi
 	add	ebx, 520				; 00000208H
 	call	?GetAdvisorCounsel@CvGame@@QAEPAVCvAdvisorCounsel@@XZ ; CvGame::GetAdvisorCounsel
-	mov	ecx, DWORD PTR _ui$224221[esp+32]
+	mov	ecx, DWORD PTR _ui$224263[esp+32]
 	cmp	ecx, DWORD PTR [eax+4]
 	jb	$LL7@lGetAdviso
 $LN31@lGetAdviso:
@@ -7951,7 +7951,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lSetAdviso
-	push	OFFSET $SG225463
+	push	OFFSET $SG225505
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -7976,7 +7976,7 @@ $LN5@lSetAdviso:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN4@lSetAdviso
-	push	OFFSET $SG225469
+	push	OFFSET $SG225511
 	push	esi
 	call	_luaL_error
 	push	esi
@@ -8453,7 +8453,7 @@ EXTRN	?GetCombatPrediction@CvGame@@QAE?AW4CombatPredictionTypes@@PBVCvUnit@@0@Z:
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?lGetCombatPrediction@CvLuaGame@@KAHPAUlua_State@@@Z
 _TEXT	SEGMENT
-_pkInstance$227754 = -4					; size = 4
+_pkInstance$227796 = -4					; size = 4
 _L$ = 8							; size = 4
 ?lGetCombatPrediction@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetCombatPrediction, COMDAT
 
@@ -8474,12 +8474,12 @@ _L$ = 8							; size = 4
 	push	esi
 	mov	edi, eax
 	mov	bl, 1
-	mov	DWORD PTR _pkInstance$227754[esp+32], 0
+	mov	DWORD PTR _pkInstance$227796[esp+32], 0
 	call	_lua_type
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lGetCombat
-	push	OFFSET $SG225541
+	push	OFFSET $SG225583
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -8493,7 +8493,7 @@ _L$ = 8							; size = 4
 	push	esi
 	call	_lua_touserdata
 	add	esp, 8
-	mov	DWORD PTR _pkInstance$227754[esp+20], eax
+	mov	DWORD PTR _pkInstance$227796[esp+20], eax
 	test	eax, eax
 	je	SHORT $LN5@lGetCombat
 	xor	bl, bl
@@ -8504,7 +8504,7 @@ $LN5@lGetCombat:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN4@lGetCombat
-	push	OFFSET $SG225547
+	push	OFFSET $SG225589
 	push	esi
 	call	_luaL_error
 	push	esi
@@ -8525,7 +8525,7 @@ $LN4@lGetCombat:
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN12@lGetCombat
-	push	OFFSET $SG225541
+	push	OFFSET $SG225583
 	push	2
 	push	esi
 	call	_lua_getfield
@@ -8557,7 +8557,7 @@ $LN11@lGetCombat:
 
 ; 2133 : 	CombatPredictionTypes ePrediction = GC.getGame().GetCombatPrediction(pAttackingUnit, pDefendingUnit);
 
-	mov	eax, DWORD PTR _pkInstance$227754[esp+20]
+	mov	eax, DWORD PTR _pkInstance$227796[esp+20]
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	edi
 	push	eax
@@ -9300,7 +9300,7 @@ EXTRN	?FoundReligion@CvGameReligions@@QAEXW4PlayerTypes@@W4ReligionTypes@@PBDW4B
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?lFoundReligion@CvLuaGame@@KAHPAUlua_State@@@Z
 _TEXT	SEGMENT
-_stack_size$227899 = -28				; size = 4
+_stack_size$227941 = -28				; size = 4
 _eBelief4$ = -24					; size = 4
 _eBelief3$ = -20					; size = 4
 _eBelief2$ = -16					; size = 4
@@ -9376,14 +9376,14 @@ _L$ = 8							; size = 4
 	add	esp, 64					; 00000040H
 	push	8
 	push	esi
-	mov	DWORD PTR _stack_size$227899[esp+52], eax
+	mov	DWORD PTR _stack_size$227941[esp+52], eax
 	mov	bl, 1
 	xor	edi, edi
 	call	_lua_type
 	add	esp, 8
 	cmp	eax, 5
 	jne	SHORT $LN5@lFoundReli
-	push	OFFSET $SG225463
+	push	OFFSET $SG225505
 	push	8
 	push	esi
 	call	_lua_getfield
@@ -9402,7 +9402,7 @@ _L$ = 8							; size = 4
 	je	SHORT $LN5@lFoundReli
 	xor	bl, bl
 $LN5@lFoundReli:
-	mov	eax, DWORD PTR _stack_size$227899[esp+44]
+	mov	eax, DWORD PTR _stack_size$227941[esp+44]
 	push	eax
 	push	esi
 	call	_lua_settop
@@ -9632,7 +9632,7 @@ _L$ = 8							; size = 4
 	add	esp, 20					; 00000014H
 	cmp	eax, 5
 	jne	SHORT $LN5@lSetHolyCi
-	push	OFFSET $SG225463
+	push	OFFSET $SG225505
 	push	2
 	push	esi
 	call	_lua_getfield
@@ -10127,7 +10127,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN6@lGetArtifa
-	push	OFFSET $SG225521
+	push	OFFSET $SG225563
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -10209,17 +10209,17 @@ EXTRN	?getRouteFinder@CvGlobals@@QAEAAVCvAStar@@XZ:PROC ; CvGlobals::getRouteFin
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?lGetLongestCityConnectionPlots@CvLuaGame@@KAHPAUlua_State@@@Z
 _TEXT	SEGMENT
-_ui$225285 = -44					; size = 4
-_pFirstCityPlot$225298 = -40				; size = 4
-_pFirstCity$225291 = -36				; size = 4
+_ui$225327 = -44					; size = 4
+_pFirstCityPlot$225340 = -40				; size = 4
+_pFirstCity$225333 = -36				; size = 4
 tv483 = -32						; size = 4
 _iFurthestPlotDistance$ = -28				; size = 4
 _pPlot1$ = -24						; size = 4
 _pPlot2$ = -20						; size = 4
-_pSecondCityPlot$225303 = -16				; size = 4
-_iThisPlotDistance$225314 = -12				; size = 4
-_iLoop2$225294 = -8					; size = 4
-_iLoop1$225293 = -4					; size = 4
+_pSecondCityPlot$225345 = -16				; size = 4
+_iThisPlotDistance$225356 = -12				; size = 4
+_iLoop2$225336 = -8					; size = 4
+_iLoop1$225335 = -4					; size = 4
 _L$ = 8							; size = 4
 ?lGetLongestCityConnectionPlots@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetLongestCityConnectionPlots, COMDAT
 
@@ -10256,7 +10256,7 @@ _L$ = 8							; size = 4
 	xor	ebp, ebp
 	xor	esi, esi
 	mov	DWORD PTR [eax+32], 0
-	mov	DWORD PTR _ui$225285[esp+60], ebp
+	mov	DWORD PTR _ui$225327[esp+60], ebp
 	mov	DWORD PTR tv483[esp+60], esi
 	npad	3
 $LL17@lGetLonges:
@@ -10273,11 +10273,11 @@ $LL17@lGetLonges:
 
 	mov	eax, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	push	0
-	lea	edx, DWORD PTR _iLoop1$225293[esp+64]
+	lea	edx, DWORD PTR _iLoop1$225335[esp+64]
 	lea	ecx, DWORD PTR [esi+eax]
 	push	edx
 	call	?firstCity@CvPlayer@@QAEPAVCvCity@@PAH_N@Z ; CvPlayer::firstCity
-	mov	DWORD PTR _pFirstCity$225291[esp+60], eax
+	mov	DWORD PTR _pFirstCity$225333[esp+60], eax
 	test	eax, eax
 	je	$LN16@lGetLonges
 $LL91@lGetLonges:
@@ -10285,7 +10285,7 @@ $LL91@lGetLonges:
 ; 2871 : 		{
 ; 2872 : 			CvPlot* pFirstCityPlot = pFirstCity->plot();
 
-	mov	ecx, DWORD PTR _pFirstCity$225291[esp+60]
+	mov	ecx, DWORD PTR _pFirstCity$225333[esp+60]
 	call	?plot@CvCity@@QBEPAVCvPlot@@XZ		; CvCity::plot
 	mov	ebx, eax
 
@@ -10294,10 +10294,10 @@ $LL91@lGetLonges:
 
 	mov	eax, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	push	0
-	lea	edx, DWORD PTR _iLoop2$225294[esp+64]
+	lea	edx, DWORD PTR _iLoop2$225336[esp+64]
 	lea	ecx, DWORD PTR [esi+eax]
 	push	edx
-	mov	DWORD PTR _pFirstCityPlot$225298[esp+68], ebx
+	mov	DWORD PTR _pFirstCityPlot$225340[esp+68], ebx
 	call	?firstCity@CvPlayer@@QAEPAVCvCity@@PAH_N@Z ; CvPlayer::firstCity
 	test	eax, eax
 	je	$LN13@lGetLonges
@@ -10308,7 +10308,7 @@ $LL11@lGetLonges:
 ; 2876 : 				// don't measure distance to same city
 ; 2877 : 				if (pFirstCity == pSecondCity)
 
-	cmp	DWORD PTR _pFirstCity$225291[esp+60], eax
+	cmp	DWORD PTR _pFirstCity$225333[esp+60], eax
 	je	$LN10@lGetLonges
 
 ; 2878 : 				{
@@ -10328,7 +10328,7 @@ $LL11@lGetLonges:
 	mov	eax, DWORD PTR [ecx]
 	mov	edx, DWORD PTR [eax+44]
 	push	OFFSET $SG92498
-	mov	DWORD PTR _pSecondCityPlot$225303[esp+64], edi
+	mov	DWORD PTR _pSecondCityPlot$225345[esp+64], edi
 	call	edx
 	test	al, al
 	jne	SHORT $LN20@lGetLonges
@@ -10360,7 +10360,7 @@ $LN20@lGetLonges:
 
 ; 2891 : 						if (strcmp(szCivKey, "CIVILIZATION_ENGLAND") == 0)
 
-	mov	ecx, OFFSET $SG225309
+	mov	ecx, OFFSET $SG225351
 	npad	4
 $LL87@lGetLonges:
 	mov	dl, BYTE PTR [eax]
@@ -10452,7 +10452,7 @@ $LN3@lGetLonges:
 ; 2911 : 				if (iThisPlotDistance > iFurthestPlotDistance)
 
 	cmp	eax, DWORD PTR _iFurthestPlotDistance$[esp+60]
-	mov	DWORD PTR _iThisPlotDistance$225314[esp+60], eax
+	mov	DWORD PTR _iThisPlotDistance$225356[esp+60], eax
 	jle	SHORT $LN92@lGetLonges
 
 ; 2912 : 				{
@@ -10461,7 +10461,7 @@ $LN3@lGetLonges:
 ; 2915 : 					int iPathfinderFlags = ui;
 ; 2916 : 					iPathfinderFlags |= (iRouteValue << 8);
 
-	mov	ecx, DWORD PTR _ui$225285[esp+60]
+	mov	ecx, DWORD PTR _ui$225327[esp+60]
 
 ; 2917 : 
 ; 2918 : 					if (GC.getRouteFinder().GeneratePath(pFirstCityPlot->getX(), pFirstCityPlot->getY(), pSecondCityPlot->getX(), pSecondCityPlot->getY(), iPathfinderFlags, true))
@@ -10484,29 +10484,29 @@ $LN3@lGetLonges:
 ; 2920 : 						// found a connection
 ; 2921 : 						pPlot1 = pFirstCityPlot;
 
-	mov	edx, DWORD PTR _pFirstCityPlot$225298[esp+60]
+	mov	edx, DWORD PTR _pFirstCityPlot$225340[esp+60]
 
 ; 2922 : 						pPlot2 = pSecondCityPlot;
 
-	mov	eax, DWORD PTR _pSecondCityPlot$225303[esp+60]
+	mov	eax, DWORD PTR _pSecondCityPlot$225345[esp+60]
 
 ; 2923 : 						iFurthestPlotDistance = iThisPlotDistance;
 
-	mov	ecx, DWORD PTR _iThisPlotDistance$225314[esp+60]
+	mov	ecx, DWORD PTR _iThisPlotDistance$225356[esp+60]
 	mov	DWORD PTR _pPlot1$[esp+60], edx
 	mov	DWORD PTR _pPlot2$[esp+60], eax
 	mov	DWORD PTR _iFurthestPlotDistance$[esp+60], ecx
 $LN92@lGetLonges:
 	mov	esi, DWORD PTR tv483[esp+60]
-	mov	ebx, DWORD PTR _pFirstCityPlot$225298[esp+60]
+	mov	ebx, DWORD PTR _pFirstCityPlot$225340[esp+60]
 $LN10@lGetLonges:
 	mov	edx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	push	0
-	lea	eax, DWORD PTR _iLoop2$225294[esp+64]
+	lea	eax, DWORD PTR _iLoop2$225336[esp+64]
 	lea	ecx, DWORD PTR [esi+edx]
 	push	eax
 	call	?nextCity@CvPlayer@@QAEPAVCvCity@@PAH_N@Z ; CvPlayer::nextCity
-	mov	ebp, DWORD PTR _ui$225285[esp+60]
+	mov	ebp, DWORD PTR _ui$225327[esp+60]
 	test	eax, eax
 	jne	$LL11@lGetLonges
 $LN13@lGetLonges:
@@ -10523,11 +10523,11 @@ $LN13@lGetLonges:
 
 	mov	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	push	0
-	lea	edx, DWORD PTR _iLoop1$225293[esp+64]
+	lea	edx, DWORD PTR _iLoop1$225335[esp+64]
 	add	ecx, esi
 	push	edx
 	call	?nextCity@CvPlayer@@QAEPAVCvCity@@PAH_N@Z ; CvPlayer::nextCity
-	mov	DWORD PTR _pFirstCity$225291[esp+60], eax
+	mov	DWORD PTR _pFirstCity$225333[esp+60], eax
 	test	eax, eax
 	jne	$LL91@lGetLonges
 $LN16@lGetLonges:
@@ -10537,7 +10537,7 @@ $LN16@lGetLonges:
 
 	add	esi, 63236				; 0000f704H
 	inc	ebp
-	mov	DWORD PTR _ui$225285[esp+60], ebp
+	mov	DWORD PTR _ui$225327[esp+60], ebp
 	mov	DWORD PTR tv483[esp+60], esi
 	cmp	esi, 1391192				; 00153a58H
 	jb	$LL17@lGetLonges
@@ -10761,7 +10761,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lMouseover
-	push	OFFSET $SG225541
+	push	OFFSET $SG225583
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -10786,7 +10786,7 @@ $LN5@lMouseover:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN4@lMouseover
-	push	OFFSET $SG225547
+	push	OFFSET $SG225589
 	push	esi
 	call	_luaL_error
 	push	esi
@@ -11033,7 +11033,7 @@ PUBLIC	??$BasicLuaMethod@_N_N@?$CvLuaMethodWrapper@VCvLuaGame@@VCvGame@@@@KAHPAU
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$BasicLuaMethod@_N_N@?$CvLuaMethodWrapper@VCvLuaGame@@VCvGame@@@@KAHPAUlua_State@@P8CvGame@@AEX_N1@Z@Z
 _TEXT	SEGMENT
-$T228283 = -4						; size = 1
+$T228325 = -4						; size = 1
 _L$ = 8							; size = 4
 _func$ = 12						; size = 4
 ??$BasicLuaMethod@_N_N@?$CvLuaMethodWrapper@VCvLuaGame@@VCvGame@@@@KAHPAUlua_State@@P8CvGame@@AEX_N1@Z@Z PROC ; CvLuaMethodWrapper<CvLuaGame,CvGame>::BasicLuaMethod<bool,bool>, COMDAT
@@ -11058,8 +11058,8 @@ _func$ = 12						; size = 4
 	add	esp, 8
 	test	eax, eax
 	setne	al
-	mov	BYTE PTR $T228283[esp+12], al
-	mov	ecx, DWORD PTR $T228283[esp+12]
+	mov	BYTE PTR $T228325[esp+12], al
+	mov	ecx, DWORD PTR $T228325[esp+12]
 	push	ecx
 	push	1
 	push	edi
@@ -11088,8 +11088,8 @@ PUBLIC	??$BasicLuaMethod@_N_N_N@?$CvLuaMethodWrapper@VCvLuaGame@@VCvGame@@@@KAHP
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$BasicLuaMethod@_N_N_N@?$CvLuaMethodWrapper@VCvLuaGame@@VCvGame@@@@KAHPAUlua_State@@P8CvGame@@AEX_N11@Z@Z
 _TEXT	SEGMENT
-$T228305 = -8						; size = 1
-$T228309 = -4						; size = 1
+$T228347 = -8						; size = 1
+$T228351 = -4						; size = 1
 _L$ = 8							; size = 4
 _func$ = 12						; size = 4
 ??$BasicLuaMethod@_N_N_N@?$CvLuaMethodWrapper@VCvLuaGame@@VCvGame@@@@KAHPAUlua_State@@P8CvGame@@AEX_N11@Z@Z PROC ; CvLuaMethodWrapper<CvLuaGame,CvGame>::BasicLuaMethod<bool,bool,bool>, COMDAT
@@ -11113,14 +11113,14 @@ _func$ = 12						; size = 4
 	setne	al
 	push	2
 	push	esi
-	mov	BYTE PTR $T228305[esp+32], al
+	mov	BYTE PTR $T228347[esp+32], al
 	call	_lua_toboolean
-	mov	edx, DWORD PTR $T228305[esp+32]
+	mov	edx, DWORD PTR $T228347[esp+32]
 	add	esp, 16					; 00000010H
 	test	eax, eax
 	setne	cl
-	mov	BYTE PTR $T228309[esp+16], cl
-	mov	eax, DWORD PTR $T228309[esp+16]
+	mov	BYTE PTR $T228351[esp+16], cl
+	mov	eax, DWORD PTR $T228351[esp+16]
 	push	edx
 	push	eax
 	push	1
@@ -11764,8 +11764,8 @@ PUBLIC	??$BasicLuaMethod@W4PlayerTypes@@_N_N@?$CvLuaMethodWrapper@VCvLuaGame@@VC
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$BasicLuaMethod@W4PlayerTypes@@_N_N@?$CvLuaMethodWrapper@VCvLuaGame@@VCvGame@@@@KAHPAUlua_State@@P8CvGame@@AEXW4PlayerTypes@@_N2@Z@Z
 _TEXT	SEGMENT
-$T228655 = -8						; size = 1
-$T228659 = -4						; size = 1
+$T228697 = -8						; size = 1
+$T228701 = -4						; size = 1
 _L$ = 8							; size = 4
 _func$ = 12						; size = 4
 ??$BasicLuaMethod@W4PlayerTypes@@_N_N@?$CvLuaMethodWrapper@VCvLuaGame@@VCvGame@@@@KAHPAUlua_State@@P8CvGame@@AEXW4PlayerTypes@@_N2@Z@Z PROC ; CvLuaMethodWrapper<CvLuaGame,CvGame>::BasicLuaMethod<enum PlayerTypes,bool,bool>, COMDAT
@@ -11789,14 +11789,14 @@ _func$ = 12						; size = 4
 	setne	al
 	push	2
 	push	esi
-	mov	BYTE PTR $T228655[esp+32], al
+	mov	BYTE PTR $T228697[esp+32], al
 	call	_lua_toboolean
-	mov	edx, DWORD PTR $T228655[esp+32]
+	mov	edx, DWORD PTR $T228697[esp+32]
 	add	esp, 16					; 00000010H
 	test	eax, eax
 	setne	cl
-	mov	BYTE PTR $T228659[esp+16], cl
-	mov	eax, DWORD PTR $T228659[esp+16]
+	mov	BYTE PTR $T228701[esp+16], cl
+	mov	eax, DWORD PTR $T228701[esp+16]
 	push	edx
 	push	eax
 	push	1
@@ -13738,7 +13738,7 @@ EXTRN	?cycleCities@CvGame@@QAEX_N0@Z:PROC		; CvGame::cycleCities
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?lCycleCities@CvLuaGame@@KAHPAUlua_State@@@Z
 _TEXT	SEGMENT
-$T229675 = -4						; size = 1
+$T229717 = -4						; size = 1
 _L$ = 8							; size = 4
 ?lCycleCities@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lCycleCities, COMDAT
 
@@ -13758,8 +13758,8 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	test	eax, eax
 	setne	al
-	mov	BYTE PTR $T229675[esp+12], al
-	mov	ecx, DWORD PTR $T229675[esp+12]
+	mov	BYTE PTR $T229717[esp+12], al
+	mov	ecx, DWORD PTR $T229717[esp+12]
 	push	ecx
 	push	1
 	push	edi
@@ -18273,7 +18273,7 @@ __ehfuncinfo$?lGetGreatWorkTooltip@CvLuaGame@@KAHPAUlua_State@@@Z DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?lGetGreatWorkTooltip@CvLuaGame@@KAHPAUlua_State@@@Z
 _TEXT	SEGMENT
-_szTooltip$225192 = -40					; size = 28
+_szTooltip$225234 = -40					; size = 28
 __$EHRec$ = -12						; size = 12
 _L$ = 8							; size = 4
 ?lGetGreatWorkTooltip@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetGreatWorkTooltip, COMDAT
@@ -18323,7 +18323,7 @@ _L$ = 8							; size = 4
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	ebx
 	push	edi
-	lea	eax, DWORD PTR _szTooltip$225192[esp+60]
+	lea	eax, DWORD PTR _szTooltip$225234[esp+60]
 	push	eax
 	call	?GetGameCulture@CvGame@@QAEPAVCvGameCulture@@XZ ; CvGame::GetGameCulture
 	mov	ecx, eax
@@ -18331,7 +18331,7 @@ _L$ = 8							; size = 4
 
 ; 2662 : 		lua_pushstring(L, szTooltip);
 
-	lea	ecx, DWORD PTR _szTooltip$225192[esp+52]
+	lea	ecx, DWORD PTR _szTooltip$225234[esp+52]
 	mov	DWORD PTR __$EHRec$[esp+60], 0
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
@@ -18341,7 +18341,7 @@ _L$ = 8							; size = 4
 
 ; 2663 : 		return 1;
 
-	lea	ecx, DWORD PTR _szTooltip$225192[esp+52]
+	lea	ecx, DWORD PTR _szTooltip$225234[esp+52]
 	mov	DWORD PTR __$EHRec$[esp+60], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 	pop	edi
@@ -18370,7 +18370,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?lGetGreatWorkTooltip@CvLuaGame@@KAHPAUlua_State@@@Z$0:
-	lea	ecx, DWORD PTR _szTooltip$225192[ebp]
+	lea	ecx, DWORD PTR _szTooltip$225234[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?lGetGreatWorkTooltip@CvLuaGame@@KAHPAUlua_State@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?lGetGreatWorkTooltip@CvLuaGame@@KAHPAUlua_State@@@Z
@@ -18396,7 +18396,7 @@ __ehfuncinfo$?lGetGreatWorkName@CvLuaGame@@KAHPAUlua_State@@@Z DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?lGetGreatWorkName@CvLuaGame@@KAHPAUlua_State@@@Z
 _TEXT	SEGMENT
-_szTooltip$225200 = -40					; size = 28
+_szTooltip$225242 = -40					; size = 28
 __$EHRec$ = -12						; size = 12
 _L$ = 8							; size = 4
 ?lGetGreatWorkName@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetGreatWorkName, COMDAT
@@ -18437,7 +18437,7 @@ _L$ = 8							; size = 4
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	esi
-	lea	eax, DWORD PTR _szTooltip$225200[esp+52]
+	lea	eax, DWORD PTR _szTooltip$225242[esp+52]
 	push	eax
 	call	?GetGameCulture@CvGame@@QAEPAVCvGameCulture@@XZ ; CvGame::GetGameCulture
 	mov	ecx, eax
@@ -18445,7 +18445,7 @@ _L$ = 8							; size = 4
 
 ; 2678 : 		lua_pushstring(L, szTooltip);
 
-	lea	ecx, DWORD PTR _szTooltip$225200[esp+48]
+	lea	ecx, DWORD PTR _szTooltip$225242[esp+48]
 	mov	DWORD PTR __$EHRec$[esp+56], 0
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
@@ -18455,7 +18455,7 @@ _L$ = 8							; size = 4
 
 ; 2679 : 		return 1;
 
-	lea	ecx, DWORD PTR _szTooltip$225200[esp+48]
+	lea	ecx, DWORD PTR _szTooltip$225242[esp+48]
 	mov	DWORD PTR __$EHRec$[esp+56], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 	pop	edi
@@ -18482,7 +18482,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?lGetGreatWorkName@CvLuaGame@@KAHPAUlua_State@@@Z$0:
-	lea	ecx, DWORD PTR _szTooltip$225200[ebp]
+	lea	ecx, DWORD PTR _szTooltip$225242[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?lGetGreatWorkName@CvLuaGame@@KAHPAUlua_State@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?lGetGreatWorkName@CvLuaGame@@KAHPAUlua_State@@@Z
@@ -18654,7 +18654,7 @@ __ehfuncinfo$?lGetGreatWorkArtist@CvLuaGame@@KAHPAUlua_State@@@Z DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?lGetGreatWorkArtist@CvLuaGame@@KAHPAUlua_State@@@Z
 _TEXT	SEGMENT
-_szTooltip$225220 = -40					; size = 28
+_szTooltip$225262 = -40					; size = 28
 __$EHRec$ = -12						; size = 12
 _L$ = 8							; size = 4
 ?lGetGreatWorkArtist@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetGreatWorkArtist, COMDAT
@@ -18695,7 +18695,7 @@ _L$ = 8							; size = 4
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	esi
-	lea	eax, DWORD PTR _szTooltip$225220[esp+52]
+	lea	eax, DWORD PTR _szTooltip$225262[esp+52]
 	push	eax
 	call	?GetGameCulture@CvGame@@QAEPAVCvGameCulture@@XZ ; CvGame::GetGameCulture
 	mov	ecx, eax
@@ -18703,7 +18703,7 @@ _L$ = 8							; size = 4
 
 ; 2728 : 		lua_pushstring(L, szTooltip);
 
-	lea	ecx, DWORD PTR _szTooltip$225220[esp+48]
+	lea	ecx, DWORD PTR _szTooltip$225262[esp+48]
 	mov	DWORD PTR __$EHRec$[esp+56], 0
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
@@ -18713,7 +18713,7 @@ _L$ = 8							; size = 4
 
 ; 2729 : 		return 1;
 
-	lea	ecx, DWORD PTR _szTooltip$225220[esp+48]
+	lea	ecx, DWORD PTR _szTooltip$225262[esp+48]
 	mov	DWORD PTR __$EHRec$[esp+56], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 	pop	edi
@@ -18740,7 +18740,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?lGetGreatWorkArtist@CvLuaGame@@KAHPAUlua_State@@@Z$0:
-	lea	ecx, DWORD PTR _szTooltip$225220[ebp]
+	lea	ecx, DWORD PTR _szTooltip$225262[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?lGetGreatWorkArtist@CvLuaGame@@KAHPAUlua_State@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?lGetGreatWorkArtist@CvLuaGame@@KAHPAUlua_State@@@Z
@@ -18766,7 +18766,7 @@ __ehfuncinfo$?lGetGreatWorkEra@CvLuaGame@@KAHPAUlua_State@@@Z DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?lGetGreatWorkEra@CvLuaGame@@KAHPAUlua_State@@@Z
 _TEXT	SEGMENT
-_szTooltip$225228 = -40					; size = 28
+_szTooltip$225270 = -40					; size = 28
 __$EHRec$ = -12						; size = 12
 _L$ = 8							; size = 4
 ?lGetGreatWorkEra@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetGreatWorkEra, COMDAT
@@ -18807,7 +18807,7 @@ _L$ = 8							; size = 4
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	esi
-	lea	eax, DWORD PTR _szTooltip$225228[esp+52]
+	lea	eax, DWORD PTR _szTooltip$225270[esp+52]
 	push	eax
 	call	?GetGameCulture@CvGame@@QAEPAVCvGameCulture@@XZ ; CvGame::GetGameCulture
 	mov	ecx, eax
@@ -18815,7 +18815,7 @@ _L$ = 8							; size = 4
 
 ; 2744 : 		lua_pushstring(L, szTooltip);
 
-	lea	ecx, DWORD PTR _szTooltip$225228[esp+48]
+	lea	ecx, DWORD PTR _szTooltip$225270[esp+48]
 	mov	DWORD PTR __$EHRec$[esp+56], 0
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
@@ -18825,7 +18825,7 @@ _L$ = 8							; size = 4
 
 ; 2745 : 		return 1;
 
-	lea	ecx, DWORD PTR _szTooltip$225228[esp+48]
+	lea	ecx, DWORD PTR _szTooltip$225270[esp+48]
 	mov	DWORD PTR __$EHRec$[esp+56], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 	pop	edi
@@ -18852,7 +18852,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?lGetGreatWorkEra@CvLuaGame@@KAHPAUlua_State@@@Z$0:
-	lea	ecx, DWORD PTR _szTooltip$225228[ebp]
+	lea	ecx, DWORD PTR _szTooltip$225270[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?lGetGreatWorkEra@CvLuaGame@@KAHPAUlua_State@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?lGetGreatWorkEra@CvLuaGame@@KAHPAUlua_State@@@Z
@@ -18878,7 +18878,7 @@ __ehfuncinfo$?lGetGreatWorkEraAbbreviation@CvLuaGame@@KAHPAUlua_State@@@Z DD 019
 xdata$x	ENDS
 ;	COMDAT ?lGetGreatWorkEraAbbreviation@CvLuaGame@@KAHPAUlua_State@@@Z
 _TEXT	SEGMENT
-_szTooltip$225236 = -40					; size = 28
+_szTooltip$225278 = -40					; size = 28
 __$EHRec$ = -12						; size = 12
 _L$ = 8							; size = 4
 ?lGetGreatWorkEraAbbreviation@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetGreatWorkEraAbbreviation, COMDAT
@@ -18919,7 +18919,7 @@ _L$ = 8							; size = 4
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	esi
-	lea	eax, DWORD PTR _szTooltip$225236[esp+52]
+	lea	eax, DWORD PTR _szTooltip$225278[esp+52]
 	push	eax
 	call	?GetGameCulture@CvGame@@QAEPAVCvGameCulture@@XZ ; CvGame::GetGameCulture
 	mov	ecx, eax
@@ -18927,7 +18927,7 @@ _L$ = 8							; size = 4
 
 ; 2760 : 		lua_pushstring(L, szTooltip);
 
-	lea	ecx, DWORD PTR _szTooltip$225236[esp+48]
+	lea	ecx, DWORD PTR _szTooltip$225278[esp+48]
 	mov	DWORD PTR __$EHRec$[esp+56], 0
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
@@ -18937,7 +18937,7 @@ _L$ = 8							; size = 4
 
 ; 2761 : 		return 1;
 
-	lea	ecx, DWORD PTR _szTooltip$225236[esp+48]
+	lea	ecx, DWORD PTR _szTooltip$225278[esp+48]
 	mov	DWORD PTR __$EHRec$[esp+56], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 	pop	edi
@@ -18964,7 +18964,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?lGetGreatWorkEraAbbreviation@CvLuaGame@@KAHPAUlua_State@@@Z$0:
-	lea	ecx, DWORD PTR _szTooltip$225236[ebp]
+	lea	ecx, DWORD PTR _szTooltip$225278[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?lGetGreatWorkEraAbbreviation@CvLuaGame@@KAHPAUlua_State@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?lGetGreatWorkEraAbbreviation@CvLuaGame@@KAHPAUlua_State@@@Z
@@ -18990,7 +18990,7 @@ __ehfuncinfo$?lGetGreatWorkEraShort@CvLuaGame@@KAHPAUlua_State@@@Z DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?lGetGreatWorkEraShort@CvLuaGame@@KAHPAUlua_State@@@Z
 _TEXT	SEGMENT
-_szTooltip$225244 = -40					; size = 28
+_szTooltip$225286 = -40					; size = 28
 __$EHRec$ = -12						; size = 12
 _L$ = 8							; size = 4
 ?lGetGreatWorkEraShort@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetGreatWorkEraShort, COMDAT
@@ -19031,7 +19031,7 @@ _L$ = 8							; size = 4
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	esi
-	lea	eax, DWORD PTR _szTooltip$225244[esp+52]
+	lea	eax, DWORD PTR _szTooltip$225286[esp+52]
 	push	eax
 	call	?GetGameCulture@CvGame@@QAEPAVCvGameCulture@@XZ ; CvGame::GetGameCulture
 	mov	ecx, eax
@@ -19039,7 +19039,7 @@ _L$ = 8							; size = 4
 
 ; 2777 : 		lua_pushstring(L, szTooltip);
 
-	lea	ecx, DWORD PTR _szTooltip$225244[esp+48]
+	lea	ecx, DWORD PTR _szTooltip$225286[esp+48]
 	mov	DWORD PTR __$EHRec$[esp+56], 0
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
@@ -19049,7 +19049,7 @@ _L$ = 8							; size = 4
 
 ; 2778 : 		return 1;
 
-	lea	ecx, DWORD PTR _szTooltip$225244[esp+48]
+	lea	ecx, DWORD PTR _szTooltip$225286[esp+48]
 	mov	DWORD PTR __$EHRec$[esp+56], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 	pop	edi
@@ -19076,7 +19076,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?lGetGreatWorkEraShort@CvLuaGame@@KAHPAUlua_State@@@Z$0:
-	lea	ecx, DWORD PTR _szTooltip$225244[ebp]
+	lea	ecx, DWORD PTR _szTooltip$225286[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?lGetGreatWorkEraShort@CvLuaGame@@KAHPAUlua_State@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?lGetGreatWorkEraShort@CvLuaGame@@KAHPAUlua_State@@@Z
@@ -20163,7 +20163,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lCanHandleAction@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lCanHandleAction
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221580
+	push	OFFSET $SG221622
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20174,7 +20174,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lHandleAction@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lHandleAction
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221581
+	push	OFFSET $SG221623
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20185,7 +20185,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lUpdateScore@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lUpdateScore
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221582
+	push	OFFSET $SG221624
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20197,7 +20197,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lCycleCities@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lCycleCities
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221583
+	push	OFFSET $SG221625
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20208,7 +20208,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lCycleUnits@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lCycleUnits
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221584
+	push	OFFSET $SG221626
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20219,7 +20219,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lCyclePlotUnits@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lCyclePlotUnits
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221585
+	push	OFFSET $SG221627
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20232,7 +20232,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSelectionListMove@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSelectionListMove
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221586
+	push	OFFSET $SG221628
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20243,7 +20243,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSelectionListGameNetMessage@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSelectionListGameNetMessage
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221587
+	push	OFFSET $SG221629
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20254,7 +20254,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSelectedCitiesGameNetMessage@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSelectedCitiesGameNetMessage
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221588
+	push	OFFSET $SG221630
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20266,7 +20266,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lCityPushOrder@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lCityPushOrder
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221589
+	push	OFFSET $SG221631
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20277,7 +20277,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lCityPurchaseUnit@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lCityPurchaseUnit
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221590
+	push	OFFSET $SG221632
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20288,7 +20288,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lCityPurchaseBuilding@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lCityPurchaseBuilding
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221591
+	push	OFFSET $SG221633
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20300,7 +20300,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lCityPurchaseProject@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lCityPurchaseProject
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221592
+	push	OFFSET $SG221634
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20312,7 +20312,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetProductionPerPopulation@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetProductionPerPopulation
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221593
+	push	OFFSET $SG221635
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20324,7 +20324,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetAdjustedPopulationPercent@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetAdjustedPopulationPercent
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221594
+	push	OFFSET $SG221636
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20336,7 +20336,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetAdjustedLandPercent@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetAdjustedLandPercent
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221595
+	push	OFFSET $SG221637
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20348,7 +20348,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetUnitedNationsCountdown@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetUnitedNationsCountdown
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221596
+	push	OFFSET $SG221638
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20359,7 +20359,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSetUnitedNationsCountdown@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSetUnitedNationsCountdown
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221597
+	push	OFFSET $SG221639
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20372,7 +20372,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lCountCivPlayersAlive@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lCountCivPlayersAlive
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221598
+	push	OFFSET $SG221640
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20383,7 +20383,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lCountCivPlayersEverAlive@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lCountCivPlayersEverAlive
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221599
+	push	OFFSET $SG221641
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20394,7 +20394,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lCountCivTeamsAlive@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lCountCivTeamsAlive
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221600
+	push	OFFSET $SG221642
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20406,7 +20406,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lCountCivTeamsEverAlive@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lCountCivTeamsEverAlive
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221601
+	push	OFFSET $SG221643
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20417,7 +20417,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lCountHumanPlayersAlive@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lCountHumanPlayersAlive
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221602
+	push	OFFSET $SG221644
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20428,7 +20428,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lCountHumanPlayersEverAlive@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lCountHumanPlayersEverAlive
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221603
+	push	OFFSET $SG221645
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20441,7 +20441,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lCountTotalCivPower@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lCountTotalCivPower
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221604
+	push	OFFSET $SG221646
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20452,7 +20452,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lCountTotalNukeUnits@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lCountTotalNukeUnits
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221605
+	push	OFFSET $SG221647
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20463,7 +20463,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lCountKnownTechNumTeams@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lCountKnownTechNumTeams
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221606
+	push	OFFSET $SG221648
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20476,7 +20476,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGoldenAgeLength@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGoldenAgeLength
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221607
+	push	OFFSET $SG221649
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20487,7 +20487,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lVictoryDelay@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lVictoryDelay
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221608
+	push	OFFSET $SG221650
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20498,7 +20498,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetImprovementUpgradeTime@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetImprovementUpgradeTime
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221609
+	push	OFFSET $SG221651
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20510,7 +20510,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lCanTrainNukes@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lCanTrainNukes
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221610
+	push	OFFSET $SG221652
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20522,7 +20522,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetCurrentEra@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetCurrentEra
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221611
+	push	OFFSET $SG221653
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20534,7 +20534,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetDiploResponse@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetDiploResponse
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221612
+	push	OFFSET $SG221654
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20547,7 +20547,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetActiveTeam@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetActiveTeam
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221613
+	push	OFFSET $SG221655
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20558,7 +20558,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetActiveCivilizationType@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetActiveCivilizationType
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221614
+	push	OFFSET $SG221656
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20569,7 +20569,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsNetworkMultiPlayer@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsNetworkMultiPlayer
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221615
+	push	OFFSET $SG221657
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20581,7 +20581,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsGameMultiPlayer@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsGameMultiPlayer
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221616
+	push	OFFSET $SG221658
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20592,7 +20592,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsTeamGame@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsTeamGame
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221617
+	push	OFFSET $SG221659
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20604,7 +20604,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lReviveActivePlayer@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lReviveActivePlayer
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221618
+	push	OFFSET $SG221660
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20617,7 +20617,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetNumHumanPlayers@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetNumHumanPlayers
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221619
+	push	OFFSET $SG221661
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20628,7 +20628,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetNumSequentialHumans@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetNumSequentialHumans
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221620
+	push	OFFSET $SG221662
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20639,7 +20639,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetGameTurn@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetGameTurn
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221621
+	push	OFFSET $SG221663
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20651,7 +20651,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSetGameTurn@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSetGameTurn
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221622
+	push	OFFSET $SG221664
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20662,7 +20662,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetTurnYear@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetTurnYear
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221623
+	push	OFFSET $SG221665
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20673,7 +20673,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetGameTurnYear@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetGameTurnYear
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221624
+	push	OFFSET $SG221666
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20685,7 +20685,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetTurnString@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetTurnString
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221625
+	push	OFFSET $SG221667
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20697,7 +20697,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetElapsedGameTurns@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetElapsedGameTurns
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221626
+	push	OFFSET $SG221668
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20708,7 +20708,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetMaxTurns@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetMaxTurns
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221627
+	push	OFFSET $SG221669
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20720,7 +20720,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSetMaxTurns@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSetMaxTurns
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221628
+	push	OFFSET $SG221670
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20731,7 +20731,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lChangeMaxTurns@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lChangeMaxTurns
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221629
+	push	OFFSET $SG221671
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20742,7 +20742,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetMaxCityElimination@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetMaxCityElimination
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221630
+	push	OFFSET $SG221672
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20754,7 +20754,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSetMaxCityElimination@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSetMaxCityElimination
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221631
+	push	OFFSET $SG221673
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20765,7 +20765,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetNumAdvancedStartPoints@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetNumAdvancedStartPoints
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221632
+	push	OFFSET $SG221674
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20776,7 +20776,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSetNumAdvancedStartPoints@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSetNumAdvancedStartPoints
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221633
+	push	OFFSET $SG221675
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20788,7 +20788,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetStartTurn@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetStartTurn
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221634
+	push	OFFSET $SG221676
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20799,7 +20799,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetWinningTurn@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetWinningTurn
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221635
+	push	OFFSET $SG221677
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20810,7 +20810,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetStartYear@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetStartYear
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221636
+	push	OFFSET $SG221678
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20822,7 +20822,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSetStartYear@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSetStartYear
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221637
+	push	OFFSET $SG221679
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20833,7 +20833,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetEstimateEndTurn@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetEstimateEndTurn
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221638
+	push	OFFSET $SG221680
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20844,7 +20844,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSetEstimateEndTurn@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSetEstimateEndTurn
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221639
+	push	OFFSET $SG221681
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20856,7 +20856,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetTurnSlice@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetTurnSlice
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221640
+	push	OFFSET $SG221682
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20867,7 +20867,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetMinutesPlayed@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetMinutesPlayed
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221641
+	push	OFFSET $SG221683
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20878,7 +20878,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetTargetScore@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetTargetScore
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221642
+	push	OFFSET $SG221684
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20890,7 +20890,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSetTargetScore@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSetTargetScore
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221643
+	push	OFFSET $SG221685
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20902,7 +20902,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsStaticTutorialActive@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsStaticTutorialActive
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221644
+	push	OFFSET $SG221686
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20913,7 +20913,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSetStaticTutorialActive@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSetStaticTutorialActive
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221645
+	push	OFFSET $SG221687
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20925,7 +20925,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsEverRightClickMoved@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsEverRightClickMoved
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221646
+	push	OFFSET $SG221688
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20936,7 +20936,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSetEverRightClickMoved@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSetEverRightClickMoved
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221647
+	push	OFFSET $SG221689
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20948,7 +20948,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsTutorialLogging@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsTutorialLogging
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221648
+	push	OFFSET $SG221690
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20960,7 +20960,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsTutorialDebugging@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsTutorialDebugging
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221649
+	push	OFFSET $SG221691
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20971,7 +20971,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetTutorialLevel@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetTutorialLevel
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221650
+	push	OFFSET $SG221692
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20983,7 +20983,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lHasAdvisorMessageBeenSeen@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lHasAdvisorMessageBeenSeen
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221651
+	push	OFFSET $SG221693
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20995,7 +20995,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSetAdvisorMessageHasBeenSeen@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSetAdvisorMessageHasBeenSeen
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221652
+	push	OFFSET $SG221694
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21007,7 +21007,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSetAdvisorBadAttackInterrupt@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSetAdvisorBadAttackInterrupt
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221653
+	push	OFFSET $SG221695
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21018,7 +21018,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSetAdvisorCityAttackInterrupt@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSetAdvisorCityAttackInterrupt
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221654
+	push	OFFSET $SG221696
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21031,7 +21031,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetAllowRClickMovementWhileScrolling@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetAllowRClickMovementWhileScrolling
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221655
+	push	OFFSET $SG221697
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21043,7 +21043,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetNumGameTurnActive@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetNumGameTurnActive
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221656
+	push	OFFSET $SG221698
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21054,7 +21054,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lCountNumHumanGameTurnActive@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lCountNumHumanGameTurnActive
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221657
+	push	OFFSET $SG221699
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21066,7 +21066,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetNumCities@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetNumCities
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221658
+	push	OFFSET $SG221700
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21077,7 +21077,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetNumCivCities@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetNumCivCities
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221659
+	push	OFFSET $SG221701
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21088,7 +21088,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetTotalPopulation@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetTotalPopulation
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221660
+	push	OFFSET $SG221702
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21101,7 +21101,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetNoNukesCount@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetNoNukesCount
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221661
+	push	OFFSET $SG221703
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21112,7 +21112,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsNoNukes@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsNoNukes
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221662
+	push	OFFSET $SG221704
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21123,7 +21123,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lChangeNoNukesCount@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lChangeNoNukesCount
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221663
+	push	OFFSET $SG221705
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21135,7 +21135,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetNukesExploded@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetNukesExploded
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221664
+	push	OFFSET $SG221706
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21146,7 +21146,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lChangeNukesExploded@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lChangeNukesExploded
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221665
+	push	OFFSET $SG221707
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21158,7 +21158,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetMaxPopulation@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetMaxPopulation
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221666
+	push	OFFSET $SG221708
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21170,7 +21170,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetInitPopulation@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetInitPopulation
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221667
+	push	OFFSET $SG221709
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21181,7 +21181,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetInitLand@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetInitLand
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221668
+	push	OFFSET $SG221710
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21192,7 +21192,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetInitTech@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetInitTech
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221669
+	push	OFFSET $SG221711
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21204,7 +21204,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetInitWonders@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetInitWonders
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221670
+	push	OFFSET $SG221712
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21215,7 +21215,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetNumWorldWonders@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetNumWorldWonders
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221671
+	push	OFFSET $SG221713
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21227,7 +21227,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetAIAutoPlay@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetAIAutoPlay
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221672
+	push	OFFSET $SG221714
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21239,7 +21239,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSetAIAutoPlay@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSetAIAutoPlay
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221673
+	push	OFFSET $SG221715
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21251,7 +21251,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsScoreDirty@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsScoreDirty
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221674
+	push	OFFSET $SG221716
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21262,7 +21262,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSetScoreDirty@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSetScoreDirty
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221675
+	push	OFFSET $SG221717
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21274,7 +21274,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsCircumnavigated@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsCircumnavigated
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221676
+	push	OFFSET $SG221718
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21285,7 +21285,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lMakeCircumnavigated@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lMakeCircumnavigated
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221677
+	push	OFFSET $SG221719
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21297,7 +21297,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lDoFromUIDiploEvent@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lDoFromUIDiploEvent
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221678
+	push	OFFSET $SG221720
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21310,7 +21310,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsDebugMode@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsDebugMode
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221679
+	push	OFFSET $SG221721
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21321,7 +21321,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSetDebugMode@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSetDebugMode
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221680
+	push	OFFSET $SG221722
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21332,7 +21332,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lToggleDebugMode@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lToggleDebugMode
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221681
+	push	OFFSET $SG221723
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21344,7 +21344,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lUpdateFOW@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lUpdateFOW
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221682
+	push	OFFSET $SG221724
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21356,7 +21356,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetPitbossTurnTime@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetPitbossTurnTime
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221683
+	push	OFFSET $SG221725
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21367,7 +21367,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSetPitbossTurnTime@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSetPitbossTurnTime
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221684
+	push	OFFSET $SG221726
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21379,7 +21379,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsHotSeat@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsHotSeat
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221685
+	push	OFFSET $SG221727
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21390,7 +21390,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsPbem@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsPbem
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221686
+	push	OFFSET $SG221728
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21401,7 +21401,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsPitboss@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsPitboss
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221687
+	push	OFFSET $SG221729
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21413,7 +21413,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsSimultaneousTeamTurns@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsSimultaneousTeamTurns
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221688
+	push	OFFSET $SG221730
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21425,7 +21425,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsFinalInitialized@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsFinalInitialized
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221689
+	push	OFFSET $SG221731
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21437,7 +21437,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetActivePlayer@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetActivePlayer
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221690
+	push	OFFSET $SG221732
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21449,7 +21449,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSetActivePlayer@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSetActivePlayer
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221691
+	push	OFFSET $SG221733
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21460,7 +21460,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetPausePlayer@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetPausePlayer
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221692
+	push	OFFSET $SG221734
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21471,7 +21471,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSetPausePlayer@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSetPausePlayer
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221693
+	push	OFFSET $SG221735
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21483,7 +21483,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsPaused@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsPaused
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221694
+	push	OFFSET $SG221736
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21494,7 +21494,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetBestLandUnit@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetBestLandUnit
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221695
+	push	OFFSET $SG221737
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21505,7 +21505,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetBestLandUnitCombat@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetBestLandUnitCombat
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221696
+	push	OFFSET $SG221738
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21518,7 +21518,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetFaithCost@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetFaithCost
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221697
+	push	OFFSET $SG221739
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21530,7 +21530,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetWinner@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetWinner
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221698
+	push	OFFSET $SG221740
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21541,7 +21541,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetVictory@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetVictory
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221699
+	push	OFFSET $SG221741
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21553,7 +21553,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSetWinner@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSetWinner
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221700
+	push	OFFSET $SG221742
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21564,7 +21564,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetGameState@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetGameState
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221701
+	push	OFFSET $SG221743
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21575,7 +21575,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSetGameState@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSetGameState
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221702
+	push	OFFSET $SG221744
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21588,7 +21588,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetVotesNeededForDiploVictory@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetVotesNeededForDiploVictory
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221703
+	push	OFFSET $SG221745
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21599,7 +21599,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsUnitedNationsActive@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsUnitedNationsActive
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221704
+	push	OFFSET $SG221746
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21611,7 +21611,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetNumVictoryVotesTallied@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetNumVictoryVotesTallied
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221705
+	push	OFFSET $SG221747
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21623,7 +21623,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetVoteCast@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetVoteCast
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221706
+	push	OFFSET $SG221748
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21634,7 +21634,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetPreviousVoteCast@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetPreviousVoteCast
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221707
+	push	OFFSET $SG221749
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21645,7 +21645,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetNumVotesForTeam@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetNumVotesForTeam
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221708
+	push	OFFSET $SG221750
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21657,7 +21657,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSetNumVotesForTeam@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSetNumVotesForTeam
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221709
+	push	OFFSET $SG221751
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21668,7 +21668,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lChangeNumVotesForTeam@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lChangeNumVotesForTeam
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221710
+	push	OFFSET $SG221752
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21680,7 +21680,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetHandicapType@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetHandicapType
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221711
+	push	OFFSET $SG221753
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21692,7 +21692,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetCalendar@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetCalendar
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221712
+	push	OFFSET $SG221754
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21703,7 +21703,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetStartEra@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetStartEra
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221713
+	push	OFFSET $SG221755
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21714,7 +21714,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetGameSpeedType@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetGameSpeedType
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221714
+	push	OFFSET $SG221756
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21726,7 +21726,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetRankPlayer@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetRankPlayer
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221715
+	push	OFFSET $SG221757
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21737,7 +21737,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetPlayerRank@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetPlayerRank
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221716
+	push	OFFSET $SG221758
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21748,7 +21748,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetPlayerScore@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetPlayerScore
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221717
+	push	OFFSET $SG221759
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21760,7 +21760,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetRankTeam@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetRankTeam
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221718
+	push	OFFSET $SG221760
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21771,7 +21771,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetTeamRank@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetTeamRank
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221719
+	push	OFFSET $SG221761
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21782,7 +21782,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetTeamScore@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetTeamScore
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221720
+	push	OFFSET $SG221762
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21794,7 +21794,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsOption@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsOption
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221721
+	push	OFFSET $SG221763
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21805,7 +21805,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSetOption@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSetOption
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221722
+	push	OFFSET $SG221764
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21816,7 +21816,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsMPOption@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsMPOption
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221723
+	push	OFFSET $SG221765
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21828,7 +21828,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetUnitCreatedCount@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetUnitCreatedCount
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221724
+	push	OFFSET $SG221766
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21839,7 +21839,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetUnitClassCreatedCount@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetUnitClassCreatedCount
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221725
+	push	OFFSET $SG221767
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21850,7 +21850,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsUnitClassMaxedOut@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsUnitClassMaxedOut
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221726
+	push	OFFSET $SG221768
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21862,7 +21862,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetBuildingClassCreatedCount@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetBuildingClassCreatedCount
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221727
+	push	OFFSET $SG221769
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21873,7 +21873,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsBuildingClassMaxedOut@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsBuildingClassMaxedOut
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221728
+	push	OFFSET $SG221770
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21885,7 +21885,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetProjectCreatedCount@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetProjectCreatedCount
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221729
+	push	OFFSET $SG221771
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21897,7 +21897,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsProjectMaxedOut@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsProjectMaxedOut
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221730
+	push	OFFSET $SG221772
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21909,7 +21909,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsVictoryValid@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsVictoryValid
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221731
+	push	OFFSET $SG221773
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21920,7 +21920,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSetVictoryValid@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSetVictoryValid
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221732
+	push	OFFSET $SG221774
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21932,7 +21932,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsSpecialUnitValid@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsSpecialUnitValid
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221733
+	push	OFFSET $SG221775
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21943,7 +21943,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lMakeSpecialUnitValid@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lMakeSpecialUnitValid
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221734
+	push	OFFSET $SG221776
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21954,7 +21954,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsNukesValid@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsNukesValid
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221735
+	push	OFFSET $SG221777
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21966,7 +21966,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lMakeNukesValid@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lMakeNukesValid
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221736
+	push	OFFSET $SG221778
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21977,7 +21977,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsInAdvancedStart@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsInAdvancedStart
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221737
+	push	OFFSET $SG221779
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21989,7 +21989,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSetName@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSetName
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221738
+	push	OFFSET $SG221780
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22001,7 +22001,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetName@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetName
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221739
+	push	OFFSET $SG221781
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22012,7 +22012,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lRand@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lRand
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221740
+	push	OFFSET $SG221782
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22023,7 +22023,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lCalculateSyncChecksum@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lCalculateSyncChecksum
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221741
+	push	OFFSET $SG221783
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22035,7 +22035,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lCalculateOptionsChecksum@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lCalculateOptionsChecksum
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221742
+	push	OFFSET $SG221784
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22047,7 +22047,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetReplayMessage@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetReplayMessage
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221743
+	push	OFFSET $SG221785
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22058,7 +22058,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetReplayMessages@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetReplayMessages
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221744
+	push	OFFSET $SG221786
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22070,7 +22070,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetNumReplayMessages@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetNumReplayMessages
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221745
+	push	OFFSET $SG221787
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22081,7 +22081,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetReplayInfo@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetReplayInfo
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221746
+	push	OFFSET $SG221788
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22093,7 +22093,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSaveReplay@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSaveReplay
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221747
+	push	OFFSET $SG221789
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22106,7 +22106,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lAddPlayer@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lAddPlayer
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221748
+	push	OFFSET $SG221790
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22118,7 +22118,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSetPlotExtraYield@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSetPlotExtraYield
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221749
+	push	OFFSET $SG221791
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22129,7 +22129,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lChangePlotExtraCost@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lChangePlotExtraCost
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221750
+	push	OFFSET $SG221792
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22142,7 +22142,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsCivEverActive@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsCivEverActive
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221751
+	push	OFFSET $SG221793
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22153,7 +22153,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsLeaderEverActive@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsLeaderEverActive
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221752
+	push	OFFSET $SG221794
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22164,7 +22164,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsUnitEverActive@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsUnitEverActive
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221753
+	push	OFFSET $SG221795
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22176,7 +22176,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsBuildingEverActive@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsBuildingEverActive
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221754
+	push	OFFSET $SG221796
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22188,7 +22188,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lCanDoControl@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lCanDoControl
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221755
+	push	OFFSET $SG221797
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22199,7 +22199,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lDoControl@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lDoControl
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221756
+	push	OFFSET $SG221798
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22212,7 +22212,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lDoMinorPledgeProtection@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lDoMinorPledgeProtection
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221757
+	push	OFFSET $SG221799
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22223,7 +22223,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lDoMinorGoldGift@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lDoMinorGoldGift
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221758
+	push	OFFSET $SG221800
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22234,7 +22234,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lDoMinorGiftGold@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lDoMinorGiftGold
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221759
+	push	OFFSET $SG221801
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22246,7 +22246,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lDoMinorGiftTileImprovement@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lDoMinorGiftTileImprovement
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221760
+	push	OFFSET $SG221802
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22257,7 +22257,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lDoMinorBullyGold@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lDoMinorBullyGold
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221761
+	push	OFFSET $SG221803
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22268,7 +22268,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lDoMinorBullyUnit@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lDoMinorBullyUnit
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221762
+	push	OFFSET $SG221804
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22280,7 +22280,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lDoMinorBuyout@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lDoMinorBuyout
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221763
+	push	OFFSET $SG221805
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22292,7 +22292,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetBestWondersPlayer@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetBestWondersPlayer
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221764
+	push	OFFSET $SG221806
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22303,7 +22303,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetBestPoliciesPlayer@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetBestPoliciesPlayer
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221765
+	push	OFFSET $SG221807
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22315,7 +22315,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetBestGreatPeoplePlayer@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetBestGreatPeoplePlayer
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221766
+	push	OFFSET $SG221808
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22327,7 +22327,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsEverAttackedTutorial@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsEverAttackedTutorial
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221767
+	push	OFFSET $SG221809
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22339,7 +22339,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGameplayDiplomacyAILeaderMessage@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGameplayDiplomacyAILeaderMessage
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221768
+	push	OFFSET $SG221810
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22352,7 +22352,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetResourceUsageType@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetResourceUsageType
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221769
+	push	OFFSET $SG221811
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22364,7 +22364,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetNumResourceRequiredForUnit@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetNumResourceRequiredForUnit
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221770
+	push	OFFSET $SG221812
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22375,7 +22375,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetNumResourceRequiredForBuilding@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetNumResourceRequiredForBuilding
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221771
+	push	OFFSET $SG221813
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22388,7 +22388,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsCombatWarned@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsCombatWarned
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221772
+	push	OFFSET $SG221814
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22399,7 +22399,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSetCombatWarned@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSetCombatWarned
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221773
+	push	OFFSET $SG221815
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22411,7 +22411,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetAdvisorCounsel@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetAdvisorCounsel
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221774
+	push	OFFSET $SG221816
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22423,7 +22423,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSetAdvisorRecommenderCity@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSetAdvisorRecommenderCity
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221775
+	push	OFFSET $SG221817
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22435,7 +22435,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsUnitRecommended@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsUnitRecommended
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221776
+	push	OFFSET $SG221818
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22446,7 +22446,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsBuildingRecommended@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsBuildingRecommended
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221777
+	push	OFFSET $SG221819
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22458,7 +22458,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsProjectRecommended@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsProjectRecommended
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221778
+	push	OFFSET $SG221820
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22470,7 +22470,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSetAdvisorRecommenderTech@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSetAdvisorRecommenderTech
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221779
+	push	OFFSET $SG221821
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22481,7 +22481,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsTechRecommended@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsTechRecommended
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221780
+	push	OFFSET $SG221822
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22494,7 +22494,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetVariableCitySizeFromPopulation@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetVariableCitySizeFromPopulation
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221781
+	push	OFFSET $SG221823
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22506,7 +22506,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetResearchAgreementCost@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetResearchAgreementCost
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221782
+	push	OFFSET $SG221824
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22518,7 +22518,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetCustomOption@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetCustomOption
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221783
+	push	OFFSET $SG221825
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22531,7 +22531,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetNumCitiesPolicyCostMod@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetNumCitiesPolicyCostMod
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221784
+	push	OFFSET $SG221826
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22542,7 +22542,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetNumCitiesTechCostMod@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetNumCitiesTechCostMod
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221785
+	push	OFFSET $SG221827
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22554,7 +22554,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetBuildingYieldChange@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetBuildingYieldChange
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221786
+	push	OFFSET $SG221828
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22566,7 +22566,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetBuildingYieldModifier@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetBuildingYieldModifier
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221787
+	push	OFFSET $SG221829
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22578,7 +22578,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetWorldNumCitiesUnhappinessPercent@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetWorldNumCitiesUnhappinessPercent
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221788
+	push	OFFSET $SG221830
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22590,7 +22590,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetDealDuration@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetDealDuration
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221789
+	push	OFFSET $SG221831
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22602,7 +22602,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetPeaceDuration@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetPeaceDuration
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221790
+	push	OFFSET $SG221832
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22614,7 +22614,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetUnitUpgradesTo@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetUnitUpgradesTo
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221791
+	push	OFFSET $SG221833
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22626,7 +22626,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetCombatPrediction@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetCombatPrediction
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221792
+	push	OFFSET $SG221834
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22639,7 +22639,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetTimeString@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetTimeString
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221793
+	push	OFFSET $SG221835
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22651,7 +22651,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetMinimumFaithNextPantheon@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetMinimumFaithNextPantheon
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221794
+	push	OFFSET $SG221836
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22662,7 +22662,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSetMinimumFaithNextPantheon@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSetMinimumFaithNextPantheon
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221795
+	push	OFFSET $SG221837
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22675,7 +22675,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetAvailablePantheonBeliefs@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetAvailablePantheonBeliefs
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221796
+	push	OFFSET $SG221838
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22686,7 +22686,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetAvailableFounderBeliefs@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetAvailableFounderBeliefs
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221797
+	push	OFFSET $SG221839
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22697,7 +22697,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetAvailableFollowerBeliefs@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetAvailableFollowerBeliefs
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221798
+	push	OFFSET $SG221840
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22709,7 +22709,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetAvailableEnhancerBeliefs@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetAvailableEnhancerBeliefs
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221799
+	push	OFFSET $SG221841
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22720,7 +22720,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetAvailableBonusBeliefs@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetAvailableBonusBeliefs
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221800
+	push	OFFSET $SG221842
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22731,7 +22731,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetAvailableReformationBeliefs@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetAvailableReformationBeliefs
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221801
+	push	OFFSET $SG221843
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22744,7 +22744,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetNumFollowers@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetNumFollowers
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221802
+	push	OFFSET $SG221844
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22755,7 +22755,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetNumCitiesFollowing@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetNumCitiesFollowing
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221803
+	push	OFFSET $SG221845
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22767,7 +22767,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetBeliefsInReligion@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetBeliefsInReligion
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221804
+	push	OFFSET $SG221846
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22779,7 +22779,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetNumReligionsStillToFound@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetNumReligionsStillToFound
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221805
+	push	OFFSET $SG221847
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22790,7 +22790,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetNumReligionsFounded@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetNumReligionsFounded
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221806
+	push	OFFSET $SG221848
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22801,7 +22801,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetHolyCityForReligion@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetHolyCityForReligion
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221807
+	push	OFFSET $SG221849
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22813,7 +22813,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetReligionName@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetReligionName
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221808
+	push	OFFSET $SG221850
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22824,7 +22824,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetFounderBenefitsReligion@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetFounderBenefitsReligion
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221809
+	push	OFFSET $SG221851
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22836,7 +22836,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lFoundPantheon@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lFoundPantheon
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221810
+	push	OFFSET $SG221852
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22848,7 +22848,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lFoundReligion@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lFoundReligion
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221811
+	push	OFFSET $SG221853
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22859,7 +22859,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lEnhanceReligion@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lEnhanceReligion
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221812
+	push	OFFSET $SG221854
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22870,7 +22870,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSetHolyCity@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSetHolyCity
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221813
+	push	OFFSET $SG221855
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22882,7 +22882,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetFounder@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetFounder
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221814
+	push	OFFSET $SG221856
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22893,7 +22893,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSetFounder@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSetFounder
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221815
+	push	OFFSET $SG221857
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22905,7 +22905,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetTurnsBetweenMinorCivElections@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetTurnsBetweenMinorCivElections
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221816
+	push	OFFSET $SG221858
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22917,7 +22917,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetTurnsUntilMinorCivElection@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetTurnsUntilMinorCivElection
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221817
+	push	OFFSET $SG221859
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22929,7 +22929,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetNumActiveLeagues@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetNumActiveLeagues
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221818
+	push	OFFSET $SG221860
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22940,7 +22940,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetNumLeaguesEverFounded@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetNumLeaguesEverFounded
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221819
+	push	OFFSET $SG221861
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22952,7 +22952,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetLeague@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetLeague
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221820
+	push	OFFSET $SG221862
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22963,7 +22963,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetActiveLeague@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetActiveLeague
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221821
+	push	OFFSET $SG221863
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22975,7 +22975,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsProcessingMessages@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsProcessingMessages
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221822
+	push	OFFSET $SG221864
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22988,7 +22988,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetGreatWorkTooltip@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetGreatWorkTooltip
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221823
+	push	OFFSET $SG221865
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22999,7 +22999,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetGreatWorkName@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetGreatWorkName
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221824
+	push	OFFSET $SG221866
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -23010,7 +23010,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetGreatWorkType@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetGreatWorkType
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221825
+	push	OFFSET $SG221867
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -23022,7 +23022,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetGreatWorkClass@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetGreatWorkClass
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221826
+	push	OFFSET $SG221868
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -23033,7 +23033,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetGreatWorkArtist@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetGreatWorkArtist
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221827
+	push	OFFSET $SG221869
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -23044,7 +23044,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetGreatWorkEra@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetGreatWorkEra
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221828
+	push	OFFSET $SG221870
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -23056,7 +23056,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetGreatWorkEraAbbreviation@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetGreatWorkEraAbbreviation
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221829
+	push	OFFSET $SG221871
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -23067,7 +23067,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetGreatWorkEraShort@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetGreatWorkEraShort
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221830
+	push	OFFSET $SG221872
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -23078,7 +23078,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetGreatWorkCreator@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetGreatWorkCreator
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221831
+	push	OFFSET $SG221873
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -23090,7 +23090,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetGreatWorkController@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetGreatWorkController
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221832
+	push	OFFSET $SG221874
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -23101,7 +23101,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetGreatWorkCurrentThemingBonus@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetGreatWorkCurrentThemingBonus
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221833
+	push	OFFSET $SG221875
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -23112,7 +23112,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetArtifactName@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetArtifactName
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221834
+	push	OFFSET $SG221876
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -23125,7 +23125,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetNumFreePolicies@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetNumFreePolicies
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221835
+	push	OFFSET $SG221877
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -23137,7 +23137,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetLongestCityConnectionPlots@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetLongestCityConnectionPlots
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221836
+	push	OFFSET $SG221878
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -23149,7 +23149,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSelectedUnit_SpeculativePopupTradeRoute_Display@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSelectedUnit_SpeculativePopupTradeRoute_Display
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221837
+	push	OFFSET $SG221879
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -23161,7 +23161,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSelectedUnit_SpeculativePopupTradeRoute_Hide@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSelectedUnit_SpeculativePopupTradeRoute_Hide
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221838
+	push	OFFSET $SG221880
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -23172,7 +23172,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lMouseoverUnit@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lMouseoverUnit
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221839
+	push	OFFSET $SG221881
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -23184,7 +23184,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetNumArchaeologySites@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetNumArchaeologySites
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221840
+	push	OFFSET $SG221882
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -23196,7 +23196,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetNumHiddenArchaeologySites@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetNumHiddenArchaeologySites
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221841
+	push	OFFSET $SG221883
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield

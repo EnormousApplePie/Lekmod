@@ -102,6 +102,11 @@ public:
 	int GetFreeUnitClassType() const;
 	int GetNaturalWonderFirstFinderGold() const;
 	int GetNaturalWonderSubsequentFinderGold() const;
+
+	//EAP: Natural Wonder finder faith
+	int GetNaturalWonderFirstFinderFaith() const;
+	int GetNaturalWonderSubsequentFinderFaith() const;
+
 	int GetNaturalWonderYieldModifier() const;
 	int GetNaturalWonderHappinessModifier() const;
 	int GetNearbyImprovementCombatBonus() const;
@@ -194,6 +199,10 @@ public:
 	int GetMaintenanceModifierUnitCombat(const int unitCombatID) const;
 	int GetImprovementYieldChanges(ImprovementTypes eIndex1, YieldTypes eIndex2) const;
 	int GetSpecialistYieldChanges(SpecialistTypes eIndex1, YieldTypes eIndex2) const;
+#ifdef LEK_TRAIT_SPECIALIST_YIELD_MAX_ONE
+	int GetAnySpecificSpecialistYieldChanges(SpecialistTypes eIndex1, YieldTypes eIndex2) const;
+#endif
+
 	int GetUnimprovedFeatureYieldChanges(FeatureTypes eIndex1, YieldTypes eIndex2) const;
 	FreeResourceXCities GetFreeResourceXCities(ResourceTypes eResource) const;
 
@@ -202,6 +211,9 @@ public:
 	bool IsEnabledByTech(TeamTypes eTeam);
 
 	bool NoTrain(UnitClassTypes eUnitClassType);
+
+	//EAP: No build
+	bool NoBuild(ImprovementTypes eImprovementType);
 
 	virtual bool CacheResults(Database::Results& kResults, CvDatabaseUtility& kUtility);
 
@@ -258,6 +270,11 @@ protected:
 	int m_iFreeUnitClassType;
 	int m_iNaturalWonderFirstFinderGold;
 	int m_iNaturalWonderSubsequentFinderGold;
+
+	//EAP: Natural wonder faith for the finder
+	int m_iNaturalWonderFirstFinderFaith;
+	int m_iNaturalWonderSubsequentFinderFaith;
+
 	int m_iNaturalWonderYieldModifier;
 	int m_iNaturalWonderHappinessModifier;
 	int m_iNearbyImprovementCombatBonus;
@@ -347,12 +364,19 @@ protected:
 #else
 	int** m_ppiImprovementYieldChanges;
 	int** m_ppiSpecialistYieldChanges;
+#ifdef LEK_TRAIT_SPECIALIST_YIELD_MAX_ONE
+	int** m_ppiAnySpecificSpecialistYieldChanges;
+#endif
+
 	int** m_ppiUnimprovedFeatureYieldChanges;
 #endif
 
 	std::multimap<int, int> m_FreePromotionUnitCombats;
 	std::vector<FreeResourceXCities> m_aFreeResourceXCities;
 	std::vector<bool> m_abNoTrainUnitClass;
+
+	//EAP: No build
+	std::vector<bool> m_abNoBuildImprovement;
 
 private:
 	CvTraitEntry(const CvTraitEntry&);
@@ -594,6 +618,19 @@ public:
 	{
 		return m_iNaturalWonderSubsequentFinderGold;
 	};
+
+	//EAP Faith for the natural wonder finder
+
+	int GetNaturalWonderFirstFinderFaith() const
+	{
+		return m_iNaturalWonderFirstFinderFaith;
+	};
+	int GetNaturalWonderSubsequentFinderFaith() const
+	{
+		return m_iNaturalWonderSubsequentFinderFaith;
+	};
+
+
 	int GetNaturalWonderYieldModifier() const
 	{
 		return m_iNaturalWonderYieldModifier;
@@ -872,6 +909,9 @@ public:
 	int GetMaintenanceModifierUnitCombat(const int unitCombatID) const;
 	int GetImprovementYieldChange(ImprovementTypes eImprovement, YieldTypes eYield) const;
 	int GetSpecialistYieldChange(SpecialistTypes eSpecialist, YieldTypes eYield) const;
+#ifdef LEK_TRAIT_SPECIALIST_YIELD_MAX_ONE	
+	int GetAnySpecificSpecialistYieldChange(SpecialistTypes eSpecialist, YieldTypes eYield) const;
+#endif
 	int GetUnimprovedFeatureYieldChange(FeatureTypes eFeature, YieldTypes eYield) const;
 	FreeResourceXCities GetFreeResourceXCities(ResourceTypes eResource) const;
 
@@ -909,6 +949,9 @@ public:
 	bool IsAbleToCrossMountains() const;
 
 	bool NoTrain(UnitClassTypes eUnitClassType);
+
+	//EAP: No build
+	bool NoBuild(ImprovementTypes eImprovementType);
 
 	// Maya calendar routines
 	bool IsUsingMayaCalendar() const;
@@ -986,6 +1029,13 @@ private:
 	int m_iNaturalWonderFirstFinderGold;
 	int m_iNaturalWonderSubsequentFinderGold;
 	int m_iNaturalWonderYieldModifier;
+
+	//EAP: Natural wonder faith for the finder
+	int m_iNaturalWonderFirstFinderFaith;
+	int m_iNaturalWonderSubsequentFinderFaith;
+	
+
+
 	int m_iNaturalWonderHappinessModifier;
 	int m_iNearbyImprovementCombatBonus;
 	int m_iNearbyImprovementBonusRange;
@@ -1067,6 +1117,9 @@ private:
 	int m_iStrategicResourceQuantityModifier[NUM_TERRAIN_TYPES];
 	std::vector<int> m_aiResourceQuantityModifier;
 	std::vector<bool> m_abNoTrain;
+	//EAP: No build
+	std::vector<bool> m_abNoBuild;
+
 	FStaticVector<FreeTraitUnit, SAFE_ESTIMATE_NUM_FREE_UNITS, true, c_eCiv5GameplayDLL, 0> m_aFreeTraitUnits;
 	std::vector<int> m_aUniqueLuxuryAreas;
 
@@ -1084,6 +1137,10 @@ private:
 
 	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_ppaaiImprovementYieldChange;
 	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_ppaaiSpecialistYieldChange;
+#ifdef LEK_TRAIT_SPECIALIST_YIELD_MAX_ONE
+	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_ppaaiAnySpecificSpecialistYieldChange;
+#endif
+
 	std::vector< Firaxis::Array<int, NUM_YIELD_TYPES > > m_ppaaiUnimprovedFeatureYieldChange;
 
 	std::vector<FreeResourceXCities> m_aFreeResourceXCities;

@@ -10,7 +10,7 @@ INCLUDELIB MSVCRT
 INCLUDELIB OLDNAMES
 
 CONST	SEGMENT
-$SG217619 DB	'Minor Civ Quest: Gift Unit - Adding random weight to Uni'
+$SG217661 DB	'Minor Civ Quest: Gift Unit - Adding random weight to Uni'
 	DB	't Chosen', 00H
 CONST	ENDS
 PUBLIC	?AreUnitsSameType@CvGameQueries@@SA_NW4UnitTypes@@0@Z ; CvGameQueries::AreUnitsSameType
@@ -23,7 +23,7 @@ EXTRN	?gGlobals@@3VCvGlobals@@A:BYTE			; gGlobals
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredll_expansion2\cvgamequeries.cpp
 ;	COMDAT ?AreUnitsSameType@CvGameQueries@@SA_NW4UnitTypes@@0@Z
 _TEXT	SEGMENT
-_bUnit1Combat$217684 = -1				; size = 1
+_bUnit1Combat$217726 = -1				; size = 1
 _eFirstUnitType$ = 8					; size = 4
 _eSecondUnitType$ = 12					; size = 4
 ?AreUnitsSameType@CvGameQueries@@SA_NW4UnitTypes@@0@Z PROC ; CvGameQueries::AreUnitsSameType, COMDAT
@@ -132,7 +132,7 @@ $LN6@AreUnitsSa:
 ; 243  : 		if(pkFirstUnitInfo->GetCombat() > 0 || pkFirstUnitInfo->GetRange() > 0)
 
 	mov	ecx, edi
-	mov	BYTE PTR _bUnit1Combat$217684[esp+20], bl
+	mov	BYTE PTR _bUnit1Combat$217726[esp+20], bl
 	call	?GetCombat@CvUnitEntry@@QBEHXZ		; CvUnitEntry::GetCombat
 	test	eax, eax
 	jg	SHORT $LN4@AreUnitsSa
@@ -145,7 +145,7 @@ $LN4@AreUnitsSa:
 ; 244  : 		{
 ; 245  : 			bUnit1Combat = true;
 
-	mov	BYTE PTR _bUnit1Combat$217684[esp+20], 1
+	mov	BYTE PTR _bUnit1Combat$217726[esp+20], 1
 $LN5@AreUnitsSa:
 
 ; 246  : 		}
@@ -174,7 +174,7 @@ $LN3@AreUnitsSa:
 ; 254  : 		// Looped unit matches combat or non-combat type?
 ; 255  : 		if(bUnit1Combat == bUnit2Combat)
 
-	cmp	BYTE PTR _bUnit1Combat$217684[esp+20], bl
+	cmp	BYTE PTR _bUnit1Combat$217726[esp+20], bl
 	jne	SHORT $LN1@AreUnitsSa
 	pop	esi
 	pop	edi
@@ -826,7 +826,7 @@ _eTeam$ = 8						; size = 4
 ; 31   : 		return m_aTeams[eTeam];
 
 	mov	eax, DWORD PTR _eTeam$[esp-4]
-	imul	eax, 2980				; 00000ba4H
+	imul	eax, 2984				; 00000ba8H
 	add	eax, DWORD PTR ?m_aTeams@CvTeam@@1PAV1@A ; CvTeam::m_aTeams
 
 ; 32   : 	}
@@ -1385,12 +1385,12 @@ PUBLIC	?GetTeamClosenessScore@CvGameQueries@@SAHPAPAHPAH@Z ; CvGameQueries::GetT
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredll_expansion2\cvgamequeries.cpp
 ;	COMDAT ?GetTeamClosenessScore@CvGameQueries@@SAHPAPAHPAH@Z
 _TEXT	SEGMENT
-_iNumEdges$217641 = -24					; size = 4
-_iTeamTotalDist$217640 = -20				; size = 4
+_iNumEdges$217683 = -24					; size = 4
+_iTeamTotalDist$217682 = -20				; size = 4
 tv470 = -16						; size = 4
 _iScore$ = -12						; size = 4
 tv429 = -8						; size = 4
-_iTeam$217634 = -4					; size = 4
+_iTeam$217676 = -4					; size = 4
 _aaiDistances$ = 8					; size = 4
 _aiStartingLocs$ = 12					; size = 4
 ?GetTeamClosenessScore@CvGameQueries@@SAHPAPAHPAH@Z PROC ; CvGameQueries::GetTeamClosenessScore, COMDAT
@@ -1414,7 +1414,7 @@ _aiStartingLocs$ = 12					; size = 4
 ; 148  : 
 ; 149  : 	for(int iTeam = 0; iTeam < MAX_CIV_TEAMS; iTeam++)
 
-	mov	DWORD PTR _iTeam$217634[esp+40], ebx
+	mov	DWORD PTR _iTeam$217676[esp+40], ebx
 	mov	DWORD PTR tv470[esp+40], eax
 $LL62@GetTeamClo:
 
@@ -1431,11 +1431,11 @@ $LL62@GetTeamClo:
 
 	mov	eax, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	add	eax, 44					; 0000002cH
-	mov	DWORD PTR _iTeamTotalDist$217640[esp+40], edi
+	mov	DWORD PTR _iTeamTotalDist$217682[esp+40], edi
 
 ; 154  : 			int iNumEdges = 0;
 
-	mov	DWORD PTR _iNumEdges$217641[esp+40], edi
+	mov	DWORD PTR _iNumEdges$217683[esp+40], edi
 	mov	DWORD PTR tv429[esp+40], eax
 $LL60@GetTeamClo:
 
@@ -1497,7 +1497,7 @@ $LN49@GetTeamClo:
 ; 168  : 								int iOtherPlayerStart = aiStartingLocs[iOtherPlayer];
 
 	mov	edx, DWORD PTR [ebp+esi*4]
-	inc	DWORD PTR _iNumEdges$217641[esp+40]
+	inc	DWORD PTR _iNumEdges$217683[esp+40]
 
 ; 169  : 
 ; 170  : 								if(iPlayerStart < iOtherPlayerStart)  // Make sure that iPlayerStart > iOtherPlayerStart
@@ -1529,8 +1529,8 @@ $LN5@GetTeamClo:
 	mov	ebx, DWORD PTR _aaiDistances$[esp+36]
 	mov	ecx, DWORD PTR [ebx+ecx*4]
 	mov	edx, DWORD PTR [ecx+edx*4]
-	add	DWORD PTR _iTeamTotalDist$217640[esp+40], edx
-	mov	ebx, DWORD PTR _iTeam$217634[esp+40]
+	add	DWORD PTR _iTeamTotalDist$217682[esp+40], edx
+	mov	ebx, DWORD PTR _iTeam$217676[esp+40]
 $LN8@GetTeamClo:
 	inc	esi
 	add	eax, 63236				; 0000f704H
@@ -1560,7 +1560,7 @@ $LN13@GetTeamClo:
 ; 187  : 			int iTeamScore;
 ; 188  : 			if(iNumEdges == 0)
 
-	cmp	DWORD PTR _iNumEdges$217641[esp+40], 0
+	cmp	DWORD PTR _iNumEdges$217683[esp+40], 0
 	jne	SHORT $LN2@GetTeamClo
 
 ; 189  : 			{
@@ -1577,9 +1577,9 @@ $LN2@GetTeamClo:
 ; 193  : 			{
 ; 194  : 				iTeamScore = iTeamTotalDist/iNumEdges; // the avg distance between team edges is the team score
 
-	mov	eax, DWORD PTR _iTeamTotalDist$217640[esp+40]
+	mov	eax, DWORD PTR _iTeamTotalDist$217682[esp+40]
 	cdq
-	idiv	DWORD PTR _iNumEdges$217641[esp+40]
+	idiv	DWORD PTR _iNumEdges$217683[esp+40]
 $LN1@GetTeamClo:
 
 ; 195  : 			}
@@ -1592,10 +1592,10 @@ $LN17@GetTeamClo:
 ; 148  : 
 ; 149  : 	for(int iTeam = 0; iTeam < MAX_CIV_TEAMS; iTeam++)
 
-	add	DWORD PTR tv470[esp+40], 2980		; 00000ba4H
+	add	DWORD PTR tv470[esp+40], 2984		; 00000ba8H
 	inc	ebx
 	cmp	ebx, 63					; 0000003fH
-	mov	DWORD PTR _iTeam$217634[esp+40], ebx
+	mov	DWORD PTR _iTeam$217676[esp+40], ebx
 	jl	$LL62@GetTeamClo
 
 ; 198  : 		}
@@ -2210,9 +2210,9 @@ PUBLIC	??$_Unguarded_partition@PAUWeightedElement@?$CvWeightedVector@H$0FK@$00@@
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\algorithm
 ;	COMDAT ??$_Unguarded_partition@PAUWeightedElement@?$CvWeightedVector@H$0FK@$00@@@std@@YA?AU?$pair@PAUWeightedElement@?$CvWeightedVector@H$0FK@$00@@PAU12@@0@PAUWeightedElement@?$CvWeightedVector@H$0FK@$00@@0@Z
 _TEXT	SEGMENT
-__Tmp$219123 = -24					; size = 8
-__Tmp$219055 = -16					; size = 8
-__Tmp$219081 = -8					; size = 8
+__Tmp$219167 = -24					; size = 8
+__Tmp$219097 = -16					; size = 8
+__Tmp$219123 = -8					; size = 8
 ___$ReturnUdt$ = 8					; size = 4
 __First$ = 12						; size = 4
 __Last$ = 16						; size = 4
@@ -2339,12 +2339,12 @@ $LL21@Unguarded_:
 	je	SHORT $LN20@Unguarded_
 	mov	ebp, DWORD PTR [edx+4]
 	mov	edi, DWORD PTR [edx]
-	mov	DWORD PTR __Tmp$219055[esp+44], ebp
+	mov	DWORD PTR __Tmp$219097[esp+44], ebp
 	mov	ebp, DWORD PTR [eax]
 	mov	DWORD PTR [edx], ebp
 	mov	ebp, DWORD PTR [eax+4]
 	mov	DWORD PTR [edx+4], ebp
-	mov	edx, DWORD PTR __Tmp$219055[esp+44]
+	mov	edx, DWORD PTR __Tmp$219097[esp+44]
 	mov	DWORD PTR [eax], edi
 	mov	DWORD PTR [eax+4], edx
 $LN20@Unguarded_:
@@ -2381,13 +2381,13 @@ $LL14@Unguarded_:
 	je	SHORT $LN13@Unguarded_
 	mov	ebp, DWORD PTR [ecx+4]
 	mov	edi, DWORD PTR [ecx]
-	mov	DWORD PTR __Tmp$219081[esp+44], ebp
+	mov	DWORD PTR __Tmp$219123[esp+44], ebp
 	mov	ebp, DWORD PTR [edx]
 	mov	DWORD PTR [ecx], ebp
 	mov	ebp, DWORD PTR [edx+4]
 	mov	DWORD PTR [ecx+4], ebp
 	mov	DWORD PTR [edx], edi
-	mov	edi, DWORD PTR __Tmp$219081[esp+44]
+	mov	edi, DWORD PTR __Tmp$219123[esp+44]
 	mov	DWORD PTR [edx+4], edi
 $LN13@Unguarded_:
 	sub	ebx, 8
@@ -2437,16 +2437,16 @@ $LN64@Unguarded_:
 	cmp	edi, edx
 	je	$LL23@Unguarded_
 	mov	ebp, DWORD PTR [edi]
-	mov	DWORD PTR __Tmp$219123[esp+40], ebp
+	mov	DWORD PTR __Tmp$219167[esp+40], ebp
 	mov	ebp, DWORD PTR [edi+4]
-	mov	DWORD PTR __Tmp$219123[esp+44], ebp
+	mov	DWORD PTR __Tmp$219167[esp+44], ebp
 	mov	ebp, DWORD PTR [edx]
 	mov	DWORD PTR [edi], ebp
 	mov	ebp, DWORD PTR [edx+4]
 	mov	DWORD PTR [edi+4], ebp
-	mov	edi, DWORD PTR __Tmp$219123[esp+40]
+	mov	edi, DWORD PTR __Tmp$219167[esp+40]
 	mov	DWORD PTR [edx], edi
-	mov	edi, DWORD PTR __Tmp$219123[esp+44]
+	mov	edi, DWORD PTR __Tmp$219167[esp+44]
 	mov	DWORD PTR [edx+4], edi
 	jmp	$LL23@Unguarded_
 $LN6@Unguarded_:
@@ -2777,7 +2777,7 @@ PUBLIC	??$_Sort@PAUWeightedElement@?$CvWeightedVector@H$0FK@$00@@H@std@@YAXPAUWe
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Sort@PAUWeightedElement@?$CvWeightedVector@H$0FK@$00@@H@std@@YAXPAUWeightedElement@?$CvWeightedVector@H$0FK@$00@@0H@Z
 _TEXT	SEGMENT
-__Mid$217830 = -8					; size = 8
+__Mid$217872 = -8					; size = 8
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Ideal$ = 16						; size = 4
@@ -2812,7 +2812,7 @@ $LL7@Sort:
 ; 3087 : 			std::_Unguarded_partition(_First, _Last);
 
 	push	edi
-	lea	eax, DWORD PTR __Mid$217830[esp+28]
+	lea	eax, DWORD PTR __Mid$217872[esp+28]
 	push	ebx
 	push	eax
 	call	??$_Unguarded_partition@PAUWeightedElement@?$CvWeightedVector@H$0FK@$00@@@std@@YA?AU?$pair@PAUWeightedElement@?$CvWeightedVector@H$0FK@$00@@PAU12@@0@PAUWeightedElement@?$CvWeightedVector@H$0FK@$00@@0@Z ; std::_Unguarded_partition<CvWeightedVector<int,90,1>::WeightedElement *>
@@ -2821,7 +2821,7 @@ $LL7@Sort:
 ; 3089 : 
 ; 3090 : 		if (_Mid.first - _First < _Last - _Mid.second)
 
-	mov	ebp, DWORD PTR __Mid$217830[esp+40]
+	mov	ebp, DWORD PTR __Mid$217872[esp+40]
 	mov	eax, esi
 	cdq
 	sub	eax, edx
@@ -2831,7 +2831,7 @@ $LL7@Sort:
 	sub	eax, edx
 	sar	eax, 1
 	add	esi, eax
-	mov	eax, DWORD PTR __Mid$217830[esp+36]
+	mov	eax, DWORD PTR __Mid$217872[esp+36]
 	mov	ecx, edi
 	mov	edx, eax
 	sub	ecx, ebp
@@ -2869,7 +2869,7 @@ $LN5@Sort:
 
 ; 3098 : 			_Last = _Mid.first;
 
-	mov	edi, DWORD PTR __Mid$217830[esp+36]
+	mov	edi, DWORD PTR __Mid$217872[esp+36]
 $LN26@Sort:
 	mov	eax, edi
 	sub	eax, ebx
@@ -3029,8 +3029,8 @@ __ehfuncinfo$?GetLeastAdvancedUnitClassNobodyHas@CvGameQueries@@SA?AW4UnitClassT
 xdata$x	ENDS
 ;	COMDAT ?GetLeastAdvancedUnitClassNobodyHas@CvGameQueries@@SA?AW4UnitClassTypes@@_N@Z
 _TEXT	SEGMENT
-_i$217584 = -756					; size = 4
-_pkTechInfo$217602 = -752				; size = 4
+_i$217626 = -756					; size = 4
+_pkTechInfo$217644 = -752				; size = 4
 _UnitClassesVector$ = -748				; size = 736
 __$EHRec$ = -12						; size = 12
 _bUseRandom$ = 8					; size = 1
@@ -3065,7 +3065,7 @@ _bUseRandom$ = 8					; size = 1
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	DWORD PTR __$EHRec$[esp+768], esi
-	mov	DWORD PTR _i$217584[esp+760], esi
+	mov	DWORD PTR _i$217626[esp+760], esi
 	call	?getNumUnitClassInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumUnitClassInfos
 	test	eax, eax
 	jle	$LN21@GetLeastAd
@@ -3166,7 +3166,7 @@ $LL113@GetLeastAd:
 	push	edi
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getTechInfo@CvGlobals@@QAEPAVCvTechEntry@@W4TechTypes@@@Z ; CvGlobals::getTechInfo
-	mov	DWORD PTR _pkTechInfo$217602[esp+772], eax
+	mov	DWORD PTR _pkTechInfo$217644[esp+772], eax
 
 ; 73   : 			if(pkTechInfo == NULL)
 
@@ -3197,7 +3197,7 @@ $LL13@GetLeastAd:
 ; 85   : 					// If a player already has one of this Unit, throw it out - we want something more advanced
 ; 86   : 					if (GET_PLAYER((PlayerTypes) iMajorLoop).getUnitClassCount(eUnitClass) > 0)
 
-	mov	edx, DWORD PTR _i$217584[esp+772]
+	mov	edx, DWORD PTR _i$217626[esp+772]
 	push	edx
 	call	?getUnitClassCount@CvPlayer@@QBEHW4UnitClassTypes@@@Z ; CvPlayer::getUnitClassCount
 	test	eax, eax
@@ -3216,7 +3216,7 @@ $LL13@GetLeastAd:
 	mov	eax, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	lea	ecx, DWORD PTR [esi+eax]
 	call	?getTeam@CvPlayer@@QBE?AW4TeamTypes@@XZ	; CvPlayer::getTeam
-	imul	eax, 2980				; 00000ba4H
+	imul	eax, 2984				; 00000ba8H
 	add	eax, DWORD PTR ?m_aTeams@CvTeam@@1PAV1@A ; CvTeam::m_aTeams
 	push	edi
 	mov	ecx, eax
@@ -3260,7 +3260,7 @@ $LN12@GetLeastAd:
 ; 106  : 			// Add a Tech factor, since we want something in the near future, not too far off
 ; 107  : 			iWeight += (pkTechInfo->GetResearchCost() / 8);
 
-	mov	ecx, DWORD PTR _pkTechInfo$217602[esp+772]
+	mov	ecx, DWORD PTR _pkTechInfo$217644[esp+772]
 	mov	esi, eax
 	call	?GetResearchCost@CvTechEntry@@QBEHXZ	; CvTechEntry::GetResearchCost
 	cdq
@@ -3285,7 +3285,7 @@ $LN12@GetLeastAd:
 	mov	ecx, edx
 	shr	ecx, 31					; 0000001fH
 	add	ecx, edx
-	push	OFFSET $SG217619
+	push	OFFSET $SG217661
 	push	ecx
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?getJonRandNum@CvGame@@QAEHHPBD@Z	; CvGame::getJonRandNum
@@ -3297,15 +3297,15 @@ $LN5@GetLeastAd:
 ; 115  : 			UnitClassesVector.push_back(i, iWeight);
 
 	push	esi
-	lea	edx, DWORD PTR _i$217584[esp+776]
+	lea	edx, DWORD PTR _i$217626[esp+776]
 	push	edx
 	lea	ecx, DWORD PTR _UnitClassesVector$[esp+780]
 	call	?push_back@?$CvWeightedVector@H$0FK@$00@@QAEIABHH@Z ; CvWeightedVector<int,90,1>::push_back
 $LN22@GetLeastAd:
-	mov	esi, DWORD PTR _i$217584[esp+772]
+	mov	esi, DWORD PTR _i$217626[esp+772]
 	inc	esi
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	mov	DWORD PTR _i$217584[esp+772], esi
+	mov	DWORD PTR _i$217626[esp+772], esi
 	call	?getNumUnitClassInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumUnitClassInfos
 	cmp	esi, eax
 	jl	$LL113@GetLeastAd

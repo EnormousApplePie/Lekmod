@@ -7334,8 +7334,15 @@ int CvLuaPlayer::lGetSpecialistExtraYield(lua_State* L)
 	const SpecialistTypes eIndex1 = (SpecialistTypes)lua_tointeger(L, 2);
 	const YieldTypes eIndex2 = (YieldTypes)lua_tointeger(L, 3);
 
+#ifdef LEK_TRAIT_SPECIALIST_YIELD_MAX_ONE
+	const int iResult = pkPlayer->getSpecialistExtraYield(eIndex1, eIndex2) +
+	                    pkPlayer->GetPlayerTraits()->GetSpecialistYieldChange(eIndex1, eIndex2) +
+						pkPlayer->GetPlayerTraits()->GetAnySpecificSpecialistYieldChange(eIndex1, eIndex2);
+#else
 	const int iResult = pkPlayer->getSpecialistExtraYield(eIndex1, eIndex2) +
 	                    pkPlayer->GetPlayerTraits()->GetSpecialistYieldChange(eIndex1, eIndex2);
+#endif
+	
 	lua_pushinteger(L, iResult);
 	return 1;
 }

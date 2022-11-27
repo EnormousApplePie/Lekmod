@@ -777,7 +777,7 @@ _eTeam$ = 8						; size = 4
 ; 31   : 		return m_aTeams[eTeam];
 
 	mov	eax, DWORD PTR _eTeam$[esp-4]
-	imul	eax, 2980				; 00000ba4H
+	imul	eax, 2984				; 00000ba8H
 	add	eax, DWORD PTR ?m_aTeams@CvTeam@@1PAV1@A ; CvTeam::m_aTeams
 
 ; 32   : 	}
@@ -793,11 +793,11 @@ _TEXT	SEGMENT
 ?IsMoveFriendlyWoodsAsRoad@CvPlayerTraits@@QBE_NXZ PROC	; CvPlayerTraits::IsMoveFriendlyWoodsAsRoad, COMDAT
 ; _this$ = ecx
 
-; 716  : 		return m_bMoveFriendlyWoodsAsRoad;
+; 753  : 		return m_bMoveFriendlyWoodsAsRoad;
 
-	mov	al, BYTE PTR [ecx+325]
+	mov	al, BYTE PTR [ecx+333]
 
-; 717  : 	};
+; 754  : 	};
 
 	ret	0
 ?IsMoveFriendlyWoodsAsRoad@CvPlayerTraits@@QBE_NXZ ENDP	; CvPlayerTraits::IsMoveFriendlyWoodsAsRoad
@@ -809,11 +809,11 @@ _TEXT	SEGMENT
 ?IsFasterAlongRiver@CvPlayerTraits@@QBE_NXZ PROC	; CvPlayerTraits::IsFasterAlongRiver, COMDAT
 ; _this$ = ecx
 
-; 720  : 		return m_bFasterAlongRiver;
+; 757  : 		return m_bFasterAlongRiver;
 
-	mov	al, BYTE PTR [ecx+326]
+	mov	al, BYTE PTR [ecx+334]
 
-; 721  : 	};
+; 758  : 	};
 
 	ret	0
 ?IsFasterAlongRiver@CvPlayerTraits@@QBE_NXZ ENDP	; CvPlayerTraits::IsFasterAlongRiver
@@ -825,11 +825,11 @@ _TEXT	SEGMENT
 ?IsFasterInHills@CvPlayerTraits@@QBE_NXZ PROC		; CvPlayerTraits::IsFasterInHills, COMDAT
 ; _this$ = ecx
 
-; 724  : 		return m_bFasterInHills;
+; 761  : 		return m_bFasterInHills;
 
-	mov	al, BYTE PTR [ecx+327]
+	mov	al, BYTE PTR [ecx+335]
 
-; 725  : 	};
+; 762  : 	};
 
 	ret	0
 ?IsFasterInHills@CvPlayerTraits@@QBE_NXZ ENDP		; CvPlayerTraits::IsFasterInHills
@@ -841,11 +841,11 @@ _TEXT	SEGMENT
 ?IsEmbarkedToLandFlatCost@CvPlayerTraits@@QBE_NXZ PROC	; CvPlayerTraits::IsEmbarkedToLandFlatCost, COMDAT
 ; _this$ = ecx
 
-; 732  : 		return m_bEmbarkedToLandFlatCost;
+; 769  : 		return m_bEmbarkedToLandFlatCost;
 
-	mov	al, BYTE PTR [ecx+329]
+	mov	al, BYTE PTR [ecx+337]
 
-; 733  : 	};
+; 770  : 	};
 
 	ret	0
 ?IsEmbarkedToLandFlatCost@CvPlayerTraits@@QBE_NXZ ENDP	; CvPlayerTraits::IsEmbarkedToLandFlatCost
@@ -1885,22 +1885,22 @@ _bFasterAlongRiver$ = -26				; size = 1
 _bFasterInHills$ = -25					; size = 1
 _kUnitTeam$ = -24					; size = 4
 _iMoveDenominator$ = -20				; size = 4
-_iFromMovementCost$217636 = -16				; size = 4
+_iFromMovementCost$217678 = -16				; size = 4
 _pTraits$ = -16						; size = 4
 _eFeature$ = -12					; size = 4
-$T218635 = -8						; size = 4
+$T218677 = -8						; size = 4
 _eTerrain$ = -4						; size = 4
 tv671 = 8						; size = 4
 _pUnit$ = 8						; size = 4
-$T218649 = 12						; size = 4
-$T218646 = 12						; size = 4
-_iMovementCost$217639 = 12				; size = 4
-$T218634 = 12						; size = 4
+$T218691 = 12						; size = 4
+$T218688 = 12						; size = 4
+_iMovementCost$217681 = 12				; size = 4
+$T218676 = 12						; size = 4
 _pFeatureInfo$ = 12					; size = 4
 _pFromPlot$ = 12					; size = 4
-$T218648 = 16						; size = 4
-$T218647 = 16						; size = 4
-_eFromPlotRoute$217630 = 16				; size = 4
+$T218690 = 16						; size = 4
+$T218689 = 16						; size = 4
+_eFromPlotRoute$217672 = 16				; size = 4
 _bRiverCrossing$ = 16					; size = 1
 _pToPlot$ = 16						; size = 4
 _iBaseMoves$ = 20					; size = 4
@@ -1930,11 +1930,11 @@ _iRouteFlatCost$ = 32					; size = 4
 
 ; 13   : 	bool bFasterAlongRiver = pTraits->IsFasterAlongRiver();
 
-	mov	cl, BYTE PTR [eax+326]
+	mov	cl, BYTE PTR [eax+334]
 
 ; 14   : 	bool bFasterInHills = pTraits->IsFasterInHills();
 
-	mov	dl, BYTE PTR [eax+327]
+	mov	dl, BYTE PTR [eax+335]
 	mov	BYTE PTR _bFasterAlongRiver$[esp+44], cl
 
 ; 15   : 	bool bIgnoreTerrainCost = pUnit->ignoreTerrainCost();
@@ -1953,7 +1953,7 @@ _iRouteFlatCost$ = 32					; size = 4
 
 ; 18   : 	CvTeam& kUnitTeam = GET_TEAM(eUnitTeam);
 
-	imul	eax, 2980				; 00000ba4H
+	imul	eax, 2984				; 00000ba8H
 	add	eax, DWORD PTR ?m_aTeams@CvTeam@@1PAV1@A ; CvTeam::m_aTeams
 
 ; 19   : 	int iMoveDenominator = GC.getMOVE_DENOMINATOR();
@@ -2105,11 +2105,11 @@ $LN136@GetCostsFo:
 	mov	ecx, DWORD PTR [ebp]
 	sub	ecx, eax
 	cmp	ecx, 1
-	mov	DWORD PTR $T218634[esp+40], ecx
-	mov	DWORD PTR $T218635[esp+44], 1
-	lea	eax, DWORD PTR $T218634[esp+40]
+	mov	DWORD PTR $T218676[esp+40], ecx
+	mov	DWORD PTR $T218677[esp+44], 1
+	lea	eax, DWORD PTR $T218676[esp+40]
 	jg	SHORT $LN95@GetCostsFo
-	lea	eax, DWORD PTR $T218635[esp+44]
+	lea	eax, DWORD PTR $T218677[esp+44]
 $LN95@GetCostsFo:
 	mov	ecx, DWORD PTR [eax]
 	mov	DWORD PTR [ebp], ecx
@@ -2282,13 +2282,13 @@ $LN10@GetCostsFo:
 ; 93   : 		RouteTypes eToPlotRoute = pToPlot->getRouteType();
 
 	mov	ecx, edi
-	mov	DWORD PTR _eFromPlotRoute$217630[esp+40], ebx
+	mov	DWORD PTR _eFromPlotRoute$217672[esp+40], ebx
 	call	?getRouteType@CvPlot@@QBE?AW4RouteTypes@@XZ ; CvPlot::getRouteType
 
 ; 94   : 		if (pTraits->IsMoveFriendlyWoodsAsRoad())
 
 	mov	ecx, DWORD PTR _pTraits$[esp+44]
-	cmp	BYTE PTR [ecx+325], 0
+	cmp	BYTE PTR [ecx+333], 0
 	mov	esi, eax
 	je	SHORT $LN142@GetCostsFo
 
@@ -2300,8 +2300,8 @@ $LN10@GetCostsFo:
 
 ; 97   : 				eFromPlotRoute = ROUTE_ROAD;
 
-	mov	DWORD PTR _eFromPlotRoute$217630[esp+40], 0
-	mov	ebx, DWORD PTR _eFromPlotRoute$217630[esp+40]
+	mov	DWORD PTR _eFromPlotRoute$217672[esp+40], 0
+	mov	ebx, DWORD PTR _eFromPlotRoute$217672[esp+40]
 $LN141@GetCostsFo:
 
 ; 98   : 			if (eToPlotRoute == NO_ROUTE)
@@ -2337,7 +2337,7 @@ $LN142@GetCostsFo:
 ; 108  : 		int iFromFlatMovementCost = (pFromRouteInfo != NULL)? pFromRouteInfo->getFlatMovementCost() : 0;
 
 	mov	ecx, ebx
-	mov	DWORD PTR _iFromMovementCost$217636[esp+44], eax
+	mov	DWORD PTR _iFromMovementCost$217678[esp+44], eax
 	call	?getFlatMovementCost@CvRouteInfo@@QBEHXZ ; CvRouteInfo::getFlatMovementCost
 	mov	ebx, eax
 	jmp	SHORT $LN42@GetCostsFo
@@ -2350,7 +2350,7 @@ $LN39@GetCostsFo:
 ; 106  : 
 ; 107  : 		int iFromMovementCost = (pFromRouteInfo != NULL)? pFromRouteInfo->getMovementCost() : 0;
 
-	mov	DWORD PTR _iFromMovementCost$217636[esp+44], 0
+	mov	DWORD PTR _iFromMovementCost$217678[esp+44], 0
 
 ; 108  : 		int iFromFlatMovementCost = (pFromRouteInfo != NULL)? pFromRouteInfo->getFlatMovementCost() : 0;
 
@@ -2381,7 +2381,7 @@ $LN42@GetCostsFo:
 ; 118  : 		int iFlatMovementCost = (pRouteInfo != NULL)? pRouteInfo->getFlatMovementCost() : 0;
 
 	mov	ecx, ebp
-	mov	DWORD PTR _iMovementCost$217639[esp+40], eax
+	mov	DWORD PTR _iMovementCost$217681[esp+40], eax
 	call	?getFlatMovementCost@CvRouteInfo@@QBEHXZ ; CvRouteInfo::getFlatMovementCost
 	mov	ebp, eax
 	jmp	SHORT $LN46@GetCostsFo
@@ -2394,7 +2394,7 @@ $LN43@GetCostsFo:
 ; 116  : 
 ; 117  : 		int iMovementCost = (pRouteInfo != NULL)? pRouteInfo->getMovementCost() : 0;
 
-	mov	DWORD PTR _iMovementCost$217639[esp+40], 0
+	mov	DWORD PTR _iMovementCost$217681[esp+40], 0
 
 ; 118  : 		int iFlatMovementCost = (pRouteInfo != NULL)? pRouteInfo->getFlatMovementCost() : 0;
 
@@ -2416,19 +2416,19 @@ $LN46@GetCostsFo:
 	mov	ecx, DWORD PTR _kUnitTeam$[esp+44]
 	push	esi
 	call	?getRouteChange@CvTeam@@QBEHW4RouteTypes@@@Z ; CvTeam::getRouteChange
-	mov	edx, DWORD PTR _eFromPlotRoute$217630[esp+40]
+	mov	edx, DWORD PTR _eFromPlotRoute$217672[esp+40]
 	mov	ecx, DWORD PTR _kUnitTeam$[esp+44]
 	mov	esi, eax
-	add	esi, DWORD PTR _iMovementCost$217639[esp+40]
+	add	esi, DWORD PTR _iMovementCost$217681[esp+40]
 	push	edx
-	mov	DWORD PTR $T218646[esp+44], esi
+	mov	DWORD PTR $T218688[esp+44], esi
 	call	?getRouteChange@CvTeam@@QBEHW4RouteTypes@@@Z ; CvTeam::getRouteChange
-	add	eax, DWORD PTR _iFromMovementCost$217636[esp+44]
-	mov	DWORD PTR $T218647[esp+40], eax
+	add	eax, DWORD PTR _iFromMovementCost$217678[esp+44]
+	mov	DWORD PTR $T218689[esp+40], eax
 	cmp	eax, esi
-	lea	eax, DWORD PTR $T218646[esp+40]
+	lea	eax, DWORD PTR $T218688[esp+40]
 	jl	SHORT $LN121@GetCostsFo
-	lea	eax, DWORD PTR $T218647[esp+40]
+	lea	eax, DWORD PTR $T218689[esp+40]
 $LN121@GetCostsFo:
 	mov	eax, DWORD PTR [eax]
 	mov	esi, DWORD PTR _iRouteCost$[esp+40]
@@ -2443,11 +2443,11 @@ $LN121@GetCostsFo:
 	imul	ebp, eax
 	imul	ebx, eax
 	cmp	ebx, ebp
-	mov	DWORD PTR $T218648[esp+40], ebp
-	mov	DWORD PTR $T218649[esp+40], ebx
-	lea	eax, DWORD PTR $T218648[esp+40]
+	mov	DWORD PTR $T218690[esp+40], ebp
+	mov	DWORD PTR $T218691[esp+40], ebx
+	lea	eax, DWORD PTR $T218690[esp+40]
 	jl	SHORT $LN125@GetCostsFo
-	lea	eax, DWORD PTR $T218649[esp+40]
+	lea	eax, DWORD PTR $T218691[esp+40]
 $LN125@GetCostsFo:
 	mov	ecx, DWORD PTR [eax]
 	mov	ebp, DWORD PTR _iRouteFlatCost$[esp+40]
@@ -2462,7 +2462,7 @@ $LN11@GetCostsFo:
 ; 137  : 	else if (pTraits->IsMoveFriendlyWoodsAsRoad() && pUnit->getOwner() == pToPlot->getOwner() && (eFeature == FEATURE_FOREST || eFeature == FEATURE_JUNGLE))
 
 	mov	edx, DWORD PTR _pTraits$[esp+44]
-	cmp	BYTE PTR [edx+325], 0
+	cmp	BYTE PTR [edx+333], 0
 	je	SHORT $LN5@GetCostsFo
 	movsx	eax, BYTE PTR [edi+4]
 	cmp	DWORD PTR [ebx+40], eax
@@ -2593,29 +2593,31 @@ $LN1@GetCostsFo:
 
 ; 164  : 		}
 ; 165  : 
-; 166  : 	// NQMP GJS - Great Wall fix
-; 167  : 	/*
-; 168  : 	TeamTypes eTeam = pToPlot->getTeam();
-; 169  : 	if(eTeam != NO_TEAM)
-; 170  : 	{
-; 171  : 		CvTeam* pPlotTeam = &GET_TEAM(eTeam);
-; 172  : 		CvPlayer* pPlotPlayer = &GET_PLAYER(pToPlot->getOwner());
-; 173  : 
-; 174  : 		// Great Wall increases movement cost by 1
-; 175  : 		if(pPlotTeam->isBorderObstacle() || pPlotPlayer->isBorderObstacle())
-; 176  : 		{
-; 177  : 			if(!pToPlot->isWater() && pUnit->getDomainType() == DOMAIN_LAND)
-; 178  : 			{
-; 179  : 				// Don't apply penalty to OUR team or teams we've given open borders to
-; 180  : 				if(eUnitTeam != eTeam && !pPlotTeam->IsAllowsOpenBordersToTeam(eUnitTeam))
-; 181  : 				{
-; 182  : 					iRegularCost += iMoveDenominator;
-; 183  : 				}
-; 184  : 			}
-; 185  : 		}
-; 186  : 	}
-; 187  : 	*/
-; 188  : }
+; 166  : 	
+; 167  : 
+; 168  : 	// NQMP GJS - Great Wall fix
+; 169  : 	/*
+; 170  : 	TeamTypes eTeam = pToPlot->getTeam();
+; 171  : 	if(eTeam != NO_TEAM)
+; 172  : 	{
+; 173  : 		CvTeam* pPlotTeam = &GET_TEAM(eTeam);
+; 174  : 		CvPlayer* pPlotPlayer = &GET_PLAYER(pToPlot->getOwner());
+; 175  : 
+; 176  : 		// Great Wall increases movement cost by 1
+; 177  : 		if(pPlotTeam->isBorderObstacle() || pPlotPlayer->isBorderObstacle())
+; 178  : 		{
+; 179  : 			if(!pToPlot->isWater() && pUnit->getDomainType() == DOMAIN_LAND)
+; 180  : 			{
+; 181  : 				// Don't apply penalty to OUR team or teams we've given open borders to
+; 182  : 				if(eUnitTeam != eTeam && !pPlotTeam->IsAllowsOpenBordersToTeam(eUnitTeam))
+; 183  : 				{
+; 184  : 					iRegularCost += iMoveDenominator;
+; 185  : 				}
+; 186  : 			}
+; 187  : 		}
+; 188  : 	}
+; 189  : 	*/
+; 190  : }
 
 	add	esp, 28					; 0000001cH
 	ret	0
@@ -2636,11 +2638,14 @@ _pFromPlot$ = 12					; size = 4
 _pToPlot$ = 16						; size = 4
 ?ConsumesAllMoves@CvUnitMovement@@SA_NPBVCvUnit@@PBVCvPlot@@1@Z PROC ; CvUnitMovement::ConsumesAllMoves, COMDAT
 
-; 251  : {
+; 253  : {
 
 	push	esi
 
-; 252  : 	if(!pToPlot->isRevealed(pUnit->getTeam()) && pUnit->isHuman())
+; 254  : 
+; 255  : 	
+; 256  : 
+; 257  : 	if(!pToPlot->isRevealed(pUnit->getTeam()) && pUnit->isHuman())
 
 	mov	esi, DWORD PTR _pUnit$[esp]
 	push	edi
@@ -2664,8 +2669,8 @@ _pToPlot$ = 16						; size = 4
 	je	SHORT $LN9@ConsumesAl
 	pop	edi
 
-; 253  : 	{
-; 254  : 		return true;
+; 258  : 	{
+; 259  : 		return true;
 
 	mov	al, 1
 	pop	esi
@@ -2675,10 +2680,10 @@ _pToPlot$ = 16						; size = 4
 	ret	0
 $LN9@ConsumesAl:
 
-; 255  : 	}
-; 256  : 
-; 257  : #ifndef AUI_UNIT_MOVEMENT_FIX_BAD_ALLOWS_WATER_WALK_CHECK
-; 258  : 	if (!pUnit->isEmbarked() && (pToPlot->IsAllowsWalkWater() || pFromPlot->IsAllowsWalkWater()))
+; 260  : 	}
+; 261  : 
+; 262  : #ifndef AUI_UNIT_MOVEMENT_FIX_BAD_ALLOWS_WATER_WALK_CHECK
+; 263  : 	if (!pUnit->isEmbarked() && (pToPlot->IsAllowsWalkWater() || pFromPlot->IsAllowsWalkWater()))
 
 	cmp	BYTE PTR [esi+1652], 0
 	push	ebp
@@ -2696,8 +2701,8 @@ $LN7@ConsumesAl:
 	pop	ebp
 	pop	edi
 
-; 259  : 	{
-; 260  : 		return false;
+; 264  : 	{
+; 265  : 		return false;
 
 	xor	al, al
 	pop	esi
@@ -2707,10 +2712,10 @@ $LN7@ConsumesAl:
 	ret	0
 $LN8@ConsumesAl:
 
-; 261  : 	}
-; 262  : #endif
-; 263  : 
-; 264  : 	if(!pFromPlot->isValidDomainForLocation(*pUnit))
+; 266  : 	}
+; 267  : #endif
+; 268  : 
+; 269  : 	if(!pFromPlot->isValidDomainForLocation(*pUnit))
 
 	push	esi
 	mov	ecx, ebp
@@ -2718,12 +2723,12 @@ $LN8@ConsumesAl:
 	test	al, al
 	jne	SHORT $LN5@ConsumesAl
 
-; 265  : 	{
-; 266  : 		// If we are a land unit that can embark, then do further tests.
-; 267  : #ifdef AUI_UNIT_FIX_HOVERING_EMBARK
-; 268  : 		if (pUnit->getDomainType() != DOMAIN_LAND || pUnit->canMoveAllTerrain() || !pUnit->CanEverEmbark())
-; 269  : #else
-; 270  : 		if(pUnit->getDomainType() != DOMAIN_LAND || pUnit->IsHoveringUnit() || pUnit->canMoveAllTerrain() || !pUnit->CanEverEmbark())
+; 270  : 	{
+; 271  : 		// If we are a land unit that can embark, then do further tests.
+; 272  : #ifdef AUI_UNIT_FIX_HOVERING_EMBARK
+; 273  : 		if (pUnit->getDomainType() != DOMAIN_LAND || pUnit->canMoveAllTerrain() || !pUnit->CanEverEmbark())
+; 274  : #else
+; 275  : 		if(pUnit->getDomainType() != DOMAIN_LAND || pUnit->IsHoveringUnit() || pUnit->canMoveAllTerrain() || !pUnit->CanEverEmbark())
 
 	mov	ecx, esi
 	call	?getDomainType@CvUnit@@QBE?AW4DomainTypes@@XZ ; CvUnit::getDomainType
@@ -2745,8 +2750,8 @@ $LN4@ConsumesAl:
 	pop	ebp
 	pop	edi
 
-; 271  : #endif
-; 272  : 			return true;
+; 276  : #endif
+; 277  : 			return true;
 
 	mov	al, 1
 	pop	esi
@@ -2757,28 +2762,9 @@ $LN4@ConsumesAl:
 $LN5@ConsumesAl:
 	push	ebx
 
-; 273  : 	}
-; 274  : 
-; 275  : #ifdef AUI_UNIT_FIX_HOVERING_EMBARK
-; 276  : 	bool bToPlotNeedEmbark = !pToPlot->IsAllowsWalkWater();
-; 277  : 	bool bFromPlotNeedEmbark = !pFromPlot->IsAllowsWalkWater();
-; 278  : 	if (pUnit->IsHoveringUnit())
-; 279  : 	{
-; 280  : 		bToPlotNeedEmbark = bToPlotNeedEmbark && pToPlot->getTerrainType() == GC.getDEEP_WATER_TERRAIN();
-; 281  : 		bFromPlotNeedEmbark = bFromPlotNeedEmbark && pFromPlot->getTerrainType() == GC.getDEEP_WATER_TERRAIN();
-; 282  : 	}
-; 283  : 	else
-; 284  : 	{
-; 285  : 		bToPlotNeedEmbark = bToPlotNeedEmbark && pToPlot->isWater();
-; 286  : 		bFromPlotNeedEmbark = bFromPlotNeedEmbark && pFromPlot->isWater();
-; 287  : 	}
-; 288  : 
-; 289  : 	if (pUnit->CanEverEmbark() && bToPlotNeedEmbark != bFromPlotNeedEmbark)
-; 290  : #elif defined(AUI_UNIT_MOVEMENT_FIX_BAD_ALLOWS_WATER_WALK_CHECK)
-; 291  : 	// if the unit can embark and we are transitioning from land to water or vice versa
-; 292  : 	if ((pToPlot->isWater() && !pToPlot->IsAllowsWalkWater()) != (pFromPlot->isWater() && !pFromPlot->IsAllowsWalkWater()) && pUnit->CanEverEmbark())
-; 293  : #else
-; 294  : 	if(pToPlot->isWater() != pFromPlot->isWater() && pUnit->CanEverEmbark())
+; 278  : 	}
+; 279  : 
+; 280  : 	if(pToPlot->isWater() != pFromPlot->isWater() && pUnit->CanEverEmbark())
 
 	mov	bl, 3
 	cmp	BYTE PTR [edi+5], bl
@@ -2792,13 +2778,24 @@ $LN5@ConsumesAl:
 	test	al, al
 	je	SHORT $LN1@ConsumesAl
 
-; 295  : #endif
-; 296  : 	{
-; 297  : 		// Is the unit from a civ that can disembark for just 1 MP?
-; 298  : #ifdef AUI_UNIT_FIX_HOVERING_EMBARK
-; 299  : 		if (bFromPlotNeedEmbark && GET_PLAYER(pUnit->getOwner()).GetPlayerTraits()->IsEmbarkedToLandFlatCost())
-; 300  : #elif defined(AUI_UNIT_MOVEMENT_FIX_BAD_VIKING_DISEMBARK_PREVIEW)
-; 301  : 		if (!pToPlot->isWater() && pFromPlot->isWater() && GET_PLAYER(pUnit->getOwner()).GetPlayerTraits()->IsEmbarkedToLandFlatCost())
+; 281  : 
+; 282  : 	{
+; 283  : #ifdef LEK_EMBARK_1_MOVEMENT
+; 284  : 		//EAP: Embarking now costs 1 movement
+; 285  : 
+; 286  : 		if (pToPlot->isWater() && !pFromPlot->isWater() && pUnit->CanEverEmbark())
+; 287  : 		{
+; 288  : 			return false;
+; 289  : 		}
+; 290  : #endif
+; 291  : 
+; 292  : 		//
+; 293  : 		
+; 294  : 		// Is the unit from a civ that can disembark for just 1 MP?
+; 295  : #ifdef AUI_UNIT_FIX_HOVERING_EMBARK
+; 296  : 		if (bFromPlotNeedEmbark && GET_PLAYER(pUnit->getOwner()).GetPlayerTraits()->IsEmbarkedToLandFlatCost())
+; 297  : #elif defined(AUI_UNIT_MOVEMENT_FIX_BAD_VIKING_DISEMBARK_PREVIEW)
+; 298  : 		if (!pToPlot->isWater() && pFromPlot->isWater() && GET_PLAYER(pUnit->getOwner()).GetPlayerTraits()->IsEmbarkedToLandFlatCost())
 
 	cmp	BYTE PTR [edi+5], bl
 	je	SHORT $LN2@ConsumesAl
@@ -2808,20 +2805,22 @@ $LN5@ConsumesAl:
 	imul	ecx, 63236				; 0000f704H
 	add	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	call	?GetPlayerTraits@CvPlayer@@QBEPAVCvPlayerTraits@@XZ ; CvPlayer::GetPlayerTraits
-	cmp	BYTE PTR [eax+329], 0
+	cmp	BYTE PTR [eax+337], 0
 
-; 302  : #else
-; 303  : 		if(!pToPlot->isWater() && pFromPlot->isWater() && pUnit->isEmbarked() && GET_PLAYER(pUnit->getOwner()).GetPlayerTraits()->IsEmbarkedToLandFlatCost())
-; 304  : #endif
-; 305  : 		{
-; 306  : 			return false;	// Then no, it does not.
+; 299  : #else
+; 300  : 		if(!pToPlot->isWater() && pFromPlot->isWater() && pUnit->isEmbarked() && GET_PLAYER(pUnit->getOwner()).GetPlayerTraits()->IsEmbarkedToLandFlatCost())
+; 301  : #endif
+; 302  : 		{
+; 303  : 			return false;	// Then no, it does not.
 
 	jne	SHORT $LN1@ConsumesAl
 $LN2@ConsumesAl:
 
-; 307  : 		}
-; 308  : 
-; 309  : 		if(!pUnit->canMoveAllTerrain())
+; 304  : 		}
+; 305  : 
+; 306  : 		
+; 307  : 		
+; 308  : 		if(!pUnit->canMoveAllTerrain())
 
 	mov	ecx, esi
 	call	?canMoveAllTerrain@CvUnit@@QBE_NXZ	; CvUnit::canMoveAllTerrain
@@ -2831,8 +2830,8 @@ $LN2@ConsumesAl:
 	pop	ebp
 	pop	edi
 
-; 310  : 		{
-; 311  : 			return true;
+; 309  : 		{
+; 310  : 			return true;
 
 	mov	al, 1
 	pop	esi
@@ -2845,8 +2844,9 @@ $LN1@ConsumesAl:
 	pop	ebp
 	pop	edi
 
-; 312  : 		}
-; 313  : 	}
+; 311  : 		}
+; 312  : 	}
+; 313  : 	
 ; 314  : 
 ; 315  : 	return false;
 
@@ -2873,7 +2873,8 @@ _pToPlot$ = 16						; size = 4
 
 	push	esi
 
-; 321  : 	if(!pToPlot->isValidDomainForAction(*pUnit))
+; 321  : 	
+; 322  : 	if(!pToPlot->isValidDomainForAction(*pUnit))
 
 	mov	esi, DWORD PTR _pUnit$[esp]
 	push	edi
@@ -2884,9 +2885,9 @@ _pToPlot$ = 16						; size = 4
 	test	al, al
 	jne	SHORT $LN5@CostsOnlyO
 
-; 322  : 	{
-; 323  : 		// If we are a land unit that can embark, then do further tests.
-; 324  : 		if(pUnit->getDomainType() != DOMAIN_LAND || pUnit->IsHoveringUnit() || pUnit->canMoveAllTerrain() || !pUnit->CanEverEmbark())
+; 323  : 	{
+; 324  : 		// If we are a land unit that can embark, then do further tests.
+; 325  : 		if(pUnit->getDomainType() != DOMAIN_LAND || pUnit->IsHoveringUnit() || pUnit->canMoveAllTerrain() || !pUnit->CanEverEmbark())
 
 	mov	ecx, esi
 	call	?getDomainType@CvUnit@@QBE?AW4DomainTypes@@XZ ; CvUnit::getDomainType
@@ -2904,16 +2905,17 @@ _pToPlot$ = 16						; size = 4
 	call	?CanEverEmbark@CvUnit@@QBE_NXZ		; CvUnit::CanEverEmbark
 	test	al, al
 
-; 325  : 			return true;
+; 326  : 			return true;
 
 	je	SHORT $LN2@CostsOnlyO
 $LN5@CostsOnlyO:
 
-; 326  : 	}
-; 327  : 
-; 328  : 	CvAssert(!pUnit->IsImmobile());
-; 329  : 
-; 330  : 	if(pUnit->flatMovementCost() || pUnit->getDomainType() == DOMAIN_AIR)
+; 327  : 	}
+; 328  : 
+; 329  : 	CvAssert(!pUnit->IsImmobile());
+; 330  : 
+; 331  : 	
+; 332  : 	if(pUnit->flatMovementCost() || pUnit->getDomainType() == DOMAIN_AIR)
 
 	mov	ecx, esi
 	call	?flatMovementCost@CvUnit@@QBE_NXZ	; CvUnit::flatMovementCost
@@ -2924,26 +2926,26 @@ $LN5@CostsOnlyO:
 	cmp	eax, 1
 	je	SHORT $LN2@CostsOnlyO
 
-; 333  : 	}
-; 334  : 
-; 335  : 	// Is the unit from a civ that can disembark for just 1 MP?
-; 336  : #ifdef AUI_UNIT_FIX_HOVERING_EMBARK
-; 337  : 	bool bToPlotNeedEmbark = !pToPlot->IsAllowsWalkWater();
-; 338  : 	bool bFromPlotNeedEmbark = !pFromPlot->IsAllowsWalkWater();
-; 339  : 	if (pUnit->IsHoveringUnit())
-; 340  : 	{
-; 341  : 		bToPlotNeedEmbark = bToPlotNeedEmbark && pToPlot->getTerrainType() == GC.getDEEP_WATER_TERRAIN();
-; 342  : 		bFromPlotNeedEmbark = bFromPlotNeedEmbark && pFromPlot->getTerrainType() == GC.getDEEP_WATER_TERRAIN();
-; 343  : 	}
-; 344  : 	else
-; 345  : 	{
-; 346  : 		bToPlotNeedEmbark = bToPlotNeedEmbark && pToPlot->isWater();
-; 347  : 		bFromPlotNeedEmbark = bFromPlotNeedEmbark && pFromPlot->isWater();
-; 348  : 	}
-; 349  : 
-; 350  : 	if (pUnit->CanEverEmbark() && bFromPlotNeedEmbark && GET_PLAYER(pUnit->getOwner()).GetPlayerTraits()->IsEmbarkedToLandFlatCost())
-; 351  : #elif defined(AUI_UNIT_MOVEMENT_FIX_BAD_VIKING_DISEMBARK_PREVIEW)
-; 352  : 	if (!pToPlot->isWater() && pFromPlot->isWater() && pUnit->CanEverEmbark() && GET_PLAYER(pUnit->getOwner()).GetPlayerTraits()->IsEmbarkedToLandFlatCost())
+; 335  : 	}
+; 336  : 
+; 337  : 	// Is the unit from a civ that can disembark for just 1 MP?
+; 338  : #ifdef AUI_UNIT_FIX_HOVERING_EMBARK
+; 339  : 	bool bToPlotNeedEmbark = !pToPlot->IsAllowsWalkWater();
+; 340  : 	bool bFromPlotNeedEmbark = !pFromPlot->IsAllowsWalkWater();
+; 341  : 	if (pUnit->IsHoveringUnit())
+; 342  : 	{
+; 343  : 		bToPlotNeedEmbark = bToPlotNeedEmbark && pToPlot->getTerrainType() == GC.getDEEP_WATER_TERRAIN();
+; 344  : 		bFromPlotNeedEmbark = bFromPlotNeedEmbark && pFromPlot->getTerrainType() == GC.getDEEP_WATER_TERRAIN();
+; 345  : 	}
+; 346  : 	else
+; 347  : 	{
+; 348  : 		bToPlotNeedEmbark = bToPlotNeedEmbark && pToPlot->isWater();
+; 349  : 		bFromPlotNeedEmbark = bFromPlotNeedEmbark && pFromPlot->isWater();
+; 350  : 	}
+; 351  : 
+; 352  : 	if (pUnit->CanEverEmbark() && bFromPlotNeedEmbark && GET_PLAYER(pUnit->getOwner()).GetPlayerTraits()->IsEmbarkedToLandFlatCost())
+; 353  : #elif defined(AUI_UNIT_MOVEMENT_FIX_BAD_VIKING_DISEMBARK_PREVIEW)
+; 354  : 	if (!pToPlot->isWater() && pFromPlot->isWater() && pUnit->CanEverEmbark() && GET_PLAYER(pUnit->getOwner()).GetPlayerTraits()->IsEmbarkedToLandFlatCost())
 
 	mov	al, 3
 	cmp	BYTE PTR [edi+5], al
@@ -2959,38 +2961,40 @@ $LN5@CostsOnlyO:
 	imul	ecx, 63236				; 0000f704H
 	add	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	call	?GetPlayerTraits@CvPlayer@@QBEPAVCvPlayerTraits@@XZ ; CvPlayer::GetPlayerTraits
-	cmp	BYTE PTR [eax+329], 0
+	cmp	BYTE PTR [eax+337], 0
 
-; 353  : #else
-; 354  : 	if(!pToPlot->isWater() && pFromPlot->isWater() && pUnit->isEmbarked() && GET_PLAYER(pUnit->getOwner()).GetPlayerTraits()->IsEmbarkedToLandFlatCost())
-; 355  : #endif
-; 356  : 	{
-; 357  : 		return true;
+; 355  : #else
+; 356  : 	if(!pToPlot->isWater() && pFromPlot->isWater() && pUnit->isEmbarked() && GET_PLAYER(pUnit->getOwner()).GetPlayerTraits()->IsEmbarkedToLandFlatCost())
+; 357  : #endif
+; 358  : 	{
+; 359  : 		return true;
 
 	jne	SHORT $LN2@CostsOnlyO
 $LN1@CostsOnlyO:
 	pop	edi
 
-; 358  : 	}
-; 359  : 
-; 360  : 	return false;
+; 360  : 	}
+; 361  : 
+; 362  : 	
+; 363  : 
+; 364  : 	return false;
 
 	xor	al, al
 	pop	esi
 
-; 361  : }
+; 365  : }
 
 	ret	0
 $LN2@CostsOnlyO:
 	pop	edi
 
-; 331  : 	{
-; 332  : 		return true;
+; 333  : 	{
+; 334  : 		return true;
 
 	mov	al, 1
 	pop	esi
 
-; 361  : }
+; 365  : }
 
 	ret	0
 ?CostsOnlyOne@CvUnitMovement@@SA_NPBVCvUnit@@PBVCvPlot@@1@Z ENDP ; CvUnitMovement::CostsOnlyOne
@@ -3007,27 +3011,27 @@ EXTRN	?IsIgnoreZOC@CvUnit@@QBE_NXZ:PROC		; CvUnit::IsIgnoreZOC
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?IsSlowedByZOC@CvUnitMovement@@SA_NPBVCvUnit@@PBVCvPlot@@1@Z
 _TEXT	SEGMENT
-_bIsVisibleEnemyUnit$217736 = -37			; size = 1
-_iToPlotX$217732 = -36					; size = 4
-_iToPlotY$217733 = -32					; size = 4
-_pAdjUnitNode$217728 = -28				; size = 4
-_iDirection0$217738 = -24				; size = 4
-_iFromPlotY$217731 = -20				; size = 4
-_iFromPlotX$217730 = -16				; size = 4
-_unit_team_type$217734 = -12				; size = 4
-_kUnitTeam$217737 = -8					; size = 4
-_unit_domain_type$217735 = -4				; size = 4
+_bIsVisibleEnemyUnit$217778 = -37			; size = 1
+_iToPlotX$217774 = -36					; size = 4
+_iToPlotY$217775 = -32					; size = 4
+_pAdjUnitNode$217770 = -28				; size = 4
+_iDirection0$217780 = -24				; size = 4
+_iFromPlotY$217773 = -20				; size = 4
+_iFromPlotX$217772 = -16				; size = 4
+_unit_team_type$217776 = -12				; size = 4
+_kUnitTeam$217779 = -8					; size = 4
+_unit_domain_type$217777 = -4				; size = 4
 _pUnit$ = 8						; size = 4
 _pFromPlot$ = 12					; size = 4
 _pToPlot$ = 16						; size = 4
 ?IsSlowedByZOC@CvUnitMovement@@SA_NPBVCvUnit@@PBVCvPlot@@1@Z PROC ; CvUnitMovement::IsSlowedByZOC, COMDAT
 
-; 365  : {
+; 369  : {
 
 	sub	esp, 40					; 00000028H
 	push	ebp
 
-; 366  : 	if (pUnit->IsIgnoreZOC() || CostsOnlyOne(pUnit, pFromPlot, pToPlot))
+; 370  : 	if (pUnit->IsIgnoreZOC() || CostsOnlyOne(pUnit, pFromPlot, pToPlot))
 
 	mov	ebp, DWORD PTR _pUnit$[esp+40]
 	push	esi
@@ -3046,79 +3050,79 @@ _pToPlot$ = 16						; size = 4
 	test	al, al
 	jne	$LN33@IsSlowedBy
 
-; 369  : 	}
-; 370  : 
-; 371  : 	// Zone of Control
-; 372  : 	if(GC.getZONE_OF_CONTROL_ENABLED() > 0)
+; 373  : 	}
+; 374  : 
+; 375  : 	// Zone of Control
+; 376  : 	if(GC.getZONE_OF_CONTROL_ENABLED() > 0)
 
 	cmp	DWORD PTR ?gGlobals@@3VCvGlobals@@A+7360, 0
 	push	ebx
 	jle	$LN29@IsSlowedBy
 
-; 373  : 	{
-; 374  : 		IDInfo* pAdjUnitNode;
-; 375  : 		CvUnit* pLoopUnit;
-; 376  : 
-; 377  : 		int iFromPlotX = pFromPlot->getX();
+; 377  : 	{
+; 378  : 		IDInfo* pAdjUnitNode;
+; 379  : 		CvUnit* pLoopUnit;
+; 380  : 
+; 381  : 		int iFromPlotX = pFromPlot->getX();
 
 	movsx	eax, WORD PTR [edi]
 
-; 378  : 		int iFromPlotY = pFromPlot->getY();
+; 382  : 		int iFromPlotY = pFromPlot->getY();
 
 	movsx	ecx, WORD PTR [edi+2]
 
-; 379  : 		int iToPlotX = pToPlot->getX();
+; 383  : 		int iToPlotX = pToPlot->getX();
 
 	movsx	edx, WORD PTR [esi]
-	mov	DWORD PTR _iFromPlotX$217730[esp+56], eax
+	mov	DWORD PTR _iFromPlotX$217772[esp+56], eax
 
-; 380  : 		int iToPlotY = pToPlot->getY();
+; 384  : 		int iToPlotY = pToPlot->getY();
 
 	movsx	eax, WORD PTR [esi+2]
-	mov	DWORD PTR _iFromPlotY$217731[esp+56], ecx
+	mov	DWORD PTR _iFromPlotY$217773[esp+56], ecx
 
-; 381  : 		TeamTypes unit_team_type     = pUnit->getTeam();
+; 385  : 		TeamTypes unit_team_type     = pUnit->getTeam();
 
 	mov	ecx, ebp
-	mov	DWORD PTR _iToPlotX$217732[esp+56], edx
-	mov	DWORD PTR _iToPlotY$217733[esp+56], eax
+	mov	DWORD PTR _iToPlotX$217774[esp+56], edx
+	mov	DWORD PTR _iToPlotY$217775[esp+56], eax
 	call	?getTeam@CvUnit@@QBE?AW4TeamTypes@@XZ	; CvUnit::getTeam
 	mov	edi, eax
 
-; 382  : 		DomainTypes unit_domain_type = pUnit->getDomainType();
+; 386  : 		DomainTypes unit_domain_type = pUnit->getDomainType();
 
 	mov	ecx, ebp
-	mov	DWORD PTR _unit_team_type$217734[esp+56], edi
+	mov	DWORD PTR _unit_team_type$217776[esp+56], edi
 	call	?getDomainType@CvUnit@@QBE?AW4DomainTypes@@XZ ; CvUnit::getDomainType
 
-; 383  : 		bool bIsVisibleEnemyUnit     = pToPlot->isVisibleEnemyUnit(pUnit);
+; 387  : 		bool bIsVisibleEnemyUnit     = pToPlot->isVisibleEnemyUnit(pUnit);
 
 	push	ebp
 	mov	ecx, esi
-	mov	DWORD PTR _unit_domain_type$217735[esp+60], eax
+	mov	DWORD PTR _unit_domain_type$217777[esp+60], eax
 	call	?isVisibleEnemyUnit@CvPlot@@QBE_NPBVCvUnit@@@Z ; CvPlot::isVisibleEnemyUnit
-	mov	BYTE PTR _bIsVisibleEnemyUnit$217736[esp+56], al
+	mov	BYTE PTR _bIsVisibleEnemyUnit$217778[esp+56], al
 
-; 384  : 		CvTeam& kUnitTeam = GET_TEAM(unit_team_type);
+; 388  : 		CvTeam& kUnitTeam = GET_TEAM(unit_team_type);
 
 	mov	eax, edi
-	imul	eax, 2980				; 00000ba4H
+	imul	eax, 2984				; 00000ba8H
 	add	eax, DWORD PTR ?m_aTeams@CvTeam@@1PAV1@A ; CvTeam::m_aTeams
-	mov	DWORD PTR _kUnitTeam$217737[esp+56], eax
+	mov	DWORD PTR _kUnitTeam$217779[esp+56], eax
 
-; 385  : 
-; 386  : 		for(int iDirection0 = 0; iDirection0 < NUM_DIRECTION_TYPES; iDirection0++)
+; 389  : 
+; 390  : 		for(int iDirection0 = 0; iDirection0 < NUM_DIRECTION_TYPES; iDirection0++)
 
 	xor	eax, eax
-	mov	DWORD PTR _iDirection0$217738[esp+56], eax
+	mov	DWORD PTR _iDirection0$217780[esp+56], eax
 	npad	4
 $LL106@IsSlowedBy:
 
-; 387  : 		{
-; 388  : 			CvPlot* pAdjPlot = plotDirection(iFromPlotX, iFromPlotY, ((DirectionTypes)iDirection0));
+; 391  : 		{
+; 392  : 			CvPlot* pAdjPlot = plotDirection(iFromPlotX, iFromPlotY, ((DirectionTypes)iDirection0));
 
-	mov	ecx, DWORD PTR _iFromPlotY$217731[esp+56]
-	mov	edx, DWORD PTR _iFromPlotX$217730[esp+56]
+	mov	ecx, DWORD PTR _iFromPlotY$217773[esp+56]
+	mov	edx, DWORD PTR _iFromPlotX$217772[esp+56]
 	push	eax
 	push	ecx
 	push	edx
@@ -3126,15 +3130,15 @@ $LL106@IsSlowedBy:
 	mov	ebx, eax
 	add	esp, 12					; 0000000cH
 
-; 389  : 			if(NULL != pAdjPlot)
+; 393  : 			if(NULL != pAdjPlot)
 
 	test	ebx, ebx
 	je	$LN30@IsSlowedBy
 
-; 390  : 			{
-; 391  : 				// check city zone of control
-; 392  : #ifdef AUI_UNIT_MOVEMENT_FIX_RADAR_ZOC
-; 393  : 				if (pAdjPlot->isEnemyCity(*pUnit) && (pAdjPlot->isRevealed(pUnit->getTeam()) || pUnit->plot() == pFromPlot))
+; 394  : 			{
+; 395  : 				// check city zone of control
+; 396  : #ifdef AUI_UNIT_MOVEMENT_FIX_RADAR_ZOC
+; 397  : 				if (pAdjPlot->isEnemyCity(*pUnit) && (pAdjPlot->isRevealed(pUnit->getTeam()) || pUnit->plot() == pFromPlot))
 
 	push	ebp
 	mov	ecx, ebx
@@ -3160,20 +3164,20 @@ $LL106@IsSlowedBy:
 	jne	SHORT $LN23@IsSlowedBy
 $LN26@IsSlowedBy:
 
-; 394  : #else
-; 395  : 				if(pAdjPlot->isEnemyCity(*pUnit))
-; 396  : #endif
-; 397  : 				{
-; 398  : 					// Loop through plots adjacent to the enemy city and see if it's the same as our unit's Destination Plot
-; 399  : 					for(int iDirection = 0; iDirection < NUM_DIRECTION_TYPES; iDirection++)
+; 398  : #else
+; 399  : 				if(pAdjPlot->isEnemyCity(*pUnit))
+; 400  : #endif
+; 401  : 				{
+; 402  : 					// Loop through plots adjacent to the enemy city and see if it's the same as our unit's Destination Plot
+; 403  : 					for(int iDirection = 0; iDirection < NUM_DIRECTION_TYPES; iDirection++)
 
 	movsx	edi, WORD PTR [ebx+2]
 	movsx	ebp, WORD PTR [ebx]
 	xor	esi, esi
 $LL25@IsSlowedBy:
 
-; 400  : 					{
-; 401  : 						CvPlot* pEnemyAdjPlot = plotDirection(pAdjPlot->getX(), pAdjPlot->getY(), ((DirectionTypes)iDirection));
+; 404  : 					{
+; 405  : 						CvPlot* pEnemyAdjPlot = plotDirection(pAdjPlot->getX(), pAdjPlot->getY(), ((DirectionTypes)iDirection));
 
 	push	esi
 	push	edi
@@ -3181,29 +3185,29 @@ $LL25@IsSlowedBy:
 	call	?plotDirection@@YAPAVCvPlot@@HHW4DirectionTypes@@@Z ; plotDirection
 	add	esp, 12					; 0000000cH
 
-; 402  : 						if(NULL != pEnemyAdjPlot)
+; 406  : 						if(NULL != pEnemyAdjPlot)
 
 	test	eax, eax
 	je	SHORT $LN24@IsSlowedBy
 
-; 403  : 						{
-; 404  : 							// Destination adjacent to enemy city?
-; 405  : 							if(pEnemyAdjPlot->getX() == iToPlotX && pEnemyAdjPlot->getY() == iToPlotY)
+; 407  : 						{
+; 408  : 							// Destination adjacent to enemy city?
+; 409  : 							if(pEnemyAdjPlot->getX() == iToPlotX && pEnemyAdjPlot->getY() == iToPlotY)
 
 	movsx	ecx, WORD PTR [eax]
-	cmp	ecx, DWORD PTR _iToPlotX$217732[esp+56]
+	cmp	ecx, DWORD PTR _iToPlotX$217774[esp+56]
 	jne	SHORT $LN24@IsSlowedBy
 	movsx	edx, WORD PTR [eax+2]
-	cmp	edx, DWORD PTR _iToPlotY$217733[esp+56]
+	cmp	edx, DWORD PTR _iToPlotY$217775[esp+56]
 	je	$LN94@IsSlowedBy
 $LN24@IsSlowedBy:
 
-; 394  : #else
-; 395  : 				if(pAdjPlot->isEnemyCity(*pUnit))
-; 396  : #endif
-; 397  : 				{
-; 398  : 					// Loop through plots adjacent to the enemy city and see if it's the same as our unit's Destination Plot
-; 399  : 					for(int iDirection = 0; iDirection < NUM_DIRECTION_TYPES; iDirection++)
+; 398  : #else
+; 399  : 				if(pAdjPlot->isEnemyCity(*pUnit))
+; 400  : #endif
+; 401  : 				{
+; 402  : 					// Loop through plots adjacent to the enemy city and see if it's the same as our unit's Destination Plot
+; 403  : 					for(int iDirection = 0; iDirection < NUM_DIRECTION_TYPES; iDirection++)
 
 	inc	esi
 	cmp	esi, 6
@@ -3211,15 +3215,15 @@ $LN24@IsSlowedBy:
 	mov	ebp, DWORD PTR _pUnit$[esp+52]
 $LN23@IsSlowedBy:
 
-; 406  : 							{
-; 407  : 								return true;
-; 408  : 							}
-; 409  : 						}
-; 410  : 					}
-; 411  : 				}
-; 412  : 
-; 413  : #ifdef AUI_UNIT_MOVEMENT_FIX_RADAR_ZOC
-; 414  : 				if (!pAdjPlot->isVisible(pUnit->getTeam()) && pUnit->plot() != pFromPlot)
+; 410  : 							{
+; 411  : 								return true;
+; 412  : 							}
+; 413  : 						}
+; 414  : 					}
+; 415  : 				}
+; 416  : 
+; 417  : #ifdef AUI_UNIT_MOVEMENT_FIX_RADAR_ZOC
+; 418  : 				if (!pAdjPlot->isVisible(pUnit->getTeam()) && pUnit->plot() != pFromPlot)
 
 	mov	ecx, ebp
 	call	?getTeam@CvUnit@@QBE?AW4TeamTypes@@XZ	; CvUnit::getTeam
@@ -3237,26 +3241,26 @@ $LN98@IsSlowedBy:
 	jne	$LN30@IsSlowedBy
 $LN20@IsSlowedBy:
 
-; 415  : 					continue;
-; 416  : #endif
-; 417  : 				pAdjUnitNode = pAdjPlot->headUnitNode();
+; 419  : 					continue;
+; 420  : #endif
+; 421  : 				pAdjUnitNode = pAdjPlot->headUnitNode();
 
 	mov	ecx, ebx
 	call	?headUnitNode@CvPlot@@QAEPAUIDInfo@@XZ	; CvPlot::headUnitNode
 	mov	edi, eax
 
-; 418  : 				// Loop through all units to see if there's an enemy unit here
-; 419  : 				while(pAdjUnitNode != NULL)
+; 422  : 				// Loop through all units to see if there's an enemy unit here
+; 423  : 				while(pAdjUnitNode != NULL)
 
 	test	edi, edi
 	je	$LN30@IsSlowedBy
 	jmp	SHORT $LN19@IsSlowedBy
 $LL101@IsSlowedBy:
-	mov	edi, DWORD PTR _pAdjUnitNode$217728[esp+56]
+	mov	edi, DWORD PTR _pAdjUnitNode$217770[esp+56]
 $LN19@IsSlowedBy:
 
-; 420  : 				{
-; 421  : 					if((pAdjUnitNode->eOwner >= 0) && pAdjUnitNode->eOwner < MAX_PLAYERS)
+; 424  : 				{
+; 425  : 					if((pAdjUnitNode->eOwner >= 0) && pAdjUnitNode->eOwner < MAX_PLAYERS)
 
 	mov	eax, DWORD PTR [edi]
 	test	eax, eax
@@ -3264,8 +3268,8 @@ $LN19@IsSlowedBy:
 	cmp	eax, 64					; 00000040H
 	jge	SHORT $LN17@IsSlowedBy
 
-; 422  : 					{
-; 423  : 						pLoopUnit = (GET_PLAYER(pAdjUnitNode->eOwner).getUnit(pAdjUnitNode->iID));
+; 426  : 					{
+; 427  : 						pLoopUnit = (GET_PLAYER(pAdjUnitNode->eOwner).getUnit(pAdjUnitNode->iID));
 
 	mov	edx, DWORD PTR [edi+4]
 	imul	eax, 63236				; 0000f704H
@@ -3275,50 +3279,50 @@ $LN19@IsSlowedBy:
 	call	?getUnit@CvPlayer@@QAEPAVCvUnit@@H@Z	; CvPlayer::getUnit
 	mov	esi, eax
 
-; 424  : 					}
-; 425  : 					else
+; 428  : 					}
+; 429  : 					else
 
 	jmp	SHORT $LN16@IsSlowedBy
 $LN17@IsSlowedBy:
 
-; 426  : 					{
-; 427  : 						pLoopUnit = NULL;
+; 430  : 					{
+; 431  : 						pLoopUnit = NULL;
 
 	xor	esi, esi
 $LN16@IsSlowedBy:
 
-; 428  : 					}
-; 429  : 
-; 430  : 					pAdjUnitNode = pAdjPlot->nextUnitNode(pAdjUnitNode);
+; 432  : 					}
+; 433  : 
+; 434  : 					pAdjUnitNode = pAdjPlot->nextUnitNode(pAdjUnitNode);
 
 	push	edi
 	mov	ecx, ebx
 	call	?nextUnitNode@CvPlot@@QAEPAUIDInfo@@PAU2@@Z ; CvPlot::nextUnitNode
-	mov	DWORD PTR _pAdjUnitNode$217728[esp+56], eax
+	mov	DWORD PTR _pAdjUnitNode$217770[esp+56], eax
 
-; 431  : 
-; 432  : 					if(!pLoopUnit) continue;
+; 435  : 
+; 436  : 					if(!pLoopUnit) continue;
 
 	test	esi, esi
 	je	$LN103@IsSlowedBy
 
-; 433  : 
-; 434  : #ifdef AUI_UNIT_MOVEMENT_FIX_DELAYED_DEATH_UNITS_GENERATE_ZOC
-; 435  : 					if (pLoopUnit->isDelayedDeath())
-; 436  : 						continue;
-; 437  : #endif
-; 438  : 
-; 439  : 					TeamTypes unit_loop_team_type = pLoopUnit->getTeam();
+; 437  : 
+; 438  : #ifdef AUI_UNIT_MOVEMENT_FIX_DELAYED_DEATH_UNITS_GENERATE_ZOC
+; 439  : 					if (pLoopUnit->isDelayedDeath())
+; 440  : 						continue;
+; 441  : #endif
+; 442  : 
+; 443  : 					TeamTypes unit_loop_team_type = pLoopUnit->getTeam();
 
 	mov	ecx, esi
 	call	?getTeam@CvUnit@@QBE?AW4TeamTypes@@XZ	; CvUnit::getTeam
 
-; 440  : 
-; 441  : 					if(pLoopUnit->isInvisible(unit_team_type,false)) continue;
+; 444  : 
+; 445  : 					if(pLoopUnit->isInvisible(unit_team_type,false)) continue;
 
 	push	1
 	mov	edi, eax
-	mov	eax, DWORD PTR _unit_team_type$217734[esp+60]
+	mov	eax, DWORD PTR _unit_team_type$217776[esp+60]
 	push	0
 	push	eax
 	mov	ecx, esi
@@ -3326,67 +3330,67 @@ $LN16@IsSlowedBy:
 	test	al, al
 	jne	$LN103@IsSlowedBy
 
-; 442  : 
-; 443  : 					// Combat unit?
-; 444  : 					if(!pLoopUnit->IsCombatUnit())
+; 446  : 
+; 447  : 					// Combat unit?
+; 448  : 					if(!pLoopUnit->IsCombatUnit())
 
 	cmp	DWORD PTR [esi+1044], 0
 	jle	SHORT $LN103@IsSlowedBy
 
-; 445  : 					{
-; 446  : 						continue;
-; 447  : 					}
-; 448  : 
-; 449  : 					// At war with this unit's team?
-; 450  : 					if(unit_loop_team_type == BARBARIAN_TEAM || kUnitTeam.isAtWar(unit_loop_team_type))
+; 449  : 					{
+; 450  : 						continue;
+; 451  : 					}
+; 452  : 
+; 453  : 					// At war with this unit's team?
+; 454  : 					if(unit_loop_team_type == BARBARIAN_TEAM || kUnitTeam.isAtWar(unit_loop_team_type))
 
 	cmp	edi, 63					; 0000003fH
 	je	SHORT $LN11@IsSlowedBy
-	mov	ecx, DWORD PTR _kUnitTeam$217737[esp+56]
+	mov	ecx, DWORD PTR _kUnitTeam$217779[esp+56]
 	push	edi
 	call	?isAtWar@CvTeam@@QBE_NW4TeamTypes@@@Z	; CvTeam::isAtWar
 	test	al, al
 	je	SHORT $LN103@IsSlowedBy
 $LN11@IsSlowedBy:
 
-; 451  : 					{
-; 452  : 
-; 453  : 						// Same Domain?
-; 454  : 
-; 455  : 						DomainTypes loop_unit_domain_type = pLoopUnit->getDomainType();
+; 455  : 					{
+; 456  : 
+; 457  : 						// Same Domain?
+; 458  : 
+; 459  : 						DomainTypes loop_unit_domain_type = pLoopUnit->getDomainType();
 
 	mov	ecx, esi
 	call	?getDomainType@CvUnit@@QBE?AW4DomainTypes@@XZ ; CvUnit::getDomainType
 
-; 456  : 						if(loop_unit_domain_type != unit_domain_type)
+; 460  : 						if(loop_unit_domain_type != unit_domain_type)
 
-	mov	ecx, DWORD PTR _unit_domain_type$217735[esp+56]
+	mov	ecx, DWORD PTR _unit_domain_type$217777[esp+56]
 	cmp	eax, ecx
 	je	SHORT $LN8@IsSlowedBy
 
-; 457  : 						{
-; 458  : 							// this is valid
-; 459  : 							if(loop_unit_domain_type == DOMAIN_SEA && unit_domain_type)
+; 461  : 						{
+; 462  : 							// this is valid
+; 463  : 							if(loop_unit_domain_type == DOMAIN_SEA && unit_domain_type)
 
 	test	eax, eax
 	jne	SHORT $LN103@IsSlowedBy
 	test	ecx, ecx
 
-; 460  : 							{
-; 461  : 								// continue on
-; 462  : 							}
-; 463  : 							else
 ; 464  : 							{
-; 465  : 								continue;
+; 465  : 								// continue on
+; 466  : 							}
+; 467  : 							else
+; 468  : 							{
+; 469  : 								continue;
 
 	je	SHORT $LN103@IsSlowedBy
 $LN8@IsSlowedBy:
 
-; 466  : 							}
-; 467  : 						}
-; 468  : 
-; 469  : 						// Embarked?
-; 470  : 						if(unit_domain_type == DOMAIN_LAND && pLoopUnit->isEmbarked())
+; 470  : 							}
+; 471  : 						}
+; 472  : 
+; 473  : 						// Embarked?
+; 474  : 						if(unit_domain_type == DOMAIN_LAND && pLoopUnit->isEmbarked())
 
 	cmp	ecx, 2
 	jne	SHORT $LN7@IsSlowedBy
@@ -3394,20 +3398,20 @@ $LN8@IsSlowedBy:
 	jne	SHORT $LN103@IsSlowedBy
 $LN7@IsSlowedBy:
 
-; 471  : 						{
-; 472  : 							continue;
-; 473  : 						}
-; 474  : 
-; 475  : 						// Loop through plots adjacent to the enemy unit and see if it's the same as our unit's Destination Plot
-; 476  : 						for(int iDirection2 = 0; iDirection2 < NUM_DIRECTION_TYPES; iDirection2++)
+; 475  : 						{
+; 476  : 							continue;
+; 477  : 						}
+; 478  : 
+; 479  : 						// Loop through plots adjacent to the enemy unit and see if it's the same as our unit's Destination Plot
+; 480  : 						for(int iDirection2 = 0; iDirection2 < NUM_DIRECTION_TYPES; iDirection2++)
 
 	movsx	edi, WORD PTR [ebx+2]
 	movsx	ebp, WORD PTR [ebx]
 	xor	esi, esi
 $LL6@IsSlowedBy:
 
-; 477  : 						{
-; 478  : 							CvPlot* pEnemyAdjPlot = plotDirection(pAdjPlot->getX(), pAdjPlot->getY(), ((DirectionTypes)iDirection2));
+; 481  : 						{
+; 482  : 							CvPlot* pEnemyAdjPlot = plotDirection(pAdjPlot->getX(), pAdjPlot->getY(), ((DirectionTypes)iDirection2));
 
 	push	esi
 	push	edi
@@ -3415,39 +3419,39 @@ $LL6@IsSlowedBy:
 	call	?plotDirection@@YAPAVCvPlot@@HHW4DirectionTypes@@@Z ; plotDirection
 	add	esp, 12					; 0000000cH
 
-; 479  : 							if(!pEnemyAdjPlot)
+; 483  : 							if(!pEnemyAdjPlot)
 
 	test	eax, eax
 	je	SHORT $LN5@IsSlowedBy
 
-; 480  : 							{
-; 481  : 								continue;
-; 482  : 							}
-; 483  : 
-; 484  : 							// Don't check Enemy Unit's plot
-; 485  : 							if(!bIsVisibleEnemyUnit)
+; 484  : 							{
+; 485  : 								continue;
+; 486  : 							}
+; 487  : 
+; 488  : 							// Don't check Enemy Unit's plot
+; 489  : 							if(!bIsVisibleEnemyUnit)
 
-	cmp	BYTE PTR _bIsVisibleEnemyUnit$217736[esp+56], 0
+	cmp	BYTE PTR _bIsVisibleEnemyUnit$217778[esp+56], 0
 	jne	SHORT $LN5@IsSlowedBy
 
-; 486  : 							{
-; 487  : 								// Destination adjacent to enemy unit?
-; 488  : 								if(pEnemyAdjPlot->getX() == iToPlotX && pEnemyAdjPlot->getY() == iToPlotY)
+; 490  : 							{
+; 491  : 								// Destination adjacent to enemy unit?
+; 492  : 								if(pEnemyAdjPlot->getX() == iToPlotX && pEnemyAdjPlot->getY() == iToPlotY)
 
 	movsx	ecx, WORD PTR [eax]
-	cmp	ecx, DWORD PTR _iToPlotX$217732[esp+56]
+	cmp	ecx, DWORD PTR _iToPlotX$217774[esp+56]
 	jne	SHORT $LN5@IsSlowedBy
 	movsx	edx, WORD PTR [eax+2]
-	cmp	edx, DWORD PTR _iToPlotY$217733[esp+56]
+	cmp	edx, DWORD PTR _iToPlotY$217775[esp+56]
 	je	SHORT $LN94@IsSlowedBy
 $LN5@IsSlowedBy:
 
-; 471  : 						{
-; 472  : 							continue;
-; 473  : 						}
-; 474  : 
-; 475  : 						// Loop through plots adjacent to the enemy unit and see if it's the same as our unit's Destination Plot
-; 476  : 						for(int iDirection2 = 0; iDirection2 < NUM_DIRECTION_TYPES; iDirection2++)
+; 475  : 						{
+; 476  : 							continue;
+; 477  : 						}
+; 478  : 
+; 479  : 						// Loop through plots adjacent to the enemy unit and see if it's the same as our unit's Destination Plot
+; 480  : 						for(int iDirection2 = 0; iDirection2 < NUM_DIRECTION_TYPES; iDirection2++)
 
 	inc	esi
 	cmp	esi, 6
@@ -3455,40 +3459,40 @@ $LN5@IsSlowedBy:
 	mov	ebp, DWORD PTR _pUnit$[esp+52]
 $LN103@IsSlowedBy:
 
-; 418  : 				// Loop through all units to see if there's an enemy unit here
-; 419  : 				while(pAdjUnitNode != NULL)
+; 422  : 				// Loop through all units to see if there's an enemy unit here
+; 423  : 				while(pAdjUnitNode != NULL)
 
-	cmp	DWORD PTR _pAdjUnitNode$217728[esp+56], 0
+	cmp	DWORD PTR _pAdjUnitNode$217770[esp+56], 0
 	jne	$LL101@IsSlowedBy
 $LN30@IsSlowedBy:
 
-; 385  : 
-; 386  : 		for(int iDirection0 = 0; iDirection0 < NUM_DIRECTION_TYPES; iDirection0++)
+; 389  : 
+; 390  : 		for(int iDirection0 = 0; iDirection0 < NUM_DIRECTION_TYPES; iDirection0++)
 
-	mov	eax, DWORD PTR _iDirection0$217738[esp+56]
+	mov	eax, DWORD PTR _iDirection0$217780[esp+56]
 	inc	eax
 	cmp	eax, 6
-	mov	DWORD PTR _iDirection0$217738[esp+56], eax
+	mov	DWORD PTR _iDirection0$217780[esp+56], eax
 	jl	$LL106@IsSlowedBy
 $LN29@IsSlowedBy:
 	pop	ebx
 	pop	edi
 	pop	esi
 
-; 491  : 								}
-; 492  : 							}
-; 493  : 						}
-; 494  : 					}
-; 495  : 				}
-; 496  : 			}
-; 497  : 		}
-; 498  : 	}
-; 499  : 	return false;
+; 495  : 								}
+; 496  : 							}
+; 497  : 						}
+; 498  : 					}
+; 499  : 				}
+; 500  : 			}
+; 501  : 		}
+; 502  : 	}
+; 503  : 	return false;
 
 	xor	al, al
 	pop	ebp
 
-; 500  : }
+; 504  : }
 
 	add	esp, 40					; 00000028H
 	ret	0
@@ -3497,13 +3501,13 @@ $LN94@IsSlowedBy:
 	pop	edi
 	pop	esi
 
-; 489  : 								{
-; 490  : 									return true;
+; 493  : 								{
+; 494  : 									return true;
 
 	mov	al, 1
 	pop	ebp
 
-; 500  : }
+; 504  : }
 
 	add	esp, 40					; 00000028H
 	ret	0
@@ -3511,13 +3515,13 @@ $LN33@IsSlowedBy:
 	pop	edi
 	pop	esi
 
-; 367  : 	{
-; 368  : 		return false;
+; 371  : 	{
+; 372  : 		return false;
 
 	xor	al, al
 	pop	ebp
 
-; 500  : }
+; 504  : }
 
 	add	esp, 40					; 00000028H
 	ret	0
@@ -3530,7 +3534,7 @@ _TEXT	SEGMENT
 _iRouteFlatCost$ = -16					; size = 4
 _iRouteCost$ = -12					; size = 4
 _iRegularCost$ = -8					; size = 4
-$T219036 = -4						; size = 4
+$T219078 = -4						; size = 4
 _pUnit$ = 8						; size = 4
 _pFromPlot$ = 12					; size = 4
 _pToPlot$ = 16						; size = 4
@@ -3539,18 +3543,18 @@ _iMaxMoves$ = 24					; size = 4
 _iMovesRemaining$ = 28					; size = 4
 ?MovementCost@CvUnitMovement@@SAHPBVCvUnit@@PBVCvPlot@@1HHH@Z PROC ; CvUnitMovement::MovementCost, COMDAT
 
-; 192  : {
+; 194  : {
 
 	sub	esp, 16					; 00000010H
 	push	ebx
 
-; 193  : 	int iRegularCost;
-; 194  : 	int iRouteCost;
-; 195  : 	int iRouteFlatCost;
-; 196  : 
-; 197  : 	CvAssertMsg(pToPlot->getTerrainType() != NO_TERRAIN, "TerrainType is not assigned a valid value");
+; 195  : 	int iRegularCost;
+; 196  : 	int iRouteCost;
+; 197  : 	int iRouteFlatCost;
 ; 198  : 
-; 199  : 	if(ConsumesAllMoves(pUnit, pFromPlot, pToPlot))
+; 199  : 	CvAssertMsg(pToPlot->getTerrainType() != NO_TERRAIN, "TerrainType is not assigned a valid value");
+; 200  : 
+; 201  : 	if(ConsumesAllMoves(pUnit, pFromPlot, pToPlot))
 
 	mov	ebx, DWORD PTR _pUnit$[esp+16]
 	push	esi
@@ -3566,32 +3570,32 @@ _iMovesRemaining$ = 28					; size = 4
 	je	SHORT $LN9@MovementCo
 $LN26@MovementCo:
 
-; 200  : 	{
-; 201  : 		if (iMovesRemaining > 0)
+; 202  : 	{
+; 203  : 		if (iMovesRemaining > 0)
 
 	mov	eax, DWORD PTR _iMovesRemaining$[esp+24]
 	test	eax, eax
 
-; 202  : 			return iMovesRemaining;
+; 204  : 			return iMovesRemaining;
 
 	jg	$LN10@MovementCo
 
-; 203  : 		else
-; 204  : 			return iMaxMoves;
+; 205  : 		else
+; 206  : 			return iMaxMoves;
 
 	mov	eax, DWORD PTR _iMaxMoves$[esp+24]
 	pop	edi
 	pop	esi
 	pop	ebx
 
-; 221  : }
+; 223  : }
 
 	add	esp, 16					; 00000010H
 	ret	0
 $LN9@MovementCo:
 
-; 205  : 	}
-; 206  : 	else if(CostsOnlyOne(pUnit, pFromPlot, pToPlot))
+; 207  : 	}
+; 208  : 	else if(CostsOnlyOne(pUnit, pFromPlot, pToPlot))
 
 	push	esi
 	push	edi
@@ -3601,22 +3605,22 @@ $LN9@MovementCo:
 	test	al, al
 	je	SHORT $LN5@MovementCo
 
-; 207  : 	{
-; 208  : 		return GC.getMOVE_DENOMINATOR();
+; 209  : 	{
+; 210  : 		return GC.getMOVE_DENOMINATOR();
 
 	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+6236
 	pop	edi
 	pop	esi
 	pop	ebx
 
-; 221  : }
+; 223  : }
 
 	add	esp, 16					; 00000010H
 	ret	0
 $LN5@MovementCo:
 
-; 209  : 	}
-; 210  : 	else if(IsSlowedByZOC(pUnit, pFromPlot, pToPlot))
+; 211  : 	}
+; 212  : 	else if(IsSlowedByZOC(pUnit, pFromPlot, pToPlot))
 
 	push	esi
 	push	edi
@@ -3625,17 +3629,17 @@ $LN5@MovementCo:
 	add	esp, 12					; 0000000cH
 	test	al, al
 
-; 211  : 	{
-; 212  : 		if (iMovesRemaining > 0)
-; 213  : 			return iMovesRemaining;
-; 214  : 		else
-; 215  : 			return iMaxMoves;
+; 213  : 	{
+; 214  : 		if (iMovesRemaining > 0)
+; 215  : 			return iMovesRemaining;
+; 216  : 		else
+; 217  : 			return iMaxMoves;
 
 	jne	SHORT $LN26@MovementCo
 
-; 216  : 	}
-; 217  : 
-; 218  : 	GetCostsForMove(pUnit, pFromPlot, pToPlot, iBaseMoves, iRegularCost, iRouteCost, iRouteFlatCost);
+; 218  : 	}
+; 219  : 
+; 220  : 	GetCostsForMove(pUnit, pFromPlot, pToPlot, iBaseMoves, iRegularCost, iRouteCost, iRouteFlatCost);
 
 	lea	eax, DWORD PTR _iRouteFlatCost$[esp+28]
 	push	eax
@@ -3650,13 +3654,13 @@ $LN5@MovementCo:
 	push	ebx
 	call	?GetCostsForMove@CvUnitMovement@@SAXPBVCvUnit@@PBVCvPlot@@1HAAH22@Z ; CvUnitMovement::GetCostsForMove
 
-; 219  : 
-; 220  : 	return std::max(1, std::min(iRegularCost, std::min(iRouteCost, iRouteFlatCost)));
+; 221  : 
+; 222  : 	return std::max(1, std::min(iRegularCost, std::min(iRouteCost, iRouteFlatCost)));
 
 	mov	ecx, DWORD PTR _iRouteFlatCost$[esp+56]
 	add	esp, 28					; 0000001cH
 	cmp	ecx, DWORD PTR _iRouteCost$[esp+28]
-	mov	DWORD PTR $T219036[esp+28], 1
+	mov	DWORD PTR $T219078[esp+28], 1
 	lea	eax, DWORD PTR _iRouteFlatCost$[esp+28]
 	jl	SHORT $LN17@MovementCo
 	lea	eax, DWORD PTR _iRouteCost$[esp+28]
@@ -3668,7 +3672,7 @@ $LN17@MovementCo:
 $LN21@MovementCo:
 	cmp	DWORD PTR [eax], 1
 	jg	SHORT $LN25@MovementCo
-	lea	eax, DWORD PTR $T219036[esp+28]
+	lea	eax, DWORD PTR $T219078[esp+28]
 $LN25@MovementCo:
 	mov	eax, DWORD PTR [eax]
 $LN10@MovementCo:
@@ -3676,7 +3680,7 @@ $LN10@MovementCo:
 	pop	esi
 	pop	ebx
 
-; 221  : }
+; 223  : }
 
 	add	esp, 16					; 00000010H
 	ret	0
@@ -3689,7 +3693,7 @@ _TEXT	SEGMENT
 _iRouteFlatCost$ = -16					; size = 4
 _iRouteCost$ = -12					; size = 4
 _iRegularCost$ = -8					; size = 4
-$T219072 = -4						; size = 4
+$T219114 = -4						; size = 4
 _pUnit$ = 8						; size = 4
 _pFromPlot$ = 12					; size = 4
 _pToPlot$ = 16						; size = 4
@@ -3698,18 +3702,18 @@ _iMaxMoves$ = 24					; size = 4
 _iMovesRemaining$ = 28					; size = 4
 ?MovementCostNoZOC@CvUnitMovement@@SAHPBVCvUnit@@PBVCvPlot@@1HHH@Z PROC ; CvUnitMovement::MovementCostNoZOC, COMDAT
 
-; 225  : {
+; 227  : {
 
 	sub	esp, 16					; 00000010H
 	push	ebx
 
-; 226  : 	int iRegularCost;
-; 227  : 	int iRouteCost;
-; 228  : 	int iRouteFlatCost;
-; 229  : 
-; 230  : 	CvAssertMsg(pToPlot->getTerrainType() != NO_TERRAIN, "TerrainType is not assigned a valid value");
+; 228  : 	int iRegularCost;
+; 229  : 	int iRouteCost;
+; 230  : 	int iRouteFlatCost;
 ; 231  : 
-; 232  : 	if(ConsumesAllMoves(pUnit, pFromPlot, pToPlot))
+; 232  : 	CvAssertMsg(pToPlot->getTerrainType() != NO_TERRAIN, "TerrainType is not assigned a valid value");
+; 233  : 
+; 234  : 	if(ConsumesAllMoves(pUnit, pFromPlot, pToPlot))
 
 	mov	ebx, DWORD PTR _pUnit$[esp+16]
 	push	esi
@@ -3724,32 +3728,32 @@ _iMovesRemaining$ = 28					; size = 4
 	test	al, al
 	je	SHORT $LN5@MovementCo@2
 
-; 233  : 	{
-; 234  : 		if (iMovesRemaining > 0)
+; 235  : 	{
+; 236  : 		if (iMovesRemaining > 0)
 
 	mov	eax, DWORD PTR _iMovesRemaining$[esp+24]
 	test	eax, eax
 
-; 235  : 			return iMovesRemaining;
+; 237  : 			return iMovesRemaining;
 
 	jg	SHORT $LN6@MovementCo@2
 
-; 236  : 		else
-; 237  : 			return iMaxMoves;
+; 238  : 		else
+; 239  : 			return iMaxMoves;
 
 	mov	eax, DWORD PTR _iMaxMoves$[esp+24]
 	pop	edi
 	pop	esi
 	pop	ebx
 
-; 247  : }
+; 249  : }
 
 	add	esp, 16					; 00000010H
 	ret	0
 $LN5@MovementCo@2:
 
-; 238  : 	}
-; 239  : 	else if(CostsOnlyOne(pUnit, pFromPlot, pToPlot))
+; 240  : 	}
+; 241  : 	else if(CostsOnlyOne(pUnit, pFromPlot, pToPlot))
 
 	push	esi
 	push	edi
@@ -3759,23 +3763,23 @@ $LN5@MovementCo@2:
 	test	al, al
 	je	SHORT $LN1@MovementCo@2
 
-; 240  : 	{
-; 241  : 		return GC.getMOVE_DENOMINATOR();
+; 242  : 	{
+; 243  : 		return GC.getMOVE_DENOMINATOR();
 
 	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+6236
 	pop	edi
 	pop	esi
 	pop	ebx
 
-; 247  : }
+; 249  : }
 
 	add	esp, 16					; 00000010H
 	ret	0
 $LN1@MovementCo@2:
 
-; 242  : 	}
-; 243  : 
-; 244  : 	GetCostsForMove(pUnit, pFromPlot, pToPlot, iBaseMoves, iRegularCost, iRouteCost, iRouteFlatCost);
+; 244  : 	}
+; 245  : 
+; 246  : 	GetCostsForMove(pUnit, pFromPlot, pToPlot, iBaseMoves, iRegularCost, iRouteCost, iRouteFlatCost);
 
 	lea	eax, DWORD PTR _iRouteFlatCost$[esp+28]
 	push	eax
@@ -3790,13 +3794,13 @@ $LN1@MovementCo@2:
 	push	ebx
 	call	?GetCostsForMove@CvUnitMovement@@SAXPBVCvUnit@@PBVCvPlot@@1HAAH22@Z ; CvUnitMovement::GetCostsForMove
 
-; 245  : 
-; 246  : 	return std::max(1, std::min(iRegularCost, std::min(iRouteCost, iRouteFlatCost)));
+; 247  : 
+; 248  : 	return std::max(1, std::min(iRegularCost, std::min(iRouteCost, iRouteFlatCost)));
 
 	mov	ecx, DWORD PTR _iRouteFlatCost$[esp+56]
 	add	esp, 28					; 0000001cH
 	cmp	ecx, DWORD PTR _iRouteCost$[esp+28]
-	mov	DWORD PTR $T219072[esp+28], 1
+	mov	DWORD PTR $T219114[esp+28], 1
 	lea	eax, DWORD PTR _iRouteFlatCost$[esp+28]
 	jl	SHORT $LN13@MovementCo@2
 	lea	eax, DWORD PTR _iRouteCost$[esp+28]
@@ -3808,7 +3812,7 @@ $LN13@MovementCo@2:
 $LN17@MovementCo@2:
 	cmp	DWORD PTR [eax], 1
 	jg	SHORT $LN21@MovementCo@2
-	lea	eax, DWORD PTR $T219072[esp+28]
+	lea	eax, DWORD PTR $T219114[esp+28]
 $LN21@MovementCo@2:
 	mov	eax, DWORD PTR [eax]
 $LN6@MovementCo@2:
@@ -3816,7 +3820,7 @@ $LN6@MovementCo@2:
 	pop	esi
 	pop	ebx
 
-; 247  : }
+; 249  : }
 
 	add	esp, 16					; 00000010H
 	ret	0

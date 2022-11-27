@@ -702,8 +702,20 @@ void CvDllNetMessageHandler::ResponseChangeIdeology(PlayerTypes ePlayer)
 //------------------------------------------------------------------------------
 void CvDllNetMessageHandler::ResponseGiftUnit(PlayerTypes ePlayer, PlayerTypes eMinor, int iUnitID)
 {
+#ifdef TURN_TIMER_RESET_BUTTON
+	// here we intercept response, when UnitID equals -1 we agree to reset timer
+	if (iUnitID == -1) {
+		GC.getGame().resetTurnTimer(true);
+		DLLUI->AddMessage(0, CvPreGame::activePlayer(), true, GC.getEVENT_MESSAGE_TIME(), GetLocalizedText("TXT_KEY_MISC_TURN_TIMER_RESET", GET_PLAYER(ePlayer).getName()).GetCString());
+	}
+	else
+	{
+#endif
 	CvUnit* pkUnit = GET_PLAYER(ePlayer).getUnit(iUnitID);
 	GET_PLAYER(eMinor).DoDistanceGift(ePlayer, pkUnit);
+#ifdef TURN_TIMER_RESET_BUTTON
+	}
+#endif
 }
 //------------------------------------------------------------------------------
 void CvDllNetMessageHandler::ResponseLaunchSpaceship(PlayerTypes ePlayer, VictoryTypes eVictory)

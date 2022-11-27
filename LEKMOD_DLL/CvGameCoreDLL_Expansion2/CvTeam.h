@@ -236,6 +236,10 @@ public:
 	int getEmbarkedExtraMoves() const;
 	void changeEmbarkedExtraMoves(int iChange);
 
+	//EAP: Embark visibility on tech
+	int getEmbarkedExtraSight() const;
+	void changeEmbarkedExtraSight(int iChange);
+
 	int GetNumNaturalWondersDiscovered() const;
 	void ChangeNumNaturalWondersDiscovered(int iChange);
 
@@ -456,6 +460,9 @@ protected:
 	int m_iBorderObstacleCount;
 	int m_iVictoryPoints;
 	int m_iEmbarkedExtraMoves;
+
+	//EAP: Extra embarked visibility on tech
+	int m_iEmbarkedExtraSight;
 	int m_iCanEmbarkCount;
 	int m_iDefensiveEmbarkCount;
 	int m_iEmbarkedAllWaterPassageCount;

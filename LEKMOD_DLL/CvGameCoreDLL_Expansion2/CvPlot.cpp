@@ -8756,6 +8756,7 @@ bool CvPlot::setRevealed(TeamTypes eTeam, bool bNewValue, bool bTerrainOnly, Tea
 
 					// FIRST (MAJOR CIV) FINDER?
 					int iFinderGold = 0;
+					int iFinderFaith = 0;
 					bool bFirstFinder = false;
 					CvTeam& kTeam = GET_TEAM(eTeam);
 					if(!kTeam.isMinorCiv() && !kTeam.isBarbarian() && !kTeam.isObserver())
@@ -8780,6 +8781,22 @@ bool CvPlot::setRevealed(TeamTypes eTeam, bool bNewValue, bool bTerrainOnly, Tea
 									}
 								}
 							}
+
+							// EAP: First finder FAITH Incremental
+							for(iI = 0; iI < MAX_MAJOR_CIVS; ++iI)
+							{
+								int iIncrease;
+								CvPlayerAI& playerI = GET_PLAYER((PlayerTypes)iI);
+								if(playerI.isAlive())
+								{
+									if(playerI.getTeam() == eTeam)
+									{
+										iIncrease += iFinderFaith += playerI.GetPlayerTraits()->GetNaturalWonderFirstFinderFaith();
+										iIncrease += 10;
+									}
+								}
+							}
+		
 						}
 						else
 						{
@@ -8792,6 +8809,23 @@ bool CvPlot::setRevealed(TeamTypes eTeam, bool bNewValue, bool bTerrainOnly, Tea
 									if(playerI.getTeam() == eTeam)
 									{
 										iFinderGold += playerI.GetPlayerTraits()->GetNaturalWonderSubsequentFinderGold();
+
+									}
+								}
+							}
+
+							// EAP: Subsequent FAITH for the finder incremental
+							for(iI = 0; iI < MAX_MAJOR_CIVS; ++iI)
+							{
+								int iIncrease;
+								CvPlayerAI& playerI = GET_PLAYER((PlayerTypes)iI);
+								if(playerI.isAlive())
+								{
+
+									if(playerI.getTeam() == eTeam)
+									{
+										iIncrease += iFinderFaith += playerI.GetPlayerTraits()->GetNaturalWonderSubsequentFinderFaith();
+										iIncrease += 10;
 									}
 								}
 							}
@@ -8811,6 +8845,7 @@ bool CvPlot::setRevealed(TeamTypes eTeam, bool bNewValue, bool bTerrainOnly, Tea
 								}
 							}
 						}
+						
 
 						if(iFinderGold > 0)
 						{
@@ -8839,6 +8874,39 @@ bool CvPlot::setRevealed(TeamTypes eTeam, bool bNewValue, bool bTerrainOnly, Tea
 									float fDelay = GC.getPOST_COMBAT_TEXT_DELAY() * 3;
 									text[0] = NULL;
 									sprintf_s(text, "[COLOR_YELLOW]+%d[ENDCOLOR][ICON_GOLD]", iFinderGold);
+									GC.GetEngineUserInterface()->AddPopupText(getX(), getY(), text, fDelay);
+								}
+							}
+						}
+						
+						//EAP: Now do it for Faith too!
+						if(iFinderFaith > 0)
+						{
+							// Compute gold per team member
+							int iFaithPerTeamMember = iFinderFaith;
+
+							if(kTeam.getNumMembers() > 0)
+							{
+								iFaithPerTeamMember = iFinderFaith / kTeam.getNumMembers();
+							}
+
+							for(iI = 0; iI < MAX_MAJOR_CIVS; ++iI)
+							{
+								CvPlayerAI& playerI = GET_PLAYER((PlayerTypes)iI);
+								if(playerI.isAlive())
+								{
+									if(playerI.getTeam() == eTeam)
+									{
+										playerI.ChangeFaith(iFaithPerTeamMember);
+									}
+								}
+
+								if(eTeam == eActiveTeam)
+								{
+									char text[256] = {0};
+									float fDelay = GC.getPOST_COMBAT_TEXT_DELAY() * 3;
+									text[0] = NULL;
+									sprintf_s(text, "[COLOR_WHITE]+%d[ENDCOLOR][ICON_PEACE]", iFinderFaith);
 									GC.GetEngineUserInterface()->AddPopupText(getX(), getY(), text, fDelay);
 								}
 							}

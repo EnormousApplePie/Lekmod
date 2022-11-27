@@ -2307,6 +2307,16 @@ void CvPlayerEspionage::BuildStealableTechList(PlayerTypes ePlayer)
 			continue;
 		}
 
+#ifdef CANT_STEAL_CLASSICAL_ERA_TECHS //This time from Immos, this one works with just < ERA rather than a xml tag
+		CvTechEntry* pEntry = GC.GetGameTechs()->GetEntry(eTech);
+		if(pEntry)
+		{
+			if((pEntry->GetEra() < GC.getInfoTypeForString("ERA_MEDIEVAL", true /*bHideAssert*/)))
+			{
+				continue;
+			}
+		}
+#endif
 		// can it be stolen? ~EAP
 		//CvTechEntry* pkTechInfo = GC.getTechInfo(eTech);
 		//if (pkTechInfo->IsDisableTechSteal())

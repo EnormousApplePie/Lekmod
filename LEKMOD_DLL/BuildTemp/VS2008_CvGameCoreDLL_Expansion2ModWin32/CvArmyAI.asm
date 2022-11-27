@@ -3629,7 +3629,7 @@ __ehfuncinfo$?Kill@CvArmyAI@@QAEXXZ DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?Kill@CvArmyAI@@QAEXXZ
 _TEXT	SEGMENT
-_pThisUnit$217582 = -20					; size = 8
+_pThisUnit$217624 = -20					; size = 8
 __$EHRec$ = -12						; size = 12
 ?Kill@CvArmyAI@@QAEXXZ PROC				; CvArmyAI::Kill, COMDAT
 ; _this$ = ecx
@@ -3676,8 +3676,8 @@ $LL3@Kill:
 	mov	ecx, eax
 	call	?getUnit@CvPlayer@@QAEPAVCvUnit@@H@Z	; CvPlayer::getUnit
 	mov	esi, eax
-	mov	DWORD PTR _pThisUnit$217582[esp+36], esi
-	mov	BYTE PTR _pThisUnit$217582[esp+40], bl
+	mov	DWORD PTR _pThisUnit$217624[esp+36], esi
+	mov	BYTE PTR _pThisUnit$217624[esp+40], bl
 	cmp	esi, ebx
 	je	SHORT $LN14@Kill
 	mov	ecx, esi
@@ -3747,7 +3747,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?Kill@CvArmyAI@@QAEXXZ$0:
-	lea	ecx, DWORD PTR _pThisUnit$217582[ebp]
+	lea	ecx, DWORD PTR _pThisUnit$217624[ebp]
 	jmp	??1?$FObjectHandle@VCvUnit@@@@QAE@XZ	; FObjectHandle<CvUnit>::~FObjectHandle<CvUnit>
 __ehhandler$?Kill@CvArmyAI@@QAEXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?Kill@CvArmyAI@@QAEXXZ
@@ -3761,7 +3761,7 @@ EXTRN	??6@YAAAVFDataStream@@AAV0@ABW4PlayerTypes@@@Z:PROC ; operator<<
 _TEXT	SEGMENT
 _uiVersion$ = -4					; size = 4
 tv224 = 8						; size = 4
-$T219633 = 8						; size = 4
+$T219675 = 8						; size = 4
 _kStream$ = 8						; size = 4
 ?write@CvArmyAI@@UBEXAAVFDataStream@@@Z PROC		; CvArmyAI::write, COMDAT
 ; _this$ = ecx
@@ -3861,10 +3861,10 @@ _kStream$ = 8						; size = 4
 ; 151  : 	kStream << (int)m_FormationEntries.size();
 
 	mov	edx, DWORD PTR [edi+48]
-	lea	eax, DWORD PTR $T219633[esp+12]
+	lea	eax, DWORD PTR $T219675[esp+12]
 	push	eax
 	mov	ecx, esi
-	mov	DWORD PTR $T219633[esp+16], edx
+	mov	DWORD PTR $T219675[esp+16], edx
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
 ; 152  : 	for(uint ui = 0; ui < m_FormationEntries.size(); ui++)
@@ -3956,10 +3956,10 @@ EXTRN	?TurnsToReachTarget@@YAHV?$FObjectHandle@VCvUnit@@@@PAVCvPlot@@_N22@Z:PROC
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?UpdateCheckpointTurns@CvArmyAI@@QAEXXZ
 _TEXT	SEGMENT
-_iI$217775 = -12					; size = 4
+_iI$217817 = -12					; size = 4
 tv426 = -8						; size = 4
-$T219741 = -4						; size = 4
-_pUnit$217780 = -4					; size = 4
+$T219783 = -4						; size = 4
+_pUnit$217822 = -4					; size = 4
 ?UpdateCheckpointTurns@CvArmyAI@@QAEXXZ PROC		; CvArmyAI::UpdateCheckpointTurns, COMDAT
 ; _this$ = ecx
 
@@ -3975,7 +3975,7 @@ _pUnit$217780 = -4					; size = 4
 	cmp	DWORD PTR [ebx+48], 0
 	push	esi
 	push	edi
-	mov	DWORD PTR _iI$217775[esp+28], 0
+	mov	DWORD PTR _iI$217817[esp+28], 0
 	jbe	$LN4@UpdateChec
 	mov	DWORD PTR tv426[esp+28], 0
 $LL6@UpdateChec:
@@ -4005,7 +4005,7 @@ $LL6@UpdateChec:
 	mov	ecx, DWORD PTR [ebx+20]
 	mov	edx, eax
 	mov	eax, DWORD PTR [ebx+16]
-	mov	DWORD PTR _pUnit$217780[esp+28], edx
+	mov	DWORD PTR _pUnit$217822[esp+28], edx
 	cmp	eax, -2147483647			; 80000001H
 	je	$LN28@UpdateChec
 	cmp	ecx, -2147483647			; 80000001H
@@ -4065,13 +4065,13 @@ $LN52@UpdateChec:
 	jge	SHORT $LN32@UpdateChec
 	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+52
 	imul	esi, edx
-	mov	edx, DWORD PTR _pUnit$217780[esp+28]
+	mov	edx, DWORD PTR _pUnit$217822[esp+28]
 	add	esi, edi
 	imul	esi, 484				; 000001e4H
 	add	esi, DWORD PTR [eax+4068]
 	jmp	SHORT $LN30@UpdateChec
 $LN32@UpdateChec:
-	mov	edx, DWORD PTR _pUnit$217780[esp+28]
+	mov	edx, DWORD PTR _pUnit$217822[esp+28]
 $LN28@UpdateChec:
 	xor	esi, esi
 $LN30@UpdateChec:
@@ -4093,7 +4093,7 @@ $LN30@UpdateChec:
 	sub	esp, 8
 	mov	eax, esp
 	mov	ecx, edx
-	mov	DWORD PTR $T219741[esp+52], esp
+	mov	DWORD PTR $T219783[esp+52], esp
 	mov	DWORD PTR [eax], edx
 	mov	BYTE PTR [eax+4], 0
 	call	?getDestructionNotification@CvUnit@@QAEAAU?$DestructionNotification@V?$FObjectHandle@VCvUnit@@@@@@XZ ; CvUnit::getDestructionNotification
@@ -4108,16 +4108,16 @@ $LN30@UpdateChec:
 ; 462  : 				{
 ; 463  : 					SetEstimatedTurn(iI, iTurnsToReachCheckpoint);
 
-	mov	ecx, DWORD PTR _iI$217775[esp+28]
+	mov	ecx, DWORD PTR _iI$217817[esp+28]
 	push	eax
 	push	ecx
 	mov	ecx, ebx
 	call	?SetEstimatedTurn@CvArmyAI@@QAEXHH@Z	; CvArmyAI::SetEstimatedTurn
 $LN5@UpdateChec:
-	mov	eax, DWORD PTR _iI$217775[esp+28]
+	mov	eax, DWORD PTR _iI$217817[esp+28]
 	add	DWORD PTR tv426[esp+28], 12		; 0000000cH
 	inc	eax
-	mov	DWORD PTR _iI$217775[esp+28], eax
+	mov	DWORD PTR _iI$217817[esp+28], eax
 	cmp	eax, DWORD PTR [ebx+48]
 	jb	$LL6@UpdateChec
 $LN4@UpdateChec:
@@ -4156,7 +4156,7 @@ xdata$x	ENDS
 ;	COMDAT ?GetTotalPower@CvArmyAI@@QAEHXZ
 _TEXT	SEGMENT
 _iRtnValue$ = -24					; size = 4
-_pThisUnit$217824 = -20					; size = 8
+_pThisUnit$217866 = -20					; size = 8
 __$EHRec$ = -12						; size = 12
 ?GetTotalPower@CvArmyAI@@QAEHXZ PROC			; CvArmyAI::GetTotalPower, COMDAT
 ; _this$ = ecx
@@ -4205,8 +4205,8 @@ $LL3@GetTotalPo:
 	mov	ecx, eax
 	call	?getUnit@CvPlayer@@QAEPAVCvUnit@@H@Z	; CvPlayer::getUnit
 	mov	esi, eax
-	mov	DWORD PTR _pThisUnit$217824[esp+40], esi
-	mov	BYTE PTR _pThisUnit$217824[esp+44], bl
+	mov	DWORD PTR _pThisUnit$217866[esp+40], esi
+	mov	BYTE PTR _pThisUnit$217866[esp+44], bl
 	cmp	esi, ebx
 	je	SHORT $LN14@GetTotalPo
 	mov	ecx, esi
@@ -4278,7 +4278,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetTotalPower@CvArmyAI@@QAEHXZ$0:
-	lea	ecx, DWORD PTR _pThisUnit$217824[ebp]
+	lea	ecx, DWORD PTR _pThisUnit$217866[ebp]
 	jmp	??1?$FObjectHandle@VCvUnit@@@@QAE@XZ	; FObjectHandle<CvUnit>::~FObjectHandle<CvUnit>
 __ehhandler$?GetTotalPower@CvArmyAI@@QAEHXZ:
 	mov	eax, OFFSET __ehfuncinfo$?GetTotalPower@CvArmyAI@@QAEHXZ
@@ -4437,7 +4437,7 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 _pThisUnit$ = -20					; size = 8
 __$EHRec$ = -12						; size = 12
-$T220032 = 8						; size = 4
+$T220074 = 8						; size = 4
 _iUnitID$ = 8						; size = 4
 _iSlotNum$ = 12						; size = 4
 ?AddUnit@CvArmyAI@@QAEXHH@Z PROC			; CvArmyAI::AddUnit, COMDAT
@@ -4594,7 +4594,7 @@ $LN56@AddUnit:
 	push	ecx
 	sub	esp, 8
 	mov	eax, esp
-	mov	DWORD PTR $T220032[esp+56], esp
+	mov	DWORD PTR $T220074[esp+56], esp
 	mov	DWORD PTR [eax], ebp
 	mov	BYTE PTR [eax+4], 0
 	test	ebp, ebp
@@ -4667,8 +4667,8 @@ __ehfuncinfo$?RemoveUnit@CvArmyAI@@QAE_NH@Z DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?RemoveUnit@CvArmyAI@@QAE_NH@Z
 _TEXT	SEGMENT
-_iI$217912 = -36					; size = 4
-_pThisUnit$217918 = -32					; size = 8
+_iI$217954 = -36					; size = 4
+_pThisUnit$217960 = -32					; size = 8
 _slot$ = -24						; size = 12
 __$EHRec$ = -12						; size = 12
 _iUnitToRemoveID$ = 8					; size = 4
@@ -4696,7 +4696,7 @@ _iUnitToRemoveID$ = 8					; size = 4
 	mov	esi, ecx
 	xor	bl, bl
 	cmp	DWORD PTR [esi+48], ebp
-	mov	DWORD PTR _iI$217912[esp+48], ebp
+	mov	DWORD PTR _iI$217954[esp+48], ebp
 	jle	$LN48@RemoveUnit
 	push	edi
 	npad	1
@@ -4729,8 +4729,8 @@ $LL6@RemoveUnit:
 	mov	ecx, eax
 	call	?getUnit@CvPlayer@@QAEPAVCvUnit@@H@Z	; CvPlayer::getUnit
 	mov	edi, eax
-	mov	DWORD PTR _pThisUnit$217918[esp+52], edi
-	mov	BYTE PTR _pThisUnit$217918[esp+56], 0
+	mov	DWORD PTR _pThisUnit$217960[esp+52], edi
+	mov	BYTE PTR _pThisUnit$217960[esp+56], 0
 	test	edi, edi
 	je	SHORT $LN25@RemoveUnit
 	mov	ecx, edi
@@ -4780,7 +4780,7 @@ $LN25@RemoveUnit:
 ; 723  : 					pThisOperation->UnitWasRemoved(GetID(), iI);
 
 	mov	ecx, DWORD PTR [esi+4]
-	push	DWORD PTR _iI$217912[esp+52]
+	push	DWORD PTR _iI$217954[esp+52]
 	mov	edx, DWORD PTR [eax]
 	push	ecx
 	mov	ecx, eax
@@ -4798,11 +4798,11 @@ $LN49@RemoveUnit:
 	mov	ecx, edi
 	call	?getDestructionNotification@CvUnit@@QAEAAU?$DestructionNotification@V?$FObjectHandle@VCvUnit@@@@@@XZ ; CvUnit::getDestructionNotification
 $LN5@RemoveUnit:
-	mov	eax, DWORD PTR _iI$217912[esp+52]
+	mov	eax, DWORD PTR _iI$217954[esp+52]
 	inc	eax
 	add	ebp, 12					; 0000000cH
 	cmp	eax, DWORD PTR [esi+48]
-	mov	DWORD PTR _iI$217912[esp+52], eax
+	mov	DWORD PTR _iI$217954[esp+52], eax
 	jl	$LL6@RemoveUnit
 	pop	edi
 $LN48@RemoveUnit:
@@ -4824,7 +4824,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?RemoveUnit@CvArmyAI@@QAE_NH@Z$0:
-	lea	ecx, DWORD PTR _pThisUnit$217918[ebp]
+	lea	ecx, DWORD PTR _pThisUnit$217960[ebp]
 	jmp	??1?$FObjectHandle@VCvUnit@@@@QAE@XZ	; FObjectHandle<CvUnit>::~FObjectHandle<CvUnit>
 __ehhandler$?RemoveUnit@CvArmyAI@@QAE_NH@Z:
 	mov	eax, OFFSET __ehfuncinfo$?RemoveUnit@CvArmyAI@@QAE_NH@Z
@@ -4851,8 +4851,8 @@ __ehfuncinfo$?GetFirstUnit@CvArmyAI@@QAE?AV?$FObjectHandle@VCvUnit@@@@XZ DD 0199
 xdata$x	ENDS
 ;	COMDAT ?GetFirstUnit@CvArmyAI@@QAE?AV?$FObjectHandle@VCvUnit@@@@XZ
 _TEXT	SEGMENT
-$T220296 = -24						; size = 4
-$T220294 = -20						; size = 8
+$T220338 = -24						; size = 4
+$T220336 = -20						; size = 8
 __$EHRec$ = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
 ?GetFirstUnit@CvArmyAI@@QAE?AV?$FObjectHandle@VCvUnit@@@@XZ PROC ; CvArmyAI::GetFirstUnit, COMDAT
@@ -4869,7 +4869,7 @@ ___$ReturnUdt$ = 8					; size = 4
 	push	ebx
 	xor	ebx, ebx
 	push	esi
-	mov	DWORD PTR $T220296[esp+32], ebx
+	mov	DWORD PTR $T220338[esp+32], ebx
 	push	edi
 
 ; 802  : 	UnitHandle pRtnValue;
@@ -4886,7 +4886,7 @@ ___$ReturnUdt$ = 8					; size = 4
 ; 812  : 	return pRtnValue;
 
 	mov	DWORD PTR __$EHRec$[esp+44], ebx
-	mov	DWORD PTR $T220296[esp+36], 1
+	mov	DWORD PTR $T220338[esp+36], 1
 	call	?GetFirstUnitID@CvArmyAI@@QAEHXZ	; CvArmyAI::GetFirstUnitID
 	cmp	eax, -1
 	je	SHORT $LN31@GetFirstUn@2
@@ -4896,14 +4896,14 @@ ___$ReturnUdt$ = 8					; size = 4
 	push	eax
 	call	?getUnit@CvPlayer@@QAEPAVCvUnit@@H@Z	; CvPlayer::getUnit
 	mov	esi, eax
-	mov	DWORD PTR $T220294[esp+36], esi
-	mov	BYTE PTR $T220294[esp+40], bl
+	mov	DWORD PTR $T220336[esp+36], esi
+	mov	BYTE PTR $T220336[esp+40], bl
 	cmp	esi, ebx
 	je	SHORT $LN14@GetFirstUn@2
 	mov	ecx, esi
 	call	?getDestructionNotification@CvUnit@@QAEAAU?$DestructionNotification@V?$FObjectHandle@VCvUnit@@@@@@XZ ; CvUnit::getDestructionNotification
 $LN14@GetFirstUn@2:
-	lea	eax, DWORD PTR $T220294[esp+36]
+	lea	eax, DWORD PTR $T220336[esp+36]
 	mov	DWORD PTR __$EHRec$[esp+44], 1
 	cmp	eax, edi
 	je	SHORT $LN23@GetFirstUn@2
@@ -4946,16 +4946,16 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetFirstUnit@CvArmyAI@@QAE?AV?$FObjectHandle@VCvUnit@@@@XZ$0:
-	mov	eax, DWORD PTR $T220296[ebp]
+	mov	eax, DWORD PTR $T220338[ebp]
 	and	eax, 1
 	je	$LN5@GetFirstUn@2
-	and	DWORD PTR $T220296[ebp], -2		; fffffffeH
+	and	DWORD PTR $T220338[ebp], -2		; fffffffeH
 	mov	ecx, DWORD PTR ___$ReturnUdt$[ebp-4]
 	jmp	??1?$FObjectHandle@VCvUnit@@@@QAE@XZ	; FObjectHandle<CvUnit>::~FObjectHandle<CvUnit>
 $LN5@GetFirstUn@2:
 	ret	0
 __unwindfunclet$?GetFirstUnit@CvArmyAI@@QAE?AV?$FObjectHandle@VCvUnit@@@@XZ$1:
-	lea	ecx, DWORD PTR $T220294[ebp]
+	lea	ecx, DWORD PTR $T220336[ebp]
 	jmp	??1?$FObjectHandle@VCvUnit@@@@QAE@XZ	; FObjectHandle<CvUnit>::~FObjectHandle<CvUnit>
 __ehhandler$?GetFirstUnit@CvArmyAI@@QAE?AV?$FObjectHandle@VCvUnit@@@@XZ:
 	mov	eax, OFFSET __ehfuncinfo$?GetFirstUnit@CvArmyAI@@QAE?AV?$FObjectHandle@VCvUnit@@@@XZ
@@ -4982,8 +4982,8 @@ __ehfuncinfo$?GetNextUnit@CvArmyAI@@QAE?AV?$FObjectHandle@VCvUnit@@@@XZ DD 01993
 xdata$x	ENDS
 ;	COMDAT ?GetNextUnit@CvArmyAI@@QAE?AV?$FObjectHandle@VCvUnit@@@@XZ
 _TEXT	SEGMENT
-$T220355 = -24						; size = 4
-$T220353 = -20						; size = 8
+$T220397 = -24						; size = 4
+$T220395 = -20						; size = 8
 __$EHRec$ = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
 ?GetNextUnit@CvArmyAI@@QAE?AV?$FObjectHandle@VCvUnit@@@@XZ PROC ; CvArmyAI::GetNextUnit, COMDAT
@@ -4999,7 +4999,7 @@ ___$ReturnUdt$ = 8					; size = 4
 	sub	esp, 12					; 0000000cH
 	push	ebx
 	xor	ebx, ebx
-	mov	DWORD PTR $T220355[esp+28], ebx
+	mov	DWORD PTR $T220397[esp+28], ebx
 	push	edi
 
 ; 818  : 	UnitHandle pRtnValue;
@@ -5015,7 +5015,7 @@ ___$ReturnUdt$ = 8					; size = 4
 ; 828  : 	return pRtnValue;
 
 	mov	DWORD PTR __$EHRec$[esp+40], ebx
-	mov	DWORD PTR $T220355[esp+32], 1
+	mov	DWORD PTR $T220397[esp+32], 1
 	call	?GetNextUnitID@CvArmyAI@@QAEHXZ		; CvArmyAI::GetNextUnitID
 	cmp	eax, -1
 	je	SHORT $LN31@GetNextUni@2
@@ -5026,14 +5026,14 @@ ___$ReturnUdt$ = 8					; size = 4
 	push	eax
 	call	?getUnit@CvPlayer@@QAEPAVCvUnit@@H@Z	; CvPlayer::getUnit
 	mov	esi, eax
-	mov	DWORD PTR $T220353[esp+36], esi
-	mov	BYTE PTR $T220353[esp+40], bl
+	mov	DWORD PTR $T220395[esp+36], esi
+	mov	BYTE PTR $T220395[esp+40], bl
 	cmp	esi, ebx
 	je	SHORT $LN14@GetNextUni@2
 	mov	ecx, esi
 	call	?getDestructionNotification@CvUnit@@QAEAAU?$DestructionNotification@V?$FObjectHandle@VCvUnit@@@@@@XZ ; CvUnit::getDestructionNotification
 $LN14@GetNextUni@2:
-	lea	eax, DWORD PTR $T220353[esp+36]
+	lea	eax, DWORD PTR $T220395[esp+36]
 	mov	DWORD PTR __$EHRec$[esp+44], 1
 	cmp	eax, edi
 	je	SHORT $LN23@GetNextUni@2
@@ -5091,16 +5091,16 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetNextUnit@CvArmyAI@@QAE?AV?$FObjectHandle@VCvUnit@@@@XZ$0:
-	mov	eax, DWORD PTR $T220355[ebp]
+	mov	eax, DWORD PTR $T220397[ebp]
 	and	eax, 1
 	je	$LN5@GetNextUni@2
-	and	DWORD PTR $T220355[ebp], -2		; fffffffeH
+	and	DWORD PTR $T220397[ebp], -2		; fffffffeH
 	mov	ecx, DWORD PTR ___$ReturnUdt$[ebp-4]
 	jmp	??1?$FObjectHandle@VCvUnit@@@@QAE@XZ	; FObjectHandle<CvUnit>::~FObjectHandle<CvUnit>
 $LN5@GetNextUni@2:
 	ret	0
 __unwindfunclet$?GetNextUnit@CvArmyAI@@QAE?AV?$FObjectHandle@VCvUnit@@@@XZ$1:
-	lea	ecx, DWORD PTR $T220353[ebp]
+	lea	ecx, DWORD PTR $T220395[ebp]
 	jmp	??1?$FObjectHandle@VCvUnit@@@@QAE@XZ	; FObjectHandle<CvUnit>::~FObjectHandle<CvUnit>
 __ehhandler$?GetNextUnit@CvArmyAI@@QAE?AV?$FObjectHandle@VCvUnit@@@@XZ:
 	mov	eax, OFFSET __ehfuncinfo$?GetNextUnit@CvArmyAI@@QAE?AV?$FObjectHandle@VCvUnit@@@@XZ
@@ -5134,11 +5134,11 @@ __unwindtable$?GetFirstUnitInDomain@CvArmyAI@@QAE?AV?$FObjectHandle@VCvUnit@@@@W
 xdata$x	ENDS
 ;	COMDAT ?GetFirstUnitInDomain@CvArmyAI@@QAE?AV?$FObjectHandle@VCvUnit@@@@W4DomainTypes@@@Z
 _TEXT	SEGMENT
-$T220419 = -40						; size = 4
+$T220461 = -40						; size = 4
 _pCurrentUnit$ = -36					; size = 8
 _pUnit$ = -28						; size = 8
-$T220414 = -20						; size = 8
-$T220413 = -20						; size = 8
+$T220456 = -20						; size = 8
+$T220455 = -20						; size = 8
 __$EHRec$ = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
 _eDomain$ = 12						; size = 4
@@ -5157,7 +5157,7 @@ _eDomain$ = 12						; size = 4
 	push	ebp
 	xor	ebx, ebx
 	push	esi
-	mov	DWORD PTR $T220419[esp+52], ebx
+	mov	DWORD PTR $T220461[esp+52], ebx
 	push	edi
 	mov	ebp, ecx
 
@@ -5173,7 +5173,7 @@ _eDomain$ = 12						; size = 4
 ; 835  : 
 ; 836  : 	pCurrentUnit = GetFirstUnit();
 
-	lea	eax, DWORD PTR $T220413[esp+56]
+	lea	eax, DWORD PTR $T220455[esp+56]
 	push	eax
 	mov	BYTE PTR __$EHRec$[esp+68], 2
 	call	?GetFirstUnit@CvArmyAI@@QAE?AV?$FObjectHandle@VCvUnit@@@@XZ ; CvArmyAI::GetFirstUnit
@@ -5188,7 +5188,7 @@ _eDomain$ = 12						; size = 4
 	mov	ecx, esi
 	call	?getDestructionNotification@CvUnit@@QAEAAU?$DestructionNotification@V?$FObjectHandle@VCvUnit@@@@@@XZ ; CvUnit::getDestructionNotification
 $LN25@GetFirstUn@3:
-	mov	ecx, DWORD PTR $T220413[esp+56]
+	mov	ecx, DWORD PTR $T220455[esp+56]
 	mov	BYTE PTR __$EHRec$[esp+64], 2
 	cmp	ecx, ebx
 	je	SHORT $LN86@GetFirstUn@3
@@ -5222,7 +5222,7 @@ $LN3@GetFirstUn@3:
 ; 842  : 		}
 ; 843  : 		pCurrentUnit = GetNextUnit();
 
-	lea	edx, DWORD PTR $T220414[esp+56]
+	lea	edx, DWORD PTR $T220456[esp+56]
 	push	edx
 	mov	ecx, ebp
 	call	?GetNextUnit@CvArmyAI@@QAE?AV?$FObjectHandle@VCvUnit@@@@XZ ; CvArmyAI::GetNextUnit
@@ -5243,7 +5243,7 @@ $LN62@GetFirstUn@3:
 	mov	ecx, esi
 	call	?getDestructionNotification@CvUnit@@QAEAAU?$DestructionNotification@V?$FObjectHandle@VCvUnit@@@@@@XZ ; CvUnit::getDestructionNotification
 $LN64@GetFirstUn@3:
-	mov	ecx, DWORD PTR $T220414[esp+56]
+	mov	ecx, DWORD PTR $T220456[esp+56]
 	mov	BYTE PTR __$EHRec$[esp+64], 2
 	cmp	ecx, ebx
 	je	SHORT $LN69@GetFirstUn@3
@@ -5265,7 +5265,7 @@ $LN4@GetFirstUn@3:
 	mov	BYTE PTR [edi+4], bl
 $LN91@GetFirstUn@3:
 	mov	BYTE PTR __$EHRec$[esp+64], 1
-	mov	DWORD PTR $T220419[esp+56], 1
+	mov	DWORD PTR $T220461[esp+56], 1
 	cmp	esi, ebx
 	je	SHORT $LN79@GetFirstUn@3
 	mov	ecx, esi
@@ -5307,16 +5307,16 @@ __unwindfunclet$?GetFirstUnitInDomain@CvArmyAI@@QAE?AV?$FObjectHandle@VCvUnit@@@
 	lea	ecx, DWORD PTR _pCurrentUnit$[ebp]
 	jmp	??1?$FObjectHandle@VCvUnit@@@@QAE@XZ	; FObjectHandle<CvUnit>::~FObjectHandle<CvUnit>
 __unwindfunclet$?GetFirstUnitInDomain@CvArmyAI@@QAE?AV?$FObjectHandle@VCvUnit@@@@W4DomainTypes@@@Z$2:
-	lea	ecx, DWORD PTR $T220413[ebp]
+	lea	ecx, DWORD PTR $T220455[ebp]
 	jmp	??1?$FObjectHandle@VCvUnit@@@@QAE@XZ	; FObjectHandle<CvUnit>::~FObjectHandle<CvUnit>
 __unwindfunclet$?GetFirstUnitInDomain@CvArmyAI@@QAE?AV?$FObjectHandle@VCvUnit@@@@W4DomainTypes@@@Z$4:
-	lea	ecx, DWORD PTR $T220414[ebp]
+	lea	ecx, DWORD PTR $T220456[ebp]
 	jmp	??1?$FObjectHandle@VCvUnit@@@@QAE@XZ	; FObjectHandle<CvUnit>::~FObjectHandle<CvUnit>
 __unwindfunclet$?GetFirstUnitInDomain@CvArmyAI@@QAE?AV?$FObjectHandle@VCvUnit@@@@W4DomainTypes@@@Z$3:
-	mov	eax, DWORD PTR $T220419[ebp]
+	mov	eax, DWORD PTR $T220461[ebp]
 	and	eax, 1
 	je	$LN12@GetFirstUn@3
-	and	DWORD PTR $T220419[ebp], -2		; fffffffeH
+	and	DWORD PTR $T220461[ebp], -2		; fffffffeH
 	mov	ecx, DWORD PTR ___$ReturnUdt$[ebp-4]
 	jmp	??1?$FObjectHandle@VCvUnit@@@@QAE@XZ	; FObjectHandle<CvUnit>::~FObjectHandle<CvUnit>
 $LN12@GetFirstUn@3:
@@ -5729,8 +5729,8 @@ _TEXT	SEGMENT
 _iTotalMovementAllowance$ = -40				; size = 4
 _iMovementAverage$ = -36				; size = 4
 _pUnit$ = -32						; size = 8
-$T220917 = -24						; size = 8
-$T220916 = -24						; size = 8
+$T220959 = -24						; size = 8
+$T220958 = -24						; size = 8
 __$EHRec$ = -12						; size = 12
 ?GetMovementRate@CvArmyAI@@QAEHXZ PROC			; CvArmyAI::GetMovementRate, COMDAT
 ; _this$ = ecx
@@ -5769,7 +5769,7 @@ __$EHRec$ = -12						; size = 12
 ; 202  : 
 ; 203  : 	pUnit = GetFirstUnit();
 
-	lea	eax, DWORD PTR $T220916[esp+56]
+	lea	eax, DWORD PTR $T220958[esp+56]
 	push	eax
 	mov	DWORD PTR __$EHRec$[esp+68], ebx
 	call	?GetFirstUnit@CvArmyAI@@QAE?AV?$FObjectHandle@VCvUnit@@@@XZ ; CvArmyAI::GetFirstUnit
@@ -5784,7 +5784,7 @@ __$EHRec$ = -12						; size = 12
 	mov	ecx, esi
 	call	?getDestructionNotification@CvUnit@@QAEAAU?$DestructionNotification@V?$FObjectHandle@VCvUnit@@@@@@XZ ; CvUnit::getDestructionNotification
 $LN18@GetMovemen:
-	mov	ecx, DWORD PTR $T220916[esp+56]
+	mov	ecx, DWORD PTR $T220958[esp+56]
 	mov	BYTE PTR __$EHRec$[esp+64], 0
 	cmp	ecx, ebx
 	je	SHORT $LN48@GetMovemen
@@ -5809,7 +5809,7 @@ $LN3@GetMovemen:
 
 ; 208  : 		pUnit = GetNextUnit();
 
-	lea	edx, DWORD PTR $T220917[esp+56]
+	lea	edx, DWORD PTR $T220959[esp+56]
 	push	edx
 	mov	ecx, ebp
 	call	?GetNextUnit@CvArmyAI@@QAE?AV?$FObjectHandle@VCvUnit@@@@XZ ; CvArmyAI::GetNextUnit
@@ -5830,7 +5830,7 @@ $LN34@GetMovemen:
 	mov	ecx, esi
 	call	?getDestructionNotification@CvUnit@@QAEAAU?$DestructionNotification@V?$FObjectHandle@VCvUnit@@@@@@XZ ; CvUnit::getDestructionNotification
 $LN36@GetMovemen:
-	mov	ecx, DWORD PTR $T220917[esp+56]
+	mov	ecx, DWORD PTR $T220959[esp+56]
 	mov	BYTE PTR __$EHRec$[esp+64], 0
 	test	ecx, ecx
 	je	SHORT $LN41@GetMovemen
@@ -5892,10 +5892,10 @@ __unwindfunclet$?GetMovementRate@CvArmyAI@@QAEHXZ$0:
 	lea	ecx, DWORD PTR _pUnit$[ebp]
 	jmp	??1?$FObjectHandle@VCvUnit@@@@QAE@XZ	; FObjectHandle<CvUnit>::~FObjectHandle<CvUnit>
 __unwindfunclet$?GetMovementRate@CvArmyAI@@QAEHXZ$1:
-	lea	ecx, DWORD PTR $T220916[ebp]
+	lea	ecx, DWORD PTR $T220958[ebp]
 	jmp	??1?$FObjectHandle@VCvUnit@@@@QAE@XZ	; FObjectHandle<CvUnit>::~FObjectHandle<CvUnit>
 __unwindfunclet$?GetMovementRate@CvArmyAI@@QAEHXZ$2:
-	lea	ecx, DWORD PTR $T220917[ebp]
+	lea	ecx, DWORD PTR $T220959[ebp]
 	jmp	??1?$FObjectHandle@VCvUnit@@@@QAE@XZ	; FObjectHandle<CvUnit>::~FObjectHandle<CvUnit>
 __ehhandler$?GetMovementRate@CvArmyAI@@QAEHXZ:
 	mov	eax, OFFSET __ehfuncinfo$?GetMovementRate@CvArmyAI@@QAEHXZ
@@ -5935,10 +5935,10 @@ _iReferenceUnitX$ = -44					; size = 4
 _this$ = -40						; size = 4
 tv582 = -36						; size = 4
 tv493 = -36						; size = 4
-$T221006 = -36						; size = 8
+$T221048 = -36						; size = 8
 _pUnit$ = -28						; size = 8
-$T221010 = -20						; size = 8
-$T221007 = -20						; size = 8
+$T221052 = -20						; size = 8
+$T221049 = -20						; size = 8
 __$EHRec$ = -12						; size = 12
 _eDomainRequired$ = 8					; size = 4
 ?GetCenterOfMass@CvArmyAI@@QAEPAVCvPlot@@W4DomainTypes@@@Z PROC ; CvArmyAI::GetCenterOfMass, COMDAT
@@ -5989,7 +5989,7 @@ _eDomainRequired$ = 8					; size = 4
 ; 229  : 
 ; 230  : 	pUnit = GetFirstUnit();
 
-	lea	edx, DWORD PTR $T221006[esp+68]
+	lea	edx, DWORD PTR $T221048[esp+68]
 	push	edx
 	mov	DWORD PTR __$EHRec$[esp+80], esi
 	call	?GetFirstUnit@CvArmyAI@@QAE?AV?$FObjectHandle@VCvUnit@@@@XZ ; CvArmyAI::GetFirstUnit
@@ -6004,7 +6004,7 @@ _eDomainRequired$ = 8					; size = 4
 	mov	ecx, esi
 	call	?getDestructionNotification@CvUnit@@QAEAAU?$DestructionNotification@V?$FObjectHandle@VCvUnit@@@@@@XZ ; CvUnit::getDestructionNotification
 $LN219@GetCenterO:
-	mov	ecx, DWORD PTR $T221006[esp+68]
+	mov	ecx, DWORD PTR $T221048[esp+68]
 	mov	BYTE PTR __$EHRec$[esp+76], 0
 	test	ecx, ecx
 	je	SHORT $LN55@GetCenterO
@@ -6079,7 +6079,7 @@ $LN26@GetCenterO:
 
 	mov	ecx, DWORD PTR _this$[esp+68]
 	add	ebp, DWORD PTR [edx+88]
-	lea	eax, DWORD PTR $T221007[esp+68]
+	lea	eax, DWORD PTR $T221049[esp+68]
 	push	eax
 	inc	edi
 	call	?GetNextUnit@CvArmyAI@@QAE?AV?$FObjectHandle@VCvUnit@@@@XZ ; CvArmyAI::GetNextUnit
@@ -6097,7 +6097,7 @@ $LN26@GetCenterO:
 	mov	ecx, esi
 	call	?getDestructionNotification@CvUnit@@QAEAAU?$DestructionNotification@V?$FObjectHandle@VCvUnit@@@@@@XZ ; CvUnit::getDestructionNotification
 $LN216@GetCenterO:
-	mov	ecx, DWORD PTR $T221007[esp+68]
+	mov	ecx, DWORD PTR $T221049[esp+68]
 	mov	BYTE PTR __$EHRec$[esp+76], 0
 	test	ecx, ecx
 	je	SHORT $LN91@GetCenterO
@@ -6441,7 +6441,7 @@ $LN7@GetCenterO:
 ; 328  : 			pUnit = GetFirstUnit();
 
 	mov	ecx, DWORD PTR _this$[esp+68]
-	lea	edx, DWORD PTR $T221010[esp+68]
+	lea	edx, DWORD PTR $T221052[esp+68]
 	push	edx
 	call	?GetFirstUnit@CvArmyAI@@QAE?AV?$FObjectHandle@VCvUnit@@@@XZ ; CvArmyAI::GetFirstUnit
 	mov	esi, eax
@@ -6464,7 +6464,7 @@ $LN191@GetCenterO:
 $LN217@GetCenterO:
 	mov	esi, DWORD PTR _pUnit$[esp+68]
 $LN193@GetCenterO:
-	mov	ecx, DWORD PTR $T221010[esp+68]
+	mov	ecx, DWORD PTR $T221052[esp+68]
 	mov	BYTE PTR __$EHRec$[esp+76], 0
 	test	ecx, ecx
 	je	SHORT $LN198@GetCenterO
@@ -6509,13 +6509,13 @@ __unwindfunclet$?GetCenterOfMass@CvArmyAI@@QAEPAVCvPlot@@W4DomainTypes@@@Z$0:
 	lea	ecx, DWORD PTR _pUnit$[ebp]
 	jmp	??1?$FObjectHandle@VCvUnit@@@@QAE@XZ	; FObjectHandle<CvUnit>::~FObjectHandle<CvUnit>
 __unwindfunclet$?GetCenterOfMass@CvArmyAI@@QAEPAVCvPlot@@W4DomainTypes@@@Z$1:
-	lea	ecx, DWORD PTR $T221006[ebp]
+	lea	ecx, DWORD PTR $T221048[ebp]
 	jmp	??1?$FObjectHandle@VCvUnit@@@@QAE@XZ	; FObjectHandle<CvUnit>::~FObjectHandle<CvUnit>
 __unwindfunclet$?GetCenterOfMass@CvArmyAI@@QAEPAVCvPlot@@W4DomainTypes@@@Z$2:
-	lea	ecx, DWORD PTR $T221007[ebp]
+	lea	ecx, DWORD PTR $T221049[ebp]
 	jmp	??1?$FObjectHandle@VCvUnit@@@@QAE@XZ	; FObjectHandle<CvUnit>::~FObjectHandle<CvUnit>
 __unwindfunclet$?GetCenterOfMass@CvArmyAI@@QAEPAVCvPlot@@W4DomainTypes@@@Z$3:
-	lea	ecx, DWORD PTR $T221010[ebp]
+	lea	ecx, DWORD PTR $T221052[ebp]
 	jmp	??1?$FObjectHandle@VCvUnit@@@@QAE@XZ	; FObjectHandle<CvUnit>::~FObjectHandle<CvUnit>
 __ehhandler$?GetCenterOfMass@CvArmyAI@@QAEPAVCvPlot@@W4DomainTypes@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?GetCenterOfMass@CvArmyAI@@QAEPAVCvPlot@@W4DomainTypes@@@Z
@@ -6547,8 +6547,8 @@ _TEXT	SEGMENT
 _iLargestDistance$ = -40				; size = 4
 _this$ = -36						; size = 4
 _pUnit$ = -32						; size = 8
-$T221389 = -24						; size = 8
-$T221388 = -24						; size = 8
+$T221431 = -24						; size = 8
+$T221430 = -24						; size = 8
 __$EHRec$ = -12						; size = 12
 _pPlot$ = 8						; size = 4
 ?GetFurthestUnitDistance@CvArmyAI@@QAEHPAVCvPlot@@@Z PROC ; CvArmyAI::GetFurthestUnitDistance, COMDAT
@@ -6585,7 +6585,7 @@ _pPlot$ = 8						; size = 4
 ; 342  : 
 ; 343  : 	pUnit = GetFirstUnit();
 
-	lea	eax, DWORD PTR $T221388[esp+56]
+	lea	eax, DWORD PTR $T221430[esp+56]
 	push	eax
 	mov	DWORD PTR __$EHRec$[esp+68], edi
 	call	?GetFirstUnit@CvArmyAI@@QAE?AV?$FObjectHandle@VCvUnit@@@@XZ ; CvArmyAI::GetFirstUnit
@@ -6600,7 +6600,7 @@ _pPlot$ = 8						; size = 4
 	mov	ecx, esi
 	call	?getDestructionNotification@CvUnit@@QAEAAU?$DestructionNotification@V?$FObjectHandle@VCvUnit@@@@@@XZ ; CvUnit::getDestructionNotification
 $LN18@GetFurthes:
-	mov	ecx, DWORD PTR $T221388[esp+56]
+	mov	ecx, DWORD PTR $T221430[esp+56]
 	mov	BYTE PTR __$EHRec$[esp+64], 0
 	cmp	ecx, edi
 	je	SHORT $LN62@GetFurthes
@@ -6644,7 +6644,7 @@ $LN1@GetFurthes:
 ; 351  : 		pUnit = GetNextUnit();
 
 	mov	ecx, DWORD PTR _this$[esp+56]
-	lea	eax, DWORD PTR $T221389[esp+56]
+	lea	eax, DWORD PTR $T221431[esp+56]
 	push	eax
 	call	?GetNextUnit@CvArmyAI@@QAE?AV?$FObjectHandle@VCvUnit@@@@XZ ; CvArmyAI::GetNextUnit
 	mov	edi, eax
@@ -6661,7 +6661,7 @@ $LN1@GetFurthes:
 	mov	ecx, esi
 	call	?getDestructionNotification@CvUnit@@QAEAAU?$DestructionNotification@V?$FObjectHandle@VCvUnit@@@@@@XZ ; CvUnit::getDestructionNotification
 $LN50@GetFurthes:
-	mov	ecx, DWORD PTR $T221389[esp+56]
+	mov	ecx, DWORD PTR $T221431[esp+56]
 	mov	BYTE PTR __$EHRec$[esp+64], 0
 	test	ecx, ecx
 	je	SHORT $LN55@GetFurthes
@@ -6700,10 +6700,10 @@ __unwindfunclet$?GetFurthestUnitDistance@CvArmyAI@@QAEHPAVCvPlot@@@Z$0:
 	lea	ecx, DWORD PTR _pUnit$[ebp]
 	jmp	??1?$FObjectHandle@VCvUnit@@@@QAE@XZ	; FObjectHandle<CvUnit>::~FObjectHandle<CvUnit>
 __unwindfunclet$?GetFurthestUnitDistance@CvArmyAI@@QAEHPAVCvPlot@@@Z$1:
-	lea	ecx, DWORD PTR $T221388[ebp]
+	lea	ecx, DWORD PTR $T221430[ebp]
 	jmp	??1?$FObjectHandle@VCvUnit@@@@QAE@XZ	; FObjectHandle<CvUnit>::~FObjectHandle<CvUnit>
 __unwindfunclet$?GetFurthestUnitDistance@CvArmyAI@@QAEHPAVCvPlot@@@Z$2:
-	lea	ecx, DWORD PTR $T221389[ebp]
+	lea	ecx, DWORD PTR $T221431[ebp]
 	jmp	??1?$FObjectHandle@VCvUnit@@@@QAE@XZ	; FObjectHandle<CvUnit>::~FObjectHandle<CvUnit>
 __ehhandler$?GetFurthestUnitDistance@CvArmyAI@@QAEHPAVCvPlot@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?GetFurthestUnitDistance@CvArmyAI@@QAEHPAVCvPlot@@@Z
@@ -6735,8 +6735,8 @@ xdata$x	ENDS
 ;	COMDAT ?IsAllOceanGoing@CvArmyAI@@QAE_NXZ
 _TEXT	SEGMENT
 _pUnit$ = -32						; size = 8
-$T221506 = -24						; size = 8
-$T221503 = -24						; size = 8
+$T221548 = -24						; size = 8
+$T221545 = -24						; size = 8
 __$EHRec$ = -12						; size = 12
 ?IsAllOceanGoing@CvArmyAI@@QAE_NXZ PROC			; CvArmyAI::IsAllOceanGoing, COMDAT
 ; _this$ = ecx
@@ -6768,7 +6768,7 @@ __$EHRec$ = -12						; size = 12
 ; 501  : 
 ; 502  : 	pUnit = GetFirstUnit();
 
-	lea	eax, DWORD PTR $T221503[esp+48]
+	lea	eax, DWORD PTR $T221545[esp+48]
 	push	eax
 	mov	DWORD PTR __$EHRec$[esp+60], ebx
 	call	?GetFirstUnit@CvArmyAI@@QAE?AV?$FObjectHandle@VCvUnit@@@@XZ ; CvArmyAI::GetFirstUnit
@@ -6783,7 +6783,7 @@ __$EHRec$ = -12						; size = 12
 	mov	ecx, esi
 	call	?getDestructionNotification@CvUnit@@QAEAAU?$DestructionNotification@V?$FObjectHandle@VCvUnit@@@@@@XZ ; CvUnit::getDestructionNotification
 $LN19@IsAllOcean:
-	mov	ecx, DWORD PTR $T221503[esp+48]
+	mov	ecx, DWORD PTR $T221545[esp+48]
 	mov	BYTE PTR __$EHRec$[esp+56], bl
 	cmp	ecx, ebx
 	je	SHORT $LN69@IsAllOcean
@@ -6822,7 +6822,7 @@ $LN2@IsAllOcean:
 ; 515  : 
 ; 516  : 		pUnit = GetNextUnit();
 
-	lea	eax, DWORD PTR $T221506[esp+48]
+	lea	eax, DWORD PTR $T221548[esp+48]
 	push	eax
 	mov	ecx, ebp
 	call	?GetNextUnit@CvArmyAI@@QAE?AV?$FObjectHandle@VCvUnit@@@@XZ ; CvArmyAI::GetNextUnit
@@ -6840,7 +6840,7 @@ $LN2@IsAllOcean:
 	mov	ecx, esi
 	call	?getDestructionNotification@CvUnit@@QAEAAU?$DestructionNotification@V?$FObjectHandle@VCvUnit@@@@@@XZ ; CvUnit::getDestructionNotification
 $LN57@IsAllOcean:
-	mov	ecx, DWORD PTR $T221506[esp+48]
+	mov	ecx, DWORD PTR $T221548[esp+48]
 	mov	BYTE PTR __$EHRec$[esp+56], bl
 	cmp	ecx, ebx
 	je	SHORT $LN62@IsAllOcean
@@ -6928,10 +6928,10 @@ __unwindfunclet$?IsAllOceanGoing@CvArmyAI@@QAE_NXZ$0:
 	lea	ecx, DWORD PTR _pUnit$[ebp]
 	jmp	??1?$FObjectHandle@VCvUnit@@@@QAE@XZ	; FObjectHandle<CvUnit>::~FObjectHandle<CvUnit>
 __unwindfunclet$?IsAllOceanGoing@CvArmyAI@@QAE_NXZ$1:
-	lea	ecx, DWORD PTR $T221503[ebp]
+	lea	ecx, DWORD PTR $T221545[ebp]
 	jmp	??1?$FObjectHandle@VCvUnit@@@@QAE@XZ	; FObjectHandle<CvUnit>::~FObjectHandle<CvUnit>
 __unwindfunclet$?IsAllOceanGoing@CvArmyAI@@QAE_NXZ$2:
-	lea	ecx, DWORD PTR $T221506[ebp]
+	lea	ecx, DWORD PTR $T221548[ebp]
 	jmp	??1?$FObjectHandle@VCvUnit@@@@QAE@XZ	; FObjectHandle<CvUnit>::~FObjectHandle<CvUnit>
 __ehhandler$?IsAllOceanGoing@CvArmyAI@@QAE_NXZ:
 	mov	eax, OFFSET __ehfuncinfo$?IsAllOceanGoing@CvArmyAI@@QAE_NXZ
@@ -6961,8 +6961,8 @@ xdata$x	ENDS
 ;	COMDAT ?AreAllInWater@CvArmyAI@@QAE_NXZ
 _TEXT	SEGMENT
 _pUnit$ = -32						; size = 8
-$T221635 = -24						; size = 8
-$T221633 = -24						; size = 8
+$T221677 = -24						; size = 8
+$T221675 = -24						; size = 8
 __$EHRec$ = -12						; size = 12
 ?AreAllInWater@CvArmyAI@@QAE_NXZ PROC			; CvArmyAI::AreAllInWater, COMDAT
 ; _this$ = ecx
@@ -6994,7 +6994,7 @@ __$EHRec$ = -12						; size = 12
 ; 614  : 
 ; 615  : 	pUnit = GetFirstUnit();
 
-	lea	eax, DWORD PTR $T221633[esp+48]
+	lea	eax, DWORD PTR $T221675[esp+48]
 	push	eax
 	mov	DWORD PTR __$EHRec$[esp+60], ebx
 	call	?GetFirstUnit@CvArmyAI@@QAE?AV?$FObjectHandle@VCvUnit@@@@XZ ; CvArmyAI::GetFirstUnit
@@ -7009,7 +7009,7 @@ __$EHRec$ = -12						; size = 12
 	mov	ecx, esi
 	call	?getDestructionNotification@CvUnit@@QAEAAU?$DestructionNotification@V?$FObjectHandle@VCvUnit@@@@@@XZ ; CvUnit::getDestructionNotification
 $LN18@AreAllInWa:
-	mov	ecx, DWORD PTR $T221633[esp+48]
+	mov	ecx, DWORD PTR $T221675[esp+48]
 	mov	BYTE PTR __$EHRec$[esp+56], bl
 	cmp	ecx, ebx
 	je	SHORT $LN55@AreAllInWa
@@ -7033,7 +7033,7 @@ $LL3@AreAllInWa:
 ; 621  : 		}
 ; 622  : 		pUnit = GetNextUnit();
 
-	lea	edx, DWORD PTR $T221635[esp+48]
+	lea	edx, DWORD PTR $T221677[esp+48]
 	push	edx
 	mov	ecx, ebp
 	call	?GetNextUnit@CvArmyAI@@QAE?AV?$FObjectHandle@VCvUnit@@@@XZ ; CvArmyAI::GetNextUnit
@@ -7054,7 +7054,7 @@ $LN41@AreAllInWa:
 	mov	ecx, esi
 	call	?getDestructionNotification@CvUnit@@QAEAAU?$DestructionNotification@V?$FObjectHandle@VCvUnit@@@@@@XZ ; CvUnit::getDestructionNotification
 $LN43@AreAllInWa:
-	mov	ecx, DWORD PTR $T221635[esp+48]
+	mov	ecx, DWORD PTR $T221677[esp+48]
 	mov	BYTE PTR __$EHRec$[esp+56], bl
 	cmp	ecx, ebx
 	je	SHORT $LN48@AreAllInWa
@@ -7121,10 +7121,10 @@ __unwindfunclet$?AreAllInWater@CvArmyAI@@QAE_NXZ$0:
 	lea	ecx, DWORD PTR _pUnit$[ebp]
 	jmp	??1?$FObjectHandle@VCvUnit@@@@QAE@XZ	; FObjectHandle<CvUnit>::~FObjectHandle<CvUnit>
 __unwindfunclet$?AreAllInWater@CvArmyAI@@QAE_NXZ$1:
-	lea	ecx, DWORD PTR $T221633[ebp]
+	lea	ecx, DWORD PTR $T221675[ebp]
 	jmp	??1?$FObjectHandle@VCvUnit@@@@QAE@XZ	; FObjectHandle<CvUnit>::~FObjectHandle<CvUnit>
 __unwindfunclet$?AreAllInWater@CvArmyAI@@QAE_NXZ$2:
-	lea	ecx, DWORD PTR $T221635[ebp]
+	lea	ecx, DWORD PTR $T221677[ebp]
 	jmp	??1?$FObjectHandle@VCvUnit@@@@QAE@XZ	; FObjectHandle<CvUnit>::~FObjectHandle<CvUnit>
 __ehhandler$?AreAllInWater@CvArmyAI@@QAE_NXZ:
 	mov	eax, OFFSET __ehfuncinfo$?AreAllInWater@CvArmyAI@@QAE_NXZ
@@ -7267,7 +7267,7 @@ EXTRN	??5@YAAAVFDataStream@@AAV0@AAW4PlayerTypes@@@Z:PROC ; operator>>
 ;	COMDAT ?read@CvArmyAI@@UAEXAAVFDataStream@@@Z
 _TEXT	SEGMENT
 _uiVersion$ = -16					; size = 4
-_slot$217594 = -12					; size = 12
+_slot$217636 = -12					; size = 12
 _iEntriesToRead$ = 8					; size = 4
 _kStream$ = 8						; size = 4
 ?read@CvArmyAI@@UAEXAAVFDataStream@@@Z PROC		; CvArmyAI::read, COMDAT
@@ -7404,18 +7404,18 @@ $LL3@read:
 
 ; 128  : 		kStream >> slot;
 
-	lea	edx, DWORD PTR _slot$217594[esp+32]
+	lea	edx, DWORD PTR _slot$217636[esp+32]
 	push	edx
 	mov	ecx, esi
-	mov	DWORD PTR _slot$217594[esp+36], eax
-	mov	DWORD PTR _slot$217594[esp+40], eax
-	mov	DWORD PTR _slot$217594[esp+44], ebp
+	mov	DWORD PTR _slot$217636[esp+36], eax
+	mov	DWORD PTR _slot$217636[esp+40], eax
+	mov	DWORD PTR _slot$217636[esp+44], ebp
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
-	lea	eax, DWORD PTR _slot$217594[esp+36]
+	lea	eax, DWORD PTR _slot$217636[esp+36]
 	push	eax
 	mov	ecx, esi
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
-	lea	ecx, DWORD PTR _slot$217594[esp+40]
+	lea	ecx, DWORD PTR _slot$217636[esp+40]
 	push	ecx
 	mov	ecx, esi
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
@@ -7436,11 +7436,11 @@ $LN58@read:
 	lea	eax, DWORD PTR [eax+edx*4]
 	cmp	eax, ebp
 	je	SHORT $LN61@read
-	mov	ecx, DWORD PTR _slot$217594[esp+32]
+	mov	ecx, DWORD PTR _slot$217636[esp+32]
 	mov	DWORD PTR [eax], ecx
-	mov	edx, DWORD PTR _slot$217594[esp+36]
+	mov	edx, DWORD PTR _slot$217636[esp+36]
 	mov	DWORD PTR [eax+4], edx
-	mov	ecx, DWORD PTR _slot$217594[esp+40]
+	mov	ecx, DWORD PTR _slot$217636[esp+40]
 	mov	DWORD PTR [eax+8], ecx
 $LN61@read:
 	inc	DWORD PTR [edi+4]

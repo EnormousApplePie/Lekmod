@@ -26,6 +26,7 @@ CvPromotionEntry::CvPromotionEntry():
 	m_iPrereqOrPromotion7(NO_PROMOTION),
 	m_iPrereqOrPromotion8(NO_PROMOTION),
 	m_iPrereqOrPromotion9(NO_PROMOTION),
+	m_iPrereqOrPromotion10(NO_PROMOTION),
 	m_iTechPrereq(NO_TECH),
 	m_iInvisibleType(NO_INVISIBLE),
 	m_iSeeInvisibleType(NO_INVISIBLE),
@@ -389,6 +390,9 @@ bool CvPromotionEntry::CacheResults(Database::Results& kResults, CvDatabaseUtili
 
 	const char* szPromotionPrereqOr9 = kResults.GetText("PromotionPrereqOr9");
 	m_iPrereqOrPromotion9 = GC.getInfoTypeForString(szPromotionPrereqOr9, true);
+
+	const char* szPromotionPrereqOr10 = kResults.GetText("PromotionPrereqOr9");
+	m_iPrereqOrPromotion10 = GC.getInfoTypeForString(szPromotionPrereqOr10, true);
 
 	//Arrays
 	const int iNumUnitClasses = kUtility.MaxRows("UnitClasses");
@@ -774,6 +778,22 @@ void CvPromotionEntry::SetPrereqOrPromotion9(int i)
 {
 	m_iPrereqOrPromotion9 = i;
 }
+
+///////////////////////////
+//EAP: Adding promotion 10
+/// Accessor: Gets promotion 10 of an either/or promotion prerequisite.
+int CvPromotionEntry::GetPrereqOrPromotion10() const
+{
+	return m_iPrereqOrPromotion10;
+}
+
+/// Accessor: Sets promotion 10 of an either/or promotion prerequisite.
+void CvPromotionEntry::SetPrereqOrPromotion10(int i)
+{
+	m_iPrereqOrPromotion10 = i;
+}
+
+///////////////////////////
 
 /// Accessor: Gets the tech prerequisite for this promotion
 int CvPromotionEntry::GetTechPrereq() const

@@ -873,18 +873,53 @@
 #define NQ_AI_GIMP_NO_MINOR_SPREAD
 
 
+/////////////////////LEKMOD, from EAP:
+
+// Fixed an issue with unique faith units not working correctly
+#define LEK_UNIQUE_FAITH_UNIT_FIX
+///EAP: Attempt to fix embarked visibility promotion errors
+#define LEK_EMBARK_VISIBILITY_FIX
+//EAP: Underground Sect/World Church now apply to all cities -- Kinda a HACK, would have to also update wording xml, and only applies to specific yields (culture/science).
+#define LEK_CULTURE_SCIENCE_SPREAD_BELIEFS_ALL_CITIES
+//EAP: Embarking now only costs 1 movement
+//#define LEK_EMBARK_1_MOVEMENT
+//EAP: Benched for now: Added a new table for Guruship effect on traits and with specific specialist type. AKA: If city is working any [insert specialist] slot, receive x yield (aka switzerland depending on when you read this)
+//#define LEK_TRAIT_SPECIALIST_YIELD_MAX_ONE
+
+/////////////////////from ImmoS - Not all things implemented as is, some changed have been made compared to the original code.
+
+/// Fast hand - Intercept and Paradrops can no longer be set when the turn timer is > 50% full
+#define CAN_PARADROP_HALF_TIMER
+#define CAN_SET_INTERCEPT_HALF_TIMER
+/// New DP: Acts as a peace treaty for 10 turns, can be sent in deals like normal, allowing for a non-agression pact to be enforced by the game.
+#define NEW_DEFENSIVE_PACT
+///AI Peace treaty amout is 5
+#define AI_PEACE_TURNS
+/// Embarked Civilians act as a workboat: Instantly get killed, no experience earned for the kill and Barbarians do not shoot them
+#define NO_EMBARKED_CIVILIAN_DEFENSE
+/// AI can no longer be allies with City-States (game option)
+#define NO_AI_ALLYING_CS
 // Fixed a bug related to Aqueduct duping when finishing tradition
 #define AQUEDUCT_FIX
-
 /// Fixes some leftover radar issues
 #define ASTAR_AI_CONTROL_FIX_RADAR
+// AI can no longer choose an ideology
+#define AI_CANT_ADOPT_IDEOLOGY
+// AI cannot declare war
+#define AI_CANT_DECLARE_WAR
+// AI cannot build spaceparts
+#define NO_AI_PROJECTS
+// Can't steal pre-medieval techs
+#define CANT_STEAL_CLASSICAL_ERA_TECHS
+// Turn timer roll keybind
+#define TURN_TIMER_RESET_BUTTON
 
 
 
-// from ImmoS
-#define CAN_PARADROP_HALF_TIMER
-///
-#define CAN_SET_INTERCEPT_HALF_TIMER
+/////////////////////
 
+
+// From CP DLL
 #define MOD_RESOURCES_PRODUCTION_COST_MODIFIERS
 #endif
+

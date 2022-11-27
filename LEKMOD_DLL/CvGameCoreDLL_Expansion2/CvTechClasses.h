@@ -46,6 +46,10 @@ public:
 	int GetFirstFreeUnitClass() const;
 	int GetFirstFreeTechs() const;
 	int GetEmbarkedMoveChange() const;
+
+	//EAP: Extra Embarked visibility on tech
+	int GetEmbarkedSightChange() const;
+
 	int GetNumInternationalTradeRoutesChange() const;;
 	int GetInfluenceSpreadModifier() const;;
 	int GetExtraVotesPerDiplomat() const;
@@ -55,6 +59,9 @@ public:
 
 	bool IsEndsGame() const;
 	bool IsAllowsEmbarking() const;
+	//EAP: Civilian Embark
+	bool IsAllowsEmbarkingCivilian() const;
+
 	bool IsAllowsDefensiveEmbarking() const;
 	bool IsEmbarkedAllWaterPassage() const;
 	bool IsAllowsBarbarianBoats() const;
@@ -112,6 +119,8 @@ private:
 	int m_iFirstFreeUnitClass;
 	int m_iFirstFreeTechs;
 	int m_iEmbarkedMoveChange;
+	//EAP: Embarked Sight change on tech
+	int m_iEmbarkedSightChange;
 	int m_iInternationalTradeRoutesChange;
 	int m_iInfluenceSpreadModifier;
 	int m_iExtraVotesPerDiplomat;
@@ -121,6 +130,9 @@ private:
 
 	bool m_bEndsGame;
 	bool m_bAllowsEmbarking;
+	//EAP: Civilian Embark
+	bool m_bAllowsEmbarkingCivilian;
+
 	bool m_bAllowsDefensiveEmbarking;
 	bool m_bEmbarkedAllWaterPassage;
 	bool m_bAllowsBarbarianBoats;

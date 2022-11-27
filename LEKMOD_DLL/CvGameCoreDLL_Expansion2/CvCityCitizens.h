@@ -200,6 +200,8 @@ public:
 #else
 	void DoSpawnGreatPerson(UnitTypes eUnit, bool bIncrementCount, bool bCountAsProphet);
 #endif
+
+
 #ifdef AUI_CITIZENS_FOOD_PRODUCTION_TRIAL_RUN_THEN_SELF_CONSISTENCY
 	bool getIgnoreFoodProduction() const;
 	void setIgnoreFoodProduction(bool bNewValue);

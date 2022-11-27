@@ -1109,6 +1109,13 @@ public:
 	bool isKill() const;
 	bool isRepair() const;
 	bool IsRemoveRoute() const;
+	//EAP Civ req builds
+	bool IsSpecificCivRequired() const;
+
+	CivilizationTypes GetRequiredCivilization() const;
+
+	//
+
 	bool IsWater() const;
 	bool IsCanBeEmbarked() const;
 
@@ -1139,6 +1146,13 @@ protected:
 	bool m_bKill;
 	bool m_bRepair;
 	bool m_bRemoveRoute;
+	//EAP civ req builds
+	bool m_bSpecificCivRequired;
+
+	CivilizationTypes m_eRequiredCivilization;
+
+	//
+
 	bool m_bWater;
 	bool m_bCanBeEmbarked;
 

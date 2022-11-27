@@ -12,10 +12,10 @@ INCLUDELIB OLDNAMES
 PUBLIC	?NO_QUEST_DATA@CvMinorCivQuest@@2HB		; CvMinorCivQuest::NO_QUEST_DATA
 PUBLIC	?NO_TURN@CvMinorCivQuest@@2HB			; CvMinorCivQuest::NO_TURN
 _DATA	SEGMENT
-_CIV5_XP2_DLL_VERSION DD FLAT:$SG220655
+_CIV5_XP2_DLL_VERSION DD FLAT:$SG220697
 _DATA	ENDS
 CONST	SEGMENT
-$SG220655 DB	'1.0.0', 00H
+$SG220697 DB	'1.0.0', 00H
 	ORG $+2
 _guidICvUnknown DD 0d89ba82fH
 	DW	09fa3H
@@ -329,7 +329,7 @@ __ehfuncinfo$?GetDiploStringForMessage@CvDllDiplomacyAI@@UAGPBDW4DiploMessageTyp
 xdata$x	ENDS
 ;	COMDAT ?GetDiploStringForMessage@CvDllDiplomacyAI@@UAGPBDW4DiploMessageTypes@@W4PlayerTypes@@PBD@Z
 _TEXT	SEGMENT
-$T221981 = -92						; size = 80
+$T222023 = -92						; size = 80
 __$EHRec$ = -12						; size = 12
 _this$ = 8						; size = 4
 _eDiploMessage$ = 12					; size = 4
@@ -351,11 +351,11 @@ _szOptionalKey1$ = 20					; size = 4
 	mov	eax, DWORD PTR _szOptionalKey1$[esp+88]
 	push	esi
 	push	eax
-	lea	ecx, DWORD PTR $T221981[esp+100]
+	lea	ecx, DWORD PTR $T222023[esp+100]
 	call	DWORD PTR __imp_??0String@Localization@@QAE@PBD@Z
 	mov	edx, DWORD PTR _eForPlayer$[esp+92]
 	mov	eax, DWORD PTR _eDiploMessage$[esp+92]
-	lea	ecx, DWORD PTR $T221981[esp+96]
+	lea	ecx, DWORD PTR $T222023[esp+96]
 	push	ecx
 	mov	ecx, DWORD PTR _this$[esp+96]
 	mov	ecx, DWORD PTR [ecx+8]
@@ -363,7 +363,7 @@ _szOptionalKey1$ = 20					; size = 4
 	push	eax
 	mov	DWORD PTR __$EHRec$[esp+116], 0
 	call	?GetDiploStringForMessage@CvDiplomacyAI@@QAEPBDW4DiploMessageTypes@@W4PlayerTypes@@ABVString@Localization@@@Z ; CvDiplomacyAI::GetDiploStringForMessage
-	lea	ecx, DWORD PTR $T221981[esp+96]
+	lea	ecx, DWORD PTR $T222023[esp+96]
 	mov	esi, eax
 	mov	DWORD PTR __$EHRec$[esp+104], -1
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
@@ -380,7 +380,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetDiploStringForMessage@CvDllDiplomacyAI@@UAGPBDW4DiploMessageTypes@@W4PlayerTypes@@PBD@Z$0:
-	lea	ecx, DWORD PTR $T221981[ebp]
+	lea	ecx, DWORD PTR $T222023[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __ehhandler$?GetDiploStringForMessage@CvDllDiplomacyAI@@UAGPBDW4DiploMessageTypes@@W4PlayerTypes@@PBD@Z:
 	mov	eax, OFFSET __ehfuncinfo$?GetDiploStringForMessage@CvDllDiplomacyAI@@UAGPBDW4DiploMessageTypes@@W4PlayerTypes@@PBD@Z
@@ -500,12 +500,12 @@ PUBLIC	?GetInterfaceId@ICvUnknown@@SG?AU_GUID@@XZ	; ICvUnknown::GetInterfaceId
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredllutil\include\cvdllinterfaces.h
 ;	COMDAT ?GetInterfaceId@ICvUnknown@@SG?AU_GUID@@XZ
 _TEXT	SEGMENT
-$T222016 = 8						; size = 4
+$T222058 = 8						; size = 4
 ?GetInterfaceId@ICvUnknown@@SG?AU_GUID@@XZ PROC		; ICvUnknown::GetInterfaceId, COMDAT
 
 ; 306  : 	static GUID DLLCALL GetInterfaceId(){ return guidICvUnknown; }
 
-	mov	eax, DWORD PTR $T222016[esp-4]
+	mov	eax, DWORD PTR $T222058[esp-4]
 	mov	ecx, DWORD PTR _guidICvUnknown
 	mov	edx, DWORD PTR _guidICvUnknown+4
 	mov	DWORD PTR [eax], ecx
@@ -521,12 +521,12 @@ PUBLIC	?GetInterfaceId@ICvDiplomacyAI1@@SG?AU_GUID@@XZ	; ICvDiplomacyAI1::GetInt
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?GetInterfaceId@ICvDiplomacyAI1@@SG?AU_GUID@@XZ
 _TEXT	SEGMENT
-$T222020 = 8						; size = 4
+$T222062 = 8						; size = 4
 ?GetInterfaceId@ICvDiplomacyAI1@@SG?AU_GUID@@XZ PROC	; ICvDiplomacyAI1::GetInterfaceId, COMDAT
 
 ; 968  : 	static GUID DLLCALL GetInterfaceId() { return guidICvDiplomacyAI1; }
 
-	mov	eax, DWORD PTR $T222020[esp-4]
+	mov	eax, DWORD PTR $T222062[esp-4]
 	mov	ecx, DWORD PTR _guidICvDiplomacyAI1
 	mov	edx, DWORD PTR _guidICvDiplomacyAI1+4
 	mov	DWORD PTR [eax], ecx
@@ -572,8 +572,8 @@ _TEXT	SEGMENT
 _TEXT	ENDS
 ;	COMDAT ?QueryInterface@CvDllDiplomacyAI@@UAGPAXU_GUID@@@Z
 _TEXT	SEGMENT
-$T222032 = -16						; size = 16
-$T222030 = -16						; size = 16
+$T222074 = -16						; size = 16
+$T222072 = -16						; size = 16
 _this$ = 8						; size = 4
 _guidInterface$ = 12					; size = 16
 ?QueryInterface@CvDllDiplomacyAI@@UAGPAXU_GUID@@@Z PROC	; CvDllDiplomacyAI::QueryInterface, COMDAT
@@ -588,15 +588,15 @@ _guidInterface$ = 12					; size = 16
 	mov	ecx, DWORD PTR _guidICvUnknown+4
 	mov	edx, DWORD PTR _guidICvUnknown+8
 	mov	eax, DWORD PTR _guidICvUnknown
-	mov	DWORD PTR $T222030[esp+20], ecx
-	lea	ecx, DWORD PTR $T222030[esp+16]
-	mov	DWORD PTR $T222030[esp+24], edx
-	mov	DWORD PTR $T222030[esp+16], eax
+	mov	DWORD PTR $T222072[esp+20], ecx
+	lea	ecx, DWORD PTR $T222072[esp+16]
+	mov	DWORD PTR $T222072[esp+24], edx
+	mov	DWORD PTR $T222072[esp+16], eax
 	mov	eax, DWORD PTR _guidICvUnknown+12
 	push	ecx
 	lea	edx, DWORD PTR _guidInterface$[esp+16]
 	push	edx
-	mov	DWORD PTR $T222030[esp+36], eax
+	mov	DWORD PTR $T222072[esp+36], eax
 	call	_IsEqualGUID
 	add	esp, 8
 	test	eax, eax
@@ -604,15 +604,15 @@ _guidInterface$ = 12					; size = 16
 	mov	ecx, DWORD PTR _guidICvDiplomacyAI1+4
 	mov	edx, DWORD PTR _guidICvDiplomacyAI1+8
 	mov	eax, DWORD PTR _guidICvDiplomacyAI1
-	mov	DWORD PTR $T222032[esp+20], ecx
-	lea	ecx, DWORD PTR $T222032[esp+16]
-	mov	DWORD PTR $T222032[esp+24], edx
-	mov	DWORD PTR $T222032[esp+16], eax
+	mov	DWORD PTR $T222074[esp+20], ecx
+	lea	ecx, DWORD PTR $T222074[esp+16]
+	mov	DWORD PTR $T222074[esp+24], edx
+	mov	DWORD PTR $T222074[esp+16], eax
 	mov	eax, DWORD PTR _guidICvDiplomacyAI1+12
 	push	ecx
 	lea	edx, DWORD PTR _guidInterface$[esp+16]
 	push	edx
-	mov	DWORD PTR $T222032[esp+36], eax
+	mov	DWORD PTR $T222074[esp+36], eax
 	call	_IsEqualGUID
 	add	esp, 8
 	test	eax, eax

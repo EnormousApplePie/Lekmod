@@ -12,46 +12,46 @@ INCLUDELIB OLDNAMES
 PUBLIC	?NO_QUEST_DATA@CvMinorCivQuest@@2HB		; CvMinorCivQuest::NO_QUEST_DATA
 PUBLIC	?NO_TURN@CvMinorCivQuest@@2HB			; CvMinorCivQuest::NO_TURN
 CONST	SEGMENT
-$SG224877 DB	'ECONOMICAISTRATEGY_LOSING_MONEY', 00H
-$SG224886 DB	'AIGRANDSTRATEGY_CULTURE', 00H
-$SG225562 DB	'UNITCLASS_SCIENTIST', 00H
-$SG225566 DB	'UNITCLASS_WRITER', 00H
+$SG224919 DB	'ECONOMICAISTRATEGY_LOSING_MONEY', 00H
+$SG224928 DB	'AIGRANDSTRATEGY_CULTURE', 00H
+$SG225604 DB	'UNITCLASS_SCIENTIST', 00H
+$SG225608 DB	'UNITCLASS_WRITER', 00H
 	ORG $+3
-$SG225571 DB	'UNITCLASS_ARTIST', 00H
+$SG225613 DB	'UNITCLASS_ARTIST', 00H
 	ORG $+3
-$SG225576 DB	'UNITCLASS_MUSICIAN', 00H
+$SG225618 DB	'UNITCLASS_MUSICIAN', 00H
 	ORG $+1
-$SG225583 DB	'UNITCLASS_MERCHANT', 00H
+$SG225625 DB	'UNITCLASS_MERCHANT', 00H
 	ORG $+1
-$SG225587 DB	'UNITCLASS_ENGINEER', 00H
+$SG225629 DB	'UNITCLASS_ENGINEER', 00H
 	ORG $+1
-$SG225830 DB	'UNITCLASS_WRITER', 00H
+$SG225872 DB	'UNITCLASS_WRITER', 00H
 	ORG $+3
-$SG225833 DB	'UNITCLASS_ARTIST', 00H
+$SG225875 DB	'UNITCLASS_ARTIST', 00H
 	ORG $+3
-$SG225836 DB	'UNITCLASS_MUSICIAN', 00H
+$SG225878 DB	'UNITCLASS_MUSICIAN', 00H
 	ORG $+1
-$SG225839 DB	'UNITCLASS_SCIENTIST', 00H
-$SG225842 DB	'UNITCLASS_ENGINEER', 00H
+$SG225881 DB	'UNITCLASS_SCIENTIST', 00H
+$SG225884 DB	'UNITCLASS_ENGINEER', 00H
 	ORG $+1
-$SG225845 DB	'UNITCLASS_MERCHANT', 00H
+$SG225887 DB	'UNITCLASS_MERCHANT', 00H
 	ORG $+1
-$SG225867 DB	'UNITCLASS_WRITER', 00H
+$SG225909 DB	'UNITCLASS_WRITER', 00H
 	ORG $+3
-$SG225870 DB	'UNITCLASS_ARTIST', 00H
+$SG225912 DB	'UNITCLASS_ARTIST', 00H
 	ORG $+3
-$SG225873 DB	'UNITCLASS_MUSICIAN', 00H
+$SG225915 DB	'UNITCLASS_MUSICIAN', 00H
 	ORG $+1
-$SG225876 DB	'UNITCLASS_SCIENTIST', 00H
-$SG225879 DB	'UNITCLASS_ENGINEER', 00H
+$SG225918 DB	'UNITCLASS_SCIENTIST', 00H
+$SG225921 DB	'UNITCLASS_ENGINEER', 00H
 	ORG $+1
-$SG225882 DB	'UNITCLASS_MERCHANT', 00H
+$SG225924 DB	'UNITCLASS_MERCHANT', 00H
 	ORG $+1
-$SG225885 DB	'UNITCLASS_PROPHET', 00H
+$SG225927 DB	'UNITCLASS_PROPHET', 00H
 	ORG $+2
-$SG225897 DB	'UNIT_ARTIST', 00H
-$SG225901 DB	'TXT_KEY_NOTIFICATION_GREAT_PERSON_ACTIVE_PLAYER', 00H
-$SG225904 DB	'TXT_KEY_NOTIFICATION_SUMMARY_GREAT_PERSON', 00H
+$SG225939 DB	'UNIT_ARTIST', 00H
+$SG225943 DB	'TXT_KEY_NOTIFICATION_GREAT_PERSON_ACTIVE_PLAYER', 00H
+$SG225946 DB	'TXT_KEY_NOTIFICATION_SUMMARY_GREAT_PERSON', 00H
 CONST	ENDS
 ;	COMDAT ?NO_TURN@CvMinorCivQuest@@2HB
 CONST	SEGMENT
@@ -660,11 +660,11 @@ _TEXT	SEGMENT
 ?GetNumUnassignedCitizens@CvCityCitizens@@QBEHXZ PROC	; CvCityCitizens::GetNumUnassignedCitizens, COMDAT
 ; _this$ = ecx
 
-; 1843 : 	return m_iNumUnassignedCitizens;
+; 1861 : 	return m_iNumUnassignedCitizens;
 
 	mov	eax, DWORD PTR [ecx+8]
 
-; 1844 : }
+; 1862 : }
 
 	ret	0
 ?GetNumUnassignedCitizens@CvCityCitizens@@QBEHXZ ENDP	; CvCityCitizens::GetNumUnassignedCitizens
@@ -677,13 +677,13 @@ _iChange$ = 8						; size = 4
 ?ChangeNumUnassignedCitizens@CvCityCitizens@@QAEXH@Z PROC ; CvCityCitizens::ChangeNumUnassignedCitizens, COMDAT
 ; _this$ = ecx
 
-; 1849 : 	m_iNumUnassignedCitizens += iChange;
+; 1867 : 	m_iNumUnassignedCitizens += iChange;
 
 	mov	eax, DWORD PTR _iChange$[esp-4]
 	add	DWORD PTR [ecx+8], eax
 
-; 1850 : 	CvAssert(m_iNumUnassignedCitizens >= 0);
-; 1851 : }
+; 1868 : 	CvAssert(m_iNumUnassignedCitizens >= 0);
+; 1869 : }
 
 	ret	4
 ?ChangeNumUnassignedCitizens@CvCityCitizens@@QAEXH@Z ENDP ; CvCityCitizens::ChangeNumUnassignedCitizens
@@ -695,11 +695,11 @@ _TEXT	SEGMENT
 ?GetNumCitizensWorkingPlots@CvCityCitizens@@QBEHXZ PROC	; CvCityCitizens::GetNumCitizensWorkingPlots, COMDAT
 ; _this$ = ecx
 
-; 1856 : 	return m_iNumCitizensWorkingPlots;
+; 1874 : 	return m_iNumCitizensWorkingPlots;
 
 	mov	eax, DWORD PTR [ecx+12]
 
-; 1857 : }
+; 1875 : }
 
 	ret	0
 ?GetNumCitizensWorkingPlots@CvCityCitizens@@QBEHXZ ENDP	; CvCityCitizens::GetNumCitizensWorkingPlots
@@ -712,12 +712,12 @@ _iChange$ = 8						; size = 4
 ?ChangeNumCitizensWorkingPlots@CvCityCitizens@@QAEXH@Z PROC ; CvCityCitizens::ChangeNumCitizensWorkingPlots, COMDAT
 ; _this$ = ecx
 
-; 1862 : 	m_iNumCitizensWorkingPlots += iChange;
+; 1880 : 	m_iNumCitizensWorkingPlots += iChange;
 
 	mov	eax, DWORD PTR _iChange$[esp-4]
 	add	DWORD PTR [ecx+12], eax
 
-; 1863 : }
+; 1881 : }
 
 	ret	4
 ?ChangeNumCitizensWorkingPlots@CvCityCitizens@@QAEXH@Z ENDP ; CvCityCitizens::ChangeNumCitizensWorkingPlots
@@ -729,15 +729,15 @@ _TEXT	SEGMENT
 ?GetNumForcedWorkingPlots@CvCityCitizens@@QBEHXZ PROC	; CvCityCitizens::GetNumForcedWorkingPlots, COMDAT
 ; _this$ = ecx
 
-; 2627 : #ifdef AUI_CITIZENS_FIX_LOCKED_TILES_BLOCKED
-; 2628 : 	return m_iNumForcedWorkingPlots + GetNumForcedWorkingPlotsBlocked();
-; 2629 : #else
-; 2630 : 	return m_iNumForcedWorkingPlots;
+; 2645 : #ifdef AUI_CITIZENS_FIX_LOCKED_TILES_BLOCKED
+; 2646 : 	return m_iNumForcedWorkingPlots + GetNumForcedWorkingPlotsBlocked();
+; 2647 : #else
+; 2648 : 	return m_iNumForcedWorkingPlots;
 
 	mov	eax, DWORD PTR [ecx+16]
 
-; 2631 : #endif
-; 2632 : }
+; 2649 : #endif
+; 2650 : }
 
 	ret	0
 ?GetNumForcedWorkingPlots@CvCityCitizens@@QBEHXZ ENDP	; CvCityCitizens::GetNumForcedWorkingPlots
@@ -750,20 +750,20 @@ _iChange$ = 8						; size = 4
 ?ChangeNumForcedWorkingPlots@CvCityCitizens@@QAEXH@Z PROC ; CvCityCitizens::ChangeNumForcedWorkingPlots, COMDAT
 ; _this$ = ecx
 
-; 2637 : 	if(iChange != 0)
+; 2655 : 	if(iChange != 0)
 
 	mov	eax, DWORD PTR _iChange$[esp-4]
 	test	eax, eax
 	je	SHORT $LN1@ChangeNumF
 
-; 2638 : 	{
-; 2639 : 		m_iNumForcedWorkingPlots += iChange;
+; 2656 : 	{
+; 2657 : 		m_iNumForcedWorkingPlots += iChange;
 
 	add	DWORD PTR [ecx+16], eax
 $LN1@ChangeNumF:
 
-; 2640 : 	}
-; 2641 : }
+; 2658 : 	}
+; 2659 : }
 
 	ret	4
 ?ChangeNumForcedWorkingPlots@CvCityCitizens@@QAEXH@Z ENDP ; CvCityCitizens::ChangeNumForcedWorkingPlots
@@ -777,7 +777,7 @@ _pPlot$ = 8						; size = 4
 ?GetCityIndexFromPlot@CvCityCitizens@@QBEHPBVCvPlot@@@Z PROC ; CvCityCitizens::GetCityIndexFromPlot, COMDAT
 ; _this$ = ecx
 
-; 2888 : 	return plotCityXY(m_pCity, pPlot);
+; 2906 : 	return plotCityXY(m_pCity, pPlot);
 
 	mov	eax, DWORD PTR _pPlot$[esp-4]
 	mov	ecx, DWORD PTR [ecx]
@@ -786,7 +786,7 @@ _pPlot$ = 8						; size = 4
 	call	?plotCityXY@@YAHPBVCvCity@@PBVCvPlot@@@Z ; plotCityXY
 	add	esp, 8
 
-; 2889 : }
+; 2907 : }
 
 	ret	4
 ?GetCityIndexFromPlot@CvCityCitizens@@QBEHPBVCvPlot@@@Z ENDP ; CvCityCitizens::GetCityIndexFromPlot
@@ -800,12 +800,12 @@ _kBuilding$ = 8						; size = 4
 ?GetNumSpecialistsAllowedByBuilding@CvCityCitizens@@QAEHABVCvBuildingEntry@@@Z PROC ; CvCityCitizens::GetNumSpecialistsAllowedByBuilding, COMDAT
 ; _this$ = ecx
 
-; 3134 : 	return kBuilding.GetSpecialistCount();
+; 3152 : 	return kBuilding.GetSpecialistCount();
 
 	mov	ecx, DWORD PTR _kBuilding$[esp-4]
 	call	?GetSpecialistCount@CvBuildingEntry@@QBEHXZ ; CvBuildingEntry::GetSpecialistCount
 
-; 3135 : }
+; 3153 : }
 
 	ret	4
 ?GetNumSpecialistsAllowedByBuilding@CvCityCitizens@@QAEHABVCvBuildingEntry@@@Z ENDP ; CvCityCitizens::GetNumSpecialistsAllowedByBuilding
@@ -817,11 +817,11 @@ _TEXT	SEGMENT
 ?GetNumDefaultSpecialists@CvCityCitizens@@QBEHXZ PROC	; CvCityCitizens::GetNumDefaultSpecialists, COMDAT
 ; _this$ = ecx
 
-; 3429 : 	return m_iNumDefaultSpecialists;
+; 3447 : 	return m_iNumDefaultSpecialists;
 
 	mov	eax, DWORD PTR [ecx+100]
 
-; 3430 : }
+; 3448 : }
 
 	ret	0
 ?GetNumDefaultSpecialists@CvCityCitizens@@QBEHXZ ENDP	; CvCityCitizens::GetNumDefaultSpecialists
@@ -833,11 +833,11 @@ _TEXT	SEGMENT
 ?GetNumForcedDefaultSpecialists@CvCityCitizens@@QBEHXZ PROC ; CvCityCitizens::GetNumForcedDefaultSpecialists, COMDAT
 ; _this$ = ecx
 
-; 3448 : 	return m_iNumForcedDefaultSpecialists;
+; 3466 : 	return m_iNumForcedDefaultSpecialists;
 
 	mov	eax, DWORD PTR [ecx+104]
 
-; 3449 : }
+; 3467 : }
 
 	ret	0
 ?GetNumForcedDefaultSpecialists@CvCityCitizens@@QBEHXZ ENDP ; CvCityCitizens::GetNumForcedDefaultSpecialists
@@ -850,12 +850,12 @@ _iChange$ = 8						; size = 4
 ?ChangeNumForcedDefaultSpecialists@CvCityCitizens@@QAEXH@Z PROC ; CvCityCitizens::ChangeNumForcedDefaultSpecialists, COMDAT
 ; _this$ = ecx
 
-; 3454 : 	m_iNumForcedDefaultSpecialists += iChange;
+; 3472 : 	m_iNumForcedDefaultSpecialists += iChange;
 
 	mov	eax, DWORD PTR _iChange$[esp-4]
 	add	DWORD PTR [ecx+104], eax
 
-; 3455 : }
+; 3473 : }
 
 	ret	4
 ?ChangeNumForcedDefaultSpecialists@CvCityCitizens@@QAEXH@Z ENDP ; CvCityCitizens::ChangeNumForcedDefaultSpecialists
@@ -868,16 +868,16 @@ _eIndex$ = 8						; size = 4
 ?GetSpecialistCount@CvCityCitizens@@QBEHW4SpecialistTypes@@@Z PROC ; CvCityCitizens::GetSpecialistCount, COMDAT
 ; _this$ = ecx
 
-; 3460 : 	CvAssert(eIndex > -1);
-; 3461 : 	CvAssert(eIndex < GC.getNumSpecialistInfos());
-; 3462 : 
-; 3463 : 	return m_aiSpecialistCounts[eIndex];
+; 3478 : 	CvAssert(eIndex > -1);
+; 3479 : 	CvAssert(eIndex < GC.getNumSpecialistInfos());
+; 3480 : 
+; 3481 : 	return m_aiSpecialistCounts[eIndex];
 
 	mov	eax, DWORD PTR [ecx+108]
 	mov	ecx, DWORD PTR _eIndex$[esp-4]
 	mov	eax, DWORD PTR [eax+ecx*4]
 
-; 3464 : }
+; 3482 : }
 
 	ret	4
 ?GetSpecialistCount@CvCityCitizens@@QBEHW4SpecialistTypes@@@Z ENDP ; CvCityCitizens::GetSpecialistCount
@@ -890,16 +890,16 @@ _eSpecialist$ = 8					; size = 4
 ?GetBuildingGreatPeopleRateChanges@CvCityCitizens@@QBEHW4SpecialistTypes@@@Z PROC ; CvCityCitizens::GetBuildingGreatPeopleRateChanges, COMDAT
 ; _this$ = ecx
 
-; 3492 : 	CvAssert(eSpecialist > -1);
-; 3493 : 	CvAssert(eSpecialist < GC.getNumSpecialistInfos());
-; 3494 : 
-; 3495 : 	return m_piBuildingGreatPeopleRateChanges[eSpecialist];
+; 3510 : 	CvAssert(eSpecialist > -1);
+; 3511 : 	CvAssert(eSpecialist < GC.getNumSpecialistInfos());
+; 3512 : 
+; 3513 : 	return m_piBuildingGreatPeopleRateChanges[eSpecialist];
 
 	mov	eax, DWORD PTR [ecx+124]
 	mov	ecx, DWORD PTR _eSpecialist$[esp-4]
 	mov	eax, DWORD PTR [eax+ecx*4]
 
-; 3496 : }
+; 3514 : }
 
 	ret	4
 ?GetBuildingGreatPeopleRateChanges@CvCityCitizens@@QBEHW4SpecialistTypes@@@Z ENDP ; CvCityCitizens::GetBuildingGreatPeopleRateChanges
@@ -913,10 +913,10 @@ _iChange$ = 12						; size = 4
 ?ChangeBuildingGreatPeopleRateChanges@CvCityCitizens@@QAEXW4SpecialistTypes@@H@Z PROC ; CvCityCitizens::ChangeBuildingGreatPeopleRateChanges, COMDAT
 ; _this$ = ecx
 
-; 3501 : 	CvAssert(eSpecialist > -1);
-; 3502 : 	CvAssert(eSpecialist < GC.getNumSpecialistInfos());
-; 3503 : 
-; 3504 : 	m_piBuildingGreatPeopleRateChanges[eSpecialist] += iChange;
+; 3519 : 	CvAssert(eSpecialist > -1);
+; 3520 : 	CvAssert(eSpecialist < GC.getNumSpecialistInfos());
+; 3521 : 
+; 3522 : 	m_piBuildingGreatPeopleRateChanges[eSpecialist] += iChange;
 
 	mov	eax, DWORD PTR [ecx+124]
 	mov	ecx, DWORD PTR _eSpecialist$[esp-4]
@@ -924,7 +924,7 @@ _iChange$ = 12						; size = 4
 	add	DWORD PTR [eax+ecx*4], edx
 	lea	eax, DWORD PTR [eax+ecx*4]
 
-; 3505 : }
+; 3523 : }
 
 	ret	8
 ?ChangeBuildingGreatPeopleRateChanges@CvCityCitizens@@QAEXW4SpecialistTypes@@H@Z ENDP ; CvCityCitizens::ChangeBuildingGreatPeopleRateChanges
@@ -937,16 +937,16 @@ _eIndex$ = 8						; size = 4
 ?GetSpecialistGreatPersonProgressTimes100@CvCityCitizens@@QBEHW4SpecialistTypes@@@Z PROC ; CvCityCitizens::GetSpecialistGreatPersonProgressTimes100, COMDAT
 ; _this$ = ecx
 
-; 3519 : 	CvAssert(eIndex > -1);
-; 3520 : 	CvAssert(eIndex < GC.getNumSpecialistInfos());
-; 3521 : 
-; 3522 : 	return m_aiSpecialistGreatPersonProgressTimes100[eIndex];
+; 3537 : 	CvAssert(eIndex > -1);
+; 3538 : 	CvAssert(eIndex < GC.getNumSpecialistInfos());
+; 3539 : 
+; 3540 : 	return m_aiSpecialistGreatPersonProgressTimes100[eIndex];
 
 	mov	eax, DWORD PTR [ecx+112]
 	mov	ecx, DWORD PTR _eIndex$[esp-4]
 	mov	eax, DWORD PTR [eax+ecx*4]
 
-; 3523 : }
+; 3541 : }
 
 	ret	4
 ?GetSpecialistGreatPersonProgressTimes100@CvCityCitizens@@QBEHW4SpecialistTypes@@@Z ENDP ; CvCityCitizens::GetSpecialistGreatPersonProgressTimes100
@@ -960,10 +960,10 @@ _iChange$ = 12						; size = 4
 ?ChangeSpecialistGreatPersonProgressTimes100@CvCityCitizens@@QAEXW4SpecialistTypes@@H@Z PROC ; CvCityCitizens::ChangeSpecialistGreatPersonProgressTimes100, COMDAT
 ; _this$ = ecx
 
-; 3528 : 	CvAssert(eIndex > -1);
-; 3529 : 	CvAssert(eIndex < GC.getNumSpecialistInfos());
-; 3530 : 
-; 3531 : 	m_aiSpecialistGreatPersonProgressTimes100[eIndex] += iChange;
+; 3546 : 	CvAssert(eIndex > -1);
+; 3547 : 	CvAssert(eIndex < GC.getNumSpecialistInfos());
+; 3548 : 
+; 3549 : 	m_aiSpecialistGreatPersonProgressTimes100[eIndex] += iChange;
 
 	mov	eax, DWORD PTR [ecx+112]
 	mov	ecx, DWORD PTR _eIndex$[esp-4]
@@ -971,7 +971,7 @@ _iChange$ = 12						; size = 4
 	add	DWORD PTR [eax+ecx*4], edx
 	lea	eax, DWORD PTR [eax+ecx*4]
 
-; 3532 : }
+; 3550 : }
 
 	ret	8
 ?ChangeSpecialistGreatPersonProgressTimes100@CvCityCitizens@@QAEXW4SpecialistTypes@@H@Z ENDP ; CvCityCitizens::ChangeSpecialistGreatPersonProgressTimes100
@@ -984,16 +984,16 @@ _eIndex$ = 8						; size = 4
 ?DoResetSpecialistGreatPersonProgressTimes100@CvCityCitizens@@QAEXW4SpecialistTypes@@@Z PROC ; CvCityCitizens::DoResetSpecialistGreatPersonProgressTimes100, COMDAT
 ; _this$ = ecx
 
-; 3537 : 	CvAssert(eIndex > -1);
-; 3538 : 	CvAssert(eIndex < GC.getNumSpecialistInfos());
-; 3539 : 
-; 3540 : 	m_aiSpecialistGreatPersonProgressTimes100[eIndex] = 0;
+; 3555 : 	CvAssert(eIndex > -1);
+; 3556 : 	CvAssert(eIndex < GC.getNumSpecialistInfos());
+; 3557 : 
+; 3558 : 	m_aiSpecialistGreatPersonProgressTimes100[eIndex] = 0;
 
 	mov	eax, DWORD PTR [ecx+112]
 	mov	ecx, DWORD PTR _eIndex$[esp-4]
 	mov	DWORD PTR [eax+ecx*4], 0
 
-; 3541 : }
+; 3559 : }
 
 	ret	4
 ?DoResetSpecialistGreatPersonProgressTimes100@CvCityCitizens@@QAEXW4SpecialistTypes@@@Z ENDP ; CvCityCitizens::DoResetSpecialistGreatPersonProgressTimes100
@@ -1006,16 +1006,16 @@ _eBuilding$ = 8						; size = 4
 ?GetNumSpecialistsInBuilding@CvCityCitizens@@QBEHW4BuildingTypes@@@Z PROC ; CvCityCitizens::GetNumSpecialistsInBuilding, COMDAT
 ; _this$ = ecx
 
-; 3546 : 	CvAssert(eBuilding > -1);
-; 3547 : 	CvAssert(eBuilding < GC.getNumBuildingInfos());
-; 3548 : 
-; 3549 : 	return m_aiNumSpecialistsInBuilding[eBuilding];
+; 3564 : 	CvAssert(eBuilding > -1);
+; 3565 : 	CvAssert(eBuilding < GC.getNumBuildingInfos());
+; 3566 : 
+; 3567 : 	return m_aiNumSpecialistsInBuilding[eBuilding];
 
 	mov	eax, DWORD PTR [ecx+116]
 	mov	ecx, DWORD PTR _eBuilding$[esp-4]
 	mov	eax, DWORD PTR [eax+ecx*4]
 
-; 3550 : }
+; 3568 : }
 
 	ret	4
 ?GetNumSpecialistsInBuilding@CvCityCitizens@@QBEHW4BuildingTypes@@@Z ENDP ; CvCityCitizens::GetNumSpecialistsInBuilding
@@ -1028,16 +1028,16 @@ _eBuilding$ = 8						; size = 4
 ?GetNumForcedSpecialistsInBuilding@CvCityCitizens@@QBEHW4BuildingTypes@@@Z PROC ; CvCityCitizens::GetNumForcedSpecialistsInBuilding, COMDAT
 ; _this$ = ecx
 
-; 3555 : 	CvAssert(eBuilding > -1);
-; 3556 : 	CvAssert(eBuilding < GC.getNumBuildingInfos());
-; 3557 : 
-; 3558 : 	return m_aiNumForcedSpecialistsInBuilding[eBuilding];
+; 3573 : 	CvAssert(eBuilding > -1);
+; 3574 : 	CvAssert(eBuilding < GC.getNumBuildingInfos());
+; 3575 : 
+; 3576 : 	return m_aiNumForcedSpecialistsInBuilding[eBuilding];
 
 	mov	eax, DWORD PTR [ecx+120]
 	mov	ecx, DWORD PTR _eBuilding$[esp-4]
 	mov	eax, DWORD PTR [eax+ecx*4]
 
-; 3559 : }
+; 3577 : }
 
 	ret	4
 ?GetNumForcedSpecialistsInBuilding@CvCityCitizens@@QBEHW4BuildingTypes@@@Z ENDP ; CvCityCitizens::GetNumForcedSpecialistsInBuilding
@@ -1051,18 +1051,18 @@ _TEXT	SEGMENT
 ?DoClearForcedSpecialists@CvCityCitizens@@QAEXXZ PROC	; CvCityCitizens::DoClearForcedSpecialists, COMDAT
 ; _this$ = ecx
 
-; 3563 : {
+; 3581 : {
 
 	push	esi
 	push	edi
 	mov	edi, ecx
 
-; 3564 : 	// Loop through all Buildings
-; 3565 : 	BuildingTypes eBuilding;
-; 3566 : #ifdef AUI_WARNING_FIXES
-; 3567 : 	for (uint iBuildingLoop = 0; iBuildingLoop < GC.getNumBuildingInfos(); iBuildingLoop++)
-; 3568 : #else
-; 3569 : 	for(int iBuildingLoop = 0; iBuildingLoop < GC.getNumBuildingInfos(); iBuildingLoop++)
+; 3582 : 	// Loop through all Buildings
+; 3583 : 	BuildingTypes eBuilding;
+; 3584 : #ifdef AUI_WARNING_FIXES
+; 3585 : 	for (uint iBuildingLoop = 0; iBuildingLoop < GC.getNumBuildingInfos(); iBuildingLoop++)
+; 3586 : #else
+; 3587 : 	for(int iBuildingLoop = 0; iBuildingLoop < GC.getNumBuildingInfos(); iBuildingLoop++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	xor	esi, esi
@@ -1071,12 +1071,12 @@ _TEXT	SEGMENT
 	jle	SHORT $LN2@DoClearFor
 $LL4@DoClearFor:
 
-; 3570 : #endif
-; 3571 : 	{
-; 3572 : 		eBuilding = (BuildingTypes) iBuildingLoop;
-; 3573 : 
-; 3574 : 		// Have this Building in the City?
-; 3575 : 		if(GetCity()->GetCityBuildings()->GetNumBuilding(eBuilding) > 0)
+; 3588 : #endif
+; 3589 : 	{
+; 3590 : 		eBuilding = (BuildingTypes) iBuildingLoop;
+; 3591 : 
+; 3592 : 		// Have this Building in the City?
+; 3593 : 		if(GetCity()->GetCityBuildings()->GetNumBuilding(eBuilding) > 0)
 
 	mov	ecx, DWORD PTR [edi]
 	push	esi
@@ -1086,8 +1086,8 @@ $LL4@DoClearFor:
 	test	eax, eax
 	jle	SHORT $LN3@DoClearFor
 
-; 3576 : 		{
-; 3577 : 			m_aiNumForcedSpecialistsInBuilding[eBuilding] = 0;
+; 3594 : 		{
+; 3595 : 			m_aiNumForcedSpecialistsInBuilding[eBuilding] = 0;
 
 	mov	eax, DWORD PTR [edi+120]
 	mov	DWORD PTR [eax+esi*4], 0
@@ -1101,9 +1101,9 @@ $LN2@DoClearFor:
 	pop	edi
 	pop	esi
 
-; 3578 : 		}
-; 3579 : 	}
-; 3580 : }
+; 3596 : 		}
+; 3597 : 	}
+; 3598 : }
 
 	ret	0
 ?DoClearForcedSpecialists@CvCityCitizens@@QAEXXZ ENDP	; CvCityCitizens::DoClearForcedSpecialists
@@ -1784,7 +1784,7 @@ _eTeam$ = 8						; size = 4
 ; 31   : 		return m_aTeams[eTeam];
 
 	mov	eax, DWORD PTR _eTeam$[esp-4]
-	imul	eax, 2980				; 00000ba4H
+	imul	eax, 2984				; 00000ba8H
 	add	eax, DWORD PTR ?m_aTeams@CvTeam@@1PAV1@A ; CvTeam::m_aTeams
 
 ; 32   : 	}
@@ -1800,11 +1800,11 @@ _TEXT	SEGMENT
 ?GetGoldenAgeGreatArtistRateModifier@CvPlayerTraits@@QBEHXZ PROC ; CvPlayerTraits::GetGoldenAgeGreatArtistRateModifier, COMDAT
 ; _this$ = ecx
 
-; 573  : 		return m_iGoldenAgeGreatArtistRateModifier;
+; 597  : 		return m_iGoldenAgeGreatArtistRateModifier;
 
 	mov	eax, DWORD PTR [ecx+188]
 
-; 574  : 	};
+; 598  : 	};
 
 	ret	0
 ?GetGoldenAgeGreatArtistRateModifier@CvPlayerTraits@@QBEHXZ ENDP ; CvPlayerTraits::GetGoldenAgeGreatArtistRateModifier
@@ -1816,11 +1816,11 @@ _TEXT	SEGMENT
 ?GetGoldenAgeGreatMusicianRateModifier@CvPlayerTraits@@QBEHXZ PROC ; CvPlayerTraits::GetGoldenAgeGreatMusicianRateModifier, COMDAT
 ; _this$ = ecx
 
-; 577  : 		return m_iGoldenAgeGreatMusicianRateModifier;
+; 601  : 		return m_iGoldenAgeGreatMusicianRateModifier;
 
 	mov	eax, DWORD PTR [ecx+192]
 
-; 578  : 	};
+; 602  : 	};
 
 	ret	0
 ?GetGoldenAgeGreatMusicianRateModifier@CvPlayerTraits@@QBEHXZ ENDP ; CvPlayerTraits::GetGoldenAgeGreatMusicianRateModifier
@@ -1832,11 +1832,11 @@ _TEXT	SEGMENT
 ?GetGoldenAgeGreatWriterRateModifier@CvPlayerTraits@@QBEHXZ PROC ; CvPlayerTraits::GetGoldenAgeGreatWriterRateModifier, COMDAT
 ; _this$ = ecx
 
-; 581  : 		return m_iGoldenAgeGreatWriterRateModifier;
+; 605  : 		return m_iGoldenAgeGreatWriterRateModifier;
 
 	mov	eax, DWORD PTR [ecx+196]
 
-; 582  : 	};
+; 606  : 	};
 
 	ret	0
 ?GetGoldenAgeGreatWriterRateModifier@CvPlayerTraits@@QBEHXZ ENDP ; CvPlayerTraits::GetGoldenAgeGreatWriterRateModifier
@@ -2536,7 +2536,7 @@ _eSpecialist$ = 8					; size = 4
 ?IsBetterThanDefaultSpecialist@CvCityCitizens@@QAE_NW4SpecialistTypes@@@Z PROC ; CvCityCitizens::IsBetterThanDefaultSpecialist, COMDAT
 ; _this$ = ecx
 
-; 1780 : 	CvSpecialistInfo* pSpecialistInfo = GC.getSpecialistInfo(eSpecialist);
+; 1798 : 	CvSpecialistInfo* pSpecialistInfo = GC.getSpecialistInfo(eSpecialist);
 
 	mov	eax, DWORD PTR _eSpecialist$[esp-4]
 	push	ebp
@@ -2547,8 +2547,8 @@ _eSpecialist$ = 8					; size = 4
 	call	?getSpecialistInfo@CvGlobals@@QAEPAVCvSpecialistInfo@@W4SpecialistTypes@@@Z ; CvGlobals::getSpecialistInfo
 	mov	edi, eax
 
-; 1781 : 	CvAssertMsg(pSpecialistInfo, "Invalid specialist type when assigning citizens. Please send Anton your save file and version.");
-; 1782 : 	if(!pSpecialistInfo) return false; // Assumes that default specialist will work out
+; 1799 : 	CvAssertMsg(pSpecialistInfo, "Invalid specialist type when assigning citizens. Please send Anton your save file and version.");
+; 1800 : 	if(!pSpecialistInfo) return false; // Assumes that default specialist will work out
 
 	test	edi, edi
 	jne	SHORT $LN16@IsBetterTh
@@ -2556,26 +2556,26 @@ _eSpecialist$ = 8					; size = 4
 	xor	al, al
 	pop	ebp
 
-; 1837 : }
+; 1855 : }
 
 	ret	4
 $LN16@IsBetterTh:
 
-; 1783 : 
-; 1784 : 	SpecialistTypes eDefaultSpecialist = (SpecialistTypes) GC.getDEFAULT_SPECIALIST();
+; 1801 : 
+; 1802 : 	SpecialistTypes eDefaultSpecialist = (SpecialistTypes) GC.getDEFAULT_SPECIALIST();
 
 	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8420
 	push	ebx
 
-; 1785 : 	CvSpecialistInfo* pDefaultSpecialistInfo = GC.getSpecialistInfo(eDefaultSpecialist);
+; 1803 : 	CvSpecialistInfo* pDefaultSpecialistInfo = GC.getSpecialistInfo(eDefaultSpecialist);
 
 	push	eax
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getSpecialistInfo@CvGlobals@@QAEPAVCvSpecialistInfo@@W4SpecialistTypes@@@Z ; CvGlobals::getSpecialistInfo
 	mov	ebx, eax
 
-; 1786 : 	CvAssertMsg(pDefaultSpecialistInfo, "Invalid default specialist type when assigning citizens. Please send Anton your save file and version.");
-; 1787 : 	if(!pDefaultSpecialistInfo) return false;
+; 1804 : 	CvAssertMsg(pDefaultSpecialistInfo, "Invalid default specialist type when assigning citizens. Please send Anton your save file and version.");
+; 1805 : 	if(!pDefaultSpecialistInfo) return false;
 
 	test	ebx, ebx
 	jne	SHORT $LN15@IsBetterTh
@@ -2584,50 +2584,50 @@ $LN16@IsBetterTh:
 	xor	al, al
 	pop	ebp
 
-; 1837 : }
+; 1855 : }
 
 	ret	4
 $LN15@IsBetterTh:
 
-; 1788 : 
-; 1789 : 	//antonjs: consider: deficient yield
-; 1790 : 
-; 1791 : 	CityAIFocusTypes eFocus = GetFocusType();
+; 1806 : 
+; 1807 : 	//antonjs: consider: deficient yield
+; 1808 : 
+; 1809 : 	CityAIFocusTypes eFocus = GetFocusType();
 
 	mov	eax, DWORD PTR [ebp+20]
 	push	esi
 
-; 1792 : 	YieldTypes eYield = NO_YIELD;
-; 1793 : 	switch (eFocus)
+; 1810 : 	YieldTypes eYield = NO_YIELD;
+; 1811 : 	switch (eFocus)
 
 	cmp	eax, 8
 	ja	SHORT $LN4@IsBetterTh
 	jmp	DWORD PTR $LN26@IsBetterTh[eax*4]
 $LN12@IsBetterTh:
 
-; 1794 : 	{
-; 1795 : 	case CITY_AI_FOCUS_TYPE_FOOD:
-; 1796 : 		eYield = YIELD_FOOD;
+; 1812 : 	{
+; 1813 : 	case CITY_AI_FOCUS_TYPE_FOOD:
+; 1814 : 		eYield = YIELD_FOOD;
 
 	xor	esi, esi
 $LN3@IsBetterTh:
 
-; 1827 : 
-; 1828 : 	int iSpecialistYield = pSpecialistInfo->getYieldChange(eYield);
+; 1845 : 
+; 1846 : 	int iSpecialistYield = pSpecialistInfo->getYieldChange(eYield);
 
 	push	esi
 	mov	ecx, edi
 	call	?getYieldChange@CvSpecialistInfo@@QBEHH@Z ; CvSpecialistInfo::getYieldChange
 
-; 1829 : 	int iDefaultSpecialistYield = pDefaultSpecialistInfo->getYieldChange(eYield);
+; 1847 : 	int iDefaultSpecialistYield = pDefaultSpecialistInfo->getYieldChange(eYield);
 
 	push	esi
 	mov	ecx, ebx
 	mov	edi, eax
 	call	?getYieldChange@CvSpecialistInfo@@QBEHH@Z ; CvSpecialistInfo::getYieldChange
 
-; 1830 : 
-; 1831 : 	if (m_pCity->GetPlayer()->isHalfSpecialistUnhappiness() || m_pCity->GetPlayer()->isHalfSpecialistFood())
+; 1848 : 
+; 1849 : 	if (m_pCity->GetPlayer()->isHalfSpecialistUnhappiness() || m_pCity->GetPlayer()->isHalfSpecialistFood())
 
 	mov	ecx, DWORD PTR [ebp]
 	mov	esi, eax
@@ -2644,15 +2644,15 @@ $LN3@IsBetterTh:
 	je	SHORT $LN2@IsBetterTh
 $LN1@IsBetterTh:
 
-; 1832 : 	{
-; 1833 : 		iSpecialistYield *= 2;
+; 1850 : 	{
+; 1851 : 		iSpecialistYield *= 2;
 
 	add	edi, edi
 $LN2@IsBetterTh:
 
-; 1834 : 	}
-; 1835 : 
-; 1836 : 	return (iSpecialistYield >= iDefaultSpecialistYield); // Unless default Specialist has strictly more, this Specialist is better
+; 1852 : 	}
+; 1853 : 
+; 1854 : 	return (iSpecialistYield >= iDefaultSpecialistYield); // Unless default Specialist has strictly more, this Specialist is better
 
 	xor	eax, eax
 	cmp	edi, esi
@@ -2662,65 +2662,65 @@ $LN2@IsBetterTh:
 	setge	al
 	pop	ebp
 
-; 1837 : }
+; 1855 : }
 
 	ret	4
 $LN11@IsBetterTh:
 
-; 1797 : 		break;
-; 1798 : 	case CITY_AI_FOCUS_TYPE_PRODUCTION:
-; 1799 : 		eYield = YIELD_PRODUCTION;
+; 1815 : 		break;
+; 1816 : 	case CITY_AI_FOCUS_TYPE_PRODUCTION:
+; 1817 : 		eYield = YIELD_PRODUCTION;
 
 	mov	esi, 1
 
-; 1800 : 		break;
+; 1818 : 		break;
 
 	jmp	SHORT $LN3@IsBetterTh
 $LN10@IsBetterTh:
 
-; 1801 : 	case CITY_AI_FOCUS_TYPE_GOLD:
-; 1802 : 		eYield = YIELD_GOLD;
+; 1819 : 	case CITY_AI_FOCUS_TYPE_GOLD:
+; 1820 : 		eYield = YIELD_GOLD;
 
 	mov	esi, 2
 
-; 1803 : 		break;
+; 1821 : 		break;
 
 	jmp	SHORT $LN3@IsBetterTh
 $LN8@IsBetterTh:
 
-; 1804 : 	case CITY_AI_FOCUS_TYPE_GREAT_PEOPLE:
-; 1805 : 		eYield = NO_YIELD;
-; 1806 : 		break;
-; 1807 : 	case CITY_AI_FOCUS_TYPE_SCIENCE:
-; 1808 : 		eYield = YIELD_SCIENCE;
+; 1822 : 	case CITY_AI_FOCUS_TYPE_GREAT_PEOPLE:
+; 1823 : 		eYield = NO_YIELD;
+; 1824 : 		break;
+; 1825 : 	case CITY_AI_FOCUS_TYPE_SCIENCE:
+; 1826 : 		eYield = YIELD_SCIENCE;
 
 	mov	esi, 3
 
-; 1809 : 		break;
+; 1827 : 		break;
 
 	jmp	SHORT $LN3@IsBetterTh
 $LN7@IsBetterTh:
 
-; 1810 : 	case CITY_AI_FOCUS_TYPE_CULTURE:
-; 1811 : 		eYield = YIELD_CULTURE;
+; 1828 : 	case CITY_AI_FOCUS_TYPE_CULTURE:
+; 1829 : 		eYield = YIELD_CULTURE;
 
 	mov	esi, 4
 
-; 1812 : 		break;
+; 1830 : 		break;
 
 	jmp	SHORT $LN3@IsBetterTh
 $LN5@IsBetterTh:
 
-; 1813 : 	case CITY_AI_FOCUS_TYPE_PROD_GROWTH:
-; 1814 : 	case CITY_AI_FOCUS_TYPE_GOLD_GROWTH:
-; 1815 : 		eYield = YIELD_FOOD;
-; 1816 : 		break;
-; 1817 : 	case CITY_AI_FOCUS_TYPE_FAITH:
-; 1818 : 		eYield = YIELD_FAITH;
+; 1831 : 	case CITY_AI_FOCUS_TYPE_PROD_GROWTH:
+; 1832 : 	case CITY_AI_FOCUS_TYPE_GOLD_GROWTH:
+; 1833 : 		eYield = YIELD_FOOD;
+; 1834 : 		break;
+; 1835 : 	case CITY_AI_FOCUS_TYPE_FAITH:
+; 1836 : 		eYield = YIELD_FAITH;
 
 	mov	esi, 5
 
-; 1819 : 		break;
+; 1837 : 		break;
 
 	jmp	SHORT $LN3@IsBetterTh
 $LN4@IsBetterTh:
@@ -2728,18 +2728,18 @@ $LN4@IsBetterTh:
 	pop	ebx
 	pop	edi
 
-; 1820 : 	default:
-; 1821 : 		eYield = NO_YIELD;
-; 1822 : 		break;
-; 1823 : 	}
-; 1824 : 
-; 1825 : 	if (eYield == NO_YIELD)
-; 1826 : 		return true;
+; 1838 : 	default:
+; 1839 : 		eYield = NO_YIELD;
+; 1840 : 		break;
+; 1841 : 	}
+; 1842 : 
+; 1843 : 	if (eYield == NO_YIELD)
+; 1844 : 		return true;
 
 	mov	al, 1
 	pop	ebp
 
-; 1837 : }
+; 1855 : }
 
 	ret	4
 	npad	1
@@ -2763,9 +2763,9 @@ _pPlot$ = 8						; size = 4
 ?IsWorkingPlot@CvCityCitizens@@QBE_NPBVCvPlot@@@Z PROC	; CvCityCitizens::IsWorkingPlot, COMDAT
 ; _this$ = ecx
 
-; 2302 : 	int iIndex;
-; 2303 : 
-; 2304 : 	iIndex = GetCityIndexFromPlot(pPlot);
+; 2320 : 	int iIndex;
+; 2321 : 
+; 2322 : 	iIndex = GetCityIndexFromPlot(pPlot);
 
 	mov	eax, DWORD PTR _pPlot$[esp-4]
 	push	esi
@@ -2776,31 +2776,31 @@ _pPlot$ = 8						; size = 4
 	call	?plotCityXY@@YAHPBVCvCity@@PBVCvPlot@@@Z ; plotCityXY
 	add	esp, 8
 
-; 2305 : 
-; 2306 : 	if(iIndex != -1)
+; 2323 : 
+; 2324 : 	if(iIndex != -1)
 
 	cmp	eax, -1
 	je	SHORT $LN1@IsWorkingP
 
-; 2307 : 	{
-; 2308 : 		return m_pabWorkingPlot[iIndex];
+; 2325 : 	{
+; 2326 : 		return m_pabWorkingPlot[iIndex];
 
 	mov	al, BYTE PTR [eax+esi+25]
 	pop	esi
 
-; 2312 : }
+; 2330 : }
 
 	ret	4
 $LN1@IsWorkingP:
 
-; 2309 : 	}
-; 2310 : 
-; 2311 : 	return false;
+; 2327 : 	}
+; 2328 : 
+; 2329 : 	return false;
 
 	xor	al, al
 	pop	esi
 
-; 2312 : }
+; 2330 : }
 
 	ret	4
 ?IsWorkingPlot@CvCityCitizens@@QBE_NPBVCvPlot@@@Z ENDP	; CvCityCitizens::IsWorkingPlot
@@ -2818,13 +2818,13 @@ _bUseUnassignedPool$ = 16				; size = 1
 ?SetWorkingPlot@CvCityCitizens@@QAEXPAVCvPlot@@_N1@Z PROC ; CvCityCitizens::SetWorkingPlot, COMDAT
 ; _this$ = ecx
 
-; 2316 : {
+; 2334 : {
 
 	push	ebx
 
-; 2317 : 	int iI;
-; 2318 : 
-; 2319 : 	int iIndex = GetCityIndexFromPlot(pPlot);
+; 2335 : 	int iI;
+; 2336 : 
+; 2337 : 	int iIndex = GetCityIndexFromPlot(pPlot);
 
 	mov	ebx, DWORD PTR _pPlot$[esp]
 	push	esi
@@ -2835,11 +2835,11 @@ _bUseUnassignedPool$ = 16				; size = 1
 	push	eax
 	call	?plotCityXY@@YAHPBVCvCity@@PBVCvPlot@@@Z ; plotCityXY
 
-; 2320 : 
-; 2321 : 	CvAssertMsg(iIndex >= 0, "iIndex expected to be >= 0");
-; 2322 : 	CvAssertMsg(iIndex < NUM_CITY_PLOTS, "iIndex expected to be < NUM_CITY_PLOTS");
-; 2323 : 
-; 2324 : 	if(IsWorkingPlot(pPlot) != bNewValue && iIndex >= 0 && iIndex < NUM_CITY_PLOTS)
+; 2338 : 
+; 2339 : 	CvAssertMsg(iIndex >= 0, "iIndex expected to be >= 0");
+; 2340 : 	CvAssertMsg(iIndex < NUM_CITY_PLOTS, "iIndex expected to be < NUM_CITY_PLOTS");
+; 2341 : 
+; 2342 : 	if(IsWorkingPlot(pPlot) != bNewValue && iIndex >= 0 && iIndex < NUM_CITY_PLOTS)
 
 	mov	ecx, DWORD PTR [esi]
 	push	ebx
@@ -2861,93 +2861,93 @@ $LN22@SetWorking:
 	cmp	edi, 36					; 00000024H
 	ja	$LN16@SetWorking
 
-; 2325 : 	{
-; 2326 : 		m_pabWorkingPlot[iIndex] = bNewValue;
+; 2343 : 	{
+; 2344 : 		m_pabWorkingPlot[iIndex] = bNewValue;
 
 	mov	BYTE PTR [edi+esi+25], cl
 
-; 2327 : 
-; 2328 : 		// Don't look at the center Plot of a City, because we always work it for free
-; 2329 : 		if(iIndex != CITY_HOME_PLOT)
+; 2345 : 
+; 2346 : 		// Don't look at the center Plot of a City, because we always work it for free
+; 2347 : 		if(iIndex != CITY_HOME_PLOT)
 
 	test	edi, edi
 	je	SHORT $LN52@SetWorking
 
-; 2330 : 		{
-; 2331 : 			// Alter the count of Plots being worked by Citizens
-; 2332 : 			if(bNewValue)
+; 2348 : 		{
+; 2349 : 			// Alter the count of Plots being worked by Citizens
+; 2350 : 			if(bNewValue)
 
 	test	cl, cl
 	je	SHORT $LN14@SetWorking
 
-; 2333 : 			{
-; 2334 : 				ChangeNumCitizensWorkingPlots(1);
+; 2351 : 			{
+; 2352 : 				ChangeNumCitizensWorkingPlots(1);
 
 	inc	DWORD PTR [esi+12]
 
-; 2335 : 
-; 2336 : 				if(bUseUnassignedPool)
+; 2353 : 
+; 2354 : 				if(bUseUnassignedPool)
 
 	cmp	BYTE PTR _bUseUnassignedPool$[esp+8], 0
 	je	SHORT $LN52@SetWorking
 
-; 2337 : 				{
-; 2338 : 					ChangeNumUnassignedCitizens(-1);
+; 2355 : 				{
+; 2356 : 					ChangeNumUnassignedCitizens(-1);
 
 	add	DWORD PTR [esi+8], edx
 
-; 2339 : 				}
-; 2340 : 			}
-; 2341 : 			else
+; 2357 : 				}
+; 2358 : 			}
+; 2359 : 			else
 
 	jmp	SHORT $LN52@SetWorking
 $LN14@SetWorking:
 
-; 2342 : 			{
-; 2343 : 				ChangeNumCitizensWorkingPlots(-1);
+; 2360 : 			{
+; 2361 : 				ChangeNumCitizensWorkingPlots(-1);
 
 	add	DWORD PTR [esi+12], edx
 
-; 2344 : 
-; 2345 : 				if(bUseUnassignedPool)
+; 2362 : 
+; 2363 : 				if(bUseUnassignedPool)
 
 	cmp	BYTE PTR _bUseUnassignedPool$[esp+8], 0
 	je	SHORT $LN52@SetWorking
 
-; 2346 : 				{
-; 2347 : 					ChangeNumUnassignedCitizens(1);
+; 2364 : 				{
+; 2365 : 					ChangeNumUnassignedCitizens(1);
 
 	inc	DWORD PTR [esi+8]
 $LN52@SetWorking:
 
-; 2348 : 				}
-; 2349 : 			}
-; 2350 : 		}
-; 2351 : 
-; 2352 : 		if(pPlot != NULL)
+; 2366 : 				}
+; 2367 : 			}
+; 2368 : 		}
+; 2369 : 
+; 2370 : 		if(pPlot != NULL)
 
 	test	ebx, ebx
 	je	SHORT $LN2@SetWorking
 	push	ebp
 
-; 2353 : 		{
-; 2354 : 			// investigate later
-; 2355 : 			//CvAssertMsg(pPlot->getWorkingCity() == GetCity(), "WorkingCity is expected to be this");
-; 2356 : 
-; 2357 : 			// Now working pPlot
-; 2358 : 			if(IsWorkingPlot(pPlot))
+; 2371 : 		{
+; 2372 : 			// investigate later
+; 2373 : 			//CvAssertMsg(pPlot->getWorkingCity() == GetCity(), "WorkingCity is expected to be this");
+; 2374 : 
+; 2375 : 			// Now working pPlot
+; 2376 : 			if(IsWorkingPlot(pPlot))
 
 	push	ebx
 	mov	ecx, esi
 	call	?IsWorkingPlot@CvCityCitizens@@QBE_NPBVCvPlot@@@Z ; CvCityCitizens::IsWorkingPlot
 
-; 2359 : 			{
-; 2360 : 				//if (iIndex != CITY_HOME_PLOT)
-; 2361 : 				//{
-; 2362 : 				//	GetCity()->changeWorkingPopulation(1);
-; 2363 : 				//}
-; 2364 : 
-; 2365 : 				for(iI = 0; iI < NUM_YIELD_TYPES; iI++)
+; 2377 : 			{
+; 2378 : 				//if (iIndex != CITY_HOME_PLOT)
+; 2379 : 				//{
+; 2380 : 				//	GetCity()->changeWorkingPopulation(1);
+; 2381 : 				//}
+; 2382 : 
+; 2383 : 				for(iI = 0; iI < NUM_YIELD_TYPES; iI++)
 
 	xor	edi, edi
 	test	al, al
@@ -2955,8 +2955,8 @@ $LN52@SetWorking:
 	npad	1
 $LL8@SetWorking:
 
-; 2366 : 				{
-; 2367 : 					GetCity()->ChangeBaseYieldRateFromTerrain(((YieldTypes)iI), pPlot->getYield((YieldTypes)iI));
+; 2384 : 				{
+; 2385 : 					GetCity()->ChangeBaseYieldRateFromTerrain(((YieldTypes)iI), pPlot->getYield((YieldTypes)iI));
 
 	mov	ebp, DWORD PTR [esi]
 	push	edi
@@ -2970,24 +2970,24 @@ $LL8@SetWorking:
 	cmp	edi, 6
 	jl	SHORT $LL8@SetWorking
 
-; 2368 : 				}
-; 2369 : 			}
-; 2370 : 			// No longer working pPlot
-; 2371 : 			else
+; 2386 : 				}
+; 2387 : 			}
+; 2388 : 			// No longer working pPlot
+; 2389 : 			else
 
 	jmp	SHORT $LN54@SetWorking
 	npad	5
 $LL4@SetWorking:
 
-; 2372 : 			{
-; 2373 : 				//if (iIndex != CITY_HOME_PLOT)
-; 2374 : 				//{
-; 2375 : 				//	GetCity()->changeWorkingPopulation(-1);
-; 2376 : 				//}
-; 2377 : 
-; 2378 : 				for(iI = 0; iI < NUM_YIELD_TYPES; iI++)
-; 2379 : 				{
-; 2380 : 					GetCity()->ChangeBaseYieldRateFromTerrain(((YieldTypes)iI), -pPlot->getYield((YieldTypes)iI));
+; 2390 : 			{
+; 2391 : 				//if (iIndex != CITY_HOME_PLOT)
+; 2392 : 				//{
+; 2393 : 				//	GetCity()->changeWorkingPopulation(-1);
+; 2394 : 				//}
+; 2395 : 
+; 2396 : 				for(iI = 0; iI < NUM_YIELD_TYPES; iI++)
+; 2397 : 				{
+; 2398 : 					GetCity()->ChangeBaseYieldRateFromTerrain(((YieldTypes)iI), -pPlot->getYield((YieldTypes)iI));
 
 	mov	ebp, DWORD PTR [esi]
 	push	edi
@@ -3005,19 +3005,19 @@ $LN54@SetWorking:
 	pop	ebp
 $LN2@SetWorking:
 
-; 2381 : 				}
-; 2382 : 			}
-; 2383 : 		}
-; 2384 : 
-; 2385 : 		if(GetCity()->isCitySelected())
+; 2399 : 				}
+; 2400 : 			}
+; 2401 : 		}
+; 2402 : 
+; 2403 : 		if(GetCity()->isCitySelected())
 
 	mov	ecx, DWORD PTR [esi]
 	call	?isCitySelected@CvCity@@QAE_NXZ		; CvCity::isCitySelected
 	test	al, al
 	je	SHORT $LN53@SetWorking
 
-; 2386 : 		{
-; 2387 : 			GC.GetEngineUserInterface()->setDirty(CityInfo_DIRTY_BIT, true);
+; 2404 : 		{
+; 2405 : 			GC.GetEngineUserInterface()->setDirty(CityInfo_DIRTY_BIT, true);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
 	mov	edx, DWORD PTR [ecx]
@@ -3026,8 +3026,8 @@ $LN2@SetWorking:
 	push	18					; 00000012H
 	call	eax
 
-; 2388 : 			//GC.GetEngineUserInterface()->setDirty(InfoPane_DIRTY_BIT, true );
-; 2389 : 			GC.GetEngineUserInterface()->setDirty(CityScreen_DIRTY_BIT, true);
+; 2406 : 			//GC.GetEngineUserInterface()->setDirty(InfoPane_DIRTY_BIT, true );
+; 2407 : 			GC.GetEngineUserInterface()->setDirty(CityScreen_DIRTY_BIT, true);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
 	mov	edx, DWORD PTR [ecx]
@@ -3036,7 +3036,7 @@ $LN2@SetWorking:
 	push	21					; 00000015H
 	call	eax
 
-; 2390 : 			GC.GetEngineUserInterface()->setDirty(ColoredPlots_DIRTY_BIT, true);
+; 2408 : 			GC.GetEngineUserInterface()->setDirty(ColoredPlots_DIRTY_BIT, true);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
 	mov	edx, DWORD PTR [ecx]
@@ -3046,9 +3046,9 @@ $LN2@SetWorking:
 	call	eax
 $LN53@SetWorking:
 
-; 2391 : 		}
-; 2392 : 
-; 2393 : 		GC.GetEngineUserInterface()->setDirty(CityInfo_DIRTY_BIT, true);
+; 2409 : 		}
+; 2410 : 
+; 2411 : 		GC.GetEngineUserInterface()->setDirty(CityInfo_DIRTY_BIT, true);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
 	mov	edx, DWORD PTR [ecx]
@@ -3061,8 +3061,8 @@ $LN16@SetWorking:
 	pop	esi
 	pop	ebx
 
-; 2394 : 	}
-; 2395 : }
+; 2412 : 	}
+; 2413 : }
 
 	ret	12					; 0000000cH
 ?SetWorkingPlot@CvCityCitizens@@QAEXPAVCvPlot@@_N1@Z ENDP ; CvCityCitizens::SetWorkingPlot
@@ -3075,9 +3075,9 @@ _pPlot$ = 8						; size = 4
 ?IsForcedWorkingPlot@CvCityCitizens@@QBE_NPBVCvPlot@@@Z PROC ; CvCityCitizens::IsForcedWorkingPlot, COMDAT
 ; _this$ = ecx
 
-; 2527 : 	int iIndex;
-; 2528 : 
-; 2529 : 	iIndex = GetCityIndexFromPlot(pPlot);
+; 2545 : 	int iIndex;
+; 2546 : 
+; 2547 : 	iIndex = GetCityIndexFromPlot(pPlot);
 
 	mov	eax, DWORD PTR _pPlot$[esp-4]
 	push	esi
@@ -3088,31 +3088,31 @@ _pPlot$ = 8						; size = 4
 	call	?plotCityXY@@YAHPBVCvCity@@PBVCvPlot@@@Z ; plotCityXY
 	add	esp, 8
 
-; 2530 : 
-; 2531 : 	if(iIndex != -1)
+; 2548 : 
+; 2549 : 	if(iIndex != -1)
 
 	cmp	eax, -1
 	je	SHORT $LN1@IsForcedWo
 
-; 2532 : 	{
-; 2533 : 		return m_pabForcedWorkingPlot[iIndex];
+; 2550 : 	{
+; 2551 : 		return m_pabForcedWorkingPlot[iIndex];
 
 	mov	al, BYTE PTR [eax+esi+62]
 	pop	esi
 
-; 2537 : }
+; 2555 : }
 
 	ret	4
 $LN1@IsForcedWo:
 
-; 2534 : 	}
-; 2535 : 
-; 2536 : 	return false;
+; 2552 : 	}
+; 2553 : 
+; 2554 : 	return false;
 
 	xor	al, al
 	pop	esi
 
-; 2537 : }
+; 2555 : }
 
 	ret	4
 ?IsForcedWorkingPlot@CvCityCitizens@@QBE_NPBVCvPlot@@@Z ENDP ; CvCityCitizens::IsForcedWorkingPlot
@@ -3127,26 +3127,26 @@ _eBuilding$ = 8						; size = 4
 ?IsCanAddSpecialistToBuilding@CvCityCitizens@@QAE_NW4BuildingTypes@@@Z PROC ; CvCityCitizens::IsCanAddSpecialistToBuilding, COMDAT
 ; _this$ = ecx
 
-; 3144 : 	CvAssert(eBuilding > -1);
-; 3145 : 	CvAssert(eBuilding < GC.getNumBuildingInfos());
-; 3146 : #ifdef AUI_WARNING_FIXES
-; 3147 : 	CvBuildingEntry* pBuildingInfo = GC.getBuildingInfo(eBuilding);
-; 3148 : 	if (!pBuildingInfo)
-; 3149 : 		return false;
-; 3150 : #endif
-; 3151 : 
-; 3152 : 	int iNumSpecialistsAssigned = GetNumSpecialistsInBuilding(eBuilding);
+; 3162 : 	CvAssert(eBuilding > -1);
+; 3163 : 	CvAssert(eBuilding < GC.getNumBuildingInfos());
+; 3164 : #ifdef AUI_WARNING_FIXES
+; 3165 : 	CvBuildingEntry* pBuildingInfo = GC.getBuildingInfo(eBuilding);
+; 3166 : 	if (!pBuildingInfo)
+; 3167 : 		return false;
+; 3168 : #endif
+; 3169 : 
+; 3170 : 	int iNumSpecialistsAssigned = GetNumSpecialistsInBuilding(eBuilding);
 
 	mov	eax, DWORD PTR [ecx+116]
 
-; 3153 : 
-; 3154 : 	if(iNumSpecialistsAssigned < GetCity()->getPopulation() &&	// Limit based on Pop of City
-; 3155 : #ifdef AUI_WARNING_FIXES
-; 3156 : 		iNumSpecialistsAssigned < pBuildingInfo->GetSpecialistCount() &&				// Limit for this particular Building
-; 3157 : #else
-; 3158 : 	        iNumSpecialistsAssigned < GC.getBuildingInfo(eBuilding)->GetSpecialistCount() &&				// Limit for this particular Building
-; 3159 : #endif
-; 3160 : 	        iNumSpecialistsAssigned < GC.getMAX_SPECIALISTS_FROM_BUILDING())	// Overall Limit
+; 3171 : 
+; 3172 : 	if(iNumSpecialistsAssigned < GetCity()->getPopulation() &&	// Limit based on Pop of City
+; 3173 : #ifdef AUI_WARNING_FIXES
+; 3174 : 		iNumSpecialistsAssigned < pBuildingInfo->GetSpecialistCount() &&				// Limit for this particular Building
+; 3175 : #else
+; 3176 : 	        iNumSpecialistsAssigned < GC.getBuildingInfo(eBuilding)->GetSpecialistCount() &&				// Limit for this particular Building
+; 3177 : #endif
+; 3178 : 	        iNumSpecialistsAssigned < GC.getMAX_SPECIALISTS_FROM_BUILDING())	// Overall Limit
 
 	mov	ecx, DWORD PTR [ecx]
 	push	esi
@@ -3167,26 +3167,26 @@ _eBuilding$ = 8						; size = 4
 	jge	SHORT $LN1@IsCanAddSp
 	pop	edi
 
-; 3161 : 	{
-; 3162 : 		return true;
+; 3179 : 	{
+; 3180 : 		return true;
 
 	mov	al, 1
 	pop	esi
 
-; 3166 : }
+; 3184 : }
 
 	ret	4
 $LN1@IsCanAddSp:
 	pop	edi
 
-; 3163 : 	}
-; 3164 : 
-; 3165 : 	return false;
+; 3181 : 	}
+; 3182 : 
+; 3183 : 	return false;
 
 	xor	al, al
 	pop	esi
 
-; 3166 : }
+; 3184 : }
 
 	ret	4
 ?IsCanAddSpecialistToBuilding@CvCityCitizens@@QAE_NW4BuildingTypes@@@Z ENDP ; CvCityCitizens::IsCanAddSpecialistToBuilding
@@ -3200,44 +3200,44 @@ _iChange$ = 8						; size = 4
 ?ChangeNumDefaultSpecialists@CvCityCitizens@@QAEXH@Z PROC ; CvCityCitizens::ChangeNumDefaultSpecialists, COMDAT
 ; _this$ = ecx
 
-; 3434 : {
+; 3452 : {
 
 	push	esi
 	push	edi
 
-; 3435 : 	m_iNumDefaultSpecialists += iChange;
+; 3453 : 	m_iNumDefaultSpecialists += iChange;
 
 	mov	edi, DWORD PTR _iChange$[esp+4]
 	mov	esi, ecx
 	add	DWORD PTR [esi+100], edi
 
-; 3436 : 
-; 3437 : 	SpecialistTypes eSpecialist = (SpecialistTypes) GC.getDEFAULT_SPECIALIST();
+; 3454 : 
+; 3455 : 	SpecialistTypes eSpecialist = (SpecialistTypes) GC.getDEFAULT_SPECIALIST();
 
 	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8420
 
-; 3438 : 	m_aiSpecialistCounts[eSpecialist] += iChange;
+; 3456 : 	m_aiSpecialistCounts[eSpecialist] += iChange;
 
 	mov	ecx, DWORD PTR [esi+108]
 	add	DWORD PTR [ecx+eax*4], edi
 	lea	ecx, DWORD PTR [ecx+eax*4]
 
-; 3439 : 
-; 3440 : 	GetCity()->processSpecialist(eSpecialist, iChange);
+; 3457 : 
+; 3458 : 	GetCity()->processSpecialist(eSpecialist, iChange);
 
 	mov	ecx, DWORD PTR [esi]
 	push	edi
 	push	eax
 	call	?processSpecialist@CvCity@@QAEXW4SpecialistTypes@@H@Z ; CvCity::processSpecialist
 
-; 3441 : 
-; 3442 : 	ChangeNumUnassignedCitizens(-iChange);
+; 3459 : 
+; 3460 : 	ChangeNumUnassignedCitizens(-iChange);
 
 	sub	DWORD PTR [esi+8], edi
 	pop	edi
 	pop	esi
 
-; 3443 : }
+; 3461 : }
 
 	ret	4
 ?ChangeNumDefaultSpecialists@CvCityCitizens@@QAEXH@Z ENDP ; CvCityCitizens::ChangeNumDefaultSpecialists
@@ -3249,20 +3249,20 @@ _TEXT	SEGMENT
 ?GetTotalSpecialistCount@CvCityCitizens@@QBEHXZ PROC	; CvCityCitizens::GetTotalSpecialistCount, COMDAT
 ; _this$ = ecx
 
-; 3468 : {
+; 3486 : {
 
 	push	ebx
 	push	esi
 	mov	ebx, ecx
 	push	edi
 
-; 3469 : 	int iNumSpecialists = 0;
-; 3470 : 	SpecialistTypes eSpecialist;
-; 3471 : 
-; 3472 : #ifdef AUI_WARNING_FIXES
-; 3473 : 	for (uint iSpecialistLoop = 0; iSpecialistLoop < GC.getNumSpecialistInfos(); iSpecialistLoop++)
-; 3474 : #else
-; 3475 : 	for(int iSpecialistLoop = 0; iSpecialistLoop < GC.getNumSpecialistInfos(); iSpecialistLoop++)
+; 3487 : 	int iNumSpecialists = 0;
+; 3488 : 	SpecialistTypes eSpecialist;
+; 3489 : 
+; 3490 : #ifdef AUI_WARNING_FIXES
+; 3491 : 	for (uint iSpecialistLoop = 0; iSpecialistLoop < GC.getNumSpecialistInfos(); iSpecialistLoop++)
+; 3492 : #else
+; 3493 : 	for(int iSpecialistLoop = 0; iSpecialistLoop < GC.getNumSpecialistInfos(); iSpecialistLoop++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	xor	edi, edi
@@ -3272,17 +3272,17 @@ _TEXT	SEGMENT
 	jle	SHORT $LN13@GetTotalSp
 $LL4@GetTotalSp:
 
-; 3476 : #endif
-; 3477 : 	{
-; 3478 : 		eSpecialist = (SpecialistTypes) iSpecialistLoop;
-; 3479 : 
-; 3480 : 		if (eSpecialist != (SpecialistTypes) GC.getDEFAULT_SPECIALIST())
+; 3494 : #endif
+; 3495 : 	{
+; 3496 : 		eSpecialist = (SpecialistTypes) iSpecialistLoop;
+; 3497 : 
+; 3498 : 		if (eSpecialist != (SpecialistTypes) GC.getDEFAULT_SPECIALIST())
 
 	cmp	esi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8420
 	je	SHORT $LN3@GetTotalSp
 
-; 3481 : 		{
-; 3482 : 			iNumSpecialists += GetSpecialistCount(eSpecialist);
+; 3499 : 		{
+; 3500 : 			iNumSpecialists += GetSpecialistCount(eSpecialist);
 
 	mov	eax, DWORD PTR [ebx+108]
 	add	edi, DWORD PTR [eax+esi*4]
@@ -3294,17 +3294,17 @@ $LN3@GetTotalSp:
 	jl	SHORT $LL4@GetTotalSp
 $LN13@GetTotalSp:
 
-; 3483 : 		}
-; 3484 : 	}
-; 3485 : 
-; 3486 : 	return iNumSpecialists;
+; 3501 : 		}
+; 3502 : 	}
+; 3503 : 
+; 3504 : 	return iNumSpecialists;
 
 	mov	eax, edi
 	pop	edi
 	pop	esi
 	pop	ebx
 
-; 3487 : }
+; 3505 : }
 
 	ret	0
 ?GetTotalSpecialistCount@CvCityCitizens@@QBEHXZ ENDP	; CvCityCitizens::GetTotalSpecialistCount
@@ -3317,10 +3317,10 @@ _eIndex$ = 8						; size = 4
 ?GetSpecialistGreatPersonProgress@CvCityCitizens@@QBEHW4SpecialistTypes@@@Z PROC ; CvCityCitizens::GetSpecialistGreatPersonProgress, COMDAT
 ; _this$ = ecx
 
-; 3510 : 	CvAssert(eIndex > -1);
-; 3511 : 	CvAssert(eIndex < GC.getNumSpecialistInfos());
-; 3512 : 
-; 3513 : 	return GetSpecialistGreatPersonProgressTimes100(eIndex) / 100;
+; 3528 : 	CvAssert(eIndex > -1);
+; 3529 : 	CvAssert(eIndex < GC.getNumSpecialistInfos());
+; 3530 : 
+; 3531 : 	return GetSpecialistGreatPersonProgressTimes100(eIndex) / 100;
 
 	mov	eax, DWORD PTR [ecx+112]
 	mov	ecx, DWORD PTR _eIndex$[esp-4]
@@ -3332,7 +3332,7 @@ _eIndex$ = 8						; size = 4
 	shr	eax, 31					; 0000001fH
 	add	eax, edx
 
-; 3514 : }
+; 3532 : }
 
 	ret	4
 ?GetSpecialistGreatPersonProgress@CvCityCitizens@@QBEHW4SpecialistTypes@@@Z ENDP ; CvCityCitizens::GetSpecialistGreatPersonProgress
@@ -3415,10 +3415,10 @@ EXTRN	?ReadHashed@CvInfosSerializationHelper@@YAHAAVFDataStream@@PA_N@Z:PROC ; C
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredll_expansion2\cvinfosserializationhelper.h
 ;	COMDAT ??$ReadHashedDataArray@H@CvInfosSerializationHelper@@YAXAAVFDataStream@@PAHH@Z
 _TEXT	SEGMENT
-_bValid$225929 = -13					; size = 1
+_bValid$225971 = -13					; size = 1
 _uiNumEntries$ = -12					; size = 4
-_tValue$225932 = -8					; size = 4
-_tValue$225937 = -4					; size = 4
+_tValue$225974 = -8					; size = 4
+_tValue$225979 = -4					; size = 4
 _kStream$ = 8						; size = 4
 _paArray$ = 12						; size = 4
 _iArraySize$ = 16					; size = 4
@@ -3455,7 +3455,7 @@ $LL7@ReadHashed:
 ; 255  : 		bool bValid;
 ; 256  : 		int iType = ReadHashed(kStream, &bValid);
 
-	lea	ecx, DWORD PTR _bValid$225929[esp+32]
+	lea	ecx, DWORD PTR _bValid$225971[esp+32]
 	push	ecx
 	push	edi
 	call	?ReadHashed@CvInfosSerializationHelper@@YAHAAVFDataStream@@PA_N@Z ; CvInfosSerializationHelper::ReadHashed
@@ -3471,7 +3471,7 @@ $LL7@ReadHashed:
 ; 259  : 			TData tValue;
 ; 260  : 			kStream >> tValue;
 
-	lea	edx, DWORD PTR _tValue$225932[esp+32]
+	lea	edx, DWORD PTR _tValue$225974[esp+32]
 	push	edx
 	mov	ecx, edi
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
@@ -3483,7 +3483,7 @@ $LL7@ReadHashed:
 
 ; 262  : 				paArray[iType] = tValue;
 
-	mov	eax, DWORD PTR _tValue$225932[esp+32]
+	mov	eax, DWORD PTR _tValue$225974[esp+32]
 	mov	ecx, DWORD PTR _paArray$[esp+28]
 	mov	DWORD PTR [ecx+esi*4], eax
 
@@ -3494,14 +3494,14 @@ $LN4@ReadHashed:
 
 ; 264  : 		else if(!bValid)
 
-	cmp	BYTE PTR _bValid$225929[esp+32], 0
+	cmp	BYTE PTR _bValid$225971[esp+32], 0
 	jne	SHORT $LN6@ReadHashed
 
 ; 265  : 		{
 ; 266  : 			TData tValue;
 ; 267  : 			kStream >> tValue;
 
-	lea	edx, DWORD PTR _tValue$225937[esp+32]
+	lea	edx, DWORD PTR _tValue$225979[esp+32]
 	push	edx
 	mov	ecx, edi
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
@@ -4489,37 +4489,37 @@ _pPlot$ = 8						; size = 4
 ?IsPlotBlockaded@CvCityCitizens@@QBE_NPAVCvPlot@@@Z PROC ; CvCityCitizens::IsPlotBlockaded, COMDAT
 ; _this$ = ecx
 
-; 2686 : {
+; 2704 : {
 
 	sub	esp, 24					; 00000018H
 
-; 2687 : 	// See if there are any enemy boats near us that are blockading this plot
-; 2688 : 	int iBlockadeDistance = /*2*/ GC.getNAVAL_PLOT_BLOCKADE_RANGE();
-; 2689 : 	int iDX, iDY;
-; 2690 : 	CvPlot* pNearbyPlot;
-; 2691 : #ifdef AUI_CITY_CITIZENS_COUNTERBLOCKADE
-; 2692 : 	int iClosestEnemyDistance = MAX_INT;
-; 2693 : 	int iClosestAllyDistance = MAX_INT - 1;
-; 2694 : 	int iLoopDistance = 0;
-; 2695 : #endif
-; 2696 : 
-; 2697 : 	PlayerTypes ePlayer = m_pCity->getOwner();
+; 2705 : 	// See if there are any enemy boats near us that are blockading this plot
+; 2706 : 	int iBlockadeDistance = /*2*/ GC.getNAVAL_PLOT_BLOCKADE_RANGE();
+; 2707 : 	int iDX, iDY;
+; 2708 : 	CvPlot* pNearbyPlot;
+; 2709 : #ifdef AUI_CITY_CITIZENS_COUNTERBLOCKADE
+; 2710 : 	int iClosestEnemyDistance = MAX_INT;
+; 2711 : 	int iClosestAllyDistance = MAX_INT - 1;
+; 2712 : 	int iLoopDistance = 0;
+; 2713 : #endif
+; 2714 : 
+; 2715 : 	PlayerTypes ePlayer = m_pCity->getOwner();
 
 	mov	eax, DWORD PTR [ecx]
 	mov	ecx, DWORD PTR [eax+84]
 	mov	edx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+6172
 	mov	DWORD PTR _ePlayer$[esp+24], ecx
 
-; 2698 : 
-; 2699 : 	// Might be a better way to do this that'd be slightly less CPU-intensive
-; 2700 : #ifdef AUI_HEXSPACE_DX_LOOPS
-; 2701 : 	int iMaxDX;
-; 2702 : 	for (iDY = -iBlockadeDistance; iDY <= iBlockadeDistance; iDY++)
-; 2703 : 	{
-; 2704 : 		iMaxDX = iBlockadeDistance - MAX(0, iDY);
-; 2705 : 		for (iDX = -iBlockadeDistance - MIN(0, iDY); iDX <= iMaxDX; iDX++) // MIN() and MAX() stuff is to reduce loops (hexspace!)
-; 2706 : #else
-; 2707 : 	for(iDX = -(iBlockadeDistance); iDX <= iBlockadeDistance; iDX++)
+; 2716 : 
+; 2717 : 	// Might be a better way to do this that'd be slightly less CPU-intensive
+; 2718 : #ifdef AUI_HEXSPACE_DX_LOOPS
+; 2719 : 	int iMaxDX;
+; 2720 : 	for (iDY = -iBlockadeDistance; iDY <= iBlockadeDistance; iDY++)
+; 2721 : 	{
+; 2722 : 		iMaxDX = iBlockadeDistance - MAX(0, iDY);
+; 2723 : 		for (iDX = -iBlockadeDistance - MIN(0, iDY); iDX <= iMaxDX; iDX++) // MIN() and MAX() stuff is to reduce loops (hexspace!)
+; 2724 : #else
+; 2725 : 	for(iDX = -(iBlockadeDistance); iDX <= iBlockadeDistance; iDX++)
 
 	mov	ecx, edx
 	neg	ecx
@@ -4538,8 +4538,8 @@ _pPlot$ = 8						; size = 4
 	mov	edi, DWORD PTR _pPlot$[esp+36]
 $LL13@IsPlotBloc:
 
-; 2708 : 	{
-; 2709 : 		for(iDY = -(iBlockadeDistance); iDY <= iBlockadeDistance; iDY++)
+; 2726 : 	{
+; 2727 : 		for(iDY = -(iBlockadeDistance); iDY <= iBlockadeDistance; iDY++)
 
 	cmp	ecx, edx
 	mov	DWORD PTR _iDY$[esp+36], ecx
@@ -4549,9 +4549,9 @@ $LL60@IsPlotBloc:
 	mov	ecx, DWORD PTR _iDY$[esp+36]
 $LN10@IsPlotBloc:
 
-; 2710 : #endif
-; 2711 : 		{
-; 2712 : 			pNearbyPlot = plotXY(pPlot->getX(), pPlot->getY(), iDX, iDY);
+; 2728 : #endif
+; 2729 : 		{
+; 2730 : 			pNearbyPlot = plotXY(pPlot->getX(), pPlot->getY(), iDX, iDY);
 
 	movsx	ebp, WORD PTR [edi+2]
 	movsx	ebx, WORD PTR [edi]
@@ -4563,15 +4563,15 @@ $LN10@IsPlotBloc:
 	mov	esi, eax
 	add	esp, 16					; 00000010H
 
-; 2713 : 
-; 2714 : 			if(pNearbyPlot != NULL)
+; 2731 : 
+; 2732 : 			if(pNearbyPlot != NULL)
 
 	test	esi, esi
 	je	$LN9@IsPlotBloc
 
-; 2715 : 			{
-; 2716 : 				// Must be water in the same Area
-; 2717 : 				if(pNearbyPlot->isWater() && pNearbyPlot->getArea() == pPlot->getArea())
+; 2733 : 			{
+; 2734 : 				// Must be water in the same Area
+; 2735 : 				if(pNearbyPlot->isWater() && pNearbyPlot->getArea() == pPlot->getArea())
 
 	cmp	BYTE PTR [esi+5], 3
 	jne	$LN9@IsPlotBloc
@@ -4579,12 +4579,12 @@ $LN10@IsPlotBloc:
 	cmp	edx, DWORD PTR [edi+356]
 	jne	$LN9@IsPlotBloc
 
-; 2718 : 				{
-; 2719 : #ifndef AUI_HEXSPACE_DX_LOOPS
-; 2720 : #ifdef AUI_FIX_HEX_DISTANCE_INSTEAD_OF_PLOT_DISTANCE
-; 2721 : 					if (hexDistance(iDX, iDY) <= iBlockadeDistance)
-; 2722 : #else
-; 2723 : 					if(plotDistance(pNearbyPlot->getX(), pNearbyPlot->getY(), pPlot->getX(), pPlot->getY()) <= iBlockadeDistance)
+; 2736 : 				{
+; 2737 : #ifndef AUI_HEXSPACE_DX_LOOPS
+; 2738 : #ifdef AUI_FIX_HEX_DISTANCE_INSTEAD_OF_PLOT_DISTANCE
+; 2739 : 					if (hexDistance(iDX, iDY) <= iBlockadeDistance)
+; 2740 : #else
+; 2741 : 					if(plotDistance(pNearbyPlot->getX(), pNearbyPlot->getY(), pPlot->getX(), pPlot->getY()) <= iBlockadeDistance)
 
 	movsx	eax, WORD PTR [esi+2]
 	movsx	ecx, WORD PTR [esi]
@@ -4597,11 +4597,11 @@ $LN10@IsPlotBloc:
 	cmp	eax, DWORD PTR _iBlockadeDistance$[esp+40]
 	jg	SHORT $LN9@IsPlotBloc
 
-; 2724 : #endif
-; 2725 : #endif
-; 2726 : 					{
-; 2727 : 						// Enemy boat within range to blockade our plot?
-; 2728 : 						if(pNearbyPlot->IsActualEnemyUnit(ePlayer))
+; 2742 : #endif
+; 2743 : #endif
+; 2744 : 					{
+; 2745 : 						// Enemy boat within range to blockade our plot?
+; 2746 : 						if(pNearbyPlot->IsActualEnemyUnit(ePlayer))
 
 	mov	ebx, DWORD PTR _ePlayer$[esp+40]
 	push	1
@@ -4611,12 +4611,12 @@ $LN10@IsPlotBloc:
 	test	al, al
 	je	SHORT $LN3@IsPlotBloc
 
-; 2729 : 						{
-; 2730 : #ifdef AUI_CITY_CITIZENS_COUNTERBLOCKADE
-; 2731 : #ifdef AUI_HEXSPACE_DX_LOOPS
-; 2732 : 							iLoopDistance = hexDistance(iDX, iDY);
-; 2733 : #else
-; 2734 : 							iLoopDistance = plotDistance(pPlot->getX(), pPlot->getY(), pNearbyPlot->getX(), pNearbyPlot->getY());
+; 2747 : 						{
+; 2748 : #ifdef AUI_CITY_CITIZENS_COUNTERBLOCKADE
+; 2749 : #ifdef AUI_HEXSPACE_DX_LOOPS
+; 2750 : 							iLoopDistance = hexDistance(iDX, iDY);
+; 2751 : #else
+; 2752 : 							iLoopDistance = plotDistance(pPlot->getX(), pPlot->getY(), pNearbyPlot->getX(), pNearbyPlot->getY());
 
 	movsx	edx, WORD PTR [esi+2]
 	movsx	eax, WORD PTR [esi]
@@ -4629,20 +4629,20 @@ $LN10@IsPlotBloc:
 	call	?plotDistance@@YAHHHHH@Z		; plotDistance
 	add	esp, 16					; 00000010H
 
-; 2735 : #endif
-; 2736 : 							if (iLoopDistance < iClosestEnemyDistance)
+; 2753 : #endif
+; 2754 : 							if (iLoopDistance < iClosestEnemyDistance)
 
 	cmp	eax, DWORD PTR _iClosestEnemyDistance$[esp+40]
 	jge	SHORT $LN3@IsPlotBloc
 
-; 2737 : 								iClosestEnemyDistance = iLoopDistance;
+; 2755 : 								iClosestEnemyDistance = iLoopDistance;
 
 	mov	DWORD PTR _iClosestEnemyDistance$[esp+40], eax
 $LN3@IsPlotBloc:
 
-; 2738 : 						}
-; 2739 : 
-; 2740 : 						if (pNearbyPlot->HasAlliedUnit(ePlayer))
+; 2756 : 						}
+; 2757 : 
+; 2758 : 						if (pNearbyPlot->HasAlliedUnit(ePlayer))
 
 	push	1
 	push	ebx
@@ -4651,11 +4651,11 @@ $LN3@IsPlotBloc:
 	test	al, al
 	je	SHORT $LN9@IsPlotBloc
 
-; 2741 : 						{
-; 2742 : #ifdef AUI_HEXSPACE_DX_LOOPS
-; 2743 : 							iLoopDistance = hexDistance(iDX, iDY);
-; 2744 : #else
-; 2745 : 							iLoopDistance = plotDistance(pPlot->getX(), pPlot->getY(), pNearbyPlot->getX(), pNearbyPlot->getY());
+; 2759 : 						{
+; 2760 : #ifdef AUI_HEXSPACE_DX_LOOPS
+; 2761 : 							iLoopDistance = hexDistance(iDX, iDY);
+; 2762 : #else
+; 2763 : 							iLoopDistance = plotDistance(pPlot->getX(), pPlot->getY(), pNearbyPlot->getX(), pNearbyPlot->getY());
 
 	movsx	eax, WORD PTR [esi+2]
 	movsx	ecx, WORD PTR [esi]
@@ -4668,19 +4668,19 @@ $LN3@IsPlotBloc:
 	call	?plotDistance@@YAHHHHH@Z		; plotDistance
 	add	esp, 16					; 00000010H
 
-; 2746 : #endif
-; 2747 : 							if (iLoopDistance < iClosestAllyDistance)
+; 2764 : #endif
+; 2765 : 							if (iLoopDistance < iClosestAllyDistance)
 
 	cmp	eax, DWORD PTR _iClosestAllyDistance$[esp+40]
 	jge	SHORT $LN9@IsPlotBloc
 
-; 2748 : 								iClosestAllyDistance = iLoopDistance;
+; 2766 : 								iClosestAllyDistance = iLoopDistance;
 
 	mov	DWORD PTR _iClosestAllyDistance$[esp+40], eax
 $LN9@IsPlotBloc:
 
-; 2708 : 	{
-; 2709 : 		for(iDY = -(iBlockadeDistance); iDY <= iBlockadeDistance; iDY++)
+; 2726 : 	{
+; 2727 : 		for(iDY = -(iBlockadeDistance); iDY <= iBlockadeDistance; iDY++)
 
 	mov	eax, DWORD PTR _iDY$[esp+36]
 	inc	eax
@@ -4701,27 +4701,27 @@ $LN12@IsPlotBloc:
 	pop	ebx
 $LN11@IsPlotBloc:
 
-; 2749 : #else
-; 2750 : 							return true;
-; 2751 : #endif
-; 2752 : 						}
-; 2753 : 					}
-; 2754 : 				}
-; 2755 : 			}
-; 2756 : 		}
-; 2757 : 	}
-; 2758 : #ifdef AUI_CITY_CITIZENS_COUNTERBLOCKADE
-; 2759 : 	return iClosestEnemyDistance < iClosestAllyDistance;
+; 2767 : #else
+; 2768 : 							return true;
+; 2769 : #endif
+; 2770 : 						}
+; 2771 : 					}
+; 2772 : 				}
+; 2773 : 			}
+; 2774 : 		}
+; 2775 : 	}
+; 2776 : #ifdef AUI_CITY_CITIZENS_COUNTERBLOCKADE
+; 2777 : 	return iClosestEnemyDistance < iClosestAllyDistance;
 
 	mov	ecx, DWORD PTR _iClosestAllyDistance$[esp+24]
 	xor	eax, eax
 	cmp	DWORD PTR _iClosestEnemyDistance$[esp+24], ecx
 	setl	al
 
-; 2760 : #else
-; 2761 : 	return false;
-; 2762 : #endif
-; 2763 : }
+; 2778 : #else
+; 2779 : 	return false;
+; 2780 : #endif
+; 2781 : }
 
 	add	esp, 24					; 00000018H
 	ret	4
@@ -4736,7 +4736,7 @@ _iIndex$ = 8						; size = 4
 ?GetCityPlotFromIndex@CvCityCitizens@@QBEPAVCvPlot@@H@Z PROC ; CvCityCitizens::GetCityPlotFromIndex, COMDAT
 ; _this$ = ecx
 
-; 2895 : 	return plotCity(m_pCity->getX(), m_pCity->getY(), iIndex);
+; 2913 : 	return plotCity(m_pCity->getX(), m_pCity->getY(), iIndex);
 
 	mov	eax, DWORD PTR [ecx]
 	mov	edx, DWORD PTR _iIndex$[esp-4]
@@ -4748,7 +4748,7 @@ _iIndex$ = 8						; size = 4
 	call	?plotCity@@YAPAVCvPlot@@HHH@Z		; plotCity
 	add	esp, 12					; 0000000cH
 
-; 2896 : }
+; 2914 : }
 
 	ret	4
 ?GetCityPlotFromIndex@CvCityCitizens@@QBEPAVCvPlot@@H@Z ENDP ; CvCityCitizens::GetCityPlotFromIndex
@@ -4780,14 +4780,14 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 __$EHRec$ = -12						; size = 12
 _eBuilding$ = 8						; size = 4
-$T227363 = 12						; size = 4
+$T227405 = 12						; size = 4
 _bForced$ = 12						; size = 1
-_pCity$225708 = 16					; size = 4
+_pCity$225750 = 16					; size = 4
 _bEliminatePopulation$ = 16				; size = 1
 ?DoRemoveSpecialistFromBuilding@CvCityCitizens@@QAEXW4BuildingTypes@@_N1@Z PROC ; CvCityCitizens::DoRemoveSpecialistFromBuilding, COMDAT
 ; _this$ = ecx
 
-; 3236 : {
+; 3254 : {
 
 	mov	eax, DWORD PTR fs:0
 	push	-1
@@ -4797,10 +4797,10 @@ _bEliminatePopulation$ = 16				; size = 1
 	push	esi
 	push	edi
 
-; 3237 : 	CvAssert(eBuilding > -1);
-; 3238 : 	CvAssert(eBuilding < GC.getNumBuildingInfos());
-; 3239 : 
-; 3240 : 	CvBuildingEntry* pkBuildingInfo = GC.getBuildingInfo(eBuilding);
+; 3255 : 	CvAssert(eBuilding > -1);
+; 3256 : 	CvAssert(eBuilding < GC.getNumBuildingInfos());
+; 3257 : 
+; 3258 : 	CvBuildingEntry* pkBuildingInfo = GC.getBuildingInfo(eBuilding);
 
 	mov	edi, DWORD PTR _eBuilding$[esp+16]
 	mov	esi, ecx
@@ -4808,70 +4808,70 @@ _bEliminatePopulation$ = 16				; size = 1
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getBuildingInfo@CvGlobals@@QAEPAVCvBuildingEntry@@W4BuildingTypes@@@Z ; CvGlobals::getBuildingInfo
 
-; 3241 : 	if(pkBuildingInfo == NULL)
+; 3259 : 	if(pkBuildingInfo == NULL)
 
 	test	eax, eax
 	je	$LN49@DoRemoveSp
 
-; 3242 : 	{
-; 3243 : 		return;
-; 3244 : 	}
-; 3245 : 
-; 3246 : 	SpecialistTypes eSpecialist = (SpecialistTypes) pkBuildingInfo->GetSpecialistType();
+; 3260 : 	{
+; 3261 : 		return;
+; 3262 : 	}
+; 3263 : 
+; 3264 : 	SpecialistTypes eSpecialist = (SpecialistTypes) pkBuildingInfo->GetSpecialistType();
 
 	mov	ecx, eax
 	call	?GetSpecialistType@CvBuildingEntry@@QBEHXZ ; CvBuildingEntry::GetSpecialistType
 
-; 3247 : 
-; 3248 : 	int iNumSpecialistsAssigned = GetNumSpecialistsInBuilding(eBuilding);
+; 3265 : 
+; 3266 : 	int iNumSpecialistsAssigned = GetNumSpecialistsInBuilding(eBuilding);
 
 	mov	ecx, DWORD PTR [esi+116]
 
-; 3249 : 
-; 3250 : 	// Need at least 1 assigned to remove
-; 3251 : 	if(iNumSpecialistsAssigned > 0)
+; 3267 : 
+; 3268 : 	// Need at least 1 assigned to remove
+; 3269 : 	if(iNumSpecialistsAssigned > 0)
 
 	cmp	DWORD PTR [ecx+edi*4], 0
 	jle	$LN49@DoRemoveSp
 
-; 3252 : 	{
-; 3253 : 		// Decrease count for the whole city
-; 3254 : 		m_aiSpecialistCounts[eSpecialist]--;
+; 3270 : 	{
+; 3271 : 		// Decrease count for the whole city
+; 3272 : 		m_aiSpecialistCounts[eSpecialist]--;
 
 	mov	edx, DWORD PTR [esi+108]
 	dec	DWORD PTR [edx+eax*4]
 	lea	ecx, DWORD PTR [edx+eax*4]
 
-; 3255 : 		m_aiNumSpecialistsInBuilding[eBuilding]--;
+; 3273 : 		m_aiNumSpecialistsInBuilding[eBuilding]--;
 
 	mov	ecx, DWORD PTR [esi+116]
 	dec	DWORD PTR [ecx+edi*4]
 
-; 3256 : 
-; 3257 : 		if(bForced)
+; 3274 : 
+; 3275 : 		if(bForced)
 
 	cmp	BYTE PTR _bForced$[esp+16], 0
 	lea	ecx, DWORD PTR [ecx+edi*4]
 	je	SHORT $LN3@DoRemoveSp
 
-; 3258 : 		{
-; 3259 : 			m_aiNumForcedSpecialistsInBuilding[eBuilding]--;
+; 3276 : 		{
+; 3277 : 			m_aiNumForcedSpecialistsInBuilding[eBuilding]--;
 
 	mov	edx, DWORD PTR [esi+120]
 	dec	DWORD PTR [edx+edi*4]
 	lea	ecx, DWORD PTR [edx+edi*4]
 $LN3@DoRemoveSp:
 
-; 3260 : 		}
-; 3261 : 
-; 3262 : 		GetCity()->processSpecialist(eSpecialist, -1);
+; 3278 : 		}
+; 3279 : 
+; 3280 : 		GetCity()->processSpecialist(eSpecialist, -1);
 
 	mov	ecx, DWORD PTR [esi]
 	push	-1
 	push	eax
 	call	?processSpecialist@CvCity@@QAEXW4SpecialistTypes@@H@Z ; CvCity::processSpecialist
 
-; 3263 : 		GetCity()->UpdateReligion(GetCity()->GetCityReligions()->GetReligiousMajority());
+; 3281 : 		GetCity()->UpdateReligion(GetCity()->GetCityReligions()->GetReligiousMajority());
 
 	mov	edi, DWORD PTR [esi]
 	mov	ecx, edi
@@ -4882,48 +4882,48 @@ $LN3@DoRemoveSp:
 	mov	ecx, edi
 	call	?UpdateReligion@CvCity@@QAEXW4ReligionTypes@@@Z ; CvCity::UpdateReligion
 
-; 3264 : 
-; 3265 : 		// Do we kill this population or reassign him?
-; 3266 : 		if(bEliminatePopulation)
+; 3282 : 
+; 3283 : 		// Do we kill this population or reassign him?
+; 3284 : 		if(bEliminatePopulation)
 
 	cmp	BYTE PTR _bEliminatePopulation$[esp+16], 0
 	je	SHORT $LN2@DoRemoveSp
 
-; 3267 : 		{
-; 3268 : 			GetCity()->changePopulation(-1, /*bReassignPop*/ false);
+; 3285 : 		{
+; 3286 : 			GetCity()->changePopulation(-1, /*bReassignPop*/ false);
 
 	mov	ecx, DWORD PTR [esi]
 	push	0
 	push	-1
 	call	?changePopulation@CvCity@@QAEXH_N@Z	; CvCity::changePopulation
 
-; 3269 : 		}
-; 3270 : 		else
+; 3287 : 		}
+; 3288 : 		else
 
 	jmp	SHORT $LN20@DoRemoveSp
 $LN2@DoRemoveSp:
 
-; 3271 : 		{
-; 3272 : 			ChangeNumUnassignedCitizens(1);
+; 3289 : 		{
+; 3290 : 			ChangeNumUnassignedCitizens(1);
 
 	inc	DWORD PTR [esi+8]
 $LN20@DoRemoveSp:
 
-; 3273 : 		}
-; 3274 : 
-; 3275 : #ifdef AUI_WARNING_FIXES
-; 3276 : 		ICvUserInterface2* pkIFace = GC.GetEngineUserInterface();
-; 3277 : 		pkIFace->setDirty(GameData_DIRTY_BIT, true);
-; 3278 : 		pkIFace->setDirty(CityInfo_DIRTY_BIT, true);
-; 3279 : 		//pkIFace->setDirty(InfoPane_DIRTY_BIT, true );
-; 3280 : 		pkIFace->setDirty(CityScreen_DIRTY_BIT, true);
-; 3281 : 		pkIFace->setDirty(ColoredPlots_DIRTY_BIT, true);
-; 3282 : 
-; 3283 : 		auto_ptr<ICvCity1> pCity = GC.WrapCityPointer(GetCity());
-; 3284 : 
-; 3285 : 		pkIFace->SetSpecificCityInfoDirty(pCity.get(), CITY_UPDATE_TYPE_SPECIALISTS);
-; 3286 : #else
-; 3287 : 		GC.GetEngineUserInterface()->setDirty(GameData_DIRTY_BIT, true);
+; 3291 : 		}
+; 3292 : 
+; 3293 : #ifdef AUI_WARNING_FIXES
+; 3294 : 		ICvUserInterface2* pkIFace = GC.GetEngineUserInterface();
+; 3295 : 		pkIFace->setDirty(GameData_DIRTY_BIT, true);
+; 3296 : 		pkIFace->setDirty(CityInfo_DIRTY_BIT, true);
+; 3297 : 		//pkIFace->setDirty(InfoPane_DIRTY_BIT, true );
+; 3298 : 		pkIFace->setDirty(CityScreen_DIRTY_BIT, true);
+; 3299 : 		pkIFace->setDirty(ColoredPlots_DIRTY_BIT, true);
+; 3300 : 
+; 3301 : 		auto_ptr<ICvCity1> pCity = GC.WrapCityPointer(GetCity());
+; 3302 : 
+; 3303 : 		pkIFace->SetSpecificCityInfoDirty(pCity.get(), CITY_UPDATE_TYPE_SPECIALISTS);
+; 3304 : #else
+; 3305 : 		GC.GetEngineUserInterface()->setDirty(GameData_DIRTY_BIT, true);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
 	mov	eax, DWORD PTR [ecx]
@@ -4932,7 +4932,7 @@ $LN20@DoRemoveSp:
 	push	11					; 0000000bH
 	call	edx
 
-; 3288 : 		GC.GetEngineUserInterface()->setDirty(CityInfo_DIRTY_BIT, true);
+; 3306 : 		GC.GetEngineUserInterface()->setDirty(CityInfo_DIRTY_BIT, true);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
 	mov	eax, DWORD PTR [ecx]
@@ -4941,8 +4941,8 @@ $LN20@DoRemoveSp:
 	push	18					; 00000012H
 	call	edx
 
-; 3289 : 		//GC.GetEngineUserInterface()->setDirty(InfoPane_DIRTY_BIT, true );
-; 3290 : 		GC.GetEngineUserInterface()->setDirty(CityScreen_DIRTY_BIT, true);
+; 3307 : 		//GC.GetEngineUserInterface()->setDirty(InfoPane_DIRTY_BIT, true );
+; 3308 : 		GC.GetEngineUserInterface()->setDirty(CityScreen_DIRTY_BIT, true);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
 	mov	eax, DWORD PTR [ecx]
@@ -4951,7 +4951,7 @@ $LN20@DoRemoveSp:
 	push	21					; 00000015H
 	call	edx
 
-; 3291 : 		GC.GetEngineUserInterface()->setDirty(ColoredPlots_DIRTY_BIT, true);
+; 3309 : 		GC.GetEngineUserInterface()->setDirty(ColoredPlots_DIRTY_BIT, true);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
 	mov	eax, DWORD PTR [ecx]
@@ -4960,19 +4960,19 @@ $LN20@DoRemoveSp:
 	push	24					; 00000018H
 	call	edx
 
-; 3292 : 
-; 3293 : 		auto_ptr<ICvCity1> pCity = GC.WrapCityPointer(GetCity());
+; 3310 : 
+; 3311 : 		auto_ptr<ICvCity1> pCity = GC.WrapCityPointer(GetCity());
 
 	mov	esi, DWORD PTR [esi]
 	push	esi
-	lea	eax, DWORD PTR $T227363[esp+20]
+	lea	eax, DWORD PTR $T227405[esp+20]
 	push	eax
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?WrapCityPointer@CvGlobals@@QAE?AV?$auto_ptr@VICvCity1@@@std@@PAVCvCity@@@Z ; CvGlobals::WrapCityPointer
 	mov	esi, DWORD PTR [eax]
 	mov	DWORD PTR [eax], 0
-	mov	DWORD PTR _pCity$225708[esp+16], esi
-	mov	eax, DWORD PTR $T227363[esp+16]
+	mov	DWORD PTR _pCity$225750[esp+16], esi
+	mov	eax, DWORD PTR $T227405[esp+16]
 	mov	DWORD PTR __$EHRec$[esp+28], 0
 	test	eax, eax
 	je	SHORT $LN40@DoRemoveSp
@@ -4982,8 +4982,8 @@ $LN20@DoRemoveSp:
 	call	edx
 $LN40@DoRemoveSp:
 
-; 3294 : 
-; 3295 : 		GC.GetEngineUserInterface()->SetSpecificCityInfoDirty(pCity.get(), CITY_UPDATE_TYPE_SPECIALISTS);
+; 3312 : 
+; 3313 : 		GC.GetEngineUserInterface()->SetSpecificCityInfoDirty(pCity.get(), CITY_UPDATE_TYPE_SPECIALISTS);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
 	mov	eax, DWORD PTR [ecx]
@@ -4992,8 +4992,8 @@ $LN40@DoRemoveSp:
 	push	esi
 	call	edx
 
-; 3296 : #endif
-; 3297 : 	}
+; 3314 : #endif
+; 3315 : 	}
 
 	mov	DWORD PTR __$EHRec$[esp+28], -1
 	test	esi, esi
@@ -5004,7 +5004,7 @@ $LN40@DoRemoveSp:
 	call	ecx
 $LN49@DoRemoveSp:
 
-; 3298 : }
+; 3316 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+20]
 	pop	edi
@@ -5016,7 +5016,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?DoRemoveSpecialistFromBuilding@CvCityCitizens@@QAEXW4BuildingTypes@@_N1@Z$1:
-	lea	ecx, DWORD PTR _pCity$225708[ebp-4]
+	lea	ecx, DWORD PTR _pCity$225750[ebp-4]
 	jmp	??1?$auto_ptr@VICvCity1@@@std@@QAE@XZ	; std::auto_ptr<ICvCity1>::~auto_ptr<ICvCity1>
 __ehhandler$?DoRemoveSpecialistFromBuilding@CvCityCitizens@@QAEXW4BuildingTypes@@_N1@Z:
 	mov	eax, OFFSET __ehfuncinfo$?DoRemoveSpecialistFromBuilding@CvCityCitizens@@QAEXW4BuildingTypes@@_N1@Z
@@ -5042,15 +5042,15 @@ xdata$x	ENDS
 ;	COMDAT ?DoRemoveAllSpecialistsFromBuilding@CvCityCitizens@@QAEXW4BuildingTypes@@_N@Z
 _TEXT	SEGMENT
 tv160 = -24						; size = 4
-$T227472 = -20						; size = 4
-_pCity$225728 = -16					; size = 4
+$T227514 = -20						; size = 4
+_pCity$225770 = -16					; size = 4
 __$EHRec$ = -12						; size = 12
 _eBuilding$ = 8						; size = 4
 _bEliminatePopulation$ = 12				; size = 1
 ?DoRemoveAllSpecialistsFromBuilding@CvCityCitizens@@QAEXW4BuildingTypes@@_N@Z PROC ; CvCityCitizens::DoRemoveAllSpecialistsFromBuilding, COMDAT
 ; _this$ = ecx
 
-; 3305 : {
+; 3323 : {
 
 	mov	eax, DWORD PTR fs:0
 	push	-1
@@ -5061,10 +5061,10 @@ _bEliminatePopulation$ = 12				; size = 1
 	push	esi
 	push	edi
 
-; 3306 : 	CvAssert(eBuilding > -1);
-; 3307 : 	CvAssert(eBuilding < GC.getNumBuildingInfos());
-; 3308 : 
-; 3309 : 	CvBuildingEntry* pkBuildingInfo = GC.getBuildingInfo(eBuilding);
+; 3324 : 	CvAssert(eBuilding > -1);
+; 3325 : 	CvAssert(eBuilding < GC.getNumBuildingInfos());
+; 3326 : 
+; 3327 : 	CvBuildingEntry* pkBuildingInfo = GC.getBuildingInfo(eBuilding);
 
 	mov	edi, DWORD PTR _eBuilding$[esp+28]
 	mov	esi, ecx
@@ -5072,24 +5072,24 @@ _bEliminatePopulation$ = 12				; size = 1
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getBuildingInfo@CvGlobals@@QAEPAVCvBuildingEntry@@W4BuildingTypes@@@Z ; CvGlobals::getBuildingInfo
 
-; 3310 : 	if(pkBuildingInfo == NULL)
+; 3328 : 	if(pkBuildingInfo == NULL)
 
 	test	eax, eax
 	je	$LN3@DoRemoveAl
 	push	ebp
 
-; 3311 : 	{
-; 3312 : 		return;
-; 3313 : 	}
-; 3314 : 
-; 3315 : 	SpecialistTypes eSpecialist = (SpecialistTypes) pkBuildingInfo->GetSpecialistType();
+; 3329 : 	{
+; 3330 : 		return;
+; 3331 : 	}
+; 3332 : 
+; 3333 : 	SpecialistTypes eSpecialist = (SpecialistTypes) pkBuildingInfo->GetSpecialistType();
 
 	mov	ecx, eax
 	call	?GetSpecialistType@CvBuildingEntry@@QBEHXZ ; CvBuildingEntry::GetSpecialistType
 
-; 3316 : 	int iNumSpecialists = GetNumSpecialistsInBuilding(eBuilding);
-; 3317 : 
-; 3318 : 	m_aiNumForcedSpecialistsInBuilding[eBuilding] = 0;
+; 3334 : 	int iNumSpecialists = GetNumSpecialistsInBuilding(eBuilding);
+; 3335 : 
+; 3336 : 	m_aiNumForcedSpecialistsInBuilding[eBuilding] = 0;
 
 	mov	ecx, DWORD PTR [esi+120]
 	mov	ebp, eax
@@ -5097,18 +5097,18 @@ _bEliminatePopulation$ = 12				; size = 1
 	mov	eax, DWORD PTR [eax+edi*4]
 	mov	DWORD PTR [ecx+edi*4], 0
 
-; 3319 : 
-; 3320 : 	// Pick the worst to remove
-; 3321 : 	for(int iAssignedLoop = 0; iAssignedLoop < iNumSpecialists; iAssignedLoop++)
+; 3337 : 
+; 3338 : 	// Pick the worst to remove
+; 3339 : 	for(int iAssignedLoop = 0; iAssignedLoop < iNumSpecialists; iAssignedLoop++)
 
 	test	eax, eax
 	jle	$LN51@DoRemoveAl
 
-; 3311 : 	{
-; 3312 : 		return;
-; 3313 : 	}
-; 3314 : 
-; 3315 : 	SpecialistTypes eSpecialist = (SpecialistTypes) pkBuildingInfo->GetSpecialistType();
+; 3329 : 	{
+; 3330 : 		return;
+; 3331 : 	}
+; 3332 : 
+; 3333 : 	SpecialistTypes eSpecialist = (SpecialistTypes) pkBuildingInfo->GetSpecialistType();
 
 	mov	DWORD PTR tv160[esp+36], eax
 	jmp	SHORT $LN5@DoRemoveAl
@@ -5117,20 +5117,20 @@ $LL49@DoRemoveAl:
 	mov	edi, DWORD PTR _eBuilding$[esp+32]
 $LN5@DoRemoveAl:
 
-; 3322 : 	{
-; 3323 : 		// Decrease count for the whole city
-; 3324 : 		m_aiSpecialistCounts[eSpecialist]--;
+; 3340 : 	{
+; 3341 : 		// Decrease count for the whole city
+; 3342 : 		m_aiSpecialistCounts[eSpecialist]--;
 
 	mov	edx, DWORD PTR [esi+108]
 	dec	DWORD PTR [edx+ebp*4]
 	lea	eax, DWORD PTR [edx+ebp*4]
 
-; 3325 : 		m_aiNumSpecialistsInBuilding[eBuilding]--;
+; 3343 : 		m_aiNumSpecialistsInBuilding[eBuilding]--;
 
 	mov	eax, DWORD PTR [esi+116]
 	dec	DWORD PTR [eax+edi*4]
 
-; 3326 : 		GetCity()->processSpecialist(eSpecialist, -1);
+; 3344 : 		GetCity()->processSpecialist(eSpecialist, -1);
 
 	mov	ecx, DWORD PTR [esi]
 	lea	eax, DWORD PTR [eax+edi*4]
@@ -5138,46 +5138,46 @@ $LN5@DoRemoveAl:
 	push	ebp
 	call	?processSpecialist@CvCity@@QAEXW4SpecialistTypes@@H@Z ; CvCity::processSpecialist
 
-; 3327 : 
-; 3328 : 		// Do we kill this population or reassign him?
-; 3329 : 		if(bEliminatePopulation)
+; 3345 : 
+; 3346 : 		// Do we kill this population or reassign him?
+; 3347 : 		if(bEliminatePopulation)
 
 	cmp	BYTE PTR _bEliminatePopulation$[esp+32], 0
 	je	SHORT $LN2@DoRemoveAl
 
-; 3330 : 		{
-; 3331 : 			GetCity()->changePopulation(-1, /*bReassignPop*/ false);
+; 3348 : 		{
+; 3349 : 			GetCity()->changePopulation(-1, /*bReassignPop*/ false);
 
 	mov	ecx, DWORD PTR [esi]
 	push	0
 	push	-1
 	call	?changePopulation@CvCity@@QAEXH_N@Z	; CvCity::changePopulation
 
-; 3332 : 		}
-; 3333 : 		else
+; 3350 : 		}
+; 3351 : 		else
 
 	jmp	SHORT $LN17@DoRemoveAl
 $LN2@DoRemoveAl:
 
-; 3334 : 		{
-; 3335 : 			ChangeNumUnassignedCitizens(1);
+; 3352 : 		{
+; 3353 : 			ChangeNumUnassignedCitizens(1);
 
 	inc	DWORD PTR [esi+8]
 $LN17@DoRemoveAl:
 
-; 3336 : 		}
-; 3337 : 
-; 3338 : #ifdef AUI_WARNING_FIXES
-; 3339 : 		ICvUserInterface2* pkIFace = GC.GetEngineUserInterface();
-; 3340 : 		pkIFace->setDirty(CityInfo_DIRTY_BIT, true);
-; 3341 : 		//pkIFace->setDirty(InfoPane_DIRTY_BIT, true );
-; 3342 : 		pkIFace->setDirty(CityScreen_DIRTY_BIT, true);
-; 3343 : 		pkIFace->setDirty(ColoredPlots_DIRTY_BIT, true);
-; 3344 : 
-; 3345 : 		auto_ptr<ICvCity1> pCity = GC.WrapCityPointer(GetCity());
-; 3346 : 		pkIFace->SetSpecificCityInfoDirty(pCity.get(), CITY_UPDATE_TYPE_SPECIALISTS);
-; 3347 : #else
-; 3348 : 		GC.GetEngineUserInterface()->setDirty(CityInfo_DIRTY_BIT, true);
+; 3354 : 		}
+; 3355 : 
+; 3356 : #ifdef AUI_WARNING_FIXES
+; 3357 : 		ICvUserInterface2* pkIFace = GC.GetEngineUserInterface();
+; 3358 : 		pkIFace->setDirty(CityInfo_DIRTY_BIT, true);
+; 3359 : 		//pkIFace->setDirty(InfoPane_DIRTY_BIT, true );
+; 3360 : 		pkIFace->setDirty(CityScreen_DIRTY_BIT, true);
+; 3361 : 		pkIFace->setDirty(ColoredPlots_DIRTY_BIT, true);
+; 3362 : 
+; 3363 : 		auto_ptr<ICvCity1> pCity = GC.WrapCityPointer(GetCity());
+; 3364 : 		pkIFace->SetSpecificCityInfoDirty(pCity.get(), CITY_UPDATE_TYPE_SPECIALISTS);
+; 3365 : #else
+; 3366 : 		GC.GetEngineUserInterface()->setDirty(CityInfo_DIRTY_BIT, true);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
 	mov	edx, DWORD PTR [ecx]
@@ -5186,8 +5186,8 @@ $LN17@DoRemoveAl:
 	push	18					; 00000012H
 	call	eax
 
-; 3349 : 		//GC.GetEngineUserInterface()->setDirty(InfoPane_DIRTY_BIT, true );
-; 3350 : 		GC.GetEngineUserInterface()->setDirty(CityScreen_DIRTY_BIT, true);
+; 3367 : 		//GC.GetEngineUserInterface()->setDirty(InfoPane_DIRTY_BIT, true );
+; 3368 : 		GC.GetEngineUserInterface()->setDirty(CityScreen_DIRTY_BIT, true);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
 	mov	edx, DWORD PTR [ecx]
@@ -5196,7 +5196,7 @@ $LN17@DoRemoveAl:
 	push	21					; 00000015H
 	call	eax
 
-; 3351 : 		GC.GetEngineUserInterface()->setDirty(ColoredPlots_DIRTY_BIT, true);
+; 3369 : 		GC.GetEngineUserInterface()->setDirty(ColoredPlots_DIRTY_BIT, true);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
 	mov	edx, DWORD PTR [ecx]
@@ -5205,19 +5205,19 @@ $LN17@DoRemoveAl:
 	push	24					; 00000018H
 	call	eax
 
-; 3352 : 
-; 3353 : 		auto_ptr<ICvCity1> pCity = GC.WrapCityPointer(GetCity());
+; 3370 : 
+; 3371 : 		auto_ptr<ICvCity1> pCity = GC.WrapCityPointer(GetCity());
 
 	mov	eax, DWORD PTR [esi]
 	push	eax
-	lea	ecx, DWORD PTR $T227472[esp+40]
+	lea	ecx, DWORD PTR $T227514[esp+40]
 	push	ecx
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?WrapCityPointer@CvGlobals@@QAE?AV?$auto_ptr@VICvCity1@@@std@@PAVCvCity@@@Z ; CvGlobals::WrapCityPointer
 	mov	edi, DWORD PTR [eax]
 	mov	DWORD PTR [eax], 0
-	mov	DWORD PTR _pCity$225728[esp+36], edi
-	mov	eax, DWORD PTR $T227472[esp+36]
+	mov	DWORD PTR _pCity$225770[esp+36], edi
+	mov	eax, DWORD PTR $T227514[esp+36]
 	mov	DWORD PTR __$EHRec$[esp+44], 0
 	test	eax, eax
 	je	SHORT $LN35@DoRemoveAl
@@ -5227,7 +5227,7 @@ $LN17@DoRemoveAl:
 	call	eax
 $LN35@DoRemoveAl:
 
-; 3354 : 		GC.GetEngineUserInterface()->SetSpecificCityInfoDirty(pCity.get(), CITY_UPDATE_TYPE_SPECIALISTS);
+; 3372 : 		GC.GetEngineUserInterface()->SetSpecificCityInfoDirty(pCity.get(), CITY_UPDATE_TYPE_SPECIALISTS);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
 	mov	edx, DWORD PTR [ecx]
@@ -5236,8 +5236,8 @@ $LN35@DoRemoveAl:
 	push	edi
 	call	eax
 
-; 3355 : #endif
-; 3356 : 	}
+; 3373 : #endif
+; 3374 : 	}
 
 	mov	DWORD PTR __$EHRec$[esp+44], -1
 	test	edi, edi
@@ -5248,9 +5248,9 @@ $LN35@DoRemoveAl:
 	call	edx
 $LN4@DoRemoveAl:
 
-; 3319 : 
-; 3320 : 	// Pick the worst to remove
-; 3321 : 	for(int iAssignedLoop = 0; iAssignedLoop < iNumSpecialists; iAssignedLoop++)
+; 3337 : 
+; 3338 : 	// Pick the worst to remove
+; 3339 : 	for(int iAssignedLoop = 0; iAssignedLoop < iNumSpecialists; iAssignedLoop++)
 
 	sub	DWORD PTR tv160[esp+36], 1
 	jne	$LL49@DoRemoveAl
@@ -5258,7 +5258,7 @@ $LN51@DoRemoveAl:
 	pop	ebp
 $LN3@DoRemoveAl:
 
-; 3357 : }
+; 3375 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+32]
 	pop	edi
@@ -5270,7 +5270,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?DoRemoveAllSpecialistsFromBuilding@CvCityCitizens@@QAEXW4BuildingTypes@@_N@Z$1:
-	lea	ecx, DWORD PTR _pCity$225728[ebp]
+	lea	ecx, DWORD PTR _pCity$225770[ebp]
 	jmp	??1?$auto_ptr@VICvCity1@@@std@@QAE@XZ	; std::auto_ptr<ICvCity1>::~auto_ptr<ICvCity1>
 __ehhandler$?DoRemoveAllSpecialistsFromBuilding@CvCityCitizens@@QAEXW4BuildingTypes@@_N@Z:
 	mov	eax, OFFSET __ehfuncinfo$?DoRemoveAllSpecialistsFromBuilding@CvCityCitizens@@QAEXW4BuildingTypes@@_N@Z
@@ -5286,7 +5286,7 @@ _eDontRemoveFromBuilding$ = 12				; size = 4
 ?DoRemoveWorstSpecialist@CvCityCitizens@@QAE_NW4SpecialistTypes@@W4BuildingTypes@@@Z PROC ; CvCityCitizens::DoRemoveWorstSpecialist, COMDAT
 ; _this$ = ecx
 
-; 3362 : {
+; 3380 : {
 
 	push	ebx
 	push	ebp
@@ -5294,15 +5294,15 @@ _eDontRemoveFromBuilding$ = 12				; size = 4
 	push	edi
 	mov	edi, ecx
 
-; 3363 : #ifdef AUI_CITIZENS_FIX_REMOVE_WORST_SPECIALIST_ACTUALLY_REMOVES_WORST
-; 3364 : 	BuildingTypes eWorstBuilding = NO_BUILDING;
-; 3365 : 	int iWorstSpecialistScore = MAX_INT;
-; 3366 : 	int iLoopSpecialistScore = 0;
-; 3367 : #endif
-; 3368 : #ifdef AUI_WARNING_FIXES
-; 3369 : 	for (uint iBuildingLoop = 0; iBuildingLoop < GC.getNumBuildingInfos(); iBuildingLoop++)
-; 3370 : #else
-; 3371 : 	for(int iBuildingLoop = 0; iBuildingLoop < GC.getNumBuildingInfos(); iBuildingLoop++)
+; 3381 : #ifdef AUI_CITIZENS_FIX_REMOVE_WORST_SPECIALIST_ACTUALLY_REMOVES_WORST
+; 3382 : 	BuildingTypes eWorstBuilding = NO_BUILDING;
+; 3383 : 	int iWorstSpecialistScore = MAX_INT;
+; 3384 : 	int iLoopSpecialistScore = 0;
+; 3385 : #endif
+; 3386 : #ifdef AUI_WARNING_FIXES
+; 3387 : 	for (uint iBuildingLoop = 0; iBuildingLoop < GC.getNumBuildingInfos(); iBuildingLoop++)
+; 3388 : #else
+; 3389 : 	for(int iBuildingLoop = 0; iBuildingLoop < GC.getNumBuildingInfos(); iBuildingLoop++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	xor	esi, esi
@@ -5314,62 +5314,62 @@ _eDontRemoveFromBuilding$ = 12				; size = 4
 	npad	2
 $LL7@DoRemoveWo:
 
-; 3372 : #endif
-; 3373 : 	{
-; 3374 : 		const BuildingTypes eBuilding = static_cast<BuildingTypes>(iBuildingLoop);
-; 3375 : 
-; 3376 : 		if(eBuilding == eDontRemoveFromBuilding)
+; 3390 : #endif
+; 3391 : 	{
+; 3392 : 		const BuildingTypes eBuilding = static_cast<BuildingTypes>(iBuildingLoop);
+; 3393 : 
+; 3394 : 		if(eBuilding == eDontRemoveFromBuilding)
 
 	cmp	esi, ebx
 	je	SHORT $LN6@DoRemoveWo
 
-; 3377 : 		{
-; 3378 : 			continue;
-; 3379 : 		}
-; 3380 : 
-; 3381 : 		CvBuildingEntry* pkBuildingInfo = GC.getBuildingInfo(eBuilding);
+; 3395 : 		{
+; 3396 : 			continue;
+; 3397 : 		}
+; 3398 : 
+; 3399 : 		CvBuildingEntry* pkBuildingInfo = GC.getBuildingInfo(eBuilding);
 
 	push	esi
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getBuildingInfo@CvGlobals@@QAEPAVCvBuildingEntry@@W4BuildingTypes@@@Z ; CvGlobals::getBuildingInfo
 
-; 3382 : 		if(pkBuildingInfo == NULL)
+; 3400 : 		if(pkBuildingInfo == NULL)
 
 	test	eax, eax
 	je	SHORT $LN6@DoRemoveWo
 
-; 3383 : 		{
-; 3384 : 			continue;
-; 3385 : 		}
-; 3386 : 
-; 3387 : 		// We might not be allowed to change this Building's Specialists
-; 3388 : 		if(eDontChangeSpecialist == pkBuildingInfo->GetSpecialistType())
+; 3401 : 		{
+; 3402 : 			continue;
+; 3403 : 		}
+; 3404 : 
+; 3405 : 		// We might not be allowed to change this Building's Specialists
+; 3406 : 		if(eDontChangeSpecialist == pkBuildingInfo->GetSpecialistType())
 
 	mov	ecx, eax
 	call	?GetSpecialistType@CvBuildingEntry@@QBEHXZ ; CvBuildingEntry::GetSpecialistType
 	cmp	ebp, eax
 	je	SHORT $LN6@DoRemoveWo
 
-; 3389 : 		{
-; 3390 : 			continue;
-; 3391 : 		}
-; 3392 : 
-; 3393 : 		if(GetNumSpecialistsInBuilding(eBuilding) > 0)
+; 3407 : 		{
+; 3408 : 			continue;
+; 3409 : 		}
+; 3410 : 
+; 3411 : 		if(GetNumSpecialistsInBuilding(eBuilding) > 0)
 
 	mov	eax, DWORD PTR [edi+116]
 	cmp	DWORD PTR [eax+esi*4], 0
 	jg	SHORT $LN13@DoRemoveWo
 $LN6@DoRemoveWo:
 
-; 3363 : #ifdef AUI_CITIZENS_FIX_REMOVE_WORST_SPECIALIST_ACTUALLY_REMOVES_WORST
-; 3364 : 	BuildingTypes eWorstBuilding = NO_BUILDING;
-; 3365 : 	int iWorstSpecialistScore = MAX_INT;
-; 3366 : 	int iLoopSpecialistScore = 0;
-; 3367 : #endif
-; 3368 : #ifdef AUI_WARNING_FIXES
-; 3369 : 	for (uint iBuildingLoop = 0; iBuildingLoop < GC.getNumBuildingInfos(); iBuildingLoop++)
-; 3370 : #else
-; 3371 : 	for(int iBuildingLoop = 0; iBuildingLoop < GC.getNumBuildingInfos(); iBuildingLoop++)
+; 3381 : #ifdef AUI_CITIZENS_FIX_REMOVE_WORST_SPECIALIST_ACTUALLY_REMOVES_WORST
+; 3382 : 	BuildingTypes eWorstBuilding = NO_BUILDING;
+; 3383 : 	int iWorstSpecialistScore = MAX_INT;
+; 3384 : 	int iLoopSpecialistScore = 0;
+; 3385 : #endif
+; 3386 : #ifdef AUI_WARNING_FIXES
+; 3387 : 	for (uint iBuildingLoop = 0; iBuildingLoop < GC.getNumBuildingInfos(); iBuildingLoop++)
+; 3388 : #else
+; 3389 : 	for(int iBuildingLoop = 0; iBuildingLoop < GC.getNumBuildingInfos(); iBuildingLoop++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	inc	esi
@@ -5381,43 +5381,43 @@ $LN5@DoRemoveWo:
 	pop	esi
 	pop	ebp
 
-; 3410 : #endif
-; 3411 : 		}
-; 3412 : 	}
-; 3413 : 
-; 3414 : #ifdef AUI_CITIZENS_FIX_REMOVE_WORST_SPECIALIST_ACTUALLY_REMOVES_WORST
-; 3415 : 	if (eWorstBuilding != NO_BUILDING)
-; 3416 : 	{
-; 3417 : 		DoRemoveSpecialistFromBuilding(eWorstBuilding, false);
-; 3418 : 
-; 3419 : 		return true;
-; 3420 : 	}
-; 3421 : #endif
-; 3422 : 
-; 3423 : 	return false;
+; 3428 : #endif
+; 3429 : 		}
+; 3430 : 	}
+; 3431 : 
+; 3432 : #ifdef AUI_CITIZENS_FIX_REMOVE_WORST_SPECIALIST_ACTUALLY_REMOVES_WORST
+; 3433 : 	if (eWorstBuilding != NO_BUILDING)
+; 3434 : 	{
+; 3435 : 		DoRemoveSpecialistFromBuilding(eWorstBuilding, false);
+; 3436 : 
+; 3437 : 		return true;
+; 3438 : 	}
+; 3439 : #endif
+; 3440 : 
+; 3441 : 	return false;
 
 	xor	al, al
 	pop	ebx
 
-; 3424 : }
+; 3442 : }
 
 	ret	8
 $LN13@DoRemoveWo:
 
-; 3394 : 		{
-; 3395 : #ifdef AUI_CITIZENS_FIX_REMOVE_WORST_SPECIALIST_ACTUALLY_REMOVES_WORST
-; 3396 : #ifdef AUI_CITIZENS_UNHARDCODE_SPECIALIST_VALUE_HAPPINESS
-; 3397 : 			iLoopSpecialistScore = GetSpecialistValue((SpecialistTypes)pkBuildingInfo->GetSpecialistType(), true);
-; 3398 : #else
-; 3399 : 			iLoopSpecialistScore = GetSpecialistValue((SpecialistTypes)pkBuildingInfo->GetSpecialistType());
-; 3400 : #endif
-; 3401 : 			if (iLoopSpecialistScore < iWorstSpecialistScore)
-; 3402 : 			{
-; 3403 : 				iWorstSpecialistScore = iLoopSpecialistScore;
-; 3404 : 				eWorstBuilding = eBuilding;
-; 3405 : 			}
-; 3406 : #else
-; 3407 : 			DoRemoveSpecialistFromBuilding(eBuilding, true);
+; 3412 : 		{
+; 3413 : #ifdef AUI_CITIZENS_FIX_REMOVE_WORST_SPECIALIST_ACTUALLY_REMOVES_WORST
+; 3414 : #ifdef AUI_CITIZENS_UNHARDCODE_SPECIALIST_VALUE_HAPPINESS
+; 3415 : 			iLoopSpecialistScore = GetSpecialistValue((SpecialistTypes)pkBuildingInfo->GetSpecialistType(), true);
+; 3416 : #else
+; 3417 : 			iLoopSpecialistScore = GetSpecialistValue((SpecialistTypes)pkBuildingInfo->GetSpecialistType());
+; 3418 : #endif
+; 3419 : 			if (iLoopSpecialistScore < iWorstSpecialistScore)
+; 3420 : 			{
+; 3421 : 				iWorstSpecialistScore = iLoopSpecialistScore;
+; 3422 : 				eWorstBuilding = eBuilding;
+; 3423 : 			}
+; 3424 : #else
+; 3425 : 			DoRemoveSpecialistFromBuilding(eBuilding, true);
 
 	push	0
 	push	1
@@ -5428,13 +5428,13 @@ $LN13@DoRemoveWo:
 	pop	esi
 	pop	ebp
 
-; 3408 : 
-; 3409 : 			return true;
+; 3426 : 
+; 3427 : 			return true;
 
 	mov	al, 1
 	pop	ebx
 
-; 3424 : }
+; 3442 : }
 
 	ret	8
 ?DoRemoveWorstSpecialist@CvCityCitizens@@QAE_NW4SpecialistTypes@@W4BuildingTypes@@@Z ENDP ; CvCityCitizens::DoRemoveWorstSpecialist
@@ -5459,31 +5459,31 @@ _eUnitClass$ = 8					; size = 4
 ?GetSpecialistUpgradeThreshold@CvCityCitizens@@QAEHW4UnitClassTypes@@@Z PROC ; CvCityCitizens::GetSpecialistUpgradeThreshold, COMDAT
 ; _this$ = ecx
 
-; 3588 : {
+; 3606 : {
 
 	push	ebx
 
-; 3589 : 	int iThreshold = /*100*/ GC.getGREAT_PERSON_THRESHOLD_BASE();
+; 3607 : 	int iThreshold = /*100*/ GC.getGREAT_PERSON_THRESHOLD_BASE();
 
 	mov	ebx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+7104
 	push	esi
 	push	edi
 
-; 3590 : 	int iNumCreated;
-; 3591 : 
-; 3592 : 	if (eUnitClass == GC.getInfoTypeForString("UNITCLASS_WRITER", true))
+; 3608 : 	int iNumCreated;
+; 3609 : 
+; 3610 : 	if (eUnitClass == GC.getInfoTypeForString("UNITCLASS_WRITER", true))
 
 	push	1
 	mov	edi, ecx
-	push	OFFSET $SG225830
+	push	OFFSET $SG225872
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	esi, DWORD PTR _eUnitClass$[esp+8]
 	cmp	esi, eax
 	jne	SHORT $LN12@GetSpecial
 
-; 3593 : 	{
-; 3594 : 		iNumCreated = GET_PLAYER(GetCity()->getOwner()).getGreatWritersCreated();
+; 3611 : 	{
+; 3612 : 		iNumCreated = GET_PLAYER(GetCity()->getOwner()).getGreatWritersCreated();
 
 	mov	eax, DWORD PTR [edi]
 	mov	ecx, DWORD PTR [eax+84]
@@ -5493,18 +5493,18 @@ _eUnitClass$ = 8					; size = 4
 	jmp	$LN79@GetSpecial
 $LN12@GetSpecial:
 
-; 3595 : 	}
-; 3596 : 	else if (eUnitClass == GC.getInfoTypeForString("UNITCLASS_ARTIST", true))
+; 3613 : 	}
+; 3614 : 	else if (eUnitClass == GC.getInfoTypeForString("UNITCLASS_ARTIST", true))
 
 	push	1
-	push	OFFSET $SG225833
+	push	OFFSET $SG225875
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	cmp	esi, eax
 	jne	SHORT $LN10@GetSpecial
 
-; 3597 : 	{
-; 3598 : 		iNumCreated = GET_PLAYER(GetCity()->getOwner()).getGreatArtistsCreated();
+; 3615 : 	{
+; 3616 : 		iNumCreated = GET_PLAYER(GetCity()->getOwner()).getGreatArtistsCreated();
 
 	mov	ecx, DWORD PTR [edi]
 	mov	ecx, DWORD PTR [ecx+84]
@@ -5514,18 +5514,18 @@ $LN12@GetSpecial:
 	jmp	$LN79@GetSpecial
 $LN10@GetSpecial:
 
-; 3599 : 	}
-; 3600 : 	else if (eUnitClass == GC.getInfoTypeForString("UNITCLASS_MUSICIAN", true))
+; 3617 : 	}
+; 3618 : 	else if (eUnitClass == GC.getInfoTypeForString("UNITCLASS_MUSICIAN", true))
 
 	push	1
-	push	OFFSET $SG225836
+	push	OFFSET $SG225878
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	cmp	esi, eax
 	jne	SHORT $LN8@GetSpecial
 
-; 3601 : 	{
-; 3602 : 		iNumCreated = GET_PLAYER(GetCity()->getOwner()).getGreatMusiciansCreated();
+; 3619 : 	{
+; 3620 : 		iNumCreated = GET_PLAYER(GetCity()->getOwner()).getGreatMusiciansCreated();
 
 	mov	edx, DWORD PTR [edi]
 	mov	ecx, DWORD PTR [edx+84]
@@ -5535,19 +5535,19 @@ $LN10@GetSpecial:
 	jmp	$LN79@GetSpecial
 $LN8@GetSpecial:
 
-; 3603 : 	}
-; 3604 : 	// GJS: begin separation of great people types
-; 3605 : 	else if (eUnitClass == GC.getInfoTypeForString("UNITCLASS_SCIENTIST", true))
+; 3621 : 	}
+; 3622 : 	// GJS: begin separation of great people types
+; 3623 : 	else if (eUnitClass == GC.getInfoTypeForString("UNITCLASS_SCIENTIST", true))
 
 	push	1
-	push	OFFSET $SG225839
+	push	OFFSET $SG225881
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	cmp	esi, eax
 	jne	SHORT $LN6@GetSpecial
 
-; 3606 : 	{
-; 3607 : 		iNumCreated = GET_PLAYER(GetCity()->getOwner()).getGreatScientistsCreated();
+; 3624 : 	{
+; 3625 : 		iNumCreated = GET_PLAYER(GetCity()->getOwner()).getGreatScientistsCreated();
 
 	mov	eax, DWORD PTR [edi]
 	mov	ecx, DWORD PTR [eax+84]
@@ -5557,18 +5557,18 @@ $LN8@GetSpecial:
 	jmp	SHORT $LN79@GetSpecial
 $LN6@GetSpecial:
 
-; 3608 : 	}
-; 3609 : 	else if (eUnitClass == GC.getInfoTypeForString("UNITCLASS_ENGINEER", true))
+; 3626 : 	}
+; 3627 : 	else if (eUnitClass == GC.getInfoTypeForString("UNITCLASS_ENGINEER", true))
 
 	push	1
-	push	OFFSET $SG225842
+	push	OFFSET $SG225884
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	cmp	esi, eax
 	jne	SHORT $LN4@GetSpecial
 
-; 3610 : 	{
-; 3611 : 		iNumCreated = GET_PLAYER(GetCity()->getOwner()).getGreatEngineersCreated();
+; 3628 : 	{
+; 3629 : 		iNumCreated = GET_PLAYER(GetCity()->getOwner()).getGreatEngineersCreated();
 
 	mov	ecx, DWORD PTR [edi]
 	mov	ecx, DWORD PTR [ecx+84]
@@ -5578,18 +5578,18 @@ $LN6@GetSpecial:
 	jmp	SHORT $LN79@GetSpecial
 $LN4@GetSpecial:
 
-; 3612 : 	}
-; 3613 : 	else if (eUnitClass == GC.getInfoTypeForString("UNITCLASS_MERCHANT", true))
+; 3630 : 	}
+; 3631 : 	else if (eUnitClass == GC.getInfoTypeForString("UNITCLASS_MERCHANT", true))
 
 	push	1
-	push	OFFSET $SG225845
+	push	OFFSET $SG225887
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	cmp	esi, eax
 	jne	SHORT $LN2@GetSpecial
 
-; 3614 : 	{
-; 3615 : 		iNumCreated = GET_PLAYER(GetCity()->getOwner()).getGreatMerchantsCreated();
+; 3632 : 	{
+; 3633 : 		iNumCreated = GET_PLAYER(GetCity()->getOwner()).getGreatMerchantsCreated();
 
 	mov	edx, DWORD PTR [edi]
 	mov	ecx, DWORD PTR [edx+84]
@@ -5597,15 +5597,15 @@ $LN4@GetSpecial:
 	add	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	call	?getGreatMerchantsCreated@CvPlayer@@QBEHXZ ; CvPlayer::getGreatMerchantsCreated
 
-; 3616 : 	}
-; 3617 : 	// GJS: end separation of great people types
-; 3618 : 	else
+; 3634 : 	}
+; 3635 : 	// GJS: end separation of great people types
+; 3636 : 	else
 
 	jmp	SHORT $LN79@GetSpecial
 $LN2@GetSpecial:
 
-; 3619 : 	{
-; 3620 : 		iNumCreated = GET_PLAYER(GetCity()->getOwner()).getGreatPeopleCreated();
+; 3637 : 	{
+; 3638 : 		iNumCreated = GET_PLAYER(GetCity()->getOwner()).getGreatPeopleCreated();
 
 	mov	eax, DWORD PTR [edi]
 	mov	ecx, DWORD PTR [eax+84]
@@ -5614,13 +5614,13 @@ $LN2@GetSpecial:
 	call	?getGreatPeopleCreated@CvPlayer@@QBEHXZ	; CvPlayer::getGreatPeopleCreated
 $LN79@GetSpecial:
 
-; 3621 : 	}
-; 3622 : 
-; 3623 : 	// Increase threshold based on how many GP have already been spawned
-; 3624 : 	iThreshold += (/*50*/ GC.getGREAT_PERSON_THRESHOLD_INCREASE() * iNumCreated);
-; 3625 : 
-; 3626 : 	// Game Speed mod
-; 3627 : 	iThreshold *= GC.getGame().getGameSpeedInfo().getGreatPeoplePercent();
+; 3639 : 	}
+; 3640 : 
+; 3641 : 	// Increase threshold based on how many GP have already been spawned
+; 3642 : 	iThreshold += (/*50*/ GC.getGREAT_PERSON_THRESHOLD_INCREASE() * iNumCreated);
+; 3643 : 
+; 3644 : 	// Game Speed mod
+; 3645 : 	iThreshold *= GC.getGame().getGameSpeedInfo().getGreatPeoplePercent();
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	mov	esi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+7108
@@ -5633,14 +5633,14 @@ $LN79@GetSpecial:
 	add	esi, ebx
 	imul	ecx, esi
 
-; 3628 : 	iThreshold /= 100;
+; 3646 : 	iThreshold /= 100;
 
 	mov	eax, 1374389535				; 51eb851fH
 	imul	ecx
 
-; 3629 : 
-; 3630 : 	// Start era mod
-; 3631 : 	iThreshold *= GC.getGame().getStartEraInfo().getGreatPeoplePercent();
+; 3647 : 
+; 3648 : 	// Start era mod
+; 3649 : 	iThreshold *= GC.getGame().getStartEraInfo().getGreatPeoplePercent();
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	sar	edx, 5
@@ -5653,7 +5653,7 @@ $LN79@GetSpecial:
 	mov	ecx, eax
 	imul	ecx, esi
 
-; 3632 : 	iThreshold /= 100;
+; 3650 : 	iThreshold /= 100;
 
 	mov	eax, 1374389535				; 51eb851fH
 	imul	ecx
@@ -5665,9 +5665,9 @@ $LN79@GetSpecial:
 	add	eax, edx
 	pop	ebx
 
-; 3633 : 
-; 3634 : 	return iThreshold;
-; 3635 : }
+; 3651 : 
+; 3652 : 	return iThreshold;
+; 3653 : }
 
 	ret	4
 ?GetSpecialistUpgradeThreshold@CvCityCitizens@@QAEHW4UnitClassTypes@@@Z ENDP ; CvCityCitizens::GetSpecialistUpgradeThreshold
@@ -5734,9 +5734,9 @@ xdata$x	ENDS
 ;	COMDAT ?DoSpawnGreatPerson@CvCityCitizens@@QAEXW4UnitTypes@@_N1@Z
 _TEXT	SEGMENT
 _this$ = -712						; size = 4
-_strSummary$225902 = -708				; size = 80
-_strText$225899 = -628					; size = 80
-_kPopupInfo$225856 = -548				; size = 536
+_strSummary$225944 = -708				; size = 80
+_strText$225941 = -628					; size = 80
+_kPopupInfo$225898 = -548				; size = 536
 __$EHRec$ = -12						; size = 12
 _eUnit$ = 8						; size = 4
 _bIncrementCount$ = 12					; size = 1
@@ -5744,7 +5744,7 @@ _bCountAsProphet$ = 16					; size = 1
 ?DoSpawnGreatPerson@CvCityCitizens@@QAEXW4UnitTypes@@_N1@Z PROC ; CvCityCitizens::DoSpawnGreatPerson, COMDAT
 ; _this$ = ecx
 
-; 3643 : {
+; 3657 : {
 
 	push	-1
 	push	__ehhandler$?DoSpawnGreatPerson@CvCityCitizens@@QAEXW4UnitTypes@@_N1@Z
@@ -5754,9 +5754,9 @@ _bCountAsProphet$ = 16					; size = 1
 	sub	esp, 700				; 000002bcH
 	push	ebx
 
-; 3644 : 	CvAssert(eUnit != NO_UNIT);
-; 3645 : 
-; 3646 : 	if (eUnit == NO_UNIT)
+; 3658 : 	CvAssert(eUnit != NO_UNIT);
+; 3659 : 
+; 3660 : 	if (eUnit == NO_UNIT)
 
 	mov	ebx, DWORD PTR _eUnit$[esp+712]
 	push	ebp
@@ -5765,10 +5765,10 @@ _bCountAsProphet$ = 16					; size = 1
 	cmp	ebx, -1
 	je	$LN1@DoSpawnGre
 
-; 3647 : 		return;	// Better than crashing.
-; 3648 : 
-; 3649 : 	// If it's the active player then show the popup
-; 3650 : 	if(GetCity()->getOwner() == GC.getGame().getActivePlayer())
+; 3661 : 		return;	// Better than crashing.
+; 3662 : 
+; 3663 : 	// If it's the active player then show the popup
+; 3664 : 	if(GetCity()->getOwner() == GC.getGame().getActivePlayer())
 
 	mov	eax, DWORD PTR [ebp]
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
@@ -5778,43 +5778,43 @@ _bCountAsProphet$ = 16					; size = 1
 	cmp	esi, eax
 	jne	SHORT $LN122@DoSpawnGre
 
-; 3651 : 	{
-; 3652 : 		// Don't show in MP
-; 3653 : 		if(!GC.getGame().isNetworkMultiPlayer())	// KWG: Candidate for !GC.getGame().IsOption(GAMEOPTION_SIMULTANEOUS_TURNS)
+; 3665 : 	{
+; 3666 : 		// Don't show in MP
+; 3667 : 		if(!GC.getGame().isNetworkMultiPlayer())	// KWG: Candidate for !GC.getGame().IsOption(GAMEOPTION_SIMULTANEOUS_TURNS)
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?isNetworkMultiPlayer@CvGame@@QBE_NXZ	; CvGame::isNetworkMultiPlayer
 	test	al, al
 	jne	SHORT $LN122@DoSpawnGre
 
-; 3654 : 		{
-; 3655 : 			CvPopupInfo kPopupInfo(BUTTONPOPUP_GREAT_PERSON_REWARD, eUnit, GetCity()->GetID());
+; 3668 : 		{
+; 3669 : 			CvPopupInfo kPopupInfo(BUTTONPOPUP_GREAT_PERSON_REWARD, eUnit, GetCity()->GetID());
 
 	mov	eax, DWORD PTR [ebp]
 	mov	eax, DWORD PTR [eax+120]
 
-; 3656 : 			GC.GetEngineUserInterface()->AddPopup(kPopupInfo);
+; 3670 : 			GC.GetEngineUserInterface()->AddPopup(kPopupInfo);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
-	mov	DWORD PTR _kPopupInfo$225856[esp+728], eax
-	mov	DWORD PTR _kPopupInfo$225856[esp+724], ebx
-	mov	DWORD PTR _kPopupInfo$225856[esp+732], -1
-	mov	DWORD PTR _kPopupInfo$225856[esp+736], 0
-	mov	BYTE PTR _kPopupInfo$225856[esp+740], 0
-	mov	BYTE PTR _kPopupInfo$225856[esp+741], 0
-	mov	DWORD PTR _kPopupInfo$225856[esp+744], 60 ; 0000003cH
-	mov	BYTE PTR _kPopupInfo$225856[esp+748], 0
+	mov	DWORD PTR _kPopupInfo$225898[esp+728], eax
+	mov	DWORD PTR _kPopupInfo$225898[esp+724], ebx
+	mov	DWORD PTR _kPopupInfo$225898[esp+732], -1
+	mov	DWORD PTR _kPopupInfo$225898[esp+736], 0
+	mov	BYTE PTR _kPopupInfo$225898[esp+740], 0
+	mov	BYTE PTR _kPopupInfo$225898[esp+741], 0
+	mov	DWORD PTR _kPopupInfo$225898[esp+744], 60 ; 0000003cH
+	mov	BYTE PTR _kPopupInfo$225898[esp+748], 0
 	mov	eax, DWORD PTR [ecx]
 	mov	eax, DWORD PTR [eax+180]
-	lea	edx, DWORD PTR _kPopupInfo$225856[esp+724]
+	lea	edx, DWORD PTR _kPopupInfo$225898[esp+724]
 	push	edx
 	call	eax
 $LN122@DoSpawnGre:
 
-; 3657 : 		}
-; 3658 : 	}
-; 3659 : 
-; 3660 : 	CvPlayer& kPlayer = GET_PLAYER(GetCity()->getOwner());
+; 3671 : 		}
+; 3672 : 	}
+; 3673 : 
+; 3674 : 	CvPlayer& kPlayer = GET_PLAYER(GetCity()->getOwner());
 
 	mov	ecx, DWORD PTR [ebp]
 	mov	eax, DWORD PTR [ecx+84]
@@ -5822,7 +5822,7 @@ $LN122@DoSpawnGre:
 	imul	eax, 63236				; 0000f704H
 	add	eax, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 
-; 3661 : 	CvUnit* newUnit = kPlayer.initUnit(eUnit, GetCity()->getX(), GetCity()->getY());
+; 3675 : 	CvUnit* newUnit = kPlayer.initUnit(eUnit, GetCity()->getX(), GetCity()->getY());
 
 	push	0
 	push	0
@@ -5839,13 +5839,13 @@ $LN122@DoSpawnGre:
 	mov	ecx, edi
 	call	?initUnit@CvPlayer@@QAEPAVCvUnit@@W4UnitTypes@@HHW4UnitAITypes@@W4DirectionTypes@@_N3HH@Z ; CvPlayer::initUnit
 
-; 3662 : #ifdef AUI_DLLNETMESSAGEHANDLER_FIX_RESPAWN_PROPHET_IF_BEATEN_TO_LAST_RELIGION
-; 3663 : 	if (bSpawnWithNoExpendedTrigger)
-; 3664 : 		newUnit->SetIgnoreExpended(true);
-; 3665 : #endif
-; 3666 : 
-; 3667 : 	// Bump up the count
-; 3668 : 	if(bIncrementCount && !bCountAsProphet)
+; 3676 : #ifdef AUI_DLLNETMESSAGEHANDLER_FIX_RESPAWN_PROPHET_IF_BEATEN_TO_LAST_RELIGION
+; 3677 : 	if (bSpawnWithNoExpendedTrigger)
+; 3678 : 		newUnit->SetIgnoreExpended(true);
+; 3679 : #endif
+; 3680 : 
+; 3681 : 	// Bump up the count
+; 3682 : 	if(bIncrementCount && !bCountAsProphet)
 
 	cmp	BYTE PTR _bIncrementCount$[esp+724], 0
 	mov	esi, eax
@@ -5853,43 +5853,43 @@ $LN122@DoSpawnGre:
 	cmp	BYTE PTR _bCountAsProphet$[esp+724], 0
 	jne	$LN121@DoSpawnGre
 
-; 3669 : 	{
-; 3670 : 		if(newUnit->IsGreatGeneral())
+; 3683 : 	{
+; 3684 : 		if(newUnit->IsGreatGeneral())
 
 	mov	ecx, esi
 	call	?IsGreatGeneral@CvUnit@@QBE_NXZ		; CvUnit::IsGreatGeneral
 	test	al, al
 	je	SHORT $LN26@DoSpawnGre
 
-; 3671 : 		{
-; 3672 : 			kPlayer.incrementGreatGeneralsCreated();
+; 3685 : 		{
+; 3686 : 			kPlayer.incrementGreatGeneralsCreated();
 
 	mov	ecx, edi
 	call	?incrementGreatGeneralsCreated@CvPlayer@@QAEXXZ ; CvPlayer::incrementGreatGeneralsCreated
 	jmp	$LN125@DoSpawnGre
 $LN26@DoSpawnGre:
 
-; 3673 : 		}
-; 3674 : 		else if(newUnit->IsGreatAdmiral())
+; 3687 : 		}
+; 3688 : 		else if(newUnit->IsGreatAdmiral())
 
 	mov	ecx, esi
 	call	?IsGreatAdmiral@CvUnit@@QBE_NXZ		; CvUnit::IsGreatAdmiral
 	test	al, al
 	je	SHORT $LN24@DoSpawnGre
 
-; 3675 : 		{
-; 3676 : 			kPlayer.incrementGreatAdmiralsCreated();
+; 3689 : 		{
+; 3690 : 			kPlayer.incrementGreatAdmiralsCreated();
 
 	mov	ecx, edi
 	call	?incrementGreatAdmiralsCreated@CvPlayer@@QAEXXZ ; CvPlayer::incrementGreatAdmiralsCreated
 
-; 3677 : 			CvPlot *pSpawnPlot = kPlayer.GetGreatAdmiralSpawnPlot(newUnit);
+; 3691 : 			CvPlot *pSpawnPlot = kPlayer.GetGreatAdmiralSpawnPlot(newUnit);
 
 	push	esi
 	mov	ecx, edi
 	call	?GetGreatAdmiralSpawnPlot@CvPlayer@@QAEPAVCvPlot@@PAVCvUnit@@@Z ; CvPlayer::GetGreatAdmiralSpawnPlot
 
-; 3678 : 			if (newUnit->plot() != pSpawnPlot)
+; 3692 : 			if (newUnit->plot() != pSpawnPlot)
 
 	mov	ecx, esi
 	mov	ebx, eax
@@ -5897,8 +5897,8 @@ $LN26@DoSpawnGre:
 	cmp	eax, ebx
 	je	$LN125@DoSpawnGre
 
-; 3679 : 			{
-; 3680 : 				newUnit->setXY(pSpawnPlot->getX(), pSpawnPlot->getY());
+; 3693 : 			{
+; 3694 : 				newUnit->setXY(pSpawnPlot->getX(), pSpawnPlot->getY());
 
 	movsx	ecx, WORD PTR [ebx+2]
 	movsx	edx, WORD PTR [ebx]
@@ -5912,188 +5912,188 @@ $LN26@DoSpawnGre:
 	mov	ecx, esi
 	call	?setXY@CvUnit@@QAEXHH_N0000@Z		; CvUnit::setXY
 
-; 3681 : 			}
-; 3682 : 		}
+; 3695 : 			}
+; 3696 : 		}
 
 	jmp	$LN125@DoSpawnGre
 $LN24@DoSpawnGre:
 
-; 3683 : 		else if (newUnit->getUnitInfo().GetUnitClassType() == GC.getInfoTypeForString("UNITCLASS_WRITER"))
+; 3697 : 		else if (newUnit->getUnitInfo().GetUnitClassType() == GC.getInfoTypeForString("UNITCLASS_WRITER"))
 
 	mov	ecx, esi
 	call	?getUnitInfo@CvUnit@@QBEAAVCvUnitEntry@@XZ ; CvUnit::getUnitInfo
 	mov	ecx, eax
 	call	?GetUnitClassType@CvUnitEntry@@QBEHXZ	; CvUnitEntry::GetUnitClassType
 	push	0
-	push	OFFSET $SG225867
+	push	OFFSET $SG225909
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	ebx, eax
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	cmp	ebx, eax
 	jne	SHORT $LN21@DoSpawnGre
 
-; 3684 : 		{
-; 3685 : 			kPlayer.incrementGreatWritersCreated();
+; 3698 : 		{
+; 3699 : 			kPlayer.incrementGreatWritersCreated();
 
 	mov	ecx, edi
 	call	?incrementGreatWritersCreated@CvPlayer@@QAEXXZ ; CvPlayer::incrementGreatWritersCreated
 	jmp	$LN125@DoSpawnGre
 $LN21@DoSpawnGre:
 
-; 3686 : 		}							
-; 3687 : 		else if (newUnit->getUnitInfo().GetUnitClassType() == GC.getInfoTypeForString("UNITCLASS_ARTIST"))
+; 3700 : 		}							
+; 3701 : 		else if (newUnit->getUnitInfo().GetUnitClassType() == GC.getInfoTypeForString("UNITCLASS_ARTIST"))
 
 	mov	ecx, esi
 	call	?getUnitInfo@CvUnit@@QBEAAVCvUnitEntry@@XZ ; CvUnit::getUnitInfo
 	mov	ecx, eax
 	call	?GetUnitClassType@CvUnitEntry@@QBEHXZ	; CvUnitEntry::GetUnitClassType
 	push	0
-	push	OFFSET $SG225870
+	push	OFFSET $SG225912
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	ebx, eax
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	cmp	ebx, eax
 	jne	SHORT $LN19@DoSpawnGre
 
-; 3688 : 		{
-; 3689 : 			kPlayer.incrementGreatArtistsCreated();
+; 3702 : 		{
+; 3703 : 			kPlayer.incrementGreatArtistsCreated();
 
 	mov	ecx, edi
 	call	?incrementGreatArtistsCreated@CvPlayer@@QAEXXZ ; CvPlayer::incrementGreatArtistsCreated
 	jmp	$LN125@DoSpawnGre
 $LN19@DoSpawnGre:
 
-; 3690 : 		}							
-; 3691 : 		else if (newUnit->getUnitInfo().GetUnitClassType() == GC.getInfoTypeForString("UNITCLASS_MUSICIAN"))
+; 3704 : 		}							
+; 3705 : 		else if (newUnit->getUnitInfo().GetUnitClassType() == GC.getInfoTypeForString("UNITCLASS_MUSICIAN"))
 
 	mov	ecx, esi
 	call	?getUnitInfo@CvUnit@@QBEAAVCvUnitEntry@@XZ ; CvUnit::getUnitInfo
 	mov	ecx, eax
 	call	?GetUnitClassType@CvUnitEntry@@QBEHXZ	; CvUnitEntry::GetUnitClassType
 	push	0
-	push	OFFSET $SG225873
+	push	OFFSET $SG225915
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	ebx, eax
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	cmp	ebx, eax
 	jne	SHORT $LN17@DoSpawnGre
 
-; 3692 : 		{
-; 3693 : 			kPlayer.incrementGreatMusiciansCreated();
+; 3706 : 		{
+; 3707 : 			kPlayer.incrementGreatMusiciansCreated();
 
 	mov	ecx, edi
 	call	?incrementGreatMusiciansCreated@CvPlayer@@QAEXXZ ; CvPlayer::incrementGreatMusiciansCreated
 	jmp	$LN125@DoSpawnGre
 $LN17@DoSpawnGre:
 
-; 3694 : 		}		
-; 3695 : 		// GJS: Start separation of great people
-; 3696 : 		else if (newUnit->getUnitInfo().GetUnitClassType() == GC.getInfoTypeForString("UNITCLASS_SCIENTIST"))
+; 3708 : 		}		
+; 3709 : 		// GJS: Start separation of great people
+; 3710 : 		else if (newUnit->getUnitInfo().GetUnitClassType() == GC.getInfoTypeForString("UNITCLASS_SCIENTIST"))
 
 	mov	ecx, esi
 	call	?getUnitInfo@CvUnit@@QBEAAVCvUnitEntry@@XZ ; CvUnit::getUnitInfo
 	mov	ecx, eax
 	call	?GetUnitClassType@CvUnitEntry@@QBEHXZ	; CvUnitEntry::GetUnitClassType
 	push	0
-	push	OFFSET $SG225876
+	push	OFFSET $SG225918
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	ebx, eax
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	cmp	ebx, eax
 	jne	SHORT $LN15@DoSpawnGre
 
-; 3697 : 		{
-; 3698 : 			kPlayer.incrementGreatScientistsCreated();
+; 3711 : 		{
+; 3712 : 			kPlayer.incrementGreatScientistsCreated();
 
 	mov	ecx, edi
 	call	?incrementGreatScientistsCreated@CvPlayer@@QAEXXZ ; CvPlayer::incrementGreatScientistsCreated
 	jmp	$LN125@DoSpawnGre
 $LN15@DoSpawnGre:
 
-; 3699 : 		}
-; 3700 : 		else if (newUnit->getUnitInfo().GetUnitClassType() == GC.getInfoTypeForString("UNITCLASS_ENGINEER"))
+; 3713 : 		}
+; 3714 : 		else if (newUnit->getUnitInfo().GetUnitClassType() == GC.getInfoTypeForString("UNITCLASS_ENGINEER"))
 
 	mov	ecx, esi
 	call	?getUnitInfo@CvUnit@@QBEAAVCvUnitEntry@@XZ ; CvUnit::getUnitInfo
 	mov	ecx, eax
 	call	?GetUnitClassType@CvUnitEntry@@QBEHXZ	; CvUnitEntry::GetUnitClassType
 	push	0
-	push	OFFSET $SG225879
+	push	OFFSET $SG225921
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	ebx, eax
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	cmp	ebx, eax
 	jne	SHORT $LN13@DoSpawnGre
 
-; 3701 : 		{
-; 3702 : 			kPlayer.incrementGreatEngineersCreated();
+; 3715 : 		{
+; 3716 : 			kPlayer.incrementGreatEngineersCreated();
 
 	mov	ecx, edi
 	call	?incrementGreatEngineersCreated@CvPlayer@@QAEXXZ ; CvPlayer::incrementGreatEngineersCreated
 	jmp	SHORT $LN125@DoSpawnGre
 $LN13@DoSpawnGre:
 
-; 3703 : 		}
-; 3704 : 		else if (newUnit->getUnitInfo().GetUnitClassType() == GC.getInfoTypeForString("UNITCLASS_MERCHANT"))
+; 3717 : 		}
+; 3718 : 		else if (newUnit->getUnitInfo().GetUnitClassType() == GC.getInfoTypeForString("UNITCLASS_MERCHANT"))
 
 	mov	ecx, esi
 	call	?getUnitInfo@CvUnit@@QBEAAVCvUnitEntry@@XZ ; CvUnit::getUnitInfo
 	mov	ecx, eax
 	call	?GetUnitClassType@CvUnitEntry@@QBEHXZ	; CvUnitEntry::GetUnitClassType
 	push	0
-	push	OFFSET $SG225882
+	push	OFFSET $SG225924
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	ebx, eax
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	cmp	ebx, eax
 	jne	SHORT $LN11@DoSpawnGre
 
-; 3705 : 		{
-; 3706 : 			kPlayer.incrementGreatMerchantsCreated();
+; 3719 : 		{
+; 3720 : 			kPlayer.incrementGreatMerchantsCreated();
 
 	mov	ecx, edi
 	call	?incrementGreatMerchantsCreated@CvPlayer@@QAEXXZ ; CvPlayer::incrementGreatMerchantsCreated
 	jmp	SHORT $LN125@DoSpawnGre
 $LN11@DoSpawnGre:
 
-; 3707 : 		}
-; 3708 : 		else if (newUnit->getUnitInfo().GetUnitClassType() == GC.getInfoTypeForString("UNITCLASS_PROPHET"))
+; 3721 : 		}
+; 3722 : 		else if (newUnit->getUnitInfo().GetUnitClassType() == GC.getInfoTypeForString("UNITCLASS_PROPHET"))
 
 	mov	ecx, esi
 	call	?getUnitInfo@CvUnit@@QBEAAVCvUnitEntry@@XZ ; CvUnit::getUnitInfo
 	mov	ecx, eax
 	call	?GetUnitClassType@CvUnitEntry@@QBEHXZ	; CvUnitEntry::GetUnitClassType
 	push	0
-	push	OFFSET $SG225885
+	push	OFFSET $SG225927
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	ebx, eax
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 
-; 3709 : 		{
-; 3710 : 			kPlayer.incrementGreatProphetsCreated();
+; 3723 : 		{
+; 3724 : 			kPlayer.incrementGreatProphetsCreated();
 
 	mov	ecx, edi
 	cmp	ebx, eax
 	jne	SHORT $LN9@DoSpawnGre
 	call	?incrementGreatProphetsCreated@CvPlayer@@QAEXXZ ; CvPlayer::incrementGreatProphetsCreated
 
-; 3711 : 		}
-; 3712 : 		// GJS: End separation of great people
-; 3713 : 		else
+; 3725 : 		}
+; 3726 : 		// GJS: End separation of great people
+; 3727 : 		else
 
 	jmp	SHORT $LN125@DoSpawnGre
 $LN9@DoSpawnGre:
 
-; 3714 : 		{
-; 3715 : 			kPlayer.incrementGreatPeopleCreated();
+; 3728 : 		{
+; 3729 : 			kPlayer.incrementGreatPeopleCreated();
 
 	call	?incrementGreatPeopleCreated@CvPlayer@@QAEXXZ ; CvPlayer::incrementGreatPeopleCreated
 
-; 3716 : 		}
-; 3717 : 	}
-; 3718 : 
-; 3719 : 	// NQMP GJS: In order to make "free" Great Prophets truly free, had to remove the 2nd half of the check below, left it commented out though in case I screw something up.
-; 3720 : 	if(bCountAsProphet)// || newUnit->getUnitInfo().IsFoundReligion())
+; 3730 : 		}
+; 3731 : 	}
+; 3732 : 
+; 3733 : 	// NQMP GJS: In order to make "free" Great Prophets truly free, had to remove the 2nd half of the check below, left it commented out though in case I screw something up.
+; 3734 : 	if(bCountAsProphet)// || newUnit->getUnitInfo().IsFoundReligion())
 
 	jmp	SHORT $LN125@DoSpawnGre
 $LN8@DoSpawnGre:
@@ -6101,8 +6101,8 @@ $LN8@DoSpawnGre:
 	je	SHORT $LN125@DoSpawnGre
 $LN121@DoSpawnGre:
 
-; 3721 : 	{
-; 3722 : 		kPlayer.GetReligions()->ChangeNumProphetsSpawned(1);
+; 3735 : 	{
+; 3736 : 		kPlayer.GetReligions()->ChangeNumProphetsSpawned(1);
 
 	push	1
 	mov	ecx, edi
@@ -6111,10 +6111,10 @@ $LN121@DoSpawnGre:
 	call	?ChangeNumProphetsSpawned@CvPlayerReligions@@QAEXH@Z ; CvPlayerReligions::ChangeNumProphetsSpawned
 $LN125@DoSpawnGre:
 
-; 3723 : 	}
-; 3724 : 
-; 3725 : 	// Setup prophet properly
-; 3726 : 	if(newUnit->getUnitInfo().IsFoundReligion())
+; 3737 : 	}
+; 3738 : 
+; 3739 : 	// Setup prophet properly
+; 3740 : 	if(newUnit->getUnitInfo().IsFoundReligion())
 
 	mov	ecx, esi
 	call	?getUnitInfo@CvUnit@@QBEAAVCvUnitEntry@@XZ ; CvUnit::getUnitInfo
@@ -6123,15 +6123,15 @@ $LN125@DoSpawnGre:
 	test	al, al
 	je	SHORT $LN89@DoSpawnGre
 
-; 3727 : 	{
-; 3728 : 		ReligionTypes eReligion = kPlayer.GetReligions()->GetReligionCreatedByPlayer();
+; 3741 : 	{
+; 3742 : 		ReligionTypes eReligion = kPlayer.GetReligions()->GetReligionCreatedByPlayer();
 
 	mov	ecx, edi
 	call	?GetReligions@CvPlayer@@QBEPAVCvPlayerReligions@@XZ ; CvPlayer::GetReligions
 	mov	ecx, eax
 	call	?GetReligionCreatedByPlayer@CvPlayerReligions@@QBE?AW4ReligionTypes@@XZ ; CvPlayerReligions::GetReligionCreatedByPlayer
 
-; 3729 : 		int iReligionSpreads = newUnit->getUnitInfo().GetReligionSpreads();
+; 3743 : 		int iReligionSpreads = newUnit->getUnitInfo().GetReligionSpreads();
 
 	mov	ecx, esi
 	mov	ebx, eax
@@ -6139,7 +6139,7 @@ $LN125@DoSpawnGre:
 	mov	ecx, eax
 	call	?GetReligionSpreads@CvUnitEntry@@QBEHXZ	; CvUnitEntry::GetReligionSpreads
 
-; 3730 : 		int iReligiousStrength = newUnit->getUnitInfo().GetReligiousStrength();
+; 3744 : 		int iReligiousStrength = newUnit->getUnitInfo().GetReligiousStrength();
 
 	mov	ecx, esi
 	mov	ebp, eax
@@ -6147,25 +6147,25 @@ $LN125@DoSpawnGre:
 	mov	ecx, eax
 	call	?GetReligiousStrength@CvUnitEntry@@QBEHXZ ; CvUnitEntry::GetReligiousStrength
 
-; 3731 : 		if(iReligionSpreads > 0 && eReligion > RELIGION_PANTHEON)
+; 3745 : 		if(iReligionSpreads > 0 && eReligion > RELIGION_PANTHEON)
 
 	test	ebp, ebp
 	jle	SHORT $LN124@DoSpawnGre
 	test	ebx, ebx
 	jle	SHORT $LN124@DoSpawnGre
 
-; 3732 : 		{
-; 3733 : 			newUnit->GetReligionData()->SetSpreadsLeft(iReligionSpreads);
+; 3746 : 		{
+; 3747 : 			newUnit->GetReligionData()->SetSpreadsLeft(iReligionSpreads);
 
 	mov	ecx, DWORD PTR [esi+1888]
 	mov	DWORD PTR [ecx+8], ebp
 
-; 3734 : 			newUnit->GetReligionData()->SetReligiousStrength(iReligiousStrength);
+; 3748 : 			newUnit->GetReligionData()->SetReligiousStrength(iReligiousStrength);
 
 	mov	ecx, DWORD PTR [esi+1888]
 	mov	DWORD PTR [ecx+4], eax
 
-; 3735 : 			newUnit->GetReligionData()->SetReligion(eReligion);
+; 3749 : 			newUnit->GetReligionData()->SetReligion(eReligion);
 
 	mov	eax, DWORD PTR [esi+1888]
 	mov	DWORD PTR [eax], ebx
@@ -6173,10 +6173,10 @@ $LN124@DoSpawnGre:
 	mov	ebp, DWORD PTR _this$[esp+728]
 $LN89@DoSpawnGre:
 
-; 3736 : 		}
-; 3737 : 	}
-; 3738 : 
-; 3739 : 	if (newUnit->getUnitInfo().GetOneShotTourism() > 0)
+; 3750 : 		}
+; 3751 : 	}
+; 3752 : 
+; 3753 : 	if (newUnit->getUnitInfo().GetOneShotTourism() > 0)
 
 	mov	ecx, esi
 	call	?getUnitInfo@CvUnit@@QBEAAVCvUnitEntry@@XZ ; CvUnit::getUnitInfo
@@ -6185,8 +6185,8 @@ $LN89@DoSpawnGre:
 	test	eax, eax
 	jle	SHORT $LN4@DoSpawnGre
 
-; 3740 : 	{
-; 3741 : 		newUnit->SetTourismBlastStrength(kPlayer.GetCulture()->GetTourismBlastStrength(newUnit->getUnitInfo().GetOneShotTourism()));
+; 3754 : 	{
+; 3755 : 		newUnit->SetTourismBlastStrength(kPlayer.GetCulture()->GetTourismBlastStrength(newUnit->getUnitInfo().GetOneShotTourism()));
 
 	mov	ecx, esi
 	call	?getUnitInfo@CvUnit@@QBEAAVCvUnitEntry@@XZ ; CvUnit::getUnitInfo
@@ -6202,10 +6202,10 @@ $LN89@DoSpawnGre:
 	call	?SetTourismBlastStrength@CvUnit@@QAEXH@Z ; CvUnit::SetTourismBlastStrength
 $LN4@DoSpawnGre:
 
-; 3742 : 	}
-; 3743 : 
-; 3744 : 	// GJS: Great Scientists now bulb for science at point of birth, not current science 
-; 3745 : 	if (newUnit->getUnitInfo().GetBaseBeakersTurnsToCount() > 0)
+; 3756 : 	}
+; 3757 : 
+; 3758 : 	// GJS: Great Scientists now bulb for science at point of birth, not current science 
+; 3759 : 	if (newUnit->getUnitInfo().GetBaseBeakersTurnsToCount() > 0)
 
 	mov	ecx, esi
 	call	?getUnitInfo@CvUnit@@QBEAAVCvUnitEntry@@XZ ; CvUnit::getUnitInfo
@@ -6214,8 +6214,8 @@ $LN4@DoSpawnGre:
 	test	eax, eax
 	jle	SHORT $LN3@DoSpawnGre
 
-; 3746 : 	{
-; 3747 : 		newUnit->SetResearchBulbAmount(kPlayer.GetScienceYieldFromPreviousTurns(GC.getGame().getGameTurn(), newUnit->getUnitInfo().GetBaseBeakersTurnsToCount()));
+; 3760 : 	{
+; 3761 : 		newUnit->SetResearchBulbAmount(kPlayer.GetScienceYieldFromPreviousTurns(GC.getGame().getGameTurn(), newUnit->getUnitInfo().GetBaseBeakersTurnsToCount()));
 
 	mov	ebx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	mov	ecx, esi
@@ -6233,10 +6233,10 @@ $LN4@DoSpawnGre:
 	call	?SetResearchBulbAmount@CvUnit@@QAEXH@Z	; CvUnit::SetResearchBulbAmount
 $LN3@DoSpawnGre:
 
-; 3748 : 	}
-; 3749 : 
-; 3750 : #ifdef NQ_WAR_HERO
-; 3751 : 	if (newUnit->IsGreatGeneral() && kPlayer.IsWarHero())
+; 3762 : 	}
+; 3763 : 
+; 3764 : #ifdef NQ_WAR_HERO
+; 3765 : 	if (newUnit->IsGreatGeneral() && kPlayer.IsWarHero())
 
 	mov	ecx, esi
 	call	?IsGreatGeneral@CvUnit@@QBE_NXZ		; CvUnit::IsGreatGeneral
@@ -6247,12 +6247,12 @@ $LN3@DoSpawnGre:
 	test	al, al
 	je	SHORT $LN126@DoSpawnGre
 
-; 3752 : 	{
-; 3753 : 		kPlayer.addFreeUnit((UnitTypes)GC.getInfoTypeForString("UNIT_ARTIST"));
+; 3766 : 	{
+; 3767 : 		kPlayer.addFreeUnit((UnitTypes)GC.getInfoTypeForString("UNIT_ARTIST"));
 
 	push	-1
 	push	0
-	push	OFFSET $SG225897
+	push	OFFSET $SG225939
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	push	eax
@@ -6260,11 +6260,11 @@ $LN3@DoSpawnGre:
 	call	?addFreeUnit@CvPlayer@@QAEPAVCvPlot@@W4UnitTypes@@W4UnitAITypes@@@Z ; CvPlayer::addFreeUnit
 $LN126@DoSpawnGre:
 
-; 3754 : 	}
-; 3755 : #endif
-; 3756 : 
-; 3757 : 	// Notification
-; 3758 : 	if(GET_PLAYER(GetOwner()).GetNotifications())
+; 3768 : 	}
+; 3769 : #endif
+; 3770 : 
+; 3771 : 	// Notification
+; 3772 : 	if(GET_PLAYER(GetOwner()).GetNotifications())
 
 	mov	eax, DWORD PTR [ebp]
 	mov	eax, DWORD PTR [eax+84]
@@ -6275,25 +6275,25 @@ $LN126@DoSpawnGre:
 	test	eax, eax
 	je	$LN129@DoSpawnGre
 
-; 3759 : 	{
-; 3760 : 		Localization::String strText = Localization::Lookup("TXT_KEY_NOTIFICATION_GREAT_PERSON_ACTIVE_PLAYER");
+; 3773 : 	{
+; 3774 : 		Localization::String strText = Localization::Lookup("TXT_KEY_NOTIFICATION_GREAT_PERSON_ACTIVE_PLAYER");
 
 	mov	esi, DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
-	lea	ecx, DWORD PTR _strText$225899[esp+728]
-	push	OFFSET $SG225901
+	lea	ecx, DWORD PTR _strText$225941[esp+728]
+	push	OFFSET $SG225943
 	push	ecx
 	call	esi
 
-; 3761 : 		Localization::String strSummary = Localization::Lookup("TXT_KEY_NOTIFICATION_SUMMARY_GREAT_PERSON");
+; 3775 : 		Localization::String strSummary = Localization::Lookup("TXT_KEY_NOTIFICATION_SUMMARY_GREAT_PERSON");
 
-	lea	edx, DWORD PTR _strSummary$225902[esp+736]
-	push	OFFSET $SG225904
+	lea	edx, DWORD PTR _strSummary$225944[esp+736]
+	push	OFFSET $SG225946
 	push	edx
 	mov	DWORD PTR __$EHRec$[esp+752], 0
 	call	esi
 	add	esp, 16					; 00000010H
 
-; 3762 : 		GET_PLAYER(GetOwner()).GetNotifications()->Add(NOTIFICATION_GREAT_PERSON_ACTIVE_PLAYER, strText.toUTF8(), strSummary.toUTF8(), GetCity()->getX(), GetCity()->getY(), eUnit);
+; 3776 : 		GET_PLAYER(GetOwner()).GetNotifications()->Add(NOTIFICATION_GREAT_PERSON_ACTIVE_PLAYER, strText.toUTF8(), strSummary.toUTF8(), GetCity()->getX(), GetCity()->getY(), eUnit);
 
 	mov	eax, DWORD PTR [ebp]
 	mov	ecx, DWORD PTR [eax+108]
@@ -6308,11 +6308,11 @@ $LN126@DoSpawnGre:
 	push	eax
 	push	ecx
 	push	edx
-	lea	ecx, DWORD PTR _strSummary$225902[esp+744]
+	lea	ecx, DWORD PTR _strSummary$225944[esp+744]
 	mov	BYTE PTR __$EHRec$[esp+752], 1
 	call	edi
 	push	eax
-	lea	ecx, DWORD PTR _strText$225899[esp+748]
+	lea	ecx, DWORD PTR _strText$225941[esp+748]
 	call	edi
 	push	eax
 	push	-2083717098				; 83cd0016H
@@ -6321,13 +6321,13 @@ $LN126@DoSpawnGre:
 	mov	ecx, eax
 	call	?Add@CvNotifications@@QAEHW4NotificationTypes@@PBD1HHHH@Z ; CvNotifications::Add
 
-; 3763 : 	}
+; 3777 : 	}
 
 	mov	esi, DWORD PTR __imp_??1String@Localization@@UAE@XZ
-	lea	ecx, DWORD PTR _strSummary$225902[esp+728]
+	lea	ecx, DWORD PTR _strSummary$225944[esp+728]
 	mov	BYTE PTR __$EHRec$[esp+736], 0
 	call	esi
-	lea	ecx, DWORD PTR _strText$225899[esp+728]
+	lea	ecx, DWORD PTR _strText$225941[esp+728]
 	mov	DWORD PTR __$EHRec$[esp+736], -1
 	call	esi
 $LN129@DoSpawnGre:
@@ -6335,7 +6335,7 @@ $LN129@DoSpawnGre:
 	pop	esi
 $LN1@DoSpawnGre:
 
-; 3764 : }
+; 3778 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+720]
 	pop	ebp
@@ -6347,10 +6347,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?DoSpawnGreatPerson@CvCityCitizens@@QAEXW4UnitTypes@@_N1@Z$0:
-	lea	ecx, DWORD PTR _strText$225899[ebp]
+	lea	ecx, DWORD PTR _strText$225941[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?DoSpawnGreatPerson@CvCityCitizens@@QAEXW4UnitTypes@@_N1@Z$1:
-	lea	ecx, DWORD PTR _strSummary$225902[ebp]
+	lea	ecx, DWORD PTR _strSummary$225944[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __ehhandler$?DoSpawnGreatPerson@CvCityCitizens@@QAEXW4UnitTypes@@_N1@Z:
 	mov	eax, OFFSET __ehfuncinfo$?DoSpawnGreatPerson@CvCityCitizens@@QAEXW4UnitTypes@@_N1@Z
@@ -6570,12 +6570,12 @@ $LN92@IsAIWantSp:
 	xor	al, al
 	pop	ebx
 
-; 1176 : 	{
-; 1177 : 		return true;
-; 1178 : 	}
-; 1179 : 
-; 1180 : 	return false;
-; 1181 : }
+; 1194 : 	{
+; 1195 : 		return true;
+; 1196 : 	}
+; 1197 : 
+; 1198 : 	return false;
+; 1199 : }
 
 	ret	0
 $LN91@IsAIWantSp:
@@ -7016,20 +7016,26 @@ $LN60@IsAIWantSp:
 	jl	$LL61@IsAIWantSp
 
 ; 1001 : 					}
-; 1002 : 				}
-; 1003 : 			}
-; 1004 : 		}
-; 1005 : 	}
-; 1006 : 	else if(eFocusType == CITY_AI_FOCUS_TYPE_PRODUCTION)
+; 1002 : #ifdef LEK_TRAIT_SPECIALIST_YIELD_MAX_ONE
+; 1003 : 					if(GetPlayer()->GetPlayerTraits()->GetAnySpecificSpecialistYieldChange(eSpecialist, YIELD_SCIENCE) > 0)
+; 1004 : 					{
+; 1005 : 						iWeight *= 3;
+; 1006 : 					}
+; 1007 : #endif
+; 1008 : 				}
+; 1009 : 			}
+; 1010 : 		}
+; 1011 : 	}
+; 1012 : 	else if(eFocusType == CITY_AI_FOCUS_TYPE_PRODUCTION)
 
 	jmp	$LN8@IsAIWantSp
 $LN62@IsAIWantSp:
 	cmp	edi, 1
 	jne	$LN52@IsAIWantSp
 
-; 1007 : 	{
-; 1008 : 		// Loop through all Buildings
-; 1009 : 		for(int iBuildingLoop = 0; iBuildingLoop < GC.getNumBuildingInfos(); iBuildingLoop++)
+; 1013 : 	{
+; 1014 : 		// Loop through all Buildings
+; 1015 : 		for(int iBuildingLoop = 0; iBuildingLoop < GC.getNumBuildingInfos(); iBuildingLoop++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	xor	edi, edi
@@ -7039,23 +7045,23 @@ $LN62@IsAIWantSp:
 	npad	8
 $LL51@IsAIWantSp:
 
-; 1010 : 		{
-; 1011 : 			const BuildingTypes eBuilding = static_cast<BuildingTypes>(iBuildingLoop);
-; 1012 : 			CvBuildingEntry* pkBuildingInfo = GC.getBuildingInfo(eBuilding);
+; 1016 : 		{
+; 1017 : 			const BuildingTypes eBuilding = static_cast<BuildingTypes>(iBuildingLoop);
+; 1018 : 			CvBuildingEntry* pkBuildingInfo = GC.getBuildingInfo(eBuilding);
 
 	push	edi
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getBuildingInfo@CvGlobals@@QAEPAVCvBuildingEntry@@W4BuildingTypes@@@Z ; CvGlobals::getBuildingInfo
 	mov	esi, eax
 
-; 1013 : 			if(pkBuildingInfo)
+; 1019 : 			if(pkBuildingInfo)
 
 	test	esi, esi
 	je	$LN50@IsAIWantSp
 
-; 1014 : 			{
-; 1015 : 				// Have this Building in the City?
-; 1016 : 				if(m_pCity->GetCityBuildings()->GetNumBuilding(eBuilding) > 0)
+; 1020 : 			{
+; 1021 : 				// Have this Building in the City?
+; 1022 : 				if(m_pCity->GetCityBuildings()->GetNumBuilding(eBuilding) > 0)
 
 	mov	ecx, DWORD PTR [ebx]
 	push	edi
@@ -7065,9 +7071,9 @@ $LL51@IsAIWantSp:
 	test	eax, eax
 	jle	$LN50@IsAIWantSp
 
-; 1017 : 				{
-; 1018 : 					// Can't add more than the max
-; 1019 : 					if(IsCanAddSpecialistToBuilding(eBuilding))
+; 1023 : 				{
+; 1024 : 					// Can't add more than the max
+; 1025 : 					if(IsCanAddSpecialistToBuilding(eBuilding))
 
 	push	edi
 	mov	ecx, ebx
@@ -7075,20 +7081,20 @@ $LL51@IsAIWantSp:
 	test	al, al
 	je	$LN50@IsAIWantSp
 
-; 1020 : 					{
-; 1021 : 						SpecialistTypes eSpecialist = (SpecialistTypes) pkBuildingInfo->GetSpecialistType();
+; 1026 : 					{
+; 1027 : 						SpecialistTypes eSpecialist = (SpecialistTypes) pkBuildingInfo->GetSpecialistType();
 
 	mov	ecx, esi
 	call	?GetSpecialistType@CvBuildingEntry@@QBEHXZ ; CvBuildingEntry::GetSpecialistType
 	mov	esi, eax
 
-; 1022 : 						CvSpecialistInfo* pSpecialistInfo = GC.getSpecialistInfo(eSpecialist);
+; 1028 : 						CvSpecialistInfo* pSpecialistInfo = GC.getSpecialistInfo(eSpecialist);
 
 	push	esi
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getSpecialistInfo@CvGlobals@@QAEPAVCvSpecialistInfo@@W4SpecialistTypes@@@Z ; CvGlobals::getSpecialistInfo
 
-; 1023 : 						if(NULL != pSpecialistInfo && pSpecialistInfo->getYieldChange(YIELD_PRODUCTION) > 0)
+; 1029 : 						if(NULL != pSpecialistInfo && pSpecialistInfo->getYieldChange(YIELD_PRODUCTION) > 0)
 
 	test	eax, eax
 	je	SHORT $LN45@IsAIWantSp
@@ -7098,13 +7104,13 @@ $LL51@IsAIWantSp:
 	test	eax, eax
 	jle	SHORT $LN45@IsAIWantSp
 
-; 1024 : 						{
-; 1025 : 							iWeight *= 150;
+; 1030 : 						{
+; 1031 : 							iWeight *= 150;
 
 	mov	ecx, ebp
 	imul	ecx, 150				; 00000096H
 
-; 1026 : 							iWeight /= 100;
+; 1032 : 							iWeight /= 100;
 
 	mov	eax, 1374389535				; 51eb851fH
 	imul	ecx
@@ -7115,9 +7121,9 @@ $LL51@IsAIWantSp:
 	mov	ebp, eax
 $LN45@IsAIWantSp:
 
-; 1027 : 						}
-; 1028 : 
-; 1029 : 						if(GetPlayer()->getSpecialistExtraYield(YIELD_PRODUCTION) > 0)
+; 1033 : 						}
+; 1034 : 
+; 1035 : 						if(GetPlayer()->getSpecialistExtraYield(YIELD_PRODUCTION) > 0)
 
 	mov	ecx, DWORD PTR [ebx]
 	mov	ecx, DWORD PTR [ecx+84]
@@ -7128,15 +7134,15 @@ $LN45@IsAIWantSp:
 	test	eax, eax
 	jle	SHORT $LN44@IsAIWantSp
 
-; 1030 : 						{
-; 1031 : 							iWeight *= 2;
+; 1036 : 						{
+; 1037 : 							iWeight *= 2;
 
 	add	ebp, ebp
 $LN44@IsAIWantSp:
 
-; 1032 : 						}
-; 1033 : 
-; 1034 : 						if(GetPlayer()->GetPlayerTraits()->GetSpecialistYieldChange(eSpecialist, YIELD_PRODUCTION) > 0)
+; 1038 : 						}
+; 1039 : 
+; 1040 : 						if(GetPlayer()->GetPlayerTraits()->GetSpecialistYieldChange(eSpecialist, YIELD_PRODUCTION) > 0)
 
 	mov	edx, DWORD PTR [ebx]
 	mov	ecx, DWORD PTR [edx+84]
@@ -7150,15 +7156,15 @@ $LN44@IsAIWantSp:
 	test	eax, eax
 	jle	SHORT $LN50@IsAIWantSp
 
-; 1035 : 						{
-; 1036 : 							iWeight *= 2;
+; 1041 : 						{
+; 1042 : 							iWeight *= 2;
 
 	add	ebp, ebp
 $LN50@IsAIWantSp:
 
-; 1007 : 	{
-; 1008 : 		// Loop through all Buildings
-; 1009 : 		for(int iBuildingLoop = 0; iBuildingLoop < GC.getNumBuildingInfos(); iBuildingLoop++)
+; 1013 : 	{
+; 1014 : 		// Loop through all Buildings
+; 1015 : 		for(int iBuildingLoop = 0; iBuildingLoop < GC.getNumBuildingInfos(); iBuildingLoop++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	inc	edi
@@ -7166,23 +7172,29 @@ $LN50@IsAIWantSp:
 	cmp	edi, eax
 	jl	$LL51@IsAIWantSp
 
-; 1037 : 						}
-; 1038 : 					}
-; 1039 : 				}
-; 1040 : 			}
-; 1041 : 		}
-; 1042 : 	}
-; 1043 : 	else if(eFocusType == CITY_AI_FOCUS_TYPE_GOLD)
+; 1043 : 						}
+; 1044 : #ifdef LEK_TRAIT_SPECIALIST_YIELD_MAX_ONE
+; 1045 : 						if(GetPlayer()->GetPlayerTraits()->GetAnySpecificSpecialistYieldChange(eSpecialist, YIELD_PRODUCTION) > 0)
+; 1046 : 						{
+; 1047 : 							iWeight *= 2;
+; 1048 : 						}
+; 1049 : #endif
+; 1050 : 					}
+; 1051 : 				}
+; 1052 : 			}
+; 1053 : 		}
+; 1054 : 	}
+; 1055 : 	else if(eFocusType == CITY_AI_FOCUS_TYPE_GOLD)
 
 	jmp	$LN8@IsAIWantSp
 $LN52@IsAIWantSp:
 	cmp	edi, 2
 	jne	SHORT $LN41@IsAIWantSp
 
-; 1044 : 	{
-; 1045 : 		// Loop through all Buildings
-; 1046 : 		BuildingTypes eBuilding;
-; 1047 : 		for(int iBuildingLoop = 0; iBuildingLoop < GC.getNumBuildingInfos(); iBuildingLoop++)
+; 1056 : 	{
+; 1057 : 		// Loop through all Buildings
+; 1058 : 		BuildingTypes eBuilding;
+; 1059 : 		for(int iBuildingLoop = 0; iBuildingLoop < GC.getNumBuildingInfos(); iBuildingLoop++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	xor	esi, esi
@@ -7191,11 +7203,11 @@ $LN52@IsAIWantSp:
 	jle	$LN8@IsAIWantSp
 $LL40@IsAIWantSp:
 
-; 1048 : 		{
-; 1049 : 			eBuilding = (BuildingTypes) iBuildingLoop;
-; 1050 : 
-; 1051 : 			// Have this Building in the City?
-; 1052 : 			if(m_pCity->GetCityBuildings()->GetNumBuilding(eBuilding) > 0)
+; 1060 : 		{
+; 1061 : 			eBuilding = (BuildingTypes) iBuildingLoop;
+; 1062 : 
+; 1063 : 			// Have this Building in the City?
+; 1064 : 			if(m_pCity->GetCityBuildings()->GetNumBuilding(eBuilding) > 0)
 
 	mov	ecx, DWORD PTR [ebx]
 	push	esi
@@ -7205,9 +7217,9 @@ $LL40@IsAIWantSp:
 	test	eax, eax
 	jle	SHORT $LN39@IsAIWantSp
 
-; 1053 : 			{
-; 1054 : 				// Can't add more than the max
-; 1055 : 				if(IsCanAddSpecialistToBuilding(eBuilding))
+; 1065 : 			{
+; 1066 : 				// Can't add more than the max
+; 1067 : 				if(IsCanAddSpecialistToBuilding(eBuilding))
 
 	push	esi
 	mov	ecx, ebx
@@ -7215,8 +7227,8 @@ $LL40@IsAIWantSp:
 	test	al, al
 	je	SHORT $LN39@IsAIWantSp
 
-; 1056 : 				{
-; 1057 : 					SpecialistTypes eSpecialist = (SpecialistTypes) GC.getBuildingInfo(eBuilding)->GetSpecialistType();
+; 1068 : 				{
+; 1069 : 					SpecialistTypes eSpecialist = (SpecialistTypes) GC.getBuildingInfo(eBuilding)->GetSpecialistType();
 
 	push	esi
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
@@ -7224,13 +7236,13 @@ $LL40@IsAIWantSp:
 	mov	ecx, eax
 	call	?GetSpecialistType@CvBuildingEntry@@QBEHXZ ; CvBuildingEntry::GetSpecialistType
 
-; 1058 : 					CvSpecialistInfo* pSpecialistInfo = GC.getSpecialistInfo(eSpecialist);
+; 1070 : 					CvSpecialistInfo* pSpecialistInfo = GC.getSpecialistInfo(eSpecialist);
 
 	push	eax
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getSpecialistInfo@CvGlobals@@QAEPAVCvSpecialistInfo@@W4SpecialistTypes@@@Z ; CvGlobals::getSpecialistInfo
 
-; 1059 : 					if(pSpecialistInfo && pSpecialistInfo->getYieldChange(YIELD_GOLD) > 0)
+; 1071 : 					if(pSpecialistInfo && pSpecialistInfo->getYieldChange(YIELD_GOLD) > 0)
 
 	test	eax, eax
 	je	SHORT $LN39@IsAIWantSp
@@ -7241,10 +7253,10 @@ $LL40@IsAIWantSp:
 	jg	$LN197@IsAIWantSp
 $LN39@IsAIWantSp:
 
-; 1044 : 	{
-; 1045 : 		// Loop through all Buildings
-; 1046 : 		BuildingTypes eBuilding;
-; 1047 : 		for(int iBuildingLoop = 0; iBuildingLoop < GC.getNumBuildingInfos(); iBuildingLoop++)
+; 1056 : 	{
+; 1057 : 		// Loop through all Buildings
+; 1058 : 		BuildingTypes eBuilding;
+; 1059 : 		for(int iBuildingLoop = 0; iBuildingLoop < GC.getNumBuildingInfos(); iBuildingLoop++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	inc	esi
@@ -7252,32 +7264,32 @@ $LN39@IsAIWantSp:
 	cmp	esi, eax
 	jl	SHORT $LL40@IsAIWantSp
 
-; 1156 : 						if(pSpecialistInfo && pSpecialistInfo->getYieldChange(YIELD_FAITH) > 0)
+; 1174 : 						if(pSpecialistInfo && pSpecialistInfo->getYieldChange(YIELD_FAITH) > 0)
 
 	jmp	$LN8@IsAIWantSp
 $LN41@IsAIWantSp:
 
-; 1060 : 					{
-; 1061 : 						iWeight *= 150;
-; 1062 : 						iWeight /= 100;
-; 1063 : 						break;
-; 1064 : 					}
-; 1065 : 				}
-; 1066 : 			}
-; 1067 : 		}
-; 1068 : 	}
-; 1069 : 	else if(eFocusType == CITY_AI_FOCUS_TYPE_FOOD)
+; 1072 : 					{
+; 1073 : 						iWeight *= 150;
+; 1074 : 						iWeight /= 100;
+; 1075 : 						break;
+; 1076 : 					}
+; 1077 : 				}
+; 1078 : 			}
+; 1079 : 		}
+; 1080 : 	}
+; 1081 : 	else if(eFocusType == CITY_AI_FOCUS_TYPE_FOOD)
 
 	test	edi, edi
 	jne	SHORT $LN33@IsAIWantSp
 
-; 1070 : 	{
-; 1071 : 		iWeight *= 50;
+; 1082 : 	{
+; 1083 : 		iWeight *= 50;
 
 	mov	ecx, ebp
 	imul	ecx, 50					; 00000032H
 
-; 1072 : 		iWeight /= 100;
+; 1084 : 		iWeight /= 100;
 
 	mov	eax, 1374389535				; 51eb851fH
 	imul	ecx
@@ -7289,15 +7301,15 @@ $LN41@IsAIWantSp:
 	jmp	$LN8@IsAIWantSp
 $LN33@IsAIWantSp:
 
-; 1073 : 	}
-; 1074 : 	else if(eFocusType == CITY_AI_FOCUS_TYPE_PROD_GROWTH)
+; 1085 : 	}
+; 1086 : 	else if(eFocusType == CITY_AI_FOCUS_TYPE_PROD_GROWTH)
 
 	cmp	edi, 6
 	jne	$LN31@IsAIWantSp
 
-; 1075 : 	{
-; 1076 : 		// Loop through all Buildings
-; 1077 : 		for(int iBuildingLoop = 0; iBuildingLoop < GC.getNumBuildingInfos(); iBuildingLoop++)
+; 1087 : 	{
+; 1088 : 		// Loop through all Buildings
+; 1089 : 		for(int iBuildingLoop = 0; iBuildingLoop < GC.getNumBuildingInfos(); iBuildingLoop++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	xor	esi, esi
@@ -7306,23 +7318,23 @@ $LN33@IsAIWantSp:
 	jle	$LN8@IsAIWantSp
 $LL30@IsAIWantSp:
 
-; 1078 : 		{
-; 1079 : 			const BuildingTypes eBuilding = static_cast<BuildingTypes>(iBuildingLoop);
-; 1080 : 			CvBuildingEntry* pkBuildingInfo = GC.getBuildingInfo(eBuilding);
+; 1090 : 		{
+; 1091 : 			const BuildingTypes eBuilding = static_cast<BuildingTypes>(iBuildingLoop);
+; 1092 : 			CvBuildingEntry* pkBuildingInfo = GC.getBuildingInfo(eBuilding);
 
 	push	esi
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getBuildingInfo@CvGlobals@@QAEPAVCvBuildingEntry@@W4BuildingTypes@@@Z ; CvGlobals::getBuildingInfo
 	mov	edi, eax
 
-; 1081 : 			if(pkBuildingInfo)
+; 1093 : 			if(pkBuildingInfo)
 
 	test	edi, edi
 	je	SHORT $LN29@IsAIWantSp
 
-; 1082 : 			{
-; 1083 : 				// Have this Building in the City?
-; 1084 : 				if(m_pCity->GetCityBuildings()->GetNumBuilding(eBuilding) > 0)
+; 1094 : 			{
+; 1095 : 				// Have this Building in the City?
+; 1096 : 				if(m_pCity->GetCityBuildings()->GetNumBuilding(eBuilding) > 0)
 
 	mov	ecx, DWORD PTR [ebx]
 	push	esi
@@ -7332,9 +7344,9 @@ $LL30@IsAIWantSp:
 	test	eax, eax
 	jle	SHORT $LN29@IsAIWantSp
 
-; 1085 : 				{
-; 1086 : 					// Can't add more than the max
-; 1087 : 					if(IsCanAddSpecialistToBuilding(eBuilding))
+; 1097 : 				{
+; 1098 : 					// Can't add more than the max
+; 1099 : 					if(IsCanAddSpecialistToBuilding(eBuilding))
 
 	push	esi
 	mov	ecx, ebx
@@ -7342,19 +7354,19 @@ $LL30@IsAIWantSp:
 	test	al, al
 	je	SHORT $LN29@IsAIWantSp
 
-; 1088 : 					{
-; 1089 : 						SpecialistTypes eSpecialist = (SpecialistTypes) pkBuildingInfo->GetSpecialistType();
+; 1100 : 					{
+; 1101 : 						SpecialistTypes eSpecialist = (SpecialistTypes) pkBuildingInfo->GetSpecialistType();
 
 	mov	ecx, edi
 	call	?GetSpecialistType@CvBuildingEntry@@QBEHXZ ; CvBuildingEntry::GetSpecialistType
 
-; 1090 : 						CvSpecialistInfo* pSpecialistInfo = GC.getSpecialistInfo(eSpecialist);
+; 1102 : 						CvSpecialistInfo* pSpecialistInfo = GC.getSpecialistInfo(eSpecialist);
 
 	push	eax
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getSpecialistInfo@CvGlobals@@QAEPAVCvSpecialistInfo@@W4SpecialistTypes@@@Z ; CvGlobals::getSpecialistInfo
 
-; 1091 : 						if(pSpecialistInfo && pSpecialistInfo->getYieldChange(YIELD_PRODUCTION) > 0)
+; 1103 : 						if(pSpecialistInfo && pSpecialistInfo->getYieldChange(YIELD_PRODUCTION) > 0)
 
 	test	eax, eax
 	je	SHORT $LN29@IsAIWantSp
@@ -7365,9 +7377,9 @@ $LL30@IsAIWantSp:
 	jg	SHORT $LN197@IsAIWantSp
 $LN29@IsAIWantSp:
 
-; 1075 : 	{
-; 1076 : 		// Loop through all Buildings
-; 1077 : 		for(int iBuildingLoop = 0; iBuildingLoop < GC.getNumBuildingInfos(); iBuildingLoop++)
+; 1087 : 	{
+; 1088 : 		// Loop through all Buildings
+; 1089 : 		for(int iBuildingLoop = 0; iBuildingLoop < GC.getNumBuildingInfos(); iBuildingLoop++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	inc	esi
@@ -7375,18 +7387,18 @@ $LN29@IsAIWantSp:
 	cmp	esi, eax
 	jl	SHORT $LL30@IsAIWantSp
 
-; 1156 : 						if(pSpecialistInfo && pSpecialistInfo->getYieldChange(YIELD_FAITH) > 0)
+; 1174 : 						if(pSpecialistInfo && pSpecialistInfo->getYieldChange(YIELD_FAITH) > 0)
 
 	jmp	$LN8@IsAIWantSp
 $LN197@IsAIWantSp:
 
-; 1092 : 						{
-; 1093 : 							iWeight *= 150;
+; 1104 : 						{
+; 1105 : 							iWeight *= 150;
 
 	mov	ecx, ebp
 	imul	ecx, 150				; 00000096H
 
-; 1094 : 							iWeight /= 100;
+; 1106 : 							iWeight /= 100;
 
 	mov	eax, 1374389535				; 51eb851fH
 	imul	ecx
@@ -7396,23 +7408,23 @@ $LN197@IsAIWantSp:
 	add	eax, edx
 	mov	ebp, eax
 
-; 1095 : 							break;
-; 1096 : 						}
-; 1097 : 					}
-; 1098 : 				}
-; 1099 : 			}
-; 1100 : 		}
-; 1101 : 	}
-; 1102 : 	else if(eFocusType == CITY_AI_FOCUS_TYPE_GOLD_GROWTH)
+; 1107 : 							break;
+; 1108 : 						}
+; 1109 : 					}
+; 1110 : 				}
+; 1111 : 			}
+; 1112 : 		}
+; 1113 : 	}
+; 1114 : 	else if(eFocusType == CITY_AI_FOCUS_TYPE_GOLD_GROWTH)
 
 	jmp	$LN8@IsAIWantSp
 $LN31@IsAIWantSp:
 	cmp	edi, 7
 	jne	$LN22@IsAIWantSp
 
-; 1103 : 	{
-; 1104 : 		// Loop through all Buildings
-; 1105 : 		for(int iBuildingLoop = 0; iBuildingLoop < GC.getNumBuildingInfos(); iBuildingLoop++)
+; 1115 : 	{
+; 1116 : 		// Loop through all Buildings
+; 1117 : 		for(int iBuildingLoop = 0; iBuildingLoop < GC.getNumBuildingInfos(); iBuildingLoop++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	xor	edi, edi
@@ -7422,23 +7434,23 @@ $LN31@IsAIWantSp:
 	npad	8
 $LL21@IsAIWantSp:
 
-; 1106 : 		{
-; 1107 : 			const BuildingTypes eBuilding = static_cast<BuildingTypes>(iBuildingLoop);
-; 1108 : 			CvBuildingEntry* pkBuildingInfo = GC.getBuildingInfo(eBuilding);
+; 1118 : 		{
+; 1119 : 			const BuildingTypes eBuilding = static_cast<BuildingTypes>(iBuildingLoop);
+; 1120 : 			CvBuildingEntry* pkBuildingInfo = GC.getBuildingInfo(eBuilding);
 
 	push	edi
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getBuildingInfo@CvGlobals@@QAEPAVCvBuildingEntry@@W4BuildingTypes@@@Z ; CvGlobals::getBuildingInfo
 	mov	esi, eax
 
-; 1109 : 			if(pkBuildingInfo)
+; 1121 : 			if(pkBuildingInfo)
 
 	test	esi, esi
 	je	$LN20@IsAIWantSp
 
-; 1110 : 			{
-; 1111 : 				// Have this Building in the City?
-; 1112 : 				if(m_pCity->GetCityBuildings()->GetNumBuilding(eBuilding) > 0)
+; 1122 : 			{
+; 1123 : 				// Have this Building in the City?
+; 1124 : 				if(m_pCity->GetCityBuildings()->GetNumBuilding(eBuilding) > 0)
 
 	mov	ecx, DWORD PTR [ebx]
 	push	edi
@@ -7448,9 +7460,9 @@ $LL21@IsAIWantSp:
 	test	eax, eax
 	jle	$LN20@IsAIWantSp
 
-; 1113 : 				{
-; 1114 : 					// Can't add more than the max
-; 1115 : 					if(IsCanAddSpecialistToBuilding(eBuilding))
+; 1125 : 				{
+; 1126 : 					// Can't add more than the max
+; 1127 : 					if(IsCanAddSpecialistToBuilding(eBuilding))
 
 	push	edi
 	mov	ecx, ebx
@@ -7458,20 +7470,20 @@ $LL21@IsAIWantSp:
 	test	al, al
 	je	$LN20@IsAIWantSp
 
-; 1116 : 					{
-; 1117 : 						SpecialistTypes eSpecialist = (SpecialistTypes) pkBuildingInfo->GetSpecialistType();
+; 1128 : 					{
+; 1129 : 						SpecialistTypes eSpecialist = (SpecialistTypes) pkBuildingInfo->GetSpecialistType();
 
 	mov	ecx, esi
 	call	?GetSpecialistType@CvBuildingEntry@@QBEHXZ ; CvBuildingEntry::GetSpecialistType
 	mov	esi, eax
 
-; 1118 : 						CvSpecialistInfo* pSpecialistInfo = GC.getSpecialistInfo(eSpecialist);
+; 1130 : 						CvSpecialistInfo* pSpecialistInfo = GC.getSpecialistInfo(eSpecialist);
 
 	push	esi
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getSpecialistInfo@CvGlobals@@QAEPAVCvSpecialistInfo@@W4SpecialistTypes@@@Z ; CvGlobals::getSpecialistInfo
 
-; 1119 : 						if(pSpecialistInfo && pSpecialistInfo->getYieldChange(YIELD_GOLD) > 0)
+; 1131 : 						if(pSpecialistInfo && pSpecialistInfo->getYieldChange(YIELD_GOLD) > 0)
 
 	test	eax, eax
 	je	SHORT $LN15@IsAIWantSp
@@ -7481,13 +7493,13 @@ $LL21@IsAIWantSp:
 	test	eax, eax
 	jle	SHORT $LN15@IsAIWantSp
 
-; 1120 : 						{
-; 1121 : 							iWeight *= 150;
+; 1132 : 						{
+; 1133 : 							iWeight *= 150;
 
 	mov	ecx, ebp
 	imul	ecx, 150				; 00000096H
 
-; 1122 : 							iWeight /= 100;
+; 1134 : 							iWeight /= 100;
 
 	mov	eax, 1374389535				; 51eb851fH
 	imul	ecx
@@ -7498,9 +7510,9 @@ $LL21@IsAIWantSp:
 	mov	ebp, ecx
 $LN15@IsAIWantSp:
 
-; 1123 : 						}
-; 1124 : 
-; 1125 : 						if(GetPlayer()->getSpecialistExtraYield(YIELD_GOLD) > 0)
+; 1135 : 						}
+; 1136 : 
+; 1137 : 						if(GetPlayer()->getSpecialistExtraYield(YIELD_GOLD) > 0)
 
 	mov	edx, DWORD PTR [ebx]
 	mov	ecx, DWORD PTR [edx+84]
@@ -7511,15 +7523,15 @@ $LN15@IsAIWantSp:
 	test	eax, eax
 	jle	SHORT $LN14@IsAIWantSp
 
-; 1126 : 						{
-; 1127 : 							iWeight *= 2;
+; 1138 : 						{
+; 1139 : 							iWeight *= 2;
 
 	add	ebp, ebp
 $LN14@IsAIWantSp:
 
-; 1128 : 						}
-; 1129 : 
-; 1130 : 						if(GetPlayer()->GetPlayerTraits()->GetSpecialistYieldChange(eSpecialist, YIELD_GOLD) > 0)
+; 1140 : 						}
+; 1141 : 
+; 1142 : 						if(GetPlayer()->GetPlayerTraits()->GetSpecialistYieldChange(eSpecialist, YIELD_GOLD) > 0)
 
 	mov	eax, DWORD PTR [ebx]
 	mov	ecx, DWORD PTR [eax+84]
@@ -7533,15 +7545,15 @@ $LN14@IsAIWantSp:
 	test	eax, eax
 	jle	SHORT $LN20@IsAIWantSp
 
-; 1131 : 						{
-; 1132 : 							iWeight *= 2;
+; 1143 : 						{
+; 1144 : 							iWeight *= 2;
 
 	add	ebp, ebp
 $LN20@IsAIWantSp:
 
-; 1103 : 	{
-; 1104 : 		// Loop through all Buildings
-; 1105 : 		for(int iBuildingLoop = 0; iBuildingLoop < GC.getNumBuildingInfos(); iBuildingLoop++)
+; 1115 : 	{
+; 1116 : 		// Loop through all Buildings
+; 1117 : 		for(int iBuildingLoop = 0; iBuildingLoop < GC.getNumBuildingInfos(); iBuildingLoop++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	inc	edi
@@ -7549,22 +7561,28 @@ $LN20@IsAIWantSp:
 	cmp	edi, eax
 	jl	$LL21@IsAIWantSp
 
-; 1133 : 						}
-; 1134 : 					}
-; 1135 : 				}
-; 1136 : 			}
-; 1137 : 		}
-; 1138 : 	}
-; 1139 : 	else if(eFocusType == CITY_AI_FOCUS_TYPE_FAITH)
+; 1145 : 						}
+; 1146 : #ifdef LEK_TRAIT_SPECIALIST_YIELD_MAX_ONE
+; 1147 : 						if(GetPlayer()->GetPlayerTraits()->GetAnySpecificSpecialistYieldChange(eSpecialist, YIELD_GOLD) > 0)
+; 1148 : 						{
+; 1149 : 							iWeight *= 2;
+; 1150 : 						}
+; 1151 : #endif
+; 1152 : 					}
+; 1153 : 				}
+; 1154 : 			}
+; 1155 : 		}
+; 1156 : 	}
+; 1157 : 	else if(eFocusType == CITY_AI_FOCUS_TYPE_FAITH)
 
 	jmp	$LN8@IsAIWantSp
 $LN22@IsAIWantSp:
 	cmp	edi, 8
 	jne	$LN8@IsAIWantSp
 
-; 1140 : 	{
-; 1141 : 		// Loop through all Buildings
-; 1142 : 		for(int iBuildingLoop = 0; iBuildingLoop < GC.getNumBuildingInfos(); iBuildingLoop++)
+; 1158 : 	{
+; 1159 : 		// Loop through all Buildings
+; 1160 : 		for(int iBuildingLoop = 0; iBuildingLoop < GC.getNumBuildingInfos(); iBuildingLoop++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	xor	esi, esi
@@ -7573,23 +7591,23 @@ $LN22@IsAIWantSp:
 	jle	SHORT $LN8@IsAIWantSp
 $LL10@IsAIWantSp:
 
-; 1143 : 		{
-; 1144 : 			const BuildingTypes eBuilding = (BuildingTypes) iBuildingLoop;
-; 1145 : 			CvBuildingEntry* pkBuildingInfo = GC.getBuildingInfo(eBuilding);
+; 1161 : 		{
+; 1162 : 			const BuildingTypes eBuilding = (BuildingTypes) iBuildingLoop;
+; 1163 : 			CvBuildingEntry* pkBuildingInfo = GC.getBuildingInfo(eBuilding);
 
 	push	esi
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getBuildingInfo@CvGlobals@@QAEPAVCvBuildingEntry@@W4BuildingTypes@@@Z ; CvGlobals::getBuildingInfo
 	mov	edi, eax
 
-; 1146 : 			if(pkBuildingInfo)
+; 1164 : 			if(pkBuildingInfo)
 
 	test	edi, edi
 	je	SHORT $LN9@IsAIWantSp
 
-; 1147 : 			{
-; 1148 : 				// Have this Building in the City?
-; 1149 : 				if(m_pCity->GetCityBuildings()->GetNumBuilding(eBuilding) > 0)
+; 1165 : 			{
+; 1166 : 				// Have this Building in the City?
+; 1167 : 				if(m_pCity->GetCityBuildings()->GetNumBuilding(eBuilding) > 0)
 
 	mov	ecx, DWORD PTR [ebx]
 	push	esi
@@ -7599,9 +7617,9 @@ $LL10@IsAIWantSp:
 	test	eax, eax
 	jle	SHORT $LN9@IsAIWantSp
 
-; 1150 : 				{
-; 1151 : 					// Can't add more than the max
-; 1152 : 					if(IsCanAddSpecialistToBuilding(eBuilding))
+; 1168 : 				{
+; 1169 : 					// Can't add more than the max
+; 1170 : 					if(IsCanAddSpecialistToBuilding(eBuilding))
 
 	push	esi
 	mov	ecx, ebx
@@ -7609,19 +7627,19 @@ $LL10@IsAIWantSp:
 	test	al, al
 	je	SHORT $LN9@IsAIWantSp
 
-; 1153 : 					{
-; 1154 : 						const SpecialistTypes eSpecialist = (SpecialistTypes) pkBuildingInfo->GetSpecialistType();
+; 1171 : 					{
+; 1172 : 						const SpecialistTypes eSpecialist = (SpecialistTypes) pkBuildingInfo->GetSpecialistType();
 
 	mov	ecx, edi
 	call	?GetSpecialistType@CvBuildingEntry@@QBEHXZ ; CvBuildingEntry::GetSpecialistType
 
-; 1155 : 						CvSpecialistInfo* pSpecialistInfo = GC.getSpecialistInfo(eSpecialist);
+; 1173 : 						CvSpecialistInfo* pSpecialistInfo = GC.getSpecialistInfo(eSpecialist);
 
 	push	eax
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getSpecialistInfo@CvGlobals@@QAEPAVCvSpecialistInfo@@W4SpecialistTypes@@@Z ; CvGlobals::getSpecialistInfo
 
-; 1156 : 						if(pSpecialistInfo && pSpecialistInfo->getYieldChange(YIELD_FAITH) > 0)
+; 1174 : 						if(pSpecialistInfo && pSpecialistInfo->getYieldChange(YIELD_FAITH) > 0)
 
 	test	eax, eax
 	je	SHORT $LN9@IsAIWantSp
@@ -7632,9 +7650,9 @@ $LL10@IsAIWantSp:
 	jg	SHORT $LN198@IsAIWantSp
 $LN9@IsAIWantSp:
 
-; 1140 : 	{
-; 1141 : 		// Loop through all Buildings
-; 1142 : 		for(int iBuildingLoop = 0; iBuildingLoop < GC.getNumBuildingInfos(); iBuildingLoop++)
+; 1158 : 	{
+; 1159 : 		// Loop through all Buildings
+; 1160 : 		for(int iBuildingLoop = 0; iBuildingLoop < GC.getNumBuildingInfos(); iBuildingLoop++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	inc	esi
@@ -7642,27 +7660,27 @@ $LN9@IsAIWantSp:
 	cmp	esi, eax
 	jl	SHORT $LL10@IsAIWantSp
 
-; 1156 : 						if(pSpecialistInfo && pSpecialistInfo->getYieldChange(YIELD_FAITH) > 0)
+; 1174 : 						if(pSpecialistInfo && pSpecialistInfo->getYieldChange(YIELD_FAITH) > 0)
 
 	jmp	SHORT $LN8@IsAIWantSp
 $LN198@IsAIWantSp:
 
-; 1157 : 						{
-; 1158 : 							iWeight *= 3;
+; 1175 : 						{
+; 1176 : 							iWeight *= 3;
 
 	lea	ebp, DWORD PTR [ebp+ebp*2]
 $LN8@IsAIWantSp:
 
-; 1159 : 							break;
-; 1160 : 						}
-; 1161 : 					}
-; 1162 : 				}
-; 1163 : 			}
-; 1164 : 		}
-; 1165 : 	}
-; 1166 : 
-; 1167 : 	// specialists are cheaper somehow
-; 1168 : 	if (m_pCity->GetPlayer()->isHalfSpecialistUnhappiness() || m_pCity->GetPlayer()->isHalfSpecialistFood())
+; 1177 : 							break;
+; 1178 : 						}
+; 1179 : 					}
+; 1180 : 				}
+; 1181 : 			}
+; 1182 : 		}
+; 1183 : 	}
+; 1184 : 
+; 1185 : 	// specialists are cheaper somehow
+; 1186 : 	if (m_pCity->GetPlayer()->isHalfSpecialistUnhappiness() || m_pCity->GetPlayer()->isHalfSpecialistFood())
 
 	mov	ecx, DWORD PTR [ebx]
 	call	?GetPlayer@CvCity@@QAEPAVCvPlayer@@XZ	; CvCity::GetPlayer
@@ -7678,13 +7696,13 @@ $LN8@IsAIWantSp:
 	je	SHORT $LN3@IsAIWantSp
 $LN2@IsAIWantSp:
 
-; 1169 : 	{
-; 1170 : 		iWeight *= 150;
+; 1187 : 	{
+; 1188 : 		iWeight *= 150;
 
 	mov	ecx, ebp
 	imul	ecx, 150				; 00000096H
 
-; 1171 : 		iWeight /= 100;
+; 1189 : 		iWeight /= 100;
 
 	mov	eax, 1374389535				; 51eb851fH
 	imul	ecx
@@ -7697,22 +7715,22 @@ $LN3@IsAIWantSp:
 	pop	edi
 	pop	esi
 
-; 1172 : 	}
-; 1173 : 
-; 1174 : 	// Does the AI want it enough?
-; 1175 : 	if(iWeight >= 150)
+; 1190 : 	}
+; 1191 : 
+; 1192 : 	// Does the AI want it enough?
+; 1193 : 	if(iWeight >= 150)
 
 	cmp	ebp, 150				; 00000096H
 	pop	ebp
 	setge	al
 	pop	ebx
 
-; 1176 : 	{
-; 1177 : 		return true;
-; 1178 : 	}
-; 1179 : 
-; 1180 : 	return false;
-; 1181 : }
+; 1194 : 	{
+; 1195 : 		return true;
+; 1196 : 	}
+; 1197 : 
+; 1198 : 	return false;
+; 1199 : }
 
 	ret	0
 ?IsAIWantSpecialistRightNow@CvCityCitizens@@QAE_NXZ ENDP ; CvCityCitizens::IsAIWantSpecialistRightNow
@@ -7732,28 +7750,28 @@ _iGPPYieldValue$ = -16					; size = 4
 _pSpecialistInfo$ = -16					; size = 4
 _iCultureYieldValue$ = -12				; size = 4
 _iScienceYieldValue$ = -8				; size = 4
-$T228296 = -4						; size = 4
+$T228338 = -4						; size = 4
 _iExcessFoodTimes100$ = -4				; size = 4
 tv498 = 8						; size = 4
-$T228316 = 8						; size = 4
-$T228312 = 8						; size = 4
-$T228308 = 8						; size = 4
-$T228304 = 8						; size = 4
-$T228300 = 8						; size = 4
+$T228358 = 8						; size = 4
+$T228354 = 8						; size = 4
+$T228350 = 8						; size = 4
+$T228346 = 8						; size = 4
+$T228342 = 8						; size = 4
 _bAvoidGrowth$ = 8					; size = 1
 _iFoodConsumptionBonus$ = 8				; size = 4
 _eSpecialist$ = 8					; size = 4
 ?GetSpecialistValue@CvCityCitizens@@QAEHW4SpecialistTypes@@@Z PROC ; CvCityCitizens::GetSpecialistValue, COMDAT
 ; _this$ = ecx
 
-; 1286 : {
+; 1304 : {
 
 	sub	esp, 24					; 00000018H
 	push	ebp
 	push	edi
 
-; 1287 : 
-; 1288 : 	CvSpecialistInfo* pSpecialistInfo = GC.getSpecialistInfo(eSpecialist);
+; 1305 : 
+; 1306 : 	CvSpecialistInfo* pSpecialistInfo = GC.getSpecialistInfo(eSpecialist);
 
 	mov	edi, DWORD PTR _eSpecialist$[esp+28]
 	mov	ebp, ecx
@@ -7762,28 +7780,28 @@ _eSpecialist$ = 8					; size = 4
 	call	?getSpecialistInfo@CvGlobals@@QAEPAVCvSpecialistInfo@@W4SpecialistTypes@@@Z ; CvGlobals::getSpecialistInfo
 	mov	DWORD PTR _pSpecialistInfo$[esp+32], eax
 
-; 1289 : 	if (pSpecialistInfo == NULL)
+; 1307 : 	if (pSpecialistInfo == NULL)
 
 	test	eax, eax
 	jne	SHORT $LN30@GetSpecial@2
 	pop	edi
 	pop	ebp
 
-; 1770 : }
+; 1788 : }
 
 	add	esp, 24					; 00000018H
 	ret	4
 $LN30@GetSpecial@2:
 
-; 1290 : 	{
-; 1291 : 		//This function should NEVER be called with an invalid specialist info type.
-; 1292 : 		CvAssert(pSpecialistInfo);
-; 1293 : 		return 0;
-; 1294 : 	}
-; 1295 : 
-; 1296 : 	int iValue = 0;
-; 1297 : 
-; 1298 : 	CvPlayer* pPlayer = m_pCity->GetPlayer();
+; 1308 : 	{
+; 1309 : 		//This function should NEVER be called with an invalid specialist info type.
+; 1310 : 		CvAssert(pSpecialistInfo);
+; 1311 : 		return 0;
+; 1312 : 	}
+; 1313 : 
+; 1314 : 	int iValue = 0;
+; 1315 : 
+; 1316 : 	CvPlayer* pPlayer = m_pCity->GetPlayer();
 
 	mov	ecx, DWORD PTR [ebp]
 	push	ebx
@@ -7791,36 +7809,36 @@ $LN30@GetSpecial@2:
 	call	?GetPlayer@CvCity@@QAEPAVCvPlayer@@XZ	; CvCity::GetPlayer
 	mov	esi, eax
 
-; 1299 : 
-; 1300 : 	// factor in the fact that specialists may need less food
-; 1301 : #ifdef AUI_CITIZENS_FIX_SPECIALIST_VALUE_HALF_FOOD_CONSUMPTION
-; 1302 : 	int iFoodConsumptionBonus = (pPlayer->isHalfSpecialistFood() && eSpecialist != (SpecialistTypes)GC.getDEFAULT_SPECIALIST()) ? GC.getFOOD_CONSUMPTION_PER_POPULATION() / 2 : 0;
-; 1303 : #else
-; 1304 : 	int iFoodConsumptionBonus = (pPlayer->isHalfSpecialistFood()) ? 1 : 0;
+; 1317 : 
+; 1318 : 	// factor in the fact that specialists may need less food
+; 1319 : #ifdef AUI_CITIZENS_FIX_SPECIALIST_VALUE_HALF_FOOD_CONSUMPTION
+; 1320 : 	int iFoodConsumptionBonus = (pPlayer->isHalfSpecialistFood() && eSpecialist != (SpecialistTypes)GC.getDEFAULT_SPECIALIST()) ? GC.getFOOD_CONSUMPTION_PER_POPULATION() / 2 : 0;
+; 1321 : #else
+; 1322 : 	int iFoodConsumptionBonus = (pPlayer->isHalfSpecialistFood()) ? 1 : 0;
 
 	mov	ecx, esi
 	call	?isHalfSpecialistFood@CvPlayer@@QBE_NXZ	; CvPlayer::isHalfSpecialistFood
 
-; 1305 : #endif
-; 1306 : 
-; 1307 : #ifdef AUI_CITIZENS_GET_SPECIALIST_VALUE_ACCOUNT_FOR_GURUSHIP
-; 1308 : 	const CvReligion* pReligion = NULL;
-; 1309 : 	const CvBeliefEntry* pSecondaryBelief = NULL;
-; 1310 : 	ReligionTypes eMajority = m_pCity->GetCityReligions()->GetReligiousMajority();
-; 1311 : 	if (eMajority != NO_RELIGION && GetTotalSpecialistCount() == (bForRemoval ? 1 : 0))
-; 1312 : 	{
-; 1313 : 		pReligion = GC.getGame().GetGameReligions()->GetReligion(eMajority, GetPlayer()->GetID());
-; 1314 : 		BeliefTypes eSecondaryPantheon = m_pCity->GetCityReligions()->GetSecondaryReligionPantheonBelief();
-; 1315 : 		if (eSecondaryPantheon != NO_BELIEF)
-; 1316 : 			pSecondaryBelief = GC.GetGameBeliefs()->GetEntry(eSecondaryPantheon);
-; 1317 : 	}
-; 1318 : #endif
-; 1319 : 
-; 1320 : 	// Yield Values
-; 1321 : #ifdef AUI_CITIZENS_GET_VALUE_SPLIT_EXCESS_FOOD_MUTLIPLIER
-; 1322 : 	int iFoodYieldValue = /*12*/ GC.getAI_CITIZEN_VALUE_FOOD();
-; 1323 : #else
-; 1324 : 	int iFoodYieldValue = (GC.getAI_CITIZEN_VALUE_FOOD() * (pPlayer->specialistYield(eSpecialist, YIELD_FOOD) + iFoodConsumptionBonus));
+; 1323 : #endif
+; 1324 : 
+; 1325 : #ifdef AUI_CITIZENS_GET_SPECIALIST_VALUE_ACCOUNT_FOR_GURUSHIP
+; 1326 : 	const CvReligion* pReligion = NULL;
+; 1327 : 	const CvBeliefEntry* pSecondaryBelief = NULL;
+; 1328 : 	ReligionTypes eMajority = m_pCity->GetCityReligions()->GetReligiousMajority();
+; 1329 : 	if (eMajority != NO_RELIGION && GetTotalSpecialistCount() == (bForRemoval ? 1 : 0))
+; 1330 : 	{
+; 1331 : 		pReligion = GC.getGame().GetGameReligions()->GetReligion(eMajority, GetPlayer()->GetID());
+; 1332 : 		BeliefTypes eSecondaryPantheon = m_pCity->GetCityReligions()->GetSecondaryReligionPantheonBelief();
+; 1333 : 		if (eSecondaryPantheon != NO_BELIEF)
+; 1334 : 			pSecondaryBelief = GC.GetGameBeliefs()->GetEntry(eSecondaryPantheon);
+; 1335 : 	}
+; 1336 : #endif
+; 1337 : 
+; 1338 : 	// Yield Values
+; 1339 : #ifdef AUI_CITIZENS_GET_VALUE_SPLIT_EXCESS_FOOD_MUTLIPLIER
+; 1340 : 	int iFoodYieldValue = /*12*/ GC.getAI_CITIZEN_VALUE_FOOD();
+; 1341 : #else
+; 1342 : 	int iFoodYieldValue = (GC.getAI_CITIZEN_VALUE_FOOD() * (pPlayer->specialistYield(eSpecialist, YIELD_FOOD) + iFoodConsumptionBonus));
 
 	mov	edx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+2376
 	xor	ecx, ecx
@@ -7828,146 +7846,146 @@ $LN30@GetSpecial@2:
 	setne	cl
 	push	0
 	push	edi
-	mov	DWORD PTR $T228296[esp+48], edx
+	mov	DWORD PTR $T228338[esp+48], edx
 	mov	DWORD PTR _iFoodConsumptionBonus$[esp+44], ecx
 	mov	ecx, esi
 	call	?specialistYield@CvPlayer@@QBEHW4SpecialistTypes@@W4YieldTypes@@@Z ; CvPlayer::specialistYield
 	mov	ebx, eax
 	add	ebx, DWORD PTR _iFoodConsumptionBonus$[esp+36]
 
-; 1325 : #endif
-; 1326 : 	int iProductionYieldValue = (GC.getAI_CITIZEN_VALUE_PRODUCTION() * pPlayer->specialistYield(eSpecialist, YIELD_PRODUCTION));
+; 1343 : #endif
+; 1344 : 	int iProductionYieldValue = (GC.getAI_CITIZEN_VALUE_PRODUCTION() * pPlayer->specialistYield(eSpecialist, YIELD_PRODUCTION));
 
 	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+2380
-	imul	ebx, DWORD PTR $T228296[esp+40]
+	imul	ebx, DWORD PTR $T228338[esp+40]
 	push	1
 	push	edi
 	mov	ecx, esi
-	mov	DWORD PTR $T228300[esp+44], eax
+	mov	DWORD PTR $T228342[esp+44], eax
 	call	?specialistYield@CvPlayer@@QBEHW4SpecialistTypes@@W4YieldTypes@@@Z ; CvPlayer::specialistYield
-	imul	eax, DWORD PTR $T228300[esp+36]
+	imul	eax, DWORD PTR $T228342[esp+36]
 
-; 1327 : #ifdef AUI_CITIZENS_GOLD_YIELD_COUNTS_AS_SCIENCE_WHEN_IN_DEFICIT
-; 1328 : 	int iGoldYieldValue = (pPlayer->specialistYield(eSpecialist, YIELD_GOLD));
-; 1329 : 	int iScienceYieldValue = (pPlayer->specialistYield(eSpecialist, YIELD_SCIENCE));
-; 1330 : #else
-; 1331 : 	int iGoldYieldValue = (GC.getAI_CITIZEN_VALUE_GOLD() * pPlayer->specialistYield(eSpecialist, YIELD_GOLD));
+; 1345 : #ifdef AUI_CITIZENS_GOLD_YIELD_COUNTS_AS_SCIENCE_WHEN_IN_DEFICIT
+; 1346 : 	int iGoldYieldValue = (pPlayer->specialistYield(eSpecialist, YIELD_GOLD));
+; 1347 : 	int iScienceYieldValue = (pPlayer->specialistYield(eSpecialist, YIELD_SCIENCE));
+; 1348 : #else
+; 1349 : 	int iGoldYieldValue = (GC.getAI_CITIZEN_VALUE_GOLD() * pPlayer->specialistYield(eSpecialist, YIELD_GOLD));
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+2384
 	push	2
-	mov	DWORD PTR $T228304[esp+40], ecx
+	mov	DWORD PTR $T228346[esp+40], ecx
 	push	edi
 	mov	ecx, esi
 	mov	DWORD PTR _iProductionYieldValue$[esp+48], eax
 	call	?specialistYield@CvPlayer@@QBEHW4SpecialistTypes@@W4YieldTypes@@@Z ; CvPlayer::specialistYield
-	imul	eax, DWORD PTR $T228304[esp+36]
+	imul	eax, DWORD PTR $T228346[esp+36]
 
-; 1332 : 	int iScienceYieldValue = (GC.getAI_CITIZEN_VALUE_SCIENCE() * pPlayer->specialistYield(eSpecialist, YIELD_SCIENCE));
+; 1350 : 	int iScienceYieldValue = (GC.getAI_CITIZEN_VALUE_SCIENCE() * pPlayer->specialistYield(eSpecialist, YIELD_SCIENCE));
 
 	mov	edx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+2388
 	push	3
 	push	edi
 	mov	ecx, esi
 	mov	DWORD PTR _iGoldYieldValue$[esp+48], eax
-	mov	DWORD PTR $T228308[esp+44], edx
+	mov	DWORD PTR $T228350[esp+44], edx
 	call	?specialistYield@CvPlayer@@QBEHW4SpecialistTypes@@W4YieldTypes@@@Z ; CvPlayer::specialistYield
-	imul	eax, DWORD PTR $T228308[esp+36]
+	imul	eax, DWORD PTR $T228350[esp+36]
 
-; 1333 : #endif
-; 1334 : 	int iCultureYieldValue = (GC.getAI_CITIZEN_VALUE_CULTURE() * m_pCity->GetCultureFromSpecialist(eSpecialist)); 
+; 1351 : #endif
+; 1352 : 	int iCultureYieldValue = (GC.getAI_CITIZEN_VALUE_CULTURE() * m_pCity->GetCultureFromSpecialist(eSpecialist)); 
 
 	mov	ecx, DWORD PTR [ebp]
 	mov	DWORD PTR _iScienceYieldValue$[esp+40], eax
 	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+2392
 	push	edi
-	mov	DWORD PTR $T228312[esp+40], eax
+	mov	DWORD PTR $T228354[esp+40], eax
 	call	?GetCultureFromSpecialist@CvCity@@QBEHW4SpecialistTypes@@@Z ; CvCity::GetCultureFromSpecialist
-	imul	eax, DWORD PTR $T228312[esp+36]
+	imul	eax, DWORD PTR $T228354[esp+36]
 
-; 1335 : 	int iFaithYieldValue = (GC.getAI_CITIZEN_VALUE_FAITH() * pPlayer->specialistYield(eSpecialist, YIELD_FAITH));
+; 1353 : 	int iFaithYieldValue = (GC.getAI_CITIZEN_VALUE_FAITH() * pPlayer->specialistYield(eSpecialist, YIELD_FAITH));
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+2396
 	push	5
-	mov	DWORD PTR $T228316[esp+40], ecx
+	mov	DWORD PTR $T228358[esp+40], ecx
 	push	edi
 	mov	ecx, esi
 	mov	DWORD PTR _iCultureYieldValue$[esp+48], eax
 	call	?specialistYield@CvPlayer@@QBEHW4SpecialistTypes@@W4YieldTypes@@@Z ; CvPlayer::specialistYield
 
-; 1336 : #ifdef AUI_CITIZENS_GET_SPECIALIST_VALUE_ACCOUNT_FOR_GURUSHIP
-; 1337 : 	if (pReligion)
-; 1338 : 	{
-; 1339 : 		iProductionYieldValue += GC.getAI_CITIZEN_VALUE_PRODUCTION() * pReligion->m_Beliefs.GetYieldChangeAnySpecialist(YIELD_PRODUCTION);
-; 1340 : #ifdef AUI_CITIZENS_GOLD_YIELD_COUNTS_AS_SCIENCE_WHEN_IN_DEFICIT
-; 1341 : 		iGoldYieldValue += pReligion->m_Beliefs.GetYieldChangeAnySpecialist(YIELD_GOLD);
-; 1342 : 		iScienceYieldValue += pReligion->m_Beliefs.GetYieldChangeAnySpecialist(YIELD_SCIENCE);
-; 1343 : #else
-; 1344 : 		iGoldYieldValue += GC.getAI_CITIZEN_VALUE_GOLD() * pReligion->m_Beliefs.GetYieldChangeAnySpecialist(YIELD_GOLD);
-; 1345 : 		iScienceYieldValue += GC.getAI_CITIZEN_VALUE_SCIENCE() * pReligion->m_Beliefs.GetYieldChangeAnySpecialist(YIELD_SCIENCE);
-; 1346 : #endif
-; 1347 : 		iCultureYieldValue += GC.getAI_CITIZEN_VALUE_CULTURE() * pReligion->m_Beliefs.GetYieldChangeAnySpecialist(YIELD_CULTURE);
-; 1348 : 		iFaithYieldValue += GC.getAI_CITIZEN_VALUE_FAITH() * pReligion->m_Beliefs.GetYieldChangeAnySpecialist(YIELD_FAITH);
-; 1349 : 	}
-; 1350 : 	if (pSecondaryBelief)
-; 1351 : 	{
-; 1352 : 		iProductionYieldValue += GC.getAI_CITIZEN_VALUE_PRODUCTION() * pSecondaryBelief->GetYieldChangeAnySpecialist(YIELD_PRODUCTION);
-; 1353 : #ifdef AUI_CITIZENS_GOLD_YIELD_COUNTS_AS_SCIENCE_WHEN_IN_DEFICIT
-; 1354 : 		iGoldYieldValue += pSecondaryBelief->GetYieldChangeAnySpecialist(YIELD_GOLD);
-; 1355 : 		iScienceYieldValue += pSecondaryBelief->GetYieldChangeAnySpecialist(YIELD_SCIENCE);
-; 1356 : #else
-; 1357 : 		iGoldYieldValue += GC.getAI_CITIZEN_VALUE_GOLD() * pSecondaryBelief->GetYieldChangeAnySpecialist(YIELD_GOLD);
-; 1358 : 		iScienceYieldValue += GC.getAI_CITIZEN_VALUE_SCIENCE() * pSecondaryBelief->GetYieldChangeAnySpecialist(YIELD_SCIENCE);
-; 1359 : #endif
-; 1360 : 		iCultureYieldValue += GC.getAI_CITIZEN_VALUE_CULTURE() * pSecondaryBelief->GetYieldChangeAnySpecialist(YIELD_CULTURE);
-; 1361 : 		iFaithYieldValue += GC.getAI_CITIZEN_VALUE_FAITH() * pSecondaryBelief->GetYieldChangeAnySpecialist(YIELD_FAITH);
-; 1362 : 	}
-; 1363 : #endif
-; 1364 : 	int iGPPYieldValue = pSpecialistInfo->getGreatPeopleRateChange() * 3; // TODO: un-hardcode this
+; 1354 : #ifdef AUI_CITIZENS_GET_SPECIALIST_VALUE_ACCOUNT_FOR_GURUSHIP
+; 1355 : 	if (pReligion)
+; 1356 : 	{
+; 1357 : 		iProductionYieldValue += GC.getAI_CITIZEN_VALUE_PRODUCTION() * pReligion->m_Beliefs.GetYieldChangeAnySpecialist(YIELD_PRODUCTION);
+; 1358 : #ifdef AUI_CITIZENS_GOLD_YIELD_COUNTS_AS_SCIENCE_WHEN_IN_DEFICIT
+; 1359 : 		iGoldYieldValue += pReligion->m_Beliefs.GetYieldChangeAnySpecialist(YIELD_GOLD);
+; 1360 : 		iScienceYieldValue += pReligion->m_Beliefs.GetYieldChangeAnySpecialist(YIELD_SCIENCE);
+; 1361 : #else
+; 1362 : 		iGoldYieldValue += GC.getAI_CITIZEN_VALUE_GOLD() * pReligion->m_Beliefs.GetYieldChangeAnySpecialist(YIELD_GOLD);
+; 1363 : 		iScienceYieldValue += GC.getAI_CITIZEN_VALUE_SCIENCE() * pReligion->m_Beliefs.GetYieldChangeAnySpecialist(YIELD_SCIENCE);
+; 1364 : #endif
+; 1365 : 		iCultureYieldValue += GC.getAI_CITIZEN_VALUE_CULTURE() * pReligion->m_Beliefs.GetYieldChangeAnySpecialist(YIELD_CULTURE);
+; 1366 : 		iFaithYieldValue += GC.getAI_CITIZEN_VALUE_FAITH() * pReligion->m_Beliefs.GetYieldChangeAnySpecialist(YIELD_FAITH);
+; 1367 : 	}
+; 1368 : 	if (pSecondaryBelief)
+; 1369 : 	{
+; 1370 : 		iProductionYieldValue += GC.getAI_CITIZEN_VALUE_PRODUCTION() * pSecondaryBelief->GetYieldChangeAnySpecialist(YIELD_PRODUCTION);
+; 1371 : #ifdef AUI_CITIZENS_GOLD_YIELD_COUNTS_AS_SCIENCE_WHEN_IN_DEFICIT
+; 1372 : 		iGoldYieldValue += pSecondaryBelief->GetYieldChangeAnySpecialist(YIELD_GOLD);
+; 1373 : 		iScienceYieldValue += pSecondaryBelief->GetYieldChangeAnySpecialist(YIELD_SCIENCE);
+; 1374 : #else
+; 1375 : 		iGoldYieldValue += GC.getAI_CITIZEN_VALUE_GOLD() * pSecondaryBelief->GetYieldChangeAnySpecialist(YIELD_GOLD);
+; 1376 : 		iScienceYieldValue += GC.getAI_CITIZEN_VALUE_SCIENCE() * pSecondaryBelief->GetYieldChangeAnySpecialist(YIELD_SCIENCE);
+; 1377 : #endif
+; 1378 : 		iCultureYieldValue += GC.getAI_CITIZEN_VALUE_CULTURE() * pSecondaryBelief->GetYieldChangeAnySpecialist(YIELD_CULTURE);
+; 1379 : 		iFaithYieldValue += GC.getAI_CITIZEN_VALUE_FAITH() * pSecondaryBelief->GetYieldChangeAnySpecialist(YIELD_FAITH);
+; 1380 : 	}
+; 1381 : #endif
+; 1382 : 	int iGPPYieldValue = pSpecialistInfo->getGreatPeopleRateChange() * 3; // TODO: un-hardcode this
 
 	mov	ecx, DWORD PTR _pSpecialistInfo$[esp+40]
 	mov	edi, eax
-	imul	edi, DWORD PTR $T228316[esp+36]
+	imul	edi, DWORD PTR $T228358[esp+36]
 	call	?getGreatPeopleRateChange@CvSpecialistInfo@@QBEHXZ ; CvSpecialistInfo::getGreatPeopleRateChange
 
-; 1365 : #ifdef AUI_CITIZENS_UNHARDCODE_SPECIALIST_VALUE_HAPPINESS
-; 1366 : 	int iHappinessYieldValue = 0;
-; 1367 : 	int iExtraUnhappinessT100 = 0;
-; 1368 : 	if (pPlayer->isHalfSpecialistUnhappiness() && eSpecialist != (SpecialistTypes)GC.getDEFAULT_SPECIALIST())
-; 1369 : 	{
-; 1370 : 		iExtraUnhappinessT100 = -GC.getUNHAPPINESS_PER_POPULATION() * 50;
-; 1371 : 		// To account for rounding up of halved unhappiness
-; 1372 : 		if ((GetTotalSpecialistCount() % 2 == 0) != bForRemoval)
-; 1373 : 			iExtraUnhappinessT100 *= 2;
-; 1374 : 		if (pPlayer->GetCapitalUnhappinessMod() != 0 && m_pCity->isCapital())
-; 1375 : 		{
-; 1376 : 			iExtraUnhappinessT100 *= (100 + pPlayer->GetCapitalUnhappinessMod());
-; 1377 : 			iExtraUnhappinessT100 /= 100;
-; 1378 : 		}
-; 1379 : 		iExtraUnhappinessT100 *= (100 + pPlayer->GetUnhappinessMod());
-; 1380 : 		iExtraUnhappinessT100 /= 100;
-; 1381 : 		iExtraUnhappinessT100 *= (100 + pPlayer->GetPlayerTraits()->GetPopulationUnhappinessModifier());
-; 1382 : 		iExtraUnhappinessT100 /= 100;
-; 1383 : 		// Handicap mod
-; 1384 : 		iExtraUnhappinessT100 *= pPlayer->getHandicapInfo().getPopulationUnhappinessMod();
-; 1385 : 		iExtraUnhappinessT100 /= 100;
-; 1386 : 
-; 1387 : 		// The more happiness we have, the less it's worth
-; 1388 : 		// Numbers below are based on Primitive function of f = 2^(1-(Empire Happiness)/10) -> F = -20/ln(2) * 2^(-(Empire Happiness)/10)
-; 1389 : 		double dHappinessPre = double(pPlayer->GetExcessHappiness());
-; 1390 : 		if (bForRemoval)
-; 1391 : 			dHappinessPre += double(iExtraUnhappinessT100) / 100.0;
-; 1392 : 		double dHappinessPost = dHappinessPre - double(iExtraUnhappinessT100) / 100.0;
-; 1393 : 		double dHappinessYieldValuePre = pow(2.0, dHappinessPre / -10.0) * -20 / M_LN2;
-; 1394 : 		double dHappinessYieldValuePost = pow(2.0, dHappinessPost / -10.0) * -20 / M_LN2;
-; 1395 : 		iHappinessYieldValue = int(AUI_CITIZENS_UNHARDCODE_SPECIALIST_VALUE_HAPPINESS * (dHappinessYieldValuePost - dHappinessYieldValuePre) + 0.5);
-; 1396 : 
-; 1397 : 		iHappinessYieldValue *= -iExtraUnhappinessT100;
-; 1398 : 		iHappinessYieldValue /= 100;
-; 1399 : 		if (bForRemoval)
-; 1400 : 			iExtraUnhappinessT100 *= -1;
-; 1401 : 	}
-; 1402 : #else
-; 1403 : 	int iHappinessYieldValue = (m_pCity->GetPlayer()->isHalfSpecialistUnhappiness()) ? 5 : 0; // TODO: un-hardcode this
+; 1383 : #ifdef AUI_CITIZENS_UNHARDCODE_SPECIALIST_VALUE_HAPPINESS
+; 1384 : 	int iHappinessYieldValue = 0;
+; 1385 : 	int iExtraUnhappinessT100 = 0;
+; 1386 : 	if (pPlayer->isHalfSpecialistUnhappiness() && eSpecialist != (SpecialistTypes)GC.getDEFAULT_SPECIALIST())
+; 1387 : 	{
+; 1388 : 		iExtraUnhappinessT100 = -GC.getUNHAPPINESS_PER_POPULATION() * 50;
+; 1389 : 		// To account for rounding up of halved unhappiness
+; 1390 : 		if ((GetTotalSpecialistCount() % 2 == 0) != bForRemoval)
+; 1391 : 			iExtraUnhappinessT100 *= 2;
+; 1392 : 		if (pPlayer->GetCapitalUnhappinessMod() != 0 && m_pCity->isCapital())
+; 1393 : 		{
+; 1394 : 			iExtraUnhappinessT100 *= (100 + pPlayer->GetCapitalUnhappinessMod());
+; 1395 : 			iExtraUnhappinessT100 /= 100;
+; 1396 : 		}
+; 1397 : 		iExtraUnhappinessT100 *= (100 + pPlayer->GetUnhappinessMod());
+; 1398 : 		iExtraUnhappinessT100 /= 100;
+; 1399 : 		iExtraUnhappinessT100 *= (100 + pPlayer->GetPlayerTraits()->GetPopulationUnhappinessModifier());
+; 1400 : 		iExtraUnhappinessT100 /= 100;
+; 1401 : 		// Handicap mod
+; 1402 : 		iExtraUnhappinessT100 *= pPlayer->getHandicapInfo().getPopulationUnhappinessMod();
+; 1403 : 		iExtraUnhappinessT100 /= 100;
+; 1404 : 
+; 1405 : 		// The more happiness we have, the less it's worth
+; 1406 : 		// Numbers below are based on Primitive function of f = 2^(1-(Empire Happiness)/10) -> F = -20/ln(2) * 2^(-(Empire Happiness)/10)
+; 1407 : 		double dHappinessPre = double(pPlayer->GetExcessHappiness());
+; 1408 : 		if (bForRemoval)
+; 1409 : 			dHappinessPre += double(iExtraUnhappinessT100) / 100.0;
+; 1410 : 		double dHappinessPost = dHappinessPre - double(iExtraUnhappinessT100) / 100.0;
+; 1411 : 		double dHappinessYieldValuePre = pow(2.0, dHappinessPre / -10.0) * -20 / M_LN2;
+; 1412 : 		double dHappinessYieldValuePost = pow(2.0, dHappinessPost / -10.0) * -20 / M_LN2;
+; 1413 : 		iHappinessYieldValue = int(AUI_CITIZENS_UNHARDCODE_SPECIALIST_VALUE_HAPPINESS * (dHappinessYieldValuePost - dHappinessYieldValuePre) + 0.5);
+; 1414 : 
+; 1415 : 		iHappinessYieldValue *= -iExtraUnhappinessT100;
+; 1416 : 		iHappinessYieldValue /= 100;
+; 1417 : 		if (bForRemoval)
+; 1418 : 			iExtraUnhappinessT100 *= -1;
+; 1419 : 	}
+; 1420 : #else
+; 1421 : 	int iHappinessYieldValue = (m_pCity->GetPlayer()->isHalfSpecialistUnhappiness()) ? 5 : 0; // TODO: un-hardcode this
 
 	mov	ecx, DWORD PTR [ebp]
 	lea	edx, DWORD PTR [eax+eax*2]
@@ -7976,7 +7994,7 @@ $LN30@GetSpecial@2:
 	mov	ecx, eax
 	call	?isHalfSpecialistUnhappiness@CvPlayer@@QBE_NXZ ; CvPlayer::isHalfSpecialistUnhappiness
 
-; 1404 : 	iHappinessYieldValue = m_pCity->GetPlayer()->IsEmpireUnhappy() ? iHappinessYieldValue * 2 : iHappinessYieldValue; // TODO: un-hardcode this
+; 1422 : 	iHappinessYieldValue = m_pCity->GetPlayer()->IsEmpireUnhappy() ? iHappinessYieldValue * 2 : iHappinessYieldValue; // TODO: un-hardcode this
 
 	mov	ecx, DWORD PTR [ebp]
 	movzx	esi, al
@@ -7991,85 +8009,85 @@ $LN30@GetSpecial@2:
 	add	esi, esi
 $LN33@GetSpecial@2:
 
-; 1405 : #endif
-; 1406 : #ifdef AUI_CITIZENS_GET_VALUE_CONSIDER_YIELD_RATE_MODIFIERS
-; 1407 : #ifdef AUI_CITIZENS_CONSIDER_HAPPINESS_VALUE_ON_OTHER_YIELDS
-; 1408 : #ifndef AUI_CITIZENS_GET_VALUE_SPLIT_EXCESS_FOOD_MUTLIPLIER
-; 1409 : 	iFoodYieldValue *= m_pCity->getBaseYieldRateModifier(YIELD_FOOD, 0, NULL, -iExtraUnhappinessT100 / 100);
-; 1410 : #endif
-; 1411 : 	iProductionYieldValue *= m_pCity->getBaseYieldRateModifier(YIELD_PRODUCTION, 0, NULL, -iExtraUnhappinessT100 / 100);
-; 1412 : 	iGoldYieldValue *= m_pCity->getBaseYieldRateModifier(YIELD_GOLD, 0, NULL, -iExtraUnhappinessT100 / 100);
-; 1413 : 	iScienceYieldValue *= m_pCity->getBaseYieldRateModifier(YIELD_SCIENCE, 0, NULL, -iExtraUnhappinessT100 / 100);
-; 1414 : 	iCultureYieldValue *= m_pCity->getBaseYieldRateModifier(YIELD_CULTURE, 0, NULL, -iExtraUnhappinessT100 / 100);
-; 1415 : 	iFaithYieldValue *= m_pCity->getBaseYieldRateModifier(YIELD_FAITH, 0, NULL, -iExtraUnhappinessT100 / 100);
-; 1416 : #else
-; 1417 : #ifndef AUI_CITIZENS_GET_VALUE_SPLIT_EXCESS_FOOD_MUTLIPLIER
-; 1418 : 	iFoodYieldValue *= m_pCity->getBaseYieldRateModifier(YIELD_FOOD);
-; 1419 : #endif
-; 1420 : 	iProductionYieldValue *= m_pCity->getBaseYieldRateModifier(YIELD_PRODUCTION);
-; 1421 : 	iGoldYieldValue *= m_pCity->getBaseYieldRateModifier(YIELD_GOLD);
-; 1422 : 	iScienceYieldValue *= m_pCity->getBaseYieldRateModifier(YIELD_SCIENCE);
-; 1423 : 	iCultureYieldValue *= m_pCity->getBaseYieldRateModifier(YIELD_CULTURE);
-; 1424 : 	iFaithYieldValue *= m_pCity->getBaseYieldRateModifier(YIELD_FAITH);
-; 1425 : #endif
-; 1426 : 
-; 1427 : #ifndef AUI_CITIZENS_UNHARDCODE_SPECIALIST_VALUE_GREAT_PERSON_POINTS
-; 1428 : 	int iGPPModifier = 100 + pPlayer->getGreatPeopleRateModifier() + GetCity()->getGreatPeopleRateModifier();
-; 1429 : 	UnitClassTypes eGPUnitClass = (UnitClassTypes)pSpecialistInfo->getGreatPeopleUnitClass();
-; 1430 : 	if (eGPUnitClass != NO_UNITCLASS)
-; 1431 : 	{
-; 1432 : 		if (eGPUnitClass == (UnitClassTypes)GC.getInfoTypeForString("UNITCLASS_WRITER", true))
-; 1433 : 		{
-; 1434 : 			iGPPModifier += pPlayer->getGreatWriterRateModifier();
-; 1435 : 		}
-; 1436 : 		else if (eGPUnitClass == (UnitClassTypes)GC.getInfoTypeForString("UNITCLASS_ARTIST", true))
-; 1437 : 		{
-; 1438 : 			iGPPModifier += pPlayer->getGreatArtistRateModifier();
-; 1439 : 		}
-; 1440 : 		else if (eGPUnitClass == (UnitClassTypes)GC.getInfoTypeForString("UNITCLASS_MUSICIAN", true))
-; 1441 : 		{
-; 1442 : 			iGPPModifier += pPlayer->getGreatMusicianRateModifier();
-; 1443 : 		}
-; 1444 : 		else if (eGPUnitClass == (UnitClassTypes)GC.getInfoTypeForString("UNITCLASS_SCIENTIST", true))
-; 1445 : 		{
-; 1446 : 			iGPPModifier += pPlayer->getGreatScientistRateModifier();
-; 1447 : 		}
-; 1448 : 		else if (eGPUnitClass == (UnitClassTypes)GC.getInfoTypeForString("UNITCLASS_MERCHANT", true))
-; 1449 : 		{
-; 1450 : 			iGPPModifier += pPlayer->getGreatMerchantRateModifier();
-; 1451 : 		}
-; 1452 : 		else if (eGPUnitClass == (UnitClassTypes)GC.getInfoTypeForString("UNITCLASS_ENGINEER", true))
-; 1453 : 		{
-; 1454 : 			iGPPModifier += pPlayer->getGreatEngineerRateModifier();
-; 1455 : 		}
-; 1456 : 		else if (eGPUnitClass == (UnitClassTypes)GC.getInfoTypeForString("UNITCLASS_GREAT_GENERAL", true))
-; 1457 : 		{
-; 1458 : 			iGPPModifier += pPlayer->getGreatGeneralRateModifier();
-; 1459 : 		}
-; 1460 : 		else if (eGPUnitClass == (UnitClassTypes)GC.getInfoTypeForString("UNITCLASS_GREAT_ADMIRAL", true))
-; 1461 : 		{
-; 1462 : 			iGPPModifier += pPlayer->getGreatAdmiralRateModifier();
-; 1463 : 		}
-; 1464 : 	}
-; 1465 : 	iGPPYieldValue *= iGPPModifier;
-; 1466 : #endif
-; 1467 : #endif
-; 1468 : #ifdef AUI_CITIZENS_GOLD_YIELD_COUNTS_AS_SCIENCE_WHEN_IN_DEFICIT
-; 1469 : 	int iCurrentScienceLoss = -GetPlayer()->calculateGoldRateTimes100() - GetPlayer()->GetTreasury()->GetGoldTimes100();
-; 1470 : 	if (bForRemoval)
-; 1471 : 		iCurrentScienceLoss += iGoldYieldValue;
-; 1472 : 	if (iCurrentScienceLoss > 0)
-; 1473 : 	{
-; 1474 : 		int iGoldToScienceT100 = MIN(iGoldYieldValue, iCurrentScienceLoss);
-; 1475 : 		iGoldYieldValue -= iGoldToScienceT100;
-; 1476 : 		iScienceYieldValue += iGoldToScienceT100;
-; 1477 : 	}
-; 1478 : 	iGoldYieldValue *= GC.getAI_CITIZEN_VALUE_GOLD();
-; 1479 : 	iScienceYieldValue *= GC.getAI_CITIZEN_VALUE_SCIENCE();
-; 1480 : #endif
-; 1481 : 
-; 1482 : 	// How much surplus food are we making?
-; 1483 : 	int iExcessFoodTimes100 = m_pCity->getYieldRateTimes100(YIELD_FOOD, false) - (m_pCity->foodConsumption() * 100);
+; 1423 : #endif
+; 1424 : #ifdef AUI_CITIZENS_GET_VALUE_CONSIDER_YIELD_RATE_MODIFIERS
+; 1425 : #ifdef AUI_CITIZENS_CONSIDER_HAPPINESS_VALUE_ON_OTHER_YIELDS
+; 1426 : #ifndef AUI_CITIZENS_GET_VALUE_SPLIT_EXCESS_FOOD_MUTLIPLIER
+; 1427 : 	iFoodYieldValue *= m_pCity->getBaseYieldRateModifier(YIELD_FOOD, 0, NULL, -iExtraUnhappinessT100 / 100);
+; 1428 : #endif
+; 1429 : 	iProductionYieldValue *= m_pCity->getBaseYieldRateModifier(YIELD_PRODUCTION, 0, NULL, -iExtraUnhappinessT100 / 100);
+; 1430 : 	iGoldYieldValue *= m_pCity->getBaseYieldRateModifier(YIELD_GOLD, 0, NULL, -iExtraUnhappinessT100 / 100);
+; 1431 : 	iScienceYieldValue *= m_pCity->getBaseYieldRateModifier(YIELD_SCIENCE, 0, NULL, -iExtraUnhappinessT100 / 100);
+; 1432 : 	iCultureYieldValue *= m_pCity->getBaseYieldRateModifier(YIELD_CULTURE, 0, NULL, -iExtraUnhappinessT100 / 100);
+; 1433 : 	iFaithYieldValue *= m_pCity->getBaseYieldRateModifier(YIELD_FAITH, 0, NULL, -iExtraUnhappinessT100 / 100);
+; 1434 : #else
+; 1435 : #ifndef AUI_CITIZENS_GET_VALUE_SPLIT_EXCESS_FOOD_MUTLIPLIER
+; 1436 : 	iFoodYieldValue *= m_pCity->getBaseYieldRateModifier(YIELD_FOOD);
+; 1437 : #endif
+; 1438 : 	iProductionYieldValue *= m_pCity->getBaseYieldRateModifier(YIELD_PRODUCTION);
+; 1439 : 	iGoldYieldValue *= m_pCity->getBaseYieldRateModifier(YIELD_GOLD);
+; 1440 : 	iScienceYieldValue *= m_pCity->getBaseYieldRateModifier(YIELD_SCIENCE);
+; 1441 : 	iCultureYieldValue *= m_pCity->getBaseYieldRateModifier(YIELD_CULTURE);
+; 1442 : 	iFaithYieldValue *= m_pCity->getBaseYieldRateModifier(YIELD_FAITH);
+; 1443 : #endif
+; 1444 : 
+; 1445 : #ifndef AUI_CITIZENS_UNHARDCODE_SPECIALIST_VALUE_GREAT_PERSON_POINTS
+; 1446 : 	int iGPPModifier = 100 + pPlayer->getGreatPeopleRateModifier() + GetCity()->getGreatPeopleRateModifier();
+; 1447 : 	UnitClassTypes eGPUnitClass = (UnitClassTypes)pSpecialistInfo->getGreatPeopleUnitClass();
+; 1448 : 	if (eGPUnitClass != NO_UNITCLASS)
+; 1449 : 	{
+; 1450 : 		if (eGPUnitClass == (UnitClassTypes)GC.getInfoTypeForString("UNITCLASS_WRITER", true))
+; 1451 : 		{
+; 1452 : 			iGPPModifier += pPlayer->getGreatWriterRateModifier();
+; 1453 : 		}
+; 1454 : 		else if (eGPUnitClass == (UnitClassTypes)GC.getInfoTypeForString("UNITCLASS_ARTIST", true))
+; 1455 : 		{
+; 1456 : 			iGPPModifier += pPlayer->getGreatArtistRateModifier();
+; 1457 : 		}
+; 1458 : 		else if (eGPUnitClass == (UnitClassTypes)GC.getInfoTypeForString("UNITCLASS_MUSICIAN", true))
+; 1459 : 		{
+; 1460 : 			iGPPModifier += pPlayer->getGreatMusicianRateModifier();
+; 1461 : 		}
+; 1462 : 		else if (eGPUnitClass == (UnitClassTypes)GC.getInfoTypeForString("UNITCLASS_SCIENTIST", true))
+; 1463 : 		{
+; 1464 : 			iGPPModifier += pPlayer->getGreatScientistRateModifier();
+; 1465 : 		}
+; 1466 : 		else if (eGPUnitClass == (UnitClassTypes)GC.getInfoTypeForString("UNITCLASS_MERCHANT", true))
+; 1467 : 		{
+; 1468 : 			iGPPModifier += pPlayer->getGreatMerchantRateModifier();
+; 1469 : 		}
+; 1470 : 		else if (eGPUnitClass == (UnitClassTypes)GC.getInfoTypeForString("UNITCLASS_ENGINEER", true))
+; 1471 : 		{
+; 1472 : 			iGPPModifier += pPlayer->getGreatEngineerRateModifier();
+; 1473 : 		}
+; 1474 : 		else if (eGPUnitClass == (UnitClassTypes)GC.getInfoTypeForString("UNITCLASS_GREAT_GENERAL", true))
+; 1475 : 		{
+; 1476 : 			iGPPModifier += pPlayer->getGreatGeneralRateModifier();
+; 1477 : 		}
+; 1478 : 		else if (eGPUnitClass == (UnitClassTypes)GC.getInfoTypeForString("UNITCLASS_GREAT_ADMIRAL", true))
+; 1479 : 		{
+; 1480 : 			iGPPModifier += pPlayer->getGreatAdmiralRateModifier();
+; 1481 : 		}
+; 1482 : 	}
+; 1483 : 	iGPPYieldValue *= iGPPModifier;
+; 1484 : #endif
+; 1485 : #endif
+; 1486 : #ifdef AUI_CITIZENS_GOLD_YIELD_COUNTS_AS_SCIENCE_WHEN_IN_DEFICIT
+; 1487 : 	int iCurrentScienceLoss = -GetPlayer()->calculateGoldRateTimes100() - GetPlayer()->GetTreasury()->GetGoldTimes100();
+; 1488 : 	if (bForRemoval)
+; 1489 : 		iCurrentScienceLoss += iGoldYieldValue;
+; 1490 : 	if (iCurrentScienceLoss > 0)
+; 1491 : 	{
+; 1492 : 		int iGoldToScienceT100 = MIN(iGoldYieldValue, iCurrentScienceLoss);
+; 1493 : 		iGoldYieldValue -= iGoldToScienceT100;
+; 1494 : 		iScienceYieldValue += iGoldToScienceT100;
+; 1495 : 	}
+; 1496 : 	iGoldYieldValue *= GC.getAI_CITIZEN_VALUE_GOLD();
+; 1497 : 	iScienceYieldValue *= GC.getAI_CITIZEN_VALUE_SCIENCE();
+; 1498 : #endif
+; 1499 : 
+; 1500 : 	// How much surplus food are we making?
+; 1501 : 	int iExcessFoodTimes100 = m_pCity->getYieldRateTimes100(YIELD_FOOD, false) - (m_pCity->foodConsumption() * 100);
 
 	mov	ecx, DWORD PTR [ebp]
 	push	0
@@ -8083,40 +8101,40 @@ $LN33@GetSpecial@2:
 	call	?getYieldRateTimes100@CvCity@@QBEHW4YieldTypes@@_N@Z ; CvCity::getYieldRateTimes100
 	sub	eax, DWORD PTR tv498[esp+36]
 
-; 1484 : #if defined(AUI_CITIZENS_GET_VALUE_SPLIT_EXCESS_FOOD_MUTLIPLIER) || defined(AUI_CITIZENS_GET_VALUE_ALTER_FOOD_VALUE_IF_FOOD_PRODUCTION) || defined(AUI_CITIZENS_GET_VALUE_CONSIDER_GROWTH_MODIFIERS)
-; 1485 : 	int iSpecialistBaseFoodYield = pPlayer->specialistYield(eSpecialist, YIELD_FOOD);
-; 1486 : #ifdef AUI_CITIZENS_GET_SPECIALIST_VALUE_ACCOUNT_FOR_GURUSHIP
-; 1487 : 	if (pReligion)
-; 1488 : 		iSpecialistBaseFoodYield += pReligion->m_Beliefs.GetYieldChangeAnySpecialist(YIELD_FOOD) * 100;
-; 1489 : 	if (pSecondaryBelief)
-; 1490 : 		iSpecialistBaseFoodYield += pSecondaryBelief->GetYieldChangeAnySpecialist(YIELD_FOOD) * 100;
-; 1491 : #endif
-; 1492 : #ifdef AUI_CITIZENS_GET_VALUE_CONSIDER_YIELD_RATE_MODIFIERS
-; 1493 : #ifdef AUI_CITIZENS_CONSIDER_HAPPINESS_VALUE_ON_OTHER_YIELDS
-; 1494 : 	iSpecialistBaseFoodYield *= m_pCity->getBaseYieldRateModifier(YIELD_FOOD, 0, NULL, -iExtraUnhappinessT100 / 100);
-; 1495 : #else
-; 1496 : 	iSpecialistBaseFoodYield *= m_pCity->getBaseYieldRateModifier(YIELD_FOOD);
-; 1497 : #endif
-; 1498 : #endif
-; 1499 : 	if (bForRemoval)
-; 1500 : 		iExcessFoodTimes100 -= iSpecialistBaseFoodYield + iFoodConsumptionBonus;
-; 1501 : 	int iExcessFoodWithPlotTimes100 = iSpecialistBaseFoodYield + iExcessFoodTimes100 + iFoodConsumptionBonus;
-; 1502 : #endif
-; 1503 : #ifdef AUI_CITIZENS_CONSIDER_HAPPINESS_VALUE_ON_OTHER_YIELDS
-; 1504 : 	// Excess Food bit is to make sure we don't starve to death trying to allocate specialists when we're unhappy
-; 1505 : 	if (iExcessFoodWithPlotTimes100 >= 0 && (pPlayer->GetExcessHappiness() - iExtraUnhappinessT100 / 100 >= 0) != (pPlayer->GetExcessHappiness() >= 0))
-; 1506 : 	{
-; 1507 : 		int iBonusScience = GetPlayer()->GetScienceFromHappinessTimes100(true);
-; 1508 : 		if (pPlayer->GetExcessHappiness() >= 0)
-; 1509 : 			iBonusScience *= -1;
-; 1510 : 		iScienceYieldValue += GC.getAI_CITIZEN_VALUE_SCIENCE() * iBonusScience / GetPlayer()->getNumCities();
-; 1511 : 	}
-; 1512 : 	// Happiness to culture already multiplied by 100
-; 1513 : 	if (pPlayer->GetExcessHappiness() + -iExtraUnhappinessT100 / 100 >= 0)
-; 1514 : 		iCultureYieldValue += GC.getAI_CITIZEN_VALUE_CULTURE() * (-iExtraUnhappinessT100 / 100) * GetPlayer()->getHappinessToCulture();
+; 1502 : #if defined(AUI_CITIZENS_GET_VALUE_SPLIT_EXCESS_FOOD_MUTLIPLIER) || defined(AUI_CITIZENS_GET_VALUE_ALTER_FOOD_VALUE_IF_FOOD_PRODUCTION) || defined(AUI_CITIZENS_GET_VALUE_CONSIDER_GROWTH_MODIFIERS)
+; 1503 : 	int iSpecialistBaseFoodYield = pPlayer->specialistYield(eSpecialist, YIELD_FOOD);
+; 1504 : #ifdef AUI_CITIZENS_GET_SPECIALIST_VALUE_ACCOUNT_FOR_GURUSHIP
+; 1505 : 	if (pReligion)
+; 1506 : 		iSpecialistBaseFoodYield += pReligion->m_Beliefs.GetYieldChangeAnySpecialist(YIELD_FOOD) * 100;
+; 1507 : 	if (pSecondaryBelief)
+; 1508 : 		iSpecialistBaseFoodYield += pSecondaryBelief->GetYieldChangeAnySpecialist(YIELD_FOOD) * 100;
+; 1509 : #endif
+; 1510 : #ifdef AUI_CITIZENS_GET_VALUE_CONSIDER_YIELD_RATE_MODIFIERS
+; 1511 : #ifdef AUI_CITIZENS_CONSIDER_HAPPINESS_VALUE_ON_OTHER_YIELDS
+; 1512 : 	iSpecialistBaseFoodYield *= m_pCity->getBaseYieldRateModifier(YIELD_FOOD, 0, NULL, -iExtraUnhappinessT100 / 100);
+; 1513 : #else
+; 1514 : 	iSpecialistBaseFoodYield *= m_pCity->getBaseYieldRateModifier(YIELD_FOOD);
 ; 1515 : #endif
-; 1516 : 
-; 1517 : 	bool bAvoidGrowth = IsAvoidGrowth();
+; 1516 : #endif
+; 1517 : 	if (bForRemoval)
+; 1518 : 		iExcessFoodTimes100 -= iSpecialistBaseFoodYield + iFoodConsumptionBonus;
+; 1519 : 	int iExcessFoodWithPlotTimes100 = iSpecialistBaseFoodYield + iExcessFoodTimes100 + iFoodConsumptionBonus;
+; 1520 : #endif
+; 1521 : #ifdef AUI_CITIZENS_CONSIDER_HAPPINESS_VALUE_ON_OTHER_YIELDS
+; 1522 : 	// Excess Food bit is to make sure we don't starve to death trying to allocate specialists when we're unhappy
+; 1523 : 	if (iExcessFoodWithPlotTimes100 >= 0 && (pPlayer->GetExcessHappiness() - iExtraUnhappinessT100 / 100 >= 0) != (pPlayer->GetExcessHappiness() >= 0))
+; 1524 : 	{
+; 1525 : 		int iBonusScience = GetPlayer()->GetScienceFromHappinessTimes100(true);
+; 1526 : 		if (pPlayer->GetExcessHappiness() >= 0)
+; 1527 : 			iBonusScience *= -1;
+; 1528 : 		iScienceYieldValue += GC.getAI_CITIZEN_VALUE_SCIENCE() * iBonusScience / GetPlayer()->getNumCities();
+; 1529 : 	}
+; 1530 : 	// Happiness to culture already multiplied by 100
+; 1531 : 	if (pPlayer->GetExcessHappiness() + -iExtraUnhappinessT100 / 100 >= 0)
+; 1532 : 		iCultureYieldValue += GC.getAI_CITIZEN_VALUE_CULTURE() * (-iExtraUnhappinessT100 / 100) * GetPlayer()->getHappinessToCulture();
+; 1533 : #endif
+; 1534 : 
+; 1535 : 	bool bAvoidGrowth = IsAvoidGrowth();
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	19					; 00000013H
@@ -8141,29 +8159,29 @@ $LN47@GetSpecial@2:
 	mov	BYTE PTR _bAvoidGrowth$[esp+36], cl
 $LN49@GetSpecial@2:
 
-; 1518 : 
-; 1519 : 	// City Focus
-; 1520 : 	CityAIFocusTypes eFocus = GetFocusType();
+; 1536 : 
+; 1537 : 	// City Focus
+; 1538 : 	CityAIFocusTypes eFocus = GetFocusType();
 
 	mov	ecx, DWORD PTR [ebp+20]
 
-; 1521 : 	if(eFocus == CITY_AI_FOCUS_TYPE_FOOD)
+; 1539 : 	if(eFocus == CITY_AI_FOCUS_TYPE_FOOD)
 
 	test	ecx, ecx
 	jne	SHORT $LN29@GetSpecial@2
 
-; 1522 : 		iFoodYieldValue *= 3;
+; 1540 : 		iFoodYieldValue *= 3;
 
 	lea	ebx, DWORD PTR [ebx+ebx*2]
 	jmp	$LN67@GetSpecial@2
 $LN29@GetSpecial@2:
 
-; 1523 : 	else if(eFocus == CITY_AI_FOCUS_TYPE_PRODUCTION)
+; 1541 : 	else if(eFocus == CITY_AI_FOCUS_TYPE_PRODUCTION)
 
 	cmp	ecx, 1
 	jne	SHORT $LN27@GetSpecial@2
 
-; 1524 : 		iProductionYieldValue *= 3;
+; 1542 : 		iProductionYieldValue *= 3;
 
 	mov	eax, DWORD PTR _iProductionYieldValue$[esp+40]
 	lea	edx, DWORD PTR [eax+eax*2]
@@ -8171,12 +8189,12 @@ $LN29@GetSpecial@2:
 	jmp	SHORT $LN67@GetSpecial@2
 $LN27@GetSpecial@2:
 
-; 1525 : 	else if(eFocus == CITY_AI_FOCUS_TYPE_GOLD)
+; 1543 : 	else if(eFocus == CITY_AI_FOCUS_TYPE_GOLD)
 
 	cmp	ecx, 2
 	jne	SHORT $LN25@GetSpecial@2
 
-; 1526 : 		iGoldYieldValue *= 3;
+; 1544 : 		iGoldYieldValue *= 3;
 
 	mov	eax, DWORD PTR _iGoldYieldValue$[esp+40]
 	lea	eax, DWORD PTR [eax+eax*2]
@@ -8184,12 +8202,12 @@ $LN27@GetSpecial@2:
 	jmp	SHORT $LN67@GetSpecial@2
 $LN25@GetSpecial@2:
 
-; 1527 : 	else if(eFocus == CITY_AI_FOCUS_TYPE_SCIENCE)
+; 1545 : 	else if(eFocus == CITY_AI_FOCUS_TYPE_SCIENCE)
 
 	cmp	ecx, 4
 	jne	SHORT $LN23@GetSpecial@2
 
-; 1528 : 		iScienceYieldValue *= 3;
+; 1546 : 		iScienceYieldValue *= 3;
 
 	mov	eax, DWORD PTR _iScienceYieldValue$[esp+40]
 	lea	edx, DWORD PTR [eax+eax*2]
@@ -8197,12 +8215,12 @@ $LN25@GetSpecial@2:
 	jmp	SHORT $LN67@GetSpecial@2
 $LN23@GetSpecial@2:
 
-; 1529 : 	else if(eFocus == CITY_AI_FOCUS_TYPE_CULTURE)
+; 1547 : 	else if(eFocus == CITY_AI_FOCUS_TYPE_CULTURE)
 
 	cmp	ecx, 5
 	jne	SHORT $LN21@GetSpecial@2
 
-; 1530 : 		iCultureYieldValue *= 3;
+; 1548 : 		iCultureYieldValue *= 3;
 
 	mov	eax, DWORD PTR _iCultureYieldValue$[esp+40]
 	lea	eax, DWORD PTR [eax+eax*2]
@@ -8210,14 +8228,14 @@ $LN23@GetSpecial@2:
 	jmp	SHORT $LN67@GetSpecial@2
 $LN21@GetSpecial@2:
 
-; 1531 : 	else if(eFocus == CITY_AI_FOCUS_TYPE_GOLD_GROWTH)
+; 1549 : 	else if(eFocus == CITY_AI_FOCUS_TYPE_GOLD_GROWTH)
 
 	cmp	ecx, 7
 	jne	SHORT $LN19@GetSpecial@2
 
-; 1532 : 	{
-; 1533 : 		iFoodYieldValue *= 2;
-; 1534 : 		iGoldYieldValue *= 2;
+; 1550 : 	{
+; 1551 : 		iFoodYieldValue *= 2;
+; 1552 : 		iGoldYieldValue *= 2;
 
 	mov	edx, DWORD PTR _iGoldYieldValue$[esp+40]
 	lea	eax, DWORD PTR [edx+edx]
@@ -8226,15 +8244,15 @@ $LN21@GetSpecial@2:
 	jmp	SHORT $LN67@GetSpecial@2
 $LN19@GetSpecial@2:
 
-; 1535 : 	}
-; 1536 : 	else if(eFocus == CITY_AI_FOCUS_TYPE_PROD_GROWTH)
+; 1553 : 	}
+; 1554 : 	else if(eFocus == CITY_AI_FOCUS_TYPE_PROD_GROWTH)
 
 	cmp	ecx, 6
 	jne	SHORT $LN17@GetSpecial@2
 
-; 1537 : 	{
-; 1538 : 		iFoodYieldValue *= 2;
-; 1539 : 		iProductionYieldValue *= 2;
+; 1555 : 	{
+; 1556 : 		iFoodYieldValue *= 2;
+; 1557 : 		iProductionYieldValue *= 2;
 
 	mov	edx, DWORD PTR _iProductionYieldValue$[esp+40]
 	lea	eax, DWORD PTR [edx+edx]
@@ -8243,70 +8261,70 @@ $LN19@GetSpecial@2:
 	jmp	SHORT $LN67@GetSpecial@2
 $LN17@GetSpecial@2:
 
-; 1540 : 	}
-; 1541 : 	else if(eFocus == CITY_AI_FOCUS_TYPE_FAITH)
+; 1558 : 	}
+; 1559 : 	else if(eFocus == CITY_AI_FOCUS_TYPE_FAITH)
 
 	cmp	ecx, 8
 	jne	SHORT $LN15@GetSpecial@2
 
-; 1542 : 	{
-; 1543 : 		iFaithYieldValue *= 3;
+; 1560 : 	{
+; 1561 : 		iFaithYieldValue *= 3;
 
 	lea	edi, DWORD PTR [edi+edi*2]
 	jmp	SHORT $LN67@GetSpecial@2
 $LN15@GetSpecial@2:
 
-; 1544 : 	}
-; 1545 : 	else if(eFocus == CITY_AI_FOCUS_TYPE_GREAT_PEOPLE)
+; 1562 : 	}
+; 1563 : 	else if(eFocus == CITY_AI_FOCUS_TYPE_GREAT_PEOPLE)
 
 	cmp	ecx, 3
 	jne	SHORT $LN67@GetSpecial@2
 
-; 1546 : 	{
-; 1547 : 		iGPPYieldValue *= 3;
+; 1564 : 	{
+; 1565 : 		iGPPYieldValue *= 3;
 
 	mov	eax, DWORD PTR _iGPPYieldValue$[esp+40]
 	lea	edx, DWORD PTR [eax+eax*2]
 	mov	DWORD PTR _iGPPYieldValue$[esp+40], edx
 $LN67@GetSpecial@2:
 
-; 1548 : 	}
-; 1549 : 
-; 1550 : #ifdef AUI_CITIZENS_GET_VALUE_ALTER_FOOD_VALUE_IF_FOOD_PRODUCTION
-; 1551 : #ifdef AUI_CITIZENS_FOOD_PRODUCTION_TRIAL_RUN_THEN_SELF_CONSISTENCY
-; 1552 : 	if (!getIgnoreFoodProduction() && m_pCity->isFoodProduction())
-; 1553 : #else
-; 1554 : 	if (m_pCity->isFoodProduction())
-; 1555 : #endif
-; 1556 : 	{
-; 1557 : #ifdef AUI_CITIZENS_GET_VALUE_CONSIDER_GROWTH_MODIFIERS
-; 1558 : #ifdef AUI_CITIZENS_CONSIDER_HAPPINESS_VALUE_ON_OTHER_YIELDS
-; 1559 : 		iFoodYieldValue = m_pCity->foodDifferenceTimes100(true, NULL, &iExcessFoodWithPlotTimes100, -iExtraUnhappinessT100 / 100) - m_pCity->foodDifferenceTimes100(true, NULL, &iExcessFoodTimes100, -iExtraUnhappinessT100 / 100);
-; 1560 : 		int iDummy = m_pCity->GetFoodProduction(iExcessFoodTimes100 / 100);
-; 1561 : 		int iCurrProdFromFood = m_pCity->foodDifference(true, &iDummy, -iExtraUnhappinessT100 / 100);
-; 1562 : 		iDummy = m_pCity->GetFoodProduction(iExcessFoodWithPlotTimes100 / 100);
-; 1563 : 		int iProdFromFoodWithTile = m_pCity->foodDifference(true, &iDummy, -iExtraUnhappinessT100 / 100);
-; 1564 : #else
-; 1565 : 		iFoodYieldValue = m_pCity->foodDifferenceTimes100(true, NULL, &iExcessFoodWithPlotTimes100) - m_pCity->foodDifferenceTimes100(true, NULL, &iExcessFoodTimes100);
-; 1566 : 		int iDummy = m_pCity->GetFoodProduction(iExcessFoodTimes100 / 100);
-; 1567 : 		int iCurrProdFromFood = m_pCity->foodDifference(true, &iDummy);
-; 1568 : 		iDummy = m_pCity->GetFoodProduction(iExcessFoodWithPlotTimes100 / 100);
-; 1569 : 		int iProdFromFoodWithTile = m_pCity->foodDifference(true, &iDummy);
-; 1570 : #endif
-; 1571 : #ifndef AUI_CITIZENS_GET_VALUE_CONSIDER_YIELD_RATE_MODIFIERS
-; 1572 : 		iFoodYieldValue /= 100;
+; 1566 : 	}
+; 1567 : 
+; 1568 : #ifdef AUI_CITIZENS_GET_VALUE_ALTER_FOOD_VALUE_IF_FOOD_PRODUCTION
+; 1569 : #ifdef AUI_CITIZENS_FOOD_PRODUCTION_TRIAL_RUN_THEN_SELF_CONSISTENCY
+; 1570 : 	if (!getIgnoreFoodProduction() && m_pCity->isFoodProduction())
+; 1571 : #else
+; 1572 : 	if (m_pCity->isFoodProduction())
 ; 1573 : #endif
-; 1574 : #else
-; 1575 : 		iFoodYieldValue = iExcessFoodWithPlotTimes100 - iExcessFoodTimes100;
-; 1576 : 		int iCurrProdFromFood = m_pCity->GetFoodProduction(iExcessFoodTimes100 / 100);
-; 1577 : 		int iProdFromFoodWithTile = m_pCity->GetFoodProduction(iExcessFoodWithPlotTimes100 / 100);
-; 1578 : #endif
-; 1579 : 		iProductionYieldValue += (iProdFromFoodWithTile - iCurrProdFromFood) * GC.getAI_CITIZEN_VALUE_PRODUCTION() * (eFocus == CITY_AI_FOCUS_TYPE_PRODUCTION ? 3 : 1);
-; 1580 : 	}
-; 1581 : 	else
-; 1582 : #endif
-; 1583 : 	// Food can be worth less if we don't want to grow
-; 1584 : 	if(iExcessFoodTimes100 >= 0 && bAvoidGrowth)
+; 1574 : 	{
+; 1575 : #ifdef AUI_CITIZENS_GET_VALUE_CONSIDER_GROWTH_MODIFIERS
+; 1576 : #ifdef AUI_CITIZENS_CONSIDER_HAPPINESS_VALUE_ON_OTHER_YIELDS
+; 1577 : 		iFoodYieldValue = m_pCity->foodDifferenceTimes100(true, NULL, &iExcessFoodWithPlotTimes100, -iExtraUnhappinessT100 / 100) - m_pCity->foodDifferenceTimes100(true, NULL, &iExcessFoodTimes100, -iExtraUnhappinessT100 / 100);
+; 1578 : 		int iDummy = m_pCity->GetFoodProduction(iExcessFoodTimes100 / 100);
+; 1579 : 		int iCurrProdFromFood = m_pCity->foodDifference(true, &iDummy, -iExtraUnhappinessT100 / 100);
+; 1580 : 		iDummy = m_pCity->GetFoodProduction(iExcessFoodWithPlotTimes100 / 100);
+; 1581 : 		int iProdFromFoodWithTile = m_pCity->foodDifference(true, &iDummy, -iExtraUnhappinessT100 / 100);
+; 1582 : #else
+; 1583 : 		iFoodYieldValue = m_pCity->foodDifferenceTimes100(true, NULL, &iExcessFoodWithPlotTimes100) - m_pCity->foodDifferenceTimes100(true, NULL, &iExcessFoodTimes100);
+; 1584 : 		int iDummy = m_pCity->GetFoodProduction(iExcessFoodTimes100 / 100);
+; 1585 : 		int iCurrProdFromFood = m_pCity->foodDifference(true, &iDummy);
+; 1586 : 		iDummy = m_pCity->GetFoodProduction(iExcessFoodWithPlotTimes100 / 100);
+; 1587 : 		int iProdFromFoodWithTile = m_pCity->foodDifference(true, &iDummy);
+; 1588 : #endif
+; 1589 : #ifndef AUI_CITIZENS_GET_VALUE_CONSIDER_YIELD_RATE_MODIFIERS
+; 1590 : 		iFoodYieldValue /= 100;
+; 1591 : #endif
+; 1592 : #else
+; 1593 : 		iFoodYieldValue = iExcessFoodWithPlotTimes100 - iExcessFoodTimes100;
+; 1594 : 		int iCurrProdFromFood = m_pCity->GetFoodProduction(iExcessFoodTimes100 / 100);
+; 1595 : 		int iProdFromFoodWithTile = m_pCity->GetFoodProduction(iExcessFoodWithPlotTimes100 / 100);
+; 1596 : #endif
+; 1597 : 		iProductionYieldValue += (iProdFromFoodWithTile - iCurrProdFromFood) * GC.getAI_CITIZEN_VALUE_PRODUCTION() * (eFocus == CITY_AI_FOCUS_TYPE_PRODUCTION ? 3 : 1);
+; 1598 : 	}
+; 1599 : 	else
+; 1600 : #endif
+; 1601 : 	// Food can be worth less if we don't want to grow
+; 1602 : 	if(iExcessFoodTimes100 >= 0 && bAvoidGrowth)
 
 	mov	eax, DWORD PTR _iExcessFoodTimes100$[esp+40]
 	test	eax, eax
@@ -8314,98 +8332,98 @@ $LN67@GetSpecial@2:
 	cmp	BYTE PTR _bAvoidGrowth$[esp+36], 0
 	je	SHORT $LN70@GetSpecial@2
 
-; 1585 : 	{
-; 1586 : #ifdef AUI_CITIZENS_AVOID_GROWTH_STILL_VALUES_EXCESS_FOOD
-; 1587 : #ifdef AUI_CITIZENS_GET_VALUE_CONSIDER_GROWTH_MODIFIERS
-; 1588 : #ifdef AUI_CITIZENS_CONSIDER_HAPPINESS_VALUE_ON_OTHER_YIELDS
-; 1589 : 		iExcessFoodTimes100 = m_pCity->foodDifferenceTimes100(true, NULL, &iExcessFoodTimes100, -iExtraUnhappinessT100 / 100);
-; 1590 : 		iExcessFoodWithPlotTimes100 = m_pCity->foodDifferenceTimes100(true, NULL, &iExcessFoodWithPlotTimes100, -iExtraUnhappinessT100 / 100);
-; 1591 : #else
-; 1592 : 		iExcessFoodTimes100 = m_pCity->foodDifferenceTimes100(true, NULL, &iExcessFoodTimes100);
-; 1593 : 		iExcessFoodWithPlotTimes100 = m_pCity->foodDifferenceTimes100(true, NULL, &iExcessFoodWithPlotTimes100);
-; 1594 : #endif
-; 1595 : #endif
-; 1596 : 		iFoodYieldValue = iExcessFoodWithPlotTimes100 - iExcessFoodTimes100;
-; 1597 : #ifndef AUI_CITIZENS_GET_VALUE_CONSIDER_YIELD_RATE_MODIFIERS
-; 1598 : 		iFoodYieldValue /= 100;
-; 1599 : #endif
-; 1600 : #else
-; 1601 : 		// If we at least have enough Food to feed everyone, zero out the value of additional food
-; 1602 : 		iFoodYieldValue = 0;
+; 1603 : 	{
+; 1604 : #ifdef AUI_CITIZENS_AVOID_GROWTH_STILL_VALUES_EXCESS_FOOD
+; 1605 : #ifdef AUI_CITIZENS_GET_VALUE_CONSIDER_GROWTH_MODIFIERS
+; 1606 : #ifdef AUI_CITIZENS_CONSIDER_HAPPINESS_VALUE_ON_OTHER_YIELDS
+; 1607 : 		iExcessFoodTimes100 = m_pCity->foodDifferenceTimes100(true, NULL, &iExcessFoodTimes100, -iExtraUnhappinessT100 / 100);
+; 1608 : 		iExcessFoodWithPlotTimes100 = m_pCity->foodDifferenceTimes100(true, NULL, &iExcessFoodWithPlotTimes100, -iExtraUnhappinessT100 / 100);
+; 1609 : #else
+; 1610 : 		iExcessFoodTimes100 = m_pCity->foodDifferenceTimes100(true, NULL, &iExcessFoodTimes100);
+; 1611 : 		iExcessFoodWithPlotTimes100 = m_pCity->foodDifferenceTimes100(true, NULL, &iExcessFoodWithPlotTimes100);
+; 1612 : #endif
+; 1613 : #endif
+; 1614 : 		iFoodYieldValue = iExcessFoodWithPlotTimes100 - iExcessFoodTimes100;
+; 1615 : #ifndef AUI_CITIZENS_GET_VALUE_CONSIDER_YIELD_RATE_MODIFIERS
+; 1616 : 		iFoodYieldValue /= 100;
+; 1617 : #endif
+; 1618 : #else
+; 1619 : 		// If we at least have enough Food to feed everyone, zero out the value of additional food
+; 1620 : 		iFoodYieldValue = 0;
 
 	xor	ebx, ebx
 
-; 1603 : #endif
-; 1604 : 	}
-; 1605 : 	// We want to grow here
-; 1606 : 	else
+; 1621 : #endif
+; 1622 : 	}
+; 1623 : 	// We want to grow here
+; 1624 : 	else
 
 	jmp	SHORT $LN69@GetSpecial@2
 $LN70@GetSpecial@2:
 
-; 1607 : 	{
-; 1608 : #ifdef AUI_CITIZENS_GET_VALUE_SPLIT_EXCESS_FOOD_MUTLIPLIER
-; 1609 : 		iFoodYieldValue *= 8;
-; 1610 : #ifdef AUI_CITIZENS_GET_VALUE_CONSIDER_GROWTH_MODIFIERS
-; 1611 : #ifdef AUI_CITIZENS_CONSIDER_HAPPINESS_VALUE_ON_OTHER_YIELDS
-; 1612 : 		iExcessFoodTimes100 = m_pCity->foodDifferenceTimes100(true, NULL, &iExcessFoodTimes100, -iExtraUnhappinessT100 / 100);
-; 1613 : 		iExcessFoodWithPlotTimes100 = m_pCity->foodDifferenceTimes100(true, NULL, &iExcessFoodWithPlotTimes100, -iExtraUnhappinessT100 / 100);
-; 1614 : #else
-; 1615 : 		iExcessFoodTimes100 = m_pCity->foodDifferenceTimes100(true, NULL, &iExcessFoodTimes100);
-; 1616 : 		iExcessFoodWithPlotTimes100 = m_pCity->foodDifferenceTimes100(true, NULL, &iExcessFoodWithPlotTimes100);
-; 1617 : #endif
-; 1618 : #endif
-; 1619 : #ifdef AUI_CITIZENS_AVOID_GROWTH_STILL_VALUES_EXCESS_FOOD
-; 1620 : 		int iExcessFoodYieldValue = 1;
-; 1621 : #else
-; 1622 : 		int iExcessFoodYieldValue = 0;
-; 1623 : #endif
-; 1624 : 		int iTargetFoodT100 = 0;
-; 1625 : 		if (!bAvoidGrowth)
-; 1626 : 		{
-; 1627 : 			iExcessFoodYieldValue = iFoodYieldValue / 16;
-; 1628 : #ifdef AUI_CITIZENS_LOW_POPULATION_CITIES_USE_2MIN_NOT_4X_FOOD
-; 1629 : 			if (eFocus == NO_CITY_AI_FOCUS_TYPE || eFocus == CITY_AI_FOCUS_TYPE_FOOD || eFocus == CITY_AI_FOCUS_TYPE_PROD_GROWTH
-; 1630 : 				|| eFocus == CITY_AI_FOCUS_TYPE_GOLD_GROWTH || m_pCity->getPopulation() < 2)
-; 1631 : #else
-; 1632 : 			if (eFocus == NO_CITY_AI_FOCUS_TYPE || eFocus == CITY_AI_FOCUS_TYPE_FOOD || eFocus == CITY_AI_FOCUS_TYPE_PROD_GROWTH || eFocus == CITY_AI_FOCUS_TYPE_GOLD_GROWTH)
-; 1633 : #endif
-; 1634 : 			{
-; 1635 : 				iTargetFoodT100 = 100 * GC.getFOOD_CONSUMPTION_PER_POPULATION();
-; 1636 : 			}
-; 1637 : #ifdef AUI_CITIZENS_PUPPET_STILL_WANTS_GROWTH
-; 1638 : 			else if (m_pCity->IsPuppet())
-; 1639 : 				iTargetFoodT100 = 50 * GC.getFOOD_CONSUMPTION_PER_POPULATION();
-; 1640 : #endif
-; 1641 : 		}
-; 1642 : 
-; 1643 : 		int iNonExcessFoodPlotYieldT100 = iExcessFoodWithPlotTimes100 - iExcessFoodTimes100;
-; 1644 : 		int iExcessFoodPlotYieldT100 = iNonExcessFoodPlotYieldT100;
-; 1645 : 		if (iExcessFoodWithPlotTimes100 <= iTargetFoodT100)
-; 1646 : 		{
-; 1647 : 			iExcessFoodPlotYieldT100 = 0;
-; 1648 : 		}
-; 1649 : 		else if (iExcessFoodTimes100 >= iTargetFoodT100)
-; 1650 : 		{
-; 1651 : 			iNonExcessFoodPlotYieldT100 = 0;
-; 1652 : 		}
-; 1653 : 		else
-; 1654 : 		{
-; 1655 : 			iNonExcessFoodPlotYieldT100 = iTargetFoodT100 - iExcessFoodTimes100;
-; 1656 : 			iExcessFoodPlotYieldT100 = iExcessFoodWithPlotTimes100 - iTargetFoodT100;
-; 1657 : 		}
-; 1658 : 
-; 1659 : 		iFoodYieldValue *= iNonExcessFoodPlotYieldT100;
-; 1660 : 		iFoodYieldValue += (iExcessFoodPlotYieldT100 * iExcessFoodYieldValue);
-; 1661 : #ifndef AUI_CITIZENS_GET_VALUE_CONSIDER_YIELD_RATE_MODIFIERS
-; 1662 : 		iFoodYieldValue /= 100;
-; 1663 : #endif
-; 1664 : #else
-; 1665 : 		// If we have a non-default and non-food focus, only worry about getting to 0 food
-; 1666 : #ifdef AUI_CITIZENS_LOW_POPULATION_CITIES_USE_2MIN_NOT_4X_FOOD
-; 1667 : 		if (eFocus != NO_CITY_AI_FOCUS_TYPE && eFocus != CITY_AI_FOCUS_TYPE_FOOD && eFocus != CITY_AI_FOCUS_TYPE_PROD_GROWTH && eFocus != CITY_AI_FOCUS_TYPE_GOLD_GROWTH && m_pCity->getPopulation() >= 5)
-; 1668 : #else
-; 1669 : 		if(eFocus != NO_CITY_AI_FOCUS_TYPE && eFocus != CITY_AI_FOCUS_TYPE_FOOD && eFocus != CITY_AI_FOCUS_TYPE_PROD_GROWTH && eFocus != CITY_AI_FOCUS_TYPE_GOLD_GROWTH)
+; 1625 : 	{
+; 1626 : #ifdef AUI_CITIZENS_GET_VALUE_SPLIT_EXCESS_FOOD_MUTLIPLIER
+; 1627 : 		iFoodYieldValue *= 8;
+; 1628 : #ifdef AUI_CITIZENS_GET_VALUE_CONSIDER_GROWTH_MODIFIERS
+; 1629 : #ifdef AUI_CITIZENS_CONSIDER_HAPPINESS_VALUE_ON_OTHER_YIELDS
+; 1630 : 		iExcessFoodTimes100 = m_pCity->foodDifferenceTimes100(true, NULL, &iExcessFoodTimes100, -iExtraUnhappinessT100 / 100);
+; 1631 : 		iExcessFoodWithPlotTimes100 = m_pCity->foodDifferenceTimes100(true, NULL, &iExcessFoodWithPlotTimes100, -iExtraUnhappinessT100 / 100);
+; 1632 : #else
+; 1633 : 		iExcessFoodTimes100 = m_pCity->foodDifferenceTimes100(true, NULL, &iExcessFoodTimes100);
+; 1634 : 		iExcessFoodWithPlotTimes100 = m_pCity->foodDifferenceTimes100(true, NULL, &iExcessFoodWithPlotTimes100);
+; 1635 : #endif
+; 1636 : #endif
+; 1637 : #ifdef AUI_CITIZENS_AVOID_GROWTH_STILL_VALUES_EXCESS_FOOD
+; 1638 : 		int iExcessFoodYieldValue = 1;
+; 1639 : #else
+; 1640 : 		int iExcessFoodYieldValue = 0;
+; 1641 : #endif
+; 1642 : 		int iTargetFoodT100 = 0;
+; 1643 : 		if (!bAvoidGrowth)
+; 1644 : 		{
+; 1645 : 			iExcessFoodYieldValue = iFoodYieldValue / 16;
+; 1646 : #ifdef AUI_CITIZENS_LOW_POPULATION_CITIES_USE_2MIN_NOT_4X_FOOD
+; 1647 : 			if (eFocus == NO_CITY_AI_FOCUS_TYPE || eFocus == CITY_AI_FOCUS_TYPE_FOOD || eFocus == CITY_AI_FOCUS_TYPE_PROD_GROWTH
+; 1648 : 				|| eFocus == CITY_AI_FOCUS_TYPE_GOLD_GROWTH || m_pCity->getPopulation() < 2)
+; 1649 : #else
+; 1650 : 			if (eFocus == NO_CITY_AI_FOCUS_TYPE || eFocus == CITY_AI_FOCUS_TYPE_FOOD || eFocus == CITY_AI_FOCUS_TYPE_PROD_GROWTH || eFocus == CITY_AI_FOCUS_TYPE_GOLD_GROWTH)
+; 1651 : #endif
+; 1652 : 			{
+; 1653 : 				iTargetFoodT100 = 100 * GC.getFOOD_CONSUMPTION_PER_POPULATION();
+; 1654 : 			}
+; 1655 : #ifdef AUI_CITIZENS_PUPPET_STILL_WANTS_GROWTH
+; 1656 : 			else if (m_pCity->IsPuppet())
+; 1657 : 				iTargetFoodT100 = 50 * GC.getFOOD_CONSUMPTION_PER_POPULATION();
+; 1658 : #endif
+; 1659 : 		}
+; 1660 : 
+; 1661 : 		int iNonExcessFoodPlotYieldT100 = iExcessFoodWithPlotTimes100 - iExcessFoodTimes100;
+; 1662 : 		int iExcessFoodPlotYieldT100 = iNonExcessFoodPlotYieldT100;
+; 1663 : 		if (iExcessFoodWithPlotTimes100 <= iTargetFoodT100)
+; 1664 : 		{
+; 1665 : 			iExcessFoodPlotYieldT100 = 0;
+; 1666 : 		}
+; 1667 : 		else if (iExcessFoodTimes100 >= iTargetFoodT100)
+; 1668 : 		{
+; 1669 : 			iNonExcessFoodPlotYieldT100 = 0;
+; 1670 : 		}
+; 1671 : 		else
+; 1672 : 		{
+; 1673 : 			iNonExcessFoodPlotYieldT100 = iTargetFoodT100 - iExcessFoodTimes100;
+; 1674 : 			iExcessFoodPlotYieldT100 = iExcessFoodWithPlotTimes100 - iTargetFoodT100;
+; 1675 : 		}
+; 1676 : 
+; 1677 : 		iFoodYieldValue *= iNonExcessFoodPlotYieldT100;
+; 1678 : 		iFoodYieldValue += (iExcessFoodPlotYieldT100 * iExcessFoodYieldValue);
+; 1679 : #ifndef AUI_CITIZENS_GET_VALUE_CONSIDER_YIELD_RATE_MODIFIERS
+; 1680 : 		iFoodYieldValue /= 100;
+; 1681 : #endif
+; 1682 : #else
+; 1683 : 		// If we have a non-default and non-food focus, only worry about getting to 0 food
+; 1684 : #ifdef AUI_CITIZENS_LOW_POPULATION_CITIES_USE_2MIN_NOT_4X_FOOD
+; 1685 : 		if (eFocus != NO_CITY_AI_FOCUS_TYPE && eFocus != CITY_AI_FOCUS_TYPE_FOOD && eFocus != CITY_AI_FOCUS_TYPE_PROD_GROWTH && eFocus != CITY_AI_FOCUS_TYPE_GOLD_GROWTH && m_pCity->getPopulation() >= 5)
+; 1686 : #else
+; 1687 : 		if(eFocus != NO_CITY_AI_FOCUS_TYPE && eFocus != CITY_AI_FOCUS_TYPE_FOOD && eFocus != CITY_AI_FOCUS_TYPE_PROD_GROWTH && eFocus != CITY_AI_FOCUS_TYPE_GOLD_GROWTH)
 
 	cmp	ecx, -1
 	je	SHORT $LN10@GetSpecial@2
@@ -8416,76 +8434,76 @@ $LN70@GetSpecial@2:
 	cmp	ecx, 7
 	je	SHORT $LN10@GetSpecial@2
 
-; 1670 : #endif
-; 1671 : 		{
-; 1672 : 			int iFoodT100NeededFor0 = -iExcessFoodTimes100;
+; 1688 : #endif
+; 1689 : 		{
+; 1690 : 			int iFoodT100NeededFor0 = -iExcessFoodTimes100;
 
 	neg	eax
 
-; 1673 : 
-; 1674 : 			if(iFoodT100NeededFor0 > 0)
+; 1691 : 
+; 1692 : 			if(iFoodT100NeededFor0 > 0)
 
 	test	eax, eax
 	jle	SHORT $LN9@GetSpecial@2
 
-; 1675 : 			{
-; 1676 : 				iFoodYieldValue *= 8;
+; 1693 : 			{
+; 1694 : 				iFoodYieldValue *= 8;
 
 	add	ebx, ebx
 	add	ebx, ebx
 	add	ebx, ebx
 
-; 1677 : 			}
-; 1678 : 			else
+; 1695 : 			}
+; 1696 : 			else
 
 	jmp	SHORT $LN69@GetSpecial@2
 $LN10@GetSpecial@2:
 
-; 1679 : 			{
-; 1680 : 				iFoodYieldValue /= 2;
-; 1681 : #ifdef AUI_CITIZENS_GET_VALUE_CONSIDER_GROWTH_MODIFIERS
-; 1682 : 				int iExtraFoodValueT100 = (m_pCity->foodDifferenceTimes100(true, NULL, true, iExcessFoodWithPlotTimes100 - iExcessFoodTimes100) -
-; 1683 : 					(iExcessFoodWithPlotTimes100 - iExcessFoodTimes100)) * /*12*/ GC.getAI_CITIZEN_VALUE_FOOD();
-; 1684 : 				if (eFocus == CITY_AI_FOCUS_TYPE_FOOD)
-; 1685 : 					iExtraFoodValueT100 *= 3;
-; 1686 : 				else if (eFocus == CITY_AI_FOCUS_TYPE_GOLD_GROWTH || eFocus == CITY_AI_FOCUS_TYPE_PROD_GROWTH)
-; 1687 : 					iExtraFoodValueT100 *= 2;
-; 1688 : 				iFoodYieldValue += iExtraFoodValueT100 / 200;
-; 1689 : #endif
-; 1690 : 			}
-; 1691 : 		}
-; 1692 : 		// If our surplus is not at least 2, really emphasize food plots
-; 1693 : 		else if(!bAvoidGrowth)
+; 1697 : 			{
+; 1698 : 				iFoodYieldValue /= 2;
+; 1699 : #ifdef AUI_CITIZENS_GET_VALUE_CONSIDER_GROWTH_MODIFIERS
+; 1700 : 				int iExtraFoodValueT100 = (m_pCity->foodDifferenceTimes100(true, NULL, true, iExcessFoodWithPlotTimes100 - iExcessFoodTimes100) -
+; 1701 : 					(iExcessFoodWithPlotTimes100 - iExcessFoodTimes100)) * /*12*/ GC.getAI_CITIZEN_VALUE_FOOD();
+; 1702 : 				if (eFocus == CITY_AI_FOCUS_TYPE_FOOD)
+; 1703 : 					iExtraFoodValueT100 *= 3;
+; 1704 : 				else if (eFocus == CITY_AI_FOCUS_TYPE_GOLD_GROWTH || eFocus == CITY_AI_FOCUS_TYPE_PROD_GROWTH)
+; 1705 : 					iExtraFoodValueT100 *= 2;
+; 1706 : 				iFoodYieldValue += iExtraFoodValueT100 / 200;
+; 1707 : #endif
+; 1708 : 			}
+; 1709 : 		}
+; 1710 : 		// If our surplus is not at least 2, really emphasize food plots
+; 1711 : 		else if(!bAvoidGrowth)
 
 	cmp	BYTE PTR _bAvoidGrowth$[esp+36], 0
 	jne	SHORT $LN69@GetSpecial@2
 
-; 1694 : 		{
-; 1695 : #ifdef AUI_CITIZENS_FIX_SPECIALIST_VALUE_HALF_FOOD_CONSUMPTION
-; 1696 : 			int iFoodT100NeededFor2 = 100 * GC.getFOOD_CONSUMPTION_PER_POPULATION() - iExcessFoodTimes100;
-; 1697 : #else
-; 1698 : 			int iFoodT100NeededFor2 = 200 - iExcessFoodTimes100;
+; 1712 : 		{
+; 1713 : #ifdef AUI_CITIZENS_FIX_SPECIALIST_VALUE_HALF_FOOD_CONSUMPTION
+; 1714 : 			int iFoodT100NeededFor2 = 100 * GC.getFOOD_CONSUMPTION_PER_POPULATION() - iExcessFoodTimes100;
+; 1715 : #else
+; 1716 : 			int iFoodT100NeededFor2 = 200 - iExcessFoodTimes100;
 
 	mov	eax, 200				; 000000c8H
 	sub	eax, DWORD PTR _iExcessFoodTimes100$[esp+40]
 
-; 1699 : #endif
-; 1700 : #ifdef AUI_CITIZENS_GET_VALUE_CONSIDER_GROWTH_MODIFIERS
-; 1701 : 			int iExtraFoodValueT100 = (m_pCity->foodDifferenceTimes100(true, NULL, true, iExcessFoodWithPlotTimes100 - iExcessFoodTimes100) -
-; 1702 : 				(iExcessFoodWithPlotTimes100 - iExcessFoodTimes100)) * /*12*/ GC.getAI_CITIZEN_VALUE_FOOD();
-; 1703 : 			if (eFocus == CITY_AI_FOCUS_TYPE_FOOD)
-; 1704 : 				iExtraFoodValueT100 *= 3;
-; 1705 : 			else if (eFocus == CITY_AI_FOCUS_TYPE_GOLD_GROWTH || eFocus == CITY_AI_FOCUS_TYPE_PROD_GROWTH)
-; 1706 : 				iExtraFoodValueT100 *= 2;
-; 1707 : #endif
-; 1708 : 
-; 1709 : 			if(iFoodT100NeededFor2 > 0)
+; 1717 : #endif
+; 1718 : #ifdef AUI_CITIZENS_GET_VALUE_CONSIDER_GROWTH_MODIFIERS
+; 1719 : 			int iExtraFoodValueT100 = (m_pCity->foodDifferenceTimes100(true, NULL, true, iExcessFoodWithPlotTimes100 - iExcessFoodTimes100) -
+; 1720 : 				(iExcessFoodWithPlotTimes100 - iExcessFoodTimes100)) * /*12*/ GC.getAI_CITIZEN_VALUE_FOOD();
+; 1721 : 			if (eFocus == CITY_AI_FOCUS_TYPE_FOOD)
+; 1722 : 				iExtraFoodValueT100 *= 3;
+; 1723 : 			else if (eFocus == CITY_AI_FOCUS_TYPE_GOLD_GROWTH || eFocus == CITY_AI_FOCUS_TYPE_PROD_GROWTH)
+; 1724 : 				iExtraFoodValueT100 *= 2;
+; 1725 : #endif
+; 1726 : 
+; 1727 : 			if(iFoodT100NeededFor2 > 0)
 
 	test	eax, eax
 	jle	SHORT $LN5@GetSpecial@2
 
-; 1710 : 			{
-; 1711 : 				iFoodYieldValue *= 8;
+; 1728 : 			{
+; 1729 : 				iFoodYieldValue *= 8;
 
 	add	ebx, ebx
 	add	ebx, ebx
@@ -8493,25 +8511,25 @@ $LN10@GetSpecial@2:
 	jmp	SHORT $LN69@GetSpecial@2
 $LN5@GetSpecial@2:
 
-; 1712 : #ifdef AUI_CITIZENS_GET_VALUE_CONSIDER_GROWTH_MODIFIERS
-; 1713 : 				iExtraFoodValueT100 = 0;
-; 1714 : 				iExtraFoodValueT100 += (m_pCity->foodDifferenceTimes100(true, NULL, true, MIN(iExcessFoodWithPlotTimes100, 100 * GC.getFOOD_CONSUMPTION_PER_POPULATION())) -
-; 1715 : 					MIN(iExcessFoodWithPlotTimes100, 100 * GC.getFOOD_CONSUMPTION_PER_POPULATION())) * 8 * /*12*/ GC.getAI_CITIZEN_VALUE_FOOD();
-; 1716 : 				if (eFocus == CITY_AI_FOCUS_TYPE_FOOD)
-; 1717 : 					iExtraFoodValueT100 *= 3;
-; 1718 : 				else if (eFocus == CITY_AI_FOCUS_TYPE_GOLD_GROWTH || eFocus == CITY_AI_FOCUS_TYPE_PROD_GROWTH)
-; 1719 : 					iExtraFoodValueT100 *= 2;
-; 1720 : 				iFoodYieldValue += iExtraFoodValueT100 / 100;
-; 1721 : #endif
-; 1722 : 			}
-; 1723 : 			else if (eFocus != CITY_AI_FOCUS_TYPE_FOOD)
+; 1730 : #ifdef AUI_CITIZENS_GET_VALUE_CONSIDER_GROWTH_MODIFIERS
+; 1731 : 				iExtraFoodValueT100 = 0;
+; 1732 : 				iExtraFoodValueT100 += (m_pCity->foodDifferenceTimes100(true, NULL, true, MIN(iExcessFoodWithPlotTimes100, 100 * GC.getFOOD_CONSUMPTION_PER_POPULATION())) -
+; 1733 : 					MIN(iExcessFoodWithPlotTimes100, 100 * GC.getFOOD_CONSUMPTION_PER_POPULATION())) * 8 * /*12*/ GC.getAI_CITIZEN_VALUE_FOOD();
+; 1734 : 				if (eFocus == CITY_AI_FOCUS_TYPE_FOOD)
+; 1735 : 					iExtraFoodValueT100 *= 3;
+; 1736 : 				else if (eFocus == CITY_AI_FOCUS_TYPE_GOLD_GROWTH || eFocus == CITY_AI_FOCUS_TYPE_PROD_GROWTH)
+; 1737 : 					iExtraFoodValueT100 *= 2;
+; 1738 : 				iFoodYieldValue += iExtraFoodValueT100 / 100;
+; 1739 : #endif
+; 1740 : 			}
+; 1741 : 			else if (eFocus != CITY_AI_FOCUS_TYPE_FOOD)
 
 	test	ecx, ecx
 	je	SHORT $LN69@GetSpecial@2
 $LN9@GetSpecial@2:
 
-; 1724 : 			{
-; 1725 : 				iFoodYieldValue /= 2;
+; 1742 : 			{
+; 1743 : 				iFoodYieldValue /= 2;
 
 	mov	eax, ebx
 	cdq
@@ -8520,27 +8538,27 @@ $LN9@GetSpecial@2:
 	mov	ebx, eax
 $LN69@GetSpecial@2:
 
-; 1726 : #ifdef AUI_CITIZENS_GET_VALUE_CONSIDER_GROWTH_MODIFIERS
-; 1727 : 				iFoodYieldValue += iExtraFoodValueT100 / 200;
-; 1728 : 			}
-; 1729 : 			else
-; 1730 : 			{
-; 1731 : 				iFoodYieldValue += iExtraFoodValueT100 / 100;
-; 1732 : #endif
-; 1733 : 			}
-; 1734 : 		}
-; 1735 : #ifdef AUI_CITIZENS_FIX_GET_VALUE_FOOD_YIELD_VALUE_WHEN_STARVATION_WITH_AVOID_GROWTH
-; 1736 : 		// Food focus and negative food, but with avoid growth enabled for some reason
-; 1737 : 		else
-; 1738 : 		{
-; 1739 : 			iFoodYieldValue *= 8;
-; 1740 : 		}
-; 1741 : #endif
-; 1742 : #endif
-; 1743 : 	}
-; 1744 : 
-; 1745 : #ifndef AUI_CITIZENS_LOW_POPULATION_CITIES_USE_2MIN_NOT_4X_FOOD
-; 1746 : 	if((eFocus == NO_CITY_AI_FOCUS_TYPE || eFocus == CITY_AI_FOCUS_TYPE_PROD_GROWTH || eFocus == CITY_AI_FOCUS_TYPE_GOLD_GROWTH) && !bAvoidGrowth && m_pCity->getPopulation() < 5)
+; 1744 : #ifdef AUI_CITIZENS_GET_VALUE_CONSIDER_GROWTH_MODIFIERS
+; 1745 : 				iFoodYieldValue += iExtraFoodValueT100 / 200;
+; 1746 : 			}
+; 1747 : 			else
+; 1748 : 			{
+; 1749 : 				iFoodYieldValue += iExtraFoodValueT100 / 100;
+; 1750 : #endif
+; 1751 : 			}
+; 1752 : 		}
+; 1753 : #ifdef AUI_CITIZENS_FIX_GET_VALUE_FOOD_YIELD_VALUE_WHEN_STARVATION_WITH_AVOID_GROWTH
+; 1754 : 		// Food focus and negative food, but with avoid growth enabled for some reason
+; 1755 : 		else
+; 1756 : 		{
+; 1757 : 			iFoodYieldValue *= 8;
+; 1758 : 		}
+; 1759 : #endif
+; 1760 : #endif
+; 1761 : 	}
+; 1762 : 
+; 1763 : #ifndef AUI_CITIZENS_LOW_POPULATION_CITIES_USE_2MIN_NOT_4X_FOOD
+; 1764 : 	if((eFocus == NO_CITY_AI_FOCUS_TYPE || eFocus == CITY_AI_FOCUS_TYPE_PROD_GROWTH || eFocus == CITY_AI_FOCUS_TYPE_GOLD_GROWTH) && !bAvoidGrowth && m_pCity->getPopulation() < 5)
 
 	cmp	ecx, -1
 	je	SHORT $LN1@GetSpecial@2
@@ -8556,8 +8574,8 @@ $LN1@GetSpecial@2:
 	cmp	eax, 5
 	jge	SHORT $LN68@GetSpecial@2
 
-; 1747 : 	{
-; 1748 : 		iFoodYieldValue *= 4;
+; 1765 : 	{
+; 1766 : 		iFoodYieldValue *= 4;
 
 	add	ebx, ebx
 	add	ebx, ebx
@@ -8565,27 +8583,27 @@ $LN68@GetSpecial@2:
 	mov	ecx, DWORD PTR _iGPPYieldValue$[esp+40]
 	lea	eax, DWORD PTR [esi+ecx]
 
-; 1749 : 	}
-; 1750 : #endif
-; 1751 : 
-; 1752 : 	iValue += iFoodYieldValue;
-; 1753 : 	iValue += iProductionYieldValue;
-; 1754 : 	iValue += iGoldYieldValue;
-; 1755 : 	iValue += iScienceYieldValue;
-; 1756 : 	iValue += iCultureYieldValue;
-; 1757 : 	iValue += iFaithYieldValue;
-; 1758 : #ifndef AUI_CITIZENS_UNHARDCODE_SPECIALIST_VALUE_GREAT_PERSON_POINTS
-; 1759 : 	iValue += iGPPYieldValue;
-; 1760 : #endif
-; 1761 : #ifdef AUI_CITIZENS_GET_VALUE_CONSIDER_YIELD_RATE_MODIFIERS
-; 1762 : 	iValue /= 100;
-; 1763 : #endif
-; 1764 : #ifdef AUI_CITIZENS_UNHARDCODE_SPECIALIST_VALUE_GREAT_PERSON_POINTS
-; 1765 : 	iValue += iGPPYieldValue;
-; 1766 : #endif
-; 1767 : 	iValue += iHappinessYieldValue;
-; 1768 : 
-; 1769 : 	return iValue;
+; 1767 : 	}
+; 1768 : #endif
+; 1769 : 
+; 1770 : 	iValue += iFoodYieldValue;
+; 1771 : 	iValue += iProductionYieldValue;
+; 1772 : 	iValue += iGoldYieldValue;
+; 1773 : 	iValue += iScienceYieldValue;
+; 1774 : 	iValue += iCultureYieldValue;
+; 1775 : 	iValue += iFaithYieldValue;
+; 1776 : #ifndef AUI_CITIZENS_UNHARDCODE_SPECIALIST_VALUE_GREAT_PERSON_POINTS
+; 1777 : 	iValue += iGPPYieldValue;
+; 1778 : #endif
+; 1779 : #ifdef AUI_CITIZENS_GET_VALUE_CONSIDER_YIELD_RATE_MODIFIERS
+; 1780 : 	iValue /= 100;
+; 1781 : #endif
+; 1782 : #ifdef AUI_CITIZENS_UNHARDCODE_SPECIALIST_VALUE_GREAT_PERSON_POINTS
+; 1783 : 	iValue += iGPPYieldValue;
+; 1784 : #endif
+; 1785 : 	iValue += iHappinessYieldValue;
+; 1786 : 
+; 1787 : 	return iValue;
 
 	add	eax, edi
 	add	eax, DWORD PTR _iCultureYieldValue$[esp+40]
@@ -8598,7 +8616,7 @@ $LN68@GetSpecial@2:
 	pop	edi
 	pop	ebp
 
-; 1770 : }
+; 1788 : }
 
 	add	esp, 24					; 00000018H
 	ret	4
@@ -8617,13 +8635,13 @@ _pPlot$ = 8						; size = 4
 ?IsCanWork@CvCityCitizens@@QBE_NPAVCvPlot@@@Z PROC	; CvCityCitizens::IsCanWork, COMDAT
 ; _this$ = ecx
 
-; 2645 : {
+; 2663 : {
 
 	push	ebx
 	push	esi
 	push	edi
 
-; 2646 : 	if(pPlot->getWorkingCity() != m_pCity)
+; 2664 : 	if(pPlot->getWorkingCity() != m_pCity)
 
 	mov	edi, DWORD PTR _pPlot$[esp+8]
 	mov	ebx, ecx
@@ -8636,27 +8654,27 @@ $LN21@IsCanWork:
 	pop	edi
 	pop	esi
 
-; 2647 : 	{
-; 2648 : 		return false;
+; 2665 : 	{
+; 2666 : 		return false;
 
 	xor	al, al
 	pop	ebx
 
-; 2673 : 	{
-; 2674 : 		return false;
-; 2675 : 	}
-; 2676 : 
-; 2677 : 	return true;
-; 2678 : }
+; 2691 : 	{
+; 2692 : 		return false;
+; 2693 : 	}
+; 2694 : 
+; 2695 : 	return true;
+; 2696 : }
 
 	ret	4
 $LN6@IsCanWork:
 
-; 2649 : 	}
-; 2650 : 
-; 2651 : 	CvAssertMsg(GetCityIndexFromPlot(pPlot) != -1, "GetCityIndexFromPlot(pPlot) is expected to be assigned (not -1)");
-; 2652 : 
-; 2653 : 	if(pPlot->plotCheck(PUF_canSiege, GetOwner()) != NULL)
+; 2667 : 	}
+; 2668 : 
+; 2669 : 	CvAssertMsg(GetCityIndexFromPlot(pPlot) != -1, "GetCityIndexFromPlot(pPlot) is expected to be assigned (not -1)");
+; 2670 : 
+; 2671 : 	if(pPlot->plotCheck(PUF_canSiege, GetOwner()) != NULL)
 
 	mov	esi, DWORD PTR [esi+84]
 	push	-1
@@ -8671,53 +8689,53 @@ $LN6@IsCanWork:
 	call	?plotCheck@CvPlot@@QAEPAVCvUnit@@P6A_NPBV2@HH@ZHHW4PlayerTypes@@W4TeamTypes@@1HH@Z ; CvPlot::plotCheck
 	test	eax, eax
 
-; 2654 : 	{
-; 2655 : 		return false;
+; 2672 : 	{
+; 2673 : 		return false;
 
 	jne	SHORT $LN21@IsCanWork
 
-; 2656 : 	}
-; 2657 : 
-; 2658 : 	if(pPlot->isWater())
+; 2674 : 	}
+; 2675 : 
+; 2676 : 	if(pPlot->isWater())
 
 	cmp	BYTE PTR [edi+5], 3
 	jne	SHORT $LN3@IsCanWork
 
-; 2659 : 	{
-; 2660 : 		if(!(GET_TEAM(GetTeam()).isWaterWork()))
+; 2677 : 	{
+; 2678 : 		if(!(GET_TEAM(GetTeam()).isWaterWork()))
 
 	mov	ecx, DWORD PTR [ebx]
 	call	?getTeam@CvCity@@QBE?AW4TeamTypes@@XZ	; CvCity::getTeam
-	imul	eax, 2980				; 00000ba4H
+	imul	eax, 2984				; 00000ba8H
 	add	eax, DWORD PTR ?m_aTeams@CvTeam@@1PAV1@A ; CvTeam::m_aTeams
 	mov	ecx, eax
 	call	?isWaterWork@CvTeam@@QBE_NXZ		; CvTeam::isWaterWork
 	test	al, al
 
-; 2661 : 		{
-; 2662 : 			return false;
+; 2679 : 		{
+; 2680 : 			return false;
 
 	je	SHORT $LN21@IsCanWork
 $LN3@IsCanWork:
 
-; 2663 : 		}
-; 2664 : 
-; 2665 : 	}
-; 2666 : 
-; 2667 : 	if(!pPlot->hasYield())
+; 2681 : 		}
+; 2682 : 
+; 2683 : 	}
+; 2684 : 
+; 2685 : 	if(!pPlot->hasYield())
 
 	mov	ecx, edi
 	call	?hasYield@CvPlot@@QBE_NXZ		; CvPlot::hasYield
 	test	al, al
 
-; 2668 : 	{
-; 2669 : 		return false;
+; 2686 : 	{
+; 2687 : 		return false;
 
 	je	SHORT $LN21@IsCanWork
 
-; 2670 : 	}
-; 2671 : 
-; 2672 : 	if(IsPlotBlockaded(pPlot))
+; 2688 : 	}
+; 2689 : 
+; 2690 : 	if(IsPlotBlockaded(pPlot))
 
 	push	edi
 	mov	ecx, ebx
@@ -8728,12 +8746,12 @@ $LN3@IsCanWork:
 	sete	al
 	pop	ebx
 
-; 2673 : 	{
-; 2674 : 		return false;
-; 2675 : 	}
-; 2676 : 
-; 2677 : 	return true;
-; 2678 : }
+; 2691 : 	{
+; 2692 : 		return false;
+; 2693 : 	}
+; 2694 : 
+; 2695 : 	return true;
+; 2696 : }
 
 	ret	4
 ?IsCanWork@CvCityCitizens@@QBE_NPAVCvPlot@@@Z ENDP	; CvCityCitizens::IsCanWork
@@ -8745,28 +8763,28 @@ _TEXT	SEGMENT
 ?IsAnyPlotBlockaded@CvCityCitizens@@QBE_NXZ PROC	; CvCityCitizens::IsAnyPlotBlockaded, COMDAT
 ; _this$ = ecx
 
-; 2767 : {
+; 2785 : {
 
 	push	esi
 	push	edi
 	mov	edi, ecx
 
-; 2768 : 	CvPlot* pLoopPlot;
-; 2769 : 
-; 2770 : 	// Look at all workable Plots
-; 2771 : 	for(int iPlotLoop = 0; iPlotLoop < NUM_CITY_PLOTS; iPlotLoop++)
+; 2786 : 	CvPlot* pLoopPlot;
+; 2787 : 
+; 2788 : 	// Look at all workable Plots
+; 2789 : 	for(int iPlotLoop = 0; iPlotLoop < NUM_CITY_PLOTS; iPlotLoop++)
 
 	xor	esi, esi
 $LL6@IsAnyPlotB:
 
-; 2772 : 	{
-; 2773 : 		if(iPlotLoop != CITY_HOME_PLOT)
+; 2790 : 	{
+; 2791 : 		if(iPlotLoop != CITY_HOME_PLOT)
 
 	test	esi, esi
 	je	SHORT $LN5@IsAnyPlotB
 
-; 2774 : 		{
-; 2775 : 			pLoopPlot = GetCityPlotFromIndex(iPlotLoop);
+; 2792 : 		{
+; 2793 : 			pLoopPlot = GetCityPlotFromIndex(iPlotLoop);
 
 	mov	eax, DWORD PTR [edi]
 	mov	ecx, DWORD PTR [eax+108]
@@ -8777,14 +8795,14 @@ $LL6@IsAnyPlotB:
 	call	?plotCity@@YAPAVCvPlot@@HHH@Z		; plotCity
 	add	esp, 12					; 0000000cH
 
-; 2776 : 
-; 2777 : 			if(pLoopPlot != NULL)
+; 2794 : 
+; 2795 : 			if(pLoopPlot != NULL)
 
 	test	eax, eax
 	je	SHORT $LN5@IsAnyPlotB
 
-; 2778 : 			{
-; 2779 : 				if(IsPlotBlockaded(pLoopPlot))
+; 2796 : 			{
+; 2797 : 				if(IsPlotBlockaded(pLoopPlot))
 
 	push	eax
 	mov	ecx, edi
@@ -8793,39 +8811,39 @@ $LL6@IsAnyPlotB:
 	jne	SHORT $LN20@IsAnyPlotB
 $LN5@IsAnyPlotB:
 
-; 2768 : 	CvPlot* pLoopPlot;
-; 2769 : 
-; 2770 : 	// Look at all workable Plots
-; 2771 : 	for(int iPlotLoop = 0; iPlotLoop < NUM_CITY_PLOTS; iPlotLoop++)
+; 2786 : 	CvPlot* pLoopPlot;
+; 2787 : 
+; 2788 : 	// Look at all workable Plots
+; 2789 : 	for(int iPlotLoop = 0; iPlotLoop < NUM_CITY_PLOTS; iPlotLoop++)
 
 	inc	esi
 	cmp	esi, 37					; 00000025H
 	jl	SHORT $LL6@IsAnyPlotB
 	pop	edi
 
-; 2782 : 				}
-; 2783 : 			}
-; 2784 : 		}
-; 2785 : 	}
-; 2786 : 
-; 2787 : 	return false;
+; 2800 : 				}
+; 2801 : 			}
+; 2802 : 		}
+; 2803 : 	}
+; 2804 : 
+; 2805 : 	return false;
 
 	xor	al, al
 	pop	esi
 
-; 2788 : }
+; 2806 : }
 
 	ret	0
 $LN20@IsAnyPlotB:
 	pop	edi
 
-; 2780 : 				{
-; 2781 : 					return true;
+; 2798 : 				{
+; 2799 : 					return true;
 
 	mov	al, 1
 	pop	esi
 
-; 2788 : }
+; 2806 : }
 
 	ret	0
 ?IsAnyPlotBlockaded@CvCityCitizens@@QBE_NXZ ENDP	; CvCityCitizens::IsAnyPlotBlockaded
@@ -8852,32 +8870,32 @@ EXTRN	?getGreatPeopleUnitClass@CvSpecialistInfo@@QBEHXZ:PROC ; CvSpecialistInfo:
 ;	COMDAT ?DoSpecialists@CvCityCitizens@@QAEXXZ
 _TEXT	SEGMENT
 tv701 = -12						; size = 4
-_iSpecialistLoop$225548 = -12				; size = 4
+_iSpecialistLoop$225590 = -12				; size = 4
 _iGPPChange$ = -8					; size = 4
-_iGPThreshold$225556 = -4				; size = 4
+_iGPThreshold$225598 = -4				; size = 4
 ?DoSpecialists@CvCityCitizens@@QAEXXZ PROC		; CvCityCitizens::DoSpecialists, COMDAT
 ; _this$ = ecx
 
-; 3001 : {
+; 3019 : {
 
 	sub	esp, 12					; 0000000cH
 	push	ebp
 	push	esi
 	mov	esi, ecx
 
-; 3002 : #ifndef AUI_YIELDS_APPLIED_AFTER_TURN_NOT_BEFORE
-; 3003 : 	int iGPPChange;
-; 3004 : 	int iCount;
-; 3005 : 	int iMod;
-; 3006 : #endif
-; 3007 : #ifdef AUI_WARNING_FIXES
-; 3008 : 	for (uint iSpecialistLoop = 0; iSpecialistLoop < GC.getNumSpecialistInfos(); iSpecialistLoop++)
-; 3009 : #else
-; 3010 : 	for(int iSpecialistLoop = 0; iSpecialistLoop < GC.getNumSpecialistInfos(); iSpecialistLoop++)
+; 3020 : #ifndef AUI_YIELDS_APPLIED_AFTER_TURN_NOT_BEFORE
+; 3021 : 	int iGPPChange;
+; 3022 : 	int iCount;
+; 3023 : 	int iMod;
+; 3024 : #endif
+; 3025 : #ifdef AUI_WARNING_FIXES
+; 3026 : 	for (uint iSpecialistLoop = 0; iSpecialistLoop < GC.getNumSpecialistInfos(); iSpecialistLoop++)
+; 3027 : #else
+; 3028 : 	for(int iSpecialistLoop = 0; iSpecialistLoop < GC.getNumSpecialistInfos(); iSpecialistLoop++)
 
 	xor	ebp, ebp
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	mov	DWORD PTR _iSpecialistLoop$225548[esp+20], ebp
+	mov	DWORD PTR _iSpecialistLoop$225590[esp+20], ebp
 	call	?getNumSpecialistInfos@CvGlobals@@QAEHXZ ; CvGlobals::getNumSpecialistInfos
 	test	eax, eax
 	jle	$LN22@DoSpeciali
@@ -8885,31 +8903,31 @@ _iGPThreshold$225556 = -4				; size = 4
 	push	edi
 $LL215@DoSpeciali:
 
-; 3011 : #endif
-; 3012 : 	{
-; 3013 : 		const SpecialistTypes eSpecialist = static_cast<SpecialistTypes>(iSpecialistLoop);
-; 3014 : 		CvSpecialistInfo* pkSpecialistInfo = GC.getSpecialistInfo(eSpecialist);
+; 3029 : #endif
+; 3030 : 	{
+; 3031 : 		const SpecialistTypes eSpecialist = static_cast<SpecialistTypes>(iSpecialistLoop);
+; 3032 : 		CvSpecialistInfo* pkSpecialistInfo = GC.getSpecialistInfo(eSpecialist);
 
 	push	ebp
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getSpecialistInfo@CvGlobals@@QAEPAVCvSpecialistInfo@@W4SpecialistTypes@@@Z ; CvGlobals::getSpecialistInfo
 	mov	ebx, eax
 
-; 3015 : 		if(pkSpecialistInfo)
+; 3033 : 		if(pkSpecialistInfo)
 
 	test	ebx, ebx
 	je	$LN23@DoSpeciali
 
-; 3016 : 		{
-; 3017 : #ifdef AUI_YIELDS_APPLIED_AFTER_TURN_NOT_BEFORE
-; 3018 : 			UnitClassTypes eGPUnitClassType = (UnitClassTypes)pkSpecialistInfo->getGreatPeopleUnitClass();
-; 3019 : 			if (eGPUnitClassType != NO_UNITCLASS)
-; 3020 : 			{
-; 3021 : 				ChangeSpecialistGreatPersonProgressTimes100(eSpecialist, getCachedGPChangeT100ForThisTurn(eSpecialist));
-; 3022 : 
-; 3023 : 				int iGPThreshold = GetSpecialistUpgradeThreshold(eGPUnitClassType);
-; 3024 : #else
-; 3025 : 			int iGPThreshold = GetSpecialistUpgradeThreshold((UnitClassTypes)pkSpecialistInfo->getGreatPeopleUnitClass());
+; 3034 : 		{
+; 3035 : #ifdef AUI_YIELDS_APPLIED_AFTER_TURN_NOT_BEFORE
+; 3036 : 			UnitClassTypes eGPUnitClassType = (UnitClassTypes)pkSpecialistInfo->getGreatPeopleUnitClass();
+; 3037 : 			if (eGPUnitClassType != NO_UNITCLASS)
+; 3038 : 			{
+; 3039 : 				ChangeSpecialistGreatPersonProgressTimes100(eSpecialist, getCachedGPChangeT100ForThisTurn(eSpecialist));
+; 3040 : 
+; 3041 : 				int iGPThreshold = GetSpecialistUpgradeThreshold(eGPUnitClassType);
+; 3042 : #else
+; 3043 : 			int iGPThreshold = GetSpecialistUpgradeThreshold((UnitClassTypes)pkSpecialistInfo->getGreatPeopleUnitClass());
 
 	mov	ecx, ebx
 	call	?getGreatPeopleUnitClass@CvSpecialistInfo@@QBEHXZ ; CvSpecialistInfo::getGreatPeopleUnitClass
@@ -8917,33 +8935,33 @@ $LL215@DoSpeciali:
 	mov	ecx, esi
 	call	?GetSpecialistUpgradeThreshold@CvCityCitizens@@QAEHW4UnitClassTypes@@@Z ; CvCityCitizens::GetSpecialistUpgradeThreshold
 
-; 3026 : 
-; 3027 : 			// Does this Specialist spawn a GP?
-; 3028 : 			if(pkSpecialistInfo->getGreatPeopleUnitClass() != NO_UNITCLASS)
+; 3044 : 
+; 3045 : 			// Does this Specialist spawn a GP?
+; 3046 : 			if(pkSpecialistInfo->getGreatPeopleUnitClass() != NO_UNITCLASS)
 
 	mov	ecx, ebx
-	mov	DWORD PTR _iGPThreshold$225556[esp+28], eax
+	mov	DWORD PTR _iGPThreshold$225598[esp+28], eax
 	call	?getGreatPeopleUnitClass@CvSpecialistInfo@@QBEHXZ ; CvSpecialistInfo::getGreatPeopleUnitClass
 	cmp	eax, -1
 	je	$LN23@DoSpeciali
 
-; 3029 : 			{
-; 3030 : 				iCount = GetSpecialistCount(eSpecialist);
+; 3047 : 			{
+; 3048 : 				iCount = GetSpecialistCount(eSpecialist);
 
 	mov	eax, DWORD PTR [esi+108]
 	mov	edi, DWORD PTR [eax+ebp*4]
 
-; 3031 : 
-; 3032 : 				// GPP from Specialists
-; 3033 : 				iGPPChange = pkSpecialistInfo->getGreatPeopleRateChange() * iCount * 100;
+; 3049 : 
+; 3050 : 				// GPP from Specialists
+; 3051 : 				iGPPChange = pkSpecialistInfo->getGreatPeopleRateChange() * iCount * 100;
 
 	mov	ecx, ebx
 	call	?getGreatPeopleRateChange@CvSpecialistInfo@@QBEHXZ ; CvSpecialistInfo::getGreatPeopleRateChange
 	imul	eax, edi
 
-; 3034 : 
-; 3035 : 				// GPP from Buildings
-; 3036 : 				iGPPChange += GetBuildingGreatPeopleRateChanges(eSpecialist) * 100;
+; 3052 : 
+; 3053 : 				// GPP from Buildings
+; 3054 : 				iGPPChange += GetBuildingGreatPeopleRateChanges(eSpecialist) * 100;
 
 	mov	ecx, DWORD PTR [esi+124]
 	imul	eax, 100				; 00000064H
@@ -8952,25 +8970,25 @@ $LL215@DoSpeciali:
 	add	eax, edx
 	mov	DWORD PTR _iGPPChange$[esp+28], eax
 
-; 3037 : 
-; 3038 : 				if(iGPPChange > 0)
+; 3055 : 
+; 3056 : 				if(iGPPChange > 0)
 
 	test	eax, eax
 	jle	$LN211@DoSpeciali
 
-; 3039 : 				{
-; 3040 : 					iMod = 0;
-; 3041 : 
-; 3042 : 					// City mod
-; 3043 : 					iMod += GetCity()->getGreatPeopleRateModifier();
+; 3057 : 				{
+; 3058 : 					iMod = 0;
+; 3059 : 
+; 3060 : 					// City mod
+; 3061 : 					iMod += GetCity()->getGreatPeopleRateModifier();
 
 	mov	ecx, DWORD PTR [esi]
 	call	?getGreatPeopleRateModifier@CvCity@@QBEHXZ ; CvCity::getGreatPeopleRateModifier
 	mov	edi, eax
 
-; 3044 : 
-; 3045 : 					// Player mod
-; 3046 : 					iMod += GetPlayer()->getGreatPeopleRateModifier();
+; 3062 : 
+; 3063 : 					// Player mod
+; 3064 : 					iMod += GetPlayer()->getGreatPeopleRateModifier();
 
 	mov	eax, DWORD PTR [esi]
 	mov	ecx, DWORD PTR [eax+84]
@@ -8978,12 +8996,12 @@ $LL215@DoSpeciali:
 	add	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	call	?getGreatPeopleRateModifier@CvPlayer@@QBEHXZ ; CvPlayer::getGreatPeopleRateModifier
 
-; 3047 : 
-; 3048 : 					// Player and Golden Age mods to this specific class
-; 3049 : 					if((UnitClassTypes)pkSpecialistInfo->getGreatPeopleUnitClass() == GC.getInfoTypeForString("UNITCLASS_SCIENTIST"))
+; 3065 : 
+; 3066 : 					// Player and Golden Age mods to this specific class
+; 3067 : 					if((UnitClassTypes)pkSpecialistInfo->getGreatPeopleUnitClass() == GC.getInfoTypeForString("UNITCLASS_SCIENTIST"))
 
 	push	0
-	push	OFFSET $SG225562
+	push	OFFSET $SG225604
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	add	edi, eax
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
@@ -8993,8 +9011,8 @@ $LL215@DoSpeciali:
 	cmp	eax, ebp
 	jne	SHORT $LN18@DoSpeciali
 
-; 3050 : 					{
-; 3051 : 						iMod += GetPlayer()->getGreatScientistRateModifier();
+; 3068 : 					{
+; 3069 : 						iMod += GetPlayer()->getGreatScientistRateModifier();
 
 	mov	ecx, DWORD PTR [esi]
 	mov	ecx, DWORD PTR [ecx+84]
@@ -9004,11 +9022,11 @@ $LL215@DoSpeciali:
 	jmp	$LN216@DoSpeciali
 $LN18@DoSpeciali:
 
-; 3052 : 					}
-; 3053 : 					else if((UnitClassTypes)pkSpecialistInfo->getGreatPeopleUnitClass() == GC.getInfoTypeForString("UNITCLASS_WRITER"))
+; 3070 : 					}
+; 3071 : 					else if((UnitClassTypes)pkSpecialistInfo->getGreatPeopleUnitClass() == GC.getInfoTypeForString("UNITCLASS_WRITER"))
 
 	push	0
-	push	OFFSET $SG225566
+	push	OFFSET $SG225608
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	ecx, ebx
@@ -9017,8 +9035,8 @@ $LN18@DoSpeciali:
 	cmp	eax, ebp
 	jne	SHORT $LN16@DoSpeciali
 
-; 3054 : 					{ 
-; 3055 : 						if (GetPlayer()->isGoldenAge())
+; 3072 : 					{ 
+; 3073 : 						if (GetPlayer()->isGoldenAge())
 
 	mov	edx, DWORD PTR [esi]
 	mov	ecx, DWORD PTR [edx+84]
@@ -9028,8 +9046,8 @@ $LN18@DoSpeciali:
 	test	al, al
 	je	SHORT $LN15@DoSpeciali
 
-; 3056 : 						{
-; 3057 : 							iMod += GetPlayer()->GetPlayerTraits()->GetGoldenAgeGreatWriterRateModifier();
+; 3074 : 						{
+; 3075 : 							iMod += GetPlayer()->GetPlayerTraits()->GetGoldenAgeGreatWriterRateModifier();
 
 	mov	eax, DWORD PTR [esi]
 	mov	ecx, DWORD PTR [eax+84]
@@ -9039,8 +9057,8 @@ $LN18@DoSpeciali:
 	add	edi, DWORD PTR [eax+196]
 $LN15@DoSpeciali:
 
-; 3058 : 						}
-; 3059 : 						iMod += GetPlayer()->getGreatWriterRateModifier();
+; 3076 : 						}
+; 3077 : 						iMod += GetPlayer()->getGreatWriterRateModifier();
 
 	mov	ecx, DWORD PTR [esi]
 	mov	ecx, DWORD PTR [ecx+84]
@@ -9050,11 +9068,11 @@ $LN15@DoSpeciali:
 	jmp	$LN216@DoSpeciali
 $LN16@DoSpeciali:
 
-; 3060 : 					}
-; 3061 : 					else if((UnitClassTypes)pkSpecialistInfo->getGreatPeopleUnitClass() == GC.getInfoTypeForString("UNITCLASS_ARTIST"))
+; 3078 : 					}
+; 3079 : 					else if((UnitClassTypes)pkSpecialistInfo->getGreatPeopleUnitClass() == GC.getInfoTypeForString("UNITCLASS_ARTIST"))
 
 	push	0
-	push	OFFSET $SG225571
+	push	OFFSET $SG225613
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	ecx, ebx
@@ -9063,8 +9081,8 @@ $LN16@DoSpeciali:
 	cmp	eax, ebp
 	jne	SHORT $LN13@DoSpeciali
 
-; 3062 : 					{
-; 3063 : 						if (GetPlayer()->isGoldenAge())
+; 3080 : 					{
+; 3081 : 						if (GetPlayer()->isGoldenAge())
 
 	mov	edx, DWORD PTR [esi]
 	mov	ecx, DWORD PTR [edx+84]
@@ -9074,8 +9092,8 @@ $LN16@DoSpeciali:
 	test	al, al
 	je	SHORT $LN12@DoSpeciali
 
-; 3064 : 						{
-; 3065 : 							iMod += GetPlayer()->GetPlayerTraits()->GetGoldenAgeGreatArtistRateModifier();
+; 3082 : 						{
+; 3083 : 							iMod += GetPlayer()->GetPlayerTraits()->GetGoldenAgeGreatArtistRateModifier();
 
 	mov	eax, DWORD PTR [esi]
 	mov	ecx, DWORD PTR [eax+84]
@@ -9085,8 +9103,8 @@ $LN16@DoSpeciali:
 	add	edi, DWORD PTR [eax+188]
 $LN12@DoSpeciali:
 
-; 3066 : 						}
-; 3067 : 						iMod += GetPlayer()->getGreatArtistRateModifier();
+; 3084 : 						}
+; 3085 : 						iMod += GetPlayer()->getGreatArtistRateModifier();
 
 	mov	ecx, DWORD PTR [esi]
 	mov	ecx, DWORD PTR [ecx+84]
@@ -9096,11 +9114,11 @@ $LN12@DoSpeciali:
 	jmp	$LN216@DoSpeciali
 $LN13@DoSpeciali:
 
-; 3068 : 					}
-; 3069 : 					else if((UnitClassTypes)pkSpecialistInfo->getGreatPeopleUnitClass() == GC.getInfoTypeForString("UNITCLASS_MUSICIAN"))
+; 3086 : 					}
+; 3087 : 					else if((UnitClassTypes)pkSpecialistInfo->getGreatPeopleUnitClass() == GC.getInfoTypeForString("UNITCLASS_MUSICIAN"))
 
 	push	0
-	push	OFFSET $SG225576
+	push	OFFSET $SG225618
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	ecx, ebx
@@ -9109,8 +9127,8 @@ $LN13@DoSpeciali:
 	cmp	eax, ebp
 	jne	$LN10@DoSpeciali
 
-; 3070 : 					{
-; 3071 : 						if (GetPlayer()->isGoldenAge())
+; 3088 : 					{
+; 3089 : 						if (GetPlayer()->isGoldenAge())
 
 	mov	edx, DWORD PTR [esi]
 	mov	ecx, DWORD PTR [edx+84]
@@ -9120,8 +9138,8 @@ $LN13@DoSpeciali:
 	test	al, al
 	je	SHORT $LN9@DoSpeciali
 
-; 3072 : 						{
-; 3073 : 							iMod += GetPlayer()->GetPlayerTraits()->GetGoldenAgeGreatMusicianRateModifier();
+; 3090 : 						{
+; 3091 : 							iMod += GetPlayer()->GetPlayerTraits()->GetGoldenAgeGreatMusicianRateModifier();
 
 	mov	eax, DWORD PTR [esi]
 	mov	ecx, DWORD PTR [eax+84]
@@ -9131,9 +9149,9 @@ $LN13@DoSpeciali:
 	add	edi, DWORD PTR [eax+192]
 $LN9@DoSpeciali:
 
-; 3074 : 						}
-; 3075 : #ifdef NQ_PRODUCTION_TO_GREAT_MUSICIANS_MODIFIER_FROM_POLICIES
-; 3076 : 						int iProductionToGreatMusiciansModifier = GetPlayer()->GetPlayerPolicies()->GetNumericModifier(POLICYMOD_PRODUCTION_TO_GREAT_MUSICIANS_MODIFIER);
+; 3092 : 						}
+; 3093 : #ifdef NQ_PRODUCTION_TO_GREAT_MUSICIANS_MODIFIER_FROM_POLICIES
+; 3094 : 						int iProductionToGreatMusiciansModifier = GetPlayer()->GetPlayerPolicies()->GetNumericModifier(POLICYMOD_PRODUCTION_TO_GREAT_MUSICIANS_MODIFIER);
 
 	mov	ecx, DWORD PTR [esi]
 	mov	ecx, DWORD PTR [ecx+84]
@@ -9145,13 +9163,13 @@ $LN9@DoSpeciali:
 	call	?GetNumericModifier@CvPlayerPolicies@@QAEHW4PolicyModifierType@@@Z ; CvPlayerPolicies::GetNumericModifier
 	mov	ebp, eax
 
-; 3077 : 						if (iProductionToGreatMusiciansModifier > 0)
+; 3095 : 						if (iProductionToGreatMusiciansModifier > 0)
 
 	test	ebp, ebp
 	jle	SHORT $LN209@DoSpeciali
 
-; 3078 : 						{
-; 3079 : 							iMod += GetPlayer()->calculateTotalYield(YIELD_PRODUCTION) * iProductionToGreatMusiciansModifier / 100;
+; 3096 : 						{
+; 3097 : 							iMod += GetPlayer()->calculateTotalYield(YIELD_PRODUCTION) * iProductionToGreatMusiciansModifier / 100;
 
 	mov	edx, DWORD PTR [esi]
 	mov	ecx, DWORD PTR [edx+84]
@@ -9170,9 +9188,9 @@ $LN9@DoSpeciali:
 	add	edi, eax
 $LN209@DoSpeciali:
 
-; 3080 : 						}
-; 3081 : #endif
-; 3082 : 						iMod += GetPlayer()->getGreatMusicianRateModifier();
+; 3098 : 						}
+; 3099 : #endif
+; 3100 : 						iMod += GetPlayer()->getGreatMusicianRateModifier();
 
 	mov	ecx, DWORD PTR [esi]
 	mov	ecx, DWORD PTR [ecx+84]
@@ -9182,11 +9200,11 @@ $LN209@DoSpeciali:
 	jmp	SHORT $LN216@DoSpeciali
 $LN10@DoSpeciali:
 
-; 3083 : 					}
-; 3084 : 					else if((UnitClassTypes)pkSpecialistInfo->getGreatPeopleUnitClass() == GC.getInfoTypeForString("UNITCLASS_MERCHANT"))
+; 3101 : 					}
+; 3102 : 					else if((UnitClassTypes)pkSpecialistInfo->getGreatPeopleUnitClass() == GC.getInfoTypeForString("UNITCLASS_MERCHANT"))
 
 	push	0
-	push	OFFSET $SG225583
+	push	OFFSET $SG225625
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	ecx, ebx
@@ -9195,8 +9213,8 @@ $LN10@DoSpeciali:
 	cmp	eax, ebp
 	jne	SHORT $LN6@DoSpeciali
 
-; 3085 : 					{
-; 3086 : 						iMod += GetPlayer()->getGreatMerchantRateModifier();
+; 3103 : 					{
+; 3104 : 						iMod += GetPlayer()->getGreatMerchantRateModifier();
 
 	mov	edx, DWORD PTR [esi]
 	mov	ecx, DWORD PTR [edx+84]
@@ -9206,11 +9224,11 @@ $LN10@DoSpeciali:
 	jmp	SHORT $LN216@DoSpeciali
 $LN6@DoSpeciali:
 
-; 3087 : 					}
-; 3088 : 					else if((UnitClassTypes)pkSpecialistInfo->getGreatPeopleUnitClass() == GC.getInfoTypeForString("UNITCLASS_ENGINEER"))
+; 3105 : 					}
+; 3106 : 					else if((UnitClassTypes)pkSpecialistInfo->getGreatPeopleUnitClass() == GC.getInfoTypeForString("UNITCLASS_ENGINEER"))
 
 	push	0
-	push	OFFSET $SG225587
+	push	OFFSET $SG225629
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	ecx, ebx
@@ -9219,8 +9237,8 @@ $LN6@DoSpeciali:
 	cmp	eax, ebp
 	jne	SHORT $LN210@DoSpeciali
 
-; 3089 : 					{
-; 3090 : 						iMod += GetPlayer()->getGreatEngineerRateModifier();
+; 3107 : 					{
+; 3108 : 						iMod += GetPlayer()->getGreatEngineerRateModifier();
 
 	mov	eax, DWORD PTR [esi]
 	mov	ecx, DWORD PTR [eax+84]
@@ -9231,36 +9249,36 @@ $LN216@DoSpeciali:
 	add	edi, eax
 $LN210@DoSpeciali:
 
-; 3002 : #ifndef AUI_YIELDS_APPLIED_AFTER_TURN_NOT_BEFORE
-; 3003 : 	int iGPPChange;
-; 3004 : 	int iCount;
-; 3005 : 	int iMod;
-; 3006 : #endif
-; 3007 : #ifdef AUI_WARNING_FIXES
-; 3008 : 	for (uint iSpecialistLoop = 0; iSpecialistLoop < GC.getNumSpecialistInfos(); iSpecialistLoop++)
-; 3009 : #else
-; 3010 : 	for(int iSpecialistLoop = 0; iSpecialistLoop < GC.getNumSpecialistInfos(); iSpecialistLoop++)
+; 3020 : #ifndef AUI_YIELDS_APPLIED_AFTER_TURN_NOT_BEFORE
+; 3021 : 	int iGPPChange;
+; 3022 : 	int iCount;
+; 3023 : 	int iMod;
+; 3024 : #endif
+; 3025 : #ifdef AUI_WARNING_FIXES
+; 3026 : 	for (uint iSpecialistLoop = 0; iSpecialistLoop < GC.getNumSpecialistInfos(); iSpecialistLoop++)
+; 3027 : #else
+; 3028 : 	for(int iSpecialistLoop = 0; iSpecialistLoop < GC.getNumSpecialistInfos(); iSpecialistLoop++)
 
 	mov	ecx, DWORD PTR [esi+112]
-	mov	ebp, DWORD PTR _iSpecialistLoop$225548[esp+28]
+	mov	ebp, DWORD PTR _iSpecialistLoop$225590[esp+28]
 	lea	edx, DWORD PTR [ecx+ebp*4]
 
-; 3091 : 					}
-; 3092 : 
-; 3093 : 					// Apply mod
-; 3094 : 					iGPPChange *= (100 + iMod);
+; 3109 : 					}
+; 3110 : 
+; 3111 : 					// Apply mod
+; 3112 : 					iGPPChange *= (100 + iMod);
 
 	lea	ecx, DWORD PTR [edi+100]
 	imul	ecx, DWORD PTR _iGPPChange$[esp+28]
 	mov	DWORD PTR tv701[esp+28], edx
 
-; 3095 : 					iGPPChange /= 100;
+; 3113 : 					iGPPChange /= 100;
 
 	mov	eax, 1374389535				; 51eb851fH
 	imul	ecx
 
-; 3096 : 
-; 3097 : 					ChangeSpecialistGreatPersonProgressTimes100(eSpecialist, iGPPChange);
+; 3114 : 
+; 3115 : 					ChangeSpecialistGreatPersonProgressTimes100(eSpecialist, iGPPChange);
 
 	mov	eax, DWORD PTR tv701[esp+28]
 	sar	edx, 5
@@ -9270,11 +9288,11 @@ $LN210@DoSpeciali:
 	add	DWORD PTR [eax], ecx
 $LN211@DoSpeciali:
 
-; 3098 : 				}
-; 3099 : #endif
-; 3100 : 
-; 3101 : 				// Enough to spawn a GP?
-; 3102 : 				if(GetSpecialistGreatPersonProgress(eSpecialist) >= iGPThreshold)
+; 3116 : 				}
+; 3117 : #endif
+; 3118 : 
+; 3119 : 				// Enough to spawn a GP?
+; 3120 : 				if(GetSpecialistGreatPersonProgress(eSpecialist) >= iGPThreshold)
 
 	mov	edx, DWORD PTR [esi+112]
 	mov	ecx, DWORD PTR [edx+ebp*4]
@@ -9284,12 +9302,12 @@ $LN211@DoSpeciali:
 	mov	eax, edx
 	shr	eax, 31					; 0000001fH
 	add	eax, edx
-	cmp	eax, DWORD PTR _iGPThreshold$225556[esp+28]
+	cmp	eax, DWORD PTR _iGPThreshold$225598[esp+28]
 	jl	SHORT $LN23@DoSpeciali
 
-; 3103 : 				{
-; 3104 : 					// No Minors
-; 3105 : 					if(!GET_PLAYER(GetCity()->getOwner()).isMinorCiv())
+; 3121 : 				{
+; 3122 : 					// No Minors
+; 3123 : 					if(!GET_PLAYER(GetCity()->getOwner()).isMinorCiv())
 
 	mov	ecx, DWORD PTR [esi]
 	mov	ecx, DWORD PTR [ecx+84]
@@ -9299,46 +9317,46 @@ $LN211@DoSpeciali:
 	test	al, al
 	jne	SHORT $LN23@DoSpeciali
 
-; 3106 : 					{
-; 3107 : 						// Reset progress on this Specialist
-; 3108 : 						DoResetSpecialistGreatPersonProgressTimes100(eSpecialist);
+; 3124 : 					{
+; 3125 : 						// Reset progress on this Specialist
+; 3126 : 						DoResetSpecialistGreatPersonProgressTimes100(eSpecialist);
 
 	mov	edx, DWORD PTR [esi+112]
 
-; 3109 : 
-; 3110 : 						// Now... actually create the GP!
-; 3111 : 						const UnitClassTypes eUnitClass = (UnitClassTypes) pkSpecialistInfo->getGreatPeopleUnitClass();
+; 3127 : 
+; 3128 : 						// Now... actually create the GP!
+; 3129 : 						const UnitClassTypes eUnitClass = (UnitClassTypes) pkSpecialistInfo->getGreatPeopleUnitClass();
 
 	mov	ecx, ebx
 	mov	DWORD PTR [edx+ebp*4], 0
 	call	?getGreatPeopleUnitClass@CvSpecialistInfo@@QBEHXZ ; CvSpecialistInfo::getGreatPeopleUnitClass
 
-; 3112 : 						const CivilizationTypes eCivilization = GetCity()->getCivilizationType();
+; 3130 : 						const CivilizationTypes eCivilization = GetCity()->getCivilizationType();
 
 	mov	ecx, DWORD PTR [esi]
 	mov	edi, eax
 	call	?getCivilizationType@CvCity@@QBE?AW4CivilizationTypes@@XZ ; CvCity::getCivilizationType
 
-; 3113 : 						CvCivilizationInfo* pCivilizationInfo = GC.getCivilizationInfo(eCivilization);
+; 3131 : 						CvCivilizationInfo* pCivilizationInfo = GC.getCivilizationInfo(eCivilization);
 
 	push	eax
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getCivilizationInfo@CvGlobals@@QAEPAVCvCivilizationInfo@@W4CivilizationTypes@@@Z ; CvGlobals::getCivilizationInfo
 
-; 3114 : 						if(pCivilizationInfo != NULL)
+; 3132 : 						if(pCivilizationInfo != NULL)
 
 	test	eax, eax
 	je	SHORT $LN23@DoSpeciali
 
-; 3115 : 						{
-; 3116 : 							UnitTypes eUnit = (UnitTypes) pCivilizationInfo->getCivilizationUnits(eUnitClass);
+; 3133 : 						{
+; 3134 : 							UnitTypes eUnit = (UnitTypes) pCivilizationInfo->getCivilizationUnits(eUnitClass);
 
 	push	edi
 	mov	ecx, eax
 	call	?getCivilizationUnits@CvCivilizationInfo@@QBEHH@Z ; CvCivilizationInfo::getCivilizationUnits
 
-; 3117 : 
-; 3118 : 							DoSpawnGreatPerson(eUnit, true, false);
+; 3135 : 
+; 3136 : 							DoSpawnGreatPerson(eUnit, true, false);
 
 	push	0
 	push	1
@@ -9348,7 +9366,7 @@ $LN211@DoSpeciali:
 $LN23@DoSpeciali:
 	inc	ebp
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	mov	DWORD PTR _iSpecialistLoop$225548[esp+28], ebp
+	mov	DWORD PTR _iSpecialistLoop$225590[esp+28], ebp
 	call	?getNumSpecialistInfos@CvGlobals@@QAEHXZ ; CvGlobals::getNumSpecialistInfos
 	cmp	ebp, eax
 	jl	$LL215@DoSpeciali
@@ -9358,13 +9376,13 @@ $LN22@DoSpeciali:
 	pop	esi
 	pop	ebp
 
-; 3119 : 						}
-; 3120 : 					}
-; 3121 : 				}
-; 3122 : 			}
-; 3123 : 		}
-; 3124 : 	}
-; 3125 : }
+; 3137 : 						}
+; 3138 : 					}
+; 3139 : 				}
+; 3140 : 			}
+; 3141 : 		}
+; 3142 : 	}
+; 3143 : }
 
 	add	esp, 12					; 0000000cH
 	ret	0
@@ -9374,7 +9392,7 @@ PUBLIC	?DoFoundCity@CvCityCitizens@@QAEXXZ		; CvCityCitizens::DoFoundCity
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?DoFoundCity@CvCityCitizens@@QAEXXZ
 _TEXT	SEGMENT
-_bWorkPlot$224849 = -4					; size = 1
+_bWorkPlot$224891 = -4					; size = 1
 ?DoFoundCity@CvCityCitizens@@QAEXXZ PROC		; CvCityCitizens::DoFoundCity, COMDAT
 ; _this$ = ecx
 
@@ -9409,11 +9427,11 @@ _bWorkPlot$224849 = -4					; size = 1
 	push	edi
 	mov	ecx, esi
 	call	?IsCanWork@CvCityCitizens@@QBE_NPAVCvPlot@@@Z ; CvCityCitizens::IsCanWork
-	mov	BYTE PTR _bWorkPlot$224849[esp+12], al
+	mov	BYTE PTR _bWorkPlot$224891[esp+12], al
 
 ; 275  : 		SetWorkingPlot(pHomePlot, bWorkPlot, /*bUseUnassignedPool*/ false);
 
-	mov	eax, DWORD PTR _bWorkPlot$224849[esp+12]
+	mov	eax, DWORD PTR _bWorkPlot$224891[esp+12]
 	push	0
 	push	eax
 	push	edi
@@ -10024,7 +10042,7 @@ _iSpecialistValue$ = 8					; size = 4
 ?GetAIBestSpecialistBuilding@CvCityCitizens@@QAE?AW4BuildingTypes@@AAH@Z PROC ; CvCityCitizens::GetAIBestSpecialistBuilding, COMDAT
 ; _this$ = ecx
 
-; 1192 : {
+; 1210 : {
 
 	sub	esp, 12					; 0000000cH
 	push	ebx
@@ -10032,29 +10050,29 @@ _iSpecialistValue$ = 8					; size = 4
 	push	esi
 	push	edi
 
-; 1193 : 	BuildingTypes eBestBuilding = NO_BUILDING;
+; 1211 : 	BuildingTypes eBestBuilding = NO_BUILDING;
 
 	or	edi, -1
 	mov	ebp, ecx
 	mov	esi, edi
 
-; 1194 : 	int iBestSpecialistValue = -1;
-; 1195 : #ifdef AUI_CITIZENS_FIX_REMOVE_WORST_SPECIALIST_ACTUALLY_REMOVES_WORST
-; 1196 : 	if (bGetWorst)
-; 1197 : 		iBestSpecialistValue = MAX_INT;
-; 1198 : #endif
-; 1199 : #ifndef NQM_PRUNING
-; 1200 : 	int iBestUnmodifiedSpecialistValue = -1;
-; 1201 : #endif
-; 1202 : 
-; 1203 : 	SpecialistTypes eSpecialist;
-; 1204 : 	int iValue;
-; 1205 : 
-; 1206 : 	// Loop through all Buildings
-; 1207 : #ifdef AUI_WARNING_FIXES
-; 1208 : 	for (uint iBuildingLoop = 0; iBuildingLoop < GC.getNumBuildingInfos(); iBuildingLoop++)
-; 1209 : #else
-; 1210 : 	for(int iBuildingLoop = 0; iBuildingLoop < GC.getNumBuildingInfos(); iBuildingLoop++)
+; 1212 : 	int iBestSpecialistValue = -1;
+; 1213 : #ifdef AUI_CITIZENS_FIX_REMOVE_WORST_SPECIALIST_ACTUALLY_REMOVES_WORST
+; 1214 : 	if (bGetWorst)
+; 1215 : 		iBestSpecialistValue = MAX_INT;
+; 1216 : #endif
+; 1217 : #ifndef NQM_PRUNING
+; 1218 : 	int iBestUnmodifiedSpecialistValue = -1;
+; 1219 : #endif
+; 1220 : 
+; 1221 : 	SpecialistTypes eSpecialist;
+; 1222 : 	int iValue;
+; 1223 : 
+; 1224 : 	// Loop through all Buildings
+; 1225 : #ifdef AUI_WARNING_FIXES
+; 1226 : 	for (uint iBuildingLoop = 0; iBuildingLoop < GC.getNumBuildingInfos(); iBuildingLoop++)
+; 1227 : #else
+; 1228 : 	for(int iBuildingLoop = 0; iBuildingLoop < GC.getNumBuildingInfos(); iBuildingLoop++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	DWORD PTR _eBestBuilding$[esp+28], esi
@@ -10067,25 +10085,25 @@ _iSpecialistValue$ = 8					; size = 4
 	npad	2
 $LL30@GetAIBestS:
 
-; 1211 : #endif
-; 1212 : 	{
-; 1213 : 		const BuildingTypes eBuilding = static_cast<BuildingTypes>(iBuildingLoop);
-; 1214 : 		CvBuildingEntry* pkBuildingInfo = GC.getBuildingInfo(eBuilding);
+; 1229 : #endif
+; 1230 : 	{
+; 1231 : 		const BuildingTypes eBuilding = static_cast<BuildingTypes>(iBuildingLoop);
+; 1232 : 		CvBuildingEntry* pkBuildingInfo = GC.getBuildingInfo(eBuilding);
 
 	push	ebx
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getBuildingInfo@CvGlobals@@QAEPAVCvBuildingEntry@@W4BuildingTypes@@@Z ; CvGlobals::getBuildingInfo
 	mov	edi, eax
 
-; 1215 : 
-; 1216 : 		if(pkBuildingInfo)
+; 1233 : 
+; 1234 : 		if(pkBuildingInfo)
 
 	test	edi, edi
 	je	$LN6@GetAIBestS
 
-; 1217 : 		{
-; 1218 : 			// Have this Building in the City?
-; 1219 : 			if(GetCity()->GetCityBuildings()->GetNumBuilding(eBuilding) > 0)
+; 1235 : 		{
+; 1236 : 			// Have this Building in the City?
+; 1237 : 			if(GetCity()->GetCityBuildings()->GetNumBuilding(eBuilding) > 0)
 
 	mov	ecx, DWORD PTR [ebp]
 	push	ebx
@@ -10095,12 +10113,12 @@ $LL30@GetAIBestS:
 	test	eax, eax
 	jle	SHORT $LN6@GetAIBestS
 
-; 1220 : 			{
-; 1221 : 				// Can't add more than the max
-; 1222 : #ifdef AUI_CITIZENS_FIX_REMOVE_WORST_SPECIALIST_ACTUALLY_REMOVES_WORST
-; 1223 : 				if ((!bIsWorked && IsCanAddSpecialistToBuilding(eBuilding)) || (bIsWorked &&  GetNumSpecialistsInBuilding(eBuilding) > 0))
-; 1224 : #else
-; 1225 : 				if(IsCanAddSpecialistToBuilding(eBuilding))
+; 1238 : 			{
+; 1239 : 				// Can't add more than the max
+; 1240 : #ifdef AUI_CITIZENS_FIX_REMOVE_WORST_SPECIALIST_ACTUALLY_REMOVES_WORST
+; 1241 : 				if ((!bIsWorked && IsCanAddSpecialistToBuilding(eBuilding)) || (bIsWorked &&  GetNumSpecialistsInBuilding(eBuilding) > 0))
+; 1242 : #else
+; 1243 : 				if(IsCanAddSpecialistToBuilding(eBuilding))
 
 	mov	eax, DWORD PTR [ebp+116]
 	mov	ecx, DWORD PTR [ebp]
@@ -10118,32 +10136,32 @@ $LL30@GetAIBestS:
 	cmp	esi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+7100
 	jge	SHORT $LN6@GetAIBestS
 
-; 1226 : #endif
-; 1227 : 				{
-; 1228 : 					eSpecialist = (SpecialistTypes) pkBuildingInfo->GetSpecialistType();
+; 1244 : #endif
+; 1245 : 				{
+; 1246 : 					eSpecialist = (SpecialistTypes) pkBuildingInfo->GetSpecialistType();
 
 	mov	ecx, edi
 	call	?GetSpecialistType@CvBuildingEntry@@QBEHXZ ; CvBuildingEntry::GetSpecialistType
 
-; 1229 : #ifdef AUI_CITIZENS_FIX_REMOVE_WORST_SPECIALIST_ACTUALLY_REMOVES_WORST
-; 1230 : 					if (eSpecialist == eIgnoreSpecialist)
-; 1231 : 						continue;
-; 1232 : #endif
-; 1233 : 
-; 1234 : #ifdef AUI_CITIZENS_UNHARDCODE_SPECIALIST_VALUE_HAPPINESS
-; 1235 : 					iValue = GetSpecialistValue(eSpecialist, bIsWorked);
-; 1236 : #else
-; 1237 : 					iValue = GetSpecialistValue(eSpecialist);
+; 1247 : #ifdef AUI_CITIZENS_FIX_REMOVE_WORST_SPECIALIST_ACTUALLY_REMOVES_WORST
+; 1248 : 					if (eSpecialist == eIgnoreSpecialist)
+; 1249 : 						continue;
+; 1250 : #endif
+; 1251 : 
+; 1252 : #ifdef AUI_CITIZENS_UNHARDCODE_SPECIALIST_VALUE_HAPPINESS
+; 1253 : 					iValue = GetSpecialistValue(eSpecialist, bIsWorked);
+; 1254 : #else
+; 1255 : 					iValue = GetSpecialistValue(eSpecialist);
 
 	push	eax
 	mov	ecx, ebp
 	call	?GetSpecialistValue@CvCityCitizens@@QAEHW4SpecialistTypes@@@Z ; CvCityCitizens::GetSpecialistValue
 
-; 1238 : #endif
-; 1239 : 
-; 1240 : #ifndef NQM_PRUNING
-; 1241 : 					// Add a bit more weight to a Building if it has more slots (10% per).  This will bias the AI to fill a single building over spreading Specialists out
-; 1242 : 					int iTemp = ((GetNumSpecialistsAllowedByBuilding(*pkBuildingInfo) - 1) * iValue * 10);
+; 1256 : #endif
+; 1257 : 
+; 1258 : #ifndef NQM_PRUNING
+; 1259 : 					// Add a bit more weight to a Building if it has more slots (10% per).  This will bias the AI to fill a single building over spreading Specialists out
+; 1260 : 					int iTemp = ((GetNumSpecialistsAllowedByBuilding(*pkBuildingInfo) - 1) * iValue * 10);
 
 	mov	ecx, edi
 	mov	esi, eax
@@ -10151,7 +10169,7 @@ $LL30@GetAIBestS:
 	dec	eax
 	imul	eax, esi
 
-; 1243 : 					iTemp /= 100;
+; 1261 : 					iTemp /= 100;
 
 	lea	ecx, DWORD PTR [eax+eax*4]
 	add	ecx, ecx
@@ -10162,29 +10180,29 @@ $LL30@GetAIBestS:
 	shr	eax, 31					; 0000001fH
 	add	eax, edx
 
-; 1244 : 					iValue += iTemp;
+; 1262 : 					iValue += iTemp;
 
 	add	esi, eax
 
-; 1245 : #endif
-; 1246 : 
-; 1247 : #ifdef AUI_CITIZENS_FIX_REMOVE_WORST_SPECIALIST_ACTUALLY_REMOVES_WORST
-; 1248 : 					if (((iValue > iBestSpecialistValue) && !bGetWorst) || ((iValue < iBestSpecialistValue) && bGetWorst))
-; 1249 : #else
-; 1250 : 					if(iValue > iBestSpecialistValue)
+; 1263 : #endif
+; 1264 : 
+; 1265 : #ifdef AUI_CITIZENS_FIX_REMOVE_WORST_SPECIALIST_ACTUALLY_REMOVES_WORST
+; 1266 : 					if (((iValue > iBestSpecialistValue) && !bGetWorst) || ((iValue < iBestSpecialistValue) && bGetWorst))
+; 1267 : #else
+; 1268 : 					if(iValue > iBestSpecialistValue)
 
 	cmp	esi, DWORD PTR _iBestSpecialistValue$[esp+28]
 	jle	SHORT $LN6@GetAIBestS
 
-; 1251 : #endif
-; 1252 : 					{
-; 1253 : 						eBestBuilding = eBuilding;
-; 1254 : 						iBestSpecialistValue = iValue;
+; 1269 : #endif
+; 1270 : 					{
+; 1271 : 						eBestBuilding = eBuilding;
+; 1272 : 						iBestSpecialistValue = iValue;
 
 	mov	DWORD PTR _iBestSpecialistValue$[esp+28], esi
 
-; 1255 : #ifndef NQM_PRUNING
-; 1256 : 						iBestUnmodifiedSpecialistValue = iValue - iTemp;
+; 1273 : #ifndef NQM_PRUNING
+; 1274 : 						iBestUnmodifiedSpecialistValue = iValue - iTemp;
 
 	sub	esi, eax
 	mov	DWORD PTR _eBestBuilding$[esp+28], ebx
@@ -10196,29 +10214,29 @@ $LN6@GetAIBestS:
 	cmp	ebx, eax
 	jl	$LL30@GetAIBestS
 
-; 1257 : #endif
-; 1258 : 					}
-; 1259 : 				}
-; 1260 : 			}
-; 1261 : 		}
-; 1262 : 	}
-; 1263 : 
-; 1264 : #if defined(NQM_PRUNING) && defined(AUI_CITIZENS_FIX_REMOVE_WORST_SPECIALIST_ACTUALLY_REMOVES_WORST)
-; 1265 : 	if (iSpecialistValue)
-; 1266 : 		*iSpecialistValue = iBestSpecialistValue;
-; 1267 : #elif defined(AUI_CITIZENS_FIX_REMOVE_WORST_SPECIALIST_ACTUALLY_REMOVES_WORST)
-; 1268 : 	if (iSpecialistValue)
-; 1269 : 		*iSpecialistValue = iBestUnmodifiedSpecialistValue;
-; 1270 : #elif defined(NQM_PRUNING)
-; 1271 : 	iSpecialistValue = iBestSpecialistValue;
-; 1272 : #else
-; 1273 : 	iSpecialistValue = iBestUnmodifiedSpecialistValue;
+; 1275 : #endif
+; 1276 : 					}
+; 1277 : 				}
+; 1278 : 			}
+; 1279 : 		}
+; 1280 : 	}
+; 1281 : 
+; 1282 : #if defined(NQM_PRUNING) && defined(AUI_CITIZENS_FIX_REMOVE_WORST_SPECIALIST_ACTUALLY_REMOVES_WORST)
+; 1283 : 	if (iSpecialistValue)
+; 1284 : 		*iSpecialistValue = iBestSpecialistValue;
+; 1285 : #elif defined(AUI_CITIZENS_FIX_REMOVE_WORST_SPECIALIST_ACTUALLY_REMOVES_WORST)
+; 1286 : 	if (iSpecialistValue)
+; 1287 : 		*iSpecialistValue = iBestUnmodifiedSpecialistValue;
+; 1288 : #elif defined(NQM_PRUNING)
+; 1289 : 	iSpecialistValue = iBestSpecialistValue;
+; 1290 : #else
+; 1291 : 	iSpecialistValue = iBestUnmodifiedSpecialistValue;
 
 	mov	ecx, DWORD PTR _iSpecialistValue$[esp+24]
 	mov	edx, DWORD PTR _iBestUnmodifiedSpecialistValue$[esp+28]
 
-; 1274 : #endif
-; 1275 : 	return eBestBuilding;
+; 1292 : #endif
+; 1293 : 	return eBestBuilding;
 
 	mov	eax, DWORD PTR _eBestBuilding$[esp+28]
 	pop	edi
@@ -10227,43 +10245,43 @@ $LN6@GetAIBestS:
 	mov	DWORD PTR [ecx], edx
 	pop	ebx
 
-; 1276 : }
+; 1294 : }
 
 	add	esp, 12					; 0000000cH
 	ret	4
 $LN26@GetAIBestS:
 
-; 1257 : #endif
-; 1258 : 					}
-; 1259 : 				}
-; 1260 : 			}
-; 1261 : 		}
-; 1262 : 	}
-; 1263 : 
-; 1264 : #if defined(NQM_PRUNING) && defined(AUI_CITIZENS_FIX_REMOVE_WORST_SPECIALIST_ACTUALLY_REMOVES_WORST)
-; 1265 : 	if (iSpecialistValue)
-; 1266 : 		*iSpecialistValue = iBestSpecialistValue;
-; 1267 : #elif defined(AUI_CITIZENS_FIX_REMOVE_WORST_SPECIALIST_ACTUALLY_REMOVES_WORST)
-; 1268 : 	if (iSpecialistValue)
-; 1269 : 		*iSpecialistValue = iBestUnmodifiedSpecialistValue;
-; 1270 : #elif defined(NQM_PRUNING)
-; 1271 : 	iSpecialistValue = iBestSpecialistValue;
-; 1272 : #else
-; 1273 : 	iSpecialistValue = iBestUnmodifiedSpecialistValue;
+; 1275 : #endif
+; 1276 : 					}
+; 1277 : 				}
+; 1278 : 			}
+; 1279 : 		}
+; 1280 : 	}
+; 1281 : 
+; 1282 : #if defined(NQM_PRUNING) && defined(AUI_CITIZENS_FIX_REMOVE_WORST_SPECIALIST_ACTUALLY_REMOVES_WORST)
+; 1283 : 	if (iSpecialistValue)
+; 1284 : 		*iSpecialistValue = iBestSpecialistValue;
+; 1285 : #elif defined(AUI_CITIZENS_FIX_REMOVE_WORST_SPECIALIST_ACTUALLY_REMOVES_WORST)
+; 1286 : 	if (iSpecialistValue)
+; 1287 : 		*iSpecialistValue = iBestUnmodifiedSpecialistValue;
+; 1288 : #elif defined(NQM_PRUNING)
+; 1289 : 	iSpecialistValue = iBestSpecialistValue;
+; 1290 : #else
+; 1291 : 	iSpecialistValue = iBestUnmodifiedSpecialistValue;
 
 	mov	eax, DWORD PTR _iSpecialistValue$[esp+24]
 	mov	DWORD PTR [eax], edi
 	pop	edi
 
-; 1274 : #endif
-; 1275 : 	return eBestBuilding;
+; 1292 : #endif
+; 1293 : 	return eBestBuilding;
 
 	mov	eax, esi
 	pop	esi
 	pop	ebp
 	pop	ebx
 
-; 1276 : }
+; 1294 : }
 
 	add	esp, 12					; 0000000cH
 	ret	4
@@ -10281,21 +10299,21 @@ _bWantWorked$ = 16					; size = 1
 ?GetBestCityPlotWithValue@CvCityCitizens@@QAEPAVCvPlot@@AAH_N1@Z PROC ; CvCityCitizens::GetBestCityPlotWithValue, COMDAT
 ; _this$ = ecx
 
-; 2089 : {
+; 2107 : {
 
 	sub	esp, 8
 	push	ebx
 	push	ebp
 
-; 2090 : 	bool bPlotForceWorked;
-; 2091 : 
-; 2092 : 	int iBestPlotValue = -1;
-; 2093 : 	int iBestPlotID = -1;
-; 2094 : 
-; 2095 : 	CvPlot* pLoopPlot;
-; 2096 : 
-; 2097 : 	// Look at all workable Plots
-; 2098 : 	for(int iPlotLoop = 0; iPlotLoop < NUM_CITY_PLOTS; iPlotLoop++)
+; 2108 : 	bool bPlotForceWorked;
+; 2109 : 
+; 2110 : 	int iBestPlotValue = -1;
+; 2111 : 	int iBestPlotID = -1;
+; 2112 : 
+; 2113 : 	CvPlot* pLoopPlot;
+; 2114 : 
+; 2115 : 	// Look at all workable Plots
+; 2116 : 	for(int iPlotLoop = 0; iPlotLoop < NUM_CITY_PLOTS; iPlotLoop++)
 
 	mov	ebp, DWORD PTR _iValue$[esp+12]
 	or	eax, -1
@@ -10308,14 +10326,14 @@ _bWantWorked$ = 16					; size = 1
 	npad	6
 $LL69@GetBestCit:
 
-; 2099 : 	{
-; 2100 : 		if(iPlotLoop != CITY_HOME_PLOT)
+; 2117 : 	{
+; 2118 : 		if(iPlotLoop != CITY_HOME_PLOT)
 
 	test	ebx, ebx
 	je	$LN17@GetBestCit
 
-; 2101 : 		{
-; 2102 : 			pLoopPlot = GetCityPlotFromIndex(iPlotLoop);
+; 2119 : 		{
+; 2120 : 			pLoopPlot = GetCityPlotFromIndex(iPlotLoop);
 
 	mov	eax, DWORD PTR [edi]
 	mov	ecx, DWORD PTR [eax+108]
@@ -10327,15 +10345,15 @@ $LL69@GetBestCit:
 	mov	esi, eax
 	add	esp, 12					; 0000000cH
 
-; 2103 : 
-; 2104 : 			if(pLoopPlot != NULL)
+; 2121 : 
+; 2122 : 			if(pLoopPlot != NULL)
 
 	test	esi, esi
 	je	$LN17@GetBestCit
 
-; 2105 : 			{
-; 2106 : 				// Is this a Plot this City controls?
-; 2107 : 				if(pLoopPlot->getWorkingCity() != NULL && pLoopPlot->getWorkingCity()->GetID() == GetCity()->GetID())
+; 2123 : 			{
+; 2124 : 				// Is this a Plot this City controls?
+; 2125 : 				if(pLoopPlot->getWorkingCity() != NULL && pLoopPlot->getWorkingCity()->GetID() == GetCity()->GetID())
 
 	mov	ecx, esi
 	call	?getWorkingCity@CvPlot@@QBEPAVCvCity@@XZ ; CvPlot::getWorkingCity
@@ -10348,10 +10366,10 @@ $LL69@GetBestCit:
 	cmp	eax, DWORD PTR [ecx+120]
 	jne	$LN17@GetBestCit
 
-; 2108 : 				{
-; 2109 : 					// Working the Plot and wanting to work it, or Not working it and wanting to find one to work?
-; 2110 : 					if((IsWorkingPlot(pLoopPlot) && bWantWorked) ||
-; 2111 : 					        (!IsWorkingPlot(pLoopPlot) && !bWantWorked))
+; 2126 : 				{
+; 2127 : 					// Working the Plot and wanting to work it, or Not working it and wanting to find one to work?
+; 2128 : 					if((IsWorkingPlot(pLoopPlot) && bWantWorked) ||
+; 2129 : 					        (!IsWorkingPlot(pLoopPlot) && !bWantWorked))
 
 	push	esi
 	push	ecx
@@ -10377,9 +10395,9 @@ $LN66@GetBestCit:
 	cmp	BYTE PTR _bWantWorked$[esp+20], 0
 	jne	SHORT $LN17@GetBestCit
 
-; 2112 : 					{
-; 2113 : 						// Working the Plot or CAN work the Plot?
-; 2114 : 						if(bWantWorked || IsCanWork(pLoopPlot))
+; 2130 : 					{
+; 2131 : 						// Working the Plot or CAN work the Plot?
+; 2132 : 						if(bWantWorked || IsCanWork(pLoopPlot))
 
 	push	esi
 	mov	ecx, edi
@@ -10388,11 +10406,11 @@ $LN66@GetBestCit:
 	je	SHORT $LN17@GetBestCit
 $LN8@GetBestCit:
 
-; 2115 : 						{
-; 2116 : #ifdef AUI_CITIZENS_REALLOCATE_CITIZENS_USES_SELF_CONSISTENCY
-; 2117 : 							iValue = GetPlotValue(pLoopPlot, true);
-; 2118 : #else
-; 2119 : 							iValue = GetPlotValue(pLoopPlot, bWantBest);
+; 2133 : 						{
+; 2134 : #ifdef AUI_CITIZENS_REALLOCATE_CITIZENS_USES_SELF_CONSISTENCY
+; 2135 : 							iValue = GetPlotValue(pLoopPlot, true);
+; 2136 : #else
+; 2137 : 							iValue = GetPlotValue(pLoopPlot, bWantBest);
 
 	mov	edx, DWORD PTR _bWantBest$[esp+20]
 	push	edx
@@ -10400,35 +10418,35 @@ $LN8@GetBestCit:
 	mov	ecx, edi
 	call	?GetPlotValue@CvCityCitizens@@QAEHPAVCvPlot@@_N@Z ; CvCityCitizens::GetPlotValue
 
-; 2120 : #endif
-; 2121 : 
-; 2122 : 							bPlotForceWorked = IsForcedWorkingPlot(pLoopPlot);
+; 2138 : #endif
+; 2139 : 
+; 2140 : 							bPlotForceWorked = IsForcedWorkingPlot(pLoopPlot);
 
 	push	esi
 	mov	ecx, edi
 	mov	DWORD PTR [ebp], eax
 	call	?IsForcedWorkingPlot@CvCityCitizens@@QBE_NPBVCvPlot@@@Z ; CvCityCitizens::IsForcedWorkingPlot
 
-; 2123 : 
-; 2124 : 							if(bPlotForceWorked)
+; 2141 : 
+; 2142 : 							if(bPlotForceWorked)
 
 	test	al, al
 	je	SHORT $LN67@GetBestCit
 
-; 2125 : 							{
-; 2126 : 								// Looking for best, unworked Plot: Forced plots are FIRST to be picked
-; 2127 : 								if(bWantBest && !bWantWorked)
+; 2143 : 							{
+; 2144 : 								// Looking for best, unworked Plot: Forced plots are FIRST to be picked
+; 2145 : 								if(bWantBest && !bWantWorked)
 
 	cmp	BYTE PTR _bWantBest$[esp+20], 0
 	je	SHORT $LN64@GetBestCit
 	cmp	BYTE PTR _bWantWorked$[esp+20], 0
 	jne	SHORT $LN67@GetBestCit
 
-; 2128 : 								{
-; 2129 : 									iValue += 10000;
-; 2130 : 								}
-; 2131 : 								// Looking for worst, worked Plot: Forced plots are LAST to be picked, so make it's value incredibly high
-; 2132 : 								if(!bWantBest && bWantWorked)
+; 2146 : 								{
+; 2147 : 									iValue += 10000;
+; 2148 : 								}
+; 2149 : 								// Looking for worst, worked Plot: Forced plots are LAST to be picked, so make it's value incredibly high
+; 2150 : 								if(!bWantBest && bWantWorked)
 
 	jmp	SHORT $LN70@GetBestCit
 $LN64@GetBestCit:
@@ -10436,18 +10454,18 @@ $LN64@GetBestCit:
 	je	SHORT $LN67@GetBestCit
 $LN70@GetBestCit:
 
-; 2133 : 								{
-; 2134 : 									iValue += 10000;
+; 2151 : 								{
+; 2152 : 									iValue += 10000;
 
 	add	DWORD PTR [ebp], 10000			; 00002710H
 $LN67@GetBestCit:
 
-; 2135 : 								}
-; 2136 : 							}
-; 2137 : 
-; 2138 : 							if(iBestPlotValue == -1 ||							// First Plot?
-; 2139 : 							        (bWantBest && iValue > iBestPlotValue) ||		// Best Plot so far?
-; 2140 : 							        (!bWantBest && iValue < iBestPlotValue))			// Worst Plot so far?
+; 2153 : 								}
+; 2154 : 							}
+; 2155 : 
+; 2156 : 							if(iBestPlotValue == -1 ||							// First Plot?
+; 2157 : 							        (bWantBest && iValue > iBestPlotValue) ||		// Best Plot so far?
+; 2158 : 							        (!bWantBest && iValue < iBestPlotValue))			// Worst Plot so far?
 
 	mov	eax, DWORD PTR _iBestPlotValue$[esp+24]
 	cmp	eax, -1
@@ -10462,13 +10480,13 @@ $LN63@GetBestCit:
 	jge	SHORT $LN17@GetBestCit
 $LN3@GetBestCit:
 
-; 2141 : 							{
-; 2142 : 								iBestPlotValue = iValue;
+; 2159 : 							{
+; 2160 : 								iBestPlotValue = iValue;
 
 	mov	eax, DWORD PTR [ebp]
 	mov	DWORD PTR _iBestPlotValue$[esp+24], eax
 
-; 2143 : 								iBestPlotID = iPlotLoop;
+; 2161 : 								iBestPlotID = iPlotLoop;
 
 	mov	DWORD PTR _iBestPlotID$[esp+24], ebx
 $LN17@GetBestCit:
@@ -10476,22 +10494,22 @@ $LN17@GetBestCit:
 	cmp	ebx, 37					; 00000025H
 	jl	$LL69@GetBestCit
 
-; 2144 : 							}
-; 2145 : 						}
-; 2146 : 					}
-; 2147 : 				}
-; 2148 : 			}
-; 2149 : 		}
-; 2150 : 	}
-; 2151 : 
-; 2152 : 	// Passed in by reference
-; 2153 : 	iValue = iBestPlotValue;
+; 2162 : 							}
+; 2163 : 						}
+; 2164 : 					}
+; 2165 : 				}
+; 2166 : 			}
+; 2167 : 		}
+; 2168 : 	}
+; 2169 : 
+; 2170 : 	// Passed in by reference
+; 2171 : 	iValue = iBestPlotValue;
 
 	mov	ecx, DWORD PTR _iBestPlotValue$[esp+24]
 	mov	DWORD PTR [ebp], ecx
 
-; 2154 : 
-; 2155 : 	if(iBestPlotID == -1)
+; 2172 : 
+; 2173 : 	if(iBestPlotID == -1)
 
 	mov	ecx, DWORD PTR _iBestPlotID$[esp+24]
 	cmp	ecx, -1
@@ -10500,21 +10518,21 @@ $LN17@GetBestCit:
 	pop	esi
 	pop	ebp
 
-; 2156 : 	{
-; 2157 : 		return NULL;
+; 2174 : 	{
+; 2175 : 		return NULL;
 
 	xor	eax, eax
 	pop	ebx
 
-; 2161 : }
+; 2179 : }
 
 	add	esp, 8
 	ret	12					; 0000000cH
 $LN1@GetBestCit:
 
-; 2158 : 	}
-; 2159 : 
-; 2160 : 	return GetCityPlotFromIndex(iBestPlotID);
+; 2176 : 	}
+; 2177 : 
+; 2178 : 	return GetCityPlotFromIndex(iBestPlotID);
 
 	mov	edi, DWORD PTR [edi]
 	mov	eax, DWORD PTR [edi+108]
@@ -10529,7 +10547,7 @@ $LN1@GetBestCit:
 	pop	ebp
 	pop	ebx
 
-; 2161 : }
+; 2179 : }
 
 	add	esp, 8
 	ret	12					; 0000000cH
@@ -10544,42 +10562,42 @@ _iBestPlotID$ = -4					; size = 4
 ?DoDemoteWorstForcedWorkingPlot@CvCityCitizens@@QAEXXZ PROC ; CvCityCitizens::DoDemoteWorstForcedWorkingPlot, COMDAT
 ; _this$ = ecx
 
-; 2585 : {
+; 2603 : {
 
 	push	ecx
 	push	ebx
 	push	ebp
 	push	esi
 
-; 2586 : 	int iValue;
-; 2587 : 
-; 2588 : 	int iBestPlotValue = -1;
+; 2604 : 	int iValue;
+; 2605 : 
+; 2606 : 	int iBestPlotValue = -1;
 
 	or	ebp, -1
 	push	edi
 	mov	esi, ecx
 
-; 2589 : 	int iBestPlotID = -1;
+; 2607 : 	int iBestPlotID = -1;
 
 	mov	DWORD PTR _iBestPlotID$[esp+20], ebp
 
-; 2590 : 
-; 2591 : 	CvPlot* pLoopPlot;
-; 2592 : 
-; 2593 : 	// Look at all workable Plots
-; 2594 : 	for(int iPlotLoop = 0; iPlotLoop < NUM_CITY_PLOTS; iPlotLoop++)
+; 2608 : 
+; 2609 : 	CvPlot* pLoopPlot;
+; 2610 : 
+; 2611 : 	// Look at all workable Plots
+; 2612 : 	for(int iPlotLoop = 0; iPlotLoop < NUM_CITY_PLOTS; iPlotLoop++)
 
 	xor	ebx, ebx
 $LL73@DoDemoteWo:
 
-; 2595 : 	{
-; 2596 : 		if(iPlotLoop != CITY_HOME_PLOT)
+; 2613 : 	{
+; 2614 : 		if(iPlotLoop != CITY_HOME_PLOT)
 
 	test	ebx, ebx
 	je	SHORT $LN8@DoDemoteWo
 
-; 2597 : 		{
-; 2598 : 			pLoopPlot = GetCityPlotFromIndex(iPlotLoop);
+; 2615 : 		{
+; 2616 : 			pLoopPlot = GetCityPlotFromIndex(iPlotLoop);
 
 	mov	eax, DWORD PTR [esi]
 	mov	ecx, DWORD PTR [eax+108]
@@ -10591,14 +10609,14 @@ $LL73@DoDemoteWo:
 	mov	edi, eax
 	add	esp, 12					; 0000000cH
 
-; 2599 : 
-; 2600 : 			if(pLoopPlot != NULL)
+; 2617 : 
+; 2618 : 			if(pLoopPlot != NULL)
 
 	test	edi, edi
 	je	SHORT $LN8@DoDemoteWo
 
-; 2601 : 			{
-; 2602 : 				if(IsForcedWorkingPlot(pLoopPlot))
+; 2619 : 			{
+; 2620 : 				if(IsForcedWorkingPlot(pLoopPlot))
 
 	mov	eax, DWORD PTR [esi]
 	push	edi
@@ -10610,17 +10628,17 @@ $LL73@DoDemoteWo:
 	cmp	BYTE PTR [eax+esi+62], 0
 	je	SHORT $LN8@DoDemoteWo
 
-; 2603 : 				{
-; 2604 : 					iValue = GetPlotValue(pLoopPlot, false);
+; 2621 : 				{
+; 2622 : 					iValue = GetPlotValue(pLoopPlot, false);
 
 	push	0
 	push	edi
 	mov	ecx, esi
 	call	?GetPlotValue@CvCityCitizens@@QAEHPAVCvPlot@@_N@Z ; CvCityCitizens::GetPlotValue
 
-; 2605 : 
-; 2606 : 					// First, or worst yet?
-; 2607 : 					if(iBestPlotValue == -1 || iValue < iBestPlotValue)
+; 2623 : 
+; 2624 : 					// First, or worst yet?
+; 2625 : 					if(iBestPlotValue == -1 || iValue < iBestPlotValue)
 
 	cmp	ebp, -1
 	je	SHORT $LN2@DoDemoteWo
@@ -10628,12 +10646,12 @@ $LL73@DoDemoteWo:
 	jge	SHORT $LN8@DoDemoteWo
 $LN2@DoDemoteWo:
 
-; 2608 : 					{
-; 2609 : 						iBestPlotValue = iValue;
+; 2626 : 					{
+; 2627 : 						iBestPlotValue = iValue;
 
 	mov	ebp, eax
 
-; 2610 : 						iBestPlotID = iPlotLoop;
+; 2628 : 						iBestPlotID = iPlotLoop;
 
 	mov	DWORD PTR _iBestPlotID$[esp+20], ebx
 $LN8@DoDemoteWo:
@@ -10641,20 +10659,20 @@ $LN8@DoDemoteWo:
 	cmp	ebx, 37					; 00000025H
 	jl	SHORT $LL73@DoDemoteWo
 
-; 2611 : 					}
-; 2612 : 				}
-; 2613 : 			}
-; 2614 : 		}
-; 2615 : 	}
-; 2616 : 
-; 2617 : 	if(iBestPlotID > -1)
+; 2629 : 					}
+; 2630 : 				}
+; 2631 : 			}
+; 2632 : 		}
+; 2633 : 	}
+; 2634 : 
+; 2635 : 	if(iBestPlotID > -1)
 
 	mov	edx, DWORD PTR _iBestPlotID$[esp+20]
 	cmp	edx, -1
 	jle	SHORT $LN1@DoDemoteWo
 
-; 2618 : 	{
-; 2619 : 		pLoopPlot = GetCityPlotFromIndex(iBestPlotID);
+; 2636 : 	{
+; 2637 : 		pLoopPlot = GetCityPlotFromIndex(iBestPlotID);
 
 	mov	eax, DWORD PTR [esi]
 	mov	ecx, DWORD PTR [eax+108]
@@ -10665,7 +10683,7 @@ $LN8@DoDemoteWo:
 	call	?plotCity@@YAPAVCvPlot@@HHH@Z		; plotCity
 	add	esp, 12					; 0000000cH
 
-; 2620 : 		SetForcedWorkingPlot(pLoopPlot, false);
+; 2638 : 		SetForcedWorkingPlot(pLoopPlot, false);
 
 	push	0
 	push	eax
@@ -10677,8 +10695,8 @@ $LN1@DoDemoteWo:
 	pop	ebp
 	pop	ebx
 
-; 2621 : 	}
-; 2622 : }
+; 2639 : 	}
+; 2640 : }
 
 	pop	ecx
 	ret	0
@@ -10691,31 +10709,31 @@ _TEXT	SEGMENT
 ?DoValidateForcedWorkingPlots@CvCityCitizens@@QAEXXZ PROC ; CvCityCitizens::DoValidateForcedWorkingPlots, COMDAT
 ; _this$ = ecx
 
-; 2571 : {
+; 2589 : {
 
 	push	esi
 	mov	esi, ecx
 
-; 2572 : 	int iNumForcedWorkingPlotsToDemote = GetNumForcedWorkingPlots() - GetNumCitizensWorkingPlots();
+; 2590 : 	int iNumForcedWorkingPlotsToDemote = GetNumForcedWorkingPlots() - GetNumCitizensWorkingPlots();
 
 	mov	eax, DWORD PTR [esi+16]
 	sub	eax, DWORD PTR [esi+12]
 
-; 2573 : 
-; 2574 : 	if(iNumForcedWorkingPlotsToDemote > 0)
+; 2591 : 
+; 2592 : 	if(iNumForcedWorkingPlotsToDemote > 0)
 
 	test	eax, eax
 	jle	SHORT $LN1@DoValidate
 	push	edi
 
-; 2575 : 	{
-; 2576 : 		for(int iLoop = 0; iLoop < iNumForcedWorkingPlotsToDemote; iLoop++)
+; 2593 : 	{
+; 2594 : 		for(int iLoop = 0; iLoop < iNumForcedWorkingPlotsToDemote; iLoop++)
 
 	mov	edi, eax
 $LL3@DoValidate:
 
-; 2577 : 		{
-; 2578 : 			DoDemoteWorstForcedWorkingPlot();
+; 2595 : 		{
+; 2596 : 			DoDemoteWorstForcedWorkingPlot();
 
 	mov	ecx, esi
 	call	?DoDemoteWorstForcedWorkingPlot@CvCityCitizens@@QAEXXZ ; CvCityCitizens::DoDemoteWorstForcedWorkingPlot
@@ -10725,9 +10743,9 @@ $LL3@DoValidate:
 $LN1@DoValidate:
 	pop	esi
 
-; 2579 : 		}
-; 2580 : 	}
-; 2581 : }
+; 2597 : 		}
+; 2598 : 	}
+; 2599 : }
 
 	ret	0
 ?DoValidateForcedWorkingPlots@CvCityCitizens@@QAEXXZ ENDP ; CvCityCitizens::DoValidateForcedWorkingPlots
@@ -10740,13 +10758,13 @@ _bNewValue$ = 12					; size = 1
 ?SetForcedWorkingPlot@CvCityCitizens@@QAEXPAVCvPlot@@_N@Z PROC ; CvCityCitizens::SetForcedWorkingPlot, COMDAT
 ; _this$ = ecx
 
-; 2541 : {
+; 2559 : {
 
 	push	ebx
 	push	esi
 	push	edi
 
-; 2542 : 	int iIndex = GetCityIndexFromPlot(pPlot);
+; 2560 : 	int iIndex = GetCityIndexFromPlot(pPlot);
 
 	mov	edi, DWORD PTR _pPlot$[esp+8]
 	mov	esi, ecx
@@ -10755,11 +10773,11 @@ _bNewValue$ = 12					; size = 1
 	push	eax
 	call	?plotCityXY@@YAHPBVCvCity@@PBVCvPlot@@@Z ; plotCityXY
 
-; 2543 : 
-; 2544 : 	CvAssertMsg(iIndex >= 0, "iIndex expected to be >= 0");
-; 2545 : 	CvAssertMsg(iIndex < NUM_CITY_PLOTS, "iIndex expected to be < NUM_CITY_PLOTS");
-; 2546 : 
-; 2547 : 	if(IsForcedWorkingPlot(pPlot) != bNewValue && iIndex >= 0 && iIndex < NUM_CITY_PLOTS)
+; 2561 : 
+; 2562 : 	CvAssertMsg(iIndex >= 0, "iIndex expected to be >= 0");
+; 2563 : 	CvAssertMsg(iIndex < NUM_CITY_PLOTS, "iIndex expected to be < NUM_CITY_PLOTS");
+; 2564 : 
+; 2565 : 	if(IsForcedWorkingPlot(pPlot) != bNewValue && iIndex >= 0 && iIndex < NUM_CITY_PLOTS)
 
 	mov	ecx, DWORD PTR [esi]
 	push	edi
@@ -10780,33 +10798,33 @@ $LN10@SetForcedW:
 	cmp	ebx, 36					; 00000024H
 	ja	SHORT $LN21@SetForcedW
 
-; 2548 : 	{
-; 2549 : 		m_pabForcedWorkingPlot[iIndex] = bNewValue;
+; 2566 : 	{
+; 2567 : 		m_pabForcedWorkingPlot[iIndex] = bNewValue;
 
 	mov	BYTE PTR [ebx+esi+62], cl
 
-; 2550 : 
-; 2551 : 		// Change the count of how many are forced
-; 2552 : 		if(bNewValue)
+; 2568 : 
+; 2569 : 		// Change the count of how many are forced
+; 2570 : 		if(bNewValue)
 
 	test	cl, cl
 	je	SHORT $LN3@SetForcedW
 
-; 2553 : 		{
-; 2554 : 			ChangeNumForcedWorkingPlots(1);
+; 2571 : 		{
+; 2572 : 			ChangeNumForcedWorkingPlots(1);
 
 	inc	DWORD PTR [esi+16]
 	mov	eax, DWORD PTR [esi+16]
 
-; 2555 : 
-; 2556 : 			// More forced plots than we have citizens working?  If so, then pick someone to lose their forced status
-; 2557 : 			if(GetNumForcedWorkingPlots() > GetNumCitizensWorkingPlots())
+; 2573 : 
+; 2574 : 			// More forced plots than we have citizens working?  If so, then pick someone to lose their forced status
+; 2575 : 			if(GetNumForcedWorkingPlots() > GetNumCitizensWorkingPlots())
 
 	cmp	eax, DWORD PTR [esi+12]
 	jle	SHORT $LN21@SetForcedW
 
-; 2558 : 			{
-; 2559 : 				DoValidateForcedWorkingPlots();
+; 2576 : 			{
+; 2577 : 				DoValidateForcedWorkingPlots();
 
 	mov	ecx, esi
 	call	?DoValidateForcedWorkingPlots@CvCityCitizens@@QAEXXZ ; CvCityCitizens::DoValidateForcedWorkingPlots
@@ -10814,18 +10832,18 @@ $LN10@SetForcedW:
 	pop	esi
 	pop	ebx
 
-; 2565 : 		}
-; 2566 : 	}
-; 2567 : }
+; 2583 : 		}
+; 2584 : 	}
+; 2585 : }
 
 	ret	8
 $LN3@SetForcedW:
 
-; 2560 : 			}
-; 2561 : 		}
-; 2562 : 		else
-; 2563 : 		{
-; 2564 : 			ChangeNumForcedWorkingPlots(-1);
+; 2578 : 			}
+; 2579 : 		}
+; 2580 : 		else
+; 2581 : 		{
+; 2582 : 			ChangeNumForcedWorkingPlots(-1);
 
 	dec	DWORD PTR [esi+16]
 $LN21@SetForcedW:
@@ -10833,9 +10851,9 @@ $LN21@SetForcedW:
 	pop	esi
 	pop	ebx
 
-; 2565 : 		}
-; 2566 : 	}
-; 2567 : }
+; 2583 : 		}
+; 2584 : 	}
+; 2585 : }
 
 	ret	8
 ?SetForcedWorkingPlot@CvCityCitizens@@QAEXPAVCvPlot@@_N@Z ENDP ; CvCityCitizens::SetForcedWorkingPlot
@@ -10851,11 +10869,11 @@ _iCurrentCityPopulation$ = 16				; size = 4
 ?DoRemoveWorstCitizen@CvCityCitizens@@QAE_N_NW4SpecialistTypes@@H@Z PROC ; CvCityCitizens::DoRemoveWorstCitizen, COMDAT
 ; _this$ = ecx
 
-; 1986 : {
+; 2004 : {
 
 	push	ebx
 
-; 1987 : 	if (iCurrentCityPopulation == -1)
+; 2005 : 	if (iCurrentCityPopulation == -1)
 
 	mov	ebx, DWORD PTR _iCurrentCityPopulation$[esp]
 	push	esi
@@ -10864,18 +10882,18 @@ _iCurrentCityPopulation$ = 16				; size = 4
 	cmp	ebx, -1
 	jne	SHORT $LN10@DoRemoveWo@2
 
-; 1988 : 	{
-; 1989 : 		iCurrentCityPopulation = GetCity()->getPopulation();
+; 2006 : 	{
+; 2007 : 		iCurrentCityPopulation = GetCity()->getPopulation();
 
 	mov	ecx, DWORD PTR [esi]
 	call	?getPopulation@CvCity@@QBEHXZ		; CvCity::getPopulation
 	mov	ebx, eax
 $LN10@DoRemoveWo@2:
 
-; 1990 : 	}
-; 1991 : 
-; 1992 : 	// Are all of our guys already not working Plots?
-; 1993 : 	if(GetNumUnassignedCitizens() == GetCity()->getPopulation())
+; 2008 : 	}
+; 2009 : 
+; 2010 : 	// Are all of our guys already not working Plots?
+; 2011 : 	if(GetNumUnassignedCitizens() == GetCity()->getPopulation())
 
 	mov	ecx, DWORD PTR [esi]
 	mov	edi, DWORD PTR [esi+8]
@@ -10885,44 +10903,44 @@ $LN10@DoRemoveWo@2:
 	pop	edi
 	pop	esi
 
-; 1994 : 	{
-; 1995 : 		return false;
+; 2012 : 	{
+; 2013 : 		return false;
 
 	xor	al, al
 	pop	ebx
 
-; 2078 : 		{
-; 2079 : 			return true;
-; 2080 : 		}
-; 2081 : 	}
-; 2082 : #endif
-; 2083 : 
-; 2084 : 	return false;
-; 2085 : }
+; 2096 : 		{
+; 2097 : 			return true;
+; 2098 : 		}
+; 2099 : 	}
+; 2100 : #endif
+; 2101 : 
+; 2102 : 	return false;
+; 2103 : }
 
 	ret	12					; 0000000cH
 $LN9@DoRemoveWo@2:
 
-; 1996 : 	}
-; 1997 : 
-; 1998 : #ifndef AUI_CITIZENS_FIX_REMOVE_WORST_SPECIALIST_ACTUALLY_REMOVES_WORST
-; 1999 : 	// Find default Specialist to pull off, if there is one
-; 2000 : 	if(GetNumDefaultSpecialists() > 0)
+; 2014 : 	}
+; 2015 : 
+; 2016 : #ifndef AUI_CITIZENS_FIX_REMOVE_WORST_SPECIALIST_ACTUALLY_REMOVES_WORST
+; 2017 : 	// Find default Specialist to pull off, if there is one
+; 2018 : 	if(GetNumDefaultSpecialists() > 0)
 
 	mov	eax, DWORD PTR [esi+100]
 	test	eax, eax
 	jle	SHORT $LN6@DoRemoveWo@2
 
-; 2001 : 	{
-; 2002 : 		// Do we either have unforced default specialists we can remove?
-; 2003 : 		if(GetNumDefaultSpecialists() > GetNumForcedDefaultSpecialists())
+; 2019 : 	{
+; 2020 : 		// Do we either have unforced default specialists we can remove?
+; 2021 : 		if(GetNumDefaultSpecialists() > GetNumForcedDefaultSpecialists())
 
 	mov	ecx, DWORD PTR [esi+104]
 	cmp	eax, ecx
 	jle	SHORT $LN7@DoRemoveWo@2
 
-; 2004 : 		{
-; 2005 : 			ChangeNumDefaultSpecialists(-1);
+; 2022 : 		{
+; 2023 : 			ChangeNumDefaultSpecialists(-1);
 
 	mov	ecx, DWORD PTR [esi+108]
 	dec	eax
@@ -10938,36 +10956,36 @@ $LN9@DoRemoveWo@2:
 	pop	edi
 	pop	esi
 
-; 2006 : 			return true;
+; 2024 : 			return true;
 
 	mov	al, 1
 	pop	ebx
 
-; 2078 : 		{
-; 2079 : 			return true;
-; 2080 : 		}
-; 2081 : 	}
-; 2082 : #endif
-; 2083 : 
-; 2084 : 	return false;
-; 2085 : }
+; 2096 : 		{
+; 2097 : 			return true;
+; 2098 : 		}
+; 2099 : 	}
+; 2100 : #endif
+; 2101 : 
+; 2102 : 	return false;
+; 2103 : }
 
 	ret	12					; 0000000cH
 $LN7@DoRemoveWo@2:
 
-; 2007 : 		}
-; 2008 : 		if(GetNumDefaultSpecialists() > iCurrentCityPopulation)
+; 2025 : 		}
+; 2026 : 		if(GetNumDefaultSpecialists() > iCurrentCityPopulation)
 
 	cmp	eax, ebx
 	jle	SHORT $LN6@DoRemoveWo@2
 
-; 2009 : 		{
-; 2010 : 			ChangeNumForcedDefaultSpecialists(-1);
+; 2027 : 		{
+; 2028 : 			ChangeNumForcedDefaultSpecialists(-1);
 
 	dec	ecx
 	mov	DWORD PTR [esi+104], ecx
 
-; 2011 : 			ChangeNumDefaultSpecialists(-1);
+; 2029 : 			ChangeNumDefaultSpecialists(-1);
 
 	push	-1
 	mov	ecx, esi
@@ -10975,30 +10993,30 @@ $LN7@DoRemoveWo@2:
 	pop	edi
 	pop	esi
 
-; 2012 : 			return true;
+; 2030 : 			return true;
 
 	mov	al, 1
 	pop	ebx
 
-; 2078 : 		{
-; 2079 : 			return true;
-; 2080 : 		}
-; 2081 : 	}
-; 2082 : #endif
-; 2083 : 
-; 2084 : 	return false;
-; 2085 : }
+; 2096 : 		{
+; 2097 : 			return true;
+; 2098 : 		}
+; 2099 : 	}
+; 2100 : #endif
+; 2101 : 
+; 2102 : 	return false;
+; 2103 : }
 
 	ret	12					; 0000000cH
 $LN6@DoRemoveWo@2:
 
-; 2013 : 		}
-; 2014 : 	}
-; 2015 : #endif
-; 2016 : 
-; 2017 : 	// No Default Specialists, remove a working Pop, if there is one
-; 2018 : 	int iWorstPlotValue = 0;
-; 2019 : 	CvPlot* pWorstPlot = GetBestCityPlotWithValue(iWorstPlotValue, /*bBest*/ false, /*bWorked*/ true);
+; 2031 : 		}
+; 2032 : 	}
+; 2033 : #endif
+; 2034 : 
+; 2035 : 	// No Default Specialists, remove a working Pop, if there is one
+; 2036 : 	int iWorstPlotValue = 0;
+; 2037 : 	CvPlot* pWorstPlot = GetBestCityPlotWithValue(iWorstPlotValue, /*bBest*/ false, /*bWorked*/ true);
 
 	push	1
 	push	0
@@ -11009,41 +11027,41 @@ $LN6@DoRemoveWo@2:
 	call	?GetBestCityPlotWithValue@CvCityCitizens@@QAEPAVCvPlot@@AAH_N1@Z ; CvCityCitizens::GetBestCityPlotWithValue
 	mov	edi, eax
 
-; 2020 : 
-; 2021 : #ifdef AUI_CITIZENS_FIX_REMOVE_WORST_SPECIALIST_ACTUALLY_REMOVES_WORST
-; 2022 : 	int iWorstSpecialistValue = 0;
-; 2023 : 	BuildingTypes eWorstSpecialistBuilding = NO_BUILDING;
-; 2024 : 	if (!IsNoAutoAssignSpecialists())
-; 2025 : 	{
-; 2026 : 		eWorstSpecialistBuilding = GetAIBestSpecialistBuilding(&iWorstSpecialistValue, true, true, eDontChangeSpecialist);
-; 2027 : 	}
-; 2028 : 
-; 2029 : 	// Find default Specialist to pull off, if there is one
-; 2030 : 	if (GetNumDefaultSpecialists() > 0)
-; 2031 : 	{
-; 2032 : 		int iDefaultSpecialistScore = GetSpecialistValue((SpecialistTypes)GC.getDEFAULT_SPECIALIST());
-; 2033 : 		// Do we either have unforced default specialists we can remove?
-; 2034 : 		if (GetNumDefaultSpecialists() > GetNumForcedDefaultSpecialists() && (eWorstSpecialistBuilding == NO_BUILDING || iDefaultSpecialistScore <= iWorstSpecialistValue) 
-; 2035 : 			&& (pWorstPlot == NULL || iDefaultSpecialistScore <= iWorstPlotValue))
-; 2036 : 		{
-; 2037 : 			ChangeNumDefaultSpecialists(-1);
-; 2038 : 			return true;
-; 2039 : 		}
-; 2040 : 		if (GetNumDefaultSpecialists() > iCurrentCityPopulation && (eWorstSpecialistBuilding == NO_BUILDING || iDefaultSpecialistScore <= iWorstSpecialistValue)
-; 2041 : 			&& (pWorstPlot == NULL || iDefaultSpecialistScore <= iWorstPlotValue))
-; 2042 : 		{
-; 2043 : 			ChangeNumForcedDefaultSpecialists(-1);
-; 2044 : 			ChangeNumDefaultSpecialists(-1);
-; 2045 : 			return true;
-; 2046 : 		}
-; 2047 : 	}
-; 2048 : 
-; 2049 : 	if (pWorstPlot != NULL && (eWorstSpecialistBuilding == NO_BUILDING || iWorstPlotValue < iWorstSpecialistValue))
-; 2050 : #else
-; 2051 : 	if(pWorstPlot != NULL)
-; 2052 : #endif
-; 2053 : 	{
-; 2054 : 		SetWorkingPlot(pWorstPlot, false);
+; 2038 : 
+; 2039 : #ifdef AUI_CITIZENS_FIX_REMOVE_WORST_SPECIALIST_ACTUALLY_REMOVES_WORST
+; 2040 : 	int iWorstSpecialistValue = 0;
+; 2041 : 	BuildingTypes eWorstSpecialistBuilding = NO_BUILDING;
+; 2042 : 	if (!IsNoAutoAssignSpecialists())
+; 2043 : 	{
+; 2044 : 		eWorstSpecialistBuilding = GetAIBestSpecialistBuilding(&iWorstSpecialistValue, true, true, eDontChangeSpecialist);
+; 2045 : 	}
+; 2046 : 
+; 2047 : 	// Find default Specialist to pull off, if there is one
+; 2048 : 	if (GetNumDefaultSpecialists() > 0)
+; 2049 : 	{
+; 2050 : 		int iDefaultSpecialistScore = GetSpecialistValue((SpecialistTypes)GC.getDEFAULT_SPECIALIST());
+; 2051 : 		// Do we either have unforced default specialists we can remove?
+; 2052 : 		if (GetNumDefaultSpecialists() > GetNumForcedDefaultSpecialists() && (eWorstSpecialistBuilding == NO_BUILDING || iDefaultSpecialistScore <= iWorstSpecialistValue) 
+; 2053 : 			&& (pWorstPlot == NULL || iDefaultSpecialistScore <= iWorstPlotValue))
+; 2054 : 		{
+; 2055 : 			ChangeNumDefaultSpecialists(-1);
+; 2056 : 			return true;
+; 2057 : 		}
+; 2058 : 		if (GetNumDefaultSpecialists() > iCurrentCityPopulation && (eWorstSpecialistBuilding == NO_BUILDING || iDefaultSpecialistScore <= iWorstSpecialistValue)
+; 2059 : 			&& (pWorstPlot == NULL || iDefaultSpecialistScore <= iWorstPlotValue))
+; 2060 : 		{
+; 2061 : 			ChangeNumForcedDefaultSpecialists(-1);
+; 2062 : 			ChangeNumDefaultSpecialists(-1);
+; 2063 : 			return true;
+; 2064 : 		}
+; 2065 : 	}
+; 2066 : 
+; 2067 : 	if (pWorstPlot != NULL && (eWorstSpecialistBuilding == NO_BUILDING || iWorstPlotValue < iWorstSpecialistValue))
+; 2068 : #else
+; 2069 : 	if(pWorstPlot != NULL)
+; 2070 : #endif
+; 2071 : 	{
+; 2072 : 		SetWorkingPlot(pWorstPlot, false);
 
 	mov	ecx, esi
 	test	edi, edi
@@ -11053,15 +11071,15 @@ $LN6@DoRemoveWo@2:
 	push	edi
 	call	?SetWorkingPlot@CvCityCitizens@@QAEXPAVCvPlot@@_N1@Z ; CvCityCitizens::SetWorkingPlot
 
-; 2055 : 
-; 2056 : 		// If we were force-working this Plot, turn it off
-; 2057 : 		if(bRemoveForcedStatus)
+; 2073 : 
+; 2074 : 		// If we were force-working this Plot, turn it off
+; 2075 : 		if(bRemoveForcedStatus)
 
 	cmp	BYTE PTR _bRemoveForcedStatus$[esp+8], 0
 	je	SHORT $LN3@DoRemoveWo@2
 
-; 2058 : 		{
-; 2059 : 			if(IsForcedWorkingPlot(pWorstPlot))
+; 2076 : 		{
+; 2077 : 			if(IsForcedWorkingPlot(pWorstPlot))
 
 	push	edi
 	mov	ecx, esi
@@ -11069,8 +11087,8 @@ $LN6@DoRemoveWo@2:
 	test	al, al
 	je	SHORT $LN3@DoRemoveWo@2
 
-; 2060 : 			{
-; 2061 : 				SetForcedWorkingPlot(pWorstPlot, false);
+; 2078 : 			{
+; 2079 : 				SetForcedWorkingPlot(pWorstPlot, false);
 
 	push	0
 	push	edi
@@ -11080,38 +11098,38 @@ $LN3@DoRemoveWo@2:
 	pop	edi
 	pop	esi
 
-; 2062 : 			}
-; 2063 : 		}
-; 2064 : 
-; 2065 : 		return true;
+; 2080 : 			}
+; 2081 : 		}
+; 2082 : 
+; 2083 : 		return true;
 
 	mov	al, 1
 	pop	ebx
 
-; 2078 : 		{
-; 2079 : 			return true;
-; 2080 : 		}
-; 2081 : 	}
-; 2082 : #endif
-; 2083 : 
-; 2084 : 	return false;
-; 2085 : }
+; 2096 : 		{
+; 2097 : 			return true;
+; 2098 : 		}
+; 2099 : 	}
+; 2100 : #endif
+; 2101 : 
+; 2102 : 	return false;
+; 2103 : }
 
 	ret	12					; 0000000cH
 $LN5@DoRemoveWo@2:
 
-; 2066 : 	}
-; 2067 : 	// Have to resort to pulling away a good Specialist
-; 2068 : #ifdef AUI_CITIZENS_FIX_REMOVE_WORST_SPECIALIST_ACTUALLY_REMOVES_WORST
-; 2069 : 	else if (eWorstSpecialistBuilding != NO_BUILDING)
-; 2070 : 	{
-; 2071 : 		DoRemoveSpecialistFromBuilding(eWorstSpecialistBuilding, false);
-; 2072 : 		return true;
-; 2073 : 	}
-; 2074 : #else
-; 2075 : 	else
-; 2076 : 	{
-; 2077 : 		if(DoRemoveWorstSpecialist(eDontChangeSpecialist))
+; 2084 : 	}
+; 2085 : 	// Have to resort to pulling away a good Specialist
+; 2086 : #ifdef AUI_CITIZENS_FIX_REMOVE_WORST_SPECIALIST_ACTUALLY_REMOVES_WORST
+; 2087 : 	else if (eWorstSpecialistBuilding != NO_BUILDING)
+; 2088 : 	{
+; 2089 : 		DoRemoveSpecialistFromBuilding(eWorstSpecialistBuilding, false);
+; 2090 : 		return true;
+; 2091 : 	}
+; 2092 : #else
+; 2093 : 	else
+; 2094 : 	{
+; 2095 : 		if(DoRemoveWorstSpecialist(eDontChangeSpecialist))
 
 	mov	eax, DWORD PTR _eDontChangeSpecialist$[esp+8]
 	push	-1
@@ -11123,14 +11141,14 @@ $LN5@DoRemoveWo@2:
 	setne	al
 	pop	ebx
 
-; 2078 : 		{
-; 2079 : 			return true;
-; 2080 : 		}
-; 2081 : 	}
-; 2082 : #endif
-; 2083 : 
-; 2084 : 	return false;
-; 2085 : }
+; 2096 : 		{
+; 2097 : 			return true;
+; 2098 : 		}
+; 2099 : 	}
+; 2100 : #endif
+; 2101 : 
+; 2102 : 	return false;
+; 2103 : }
 
 	ret	12					; 0000000cH
 ?DoRemoveWorstCitizen@CvCityCitizens@@QAE_N_NW4SpecialistTypes@@H@Z ENDP ; CvCityCitizens::DoRemoveWorstCitizen
@@ -11154,14 +11172,14 @@ xdata$x	ENDS
 ;	COMDAT ?DoAddSpecialistToBuilding@CvCityCitizens@@QAEXW4BuildingTypes@@_N@Z
 _TEXT	SEGMENT
 __$EHRec$ = -12						; size = 12
-_pCity$225672 = 8					; size = 4
+_pCity$225714 = 8					; size = 4
 _eBuilding$ = 8						; size = 4
-$T229487 = 12						; size = 4
+$T229529 = 12						; size = 4
 _bForced$ = 12						; size = 1
 ?DoAddSpecialistToBuilding@CvCityCitizens@@QAEXW4BuildingTypes@@_N@Z PROC ; CvCityCitizens::DoAddSpecialistToBuilding, COMDAT
 ; _this$ = ecx
 
-; 3170 : {
+; 3188 : {
 
 	mov	eax, DWORD PTR fs:0
 	push	-1
@@ -11171,10 +11189,10 @@ _bForced$ = 12						; size = 1
 	push	ebx
 	push	ebp
 
-; 3171 : 	CvAssert(eBuilding > -1);
-; 3172 : 	CvAssert(eBuilding < GC.getNumBuildingInfos());
-; 3173 : 
-; 3174 : 	CvBuildingEntry* pkBuildingInfo = GC.getBuildingInfo(eBuilding);
+; 3189 : 	CvAssert(eBuilding > -1);
+; 3190 : 	CvAssert(eBuilding < GC.getNumBuildingInfos());
+; 3191 : 
+; 3192 : 	CvBuildingEntry* pkBuildingInfo = GC.getBuildingInfo(eBuilding);
 
 	mov	ebp, DWORD PTR _eBuilding$[esp+16]
 	push	esi
@@ -11184,23 +11202,23 @@ _bForced$ = 12						; size = 1
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getBuildingInfo@CvGlobals@@QAEPAVCvBuildingEntry@@W4BuildingTypes@@@Z ; CvGlobals::getBuildingInfo
 
-; 3175 : 	if(pkBuildingInfo == NULL)
+; 3193 : 	if(pkBuildingInfo == NULL)
 
 	test	eax, eax
 	je	$LN57@DoAddSpeci
 
-; 3176 : 	{
-; 3177 : 		return;
-; 3178 : 	}
-; 3179 : 
-; 3180 : 	SpecialistTypes eSpecialist = (SpecialistTypes) pkBuildingInfo->GetSpecialistType();
+; 3194 : 	{
+; 3195 : 		return;
+; 3196 : 	}
+; 3197 : 
+; 3198 : 	SpecialistTypes eSpecialist = (SpecialistTypes) pkBuildingInfo->GetSpecialistType();
 
 	mov	ecx, eax
 	call	?GetSpecialistType@CvBuildingEntry@@QBEHXZ ; CvBuildingEntry::GetSpecialistType
 
-; 3181 : 
-; 3182 : 	// Can't add more than the max
-; 3183 : 	if(IsCanAddSpecialistToBuilding(eBuilding))
+; 3199 : 
+; 3200 : 	// Can't add more than the max
+; 3201 : 	if(IsCanAddSpecialistToBuilding(eBuilding))
 
 	mov	ecx, DWORD PTR [edi]
 	mov	esi, eax
@@ -11219,38 +11237,38 @@ _bForced$ = 12						; size = 1
 	cmp	ebx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+7100
 	jge	$LN57@DoAddSpeci
 
-; 3184 : 	{
-; 3185 : 		// If we're force-assigning a specialist, then we can reduce the count on forced default specialists
-; 3186 : 		if(bForced)
+; 3202 : 	{
+; 3203 : 		// If we're force-assigning a specialist, then we can reduce the count on forced default specialists
+; 3204 : 		if(bForced)
 
 	cmp	BYTE PTR _bForced$[esp+24], 0
 	je	SHORT $LN61@DoAddSpeci
 
-; 3187 : 		{
-; 3188 : 			if(GetNumForcedDefaultSpecialists() > 0)
+; 3205 : 		{
+; 3206 : 			if(GetNumForcedDefaultSpecialists() > 0)
 
 	mov	eax, DWORD PTR [edi+104]
 	test	eax, eax
 	jle	SHORT $LN61@DoAddSpeci
 
-; 3189 : 				ChangeNumForcedDefaultSpecialists(-1);
+; 3207 : 				ChangeNumForcedDefaultSpecialists(-1);
 
 	dec	eax
 	mov	DWORD PTR [edi+104], eax
 $LN61@DoAddSpeci:
 
-; 3190 : 		}
-; 3191 : 
-; 3192 : 		// If we don't already have an Unassigned Citizen to turn into a Specialist, find one from somewhere
-; 3193 : 		if(GetNumUnassignedCitizens() == 0)
+; 3208 : 		}
+; 3209 : 
+; 3210 : 		// If we don't already have an Unassigned Citizen to turn into a Specialist, find one from somewhere
+; 3211 : 		if(GetNumUnassignedCitizens() == 0)
 
 	mov	eax, DWORD PTR [edi+8]
 	or	ebx, -1
 	test	eax, eax
 	jne	SHORT $LN62@DoAddSpeci
 
-; 3194 : 		{
-; 3195 : 			DoRemoveWorstCitizen(true, /*Don't remove this type*/ eSpecialist);
+; 3212 : 		{
+; 3213 : 			DoRemoveWorstCitizen(true, /*Don't remove this type*/ eSpecialist);
 
 	push	ebx
 	push	esi
@@ -11258,14 +11276,14 @@ $LN61@DoAddSpeci:
 	mov	ecx, edi
 	call	?DoRemoveWorstCitizen@CvCityCitizens@@QAE_N_NW4SpecialistTypes@@H@Z ; CvCityCitizens::DoRemoveWorstCitizen
 
-; 3196 : 			if(GetNumUnassignedCitizens() == 0)
+; 3214 : 			if(GetNumUnassignedCitizens() == 0)
 
 	cmp	DWORD PTR [edi+8], 0
 	jne	SHORT $LN62@DoAddSpeci
 
-; 3197 : 			{
-; 3198 : 				// Still nobody, all the citizens may be assigned to the eSpecialist we are looking for, try again
-; 3199 : 				if(!DoRemoveWorstSpecialist(NO_SPECIALIST, eBuilding))
+; 3215 : 			{
+; 3216 : 				// Still nobody, all the citizens may be assigned to the eSpecialist we are looking for, try again
+; 3217 : 				if(!DoRemoveWorstSpecialist(NO_SPECIALIST, eBuilding))
 
 	push	ebp
 	push	ebx
@@ -11275,49 +11293,49 @@ $LN61@DoAddSpeci:
 	je	$LN57@DoAddSpeci
 $LN62@DoAddSpeci:
 
-; 3200 : 				{
-; 3201 : 					return; // For some reason we can't do this, we must exit, else we will be going over the population count
-; 3202 : 				}
-; 3203 : 			}
-; 3204 : 		}
-; 3205 : 
-; 3206 : 		// Increase count for the whole city
-; 3207 : 		m_aiSpecialistCounts[eSpecialist]++;
+; 3218 : 				{
+; 3219 : 					return; // For some reason we can't do this, we must exit, else we will be going over the population count
+; 3220 : 				}
+; 3221 : 			}
+; 3222 : 		}
+; 3223 : 
+; 3224 : 		// Increase count for the whole city
+; 3225 : 		m_aiSpecialistCounts[eSpecialist]++;
 
 	mov	ecx, DWORD PTR [edi+108]
 	inc	DWORD PTR [ecx+esi*4]
 
-; 3208 : 		m_aiNumSpecialistsInBuilding[eBuilding]++;
+; 3226 : 		m_aiNumSpecialistsInBuilding[eBuilding]++;
 
 	mov	edx, DWORD PTR [edi+116]
 	inc	DWORD PTR [edx+ebp*4]
 
-; 3209 : 
-; 3210 : 		if(bForced)
+; 3227 : 
+; 3228 : 		if(bForced)
 
 	cmp	BYTE PTR _bForced$[esp+24], 0
 	lea	eax, DWORD PTR [ecx+esi*4]
 	lea	eax, DWORD PTR [edx+ebp*4]
 	je	SHORT $LN1@DoAddSpeci
 
-; 3211 : 		{
-; 3212 : 			m_aiNumForcedSpecialistsInBuilding[eBuilding]++;
+; 3229 : 		{
+; 3230 : 			m_aiNumForcedSpecialistsInBuilding[eBuilding]++;
 
 	mov	eax, DWORD PTR [edi+120]
 	inc	DWORD PTR [eax+ebp*4]
 	lea	ebp, DWORD PTR [eax+ebp*4]
 $LN1@DoAddSpeci:
 
-; 3213 : 		}
-; 3214 : 
-; 3215 : 		GetCity()->processSpecialist(eSpecialist, 1);
+; 3231 : 		}
+; 3232 : 
+; 3233 : 		GetCity()->processSpecialist(eSpecialist, 1);
 
 	mov	ecx, DWORD PTR [edi]
 	push	1
 	push	esi
 	call	?processSpecialist@CvCity@@QAEXW4SpecialistTypes@@H@Z ; CvCity::processSpecialist
 
-; 3216 : 		GetCity()->UpdateReligion(GetCity()->GetCityReligions()->GetReligiousMajority());
+; 3234 : 		GetCity()->UpdateReligion(GetCity()->GetCityReligions()->GetReligiousMajority());
 
 	mov	esi, DWORD PTR [edi]
 	mov	ecx, esi
@@ -11328,17 +11346,17 @@ $LN1@DoAddSpeci:
 	mov	ecx, esi
 	call	?UpdateReligion@CvCity@@QAEXW4ReligionTypes@@@Z ; CvCity::UpdateReligion
 
-; 3217 : 
-; 3218 : 		ChangeNumUnassignedCitizens(-1);
+; 3235 : 
+; 3236 : 		ChangeNumUnassignedCitizens(-1);
 
 	add	DWORD PTR [edi+8], ebx
 
-; 3219 : 
-; 3220 : 		ICvUserInterface2* pkIFace = GC.GetEngineUserInterface();
+; 3237 : 
+; 3238 : 		ICvUserInterface2* pkIFace = GC.GetEngineUserInterface();
 
 	mov	esi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
 
-; 3221 : 		pkIFace->setDirty(GameData_DIRTY_BIT, true);
+; 3239 : 		pkIFace->setDirty(GameData_DIRTY_BIT, true);
 
 	mov	edx, DWORD PTR [esi]
 	mov	eax, DWORD PTR [edx+260]
@@ -11347,7 +11365,7 @@ $LN1@DoAddSpeci:
 	mov	ecx, esi
 	call	eax
 
-; 3222 : 		pkIFace->setDirty(CityInfo_DIRTY_BIT, true);
+; 3240 : 		pkIFace->setDirty(CityInfo_DIRTY_BIT, true);
 
 	mov	edx, DWORD PTR [esi]
 	mov	eax, DWORD PTR [edx+260]
@@ -11356,8 +11374,8 @@ $LN1@DoAddSpeci:
 	mov	ecx, esi
 	call	eax
 
-; 3223 : 		//pkIFace->setDirty(InfoPane_DIRTY_BIT, true );
-; 3224 : 		pkIFace->setDirty(CityScreen_DIRTY_BIT, true);
+; 3241 : 		//pkIFace->setDirty(InfoPane_DIRTY_BIT, true );
+; 3242 : 		pkIFace->setDirty(CityScreen_DIRTY_BIT, true);
 
 	mov	edx, DWORD PTR [esi]
 	mov	eax, DWORD PTR [edx+260]
@@ -11366,7 +11384,7 @@ $LN1@DoAddSpeci:
 	mov	ecx, esi
 	call	eax
 
-; 3225 : 		pkIFace->setDirty(ColoredPlots_DIRTY_BIT, true);
+; 3243 : 		pkIFace->setDirty(ColoredPlots_DIRTY_BIT, true);
 
 	mov	edx, DWORD PTR [esi]
 	mov	eax, DWORD PTR [edx+260]
@@ -11375,22 +11393,22 @@ $LN1@DoAddSpeci:
 	mov	ecx, esi
 	call	eax
 
-; 3226 : 
-; 3227 : 		CvCity* pkCity = GetCity();
+; 3244 : 
+; 3245 : 		CvCity* pkCity = GetCity();
 
 	mov	edi, DWORD PTR [edi]
 
-; 3228 : 		auto_ptr<ICvCity1> pCity = GC.WrapCityPointer(pkCity);
+; 3246 : 		auto_ptr<ICvCity1> pCity = GC.WrapCityPointer(pkCity);
 
 	push	edi
-	lea	ecx, DWORD PTR $T229487[esp+28]
+	lea	ecx, DWORD PTR $T229529[esp+28]
 	push	ecx
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?WrapCityPointer@CvGlobals@@QAE?AV?$auto_ptr@VICvCity1@@@std@@PAVCvCity@@@Z ; CvGlobals::WrapCityPointer
 	mov	edi, DWORD PTR [eax]
 	mov	DWORD PTR [eax], 0
-	mov	DWORD PTR _pCity$225672[esp+24], edi
-	mov	eax, DWORD PTR $T229487[esp+24]
+	mov	DWORD PTR _pCity$225714[esp+24], edi
+	mov	eax, DWORD PTR $T229529[esp+24]
 	mov	DWORD PTR __$EHRec$[esp+36], 0
 	test	eax, eax
 	je	SHORT $LN50@DoAddSpeci
@@ -11400,8 +11418,8 @@ $LN1@DoAddSpeci:
 	call	eax
 $LN50@DoAddSpeci:
 
-; 3229 : 
-; 3230 : 		pkIFace->SetSpecificCityInfoDirty(pCity.get(), CITY_UPDATE_TYPE_SPECIALISTS);
+; 3247 : 
+; 3248 : 		pkIFace->SetSpecificCityInfoDirty(pCity.get(), CITY_UPDATE_TYPE_SPECIALISTS);
 
 	mov	edx, DWORD PTR [esi]
 	mov	eax, DWORD PTR [edx+440]
@@ -11410,7 +11428,7 @@ $LN50@DoAddSpeci:
 	mov	ecx, esi
 	call	eax
 
-; 3231 : 	}
+; 3249 : 	}
 
 	mov	DWORD PTR __$EHRec$[esp+36], ebx
 	test	edi, edi
@@ -11421,7 +11439,7 @@ $LN50@DoAddSpeci:
 	call	edx
 $LN57@DoAddSpeci:
 
-; 3232 : }
+; 3250 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+28]
 	pop	edi
@@ -11435,7 +11453,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?DoAddSpecialistToBuilding@CvCityCitizens@@QAEXW4BuildingTypes@@_N@Z$1:
-	lea	ecx, DWORD PTR _pCity$225672[ebp-4]
+	lea	ecx, DWORD PTR _pCity$225714[ebp-4]
 	jmp	??1?$auto_ptr@VICvCity1@@@std@@QAE@XZ	; std::auto_ptr<ICvCity1>::~auto_ptr<ICvCity1>
 __ehhandler$?DoAddSpecialistToBuilding@CvCityCitizens@@QAEXW4BuildingTypes@@_N@Z:
 	mov	eax, OFFSET __ehfuncinfo$?DoAddSpecialistToBuilding@CvCityCitizens@@QAEXW4BuildingTypes@@_N@Z
@@ -11452,50 +11470,50 @@ _iBestPlotValue$ = -4					; size = 4
 ?DoAddBestCitizenFromUnassigned@CvCityCitizens@@QAE_NXZ PROC ; CvCityCitizens::DoAddBestCitizenFromUnassigned, COMDAT
 ; _this$ = ecx
 
-; 1871 : {
+; 1889 : {
 
 	sub	esp, 8
 	push	esi
 	mov	esi, ecx
 
-; 1872 : 	// We only assign the unassigned here, folks
-; 1873 : 	if (GetNumUnassignedCitizens() == 0)
+; 1890 : 	// We only assign the unassigned here, folks
+; 1891 : 	if (GetNumUnassignedCitizens() == 0)
 
 	cmp	DWORD PTR [esi+8], 0
 	jne	SHORT $LN15@DoAddBestC
 
-; 1874 : 	{
-; 1875 : 		return false;
+; 1892 : 	{
+; 1893 : 		return false;
 
 	xor	al, al
 	pop	esi
 
-; 1982 : }
+; 2000 : }
 
 	add	esp, 8
 	ret	0
 $LN15@DoAddBestC:
 	push	edi
 
-; 1876 : 	}
-; 1877 : 
-; 1878 : 	// First Specialist Pass
-; 1879 : 	int iSpecialistValue = 0;
-; 1880 : 	BuildingTypes eBestSpecialistBuilding = NO_BUILDING;
+; 1894 : 	}
+; 1895 : 
+; 1896 : 	// First Specialist Pass
+; 1897 : 	int iSpecialistValue = 0;
+; 1898 : 	BuildingTypes eBestSpecialistBuilding = NO_BUILDING;
 
 	or	edi, -1
 
-; 1881 : 	if (!IsNoAutoAssignSpecialists())
+; 1899 : 	if (!IsNoAutoAssignSpecialists())
 
 	cmp	BYTE PTR [esi+5], 0
 	mov	DWORD PTR _iSpecialistValue$[esp+16], 0
 	jne	SHORT $LN14@DoAddBestC
 
-; 1882 : 	{
-; 1883 : #ifdef AUI_CITIZENS_FIX_REMOVE_WORST_SPECIALIST_ACTUALLY_REMOVES_WORST
-; 1884 : 		eBestSpecialistBuilding = GetAIBestSpecialistBuilding(&iSpecialistValue);
-; 1885 : #else
-; 1886 : 		eBestSpecialistBuilding = GetAIBestSpecialistBuilding(iSpecialistValue);
+; 1900 : 	{
+; 1901 : #ifdef AUI_CITIZENS_FIX_REMOVE_WORST_SPECIALIST_ACTUALLY_REMOVES_WORST
+; 1902 : 		eBestSpecialistBuilding = GetAIBestSpecialistBuilding(&iSpecialistValue);
+; 1903 : #else
+; 1904 : 		eBestSpecialistBuilding = GetAIBestSpecialistBuilding(iSpecialistValue);
 
 	lea	eax, DWORD PTR _iSpecialistValue$[esp+16]
 	push	eax
@@ -11504,45 +11522,45 @@ $LN15@DoAddBestC:
 $LN14@DoAddBestC:
 	push	ebx
 
-; 1887 : #endif
-; 1888 : 	}
-; 1889 : 
-; 1890 : #if defined(AUI_CITIZENS_IS_PLOT_BETTER_THAN_DEFAULT_SPECIALIST) || defined(AUI_CITIZENS_SELF_CONSISTENCY_CHECK)
-; 1891 : 	int iDefaultSpecialistValue = GetSpecialistValue((SpecialistTypes)GC.getDEFAULT_SPECIALIST());
-; 1892 : #endif
-; 1893 : 
-; 1894 : #ifdef AUI_CITIZENS_IS_BETTER_THAN_DEFAULT_SPECIALIST_USE_REGULAR_VALUES
-; 1895 : 	bool bBetterThanSlacker = eBestSpecialistBuilding != NO_BUILDING && iSpecialistValue >= iDefaultSpecialistValue;
-; 1896 : #else
-; 1897 : 	bool bBetterThanSlacker = false;
+; 1905 : #endif
+; 1906 : 	}
+; 1907 : 
+; 1908 : #if defined(AUI_CITIZENS_IS_PLOT_BETTER_THAN_DEFAULT_SPECIALIST) || defined(AUI_CITIZENS_SELF_CONSISTENCY_CHECK)
+; 1909 : 	int iDefaultSpecialistValue = GetSpecialistValue((SpecialistTypes)GC.getDEFAULT_SPECIALIST());
+; 1910 : #endif
+; 1911 : 
+; 1912 : #ifdef AUI_CITIZENS_IS_BETTER_THAN_DEFAULT_SPECIALIST_USE_REGULAR_VALUES
+; 1913 : 	bool bBetterThanSlacker = eBestSpecialistBuilding != NO_BUILDING && iSpecialistValue >= iDefaultSpecialistValue;
+; 1914 : #else
+; 1915 : 	bool bBetterThanSlacker = false;
 
 	xor	bl, bl
 
-; 1898 : 	if (eBestSpecialistBuilding != NO_BUILDING)
+; 1916 : 	if (eBestSpecialistBuilding != NO_BUILDING)
 
 	cmp	edi, -1
 	je	SHORT $LN11@DoAddBestC
 
-; 1899 : 	{
-; 1900 : 		CvBuildingEntry* pkBuildingInfo = GC.getBuildingInfo(eBestSpecialistBuilding);
+; 1917 : 	{
+; 1918 : 		CvBuildingEntry* pkBuildingInfo = GC.getBuildingInfo(eBestSpecialistBuilding);
 
 	push	edi
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getBuildingInfo@CvGlobals@@QAEPAVCvBuildingEntry@@W4BuildingTypes@@@Z ; CvGlobals::getBuildingInfo
 
-; 1901 : 		if(pkBuildingInfo)
+; 1919 : 		if(pkBuildingInfo)
 
 	test	eax, eax
 	je	SHORT $LN11@DoAddBestC
 
-; 1902 : 		{
-; 1903 : 			SpecialistTypes eSpecialist = (SpecialistTypes) pkBuildingInfo->GetSpecialistType();
+; 1920 : 		{
+; 1921 : 			SpecialistTypes eSpecialist = (SpecialistTypes) pkBuildingInfo->GetSpecialistType();
 
 	mov	ecx, eax
 	call	?GetSpecialistType@CvBuildingEntry@@QBEHXZ ; CvBuildingEntry::GetSpecialistType
 
-; 1904 : 			// Must not be worse than a default Specialist for our focus!
-; 1905 : 			if (IsBetterThanDefaultSpecialist(eSpecialist))
+; 1922 : 			// Must not be worse than a default Specialist for our focus!
+; 1923 : 			if (IsBetterThanDefaultSpecialist(eSpecialist))
 
 	push	eax
 	mov	ecx, esi
@@ -11550,19 +11568,19 @@ $LN14@DoAddBestC:
 	test	al, al
 	je	SHORT $LN11@DoAddBestC
 
-; 1906 : 			{
-; 1907 : 				bBetterThanSlacker = true;
+; 1924 : 			{
+; 1925 : 				bBetterThanSlacker = true;
 
 	mov	bl, 1
 $LN11@DoAddBestC:
 
-; 1908 : 			}
-; 1909 : 		}
-; 1910 : 	}
-; 1911 : #endif
-; 1912 : 
-; 1913 : 	int iBestPlotValue = 0;
-; 1914 : 	CvPlot* pBestPlot = GetBestCityPlotWithValue(iBestPlotValue, /*bBest*/ true, /*bWorked*/ false);
+; 1926 : 			}
+; 1927 : 		}
+; 1928 : 	}
+; 1929 : #endif
+; 1930 : 
+; 1931 : 	int iBestPlotValue = 0;
+; 1932 : 	CvPlot* pBestPlot = GetBestCityPlotWithValue(iBestPlotValue, /*bBest*/ true, /*bWorked*/ false);
 
 	push	0
 	push	1
@@ -11572,25 +11590,25 @@ $LN11@DoAddBestC:
 	mov	DWORD PTR _iBestPlotValue$[esp+32], 0
 	call	?GetBestCityPlotWithValue@CvCityCitizens@@QAEPAVCvPlot@@AAH_N1@Z ; CvCityCitizens::GetBestCityPlotWithValue
 
-; 1915 : 
-; 1916 : 	bool bSpecialistBetterThanPlot = (eBestSpecialistBuilding != NO_BUILDING && iSpecialistValue >= iBestPlotValue);
+; 1933 : 
+; 1934 : 	bool bSpecialistBetterThanPlot = (eBestSpecialistBuilding != NO_BUILDING && iSpecialistValue >= iBestPlotValue);
 
 	cmp	edi, -1
 	je	SHORT $LN50@DoAddBestC
 	mov	edx, DWORD PTR _iSpecialistValue$[esp+20]
 	cmp	edx, DWORD PTR _iBestPlotValue$[esp+20]
 
-; 1917 : 
-; 1918 : 	// Is there a Specialist we can assign?
-; 1919 : 	if (bSpecialistBetterThanPlot && bBetterThanSlacker)
+; 1935 : 
+; 1936 : 	// Is there a Specialist we can assign?
+; 1937 : 	if (bSpecialistBetterThanPlot && bBetterThanSlacker)
 
 	jl	SHORT $LN50@DoAddBestC
 	test	bl, bl
 	je	SHORT $LN8@DoAddBestC
 $LN54@DoAddBestC:
 
-; 1920 : 	{
-; 1921 : 		DoAddSpecialistToBuilding(eBestSpecialistBuilding, /*bForced*/ false);
+; 1938 : 	{
+; 1939 : 		DoAddSpecialistToBuilding(eBestSpecialistBuilding, /*bForced*/ false);
 
 	push	0
 	push	edi
@@ -11599,35 +11617,35 @@ $LN54@DoAddBestC:
 	pop	ebx
 	pop	edi
 
-; 1922 : #ifdef AUI_CITIZENS_SELF_CONSISTENCY_CHECK
-; 1923 : 		if (piBestScore)
-; 1924 : 			*piBestScore = iSpecialistValue;
-; 1925 : #endif
-; 1926 : 		return true;
+; 1940 : #ifdef AUI_CITIZENS_SELF_CONSISTENCY_CHECK
+; 1941 : 		if (piBestScore)
+; 1942 : 			*piBestScore = iSpecialistValue;
+; 1943 : #endif
+; 1944 : 		return true;
 
 	mov	al, 1
 	pop	esi
 
-; 1982 : }
+; 2000 : }
 
 	add	esp, 8
 	ret	0
 $LN50@DoAddBestC:
 
-; 1927 : 	}
-; 1928 : 	// Found a Valid Plot to place a guy?
-; 1929 : #ifdef AUI_CITIZENS_IS_PLOT_BETTER_THAN_DEFAULT_SPECIALIST
-; 1930 : 	else if (pBestPlot != NULL && iBestPlotValue >= iDefaultSpecialistValue)
-; 1931 : #else
-; 1932 : 	else if (!bSpecialistBetterThanPlot && pBestPlot != NULL)
+; 1945 : 	}
+; 1946 : 	// Found a Valid Plot to place a guy?
+; 1947 : #ifdef AUI_CITIZENS_IS_PLOT_BETTER_THAN_DEFAULT_SPECIALIST
+; 1948 : 	else if (pBestPlot != NULL && iBestPlotValue >= iDefaultSpecialistValue)
+; 1949 : #else
+; 1950 : 	else if (!bSpecialistBetterThanPlot && pBestPlot != NULL)
 
 	test	eax, eax
 	je	SHORT $LN8@DoAddBestC
 
-; 1933 : #endif
-; 1934 : 	{
-; 1935 : 		// Now assign the guy to the best possible Plot
-; 1936 : 		SetWorkingPlot(pBestPlot, true);
+; 1951 : #endif
+; 1952 : 	{
+; 1953 : 		// Now assign the guy to the best possible Plot
+; 1954 : 		SetWorkingPlot(pBestPlot, true);
 
 	push	1
 	push	1
@@ -11637,30 +11655,30 @@ $LN50@DoAddBestC:
 	pop	ebx
 	pop	edi
 
-; 1937 : #ifdef AUI_CITIZENS_SELF_CONSISTENCY_CHECK
-; 1938 : 		if (piBestScore)
-; 1939 : 			*piBestScore = iBestPlotValue;
-; 1940 : #endif
-; 1941 : 		return true;
+; 1955 : #ifdef AUI_CITIZENS_SELF_CONSISTENCY_CHECK
+; 1956 : 		if (piBestScore)
+; 1957 : 			*piBestScore = iBestPlotValue;
+; 1958 : #endif
+; 1959 : 		return true;
 
 	mov	al, 1
 	pop	esi
 
-; 1982 : }
+; 2000 : }
 
 	add	esp, 8
 	ret	0
 $LN8@DoAddBestC:
 
-; 1942 : 	}
-; 1943 : 	// No Valid Plots left - and no good specialists
-; 1944 : 	else
-; 1945 : 	{
-; 1946 : #ifdef AUI_CITIZENS_SELF_CONSISTENCY_CHECK
-; 1947 : 		if (piBestScore)
-; 1948 : 			*piBestScore = iDefaultSpecialistValue;
-; 1949 : #else
-; 1950 : 		CvPlayer* pOwner = &GET_PLAYER(GetOwner());
+; 1960 : 	}
+; 1961 : 	// No Valid Plots left - and no good specialists
+; 1962 : 	else
+; 1963 : 	{
+; 1964 : #ifdef AUI_CITIZENS_SELF_CONSISTENCY_CHECK
+; 1965 : 		if (piBestScore)
+; 1966 : 			*piBestScore = iDefaultSpecialistValue;
+; 1967 : #else
+; 1968 : 		CvPlayer* pOwner = &GET_PLAYER(GetOwner());
 
 	mov	eax, DWORD PTR [esi]
 	mov	ecx, DWORD PTR [eax+84]
@@ -11668,15 +11686,15 @@ $LN8@DoAddBestC:
 	imul	ecx, 63236				; 0000f704H
 	add	ecx, edx
 
-; 1951 : 		CvAssertMsg(pOwner, "Could not find owner of city when assigning citizens. Please send Anton your save file and version.");
-; 1952 : 
-; 1953 : 		// Assign a cool Specialist! Only do this for AI players, or humans who do not have manual specialist control set
-; 1954 : 		if (pOwner)
+; 1969 : 		CvAssertMsg(pOwner, "Could not find owner of city when assigning citizens. Please send Anton your save file and version.");
+; 1970 : 
+; 1971 : 		// Assign a cool Specialist! Only do this for AI players, or humans who do not have manual specialist control set
+; 1972 : 		if (pOwner)
 
 	je	SHORT $LN1@DoAddBestC
 
-; 1955 : 		{
-; 1956 : 			if (!GET_PLAYER(GetOwner()).isHuman() || !IsNoAutoAssignSpecialists())
+; 1973 : 		{
+; 1974 : 			if (!GET_PLAYER(GetOwner()).isHuman() || !IsNoAutoAssignSpecialists())
 
 	call	?isHuman@CvPlayer@@QBE_NXZ		; CvPlayer::isHuman
 	test	al, al
@@ -11685,8 +11703,8 @@ $LN8@DoAddBestC:
 	jne	SHORT $LN1@DoAddBestC
 $LN4@DoAddBestC:
 
-; 1957 : 			{
-; 1958 : 				BuildingTypes eBestBuilding = GetAIBestSpecialistBuilding(iSpecialistValue);
+; 1975 : 			{
+; 1976 : 				BuildingTypes eBestBuilding = GetAIBestSpecialistBuilding(iSpecialistValue);
 
 	lea	eax, DWORD PTR _iSpecialistValue$[esp+20]
 	push	eax
@@ -11694,53 +11712,53 @@ $LN4@DoAddBestC:
 	call	?GetAIBestSpecialistBuilding@CvCityCitizens@@QAE?AW4BuildingTypes@@AAH@Z ; CvCityCitizens::GetAIBestSpecialistBuilding
 	mov	edi, eax
 
-; 1959 : 				if(eBestBuilding != NO_BUILDING)
+; 1977 : 				if(eBestBuilding != NO_BUILDING)
 
 	cmp	edi, -1
 	je	SHORT $LN1@DoAddBestC
 
-; 1960 : 				{
-; 1961 : 					CvBuildingEntry* pkBuildingInfo = GC.getBuildingInfo(eBestBuilding);
+; 1978 : 				{
+; 1979 : 					CvBuildingEntry* pkBuildingInfo = GC.getBuildingInfo(eBestBuilding);
 
 	push	edi
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getBuildingInfo@CvGlobals@@QAEPAVCvBuildingEntry@@W4BuildingTypes@@@Z ; CvGlobals::getBuildingInfo
 
-; 1962 : 					if(pkBuildingInfo)
+; 1980 : 					if(pkBuildingInfo)
 
 	test	eax, eax
 	je	SHORT $LN1@DoAddBestC
 
-; 1963 : 					{
-; 1964 : 						SpecialistTypes eSpecialist = (SpecialistTypes) pkBuildingInfo->GetSpecialistType();
+; 1981 : 					{
+; 1982 : 						SpecialistTypes eSpecialist = (SpecialistTypes) pkBuildingInfo->GetSpecialistType();
 
 	mov	ecx, eax
 	call	?GetSpecialistType@CvBuildingEntry@@QBEHXZ ; CvBuildingEntry::GetSpecialistType
 
-; 1965 : 						// Must not be worse than a default Specialist for our focus!
-; 1966 : 						if (IsBetterThanDefaultSpecialist(eSpecialist))
+; 1983 : 						// Must not be worse than a default Specialist for our focus!
+; 1984 : 						if (IsBetterThanDefaultSpecialist(eSpecialist))
 
 	push	eax
 	mov	ecx, esi
 	call	?IsBetterThanDefaultSpecialist@CvCityCitizens@@QAE_NW4SpecialistTypes@@@Z ; CvCityCitizens::IsBetterThanDefaultSpecialist
 	test	al, al
 
-; 1967 : 						{
-; 1968 : 							DoAddSpecialistToBuilding(eBestBuilding, false);
-; 1969 : 							return true;
+; 1985 : 						{
+; 1986 : 							DoAddSpecialistToBuilding(eBestBuilding, false);
+; 1987 : 							return true;
 
 	jne	$LN54@DoAddBestC
 $LN1@DoAddBestC:
 
-; 1970 : 						}
-; 1971 : 					}
-; 1972 : 				}
-; 1973 : 			}
-; 1974 : 		}
-; 1975 : #endif
-; 1976 : 
-; 1977 : 		// Default Specialist if we can't do anything else
-; 1978 : 		ChangeNumDefaultSpecialists(1);
+; 1988 : 						}
+; 1989 : 					}
+; 1990 : 				}
+; 1991 : 			}
+; 1992 : 		}
+; 1993 : #endif
+; 1994 : 
+; 1995 : 		// Default Specialist if we can't do anything else
+; 1996 : 		ChangeNumDefaultSpecialists(1);
 
 	inc	DWORD PTR [esi+100]
 	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8420
@@ -11755,14 +11773,14 @@ $LN1@DoAddBestC:
 	pop	ebx
 	pop	edi
 
-; 1979 : 	}
-; 1980 : 
-; 1981 : 	return false;
+; 1997 : 	}
+; 1998 : 
+; 1999 : 	return false;
 
 	xor	al, al
 	pop	esi
 
-; 1982 : }
+; 2000 : }
 
 	add	esp, 8
 	ret	0
@@ -11775,13 +11793,13 @@ _TEXT	SEGMENT
 ?DoReallocateCitizens@CvCityCitizens@@QAEXXZ PROC	; CvCityCitizens::DoReallocateCitizens, COMDAT
 ; _this$ = ecx
 
-; 2165 : {
+; 2183 : {
 
 	push	esi
 	mov	esi, ecx
 
-; 2166 : 	// Make sure we don't have more forced working plots than we have citizens working.  If so, clean it up before reallocating
-; 2167 : 	DoValidateForcedWorkingPlots();
+; 2184 : 	// Make sure we don't have more forced working plots than we have citizens working.  If so, clean it up before reallocating
+; 2185 : 	DoValidateForcedWorkingPlots();
 
 	mov	eax, DWORD PTR [esi+16]
 	sub	eax, DWORD PTR [esi+12]
@@ -11796,38 +11814,38 @@ $LL21@DoRealloca:
 	jne	SHORT $LL21@DoRealloca
 $LN19@DoRealloca:
 
-; 2168 : 
-; 2169 : 	// Remove all of the allocated guys
-; 2170 : #ifdef AUI_CITIZENS_FIX_DO_REALLOCATE_CITIZENS_NO_COSTLY_PLOT_REMOVAL
-; 2171 : 	CvPlot* pLoopPlot;
-; 2172 : 	for (int iPlotLoop = 0; iPlotLoop < NUM_CITY_PLOTS; iPlotLoop++)
-; 2173 : 	{
-; 2174 : 		if (iPlotLoop != CITY_HOME_PLOT)
-; 2175 : 		{
-; 2176 : 			pLoopPlot = GetCityPlotFromIndex(iPlotLoop);
-; 2177 : 
-; 2178 : 			if (pLoopPlot != NULL)
-; 2179 : 			{
-; 2180 : 				if (pLoopPlot->getWorkingCity() != NULL && pLoopPlot->getWorkingCity()->GetID() == GetCity()->GetID())
-; 2181 : 				{
-; 2182 : 					SetWorkingPlot(pLoopPlot, false, true);
-; 2183 : 				}
-; 2184 : 			}
-; 2185 : 		}
-; 2186 : 	}
-; 2187 : #else
-; 2188 : 	int iNumCitizensToRemove = GetNumCitizensWorkingPlots();
+; 2186 : 
+; 2187 : 	// Remove all of the allocated guys
+; 2188 : #ifdef AUI_CITIZENS_FIX_DO_REALLOCATE_CITIZENS_NO_COSTLY_PLOT_REMOVAL
+; 2189 : 	CvPlot* pLoopPlot;
+; 2190 : 	for (int iPlotLoop = 0; iPlotLoop < NUM_CITY_PLOTS; iPlotLoop++)
+; 2191 : 	{
+; 2192 : 		if (iPlotLoop != CITY_HOME_PLOT)
+; 2193 : 		{
+; 2194 : 			pLoopPlot = GetCityPlotFromIndex(iPlotLoop);
+; 2195 : 
+; 2196 : 			if (pLoopPlot != NULL)
+; 2197 : 			{
+; 2198 : 				if (pLoopPlot->getWorkingCity() != NULL && pLoopPlot->getWorkingCity()->GetID() == GetCity()->GetID())
+; 2199 : 				{
+; 2200 : 					SetWorkingPlot(pLoopPlot, false, true);
+; 2201 : 				}
+; 2202 : 			}
+; 2203 : 		}
+; 2204 : 	}
+; 2205 : #else
+; 2206 : 	int iNumCitizensToRemove = GetNumCitizensWorkingPlots();
 
 	mov	edi, DWORD PTR [esi+12]
 
-; 2189 : 	for(int iWorkerLoop = 0; iWorkerLoop < iNumCitizensToRemove; iWorkerLoop++)
+; 2207 : 	for(int iWorkerLoop = 0; iWorkerLoop < iNumCitizensToRemove; iWorkerLoop++)
 
 	test	edi, edi
 	jle	SHORT $LN14@DoRealloca
 $LL16@DoRealloca:
 
-; 2190 : 	{
-; 2191 : 		DoRemoveWorstCitizen();
+; 2208 : 	{
+; 2209 : 		DoRemoveWorstCitizen();
 
 	push	-1
 	push	-1
@@ -11838,22 +11856,22 @@ $LL16@DoRealloca:
 	jne	SHORT $LL16@DoRealloca
 $LN14@DoRealloca:
 
-; 2192 : 	}
-; 2193 : #endif
-; 2194 : 
-; 2195 : 	int iSpecialistLoop;
-; 2196 : 
-; 2197 : #ifdef AUI_CITIZENS_FIX_DO_REALLOCATE_CITIZENS_OBEY_MANUAL_SPECIALIST_CONTROL
-; 2198 : 	if (!IsNoAutoAssignSpecialists())
-; 2199 : 	{
-; 2200 : #endif
-; 2201 : 	// Remove Non-Forced Specialists in Buildings
-; 2202 : 	int iNumSpecialistsToRemove;
-; 2203 : 	BuildingTypes eBuilding;
-; 2204 : #ifdef AUI_WARNING_FIXES
-; 2205 : 	for (uint iBuildingLoop = 0; iBuildingLoop < GC.getNumBuildingInfos(); iBuildingLoop++)
-; 2206 : #else
-; 2207 : 	for(int iBuildingLoop = 0; iBuildingLoop < GC.getNumBuildingInfos(); iBuildingLoop++)
+; 2210 : 	}
+; 2211 : #endif
+; 2212 : 
+; 2213 : 	int iSpecialistLoop;
+; 2214 : 
+; 2215 : #ifdef AUI_CITIZENS_FIX_DO_REALLOCATE_CITIZENS_OBEY_MANUAL_SPECIALIST_CONTROL
+; 2216 : 	if (!IsNoAutoAssignSpecialists())
+; 2217 : 	{
+; 2218 : #endif
+; 2219 : 	// Remove Non-Forced Specialists in Buildings
+; 2220 : 	int iNumSpecialistsToRemove;
+; 2221 : 	BuildingTypes eBuilding;
+; 2222 : #ifdef AUI_WARNING_FIXES
+; 2223 : 	for (uint iBuildingLoop = 0; iBuildingLoop < GC.getNumBuildingInfos(); iBuildingLoop++)
+; 2224 : #else
+; 2225 : 	for(int iBuildingLoop = 0; iBuildingLoop < GC.getNumBuildingInfos(); iBuildingLoop++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	xor	edi, edi
@@ -11863,12 +11881,12 @@ $LN14@DoRealloca:
 	push	ebx
 $LL63@DoRealloca:
 
-; 2208 : #endif
-; 2209 : 	{
-; 2210 : 		eBuilding = (BuildingTypes) iBuildingLoop;
-; 2211 : 
-; 2212 : 		// Have this Building in the City?
-; 2213 : 		if(GetCity()->GetCityBuildings()->GetNumBuilding(eBuilding) > 0)
+; 2226 : #endif
+; 2227 : 	{
+; 2228 : 		eBuilding = (BuildingTypes) iBuildingLoop;
+; 2229 : 
+; 2230 : 		// Have this Building in the City?
+; 2231 : 		if(GetCity()->GetCityBuildings()->GetNumBuilding(eBuilding) > 0)
 
 	mov	ecx, DWORD PTR [esi]
 	push	edi
@@ -11878,30 +11896,30 @@ $LL63@DoRealloca:
 	test	eax, eax
 	jle	SHORT $LN12@DoRealloca
 
-; 2214 : 		{
-; 2215 : 			iNumSpecialistsToRemove = GetNumSpecialistsInBuilding(eBuilding) - GetNumForcedSpecialistsInBuilding(eBuilding);	// Don't include Forced guys
+; 2232 : 		{
+; 2233 : 			iNumSpecialistsToRemove = GetNumSpecialistsInBuilding(eBuilding) - GetNumForcedSpecialistsInBuilding(eBuilding);	// Don't include Forced guys
 
 	mov	edx, DWORD PTR [esi+116]
 	mov	ecx, DWORD PTR [esi+120]
 	mov	eax, DWORD PTR [edx+edi*4]
 	sub	eax, DWORD PTR [ecx+edi*4]
 
-; 2216 : 
-; 2217 : 			// Loop through guys to remove (if there are any)
-; 2218 : 			for(iSpecialistLoop = 0; iSpecialistLoop < iNumSpecialistsToRemove; iSpecialistLoop++)
+; 2234 : 
+; 2235 : 			// Loop through guys to remove (if there are any)
+; 2236 : 			for(iSpecialistLoop = 0; iSpecialistLoop < iNumSpecialistsToRemove; iSpecialistLoop++)
 
 	test	eax, eax
 	jle	SHORT $LN12@DoRealloca
 
-; 2214 : 		{
-; 2215 : 			iNumSpecialistsToRemove = GetNumSpecialistsInBuilding(eBuilding) - GetNumForcedSpecialistsInBuilding(eBuilding);	// Don't include Forced guys
+; 2232 : 		{
+; 2233 : 			iNumSpecialistsToRemove = GetNumSpecialistsInBuilding(eBuilding) - GetNumForcedSpecialistsInBuilding(eBuilding);	// Don't include Forced guys
 
 	mov	ebx, eax
 	npad	5
 $LL9@DoRealloca:
 
-; 2219 : 			{
-; 2220 : 				DoRemoveSpecialistFromBuilding(eBuilding, /*bForced*/ false);
+; 2237 : 			{
+; 2238 : 				DoRemoveSpecialistFromBuilding(eBuilding, /*bForced*/ false);
 
 	push	0
 	push	0
@@ -11912,22 +11930,22 @@ $LL9@DoRealloca:
 	jne	SHORT $LL9@DoRealloca
 $LN12@DoRealloca:
 
-; 2192 : 	}
-; 2193 : #endif
-; 2194 : 
-; 2195 : 	int iSpecialistLoop;
-; 2196 : 
-; 2197 : #ifdef AUI_CITIZENS_FIX_DO_REALLOCATE_CITIZENS_OBEY_MANUAL_SPECIALIST_CONTROL
-; 2198 : 	if (!IsNoAutoAssignSpecialists())
-; 2199 : 	{
-; 2200 : #endif
-; 2201 : 	// Remove Non-Forced Specialists in Buildings
-; 2202 : 	int iNumSpecialistsToRemove;
-; 2203 : 	BuildingTypes eBuilding;
-; 2204 : #ifdef AUI_WARNING_FIXES
-; 2205 : 	for (uint iBuildingLoop = 0; iBuildingLoop < GC.getNumBuildingInfos(); iBuildingLoop++)
-; 2206 : #else
-; 2207 : 	for(int iBuildingLoop = 0; iBuildingLoop < GC.getNumBuildingInfos(); iBuildingLoop++)
+; 2210 : 	}
+; 2211 : #endif
+; 2212 : 
+; 2213 : 	int iSpecialistLoop;
+; 2214 : 
+; 2215 : #ifdef AUI_CITIZENS_FIX_DO_REALLOCATE_CITIZENS_OBEY_MANUAL_SPECIALIST_CONTROL
+; 2216 : 	if (!IsNoAutoAssignSpecialists())
+; 2217 : 	{
+; 2218 : #endif
+; 2219 : 	// Remove Non-Forced Specialists in Buildings
+; 2220 : 	int iNumSpecialistsToRemove;
+; 2221 : 	BuildingTypes eBuilding;
+; 2222 : #ifdef AUI_WARNING_FIXES
+; 2223 : 	for (uint iBuildingLoop = 0; iBuildingLoop < GC.getNumBuildingInfos(); iBuildingLoop++)
+; 2224 : #else
+; 2225 : 	for(int iBuildingLoop = 0; iBuildingLoop < GC.getNumBuildingInfos(); iBuildingLoop++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	inc	edi
@@ -11937,28 +11955,28 @@ $LN12@DoRealloca:
 	pop	ebx
 $LN11@DoRealloca:
 
-; 2221 : 			}
-; 2222 : 		}
-; 2223 : 	}
-; 2224 : #ifdef AUI_CITIZENS_FIX_DO_REALLOCATE_CITIZENS_OBEY_MANUAL_SPECIALIST_CONTROL
-; 2225 : 	}
-; 2226 : #endif
-; 2227 : 
-; 2228 : 	// Remove Default Specialists
-; 2229 : 	int iNumDefaultsToRemove = GetNumDefaultSpecialists() - GetNumForcedDefaultSpecialists();
+; 2239 : 			}
+; 2240 : 		}
+; 2241 : 	}
+; 2242 : #ifdef AUI_CITIZENS_FIX_DO_REALLOCATE_CITIZENS_OBEY_MANUAL_SPECIALIST_CONTROL
+; 2243 : 	}
+; 2244 : #endif
+; 2245 : 
+; 2246 : 	// Remove Default Specialists
+; 2247 : 	int iNumDefaultsToRemove = GetNumDefaultSpecialists() - GetNumForcedDefaultSpecialists();
 
 	mov	edi, DWORD PTR [esi+100]
 	sub	edi, DWORD PTR [esi+104]
 
-; 2230 : 	for(iSpecialistLoop = 0; iSpecialistLoop < iNumDefaultsToRemove; iSpecialistLoop++)
+; 2248 : 	for(iSpecialistLoop = 0; iSpecialistLoop < iNumDefaultsToRemove; iSpecialistLoop++)
 
 	test	edi, edi
 	jle	SHORT $LN4@DoRealloca
 	npad	5
 $LL6@DoRealloca:
 
-; 2231 : 	{
-; 2232 : 		ChangeNumDefaultSpecialists(-1);
+; 2249 : 	{
+; 2250 : 		ChangeNumDefaultSpecialists(-1);
 
 	dec	DWORD PTR [esi+100]
 	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8420
@@ -11974,22 +11992,22 @@ $LL6@DoRealloca:
 	jne	SHORT $LL6@DoRealloca
 $LN4@DoRealloca:
 
-; 2233 : 	}
-; 2234 : 
-; 2235 : 	// Now put all of the unallocated guys back
-; 2236 : 	int iNumToAllocate = GetNumUnassignedCitizens();
+; 2251 : 	}
+; 2252 : 
+; 2253 : 	// Now put all of the unallocated guys back
+; 2254 : 	int iNumToAllocate = GetNumUnassignedCitizens();
 
 	mov	edi, DWORD PTR [esi+8]
 
-; 2237 : 	for(int iUnallocatedLoop = 0; iUnallocatedLoop < iNumToAllocate; iUnallocatedLoop++)
+; 2255 : 	for(int iUnallocatedLoop = 0; iUnallocatedLoop < iNumToAllocate; iUnallocatedLoop++)
 
 	test	edi, edi
 	jle	SHORT $LN1@DoRealloca
 	npad	6
 $LL3@DoRealloca:
 
-; 2238 : 	{
-; 2239 : 		DoAddBestCitizenFromUnassigned();
+; 2256 : 	{
+; 2257 : 		DoAddBestCitizenFromUnassigned();
 
 	mov	ecx, esi
 	call	?DoAddBestCitizenFromUnassigned@CvCityCitizens@@QAE_NXZ ; CvCityCitizens::DoAddBestCitizenFromUnassigned
@@ -11999,19 +12017,19 @@ $LN1@DoRealloca:
 	pop	edi
 	pop	esi
 
-; 2240 : 	}
-; 2241 : 
-; 2242 : #ifdef AUI_CITIZENS_REALLOCATE_CITIZENS_USES_SELF_CONSISTENCY
-; 2243 : 	DoSelfConsistencyCheck();
-; 2244 : #elif defined(AUI_CITIZENS_FIX_DO_REALLOCATE_CITIZENS_NO_COSTLY_PLOT_REMOVAL)
-; 2245 : 	ICvUserInterface2* pkIFace = GC.GetEngineUserInterface();
-; 2246 : 	pkIFace->setDirty(GameData_DIRTY_BIT, true);
-; 2247 : 	pkIFace->setDirty(CityInfo_DIRTY_BIT, true);
-; 2248 : 	//pkIFace->setDirty(InfoPane_DIRTY_BIT, true );
-; 2249 : 	pkIFace->setDirty(CityScreen_DIRTY_BIT, true);
-; 2250 : 	pkIFace->setDirty(ColoredPlots_DIRTY_BIT, true);
-; 2251 : #endif
-; 2252 : }
+; 2258 : 	}
+; 2259 : 
+; 2260 : #ifdef AUI_CITIZENS_REALLOCATE_CITIZENS_USES_SELF_CONSISTENCY
+; 2261 : 	DoSelfConsistencyCheck();
+; 2262 : #elif defined(AUI_CITIZENS_FIX_DO_REALLOCATE_CITIZENS_NO_COSTLY_PLOT_REMOVAL)
+; 2263 : 	ICvUserInterface2* pkIFace = GC.GetEngineUserInterface();
+; 2264 : 	pkIFace->setDirty(GameData_DIRTY_BIT, true);
+; 2265 : 	pkIFace->setDirty(CityInfo_DIRTY_BIT, true);
+; 2266 : 	//pkIFace->setDirty(InfoPane_DIRTY_BIT, true );
+; 2267 : 	pkIFace->setDirty(CityScreen_DIRTY_BIT, true);
+; 2268 : 	pkIFace->setDirty(ColoredPlots_DIRTY_BIT, true);
+; 2269 : #endif
+; 2270 : }
 
 	ret	0
 ?DoReallocateCitizens@CvCityCitizens@@QAEXXZ ENDP	; CvCityCitizens::DoReallocateCitizens
@@ -12027,11 +12045,11 @@ _iIndex$ = 8						; size = 4
 ?DoAlterWorkingPlot@CvCityCitizens@@QAEXH@Z PROC	; CvCityCitizens::DoAlterWorkingPlot, COMDAT
 ; _this$ = ecx
 
-; 2400 : 	CvAssertMsg(iIndex >= 0, "iIndex expected to be >= 0");
-; 2401 : 	CvAssertMsg(iIndex < NUM_CITY_PLOTS, "iIndex expected to be < NUM_CITY_PLOTS");
-; 2402 : 
-; 2403 : 	// Clicking ON the city "resets" it to default setup
-; 2404 : 	if(iIndex == CITY_HOME_PLOT)
+; 2418 : 	CvAssertMsg(iIndex >= 0, "iIndex expected to be >= 0");
+; 2419 : 	CvAssertMsg(iIndex < NUM_CITY_PLOTS, "iIndex expected to be < NUM_CITY_PLOTS");
+; 2420 : 
+; 2421 : 	// Clicking ON the city "resets" it to default setup
+; 2422 : 	if(iIndex == CITY_HOME_PLOT)
 
 	mov	edx, DWORD PTR _iIndex$[esp-4]
 	push	esi
@@ -12042,23 +12060,23 @@ _iIndex$ = 8						; size = 4
 	push	ebx
 	push	ebp
 
-; 2405 : 	{
-; 2406 : 		CvPlot* pLoopPlot;
-; 2407 : 
-; 2408 : 		// If we've forced any plots to be worked, reset them to the normal state
-; 2409 : 		for(int iPlotLoop = 0; iPlotLoop < NUM_CITY_PLOTS; iPlotLoop++)
+; 2423 : 	{
+; 2424 : 		CvPlot* pLoopPlot;
+; 2425 : 
+; 2426 : 		// If we've forced any plots to be worked, reset them to the normal state
+; 2427 : 		for(int iPlotLoop = 0; iPlotLoop < NUM_CITY_PLOTS; iPlotLoop++)
 
 	xor	ebx, ebx
 $LL102@DoAlterWor:
 
-; 2410 : 		{
-; 2411 : 			if(iPlotLoop != CITY_HOME_PLOT)
+; 2428 : 		{
+; 2429 : 			if(iPlotLoop != CITY_HOME_PLOT)
 
 	test	ebx, ebx
 	je	SHORT $LN19@DoAlterWor
 
-; 2412 : 			{
-; 2413 : 				pLoopPlot = GetCityPlotFromIndex(iPlotLoop);
+; 2430 : 			{
+; 2431 : 				pLoopPlot = GetCityPlotFromIndex(iPlotLoop);
 
 	mov	eax, DWORD PTR [esi]
 	mov	ecx, DWORD PTR [eax+108]
@@ -12070,14 +12088,14 @@ $LL102@DoAlterWor:
 	mov	edi, eax
 	add	esp, 12					; 0000000cH
 
-; 2414 : 
-; 2415 : 				if(pLoopPlot != NULL)
+; 2432 : 
+; 2433 : 				if(pLoopPlot != NULL)
 
 	test	edi, edi
 	je	SHORT $LN19@DoAlterWor
 
-; 2416 : 				{
-; 2417 : 					if(IsForcedWorkingPlot(pLoopPlot))
+; 2434 : 				{
+; 2435 : 					if(IsForcedWorkingPlot(pLoopPlot))
 
 	mov	eax, DWORD PTR [esi]
 	push	edi
@@ -12089,8 +12107,8 @@ $LL102@DoAlterWor:
 	cmp	BYTE PTR [esi+eax+62], 0
 	je	SHORT $LN19@DoAlterWor
 
-; 2418 : 					{
-; 2419 : 						SetForcedWorkingPlot(pLoopPlot, false);
+; 2436 : 					{
+; 2437 : 						SetForcedWorkingPlot(pLoopPlot, false);
 
 	mov	ecx, DWORD PTR [esi]
 	push	edi
@@ -12115,15 +12133,15 @@ $LN19@DoAlterWor:
 	cmp	ebx, 37					; 00000025H
 	jl	SHORT $LL102@DoAlterWor
 
-; 2420 : 					}
-; 2421 : 				}
-; 2422 : 			}
-; 2423 : 		}
-; 2424 : 
-; 2425 : 		// Reset Forced Default Specialists
-; 2426 : 		ChangeNumForcedDefaultSpecialists(-GetNumForcedDefaultSpecialists());
-; 2427 : 
-; 2428 : 		DoReallocateCitizens();
+; 2438 : 					}
+; 2439 : 				}
+; 2440 : 			}
+; 2441 : 		}
+; 2442 : 
+; 2443 : 		// Reset Forced Default Specialists
+; 2444 : 		ChangeNumForcedDefaultSpecialists(-GetNumForcedDefaultSpecialists());
+; 2445 : 
+; 2446 : 		DoReallocateCitizens();
 
 	mov	ecx, esi
 	mov	DWORD PTR [esi+104], 0
@@ -12133,25 +12151,25 @@ $LN19@DoAlterWor:
 	pop	edi
 	pop	esi
 
-; 2510 : #ifdef AUI_CITIZENS_MID_TURN_ASSIGN_RUNS_SELF_CONSISTENCY
-; 2511 : 				if (pOldWorkingCityOverride)
-; 2512 : 					pOldWorkingCityOverride->GetCityCitizens()->DoSelfConsistencyCheck();
-; 2513 : #endif
-; 2514 : 			}
-; 2515 : 		}
-; 2516 : #ifdef AUI_CITIZENS_MID_TURN_ASSIGN_RUNS_SELF_CONSISTENCY
-; 2517 : 		DoSelfConsistencyCheck();
-; 2518 : #endif
-; 2519 : 	}
-; 2520 : }
+; 2528 : #ifdef AUI_CITIZENS_MID_TURN_ASSIGN_RUNS_SELF_CONSISTENCY
+; 2529 : 				if (pOldWorkingCityOverride)
+; 2530 : 					pOldWorkingCityOverride->GetCityCitizens()->DoSelfConsistencyCheck();
+; 2531 : #endif
+; 2532 : 			}
+; 2533 : 		}
+; 2534 : #ifdef AUI_CITIZENS_MID_TURN_ASSIGN_RUNS_SELF_CONSISTENCY
+; 2535 : 		DoSelfConsistencyCheck();
+; 2536 : #endif
+; 2537 : 	}
+; 2538 : }
 
 	ret	4
 $LN21@DoAlterWor:
 
-; 2429 : 	}
-; 2430 : 	else
-; 2431 : 	{
-; 2432 : 		CvPlot* pPlot = GetCityPlotFromIndex(iIndex);
+; 2447 : 	}
+; 2448 : 	else
+; 2449 : 	{
+; 2450 : 		CvPlot* pPlot = GetCityPlotFromIndex(iIndex);
 
 	mov	eax, DWORD PTR [esi]
 	mov	ecx, DWORD PTR [eax+108]
@@ -12163,14 +12181,14 @@ $LN21@DoAlterWor:
 	mov	edi, eax
 	add	esp, 12					; 0000000cH
 
-; 2433 : 
-; 2434 : 		if(pPlot != NULL)
+; 2451 : 
+; 2452 : 		if(pPlot != NULL)
 
 	test	edi, edi
 	je	$LN3@DoAlterWor
 
-; 2435 : 		{
-; 2436 : 			if(IsCanWork(pPlot))
+; 2453 : 		{
+; 2454 : 			if(IsCanWork(pPlot))
 
 	push	edi
 	mov	ecx, esi
@@ -12178,11 +12196,11 @@ $LN21@DoAlterWor:
 	test	al, al
 	je	$LN12@DoAlterWor
 
-; 2437 : 			{
-; 2438 : //				GetCity()->setCitizensAutomated(false);
-; 2439 : 
-; 2440 : 				// If we're already working the Plot, then take the guy off and turn him into a Default Specialist
-; 2441 : 				if(IsWorkingPlot(pPlot))
+; 2455 : 			{
+; 2456 : //				GetCity()->setCitizensAutomated(false);
+; 2457 : 
+; 2458 : 				// If we're already working the Plot, then take the guy off and turn him into a Default Specialist
+; 2459 : 				if(IsWorkingPlot(pPlot))
 
 	mov	eax, DWORD PTR [esi]
 	push	edi
@@ -12194,8 +12212,8 @@ $LN21@DoAlterWor:
 	cmp	BYTE PTR [eax+esi+25], 0
 	je	SHORT $LN11@DoAlterWor
 
-; 2442 : 				{
-; 2443 : 					SetWorkingPlot(pPlot, false);
+; 2460 : 				{
+; 2461 : 					SetWorkingPlot(pPlot, false);
 
 	push	1
 	push	0
@@ -12203,82 +12221,82 @@ $LN21@DoAlterWor:
 	mov	ecx, esi
 	call	?SetWorkingPlot@CvCityCitizens@@QAEXPAVCvPlot@@_N1@Z ; CvCityCitizens::SetWorkingPlot
 
-; 2444 : 					SetForcedWorkingPlot(pPlot, false);
+; 2462 : 					SetForcedWorkingPlot(pPlot, false);
 
 	push	0
 	push	edi
 	mov	ecx, esi
 	call	?SetForcedWorkingPlot@CvCityCitizens@@QAEXPAVCvPlot@@_N@Z ; CvCityCitizens::SetForcedWorkingPlot
 
-; 2445 : 					ChangeNumDefaultSpecialists(1);
+; 2463 : 					ChangeNumDefaultSpecialists(1);
 
 	push	1
 	mov	ecx, esi
 	call	?ChangeNumDefaultSpecialists@CvCityCitizens@@QAEXH@Z ; CvCityCitizens::ChangeNumDefaultSpecialists
 
-; 2446 : 					ChangeNumForcedDefaultSpecialists(1);
+; 2464 : 					ChangeNumForcedDefaultSpecialists(1);
 
 	inc	DWORD PTR [esi+104]
 	pop	edi
 	pop	esi
 
-; 2510 : #ifdef AUI_CITIZENS_MID_TURN_ASSIGN_RUNS_SELF_CONSISTENCY
-; 2511 : 				if (pOldWorkingCityOverride)
-; 2512 : 					pOldWorkingCityOverride->GetCityCitizens()->DoSelfConsistencyCheck();
-; 2513 : #endif
-; 2514 : 			}
-; 2515 : 		}
-; 2516 : #ifdef AUI_CITIZENS_MID_TURN_ASSIGN_RUNS_SELF_CONSISTENCY
-; 2517 : 		DoSelfConsistencyCheck();
-; 2518 : #endif
-; 2519 : 	}
-; 2520 : }
+; 2528 : #ifdef AUI_CITIZENS_MID_TURN_ASSIGN_RUNS_SELF_CONSISTENCY
+; 2529 : 				if (pOldWorkingCityOverride)
+; 2530 : 					pOldWorkingCityOverride->GetCityCitizens()->DoSelfConsistencyCheck();
+; 2531 : #endif
+; 2532 : 			}
+; 2533 : 		}
+; 2534 : #ifdef AUI_CITIZENS_MID_TURN_ASSIGN_RUNS_SELF_CONSISTENCY
+; 2535 : 		DoSelfConsistencyCheck();
+; 2536 : #endif
+; 2537 : 	}
+; 2538 : }
 
 	ret	4
 $LN11@DoAlterWor:
 
-; 2447 : 				}
-; 2448 : 				// Player picked a new Plot to work
-; 2449 : 				else
-; 2450 : 				{
-; 2451 : 					// Pull from the Default Specialist pool, if possible
-; 2452 : 					if(GetNumDefaultSpecialists() > 0)
+; 2465 : 				}
+; 2466 : 				// Player picked a new Plot to work
+; 2467 : 				else
+; 2468 : 				{
+; 2469 : 					// Pull from the Default Specialist pool, if possible
+; 2470 : 					if(GetNumDefaultSpecialists() > 0)
 
 	cmp	DWORD PTR [esi+100], 0
 
-; 2453 : 					{
-; 2454 : 						ChangeNumDefaultSpecialists(-1);
+; 2471 : 					{
+; 2472 : 						ChangeNumDefaultSpecialists(-1);
 
 	push	-1
 	mov	ecx, esi
 	jle	SHORT $LN9@DoAlterWor
 	call	?ChangeNumDefaultSpecialists@CvCityCitizens@@QAEXH@Z ; CvCityCitizens::ChangeNumDefaultSpecialists
 
-; 2455 : 						// Player is forcibly telling city to work a plot, so reduce count of forced default specialists
-; 2456 : 						if(GetNumForcedDefaultSpecialists() > 0)
+; 2473 : 						// Player is forcibly telling city to work a plot, so reduce count of forced default specialists
+; 2474 : 						if(GetNumForcedDefaultSpecialists() > 0)
 
 	mov	eax, DWORD PTR [esi+104]
 	test	eax, eax
 	jle	SHORT $LN87@DoAlterWor
 
-; 2457 : 							ChangeNumForcedDefaultSpecialists(-1);
+; 2475 : 							ChangeNumForcedDefaultSpecialists(-1);
 
 	dec	eax
 	mov	DWORD PTR [esi+104], eax
 
-; 2458 : 
-; 2459 : 						SetWorkingPlot(pPlot, true);
-; 2460 : 						SetForcedWorkingPlot(pPlot, true);
-; 2461 : 					}
-; 2462 : 					// No Default Specialists, so grab a better allocated guy
-; 2463 : 					else
+; 2476 : 
+; 2477 : 						SetWorkingPlot(pPlot, true);
+; 2478 : 						SetForcedWorkingPlot(pPlot, true);
+; 2479 : 					}
+; 2480 : 					// No Default Specialists, so grab a better allocated guy
+; 2481 : 					else
 
 	jmp	SHORT $LN87@DoAlterWor
 $LN9@DoAlterWor:
 
-; 2464 : 					{
-; 2465 : 						// Working Plot
-; 2466 : 						if(DoRemoveWorstCitizen(true))
+; 2482 : 					{
+; 2483 : 						// Working Plot
+; 2484 : 						if(DoRemoveWorstCitizen(true))
 
 	push	-1
 	push	1
@@ -12286,12 +12304,12 @@ $LN9@DoAlterWor:
 	test	al, al
 	je	SHORT $LN3@DoAlterWor
 
-; 2457 : 							ChangeNumForcedDefaultSpecialists(-1);
+; 2475 : 							ChangeNumForcedDefaultSpecialists(-1);
 
 $LN87@DoAlterWor:
 
-; 2467 : 						{
-; 2468 : 							SetWorkingPlot(pPlot, true);
+; 2485 : 						{
+; 2486 : 							SetWorkingPlot(pPlot, true);
 
 	push	1
 	push	1
@@ -12299,7 +12317,7 @@ $LN87@DoAlterWor:
 	mov	ecx, esi
 	call	?SetWorkingPlot@CvCityCitizens@@QAEXPAVCvPlot@@_N1@Z ; CvCityCitizens::SetWorkingPlot
 
-; 2469 : 							SetForcedWorkingPlot(pPlot, true);
+; 2487 : 							SetForcedWorkingPlot(pPlot, true);
 
 	push	1
 	push	edi
@@ -12308,66 +12326,66 @@ $LN87@DoAlterWor:
 	pop	edi
 	pop	esi
 
-; 2510 : #ifdef AUI_CITIZENS_MID_TURN_ASSIGN_RUNS_SELF_CONSISTENCY
-; 2511 : 				if (pOldWorkingCityOverride)
-; 2512 : 					pOldWorkingCityOverride->GetCityCitizens()->DoSelfConsistencyCheck();
-; 2513 : #endif
-; 2514 : 			}
-; 2515 : 		}
-; 2516 : #ifdef AUI_CITIZENS_MID_TURN_ASSIGN_RUNS_SELF_CONSISTENCY
-; 2517 : 		DoSelfConsistencyCheck();
-; 2518 : #endif
-; 2519 : 	}
-; 2520 : }
+; 2528 : #ifdef AUI_CITIZENS_MID_TURN_ASSIGN_RUNS_SELF_CONSISTENCY
+; 2529 : 				if (pOldWorkingCityOverride)
+; 2530 : 					pOldWorkingCityOverride->GetCityCitizens()->DoSelfConsistencyCheck();
+; 2531 : #endif
+; 2532 : 			}
+; 2533 : 		}
+; 2534 : #ifdef AUI_CITIZENS_MID_TURN_ASSIGN_RUNS_SELF_CONSISTENCY
+; 2535 : 		DoSelfConsistencyCheck();
+; 2536 : #endif
+; 2537 : 	}
+; 2538 : }
 
 	ret	4
 $LN12@DoAlterWor:
 
-; 2470 : 							//ChangeNumUnassignedCitizens(-1);
-; 2471 : 						}
-; 2472 : 						// Good Specialist
-; 2473 : 						else
-; 2474 : 						{
-; 2475 : 							CvAssert(false);
-; 2476 : 						}
-; 2477 : 					}
-; 2478 : 					//if ((GetCity()->extraSpecialists() > 0) || GetCity()->AI_removeWorstCitizen())
-; 2479 : 					//{
-; 2480 : 					//	SetWorkingPlot(pPlot, true);
-; 2481 : 					//}
-; 2482 : 				}
-; 2483 : 			}
-; 2484 : 			// JON: Need to update this block to work with new system
-; 2485 : #ifdef AUI_CITIZENS_FIX_LOCKED_TILES_BLOCKED
-; 2486 : 			else if ((pPlot->getOwner() == GetOwner()) && pPlot->getWorkingCityOverride() != GetCity())
-; 2487 : #else
-; 2488 : 			else if(pPlot->getOwner() == GetOwner())
+; 2488 : 							//ChangeNumUnassignedCitizens(-1);
+; 2489 : 						}
+; 2490 : 						// Good Specialist
+; 2491 : 						else
+; 2492 : 						{
+; 2493 : 							CvAssert(false);
+; 2494 : 						}
+; 2495 : 					}
+; 2496 : 					//if ((GetCity()->extraSpecialists() > 0) || GetCity()->AI_removeWorstCitizen())
+; 2497 : 					//{
+; 2498 : 					//	SetWorkingPlot(pPlot, true);
+; 2499 : 					//}
+; 2500 : 				}
+; 2501 : 			}
+; 2502 : 			// JON: Need to update this block to work with new system
+; 2503 : #ifdef AUI_CITIZENS_FIX_LOCKED_TILES_BLOCKED
+; 2504 : 			else if ((pPlot->getOwner() == GetOwner()) && pPlot->getWorkingCityOverride() != GetCity())
+; 2505 : #else
+; 2506 : 			else if(pPlot->getOwner() == GetOwner())
 
 	movsx	ecx, BYTE PTR [edi+4]
 	mov	edx, DWORD PTR [esi]
 	cmp	ecx, DWORD PTR [edx+84]
 	jne	SHORT $LN3@DoAlterWor
 
-; 2489 : #endif
-; 2490 : 			{
-; 2491 : #ifdef AUI_CITIZENS_MID_TURN_ASSIGN_RUNS_SELF_CONSISTENCY
-; 2492 : 				CvCity* pOldWorkingCityOverride = pPlot->getWorkingCityOverride();
-; 2493 : 				if (pOldWorkingCityOverride != NULL)
-; 2494 : 				{
-; 2495 : 					if (pOldWorkingCityOverride->IsPuppet())
-; 2496 : 					{
-; 2497 : 						return;
-; 2498 : #else
-; 2499 : 				// Can't take away forced plots from puppet Cities
-; 2500 : 				if(pPlot->getWorkingCityOverride() != NULL)
+; 2507 : #endif
+; 2508 : 			{
+; 2509 : #ifdef AUI_CITIZENS_MID_TURN_ASSIGN_RUNS_SELF_CONSISTENCY
+; 2510 : 				CvCity* pOldWorkingCityOverride = pPlot->getWorkingCityOverride();
+; 2511 : 				if (pOldWorkingCityOverride != NULL)
+; 2512 : 				{
+; 2513 : 					if (pOldWorkingCityOverride->IsPuppet())
+; 2514 : 					{
+; 2515 : 						return;
+; 2516 : #else
+; 2517 : 				// Can't take away forced plots from puppet Cities
+; 2518 : 				if(pPlot->getWorkingCityOverride() != NULL)
 
 	mov	ecx, edi
 	call	?getWorkingCityOverride@CvPlot@@QBEPAVCvCity@@XZ ; CvPlot::getWorkingCityOverride
 	test	eax, eax
 	je	SHORT $LN1@DoAlterWor
 
-; 2501 : 				{
-; 2502 : 					if(pPlot->getWorkingCityOverride()->IsPuppet())
+; 2519 : 				{
+; 2520 : 					if(pPlot->getWorkingCityOverride()->IsPuppet())
 
 	mov	ecx, edi
 	call	?getWorkingCityOverride@CvPlot@@QBEPAVCvCity@@XZ ; CvPlot::getWorkingCityOverride
@@ -12377,13 +12395,13 @@ $LN12@DoAlterWor:
 	jne	SHORT $LN3@DoAlterWor
 $LN1@DoAlterWor:
 
-; 2503 : 					{
-; 2504 : 						return;
-; 2505 : #endif
-; 2506 : 					}
-; 2507 : 				}
-; 2508 : 
-; 2509 : 				pPlot->setWorkingCityOverride(GetCity());
+; 2521 : 					{
+; 2522 : 						return;
+; 2523 : #endif
+; 2524 : 					}
+; 2525 : 				}
+; 2526 : 
+; 2527 : 				pPlot->setWorkingCityOverride(GetCity());
 
 	mov	eax, DWORD PTR [esi]
 	push	eax
@@ -12393,17 +12411,17 @@ $LN3@DoAlterWor:
 	pop	edi
 	pop	esi
 
-; 2510 : #ifdef AUI_CITIZENS_MID_TURN_ASSIGN_RUNS_SELF_CONSISTENCY
-; 2511 : 				if (pOldWorkingCityOverride)
-; 2512 : 					pOldWorkingCityOverride->GetCityCitizens()->DoSelfConsistencyCheck();
-; 2513 : #endif
-; 2514 : 			}
-; 2515 : 		}
-; 2516 : #ifdef AUI_CITIZENS_MID_TURN_ASSIGN_RUNS_SELF_CONSISTENCY
-; 2517 : 		DoSelfConsistencyCheck();
-; 2518 : #endif
-; 2519 : 	}
-; 2520 : }
+; 2528 : #ifdef AUI_CITIZENS_MID_TURN_ASSIGN_RUNS_SELF_CONSISTENCY
+; 2529 : 				if (pOldWorkingCityOverride)
+; 2530 : 					pOldWorkingCityOverride->GetCityCitizens()->DoSelfConsistencyCheck();
+; 2531 : #endif
+; 2532 : 			}
+; 2533 : 		}
+; 2534 : #ifdef AUI_CITIZENS_MID_TURN_ASSIGN_RUNS_SELF_CONSISTENCY
+; 2535 : 		DoSelfConsistencyCheck();
+; 2536 : #endif
+; 2537 : 	}
+; 2538 : }
 
 	ret	4
 ?DoAlterWorkingPlot@CvCityCitizens@@QAEXH@Z ENDP	; CvCityCitizens::DoAlterWorkingPlot
@@ -12416,21 +12434,21 @@ _pPlot$ = 8						; size = 4
 ?DoVerifyWorkingPlot@CvCityCitizens@@QAEXPAVCvPlot@@@Z PROC ; CvCityCitizens::DoVerifyWorkingPlot, COMDAT
 ; _this$ = ecx
 
-; 2828 : {
+; 2846 : {
 
 	push	esi
 	push	edi
 
-; 2829 : #endif
-; 2830 : 	if(pPlot != NULL)
+; 2847 : #endif
+; 2848 : 	if(pPlot != NULL)
 
 	mov	edi, DWORD PTR _pPlot$[esp+4]
 	mov	esi, ecx
 	test	edi, edi
 	je	SHORT $LN1@DoVerifyWo
 
-; 2831 : 	{
-; 2832 : 		if(IsWorkingPlot(pPlot))
+; 2849 : 	{
+; 2850 : 		if(IsWorkingPlot(pPlot))
 
 	mov	eax, DWORD PTR [esi]
 	push	edi
@@ -12442,8 +12460,8 @@ _pPlot$ = 8						; size = 4
 	cmp	BYTE PTR [eax+esi+25], 0
 	je	SHORT $LN1@DoVerifyWo
 
-; 2833 : 		{
-; 2834 : 			if(!IsCanWork(pPlot))
+; 2851 : 		{
+; 2852 : 			if(!IsCanWork(pPlot))
 
 	push	edi
 	mov	ecx, esi
@@ -12451,11 +12469,11 @@ _pPlot$ = 8						; size = 4
 	test	al, al
 	jne	SHORT $LN1@DoVerifyWo
 
-; 2835 : 			{
-; 2836 : #ifdef AUI_CITIZENS_MID_TURN_ASSIGN_RUNS_SELF_CONSISTENCY
-; 2837 : 				bRet = true;
-; 2838 : #endif
-; 2839 : 				SetWorkingPlot(pPlot, false);
+; 2853 : 			{
+; 2854 : #ifdef AUI_CITIZENS_MID_TURN_ASSIGN_RUNS_SELF_CONSISTENCY
+; 2855 : 				bRet = true;
+; 2856 : #endif
+; 2857 : 				SetWorkingPlot(pPlot, false);
 
 	push	1
 	push	0
@@ -12463,7 +12481,7 @@ _pPlot$ = 8						; size = 4
 	mov	ecx, esi
 	call	?SetWorkingPlot@CvCityCitizens@@QAEXPAVCvPlot@@_N1@Z ; CvCityCitizens::SetWorkingPlot
 
-; 2840 : 				DoAddBestCitizenFromUnassigned();
+; 2858 : 				DoAddBestCitizenFromUnassigned();
 
 	mov	ecx, esi
 	call	?DoAddBestCitizenFromUnassigned@CvCityCitizens@@QAE_NXZ ; CvCityCitizens::DoAddBestCitizenFromUnassigned
@@ -12471,13 +12489,13 @@ $LN1@DoVerifyWo:
 	pop	edi
 	pop	esi
 
-; 2841 : 			}
-; 2842 : 		}
-; 2843 : 	}
-; 2844 : #ifdef AUI_CITIZENS_MID_TURN_ASSIGN_RUNS_SELF_CONSISTENCY
-; 2845 : 	return bRet;
-; 2846 : #endif
-; 2847 : }
+; 2859 : 			}
+; 2860 : 		}
+; 2861 : 	}
+; 2862 : #ifdef AUI_CITIZENS_MID_TURN_ASSIGN_RUNS_SELF_CONSISTENCY
+; 2863 : 	return bRet;
+; 2864 : #endif
+; 2865 : }
 
 	ret	4
 ?DoVerifyWorkingPlot@CvCityCitizens@@QAEXPAVCvPlot@@@Z ENDP ; CvCityCitizens::DoVerifyWorkingPlot
@@ -12489,26 +12507,26 @@ _TEXT	SEGMENT
 ?DoVerifyWorkingPlots@CvCityCitizens@@QAEXXZ PROC	; CvCityCitizens::DoVerifyWorkingPlots, COMDAT
 ; _this$ = ecx
 
-; 2851 : {
+; 2869 : {
 
 	push	ebx
 	push	esi
 	push	edi
 	mov	esi, ecx
 
-; 2852 : 	int iI;
-; 2853 : 	CvPlot* pPlot;
-; 2854 : #ifdef AUI_CITIZENS_MID_TURN_ASSIGN_RUNS_SELF_CONSISTENCY
-; 2855 : 	bool bDoSelfConsistency = false;
-; 2856 : #endif
-; 2857 : 
-; 2858 : 	for(iI = 0; iI < NUM_CITY_PLOTS; iI++)
+; 2870 : 	int iI;
+; 2871 : 	CvPlot* pPlot;
+; 2872 : #ifdef AUI_CITIZENS_MID_TURN_ASSIGN_RUNS_SELF_CONSISTENCY
+; 2873 : 	bool bDoSelfConsistency = false;
+; 2874 : #endif
+; 2875 : 
+; 2876 : 	for(iI = 0; iI < NUM_CITY_PLOTS; iI++)
 
 	xor	ebx, ebx
 $LL3@DoVerifyWo@2:
 
-; 2859 : 	{
-; 2860 : 		pPlot = GetCityPlotFromIndex(iI);
+; 2877 : 	{
+; 2878 : 		pPlot = GetCityPlotFromIndex(iI);
 
 	mov	eax, DWORD PTR [esi]
 	mov	ecx, DWORD PTR [eax+108]
@@ -12520,11 +12538,11 @@ $LL3@DoVerifyWo@2:
 	mov	edi, eax
 	add	esp, 12					; 0000000cH
 
-; 2861 : 
-; 2862 : #ifdef AUI_CITIZENS_MID_TURN_ASSIGN_RUNS_SELF_CONSISTENCY
-; 2863 : 		bDoSelfConsistency = DoVerifyWorkingPlot(pPlot) || bDoSelfConsistency;
-; 2864 : #else
-; 2865 : 		DoVerifyWorkingPlot(pPlot);
+; 2879 : 
+; 2880 : #ifdef AUI_CITIZENS_MID_TURN_ASSIGN_RUNS_SELF_CONSISTENCY
+; 2881 : 		bDoSelfConsistency = DoVerifyWorkingPlot(pPlot) || bDoSelfConsistency;
+; 2882 : #else
+; 2883 : 		DoVerifyWorkingPlot(pPlot);
 
 	test	edi, edi
 	je	SHORT $LN2@DoVerifyWo@2
@@ -12557,14 +12575,14 @@ $LN2@DoVerifyWo@2:
 	pop	esi
 	pop	ebx
 
-; 2866 : #endif
-; 2867 : 	}
-; 2868 : 
-; 2869 : #ifdef AUI_CITIZENS_MID_TURN_ASSIGN_RUNS_SELF_CONSISTENCY
-; 2870 : 	if (bDoSelfConsistency)
-; 2871 : 		DoSelfConsistencyCheck();
-; 2872 : #endif
-; 2873 : }
+; 2884 : #endif
+; 2885 : 	}
+; 2886 : 
+; 2887 : #ifdef AUI_CITIZENS_MID_TURN_ASSIGN_RUNS_SELF_CONSISTENCY
+; 2888 : 	if (bDoSelfConsistency)
+; 2889 : 		DoSelfConsistencyCheck();
+; 2890 : #endif
+; 2891 : }
 
 	ret	0
 ?DoVerifyWorkingPlots@CvCityCitizens@@QAEXXZ ENDP	; CvCityCitizens::DoVerifyWorkingPlots
@@ -13155,7 +13173,7 @@ $LN21@DoTurn:
 ; 364  : 			EconomicAIStrategyTypes eStrategyLosingMoney = (EconomicAIStrategyTypes) GC.getInfoTypeForString("ECONOMICAISTRATEGY_LOSING_MONEY", true);
 
 	push	1
-	push	OFFSET $SG224877
+	push	OFFSET $SG224919
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 
@@ -13263,7 +13281,7 @@ $LN18@DoTurn:
 	mov	ecx, eax
 	call	?GetActiveGrandStrategy@CvGrandStrategyAI@@QBE?AW4AIGrandStrategyTypes@@XZ ; CvGrandStrategyAI::GetActiveGrandStrategy
 	push	0
-	push	OFFSET $SG224886
+	push	OFFSET $SG224928
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	ebp, eax
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString

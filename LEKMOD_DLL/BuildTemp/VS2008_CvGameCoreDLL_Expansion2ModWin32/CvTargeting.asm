@@ -686,11 +686,11 @@ _kMap$ = -32						; size = 4
 _lastDY$ = -28						; size = 4
 _stepY$ = -24						; size = 4
 tv563 = -20						; size = 4
-_shortAxisStepFactor$217624 = -20			; size = 4
+_shortAxisStepFactor$217666 = -20			; size = 4
 _originalDX$ = -16					; size = 4
 _originalDY$ = -12					; size = 4
 _stepX$ = -8						; size = 4
-_shortAxisStepFactor$217595 = -4			; size = 4
+_shortAxisStepFactor$217637 = -4			; size = 4
 _startX$ = 8						; size = 4
 _startY$ = 12						; size = 4
 _dx$ = 16						; size = 4
@@ -868,7 +868,7 @@ $LN54@CanSeeDisp:
 ; 176  : 		int shortAxisStepFactor = (dx >> 1); 
 
 	sar	edx, 1
-	mov	DWORD PTR _shortAxisStepFactor$217595[esp+64], edx
+	mov	DWORD PTR _shortAxisStepFactor$217637[esp+64], edx
 
 ; 177  : 		while (currentDX != originalDX) 
 
@@ -892,7 +892,7 @@ $LN45@CanSeeDisp:
 ; 178  : 		{
 ; 179  : 			shortAxisStepFactor += dy;
 
-	mov	edx, DWORD PTR _shortAxisStepFactor$217595[esp+64]
+	mov	edx, DWORD PTR _shortAxisStepFactor$217637[esp+64]
 
 ; 180  : 
 ; 181  : 			if (shortAxisStepFactor >= dx) 
@@ -908,9 +908,9 @@ $LN45@CanSeeDisp:
 	mov	ecx, DWORD PTR _dx$[esp+60]
 	add	edi, ebp
 	cmp	edx, ecx
-	mov	DWORD PTR _shortAxisStepFactor$217595[esp+64], edx
+	mov	DWORD PTR _shortAxisStepFactor$217637[esp+64], edx
 	jl	$LN32@CanSeeDisp
-	sub	DWORD PTR _shortAxisStepFactor$217595[esp+64], ecx
+	sub	DWORD PTR _shortAxisStepFactor$217637[esp+64], ecx
 	cmp	BYTE PTR _oddQuadrant$[esp+64], 0
 
 ; 188  : 					currentDY += stepY;
@@ -1200,7 +1200,7 @@ $LN81@CanSeeDisp:
 $LN55@CanSeeDisp:
 	sar	ecx, 1
 $LN85@CanSeeDisp:
-	mov	DWORD PTR _shortAxisStepFactor$217624[esp+64], ecx
+	mov	DWORD PTR _shortAxisStepFactor$217666[esp+64], ecx
 
 ; 260  : 		//int fraction = (dy >> 1);
 ; 261  : 		while (currentDY != originalDY) 
@@ -1219,19 +1219,19 @@ $LN22@CanSeeDisp:
 ; 262  : 		{
 ; 263  : 			shortAxisStepFactor += dx;
 
-	add	DWORD PTR _shortAxisStepFactor$217624[esp+64], edx
+	add	DWORD PTR _shortAxisStepFactor$217666[esp+64], edx
 
 ; 264  : 
 ; 265  : 			if (shortAxisStepFactor >= dy) 
 
 	mov	ecx, DWORD PTR _dy$[esp+60]
-	cmp	DWORD PTR _shortAxisStepFactor$217624[esp+64], ecx
+	cmp	DWORD PTR _shortAxisStepFactor$217666[esp+64], ecx
 	jl	$LN20@CanSeeDisp
 
 ; 266  : 			{
 ; 267  : 				shortAxisStepFactor -= dy;
 
-	sub	DWORD PTR _shortAxisStepFactor$217624[esp+64], ecx
+	sub	DWORD PTR _shortAxisStepFactor$217666[esp+64], ecx
 
 ; 268  : 
 ; 269  : 				if (oddQuadrant)
@@ -1505,10 +1505,10 @@ _lastDX$ = -32						; size = 4
 _lastDY$ = -28						; size = 4
 _stepY$ = -24						; size = 4
 tv564 = -20						; size = 4
-_shortAxisStepFactor$217706 = -20			; size = 4
+_shortAxisStepFactor$217748 = -20			; size = 4
 _originalDX$ = -16					; size = 4
 tv572 = -12						; size = 4
-_shortAxisStepFactor$217677 = -12			; size = 4
+_shortAxisStepFactor$217719 = -12			; size = 4
 _originalDY$ = -8					; size = 4
 _stepX$ = -4						; size = 4
 _startX$ = 8						; size = 4
@@ -1691,7 +1691,7 @@ $LN54@CanSeeDisp@2:
 ; 420  : 		int shortAxisStepFactor = (dx >> 1); 
 
 	sar	edx, 1
-	mov	DWORD PTR _shortAxisStepFactor$217677[esp+60], edx
+	mov	DWORD PTR _shortAxisStepFactor$217719[esp+60], edx
 
 ; 421  : 		while (currentDX != originalDX) 
 
@@ -1714,7 +1714,7 @@ $LN45@CanSeeDisp@2:
 ; 422  : 		{
 ; 423  : 			shortAxisStepFactor += dy;
 
-	mov	edx, DWORD PTR _shortAxisStepFactor$217677[esp+60]
+	mov	edx, DWORD PTR _shortAxisStepFactor$217719[esp+60]
 
 ; 424  : 
 ; 425  : 			if (shortAxisStepFactor >= dx) 
@@ -1730,9 +1730,9 @@ $LN45@CanSeeDisp@2:
 	mov	eax, DWORD PTR _dx$[esp+56]
 	add	esi, ecx
 	cmp	edx, eax
-	mov	DWORD PTR _shortAxisStepFactor$217677[esp+60], edx
+	mov	DWORD PTR _shortAxisStepFactor$217719[esp+60], edx
 	jl	$LN32@CanSeeDisp@2
-	sub	DWORD PTR _shortAxisStepFactor$217677[esp+60], eax
+	sub	DWORD PTR _shortAxisStepFactor$217719[esp+60], eax
 	cmp	BYTE PTR _oddQuadrant$[esp+60], 0
 
 ; 432  : 					currentDY += stepY;
@@ -2036,7 +2036,7 @@ $LN75@CanSeeDisp@2:
 $LN55@CanSeeDisp@2:
 	sar	eax, 1
 $LN78@CanSeeDisp@2:
-	mov	DWORD PTR _shortAxisStepFactor$217706[esp+60], eax
+	mov	DWORD PTR _shortAxisStepFactor$217748[esp+60], eax
 
 ; 517  : 		//int fraction = (dy >> 1);
 ; 518  : 		while (currentDY != originalDY) 
@@ -2057,19 +2057,19 @@ $LN22@CanSeeDisp@2:
 ; 519  : 		{
 ; 520  : 			shortAxisStepFactor += dx;
 
-	add	DWORD PTR _shortAxisStepFactor$217706[esp+60], edx
+	add	DWORD PTR _shortAxisStepFactor$217748[esp+60], edx
 
 ; 521  : 
 ; 522  : 			if (shortAxisStepFactor >= dy) 
 
 	mov	eax, DWORD PTR _dy$[esp+56]
-	cmp	DWORD PTR _shortAxisStepFactor$217706[esp+60], eax
+	cmp	DWORD PTR _shortAxisStepFactor$217748[esp+60], eax
 	jl	$LN20@CanSeeDisp@2
 
 ; 523  : 			{
 ; 524  : 				shortAxisStepFactor -= dy;
 
-	sub	DWORD PTR _shortAxisStepFactor$217706[esp+60], eax
+	sub	DWORD PTR _shortAxisStepFactor$217748[esp+60], eax
 
 ; 525  : 
 ; 526  : 				if (oddQuadrant)

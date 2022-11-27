@@ -10,53 +10,53 @@ INCLUDELIB MSVCRT
 INCLUDELIB OLDNAMES
 
 CONST	SEGMENT
-$SG217185 DB	'GameInfoActions', 00H
-$SG217359 DB	'MissionData', 00H
-$SG217361 DB	'CommandData', 00H
-$SG217363 DB	'AutomateType', 00H
+$SG217227 DB	'GameInfoActions', 00H
+$SG217401 DB	'MissionData', 00H
+$SG217403 DB	'CommandData', 00H
+$SG217405 DB	'AutomateType', 00H
 	ORG $+3
-$SG217365 DB	'InterfaceModeType', 00H
+$SG217407 DB	'InterfaceModeType', 00H
 	ORG $+2
-$SG217367 DB	'MissionType', 00H
-$SG217369 DB	'CommandType', 00H
-$SG217371 DB	'ControlType', 00H
-$SG217373 DB	'OriginalIndex', 00H
+$SG217409 DB	'MissionType', 00H
+$SG217411 DB	'CommandType', 00H
+$SG217413 DB	'ControlType', 00H
+$SG217415 DB	'OriginalIndex', 00H
 	ORG $+2
-$SG217378 DB	'ConfirmCommand', 00H
+$SG217420 DB	'ConfirmCommand', 00H
 	ORG $+1
-$SG217380 DB	'Visible', 00H
-$SG217383 DB	'SubType', 00H
-$SG217388 DB	'Type', 00H
+$SG217422 DB	'Visible', 00H
+$SG217425 DB	'SubType', 00H
+$SG217430 DB	'Type', 00H
 	ORG $+3
-$SG217390 DB	'TextKey', 00H
-$SG217392 DB	'ActionInfoIndex', 00H
-$SG217394 DB	'HotKeyVal', 00H
+$SG217432 DB	'TextKey', 00H
+$SG217434 DB	'ActionInfoIndex', 00H
+$SG217436 DB	'HotKeyVal', 00H
 	ORG $+2
-$SG217396 DB	'HotKeyPriority', 00H
+$SG217438 DB	'HotKeyPriority', 00H
 	ORG $+1
-$SG217398 DB	'HotKeyValAlt', 00H
+$SG217440 DB	'HotKeyValAlt', 00H
 	ORG $+3
-$SG217400 DB	'HotKeyPriorityAlt', 00H
+$SG217442 DB	'HotKeyPriorityAlt', 00H
 	ORG $+2
-$SG217402 DB	'OrderPriority', 00H
+$SG217444 DB	'OrderPriority', 00H
 	ORG $+2
-$SG217404 DB	'AltDown', 00H
-$SG217406 DB	'ShiftDown', 00H
+$SG217446 DB	'AltDown', 00H
+$SG217448 DB	'ShiftDown', 00H
 	ORG $+2
-$SG217408 DB	'CtrlDown', 00H
+$SG217450 DB	'CtrlDown', 00H
 	ORG $+3
-$SG217410 DB	'AltDownAlt', 00H
+$SG217452 DB	'AltDownAlt', 00H
 	ORG $+1
-$SG217412 DB	'ShiftDownAlt', 00H
+$SG217454 DB	'ShiftDownAlt', 00H
 	ORG $+3
-$SG217414 DB	'CtrlDownAlt', 00H
-$SG217416 DB	'HotKey', 00H
+$SG217456 DB	'CtrlDownAlt', 00H
+$SG217458 DB	'HotKey', 00H
 	ORG $+1
-$SG217418 DB	'Help', 00H
+$SG217460 DB	'Help', 00H
 	ORG $+3
-$SG217420 DB	'DisabledHelp', 00H
+$SG217462 DB	'DisabledHelp', 00H
 	ORG $+3
-$SG217426 DB	'GameInfoTypes', 00H
+$SG217468 DB	'GameInfoTypes', 00H
 CONST	ENDS
 PUBLIC	??1Field@Table@FLua@@QAE@XZ			; FLua::Table::Field::~Field
 EXTRN	??1Value@FLua@@QAE@XZ:PROC			; FLua::Value::~Value
@@ -1279,7 +1279,7 @@ PUBLIC	??$?APBD@Table@FLua@@QAE?AVField@01@PBD@Z	; FLua::Table::operator[]<char 
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\fireplace\include\fireworks\flua\include\fluatypes.h
 ;	COMDAT ??$?APBD@Table@FLua@@QAE?AVField@01@PBD@Z
 _TEXT	SEGMENT
-$T218071 = -4						; size = 4
+$T218113 = -4						; size = 4
 ___$ReturnUdt$ = 8					; size = 4
 _key$ = 12						; size = 4
 ??$?APBD@Table@FLua@@QAE?AVField@01@PBD@Z PROC		; FLua::Table::operator[]<char const *>, COMDAT
@@ -1294,7 +1294,7 @@ _key$ = 12						; size = 4
 	push	eax
 	push	ecx
 	mov	ecx, esi
-	mov	DWORD PTR $T218071[esp+16], 0
+	mov	DWORD PTR $T218113[esp+16], 0
 	call	??$?0PBD@Field@Table@FLua@@AAE@ABV12@PBD@Z ; FLua::Table::Field::Field<char const *>
 	mov	eax, esi
 	pop	esi
@@ -1479,75 +1479,75 @@ __unwindtable$?pRegisterActions@CvLuaGameInfo@@CAHPAUlua_State@@@Z DD 0ffffffffH
 xdata$x	ENDS
 ;	COMDAT ?pRegisterActions@CvLuaGameInfo@@CAHPAUlua_State@@@Z
 _TEXT	SEGMENT
-$T218440 = -412						; size = 4
-$T218431 = -412						; size = 4
-$T218422 = -412						; size = 4
-$T218413 = -412						; size = 4
-$T218404 = -412						; size = 4
-$T218395 = -412						; size = 4
-$T218386 = -412						; size = 4
-$T218377 = -412						; size = 4
-$T218368 = -412						; size = 4
-$T218359 = -412						; size = 4
-$T218350 = -412						; size = 4
-$T218341 = -412						; size = 4
-$T218332 = -412						; size = 4
-$T218323 = -412						; size = 4
-$T218314 = -412						; size = 4
-$T218305 = -412						; size = 4
-$T218296 = -412						; size = 4
-$T218287 = -412						; size = 4
-$T218278 = -412						; size = 4
-$T218269 = -412						; size = 4
-$T218260 = -412						; size = 4
-$T218251 = -412						; size = 4
-$T218242 = -412						; size = 4
-$T218233 = -412						; size = 4
-$T218224 = -412						; size = 4
-$T218215 = -412						; size = 4
-$T218206 = -412						; size = 4
-$T218197 = -412						; size = 4
-_kEntry$217348 = -408					; size = 8
-_it$217298 = -400					; size = 4
+$T218482 = -412						; size = 4
+$T218473 = -412						; size = 4
+$T218464 = -412						; size = 4
+$T218455 = -412						; size = 4
+$T218446 = -412						; size = 4
+$T218437 = -412						; size = 4
+$T218428 = -412						; size = 4
+$T218419 = -412						; size = 4
+$T218410 = -412						; size = 4
+$T218401 = -412						; size = 4
+$T218392 = -412						; size = 4
+$T218383 = -412						; size = 4
+$T218374 = -412						; size = 4
+$T218365 = -412						; size = 4
+$T218356 = -412						; size = 4
+$T218347 = -412						; size = 4
+$T218338 = -412						; size = 4
+$T218329 = -412						; size = 4
+$T218320 = -412						; size = 4
+$T218311 = -412						; size = 4
+$T218302 = -412						; size = 4
+$T218293 = -412						; size = 4
+$T218284 = -412						; size = 4
+$T218275 = -412						; size = 4
+$T218266 = -412						; size = 4
+$T218257 = -412						; size = 4
+$T218248 = -412						; size = 4
+$T218239 = -412						; size = 4
+_kEntry$217390 = -408					; size = 8
+_it$217340 = -400					; size = 4
 _idx$ = -396						; size = 4
-$T218378 = -392						; size = 1
-$T218405 = -388						; size = 1
-$T218369 = -384						; size = 1
-$T218414 = -380						; size = 1
-$T218387 = -376						; size = 1
+$T218420 = -392						; size = 1
+$T218447 = -388						; size = 1
+$T218411 = -384						; size = 1
+$T218456 = -380						; size = 1
+$T218429 = -376						; size = 1
 _t$ = -372						; size = 4
-$T218270 = -368						; size = 1
+$T218312 = -368						; size = 1
 _infos$ = -364						; size = 4
-$T218396 = -360						; size = 1
-$T218279 = -356						; size = 1
-$T218093 = -352						; size = 12
-$T218101 = -340						; size = 12
-$T218088 = -328						; size = 12
-$T218102 = -316						; size = 12
-$T218090 = -304						; size = 12
-$T218103 = -292						; size = 12
-$T218092 = -280						; size = 12
-$T218104 = -268						; size = 12
-$T218094 = -256						; size = 12
-$T218105 = -244						; size = 12
-$T218096 = -232						; size = 12
-$T218106 = -220						; size = 12
-$T218098 = -208						; size = 12
-$T218107 = -196						; size = 12
-$T218100 = -184						; size = 12
-$T218108 = -172						; size = 12
-$T218091 = -160						; size = 12
-$T218109 = -148						; size = 12
-$T218095 = -136						; size = 12
-$T218110 = -124						; size = 12
-$T218099 = -112						; size = 12
-$T218111 = -100						; size = 12
-$T218087 = -88						; size = 12
-$T218112 = -76						; size = 12
-$T218089 = -64						; size = 12
-$T218113 = -52						; size = 12
-$T218097 = -40						; size = 12
-$T218114 = -28						; size = 12
+$T218438 = -360						; size = 1
+$T218321 = -356						; size = 1
+$T218135 = -352						; size = 12
+$T218143 = -340						; size = 12
+$T218130 = -328						; size = 12
+$T218144 = -316						; size = 12
+$T218132 = -304						; size = 12
+$T218145 = -292						; size = 12
+$T218134 = -280						; size = 12
+$T218146 = -268						; size = 12
+$T218136 = -256						; size = 12
+$T218147 = -244						; size = 12
+$T218138 = -232						; size = 12
+$T218148 = -220						; size = 12
+$T218140 = -208						; size = 12
+$T218149 = -196						; size = 12
+$T218142 = -184						; size = 12
+$T218150 = -172						; size = 12
+$T218133 = -160						; size = 12
+$T218151 = -148						; size = 12
+$T218137 = -136						; size = 12
+$T218152 = -124						; size = 12
+$T218141 = -112						; size = 12
+$T218153 = -100						; size = 12
+$T218129 = -88						; size = 12
+$T218154 = -76						; size = 12
+$T218131 = -64						; size = 12
+$T218155 = -52						; size = 12
+$T218139 = -40						; size = 12
+$T218156 = -28						; size = 12
 __$EHRec$ = -12						; size = 12
 _L$ = 8							; size = 4
 ?pRegisterActions@CvLuaGameInfo@@CAHPAUlua_State@@@Z PROC ; CvLuaGameInfo::pRegisterActions, COMDAT
@@ -1584,7 +1584,7 @@ _L$ = 8							; size = 4
 
 ; 37   : 	lua_setglobal(L, "GameInfoActions");
 
-	push	OFFSET $SG217185
+	push	OFFSET $SG217227
 	push	-10002					; ffffd8eeH
 	push	edi
 	call	_lua_setfield
@@ -1616,7 +1616,7 @@ _L$ = 8							; size = 4
 
 	mov	ecx, DWORD PTR [eax+4]
 	mov	DWORD PTR _infos$[esp+424], eax
-	mov	DWORD PTR _it$217298[esp+424], ecx
+	mov	DWORD PTR _it$217340[esp+424], ecx
 
 ; 51   : 	        it != infos.end(); ++it)
 
@@ -1625,7 +1625,7 @@ _L$ = 8							; size = 4
 	jmp	SHORT $LN41@pRegisterA
 	npad	6
 $LL204@pRegisterA:
-	mov	ecx, DWORD PTR _it$217298[esp+424]
+	mov	ecx, DWORD PTR _it$217340[esp+424]
 $LN41@pRegisterA:
 
 ; 52   : 	{
@@ -1647,618 +1647,618 @@ $LN41@pRegisterA:
 
 	push	-1
 	push	edi
-	lea	ecx, DWORD PTR _kEntry$217348[esp+432]
+	lea	ecx, DWORD PTR _kEntry$217390[esp+432]
 	call	??0Value@FLua@@QAE@PAUlua_State@@H@Z	; FLua::Value::Value
 
 ; 58   : 
 ; 59   : 		kEntry["MissionData"]		= pEntry->getMissionData();
 
-	push	OFFSET $SG217359
-	lea	eax, DWORD PTR $T218087[esp+428]
+	push	OFFSET $SG217401
+	lea	eax, DWORD PTR $T218129[esp+428]
 	push	eax
-	lea	ecx, DWORD PTR _kEntry$217348[esp+432]
+	lea	ecx, DWORD PTR _kEntry$217390[esp+432]
 	mov	DWORD PTR __$EHRec$[esp+440], ebx
 	call	??$?APBD@Table@FLua@@QAE?AVField@01@PBD@Z ; FLua::Table::operator[]<char const *>
-	mov	DWORD PTR $T218197[esp+424], eax
+	mov	DWORD PTR $T218239[esp+424], eax
 	mov	ecx, esi
 	mov	BYTE PTR __$EHRec$[esp+432], 1
 	call	?getMissionData@CvActionInfo@@QBEHXZ	; CvActionInfo::getMissionData
 	push	eax
-	mov	eax, DWORD PTR $T218197[esp+428]
+	mov	eax, DWORD PTR $T218239[esp+428]
 	lea	ecx, DWORD PTR [eax+4]
 	push	ecx
 	mov	ecx, DWORD PTR [eax]
 	call	??$SetField@H@Table@FLua@@QAEXABVValue@1@H@Z ; FLua::Table::SetField<int>
-	lea	ecx, DWORD PTR $T218087[esp+428]
+	lea	ecx, DWORD PTR $T218129[esp+428]
 	mov	BYTE PTR __$EHRec$[esp+432], bl
 	call	??1Value@FLua@@QAE@XZ			; FLua::Value::~Value
 
 ; 60   : 		kEntry["CommandData"]		= pEntry->getCommandData();
 
-	push	OFFSET $SG217361
-	lea	edx, DWORD PTR $T218088[esp+428]
+	push	OFFSET $SG217403
+	lea	edx, DWORD PTR $T218130[esp+428]
 	push	edx
-	lea	ecx, DWORD PTR _kEntry$217348[esp+432]
+	lea	ecx, DWORD PTR _kEntry$217390[esp+432]
 	call	??$?APBD@Table@FLua@@QAE?AVField@01@PBD@Z ; FLua::Table::operator[]<char const *>
-	mov	DWORD PTR $T218206[esp+424], eax
+	mov	DWORD PTR $T218248[esp+424], eax
 	mov	ecx, esi
 	mov	BYTE PTR __$EHRec$[esp+432], 2
 	call	?getCommandData@CvActionInfo@@QBEHXZ	; CvActionInfo::getCommandData
 	push	eax
-	mov	eax, DWORD PTR $T218206[esp+428]
+	mov	eax, DWORD PTR $T218248[esp+428]
 	lea	ecx, DWORD PTR [eax+4]
 	push	ecx
 	mov	ecx, DWORD PTR [eax]
 	call	??$SetField@H@Table@FLua@@QAEXABVValue@1@H@Z ; FLua::Table::SetField<int>
-	lea	ecx, DWORD PTR $T218088[esp+428]
+	lea	ecx, DWORD PTR $T218130[esp+428]
 	mov	BYTE PTR __$EHRec$[esp+432], bl
 	call	??1Value@FLua@@QAE@XZ			; FLua::Value::~Value
 
 ; 61   : 
 ; 62   : 		kEntry["AutomateType"]		= pEntry->getAutomateType();
 
-	push	OFFSET $SG217363
-	lea	edx, DWORD PTR $T218089[esp+428]
+	push	OFFSET $SG217405
+	lea	edx, DWORD PTR $T218131[esp+428]
 	push	edx
-	lea	ecx, DWORD PTR _kEntry$217348[esp+432]
+	lea	ecx, DWORD PTR _kEntry$217390[esp+432]
 	call	??$?APBD@Table@FLua@@QAE?AVField@01@PBD@Z ; FLua::Table::operator[]<char const *>
-	mov	DWORD PTR $T218215[esp+424], eax
+	mov	DWORD PTR $T218257[esp+424], eax
 	mov	ecx, esi
 	mov	BYTE PTR __$EHRec$[esp+432], 3
 	call	?getAutomateType@CvActionInfo@@QBEHXZ	; CvActionInfo::getAutomateType
 	push	eax
-	mov	eax, DWORD PTR $T218215[esp+428]
+	mov	eax, DWORD PTR $T218257[esp+428]
 	lea	ecx, DWORD PTR [eax+4]
 	push	ecx
 	mov	ecx, DWORD PTR [eax]
 	call	??$SetField@H@Table@FLua@@QAEXABVValue@1@H@Z ; FLua::Table::SetField<int>
-	lea	ecx, DWORD PTR $T218089[esp+428]
+	lea	ecx, DWORD PTR $T218131[esp+428]
 	mov	BYTE PTR __$EHRec$[esp+432], bl
 	call	??1Value@FLua@@QAE@XZ			; FLua::Value::~Value
 
 ; 63   : 		kEntry["InterfaceModeType"]	= pEntry->getInterfaceModeType();
 
-	push	OFFSET $SG217365
-	lea	edx, DWORD PTR $T218090[esp+428]
+	push	OFFSET $SG217407
+	lea	edx, DWORD PTR $T218132[esp+428]
 	push	edx
-	lea	ecx, DWORD PTR _kEntry$217348[esp+432]
+	lea	ecx, DWORD PTR _kEntry$217390[esp+432]
 	call	??$?APBD@Table@FLua@@QAE?AVField@01@PBD@Z ; FLua::Table::operator[]<char const *>
-	mov	DWORD PTR $T218224[esp+424], eax
+	mov	DWORD PTR $T218266[esp+424], eax
 	mov	ecx, esi
 	mov	BYTE PTR __$EHRec$[esp+432], 4
 	call	?getInterfaceModeType@CvActionInfo@@QBEHXZ ; CvActionInfo::getInterfaceModeType
 	push	eax
-	mov	eax, DWORD PTR $T218224[esp+428]
+	mov	eax, DWORD PTR $T218266[esp+428]
 	lea	ecx, DWORD PTR [eax+4]
 	push	ecx
 	mov	ecx, DWORD PTR [eax]
 	call	??$SetField@H@Table@FLua@@QAEXABVValue@1@H@Z ; FLua::Table::SetField<int>
-	lea	ecx, DWORD PTR $T218090[esp+428]
+	lea	ecx, DWORD PTR $T218132[esp+428]
 	mov	BYTE PTR __$EHRec$[esp+432], bl
 	call	??1Value@FLua@@QAE@XZ			; FLua::Value::~Value
 
 ; 64   : 		kEntry["MissionType"]		= pEntry->getMissionType();
 
-	push	OFFSET $SG217367
-	lea	edx, DWORD PTR $T218091[esp+428]
+	push	OFFSET $SG217409
+	lea	edx, DWORD PTR $T218133[esp+428]
 	push	edx
-	lea	ecx, DWORD PTR _kEntry$217348[esp+432]
+	lea	ecx, DWORD PTR _kEntry$217390[esp+432]
 	call	??$?APBD@Table@FLua@@QAE?AVField@01@PBD@Z ; FLua::Table::operator[]<char const *>
-	mov	DWORD PTR $T218233[esp+424], eax
+	mov	DWORD PTR $T218275[esp+424], eax
 	mov	ecx, esi
 	mov	BYTE PTR __$EHRec$[esp+432], 5
 	call	?getMissionType@CvActionInfo@@QBEHXZ	; CvActionInfo::getMissionType
 	push	eax
-	mov	eax, DWORD PTR $T218233[esp+428]
+	mov	eax, DWORD PTR $T218275[esp+428]
 	lea	ecx, DWORD PTR [eax+4]
 	push	ecx
 	mov	ecx, DWORD PTR [eax]
 	call	??$SetField@H@Table@FLua@@QAEXABVValue@1@H@Z ; FLua::Table::SetField<int>
-	lea	ecx, DWORD PTR $T218091[esp+428]
+	lea	ecx, DWORD PTR $T218133[esp+428]
 	mov	BYTE PTR __$EHRec$[esp+432], bl
 	call	??1Value@FLua@@QAE@XZ			; FLua::Value::~Value
 
 ; 65   : 		kEntry["CommandType"]		= pEntry->getCommandType();
 
-	push	OFFSET $SG217369
-	lea	edx, DWORD PTR $T218092[esp+428]
+	push	OFFSET $SG217411
+	lea	edx, DWORD PTR $T218134[esp+428]
 	push	edx
-	lea	ecx, DWORD PTR _kEntry$217348[esp+432]
+	lea	ecx, DWORD PTR _kEntry$217390[esp+432]
 	call	??$?APBD@Table@FLua@@QAE?AVField@01@PBD@Z ; FLua::Table::operator[]<char const *>
-	mov	DWORD PTR $T218242[esp+424], eax
+	mov	DWORD PTR $T218284[esp+424], eax
 	mov	ecx, esi
 	mov	BYTE PTR __$EHRec$[esp+432], 6
 	call	?getCommandType@CvActionInfo@@QBEHXZ	; CvActionInfo::getCommandType
 	push	eax
-	mov	eax, DWORD PTR $T218242[esp+428]
+	mov	eax, DWORD PTR $T218284[esp+428]
 	lea	ecx, DWORD PTR [eax+4]
 	push	ecx
 	mov	ecx, DWORD PTR [eax]
 	call	??$SetField@H@Table@FLua@@QAEXABVValue@1@H@Z ; FLua::Table::SetField<int>
-	lea	ecx, DWORD PTR $T218092[esp+428]
+	lea	ecx, DWORD PTR $T218134[esp+428]
 	mov	BYTE PTR __$EHRec$[esp+432], bl
 	call	??1Value@FLua@@QAE@XZ			; FLua::Value::~Value
 
 ; 66   : 		kEntry["ControlType"]		= pEntry->getControlType();
 
-	push	OFFSET $SG217371
-	lea	edx, DWORD PTR $T218093[esp+428]
+	push	OFFSET $SG217413
+	lea	edx, DWORD PTR $T218135[esp+428]
 	push	edx
-	lea	ecx, DWORD PTR _kEntry$217348[esp+432]
+	lea	ecx, DWORD PTR _kEntry$217390[esp+432]
 	call	??$?APBD@Table@FLua@@QAE?AVField@01@PBD@Z ; FLua::Table::operator[]<char const *>
-	mov	DWORD PTR $T218251[esp+424], eax
+	mov	DWORD PTR $T218293[esp+424], eax
 	mov	ecx, esi
 	mov	BYTE PTR __$EHRec$[esp+432], 7
 	call	?getControlType@CvActionInfo@@QBEHXZ	; CvActionInfo::getControlType
 	push	eax
-	mov	eax, DWORD PTR $T218251[esp+428]
+	mov	eax, DWORD PTR $T218293[esp+428]
 	lea	ecx, DWORD PTR [eax+4]
 	push	ecx
 	mov	ecx, DWORD PTR [eax]
 	call	??$SetField@H@Table@FLua@@QAEXABVValue@1@H@Z ; FLua::Table::SetField<int>
-	lea	ecx, DWORD PTR $T218093[esp+428]
+	lea	ecx, DWORD PTR $T218135[esp+428]
 	mov	BYTE PTR __$EHRec$[esp+432], bl
 	call	??1Value@FLua@@QAE@XZ			; FLua::Value::~Value
 
 ; 67   : 		kEntry["OriginalIndex"]		= pEntry->getOriginalIndex();
 
-	push	OFFSET $SG217373
-	lea	edx, DWORD PTR $T218094[esp+428]
+	push	OFFSET $SG217415
+	lea	edx, DWORD PTR $T218136[esp+428]
 	push	edx
-	lea	ecx, DWORD PTR _kEntry$217348[esp+432]
+	lea	ecx, DWORD PTR _kEntry$217390[esp+432]
 	call	??$?APBD@Table@FLua@@QAE?AVField@01@PBD@Z ; FLua::Table::operator[]<char const *>
-	mov	DWORD PTR $T218260[esp+424], eax
+	mov	DWORD PTR $T218302[esp+424], eax
 	mov	ecx, esi
 	mov	BYTE PTR __$EHRec$[esp+432], 8
 	call	?getOriginalIndex@CvActionInfo@@QBEHXZ	; CvActionInfo::getOriginalIndex
 	push	eax
-	mov	eax, DWORD PTR $T218260[esp+428]
+	mov	eax, DWORD PTR $T218302[esp+428]
 	lea	ecx, DWORD PTR [eax+4]
 	push	ecx
 	mov	ecx, DWORD PTR [eax]
 	call	??$SetField@H@Table@FLua@@QAEXABVValue@1@H@Z ; FLua::Table::SetField<int>
 	mov	BYTE PTR __$EHRec$[esp+432], bl
-	lea	ecx, DWORD PTR $T218094[esp+428]
+	lea	ecx, DWORD PTR $T218136[esp+428]
 	call	??1Value@FLua@@QAE@XZ			; FLua::Value::~Value
 
 ; 68   : 
 ; 69   : 		kEntry["ConfirmCommand"]	= pEntry->isConfirmCommand();
 
-	push	OFFSET $SG217378
-	lea	edx, DWORD PTR $T218095[esp+428]
+	push	OFFSET $SG217420
+	lea	edx, DWORD PTR $T218137[esp+428]
 	push	edx
-	lea	ecx, DWORD PTR _kEntry$217348[esp+432]
+	lea	ecx, DWORD PTR _kEntry$217390[esp+432]
 	call	??$?APBD@Table@FLua@@QAE?AVField@01@PBD@Z ; FLua::Table::operator[]<char const *>
-	mov	DWORD PTR $T218269[esp+424], eax
+	mov	DWORD PTR $T218311[esp+424], eax
 	mov	ecx, esi
 	mov	BYTE PTR __$EHRec$[esp+432], 9
 	call	?isConfirmCommand@CvActionInfo@@QBE_NXZ	; CvActionInfo::isConfirmCommand
-	mov	BYTE PTR $T218270[esp+424], al
-	mov	eax, DWORD PTR $T218270[esp+424]
+	mov	BYTE PTR $T218312[esp+424], al
+	mov	eax, DWORD PTR $T218312[esp+424]
 	push	eax
-	mov	eax, DWORD PTR $T218269[esp+428]
+	mov	eax, DWORD PTR $T218311[esp+428]
 	lea	ecx, DWORD PTR [eax+4]
 	push	ecx
 	mov	ecx, DWORD PTR [eax]
 	call	??$SetField@_N@Table@FLua@@QAEXABVValue@1@_N@Z ; FLua::Table::SetField<bool>
-	lea	ecx, DWORD PTR $T218095[esp+428]
+	lea	ecx, DWORD PTR $T218137[esp+428]
 	mov	BYTE PTR __$EHRec$[esp+432], bl
 	call	??1Value@FLua@@QAE@XZ			; FLua::Value::~Value
 
 ; 70   : 		kEntry["Visible"]			= pEntry->isVisible();
 
-	push	OFFSET $SG217380
-	lea	edx, DWORD PTR $T218096[esp+428]
+	push	OFFSET $SG217422
+	lea	edx, DWORD PTR $T218138[esp+428]
 	push	edx
-	lea	ecx, DWORD PTR _kEntry$217348[esp+432]
+	lea	ecx, DWORD PTR _kEntry$217390[esp+432]
 	call	??$?APBD@Table@FLua@@QAE?AVField@01@PBD@Z ; FLua::Table::operator[]<char const *>
-	mov	DWORD PTR $T218278[esp+424], eax
+	mov	DWORD PTR $T218320[esp+424], eax
 	mov	ecx, esi
 	mov	BYTE PTR __$EHRec$[esp+432], 10		; 0000000aH
 	call	?isVisible@CvActionInfo@@QBE_NXZ	; CvActionInfo::isVisible
-	mov	BYTE PTR $T218279[esp+424], al
-	mov	eax, DWORD PTR $T218279[esp+424]
+	mov	BYTE PTR $T218321[esp+424], al
+	mov	eax, DWORD PTR $T218321[esp+424]
 	push	eax
-	mov	eax, DWORD PTR $T218278[esp+428]
+	mov	eax, DWORD PTR $T218320[esp+428]
 	lea	ecx, DWORD PTR [eax+4]
 	push	ecx
 	mov	ecx, DWORD PTR [eax]
 	call	??$SetField@_N@Table@FLua@@QAEXABVValue@1@_N@Z ; FLua::Table::SetField<bool>
-	lea	ecx, DWORD PTR $T218096[esp+428]
+	lea	ecx, DWORD PTR $T218138[esp+428]
 	mov	BYTE PTR __$EHRec$[esp+432], bl
 	call	??1Value@FLua@@QAE@XZ			; FLua::Value::~Value
 
 ; 71   : 		kEntry["SubType"]			= (int)pEntry->getSubType();
 
-	push	OFFSET $SG217383
-	lea	edx, DWORD PTR $T218097[esp+428]
+	push	OFFSET $SG217425
+	lea	edx, DWORD PTR $T218139[esp+428]
 	push	edx
-	lea	ecx, DWORD PTR _kEntry$217348[esp+432]
+	lea	ecx, DWORD PTR _kEntry$217390[esp+432]
 	call	??$?APBD@Table@FLua@@QAE?AVField@01@PBD@Z ; FLua::Table::operator[]<char const *>
-	mov	DWORD PTR $T218287[esp+424], eax
+	mov	DWORD PTR $T218329[esp+424], eax
 	mov	ecx, esi
 	mov	BYTE PTR __$EHRec$[esp+432], 11		; 0000000bH
 	call	?getSubType@CvActionInfo@@QBE?AW4ActionSubTypes@@XZ ; CvActionInfo::getSubType
 	push	eax
-	mov	eax, DWORD PTR $T218287[esp+428]
+	mov	eax, DWORD PTR $T218329[esp+428]
 	lea	ecx, DWORD PTR [eax+4]
 	push	ecx
 	mov	ecx, DWORD PTR [eax]
 	call	??$SetField@H@Table@FLua@@QAEXABVValue@1@H@Z ; FLua::Table::SetField<int>
-	lea	ecx, DWORD PTR $T218097[esp+428]
+	lea	ecx, DWORD PTR $T218139[esp+428]
 	mov	BYTE PTR __$EHRec$[esp+432], bl
 	call	??1Value@FLua@@QAE@XZ			; FLua::Value::~Value
 
 ; 72   : 
 ; 73   : 		kEntry["Type"]				= pEntry->GetType();
 
-	push	OFFSET $SG217388
-	lea	edx, DWORD PTR $T218098[esp+428]
+	push	OFFSET $SG217430
+	lea	edx, DWORD PTR $T218140[esp+428]
 	push	edx
-	lea	ecx, DWORD PTR _kEntry$217348[esp+432]
+	lea	ecx, DWORD PTR _kEntry$217390[esp+432]
 	call	??$?APBD@Table@FLua@@QAE?AVField@01@PBD@Z ; FLua::Table::operator[]<char const *>
-	mov	DWORD PTR $T218296[esp+424], eax
+	mov	DWORD PTR $T218338[esp+424], eax
 	mov	ecx, esi
 	mov	BYTE PTR __$EHRec$[esp+432], 12		; 0000000cH
 	call	?GetType@CvActionInfo@@QBEPBDXZ		; CvActionInfo::GetType
 	push	eax
-	mov	eax, DWORD PTR $T218296[esp+428]
+	mov	eax, DWORD PTR $T218338[esp+428]
 	lea	ecx, DWORD PTR [eax+4]
 	push	ecx
 	mov	ecx, DWORD PTR [eax]
 	call	??$SetField@PBD@Table@FLua@@QAEXABVValue@1@PBD@Z ; FLua::Table::SetField<char const *>
 	mov	BYTE PTR __$EHRec$[esp+432], bl
-	lea	ecx, DWORD PTR $T218098[esp+428]
+	lea	ecx, DWORD PTR $T218140[esp+428]
 	call	??1Value@FLua@@QAE@XZ			; FLua::Value::~Value
 
 ; 74   : 		kEntry["TextKey"]			= pEntry->GetTextKey();
 
-	push	OFFSET $SG217390
-	lea	edx, DWORD PTR $T218099[esp+428]
+	push	OFFSET $SG217432
+	lea	edx, DWORD PTR $T218141[esp+428]
 	push	edx
-	lea	ecx, DWORD PTR _kEntry$217348[esp+432]
+	lea	ecx, DWORD PTR _kEntry$217390[esp+432]
 	call	??$?APBD@Table@FLua@@QAE?AVField@01@PBD@Z ; FLua::Table::operator[]<char const *>
-	mov	DWORD PTR $T218305[esp+424], eax
+	mov	DWORD PTR $T218347[esp+424], eax
 	mov	ecx, esi
 	mov	BYTE PTR __$EHRec$[esp+432], 13		; 0000000dH
 	call	?GetTextKey@CvActionInfo@@QBEPBDXZ	; CvActionInfo::GetTextKey
 	push	eax
-	mov	eax, DWORD PTR $T218305[esp+428]
+	mov	eax, DWORD PTR $T218347[esp+428]
 	lea	ecx, DWORD PTR [eax+4]
 	push	ecx
 	mov	ecx, DWORD PTR [eax]
 	call	??$SetField@PBD@Table@FLua@@QAEXABVValue@1@PBD@Z ; FLua::Table::SetField<char const *>
-	lea	ecx, DWORD PTR $T218099[esp+428]
+	lea	ecx, DWORD PTR $T218141[esp+428]
 	mov	BYTE PTR __$EHRec$[esp+432], bl
 	call	??1Value@FLua@@QAE@XZ			; FLua::Value::~Value
 
 ; 75   : 
 ; 76   : 		kEntry["ActionInfoIndex"]	= pEntry->getActionInfoIndex();
 
-	push	OFFSET $SG217392
-	lea	edx, DWORD PTR $T218100[esp+428]
+	push	OFFSET $SG217434
+	lea	edx, DWORD PTR $T218142[esp+428]
 	push	edx
-	lea	ecx, DWORD PTR _kEntry$217348[esp+432]
+	lea	ecx, DWORD PTR _kEntry$217390[esp+432]
 	call	??$?APBD@Table@FLua@@QAE?AVField@01@PBD@Z ; FLua::Table::operator[]<char const *>
-	mov	DWORD PTR $T218314[esp+424], eax
+	mov	DWORD PTR $T218356[esp+424], eax
 	mov	ecx, esi
 	mov	BYTE PTR __$EHRec$[esp+432], 14		; 0000000eH
 	call	?getActionInfoIndex@CvActionInfo@@QBEHXZ ; CvActionInfo::getActionInfoIndex
 	push	eax
-	mov	eax, DWORD PTR $T218314[esp+428]
+	mov	eax, DWORD PTR $T218356[esp+428]
 	lea	ecx, DWORD PTR [eax+4]
 	push	ecx
 	mov	ecx, DWORD PTR [eax]
 	call	??$SetField@H@Table@FLua@@QAEXABVValue@1@H@Z ; FLua::Table::SetField<int>
-	lea	ecx, DWORD PTR $T218100[esp+428]
+	lea	ecx, DWORD PTR $T218142[esp+428]
 	mov	BYTE PTR __$EHRec$[esp+432], bl
 	call	??1Value@FLua@@QAE@XZ			; FLua::Value::~Value
 
 ; 77   : 		kEntry["HotKeyVal"]			= pEntry->getHotKeyVal();
 
-	push	OFFSET $SG217394
-	lea	edx, DWORD PTR $T218101[esp+428]
+	push	OFFSET $SG217436
+	lea	edx, DWORD PTR $T218143[esp+428]
 	push	edx
-	lea	ecx, DWORD PTR _kEntry$217348[esp+432]
+	lea	ecx, DWORD PTR _kEntry$217390[esp+432]
 	call	??$?APBD@Table@FLua@@QAE?AVField@01@PBD@Z ; FLua::Table::operator[]<char const *>
-	mov	DWORD PTR $T218323[esp+424], eax
+	mov	DWORD PTR $T218365[esp+424], eax
 	mov	ecx, esi
 	mov	BYTE PTR __$EHRec$[esp+432], 15		; 0000000fH
 	call	?getHotKeyVal@CvActionInfo@@QBEHXZ	; CvActionInfo::getHotKeyVal
 	push	eax
-	mov	eax, DWORD PTR $T218323[esp+428]
+	mov	eax, DWORD PTR $T218365[esp+428]
 	lea	ecx, DWORD PTR [eax+4]
 	push	ecx
 	mov	ecx, DWORD PTR [eax]
 	call	??$SetField@H@Table@FLua@@QAEXABVValue@1@H@Z ; FLua::Table::SetField<int>
-	lea	ecx, DWORD PTR $T218101[esp+428]
+	lea	ecx, DWORD PTR $T218143[esp+428]
 	mov	BYTE PTR __$EHRec$[esp+432], bl
 	call	??1Value@FLua@@QAE@XZ			; FLua::Value::~Value
 
 ; 78   : 		kEntry["HotKeyPriority"]	= pEntry->getHotKeyPriority();
 
-	push	OFFSET $SG217396
-	lea	edx, DWORD PTR $T218102[esp+428]
+	push	OFFSET $SG217438
+	lea	edx, DWORD PTR $T218144[esp+428]
 	push	edx
-	lea	ecx, DWORD PTR _kEntry$217348[esp+432]
+	lea	ecx, DWORD PTR _kEntry$217390[esp+432]
 	call	??$?APBD@Table@FLua@@QAE?AVField@01@PBD@Z ; FLua::Table::operator[]<char const *>
-	mov	DWORD PTR $T218332[esp+424], eax
+	mov	DWORD PTR $T218374[esp+424], eax
 	mov	ecx, esi
 	mov	BYTE PTR __$EHRec$[esp+432], 16		; 00000010H
 	call	?getHotKeyPriority@CvActionInfo@@QBEHXZ	; CvActionInfo::getHotKeyPriority
 	push	eax
-	mov	eax, DWORD PTR $T218332[esp+428]
+	mov	eax, DWORD PTR $T218374[esp+428]
 	lea	ecx, DWORD PTR [eax+4]
 	push	ecx
 	mov	ecx, DWORD PTR [eax]
 	call	??$SetField@H@Table@FLua@@QAEXABVValue@1@H@Z ; FLua::Table::SetField<int>
-	lea	ecx, DWORD PTR $T218102[esp+428]
+	lea	ecx, DWORD PTR $T218144[esp+428]
 	mov	BYTE PTR __$EHRec$[esp+432], bl
 	call	??1Value@FLua@@QAE@XZ			; FLua::Value::~Value
 
 ; 79   : 		kEntry["HotKeyValAlt"]		= pEntry->getHotKeyValAlt();
 
-	push	OFFSET $SG217398
-	lea	edx, DWORD PTR $T218103[esp+428]
+	push	OFFSET $SG217440
+	lea	edx, DWORD PTR $T218145[esp+428]
 	push	edx
-	lea	ecx, DWORD PTR _kEntry$217348[esp+432]
+	lea	ecx, DWORD PTR _kEntry$217390[esp+432]
 	call	??$?APBD@Table@FLua@@QAE?AVField@01@PBD@Z ; FLua::Table::operator[]<char const *>
-	mov	DWORD PTR $T218341[esp+424], eax
+	mov	DWORD PTR $T218383[esp+424], eax
 	mov	ecx, esi
 	mov	BYTE PTR __$EHRec$[esp+432], 17		; 00000011H
 	call	?getHotKeyValAlt@CvActionInfo@@QBEHXZ	; CvActionInfo::getHotKeyValAlt
 	push	eax
-	mov	eax, DWORD PTR $T218341[esp+428]
+	mov	eax, DWORD PTR $T218383[esp+428]
 	lea	ecx, DWORD PTR [eax+4]
 	push	ecx
 	mov	ecx, DWORD PTR [eax]
 	call	??$SetField@H@Table@FLua@@QAEXABVValue@1@H@Z ; FLua::Table::SetField<int>
-	lea	ecx, DWORD PTR $T218103[esp+428]
+	lea	ecx, DWORD PTR $T218145[esp+428]
 	mov	BYTE PTR __$EHRec$[esp+432], bl
 	call	??1Value@FLua@@QAE@XZ			; FLua::Value::~Value
 
 ; 80   : 		kEntry["HotKeyPriorityAlt"]	= pEntry->getHotKeyPriorityAlt();
 
-	push	OFFSET $SG217400
-	lea	edx, DWORD PTR $T218104[esp+428]
+	push	OFFSET $SG217442
+	lea	edx, DWORD PTR $T218146[esp+428]
 	push	edx
-	lea	ecx, DWORD PTR _kEntry$217348[esp+432]
+	lea	ecx, DWORD PTR _kEntry$217390[esp+432]
 	call	??$?APBD@Table@FLua@@QAE?AVField@01@PBD@Z ; FLua::Table::operator[]<char const *>
-	mov	DWORD PTR $T218350[esp+424], eax
+	mov	DWORD PTR $T218392[esp+424], eax
 	mov	ecx, esi
 	mov	BYTE PTR __$EHRec$[esp+432], 18		; 00000012H
 	call	?getHotKeyPriorityAlt@CvActionInfo@@QBEHXZ ; CvActionInfo::getHotKeyPriorityAlt
 	push	eax
-	mov	eax, DWORD PTR $T218350[esp+428]
+	mov	eax, DWORD PTR $T218392[esp+428]
 	lea	ecx, DWORD PTR [eax+4]
 	push	ecx
 	mov	ecx, DWORD PTR [eax]
 	call	??$SetField@H@Table@FLua@@QAEXABVValue@1@H@Z ; FLua::Table::SetField<int>
-	lea	ecx, DWORD PTR $T218104[esp+428]
+	lea	ecx, DWORD PTR $T218146[esp+428]
 	mov	BYTE PTR __$EHRec$[esp+432], bl
 	call	??1Value@FLua@@QAE@XZ			; FLua::Value::~Value
 
 ; 81   : 		kEntry["OrderPriority"]		= pEntry->getOrderPriority();
 
-	push	OFFSET $SG217402
-	lea	edx, DWORD PTR $T218105[esp+428]
+	push	OFFSET $SG217444
+	lea	edx, DWORD PTR $T218147[esp+428]
 	push	edx
-	lea	ecx, DWORD PTR _kEntry$217348[esp+432]
+	lea	ecx, DWORD PTR _kEntry$217390[esp+432]
 	call	??$?APBD@Table@FLua@@QAE?AVField@01@PBD@Z ; FLua::Table::operator[]<char const *>
-	mov	DWORD PTR $T218359[esp+424], eax
+	mov	DWORD PTR $T218401[esp+424], eax
 	mov	ecx, esi
 	mov	BYTE PTR __$EHRec$[esp+432], 19		; 00000013H
 	call	?getOrderPriority@CvActionInfo@@QBEHXZ	; CvActionInfo::getOrderPriority
 	push	eax
-	mov	eax, DWORD PTR $T218359[esp+428]
+	mov	eax, DWORD PTR $T218401[esp+428]
 	lea	ecx, DWORD PTR [eax+4]
 	push	ecx
 	mov	ecx, DWORD PTR [eax]
 	call	??$SetField@H@Table@FLua@@QAEXABVValue@1@H@Z ; FLua::Table::SetField<int>
-	lea	ecx, DWORD PTR $T218105[esp+428]
+	lea	ecx, DWORD PTR $T218147[esp+428]
 	mov	BYTE PTR __$EHRec$[esp+432], bl
 	call	??1Value@FLua@@QAE@XZ			; FLua::Value::~Value
 
 ; 82   : 
 ; 83   : 		kEntry["AltDown"]			= pEntry->isAltDown();
 
-	push	OFFSET $SG217404
-	lea	edx, DWORD PTR $T218106[esp+428]
+	push	OFFSET $SG217446
+	lea	edx, DWORD PTR $T218148[esp+428]
 	push	edx
-	lea	ecx, DWORD PTR _kEntry$217348[esp+432]
+	lea	ecx, DWORD PTR _kEntry$217390[esp+432]
 	call	??$?APBD@Table@FLua@@QAE?AVField@01@PBD@Z ; FLua::Table::operator[]<char const *>
-	mov	DWORD PTR $T218368[esp+424], eax
+	mov	DWORD PTR $T218410[esp+424], eax
 	mov	ecx, esi
 	mov	BYTE PTR __$EHRec$[esp+432], 20		; 00000014H
 	call	?isAltDown@CvActionInfo@@QBE_NXZ	; CvActionInfo::isAltDown
-	mov	BYTE PTR $T218369[esp+424], al
-	mov	eax, DWORD PTR $T218369[esp+424]
+	mov	BYTE PTR $T218411[esp+424], al
+	mov	eax, DWORD PTR $T218411[esp+424]
 	push	eax
-	mov	eax, DWORD PTR $T218368[esp+428]
+	mov	eax, DWORD PTR $T218410[esp+428]
 	lea	ecx, DWORD PTR [eax+4]
 	push	ecx
 	mov	ecx, DWORD PTR [eax]
 	call	??$SetField@_N@Table@FLua@@QAEXABVValue@1@_N@Z ; FLua::Table::SetField<bool>
-	lea	ecx, DWORD PTR $T218106[esp+428]
+	lea	ecx, DWORD PTR $T218148[esp+428]
 	mov	BYTE PTR __$EHRec$[esp+432], bl
 	call	??1Value@FLua@@QAE@XZ			; FLua::Value::~Value
 
 ; 84   : 		kEntry["ShiftDown"]			= pEntry->isShiftDown();
 
-	push	OFFSET $SG217406
-	lea	edx, DWORD PTR $T218107[esp+428]
+	push	OFFSET $SG217448
+	lea	edx, DWORD PTR $T218149[esp+428]
 	push	edx
-	lea	ecx, DWORD PTR _kEntry$217348[esp+432]
+	lea	ecx, DWORD PTR _kEntry$217390[esp+432]
 	call	??$?APBD@Table@FLua@@QAE?AVField@01@PBD@Z ; FLua::Table::operator[]<char const *>
-	mov	DWORD PTR $T218377[esp+424], eax
+	mov	DWORD PTR $T218419[esp+424], eax
 	mov	ecx, esi
 	mov	BYTE PTR __$EHRec$[esp+432], 21		; 00000015H
 	call	?isShiftDown@CvActionInfo@@QBE_NXZ	; CvActionInfo::isShiftDown
-	mov	BYTE PTR $T218378[esp+424], al
-	mov	eax, DWORD PTR $T218378[esp+424]
+	mov	BYTE PTR $T218420[esp+424], al
+	mov	eax, DWORD PTR $T218420[esp+424]
 	push	eax
-	mov	eax, DWORD PTR $T218377[esp+428]
+	mov	eax, DWORD PTR $T218419[esp+428]
 	lea	ecx, DWORD PTR [eax+4]
 	push	ecx
 	mov	ecx, DWORD PTR [eax]
 	call	??$SetField@_N@Table@FLua@@QAEXABVValue@1@_N@Z ; FLua::Table::SetField<bool>
-	lea	ecx, DWORD PTR $T218107[esp+428]
+	lea	ecx, DWORD PTR $T218149[esp+428]
 	mov	BYTE PTR __$EHRec$[esp+432], bl
 	call	??1Value@FLua@@QAE@XZ			; FLua::Value::~Value
 
 ; 85   : 		kEntry["CtrlDown"]			= pEntry->isCtrlDown();
 
-	push	OFFSET $SG217408
-	lea	edx, DWORD PTR $T218108[esp+428]
+	push	OFFSET $SG217450
+	lea	edx, DWORD PTR $T218150[esp+428]
 	push	edx
-	lea	ecx, DWORD PTR _kEntry$217348[esp+432]
+	lea	ecx, DWORD PTR _kEntry$217390[esp+432]
 	call	??$?APBD@Table@FLua@@QAE?AVField@01@PBD@Z ; FLua::Table::operator[]<char const *>
-	mov	DWORD PTR $T218386[esp+424], eax
+	mov	DWORD PTR $T218428[esp+424], eax
 	mov	ecx, esi
 	mov	BYTE PTR __$EHRec$[esp+432], 22		; 00000016H
 	call	?isCtrlDown@CvActionInfo@@QBE_NXZ	; CvActionInfo::isCtrlDown
-	mov	BYTE PTR $T218387[esp+424], al
-	mov	eax, DWORD PTR $T218387[esp+424]
+	mov	BYTE PTR $T218429[esp+424], al
+	mov	eax, DWORD PTR $T218429[esp+424]
 	push	eax
-	mov	eax, DWORD PTR $T218386[esp+428]
+	mov	eax, DWORD PTR $T218428[esp+428]
 	lea	ecx, DWORD PTR [eax+4]
 	push	ecx
 	mov	ecx, DWORD PTR [eax]
 	call	??$SetField@_N@Table@FLua@@QAEXABVValue@1@_N@Z ; FLua::Table::SetField<bool>
-	lea	ecx, DWORD PTR $T218108[esp+428]
+	lea	ecx, DWORD PTR $T218150[esp+428]
 	mov	BYTE PTR __$EHRec$[esp+432], bl
 	call	??1Value@FLua@@QAE@XZ			; FLua::Value::~Value
 
 ; 86   : 		kEntry["AltDownAlt"]		= pEntry->isAltDownAlt();
 
-	push	OFFSET $SG217410
-	lea	edx, DWORD PTR $T218109[esp+428]
+	push	OFFSET $SG217452
+	lea	edx, DWORD PTR $T218151[esp+428]
 	push	edx
-	lea	ecx, DWORD PTR _kEntry$217348[esp+432]
+	lea	ecx, DWORD PTR _kEntry$217390[esp+432]
 	call	??$?APBD@Table@FLua@@QAE?AVField@01@PBD@Z ; FLua::Table::operator[]<char const *>
-	mov	DWORD PTR $T218395[esp+424], eax
+	mov	DWORD PTR $T218437[esp+424], eax
 	mov	ecx, esi
 	mov	BYTE PTR __$EHRec$[esp+432], 23		; 00000017H
 	call	?isAltDownAlt@CvActionInfo@@QBE_NXZ	; CvActionInfo::isAltDownAlt
-	mov	BYTE PTR $T218396[esp+424], al
-	mov	eax, DWORD PTR $T218396[esp+424]
+	mov	BYTE PTR $T218438[esp+424], al
+	mov	eax, DWORD PTR $T218438[esp+424]
 	push	eax
-	mov	eax, DWORD PTR $T218395[esp+428]
+	mov	eax, DWORD PTR $T218437[esp+428]
 	lea	ecx, DWORD PTR [eax+4]
 	push	ecx
 	mov	ecx, DWORD PTR [eax]
 	call	??$SetField@_N@Table@FLua@@QAEXABVValue@1@_N@Z ; FLua::Table::SetField<bool>
-	lea	ecx, DWORD PTR $T218109[esp+428]
+	lea	ecx, DWORD PTR $T218151[esp+428]
 	mov	BYTE PTR __$EHRec$[esp+432], bl
 	call	??1Value@FLua@@QAE@XZ			; FLua::Value::~Value
 
 ; 87   : 		kEntry["ShiftDownAlt"]		= pEntry->isShiftDownAlt();
 
-	push	OFFSET $SG217412
-	lea	edx, DWORD PTR $T218110[esp+428]
+	push	OFFSET $SG217454
+	lea	edx, DWORD PTR $T218152[esp+428]
 	push	edx
-	lea	ecx, DWORD PTR _kEntry$217348[esp+432]
+	lea	ecx, DWORD PTR _kEntry$217390[esp+432]
 	call	??$?APBD@Table@FLua@@QAE?AVField@01@PBD@Z ; FLua::Table::operator[]<char const *>
-	mov	DWORD PTR $T218404[esp+424], eax
+	mov	DWORD PTR $T218446[esp+424], eax
 	mov	ecx, esi
 	mov	BYTE PTR __$EHRec$[esp+432], 24		; 00000018H
 	call	?isShiftDownAlt@CvActionInfo@@QBE_NXZ	; CvActionInfo::isShiftDownAlt
-	mov	BYTE PTR $T218405[esp+424], al
-	mov	eax, DWORD PTR $T218405[esp+424]
+	mov	BYTE PTR $T218447[esp+424], al
+	mov	eax, DWORD PTR $T218447[esp+424]
 	push	eax
-	mov	eax, DWORD PTR $T218404[esp+428]
+	mov	eax, DWORD PTR $T218446[esp+428]
 	lea	ecx, DWORD PTR [eax+4]
 	push	ecx
 	mov	ecx, DWORD PTR [eax]
 	call	??$SetField@_N@Table@FLua@@QAEXABVValue@1@_N@Z ; FLua::Table::SetField<bool>
-	lea	ecx, DWORD PTR $T218110[esp+428]
+	lea	ecx, DWORD PTR $T218152[esp+428]
 	mov	BYTE PTR __$EHRec$[esp+432], bl
 	call	??1Value@FLua@@QAE@XZ			; FLua::Value::~Value
 
 ; 88   : 		kEntry["CtrlDownAlt"]		= pEntry->isCtrlDownAlt();
 
-	push	OFFSET $SG217414
-	lea	edx, DWORD PTR $T218111[esp+428]
+	push	OFFSET $SG217456
+	lea	edx, DWORD PTR $T218153[esp+428]
 	push	edx
-	lea	ecx, DWORD PTR _kEntry$217348[esp+432]
+	lea	ecx, DWORD PTR _kEntry$217390[esp+432]
 	call	??$?APBD@Table@FLua@@QAE?AVField@01@PBD@Z ; FLua::Table::operator[]<char const *>
-	mov	DWORD PTR $T218413[esp+424], eax
+	mov	DWORD PTR $T218455[esp+424], eax
 	mov	ecx, esi
 	mov	BYTE PTR __$EHRec$[esp+432], 25		; 00000019H
 	call	?isCtrlDownAlt@CvActionInfo@@QBE_NXZ	; CvActionInfo::isCtrlDownAlt
-	mov	BYTE PTR $T218414[esp+424], al
-	mov	eax, DWORD PTR $T218414[esp+424]
+	mov	BYTE PTR $T218456[esp+424], al
+	mov	eax, DWORD PTR $T218456[esp+424]
 	push	eax
-	mov	eax, DWORD PTR $T218413[esp+428]
+	mov	eax, DWORD PTR $T218455[esp+428]
 	lea	ecx, DWORD PTR [eax+4]
 	push	ecx
 	mov	ecx, DWORD PTR [eax]
 	call	??$SetField@_N@Table@FLua@@QAEXABVValue@1@_N@Z ; FLua::Table::SetField<bool>
-	lea	ecx, DWORD PTR $T218111[esp+428]
+	lea	ecx, DWORD PTR $T218153[esp+428]
 	mov	BYTE PTR __$EHRec$[esp+432], bl
 	call	??1Value@FLua@@QAE@XZ			; FLua::Value::~Value
 
 ; 89   : 
 ; 90   : 		kEntry["HotKey"]			= pEntry->getHotKeyString();
 
-	push	OFFSET $SG217416
-	lea	edx, DWORD PTR $T218112[esp+428]
+	push	OFFSET $SG217458
+	lea	edx, DWORD PTR $T218154[esp+428]
 	push	edx
-	lea	ecx, DWORD PTR _kEntry$217348[esp+432]
+	lea	ecx, DWORD PTR _kEntry$217390[esp+432]
 	call	??$?APBD@Table@FLua@@QAE?AVField@01@PBD@Z ; FLua::Table::operator[]<char const *>
-	mov	DWORD PTR $T218422[esp+424], eax
+	mov	DWORD PTR $T218464[esp+424], eax
 	mov	ecx, esi
 	mov	BYTE PTR __$EHRec$[esp+432], 26		; 0000001aH
 	call	?getHotKeyString@CvActionInfo@@QBEPBDXZ	; CvActionInfo::getHotKeyString
 	push	eax
-	mov	eax, DWORD PTR $T218422[esp+428]
+	mov	eax, DWORD PTR $T218464[esp+428]
 	lea	ecx, DWORD PTR [eax+4]
 	push	ecx
 	mov	ecx, DWORD PTR [eax]
 	call	??$SetField@PBD@Table@FLua@@QAEXABVValue@1@PBD@Z ; FLua::Table::SetField<char const *>
-	lea	ecx, DWORD PTR $T218112[esp+428]
+	lea	ecx, DWORD PTR $T218154[esp+428]
 	mov	BYTE PTR __$EHRec$[esp+432], bl
 	call	??1Value@FLua@@QAE@XZ			; FLua::Value::~Value
 
 ; 91   : 		kEntry["Help"]				= pEntry->GetHelp();
 
-	push	OFFSET $SG217418
-	lea	edx, DWORD PTR $T218113[esp+428]
+	push	OFFSET $SG217460
+	lea	edx, DWORD PTR $T218155[esp+428]
 	push	edx
-	lea	ecx, DWORD PTR _kEntry$217348[esp+432]
+	lea	ecx, DWORD PTR _kEntry$217390[esp+432]
 	call	??$?APBD@Table@FLua@@QAE?AVField@01@PBD@Z ; FLua::Table::operator[]<char const *>
-	mov	DWORD PTR $T218431[esp+424], eax
+	mov	DWORD PTR $T218473[esp+424], eax
 	mov	ecx, esi
 	mov	BYTE PTR __$EHRec$[esp+432], 27		; 0000001bH
 	call	?GetHelp@CvActionInfo@@QBEPBDXZ		; CvActionInfo::GetHelp
 	push	eax
-	mov	eax, DWORD PTR $T218431[esp+428]
+	mov	eax, DWORD PTR $T218473[esp+428]
 	lea	ecx, DWORD PTR [eax+4]
 	push	ecx
 	mov	ecx, DWORD PTR [eax]
 	call	??$SetField@PBD@Table@FLua@@QAEXABVValue@1@PBD@Z ; FLua::Table::SetField<char const *>
-	lea	ecx, DWORD PTR $T218113[esp+428]
+	lea	ecx, DWORD PTR $T218155[esp+428]
 	mov	BYTE PTR __$EHRec$[esp+432], bl
 	call	??1Value@FLua@@QAE@XZ			; FLua::Value::~Value
 
 ; 92   : 		kEntry["DisabledHelp"]		= pEntry->GetDisabledHelp();
 
-	push	OFFSET $SG217420
-	lea	edx, DWORD PTR $T218114[esp+428]
+	push	OFFSET $SG217462
+	lea	edx, DWORD PTR $T218156[esp+428]
 	push	edx
-	lea	ecx, DWORD PTR _kEntry$217348[esp+432]
+	lea	ecx, DWORD PTR _kEntry$217390[esp+432]
 	call	??$?APBD@Table@FLua@@QAE?AVField@01@PBD@Z ; FLua::Table::operator[]<char const *>
-	mov	DWORD PTR $T218440[esp+424], eax
+	mov	DWORD PTR $T218482[esp+424], eax
 	mov	ecx, esi
 	mov	BYTE PTR __$EHRec$[esp+432], 28		; 0000001cH
 	call	?GetDisabledHelp@CvActionInfo@@QBEPBDXZ	; CvActionInfo::GetDisabledHelp
 	push	eax
-	mov	eax, DWORD PTR $T218440[esp+428]
+	mov	eax, DWORD PTR $T218482[esp+428]
 	lea	ecx, DWORD PTR [eax+4]
 	push	ecx
 	mov	ecx, DWORD PTR [eax]
 	call	??$SetField@PBD@Table@FLua@@QAEXABVValue@1@PBD@Z ; FLua::Table::SetField<char const *>
-	lea	ecx, DWORD PTR $T218114[esp+428]
+	lea	ecx, DWORD PTR $T218156[esp+428]
 	mov	BYTE PTR __$EHRec$[esp+432], bl
 	call	??1Value@FLua@@QAE@XZ			; FLua::Value::~Value
 
@@ -2280,14 +2280,14 @@ $LN41@pRegisterA:
 
 ; 97   : 	}
 
-	lea	ecx, DWORD PTR _kEntry$217348[esp+424]
+	lea	ecx, DWORD PTR _kEntry$217390[esp+424]
 	mov	DWORD PTR _idx$[esp+424], esi
 	mov	DWORD PTR __$EHRec$[esp+432], -1
 	call	??1Value@FLua@@QAE@XZ			; FLua::Value::~Value
-	mov	eax, DWORD PTR _it$217298[esp+424]
+	mov	eax, DWORD PTR _it$217340[esp+424]
 	mov	ecx, DWORD PTR _infos$[esp+424]
 	add	eax, 4
-	mov	DWORD PTR _it$217298[esp+424], eax
+	mov	DWORD PTR _it$217340[esp+424], eax
 	cmp	eax, DWORD PTR [ecx+8]
 	jne	$LL204@pRegisterA
 $LN203@pRegisterA:
@@ -2309,91 +2309,91 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?pRegisterActions@CvLuaGameInfo@@CAHPAUlua_State@@@Z$0:
-	lea	ecx, DWORD PTR _kEntry$217348[ebp]
+	lea	ecx, DWORD PTR _kEntry$217390[ebp]
 	jmp	??1Table@FLua@@QAE@XZ			; FLua::Table::~Table
 __unwindfunclet$?pRegisterActions@CvLuaGameInfo@@CAHPAUlua_State@@@Z$1:
-	lea	ecx, DWORD PTR $T218087[ebp]
+	lea	ecx, DWORD PTR $T218129[ebp]
 	jmp	??1Field@Table@FLua@@QAE@XZ
 __unwindfunclet$?pRegisterActions@CvLuaGameInfo@@CAHPAUlua_State@@@Z$2:
-	lea	ecx, DWORD PTR $T218088[ebp]
+	lea	ecx, DWORD PTR $T218130[ebp]
 	jmp	??1Field@Table@FLua@@QAE@XZ
 __unwindfunclet$?pRegisterActions@CvLuaGameInfo@@CAHPAUlua_State@@@Z$3:
-	lea	ecx, DWORD PTR $T218089[ebp]
+	lea	ecx, DWORD PTR $T218131[ebp]
 	jmp	??1Field@Table@FLua@@QAE@XZ
 __unwindfunclet$?pRegisterActions@CvLuaGameInfo@@CAHPAUlua_State@@@Z$4:
-	lea	ecx, DWORD PTR $T218090[ebp]
+	lea	ecx, DWORD PTR $T218132[ebp]
 	jmp	??1Field@Table@FLua@@QAE@XZ
 __unwindfunclet$?pRegisterActions@CvLuaGameInfo@@CAHPAUlua_State@@@Z$5:
-	lea	ecx, DWORD PTR $T218091[ebp]
+	lea	ecx, DWORD PTR $T218133[ebp]
 	jmp	??1Field@Table@FLua@@QAE@XZ
 __unwindfunclet$?pRegisterActions@CvLuaGameInfo@@CAHPAUlua_State@@@Z$6:
-	lea	ecx, DWORD PTR $T218092[ebp]
+	lea	ecx, DWORD PTR $T218134[ebp]
 	jmp	??1Field@Table@FLua@@QAE@XZ
 __unwindfunclet$?pRegisterActions@CvLuaGameInfo@@CAHPAUlua_State@@@Z$7:
-	lea	ecx, DWORD PTR $T218093[ebp]
+	lea	ecx, DWORD PTR $T218135[ebp]
 	jmp	??1Field@Table@FLua@@QAE@XZ
 __unwindfunclet$?pRegisterActions@CvLuaGameInfo@@CAHPAUlua_State@@@Z$8:
-	lea	ecx, DWORD PTR $T218094[ebp]
+	lea	ecx, DWORD PTR $T218136[ebp]
 	jmp	??1Field@Table@FLua@@QAE@XZ
 __unwindfunclet$?pRegisterActions@CvLuaGameInfo@@CAHPAUlua_State@@@Z$9:
-	lea	ecx, DWORD PTR $T218095[ebp]
+	lea	ecx, DWORD PTR $T218137[ebp]
 	jmp	??1Field@Table@FLua@@QAE@XZ
 __unwindfunclet$?pRegisterActions@CvLuaGameInfo@@CAHPAUlua_State@@@Z$10:
-	lea	ecx, DWORD PTR $T218096[ebp]
+	lea	ecx, DWORD PTR $T218138[ebp]
 	jmp	??1Field@Table@FLua@@QAE@XZ
 __unwindfunclet$?pRegisterActions@CvLuaGameInfo@@CAHPAUlua_State@@@Z$11:
-	lea	ecx, DWORD PTR $T218097[ebp]
+	lea	ecx, DWORD PTR $T218139[ebp]
 	jmp	??1Field@Table@FLua@@QAE@XZ
 __unwindfunclet$?pRegisterActions@CvLuaGameInfo@@CAHPAUlua_State@@@Z$12:
-	lea	ecx, DWORD PTR $T218098[ebp]
+	lea	ecx, DWORD PTR $T218140[ebp]
 	jmp	??1Field@Table@FLua@@QAE@XZ
 __unwindfunclet$?pRegisterActions@CvLuaGameInfo@@CAHPAUlua_State@@@Z$13:
-	lea	ecx, DWORD PTR $T218099[ebp]
+	lea	ecx, DWORD PTR $T218141[ebp]
 	jmp	??1Field@Table@FLua@@QAE@XZ
 __unwindfunclet$?pRegisterActions@CvLuaGameInfo@@CAHPAUlua_State@@@Z$14:
-	lea	ecx, DWORD PTR $T218100[ebp]
+	lea	ecx, DWORD PTR $T218142[ebp]
 	jmp	??1Field@Table@FLua@@QAE@XZ
 __unwindfunclet$?pRegisterActions@CvLuaGameInfo@@CAHPAUlua_State@@@Z$15:
-	lea	ecx, DWORD PTR $T218101[ebp]
+	lea	ecx, DWORD PTR $T218143[ebp]
 	jmp	??1Field@Table@FLua@@QAE@XZ
 __unwindfunclet$?pRegisterActions@CvLuaGameInfo@@CAHPAUlua_State@@@Z$16:
-	lea	ecx, DWORD PTR $T218102[ebp]
+	lea	ecx, DWORD PTR $T218144[ebp]
 	jmp	??1Field@Table@FLua@@QAE@XZ
 __unwindfunclet$?pRegisterActions@CvLuaGameInfo@@CAHPAUlua_State@@@Z$17:
-	lea	ecx, DWORD PTR $T218103[ebp]
+	lea	ecx, DWORD PTR $T218145[ebp]
 	jmp	??1Field@Table@FLua@@QAE@XZ
 __unwindfunclet$?pRegisterActions@CvLuaGameInfo@@CAHPAUlua_State@@@Z$18:
-	lea	ecx, DWORD PTR $T218104[ebp]
+	lea	ecx, DWORD PTR $T218146[ebp]
 	jmp	??1Field@Table@FLua@@QAE@XZ
 __unwindfunclet$?pRegisterActions@CvLuaGameInfo@@CAHPAUlua_State@@@Z$19:
-	lea	ecx, DWORD PTR $T218105[ebp]
+	lea	ecx, DWORD PTR $T218147[ebp]
 	jmp	??1Field@Table@FLua@@QAE@XZ
 __unwindfunclet$?pRegisterActions@CvLuaGameInfo@@CAHPAUlua_State@@@Z$20:
-	lea	ecx, DWORD PTR $T218106[ebp]
+	lea	ecx, DWORD PTR $T218148[ebp]
 	jmp	??1Field@Table@FLua@@QAE@XZ
 __unwindfunclet$?pRegisterActions@CvLuaGameInfo@@CAHPAUlua_State@@@Z$21:
-	lea	ecx, DWORD PTR $T218107[ebp]
+	lea	ecx, DWORD PTR $T218149[ebp]
 	jmp	??1Field@Table@FLua@@QAE@XZ
 __unwindfunclet$?pRegisterActions@CvLuaGameInfo@@CAHPAUlua_State@@@Z$22:
-	lea	ecx, DWORD PTR $T218108[ebp]
+	lea	ecx, DWORD PTR $T218150[ebp]
 	jmp	??1Field@Table@FLua@@QAE@XZ
 __unwindfunclet$?pRegisterActions@CvLuaGameInfo@@CAHPAUlua_State@@@Z$23:
-	lea	ecx, DWORD PTR $T218109[ebp]
+	lea	ecx, DWORD PTR $T218151[ebp]
 	jmp	??1Field@Table@FLua@@QAE@XZ
 __unwindfunclet$?pRegisterActions@CvLuaGameInfo@@CAHPAUlua_State@@@Z$24:
-	lea	ecx, DWORD PTR $T218110[ebp]
+	lea	ecx, DWORD PTR $T218152[ebp]
 	jmp	??1Field@Table@FLua@@QAE@XZ
 __unwindfunclet$?pRegisterActions@CvLuaGameInfo@@CAHPAUlua_State@@@Z$25:
-	lea	ecx, DWORD PTR $T218111[ebp]
+	lea	ecx, DWORD PTR $T218153[ebp]
 	jmp	??1Field@Table@FLua@@QAE@XZ
 __unwindfunclet$?pRegisterActions@CvLuaGameInfo@@CAHPAUlua_State@@@Z$26:
-	lea	ecx, DWORD PTR $T218112[ebp]
+	lea	ecx, DWORD PTR $T218154[ebp]
 	jmp	??1Field@Table@FLua@@QAE@XZ
 __unwindfunclet$?pRegisterActions@CvLuaGameInfo@@CAHPAUlua_State@@@Z$27:
-	lea	ecx, DWORD PTR $T218113[ebp]
+	lea	ecx, DWORD PTR $T218155[ebp]
 	jmp	??1Field@Table@FLua@@QAE@XZ
 __unwindfunclet$?pRegisterActions@CvLuaGameInfo@@CAHPAUlua_State@@@Z$28:
-	lea	ecx, DWORD PTR $T218114[ebp]
+	lea	ecx, DWORD PTR $T218156[ebp]
 	jmp	??1Field@Table@FLua@@QAE@XZ
 __ehhandler$?pRegisterActions@CvLuaGameInfo@@CAHPAUlua_State@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?pRegisterActions@CvLuaGameInfo@@CAHPAUlua_State@@@Z
@@ -2431,7 +2431,7 @@ _L$ = 8							; size = 4
 
 ; 106  : 	lua_setglobal(L, "GameInfoTypes");
 
-	push	OFFSET $SG217426
+	push	OFFSET $SG217468
 	push	-10002					; ffffd8eeH
 	push	edi
 	call	_lua_setfield

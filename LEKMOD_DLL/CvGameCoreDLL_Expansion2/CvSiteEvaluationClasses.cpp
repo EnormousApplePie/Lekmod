@@ -71,7 +71,7 @@ bool CvCitySiteEvaluator::CanFound(CvPlot* pPlot, const CvPlayer* pPlayer, bool 
 	if(GC.getGame().isFinalInitialized())
 	{
 #ifdef NQM_AI_GIMP_NO_BUILDING_SETTLERS
-		if (pPlayer && (pPlayer->isHuman() && GC.getGame().isOption(GAMEOPTION_ONE_CITY_CHALLENGE)) || (!pPlayer->isHuman() && GC.getGame().isOption("GAMEOPTION_AI_GIMP_NO_BUILDING_SETTLERS")))
+		if (pPlayer && (pPlayer->isHuman() && GC.getGame().isOption(GAMEOPTION_ONE_CITY_CHALLENGE)) || (!pPlayer->isHuman() && (GC.getGame().isOption("GAMEOPTION_AI_TWEAKS") || GC.getGame().isOption("GAMEOPTION_AI_GIMP_NO_BUILDING_SETTLERS"))))
 #else
 		if(GC.getGame().isOption(GAMEOPTION_ONE_CITY_CHALLENGE) && pPlayer && pPlayer->isHuman())
 #endif

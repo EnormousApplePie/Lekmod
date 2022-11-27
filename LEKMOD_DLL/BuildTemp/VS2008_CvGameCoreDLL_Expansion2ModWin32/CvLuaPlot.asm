@@ -10,387 +10,387 @@ INCLUDELIB MSVCRT
 INCLUDELIB OLDNAMES
 
 CONST	SEGMENT
-$SG220421 DB	'CanHaveFeature', 00H
+$SG220463 DB	'CanHaveFeature', 00H
 	ORG $+1
-$SG220422 DB	'GetFeatureType', 00H
+$SG220464 DB	'GetFeatureType', 00H
 	ORG $+1
-$SG220423 DB	'GetTerrainType', 00H
+$SG220465 DB	'GetTerrainType', 00H
 	ORG $+1
-$SG220424 DB	'IsRiver', 00H
-$SG220425 DB	'IsWater', 00H
-$SG220426 DB	'SetFeatureType', 00H
+$SG220466 DB	'IsRiver', 00H
+$SG220467 DB	'IsWater', 00H
+$SG220468 DB	'SetFeatureType', 00H
 	ORG $+1
-$SG220427 DB	'SetTerrainType', 00H
+$SG220469 DB	'SetTerrainType', 00H
 	ORG $+1
-$SG220428 DB	'IsNone', 00H
+$SG220470 DB	'IsNone', 00H
 	ORG $+1
-$SG220429 DB	'Erase', 00H
+$SG220471 DB	'Erase', 00H
 	ORG $+2
-$SG220430 DB	'GetTeam', 00H
-$SG220431 DB	'NukeExplosion', 00H
+$SG220472 DB	'GetTeam', 00H
+$SG220473 DB	'NukeExplosion', 00H
 	ORG $+2
-$SG220432 DB	'GetInlandCorner', 00H
-$SG220433 DB	'UpdateFog', 00H
+$SG220474 DB	'GetInlandCorner', 00H
+$SG220475 DB	'UpdateFog', 00H
 	ORG $+2
-$SG220434 DB	'UpdateVisibility', 00H
+$SG220476 DB	'UpdateVisibility', 00H
 	ORG $+3
-$SG220435 DB	'IsAdjacentToArea', 00H
+$SG220477 DB	'IsAdjacentToArea', 00H
 	ORG $+3
-$SG220436 DB	'ShareAdjacentArea', 00H
+$SG220478 DB	'ShareAdjacentArea', 00H
 	ORG $+2
-$SG220437 DB	'IsAdjacentToLand', 00H
+$SG220479 DB	'IsAdjacentToLand', 00H
 	ORG $+3
-$SG220438 DB	'IsAdjacentToShallowWater', 00H
+$SG220480 DB	'IsAdjacentToShallowWater', 00H
 	ORG $+3
-$SG220439 DB	'IsCoastalLand', 00H
+$SG220481 DB	'IsCoastalLand', 00H
 	ORG $+2
-$SG220440 DB	'IsWithinTeamCityRadius', 00H
+$SG220482 DB	'IsWithinTeamCityRadius', 00H
 	ORG $+1
-$SG220441 DB	'IsLake', 00H
+$SG220483 DB	'IsLake', 00H
 	ORG $+1
-$SG220442 DB	'IsFreshWater', 00H
+$SG220484 DB	'IsFreshWater', 00H
 	ORG $+3
-$SG220443 DB	'IsRiverSide', 00H
-$SG220444 DB	'IsRiverConnection', 00H
+$SG220485 DB	'IsRiverSide', 00H
+$SG220486 DB	'IsRiverConnection', 00H
 	ORG $+2
-$SG220445 DB	'IsRiverCrossingFlowClockwise', 00H
+$SG220487 DB	'IsRiverCrossingFlowClockwise', 00H
 	ORG $+3
-$SG220446 DB	'GetNearestLandArea', 00H
+$SG220488 DB	'GetNearestLandArea', 00H
 	ORG $+1
-$SG220447 DB	'SeeFromLevel', 00H
+$SG220489 DB	'SeeFromLevel', 00H
 	ORG $+3
-$SG220448 DB	'GetNearestLandPlot', 00H
+$SG220490 DB	'GetNearestLandPlot', 00H
 	ORG $+1
-$SG220449 DB	'SeeThroughLevel', 00H
-$SG220450 DB	'CanHaveResource', 00H
-$SG220451 DB	'CanHaveImprovement', 00H
+$SG220491 DB	'SeeThroughLevel', 00H
+$SG220492 DB	'CanHaveResource', 00H
+$SG220493 DB	'CanHaveImprovement', 00H
 	ORG $+1
-$SG220452 DB	'CanBuild', 00H
+$SG220494 DB	'CanBuild', 00H
 	ORG $+3
-$SG220453 DB	'GetBuildTime', 00H
+$SG220495 DB	'GetBuildTime', 00H
 	ORG $+3
-$SG220454 DB	'GetBuildTurnsLeft', 00H
+$SG220496 DB	'GetBuildTurnsLeft', 00H
 	ORG $+2
-$SG220455 DB	'GetBuildTurnsTotal', 00H
+$SG220497 DB	'GetBuildTurnsTotal', 00H
 	ORG $+1
-$SG220456 DB	'GetFeatureProduction', 00H
+$SG220498 DB	'GetFeatureProduction', 00H
 	ORG $+3
-$SG220457 DB	'GetFeatureFood', 00H
+$SG220499 DB	'GetFeatureFood', 00H
 	ORG $+1
-$SG220458 DB	'GetBestDefender', 00H
-$SG220459 DB	'GetSelectedUnit', 00H
-$SG220460 DB	'GetUnitPower', 00H
+$SG220500 DB	'GetBestDefender', 00H
+$SG220501 DB	'GetSelectedUnit', 00H
+$SG220502 DB	'GetUnitPower', 00H
 	ORG $+3
-$SG220461 DB	'DefenseModifier', 00H
-$SG220462 DB	'MovementCost', 00H
+$SG220503 DB	'DefenseModifier', 00H
+$SG220504 DB	'MovementCost', 00H
 	ORG $+3
-$SG220463 DB	'GetExtraMovePathCost', 00H
+$SG220505 DB	'GetExtraMovePathCost', 00H
 	ORG $+3
-$SG220464 DB	'ChangeExtraMovePathCost', 00H
-$SG220465 DB	'IsAdjacentOwned', 00H
-$SG220466 DB	'IsAdjacentPlayer', 00H
+$SG220506 DB	'ChangeExtraMovePathCost', 00H
+$SG220507 DB	'IsAdjacentOwned', 00H
+$SG220508 DB	'IsAdjacentPlayer', 00H
 	ORG $+3
-$SG220467 DB	'IsAdjacentTeam', 00H
+$SG220509 DB	'IsAdjacentTeam', 00H
 	ORG $+1
-$SG220468 DB	'IsOwned', 00H
-$SG220469 DB	'IsBarbarian', 00H
-$SG220470 DB	'IsRevealedBarbarian', 00H
-$SG220471 DB	'HasBarbarianCamp', 00H
+$SG220510 DB	'IsOwned', 00H
+$SG220511 DB	'IsBarbarian', 00H
+$SG220512 DB	'IsRevealedBarbarian', 00H
+$SG220513 DB	'HasBarbarianCamp', 00H
 	ORG $+3
-$SG220472 DB	'IsVisible', 00H
+$SG220514 DB	'IsVisible', 00H
 	ORG $+2
-$SG220473 DB	'IsActiveVisible', 00H
-$SG220474 DB	'IsVisibleToWatchingHuman', 00H
+$SG220515 DB	'IsActiveVisible', 00H
+$SG220516 DB	'IsVisibleToWatchingHuman', 00H
 	ORG $+3
-$SG220475 DB	'IsAdjacentVisible', 00H
+$SG220517 DB	'IsAdjacentVisible', 00H
 	ORG $+2
-$SG220476 DB	'IsAdjacentNonvisible', 00H
+$SG220518 DB	'IsAdjacentNonvisible', 00H
 	ORG $+3
-$SG220477 DB	'IsAdjacentRevealed', 00H
+$SG220519 DB	'IsAdjacentRevealed', 00H
 	ORG $+1
-$SG220478 DB	'IsAdjacentNonrevealed', 00H
+$SG220520 DB	'IsAdjacentNonrevealed', 00H
 	ORG $+2
-$SG220479 DB	'RemoveGoody', 00H
-$SG220480 DB	'IsGoody', 00H
-$SG220481 DB	'IsRevealedGoody', 00H
-$SG220482 DB	'IsFriendlyTerritory', 00H
-$SG220483 DB	'IsCity', 00H
+$SG220521 DB	'RemoveGoody', 00H
+$SG220522 DB	'IsGoody', 00H
+$SG220523 DB	'IsRevealedGoody', 00H
+$SG220524 DB	'IsFriendlyTerritory', 00H
+$SG220525 DB	'IsCity', 00H
 	ORG $+1
-$SG220484 DB	'IsFriendlyCity', 00H
+$SG220526 DB	'IsFriendlyCity', 00H
 	ORG $+1
-$SG220485 DB	'IsEnemyCity', 00H
-$SG220486 DB	'IsBeingWorked', 00H
+$SG220527 DB	'IsEnemyCity', 00H
+$SG220528 DB	'IsBeingWorked', 00H
 	ORG $+2
-$SG220487 DB	'IsUnit', 00H
+$SG220529 DB	'IsUnit', 00H
 	ORG $+1
-$SG220488 DB	'IsVisibleEnemyDefender', 00H
+$SG220530 DB	'IsVisibleEnemyDefender', 00H
 	ORG $+1
-$SG220489 DB	'GetNumDefenders', 00H
-$SG220490 DB	'GetNumVisibleEnemyDefenders', 00H
-$SG220491 DB	'GetNumVisiblePotentialEnemyDefenders', 00H
+$SG220531 DB	'GetNumDefenders', 00H
+$SG220532 DB	'GetNumVisibleEnemyDefenders', 00H
+$SG220533 DB	'GetNumVisiblePotentialEnemyDefenders', 00H
 	ORG $+3
-$SG220492 DB	'IsVisibleEnemyUnit', 00H
+$SG220534 DB	'IsVisibleEnemyUnit', 00H
 	ORG $+1
-$SG220493 DB	'IsVisibleOtherUnit', 00H
+$SG220535 DB	'IsVisibleOtherUnit', 00H
 	ORG $+1
-$SG220494 DB	'GetNumFriendlyUnitsOfType', 00H
+$SG220536 DB	'GetNumFriendlyUnitsOfType', 00H
 	ORG $+2
-$SG220495 DB	'IsFighting', 00H
+$SG220537 DB	'IsFighting', 00H
 	ORG $+1
-$SG220496 DB	'IsRoute', 00H
-$SG220497 DB	'IsTradeRoute', 00H
+$SG220538 DB	'IsRoute', 00H
+$SG220539 DB	'IsTradeRoute', 00H
 	ORG $+3
-$SG220498 DB	'IsValidDomainForLocation', 00H
+$SG220540 DB	'IsValidDomainForLocation', 00H
 	ORG $+3
-$SG220499 DB	'IsValidDomainForAction', 00H
+$SG220541 DB	'IsValidDomainForAction', 00H
 	ORG $+1
-$SG220500 DB	'IsImpassable', 00H
+$SG220542 DB	'IsImpassable', 00H
 	ORG $+3
-$SG220501 DB	'GetX', 00H
+$SG220543 DB	'GetX', 00H
 	ORG $+3
-$SG220502 DB	'GetY', 00H
+$SG220544 DB	'GetY', 00H
 	ORG $+3
-$SG220503 DB	'At', 00H
+$SG220545 DB	'At', 00H
 	ORG $+1
-$SG220504 DB	'GetPlotIndex', 00H
+$SG220546 DB	'GetPlotIndex', 00H
 	ORG $+3
-$SG220505 DB	'GetLatitude', 00H
-$SG220506 DB	'Area', 00H
+$SG220547 DB	'GetLatitude', 00H
+$SG220548 DB	'Area', 00H
 	ORG $+3
-$SG220507 DB	'WaterArea', 00H
+$SG220549 DB	'WaterArea', 00H
 	ORG $+2
-$SG220508 DB	'GetArea', 00H
-$SG220509 DB	'SetArea', 00H
-$SG220510 DB	'GetFeatureVariety', 00H
+$SG220550 DB	'GetArea', 00H
+$SG220551 DB	'SetArea', 00H
+$SG220552 DB	'GetFeatureVariety', 00H
 	ORG $+2
-$SG220511 DB	'GetOwnershipDuration', 00H
+$SG220553 DB	'GetOwnershipDuration', 00H
 	ORG $+3
-$SG220512 DB	'IsOwnershipScore', 00H
+$SG220554 DB	'IsOwnershipScore', 00H
 	ORG $+3
-$SG220513 DB	'SetOwnershipDuration', 00H
+$SG220555 DB	'SetOwnershipDuration', 00H
 	ORG $+3
-$SG220514 DB	'ChangeOwnershipDuration', 00H
-$SG220515 DB	'GetImprovementDuration', 00H
+$SG220556 DB	'ChangeOwnershipDuration', 00H
+$SG220557 DB	'GetImprovementDuration', 00H
 	ORG $+1
-$SG220516 DB	'SetImprovementDuration', 00H
+$SG220558 DB	'SetImprovementDuration', 00H
 	ORG $+1
-$SG220517 DB	'ChangeImprovementDuration', 00H
+$SG220559 DB	'ChangeImprovementDuration', 00H
 	ORG $+2
-$SG220518 DB	'GetUpgradeProgress', 00H
+$SG220560 DB	'GetUpgradeProgress', 00H
 	ORG $+1
-$SG220519 DB	'GetUpgradeTimeLeft', 00H
+$SG220561 DB	'GetUpgradeTimeLeft', 00H
 	ORG $+1
-$SG220520 DB	'SetUpgradeProgress', 00H
+$SG220562 DB	'SetUpgradeProgress', 00H
 	ORG $+1
-$SG220521 DB	'ChangeUpgradeProgress', 00H
+$SG220563 DB	'ChangeUpgradeProgress', 00H
 	ORG $+2
-$SG220522 DB	'GetCityRadiusCount', 00H
+$SG220564 DB	'GetCityRadiusCount', 00H
 	ORG $+1
-$SG220523 DB	'IsCityRadius', 00H
+$SG220565 DB	'IsCityRadius', 00H
 	ORG $+3
-$SG220524 DB	'IsStartingPlot', 00H
+$SG220566 DB	'IsStartingPlot', 00H
 	ORG $+1
-$SG220525 DB	'SetStartingPlot', 00H
-$SG220526 DB	'IsNEOfRiver', 00H
-$SG220527 DB	'SetNEOfRiver', 00H
+$SG220567 DB	'SetStartingPlot', 00H
+$SG220568 DB	'IsNEOfRiver', 00H
+$SG220569 DB	'SetNEOfRiver', 00H
 	ORG $+3
-$SG220528 DB	'IsWOfRiver', 00H
+$SG220570 DB	'IsWOfRiver', 00H
 	ORG $+1
-$SG220529 DB	'SetWOfRiver', 00H
-$SG220530 DB	'IsNWOfRiver', 00H
-$SG220531 DB	'SetNWOfRiver', 00H
+$SG220571 DB	'SetWOfRiver', 00H
+$SG220572 DB	'IsNWOfRiver', 00H
+$SG220573 DB	'SetNWOfRiver', 00H
 	ORG $+3
-$SG220532 DB	'GetRiverEFlowDirection', 00H
+$SG220574 DB	'GetRiverEFlowDirection', 00H
 	ORG $+1
-$SG220533 DB	'GetRiverSEFlowDirection', 00H
-$SG220534 DB	'GetRiverSWFlowDirection', 00H
-$SG220535 DB	'IsPotentialCityWork', 00H
-$SG220536 DB	'IsPotentialCityWorkForArea', 00H
+$SG220575 DB	'GetRiverSEFlowDirection', 00H
+$SG220576 DB	'GetRiverSWFlowDirection', 00H
+$SG220577 DB	'IsPotentialCityWork', 00H
+$SG220578 DB	'IsPotentialCityWorkForArea', 00H
 	ORG $+1
-$SG220537 DB	'GetOwner', 00H
+$SG220579 DB	'GetOwner', 00H
 	ORG $+3
-$SG220538 DB	'SetOwner', 00H
+$SG220580 DB	'SetOwner', 00H
 	ORG $+3
-$SG220539 DB	'GetPlotType', 00H
-$SG220540 DB	'IsFlatlands', 00H
-$SG220541 DB	'IsHills', 00H
-$SG220542 DB	'IsOpenGround', 00H
+$SG220581 DB	'GetPlotType', 00H
+$SG220582 DB	'IsFlatlands', 00H
+$SG220583 DB	'IsHills', 00H
+$SG220584 DB	'IsOpenGround', 00H
 	ORG $+3
-$SG220543 DB	'IsRoughGround', 00H
+$SG220585 DB	'IsRoughGround', 00H
 	ORG $+2
-$SG220544 DB	'IsMountain', 00H
+$SG220586 DB	'IsMountain', 00H
 	ORG $+1
-$SG220545 DB	'SetPlotType', 00H
-$SG220546 DB	'GetResourceType', 00H
-$SG220547 DB	'GetNonObsoleteResourceType', 00H
+$SG220587 DB	'SetPlotType', 00H
+$SG220588 DB	'GetResourceType', 00H
+$SG220589 DB	'GetNonObsoleteResourceType', 00H
 	ORG $+1
-$SG220548 DB	'SetResourceType', 00H
-$SG220549 DB	'GetNumResource', 00H
+$SG220590 DB	'SetResourceType', 00H
+$SG220591 DB	'GetNumResource', 00H
 	ORG $+1
-$SG220550 DB	'SetNumResource', 00H
+$SG220592 DB	'SetNumResource', 00H
 	ORG $+1
-$SG220551 DB	'ChangeNumResource', 00H
+$SG220593 DB	'ChangeNumResource', 00H
 	ORG $+2
-$SG220552 DB	'GetImprovementType', 00H
+$SG220594 DB	'GetImprovementType', 00H
 	ORG $+1
-$SG220553 DB	'SetImprovementType', 00H
+$SG220595 DB	'SetImprovementType', 00H
 	ORG $+1
-$SG220554 DB	'SetImprovementPillaged', 00H
+$SG220596 DB	'SetImprovementPillaged', 00H
 	ORG $+1
-$SG220555 DB	'GetRouteType', 00H
+$SG220597 DB	'GetRouteType', 00H
 	ORG $+3
-$SG220556 DB	'SetRouteType', 00H
+$SG220598 DB	'SetRouteType', 00H
 	ORG $+3
-$SG220557 DB	'IsRoutePillaged', 00H
-$SG220558 DB	'GetPlotCity', 00H
-$SG220559 DB	'GetWorkingCity', 00H
+$SG220599 DB	'IsRoutePillaged', 00H
+$SG220600 DB	'GetPlotCity', 00H
+$SG220601 DB	'GetWorkingCity', 00H
 	ORG $+1
-$SG220560 DB	'GetWorkingCityOverride', 00H
+$SG220602 DB	'GetWorkingCityOverride', 00H
 	ORG $+1
-$SG220561 DB	'GetReconCount', 00H
+$SG220603 DB	'GetReconCount', 00H
 	ORG $+2
-$SG220562 DB	'GetRiverCrossingCount', 00H
+$SG220604 DB	'GetRiverCrossingCount', 00H
 	ORG $+2
-$SG220563 DB	'GetYield', 00H
+$SG220605 DB	'GetYield', 00H
 	ORG $+3
-$SG220564 DB	'CalculateNatureYield', 00H
+$SG220606 DB	'CalculateNatureYield', 00H
 	ORG $+3
-$SG220565 DB	'CalculateBestNatureYield', 00H
+$SG220607 DB	'CalculateBestNatureYield', 00H
 	ORG $+3
-$SG220566 DB	'CalculateTotalBestNatureYield', 00H
+$SG220608 DB	'CalculateTotalBestNatureYield', 00H
 	ORG $+2
-$SG220567 DB	'CalculateImprovementYieldChange', 00H
-$SG220568 DB	'CalculateYield', 00H
+$SG220609 DB	'CalculateImprovementYieldChange', 00H
+$SG220610 DB	'CalculateYield', 00H
 	ORG $+1
-$SG220569 DB	'HasYield', 00H
+$SG220611 DB	'HasYield', 00H
 	ORG $+3
-$SG220570 DB	'GetYieldWithBuild', 00H
+$SG220612 DB	'GetYieldWithBuild', 00H
 	ORG $+2
-$SG220571 DB	'CountNumAirUnits', 00H
+$SG220613 DB	'CountNumAirUnits', 00H
 	ORG $+3
-$SG220572 DB	'GetFoundValue', 00H
+$SG220614 DB	'GetFoundValue', 00H
 	ORG $+2
-$SG220573 DB	'IsBestAdjacentFound', 00H
-$SG220574 DB	'GetPlayerCityRadiusCount', 00H
+$SG220615 DB	'IsBestAdjacentFound', 00H
+$SG220616 DB	'GetPlayerCityRadiusCount', 00H
 	ORG $+3
-$SG220575 DB	'IsPlayerCityRadius', 00H
+$SG220617 DB	'IsPlayerCityRadius', 00H
 	ORG $+1
-$SG220576 DB	'GetVisibilityCount', 00H
+$SG220618 DB	'GetVisibilityCount', 00H
 	ORG $+1
-$SG220577 DB	'ChangeVisibilityCount', 00H
+$SG220619 DB	'ChangeVisibilityCount', 00H
 	ORG $+2
-$SG220578 DB	'GetRevealedOwner', 00H
+$SG220620 DB	'GetRevealedOwner', 00H
 	ORG $+3
-$SG220579 DB	'GetRevealedTeam', 00H
-$SG220580 DB	'IsRiverCrossing', 00H
-$SG220581 DB	'IsRiverCrossingToPlot', 00H
+$SG220621 DB	'GetRevealedTeam', 00H
+$SG220622 DB	'IsRiverCrossing', 00H
+$SG220623 DB	'IsRiverCrossingToPlot', 00H
 	ORG $+2
-$SG220582 DB	'IsRevealed', 00H
+$SG220624 DB	'IsRevealed', 00H
 	ORG $+1
-$SG220583 DB	'SetRevealed', 00H
-$SG220584 DB	'GetRevealedImprovementType', 00H
+$SG220625 DB	'SetRevealed', 00H
+$SG220626 DB	'GetRevealedImprovementType', 00H
 	ORG $+1
-$SG220585 DB	'GetRevealedRouteType', 00H
+$SG220627 DB	'GetRevealedRouteType', 00H
 	ORG $+3
-$SG220586 DB	'GetBuildProgress', 00H
+$SG220628 DB	'GetBuildProgress', 00H
 	ORG $+3
-$SG220587 DB	'ChangeBuildProgress', 00H
-$SG220588 DB	'GetInvisibleVisibilityCount', 00H
-$SG220589 DB	'IsInvisibleVisible', 00H
+$SG220629 DB	'ChangeBuildProgress', 00H
+$SG220630 DB	'GetInvisibleVisibilityCount', 00H
+$SG220631 DB	'IsInvisibleVisible', 00H
 	ORG $+1
-$SG220590 DB	'ChangeInvisibleVisibilityCount', 00H
+$SG220632 DB	'ChangeInvisibleVisibilityCount', 00H
 	ORG $+1
-$SG220591 DB	'GetNumUnits', 00H
-$SG220592 DB	'GetUnit', 00H
-$SG220593 DB	'GetNumLayerUnits', 00H
+$SG220633 DB	'GetNumUnits', 00H
+$SG220634 DB	'GetUnit', 00H
+$SG220635 DB	'GetNumLayerUnits', 00H
 	ORG $+3
-$SG220594 DB	'GetLayerUnit', 00H
+$SG220636 DB	'GetLayerUnit', 00H
 	ORG $+3
-$SG220595 DB	'GetScriptData', 00H
+$SG220637 DB	'GetScriptData', 00H
 	ORG $+2
-$SG220596 DB	'SetScriptData', 00H
+$SG220638 DB	'SetScriptData', 00H
 	ORG $+2
-$SG220597 DB	'GetActiveFogOfWarMode', 00H
+$SG220639 DB	'GetActiveFogOfWarMode', 00H
 	ORG $+2
-$SG220598 DB	'IsImprovementPillaged', 00H
+$SG220640 DB	'IsImprovementPillaged', 00H
 	ORG $+2
-$SG220599 DB	'CanSeePlot', 00H
+$SG220641 DB	'CanSeePlot', 00H
 	ORG $+1
-$SG220600 DB	'GetContinentArtType', 00H
-$SG220601 DB	'SetContinentArtType', 00H
-$SG220602 DB	'IsResourceConnectedByImprovement', 00H
+$SG220642 DB	'GetContinentArtType', 00H
+$SG220643 DB	'SetContinentArtType', 00H
+$SG220644 DB	'IsResourceConnectedByImprovement', 00H
 	ORG $+3
-$SG220603 DB	'IsBuildRemovesFeature', 00H
+$SG220645 DB	'IsBuildRemovesFeature', 00H
 	ORG $+2
-$SG220604 DB	'GetArchaeologyArtifactType', 00H
+$SG220646 DB	'GetArchaeologyArtifactType', 00H
 	ORG $+1
-$SG220605 DB	'GetArchaeologyArtifactEra', 00H
+$SG220647 DB	'GetArchaeologyArtifactEra', 00H
 	ORG $+2
-$SG220606 DB	'GetArchaeologyArtifactPlayer1', 00H
+$SG220648 DB	'GetArchaeologyArtifactPlayer1', 00H
 	ORG $+2
-$SG220607 DB	'GetArchaeologyArtifactPlayer2', 00H
+$SG220649 DB	'GetArchaeologyArtifactPlayer2', 00H
 	ORG $+2
-$SG220608 DB	'GetArchaeologyArtifactWork', 00H
+$SG220650 DB	'GetArchaeologyArtifactWork', 00H
 	ORG $+1
-$SG220609 DB	'HasWrittenArtifact', 00H
+$SG220651 DB	'HasWrittenArtifact', 00H
 	ORG $+1
-$SG220610 DB	'GetCityPurchaseID', 00H
+$SG220652 DB	'GetCityPurchaseID', 00H
 	ORG $+2
-$SG220611 DB	'SetCityPurchaseID', 00H
+$SG220653 DB	'SetCityPurchaseID', 00H
 	ORG $+2
-$SG220617 DB	'Plot', 00H
+$SG220659 DB	'Plot', 00H
 	ORG $+3
-$SG222925 DB	'__instances', 00H
-$SG222926 DB	'__mode', 00H
+$SG222967 DB	'__instances', 00H
+$SG222968 DB	'__mode', 00H
 	ORG $+1
-$SG222927 DB	'v', 00H
+$SG222969 DB	'v', 00H
 	ORG $+2
-$SG222929 DB	'__instances', 00H
-$SG222932 DB	'__instance', 00H
+$SG222971 DB	'__instances', 00H
+$SG222974 DB	'__instance', 00H
 	ORG $+1
-$SG222933 DB	'__index', 00H
-$SG222948 DB	'__instance', 00H
+$SG222975 DB	'__index', 00H
+$SG222990 DB	'__instance', 00H
 	ORG $+1
-$SG222954 DB	'Not a valid instance.  Either the instance is NULL or yo'
+$SG222996 DB	'Not a valid instance.  Either the instance is NULL or yo'
 	DB	'u used ''.'' instead of '':''.', 00H
 	ORG $+1
-$SG222965 DB	'__instances', 00H
-$SG222966 DB	'__mode', 00H
+$SG223007 DB	'__instances', 00H
+$SG223008 DB	'__mode', 00H
 	ORG $+1
-$SG222967 DB	'v', 00H
+$SG223009 DB	'v', 00H
 	ORG $+2
-$SG222969 DB	'__instances', 00H
-$SG222972 DB	'__instance', 00H
+$SG223011 DB	'__instances', 00H
+$SG223014 DB	'__instance', 00H
 	ORG $+1
-$SG222973 DB	'__index', 00H
-$SG222994 DB	'__instances', 00H
-$SG222995 DB	'__mode', 00H
+$SG223015 DB	'__index', 00H
+$SG223036 DB	'__instances', 00H
+$SG223037 DB	'__mode', 00H
 	ORG $+1
-$SG222996 DB	'v', 00H
+$SG223038 DB	'v', 00H
 	ORG $+2
-$SG222998 DB	'__instances', 00H
-$SG223001 DB	'__instance', 00H
+$SG223040 DB	'__instances', 00H
+$SG223043 DB	'__instance', 00H
 	ORG $+1
-$SG223002 DB	'__index', 00H
-$SG223017 DB	'__instance', 00H
+$SG223044 DB	'__index', 00H
+$SG223059 DB	'__instance', 00H
 	ORG $+1
-$SG223023 DB	'Not a valid instance.  Either the instance is NULL or yo'
+$SG223065 DB	'Not a valid instance.  Either the instance is NULL or yo'
 	DB	'u used ''.'' instead of '':''.', 00H
 	ORG $+1
-$SG223031 DB	'Instance does not exist.', 00H
+$SG223073 DB	'Instance does not exist.', 00H
 	ORG $+3
-$SG223042 DB	'__instances', 00H
-$SG223043 DB	'__mode', 00H
+$SG223084 DB	'__instances', 00H
+$SG223085 DB	'__mode', 00H
 	ORG $+1
-$SG223044 DB	'v', 00H
+$SG223086 DB	'v', 00H
 	ORG $+2
-$SG223046 DB	'__instances', 00H
-$SG223049 DB	'__instance', 00H
+$SG223088 DB	'__instances', 00H
+$SG223091 DB	'__instance', 00H
 	ORG $+1
-$SG223050 DB	'__index', 00H
-$SG223065 DB	'__instance', 00H
+$SG223092 DB	'__index', 00H
+$SG223107 DB	'__instance', 00H
 	ORG $+5
-$SG223071 DB	'Not a valid instance.  Either the instance is NULL or yo'
+$SG223113 DB	'Not a valid instance.  Either the instance is NULL or yo'
 	DB	'u used ''.'' instead of '':''.', 00H
 CONST	ENDS
 EXTRN	_lua_tointeger:PROC
@@ -575,7 +575,7 @@ _TEXT	SEGMENT
 
 ; 283  : 	return "Plot";
 
-	mov	eax, OFFSET $SG220617
+	mov	eax, OFFSET $SG220659
 
 ; 284  : }
 
@@ -703,7 +703,7 @@ _pkType$ = 12						; size = 4
 ; 61   : 			//Create weak __instances table.
 ; 62   : 			lua_pushstring(L, "__instances");
 
-	push	OFFSET $SG222925
+	push	OFFSET $SG222967
 	push	esi
 	call	_lua_pushstring
 
@@ -725,13 +725,13 @@ _pkType$ = 12						; size = 4
 
 ; 67   : 			lua_pushstring(L, "__mode");
 
-	push	OFFSET $SG222926
+	push	OFFSET $SG222968
 	push	esi
 	call	_lua_pushstring
 
 ; 68   : 			lua_pushstring(L, "v");
 
-	push	OFFSET $SG222927
+	push	OFFSET $SG222969
 	push	esi
 	call	_lua_pushstring
 	add	esp, 68					; 00000044H
@@ -791,7 +791,7 @@ $LN7@Push:
 ; 81   : 
 ; 82   : 		lua_pushstring(L, "__instances");
 
-	push	OFFSET $SG222929
+	push	OFFSET $SG222971
 	push	esi
 	mov	ebx, eax
 	call	_lua_pushstring
@@ -857,7 +857,7 @@ $LN7@Push:
 
 ; 98   : 			lua_setfield(L, -2, "__instance");
 
-	push	OFFSET $SG222932
+	push	OFFSET $SG222974
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -872,7 +872,7 @@ $LN7@Push:
 
 ; 101  : 			lua_pushstring(L, "__index");
 
-	push	OFFSET $SG222933
+	push	OFFSET $SG222975
 	push	esi
 	call	_lua_pushstring
 
@@ -1008,7 +1008,7 @@ _bErrorOnFail$ = 16					; size = 1
 ; 134  : 		lua_getfield(L, idx, "__instance");
 
 	mov	ecx, DWORD PTR _idx$[esp+12]
-	push	OFFSET $SG222948
+	push	OFFSET $SG222990
 	push	ecx
 	push	esi
 	call	_lua_getfield
@@ -1069,7 +1069,7 @@ $LN3@GetInstanc:
 
 ; 150  : 			luaL_error(L, "Not a valid instance.  Either the instance is NULL or you used '.' instead of ':'.");
 
-	push	OFFSET $SG222954
+	push	OFFSET $SG222996
 	push	esi
 	call	_luaL_error
 	add	esp, 8
@@ -1169,7 +1169,7 @@ _pkType$ = 12						; size = 4
 ; 61   : 			//Create weak __instances table.
 ; 62   : 			lua_pushstring(L, "__instances");
 
-	push	OFFSET $SG222965
+	push	OFFSET $SG223007
 	push	esi
 	call	_lua_pushstring
 
@@ -1191,13 +1191,13 @@ _pkType$ = 12						; size = 4
 
 ; 67   : 			lua_pushstring(L, "__mode");
 
-	push	OFFSET $SG222966
+	push	OFFSET $SG223008
 	push	esi
 	call	_lua_pushstring
 
 ; 68   : 			lua_pushstring(L, "v");
 
-	push	OFFSET $SG222967
+	push	OFFSET $SG223009
 	push	esi
 	call	_lua_pushstring
 	add	esp, 68					; 00000044H
@@ -1257,7 +1257,7 @@ $LN7@Push@2:
 ; 81   : 
 ; 82   : 		lua_pushstring(L, "__instances");
 
-	push	OFFSET $SG222969
+	push	OFFSET $SG223011
 	push	esi
 	mov	ebx, eax
 	call	_lua_pushstring
@@ -1323,7 +1323,7 @@ $LN7@Push@2:
 
 ; 98   : 			lua_setfield(L, -2, "__instance");
 
-	push	OFFSET $SG222972
+	push	OFFSET $SG223014
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -1338,7 +1338,7 @@ $LN7@Push@2:
 
 ; 101  : 			lua_pushstring(L, "__index");
 
-	push	OFFSET $SG222973
+	push	OFFSET $SG223015
 	push	esi
 	call	_lua_pushstring
 
@@ -1439,7 +1439,7 @@ _L$ = 8							; size = 4
 ; 165  : 	luaL_error(L, "Instance does not exist.");
 
 	mov	eax, DWORD PTR _L$[esp-4]
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	eax
 	call	_luaL_error
 	add	esp, 8
@@ -1522,7 +1522,7 @@ _pkType$ = 12						; size = 4
 ; 61   : 			//Create weak __instances table.
 ; 62   : 			lua_pushstring(L, "__instances");
 
-	push	OFFSET $SG223042
+	push	OFFSET $SG223084
 	push	esi
 	call	_lua_pushstring
 
@@ -1544,13 +1544,13 @@ _pkType$ = 12						; size = 4
 
 ; 67   : 			lua_pushstring(L, "__mode");
 
-	push	OFFSET $SG223043
+	push	OFFSET $SG223085
 	push	esi
 	call	_lua_pushstring
 
 ; 68   : 			lua_pushstring(L, "v");
 
-	push	OFFSET $SG223044
+	push	OFFSET $SG223086
 	push	esi
 	call	_lua_pushstring
 	add	esp, 68					; 00000044H
@@ -1610,7 +1610,7 @@ $LN7@Push@3:
 ; 81   : 
 ; 82   : 		lua_pushstring(L, "__instances");
 
-	push	OFFSET $SG223046
+	push	OFFSET $SG223088
 	push	esi
 	mov	ebx, eax
 	call	_lua_pushstring
@@ -1676,7 +1676,7 @@ $LN7@Push@3:
 
 ; 98   : 			lua_setfield(L, -2, "__instance");
 
-	push	OFFSET $SG223049
+	push	OFFSET $SG223091
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -1691,7 +1691,7 @@ $LN7@Push@3:
 
 ; 101  : 			lua_pushstring(L, "__index");
 
-	push	OFFSET $SG223050
+	push	OFFSET $SG223092
 	push	esi
 	call	_lua_pushstring
 
@@ -1825,7 +1825,7 @@ _bErrorOnFail$ = 16					; size = 1
 ; 134  : 		lua_getfield(L, idx, "__instance");
 
 	mov	ecx, DWORD PTR _idx$[esp+12]
-	push	OFFSET $SG223065
+	push	OFFSET $SG223107
 	push	ecx
 	push	esi
 	call	_lua_getfield
@@ -1886,7 +1886,7 @@ $LN3@GetInstanc@2:
 
 ; 150  : 			luaL_error(L, "Not a valid instance.  Either the instance is NULL or you used '.' instead of ':'.");
 
-	push	OFFSET $SG223071
+	push	OFFSET $SG223113
 	push	esi
 	call	_luaL_error
 	add	esp, 8
@@ -3315,7 +3315,7 @@ _L$ = 8							; size = 4
 ; 278  : 	DefaultHandleMissingInstance(L);
 
 	mov	eax, DWORD PTR _L$[esp-4]
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	eax
 	call	_luaL_error
 	add	esp, 8
@@ -3395,7 +3395,7 @@ _bErrorOnFail$ = 16					; size = 1
 ; 134  : 		lua_getfield(L, idx, "__instance");
 
 	mov	ecx, DWORD PTR _idx$[esp+12]
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	ecx
 	push	esi
 	call	_lua_getfield
@@ -3456,7 +3456,7 @@ $LN3@GetInstanc@3:
 
 ; 150  : 			luaL_error(L, "Not a valid instance.  Either the instance is NULL or you used '.' instead of ':'.");
 
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
 	add	esp, 8
@@ -3464,7 +3464,7 @@ $LN1@GetInstanc@3:
 
 ; 151  : 		Derived::HandleMissingInstance(L);
 
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 8
@@ -3515,7 +3515,7 @@ _func$ = 12						; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN7@BasicLuaMe
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -3540,10 +3540,10 @@ $LN7@BasicLuaMe:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN14@BasicLuaMe
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -3604,7 +3604,7 @@ _func$ = 12						; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@BasicLuaMe@2
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -3629,10 +3629,10 @@ $LN5@BasicLuaMe@2:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@BasicLuaMe@2
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -3691,7 +3691,7 @@ _func$ = 12						; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN7@BasicLuaMe@3
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -3716,10 +3716,10 @@ $LN7@BasicLuaMe@3:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN14@BasicLuaMe@3
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -3782,7 +3782,7 @@ _func$ = 12						; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@BasicLuaMe@4
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -3807,10 +3807,10 @@ $LN5@BasicLuaMe@4:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@BasicLuaMe@4
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -3870,7 +3870,7 @@ _func$ = 12						; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN7@BasicLuaMe@5
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -3895,10 +3895,10 @@ $LN7@BasicLuaMe@5:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN14@BasicLuaMe@5
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -3963,7 +3963,7 @@ _func$ = 12						; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN7@BasicLuaMe@6
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -3988,10 +3988,10 @@ $LN7@BasicLuaMe@6:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN14@BasicLuaMe@6
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -4061,7 +4061,7 @@ _func$ = 12						; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN7@BasicLuaMe@7
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -4086,10 +4086,10 @@ $LN7@BasicLuaMe@7:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN14@BasicLuaMe@7
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -4153,7 +4153,7 @@ _func$ = 12						; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@BasicLuaMe@8
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -4178,10 +4178,10 @@ $LN5@BasicLuaMe@8:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@BasicLuaMe@8
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -4240,7 +4240,7 @@ _func$ = 12						; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN7@BasicLuaMe@9
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -4265,10 +4265,10 @@ $LN7@BasicLuaMe@9:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN14@BasicLuaMe@9
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -4306,7 +4306,7 @@ PUBLIC	??$BasicLuaMethod@H_N@?$CvLuaMethodWrapper@VCvLuaPlot@@VCvPlot@@@@KAHPAUl
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$BasicLuaMethod@H_N@?$CvLuaMethodWrapper@VCvLuaPlot@@VCvPlot@@@@KAHPAUlua_State@@P8CvPlot@@BEH_N@Z@Z
 _TEXT	SEGMENT
-$T224674 = -4						; size = 1
+$T224716 = -4						; size = 1
 _L$ = 8							; size = 4
 _func$ = 12						; size = 4
 ??$BasicLuaMethod@H_N@?$CvLuaMethodWrapper@VCvLuaPlot@@VCvPlot@@@@KAHPAUlua_State@@P8CvPlot@@BEH_N@Z@Z PROC ; CvLuaMethodWrapper<CvLuaPlot,CvPlot>::BasicLuaMethod<int,bool>, COMDAT
@@ -4334,7 +4334,7 @@ _func$ = 12						; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN7@BasicLuaMe@10
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -4359,10 +4359,10 @@ $LN7@BasicLuaMe@10:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN14@BasicLuaMe@10
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -4376,8 +4376,8 @@ $LN14@BasicLuaMe@10:
 	add	esp, 8
 	test	eax, eax
 	setne	al
-	mov	BYTE PTR $T224674[esp+20], al
-	mov	ecx, DWORD PTR $T224674[esp+20]
+	mov	BYTE PTR $T224716[esp+20], al
+	mov	ecx, DWORD PTR $T224716[esp+20]
 	push	ecx
 	mov	ecx, edi
 	call	DWORD PTR _func$[esp+20]
@@ -4405,7 +4405,7 @@ PUBLIC	??$BasicLuaMethod@_NW4ResourceTypes@@_N@?$CvLuaMethodWrapper@VCvLuaPlot@@
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$BasicLuaMethod@_NW4ResourceTypes@@_N@?$CvLuaMethodWrapper@VCvLuaPlot@@VCvPlot@@@@KAHPAUlua_State@@P8CvPlot@@BE_NW4ResourceTypes@@_N@Z@Z
 _TEXT	SEGMENT
-$T224711 = -4						; size = 1
+$T224753 = -4						; size = 1
 _L$ = 8							; size = 4
 _func$ = 12						; size = 4
 ??$BasicLuaMethod@_NW4ResourceTypes@@_N@?$CvLuaMethodWrapper@VCvLuaPlot@@VCvPlot@@@@KAHPAUlua_State@@P8CvPlot@@BE_NW4ResourceTypes@@_N@Z@Z PROC ; CvLuaMethodWrapper<CvLuaPlot,CvPlot>::BasicLuaMethod<bool,enum ResourceTypes,bool>, COMDAT
@@ -4433,7 +4433,7 @@ _func$ = 12						; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN7@BasicLuaMe@11
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -4458,10 +4458,10 @@ $LN7@BasicLuaMe@11:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN14@BasicLuaMe@11
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -4476,9 +4476,9 @@ $LN14@BasicLuaMe@11:
 	setne	al
 	push	2
 	push	esi
-	mov	BYTE PTR $T224711[esp+36], al
+	mov	BYTE PTR $T224753[esp+36], al
 	call	_lua_tointeger
-	mov	ecx, DWORD PTR $T224711[esp+36]
+	mov	ecx, DWORD PTR $T224753[esp+36]
 	add	esp, 16					; 00000010H
 	push	ecx
 	push	eax
@@ -4509,7 +4509,7 @@ PUBLIC	??$BasicLuaMethod@_NW4ImprovementTypes@@W4TeamTypes@@_N@?$CvLuaMethodWrap
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$BasicLuaMethod@_NW4ImprovementTypes@@W4TeamTypes@@_N@?$CvLuaMethodWrapper@VCvLuaPlot@@VCvPlot@@@@KAHPAUlua_State@@P8CvPlot@@BE_NW4ImprovementTypes@@W4TeamTypes@@_N@Z@Z
 _TEXT	SEGMENT
-$T224752 = -4						; size = 1
+$T224794 = -4						; size = 1
 _L$ = 8							; size = 4
 _func$ = 12						; size = 4
 ??$BasicLuaMethod@_NW4ImprovementTypes@@W4TeamTypes@@_N@?$CvLuaMethodWrapper@VCvLuaPlot@@VCvPlot@@@@KAHPAUlua_State@@P8CvPlot@@BE_NW4ImprovementTypes@@W4TeamTypes@@_N@Z@Z PROC ; CvLuaMethodWrapper<CvLuaPlot,CvPlot>::BasicLuaMethod<bool,enum ImprovementTypes,enum TeamTypes,bool>, COMDAT
@@ -4537,7 +4537,7 @@ _func$ = 12						; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN7@BasicLuaMe@12
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -4562,10 +4562,10 @@ $LN7@BasicLuaMe@12:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN14@BasicLuaMe@12
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -4580,13 +4580,13 @@ $LN14@BasicLuaMe@12:
 	setne	al
 	push	3
 	push	esi
-	mov	BYTE PTR $T224752[esp+36], al
+	mov	BYTE PTR $T224794[esp+36], al
 	call	_lua_tointeger
 	push	2
 	push	esi
 	mov	ebx, eax
 	call	_lua_tointeger
-	mov	ecx, DWORD PTR $T224752[esp+44]
+	mov	ecx, DWORD PTR $T224794[esp+44]
 	add	esp, 24					; 00000018H
 	push	ecx
 	push	ebx
@@ -4618,8 +4618,8 @@ PUBLIC	??$BasicLuaMethod@_NW4BuildTypes@@W4PlayerTypes@@_N_N@?$CvLuaMethodWrappe
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$BasicLuaMethod@_NW4BuildTypes@@W4PlayerTypes@@_N_N@?$CvLuaMethodWrapper@VCvLuaPlot@@VCvPlot@@@@KAHPAUlua_State@@P8CvPlot@@BE_NW4BuildTypes@@W4PlayerTypes@@_N3@Z@Z
 _TEXT	SEGMENT
-$T224797 = -8						; size = 1
-$T224801 = -4						; size = 1
+$T224839 = -8						; size = 1
+$T224843 = -4						; size = 1
 _L$ = 8							; size = 4
 _func$ = 12						; size = 4
 ??$BasicLuaMethod@_NW4BuildTypes@@W4PlayerTypes@@_N_N@?$CvLuaMethodWrapper@VCvLuaPlot@@VCvPlot@@@@KAHPAUlua_State@@P8CvPlot@@BE_NW4BuildTypes@@W4PlayerTypes@@_N3@Z@Z PROC ; CvLuaMethodWrapper<CvLuaPlot,CvPlot>::BasicLuaMethod<bool,enum BuildTypes,enum PlayerTypes,bool,bool>, COMDAT
@@ -4647,7 +4647,7 @@ _func$ = 12						; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN7@BasicLuaMe@13
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -4672,10 +4672,10 @@ $LN7@BasicLuaMe@13:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN14@BasicLuaMe@13
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -4690,20 +4690,20 @@ $LN14@BasicLuaMe@13:
 	setne	al
 	push	4
 	push	esi
-	mov	BYTE PTR $T224797[esp+40], al
+	mov	BYTE PTR $T224839[esp+40], al
 	call	_lua_toboolean
 	test	eax, eax
 	setne	cl
 	push	3
 	push	esi
-	mov	BYTE PTR $T224801[esp+48], cl
+	mov	BYTE PTR $T224843[esp+48], cl
 	call	_lua_tointeger
 	push	2
 	push	esi
 	mov	ebx, eax
 	call	_lua_tointeger
-	mov	edx, DWORD PTR $T224797[esp+56]
-	mov	ecx, DWORD PTR $T224801[esp+56]
+	mov	edx, DWORD PTR $T224839[esp+56]
+	mov	ecx, DWORD PTR $T224843[esp+56]
 	add	esp, 32					; 00000020H
 	push	edx
 	push	ecx
@@ -4762,7 +4762,7 @@ _func$ = 12						; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN7@BasicLuaMe@14
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -4787,10 +4787,10 @@ $LN7@BasicLuaMe@14:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN14@BasicLuaMe@14
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -4833,7 +4833,7 @@ PUBLIC	??$BasicLuaMethod@HW4BuildTypes@@W4PlayerTypes@@HH@?$CvLuaMethodWrapper@V
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$BasicLuaMethod@HW4BuildTypes@@W4PlayerTypes@@HH@?$CvLuaMethodWrapper@VCvLuaPlot@@VCvPlot@@@@KAHPAUlua_State@@P8CvPlot@@BEHW4BuildTypes@@W4PlayerTypes@@HH@Z@Z
 _TEXT	SEGMENT
-$T224895 = -4						; size = 4
+$T224937 = -4						; size = 4
 _L$ = 8							; size = 4
 _func$ = 12						; size = 4
 ??$BasicLuaMethod@HW4BuildTypes@@W4PlayerTypes@@HH@?$CvLuaMethodWrapper@VCvLuaPlot@@VCvPlot@@@@KAHPAUlua_State@@P8CvPlot@@BEHW4BuildTypes@@W4PlayerTypes@@HH@Z@Z PROC ; CvLuaMethodWrapper<CvLuaPlot,CvPlot>::BasicLuaMethod<int,enum BuildTypes,enum PlayerTypes,int,int>, COMDAT
@@ -4861,7 +4861,7 @@ _func$ = 12						; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN7@BasicLuaMe@15
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -4886,10 +4886,10 @@ $LN7@BasicLuaMe@15:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN14@BasicLuaMe@15
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -4910,9 +4910,9 @@ $LN14@BasicLuaMe@15:
 	call	_lua_tointeger
 	push	2
 	push	esi
-	mov	DWORD PTR $T224895[esp+52], eax
+	mov	DWORD PTR $T224937[esp+52], eax
 	call	_lua_tointeger
-	mov	ecx, DWORD PTR $T224895[esp+52]
+	mov	ecx, DWORD PTR $T224937[esp+52]
 	add	esp, 32					; 00000020H
 	push	ebx
 	push	ebp
@@ -4970,7 +4970,7 @@ _func$ = 12						; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN7@BasicLuaMe@16
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -4995,10 +4995,10 @@ $LN7@BasicLuaMe@16:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN14@BasicLuaMe@16
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -5036,8 +5036,8 @@ PUBLIC	??$BasicLuaMethod@HW4TeamTypes@@_N_N@?$CvLuaMethodWrapper@VCvLuaPlot@@VCv
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$BasicLuaMethod@HW4TeamTypes@@_N_N@?$CvLuaMethodWrapper@VCvLuaPlot@@VCvPlot@@@@KAHPAUlua_State@@P8CvPlot@@BEHW4TeamTypes@@_N2@Z@Z
 _TEXT	SEGMENT
-$T224973 = -8						; size = 1
-$T224977 = -4						; size = 1
+$T225015 = -8						; size = 1
+$T225019 = -4						; size = 1
 _L$ = 8							; size = 4
 _func$ = 12						; size = 4
 ??$BasicLuaMethod@HW4TeamTypes@@_N_N@?$CvLuaMethodWrapper@VCvLuaPlot@@VCvPlot@@@@KAHPAUlua_State@@P8CvPlot@@BEHW4TeamTypes@@_N2@Z@Z PROC ; CvLuaMethodWrapper<CvLuaPlot,CvPlot>::BasicLuaMethod<int,enum TeamTypes,bool,bool>, COMDAT
@@ -5065,7 +5065,7 @@ _func$ = 12						; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN7@BasicLuaMe@17
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -5090,10 +5090,10 @@ $LN7@BasicLuaMe@17:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN14@BasicLuaMe@17
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -5108,16 +5108,16 @@ $LN14@BasicLuaMe@17:
 	setne	al
 	push	3
 	push	esi
-	mov	BYTE PTR $T224973[esp+40], al
+	mov	BYTE PTR $T225015[esp+40], al
 	call	_lua_toboolean
 	test	eax, eax
 	setne	cl
 	push	2
 	push	esi
-	mov	BYTE PTR $T224977[esp+48], cl
+	mov	BYTE PTR $T225019[esp+48], cl
 	call	_lua_tointeger
-	mov	edx, DWORD PTR $T224973[esp+48]
-	mov	ecx, DWORD PTR $T224977[esp+48]
+	mov	edx, DWORD PTR $T225015[esp+48]
+	mov	ecx, DWORD PTR $T225019[esp+48]
 	add	esp, 24					; 00000018H
 	push	edx
 	push	ecx
@@ -5174,7 +5174,7 @@ _func$ = 12						; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN7@BasicLuaMe@18
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -5199,10 +5199,10 @@ $LN7@BasicLuaMe@18:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN14@BasicLuaMe@18
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -5276,7 +5276,7 @@ _func$ = 12						; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN7@BasicLuaMe@19
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -5301,10 +5301,10 @@ $LN7@BasicLuaMe@19:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN14@BasicLuaMe@19
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -5337,7 +5337,7 @@ PUBLIC	??$BasicLuaMethod@_NW4PlayerTypes@@_N@?$CvLuaMethodWrapper@VCvLuaPlot@@VC
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$BasicLuaMethod@_NW4PlayerTypes@@_N@?$CvLuaMethodWrapper@VCvLuaPlot@@VCvPlot@@@@KAHPAUlua_State@@P8CvPlot@@BE_NW4PlayerTypes@@_N@Z@Z
 _TEXT	SEGMENT
-$T225095 = -4						; size = 1
+$T225137 = -4						; size = 1
 _L$ = 8							; size = 4
 _func$ = 12						; size = 4
 ??$BasicLuaMethod@_NW4PlayerTypes@@_N@?$CvLuaMethodWrapper@VCvLuaPlot@@VCvPlot@@@@KAHPAUlua_State@@P8CvPlot@@BE_NW4PlayerTypes@@_N@Z@Z PROC ; CvLuaMethodWrapper<CvLuaPlot,CvPlot>::BasicLuaMethod<bool,enum PlayerTypes,bool>, COMDAT
@@ -5365,7 +5365,7 @@ _func$ = 12						; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN7@BasicLuaMe@20
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -5390,10 +5390,10 @@ $LN7@BasicLuaMe@20:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN14@BasicLuaMe@20
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -5408,9 +5408,9 @@ $LN14@BasicLuaMe@20:
 	setne	al
 	push	2
 	push	esi
-	mov	BYTE PTR $T225095[esp+36], al
+	mov	BYTE PTR $T225137[esp+36], al
 	call	_lua_tointeger
-	mov	ecx, DWORD PTR $T225095[esp+36]
+	mov	ecx, DWORD PTR $T225137[esp+36]
 	add	esp, 16					; 00000010H
 	push	ecx
 	push	eax
@@ -5441,7 +5441,7 @@ PUBLIC	??$BasicLuaMethod@_NW4TeamTypes@@_N@?$CvLuaMethodWrapper@VCvLuaPlot@@VCvP
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$BasicLuaMethod@_NW4TeamTypes@@_N@?$CvLuaMethodWrapper@VCvLuaPlot@@VCvPlot@@@@KAHPAUlua_State@@P8CvPlot@@BE_NW4TeamTypes@@_N@Z@Z
 _TEXT	SEGMENT
-$T225136 = -4						; size = 1
+$T225178 = -4						; size = 1
 _L$ = 8							; size = 4
 _func$ = 12						; size = 4
 ??$BasicLuaMethod@_NW4TeamTypes@@_N@?$CvLuaMethodWrapper@VCvLuaPlot@@VCvPlot@@@@KAHPAUlua_State@@P8CvPlot@@BE_NW4TeamTypes@@_N@Z@Z PROC ; CvLuaMethodWrapper<CvLuaPlot,CvPlot>::BasicLuaMethod<bool,enum TeamTypes,bool>, COMDAT
@@ -5469,7 +5469,7 @@ _func$ = 12						; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN7@BasicLuaMe@21
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -5494,10 +5494,10 @@ $LN7@BasicLuaMe@21:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN14@BasicLuaMe@21
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -5512,9 +5512,9 @@ $LN14@BasicLuaMe@21:
 	setne	al
 	push	2
 	push	esi
-	mov	BYTE PTR $T225136[esp+36], al
+	mov	BYTE PTR $T225178[esp+36], al
 	call	_lua_tointeger
-	mov	ecx, DWORD PTR $T225136[esp+36]
+	mov	ecx, DWORD PTR $T225178[esp+36]
 	add	esp, 16					; 00000010H
 	push	ecx
 	push	eax
@@ -5570,7 +5570,7 @@ _func$ = 12						; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@BasicLuaMe@22
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -5595,10 +5595,10 @@ $LN5@BasicLuaMe@22:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@BasicLuaMe@22
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -5658,7 +5658,7 @@ _func$ = 12						; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN7@BasicLuaMe@23
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -5683,10 +5683,10 @@ $LN7@BasicLuaMe@23:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN14@BasicLuaMe@23
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -5751,7 +5751,7 @@ _func$ = 12						; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN7@BasicLuaMe@24
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -5776,10 +5776,10 @@ $LN7@BasicLuaMe@24:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN14@BasicLuaMe@24
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -5843,7 +5843,7 @@ _func$ = 12						; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN7@BasicLuaMe@25
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -5868,10 +5868,10 @@ $LN7@BasicLuaMe@25:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN14@BasicLuaMe@25
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -5936,7 +5936,7 @@ _func$ = 12						; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN7@BasicLuaMe@26
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -5961,10 +5961,10 @@ $LN7@BasicLuaMe@26:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN14@BasicLuaMe@26
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -6034,7 +6034,7 @@ _func$ = 12						; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN7@BasicLuaMe@27
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -6059,10 +6059,10 @@ $LN7@BasicLuaMe@27:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN14@BasicLuaMe@27
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -6131,7 +6131,7 @@ _func$ = 12						; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN7@BasicLuaMe@28
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -6156,10 +6156,10 @@ $LN7@BasicLuaMe@28:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN14@BasicLuaMe@28
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -6225,7 +6225,7 @@ _func$ = 12						; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@BasicLuaMe@29
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -6250,10 +6250,10 @@ $LN5@BasicLuaMe@29:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@BasicLuaMe@29
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -6312,7 +6312,7 @@ _func$ = 12						; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN7@BasicLuaMe@30
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -6337,10 +6337,10 @@ $LN7@BasicLuaMe@30:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN14@BasicLuaMe@30
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -6404,7 +6404,7 @@ _func$ = 12						; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@BasicLuaMe@31
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -6429,10 +6429,10 @@ $LN5@BasicLuaMe@31:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@BasicLuaMe@31
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -6465,8 +6465,8 @@ PUBLIC	??$BasicLuaMethod@W4PlayerTypes@@H_N_N@?$CvLuaMethodWrapper@VCvLuaPlot@@V
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$BasicLuaMethod@W4PlayerTypes@@H_N_N@?$CvLuaMethodWrapper@VCvLuaPlot@@VCvPlot@@@@KAHPAUlua_State@@P8CvPlot@@AEXW4PlayerTypes@@H_N2@Z@Z
 _TEXT	SEGMENT
-$T225533 = -8						; size = 1
-$T225537 = -4						; size = 1
+$T225575 = -8						; size = 1
+$T225579 = -4						; size = 1
 _L$ = 8							; size = 4
 _func$ = 12						; size = 4
 ??$BasicLuaMethod@W4PlayerTypes@@H_N_N@?$CvLuaMethodWrapper@VCvLuaPlot@@VCvPlot@@@@KAHPAUlua_State@@P8CvPlot@@AEXW4PlayerTypes@@H_N2@Z@Z PROC ; CvLuaMethodWrapper<CvLuaPlot,CvPlot>::BasicLuaMethod<enum PlayerTypes,int,bool,bool>, COMDAT
@@ -6494,7 +6494,7 @@ _func$ = 12						; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN7@BasicLuaMe@32
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -6519,10 +6519,10 @@ $LN7@BasicLuaMe@32:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN14@BasicLuaMe@32
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -6537,16 +6537,16 @@ $LN14@BasicLuaMe@32:
 	setne	al
 	push	4
 	push	esi
-	mov	BYTE PTR $T225533[esp+40], al
+	mov	BYTE PTR $T225575[esp+40], al
 	call	_lua_toboolean
 	test	eax, eax
 	setne	cl
 	push	3
 	push	esi
-	mov	BYTE PTR $T225537[esp+48], cl
+	mov	BYTE PTR $T225579[esp+48], cl
 	call	_lua_tointeger
-	mov	edx, DWORD PTR $T225533[esp+48]
-	mov	ecx, DWORD PTR $T225537[esp+48]
+	mov	edx, DWORD PTR $T225575[esp+48]
+	mov	ecx, DWORD PTR $T225579[esp+48]
 	add	esp, 24					; 00000018H
 	push	edx
 	push	ecx
@@ -6602,7 +6602,7 @@ _func$ = 12						; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@BasicLuaMe@33
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -6627,10 +6627,10 @@ $LN5@BasicLuaMe@33:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@BasicLuaMe@33
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -6663,9 +6663,9 @@ PUBLIC	??$BasicLuaMethod@W4PlotTypes@@_N_N_N@?$CvLuaMethodWrapper@VCvLuaPlot@@VC
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$BasicLuaMethod@W4PlotTypes@@_N_N_N@?$CvLuaMethodWrapper@VCvLuaPlot@@VCvPlot@@@@KAHPAUlua_State@@P8CvPlot@@AEXW4PlotTypes@@_N22@Z@Z
 _TEXT	SEGMENT
-$T225607 = -12						; size = 1
-$T225611 = -8						; size = 1
-$T225615 = -4						; size = 1
+$T225649 = -12						; size = 1
+$T225653 = -8						; size = 1
+$T225657 = -4						; size = 1
 _L$ = 8							; size = 4
 _func$ = 12						; size = 4
 ??$BasicLuaMethod@W4PlotTypes@@_N_N_N@?$CvLuaMethodWrapper@VCvLuaPlot@@VCvPlot@@@@KAHPAUlua_State@@P8CvPlot@@AEXW4PlotTypes@@_N22@Z@Z PROC ; CvLuaMethodWrapper<CvLuaPlot,CvPlot>::BasicLuaMethod<enum PlotTypes,bool,bool,bool>, COMDAT
@@ -6693,7 +6693,7 @@ _func$ = 12						; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN7@BasicLuaMe@34
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -6718,10 +6718,10 @@ $LN7@BasicLuaMe@34:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN14@BasicLuaMe@34
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -6736,22 +6736,22 @@ $LN14@BasicLuaMe@34:
 	setne	al
 	push	4
 	push	esi
-	mov	BYTE PTR $T225607[esp+44], al
+	mov	BYTE PTR $T225649[esp+44], al
 	call	_lua_toboolean
 	test	eax, eax
 	setne	cl
 	push	3
 	push	esi
-	mov	BYTE PTR $T225611[esp+52], cl
+	mov	BYTE PTR $T225653[esp+52], cl
 	call	_lua_toboolean
-	mov	ecx, DWORD PTR $T225611[esp+52]
+	mov	ecx, DWORD PTR $T225653[esp+52]
 	add	esp, 24					; 00000018H
 	test	eax, eax
-	mov	eax, DWORD PTR $T225607[esp+28]
+	mov	eax, DWORD PTR $T225649[esp+28]
 	setne	dl
 	push	eax
-	mov	BYTE PTR $T225615[esp+32], dl
-	mov	edx, DWORD PTR $T225615[esp+32]
+	mov	BYTE PTR $T225657[esp+32], dl
+	mov	edx, DWORD PTR $T225657[esp+32]
 	push	ecx
 	push	edx
 	push	2
@@ -6806,7 +6806,7 @@ _func$ = 12						; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN7@BasicLuaMe@35
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -6831,10 +6831,10 @@ $LN7@BasicLuaMe@35:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN14@BasicLuaMe@35
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -6872,7 +6872,7 @@ PUBLIC	??$BasicLuaMethod@W4ResourceTypes@@H_N@?$CvLuaMethodWrapper@VCvLuaPlot@@V
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$BasicLuaMethod@W4ResourceTypes@@H_N@?$CvLuaMethodWrapper@VCvLuaPlot@@VCvPlot@@@@KAHPAUlua_State@@P8CvPlot@@AEXW4ResourceTypes@@H_N@Z@Z
 _TEXT	SEGMENT
-$T225688 = -4						; size = 1
+$T225730 = -4						; size = 1
 _L$ = 8							; size = 4
 _func$ = 12						; size = 4
 ??$BasicLuaMethod@W4ResourceTypes@@H_N@?$CvLuaMethodWrapper@VCvLuaPlot@@VCvPlot@@@@KAHPAUlua_State@@P8CvPlot@@AEXW4ResourceTypes@@H_N@Z@Z PROC ; CvLuaMethodWrapper<CvLuaPlot,CvPlot>::BasicLuaMethod<enum ResourceTypes,int,bool>, COMDAT
@@ -6900,7 +6900,7 @@ _func$ = 12						; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN7@BasicLuaMe@36
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -6925,10 +6925,10 @@ $LN7@BasicLuaMe@36:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN14@BasicLuaMe@36
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -6943,9 +6943,9 @@ $LN14@BasicLuaMe@36:
 	setne	al
 	push	3
 	push	esi
-	mov	BYTE PTR $T225688[esp+36], al
+	mov	BYTE PTR $T225730[esp+36], al
 	call	_lua_tointeger
-	mov	ecx, DWORD PTR $T225688[esp+36]
+	mov	ecx, DWORD PTR $T225730[esp+36]
 	add	esp, 16					; 00000010H
 	push	ecx
 	push	eax
@@ -7000,7 +7000,7 @@ _func$ = 12						; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@BasicLuaMe@37
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -7025,10 +7025,10 @@ $LN5@BasicLuaMe@37:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@BasicLuaMe@37
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -7087,7 +7087,7 @@ _func$ = 12						; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN7@BasicLuaMe@38
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -7112,10 +7112,10 @@ $LN7@BasicLuaMe@38:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN14@BasicLuaMe@38
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -7178,7 +7178,7 @@ _func$ = 12						; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@BasicLuaMe@39
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -7203,10 +7203,10 @@ $LN5@BasicLuaMe@39:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@BasicLuaMe@39
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -7265,7 +7265,7 @@ _func$ = 12						; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN7@BasicLuaMe@40
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -7290,10 +7290,10 @@ $LN7@BasicLuaMe@40:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN14@BasicLuaMe@40
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -7326,7 +7326,7 @@ PUBLIC	??$BasicLuaMethod@HW4YieldTypes@@W4TeamTypes@@_N@?$CvLuaMethodWrapper@VCv
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$BasicLuaMethod@HW4YieldTypes@@W4TeamTypes@@_N@?$CvLuaMethodWrapper@VCvLuaPlot@@VCvPlot@@@@KAHPAUlua_State@@P8CvPlot@@BEHW4YieldTypes@@W4TeamTypes@@_N@Z@Z
 _TEXT	SEGMENT
-$T225856 = -4						; size = 1
+$T225898 = -4						; size = 1
 _L$ = 8							; size = 4
 _func$ = 12						; size = 4
 ??$BasicLuaMethod@HW4YieldTypes@@W4TeamTypes@@_N@?$CvLuaMethodWrapper@VCvLuaPlot@@VCvPlot@@@@KAHPAUlua_State@@P8CvPlot@@BEHW4YieldTypes@@W4TeamTypes@@_N@Z@Z PROC ; CvLuaMethodWrapper<CvLuaPlot,CvPlot>::BasicLuaMethod<int,enum YieldTypes,enum TeamTypes,bool>, COMDAT
@@ -7354,7 +7354,7 @@ _func$ = 12						; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN7@BasicLuaMe@41
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -7379,10 +7379,10 @@ $LN7@BasicLuaMe@41:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN14@BasicLuaMe@41
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -7397,13 +7397,13 @@ $LN14@BasicLuaMe@41:
 	setne	al
 	push	3
 	push	esi
-	mov	BYTE PTR $T225856[esp+36], al
+	mov	BYTE PTR $T225898[esp+36], al
 	call	_lua_tointeger
 	push	2
 	push	esi
 	mov	ebx, eax
 	call	_lua_tointeger
-	mov	ecx, DWORD PTR $T225856[esp+44]
+	mov	ecx, DWORD PTR $T225898[esp+44]
 	add	esp, 24					; 00000018H
 	push	ecx
 	push	ebx
@@ -7460,7 +7460,7 @@ _func$ = 12						; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN7@BasicLuaMe@42
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -7485,10 +7485,10 @@ $LN7@BasicLuaMe@42:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN14@BasicLuaMe@42
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -7531,7 +7531,7 @@ PUBLIC	??$BasicLuaMethod@HW4YieldTypes@@_N@?$CvLuaMethodWrapper@VCvLuaPlot@@VCvP
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$BasicLuaMethod@HW4YieldTypes@@_N@?$CvLuaMethodWrapper@VCvLuaPlot@@VCvPlot@@@@KAHPAUlua_State@@P8CvPlot@@AEHW4YieldTypes@@_N@Z@Z
 _TEXT	SEGMENT
-$T225942 = -4						; size = 1
+$T225984 = -4						; size = 1
 _L$ = 8							; size = 4
 _func$ = 12						; size = 4
 ??$BasicLuaMethod@HW4YieldTypes@@_N@?$CvLuaMethodWrapper@VCvLuaPlot@@VCvPlot@@@@KAHPAUlua_State@@P8CvPlot@@AEHW4YieldTypes@@_N@Z@Z PROC ; CvLuaMethodWrapper<CvLuaPlot,CvPlot>::BasicLuaMethod<int,enum YieldTypes,bool>, COMDAT
@@ -7559,7 +7559,7 @@ _func$ = 12						; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN7@BasicLuaMe@43
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -7584,10 +7584,10 @@ $LN7@BasicLuaMe@43:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN14@BasicLuaMe@43
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -7602,9 +7602,9 @@ $LN14@BasicLuaMe@43:
 	setne	al
 	push	2
 	push	esi
-	mov	BYTE PTR $T225942[esp+36], al
+	mov	BYTE PTR $T225984[esp+36], al
 	call	_lua_tointeger
-	mov	ecx, DWORD PTR $T225942[esp+36]
+	mov	ecx, DWORD PTR $T225984[esp+36]
 	add	esp, 16					; 00000010H
 	push	ecx
 	push	eax
@@ -7634,7 +7634,7 @@ PUBLIC	??$BasicLuaMethod@HW4BuildTypes@@W4YieldTypes@@_NW4PlayerTypes@@@?$CvLuaM
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$BasicLuaMethod@HW4BuildTypes@@W4YieldTypes@@_NW4PlayerTypes@@@?$CvLuaMethodWrapper@VCvLuaPlot@@VCvPlot@@@@KAHPAUlua_State@@P8CvPlot@@BEHW4BuildTypes@@W4YieldTypes@@_NW4PlayerTypes@@@Z@Z
 _TEXT	SEGMENT
-$T225987 = -4						; size = 1
+$T226029 = -4						; size = 1
 _L$ = 8							; size = 4
 _func$ = 12						; size = 4
 ??$BasicLuaMethod@HW4BuildTypes@@W4YieldTypes@@_NW4PlayerTypes@@@?$CvLuaMethodWrapper@VCvLuaPlot@@VCvPlot@@@@KAHPAUlua_State@@P8CvPlot@@BEHW4BuildTypes@@W4YieldTypes@@_NW4PlayerTypes@@@Z@Z PROC ; CvLuaMethodWrapper<CvLuaPlot,CvPlot>::BasicLuaMethod<int,enum BuildTypes,enum YieldTypes,bool,enum PlayerTypes>, COMDAT
@@ -7662,7 +7662,7 @@ _func$ = 12						; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN7@BasicLuaMe@44
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -7687,10 +7687,10 @@ $LN7@BasicLuaMe@44:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN14@BasicLuaMe@44
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -7709,13 +7709,13 @@ $LN14@BasicLuaMe@44:
 	setne	al
 	push	3
 	push	esi
-	mov	BYTE PTR $T225987[esp+44], al
+	mov	BYTE PTR $T226029[esp+44], al
 	call	_lua_tointeger
 	push	2
 	push	esi
 	mov	ebp, eax
 	call	_lua_tointeger
-	mov	ecx, DWORD PTR $T225987[esp+52]
+	mov	ecx, DWORD PTR $T226029[esp+52]
 	add	esp, 32					; 00000020H
 	push	ebx
 	push	ecx
@@ -7773,7 +7773,7 @@ _func$ = 12						; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN7@BasicLuaMe@45
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -7798,10 +7798,10 @@ $LN7@BasicLuaMe@45:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN14@BasicLuaMe@45
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -7865,7 +7865,7 @@ _func$ = 12						; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN7@BasicLuaMe@46
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -7890,10 +7890,10 @@ $LN7@BasicLuaMe@46:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN14@BasicLuaMe@46
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -7958,7 +7958,7 @@ _func$ = 12						; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN7@BasicLuaMe@47
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -7983,10 +7983,10 @@ $LN7@BasicLuaMe@47:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN14@BasicLuaMe@47
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -8050,7 +8050,7 @@ _func$ = 12						; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN7@BasicLuaMe@48
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -8075,10 +8075,10 @@ $LN7@BasicLuaMe@48:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN14@BasicLuaMe@48
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -8153,7 +8153,7 @@ _func$ = 12						; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN7@BasicLuaMe@49
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -8178,10 +8178,10 @@ $LN7@BasicLuaMe@49:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN14@BasicLuaMe@49
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -8250,7 +8250,7 @@ _func$ = 12						; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN7@BasicLuaMe@50
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -8275,10 +8275,10 @@ $LN7@BasicLuaMe@50:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN14@BasicLuaMe@50
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -8348,7 +8348,7 @@ _func$ = 12						; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN7@BasicLuaMe@51
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -8373,10 +8373,10 @@ $LN7@BasicLuaMe@51:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN14@BasicLuaMe@51
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -8444,7 +8444,7 @@ _func$ = 12						; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@BasicLuaMe@52
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -8469,10 +8469,10 @@ $LN5@BasicLuaMe@52:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@BasicLuaMe@52
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -8873,7 +8873,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lCanHaveFe
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -8898,10 +8898,10 @@ $LN5@lCanHaveFe:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lCanHaveFe
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -8972,7 +8972,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lGetFeatur
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -8997,10 +8997,10 @@ $LN5@lGetFeatur:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lGetFeatur
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -9058,7 +9058,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lGetTerrai
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -9083,10 +9083,10 @@ $LN5@lGetTerrai:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lGetTerrai
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -9143,7 +9143,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lIsRiver
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -9168,10 +9168,10 @@ $LN5@lIsRiver:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lIsRiver
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -9230,7 +9230,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lIsWater
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -9255,10 +9255,10 @@ $LN5@lIsWater:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lIsWater
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -9319,7 +9319,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lSetFeatur
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -9344,10 +9344,10 @@ $LN5@lSetFeatur:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lSetFeatur
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -9424,7 +9424,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lSetTerrai
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -9449,10 +9449,10 @@ $LN5@lSetTerrai:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lSetTerrai
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -9543,7 +9543,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lIsNone
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	edi
 	push	esi
 	call	_lua_getfield
@@ -9568,7 +9568,7 @@ $LN5@lIsNone:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lIsNone
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 8
@@ -9687,7 +9687,7 @@ EXTRN	?isAdjacentToArea@CvPlot@@QBE_NPBVCvArea@@@Z:PROC ; CvPlot::isAdjacentToAr
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?lIsAdjacentToArea@CvLuaPlot@@KAHPAUlua_State@@@Z
 _TEXT	SEGMENT
-_pkInstance$226656 = -4					; size = 4
+_pkInstance$226698 = -4					; size = 4
 _L$ = 8							; size = 4
 ?lIsAdjacentToArea@CvLuaPlot@@KAHPAUlua_State@@@Z PROC	; CvLuaPlot::lIsAdjacentToArea, COMDAT
 
@@ -9708,12 +9708,12 @@ _L$ = 8							; size = 4
 	push	esi
 	mov	edi, eax
 	mov	bl, 1
-	mov	DWORD PTR _pkInstance$226656[esp+32], 0
+	mov	DWORD PTR _pkInstance$226698[esp+32], 0
 	call	_lua_type
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lIsAdjacen
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -9727,7 +9727,7 @@ _L$ = 8							; size = 4
 	push	esi
 	call	_lua_touserdata
 	add	esp, 8
-	mov	DWORD PTR _pkInstance$226656[esp+20], eax
+	mov	DWORD PTR _pkInstance$226698[esp+20], eax
 	test	eax, eax
 	je	SHORT $LN5@lIsAdjacen
 	xor	bl, bl
@@ -9738,10 +9738,10 @@ $LN5@lIsAdjacen:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lIsAdjacen
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -9760,7 +9760,7 @@ $LN12@lIsAdjacen:
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN16@lIsAdjacen
-	push	OFFSET $SG222948
+	push	OFFSET $SG222990
 	push	2
 	push	esi
 	call	_lua_getfield
@@ -9793,7 +9793,7 @@ $LN15@lIsAdjacen:
 ; 425  : 
 ; 426  : 	const bool bResult = pkPlot->isAdjacentToArea(pkArea);
 
-	mov	ecx, DWORD PTR _pkInstance$226656[esp+20]
+	mov	ecx, DWORD PTR _pkInstance$226698[esp+20]
 	push	edi
 	call	?isAdjacentToArea@CvPlot@@QBE_NPBVCvArea@@@Z ; CvPlot::isAdjacentToArea
 
@@ -9825,7 +9825,7 @@ EXTRN	?shareAdjacentArea@CvPlot@@QBE_NPBV1@@Z:PROC	; CvPlot::shareAdjacentArea
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?lShareAdjacentArea@CvLuaPlot@@KAHPAUlua_State@@@Z
 _TEXT	SEGMENT
-_pkInstance$226693 = -4					; size = 4
+_pkInstance$226735 = -4					; size = 4
 _L$ = 8							; size = 4
 ?lShareAdjacentArea@CvLuaPlot@@KAHPAUlua_State@@@Z PROC	; CvLuaPlot::lShareAdjacentArea, COMDAT
 
@@ -9846,12 +9846,12 @@ _L$ = 8							; size = 4
 	push	esi
 	mov	edi, eax
 	mov	bl, 1
-	mov	DWORD PTR _pkInstance$226693[esp+32], 0
+	mov	DWORD PTR _pkInstance$226735[esp+32], 0
 	call	_lua_type
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lShareAdja
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -9865,7 +9865,7 @@ _L$ = 8							; size = 4
 	push	esi
 	call	_lua_touserdata
 	add	esp, 8
-	mov	DWORD PTR _pkInstance$226693[esp+20], eax
+	mov	DWORD PTR _pkInstance$226735[esp+20], eax
 	test	eax, eax
 	je	SHORT $LN5@lShareAdja
 	xor	bl, bl
@@ -9876,10 +9876,10 @@ $LN5@lShareAdja:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lShareAdja
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -9898,7 +9898,7 @@ $LN12@lShareAdja:
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN16@lShareAdja
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	2
 	push	esi
 	call	_lua_getfield
@@ -9923,7 +9923,7 @@ $LN16@lShareAdja:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN23@lShareAdja
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 8
@@ -9932,7 +9932,7 @@ $LN23@lShareAdja:
 ; 437  : 
 ; 438  : 	const bool bResult = pkPlot->shareAdjacentArea(pkPlot2);
 
-	mov	ecx, DWORD PTR _pkInstance$226693[esp+20]
+	mov	ecx, DWORD PTR _pkInstance$226735[esp+20]
 	push	edi
 	call	?shareAdjacentArea@CvPlot@@QBE_NPBV1@@Z	; CvPlot::shareAdjacentArea
 
@@ -10156,7 +10156,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lIsRiverCr
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -10181,10 +10181,10 @@ $LN5@lIsRiverCr:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lIsRiverCr
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -10296,7 +10296,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lGetNeares
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -10321,10 +10321,10 @@ $LN5@lGetNeares:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lGetNeares
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -10533,7 +10533,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lGetFeatur@2
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -10558,10 +10558,10 @@ $LN5@lGetFeatur@2:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lGetFeatur@2
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -10645,7 +10645,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lGetFeatur@3
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -10670,10 +10670,10 @@ $LN5@lGetFeatur@3:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lGetFeatur@3
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -10746,9 +10746,9 @@ __ehfuncinfo$?lGetBestDefender@CvLuaPlot@@KAHPAUlua_State@@@Z DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?lGetBestDefender@CvLuaPlot@@KAHPAUlua_State@@@Z
 _TEXT	SEGMENT
-_pkInstance$226906 = -36				; size = 4
+_pkInstance$226948 = -36				; size = 4
 _bTestCanMove$ = -32					; size = 1
-_stack_size$226915 = -32				; size = 4
+_stack_size$226957 = -32				; size = 4
 _bTestPotentialEnemy$ = -28				; size = 1
 _bTestAtWar$ = -24					; size = 1
 _pkUnit$ = -20						; size = 8
@@ -10778,12 +10778,12 @@ _L$ = 8							; size = 4
 	push	esi
 	mov	edi, eax
 	mov	bl, 1
-	mov	DWORD PTR _pkInstance$226906[esp+64], 0
+	mov	DWORD PTR _pkInstance$226948[esp+64], 0
 	call	_lua_type
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN30@lGetBestDe
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -10797,7 +10797,7 @@ _L$ = 8							; size = 4
 	push	esi
 	call	_lua_touserdata
 	add	esp, 8
-	mov	DWORD PTR _pkInstance$226906[esp+52], eax
+	mov	DWORD PTR _pkInstance$226948[esp+52], eax
 	test	eax, eax
 	je	SHORT $LN30@lGetBestDe
 	xor	bl, bl
@@ -10808,10 +10808,10 @@ $LN30@lGetBestDe:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN13@lGetBestDe
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -10837,13 +10837,13 @@ $LN13@lGetBestDe:
 	call	_lua_gettop
 	push	4
 	push	esi
-	mov	DWORD PTR _stack_size$226915[esp+80], eax
+	mov	DWORD PTR _stack_size$226957[esp+80], eax
 	xor	edi, edi
 	call	_lua_type
 	add	esp, 28					; 0000001cH
 	cmp	eax, 5
 	jne	SHORT $LN17@lGetBestDe
-	push	OFFSET $SG223065
+	push	OFFSET $SG223107
 	push	4
 	push	esi
 	call	_lua_getfield
@@ -10859,7 +10859,7 @@ $LN13@lGetBestDe:
 	add	esp, 8
 	mov	edi, eax
 $LN17@lGetBestDe:
-	mov	eax, DWORD PTR _stack_size$226915[esp+52]
+	mov	eax, DWORD PTR _stack_size$226957[esp+52]
 	push	eax
 	push	esi
 	call	_lua_settop
@@ -10909,7 +10909,7 @@ $LN17@lGetBestDe:
 	push	ebx
 	lea	ecx, DWORD PTR _pkUnit$[esp+80]
 	push	ecx
-	mov	ecx, DWORD PTR _pkInstance$226906[esp+84]
+	mov	ecx, DWORD PTR _pkInstance$226948[esp+84]
 	call	?getBestDefender@CvPlot@@QAE?AV?$FObjectHandle@VCvUnit@@@@W4PlayerTypes@@0PBVCvUnit@@_N222@Z ; CvPlot::getBestDefender
 
 ; 607  : 	CvLuaUnit::Push(L, pkUnit.pointer());
@@ -10981,7 +10981,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lGetSelect
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -11006,10 +11006,10 @@ $LN5@lGetSelect:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lGetSelect
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -11321,7 +11321,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lIsVisible
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -11346,10 +11346,10 @@ $LN5@lIsVisible:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lIsVisible
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -11440,7 +11440,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN7@lIsActiveV
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -11465,10 +11465,10 @@ $LN7@lIsActiveV:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN14@lIsActiveV
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -11590,7 +11590,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN7@lIsAdjacen@2
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -11615,10 +11615,10 @@ $LN7@lIsAdjacen@2:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN14@lIsAdjacen@2
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -11832,7 +11832,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lIsFriendl
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -11857,10 +11857,10 @@ $LN5@lIsFriendl:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lIsFriendl
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -11926,7 +11926,7 @@ EXTRN	?isFriendlyCity@CvPlot@@QBE_NABVCvUnit@@_N@Z:PROC ; CvPlot::isFriendlyCity
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?lIsFriendlyCity@CvLuaPlot@@KAHPAUlua_State@@@Z
 _TEXT	SEGMENT
-_pkInstance$227168 = -8					; size = 4
+_pkInstance$227210 = -8					; size = 4
 _bCheckImprovement$ = -4				; size = 1
 _L$ = 8							; size = 4
 ?lIsFriendlyCity@CvLuaPlot@@KAHPAUlua_State@@@Z PROC	; CvLuaPlot::lIsFriendlyCity, COMDAT
@@ -11948,12 +11948,12 @@ _L$ = 8							; size = 4
 	push	esi
 	mov	edi, eax
 	mov	bl, 1
-	mov	DWORD PTR _pkInstance$227168[esp+36], 0
+	mov	DWORD PTR _pkInstance$227210[esp+36], 0
 	call	_lua_type
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lIsFriendl@2
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -11967,7 +11967,7 @@ _L$ = 8							; size = 4
 	push	esi
 	call	_lua_touserdata
 	add	esp, 8
-	mov	DWORD PTR _pkInstance$227168[esp+24], eax
+	mov	DWORD PTR _pkInstance$227210[esp+24], eax
 	test	eax, eax
 	je	SHORT $LN5@lIsFriendl@2
 	xor	bl, bl
@@ -11978,10 +11978,10 @@ $LN5@lIsFriendl@2:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lIsFriendl@2
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -12000,7 +12000,7 @@ $LN12@lIsFriendl@2:
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN16@lIsFriendl@2
-	push	OFFSET $SG223065
+	push	OFFSET $SG223107
 	push	2
 	push	esi
 	call	_lua_getfield
@@ -12045,7 +12045,7 @@ $LN15@lIsFriendl@2:
 
 	mov	ecx, DWORD PTR _bCheckImprovement$[esp+24]
 	push	ecx
-	mov	ecx, DWORD PTR _pkInstance$227168[esp+28]
+	mov	ecx, DWORD PTR _pkInstance$227210[esp+28]
 	push	edi
 	call	?isFriendlyCity@CvPlot@@QBE_NABVCvUnit@@_N@Z ; CvPlot::isFriendlyCity
 
@@ -12075,7 +12075,7 @@ PUBLIC	?lIsEnemyCity@CvLuaPlot@@KAHPAUlua_State@@@Z	; CvLuaPlot::lIsEnemyCity
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?lIsEnemyCity@CvLuaPlot@@KAHPAUlua_State@@@Z
 _TEXT	SEGMENT
-_stack_size$227218 = -4					; size = 4
+_stack_size$227260 = -4					; size = 4
 _L$ = 8							; size = 4
 ?lIsEnemyCity@CvLuaPlot@@KAHPAUlua_State@@@Z PROC	; CvLuaPlot::lIsEnemyCity, COMDAT
 
@@ -12101,7 +12101,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lIsEnemyCi
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -12126,10 +12126,10 @@ $LN5@lIsEnemyCi:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lIsEnemyCi
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -12141,14 +12141,14 @@ $LN12@lIsEnemyCi:
 	call	_lua_gettop
 	push	2
 	push	esi
-	mov	DWORD PTR _stack_size$227218[esp+32], eax
+	mov	DWORD PTR _stack_size$227260[esp+32], eax
 	mov	bl, 1
 	xor	ebp, ebp
 	call	_lua_type
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN16@lIsEnemyCi
-	push	OFFSET $SG223065
+	push	OFFSET $SG223107
 	push	2
 	push	esi
 	call	_lua_getfield
@@ -12167,7 +12167,7 @@ $LN12@lIsEnemyCi:
 	je	SHORT $LN16@lIsEnemyCi
 	xor	bl, bl
 $LN16@lIsEnemyCi:
-	mov	eax, DWORD PTR _stack_size$227218[esp+20]
+	mov	eax, DWORD PTR _stack_size$227260[esp+20]
 	push	eax
 	push	esi
 	call	_lua_settop
@@ -12274,7 +12274,7 @@ EXTRN	?isVisibleEnemyDefender@CvPlot@@QBE_NPBVCvUnit@@@Z:PROC ; CvPlot::isVisibl
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?lIsVisibleEnemyDefender@CvLuaPlot@@KAHPAUlua_State@@@Z
 _TEXT	SEGMENT
-_pkInstance$227268 = -4					; size = 4
+_pkInstance$227310 = -4					; size = 4
 _L$ = 8							; size = 4
 ?lIsVisibleEnemyDefender@CvLuaPlot@@KAHPAUlua_State@@@Z PROC ; CvLuaPlot::lIsVisibleEnemyDefender, COMDAT
 
@@ -12295,12 +12295,12 @@ _L$ = 8							; size = 4
 	push	esi
 	mov	edi, eax
 	mov	bl, 1
-	mov	DWORD PTR _pkInstance$227268[esp+32], 0
+	mov	DWORD PTR _pkInstance$227310[esp+32], 0
 	call	_lua_type
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lIsVisible@2
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -12314,7 +12314,7 @@ _L$ = 8							; size = 4
 	push	esi
 	call	_lua_touserdata
 	add	esp, 8
-	mov	DWORD PTR _pkInstance$227268[esp+20], eax
+	mov	DWORD PTR _pkInstance$227310[esp+20], eax
 	test	eax, eax
 	je	SHORT $LN5@lIsVisible@2
 	xor	bl, bl
@@ -12325,10 +12325,10 @@ $LN5@lIsVisible@2:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lIsVisible@2
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -12347,7 +12347,7 @@ $LN12@lIsVisible@2:
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN16@lIsVisible@2
-	push	OFFSET $SG223065
+	push	OFFSET $SG223107
 	push	2
 	push	esi
 	call	_lua_getfield
@@ -12379,7 +12379,7 @@ $LN15@lIsVisible@2:
 
 ; 835  : 	const bool bResult = pkPlot->isVisibleEnemyDefender(pkUnit);
 
-	mov	ecx, DWORD PTR _pkInstance$227268[esp+20]
+	mov	ecx, DWORD PTR _pkInstance$227310[esp+20]
 	push	edi
 	call	?isVisibleEnemyDefender@CvPlot@@QBE_NPBVCvUnit@@@Z ; CvPlot::isVisibleEnemyDefender
 
@@ -12498,7 +12498,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lIsVisible@3
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -12523,10 +12523,10 @@ $LN5@lIsVisible@3:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lIsVisible@3
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -12592,7 +12592,7 @@ EXTRN	?getNumFriendlyUnitsOfType@CvPlot@@QBEHPBVCvUnit@@_N@Z:PROC ; CvPlot::getN
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?lGetNumFriendlyUnitsOfType@CvLuaPlot@@KAHPAUlua_State@@@Z
 _TEXT	SEGMENT
-_pkInstance$227348 = -8					; size = 4
+_pkInstance$227390 = -8					; size = 4
 _bBreakOnUnitLimit$ = -4				; size = 1
 _L$ = 8							; size = 4
 ?lGetNumFriendlyUnitsOfType@CvLuaPlot@@KAHPAUlua_State@@@Z PROC ; CvLuaPlot::lGetNumFriendlyUnitsOfType, COMDAT
@@ -12614,12 +12614,12 @@ _L$ = 8							; size = 4
 	push	esi
 	mov	edi, eax
 	mov	bl, 1
-	mov	DWORD PTR _pkInstance$227348[esp+36], 0
+	mov	DWORD PTR _pkInstance$227390[esp+36], 0
 	call	_lua_type
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lGetNumFri
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -12633,7 +12633,7 @@ _L$ = 8							; size = 4
 	push	esi
 	call	_lua_touserdata
 	add	esp, 8
-	mov	DWORD PTR _pkInstance$227348[esp+24], eax
+	mov	DWORD PTR _pkInstance$227390[esp+24], eax
 	test	eax, eax
 	je	SHORT $LN5@lGetNumFri
 	xor	bl, bl
@@ -12644,10 +12644,10 @@ $LN5@lGetNumFri:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lGetNumFri
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -12666,7 +12666,7 @@ $LN12@lGetNumFri:
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN16@lGetNumFri
-	push	OFFSET $SG223065
+	push	OFFSET $SG223107
 	push	2
 	push	esi
 	call	_lua_getfield
@@ -12706,7 +12706,7 @@ $LN15@lGetNumFri:
 
 ; 882  : 	int iResult = pkPlot->getNumFriendlyUnitsOfType(pkUnit, bBreakOnUnitLimit);
 
-	mov	ecx, DWORD PTR _pkInstance$227348[esp+36]
+	mov	ecx, DWORD PTR _pkInstance$227390[esp+36]
 	mov	BYTE PTR _bBreakOnUnitLimit$[esp+36], al
 	mov	eax, DWORD PTR _bBreakOnUnitLimit$[esp+36]
 	add	esp, 12					; 0000000cH
@@ -12807,7 +12807,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lIsTradeRo
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -12832,10 +12832,10 @@ $LN5@lIsTradeRo:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lIsTradeRo
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -12881,7 +12881,7 @@ EXTRN	?isValidDomainForLocation@CvPlot@@QBE_NABVCvUnit@@@Z:PROC ; CvPlot::isVali
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?lIsValidDomainForLocation@CvLuaPlot@@KAHPAUlua_State@@@Z
 _TEXT	SEGMENT
-_pkInstance$227417 = -4					; size = 4
+_pkInstance$227459 = -4					; size = 4
 _L$ = 8							; size = 4
 ?lIsValidDomainForLocation@CvLuaPlot@@KAHPAUlua_State@@@Z PROC ; CvLuaPlot::lIsValidDomainForLocation, COMDAT
 
@@ -12902,12 +12902,12 @@ _L$ = 8							; size = 4
 	push	esi
 	mov	edi, eax
 	mov	bl, 1
-	mov	DWORD PTR _pkInstance$227417[esp+32], 0
+	mov	DWORD PTR _pkInstance$227459[esp+32], 0
 	call	_lua_type
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lIsValidDo
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -12921,7 +12921,7 @@ _L$ = 8							; size = 4
 	push	esi
 	call	_lua_touserdata
 	add	esp, 8
-	mov	DWORD PTR _pkInstance$227417[esp+20], eax
+	mov	DWORD PTR _pkInstance$227459[esp+20], eax
 	test	eax, eax
 	je	SHORT $LN5@lIsValidDo
 	xor	bl, bl
@@ -12932,10 +12932,10 @@ $LN5@lIsValidDo:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lIsValidDo
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -12954,7 +12954,7 @@ $LN12@lIsValidDo:
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN16@lIsValidDo
-	push	OFFSET $SG223065
+	push	OFFSET $SG223107
 	push	2
 	push	esi
 	call	_lua_getfield
@@ -12987,7 +12987,7 @@ $LN15@lIsValidDo:
 ; 914  : 
 ; 915  : 	const bool bResult = pkPlot->isValidDomainForLocation(*pkUnit);
 
-	mov	ecx, DWORD PTR _pkInstance$227417[esp+20]
+	mov	ecx, DWORD PTR _pkInstance$227459[esp+20]
 	push	edi
 	call	?isValidDomainForLocation@CvPlot@@QBE_NABVCvUnit@@@Z ; CvPlot::isValidDomainForLocation
 
@@ -13018,7 +13018,7 @@ EXTRN	?isValidDomainForAction@CvPlot@@QBE_NABVCvUnit@@@Z:PROC ; CvPlot::isValidD
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?lIsValidDomainForAction@CvLuaPlot@@KAHPAUlua_State@@@Z
 _TEXT	SEGMENT
-_pkInstance$227454 = -4					; size = 4
+_pkInstance$227496 = -4					; size = 4
 _L$ = 8							; size = 4
 ?lIsValidDomainForAction@CvLuaPlot@@KAHPAUlua_State@@@Z PROC ; CvLuaPlot::lIsValidDomainForAction, COMDAT
 
@@ -13039,12 +13039,12 @@ _L$ = 8							; size = 4
 	push	esi
 	mov	edi, eax
 	mov	bl, 1
-	mov	DWORD PTR _pkInstance$227454[esp+32], 0
+	mov	DWORD PTR _pkInstance$227496[esp+32], 0
 	call	_lua_type
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lIsValidDo@2
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -13058,7 +13058,7 @@ _L$ = 8							; size = 4
 	push	esi
 	call	_lua_touserdata
 	add	esp, 8
-	mov	DWORD PTR _pkInstance$227454[esp+20], eax
+	mov	DWORD PTR _pkInstance$227496[esp+20], eax
 	test	eax, eax
 	je	SHORT $LN5@lIsValidDo@2
 	xor	bl, bl
@@ -13069,10 +13069,10 @@ $LN5@lIsValidDo@2:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lIsValidDo@2
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -13091,7 +13091,7 @@ $LN12@lIsValidDo@2:
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN16@lIsValidDo@2
-	push	OFFSET $SG223065
+	push	OFFSET $SG223107
 	push	2
 	push	esi
 	call	_lua_getfield
@@ -13124,7 +13124,7 @@ $LN15@lIsValidDo@2:
 ; 925  : 
 ; 926  : 	const bool bResult = pkPlot->isValidDomainForAction(*pkUnit);
 
-	mov	ecx, DWORD PTR _pkInstance$227454[esp+20]
+	mov	ecx, DWORD PTR _pkInstance$227496[esp+20]
 	push	edi
 	call	?isValidDomainForAction@CvPlot@@QBE_NABVCvUnit@@@Z ; CvPlot::isValidDomainForAction
 
@@ -13302,7 +13302,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lArea
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -13327,10 +13327,10 @@ $LN5@lArea:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lArea
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -13390,7 +13390,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lWaterArea
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -13415,10 +13415,10 @@ $LN5@lWaterArea:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lWaterArea
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -13624,7 +13624,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lGetInland
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -13649,10 +13649,10 @@ $LN5@lGetInland:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lGetInland
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -14358,7 +14358,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN9@lGetResour
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -14383,10 +14383,10 @@ $LN9@lGetResour:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN16@lGetResour
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -14753,7 +14753,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lIsRoutePi
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -14778,10 +14778,10 @@ $LN5@lIsRoutePi:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lIsRoutePi
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -14838,7 +14838,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lGetPlotCi
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -14863,10 +14863,10 @@ $LN5@lGetPlotCi:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lGetPlotCi
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -14959,7 +14959,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lGetWorkin
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -14984,10 +14984,10 @@ $LN5@lGetWorkin:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lGetWorkin
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -15047,7 +15047,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lGetWorkin@2
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -15072,10 +15072,10 @@ $LN5@lGetWorkin@2:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lGetWorkin@2
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -15177,7 +15177,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lGetYield
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -15202,10 +15202,10 @@ $LN5@lGetYield:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lGetYield
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -15312,7 +15312,7 @@ EXTRN	?calculateImprovementYieldChange@CvPlot@@QBEHW4ImprovementTypes@@W4YieldTy
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?lCalculateImprovementYieldChange@CvLuaPlot@@KAHPAUlua_State@@@Z
 _TEXT	SEGMENT
-_pkInstance$227920 = -8					; size = 4
+_pkInstance$227962 = -8					; size = 4
 _bOptional$ = -4					; size = 1
 _L$ = 8							; size = 4
 ?lCalculateImprovementYieldChange@CvLuaPlot@@KAHPAUlua_State@@@Z PROC ; CvLuaPlot::lCalculateImprovementYieldChange, COMDAT
@@ -15334,12 +15334,12 @@ _L$ = 8							; size = 4
 	push	esi
 	mov	edi, eax
 	mov	bl, 1
-	mov	DWORD PTR _pkInstance$227920[esp+36], 0
+	mov	DWORD PTR _pkInstance$227962[esp+36], 0
 	call	_lua_type
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN14@lCalculate
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -15353,7 +15353,7 @@ _L$ = 8							; size = 4
 	push	esi
 	call	_lua_touserdata
 	add	esp, 8
-	mov	DWORD PTR _pkInstance$227920[esp+24], eax
+	mov	DWORD PTR _pkInstance$227962[esp+24], eax
 	test	eax, eax
 	je	SHORT $LN14@lCalculate
 	xor	bl, bl
@@ -15364,10 +15364,10 @@ $LN14@lCalculate:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lCalculate
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -15412,7 +15412,7 @@ $LN12@lCalculate:
 ; 1402 : 
 ; 1403 : 	const int iResult = pkPlot->calculateImprovementYieldChange(eImprovement, eYield, ePlayer, bOptional, eRoute);
 
-	mov	ecx, DWORD PTR _pkInstance$227920[esp+72]
+	mov	ecx, DWORD PTR _pkInstance$227962[esp+72]
 	add	esp, 48					; 00000030H
 	push	eax
 	mov	eax, DWORD PTR _bOptional$[esp+28]
@@ -15664,7 +15664,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lChangeVis
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -15689,10 +15689,10 @@ $LN5@lChangeVis:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lChangeVis
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -15797,7 +15797,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN7@lGetReveal
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -15822,10 +15822,10 @@ $LN7@lGetReveal:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN14@lGetReveal
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -15933,7 +15933,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN7@lGetReveal@2
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -15958,10 +15958,10 @@ $LN7@lGetReveal@2:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN14@lGetReveal@2
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -16065,7 +16065,7 @@ PUBLIC	?lIsRiverCrossingToPlot@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lIsRi
 ;	COMDAT ?lIsRiverCrossingToPlot@CvLuaPlot@@KAHPAUlua_State@@@Z
 _TEXT	SEGMENT
 _bIsCrossingRiver$ = -5					; size = 1
-_stack_size$228078 = -4					; size = 4
+_stack_size$228120 = -4					; size = 4
 _L$ = 8							; size = 4
 ?lIsRiverCrossingToPlot@CvLuaPlot@@KAHPAUlua_State@@@Z PROC ; CvLuaPlot::lIsRiverCrossingToPlot, COMDAT
 
@@ -16093,7 +16093,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN6@lIsRiverCr@2
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -16118,10 +16118,10 @@ $LN6@lIsRiverCr@2:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN13@lIsRiverCr@2
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -16133,14 +16133,14 @@ $LN13@lIsRiverCr@2:
 	call	_lua_gettop
 	push	2
 	push	esi
-	mov	DWORD PTR _stack_size$228078[esp+36], eax
+	mov	DWORD PTR _stack_size$228120[esp+36], eax
 	mov	bl, 1
 	xor	edi, edi
 	call	_lua_type
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN17@lIsRiverCr@2
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	2
 	push	esi
 	call	_lua_getfield
@@ -16159,14 +16159,14 @@ $LN13@lIsRiverCr@2:
 	je	SHORT $LN17@lIsRiverCr@2
 	xor	bl, bl
 $LN17@lIsRiverCr@2:
-	mov	eax, DWORD PTR _stack_size$228078[esp+24]
+	mov	eax, DWORD PTR _stack_size$228120[esp+24]
 	push	eax
 	push	esi
 	call	_lua_settop
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN24@lIsRiverCr@2
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 8
@@ -16250,7 +16250,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN7@lIsReveale
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -16275,10 +16275,10 @@ $LN7@lIsReveale:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN14@lIsReveale
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -16417,7 +16417,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lSetReveal
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -16442,10 +16442,10 @@ $LN5@lSetReveal:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lSetReveal
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -16541,7 +16541,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN7@lGetReveal@3
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -16566,10 +16566,10 @@ $LN7@lGetReveal@3:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN14@lGetReveal@3
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -16677,7 +16677,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN7@lGetReveal@4
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -16702,10 +16702,10 @@ $LN7@lGetReveal@4:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN14@lGetReveal@4
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -16938,7 +16938,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lGetUnit
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -16963,10 +16963,10 @@ $LN5@lGetUnit:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lGetUnit
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -17035,7 +17035,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lGetNumLay
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -17060,10 +17060,10 @@ $LN5@lGetNumLay:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lGetNumLay
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -17130,7 +17130,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lGetLayerU
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -17155,10 +17155,10 @@ $LN5@lGetLayerU:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lGetLayerU
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -17259,7 +17259,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN6@lGetScript
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -17284,10 +17284,10 @@ $LN6@lGetScript:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN13@lGetScript
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -17368,7 +17368,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lSetScript
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -17393,10 +17393,10 @@ $LN5@lSetScript:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lSetScript
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -17459,7 +17459,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN10@lGetActive
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -17484,10 +17484,10 @@ $LN10@lGetActive:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN17@lGetActive
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -17575,7 +17575,7 @@ EXTRN	?canSeePlot@CvPlot@@QBE_NPBV1@W4TeamTypes@@HW4DirectionTypes@@@Z:PROC ; Cv
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?lCanSeePlot@CvLuaPlot@@KAHPAUlua_State@@@Z
 _TEXT	SEGMENT
-_pkInstance$228479 = -4					; size = 4
+_pkInstance$228521 = -4					; size = 4
 _L$ = 8							; size = 4
 ?lCanSeePlot@CvLuaPlot@@KAHPAUlua_State@@@Z PROC	; CvLuaPlot::lCanSeePlot, COMDAT
 
@@ -17601,7 +17601,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN6@lCanSeePlo
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -17626,10 +17626,10 @@ $LN6@lCanSeePlo:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN13@lCanSeePlo
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -17643,12 +17643,12 @@ $LN13@lCanSeePlo:
 	push	esi
 	mov	edi, eax
 	mov	bl, 1
-	mov	DWORD PTR _pkInstance$228479[esp+32], 0
+	mov	DWORD PTR _pkInstance$228521[esp+32], 0
 	call	_lua_type
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN17@lCanSeePlo
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	2
 	push	esi
 	call	_lua_getfield
@@ -17662,7 +17662,7 @@ $LN13@lCanSeePlo:
 	push	esi
 	call	_lua_touserdata
 	add	esp, 8
-	mov	DWORD PTR _pkInstance$228479[esp+20], eax
+	mov	DWORD PTR _pkInstance$228521[esp+20], eax
 	test	eax, eax
 	je	SHORT $LN17@lCanSeePlo
 	xor	bl, bl
@@ -17673,7 +17673,7 @@ $LN17@lCanSeePlo:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN24@lCanSeePlo
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 8
@@ -17714,7 +17714,7 @@ $LN24@lCanSeePlo:
 ; 1721 : 	{
 ; 1722 : 		bCanSee = pkThisPlot->canSeePlot(pkThatPlot, eTeam, iRange, eFacingDirection);
 
-	mov	eax, DWORD PTR _pkInstance$228479[esp+20]
+	mov	eax, DWORD PTR _pkInstance$228521[esp+20]
 	push	ecx
 	push	ebx
 	push	edi
@@ -17777,7 +17777,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN7@lGetContin
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -17802,10 +17802,10 @@ $LN7@lGetContin:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN14@lGetContin
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -17900,7 +17900,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN6@lSetContin
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -17925,10 +17925,10 @@ $LN6@lSetContin:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN13@lSetContin
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -18003,7 +18003,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN6@lIsResourc
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -18028,10 +18028,10 @@ $LN6@lIsResourc:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN13@lIsResourc
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -18126,7 +18126,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN6@lIsBuildRe
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -18151,10 +18151,10 @@ $LN6@lIsBuildRe:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN13@lIsBuildRe
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -18220,7 +18220,7 @@ EXTRN	?GetArchaeologicalRecord@CvPlot@@QBE?AUCvArchaeologyData@@XZ:PROC ; CvPlot
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?lGetArchaeologyArtifactType@CvLuaPlot@@KAHPAUlua_State@@@Z
 _TEXT	SEGMENT
-$T228617 = -20						; size = 20
+$T228659 = -20						; size = 20
 _L$ = 8							; size = 4
 ?lGetArchaeologyArtifactType@CvLuaPlot@@KAHPAUlua_State@@@Z PROC ; CvLuaPlot::lGetArchaeologyArtifactType, COMDAT
 
@@ -18246,7 +18246,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lGetArchae
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -18271,10 +18271,10 @@ $LN5@lGetArchae:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lGetArchae
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -18282,7 +18282,7 @@ $LN12@lGetArchae:
 
 ; 1793 : 	int iType = kPlot->GetArchaeologicalRecord().m_eArtifactType;
 
-	lea	eax, DWORD PTR $T228617[esp+36]
+	lea	eax, DWORD PTR $T228659[esp+36]
 	push	eax
 	mov	ecx, edi
 	call	?GetArchaeologicalRecord@CvPlot@@QBE?AUCvArchaeologyData@@XZ ; CvPlot::GetArchaeologicalRecord
@@ -18313,7 +18313,7 @@ PUBLIC	?lGetArchaeologyArtifactEra@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::l
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?lGetArchaeologyArtifactEra@CvLuaPlot@@KAHPAUlua_State@@@Z
 _TEXT	SEGMENT
-$T228644 = -20						; size = 20
+$T228686 = -20						; size = 20
 _L$ = 8							; size = 4
 ?lGetArchaeologyArtifactEra@CvLuaPlot@@KAHPAUlua_State@@@Z PROC ; CvLuaPlot::lGetArchaeologyArtifactEra, COMDAT
 
@@ -18339,7 +18339,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lGetArchae@2
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -18364,10 +18364,10 @@ $LN5@lGetArchae@2:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lGetArchae@2
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -18375,7 +18375,7 @@ $LN12@lGetArchae@2:
 
 ; 1802 : 	int iEra = kPlot->GetArchaeologicalRecord().m_eEra;
 
-	lea	eax, DWORD PTR $T228644[esp+36]
+	lea	eax, DWORD PTR $T228686[esp+36]
 	push	eax
 	mov	ecx, edi
 	call	?GetArchaeologicalRecord@CvPlot@@QBE?AUCvArchaeologyData@@XZ ; CvPlot::GetArchaeologicalRecord
@@ -18406,7 +18406,7 @@ PUBLIC	?lGetArchaeologyArtifactPlayer1@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlo
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?lGetArchaeologyArtifactPlayer1@CvLuaPlot@@KAHPAUlua_State@@@Z
 _TEXT	SEGMENT
-$T228671 = -20						; size = 20
+$T228713 = -20						; size = 20
 _L$ = 8							; size = 4
 ?lGetArchaeologyArtifactPlayer1@CvLuaPlot@@KAHPAUlua_State@@@Z PROC ; CvLuaPlot::lGetArchaeologyArtifactPlayer1, COMDAT
 
@@ -18432,7 +18432,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lGetArchae@3
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -18457,10 +18457,10 @@ $LN5@lGetArchae@3:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lGetArchae@3
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -18468,7 +18468,7 @@ $LN12@lGetArchae@3:
 
 ; 1811 : 	int iPlayer = kPlot->GetArchaeologicalRecord().m_ePlayer1;
 
-	lea	eax, DWORD PTR $T228671[esp+36]
+	lea	eax, DWORD PTR $T228713[esp+36]
 	push	eax
 	mov	ecx, edi
 	call	?GetArchaeologicalRecord@CvPlot@@QBE?AUCvArchaeologyData@@XZ ; CvPlot::GetArchaeologicalRecord
@@ -18499,7 +18499,7 @@ PUBLIC	?lGetArchaeologyArtifactPlayer2@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlo
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?lGetArchaeologyArtifactPlayer2@CvLuaPlot@@KAHPAUlua_State@@@Z
 _TEXT	SEGMENT
-$T228698 = -20						; size = 20
+$T228740 = -20						; size = 20
 _L$ = 8							; size = 4
 ?lGetArchaeologyArtifactPlayer2@CvLuaPlot@@KAHPAUlua_State@@@Z PROC ; CvLuaPlot::lGetArchaeologyArtifactPlayer2, COMDAT
 
@@ -18525,7 +18525,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lGetArchae@4
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -18550,10 +18550,10 @@ $LN5@lGetArchae@4:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lGetArchae@4
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -18561,7 +18561,7 @@ $LN12@lGetArchae@4:
 
 ; 1820 : 	int iPlayer = kPlot->GetArchaeologicalRecord().m_ePlayer2;
 
-	lea	eax, DWORD PTR $T228698[esp+36]
+	lea	eax, DWORD PTR $T228740[esp+36]
 	push	eax
 	mov	ecx, edi
 	call	?GetArchaeologicalRecord@CvPlot@@QBE?AUCvArchaeologyData@@XZ ; CvPlot::GetArchaeologicalRecord
@@ -18592,7 +18592,7 @@ PUBLIC	?lGetArchaeologyArtifactWork@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?lGetArchaeologyArtifactWork@CvLuaPlot@@KAHPAUlua_State@@@Z
 _TEXT	SEGMENT
-$T228725 = -20						; size = 20
+$T228767 = -20						; size = 20
 _L$ = 8							; size = 4
 ?lGetArchaeologyArtifactWork@CvLuaPlot@@KAHPAUlua_State@@@Z PROC ; CvLuaPlot::lGetArchaeologyArtifactWork, COMDAT
 
@@ -18618,7 +18618,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lGetArchae@5
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -18643,10 +18643,10 @@ $LN5@lGetArchae@5:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lGetArchae@5
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -18654,7 +18654,7 @@ $LN12@lGetArchae@5:
 
 ; 1829 : 	int iWork = (int)kPlot->GetArchaeologicalRecord().m_eWork;
 
-	lea	eax, DWORD PTR $T228725[esp+36]
+	lea	eax, DWORD PTR $T228767[esp+36]
 	push	eax
 	mov	ecx, edi
 	call	?GetArchaeologicalRecord@CvPlot@@QBE?AUCvArchaeologyData@@XZ ; CvPlot::GetArchaeologicalRecord
@@ -18774,7 +18774,7 @@ _func$ = 12						; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@BasicLuaMe@53
-	push	OFFSET $SG223017
+	push	OFFSET $SG223059
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -18799,10 +18799,10 @@ $LN5@BasicLuaMe@53:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@BasicLuaMe@53
-	push	OFFSET $SG223023
+	push	OFFSET $SG223065
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG223031
+	push	OFFSET $SG223073
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -18891,7 +18891,7 @@ _t$ = 12						; size = 4
 	push	esi
 	call	_lua_pushcclosure
 	mov	edi, DWORD PTR _t$[esp+16]
-	push	OFFSET $SG220421
+	push	OFFSET $SG220463
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -18902,7 +18902,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetFeatureType@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetFeatureType
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220422
+	push	OFFSET $SG220464
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -18913,7 +18913,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetTerrainType@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetTerrainType
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220423
+	push	OFFSET $SG220465
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -18925,7 +18925,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsRiver@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lIsRiver
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220424
+	push	OFFSET $SG220466
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -18936,7 +18936,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsWater@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lIsWater
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220425
+	push	OFFSET $SG220467
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -18947,7 +18947,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lSetFeatureType@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lSetFeatureType
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220426
+	push	OFFSET $SG220468
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -18959,7 +18959,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lSetTerrainType@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lSetTerrainType
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220427
+	push	OFFSET $SG220469
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -18971,7 +18971,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsNone@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lIsNone
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220428
+	push	OFFSET $SG220470
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -18982,7 +18982,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lErase@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lErase
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220429
+	push	OFFSET $SG220471
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -18994,7 +18994,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetTeam@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetTeam
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220430
+	push	OFFSET $SG220472
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19006,7 +19006,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lNukeExplosion@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lNukeExplosion
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220431
+	push	OFFSET $SG220473
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19018,7 +19018,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetInlandCorner@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetInlandCorner
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220432
+	push	OFFSET $SG220474
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19031,7 +19031,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lUpdateFog@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lUpdateFog
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220433
+	push	OFFSET $SG220475
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19042,7 +19042,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lUpdateVisibility@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lUpdateVisibility
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220434
+	push	OFFSET $SG220476
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19053,7 +19053,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsAdjacentToArea@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lIsAdjacentToArea
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220435
+	push	OFFSET $SG220477
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19065,7 +19065,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lShareAdjacentArea@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lShareAdjacentArea
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220436
+	push	OFFSET $SG220478
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19076,7 +19076,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsAdjacentToLand@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lIsAdjacentToLand
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220437
+	push	OFFSET $SG220479
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19087,7 +19087,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsAdjacentToShallowWater@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lIsAdjacentToShallowWater
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220438
+	push	OFFSET $SG220480
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19099,7 +19099,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsCoastalLand@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lIsCoastalLand
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220439
+	push	OFFSET $SG220481
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19111,7 +19111,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsWithinTeamCityRadius@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lIsWithinTeamCityRadius
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220440
+	push	OFFSET $SG220482
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19123,7 +19123,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsLake@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lIsLake
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220441
+	push	OFFSET $SG220483
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19135,7 +19135,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsFreshWater@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lIsFreshWater
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220442
+	push	OFFSET $SG220484
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19147,7 +19147,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsRiverSide@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lIsRiverSide
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220443
+	push	OFFSET $SG220485
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19158,7 +19158,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsRiverConnection@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lIsRiverConnection
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220444
+	push	OFFSET $SG220486
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19170,7 +19170,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsRiverCrossingFlowClockwise@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lIsRiverCrossingFlowClockwise
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220445
+	push	OFFSET $SG220487
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19182,7 +19182,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetNearestLandArea@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetNearestLandArea
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220446
+	push	OFFSET $SG220488
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19193,7 +19193,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lSeeFromLevel@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lSeeFromLevel
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220447
+	push	OFFSET $SG220489
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19205,7 +19205,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetNearestLandPlot@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetNearestLandPlot
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220448
+	push	OFFSET $SG220490
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19216,7 +19216,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lSeeThroughLevel@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lSeeThroughLevel
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220449
+	push	OFFSET $SG220491
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19227,7 +19227,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lCanHaveResource@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lCanHaveResource
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220450
+	push	OFFSET $SG220492
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19239,7 +19239,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lCanHaveImprovement@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lCanHaveImprovement
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220451
+	push	OFFSET $SG220493
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19250,7 +19250,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lCanBuild@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lCanBuild
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220452
+	push	OFFSET $SG220494
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19261,7 +19261,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetBuildTime@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetBuildTime
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220453
+	push	OFFSET $SG220495
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19273,7 +19273,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetBuildTurnsLeft@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetBuildTurnsLeft
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220454
+	push	OFFSET $SG220496
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19284,7 +19284,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetBuildTurnsTotal@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetBuildTurnsTotal
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220455
+	push	OFFSET $SG220497
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19295,7 +19295,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetFeatureProduction@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetFeatureProduction
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220456
+	push	OFFSET $SG220498
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19308,7 +19308,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetFeatureFood@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetFeatureFood
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220457
+	push	OFFSET $SG220499
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19321,7 +19321,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetBestDefender@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetBestDefender
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220458
+	push	OFFSET $SG220500
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19332,7 +19332,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetSelectedUnit@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetSelectedUnit
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220459
+	push	OFFSET $SG220501
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19344,7 +19344,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetUnitPower@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetUnitPower
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220460
+	push	OFFSET $SG220502
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19356,7 +19356,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lDefenseModifier@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lDefenseModifier
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220461
+	push	OFFSET $SG220503
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19367,7 +19367,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lMovementCost@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lMovementCost
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220462
+	push	OFFSET $SG220504
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19380,7 +19380,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetExtraMovePathCost@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetExtraMovePathCost
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220463
+	push	OFFSET $SG220505
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19391,7 +19391,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lChangeExtraMovePathCost@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lChangeExtraMovePathCost
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220464
+	push	OFFSET $SG220506
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19403,7 +19403,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsAdjacentOwned@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lIsAdjacentOwned
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220465
+	push	OFFSET $SG220507
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19415,7 +19415,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsAdjacentPlayer@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lIsAdjacentPlayer
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220466
+	push	OFFSET $SG220508
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19426,7 +19426,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsAdjacentTeam@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lIsAdjacentTeam
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220467
+	push	OFFSET $SG220509
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19438,7 +19438,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsOwned@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lIsOwned
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220468
+	push	OFFSET $SG220510
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19450,7 +19450,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsBarbarian@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lIsBarbarian
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220469
+	push	OFFSET $SG220511
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19461,7 +19461,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsRevealedBarbarian@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lIsRevealedBarbarian
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220470
+	push	OFFSET $SG220512
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19472,7 +19472,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lHasBarbarianCamp@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lHasBarbarianCamp
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220471
+	push	OFFSET $SG220513
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19484,7 +19484,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsVisible@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lIsVisible
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220472
+	push	OFFSET $SG220514
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19495,7 +19495,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsActiveVisible@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lIsActiveVisible
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220473
+	push	OFFSET $SG220515
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19506,7 +19506,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsVisibleToWatchingHuman@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lIsVisibleToWatchingHuman
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220474
+	push	OFFSET $SG220516
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19518,7 +19518,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsAdjacentVisible@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lIsAdjacentVisible
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220475
+	push	OFFSET $SG220517
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19529,7 +19529,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsAdjacentNonvisible@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lIsAdjacentNonvisible
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220476
+	push	OFFSET $SG220518
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19540,7 +19540,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsAdjacentRevealed@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lIsAdjacentRevealed
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220477
+	push	OFFSET $SG220519
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19552,7 +19552,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsAdjacentNonrevealed@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lIsAdjacentNonrevealed
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220478
+	push	OFFSET $SG220520
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19564,7 +19564,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lRemoveGoody@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lRemoveGoody
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220479
+	push	OFFSET $SG220521
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19575,7 +19575,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsGoody@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lIsGoody
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220480
+	push	OFFSET $SG220522
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19587,7 +19587,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsRevealedGoody@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lIsRevealedGoody
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220481
+	push	OFFSET $SG220523
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19599,7 +19599,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsFriendlyTerritory@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lIsFriendlyTerritory
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220482
+	push	OFFSET $SG220524
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19611,7 +19611,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsCity@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lIsCity
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220483
+	push	OFFSET $SG220525
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19623,7 +19623,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsFriendlyCity@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lIsFriendlyCity
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220484
+	push	OFFSET $SG220526
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19634,7 +19634,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsEnemyCity@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lIsEnemyCity
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220485
+	push	OFFSET $SG220527
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19645,7 +19645,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsBeingWorked@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lIsBeingWorked
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220486
+	push	OFFSET $SG220528
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19658,7 +19658,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsUnit@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lIsUnit
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220487
+	push	OFFSET $SG220529
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19669,7 +19669,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsVisibleEnemyDefender@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lIsVisibleEnemyDefender
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220488
+	push	OFFSET $SG220530
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19680,7 +19680,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetNumDefenders@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetNumDefenders
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220489
+	push	OFFSET $SG220531
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19692,7 +19692,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetNumVisibleEnemyDefenders@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetNumVisibleEnemyDefenders
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220490
+	push	OFFSET $SG220532
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19703,7 +19703,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetNumVisiblePotentialEnemyDefenders@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetNumVisiblePotentialEnemyDefenders
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220491
+	push	OFFSET $SG220533
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19714,7 +19714,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsVisibleEnemyUnit@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lIsVisibleEnemyUnit
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220492
+	push	OFFSET $SG220534
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19726,7 +19726,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsVisibleOtherUnit@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lIsVisibleOtherUnit
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220493
+	push	OFFSET $SG220535
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19737,7 +19737,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetNumFriendlyUnitsOfType@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetNumFriendlyUnitsOfType
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220494
+	push	OFFSET $SG220536
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19748,7 +19748,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsFighting@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lIsFighting
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220495
+	push	OFFSET $SG220537
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19761,7 +19761,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsRoute@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lIsRoute
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220496
+	push	OFFSET $SG220538
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19772,7 +19772,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsTradeRoute@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lIsTradeRoute
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220497
+	push	OFFSET $SG220539
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19784,7 +19784,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsValidDomainForLocation@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lIsValidDomainForLocation
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220498
+	push	OFFSET $SG220540
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19796,7 +19796,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsValidDomainForAction@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lIsValidDomainForAction
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220499
+	push	OFFSET $SG220541
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19807,7 +19807,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsImpassable@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lIsImpassable
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220500
+	push	OFFSET $SG220542
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19819,7 +19819,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetX@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetX
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220501
+	push	OFFSET $SG220543
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19831,7 +19831,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetY@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetY
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220502
+	push	OFFSET $SG220544
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19842,7 +19842,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lAt@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lAt
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220503
+	push	OFFSET $SG220545
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19853,7 +19853,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetPlotIndex@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetPlotIndex
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220504
+	push	OFFSET $SG220546
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19865,7 +19865,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetLatitude@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetLatitude
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220505
+	push	OFFSET $SG220547
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19876,7 +19876,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lArea@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lArea
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220506
+	push	OFFSET $SG220548
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19887,7 +19887,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lWaterArea@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lWaterArea
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220507
+	push	OFFSET $SG220549
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19899,7 +19899,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetArea@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetArea
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220508
+	push	OFFSET $SG220550
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19910,7 +19910,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lSetArea@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lSetArea
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220509
+	push	OFFSET $SG220551
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19921,7 +19921,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetFeatureVariety@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetFeatureVariety
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220510
+	push	OFFSET $SG220552
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19934,7 +19934,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetOwnershipDuration@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetOwnershipDuration
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220511
+	push	OFFSET $SG220553
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19945,7 +19945,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsOwnershipScore@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lIsOwnershipScore
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220512
+	push	OFFSET $SG220554
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19956,7 +19956,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lSetOwnershipDuration@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lSetOwnershipDuration
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220513
+	push	OFFSET $SG220555
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19968,7 +19968,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lChangeOwnershipDuration@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lChangeOwnershipDuration
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220514
+	push	OFFSET $SG220556
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19980,7 +19980,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetImprovementDuration@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetImprovementDuration
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220515
+	push	OFFSET $SG220557
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -19991,7 +19991,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lSetImprovementDuration@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lSetImprovementDuration
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220516
+	push	OFFSET $SG220558
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20003,7 +20003,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lChangeImprovementDuration@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lChangeImprovementDuration
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220517
+	push	OFFSET $SG220559
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20015,7 +20015,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetUpgradeProgress@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetUpgradeProgress
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220518
+	push	OFFSET $SG220560
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20026,7 +20026,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetUpgradeTimeLeft@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetUpgradeTimeLeft
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220519
+	push	OFFSET $SG220561
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20039,7 +20039,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lSetUpgradeProgress@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lSetUpgradeProgress
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220520
+	push	OFFSET $SG220562
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20050,7 +20050,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lChangeUpgradeProgress@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lChangeUpgradeProgress
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220521
+	push	OFFSET $SG220563
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20062,7 +20062,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetCityRadiusCount@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetCityRadiusCount
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220522
+	push	OFFSET $SG220564
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20074,7 +20074,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsCityRadius@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lIsCityRadius
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220523
+	push	OFFSET $SG220565
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20086,7 +20086,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsStartingPlot@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lIsStartingPlot
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220524
+	push	OFFSET $SG220566
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20097,7 +20097,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lSetStartingPlot@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lSetStartingPlot
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220525
+	push	OFFSET $SG220567
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20109,7 +20109,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsNEOfRiver@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lIsNEOfRiver
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220526
+	push	OFFSET $SG220568
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20120,7 +20120,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lSetNEOfRiver@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lSetNEOfRiver
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220527
+	push	OFFSET $SG220569
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20131,7 +20131,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsWOfRiver@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lIsWOfRiver
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220528
+	push	OFFSET $SG220570
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20143,7 +20143,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lSetWOfRiver@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lSetWOfRiver
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220529
+	push	OFFSET $SG220571
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20154,7 +20154,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsNWOfRiver@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lIsNWOfRiver
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220530
+	push	OFFSET $SG220572
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20165,7 +20165,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lSetNWOfRiver@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lSetNWOfRiver
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220531
+	push	OFFSET $SG220573
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20177,7 +20177,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetRiverEFlowDirection@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetRiverEFlowDirection
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220532
+	push	OFFSET $SG220574
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20188,7 +20188,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetRiverSEFlowDirection@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetRiverSEFlowDirection
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220533
+	push	OFFSET $SG220575
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20199,7 +20199,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetRiverSWFlowDirection@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetRiverSWFlowDirection
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220534
+	push	OFFSET $SG220576
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20212,7 +20212,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsPotentialCityWork@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lIsPotentialCityWork
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220535
+	push	OFFSET $SG220577
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20223,7 +20223,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsPotentialCityWorkForArea@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lIsPotentialCityWorkForArea
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220536
+	push	OFFSET $SG220578
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20235,7 +20235,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetOwner@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetOwner
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220537
+	push	OFFSET $SG220579
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20247,7 +20247,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lSetOwner@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lSetOwner
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220538
+	push	OFFSET $SG220580
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20258,7 +20258,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetPlotType@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetPlotType
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220539
+	push	OFFSET $SG220581
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20269,7 +20269,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsFlatlands@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lIsFlatlands
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220540
+	push	OFFSET $SG220582
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20281,7 +20281,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsHills@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lIsHills
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220541
+	push	OFFSET $SG220583
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20292,7 +20292,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsOpenGround@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lIsOpenGround
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220542
+	push	OFFSET $SG220584
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20303,7 +20303,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsRoughGround@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lIsRoughGround
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220543
+	push	OFFSET $SG220585
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20315,7 +20315,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsMountain@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lIsMountain
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220544
+	push	OFFSET $SG220586
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20327,7 +20327,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lSetPlotType@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lSetPlotType
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220545
+	push	OFFSET $SG220587
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20338,7 +20338,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetResourceType@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetResourceType
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220546
+	push	OFFSET $SG220588
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20350,7 +20350,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetNonObsoleteResourceType@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetNonObsoleteResourceType
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220547
+	push	OFFSET $SG220589
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20361,7 +20361,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lSetResourceType@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lSetResourceType
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220548
+	push	OFFSET $SG220590
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20372,7 +20372,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetNumResource@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetNumResource
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220549
+	push	OFFSET $SG220591
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20384,7 +20384,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lSetNumResource@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lSetNumResource
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220550
+	push	OFFSET $SG220592
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20395,7 +20395,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lChangeNumResource@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lChangeNumResource
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220551
+	push	OFFSET $SG220593
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20407,7 +20407,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetImprovementType@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetImprovementType
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220552
+	push	OFFSET $SG220594
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20419,7 +20419,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lSetImprovementType@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lSetImprovementType
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220553
+	push	OFFSET $SG220595
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20430,7 +20430,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lSetImprovementPillaged@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lSetImprovementPillaged
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220554
+	push	OFFSET $SG220596
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20441,7 +20441,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetRouteType@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetRouteType
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220555
+	push	OFFSET $SG220597
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20453,7 +20453,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lSetRouteType@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lSetRouteType
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220556
+	push	OFFSET $SG220598
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20464,7 +20464,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsRoutePillaged@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lIsRoutePillaged
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220557
+	push	OFFSET $SG220599
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20476,7 +20476,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetPlotCity@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetPlotCity
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220558
+	push	OFFSET $SG220600
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20488,7 +20488,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetWorkingCity@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetWorkingCity
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220559
+	push	OFFSET $SG220601
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20499,7 +20499,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetWorkingCityOverride@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetWorkingCityOverride
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220560
+	push	OFFSET $SG220602
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20510,7 +20510,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetReconCount@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetReconCount
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220561
+	push	OFFSET $SG220603
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20522,7 +20522,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetRiverCrossingCount@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetRiverCrossingCount
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220562
+	push	OFFSET $SG220604
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20533,7 +20533,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetYield@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetYield
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220563
+	push	OFFSET $SG220605
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20544,7 +20544,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lCalculateNatureYield@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lCalculateNatureYield
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220564
+	push	OFFSET $SG220606
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20556,7 +20556,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lCalculateBestNatureYield@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lCalculateBestNatureYield
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220565
+	push	OFFSET $SG220607
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20567,7 +20567,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lCalculateTotalBestNatureYield@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lCalculateTotalBestNatureYield
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220566
+	push	OFFSET $SG220608
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20578,7 +20578,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lCalculateImprovementYieldChange@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lCalculateImprovementYieldChange
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220567
+	push	OFFSET $SG220609
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20590,7 +20590,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lCalculateYield@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lCalculateYield
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220568
+	push	OFFSET $SG220610
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20601,7 +20601,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lHasYield@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lHasYield
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220569
+	push	OFFSET $SG220611
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20612,7 +20612,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetYieldWithBuild@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetYieldWithBuild
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220570
+	push	OFFSET $SG220612
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20625,7 +20625,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lCountNumAirUnits@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lCountNumAirUnits
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220571
+	push	OFFSET $SG220613
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20637,7 +20637,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetFoundValue@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetFoundValue
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220572
+	push	OFFSET $SG220614
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20648,7 +20648,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsBestAdjacentFound@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lIsBestAdjacentFound
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220573
+	push	OFFSET $SG220615
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20661,7 +20661,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetPlayerCityRadiusCount@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetPlayerCityRadiusCount
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220574
+	push	OFFSET $SG220616
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20672,7 +20672,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsPlayerCityRadius@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lIsPlayerCityRadius
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220575
+	push	OFFSET $SG220617
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20684,7 +20684,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetVisibilityCount@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetVisibilityCount
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220576
+	push	OFFSET $SG220618
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20696,7 +20696,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lChangeVisibilityCount@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lChangeVisibilityCount
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220577
+	push	OFFSET $SG220619
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20708,7 +20708,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetRevealedOwner@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetRevealedOwner
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220578
+	push	OFFSET $SG220620
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20719,7 +20719,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetRevealedTeam@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetRevealedTeam
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220579
+	push	OFFSET $SG220621
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20732,7 +20732,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsRiverCrossing@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lIsRiverCrossing
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220580
+	push	OFFSET $SG220622
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20743,7 +20743,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsRiverCrossingToPlot@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lIsRiverCrossingToPlot
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220581
+	push	OFFSET $SG220623
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20755,7 +20755,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsRevealed@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lIsRevealed
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220582
+	push	OFFSET $SG220624
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20767,7 +20767,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lSetRevealed@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lSetRevealed
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220583
+	push	OFFSET $SG220625
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20778,7 +20778,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetRevealedImprovementType@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetRevealedImprovementType
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220584
+	push	OFFSET $SG220626
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20789,7 +20789,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetRevealedRouteType@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetRevealedRouteType
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220585
+	push	OFFSET $SG220627
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20801,7 +20801,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetBuildProgress@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetBuildProgress
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220586
+	push	OFFSET $SG220628
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20812,7 +20812,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lChangeBuildProgress@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lChangeBuildProgress
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220587
+	push	OFFSET $SG220629
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20824,7 +20824,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetInvisibleVisibilityCount@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetInvisibleVisibilityCount
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220588
+	push	OFFSET $SG220630
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20836,7 +20836,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsInvisibleVisible@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lIsInvisibleVisible
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220589
+	push	OFFSET $SG220631
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20847,7 +20847,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lChangeInvisibleVisibilityCount@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lChangeInvisibleVisibilityCount
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220590
+	push	OFFSET $SG220632
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20859,7 +20859,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetNumUnits@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetNumUnits
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220591
+	push	OFFSET $SG220633
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20871,7 +20871,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetUnit@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetUnit
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220592
+	push	OFFSET $SG220634
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20883,7 +20883,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetNumLayerUnits@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetNumLayerUnits
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220593
+	push	OFFSET $SG220635
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20894,7 +20894,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetLayerUnit@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetLayerUnit
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220594
+	push	OFFSET $SG220636
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20907,7 +20907,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetScriptData@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetScriptData
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220595
+	push	OFFSET $SG220637
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20918,7 +20918,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lSetScriptData@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lSetScriptData
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220596
+	push	OFFSET $SG220638
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20930,7 +20930,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetActiveFogOfWarMode@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetActiveFogOfWarMode
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220597
+	push	OFFSET $SG220639
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20943,7 +20943,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsImprovementPillaged@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lIsImprovementPillaged
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220598
+	push	OFFSET $SG220640
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20955,7 +20955,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lCanSeePlot@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lCanSeePlot
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220599
+	push	OFFSET $SG220641
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20967,7 +20967,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetContinentArtType@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetContinentArtType
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220600
+	push	OFFSET $SG220642
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20979,7 +20979,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lSetContinentArtType@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lSetContinentArtType
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220601
+	push	OFFSET $SG220643
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -20991,7 +20991,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsResourceConnectedByImprovement@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lIsResourceConnectedByImprovement
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220602
+	push	OFFSET $SG220644
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -21003,7 +21003,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsBuildRemovesFeature@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lIsBuildRemovesFeature
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220603
+	push	OFFSET $SG220645
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -21016,7 +21016,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetArchaeologyArtifactType@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetArchaeologyArtifactType
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220604
+	push	OFFSET $SG220646
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -21027,7 +21027,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetArchaeologyArtifactEra@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetArchaeologyArtifactEra
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220605
+	push	OFFSET $SG220647
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -21038,7 +21038,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetArchaeologyArtifactPlayer1@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetArchaeologyArtifactPlayer1
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220606
+	push	OFFSET $SG220648
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -21050,7 +21050,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetArchaeologyArtifactPlayer2@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetArchaeologyArtifactPlayer2
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220607
+	push	OFFSET $SG220649
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -21061,7 +21061,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetArchaeologyArtifactWork@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetArchaeologyArtifactWork
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220608
+	push	OFFSET $SG220650
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -21072,7 +21072,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lHasWrittenArtifact@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lHasWrittenArtifact
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220609
+	push	OFFSET $SG220651
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -21085,7 +21085,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetCityPurchaseID@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lGetCityPurchaseID
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220610
+	push	OFFSET $SG220652
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -21096,7 +21096,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lSetCityPurchaseID@CvLuaPlot@@KAHPAUlua_State@@@Z ; CvLuaPlot::lSetCityPurchaseID
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG220611
+	push	OFFSET $SG220653
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -21146,7 +21146,7 @@ _pkType$ = 12						; size = 4
 ; 54   : 		lua_getglobal(L, Derived::GetTypeName());
 
 	mov	esi, DWORD PTR _L$[esp+12]
-	push	OFFSET $SG220617
+	push	OFFSET $SG220659
 	push	-10002					; ffffd8eeH
 	push	esi
 	call	_lua_getfield
@@ -21179,7 +21179,7 @@ _pkType$ = 12						; size = 4
 ; 61   : 			//Create weak __instances table.
 ; 62   : 			lua_pushstring(L, "__instances");
 
-	push	OFFSET $SG222994
+	push	OFFSET $SG223036
 	push	esi
 	call	_lua_pushstring
 
@@ -21201,13 +21201,13 @@ _pkType$ = 12						; size = 4
 
 ; 67   : 			lua_pushstring(L, "__mode");
 
-	push	OFFSET $SG222995
+	push	OFFSET $SG223037
 	push	esi
 	call	_lua_pushstring
 
 ; 68   : 			lua_pushstring(L, "v");
 
-	push	OFFSET $SG222996
+	push	OFFSET $SG223038
 	push	esi
 	call	_lua_pushstring
 	add	esp, 68					; 00000044H
@@ -21241,7 +21241,7 @@ _pkType$ = 12						; size = 4
 
 ; 76   : 			lua_setglobal(L, Derived::GetTypeName());
 
-	push	OFFSET $SG220617
+	push	OFFSET $SG220659
 	push	-10002					; ffffd8eeH
 	push	esi
 	call	_lua_setfield
@@ -21266,7 +21266,7 @@ $LN11@Push@4:
 ; 81   : 
 ; 82   : 		lua_pushstring(L, "__instances");
 
-	push	OFFSET $SG222998
+	push	OFFSET $SG223040
 	push	esi
 	mov	ebx, eax
 	call	_lua_pushstring
@@ -21332,7 +21332,7 @@ $LN11@Push@4:
 
 ; 98   : 			lua_setfield(L, -2, "__instance");
 
-	push	OFFSET $SG223001
+	push	OFFSET $SG223043
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21347,7 +21347,7 @@ $LN11@Push@4:
 
 ; 101  : 			lua_pushstring(L, "__index");
 
-	push	OFFSET $SG223002
+	push	OFFSET $SG223044
 	push	esi
 	call	_lua_pushstring
 

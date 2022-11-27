@@ -5987,6 +5987,10 @@ void CvMinorCivAI::DoFriendshipChangeEffects(PlayerTypes ePlayer, int iOldFriend
 	bool bNowAboveAlliesThreshold = IsFriendshipAboveAlliesThreshold(iNewFriendship);
 
 	PlayerTypes eOldAlly = GetAlly();
+#ifdef NO_AI_ALLYING_CS
+	if (GET_PLAYER(ePlayer).isHuman() || !GC.getGame().isOption("GAMEOPTION_AI_TWEAKS"))
+	{
+#endif
 
 	// No old ally and our friendship is now above the threshold, OR our friendship is now higher than a previous ally
 	if((eOldAlly == NO_PLAYER && bNowAboveAlliesThreshold)
@@ -6030,6 +6034,31 @@ void CvMinorCivAI::DoFriendshipChangeEffects(PlayerTypes ePlayer, int iOldFriend
 		}
 
 	}
+#ifdef NO_AI_ALLYING_CS
+	}
+	else
+	{
+	if(eOldAlly == ePlayer && bWasAboveAlliesThreshold && !bNowAboveAlliesThreshold)
+	{
+		bAdd = false;
+		bAllies = true;
+
+		ICvEngineScriptSystem1* pkScriptSystem = gDLL->GetScriptSystem();
+		if (pkScriptSystem)
+		{
+			CvLuaArgsHandle args;
+			args->Push(m_pPlayer->GetID());
+			args->Push(ePlayer);
+			args->Push(false);
+			args->Push(iOldFriendship);
+			args->Push(iNewFriendship);
+
+			bool bResult;
+			LuaSupport::CallHook(pkScriptSystem, "MinorAlliesChanged", args.get(), bResult);
+		}
+	}
+	}
+#endif
 
 	// Make changes to bonuses here. Only send notifications if this change is not related to quests (otherwise it is rolled into quest notification)
 	if(bFriends || bAllies)

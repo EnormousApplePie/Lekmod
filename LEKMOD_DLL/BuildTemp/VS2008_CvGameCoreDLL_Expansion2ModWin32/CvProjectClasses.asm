@@ -10,58 +10,58 @@ INCLUDELIB MSVCRT
 INCLUDELIB OLDNAMES
 
 CONST	SEGMENT
-$SG217569 DB	'MaxGlobalInstances', 00H
+$SG217611 DB	'MaxGlobalInstances', 00H
 	ORG $+1
-$SG217570 DB	'MaxTeamInstances', 00H
+$SG217612 DB	'MaxTeamInstances', 00H
 	ORG $+3
-$SG217571 DB	'Cost', 00H
+$SG217613 DB	'Cost', 00H
 	ORG $+3
-$SG217572 DB	'NukeInterception', 00H
+$SG217614 DB	'NukeInterception', 00H
 	ORG $+3
-$SG217573 DB	'CultureBranchesRequired', 00H
-$SG217574 DB	'TechShare', 00H
+$SG217615 DB	'CultureBranchesRequired', 00H
+$SG217616 DB	'TechShare', 00H
 	ORG $+2
-$SG217575 DB	'VictoryDelayPercent', 00H
-$SG217576 DB	'Spaceship', 00H
+$SG217617 DB	'VictoryDelayPercent', 00H
+$SG217618 DB	'Spaceship', 00H
 	ORG $+2
-$SG217577 DB	'AllowsNukes', 00H
-$SG217578 DB	'MovieDefineTag', 00H
+$SG217619 DB	'AllowsNukes', 00H
+$SG217620 DB	'MovieDefineTag', 00H
 	ORG $+1
-$SG217580 DB	'VictoryPrereq', 00H
+$SG217622 DB	'VictoryPrereq', 00H
 	ORG $+2
-$SG217582 DB	'TechPrereq', 00H
+$SG217624 DB	'TechPrereq', 00H
 	ORG $+1
-$SG217584 DB	'EveryoneSpecialUnit', 00H
-$SG217586 DB	'CreateSound', 00H
-$SG217588 DB	'AnyonePrereqProject', 00H
-$SG217590 DB	'Quantity', 00H
+$SG217626 DB	'EveryoneSpecialUnit', 00H
+$SG217628 DB	'CreateSound', 00H
+$SG217630 DB	'AnyonePrereqProject', 00H
+$SG217632 DB	'Quantity', 00H
 	ORG $+3
-$SG217591 DB	'ProjectType', 00H
-$SG217592 DB	'ResourceType', 00H
+$SG217633 DB	'ProjectType', 00H
+$SG217634 DB	'ResourceType', 00H
 	ORG $+3
-$SG217593 DB	'Project_ResourceQuantityRequirements', 00H
+$SG217635 DB	'Project_ResourceQuantityRequirements', 00H
 	ORG $+3
-$SG217594 DB	'Resources', 00H
+$SG217636 DB	'Resources', 00H
 	ORG $+2
-$SG217596 DB	'Victories', 00H
+$SG217638 DB	'Victories', 00H
 	ORG $+6
-$SG217609 DB	'select VictoryType, Threshold, MinThreshold from Project'
+$SG217651 DB	'select VictoryType, Threshold, MinThreshold from Project'
 	DB	'_VictoryThresholds where ProjectType = ''%s'';', 00H
 	ORG $+3
-$SG217615 DB	'VictoryType', 00H
-$SG217618 DB	'Threshold', 00H
+$SG217657 DB	'VictoryType', 00H
+$SG217660 DB	'Threshold', 00H
 	ORG $+2
-$SG217620 DB	'MinThreshold', 00H
+$SG217662 DB	'MinThreshold', 00H
 	ORG $+3
-$SG217621 DB	'ProjectType', 00H
-$SG217622 DB	'Project_Flavors', 00H
-$SG217623 DB	'AmountNeeded', 00H
+$SG217663 DB	'ProjectType', 00H
+$SG217664 DB	'Project_Flavors', 00H
+$SG217665 DB	'AmountNeeded', 00H
 	ORG $+3
-$SG217624 DB	'ProjectType', 00H
-$SG217625 DB	'PrereqProjectType', 00H
+$SG217666 DB	'ProjectType', 00H
+$SG217667 DB	'PrereqProjectType', 00H
 	ORG $+2
-$SG217626 DB	'Project_Prereqs', 00H
-$SG217627 DB	'Projects', 00H
+$SG217668 DB	'Project_Prereqs', 00H
+$SG217669 DB	'Projects', 00H
 CONST	ENDS
 PUBLIC	?GetVictoryPrereq@CvProjectEntry@@QBEHXZ	; CvProjectEntry::GetVictoryPrereq
 ; Function compile flags: /Ogtpy
@@ -1068,8 +1068,8 @@ __TI2?AVbad_alloc@std@@ DD 00H
 xdata$x	ENDS
 ;	COMDAT ??$_Allocate@PAVCvProjectEntry@@@std@@YAPAPAVCvProjectEntry@@IPAPAV1@@Z
 _TEXT	SEGMENT
-$T218536 = -12						; size = 12
-$T218541 = 8						; size = 4
+$T218578 = -12						; size = 12
+$T218583 = 8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ??$_Allocate@PAVCvProjectEntry@@@std@@YAPAPAVCvProjectEntry@@IPAPAV1@@Z PROC ; std::_Allocate<CvProjectEntry *>, COMDAT
@@ -1111,15 +1111,15 @@ $LN3@Allocate:
 
 ; 40   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T218541[esp+8]
+	lea	eax, DWORD PTR $T218583[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T218536[esp+16]
-	mov	DWORD PTR $T218541[esp+12], 0
+	lea	ecx, DWORD PTR $T218578[esp+16]
+	mov	DWORD PTR $T218583[esp+12], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T218536[esp+16]
+	lea	ecx, DWORD PTR $T218578[esp+16]
 	push	ecx
-	mov	DWORD PTR $T218536[esp+20], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T218578[esp+20], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN9@Allocate:
 $LN8@Allocate:
@@ -2416,8 +2416,8 @@ __ehfuncinfo$?_Xlen@?$vector@PAVCvProjectEntry@@V?$allocator@PAVCvProjectEntry@@
 xdata$x	ENDS
 ;	COMDAT ?_Xlen@?$vector@PAVCvProjectEntry@@V?$allocator@PAVCvProjectEntry@@@std@@@std@@KAXXZ
 _TEXT	SEGMENT
-$T218875 = -80						; size = 28
-$T218874 = -52						; size = 40
+$T218917 = -80						; size = 28
+$T218916 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ?_Xlen@?$vector@PAVCvProjectEntry@@V?$allocator@PAVCvProjectEntry@@@std@@@std@@KAXXZ PROC ; std::vector<CvProjectEntry *,std::allocator<CvProjectEntry *> >::_Xlen, COMDAT
 
@@ -2433,22 +2433,22 @@ __$EHRec$ = -12						; size = 12
 ; 1260 : 		_THROW(length_error, "vector<T> too long");
 
 	push	OFFSET ??_C@_0BD@OLBABOEK@vector?$DMT?$DO?5too?5long?$AA@
-	lea	ecx, DWORD PTR $T218875[esp+84]
+	lea	ecx, DWORD PTR $T218917[esp+84]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T218874[esp+80]
+	lea	ecx, DWORD PTR $T218916[esp+80]
 	mov	DWORD PTR __$EHRec$[esp+88], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T218875[esp+80]
+	lea	eax, DWORD PTR $T218917[esp+80]
 	push	eax
-	lea	ecx, DWORD PTR $T218874[esp+96]
+	lea	ecx, DWORD PTR $T218916[esp+96]
 	mov	BYTE PTR __$EHRec$[esp+92], 1
-	mov	DWORD PTR $T218874[esp+84], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T218916[esp+84], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVlength_error@std@@
-	lea	ecx, DWORD PTR $T218874[esp+84]
+	lea	ecx, DWORD PTR $T218916[esp+84]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+96], 0
-	mov	DWORD PTR $T218874[esp+88], OFFSET ??_7length_error@std@@6B@
+	mov	DWORD PTR $T218916[esp+88], OFFSET ??_7length_error@std@@6B@
 	call	__CxxThrowException@8
 $LN13@Xlen:
 $LN12@Xlen:
@@ -2457,10 +2457,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Xlen@?$vector@PAVCvProjectEntry@@V?$allocator@PAVCvProjectEntry@@@std@@@std@@KAXXZ$0:
-	lea	ecx, DWORD PTR $T218875[ebp]
+	lea	ecx, DWORD PTR $T218917[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Xlen@?$vector@PAVCvProjectEntry@@V?$allocator@PAVCvProjectEntry@@@std@@@std@@KAXXZ$2:
-	lea	ecx, DWORD PTR $T218874[ebp]
+	lea	ecx, DWORD PTR $T218916[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Xlen@?$vector@PAVCvProjectEntry@@V?$allocator@PAVCvProjectEntry@@@std@@@std@@KAXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?_Xlen@?$vector@PAVCvProjectEntry@@V?$allocator@PAVCvProjectEntry@@@std@@@std@@KAXXZ
@@ -2747,10 +2747,10 @@ xdata$x	ENDS
 ;	COMDAT ?CacheResults@CvProjectEntry@@UAE_NAAVResults@Database@@AAVCvDatabaseUtility@@@Z
 _TEXT	SEGMENT
 tv419 = -596						; size = 4
-_iThreshold$217617 = -596				; size = 4
+_iThreshold$217659 = -596				; size = 4
 _szProjectType$ = -592					; size = 4
-_kDBResults$217602 = -588				; size = 64
-_szQuery$217603 = -524					; size = 512
+_kDBResults$217644 = -588				; size = 64
+_szQuery$217645 = -524					; size = 512
 __$EHRec$ = -12						; size = 12
 _kResults$ = 8						; size = 4
 _kUtility$ = 12						; size = 4
@@ -2787,48 +2787,48 @@ $LN4@CacheResul:
 ; 38   : 	m_iMaxGlobalInstances = kResults.GetInt("MaxGlobalInstances");
 
 	mov	ebp, DWORD PTR __imp_?GetInt@Results@Database@@QAEHPBD@Z
-	push	OFFSET $SG217569
+	push	OFFSET $SG217611
 	mov	ecx, edi
 	call	ebp
 
 ; 39   : 	m_iMaxTeamInstances = kResults.GetInt("MaxTeamInstances");
 
-	push	OFFSET $SG217570
+	push	OFFSET $SG217612
 	mov	ecx, edi
 	mov	DWORD PTR [esi+272], eax
 	call	ebp
 
 ; 40   : 	m_iProductionCost = kResults.GetInt("Cost");
 
-	push	OFFSET $SG217571
+	push	OFFSET $SG217613
 	mov	ecx, edi
 	mov	DWORD PTR [esi+276], eax
 	call	ebp
 
 ; 41   : 	m_iNukeInterception = kResults.GetInt("NukeInterception");
 
-	push	OFFSET $SG217572
+	push	OFFSET $SG217614
 	mov	ecx, edi
 	mov	DWORD PTR [esi+280], eax
 	call	ebp
 
 ; 42   : 	m_iCultureBranchesRequired = kResults.GetInt("CultureBranchesRequired");
 
-	push	OFFSET $SG217573
+	push	OFFSET $SG217615
 	mov	ecx, edi
 	mov	DWORD PTR [esi+284], eax
 	call	ebp
 
 ; 43   : 	m_iTechShare = kResults.GetInt("TechShare");
 
-	push	OFFSET $SG217574
+	push	OFFSET $SG217616
 	mov	ecx, edi
 	mov	DWORD PTR [esi+288], eax
 	call	ebp
 
 ; 44   : 	m_iVictoryDelayPercent = kResults.GetInt("VictoryDelayPercent");
 
-	push	OFFSET $SG217575
+	push	OFFSET $SG217617
 	mov	ecx, edi
 	mov	DWORD PTR [esi+292], eax
 	call	ebp
@@ -2837,14 +2837,14 @@ $LN4@CacheResul:
 ; 46   : 	m_bSpaceship = kResults.GetBool("Spaceship");
 
 	mov	ebx, DWORD PTR __imp_?GetBool@Results@Database@@QAE_NPBD@Z
-	push	OFFSET $SG217576
+	push	OFFSET $SG217618
 	mov	ecx, edi
 	mov	DWORD PTR [esi+300], eax
 	call	ebx
 
 ; 47   : 	m_bAllowsNukes = kResults.GetBool("AllowsNukes");
 
-	push	OFFSET $SG217577
+	push	OFFSET $SG217619
 	mov	ecx, edi
 	mov	BYTE PTR [esi+304], al
 	call	ebx
@@ -2853,7 +2853,7 @@ $LN4@CacheResul:
 ; 49   : 	m_strMovieArtDef = kResults.GetText("MovieDefineTag");
 
 	mov	ebx, DWORD PTR __imp_?GetText@Results@Database@@QAEPBDPBD@Z
-	push	OFFSET $SG217578
+	push	OFFSET $SG217620
 	mov	ecx, edi
 	mov	BYTE PTR [esi+305], al
 	call	ebx
@@ -2870,7 +2870,7 @@ $LN8@CacheResul:
 ; 50   : 
 ; 51   : 	const char* szVictoryPrereq = kResults.GetText("VictoryPrereq");
 
-	push	OFFSET $SG217580
+	push	OFFSET $SG217622
 	mov	ecx, edi
 	call	ebx
 
@@ -2884,7 +2884,7 @@ $LN8@CacheResul:
 ; 53   : 
 ; 54   : 	const char* szTechPrereq = kResults.GetText("TechPrereq");
 
-	push	OFFSET $SG217582
+	push	OFFSET $SG217624
 	mov	ecx, edi
 	mov	DWORD PTR [esi+260], eax
 	call	ebx
@@ -2899,7 +2899,7 @@ $LN8@CacheResul:
 ; 56   : 
 ; 57   : 	const char* szEveryoneSpecialUnit = kResults.GetText("EveryoneSpecialUnit");
 
-	push	OFFSET $SG217584
+	push	OFFSET $SG217626
 	mov	ecx, edi
 	mov	DWORD PTR [esi+264], eax
 	call	ebx
@@ -2914,7 +2914,7 @@ $LN8@CacheResul:
 ; 59   : 
 ; 60   : 	const char* szCreateSound = kResults.GetText("CreateSound");
 
-	push	OFFSET $SG217586
+	push	OFFSET $SG217628
 	mov	ecx, edi
 	mov	DWORD PTR [esi+296], eax
 	call	ebx
@@ -2934,7 +2934,7 @@ $LN14@CacheResul:
 ; 62   : 
 ; 63   : 	const char* szAnyonePrereqProject = kResults.GetText("AnyonePrereqProject");
 
-	push	OFFSET $SG217588
+	push	OFFSET $SG217630
 	mov	ecx, edi
 	call	ebx
 
@@ -2958,12 +2958,12 @@ $LN14@CacheResul:
 	mov	edi, DWORD PTR _kUtility$[esp+608]
 	push	0
 	push	0
-	push	OFFSET $SG217590
+	push	OFFSET $SG217632
 	push	eax
-	push	OFFSET $SG217591
-	push	OFFSET $SG217592
-	push	OFFSET $SG217593
-	push	OFFSET $SG217594
+	push	OFFSET $SG217633
+	push	OFFSET $SG217634
+	push	OFFSET $SG217635
+	push	OFFSET $SG217636
 	lea	ecx, DWORD PTR [esi+364]
 	push	ecx
 	mov	ecx, edi
@@ -2975,7 +2975,7 @@ $LN14@CacheResul:
 ; 71   : 	{
 ; 72   : 		const int iNumVictories = kUtility.MaxRows("Victories");
 
-	push	OFFSET $SG217596
+	push	OFFSET $SG217638
 	mov	ecx, edi
 	call	?MaxRows@CvDatabaseUtility@@QAEHPBD@Z	; CvDatabaseUtility::MaxRows
 
@@ -3022,25 +3022,25 @@ $LN14@CacheResul:
 ; 77   : 		Database::Results kDBResults;
 
 	push	0
-	lea	ecx, DWORD PTR _kDBResults$217602[esp+616]
+	lea	ecx, DWORD PTR _kDBResults$217644[esp+616]
 	call	DWORD PTR __imp_??0Results@Database@@QAE@PBD@Z
 
 ; 78   : 		char szQuery[512] = {0};
 
 	push	511					; 000001ffH
-	lea	edx, DWORD PTR _szQuery$217603[esp+617]
+	lea	edx, DWORD PTR _szQuery$217645[esp+617]
 	push	0
 	push	edx
 	mov	DWORD PTR __$EHRec$[esp+632], 0
-	mov	BYTE PTR _szQuery$217603[esp+624], 0
+	mov	BYTE PTR _szQuery$217645[esp+624], 0
 	call	_memset
 
 ; 79   : 		sprintf_s(szQuery, "select VictoryType, Threshold, MinThreshold from Project_VictoryThresholds where ProjectType = '%s';", szProjectType);
 
 	mov	edi, DWORD PTR _szProjectType$[esp+624]
 	push	edi
-	lea	eax, DWORD PTR _szQuery$217603[esp+628]
-	push	OFFSET $SG217609
+	lea	eax, DWORD PTR _szQuery$217645[esp+628]
+	push	OFFSET $SG217651
 	push	eax
 	call	??$sprintf_s@$0CAA@@@YAHAAY0CAA@DPBDZZ	; sprintf_s<512>
 	add	esp, 24					; 00000018H
@@ -3048,9 +3048,9 @@ $LN14@CacheResul:
 ; 80   : 		if(DB.Execute(kDBResults, szQuery))
 
 	push	-1
-	lea	ecx, DWORD PTR _szQuery$217603[esp+616]
+	lea	ecx, DWORD PTR _szQuery$217645[esp+616]
 	push	ecx
-	lea	edx, DWORD PTR _kDBResults$217602[esp+620]
+	lea	edx, DWORD PTR _kDBResults$217644[esp+620]
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+912
 	push	edx
 	call	DWORD PTR __imp_?Execute@Connection@Database@@QBE_NAAVResults@2@PBDH@Z
@@ -3060,7 +3060,7 @@ $LN14@CacheResul:
 ; 81   : 		{
 ; 82   : 			while(kDBResults.Step())
 
-	lea	ecx, DWORD PTR _kDBResults$217602[esp+612]
+	lea	ecx, DWORD PTR _kDBResults$217644[esp+612]
 	call	DWORD PTR __imp_?Step@Results@Database@@QAE_NXZ
 	test	al, al
 	je	SHORT $LN1@CacheResul
@@ -3069,8 +3069,8 @@ $LL2@CacheResul:
 ; 83   : 			{
 ; 84   : 				const char* szVictoryType = kDBResults.GetText("VictoryType");
 
-	push	OFFSET $SG217615
-	lea	ecx, DWORD PTR _kDBResults$217602[esp+616]
+	push	OFFSET $SG217657
+	lea	ecx, DWORD PTR _kDBResults$217644[esp+616]
 	call	ebx
 
 ; 85   : 				const int idx = GC.getInfoTypeForString(szVictoryType, true);
@@ -3083,30 +3083,30 @@ $LL2@CacheResul:
 ; 86   : 
 ; 87   : 				const int iThreshold = kDBResults.GetInt("Threshold");
 
-	push	OFFSET $SG217618
-	lea	ecx, DWORD PTR _kDBResults$217602[esp+616]
+	push	OFFSET $SG217660
+	lea	ecx, DWORD PTR _kDBResults$217644[esp+616]
 	mov	edi, eax
 	call	ebp
 
 ; 88   : 				const int iMinThreshold = kDBResults.GetInt("MinThreshold");
 
-	push	OFFSET $SG217620
-	lea	ecx, DWORD PTR _kDBResults$217602[esp+616]
-	mov	DWORD PTR _iThreshold$217617[esp+616], eax
+	push	OFFSET $SG217662
+	lea	ecx, DWORD PTR _kDBResults$217644[esp+616]
+	mov	DWORD PTR _iThreshold$217659[esp+616], eax
 	call	ebp
 
 ; 89   : 
 ; 90   : 				m_piVictoryThreshold[idx] = iThreshold;
 
 	mov	ecx, DWORD PTR [esi+368]
-	mov	edx, DWORD PTR _iThreshold$217617[esp+612]
+	mov	edx, DWORD PTR _iThreshold$217659[esp+612]
 	mov	DWORD PTR [ecx+edi*4], edx
 
 ; 91   : 				m_piVictoryMinThreshold[idx] = iMinThreshold;
 
 	mov	ecx, DWORD PTR [esi+372]
 	mov	DWORD PTR [ecx+edi*4], eax
-	lea	ecx, DWORD PTR _kDBResults$217602[esp+612]
+	lea	ecx, DWORD PTR _kDBResults$217644[esp+612]
 	call	DWORD PTR __imp_?Step@Results@Database@@QAE_NXZ
 	test	al, al
 	jne	SHORT $LL2@CacheResul
@@ -3121,7 +3121,7 @@ $LN1@CacheResul:
 ; 93   : 		}
 ; 94   : 	}
 
-	lea	ecx, DWORD PTR _kDBResults$217602[esp+612]
+	lea	ecx, DWORD PTR _kDBResults$217644[esp+612]
 	mov	DWORD PTR __$EHRec$[esp+620], -1
 	call	DWORD PTR __imp_??1Results@Database@@UAE@XZ
 
@@ -3131,8 +3131,8 @@ $LN1@CacheResul:
 	mov	ebx, DWORD PTR _kUtility$[esp+608]
 	push	0
 	push	edi
-	push	OFFSET $SG217621
-	push	OFFSET $SG217622
+	push	OFFSET $SG217663
+	push	OFFSET $SG217664
 	lea	edx, DWORD PTR [esi+380]
 	push	edx
 	mov	ecx, ebx
@@ -3142,12 +3142,12 @@ $LN1@CacheResul:
 
 	push	0
 	push	0
-	push	OFFSET $SG217623
+	push	OFFSET $SG217665
 	push	edi
-	push	OFFSET $SG217624
-	push	OFFSET $SG217625
-	push	OFFSET $SG217626
-	push	OFFSET $SG217627
+	push	OFFSET $SG217666
+	push	OFFSET $SG217667
+	push	OFFSET $SG217668
+	push	OFFSET $SG217669
 	add	esi, 376				; 00000178H
 	push	esi
 	mov	ecx, ebx
@@ -3173,7 +3173,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?CacheResults@CvProjectEntry@@UAE_NAAVResults@Database@@AAVCvDatabaseUtility@@@Z$0:
-	lea	ecx, DWORD PTR _kDBResults$217602[ebp]
+	lea	ecx, DWORD PTR _kDBResults$217644[ebp]
 	jmp	DWORD PTR __imp_??1Results@Database@@UAE@XZ
 __ehhandler$?CacheResults@CvProjectEntry@@UAE_NAAVResults@Database@@AAVCvDatabaseUtility@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?CacheResults@CvProjectEntry@@UAE_NAAVResults@Database@@AAVCvDatabaseUtility@@@Z

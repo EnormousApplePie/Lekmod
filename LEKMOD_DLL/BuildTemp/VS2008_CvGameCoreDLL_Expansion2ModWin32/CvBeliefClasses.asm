@@ -10,268 +10,268 @@ INCLUDELIB MSVCRT
 INCLUDELIB OLDNAMES
 
 CONST	SEGMENT
-$SG218435 DB	'ShortDescription', 00H
+$SG218477 DB	'ShortDescription', 00H
 	ORG $+3
-$SG218436 DB	'MinPopulation', 00H
+$SG218478 DB	'MinPopulation', 00H
 	ORG $+2
-$SG218437 DB	'MinFollowers', 00H
+$SG218479 DB	'MinFollowers', 00H
 	ORG $+3
-$SG218438 DB	'MaxDistance', 00H
-$SG218439 DB	'CityGrowthModifier', 00H
+$SG218480 DB	'MaxDistance', 00H
+$SG218481 DB	'CityGrowthModifier', 00H
 	ORG $+1
-$SG218440 DB	'FaithFromKills', 00H
+$SG218482 DB	'FaithFromKills', 00H
 	ORG $+1
-$SG218441 DB	'FaithFromDyingUnits', 00H
-$SG218442 DB	'RiverHappiness', 00H
+$SG218483 DB	'FaithFromDyingUnits', 00H
+$SG218484 DB	'RiverHappiness', 00H
 	ORG $+1
-$SG218443 DB	'HappinessPerCity', 00H
+$SG218485 DB	'HappinessPerCity', 00H
 	ORG $+3
-$SG218444 DB	'HappinessPerXPeacefulForeignFollowers', 00H
+$SG218486 DB	'HappinessPerXPeacefulForeignFollowers', 00H
 	ORG $+2
-$SG218445 DB	'PlotCultureCostModifier', 00H
-$SG218446 DB	'CityRangeStrikeModifier', 00H
-$SG218447 DB	'CombatModifierEnemyCities', 00H
+$SG218487 DB	'PlotCultureCostModifier', 00H
+$SG218488 DB	'CityRangeStrikeModifier', 00H
+$SG218489 DB	'CombatModifierEnemyCities', 00H
 	ORG $+2
-$SG218448 DB	'CombatModifierFriendlyCities', 00H
+$SG218490 DB	'CombatModifierFriendlyCities', 00H
 	ORG $+3
-$SG218449 DB	'FriendlyHealChange', 00H
+$SG218491 DB	'FriendlyHealChange', 00H
 	ORG $+1
-$SG218450 DB	'CityStateFriendshipModifier', 00H
-$SG218451 DB	'LandBarbarianConversionPercent', 00H
+$SG218492 DB	'CityStateFriendshipModifier', 00H
+$SG218493 DB	'LandBarbarianConversionPercent', 00H
 	ORG $+1
-$SG218452 DB	'WonderProductionModifier', 00H
+$SG218494 DB	'WonderProductionModifier', 00H
 	ORG $+3
-$SG218453 DB	'PlayerHappiness', 00H
-$SG218454 DB	'PlayerCultureModifier', 00H
+$SG218495 DB	'PlayerHappiness', 00H
+$SG218496 DB	'PlayerCultureModifier', 00H
 	ORG $+2
-$SG218455 DB	'HappinessPerFollowingCity', 00H
+$SG218497 DB	'HappinessPerFollowingCity', 00H
 	ORG $+2
-$SG218456 DB	'GoldPerFollowingCity', 00H
+$SG218498 DB	'GoldPerFollowingCity', 00H
 	ORG $+3
-$SG218457 DB	'GoldPerXFollowers', 00H
+$SG218499 DB	'GoldPerXFollowers', 00H
 	ORG $+2
-$SG218458 DB	'GoldPerFirstCityConversion', 00H
+$SG218500 DB	'GoldPerFirstCityConversion', 00H
 	ORG $+1
-$SG218459 DB	'SciencePerOtherReligionFollower', 00H
-$SG218460 DB	'SpreadDistanceModifier', 00H
+$SG218501 DB	'SciencePerOtherReligionFollower', 00H
+$SG218502 DB	'SpreadDistanceModifier', 00H
 	ORG $+1
-$SG218461 DB	'SpreadStrengthModifier', 00H
+$SG218503 DB	'SpreadStrengthModifier', 00H
 	ORG $+1
-$SG218462 DB	'ProphetStrengthModifier', 00H
-$SG218463 DB	'ProphetCostModifier', 00H
-$SG218464 DB	'MissionaryStrengthModifier', 00H
+$SG218504 DB	'ProphetStrengthModifier', 00H
+$SG218505 DB	'ProphetCostModifier', 00H
+$SG218506 DB	'MissionaryStrengthModifier', 00H
 	ORG $+1
-$SG218465 DB	'FlatFaithPerCitizenBorn', 00H
-$SG218466 DB	'MissionaryExtraSpreads', 00H
+$SG218507 DB	'FlatFaithPerCitizenBorn', 00H
+$SG218508 DB	'MissionaryExtraSpreads', 00H
 	ORG $+1
-$SG218467 DB	'SpreadModifierOwnedCities', 00H
+$SG218509 DB	'SpreadModifierOwnedCities', 00H
 	ORG $+2
-$SG218468 DB	'SpreadModifierUnownedCities', 00H
-$SG218469 DB	'ExtraTradeRoutes', 00H
+$SG218510 DB	'SpreadModifierUnownedCities', 00H
+$SG218511 DB	'ExtraTradeRoutes', 00H
 	ORG $+3
-$SG218470 DB	'FaithPerCityStateThisReligion', 00H
+$SG218512 DB	'FaithPerCityStateThisReligion', 00H
 	ORG $+2
-$SG218471 DB	'FaithPerForeignTradeRoute', 00H
+$SG218513 DB	'FaithPerForeignTradeRoute', 00H
 	ORG $+2
-$SG218472 DB	'GoldenAgeTurns', 00H
+$SG218514 DB	'GoldenAgeTurns', 00H
 	ORG $+1
-$SG218473 DB	'MissionaryCostModifier', 00H
+$SG218515 DB	'MissionaryCostModifier', 00H
 	ORG $+1
-$SG218474 DB	'FriendlyCityStateSpreadModifier', 00H
-$SG218475 DB	'GreatPersonExpendedFaith', 00H
+$SG218516 DB	'FriendlyCityStateSpreadModifier', 00H
+$SG218517 DB	'GreatPersonExpendedFaith', 00H
 	ORG $+3
-$SG218476 DB	'CityStateMinimumInfluence', 00H
+$SG218518 DB	'CityStateMinimumInfluence', 00H
 	ORG $+2
-$SG218477 DB	'CityStateInfluenceModifier', 00H
+$SG218519 DB	'CityStateInfluenceModifier', 00H
 	ORG $+1
-$SG218478 DB	'OtherReligionPressureErosion', 00H
+$SG218520 DB	'OtherReligionPressureErosion', 00H
 	ORG $+3
-$SG218479 DB	'SpyPressure', 00H
-$SG218480 DB	'InquisitorPressureRetention', 00H
-$SG218481 DB	'FaithBuildingTourism', 00H
+$SG218521 DB	'SpyPressure', 00H
+$SG218522 DB	'InquisitorPressureRetention', 00H
+$SG218523 DB	'FaithBuildingTourism', 00H
 	ORG $+3
-$SG218482 DB	'NumFreeSettlers', 00H
-$SG218483 DB	'Pantheon', 00H
+$SG218524 DB	'NumFreeSettlers', 00H
+$SG218525 DB	'Pantheon', 00H
 	ORG $+3
-$SG218484 DB	'Founder', 00H
-$SG218485 DB	'Follower', 00H
+$SG218526 DB	'Founder', 00H
+$SG218527 DB	'Follower', 00H
 	ORG $+3
-$SG218486 DB	'Enhancer', 00H
+$SG218528 DB	'Enhancer', 00H
 	ORG $+3
-$SG218487 DB	'Reformation', 00H
-$SG218488 DB	'RequiresPeace', 00H
+$SG218529 DB	'Reformation', 00H
+$SG218530 DB	'RequiresPeace', 00H
 	ORG $+2
-$SG218489 DB	'ConvertsBarbarians', 00H
+$SG218531 DB	'ConvertsBarbarians', 00H
 	ORG $+1
-$SG218490 DB	'DeusVult', 00H
+$SG218532 DB	'DeusVult', 00H
 	ORG $+3
-$SG218491 DB	'FaithPurchaseAllGreatPeople', 00H
-$SG218492 DB	'AllowsFaithGiftsToMinors', 00H
+$SG218533 DB	'FaithPurchaseAllGreatPeople', 00H
+$SG218534 DB	'AllowsFaithGiftsToMinors', 00H
 	ORG $+3
-$SG218494 DB	'ObsoleteEra', 00H
-$SG218496 DB	'ResourceRevealed', 00H
+$SG218536 DB	'ObsoleteEra', 00H
+$SG218538 DB	'ResourceRevealed', 00H
 	ORG $+3
-$SG218498 DB	'SpreadModifierDoublingTech', 00H
+$SG218540 DB	'SpreadModifierDoublingTech', 00H
 	ORG $+1
-$SG218501 DB	'BeliefType', 00H
+$SG218543 DB	'BeliefType', 00H
 	ORG $+1
-$SG218502 DB	'Belief_CityYieldChanges', 00H
-$SG218503 DB	'BeliefType', 00H
+$SG218544 DB	'Belief_CityYieldChanges', 00H
+$SG218545 DB	'BeliefType', 00H
 	ORG $+1
-$SG218504 DB	'Belief_HolyCityYieldChanges', 00H
-$SG218505 DB	'BeliefType', 00H
+$SG218546 DB	'Belief_HolyCityYieldChanges', 00H
+$SG218547 DB	'BeliefType', 00H
 	ORG $+1
-$SG218506 DB	'Belief_YieldChangeAnySpecialist', 00H
-$SG218507 DB	'BeliefType', 00H
+$SG218548 DB	'Belief_YieldChangeAnySpecialist', 00H
+$SG218549 DB	'BeliefType', 00H
 	ORG $+1
-$SG218508 DB	'Belief_YieldChangeTradeRoute', 00H
+$SG218550 DB	'Belief_YieldChangeTradeRoute', 00H
 	ORG $+3
-$SG218509 DB	'BeliefType', 00H
+$SG218551 DB	'BeliefType', 00H
 	ORG $+1
-$SG218510 DB	'Belief_YieldChangeNaturalWonder', 00H
-$SG218511 DB	'BeliefType', 00H
+$SG218552 DB	'Belief_YieldChangeNaturalWonder', 00H
+$SG218553 DB	'BeliefType', 00H
 	ORG $+1
-$SG218512 DB	'Belief_YieldChangeWorldWonder', 00H
+$SG218554 DB	'Belief_YieldChangeWorldWonder', 00H
 	ORG $+2
-$SG218513 DB	'BeliefType', 00H
+$SG218555 DB	'BeliefType', 00H
 	ORG $+1
-$SG218514 DB	'Belief_YieldModifierNaturalWonder', 00H
+$SG218556 DB	'Belief_YieldModifierNaturalWonder', 00H
 	ORG $+2
-$SG218515 DB	'Max', 00H
-$SG218516 DB	'BeliefType', 00H
+$SG218557 DB	'Max', 00H
+$SG218558 DB	'BeliefType', 00H
 	ORG $+1
-$SG218517 DB	'YieldType', 00H
+$SG218559 DB	'YieldType', 00H
 	ORG $+2
-$SG218518 DB	'Belief_MaxYieldModifierPerFollower', 00H
+$SG218560 DB	'Belief_MaxYieldModifierPerFollower', 00H
 	ORG $+1
-$SG218519 DB	'Yields', 00H
+$SG218561 DB	'Yields', 00H
 	ORG $+1
-$SG218520 DB	'HappinessChange', 00H
-$SG218521 DB	'BeliefType', 00H
+$SG218562 DB	'HappinessChange', 00H
+$SG218563 DB	'BeliefType', 00H
 	ORG $+1
-$SG218522 DB	'ResourceType', 00H
+$SG218564 DB	'ResourceType', 00H
 	ORG $+3
-$SG218523 DB	'Belief_ResourceHappiness', 00H
+$SG218565 DB	'Belief_ResourceHappiness', 00H
 	ORG $+3
-$SG218524 DB	'Resources', 00H
+$SG218566 DB	'Resources', 00H
 	ORG $+2
-$SG218525 DB	'ResourceQuantityModifier', 00H
+$SG218567 DB	'ResourceQuantityModifier', 00H
 	ORG $+3
-$SG218526 DB	'BeliefType', 00H
+$SG218568 DB	'BeliefType', 00H
 	ORG $+1
-$SG218527 DB	'ResourceType', 00H
+$SG218569 DB	'ResourceType', 00H
 	ORG $+3
-$SG218528 DB	'Belief_ResourceQuantityModifiers', 00H
+$SG218570 DB	'Belief_ResourceQuantityModifiers', 00H
 	ORG $+3
-$SG218529 DB	'Resources', 00H
+$SG218571 DB	'Resources', 00H
 	ORG $+2
-$SG218530 DB	'Happiness', 00H
+$SG218572 DB	'Happiness', 00H
 	ORG $+2
-$SG218531 DB	'BeliefType', 00H
+$SG218573 DB	'BeliefType', 00H
 	ORG $+1
-$SG218532 DB	'BuildingClassType', 00H
+$SG218574 DB	'BuildingClassType', 00H
 	ORG $+2
-$SG218533 DB	'Belief_BuildingClassHappiness', 00H
+$SG218575 DB	'Belief_BuildingClassHappiness', 00H
 	ORG $+2
-$SG218534 DB	'BuildingClasses', 00H
-$SG218535 DB	'Tourism', 00H
-$SG218536 DB	'BeliefType', 00H
+$SG218576 DB	'BuildingClasses', 00H
+$SG218577 DB	'Tourism', 00H
+$SG218578 DB	'BeliefType', 00H
 	ORG $+1
-$SG218537 DB	'BuildingClassType', 00H
+$SG218579 DB	'BuildingClassType', 00H
 	ORG $+2
-$SG218538 DB	'Belief_BuildingClassTourism', 00H
-$SG218539 DB	'BuildingClasses', 00H
-$SG218540 DB	'Yield', 00H
+$SG218580 DB	'Belief_BuildingClassTourism', 00H
+$SG218581 DB	'BuildingClasses', 00H
+$SG218582 DB	'Yield', 00H
 	ORG $+2
-$SG218541 DB	'BeliefType', 00H
+$SG218583 DB	'BeliefType', 00H
 	ORG $+1
-$SG218542 DB	'YieldType', 00H
+$SG218584 DB	'YieldType', 00H
 	ORG $+2
-$SG218543 DB	'Belief_YieldChangePerForeignCity', 00H
+$SG218585 DB	'Belief_YieldChangePerForeignCity', 00H
 	ORG $+3
-$SG218544 DB	'Yields', 00H
+$SG218586 DB	'Yields', 00H
 	ORG $+1
-$SG218545 DB	'ForeignFollowers', 00H
+$SG218587 DB	'ForeignFollowers', 00H
 	ORG $+3
-$SG218546 DB	'BeliefType', 00H
+$SG218588 DB	'BeliefType', 00H
 	ORG $+1
-$SG218547 DB	'YieldType', 00H
+$SG218589 DB	'YieldType', 00H
 	ORG $+2
-$SG218548 DB	'Belief_YieldChangePerXForeignFollowers', 00H
+$SG218590 DB	'Belief_YieldChangePerXForeignFollowers', 00H
 	ORG $+1
-$SG218549 DB	'Yields', 00H
+$SG218591 DB	'Yields', 00H
 	ORG $+1
-$SG218550 DB	'BeliefType', 00H
+$SG218592 DB	'BeliefType', 00H
 	ORG $+1
-$SG218551 DB	'EraType', 00H
-$SG218552 DB	'Belief_EraFaithUnitPurchase', 00H
-$SG218553 DB	'Eras', 00H
+$SG218593 DB	'EraType', 00H
+$SG218594 DB	'Belief_EraFaithUnitPurchase', 00H
+$SG218595 DB	'Eras', 00H
 	ORG $+3
-$SG218554 DB	'BeliefType', 00H
+$SG218596 DB	'BeliefType', 00H
 	ORG $+1
-$SG218555 DB	'BuildingClassType', 00H
+$SG218597 DB	'BuildingClassType', 00H
 	ORG $+2
-$SG218556 DB	'Belief_BuildingClassFaithPurchase', 00H
+$SG218598 DB	'Belief_BuildingClassFaithPurchase', 00H
 	ORG $+2
-$SG218557 DB	'BuildingClasses', 00H
-$SG218558 DB	'Yields', 00H
+$SG218599 DB	'BuildingClasses', 00H
+$SG218600 DB	'Yields', 00H
 	ORG $+1
-$SG218559 DB	'Improvements', 00H
+$SG218601 DB	'Improvements', 00H
 	ORG $+3
-$SG218561 DB	'Belief_ImprovementYieldChanges', 00H
+$SG218603 DB	'Belief_ImprovementYieldChanges', 00H
 	ORG $+5
-$SG218564 DB	'select Improvements.ID as ImprovementID, Yields.ID as Yi'
+$SG218606 DB	'select Improvements.ID as ImprovementID, Yields.ID as Yi'
 	DB	'eldID, Yield from Belief_ImprovementYieldChanges inner join I'
 	DB	'mprovements on Improvements.Type = ImprovementType inner join'
 	DB	' Yields on Yields.Type = YieldType where BeliefType = ?', 00H
 	ORG $+2
-$SG218571 DB	'Yields', 00H
+$SG218613 DB	'Yields', 00H
 	ORG $+1
-$SG218572 DB	'BuildingClasses', 00H
-$SG218574 DB	'Belief_BuildingClassYieldChanges', 00H
+$SG218614 DB	'BuildingClasses', 00H
+$SG218616 DB	'Belief_BuildingClassYieldChanges', 00H
 	ORG $+3
-$SG218577 DB	'select BuildingClasses.ID as BuildingClassID, Yields.ID '
+$SG218619 DB	'select BuildingClasses.ID as BuildingClassID, Yields.ID '
 	DB	'as YieldID, YieldChange from Belief_BuildingClassYieldChanges'
 	DB	' inner join BuildingClasses on BuildingClasses.Type = Buildin'
 	DB	'gClassType inner join Yields on Yields.Type = YieldType where'
 	DB	' BeliefType = ?', 00H
 	ORG $+1
-$SG218584 DB	'Yields', 00H
+$SG218626 DB	'Yields', 00H
 	ORG $+1
-$SG218585 DB	'Features', 00H
+$SG218627 DB	'Features', 00H
 	ORG $+3
-$SG218587 DB	'Belief_FeatureYieldChanges', 00H
+$SG218629 DB	'Belief_FeatureYieldChanges', 00H
 	ORG $+1
-$SG218590 DB	'select Features.ID as FeatureID, Yields.ID as YieldID, Y'
+$SG218632 DB	'select Features.ID as FeatureID, Yields.ID as YieldID, Y'
 	DB	'ield from Belief_FeatureYieldChanges inner join Features on F'
 	DB	'eatures.Type = FeatureType inner join Yields on Yields.Type ='
 	DB	' YieldType where BeliefType = ?', 00H
 	ORG $+2
-$SG218597 DB	'Yields', 00H
+$SG218639 DB	'Yields', 00H
 	ORG $+1
-$SG218598 DB	'Resources', 00H
+$SG218640 DB	'Resources', 00H
 	ORG $+2
-$SG218600 DB	'Belief_ResourceYieldChanges', 00H
+$SG218642 DB	'Belief_ResourceYieldChanges', 00H
 	ORG $+4
-$SG218603 DB	'select Resources.ID as ResourceID, Yields.ID as YieldID,'
+$SG218645 DB	'select Resources.ID as ResourceID, Yields.ID as YieldID,'
 	DB	' Yield from Belief_ResourceYieldChanges inner join Resources '
 	DB	'on Resources.Type = ResourceType inner join Yields on Yields.'
 	DB	'Type = YieldType where BeliefType = ?', 00H
-$SG218610 DB	'Yields', 00H
+$SG218652 DB	'Yields', 00H
 	ORG $+1
-$SG218611 DB	'Terrains', 00H
+$SG218653 DB	'Terrains', 00H
 	ORG $+3
-$SG218613 DB	'Belief_TerrainYieldChanges', 00H
+$SG218655 DB	'Belief_TerrainYieldChanges', 00H
 	ORG $+1
-$SG218616 DB	'select Terrains.ID as TerrainID, Yields.ID as YieldID, Y'
+$SG218658 DB	'select Terrains.ID as TerrainID, Yields.ID as YieldID, Y'
 	DB	'ield from Belief_TerrainYieldChanges inner join Terrains on T'
 	DB	'errains.Type = TerrainType inner join Yields on Yields.Type ='
 	DB	' YieldType where BeliefType = ?', 00H
 	ORG $+2
-$SG219410 DB	'Converted barbarian (with belief), X: %d, Y: %d', 00H
-$SG219413 DB	'TXT_KEY_NOTIFICATION_HEATHEN_CONVERTS', 00H
+$SG219452 DB	'Converted barbarian (with belief), X: %d, Y: %d', 00H
+$SG219455 DB	'TXT_KEY_NOTIFICATION_HEATHEN_CONVERTS', 00H
 	ORG $+2
-$SG219416 DB	'TXT_KEY_NOTIFICATION_SUMMARY_HEATHEN_CONVERTS', 00H
+$SG219458 DB	'TXT_KEY_NOTIFICATION_SUMMARY_HEATHEN_CONVERTS', 00H
 CONST	ENDS
 PUBLIC	?GetMinPopulation@CvBeliefEntry@@QBEHXZ		; CvBeliefEntry::GetMinPopulation
 ; Function compile flags: /Ogtpy
@@ -3067,8 +3067,8 @@ __ehfuncinfo$?_Xlen@?$vector@PAVCvBeliefEntry@@V?$allocator@PAVCvBeliefEntry@@@s
 xdata$x	ENDS
 ;	COMDAT ?_Xlen@?$vector@PAVCvBeliefEntry@@V?$allocator@PAVCvBeliefEntry@@@std@@@std@@KAXXZ
 _TEXT	SEGMENT
-$T220639 = -80						; size = 28
-$T220638 = -52						; size = 40
+$T220681 = -80						; size = 28
+$T220680 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ?_Xlen@?$vector@PAVCvBeliefEntry@@V?$allocator@PAVCvBeliefEntry@@@std@@@std@@KAXXZ PROC ; std::vector<CvBeliefEntry *,std::allocator<CvBeliefEntry *> >::_Xlen, COMDAT
 
@@ -3084,22 +3084,22 @@ __$EHRec$ = -12						; size = 12
 ; 1260 : 		_THROW(length_error, "vector<T> too long");
 
 	push	OFFSET ??_C@_0BD@OLBABOEK@vector?$DMT?$DO?5too?5long?$AA@
-	lea	ecx, DWORD PTR $T220639[esp+84]
+	lea	ecx, DWORD PTR $T220681[esp+84]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T220638[esp+80]
+	lea	ecx, DWORD PTR $T220680[esp+80]
 	mov	DWORD PTR __$EHRec$[esp+88], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T220639[esp+80]
+	lea	eax, DWORD PTR $T220681[esp+80]
 	push	eax
-	lea	ecx, DWORD PTR $T220638[esp+96]
+	lea	ecx, DWORD PTR $T220680[esp+96]
 	mov	BYTE PTR __$EHRec$[esp+92], 1
-	mov	DWORD PTR $T220638[esp+84], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T220680[esp+84], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVlength_error@std@@
-	lea	ecx, DWORD PTR $T220638[esp+84]
+	lea	ecx, DWORD PTR $T220680[esp+84]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+96], 0
-	mov	DWORD PTR $T220638[esp+88], OFFSET ??_7length_error@std@@6B@
+	mov	DWORD PTR $T220680[esp+88], OFFSET ??_7length_error@std@@6B@
 	call	__CxxThrowException@8
 $LN13@Xlen:
 $LN12@Xlen:
@@ -3108,10 +3108,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Xlen@?$vector@PAVCvBeliefEntry@@V?$allocator@PAVCvBeliefEntry@@@std@@@std@@KAXXZ$0:
-	lea	ecx, DWORD PTR $T220639[ebp]
+	lea	ecx, DWORD PTR $T220681[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Xlen@?$vector@PAVCvBeliefEntry@@V?$allocator@PAVCvBeliefEntry@@@std@@@std@@KAXXZ$2:
-	lea	ecx, DWORD PTR $T220638[ebp]
+	lea	ecx, DWORD PTR $T220680[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Xlen@?$vector@PAVCvBeliefEntry@@V?$allocator@PAVCvBeliefEntry@@@std@@@std@@KAXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?_Xlen@?$vector@PAVCvBeliefEntry@@V?$allocator@PAVCvBeliefEntry@@@std@@@std@@KAXXZ
@@ -3280,8 +3280,8 @@ __TI2?AVbad_alloc@std@@ DD 00H
 xdata$x	ENDS
 ;	COMDAT ??$_Allocate@PAVCvBeliefEntry@@@std@@YAPAPAVCvBeliefEntry@@IPAPAV1@@Z
 _TEXT	SEGMENT
-$T220685 = -12						; size = 12
-$T220689 = 8						; size = 4
+$T220727 = -12						; size = 12
+$T220731 = 8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ??$_Allocate@PAVCvBeliefEntry@@@std@@YAPAPAVCvBeliefEntry@@IPAPAV1@@Z PROC ; std::_Allocate<CvBeliefEntry *>, COMDAT
@@ -3323,15 +3323,15 @@ $LN3@Allocate:
 
 ; 40   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T220689[esp+8]
+	lea	eax, DWORD PTR $T220731[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T220685[esp+16]
-	mov	DWORD PTR $T220689[esp+12], 0
+	lea	ecx, DWORD PTR $T220727[esp+16]
+	mov	DWORD PTR $T220731[esp+12], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T220685[esp+16]
+	lea	ecx, DWORD PTR $T220727[esp+16]
 	push	ecx
-	mov	DWORD PTR $T220685[esp+20], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T220727[esp+20], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN9@Allocate:
 $LN8@Allocate:
@@ -4162,7 +4162,7 @@ xdata$x	ENDS
 ;	COMDAT ?GetLocalizedText@@YA?AVCvString@@PBD@Z
 _TEXT	SEGMENT
 _bytes$ = -100						; size = 4
-$T220813 = -96						; size = 4
+$T220855 = -96						; size = 4
 _text$ = -92						; size = 80
 __$EHRec$ = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
@@ -4189,7 +4189,7 @@ _szString$ = 12						; size = 4
 	xor	ebx, ebx
 	push	ecx
 	mov	DWORD PTR __$EHRec$[esp+128], ebx
-	mov	DWORD PTR $T220813[esp+120], ebx
+	mov	DWORD PTR $T220855[esp+120], ebx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
 
@@ -4219,7 +4219,7 @@ _szString$ = 12						; size = 4
 	push	eax
 	push	edi
 	mov	ecx, esi
-	mov	DWORD PTR $T220813[esp+120], 1
+	mov	DWORD PTR $T220855[esp+120], 1
 	call	DWORD PTR __imp_?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBDI@Z
 	lea	ecx, DWORD PTR _text$[esp+112]
 	mov	BYTE PTR __$EHRec$[esp+120], bl
@@ -4242,10 +4242,10 @@ __unwindfunclet$?GetLocalizedText@@YA?AVCvString@@PBD@Z$0:
 	lea	ecx, DWORD PTR _text$[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?GetLocalizedText@@YA?AVCvString@@PBD@Z$1:
-	mov	eax, DWORD PTR $T220813[ebp]
+	mov	eax, DWORD PTR $T220855[ebp]
 	and	eax, 1
 	je	$LN5@GetLocaliz
-	and	DWORD PTR $T220813[ebp], -2		; fffffffeH
+	and	DWORD PTR $T220855[ebp], -2		; fffffffeH
 	mov	ecx, DWORD PTR ___$ReturnUdt$[ebp-4]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 $LN5@GetLocaliz:
@@ -4646,26 +4646,26 @@ __unwindtable$?CacheResults@CvBeliefEntry@@UAE_NAAVResults@Database@@AAVCvDataba
 xdata$x	ENDS
 ;	COMDAT ?CacheResults@CvBeliefEntry@@UAE_NAAVResults@Database@@AAVCvDatabaseUtility@@@Z
 _TEXT	SEGMENT
-_YieldID$218608 = -72					; size = 4
-_YieldID$218595 = -72					; size = 4
-_iYieldID$218582 = -72					; size = 4
-_YieldID$218569 = -72					; size = 4
-_strKey$218599 = -68					; size = 28
-_strKey$218586 = -68					; size = 28
-_strKey$218573 = -68					; size = 28
-_strKey$218560 = -68					; size = 28
-_strKey$218612 = -40					; size = 28
+_YieldID$218650 = -72					; size = 4
+_YieldID$218637 = -72					; size = 4
+_iYieldID$218624 = -72					; size = 4
+_YieldID$218611 = -72					; size = 4
+_strKey$218641 = -68					; size = 28
+_strKey$218628 = -68					; size = 28
+_strKey$218615 = -68					; size = 28
+_strKey$218602 = -68					; size = 28
+_strKey$218654 = -40					; size = 28
 __$EHRec$ = -12						; size = 12
-_ResourceID$218607 = 8					; size = 4
-_FeatureID$218594 = 8					; size = 4
-_BuildingClassID$218581 = 8				; size = 4
-_ImprovementID$218568 = 8				; size = 4
+_ResourceID$218649 = 8					; size = 4
+_FeatureID$218636 = 8					; size = 4
+_BuildingClassID$218623 = 8				; size = 4
+_ImprovementID$218610 = 8				; size = 4
 _kResults$ = 8						; size = 4
 tv1120 = 12						; size = 4
-_pResults$218601 = 12					; size = 4
-_pResults$218588 = 12					; size = 4
-_pResults$218575 = 12					; size = 4
-_pResults$218562 = 12					; size = 4
+_pResults$218643 = 12					; size = 4
+_pResults$218630 = 12					; size = 4
+_pResults$218617 = 12					; size = 4
+_pResults$218604 = 12					; size = 4
 _kUtility$ = 12						; size = 4
 ?CacheResults@CvBeliefEntry@@UAE_NAAVResults@Database@@AAVCvDatabaseUtility@@@Z PROC ; CvBeliefEntry::CacheResults, COMDAT
 ; _this$ = ecx
@@ -4711,7 +4711,7 @@ $LN16@CacheResul:
 ; 775  : 	//Basic Properties
 ; 776  : 	setShortDescription(kResults.GetText("ShortDescription"));
 
-	push	OFFSET $SG218435
+	push	OFFSET $SG218477
 	mov	ecx, edi
 	call	DWORD PTR __imp_?GetText@Results@Database@@QAEPBDPBD@Z
 	lea	ecx, DWORD PTR [esi+472]
@@ -4729,202 +4729,202 @@ $LN26@CacheResul:
 ; 778  : 	m_iMinPopulation                  = kResults.GetInt("MinPopulation");
 
 	mov	ebx, DWORD PTR __imp_?GetInt@Results@Database@@QAEHPBD@Z
-	push	OFFSET $SG218436
+	push	OFFSET $SG218478
 	mov	ecx, edi
 	call	ebx
 
 ; 779  : 	m_iMinFollowers                   = kResults.GetInt("MinFollowers");
 
-	push	OFFSET $SG218437
+	push	OFFSET $SG218479
 	mov	ecx, edi
 	mov	DWORD PTR [esi+260], eax
 	call	ebx
 
 ; 780  : 	m_iMaxDistance					  = kResults.GetInt("MaxDistance");
 
-	push	OFFSET $SG218438
+	push	OFFSET $SG218480
 	mov	ecx, edi
 	mov	DWORD PTR [esi+264], eax
 	call	ebx
 
 ; 781  : 	m_iCityGrowthModifier		      = kResults.GetInt("CityGrowthModifier");
 
-	push	OFFSET $SG218439
+	push	OFFSET $SG218481
 	mov	ecx, edi
 	mov	DWORD PTR [esi+268], eax
 	call	ebx
 
 ; 782  : 	m_iFaithFromKills				  = kResults.GetInt("FaithFromKills");
 
-	push	OFFSET $SG218440
+	push	OFFSET $SG218482
 	mov	ecx, edi
 	mov	DWORD PTR [esi+272], eax
 	call	ebx
 
 ; 783  : 	m_iFaithFromDyingUnits			  = kResults.GetInt("FaithFromDyingUnits");
 
-	push	OFFSET $SG218441
+	push	OFFSET $SG218483
 	mov	ecx, edi
 	mov	DWORD PTR [esi+276], eax
 	call	ebx
 
 ; 784  : 	m_iRiverHappiness				  = kResults.GetInt("RiverHappiness");
 
-	push	OFFSET $SG218442
+	push	OFFSET $SG218484
 	mov	ecx, edi
 	mov	DWORD PTR [esi+280], eax
 	call	ebx
 
 ; 785  : 	m_iHappinessPerCity				  = kResults.GetInt("HappinessPerCity");
 
-	push	OFFSET $SG218443
+	push	OFFSET $SG218485
 	mov	ecx, edi
 	mov	DWORD PTR [esi+284], eax
 	call	ebx
 
 ; 786  : 	m_iHappinessPerXPeacefulForeignFollowers  = kResults.GetInt("HappinessPerXPeacefulForeignFollowers");
 
-	push	OFFSET $SG218444
+	push	OFFSET $SG218486
 	mov	ecx, edi
 	mov	DWORD PTR [esi+288], eax
 	call	ebx
 
 ; 787  : 	m_iPlotCultureCostModifier	      = kResults.GetInt("PlotCultureCostModifier");
 
-	push	OFFSET $SG218445
+	push	OFFSET $SG218487
 	mov	ecx, edi
 	mov	DWORD PTR [esi+292], eax
 	call	ebx
 
 ; 788  : 	m_iCityRangeStrikeModifier	      = kResults.GetInt("CityRangeStrikeModifier");
 
-	push	OFFSET $SG218446
+	push	OFFSET $SG218488
 	mov	ecx, edi
 	mov	DWORD PTR [esi+296], eax
 	call	ebx
 
 ; 789  : 	m_iCombatModifierEnemyCities      = kResults.GetInt("CombatModifierEnemyCities");
 
-	push	OFFSET $SG218447
+	push	OFFSET $SG218489
 	mov	ecx, edi
 	mov	DWORD PTR [esi+300], eax
 	call	ebx
 
 ; 790  : 	m_iCombatModifierFriendlyCities   = kResults.GetInt("CombatModifierFriendlyCities");
 
-	push	OFFSET $SG218448
+	push	OFFSET $SG218490
 	mov	ecx, edi
 	mov	DWORD PTR [esi+304], eax
 	call	ebx
 
 ; 791  : 	m_iFriendlyHealChange	          = kResults.GetInt("FriendlyHealChange");
 
-	push	OFFSET $SG218449
+	push	OFFSET $SG218491
 	mov	ecx, edi
 	mov	DWORD PTR [esi+308], eax
 	call	ebx
 
 ; 792  : 	m_iCityStateFriendshipModifier    = kResults.GetInt("CityStateFriendshipModifier");
 
-	push	OFFSET $SG218450
+	push	OFFSET $SG218492
 	mov	ecx, edi
 	mov	DWORD PTR [esi+312], eax
 	call	ebx
 
 ; 793  : 	m_iLandBarbarianConversionPercent = kResults.GetInt("LandBarbarianConversionPercent");
 
-	push	OFFSET $SG218451
+	push	OFFSET $SG218493
 	mov	ecx, edi
 	mov	DWORD PTR [esi+316], eax
 	call	ebx
 
 ; 794  : 	m_iWonderProductionModifier       = kResults.GetInt("WonderProductionModifier");
 
-	push	OFFSET $SG218452
+	push	OFFSET $SG218494
 	mov	ecx, edi
 	mov	DWORD PTR [esi+320], eax
 	call	ebx
 
 ; 795  : 	m_iPlayerHappiness			      = kResults.GetInt("PlayerHappiness");
 
-	push	OFFSET $SG218453
+	push	OFFSET $SG218495
 	mov	ecx, edi
 	mov	DWORD PTR [esi+324], eax
 	call	ebx
 
 ; 796  : 	m_iPlayerCultureModifier          = kResults.GetInt("PlayerCultureModifier");
 
-	push	OFFSET $SG218454
+	push	OFFSET $SG218496
 	mov	ecx, edi
 	mov	DWORD PTR [esi+328], eax
 	call	ebx
 
 ; 797  : 	m_fHappinessPerFollowingCity      = kResults.GetFloat("HappinessPerFollowingCity");
 
-	push	OFFSET $SG218455
+	push	OFFSET $SG218497
 	mov	ecx, edi
 	mov	DWORD PTR [esi+332], eax
 	call	DWORD PTR __imp_?GetFloat@Results@Database@@QAEMPBD@Z
 
 ; 798  : 	m_iGoldPerFollowingCity           = kResults.GetInt("GoldPerFollowingCity");
 
-	push	OFFSET $SG218456
+	push	OFFSET $SG218498
 	fstp	DWORD PTR [esi+336]
 	mov	ecx, edi
 	call	ebx
 
 ; 799  : 	m_iGoldPerXFollowers              = kResults.GetInt("GoldPerXFollowers");
 
-	push	OFFSET $SG218457
+	push	OFFSET $SG218499
 	mov	ecx, edi
 	mov	DWORD PTR [esi+340], eax
 	call	ebx
 
 ; 800  : 	m_iGoldWhenCityAdopts             = kResults.GetInt("GoldPerFirstCityConversion");
 
-	push	OFFSET $SG218458
+	push	OFFSET $SG218500
 	mov	ecx, edi
 	mov	DWORD PTR [esi+344], eax
 	call	ebx
 
 ; 801  : 	m_iSciencePerOtherReligionFollower= kResults.GetInt("SciencePerOtherReligionFollower");
 
-	push	OFFSET $SG218459
+	push	OFFSET $SG218501
 	mov	ecx, edi
 	mov	DWORD PTR [esi+348], eax
 	call	ebx
 
 ; 802  : 	m_iSpreadDistanceModifier         = kResults.GetInt("SpreadDistanceModifier");
 
-	push	OFFSET $SG218460
+	push	OFFSET $SG218502
 	mov	ecx, edi
 	mov	DWORD PTR [esi+352], eax
 	call	ebx
 
 ; 803  : 	m_iSpreadStrengthModifier		  = kResults.GetInt("SpreadStrengthModifier");
 
-	push	OFFSET $SG218461
+	push	OFFSET $SG218503
 	mov	ecx, edi
 	mov	DWORD PTR [esi+356], eax
 	call	ebx
 
 ; 804  : 	m_iProphetStrengthModifier        = kResults.GetInt("ProphetStrengthModifier");
 
-	push	OFFSET $SG218462
+	push	OFFSET $SG218504
 	mov	ecx, edi
 	mov	DWORD PTR [esi+360], eax
 	call	ebx
 
 ; 805  : 	m_iProphetCostModifier            = kResults.GetInt("ProphetCostModifier");
 
-	push	OFFSET $SG218463
+	push	OFFSET $SG218505
 	mov	ecx, edi
 	mov	DWORD PTR [esi+364], eax
 	call	ebx
 
 ; 806  : 	m_iMissionaryStrengthModifier     = kResults.GetInt("MissionaryStrengthModifier");
 
-	push	OFFSET $SG218464
+	push	OFFSET $SG218506
 	mov	ecx, edi
 	mov	DWORD PTR [esi+368], eax
 	call	ebx
@@ -4932,7 +4932,7 @@ $LN26@CacheResul:
 ; 807  : #ifdef NQ_FLAT_FAITH_PER_CITIZEN_BORN_FROM_BELIEFS
 ; 808  : 	m_iFlatFaithPerCitizenBorn        = kResults.GetInt("FlatFaithPerCitizenBorn");
 
-	push	OFFSET $SG218465
+	push	OFFSET $SG218507
 	mov	ecx, edi
 	mov	DWORD PTR [esi+372], eax
 	call	ebx
@@ -4941,7 +4941,7 @@ $LN26@CacheResul:
 ; 810  : #ifdef NQ_BELIEF_EXTRA_MISSIONARY_SPREADS
 ; 811  : 	m_iMissionaryExtraSpreads		  = kResults.GetInt("MissionaryExtraSpreads");
 
-	push	OFFSET $SG218466
+	push	OFFSET $SG218508
 	mov	ecx, edi
 	mov	DWORD PTR [esi+376], eax
 	call	ebx
@@ -4950,14 +4950,14 @@ $LN26@CacheResul:
 ; 813  : #ifdef NQ_SPREAD_MODIFIER_OWNED_CITIES
 ; 814  : 	m_iSpreadModifierOwnedCities	  = kResults.GetInt("SpreadModifierOwnedCities");
 
-	push	OFFSET $SG218467
+	push	OFFSET $SG218509
 	mov	ecx, edi
 	mov	DWORD PTR [esi+380], eax
 	call	ebx
 
 ; 815  : 	m_iSpreadModifierUnownedCities	  = kResults.GetInt("SpreadModifierUnownedCities");
 
-	push	OFFSET $SG218468
+	push	OFFSET $SG218510
 	mov	ecx, edi
 	mov	DWORD PTR [esi+384], eax
 	call	ebx
@@ -4966,7 +4966,7 @@ $LN26@CacheResul:
 ; 817  : #ifdef NQ_EXTRA_TRADE_ROUTES_FROM_BELIEF
 ; 818  : 	m_iExtraTradeRoutes				  = kResults.GetInt("ExtraTradeRoutes");
 
-	push	OFFSET $SG218469
+	push	OFFSET $SG218511
 	mov	ecx, edi
 	mov	DWORD PTR [esi+388], eax
 	call	ebx
@@ -4975,7 +4975,7 @@ $LN26@CacheResul:
 ; 820  : #ifdef NQ_FAITH_PER_CITY_STATE_THIS_RELIGION
 ; 821  : 	m_iFaithPerCityStateThisReligion  = kResults.GetInt("FaithPerCityStateThisReligion");
 
-	push	OFFSET $SG218470
+	push	OFFSET $SG218512
 	mov	ecx, edi
 	mov	DWORD PTR [esi+392], eax
 	call	ebx
@@ -4984,7 +4984,7 @@ $LN26@CacheResul:
 ; 823  : #ifdef NQ_FAITH_PER_FOREIGN_TRADE_ROUTE
 ; 824  : 	m_iFaithPerForeignTradeRoute	  = kResults.GetInt("FaithPerForeignTradeRoute");
 
-	push	OFFSET $SG218471
+	push	OFFSET $SG218513
 	mov	ecx, edi
 	mov	DWORD PTR [esi+396], eax
 	call	ebx
@@ -4993,7 +4993,7 @@ $LN26@CacheResul:
 ; 826  : #ifdef NQ_GOLDEN_AGE_TURNS_FROM_BELIEF
 ; 827  : 	m_iGoldenAgeTurns				  = kResults.GetInt("GoldenAgeTurns");
 
-	push	OFFSET $SG218472
+	push	OFFSET $SG218514
 	mov	ecx, edi
 	mov	DWORD PTR [esi+400], eax
 	call	ebx
@@ -5001,21 +5001,21 @@ $LN26@CacheResul:
 ; 828  : #endif
 ; 829  : 	m_iMissionaryCostModifier         = kResults.GetInt("MissionaryCostModifier");
 
-	push	OFFSET $SG218473
+	push	OFFSET $SG218515
 	mov	ecx, edi
 	mov	DWORD PTR [esi+404], eax
 	call	ebx
 
 ; 830  : 	m_iFriendlyCityStateSpreadModifier= kResults.GetInt("FriendlyCityStateSpreadModifier");
 
-	push	OFFSET $SG218474
+	push	OFFSET $SG218516
 	mov	ecx, edi
 	mov	DWORD PTR [esi+408], eax
 	call	ebx
 
 ; 831  : 	m_iGreatPersonExpendedFaith       = kResults.GetInt("GreatPersonExpendedFaith");
 
-	push	OFFSET $SG218475
+	push	OFFSET $SG218517
 	mov	ecx, edi
 	mov	DWORD PTR [esi+412], eax
 	call	ebx
@@ -5023,41 +5023,41 @@ $LN26@CacheResul:
 
 ; 832  : 	m_iCityStateMinimumInfluence      = kResults.GetInt("CityStateMinimumInfluence");
 
-	push	OFFSET $SG218476
+	push	OFFSET $SG218518
 	mov	ecx, edi
 	call	ebx
 
 ; 833  : 	m_iCityStateInfluenceModifier     = kResults.GetInt("CityStateInfluenceModifier");
 
-	push	OFFSET $SG218477
+	push	OFFSET $SG218519
 	mov	ecx, edi
 	mov	DWORD PTR [esi+420], eax
 	call	ebx
 
 ; 834  : 	m_iOtherReligionPressureErosion   = kResults.GetInt("OtherReligionPressureErosion");
 
-	push	OFFSET $SG218478
+	push	OFFSET $SG218520
 	mov	ecx, edi
 	mov	DWORD PTR [esi+424], eax
 	call	ebx
 
 ; 835  : 	m_iSpyPressure					  = kResults.GetInt("SpyPressure");
 
-	push	OFFSET $SG218479
+	push	OFFSET $SG218521
 	mov	ecx, edi
 	mov	DWORD PTR [esi+428], eax
 	call	ebx
 
 ; 836  : 	m_iInquisitorPressureRetention    = kResults.GetInt("InquisitorPressureRetention");
 
-	push	OFFSET $SG218480
+	push	OFFSET $SG218522
 	mov	ecx, edi
 	mov	DWORD PTR [esi+432], eax
 	call	ebx
 
 ; 837  : 	m_iFaithBuildingTourism           = kResults.GetInt("FaithBuildingTourism");
 
-	push	OFFSET $SG218481
+	push	OFFSET $SG218523
 	mov	ecx, edi
 	mov	DWORD PTR [esi+436], eax
 	call	ebx
@@ -5065,7 +5065,7 @@ $LN26@CacheResul:
 ; 838  : #ifdef NQ_FREE_SETTLERS_FROM_BELIEF
 ; 839  : 	m_iNumFreeSettlers				  = kResults.GetInt("NumFreeSettlers");
 
-	push	OFFSET $SG218482
+	push	OFFSET $SG218524
 	mov	ecx, edi
 	mov	DWORD PTR [esi+440], eax
 	call	ebx
@@ -5075,49 +5075,49 @@ $LN26@CacheResul:
 ; 842  : 	m_bPantheon						  = kResults.GetBool("Pantheon");
 
 	mov	ebx, DWORD PTR __imp_?GetBool@Results@Database@@QAE_NPBD@Z
-	push	OFFSET $SG218483
+	push	OFFSET $SG218525
 	mov	ecx, edi
 	mov	DWORD PTR [esi+444], eax
 	call	ebx
 
 ; 843  : 	m_bFounder						  = kResults.GetBool("Founder");
 
-	push	OFFSET $SG218484
+	push	OFFSET $SG218526
 	mov	ecx, edi
 	mov	BYTE PTR [esi+448], al
 	call	ebx
 
 ; 844  : 	m_bFollower						  = kResults.GetBool("Follower");
 
-	push	OFFSET $SG218485
+	push	OFFSET $SG218527
 	mov	ecx, edi
 	mov	BYTE PTR [esi+449], al
 	call	ebx
 
 ; 845  : 	m_bEnhancer						  = kResults.GetBool("Enhancer");
 
-	push	OFFSET $SG218486
+	push	OFFSET $SG218528
 	mov	ecx, edi
 	mov	BYTE PTR [esi+450], al
 	call	ebx
 
 ; 846  : 	m_bReformer						  = kResults.GetBool("Reformation");
 
-	push	OFFSET $SG218487
+	push	OFFSET $SG218529
 	mov	ecx, edi
 	mov	BYTE PTR [esi+451], al
 	call	ebx
 
 ; 847  : 	m_bRequiresPeace				  = kResults.GetBool("RequiresPeace");
 
-	push	OFFSET $SG218488
+	push	OFFSET $SG218530
 	mov	ecx, edi
 	mov	BYTE PTR [esi+452], al
 	call	ebx
 
 ; 848  : 	m_bConvertsBarbarians			  = kResults.GetBool("ConvertsBarbarians");
 
-	push	OFFSET $SG218489
+	push	OFFSET $SG218531
 	mov	ecx, edi
 	mov	BYTE PTR [esi+453], al
 	call	ebx
@@ -5125,7 +5125,7 @@ $LN26@CacheResul:
 ; 849  : #ifdef NQ_DEUS_VULT
 ; 850  : 	m_bDeusVult						  = kResults.GetBool("DeusVult");
 
-	push	OFFSET $SG218490
+	push	OFFSET $SG218532
 	mov	ecx, edi
 	mov	BYTE PTR [esi+454], al
 	call	ebx
@@ -5133,7 +5133,7 @@ $LN26@CacheResul:
 ; 851  : #endif
 ; 852  : 	m_bFaithPurchaseAllGreatPeople	  = kResults.GetBool("FaithPurchaseAllGreatPeople");
 
-	push	OFFSET $SG218491
+	push	OFFSET $SG218533
 	mov	ecx, edi
 	mov	BYTE PTR [esi+455], al
 	call	ebx
@@ -5141,7 +5141,7 @@ $LN26@CacheResul:
 ; 853  : #ifdef NQ_BELIEF_TOGGLE_ALLOW_FAITH_GIFTS_TO_MINORS
 ; 854  : 	m_bAllowsFaithGiftsToMinors       = kResults.GetBool("AllowsFaithGiftsToMinors");
 
-	push	OFFSET $SG218492
+	push	OFFSET $SG218534
 	mov	ecx, edi
 	mov	BYTE PTR [esi+456], al
 	call	ebx
@@ -5153,7 +5153,7 @@ $LN26@CacheResul:
 ; 859  : 	szTextVal						  = kResults.GetText("ObsoleteEra");
 
 	mov	ebx, DWORD PTR __imp_?GetText@Results@Database@@QAEPBDPBD@Z
-	push	OFFSET $SG218494
+	push	OFFSET $SG218536
 	mov	ecx, edi
 	mov	BYTE PTR [esi+457], al
 	call	ebx
@@ -5167,7 +5167,7 @@ $LN26@CacheResul:
 
 ; 861  : 	szTextVal						  = kResults.GetText("ResourceRevealed");
 
-	push	OFFSET $SG218496
+	push	OFFSET $SG218538
 	mov	ecx, edi
 	mov	DWORD PTR [esi+460], eax
 	call	ebx
@@ -5181,7 +5181,7 @@ $LN26@CacheResul:
 
 ; 863  : 	szTextVal						  = kResults.GetText("SpreadModifierDoublingTech");
 
-	push	OFFSET $SG218498
+	push	OFFSET $SG218540
 	mov	ecx, edi
 	mov	DWORD PTR [esi+464], eax
 	call	ebx
@@ -5205,8 +5205,8 @@ $LN26@CacheResul:
 ; 868  : 	kUtility.SetYields(m_paiCityYieldChange, "Belief_CityYieldChanges", "BeliefType", szBeliefType);
 
 	push	ebx
-	push	OFFSET $SG218501
-	push	OFFSET $SG218502
+	push	OFFSET $SG218543
+	push	OFFSET $SG218544
 	lea	eax, DWORD PTR [esi+500]
 	push	eax
 	mov	ecx, ebp
@@ -5215,8 +5215,8 @@ $LN26@CacheResul:
 ; 869  : 	kUtility.SetYields(m_paiHolyCityYieldChange, "Belief_HolyCityYieldChanges", "BeliefType", szBeliefType);
 
 	push	ebx
-	push	OFFSET $SG218503
-	push	OFFSET $SG218504
+	push	OFFSET $SG218545
+	push	OFFSET $SG218546
 	lea	ecx, DWORD PTR [esi+504]
 	push	ecx
 	mov	ecx, ebp
@@ -5225,8 +5225,8 @@ $LN26@CacheResul:
 ; 870  : 	kUtility.SetYields(m_piYieldChangeAnySpecialist, "Belief_YieldChangeAnySpecialist", "BeliefType", szBeliefType);
 
 	push	ebx
-	push	OFFSET $SG218505
-	push	OFFSET $SG218506
+	push	OFFSET $SG218547
+	push	OFFSET $SG218548
 	lea	edx, DWORD PTR [esi+552]
 	push	edx
 	mov	ecx, ebp
@@ -5235,8 +5235,8 @@ $LN26@CacheResul:
 ; 871  : 	kUtility.SetYields(m_piYieldChangeTradeRoute, "Belief_YieldChangeTradeRoute", "BeliefType", szBeliefType);
 
 	push	ebx
-	push	OFFSET $SG218507
-	push	OFFSET $SG218508
+	push	OFFSET $SG218549
+	push	OFFSET $SG218550
 	lea	eax, DWORD PTR [esi+556]
 	push	eax
 	mov	ecx, ebp
@@ -5245,8 +5245,8 @@ $LN26@CacheResul:
 ; 872  : 	kUtility.SetYields(m_piYieldChangeNaturalWonder, "Belief_YieldChangeNaturalWonder", "BeliefType", szBeliefType);
 
 	push	ebx
-	push	OFFSET $SG218509
-	push	OFFSET $SG218510
+	push	OFFSET $SG218551
+	push	OFFSET $SG218552
 	lea	ecx, DWORD PTR [esi+560]
 	push	ecx
 	mov	ecx, ebp
@@ -5255,8 +5255,8 @@ $LN26@CacheResul:
 ; 873  : 	kUtility.SetYields(m_piYieldChangeWorldWonder, "Belief_YieldChangeWorldWonder", "BeliefType", szBeliefType);
 
 	push	ebx
-	push	OFFSET $SG218511
-	push	OFFSET $SG218512
+	push	OFFSET $SG218553
+	push	OFFSET $SG218554
 	lea	edx, DWORD PTR [esi+564]
 	push	edx
 	mov	ecx, ebp
@@ -5265,8 +5265,8 @@ $LN26@CacheResul:
 ; 874  : 	kUtility.SetYields(m_piYieldModifierNaturalWonder, "Belief_YieldModifierNaturalWonder", "BeliefType", szBeliefType);
 
 	push	ebx
-	push	OFFSET $SG218513
-	push	OFFSET $SG218514
+	push	OFFSET $SG218555
+	push	OFFSET $SG218556
 	lea	eax, DWORD PTR [esi+568]
 	push	eax
 	mov	ecx, ebp
@@ -5276,12 +5276,12 @@ $LN26@CacheResul:
 
 	push	0
 	push	0
-	push	OFFSET $SG218515
+	push	OFFSET $SG218557
 	push	ebx
-	push	OFFSET $SG218516
-	push	OFFSET $SG218517
-	push	OFFSET $SG218518
-	push	OFFSET $SG218519
+	push	OFFSET $SG218558
+	push	OFFSET $SG218559
+	push	OFFSET $SG218560
+	push	OFFSET $SG218561
 	lea	ecx, DWORD PTR [esi+572]
 	push	ecx
 	mov	ecx, ebp
@@ -5291,12 +5291,12 @@ $LN26@CacheResul:
 
 	push	0
 	push	0
-	push	OFFSET $SG218520
+	push	OFFSET $SG218562
 	push	ebx
-	push	OFFSET $SG218521
-	push	OFFSET $SG218522
-	push	OFFSET $SG218523
-	push	OFFSET $SG218524
+	push	OFFSET $SG218563
+	push	OFFSET $SG218564
+	push	OFFSET $SG218565
+	push	OFFSET $SG218566
 	lea	edx, DWORD PTR [esi+548]
 	push	edx
 	mov	ecx, ebp
@@ -5306,12 +5306,12 @@ $LN26@CacheResul:
 
 	push	0
 	push	0
-	push	OFFSET $SG218525
+	push	OFFSET $SG218567
 	push	ebx
-	push	OFFSET $SG218526
-	push	OFFSET $SG218527
-	push	OFFSET $SG218528
-	push	OFFSET $SG218529
+	push	OFFSET $SG218568
+	push	OFFSET $SG218569
+	push	OFFSET $SG218570
+	push	OFFSET $SG218571
 	lea	eax, DWORD PTR [esi+516]
 	push	eax
 	mov	ecx, ebp
@@ -5321,12 +5321,12 @@ $LN26@CacheResul:
 
 	push	0
 	push	0
-	push	OFFSET $SG218530
+	push	OFFSET $SG218572
 	push	ebx
-	push	OFFSET $SG218531
-	push	OFFSET $SG218532
-	push	OFFSET $SG218533
-	push	OFFSET $SG218534
+	push	OFFSET $SG218573
+	push	OFFSET $SG218574
+	push	OFFSET $SG218575
+	push	OFFSET $SG218576
 	lea	ecx, DWORD PTR [esi+528]
 	push	ecx
 	mov	ecx, ebp
@@ -5336,12 +5336,12 @@ $LN26@CacheResul:
 
 	push	0
 	push	0
-	push	OFFSET $SG218535
+	push	OFFSET $SG218577
 	push	ebx
-	push	OFFSET $SG218536
-	push	OFFSET $SG218537
-	push	OFFSET $SG218538
-	push	OFFSET $SG218539
+	push	OFFSET $SG218578
+	push	OFFSET $SG218579
+	push	OFFSET $SG218580
+	push	OFFSET $SG218581
 	lea	edx, DWORD PTR [esi+532]
 	push	edx
 	mov	ecx, ebp
@@ -5351,12 +5351,12 @@ $LN26@CacheResul:
 
 	push	0
 	push	0
-	push	OFFSET $SG218540
+	push	OFFSET $SG218582
 	push	ebx
-	push	OFFSET $SG218541
-	push	OFFSET $SG218542
-	push	OFFSET $SG218543
-	push	OFFSET $SG218544
+	push	OFFSET $SG218583
+	push	OFFSET $SG218584
+	push	OFFSET $SG218585
+	push	OFFSET $SG218586
 	lea	eax, DWORD PTR [esi+508]
 	push	eax
 	mov	ecx, ebp
@@ -5366,12 +5366,12 @@ $LN26@CacheResul:
 
 	push	0
 	push	0
-	push	OFFSET $SG218545
+	push	OFFSET $SG218587
 	push	ebx
-	push	OFFSET $SG218546
-	push	OFFSET $SG218547
-	push	OFFSET $SG218548
-	push	OFFSET $SG218549
+	push	OFFSET $SG218588
+	push	OFFSET $SG218589
+	push	OFFSET $SG218590
+	push	OFFSET $SG218591
 	lea	ecx, DWORD PTR [esi+512]
 	push	ecx
 	mov	ecx, ebp
@@ -5380,10 +5380,10 @@ $LN26@CacheResul:
 ; 882  : 	kUtility.PopulateArrayByExistence(m_pbFaithPurchaseUnitEraEnabled, "Eras", "Belief_EraFaithUnitPurchase", "EraType", "BeliefType", szBeliefType);
 
 	push	ebx
-	push	OFFSET $SG218550
-	push	OFFSET $SG218551
-	push	OFFSET $SG218552
-	push	OFFSET $SG218553
+	push	OFFSET $SG218592
+	push	OFFSET $SG218593
+	push	OFFSET $SG218594
+	push	OFFSET $SG218595
 	lea	edx, DWORD PTR [esi+576]
 	push	edx
 	mov	ecx, ebp
@@ -5392,10 +5392,10 @@ $LN26@CacheResul:
 ; 883  : 	kUtility.PopulateArrayByExistence(m_pbBuildingClassEnabled, "BuildingClasses", "Belief_BuildingClassFaithPurchase", "BuildingClassType", "BeliefType", szBeliefType);
 
 	push	ebx
-	push	OFFSET $SG218554
-	push	OFFSET $SG218555
-	push	OFFSET $SG218556
-	push	OFFSET $SG218557
+	push	OFFSET $SG218596
+	push	OFFSET $SG218597
+	push	OFFSET $SG218598
+	push	OFFSET $SG218599
 	lea	eax, DWORD PTR [esi+580]
 	push	eax
 	mov	ecx, ebp
@@ -5411,9 +5411,9 @@ $LN26@CacheResul:
 ; 891  : 		kUtility.Initialize2DArray(m_ppiImprovementYieldChanges, "Improvements", "Yields");
 
 	push	0
-	push	OFFSET $SG218558
+	push	OFFSET $SG218600
 	lea	eax, DWORD PTR [esi+520]
-	push	OFFSET $SG218559
+	push	OFFSET $SG218601
 	push	eax
 	mov	ecx, ebp
 	call	?Initialize2DArray@CvDatabaseUtility@@QAE_NAAPAPAHPBD1H@Z ; CvDatabaseUtility::Initialize2DArray
@@ -5422,19 +5422,19 @@ $LN26@CacheResul:
 ; 893  : 
 ; 894  : 		std::string strKey("Belief_ImprovementYieldChanges");
 
-	push	OFFSET $SG218561
-	lea	ecx, DWORD PTR _strKey$218560[esp+92]
+	push	OFFSET $SG218603
+	lea	ecx, DWORD PTR _strKey$218602[esp+92]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 
 ; 895  : 		Database::Results* pResults = kUtility.GetResults(strKey);
 
-	lea	ecx, DWORD PTR _strKey$218560[esp+88]
+	lea	ecx, DWORD PTR _strKey$218602[esp+88]
 	push	ecx
 	mov	ecx, ebp
 	mov	DWORD PTR __$EHRec$[esp+100], 0
 	call	?GetResults@CvDatabaseUtility@@QAEPAVResults@Database@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z ; CvDatabaseUtility::GetResults
 	mov	edi, eax
-	mov	DWORD PTR _pResults$218562[esp+84], edi
+	mov	DWORD PTR _pResults$218604[esp+84], edi
 
 ; 896  : 		if(pResults == NULL)
 
@@ -5444,12 +5444,12 @@ $LN26@CacheResul:
 ; 897  : 		{
 ; 898  : 			pResults = kUtility.PrepareResults(strKey, "select Improvements.ID as ImprovementID, Yields.ID as YieldID, Yield from Belief_ImprovementYieldChanges inner join Improvements on Improvements.Type = ImprovementType inner join Yields on Yields.Type = YieldType where BeliefType = ?");
 
-	push	OFFSET $SG218564
-	lea	edx, DWORD PTR _strKey$218560[esp+92]
+	push	OFFSET $SG218606
+	lea	edx, DWORD PTR _strKey$218602[esp+92]
 	push	edx
 	mov	ecx, ebp
 	call	?PrepareResults@CvDatabaseUtility@@QAEPAVResults@Database@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PBD@Z ; CvDatabaseUtility::PrepareResults
-	mov	DWORD PTR _pResults$218562[esp+84], eax
+	mov	DWORD PTR _pResults$218604[esp+84], eax
 	mov	edi, eax
 $LN15@CacheResul:
 
@@ -5476,22 +5476,22 @@ $LL14@CacheResul:
 ; 904  : 		{
 ; 905  : 			const int ImprovementID = pResults->GetInt(0);
 
-	mov	ecx, DWORD PTR _pResults$218562[esp+84]
+	mov	ecx, DWORD PTR _pResults$218604[esp+84]
 	push	0
 	call	edi
 
 ; 906  : 			const int YieldID = pResults->GetInt(1);
 
-	mov	ecx, DWORD PTR _pResults$218562[esp+84]
+	mov	ecx, DWORD PTR _pResults$218604[esp+84]
 	push	1
-	mov	DWORD PTR _ImprovementID$218568[esp+88], eax
+	mov	DWORD PTR _ImprovementID$218610[esp+88], eax
 	call	edi
 
 ; 907  : 			const int yield = pResults->GetInt(2);
 
-	mov	ecx, DWORD PTR _pResults$218562[esp+84]
+	mov	ecx, DWORD PTR _pResults$218604[esp+84]
 	push	2
-	mov	DWORD PTR _YieldID$218569[esp+92], eax
+	mov	DWORD PTR _YieldID$218611[esp+92], eax
 	call	edi
 
 ; 908  : 
@@ -5501,11 +5501,11 @@ $LL14@CacheResul:
 ; 912  : 			m_ppiImprovementYieldChanges[ImprovementID][YieldID] = yield;
 
 	mov	ecx, DWORD PTR [esi+520]
-	mov	edx, DWORD PTR _ImprovementID$218568[esp+84]
+	mov	edx, DWORD PTR _ImprovementID$218610[esp+84]
 	mov	ecx, DWORD PTR [ecx+edx*4]
-	mov	edx, DWORD PTR _YieldID$218569[esp+88]
+	mov	edx, DWORD PTR _YieldID$218611[esp+88]
 	mov	DWORD PTR [ecx+edx*4], eax
-	mov	ecx, DWORD PTR _pResults$218562[esp+84]
+	mov	ecx, DWORD PTR _pResults$218604[esp+84]
 	call	DWORD PTR __imp_?Step@Results@Database@@QAE_NXZ
 	test	al, al
 	jne	SHORT $LL14@CacheResul
@@ -5515,7 +5515,7 @@ $LN13@CacheResul:
 ; 914  : 		}
 ; 915  : 	}
 
-	lea	ecx, DWORD PTR _strKey$218560[esp+88]
+	lea	ecx, DWORD PTR _strKey$218602[esp+88]
 	mov	DWORD PTR __$EHRec$[esp+96], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -5529,9 +5529,9 @@ $LN13@CacheResul:
 ; 923  : 		kUtility.Initialize2DArray(m_ppiBuildingClassYieldChanges, "BuildingClasses", "Yields");
 
 	push	0
-	push	OFFSET $SG218571
+	push	OFFSET $SG218613
 	lea	eax, DWORD PTR [esi+524]
-	push	OFFSET $SG218572
+	push	OFFSET $SG218614
 	push	eax
 	mov	ecx, ebp
 	call	?Initialize2DArray@CvDatabaseUtility@@QAE_NAAPAPAHPBD1H@Z ; CvDatabaseUtility::Initialize2DArray
@@ -5540,18 +5540,18 @@ $LN13@CacheResul:
 ; 925  : 
 ; 926  : 		std::string strKey("Belief_BuildingClassYieldChanges");
 
-	push	OFFSET $SG218574
-	lea	ecx, DWORD PTR _strKey$218573[esp+92]
+	push	OFFSET $SG218616
+	lea	ecx, DWORD PTR _strKey$218615[esp+92]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 
 ; 927  : 		Database::Results* pResults = kUtility.GetResults(strKey);
 
-	lea	eax, DWORD PTR _strKey$218573[esp+88]
+	lea	eax, DWORD PTR _strKey$218615[esp+88]
 	push	eax
 	mov	ecx, ebp
 	mov	DWORD PTR __$EHRec$[esp+100], 1
 	call	?GetResults@CvDatabaseUtility@@QAEPAVResults@Database@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z ; CvDatabaseUtility::GetResults
-	mov	DWORD PTR _pResults$218575[esp+84], eax
+	mov	DWORD PTR _pResults$218617[esp+84], eax
 
 ; 928  : 		if(pResults == NULL)
 
@@ -5561,12 +5561,12 @@ $LN13@CacheResul:
 ; 929  : 		{
 ; 930  : 			pResults = kUtility.PrepareResults(strKey, "select BuildingClasses.ID as BuildingClassID, Yields.ID as YieldID, YieldChange from Belief_BuildingClassYieldChanges inner join BuildingClasses on BuildingClasses.Type = BuildingClassType inner join Yields on Yields.Type = YieldType where BeliefType = ?");
 
-	push	OFFSET $SG218577
-	lea	ecx, DWORD PTR _strKey$218573[esp+92]
+	push	OFFSET $SG218619
+	lea	ecx, DWORD PTR _strKey$218615[esp+92]
 	push	ecx
 	mov	ecx, ebp
 	call	?PrepareResults@CvDatabaseUtility@@QAEPAVResults@Database@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PBD@Z ; CvDatabaseUtility::PrepareResults
-	mov	DWORD PTR _pResults$218575[esp+84], eax
+	mov	DWORD PTR _pResults$218617[esp+84], eax
 $LN12@CacheResul:
 
 ; 931  : 		}
@@ -5582,7 +5582,7 @@ $LN12@CacheResul:
 ; 934  : 
 ; 935  : 		while(pResults->Step())
 
-	mov	ecx, DWORD PTR _pResults$218575[esp+84]
+	mov	ecx, DWORD PTR _pResults$218617[esp+84]
 	call	DWORD PTR __imp_?Step@Results@Database@@QAE_NXZ
 	test	al, al
 	je	SHORT $LN10@CacheResul
@@ -5592,22 +5592,22 @@ $LL11@CacheResul:
 ; 936  : 		{
 ; 937  : 			const int BuildingClassID = pResults->GetInt(0);
 
-	mov	ecx, DWORD PTR _pResults$218575[esp+84]
+	mov	ecx, DWORD PTR _pResults$218617[esp+84]
 	push	0
 	call	edi
 
 ; 938  : 			const int iYieldID = pResults->GetInt(1);
 
-	mov	ecx, DWORD PTR _pResults$218575[esp+84]
+	mov	ecx, DWORD PTR _pResults$218617[esp+84]
 	push	1
-	mov	DWORD PTR _BuildingClassID$218581[esp+88], eax
+	mov	DWORD PTR _BuildingClassID$218623[esp+88], eax
 	call	edi
 
 ; 939  : 			const int iYieldChange = pResults->GetInt(2);
 
-	mov	ecx, DWORD PTR _pResults$218575[esp+84]
+	mov	ecx, DWORD PTR _pResults$218617[esp+84]
 	push	2
-	mov	DWORD PTR _iYieldID$218582[esp+92], eax
+	mov	DWORD PTR _iYieldID$218624[esp+92], eax
 	call	edi
 
 ; 940  : 
@@ -5617,11 +5617,11 @@ $LL11@CacheResul:
 ; 944  : 			m_ppiBuildingClassYieldChanges[BuildingClassID][iYieldID] = iYieldChange;
 
 	mov	edx, DWORD PTR [esi+524]
-	mov	ecx, DWORD PTR _BuildingClassID$218581[esp+84]
+	mov	ecx, DWORD PTR _BuildingClassID$218623[esp+84]
 	mov	edx, DWORD PTR [edx+ecx*4]
-	mov	ecx, DWORD PTR _iYieldID$218582[esp+88]
+	mov	ecx, DWORD PTR _iYieldID$218624[esp+88]
 	mov	DWORD PTR [edx+ecx*4], eax
-	mov	ecx, DWORD PTR _pResults$218575[esp+84]
+	mov	ecx, DWORD PTR _pResults$218617[esp+84]
 	call	DWORD PTR __imp_?Step@Results@Database@@QAE_NXZ
 	test	al, al
 	jne	SHORT $LL11@CacheResul
@@ -5631,7 +5631,7 @@ $LN10@CacheResul:
 ; 946  : 		}
 ; 947  : 	}
 
-	lea	ecx, DWORD PTR _strKey$218573[esp+88]
+	lea	ecx, DWORD PTR _strKey$218615[esp+88]
 	mov	DWORD PTR __$EHRec$[esp+96], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -5679,9 +5679,9 @@ $LN10@CacheResul:
 ; 989  : 		kUtility.Initialize2DArray(m_ppaiFeatureYieldChange, "Features", "Yields");
 
 	push	0
-	push	OFFSET $SG218584
+	push	OFFSET $SG218626
 	lea	eax, DWORD PTR [esi+536]
-	push	OFFSET $SG218585
+	push	OFFSET $SG218627
 	push	eax
 	mov	ecx, ebp
 	call	?Initialize2DArray@CvDatabaseUtility@@QAE_NAAPAPAHPBD1H@Z ; CvDatabaseUtility::Initialize2DArray
@@ -5690,18 +5690,18 @@ $LN10@CacheResul:
 ; 991  : 
 ; 992  : 		std::string strKey("Belief_FeatureYieldChanges");
 
-	push	OFFSET $SG218587
-	lea	ecx, DWORD PTR _strKey$218586[esp+92]
+	push	OFFSET $SG218629
+	lea	ecx, DWORD PTR _strKey$218628[esp+92]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 
 ; 993  : 		Database::Results* pResults = kUtility.GetResults(strKey);
 
-	lea	edx, DWORD PTR _strKey$218586[esp+88]
+	lea	edx, DWORD PTR _strKey$218628[esp+88]
 	push	edx
 	mov	ecx, ebp
 	mov	DWORD PTR __$EHRec$[esp+100], 2
 	call	?GetResults@CvDatabaseUtility@@QAEPAVResults@Database@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z ; CvDatabaseUtility::GetResults
-	mov	DWORD PTR _pResults$218588[esp+84], eax
+	mov	DWORD PTR _pResults$218630[esp+84], eax
 
 ; 994  : 		if(pResults == NULL)
 
@@ -5711,12 +5711,12 @@ $LN10@CacheResul:
 ; 995  : 		{
 ; 996  : 			pResults = kUtility.PrepareResults(strKey, "select Features.ID as FeatureID, Yields.ID as YieldID, Yield from Belief_FeatureYieldChanges inner join Features on Features.Type = FeatureType inner join Yields on Yields.Type = YieldType where BeliefType = ?");
 
-	push	OFFSET $SG218590
-	lea	eax, DWORD PTR _strKey$218586[esp+92]
+	push	OFFSET $SG218632
+	lea	eax, DWORD PTR _strKey$218628[esp+92]
 	push	eax
 	mov	ecx, ebp
 	call	?PrepareResults@CvDatabaseUtility@@QAEPAVResults@Database@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PBD@Z ; CvDatabaseUtility::PrepareResults
-	mov	DWORD PTR _pResults$218588[esp+84], eax
+	mov	DWORD PTR _pResults$218630[esp+84], eax
 $LN9@CacheResul:
 
 ; 997  : 		}
@@ -5732,7 +5732,7 @@ $LN9@CacheResul:
 ; 1000 : 
 ; 1001 : 		while(pResults->Step())
 
-	mov	ecx, DWORD PTR _pResults$218588[esp+84]
+	mov	ecx, DWORD PTR _pResults$218630[esp+84]
 	call	DWORD PTR __imp_?Step@Results@Database@@QAE_NXZ
 	test	al, al
 	je	SHORT $LN7@CacheResul
@@ -5742,22 +5742,22 @@ $LL8@CacheResul:
 ; 1002 : 		{
 ; 1003 : 			const int FeatureID = pResults->GetInt(0);
 
-	mov	ecx, DWORD PTR _pResults$218588[esp+84]
+	mov	ecx, DWORD PTR _pResults$218630[esp+84]
 	push	0
 	call	edi
 
 ; 1004 : 			const int YieldID = pResults->GetInt(1);
 
-	mov	ecx, DWORD PTR _pResults$218588[esp+84]
+	mov	ecx, DWORD PTR _pResults$218630[esp+84]
 	push	1
-	mov	DWORD PTR _FeatureID$218594[esp+88], eax
+	mov	DWORD PTR _FeatureID$218636[esp+88], eax
 	call	edi
 
 ; 1005 : 			const int yield = pResults->GetInt(2);
 
-	mov	ecx, DWORD PTR _pResults$218588[esp+84]
+	mov	ecx, DWORD PTR _pResults$218630[esp+84]
 	push	2
-	mov	DWORD PTR _YieldID$218595[esp+92], eax
+	mov	DWORD PTR _YieldID$218637[esp+92], eax
 	call	edi
 
 ; 1006 : 
@@ -5767,11 +5767,11 @@ $LL8@CacheResul:
 ; 1010 : 			m_ppaiFeatureYieldChange[FeatureID][YieldID] = yield;
 
 	mov	ecx, DWORD PTR [esi+536]
-	mov	edx, DWORD PTR _FeatureID$218594[esp+84]
+	mov	edx, DWORD PTR _FeatureID$218636[esp+84]
 	mov	ecx, DWORD PTR [ecx+edx*4]
-	mov	edx, DWORD PTR _YieldID$218595[esp+88]
+	mov	edx, DWORD PTR _YieldID$218637[esp+88]
 	mov	DWORD PTR [ecx+edx*4], eax
-	mov	ecx, DWORD PTR _pResults$218588[esp+84]
+	mov	ecx, DWORD PTR _pResults$218630[esp+84]
 	call	DWORD PTR __imp_?Step@Results@Database@@QAE_NXZ
 	test	al, al
 	jne	SHORT $LL8@CacheResul
@@ -5781,7 +5781,7 @@ $LN7@CacheResul:
 ; 1012 : 		}
 ; 1013 : 	}
 
-	lea	ecx, DWORD PTR _strKey$218586[esp+88]
+	lea	ecx, DWORD PTR _strKey$218628[esp+88]
 	mov	DWORD PTR __$EHRec$[esp+96], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -5795,9 +5795,9 @@ $LN7@CacheResul:
 ; 1021 : 		kUtility.Initialize2DArray(m_ppaiResourceYieldChange, "Resources", "Yields");
 
 	push	0
-	push	OFFSET $SG218597
+	push	OFFSET $SG218639
 	lea	eax, DWORD PTR [esi+540]
-	push	OFFSET $SG218598
+	push	OFFSET $SG218640
 	push	eax
 	mov	ecx, ebp
 	call	?Initialize2DArray@CvDatabaseUtility@@QAE_NAAPAPAHPBD1H@Z ; CvDatabaseUtility::Initialize2DArray
@@ -5806,18 +5806,18 @@ $LN7@CacheResul:
 ; 1023 : 
 ; 1024 : 		std::string strKey("Belief_ResourceYieldChanges");
 
-	push	OFFSET $SG218600
-	lea	ecx, DWORD PTR _strKey$218599[esp+92]
+	push	OFFSET $SG218642
+	lea	ecx, DWORD PTR _strKey$218641[esp+92]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 
 ; 1025 : 		Database::Results* pResults = kUtility.GetResults(strKey);
 
-	lea	eax, DWORD PTR _strKey$218599[esp+88]
+	lea	eax, DWORD PTR _strKey$218641[esp+88]
 	push	eax
 	mov	ecx, ebp
 	mov	DWORD PTR __$EHRec$[esp+100], 3
 	call	?GetResults@CvDatabaseUtility@@QAEPAVResults@Database@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z ; CvDatabaseUtility::GetResults
-	mov	DWORD PTR _pResults$218601[esp+84], eax
+	mov	DWORD PTR _pResults$218643[esp+84], eax
 
 ; 1026 : 		if(pResults == NULL)
 
@@ -5827,12 +5827,12 @@ $LN7@CacheResul:
 ; 1027 : 		{
 ; 1028 : 			pResults = kUtility.PrepareResults(strKey, "select Resources.ID as ResourceID, Yields.ID as YieldID, Yield from Belief_ResourceYieldChanges inner join Resources on Resources.Type = ResourceType inner join Yields on Yields.Type = YieldType where BeliefType = ?");
 
-	push	OFFSET $SG218603
-	lea	ecx, DWORD PTR _strKey$218599[esp+92]
+	push	OFFSET $SG218645
+	lea	ecx, DWORD PTR _strKey$218641[esp+92]
 	push	ecx
 	mov	ecx, ebp
 	call	?PrepareResults@CvDatabaseUtility@@QAEPAVResults@Database@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PBD@Z ; CvDatabaseUtility::PrepareResults
-	mov	DWORD PTR _pResults$218601[esp+84], eax
+	mov	DWORD PTR _pResults$218643[esp+84], eax
 $LN6@CacheResul:
 
 ; 1029 : 		}
@@ -5848,7 +5848,7 @@ $LN6@CacheResul:
 ; 1032 : 
 ; 1033 : 		while(pResults->Step())
 
-	mov	ecx, DWORD PTR _pResults$218601[esp+84]
+	mov	ecx, DWORD PTR _pResults$218643[esp+84]
 	call	DWORD PTR __imp_?Step@Results@Database@@QAE_NXZ
 	test	al, al
 	je	SHORT $LN4@CacheResul
@@ -5858,22 +5858,22 @@ $LL5@CacheResul:
 ; 1034 : 		{
 ; 1035 : 			const int ResourceID = pResults->GetInt(0);
 
-	mov	ecx, DWORD PTR _pResults$218601[esp+84]
+	mov	ecx, DWORD PTR _pResults$218643[esp+84]
 	push	0
 	call	edi
 
 ; 1036 : 			const int YieldID = pResults->GetInt(1);
 
-	mov	ecx, DWORD PTR _pResults$218601[esp+84]
+	mov	ecx, DWORD PTR _pResults$218643[esp+84]
 	push	1
-	mov	DWORD PTR _ResourceID$218607[esp+88], eax
+	mov	DWORD PTR _ResourceID$218649[esp+88], eax
 	call	edi
 
 ; 1037 : 			const int yield = pResults->GetInt(2);
 
-	mov	ecx, DWORD PTR _pResults$218601[esp+84]
+	mov	ecx, DWORD PTR _pResults$218643[esp+84]
 	push	2
-	mov	DWORD PTR _YieldID$218608[esp+92], eax
+	mov	DWORD PTR _YieldID$218650[esp+92], eax
 	call	edi
 
 ; 1038 : 
@@ -5883,11 +5883,11 @@ $LL5@CacheResul:
 ; 1042 : 			m_ppaiResourceYieldChange[ResourceID][YieldID] = yield;
 
 	mov	edx, DWORD PTR [esi+540]
-	mov	ecx, DWORD PTR _ResourceID$218607[esp+84]
+	mov	ecx, DWORD PTR _ResourceID$218649[esp+84]
 	mov	edx, DWORD PTR [edx+ecx*4]
-	mov	ecx, DWORD PTR _YieldID$218608[esp+88]
+	mov	ecx, DWORD PTR _YieldID$218650[esp+88]
 	mov	DWORD PTR [edx+ecx*4], eax
-	mov	ecx, DWORD PTR _pResults$218601[esp+84]
+	mov	ecx, DWORD PTR _pResults$218643[esp+84]
 	call	DWORD PTR __imp_?Step@Results@Database@@QAE_NXZ
 	test	al, al
 	jne	SHORT $LL5@CacheResul
@@ -5897,7 +5897,7 @@ $LN4@CacheResul:
 ; 1044 : 		}
 ; 1045 : 	}
 
-	lea	ecx, DWORD PTR _strKey$218599[esp+88]
+	lea	ecx, DWORD PTR _strKey$218641[esp+88]
 	mov	DWORD PTR __$EHRec$[esp+96], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -5911,9 +5911,9 @@ $LN4@CacheResul:
 ; 1053 : 		kUtility.Initialize2DArray(m_ppaiTerrainYieldChange, "Terrains", "Yields");
 
 	push	0
-	push	OFFSET $SG218610
+	push	OFFSET $SG218652
 	add	esi, 544				; 00000220H
-	push	OFFSET $SG218611
+	push	OFFSET $SG218653
 	push	esi
 	mov	ecx, ebp
 	mov	DWORD PTR tv1120[esp+100], esi
@@ -5923,13 +5923,13 @@ $LN4@CacheResul:
 ; 1055 : 
 ; 1056 : 		std::string strKey("Belief_TerrainYieldChanges");
 
-	push	OFFSET $SG218613
-	lea	ecx, DWORD PTR _strKey$218612[esp+92]
+	push	OFFSET $SG218655
+	lea	ecx, DWORD PTR _strKey$218654[esp+92]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 
 ; 1057 : 		Database::Results* pResults = kUtility.GetResults(strKey);
 
-	lea	edx, DWORD PTR _strKey$218612[esp+88]
+	lea	edx, DWORD PTR _strKey$218654[esp+88]
 	push	edx
 	mov	ecx, ebp
 	mov	DWORD PTR __$EHRec$[esp+100], 4
@@ -5944,8 +5944,8 @@ $LN4@CacheResul:
 ; 1059 : 		{
 ; 1060 : 			pResults = kUtility.PrepareResults(strKey, "select Terrains.ID as TerrainID, Yields.ID as YieldID, Yield from Belief_TerrainYieldChanges inner join Terrains on Terrains.Type = TerrainType inner join Yields on Yields.Type = YieldType where BeliefType = ?");
 
-	push	OFFSET $SG218616
-	lea	eax, DWORD PTR _strKey$218612[esp+92]
+	push	OFFSET $SG218658
+	lea	eax, DWORD PTR _strKey$218654[esp+92]
 	push	eax
 	mov	ecx, ebp
 	call	?PrepareResults@CvDatabaseUtility@@QAEPAVResults@Database@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PBD@Z ; CvDatabaseUtility::PrepareResults
@@ -6012,7 +6012,7 @@ $LN1@CacheResul:
 ; 1076 : 		}
 ; 1077 : 	}
 
-	lea	ecx, DWORD PTR _strKey$218612[esp+88]
+	lea	ecx, DWORD PTR _strKey$218654[esp+88]
 	mov	DWORD PTR __$EHRec$[esp+96], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -6033,19 +6033,19 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?CacheResults@CvBeliefEntry@@UAE_NAAVResults@Database@@AAVCvDatabaseUtility@@@Z$0:
-	lea	ecx, DWORD PTR _strKey$218560[ebp]
+	lea	ecx, DWORD PTR _strKey$218602[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?CacheResults@CvBeliefEntry@@UAE_NAAVResults@Database@@AAVCvDatabaseUtility@@@Z$1:
-	lea	ecx, DWORD PTR _strKey$218573[ebp]
+	lea	ecx, DWORD PTR _strKey$218615[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?CacheResults@CvBeliefEntry@@UAE_NAAVResults@Database@@AAVCvDatabaseUtility@@@Z$2:
-	lea	ecx, DWORD PTR _strKey$218586[ebp]
+	lea	ecx, DWORD PTR _strKey$218628[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?CacheResults@CvBeliefEntry@@UAE_NAAVResults@Database@@AAVCvDatabaseUtility@@@Z$3:
-	lea	ecx, DWORD PTR _strKey$218599[ebp]
+	lea	ecx, DWORD PTR _strKey$218641[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?CacheResults@CvBeliefEntry@@UAE_NAAVResults@Database@@AAVCvDatabaseUtility@@@Z$4:
-	lea	ecx, DWORD PTR _strKey$218612[ebp]
+	lea	ecx, DWORD PTR _strKey$218654[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __ehhandler$?CacheResults@CvBeliefEntry@@UAE_NAAVResults@Database@@AAVCvDatabaseUtility@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?CacheResults@CvBeliefEntry@@UAE_NAAVResults@Database@@AAVCvDatabaseUtility@@@Z
@@ -6161,7 +6161,7 @@ EXTRN	??6@YAAAVFDataStream@@AAV0@ABW4EraTypes@@@Z:PROC ; operator<<
 ;	COMDAT ?Write@CvReligionBeliefs@@QBEXAAVFDataStream@@@Z
 _TEXT	SEGMENT
 _uiVersion$ = -4					; size = 4
-$T220999 = 8						; size = 4
+$T221041 = 8						; size = 4
 _kStream$ = 8						; size = 4
 ?Write@CvReligionBeliefs@@QBEXAAVFDataStream@@@Z PROC	; CvReligionBeliefs::Write, COMDAT
 ; _this$ = ecx
@@ -6444,8 +6444,8 @@ _kStream$ = 8						; size = 4
 
 	mov	ecx, DWORD PTR [esi+140]
 	add	esp, 24					; 00000018H
-	lea	edx, DWORD PTR $T220999[esp+12]
-	mov	DWORD PTR $T220999[esp+12], ecx
+	lea	edx, DWORD PTR $T221041[esp+12]
+	mov	DWORD PTR $T221041[esp+12], ecx
 	push	edx
 	mov	ecx, edi
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
@@ -7963,7 +7963,7 @@ PUBLIC	?GetHappinessPerFollowingCity@CvReligionBeliefs@@QBEMXZ ; CvReligionBelie
 ;	COMDAT ?GetHappinessPerFollowingCity@CvReligionBeliefs@@QBEMXZ
 _TEXT	SEGMENT
 _rtnValue$ = -8						; size = 4
-$T222034 = -4						; size = 4
+$T222076 = -4						; size = 4
 ?GetHappinessPerFollowingCity@CvReligionBeliefs@@QBEMXZ PROC ; CvReligionBeliefs::GetHappinessPerFollowingCity, COMDAT
 ; _this$ = ecx
 
@@ -8023,8 +8023,8 @@ $LN35@GetHappine@3:
 
 	mov	eax, DWORD PTR [ebx]
 	mov	ecx, DWORD PTR [eax+336]
-	mov	DWORD PTR $T222034[esp+24], ecx
-	fld	DWORD PTR $T222034[esp+24]
+	mov	DWORD PTR $T222076[esp+24], ecx
+	fld	DWORD PTR $T222076[esp+24]
 	fadd	DWORD PTR _rtnValue$[esp+24]
 	fstp	DWORD PTR _rtnValue$[esp+24]
 $LN3@GetHappine@3:
@@ -11213,10 +11213,10 @@ __unwindtable$?ConvertBarbarianUnit@CvBeliefHelpers@@YA_NPAVCvPlayer@@V?$FObject
 xdata$x	ENDS
 ;	COMDAT ?ConvertBarbarianUnit@CvBeliefHelpers@@YA_NPAVCvPlayer@@V?$FObjectHandle@VCvUnit@@@@@Z
 _TEXT	SEGMENT
-$T224742 = -112						; size = 4
-$T224746 = -108						; size = 4
+$T224784 = -112						; size = 4
+$T224788 = -108						; size = 4
 _pNewUnit$ = -104					; size = 8
-_logMsg$219409 = -96					; size = 28
+_logMsg$219451 = -96					; size = 28
 _strSummary$ = -68					; size = 28
 _strBuffer$ = -40					; size = 28
 __$EHRec$ = -12						; size = 12
@@ -11320,7 +11320,7 @@ $LN36@ConvertBar:
 ; 2256 : 	{
 ; 2257 : 		CvString logMsg;
 
-	lea	ecx, DWORD PTR _logMsg$219409[esp+128]
+	lea	ecx, DWORD PTR _logMsg$219451[esp+128]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
 ; 2258 : 		logMsg.Format("Converted barbarian (with belief), X: %d, Y: %d", pUnit->getX(), pUnit->getY());
@@ -11330,8 +11330,8 @@ $LN36@ConvertBar:
 	mov	eax, DWORD PTR [eax+76]
 	push	ecx
 	push	eax
-	lea	ecx, DWORD PTR _logMsg$219409[esp+136]
-	push	OFFSET $SG219410
+	lea	ecx, DWORD PTR _logMsg$219451[esp+136]
+	push	OFFSET $SG219452
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+152], 2
 	call	?Format@CvString@@QAAXPBDZZ		; CvString::Format
@@ -11339,7 +11339,7 @@ $LN36@ConvertBar:
 
 ; 2259 : 		pPlayer->GetHomelandAI()->LogHomelandMessage(logMsg);
 
-	lea	edx, DWORD PTR _logMsg$219409[esp+128]
+	lea	edx, DWORD PTR _logMsg$219451[esp+128]
 	push	edx
 	mov	ecx, edi
 	call	?GetHomelandAI@CvPlayer@@QBEPAVCvHomelandAI@@XZ ; CvPlayer::GetHomelandAI
@@ -11348,7 +11348,7 @@ $LN36@ConvertBar:
 
 ; 2260 : 	}
 
-	lea	ecx, DWORD PTR _logMsg$219409[esp+128]
+	lea	ecx, DWORD PTR _logMsg$219451[esp+128]
 	mov	BYTE PTR __$EHRec$[esp+136], 1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 $LN2@ConvertBar:
@@ -11357,14 +11357,14 @@ $LN2@ConvertBar:
 ; 2262 : 	CvString strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_HEATHEN_CONVERTS");
 
 	lea	eax, DWORD PTR _strBuffer$[esp+128]
-	push	OFFSET $SG219413
+	push	OFFSET $SG219455
 	push	eax
 	call	?GetLocalizedText@@YA?AVCvString@@PBD@Z	; GetLocalizedText
 
 ; 2263 : 	CvString strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_HEATHEN_CONVERTS");
 
 	lea	ecx, DWORD PTR _strSummary$[esp+136]
-	push	OFFSET $SG219416
+	push	OFFSET $SG219458
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+152], 3
 	call	?GetLocalizedText@@YA?AVCvString@@PBD@Z	; GetLocalizedText
@@ -11377,13 +11377,13 @@ $LN2@ConvertBar:
 	mov	ebx, DWORD PTR [eax+88]
 	lea	ecx, DWORD PTR _strSummary$[esp+128]
 	mov	BYTE PTR __$EHRec$[esp+136], 4
-	mov	DWORD PTR $T224742[esp+128], edx
+	mov	DWORD PTR $T224784[esp+128], edx
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	lea	ecx, DWORD PTR _strBuffer$[esp+128]
-	mov	DWORD PTR $T224746[esp+128], eax
+	mov	DWORD PTR $T224788[esp+128], eax
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
-	mov	ecx, DWORD PTR $T224742[esp+128]
-	mov	edx, DWORD PTR $T224746[esp+128]
+	mov	ecx, DWORD PTR $T224784[esp+128]
+	mov	edx, DWORD PTR $T224788[esp+128]
 	push	-1
 	push	-1
 	push	ebx
@@ -11476,7 +11476,7 @@ __unwindfunclet$?ConvertBarbarianUnit@CvBeliefHelpers@@YA_NPAVCvPlayer@@V?$FObje
 	lea	ecx, DWORD PTR _pNewUnit$[ebp]
 	jmp	??1?$FObjectHandle@VCvUnit@@@@QAE@XZ	; FObjectHandle<CvUnit>::~FObjectHandle<CvUnit>
 __unwindfunclet$?ConvertBarbarianUnit@CvBeliefHelpers@@YA_NPAVCvPlayer@@V?$FObjectHandle@VCvUnit@@@@@Z$2:
-	lea	ecx, DWORD PTR _logMsg$219409[ebp]
+	lea	ecx, DWORD PTR _logMsg$219451[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?ConvertBarbarianUnit@CvBeliefHelpers@@YA_NPAVCvPlayer@@V?$FObjectHandle@VCvUnit@@@@@Z$3:
 	lea	ecx, DWORD PTR _strBuffer$[ebp]

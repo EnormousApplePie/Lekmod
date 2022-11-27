@@ -12,314 +12,326 @@ INCLUDELIB OLDNAMES
 PUBLIC	?NO_QUEST_DATA@CvMinorCivQuest@@2HB		; CvMinorCivQuest::NO_QUEST_DATA
 PUBLIC	?NO_TURN@CvMinorCivQuest@@2HB			; CvMinorCivQuest::NO_TURN
 CONST	SEGMENT
-$SG224058 DB	'IconString', 00H
-$SG224457 DB	00H
-$SG224322 DB	'No Religion', 00H
-$SG224419 DB	'TXT_KEY_NOTIFICATION_ENOUGH_FAITH_FOR_MISSIONARY', 00H
+$SG224100 DB	'IconString', 00H
+$SG224499 DB	00H
+$SG224364 DB	'No Religion', 00H
+$SG224461 DB	'TXT_KEY_NOTIFICATION_ENOUGH_FAITH_FOR_MISSIONARY', 00H
 	ORG $+3
-$SG224422 DB	'TXT_KEY_NOTIFICATION_SUMMARY_ENOUGH_FAITH_FOR_MISSIONARY'
+$SG224464 DB	'TXT_KEY_NOTIFICATION_SUMMARY_ENOUGH_FAITH_FOR_MISSIONARY'
 	DB	00H
 	ORG $+3
-$SG224424 DB	'ERA_INDUSTRIAL', 00H
+$SG224466 DB	'ERA_INDUSTRIAL', 00H
 	ORG $+1
-$SG224431 DB	'TXT_KEY_NOTIFICATION_ENOUGH_FAITH_FOR_PANTHEON', 00H
+$SG224473 DB	'TXT_KEY_NOTIFICATION_ENOUGH_FAITH_FOR_PANTHEON', 00H
 	ORG $+1
-$SG224434 DB	'TXT_KEY_NOTIFICATION_SUMMARY_ENOUGH_FAITH_FOR_PANTHEON', 00H
+$SG224476 DB	'TXT_KEY_NOTIFICATION_SUMMARY_ENOUGH_FAITH_FOR_PANTHEON', 00H
 	ORG $+1
-$SG224451 DB	'TXT_KEY_NOTIFICATION_ADD_REFORMATION_BELIEF', 00H
-$SG224454 DB	'TXT_KEY_NOTIFICATION_SUMMARY_ADD_REFORMATION_BELIEF', 00H
-$SG224466 DB	'TXT_KEY_RO_AUTO_FAITH_PROPHET', 00H
+$SG224493 DB	'TXT_KEY_NOTIFICATION_ADD_REFORMATION_BELIEF', 00H
+$SG224496 DB	'TXT_KEY_NOTIFICATION_SUMMARY_ADD_REFORMATION_BELIEF', 00H
+$SG224508 DB	'TXT_KEY_RO_AUTO_FAITH_PROPHET', 00H
 	ORG $+2
-$SG224469 DB	'ERA_INDUSTRIAL', 00H
+$SG224511 DB	'ERA_INDUSTRIAL', 00H
 	ORG $+1
-$SG224471 DB	'TXT_KEY_RO_AUTO_FAITH_PROPHET', 00H
+$SG224513 DB	'TXT_KEY_RO_AUTO_FAITH_PROPHET', 00H
 	ORG $+2
-$SG224494 DB	'TXT_KEY_NOTIFICATION_AUTOMATIC_FAITH_PURCHASE', 00H
+$SG224536 DB	'TXT_KEY_NOTIFICATION_AUTOMATIC_FAITH_PURCHASE', 00H
 	ORG $+2
-$SG224497 DB	'TXT_KEY_NOTIFICATION_SUMMARY_AUTOMATIC_FAITH_PURCHASE', 00H
+$SG224539 DB	'TXT_KEY_NOTIFICATION_SUMMARY_AUTOMATIC_FAITH_PURCHASE', 00H
 	ORG $+2
-$SG224514 DB	'TXT_KEY_NOTIFICATION_AUTOMATIC_FAITH_PURCHASE', 00H
+$SG224556 DB	'TXT_KEY_NOTIFICATION_AUTOMATIC_FAITH_PURCHASE', 00H
 	ORG $+2
-$SG224517 DB	'TXT_KEY_NOTIFICATION_SUMMARY_AUTOMATIC_FAITH_PURCHASE', 00H
+$SG224559 DB	'TXT_KEY_NOTIFICATION_SUMMARY_AUTOMATIC_FAITH_PURCHASE', 00H
 	ORG $+2
-$SG224530 DB	'TXT_KEY_NOTIFICATION_NEED_NEW_AUTOMATIC_FAITH_SELECTION', 00H
-$SG224533 DB	'TXT_KEY_NOTIFICATION_SUMMARY_NEED_NEW_AUTOMATIC_FAITH_SE'
+$SG224572 DB	'TXT_KEY_NOTIFICATION_NEED_NEW_AUTOMATIC_FAITH_SELECTION', 00H
+$SG224575 DB	'TXT_KEY_NOTIFICATION_SUMMARY_NEED_NEW_AUTOMATIC_FAITH_SE'
 	DB	'LECTION', 00H
-$SG224557 DB	'PlayerCanFoundPantheon', 00H
+$SG224599 DB	'PlayerCanFoundPantheon', 00H
 	ORG $+1
-$SG224868 DB	'GetReligionToFound', 00H
+$SG224910 DB	'GetReligionToFound', 00H
 	ORG $+1
-$SG224910 DB	'PantheonFounded', 00H
-$SG224921 DB	'TXT_KEY_NOTIFICATION_PANTHEON_FOUNDED_S', 00H
-$SG224924 DB	'TXT_KEY_NOTIFICATION_PANTHEON_FOUNDED', 00H
+$SG224952 DB	'PantheonFounded', 00H
+$SG224963 DB	'TXT_KEY_NOTIFICATION_PANTHEON_FOUNDED_S', 00H
+$SG224966 DB	'TXT_KEY_NOTIFICATION_PANTHEON_FOUNDED', 00H
 	ORG $+2
-$SG224946 DB	'TXT_KEY_NOTIFICATION_PANTHEON_FOUNDED_ACTIVE_PLAYER', 00H
-$SG224955 DB	'TXT_KEY_NOTIFICATION_PANTHEON_FOUNDED_UNKNOWN', 00H
+$SG224988 DB	'TXT_KEY_NOTIFICATION_PANTHEON_FOUNDED_ACTIVE_PLAYER', 00H
+$SG224997 DB	'TXT_KEY_NOTIFICATION_PANTHEON_FOUNDED_UNKNOWN', 00H
 	ORG $+2
-$SG224960 DB	', PANTHEON FOUNDED, ', 00H
+$SG225002 DB	', PANTHEON FOUNDED, ', 00H
 	ORG $+3
-$SG224997 DB	'ReligionFounded', 00H
-$SG225004 DB	'TXT_KEY_NOTIFICATION_RELIGION_FOUNDED_S', 00H
-$SG225007 DB	'TXT_KEY_NOTIFICATION_RELIGION_FOUNDED', 00H
+$SG225039 DB	'ReligionFounded', 00H
+$SG225046 DB	'TXT_KEY_NOTIFICATION_RELIGION_FOUNDED_S', 00H
+$SG225049 DB	'TXT_KEY_NOTIFICATION_RELIGION_FOUNDED', 00H
 	ORG $+2
-$SG225023 DB	'TXT_KEY_NOTIFICATION_RELIGION_FOUNDED_ACTIVE_PLAYER', 00H
-$SG225031 DB	'TXT_KEY_NOTIFICATION_RELIGION_FOUNDED_UNKNOWN', 00H
+$SG225065 DB	'TXT_KEY_NOTIFICATION_RELIGION_FOUNDED_ACTIVE_PLAYER', 00H
+$SG225073 DB	'TXT_KEY_NOTIFICATION_RELIGION_FOUNDED_UNKNOWN', 00H
 	ORG $+2
-$SG225034 DB	', RELIGION FOUNDED, ', 00H
+$SG225076 DB	', RELIGION FOUNDED, ', 00H
 	ORG $+3
-$SG225036 DB	', ', 00H
+$SG225078 DB	', ', 00H
 	ORG $+1
-$SG225099 DB	'ReligionEnhanced', 00H
+$SG225141 DB	'ReligionEnhanced', 00H
 	ORG $+3
-$SG225111 DB	'TXT_KEY_NOTIFICATION_RELIGION_ENHANCED_S', 00H
+$SG225153 DB	'TXT_KEY_NOTIFICATION_RELIGION_ENHANCED_S', 00H
 	ORG $+3
-$SG225114 DB	'TXT_KEY_NOTIFICATION_RELIGION_ENHANCED', 00H
+$SG225156 DB	'TXT_KEY_NOTIFICATION_RELIGION_ENHANCED', 00H
 	ORG $+1
-$SG225120 DB	'TXT_KEY_NOTIFICATION_RELIGION_ENHANCED_ACTIVE_PLAYER', 00H
+$SG225162 DB	'TXT_KEY_NOTIFICATION_RELIGION_ENHANCED_ACTIVE_PLAYER', 00H
 	ORG $+3
-$SG225128 DB	'TXT_KEY_NOTIFICATION_RELIGION_ENHANCED_UNKNOWN', 00H
+$SG225170 DB	'TXT_KEY_NOTIFICATION_RELIGION_ENHANCED_UNKNOWN', 00H
 	ORG $+1
-$SG225132 DB	', RELIGION ENHANCED', 00H
-$SG225167 DB	'ReformationAdded', 00H
+$SG225174 DB	', RELIGION ENHANCED', 00H
+$SG225209 DB	'ReformationAdded', 00H
 	ORG $+3
-$SG225179 DB	'TXT_KEY_NOTIFICATION_REFORMATION_BELIEF_ADDED_S', 00H
-$SG225182 DB	'TXT_KEY_NOTIFICATION_REFORMATION_BELIEF_ADDED', 00H
+$SG225221 DB	'TXT_KEY_NOTIFICATION_REFORMATION_BELIEF_ADDED_S', 00H
+$SG225224 DB	'TXT_KEY_NOTIFICATION_REFORMATION_BELIEF_ADDED', 00H
 	ORG $+2
-$SG225188 DB	'TXT_KEY_NOTIFICATION_REFORMATION_BELIEF_ADDED_ACTIVE_PLA'
+$SG225230 DB	'TXT_KEY_NOTIFICATION_REFORMATION_BELIEF_ADDED_ACTIVE_PLA'
 	DB	'YER', 00H
-$SG225196 DB	'TXT_KEY_NOTIFICATION_REFORMATION_BELIEF_ADDED_UNKNOWN', 00H
+$SG225238 DB	'TXT_KEY_NOTIFICATION_REFORMATION_BELIEF_ADDED_UNKNOWN', 00H
 	ORG $+2
-$SG225200 DB	', REFORMATION BELIEF ADDED', 00H
+$SG225242 DB	', REFORMATION BELIEF ADDED', 00H
 	ORG $+1
-$SG225424 DB	'GetFounderBenefitsReligion', 00H
+$SG225466 DB	'GetFounderBenefitsReligion', 00H
 	ORG $+1
-$SG225658 DB	'ReligionLog.csv', 00H
-$SG225688 DB	'UNIT_PROPHET', 00H
+$SG225700 DB	'ReligionLog.csv', 00H
+$SG225730 DB	'UNITCLASS_PROPHET', 00H
+	ORG $+2
+$SG225745 DB	'Religion: spawn Great Prophet roll.', 00H
+$SG225754 DB	', PROPHET SPAWNED, ', 00H
+$SG225756 DB	', Faith: 0', 00H
+	ORG $+1
+$SG225766 DB	'%03d, %d, ', 00H
+	ORG $+1
+$SG225782 DB	'TXT_KEY_NOTIFICATION_PANTHEON_BELIEF_IN_USE', 00H
+$SG225784 DB	'TXT_KEY_NOTIFICATION_SUMMARY_PANTHEON_BELIEF_IN_USE', 00H
+$SG225787 DB	'TXT_KEY_NOTIFICATION_RELIGION_IN_USE', 00H
 	ORG $+3
-$SG225700 DB	'Religion: spawn Great Prophet roll.', 00H
-$SG225709 DB	', PROPHET SPAWNED, ', 00H
-$SG225711 DB	', Faith: 0', 00H
-	ORG $+1
-$SG225721 DB	'%03d, %d, ', 00H
-	ORG $+1
-$SG225737 DB	'TXT_KEY_NOTIFICATION_PANTHEON_BELIEF_IN_USE', 00H
-$SG225739 DB	'TXT_KEY_NOTIFICATION_SUMMARY_PANTHEON_BELIEF_IN_USE', 00H
-$SG225742 DB	'TXT_KEY_NOTIFICATION_RELIGION_IN_USE', 00H
+$SG225789 DB	'TXT_KEY_NOTIFICATION_SUMMARY_RELIGION_IN_USE', 00H
 	ORG $+3
-$SG225744 DB	'TXT_KEY_NOTIFICATION_SUMMARY_RELIGION_IN_USE', 00H
-	ORG $+3
-$SG225747 DB	'TXT_KEY_NOTIFICATION_NOT_ENOUGH_FAITH_FOR_PANTHEON', 00H
+$SG225792 DB	'TXT_KEY_NOTIFICATION_NOT_ENOUGH_FAITH_FOR_PANTHEON', 00H
 	ORG $+1
-$SG225749 DB	'TXT_KEY_NOTIFICATION_SUMMARY_NOT_ENOUGH_FAITH_FOR_PANTHE'
+$SG225794 DB	'TXT_KEY_NOTIFICATION_SUMMARY_NOT_ENOUGH_FAITH_FOR_PANTHE'
 	DB	'ON', 00H
 	ORG $+1
-$SG225752 DB	'TXT_KEY_NOTIFICATION_NO_RELIGIONS_AVAILABLE', 00H
-$SG225754 DB	'TXT_KEY_NOTIFICATION_SUMMARY_NO_RELIGIONS_AVAILABLE', 00H
-$SG225758 DB	'TXT_KEY_NOTIFICATION_ALREADY_CREATED_RELIGION', 00H
+$SG225797 DB	'TXT_KEY_NOTIFICATION_NO_RELIGIONS_AVAILABLE', 00H
+$SG225799 DB	'TXT_KEY_NOTIFICATION_SUMMARY_NO_RELIGIONS_AVAILABLE', 00H
+$SG225803 DB	'TXT_KEY_NOTIFICATION_ALREADY_CREATED_RELIGION', 00H
 	ORG $+2
-$SG225760 DB	'TXT_KEY_NOTIFICATION_SUMMARY_ALREADY_CREATED_RELIGION', 00H
+$SG225805 DB	'TXT_KEY_NOTIFICATION_SUMMARY_ALREADY_CREATED_RELIGION', 00H
 	ORG $+2
-$SG225763 DB	'TXT_KEY_NOTIFICATION_ALREADY_CREATED_PANTHEON', 00H
+$SG225808 DB	'TXT_KEY_NOTIFICATION_ALREADY_CREATED_PANTHEON', 00H
 	ORG $+2
-$SG225765 DB	'TXT_KEY_NOTIFICATION_SUMMARY_ALREADY_CREATED_PANTHEON', 00H
+$SG225810 DB	'TXT_KEY_NOTIFICATION_SUMMARY_ALREADY_CREATED_PANTHEON', 00H
 	ORG $+2
-$SG225768 DB	'TXT_KEY_NOTIFICATION_RELIGION_NAME_IN_USE', 00H
+$SG225813 DB	'TXT_KEY_NOTIFICATION_RELIGION_NAME_IN_USE', 00H
 	ORG $+2
-$SG225770 DB	'TXT_KEY_NOTIFICATION_SUMMARY_RELIGION_NAME_IN_USE', 00H
+$SG225815 DB	'TXT_KEY_NOTIFICATION_SUMMARY_RELIGION_NAME_IN_USE', 00H
 	ORG $+2
-$SG225773 DB	'TXT_KEY_NOTIFICATION_ENHANCED_RELIGION_IN_USE', 00H
+$SG225818 DB	'TXT_KEY_NOTIFICATION_ENHANCED_RELIGION_IN_USE', 00H
 	ORG $+2
-$SG225775 DB	'TXT_KEY_NOTIFICATION_SUMMARY_ENHANCED_RELIGION_IN_USE', 00H
+$SG225820 DB	'TXT_KEY_NOTIFICATION_SUMMARY_ENHANCED_RELIGION_IN_USE', 00H
 	ORG $+2
-$SG226617 DB	'[COLOR_YELLOW]+%d[ENDCOLOR][ICON_GOLD]', 00H
+$SG226662 DB	'[COLOR_YELLOW]+%d[ENDCOLOR][ICON_GOLD]', 00H
 	ORG $+1
-$SG226628 DB	'TXT_KEY_NOTIFICATION_RELIGION_SPREAD_ACTIVE_PLAYER', 00H
+$SG226673 DB	'TXT_KEY_NOTIFICATION_RELIGION_SPREAD_ACTIVE_PLAYER', 00H
 	ORG $+1
-$SG226630 DB	'TXT_KEY_NOTIFICATION_RELIGION_SPREAD_ACTIVE_PLAYER_S', 00H
+$SG226675 DB	'TXT_KEY_NOTIFICATION_RELIGION_SPREAD_ACTIVE_PLAYER_S', 00H
 	ORG $+3
-$SG226643 DB	'TXT_KEY_NOTIFICATION_RELIGION_SPREAD_INITIAL_CONVERSION', 00H
-$SG226645 DB	'TXT_KEY_NOTIFICATION_RELIGION_SPREAD_INITIAL_CONVERSION_'
+$SG226688 DB	'TXT_KEY_NOTIFICATION_RELIGION_SPREAD_INITIAL_CONVERSION', 00H
+$SG226690 DB	'TXT_KEY_NOTIFICATION_RELIGION_SPREAD_INITIAL_CONVERSION_'
 	DB	'S', 00H
 	ORG $+2
-$SG226653 DB	'WORLDSIZE_STANDARD', 00H
+$SG226698 DB	'WORLDSIZE_STANDARD', 00H
 	ORG $+1
-$SG226654 DB	'Type', 00H
+$SG226699 DB	'Type', 00H
 	ORG $+3
-$SG226655 DB	'Worlds', 00H
+$SG226700 DB	'Worlds', 00H
 	ORG $+1
-$SG226658 DB	'ID', 00H
+$SG226703 DB	'ID', 00H
 	ORG $+1
-$SG226692 DB	'CityConvertsReligion', 00H
+$SG226737 DB	'CityConvertsReligion', 00H
 	ORG $+3
-$SG226704 DB	'%03d, %d, ', 00H
+$SG226749 DB	'%03d, %d, ', 00H
 	ORG $+1
-$SG226706 DB	', ', 00H
-	ORG $+1
-$SG226712 DB	'Adjacent city pressure', 00H
-	ORG $+1
-$SG226714 DB	'Holy city pressure', 00H
-	ORG $+1
-$SG226716 DB	'Population change', 00H
-	ORG $+2
-$SG226718 DB	'Religion founded', 00H
-	ORG $+3
-$SG226720 DB	'Pantheon founded', 00H
-	ORG $+3
-$SG226722 DB	'City captured', 00H
-	ORG $+2
-$SG226724 DB	'Missionary expended', 00H
-$SG226726 DB	'Prophet spreading', 00H
-	ORG $+2
-$SG226728 DB	'Remove heresy', 00H
-	ORG $+2
-$SG226730 DB	'Scripted conversion', 00H
-$SG226732 DB	'Spy pressure', 00H
-	ORG $+3
-$SG226734 DB	', ', 00H
-	ORG $+1
-$SG226735 DB	'Pop: %d', 00H
-$SG226741 DB	', Majority: ', 00H
-	ORG $+3
-$SG226742 DB	'(%d)', 00H
-	ORG $+3
-$SG226747 DB	', Secondary: ', 00H
-	ORG $+2
-$SG226748 DB	'(%d)', 00H
-	ORG $+3
-$SG226749 DB	'Atheists: %d', 00H
-	ORG $+3
 $SG226751 DB	', ', 00H
 	ORG $+1
-$SG226753 DB	', No religion in city', 00H
-	ORG $+2
-$SG227401 DB	'Choosing belief from Top Choices', 00H
-	ORG $+3
-$SG227436 DB	'Choosing belief from Top Choices', 00H
-	ORG $+3
-$SG227471 DB	'Choosing belief from Top Choices', 00H
-	ORG $+3
-$SG227506 DB	'Choosing belief from Top Choices', 00H
-	ORG $+3
-$SG227545 DB	'Choosing belief from Top Choices', 00H
-	ORG $+3
-$SG227580 DB	'Choosing belief from Top Choices', 00H
-	ORG $+3
-$SG227744 DB	'GAMEOPTION_AI_GIMP_NO_RELIGION_SPREAD', 00H
-	ORG $+2
-$SG227746 DB	'GAMEOPTION_AI_GIMP_NO_MINOR_RELIGION_SPREAD', 00H
-$SG227812 DB	'GetReligionToSpread', 00H
-$SG227832 DB	'ERA_INDUSTRIAL', 00H
+$SG226757 DB	'Adjacent city pressure', 00H
 	ORG $+1
-$SG227836 DB	', Saving for Great Person, ', 00H
-$SG227842 DB	'UNIT_PROPHET', 00H
-	ORG $+3
-$SG227845 DB	', Saving for Prophet, ', 00H
+$SG226759 DB	'Holy city pressure', 00H
 	ORG $+1
-$SG227849 DB	', Saving for Missionary, Need to Convert Non-Puppet Citi'
+$SG226761 DB	'Population change', 00H
+	ORG $+2
+$SG226763 DB	'Religion founded', 00H
+	ORG $+3
+$SG226765 DB	'Pantheon founded', 00H
+	ORG $+3
+$SG226767 DB	'City captured', 00H
+	ORG $+2
+$SG226769 DB	'Missionary expended', 00H
+$SG226771 DB	'Prophet spreading', 00H
+	ORG $+2
+$SG226773 DB	'Remove heresy', 00H
+	ORG $+2
+$SG226775 DB	'Scripted conversion', 00H
+$SG226777 DB	'Spy pressure', 00H
+	ORG $+3
+$SG226779 DB	', ', 00H
+	ORG $+1
+$SG226780 DB	'Pop: %d', 00H
+$SG226786 DB	', Majority: ', 00H
+	ORG $+3
+$SG226787 DB	'(%d)', 00H
+	ORG $+3
+$SG226792 DB	', Secondary: ', 00H
+	ORG $+2
+$SG226793 DB	'(%d)', 00H
+	ORG $+3
+$SG226794 DB	'Atheists: %d', 00H
+	ORG $+3
+$SG226796 DB	', ', 00H
+	ORG $+1
+$SG226798 DB	', No religion in city', 00H
+	ORG $+2
+$SG227446 DB	'Choosing belief from Top Choices', 00H
+	ORG $+3
+$SG227481 DB	'Choosing belief from Top Choices', 00H
+	ORG $+3
+$SG227516 DB	'Choosing belief from Top Choices', 00H
+	ORG $+3
+$SG227551 DB	'Choosing belief from Top Choices', 00H
+	ORG $+3
+$SG227590 DB	'Choosing belief from Top Choices', 00H
+	ORG $+3
+$SG227625 DB	'Choosing belief from Top Choices', 00H
+	ORG $+3
+$SG227790 DB	'GAMEOPTION_AI_TWEAKS', 00H
+	ORG $+3
+$SG227791 DB	'GAMEOPTION_AI_GIMP_NO_RELIGION_SPREAD', 00H
+	ORG $+2
+$SG227794 DB	'GAMEOPTION_AI_TWEAKS', 00H
+	ORG $+3
+$SG227795 DB	'GAMEOPTION_AI_GIMP_NO_MINOR_RELIGION_SPREAD', 00H
+$SG227861 DB	'GetReligionToSpread', 00H
+$SG227881 DB	'ERA_INDUSTRIAL', 00H
+	ORG $+1
+$SG227885 DB	', Saving for Great Person, ', 00H
+$SG227891 DB	'UNIT_PROPHET', 00H
+	ORG $+3
+$SG227894 DB	', Saving for Prophet, ', 00H
+	ORG $+1
+$SG227898 DB	', Saving for Missionary, Need to Convert Non-Puppet Citi'
 	DB	'es', 00H
 	ORG $+1
-$SG227853 DB	', Saving for Faith Building, For Our Non-Puppet Cities', 00H
+$SG227902 DB	', Saving for Faith Building, For Our Non-Puppet Cities', 00H
 	ORG $+1
-$SG227858 DB	', Saving for Science Building, Have Reformation Belief', 00H
+$SG227907 DB	', Saving for Science Building, Have Reformation Belief', 00H
 	ORG $+1
-$SG227861 DB	'ERA_INDUSTRIAL', 00H
+$SG227910 DB	'ERA_INDUSTRIAL', 00H
 	ORG $+1
-$SG227864 DB	', Saving for Great Person, ', 00H
-$SG227868 DB	', Saving for Missionary, Need to Convert Puppet Cities', 00H
-	ORG $+5
-$SG227872 DB	', Saving for Missionary, Need to Convert Cities of Non-R'
+$SG227913 DB	', Saving for Great Person, ', 00H
+$SG227917 DB	', Saving for Missionary, Need to Convert Puppet Cities', 00H
+	ORG $+1
+$SG227921 DB	', Saving for Missionary, Need to Convert Cities of Non-R'
 	DB	'eligion Starters', 00H
 	ORG $+3
-$SG227876 DB	', Saving for Inquisitors, Need to Defend Our Cities', 00H
-$SG227880 DB	', Saving for Missionary, Need to Convert Cities of Relig'
+$SG227925 DB	', Saving for Inquisitors, Need to Defend Our Cities', 00H
+$SG227929 DB	', Saving for Missionary, Need to Convert Cities of Relig'
 	DB	'ion Starters', 00H
 	ORG $+3
-$SG227884 DB	', Faith: %d', 00H
-$SG227892 DB	'UNIT_MISSIONARY', 00H
-$SG227908 DB	'UNIT_INQUISITOR', 00H
-$SG228056 DB	'FLAVOR_OFFENSE', 00H
+$SG227933 DB	', Faith: %d', 00H
+$SG227941 DB	'UNIT_MISSIONARY', 00H
+$SG227957 DB	'UNIT_INQUISITOR', 00H
+$SG228105 DB	'FLAVOR_OFFENSE', 00H
 	ORG $+1
-$SG228059 DB	'FLAVOR_DEFENSE', 00H
+$SG228108 DB	'FLAVOR_DEFENSE', 00H
 	ORG $+1
-$SG228062 DB	'FLAVOR_CITY_DEFENSE', 00H
-$SG228065 DB	'FLAVOR_HAPPINESS', 00H
+$SG228111 DB	'FLAVOR_CITY_DEFENSE', 00H
+$SG228114 DB	'FLAVOR_HAPPINESS', 00H
 	ORG $+3
-$SG228120 DB	'FLAVOR_OFFENSE', 00H
+$SG228169 DB	'FLAVOR_OFFENSE', 00H
 	ORG $+1
-$SG228123 DB	'FLAVOR_DEFENSE', 00H
+$SG228172 DB	'FLAVOR_DEFENSE', 00H
 	ORG $+1
-$SG228126 DB	'FLAVOR_HAPPINESS', 00H
+$SG228175 DB	'FLAVOR_HAPPINESS', 00H
 	ORG $+3
-$SG228129 DB	'FLAVOR_CULTURE', 00H
+$SG228178 DB	'FLAVOR_CULTURE', 00H
 	ORG $+1
-$SG228132 DB	'FLAVOR_GOLD', 00H
-$SG228135 DB	'FLAVOR_GREAT_PEOPLE', 00H
-$SG228138 DB	'FLAVOR_SCIENCE', 00H
+$SG228181 DB	'FLAVOR_GOLD', 00H
+$SG228184 DB	'FLAVOR_GREAT_PEOPLE', 00H
+$SG228187 DB	'FLAVOR_SCIENCE', 00H
 	ORG $+1
-$SG228141 DB	'FLAVOR_DIPLOMACY', 00H
+$SG228190 DB	'FLAVOR_DIPLOMACY', 00H
 	ORG $+3
-$SG228144 DB	'FLAVOR_EXPANSION', 00H
+$SG228193 DB	'FLAVOR_EXPANSION', 00H
 	ORG $+3
-$SG228194 DB	'POLICY_BRANCH_TRADITION', 00H
-$SG228198 DB	'POLICY_BRANCH_HONOR', 00H
-$SG228202 DB	'POLICY_BRANCH_AESTHETICS', 00H
+$SG228243 DB	'POLICY_BRANCH_TRADITION', 00H
+$SG228247 DB	'POLICY_BRANCH_HONOR', 00H
+$SG228251 DB	'POLICY_BRANCH_AESTHETICS', 00H
 	ORG $+3
-$SG228206 DB	'POLICY_BRANCH_COMMERCE', 00H
+$SG228255 DB	'POLICY_BRANCH_COMMERCE', 00H
 	ORG $+1
-$SG228210 DB	'POLICY_BRANCH_EXPLORATION', 00H
+$SG228259 DB	'POLICY_BRANCH_EXPLORATION', 00H
 	ORG $+2
-$SG228214 DB	'POLICY_BRANCH_RATIONALISM', 00H
+$SG228263 DB	'POLICY_BRANCH_RATIONALISM', 00H
 	ORG $+2
-$SG228220 DB	'MILITARYAISTRATEGY_ERADICATE_BARBARIANS', 00H
-$SG228241 DB	'GAMEOPTION_AI_GIMP_NO_RELIGION_SPREAD', 00H
+$SG228269 DB	'MILITARYAISTRATEGY_ERADICATE_BARBARIANS', 00H
+$SG228291 DB	'GAMEOPTION_AI_TWEAKS', 00H
+	ORG $+3
+$SG228292 DB	'GAMEOPTION_AI_GIMP_NO_RELIGION_SPREAD', 00H
 	ORG $+2
-$SG228247 DB	'GAMEOPTION_AI_GIMP_NO_MINOR_RELIGION_SPREAD', 00H
-$SG228320 DB	'UNIT_MISSIONARY', 00H
-$SG228335 DB	'GAMEOPTION_AI_GIMP_NO_MINOR_RELIGION_SPREAD', 00H
-$SG228339 DB	'GAMEOPTION_AI_GIMP_NO_RELIGION_SPREAD', 00H
+$SG228299 DB	'GAMEOPTION_AI_TWEAKS', 00H
+	ORG $+3
+$SG228300 DB	'GAMEOPTION_AI_GIMP_NO_MINOR_RELIGION_SPREAD', 00H
+$SG228373 DB	'UNIT_MISSIONARY', 00H
+$SG228389 DB	'GAMEOPTION_AI_TWEAKS', 00H
+	ORG $+3
+$SG228390 DB	'GAMEOPTION_AI_GIMP_NO_MINOR_RELIGION_SPREAD', 00H
+$SG228395 DB	'GAMEOPTION_AI_TWEAKS', 00H
+	ORG $+3
+$SG228396 DB	'GAMEOPTION_AI_GIMP_NO_RELIGION_SPREAD', 00H
 	ORG $+2
-$SG228416 DB	'SPECIALUNIT_PEOPLE', 00H
+$SG228473 DB	'SPECIALUNIT_PEOPLE', 00H
 	ORG $+1
-$SG228439 DB	'UNITCLASS_PROPHET', 00H
+$SG228496 DB	'UNITCLASS_PROPHET', 00H
 	ORG $+2
-$SG228446 DB	'UNITCLASS_WRITER', 00H
+$SG228503 DB	'UNITCLASS_WRITER', 00H
 	ORG $+3
-$SG228449 DB	'AIGRANDSTRATEGY_CULTURE', 00H
-$SG228453 DB	'UNITCLASS_ARTIST', 00H
+$SG228506 DB	'AIGRANDSTRATEGY_CULTURE', 00H
+$SG228510 DB	'UNITCLASS_ARTIST', 00H
 	ORG $+3
-$SG228456 DB	'AIGRANDSTRATEGY_CULTURE', 00H
-$SG228460 DB	'UNITCLASS_MUSICIAN', 00H
+$SG228513 DB	'AIGRANDSTRATEGY_CULTURE', 00H
+$SG228517 DB	'UNITCLASS_MUSICIAN', 00H
 	ORG $+1
-$SG228463 DB	'AIGRANDSTRATEGY_CULTURE', 00H
-$SG228467 DB	'UNITCLASS_SCIENTIST', 00H
-$SG228470 DB	'AIGRANDSTRATEGY_SPACESHIP', 00H
+$SG228520 DB	'AIGRANDSTRATEGY_CULTURE', 00H
+$SG228524 DB	'UNITCLASS_SCIENTIST', 00H
+$SG228527 DB	'AIGRANDSTRATEGY_SPACESHIP', 00H
 	ORG $+2
-$SG228474 DB	'UNITCLASS_MERCHANT', 00H
+$SG228531 DB	'UNITCLASS_MERCHANT', 00H
 	ORG $+1
-$SG228477 DB	'AIGRANDSTRATEGY_UNITED_NATIONS', 00H
+$SG228534 DB	'AIGRANDSTRATEGY_UNITED_NATIONS', 00H
 	ORG $+1
-$SG228481 DB	'UNITCLASS_ENGINEER', 00H
+$SG228538 DB	'UNITCLASS_ENGINEER', 00H
 	ORG $+1
-$SG228484 DB	'ECONOMICAISTRATEGY_GS_SPACESHIP_HOMESTRETCH', 00H
-$SG228489 DB	'UNITCLASS_GREAT_GENERAL', 00H
-$SG228492 DB	'AIGRANDSTRATEGY_CONQUEST', 00H
+$SG228541 DB	'ECONOMICAISTRATEGY_GS_SPACESHIP_HOMESTRETCH', 00H
+$SG228546 DB	'UNITCLASS_GREAT_GENERAL', 00H
+$SG228549 DB	'AIGRANDSTRATEGY_CONQUEST', 00H
 	ORG $+3
-$SG228496 DB	'UNITCLASS_GREAT_ADMIRAL', 00H
-$SG228499 DB	'AIGRANDSTRATEGY_CONQUEST', 00H
+$SG228553 DB	'UNITCLASS_GREAT_ADMIRAL', 00H
+$SG228556 DB	'AIGRANDSTRATEGY_CONQUEST', 00H
 	ORG $+3
-$SG228503 DB	'UNITCLASS_MISSIONARY', 00H
+$SG228560 DB	'UNITCLASS_MISSIONARY', 00H
 	ORG $+3
-$SG228507 DB	'UNITCLASS_INQUISITOR', 00H
+$SG228564 DB	'UNITCLASS_INQUISITOR', 00H
 	ORG $+3
-$SG228525 DB	'%03d, %d, ', 00H
+$SG228582 DB	'%03d, %d, ', 00H
 	ORG $+1
-$SG228527 DB	', ', 00H
+$SG228584 DB	', ', 00H
 	ORG $+1
-$SG228533 DB	'Belief, %s, %d', 00H
+$SG228590 DB	'Belief, %s, %d', 00H
 	ORG $+1
-$SG228537 DB	'CHOSEN, %s', 00H
+$SG228594 DB	'CHOSEN, %s', 00H
 	ORG $+1
-$SG228548 DB	'SPECIALUNIT_PEOPLE', 00H
+$SG228605 DB	'SPECIALUNIT_PEOPLE', 00H
 CONST	ENDS
 ;	COMDAT ?NO_TURN@CvMinorCivQuest@@2HB
 CONST	SEGMENT
@@ -1072,7 +1084,7 @@ _TEXT	SEGMENT
 ??0CvPlayerReligions@@QAE@XZ PROC			; CvPlayerReligions::CvPlayerReligions, COMDAT
 ; _this$ = ecx
 
-; 2680 : {
+; 2702 : {
 
 	mov	eax, ecx
 	xor	ecx, ecx
@@ -1080,7 +1092,7 @@ _TEXT	SEGMENT
 	mov	DWORD PTR [eax+4], ecx
 	mov	DWORD PTR [eax+8], ecx
 
-; 2681 : }
+; 2703 : }
 
 	ret	0
 ??0CvPlayerReligions@@QAE@XZ ENDP			; CvPlayerReligions::CvPlayerReligions
@@ -1092,8 +1104,8 @@ _TEXT	SEGMENT
 ?Uninit@CvPlayerReligions@@QAEXXZ PROC			; CvPlayerReligions::Uninit, COMDAT
 ; _this$ = ecx
 
-; 2700 : 
-; 2701 : }
+; 2722 : 
+; 2723 : }
 
 	ret	0
 ?Uninit@CvPlayerReligions@@QAEXXZ ENDP			; CvPlayerReligions::Uninit
@@ -1105,16 +1117,16 @@ _TEXT	SEGMENT
 ?Reset@CvPlayerReligions@@QAEXXZ PROC			; CvPlayerReligions::Reset, COMDAT
 ; _this$ = ecx
 
-; 2706 : 	m_bFoundingReligion = false;
+; 2728 : 	m_bFoundingReligion = false;
 
 	xor	eax, eax
 	mov	DWORD PTR [ecx+8], eax
 
-; 2707 : 	m_iNumProphetsSpawned = 0;
+; 2729 : 	m_iNumProphetsSpawned = 0;
 
 	mov	DWORD PTR [ecx+4], eax
 
-; 2708 : }
+; 2730 : }
 
 	ret	0
 ?Reset@CvPlayerReligions@@QAEXXZ ENDP			; CvPlayerReligions::Reset
@@ -1126,11 +1138,11 @@ _TEXT	SEGMENT
 ?GetNumProphetsSpawned@CvPlayerReligions@@QBEHXZ PROC	; CvPlayerReligions::GetNumProphetsSpawned, COMDAT
 ; _this$ = ecx
 
-; 2733 : 	return m_iNumProphetsSpawned;
+; 2755 : 	return m_iNumProphetsSpawned;
 
 	mov	eax, DWORD PTR [ecx+4]
 
-; 2734 : }
+; 2756 : }
 
 	ret	0
 ?GetNumProphetsSpawned@CvPlayerReligions@@QBEHXZ ENDP	; CvPlayerReligions::GetNumProphetsSpawned
@@ -1143,12 +1155,12 @@ _iValue$ = 8						; size = 4
 ?ChangeNumProphetsSpawned@CvPlayerReligions@@QAEXH@Z PROC ; CvPlayerReligions::ChangeNumProphetsSpawned, COMDAT
 ; _this$ = ecx
 
-; 2739 : 	m_iNumProphetsSpawned += iValue;
+; 2761 : 	m_iNumProphetsSpawned += iValue;
 
 	mov	eax, DWORD PTR _iValue$[esp-4]
 	add	DWORD PTR [ecx+4], eax
 
-; 2740 : }
+; 2762 : }
 
 	ret	4
 ?ChangeNumProphetsSpawned@CvPlayerReligions@@QAEXH@Z ENDP ; CvPlayerReligions::ChangeNumProphetsSpawned
@@ -1170,7 +1182,7 @@ _TEXT	SEGMENT
 ?CanAffordFaithPurchase@CvPlayerReligions@@QBE_NXZ PROC	; CvPlayerReligions::CanAffordFaithPurchase, COMDAT
 ; _this$ = ecx
 
-; 2815 : {
+; 2837 : {
 
 	push	ebx
 	push	ebp
@@ -1178,28 +1190,28 @@ _TEXT	SEGMENT
 	push	edi
 	mov	edi, ecx
 
-; 2816 : 	int iFaith = m_pPlayer->GetFaith();
+; 2838 : 	int iFaith = m_pPlayer->GetFaith();
 
 	mov	ecx, DWORD PTR [edi]
 	call	?GetFaith@CvPlayer@@QBEHXZ		; CvPlayer::GetFaith
 
-; 2817 : 	CvCity* pCapital = m_pPlayer->getCapitalCity();
+; 2839 : 	CvCity* pCapital = m_pPlayer->getCapitalCity();
 
 	mov	ecx, DWORD PTR [edi]
 	mov	ebp, eax
 	call	?getCapitalCity@CvPlayer@@QAEPAVCvCity@@XZ ; CvPlayer::getCapitalCity
 	mov	ebx, eax
 
-; 2818 : 	if(pCapital)
+; 2840 : 	if(pCapital)
 
 	test	ebx, ebx
 	je	$LN4@CanAffordF
 
-; 2819 : 	{
-; 2820 : #ifdef AUI_WARNING_FIXES
-; 2821 : 		for (uint iI = 0; iI < GC.getNumUnitInfos(); iI++)
-; 2822 : #else
-; 2823 : 		for (int iI = 0; iI < GC.getNumUnitInfos(); iI++)
+; 2841 : 	{
+; 2842 : #ifdef AUI_WARNING_FIXES
+; 2843 : 		for (uint iI = 0; iI < GC.getNumUnitInfos(); iI++)
+; 2844 : #else
+; 2845 : 		for (int iI = 0; iI < GC.getNumUnitInfos(); iI++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	xor	esi, esi
@@ -1208,22 +1220,22 @@ _TEXT	SEGMENT
 	jle	SHORT $LN10@CanAffordF
 $LL12@CanAffordF:
 
-; 2824 : #endif
-; 2825 : 		{
-; 2826 : 			const UnitTypes eUnit = static_cast<UnitTypes>(iI);
-; 2827 : 			CvUnitEntry* pkUnitInfo = GC.getUnitInfo(eUnit);
+; 2846 : #endif
+; 2847 : 		{
+; 2848 : 			const UnitTypes eUnit = static_cast<UnitTypes>(iI);
+; 2849 : 			CvUnitEntry* pkUnitInfo = GC.getUnitInfo(eUnit);
 
 	push	esi
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getUnitInfo@CvGlobals@@QAEPAVCvUnitEntry@@W4UnitTypes@@@Z ; CvGlobals::getUnitInfo
 
-; 2828 : 			if(pkUnitInfo)
+; 2850 : 			if(pkUnitInfo)
 
 	test	eax, eax
 	je	SHORT $LN11@CanAffordF
 
-; 2829 : 			{
-; 2830 : 				if (m_pPlayer->IsCanPurchaseAnyCity(false, false, eUnit, NO_BUILDING, YIELD_FAITH))
+; 2851 : 			{
+; 2852 : 				if (m_pPlayer->IsCanPurchaseAnyCity(false, false, eUnit, NO_BUILDING, YIELD_FAITH))
 
 	mov	ecx, DWORD PTR [edi]
 	push	5
@@ -1235,15 +1247,15 @@ $LL12@CanAffordF:
 	test	al, al
 	je	SHORT $LN11@CanAffordF
 
-; 2831 : 				{
-; 2832 : 					int iCost = pCapital->GetFaithPurchaseCost(eUnit, true);
+; 2853 : 				{
+; 2854 : 					int iCost = pCapital->GetFaithPurchaseCost(eUnit, true);
 
 	push	1
 	push	esi
 	mov	ecx, ebx
 	call	?GetFaithPurchaseCost@CvCity@@QAEHW4UnitTypes@@_N@Z ; CvCity::GetFaithPurchaseCost
 
-; 2833 : 					if(iCost != 0 && iFaith > iCost)
+; 2855 : 					if(iCost != 0 && iFaith > iCost)
 
 	test	eax, eax
 	je	SHORT $LN11@CanAffordF
@@ -1251,11 +1263,11 @@ $LL12@CanAffordF:
 	jg	SHORT $LN18@CanAffordF
 $LN11@CanAffordF:
 
-; 2819 : 	{
-; 2820 : #ifdef AUI_WARNING_FIXES
-; 2821 : 		for (uint iI = 0; iI < GC.getNumUnitInfos(); iI++)
-; 2822 : #else
-; 2823 : 		for (int iI = 0; iI < GC.getNumUnitInfos(); iI++)
+; 2841 : 	{
+; 2842 : #ifdef AUI_WARNING_FIXES
+; 2843 : 		for (uint iI = 0; iI < GC.getNumUnitInfos(); iI++)
+; 2844 : #else
+; 2845 : 		for (int iI = 0; iI < GC.getNumUnitInfos(); iI++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	inc	esi
@@ -1264,14 +1276,14 @@ $LN11@CanAffordF:
 	jl	SHORT $LL12@CanAffordF
 $LN10@CanAffordF:
 
-; 2836 : 					}
-; 2837 : 				}
-; 2838 : 			}
-; 2839 : 		}
-; 2840 : #ifdef AUI_WARNING_FIXES
-; 2841 : 		for (uint iI = 0; iI < GC.getNumBuildingInfos(); iI++)
-; 2842 : #else
-; 2843 : 		for (int iI = 0; iI < GC.getNumBuildingInfos(); iI++)
+; 2858 : 					}
+; 2859 : 				}
+; 2860 : 			}
+; 2861 : 		}
+; 2862 : #ifdef AUI_WARNING_FIXES
+; 2863 : 		for (uint iI = 0; iI < GC.getNumBuildingInfos(); iI++)
+; 2864 : #else
+; 2865 : 		for (int iI = 0; iI < GC.getNumBuildingInfos(); iI++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	xor	esi, esi
@@ -1280,22 +1292,22 @@ $LN10@CanAffordF:
 	jle	SHORT $LN4@CanAffordF
 $LL6@CanAffordF:
 
-; 2844 : #endif
-; 2845 : 		{
-; 2846 : 			const BuildingTypes eBuilding = static_cast<BuildingTypes>(iI);
-; 2847 : 			CvBuildingEntry* pkBuildingInfo = GC.getBuildingInfo(eBuilding);
+; 2866 : #endif
+; 2867 : 		{
+; 2868 : 			const BuildingTypes eBuilding = static_cast<BuildingTypes>(iI);
+; 2869 : 			CvBuildingEntry* pkBuildingInfo = GC.getBuildingInfo(eBuilding);
 
 	push	esi
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getBuildingInfo@CvGlobals@@QAEPAVCvBuildingEntry@@W4BuildingTypes@@@Z ; CvGlobals::getBuildingInfo
 
-; 2848 : 			if(pkBuildingInfo)
+; 2870 : 			if(pkBuildingInfo)
 
 	test	eax, eax
 	je	SHORT $LN5@CanAffordF
 
-; 2849 : 			{
-; 2850 : 				if (m_pPlayer->IsCanPurchaseAnyCity(false, false, NO_UNIT, eBuilding, YIELD_FAITH))
+; 2871 : 			{
+; 2872 : 				if (m_pPlayer->IsCanPurchaseAnyCity(false, false, NO_UNIT, eBuilding, YIELD_FAITH))
 
 	mov	ecx, DWORD PTR [edi]
 	push	5
@@ -1307,14 +1319,14 @@ $LL6@CanAffordF:
 	test	al, al
 	je	SHORT $LN5@CanAffordF
 
-; 2851 : 				{
-; 2852 : 					int iCost = pCapital->GetFaithPurchaseCost(eBuilding);
+; 2873 : 				{
+; 2874 : 					int iCost = pCapital->GetFaithPurchaseCost(eBuilding);
 
 	push	esi
 	mov	ecx, ebx
 	call	?GetFaithPurchaseCost@CvCity@@QAEHW4BuildingTypes@@@Z ; CvCity::GetFaithPurchaseCost
 
-; 2853 : 					if(iCost != 0 && iFaith > iCost)
+; 2875 : 					if(iCost != 0 && iFaith > iCost)
 
 	test	eax, eax
 	je	SHORT $LN5@CanAffordF
@@ -1322,14 +1334,14 @@ $LL6@CanAffordF:
 	jg	SHORT $LN18@CanAffordF
 $LN5@CanAffordF:
 
-; 2836 : 					}
-; 2837 : 				}
-; 2838 : 			}
-; 2839 : 		}
-; 2840 : #ifdef AUI_WARNING_FIXES
-; 2841 : 		for (uint iI = 0; iI < GC.getNumBuildingInfos(); iI++)
-; 2842 : #else
-; 2843 : 		for (int iI = 0; iI < GC.getNumBuildingInfos(); iI++)
+; 2858 : 					}
+; 2859 : 				}
+; 2860 : 			}
+; 2861 : 		}
+; 2862 : #ifdef AUI_WARNING_FIXES
+; 2863 : 		for (uint iI = 0; iI < GC.getNumBuildingInfos(); iI++)
+; 2864 : #else
+; 2865 : 		for (int iI = 0; iI < GC.getNumBuildingInfos(); iI++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	inc	esi
@@ -1341,20 +1353,20 @@ $LN4@CanAffordF:
 	pop	esi
 	pop	ebp
 
-; 2854 : 					{
-; 2855 : 						return true;
-; 2856 : 					}
-; 2857 : 				}
-; 2858 : 			}
-; 2859 : 		}
-; 2860 : 	}
-; 2861 : 
-; 2862 : 	return false;
+; 2876 : 					{
+; 2877 : 						return true;
+; 2878 : 					}
+; 2879 : 				}
+; 2880 : 			}
+; 2881 : 		}
+; 2882 : 	}
+; 2883 : 
+; 2884 : 	return false;
 
 	xor	al, al
 	pop	ebx
 
-; 2863 : }
+; 2885 : }
 
 	ret	0
 $LN18@CanAffordF:
@@ -1362,13 +1374,13 @@ $LN18@CanAffordF:
 	pop	esi
 	pop	ebp
 
-; 2834 : 					{
-; 2835 : 						return true;
+; 2856 : 					{
+; 2857 : 						return true;
 
 	mov	al, 1
 	pop	ebx
 
-; 2863 : }
+; 2885 : }
 
 	ret	0
 ?CanAffordFaithPurchase@CvPlayerReligions@@QBE_NXZ ENDP	; CvPlayerReligions::CanAffordFaithPurchase
@@ -1380,8 +1392,8 @@ _TEXT	SEGMENT
 ?Uninit@CvCityReligions@@QAEXXZ PROC			; CvCityReligions::Uninit, COMDAT
 ; _this$ = ecx
 
-; 3105 : 
-; 3106 : }
+; 3127 : 
+; 3128 : }
 
 	ret	0
 ?Uninit@CvCityReligions@@QAEXXZ ENDP			; CvCityReligions::Uninit
@@ -1393,7 +1405,7 @@ _TEXT	SEGMENT
 ??0CvUnitReligion@@QAE@XZ PROC				; CvUnitReligion::CvUnitReligion, COMDAT
 ; _this$ = ecx
 
-; 4813 : {
+; 4835 : {
 
 	mov	eax, ecx
 	xor	ecx, ecx
@@ -1401,7 +1413,7 @@ _TEXT	SEGMENT
 	mov	DWORD PTR [eax+4], ecx
 	mov	DWORD PTR [eax+8], ecx
 
-; 4814 : }
+; 4836 : }
 
 	ret	0
 ??0CvUnitReligion@@QAE@XZ ENDP				; CvUnitReligion::CvUnitReligion
@@ -1413,18 +1425,18 @@ _TEXT	SEGMENT
 ?Init@CvUnitReligion@@QAEXXZ PROC			; CvUnitReligion::Init, COMDAT
 ; _this$ = ecx
 
-; 4819 : 	m_eReligion = NO_RELIGION;
-; 4820 : 	m_iStrength = 0;
+; 4841 : 	m_eReligion = NO_RELIGION;
+; 4842 : 	m_iStrength = 0;
 
 	xor	eax, eax
 	mov	DWORD PTR [ecx], -1
 	mov	DWORD PTR [ecx+4], eax
 
-; 4821 : 	m_iSpreadsLeft = 0;
+; 4843 : 	m_iSpreadsLeft = 0;
 
 	mov	DWORD PTR [ecx+8], eax
 
-; 4822 : }
+; 4844 : }
 
 	ret	0
 ?Init@CvUnitReligion@@QAEXXZ ENDP			; CvUnitReligion::Init
@@ -1436,12 +1448,12 @@ _TEXT	SEGMENT
 ??0CvReligionAI@@QAE@XZ PROC				; CvReligionAI::CvReligionAI, COMDAT
 ; _this$ = ecx
 
-; 4873 : {
+; 4895 : {
 
 	mov	eax, ecx
 	mov	DWORD PTR [eax+4], 0
 
-; 4874 : }
+; 4896 : }
 
 	ret	0
 ??0CvReligionAI@@QAE@XZ ENDP				; CvReligionAI::CvReligionAI
@@ -1453,8 +1465,8 @@ _TEXT	SEGMENT
 ?Uninit@CvReligionAI@@QAEXXZ PROC			; CvReligionAI::Uninit, COMDAT
 ; _this$ = ecx
 
-; 4894 : 
-; 4895 : }
+; 4916 : 
+; 4917 : }
 
 	ret	0
 ?Uninit@CvReligionAI@@QAEXXZ ENDP			; CvReligionAI::Uninit
@@ -1466,8 +1478,8 @@ _TEXT	SEGMENT
 ?Reset@CvReligionAI@@QAEXXZ PROC			; CvReligionAI::Reset, COMDAT
 ; _this$ = ecx
 
-; 4900 : 
-; 4901 : }
+; 4922 : 
+; 4923 : }
 
 	ret	0
 ?Reset@CvReligionAI@@QAEXXZ ENDP			; CvReligionAI::Reset
@@ -2319,8 +2331,8 @@ __ehfuncinfo$?_Xlen@?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@s
 xdata$x	ENDS
 ;	COMDAT ?_Xlen@?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@KAXXZ
 _TEXT	SEGMENT
-$T231465 = -80						; size = 28
-$T231464 = -52						; size = 40
+$T231522 = -80						; size = 28
+$T231521 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ?_Xlen@?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@KAXXZ PROC ; std::vector<enum BeliefTypes,std::allocator<enum BeliefTypes> >::_Xlen, COMDAT
 
@@ -2336,22 +2348,22 @@ __$EHRec$ = -12						; size = 12
 ; 1260 : 		_THROW(length_error, "vector<T> too long");
 
 	push	OFFSET ??_C@_0BD@OLBABOEK@vector?$DMT?$DO?5too?5long?$AA@
-	lea	ecx, DWORD PTR $T231465[esp+84]
+	lea	ecx, DWORD PTR $T231522[esp+84]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T231464[esp+80]
+	lea	ecx, DWORD PTR $T231521[esp+80]
 	mov	DWORD PTR __$EHRec$[esp+88], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T231465[esp+80]
+	lea	eax, DWORD PTR $T231522[esp+80]
 	push	eax
-	lea	ecx, DWORD PTR $T231464[esp+96]
+	lea	ecx, DWORD PTR $T231521[esp+96]
 	mov	BYTE PTR __$EHRec$[esp+92], 1
-	mov	DWORD PTR $T231464[esp+84], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T231521[esp+84], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVlength_error@std@@
-	lea	ecx, DWORD PTR $T231464[esp+84]
+	lea	ecx, DWORD PTR $T231521[esp+84]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+96], 0
-	mov	DWORD PTR $T231464[esp+88], OFFSET ??_7length_error@std@@6B@
+	mov	DWORD PTR $T231521[esp+88], OFFSET ??_7length_error@std@@6B@
 	call	__CxxThrowException@8
 $LN13@Xlen:
 $LN12@Xlen:
@@ -2360,10 +2372,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Xlen@?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@KAXXZ$0:
-	lea	ecx, DWORD PTR $T231465[ebp]
+	lea	ecx, DWORD PTR $T231522[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Xlen@?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@KAXXZ$2:
-	lea	ecx, DWORD PTR $T231464[ebp]
+	lea	ecx, DWORD PTR $T231521[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Xlen@?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@KAXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?_Xlen@?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@KAXXZ
@@ -2740,8 +2752,8 @@ __ehfuncinfo$?_Xlen@?$vector@PAVCvReligionEntry@@V?$allocator@PAVCvReligionEntry
 xdata$x	ENDS
 ;	COMDAT ?_Xlen@?$vector@PAVCvReligionEntry@@V?$allocator@PAVCvReligionEntry@@@std@@@std@@KAXXZ
 _TEXT	SEGMENT
-$T231549 = -80						; size = 28
-$T231548 = -52						; size = 40
+$T231606 = -80						; size = 28
+$T231605 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ?_Xlen@?$vector@PAVCvReligionEntry@@V?$allocator@PAVCvReligionEntry@@@std@@@std@@KAXXZ PROC ; std::vector<CvReligionEntry *,std::allocator<CvReligionEntry *> >::_Xlen, COMDAT
 
@@ -2757,22 +2769,22 @@ __$EHRec$ = -12						; size = 12
 ; 1260 : 		_THROW(length_error, "vector<T> too long");
 
 	push	OFFSET ??_C@_0BD@OLBABOEK@vector?$DMT?$DO?5too?5long?$AA@
-	lea	ecx, DWORD PTR $T231549[esp+84]
+	lea	ecx, DWORD PTR $T231606[esp+84]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T231548[esp+80]
+	lea	ecx, DWORD PTR $T231605[esp+80]
 	mov	DWORD PTR __$EHRec$[esp+88], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T231549[esp+80]
+	lea	eax, DWORD PTR $T231606[esp+80]
 	push	eax
-	lea	ecx, DWORD PTR $T231548[esp+96]
+	lea	ecx, DWORD PTR $T231605[esp+96]
 	mov	BYTE PTR __$EHRec$[esp+92], 1
-	mov	DWORD PTR $T231548[esp+84], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T231605[esp+84], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVlength_error@std@@
-	lea	ecx, DWORD PTR $T231548[esp+84]
+	lea	ecx, DWORD PTR $T231605[esp+84]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+96], 0
-	mov	DWORD PTR $T231548[esp+88], OFFSET ??_7length_error@std@@6B@
+	mov	DWORD PTR $T231605[esp+88], OFFSET ??_7length_error@std@@6B@
 	call	__CxxThrowException@8
 $LN13@Xlen@2:
 $LN12@Xlen@2:
@@ -2781,10 +2793,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Xlen@?$vector@PAVCvReligionEntry@@V?$allocator@PAVCvReligionEntry@@@std@@@std@@KAXXZ$0:
-	lea	ecx, DWORD PTR $T231549[ebp]
+	lea	ecx, DWORD PTR $T231606[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Xlen@?$vector@PAVCvReligionEntry@@V?$allocator@PAVCvReligionEntry@@@std@@@std@@KAXXZ$2:
-	lea	ecx, DWORD PTR $T231548[ebp]
+	lea	ecx, DWORD PTR $T231605[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Xlen@?$vector@PAVCvReligionEntry@@V?$allocator@PAVCvReligionEntry@@@std@@@std@@KAXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?_Xlen@?$vector@PAVCvReligionEntry@@V?$allocator@PAVCvReligionEntry@@@std@@@std@@KAXXZ
@@ -3217,6 +3229,25 @@ _val$ = 12						; size = 4
 	ret	0
 ??$?6PBD@@YAAAVString@Localization@@AAV01@ABQBD@Z ENDP	; operator<<<char const *>
 _TEXT	ENDS
+PUBLIC	??0CvString@@QAE@XZ				; CvString::CvString
+EXTRN	__imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ:PROC
+; Function compile flags: /Ogtpy
+; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredllutil\include\cvstring.h
+;	COMDAT ??0CvString@@QAE@XZ
+_TEXT	SEGMENT
+??0CvString@@QAE@XZ PROC				; CvString::CvString, COMDAT
+; _this$ = ecx
+
+; 23   : 	CvString() {}
+
+	push	esi
+	mov	esi, ecx
+	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
+	mov	eax, esi
+	pop	esi
+	ret	0
+??0CvString@@QAE@XZ ENDP				; CvString::CvString
+_TEXT	ENDS
 PUBLIC	??$strcpy_s@$0IA@@@YAHAAY0IA@DPBD@Z		; strcpy_s<128>
 EXTRN	__imp__strcpy_s:PROC
 ; Function compile flags: /Ogtpy
@@ -3263,49 +3294,6 @@ __Format$ = 12						; size = 4
 	ret	0
 ??$sprintf_s@$0BAA@@@YAHAAY0BAA@DPBDZZ ENDP		; sprintf_s<256>
 _TEXT	ENDS
-PUBLIC	??0CvString@@QAE@XZ				; CvString::CvString
-EXTRN	__imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ:PROC
-; Function compile flags: /Ogtpy
-; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredllutil\include\cvstring.h
-;	COMDAT ??0CvString@@QAE@XZ
-_TEXT	SEGMENT
-??0CvString@@QAE@XZ PROC				; CvString::CvString, COMDAT
-; _this$ = ecx
-
-; 23   : 	CvString() {}
-
-	push	esi
-	mov	esi, ecx
-	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	mov	eax, esi
-	pop	esi
-	ret	0
-??0CvString@@QAE@XZ ENDP				; CvString::CvString
-_TEXT	ENDS
-PUBLIC	??$min@H@std@@YAABHABH0@Z			; std::min<int>
-; Function compile flags: /Ogtpy
-; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xutility
-;	COMDAT ??$min@H@std@@YAABHABH0@Z
-_TEXT	SEGMENT
-__Left$ = 8						; size = 4
-__Right$ = 12						; size = 4
-??$min@H@std@@YAABHABH0@Z PROC				; std::min<int>, COMDAT
-
-; 3399 : 	return (_DEBUG_LT(_Right, _Left) ? _Right : _Left);
-
-	mov	eax, DWORD PTR __Right$[esp-4]
-	mov	edx, DWORD PTR [eax]
-	mov	ecx, DWORD PTR __Left$[esp-4]
-	cmp	edx, DWORD PTR [ecx]
-	jl	SHORT $LN4@min
-	mov	eax, ecx
-$LN4@min:
-
-; 3400 : 	}
-
-	ret	0
-??$min@H@std@@YAABHABH0@Z ENDP				; std::min<int>
-_TEXT	ENDS
 PUBLIC	??_C@_00CNPNBAHC@?$AA@				; `string'
 PUBLIC	??0CvString@@QAE@PBD@Z				; CvString::CvString
 ;	COMDAT ??_C@_00CNPNBAHC@?$AA@
@@ -3336,8 +3324,33 @@ $LN4@CvString:
 	ret	4
 ??0CvString@@QAE@PBD@Z ENDP				; CvString::CvString
 _TEXT	ENDS
+PUBLIC	??$min@H@std@@YAABHABH0@Z			; std::min<int>
+; Function compile flags: /Ogtpy
+; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xutility
+;	COMDAT ??$min@H@std@@YAABHABH0@Z
+_TEXT	SEGMENT
+__Left$ = 8						; size = 4
+__Right$ = 12						; size = 4
+??$min@H@std@@YAABHABH0@Z PROC				; std::min<int>, COMDAT
+
+; 3399 : 	return (_DEBUG_LT(_Right, _Left) ? _Right : _Left);
+
+	mov	eax, DWORD PTR __Right$[esp-4]
+	mov	edx, DWORD PTR [eax]
+	mov	ecx, DWORD PTR __Left$[esp-4]
+	cmp	edx, DWORD PTR [ecx]
+	jl	SHORT $LN4@min
+	mov	eax, ecx
+$LN4@min:
+
+; 3400 : 	}
+
+	ret	0
+??$min@H@std@@YAABHABH0@Z ENDP				; std::min<int>
+_TEXT	ENDS
 PUBLIC	??1CvString@@QAE@XZ				; CvString::~CvString
 ; Function compile flags: /Ogtpy
+; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredllutil\include\cvstring.h
 ;	COMDAT ??1CvString@@QAE@XZ
 _TEXT	SEGMENT
 ??1CvString@@QAE@XZ PROC				; CvString::~CvString, COMDAT
@@ -3360,103 +3373,10 @@ _TEXT	SEGMENT
 	jmp	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 ??BCvString@@QBEPBDXZ ENDP				; CvString::operator char const *
 _TEXT	ENDS
-PUBLIC	__TI2?AVbad_alloc@std@@
-PUBLIC	??$_Allocate@W4BeliefTypes@@@std@@YAPAW4BeliefTypes@@IPAW41@@Z ; std::_Allocate<enum BeliefTypes>
-PUBLIC	__CTA2?AVbad_alloc@std@@
-PUBLIC	__CT??_R0?AVbad_alloc@std@@@8??0bad_alloc@std@@QAE@ABV01@@Z12
-PUBLIC	??0bad_alloc@std@@QAE@ABV01@@Z			; std::bad_alloc::bad_alloc
-EXTRN	??2@YAPAXI@Z:PROC				; operator new
-;	COMDAT __CT??_R0?AVbad_alloc@std@@@8??0bad_alloc@std@@QAE@ABV01@@Z12
-; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\exception
-xdata$x	SEGMENT
-__CT??_R0?AVbad_alloc@std@@@8??0bad_alloc@std@@QAE@ABV01@@Z12 DD 00H
-	DD	FLAT:??_R0?AVbad_alloc@std@@@8
-	DD	00H
-	DD	0ffffffffH
-	ORG $+4
-	DD	0cH
-	DD	FLAT:??0bad_alloc@std@@QAE@ABV01@@Z
-xdata$x	ENDS
-;	COMDAT __CTA2?AVbad_alloc@std@@
-xdata$x	SEGMENT
-__CTA2?AVbad_alloc@std@@ DD 02H
-	DD	FLAT:__CT??_R0?AVbad_alloc@std@@@8??0bad_alloc@std@@QAE@ABV01@@Z12
-	DD	FLAT:__CT??_R0?AVexception@std@@@8??0exception@std@@QAE@ABV01@@Z12
-xdata$x	ENDS
-;	COMDAT __TI2?AVbad_alloc@std@@
-xdata$x	SEGMENT
-__TI2?AVbad_alloc@std@@ DD 00H
-	DD	FLAT:??1bad_alloc@std@@UAE@XZ
-	DD	00H
-	DD	FLAT:__CTA2?AVbad_alloc@std@@
-; Function compile flags: /Ogtpy
-; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xmemory
-xdata$x	ENDS
-;	COMDAT ??$_Allocate@W4BeliefTypes@@@std@@YAPAW4BeliefTypes@@IPAW41@@Z
-_TEXT	SEGMENT
-$T231667 = -12						; size = 12
-$T231671 = 8						; size = 4
-__Count$ = 8						; size = 4
-___formal$ = 12						; size = 4
-??$_Allocate@W4BeliefTypes@@@std@@YAPAW4BeliefTypes@@IPAW41@@Z PROC ; std::_Allocate<enum BeliefTypes>, COMDAT
-
-; 37   : 	if (_Count <= 0)
-
-	mov	ecx, DWORD PTR __Count$[esp-4]
-	sub	esp, 12					; 0000000cH
-	test	ecx, ecx
-	ja	SHORT $LN3@Allocate
-
-; 38   : 		_Count = 0;
-
-	xor	ecx, ecx
-$LN1@Allocate:
-
-; 41   : 
-; 42   : 		// allocate storage for _Count elements of type _Ty
-; 43   : 	return ((_Ty _FARQ *)::operator new(_Count * sizeof (_Ty)));
-
-	lea	edx, DWORD PTR [ecx*4]
-	push	edx
-	call	??2@YAPAXI@Z				; operator new
-	add	esp, 4
-
-; 44   : 	}
-
-	add	esp, 12					; 0000000cH
-	ret	0
-$LN3@Allocate:
-
-; 39   : 	else if (((_SIZT)(-1) / _Count) < sizeof (_Ty))
-
-	or	eax, -1
-	xor	edx, edx
-	div	ecx
-	cmp	eax, 4
-	jae	SHORT $LN1@Allocate
-
-; 40   : 		_THROW_NCEE(std::bad_alloc, NULL);
-
-	lea	eax, DWORD PTR $T231671[esp+8]
-	push	eax
-	lea	ecx, DWORD PTR $T231667[esp+16]
-	mov	DWORD PTR $T231671[esp+12], 0
-	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
-	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T231667[esp+16]
-	push	ecx
-	mov	DWORD PTR $T231667[esp+20], OFFSET ??_7bad_alloc@std@@6B@
-	call	__CxxThrowException@8
-$LN9@Allocate:
-$LN8@Allocate:
-	int	3
-??$_Allocate@W4BeliefTypes@@@std@@YAPAW4BeliefTypes@@IPAW41@@Z ENDP ; std::_Allocate<enum BeliefTypes>
-_TEXT	ENDS
 PUBLIC	??4CvString@@QAEAAV0@PBD@Z			; CvString::operator=
 EXTRN	__imp_?clear@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEXXZ:PROC
 EXTRN	__imp_?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBD@Z:PROC
 ; Function compile flags: /Ogtpy
-; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredllutil\include\cvstring.h
 ;	COMDAT ??4CvString@@QAEAAV0@PBD@Z
 _TEXT	SEGMENT
 _s$ = 8							; size = 4
@@ -3504,13 +3424,118 @@ _s$ = 8							; size = 4
 	ret	4
 ??4CvString@@QAEAAV0@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z ENDP ; CvString::operator=
 _TEXT	ENDS
+PUBLIC	__TI2?AVbad_alloc@std@@
+PUBLIC	??$_Allocate@W4BeliefTypes@@@std@@YAPAW4BeliefTypes@@IPAW41@@Z ; std::_Allocate<enum BeliefTypes>
+PUBLIC	__CTA2?AVbad_alloc@std@@
+PUBLIC	__CT??_R0?AVbad_alloc@std@@@8??0bad_alloc@std@@QAE@ABV01@@Z12
+PUBLIC	??0bad_alloc@std@@QAE@ABV01@@Z			; std::bad_alloc::bad_alloc
+EXTRN	??2@YAPAXI@Z:PROC				; operator new
+;	COMDAT __CT??_R0?AVbad_alloc@std@@@8??0bad_alloc@std@@QAE@ABV01@@Z12
+; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\exception
+xdata$x	SEGMENT
+__CT??_R0?AVbad_alloc@std@@@8??0bad_alloc@std@@QAE@ABV01@@Z12 DD 00H
+	DD	FLAT:??_R0?AVbad_alloc@std@@@8
+	DD	00H
+	DD	0ffffffffH
+	ORG $+4
+	DD	0cH
+	DD	FLAT:??0bad_alloc@std@@QAE@ABV01@@Z
+xdata$x	ENDS
+;	COMDAT __CTA2?AVbad_alloc@std@@
+xdata$x	SEGMENT
+__CTA2?AVbad_alloc@std@@ DD 02H
+	DD	FLAT:__CT??_R0?AVbad_alloc@std@@@8??0bad_alloc@std@@QAE@ABV01@@Z12
+	DD	FLAT:__CT??_R0?AVexception@std@@@8??0exception@std@@QAE@ABV01@@Z12
+xdata$x	ENDS
+;	COMDAT __TI2?AVbad_alloc@std@@
+xdata$x	SEGMENT
+__TI2?AVbad_alloc@std@@ DD 00H
+	DD	FLAT:??1bad_alloc@std@@UAE@XZ
+	DD	00H
+	DD	FLAT:__CTA2?AVbad_alloc@std@@
+; Function compile flags: /Ogtpy
+; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xmemory
+xdata$x	ENDS
+;	COMDAT ??$_Allocate@W4BeliefTypes@@@std@@YAPAW4BeliefTypes@@IPAW41@@Z
+_TEXT	SEGMENT
+$T231731 = -12						; size = 12
+$T231735 = 8						; size = 4
+__Count$ = 8						; size = 4
+___formal$ = 12						; size = 4
+??$_Allocate@W4BeliefTypes@@@std@@YAPAW4BeliefTypes@@IPAW41@@Z PROC ; std::_Allocate<enum BeliefTypes>, COMDAT
+
+; 37   : 	if (_Count <= 0)
+
+	mov	ecx, DWORD PTR __Count$[esp-4]
+	sub	esp, 12					; 0000000cH
+	test	ecx, ecx
+	ja	SHORT $LN3@Allocate
+
+; 38   : 		_Count = 0;
+
+	xor	ecx, ecx
+$LN1@Allocate:
+
+; 41   : 
+; 42   : 		// allocate storage for _Count elements of type _Ty
+; 43   : 	return ((_Ty _FARQ *)::operator new(_Count * sizeof (_Ty)));
+
+	lea	edx, DWORD PTR [ecx*4]
+	push	edx
+	call	??2@YAPAXI@Z				; operator new
+	add	esp, 4
+
+; 44   : 	}
+
+	add	esp, 12					; 0000000cH
+	ret	0
+$LN3@Allocate:
+
+; 39   : 	else if (((_SIZT)(-1) / _Count) < sizeof (_Ty))
+
+	or	eax, -1
+	xor	edx, edx
+	div	ecx
+	cmp	eax, 4
+	jae	SHORT $LN1@Allocate
+
+; 40   : 		_THROW_NCEE(std::bad_alloc, NULL);
+
+	lea	eax, DWORD PTR $T231735[esp+8]
+	push	eax
+	lea	ecx, DWORD PTR $T231731[esp+16]
+	mov	DWORD PTR $T231735[esp+12], 0
+	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
+	push	OFFSET __TI2?AVbad_alloc@std@@
+	lea	ecx, DWORD PTR $T231731[esp+16]
+	push	ecx
+	mov	DWORD PTR $T231731[esp+20], OFFSET ??_7bad_alloc@std@@6B@
+	call	__CxxThrowException@8
+$LN9@Allocate:
+$LN8@Allocate:
+	int	3
+??$_Allocate@W4BeliefTypes@@@std@@YAPAW4BeliefTypes@@IPAW41@@Z ENDP ; std::_Allocate<enum BeliefTypes>
+_TEXT	ENDS
+PUBLIC	?GetCString@CvString@@QBEPBDXZ			; CvString::GetCString
+; Function compile flags: /Ogtpy
+; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredllutil\include\cvstring.h
+;	COMDAT ?GetCString@CvString@@QBEPBDXZ
+_TEXT	SEGMENT
+?GetCString@CvString@@QBEPBDXZ PROC			; CvString::GetCString, COMDAT
+; _this$ = ecx
+
+; 42   : 	const char* GetCString() const 	{ return c_str(); }
+
+	jmp	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
+?GetCString@CvString@@QBEPBDXZ ENDP			; CvString::GetCString
+_TEXT	ENDS
 PUBLIC	??$_Allocate@PAVCvReligionEntry@@@std@@YAPAPAVCvReligionEntry@@IPAPAV1@@Z ; std::_Allocate<CvReligionEntry *>
 ; Function compile flags: /Ogtpy
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xmemory
 ;	COMDAT ??$_Allocate@PAVCvReligionEntry@@@std@@YAPAPAVCvReligionEntry@@IPAPAV1@@Z
 _TEXT	SEGMENT
-$T231684 = -12						; size = 12
-$T231688 = 8						; size = 4
+$T231745 = -12						; size = 12
+$T231749 = 8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ??$_Allocate@PAVCvReligionEntry@@@std@@YAPAPAVCvReligionEntry@@IPAPAV1@@Z PROC ; std::_Allocate<CvReligionEntry *>, COMDAT
@@ -3552,37 +3577,25 @@ $LN3@Allocate@2:
 
 ; 40   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T231688[esp+8]
+	lea	eax, DWORD PTR $T231749[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T231684[esp+16]
-	mov	DWORD PTR $T231688[esp+12], 0
+	lea	ecx, DWORD PTR $T231745[esp+16]
+	mov	DWORD PTR $T231749[esp+12], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T231684[esp+16]
+	lea	ecx, DWORD PTR $T231745[esp+16]
 	push	ecx
-	mov	DWORD PTR $T231684[esp+20], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T231745[esp+20], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN9@Allocate@2:
 $LN8@Allocate@2:
 	int	3
 ??$_Allocate@PAVCvReligionEntry@@@std@@YAPAPAVCvReligionEntry@@IPAPAV1@@Z ENDP ; std::_Allocate<CvReligionEntry *>
 _TEXT	ENDS
-PUBLIC	?GetCString@CvString@@QBEPBDXZ			; CvString::GetCString
-; Function compile flags: /Ogtpy
-; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredllutil\include\cvstring.h
-;	COMDAT ?GetCString@CvString@@QBEPBDXZ
-_TEXT	SEGMENT
-?GetCString@CvString@@QBEPBDXZ PROC			; CvString::GetCString, COMDAT
-; _this$ = ecx
-
-; 42   : 	const char* GetCString() const 	{ return c_str(); }
-
-	jmp	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
-?GetCString@CvString@@QBEPBDXZ ENDP			; CvString::GetCString
-_TEXT	ENDS
 PUBLIC	?GetLength@CvString@@QBEHXZ			; CvString::GetLength
 EXTRN	__imp_?size@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEIXZ:PROC
 ; Function compile flags: /Ogtpy
+; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredllutil\include\cvstring.h
 ;	COMDAT ?GetLength@CvString@@QBEHXZ
 _TEXT	SEGMENT
 ?GetLength@CvString@@QBEHXZ PROC			; CvString::GetLength, COMDAT
@@ -3724,22 +3737,6 @@ ___formal$ = 12						; size = 4
 	pop	ecx
 	ret	0
 ??$_Ptr_cat@PAW4BeliefTypes@@PAW41@@std@@YA?AU_Nonscalar_ptr_iterator_tag@0@AAPAW4BeliefTypes@@0@Z ENDP ; std::_Ptr_cat<enum BeliefTypes *,enum BeliefTypes *>
-_TEXT	ENDS
-PUBLIC	??$_Destroy_range@V?$allocator@PAVCvReligionEntry@@@std@@@std@@YAXPAPAVCvReligionEntry@@0AAV?$allocator@PAVCvReligionEntry@@@0@U_Scalar_ptr_iterator_tag@0@@Z ; std::_Destroy_range<std::allocator<CvReligionEntry *> >
-; Function compile flags: /Ogtpy
-; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xmemory
-;	COMDAT ??$_Destroy_range@V?$allocator@PAVCvReligionEntry@@@std@@@std@@YAXPAPAVCvReligionEntry@@0AAV?$allocator@PAVCvReligionEntry@@@0@U_Scalar_ptr_iterator_tag@0@@Z
-_TEXT	SEGMENT
-__First$ = 8						; size = 4
-__Last$ = 12						; size = 4
-__Al$ = 16						; size = 4
-___formal$ = 20						; size = 1
-??$_Destroy_range@V?$allocator@PAVCvReligionEntry@@@std@@@std@@YAXPAPAVCvReligionEntry@@0AAV?$allocator@PAVCvReligionEntry@@@0@U_Scalar_ptr_iterator_tag@0@@Z PROC ; std::_Destroy_range<std::allocator<CvReligionEntry *> >, COMDAT
-
-; 242  : 	}
-
-	ret	0
-??$_Destroy_range@V?$allocator@PAVCvReligionEntry@@@std@@@std@@YAXPAPAVCvReligionEntry@@0AAV?$allocator@PAVCvReligionEntry@@@0@U_Scalar_ptr_iterator_tag@0@@Z ENDP ; std::_Destroy_range<std::allocator<CvReligionEntry *> >
 _TEXT	ENDS
 PUBLIC	?formatv@CvString@@SA_NAAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PBDPAD@Z ; CvString::formatv
 EXTRN	__imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z:PROC
@@ -3891,6 +3888,22 @@ $LN18@formatv:
 	jmp	SHORT $LN21@formatv
 ?formatv@CvString@@SA_NAAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PBDPAD@Z ENDP ; CvString::formatv
 _TEXT	ENDS
+PUBLIC	??$_Destroy_range@V?$allocator@PAVCvReligionEntry@@@std@@@std@@YAXPAPAVCvReligionEntry@@0AAV?$allocator@PAVCvReligionEntry@@@0@U_Scalar_ptr_iterator_tag@0@@Z ; std::_Destroy_range<std::allocator<CvReligionEntry *> >
+; Function compile flags: /Ogtpy
+; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xmemory
+;	COMDAT ??$_Destroy_range@V?$allocator@PAVCvReligionEntry@@@std@@@std@@YAXPAPAVCvReligionEntry@@0AAV?$allocator@PAVCvReligionEntry@@@0@U_Scalar_ptr_iterator_tag@0@@Z
+_TEXT	SEGMENT
+__First$ = 8						; size = 4
+__Last$ = 12						; size = 4
+__Al$ = 16						; size = 4
+___formal$ = 20						; size = 1
+??$_Destroy_range@V?$allocator@PAVCvReligionEntry@@@std@@@std@@YAXPAPAVCvReligionEntry@@0AAV?$allocator@PAVCvReligionEntry@@@0@U_Scalar_ptr_iterator_tag@0@@Z PROC ; std::_Destroy_range<std::allocator<CvReligionEntry *> >, COMDAT
+
+; 242  : 	}
+
+	ret	0
+??$_Destroy_range@V?$allocator@PAVCvReligionEntry@@@std@@@std@@YAXPAPAVCvReligionEntry@@0AAV?$allocator@PAVCvReligionEntry@@@0@U_Scalar_ptr_iterator_tag@0@@Z ENDP ; std::_Destroy_range<std::allocator<CvReligionEntry *> >
+_TEXT	ENDS
 PUBLIC	??$_Fill@PAW4BeliefTypes@@W41@@std@@YAXPAW4BeliefTypes@@0ABW41@@Z ; std::_Fill<enum BeliefTypes *,enum BeliefTypes>
 ; Function compile flags: /Ogtpy
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xutility
@@ -3970,48 +3983,6 @@ ___formal$ = 8						; size = 4
 	pop	ecx
 	ret	0
 ??$_Move_cat@PAW4BeliefTypes@@@std@@YA?AU_Undefined_move_tag@0@ABQAW4BeliefTypes@@@Z ENDP ; std::_Move_cat<enum BeliefTypes *>
-_TEXT	ENDS
-PUBLIC	??$implicit_cast@PAVCvGame@@PAV1@@detail@fastdelegate@@YAPAVCvGame@@PAV2@@Z ; fastdelegate::detail::implicit_cast<CvGame *,CvGame *>
-; Function compile flags: /Ogtpy
-; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\fireplace\include\fireworks\eventsystem\fastdelegate.h
-;	COMDAT ??$implicit_cast@PAVCvGame@@PAV1@@detail@fastdelegate@@YAPAVCvGame@@PAV2@@Z
-_TEXT	SEGMENT
-_input$ = 8						; size = 4
-??$implicit_cast@PAVCvGame@@PAV1@@detail@fastdelegate@@YAPAVCvGame@@PAV2@@Z PROC ; fastdelegate::detail::implicit_cast<CvGame *,CvGame *>, COMDAT
-
-; 153  : 	return input;
-
-	mov	eax, DWORD PTR _input$[esp-4]
-
-; 154  : }
-
-	ret	0
-??$implicit_cast@PAVCvGame@@PAV1@@detail@fastdelegate@@YAPAVCvGame@@PAV2@@Z ENDP ; fastdelegate::detail::implicit_cast<CvGame *,CvGame *>
-_TEXT	ENDS
-PUBLIC	??$_Ptr_cat@V?$_Vector_const_iterator@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@PAW4BeliefTypes@@@std@@YA?AU_Nonscalar_ptr_iterator_tag@0@AAV?$_Vector_const_iterator@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@0@AAPAW4BeliefTypes@@@Z ; std::_Ptr_cat<std::_Vector_const_iterator<enum BeliefTypes,std::allocator<enum BeliefTypes> >,enum BeliefTypes *>
-; Function compile flags: /Ogtpy
-; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xutility
-;	COMDAT ??$_Ptr_cat@V?$_Vector_const_iterator@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@PAW4BeliefTypes@@@std@@YA?AU_Nonscalar_ptr_iterator_tag@0@AAV?$_Vector_const_iterator@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@0@AAPAW4BeliefTypes@@@Z
-_TEXT	SEGMENT
-__Cat$ = -1						; size = 1
-___formal$ = 8						; size = 4
-___formal$ = 12						; size = 4
-??$_Ptr_cat@V?$_Vector_const_iterator@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@PAW4BeliefTypes@@@std@@YA?AU_Nonscalar_ptr_iterator_tag@0@AAV?$_Vector_const_iterator@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@0@AAPAW4BeliefTypes@@@Z PROC ; std::_Ptr_cat<std::_Vector_const_iterator<enum BeliefTypes,std::allocator<enum BeliefTypes> >,enum BeliefTypes *>, COMDAT
-
-; 1509 : 	{
-
-	push	ecx
-
-; 1510 : 	typename _Ptr_cat_helper<_T1, _T2>::_Ptr_cat _Cat;
-; 1511 : 	return (_Cat);
-
-	mov	al, BYTE PTR __Cat$[esp+4]
-
-; 1512 : 	}
-
-	pop	ecx
-	ret	0
-??$_Ptr_cat@V?$_Vector_const_iterator@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@PAW4BeliefTypes@@@std@@YA?AU_Nonscalar_ptr_iterator_tag@0@AAV?$_Vector_const_iterator@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@0@AAPAW4BeliefTypes@@@Z ENDP ; std::_Ptr_cat<std::_Vector_const_iterator<enum BeliefTypes,std::allocator<enum BeliefTypes> >,enum BeliefTypes *>
 _TEXT	ENDS
 PUBLIC	?Format@CvString@@QAAXPBDZZ			; CvString::Format
 ;	COMDAT xdata$x
@@ -4093,9 +4064,50 @@ __ehhandler$?Format@CvString@@QAAXPBDZZ:
 	jmp	___CxxFrameHandler3
 text$x	ENDS
 ?Format@CvString@@QAAXPBDZZ ENDP			; CvString::Format
-PUBLIC	??$_Copy_backward_opt@PAW4BeliefTypes@@PAW41@Urandom_access_iterator_tag@std@@@std@@YAPAW4BeliefTypes@@PAW41@00Urandom_access_iterator_tag@0@U_Nonscalar_ptr_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z ; std::_Copy_backward_opt<enum BeliefTypes *,enum BeliefTypes *,std::random_access_iterator_tag>
+PUBLIC	??$implicit_cast@PAVCvGame@@PAV1@@detail@fastdelegate@@YAPAVCvGame@@PAV2@@Z ; fastdelegate::detail::implicit_cast<CvGame *,CvGame *>
+; Function compile flags: /Ogtpy
+; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\fireplace\include\fireworks\eventsystem\fastdelegate.h
+;	COMDAT ??$implicit_cast@PAVCvGame@@PAV1@@detail@fastdelegate@@YAPAVCvGame@@PAV2@@Z
+_TEXT	SEGMENT
+_input$ = 8						; size = 4
+??$implicit_cast@PAVCvGame@@PAV1@@detail@fastdelegate@@YAPAVCvGame@@PAV2@@Z PROC ; fastdelegate::detail::implicit_cast<CvGame *,CvGame *>, COMDAT
+
+; 153  : 	return input;
+
+	mov	eax, DWORD PTR _input$[esp-4]
+
+; 154  : }
+
+	ret	0
+??$implicit_cast@PAVCvGame@@PAV1@@detail@fastdelegate@@YAPAVCvGame@@PAV2@@Z ENDP ; fastdelegate::detail::implicit_cast<CvGame *,CvGame *>
+_TEXT	ENDS
+PUBLIC	??$_Ptr_cat@V?$_Vector_const_iterator@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@PAW4BeliefTypes@@@std@@YA?AU_Nonscalar_ptr_iterator_tag@0@AAV?$_Vector_const_iterator@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@0@AAPAW4BeliefTypes@@@Z ; std::_Ptr_cat<std::_Vector_const_iterator<enum BeliefTypes,std::allocator<enum BeliefTypes> >,enum BeliefTypes *>
 ; Function compile flags: /Ogtpy
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xutility
+;	COMDAT ??$_Ptr_cat@V?$_Vector_const_iterator@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@PAW4BeliefTypes@@@std@@YA?AU_Nonscalar_ptr_iterator_tag@0@AAV?$_Vector_const_iterator@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@0@AAPAW4BeliefTypes@@@Z
+_TEXT	SEGMENT
+__Cat$ = -1						; size = 1
+___formal$ = 8						; size = 4
+___formal$ = 12						; size = 4
+??$_Ptr_cat@V?$_Vector_const_iterator@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@PAW4BeliefTypes@@@std@@YA?AU_Nonscalar_ptr_iterator_tag@0@AAV?$_Vector_const_iterator@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@0@AAPAW4BeliefTypes@@@Z PROC ; std::_Ptr_cat<std::_Vector_const_iterator<enum BeliefTypes,std::allocator<enum BeliefTypes> >,enum BeliefTypes *>, COMDAT
+
+; 1509 : 	{
+
+	push	ecx
+
+; 1510 : 	typename _Ptr_cat_helper<_T1, _T2>::_Ptr_cat _Cat;
+; 1511 : 	return (_Cat);
+
+	mov	al, BYTE PTR __Cat$[esp+4]
+
+; 1512 : 	}
+
+	pop	ecx
+	ret	0
+??$_Ptr_cat@V?$_Vector_const_iterator@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@PAW4BeliefTypes@@@std@@YA?AU_Nonscalar_ptr_iterator_tag@0@AAV?$_Vector_const_iterator@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@0@AAPAW4BeliefTypes@@@Z ENDP ; std::_Ptr_cat<std::_Vector_const_iterator<enum BeliefTypes,std::allocator<enum BeliefTypes> >,enum BeliefTypes *>
+_TEXT	ENDS
+PUBLIC	??$_Copy_backward_opt@PAW4BeliefTypes@@PAW41@Urandom_access_iterator_tag@std@@@std@@YAPAW4BeliefTypes@@PAW41@00Urandom_access_iterator_tag@0@U_Nonscalar_ptr_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z ; std::_Copy_backward_opt<enum BeliefTypes *,enum BeliefTypes *,std::random_access_iterator_tag>
+; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Copy_backward_opt@PAW4BeliefTypes@@PAW41@Urandom_access_iterator_tag@std@@@std@@YAPAW4BeliefTypes@@PAW41@00Urandom_access_iterator_tag@0@U_Nonscalar_ptr_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
 __First$ = 8						; size = 4
@@ -5461,7 +5473,7 @@ _eTeam$ = 8						; size = 4
 ; 31   : 		return m_aTeams[eTeam];
 
 	mov	eax, DWORD PTR _eTeam$[esp-4]
-	imul	eax, 2980				; 00000ba4H
+	imul	eax, 2984				; 00000ba8H
 	add	eax, DWORD PTR ?m_aTeams@CvTeam@@1PAV1@A ; CvTeam::m_aTeams
 
 ; 32   : 	}
@@ -5494,11 +5506,11 @@ _TEXT	SEGMENT
 ?GetTradeReligionModifier@CvPlayerTraits@@QBEHXZ PROC	; CvPlayerTraits::GetTradeReligionModifier, COMDAT
 ; _this$ = ecx
 
-; 703  : 		return m_iTradeReligionModifier;
+; 740  : 		return m_iTradeReligionModifier;
 
-	mov	eax, DWORD PTR [ecx+316]
+	mov	eax, DWORD PTR [ecx+324]
 
-; 704  : 	}
+; 741  : 	}
 
 	ret	0
 ?GetTradeReligionModifier@CvPlayerTraits@@QBEHXZ ENDP	; CvPlayerTraits::GetTradeReligionModifier
@@ -6694,7 +6706,7 @@ xdata$x	ENDS
 ;	COMDAT ?GetLocalizedText@@YA?AVCvString@@PBD@Z
 _TEXT	SEGMENT
 _bytes$ = -100						; size = 4
-$T232317 = -96						; size = 4
+$T232374 = -96						; size = 4
 _text$ = -92						; size = 80
 __$EHRec$ = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
@@ -6721,7 +6733,7 @@ _szString$ = 12						; size = 4
 	xor	ebx, ebx
 	push	ecx
 	mov	DWORD PTR __$EHRec$[esp+128], ebx
-	mov	DWORD PTR $T232317[esp+120], ebx
+	mov	DWORD PTR $T232374[esp+120], ebx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
 
@@ -6751,7 +6763,7 @@ _szString$ = 12						; size = 4
 	push	eax
 	push	edi
 	mov	ecx, esi
-	mov	DWORD PTR $T232317[esp+120], 1
+	mov	DWORD PTR $T232374[esp+120], 1
 	call	DWORD PTR __imp_?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBDI@Z
 	lea	ecx, DWORD PTR _text$[esp+112]
 	mov	BYTE PTR __$EHRec$[esp+120], bl
@@ -6774,10 +6786,10 @@ __unwindfunclet$?GetLocalizedText@@YA?AVCvString@@PBD@Z$0:
 	lea	ecx, DWORD PTR _text$[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?GetLocalizedText@@YA?AVCvString@@PBD@Z$1:
-	mov	eax, DWORD PTR $T232317[ebp]
+	mov	eax, DWORD PTR $T232374[ebp]
 	and	eax, 1
 	je	$LN5@GetLocaliz
-	and	DWORD PTR $T232317[ebp], -2		; fffffffeH
+	and	DWORD PTR $T232374[ebp], -2		; fffffffeH
 	mov	ecx, DWORD PTR ___$ReturnUdt$[ebp-4]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 $LN5@GetLocaliz:
@@ -7082,7 +7094,7 @@ $LN1@CacheResul:
 ; 41   : 	//Basic Properties
 ; 42   : 	m_strIconString = kResults.GetText("IconString");
 
-	push	OFFSET $SG224058
+	push	OFFSET $SG224100
 	mov	ecx, edi
 	call	DWORD PTR __imp_?GetText@Results@Database@@QAEPBDPBD@Z
 	lea	ecx, DWORD PTR [esi+260]
@@ -7126,7 +7138,7 @@ PUBLIC	?GetIconString@CvReligionEntry@@QBE?AVCvString@@XZ ; CvReligionEntry::Get
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?GetIconString@CvReligionEntry@@QBE?AVCvString@@XZ
 _TEXT	SEGMENT
-$T232422 = -4						; size = 4
+$T232479 = -4						; size = 4
 ___$ReturnUdt$ = 8					; size = 4
 ?GetIconString@CvReligionEntry@@QBE?AVCvString@@XZ PROC	; CvReligionEntry::GetIconString, COMDAT
 ; _this$ = ecx
@@ -7142,7 +7154,7 @@ ___$ReturnUdt$ = 8					; size = 4
 	add	ecx, 260				; 00000104H
 	push	ecx
 	mov	ecx, esi
-	mov	DWORD PTR $T232422[esp+12], 0
+	mov	DWORD PTR $T232479[esp+12], 0
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	eax, esi
 	pop	esi
@@ -7210,8 +7222,8 @@ xdata$x	ENDS
 ;	COMDAT ?GetName@CvReligion@@QBE?AVCvString@@XZ
 _TEXT	SEGMENT
 tv75 = -44						; size = 4
-$T232447 = -44						; size = 4
-_szReligionName$224320 = -40				; size = 28
+$T232504 = -44						; size = 4
+_szReligionName$224362 = -40				; size = 28
 __$EHRec$ = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
 ?GetName@CvReligion@@QBE?AVCvString@@XZ PROC		; CvReligion::GetName, COMDAT
@@ -7248,7 +7260,7 @@ ___$ReturnUdt$ = 8					; size = 4
 	push	edi
 	push	eax
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	mov	DWORD PTR $T232447[esp+56], 0
+	mov	DWORD PTR $T232504[esp+56], 0
 	call	?getReligionInfo@CvGlobals@@QAEPAVCvReligionEntry@@W4ReligionTypes@@@Z ; CvGlobals::getReligionInfo
 	mov	edi, eax
 
@@ -7282,18 +7294,18 @@ $LN5@GetName:
 	mov	eax, OFFSET ??_C@_00CNPNBAHC@?$AA@
 $LN14@GetName:
 	push	eax
-	lea	ecx, DWORD PTR _szReligionName$224320[esp+56]
+	lea	ecx, DWORD PTR _szReligionName$224362[esp+56]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 
 ; 211  : 		return szReligionName;
 
 	mov	esi, DWORD PTR ___$ReturnUdt$[esp+48]
-	lea	ecx, DWORD PTR _szReligionName$224320[esp+52]
+	lea	ecx, DWORD PTR _szReligionName$224362[esp+52]
 	push	ecx
 	mov	ecx, esi
 	mov	DWORD PTR __$EHRec$[esp+64], 0
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
-	lea	ecx, DWORD PTR _szReligionName$224320[esp+52]
+	lea	ecx, DWORD PTR _szReligionName$224362[esp+52]
 	mov	DWORD PTR __$EHRec$[esp+60], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 	pop	edi
@@ -7321,7 +7333,7 @@ $LN1@GetName:
 ; 215  : 	return szReligionNameBackup;
 
 	mov	esi, DWORD PTR ___$ReturnUdt$[esp+48]
-	push	OFFSET $SG224322
+	push	OFFSET $SG224364
 	mov	ecx, esi
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 
@@ -7339,7 +7351,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetName@CvReligion@@QBE?AVCvString@@XZ$0:
-	lea	ecx, DWORD PTR _szReligionName$224320[ebp]
+	lea	ecx, DWORD PTR _szReligionName$224362[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?GetName@CvReligion@@QBE?AVCvString@@XZ:
 	mov	eax, OFFSET __ehfuncinfo$?GetName@CvReligion@@QBE?AVCvString@@XZ
@@ -8519,7 +8531,7 @@ __ehfuncinfo$?GetLogFileName@CvGameReligions@@QBE?AVCvString@@XZ DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?GetLogFileName@CvGameReligions@@QBE?AVCvString@@XZ
 _TEXT	SEGMENT
-$T232721 = -16						; size = 4
+$T232778 = -16						; size = 4
 __$EHRec$ = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
 ?GetLogFileName@CvGameReligions@@QBE?AVCvString@@XZ PROC ; CvGameReligions::GetLogFileName, COMDAT
@@ -8534,7 +8546,7 @@ ___$ReturnUdt$ = 8					; size = 4
 	mov	DWORD PTR fs:0, esp
 	push	ecx
 	push	esi
-	mov	DWORD PTR $T232721[esp+20], 0
+	mov	DWORD PTR $T232778[esp+20], 0
 
 ; 2396 : 	CvString strLogName;
 
@@ -8546,10 +8558,10 @@ ___$ReturnUdt$ = 8					; size = 4
 ; 2397 : 	strLogName = "ReligionLog.csv";
 ; 2398 : 	return strLogName;
 
-	push	OFFSET $SG225658
+	push	OFFSET $SG225700
 	mov	ecx, esi
 	mov	DWORD PTR __$EHRec$[esp+32], 0
-	mov	DWORD PTR $T232721[esp+24], 1
+	mov	DWORD PTR $T232778[esp+24], 1
 	call	DWORD PTR __imp_?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBD@Z
 
 ; 2399 : }
@@ -8564,10 +8576,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetLogFileName@CvGameReligions@@QBE?AVCvString@@XZ$0:
-	mov	eax, DWORD PTR $T232721[ebp]
+	mov	eax, DWORD PTR $T232778[ebp]
 	and	eax, 1
 	je	$LN4@GetLogFile
-	and	DWORD PTR $T232721[ebp], -2		; fffffffeH
+	and	DWORD PTR $T232778[ebp], -2		; fffffffeH
 	mov	ecx, DWORD PTR ___$ReturnUdt$[ebp-4]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 $LN4@GetLogFile:
@@ -8663,16 +8675,16 @@ __ehfuncinfo$?LogReligionMessage@CvGameReligions@@QAEXAAVCvString@@@Z DD 0199305
 xdata$x	ENDS
 ;	COMDAT ?LogReligionMessage@CvGameReligions@@QAEXAAVCvString@@@Z
 _TEXT	SEGMENT
-_strBaseString$225718 = -124				; size = 28
-_strOutBuf$225717 = -96					; size = 28
-$T232754 = -68						; size = 28
-$T232755 = -40						; size = 28
+_strBaseString$225763 = -124				; size = 28
+_strOutBuf$225762 = -96					; size = 28
+$T232811 = -68						; size = 28
+$T232812 = -40						; size = 28
 __$EHRec$ = -12						; size = 12
 _strMsg$ = 8						; size = 4
 ?LogReligionMessage@CvGameReligions@@QAEXAAVCvString@@@Z PROC ; CvGameReligions::LogReligionMessage, COMDAT
 ; _this$ = ecx
 
-; 2539 : {
+; 2561 : {
 
 	mov	eax, DWORD PTR fs:0
 	push	-1
@@ -8683,7 +8695,7 @@ _strMsg$ = 8						; size = 4
 	push	edi
 	mov	edi, ecx
 
-; 2540 : 	if(GC.getLogging() && GC.getAILogging())
+; 2562 : 	if(GC.getLogging() && GC.getAILogging())
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getLogging@CvGlobals@@QAE_NXZ		; CvGlobals::getLogging
@@ -8695,26 +8707,26 @@ _strMsg$ = 8						; size = 4
 	je	$LN1@LogReligio
 	push	esi
 
-; 2541 : 	{
-; 2542 : 		CvString strOutBuf;
+; 2563 : 	{
+; 2564 : 		CvString strOutBuf;
 
-	lea	ecx, DWORD PTR _strOutBuf$225717[esp+132]
+	lea	ecx, DWORD PTR _strOutBuf$225762[esp+132]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 2543 : 		CvString strBaseString;
+; 2565 : 		CvString strBaseString;
 
-	lea	ecx, DWORD PTR _strBaseString$225718[esp+132]
+	lea	ecx, DWORD PTR _strBaseString$225763[esp+132]
 	mov	DWORD PTR __$EHRec$[esp+140], 0
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 	mov	BYTE PTR __$EHRec$[esp+140], 1
 
-; 2544 : 		FILogFile* pLog;
-; 2545 : 
-; 2546 : 		pLog = LOGFILEMGR.GetLog(GetLogFileName(), FILogFile::kDontTimeStamp);
+; 2566 : 		FILogFile* pLog;
+; 2567 : 
+; 2568 : 		pLog = LOGFILEMGR.GetLog(GetLogFileName(), FILogFile::kDontTimeStamp);
 
 	call	?GetInstance@FILogFileMgr@@SAAAV1@XZ	; FILogFileMgr::GetInstance
 	mov	esi, eax
-	lea	eax, DWORD PTR $T232754[esp+132]
+	lea	eax, DWORD PTR $T232811[esp+132]
 	push	eax
 	mov	ecx, edi
 	call	?GetLogFileName@CvGameReligions@@QBE?AVCvString@@XZ ; CvGameReligions::GetLogFileName
@@ -8728,14 +8740,14 @@ _strMsg$ = 8						; size = 4
 	mov	eax, DWORD PTR [edx+12]
 	mov	ecx, esi
 	call	eax
-	lea	ecx, DWORD PTR $T232754[esp+132]
+	lea	ecx, DWORD PTR $T232811[esp+132]
 	mov	esi, eax
 	mov	BYTE PTR __$EHRec$[esp+140], 1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 2547 : 
-; 2548 : 		// Get the leading info for this line
-; 2549 : 		strBaseString.Format("%03d, %d, ", GC.getGame().getElapsedGameTurns(), GC.getGame().getGameTurnYear());
+; 2569 : 
+; 2570 : 		// Get the leading info for this line
+; 2571 : 		strBaseString.Format("%03d, %d, ", GC.getGame().getElapsedGameTurns(), GC.getGame().getGameTurnYear());
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	mov	edi, ecx
@@ -8744,18 +8756,18 @@ _strMsg$ = 8						; size = 4
 	mov	ecx, edi
 	call	?getElapsedGameTurns@CvGame@@QBEHXZ	; CvGame::getElapsedGameTurns
 	push	eax
-	lea	ecx, DWORD PTR _strBaseString$225718[esp+140]
-	push	OFFSET $SG225721
+	lea	ecx, DWORD PTR _strBaseString$225763[esp+140]
+	push	OFFSET $SG225766
 	push	ecx
 	call	?Format@CvString@@QAAXPBDZZ		; CvString::Format
 
-; 2550 : 		strOutBuf = strBaseString + strMsg;
+; 2572 : 		strOutBuf = strBaseString + strMsg;
 
 	mov	edx, DWORD PTR _strMsg$[esp+144]
 	push	edx
-	lea	eax, DWORD PTR _strBaseString$225718[esp+152]
+	lea	eax, DWORD PTR _strBaseString$225763[esp+152]
 	push	eax
-	lea	ecx, DWORD PTR $T232755[esp+156]
+	lea	ecx, DWORD PTR $T232812[esp+156]
 	push	ecx
 	call	DWORD PTR __imp_??$?HDU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@ABV10@0@Z
 	add	esp, 28					; 0000001cH
@@ -8763,15 +8775,15 @@ _strMsg$ = 8						; size = 4
 	mov	BYTE PTR __$EHRec$[esp+140], 3
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
-	lea	ecx, DWORD PTR _strOutBuf$225717[esp+136]
+	lea	ecx, DWORD PTR _strOutBuf$225762[esp+136]
 	call	DWORD PTR __imp_?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBD@Z
-	lea	ecx, DWORD PTR $T232755[esp+132]
+	lea	ecx, DWORD PTR $T232812[esp+132]
 	mov	BYTE PTR __$EHRec$[esp+140], 1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 2551 : 		pLog->Msg(strOutBuf);
+; 2573 : 		pLog->Msg(strOutBuf);
 
-	lea	ecx, DWORD PTR _strOutBuf$225717[esp+132]
+	lea	ecx, DWORD PTR _strOutBuf$225762[esp+132]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	mov	edx, DWORD PTR [esi]
 	push	eax
@@ -8780,18 +8792,18 @@ _strMsg$ = 8						; size = 4
 	call	eax
 	add	esp, 8
 
-; 2552 : 	}
+; 2574 : 	}
 
-	lea	ecx, DWORD PTR _strBaseString$225718[esp+132]
+	lea	ecx, DWORD PTR _strBaseString$225763[esp+132]
 	mov	BYTE PTR __$EHRec$[esp+140], 0
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR _strOutBuf$225717[esp+132]
+	lea	ecx, DWORD PTR _strOutBuf$225762[esp+132]
 	mov	DWORD PTR __$EHRec$[esp+140], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 	pop	esi
 $LN1@LogReligio:
 
-; 2553 : }
+; 2575 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+128]
 	pop	edi
@@ -8802,16 +8814,16 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?LogReligionMessage@CvGameReligions@@QAEXAAVCvString@@@Z$0:
-	lea	ecx, DWORD PTR _strOutBuf$225717[ebp]
+	lea	ecx, DWORD PTR _strOutBuf$225762[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?LogReligionMessage@CvGameReligions@@QAEXAAVCvString@@@Z$1:
-	lea	ecx, DWORD PTR _strBaseString$225718[ebp]
+	lea	ecx, DWORD PTR _strBaseString$225763[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?LogReligionMessage@CvGameReligions@@QAEXAAVCvString@@@Z$2:
-	lea	ecx, DWORD PTR $T232754[ebp]
+	lea	ecx, DWORD PTR $T232811[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?LogReligionMessage@CvGameReligions@@QAEXAAVCvString@@@Z$3:
-	lea	ecx, DWORD PTR $T232755[ebp]
+	lea	ecx, DWORD PTR $T232812[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __ehhandler$?LogReligionMessage@CvGameReligions@@QAEXAAVCvString@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?LogReligionMessage@CvGameReligions@@QAEXAAVCvString@@@Z
@@ -8873,28 +8885,28 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 _strMessage$ = -516					; size = 28
 _strSummary$ = -488					; size = 28
-$T232816 = -460						; size = 28
-$T232818 = -432						; size = 28
-$T232811 = -404						; size = 28
-$T232819 = -376						; size = 28
-$T232813 = -348						; size = 28
-$T232820 = -320						; size = 28
-$T232815 = -292						; size = 28
-$T232821 = -264						; size = 28
-$T232817 = -236						; size = 28
-$T232822 = -208						; size = 28
-$T232814 = -180						; size = 28
-$T232823 = -152						; size = 28
-$T232812 = -124						; size = 28
-$T232824 = -96						; size = 28
-$T232810 = -68						; size = 28
-$T232825 = -40						; size = 28
+$T232873 = -460						; size = 28
+$T232875 = -432						; size = 28
+$T232868 = -404						; size = 28
+$T232876 = -376						; size = 28
+$T232870 = -348						; size = 28
+$T232877 = -320						; size = 28
+$T232872 = -292						; size = 28
+$T232878 = -264						; size = 28
+$T232874 = -236						; size = 28
+$T232879 = -208						; size = 28
+$T232871 = -180						; size = 28
+$T232880 = -152						; size = 28
+$T232869 = -124						; size = 28
+$T232881 = -96						; size = 28
+$T232867 = -68						; size = 28
+$T232882 = -40						; size = 28
 __$EHRec$ = -12						; size = 12
 _ePlayer$ = 8						; size = 4
 _eResult$ = 12						; size = 4
 ?NotifyPlayer@CvGameReligions@@SAXW4PlayerTypes@@W4FOUNDING_RESULT@1@@Z PROC ; CvGameReligions::NotifyPlayer, COMDAT
 
-; 2557 : {
+; 2579 : {
 
 	push	-1
 	push	__ehhandler$?NotifyPlayer@CvGameReligions@@SAXW4PlayerTypes@@W4FOUNDING_RESULT@1@@Z
@@ -8904,21 +8916,21 @@ _eResult$ = 12						; size = 4
 	sub	esp, 504				; 000001f8H
 	push	ebx
 
-; 2558 : 	CvString strMessage;
+; 2580 : 	CvString strMessage;
 
 	lea	ecx, DWORD PTR _strMessage$[esp+520]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 2559 : 	CvString strSummary;
+; 2581 : 	CvString strSummary;
 
 	lea	ecx, DWORD PTR _strSummary$[esp+520]
 	mov	DWORD PTR __$EHRec$[esp+528], 0
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 2560 : 
-; 2561 : 	NotificationTypes eNotificationType = NOTIFICATION_RELIGION_ERROR;
-; 2562 : 
-; 2563 : 	switch(eResult)
+; 2582 : 
+; 2583 : 	NotificationTypes eNotificationType = NOTIFICATION_RELIGION_ERROR;
+; 2584 : 
+; 2585 : 	switch(eResult)
 
 	mov	eax, DWORD PTR _eResult$[esp+516]
 	dec	eax
@@ -8929,14 +8941,14 @@ _eResult$ = 12						; size = 4
 	jmp	DWORD PTR $LN130@NotifyPlay[eax*4]
 $LN10@NotifyPlay:
 
-; 2564 : 	{
-; 2565 : 	case FOUNDING_OK:
-; 2566 : 		break;
-; 2567 : 	case FOUNDING_BELIEF_IN_USE:
-; 2568 : 		strMessage = GetLocalizedText("TXT_KEY_NOTIFICATION_PANTHEON_BELIEF_IN_USE");
+; 2586 : 	{
+; 2587 : 	case FOUNDING_OK:
+; 2588 : 		break;
+; 2589 : 	case FOUNDING_BELIEF_IN_USE:
+; 2590 : 		strMessage = GetLocalizedText("TXT_KEY_NOTIFICATION_PANTHEON_BELIEF_IN_USE");
 
-	lea	eax, DWORD PTR $T232810[esp+520]
-	push	OFFSET $SG225737
+	lea	eax, DWORD PTR $T232867[esp+520]
+	push	OFFSET $SG225782
 	push	eax
 	call	?GetLocalizedText@@YA?AVCvString@@PBD@Z	; GetLocalizedText
 	add	esp, 8
@@ -8944,14 +8956,14 @@ $LN10@NotifyPlay:
 	lea	ecx, DWORD PTR _strMessage$[esp+524]
 	mov	BYTE PTR __$EHRec$[esp+532], 2
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T232810[esp+520]
+	lea	ecx, DWORD PTR $T232867[esp+520]
 	mov	BYTE PTR __$EHRec$[esp+528], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 2569 : 		strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_PANTHEON_BELIEF_IN_USE");
+; 2591 : 		strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_PANTHEON_BELIEF_IN_USE");
 
-	lea	ecx, DWORD PTR $T232811[esp+520]
-	push	OFFSET $SG225739
+	lea	ecx, DWORD PTR $T232868[esp+520]
+	push	OFFSET $SG225784
 	push	ecx
 	call	?GetLocalizedText@@YA?AVCvString@@PBD@Z	; GetLocalizedText
 	add	esp, 8
@@ -8959,18 +8971,18 @@ $LN10@NotifyPlay:
 	lea	ecx, DWORD PTR _strSummary$[esp+524]
 	mov	BYTE PTR __$EHRec$[esp+532], 3
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T232811[esp+520]
+	lea	ecx, DWORD PTR $T232868[esp+520]
 
-; 2570 : 		break;
+; 2592 : 		break;
 
 	jmp	$LN129@NotifyPlay
 $LN9@NotifyPlay:
 
-; 2571 : 	case FOUNDING_RELIGION_IN_USE:
-; 2572 : 		strMessage = GetLocalizedText("TXT_KEY_NOTIFICATION_RELIGION_IN_USE");
+; 2593 : 	case FOUNDING_RELIGION_IN_USE:
+; 2594 : 		strMessage = GetLocalizedText("TXT_KEY_NOTIFICATION_RELIGION_IN_USE");
 
-	lea	edx, DWORD PTR $T232812[esp+520]
-	push	OFFSET $SG225742
+	lea	edx, DWORD PTR $T232869[esp+520]
+	push	OFFSET $SG225787
 	push	edx
 	call	?GetLocalizedText@@YA?AVCvString@@PBD@Z	; GetLocalizedText
 	add	esp, 8
@@ -8978,14 +8990,14 @@ $LN9@NotifyPlay:
 	lea	ecx, DWORD PTR _strMessage$[esp+524]
 	mov	BYTE PTR __$EHRec$[esp+532], 4
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T232812[esp+520]
+	lea	ecx, DWORD PTR $T232869[esp+520]
 	mov	BYTE PTR __$EHRec$[esp+528], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 2573 : 		strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_RELIGION_IN_USE");
+; 2595 : 		strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_RELIGION_IN_USE");
 
-	lea	eax, DWORD PTR $T232813[esp+520]
-	push	OFFSET $SG225744
+	lea	eax, DWORD PTR $T232870[esp+520]
+	push	OFFSET $SG225789
 	push	eax
 	call	?GetLocalizedText@@YA?AVCvString@@PBD@Z	; GetLocalizedText
 	add	esp, 8
@@ -8993,18 +9005,18 @@ $LN9@NotifyPlay:
 	lea	ecx, DWORD PTR _strSummary$[esp+524]
 	mov	BYTE PTR __$EHRec$[esp+532], 5
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T232813[esp+520]
+	lea	ecx, DWORD PTR $T232870[esp+520]
 
-; 2574 : 		break;
+; 2596 : 		break;
 
 	jmp	$LN129@NotifyPlay
 $LN8@NotifyPlay:
 
-; 2575 : 	case FOUNDING_NOT_ENOUGH_FAITH:
-; 2576 : 		strMessage = GetLocalizedText("TXT_KEY_NOTIFICATION_NOT_ENOUGH_FAITH_FOR_PANTHEON");
+; 2597 : 	case FOUNDING_NOT_ENOUGH_FAITH:
+; 2598 : 		strMessage = GetLocalizedText("TXT_KEY_NOTIFICATION_NOT_ENOUGH_FAITH_FOR_PANTHEON");
 
-	lea	ecx, DWORD PTR $T232814[esp+520]
-	push	OFFSET $SG225747
+	lea	ecx, DWORD PTR $T232871[esp+520]
+	push	OFFSET $SG225792
 	push	ecx
 	call	?GetLocalizedText@@YA?AVCvString@@PBD@Z	; GetLocalizedText
 	add	esp, 8
@@ -9012,14 +9024,14 @@ $LN8@NotifyPlay:
 	lea	ecx, DWORD PTR _strMessage$[esp+524]
 	mov	BYTE PTR __$EHRec$[esp+532], 6
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T232814[esp+520]
+	lea	ecx, DWORD PTR $T232871[esp+520]
 	mov	BYTE PTR __$EHRec$[esp+528], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 2577 : 		strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_NOT_ENOUGH_FAITH_FOR_PANTHEON");
+; 2599 : 		strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_NOT_ENOUGH_FAITH_FOR_PANTHEON");
 
-	lea	edx, DWORD PTR $T232815[esp+520]
-	push	OFFSET $SG225749
+	lea	edx, DWORD PTR $T232872[esp+520]
+	push	OFFSET $SG225794
 	push	edx
 	call	?GetLocalizedText@@YA?AVCvString@@PBD@Z	; GetLocalizedText
 	add	esp, 8
@@ -9027,18 +9039,18 @@ $LN8@NotifyPlay:
 	lea	ecx, DWORD PTR _strSummary$[esp+524]
 	mov	BYTE PTR __$EHRec$[esp+532], 7
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T232815[esp+520]
+	lea	ecx, DWORD PTR $T232872[esp+520]
 
-; 2578 : 		break;
+; 2600 : 		break;
 
 	jmp	$LN129@NotifyPlay
 $LN7@NotifyPlay:
 
-; 2579 : 	case FOUNDING_NO_RELIGIONS_AVAILABLE:
-; 2580 : 		strMessage = GetLocalizedText("TXT_KEY_NOTIFICATION_NO_RELIGIONS_AVAILABLE");
+; 2601 : 	case FOUNDING_NO_RELIGIONS_AVAILABLE:
+; 2602 : 		strMessage = GetLocalizedText("TXT_KEY_NOTIFICATION_NO_RELIGIONS_AVAILABLE");
 
-	lea	eax, DWORD PTR $T232816[esp+520]
-	push	OFFSET $SG225752
+	lea	eax, DWORD PTR $T232873[esp+520]
+	push	OFFSET $SG225797
 	push	eax
 	call	?GetLocalizedText@@YA?AVCvString@@PBD@Z	; GetLocalizedText
 	add	esp, 8
@@ -9046,14 +9058,14 @@ $LN7@NotifyPlay:
 	lea	ecx, DWORD PTR _strMessage$[esp+524]
 	mov	BYTE PTR __$EHRec$[esp+532], 8
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T232816[esp+520]
+	lea	ecx, DWORD PTR $T232873[esp+520]
 	mov	BYTE PTR __$EHRec$[esp+528], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 2581 : 		strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_NO_RELIGIONS_AVAILABLE");
+; 2603 : 		strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_NO_RELIGIONS_AVAILABLE");
 
-	lea	ecx, DWORD PTR $T232817[esp+520]
-	push	OFFSET $SG225754
+	lea	ecx, DWORD PTR $T232874[esp+520]
+	push	OFFSET $SG225799
 	push	ecx
 	call	?GetLocalizedText@@YA?AVCvString@@PBD@Z	; GetLocalizedText
 	add	esp, 8
@@ -9061,20 +9073,20 @@ $LN7@NotifyPlay:
 	lea	ecx, DWORD PTR _strSummary$[esp+524]
 	mov	BYTE PTR __$EHRec$[esp+532], 9
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T232817[esp+520]
+	lea	ecx, DWORD PTR $T232874[esp+520]
 
-; 2582 : 		break;
+; 2604 : 		break;
 
 	jmp	$LN129@NotifyPlay
 $LN5@NotifyPlay:
 
-; 2583 : 	case FOUNDING_INVALID_PLAYER:
-; 2584 : 		break;
-; 2585 : 	case FOUNDING_PLAYER_ALREADY_CREATED_RELIGION:
-; 2586 : 		strMessage = GetLocalizedText("TXT_KEY_NOTIFICATION_ALREADY_CREATED_RELIGION");
+; 2605 : 	case FOUNDING_INVALID_PLAYER:
+; 2606 : 		break;
+; 2607 : 	case FOUNDING_PLAYER_ALREADY_CREATED_RELIGION:
+; 2608 : 		strMessage = GetLocalizedText("TXT_KEY_NOTIFICATION_ALREADY_CREATED_RELIGION");
 
-	lea	edx, DWORD PTR $T232818[esp+520]
-	push	OFFSET $SG225758
+	lea	edx, DWORD PTR $T232875[esp+520]
+	push	OFFSET $SG225803
 	push	edx
 	call	?GetLocalizedText@@YA?AVCvString@@PBD@Z	; GetLocalizedText
 	add	esp, 8
@@ -9082,14 +9094,14 @@ $LN5@NotifyPlay:
 	lea	ecx, DWORD PTR _strMessage$[esp+524]
 	mov	BYTE PTR __$EHRec$[esp+532], 10		; 0000000aH
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T232818[esp+520]
+	lea	ecx, DWORD PTR $T232875[esp+520]
 	mov	BYTE PTR __$EHRec$[esp+528], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 2587 : 		strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_ALREADY_CREATED_RELIGION");
+; 2609 : 		strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_ALREADY_CREATED_RELIGION");
 
-	lea	eax, DWORD PTR $T232819[esp+520]
-	push	OFFSET $SG225760
+	lea	eax, DWORD PTR $T232876[esp+520]
+	push	OFFSET $SG225805
 	push	eax
 	call	?GetLocalizedText@@YA?AVCvString@@PBD@Z	; GetLocalizedText
 	add	esp, 8
@@ -9097,18 +9109,18 @@ $LN5@NotifyPlay:
 	lea	ecx, DWORD PTR _strSummary$[esp+524]
 	mov	BYTE PTR __$EHRec$[esp+532], 11		; 0000000bH
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T232819[esp+520]
+	lea	ecx, DWORD PTR $T232876[esp+520]
 
-; 2588 : 		break;
+; 2610 : 		break;
 
 	jmp	$LN129@NotifyPlay
 $LN4@NotifyPlay:
 
-; 2589 : 	case FOUNDING_PLAYER_ALREADY_CREATED_PANTHEON:
-; 2590 : 		strMessage = GetLocalizedText("TXT_KEY_NOTIFICATION_ALREADY_CREATED_PANTHEON");
+; 2611 : 	case FOUNDING_PLAYER_ALREADY_CREATED_PANTHEON:
+; 2612 : 		strMessage = GetLocalizedText("TXT_KEY_NOTIFICATION_ALREADY_CREATED_PANTHEON");
 
-	lea	ecx, DWORD PTR $T232820[esp+520]
-	push	OFFSET $SG225763
+	lea	ecx, DWORD PTR $T232877[esp+520]
+	push	OFFSET $SG225808
 	push	ecx
 	call	?GetLocalizedText@@YA?AVCvString@@PBD@Z	; GetLocalizedText
 	add	esp, 8
@@ -9116,14 +9128,14 @@ $LN4@NotifyPlay:
 	lea	ecx, DWORD PTR _strMessage$[esp+524]
 	mov	BYTE PTR __$EHRec$[esp+532], 12		; 0000000cH
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T232820[esp+520]
+	lea	ecx, DWORD PTR $T232877[esp+520]
 	mov	BYTE PTR __$EHRec$[esp+528], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 2591 : 		strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_ALREADY_CREATED_PANTHEON");
+; 2613 : 		strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_ALREADY_CREATED_PANTHEON");
 
-	lea	edx, DWORD PTR $T232821[esp+520]
-	push	OFFSET $SG225765
+	lea	edx, DWORD PTR $T232878[esp+520]
+	push	OFFSET $SG225810
 	push	edx
 	call	?GetLocalizedText@@YA?AVCvString@@PBD@Z	; GetLocalizedText
 	add	esp, 8
@@ -9131,18 +9143,18 @@ $LN4@NotifyPlay:
 	lea	ecx, DWORD PTR _strSummary$[esp+524]
 	mov	BYTE PTR __$EHRec$[esp+532], 13		; 0000000dH
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T232821[esp+520]
+	lea	ecx, DWORD PTR $T232878[esp+520]
 
-; 2592 : 		break;
+; 2614 : 		break;
 
 	jmp	$LN129@NotifyPlay
 $LN3@NotifyPlay:
 
-; 2593 : 	case FOUNDING_NAME_IN_USE:
-; 2594 : 		strMessage = GetLocalizedText("TXT_KEY_NOTIFICATION_RELIGION_NAME_IN_USE");
+; 2615 : 	case FOUNDING_NAME_IN_USE:
+; 2616 : 		strMessage = GetLocalizedText("TXT_KEY_NOTIFICATION_RELIGION_NAME_IN_USE");
 
-	lea	eax, DWORD PTR $T232822[esp+520]
-	push	OFFSET $SG225768
+	lea	eax, DWORD PTR $T232879[esp+520]
+	push	OFFSET $SG225813
 	push	eax
 	call	?GetLocalizedText@@YA?AVCvString@@PBD@Z	; GetLocalizedText
 	add	esp, 8
@@ -9150,14 +9162,14 @@ $LN3@NotifyPlay:
 	lea	ecx, DWORD PTR _strMessage$[esp+524]
 	mov	BYTE PTR __$EHRec$[esp+532], 14		; 0000000eH
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T232822[esp+520]
+	lea	ecx, DWORD PTR $T232879[esp+520]
 	mov	BYTE PTR __$EHRec$[esp+528], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 2595 : 		strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_RELIGION_NAME_IN_USE");
+; 2617 : 		strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_RELIGION_NAME_IN_USE");
 
-	lea	ecx, DWORD PTR $T232823[esp+520]
-	push	OFFSET $SG225770
+	lea	ecx, DWORD PTR $T232880[esp+520]
+	push	OFFSET $SG225815
 	push	ecx
 	call	?GetLocalizedText@@YA?AVCvString@@PBD@Z	; GetLocalizedText
 	add	esp, 8
@@ -9165,18 +9177,18 @@ $LN3@NotifyPlay:
 	lea	ecx, DWORD PTR _strSummary$[esp+524]
 	mov	BYTE PTR __$EHRec$[esp+532], 15		; 0000000fH
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T232823[esp+520]
+	lea	ecx, DWORD PTR $T232880[esp+520]
 
-; 2596 : 		break;
+; 2618 : 		break;
 
 	jmp	SHORT $LN129@NotifyPlay
 $LN2@NotifyPlay:
 
-; 2597 : 	case FOUNDING_RELIGION_ENHANCED:
-; 2598 : 		strMessage = GetLocalizedText("TXT_KEY_NOTIFICATION_ENHANCED_RELIGION_IN_USE");
+; 2619 : 	case FOUNDING_RELIGION_ENHANCED:
+; 2620 : 		strMessage = GetLocalizedText("TXT_KEY_NOTIFICATION_ENHANCED_RELIGION_IN_USE");
 
-	lea	edx, DWORD PTR $T232824[esp+520]
-	push	OFFSET $SG225773
+	lea	edx, DWORD PTR $T232881[esp+520]
+	push	OFFSET $SG225818
 	push	edx
 	call	?GetLocalizedText@@YA?AVCvString@@PBD@Z	; GetLocalizedText
 	add	esp, 8
@@ -9184,14 +9196,14 @@ $LN2@NotifyPlay:
 	lea	ecx, DWORD PTR _strMessage$[esp+524]
 	mov	BYTE PTR __$EHRec$[esp+532], 16		; 00000010H
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T232824[esp+520]
+	lea	ecx, DWORD PTR $T232881[esp+520]
 	mov	BYTE PTR __$EHRec$[esp+528], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 2599 : 		strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_ENHANCED_RELIGION_IN_USE");
+; 2621 : 		strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_ENHANCED_RELIGION_IN_USE");
 
-	lea	eax, DWORD PTR $T232825[esp+520]
-	push	OFFSET $SG225775
+	lea	eax, DWORD PTR $T232882[esp+520]
+	push	OFFSET $SG225820
 	push	eax
 	call	?GetLocalizedText@@YA?AVCvString@@PBD@Z	; GetLocalizedText
 	add	esp, 8
@@ -9199,16 +9211,16 @@ $LN2@NotifyPlay:
 	lea	ecx, DWORD PTR _strSummary$[esp+524]
 	mov	BYTE PTR __$EHRec$[esp+532], 17		; 00000011H
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T232825[esp+520]
+	lea	ecx, DWORD PTR $T232882[esp+520]
 $LN129@NotifyPlay:
 	mov	BYTE PTR __$EHRec$[esp+528], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 $LN12@NotifyPlay:
 
-; 2600 : 		break;
-; 2601 : 	}
-; 2602 : 
-; 2603 : 	if(strMessage.GetLength() != 0)
+; 2622 : 		break;
+; 2623 : 	}
+; 2624 : 
+; 2625 : 	if(strMessage.GetLength() != 0)
 
 	lea	ecx, DWORD PTR _strMessage$[esp+520]
 	call	DWORD PTR __imp_?size@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEIXZ
@@ -9216,7 +9228,7 @@ $LN12@NotifyPlay:
 	test	eax, eax
 	je	SHORT $LN1@NotifyPlay
 
-; 2604 : 		CvNotifications::AddToPlayer(ePlayer, eNotificationType, strMessage.c_str(), strSummary.c_str());
+; 2626 : 		CvNotifications::AddToPlayer(ePlayer, eNotificationType, strMessage.c_str(), strSummary.c_str());
 
 	push	-1
 	push	-1
@@ -9235,7 +9247,7 @@ $LN12@NotifyPlay:
 	add	esp, 32					; 00000020H
 $LN1@NotifyPlay:
 
-; 2605 : }
+; 2627 : }
 
 	lea	ecx, DWORD PTR _strSummary$[esp+516]
 	mov	BYTE PTR __$EHRec$[esp+524], 0
@@ -9267,52 +9279,52 @@ __unwindfunclet$?NotifyPlayer@CvGameReligions@@SAXW4PlayerTypes@@W4FOUNDING_RESU
 	lea	ecx, DWORD PTR _strSummary$[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?NotifyPlayer@CvGameReligions@@SAXW4PlayerTypes@@W4FOUNDING_RESULT@1@@Z$2:
-	lea	ecx, DWORD PTR $T232810[ebp]
+	lea	ecx, DWORD PTR $T232867[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?NotifyPlayer@CvGameReligions@@SAXW4PlayerTypes@@W4FOUNDING_RESULT@1@@Z$3:
-	lea	ecx, DWORD PTR $T232811[ebp]
+	lea	ecx, DWORD PTR $T232868[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?NotifyPlayer@CvGameReligions@@SAXW4PlayerTypes@@W4FOUNDING_RESULT@1@@Z$4:
-	lea	ecx, DWORD PTR $T232812[ebp]
+	lea	ecx, DWORD PTR $T232869[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?NotifyPlayer@CvGameReligions@@SAXW4PlayerTypes@@W4FOUNDING_RESULT@1@@Z$5:
-	lea	ecx, DWORD PTR $T232813[ebp]
+	lea	ecx, DWORD PTR $T232870[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?NotifyPlayer@CvGameReligions@@SAXW4PlayerTypes@@W4FOUNDING_RESULT@1@@Z$6:
-	lea	ecx, DWORD PTR $T232814[ebp]
+	lea	ecx, DWORD PTR $T232871[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?NotifyPlayer@CvGameReligions@@SAXW4PlayerTypes@@W4FOUNDING_RESULT@1@@Z$7:
-	lea	ecx, DWORD PTR $T232815[ebp]
+	lea	ecx, DWORD PTR $T232872[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?NotifyPlayer@CvGameReligions@@SAXW4PlayerTypes@@W4FOUNDING_RESULT@1@@Z$8:
-	lea	ecx, DWORD PTR $T232816[ebp]
+	lea	ecx, DWORD PTR $T232873[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?NotifyPlayer@CvGameReligions@@SAXW4PlayerTypes@@W4FOUNDING_RESULT@1@@Z$9:
-	lea	ecx, DWORD PTR $T232817[ebp]
+	lea	ecx, DWORD PTR $T232874[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?NotifyPlayer@CvGameReligions@@SAXW4PlayerTypes@@W4FOUNDING_RESULT@1@@Z$10:
-	lea	ecx, DWORD PTR $T232818[ebp]
+	lea	ecx, DWORD PTR $T232875[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?NotifyPlayer@CvGameReligions@@SAXW4PlayerTypes@@W4FOUNDING_RESULT@1@@Z$11:
-	lea	ecx, DWORD PTR $T232819[ebp]
+	lea	ecx, DWORD PTR $T232876[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?NotifyPlayer@CvGameReligions@@SAXW4PlayerTypes@@W4FOUNDING_RESULT@1@@Z$12:
-	lea	ecx, DWORD PTR $T232820[ebp]
+	lea	ecx, DWORD PTR $T232877[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?NotifyPlayer@CvGameReligions@@SAXW4PlayerTypes@@W4FOUNDING_RESULT@1@@Z$13:
-	lea	ecx, DWORD PTR $T232821[ebp]
+	lea	ecx, DWORD PTR $T232878[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?NotifyPlayer@CvGameReligions@@SAXW4PlayerTypes@@W4FOUNDING_RESULT@1@@Z$14:
-	lea	ecx, DWORD PTR $T232822[ebp]
+	lea	ecx, DWORD PTR $T232879[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?NotifyPlayer@CvGameReligions@@SAXW4PlayerTypes@@W4FOUNDING_RESULT@1@@Z$15:
-	lea	ecx, DWORD PTR $T232823[ebp]
+	lea	ecx, DWORD PTR $T232880[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?NotifyPlayer@CvGameReligions@@SAXW4PlayerTypes@@W4FOUNDING_RESULT@1@@Z$16:
-	lea	ecx, DWORD PTR $T232824[ebp]
+	lea	ecx, DWORD PTR $T232881[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?NotifyPlayer@CvGameReligions@@SAXW4PlayerTypes@@W4FOUNDING_RESULT@1@@Z$17:
-	lea	ecx, DWORD PTR $T232825[ebp]
+	lea	ecx, DWORD PTR $T232882[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?NotifyPlayer@CvGameReligions@@SAXW4PlayerTypes@@W4FOUNDING_RESULT@1@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?NotifyPlayer@CvGameReligions@@SAXW4PlayerTypes@@W4FOUNDING_RESULT@1@@Z
@@ -9326,8 +9338,8 @@ _TEXT	SEGMENT
 ??1CvPlayerReligions@@QAE@XZ PROC			; CvPlayerReligions::~CvPlayerReligions, COMDAT
 ; _this$ = ecx
 
-; 2686 : 	Uninit();
-; 2687 : }
+; 2708 : 	Uninit();
+; 2709 : }
 
 	ret	0
 ??1CvPlayerReligions@@QAE@XZ ENDP			; CvPlayerReligions::~CvPlayerReligions
@@ -9340,19 +9352,19 @@ _pPlayer$ = 8						; size = 4
 ?Init@CvPlayerReligions@@QAEXPAVCvPlayer@@@Z PROC	; CvPlayerReligions::Init, COMDAT
 ; _this$ = ecx
 
-; 2692 : 	m_pPlayer = pPlayer;
+; 2714 : 	m_pPlayer = pPlayer;
 
 	mov	eax, DWORD PTR _pPlayer$[esp-4]
 	mov	DWORD PTR [ecx], eax
 
-; 2693 : 
-; 2694 : 	Reset();
+; 2715 : 
+; 2716 : 	Reset();
 
 	xor	eax, eax
 	mov	DWORD PTR [ecx+8], eax
 	mov	DWORD PTR [ecx+4], eax
 
-; 2695 : }
+; 2717 : }
 
 	ret	4
 ?Init@CvPlayerReligions@@QAEXPAVCvPlayer@@@Z ENDP	; CvPlayerReligions::Init
@@ -9366,14 +9378,14 @@ _kStream$ = 8						; size = 4
 ?Read@CvPlayerReligions@@QAEXAAVFDataStream@@@Z PROC	; CvPlayerReligions::Read, COMDAT
 ; _this$ = ecx
 
-; 2712 : {
+; 2734 : {
 
 	push	esi
 	push	edi
 
-; 2713 : 	// Version number to maintain backwards compatibility
-; 2714 : 	uint uiVersion;
-; 2715 : 	kStream >> uiVersion;
+; 2735 : 	// Version number to maintain backwards compatibility
+; 2736 : 	uint uiVersion;
+; 2737 : 	kStream >> uiVersion;
 
 	mov	edi, DWORD PTR _kStream$[esp+4]
 	lea	eax, DWORD PTR _uiVersion$[esp+4]
@@ -9382,14 +9394,14 @@ _kStream$ = 8						; size = 4
 	mov	ecx, edi
 	call	?Read@FDataStream@@IAEXAAI@Z		; FDataStream::Read
 
-; 2716 : 	kStream >> m_iNumProphetsSpawned;
+; 2738 : 	kStream >> m_iNumProphetsSpawned;
 
 	lea	ecx, DWORD PTR [esi+4]
 	push	ecx
 	mov	ecx, edi
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
 
-; 2717 : 	kStream >> m_bFoundingReligion;
+; 2739 : 	kStream >> m_bFoundingReligion;
 
 	add	esi, 8
 	push	esi
@@ -9398,7 +9410,7 @@ _kStream$ = 8						; size = 4
 	pop	edi
 	pop	esi
 
-; 2718 : }
+; 2740 : }
 
 	ret	4
 ?Read@CvPlayerReligions@@QAEXAAVFDataStream@@@Z ENDP	; CvPlayerReligions::Read
@@ -9412,15 +9424,15 @@ _kStream$ = 8						; size = 4
 ?Write@CvPlayerReligions@@QAEXAAVFDataStream@@@Z PROC	; CvPlayerReligions::Write, COMDAT
 ; _this$ = ecx
 
-; 2722 : {
+; 2744 : {
 
 	push	ecx
 	push	esi
 	push	edi
 
-; 2723 : 	// Current version number
-; 2724 : 	uint uiVersion = 1;
-; 2725 : 	kStream << uiVersion;
+; 2745 : 	// Current version number
+; 2746 : 	uint uiVersion = 1;
+; 2747 : 	kStream << uiVersion;
 
 	mov	edi, DWORD PTR _kStream$[esp+8]
 	lea	eax, DWORD PTR _uiVersion$[esp+12]
@@ -9430,14 +9442,14 @@ _kStream$ = 8						; size = 4
 	mov	DWORD PTR _uiVersion$[esp+16], 1
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 
-; 2726 : 	kStream << m_iNumProphetsSpawned;
+; 2748 : 	kStream << m_iNumProphetsSpawned;
 
 	lea	ecx, DWORD PTR [esi+4]
 	push	ecx
 	mov	ecx, edi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
-; 2727 : 	kStream << m_bFoundingReligion;
+; 2749 : 	kStream << m_bFoundingReligion;
 
 	add	esi, 8
 	push	esi
@@ -9446,7 +9458,7 @@ _kStream$ = 8						; size = 4
 	pop	edi
 	pop	esi
 
-; 2728 : }
+; 2750 : }
 
 	pop	ecx
 	ret	4
@@ -9460,11 +9472,11 @@ _eReligion$ = 8						; size = 4
 ?GetNumFollowers@CvCityReligions@@QAEHW4ReligionTypes@@@Z PROC ; CvCityReligions::GetNumFollowers, COMDAT
 ; _this$ = ecx
 
-; 3131 : 	ReligionInCityList::iterator religionIt;
-; 3132 : #endif
-; 3133 : 
-; 3134 : 	// Find the religion in the list
-; 3135 : 	for(religionIt = m_ReligionStatus.begin(); religionIt != m_ReligionStatus.end(); ++religionIt)
+; 3153 : 	ReligionInCityList::iterator religionIt;
+; 3154 : #endif
+; 3155 : 
+; 3156 : 	// Find the religion in the list
+; 3157 : 	for(religionIt = m_ReligionStatus.begin(); religionIt != m_ReligionStatus.end(); ++religionIt)
 
 	mov	eax, DWORD PTR [ecx]
 	mov	ecx, DWORD PTR [ecx+4]
@@ -9475,8 +9487,8 @@ _eReligion$ = 8						; size = 4
 	mov	edx, DWORD PTR _eReligion$[esp-4]
 $LL4@GetNumFoll:
 
-; 3136 : 	{
-; 3137 : 		if(religionIt->m_eReligion == eReligion)
+; 3158 : 	{
+; 3159 : 		if(religionIt->m_eReligion == eReligion)
 
 	cmp	DWORD PTR [eax], edx
 	je	SHORT $LN12@GetNumFoll
@@ -9485,24 +9497,24 @@ $LL4@GetNumFoll:
 	jne	SHORT $LL4@GetNumFoll
 $LN2@GetNumFoll:
 
-; 3140 : 		}
-; 3141 : 	}
-; 3142 : 
-; 3143 : 	return 0;
+; 3162 : 		}
+; 3163 : 	}
+; 3164 : 
+; 3165 : 	return 0;
 
 	xor	eax, eax
 
-; 3144 : }
+; 3166 : }
 
 	ret	4
 $LN12@GetNumFoll:
 
-; 3138 : 		{
-; 3139 : 			return religionIt->m_iFollowers;
+; 3160 : 		{
+; 3161 : 			return religionIt->m_iFollowers;
 
 	mov	eax, DWORD PTR [eax+8]
 
-; 3144 : }
+; 3166 : }
 
 	ret	4
 ?GetNumFollowers@CvCityReligions@@QAEHW4ReligionTypes@@@Z ENDP ; CvCityReligions::GetNumFollowers
@@ -9515,11 +9527,11 @@ _eReligion$ = 8						; size = 4
 ?GetNumSimulatedFollowers@CvCityReligions@@QAEHW4ReligionTypes@@@Z PROC ; CvCityReligions::GetNumSimulatedFollowers, COMDAT
 ; _this$ = ecx
 
-; 3154 : 	ReligionInCityList::iterator religionIt;
-; 3155 : #endif
-; 3156 : 
-; 3157 : 	// Find the religion in the list
-; 3158 : 	for(religionIt = m_SimulatedStatus.begin(); religionIt != m_SimulatedStatus.end(); ++religionIt)
+; 3176 : 	ReligionInCityList::iterator religionIt;
+; 3177 : #endif
+; 3178 : 
+; 3179 : 	// Find the religion in the list
+; 3180 : 	for(religionIt = m_SimulatedStatus.begin(); religionIt != m_SimulatedStatus.end(); ++religionIt)
 
 	mov	eax, DWORD PTR [ecx+208]
 	mov	edx, DWORD PTR [ecx+212]
@@ -9533,8 +9545,8 @@ _eReligion$ = 8						; size = 4
 	mov	edx, DWORD PTR [ecx+212]
 	lea	edx, DWORD PTR [edx+edx*2]
 
-; 3159 : 	{
-; 3160 : 		if(religionIt->m_eReligion == eReligion)
+; 3181 : 	{
+; 3182 : 		if(religionIt->m_eReligion == eReligion)
 
 	mov	ecx, eax
 	lea	ecx, DWORD PTR [ecx+edx*8]
@@ -9548,24 +9560,24 @@ $LL4@GetNumSimu:
 	jne	SHORT $LL4@GetNumSimu
 $LN2@GetNumSimu:
 
-; 3163 : 		}
-; 3164 : 	}
-; 3165 : 
-; 3166 : 	return 0;
+; 3185 : 		}
+; 3186 : 	}
+; 3187 : 
+; 3188 : 	return 0;
 
 	xor	eax, eax
 
-; 3167 : }
+; 3189 : }
 
 	ret	4
 $LN12@GetNumSimu:
 
-; 3161 : 		{
-; 3162 : 			return religionIt->m_iFollowers;
+; 3183 : 		{
+; 3184 : 			return religionIt->m_iFollowers;
 
 	mov	eax, DWORD PTR [eax+8]
 
-; 3167 : }
+; 3189 : }
 
 	ret	4
 ?GetNumSimulatedFollowers@CvCityReligions@@QAEHW4ReligionTypes@@@Z ENDP ; CvCityReligions::GetNumSimulatedFollowers
@@ -9577,15 +9589,15 @@ _TEXT	SEGMENT
 ?GetNumReligionsWithFollowers@CvCityReligions@@QAEHXZ PROC ; CvCityReligions::GetNumReligionsWithFollowers, COMDAT
 ; _this$ = ecx
 
-; 3176 : 	int iRtnValue = 0;
-; 3177 : #ifdef AUI_CONSTIFY
-; 3178 : 	ReligionInCityList::const_iterator religionIt;
-; 3179 : #else
-; 3180 : 	ReligionInCityList::iterator religionIt;
-; 3181 : #endif
-; 3182 : 
-; 3183 : 	// Find the religion in the list
-; 3184 : 	for(religionIt = m_ReligionStatus.begin(); religionIt != m_ReligionStatus.end(); ++religionIt)
+; 3198 : 	int iRtnValue = 0;
+; 3199 : #ifdef AUI_CONSTIFY
+; 3200 : 	ReligionInCityList::const_iterator religionIt;
+; 3201 : #else
+; 3202 : 	ReligionInCityList::iterator religionIt;
+; 3203 : #endif
+; 3204 : 
+; 3205 : 	// Find the religion in the list
+; 3206 : 	for(religionIt = m_ReligionStatus.begin(); religionIt != m_ReligionStatus.end(); ++religionIt)
 
 	mov	edx, DWORD PTR [ecx]
 	mov	ecx, DWORD PTR [ecx+4]
@@ -9596,40 +9608,40 @@ _TEXT	SEGMENT
 	je	SHORT $LN2@GetNumReli@4
 $LL4@GetNumReli@4:
 
-; 3185 : 	{
-; 3186 : 		if(religionIt->m_iFollowers > 0 && religionIt->m_eReligion > RELIGION_PANTHEON)
+; 3207 : 	{
+; 3208 : 		if(religionIt->m_iFollowers > 0 && religionIt->m_eReligion > RELIGION_PANTHEON)
 
 	cmp	DWORD PTR [edx+8], 0
 	jle	SHORT $LN3@GetNumReli@4
 	cmp	DWORD PTR [edx], 0
 	jle	SHORT $LN3@GetNumReli@4
 
-; 3187 : 		{
-; 3188 : 			iRtnValue++;
+; 3209 : 		{
+; 3210 : 			iRtnValue++;
 
 	inc	eax
 $LN3@GetNumReli@4:
 
-; 3176 : 	int iRtnValue = 0;
-; 3177 : #ifdef AUI_CONSTIFY
-; 3178 : 	ReligionInCityList::const_iterator religionIt;
-; 3179 : #else
-; 3180 : 	ReligionInCityList::iterator religionIt;
-; 3181 : #endif
-; 3182 : 
-; 3183 : 	// Find the religion in the list
-; 3184 : 	for(religionIt = m_ReligionStatus.begin(); religionIt != m_ReligionStatus.end(); ++religionIt)
+; 3198 : 	int iRtnValue = 0;
+; 3199 : #ifdef AUI_CONSTIFY
+; 3200 : 	ReligionInCityList::const_iterator religionIt;
+; 3201 : #else
+; 3202 : 	ReligionInCityList::iterator religionIt;
+; 3203 : #endif
+; 3204 : 
+; 3205 : 	// Find the religion in the list
+; 3206 : 	for(religionIt = m_ReligionStatus.begin(); religionIt != m_ReligionStatus.end(); ++religionIt)
 
 	add	edx, 24					; 00000018H
 	cmp	edx, ecx
 	jne	SHORT $LL4@GetNumReli@4
 $LN2@GetNumReli@4:
 
-; 3189 : 		}
-; 3190 : 	}
-; 3191 : 
-; 3192 : 	return iRtnValue;
-; 3193 : }
+; 3211 : 		}
+; 3212 : 	}
+; 3213 : 
+; 3214 : 	return iRtnValue;
+; 3215 : }
 
 	ret	0
 ?GetNumReligionsWithFollowers@CvCityReligions@@QAEHXZ ENDP ; CvCityReligions::GetNumReligionsWithFollowers
@@ -9641,10 +9653,10 @@ _TEXT	SEGMENT
 ?IsReligionInCity@CvCityReligions@@QAE_NXZ PROC		; CvCityReligions::IsReligionInCity, COMDAT
 ; _this$ = ecx
 
-; 3203 : 	ReligionInCityList::iterator religionIt;
-; 3204 : #endif
-; 3205 : 
-; 3206 : 	for(religionIt = m_ReligionStatus.begin(); religionIt != m_ReligionStatus.end(); ++religionIt)
+; 3225 : 	ReligionInCityList::iterator religionIt;
+; 3226 : #endif
+; 3227 : 
+; 3228 : 	for(religionIt = m_ReligionStatus.begin(); religionIt != m_ReligionStatus.end(); ++religionIt)
 
 	mov	eax, DWORD PTR [ecx]
 	mov	ecx, DWORD PTR [ecx+4]
@@ -9655,8 +9667,8 @@ _TEXT	SEGMENT
 	npad	1
 $LL4@IsReligion:
 
-; 3207 : 	{
-; 3208 : 		if(religionIt->m_eReligion != NO_RELIGION)
+; 3229 : 	{
+; 3230 : 		if(religionIt->m_eReligion != NO_RELIGION)
 
 	cmp	DWORD PTR [eax], -1
 	jne	SHORT $LN12@IsReligion
@@ -9665,24 +9677,24 @@ $LL4@IsReligion:
 	jne	SHORT $LL4@IsReligion
 $LN2@IsReligion:
 
-; 3211 : 		}
-; 3212 : 	}
-; 3213 : 
-; 3214 : 	return false;
+; 3233 : 		}
+; 3234 : 	}
+; 3235 : 
+; 3236 : 	return false;
 
 	xor	al, al
 
-; 3215 : }
+; 3237 : }
 
 	ret	0
 $LN12@IsReligion:
 
-; 3209 : 		{
-; 3210 : 			return true;
+; 3231 : 		{
+; 3232 : 			return true;
 
 	mov	al, 1
 
-; 3215 : }
+; 3237 : }
 
 	ret	0
 ?IsReligionInCity@CvCityReligions@@QAE_NXZ ENDP		; CvCityReligions::IsReligionInCity
@@ -9695,11 +9707,11 @@ _eReligion$ = 8						; size = 4
 ?IsHolyCityForReligion@CvCityReligions@@QAE_NW4ReligionTypes@@@Z PROC ; CvCityReligions::IsHolyCityForReligion, COMDAT
 ; _this$ = ecx
 
-; 3225 : 	ReligionInCityList::iterator religionIt;
-; 3226 : #endif
-; 3227 : 
-; 3228 : 	// Find the religion in the list
-; 3229 : 	for(religionIt = m_ReligionStatus.begin(); religionIt != m_ReligionStatus.end(); ++religionIt)
+; 3247 : 	ReligionInCityList::iterator religionIt;
+; 3248 : #endif
+; 3249 : 
+; 3250 : 	// Find the religion in the list
+; 3251 : 	for(religionIt = m_ReligionStatus.begin(); religionIt != m_ReligionStatus.end(); ++religionIt)
 
 	mov	eax, DWORD PTR [ecx]
 	mov	ecx, DWORD PTR [ecx+4]
@@ -9710,8 +9722,8 @@ _eReligion$ = 8						; size = 4
 	mov	edx, DWORD PTR _eReligion$[esp-4]
 $LL4@IsHolyCity:
 
-; 3230 : 	{
-; 3231 : 		if(religionIt->m_eReligion == eReligion)
+; 3252 : 	{
+; 3253 : 		if(religionIt->m_eReligion == eReligion)
 
 	cmp	DWORD PTR [eax], edx
 	je	SHORT $LN12@IsHolyCity
@@ -9720,24 +9732,24 @@ $LL4@IsHolyCity:
 	jne	SHORT $LL4@IsHolyCity
 $LN2@IsHolyCity:
 
-; 3234 : 		}
-; 3235 : 	}
-; 3236 : 
-; 3237 : 	return false;
+; 3256 : 		}
+; 3257 : 	}
+; 3258 : 
+; 3259 : 	return false;
 
 	xor	al, al
 
-; 3238 : }
+; 3260 : }
 
 	ret	4
 $LN12@IsHolyCity:
 
-; 3232 : 		{
-; 3233 : 			return religionIt->m_bFoundedHere;
+; 3254 : 		{
+; 3255 : 			return religionIt->m_bFoundedHere;
 
 	mov	al, BYTE PTR [eax+4]
 
-; 3238 : }
+; 3260 : }
 
 	ret	4
 ?IsHolyCityForReligion@CvCityReligions@@QAE_NW4ReligionTypes@@@Z ENDP ; CvCityReligions::IsHolyCityForReligion
@@ -9749,9 +9761,9 @@ _TEXT	SEGMENT
 ?IsHolyCityAnyReligion@CvCityReligions@@QAE_NXZ PROC	; CvCityReligions::IsHolyCityAnyReligion, COMDAT
 ; _this$ = ecx
 
-; 3248 : 	ReligionInCityList::iterator religionIt;
-; 3249 : #endif
-; 3250 : 	for(religionIt = m_ReligionStatus.begin(); religionIt != m_ReligionStatus.end(); ++religionIt)
+; 3270 : 	ReligionInCityList::iterator religionIt;
+; 3271 : #endif
+; 3272 : 	for(religionIt = m_ReligionStatus.begin(); religionIt != m_ReligionStatus.end(); ++religionIt)
 
 	mov	eax, DWORD PTR [ecx]
 	mov	ecx, DWORD PTR [ecx+4]
@@ -9762,8 +9774,8 @@ _TEXT	SEGMENT
 	npad	1
 $LL4@IsHolyCity@2:
 
-; 3251 : 	{
-; 3252 : 		if(religionIt->m_bFoundedHere)
+; 3273 : 	{
+; 3274 : 		if(religionIt->m_bFoundedHere)
 
 	cmp	BYTE PTR [eax+4], 0
 	jne	SHORT $LN12@IsHolyCity@2
@@ -9772,24 +9784,24 @@ $LL4@IsHolyCity@2:
 	jne	SHORT $LL4@IsHolyCity@2
 $LN2@IsHolyCity@2:
 
-; 3255 : 		}
-; 3256 : 	}
-; 3257 : 
-; 3258 : 	return false;
+; 3277 : 		}
+; 3278 : 	}
+; 3279 : 
+; 3280 : 	return false;
 
 	xor	al, al
 
-; 3259 : }
+; 3281 : }
 
 	ret	0
 $LN12@IsHolyCity@2:
 
-; 3253 : 		{
-; 3254 : 			return true;
+; 3275 : 		{
+; 3276 : 			return true;
 
 	mov	al, 1
 
-; 3259 : }
+; 3281 : }
 
 	ret	0
 ?IsHolyCityAnyReligion@CvCityReligions@@QAE_NXZ ENDP	; CvCityReligions::IsHolyCityAnyReligion
@@ -9802,12 +9814,12 @@ _eReligion$ = 8						; size = 4
 ?IsReligionHereOtherThan@CvCityReligions@@QAE_NW4ReligionTypes@@@Z PROC ; CvCityReligions::IsReligionHereOtherThan, COMDAT
 ; _this$ = ecx
 
-; 3269 : 	ReligionInCityList::iterator it;
-; 3270 : #endif
-; 3271 : #ifdef AUI_ITERATOR_POSTFIX_INCREMENT_OPTIMIZATIONS
-; 3272 : 	for (it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); ++it)
-; 3273 : #else
-; 3274 : 	for(it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); it++)
+; 3291 : 	ReligionInCityList::iterator it;
+; 3292 : #endif
+; 3293 : #ifdef AUI_ITERATOR_POSTFIX_INCREMENT_OPTIMIZATIONS
+; 3294 : 	for (it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); ++it)
+; 3295 : #else
+; 3296 : 	for(it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); it++)
 
 	mov	eax, DWORD PTR [ecx]
 	mov	ecx, DWORD PTR [ecx+4]
@@ -9819,9 +9831,9 @@ _eReligion$ = 8						; size = 4
 	mov	esi, DWORD PTR _eReligion$[esp]
 $LL4@IsReligion@2:
 
-; 3275 : #endif
-; 3276 : 	{
-; 3277 : 		if(it->m_eReligion != NO_RELIGION && it->m_eReligion != eReligion)
+; 3297 : #endif
+; 3298 : 	{
+; 3299 : 		if(it->m_eReligion != NO_RELIGION && it->m_eReligion != eReligion)
 
 	mov	ecx, DWORD PTR [eax]
 	cmp	ecx, -1
@@ -9830,37 +9842,37 @@ $LL4@IsReligion@2:
 	jne	SHORT $LN12@IsReligion@2
 $LN3@IsReligion@2:
 
-; 3269 : 	ReligionInCityList::iterator it;
-; 3270 : #endif
-; 3271 : #ifdef AUI_ITERATOR_POSTFIX_INCREMENT_OPTIMIZATIONS
-; 3272 : 	for (it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); ++it)
-; 3273 : #else
-; 3274 : 	for(it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); it++)
+; 3291 : 	ReligionInCityList::iterator it;
+; 3292 : #endif
+; 3293 : #ifdef AUI_ITERATOR_POSTFIX_INCREMENT_OPTIMIZATIONS
+; 3294 : 	for (it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); ++it)
+; 3295 : #else
+; 3296 : 	for(it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); it++)
 
 	add	eax, 24					; 00000018H
 	cmp	eax, edx
 	jne	SHORT $LL4@IsReligion@2
 $LN2@IsReligion@2:
 
-; 3280 : 		}
-; 3281 : 	}
-; 3282 : 	return false;
+; 3302 : 		}
+; 3303 : 	}
+; 3304 : 	return false;
 
 	xor	al, al
 	pop	esi
 
-; 3283 : }
+; 3305 : }
 
 	ret	4
 $LN12@IsReligion@2:
 
-; 3278 : 		{
-; 3279 : 			return true;
+; 3300 : 		{
+; 3301 : 			return true;
 
 	mov	al, 1
 	pop	esi
 
-; 3283 : }
+; 3305 : }
 
 	ret	4
 ?IsReligionHereOtherThan@CvCityReligions@@QAE_NW4ReligionTypes@@@Z ENDP ; CvCityReligions::IsReligionHereOtherThan
@@ -9872,17 +9884,17 @@ _TEXT	SEGMENT
 ?GetReligiousMajority@CvCityReligions@@QAE?AW4ReligionTypes@@XZ PROC ; CvCityReligions::GetReligiousMajority, COMDAT
 ; _this$ = ecx
 
-; 3355 : 	int iTotalFollowers = 0;
-; 3356 : 	int iMostFollowerPressure = 0;
-; 3357 : 	int iMostFollowers = -1;
-; 3358 : 	ReligionTypes eMostFollowers = NO_RELIGION;
-; 3359 : #ifdef AUI_CONSTIFY
-; 3360 : 	ReligionInCityList::const_iterator religionIt;
-; 3361 : #else
-; 3362 : 	ReligionInCityList::iterator religionIt;
-; 3363 : #endif
-; 3364 : 
-; 3365 : 	for(religionIt = m_ReligionStatus.begin(); religionIt != m_ReligionStatus.end(); ++religionIt)
+; 3377 : 	int iTotalFollowers = 0;
+; 3378 : 	int iMostFollowerPressure = 0;
+; 3379 : 	int iMostFollowers = -1;
+; 3380 : 	ReligionTypes eMostFollowers = NO_RELIGION;
+; 3381 : #ifdef AUI_CONSTIFY
+; 3382 : 	ReligionInCityList::const_iterator religionIt;
+; 3383 : #else
+; 3384 : 	ReligionInCityList::iterator religionIt;
+; 3385 : #endif
+; 3386 : 
+; 3387 : 	for(religionIt = m_ReligionStatus.begin(); religionIt != m_ReligionStatus.end(); ++religionIt)
 
 	mov	edx, DWORD PTR [ecx]
 	mov	ecx, DWORD PTR [ecx+4]
@@ -9901,14 +9913,14 @@ _TEXT	SEGMENT
 	npad	4
 $LL7@GetReligio@3:
 
-; 3366 : 	{
-; 3367 : 		iTotalFollowers += religionIt->m_iFollowers;
+; 3388 : 	{
+; 3389 : 		iTotalFollowers += religionIt->m_iFollowers;
 
 	mov	ecx, DWORD PTR [edx+8]
 	add	ebp, ecx
 
-; 3368 : 
-; 3369 : 		if(religionIt->m_iFollowers > iMostFollowers || religionIt->m_iFollowers == iMostFollowers && religionIt->m_iPressure > iMostFollowerPressure)
+; 3390 : 
+; 3391 : 		if(religionIt->m_iFollowers > iMostFollowers || religionIt->m_iFollowers == iMostFollowers && religionIt->m_iPressure > iMostFollowerPressure)
 
 	cmp	ecx, esi
 	jg	SHORT $LN3@GetReligio@3
@@ -9917,13 +9929,13 @@ $LL7@GetReligio@3:
 	jle	SHORT $LN6@GetReligio@3
 $LN3@GetReligio@3:
 
-; 3370 : 		{
-; 3371 : 			iMostFollowers = religionIt->m_iFollowers;
-; 3372 : 			iMostFollowerPressure = religionIt->m_iPressure;
+; 3392 : 		{
+; 3393 : 			iMostFollowers = religionIt->m_iFollowers;
+; 3394 : 			iMostFollowerPressure = religionIt->m_iPressure;
 
 	mov	ebx, DWORD PTR [edx+12]
 
-; 3373 : 			eMostFollowers = religionIt->m_eReligion;
+; 3395 : 			eMostFollowers = religionIt->m_eReligion;
 
 	mov	eax, DWORD PTR [edx]
 	mov	esi, ecx
@@ -9934,10 +9946,10 @@ $LN6@GetReligio@3:
 $LN5@GetReligio@3:
 	pop	edi
 
-; 3374 : 		}
-; 3375 : 	}
-; 3376 : 
-; 3377 : 	if ((iMostFollowers * 2) >= iTotalFollowers)
+; 3396 : 		}
+; 3397 : 	}
+; 3398 : 
+; 3399 : 	if ((iMostFollowers * 2) >= iTotalFollowers)
 
 	lea	edx, DWORD PTR [esi+esi]
 	pop	esi
@@ -9945,21 +9957,21 @@ $LN5@GetReligio@3:
 	pop	ebp
 	pop	ebx
 
-; 3378 : 	{
-; 3379 : 		return eMostFollowers;
+; 3400 : 	{
+; 3401 : 		return eMostFollowers;
 
 	jge	SHORT $LN1@GetReligio@3
 
-; 3380 : 	}
-; 3381 : 	else
-; 3382 : 	{
-; 3383 : 		return NO_RELIGION;
+; 3402 : 	}
+; 3403 : 	else
+; 3404 : 	{
+; 3405 : 		return NO_RELIGION;
 
 	or	eax, -1
 $LN1@GetReligio@3:
 
-; 3384 : 	}
-; 3385 : }
+; 3406 : 	}
+; 3407 : }
 
 	ret	0
 ?GetReligiousMajority@CvCityReligions@@QAE?AW4ReligionTypes@@XZ ENDP ; CvCityReligions::GetReligiousMajority
@@ -9971,21 +9983,21 @@ _TEXT	SEGMENT
 ?GetSimulatedReligiousMajority@CvCityReligions@@QAE?AW4ReligionTypes@@XZ PROC ; CvCityReligions::GetSimulatedReligiousMajority, COMDAT
 ; _this$ = ecx
 
-; 3393 : {
+; 3415 : {
 
 	push	ecx
 
-; 3394 : 	int iTotalFollowers = 0;
-; 3395 : 	int iMostFollowerPressure = 0;
-; 3396 : 	int iMostFollowers = -1;
-; 3397 : 	ReligionTypes eMostFollowers = NO_RELIGION;
-; 3398 : #ifdef AUI_CONSTIFY
-; 3399 : 	ReligionInCityList::const_iterator religionIt;
-; 3400 : #else
-; 3401 : 	ReligionInCityList::iterator religionIt;
-; 3402 : #endif
-; 3403 : 
-; 3404 : 	for(religionIt = m_SimulatedStatus.begin(); religionIt != m_SimulatedStatus.end(); ++religionIt)
+; 3416 : 	int iTotalFollowers = 0;
+; 3417 : 	int iMostFollowerPressure = 0;
+; 3418 : 	int iMostFollowers = -1;
+; 3419 : 	ReligionTypes eMostFollowers = NO_RELIGION;
+; 3420 : #ifdef AUI_CONSTIFY
+; 3421 : 	ReligionInCityList::const_iterator religionIt;
+; 3422 : #else
+; 3423 : 	ReligionInCityList::iterator religionIt;
+; 3424 : #endif
+; 3425 : 
+; 3426 : 	for(religionIt = m_SimulatedStatus.begin(); religionIt != m_SimulatedStatus.end(); ++religionIt)
 
 	mov	edx, DWORD PTR [ecx+208]
 	push	ebx
@@ -10008,14 +10020,14 @@ _TEXT	SEGMENT
 	mov	eax, edi
 $LL7@GetSimulat:
 
-; 3405 : 	{
-; 3406 : 		iTotalFollowers += religionIt->m_iFollowers;
+; 3427 : 	{
+; 3428 : 		iTotalFollowers += religionIt->m_iFollowers;
 
 	mov	ecx, DWORD PTR [edx+8]
 	add	ebp, ecx
 
-; 3407 : 
-; 3408 : 		if(religionIt->m_iFollowers > iMostFollowers || religionIt->m_iFollowers == iMostFollowers && religionIt->m_iPressure > iMostFollowerPressure)
+; 3429 : 
+; 3430 : 		if(religionIt->m_iFollowers > iMostFollowers || religionIt->m_iFollowers == iMostFollowers && religionIt->m_iPressure > iMostFollowerPressure)
 
 	cmp	ecx, edi
 	jg	SHORT $LN3@GetSimulat
@@ -10024,13 +10036,13 @@ $LL7@GetSimulat:
 	jle	SHORT $LN6@GetSimulat
 $LN3@GetSimulat:
 
-; 3409 : 		{
-; 3410 : 			iMostFollowers = religionIt->m_iFollowers;
-; 3411 : 			iMostFollowerPressure = religionIt->m_iPressure;
+; 3431 : 		{
+; 3432 : 			iMostFollowers = religionIt->m_iFollowers;
+; 3433 : 			iMostFollowerPressure = religionIt->m_iPressure;
 
 	mov	ebx, DWORD PTR [edx+12]
 
-; 3412 : 			eMostFollowers = religionIt->m_eReligion;
+; 3434 : 			eMostFollowers = religionIt->m_eReligion;
 
 	mov	eax, DWORD PTR [edx]
 	mov	edi, ecx
@@ -10039,27 +10051,27 @@ $LN6@GetSimulat:
 	cmp	edx, esi
 	jne	SHORT $LL7@GetSimulat
 
-; 3394 : 	int iTotalFollowers = 0;
-; 3395 : 	int iMostFollowerPressure = 0;
-; 3396 : 	int iMostFollowers = -1;
-; 3397 : 	ReligionTypes eMostFollowers = NO_RELIGION;
-; 3398 : #ifdef AUI_CONSTIFY
-; 3399 : 	ReligionInCityList::const_iterator religionIt;
-; 3400 : #else
-; 3401 : 	ReligionInCityList::iterator religionIt;
-; 3402 : #endif
-; 3403 : 
-; 3404 : 	for(religionIt = m_SimulatedStatus.begin(); religionIt != m_SimulatedStatus.end(); ++religionIt)
+; 3416 : 	int iTotalFollowers = 0;
+; 3417 : 	int iMostFollowerPressure = 0;
+; 3418 : 	int iMostFollowers = -1;
+; 3419 : 	ReligionTypes eMostFollowers = NO_RELIGION;
+; 3420 : #ifdef AUI_CONSTIFY
+; 3421 : 	ReligionInCityList::const_iterator religionIt;
+; 3422 : #else
+; 3423 : 	ReligionInCityList::iterator religionIt;
+; 3424 : #endif
+; 3425 : 
+; 3426 : 	for(religionIt = m_SimulatedStatus.begin(); religionIt != m_SimulatedStatus.end(); ++religionIt)
 
 	jmp	SHORT $LN5@GetSimulat
 $LN16@GetSimulat:
 	mov	eax, edi
 $LN5@GetSimulat:
 
-; 3413 : 		}
-; 3414 : 	}
-; 3415 : 
-; 3416 : 	if ((iMostFollowers * 2) >= iTotalFollowers)
+; 3435 : 		}
+; 3436 : 	}
+; 3437 : 
+; 3438 : 	if ((iMostFollowers * 2) >= iTotalFollowers)
 
 	lea	edx, DWORD PTR [edi+edi]
 	pop	edi
@@ -10068,21 +10080,21 @@ $LN5@GetSimulat:
 	pop	ebp
 	pop	ebx
 
-; 3417 : 	{
-; 3418 : 		return eMostFollowers;
+; 3439 : 	{
+; 3440 : 		return eMostFollowers;
 
 	jge	SHORT $LN1@GetSimulat
 
-; 3419 : 	}
-; 3420 : 	else
-; 3421 : 	{
-; 3422 : 		return NO_RELIGION;
+; 3441 : 	}
+; 3442 : 	else
+; 3443 : 	{
+; 3444 : 		return NO_RELIGION;
 
 	or	eax, -1
 $LN1@GetSimulat:
 
-; 3423 : 	}
-; 3424 : }
+; 3445 : 	}
+; 3446 : }
 
 	pop	ecx
 	ret	0
@@ -10093,55 +10105,55 @@ PUBLIC	?GetSecondaryReligion@CvCityReligions@@QAE?AW4ReligionTypes@@XZ ; CvCityR
 ;	COMDAT ?GetSecondaryReligion@CvCityReligions@@QAE?AW4ReligionTypes@@XZ
 _TEXT	SEGMENT
 _eMajority$ = -8					; size = 4
-$T233162 = -4						; size = 4
+$T233219 = -4						; size = 4
 ?GetSecondaryReligion@CvCityReligions@@QAE?AW4ReligionTypes@@XZ PROC ; CvCityReligions::GetSecondaryReligion, COMDAT
 ; _this$ = ecx
 
-; 3432 : {
+; 3454 : {
 
 	sub	esp, 8
 	push	ebx
 	push	ebp
 	push	esi
 
-; 3433 : 	int iMostFollowers = -1;
+; 3455 : 	int iMostFollowers = -1;
 
 	or	ebx, -1
 	mov	esi, ecx
 
-; 3434 : 	int iMostPressure = -1;
+; 3456 : 	int iMostPressure = -1;
 
 	or	ebp, ebx
 
-; 3435 : 	ReligionTypes eMajority = GetReligiousMajority();
+; 3457 : 	ReligionTypes eMajority = GetReligiousMajority();
 
 	call	?GetReligiousMajority@CvCityReligions@@QAE?AW4ReligionTypes@@XZ ; CvCityReligions::GetReligiousMajority
 	mov	edx, eax
 
-; 3436 : 	ReligionTypes eMostFollowers = NO_RELIGION;
+; 3458 : 	ReligionTypes eMostFollowers = NO_RELIGION;
 
 	or	eax, ebx
 	mov	DWORD PTR _eMajority$[esp+20], edx
 
-; 3437 : #ifdef AUI_CONSTIFY
-; 3438 : 	ReligionInCityList::const_iterator religionIt;
-; 3439 : #else
-; 3440 : 	ReligionInCityList::iterator religionIt;
-; 3441 : #endif
-; 3442 : 
-; 3443 : 	if (eMajority != NO_RELIGION)
+; 3459 : #ifdef AUI_CONSTIFY
+; 3460 : 	ReligionInCityList::const_iterator religionIt;
+; 3461 : #else
+; 3462 : 	ReligionInCityList::iterator religionIt;
+; 3463 : #endif
+; 3464 : 
+; 3465 : 	if (eMajority != NO_RELIGION)
 
 	cmp	edx, ebx
 	je	SHORT $LN5@GetSeconda
 
-; 3444 : 	{	
-; 3445 : 		for(religionIt = m_ReligionStatus.begin(); religionIt != m_ReligionStatus.end(); ++religionIt)
+; 3466 : 	{	
+; 3467 : 		for(religionIt = m_ReligionStatus.begin(); religionIt != m_ReligionStatus.end(); ++religionIt)
 
 	mov	ecx, DWORD PTR [esi]
 	mov	esi, DWORD PTR [esi+4]
 	lea	esi, DWORD PTR [esi+esi*2]
 	lea	esi, DWORD PTR [ecx+esi*8]
-	mov	DWORD PTR $T233162[esp+20], esi
+	mov	DWORD PTR $T233219[esp+20], esi
 	cmp	ecx, esi
 	je	SHORT $LN5@GetSeconda
 	push	edi
@@ -10150,8 +10162,8 @@ $LL20@GetSeconda:
 	mov	edx, DWORD PTR _eMajority$[esp+24]
 $LN7@GetSeconda:
 
-; 3446 : 		{
-; 3447 : 			if (religionIt->m_eReligion != eMajority && religionIt->m_eReligion > RELIGION_PANTHEON && religionIt->m_iFollowers > 0)
+; 3468 : 		{
+; 3469 : 			if (religionIt->m_eReligion != eMajority && religionIt->m_eReligion > RELIGION_PANTHEON && religionIt->m_iFollowers > 0)
 
 	mov	esi, DWORD PTR [ecx]
 	cmp	esi, edx
@@ -10162,43 +10174,43 @@ $LN7@GetSeconda:
 	test	edx, edx
 	jle	SHORT $LN6@GetSeconda
 
-; 3448 : 			{
-; 3449 : 				if (religionIt->m_iFollowers > iMostFollowers)
+; 3470 : 			{
+; 3471 : 				if (religionIt->m_iFollowers > iMostFollowers)
 
 	cmp	edx, ebx
 	jle	SHORT $LN21@GetSeconda
 
-; 3450 : 				{
-; 3451 : 					iMostFollowers = religionIt->m_iFollowers;
-; 3452 : 					eMostFollowers = religionIt->m_eReligion;
-; 3453 : 					iMostPressure = religionIt->m_iPressure;
+; 3472 : 				{
+; 3473 : 					iMostFollowers = religionIt->m_iFollowers;
+; 3474 : 					eMostFollowers = religionIt->m_eReligion;
+; 3475 : 					iMostPressure = religionIt->m_iPressure;
 
 	mov	ebp, DWORD PTR [ecx+12]
 	jmp	SHORT $LN22@GetSeconda
 $LN21@GetSeconda:
 
-; 3454 : 				}
-; 3455 : 				else if (religionIt->m_iFollowers == iMostFollowers && religionIt->m_iPressure > iMostPressure)
+; 3476 : 				}
+; 3477 : 				else if (religionIt->m_iFollowers == iMostFollowers && religionIt->m_iPressure > iMostPressure)
 
 	jne	SHORT $LN6@GetSeconda
 	mov	edi, DWORD PTR [ecx+12]
 	cmp	edi, ebp
 	jle	SHORT $LN6@GetSeconda
 
-; 3459 : 					iMostPressure = religionIt->m_iPressure;
+; 3481 : 					iMostPressure = religionIt->m_iPressure;
 
 	mov	ebp, edi
 $LN22@GetSeconda:
 
-; 3456 : 				{
-; 3457 : 					iMostFollowers = religionIt->m_iFollowers;
-; 3458 : 					eMostFollowers = religionIt->m_eReligion;
+; 3478 : 				{
+; 3479 : 					iMostFollowers = religionIt->m_iFollowers;
+; 3480 : 					eMostFollowers = religionIt->m_eReligion;
 
 	mov	eax, esi
 	mov	ebx, edx
 $LN6@GetSeconda:
 	add	ecx, 24					; 00000018H
-	cmp	ecx, DWORD PTR $T233162[esp+24]
+	cmp	ecx, DWORD PTR $T233219[esp+24]
 	jne	SHORT $LL20@GetSeconda
 	pop	edi
 $LN5@GetSeconda:
@@ -10206,13 +10218,13 @@ $LN5@GetSeconda:
 	pop	ebp
 	pop	ebx
 
-; 3460 : 				}
-; 3461 : 			}
-; 3462 : 		}
-; 3463 : 	}
-; 3464 : 
-; 3465 : 	return eMostFollowers;
-; 3466 : }
+; 3482 : 				}
+; 3483 : 			}
+; 3484 : 		}
+; 3485 : 	}
+; 3486 : 
+; 3487 : 	return eMostFollowers;
+; 3488 : }
 
 	add	esp, 8
 	ret	0
@@ -10226,14 +10238,14 @@ _eReligion$ = 8						; size = 4
 ?GetFollowersOtherReligions@CvCityReligions@@QAEHW4ReligionTypes@@@Z PROC ; CvCityReligions::GetFollowersOtherReligions, COMDAT
 ; _this$ = ecx
 
-; 3510 : 	int iOtherFollowers = 0;
-; 3511 : #ifdef AUI_CONSTIFY
-; 3512 : 	ReligionInCityList::const_iterator religionIt;
-; 3513 : #else
-; 3514 : 	ReligionInCityList::iterator religionIt;
-; 3515 : #endif
-; 3516 : 
-; 3517 : 	for(religionIt = m_ReligionStatus.begin(); religionIt != m_ReligionStatus.end(); ++religionIt)
+; 3532 : 	int iOtherFollowers = 0;
+; 3533 : #ifdef AUI_CONSTIFY
+; 3534 : 	ReligionInCityList::const_iterator religionIt;
+; 3535 : #else
+; 3536 : 	ReligionInCityList::iterator religionIt;
+; 3537 : #endif
+; 3538 : 
+; 3539 : 	for(religionIt = m_ReligionStatus.begin(); religionIt != m_ReligionStatus.end(); ++religionIt)
 
 	mov	edx, DWORD PTR [ecx]
 	mov	ecx, DWORD PTR [ecx+4]
@@ -10247,8 +10259,8 @@ _eReligion$ = 8						; size = 4
 	mov	edi, DWORD PTR _eReligion$[esp+4]
 $LL4@GetFollowe:
 
-; 3518 : 	{
-; 3519 : 		if (religionIt->m_eReligion > RELIGION_PANTHEON && religionIt->m_eReligion != eReligion)
+; 3540 : 	{
+; 3541 : 		if (religionIt->m_eReligion > RELIGION_PANTHEON && religionIt->m_eReligion != eReligion)
 
 	mov	ecx, DWORD PTR [edx]
 	test	ecx, ecx
@@ -10256,20 +10268,20 @@ $LL4@GetFollowe:
 	cmp	ecx, edi
 	je	SHORT $LN3@GetFollowe
 
-; 3520 : 		{
-; 3521 : 			iOtherFollowers += religionIt->m_iFollowers;
+; 3542 : 		{
+; 3543 : 			iOtherFollowers += religionIt->m_iFollowers;
 
 	add	eax, DWORD PTR [edx+8]
 $LN3@GetFollowe:
 
-; 3510 : 	int iOtherFollowers = 0;
-; 3511 : #ifdef AUI_CONSTIFY
-; 3512 : 	ReligionInCityList::const_iterator religionIt;
-; 3513 : #else
-; 3514 : 	ReligionInCityList::iterator religionIt;
-; 3515 : #endif
-; 3516 : 
-; 3517 : 	for(religionIt = m_ReligionStatus.begin(); religionIt != m_ReligionStatus.end(); ++religionIt)
+; 3532 : 	int iOtherFollowers = 0;
+; 3533 : #ifdef AUI_CONSTIFY
+; 3534 : 	ReligionInCityList::const_iterator religionIt;
+; 3535 : #else
+; 3536 : 	ReligionInCityList::iterator religionIt;
+; 3537 : #endif
+; 3538 : 
+; 3539 : 	for(religionIt = m_ReligionStatus.begin(); religionIt != m_ReligionStatus.end(); ++religionIt)
 
 	add	edx, 24					; 00000018H
 	cmp	edx, esi
@@ -10278,11 +10290,11 @@ $LN3@GetFollowe:
 $LN2@GetFollowe:
 	pop	esi
 
-; 3522 : 		}
-; 3523 : 	}
-; 3524 : 
-; 3525 : 	return iOtherFollowers;
-; 3526 : }
+; 3544 : 		}
+; 3545 : 	}
+; 3546 : 
+; 3547 : 	return iOtherFollowers;
+; 3548 : }
 
 	ret	4
 ?GetFollowersOtherReligions@CvCityReligions@@QAEHW4ReligionTypes@@@Z ENDP ; CvCityReligions::GetFollowersOtherReligions
@@ -10294,17 +10306,17 @@ _TEXT	SEGMENT
 ?GetTotalPressure@CvCityReligions@@QAEHXZ PROC		; CvCityReligions::GetTotalPressure, COMDAT
 ; _this$ = ecx
 
-; 3535 : 	int iTotalPressure = 0;
-; 3536 : 
-; 3537 : #ifdef AUI_CONSTIFY
-; 3538 : 	ReligionInCityList::const_iterator it;
-; 3539 : #else
-; 3540 : 	ReligionInCityList::iterator it;
-; 3541 : #endif
-; 3542 : #ifdef AUI_ITERATOR_POSTFIX_INCREMENT_OPTIMIZATIONS
-; 3543 : 	for (it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); ++it)
-; 3544 : #else
-; 3545 : 	for(it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); it++)
+; 3557 : 	int iTotalPressure = 0;
+; 3558 : 
+; 3559 : #ifdef AUI_CONSTIFY
+; 3560 : 	ReligionInCityList::const_iterator it;
+; 3561 : #else
+; 3562 : 	ReligionInCityList::iterator it;
+; 3563 : #endif
+; 3564 : #ifdef AUI_ITERATOR_POSTFIX_INCREMENT_OPTIMIZATIONS
+; 3565 : 	for (it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); ++it)
+; 3566 : #else
+; 3567 : 	for(it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); it++)
 
 	mov	edx, DWORD PTR [ecx]
 	mov	ecx, DWORD PTR [ecx+4]
@@ -10315,9 +10327,9 @@ _TEXT	SEGMENT
 	je	SHORT $LN1@GetTotalPr
 $LL3@GetTotalPr:
 
-; 3546 : #endif
-; 3547 : 	{
-; 3548 : 		iTotalPressure += it->m_iPressure;
+; 3568 : #endif
+; 3569 : 	{
+; 3570 : 		iTotalPressure += it->m_iPressure;
 
 	add	eax, DWORD PTR [edx+12]
 	add	edx, 24					; 00000018H
@@ -10325,10 +10337,10 @@ $LL3@GetTotalPr:
 	jne	SHORT $LL3@GetTotalPr
 $LN1@GetTotalPr:
 
-; 3549 : 	}
-; 3550 : 
-; 3551 : 	return iTotalPressure;
-; 3552 : }
+; 3571 : 	}
+; 3572 : 
+; 3573 : 	return iTotalPressure;
+; 3574 : }
 
 	ret	0
 ?GetTotalPressure@CvCityReligions@@QAEHXZ ENDP		; CvCityReligions::GetTotalPressure
@@ -10341,12 +10353,12 @@ _eReligion$ = 8						; size = 4
 ?GetPressure@CvCityReligions@@QAEHW4ReligionTypes@@@Z PROC ; CvCityReligions::GetPressure, COMDAT
 ; _this$ = ecx
 
-; 3562 : 	ReligionInCityList::iterator it;
-; 3563 : #endif
-; 3564 : #ifdef AUI_ITERATOR_POSTFIX_INCREMENT_OPTIMIZATIONS
-; 3565 : 	for (it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); ++it)
-; 3566 : #else
-; 3567 : 	for(it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); it++)
+; 3584 : 	ReligionInCityList::iterator it;
+; 3585 : #endif
+; 3586 : #ifdef AUI_ITERATOR_POSTFIX_INCREMENT_OPTIMIZATIONS
+; 3587 : 	for (it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); ++it)
+; 3588 : #else
+; 3589 : 	for(it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); it++)
 
 	mov	eax, DWORD PTR [ecx]
 	mov	ecx, DWORD PTR [ecx+4]
@@ -10357,9 +10369,9 @@ _eReligion$ = 8						; size = 4
 	mov	edx, DWORD PTR _eReligion$[esp-4]
 $LL4@GetPressur:
 
-; 3568 : #endif
-; 3569 : 	{
-; 3570 : 		if(it->m_eReligion == eReligion)
+; 3590 : #endif
+; 3591 : 	{
+; 3592 : 		if(it->m_eReligion == eReligion)
 
 	cmp	DWORD PTR [eax], edx
 	je	SHORT $LN12@GetPressur
@@ -10368,24 +10380,24 @@ $LL4@GetPressur:
 	jne	SHORT $LL4@GetPressur
 $LN2@GetPressur:
 
-; 3573 : 		}
-; 3574 : 	}
-; 3575 : 
-; 3576 : 	return 0;
+; 3595 : 		}
+; 3596 : 	}
+; 3597 : 
+; 3598 : 	return 0;
 
 	xor	eax, eax
 
-; 3577 : }
+; 3599 : }
 
 	ret	4
 $LN12@GetPressur:
 
-; 3571 : 		{
-; 3572 : 			return it->m_iPressure;
+; 3593 : 		{
+; 3594 : 			return it->m_iPressure;
 
 	mov	eax, DWORD PTR [eax+12]
 
-; 3577 : }
+; 3599 : }
 
 	ret	4
 ?GetPressure@CvCityReligions@@QAEHW4ReligionTypes@@@Z ENDP ; CvCityReligions::GetPressure
@@ -10398,12 +10410,12 @@ _eReligion$ = 8						; size = 4
 ?GetNumTradeRouteConnections@CvCityReligions@@QAEHW4ReligionTypes@@@Z PROC ; CvCityReligions::GetNumTradeRouteConnections, COMDAT
 ; _this$ = ecx
 
-; 3637 : 	ReligionInCityList::iterator it;
-; 3638 : #endif
-; 3639 : #ifdef AUI_ITERATOR_POSTFIX_INCREMENT_OPTIMIZATIONS
-; 3640 : 	for (it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); ++it)
-; 3641 : #else
-; 3642 : 	for(it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); it++)
+; 3659 : 	ReligionInCityList::iterator it;
+; 3660 : #endif
+; 3661 : #ifdef AUI_ITERATOR_POSTFIX_INCREMENT_OPTIMIZATIONS
+; 3662 : 	for (it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); ++it)
+; 3663 : #else
+; 3664 : 	for(it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); it++)
 
 	mov	eax, DWORD PTR [ecx]
 	mov	ecx, DWORD PTR [ecx+4]
@@ -10414,9 +10426,9 @@ _eReligion$ = 8						; size = 4
 	mov	edx, DWORD PTR _eReligion$[esp-4]
 $LL4@GetNumTrad:
 
-; 3643 : #endif
-; 3644 : 	{
-; 3645 : 		if(it->m_eReligion == eReligion)
+; 3665 : #endif
+; 3666 : 	{
+; 3667 : 		if(it->m_eReligion == eReligion)
 
 	cmp	DWORD PTR [eax], edx
 	je	SHORT $LN12@GetNumTrad
@@ -10425,24 +10437,24 @@ $LL4@GetNumTrad:
 	jne	SHORT $LL4@GetNumTrad
 $LN2@GetNumTrad:
 
-; 3648 : 		}
-; 3649 : 	}
-; 3650 : 
-; 3651 : 	return 0;
+; 3670 : 		}
+; 3671 : 	}
+; 3672 : 
+; 3673 : 	return 0;
 
 	xor	eax, eax
 
-; 3652 : }
+; 3674 : }
 
 	ret	4
 $LN12@GetNumTrad:
 
-; 3646 : 		{
-; 3647 : 			return it->m_iNumTradeRoutesApplyingPressure;
+; 3668 : 		{
+; 3669 : 			return it->m_iNumTradeRoutesApplyingPressure;
 
 	mov	eax, DWORD PTR [eax+16]
 
-; 3652 : }
+; 3674 : }
 
 	ret	4
 ?GetNumTradeRouteConnections@CvCityReligions@@QAEHW4ReligionTypes@@@Z ENDP ; CvCityReligions::GetNumTradeRouteConnections
@@ -10456,11 +10468,11 @@ _iNum$ = 12						; size = 4
 ?IncrementNumTradeRouteConnections@CvCityReligions@@QAEXW4ReligionTypes@@H@Z PROC ; CvCityReligions::IncrementNumTradeRouteConnections, COMDAT
 ; _this$ = ecx
 
-; 4200 : 	ReligionInCityList::iterator it;
-; 4201 : #ifdef AUI_ITERATOR_POSTFIX_INCREMENT_OPTIMIZATIONS
-; 4202 : 	for (it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); ++it)
-; 4203 : #else
-; 4204 : 	for(it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); it++)
+; 4222 : 	ReligionInCityList::iterator it;
+; 4223 : #ifdef AUI_ITERATOR_POSTFIX_INCREMENT_OPTIMIZATIONS
+; 4224 : 	for (it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); ++it)
+; 4225 : #else
+; 4226 : 	for(it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); it++)
 
 	mov	eax, DWORD PTR [ecx]
 	mov	ecx, DWORD PTR [ecx+4]
@@ -10471,9 +10483,9 @@ _iNum$ = 12						; size = 4
 	mov	edx, DWORD PTR _eReligion$[esp-4]
 $LL4@IncrementN:
 
-; 4205 : #endif
-; 4206 : 	{
-; 4207 : 		if(it->m_eReligion == eReligion)
+; 4227 : #endif
+; 4228 : 	{
+; 4229 : 		if(it->m_eReligion == eReligion)
 
 	cmp	DWORD PTR [eax], edx
 	je	SHORT $LN12@IncrementN
@@ -10481,25 +10493,25 @@ $LL4@IncrementN:
 	cmp	eax, ecx
 	jne	SHORT $LL4@IncrementN
 
-; 4210 : 			break;
-; 4211 : 		}
-; 4212 : 	}
-; 4213 : }
+; 4232 : 			break;
+; 4233 : 		}
+; 4234 : 	}
+; 4235 : }
 
 	ret	8
 $LN12@IncrementN:
 
-; 4208 : 		{
-; 4209 : 			it->m_iNumTradeRoutesApplyingPressure += iNum;
+; 4230 : 		{
+; 4231 : 			it->m_iNumTradeRoutesApplyingPressure += iNum;
 
 	mov	edx, DWORD PTR _iNum$[esp-4]
 	add	DWORD PTR [eax+16], edx
 $LN2@IncrementN:
 
-; 4210 : 			break;
-; 4211 : 		}
-; 4212 : 	}
-; 4213 : }
+; 4232 : 			break;
+; 4233 : 		}
+; 4234 : 	}
+; 4235 : }
 
 	ret	8
 ?IncrementNumTradeRouteConnections@CvCityReligions@@QAEXW4ReligionTypes@@H@Z ENDP ; CvCityReligions::IncrementNumTradeRouteConnections
@@ -10511,11 +10523,11 @@ _TEXT	SEGMENT
 ?ResetNumTradeRoutePressure@CvCityReligions@@QAEXXZ PROC ; CvCityReligions::ResetNumTradeRoutePressure, COMDAT
 ; _this$ = ecx
 
-; 4246 : 	ReligionInCityList::iterator it;
-; 4247 : #ifdef AUI_ITERATOR_POSTFIX_INCREMENT_OPTIMIZATIONS
-; 4248 : 	for (it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); ++it)
-; 4249 : #else
-; 4250 : 	for(it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); it++)
+; 4268 : 	ReligionInCityList::iterator it;
+; 4269 : #ifdef AUI_ITERATOR_POSTFIX_INCREMENT_OPTIMIZATIONS
+; 4270 : 	for (it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); ++it)
+; 4271 : #else
+; 4272 : 	for(it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); it++)
 
 	mov	edx, DWORD PTR [ecx+4]
 	mov	eax, DWORD PTR [ecx]
@@ -10526,9 +10538,9 @@ _TEXT	SEGMENT
 	push	edi
 $LL3@ResetNumTr:
 
-; 4251 : #endif
-; 4252 : 	{
-; 4253 : 		it->m_iNumTradeRoutesApplyingPressure = 0;
+; 4273 : #endif
+; 4274 : 	{
+; 4275 : 		it->m_iNumTradeRoutesApplyingPressure = 0;
 
 	mov	DWORD PTR [eax+16], 0
 	mov	edx, DWORD PTR [ecx+4]
@@ -10541,8 +10553,8 @@ $LL3@ResetNumTr:
 	pop	edi
 $LN1@ResetNumTr:
 
-; 4254 : 	}
-; 4255 : }
+; 4276 : 	}
+; 4277 : }
 
 	ret	0
 ?ResetNumTradeRoutePressure@CvCityReligions@@QAEXXZ ENDP ; CvCityReligions::ResetNumTradeRoutePressure
@@ -10556,7 +10568,7 @@ tv157 = -4						; size = 4
 ?SimulateFollowers@CvCityReligions@@AAEXXZ PROC		; CvCityReligions::SimulateFollowers, COMDAT
 ; _this$ = ecx
 
-; 4353 : {
+; 4375 : {
 
 	push	ecx
 	push	ebx
@@ -10564,21 +10576,21 @@ tv157 = -4						; size = 4
 	push	esi
 	mov	esi, ecx
 
-; 4354 : 	int iUnassignedFollowers = m_pCity->getPopulation();
+; 4376 : 	int iUnassignedFollowers = m_pCity->getPopulation();
 
 	mov	ecx, DWORD PTR [esi+416]
 	push	edi
 	call	?getPopulation@CvCity@@QBEHXZ		; CvCity::getPopulation
 
-; 4355 : 	int iPressurePerFollower;
-; 4356 : 
-; 4357 : 	// Find total pressure
-; 4358 : 	int iTotalPressure = 0;
-; 4359 : 	ReligionInCityList::iterator it;
-; 4360 : #ifdef AUI_ITERATOR_POSTFIX_INCREMENT_OPTIMIZATIONS
-; 4361 : 	for (it = m_SimulatedStatus.begin(); it != m_SimulatedStatus.end(); ++it)
-; 4362 : #else
-; 4363 : 	for(it = m_SimulatedStatus.begin(); it != m_SimulatedStatus.end(); it++)
+; 4377 : 	int iPressurePerFollower;
+; 4378 : 
+; 4379 : 	// Find total pressure
+; 4380 : 	int iTotalPressure = 0;
+; 4381 : 	ReligionInCityList::iterator it;
+; 4382 : #ifdef AUI_ITERATOR_POSTFIX_INCREMENT_OPTIMIZATIONS
+; 4383 : 	for (it = m_SimulatedStatus.begin(); it != m_SimulatedStatus.end(); ++it)
+; 4384 : #else
+; 4385 : 	for(it = m_SimulatedStatus.begin(); it != m_SimulatedStatus.end(); it++)
 
 	mov	ecx, DWORD PTR [esi+208]
 	mov	edi, DWORD PTR [esi+212]
@@ -10595,41 +10607,41 @@ tv157 = -4						; size = 4
 	lea	edi, DWORD PTR [ebx+edi*8]
 $LL16@SimulateFo:
 
-; 4364 : #endif
-; 4365 : 	{
-; 4366 : 		iTotalPressure += it->m_iPressure;
+; 4386 : #endif
+; 4387 : 	{
+; 4388 : 		iTotalPressure += it->m_iPressure;
 
 	add	eax, DWORD PTR [edx+12]
 	add	edx, 24					; 00000018H
 	cmp	edx, edi
 	jne	SHORT $LL16@SimulateFo
 
-; 4367 : 	}
-; 4368 : 
-; 4369 : 	// safety check
-; 4370 : 	if (iTotalPressure == 0 || iUnassignedFollowers == 0)
+; 4389 : 	}
+; 4390 : 
+; 4391 : 	// safety check
+; 4392 : 	if (iTotalPressure == 0 || iUnassignedFollowers == 0)
 
 	test	eax, eax
 	je	$LN12@SimulateFo
 	test	ebp, ebp
 	je	$LN12@SimulateFo
 
-; 4371 : 	{
-; 4372 : 		CvAssertMsg(false, "Internal religion data error. Send save to Ed");
-; 4373 : 		return;
-; 4374 : 	}
-; 4375 : 
-; 4376 : 	iPressurePerFollower = iTotalPressure / iUnassignedFollowers;
+; 4393 : 	{
+; 4394 : 		CvAssertMsg(false, "Internal religion data error. Send save to Ed");
+; 4395 : 		return;
+; 4396 : 	}
+; 4397 : 
+; 4398 : 	iPressurePerFollower = iTotalPressure / iUnassignedFollowers;
 
 	cdq
 	idiv	ebp
 
-; 4377 : 
-; 4378 : 	// Loop through each religion
-; 4379 : #ifdef AUI_ITERATOR_POSTFIX_INCREMENT_OPTIMIZATIONS
-; 4380 : 	for (it = m_SimulatedStatus.begin(); it != m_SimulatedStatus.end(); ++it)
-; 4381 : #else
-; 4382 : 	for(it = m_SimulatedStatus.begin(); it != m_SimulatedStatus.end(); it++)
+; 4399 : 
+; 4400 : 	// Loop through each religion
+; 4401 : #ifdef AUI_ITERATOR_POSTFIX_INCREMENT_OPTIMIZATIONS
+; 4402 : 	for (it = m_SimulatedStatus.begin(); it != m_SimulatedStatus.end(); ++it)
+; 4403 : #else
+; 4404 : 	for(it = m_SimulatedStatus.begin(); it != m_SimulatedStatus.end(); it++)
 
 	mov	edx, ecx
 	mov	ebx, eax
@@ -10640,9 +10652,9 @@ $LL16@SimulateFo:
 	je	SHORT $LN9@SimulateFo
 $LL11@SimulateFo:
 
-; 4383 : #endif
-; 4384 : 	{
-; 4385 : 		it->m_iFollowers = it->m_iPressure / iPressurePerFollower;
+; 4405 : #endif
+; 4406 : 	{
+; 4407 : 		it->m_iFollowers = it->m_iPressure / iPressurePerFollower;
 
 	mov	edi, DWORD PTR [ecx+12]
 	mov	eax, edi
@@ -10651,11 +10663,11 @@ $LL11@SimulateFo:
 	add	ecx, 24					; 00000018H
 	mov	DWORD PTR [ecx-16], eax
 
-; 4386 : 		iUnassignedFollowers -= it->m_iFollowers;
+; 4408 : 		iUnassignedFollowers -= it->m_iFollowers;
 
 	sub	ebp, eax
 
-; 4387 : 		it->m_iTemp = it->m_iPressure - (it->m_iFollowers * iPressurePerFollower);  // Remainder
+; 4409 : 		it->m_iTemp = it->m_iPressure - (it->m_iFollowers * iPressurePerFollower);  // Remainder
 
 	imul	eax, ebx
 	sub	edi, eax
@@ -10668,10 +10680,10 @@ $LL11@SimulateFo:
 	jne	SHORT $LL11@SimulateFo
 $LN9@SimulateFo:
 
-; 4388 : 	}
-; 4389 : 
-; 4390 : 	// Assign out the remainder
-; 4391 : 	for (int iI = 0; iI < iUnassignedFollowers; iI++)
+; 4410 : 	}
+; 4411 : 
+; 4412 : 	// Assign out the remainder
+; 4413 : 	for (int iI = 0; iI < iUnassignedFollowers; iI++)
 
 	test	ebp, ebp
 	jle	SHORT $LN12@SimulateFo
@@ -10680,14 +10692,14 @@ $LN9@SimulateFo:
 	npad	4
 $LL39@SimulateFo:
 
-; 4392 : 	{
-; 4393 : 		ReligionInCityList::iterator itLargestRemainder = NULL;
-; 4394 : 		int iLargestRemainder = 0;
-; 4395 : 
-; 4396 : #ifdef AUI_WARNING_FIXES
-; 4397 : 		for (it = m_SimulatedStatus.begin(); it != m_SimulatedStatus.end() && it; ++it)
-; 4398 : #else
-; 4399 : 		for (it = m_SimulatedStatus.begin(); it != m_SimulatedStatus.end(); it++)
+; 4414 : 	{
+; 4415 : 		ReligionInCityList::iterator itLargestRemainder = NULL;
+; 4416 : 		int iLargestRemainder = 0;
+; 4417 : 
+; 4418 : #ifdef AUI_WARNING_FIXES
+; 4419 : 		for (it = m_SimulatedStatus.begin(); it != m_SimulatedStatus.end() && it; ++it)
+; 4420 : #else
+; 4421 : 		for (it = m_SimulatedStatus.begin(); it != m_SimulatedStatus.end(); it++)
 
 	mov	eax, DWORD PTR [esi+208]
 	mov	ecx, DWORD PTR [esi+212]
@@ -10701,20 +10713,20 @@ $LL39@SimulateFo:
 	npad	4
 $LL5@SimulateFo:
 
-; 4400 : #endif
-; 4401 : 		{
-; 4402 : 			if (it->m_iTemp > iLargestRemainder)
+; 4422 : #endif
+; 4423 : 		{
+; 4424 : 			if (it->m_iTemp > iLargestRemainder)
 
 	mov	ecx, DWORD PTR [eax+20]
 	cmp	ecx, edx
 	jle	SHORT $LN4@SimulateFo
 
-; 4403 : 			{
-; 4404 : 				iLargestRemainder = it->m_iTemp;
+; 4425 : 			{
+; 4426 : 				iLargestRemainder = it->m_iTemp;
 
 	mov	edx, ecx
 
-; 4405 : 				itLargestRemainder = it;
+; 4427 : 				itLargestRemainder = it;
 
 	mov	edi, eax
 $LN4@SimulateFo:
@@ -10722,30 +10734,30 @@ $LN4@SimulateFo:
 	cmp	eax, ebx
 	jne	SHORT $LL5@SimulateFo
 
-; 4406 : 			}
-; 4407 : 		}
-; 4408 : 
-; 4409 : 		if (itLargestRemainder && iLargestRemainder > 0)
+; 4428 : 			}
+; 4429 : 		}
+; 4430 : 
+; 4431 : 		if (itLargestRemainder && iLargestRemainder > 0)
 
 	test	edi, edi
 	je	SHORT $LN7@SimulateFo
 	test	edx, edx
 	jle	SHORT $LN7@SimulateFo
 
-; 4410 : 		{
-; 4411 : 			itLargestRemainder->m_iFollowers++;
+; 4432 : 		{
+; 4433 : 			itLargestRemainder->m_iFollowers++;
 
 	add	DWORD PTR [edi+8], ebp
 
-; 4412 : 			itLargestRemainder->m_iTemp = 0;
+; 4434 : 			itLargestRemainder->m_iTemp = 0;
 
 	mov	DWORD PTR [edi+20], 0
 $LN7@SimulateFo:
 
-; 4388 : 	}
-; 4389 : 
-; 4390 : 	// Assign out the remainder
-; 4391 : 	for (int iI = 0; iI < iUnassignedFollowers; iI++)
+; 4410 : 	}
+; 4411 : 
+; 4412 : 	// Assign out the remainder
+; 4413 : 	for (int iI = 0; iI < iUnassignedFollowers; iI++)
 
 	sub	DWORD PTR tv157[esp+20], ebp
 	jne	SHORT $LL39@SimulateFo
@@ -10755,9 +10767,9 @@ $LN12@SimulateFo:
 	pop	ebp
 	pop	ebx
 
-; 4413 : 		}
-; 4414 : 	}
-; 4415 : }
+; 4435 : 		}
+; 4436 : 	}
+; 4437 : }
 
 	pop	ecx
 	ret	0
@@ -10800,20 +10812,20 @@ __unwindtable$?LogFollowersChange@CvCityReligions@@AAEXW4CvReligiousFollowChange
 xdata$x	ENDS
 ;	COMDAT ?LogFollowersChange@CvCityReligions@@AAEXW4CvReligiousFollowChangeReason@@@Z
 _TEXT	SEGMENT
-_strOutBuf$226698 = -156				; size = 28
-_strReasonString$226699 = -128				; size = 28
-_pLog$226701 = -100					; size = 4
-_temp$226700 = -96					; size = 28
-$T233284 = -68						; size = 28
-$T233283 = -68						; size = 28
-$T233282 = -68						; size = 28
-$T233281 = -40						; size = 28
+_strOutBuf$226743 = -156				; size = 28
+_strReasonString$226744 = -128				; size = 28
+_pLog$226746 = -100					; size = 4
+_temp$226745 = -96					; size = 28
+$T233341 = -68						; size = 28
+$T233340 = -68						; size = 28
+$T233339 = -68						; size = 28
+$T233338 = -40						; size = 28
 __$EHRec$ = -12						; size = 12
 _eReason$ = 8						; size = 4
 ?LogFollowersChange@CvCityReligions@@AAEXW4CvReligiousFollowChangeReason@@@Z PROC ; CvCityReligions::LogFollowersChange, COMDAT
 ; _this$ = ecx
 
-; 4642 : {
+; 4664 : {
 
 	mov	eax, DWORD PTR fs:0
 	push	-1
@@ -10824,7 +10836,7 @@ _eReason$ = 8						; size = 4
 	push	ebp
 	mov	ebp, ecx
 
-; 4643 : 	if(GC.getLogging() && GC.getAILogging())
+; 4665 : 	if(GC.getLogging() && GC.getAILogging())
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getLogging@CvGlobals@@QAE_NXZ		; CvGlobals::getLogging
@@ -10838,26 +10850,26 @@ _eReason$ = 8						; size = 4
 	push	esi
 	push	edi
 
-; 4644 : 	{
-; 4645 : 		CvString strOutBuf;
+; 4666 : 	{
+; 4667 : 		CvString strOutBuf;
 
-	lea	ecx, DWORD PTR _strOutBuf$226698[esp+172]
+	lea	ecx, DWORD PTR _strOutBuf$226743[esp+172]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 4646 : 		CvString strReasonString;
+; 4668 : 		CvString strReasonString;
 
-	lea	ecx, DWORD PTR _strReasonString$226699[esp+172]
+	lea	ecx, DWORD PTR _strReasonString$226744[esp+172]
 	mov	DWORD PTR __$EHRec$[esp+180], 0
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 4647 : 		CvString temp;
+; 4669 : 		CvString temp;
 
-	lea	ecx, DWORD PTR _temp$226700[esp+172]
+	lea	ecx, DWORD PTR _temp$226745[esp+172]
 	mov	BYTE PTR __$EHRec$[esp+180], 1
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 4648 : 		FILogFile* pLog;
-; 4649 : 		CvCityReligions* pCityRel = m_pCity->GetCityReligions();
+; 4670 : 		FILogFile* pLog;
+; 4671 : 		CvCityReligions* pCityRel = m_pCity->GetCityReligions();
 
 	mov	ecx, DWORD PTR [ebp+416]
 	mov	bl, 2
@@ -10865,13 +10877,13 @@ _eReason$ = 8						; size = 4
 	call	?GetCityReligions@CvCity@@QBEPAVCvCityReligions@@XZ ; CvCity::GetCityReligions
 	mov	edi, eax
 
-; 4650 : 
-; 4651 : 		pLog = LOGFILEMGR.GetLog(GC.getGame().GetGameReligions()->GetLogFileName(), FILogFile::kDontTimeStamp);
+; 4672 : 
+; 4673 : 		pLog = LOGFILEMGR.GetLog(GC.getGame().GetGameReligions()->GetLogFileName(), FILogFile::kDontTimeStamp);
 
 	call	?GetInstance@FILogFileMgr@@SAAAV1@XZ	; FILogFileMgr::GetInstance
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	mov	esi, eax
-	lea	eax, DWORD PTR $T233281[esp+172]
+	lea	eax, DWORD PTR $T233338[esp+172]
 	push	eax
 	call	?GetGameReligions@CvGame@@QAEPAVCvGameReligions@@XZ ; CvGame::GetGameReligions
 	mov	ecx, eax
@@ -10886,14 +10898,14 @@ _eReason$ = 8						; size = 4
 	mov	eax, DWORD PTR [edx+12]
 	mov	ecx, esi
 	call	eax
-	lea	ecx, DWORD PTR $T233281[esp+172]
-	mov	DWORD PTR _pLog$226701[esp+172], eax
+	lea	ecx, DWORD PTR $T233338[esp+172]
+	mov	DWORD PTR _pLog$226746[esp+172], eax
 	mov	BYTE PTR __$EHRec$[esp+180], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 4652 : 
-; 4653 : 		// Get the leading info for this line
-; 4654 : 		strOutBuf.Format("%03d, %d, ", GC.getGame().getElapsedGameTurns(), GC.getGame().getGameTurnYear());
+; 4674 : 
+; 4675 : 		// Get the leading info for this line
+; 4676 : 		strOutBuf.Format("%03d, %d, ", GC.getGame().getElapsedGameTurns(), GC.getGame().getGameTurnYear());
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	mov	esi, ecx
@@ -10902,35 +10914,35 @@ _eReason$ = 8						; size = 4
 	mov	ecx, esi
 	call	?getElapsedGameTurns@CvGame@@QBEHXZ	; CvGame::getElapsedGameTurns
 	push	eax
-	lea	ecx, DWORD PTR _strOutBuf$226698[esp+180]
-	push	OFFSET $SG226704
+	lea	ecx, DWORD PTR _strOutBuf$226743[esp+180]
+	push	OFFSET $SG226749
 	push	ecx
 	call	?Format@CvString@@QAAXPBDZZ		; CvString::Format
 
-; 4655 : 		strOutBuf += m_pCity->getName();
+; 4677 : 		strOutBuf += m_pCity->getName();
 
 	mov	ecx, DWORD PTR [ebp+416]
 	add	esp, 16					; 00000010H
-	lea	edx, DWORD PTR $T233282[esp+172]
+	lea	edx, DWORD PTR $T233339[esp+172]
 	push	edx
 	call	?getName@CvCity@@QBE?BVCvString@@XZ	; CvCity::getName
 	push	eax
-	lea	ecx, DWORD PTR _strOutBuf$226698[esp+176]
+	lea	ecx, DWORD PTR _strOutBuf$226743[esp+176]
 	mov	BYTE PTR __$EHRec$[esp+184], 4
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T233282[esp+172]
+	lea	ecx, DWORD PTR $T233339[esp+172]
 	mov	BYTE PTR __$EHRec$[esp+180], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 4656 : 		strOutBuf += ", ";
+; 4678 : 		strOutBuf += ", ";
 
-	push	OFFSET $SG226706
-	lea	ecx, DWORD PTR _strOutBuf$226698[esp+176]
+	push	OFFSET $SG226751
+	lea	ecx, DWORD PTR _strOutBuf$226743[esp+176]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
-; 4657 : 
-; 4658 : 		// Add a reason string
-; 4659 : 		switch(eReason)
+; 4679 : 
+; 4680 : 		// Add a reason string
+; 4681 : 		switch(eReason)
 
 	mov	eax, DWORD PTR _eReason$[esp+168]
 	cmp	eax, 10					; 0000000aH
@@ -10938,154 +10950,154 @@ _eReason$ = 8						; size = 4
 	jmp	DWORD PTR $LN87@LogFollowe[eax*4]
 $LN17@LogFollowe:
 
-; 4660 : 		{
-; 4661 : 		case FOLLOWER_CHANGE_ADJACENT_PRESSURE:
-; 4662 : 			strReasonString = "Adjacent city pressure";
+; 4682 : 		{
+; 4683 : 		case FOLLOWER_CHANGE_ADJACENT_PRESSURE:
+; 4684 : 			strReasonString = "Adjacent city pressure";
 
-	push	OFFSET $SG226712
+	push	OFFSET $SG226757
 
-; 4663 : 			break;
+; 4685 : 			break;
 
 	jmp	SHORT $LN86@LogFollowe
 $LN16@LogFollowe:
 
-; 4664 : 		case FOLLOWER_CHANGE_HOLY_CITY:
-; 4665 : 			strReasonString = "Holy city pressure";
+; 4686 : 		case FOLLOWER_CHANGE_HOLY_CITY:
+; 4687 : 			strReasonString = "Holy city pressure";
 
-	push	OFFSET $SG226714
+	push	OFFSET $SG226759
 
-; 4666 : 			break;
+; 4688 : 			break;
 
 	jmp	SHORT $LN86@LogFollowe
 $LN15@LogFollowe:
 
-; 4667 : 		case FOLLOWER_CHANGE_POP_CHANGE:
-; 4668 : 			strReasonString = "Population change";
+; 4689 : 		case FOLLOWER_CHANGE_POP_CHANGE:
+; 4690 : 			strReasonString = "Population change";
 
-	push	OFFSET $SG226716
+	push	OFFSET $SG226761
 
-; 4669 : 			break;
+; 4691 : 			break;
 
 	jmp	SHORT $LN86@LogFollowe
 $LN14@LogFollowe:
 
-; 4670 : 		case FOLLOWER_CHANGE_RELIGION_FOUNDED:
-; 4671 : 			strReasonString = "Religion founded";
+; 4692 : 		case FOLLOWER_CHANGE_RELIGION_FOUNDED:
+; 4693 : 			strReasonString = "Religion founded";
 
-	push	OFFSET $SG226718
+	push	OFFSET $SG226763
 
-; 4672 : 			break;
+; 4694 : 			break;
 
 	jmp	SHORT $LN86@LogFollowe
 $LN13@LogFollowe:
 
-; 4673 : 		case FOLLOWER_CHANGE_PANTHEON_FOUNDED:
-; 4674 : 			strReasonString = "Pantheon founded";
+; 4695 : 		case FOLLOWER_CHANGE_PANTHEON_FOUNDED:
+; 4696 : 			strReasonString = "Pantheon founded";
 
-	push	OFFSET $SG226720
+	push	OFFSET $SG226765
 
-; 4675 : 			break;
+; 4697 : 			break;
 
 	jmp	SHORT $LN86@LogFollowe
 $LN12@LogFollowe:
 
-; 4676 : 		case FOLLOWER_CHANGE_CONQUEST:
-; 4677 : 			strReasonString = "City captured";
+; 4698 : 		case FOLLOWER_CHANGE_CONQUEST:
+; 4699 : 			strReasonString = "City captured";
 
-	push	OFFSET $SG226722
+	push	OFFSET $SG226767
 
-; 4678 : 			break;
+; 4700 : 			break;
 
 	jmp	SHORT $LN86@LogFollowe
 $LN11@LogFollowe:
 
-; 4679 : 		case FOLLOWER_CHANGE_MISSIONARY:
-; 4680 : 			strReasonString = "Missionary expended";
+; 4701 : 		case FOLLOWER_CHANGE_MISSIONARY:
+; 4702 : 			strReasonString = "Missionary expended";
 
-	push	OFFSET $SG226724
+	push	OFFSET $SG226769
 
-; 4681 : 			break;
+; 4703 : 			break;
 
 	jmp	SHORT $LN86@LogFollowe
 $LN10@LogFollowe:
 
-; 4682 : 		case FOLLOWER_CHANGE_PROPHET:
-; 4683 : 			strReasonString = "Prophet spreading";
+; 4704 : 		case FOLLOWER_CHANGE_PROPHET:
+; 4705 : 			strReasonString = "Prophet spreading";
 
-	push	OFFSET $SG226726
+	push	OFFSET $SG226771
 
-; 4684 : 			break;
+; 4706 : 			break;
 
 	jmp	SHORT $LN86@LogFollowe
 $LN9@LogFollowe:
 
-; 4685 : 		case FOLLOWER_CHANGE_REMOVE_HERESY:
-; 4686 : 			strReasonString = "Remove heresy";
+; 4707 : 		case FOLLOWER_CHANGE_REMOVE_HERESY:
+; 4708 : 			strReasonString = "Remove heresy";
 
-	push	OFFSET $SG226728
+	push	OFFSET $SG226773
 
-; 4687 : 			break;
+; 4709 : 			break;
 
 	jmp	SHORT $LN86@LogFollowe
 $LN8@LogFollowe:
 
-; 4688 : 		case FOLLOWER_CHANGE_SCRIPTED_CONVERSION:
-; 4689 : 			strReasonString = "Scripted conversion";
+; 4710 : 		case FOLLOWER_CHANGE_SCRIPTED_CONVERSION:
+; 4711 : 			strReasonString = "Scripted conversion";
 
-	push	OFFSET $SG226730
+	push	OFFSET $SG226775
 
-; 4690 : 			break;
+; 4712 : 			break;
 
 	jmp	SHORT $LN86@LogFollowe
 $LN7@LogFollowe:
 
-; 4691 : 		case FOLLOWER_CHANGE_SPY_PRESSURE:
-; 4692 : 			strReasonString = "Spy pressure";
+; 4713 : 		case FOLLOWER_CHANGE_SPY_PRESSURE:
+; 4714 : 			strReasonString = "Spy pressure";
 
-	push	OFFSET $SG226732
+	push	OFFSET $SG226777
 $LN86@LogFollowe:
-	lea	ecx, DWORD PTR _strReasonString$226699[esp+176]
+	lea	ecx, DWORD PTR _strReasonString$226744[esp+176]
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 $LN18@LogFollowe:
 
-; 4693 : 			break;
-; 4694 : 		}
-; 4695 : 		strOutBuf += strReasonString + ", ";
+; 4715 : 			break;
+; 4716 : 		}
+; 4717 : 		strOutBuf += strReasonString + ", ";
 
-	push	OFFSET $SG226734
-	lea	eax, DWORD PTR _strReasonString$226699[esp+176]
+	push	OFFSET $SG226779
+	lea	eax, DWORD PTR _strReasonString$226744[esp+176]
 	push	eax
-	lea	ecx, DWORD PTR $T233283[esp+180]
+	lea	ecx, DWORD PTR $T233340[esp+180]
 	push	ecx
 	call	DWORD PTR __imp_??$?HDU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@ABV10@PBD@Z
 	add	esp, 12					; 0000000cH
 	push	eax
-	lea	ecx, DWORD PTR _strOutBuf$226698[esp+176]
+	lea	ecx, DWORD PTR _strOutBuf$226743[esp+176]
 	mov	BYTE PTR __$EHRec$[esp+184], 5
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T233283[esp+172]
+	lea	ecx, DWORD PTR $T233340[esp+172]
 	mov	BYTE PTR __$EHRec$[esp+180], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 4696 : 		temp.Format("Pop: %d", m_pCity->getPopulation());
+; 4718 : 		temp.Format("Pop: %d", m_pCity->getPopulation());
 
 	mov	ecx, DWORD PTR [ebp+416]
 	call	?getPopulation@CvCity@@QBEHXZ		; CvCity::getPopulation
 	push	eax
-	lea	edx, DWORD PTR _temp$226700[esp+176]
-	push	OFFSET $SG226735
+	lea	edx, DWORD PTR _temp$226745[esp+176]
+	push	OFFSET $SG226780
 	push	edx
 	call	?Format@CvString@@QAAXPBDZZ		; CvString::Format
 	add	esp, 12					; 0000000cH
 
-; 4697 : 		strOutBuf += temp;
+; 4719 : 		strOutBuf += temp;
 
-	lea	eax, DWORD PTR _temp$226700[esp+172]
+	lea	eax, DWORD PTR _temp$226745[esp+172]
 	push	eax
-	lea	ecx, DWORD PTR _strOutBuf$226698[esp+176]
+	lea	ecx, DWORD PTR _strOutBuf$226743[esp+176]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
 
-; 4698 : 		if(pCityRel->IsReligionInCity())
+; 4720 : 		if(pCityRel->IsReligionInCity())
 
 	mov	ecx, DWORD PTR [edi+4]
 	mov	eax, DWORD PTR [edi]
@@ -11102,21 +11114,21 @@ $LL56@LogFollowe:
 	jne	SHORT $LL56@LogFollowe
 $LN84@LogFollowe:
 
-; 4730 : 		{
-; 4731 : 			strOutBuf += ", No religion in city";
+; 4752 : 		{
+; 4753 : 			strOutBuf += ", No religion in city";
 
-	push	OFFSET $SG226753
-	lea	ecx, DWORD PTR _strOutBuf$226698[esp+176]
+	push	OFFSET $SG226798
+	lea	ecx, DWORD PTR _strOutBuf$226743[esp+176]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 $LN1@LogFollowe:
 
-; 4732 : 		}
-; 4733 : 
-; 4734 : 		pLog->Msg(strOutBuf);
+; 4754 : 		}
+; 4755 : 
+; 4756 : 		pLog->Msg(strOutBuf);
 
-	lea	ecx, DWORD PTR _strOutBuf$226698[esp+172]
+	lea	ecx, DWORD PTR _strOutBuf$226743[esp+172]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
-	mov	ecx, DWORD PTR _pLog$226701[esp+172]
+	mov	ecx, DWORD PTR _pLog$226746[esp+172]
 	mov	edx, DWORD PTR [ecx]
 	push	eax
 	mov	eax, DWORD PTR [edx]
@@ -11124,15 +11136,15 @@ $LN1@LogFollowe:
 	call	eax
 	add	esp, 8
 
-; 4735 : 	}
+; 4757 : 	}
 
-	lea	ecx, DWORD PTR _temp$226700[esp+172]
+	lea	ecx, DWORD PTR _temp$226745[esp+172]
 	mov	BYTE PTR __$EHRec$[esp+180], 1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR _strReasonString$226699[esp+172]
+	lea	ecx, DWORD PTR _strReasonString$226744[esp+172]
 	mov	BYTE PTR __$EHRec$[esp+180], 0
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR _strOutBuf$226698[esp+172]
+	lea	ecx, DWORD PTR _strOutBuf$226743[esp+172]
 	mov	DWORD PTR __$EHRec$[esp+180], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 	pop	edi
@@ -11140,7 +11152,7 @@ $LN1@LogFollowe:
 	pop	ebx
 $LN20@LogFollowe:
 
-; 4736 : }
+; 4758 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+160]
 	pop	ebp
@@ -11149,167 +11161,167 @@ $LN20@LogFollowe:
 	ret	4
 $LN81@LogFollowe:
 
-; 4699 : 		{
-; 4700 : 			ReligionTypes eMajority = pCityRel->GetReligiousMajority();
+; 4721 : 		{
+; 4722 : 			ReligionTypes eMajority = pCityRel->GetReligiousMajority();
 
 	mov	ecx, edi
 	call	?GetReligiousMajority@CvCityReligions@@QAE?AW4ReligionTypes@@XZ ; CvCityReligions::GetReligiousMajority
 	mov	esi, eax
 
-; 4701 : 			if(eMajority != NO_RELIGION)
+; 4723 : 			if(eMajority != NO_RELIGION)
 
 	cmp	esi, -1
 	je	SHORT $LN82@LogFollowe
 
-; 4702 : 			{
-; 4703 : 				CvReligionEntry* pEntry = GC.getReligionInfo(eMajority);
+; 4724 : 			{
+; 4725 : 				CvReligionEntry* pEntry = GC.getReligionInfo(eMajority);
 
 	push	esi
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getReligionInfo@CvGlobals@@QAEPAVCvReligionEntry@@W4ReligionTypes@@@Z ; CvGlobals::getReligionInfo
 	mov	ebp, eax
 
-; 4704 : 				if(pEntry)
+; 4726 : 				if(pEntry)
 
 	test	ebp, ebp
 	je	SHORT $LN82@LogFollowe
 
-; 4705 : 				{
-; 4706 : 					strOutBuf += ", Majority: ";
+; 4727 : 				{
+; 4728 : 					strOutBuf += ", Majority: ";
 
-	push	OFFSET $SG226741
-	lea	ecx, DWORD PTR _strOutBuf$226698[esp+176]
+	push	OFFSET $SG226786
+	lea	ecx, DWORD PTR _strOutBuf$226743[esp+176]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
-; 4707 : 					strOutBuf += pEntry->GetDescription();
+; 4729 : 					strOutBuf += pEntry->GetDescription();
 
 	lea	ecx, DWORD PTR [ebp+36]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
-	lea	ecx, DWORD PTR _strOutBuf$226698[esp+176]
+	lea	ecx, DWORD PTR _strOutBuf$226743[esp+176]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
-; 4708 : 					temp.Format("(%d)", pCityRel->GetNumFollowers(eMajority));
+; 4730 : 					temp.Format("(%d)", pCityRel->GetNumFollowers(eMajority));
 
 	push	esi
 	mov	ecx, edi
 	call	?GetNumFollowers@CvCityReligions@@QAEHW4ReligionTypes@@@Z ; CvCityReligions::GetNumFollowers
 	push	eax
-	lea	edx, DWORD PTR _temp$226700[esp+176]
-	push	OFFSET $SG226742
+	lea	edx, DWORD PTR _temp$226745[esp+176]
+	push	OFFSET $SG226787
 	push	edx
 	call	?Format@CvString@@QAAXPBDZZ		; CvString::Format
 	add	esp, 12					; 0000000cH
 
-; 4709 : 					strOutBuf += temp;
+; 4731 : 					strOutBuf += temp;
 
-	lea	eax, DWORD PTR _temp$226700[esp+172]
+	lea	eax, DWORD PTR _temp$226745[esp+172]
 	push	eax
-	lea	ecx, DWORD PTR _strOutBuf$226698[esp+176]
+	lea	ecx, DWORD PTR _strOutBuf$226743[esp+176]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
 $LN82@LogFollowe:
 
-; 4710 : 				}
-; 4711 : 			}
-; 4712 : 			
-; 4713 : 			ReligionTypes eSecondary = pCityRel->GetSecondaryReligion();
+; 4732 : 				}
+; 4733 : 			}
+; 4734 : 			
+; 4735 : 			ReligionTypes eSecondary = pCityRel->GetSecondaryReligion();
 
 	mov	ecx, edi
 	call	?GetSecondaryReligion@CvCityReligions@@QAE?AW4ReligionTypes@@XZ ; CvCityReligions::GetSecondaryReligion
 	mov	esi, eax
 
-; 4714 : 			if (eSecondary != NO_RELIGION)
+; 4736 : 			if (eSecondary != NO_RELIGION)
 
 	cmp	esi, -1
 	je	SHORT $LN83@LogFollowe
 
-; 4715 : 			{
-; 4716 : 				CvReligionEntry* pEntry = GC.getReligionInfo(eSecondary);
+; 4737 : 			{
+; 4738 : 				CvReligionEntry* pEntry = GC.getReligionInfo(eSecondary);
 
 	push	esi
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getReligionInfo@CvGlobals@@QAEPAVCvReligionEntry@@W4ReligionTypes@@@Z ; CvGlobals::getReligionInfo
 	mov	ebp, eax
 
-; 4717 : 				if(pEntry)
+; 4739 : 				if(pEntry)
 
 	test	ebp, ebp
 	je	SHORT $LN83@LogFollowe
 
-; 4718 : 				{
-; 4719 : 					strOutBuf += ", Secondary: ";
+; 4740 : 				{
+; 4741 : 					strOutBuf += ", Secondary: ";
 
-	push	OFFSET $SG226747
-	lea	ecx, DWORD PTR _strOutBuf$226698[esp+176]
+	push	OFFSET $SG226792
+	lea	ecx, DWORD PTR _strOutBuf$226743[esp+176]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
-; 4720 : 					strOutBuf += pEntry->GetDescription();
+; 4742 : 					strOutBuf += pEntry->GetDescription();
 
 	lea	ecx, DWORD PTR [ebp+36]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
-	lea	ecx, DWORD PTR _strOutBuf$226698[esp+176]
+	lea	ecx, DWORD PTR _strOutBuf$226743[esp+176]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
-; 4721 : 					temp.Format("(%d)", pCityRel->GetNumFollowers(eSecondary));
+; 4743 : 					temp.Format("(%d)", pCityRel->GetNumFollowers(eSecondary));
 
 	push	esi
 	mov	ecx, edi
 	call	?GetNumFollowers@CvCityReligions@@QAEHW4ReligionTypes@@@Z ; CvCityReligions::GetNumFollowers
 	push	eax
-	lea	ecx, DWORD PTR _temp$226700[esp+176]
-	push	OFFSET $SG226748
+	lea	ecx, DWORD PTR _temp$226745[esp+176]
+	push	OFFSET $SG226793
 	push	ecx
 	call	?Format@CvString@@QAAXPBDZZ		; CvString::Format
 	add	esp, 12					; 0000000cH
 
-; 4722 : 					strOutBuf += temp;
+; 4744 : 					strOutBuf += temp;
 
-	lea	edx, DWORD PTR _temp$226700[esp+172]
+	lea	edx, DWORD PTR _temp$226745[esp+172]
 	push	edx
-	lea	ecx, DWORD PTR _strOutBuf$226698[esp+176]
+	lea	ecx, DWORD PTR _strOutBuf$226743[esp+176]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
 $LN83@LogFollowe:
 
-; 4723 : 				}
-; 4724 : 			}
-; 4725 : 
-; 4726 : 			temp.Format("Atheists: %d", pCityRel->GetNumFollowers(NO_RELIGION));
+; 4745 : 				}
+; 4746 : 			}
+; 4747 : 
+; 4748 : 			temp.Format("Atheists: %d", pCityRel->GetNumFollowers(NO_RELIGION));
 
 	push	-1
 	mov	ecx, edi
 	call	?GetNumFollowers@CvCityReligions@@QAEHW4ReligionTypes@@@Z ; CvCityReligions::GetNumFollowers
 	push	eax
-	lea	eax, DWORD PTR _temp$226700[esp+176]
-	push	OFFSET $SG226749
+	lea	eax, DWORD PTR _temp$226745[esp+176]
+	push	OFFSET $SG226794
 	push	eax
 	call	?Format@CvString@@QAAXPBDZZ		; CvString::Format
 
-; 4727 : 			strOutBuf += ", " + temp;
+; 4749 : 			strOutBuf += ", " + temp;
 
-	lea	ecx, DWORD PTR _temp$226700[esp+184]
+	lea	ecx, DWORD PTR _temp$226745[esp+184]
 	push	ecx
-	lea	edx, DWORD PTR $T233284[esp+188]
-	push	OFFSET $SG226751
+	lea	edx, DWORD PTR $T233341[esp+188]
+	push	OFFSET $SG226796
 	push	edx
 	call	DWORD PTR __imp_??$?HDU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PBDABV10@@Z
 	add	esp, 24					; 00000018H
 	push	eax
-	lea	ecx, DWORD PTR _strOutBuf$226698[esp+176]
+	lea	ecx, DWORD PTR _strOutBuf$226743[esp+176]
 	mov	BYTE PTR __$EHRec$[esp+184], 6
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T233284[esp+172]
+	lea	ecx, DWORD PTR $T233341[esp+172]
 	mov	BYTE PTR __$EHRec$[esp+180], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 4728 : 		}
-; 4729 : 		else
+; 4750 : 		}
+; 4751 : 		else
 
 	jmp	$LN1@LogFollowe
 	npad	2
 $LN87@LogFollowe:
 
-; 4736 : }
+; 4758 : }
 
 	DD	$LN15@LogFollowe
 	DD	$LN16@LogFollowe
@@ -11326,25 +11338,25 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?LogFollowersChange@CvCityReligions@@AAEXW4CvReligiousFollowChangeReason@@@Z$0:
-	lea	ecx, DWORD PTR _strOutBuf$226698[ebp]
+	lea	ecx, DWORD PTR _strOutBuf$226743[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?LogFollowersChange@CvCityReligions@@AAEXW4CvReligiousFollowChangeReason@@@Z$1:
-	lea	ecx, DWORD PTR _strReasonString$226699[ebp]
+	lea	ecx, DWORD PTR _strReasonString$226744[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?LogFollowersChange@CvCityReligions@@AAEXW4CvReligiousFollowChangeReason@@@Z$2:
-	lea	ecx, DWORD PTR _temp$226700[ebp]
+	lea	ecx, DWORD PTR _temp$226745[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?LogFollowersChange@CvCityReligions@@AAEXW4CvReligiousFollowChangeReason@@@Z$3:
-	lea	ecx, DWORD PTR $T233281[ebp]
+	lea	ecx, DWORD PTR $T233338[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?LogFollowersChange@CvCityReligions@@AAEXW4CvReligiousFollowChangeReason@@@Z$4:
-	lea	ecx, DWORD PTR $T233282[ebp]
+	lea	ecx, DWORD PTR $T233339[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?LogFollowersChange@CvCityReligions@@AAEXW4CvReligiousFollowChangeReason@@@Z$5:
-	lea	ecx, DWORD PTR $T233283[ebp]
+	lea	ecx, DWORD PTR $T233340[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?LogFollowersChange@CvCityReligions@@AAEXW4CvReligiousFollowChangeReason@@@Z$6:
-	lea	ecx, DWORD PTR $T233284[ebp]
+	lea	ecx, DWORD PTR $T233341[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __ehhandler$?LogFollowersChange@CvCityReligions@@AAEXW4CvReligiousFollowChangeReason@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?LogFollowersChange@CvCityReligions@@AAEXW4CvReligiousFollowChangeReason@@@Z
@@ -11356,24 +11368,24 @@ PUBLIC	??6@YAAAVFDataStream@@AAV0@ABVCvCityReligions@@@Z ; operator<<
 ;	COMDAT ??6@YAAAVFDataStream@@AAV0@ABVCvCityReligions@@@Z
 _TEXT	SEGMENT
 _uiVersion$ = -4					; size = 4
-_uiVersion$233438 = 8					; size = 4
-$T233390 = 8						; size = 4
-$T233389 = 8						; size = 4
-$T233388 = 8						; size = 1
+_uiVersion$233506 = 8					; size = 4
+$T233447 = 8						; size = 4
+$T233446 = 8						; size = 4
+$T233445 = 8						; size = 1
 _saveTo$ = 8						; size = 4
 _readFrom$ = 12						; size = 4
 ??6@YAAAVFDataStream@@AAV0@ABVCvCityReligions@@@Z PROC	; operator<<, COMDAT
 
-; 4782 : {
+; 4804 : {
 
 	push	ecx
 	push	ebx
 	push	esi
 	push	edi
 
-; 4783 : 	uint uiVersion = 3;
-; 4784 : 
-; 4785 : 	saveTo << uiVersion;
+; 4805 : 	uint uiVersion = 3;
+; 4806 : 
+; 4807 : 	saveTo << uiVersion;
 
 	mov	edi, DWORD PTR _saveTo$[esp+12]
 	lea	eax, DWORD PTR _uiVersion$[esp+16]
@@ -11382,42 +11394,42 @@ _readFrom$ = 12						; size = 4
 	mov	DWORD PTR _uiVersion$[esp+20], 3
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 
-; 4786 : 
-; 4787 : 	saveTo << readFrom.HasPaidAdoptionBonus();
+; 4808 : 
+; 4809 : 	saveTo << readFrom.HasPaidAdoptionBonus();
 
 	mov	ebx, DWORD PTR _readFrom$[esp+12]
 	mov	cl, BYTE PTR [ebx+420]
-	lea	edx, DWORD PTR $T233388[esp+12]
-	mov	BYTE PTR $T233388[esp+12], cl
+	lea	edx, DWORD PTR $T233445[esp+12]
+	mov	BYTE PTR $T233445[esp+12], cl
 	push	edx
 	mov	ecx, edi
 	call	?Write@FDataStream@@IAEXAB_N@Z		; FDataStream::Write
 
-; 4788 : 
-; 4789 : 	saveTo << readFrom.GetReligiousPressureModifier();
+; 4810 : 
+; 4811 : 	saveTo << readFrom.GetReligiousPressureModifier();
 
 	mov	eax, DWORD PTR [ebx+424]
-	lea	ecx, DWORD PTR $T233389[esp+12]
+	lea	ecx, DWORD PTR $T233446[esp+12]
 	push	ecx
 	mov	ecx, edi
-	mov	DWORD PTR $T233389[esp+16], eax
+	mov	DWORD PTR $T233446[esp+16], eax
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
-; 4790 : 
-; 4791 : 	ReligionInCityList::const_iterator it;
-; 4792 : 	saveTo << readFrom.m_ReligionStatus.size();
+; 4812 : 
+; 4813 : 	ReligionInCityList::const_iterator it;
+; 4814 : 	saveTo << readFrom.m_ReligionStatus.size();
 
 	mov	edx, DWORD PTR [ebx+4]
-	lea	eax, DWORD PTR $T233390[esp+12]
+	lea	eax, DWORD PTR $T233447[esp+12]
 	push	eax
 	mov	ecx, edi
-	mov	DWORD PTR $T233390[esp+16], edx
+	mov	DWORD PTR $T233447[esp+16], edx
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 
-; 4793 : #ifdef AUI_ITERATOR_POSTFIX_INCREMENT_OPTIMIZATIONS
-; 4794 : 	for (it = readFrom.m_ReligionStatus.begin(); it != readFrom.m_ReligionStatus.end(); ++it)
-; 4795 : #else
-; 4796 : 	for(it = readFrom.m_ReligionStatus.begin(); it != readFrom.m_ReligionStatus.end(); it++)
+; 4815 : #ifdef AUI_ITERATOR_POSTFIX_INCREMENT_OPTIMIZATIONS
+; 4816 : 	for (it = readFrom.m_ReligionStatus.begin(); it != readFrom.m_ReligionStatus.end(); ++it)
+; 4817 : #else
+; 4818 : 	for(it = readFrom.m_ReligionStatus.begin(); it != readFrom.m_ReligionStatus.end(); it++)
 
 	mov	eax, DWORD PTR [ebx+4]
 	mov	esi, DWORD PTR [ebx]
@@ -11428,14 +11440,14 @@ _readFrom$ = 12						; size = 4
 	npad	2
 $LL3@operator@3:
 
-; 4797 : #endif
-; 4798 : 	{
-; 4799 : 		saveTo << *it;
+; 4819 : #endif
+; 4820 : 	{
+; 4821 : 		saveTo << *it;
 
-	lea	eax, DWORD PTR _uiVersion$233438[esp+12]
+	lea	eax, DWORD PTR _uiVersion$233506[esp+12]
 	push	eax
 	mov	ecx, edi
-	mov	DWORD PTR _uiVersion$233438[esp+16], 2
+	mov	DWORD PTR _uiVersion$233506[esp+16], 2
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 	push	esi
 	push	edi
@@ -11466,16 +11478,16 @@ $LL3@operator@3:
 	jne	SHORT $LL3@operator@3
 $LN38@operator@3:
 
-; 4800 : 	}
-; 4801 : 
-; 4802 : 	return saveTo;
+; 4822 : 	}
+; 4823 : 
+; 4824 : 	return saveTo;
 
 	mov	eax, edi
 	pop	edi
 	pop	esi
 	pop	ebx
 
-; 4803 : }
+; 4825 : }
 
 	pop	ecx
 	ret	0
@@ -11491,14 +11503,14 @@ _loadFrom$ = 8						; size = 4
 _writeTo$ = 12						; size = 4
 ??5@YAAAVFDataStream@@AAV0@AAVCvUnitReligion@@@Z PROC	; operator>>, COMDAT
 
-; 4826 : {
+; 4848 : {
 
 	push	ecx
 	push	esi
 
-; 4827 : 	uint uiVersion;
-; 4828 : 
-; 4829 : 	loadFrom >> uiVersion;
+; 4849 : 	uint uiVersion;
+; 4850 : 
+; 4851 : 	loadFrom >> uiVersion;
 
 	mov	esi, DWORD PTR _loadFrom$[esp+4]
 	push	edi
@@ -11507,21 +11519,21 @@ _writeTo$ = 12						; size = 4
 	mov	ecx, esi
 	call	?Read@FDataStream@@IAEXAAI@Z		; FDataStream::Read
 
-; 4830 : 
-; 4831 : 	int temp;
-; 4832 : 	loadFrom >> temp;
+; 4852 : 
+; 4853 : 	int temp;
+; 4854 : 	loadFrom >> temp;
 
 	lea	ecx, DWORD PTR _temp$[esp+8]
 	push	ecx
 	mov	ecx, esi
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
 
-; 4833 : 	writeTo.SetReligion((ReligionTypes)temp);
+; 4855 : 	writeTo.SetReligion((ReligionTypes)temp);
 
 	mov	edx, DWORD PTR _temp$[esp+8]
 	mov	edi, DWORD PTR _writeTo$[esp+8]
 
-; 4834 : 	loadFrom >> temp;
+; 4856 : 	loadFrom >> temp;
 
 	lea	eax, DWORD PTR _temp$[esp+8]
 	push	eax
@@ -11529,58 +11541,58 @@ _writeTo$ = 12						; size = 4
 	mov	DWORD PTR [edi], edx
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
 
-; 4835 : 	writeTo.SetReligiousStrength(temp);
-; 4836 : 
-; 4837 : 	if(uiVersion >= 2)
+; 4857 : 	writeTo.SetReligiousStrength(temp);
+; 4858 : 
+; 4859 : 	if(uiVersion >= 2)
 
 	cmp	DWORD PTR _uiVersion$[esp+12], 2
 	mov	ecx, DWORD PTR _temp$[esp+8]
 	mov	DWORD PTR [edi+4], ecx
 	jb	SHORT $LN2@operator@4
 
-; 4838 : 	{
-; 4839 : 		loadFrom >> temp;
+; 4860 : 	{
+; 4861 : 		loadFrom >> temp;
 
 	lea	edx, DWORD PTR _temp$[esp+8]
 	push	edx
 	mov	ecx, esi
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
 
-; 4840 : 		writeTo.SetSpreadsLeft(temp);
+; 4862 : 		writeTo.SetSpreadsLeft(temp);
 
 	mov	eax, DWORD PTR _temp$[esp+8]
 	mov	DWORD PTR [edi+8], eax
 	pop	edi
 
-; 4845 : 	}
-; 4846 : 
-; 4847 : 	return loadFrom;
+; 4867 : 	}
+; 4868 : 
+; 4869 : 	return loadFrom;
 
 	mov	eax, esi
 	pop	esi
 
-; 4848 : }
+; 4870 : }
 
 	pop	ecx
 	ret	0
 $LN2@operator@4:
 
-; 4841 : 	}
-; 4842 : 	else
-; 4843 : 	{
-; 4844 : 		writeTo.SetSpreadsLeft(0);
+; 4863 : 	}
+; 4864 : 	else
+; 4865 : 	{
+; 4866 : 		writeTo.SetSpreadsLeft(0);
 
 	mov	DWORD PTR [edi+8], 0
 	pop	edi
 
-; 4845 : 	}
-; 4846 : 
-; 4847 : 	return loadFrom;
+; 4867 : 	}
+; 4868 : 
+; 4869 : 	return loadFrom;
 
 	mov	eax, esi
 	pop	esi
 
-; 4848 : }
+; 4870 : }
 
 	pop	ecx
 	ret	0
@@ -11591,21 +11603,21 @@ PUBLIC	??6@YAAAVFDataStream@@AAV0@ABVCvUnitReligion@@@Z ; operator<<
 ;	COMDAT ??6@YAAAVFDataStream@@AAV0@ABVCvUnitReligion@@@Z
 _TEXT	SEGMENT
 _uiVersion$ = -4					; size = 4
-$T233489 = 8						; size = 4
-$T233488 = 8						; size = 4
-$T233487 = 8						; size = 4
+$T233546 = 8						; size = 4
+$T233545 = 8						; size = 4
+$T233544 = 8						; size = 4
 _saveTo$ = 8						; size = 4
 _readFrom$ = 12						; size = 4
 ??6@YAAAVFDataStream@@AAV0@ABVCvUnitReligion@@@Z PROC	; operator<<, COMDAT
 
-; 4852 : {
+; 4874 : {
 
 	push	ecx
 	push	esi
 
-; 4853 : 	uint uiVersion = 2;
-; 4854 : 
-; 4855 : 	saveTo << uiVersion;
+; 4875 : 	uint uiVersion = 2;
+; 4876 : 
+; 4877 : 	saveTo << uiVersion;
 
 	mov	esi, DWORD PTR _saveTo$[esp+4]
 	push	edi
@@ -11615,44 +11627,44 @@ _readFrom$ = 12						; size = 4
 	mov	DWORD PTR _uiVersion$[esp+16], 2
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 
-; 4856 : 
-; 4857 : 	saveTo << readFrom.GetReligion();
+; 4878 : 
+; 4879 : 	saveTo << readFrom.GetReligion();
 
 	mov	edi, DWORD PTR _readFrom$[esp+8]
 	mov	ecx, DWORD PTR [edi]
-	lea	edx, DWORD PTR $T233487[esp+8]
+	lea	edx, DWORD PTR $T233544[esp+8]
 	push	edx
 	push	esi
-	mov	DWORD PTR $T233487[esp+16], ecx
+	mov	DWORD PTR $T233544[esp+16], ecx
 	call	??6@YAAAVFDataStream@@AAV0@ABW4ReligionTypes@@@Z ; operator<<
 
-; 4858 : 	saveTo << readFrom.GetReligiousStrength();
+; 4880 : 	saveTo << readFrom.GetReligiousStrength();
 
 	mov	eax, DWORD PTR [edi+4]
 	add	esp, 8
-	lea	ecx, DWORD PTR $T233488[esp+8]
+	lea	ecx, DWORD PTR $T233545[esp+8]
 	push	ecx
 	mov	ecx, esi
-	mov	DWORD PTR $T233488[esp+12], eax
+	mov	DWORD PTR $T233545[esp+12], eax
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
-; 4859 : 	saveTo << readFrom.GetSpreadsLeft();
+; 4881 : 	saveTo << readFrom.GetSpreadsLeft();
 
 	mov	edx, DWORD PTR [edi+8]
-	lea	eax, DWORD PTR $T233489[esp+8]
+	lea	eax, DWORD PTR $T233546[esp+8]
 	push	eax
 	mov	ecx, esi
-	mov	DWORD PTR $T233489[esp+12], edx
+	mov	DWORD PTR $T233546[esp+12], edx
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 	pop	edi
 
-; 4860 : 
-; 4861 : 	return saveTo;
+; 4882 : 
+; 4883 : 	return saveTo;
 
 	mov	eax, esi
 	pop	esi
 
-; 4862 : }
+; 4884 : }
 
 	pop	ecx
 	ret	0
@@ -11665,8 +11677,8 @@ _TEXT	SEGMENT
 ??1CvReligionAI@@QAE@XZ PROC				; CvReligionAI::~CvReligionAI, COMDAT
 ; _this$ = ecx
 
-; 4879 : 	Uninit();
-; 4880 : }
+; 4901 : 	Uninit();
+; 4902 : }
 
 	ret	0
 ??1CvReligionAI@@QAE@XZ ENDP				; CvReligionAI::~CvReligionAI
@@ -11680,19 +11692,19 @@ _pPlayer$ = 12						; size = 4
 ?Init@CvReligionAI@@QAEXPAVCvBeliefXMLEntries@@PAVCvPlayer@@@Z PROC ; CvReligionAI::Init, COMDAT
 ; _this$ = ecx
 
-; 4885 : 	m_pBeliefs = pBeliefs;
+; 4907 : 	m_pBeliefs = pBeliefs;
 
 	mov	eax, DWORD PTR _pBeliefs$[esp-4]
 
-; 4886 : 	m_pPlayer = pPlayer;
+; 4908 : 	m_pPlayer = pPlayer;
 
 	mov	edx, DWORD PTR _pPlayer$[esp-4]
 	mov	DWORD PTR [ecx], eax
 	mov	DWORD PTR [ecx+4], edx
 
-; 4887 : 
-; 4888 : 	Reset();
-; 4889 : }
+; 4909 : 
+; 4910 : 	Reset();
+; 4911 : }
 
 	ret	8
 ?Init@CvReligionAI@@QAEXPAVCvBeliefXMLEntries@@PAVCvPlayer@@@Z ENDP ; CvReligionAI::Init
@@ -11706,16 +11718,16 @@ _kStream$ = 8						; size = 4
 ?Read@CvReligionAI@@QAEXAAVFDataStream@@@Z PROC		; CvReligionAI::Read, COMDAT
 ; _this$ = ecx
 
-; 4906 : 	// Version number to maintain backwards compatibility
-; 4907 : 	uint uiVersion;
-; 4908 : 	kStream >> uiVersion;
+; 4928 : 	// Version number to maintain backwards compatibility
+; 4929 : 	uint uiVersion;
+; 4930 : 	kStream >> uiVersion;
 
 	mov	ecx, DWORD PTR _kStream$[esp-4]
 	lea	eax, DWORD PTR _uiVersion$[esp-4]
 	push	eax
 	call	?Read@FDataStream@@IAEXAAI@Z		; FDataStream::Read
 
-; 4909 : }
+; 4931 : }
 
 	ret	4
 ?Read@CvReligionAI@@QAEXAAVFDataStream@@@Z ENDP		; CvReligionAI::Read
@@ -11729,13 +11741,13 @@ _kStream$ = 8						; size = 4
 ?Write@CvReligionAI@@QAEXAAVFDataStream@@@Z PROC	; CvReligionAI::Write, COMDAT
 ; _this$ = ecx
 
-; 4913 : {
+; 4935 : {
 
 	push	ecx
 
-; 4914 : 	// Current version number
-; 4915 : 	uint uiVersion = 1;
-; 4916 : 	kStream << uiVersion;
+; 4936 : 	// Current version number
+; 4937 : 	uint uiVersion = 1;
+; 4938 : 	kStream << uiVersion;
 
 	mov	ecx, DWORD PTR _kStream$[esp]
 	lea	eax, DWORD PTR _uiVersion$[esp+4]
@@ -11743,7 +11755,7 @@ _kStream$ = 8						; size = 4
 	mov	DWORD PTR _uiVersion$[esp+8], 1
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 
-; 4917 : }
+; 4939 : }
 
 	pop	ecx
 	ret	4
@@ -11787,18 +11799,18 @@ _iHappinessMultiplier$ = -24				; size = 4
 _iMinFollowers$ = -20					; size = 4
 _iFlavorCityDefense$ = -16				; size = 4
 _iMinPop$ = -12						; size = 4
-$T233539 = -8						; size = 4
-_pkBuildingClassInfo$228098 = -8			; size = 4
+$T233596 = -8						; size = 4
+_pkBuildingClassInfo$228147 = -8			; size = 4
 _iFlavorDefense$ = -8					; size = 4
 _this$ = -4						; size = 4
-$T233538 = 8						; size = 4
+$T233595 = 8						; size = 4
 _iTempValue$ = 8					; size = 4
 _pEntry$ = 8						; size = 4
 _pCity$ = 12						; size = 4
 ?ScoreBeliefAtCity@CvReligionAI@@AAEHPAVCvBeliefEntry@@PAVCvCity@@@Z PROC ; CvReligionAI::ScoreBeliefAtCity, COMDAT
 ; _this$ = ecx
 
-; 6151 : {
+; 6173 : {
 
 	sub	esp, 24					; 00000018H
 	push	ebx
@@ -11806,23 +11818,23 @@ _pCity$ = 12						; size = 4
 	push	esi
 	mov	DWORD PTR _this$[esp+36], ecx
 
-; 6152 : 	int iRtnValue = 0;
-; 6153 : 	int iTempValue;
-; 6154 : 	int iMinPop;
-; 6155 : 	int iMinFollowers;
-; 6156 : 	int iHappinessMultiplier = 2;
-; 6157 : 
-; 6158 : 	CvFlavorManager* pFlavorManager = m_pPlayer->GetFlavorManager();
+; 6174 : 	int iRtnValue = 0;
+; 6175 : 	int iTempValue;
+; 6176 : 	int iMinPop;
+; 6177 : 	int iMinFollowers;
+; 6178 : 	int iHappinessMultiplier = 2;
+; 6179 : 
+; 6180 : 	CvFlavorManager* pFlavorManager = m_pPlayer->GetFlavorManager();
 
 	mov	ecx, DWORD PTR [ecx+4]
 	push	edi
 	mov	DWORD PTR _iHappinessMultiplier$[esp+40], 2
 	call	?GetFlavorManager@CvPlayer@@QBEPAVCvFlavorManager@@XZ ; CvPlayer::GetFlavorManager
 
-; 6159 : 	int iFlavorOffense = pFlavorManager->GetPersonalityIndividualFlavor((FlavorTypes)GC.getInfoTypeForString("FLAVOR_OFFENSE"));
+; 6181 : 	int iFlavorOffense = pFlavorManager->GetPersonalityIndividualFlavor((FlavorTypes)GC.getInfoTypeForString("FLAVOR_OFFENSE"));
 
 	push	0
-	push	OFFSET $SG228056
+	push	OFFSET $SG228105
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	esi, eax
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
@@ -11830,10 +11842,10 @@ _pCity$ = 12						; size = 4
 	mov	ecx, esi
 	call	?GetPersonalityIndividualFlavor@CvFlavorManager@@QAEHW4FlavorTypes@@@Z ; CvFlavorManager::GetPersonalityIndividualFlavor
 
-; 6160 : 	int iFlavorDefense = pFlavorManager->GetPersonalityIndividualFlavor((FlavorTypes)GC.getInfoTypeForString("FLAVOR_DEFENSE"));
+; 6182 : 	int iFlavorDefense = pFlavorManager->GetPersonalityIndividualFlavor((FlavorTypes)GC.getInfoTypeForString("FLAVOR_DEFENSE"));
 
 	push	0
-	push	OFFSET $SG228059
+	push	OFFSET $SG228108
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	edi, eax
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
@@ -11841,11 +11853,11 @@ _pCity$ = 12						; size = 4
 	mov	ecx, esi
 	call	?GetPersonalityIndividualFlavor@CvFlavorManager@@QAEHW4FlavorTypes@@@Z ; CvFlavorManager::GetPersonalityIndividualFlavor
 
-; 6161 : 	int iFlavorCityDefense = pFlavorManager->GetPersonalityIndividualFlavor((FlavorTypes)GC.getInfoTypeForString("FLAVOR_CITY_DEFENSE"));
+; 6183 : 	int iFlavorCityDefense = pFlavorManager->GetPersonalityIndividualFlavor((FlavorTypes)GC.getInfoTypeForString("FLAVOR_CITY_DEFENSE"));
 
 	push	0
 	mov	ebp, eax
-	push	OFFSET $SG228062
+	push	OFFSET $SG228111
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	DWORD PTR _iFlavorDefense$[esp+48], ebp
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
@@ -11853,10 +11865,10 @@ _pCity$ = 12						; size = 4
 	mov	ecx, esi
 	call	?GetPersonalityIndividualFlavor@CvFlavorManager@@QAEHW4FlavorTypes@@@Z ; CvFlavorManager::GetPersonalityIndividualFlavor
 
-; 6162 : 	int iFlavorHappiness = pFlavorManager->GetPersonalityIndividualFlavor((FlavorTypes)GC.getInfoTypeForString("FLAVOR_HAPPINESS"));
+; 6184 : 	int iFlavorHappiness = pFlavorManager->GetPersonalityIndividualFlavor((FlavorTypes)GC.getInfoTypeForString("FLAVOR_HAPPINESS"));
 
 	push	0
-	push	OFFSET $SG228065
+	push	OFFSET $SG228114
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	DWORD PTR _iFlavorCityDefense$[esp+48], eax
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
@@ -11864,55 +11876,55 @@ _pCity$ = 12						; size = 4
 	mov	ecx, esi
 	call	?GetPersonalityIndividualFlavor@CvFlavorManager@@QAEHW4FlavorTypes@@@Z ; CvFlavorManager::GetPersonalityIndividualFlavor
 
-; 6163 : 
-; 6164 : 	int iHappinessNeedFactor = iFlavorOffense * 2 + iFlavorHappiness - iFlavorDefense;
+; 6185 : 
+; 6186 : 	int iHappinessNeedFactor = iFlavorOffense * 2 + iFlavorHappiness - iFlavorDefense;
 
 	lea	ecx, DWORD PTR [edi+edi]
 	sub	ecx, ebp
 	add	eax, ecx
 
-; 6165 : 	if (iHappinessNeedFactor > 15)
+; 6187 : 	if (iHappinessNeedFactor > 15)
 
 	cmp	eax, 15					; 0000000fH
 	jle	SHORT $LN35@ScoreBelie
 
-; 6166 : 	{
-; 6167 : 		iHappinessMultiplier = 3;
+; 6188 : 	{
+; 6189 : 		iHappinessMultiplier = 3;
 
 	mov	DWORD PTR _iHappinessMultiplier$[esp+40], 3
 	jmp	SHORT $LN33@ScoreBelie
 $LN35@ScoreBelie:
 
-; 6168 : 	}
-; 6169 : 	else if (iHappinessNeedFactor < 6)
+; 6190 : 	}
+; 6191 : 	else if (iHappinessNeedFactor < 6)
 
 	cmp	eax, 6
 	jge	SHORT $LN33@ScoreBelie
 
-; 6170 : 	{
-; 6171 : 		iHappinessMultiplier = 1;
+; 6192 : 	{
+; 6193 : 		iHappinessMultiplier = 1;
 
 	mov	DWORD PTR _iHappinessMultiplier$[esp+40], 1
 $LN33@ScoreBelie:
 
-; 6172 : 	}
-; 6173 : 
-; 6174 : 	iMinPop = pEntry->GetMinPopulation();
+; 6194 : 	}
+; 6195 : 
+; 6196 : 	iMinPop = pEntry->GetMinPopulation();
 
 	mov	esi, DWORD PTR _pEntry$[esp+36]
 	mov	ecx, esi
 	call	?GetMinPopulation@CvBeliefEntry@@QBEHXZ	; CvBeliefEntry::GetMinPopulation
 	mov	edi, eax
 
-; 6175 : 	iMinFollowers = pEntry->GetMinFollowers();
+; 6197 : 	iMinFollowers = pEntry->GetMinFollowers();
 
 	mov	ecx, esi
 	mov	DWORD PTR _iMinPop$[esp+40], edi
 	call	?GetMinFollowers@CvBeliefEntry@@QBEHXZ	; CvBeliefEntry::GetMinFollowers
 
-; 6176 : 
-; 6177 : 	// Simple ones
-; 6178 : 	iRtnValue += pEntry->GetCityGrowthModifier() / 3;
+; 6198 : 
+; 6199 : 	// Simple ones
+; 6200 : 	iRtnValue += pEntry->GetCityGrowthModifier() / 3;
 
 	mov	ecx, esi
 	mov	DWORD PTR _iMinFollowers$[esp+40], eax
@@ -11923,7 +11935,7 @@ $LN33@ScoreBelie:
 	mov	ebx, edx
 	shr	ebx, 31					; 0000001fH
 
-; 6179 : 	if(pEntry->RequiresPeace())
+; 6201 : 	if(pEntry->RequiresPeace())
 
 	mov	ecx, esi
 	add	ebx, edx
@@ -11931,8 +11943,8 @@ $LN33@ScoreBelie:
 	test	al, al
 	je	SHORT $LN32@ScoreBelie
 
-; 6180 : 	{
-; 6181 : 		iRtnValue /= 2;
+; 6202 : 	{
+; 6203 : 		iRtnValue /= 2;
 
 	mov	eax, ebx
 	cdq
@@ -11941,8 +11953,8 @@ $LN33@ScoreBelie:
 	mov	ebx, eax
 $LN32@ScoreBelie:
 
-; 6182 : 	}
-; 6183 : 	iRtnValue += (-pEntry->GetPlotCultureCostModifier() * 2) / 10;
+; 6204 : 	}
+; 6205 : 	iRtnValue += (-pEntry->GetPlotCultureCostModifier() * 2) / 10;
 
 	mov	ecx, esi
 	call	?GetPlotCultureCostModifier@CvBeliefEntry@@QBEHXZ ; CvBeliefEntry::GetPlotCultureCostModifier
@@ -11957,7 +11969,7 @@ $LN32@ScoreBelie:
 	add	eax, edx
 	add	ebx, eax
 
-; 6184 : 	iRtnValue += (pEntry->GetCityRangeStrikeModifier() / 10) * MAX(iFlavorDefense,iFlavorCityDefense);
+; 6206 : 	iRtnValue += (pEntry->GetCityRangeStrikeModifier() / 10) * MAX(iFlavorDefense,iFlavorCityDefense);
 
 	cmp	ebp, DWORD PTR _iFlavorCityDefense$[esp+40]
 	lea	ebp, DWORD PTR _iFlavorCityDefense$[esp+40]
@@ -11976,7 +11988,7 @@ $LN41@ScoreBelie:
 	imul	ecx, DWORD PTR [ebp]
 	add	ebx, ecx
 
-; 6185 : 	iRtnValue += pEntry->GetFriendlyHealChange() / 10;
+; 6207 : 	iRtnValue += pEntry->GetFriendlyHealChange() / 10;
 
 	mov	ecx, esi
 	call	?GetFriendlyHealChange@CvBeliefEntry@@QBEHXZ ; CvBeliefEntry::GetFriendlyHealChange
@@ -11988,9 +12000,9 @@ $LN41@ScoreBelie:
 	shr	eax, 31					; 0000001fH
 	add	eax, edx
 
-; 6186 : 
-; 6187 : 	// Wonder production multiplier
-; 6188 : 	if(pEntry->GetObsoleteEra() > 0)
+; 6208 : 
+; 6209 : 	// Wonder production multiplier
+; 6210 : 	if(pEntry->GetObsoleteEra() > 0)
 
 	mov	ecx, esi
 	add	ebx, eax
@@ -11998,8 +12010,8 @@ $LN41@ScoreBelie:
 	test	eax, eax
 	jle	SHORT $LN31@ScoreBelie
 
-; 6189 : 	{	
-; 6190 : 		if (pEntry->GetObsoleteEra() > GC.getGame().getCurrentEra())
+; 6211 : 	{	
+; 6212 : 		if (pEntry->GetObsoleteEra() > GC.getGame().getCurrentEra())
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?getCurrentEra@CvGame@@QBE?AW4EraTypes@@XZ ; CvGame::getCurrentEra
@@ -12009,8 +12021,8 @@ $LN41@ScoreBelie:
 	cmp	eax, ebp
 	jle	SHORT $LN58@ScoreBelie
 
-; 6191 : 		{
-; 6192 : 			iRtnValue += (pEntry->GetWonderProductionModifier() * pEntry->GetObsoleteEra()) / 10;
+; 6213 : 		{
+; 6214 : 			iRtnValue += (pEntry->GetWonderProductionModifier() * pEntry->GetObsoleteEra()) / 10;
 
 	mov	ecx, esi
 	call	?GetWonderProductionModifier@CvBeliefEntry@@QBEHXZ ; CvBeliefEntry::GetWonderProductionModifier
@@ -12026,15 +12038,15 @@ $LN41@ScoreBelie:
 	add	ecx, edx
 	add	ebx, ecx
 
-; 6193 : 		}
-; 6194 : 	}
-; 6195 : 	else
+; 6215 : 		}
+; 6216 : 	}
+; 6217 : 	else
 
 	jmp	SHORT $LN58@ScoreBelie
 $LN31@ScoreBelie:
 
-; 6196 : 	{
-; 6197 : 		iRtnValue += pEntry->GetWonderProductionModifier() / 3;
+; 6218 : 	{
+; 6219 : 		iRtnValue += pEntry->GetWonderProductionModifier() / 3;
 
 	mov	ecx, esi
 	call	?GetWonderProductionModifier@CvBeliefEntry@@QBEHXZ ; CvBeliefEntry::GetWonderProductionModifier
@@ -12047,41 +12059,41 @@ $LN31@ScoreBelie:
 	add	ebx, eax
 $LN58@ScoreBelie:
 
-; 6198 : 	}
-; 6199 : 
-; 6200 : 	// River happiness
-; 6201 : 	iTempValue = pEntry->GetRiverHappiness() * iHappinessMultiplier;
+; 6220 : 	}
+; 6221 : 
+; 6222 : 	// River happiness
+; 6223 : 	iTempValue = pEntry->GetRiverHappiness() * iHappinessMultiplier;
 
 	mov	ecx, esi
 	call	?GetRiverHappiness@CvBeliefEntry@@QBEHXZ ; CvBeliefEntry::GetRiverHappiness
 	mov	ebp, eax
 	imul	ebp, DWORD PTR _iHappinessMultiplier$[esp+40]
 
-; 6202 : 	if(iMinPop > 0)
+; 6224 : 	if(iMinPop > 0)
 
 	test	edi, edi
 	jle	SHORT $LN54@ScoreBelie
 
-; 6203 : 	{
-; 6204 : 		if(pCity->getPopulation() >= iMinPop)
+; 6225 : 	{
+; 6226 : 		if(pCity->getPopulation() >= iMinPop)
 
 	mov	ecx, DWORD PTR _pCity$[esp+36]
 	call	?getPopulation@CvCity@@QBEHXZ		; CvCity::getPopulation
 	cmp	eax, edi
 	jl	SHORT $LN54@ScoreBelie
 
-; 6205 : 		{
-; 6206 : 			iTempValue *= 2;
+; 6227 : 		{
+; 6228 : 			iTempValue *= 2;
 
 	add	ebp, ebp
 $LN54@ScoreBelie:
 
-; 6207 : 		}
-; 6208 : 	}
-; 6209 : 	iRtnValue += iTempValue;
-; 6210 : 
-; 6211 : 	// Happiness per city
-; 6212 : 	iTempValue = pEntry->GetHappinessPerCity() * iHappinessMultiplier;
+; 6229 : 		}
+; 6230 : 	}
+; 6231 : 	iRtnValue += iTempValue;
+; 6232 : 
+; 6233 : 	// Happiness per city
+; 6234 : 	iTempValue = pEntry->GetHappinessPerCity() * iHappinessMultiplier;
 
 	mov	ecx, esi
 	add	ebx, ebp
@@ -12089,37 +12101,37 @@ $LN54@ScoreBelie:
 	mov	ebp, eax
 	imul	ebp, DWORD PTR _iHappinessMultiplier$[esp+40]
 
-; 6213 : 	if(iMinPop > 0)
+; 6235 : 	if(iMinPop > 0)
 
 	test	edi, edi
 	jle	SHORT $LN61@ScoreBelie
 
-; 6214 : 	{
-; 6215 : 		if(pCity->getPopulation() >= iMinPop)
+; 6236 : 	{
+; 6237 : 		if(pCity->getPopulation() >= iMinPop)
 
 	mov	ecx, DWORD PTR _pCity$[esp+36]
 	call	?getPopulation@CvCity@@QBEHXZ		; CvCity::getPopulation
 	cmp	eax, edi
 	jl	SHORT $LN61@ScoreBelie
 
-; 6216 : 		{
-; 6217 : 			iTempValue *= 2;
+; 6238 : 		{
+; 6239 : 			iTempValue *= 2;
 
 	add	ebp, ebp
 $LN61@ScoreBelie:
 
-; 6218 : 		}
-; 6219 : 	}
-; 6220 : 	iRtnValue += iTempValue;
+; 6240 : 		}
+; 6241 : 	}
+; 6242 : 	iRtnValue += iTempValue;
 
 	add	ebx, ebp
 
-; 6221 : 
-; 6222 : 	// Building class happiness
-; 6223 : #ifdef AUI_WARNING_FIXES
-; 6224 : 	for (uint jJ = 0; jJ < GC.getNumBuildingClassInfos(); jJ++)
-; 6225 : #else
-; 6226 : 	for(int jJ = 0; jJ < GC.getNumBuildingClassInfos(); jJ++)
+; 6243 : 
+; 6244 : 	// Building class happiness
+; 6245 : #ifdef AUI_WARNING_FIXES
+; 6246 : 	for (uint jJ = 0; jJ < GC.getNumBuildingClassInfos(); jJ++)
+; 6247 : #else
+; 6248 : 	for(int jJ = 0; jJ < GC.getNumBuildingClassInfos(); jJ++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	xor	ebp, ebp
@@ -12129,9 +12141,9 @@ $LN61@ScoreBelie:
 	npad	5
 $LL24@ScoreBelie:
 
-; 6227 : #endif
-; 6228 : 	{
-; 6229 : 		iTempValue = pEntry->GetBuildingClassHappiness(jJ) * iHappinessMultiplier;
+; 6249 : #endif
+; 6250 : 	{
+; 6251 : 		iTempValue = pEntry->GetBuildingClassHappiness(jJ) * iHappinessMultiplier;
 
 	push	ebp
 	mov	ecx, esi
@@ -12139,37 +12151,37 @@ $LL24@ScoreBelie:
 	mov	edi, eax
 	imul	edi, DWORD PTR _iHappinessMultiplier$[esp+40]
 
-; 6230 : 		if(iMinFollowers > 0)
+; 6252 : 		if(iMinFollowers > 0)
 
 	cmp	DWORD PTR _iMinFollowers$[esp+40], 0
 	jle	SHORT $LN20@ScoreBelie
 
-; 6231 : 		{
-; 6232 : 			if(pCity->getPopulation() >= iMinFollowers)
+; 6253 : 		{
+; 6254 : 			if(pCity->getPopulation() >= iMinFollowers)
 
 	mov	ecx, DWORD PTR _pCity$[esp+36]
 	call	?getPopulation@CvCity@@QBEHXZ		; CvCity::getPopulation
 	cmp	eax, DWORD PTR _iMinFollowers$[esp+40]
 	jl	SHORT $LN20@ScoreBelie
 
-; 6233 : 			{
-; 6234 : 				iTempValue *= 2;
+; 6255 : 			{
+; 6256 : 				iTempValue *= 2;
 
 	add	edi, edi
 $LN20@ScoreBelie:
 
-; 6221 : 
-; 6222 : 	// Building class happiness
-; 6223 : #ifdef AUI_WARNING_FIXES
-; 6224 : 	for (uint jJ = 0; jJ < GC.getNumBuildingClassInfos(); jJ++)
-; 6225 : #else
-; 6226 : 	for(int jJ = 0; jJ < GC.getNumBuildingClassInfos(); jJ++)
+; 6243 : 
+; 6244 : 	// Building class happiness
+; 6245 : #ifdef AUI_WARNING_FIXES
+; 6246 : 	for (uint jJ = 0; jJ < GC.getNumBuildingClassInfos(); jJ++)
+; 6247 : #else
+; 6248 : 	for(int jJ = 0; jJ < GC.getNumBuildingClassInfos(); jJ++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 
-; 6235 : 			}
-; 6236 : 		}
-; 6237 : 		iRtnValue += iTempValue;
+; 6257 : 			}
+; 6258 : 		}
+; 6259 : 		iRtnValue += iTempValue;
 
 	add	ebx, edi
 	inc	ebp
@@ -12177,19 +12189,19 @@ $LN20@ScoreBelie:
 	cmp	ebp, eax
 	jl	SHORT $LL24@ScoreBelie
 
-; 6221 : 
-; 6222 : 	// Building class happiness
-; 6223 : #ifdef AUI_WARNING_FIXES
-; 6224 : 	for (uint jJ = 0; jJ < GC.getNumBuildingClassInfos(); jJ++)
-; 6225 : #else
-; 6226 : 	for(int jJ = 0; jJ < GC.getNumBuildingClassInfos(); jJ++)
+; 6243 : 
+; 6244 : 	// Building class happiness
+; 6245 : #ifdef AUI_WARNING_FIXES
+; 6246 : 	for (uint jJ = 0; jJ < GC.getNumBuildingClassInfos(); jJ++)
+; 6247 : #else
+; 6248 : 	for(int jJ = 0; jJ < GC.getNumBuildingClassInfos(); jJ++)
 
 	mov	edi, DWORD PTR _iMinPop$[esp+40]
 $LN22@ScoreBelie:
 
-; 6238 : 	}
-; 6239 : 
-; 6240 : 	for(int iI = 0; iI < NUM_YIELD_TYPES; iI++)
+; 6260 : 	}
+; 6261 : 
+; 6262 : 	for(int iI = 0; iI < NUM_YIELD_TYPES; iI++)
 
 	xor	ebp, ebp
 	jmp	SHORT $LN19@ScoreBelie
@@ -12197,83 +12209,83 @@ $LL55@ScoreBelie:
 	mov	edi, DWORD PTR _iMinPop$[esp+40]
 $LN19@ScoreBelie:
 
-; 6241 : 	{
-; 6242 : 		// City yield change
-; 6243 : 		iTempValue = pEntry->GetCityYieldChange(iI);
+; 6263 : 	{
+; 6264 : 		// City yield change
+; 6265 : 		iTempValue = pEntry->GetCityYieldChange(iI);
 
 	push	ebp
 	mov	ecx, esi
 	call	?GetCityYieldChange@CvBeliefEntry@@QBEHH@Z ; CvBeliefEntry::GetCityYieldChange
 	mov	DWORD PTR _iTempValue$[esp+36], eax
 
-; 6244 : 		if(iMinPop > 0)
+; 6266 : 		if(iMinPop > 0)
 
 	test	edi, edi
 	jle	SHORT $LN59@ScoreBelie
 
-; 6245 : 		{
-; 6246 : 			if(pCity->getPopulation() >= iMinPop)
+; 6267 : 		{
+; 6268 : 			if(pCity->getPopulation() >= iMinPop)
 
 	mov	ecx, DWORD PTR _pCity$[esp+36]
 	call	?getPopulation@CvCity@@QBEHXZ		; CvCity::getPopulation
 	cmp	eax, edi
 	jl	SHORT $LN59@ScoreBelie
 
-; 6247 : 			{
-; 6248 : 				iTempValue *= 2;
+; 6269 : 			{
+; 6270 : 				iTempValue *= 2;
 
 	mov	ecx, DWORD PTR _iTempValue$[esp+36]
 	lea	edx, DWORD PTR [ecx+ecx]
 	mov	DWORD PTR _iTempValue$[esp+36], edx
 $LN59@ScoreBelie:
 
-; 6249 : 			}
-; 6250 : 		}
-; 6251 : 		iRtnValue += iTempValue;
+; 6271 : 			}
+; 6272 : 		}
+; 6273 : 		iRtnValue += iTempValue;
 
 	add	ebx, DWORD PTR _iTempValue$[esp+36]
 
-; 6252 : 
-; 6253 : 		// Trade route yield change
-; 6254 : 		iTempValue = pEntry->GetYieldChangeTradeRoute(iI);
+; 6274 : 
+; 6275 : 		// Trade route yield change
+; 6276 : 		iTempValue = pEntry->GetYieldChangeTradeRoute(iI);
 
 	push	ebp
 	mov	ecx, esi
 	call	?GetYieldChangeTradeRoute@CvBeliefEntry@@QBEHH@Z ; CvBeliefEntry::GetYieldChangeTradeRoute
 	mov	DWORD PTR _iTempValue$[esp+36], eax
 
-; 6255 : 		if(iMinPop > 0)
+; 6277 : 		if(iMinPop > 0)
 
 	test	edi, edi
 	jle	SHORT $LN13@ScoreBelie
 
-; 6256 : 		{
-; 6257 : 			if(pCity->getPopulation() >= iMinPop)
+; 6278 : 		{
+; 6279 : 			if(pCity->getPopulation() >= iMinPop)
 
 	mov	ecx, DWORD PTR _pCity$[esp+36]
 	call	?getPopulation@CvCity@@QBEHXZ		; CvCity::getPopulation
 	cmp	eax, edi
 	jl	SHORT $LN13@ScoreBelie
 
-; 6258 : 			{
-; 6259 : 				iTempValue *= 2;
+; 6280 : 			{
+; 6281 : 				iTempValue *= 2;
 
 	mov	eax, DWORD PTR _iTempValue$[esp+36]
 	lea	ecx, DWORD PTR [eax+eax]
 	mov	DWORD PTR _iTempValue$[esp+36], ecx
 $LN13@ScoreBelie:
 
-; 6260 : 			}
-; 6261 : 		}
-; 6262 : 		if(pCity->IsRouteToCapitalConnected())
+; 6282 : 			}
+; 6283 : 		}
+; 6284 : 		if(pCity->IsRouteToCapitalConnected())
 
 	mov	ecx, DWORD PTR _pCity$[esp+36]
 	call	?IsRouteToCapitalConnected@CvCity@@QAE_NXZ ; CvCity::IsRouteToCapitalConnected
 	test	al, al
 	je	SHORT $LN60@ScoreBelie
 
-; 6263 : 		{
-; 6264 : 			iTempValue *= 2;
+; 6285 : 		{
+; 6286 : 			iTempValue *= 2;
 
 	mov	edx, DWORD PTR _iTempValue$[esp+36]
 	lea	eax, DWORD PTR [edx+edx]
@@ -12282,18 +12294,18 @@ $LN60@ScoreBelie:
 	mov	eax, DWORD PTR _iTempValue$[esp+36]
 $LN12@ScoreBelie:
 
-; 6265 : 		}
-; 6266 : 		iRtnValue += iTempValue;
-; 6267 : 
-; 6268 : 		// Specialist yield change
-; 6269 : 		iTempValue = pEntry->GetYieldChangeAnySpecialist(iI);
+; 6287 : 		}
+; 6288 : 		iRtnValue += iTempValue;
+; 6289 : 
+; 6290 : 		// Specialist yield change
+; 6291 : 		iTempValue = pEntry->GetYieldChangeAnySpecialist(iI);
 
 	push	ebp
 	mov	ecx, esi
 	add	ebx, eax
 	call	?GetYieldChangeAnySpecialist@CvBeliefEntry@@QBEHH@Z ; CvBeliefEntry::GetYieldChangeAnySpecialist
 
-; 6270 : 		if(pCity->getPopulation() >= 8)  // Like it more with large cities
+; 6292 : 		if(pCity->getPopulation() >= 8)  // Like it more with large cities
 
 	mov	ecx, DWORD PTR _pCity$[esp+36]
 	mov	edi, eax
@@ -12301,23 +12313,23 @@ $LN12@ScoreBelie:
 	cmp	eax, 8
 	jl	SHORT $LN11@ScoreBelie
 
-; 6271 : 		{
-; 6272 : 			iTempValue *= 3;
+; 6293 : 		{
+; 6294 : 			iTempValue *= 3;
 
 	lea	edi, DWORD PTR [edi+edi*2]
 $LN11@ScoreBelie:
 
-; 6273 : 		}
-; 6274 : 		iRtnValue += iTempValue;
+; 6295 : 		}
+; 6296 : 		iRtnValue += iTempValue;
 
 	add	ebx, edi
 
-; 6275 : 
-; 6276 : 		// Building class yield change
-; 6277 : #ifdef AUI_WARNING_FIXES
-; 6278 : 		for (uint jJ = 0; jJ < GC.getNumBuildingClassInfos(); jJ++)
-; 6279 : #else
-; 6280 : 		for(int jJ = 0; jJ < GC.getNumBuildingClassInfos(); jJ++)
+; 6297 : 
+; 6298 : 		// Building class yield change
+; 6299 : #ifdef AUI_WARNING_FIXES
+; 6300 : 		for (uint jJ = 0; jJ < GC.getNumBuildingClassInfos(); jJ++)
+; 6301 : #else
+; 6302 : 		for(int jJ = 0; jJ < GC.getNumBuildingClassInfos(); jJ++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	xor	edi, edi
@@ -12326,47 +12338,47 @@ $LN11@ScoreBelie:
 	jle	$LN8@ScoreBelie
 $LL10@ScoreBelie:
 
-; 6281 : #endif
-; 6282 : 		{
-; 6283 : 			CvBuildingClassInfo* pkBuildingClassInfo = GC.getBuildingClassInfo((BuildingClassTypes)jJ);
+; 6303 : #endif
+; 6304 : 		{
+; 6305 : 			CvBuildingClassInfo* pkBuildingClassInfo = GC.getBuildingClassInfo((BuildingClassTypes)jJ);
 
 	push	edi
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getBuildingClassInfo@CvGlobals@@QAEPAVCvBuildingClassInfo@@W4BuildingClassTypes@@@Z ; CvGlobals::getBuildingClassInfo
-	mov	DWORD PTR _pkBuildingClassInfo$228098[esp+40], eax
+	mov	DWORD PTR _pkBuildingClassInfo$228147[esp+40], eax
 
-; 6284 : 			if(!pkBuildingClassInfo)
+; 6306 : 			if(!pkBuildingClassInfo)
 
 	test	eax, eax
 	je	$LN9@ScoreBelie
 
-; 6285 : 			{
-; 6286 : 				continue;
-; 6287 : 			}
-; 6288 : 
-; 6289 : 			iTempValue = pEntry->GetBuildingClassYieldChange(jJ, iI);
+; 6307 : 			{
+; 6308 : 				continue;
+; 6309 : 			}
+; 6310 : 
+; 6311 : 			iTempValue = pEntry->GetBuildingClassYieldChange(jJ, iI);
 
 	push	ebp
 	push	edi
 	mov	ecx, esi
 	call	?GetBuildingClassYieldChange@CvBeliefEntry@@QBEHHH@Z ; CvBeliefEntry::GetBuildingClassYieldChange
 
-; 6290 : 			if(iMinFollowers > 0)
+; 6312 : 			if(iMinFollowers > 0)
 
 	cmp	DWORD PTR _iMinFollowers$[esp+40], 0
 	mov	DWORD PTR _iTempValue$[esp+36], eax
 	jle	SHORT $LN5@ScoreBelie
 
-; 6291 : 			{
-; 6292 : 				if(pCity->getPopulation() < iMinFollowers)
+; 6313 : 			{
+; 6314 : 				if(pCity->getPopulation() < iMinFollowers)
 
 	mov	ecx, DWORD PTR _pCity$[esp+36]
 	call	?getPopulation@CvCity@@QBEHXZ		; CvCity::getPopulation
 	cmp	eax, DWORD PTR _iMinFollowers$[esp+40]
 	jge	SHORT $LN5@ScoreBelie
 
-; 6293 : 				{
-; 6294 : 					iTempValue /= 2;
+; 6315 : 				{
+; 6316 : 					iTempValue /= 2;
 
 	mov	eax, DWORD PTR _iTempValue$[esp+36]
 	cdq
@@ -12375,10 +12387,10 @@ $LL10@ScoreBelie:
 	mov	DWORD PTR _iTempValue$[esp+36], eax
 $LN5@ScoreBelie:
 
-; 6295 : 				}
-; 6296 : 			}
-; 6297 : 
-; 6298 : 			BuildingTypes eBuilding = (BuildingTypes)m_pPlayer->getCivilizationInfo().getCivilizationBuildings(jJ);
+; 6317 : 				}
+; 6318 : 			}
+; 6319 : 
+; 6320 : 			BuildingTypes eBuilding = (BuildingTypes)m_pPlayer->getCivilizationInfo().getCivilizationBuildings(jJ);
 
 	mov	eax, DWORD PTR _this$[esp+40]
 	mov	ecx, DWORD PTR [eax+4]
@@ -12387,13 +12399,13 @@ $LN5@ScoreBelie:
 	mov	ecx, eax
 	call	?getCivilizationBuildings@CvCivilizationInfo@@QBEHH@Z ; CvCivilizationInfo::getCivilizationBuildings
 
-; 6299 : 			if (eBuilding != NO_BUILDING)
+; 6321 : 			if (eBuilding != NO_BUILDING)
 
 	cmp	eax, -1
 	je	SHORT $LN3@ScoreBelie
 
-; 6300 : 			{
-; 6301 : 				if(pCity->GetCityBuildings()->GetNumBuilding(eBuilding) > 0)
+; 6322 : 			{
+; 6323 : 				if(pCity->GetCityBuildings()->GetNumBuilding(eBuilding) > 0)
 
 	mov	ecx, DWORD PTR _pCity$[esp+36]
 	push	eax
@@ -12403,25 +12415,25 @@ $LN5@ScoreBelie:
 	test	eax, eax
 	jle	SHORT $LN3@ScoreBelie
 
-; 6302 : 				{
-; 6303 : 					iTempValue *= 2;
+; 6324 : 				{
+; 6325 : 					iTempValue *= 2;
 
 	mov	ecx, DWORD PTR _iTempValue$[esp+36]
 	lea	edx, DWORD PTR [ecx+ecx]
 	mov	DWORD PTR _iTempValue$[esp+36], edx
 $LN3@ScoreBelie:
 
-; 6304 : 				}
-; 6305 : 			}
-; 6306 : 
-; 6307 : 			if(pkBuildingClassInfo->getMaxPlayerInstances() == 1)
+; 6326 : 				}
+; 6327 : 			}
+; 6328 : 
+; 6329 : 			if(pkBuildingClassInfo->getMaxPlayerInstances() == 1)
 
-	mov	ecx, DWORD PTR _pkBuildingClassInfo$228098[esp+40]
+	mov	ecx, DWORD PTR _pkBuildingClassInfo$228147[esp+40]
 	call	?getMaxPlayerInstances@CvBuildingClassInfo@@QBEHXZ ; CvBuildingClassInfo::getMaxPlayerInstances
 	cmp	eax, 1
 
-; 6308 : 			{
-; 6309 : 				iTempValue /= 2;
+; 6330 : 			{
+; 6331 : 				iTempValue /= 2;
 
 	mov	eax, DWORD PTR _iTempValue$[esp+36]
 	jne	SHORT $LN2@ScoreBelie
@@ -12430,19 +12442,19 @@ $LN3@ScoreBelie:
 	sar	eax, 1
 $LN2@ScoreBelie:
 
-; 6310 : 			}
-; 6311 : 
-; 6312 : 			iRtnValue += iTempValue;
+; 6332 : 			}
+; 6333 : 
+; 6334 : 			iRtnValue += iTempValue;
 
 	add	ebx, eax
 $LN9@ScoreBelie:
 
-; 6275 : 
-; 6276 : 		// Building class yield change
-; 6277 : #ifdef AUI_WARNING_FIXES
-; 6278 : 		for (uint jJ = 0; jJ < GC.getNumBuildingClassInfos(); jJ++)
-; 6279 : #else
-; 6280 : 		for(int jJ = 0; jJ < GC.getNumBuildingClassInfos(); jJ++)
+; 6297 : 
+; 6298 : 		// Building class yield change
+; 6299 : #ifdef AUI_WARNING_FIXES
+; 6300 : 		for (uint jJ = 0; jJ < GC.getNumBuildingClassInfos(); jJ++)
+; 6301 : #else
+; 6302 : 		for(int jJ = 0; jJ < GC.getNumBuildingClassInfos(); jJ++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	inc	edi
@@ -12451,10 +12463,10 @@ $LN9@ScoreBelie:
 	jl	$LL10@ScoreBelie
 $LN8@ScoreBelie:
 
-; 6313 : 		}
-; 6314 : 
-; 6315 : 		// World wonder change
-; 6316 : 		iRtnValue += pEntry->GetYieldChangeWorldWonder(iI) * 3 / 2;
+; 6335 : 		}
+; 6336 : 
+; 6337 : 		// World wonder change
+; 6338 : 		iRtnValue += pEntry->GetYieldChangeWorldWonder(iI) * 3 / 2;
 
 	push	ebp
 	mov	ecx, esi
@@ -12464,9 +12476,9 @@ $LN8@ScoreBelie:
 	sub	eax, edx
 	sar	eax, 1
 
-; 6317 : 
-; 6318 : 		// Production per follower
-; 6319 : 		if (pEntry->GetMaxYieldModifierPerFollower(iI) > 0)
+; 6339 : 
+; 6340 : 		// Production per follower
+; 6341 : 		if (pEntry->GetMaxYieldModifierPerFollower(iI) > 0)
 
 	push	ebp
 	mov	ecx, esi
@@ -12475,31 +12487,31 @@ $LN8@ScoreBelie:
 	test	eax, eax
 	jle	SHORT $LN18@ScoreBelie
 
-; 6320 : 		{
-; 6321 : 			iTempValue = min(pEntry->GetMaxYieldModifierPerFollower(iI), pCity->getPopulation());
+; 6342 : 		{
+; 6343 : 			iTempValue = min(pEntry->GetMaxYieldModifierPerFollower(iI), pCity->getPopulation());
 
 	mov	ecx, DWORD PTR _pCity$[esp+36]
 	call	?getPopulation@CvCity@@QBEHXZ		; CvCity::getPopulation
 	mov	edi, eax
 	push	ebp
 	mov	ecx, esi
-	mov	DWORD PTR $T233538[esp+40], edi
+	mov	DWORD PTR $T233595[esp+40], edi
 	call	?GetMaxYieldModifierPerFollower@CvBeliefEntry@@QBEHH@Z ; CvBeliefEntry::GetMaxYieldModifierPerFollower
-	mov	DWORD PTR $T233539[esp+40], eax
+	mov	DWORD PTR $T233596[esp+40], eax
 	cmp	edi, eax
-	lea	eax, DWORD PTR $T233538[esp+36]
+	lea	eax, DWORD PTR $T233595[esp+36]
 	jl	SHORT $LN47@ScoreBelie
-	lea	eax, DWORD PTR $T233539[esp+40]
+	lea	eax, DWORD PTR $T233596[esp+40]
 $LN47@ScoreBelie:
 
-; 6322 : 			iTempValue /= 2;
+; 6344 : 			iTempValue /= 2;
 
 	mov	eax, DWORD PTR [eax]
 	cdq
 	sub	eax, edx
 	sar	eax, 1
 
-; 6323 : 			iRtnValue += iTempValue;
+; 6345 : 			iRtnValue += iTempValue;
 
 	add	ebx, eax
 $LN18@ScoreBelie:
@@ -12510,15 +12522,15 @@ $LN18@ScoreBelie:
 	pop	esi
 	pop	ebp
 
-; 6324 : 		}
-; 6325 : 	}
-; 6326 : 
-; 6327 : 	return iRtnValue;
+; 6346 : 		}
+; 6347 : 	}
+; 6348 : 
+; 6349 : 	return iRtnValue;
 
 	mov	eax, ebx
 	pop	ebx
 
-; 6328 : }
+; 6350 : }
 
 	add	esp, 24					; 00000018H
 	ret	8
@@ -12582,30 +12594,30 @@ _iFlavorDefense$ = -44					; size = 4
 _iFlavorScience$ = -40					; size = 4
 _iFlavorCulture$ = -36					; size = 4
 _iFlavorDiplomacy$ = -32				; size = 4
-_iRtnValue$233596 = -28					; size = 4
-_pBuildingEntry$228157 = -28				; size = 4
-_iI$228150 = -24					; size = 4
+_iRtnValue$233653 = -28					; size = 4
+_pBuildingEntry$228206 = -28				; size = 4
+_iI$228199 = -24					; size = 4
 _iFlavorHappiness$ = -20				; size = 4
 _iFlavorGold$ = -16					; size = 4
 _iFlavorExpansion$ = -12				; size = 4
 _iFlavorGP$ = -8					; size = 4
 _iReligionsEnhancedPercent$ = -4			; size = 4
 tv925 = 8						; size = 4
-_iTemp$228191 = 8					; size = 4
-_iFlavorLoop$228159 = 8					; size = 4
+_iTemp$228240 = 8					; size = 4
+_iFlavorLoop$228208 = 8					; size = 4
 _pEntry$ = 8						; size = 4
 ?ScoreBeliefForPlayer@CvReligionAI@@AAEHPAVCvBeliefEntry@@@Z PROC ; CvReligionAI::ScoreBeliefForPlayer, COMDAT
 ; _this$ = ecx
 
-; 6336 : {
+; 6358 : {
 
 	sub	esp, 52					; 00000034H
 	push	ebx
 	push	ebp
 	mov	ebp, ecx
 
-; 6337 : 	int iRtnValue = 0;
-; 6338 : 	CvFlavorManager* pFlavorManager = m_pPlayer->GetFlavorManager();
+; 6359 : 	int iRtnValue = 0;
+; 6360 : 	CvFlavorManager* pFlavorManager = m_pPlayer->GetFlavorManager();
 
 	mov	ecx, DWORD PTR [ebp+4]
 	push	esi
@@ -12614,20 +12626,20 @@ _pEntry$ = 8						; size = 4
 	xor	edi, edi
 	call	?GetFlavorManager@CvPlayer@@QBEPAVCvFlavorManager@@XZ ; CvPlayer::GetFlavorManager
 
-; 6339 : 	CvGameReligions* pGameReligions = GC.getGame().GetGameReligions();
+; 6361 : 	CvGameReligions* pGameReligions = GC.getGame().GetGameReligions();
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	mov	ebx, eax
 	call	?GetGameReligions@CvGame@@QAEPAVCvGameReligions@@XZ ; CvGame::GetGameReligions
 
-; 6340 : 
-; 6341 : 	//--------------------
-; 6342 : 	// GET BACKGROUND DATA
-; 6343 : 	//--------------------
-; 6344 : 	int iFlavorOffense = pFlavorManager->GetPersonalityIndividualFlavor((FlavorTypes)GC.getInfoTypeForString("FLAVOR_OFFENSE"));
+; 6362 : 
+; 6363 : 	//--------------------
+; 6364 : 	// GET BACKGROUND DATA
+; 6365 : 	//--------------------
+; 6366 : 	int iFlavorOffense = pFlavorManager->GetPersonalityIndividualFlavor((FlavorTypes)GC.getInfoTypeForString("FLAVOR_OFFENSE"));
 
 	push	edi
-	push	OFFSET $SG228120
+	push	OFFSET $SG228169
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	esi, eax
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
@@ -12635,10 +12647,10 @@ _pEntry$ = 8						; size = 4
 	mov	ecx, ebx
 	call	?GetPersonalityIndividualFlavor@CvFlavorManager@@QAEHW4FlavorTypes@@@Z ; CvFlavorManager::GetPersonalityIndividualFlavor
 
-; 6345 : 	int iFlavorDefense = pFlavorManager->GetPersonalityIndividualFlavor((FlavorTypes)GC.getInfoTypeForString("FLAVOR_DEFENSE"));
+; 6367 : 	int iFlavorDefense = pFlavorManager->GetPersonalityIndividualFlavor((FlavorTypes)GC.getInfoTypeForString("FLAVOR_DEFENSE"));
 
 	push	edi
-	push	OFFSET $SG228123
+	push	OFFSET $SG228172
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	DWORD PTR _iFlavorOffense$[esp+76], eax
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
@@ -12646,10 +12658,10 @@ _pEntry$ = 8						; size = 4
 	mov	ecx, ebx
 	call	?GetPersonalityIndividualFlavor@CvFlavorManager@@QAEHW4FlavorTypes@@@Z ; CvFlavorManager::GetPersonalityIndividualFlavor
 
-; 6346 : 	int iFlavorHappiness = pFlavorManager->GetPersonalityIndividualFlavor((FlavorTypes)GC.getInfoTypeForString("FLAVOR_HAPPINESS"));
+; 6368 : 	int iFlavorHappiness = pFlavorManager->GetPersonalityIndividualFlavor((FlavorTypes)GC.getInfoTypeForString("FLAVOR_HAPPINESS"));
 
 	push	edi
-	push	OFFSET $SG228126
+	push	OFFSET $SG228175
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	DWORD PTR _iFlavorDefense$[esp+76], eax
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
@@ -12657,10 +12669,10 @@ _pEntry$ = 8						; size = 4
 	mov	ecx, ebx
 	call	?GetPersonalityIndividualFlavor@CvFlavorManager@@QAEHW4FlavorTypes@@@Z ; CvFlavorManager::GetPersonalityIndividualFlavor
 
-; 6347 : 	int iFlavorCulture = pFlavorManager->GetPersonalityIndividualFlavor((FlavorTypes)GC.getInfoTypeForString("FLAVOR_CULTURE"));
+; 6369 : 	int iFlavorCulture = pFlavorManager->GetPersonalityIndividualFlavor((FlavorTypes)GC.getInfoTypeForString("FLAVOR_CULTURE"));
 
 	push	edi
-	push	OFFSET $SG228129
+	push	OFFSET $SG228178
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	DWORD PTR _iFlavorHappiness$[esp+76], eax
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
@@ -12668,10 +12680,10 @@ _pEntry$ = 8						; size = 4
 	mov	ecx, ebx
 	call	?GetPersonalityIndividualFlavor@CvFlavorManager@@QAEHW4FlavorTypes@@@Z ; CvFlavorManager::GetPersonalityIndividualFlavor
 
-; 6348 : 	int iFlavorGold = pFlavorManager->GetPersonalityIndividualFlavor((FlavorTypes)GC.getInfoTypeForString("FLAVOR_GOLD"));
+; 6370 : 	int iFlavorGold = pFlavorManager->GetPersonalityIndividualFlavor((FlavorTypes)GC.getInfoTypeForString("FLAVOR_GOLD"));
 
 	push	edi
-	push	OFFSET $SG228132
+	push	OFFSET $SG228181
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	DWORD PTR _iFlavorCulture$[esp+76], eax
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
@@ -12679,10 +12691,10 @@ _pEntry$ = 8						; size = 4
 	mov	ecx, ebx
 	call	?GetPersonalityIndividualFlavor@CvFlavorManager@@QAEHW4FlavorTypes@@@Z ; CvFlavorManager::GetPersonalityIndividualFlavor
 
-; 6349 : 	int iFlavorGP = pFlavorManager->GetPersonalityIndividualFlavor((FlavorTypes)GC.getInfoTypeForString("FLAVOR_GREAT_PEOPLE"));
+; 6371 : 	int iFlavorGP = pFlavorManager->GetPersonalityIndividualFlavor((FlavorTypes)GC.getInfoTypeForString("FLAVOR_GREAT_PEOPLE"));
 
 	push	edi
-	push	OFFSET $SG228135
+	push	OFFSET $SG228184
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	DWORD PTR _iFlavorGold$[esp+76], eax
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
@@ -12690,10 +12702,10 @@ _pEntry$ = 8						; size = 4
 	mov	ecx, ebx
 	call	?GetPersonalityIndividualFlavor@CvFlavorManager@@QAEHW4FlavorTypes@@@Z ; CvFlavorManager::GetPersonalityIndividualFlavor
 
-; 6350 : 	int iFlavorScience = pFlavorManager->GetPersonalityIndividualFlavor((FlavorTypes)GC.getInfoTypeForString("FLAVOR_SCIENCE"));
+; 6372 : 	int iFlavorScience = pFlavorManager->GetPersonalityIndividualFlavor((FlavorTypes)GC.getInfoTypeForString("FLAVOR_SCIENCE"));
 
 	push	edi
-	push	OFFSET $SG228138
+	push	OFFSET $SG228187
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	DWORD PTR _iFlavorGP$[esp+76], eax
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
@@ -12701,10 +12713,10 @@ _pEntry$ = 8						; size = 4
 	mov	ecx, ebx
 	call	?GetPersonalityIndividualFlavor@CvFlavorManager@@QAEHW4FlavorTypes@@@Z ; CvFlavorManager::GetPersonalityIndividualFlavor
 
-; 6351 : 	int iFlavorDiplomacy = pFlavorManager->GetPersonalityIndividualFlavor((FlavorTypes)GC.getInfoTypeForString("FLAVOR_DIPLOMACY"));
+; 6373 : 	int iFlavorDiplomacy = pFlavorManager->GetPersonalityIndividualFlavor((FlavorTypes)GC.getInfoTypeForString("FLAVOR_DIPLOMACY"));
 
 	push	edi
-	push	OFFSET $SG228141
+	push	OFFSET $SG228190
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	DWORD PTR _iFlavorScience$[esp+76], eax
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
@@ -12712,10 +12724,10 @@ _pEntry$ = 8						; size = 4
 	mov	ecx, ebx
 	call	?GetPersonalityIndividualFlavor@CvFlavorManager@@QAEHW4FlavorTypes@@@Z ; CvFlavorManager::GetPersonalityIndividualFlavor
 
-; 6352 : 	int iFlavorExpansion = pFlavorManager->GetPersonalityIndividualFlavor((FlavorTypes)GC.getInfoTypeForString("FLAVOR_EXPANSION"));
+; 6374 : 	int iFlavorExpansion = pFlavorManager->GetPersonalityIndividualFlavor((FlavorTypes)GC.getInfoTypeForString("FLAVOR_EXPANSION"));
 
 	push	edi
-	push	OFFSET $SG228144
+	push	OFFSET $SG228193
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	DWORD PTR _iFlavorDiplomacy$[esp+76], eax
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
@@ -12723,8 +12735,8 @@ _pEntry$ = 8						; size = 4
 	mov	ecx, ebx
 	call	?GetPersonalityIndividualFlavor@CvFlavorManager@@QAEHW4FlavorTypes@@@Z ; CvFlavorManager::GetPersonalityIndividualFlavor
 
-; 6353 : 
-; 6354 : 	int iNumEnhancedReligions = pGameReligions->GetNumReligionsEnhanced();
+; 6375 : 
+; 6376 : 	int iNumEnhancedReligions = pGameReligions->GetNumReligionsEnhanced();
 
 	mov	ecx, DWORD PTR [esi]
 	mov	DWORD PTR _iFlavorExpansion$[esp+68], eax
@@ -12732,7 +12744,7 @@ _pEntry$ = 8						; size = 4
 	imul	eax, 328				; 00000148H
 	xor	edx, edx
 	add	eax, ecx
-	mov	DWORD PTR _iRtnValue$233596[esp+68], edx
+	mov	DWORD PTR _iRtnValue$233653[esp+68], edx
 	cmp	ecx, eax
 	je	SHORT $LN56@ScoreBelie@2
 	npad	7
@@ -12744,26 +12756,26 @@ $LN57@ScoreBelie@2:
 	add	ecx, 328				; 00000148H
 	cmp	ecx, eax
 	jne	SHORT $LL58@ScoreBelie@2
-	mov	DWORD PTR _iRtnValue$233596[esp+68], edx
+	mov	DWORD PTR _iRtnValue$233653[esp+68], edx
 $LN56@ScoreBelie@2:
 
-; 6355 : 	int iReligionsEnhancedPercent = (100 * iNumEnhancedReligions) / GC.getMap().getWorldInfo().getMaxActiveReligions();
+; 6377 : 	int iReligionsEnhancedPercent = (100 * iNumEnhancedReligions) / GC.getMap().getWorldInfo().getMaxActiveReligions();
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+52
 	call	?getWorldInfo@CvMap@@QBEABVCvWorldInfo@@XZ ; CvMap::getWorldInfo
 	mov	ecx, eax
 	call	?getMaxActiveReligions@CvWorldInfo@@QBEHXZ ; CvWorldInfo::getMaxActiveReligions
 	mov	ecx, eax
-	mov	eax, DWORD PTR _iRtnValue$233596[esp+68]
+	mov	eax, DWORD PTR _iRtnValue$233653[esp+68]
 	imul	eax, 100				; 00000064H
 	cdq
 	idiv	ecx
 
-; 6356 : 
-; 6357 : 	//------------------------------
-; 6358 : 	// PLAYER-LEVEL PANTHEON BELIEFS
-; 6359 : 	//------------------------------
-; 6360 : 	if(pEntry->GetFaithFromKills() > 0)
+; 6378 : 
+; 6379 : 	//------------------------------
+; 6380 : 	// PLAYER-LEVEL PANTHEON BELIEFS
+; 6381 : 	//------------------------------
+; 6382 : 	if(pEntry->GetFaithFromKills() > 0)
 
 	mov	esi, DWORD PTR _pEntry$[esp+64]
 	mov	ecx, esi
@@ -12772,8 +12784,8 @@ $LN56@ScoreBelie@2:
 	test	eax, eax
 	jle	SHORT $LN49@ScoreBelie@2
 
-; 6361 : 	{
-; 6362 : 		int iTemp = pEntry->GetFaithFromKills() * pEntry->GetMaxDistance() * iFlavorOffense / 100;
+; 6383 : 	{
+; 6384 : 		int iTemp = pEntry->GetFaithFromKills() * pEntry->GetMaxDistance() * iFlavorOffense / 100;
 
 	mov	ecx, esi
 	call	?GetFaithFromKills@CvBeliefEntry@@QBEHXZ ; CvBeliefEntry::GetFaithFromKills
@@ -12783,7 +12795,7 @@ $LN56@ScoreBelie@2:
 	imul	edi, eax
 	imul	edi, DWORD PTR _iFlavorOffense$[esp+68]
 
-; 6363 : 		if (m_pPlayer->GetDiplomacyAI()->IsGoingForWorldConquest())
+; 6385 : 		if (m_pPlayer->GetDiplomacyAI()->IsGoingForWorldConquest())
 
 	mov	ecx, DWORD PTR [ebp+4]
 	mov	eax, 1374389535				; 51eb851fH
@@ -12798,54 +12810,54 @@ $LN56@ScoreBelie@2:
 	test	al, al
 	je	SHORT $LN49@ScoreBelie@2
 
-; 6364 : 		{
-; 6365 : 			iTemp *= 2;
+; 6386 : 		{
+; 6387 : 			iTemp *= 2;
 
 	add	edi, edi
 $LN49@ScoreBelie@2:
 
-; 6366 : 		}
-; 6367 : 		iRtnValue += iTemp;
-; 6368 : 	}
-; 6369 : 
-; 6370 : 	//-------
-; 6371 : 	// UNUSED
-; 6372 : 	//-------
-; 6373 : 	iRtnValue += pEntry->GetPlayerHappiness() * iFlavorHappiness;
+; 6388 : 		}
+; 6389 : 		iRtnValue += iTemp;
+; 6390 : 	}
+; 6391 : 
+; 6392 : 	//-------
+; 6393 : 	// UNUSED
+; 6394 : 	//-------
+; 6395 : 	iRtnValue += pEntry->GetPlayerHappiness() * iFlavorHappiness;
 
 	mov	ecx, esi
 	call	?GetPlayerHappiness@CvBeliefEntry@@QBEHXZ ; CvBeliefEntry::GetPlayerHappiness
 	imul	eax, DWORD PTR _iFlavorHappiness$[esp+68]
 
-; 6374 : 	iRtnValue += pEntry->GetPlayerCultureModifier() * iFlavorCulture;
+; 6396 : 	iRtnValue += pEntry->GetPlayerCultureModifier() * iFlavorCulture;
 
 	mov	ecx, esi
 	add	edi, eax
 	call	?GetPlayerCultureModifier@CvBeliefEntry@@QBEHXZ ; CvBeliefEntry::GetPlayerCultureModifier
 	imul	eax, DWORD PTR _iFlavorCulture$[esp+68]
 
-; 6375 : 
-; 6376 : 	//-----------------
-; 6377 : 	// FOLLOWER BELIEFS
-; 6378 : 	//-----------------
-; 6379 : 	// Unlocks a building
-; 6380 : #ifdef AUI_WARNING_FIXES
-; 6381 : 	for (uint iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
-; 6382 : #else
-; 6383 : 	for (int iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
+; 6397 : 
+; 6398 : 	//-----------------
+; 6399 : 	// FOLLOWER BELIEFS
+; 6400 : 	//-----------------
+; 6401 : 	// Unlocks a building
+; 6402 : #ifdef AUI_WARNING_FIXES
+; 6403 : 	for (uint iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
+; 6404 : #else
+; 6405 : 	for (int iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
 
 	xor	ebp, ebp
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	add	edi, eax
-	mov	DWORD PTR _iI$228150[esp+68], ebp
+	mov	DWORD PTR _iI$228199[esp+68], ebp
 	call	?getNumBuildingClassInfos@CvGlobals@@QAEHXZ ; CvGlobals::getNumBuildingClassInfos
 	test	eax, eax
 	jle	$LN46@ScoreBelie@2
 $LL48@ScoreBelie@2:
 
-; 6384 : #endif
-; 6385 : 	{
-; 6386 : 		if (pEntry->IsBuildingClassEnabled(iI))
+; 6406 : #endif
+; 6407 : 	{
+; 6408 : 		if (pEntry->IsBuildingClassEnabled(iI))
 
 	push	ebp
 	mov	ecx, esi
@@ -12853,8 +12865,8 @@ $LL48@ScoreBelie@2:
 	test	al, al
 	je	$LN47@ScoreBelie@2
 
-; 6387 : 		{
-; 6388 : 			BuildingTypes eBuilding = (BuildingTypes)m_pPlayer->getCivilizationInfo().getCivilizationBuildings(iI);
+; 6409 : 		{
+; 6410 : 			BuildingTypes eBuilding = (BuildingTypes)m_pPlayer->getCivilizationInfo().getCivilizationBuildings(iI);
 
 	mov	edx, DWORD PTR _this$[esp+68]
 	mov	ecx, DWORD PTR [edx+4]
@@ -12863,60 +12875,60 @@ $LL48@ScoreBelie@2:
 	mov	ecx, eax
 	call	?getCivilizationBuildings@CvCivilizationInfo@@QBEHH@Z ; CvCivilizationInfo::getCivilizationBuildings
 
-; 6389 : 			CvBuildingEntry* pBuildingEntry = GC.GetGameBuildings()->GetEntry(eBuilding);
+; 6411 : 			CvBuildingEntry* pBuildingEntry = GC.GetGameBuildings()->GetEntry(eBuilding);
 
 	push	eax
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?GetGameBuildings@CvGlobals@@QBEPAVCvBuildingXMLEntries@@XZ ; CvGlobals::GetGameBuildings
 	mov	ecx, eax
 	call	?GetEntry@CvBuildingXMLEntries@@QAEPAVCvBuildingEntry@@H@Z ; CvBuildingXMLEntries::GetEntry
-	mov	DWORD PTR _pBuildingEntry$228157[esp+68], eax
+	mov	DWORD PTR _pBuildingEntry$228206[esp+68], eax
 
-; 6390 : 
-; 6391 : 			if(pBuildingEntry && pFlavorManager)
+; 6412 : 
+; 6413 : 			if(pBuildingEntry && pFlavorManager)
 
 	test	eax, eax
 	je	SHORT $LN47@ScoreBelie@2
 	test	ebx, ebx
 	je	SHORT $LN47@ScoreBelie@2
 
-; 6392 : 			{
-; 6393 : 				for(int iFlavorLoop = 0; iFlavorLoop < GC.getNumFlavorTypes(); iFlavorLoop++)
+; 6414 : 			{
+; 6415 : 				for(int iFlavorLoop = 0; iFlavorLoop < GC.getNumFlavorTypes(); iFlavorLoop++)
 
 	cmp	DWORD PTR ?gGlobals@@3VCvGlobals@@A+1764, 0
-	mov	DWORD PTR _iFlavorLoop$228159[esp+64], 0
+	mov	DWORD PTR _iFlavorLoop$228208[esp+64], 0
 	jle	SHORT $LN47@ScoreBelie@2
 	jmp	SHORT $LN43@ScoreBelie@2
 	npad	3
 $LL81@ScoreBelie@2:
-	mov	eax, DWORD PTR _pBuildingEntry$228157[esp+68]
+	mov	eax, DWORD PTR _pBuildingEntry$228206[esp+68]
 $LN43@ScoreBelie@2:
 
-; 6394 : 				{
-; 6395 : 					int iFlavorValue = pFlavorManager->GetPersonalityIndividualFlavor((FlavorTypes)iFlavorLoop) * pBuildingEntry->GetFlavorValue(iFlavorLoop);
+; 6416 : 				{
+; 6417 : 					int iFlavorValue = pFlavorManager->GetPersonalityIndividualFlavor((FlavorTypes)iFlavorLoop) * pBuildingEntry->GetFlavorValue(iFlavorLoop);
 
-	mov	ecx, DWORD PTR _iFlavorLoop$228159[esp+64]
+	mov	ecx, DWORD PTR _iFlavorLoop$228208[esp+64]
 	push	ecx
 	mov	ecx, eax
 	call	?GetFlavorValue@CvBuildingEntry@@QBEHH@Z ; CvBuildingEntry::GetFlavorValue
-	mov	edx, DWORD PTR _iFlavorLoop$228159[esp+64]
+	mov	edx, DWORD PTR _iFlavorLoop$228208[esp+64]
 	push	edx
 	mov	ecx, ebx
 	mov	ebp, eax
 	call	?GetPersonalityIndividualFlavor@CvFlavorManager@@QAEHW4FlavorTypes@@@Z ; CvFlavorManager::GetPersonalityIndividualFlavor
 	imul	ebp, eax
 
-; 6396 : 
-; 6397 : 					// If can also be built with hammers, much less valuable
-; 6398 : 					if (pBuildingEntry->GetProductionCost() > 0)
+; 6418 : 
+; 6419 : 					// If can also be built with hammers, much less valuable
+; 6420 : 					if (pBuildingEntry->GetProductionCost() > 0)
 
-	mov	ecx, DWORD PTR _pBuildingEntry$228157[esp+68]
+	mov	ecx, DWORD PTR _pBuildingEntry$228206[esp+68]
 	call	?GetProductionCost@CvBuildingEntry@@QBEHXZ ; CvBuildingEntry::GetProductionCost
 	test	eax, eax
 	jle	SHORT $LN40@ScoreBelie@2
 
-; 6399 : 					{
-; 6400 : 						iFlavorValue /= 10;
+; 6421 : 					{
+; 6422 : 						iFlavorValue /= 10;
 
 	mov	eax, 1717986919				; 66666667H
 	imul	ebp
@@ -12926,51 +12938,51 @@ $LN43@ScoreBelie@2:
 	add	eax, edx
 	mov	ebp, eax
 $LN40@ScoreBelie@2:
-	mov	eax, DWORD PTR _iFlavorLoop$228159[esp+64]
+	mov	eax, DWORD PTR _iFlavorLoop$228208[esp+64]
 	inc	eax
 
-; 6401 : 					}
-; 6402 : 					iRtnValue += iFlavorValue;
+; 6423 : 					}
+; 6424 : 					iRtnValue += iFlavorValue;
 
 	add	edi, ebp
 	cmp	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+1764
-	mov	DWORD PTR _iFlavorLoop$228159[esp+64], eax
+	mov	DWORD PTR _iFlavorLoop$228208[esp+64], eax
 	jl	SHORT $LL81@ScoreBelie@2
 
-; 6392 : 			{
-; 6393 : 				for(int iFlavorLoop = 0; iFlavorLoop < GC.getNumFlavorTypes(); iFlavorLoop++)
+; 6414 : 			{
+; 6415 : 				for(int iFlavorLoop = 0; iFlavorLoop < GC.getNumFlavorTypes(); iFlavorLoop++)
 
-	mov	ebp, DWORD PTR _iI$228150[esp+68]
+	mov	ebp, DWORD PTR _iI$228199[esp+68]
 $LN47@ScoreBelie@2:
 
-; 6375 : 
-; 6376 : 	//-----------------
-; 6377 : 	// FOLLOWER BELIEFS
-; 6378 : 	//-----------------
-; 6379 : 	// Unlocks a building
-; 6380 : #ifdef AUI_WARNING_FIXES
-; 6381 : 	for (uint iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
-; 6382 : #else
-; 6383 : 	for (int iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
+; 6397 : 
+; 6398 : 	//-----------------
+; 6399 : 	// FOLLOWER BELIEFS
+; 6400 : 	//-----------------
+; 6401 : 	// Unlocks a building
+; 6402 : #ifdef AUI_WARNING_FIXES
+; 6403 : 	for (uint iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
+; 6404 : #else
+; 6405 : 	for (int iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
 
 	inc	ebp
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	mov	DWORD PTR _iI$228150[esp+68], ebp
+	mov	DWORD PTR _iI$228199[esp+68], ebp
 	call	?getNumBuildingClassInfos@CvGlobals@@QAEHXZ ; CvGlobals::getNumBuildingClassInfos
 	cmp	ebp, eax
 	jl	$LL48@ScoreBelie@2
 $LN46@ScoreBelie@2:
 
-; 6403 : 				}
-; 6404 : 			}
-; 6405 : 		}
-; 6406 : 	}
-; 6407 : 
-; 6408 : 	// Unlocks units?	
-; 6409 : #ifdef AUI_WARNING_FIXES
-; 6410 : 	for (uint i = 0; i < GC.getNumEraInfos(); i++)
-; 6411 : #else
-; 6412 : 	for(int i = 0; i < GC.getNumEraInfos(); i++)
+; 6425 : 				}
+; 6426 : 			}
+; 6427 : 		}
+; 6428 : 	}
+; 6429 : 
+; 6430 : 	// Unlocks units?	
+; 6431 : #ifdef AUI_WARNING_FIXES
+; 6432 : 	for (uint i = 0; i < GC.getNumEraInfos(); i++)
+; 6433 : #else
+; 6434 : 	for(int i = 0; i < GC.getNumEraInfos(); i++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	xor	ebp, ebp
@@ -12980,10 +12992,10 @@ $LN46@ScoreBelie@2:
 	npad	1
 $LL39@ScoreBelie@2:
 
-; 6413 : #endif
-; 6414 : 	{
-; 6415 : 		// Add in for each era enabled
-; 6416 : 		if (pEntry->IsFaithUnitPurchaseEra(i))
+; 6435 : #endif
+; 6436 : 	{
+; 6437 : 		// Add in for each era enabled
+; 6438 : 		if (pEntry->IsFaithUnitPurchaseEra(i))
 
 	push	ebp
 	mov	ecx, esi
@@ -12991,12 +13003,12 @@ $LL39@ScoreBelie@2:
 	test	al, al
 	je	SHORT $LN38@ScoreBelie@2
 
-; 6417 : 		{
-; 6418 : 			int iTemp = (iFlavorOffense) + (iFlavorDefense / 2);
+; 6439 : 		{
+; 6440 : 			int iTemp = (iFlavorOffense) + (iFlavorDefense / 2);
 
 	mov	eax, DWORD PTR _iFlavorDefense$[esp+68]
 
-; 6419 : 			if (m_pPlayer->GetDiplomacyAI()->IsGoingForWorldConquest())
+; 6441 : 			if (m_pPlayer->GetDiplomacyAI()->IsGoingForWorldConquest())
 
 	mov	ecx, DWORD PTR _this$[esp+68]
 	mov	ecx, DWORD PTR [ecx+4]
@@ -13011,28 +13023,28 @@ $LL39@ScoreBelie@2:
 	test	al, al
 	je	SHORT $LN35@ScoreBelie@2
 
-; 6420 : 			{
-; 6421 : 				iTemp *= 2;
+; 6442 : 			{
+; 6443 : 				iTemp *= 2;
 
 	add	ebx, ebx
 $LN35@ScoreBelie@2:
 
-; 6422 : 			}
-; 6423 : 			iRtnValue += iTemp;
+; 6444 : 			}
+; 6445 : 			iRtnValue += iTemp;
 
 	add	edi, ebx
 $LN38@ScoreBelie@2:
 
-; 6403 : 				}
-; 6404 : 			}
-; 6405 : 		}
-; 6406 : 	}
-; 6407 : 
-; 6408 : 	// Unlocks units?	
-; 6409 : #ifdef AUI_WARNING_FIXES
-; 6410 : 	for (uint i = 0; i < GC.getNumEraInfos(); i++)
-; 6411 : #else
-; 6412 : 	for(int i = 0; i < GC.getNumEraInfos(); i++)
+; 6425 : 				}
+; 6426 : 			}
+; 6427 : 		}
+; 6428 : 	}
+; 6429 : 
+; 6430 : 	// Unlocks units?	
+; 6431 : #ifdef AUI_WARNING_FIXES
+; 6432 : 	for (uint i = 0; i < GC.getNumEraInfos(); i++)
+; 6433 : #else
+; 6434 : 	for(int i = 0; i < GC.getNumEraInfos(); i++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	inc	ebp
@@ -13041,13 +13053,13 @@ $LN38@ScoreBelie@2:
 	jl	SHORT $LL39@ScoreBelie@2
 $LN37@ScoreBelie@2:
 
-; 6424 : 		}
-; 6425 : 	}
-; 6426 : 
-; 6427 : 	//----------------
-; 6428 : 	// FOUNDER BELIEFS
-; 6429 : 	//----------------
-; 6430 : 	iRtnValue += (int)(pEntry->GetHappinessPerFollowingCity() * (float)(iFlavorHappiness + 2 * iFlavorOffense - iFlavorDefense));
+; 6446 : 		}
+; 6447 : 	}
+; 6448 : 
+; 6449 : 	//----------------
+; 6450 : 	// FOUNDER BELIEFS
+; 6451 : 	//----------------
+; 6452 : 	iRtnValue += (int)(pEntry->GetHappinessPerFollowingCity() * (float)(iFlavorHappiness + 2 * iFlavorOffense - iFlavorDefense));
 
 	mov	ecx, esi
 	call	?GetHappinessPerFollowingCity@CvBeliefEntry@@QBEMXZ ; CvBeliefEntry::GetHappinessPerFollowingCity
@@ -13061,7 +13073,7 @@ $LN37@ScoreBelie@2:
 	fimul	DWORD PTR tv925[esp+64]
 	call	__ftol2_sse_excpt
 
-; 6431 : 	if (pEntry->GetHappinessPerXPeacefulForeignFollowers() > 0 && iFlavorDefense > 0)
+; 6453 : 	if (pEntry->GetHappinessPerXPeacefulForeignFollowers() > 0 && iFlavorDefense > 0)
 
 	mov	ecx, esi
 	add	edi, eax
@@ -13071,8 +13083,8 @@ $LN37@ScoreBelie@2:
 	test	ebp, ebp
 	jle	SHORT $LN34@ScoreBelie@2
 
-; 6432 : 	{
-; 6433 : 		iRtnValue += (iFlavorHappiness * 10 * iFlavorDefense) / (pEntry->GetHappinessPerXPeacefulForeignFollowers() * iFlavorDefense);
+; 6454 : 	{
+; 6455 : 		iRtnValue += (iFlavorHappiness * 10 * iFlavorDefense) / (pEntry->GetHappinessPerXPeacefulForeignFollowers() * iFlavorDefense);
 
 	mov	ecx, esi
 	call	?GetHappinessPerXPeacefulForeignFollowers@CvBeliefEntry@@QBEHXZ ; CvBeliefEntry::GetHappinessPerXPeacefulForeignFollowers
@@ -13086,8 +13098,8 @@ $LN37@ScoreBelie@2:
 	add	edi, eax
 $LN34@ScoreBelie@2:
 
-; 6434 : 	}
-; 6435 : 	iRtnValue += iFlavorScience * pEntry->GetSciencePerOtherReligionFollower() / 5;
+; 6456 : 	}
+; 6457 : 	iRtnValue += iFlavorScience * pEntry->GetSciencePerOtherReligionFollower() / 5;
 
 	mov	ecx, esi
 	call	?GetSciencePerOtherReligionFollower@CvBeliefEntry@@QBEHXZ ; CvBeliefEntry::GetSciencePerOtherReligionFollower
@@ -13100,7 +13112,7 @@ $LN34@ScoreBelie@2:
 	shr	eax, 31					; 0000001fH
 	add	eax, edx
 
-; 6436 : 	iRtnValue += pEntry->GetGoldPerFollowingCity() * iFlavorGold;
+; 6458 : 	iRtnValue += pEntry->GetGoldPerFollowingCity() * iFlavorGold;
 
 	mov	ecx, esi
 	add	edi, eax
@@ -13108,7 +13120,7 @@ $LN34@ScoreBelie@2:
 	mov	ebx, DWORD PTR _iFlavorGold$[esp+68]
 	imul	eax, ebx
 
-; 6437 : 	if(pEntry->GetGoldPerXFollowers() > 0)
+; 6459 : 	if(pEntry->GetGoldPerXFollowers() > 0)
 
 	mov	ecx, esi
 	add	edi, eax
@@ -13116,8 +13128,8 @@ $LN34@ScoreBelie@2:
 	test	eax, eax
 	jle	SHORT $LN33@ScoreBelie@2
 
-; 6438 : 	{
-; 6439 : 		iRtnValue += (iFlavorGold * 4 / pEntry->GetGoldPerXFollowers());
+; 6460 : 	{
+; 6461 : 		iRtnValue += (iFlavorGold * 4 / pEntry->GetGoldPerXFollowers());
 
 	mov	ecx, esi
 	call	?GetGoldPerXFollowers@CvBeliefEntry@@QBEHXZ ; CvBeliefEntry::GetGoldPerXFollowers
@@ -13128,8 +13140,8 @@ $LN34@ScoreBelie@2:
 	add	edi, eax
 $LN33@ScoreBelie@2:
 
-; 6440 : 	}
-; 6441 : 	iRtnValue += iFlavorGold * pEntry->GetGoldWhenCityAdopts() / 50;
+; 6462 : 	}
+; 6463 : 	iRtnValue += iFlavorGold * pEntry->GetGoldWhenCityAdopts() / 50;
 
 	mov	ecx, esi
 	call	?GetGoldWhenCityAdopts@CvBeliefEntry@@QBEHXZ ; CvBeliefEntry::GetGoldWhenCityAdopts
@@ -13142,9 +13154,9 @@ $LN33@ScoreBelie@2:
 	shr	eax, 31					; 0000001fH
 	add	eax, edx
 
-; 6442 : 
-; 6443 : 	// Minimum influence with city states
-; 6444 : 	iRtnValue += iFlavorDiplomacy * pEntry->GetCityStateMinimumInfluence() / 7;
+; 6464 : 
+; 6465 : 	// Minimum influence with city states
+; 6466 : 	iRtnValue += iFlavorDiplomacy * pEntry->GetCityStateMinimumInfluence() / 7;
 
 	mov	ecx, esi
 	add	edi, eax
@@ -13160,18 +13172,18 @@ $LN33@ScoreBelie@2:
 	add	ecx, edx
 	add	edi, ecx
 
-; 6445 : 
-; 6446 : 	// Yields for foreign followers
-; 6447 : 	for(int iI = 0; iI < NUM_YIELD_TYPES; iI++)
+; 6467 : 
+; 6468 : 	// Yields for foreign followers
+; 6469 : 	for(int iI = 0; iI < NUM_YIELD_TYPES; iI++)
 
 	xor	ebx, ebx
 	npad	6
 $LL32@ScoreBelie@2:
 
-; 6448 : 	{
-; 6449 : 		if (iI == YIELD_CULTURE)
-; 6450 : 		{
-; 6451 : 			iRtnValue += pEntry->GetYieldChangePerForeignCity(iI) * 2 * iFlavorCulture;
+; 6470 : 	{
+; 6471 : 		if (iI == YIELD_CULTURE)
+; 6472 : 		{
+; 6473 : 			iRtnValue += pEntry->GetYieldChangePerForeignCity(iI) * 2 * iFlavorCulture;
 
 	mov	ecx, esi
 	cmp	ebx, 4
@@ -13181,7 +13193,7 @@ $LL32@ScoreBelie@2:
 	mov	ebp, DWORD PTR _iFlavorCulture$[esp+68]
 	imul	eax, ebp
 
-; 6452 : 			if (pEntry->GetYieldChangePerXForeignFollowers(iI) > 0)
+; 6474 : 			if (pEntry->GetYieldChangePerXForeignFollowers(iI) > 0)
 
 	push	ebx
 	mov	ecx, esi
@@ -13190,8 +13202,8 @@ $LL32@ScoreBelie@2:
 	test	eax, eax
 	jle	SHORT $LN84@ScoreBelie@2
 
-; 6453 : 			{
-; 6454 : 				iRtnValue += 10 * iFlavorCulture / pEntry->GetYieldChangePerXForeignFollowers(iI);
+; 6475 : 			{
+; 6476 : 				iRtnValue += 10 * iFlavorCulture / pEntry->GetYieldChangePerXForeignFollowers(iI);
 
 	push	ebx
 	mov	ecx, esi
@@ -13204,40 +13216,40 @@ $LL32@ScoreBelie@2:
 	add	edi, eax
 $LN84@ScoreBelie@2:
 
-; 6455 : 			}
-; 6456 : 		}
-; 6457 : 		else
+; 6477 : 			}
+; 6478 : 		}
+; 6479 : 		else
 
 	mov	ebp, DWORD PTR _iFlavorDefense$[esp+68]
 $LN31@ScoreBelie@2:
 
-; 6445 : 
-; 6446 : 	// Yields for foreign followers
-; 6447 : 	for(int iI = 0; iI < NUM_YIELD_TYPES; iI++)
+; 6467 : 
+; 6468 : 	// Yields for foreign followers
+; 6469 : 	for(int iI = 0; iI < NUM_YIELD_TYPES; iI++)
 
 	inc	ebx
 	cmp	ebx, 6
 	jl	SHORT $LL32@ScoreBelie@2
 
-; 6463 : 			}
-; 6464 : 		}
-; 6465 : 	}
-; 6466 : 
-; 6467 : #ifdef NQ_FREE_SETTLERS_FROM_BELIEF
-; 6468 : 	// extra value for expansionist civs
-; 6469 : 	iRtnValue += pEntry->GetNumFreeSettlers() * iFlavorExpansion;
+; 6485 : 			}
+; 6486 : 		}
+; 6487 : 	}
+; 6488 : 
+; 6489 : #ifdef NQ_FREE_SETTLERS_FROM_BELIEF
+; 6490 : 	// extra value for expansionist civs
+; 6491 : 	iRtnValue += pEntry->GetNumFreeSettlers() * iFlavorExpansion;
 
 	mov	ecx, esi
 	call	?GetNumFreeSettlers@CvBeliefEntry@@QBEHXZ ; CvBeliefEntry::GetNumFreeSettlers
 	mov	ebx, DWORD PTR _iFlavorExpansion$[esp+68]
 	imul	eax, ebx
 
-; 6470 : #endif
-; 6471 : 
-; 6472 : 	//-----------------
-; 6473 : 	// ENHANCER BELIEFS
-; 6474 : 	//-----------------
-; 6475 : 	iRtnValue += iFlavorGP * pEntry->GetGreatPersonExpendedFaith() / 10;
+; 6492 : #endif
+; 6493 : 
+; 6494 : 	//-----------------
+; 6495 : 	// ENHANCER BELIEFS
+; 6496 : 	//-----------------
+; 6497 : 	iRtnValue += iFlavorGP * pEntry->GetGreatPersonExpendedFaith() / 10;
 
 	mov	ecx, esi
 	add	edi, eax
@@ -13251,7 +13263,7 @@ $LN31@ScoreBelie@2:
 	shr	eax, 31					; 0000001fH
 	add	eax, edx
 
-; 6476 : 	iRtnValue += iFlavorDiplomacy * pEntry->GetFriendlyCityStateSpreadModifier() / 20;
+; 6498 : 	iRtnValue += iFlavorDiplomacy * pEntry->GetFriendlyCityStateSpreadModifier() / 20;
 
 	mov	ecx, esi
 	add	edi, eax
@@ -13266,7 +13278,7 @@ $LN31@ScoreBelie@2:
 	add	ecx, edx
 	add	edi, ecx
 
-; 6477 : 	iRtnValue += iFlavorDefense * pEntry->GetCombatModifierFriendlyCities() / 4;
+; 6499 : 	iRtnValue += iFlavorDefense * pEntry->GetCombatModifierFriendlyCities() / 4;
 
 	mov	ecx, esi
 	call	?GetCombatModifierFriendlyCities@CvBeliefEntry@@QBEHXZ ; CvBeliefEntry::GetCombatModifierFriendlyCities
@@ -13276,7 +13288,7 @@ $LN31@ScoreBelie@2:
 	add	eax, edx
 	sar	eax, 2
 
-; 6478 : 	iRtnValue += iFlavorOffense * pEntry->GetCombatModifierEnemyCities() / 4;
+; 6500 : 	iRtnValue += iFlavorOffense * pEntry->GetCombatModifierEnemyCities() / 4;
 
 	mov	ecx, esi
 	add	edi, eax
@@ -13287,8 +13299,8 @@ $LN31@ScoreBelie@2:
 	add	eax, edx
 	sar	eax, 2
 
-; 6479 : #ifdef NQ_DEUS_VULT
-; 6480 : 	if (pEntry->DeusVult())
+; 6501 : #ifdef NQ_DEUS_VULT
+; 6502 : 	if (pEntry->DeusVult())
 
 	mov	ecx, esi
 	add	edi, eax
@@ -13296,8 +13308,8 @@ $LN31@ScoreBelie@2:
 	test	al, al
 	je	SHORT $LN25@ScoreBelie@2
 
-; 6481 : 	{
-; 6482 : 		iRtnValue += (iFlavorOffense + iFlavorDefense) * 3;
+; 6503 : 	{
+; 6504 : 		iRtnValue += (iFlavorOffense + iFlavorDefense) * 3;
 
 	mov	edx, DWORD PTR _iFlavorOffense$[esp+68]
 	lea	eax, DWORD PTR [edx+ebp]
@@ -13305,10 +13317,10 @@ $LN31@ScoreBelie@2:
 	lea	edi, DWORD PTR [ecx+eax*2]
 $LN25@ScoreBelie@2:
 
-; 6483 : 	}
-; 6484 : #endif
-; 6485 : #ifdef NQ_GOLDEN_AGE_TURNS_FROM_BELIEF
-; 6486 : 	iRtnValue += pEntry->GetGoldenAgeTurns() * (iFlavorGold + iFlavorCulture) / 5;
+; 6505 : 	}
+; 6506 : #endif
+; 6507 : #ifdef NQ_GOLDEN_AGE_TURNS_FROM_BELIEF
+; 6508 : 	iRtnValue += pEntry->GetGoldenAgeTurns() * (iFlavorGold + iFlavorCulture) / 5;
 
 	mov	ecx, esi
 	call	?GetGoldenAgeTurns@CvBeliefEntry@@QBEHXZ ; CvBeliefEntry::GetGoldenAgeTurns
@@ -13320,10 +13332,10 @@ $LN25@ScoreBelie@2:
 	mov	eax, 1717986919				; 66666667H
 	imul	ecx
 
-; 6487 : #endif
-; 6488 : 
-; 6489 : 	// Chosen EARLY?
-; 6490 : 	if (iReligionsEnhancedPercent < 33)
+; 6509 : #endif
+; 6510 : 
+; 6511 : 	// Chosen EARLY?
+; 6512 : 	if (iReligionsEnhancedPercent < 33)
 
 	mov	eax, DWORD PTR _iReligionsEnhancedPercent$[esp+68]
 	sar	edx, 1
@@ -13333,16 +13345,16 @@ $LN25@ScoreBelie@2:
 	add	edi, ecx
 	cmp	eax, 33					; 00000021H
 
-; 6491 : 	{
-; 6492 : 		// Good early
-; 6493 : 		iRtnValue += (2 * iFlavorExpansion) + pEntry->GetSpreadDistanceModifier();
+; 6513 : 	{
+; 6514 : 		// Good early
+; 6515 : 		iRtnValue += (2 * iFlavorExpansion) + pEntry->GetSpreadDistanceModifier();
 
 	mov	ecx, esi
 	jge	$LN24@ScoreBelie@2
 	call	?GetSpreadDistanceModifier@CvBeliefEntry@@QBEHXZ ; CvBeliefEntry::GetSpreadDistanceModifier
 	add	eax, edi
 
-; 6494 : 		iRtnValue += (2 * iFlavorScience) + pEntry->GetSpreadStrengthModifier();
+; 6516 : 		iRtnValue += (2 * iFlavorScience) + pEntry->GetSpreadStrengthModifier();
 
 	mov	ecx, esi
 	lea	edi, DWORD PTR [eax+ebx*2]
@@ -13350,22 +13362,22 @@ $LN25@ScoreBelie@2:
 	mov	edx, DWORD PTR _iFlavorScience$[esp+68]
 	add	eax, edi
 
-; 6495 : 		iRtnValue += pEntry->GetMissionaryStrengthModifier() * 2;
+; 6517 : 		iRtnValue += pEntry->GetMissionaryStrengthModifier() * 2;
 
 	mov	ecx, esi
 	lea	edi, DWORD PTR [eax+edx*2]
 	call	?GetMissionaryStrengthModifier@CvBeliefEntry@@QBEHXZ ; CvBeliefEntry::GetMissionaryStrengthModifier
 
-; 6496 : 		iRtnValue += (-1 * pEntry->GetMissionaryCostModifier()) * 2;
+; 6518 : 		iRtnValue += (-1 * pEntry->GetMissionaryCostModifier()) * 2;
 
 	mov	ecx, esi
 	lea	edi, DWORD PTR [edi+eax*2]
 	call	?GetMissionaryCostModifier@CvBeliefEntry@@QBEHXZ ; CvBeliefEntry::GetMissionaryCostModifier
 	neg	eax
 
-; 6497 : 
-; 6498 : 		// Poor early
-; 6499 : 		iRtnValue += pEntry->GetProphetStrengthModifier() / 4;
+; 6519 : 
+; 6520 : 		// Poor early
+; 6521 : 		iRtnValue += pEntry->GetProphetStrengthModifier() / 4;
 
 	mov	ecx, esi
 	lea	edi, DWORD PTR [edi+eax*2]
@@ -13375,7 +13387,7 @@ $LN25@ScoreBelie@2:
 	add	eax, edx
 	sar	eax, 2
 
-; 6500 : 		iRtnValue += (-1 * pEntry->GetProphetCostModifier()) / 4;
+; 6522 : 		iRtnValue += (-1 * pEntry->GetProphetCostModifier()) / 4;
 
 	mov	ecx, esi
 	add	edi, eax
@@ -13389,14 +13401,14 @@ $LN25@ScoreBelie@2:
 	jmp	$LN21@ScoreBelie@2
 $LN29@ScoreBelie@2:
 
-; 6458 : 		{
-; 6459 : 			iRtnValue += pEntry->GetYieldChangePerForeignCity(iI) * 10;
+; 6480 : 		{
+; 6481 : 			iRtnValue += pEntry->GetYieldChangePerForeignCity(iI) * 10;
 
 	push	ebx
 	call	?GetYieldChangePerForeignCity@CvBeliefEntry@@QBEHH@Z ; CvBeliefEntry::GetYieldChangePerForeignCity
 	lea	edx, DWORD PTR [eax+eax*4]
 
-; 6460 : 			if (pEntry->GetYieldChangePerXForeignFollowers(iI) > 0)
+; 6482 : 			if (pEntry->GetYieldChangePerXForeignFollowers(iI) > 0)
 
 	push	ebx
 	mov	ecx, esi
@@ -13405,8 +13417,8 @@ $LN29@ScoreBelie@2:
 	test	eax, eax
 	jle	$LN31@ScoreBelie@2
 
-; 6461 : 			{
-; 6462 : 				iRtnValue += 50 / pEntry->GetYieldChangePerXForeignFollowers(iI);
+; 6483 : 			{
+; 6484 : 				iRtnValue += 50 / pEntry->GetYieldChangePerXForeignFollowers(iI);
 
 	push	ebx
 	mov	ecx, esi
@@ -13419,16 +13431,16 @@ $LN29@ScoreBelie@2:
 	jmp	$LN31@ScoreBelie@2
 $LN24@ScoreBelie@2:
 
-; 6501 : 	}
-; 6502 : 
-; 6503 : 	// Chosen in the MIDDLE?
-; 6504 : 	else if (iReligionsEnhancedPercent < 66)
+; 6523 : 	}
+; 6524 : 
+; 6525 : 	// Chosen in the MIDDLE?
+; 6526 : 	else if (iReligionsEnhancedPercent < 66)
 
 	cmp	eax, 66					; 00000042H
 	jge	SHORT $LN22@ScoreBelie@2
 
-; 6505 : 	{
-; 6506 : 		iRtnValue += iFlavorExpansion + pEntry->GetSpreadDistanceModifier() / 2;
+; 6527 : 	{
+; 6528 : 		iRtnValue += iFlavorExpansion + pEntry->GetSpreadDistanceModifier() / 2;
 
 	call	?GetSpreadDistanceModifier@CvBeliefEntry@@QBEHXZ ; CvBeliefEntry::GetSpreadDistanceModifier
 	cdq
@@ -13436,7 +13448,7 @@ $LN24@ScoreBelie@2:
 	sar	eax, 1
 	add	eax, ebx
 
-; 6507 : 		iRtnValue += iFlavorScience + pEntry->GetSpreadStrengthModifier() / 2;
+; 6529 : 		iRtnValue += iFlavorScience + pEntry->GetSpreadStrengthModifier() / 2;
 
 	mov	ecx, esi
 	add	edi, eax
@@ -13446,7 +13458,7 @@ $LN24@ScoreBelie@2:
 	sar	eax, 1
 	add	eax, DWORD PTR _iFlavorScience$[esp+68]
 
-; 6508 : 		iRtnValue += pEntry->GetProphetStrengthModifier() / 2;
+; 6530 : 		iRtnValue += pEntry->GetProphetStrengthModifier() / 2;
 
 	mov	ecx, esi
 	add	edi, eax
@@ -13455,7 +13467,7 @@ $LN24@ScoreBelie@2:
 	sub	eax, edx
 	sar	eax, 1
 
-; 6509 : 		iRtnValue += (-1 * pEntry->GetProphetCostModifier()) / 2;
+; 6531 : 		iRtnValue += (-1 * pEntry->GetProphetCostModifier()) / 2;
 
 	mov	ecx, esi
 	add	edi, eax
@@ -13465,29 +13477,29 @@ $LN24@ScoreBelie@2:
 	sar	eax, 1
 	neg	eax
 
-; 6510 : 		iRtnValue += pEntry->GetMissionaryStrengthModifier();
+; 6532 : 		iRtnValue += pEntry->GetMissionaryStrengthModifier();
 
 	mov	ecx, esi
 	add	edi, eax
 	call	?GetMissionaryStrengthModifier@CvBeliefEntry@@QBEHXZ ; CvBeliefEntry::GetMissionaryStrengthModifier
 
-; 6511 : 		iRtnValue += (-1 * pEntry->GetMissionaryCostModifier());
+; 6533 : 		iRtnValue += (-1 * pEntry->GetMissionaryCostModifier());
 
 	mov	ecx, esi
 	add	edi, eax
 	call	?GetMissionaryCostModifier@CvBeliefEntry@@QBEHXZ ; CvBeliefEntry::GetMissionaryCostModifier
 
-; 6512 : 	}
-; 6513 : 
-; 6514 : 	// Chosen LATE?
-; 6515 : 	else
+; 6534 : 	}
+; 6535 : 
+; 6536 : 	// Chosen LATE?
+; 6537 : 	else
 
 	jmp	SHORT $LN91@ScoreBelie@2
 $LN22@ScoreBelie@2:
 
-; 6516 : 	{
-; 6517 : 		// Poor late
-; 6518 : 		iRtnValue += ((2 * iFlavorExpansion) + pEntry->GetSpreadDistanceModifier()) / 4;
+; 6538 : 	{
+; 6539 : 		// Poor late
+; 6540 : 		iRtnValue += ((2 * iFlavorExpansion) + pEntry->GetSpreadDistanceModifier()) / 4;
 
 	call	?GetSpreadDistanceModifier@CvBeliefEntry@@QBEHXZ ; CvBeliefEntry::GetSpreadDistanceModifier
 	lea	eax, DWORD PTR [eax+ebx*2]
@@ -13496,7 +13508,7 @@ $LN22@ScoreBelie@2:
 	add	eax, edx
 	sar	eax, 2
 
-; 6519 : 		iRtnValue += ((2 * iFlavorScience) + pEntry->GetSpreadStrengthModifier()) / 4;
+; 6541 : 		iRtnValue += ((2 * iFlavorScience) + pEntry->GetSpreadStrengthModifier()) / 4;
 
 	mov	ecx, esi
 	add	edi, eax
@@ -13508,7 +13520,7 @@ $LN22@ScoreBelie@2:
 	add	eax, edx
 	sar	eax, 2
 
-; 6520 : 		iRtnValue += pEntry->GetMissionaryStrengthModifier() / 2;
+; 6542 : 		iRtnValue += pEntry->GetMissionaryStrengthModifier() / 2;
 
 	mov	ecx, esi
 	add	edi, eax
@@ -13517,7 +13529,7 @@ $LN22@ScoreBelie@2:
 	sub	eax, edx
 	sar	eax, 1
 
-; 6521 : 		iRtnValue += (-1 * pEntry->GetMissionaryCostModifier()) / 2;
+; 6543 : 		iRtnValue += (-1 * pEntry->GetMissionaryCostModifier()) / 2;
 
 	mov	ecx, esi
 	add	edi, eax
@@ -13527,15 +13539,15 @@ $LN22@ScoreBelie@2:
 	sar	eax, 1
 	neg	eax
 
-; 6522 : 
-; 6523 : 		// Good late
-; 6524 : 		iRtnValue += pEntry->GetProphetStrengthModifier();
+; 6544 : 
+; 6545 : 		// Good late
+; 6546 : 		iRtnValue += pEntry->GetProphetStrengthModifier();
 
 	mov	ecx, esi
 	add	edi, eax
 	call	?GetProphetStrengthModifier@CvBeliefEntry@@QBEHXZ ; CvBeliefEntry::GetProphetStrengthModifier
 
-; 6525 : 		iRtnValue += (-1 * pEntry->GetProphetCostModifier());
+; 6547 : 		iRtnValue += (-1 * pEntry->GetProphetCostModifier());
 
 	mov	ecx, esi
 	add	edi, eax
@@ -13544,31 +13556,31 @@ $LN91@ScoreBelie@2:
 	sub	edi, eax
 $LN21@ScoreBelie@2:
 
-; 6526 : 	}
-; 6527 : 
-; 6528 : 	//-----------------
-; 6529 : 	// REFORMATION BELIEFS
-; 6530 : 	//-----------------
-; 6531 : 	if (pEntry->FaithPurchaseAllGreatPeople())
+; 6548 : 	}
+; 6549 : 
+; 6550 : 	//-----------------
+; 6551 : 	// REFORMATION BELIEFS
+; 6552 : 	//-----------------
+; 6553 : 	if (pEntry->FaithPurchaseAllGreatPeople())
 
 	mov	ecx, esi
 	call	?FaithPurchaseAllGreatPeople@CvBeliefEntry@@QBE_NXZ ; CvBeliefEntry::FaithPurchaseAllGreatPeople
 	test	al, al
 	je	$LN83@ScoreBelie@2
 
-; 6532 : 	{
-; 6533 : 		// Count number of GP branches we have still to open and score based on that
-; 6534 : 		int iTemp = 0;
-; 6535 : 		PolicyBranchTypes eBranch;
-; 6536 : 		eBranch = (PolicyBranchTypes)GC.getInfoTypeForString("POLICY_BRANCH_TRADITION", true /*bHideAssert*/);
+; 6554 : 	{
+; 6555 : 		// Count number of GP branches we have still to open and score based on that
+; 6556 : 		int iTemp = 0;
+; 6557 : 		PolicyBranchTypes eBranch;
+; 6558 : 		eBranch = (PolicyBranchTypes)GC.getInfoTypeForString("POLICY_BRANCH_TRADITION", true /*bHideAssert*/);
 
 	push	1
-	push	OFFSET $SG228194
+	push	OFFSET $SG228243
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	mov	DWORD PTR _iTemp$228191[esp+72], 0
+	mov	DWORD PTR _iTemp$228240[esp+72], 0
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 
-; 6537 : 		if (eBranch != NO_POLICY_BRANCH_TYPE && (!m_pPlayer->GetPlayerPolicies()->IsPolicyBranchFinished(eBranch) || m_pPlayer->GetPlayerPolicies()->IsPolicyBranchBlocked(eBranch)))
+; 6559 : 		if (eBranch != NO_POLICY_BRANCH_TYPE && (!m_pPlayer->GetPlayerPolicies()->IsPolicyBranchFinished(eBranch) || m_pPlayer->GetPlayerPolicies()->IsPolicyBranchBlocked(eBranch)))
 
 	mov	ebp, DWORD PTR _this$[esp+68]
 	mov	ebx, eax
@@ -13590,22 +13602,22 @@ $LN21@ScoreBelie@2:
 	je	SHORT $LN85@ScoreBelie@2
 $LN18@ScoreBelie@2:
 
-; 6538 : 		{
-; 6539 : 			iTemp++;
+; 6560 : 		{
+; 6561 : 			iTemp++;
 
-	mov	DWORD PTR _iTemp$228191[esp+64], 1
+	mov	DWORD PTR _iTemp$228240[esp+64], 1
 $LN85@ScoreBelie@2:
 
-; 6540 : 		}
-; 6541 : 		eBranch = (PolicyBranchTypes)GC.getInfoTypeForString("POLICY_BRANCH_HONOR", true /*bHideAssert*/);
+; 6562 : 		}
+; 6563 : 		eBranch = (PolicyBranchTypes)GC.getInfoTypeForString("POLICY_BRANCH_HONOR", true /*bHideAssert*/);
 
 	push	1
-	push	OFFSET $SG228198
+	push	OFFSET $SG228247
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	ebx, eax
 
-; 6542 : 		if (eBranch != NO_POLICY_BRANCH_TYPE && (!m_pPlayer->GetPlayerPolicies()->IsPolicyBranchFinished(eBranch) || m_pPlayer->GetPlayerPolicies()->IsPolicyBranchBlocked(eBranch)))
+; 6564 : 		if (eBranch != NO_POLICY_BRANCH_TYPE && (!m_pPlayer->GetPlayerPolicies()->IsPolicyBranchFinished(eBranch) || m_pPlayer->GetPlayerPolicies()->IsPolicyBranchBlocked(eBranch)))
 
 	cmp	ebx, -1
 	je	SHORT $LN86@ScoreBelie@2
@@ -13625,22 +13637,22 @@ $LN85@ScoreBelie@2:
 	je	SHORT $LN86@ScoreBelie@2
 $LN16@ScoreBelie@2:
 
-; 6543 : 		{
-; 6544 : 			iTemp++;
+; 6565 : 		{
+; 6566 : 			iTemp++;
 
-	inc	DWORD PTR _iTemp$228191[esp+64]
+	inc	DWORD PTR _iTemp$228240[esp+64]
 $LN86@ScoreBelie@2:
 
-; 6545 : 		}
-; 6546 : 		eBranch = (PolicyBranchTypes)GC.getInfoTypeForString("POLICY_BRANCH_AESTHETICS", true /*bHideAssert*/);
+; 6567 : 		}
+; 6568 : 		eBranch = (PolicyBranchTypes)GC.getInfoTypeForString("POLICY_BRANCH_AESTHETICS", true /*bHideAssert*/);
 
 	push	1
-	push	OFFSET $SG228202
+	push	OFFSET $SG228251
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	ebx, eax
 
-; 6547 : 		if (eBranch != NO_POLICY_BRANCH_TYPE && (!m_pPlayer->GetPlayerPolicies()->IsPolicyBranchFinished(eBranch) || m_pPlayer->GetPlayerPolicies()->IsPolicyBranchBlocked(eBranch)))
+; 6569 : 		if (eBranch != NO_POLICY_BRANCH_TYPE && (!m_pPlayer->GetPlayerPolicies()->IsPolicyBranchFinished(eBranch) || m_pPlayer->GetPlayerPolicies()->IsPolicyBranchBlocked(eBranch)))
 
 	cmp	ebx, -1
 	je	SHORT $LN87@ScoreBelie@2
@@ -13660,22 +13672,22 @@ $LN86@ScoreBelie@2:
 	je	SHORT $LN87@ScoreBelie@2
 $LN14@ScoreBelie@2:
 
-; 6548 : 		{
-; 6549 : 			iTemp++;
+; 6570 : 		{
+; 6571 : 			iTemp++;
 
-	inc	DWORD PTR _iTemp$228191[esp+64]
+	inc	DWORD PTR _iTemp$228240[esp+64]
 $LN87@ScoreBelie@2:
 
-; 6550 : 		}
-; 6551 : 		eBranch = (PolicyBranchTypes)GC.getInfoTypeForString("POLICY_BRANCH_COMMERCE", true /*bHideAssert*/);
+; 6572 : 		}
+; 6573 : 		eBranch = (PolicyBranchTypes)GC.getInfoTypeForString("POLICY_BRANCH_COMMERCE", true /*bHideAssert*/);
 
 	push	1
-	push	OFFSET $SG228206
+	push	OFFSET $SG228255
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	ebx, eax
 
-; 6552 : 		if (eBranch != NO_POLICY_BRANCH_TYPE && (!m_pPlayer->GetPlayerPolicies()->IsPolicyBranchFinished(eBranch) || m_pPlayer->GetPlayerPolicies()->IsPolicyBranchBlocked(eBranch)))
+; 6574 : 		if (eBranch != NO_POLICY_BRANCH_TYPE && (!m_pPlayer->GetPlayerPolicies()->IsPolicyBranchFinished(eBranch) || m_pPlayer->GetPlayerPolicies()->IsPolicyBranchBlocked(eBranch)))
 
 	cmp	ebx, -1
 	je	SHORT $LN88@ScoreBelie@2
@@ -13695,22 +13707,22 @@ $LN87@ScoreBelie@2:
 	je	SHORT $LN88@ScoreBelie@2
 $LN12@ScoreBelie@2:
 
-; 6553 : 		{
-; 6554 : 			iTemp++;
+; 6575 : 		{
+; 6576 : 			iTemp++;
 
-	inc	DWORD PTR _iTemp$228191[esp+64]
+	inc	DWORD PTR _iTemp$228240[esp+64]
 $LN88@ScoreBelie@2:
 
-; 6555 : 		}
-; 6556 : 		eBranch = (PolicyBranchTypes)GC.getInfoTypeForString("POLICY_BRANCH_EXPLORATION", true /*bHideAssert*/);
+; 6577 : 		}
+; 6578 : 		eBranch = (PolicyBranchTypes)GC.getInfoTypeForString("POLICY_BRANCH_EXPLORATION", true /*bHideAssert*/);
 
 	push	1
-	push	OFFSET $SG228210
+	push	OFFSET $SG228259
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	ebx, eax
 
-; 6557 : 		if (eBranch != NO_POLICY_BRANCH_TYPE && (!m_pPlayer->GetPlayerPolicies()->IsPolicyBranchFinished(eBranch) || m_pPlayer->GetPlayerPolicies()->IsPolicyBranchBlocked(eBranch)))
+; 6579 : 		if (eBranch != NO_POLICY_BRANCH_TYPE && (!m_pPlayer->GetPlayerPolicies()->IsPolicyBranchFinished(eBranch) || m_pPlayer->GetPlayerPolicies()->IsPolicyBranchBlocked(eBranch)))
 
 	cmp	ebx, -1
 	je	SHORT $LN89@ScoreBelie@2
@@ -13730,22 +13742,22 @@ $LN88@ScoreBelie@2:
 	je	SHORT $LN89@ScoreBelie@2
 $LN10@ScoreBelie@2:
 
-; 6558 : 		{
-; 6559 : 			iTemp++;
+; 6580 : 		{
+; 6581 : 			iTemp++;
 
-	inc	DWORD PTR _iTemp$228191[esp+64]
+	inc	DWORD PTR _iTemp$228240[esp+64]
 $LN89@ScoreBelie@2:
 
-; 6560 : 		}
-; 6561 : 		eBranch = (PolicyBranchTypes)GC.getInfoTypeForString("POLICY_BRANCH_RATIONALISM", true /*bHideAssert*/);
+; 6582 : 		}
+; 6583 : 		eBranch = (PolicyBranchTypes)GC.getInfoTypeForString("POLICY_BRANCH_RATIONALISM", true /*bHideAssert*/);
 
 	push	1
-	push	OFFSET $SG228214
+	push	OFFSET $SG228263
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	ebx, eax
 
-; 6562 : 		if (eBranch != NO_POLICY_BRANCH_TYPE && (!m_pPlayer->GetPlayerPolicies()->IsPolicyBranchFinished(eBranch) || m_pPlayer->GetPlayerPolicies()->IsPolicyBranchBlocked(eBranch)))
+; 6584 : 		if (eBranch != NO_POLICY_BRANCH_TYPE && (!m_pPlayer->GetPlayerPolicies()->IsPolicyBranchFinished(eBranch) || m_pPlayer->GetPlayerPolicies()->IsPolicyBranchBlocked(eBranch)))
 
 	cmp	ebx, -1
 	je	SHORT $LN90@ScoreBelie@2
@@ -13765,29 +13777,29 @@ $LN89@ScoreBelie@2:
 	je	SHORT $LN90@ScoreBelie@2
 $LN8@ScoreBelie@2:
 
-; 6563 : 		{
-; 6564 : 			iTemp++;
+; 6585 : 		{
+; 6586 : 			iTemp++;
 
-	mov	eax, DWORD PTR _iTemp$228191[esp+64]
+	mov	eax, DWORD PTR _iTemp$228240[esp+64]
 	inc	eax
 
-; 6565 : 		}
-; 6566 : 
-; 6567 : 		iRtnValue += (iTemp * 6);
+; 6587 : 		}
+; 6588 : 
+; 6589 : 		iRtnValue += (iTemp * 6);
 
 	lea	edx, DWORD PTR [eax+eax*2]
 	lea	edi, DWORD PTR [edi+edx*2]
 	jmp	SHORT $LN20@ScoreBelie@2
 $LN90@ScoreBelie@2:
 
-; 6563 : 		{
-; 6564 : 			iTemp++;
+; 6585 : 		{
+; 6586 : 			iTemp++;
 
-	mov	eax, DWORD PTR _iTemp$228191[esp+64]
+	mov	eax, DWORD PTR _iTemp$228240[esp+64]
 
-; 6565 : 		}
-; 6566 : 
-; 6567 : 		iRtnValue += (iTemp * 6);
+; 6587 : 		}
+; 6588 : 
+; 6589 : 		iRtnValue += (iTemp * 6);
 
 	lea	edx, DWORD PTR [eax+eax*2]
 	lea	edi, DWORD PTR [edi+edx*2]
@@ -13796,23 +13808,23 @@ $LN83@ScoreBelie@2:
 	mov	ebp, DWORD PTR _this$[esp+68]
 $LN20@ScoreBelie@2:
 
-; 6568 : 	}
-; 6569 : 	if (pEntry->ConvertsBarbarians())
+; 6590 : 	}
+; 6591 : 	if (pEntry->ConvertsBarbarians())
 
 	mov	ecx, esi
 	call	?ConvertsBarbarians@CvBeliefEntry@@QBE_NXZ ; CvBeliefEntry::ConvertsBarbarians
 	test	al, al
 	je	SHORT $LN5@ScoreBelie@2
 
-; 6570 : 	{
-; 6571 : 		MilitaryAIStrategyTypes eStrategyBarbs = (MilitaryAIStrategyTypes) GC.getInfoTypeForString("MILITARYAISTRATEGY_ERADICATE_BARBARIANS");
+; 6592 : 	{
+; 6593 : 		MilitaryAIStrategyTypes eStrategyBarbs = (MilitaryAIStrategyTypes) GC.getInfoTypeForString("MILITARYAISTRATEGY_ERADICATE_BARBARIANS");
 
 	push	0
-	push	OFFSET $SG228220
+	push	OFFSET $SG228269
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 
-; 6572 : 		if (m_pPlayer->GetMilitaryAI()->IsUsingStrategy(eStrategyBarbs))
+; 6594 : 		if (m_pPlayer->GetMilitaryAI()->IsUsingStrategy(eStrategyBarbs))
 
 	mov	ecx, DWORD PTR [ebp+4]
 	push	eax
@@ -13822,34 +13834,34 @@ $LN20@ScoreBelie@2:
 	test	al, al
 	je	SHORT $LN6@ScoreBelie@2
 
-; 6573 : 		{
-; 6574 : 			iRtnValue += 40;
+; 6595 : 		{
+; 6596 : 			iRtnValue += 40;
 
 	add	edi, 40					; 00000028H
 
-; 6575 : 		}
-; 6576 : 		else
+; 6597 : 		}
+; 6598 : 		else
 
 	jmp	SHORT $LN5@ScoreBelie@2
 $LN6@ScoreBelie@2:
 
-; 6577 : 		{
-; 6578 : 			iRtnValue += 15;
+; 6599 : 		{
+; 6600 : 			iRtnValue += 15;
 
 	add	edi, 15					; 0000000fH
 $LN5@ScoreBelie@2:
 
-; 6579 : 		}
-; 6580 : 	}
-; 6581 : 	if (pEntry->GetCityStateInfluenceModifier() > 0)
+; 6601 : 		}
+; 6602 : 	}
+; 6603 : 	if (pEntry->GetCityStateInfluenceModifier() > 0)
 
 	mov	ecx, esi
 	call	?GetCityStateInfluenceModifier@CvBeliefEntry@@QBEHXZ ; CvBeliefEntry::GetCityStateInfluenceModifier
 	test	eax, eax
 	jle	SHORT $LN4@ScoreBelie@2
 
-; 6582 : 	{
-; 6583 : 		iRtnValue += (pEntry->GetCityStateInfluenceModifier() * iFlavorDiplomacy / 5);
+; 6604 : 	{
+; 6605 : 		iRtnValue += (pEntry->GetCityStateInfluenceModifier() * iFlavorDiplomacy / 5);
 
 	mov	ecx, esi
 	call	?GetCityStateInfluenceModifier@CvBeliefEntry@@QBEHXZ ; CvBeliefEntry::GetCityStateInfluenceModifier
@@ -13864,16 +13876,16 @@ $LN5@ScoreBelie@2:
 	add	edi, eax
 $LN4@ScoreBelie@2:
 
-; 6584 : 	}
-; 6585 : 	if (pEntry->GetInquisitorPressureRetention() > 0)
+; 6606 : 	}
+; 6607 : 	if (pEntry->GetInquisitorPressureRetention() > 0)
 
 	mov	ecx, esi
 	call	?GetInquisitorPressureRetention@CvBeliefEntry@@QBEHXZ ; CvBeliefEntry::GetInquisitorPressureRetention
 	test	eax, eax
 	jle	SHORT $LN3@ScoreBelie@2
 
-; 6586 : 	{
-; 6587 : 		iRtnValue += (pEntry->GetInquisitorPressureRetention() / 2);
+; 6608 : 	{
+; 6609 : 		iRtnValue += (pEntry->GetInquisitorPressureRetention() / 2);
 
 	mov	ecx, esi
 	call	?GetInquisitorPressureRetention@CvBeliefEntry@@QBEHXZ ; CvBeliefEntry::GetInquisitorPressureRetention
@@ -13883,16 +13895,16 @@ $LN4@ScoreBelie@2:
 	add	edi, eax
 $LN3@ScoreBelie@2:
 
-; 6588 : 	}
-; 6589 : 	if (pEntry->GetSpyPressure() > 0)
+; 6610 : 	}
+; 6611 : 	if (pEntry->GetSpyPressure() > 0)
 
 	mov	ecx, esi
 	call	?GetSpyPressure@CvBeliefEntry@@QBEHXZ	; CvBeliefEntry::GetSpyPressure
 	test	eax, eax
 	jle	SHORT $LN2@ScoreBelie@2
 
-; 6590 : 	{
-; 6591 : 		iRtnValue += (pEntry->GetSpyPressure()* 5);
+; 6612 : 	{
+; 6613 : 		iRtnValue += (pEntry->GetSpyPressure()* 5);
 
 	mov	ecx, esi
 	call	?GetSpyPressure@CvBeliefEntry@@QBEHXZ	; CvBeliefEntry::GetSpyPressure
@@ -13900,16 +13912,16 @@ $LN3@ScoreBelie@2:
 	lea	edi, DWORD PTR [ecx+eax*4]
 $LN2@ScoreBelie@2:
 
-; 6592 : 	}
-; 6593 : 	if (pEntry->GetFaithBuildingTourism() > 0)
+; 6614 : 	}
+; 6615 : 	if (pEntry->GetFaithBuildingTourism() > 0)
 
 	mov	ecx, esi
 	call	?GetFaithBuildingTourism@CvBeliefEntry@@QBEHXZ ; CvBeliefEntry::GetFaithBuildingTourism
 	test	eax, eax
 	jle	SHORT $LN79@ScoreBelie@2
 
-; 6594 : 	{
-; 6595 : 		iRtnValue += (pEntry->GetFaithBuildingTourism() * 20);
+; 6616 : 	{
+; 6617 : 		iRtnValue += (pEntry->GetFaithBuildingTourism() * 20);
 
 	mov	ecx, esi
 	call	?GetFaithBuildingTourism@CvBeliefEntry@@QBEHXZ ; CvBeliefEntry::GetFaithBuildingTourism
@@ -13920,15 +13932,15 @@ $LN2@ScoreBelie@2:
 	pop	ebp
 	pop	ebx
 
-; 6599 : }
+; 6621 : }
 
 	add	esp, 52					; 00000034H
 	ret	4
 $LN79@ScoreBelie@2:
 
-; 6596 : 	}
-; 6597 : 
-; 6598 : 	return iRtnValue;
+; 6618 : 	}
+; 6619 : 
+; 6620 : 	return iRtnValue;
 
 	mov	eax, edi
 	pop	edi
@@ -13936,7 +13948,7 @@ $LN79@ScoreBelie@2:
 	pop	ebp
 	pop	ebx
 
-; 6599 : }
+; 6621 : }
 
 	add	esp, 52					; 00000034H
 	ret	4
@@ -13952,14 +13964,14 @@ _iNewPressure$ = 16					; size = 4
 ?ShouldBecomeNewMajority@CvReligionAI@@ABE_NPAVCvCity@@W4ReligionTypes@@H@Z PROC ; CvReligionAI::ShouldBecomeNewMajority, COMDAT
 ; _this$ = ecx
 
-; 6714 : 	CvCityReligions* pCityReligions = pCity->GetCityReligions();
+; 6736 : 	CvCityReligions* pCityReligions = pCity->GetCityReligions();
 
 	mov	ecx, DWORD PTR _pCity$[esp-4]
 	push	esi
 	push	edi
 	call	?GetCityReligions@CvCity@@QBEPAVCvCityReligions@@XZ ; CvCity::GetCityReligions
 
-; 6715 : 	int iTotalPressure = pCityReligions->GetTotalPressure() + iNewPressure;
+; 6737 : 	int iTotalPressure = pCityReligions->GetTotalPressure() + iNewPressure;
 
 	mov	esi, DWORD PTR [eax]
 	mov	eax, DWORD PTR [eax+4]
@@ -13978,7 +13990,7 @@ $LL5@ShouldBeco:
 $LN3@ShouldBeco:
 	mov	edi, DWORD PTR _iNewPressure$[esp+4]
 
-; 6716 : 	int iReligionPressure = pCityReligions->GetPressure(eReligion) + iNewPressure;
+; 6738 : 	int iReligionPressure = pCityReligions->GetPressure(eReligion) + iNewPressure;
 
 	mov	ecx, esi
 	add	edx, edi
@@ -13995,8 +14007,8 @@ $LL15@ShouldBeco:
 $LN13@ShouldBeco:
 	xor	ecx, ecx
 
-; 6717 : 
-; 6718 : 	return (iReligionPressure * 2) > iTotalPressure;
+; 6739 : 
+; 6740 : 	return (iReligionPressure * 2) > iTotalPressure;
 
 	mov	ecx, edi
 	add	ecx, ecx
@@ -14006,17 +14018,17 @@ $LN13@ShouldBeco:
 	setg	al
 	pop	esi
 
-; 6719 : }
+; 6741 : }
 
 	ret	12					; 0000000cH
 $LN24@ShouldBeco:
 
-; 6716 : 	int iReligionPressure = pCityReligions->GetPressure(eReligion) + iNewPressure;
+; 6738 : 	int iReligionPressure = pCityReligions->GetPressure(eReligion) + iNewPressure;
 
 	mov	ecx, DWORD PTR [ecx+12]
 
-; 6717 : 
-; 6718 : 	return (iReligionPressure * 2) > iTotalPressure;
+; 6739 : 
+; 6740 : 	return (iReligionPressure * 2) > iTotalPressure;
 
 	add	ecx, edi
 	add	ecx, ecx
@@ -14026,7 +14038,7 @@ $LN24@ShouldBeco:
 	setg	al
 	pop	esi
 
-; 6719 : }
+; 6741 : }
 
 	ret	12					; 0000000cH
 ?ShouldBecomeNewMajority@CvReligionAI@@ABE_NPAVCvCity@@W4ReligionTypes@@H@Z ENDP ; CvReligionAI::ShouldBecomeNewMajority
@@ -14044,7 +14056,7 @@ _bIncludePuppets$ = 12					; size = 1
 ?AreAllOurCitiesConverted@CvReligionAI@@ABE_NW4ReligionTypes@@_N@Z PROC ; CvReligionAI::AreAllOurCitiesConverted, COMDAT
 ; _this$ = ecx
 
-; 6723 : {
+; 6745 : {
 
 	push	ecx
 	push	ebx
@@ -14052,11 +14064,11 @@ _bIncludePuppets$ = 12					; size = 1
 	push	edi
 	mov	edi, ecx
 
-; 6724 : 	bool bRtnValue = true;
-; 6725 : 
-; 6726 : 	int iLoop;
-; 6727 : 	CvCity* pLoopCity;
-; 6728 : 	for(pLoopCity = m_pPlayer->firstCity(&iLoop); pLoopCity != NULL; pLoopCity = m_pPlayer->nextCity(&iLoop))
+; 6746 : 	bool bRtnValue = true;
+; 6747 : 
+; 6748 : 	int iLoop;
+; 6749 : 	CvCity* pLoopCity;
+; 6750 : 	for(pLoopCity = m_pPlayer->firstCity(&iLoop); pLoopCity != NULL; pLoopCity = m_pPlayer->nextCity(&iLoop))
 
 	mov	ecx, DWORD PTR [edi+4]
 	push	0
@@ -14072,8 +14084,8 @@ _bIncludePuppets$ = 12					; size = 1
 	mov	ebp, DWORD PTR _eReligion$[esp+16]
 $LL6@AreAllOurC:
 
-; 6729 : 	{
-; 6730 : 		if(pLoopCity->GetCityReligions()->GetReligiousMajority() != eReligion)
+; 6751 : 	{
+; 6752 : 		if(pLoopCity->GetCityReligions()->GetReligiousMajority() != eReligion)
 
 	mov	ecx, esi
 	call	?GetCityReligions@CvCity@@QBEPAVCvCityReligions@@XZ ; CvCity::GetCityReligions
@@ -14082,8 +14094,8 @@ $LL6@AreAllOurC:
 	cmp	eax, ebp
 	je	SHORT $LN5@AreAllOurC
 
-; 6731 : 		{
-; 6732 : 			if(bIncludePuppets || !pLoopCity->IsPuppet())
+; 6753 : 		{
+; 6754 : 			if(bIncludePuppets || !pLoopCity->IsPuppet())
 
 	test	bl, bl
 	jne	SHORT $LN1@AreAllOurC
@@ -14093,11 +14105,11 @@ $LL6@AreAllOurC:
 	je	SHORT $LN1@AreAllOurC
 $LN5@AreAllOurC:
 
-; 6724 : 	bool bRtnValue = true;
-; 6725 : 
-; 6726 : 	int iLoop;
-; 6727 : 	CvCity* pLoopCity;
-; 6728 : 	for(pLoopCity = m_pPlayer->firstCity(&iLoop); pLoopCity != NULL; pLoopCity = m_pPlayer->nextCity(&iLoop))
+; 6746 : 	bool bRtnValue = true;
+; 6747 : 
+; 6748 : 	int iLoop;
+; 6749 : 	CvCity* pLoopCity;
+; 6750 : 	for(pLoopCity = m_pPlayer->firstCity(&iLoop); pLoopCity != NULL; pLoopCity = m_pPlayer->nextCity(&iLoop))
 
 	push	0
 	lea	ecx, DWORD PTR _iLoop$[esp+24]
@@ -14111,17 +14123,17 @@ $LN5@AreAllOurC:
 	pop	edi
 	pop	esi
 
-; 6735 : 				break;
-; 6736 : 			}
-; 6737 : 		}
-; 6738 : 	}
-; 6739 : 
-; 6740 : 	return bRtnValue;
+; 6757 : 				break;
+; 6758 : 			}
+; 6759 : 		}
+; 6760 : 	}
+; 6761 : 
+; 6762 : 	return bRtnValue;
 
 	mov	al, 1
 	pop	ebx
 
-; 6741 : }
+; 6763 : }
 
 	pop	ecx
 	ret	8
@@ -14130,13 +14142,13 @@ $LN1@AreAllOurC:
 	pop	edi
 	pop	esi
 
-; 6733 : 			{
-; 6734 : 				bRtnValue = false;
+; 6755 : 			{
+; 6756 : 				bRtnValue = false;
 
 	xor	al, al
 	pop	ebx
 
-; 6741 : }
+; 6763 : }
 
 	pop	ecx
 	ret	8
@@ -14144,17 +14156,17 @@ $LN11@AreAllOurC:
 	pop	edi
 	pop	esi
 
-; 6735 : 				break;
-; 6736 : 			}
-; 6737 : 		}
-; 6738 : 	}
-; 6739 : 
-; 6740 : 	return bRtnValue;
+; 6757 : 				break;
+; 6758 : 			}
+; 6759 : 		}
+; 6760 : 	}
+; 6761 : 
+; 6762 : 	return bRtnValue;
 
 	mov	al, bl
 	pop	ebx
 
-; 6741 : }
+; 6763 : }
 
 	pop	ecx
 	ret	8
@@ -14173,7 +14185,7 @@ _eReligion$ = 8						; size = 4
 ?HaveEnoughInquisitors@CvReligionAI@@ABE_NW4ReligionTypes@@@Z PROC ; CvReligionAI::HaveEnoughInquisitors, COMDAT
 ; _this$ = ecx
 
-; 6885 : {
+; 6907 : {
 
 	push	ecx
 	push	ebx
@@ -14182,11 +14194,11 @@ _eReligion$ = 8						; size = 4
 	push	edi
 	mov	edi, ecx
 
-; 6886 : 	int iLoop;
-; 6887 : 
-; 6888 : 	// Need one for every city in our realm that is of another religion, plus one for defense
-; 6889 : 	int iNumNeeded = 1;
-; 6890 : 	for(CvCity* pCity = m_pPlayer->firstCity(&iLoop); pCity != NULL; pCity = m_pPlayer->nextCity(&iLoop))
+; 6908 : 	int iLoop;
+; 6909 : 
+; 6910 : 	// Need one for every city in our realm that is of another religion, plus one for defense
+; 6911 : 	int iNumNeeded = 1;
+; 6912 : 	for(CvCity* pCity = m_pPlayer->firstCity(&iLoop); pCity != NULL; pCity = m_pPlayer->nextCity(&iLoop))
 
 	mov	ecx, DWORD PTR [edi+4]
 	push	0
@@ -14199,32 +14211,32 @@ _eReligion$ = 8						; size = 4
 	npad	1
 $LL9@HaveEnough:
 
-; 6891 : 	{
-; 6892 : 		ReligionTypes eCityReligion = pCity->GetCityReligions()->GetReligiousMajority();
+; 6913 : 	{
+; 6914 : 		ReligionTypes eCityReligion = pCity->GetCityReligions()->GetReligiousMajority();
 
 	mov	ecx, eax
 	call	?GetCityReligions@CvCity@@QBEPAVCvCityReligions@@XZ ; CvCity::GetCityReligions
 	mov	ecx, eax
 	call	?GetReligiousMajority@CvCityReligions@@QAE?AW4ReligionTypes@@XZ ; CvCityReligions::GetReligiousMajority
 
-; 6893 : 		if(eCityReligion > RELIGION_PANTHEON && eCityReligion != eReligion)
+; 6915 : 		if(eCityReligion > RELIGION_PANTHEON && eCityReligion != eReligion)
 
 	test	eax, eax
 	jle	SHORT $LN8@HaveEnough
 	cmp	eax, DWORD PTR _eReligion$[esp+16]
 	je	SHORT $LN8@HaveEnough
 
-; 6894 : 		{
-; 6895 : 			iNumNeeded++;
+; 6916 : 		{
+; 6917 : 			iNumNeeded++;
 
 	inc	ebp
 $LN8@HaveEnough:
 
-; 6886 : 	int iLoop;
-; 6887 : 
-; 6888 : 	// Need one for every city in our realm that is of another religion, plus one for defense
-; 6889 : 	int iNumNeeded = 1;
-; 6890 : 	for(CvCity* pCity = m_pPlayer->firstCity(&iLoop); pCity != NULL; pCity = m_pPlayer->nextCity(&iLoop))
+; 6908 : 	int iLoop;
+; 6909 : 
+; 6910 : 	// Need one for every city in our realm that is of another religion, plus one for defense
+; 6911 : 	int iNumNeeded = 1;
+; 6912 : 	for(CvCity* pCity = m_pPlayer->firstCity(&iLoop); pCity != NULL; pCity = m_pPlayer->nextCity(&iLoop))
 
 	push	0
 	lea	ecx, DWORD PTR _iLoop$[esp+24]
@@ -14235,12 +14247,12 @@ $LN8@HaveEnough:
 	jne	SHORT $LL9@HaveEnough
 $LN7@HaveEnough:
 
-; 6896 : 		}
-; 6897 : 	}
-; 6898 : 
-; 6899 : 	// Count Inquisitors of our religion
-; 6900 : 	int iNumInquisitors = 0;
-; 6901 : 	for(CvUnit* pUnit = m_pPlayer->firstUnit(&iLoop); pUnit != NULL; pUnit = m_pPlayer->nextUnit(&iLoop))
+; 6918 : 		}
+; 6919 : 	}
+; 6920 : 
+; 6921 : 	// Count Inquisitors of our religion
+; 6922 : 	int iNumInquisitors = 0;
+; 6923 : 	for(CvUnit* pUnit = m_pPlayer->firstUnit(&iLoop); pUnit != NULL; pUnit = m_pPlayer->nextUnit(&iLoop))
 
 	mov	ecx, DWORD PTR [edi+4]
 	xor	ebx, ebx
@@ -14253,8 +14265,8 @@ $LN7@HaveEnough:
 	je	SHORT $LN3@HaveEnough
 $LL5@HaveEnough:
 
-; 6902 : 	{
-; 6903 : 		if(pUnit->getUnitInfo().IsRemoveHeresy())
+; 6924 : 	{
+; 6925 : 		if(pUnit->getUnitInfo().IsRemoveHeresy())
 
 	mov	ecx, esi
 	call	?getUnitInfo@CvUnit@@QBEAAVCvUnitEntry@@XZ ; CvUnit::getUnitInfo
@@ -14263,26 +14275,26 @@ $LL5@HaveEnough:
 	test	al, al
 	je	SHORT $LN4@HaveEnough
 
-; 6904 : 		{
-; 6905 : 			if(pUnit->GetReligionData()->GetReligion() == eReligion)
+; 6926 : 		{
+; 6927 : 			if(pUnit->GetReligionData()->GetReligion() == eReligion)
 
 	mov	eax, DWORD PTR [esi+1888]
 	mov	ecx, DWORD PTR _eReligion$[esp+16]
 	cmp	DWORD PTR [eax], ecx
 	jne	SHORT $LN4@HaveEnough
 
-; 6906 : 			{
-; 6907 : 				iNumInquisitors++;
+; 6928 : 			{
+; 6929 : 				iNumInquisitors++;
 
 	inc	ebx
 $LN4@HaveEnough:
 
-; 6896 : 		}
-; 6897 : 	}
-; 6898 : 
-; 6899 : 	// Count Inquisitors of our religion
-; 6900 : 	int iNumInquisitors = 0;
-; 6901 : 	for(CvUnit* pUnit = m_pPlayer->firstUnit(&iLoop); pUnit != NULL; pUnit = m_pPlayer->nextUnit(&iLoop))
+; 6918 : 		}
+; 6919 : 	}
+; 6920 : 
+; 6921 : 	// Count Inquisitors of our religion
+; 6922 : 	int iNumInquisitors = 0;
+; 6923 : 	for(CvUnit* pUnit = m_pPlayer->firstUnit(&iLoop); pUnit != NULL; pUnit = m_pPlayer->nextUnit(&iLoop))
 
 	mov	ecx, DWORD PTR [edi+4]
 	push	0
@@ -14295,11 +14307,11 @@ $LN4@HaveEnough:
 $LN3@HaveEnough:
 	pop	edi
 
-; 6908 : 			}
-; 6909 : 		}
-; 6910 : 	}
-; 6911 : 
-; 6912 : 	return iNumInquisitors >= iNumNeeded;
+; 6930 : 			}
+; 6931 : 		}
+; 6932 : 	}
+; 6933 : 
+; 6934 : 	return iNumInquisitors >= iNumNeeded;
 
 	xor	eax, eax
 	cmp	ebx, ebp
@@ -14308,7 +14320,7 @@ $LN3@HaveEnough:
 	setge	al
 	pop	ebx
 
-; 6913 : }
+; 6935 : }
 
 	pop	ecx
 	ret	4
@@ -17321,7 +17333,7 @@ PUBLIC	?GetNumFollowers@CvGameReligions@@QBEHW4ReligionTypes@@@Z ; CvGameReligio
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?GetNumFollowers@CvGameReligions@@QBEHW4ReligionTypes@@@Z
 _TEXT	SEGMENT
-_iLoop$225337 = 8					; size = 4
+_iLoop$225379 = 8					; size = 4
 _eReligion$ = 8						; size = 4
 ?GetNumFollowers@CvGameReligions@@QBEHW4ReligionTypes@@@Z PROC ; CvGameReligions::GetNumFollowers, COMDAT
 ; _this$ = ecx
@@ -17359,7 +17371,7 @@ $LL34@GetNumFoll@2:
 ; 1662 : 			for(pLoopCity = kPlayer.firstCity(&iLoop); pLoopCity != NULL; pLoopCity = kPlayer.nextCity(&iLoop))
 
 	push	0
-	lea	ecx, DWORD PTR _iLoop$225337[esp+16]
+	lea	ecx, DWORD PTR _iLoop$225379[esp+16]
 	push	ecx
 	mov	ecx, esi
 	call	?firstCity@CvPlayer@@QAEPAVCvCity@@PAH_N@Z ; CvPlayer::firstCity
@@ -17389,7 +17401,7 @@ $LN17@GetNumFoll@2:
 	xor	ecx, ecx
 $LN20@GetNumFoll@2:
 	push	0
-	lea	eax, DWORD PTR _iLoop$225337[esp+16]
+	lea	eax, DWORD PTR _iLoop$225379[esp+16]
 	add	edi, ecx
 	push	eax
 	mov	ecx, esi
@@ -17433,7 +17445,7 @@ PUBLIC	?GetNumCitiesFollowing@CvGameReligions@@QBEHW4ReligionTypes@@@Z ; CvGameR
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?GetNumCitiesFollowing@CvGameReligions@@QBEHW4ReligionTypes@@@Z
 _TEXT	SEGMENT
-_iLoop$225354 = 8					; size = 4
+_iLoop$225396 = 8					; size = 4
 _eReligion$ = 8						; size = 4
 ?GetNumCitiesFollowing@CvGameReligions@@QBEHW4ReligionTypes@@@Z PROC ; CvGameReligions::GetNumCitiesFollowing, COMDAT
 ; _this$ = ecx
@@ -17471,7 +17483,7 @@ $LL22@GetNumCiti:
 ; 1685 : 			for(pLoopCity = kPlayer.firstCity(&iLoop); pLoopCity != NULL; pLoopCity = kPlayer.nextCity(&iLoop))
 
 	push	0
-	lea	ecx, DWORD PTR _iLoop$225354[esp+16]
+	lea	ecx, DWORD PTR _iLoop$225396[esp+16]
 	push	ecx
 	mov	ecx, esi
 	call	?firstCity@CvPlayer@@QAEPAVCvCity@@PAH_N@Z ; CvPlayer::firstCity
@@ -17502,7 +17514,7 @@ $LN3@GetNumCiti:
 ; 1685 : 			for(pLoopCity = kPlayer.firstCity(&iLoop); pLoopCity != NULL; pLoopCity = kPlayer.nextCity(&iLoop))
 
 	push	0
-	lea	edx, DWORD PTR _iLoop$225354[esp+16]
+	lea	edx, DWORD PTR _iLoop$225396[esp+16]
 	push	edx
 	mov	ecx, esi
 	call	?nextCity@CvPlayer@@QAEPAVCvCity@@PAH_N@Z ; CvPlayer::nextCity
@@ -17858,9 +17870,9 @@ __ehfuncinfo$?GetFounderBenefitsReligion@CvGameReligions@@QBE?AW4ReligionTypes@@
 xdata$x	ENDS
 ;	COMDAT ?GetFounderBenefitsReligion@CvGameReligions@@QBE?AW4ReligionTypes@@W4PlayerTypes@@@Z
 _TEXT	SEGMENT
-_iValue$225422 = -16					; size = 4
+_iValue$225464 = -16					; size = 4
 __$EHRec$ = -12						; size = 12
-_args$225421 = 8					; size = 4
+_args$225463 = 8					; size = 4
 _ePlayer$ = 8						; size = 4
 ?GetFounderBenefitsReligion@CvGameReligions@@QBE?AW4ReligionTypes@@W4PlayerTypes@@@Z PROC ; CvGameReligions::GetFounderBenefitsReligion, COMDAT
 ; _this$ = ecx
@@ -17897,12 +17909,12 @@ _ePlayer$ = 8						; size = 4
 ; 1817 : 	{
 ; 1818 : 		CvLuaArgsHandle args;
 
-	lea	ecx, DWORD PTR _args$225421[esp+24]
+	lea	ecx, DWORD PTR _args$225463[esp+24]
 	call	??0CvLuaArgsHandle@@QAE@XZ		; CvLuaArgsHandle::CvLuaArgsHandle
 
 ; 1819 : 		args->Push(ePlayer);
 
-	mov	ecx, DWORD PTR _args$225421[esp+24]
+	mov	ecx, DWORD PTR _args$225463[esp+24]
 	mov	eax, DWORD PTR [ecx]
 	mov	edx, DWORD PTR [eax+8]
 	push	ebx
@@ -17913,13 +17925,13 @@ _ePlayer$ = 8						; size = 4
 ; 1821 : 		int iValue = 0;
 ; 1822 : 		if (LuaSupport::CallAccumulator(pkScriptSystem, "GetFounderBenefitsReligion", args.get(), iValue))
 
-	mov	ecx, DWORD PTR _args$225421[esp+24]
-	lea	eax, DWORD PTR _iValue$225422[esp+28]
+	mov	ecx, DWORD PTR _args$225463[esp+24]
+	lea	eax, DWORD PTR _iValue$225464[esp+28]
 	push	eax
 	push	ecx
-	push	OFFSET $SG225424
+	push	OFFSET $SG225466
 	push	esi
-	mov	DWORD PTR _iValue$225422[esp+44], 0
+	mov	DWORD PTR _iValue$225464[esp+44], 0
 	call	?CallAccumulator@LuaSupport@@YA_NPAVICvEngineScriptSystem1@@PBDPAVICvEngineScriptSystemArgs1@@AAH@Z ; LuaSupport::CallAccumulator
 	add	esp, 16					; 00000010H
 
@@ -17928,10 +17940,10 @@ _ePlayer$ = 8						; size = 4
 ; 1825 : 			return eReligion;
 
 	mov	DWORD PTR __$EHRec$[esp+36], -1
-	lea	ecx, DWORD PTR _args$225421[esp+24]
+	lea	ecx, DWORD PTR _args$225463[esp+24]
 	test	al, al
 	je	SHORT $LN2@GetFounder
-	mov	esi, DWORD PTR _iValue$225422[esp+28]
+	mov	esi, DWORD PTR _iValue$225464[esp+28]
 	call	??1CvLuaArgsHandle@@QAE@XZ		; CvLuaArgsHandle::~CvLuaArgsHandle
 $LN15@GetFounder:
 	pop	edi
@@ -17995,7 +18007,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetFounderBenefitsReligion@CvGameReligions@@QBE?AW4ReligionTypes@@W4PlayerTypes@@@Z$0:
-	lea	ecx, DWORD PTR _args$225421[ebp-4]
+	lea	ecx, DWORD PTR _args$225463[ebp-4]
 	jmp	??1CvLuaArgsHandle@@QAE@XZ		; CvLuaArgsHandle::~CvLuaArgsHandle
 __ehhandler$?GetFounderBenefitsReligion@CvGameReligions@@QBE?AW4ReligionTypes@@W4PlayerTypes@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?GetFounderBenefitsReligion@CvGameReligions@@QBE?AW4ReligionTypes@@W4PlayerTypes@@@Z
@@ -18223,7 +18235,7 @@ $LN95@GetAdjacen:
 	imul	ecx, 63236				; 0000f704H
 	add	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	call	?GetPlayerTraits@CvPlayer@@QBEPAVCvPlayerTraits@@XZ ; CvPlayer::GetPlayerTraits
-	mov	eax, DWORD PTR [eax+316]
+	mov	eax, DWORD PTR [eax+324]
 
 ; 2217 : 				if (iTradeReligionModifer != 0)
 
@@ -18338,7 +18350,7 @@ $LN9@GetAdjacen:
 ; 2250 : 				if(GET_TEAM(kPlayer.getTeam()).GetTeamTechs()->HasTech(eDoublingTech))
 
 	call	?getTeam@CvPlayer@@QBE?AW4TeamTypes@@XZ	; CvPlayer::getTeam
-	imul	eax, 2980				; 00000ba4H
+	imul	eax, 2984				; 00000ba8H
 	add	eax, DWORD PTR ?m_aTeams@CvTeam@@1PAV1@A ; CvTeam::m_aTeams
 	push	ebx
 	mov	ecx, eax
@@ -18601,19 +18613,19 @@ PUBLIC	??6@YAAAVFDataStream@@AAV0@ABVCvGameReligions@@@Z ; operator<<
 ;	COMDAT ??6@YAAAVFDataStream@@AAV0@ABVCvGameReligions@@@Z
 _TEXT	SEGMENT
 _uiVersion$ = -4					; size = 4
-$T235396 = 8						; size = 4
-$T235395 = 8						; size = 4
+$T235453 = 8						; size = 4
+$T235452 = 8						; size = 4
 _saveTo$ = 8						; size = 4
 _readFrom$ = 12						; size = 4
 ??6@YAAAVFDataStream@@AAV0@ABVCvGameReligions@@@Z PROC	; operator<<, COMDAT
 
-; 2652 : {
+; 2674 : {
 
 	push	ecx
 	push	ebx
 
-; 2653 : 	uint uiVersion = 4;
-; 2654 : 	saveTo << uiVersion;
+; 2675 : 	uint uiVersion = 4;
+; 2676 : 	saveTo << uiVersion;
 
 	mov	ebx, DWORD PTR _saveTo$[esp+4]
 	push	esi
@@ -18624,32 +18636,32 @@ _readFrom$ = 12						; size = 4
 	mov	DWORD PTR _uiVersion$[esp+20], 4
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 
-; 2655 : 
-; 2656 : 	saveTo << readFrom.GetMinimumFaithNextPantheon();
+; 2677 : 
+; 2678 : 	saveTo << readFrom.GetMinimumFaithNextPantheon();
 
 	mov	edi, DWORD PTR _readFrom$[esp+12]
 	mov	ecx, DWORD PTR [edi+5264]
-	lea	edx, DWORD PTR $T235395[esp+12]
-	mov	DWORD PTR $T235395[esp+12], ecx
+	lea	edx, DWORD PTR $T235452[esp+12]
+	mov	DWORD PTR $T235452[esp+12], ecx
 	push	edx
 	mov	ecx, ebx
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
-; 2657 : 
-; 2658 : 	ReligionList::const_iterator it;
-; 2659 : 	saveTo << readFrom.m_CurrentReligions.size();
+; 2679 : 
+; 2680 : 	ReligionList::const_iterator it;
+; 2681 : 	saveTo << readFrom.m_CurrentReligions.size();
 
 	mov	eax, DWORD PTR [edi+4]
-	lea	ecx, DWORD PTR $T235396[esp+12]
+	lea	ecx, DWORD PTR $T235453[esp+12]
 	push	ecx
 	mov	ecx, ebx
-	mov	DWORD PTR $T235396[esp+16], eax
+	mov	DWORD PTR $T235453[esp+16], eax
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 
-; 2660 : #ifdef AUI_ITERATOR_POSTFIX_INCREMENT_OPTIMIZATIONS
-; 2661 : 	for (it = readFrom.m_CurrentReligions.begin(); it != readFrom.m_CurrentReligions.end(); ++it)
-; 2662 : #else
-; 2663 : 	for(it = readFrom.m_CurrentReligions.begin(); it != readFrom.m_CurrentReligions.end(); it++)
+; 2682 : #ifdef AUI_ITERATOR_POSTFIX_INCREMENT_OPTIMIZATIONS
+; 2683 : 	for (it = readFrom.m_CurrentReligions.begin(); it != readFrom.m_CurrentReligions.end(); ++it)
+; 2684 : #else
+; 2685 : 	for(it = readFrom.m_CurrentReligions.begin(); it != readFrom.m_CurrentReligions.end(); it++)
 
 	mov	edx, DWORD PTR [edi+4]
 	mov	esi, DWORD PTR [edi]
@@ -18660,9 +18672,9 @@ _readFrom$ = 12						; size = 4
 	npad	6
 $LL3@operator@9:
 
-; 2664 : #endif
-; 2665 : 	{
-; 2666 : 		saveTo << *it;
+; 2686 : #endif
+; 2687 : 	{
+; 2688 : 		saveTo << *it;
 
 	push	esi
 	push	ebx
@@ -18678,14 +18690,14 @@ $LN22@operator@9:
 	pop	edi
 	pop	esi
 
-; 2667 : 	}
-; 2668 : 
-; 2669 : 	return saveTo;
+; 2689 : 	}
+; 2690 : 
+; 2691 : 	return saveTo;
 
 	mov	eax, ebx
 	pop	ebx
 
-; 2670 : }
+; 2692 : }
 
 	pop	ecx
 	ret	0
@@ -18698,7 +18710,7 @@ _TEXT	SEGMENT
 ?HasCreatedPantheon@CvPlayerReligions@@QBE_NXZ PROC	; CvPlayerReligions::HasCreatedPantheon, COMDAT
 ; _this$ = ecx
 
-; 2792 : 	return GC.getGame().GetGameReligions()->HasCreatedPantheon(m_pPlayer->GetID());
+; 2814 : 	return GC.getGame().GetGameReligions()->HasCreatedPantheon(m_pPlayer->GetID());
 
 	mov	eax, DWORD PTR [ecx]
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
@@ -18724,17 +18736,17 @@ $LN10@HasCreated@2:
 	xor	al, al
 	pop	esi
 
-; 2793 : }
+; 2815 : }
 
 	ret	0
 $LN20@HasCreated@2:
 
-; 2792 : 	return GC.getGame().GetGameReligions()->HasCreatedPantheon(m_pPlayer->GetID());
+; 2814 : 	return GC.getGame().GetGameReligions()->HasCreatedPantheon(m_pPlayer->GetID());
 
 	mov	al, 1
 	pop	esi
 
-; 2793 : }
+; 2815 : }
 
 	ret	0
 ?HasCreatedPantheon@CvPlayerReligions@@QBE_NXZ ENDP	; CvPlayerReligions::HasCreatedPantheon
@@ -18746,7 +18758,7 @@ _TEXT	SEGMENT
 ?HasCreatedReligion@CvPlayerReligions@@QBE_NXZ PROC	; CvPlayerReligions::HasCreatedReligion, COMDAT
 ; _this$ = ecx
 
-; 2798 : 	return GC.getGame().GetGameReligions()->HasCreatedReligion(m_pPlayer->GetID());
+; 2820 : 	return GC.getGame().GetGameReligions()->HasCreatedReligion(m_pPlayer->GetID());
 
 	mov	eax, DWORD PTR [ecx]
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
@@ -18760,7 +18772,7 @@ _TEXT	SEGMENT
 	setg	al
 	pop	esi
 
-; 2799 : }
+; 2821 : }
 
 	ret	0
 ?HasCreatedReligion@CvPlayerReligions@@QBE_NXZ ENDP	; CvPlayerReligions::HasCreatedReligion
@@ -18772,7 +18784,7 @@ _TEXT	SEGMENT
 ?HasAddedReformationBelief@CvPlayerReligions@@QBE_NXZ PROC ; CvPlayerReligions::HasAddedReformationBelief, COMDAT
 ; _this$ = ecx
 
-; 2804 : 	return GC.getGame().GetGameReligions()->HasAddedReformationBelief(m_pPlayer->GetID());
+; 2826 : 	return GC.getGame().GetGameReligions()->HasAddedReformationBelief(m_pPlayer->GetID());
 
 	mov	eax, DWORD PTR [ecx]
 	mov	eax, DWORD PTR [eax+44]
@@ -18782,7 +18794,7 @@ _TEXT	SEGMENT
 	mov	ecx, eax
 	call	?HasAddedReformationBelief@CvGameReligions@@QBE_NW4PlayerTypes@@@Z ; CvGameReligions::HasAddedReformationBelief
 
-; 2805 : }
+; 2827 : }
 
 	ret	0
 ?HasAddedReformationBelief@CvPlayerReligions@@QBE_NXZ ENDP ; CvPlayerReligions::HasAddedReformationBelief
@@ -18794,7 +18806,7 @@ _TEXT	SEGMENT
 ?GetReligionCreatedByPlayer@CvPlayerReligions@@QBE?AW4ReligionTypes@@XZ PROC ; CvPlayerReligions::GetReligionCreatedByPlayer, COMDAT
 ; _this$ = ecx
 
-; 2810 : 	return GC.getGame().GetGameReligions()->GetReligionCreatedByPlayer(m_pPlayer->GetID());
+; 2832 : 	return GC.getGame().GetGameReligions()->GetReligionCreatedByPlayer(m_pPlayer->GetID());
 
 	mov	eax, DWORD PTR [ecx]
 	mov	eax, DWORD PTR [eax+44]
@@ -18804,7 +18816,7 @@ _TEXT	SEGMENT
 	mov	ecx, eax
 	call	?GetReligionCreatedByPlayer@CvGameReligions@@QBE?AW4ReligionTypes@@W4PlayerTypes@@@Z ; CvGameReligions::GetReligionCreatedByPlayer
 
-; 2811 : }
+; 2833 : }
 
 	ret	0
 ?GetReligionCreatedByPlayer@CvPlayerReligions@@QBE?AW4ReligionTypes@@XZ ENDP ; CvPlayerReligions::GetReligionCreatedByPlayer
@@ -18817,16 +18829,16 @@ _iLoop$ = -4						; size = 4
 ?HasReligiousCity@CvPlayerReligions@@QBE_NXZ PROC	; CvPlayerReligions::HasReligiousCity, COMDAT
 ; _this$ = ecx
 
-; 2867 : {
+; 2889 : {
 
 	push	ecx
 	push	esi
 	mov	esi, ecx
 
-; 2868 : 	int iLoop = 0;
-; 2869 : 	CvCity* pCity = NULL;
-; 2870 : 
-; 2871 : 	for(pCity = m_pPlayer->firstCity(&iLoop); pCity != NULL; pCity = m_pPlayer->nextCity(&iLoop))
+; 2890 : 	int iLoop = 0;
+; 2891 : 	CvCity* pCity = NULL;
+; 2892 : 
+; 2893 : 	for(pCity = m_pPlayer->firstCity(&iLoop); pCity != NULL; pCity = m_pPlayer->nextCity(&iLoop))
 
 	mov	ecx, DWORD PTR [esi]
 	push	0
@@ -18838,10 +18850,10 @@ _iLoop$ = -4						; size = 4
 	je	SHORT $LN3@HasReligio
 $LN12@HasReligio:
 
-; 2872 : 	{
-; 2873 : 		if(pCity)
-; 2874 : 		{
-; 2875 : 			if(pCity->GetCityReligions()->GetReligiousMajority() > RELIGION_PANTHEON)
+; 2894 : 	{
+; 2895 : 		if(pCity)
+; 2896 : 		{
+; 2897 : 			if(pCity->GetCityReligions()->GetReligiousMajority() > RELIGION_PANTHEON)
 
 	mov	ecx, eax
 	call	?GetCityReligions@CvCity@@QBEPAVCvCityReligions@@XZ ; CvCity::GetCityReligions
@@ -18858,28 +18870,28 @@ $LN12@HasReligio:
 	jne	SHORT $LN12@HasReligio
 $LN3@HasReligio:
 
-; 2878 : 			}
-; 2879 : 		}
-; 2880 : 	}
-; 2881 : 
-; 2882 : 	return false;
+; 2900 : 			}
+; 2901 : 		}
+; 2902 : 	}
+; 2903 : 
+; 2904 : 	return false;
 
 	xor	al, al
 	pop	esi
 
-; 2883 : }
+; 2905 : }
 
 	pop	ecx
 	ret	0
 $LN9@HasReligio:
 
-; 2876 : 			{
-; 2877 : 				return true;
+; 2898 : 			{
+; 2899 : 				return true;
 
 	mov	al, 1
 	pop	esi
 
-; 2883 : }
+; 2905 : }
 
 	pop	ecx
 	ret	0
@@ -18895,14 +18907,14 @@ _eOtherPlayer$ = 8					; size = 4
 ?HasOthersReligionInMostCities@CvPlayerReligions@@QBE_NW4PlayerTypes@@@Z PROC ; CvPlayerReligions::HasOthersReligionInMostCities, COMDAT
 ; _this$ = ecx
 
-; 2887 : {
+; 2909 : {
 
 	push	ecx
 	push	esi
 	mov	esi, ecx
 
-; 2888 : 	// Not happy about it if have their own religion
-; 2889 : 	if(HasCreatedReligion())
+; 2910 : 	// Not happy about it if have their own religion
+; 2911 : 	if(HasCreatedReligion())
 
 	mov	eax, DWORD PTR [esi]
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
@@ -18916,21 +18928,21 @@ _eOtherPlayer$ = 8					; size = 4
 	jle	SHORT $LN7@HasOthersR
 	pop	edi
 
-; 2890 : 	{
-; 2891 : 		return false;
+; 2912 : 	{
+; 2913 : 		return false;
 
 	xor	al, al
 	pop	esi
 
-; 2917 : }
+; 2939 : }
 
 	pop	ecx
 	ret	4
 $LN7@HasOthersR:
 
-; 2892 : 	}
-; 2893 : 
-; 2894 : 	ReligionTypes eOtherReligion = GC.getGame().GetGameReligions()->GetReligionCreatedByPlayer(eOtherPlayer);
+; 2914 : 	}
+; 2915 : 
+; 2916 : 	ReligionTypes eOtherReligion = GC.getGame().GetGameReligions()->GetReligionCreatedByPlayer(eOtherPlayer);
 
 	mov	ecx, DWORD PTR _eOtherPlayer$[esp+8]
 	push	ebx
@@ -18941,32 +18953,32 @@ $LN7@HasOthersR:
 	call	?GetReligionCreatedByPlayer@CvGameReligions@@QBE?AW4ReligionTypes@@W4PlayerTypes@@@Z ; CvGameReligions::GetReligionCreatedByPlayer
 	mov	ebx, eax
 
-; 2895 : 
-; 2896 : 	if(eOtherReligion <= RELIGION_PANTHEON)
+; 2917 : 
+; 2918 : 	if(eOtherReligion <= RELIGION_PANTHEON)
 
 	test	ebx, ebx
 	jg	SHORT $LN6@HasOthersR
 	pop	ebx
 	pop	edi
 
-; 2897 : 	{
-; 2898 : 		return false;
+; 2919 : 	{
+; 2920 : 		return false;
 
 	xor	al, al
 	pop	esi
 
-; 2917 : }
+; 2939 : }
 
 	pop	ecx
 	ret	4
 $LN6@HasOthersR:
 
-; 2899 : 	}
-; 2900 : 
-; 2901 : 	int iNumFollowingCities = 0;
-; 2902 : 	int iLoop = 0;
-; 2903 : 	CvCity* pCity = NULL;
-; 2904 : 	for(pCity = m_pPlayer->firstCity(&iLoop); pCity != NULL; pCity = m_pPlayer->nextCity(&iLoop))
+; 2921 : 	}
+; 2922 : 
+; 2923 : 	int iNumFollowingCities = 0;
+; 2924 : 	int iLoop = 0;
+; 2925 : 	CvCity* pCity = NULL;
+; 2926 : 	for(pCity = m_pPlayer->firstCity(&iLoop); pCity != NULL; pCity = m_pPlayer->nextCity(&iLoop))
 
 	mov	ecx, DWORD PTR [esi]
 	xor	edi, edi
@@ -18979,10 +18991,10 @@ $LN6@HasOthersR:
 	je	SHORT $LN3@HasOthersR
 $LN28@HasOthersR:
 
-; 2905 : 	{
-; 2906 : 		if(pCity)
-; 2907 : 		{
-; 2908 : 			if(pCity->GetCityReligions()->GetReligiousMajority() == eOtherReligion)
+; 2927 : 	{
+; 2928 : 		if(pCity)
+; 2929 : 		{
+; 2930 : 			if(pCity->GetCityReligions()->GetReligiousMajority() == eOtherReligion)
 
 	mov	ecx, eax
 	call	?GetCityReligions@CvCity@@QBEPAVCvCityReligions@@XZ ; CvCity::GetCityReligions
@@ -18991,18 +19003,18 @@ $LN28@HasOthersR:
 	cmp	eax, ebx
 	jne	SHORT $LN4@HasOthersR
 
-; 2909 : 			{
-; 2910 : 				iNumFollowingCities++;
+; 2931 : 			{
+; 2932 : 				iNumFollowingCities++;
 
 	inc	edi
 $LN4@HasOthersR:
 
-; 2899 : 	}
-; 2900 : 
-; 2901 : 	int iNumFollowingCities = 0;
-; 2902 : 	int iLoop = 0;
-; 2903 : 	CvCity* pCity = NULL;
-; 2904 : 	for(pCity = m_pPlayer->firstCity(&iLoop); pCity != NULL; pCity = m_pPlayer->nextCity(&iLoop))
+; 2921 : 	}
+; 2922 : 
+; 2923 : 	int iNumFollowingCities = 0;
+; 2924 : 	int iLoop = 0;
+; 2925 : 	CvCity* pCity = NULL;
+; 2926 : 	for(pCity = m_pPlayer->firstCity(&iLoop); pCity != NULL; pCity = m_pPlayer->nextCity(&iLoop))
 
 	mov	ecx, DWORD PTR [esi]
 	push	0
@@ -19013,12 +19025,12 @@ $LN4@HasOthersR:
 	jne	SHORT $LN28@HasOthersR
 $LN3@HasOthersR:
 
-; 2911 : 			}
-; 2912 : 		}
-; 2913 : 	}
-; 2914 : 
-; 2915 : 	// Over half?
-; 2916 : 	return (iNumFollowingCities * 2 > m_pPlayer->getNumCities());
+; 2933 : 			}
+; 2934 : 		}
+; 2935 : 	}
+; 2936 : 
+; 2937 : 	// Over half?
+; 2938 : 	return (iNumFollowingCities * 2 > m_pPlayer->getNumCities());
 
 	mov	ecx, DWORD PTR [esi]
 	call	?getNumCities@CvPlayer@@QBEHXZ		; CvPlayer::getNumCities
@@ -19031,7 +19043,7 @@ $LN3@HasOthersR:
 	mov	al, dl
 	pop	esi
 
-; 2917 : }
+; 2939 : }
 
 	pop	ecx
 	ret	4
@@ -19046,11 +19058,11 @@ _eReligion$ = 8						; size = 4
 ?HasReligionInMostCities@CvPlayerReligions@@QBE_NW4ReligionTypes@@@Z PROC ; CvPlayerReligions::HasReligionInMostCities, COMDAT
 ; _this$ = ecx
 
-; 2921 : {
+; 2943 : {
 
 	push	ebx
 
-; 2922 : 	if (eReligion <= RELIGION_PANTHEON)
+; 2944 : 	if (eReligion <= RELIGION_PANTHEON)
 
 	mov	ebx, DWORD PTR _eReligion$[esp]
 	push	esi
@@ -19059,23 +19071,23 @@ _eReligion$ = 8						; size = 4
 	jg	SHORT $LN6@HasReligio@2
 	pop	esi
 
-; 2923 : 	{
-; 2924 : 		return false;
+; 2945 : 	{
+; 2946 : 		return false;
 
 	xor	al, al
 	pop	ebx
 
-; 2943 : }
+; 2965 : }
 
 	ret	4
 $LN6@HasReligio@2:
 
-; 2925 : 	}
-; 2926 : 
-; 2927 : 	int iNumFollowingCities = 0;
-; 2928 : 	int iLoop = 0;
-; 2929 : 	CvCity* pCity = NULL;
-; 2930 : 	for(pCity = m_pPlayer->firstCity(&iLoop); pCity != NULL; pCity = m_pPlayer->nextCity(&iLoop))
+; 2947 : 	}
+; 2948 : 
+; 2949 : 	int iNumFollowingCities = 0;
+; 2950 : 	int iLoop = 0;
+; 2951 : 	CvCity* pCity = NULL;
+; 2952 : 	for(pCity = m_pPlayer->firstCity(&iLoop); pCity != NULL; pCity = m_pPlayer->nextCity(&iLoop))
 
 	mov	ecx, DWORD PTR [esi]
 	push	edi
@@ -19089,10 +19101,10 @@ $LN6@HasReligio@2:
 	je	SHORT $LN3@HasReligio@2
 $LN12@HasReligio@2:
 
-; 2931 : 	{
-; 2932 : 		if(pCity)
-; 2933 : 		{
-; 2934 : 			if(pCity->GetCityReligions()->GetReligiousMajority() == eReligion)
+; 2953 : 	{
+; 2954 : 		if(pCity)
+; 2955 : 		{
+; 2956 : 			if(pCity->GetCityReligions()->GetReligiousMajority() == eReligion)
 
 	mov	ecx, eax
 	call	?GetCityReligions@CvCity@@QBEPAVCvCityReligions@@XZ ; CvCity::GetCityReligions
@@ -19101,18 +19113,18 @@ $LN12@HasReligio@2:
 	cmp	eax, ebx
 	jne	SHORT $LN4@HasReligio@2
 
-; 2935 : 			{
-; 2936 : 				iNumFollowingCities++;
+; 2957 : 			{
+; 2958 : 				iNumFollowingCities++;
 
 	inc	edi
 $LN4@HasReligio@2:
 
-; 2925 : 	}
-; 2926 : 
-; 2927 : 	int iNumFollowingCities = 0;
-; 2928 : 	int iLoop = 0;
-; 2929 : 	CvCity* pCity = NULL;
-; 2930 : 	for(pCity = m_pPlayer->firstCity(&iLoop); pCity != NULL; pCity = m_pPlayer->nextCity(&iLoop))
+; 2947 : 	}
+; 2948 : 
+; 2949 : 	int iNumFollowingCities = 0;
+; 2950 : 	int iLoop = 0;
+; 2951 : 	CvCity* pCity = NULL;
+; 2952 : 	for(pCity = m_pPlayer->firstCity(&iLoop); pCity != NULL; pCity = m_pPlayer->nextCity(&iLoop))
 
 	push	0
 	lea	ecx, DWORD PTR _iLoop$[esp+12]
@@ -19123,12 +19135,12 @@ $LN4@HasReligio@2:
 	jne	SHORT $LN12@HasReligio@2
 $LN3@HasReligio@2:
 
-; 2937 : 			}
-; 2938 : 		}
-; 2939 : 	}
-; 2940 : 
-; 2941 : 	// Over half?
-; 2942 : 	return (iNumFollowingCities * 2 > m_pPlayer->getNumCities());
+; 2959 : 			}
+; 2960 : 		}
+; 2961 : 	}
+; 2962 : 
+; 2963 : 	// Over half?
+; 2964 : 	return (iNumFollowingCities * 2 > m_pPlayer->getNumCities());
 
 	mov	ecx, DWORD PTR [esi]
 	call	?getNumCities@CvPlayer@@QBEHXZ		; CvPlayer::getNumCities
@@ -19141,7 +19153,7 @@ $LN3@HasReligio@2:
 	mov	al, cl
 	pop	ebx
 
-; 2943 : }
+; 2965 : }
 
 	ret	4
 ?HasReligionInMostCities@CvPlayerReligions@@QBE_NW4ReligionTypes@@@Z ENDP ; CvPlayerReligions::HasReligionInMostCities
@@ -19154,13 +19166,13 @@ _TEXT	SEGMENT
 ?GetReligionInMostCities@CvPlayerReligions@@QBE?AW4ReligionTypes@@XZ PROC ; CvPlayerReligions::GetReligionInMostCities, COMDAT
 ; _this$ = ecx
 
-; 2947 : {
+; 2969 : {
 
 	push	esi
 	push	edi
 	mov	edi, ecx
 
-; 2948 : 	for (int iI = RELIGION_PANTHEON + 1; iI < GC.GetGameReligions()->GetNumReligions(); iI++)
+; 2970 : 	for (int iI = RELIGION_PANTHEON + 1; iI < GC.GetGameReligions()->GetNumReligions(); iI++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	esi, 1
@@ -19172,9 +19184,9 @@ _TEXT	SEGMENT
 	jle	SHORT $LN2@GetReligio@4
 $LL4@GetReligio@4:
 
-; 2949 : 	{
-; 2950 : 		ReligionTypes eReligion = (ReligionTypes)iI;
-; 2951 : 		if (HasReligionInMostCities(eReligion))
+; 2971 : 	{
+; 2972 : 		ReligionTypes eReligion = (ReligionTypes)iI;
+; 2973 : 		if (HasReligionInMostCities(eReligion))
 
 	push	esi
 	mov	ecx, edi
@@ -19192,26 +19204,26 @@ $LL4@GetReligio@4:
 $LN2@GetReligio@4:
 	pop	edi
 
-; 2954 : 		}
-; 2955 : 	}
-; 2956 : 	return NO_RELIGION;
+; 2976 : 		}
+; 2977 : 	}
+; 2978 : 	return NO_RELIGION;
 
 	or	eax, -1
 	pop	esi
 
-; 2957 : }
+; 2979 : }
 
 	ret	0
 $LN12@GetReligio@4:
 	pop	edi
 
-; 2952 : 		{
-; 2953 : 			return eReligion;
+; 2974 : 		{
+; 2975 : 			return eReligion;
 
 	mov	eax, esi
 	pop	esi
 
-; 2957 : }
+; 2979 : }
 
 	ret	0
 ?GetReligionInMostCities@CvPlayerReligions@@QBE?AW4ReligionTypes@@XZ ENDP ; CvPlayerReligions::GetReligionInMostCities
@@ -19224,9 +19236,9 @@ _eReligion$ = 8						; size = 4
 ?GetCityStateMinimumInfluence@CvPlayerReligions@@QBEHW4ReligionTypes@@@Z PROC ; CvPlayerReligions::GetCityStateMinimumInfluence, COMDAT
 ; _this$ = ecx
 
-; 2962 : 	int iMinInfluence = 0;
-; 2963 : 
-; 2964 : 	ReligionTypes eFounderBenefitReligion = GC.getGame().GetGameReligions()->GetFounderBenefitsReligion(m_pPlayer->GetID());
+; 2984 : 	int iMinInfluence = 0;
+; 2985 : 
+; 2986 : 	ReligionTypes eFounderBenefitReligion = GC.getGame().GetGameReligions()->GetFounderBenefitsReligion(m_pPlayer->GetID());
 
 	mov	eax, DWORD PTR [ecx]
 	mov	eax, DWORD PTR [eax+44]
@@ -19240,65 +19252,65 @@ _eReligion$ = 8						; size = 4
 	call	?GetFounderBenefitsReligion@CvGameReligions@@QBE?AW4ReligionTypes@@W4PlayerTypes@@@Z ; CvGameReligions::GetFounderBenefitsReligion
 	mov	esi, eax
 
-; 2965 : 	if (eReligion == eFounderBenefitReligion)
+; 2987 : 	if (eReligion == eFounderBenefitReligion)
 
 	cmp	DWORD PTR _eReligion$[esp+4], esi
 	jne	SHORT $LN18@GetCitySta
 
-; 2966 : 	{
-; 2967 : 		CvGameReligions* pReligions = GC.getGame().GetGameReligions();
+; 2988 : 	{
+; 2989 : 		CvGameReligions* pReligions = GC.getGame().GetGameReligions();
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?GetGameReligions@CvGame@@QAEPAVCvGameReligions@@XZ ; CvGame::GetGameReligions
 
-; 2968 : 		if(eFounderBenefitReligion != NO_RELIGION)
+; 2990 : 		if(eFounderBenefitReligion != NO_RELIGION)
 
 	cmp	esi, -1
 	je	SHORT $LN18@GetCitySta
 
-; 2969 : 		{
-; 2970 : 			const CvReligion* pReligion = pReligions->GetReligion(eFounderBenefitReligion, NO_PLAYER);
+; 2991 : 		{
+; 2992 : 			const CvReligion* pReligion = pReligions->GetReligion(eFounderBenefitReligion, NO_PLAYER);
 
 	push	-1
 	push	esi
 	mov	ecx, eax
 	call	?GetReligion@CvGameReligions@@QBEPBVCvReligion@@W4ReligionTypes@@W4PlayerTypes@@@Z ; CvGameReligions::GetReligion
 
-; 2971 : 			if(pReligion)
+; 2993 : 			if(pReligion)
 
 	test	eax, eax
 	je	SHORT $LN18@GetCitySta
 
-; 2972 : 			{
-; 2973 : 				iMinInfluence += pReligion->m_Beliefs.GetCityStateMinimumInfluence();
-; 2974 : 			}
-; 2975 : 		}
-; 2976 : 	}
-; 2977 : 
-; 2978 : 	return iMinInfluence;
+; 2994 : 			{
+; 2995 : 				iMinInfluence += pReligion->m_Beliefs.GetCityStateMinimumInfluence();
+; 2996 : 			}
+; 2997 : 		}
+; 2998 : 	}
+; 2999 : 
+; 3000 : 	return iMinInfluence;
 
 	mov	eax, DWORD PTR [eax+252]
 	pop	edi
 	pop	esi
 
-; 2979 : }
+; 3001 : }
 
 	ret	4
 $LN18@GetCitySta:
 
-; 2972 : 			{
-; 2973 : 				iMinInfluence += pReligion->m_Beliefs.GetCityStateMinimumInfluence();
-; 2974 : 			}
-; 2975 : 		}
-; 2976 : 	}
-; 2977 : 
-; 2978 : 	return iMinInfluence;
+; 2994 : 			{
+; 2995 : 				iMinInfluence += pReligion->m_Beliefs.GetCityStateMinimumInfluence();
+; 2996 : 			}
+; 2997 : 		}
+; 2998 : 	}
+; 2999 : 
+; 3000 : 	return iMinInfluence;
 
 	mov	eax, edi
 	pop	edi
 	pop	esi
 
-; 2979 : }
+; 3001 : }
 
 	ret	4
 ?GetCityStateMinimumInfluence@CvPlayerReligions@@QBEHW4ReligionTypes@@@Z ENDP ; CvPlayerReligions::GetCityStateMinimumInfluence
@@ -19310,8 +19322,8 @@ _TEXT	SEGMENT
 ?GetCityStateInfluenceModifier@CvPlayerReligions@@QBEHXZ PROC ; CvPlayerReligions::GetCityStateInfluenceModifier, COMDAT
 ; _this$ = ecx
 
-; 2984 : 	int iRtnValue = 0;
-; 2985 : 	ReligionTypes eReligion = GetReligionCreatedByPlayer();
+; 3006 : 	int iRtnValue = 0;
+; 3007 : 	ReligionTypes eReligion = GetReligionCreatedByPlayer();
 
 	mov	eax, DWORD PTR [ecx]
 	mov	eax, DWORD PTR [eax+44]
@@ -19323,13 +19335,13 @@ _TEXT	SEGMENT
 	mov	ecx, eax
 	call	?GetReligionCreatedByPlayer@CvGameReligions@@QBE?AW4ReligionTypes@@W4PlayerTypes@@@Z ; CvGameReligions::GetReligionCreatedByPlayer
 
-; 2986 : 	if (eReligion != NO_RELIGION)
+; 3008 : 	if (eReligion != NO_RELIGION)
 
 	cmp	eax, -1
 	je	SHORT $LN18@GetCitySta@2
 
-; 2987 : 	{
-; 2988 : 		const CvReligion* pReligion = GC.getGame().GetGameReligions()->GetReligion(eReligion, NO_PLAYER);
+; 3009 : 	{
+; 3010 : 		const CvReligion* pReligion = GC.getGame().GetGameReligions()->GetReligion(eReligion, NO_PLAYER);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	-1
@@ -19338,35 +19350,35 @@ _TEXT	SEGMENT
 	mov	ecx, eax
 	call	?GetReligion@CvGameReligions@@QBEPBVCvReligion@@W4ReligionTypes@@W4PlayerTypes@@@Z ; CvGameReligions::GetReligion
 
-; 2989 : 		if(pReligion)
+; 3011 : 		if(pReligion)
 
 	test	eax, eax
 	je	SHORT $LN18@GetCitySta@2
 
-; 2990 : 		{
-; 2991 : 			iRtnValue += pReligion->m_Beliefs.GetCityStateInfluenceModifier();
-; 2992 : 		}
-; 2993 : 	}
-; 2994 : 	return iRtnValue;
+; 3012 : 		{
+; 3013 : 			iRtnValue += pReligion->m_Beliefs.GetCityStateInfluenceModifier();
+; 3014 : 		}
+; 3015 : 	}
+; 3016 : 	return iRtnValue;
 
 	mov	eax, DWORD PTR [eax+256]
 	pop	esi
 
-; 2995 : }
+; 3017 : }
 
 	ret	0
 $LN18@GetCitySta@2:
 
-; 2990 : 		{
-; 2991 : 			iRtnValue += pReligion->m_Beliefs.GetCityStateInfluenceModifier();
-; 2992 : 		}
-; 2993 : 	}
-; 2994 : 	return iRtnValue;
+; 3012 : 		{
+; 3013 : 			iRtnValue += pReligion->m_Beliefs.GetCityStateInfluenceModifier();
+; 3014 : 		}
+; 3015 : 	}
+; 3016 : 	return iRtnValue;
 
 	mov	eax, esi
 	pop	esi
 
-; 2995 : }
+; 3017 : }
 
 	ret	0
 ?GetCityStateInfluenceModifier@CvPlayerReligions@@QBEHXZ ENDP ; CvPlayerReligions::GetCityStateInfluenceModifier
@@ -19378,8 +19390,8 @@ _TEXT	SEGMENT
 ?GetSpyPressure@CvPlayerReligions@@QBEHXZ PROC		; CvPlayerReligions::GetSpyPressure, COMDAT
 ; _this$ = ecx
 
-; 3000 : 	int iRtnValue = 0;
-; 3001 : 	ReligionTypes eReligion = GetReligionCreatedByPlayer();
+; 3022 : 	int iRtnValue = 0;
+; 3023 : 	ReligionTypes eReligion = GetReligionCreatedByPlayer();
 
 	mov	eax, DWORD PTR [ecx]
 	mov	eax, DWORD PTR [eax+44]
@@ -19391,13 +19403,13 @@ _TEXT	SEGMENT
 	mov	ecx, eax
 	call	?GetReligionCreatedByPlayer@CvGameReligions@@QBE?AW4ReligionTypes@@W4PlayerTypes@@@Z ; CvGameReligions::GetReligionCreatedByPlayer
 
-; 3002 : 	if (eReligion != NO_RELIGION)
+; 3024 : 	if (eReligion != NO_RELIGION)
 
 	cmp	eax, -1
 	je	SHORT $LN18@GetSpyPres
 
-; 3003 : 	{
-; 3004 : 		const CvReligion* pReligion = GC.getGame().GetGameReligions()->GetReligion(eReligion, NO_PLAYER);
+; 3025 : 	{
+; 3026 : 		const CvReligion* pReligion = GC.getGame().GetGameReligions()->GetReligion(eReligion, NO_PLAYER);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	-1
@@ -19406,35 +19418,35 @@ _TEXT	SEGMENT
 	mov	ecx, eax
 	call	?GetReligion@CvGameReligions@@QBEPBVCvReligion@@W4ReligionTypes@@W4PlayerTypes@@@Z ; CvGameReligions::GetReligion
 
-; 3005 : 		if(pReligion)
+; 3027 : 		if(pReligion)
 
 	test	eax, eax
 	je	SHORT $LN18@GetSpyPres
 
-; 3006 : 		{
-; 3007 : 			iRtnValue += pReligion->m_Beliefs.GetSpyPressure();
-; 3008 : 		}
-; 3009 : 	}
-; 3010 : 	return iRtnValue;
+; 3028 : 		{
+; 3029 : 			iRtnValue += pReligion->m_Beliefs.GetSpyPressure();
+; 3030 : 		}
+; 3031 : 	}
+; 3032 : 	return iRtnValue;
 
 	mov	eax, DWORD PTR [eax+264]
 	pop	esi
 
-; 3011 : }
+; 3033 : }
 
 	ret	0
 $LN18@GetSpyPres:
 
-; 3006 : 		{
-; 3007 : 			iRtnValue += pReligion->m_Beliefs.GetSpyPressure();
-; 3008 : 		}
-; 3009 : 	}
-; 3010 : 	return iRtnValue;
+; 3028 : 		{
+; 3029 : 			iRtnValue += pReligion->m_Beliefs.GetSpyPressure();
+; 3030 : 		}
+; 3031 : 	}
+; 3032 : 	return iRtnValue;
 
 	mov	eax, esi
 	pop	esi
 
-; 3011 : }
+; 3033 : }
 
 	ret	0
 ?GetSpyPressure@CvPlayerReligions@@QBEHXZ ENDP		; CvPlayerReligions::GetSpyPressure
@@ -19448,15 +19460,15 @@ _iCityLoop$ = -4					; size = 4
 ?GetNumForeignCitiesFollowing@CvPlayerReligions@@QBEHXZ PROC ; CvPlayerReligions::GetNumForeignCitiesFollowing, COMDAT
 ; _this$ = ecx
 
-; 3015 : {
+; 3037 : {
 
 	sub	esp, 8
 
-; 3016 : 	CvCity *pLoopCity;
-; 3017 : 	int iCityLoop;
-; 3018 : 	int iRtnValue = 0;
-; 3019 : 
-; 3020 : 	ReligionTypes eFounderBenefitReligion = GC.getGame().GetGameReligions()->GetFounderBenefitsReligion(m_pPlayer->GetID());
+; 3038 : 	CvCity *pLoopCity;
+; 3039 : 	int iCityLoop;
+; 3040 : 	int iRtnValue = 0;
+; 3041 : 
+; 3042 : 	ReligionTypes eFounderBenefitReligion = GC.getGame().GetGameReligions()->GetFounderBenefitsReligion(m_pPlayer->GetID());
 
 	mov	eax, DWORD PTR [ecx]
 	mov	eax, DWORD PTR [eax+44]
@@ -19471,24 +19483,24 @@ _iCityLoop$ = -4					; size = 4
 	call	?GetFounderBenefitsReligion@CvGameReligions@@QBE?AW4ReligionTypes@@W4PlayerTypes@@@Z ; CvGameReligions::GetFounderBenefitsReligion
 	mov	ebx, eax
 
-; 3021 : 	if (eFounderBenefitReligion > RELIGION_PANTHEON)
+; 3043 : 	if (eFounderBenefitReligion > RELIGION_PANTHEON)
 
 	test	ebx, ebx
 	jle	SHORT $LN36@GetNumFore
 	push	esi
 	push	edi
 
-; 3022 : 	{
-; 3023 : 		for(int iPlayerLoop = 0; iPlayerLoop < MAX_CIV_PLAYERS; iPlayerLoop++)
+; 3044 : 	{
+; 3045 : 		for(int iPlayerLoop = 0; iPlayerLoop < MAX_CIV_PLAYERS; iPlayerLoop++)
 
 	xor	edi, edi
 	xor	esi, esi
 	npad	1
 $LL8@GetNumFore:
 
-; 3024 : 		{
-; 3025 : 			CvPlayer &kLoopPlayer = GET_PLAYER((PlayerTypes)iPlayerLoop);
-; 3026 : 			if(kLoopPlayer.isAlive() && iPlayerLoop != m_pPlayer->GetID())
+; 3046 : 		{
+; 3047 : 			CvPlayer &kLoopPlayer = GET_PLAYER((PlayerTypes)iPlayerLoop);
+; 3048 : 			if(kLoopPlayer.isAlive() && iPlayerLoop != m_pPlayer->GetID())
 
 	mov	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	add	ecx, esi
@@ -19499,8 +19511,8 @@ $LL8@GetNumFore:
 	cmp	edi, DWORD PTR [eax+44]
 	je	SHORT $LN7@GetNumFore
 
-; 3027 : 			{
-; 3028 : 				for(pLoopCity = GET_PLAYER((PlayerTypes)iPlayerLoop).firstCity(&iCityLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER((PlayerTypes)iPlayerLoop).nextCity(&iCityLoop))
+; 3049 : 			{
+; 3050 : 				for(pLoopCity = GET_PLAYER((PlayerTypes)iPlayerLoop).firstCity(&iCityLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER((PlayerTypes)iPlayerLoop).nextCity(&iCityLoop))
 
 	push	0
 	lea	edx, DWORD PTR _iCityLoop$[esp+28]
@@ -19511,8 +19523,8 @@ $LL8@GetNumFore:
 	npad	4
 $LL4@GetNumFore:
 
-; 3029 : 				{
-; 3030 : 					if (pLoopCity->GetCityReligions()->GetReligiousMajority() == eFounderBenefitReligion)
+; 3051 : 				{
+; 3052 : 					if (pLoopCity->GetCityReligions()->GetReligiousMajority() == eFounderBenefitReligion)
 
 	mov	ecx, eax
 	call	?GetCityReligions@CvCity@@QBEPAVCvCityReligions@@XZ ; CvCity::GetCityReligions
@@ -19521,14 +19533,14 @@ $LL4@GetNumFore:
 	cmp	eax, ebx
 	jne	SHORT $LN3@GetNumFore
 
-; 3031 : 					{
-; 3032 : 						iRtnValue++;
+; 3053 : 					{
+; 3054 : 						iRtnValue++;
 
 	inc	ebp
 $LN3@GetNumFore:
 
-; 3027 : 			{
-; 3028 : 				for(pLoopCity = GET_PLAYER((PlayerTypes)iPlayerLoop).firstCity(&iCityLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER((PlayerTypes)iPlayerLoop).nextCity(&iCityLoop))
+; 3049 : 			{
+; 3050 : 				for(pLoopCity = GET_PLAYER((PlayerTypes)iPlayerLoop).firstCity(&iCityLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER((PlayerTypes)iPlayerLoop).nextCity(&iCityLoop))
 
 	mov	eax, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	push	0
@@ -19540,8 +19552,8 @@ $LN3@GetNumFore:
 	jne	SHORT $LL4@GetNumFore
 $LN7@GetNumFore:
 
-; 3022 : 	{
-; 3023 : 		for(int iPlayerLoop = 0; iPlayerLoop < MAX_CIV_PLAYERS; iPlayerLoop++)
+; 3044 : 	{
+; 3045 : 		for(int iPlayerLoop = 0; iPlayerLoop < MAX_CIV_PLAYERS; iPlayerLoop++)
 
 	add	esi, 63236				; 0000f704H
 	inc	edi
@@ -19551,19 +19563,19 @@ $LN7@GetNumFore:
 	pop	esi
 $LN36@GetNumFore:
 
-; 3033 : 					}
-; 3034 : 				}
-; 3035 : 			}
-; 3036 : 		}
-; 3037 : 	}
-; 3038 : 
-; 3039 : 	return iRtnValue;
+; 3055 : 					}
+; 3056 : 				}
+; 3057 : 			}
+; 3058 : 		}
+; 3059 : 	}
+; 3060 : 
+; 3061 : 	return iRtnValue;
 
 	mov	eax, ebp
 	pop	ebp
 	pop	ebx
 
-; 3040 : }
+; 3062 : }
 
 	add	esp, 8
 	ret	0
@@ -19574,25 +19586,25 @@ EXTRN	?atWar@@YA_NW4TeamTypes@@0@Z:PROC		; atWar
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?GetNumForeignFollowers@CvPlayerReligions@@QBEH_N@Z
 _TEXT	SEGMENT
-_iPlayerLoop$226010 = -12				; size = 4
+_iPlayerLoop$226055 = -12				; size = 4
 _this$ = -8						; size = 4
 _iCityLoop$ = -4					; size = 4
 _bAtPeace$ = 8						; size = 1
 ?GetNumForeignFollowers@CvPlayerReligions@@QBEH_N@Z PROC ; CvPlayerReligions::GetNumForeignFollowers, COMDAT
 ; _this$ = ecx
 
-; 3044 : {
+; 3066 : {
 
 	sub	esp, 12					; 0000000cH
 	push	ebx
 	push	ebp
 	mov	ebx, ecx
 
-; 3045 : 	CvCity *pLoopCity;
-; 3046 : 	int iCityLoop;
-; 3047 : 	int iRtnValue = 0;
-; 3048 : 
-; 3049 : 	ReligionTypes eFounderBenefitReligion = GC.getGame().GetGameReligions()->GetFounderBenefitsReligion(m_pPlayer->GetID());
+; 3067 : 	CvCity *pLoopCity;
+; 3068 : 	int iCityLoop;
+; 3069 : 	int iRtnValue = 0;
+; 3070 : 
+; 3071 : 	ReligionTypes eFounderBenefitReligion = GC.getGame().GetGameReligions()->GetFounderBenefitsReligion(m_pPlayer->GetID());
 
 	mov	eax, DWORD PTR [ebx]
 	mov	eax, DWORD PTR [eax+44]
@@ -19608,32 +19620,32 @@ _bAtPeace$ = 8						; size = 1
 	call	?GetFounderBenefitsReligion@CvGameReligions@@QBE?AW4ReligionTypes@@W4PlayerTypes@@@Z ; CvGameReligions::GetFounderBenefitsReligion
 	mov	ebp, eax
 
-; 3050 : 	if (eFounderBenefitReligion > RELIGION_PANTHEON)
+; 3072 : 	if (eFounderBenefitReligion > RELIGION_PANTHEON)
 
 	cmp	ebp, esi
 	jle	$LN68@GetNumFore@2
 
-; 3051 : 	{
-; 3052 : 		for(int iPlayerLoop = 0; iPlayerLoop < MAX_CIV_PLAYERS; iPlayerLoop++)
+; 3073 : 	{
+; 3074 : 		for(int iPlayerLoop = 0; iPlayerLoop < MAX_CIV_PLAYERS; iPlayerLoop++)
 
-	mov	DWORD PTR _iPlayerLoop$226010[esp+28], esi
+	mov	DWORD PTR _iPlayerLoop$226055[esp+28], esi
 	npad	9
 $LL9@GetNumFore@2:
 
-; 3053 : 		{
-; 3054 : 			CvPlayer &kLoopPlayer = GET_PLAYER((PlayerTypes)iPlayerLoop);
-; 3055 : 			if(kLoopPlayer.isAlive() && iPlayerLoop != m_pPlayer->GetID())
+; 3075 : 		{
+; 3076 : 			CvPlayer &kLoopPlayer = GET_PLAYER((PlayerTypes)iPlayerLoop);
+; 3077 : 			if(kLoopPlayer.isAlive() && iPlayerLoop != m_pPlayer->GetID())
 
 	mov	eax, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	cmp	BYTE PTR [esi+eax+2256], 0
 	je	$LN8@GetNumFore@2
 	mov	ecx, DWORD PTR [ebx]
 	mov	ecx, DWORD PTR [ecx+44]
-	cmp	DWORD PTR _iPlayerLoop$226010[esp+28], ecx
+	cmp	DWORD PTR _iPlayerLoop$226055[esp+28], ecx
 	je	$LN8@GetNumFore@2
 
-; 3056 : 			{
-; 3057 : 				if (!bAtPeace || !atWar(m_pPlayer->getTeam(), kLoopPlayer.getTeam()))
+; 3078 : 			{
+; 3079 : 				if (!bAtPeace || !atWar(m_pPlayer->getTeam(), kLoopPlayer.getTeam()))
 
 	cmp	BYTE PTR _bAtPeace$[esp+24], 0
 	je	SHORT $LN4@GetNumFore@2
@@ -19664,8 +19676,8 @@ $LN43@GetNumFore@2:
 	jne	SHORT $LN8@GetNumFore@2
 $LN4@GetNumFore@2:
 
-; 3058 : 				{
-; 3059 : 					for(pLoopCity = GET_PLAYER((PlayerTypes)iPlayerLoop).firstCity(&iCityLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER((PlayerTypes)iPlayerLoop).nextCity(&iCityLoop))
+; 3080 : 				{
+; 3081 : 					for(pLoopCity = GET_PLAYER((PlayerTypes)iPlayerLoop).firstCity(&iCityLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER((PlayerTypes)iPlayerLoop).nextCity(&iCityLoop))
 
 	mov	eax, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	push	0
@@ -19678,8 +19690,8 @@ $LN4@GetNumFore@2:
 	npad	3
 $LL3@GetNumFore@2:
 
-; 3060 : 					{
-; 3061 : 						iRtnValue += pLoopCity->GetCityReligions()->GetNumFollowers(eFounderBenefitReligion);
+; 3082 : 					{
+; 3083 : 						iRtnValue += pLoopCity->GetCityReligions()->GetNumFollowers(eFounderBenefitReligion);
 
 	mov	ecx, eax
 	call	?GetCityReligions@CvCity@@QBEPAVCvCityReligions@@XZ ; CvCity::GetCityReligions
@@ -19709,22 +19721,22 @@ $LN55@GetNumFore@2:
 	jne	SHORT $LL3@GetNumFore@2
 $LN8@GetNumFore@2:
 
-; 3051 : 	{
-; 3052 : 		for(int iPlayerLoop = 0; iPlayerLoop < MAX_CIV_PLAYERS; iPlayerLoop++)
+; 3073 : 	{
+; 3074 : 		for(int iPlayerLoop = 0; iPlayerLoop < MAX_CIV_PLAYERS; iPlayerLoop++)
 
-	inc	DWORD PTR _iPlayerLoop$226010[esp+28]
+	inc	DWORD PTR _iPlayerLoop$226055[esp+28]
 	add	esi, 63236				; 0000f704H
 	cmp	esi, 3983868				; 003cc9fcH
 	jl	$LL9@GetNumFore@2
 $LN68@GetNumFore@2:
 
-; 3062 : 					}
-; 3063 : 				}
-; 3064 : 			}
-; 3065 : 		}
-; 3066 : 	}
-; 3067 : 
-; 3068 : 	return iRtnValue;
+; 3084 : 					}
+; 3085 : 				}
+; 3086 : 			}
+; 3087 : 		}
+; 3088 : 	}
+; 3089 : 
+; 3090 : 	return iRtnValue;
 
 	mov	eax, edi
 	pop	edi
@@ -19732,14 +19744,14 @@ $LN68@GetNumFore@2:
 	pop	ebp
 	pop	ebx
 
-; 3069 : }
+; 3091 : }
 
 	add	esp, 12					; 0000000cH
 	ret	4
 $LN64@GetNumFore@2:
 
-; 3060 : 					{
-; 3061 : 						iRtnValue += pLoopCity->GetCityReligions()->GetNumFollowers(eFounderBenefitReligion);
+; 3082 : 					{
+; 3083 : 						iRtnValue += pLoopCity->GetCityReligions()->GetNumFollowers(eFounderBenefitReligion);
 
 	mov	ecx, DWORD PTR [ecx+8]
 	jmp	SHORT $LN55@GetNumFore@2
@@ -19753,25 +19765,25 @@ _pCity$ = 8						; size = 4
 ?Init@CvCityReligions@@QAEXPAVCvCity@@@Z PROC		; CvCityReligions::Init, COMDAT
 ; _this$ = ecx
 
-; 3096 : 	m_pCity = pCity;
+; 3118 : 	m_pCity = pCity;
 
 	mov	eax, DWORD PTR _pCity$[esp-4]
 	mov	DWORD PTR [ecx+416], eax
 
-; 3097 : 	m_bHasPaidAdoptionBonus = false;
+; 3119 : 	m_bHasPaidAdoptionBonus = false;
 
 	xor	eax, eax
 	mov	BYTE PTR [ecx+420], al
 
-; 3098 : 	m_iReligiousPressureModifier = 0;
+; 3120 : 	m_iReligiousPressureModifier = 0;
 
 	mov	DWORD PTR [ecx+424], eax
 
-; 3099 : 	m_ReligionStatus.clear();
+; 3121 : 	m_ReligionStatus.clear();
 
 	mov	DWORD PTR [ecx+4], eax
 
-; 3100 : }
+; 3122 : }
 
 	ret	4
 ?Init@CvCityReligions@@QAEXPAVCvCity@@@Z ENDP		; CvCityReligions::Init
@@ -19790,32 +19802,32 @@ _eReligion$ = 8						; size = 4
 ?IsDefendedAgainstSpread@CvCityReligions@@QAE_NW4ReligionTypes@@@Z PROC ; CvCityReligions::IsDefendedAgainstSpread, COMDAT
 ; _this$ = ecx
 
-; 3291 : {
+; 3313 : {
 
 	push	ecx
 	push	ebx
 	push	esi
 	mov	DWORD PTR _this$[esp+12], ecx
 
-; 3292 : 	CvUnit* pLoopUnit;
-; 3293 : 
-; 3294 : 	CvPlot* pCityPlot = m_pCity->plot();
+; 3314 : 	CvUnit* pLoopUnit;
+; 3315 : 
+; 3316 : 	CvPlot* pCityPlot = m_pCity->plot();
 
 	mov	ecx, DWORD PTR [ecx+416]
 	push	edi
 	call	?plot@CvCity@@QBEPAVCvPlot@@XZ		; CvCity::plot
 	mov	edi, eax
 
-; 3295 : 	if(pCityPlot)
+; 3317 : 	if(pCityPlot)
 
 	test	edi, edi
 	je	SHORT $LN12@IsDefended
 
-; 3296 : 	{
-; 3297 : #ifdef AUI_WARNING_FIXES
-; 3298 : 		for (uint iUnitLoop = 0; iUnitLoop < pCityPlot->getNumUnits(); iUnitLoop++)
-; 3299 : #else
-; 3300 : 		for(int iUnitLoop = 0; iUnitLoop < pCityPlot->getNumUnits(); iUnitLoop++)
+; 3318 : 	{
+; 3319 : #ifdef AUI_WARNING_FIXES
+; 3320 : 		for (uint iUnitLoop = 0; iUnitLoop < pCityPlot->getNumUnits(); iUnitLoop++)
+; 3321 : #else
+; 3322 : 		for(int iUnitLoop = 0; iUnitLoop < pCityPlot->getNumUnits(); iUnitLoop++)
 
 	mov	ecx, edi
 	xor	ebx, ebx
@@ -19824,16 +19836,16 @@ _eReligion$ = 8						; size = 4
 	jle	SHORT $LN12@IsDefended
 $LL14@IsDefended:
 
-; 3301 : #endif
-; 3302 : 		{
-; 3303 : 			pLoopUnit = pCityPlot->getUnitByIndex(iUnitLoop);
+; 3323 : #endif
+; 3324 : 		{
+; 3325 : 			pLoopUnit = pCityPlot->getUnitByIndex(iUnitLoop);
 
 	push	ebx
 	mov	ecx, edi
 	call	?getUnitByIndex@CvPlot@@QBEPAVCvUnit@@H@Z ; CvPlot::getUnitByIndex
 	mov	esi, eax
 
-; 3304 : 			CvUnitEntry* pkEntry = GC.getUnitInfo(pLoopUnit->getUnitType());
+; 3326 : 			CvUnitEntry* pkEntry = GC.getUnitInfo(pLoopUnit->getUnitType());
 
 	mov	ecx, esi
 	call	?getUnitType@CvUnit@@QBE?BW4UnitTypes@@XZ ; CvUnit::getUnitType
@@ -19841,7 +19853,7 @@ $LL14@IsDefended:
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getUnitInfo@CvGlobals@@QAEPAVCvUnitEntry@@W4UnitTypes@@@Z ; CvGlobals::getUnitInfo
 
-; 3305 : 			if(pkEntry && pkEntry->IsProhibitsSpread())
+; 3327 : 			if(pkEntry && pkEntry->IsProhibitsSpread())
 
 	test	eax, eax
 	je	SHORT $LN13@IsDefended
@@ -19850,8 +19862,8 @@ $LL14@IsDefended:
 	test	al, al
 	je	SHORT $LN13@IsDefended
 
-; 3306 : 			{
-; 3307 : 				if(pLoopUnit->getOwner() == m_pCity->getOwner() && pLoopUnit->GetReligionData()->GetReligion() != eReligion)
+; 3328 : 			{
+; 3329 : 				if(pLoopUnit->getOwner() == m_pCity->getOwner() && pLoopUnit->GetReligionData()->GetReligion() != eReligion)
 
 	mov	eax, DWORD PTR _this$[esp+16]
 	mov	ecx, DWORD PTR [eax+416]
@@ -19864,11 +19876,11 @@ $LL14@IsDefended:
 	jne	$LN53@IsDefended
 $LN13@IsDefended:
 
-; 3296 : 	{
-; 3297 : #ifdef AUI_WARNING_FIXES
-; 3298 : 		for (uint iUnitLoop = 0; iUnitLoop < pCityPlot->getNumUnits(); iUnitLoop++)
-; 3299 : #else
-; 3300 : 		for(int iUnitLoop = 0; iUnitLoop < pCityPlot->getNumUnits(); iUnitLoop++)
+; 3318 : 	{
+; 3319 : #ifdef AUI_WARNING_FIXES
+; 3320 : 		for (uint iUnitLoop = 0; iUnitLoop < pCityPlot->getNumUnits(); iUnitLoop++)
+; 3321 : #else
+; 3322 : 		for(int iUnitLoop = 0; iUnitLoop < pCityPlot->getNumUnits(); iUnitLoop++)
 
 	mov	ecx, edi
 	inc	ebx
@@ -19878,20 +19890,20 @@ $LN13@IsDefended:
 $LN12@IsDefended:
 	push	ebp
 
-; 3310 : 				}
-; 3311 : 			}
-; 3312 : 		}
-; 3313 : 	}
-; 3314 : 
-; 3315 : 	CvPlot* pAdjacentPlot;
-; 3316 : 	for(int iDirectionLoop = 0; iDirectionLoop < NUM_DIRECTION_TYPES; iDirectionLoop++)
+; 3332 : 				}
+; 3333 : 			}
+; 3334 : 		}
+; 3335 : 	}
+; 3336 : 
+; 3337 : 	CvPlot* pAdjacentPlot;
+; 3338 : 	for(int iDirectionLoop = 0; iDirectionLoop < NUM_DIRECTION_TYPES; iDirectionLoop++)
 
 	xor	ebp, ebp
 	npad	12
 $LL58@IsDefended:
 
-; 3317 : 	{
-; 3318 : 		pAdjacentPlot = plotDirection(m_pCity->getX(), m_pCity->getY(), ((DirectionTypes)iDirectionLoop));
+; 3339 : 	{
+; 3340 : 		pAdjacentPlot = plotDirection(m_pCity->getX(), m_pCity->getY(), ((DirectionTypes)iDirectionLoop));
 
 	mov	edx, DWORD PTR _this$[esp+20]
 	mov	eax, DWORD PTR [edx+416]
@@ -19904,17 +19916,17 @@ $LL58@IsDefended:
 	mov	edi, eax
 	add	esp, 12					; 0000000cH
 
-; 3319 : 
-; 3320 : 		if(pAdjacentPlot != NULL)
+; 3341 : 
+; 3342 : 		if(pAdjacentPlot != NULL)
 
 	test	edi, edi
 	je	SHORT $LN8@IsDefended
 
-; 3321 : 		{
-; 3322 : #ifdef AUI_WARNING_FIXES
-; 3323 : 			for (uint iUnitLoop = 0; iUnitLoop < pAdjacentPlot->getNumUnits(); iUnitLoop++)
-; 3324 : #else
-; 3325 : 			for(int iUnitLoop = 0; iUnitLoop < pAdjacentPlot->getNumUnits(); iUnitLoop++)
+; 3343 : 		{
+; 3344 : #ifdef AUI_WARNING_FIXES
+; 3345 : 			for (uint iUnitLoop = 0; iUnitLoop < pAdjacentPlot->getNumUnits(); iUnitLoop++)
+; 3346 : #else
+; 3347 : 			for(int iUnitLoop = 0; iUnitLoop < pAdjacentPlot->getNumUnits(); iUnitLoop++)
 
 	mov	ecx, edi
 	xor	ebx, ebx
@@ -19924,19 +19936,19 @@ $LL58@IsDefended:
 	npad	2
 $LL5@IsDefended:
 
-; 3326 : #endif
-; 3327 : 			{
-; 3328 : 				pLoopUnit = pAdjacentPlot->getUnitByIndex(iUnitLoop);
+; 3348 : #endif
+; 3349 : 			{
+; 3350 : 				pLoopUnit = pAdjacentPlot->getUnitByIndex(iUnitLoop);
 
 	push	ebx
 	mov	ecx, edi
 	call	?getUnitByIndex@CvPlot@@QBEPAVCvUnit@@H@Z ; CvPlot::getUnitByIndex
 	mov	esi, eax
 
-; 3329 : #ifdef AUI_CONSTIFY
-; 3330 : 				if (pLoopUnit->getUnitInfo().IsProhibitsSpread())
-; 3331 : #else
-; 3332 : 				CvUnitEntry* pkEntry = GC.getUnitInfo(pLoopUnit->getUnitType());
+; 3351 : #ifdef AUI_CONSTIFY
+; 3352 : 				if (pLoopUnit->getUnitInfo().IsProhibitsSpread())
+; 3353 : #else
+; 3354 : 				CvUnitEntry* pkEntry = GC.getUnitInfo(pLoopUnit->getUnitType());
 
 	mov	ecx, esi
 	call	?getUnitType@CvUnit@@QBE?BW4UnitTypes@@XZ ; CvUnit::getUnitType
@@ -19944,7 +19956,7 @@ $LL5@IsDefended:
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getUnitInfo@CvGlobals@@QAEPAVCvUnitEntry@@W4UnitTypes@@@Z ; CvGlobals::getUnitInfo
 
-; 3333 : 				if(pkEntry && pkEntry->IsProhibitsSpread())
+; 3355 : 				if(pkEntry && pkEntry->IsProhibitsSpread())
 
 	test	eax, eax
 	je	SHORT $LN4@IsDefended
@@ -19953,9 +19965,9 @@ $LL5@IsDefended:
 	test	al, al
 	je	SHORT $LN4@IsDefended
 
-; 3334 : #endif
-; 3335 : 				{
-; 3336 : 					if(pLoopUnit->getOwner() == m_pCity->getOwner() && pLoopUnit->GetReligionData()->GetReligion() != eReligion)
+; 3356 : #endif
+; 3357 : 				{
+; 3358 : 					if(pLoopUnit->getOwner() == m_pCity->getOwner() && pLoopUnit->GetReligionData()->GetReligion() != eReligion)
 
 	mov	eax, DWORD PTR _this$[esp+20]
 	mov	ecx, DWORD PTR [eax+416]
@@ -19968,11 +19980,11 @@ $LL5@IsDefended:
 	jne	SHORT $LN54@IsDefended
 $LN4@IsDefended:
 
-; 3321 : 		{
-; 3322 : #ifdef AUI_WARNING_FIXES
-; 3323 : 			for (uint iUnitLoop = 0; iUnitLoop < pAdjacentPlot->getNumUnits(); iUnitLoop++)
-; 3324 : #else
-; 3325 : 			for(int iUnitLoop = 0; iUnitLoop < pAdjacentPlot->getNumUnits(); iUnitLoop++)
+; 3343 : 		{
+; 3344 : #ifdef AUI_WARNING_FIXES
+; 3345 : 			for (uint iUnitLoop = 0; iUnitLoop < pAdjacentPlot->getNumUnits(); iUnitLoop++)
+; 3346 : #else
+; 3347 : 			for(int iUnitLoop = 0; iUnitLoop < pAdjacentPlot->getNumUnits(); iUnitLoop++)
 
 	mov	ecx, edi
 	inc	ebx
@@ -19981,13 +19993,13 @@ $LN4@IsDefended:
 	jl	SHORT $LL5@IsDefended
 $LN8@IsDefended:
 
-; 3310 : 				}
-; 3311 : 			}
-; 3312 : 		}
-; 3313 : 	}
-; 3314 : 
-; 3315 : 	CvPlot* pAdjacentPlot;
-; 3316 : 	for(int iDirectionLoop = 0; iDirectionLoop < NUM_DIRECTION_TYPES; iDirectionLoop++)
+; 3332 : 				}
+; 3333 : 			}
+; 3334 : 		}
+; 3335 : 	}
+; 3336 : 
+; 3337 : 	CvPlot* pAdjacentPlot;
+; 3338 : 	for(int iDirectionLoop = 0; iDirectionLoop < NUM_DIRECTION_TYPES; iDirectionLoop++)
 
 	inc	ebp
 	cmp	ebp, 6
@@ -19996,18 +20008,18 @@ $LN8@IsDefended:
 	pop	edi
 	pop	esi
 
-; 3339 : 					}
-; 3340 : 				}
-; 3341 : 			}
-; 3342 : 		}
-; 3343 : 	}
-; 3344 : 
-; 3345 : 	return false;
+; 3361 : 					}
+; 3362 : 				}
+; 3363 : 			}
+; 3364 : 		}
+; 3365 : 	}
+; 3366 : 
+; 3367 : 	return false;
 
 	xor	al, al
 	pop	ebx
 
-; 3346 : }
+; 3368 : }
 
 	pop	ecx
 	ret	4
@@ -20015,13 +20027,13 @@ $LN53@IsDefended:
 	pop	edi
 	pop	esi
 
-; 3308 : 				{
-; 3309 : 					return true;
+; 3330 : 				{
+; 3331 : 					return true;
 
 	mov	al, 1
 	pop	ebx
 
-; 3346 : }
+; 3368 : }
 
 	pop	ecx
 	ret	4
@@ -20030,13 +20042,13 @@ $LN54@IsDefended:
 	pop	edi
 	pop	esi
 
-; 3337 : 					{
-; 3338 : 						return true;
+; 3359 : 					{
+; 3360 : 						return true;
 
 	mov	al, 1
 	pop	ebx
 
-; 3346 : }
+; 3368 : }
 
 	pop	ecx
 	ret	4
@@ -20050,16 +20062,16 @@ _TEXT	SEGMENT
 ?GetSecondaryReligionPantheonBelief@CvCityReligions@@QAE?AW4BeliefTypes@@XZ PROC ; CvCityReligions::GetSecondaryReligionPantheonBelief, COMDAT
 ; _this$ = ecx
 
-; 3474 : {
+; 3496 : {
 
 	push	ebp
 	push	esi
 	mov	esi, ecx
 
-; 3475 : 	BeliefTypes eRtnValue = NO_BELIEF;
-; 3476 : 
-; 3477 : 	// Check for the policy that allows a secondary religion to be active
-; 3478 : 	if (GET_PLAYER(m_pCity->getOwner()).IsSecondReligionPantheon())
+; 3497 : 	BeliefTypes eRtnValue = NO_BELIEF;
+; 3498 : 
+; 3499 : 	// Check for the policy that allows a secondary religion to be active
+; 3500 : 	if (GET_PLAYER(m_pCity->getOwner()).IsSecondReligionPantheon())
 
 	mov	eax, DWORD PTR [esi+416]
 	mov	ecx, DWORD PTR [eax+84]
@@ -20070,19 +20082,19 @@ _TEXT	SEGMENT
 	test	al, al
 	je	$LN26@GetSeconda@2
 
-; 3479 : 	{
-; 3480 : 		ReligionTypes eSecondary = GetSecondaryReligion();
+; 3501 : 	{
+; 3502 : 		ReligionTypes eSecondary = GetSecondaryReligion();
 
 	mov	ecx, esi
 	call	?GetSecondaryReligion@CvCityReligions@@QAE?AW4ReligionTypes@@XZ ; CvCityReligions::GetSecondaryReligion
 
-; 3481 : 		if (eSecondary != NO_RELIGION)
+; 3503 : 		if (eSecondary != NO_RELIGION)
 
 	cmp	eax, ebp
 	je	$LN26@GetSeconda@2
 
-; 3482 : 		{
-; 3483 : 			const CvReligion* pReligion = GC.getGame().GetGameReligions()->GetReligion(eSecondary, m_pCity->getOwner());
+; 3504 : 		{
+; 3505 : 			const CvReligion* pReligion = GC.getGame().GetGameReligions()->GetReligion(eSecondary, m_pCity->getOwner());
 
 	mov	ecx, DWORD PTR [esi+416]
 	mov	ecx, DWORD PTR [ecx+84]
@@ -20093,14 +20105,14 @@ _TEXT	SEGMENT
 	mov	ecx, eax
 	call	?GetReligion@CvGameReligions@@QBEPBVCvReligion@@W4ReligionTypes@@W4PlayerTypes@@@Z ; CvGameReligions::GetReligion
 
-; 3484 : 			if(pReligion)
+; 3506 : 			if(pReligion)
 
 	test	eax, eax
 	je	SHORT $LN26@GetSeconda@2
 	push	ebx
 
-; 3485 : 			{
-; 3486 : 				for(int iI = 0; iI < pReligion->m_Beliefs.GetNumBeliefs(); iI++)
+; 3507 : 			{
+; 3508 : 				for(int iI = 0; iI < pReligion->m_Beliefs.GetNumBeliefs(); iI++)
 
 	lea	ebx, DWORD PTR [eax+152]
 	mov	ecx, ebx
@@ -20112,15 +20124,15 @@ _TEXT	SEGMENT
 	npad	2
 $LL4@GetSeconda@2:
 
-; 3487 : 				{
-; 3488 : 					const BeliefTypes eBelief = pReligion->m_Beliefs.GetBelief(iI);
+; 3509 : 				{
+; 3510 : 					const BeliefTypes eBelief = pReligion->m_Beliefs.GetBelief(iI);
 
 	push	esi
 	mov	ecx, ebx
 	call	?GetBelief@CvReligionBeliefs@@QBE?AW4BeliefTypes@@H@Z ; CvReligionBeliefs::GetBelief
 	mov	edi, eax
 
-; 3489 : 					CvBeliefEntry* pEntry = GC.GetGameBeliefs()->GetEntry((int)eBelief);
+; 3511 : 					CvBeliefEntry* pEntry = GC.GetGameBeliefs()->GetEntry((int)eBelief);
 
 	push	edi
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
@@ -20128,7 +20140,7 @@ $LL4@GetSeconda@2:
 	mov	ecx, eax
 	call	?GetEntry@CvBeliefXMLEntries@@QAEPAVCvBeliefEntry@@H@Z ; CvBeliefXMLEntries::GetEntry
 
-; 3490 : 					if(pEntry && pEntry->IsPantheonBelief())
+; 3512 : 					if(pEntry && pEntry->IsPantheonBelief())
 
 	test	eax, eax
 	je	SHORT $LN3@GetSeconda@2
@@ -20138,8 +20150,8 @@ $LL4@GetSeconda@2:
 	jne	SHORT $LN23@GetSeconda@2
 $LN3@GetSeconda@2:
 
-; 3485 : 			{
-; 3486 : 				for(int iI = 0; iI < pReligion->m_Beliefs.GetNumBeliefs(); iI++)
+; 3507 : 			{
+; 3508 : 				for(int iI = 0; iI < pReligion->m_Beliefs.GetNumBeliefs(); iI++)
 
 	mov	ecx, ebx
 	inc	esi
@@ -20150,35 +20162,35 @@ $LN3@GetSeconda@2:
 	pop	ebx
 	pop	esi
 
-; 3491 : 					{
-; 3492 : 						eRtnValue = eBelief;
-; 3493 : 						break;
-; 3494 : 					}
-; 3495 : 				}
-; 3496 : 			}
-; 3497 : 		}
-; 3498 : 	}
-; 3499 : 
-; 3500 : 	return eRtnValue;
+; 3513 : 					{
+; 3514 : 						eRtnValue = eBelief;
+; 3515 : 						break;
+; 3516 : 					}
+; 3517 : 				}
+; 3518 : 			}
+; 3519 : 		}
+; 3520 : 	}
+; 3521 : 
+; 3522 : 	return eRtnValue;
 
 	mov	eax, ebp
 	pop	ebp
 
-; 3501 : }
+; 3523 : }
 
 	ret	0
 $LN23@GetSeconda@2:
 
-; 3491 : 					{
-; 3492 : 						eRtnValue = eBelief;
-; 3493 : 						break;
-; 3494 : 					}
-; 3495 : 				}
-; 3496 : 			}
-; 3497 : 		}
-; 3498 : 	}
-; 3499 : 
-; 3500 : 	return eRtnValue;
+; 3513 : 					{
+; 3514 : 						eRtnValue = eBelief;
+; 3515 : 						break;
+; 3516 : 					}
+; 3517 : 				}
+; 3518 : 			}
+; 3519 : 		}
+; 3520 : 	}
+; 3521 : 
+; 3522 : 	return eRtnValue;
 
 	mov	eax, edi
 	pop	edi
@@ -20186,48 +20198,48 @@ $LN23@GetSeconda@2:
 	pop	esi
 	pop	ebp
 
-; 3501 : }
+; 3523 : }
 
 	ret	0
 $LN25@GetSeconda@2:
 	pop	ebx
 	pop	esi
 
-; 3491 : 					{
-; 3492 : 						eRtnValue = eBelief;
-; 3493 : 						break;
-; 3494 : 					}
-; 3495 : 				}
-; 3496 : 			}
-; 3497 : 		}
-; 3498 : 	}
-; 3499 : 
-; 3500 : 	return eRtnValue;
+; 3513 : 					{
+; 3514 : 						eRtnValue = eBelief;
+; 3515 : 						break;
+; 3516 : 					}
+; 3517 : 				}
+; 3518 : 			}
+; 3519 : 		}
+; 3520 : 	}
+; 3521 : 
+; 3522 : 	return eRtnValue;
 
 	mov	eax, ebp
 	pop	ebp
 
-; 3501 : }
+; 3523 : }
 
 	ret	0
 $LN26@GetSeconda@2:
 	pop	esi
 
-; 3491 : 					{
-; 3492 : 						eRtnValue = eBelief;
-; 3493 : 						break;
-; 3494 : 					}
-; 3495 : 				}
-; 3496 : 			}
-; 3497 : 		}
-; 3498 : 	}
-; 3499 : 
-; 3500 : 	return eRtnValue;
+; 3513 : 					{
+; 3514 : 						eRtnValue = eBelief;
+; 3515 : 						break;
+; 3516 : 					}
+; 3517 : 				}
+; 3518 : 			}
+; 3519 : 		}
+; 3520 : 	}
+; 3521 : 
+; 3522 : 	return eRtnValue;
 
 	mov	eax, ebp
 	pop	ebp
 
-; 3501 : }
+; 3523 : }
 
 	ret	0
 ?GetSecondaryReligionPantheonBelief@CvCityReligions@@QAE?AW4BeliefTypes@@XZ ENDP ; CvCityReligions::GetSecondaryReligionPantheonBelief
@@ -20237,27 +20249,27 @@ PUBLIC	?GetPressurePerTurn@CvCityReligions@@QAEHW4ReligionTypes@@AAH@Z ; CvCityR
 ;	COMDAT ?GetPressurePerTurn@CvCityReligions@@QAEHW4ReligionTypes@@AAH@Z
 _TEXT	SEGMENT
 _iPressure$ = -12					; size = 4
-_iNumTradeRoutes$226247 = -8				; size = 4
-_iLoop$226239 = -4					; size = 4
+_iNumTradeRoutes$226292 = -8				; size = 4
+_iLoop$226284 = -4					; size = 4
 _eReligion$ = 8						; size = 4
 tv294 = 12						; size = 4
 _iNumTradeRoutesInvolved$ = 12				; size = 4
 ?GetPressurePerTurn@CvCityReligions@@QAEHW4ReligionTypes@@AAH@Z PROC ; CvCityReligions::GetPressurePerTurn, COMDAT
 ; _this$ = ecx
 
-; 3585 : {
+; 3607 : {
 
 	sub	esp, 12					; 0000000cH
 	push	ebx
 	push	ebp
 	push	esi
 
-; 3586 : 	int iPressure = 0;
+; 3608 : 	int iPressure = 0;
 
 	xor	esi, esi
 	push	edi
 
-; 3587 : 	iNumTradeRoutesInvolved = 0;
+; 3609 : 	iNumTradeRoutesInvolved = 0;
 
 	mov	edi, DWORD PTR _iNumTradeRoutesInvolved$[esp+24]
 	xor	ebp, ebp
@@ -20268,25 +20280,25 @@ _iNumTradeRoutesInvolved$ = 12				; size = 4
 	npad	5
 $LL47@GetPressur@2:
 
-; 3591 : 	{
-; 3592 : 		CvPlayer& kPlayer = GET_PLAYER((PlayerTypes)iI);
+; 3613 : 	{
+; 3614 : 		CvPlayer& kPlayer = GET_PLAYER((PlayerTypes)iI);
 
 	mov	eax, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	add	ebp, eax
 
-; 3593 : 		if(kPlayer.isAlive())
+; 3615 : 		if(kPlayer.isAlive())
 
 	cmp	BYTE PTR [ebp+2256], 0
 	je	SHORT $LN9@GetPressur@2
 
-; 3594 : 		{
-; 3595 : 			// Loop through each of their cities
-; 3596 : 			int iLoop;
-; 3597 : 			CvCity* pLoopCity;
-; 3598 : 			for(pLoopCity = kPlayer.firstCity(&iLoop); pLoopCity != NULL; pLoopCity = kPlayer.nextCity(&iLoop))
+; 3616 : 		{
+; 3617 : 			// Loop through each of their cities
+; 3618 : 			int iLoop;
+; 3619 : 			CvCity* pLoopCity;
+; 3620 : 			for(pLoopCity = kPlayer.firstCity(&iLoop); pLoopCity != NULL; pLoopCity = kPlayer.nextCity(&iLoop))
 
 	push	0
-	lea	ecx, DWORD PTR _iLoop$226239[esp+32]
+	lea	ecx, DWORD PTR _iLoop$226284[esp+32]
 	push	ecx
 	mov	ecx, ebp
 	call	?firstCity@CvPlayer@@QAEPAVCvCity@@PAH_N@Z ; CvPlayer::firstCity
@@ -20295,37 +20307,37 @@ $LL47@GetPressur@2:
 	je	SHORT $LN44@GetPressur@2
 $LL45@GetPressur@2:
 
-; 3599 : 			{
-; 3600 : 				// Ignore the same city
-; 3601 : 				if (m_pCity == pLoopCity)
+; 3621 : 			{
+; 3622 : 				// Ignore the same city
+; 3623 : 				if (m_pCity == pLoopCity)
 
 	cmp	DWORD PTR [ebx+416], esi
 	je	SHORT $LN5@GetPressur@2
 
-; 3602 : 				{
-; 3603 : 					continue;
-; 3604 : 				}
-; 3605 : 
-; 3606 : 				// Does this city have the matching majority religion?
-; 3607 : 				ReligionTypes eMajorityReligion = pLoopCity->GetCityReligions()->GetReligiousMajority();
+; 3624 : 				{
+; 3625 : 					continue;
+; 3626 : 				}
+; 3627 : 
+; 3628 : 				// Does this city have the matching majority religion?
+; 3629 : 				ReligionTypes eMajorityReligion = pLoopCity->GetCityReligions()->GetReligiousMajority();
 
 	mov	ecx, esi
 	call	?GetCityReligions@CvCity@@QBEPAVCvCityReligions@@XZ ; CvCity::GetCityReligions
 	mov	ecx, eax
 	call	?GetReligiousMajority@CvCityReligions@@QAE?AW4ReligionTypes@@XZ ; CvCityReligions::GetReligiousMajority
 
-; 3608 : 				if(eMajorityReligion == eReligion)
+; 3630 : 				if(eMajorityReligion == eReligion)
 
 	cmp	eax, DWORD PTR _eReligion$[esp+24]
 	jne	SHORT $LN5@GetPressur@2
 
-; 3609 : 				{
-; 3610 : 					int iNumTradeRoutes;
-; 3611 : 					iPressure += GC.getGame().GetGameReligions()->GetAdjacentCityReligiousPressure (eMajorityReligion, pLoopCity, m_pCity, iNumTradeRoutes, false);
+; 3631 : 				{
+; 3632 : 					int iNumTradeRoutes;
+; 3633 : 					iPressure += GC.getGame().GetGameReligions()->GetAdjacentCityReligiousPressure (eMajorityReligion, pLoopCity, m_pCity, iNumTradeRoutes, false);
 
 	mov	ecx, DWORD PTR [ebx+416]
 	push	0
-	lea	edx, DWORD PTR _iNumTradeRoutes$226247[esp+32]
+	lea	edx, DWORD PTR _iNumTradeRoutes$226292[esp+32]
 	push	edx
 	push	ecx
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
@@ -20335,14 +20347,14 @@ $LL45@GetPressur@2:
 	mov	ecx, eax
 	call	?GetAdjacentCityReligiousPressure@CvGameReligions@@QAEHW4ReligionTypes@@PAVCvCity@@1AAH_N@Z ; CvGameReligions::GetAdjacentCityReligiousPressure
 
-; 3612 : 					iNumTradeRoutesInvolved += iNumTradeRoutes;
+; 3634 : 					iNumTradeRoutesInvolved += iNumTradeRoutes;
 
-	mov	edx, DWORD PTR _iNumTradeRoutes$226247[esp+28]
+	mov	edx, DWORD PTR _iNumTradeRoutes$226292[esp+28]
 	add	DWORD PTR _iPressure$[esp+28], eax
 	add	DWORD PTR [edi], edx
 $LN5@GetPressur@2:
 	push	0
-	lea	eax, DWORD PTR _iLoop$226239[esp+32]
+	lea	eax, DWORD PTR _iLoop$226284[esp+32]
 	push	eax
 	mov	ecx, ebp
 	call	?nextCity@CvPlayer@@QAEPAVCvCity@@PAH_N@Z ; CvPlayer::nextCity
@@ -20351,18 +20363,18 @@ $LN5@GetPressur@2:
 	jne	SHORT $LL45@GetPressur@2
 $LN44@GetPressur@2:
 
-; 3594 : 		{
-; 3595 : 			// Loop through each of their cities
-; 3596 : 			int iLoop;
-; 3597 : 			CvCity* pLoopCity;
-; 3598 : 			for(pLoopCity = kPlayer.firstCity(&iLoop); pLoopCity != NULL; pLoopCity = kPlayer.nextCity(&iLoop))
+; 3616 : 		{
+; 3617 : 			// Loop through each of their cities
+; 3618 : 			int iLoop;
+; 3619 : 			CvCity* pLoopCity;
+; 3620 : 			for(pLoopCity = kPlayer.firstCity(&iLoop); pLoopCity != NULL; pLoopCity = kPlayer.nextCity(&iLoop))
 
 	mov	esi, DWORD PTR _iPressure$[esp+28]
 $LN9@GetPressur@2:
 
-; 3588 : 
-; 3589 : 	// Loop through all the players
-; 3590 : 	for(int iI = 0; iI < MAX_PLAYERS; iI++)
+; 3610 : 
+; 3611 : 	// Loop through all the players
+; 3612 : 	for(int iI = 0; iI < MAX_PLAYERS; iI++)
 
 	mov	ebp, DWORD PTR tv294[esp+24]
 	add	ebp, 63236				; 0000f704H
@@ -20370,13 +20382,13 @@ $LN9@GetPressur@2:
 	mov	DWORD PTR tv294[esp+24], ebp
 	jl	$LL47@GetPressur@2
 
-; 3613 : 				}
-; 3614 : 			}
-; 3615 : 		}
-; 3616 : 	}
-; 3617 : 
-; 3618 : 	// Holy city for this religion?
-; 3619 : 	if (IsHolyCityForReligion(eReligion))
+; 3635 : 				}
+; 3636 : 			}
+; 3637 : 		}
+; 3638 : 	}
+; 3639 : 
+; 3640 : 	// Holy city for this religion?
+; 3641 : 	if (IsHolyCityForReligion(eReligion))
 
 	mov	eax, DWORD PTR [ebx]
 	mov	ebx, DWORD PTR [ebx+4]
@@ -20394,61 +20406,61 @@ $LL24@GetPressur@2:
 	jne	SHORT $LL24@GetPressur@2
 	pop	edi
 
-; 3624 : 	}
-; 3625 : 
-; 3626 : 	return iPressure;
+; 3646 : 	}
+; 3647 : 
+; 3648 : 	return iPressure;
 
 	mov	eax, esi
 	pop	esi
 	pop	ebp
 	pop	ebx
 
-; 3627 : }
+; 3649 : }
 
 	add	esp, 12					; 0000000cH
 	ret	8
 $LN38@GetPressur@2:
 
-; 3613 : 				}
-; 3614 : 			}
-; 3615 : 		}
-; 3616 : 	}
-; 3617 : 
-; 3618 : 	// Holy city for this religion?
-; 3619 : 	if (IsHolyCityForReligion(eReligion))
+; 3635 : 				}
+; 3636 : 			}
+; 3637 : 		}
+; 3638 : 	}
+; 3639 : 
+; 3640 : 	// Holy city for this religion?
+; 3641 : 	if (IsHolyCityForReligion(eReligion))
 
 	cmp	BYTE PTR [eax+4], 0
 	je	SHORT $LN43@GetPressur@2
 
-; 3620 : 	{
-; 3621 : 		int iHolyCityPressure = GC.getGame().getGameSpeedInfo().getReligiousPressureAdjacentCity();
+; 3642 : 	{
+; 3643 : 		int iHolyCityPressure = GC.getGame().getGameSpeedInfo().getReligiousPressureAdjacentCity();
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?getGameSpeedInfo@CvGame@@QBEAAVCvGameSpeedInfo@@XZ ; CvGame::getGameSpeedInfo
 	mov	ecx, eax
 	call	?getReligiousPressureAdjacentCity@CvGameSpeedInfo@@QBEHXZ ; CvGameSpeedInfo::getReligiousPressureAdjacentCity
 
-; 3622 : 		iHolyCityPressure *=  GC.getRELIGION_PER_TURN_FOUNDING_CITY_PRESSURE();
+; 3644 : 		iHolyCityPressure *=  GC.getRELIGION_PER_TURN_FOUNDING_CITY_PRESSURE();
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+7896
 	imul	ecx, eax
 
-; 3623 : 		iPressure += iHolyCityPressure;
+; 3645 : 		iPressure += iHolyCityPressure;
 
 	add	esi, ecx
 $LN43@GetPressur@2:
 	pop	edi
 
-; 3624 : 	}
-; 3625 : 
-; 3626 : 	return iPressure;
+; 3646 : 	}
+; 3647 : 
+; 3648 : 	return iPressure;
 
 	mov	eax, esi
 	pop	esi
 	pop	ebp
 	pop	ebx
 
-; 3627 : }
+; 3649 : }
 
 	add	esp, 12					; 0000000cH
 	ret	8
@@ -20459,55 +20471,55 @@ PUBLIC	?WouldExertTradeRoutePressureToward@CvCityReligions@@QAE_NPAVCvCity@@AAW4
 ;	COMDAT ?WouldExertTradeRoutePressureToward@CvCityReligions@@QAE_NPAVCvCity@@AAW4ReligionTypes@@AAH@Z
 _TEXT	SEGMENT
 _pTargetCity$ = 8					; size = 4
-_iNumTradeRoutes$226274 = 12				; size = 4
+_iNumTradeRoutes$226319 = 12				; size = 4
 _eReligion$ = 12					; size = 4
 _iAmount$ = 16						; size = 4
 ?WouldExertTradeRoutePressureToward@CvCityReligions@@QAE_NPAVCvCity@@AAW4ReligionTypes@@AAH@Z PROC ; CvCityReligions::WouldExertTradeRoutePressureToward, COMDAT
 ; _this$ = ecx
 
-; 3661 : 	eReligion = NO_RELIGION;
+; 3683 : 	eReligion = NO_RELIGION;
 
 	mov	eax, DWORD PTR _eReligion$[esp-4]
 	push	esi
 	push	edi
 	mov	edi, ecx
 
-; 3662 : 	iAmount = 0;
+; 3684 : 	iAmount = 0;
 
 	mov	ecx, DWORD PTR _iAmount$[esp+4]
 	mov	DWORD PTR [eax], -1
 	mov	DWORD PTR [ecx], 0
 
-; 3663 : 
-; 3664 : 	ReligionTypes eReligiousMajority = GetReligiousMajority();
+; 3685 : 
+; 3686 : 	ReligionTypes eReligiousMajority = GetReligiousMajority();
 
 	mov	ecx, edi
 	call	?GetReligiousMajority@CvCityReligions@@QAE?AW4ReligionTypes@@XZ ; CvCityReligions::GetReligiousMajority
 	mov	esi, eax
 
-; 3665 : 
-; 3666 : 	// if there isn't a religious connection, whatvz
-; 3667 : 	if (eReligiousMajority == NO_RELIGION)
+; 3687 : 
+; 3688 : 	// if there isn't a religious connection, whatvz
+; 3689 : 	if (eReligiousMajority == NO_RELIGION)
 
 	cmp	esi, -1
 	jne	SHORT $LN4@WouldExert
 $LN36@WouldExert:
 	pop	edi
 
-; 3668 : 	{
-; 3669 : 		return false;
+; 3690 : 	{
+; 3691 : 		return false;
 
 	xor	al, al
 	pop	esi
 
-; 3701 : }
+; 3723 : }
 
 	ret	12					; 0000000cH
 $LN4@WouldExert:
 
-; 3670 : 	}
-; 3671 : 
-; 3672 : 	const CvReligion* pReligion = GC.getGame().GetGameReligions()->GetReligion(eReligiousMajority, m_pCity->getOwner());
+; 3692 : 	}
+; 3693 : 
+; 3694 : 	const CvReligion* pReligion = GC.getGame().GetGameReligions()->GetReligion(eReligiousMajority, m_pCity->getOwner());
 
 	mov	edx, DWORD PTR [edi+416]
 	mov	eax, DWORD PTR [edx+84]
@@ -20518,40 +20530,40 @@ $LN4@WouldExert:
 	mov	ecx, eax
 	call	?GetReligion@CvGameReligions@@QBEPBVCvReligion@@W4ReligionTypes@@W4PlayerTypes@@@Z ; CvGameReligions::GetReligion
 
-; 3673 : 	if (!pReligion)
+; 3695 : 	if (!pReligion)
 
 	test	eax, eax
 
-; 3674 : 	{
-; 3675 : 		return false;
+; 3696 : 	{
+; 3697 : 		return false;
 
 	je	SHORT $LN36@WouldExert
 
-; 3676 : 	}
-; 3677 : 
-; 3678 : 	// Are the cities within the minimum distance?
-; 3679 : 	int iDistance = GC.getRELIGION_ADJACENT_CITY_DISTANCE();
-; 3680 : 
-; 3681 : 	// Boost to distance due to belief?
-; 3682 : 	int iDistanceMod = pReligion->m_Beliefs.GetSpreadDistanceModifier();
+; 3698 : 	}
+; 3699 : 
+; 3700 : 	// Are the cities within the minimum distance?
+; 3701 : 	int iDistance = GC.getRELIGION_ADJACENT_CITY_DISTANCE();
+; 3702 : 
+; 3703 : 	// Boost to distance due to belief?
+; 3704 : 	int iDistanceMod = pReligion->m_Beliefs.GetSpreadDistanceModifier();
 
 	mov	eax, DWORD PTR [eax+188]
 	push	ebx
 	mov	ebx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+7904
 	push	ebp
 
-; 3683 : 	if(iDistanceMod > 0)
+; 3705 : 	if(iDistanceMod > 0)
 
 	test	eax, eax
 	jle	SHORT $LN2@WouldExert
 
-; 3684 : 	{
-; 3685 : 		iDistance *= (100 + iDistanceMod);
+; 3706 : 	{
+; 3707 : 		iDistance *= (100 + iDistanceMod);
 
 	lea	ecx, DWORD PTR [eax+100]
 	imul	ecx, ebx
 
-; 3686 : 		iDistance /= 100;
+; 3708 : 		iDistance /= 100;
 
 	mov	eax, 1374389535				; 51eb851fH
 	imul	ecx
@@ -20562,9 +20574,9 @@ $LN4@WouldExert:
 	mov	ebx, eax
 $LN2@WouldExert:
 
-; 3687 : 	}
-; 3688 : 
-; 3689 : 	bool bWithinDistance = (plotDistance(m_pCity->getX(), m_pCity->getY(), pTargetCity->getX(), pTargetCity->getY()) <= iDistance);
+; 3709 : 	}
+; 3710 : 
+; 3711 : 	bool bWithinDistance = (plotDistance(m_pCity->getX(), m_pCity->getY(), pTargetCity->getX(), pTargetCity->getY()) <= iDistance);
 
 	mov	ebp, DWORD PTR _pTargetCity$[esp+12]
 	mov	ecx, DWORD PTR [ebp+108]
@@ -20580,22 +20592,22 @@ $LN2@WouldExert:
 	add	esp, 16					; 00000010H
 	cmp	eax, ebx
 
-; 3690 : 
-; 3691 : 	// if not within distance, then we're using a trade route
-; 3692 : 	if (!bWithinDistance) 
+; 3712 : 
+; 3713 : 	// if not within distance, then we're using a trade route
+; 3714 : 	if (!bWithinDistance) 
 
 	jle	SHORT $LN1@WouldExert
 
-; 3693 : 	{
-; 3694 : 		eReligion = eReligiousMajority;
+; 3715 : 	{
+; 3716 : 		eReligion = eReligiousMajority;
 
 	mov	eax, DWORD PTR _eReligion$[esp+12]
 
-; 3695 : 		int iNumTradeRoutes = 0;
-; 3696 : 		iAmount = GC.getGame().GetGameReligions()->GetAdjacentCityReligiousPressure(eReligiousMajority, m_pCity, pTargetCity, iNumTradeRoutes, true);
+; 3717 : 		int iNumTradeRoutes = 0;
+; 3718 : 		iAmount = GC.getGame().GetGameReligions()->GetAdjacentCityReligiousPressure(eReligiousMajority, m_pCity, pTargetCity, iNumTradeRoutes, true);
 
 	push	1
-	lea	ecx, DWORD PTR _iNumTradeRoutes$226274[esp+16]
+	lea	ecx, DWORD PTR _iNumTradeRoutes$226319[esp+16]
 	push	ecx
 	mov	DWORD PTR [eax], esi
 	mov	edx, DWORD PTR [edi+416]
@@ -20603,7 +20615,7 @@ $LN2@WouldExert:
 	push	ebp
 	push	edx
 	push	esi
-	mov	DWORD PTR _iNumTradeRoutes$226274[esp+32], 0
+	mov	DWORD PTR _iNumTradeRoutes$226319[esp+32], 0
 	call	?GetGameReligions@CvGame@@QAEPAVCvGameReligions@@XZ ; CvGame::GetGameReligions
 	mov	ecx, eax
 	call	?GetAdjacentCityReligiousPressure@CvGameReligions@@QAEHW4ReligionTypes@@PAVCvCity@@1AAH_N@Z ; CvGameReligions::GetAdjacentCityReligiousPressure
@@ -20613,12 +20625,12 @@ $LN2@WouldExert:
 	pop	edi
 	mov	DWORD PTR [ecx], eax
 
-; 3697 : 		return true;
+; 3719 : 		return true;
 
 	mov	al, 1
 	pop	esi
 
-; 3701 : }
+; 3723 : }
 
 	ret	12					; 0000000cH
 $LN1@WouldExert:
@@ -20626,14 +20638,14 @@ $LN1@WouldExert:
 	pop	ebx
 	pop	edi
 
-; 3698 : 	}
-; 3699 : 
-; 3700 : 	return false;
+; 3720 : 	}
+; 3721 : 
+; 3722 : 	return false;
 
 	xor	al, al
 	pop	esi
 
-; 3701 : }
+; 3723 : }
 
 	ret	12					; 0000000cH
 ?WouldExertTradeRoutePressureToward@CvCityReligions@@QAE_NPAVCvCity@@AAW4ReligionTypes@@AAH@Z ENDP ; CvCityReligions::WouldExertTradeRoutePressureToward
@@ -20646,29 +20658,29 @@ _pOtherCity$ = 8					; size = 4
 ?UpdateNumTradeRouteConnections@CvCityReligions@@QAEXPAVCvCity@@@Z PROC ; CvCityReligions::UpdateNumTradeRouteConnections, COMDAT
 ; _this$ = ecx
 
-; 4162 : {
+; 4184 : {
 
 	push	ebx
 	push	edi
 	mov	edi, ecx
 
-; 4163 : 	ReligionTypes eReligiousMajority = GetReligiousMajority();
+; 4185 : 	ReligionTypes eReligiousMajority = GetReligiousMajority();
 
 	call	?GetReligiousMajority@CvCityReligions@@QAE?AW4ReligionTypes@@XZ ; CvCityReligions::GetReligiousMajority
 	mov	ebx, eax
 
-; 4164 : 
-; 4165 : 	// if there isn't a religious connection, whatvz
-; 4166 : 	if (eReligiousMajority == NO_RELIGION)
+; 4186 : 
+; 4187 : 	// if there isn't a religious connection, whatvz
+; 4188 : 	if (eReligiousMajority == NO_RELIGION)
 
 	cmp	ebx, -1
 	je	$LN1@UpdateNumT
 
-; 4167 : 	{
-; 4168 : 		return;
-; 4169 : 	}
-; 4170 : 
-; 4171 : 	const CvReligion* pReligion = GC.getGame().GetGameReligions()->GetReligion(eReligiousMajority, m_pCity->getOwner());
+; 4189 : 	{
+; 4190 : 		return;
+; 4191 : 	}
+; 4192 : 
+; 4193 : 	const CvReligion* pReligion = GC.getGame().GetGameReligions()->GetReligion(eReligiousMajority, m_pCity->getOwner());
 
 	mov	eax, DWORD PTR [edi+416]
 	mov	eax, DWORD PTR [eax+84]
@@ -20679,37 +20691,37 @@ _pOtherCity$ = 8					; size = 4
 	mov	ecx, eax
 	call	?GetReligion@CvGameReligions@@QBEPBVCvReligion@@W4ReligionTypes@@W4PlayerTypes@@@Z ; CvGameReligions::GetReligion
 
-; 4172 : 	if (!pReligion)
+; 4194 : 	if (!pReligion)
 
 	test	eax, eax
 	je	SHORT $LN1@UpdateNumT
 
-; 4173 : 	{
-; 4174 : 		return;
-; 4175 : 	}
-; 4176 : 
-; 4177 : 	// Are the cities within the minimum distance?
-; 4178 : 	int iDistance = GC.getRELIGION_ADJACENT_CITY_DISTANCE();
-; 4179 : 
-; 4180 : 	// Boost to distance due to belief?
-; 4181 : 	int iDistanceMod = pReligion->m_Beliefs.GetSpreadDistanceModifier();
+; 4195 : 	{
+; 4196 : 		return;
+; 4197 : 	}
+; 4198 : 
+; 4199 : 	// Are the cities within the minimum distance?
+; 4200 : 	int iDistance = GC.getRELIGION_ADJACENT_CITY_DISTANCE();
+; 4201 : 
+; 4202 : 	// Boost to distance due to belief?
+; 4203 : 	int iDistanceMod = pReligion->m_Beliefs.GetSpreadDistanceModifier();
 
 	mov	eax, DWORD PTR [eax+188]
 	push	esi
 	mov	esi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+7904
 
-; 4182 : 	if(iDistanceMod > 0)
+; 4204 : 	if(iDistanceMod > 0)
 
 	test	eax, eax
 	jle	SHORT $LN2@UpdateNumT
 
-; 4183 : 	{
-; 4184 : 		iDistance *= (100 + iDistanceMod);
+; 4205 : 	{
+; 4206 : 		iDistance *= (100 + iDistanceMod);
 
 	lea	ecx, DWORD PTR [eax+100]
 	imul	ecx, esi
 
-; 4185 : 		iDistance /= 100;
+; 4207 : 		iDistance /= 100;
 
 	mov	eax, 1374389535				; 51eb851fH
 	imul	ecx
@@ -20720,9 +20732,9 @@ _pOtherCity$ = 8					; size = 4
 	mov	esi, ecx
 $LN2@UpdateNumT:
 
-; 4186 : 	}
-; 4187 : 
-; 4188 : 	bool bWithinDistance = (plotDistance(m_pCity->getX(), m_pCity->getY(), pOtherCity->getX(), pOtherCity->getY()) <= iDistance);
+; 4208 : 	}
+; 4209 : 
+; 4210 : 	bool bWithinDistance = (plotDistance(m_pCity->getX(), m_pCity->getY(), pOtherCity->getX(), pOtherCity->getY()) <= iDistance);
 
 	mov	eax, DWORD PTR [edi+416]
 	mov	edi, DWORD PTR _pOtherCity$[esp+8]
@@ -20739,14 +20751,14 @@ $LN2@UpdateNumT:
 	cmp	eax, esi
 	pop	esi
 
-; 4189 : 
-; 4190 : 	// if not within distance, then we're using a trade route
-; 4191 : 	if (!bWithinDistance) 
+; 4211 : 
+; 4212 : 	// if not within distance, then we're using a trade route
+; 4213 : 	if (!bWithinDistance) 
 
 	jle	SHORT $LN1@UpdateNumT
 
-; 4192 : 	{
-; 4193 : 		pOtherCity->GetCityReligions()->IncrementNumTradeRouteConnections(eReligiousMajority, 1);
+; 4214 : 	{
+; 4215 : 		pOtherCity->GetCityReligions()->IncrementNumTradeRouteConnections(eReligiousMajority, 1);
 
 	push	1
 	push	ebx
@@ -20758,8 +20770,8 @@ $LN1@UpdateNumT:
 	pop	edi
 	pop	ebx
 
-; 4194 : 	}
-; 4195 : }
+; 4216 : 	}
+; 4217 : }
 
 	ret	4
 ?UpdateNumTradeRouteConnections@CvCityReligions@@QAEXPAVCvCity@@@Z ENDP ; CvCityReligions::UpdateNumTradeRouteConnections
@@ -20782,13 +20794,13 @@ __ehfuncinfo$?GetReligionToSpread@CvReligionAI@@QBE?AW4ReligionTypes@@XZ DD 0199
 xdata$x	ENDS
 ;	COMDAT ?GetReligionToSpread@CvReligionAI@@QBE?AW4ReligionTypes@@XZ
 _TEXT	SEGMENT
-_args$227809 = -20					; size = 4
-_iValue$227810 = -16					; size = 4
+_args$227858 = -20					; size = 4
+_iValue$227859 = -16					; size = 4
 __$EHRec$ = -12						; size = 12
 ?GetReligionToSpread@CvReligionAI@@QBE?AW4ReligionTypes@@XZ PROC ; CvReligionAI::GetReligionToSpread, COMDAT
 ; _this$ = ecx
 
-; 5639 : {
+; 5661 : {
 
 	mov	eax, DWORD PTR fs:0
 	push	-1
@@ -20800,9 +20812,9 @@ __$EHRec$ = -12						; size = 12
 	push	edi
 	mov	edi, ecx
 
-; 5640 : 	ReligionTypes eRtnValue = NO_RELIGION;
-; 5641 : 
-; 5642 : 	ICvEngineScriptSystem1* pkScriptSystem = gDLL->GetScriptSystem();
+; 5662 : 	ReligionTypes eRtnValue = NO_RELIGION;
+; 5663 : 
+; 5664 : 	ICvEngineScriptSystem1* pkScriptSystem = gDLL->GetScriptSystem();
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8564
 	mov	eax, DWORD PTR [ecx]
@@ -20810,57 +20822,57 @@ __$EHRec$ = -12						; size = 12
 	call	edx
 	mov	esi, eax
 
-; 5643 : 	if(pkScriptSystem)
+; 5665 : 	if(pkScriptSystem)
 
 	test	esi, esi
 	je	SHORT $LN3@GetReligio@5
 
-; 5644 : 	{
-; 5645 : 		CvLuaArgsHandle args;
+; 5666 : 	{
+; 5667 : 		CvLuaArgsHandle args;
 
-	lea	ecx, DWORD PTR _args$227809[esp+28]
+	lea	ecx, DWORD PTR _args$227858[esp+28]
 	call	??0CvLuaArgsHandle@@QAE@XZ		; CvLuaArgsHandle::CvLuaArgsHandle
 
-; 5646 : 		args->Push(m_pPlayer->GetID());
+; 5668 : 		args->Push(m_pPlayer->GetID());
 
 	mov	eax, DWORD PTR [edi+4]
 	mov	eax, DWORD PTR [eax+44]
-	mov	ecx, DWORD PTR _args$227809[esp+28]
+	mov	ecx, DWORD PTR _args$227858[esp+28]
 	mov	edx, DWORD PTR [ecx]
 	push	eax
 	mov	eax, DWORD PTR [edx+8]
 	mov	DWORD PTR __$EHRec$[esp+40], 0
 	call	eax
 
-; 5647 : 
-; 5648 : 		int iValue = 0;
-; 5649 : 		if (LuaSupport::CallAccumulator(pkScriptSystem, "GetReligionToSpread", args.get(), iValue))
+; 5669 : 
+; 5670 : 		int iValue = 0;
+; 5671 : 		if (LuaSupport::CallAccumulator(pkScriptSystem, "GetReligionToSpread", args.get(), iValue))
 
-	mov	edx, DWORD PTR _args$227809[esp+28]
-	lea	ecx, DWORD PTR _iValue$227810[esp+28]
+	mov	edx, DWORD PTR _args$227858[esp+28]
+	lea	ecx, DWORD PTR _iValue$227859[esp+28]
 	push	ecx
 	push	edx
-	push	OFFSET $SG227812
+	push	OFFSET $SG227861
 	push	esi
-	mov	DWORD PTR _iValue$227810[esp+44], 0
+	mov	DWORD PTR _iValue$227859[esp+44], 0
 	call	?CallAccumulator@LuaSupport@@YA_NPAVICvEngineScriptSystem1@@PBDPAVICvEngineScriptSystemArgs1@@AAH@Z ; LuaSupport::CallAccumulator
 	add	esp, 16					; 00000010H
 
-; 5650 : 		{
-; 5651 : 			eRtnValue = (ReligionTypes)iValue;
-; 5652 : 			return eRtnValue;
+; 5672 : 		{
+; 5673 : 			eRtnValue = (ReligionTypes)iValue;
+; 5674 : 			return eRtnValue;
 
 	mov	DWORD PTR __$EHRec$[esp+36], -1
-	lea	ecx, DWORD PTR _args$227809[esp+28]
+	lea	ecx, DWORD PTR _args$227858[esp+28]
 	test	al, al
 	je	SHORT $LN2@GetReligio@5
-	mov	esi, DWORD PTR _iValue$227810[esp+28]
+	mov	esi, DWORD PTR _iValue$227859[esp+28]
 	call	??1CvLuaArgsHandle@@QAE@XZ		; CvLuaArgsHandle::~CvLuaArgsHandle
 	pop	edi
 	mov	eax, esi
 	pop	esi
 
-; 5664 : }
+; 5686 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+20]
 	mov	DWORD PTR fs:0, ecx
@@ -20868,19 +20880,19 @@ __$EHRec$ = -12						; size = 12
 	ret	0
 $LN2@GetReligio@5:
 
-; 5653 : 		}
-; 5654 : 	}
+; 5675 : 		}
+; 5676 : 	}
 
 	call	??1CvLuaArgsHandle@@QAE@XZ		; CvLuaArgsHandle::~CvLuaArgsHandle
 $LN3@GetReligio@5:
 
-; 5655 : 
-; 5656 : 	CvGameReligions *pReligions = GC.getGame().GetGameReligions();
+; 5677 : 
+; 5678 : 	CvGameReligions *pReligions = GC.getGame().GetGameReligions();
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?GetGameReligions@CvGame@@QAEPAVCvGameReligions@@XZ ; CvGame::GetGameReligions
 
-; 5657 : 	eRtnValue = pReligions->GetReligionCreatedByPlayer(m_pPlayer->GetID());
+; 5679 : 	eRtnValue = pReligions->GetReligionCreatedByPlayer(m_pPlayer->GetID());
 
 	mov	ecx, DWORD PTR [edi+4]
 	mov	edx, DWORD PTR [ecx+44]
@@ -20888,23 +20900,23 @@ $LN3@GetReligio@5:
 	mov	ecx, eax
 	call	?GetReligionCreatedByPlayer@CvGameReligions@@QBE?AW4ReligionTypes@@W4PlayerTypes@@@Z ; CvGameReligions::GetReligionCreatedByPlayer
 
-; 5658 : 	if(eRtnValue > RELIGION_PANTHEON)
+; 5680 : 	if(eRtnValue > RELIGION_PANTHEON)
 
 	test	eax, eax
 
-; 5659 : 	{
-; 5660 : 		return eRtnValue;
+; 5681 : 	{
+; 5682 : 		return eRtnValue;
 
 	jg	SHORT $LN4@GetReligio@5
 
-; 5661 : 	}
-; 5662 : 
-; 5663 : 	return NO_RELIGION;
+; 5683 : 	}
+; 5684 : 
+; 5685 : 	return NO_RELIGION;
 
 	or	eax, -1
 $LN4@GetReligio@5:
 
-; 5664 : }
+; 5686 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+28]
 	pop	edi
@@ -20916,7 +20928,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetReligionToSpread@CvReligionAI@@QBE?AW4ReligionTypes@@XZ$0:
-	lea	ecx, DWORD PTR _args$227809[ebp]
+	lea	ecx, DWORD PTR _args$227858[ebp]
 	jmp	??1CvLuaArgsHandle@@QAE@XZ		; CvLuaArgsHandle::~CvLuaArgsHandle
 __ehhandler$?GetReligionToSpread@CvReligionAI@@QBE?AW4ReligionTypes@@XZ:
 	mov	eax, OFFSET __ehfuncinfo$?GetReligionToSpread@CvReligionAI@@QBE?AW4ReligionTypes@@XZ
@@ -20935,21 +20947,21 @@ _iLoop$ = -4						; size = 4
 ?BuyAnyAvailableNonFaithBuilding@CvReligionAI@@AAE_NXZ PROC ; CvReligionAI::BuyAnyAvailableNonFaithBuilding, COMDAT
 ; _this$ = ecx
 
-; 5940 : {
+; 5962 : {
 
 	sub	esp, 8
 
-; 5941 : 	PlayerTypes ePlayer = m_pPlayer->GetID();
+; 5963 : 	PlayerTypes ePlayer = m_pPlayer->GetID();
 
 	mov	eax, DWORD PTR [ecx+4]
 	push	ebx
 	push	ebp
 	mov	ebp, DWORD PTR [eax+44]
 
-; 5942 : 
-; 5943 : 	int iLoop;
-; 5944 : 	CvCity* pLoopCity;
-; 5945 : 	for(pLoopCity = GET_PLAYER(ePlayer).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(ePlayer).nextCity(&iLoop))
+; 5964 : 
+; 5965 : 	int iLoop;
+; 5966 : 	CvCity* pLoopCity;
+; 5967 : 	for(pLoopCity = GET_PLAYER(ePlayer).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(ePlayer).nextCity(&iLoop))
 
 	imul	ebp, 63236				; 0000f704H
 	push	esi
@@ -20967,11 +20979,11 @@ _iLoop$ = -4						; size = 4
 	npad	11
 $LL9@BuyAnyAvai:
 
-; 5946 : 	{
-; 5947 : #ifdef AUI_WARNING_FIXES
-; 5948 : 		for (uint iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
-; 5949 : #else
-; 5950 : 		for (int iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
+; 5968 : 	{
+; 5969 : #ifdef AUI_WARNING_FIXES
+; 5970 : 		for (uint iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
+; 5971 : #else
+; 5972 : 		for (int iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	xor	ebx, ebx
@@ -20980,9 +20992,9 @@ $LL9@BuyAnyAvai:
 	jle	SHORT $LN8@BuyAnyAvai
 $LL26@BuyAnyAvai:
 
-; 5951 : #endif
-; 5952 : 		{
-; 5953 : 			BuildingTypes eBuilding = (BuildingTypes)m_pPlayer->getCivilizationInfo().getCivilizationBuildings(iI);
+; 5973 : #endif
+; 5974 : 		{
+; 5975 : 			BuildingTypes eBuilding = (BuildingTypes)m_pPlayer->getCivilizationInfo().getCivilizationBuildings(iI);
 
 	mov	eax, DWORD PTR _this$[esp+24]
 	mov	ecx, DWORD PTR [eax+4]
@@ -20992,13 +21004,13 @@ $LL26@BuyAnyAvai:
 	call	?getCivilizationBuildings@CvCivilizationInfo@@QBEHH@Z ; CvCivilizationInfo::getCivilizationBuildings
 	mov	esi, eax
 
-; 5954 : 			if(eBuilding != NO_BUILDING)
+; 5976 : 			if(eBuilding != NO_BUILDING)
 
 	cmp	esi, -1
 	je	SHORT $LN5@BuyAnyAvai
 
-; 5955 : 			{
-; 5956 : 				CvBuildingEntry* pBuildingEntry = GC.GetGameBuildings()->GetEntry(eBuilding);
+; 5977 : 			{
+; 5978 : 				CvBuildingEntry* pBuildingEntry = GC.GetGameBuildings()->GetEntry(eBuilding);
 
 	push	esi
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
@@ -21006,9 +21018,9 @@ $LL26@BuyAnyAvai:
 	mov	ecx, eax
 	call	?GetEntry@CvBuildingXMLEntries@@QAEPAVCvBuildingEntry@@H@Z ; CvBuildingXMLEntries::GetEntry
 
-; 5957 : 
-; 5958 : 				// Check to make sure this isn't a Faith-generating building
-; 5959 : 				if(pBuildingEntry && pBuildingEntry->GetYieldChange(YIELD_FAITH) == 0)
+; 5979 : 
+; 5980 : 				// Check to make sure this isn't a Faith-generating building
+; 5981 : 				if(pBuildingEntry && pBuildingEntry->GetYieldChange(YIELD_FAITH) == 0)
 
 	test	eax, eax
 	je	SHORT $LN5@BuyAnyAvai
@@ -21018,8 +21030,8 @@ $LL26@BuyAnyAvai:
 	test	eax, eax
 	jne	SHORT $LN5@BuyAnyAvai
 
-; 5960 : 				{
-; 5961 : 					if(pLoopCity->IsCanPurchase(true, true, (UnitTypes)-1, eBuilding, (ProjectTypes)-1, YIELD_FAITH))
+; 5982 : 				{
+; 5983 : 					if(pLoopCity->IsCanPurchase(true, true, (UnitTypes)-1, eBuilding, (ProjectTypes)-1, YIELD_FAITH))
 
 	push	5
 	push	-1
@@ -21033,11 +21045,11 @@ $LL26@BuyAnyAvai:
 	jne	SHORT $LN22@BuyAnyAvai
 $LN5@BuyAnyAvai:
 
-; 5946 : 	{
-; 5947 : #ifdef AUI_WARNING_FIXES
-; 5948 : 		for (uint iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
-; 5949 : #else
-; 5950 : 		for (int iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
+; 5968 : 	{
+; 5969 : #ifdef AUI_WARNING_FIXES
+; 5970 : 		for (uint iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
+; 5971 : #else
+; 5972 : 		for (int iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	inc	ebx
@@ -21046,10 +21058,10 @@ $LN5@BuyAnyAvai:
 	jl	SHORT $LL26@BuyAnyAvai
 $LN8@BuyAnyAvai:
 
-; 5942 : 
-; 5943 : 	int iLoop;
-; 5944 : 	CvCity* pLoopCity;
-; 5945 : 	for(pLoopCity = GET_PLAYER(ePlayer).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(ePlayer).nextCity(&iLoop))
+; 5964 : 
+; 5965 : 	int iLoop;
+; 5966 : 	CvCity* pLoopCity;
+; 5967 : 	for(pLoopCity = GET_PLAYER(ePlayer).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(ePlayer).nextCity(&iLoop))
 
 	mov	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	push	0
@@ -21065,24 +21077,24 @@ $LN7@BuyAnyAvai:
 	pop	esi
 	pop	ebp
 
-; 5965 : 					}
-; 5966 : 				}
-; 5967 : 			}
-; 5968 : 		}
-; 5969 : 	}
-; 5970 : 	return false;
+; 5987 : 					}
+; 5988 : 				}
+; 5989 : 			}
+; 5990 : 		}
+; 5991 : 	}
+; 5992 : 	return false;
 
 	xor	al, al
 	pop	ebx
 
-; 5971 : }
+; 5993 : }
 
 	add	esp, 8
 	ret	0
 $LN22@BuyAnyAvai:
 
-; 5962 : 					{
-; 5963 : 						pLoopCity->Purchase((UnitTypes)-1, eBuilding, (ProjectTypes)-1, YIELD_FAITH);
+; 5984 : 					{
+; 5985 : 						pLoopCity->Purchase((UnitTypes)-1, eBuilding, (ProjectTypes)-1, YIELD_FAITH);
 
 	push	5
 	push	-1
@@ -21094,12 +21106,12 @@ $LN22@BuyAnyAvai:
 	pop	esi
 	pop	ebp
 
-; 5964 : 						return true;
+; 5986 : 						return true;
 
 	mov	al, 1
 	pop	ebx
 
-; 5971 : }
+; 5993 : }
 
 	add	esp, 8
 	ret	0
@@ -21120,21 +21132,21 @@ EXTRN	?GetTerrainYieldChange@CvBeliefEntry@@QBEHHH@Z:PROC ; CvBeliefEntry::GetTe
 ;	COMDAT ?ScoreBeliefAtPlot@CvReligionAI@@AAEHPAVCvBeliefEntry@@PAVCvPlot@@@Z
 _TEXT	SEGMENT
 _this$ = -4						; size = 4
-_iNumImprovementInfos$228034 = 8			; size = 4
+_iNumImprovementInfos$228083 = 8			; size = 4
 _pEntry$ = 8						; size = 4
 _pPlot$ = 12						; size = 4
 ?ScoreBeliefAtPlot@CvReligionAI@@AAEHPAVCvBeliefEntry@@PAVCvPlot@@@Z PROC ; CvReligionAI::ScoreBeliefAtPlot, COMDAT
 ; _this$ = ecx
 
-; 6095 : {
+; 6117 : {
 
 	push	ecx
 	push	ebx
 	push	ebp
 
-; 6096 : 	int iRtnValue = 0;
-; 6097 : 
-; 6098 : 	for(int iI = 0; iI < NUM_YIELD_TYPES; iI++)
+; 6118 : 	int iRtnValue = 0;
+; 6119 : 
+; 6120 : 	for(int iI = 0; iI < NUM_YIELD_TYPES; iI++)
 
 	mov	ebp, DWORD PTR _pEntry$[esp+8]
 	push	esi
@@ -21144,20 +21156,20 @@ _pPlot$ = 12						; size = 4
 	xor	ebx, ebx
 $LL11@ScoreBelie@3:
 
-; 6099 : 	{
-; 6100 : 		// Terrain
-; 6101 : 		TerrainTypes eTerrain = pPlot->getTerrainType();
+; 6121 : 	{
+; 6122 : 		// Terrain
+; 6123 : 		TerrainTypes eTerrain = pPlot->getTerrainType();
 
 	mov	esi, DWORD PTR _pPlot$[esp+16]
 	movsx	eax, BYTE PTR [esi+6]
 
-; 6102 : 		if(eTerrain != NO_TERRAIN)
+; 6124 : 		if(eTerrain != NO_TERRAIN)
 
 	cmp	eax, -1
 	je	SHORT $LN8@ScoreBelie@3
 
-; 6103 : 		{
-; 6104 : 			iRtnValue += pEntry->GetTerrainYieldChange(eTerrain, iI);
+; 6125 : 		{
+; 6126 : 			iRtnValue += pEntry->GetTerrainYieldChange(eTerrain, iI);
 
 	push	ebx
 	push	eax
@@ -21166,28 +21178,28 @@ $LL11@ScoreBelie@3:
 	add	edi, eax
 $LN8@ScoreBelie@3:
 
-; 6105 : 		}
-; 6106 : 
-; 6107 : 		// Feature
-; 6108 : 		FeatureTypes eFeature = pPlot->getFeatureType();
+; 6127 : 		}
+; 6128 : 
+; 6129 : 		// Feature
+; 6130 : 		FeatureTypes eFeature = pPlot->getFeatureType();
 
 	movsx	eax, BYTE PTR [esi+432]
 
-; 6109 : 		if(eFeature != NO_FEATURE)
+; 6131 : 		if(eFeature != NO_FEATURE)
 
 	cmp	eax, -1
 	je	SHORT $LN34@ScoreBelie@3
 
-; 6110 : 		{
-; 6111 : 			iRtnValue += pEntry->GetFeatureYieldChange(eFeature, iI);
+; 6132 : 		{
+; 6133 : 			iRtnValue += pEntry->GetFeatureYieldChange(eFeature, iI);
 
 	push	ebx
 	push	eax
 	mov	ecx, ebp
 	call	?GetFeatureYieldChange@CvBeliefEntry@@QBEHHH@Z ; CvBeliefEntry::GetFeatureYieldChange
 
-; 6112 : 
-; 6113 : 			if(pPlot->IsNaturalWonder())
+; 6134 : 
+; 6135 : 			if(pPlot->IsNaturalWonder())
 
 	mov	ecx, esi
 	add	edi, eax
@@ -21195,14 +21207,14 @@ $LN8@ScoreBelie@3:
 	test	al, al
 	je	SHORT $LN34@ScoreBelie@3
 
-; 6114 : 			{
-; 6115 : 				iRtnValue += pEntry->GetYieldChangeNaturalWonder(iI);
+; 6136 : 			{
+; 6137 : 				iRtnValue += pEntry->GetYieldChangeNaturalWonder(iI);
 
 	push	ebx
 	mov	ecx, ebp
 	call	?GetYieldChangeNaturalWonder@CvBeliefEntry@@QBEHH@Z ; CvBeliefEntry::GetYieldChangeNaturalWonder
 
-; 6116 : 				iRtnValue += (pEntry->GetYieldModifierNaturalWonder(iI) / 25);
+; 6138 : 				iRtnValue += (pEntry->GetYieldModifierNaturalWonder(iI) / 25);
 
 	push	ebx
 	mov	ecx, ebp
@@ -21218,52 +21230,52 @@ $LN8@ScoreBelie@3:
 	add	edi, eax
 $LN34@ScoreBelie@3:
 
-; 6117 : 			}
-; 6118 : 		}
-; 6119 : 
-; 6120 : 		// Resource
-; 6121 : 		ResourceTypes eResource = pPlot->getResourceType();
+; 6139 : 			}
+; 6140 : 		}
+; 6141 : 
+; 6142 : 		// Resource
+; 6143 : 		ResourceTypes eResource = pPlot->getResourceType();
 
 	push	-1
 	mov	ecx, esi
 	call	?getResourceType@CvPlot@@QBE?AW4ResourceTypes@@W4TeamTypes@@@Z ; CvPlot::getResourceType
 
-; 6122 : 		if(eResource != NO_RESOURCE)
+; 6144 : 		if(eResource != NO_RESOURCE)
 
 	cmp	eax, -1
 	je	SHORT $LN10@ScoreBelie@3
 
-; 6123 : 		{
-; 6124 : 			iRtnValue += pEntry->GetResourceYieldChange(eResource, iI);
+; 6145 : 		{
+; 6146 : 			iRtnValue += pEntry->GetResourceYieldChange(eResource, iI);
 
 	push	ebx
 	push	eax
 	mov	ecx, ebp
 	call	?GetResourceYieldChange@CvBeliefEntry@@QBEHHH@Z ; CvBeliefEntry::GetResourceYieldChange
 
-; 6125 : 
-; 6126 : 			// Improvement
-; 6127 : #ifdef AUI_WARNING_FIXES
-; 6128 : 			for (uint jJ = 0; jJ < GC.getNumImprovementInfos(); jJ++)
-; 6129 : #else
-; 6130 : 			int iNumImprovementInfos = GC.getNumImprovementInfos();
+; 6147 : 
+; 6148 : 			// Improvement
+; 6149 : #ifdef AUI_WARNING_FIXES
+; 6150 : 			for (uint jJ = 0; jJ < GC.getNumImprovementInfos(); jJ++)
+; 6151 : #else
+; 6152 : 			int iNumImprovementInfos = GC.getNumImprovementInfos();
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	add	edi, eax
 	call	?getNumImprovementInfos@CvGlobals@@QAEHXZ ; CvGlobals::getNumImprovementInfos
 
-; 6131 : 			for(int jJ = 0; jJ < iNumImprovementInfos; jJ++)
+; 6153 : 			for(int jJ = 0; jJ < iNumImprovementInfos; jJ++)
 
 	xor	esi, esi
-	mov	DWORD PTR _iNumImprovementInfos$228034[esp+16], eax
+	mov	DWORD PTR _iNumImprovementInfos$228083[esp+16], eax
 	test	eax, eax
 	jle	SHORT $LN10@ScoreBelie@3
 	npad	1
 $LL4@ScoreBelie@3:
 
-; 6132 : #endif
-; 6133 : 			{
-; 6134 : 				if(pPlot->canHaveImprovement((ImprovementTypes)jJ, m_pPlayer->getTeam()))
+; 6154 : #endif
+; 6155 : 			{
+; 6156 : 				if(pPlot->canHaveImprovement((ImprovementTypes)jJ, m_pPlayer->getTeam()))
 
 	mov	ecx, DWORD PTR _this$[esp+20]
 	mov	edx, DWORD PTR [ecx+4]
@@ -21285,8 +21297,8 @@ $LN25@ScoreBelie@3:
 	test	al, al
 	je	SHORT $LN3@ScoreBelie@3
 
-; 6135 : 				{
-; 6136 : 					iRtnValue += (pEntry->GetImprovementYieldChange((ImprovementTypes)jJ, (YieldTypes)iI) * 2);
+; 6157 : 				{
+; 6158 : 					iRtnValue += (pEntry->GetImprovementYieldChange((ImprovementTypes)jJ, (YieldTypes)iI) * 2);
 
 	push	ebx
 	push	esi
@@ -21295,24 +21307,24 @@ $LN25@ScoreBelie@3:
 	lea	edi, DWORD PTR [edi+eax*2]
 $LN3@ScoreBelie@3:
 	inc	esi
-	cmp	esi, DWORD PTR _iNumImprovementInfos$228034[esp+16]
+	cmp	esi, DWORD PTR _iNumImprovementInfos$228083[esp+16]
 	jl	SHORT $LL4@ScoreBelie@3
 $LN10@ScoreBelie@3:
 
-; 6096 : 	int iRtnValue = 0;
-; 6097 : 
-; 6098 : 	for(int iI = 0; iI < NUM_YIELD_TYPES; iI++)
+; 6118 : 	int iRtnValue = 0;
+; 6119 : 
+; 6120 : 	for(int iI = 0; iI < NUM_YIELD_TYPES; iI++)
 
 	inc	ebx
 	cmp	ebx, 6
 	jl	$LL11@ScoreBelie@3
 
-; 6137 : 				}
-; 6138 : 			}
-; 6139 : 		}
-; 6140 : 	}
-; 6141 : 
-; 6142 : 	return iRtnValue;
+; 6159 : 				}
+; 6160 : 			}
+; 6161 : 		}
+; 6162 : 	}
+; 6163 : 
+; 6164 : 	return iRtnValue;
 
 	mov	eax, edi
 	pop	edi
@@ -21320,7 +21332,7 @@ $LN10@ScoreBelie@3:
 	pop	ebp
 	pop	ebx
 
-; 6143 : }
+; 6165 : }
 
 	pop	ecx
 	ret	8
@@ -21349,14 +21361,14 @@ xdata$x	ENDS
 ;	COMDAT ?ScoreCityForMissionary@CvReligionAI@@AAEHPAVCvCity@@V?$FObjectHandle@VCvUnit@@@@@Z
 _TEXT	SEGMENT
 __$EHRec$ = -12						; size = 12
-tv468 = 8						; size = 4
+tv502 = 8						; size = 4
 _iScore$ = 8						; size = 4
 _pCity$ = 8						; size = 4
 _pUnit$ = 12						; size = 8
 ?ScoreCityForMissionary@CvReligionAI@@AAEHPAVCvCity@@V?$FObjectHandle@VCvUnit@@@@@Z PROC ; CvReligionAI::ScoreCityForMissionary, COMDAT
 ; _this$ = ecx
 
-; 6607 : {
+; 6629 : {
 
 	mov	eax, DWORD PTR fs:0
 	push	-1
@@ -21370,28 +21382,28 @@ _pUnit$ = 12						; size = 8
 	mov	ebp, ecx
 	mov	DWORD PTR __$EHRec$[esp+36], 0
 
-; 6608 : 	int iScore = 0;
-; 6609 : 
-; 6610 : 	ReligionTypes eMyReligion = GetReligionToSpread();
+; 6630 : 	int iScore = 0;
+; 6631 : 
+; 6632 : 	ReligionTypes eMyReligion = GetReligionToSpread();
 
 	call	?GetReligionToSpread@CvReligionAI@@QBE?AW4ReligionTypes@@XZ ; CvReligionAI::GetReligionToSpread
 	mov	ebx, eax
 
-; 6611 : 
-; 6612 : 	// Skip if not revealed
-; 6613 : 	if(!pCity->plot()->isRevealed(m_pPlayer->getTeam()))
+; 6633 : 
+; 6634 : 	// Skip if not revealed
+; 6635 : 	if(!pCity->plot()->isRevealed(m_pPlayer->getTeam()))
 
 	mov	eax, DWORD PTR [ebp+4]
 	mov	eax, DWORD PTR [eax+44]
 	cmp	eax, 63					; 0000003fH
-	ja	SHORT $LN21@ScoreCityF
+	ja	SHORT $LN23@ScoreCityF
 	mov	ecx, DWORD PTR ?sr_TeamTypes@CvPreGame@@3ABV?$vector@W4TeamTypes@@V?$allocator@W4TeamTypes@@@std@@@std@@B ; CvPreGame::sr_TeamTypes
 	mov	edx, DWORD PTR [ecx+4]
 	mov	edi, DWORD PTR [edx+eax*4]
-	jmp	SHORT $LN22@ScoreCityF
-$LN21@ScoreCityF:
+	jmp	SHORT $LN24@ScoreCityF
+$LN23@ScoreCityF:
 	or	edi, -1
-$LN22@ScoreCityF:
+$LN24@ScoreCityF:
 	mov	esi, DWORD PTR _pCity$[esp+24]
 	mov	ecx, esi
 	call	?plot@CvCity@@QBEPAVCvPlot@@XZ		; CvCity::plot
@@ -21399,23 +21411,23 @@ $LN22@ScoreCityF:
 	shr	edx, 5
 	mov	ecx, edx
 	shl	ecx, 5
-	mov	DWORD PTR tv468[esp+24], ecx
+	mov	DWORD PTR tv502[esp+24], ecx
 	mov	ecx, edi
-	mov	edi, DWORD PTR tv468[esp+24]
+	mov	edi, DWORD PTR tv502[esp+24]
 	sub	ecx, edi
 	mov	edi, 1
 	shl	edi, cl
 	test	edi, DWORD PTR [eax+edx*4+8]
 
-; 6614 : 	{
-; 6615 : 		return iScore;
+; 6636 : 	{
+; 6637 : 		return iScore;
 
-	je	$LN149@ScoreCityF
+	je	$LN6@ScoreCityF
 
-; 6616 : 	}
-; 6617 : 
-; 6618 : 	// Skip if already our religion
-; 6619 : 	if(pCity->GetCityReligions()->GetReligiousMajority() == eMyReligion)
+; 6638 : 	}
+; 6639 : 
+; 6640 : 	// Skip if already our religion
+; 6641 : 	if(pCity->GetCityReligions()->GetReligiousMajority() == eMyReligion)
 
 	mov	ecx, esi
 	call	?GetCityReligions@CvCity@@QBEPAVCvCityReligions@@XZ ; CvCity::GetCityReligions
@@ -21423,16 +21435,16 @@ $LN22@ScoreCityF:
 	call	?GetReligiousMajority@CvCityReligions@@QAE?AW4ReligionTypes@@XZ ; CvCityReligions::GetReligiousMajority
 	cmp	eax, ebx
 
-; 6620 : 	{
-; 6621 : 		return iScore;
+; 6642 : 	{
+; 6643 : 		return iScore;
 
-	je	$LN149@ScoreCityF
+	je	$LN6@ScoreCityF
 
-; 6622 : 	}
-; 6623 : 
-; 6624 : 	// Base score based on if we are establishing majority
-; 6625 : 	iScore = 100;
-; 6626 : 	if(ShouldBecomeNewMajority(pCity, eMyReligion, pUnit->GetReligionData()->GetReligiousStrength() * GC.getRELIGION_MISSIONARY_PRESSURE_MULTIPLIER()))
+; 6644 : 	}
+; 6645 : 
+; 6646 : 	// Base score based on if we are establishing majority
+; 6647 : 	iScore = 100;
+; 6648 : 	if(ShouldBecomeNewMajority(pCity, eMyReligion, pUnit->GetReligionData()->GetReligiousStrength() * GC.getRELIGION_MISSIONARY_PRESSURE_MULTIPLIER()))
 
 	mov	edx, DWORD PTR _pUnit$[esp+24]
 	mov	eax, DWORD PTR [edx+1888]
@@ -21446,17 +21458,17 @@ $LN22@ScoreCityF:
 	mov	DWORD PTR _iScore$[esp+36], 100		; 00000064H
 	call	?ShouldBecomeNewMajority@CvReligionAI@@ABE_NPAVCvCity@@W4ReligionTypes@@H@Z ; CvReligionAI::ShouldBecomeNewMajority
 	test	al, al
-	je	SHORT $LN11@ScoreCityF
+	je	SHORT $LN13@ScoreCityF
 
-; 6627 : 	{
-; 6628 : 		iScore *= 2;
+; 6649 : 	{
+; 6650 : 		iScore *= 2;
 
 	mov	DWORD PTR _iScore$[esp+24], 200		; 000000c8H
-$LN11@ScoreCityF:
+$LN13@ScoreCityF:
 
-; 6629 : 	}
-; 6630 : 
-; 6631 : 	if (!GET_PLAYER(pCity->getOwner()).isMinorCiv())
+; 6651 : 	}
+; 6652 : 
+; 6653 : 	if (!GET_PLAYER(pCity->getOwner()).isMinorCiv())
 
 	mov	eax, DWORD PTR [esi+84]
 	imul	eax, 63236				; 0000f704H
@@ -21464,17 +21476,23 @@ $LN11@ScoreCityF:
 	mov	ecx, eax
 	call	?isMinorCiv@CvPlayer@@QBE_NXZ		; CvPlayer::isMinorCiv
 
-; 6632 : 	{
-; 6633 : #ifdef NQM_AI_GIMP_NO_RELIGION_SPREAD
-; 6634 : 		if (GC.getGame().isOption("GAMEOPTION_AI_GIMP_NO_RELIGION_SPREAD") && GET_PLAYER(pCity->getOwner()).isHuman())
+; 6654 : 	{
+; 6655 : #ifdef NQM_AI_GIMP_NO_RELIGION_SPREAD
+; 6656 : 		if ((GC.getGame().isOption("GAMEOPTION_AI_TWEAKS") || GC.getGame().isOption("GAMEOPTION_AI_GIMP_NO_RELIGION_SPREAD")) && GET_PLAYER(pCity->getOwner()).isHuman())
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	test	al, al
-	jne	SHORT $LN10@ScoreCityF
-	push	OFFSET $SG228241
+	jne	SHORT $LN12@ScoreCityF
+	push	OFFSET $SG228291
 	call	?isOption@CvGame@@QBE_NPBD@Z		; CvGame::isOption
 	test	al, al
-	je	SHORT $LN9@ScoreCityF
+	jne	SHORT $LN10@ScoreCityF
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
+	push	OFFSET $SG228292
+	call	?isOption@CvGame@@QBE_NPBD@Z		; CvGame::isOption
+	test	al, al
+	je	SHORT $LN11@ScoreCityF
+$LN10@ScoreCityF:
 	mov	eax, DWORD PTR [esi+84]
 	imul	eax, 63236				; 0000f704H
 	add	eax, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
@@ -21482,13 +21500,13 @@ $LN11@ScoreCityF:
 	call	?isHuman@CvPlayer@@QBE_NXZ		; CvPlayer::isHuman
 	test	al, al
 
-; 6635 : 			return 0;
+; 6657 : 			return 0;
 
-	jne	SHORT $LN149@ScoreCityF
-$LN9@ScoreCityF:
+	jne	SHORT $LN6@ScoreCityF
+$LN11@ScoreCityF:
 
-; 6636 : #endif
-; 6637 : 		if (m_pPlayer->GetDiplomacyAI()->IsPlayerAgreeNotToConvert(pCity->getOwner()))
+; 6658 : #endif
+; 6659 : 		if (m_pPlayer->GetDiplomacyAI()->IsPlayerAgreeNotToConvert(pCity->getOwner()))
 
 	mov	eax, DWORD PTR [esi+84]
 	mov	ecx, DWORD PTR [ebp+4]
@@ -21496,31 +21514,22 @@ $LN9@ScoreCityF:
 	call	?GetDiplomacyAI@CvPlayer@@QBEPAVCvDiplomacyAI@@XZ ; CvPlayer::GetDiplomacyAI
 	mov	ecx, eax
 	call	?IsPlayerAgreeNotToConvert@CvDiplomacyAI@@QAE_NW4PlayerTypes@@@Z ; CvDiplomacyAI::IsPlayerAgreeNotToConvert
-$LN150@ScoreCityF:
 	test	al, al
-	je	SHORT $LN6@ScoreCityF
-$LN149@ScoreCityF:
+	je	SHORT $LN7@ScoreCityF
+$LN6@ScoreCityF:
 
-; 6638 : 		{
-; 6639 : 			return 0;
+; 6668 : 		{
+; 6669 : 			return 0;
 
 	mov	ecx, DWORD PTR _pUnit$[esp+24]
 	mov	DWORD PTR __$EHRec$[esp+36], -1
 	test	ecx, ecx
-	je	SHORT $LN33@ScoreCityF
+	je	SHORT $LN87@ScoreCityF
 	call	?getDestructionNotification@CvUnit@@QAEAAU?$DestructionNotification@V?$FObjectHandle@VCvUnit@@@@@@XZ ; CvUnit::getDestructionNotification
-
-; 6614 : 	{
-; 6615 : 		return iScore;
-
-$LN33@ScoreCityF:
-
-; 6638 : 		{
-; 6639 : 			return 0;
-
+$LN87@ScoreCityF:
 	xor	eax, eax
 
-; 6680 : }
+; 6702 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+28]
 	mov	DWORD PTR fs:0, ecx
@@ -21530,34 +21539,38 @@ $LN33@ScoreCityF:
 	pop	ebx
 	add	esp, 12					; 0000000cH
 	ret	12					; 0000000cH
-$LN10@ScoreCityF:
+$LN12@ScoreCityF:
 
-; 6640 : 		}
-; 6641 : 	}
-; 6642 : #ifdef NQ_AI_GIMP_NO_MINOR_SPREAD // From Bing much love bro - AI cannot spread religion to City-States
-; 6643 : 	else
-; 6644 : 	{
-; 6645 : 		if (GC.getGame().isOption("GAMEOPTION_AI_GIMP_NO_MINOR_RELIGION_SPREAD"))
+; 6660 : 		{
+; 6661 : 			return 0;
+; 6662 : 		}
+; 6663 : 	}
+; 6664 : #ifdef NQ_AI_GIMP_NO_MINOR_SPREAD //EAP: From Bing with love - AI cannot spread religion to City-States
+; 6665 : 	else
+; 6666 : 	{
+; 6667 : 		if (GC.getGame().isOption("GAMEOPTION_AI_TWEAKS") || GC.getGame().isOption("GAMEOPTION_AI_GIMP_NO_MINOR_RELIGION_SPREAD"))
 
-	push	OFFSET $SG228247
+	push	OFFSET $SG228299
 	call	?isOption@CvGame@@QBE_NPBD@Z		; CvGame::isOption
+	test	al, al
+	jne	SHORT $LN6@ScoreCityF
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
+	push	OFFSET $SG228300
+	call	?isOption@CvGame@@QBE_NPBD@Z		; CvGame::isOption
+	test	al, al
+	jne	SHORT $LN6@ScoreCityF
+$LN7@ScoreCityF:
 
-; 6646 : 		{
-; 6647 : 			return 0;
-
-	jmp	SHORT $LN150@ScoreCityF
-$LN6@ScoreCityF:
-
-; 6648 : 		}
-; 6649 : 	}
-; 6650 : #endif
-; 6651 : 
-; 6652 : 	CvPlayer& kCityPlayer = GET_PLAYER(pCity->getOwner());
+; 6670 : 		}
+; 6671 : 	}
+; 6672 : #endif
+; 6673 : 
+; 6674 : 	CvPlayer& kCityPlayer = GET_PLAYER(pCity->getOwner());
 
 	mov	eax, DWORD PTR [esi+84]
 
-; 6653 : 	// Much better score if our own city or if this city owner isn't starting a religion
-; 6654 : 	if(pCity->getOwner() == m_pPlayer->GetID())
+; 6675 : 	// Much better score if our own city or if this city owner isn't starting a religion
+; 6676 : 	if(pCity->getOwner() == m_pPlayer->GetID())
 
 	mov	edx, DWORD PTR [ebp+4]
 	mov	edi, eax
@@ -21566,8 +21579,8 @@ $LN6@ScoreCityF:
 	cmp	eax, DWORD PTR [edx+44]
 	jne	SHORT $LN5@ScoreCityF
 
-; 6655 : 	{
-; 6656 : 		iScore *= 5;
+; 6677 : 	{
+; 6678 : 		iScore *= 5;
 
 	mov	eax, DWORD PTR _iScore$[esp+24]
 	lea	eax, DWORD PTR [eax+eax*4]
@@ -21575,8 +21588,8 @@ $LN6@ScoreCityF:
 	jmp	SHORT $LN3@ScoreCityF
 $LN5@ScoreCityF:
 
-; 6657 : 	}
-; 6658 : 	else if(!kCityPlayer.GetReligions()->HasCreatedReligion())
+; 6679 : 	}
+; 6680 : 	else if(!kCityPlayer.GetReligions()->HasCreatedReligion())
 
 	mov	ecx, edi
 	call	?GetReligions@CvPlayer@@QBEPAVCvPlayerReligions@@XZ ; CvPlayer::GetReligions
@@ -21585,18 +21598,18 @@ $LN5@ScoreCityF:
 	test	al, al
 	jne	SHORT $LN3@ScoreCityF
 
-; 6659 : 	{
-; 6660 : 		iScore *= 3;
+; 6681 : 	{
+; 6682 : 		iScore *= 3;
 
 	mov	eax, DWORD PTR _iScore$[esp+24]
 	lea	ecx, DWORD PTR [eax+eax*2]
 	mov	DWORD PTR _iScore$[esp+24], ecx
 $LN3@ScoreCityF:
 
-; 6661 : 	}
-; 6662 : 
-; 6663 : 	// Then subtract distance
-; 6664 : 	iScore -= plotDistance(pUnit->getX(), pUnit->getY(), pCity->getX(), pCity->getY());
+; 6683 : 	}
+; 6684 : 
+; 6685 : 	// Then subtract distance
+; 6686 : 	iScore -= plotDistance(pUnit->getX(), pUnit->getY(), pCity->getX(), pCity->getY());
 
 	mov	eax, DWORD PTR [esi+108]
 	mov	ecx, DWORD PTR [esi+96]
@@ -21610,32 +21623,32 @@ $LN3@ScoreCityF:
 	call	?plotDistance@@YAHHHHH@Z		; plotDistance
 	mov	ebx, DWORD PTR _iScore$[esp+40]
 
-; 6665 : 
-; 6666 : 	// Multiplier by how safe it is
-; 6667 : 	if(!atWar(m_pPlayer->getTeam(), kCityPlayer.getTeam()))
+; 6687 : 
+; 6688 : 	// Multiplier by how safe it is
+; 6689 : 	if(!atWar(m_pPlayer->getTeam(), kCityPlayer.getTeam()))
 
 	mov	edx, DWORD PTR ?sr_TeamTypes@CvPreGame@@3ABV?$vector@W4TeamTypes@@V?$allocator@W4TeamTypes@@@std@@@std@@B ; CvPreGame::sr_TeamTypes
 	sub	ebx, eax
 	mov	eax, DWORD PTR [edi+44]
 	add	esp, 16					; 00000010H
 	cmp	eax, 63					; 0000003fH
-	ja	SHORT $LN121@ScoreCityF
+	ja	SHORT $LN127@ScoreCityF
 	mov	ecx, DWORD PTR [edx+4]
 	mov	eax, DWORD PTR [ecx+eax*4]
-	jmp	SHORT $LN122@ScoreCityF
-$LN121@ScoreCityF:
+	jmp	SHORT $LN128@ScoreCityF
+$LN127@ScoreCityF:
 	or	eax, -1
-$LN122@ScoreCityF:
+$LN128@ScoreCityF:
 	mov	ecx, DWORD PTR [ebp+4]
 	mov	ecx, DWORD PTR [ecx+44]
 	cmp	ecx, 63					; 0000003fH
-	ja	SHORT $LN130@ScoreCityF
+	ja	SHORT $LN136@ScoreCityF
 	mov	edx, DWORD PTR [edx+4]
 	mov	ecx, DWORD PTR [edx+ecx*4]
-	jmp	SHORT $LN131@ScoreCityF
-$LN130@ScoreCityF:
+	jmp	SHORT $LN137@ScoreCityF
+$LN136@ScoreCityF:
 	or	ecx, -1
-$LN131@ScoreCityF:
+$LN137@ScoreCityF:
 	push	eax
 	push	ecx
 	call	?atWar@@YA_NW4TeamTypes@@0@Z		; atWar
@@ -21643,18 +21656,18 @@ $LN131@ScoreCityF:
 	test	al, al
 	jne	SHORT $LN2@ScoreCityF
 
-; 6668 : 	{
-; 6669 : 		iScore *= 2;
+; 6690 : 	{
+; 6691 : 		iScore *= 2;
 
 	lea	eax, DWORD PTR [ebx+ebx]
 	mov	DWORD PTR _iScore$[esp+24], eax
 	mov	ebx, eax
 $LN2@ScoreCityF:
 
-; 6670 : 	}
-; 6671 : 
-; 6672 : 	// Holy city will anger folks, let's not do that one right away
-; 6673 : 	ReligionTypes eCityOwnersReligion = kCityPlayer.GetReligions()->GetReligionCreatedByPlayer();
+; 6692 : 	}
+; 6693 : 
+; 6694 : 	// Holy city will anger folks, let's not do that one right away
+; 6695 : 	ReligionTypes eCityOwnersReligion = kCityPlayer.GetReligions()->GetReligionCreatedByPlayer();
 
 	mov	ecx, edi
 	call	?GetReligions@CvPlayer@@QBEPAVCvPlayerReligions@@XZ ; CvPlayer::GetReligions
@@ -21666,7 +21679,7 @@ $LN2@ScoreCityF:
 	mov	ecx, eax
 	call	?GetReligionCreatedByPlayer@CvGameReligions@@QBE?AW4ReligionTypes@@W4PlayerTypes@@@Z ; CvGameReligions::GetReligionCreatedByPlayer
 
-; 6674 : 	if (eCityOwnersReligion > RELIGION_PANTHEON && pCity->GetCityReligions()->IsHolyCityForReligion(eCityOwnersReligion))
+; 6696 : 	if (eCityOwnersReligion > RELIGION_PANTHEON && pCity->GetCityReligions()->IsHolyCityForReligion(eCityOwnersReligion))
 
 	test	eax, eax
 	jle	SHORT $LN1@ScoreCityF
@@ -21678,8 +21691,8 @@ $LN2@ScoreCityF:
 	test	al, al
 	je	SHORT $LN1@ScoreCityF
 
-; 6675 : 	{
-; 6676 : 		iScore /= 2;
+; 6697 : 	{
+; 6698 : 		iScore /= 2;
 
 	mov	eax, ebx
 	cdq
@@ -21689,18 +21702,18 @@ $LN2@ScoreCityF:
 	mov	ebx, eax
 $LN1@ScoreCityF:
 
-; 6677 : 	}
-; 6678 : 
-; 6679 : 	return iScore;
+; 6699 : 	}
+; 6700 : 
+; 6701 : 	return iScore;
 
 	mov	ecx, DWORD PTR _pUnit$[esp+24]
 	mov	DWORD PTR __$EHRec$[esp+36], -1
 	test	ecx, ecx
-	je	SHORT $LN146@ScoreCityF
+	je	SHORT $LN152@ScoreCityF
 	call	?getDestructionNotification@CvUnit@@QAEAAU?$DestructionNotification@V?$FObjectHandle@VCvUnit@@@@@@XZ ; CvUnit::getDestructionNotification
-$LN146@ScoreCityF:
+$LN152@ScoreCityF:
 
-; 6680 : }
+; 6702 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+28]
 	pop	edi
@@ -21746,7 +21759,7 @@ _pUnit$ = 12						; size = 8
 ?ScoreCityForInquisitor@CvReligionAI@@AAEHPAVCvCity@@V?$FObjectHandle@VCvUnit@@@@@Z PROC ; CvReligionAI::ScoreCityForInquisitor, COMDAT
 ; _this$ = ecx
 
-; 6688 : {
+; 6710 : {
 
 	mov	eax, DWORD PTR fs:0
 	push	-1
@@ -21757,14 +21770,14 @@ _pUnit$ = 12						; size = 8
 	push	edi
 	mov	DWORD PTR __$EHRec$[esp+28], 0
 
-; 6689 : 	int iScore = 0;
-; 6690 : 	ReligionTypes eMyReligion = GetReligionToSpread();
+; 6711 : 	int iScore = 0;
+; 6712 : 	ReligionTypes eMyReligion = GetReligionToSpread();
 
 	call	?GetReligionToSpread@CvReligionAI@@QBE?AW4ReligionTypes@@XZ ; CvReligionAI::GetReligionToSpread
 
-; 6691 : 
-; 6692 : 	// Skip if already our religion
-; 6693 : 	if(pCity->GetCityReligions()->GetReligiousMajority() == eMyReligion)
+; 6713 : 
+; 6714 : 	// Skip if already our religion
+; 6715 : 	if(pCity->GetCityReligions()->GetReligiousMajority() == eMyReligion)
 
 	mov	esi, DWORD PTR _pCity$[esp+16]
 	mov	ecx, esi
@@ -21775,8 +21788,8 @@ _pUnit$ = 12						; size = 8
 	cmp	eax, edi
 	jne	SHORT $LN1@ScoreCityF@2
 
-; 6694 : 	{
-; 6695 : 		return iScore;
+; 6716 : 	{
+; 6717 : 		return iScore;
 
 	mov	ecx, DWORD PTR _pUnit$[esp+16]
 	mov	DWORD PTR __$EHRec$[esp+28], -1
@@ -21786,7 +21799,7 @@ _pUnit$ = 12						; size = 8
 $LN8@ScoreCityF@2:
 	xor	eax, eax
 
-; 6705 : }
+; 6727 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+20]
 	mov	DWORD PTR fs:0, ecx
@@ -21796,13 +21809,13 @@ $LN8@ScoreCityF@2:
 	ret	12					; 0000000cH
 $LN1@ScoreCityF@2:
 
-; 6696 : 	}
-; 6697 : 
-; 6698 : 	// Base score based on if we are establishing majority
-; 6699 : 	iScore = 100;
-; 6700 : 
-; 6701 : 	// Then subtract distance
-; 6702 : 	iScore -= plotDistance(pUnit->getX(), pUnit->getY(), pCity->getX(), pCity->getY());
+; 6718 : 	}
+; 6719 : 
+; 6720 : 	// Base score based on if we are establishing majority
+; 6721 : 	iScore = 100;
+; 6722 : 
+; 6723 : 	// Then subtract distance
+; 6724 : 	iScore -= plotDistance(pUnit->getX(), pUnit->getY(), pCity->getX(), pCity->getY());
 
 	mov	eax, DWORD PTR [esi+108]
 	mov	edi, DWORD PTR _pUnit$[esp+16]
@@ -21817,15 +21830,15 @@ $LN1@ScoreCityF@2:
 	mov	esi, 100				; 00000064H
 	add	esp, 16					; 00000010H
 
-; 6703 : 
-; 6704 : 	return iScore;
+; 6725 : 
+; 6726 : 	return iScore;
 
 	mov	ecx, edi
 	sub	esi, eax
 	mov	DWORD PTR __$EHRec$[esp+28], -1
 	call	?getDestructionNotification@CvUnit@@QAEAAU?$DestructionNotification@V?$FObjectHandle@VCvUnit@@@@@@XZ ; CvUnit::getDestructionNotification
 
-; 6705 : }
+; 6727 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+20]
 	pop	edi
@@ -21854,8 +21867,8 @@ EXTRN	?GetMoves@CvUnitEntry@@QBEHXZ:PROC		; CvUnitEntry::GetMoves
 ;	COMDAT ?HaveNearbyConversionTarget@CvReligionAI@@ABE_NW4ReligionTypes@@_N@Z
 _TEXT	SEGMENT
 _this$ = -20						; size = 4
-$T236702 = -16						; size = 4
-_iPlayer$228324 = -12					; size = 4
+$T236767 = -16						; size = 4
+_iPlayer$228377 = -12					; size = 4
 _iMissionaryMoves$ = -8					; size = 4
 _iLoop$ = -4						; size = 4
 _eReligion$ = 8						; size = 4
@@ -21863,47 +21876,47 @@ _bCanIncludeReligionStarter$ = 12			; size = 1
 ?HaveNearbyConversionTarget@CvReligionAI@@ABE_NW4ReligionTypes@@_N@Z PROC ; CvReligionAI::HaveNearbyConversionTarget, COMDAT
 ; _this$ = ecx
 
-; 6796 : {
+; 6818 : {
 
 	sub	esp, 20					; 00000014H
 	push	ebp
 	push	edi
 	mov	edi, ecx
 
-; 6797 : 	int iLoop;
-; 6798 : 	bool bStartedOwnReligion;
-; 6799 : 	TeamTypes eTeam = m_pPlayer->getTeam();
+; 6819 : 	int iLoop;
+; 6820 : 	bool bStartedOwnReligion;
+; 6821 : 	TeamTypes eTeam = m_pPlayer->getTeam();
 
 	mov	eax, DWORD PTR [edi+4]
 	mov	eax, DWORD PTR [eax+44]
 	mov	DWORD PTR _this$[esp+28], edi
 	cmp	eax, 63					; 0000003fH
-	ja	SHORT $LN28@HaveNearby
+	ja	SHORT $LN30@HaveNearby
 	mov	ecx, DWORD PTR ?sr_TeamTypes@CvPreGame@@3ABV?$vector@W4TeamTypes@@V?$allocator@W4TeamTypes@@@std@@@std@@B ; CvPreGame::sr_TeamTypes
 	mov	edx, DWORD PTR [ecx+4]
 	mov	eax, DWORD PTR [edx+eax*4]
-	mov	DWORD PTR $T236702[esp+28], eax
-	jmp	SHORT $LN29@HaveNearby
-$LN28@HaveNearby:
-	mov	DWORD PTR $T236702[esp+28], -1
-$LN29@HaveNearby:
+	mov	DWORD PTR $T236767[esp+28], eax
+	jmp	SHORT $LN31@HaveNearby
+$LN30@HaveNearby:
+	mov	DWORD PTR $T236767[esp+28], -1
+$LN31@HaveNearby:
 
-; 6800 : 	UnitTypes eMissionary = (UnitTypes)GC.getInfoTypeForString("UNIT_MISSIONARY");
+; 6822 : 	UnitTypes eMissionary = (UnitTypes)GC.getInfoTypeForString("UNIT_MISSIONARY");
 
 	push	0
-	push	OFFSET $SG228320
+	push	OFFSET $SG228373
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 
-; 6801 : #ifdef AUI_WARNING_FIXES
-; 6802 : 	CvUnitEntry* pMissionaryInfo = GC.getUnitInfo(eMissionary);
-; 6803 : 	if (!pMissionaryInfo)
-; 6804 : 	{
-; 6805 : 		return false;
-; 6806 : 	}
-; 6807 : 	int iMissionaryMoves = pMissionaryInfo->GetMoves();
-; 6808 : #else
-; 6809 : 	int iMissionaryMoves = GC.getUnitInfo(eMissionary)->GetMoves();
+; 6823 : #ifdef AUI_WARNING_FIXES
+; 6824 : 	CvUnitEntry* pMissionaryInfo = GC.getUnitInfo(eMissionary);
+; 6825 : 	if (!pMissionaryInfo)
+; 6826 : 	{
+; 6827 : 		return false;
+; 6828 : 	}
+; 6829 : 	int iMissionaryMoves = pMissionaryInfo->GetMoves();
+; 6830 : #else
+; 6831 : 	int iMissionaryMoves = GC.getUnitInfo(eMissionary)->GetMoves();
 
 	push	eax
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
@@ -21911,125 +21924,138 @@ $LN29@HaveNearby:
 	mov	ecx, eax
 	call	?GetMoves@CvUnitEntry@@QBEHXZ		; CvUnitEntry::GetMoves
 
-; 6810 : #endif
-; 6811 : 
-; 6812 : 	CvCity* pCapital = m_pPlayer->getCapitalCity();
+; 6832 : #endif
+; 6833 : 
+; 6834 : 	CvCity* pCapital = m_pPlayer->getCapitalCity();
 
 	mov	ecx, DWORD PTR [edi+4]
 	mov	DWORD PTR _iMissionaryMoves$[esp+28], eax
 	call	?getCapitalCity@CvPlayer@@QAEPAVCvCity@@XZ ; CvPlayer::getCapitalCity
 	mov	ebp, eax
 
-; 6813 : 	if(pCapital == NULL)
+; 6835 : 	if(pCapital == NULL)
 
 	test	ebp, ebp
-	jne	SHORT $LN21@HaveNearby
+	jne	SHORT $LN23@HaveNearby
 	pop	edi
 
-; 6814 : 	{
-; 6815 : 		return false;
+; 6836 : 	{
+; 6837 : 		return false;
 
 	xor	al, al
 	pop	ebp
 
-; 6881 : }
+; 6903 : }
 
 	add	esp, 20					; 00000014H
 	ret	8
-$LN21@HaveNearby:
+$LN23@HaveNearby:
 	push	ebx
 	push	esi
 
-; 6816 : 	}
-; 6817 : 
-; 6818 : 	for(int iPlayer = 0; iPlayer < MAX_PLAYERS; iPlayer++)
+; 6838 : 	}
+; 6839 : 
+; 6840 : 	for(int iPlayer = 0; iPlayer < MAX_PLAYERS; iPlayer++)
 
 	xor	esi, esi
-	mov	DWORD PTR _iPlayer$228324[esp+36], esi
+	mov	DWORD PTR _iPlayer$228377[esp+36], esi
 	xor	ebx, ebx
-	jmp	SHORT $LN20@HaveNearby
+	jmp	SHORT $LN22@HaveNearby
 	npad	5
-$LL74@HaveNearby:
+$LL80@HaveNearby:
 	mov	edi, DWORD PTR _this$[esp+36]
-$LN20@HaveNearby:
+$LN22@HaveNearby:
 
-; 6819 : 	{
-; 6820 : 		PlayerTypes ePlayer = (PlayerTypes)iPlayer;
-; 6821 : 
-; 6822 : 		// Must be someone else
-; 6823 : 		if(ePlayer == m_pPlayer->GetID())
+; 6841 : 	{
+; 6842 : 		PlayerTypes ePlayer = (PlayerTypes)iPlayer;
+; 6843 : 
+; 6844 : 		// Must be someone else
+; 6845 : 		if(ePlayer == m_pPlayer->GetID())
 
 	mov	ecx, DWORD PTR [edi+4]
 	cmp	esi, DWORD PTR [ecx+44]
-	je	$LN19@HaveNearby
+	je	$LN21@HaveNearby
 
-; 6824 : 		{
-; 6825 : 			continue;
-; 6826 : 
-; 6827 : 		}
-; 6828 : 		CvPlayer& kPlayer = GET_PLAYER(ePlayer);
+; 6846 : 		{
+; 6847 : 			continue;
+; 6848 : 
+; 6849 : 		}
+; 6850 : 		CvPlayer& kPlayer = GET_PLAYER(ePlayer);
 
 	mov	edx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 
-; 6829 : 		if(kPlayer.isAlive())
+; 6851 : 		if(kPlayer.isAlive())
 
 	cmp	BYTE PTR [ebx+edx+2256], 0
 	lea	edi, DWORD PTR [ebx+edx]
-	je	$LN19@HaveNearby
+	je	$LN21@HaveNearby
 
-; 6830 : 		{
-; 6831 : 			if(kPlayer.isMinorCiv())
+; 6852 : 		{
+; 6853 : 			if(kPlayer.isMinorCiv())
 
 	mov	ecx, edi
 	call	?isMinorCiv@CvPlayer@@QBE_NXZ		; CvPlayer::isMinorCiv
 	test	al, al
-	je	SHORT $LN15@HaveNearby
+	je	SHORT $LN17@HaveNearby
 
-; 6832 : 			{
-; 6833 : #ifdef NQ_AI_GIMP_NO_MINOR_SPREAD // NQMP_Bing - AI cannot spread religion to City-States
-; 6834 : 				if (GC.getGame().isOption("GAMEOPTION_AI_GIMP_NO_MINOR_RELIGION_SPREAD"))
+; 6854 : 			{
+; 6855 : #ifdef NQ_AI_GIMP_NO_MINOR_SPREAD //EAP:  NQMP_Bing - AI cannot spread religion to City-States
+; 6856 : 				if (GC.getGame().isOption("GAMEOPTION_AI_TWEAKS") || GC.getGame().isOption("GAMEOPTION_AI_GIMP_NO_MINOR_RELIGION_SPREAD"))
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
-	push	OFFSET $SG228335
+	push	OFFSET $SG228389
 	call	?isOption@CvGame@@QBE_NPBD@Z		; CvGame::isOption
 	test	al, al
-	jne	$LN19@HaveNearby
+	jne	$LN21@HaveNearby
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
+	push	OFFSET $SG228390
+	call	?isOption@CvGame@@QBE_NPBD@Z		; CvGame::isOption
+	test	al, al
 
-; 6835 : 					continue;
-; 6836 : #endif
-; 6837 : 				bStartedOwnReligion = false;
-; 6838 : 			}
-; 6839 : 			else
+; 6858 : #endif
+; 6859 : 				bStartedOwnReligion = false;
+; 6860 : 			}
+; 6861 : 			else
 
-	jmp	SHORT $LN6@HaveNearby
-$LN15@HaveNearby:
+	je	SHORT $LN6@HaveNearby
 
-; 6840 : 			{
-; 6841 : 				if (!kPlayer.isBarbarian())
+; 6857 : 					continue;
+
+	jmp	$LN21@HaveNearby
+$LN17@HaveNearby:
+
+; 6862 : 			{
+; 6863 : 				if (!kPlayer.isBarbarian())
 
 	mov	ecx, edi
 	call	?isBarbarian@CvPlayer@@QBE_NXZ		; CvPlayer::isBarbarian
 	test	al, al
 	jne	SHORT $LN10@HaveNearby
 
-; 6842 : 				{
-; 6843 : #ifdef NQM_AI_GIMP_NO_RELIGION_SPREAD
-; 6844 : 					if (GC.getGame().isOption("GAMEOPTION_AI_GIMP_NO_RELIGION_SPREAD") && kPlayer.isHuman())
+; 6864 : 				{
+; 6865 : #ifdef NQM_AI_GIMP_NO_RELIGION_SPREAD
+; 6866 : 					if ((GC.getGame().isOption("GAMEOPTION_AI_TWEAKS") || GC.getGame().isOption("GAMEOPTION_AI_GIMP_NO_RELIGION_SPREAD")) && kPlayer.isHuman())
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
-	push	OFFSET $SG228339
+	push	OFFSET $SG228395
 	call	?isOption@CvGame@@QBE_NPBD@Z		; CvGame::isOption
 	test	al, al
-	je	SHORT $LN11@HaveNearby
+	jne	SHORT $LN11@HaveNearby
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
+	push	OFFSET $SG228396
+	call	?isOption@CvGame@@QBE_NPBD@Z		; CvGame::isOption
+	test	al, al
+	je	SHORT $LN12@HaveNearby
+$LN11@HaveNearby:
 	mov	ecx, edi
 	call	?isHuman@CvPlayer@@QBE_NXZ		; CvPlayer::isHuman
 	test	al, al
-	jne	$LN19@HaveNearby
-$LN11@HaveNearby:
+	jne	$LN21@HaveNearby
+$LN12@HaveNearby:
 
-; 6845 : 						continue;
-; 6846 : #endif
-; 6847 : 					if (m_pPlayer->GetDiplomacyAI()->IsPlayerAgreeNotToConvert(ePlayer))
+; 6867 : 						continue;
+; 6868 : #endif
+; 6869 : 					if (m_pPlayer->GetDiplomacyAI()->IsPlayerAgreeNotToConvert(ePlayer))
 
 	mov	eax, DWORD PTR _this$[esp+36]
 	mov	ecx, DWORD PTR [eax+4]
@@ -22038,15 +22064,15 @@ $LN11@HaveNearby:
 	mov	ecx, eax
 	call	?IsPlayerAgreeNotToConvert@CvDiplomacyAI@@QAE_NW4PlayerTypes@@@Z ; CvDiplomacyAI::IsPlayerAgreeNotToConvert
 	test	al, al
-	jne	$LN19@HaveNearby
+	jne	$LN21@HaveNearby
 $LN10@HaveNearby:
 
-; 6848 : 					{
-; 6849 : 						continue;
-; 6850 : 					}
-; 6851 : 				}
-; 6852 : 
-; 6853 : 				if(kPlayer.GetReligionAI()->GetReligionToSpread() > RELIGION_PANTHEON)
+; 6870 : 					{
+; 6871 : 						continue;
+; 6872 : 					}
+; 6873 : 				}
+; 6874 : 
+; 6875 : 				if(kPlayer.GetReligionAI()->GetReligionToSpread() > RELIGION_PANTHEON)
 
 	mov	ecx, edi
 	call	?GetReligionAI@CvPlayer@@QBEPAVCvReligionAI@@XZ ; CvPlayer::GetReligionAI
@@ -22054,24 +22080,24 @@ $LN10@HaveNearby:
 	call	?GetReligionToSpread@CvReligionAI@@QBE?AW4ReligionTypes@@XZ ; CvReligionAI::GetReligionToSpread
 	test	eax, eax
 
-; 6854 : 				{
-; 6855 : 					bStartedOwnReligion = true;
-; 6856 : 				}
-; 6857 : 				else
-; 6858 : 				{
-; 6859 : 					bStartedOwnReligion = false;
-; 6860 : 				}
-; 6861 : 			}
-; 6862 : 
-; 6863 : 			if(!bStartedOwnReligion || bCanIncludeReligionStarter)
+; 6876 : 				{
+; 6877 : 					bStartedOwnReligion = true;
+; 6878 : 				}
+; 6879 : 				else
+; 6880 : 				{
+; 6881 : 					bStartedOwnReligion = false;
+; 6882 : 				}
+; 6883 : 			}
+; 6884 : 
+; 6885 : 			if(!bStartedOwnReligion || bCanIncludeReligionStarter)
 
 	jle	SHORT $LN6@HaveNearby
 	cmp	BYTE PTR _bCanIncludeReligionStarter$[esp+32], 0
-	je	SHORT $LN19@HaveNearby
+	je	SHORT $LN21@HaveNearby
 $LN6@HaveNearby:
 
-; 6864 : 			{
-; 6865 : 				for(CvCity* pCity = kPlayer.firstCity(&iLoop); pCity != NULL; pCity = kPlayer.nextCity(&iLoop))
+; 6886 : 			{
+; 6887 : 				for(CvCity* pCity = kPlayer.firstCity(&iLoop); pCity != NULL; pCity = kPlayer.nextCity(&iLoop))
 
 	push	0
 	lea	ecx, DWORD PTR _iLoop$[esp+40]
@@ -22080,14 +22106,15 @@ $LN6@HaveNearby:
 	call	?firstCity@CvPlayer@@QAEPAVCvCity@@PAH_N@Z ; CvPlayer::firstCity
 	mov	esi, eax
 	test	esi, esi
-	je	SHORT $LN72@HaveNearby
+	je	SHORT $LN78@HaveNearby
+	npad	2
 $LL5@HaveNearby:
 
-; 6866 : 				{
-; 6867 : 					// Revealed and not currently our religion
-; 6868 : 					if(pCity->isRevealed(eTeam, false) && pCity->GetCityReligions()->GetReligiousMajority() != eReligion)
+; 6888 : 				{
+; 6889 : 					// Revealed and not currently our religion
+; 6890 : 					if(pCity->isRevealed(eTeam, false) && pCity->GetCityReligions()->GetReligiousMajority() != eReligion)
 
-	mov	edx, DWORD PTR $T236702[esp+36]
+	mov	edx, DWORD PTR $T236767[esp+36]
 	push	0
 	push	edx
 	mov	ecx, esi
@@ -22101,9 +22128,9 @@ $LL5@HaveNearby:
 	cmp	eax, DWORD PTR _eReligion$[esp+32]
 	je	SHORT $LN4@HaveNearby
 
-; 6869 : 					{
-; 6870 : 						// Within 10 times Missionary movement allowance of our
-; 6871 : 						if(plotDistance(pCapital->getX(), pCapital->getY(), pCity->getX(), pCity->getY()) <= (iMissionaryMoves * GC.getRELIGION_MISSIONARY_RANGE_IN_TURNS()))
+; 6891 : 					{
+; 6892 : 						// Within 10 times Missionary movement allowance of our
+; 6893 : 						if(plotDistance(pCapital->getX(), pCapital->getY(), pCity->getX(), pCity->getY()) <= (iMissionaryMoves * GC.getRELIGION_MISSIONARY_RANGE_IN_TURNS()))
 
 	mov	eax, DWORD PTR [esi+108]
 	mov	ecx, DWORD PTR [esi+96]
@@ -22118,11 +22145,11 @@ $LL5@HaveNearby:
 	imul	ecx, DWORD PTR _iMissionaryMoves$[esp+52]
 	add	esp, 16					; 00000010H
 	cmp	eax, ecx
-	jle	SHORT $LN67@HaveNearby
+	jle	SHORT $LN73@HaveNearby
 $LN4@HaveNearby:
 
-; 6864 : 			{
-; 6865 : 				for(CvCity* pCity = kPlayer.firstCity(&iLoop); pCity != NULL; pCity = kPlayer.nextCity(&iLoop))
+; 6886 : 			{
+; 6887 : 				for(CvCity* pCity = kPlayer.firstCity(&iLoop); pCity != NULL; pCity = kPlayer.nextCity(&iLoop))
 
 	push	0
 	lea	edx, DWORD PTR _iLoop$[esp+40]
@@ -22132,50 +22159,50 @@ $LN4@HaveNearby:
 	mov	esi, eax
 	test	esi, esi
 	jne	SHORT $LL5@HaveNearby
-$LN72@HaveNearby:
-	mov	esi, DWORD PTR _iPlayer$228324[esp+36]
-$LN19@HaveNearby:
+$LN78@HaveNearby:
+	mov	esi, DWORD PTR _iPlayer$228377[esp+36]
+$LN21@HaveNearby:
 
-; 6816 : 	}
-; 6817 : 
-; 6818 : 	for(int iPlayer = 0; iPlayer < MAX_PLAYERS; iPlayer++)
+; 6838 : 	}
+; 6839 : 
+; 6840 : 	for(int iPlayer = 0; iPlayer < MAX_PLAYERS; iPlayer++)
 
 	inc	esi
 	add	ebx, 63236				; 0000f704H
 	cmp	ebx, 4047104				; 003dc100H
-	mov	DWORD PTR _iPlayer$228324[esp+36], esi
-	jl	$LL74@HaveNearby
+	mov	DWORD PTR _iPlayer$228377[esp+36], esi
+	jl	$LL80@HaveNearby
 	pop	esi
 	pop	ebx
 	pop	edi
 
-; 6874 : 						}
-; 6875 : 					}
-; 6876 : 				}
-; 6877 : 			}
-; 6878 : 		}
-; 6879 : 	}
-; 6880 : 	return false;
+; 6896 : 						}
+; 6897 : 					}
+; 6898 : 				}
+; 6899 : 			}
+; 6900 : 		}
+; 6901 : 	}
+; 6902 : 	return false;
 
 	xor	al, al
 	pop	ebp
 
-; 6881 : }
+; 6903 : }
 
 	add	esp, 20					; 00000014H
 	ret	8
-$LN67@HaveNearby:
+$LN73@HaveNearby:
 	pop	esi
 	pop	ebx
 	pop	edi
 
-; 6872 : 						{
-; 6873 : 							return true;
+; 6894 : 						{
+; 6895 : 							return true;
 
 	mov	al, 1
 	pop	ebp
 
-; 6881 : }
+; 6903 : }
 
 	add	esp, 20					; 00000014H
 	ret	8
@@ -22190,22 +22217,22 @@ _eReligion$ = 8						; size = 4
 ?FaithBuildingAvailable@CvReligionAI@@ABE?AW4BuildingClassTypes@@W4ReligionTypes@@@Z PROC ; CvReligionAI::FaithBuildingAvailable, COMDAT
 ; _this$ = ecx
 
-; 6921 : {
+; 6943 : {
 
 	push	ebx
 	push	esi
 	mov	ebx, ecx
 
-; 6922 : #ifdef AUI_RELIGION_FIX_MULTIPLE_FAITH_BUILDINGS
-; 6923 : 	std::vector<BuildingClassTypes> aeFaithBuildings;
-; 6924 : #endif
-; 6925 : 	CvGameReligions* pReligions = GC.getGame().GetGameReligions();
+; 6944 : #ifdef AUI_RELIGION_FIX_MULTIPLE_FAITH_BUILDINGS
+; 6945 : 	std::vector<BuildingClassTypes> aeFaithBuildings;
+; 6946 : #endif
+; 6947 : 	CvGameReligions* pReligions = GC.getGame().GetGameReligions();
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	edi
 	call	?GetGameReligions@CvGame@@QAEPAVCvGameReligions@@XZ ; CvGame::GetGameReligions
 
-; 6926 : 	const CvReligion* pMyReligion = pReligions->GetReligion(eReligion, m_pPlayer->GetID());
+; 6948 : 	const CvReligion* pMyReligion = pReligions->GetReligion(eReligion, m_pPlayer->GetID());
 
 	mov	ecx, DWORD PTR [ebx+4]
 	mov	edx, DWORD PTR [ecx+44]
@@ -22216,17 +22243,17 @@ _eReligion$ = 8						; size = 4
 	call	?GetReligion@CvGameReligions@@QBEPBVCvReligion@@W4ReligionTypes@@W4PlayerTypes@@@Z ; CvGameReligions::GetReligion
 	mov	edi, eax
 
-; 6927 : 
-; 6928 : 	if (pMyReligion)
+; 6949 : 
+; 6950 : 	if (pMyReligion)
 
 	test	edi, edi
 	je	SHORT $LN4@FaithBuild
 
-; 6929 : 	{
-; 6930 : #ifdef AUI_WARNING_FIXES
-; 6931 : 		for (uint iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
-; 6932 : #else
-; 6933 : 		for (int iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
+; 6951 : 	{
+; 6952 : #ifdef AUI_WARNING_FIXES
+; 6953 : 		for (uint iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
+; 6954 : #else
+; 6955 : 		for (int iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	xor	esi, esi
@@ -22237,9 +22264,9 @@ _eReligion$ = 8						; size = 4
 	npad	1
 $LL6@FaithBuild:
 
-; 6934 : #endif
-; 6935 : 		{
-; 6936 : 			if (pMyReligion->m_Beliefs.IsBuildingClassEnabled((BuildingClassTypes)iI))
+; 6956 : #endif
+; 6957 : 		{
+; 6958 : 			if (pMyReligion->m_Beliefs.IsBuildingClassEnabled((BuildingClassTypes)iI))
 
 	push	esi
 	mov	ecx, edi
@@ -22247,8 +22274,8 @@ $LL6@FaithBuild:
 	test	al, al
 	je	SHORT $LN5@FaithBuild
 
-; 6937 : 			{
-; 6938 : 				BuildingTypes eBuilding = (BuildingTypes)m_pPlayer->getCivilizationInfo().getCivilizationBuildings((BuildingClassTypes)iI);
+; 6959 : 			{
+; 6960 : 				BuildingTypes eBuilding = (BuildingTypes)m_pPlayer->getCivilizationInfo().getCivilizationBuildings((BuildingClassTypes)iI);
 
 	mov	ecx, DWORD PTR [ebx+4]
 	push	esi
@@ -22256,19 +22283,19 @@ $LL6@FaithBuild:
 	mov	ecx, eax
 	call	?getCivilizationBuildings@CvCivilizationInfo@@QBEHH@Z ; CvCivilizationInfo::getCivilizationBuildings
 
-; 6939 : 				if(eBuilding != NO_BUILDING)
+; 6961 : 				if(eBuilding != NO_BUILDING)
 
 	cmp	eax, -1
 	je	SHORT $LN5@FaithBuild
 
-; 6940 : 				{
-; 6941 : 					CvBuildingEntry* pBuildingEntry = GC.getBuildingInfo(eBuilding);
+; 6962 : 				{
+; 6963 : 					CvBuildingEntry* pBuildingEntry = GC.getBuildingInfo(eBuilding);
 
 	push	eax
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getBuildingInfo@CvGlobals@@QAEPAVCvBuildingEntry@@W4BuildingTypes@@@Z ; CvGlobals::getBuildingInfo
 
-; 6942 : 					if (pBuildingEntry && pBuildingEntry->GetYieldChange(YIELD_FAITH) > 0)
+; 6964 : 					if (pBuildingEntry && pBuildingEntry->GetYieldChange(YIELD_FAITH) > 0)
 
 	test	eax, eax
 	je	SHORT $LN5@FaithBuild
@@ -22279,11 +22306,11 @@ $LL6@FaithBuild:
 	jg	SHORT $LN17@FaithBuild
 $LN5@FaithBuild:
 
-; 6929 : 	{
-; 6930 : #ifdef AUI_WARNING_FIXES
-; 6931 : 		for (uint iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
-; 6932 : #else
-; 6933 : 		for (int iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
+; 6951 : 	{
+; 6952 : #ifdef AUI_WARNING_FIXES
+; 6953 : 		for (uint iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
+; 6954 : #else
+; 6955 : 		for (int iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	inc	esi
@@ -22294,40 +22321,40 @@ $LN4@FaithBuild:
 	pop	edi
 	pop	esi
 
-; 6948 : #endif
-; 6949 : 					}
-; 6950 : 				}
-; 6951 : 			}
-; 6952 : 		}
-; 6953 : 	}
-; 6954 : 
-; 6955 : #ifdef AUI_RELIGION_FIX_MULTIPLE_FAITH_BUILDINGS
-; 6956 : 	return aeFaithBuildings;
-; 6957 : #else
-; 6958 : 	return NO_BUILDINGCLASS;
+; 6970 : #endif
+; 6971 : 					}
+; 6972 : 				}
+; 6973 : 			}
+; 6974 : 		}
+; 6975 : 	}
+; 6976 : 
+; 6977 : #ifdef AUI_RELIGION_FIX_MULTIPLE_FAITH_BUILDINGS
+; 6978 : 	return aeFaithBuildings;
+; 6979 : #else
+; 6980 : 	return NO_BUILDINGCLASS;
 
 	or	eax, -1
 	pop	ebx
 
-; 6959 : #endif
-; 6960 : }
+; 6981 : #endif
+; 6982 : }
 
 	ret	4
 $LN17@FaithBuild:
 	pop	edi
 
-; 6943 : 					{
-; 6944 : #ifdef AUI_RELIGION_FIX_MULTIPLE_FAITH_BUILDINGS
-; 6945 : 						aeFaithBuildings.push_back((BuildingClassTypes)iI);
-; 6946 : #else
-; 6947 : 						return (BuildingClassTypes)iI;
+; 6965 : 					{
+; 6966 : #ifdef AUI_RELIGION_FIX_MULTIPLE_FAITH_BUILDINGS
+; 6967 : 						aeFaithBuildings.push_back((BuildingClassTypes)iI);
+; 6968 : #else
+; 6969 : 						return (BuildingClassTypes)iI;
 
 	mov	eax, esi
 	pop	esi
 	pop	ebx
 
-; 6959 : #endif
-; 6960 : }
+; 6981 : #endif
+; 6982 : }
 
 	ret	4
 ?FaithBuildingAvailable@CvReligionAI@@ABE?AW4BuildingClassTypes@@W4ReligionTypes@@@Z ENDP ; CvReligionAI::FaithBuildingAvailable
@@ -22341,21 +22368,21 @@ _iLoop$ = -4						; size = 4
 ?CanBuyNonFaithBuilding@CvReligionAI@@ABE_NXZ PROC	; CvReligionAI::CanBuyNonFaithBuilding, COMDAT
 ; _this$ = ecx
 
-; 6964 : {
+; 6986 : {
 
 	sub	esp, 8
 
-; 6965 : 	PlayerTypes ePlayer = m_pPlayer->GetID();
+; 6987 : 	PlayerTypes ePlayer = m_pPlayer->GetID();
 
 	mov	eax, DWORD PTR [ecx+4]
 	push	ebx
 	push	ebp
 	mov	ebp, DWORD PTR [eax+44]
 
-; 6966 : 
-; 6967 : 	int iLoop;
-; 6968 : 	CvCity* pLoopCity;
-; 6969 : 	for(pLoopCity = GET_PLAYER(ePlayer).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(ePlayer).nextCity(&iLoop))
+; 6988 : 
+; 6989 : 	int iLoop;
+; 6990 : 	CvCity* pLoopCity;
+; 6991 : 	for(pLoopCity = GET_PLAYER(ePlayer).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(ePlayer).nextCity(&iLoop))
 
 	imul	ebp, 63236				; 0000f704H
 	push	esi
@@ -22373,11 +22400,11 @@ _iLoop$ = -4						; size = 4
 	npad	11
 $LL9@CanBuyNonF:
 
-; 6970 : 	{
-; 6971 : #ifdef AUI_WARNING_FIXES
-; 6972 : 		for (uint iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
-; 6973 : #else
-; 6974 : 		for (int iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
+; 6992 : 	{
+; 6993 : #ifdef AUI_WARNING_FIXES
+; 6994 : 		for (uint iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
+; 6995 : #else
+; 6996 : 		for (int iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	xor	edi, edi
@@ -22386,9 +22413,9 @@ $LL9@CanBuyNonF:
 	jle	SHORT $LN8@CanBuyNonF
 $LL26@CanBuyNonF:
 
-; 6975 : #endif
-; 6976 : 		{
-; 6977 : 			BuildingTypes eBuilding = (BuildingTypes)m_pPlayer->getCivilizationInfo().getCivilizationBuildings(iI);
+; 6997 : #endif
+; 6998 : 		{
+; 6999 : 			BuildingTypes eBuilding = (BuildingTypes)m_pPlayer->getCivilizationInfo().getCivilizationBuildings(iI);
 
 	mov	eax, DWORD PTR _this$[esp+24]
 	mov	ecx, DWORD PTR [eax+4]
@@ -22398,13 +22425,13 @@ $LL26@CanBuyNonF:
 	call	?getCivilizationBuildings@CvCivilizationInfo@@QBEHH@Z ; CvCivilizationInfo::getCivilizationBuildings
 	mov	esi, eax
 
-; 6978 : 			if(eBuilding != NO_BUILDING)
+; 7000 : 			if(eBuilding != NO_BUILDING)
 
 	cmp	esi, -1
 	je	SHORT $LN5@CanBuyNonF
 
-; 6979 : 			{
-; 6980 : 				CvBuildingEntry* pBuildingEntry = GC.GetGameBuildings()->GetEntry(eBuilding);
+; 7001 : 			{
+; 7002 : 				CvBuildingEntry* pBuildingEntry = GC.GetGameBuildings()->GetEntry(eBuilding);
 
 	push	esi
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
@@ -22412,9 +22439,9 @@ $LL26@CanBuyNonF:
 	mov	ecx, eax
 	call	?GetEntry@CvBuildingXMLEntries@@QAEPAVCvBuildingEntry@@H@Z ; CvBuildingXMLEntries::GetEntry
 
-; 6981 : 
-; 6982 : 				// Check to make sure this isn't a Faith-generating building
-; 6983 : 				if(pBuildingEntry && pBuildingEntry->GetYieldChange(YIELD_FAITH) == 0)
+; 7003 : 
+; 7004 : 				// Check to make sure this isn't a Faith-generating building
+; 7005 : 				if(pBuildingEntry && pBuildingEntry->GetYieldChange(YIELD_FAITH) == 0)
 
 	test	eax, eax
 	je	SHORT $LN5@CanBuyNonF
@@ -22424,8 +22451,8 @@ $LL26@CanBuyNonF:
 	test	eax, eax
 	jne	SHORT $LN5@CanBuyNonF
 
-; 6984 : 				{
-; 6985 : 					if(pLoopCity->IsCanPurchase(true, true, (UnitTypes)-1, eBuilding, (ProjectTypes)-1, YIELD_FAITH))
+; 7006 : 				{
+; 7007 : 					if(pLoopCity->IsCanPurchase(true, true, (UnitTypes)-1, eBuilding, (ProjectTypes)-1, YIELD_FAITH))
 
 	push	5
 	push	-1
@@ -22439,11 +22466,11 @@ $LL26@CanBuyNonF:
 	jne	SHORT $LN22@CanBuyNonF
 $LN5@CanBuyNonF:
 
-; 6970 : 	{
-; 6971 : #ifdef AUI_WARNING_FIXES
-; 6972 : 		for (uint iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
-; 6973 : #else
-; 6974 : 		for (int iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
+; 6992 : 	{
+; 6993 : #ifdef AUI_WARNING_FIXES
+; 6994 : 		for (uint iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
+; 6995 : #else
+; 6996 : 		for (int iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	inc	edi
@@ -22452,10 +22479,10 @@ $LN5@CanBuyNonF:
 	jl	SHORT $LL26@CanBuyNonF
 $LN8@CanBuyNonF:
 
-; 6966 : 
-; 6967 : 	int iLoop;
-; 6968 : 	CvCity* pLoopCity;
-; 6969 : 	for(pLoopCity = GET_PLAYER(ePlayer).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(ePlayer).nextCity(&iLoop))
+; 6988 : 
+; 6989 : 	int iLoop;
+; 6990 : 	CvCity* pLoopCity;
+; 6991 : 	for(pLoopCity = GET_PLAYER(ePlayer).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(ePlayer).nextCity(&iLoop))
 
 	mov	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	push	0
@@ -22471,17 +22498,17 @@ $LN7@CanBuyNonF:
 	pop	esi
 	pop	ebp
 
-; 6988 : 					}
-; 6989 : 				}
-; 6990 : 			}
-; 6991 : 		}
-; 6992 : 	}
-; 6993 : 	return false;
+; 7010 : 					}
+; 7011 : 				}
+; 7012 : 			}
+; 7013 : 		}
+; 7014 : 	}
+; 7015 : 	return false;
 
 	xor	al, al
 	pop	ebx
 
-; 6994 : }
+; 7016 : }
 
 	add	esp, 8
 	ret	0
@@ -22490,13 +22517,13 @@ $LN22@CanBuyNonF:
 	pop	esi
 	pop	ebp
 
-; 6986 : 					{
-; 6987 : 						return true;
+; 7008 : 					{
+; 7009 : 						return true;
 
 	mov	al, 1
 	pop	ebx
 
-; 6994 : }
+; 7016 : }
 
 	add	esp, 8
 	ret	0
@@ -22542,25 +22569,25 @@ __unwindtable$?LogBeliefChoices@CvReligionAI@@AAEXAAV?$CvWeightedVector@W4Belief
 xdata$x	ENDS
 ;	COMDAT ?LogBeliefChoices@CvReligionAI@@AAEXAAV?$CvWeightedVector@W4BeliefTypes@@$0GE@$00@@H@Z
 _TEXT	SEGMENT
-$T236846 = -216						; size = 28
-$T236845 = -216						; size = 28
-$T236844 = -216						; size = 28
-$T236843 = -216						; size = 28
-$T236842 = -216						; size = 28
-_strBaseString$228518 = -188				; size = 28
-_strOutBuf$228517 = -160				; size = 28
-_strDesc$228521 = -132					; size = 28
-_strTemp$228519 = -104					; size = 28
-_playerName$228520 = -76				; size = 28
-_elem$236943 = -48					; size = 8
-$T236841 = -40						; size = 28
+$T236919 = -216						; size = 28
+$T236918 = -216						; size = 28
+$T236917 = -216						; size = 28
+$T236916 = -216						; size = 28
+$T236915 = -216						; size = 28
+_strBaseString$228575 = -188				; size = 28
+_strOutBuf$228574 = -160				; size = 28
+_strDesc$228578 = -132					; size = 28
+_strTemp$228576 = -104					; size = 28
+_playerName$228577 = -76				; size = 28
+_elem$237016 = -48					; size = 8
+$T236914 = -40						; size = 28
 __$EHRec$ = -12						; size = 12
 _beliefChoices$ = 8					; size = 4
 _iChoice$ = 12						; size = 4
 ?LogBeliefChoices@CvReligionAI@@AAEXAAV?$CvWeightedVector@W4BeliefTypes@@$0GE@$00@@H@Z PROC ; CvReligionAI::LogBeliefChoices, COMDAT
 ; _this$ = ecx
 
-; 7191 : {
+; 7213 : {
 
 	mov	eax, DWORD PTR fs:0
 	push	-1
@@ -22571,7 +22598,7 @@ _iChoice$ = 12						; size = 4
 	push	esi
 	mov	esi, ecx
 
-; 7192 : 	if(GC.getLogging() && GC.getAILogging())
+; 7214 : 	if(GC.getLogging() && GC.getAILogging())
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getLogging@CvGlobals@@QAE_NXZ		; CvGlobals::getLogging
@@ -22585,46 +22612,46 @@ _iChoice$ = 12						; size = 4
 	push	ebp
 	push	edi
 
-; 7193 : 	{
-; 7194 : 		CvString strOutBuf;
+; 7215 : 	{
+; 7216 : 		CvString strOutBuf;
 
-	lea	ecx, DWORD PTR _strOutBuf$228517[esp+232]
+	lea	ecx, DWORD PTR _strOutBuf$228574[esp+232]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 7195 : 		CvString strBaseString;
+; 7217 : 		CvString strBaseString;
 
-	lea	ecx, DWORD PTR _strBaseString$228518[esp+232]
+	lea	ecx, DWORD PTR _strBaseString$228575[esp+232]
 	mov	DWORD PTR __$EHRec$[esp+240], 0
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 7196 : 		CvString strTemp;
+; 7218 : 		CvString strTemp;
 
-	lea	ecx, DWORD PTR _strTemp$228519[esp+232]
+	lea	ecx, DWORD PTR _strTemp$228576[esp+232]
 	mov	BYTE PTR __$EHRec$[esp+240], 1
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 7197 : 		CvString playerName;
+; 7219 : 		CvString playerName;
 
-	lea	ecx, DWORD PTR _playerName$228520[esp+232]
+	lea	ecx, DWORD PTR _playerName$228577[esp+232]
 	mov	BYTE PTR __$EHRec$[esp+240], 2
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 7198 : 		CvString strDesc;
+; 7220 : 		CvString strDesc;
 
-	lea	ecx, DWORD PTR _strDesc$228521[esp+232]
+	lea	ecx, DWORD PTR _strDesc$228578[esp+232]
 	mov	BYTE PTR __$EHRec$[esp+240], 3
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 7199 : 		BeliefTypes eBelief;
-; 7200 : 
-; 7201 : 		// Find the name of this civ
-; 7202 : 		playerName = m_pPlayer->getCivilizationShortDescription();
+; 7221 : 		BeliefTypes eBelief;
+; 7222 : 
+; 7223 : 		// Find the name of this civ
+; 7224 : 		playerName = m_pPlayer->getCivilizationShortDescription();
 
 	mov	ecx, DWORD PTR [esi+4]
 	mov	bl, 4
 	mov	BYTE PTR __$EHRec$[esp+240], bl
 	call	?getCivilizationShortDescription@CvPlayer@@QBEPBDXZ ; CvPlayer::getCivilizationShortDescription
-	lea	ecx, DWORD PTR _playerName$228520[esp+232]
+	lea	ecx, DWORD PTR _playerName$228577[esp+232]
 	test	eax, eax
 	je	SHORT $LN34@LogBeliefC
 	push	eax
@@ -22634,15 +22661,15 @@ $LN34@LogBeliefC:
 	call	DWORD PTR __imp_?clear@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEXXZ
 $LN33@LogBeliefC:
 
-; 7203 : 
-; 7204 : 		// Open the log file
-; 7205 : 		FILogFile* pLog;
-; 7206 : 		pLog = LOGFILEMGR.GetLog(GC.getGame().GetGameReligions()->GetLogFileName(), FILogFile::kDontTimeStamp);
+; 7225 : 
+; 7226 : 		// Open the log file
+; 7227 : 		FILogFile* pLog;
+; 7228 : 		pLog = LOGFILEMGR.GetLog(GC.getGame().GetGameReligions()->GetLogFileName(), FILogFile::kDontTimeStamp);
 
 	call	?GetInstance@FILogFileMgr@@SAAAV1@XZ	; FILogFileMgr::GetInstance
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	mov	esi, eax
-	lea	eax, DWORD PTR $T236841[esp+232]
+	lea	eax, DWORD PTR $T236914[esp+232]
 	push	eax
 	call	?GetGameReligions@CvGame@@QAEPAVCvGameReligions@@XZ ; CvGame::GetGameReligions
 	mov	ecx, eax
@@ -22657,14 +22684,14 @@ $LN33@LogBeliefC:
 	mov	eax, DWORD PTR [edx+12]
 	mov	ecx, esi
 	call	eax
-	lea	ecx, DWORD PTR $T236841[esp+232]
+	lea	ecx, DWORD PTR $T236914[esp+232]
 	mov	ebp, eax
 	mov	BYTE PTR __$EHRec$[esp+240], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 7207 : 
-; 7208 : 		// Get the leading info for this line
-; 7209 : 		strBaseString.Format("%03d, %d, ", GC.getGame().getElapsedGameTurns(), GC.getGame().getGameTurnYear());
+; 7229 : 
+; 7230 : 		// Get the leading info for this line
+; 7231 : 		strBaseString.Format("%03d, %d, ", GC.getGame().getElapsedGameTurns(), GC.getGame().getGameTurnYear());
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	mov	esi, ecx
@@ -22673,31 +22700,31 @@ $LN33@LogBeliefC:
 	mov	ecx, esi
 	call	?getElapsedGameTurns@CvGame@@QBEHXZ	; CvGame::getElapsedGameTurns
 	push	eax
-	lea	ecx, DWORD PTR _strBaseString$228518[esp+240]
-	push	OFFSET $SG228525
+	lea	ecx, DWORD PTR _strBaseString$228575[esp+240]
+	push	OFFSET $SG228582
 	push	ecx
 	call	?Format@CvString@@QAAXPBDZZ		; CvString::Format
 
-; 7210 : 		strBaseString += playerName + ", ";
+; 7232 : 		strBaseString += playerName + ", ";
 
-	push	OFFSET $SG228527
-	lea	edx, DWORD PTR _playerName$228520[esp+252]
+	push	OFFSET $SG228584
+	lea	edx, DWORD PTR _playerName$228577[esp+252]
 	push	edx
-	lea	eax, DWORD PTR $T236842[esp+256]
+	lea	eax, DWORD PTR $T236915[esp+256]
 	push	eax
 	call	DWORD PTR __imp_??$?HDU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@ABV10@PBD@Z
 	add	esp, 28					; 0000001cH
 	push	eax
-	lea	ecx, DWORD PTR _strBaseString$228518[esp+236]
+	lea	ecx, DWORD PTR _strBaseString$228575[esp+236]
 	mov	BYTE PTR __$EHRec$[esp+244], 6
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T236842[esp+232]
+	lea	ecx, DWORD PTR $T236915[esp+232]
 	mov	BYTE PTR __$EHRec$[esp+240], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 7211 : 
-; 7212 : 		// Dump out the weight of each belief item
-; 7213 : 		for(int iI = 0; iI < beliefChoices.size(); iI++)
+; 7233 : 
+; 7234 : 		// Dump out the weight of each belief item
+; 7235 : 		for(int iI = 0; iI < beliefChoices.size(); iI++)
 
 	mov	edi, DWORD PTR _beliefChoices$[esp+228]
 	xor	esi, esi
@@ -22705,13 +22732,13 @@ $LN33@LogBeliefC:
 	jle	$LN1@LogBeliefC
 $LL3@LogBeliefC:
 
-; 7214 : 		{
-; 7215 : 			eBelief = beliefChoices.GetElement(iI);
+; 7236 : 		{
+; 7237 : 			eBelief = beliefChoices.GetElement(iI);
 
 	mov	ecx, DWORD PTR [edi]
 	mov	eax, DWORD PTR [ecx+esi*8]
 
-; 7216 : 			strDesc = GetLocalizedText(GC.GetGameBeliefs()->GetEntry(eBelief)->getShortDescription());
+; 7238 : 			strDesc = GetLocalizedText(GC.GetGameBeliefs()->GetEntry(eBelief)->getShortDescription());
 
 	push	eax
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
@@ -22721,40 +22748,40 @@ $LL3@LogBeliefC:
 	mov	ecx, eax
 	call	?getShortDescription@CvBeliefEntry@@QBEPBDXZ ; CvBeliefEntry::getShortDescription
 	push	eax
-	lea	edx, DWORD PTR $T236843[esp+236]
+	lea	edx, DWORD PTR $T236916[esp+236]
 	push	edx
 	call	?GetLocalizedText@@YA?AVCvString@@PBD@Z	; GetLocalizedText
 	add	esp, 8
 	push	eax
-	lea	ecx, DWORD PTR _strDesc$228521[esp+236]
+	lea	ecx, DWORD PTR _strDesc$228578[esp+236]
 	mov	BYTE PTR __$EHRec$[esp+244], 7
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T236843[esp+232]
+	lea	ecx, DWORD PTR $T236916[esp+232]
 	mov	BYTE PTR __$EHRec$[esp+240], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 7217 : 			strTemp.Format("Belief, %s, %d", strDesc.GetCString(), beliefChoices.GetWeight(iI));
+; 7239 : 			strTemp.Format("Belief, %s, %d", strDesc.GetCString(), beliefChoices.GetWeight(iI));
 
 	mov	eax, DWORD PTR [edi]
 	mov	ecx, DWORD PTR [eax+esi*8]
 	mov	eax, DWORD PTR [eax+esi*8+4]
-	mov	DWORD PTR _elem$236943[esp+232], ecx
+	mov	DWORD PTR _elem$237016[esp+232], ecx
 	push	eax
-	lea	ecx, DWORD PTR _strDesc$228521[esp+236]
+	lea	ecx, DWORD PTR _strDesc$228578[esp+236]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
-	lea	edx, DWORD PTR _strTemp$228519[esp+240]
-	push	OFFSET $SG228533
+	lea	edx, DWORD PTR _strTemp$228576[esp+240]
+	push	OFFSET $SG228590
 	push	edx
 	call	?Format@CvString@@QAAXPBDZZ		; CvString::Format
 
-; 7218 : 			strOutBuf = strBaseString + strTemp;
+; 7240 : 			strOutBuf = strBaseString + strTemp;
 
-	lea	eax, DWORD PTR _strTemp$228519[esp+248]
+	lea	eax, DWORD PTR _strTemp$228576[esp+248]
 	push	eax
-	lea	ecx, DWORD PTR _strBaseString$228518[esp+252]
+	lea	ecx, DWORD PTR _strBaseString$228575[esp+252]
 	push	ecx
-	lea	edx, DWORD PTR $T236844[esp+256]
+	lea	edx, DWORD PTR $T236917[esp+256]
 	push	edx
 	call	DWORD PTR __imp_??$?HDU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@ABV10@0@Z
 	add	esp, 28					; 0000001cH
@@ -22762,15 +22789,15 @@ $LL3@LogBeliefC:
 	mov	BYTE PTR __$EHRec$[esp+240], 8
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
-	lea	ecx, DWORD PTR _strOutBuf$228517[esp+236]
+	lea	ecx, DWORD PTR _strOutBuf$228574[esp+236]
 	call	DWORD PTR __imp_?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBD@Z
-	lea	ecx, DWORD PTR $T236844[esp+232]
+	lea	ecx, DWORD PTR $T236917[esp+232]
 	mov	BYTE PTR __$EHRec$[esp+240], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 7219 : 			pLog->Msg(strOutBuf);
+; 7241 : 			pLog->Msg(strOutBuf);
 
-	lea	ecx, DWORD PTR _strOutBuf$228517[esp+232]
+	lea	ecx, DWORD PTR _strOutBuf$228574[esp+232]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	mov	ecx, DWORD PTR [ebp]
 	mov	edx, DWORD PTR [ecx]
@@ -22783,11 +22810,11 @@ $LL3@LogBeliefC:
 	jl	$LL3@LogBeliefC
 $LN1@LogBeliefC:
 
-; 7220 : 		}
-; 7221 : 
-; 7222 : 		// Finally the chosen one
-; 7223 : 		eBelief = (BeliefTypes)iChoice;
-; 7224 : 		strDesc = GetLocalizedText(GC.GetGameBeliefs()->GetEntry(eBelief)->getShortDescription());
+; 7242 : 		}
+; 7243 : 
+; 7244 : 		// Finally the chosen one
+; 7245 : 		eBelief = (BeliefTypes)iChoice;
+; 7246 : 		strDesc = GetLocalizedText(GC.GetGameBeliefs()->GetEntry(eBelief)->getShortDescription());
 
 	mov	eax, DWORD PTR _iChoice$[esp+228]
 	push	eax
@@ -22798,35 +22825,35 @@ $LN1@LogBeliefC:
 	mov	ecx, eax
 	call	?getShortDescription@CvBeliefEntry@@QBEPBDXZ ; CvBeliefEntry::getShortDescription
 	push	eax
-	lea	ecx, DWORD PTR $T236845[esp+236]
+	lea	ecx, DWORD PTR $T236918[esp+236]
 	push	ecx
 	call	?GetLocalizedText@@YA?AVCvString@@PBD@Z	; GetLocalizedText
 	add	esp, 8
 	push	eax
-	lea	ecx, DWORD PTR _strDesc$228521[esp+236]
+	lea	ecx, DWORD PTR _strDesc$228578[esp+236]
 	mov	BYTE PTR __$EHRec$[esp+244], 9
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T236845[esp+232]
+	lea	ecx, DWORD PTR $T236918[esp+232]
 	mov	BYTE PTR __$EHRec$[esp+240], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 7225 : 		strTemp.Format("CHOSEN, %s", strDesc.GetCString());
+; 7247 : 		strTemp.Format("CHOSEN, %s", strDesc.GetCString());
 
-	lea	ecx, DWORD PTR _strDesc$228521[esp+232]
+	lea	ecx, DWORD PTR _strDesc$228578[esp+232]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
-	lea	edx, DWORD PTR _strTemp$228519[esp+236]
-	push	OFFSET $SG228537
+	lea	edx, DWORD PTR _strTemp$228576[esp+236]
+	push	OFFSET $SG228594
 	push	edx
 	call	?Format@CvString@@QAAXPBDZZ		; CvString::Format
 
-; 7226 : 		strOutBuf = strBaseString + strTemp;
+; 7248 : 		strOutBuf = strBaseString + strTemp;
 
-	lea	eax, DWORD PTR _strTemp$228519[esp+244]
+	lea	eax, DWORD PTR _strTemp$228576[esp+244]
 	push	eax
-	lea	ecx, DWORD PTR _strBaseString$228518[esp+248]
+	lea	ecx, DWORD PTR _strBaseString$228575[esp+248]
 	push	ecx
-	lea	edx, DWORD PTR $T236846[esp+252]
+	lea	edx, DWORD PTR $T236919[esp+252]
 	push	edx
 	call	DWORD PTR __imp_??$?HDU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@ABV10@0@Z
 	add	esp, 24					; 00000018H
@@ -22834,15 +22861,15 @@ $LN1@LogBeliefC:
 	mov	BYTE PTR __$EHRec$[esp+240], 10		; 0000000aH
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
-	lea	ecx, DWORD PTR _strOutBuf$228517[esp+236]
+	lea	ecx, DWORD PTR _strOutBuf$228574[esp+236]
 	call	DWORD PTR __imp_?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBD@Z
-	lea	ecx, DWORD PTR $T236846[esp+232]
+	lea	ecx, DWORD PTR $T236919[esp+232]
 	mov	BYTE PTR __$EHRec$[esp+240], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 7227 : 		pLog->Msg(strOutBuf);
+; 7249 : 		pLog->Msg(strOutBuf);
 
-	lea	ecx, DWORD PTR _strOutBuf$228517[esp+232]
+	lea	ecx, DWORD PTR _strOutBuf$228574[esp+232]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	mov	ecx, DWORD PTR [ebp]
 	mov	edx, DWORD PTR [ecx]
@@ -22851,21 +22878,21 @@ $LN1@LogBeliefC:
 	call	edx
 	add	esp, 8
 
-; 7228 : 	}
+; 7250 : 	}
 
-	lea	ecx, DWORD PTR _strDesc$228521[esp+232]
+	lea	ecx, DWORD PTR _strDesc$228578[esp+232]
 	mov	BYTE PTR __$EHRec$[esp+240], 3
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR _playerName$228520[esp+232]
+	lea	ecx, DWORD PTR _playerName$228577[esp+232]
 	mov	BYTE PTR __$EHRec$[esp+240], 2
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR _strTemp$228519[esp+232]
+	lea	ecx, DWORD PTR _strTemp$228576[esp+232]
 	mov	BYTE PTR __$EHRec$[esp+240], 1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR _strBaseString$228518[esp+232]
+	lea	ecx, DWORD PTR _strBaseString$228575[esp+232]
 	mov	BYTE PTR __$EHRec$[esp+240], 0
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR _strOutBuf$228517[esp+232]
+	lea	ecx, DWORD PTR _strOutBuf$228574[esp+232]
 	mov	DWORD PTR __$EHRec$[esp+240], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 	pop	edi
@@ -22873,7 +22900,7 @@ $LN1@LogBeliefC:
 	pop	ebx
 $LN4@LogBeliefC:
 
-; 7229 : }
+; 7251 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+220]
 	pop	esi
@@ -22884,37 +22911,37 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?LogBeliefChoices@CvReligionAI@@AAEXAAV?$CvWeightedVector@W4BeliefTypes@@$0GE@$00@@H@Z$0:
-	lea	ecx, DWORD PTR _strOutBuf$228517[ebp]
+	lea	ecx, DWORD PTR _strOutBuf$228574[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?LogBeliefChoices@CvReligionAI@@AAEXAAV?$CvWeightedVector@W4BeliefTypes@@$0GE@$00@@H@Z$1:
-	lea	ecx, DWORD PTR _strBaseString$228518[ebp]
+	lea	ecx, DWORD PTR _strBaseString$228575[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?LogBeliefChoices@CvReligionAI@@AAEXAAV?$CvWeightedVector@W4BeliefTypes@@$0GE@$00@@H@Z$2:
-	lea	ecx, DWORD PTR _strTemp$228519[ebp]
+	lea	ecx, DWORD PTR _strTemp$228576[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?LogBeliefChoices@CvReligionAI@@AAEXAAV?$CvWeightedVector@W4BeliefTypes@@$0GE@$00@@H@Z$3:
-	lea	ecx, DWORD PTR _playerName$228520[ebp]
+	lea	ecx, DWORD PTR _playerName$228577[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?LogBeliefChoices@CvReligionAI@@AAEXAAV?$CvWeightedVector@W4BeliefTypes@@$0GE@$00@@H@Z$4:
-	lea	ecx, DWORD PTR _strDesc$228521[ebp]
+	lea	ecx, DWORD PTR _strDesc$228578[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?LogBeliefChoices@CvReligionAI@@AAEXAAV?$CvWeightedVector@W4BeliefTypes@@$0GE@$00@@H@Z$5:
-	lea	ecx, DWORD PTR $T236841[ebp]
+	lea	ecx, DWORD PTR $T236914[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?LogBeliefChoices@CvReligionAI@@AAEXAAV?$CvWeightedVector@W4BeliefTypes@@$0GE@$00@@H@Z$6:
-	lea	ecx, DWORD PTR $T236842[ebp]
+	lea	ecx, DWORD PTR $T236915[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?LogBeliefChoices@CvReligionAI@@AAEXAAV?$CvWeightedVector@W4BeliefTypes@@$0GE@$00@@H@Z$7:
-	lea	ecx, DWORD PTR $T236843[ebp]
+	lea	ecx, DWORD PTR $T236916[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?LogBeliefChoices@CvReligionAI@@AAEXAAV?$CvWeightedVector@W4BeliefTypes@@$0GE@$00@@H@Z$8:
-	lea	ecx, DWORD PTR $T236844[ebp]
+	lea	ecx, DWORD PTR $T236917[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?LogBeliefChoices@CvReligionAI@@AAEXAAV?$CvWeightedVector@W4BeliefTypes@@$0GE@$00@@H@Z$9:
-	lea	ecx, DWORD PTR $T236845[ebp]
+	lea	ecx, DWORD PTR $T236918[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?LogBeliefChoices@CvReligionAI@@AAEXAAV?$CvWeightedVector@W4BeliefTypes@@$0GE@$00@@H@Z$10:
-	lea	ecx, DWORD PTR $T236846[ebp]
+	lea	ecx, DWORD PTR $T236919[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __ehhandler$?LogBeliefChoices@CvReligionAI@@AAEXAAV?$CvWeightedVector@W4BeliefTypes@@$0GE@$00@@H@Z:
 	mov	eax, OFFSET __ehfuncinfo$?LogBeliefChoices@CvReligionAI@@AAEXAAV?$CvWeightedVector@W4BeliefTypes@@$0GE@$00@@H@Z
@@ -22938,7 +22965,7 @@ _eUnit$ = 12						; size = 4
 _eReligion$ = 16					; size = 4
 ?GetBestCityFaithUnitPurchase@CvReligionAIHelpers@@YAPAVCvCity@@AAVCvPlayer@@W4UnitTypes@@W4ReligionTypes@@@Z PROC ; CvReligionAIHelpers::GetBestCityFaithUnitPurchase, COMDAT
 
-; 7234 : {
+; 7256 : {
 
 	sub	esp, 16					; 00000010H
 	push	ebx
@@ -22946,27 +22973,27 @@ _eReligion$ = 16					; size = 4
 	push	esi
 	push	edi
 
-; 7235 : 	bool bReligious = false;
-; 7236 : 	CvCity *pHolyCity = NULL;
-; 7237 : 	SpecialUnitTypes eSpecialUnitGreatPerson = (SpecialUnitTypes) GC.getInfoTypeForString("SPECIALUNIT_PEOPLE");
+; 7257 : 	bool bReligious = false;
+; 7258 : 	CvCity *pHolyCity = NULL;
+; 7259 : 	SpecialUnitTypes eSpecialUnitGreatPerson = (SpecialUnitTypes) GC.getInfoTypeForString("SPECIALUNIT_PEOPLE");
 
 	push	0
-	push	OFFSET $SG228548
+	push	OFFSET $SG228605
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	BYTE PTR _bReligious$[esp+40], 0
 	mov	DWORD PTR _pHolyCity$[esp+40], 0
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 
-; 7238 : 	int iLoop;
-; 7239 : 	CvCity* pLoopCity;
-; 7240 : 
-; 7241 : 	CvGameReligions* pReligions = GC.getGame().GetGameReligions();
+; 7260 : 	int iLoop;
+; 7261 : 	CvCity* pLoopCity;
+; 7262 : 
+; 7263 : 	CvGameReligions* pReligions = GC.getGame().GetGameReligions();
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	mov	esi, eax
 	call	?GetGameReligions@CvGame@@QAEPAVCvGameReligions@@XZ ; CvGame::GetGameReligions
 
-; 7242 : 	const CvReligion* pMyReligion = pReligions->GetReligion(eReligion, kPlayer.GetID());
+; 7264 : 	const CvReligion* pMyReligion = pReligions->GetReligion(eReligion, kPlayer.GetID());
 
 	mov	ebx, DWORD PTR _kPlayer$[esp+28]
 	mov	ecx, DWORD PTR [ebx+44]
@@ -22976,8 +23003,8 @@ _eReligion$ = 16					; size = 4
 	mov	ecx, eax
 	call	?GetReligion@CvGameReligions@@QBEPBVCvReligion@@W4ReligionTypes@@W4PlayerTypes@@@Z ; CvGameReligions::GetReligion
 
-; 7243 : 
-; 7244 : 	CvUnitEntry *pkUnitEntry = GC.getUnitInfo(eUnit);
+; 7265 : 
+; 7266 : 	CvUnitEntry *pkUnitEntry = GC.getUnitInfo(eUnit);
 
 	mov	ebp, DWORD PTR _eUnit$[esp+28]
 	push	ebp
@@ -22986,14 +23013,14 @@ _eReligion$ = 16					; size = 4
 	call	?getUnitInfo@CvGlobals@@QAEPAVCvUnitEntry@@W4UnitTypes@@@Z ; CvGlobals::getUnitInfo
 	mov	edi, eax
 
-; 7245 : 	if (pkUnitEntry)
+; 7267 : 	if (pkUnitEntry)
 
 	test	edi, edi
 	je	$LN8@GetBestCit
 
-; 7246 : 	{
-; 7247 : 		// Religious unit?
-; 7248 : 		if (pkUnitEntry->IsSpreadReligion() || pkUnitEntry->IsRemoveHeresy())
+; 7268 : 	{
+; 7269 : 		// Religious unit?
+; 7270 : 		if (pkUnitEntry->IsSpreadReligion() || pkUnitEntry->IsRemoveHeresy())
 
 	mov	ecx, edi
 	call	?IsSpreadReligion@CvUnitEntry@@QBE_NXZ	; CvUnitEntry::IsSpreadReligion
@@ -23004,20 +23031,20 @@ _eReligion$ = 16					; size = 4
 	test	al, al
 	jne	SHORT $LN27@GetBestCit
 
-; 7249 : 		{
-; 7250 : 			bReligious = true;
-; 7251 : 		}
-; 7252 : 	
-; 7253 : 		// Great person?
-; 7254 : 		else if (pkUnitEntry->GetSpecialUnitType() == eSpecialUnitGreatPerson)
+; 7271 : 		{
+; 7272 : 			bReligious = true;
+; 7273 : 		}
+; 7274 : 	
+; 7275 : 		// Great person?
+; 7276 : 		else if (pkUnitEntry->GetSpecialUnitType() == eSpecialUnitGreatPerson)
 
 	mov	ecx, edi
 	call	?GetSpecialUnitType@CvUnitEntry@@QBEHXZ	; CvUnitEntry::GetSpecialUnitType
 	cmp	eax, esi
 	jne	$LN8@GetBestCit
 
-; 7255 : 		{
-; 7256 : 			for (pLoopCity = kPlayer.firstCity(&iLoop); pLoopCity != NULL; pLoopCity = kPlayer.nextCity(&iLoop))
+; 7277 : 		{
+; 7278 : 			for (pLoopCity = kPlayer.firstCity(&iLoop); pLoopCity != NULL; pLoopCity = kPlayer.nextCity(&iLoop))
 
 	push	0
 	lea	eax, DWORD PTR _iLoop$[esp+36]
@@ -23029,8 +23056,8 @@ _eReligion$ = 16					; size = 4
 	je	$LN5@GetBestCit
 $LL24@GetBestCit:
 
-; 7257 : 			{
-; 7258 : 				if (pLoopCity->IsCanPurchase(true/*bTestPurchaseCost*/, true/*bTestTrainable*/, eUnit, NO_BUILDING, NO_PROJECT, YIELD_FAITH))
+; 7279 : 			{
+; 7280 : 				if (pLoopCity->IsCanPurchase(true/*bTestPurchaseCost*/, true/*bTestTrainable*/, eUnit, NO_BUILDING, NO_PROJECT, YIELD_FAITH))
 
 	push	5
 	push	-1
@@ -23055,29 +23082,29 @@ $LL24@GetBestCit:
 	pop	ebp
 	pop	ebx
 
-; 7333 : }
+; 7355 : }
 
 	add	esp, 16					; 00000010H
 	ret	0
 $LN27@GetBestCit:
 
-; 7259 : 				{
-; 7260 : 					return pLoopCity;
-; 7261 : 				}
-; 7262 : 			}
-; 7263 : 			return NULL;
-; 7264 : 		}
-; 7265 : 	}
-; 7266 : 
-; 7267 : 	// If religious, try to buy in the city with the Great Mosque first if a Missionary
-; 7268 : 	if (bReligious && pMyReligion)
+; 7281 : 				{
+; 7282 : 					return pLoopCity;
+; 7283 : 				}
+; 7284 : 			}
+; 7285 : 			return NULL;
+; 7286 : 		}
+; 7287 : 	}
+; 7288 : 
+; 7289 : 	// If religious, try to buy in the city with the Great Mosque first if a Missionary
+; 7290 : 	if (bReligious && pMyReligion)
 
 	cmp	DWORD PTR _pMyReligion$[esp+32], 0
 	mov	BYTE PTR _bReligious$[esp+32], 1
 	je	$LN8@GetBestCit
 
-; 7269 : 	{
-; 7270 : 		for(pLoopCity = kPlayer.firstCity(&iLoop); pLoopCity != NULL; pLoopCity = kPlayer.nextCity(&iLoop))
+; 7291 : 	{
+; 7292 : 		for(pLoopCity = kPlayer.firstCity(&iLoop); pLoopCity != NULL; pLoopCity = kPlayer.nextCity(&iLoop))
 
 	push	0
 	lea	edx, DWORD PTR _iLoop$[esp+36]
@@ -23090,18 +23117,18 @@ $LN27@GetBestCit:
 	npad	6
 $LL128@GetBestCit:
 
-; 7271 : 		{
-; 7272 : 			if (pLoopCity->getOwner() != kPlayer.GetID())
+; 7293 : 		{
+; 7294 : 			if (pLoopCity->getOwner() != kPlayer.GetID())
 
 	mov	eax, DWORD PTR [esi+84]
 	cmp	eax, DWORD PTR [ebx+44]
 	jne	SHORT $LN18@GetBestCit
 
-; 7273 : 			{
-; 7274 : 				continue;
-; 7275 : 			}
-; 7276 : 
-; 7277 : 			if (pLoopCity->GetCityBuildings()->GetMissionaryExtraSpreads() < 1 || pkUnitEntry->GetReligionSpreads() < 1)
+; 7295 : 			{
+; 7296 : 				continue;
+; 7297 : 			}
+; 7298 : 
+; 7299 : 			if (pLoopCity->GetCityBuildings()->GetMissionaryExtraSpreads() < 1 || pkUnitEntry->GetReligionSpreads() < 1)
 
 	mov	ecx, esi
 	call	?GetCityBuildings@CvCity@@QBEPAVCvCityBuildings@@XZ ; CvCity::GetCityBuildings
@@ -23114,11 +23141,11 @@ $LL128@GetBestCit:
 	cmp	eax, 1
 	jl	SHORT $LN18@GetBestCit
 
-; 7278 : 			{
-; 7279 : 				continue;
-; 7280 : 			}
-; 7281 : 
-; 7282 : 			if (pLoopCity->GetCityReligions()->GetReligiousMajority() == eReligion)
+; 7300 : 			{
+; 7301 : 				continue;
+; 7302 : 			}
+; 7303 : 
+; 7304 : 			if (pLoopCity->GetCityReligions()->GetReligiousMajority() == eReligion)
 
 	mov	ecx, esi
 	call	?GetCityReligions@CvCity@@QBEPAVCvCityReligions@@XZ ; CvCity::GetCityReligions
@@ -23127,8 +23154,8 @@ $LL128@GetBestCit:
 	cmp	eax, DWORD PTR _eReligion$[esp+28]
 	jne	SHORT $LN18@GetBestCit
 
-; 7283 : 			{
-; 7284 : 				if(pLoopCity->IsCanPurchase(true, true, eUnit, NO_BUILDING, NO_PROJECT, YIELD_FAITH))
+; 7305 : 			{
+; 7306 : 				if(pLoopCity->IsCanPurchase(true, true, eUnit, NO_BUILDING, NO_PROJECT, YIELD_FAITH))
 
 	push	5
 	push	-1
@@ -23142,8 +23169,8 @@ $LL128@GetBestCit:
 	jne	SHORT $LN111@GetBestCit
 $LN18@GetBestCit:
 
-; 7269 : 	{
-; 7270 : 		for(pLoopCity = kPlayer.firstCity(&iLoop); pLoopCity != NULL; pLoopCity = kPlayer.nextCity(&iLoop))
+; 7291 : 	{
+; 7292 : 		for(pLoopCity = kPlayer.firstCity(&iLoop); pLoopCity != NULL; pLoopCity = kPlayer.nextCity(&iLoop))
 
 	push	0
 	lea	ecx, DWORD PTR _iLoop$[esp+36]
@@ -23155,15 +23182,15 @@ $LN18@GetBestCit:
 	jne	SHORT $LL128@GetBestCit
 $LN117@GetBestCit:
 
-; 7287 : 				}
-; 7288 : 			}
-; 7289 : 		}
-; 7290 : 	}
-; 7291 : 
-; 7292 : 	// If religious, next try to buy in the holy city, assuming it hasn't been converted
-; 7293 : 	if (bReligious && pMyReligion)
-; 7294 : 	{
-; 7295 : 		CvPlot* pHolyCityPlot = GC.getMap().plot(pMyReligion->m_iHolyCityX, pMyReligion->m_iHolyCityY);
+; 7309 : 				}
+; 7310 : 			}
+; 7311 : 		}
+; 7312 : 	}
+; 7313 : 
+; 7314 : 	// If religious, next try to buy in the holy city, assuming it hasn't been converted
+; 7315 : 	if (bReligious && pMyReligion)
+; 7316 : 	{
+; 7317 : 		CvPlot* pHolyCityPlot = GC.getMap().plot(pMyReligion->m_iHolyCityX, pMyReligion->m_iHolyCityY);
 
 	mov	edx, DWORD PTR _pMyReligion$[esp+32]
 	mov	ebp, DWORD PTR [edx+12]
@@ -23187,28 +23214,28 @@ $LN117@GetBestCit:
 $LN111@GetBestCit:
 	pop	edi
 
-; 7285 : 				{
-; 7286 : 					return pLoopCity;
+; 7307 : 				{
+; 7308 : 					return pLoopCity;
 
 	mov	eax, esi
 	pop	esi
 	pop	ebp
 	pop	ebx
 
-; 7333 : }
+; 7355 : }
 
 	add	esp, 16					; 00000010H
 	ret	0
 
-; 7287 : 				}
-; 7288 : 			}
-; 7289 : 		}
-; 7290 : 	}
-; 7291 : 
-; 7292 : 	// If religious, next try to buy in the holy city, assuming it hasn't been converted
-; 7293 : 	if (bReligious && pMyReligion)
-; 7294 : 	{
-; 7295 : 		CvPlot* pHolyCityPlot = GC.getMap().plot(pMyReligion->m_iHolyCityX, pMyReligion->m_iHolyCityY);
+; 7309 : 				}
+; 7310 : 			}
+; 7311 : 		}
+; 7312 : 	}
+; 7313 : 
+; 7314 : 	// If religious, next try to buy in the holy city, assuming it hasn't been converted
+; 7315 : 	if (bReligious && pMyReligion)
+; 7316 : 	{
+; 7317 : 		CvPlot* pHolyCityPlot = GC.getMap().plot(pMyReligion->m_iHolyCityX, pMyReligion->m_iHolyCityY);
 
 $LN60@GetBestCit:
 	cmp	eax, ecx
@@ -23253,13 +23280,13 @@ $LN72@GetBestCit:
 	imul	ecx, 484				; 000001e4H
 	add	ecx, DWORD PTR [ebx+4068]
 
-; 7296 : 		if (pHolyCityPlot)
+; 7318 : 		if (pHolyCityPlot)
 
 	test	ecx, ecx
 	je	SHORT $LN127@GetBestCit
 
-; 7297 : 		{
-; 7298 : 			pHolyCity = pHolyCityPlot->getPlotCity();
+; 7319 : 		{
+; 7320 : 			pHolyCity = pHolyCityPlot->getPlotCity();
 
 	mov	eax, DWORD PTR [ecx+104]
 	test	eax, eax
@@ -23274,8 +23301,8 @@ $LN72@GetBestCit:
 	call	?getCity@CvPlayer@@QAEPAVCvCity@@H@Z	; CvPlayer::getCity
 	mov	DWORD PTR _pHolyCity$[esp+32], eax
 
-; 7299 : 
-; 7300 : 			if (pHolyCity && (pHolyCity->getOwner() == kPlayer.GetID()))
+; 7321 : 
+; 7322 : 			if (pHolyCity && (pHolyCity->getOwner() == kPlayer.GetID()))
 
 	test	eax, eax
 	je	SHORT $LN127@GetBestCit
@@ -23285,8 +23312,8 @@ $LN72@GetBestCit:
 	cmp	eax, DWORD PTR [ecx+44]
 	jne	SHORT $LN127@GetBestCit
 
-; 7301 : 			{
-; 7302 : 				if (pHolyCity->GetCityReligions()->GetReligiousMajority() == eReligion && pHolyCity->IsCanPurchase(true, true, eUnit, NO_BUILDING, NO_PROJECT, YIELD_FAITH))
+; 7323 : 			{
+; 7324 : 				if (pHolyCity->GetCityReligions()->GetReligiousMajority() == eReligion && pHolyCity->IsCanPurchase(true, true, eUnit, NO_BUILDING, NO_PROJECT, YIELD_FAITH))
 
 	mov	ecx, edx
 	call	?GetCityReligions@CvCity@@QBEPAVCvCityReligions@@XZ ; CvCity::GetCityReligions
@@ -23306,8 +23333,8 @@ $LN72@GetBestCit:
 	test	al, al
 	je	SHORT $LN127@GetBestCit
 
-; 7303 : 				{
-; 7304 : 					return pHolyCity;
+; 7325 : 				{
+; 7326 : 					return pHolyCity;
 
 	mov	eax, DWORD PTR _pHolyCity$[esp+32]
 	pop	edi
@@ -23315,31 +23342,31 @@ $LN72@GetBestCit:
 	pop	ebp
 	pop	ebx
 
-; 7333 : }
+; 7355 : }
 
 	add	esp, 16					; 00000010H
 	ret	0
 
-; 7297 : 		{
-; 7298 : 			pHolyCity = pHolyCityPlot->getPlotCity();
+; 7319 : 		{
+; 7320 : 			pHolyCity = pHolyCityPlot->getPlotCity();
 
 $LN86@GetBestCit:
 	mov	DWORD PTR _pHolyCity$[esp+32], 0
 $LN127@GetBestCit:
 
-; 7299 : 
-; 7300 : 			if (pHolyCity && (pHolyCity->getOwner() == kPlayer.GetID()))
+; 7321 : 
+; 7322 : 			if (pHolyCity && (pHolyCity->getOwner() == kPlayer.GetID()))
 
 	mov	ebx, DWORD PTR _kPlayer$[esp+28]
 $LN8@GetBestCit:
 
-; 7305 : 				}
-; 7306 : 			}
-; 7307 : 		}
-; 7308 : 	}
-; 7309 : 
-; 7310 : 	// Now see if there is another city with our majority religion
-; 7311 : 	for(pLoopCity = kPlayer.firstCity(&iLoop); pLoopCity != NULL; pLoopCity = kPlayer.nextCity(&iLoop))
+; 7327 : 				}
+; 7328 : 			}
+; 7329 : 		}
+; 7330 : 	}
+; 7331 : 
+; 7332 : 	// Now see if there is another city with our majority religion
+; 7333 : 	for(pLoopCity = kPlayer.firstCity(&iLoop); pLoopCity != NULL; pLoopCity = kPlayer.nextCity(&iLoop))
 
 	push	0
 	lea	eax, DWORD PTR _iLoop$[esp+36]
@@ -23354,8 +23381,8 @@ $LN8@GetBestCit:
 	npad	4
 $LL131@GetBestCit:
 
-; 7312 : 	{
-; 7313 : 		if (bReligious && pMyReligion && pLoopCity == pHolyCity)
+; 7334 : 	{
+; 7335 : 		if (bReligious && pMyReligion && pLoopCity == pHolyCity)
 
 	cmp	BYTE PTR _bReligious$[esp+32], 0
 	je	SHORT $LN4@GetBestCit
@@ -23365,21 +23392,21 @@ $LL131@GetBestCit:
 	je	SHORT $LN6@GetBestCit
 $LN4@GetBestCit:
 
-; 7314 : 		{
-; 7315 : 			continue;
-; 7316 : 		}
-; 7317 : 
-; 7318 : 		if (pLoopCity->getOwner() != kPlayer.GetID())
+; 7336 : 		{
+; 7337 : 			continue;
+; 7338 : 		}
+; 7339 : 
+; 7340 : 		if (pLoopCity->getOwner() != kPlayer.GetID())
 
 	mov	ecx, DWORD PTR [esi+84]
 	cmp	ecx, DWORD PTR [ebx+44]
 	jne	SHORT $LN6@GetBestCit
 
-; 7319 : 		{
-; 7320 : 			continue;
-; 7321 : 		}
-; 7322 : 
-; 7323 : 		if (pLoopCity->GetCityReligions()->GetReligiousMajority() == eReligion)
+; 7341 : 		{
+; 7342 : 			continue;
+; 7343 : 		}
+; 7344 : 
+; 7345 : 		if (pLoopCity->GetCityReligions()->GetReligiousMajority() == eReligion)
 
 	mov	ecx, esi
 	call	?GetCityReligions@CvCity@@QBEPAVCvCityReligions@@XZ ; CvCity::GetCityReligions
@@ -23388,8 +23415,8 @@ $LN4@GetBestCit:
 	cmp	eax, DWORD PTR _eReligion$[esp+28]
 	jne	SHORT $LN6@GetBestCit
 
-; 7324 : 		{
-; 7325 : 			if(pLoopCity->IsCanPurchase(true, true, eUnit, NO_BUILDING, NO_PROJECT, YIELD_FAITH))
+; 7346 : 		{
+; 7347 : 			if(pLoopCity->IsCanPurchase(true, true, eUnit, NO_BUILDING, NO_PROJECT, YIELD_FAITH))
 
 	push	5
 	push	-1
@@ -23403,13 +23430,13 @@ $LN4@GetBestCit:
 	jne	$LN111@GetBestCit
 $LN6@GetBestCit:
 
-; 7305 : 				}
-; 7306 : 			}
-; 7307 : 		}
-; 7308 : 	}
-; 7309 : 
-; 7310 : 	// Now see if there is another city with our majority religion
-; 7311 : 	for(pLoopCity = kPlayer.firstCity(&iLoop); pLoopCity != NULL; pLoopCity = kPlayer.nextCity(&iLoop))
+; 7327 : 				}
+; 7328 : 			}
+; 7329 : 		}
+; 7330 : 	}
+; 7331 : 
+; 7332 : 	// Now see if there is another city with our majority religion
+; 7333 : 	for(pLoopCity = kPlayer.firstCity(&iLoop); pLoopCity != NULL; pLoopCity = kPlayer.nextCity(&iLoop))
 
 	push	0
 	lea	edx, DWORD PTR _iLoop$[esp+36]
@@ -23424,18 +23451,18 @@ $LN5@GetBestCit:
 	pop	esi
 	pop	ebp
 
-; 7326 : 			{
-; 7327 : 				return pLoopCity;
-; 7328 : 			}
-; 7329 : 		}
-; 7330 : 	}
-; 7331 : 
-; 7332 : 	return NULL;
+; 7348 : 			{
+; 7349 : 				return pLoopCity;
+; 7350 : 			}
+; 7351 : 		}
+; 7352 : 	}
+; 7353 : 
+; 7354 : 	return NULL;
 
 	xor	eax, eax
 	pop	ebx
 
-; 7333 : }
+; 7355 : }
 
 	add	esp, 16					; 00000010H
 	ret	0
@@ -23452,12 +23479,12 @@ _eBuilding$ = 12					; size = 4
 _eReligion$ = 16					; size = 4
 ?GetBestCityFaithBuildingPurchase@CvReligionAIHelpers@@YAPAVCvCity@@AAVCvPlayer@@W4BuildingTypes@@W4ReligionTypes@@@Z PROC ; CvReligionAIHelpers::GetBestCityFaithBuildingPurchase, COMDAT
 
-; 7336 : {
+; 7358 : {
 
 	sub	esp, 8
 
-; 7337 : 	CvCity *pHolyCity = NULL;
-; 7338 : 	CvGameReligions* pReligions = GC.getGame().GetGameReligions();
+; 7359 : 	CvCity *pHolyCity = NULL;
+; 7360 : 	CvGameReligions* pReligions = GC.getGame().GetGameReligions();
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	ebx
@@ -23467,7 +23494,7 @@ _eReligion$ = 16					; size = 4
 	mov	DWORD PTR _pHolyCity$[esp+24], 0
 	call	?GetGameReligions@CvGame@@QAEPAVCvGameReligions@@XZ ; CvGame::GetGameReligions
 
-; 7339 : 	const CvReligion* pMyReligion = pReligions->GetReligion(eReligion, kPlayer.GetID());
+; 7361 : 	const CvReligion* pMyReligion = pReligions->GetReligion(eReligion, kPlayer.GetID());
 
 	mov	ecx, DWORD PTR _kPlayer$[esp+20]
 	mov	edx, DWORD PTR [ecx+44]
@@ -23477,15 +23504,15 @@ _eReligion$ = 16					; size = 4
 	mov	ecx, eax
 	call	?GetReligion@CvGameReligions@@QBEPBVCvReligion@@W4ReligionTypes@@W4PlayerTypes@@@Z ; CvGameReligions::GetReligion
 
-; 7340 : 
-; 7341 : 	// Try to buy in the holy city first
-; 7342 : 	if (pMyReligion)
+; 7362 : 
+; 7363 : 	// Try to buy in the holy city first
+; 7364 : 	if (pMyReligion)
 
 	test	eax, eax
 	je	$LN84@GetBestCit@2
 
-; 7343 : 	{
-; 7344 : 		CvPlot* pHolyCityPlot = GC.getMap().plot(pMyReligion->m_iHolyCityX, pMyReligion->m_iHolyCityY);
+; 7365 : 	{
+; 7366 : 		CvPlot* pHolyCityPlot = GC.getMap().plot(pMyReligion->m_iHolyCityX, pMyReligion->m_iHolyCityY);
 
 	mov	ebx, DWORD PTR [eax+12]
 	mov	eax, DWORD PTR [eax+8]
@@ -23547,13 +23574,13 @@ $LN44@GetBestCit@2:
 	imul	ecx, 484				; 000001e4H
 	add	ecx, DWORD PTR [ebp+4068]
 
-; 7345 : 		if (pHolyCityPlot)
+; 7367 : 		if (pHolyCityPlot)
 
 	test	ecx, ecx
 	je	SHORT $LN84@GetBestCit@2
 
-; 7346 : 		{
-; 7347 : 			pHolyCity = pHolyCityPlot->getPlotCity();
+; 7368 : 		{
+; 7369 : 			pHolyCity = pHolyCityPlot->getPlotCity();
 
 	mov	eax, DWORD PTR [ecx+104]
 	test	eax, eax
@@ -23568,8 +23595,8 @@ $LN44@GetBestCit@2:
 	call	?getCity@CvPlayer@@QAEPAVCvCity@@H@Z	; CvPlayer::getCity
 	mov	DWORD PTR _pHolyCity$[esp+24], eax
 
-; 7348 : 
-; 7349 : 			if (pHolyCity && (pHolyCity->getOwner() == kPlayer.GetID()) && pHolyCity->IsCanPurchase(true, true, NO_UNIT, eBuilding, NO_PROJECT, YIELD_FAITH))
+; 7370 : 
+; 7371 : 			if (pHolyCity && (pHolyCity->getOwner() == kPlayer.GetID()) && pHolyCity->IsCanPurchase(true, true, NO_UNIT, eBuilding, NO_PROJECT, YIELD_FAITH))
 
 	test	eax, eax
 	je	SHORT $LN84@GetBestCit@2
@@ -23589,8 +23616,8 @@ $LN44@GetBestCit@2:
 	test	al, al
 	je	SHORT $LN84@GetBestCit@2
 
-; 7350 : 			{
-; 7351 : 				return pHolyCity;
+; 7372 : 			{
+; 7373 : 				return pHolyCity;
 
 	mov	eax, DWORD PTR _pHolyCity$[esp+24]
 	pop	edi
@@ -23598,26 +23625,26 @@ $LN44@GetBestCit@2:
 	pop	ebp
 	pop	ebx
 
-; 7378 : }
+; 7400 : }
 
 	add	esp, 8
 	ret	0
 
-; 7346 : 		{
-; 7347 : 			pHolyCity = pHolyCityPlot->getPlotCity();
+; 7368 : 		{
+; 7369 : 			pHolyCity = pHolyCityPlot->getPlotCity();
 
 $LN58@GetBestCit@2:
 	mov	DWORD PTR _pHolyCity$[esp+24], 0
 $LN84@GetBestCit@2:
 
-; 7352 : 			}
-; 7353 : 		}
-; 7354 : 	}
-; 7355 : 
-; 7356 : 	// Now see if there is another city with our majority religion
-; 7357 : 	int iLoop;
-; 7358 : 	CvCity* pLoopCity;
-; 7359 : 	for(pLoopCity = kPlayer.firstCity(&iLoop); pLoopCity != NULL; pLoopCity = kPlayer.nextCity(&iLoop))
+; 7374 : 			}
+; 7375 : 		}
+; 7376 : 	}
+; 7377 : 
+; 7378 : 	// Now see if there is another city with our majority religion
+; 7379 : 	int iLoop;
+; 7380 : 	CvCity* pLoopCity;
+; 7381 : 	for(pLoopCity = kPlayer.firstCity(&iLoop); pLoopCity != NULL; pLoopCity = kPlayer.nextCity(&iLoop))
 
 	mov	edi, DWORD PTR _kPlayer$[esp+20]
 	push	0
@@ -23632,27 +23659,27 @@ $LN84@GetBestCit@2:
 	mov	ebx, DWORD PTR _eBuilding$[esp+20]
 $LL6@GetBestCit@2:
 
-; 7360 : 	{
-; 7361 : 		if(pLoopCity == pHolyCity)
+; 7382 : 	{
+; 7383 : 		if(pLoopCity == pHolyCity)
 
 	cmp	esi, ebp
 	je	SHORT $LN5@GetBestCit@2
 
-; 7362 : 		{
-; 7363 : 			continue;
-; 7364 : 		}
-; 7365 : 
-; 7366 : 		if(pLoopCity->getOwner() != kPlayer.GetID())
+; 7384 : 		{
+; 7385 : 			continue;
+; 7386 : 		}
+; 7387 : 
+; 7388 : 		if(pLoopCity->getOwner() != kPlayer.GetID())
 
 	mov	edx, DWORD PTR [esi+84]
 	cmp	edx, DWORD PTR [edi+44]
 	jne	SHORT $LN5@GetBestCit@2
 
-; 7367 : 		{
-; 7368 : 			continue;
-; 7369 : 		}
-; 7370 : 
-; 7371 : 		if(pLoopCity->IsCanPurchase(true, true, NO_UNIT, eBuilding, NO_PROJECT, YIELD_FAITH))
+; 7389 : 		{
+; 7390 : 			continue;
+; 7391 : 		}
+; 7392 : 
+; 7393 : 		if(pLoopCity->IsCanPurchase(true, true, NO_UNIT, eBuilding, NO_PROJECT, YIELD_FAITH))
 
 	push	5
 	push	-1
@@ -23666,14 +23693,14 @@ $LL6@GetBestCit@2:
 	jne	SHORT $LN80@GetBestCit@2
 $LN5@GetBestCit@2:
 
-; 7352 : 			}
-; 7353 : 		}
-; 7354 : 	}
-; 7355 : 
-; 7356 : 	// Now see if there is another city with our majority religion
-; 7357 : 	int iLoop;
-; 7358 : 	CvCity* pLoopCity;
-; 7359 : 	for(pLoopCity = kPlayer.firstCity(&iLoop); pLoopCity != NULL; pLoopCity = kPlayer.nextCity(&iLoop))
+; 7374 : 			}
+; 7375 : 		}
+; 7376 : 	}
+; 7377 : 
+; 7378 : 	// Now see if there is another city with our majority religion
+; 7379 : 	int iLoop;
+; 7380 : 	CvCity* pLoopCity;
+; 7381 : 	for(pLoopCity = kPlayer.firstCity(&iLoop); pLoopCity != NULL; pLoopCity = kPlayer.nextCity(&iLoop))
 
 	push	0
 	lea	eax, DWORD PTR _iLoop$[esp+28]
@@ -23688,30 +23715,30 @@ $LN4@GetBestCit@2:
 	pop	esi
 	pop	ebp
 
-; 7374 : 		}
-; 7375 : 	}
-; 7376 : 
-; 7377 : 	return NULL;
+; 7396 : 		}
+; 7397 : 	}
+; 7398 : 
+; 7399 : 	return NULL;
 
 	xor	eax, eax
 	pop	ebx
 
-; 7378 : }
+; 7400 : }
 
 	add	esp, 8
 	ret	0
 $LN80@GetBestCit@2:
 	pop	edi
 
-; 7372 : 		{
-; 7373 : 			return pLoopCity;
+; 7394 : 		{
+; 7395 : 			return pLoopCity;
 
 	mov	eax, esi
 	pop	esi
 	pop	ebp
 	pop	ebx
 
-; 7378 : }
+; 7400 : }
 
 	add	esp, 8
 	ret	0
@@ -23722,20 +23749,20 @@ PUBLIC	?DoesUnitPassFaithPurchaseCheck@CvReligionAIHelpers@@YA_NAAVCvPlayer@@W4U
 ;	COMDAT ?DoesUnitPassFaithPurchaseCheck@CvReligionAIHelpers@@YA_NAAVCvPlayer@@W4UnitTypes@@@Z
 _TEXT	SEGMENT
 _bRtnValue$ = -5					; size = 1
-_iLoop$228613 = -4					; size = 4
+_iLoop$228670 = -4					; size = 4
 _kPlayer$ = 8						; size = 4
 _eUnit$ = 12						; size = 4
 ?DoesUnitPassFaithPurchaseCheck@CvReligionAIHelpers@@YA_NAAVCvPlayer@@W4UnitTypes@@@Z PROC ; CvReligionAIHelpers::DoesUnitPassFaithPurchaseCheck, COMDAT
 
-; 7381 : {
+; 7403 : {
 
 	sub	esp, 8
 	push	ebx
 	push	ebp
 
-; 7382 : 	bool bRtnValue = true;
-; 7383 : 
-; 7384 : 	CvUnitEntry *pkUnitEntry = GC.getUnitInfo(eUnit);
+; 7404 : 	bool bRtnValue = true;
+; 7405 : 
+; 7406 : 	CvUnitEntry *pkUnitEntry = GC.getUnitInfo(eUnit);
 
 	mov	ebp, DWORD PTR _eUnit$[esp+12]
 	push	esi
@@ -23746,13 +23773,13 @@ _eUnit$ = 12						; size = 4
 	call	?getUnitInfo@CvGlobals@@QAEPAVCvUnitEntry@@W4UnitTypes@@@Z ; CvGlobals::getUnitInfo
 	mov	esi, eax
 
-; 7385 : 	if (pkUnitEntry)
+; 7407 : 	if (pkUnitEntry)
 
 	test	esi, esi
 	je	$LN32@DoesUnitPa
 
-; 7386 : 	{
-; 7387 : 		if (pkUnitEntry->IsSpreadReligion() || pkUnitEntry->IsRemoveHeresy())
+; 7408 : 	{
+; 7409 : 		if (pkUnitEntry->IsSpreadReligion() || pkUnitEntry->IsRemoveHeresy())
 
 	mov	ecx, esi
 	call	?IsSpreadReligion@CvUnitEntry@@QBE_NXZ	; CvUnitEntry::IsSpreadReligion
@@ -23764,21 +23791,21 @@ _eUnit$ = 12						; size = 4
 	je	SHORT $LN32@DoesUnitPa
 $LN8@DoesUnitPa:
 
-; 7388 : 		{
-; 7389 : 			bRtnValue = false;
-; 7390 : 
-; 7391 : 			// Religious unit, have to find a city with the majority religion we started
-; 7392 : 			// Now see if there is another city with our majority religion
-; 7393 : 			int iLoop;
-; 7394 : 			CvCity* pLoopCity;
-; 7395 : 
-; 7396 : 			CvGameReligions* pReligions = GC.getGame().GetGameReligions();
+; 7410 : 		{
+; 7411 : 			bRtnValue = false;
+; 7412 : 
+; 7413 : 			// Religious unit, have to find a city with the majority religion we started
+; 7414 : 			// Now see if there is another city with our majority religion
+; 7415 : 			int iLoop;
+; 7416 : 			CvCity* pLoopCity;
+; 7417 : 
+; 7418 : 			CvGameReligions* pReligions = GC.getGame().GetGameReligions();
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	mov	BYTE PTR _bRtnValue$[esp+24], 0
 	call	?GetGameReligions@CvGame@@QAEPAVCvGameReligions@@XZ ; CvGame::GetGameReligions
 
-; 7397 : 			ReligionTypes eReligion = pReligions->GetReligionCreatedByPlayer(kPlayer.GetID());
+; 7419 : 			ReligionTypes eReligion = pReligions->GetReligionCreatedByPlayer(kPlayer.GetID());
 
 	mov	edi, DWORD PTR _kPlayer$[esp+20]
 	mov	ecx, DWORD PTR [edi+44]
@@ -23787,16 +23814,16 @@ $LN8@DoesUnitPa:
 	call	?GetReligionCreatedByPlayer@CvGameReligions@@QBE?AW4ReligionTypes@@W4PlayerTypes@@@Z ; CvGameReligions::GetReligionCreatedByPlayer
 	mov	ebx, eax
 
-; 7398 : 			if (eReligion > RELIGION_PANTHEON)
+; 7420 : 			if (eReligion > RELIGION_PANTHEON)
 
 	test	ebx, ebx
 	jle	SHORT $LN32@DoesUnitPa
 
-; 7399 : 			{
-; 7400 : 				for(pLoopCity = kPlayer.firstCity(&iLoop); pLoopCity != NULL; pLoopCity = kPlayer.nextCity(&iLoop))
+; 7421 : 			{
+; 7422 : 				for(pLoopCity = kPlayer.firstCity(&iLoop); pLoopCity != NULL; pLoopCity = kPlayer.nextCity(&iLoop))
 
 	push	0
-	lea	edx, DWORD PTR _iLoop$228613[esp+28]
+	lea	edx, DWORD PTR _iLoop$228670[esp+28]
 	push	edx
 	mov	ecx, edi
 	call	?firstCity@CvPlayer@@QAEPAVCvCity@@PAH_N@Z ; CvPlayer::firstCity
@@ -23805,18 +23832,18 @@ $LN8@DoesUnitPa:
 	je	SHORT $LN32@DoesUnitPa
 $LL30@DoesUnitPa:
 
-; 7401 : 				{
-; 7402 : 					if (pLoopCity->getOwner() != kPlayer.GetID())
+; 7423 : 				{
+; 7424 : 					if (pLoopCity->getOwner() != kPlayer.GetID())
 
 	mov	eax, DWORD PTR [esi+84]
 	cmp	eax, DWORD PTR [edi+44]
 	jne	SHORT $LN5@DoesUnitPa
 
-; 7403 : 					{
-; 7404 : 						continue;
-; 7405 : 					}
-; 7406 : 
-; 7407 : 					if (pLoopCity->GetCityReligions()->GetReligiousMajority() == eReligion)
+; 7425 : 					{
+; 7426 : 						continue;
+; 7427 : 					}
+; 7428 : 
+; 7429 : 					if (pLoopCity->GetCityReligions()->GetReligiousMajority() == eReligion)
 
 	mov	ecx, esi
 	call	?GetCityReligions@CvCity@@QBEPAVCvCityReligions@@XZ ; CvCity::GetCityReligions
@@ -23825,8 +23852,8 @@ $LL30@DoesUnitPa:
 	cmp	eax, ebx
 	jne	SHORT $LN5@DoesUnitPa
 
-; 7408 : 					{
-; 7409 : 						if(pLoopCity->IsCanPurchase(false /*bTestPurchaseCost*/, true, eUnit, NO_BUILDING, NO_PROJECT, YIELD_FAITH))
+; 7430 : 					{
+; 7431 : 						if(pLoopCity->IsCanPurchase(false /*bTestPurchaseCost*/, true, eUnit, NO_BUILDING, NO_PROJECT, YIELD_FAITH))
 
 	push	5
 	push	-1
@@ -23840,11 +23867,11 @@ $LL30@DoesUnitPa:
 	jne	SHORT $LN28@DoesUnitPa
 $LN5@DoesUnitPa:
 
-; 7399 : 			{
-; 7400 : 				for(pLoopCity = kPlayer.firstCity(&iLoop); pLoopCity != NULL; pLoopCity = kPlayer.nextCity(&iLoop))
+; 7421 : 			{
+; 7422 : 				for(pLoopCity = kPlayer.firstCity(&iLoop); pLoopCity != NULL; pLoopCity = kPlayer.nextCity(&iLoop))
 
 	push	0
-	lea	ecx, DWORD PTR _iLoop$228613[esp+28]
+	lea	ecx, DWORD PTR _iLoop$228670[esp+28]
 	push	ecx
 	mov	ecx, edi
 	call	?nextCity@CvPlayer@@QAEPAVCvCity@@PAH_N@Z ; CvPlayer::nextCity
@@ -23853,14 +23880,14 @@ $LN5@DoesUnitPa:
 	jne	SHORT $LL30@DoesUnitPa
 $LN32@DoesUnitPa:
 
-; 7412 : 						}
-; 7413 : 					}
-; 7414 : 				}
-; 7415 : 			}
-; 7416 : 		}
-; 7417 : 	}
-; 7418 : 
-; 7419 : 	return bRtnValue;
+; 7434 : 						}
+; 7435 : 					}
+; 7436 : 				}
+; 7437 : 			}
+; 7438 : 		}
+; 7439 : 	}
+; 7440 : 
+; 7441 : 	return bRtnValue;
 
 	mov	al, BYTE PTR _bRtnValue$[esp+24]
 	pop	edi
@@ -23868,7 +23895,7 @@ $LN32@DoesUnitPa:
 	pop	ebp
 	pop	ebx
 
-; 7420 : }
+; 7442 : }
 
 	add	esp, 8
 	ret	0
@@ -23877,13 +23904,13 @@ $LN28@DoesUnitPa:
 	pop	esi
 	pop	ebp
 
-; 7410 : 						{
-; 7411 : 							return true;
+; 7432 : 						{
+; 7433 : 							return true;
 
 	mov	al, 1
 	pop	ebx
 
-; 7420 : }
+; 7442 : }
 
 	add	esp, 8
 	ret	0
@@ -24802,7 +24829,7 @@ xdata$x	ENDS
 ;	COMDAT ??$GetLocalizedText@VCvString@@PBD@@YA?AVCvString@@PBDABV0@ABQBD@Z
 _TEXT	SEGMENT
 _bytes$ = -100						; size = 4
-$T237819 = -96						; size = 4
+$T237892 = -96						; size = 4
 _text$ = -92						; size = 80
 __$EHRec$ = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
@@ -24831,7 +24858,7 @@ _arg2$ = 20						; size = 4
 	xor	ebx, ebx
 	push	ecx
 	mov	DWORD PTR __$EHRec$[esp+128], ebx
-	mov	DWORD PTR $T237819[esp+120], ebx
+	mov	DWORD PTR $T237892[esp+120], ebx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
 
@@ -24875,7 +24902,7 @@ _arg2$ = 20						; size = 4
 	push	edx
 	push	edi
 	mov	ecx, esi
-	mov	DWORD PTR $T237819[esp+120], 1
+	mov	DWORD PTR $T237892[esp+120], 1
 	call	DWORD PTR __imp_?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBDI@Z
 	lea	ecx, DWORD PTR _text$[esp+112]
 	mov	BYTE PTR __$EHRec$[esp+120], bl
@@ -24898,10 +24925,10 @@ __unwindfunclet$??$GetLocalizedText@VCvString@@PBD@@YA?AVCvString@@PBDABV0@ABQBD
 	lea	ecx, DWORD PTR _text$[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$??$GetLocalizedText@VCvString@@PBD@@YA?AVCvString@@PBDABV0@ABQBD@Z$1:
-	mov	eax, DWORD PTR $T237819[ebp]
+	mov	eax, DWORD PTR $T237892[ebp]
 	and	eax, 1
 	je	$LN5@GetLocaliz@2
-	and	DWORD PTR $T237819[ebp], -2		; fffffffeH
+	and	DWORD PTR $T237892[ebp], -2		; fffffffeH
 	mov	ecx, DWORD PTR ___$ReturnUdt$[ebp-4]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 $LN5@GetLocaliz@2:
@@ -24934,7 +24961,7 @@ xdata$x	ENDS
 ;	COMDAT ??$GetLocalizedText@VCvString@@@@YA?AVCvString@@PBDV0@@Z
 _TEXT	SEGMENT
 _bytes$ = -100						; size = 4
-$T237848 = -96						; size = 4
+$T237921 = -96						; size = 4
 _text$ = -92						; size = 80
 __$EHRec$ = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
@@ -24953,7 +24980,7 @@ _arg1$ = 16						; size = 28
 	push	esi
 	xor	esi, esi
 	push	edi
-	mov	DWORD PTR $T237848[esp+108], esi
+	mov	DWORD PTR $T237921[esp+108], esi
 
 ; 502  : 	Localization::String text = Localization::Lookup(szString);
 
@@ -24999,7 +25026,7 @@ _arg1$ = 16						; size = 28
 	push	eax
 	push	edi
 	mov	ecx, esi
-	mov	DWORD PTR $T237848[esp+116], 1
+	mov	DWORD PTR $T237921[esp+116], 1
 	call	DWORD PTR __imp_?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBDI@Z
 	lea	ecx, DWORD PTR _text$[esp+108]
 	mov	BYTE PTR __$EHRec$[esp+116], 1
@@ -25027,10 +25054,10 @@ __unwindfunclet$??$GetLocalizedText@VCvString@@@@YA?AVCvString@@PBDV0@@Z$1:
 	lea	ecx, DWORD PTR _text$[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$??$GetLocalizedText@VCvString@@@@YA?AVCvString@@PBDV0@@Z$2:
-	mov	eax, DWORD PTR $T237848[ebp]
+	mov	eax, DWORD PTR $T237921[ebp]
 	and	eax, 1
 	je	$LN6@GetLocaliz@3
-	and	DWORD PTR $T237848[ebp], -2		; fffffffeH
+	and	DWORD PTR $T237921[ebp], -2		; fffffffeH
 	mov	ecx, DWORD PTR ___$ReturnUdt$[ebp-4]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 $LN6@GetLocaliz@3:
@@ -25099,8 +25126,8 @@ PUBLIC	??$unchecked_uninitialized_copy@V?$_Vector_const_iterator@W4BeliefTypes@@
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ??$unchecked_uninitialized_copy@V?$_Vector_const_iterator@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@PAW4BeliefTypes@@V?$allocator@W4BeliefTypes@@@2@@stdext@@YAPAW4BeliefTypes@@V?$_Vector_const_iterator@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@0PAW41@AAV?$allocator@W4BeliefTypes@@@3@@Z
 _TEXT	SEGMENT
-$T237945 = -4						; size = 1
-__Cat$237950 = -4					; size = 1
+$T238018 = -4						; size = 1
+__Cat$238023 = -4					; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
@@ -25116,9 +25143,9 @@ __Al$ = 20						; size = 4
 ; 822  : 		_STD _Ptr_cat(_First, _Dest), _STD _Range_checked_iterator_tag()));
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T237945[esp+4], 0
-	mov	eax, DWORD PTR $T237945[esp+4]
-	mov	ecx, DWORD PTR __Cat$237950[esp+4]
+	mov	BYTE PTR $T238018[esp+4], 0
+	mov	eax, DWORD PTR $T238018[esp+4]
+	mov	ecx, DWORD PTR __Cat$238023[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -25214,8 +25241,8 @@ PUBLIC	??$unchecked_uninitialized_copy@V?$_Vector_iterator@W4BeliefTypes@@V?$all
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$unchecked_uninitialized_copy@V?$_Vector_iterator@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@PAW4BeliefTypes@@V?$allocator@W4BeliefTypes@@@2@@stdext@@YAPAW4BeliefTypes@@V?$_Vector_iterator@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@0PAW41@AAV?$allocator@W4BeliefTypes@@@3@@Z
 _TEXT	SEGMENT
-$T237997 = -4						; size = 1
-__Cat$238002 = -4					; size = 1
+$T238070 = -4						; size = 1
+__Cat$238075 = -4					; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
@@ -25231,9 +25258,9 @@ __Al$ = 20						; size = 4
 ; 822  : 		_STD _Ptr_cat(_First, _Dest), _STD _Range_checked_iterator_tag()));
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T237997[esp+4], 0
-	mov	eax, DWORD PTR $T237997[esp+4]
-	mov	ecx, DWORD PTR __Cat$238002[esp+4]
+	mov	BYTE PTR $T238070[esp+4], 0
+	mov	eax, DWORD PTR $T238070[esp+4]
+	mov	ecx, DWORD PTR __Cat$238075[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -25550,8 +25577,8 @@ PUBLIC	??$unchecked_uninitialized_copy@PAW4BeliefTypes@@PAW41@V?$allocator@W4Bel
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ??$unchecked_uninitialized_copy@PAW4BeliefTypes@@PAW41@V?$allocator@W4BeliefTypes@@@std@@@stdext@@YAPAW4BeliefTypes@@PAW41@00AAV?$allocator@W4BeliefTypes@@@std@@@Z
 _TEXT	SEGMENT
-$T238076 = -4						; size = 1
-__Cat$238080 = -4					; size = 1
+$T238149 = -4						; size = 1
+__Cat$238153 = -4					; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
@@ -25567,9 +25594,9 @@ __Al$ = 20						; size = 4
 ; 822  : 		_STD _Ptr_cat(_First, _Dest), _STD _Range_checked_iterator_tag()));
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T238076[esp+4], 0
-	mov	eax, DWORD PTR $T238076[esp+4]
-	mov	ecx, DWORD PTR __Cat$238080[esp+4]
+	mov	BYTE PTR $T238149[esp+4], 0
+	mov	eax, DWORD PTR $T238149[esp+4]
+	mov	ecx, DWORD PTR __Cat$238153[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -25649,10 +25676,10 @@ __ehfuncinfo$?GetReligionToFound@CvGameReligions@@QAE?AW4ReligionTypes@@W4Player
 xdata$x	ENDS
 ;	COMDAT ?GetReligionToFound@CvGameReligions@@QAE?AW4ReligionTypes@@W4PlayerTypes@@@Z
 _TEXT	SEGMENT
-_iValue$224866 = -20					; size = 4
-$T238145 = -16						; size = 1
+_iValue$224908 = -20					; size = 4
+$T238218 = -16						; size = 1
 __$EHRec$ = -12						; size = 12
-_args$224865 = 8					; size = 4
+_args$224907 = 8					; size = 4
 _ePlayer$ = 8						; size = 4
 ?GetReligionToFound@CvGameReligions@@QAE?AW4ReligionTypes@@W4PlayerTypes@@@Z PROC ; CvGameReligions::GetReligionToFound, COMDAT
 ; _this$ = ecx
@@ -25700,12 +25727,12 @@ _ePlayer$ = 8						; size = 4
 ; 674  : 	{
 ; 675  : 		CvLuaArgsHandle args;
 
-	lea	ecx, DWORD PTR _args$224865[esp+32]
+	lea	ecx, DWORD PTR _args$224907[esp+32]
 	call	??0CvLuaArgsHandle@@QAE@XZ		; CvLuaArgsHandle::CvLuaArgsHandle
 
 ; 676  : 		args->Push(ePlayer);
 
-	mov	ecx, DWORD PTR _args$224865[esp+32]
+	mov	ecx, DWORD PTR _args$224907[esp+32]
 	mov	eax, DWORD PTR [ecx]
 	mov	edx, DWORD PTR [eax+8]
 	push	edi
@@ -25714,7 +25741,7 @@ _ePlayer$ = 8						; size = 4
 
 ; 677  : 		args->Push(eCivReligion);
 
-	mov	ecx, DWORD PTR _args$224865[esp+32]
+	mov	ecx, DWORD PTR _args$224907[esp+32]
 	mov	eax, DWORD PTR [ecx]
 	mov	edx, DWORD PTR [eax+8]
 	push	esi
@@ -25736,11 +25763,11 @@ $LL35@GetReligio@6:
 	cmp	eax, ecx
 	jne	SHORT $LL35@GetReligio@6
 $LN33@GetReligio@6:
-	mov	BYTE PTR $T238145[esp+36], 0
+	mov	BYTE PTR $T238218[esp+36], 0
 $LN36@GetReligio@6:
-	mov	ecx, DWORD PTR _args$224865[esp+32]
+	mov	ecx, DWORD PTR _args$224907[esp+32]
 	mov	edx, DWORD PTR [ecx]
-	mov	eax, DWORD PTR $T238145[esp+36]
+	mov	eax, DWORD PTR $T238218[esp+36]
 	mov	edx, DWORD PTR [edx+16]
 	push	eax
 	call	edx
@@ -25749,13 +25776,13 @@ $LN36@GetReligio@6:
 ; 680  : 		int iValue = 0;
 ; 681  : 		if (LuaSupport::CallAccumulator(pkScriptSystem, "GetReligionToFound", args.get(), iValue)) 
 
-	mov	ecx, DWORD PTR _args$224865[esp+32]
-	lea	eax, DWORD PTR _iValue$224866[esp+36]
+	mov	ecx, DWORD PTR _args$224907[esp+32]
+	lea	eax, DWORD PTR _iValue$224908[esp+36]
 	push	eax
 	push	ecx
-	push	OFFSET $SG224868
+	push	OFFSET $SG224910
 	push	ebp
-	mov	DWORD PTR _iValue$224866[esp+52], 0
+	mov	DWORD PTR _iValue$224908[esp+52], 0
 	call	?CallAccumulator@LuaSupport@@YA_NPAVICvEngineScriptSystem1@@PBDPAVICvEngineScriptSystemArgs1@@AAH@Z ; LuaSupport::CallAccumulator
 	add	esp, 16					; 00000010H
 	test	al, al
@@ -25767,11 +25794,11 @@ $LN36@GetReligio@6:
 ; 685  : #else
 ; 686  : 			if (iValue >= 0 && iValue < GC.getNumReligionInfos() && iValue != RELIGION_PANTHEON)
 
-	cmp	DWORD PTR _iValue$224866[esp+36], 0
+	cmp	DWORD PTR _iValue$224908[esp+36], 0
 	jl	SHORT $LN102@GetReligio@6
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getNumReligionInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumReligionInfos
-	mov	ecx, DWORD PTR _iValue$224866[esp+36]
+	mov	ecx, DWORD PTR _iValue$224908[esp+36]
 	cmp	ecx, eax
 	jge	SHORT $LN102@GetReligio@6
 	test	ecx, ecx
@@ -25788,7 +25815,7 @@ $LN102@GetReligio@6:
 ; 691  : 		}
 ; 692  : 	}
 
-	lea	ecx, DWORD PTR _args$224865[esp+32]
+	lea	ecx, DWORD PTR _args$224907[esp+32]
 	mov	DWORD PTR __$EHRec$[esp+44], -1
 	call	??1CvLuaArgsHandle@@QAE@XZ		; CvLuaArgsHandle::~CvLuaArgsHandle
 $LN103@GetReligio@6:
@@ -25851,7 +25878,7 @@ $LN88@GetReligio@6:
 
 ; 678  : 		args->Push(HasBeenFounded(eCivReligion));
 
-	mov	BYTE PTR $T238145[esp+36], 1
+	mov	BYTE PTR $T238218[esp+36], 1
 	jmp	$LN36@GetReligio@6
 $LN104@GetReligio@6:
 
@@ -26055,7 +26082,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetReligionToFound@CvGameReligions@@QAE?AW4ReligionTypes@@W4PlayerTypes@@@Z$0:
-	lea	ecx, DWORD PTR _args$224865[ebp-4]
+	lea	ecx, DWORD PTR _args$224907[ebp-4]
 	jmp	??1CvLuaArgsHandle@@QAE@XZ		; CvLuaArgsHandle::~CvLuaArgsHandle
 __ehhandler$?GetReligionToFound@CvGameReligions@@QAE?AW4ReligionTypes@@W4PlayerTypes@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?GetReligionToFound@CvGameReligions@@QAE?AW4ReligionTypes@@W4PlayerTypes@@@Z
@@ -26079,7 +26106,7 @@ __ehfuncinfo$?CanFoundReligion@CvGameReligions@@QAE?AW4FOUNDING_RESULT@1@W4Playe
 xdata$x	ENDS
 ;	COMDAT ?CanFoundReligion@CvGameReligions@@QAE?AW4FOUNDING_RESULT@1@W4PlayerTypes@@W4ReligionTypes@@PBDW4BeliefTypes@@333PAVCvCity@@@Z
 _TEXT	SEGMENT
-_it$225059 = -348					; size = 4
+_it$225101 = -348					; size = 4
 _this$ = -344						; size = 4
 _kReligion$ = -340					; size = 328
 __$EHRec$ = -12						; size = 12
@@ -26312,7 +26339,7 @@ $LN12@CanFoundRe:
 	imul	ecx, 328				; 00000148H
 	add	ecx, esi
 	push	ebp
-	mov	DWORD PTR _it$225059[esp+364], esi
+	mov	DWORD PTR _it$225101[esp+364], esi
 	cmp	esi, ecx
 	je	$LN9@CanFoundRe
 	lea	ebp, DWORD PTR [esi+152]
@@ -26396,7 +26423,7 @@ $LN72@CanFoundRe:
 	test	ebx, ebx
 	jne	SHORT $LL6@CanFoundRe
 	mov	edi, DWORD PTR _this$[esp+364]
-	mov	esi, DWORD PTR _it$225059[esp+364]
+	mov	esi, DWORD PTR _it$225101[esp+364]
 $LN75@CanFoundRe:
 	mov	ebx, DWORD PTR _ePlayer$[esp+360]
 $LN10@CanFoundRe:
@@ -26414,7 +26441,7 @@ $LN10@CanFoundRe:
 	add	eax, DWORD PTR [edi]
 	add	esi, 328				; 00000148H
 	add	ebp, 328				; 00000148H
-	mov	DWORD PTR _it$225059[esp+364], esi
+	mov	DWORD PTR _it$225101[esp+364], esi
 	cmp	esi, eax
 	jne	$LL11@CanFoundRe
 $LN9@CanFoundRe:
@@ -26516,25 +26543,25 @@ __unwindtable$?EnhanceReligion@CvGameReligions@@QAEXW4PlayerTypes@@W4ReligionTyp
 xdata$x	ENDS
 ;	COMDAT ?EnhanceReligion@CvGameReligions@@QAEXW4PlayerTypes@@W4ReligionTypes@@W4BeliefTypes@@2@Z
 _TEXT	SEGMENT
-_pNotifications$225107 = -344				; size = 4
-_args$225097 = -344					; size = 4
-_iNotifyLoop$225100 = -340				; size = 4
+_pNotifications$225149 = -344				; size = 4
+_args$225139 = -344					; size = 4
+_iNotifyLoop$225142 = -340				; size = 4
 tv625 = -336						; size = 4
 _kPlayer$ = -332					; size = 4
-_bResult$225098 = -325					; size = 1
-_kNotifyTeam$225123 = -324				; size = 4
-_kNotifyPlayer$225106 = -324				; size = 4
+_bResult$225140 = -325					; size = 1
+_kNotifyTeam$225165 = -324				; size = 4
+_kNotifyPlayer$225148 = -324				; size = 4
 _this$ = -320						; size = 4
-$T238368 = -316						; size = 4
-$T238422 = -312						; size = 4
-$T238370 = -308						; size = 28
-$T238369 = -308						; size = 28
-$T238367 = -308						; size = 28
-_strLogMsg$225131 = -280				; size = 28
-_unknownText$225126 = -252				; size = 80
-_localizedText$225118 = -252				; size = 80
-_notificationText$225112 = -172				; size = 80
-_strSummary$225109 = -92				; size = 80
+$T238441 = -316						; size = 4
+$T238495 = -312						; size = 4
+$T238443 = -308						; size = 28
+$T238442 = -308						; size = 28
+$T238440 = -308						; size = 28
+_strLogMsg$225173 = -280				; size = 28
+_unknownText$225168 = -252				; size = 80
+_localizedText$225160 = -252				; size = 80
+_notificationText$225154 = -172				; size = 80
+_strSummary$225151 = -92				; size = 80
 __$EHRec$ = -12						; size = 12
 _ePlayer$ = 8						; size = 4
 _eReligion$ = 12					; size = 4
@@ -26659,12 +26686,12 @@ $LN95@EnhanceRel:
 ; 1160 : 	{
 ; 1161 : 		CvLuaArgsHandle args;
 
-	lea	ecx, DWORD PTR _args$225097[esp+360]
+	lea	ecx, DWORD PTR _args$225139[esp+360]
 	call	??0CvLuaArgsHandle@@QAE@XZ		; CvLuaArgsHandle::CvLuaArgsHandle
 
 ; 1162 : 		args->Push(ePlayer);
 
-	mov	ecx, DWORD PTR _args$225097[esp+360]
+	mov	ecx, DWORD PTR _args$225139[esp+360]
 	mov	eax, DWORD PTR [ecx]
 	mov	edx, DWORD PTR _ePlayer$[esp+356]
 	mov	eax, DWORD PTR [eax+8]
@@ -26674,7 +26701,7 @@ $LN95@EnhanceRel:
 
 ; 1163 : 		args->Push(eReligion);
 
-	mov	ecx, DWORD PTR _args$225097[esp+360]
+	mov	ecx, DWORD PTR _args$225139[esp+360]
 	mov	edx, DWORD PTR [ecx]
 	mov	eax, DWORD PTR [edx+8]
 	push	ebp
@@ -26682,7 +26709,7 @@ $LN95@EnhanceRel:
 
 ; 1164 : 		args->Push(eBelief1);
 
-	mov	ecx, DWORD PTR _args$225097[esp+360]
+	mov	ecx, DWORD PTR _args$225139[esp+360]
 	mov	edx, DWORD PTR [ecx]
 	mov	eax, DWORD PTR _eBelief1$[esp+356]
 	mov	edx, DWORD PTR [edx+8]
@@ -26691,7 +26718,7 @@ $LN95@EnhanceRel:
 
 ; 1165 : 		args->Push(eBelief2);
 
-	mov	ecx, DWORD PTR _args$225097[esp+360]
+	mov	ecx, DWORD PTR _args$225139[esp+360]
 	mov	eax, DWORD PTR [ecx]
 	mov	edx, DWORD PTR _eBelief2$[esp+356]
 	mov	eax, DWORD PTR [eax+8]
@@ -26702,18 +26729,18 @@ $LN95@EnhanceRel:
 ; 1167 : 		bool bResult;
 ; 1168 : 		LuaSupport::CallHook(pkScriptSystem, "ReligionEnhanced", args.get(), bResult);
 
-	mov	edx, DWORD PTR _args$225097[esp+360]
-	lea	ecx, DWORD PTR _bResult$225098[esp+360]
+	mov	edx, DWORD PTR _args$225139[esp+360]
+	lea	ecx, DWORD PTR _bResult$225140[esp+360]
 	push	ecx
 	push	edx
-	push	OFFSET $SG225099
+	push	OFFSET $SG225141
 	push	edi
 	call	?CallHook@LuaSupport@@YA_NPAVICvEngineScriptSystem1@@PBDPAVICvEngineScriptSystemArgs1@@AA_N@Z ; LuaSupport::CallHook
 	add	esp, 16					; 00000010H
 
 ; 1169 : 	}
 
-	lea	ecx, DWORD PTR _args$225097[esp+360]
+	lea	ecx, DWORD PTR _args$225139[esp+360]
 	mov	DWORD PTR __$EHRec$[esp+368], -1
 	call	??1CvLuaArgsHandle@@QAE@XZ		; CvLuaArgsHandle::~CvLuaArgsHandle
 $LN10@EnhanceRel:
@@ -26735,7 +26762,7 @@ $LN10@EnhanceRel:
 ; 1176 : 	for(int iNotifyLoop = 0; iNotifyLoop < MAX_MAJOR_CIVS; ++iNotifyLoop){
 
 	xor	eax, eax
-	mov	DWORD PTR _iNotifyLoop$225100[esp+360], eax
+	mov	DWORD PTR _iNotifyLoop$225142[esp+360], eax
 	mov	DWORD PTR tv625[esp+360], eax
 $LL99@EnhanceRel:
 
@@ -26745,12 +26772,12 @@ $LL99@EnhanceRel:
 	mov	eax, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	mov	ecx, DWORD PTR tv625[esp+360]
 	add	ecx, eax
-	mov	DWORD PTR _kNotifyPlayer$225106[esp+360], ecx
+	mov	DWORD PTR _kNotifyPlayer$225148[esp+360], ecx
 
 ; 1179 : 		CvNotifications* pNotifications = kNotifyPlayer.GetNotifications();
 
 	call	?GetNotifications@CvPlayer@@QBEPAVCvNotifications@@XZ ; CvPlayer::GetNotifications
-	mov	DWORD PTR _pNotifications$225107[esp+360], eax
+	mov	DWORD PTR _pNotifications$225149[esp+360], eax
 
 ; 1180 : 		if(pNotifications){
 
@@ -26759,15 +26786,15 @@ $LL99@EnhanceRel:
 
 ; 1181 : 			Localization::String strSummary = Localization::Lookup("TXT_KEY_NOTIFICATION_RELIGION_ENHANCED_S");
 
-	lea	edx, DWORD PTR _strSummary$225109[esp+360]
-	push	OFFSET $SG225111
+	lea	edx, DWORD PTR _strSummary$225151[esp+360]
+	push	OFFSET $SG225153
 	push	edx
 	call	ebp
 
 ; 1182 : 			Localization::String notificationText = Localization::Lookup("TXT_KEY_NOTIFICATION_RELIGION_ENHANCED");
 
-	lea	eax, DWORD PTR _notificationText$225112[esp+368]
-	push	OFFSET $SG225114
+	lea	eax, DWORD PTR _notificationText$225154[esp+368]
+	push	OFFSET $SG225156
 	push	eax
 	mov	DWORD PTR __$EHRec$[esp+384], 1
 	call	ebp
@@ -26778,23 +26805,23 @@ $LL99@EnhanceRel:
 	mov	ecx, DWORD PTR _kPlayer$[esp+360]
 	mov	BYTE PTR __$EHRec$[esp+368], 2
 	call	?getCivilizationShortDescriptionKey@CvPlayer@@QBEPBDXZ ; CvPlayer::getCivilizationShortDescriptionKey
-	lea	ecx, DWORD PTR $T238367[esp+360]
+	lea	ecx, DWORD PTR $T238440[esp+360]
 	push	ecx
 	mov	ecx, esi
-	mov	DWORD PTR $T238368[esp+364], eax
+	mov	DWORD PTR $T238441[esp+364], eax
 	call	?GetName@CvReligion@@QBE?AVCvString@@XZ	; CvReligion::GetName
-	mov	DWORD PTR $T238422[esp+360], eax
-	mov	edx, DWORD PTR $T238368[esp+360]
+	mov	DWORD PTR $T238495[esp+360], eax
+	mov	edx, DWORD PTR $T238441[esp+360]
 	push	edx
-	lea	ecx, DWORD PTR _notificationText$225112[esp+364]
+	lea	ecx, DWORD PTR _notificationText$225154[esp+364]
 	mov	BYTE PTR __$EHRec$[esp+372], 3
 	call	ebx
-	mov	ecx, DWORD PTR $T238422[esp+360]
+	mov	ecx, DWORD PTR $T238495[esp+360]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
-	lea	ecx, DWORD PTR _notificationText$225112[esp+364]
+	lea	ecx, DWORD PTR _notificationText$225154[esp+364]
 	call	ebx
-	lea	ecx, DWORD PTR $T238367[esp+360]
+	lea	ecx, DWORD PTR $T238440[esp+360]
 	mov	BYTE PTR __$EHRec$[esp+368], 2
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -26802,22 +26829,22 @@ $LL99@EnhanceRel:
 ; 1185 : 			// Message slightly different for enhancing player
 ; 1186 : 			if(ePlayer == eNotifyPlayer)
 
-	mov	eax, DWORD PTR _iNotifyLoop$225100[esp+360]
+	mov	eax, DWORD PTR _iNotifyLoop$225142[esp+360]
 	cmp	DWORD PTR _ePlayer$[esp+356], eax
 	jne	SHORT $LN5@EnhanceRel
 
 ; 1187 : 			{
 ; 1188 : 				Localization::String localizedText = Localization::Lookup("TXT_KEY_NOTIFICATION_RELIGION_ENHANCED_ACTIVE_PLAYER");
 
-	lea	ecx, DWORD PTR _localizedText$225118[esp+360]
-	push	OFFSET $SG225120
+	lea	ecx, DWORD PTR _localizedText$225160[esp+360]
+	push	OFFSET $SG225162
 	push	ecx
 	call	ebp
 	add	esp, 8
 
 ; 1189 : 				localizedText << it->GetName();
 
-	lea	edx, DWORD PTR $T238369[esp+360]
+	lea	edx, DWORD PTR $T238442[esp+360]
 	push	edx
 	mov	ecx, esi
 	mov	BYTE PTR __$EHRec$[esp+372], 4
@@ -26826,9 +26853,9 @@ $LL99@EnhanceRel:
 	mov	BYTE PTR __$EHRec$[esp+368], 5
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
-	lea	ecx, DWORD PTR _localizedText$225118[esp+364]
+	lea	ecx, DWORD PTR _localizedText$225160[esp+364]
 	call	ebx
-	lea	ecx, DWORD PTR $T238369[esp+360]
+	lea	ecx, DWORD PTR $T238442[esp+360]
 	mov	BYTE PTR __$EHRec$[esp+368], 4
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -26839,10 +26866,10 @@ $LL99@EnhanceRel:
 	push	-1
 	push	-1
 	push	-1
-	lea	ecx, DWORD PTR _strSummary$225109[esp+376]
+	lea	ecx, DWORD PTR _strSummary$225151[esp+376]
 	call	edi
 	push	eax
-	lea	ecx, DWORD PTR _localizedText$225118[esp+380]
+	lea	ecx, DWORD PTR _localizedText$225160[esp+380]
 	call	edi
 	push	eax
 	push	-403868607				; e7ed7441H
@@ -26856,7 +26883,7 @@ $LN5@EnhanceRel:
 ; 1194 : 			{
 ; 1195 : 				CvTeam& kNotifyTeam = GET_TEAM(kNotifyPlayer.getTeam());
 
-	mov	eax, DWORD PTR _kNotifyPlayer$225106[esp+360]
+	mov	eax, DWORD PTR _kNotifyPlayer$225148[esp+360]
 	mov	eax, DWORD PTR [eax+44]
 	cmp	eax, 63					; 0000003fH
 	ja	SHORT $LN67@EnhanceRel
@@ -26871,11 +26898,11 @@ $LN68@EnhanceRel:
 ; 1196 : 				if(kNotifyTeam.isHasMet(kPlayer.getTeam()))
 
 	mov	ecx, DWORD PTR _kPlayer$[esp+360]
-	imul	eax, 2980				; 00000ba4H
+	imul	eax, 2984				; 00000ba8H
 	add	eax, DWORD PTR ?m_aTeams@CvTeam@@1PAV1@A ; CvTeam::m_aTeams
-	mov	DWORD PTR _kNotifyTeam$225123[esp+360], eax
+	mov	DWORD PTR _kNotifyTeam$225165[esp+360], eax
 	call	?getTeam@CvPlayer@@QBE?AW4TeamTypes@@XZ	; CvPlayer::getTeam
-	mov	ecx, DWORD PTR _kNotifyTeam$225123[esp+360]
+	mov	ecx, DWORD PTR _kNotifyTeam$225165[esp+360]
 	push	eax
 	call	?isHasMet@CvTeam@@QBE_NW4TeamTypes@@@Z	; CvTeam::isHasMet
 	test	al, al
@@ -26888,12 +26915,12 @@ $LN68@EnhanceRel:
 	push	-1
 	push	-1
 	push	-1
-	lea	ecx, DWORD PTR _strSummary$225109[esp+376]
+	lea	ecx, DWORD PTR _strSummary$225151[esp+376]
 	call	edi
 	push	eax
-	lea	ecx, DWORD PTR _notificationText$225112[esp+380]
+	lea	ecx, DWORD PTR _notificationText$225154[esp+380]
 	call	edi
-	mov	ecx, DWORD PTR _pNotifications$225107[esp+380]
+	mov	ecx, DWORD PTR _pNotifications$225149[esp+380]
 	push	eax
 	push	26690275				; 019742e3H
 	call	?Add@CvNotifications@@QAEHW4NotificationTypes@@PBD1HHHH@Z ; CvNotifications::Add
@@ -26907,15 +26934,15 @@ $LN3@EnhanceRel:
 ; 1201 : 				{
 ; 1202 : 					Localization::String unknownText = Localization::Lookup("TXT_KEY_NOTIFICATION_RELIGION_ENHANCED_UNKNOWN");
 
-	lea	eax, DWORD PTR _unknownText$225126[esp+360]
-	push	OFFSET $SG225128
+	lea	eax, DWORD PTR _unknownText$225168[esp+360]
+	push	OFFSET $SG225170
 	push	eax
 	call	ebp
 	add	esp, 8
 
 ; 1203 : 					unknownText << it->GetName();
 
-	lea	ecx, DWORD PTR $T238370[esp+360]
+	lea	ecx, DWORD PTR $T238443[esp+360]
 	push	ecx
 	mov	ecx, esi
 	mov	BYTE PTR __$EHRec$[esp+372], 6
@@ -26924,9 +26951,9 @@ $LN3@EnhanceRel:
 	mov	BYTE PTR __$EHRec$[esp+368], 7
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
-	lea	ecx, DWORD PTR _unknownText$225126[esp+364]
+	lea	ecx, DWORD PTR _unknownText$225168[esp+364]
 	call	ebx
-	lea	ecx, DWORD PTR $T238370[esp+360]
+	lea	ecx, DWORD PTR $T238443[esp+360]
 	mov	BYTE PTR __$EHRec$[esp+368], 6
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -26937,20 +26964,20 @@ $LN3@EnhanceRel:
 	push	-1
 	push	-1
 	push	-1
-	lea	ecx, DWORD PTR _strSummary$225109[esp+376]
+	lea	ecx, DWORD PTR _strSummary$225151[esp+376]
 	call	edi
 	push	eax
-	lea	ecx, DWORD PTR _unknownText$225126[esp+380]
+	lea	ecx, DWORD PTR _unknownText$225168[esp+380]
 	call	edi
 	push	eax
 	push	26690275				; 019742e3H
 $LN102@EnhanceRel:
-	mov	ecx, DWORD PTR _pNotifications$225107[esp+388]
+	mov	ecx, DWORD PTR _pNotifications$225149[esp+388]
 	call	?Add@CvNotifications@@QAEHW4NotificationTypes@@PBD1HHHH@Z ; CvNotifications::Add
 
 ; 1206 : 				}
 
-	lea	ecx, DWORD PTR _unknownText$225126[esp+360]
+	lea	ecx, DWORD PTR _unknownText$225168[esp+360]
 	mov	BYTE PTR __$EHRec$[esp+368], 2
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 $LN2@EnhanceRel:
@@ -26958,10 +26985,10 @@ $LN2@EnhanceRel:
 ; 1207 : 			}
 ; 1208 : 		}
 
-	lea	ecx, DWORD PTR _notificationText$225112[esp+360]
+	lea	ecx, DWORD PTR _notificationText$225154[esp+360]
 	mov	BYTE PTR __$EHRec$[esp+368], 1
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
-	lea	ecx, DWORD PTR _strSummary$225109[esp+360]
+	lea	ecx, DWORD PTR _strSummary$225151[esp+360]
 	mov	DWORD PTR __$EHRec$[esp+368], -1
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 $LN6@EnhanceRel:
@@ -26978,7 +27005,7 @@ $LN6@EnhanceRel:
 ; 1212 : 		{
 ; 1213 : 			CvString strLogMsg;
 
-	lea	ecx, DWORD PTR _strLogMsg$225131[esp+360]
+	lea	ecx, DWORD PTR _strLogMsg$225173[esp+360]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
 ; 1214 : 			strLogMsg = kPlayer.getCivilizationShortDescription();
@@ -26986,7 +27013,7 @@ $LN6@EnhanceRel:
 	mov	ecx, DWORD PTR _kPlayer$[esp+360]
 	mov	DWORD PTR __$EHRec$[esp+368], 8
 	call	?getCivilizationShortDescription@CvPlayer@@QBEPBDXZ ; CvPlayer::getCivilizationShortDescription
-	lea	ecx, DWORD PTR _strLogMsg$225131[esp+360]
+	lea	ecx, DWORD PTR _strLogMsg$225173[esp+360]
 	test	eax, eax
 	je	SHORT $LN85@EnhanceRel
 	push	eax
@@ -26998,25 +27025,25 @@ $LN84@EnhanceRel:
 
 ; 1215 : 			strLogMsg += ", RELIGION ENHANCED";
 
-	push	OFFSET $SG225132
-	lea	ecx, DWORD PTR _strLogMsg$225131[esp+364]
+	push	OFFSET $SG225174
+	lea	ecx, DWORD PTR _strLogMsg$225173[esp+364]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
 ; 1216 : 			LogReligionMessage(strLogMsg);
 
 	mov	ecx, DWORD PTR _this$[esp+360]
-	lea	edx, DWORD PTR _strLogMsg$225131[esp+360]
+	lea	edx, DWORD PTR _strLogMsg$225173[esp+360]
 	push	edx
 	call	?LogReligionMessage@CvGameReligions@@QAEXAAVCvString@@@Z ; CvGameReligions::LogReligionMessage
 
 ; 1217 : 		}
 
-	lea	ecx, DWORD PTR _strLogMsg$225131[esp+360]
+	lea	ecx, DWORD PTR _strLogMsg$225173[esp+360]
 	mov	DWORD PTR __$EHRec$[esp+368], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 $LN8@EnhanceRel:
 	mov	eax, DWORD PTR tv625[esp+360]
-	inc	DWORD PTR _iNotifyLoop$225100[esp+360]
+	inc	DWORD PTR _iNotifyLoop$225142[esp+360]
 	add	eax, 63236				; 0000f704H
 	cmp	eax, 1391192				; 00153a58H
 	mov	DWORD PTR tv625[esp+360], eax
@@ -27048,31 +27075,31 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?EnhanceReligion@CvGameReligions@@QAEXW4PlayerTypes@@W4ReligionTypes@@W4BeliefTypes@@2@Z$0:
-	lea	ecx, DWORD PTR _args$225097[ebp]
+	lea	ecx, DWORD PTR _args$225139[ebp]
 	jmp	??1CvLuaArgsHandle@@QAE@XZ		; CvLuaArgsHandle::~CvLuaArgsHandle
 __unwindfunclet$?EnhanceReligion@CvGameReligions@@QAEXW4PlayerTypes@@W4ReligionTypes@@W4BeliefTypes@@2@Z$1:
-	lea	ecx, DWORD PTR _strSummary$225109[ebp]
+	lea	ecx, DWORD PTR _strSummary$225151[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?EnhanceReligion@CvGameReligions@@QAEXW4PlayerTypes@@W4ReligionTypes@@W4BeliefTypes@@2@Z$2:
-	lea	ecx, DWORD PTR _notificationText$225112[ebp]
+	lea	ecx, DWORD PTR _notificationText$225154[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?EnhanceReligion@CvGameReligions@@QAEXW4PlayerTypes@@W4ReligionTypes@@W4BeliefTypes@@2@Z$3:
-	lea	ecx, DWORD PTR $T238367[ebp]
+	lea	ecx, DWORD PTR $T238440[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?EnhanceReligion@CvGameReligions@@QAEXW4PlayerTypes@@W4ReligionTypes@@W4BeliefTypes@@2@Z$4:
-	lea	ecx, DWORD PTR _localizedText$225118[ebp]
+	lea	ecx, DWORD PTR _localizedText$225160[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?EnhanceReligion@CvGameReligions@@QAEXW4PlayerTypes@@W4ReligionTypes@@W4BeliefTypes@@2@Z$5:
-	lea	ecx, DWORD PTR $T238369[ebp]
+	lea	ecx, DWORD PTR $T238442[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?EnhanceReligion@CvGameReligions@@QAEXW4PlayerTypes@@W4ReligionTypes@@W4BeliefTypes@@2@Z$6:
-	lea	ecx, DWORD PTR _unknownText$225126[ebp]
+	lea	ecx, DWORD PTR _unknownText$225168[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?EnhanceReligion@CvGameReligions@@QAEXW4PlayerTypes@@W4ReligionTypes@@W4BeliefTypes@@2@Z$7:
-	lea	ecx, DWORD PTR $T238370[ebp]
+	lea	ecx, DWORD PTR $T238443[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?EnhanceReligion@CvGameReligions@@QAEXW4PlayerTypes@@W4ReligionTypes@@W4BeliefTypes@@2@Z$8:
-	lea	ecx, DWORD PTR _strLogMsg$225131[ebp]
+	lea	ecx, DWORD PTR _strLogMsg$225173[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?EnhanceReligion@CvGameReligions@@QAEXW4PlayerTypes@@W4ReligionTypes@@W4BeliefTypes@@2@Z:
 	mov	eax, OFFSET __ehfuncinfo$?EnhanceReligion@CvGameReligions@@QAEXW4PlayerTypes@@W4ReligionTypes@@W4BeliefTypes@@2@Z
@@ -27113,25 +27140,25 @@ __unwindtable$?AddReformationBelief@CvGameReligions@@QAEXW4PlayerTypes@@W4Religi
 xdata$x	ENDS
 ;	COMDAT ?AddReformationBelief@CvGameReligions@@QAEXW4PlayerTypes@@W4ReligionTypes@@W4BeliefTypes@@@Z
 _TEXT	SEGMENT
-_pNotifications$225175 = -344				; size = 4
-_args$225165 = -344					; size = 4
+_pNotifications$225217 = -344				; size = 4
+_args$225207 = -344					; size = 4
 _kPlayer$ = -340					; size = 4
-_iNotifyLoop$225168 = -336				; size = 4
+_iNotifyLoop$225210 = -336				; size = 4
 tv581 = -332						; size = 4
-_kNotifyTeam$225191 = -328				; size = 4
-_kNotifyPlayer$225174 = -328				; size = 4
-_bResult$225166 = -321					; size = 1
-$T238568 = -320						; size = 4
-$T238517 = -316						; size = 4
+_kNotifyTeam$225233 = -328				; size = 4
+_kNotifyPlayer$225216 = -328				; size = 4
+_bResult$225208 = -321					; size = 1
+$T238641 = -320						; size = 4
+$T238590 = -316						; size = 4
 _this$ = -312						; size = 4
-$T238519 = -308						; size = 28
-$T238518 = -308						; size = 28
-$T238516 = -308						; size = 28
-_strLogMsg$225199 = -280				; size = 28
-_unknownText$225194 = -252				; size = 80
-_localizedText$225186 = -252				; size = 80
-_notificationText$225180 = -172				; size = 80
-_strSummary$225177 = -92				; size = 80
+$T238592 = -308						; size = 28
+$T238591 = -308						; size = 28
+$T238589 = -308						; size = 28
+_strLogMsg$225241 = -280				; size = 28
+_unknownText$225236 = -252				; size = 80
+_localizedText$225228 = -252				; size = 80
+_notificationText$225222 = -172				; size = 80
+_strSummary$225219 = -92				; size = 80
 __$EHRec$ = -12						; size = 12
 _ePlayer$ = 8						; size = 4
 _eReligion$ = 12					; size = 4
@@ -27241,12 +27268,12 @@ $LN93@AddReforma:
 ; 1321 : 	{
 ; 1322 : 		CvLuaArgsHandle args;
 
-	lea	ecx, DWORD PTR _args$225165[esp+360]
+	lea	ecx, DWORD PTR _args$225207[esp+360]
 	call	??0CvLuaArgsHandle@@QAE@XZ		; CvLuaArgsHandle::CvLuaArgsHandle
 
 ; 1323 : 		args->Push(ePlayer);
 
-	mov	ecx, DWORD PTR _args$225165[esp+360]
+	mov	ecx, DWORD PTR _args$225207[esp+360]
 	mov	edx, DWORD PTR [ecx]
 	mov	eax, DWORD PTR _ePlayer$[esp+356]
 	mov	edx, DWORD PTR [edx+8]
@@ -27256,7 +27283,7 @@ $LN93@AddReforma:
 
 ; 1324 : 		args->Push(eReligion);
 
-	mov	ecx, DWORD PTR _args$225165[esp+360]
+	mov	ecx, DWORD PTR _args$225207[esp+360]
 	mov	eax, DWORD PTR [ecx]
 	mov	edx, DWORD PTR [eax+8]
 	push	edi
@@ -27264,7 +27291,7 @@ $LN93@AddReforma:
 
 ; 1325 : 		args->Push(eBelief1);
 
-	mov	ecx, DWORD PTR _args$225165[esp+360]
+	mov	ecx, DWORD PTR _args$225207[esp+360]
 	mov	eax, DWORD PTR [ecx]
 	mov	edx, DWORD PTR _eBelief1$[esp+356]
 	mov	eax, DWORD PTR [eax+8]
@@ -27274,18 +27301,18 @@ $LN93@AddReforma:
 ; 1326 : 		bool bResult;
 ; 1327 : 		LuaSupport::CallHook(pkScriptSystem, "ReformationAdded", args.get(), bResult);
 
-	mov	edx, DWORD PTR _args$225165[esp+360]
-	lea	ecx, DWORD PTR _bResult$225166[esp+360]
+	mov	edx, DWORD PTR _args$225207[esp+360]
+	lea	ecx, DWORD PTR _bResult$225208[esp+360]
 	push	ecx
 	push	edx
-	push	OFFSET $SG225167
+	push	OFFSET $SG225209
 	push	esi
 	call	?CallHook@LuaSupport@@YA_NPAVICvEngineScriptSystem1@@PBDPAVICvEngineScriptSystemArgs1@@AA_N@Z ; LuaSupport::CallHook
 	add	esp, 16					; 00000010H
 
 ; 1328 : 	}
 
-	lea	ecx, DWORD PTR _args$225165[esp+360]
+	lea	ecx, DWORD PTR _args$225207[esp+360]
 	mov	DWORD PTR __$EHRec$[esp+368], -1
 	call	??1CvLuaArgsHandle@@QAE@XZ		; CvLuaArgsHandle::~CvLuaArgsHandle
 $LN10@AddReforma:
@@ -27297,7 +27324,7 @@ $LN10@AddReforma:
 
 	mov	edi, DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	mov	esi, DWORD PTR __imp_?toUTF8@String@Localization@@QAEPBDXZ
-	mov	DWORD PTR _iNotifyLoop$225168[esp+360], ebp
+	mov	DWORD PTR _iNotifyLoop$225210[esp+360], ebp
 	mov	DWORD PTR tv581[esp+360], ebp
 	mov	ebp, DWORD PTR __imp_?PushArgument@String@Localization@@QAE_NPBD@Z
 $LL97@AddReforma:
@@ -27308,12 +27335,12 @@ $LL97@AddReforma:
 	mov	eax, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	mov	ecx, DWORD PTR tv581[esp+360]
 	add	ecx, eax
-	mov	DWORD PTR _kNotifyPlayer$225174[esp+360], ecx
+	mov	DWORD PTR _kNotifyPlayer$225216[esp+360], ecx
 
 ; 1335 : 		CvNotifications* pNotifications = kNotifyPlayer.GetNotifications();
 
 	call	?GetNotifications@CvPlayer@@QBEPAVCvNotifications@@XZ ; CvPlayer::GetNotifications
-	mov	DWORD PTR _pNotifications$225175[esp+360], eax
+	mov	DWORD PTR _pNotifications$225217[esp+360], eax
 
 ; 1336 : 		if(pNotifications){
 
@@ -27322,15 +27349,15 @@ $LL97@AddReforma:
 
 ; 1337 : 			Localization::String strSummary = Localization::Lookup("TXT_KEY_NOTIFICATION_REFORMATION_BELIEF_ADDED_S");
 
-	lea	edx, DWORD PTR _strSummary$225177[esp+360]
-	push	OFFSET $SG225179
+	lea	edx, DWORD PTR _strSummary$225219[esp+360]
+	push	OFFSET $SG225221
 	push	edx
 	call	edi
 
 ; 1338 : 			Localization::String notificationText = Localization::Lookup("TXT_KEY_NOTIFICATION_REFORMATION_BELIEF_ADDED");
 
-	lea	eax, DWORD PTR _notificationText$225180[esp+368]
-	push	OFFSET $SG225182
+	lea	eax, DWORD PTR _notificationText$225222[esp+368]
+	push	OFFSET $SG225224
 	push	eax
 	mov	DWORD PTR __$EHRec$[esp+384], 1
 	call	edi
@@ -27341,23 +27368,23 @@ $LL97@AddReforma:
 	mov	ecx, DWORD PTR _kPlayer$[esp+360]
 	mov	BYTE PTR __$EHRec$[esp+368], 2
 	call	?getCivilizationShortDescriptionKey@CvPlayer@@QBEPBDXZ ; CvPlayer::getCivilizationShortDescriptionKey
-	lea	ecx, DWORD PTR $T238516[esp+360]
+	lea	ecx, DWORD PTR $T238589[esp+360]
 	push	ecx
 	mov	ecx, ebx
-	mov	DWORD PTR $T238517[esp+364], eax
+	mov	DWORD PTR $T238590[esp+364], eax
 	call	?GetName@CvReligion@@QBE?AVCvString@@XZ	; CvReligion::GetName
-	mov	DWORD PTR $T238568[esp+360], eax
-	mov	edx, DWORD PTR $T238517[esp+360]
+	mov	DWORD PTR $T238641[esp+360], eax
+	mov	edx, DWORD PTR $T238590[esp+360]
 	push	edx
-	lea	ecx, DWORD PTR _notificationText$225180[esp+364]
+	lea	ecx, DWORD PTR _notificationText$225222[esp+364]
 	mov	BYTE PTR __$EHRec$[esp+372], 3
 	call	ebp
-	mov	ecx, DWORD PTR $T238568[esp+360]
+	mov	ecx, DWORD PTR $T238641[esp+360]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
-	lea	ecx, DWORD PTR _notificationText$225180[esp+364]
+	lea	ecx, DWORD PTR _notificationText$225222[esp+364]
 	call	ebp
-	lea	ecx, DWORD PTR $T238516[esp+360]
+	lea	ecx, DWORD PTR $T238589[esp+360]
 	mov	BYTE PTR __$EHRec$[esp+368], 2
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -27365,22 +27392,22 @@ $LL97@AddReforma:
 ; 1341 : 			// Message slightly different for reformation player
 ; 1342 : 			if(ePlayer == eNotifyPlayer)
 
-	mov	eax, DWORD PTR _iNotifyLoop$225168[esp+360]
+	mov	eax, DWORD PTR _iNotifyLoop$225210[esp+360]
 	cmp	DWORD PTR _ePlayer$[esp+356], eax
 	jne	SHORT $LN5@AddReforma
 
 ; 1343 : 			{
 ; 1344 : 				Localization::String localizedText = Localization::Lookup("TXT_KEY_NOTIFICATION_REFORMATION_BELIEF_ADDED_ACTIVE_PLAYER");
 
-	lea	ecx, DWORD PTR _localizedText$225186[esp+360]
-	push	OFFSET $SG225188
+	lea	ecx, DWORD PTR _localizedText$225228[esp+360]
+	push	OFFSET $SG225230
 	push	ecx
 	call	edi
 	add	esp, 8
 
 ; 1345 : 				localizedText << it->GetName();
 
-	lea	edx, DWORD PTR $T238518[esp+360]
+	lea	edx, DWORD PTR $T238591[esp+360]
 	push	edx
 	mov	ecx, ebx
 	mov	BYTE PTR __$EHRec$[esp+372], 4
@@ -27389,9 +27416,9 @@ $LL97@AddReforma:
 	mov	BYTE PTR __$EHRec$[esp+368], 5
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
-	lea	ecx, DWORD PTR _localizedText$225186[esp+364]
+	lea	ecx, DWORD PTR _localizedText$225228[esp+364]
 	call	ebp
-	lea	ecx, DWORD PTR $T238518[esp+360]
+	lea	ecx, DWORD PTR $T238591[esp+360]
 	mov	BYTE PTR __$EHRec$[esp+368], 4
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -27402,10 +27429,10 @@ $LL97@AddReforma:
 	push	-1
 	push	-1
 	push	-1
-	lea	ecx, DWORD PTR _strSummary$225177[esp+376]
+	lea	ecx, DWORD PTR _strSummary$225219[esp+376]
 	call	esi
 	push	eax
-	lea	ecx, DWORD PTR _localizedText$225186[esp+380]
+	lea	ecx, DWORD PTR _localizedText$225228[esp+380]
 	call	esi
 	push	eax
 	push	-90445226				; fa9bea56H
@@ -27419,7 +27446,7 @@ $LN5@AddReforma:
 ; 1350 : 			{
 ; 1351 : 				CvTeam& kNotifyTeam = GET_TEAM(kNotifyPlayer.getTeam());
 
-	mov	eax, DWORD PTR _kNotifyPlayer$225174[esp+360]
+	mov	eax, DWORD PTR _kNotifyPlayer$225216[esp+360]
 	mov	eax, DWORD PTR [eax+44]
 	cmp	eax, 63					; 0000003fH
 	ja	SHORT $LN65@AddReforma
@@ -27434,11 +27461,11 @@ $LN66@AddReforma:
 ; 1352 : 				if(kNotifyTeam.isHasMet(kPlayer.getTeam()))
 
 	mov	ecx, DWORD PTR _kPlayer$[esp+360]
-	imul	eax, 2980				; 00000ba4H
+	imul	eax, 2984				; 00000ba8H
 	add	eax, DWORD PTR ?m_aTeams@CvTeam@@1PAV1@A ; CvTeam::m_aTeams
-	mov	DWORD PTR _kNotifyTeam$225191[esp+360], eax
+	mov	DWORD PTR _kNotifyTeam$225233[esp+360], eax
 	call	?getTeam@CvPlayer@@QBE?AW4TeamTypes@@XZ	; CvPlayer::getTeam
-	mov	ecx, DWORD PTR _kNotifyTeam$225191[esp+360]
+	mov	ecx, DWORD PTR _kNotifyTeam$225233[esp+360]
 	push	eax
 	call	?isHasMet@CvTeam@@QBE_NW4TeamTypes@@@Z	; CvTeam::isHasMet
 	test	al, al
@@ -27451,12 +27478,12 @@ $LN66@AddReforma:
 	push	-1
 	push	-1
 	push	-1
-	lea	ecx, DWORD PTR _strSummary$225177[esp+376]
+	lea	ecx, DWORD PTR _strSummary$225219[esp+376]
 	call	esi
 	push	eax
-	lea	ecx, DWORD PTR _notificationText$225180[esp+380]
+	lea	ecx, DWORD PTR _notificationText$225222[esp+380]
 	call	esi
-	mov	ecx, DWORD PTR _pNotifications$225175[esp+380]
+	mov	ecx, DWORD PTR _pNotifications$225217[esp+380]
 	push	eax
 	push	1614113729				; 60356bc1H
 	call	?Add@CvNotifications@@QAEHW4NotificationTypes@@PBD1HHHH@Z ; CvNotifications::Add
@@ -27470,15 +27497,15 @@ $LN3@AddReforma:
 ; 1357 : 				{
 ; 1358 : 					Localization::String unknownText = Localization::Lookup("TXT_KEY_NOTIFICATION_REFORMATION_BELIEF_ADDED_UNKNOWN");
 
-	lea	eax, DWORD PTR _unknownText$225194[esp+360]
-	push	OFFSET $SG225196
+	lea	eax, DWORD PTR _unknownText$225236[esp+360]
+	push	OFFSET $SG225238
 	push	eax
 	call	edi
 	add	esp, 8
 
 ; 1359 : 					unknownText << it->GetName();
 
-	lea	ecx, DWORD PTR $T238519[esp+360]
+	lea	ecx, DWORD PTR $T238592[esp+360]
 	push	ecx
 	mov	ecx, ebx
 	mov	BYTE PTR __$EHRec$[esp+372], 6
@@ -27487,9 +27514,9 @@ $LN3@AddReforma:
 	mov	BYTE PTR __$EHRec$[esp+368], 7
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
-	lea	ecx, DWORD PTR _unknownText$225194[esp+364]
+	lea	ecx, DWORD PTR _unknownText$225236[esp+364]
 	call	ebp
-	lea	ecx, DWORD PTR $T238519[esp+360]
+	lea	ecx, DWORD PTR $T238592[esp+360]
 	mov	BYTE PTR __$EHRec$[esp+368], 6
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -27500,20 +27527,20 @@ $LN3@AddReforma:
 	push	-1
 	push	-1
 	push	-1
-	lea	ecx, DWORD PTR _strSummary$225177[esp+376]
+	lea	ecx, DWORD PTR _strSummary$225219[esp+376]
 	call	esi
 	push	eax
-	lea	ecx, DWORD PTR _unknownText$225194[esp+380]
+	lea	ecx, DWORD PTR _unknownText$225236[esp+380]
 	call	esi
 	push	eax
 	push	1614113729				; 60356bc1H
 $LN100@AddReforma:
-	mov	ecx, DWORD PTR _pNotifications$225175[esp+388]
+	mov	ecx, DWORD PTR _pNotifications$225217[esp+388]
 	call	?Add@CvNotifications@@QAEHW4NotificationTypes@@PBD1HHHH@Z ; CvNotifications::Add
 
 ; 1362 : 				}
 
-	lea	ecx, DWORD PTR _unknownText$225194[esp+360]
+	lea	ecx, DWORD PTR _unknownText$225236[esp+360]
 	mov	BYTE PTR __$EHRec$[esp+368], 2
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 $LN2@AddReforma:
@@ -27521,10 +27548,10 @@ $LN2@AddReforma:
 ; 1363 : 			}
 ; 1364 : 		}
 
-	lea	ecx, DWORD PTR _notificationText$225180[esp+360]
+	lea	ecx, DWORD PTR _notificationText$225222[esp+360]
 	mov	BYTE PTR __$EHRec$[esp+368], 1
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
-	lea	ecx, DWORD PTR _strSummary$225177[esp+360]
+	lea	ecx, DWORD PTR _strSummary$225219[esp+360]
 	mov	DWORD PTR __$EHRec$[esp+368], -1
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 $LN6@AddReforma:
@@ -27541,7 +27568,7 @@ $LN6@AddReforma:
 ; 1368 : 		{
 ; 1369 : 			CvString strLogMsg;
 
-	lea	ecx, DWORD PTR _strLogMsg$225199[esp+360]
+	lea	ecx, DWORD PTR _strLogMsg$225241[esp+360]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
 ; 1370 : 			strLogMsg = kPlayer.getCivilizationShortDescription();
@@ -27549,7 +27576,7 @@ $LN6@AddReforma:
 	mov	ecx, DWORD PTR _kPlayer$[esp+360]
 	mov	DWORD PTR __$EHRec$[esp+368], 8
 	call	?getCivilizationShortDescription@CvPlayer@@QBEPBDXZ ; CvPlayer::getCivilizationShortDescription
-	lea	ecx, DWORD PTR _strLogMsg$225199[esp+360]
+	lea	ecx, DWORD PTR _strLogMsg$225241[esp+360]
 	test	eax, eax
 	je	SHORT $LN83@AddReforma
 	push	eax
@@ -27561,25 +27588,25 @@ $LN82@AddReforma:
 
 ; 1371 : 			strLogMsg += ", REFORMATION BELIEF ADDED";
 
-	push	OFFSET $SG225200
-	lea	ecx, DWORD PTR _strLogMsg$225199[esp+364]
+	push	OFFSET $SG225242
+	lea	ecx, DWORD PTR _strLogMsg$225241[esp+364]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
 ; 1372 : 			LogReligionMessage(strLogMsg);
 
 	mov	ecx, DWORD PTR _this$[esp+360]
-	lea	edx, DWORD PTR _strLogMsg$225199[esp+360]
+	lea	edx, DWORD PTR _strLogMsg$225241[esp+360]
 	push	edx
 	call	?LogReligionMessage@CvGameReligions@@QAEXAAVCvString@@@Z ; CvGameReligions::LogReligionMessage
 
 ; 1373 : 		}
 
-	lea	ecx, DWORD PTR _strLogMsg$225199[esp+360]
+	lea	ecx, DWORD PTR _strLogMsg$225241[esp+360]
 	mov	DWORD PTR __$EHRec$[esp+368], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 $LN8@AddReforma:
 	mov	eax, DWORD PTR tv581[esp+360]
-	inc	DWORD PTR _iNotifyLoop$225168[esp+360]
+	inc	DWORD PTR _iNotifyLoop$225210[esp+360]
 	add	eax, 63236				; 0000f704H
 	cmp	eax, 1391192				; 00153a58H
 	mov	DWORD PTR tv581[esp+360], eax
@@ -27612,31 +27639,31 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?AddReformationBelief@CvGameReligions@@QAEXW4PlayerTypes@@W4ReligionTypes@@W4BeliefTypes@@@Z$0:
-	lea	ecx, DWORD PTR _args$225165[ebp]
+	lea	ecx, DWORD PTR _args$225207[ebp]
 	jmp	??1CvLuaArgsHandle@@QAE@XZ		; CvLuaArgsHandle::~CvLuaArgsHandle
 __unwindfunclet$?AddReformationBelief@CvGameReligions@@QAEXW4PlayerTypes@@W4ReligionTypes@@W4BeliefTypes@@@Z$1:
-	lea	ecx, DWORD PTR _strSummary$225177[ebp]
+	lea	ecx, DWORD PTR _strSummary$225219[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?AddReformationBelief@CvGameReligions@@QAEXW4PlayerTypes@@W4ReligionTypes@@W4BeliefTypes@@@Z$2:
-	lea	ecx, DWORD PTR _notificationText$225180[ebp]
+	lea	ecx, DWORD PTR _notificationText$225222[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?AddReformationBelief@CvGameReligions@@QAEXW4PlayerTypes@@W4ReligionTypes@@W4BeliefTypes@@@Z$3:
-	lea	ecx, DWORD PTR $T238516[ebp]
+	lea	ecx, DWORD PTR $T238589[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?AddReformationBelief@CvGameReligions@@QAEXW4PlayerTypes@@W4ReligionTypes@@W4BeliefTypes@@@Z$4:
-	lea	ecx, DWORD PTR _localizedText$225186[ebp]
+	lea	ecx, DWORD PTR _localizedText$225228[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?AddReformationBelief@CvGameReligions@@QAEXW4PlayerTypes@@W4ReligionTypes@@W4BeliefTypes@@@Z$5:
-	lea	ecx, DWORD PTR $T238518[ebp]
+	lea	ecx, DWORD PTR $T238591[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?AddReformationBelief@CvGameReligions@@QAEXW4PlayerTypes@@W4ReligionTypes@@W4BeliefTypes@@@Z$6:
-	lea	ecx, DWORD PTR _unknownText$225194[ebp]
+	lea	ecx, DWORD PTR _unknownText$225236[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?AddReformationBelief@CvGameReligions@@QAEXW4PlayerTypes@@W4ReligionTypes@@W4BeliefTypes@@@Z$7:
-	lea	ecx, DWORD PTR $T238519[ebp]
+	lea	ecx, DWORD PTR $T238592[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?AddReformationBelief@CvGameReligions@@QAEXW4PlayerTypes@@W4ReligionTypes@@W4BeliefTypes@@@Z$8:
-	lea	ecx, DWORD PTR _strLogMsg$225199[ebp]
+	lea	ecx, DWORD PTR _strLogMsg$225241[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?AddReformationBelief@CvGameReligions@@QAEXW4PlayerTypes@@W4ReligionTypes@@W4BeliefTypes@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?AddReformationBelief@CvGameReligions@@QAEXW4PlayerTypes@@W4ReligionTypes@@W4BeliefTypes@@@Z
@@ -27894,13 +27921,13 @@ _bAdjustForSpeedDifficulty$ = 12			; size = 1
 ?GetCostNextProphet@CvPlayerReligions@@QBEH_N0@Z PROC	; CvPlayerReligions::GetCostNextProphet, COMDAT
 ; _this$ = ecx
 
-; 2744 : {
+; 2766 : {
 
 	push	ebx
 	push	esi
 	mov	ebx, ecx
 
-; 2745 : 	int iCost = GC.getGame().GetGameReligions()->GetFaithGreatProphetNumber(m_iNumProphetsSpawned + 1);
+; 2767 : 	int iCost = GC.getGame().GetGameReligions()->GetFaithGreatProphetNumber(m_iNumProphetsSpawned + 1);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	edi
@@ -27923,9 +27950,9 @@ $LN11@GetCostNex:
 	add	esi, edi
 $LN10@GetCostNex:
 
-; 2746 : 
-; 2747 : 	// Boost to faith due to belief?
-; 2748 : 	ReligionTypes ePlayerReligion = GetReligionCreatedByPlayer();
+; 2768 : 
+; 2769 : 	// Boost to faith due to belief?
+; 2770 : 	ReligionTypes ePlayerReligion = GetReligionCreatedByPlayer();
 
 	mov	eax, DWORD PTR [ebx]
 	mov	eax, DWORD PTR [eax+44]
@@ -27935,16 +27962,16 @@ $LN10@GetCostNex:
 	mov	ecx, eax
 	call	?GetReligionCreatedByPlayer@CvGameReligions@@QBE?AW4ReligionTypes@@W4PlayerTypes@@@Z ; CvGameReligions::GetReligionCreatedByPlayer
 
-; 2749 : 	if (bIncludeBeliefDiscounts && ePlayerReligion > RELIGION_PANTHEON)
+; 2771 : 	if (bIncludeBeliefDiscounts && ePlayerReligion > RELIGION_PANTHEON)
 
 	cmp	BYTE PTR _bIncludeBeliefDiscounts$[esp+8], 0
 	je	SHORT $LN3@GetCostNex
 	test	eax, eax
 	jle	SHORT $LN3@GetCostNex
 
-; 2750 : 	{
-; 2751 : 		const CvReligion* pReligion = NULL;
-; 2752 : 		pReligion = GC.getGame().GetGameReligions()->GetReligion(ePlayerReligion, m_pPlayer->GetID());
+; 2772 : 	{
+; 2773 : 		const CvReligion* pReligion = NULL;
+; 2774 : 		pReligion = GC.getGame().GetGameReligions()->GetReligion(ePlayerReligion, m_pPlayer->GetID());
 
 	mov	ecx, DWORD PTR [ebx]
 	mov	ecx, DWORD PTR [ecx+44]
@@ -27955,29 +27982,29 @@ $LN10@GetCostNex:
 	mov	ecx, eax
 	call	?GetReligion@CvGameReligions@@QBEPBVCvReligion@@W4ReligionTypes@@W4PlayerTypes@@@Z ; CvGameReligions::GetReligion
 
-; 2753 : 		if(pReligion)
+; 2775 : 		if(pReligion)
 
 	test	eax, eax
 	je	SHORT $LN3@GetCostNex
 
-; 2754 : 		{
-; 2755 : 			int iProphetCostMod = pReligion->m_Beliefs.GetProphetCostModifier();
+; 2776 : 		{
+; 2777 : 			int iProphetCostMod = pReligion->m_Beliefs.GetProphetCostModifier();
 
 	mov	eax, DWORD PTR [eax+200]
 
-; 2756 : 
-; 2757 : 			if(iProphetCostMod != 0)
+; 2778 : 
+; 2779 : 			if(iProphetCostMod != 0)
 
 	test	eax, eax
 	je	SHORT $LN3@GetCostNex
 
-; 2758 : 			{
-; 2759 : 				iCost *= (100 + iProphetCostMod);
+; 2780 : 			{
+; 2781 : 				iCost *= (100 + iProphetCostMod);
 
 	lea	ecx, DWORD PTR [eax+100]
 	imul	ecx, esi
 
-; 2760 : 				iCost /= 100;
+; 2782 : 				iCost /= 100;
 
 	mov	eax, 1374389535				; 51eb851fH
 	imul	ecx
@@ -27987,18 +28014,18 @@ $LN10@GetCostNex:
 	add	esi, edx
 $LN3@GetCostNex:
 
-; 2761 : 			}
-; 2762 : 		}
-; 2763 : 	}
-; 2764 : 
-; 2765 : 	if (bAdjustForSpeedDifficulty)
+; 2783 : 			}
+; 2784 : 		}
+; 2785 : 	}
+; 2786 : 
+; 2787 : 	if (bAdjustForSpeedDifficulty)
 
 	cmp	BYTE PTR _bAdjustForSpeedDifficulty$[esp+8], 0
 	je	SHORT $LN1@GetCostNex
 
-; 2766 : 	{
-; 2767 : 		// Adjust for game speed
-; 2768 : 		iCost *= GC.getGame().getGameSpeedInfo().getTrainPercent();
+; 2788 : 	{
+; 2789 : 		// Adjust for game speed
+; 2790 : 		iCost *= GC.getGame().getGameSpeedInfo().getTrainPercent();
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?getGameSpeedInfo@CvGame@@QBEAAVCvGameSpeedInfo@@XZ ; CvGame::getGameSpeedInfo
@@ -28007,14 +28034,14 @@ $LN3@GetCostNex:
 	mov	ecx, eax
 	imul	ecx, esi
 
-; 2769 : 		iCost /= 100;
+; 2791 : 		iCost /= 100;
 
 	mov	eax, 1374389535				; 51eb851fH
 	imul	ecx
 
-; 2770 : 
-; 2771 : 		// Adjust for difficulty
-; 2772 : 		if(!m_pPlayer->isHuman() && !m_pPlayer->IsAITeammateOfHuman() && !m_pPlayer->isBarbarian())
+; 2792 : 
+; 2793 : 		// Adjust for difficulty
+; 2794 : 		if(!m_pPlayer->isHuman() && !m_pPlayer->IsAITeammateOfHuman() && !m_pPlayer->isBarbarian())
 
 	mov	ecx, DWORD PTR [ebx]
 	sar	edx, 5
@@ -28034,8 +28061,8 @@ $LN3@GetCostNex:
 	test	al, al
 	jne	SHORT $LN1@GetCostNex
 
-; 2773 : 		{
-; 2774 : 			iCost *= GC.getGame().getHandicapInfo().getAITrainPercent();
+; 2795 : 		{
+; 2796 : 			iCost *= GC.getGame().getHandicapInfo().getAITrainPercent();
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?getHandicapInfo@CvGame@@QBEAAVCvHandicapInfo@@XZ ; CvGame::getHandicapInfo
@@ -28044,7 +28071,7 @@ $LN3@GetCostNex:
 	mov	ecx, eax
 	imul	ecx, esi
 
-; 2775 : 			iCost /= 100;
+; 2797 : 			iCost /= 100;
 
 	mov	eax, 1374389535				; 51eb851fH
 	imul	ecx
@@ -28055,16 +28082,16 @@ $LN3@GetCostNex:
 	mov	esi, ecx
 $LN1@GetCostNex:
 
-; 2776 : 		}
-; 2777 : 	}
-; 2778 : 
-; 2779 : #ifdef NQ_SPAWN_PROPHETS_REMOVE_ONLY_REQUIRED_FAITH
-; 2780 : 	// Make the number not be funky
-; 2781 : 	int iDivisor = /*10*/ GC.getGOLD_PURCHASE_VISIBLE_DIVISOR();
+; 2798 : 		}
+; 2799 : 	}
+; 2800 : 
+; 2801 : #ifdef NQ_SPAWN_PROPHETS_REMOVE_ONLY_REQUIRED_FAITH
+; 2802 : 	// Make the number not be funky
+; 2803 : 	int iDivisor = /*10*/ GC.getGOLD_PURCHASE_VISIBLE_DIVISOR();
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+6992
 
-; 2782 : 	iCost /= iDivisor;
+; 2804 : 	iCost /= iDivisor;
 
 	mov	eax, esi
 	cdq
@@ -28073,14 +28100,14 @@ $LN1@GetCostNex:
 	pop	esi
 	pop	ebx
 
-; 2783 : 	iCost *= iDivisor;
+; 2805 : 	iCost *= iDivisor;
 
 	imul	eax, ecx
 
-; 2784 : #endif
-; 2785 : 
-; 2786 : 	return iCost;
-; 2787 : }
+; 2806 : #endif
+; 2807 : 
+; 2808 : 	return iCost;
+; 2809 : }
 
 	ret	8
 ?GetCostNextProphet@CvPlayerReligions@@QBEH_N0@Z ENDP	; CvPlayerReligions::GetCostNextProphet
@@ -28108,7 +28135,7 @@ __$EHRec$ = -12						; size = 12
 ??0CvCityReligions@@QAE@XZ PROC				; CvCityReligions::CvCityReligions, COMDAT
 ; _this$ = ecx
 
-; 3083 : {
+; 3105 : {
 
 	push	-1
 	push	__ehhandler$??0CvCityReligions@@QAE@XZ
@@ -28128,11 +28155,11 @@ __$EHRec$ = -12						; size = 12
 	mov	BYTE PTR [eax+420], cl
 	mov	DWORD PTR [eax+424], ecx
 
-; 3084 : 	m_ReligionStatus.clear();
+; 3106 : 	m_ReligionStatus.clear();
 
 	mov	DWORD PTR [eax+4], ecx
 
-; 3085 : }
+; 3107 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+16]
 	mov	DWORD PTR fs:0, ecx
@@ -28172,7 +28199,7 @@ __$EHRec$ = -12						; size = 12
 ??1CvCityReligions@@QAE@XZ PROC				; CvCityReligions::~CvCityReligions, COMDAT
 ; _this$ = ecx
 
-; 3089 : {
+; 3111 : {
 
 	push	-1
 	push	__ehhandler$??1CvCityReligions@@QAE@XZ
@@ -28184,8 +28211,8 @@ __$EHRec$ = -12						; size = 12
 	mov	esi, ecx
 	mov	DWORD PTR _this$[esp+20], esi
 
-; 3090 : 
-; 3091 : }
+; 3112 : 
+; 3113 : }
 
 	mov	eax, DWORD PTR [esi+208]
 	lea	ecx, DWORD PTR [esi+220]
@@ -28273,23 +28300,23 @@ __unwindtable$?CityConvertsReligion@CvCityReligions@@AAEXW4ReligionTypes@@0W4Pla
 xdata$x	ENDS
 ;	COMDAT ?CityConvertsReligion@CvCityReligions@@AAEXW4ReligionTypes@@0W4PlayerTypes@@@Z
 _TEXT	SEGMENT
-_args$226690 = -556					; size = 4
-_eOwnerPlayerReligion$226620 = -556			; size = 4
-_bResult$226691 = -549					; size = 1
-_pNewReligion$226606 = -548				; size = 4
-$T238947 = -544						; size = 4
-$T238944 = -544						; size = 4
-_eOwnerPlayer$226618 = -540				; size = 4
-_kStandardSize$226651 = -536				; size = 64
-_strMessage$226638 = -536				; size = 80
-_strSummary$226624 = -536				; size = 80
-$T238948 = -456						; size = 28
-$T238945 = -456						; size = 28
-_strSummary$226639 = -428				; size = 80
-_strMessage$226623 = -428				; size = 80
-$T238949 = -348						; size = 80
-$T238946 = -348						; size = 80
-_text$226611 = -268					; size = 256
+_args$226735 = -556					; size = 4
+_eOwnerPlayerReligion$226665 = -556			; size = 4
+_bResult$226736 = -549					; size = 1
+_pNewReligion$226651 = -548				; size = 4
+$T239020 = -544						; size = 4
+$T239017 = -544						; size = 4
+_eOwnerPlayer$226663 = -540				; size = 4
+_kStandardSize$226696 = -536				; size = 64
+_strMessage$226683 = -536				; size = 80
+_strSummary$226669 = -536				; size = 80
+$T239021 = -456						; size = 28
+$T239018 = -456						; size = 28
+_strSummary$226684 = -428				; size = 80
+_strMessage$226668 = -428				; size = 80
+$T239022 = -348						; size = 80
+$T239019 = -348						; size = 80
+_text$226656 = -268					; size = 256
 __$EHRec$ = -12						; size = 12
 _eMajority$ = 8						; size = 4
 _eOldMajority$ = 12					; size = 4
@@ -28297,7 +28324,7 @@ _eResponsibleParty$ = 16				; size = 4
 ?CityConvertsReligion@CvCityReligions@@AAEXW4ReligionTypes@@0W4PlayerTypes@@@Z PROC ; CvCityReligions::CityConvertsReligion, COMDAT
 ; _this$ = ecx
 
-; 4435 : {
+; 4457 : {
 
 	push	-1
 	mov	eax, DWORD PTR fs:0
@@ -28310,14 +28337,14 @@ _eResponsibleParty$ = 16				; size = 4
 	push	esi
 	mov	esi, ecx
 
-; 4436 : 	CvGameReligions* pReligions = GC.getGame().GetGameReligions();
+; 4458 : 	CvGameReligions* pReligions = GC.getGame().GetGameReligions();
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	edi
 	call	?GetGameReligions@CvGame@@QAEPAVCvGameReligions@@XZ ; CvGame::GetGameReligions
 
-; 4437 : 
-; 4438 : 	m_pCity->UpdateReligion(eMajority);
+; 4459 : 
+; 4460 : 	m_pCity->UpdateReligion(eMajority);
 
 	mov	ebx, DWORD PTR _eMajority$[esp+568]
 	mov	ecx, DWORD PTR [esi+416]
@@ -28325,22 +28352,22 @@ _eResponsibleParty$ = 16				; size = 4
 	mov	edi, eax
 	call	?UpdateReligion@CvCity@@QAEXW4ReligionTypes@@@Z ; CvCity::UpdateReligion
 
-; 4439 : 
-; 4440 : 	if(eOldMajority > RELIGION_PANTHEON)
+; 4461 : 
+; 4462 : 	if(eOldMajority > RELIGION_PANTHEON)
 
 	mov	eax, DWORD PTR _eOldMajority$[esp+568]
 	test	eax, eax
 	jle	SHORT $LN207@CityConver
 
-; 4441 : 	{
-; 4442 : 		const CvReligion* pOldReligion = pReligions->GetReligion(eOldMajority, NO_PLAYER);
+; 4463 : 	{
+; 4464 : 		const CvReligion* pOldReligion = pReligions->GetReligion(eOldMajority, NO_PLAYER);
 
 	push	-1
 	push	eax
 	mov	ecx, edi
 	call	?GetReligion@CvGameReligions@@QBEPBVCvReligion@@W4ReligionTypes@@W4PlayerTypes@@@Z ; CvGameReligions::GetReligion
 
-; 4443 : 		GET_PLAYER(pOldReligion->m_eFounder).UpdateReligion();
+; 4465 : 		GET_PLAYER(pOldReligion->m_eFounder).UpdateReligion();
 
 	mov	ecx, DWORD PTR [eax+4]
 	imul	ecx, 63236				; 0000f704H
@@ -28348,18 +28375,18 @@ _eResponsibleParty$ = 16				; size = 4
 	call	?UpdateReligion@CvPlayer@@QAEXXZ	; CvPlayer::UpdateReligion
 $LN207@CityConver:
 
-; 4444 : #ifdef AUI_CITIZENS_MID_TURN_ASSIGN_RUNS_SELF_CONSISTENCY
-; 4445 : 		GET_PLAYER(pOldReligion->m_eFounder).doSelfConsistencyCheckAllCities();
-; 4446 : #endif
-; 4447 : 	}
-; 4448 : 
-; 4449 : 	if(eMajority > RELIGION_PANTHEON)
+; 4466 : #ifdef AUI_CITIZENS_MID_TURN_ASSIGN_RUNS_SELF_CONSISTENCY
+; 4467 : 		GET_PLAYER(pOldReligion->m_eFounder).doSelfConsistencyCheckAllCities();
+; 4468 : #endif
+; 4469 : 	}
+; 4470 : 
+; 4471 : 	if(eMajority > RELIGION_PANTHEON)
 
 	test	ebx, ebx
 	jle	$LN1@CityConver
 
-; 4450 : 	{
-; 4451 : 		const CvReligion* pNewReligion = pReligions->GetReligion(eMajority, NO_PLAYER);
+; 4472 : 	{
+; 4473 : 		const CvReligion* pNewReligion = pReligions->GetReligion(eMajority, NO_PLAYER);
 
 	push	-1
 	push	ebx
@@ -28367,31 +28394,31 @@ $LN207@CityConver:
 	call	?GetReligion@CvGameReligions@@QBEPBVCvReligion@@W4ReligionTypes@@W4PlayerTypes@@@Z ; CvGameReligions::GetReligion
 	mov	ebx, eax
 
-; 4452 : 		GET_PLAYER(pNewReligion->m_eFounder).UpdateReligion();
+; 4474 : 		GET_PLAYER(pNewReligion->m_eFounder).UpdateReligion();
 
 	mov	ecx, DWORD PTR [ebx+4]
 	imul	ecx, 63236				; 0000f704H
 	add	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
-	mov	DWORD PTR _pNewReligion$226606[esp+572], ebx
+	mov	DWORD PTR _pNewReligion$226651[esp+572], ebx
 	call	?UpdateReligion@CvPlayer@@QAEXXZ	; CvPlayer::UpdateReligion
 
-; 4453 : #ifdef AUI_CITIZENS_MID_TURN_ASSIGN_RUNS_SELF_CONSISTENCY
-; 4454 : 		GET_PLAYER(pNewReligion->m_eFounder).doSelfConsistencyCheckAllCities();
-; 4455 : #endif
-; 4456 : 
-; 4457 : 		// Pay adoption bonuses (if any)
-; 4458 : 		if(!m_bHasPaidAdoptionBonus)
+; 4475 : #ifdef AUI_CITIZENS_MID_TURN_ASSIGN_RUNS_SELF_CONSISTENCY
+; 4476 : 		GET_PLAYER(pNewReligion->m_eFounder).doSelfConsistencyCheckAllCities();
+; 4477 : #endif
+; 4478 : 
+; 4479 : 		// Pay adoption bonuses (if any)
+; 4480 : 		if(!m_bHasPaidAdoptionBonus)
 
 	cmp	BYTE PTR [esi+420], 0
 	jne	$LN33@CityConver
 
-; 4459 : 		{
-; 4460 : 			int iGoldBonus = pNewReligion->m_Beliefs.GetGoldWhenCityAdopts();
+; 4481 : 		{
+; 4482 : 			int iGoldBonus = pNewReligion->m_Beliefs.GetGoldWhenCityAdopts();
 
 	lea	ecx, DWORD PTR [ebx+152]
 	call	?GetGoldWhenCityAdopts@CvReligionBeliefs@@QBEHXZ ; CvReligionBeliefs::GetGoldWhenCityAdopts
 
-; 4461 : 			iGoldBonus *= GC.getGame().getGameSpeedInfo().getTrainPercent();;
+; 4483 : 			iGoldBonus *= GC.getGame().getGameSpeedInfo().getTrainPercent();;
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	mov	edi, eax
@@ -28401,7 +28428,7 @@ $LN207@CityConver:
 	mov	ecx, eax
 	imul	ecx, edi
 
-; 4462 : 			iGoldBonus /= 100;
+; 4484 : 			iGoldBonus /= 100;
 
 	mov	eax, 1374389535				; 51eb851fH
 	imul	ecx
@@ -28410,14 +28437,14 @@ $LN207@CityConver:
 	shr	edi, 31					; 0000001fH
 	add	edi, edx
 
-; 4463 : 
-; 4464 : 			if(iGoldBonus > 0)
+; 4485 : 
+; 4486 : 			if(iGoldBonus > 0)
 
 	test	edi, edi
 	jle	$LN33@CityConver
 
-; 4465 : 			{
-; 4466 : 				GET_PLAYER(pNewReligion->m_eFounder).GetTreasury()->ChangeGold(iGoldBonus);
+; 4487 : 			{
+; 4488 : 				GET_PLAYER(pNewReligion->m_eFounder).GetTreasury()->ChangeGold(iGoldBonus);
 
 	mov	ecx, DWORD PTR [ebx+4]
 	imul	ecx, 63236				; 0000f704H
@@ -28427,37 +28454,37 @@ $LN207@CityConver:
 	mov	ecx, eax
 	call	?ChangeGold@CvTreasury@@QAEXH@Z		; CvTreasury::ChangeGold
 
-; 4467 : 				SetPaidAdoptionBonus(true);
+; 4489 : 				SetPaidAdoptionBonus(true);
 
 	mov	BYTE PTR [esi+420], 1
 
-; 4468 : 
-; 4469 : 				if(pNewReligion->m_eFounder == GC.getGame().getActivePlayer())
+; 4490 : 
+; 4491 : 				if(pNewReligion->m_eFounder == GC.getGame().getActivePlayer())
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?getActivePlayer@CvGame@@QBE?AW4PlayerTypes@@XZ ; CvGame::getActivePlayer
 	cmp	DWORD PTR [ebx+4], eax
 	jne	SHORT $LN33@CityConver
 
-; 4470 : 				{
-; 4471 : 					char text[256] = {0};
+; 4492 : 				{
+; 4493 : 					char text[256] = {0};
 
 	push	255					; 000000ffH
-	lea	eax, DWORD PTR _text$226611[esp+577]
+	lea	eax, DWORD PTR _text$226656[esp+577]
 	push	0
 	push	eax
-	mov	BYTE PTR _text$226611[esp+584], 0
+	mov	BYTE PTR _text$226656[esp+584], 0
 	call	_memset
 
-; 4472 : 					sprintf_s(text, "[COLOR_YELLOW]+%d[ENDCOLOR][ICON_GOLD]", iGoldBonus);
+; 4494 : 					sprintf_s(text, "[COLOR_YELLOW]+%d[ENDCOLOR][ICON_GOLD]", iGoldBonus);
 
 	push	edi
-	lea	ecx, DWORD PTR _text$226611[esp+588]
-	push	OFFSET $SG226617
+	lea	ecx, DWORD PTR _text$226656[esp+588]
+	push	OFFSET $SG226662
 	push	ecx
 	call	??$sprintf_s@$0BAA@@@YAHAAY0BAA@DPBDZZ	; sprintf_s<256>
 
-; 4473 : 					GC.GetEngineUserInterface()->AddPopupText(m_pCity->getX(), m_pCity->getY(), text, 0.5f);
+; 4495 : 					GC.GetEngineUserInterface()->AddPopupText(m_pCity->getX(), m_pCity->getY(), text, 0.5f);
 
 	mov	eax, DWORD PTR [esi+416]
 	mov	edx, DWORD PTR [eax+108]
@@ -28466,7 +28493,7 @@ $LN207@CityConver:
 	mov	edi, DWORD PTR [ecx]
 	add	esp, 20					; 00000014H
 	mov	DWORD PTR [esp], 1056964608		; 3f000000H
-	lea	ebx, DWORD PTR _text$226611[esp+576]
+	lea	ebx, DWORD PTR _text$226656[esp+576]
 	push	ebx
 	push	edx
 	mov	edx, DWORD PTR [edi+184]
@@ -28474,24 +28501,24 @@ $LN207@CityConver:
 	call	edx
 $LN33@CityConver:
 
-; 4474 : 				}
-; 4475 : 			}
-; 4476 : 		}
-; 4477 : 
-; 4478 : 		// Notification if the player's city was converted to a religion they didn't found
-; 4479 : 		PlayerTypes eOwnerPlayer = m_pCity->getOwner();
+; 4496 : 				}
+; 4497 : 			}
+; 4498 : 		}
+; 4499 : 
+; 4500 : 		// Notification if the player's city was converted to a religion they didn't found
+; 4501 : 		PlayerTypes eOwnerPlayer = m_pCity->getOwner();
 
 	mov	eax, DWORD PTR [esi+416]
 	mov	ebp, DWORD PTR [eax+84]
 
-; 4480 : 		CvPlayerAI& kOwnerPlayer = GET_PLAYER(eOwnerPlayer);
+; 4502 : 		CvPlayerAI& kOwnerPlayer = GET_PLAYER(eOwnerPlayer);
 
 	mov	edi, ebp
 	imul	edi, 63236				; 0000f704H
 	add	edi, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
-	mov	DWORD PTR _eOwnerPlayer$226618[esp+572], ebp
+	mov	DWORD PTR _eOwnerPlayer$226663[esp+572], ebp
 
-; 4481 : 		const ReligionTypes eOwnerPlayerReligion = kOwnerPlayer.GetReligions()->GetReligionCreatedByPlayer();
+; 4503 : 		const ReligionTypes eOwnerPlayerReligion = kOwnerPlayer.GetReligions()->GetReligionCreatedByPlayer();
 
 	mov	ecx, edi
 	call	?GetReligions@CvPlayer@@QBEPAVCvPlayerReligions@@XZ ; CvPlayer::GetReligions
@@ -28503,55 +28530,55 @@ $LN33@CityConver:
 	mov	ecx, eax
 	call	?GetReligionCreatedByPlayer@CvGameReligions@@QBE?AW4ReligionTypes@@W4PlayerTypes@@@Z ; CvGameReligions::GetReligionCreatedByPlayer
 	mov	ebx, eax
-	mov	DWORD PTR _eOwnerPlayerReligion$226620[esp+572], ebx
+	mov	DWORD PTR _eOwnerPlayerReligion$226665[esp+572], ebx
 
-; 4482 : 
-; 4483 : 		if(eOwnerPlayer != eResponsibleParty && eMajority != eOldMajority && pNewReligion->m_eFounder != eOwnerPlayer
-; 4484 : 			&& eOwnerPlayerReligion > RELIGION_PANTHEON)
+; 4504 : 
+; 4505 : 		if(eOwnerPlayer != eResponsibleParty && eMajority != eOldMajority && pNewReligion->m_eFounder != eOwnerPlayer
+; 4506 : 			&& eOwnerPlayerReligion > RELIGION_PANTHEON)
 
 	cmp	ebp, DWORD PTR _eResponsibleParty$[esp+568]
 	je	$LN208@CityConver
 	mov	eax, DWORD PTR _eOldMajority$[esp+568]
 	cmp	DWORD PTR _eMajority$[esp+568], eax
 	je	$LN208@CityConver
-	mov	edx, DWORD PTR _pNewReligion$226606[esp+572]
+	mov	edx, DWORD PTR _pNewReligion$226651[esp+572]
 	cmp	DWORD PTR [edx+4], ebp
 	je	$LN32@CityConver
 	test	ebx, ebx
 	jle	$LN32@CityConver
 
-; 4485 : 		{
-; 4486 : 			if(kOwnerPlayer.GetNotifications())
+; 4507 : 		{
+; 4508 : 			if(kOwnerPlayer.GetNotifications())
 
 	mov	ecx, edi
 	call	?GetNotifications@CvPlayer@@QBEPAVCvNotifications@@XZ ; CvPlayer::GetNotifications
 	test	eax, eax
 	je	$LN31@CityConver
 
-; 4487 : 			{
-; 4488 : 				Localization::String strMessage;
+; 4509 : 			{
+; 4510 : 				Localization::String strMessage;
 
 	mov	ebp, DWORD PTR __imp_??0String@Localization@@QAE@XZ
-	lea	ecx, DWORD PTR _strMessage$226623[esp+572]
+	lea	ecx, DWORD PTR _strMessage$226668[esp+572]
 	call	ebp
 
-; 4489 : 				Localization::String strSummary;
+; 4511 : 				Localization::String strSummary;
 
-	lea	ecx, DWORD PTR _strSummary$226624[esp+572]
+	lea	ecx, DWORD PTR _strSummary$226669[esp+572]
 	mov	DWORD PTR __$EHRec$[esp+580], 0
 	call	ebp
 
-; 4490 : 				strMessage = GetLocalizedText("TXT_KEY_NOTIFICATION_RELIGION_SPREAD_ACTIVE_PLAYER", m_pCity->getName());
+; 4512 : 				strMessage = GetLocalizedText("TXT_KEY_NOTIFICATION_RELIGION_SPREAD_ACTIVE_PLAYER", m_pCity->getName());
 
 	mov	ecx, DWORD PTR [esi+416]
 	sub	esp, 28					; 0000001cH
 	mov	eax, esp
-	mov	DWORD PTR $T238944[esp+600], esp
+	mov	DWORD PTR $T239017[esp+600], esp
 	push	eax
 	mov	BYTE PTR __$EHRec$[esp+612], 1
 	call	?getName@CvCity@@QBE?BVCvString@@XZ	; CvCity::getName
-	lea	ecx, DWORD PTR $T238945[esp+600]
-	push	OFFSET $SG226628
+	lea	ecx, DWORD PTR $T239018[esp+600]
+	push	OFFSET $SG226673
 	push	ecx
 	call	??$GetLocalizedText@VCvString@@@@YA?AVCvString@@PBDV0@@Z ; GetLocalizedText<CvString>
 	add	esp, 36					; 00000024H
@@ -28559,29 +28586,29 @@ $LN33@CityConver:
 	mov	BYTE PTR __$EHRec$[esp+580], 2
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
-	lea	ecx, DWORD PTR _strMessage$226623[esp+576]
+	lea	ecx, DWORD PTR _strMessage$226668[esp+576]
 	call	DWORD PTR __imp_??4String@Localization@@QAEAAV01@PBD@Z
-	lea	ecx, DWORD PTR $T238945[esp+572]
+	lea	ecx, DWORD PTR $T239018[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 4491 : 				strSummary = Localization::Lookup("TXT_KEY_NOTIFICATION_RELIGION_SPREAD_ACTIVE_PLAYER_S");
+; 4513 : 				strSummary = Localization::Lookup("TXT_KEY_NOTIFICATION_RELIGION_SPREAD_ACTIVE_PLAYER_S");
 
-	lea	edx, DWORD PTR $T238946[esp+572]
-	push	OFFSET $SG226630
+	lea	edx, DWORD PTR $T239019[esp+572]
+	push	OFFSET $SG226675
 	push	edx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
 	push	eax
-	lea	ecx, DWORD PTR _strSummary$226624[esp+576]
+	lea	ecx, DWORD PTR _strSummary$226669[esp+576]
 	mov	BYTE PTR __$EHRec$[esp+584], 3
 	call	DWORD PTR __imp_??4String@Localization@@QAEAAV01@ABV01@@Z
 	mov	ebp, DWORD PTR __imp_??1String@Localization@@UAE@XZ
-	lea	ecx, DWORD PTR $T238946[esp+572]
+	lea	ecx, DWORD PTR $T239019[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 1
 	call	ebp
 
-; 4492 : 				kOwnerPlayer.GetNotifications()->Add(NOTIFICATION_RELIGION_SPREAD, strMessage.toUTF8(), strSummary.toUTF8(), m_pCity->getX(), m_pCity->getY(), -1);
+; 4514 : 				kOwnerPlayer.GetNotifications()->Add(NOTIFICATION_RELIGION_SPREAD, strMessage.toUTF8(), strSummary.toUTF8(), m_pCity->getX(), m_pCity->getY(), -1);
 
 	mov	eax, DWORD PTR [esi+416]
 	mov	ecx, DWORD PTR [eax+108]
@@ -28591,10 +28618,10 @@ $LN33@CityConver:
 	push	-1
 	push	ecx
 	push	eax
-	lea	ecx, DWORD PTR _strSummary$226624[esp+588]
+	lea	ecx, DWORD PTR _strSummary$226669[esp+588]
 	call	ebx
 	push	eax
-	lea	ecx, DWORD PTR _strMessage$226623[esp+592]
+	lea	ecx, DWORD PTR _strMessage$226668[esp+592]
 	call	ebx
 	push	eax
 	push	1912276298				; 71fb054aH
@@ -28603,28 +28630,28 @@ $LN33@CityConver:
 	mov	ecx, eax
 	call	?Add@CvNotifications@@QAEHW4NotificationTypes@@PBD1HHHH@Z ; CvNotifications::Add
 
-; 4493 : 			}
+; 4515 : 			}
 
-	lea	ecx, DWORD PTR _strSummary$226624[esp+572]
+	lea	ecx, DWORD PTR _strSummary$226669[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 0
 	call	ebp
-	lea	ecx, DWORD PTR _strMessage$226623[esp+572]
+	lea	ecx, DWORD PTR _strMessage$226668[esp+572]
 	mov	DWORD PTR __$EHRec$[esp+580], -1
 	call	ebp
-	mov	ebp, DWORD PTR _eOwnerPlayer$226618[esp+572]
-	mov	ebx, DWORD PTR _eOwnerPlayerReligion$226620[esp+572]
+	mov	ebp, DWORD PTR _eOwnerPlayer$226663[esp+572]
+	mov	ebx, DWORD PTR _eOwnerPlayerReligion$226665[esp+572]
 $LN31@CityConver:
 
-; 4494 : 
-; 4495 : 			//Achievements!
-; 4496 : 			if(eOwnerPlayer == GC.getGame().getActivePlayer()){
+; 4516 : 
+; 4517 : 			//Achievements!
+; 4518 : 			if(eOwnerPlayer == GC.getGame().getActivePlayer()){
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?getActivePlayer@CvGame@@QBE?AW4PlayerTypes@@XZ ; CvGame::getActivePlayer
 	cmp	ebp, eax
 	jne	$LN208@CityConver
 
-; 4497 : 				const CvReligion* pkReligion = GC.getGame().GetGameReligions()->GetReligion(eOwnerPlayerReligion, eOwnerPlayer);
+; 4519 : 				const CvReligion* pkReligion = GC.getGame().GetGameReligions()->GetReligion(eOwnerPlayerReligion, eOwnerPlayer);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	ebp
@@ -28633,13 +28660,13 @@ $LN31@CityConver:
 	mov	ecx, eax
 	call	?GetReligion@CvGameReligions@@QBEPBVCvReligion@@W4ReligionTypes@@W4PlayerTypes@@@Z ; CvGameReligions::GetReligion
 
-; 4498 : 				if(pkReligion != NULL)
+; 4520 : 				if(pkReligion != NULL)
 
 	test	eax, eax
 	je	$LN208@CityConver
 
-; 4499 : 				{
-; 4500 : 					if(m_pCity->getX() == pkReligion->m_iHolyCityX && m_pCity->getY() == pkReligion->m_iHolyCityY)
+; 4521 : 				{
+; 4522 : 					if(m_pCity->getX() == pkReligion->m_iHolyCityX && m_pCity->getY() == pkReligion->m_iHolyCityY)
 
 	mov	ecx, DWORD PTR [esi+416]
 	mov	edx, DWORD PTR [ecx+96]
@@ -28649,8 +28676,8 @@ $LN31@CityConver:
 	cmp	ecx, DWORD PTR [eax+12]
 	jne	$LN208@CityConver
 
-; 4501 : 					{
-; 4502 : 						gDLL->UnlockAchievement(ACHIEVEMENT_XP1_20);
+; 4523 : 					{
+; 4524 : 						gDLL->UnlockAchievement(ACHIEVEMENT_XP1_20);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8564
 	mov	eax, DWORD PTR [ecx]
@@ -28658,53 +28685,53 @@ $LN31@CityConver:
 	push	210					; 000000d2H
 	call	edx
 
-; 4503 : 					}
-; 4504 : 				}
-; 4505 : 			}
-; 4506 : 		}
+; 4525 : 					}
+; 4526 : 				}
+; 4527 : 			}
+; 4528 : 		}
 
 	jmp	$LN208@CityConver
 $LN32@CityConver:
 
-; 4507 : 
-; 4508 : 		else if(eOwnerPlayer != eResponsibleParty && eMajority != eOldMajority && eOldMajority == NO_RELIGION)
+; 4529 : 
+; 4530 : 		else if(eOwnerPlayer != eResponsibleParty && eMajority != eOldMajority && eOldMajority == NO_RELIGION)
 
 	cmp	eax, -1
 	jne	$LN208@CityConver
 
-; 4509 : 		{
-; 4510 : 			if(kOwnerPlayer.GetNotifications())
+; 4531 : 		{
+; 4532 : 			if(kOwnerPlayer.GetNotifications())
 
 	mov	ecx, edi
 	call	?GetNotifications@CvPlayer@@QBEPAVCvNotifications@@XZ ; CvPlayer::GetNotifications
 	test	eax, eax
 	je	$LN208@CityConver
 
-; 4511 : 			{
-; 4512 : 				Localization::String strMessage;
+; 4533 : 			{
+; 4534 : 				Localization::String strMessage;
 
 	mov	ebp, DWORD PTR __imp_??0String@Localization@@QAE@XZ
-	lea	ecx, DWORD PTR _strMessage$226638[esp+572]
+	lea	ecx, DWORD PTR _strMessage$226683[esp+572]
 	call	ebp
 
-; 4513 : 				Localization::String strSummary;
+; 4535 : 				Localization::String strSummary;
 
-	lea	ecx, DWORD PTR _strSummary$226639[esp+572]
+	lea	ecx, DWORD PTR _strSummary$226684[esp+572]
 	mov	DWORD PTR __$EHRec$[esp+580], 4
 	call	ebp
 
-; 4514 : 				strMessage = GetLocalizedText("TXT_KEY_NOTIFICATION_RELIGION_SPREAD_INITIAL_CONVERSION", m_pCity->getName());
+; 4536 : 				strMessage = GetLocalizedText("TXT_KEY_NOTIFICATION_RELIGION_SPREAD_INITIAL_CONVERSION", m_pCity->getName());
 
 	mov	ecx, DWORD PTR [esi+416]
 	sub	esp, 28					; 0000001cH
 	mov	eax, esp
-	mov	DWORD PTR $T238947[esp+600], esp
+	mov	DWORD PTR $T239020[esp+600], esp
 	mov	bl, 5
 	push	eax
 	mov	BYTE PTR __$EHRec$[esp+612], bl
 	call	?getName@CvCity@@QBE?BVCvString@@XZ	; CvCity::getName
-	lea	ecx, DWORD PTR $T238948[esp+600]
-	push	OFFSET $SG226643
+	lea	ecx, DWORD PTR $T239021[esp+600]
+	push	OFFSET $SG226688
 	push	ecx
 	call	??$GetLocalizedText@VCvString@@@@YA?AVCvString@@PBDV0@@Z ; GetLocalizedText<CvString>
 	add	esp, 36					; 00000024H
@@ -28712,29 +28739,29 @@ $LN32@CityConver:
 	mov	BYTE PTR __$EHRec$[esp+580], 6
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
-	lea	ecx, DWORD PTR _strMessage$226638[esp+576]
+	lea	ecx, DWORD PTR _strMessage$226683[esp+576]
 	call	DWORD PTR __imp_??4String@Localization@@QAEAAV01@PBD@Z
-	lea	ecx, DWORD PTR $T238948[esp+572]
+	lea	ecx, DWORD PTR $T239021[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 4515 : 				strSummary = Localization::Lookup("TXT_KEY_NOTIFICATION_RELIGION_SPREAD_INITIAL_CONVERSION_S");
+; 4537 : 				strSummary = Localization::Lookup("TXT_KEY_NOTIFICATION_RELIGION_SPREAD_INITIAL_CONVERSION_S");
 
-	lea	edx, DWORD PTR $T238949[esp+572]
-	push	OFFSET $SG226645
+	lea	edx, DWORD PTR $T239022[esp+572]
+	push	OFFSET $SG226690
 	push	edx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
 	push	eax
-	lea	ecx, DWORD PTR _strSummary$226639[esp+576]
+	lea	ecx, DWORD PTR _strSummary$226684[esp+576]
 	mov	BYTE PTR __$EHRec$[esp+584], 7
 	call	DWORD PTR __imp_??4String@Localization@@QAEAAV01@ABV01@@Z
 	mov	ebp, DWORD PTR __imp_??1String@Localization@@UAE@XZ
-	lea	ecx, DWORD PTR $T238949[esp+572]
+	lea	ecx, DWORD PTR $T239022[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	ebp
 
-; 4516 : 				kOwnerPlayer.GetNotifications()->Add(NOTIFICATION_RELIGION_SPREAD_NATURAL, strMessage.toUTF8(), strSummary.toUTF8(), m_pCity->getX(), m_pCity->getY(), -1);
+; 4538 : 				kOwnerPlayer.GetNotifications()->Add(NOTIFICATION_RELIGION_SPREAD_NATURAL, strMessage.toUTF8(), strSummary.toUTF8(), m_pCity->getX(), m_pCity->getY(), -1);
 
 	mov	eax, DWORD PTR [esi+416]
 	mov	ecx, DWORD PTR [eax+108]
@@ -28744,10 +28771,10 @@ $LN32@CityConver:
 	push	-1
 	push	ecx
 	push	eax
-	lea	ecx, DWORD PTR _strSummary$226639[esp+588]
+	lea	ecx, DWORD PTR _strSummary$226684[esp+588]
 	call	ebx
 	push	eax
-	lea	ecx, DWORD PTR _strMessage$226638[esp+592]
+	lea	ecx, DWORD PTR _strMessage$226683[esp+592]
 	call	ebx
 	push	eax
 	push	-976947174				; c5c4f81aH
@@ -28756,20 +28783,20 @@ $LN32@CityConver:
 	mov	ecx, eax
 	call	?Add@CvNotifications@@QAEHW4NotificationTypes@@PBD1HHHH@Z ; CvNotifications::Add
 
-; 4517 : 			}
+; 4539 : 			}
 
-	lea	ecx, DWORD PTR _strSummary$226639[esp+572]
+	lea	ecx, DWORD PTR _strSummary$226684[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 4
 	call	ebp
-	lea	ecx, DWORD PTR _strMessage$226638[esp+572]
+	lea	ecx, DWORD PTR _strMessage$226683[esp+572]
 	mov	DWORD PTR __$EHRec$[esp+580], -1
 	call	ebp
 $LN208@CityConver:
 
-; 4518 : 		}
-; 4519 : 
-; 4520 : 		//More Achievements
-; 4521 : 		if(m_pCity->getOwner() != GC.getGame().getActivePlayer() && pNewReligion->m_eFounder == GC.getGame().getActivePlayer())
+; 4540 : 		}
+; 4541 : 
+; 4542 : 		//More Achievements
+; 4543 : 		if(m_pCity->getOwner() != GC.getGame().getActivePlayer() && pNewReligion->m_eFounder == GC.getGame().getActivePlayer())
 
 	mov	eax, DWORD PTR [esi+416]
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
@@ -28779,12 +28806,12 @@ $LN208@CityConver:
 	je	SHORT $LN209@CityConver
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?getActivePlayer@CvGame@@QBE?AW4PlayerTypes@@XZ ; CvGame::getActivePlayer
-	mov	edi, DWORD PTR _pNewReligion$226606[esp+572]
+	mov	edi, DWORD PTR _pNewReligion$226651[esp+572]
 	cmp	DWORD PTR [edi+4], eax
 	jne	SHORT $LN23@CityConver
 
-; 4522 : 		{
-; 4523 : 			if(m_pCity->GetCityReligions()->IsHolyCityAnyReligion() && !m_pCity->GetCityReligions()->IsHolyCityForReligion(pNewReligion->m_eReligion))
+; 4544 : 		{
+; 4545 : 			if(m_pCity->GetCityReligions()->IsHolyCityAnyReligion() && !m_pCity->GetCityReligions()->IsHolyCityForReligion(pNewReligion->m_eReligion))
 
 	mov	ecx, DWORD PTR [esi+416]
 	call	?GetCityReligions@CvCity@@QBEPAVCvCityReligions@@XZ ; CvCity::GetCityReligions
@@ -28801,8 +28828,8 @@ $LN208@CityConver:
 	test	al, al
 	jne	SHORT $LN23@CityConver
 
-; 4524 : 			{
-; 4525 : 				gDLL->UnlockAchievement(ACHIEVEMENT_XP1_18);
+; 4546 : 			{
+; 4547 : 				gDLL->UnlockAchievement(ACHIEVEMENT_XP1_18);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8564
 	mov	edx, DWORD PTR [ecx]
@@ -28811,14 +28838,14 @@ $LN208@CityConver:
 	call	eax
 	jmp	SHORT $LN23@CityConver
 $LN209@CityConver:
-	mov	edi, DWORD PTR _pNewReligion$226606[esp+572]
+	mov	edi, DWORD PTR _pNewReligion$226651[esp+572]
 $LN23@CityConver:
 
-; 4526 : 			}
-; 4527 : 		}
-; 4528 : 
-; 4529 : #ifndef AUI_ACHIEVEMENT_FIX_RELIGION_WE_ARE_FAMILY_WORKING
-; 4530 : 		if(m_pCity->isCapital() && pNewReligion->m_eFounder == GC.getGame().getActivePlayer())
+; 4548 : 			}
+; 4549 : 		}
+; 4550 : 
+; 4551 : #ifndef AUI_ACHIEVEMENT_FIX_RELIGION_WE_ARE_FAMILY_WORKING
+; 4552 : 		if(m_pCity->isCapital() && pNewReligion->m_eFounder == GC.getGame().getActivePlayer())
 
 	mov	ecx, DWORD PTR [esi+416]
 	call	?isCapital@CvCity@@QBE_NXZ		; CvCity::isCapital
@@ -28829,25 +28856,25 @@ $LN23@CityConver:
 	cmp	DWORD PTR [edi+4], eax
 	jne	$LN210@CityConver
 
-; 4531 : 		{
-; 4532 : 			//Determine if this is a standard size or larger map.
-; 4533 : 			bool bIsStandardOrLarger = false;
-; 4534 : 			Database::Connection* pDB = GC.GetGameDatabase();
+; 4553 : 		{
+; 4554 : 			//Determine if this is a standard size or larger map.
+; 4555 : 			bool bIsStandardOrLarger = false;
+; 4556 : 			Database::Connection* pDB = GC.GetGameDatabase();
 
 	mov	edi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+912
 
-; 4535 : 			Database::Results kStandardSize;
+; 4557 : 			Database::Results kStandardSize;
 
 	push	0
-	lea	ecx, DWORD PTR _kStandardSize$226651[esp+576]
+	lea	ecx, DWORD PTR _kStandardSize$226696[esp+576]
 	call	DWORD PTR __imp_??0Results@Database@@QAE@PBD@Z
 
-; 4536 : 			if(pDB->SelectAt(kStandardSize, "Worlds", "Type", "WORLDSIZE_STANDARD"))
+; 4558 : 			if(pDB->SelectAt(kStandardSize, "Worlds", "Type", "WORLDSIZE_STANDARD"))
 
-	push	OFFSET $SG226653
-	push	OFFSET $SG226654
-	push	OFFSET $SG226655
-	lea	ecx, DWORD PTR _kStandardSize$226651[esp+584]
+	push	OFFSET $SG226698
+	push	OFFSET $SG226699
+	push	OFFSET $SG226700
+	lea	ecx, DWORD PTR _kStandardSize$226696[esp+584]
 	push	ecx
 	mov	ecx, edi
 	mov	DWORD PTR __$EHRec$[esp+596], 8
@@ -28855,115 +28882,115 @@ $LN23@CityConver:
 	test	al, al
 	je	$LN203@CityConver
 
-; 4537 : 			{
-; 4538 : 				if(kStandardSize.Step())
+; 4559 : 			{
+; 4560 : 				if(kStandardSize.Step())
 
-	lea	ecx, DWORD PTR _kStandardSize$226651[esp+572]
+	lea	ecx, DWORD PTR _kStandardSize$226696[esp+572]
 	call	DWORD PTR __imp_?Step@Results@Database@@QAE_NXZ
 	test	al, al
 	je	$LN203@CityConver
 
-; 4539 : 				{
-; 4540 : 					int idColumn = kStandardSize.ColumnPosition("ID");
+; 4561 : 				{
+; 4562 : 					int idColumn = kStandardSize.ColumnPosition("ID");
 
-	push	OFFSET $SG226658
-	lea	ecx, DWORD PTR _kStandardSize$226651[esp+576]
+	push	OFFSET $SG226703
+	lea	ecx, DWORD PTR _kStandardSize$226696[esp+576]
 	call	DWORD PTR __imp_?ColumnPosition@Results@Database@@QAEHPBD@Z
 	mov	edi, eax
 
-; 4541 : 					if(idColumn >= 0)
+; 4563 : 					if(idColumn >= 0)
 
 	test	edi, edi
 	jl	$LN203@CityConver
 
-; 4542 : 					{
-; 4543 : 						WorldSizeTypes eWorldSize = GC.getMap().getWorldSize();
+; 4564 : 					{
+; 4565 : 						WorldSizeTypes eWorldSize = GC.getMap().getWorldSize();
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+52
 	call	?getWorldSize@CvMap@@QAE?AW4WorldSizeTypes@@XZ ; CvMap::getWorldSize
 
-; 4544 : 						int standardWorldSize = kStandardSize.GetInt(idColumn);
+; 4566 : 						int standardWorldSize = kStandardSize.GetInt(idColumn);
 
 	push	edi
-	lea	ecx, DWORD PTR _kStandardSize$226651[esp+576]
+	lea	ecx, DWORD PTR _kStandardSize$226696[esp+576]
 	mov	ebx, eax
 	call	DWORD PTR __imp_?GetInt@Results@Database@@QAEHH@Z
 
-; 4545 : 						if(eWorldSize >= standardWorldSize)
+; 4567 : 						if(eWorldSize >= standardWorldSize)
 
 	cmp	ebx, eax
 	jl	SHORT $LN203@CityConver
 
-; 4546 : 						{
-; 4547 : 							bIsStandardOrLarger = true;
-; 4548 : 						}
-; 4549 : 					}
-; 4550 : 				}
-; 4551 : 			}
-; 4552 : 
-; 4553 : 			if(bIsStandardOrLarger)
-; 4554 : 			{
-; 4555 : 				//Determine if this religion has spread to all capitals
-; 4556 : 				bool bSpreadToAllCapitals = true;
-; 4557 : 				for(int i = 0; i < MAX_MAJOR_CIVS; ++i)
+; 4568 : 						{
+; 4569 : 							bIsStandardOrLarger = true;
+; 4570 : 						}
+; 4571 : 					}
+; 4572 : 				}
+; 4573 : 			}
+; 4574 : 
+; 4575 : 			if(bIsStandardOrLarger)
+; 4576 : 			{
+; 4577 : 				//Determine if this religion has spread to all capitals
+; 4578 : 				bool bSpreadToAllCapitals = true;
+; 4579 : 				for(int i = 0; i < MAX_MAJOR_CIVS; ++i)
 
 	xor	edi, edi
 	npad	12
 $LL16@CityConver:
 
-; 4558 : 				{
-; 4559 : 					CvPlayerAI& kPlayer = GET_PLAYER(static_cast<PlayerTypes>(i));
+; 4580 : 				{
+; 4581 : 					CvPlayerAI& kPlayer = GET_PLAYER(static_cast<PlayerTypes>(i));
 
 	mov	edx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 
-; 4560 : 					if(kPlayer.isAlive())
+; 4582 : 					if(kPlayer.isAlive())
 
 	cmp	BYTE PTR [edi+edx+2256], 0
 	lea	ecx, DWORD PTR [edi+edx]
 	je	SHORT $LN206@CityConver
 
-; 4561 : 					{
-; 4562 : 						CvCity* pCapital = kPlayer.getCapitalCity();
+; 4583 : 					{
+; 4584 : 						CvCity* pCapital = kPlayer.getCapitalCity();
 
 	call	?getCapitalCity@CvPlayer@@QAEPAVCvCity@@XZ ; CvPlayer::getCapitalCity
 
-; 4563 : 						if(pCapital != NULL)
+; 4585 : 						if(pCapital != NULL)
 
 	test	eax, eax
 	je	SHORT $LN206@CityConver
 
-; 4564 : 						{
-; 4565 : 							CvCityReligions* pCityReligions = pCapital->GetCityReligions();
+; 4586 : 						{
+; 4587 : 							CvCityReligions* pCityReligions = pCapital->GetCityReligions();
 
 	mov	ecx, eax
 	call	?GetCityReligions@CvCity@@QBEPAVCvCityReligions@@XZ ; CvCity::GetCityReligions
 
-; 4566 : 							if(pCityReligions != NULL)
+; 4588 : 							if(pCityReligions != NULL)
 
 	test	eax, eax
 	je	SHORT $LN206@CityConver
 
-; 4567 : 							{
-; 4568 : 								if(pCityReligions->GetReligiousMajority() != pNewReligion->m_eFounder)
+; 4589 : 							{
+; 4590 : 								if(pCityReligions->GetReligiousMajority() != pNewReligion->m_eFounder)
 
 	mov	ecx, eax
 	call	?GetReligiousMajority@CvCityReligions@@QAE?AW4ReligionTypes@@XZ ; CvCityReligions::GetReligiousMajority
-	mov	ecx, DWORD PTR _pNewReligion$226606[esp+572]
+	mov	ecx, DWORD PTR _pNewReligion$226651[esp+572]
 	cmp	eax, DWORD PTR [ecx+4]
 	jne	SHORT $LN203@CityConver
 $LN206@CityConver:
 
-; 4569 : 								{
-; 4570 : 									bSpreadToAllCapitals = false;
-; 4571 : 									break;
-; 4572 : 								}
-; 4573 : 							}
-; 4574 : 						}
-; 4575 : 					}
-; 4576 : 
-; 4577 : 					if(bSpreadToAllCapitals)
-; 4578 : 					{
-; 4579 : 						gDLL->UnlockAchievement(ACHIEVEMENT_XP1_19);
+; 4591 : 								{
+; 4592 : 									bSpreadToAllCapitals = false;
+; 4593 : 									break;
+; 4594 : 								}
+; 4595 : 							}
+; 4596 : 						}
+; 4597 : 					}
+; 4598 : 
+; 4599 : 					if(bSpreadToAllCapitals)
+; 4600 : 					{
+; 4601 : 						gDLL->UnlockAchievement(ACHIEVEMENT_XP1_19);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8564
 	mov	edx, DWORD PTR [ecx]
@@ -28975,21 +29002,21 @@ $LN206@CityConver:
 	jl	SHORT $LL16@CityConver
 $LN203@CityConver:
 
-; 4580 : 					}
-; 4581 : 				}
-; 4582 : 			}
-; 4583 : 		}
+; 4602 : 					}
+; 4603 : 				}
+; 4604 : 			}
+; 4605 : 		}
 
-	lea	ecx, DWORD PTR _kStandardSize$226651[esp+572]
+	lea	ecx, DWORD PTR _kStandardSize$226696[esp+572]
 	mov	DWORD PTR __$EHRec$[esp+580], -1
 	call	DWORD PTR __imp_??1Results@Database@@UAE@XZ
-	mov	edi, DWORD PTR _pNewReligion$226606[esp+572]
+	mov	edi, DWORD PTR _pNewReligion$226651[esp+572]
 $LN210@CityConver:
 
-; 4584 : #endif
-; 4585 : 
-; 4586 : 		// Diplo implications (there must have been religion switch and a responsible party)
-; 4587 : 		if(eMajority != eOldMajority && eResponsibleParty != NO_PLAYER)
+; 4606 : #endif
+; 4607 : 
+; 4608 : 		// Diplo implications (there must have been religion switch and a responsible party)
+; 4609 : 		if(eMajority != eOldMajority && eResponsibleParty != NO_PLAYER)
 
 	mov	ebx, DWORD PTR _eMajority$[esp+568]
 	mov	ebp, DWORD PTR _eOldMajority$[esp+568]
@@ -28998,25 +29025,25 @@ $LN210@CityConver:
 	cmp	DWORD PTR _eResponsibleParty$[esp+568], -1
 	je	$LN6@CityConver
 
-; 4588 : 		{
-; 4589 : 			// Is the city owner not the founder of this religion?
-; 4590 : 			if(pNewReligion->m_eFounder != m_pCity->getOwner())
+; 4610 : 		{
+; 4611 : 			// Is the city owner not the founder of this religion?
+; 4612 : 			if(pNewReligion->m_eFounder != m_pCity->getOwner())
 
 	mov	ecx, DWORD PTR [esi+416]
 	mov	eax, DWORD PTR [ecx+84]
 	cmp	DWORD PTR [edi+4], eax
 	je	SHORT $LN6@CityConver
 
-; 4591 : 			{
-; 4592 : 				CvPlayer& kCityOwnerPlayer = GET_PLAYER(m_pCity->getOwner());
+; 4613 : 			{
+; 4614 : 				CvPlayer& kCityOwnerPlayer = GET_PLAYER(m_pCity->getOwner());
 
 	imul	eax, 63236				; 0000f704H
 	add	eax, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	mov	edi, eax
 
-; 4593 : 
-; 4594 : 				// Did he found another religion?
-; 4595 : 				ReligionTypes eCityOwnerReligion = kCityOwnerPlayer.GetReligions()->GetReligionCreatedByPlayer();
+; 4615 : 
+; 4616 : 				// Did he found another religion?
+; 4617 : 				ReligionTypes eCityOwnerReligion = kCityOwnerPlayer.GetReligions()->GetReligionCreatedByPlayer();
 
 	mov	ecx, edi
 	call	?GetReligions@CvPlayer@@QBEPAVCvPlayerReligions@@XZ ; CvPlayer::GetReligions
@@ -29028,31 +29055,31 @@ $LN210@CityConver:
 	mov	ecx, eax
 	call	?GetReligionCreatedByPlayer@CvGameReligions@@QBE?AW4ReligionTypes@@W4PlayerTypes@@@Z ; CvGameReligions::GetReligionCreatedByPlayer
 
-; 4596 : 				if(eCityOwnerReligion >= RELIGION_PANTHEON)
+; 4618 : 				if(eCityOwnerReligion >= RELIGION_PANTHEON)
 
 	test	eax, eax
 	jl	SHORT $LN6@CityConver
 
-; 4597 : 				{
-; 4598 : 					int iPoints = 0;
-; 4599 : 
-; 4600 : 					// His religion wasn't present here, minor hit
-; 4601 : 					if(eOldMajority != eCityOwnerReligion)
+; 4619 : 				{
+; 4620 : 					int iPoints = 0;
+; 4621 : 
+; 4622 : 					// His religion wasn't present here, minor hit
+; 4623 : 					if(eOldMajority != eCityOwnerReligion)
 
 	cmp	ebp, eax
 	je	SHORT $LN5@CityConver
 
-; 4602 : 					{
-; 4603 : 						iPoints = GC.getRELIGION_DIPLO_HIT_INITIAL_CONVERT_FRIENDLY_CITY(); /*1*/
+; 4624 : 					{
+; 4625 : 						iPoints = GC.getRELIGION_DIPLO_HIT_INITIAL_CONVERT_FRIENDLY_CITY(); /*1*/
 
 	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+7908
 	jmp	SHORT $LN176@CityConver
 $LN5@CityConver:
 
-; 4604 : 					}
-; 4605 : 
-; 4606 : 					// This was his holy city; huge hit!
-; 4607 : 					else if(m_pCity->GetCityReligions()->IsHolyCityForReligion(eCityOwnerReligion))
+; 4626 : 					}
+; 4627 : 
+; 4628 : 					// This was his holy city; huge hit!
+; 4629 : 					else if(m_pCity->GetCityReligions()->IsHolyCityForReligion(eCityOwnerReligion))
 
 	mov	ecx, DWORD PTR [esi+416]
 	push	eax
@@ -29061,25 +29088,25 @@ $LN5@CityConver:
 	call	?IsHolyCityForReligion@CvCityReligions@@QAE_NW4ReligionTypes@@@Z ; CvCityReligions::IsHolyCityForReligion
 	test	al, al
 
-; 4608 : 					{
-; 4609 : 						iPoints = GC.getRELIGION_DIPLO_HIT_CONVERT_HOLY_CITY(); /*25*/
+; 4630 : 					{
+; 4631 : 						iPoints = GC.getRELIGION_DIPLO_HIT_CONVERT_HOLY_CITY(); /*25*/
 
 	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+7916
 	jne	SHORT $LN176@CityConver
 
-; 4610 : 					}
-; 4611 : 
-; 4612 : 					// He had established his religion here, major hit
-; 4613 : 					else
-; 4614 : 					{
-; 4615 : 						iPoints = GC.getRELIGION_DIPLO_HIT_RELIGIOUS_FLIP_FRIENDLY_CITY(); /*3*/
+; 4632 : 					}
+; 4633 : 
+; 4634 : 					// He had established his religion here, major hit
+; 4635 : 					else
+; 4636 : 					{
+; 4637 : 						iPoints = GC.getRELIGION_DIPLO_HIT_RELIGIOUS_FLIP_FRIENDLY_CITY(); /*3*/
 
 	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+7912
 $LN176@CityConver:
 
-; 4616 : 					}
-; 4617 : 
-; 4618 : 					kCityOwnerPlayer.GetDiplomacyAI()->ChangeNegativeReligiousConversionPoints(eResponsibleParty, iPoints);
+; 4638 : 					}
+; 4639 : 
+; 4640 : 					kCityOwnerPlayer.GetDiplomacyAI()->ChangeNegativeReligiousConversionPoints(eResponsibleParty, iPoints);
 
 	push	eax
 	mov	eax, DWORD PTR _eResponsibleParty$[esp+572]
@@ -29090,11 +29117,11 @@ $LN176@CityConver:
 	call	?ChangeNegativeReligiousConversionPoints@CvDiplomacyAI@@QAEXW4PlayerTypes@@H@Z ; CvDiplomacyAI::ChangeNegativeReligiousConversionPoints
 $LN6@CityConver:
 
-; 4619 : 				}
-; 4620 : 			}
-; 4621 : 		}
-; 4622 : 
-; 4623 : 		ICvEngineScriptSystem1* pkScriptSystem = gDLL->GetScriptSystem();
+; 4641 : 				}
+; 4642 : 			}
+; 4643 : 		}
+; 4644 : 
+; 4645 : 		ICvEngineScriptSystem1* pkScriptSystem = gDLL->GetScriptSystem();
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8564
 	mov	edx, DWORD PTR [ecx]
@@ -29102,81 +29129,81 @@ $LN6@CityConver:
 	call	eax
 	mov	edi, eax
 
-; 4624 : 		if(pkScriptSystem)
+; 4646 : 		if(pkScriptSystem)
 
 	test	edi, edi
 	je	$LN1@CityConver
 
-; 4625 : 		{
-; 4626 : 			CvLuaArgsHandle args;
+; 4647 : 		{
+; 4648 : 			CvLuaArgsHandle args;
 
-	lea	ecx, DWORD PTR _args$226690[esp+572]
+	lea	ecx, DWORD PTR _args$226735[esp+572]
 	call	??0CvLuaArgsHandle@@QAE@XZ		; CvLuaArgsHandle::CvLuaArgsHandle
 
-; 4627 : 			args->Push(m_pCity->getOwner());
+; 4649 : 			args->Push(m_pCity->getOwner());
 
 	mov	ecx, DWORD PTR [esi+416]
 	mov	eax, DWORD PTR [ecx+84]
-	mov	ecx, DWORD PTR _args$226690[esp+572]
+	mov	ecx, DWORD PTR _args$226735[esp+572]
 	mov	edx, DWORD PTR [ecx]
 	push	eax
 	mov	eax, DWORD PTR [edx+8]
 	mov	DWORD PTR __$EHRec$[esp+584], 9
 	call	eax
 
-; 4628 : 			args->Push(eMajority);
+; 4650 : 			args->Push(eMajority);
 
-	mov	ecx, DWORD PTR _args$226690[esp+572]
+	mov	ecx, DWORD PTR _args$226735[esp+572]
 	mov	edx, DWORD PTR [ecx]
 	mov	eax, DWORD PTR [edx+8]
 	push	ebx
 	call	eax
 
-; 4629 : 			args->Push(m_pCity->getX());
+; 4651 : 			args->Push(m_pCity->getX());
 
 	mov	ecx, DWORD PTR [esi+416]
 	mov	eax, DWORD PTR [ecx+96]
-	mov	ecx, DWORD PTR _args$226690[esp+572]
+	mov	ecx, DWORD PTR _args$226735[esp+572]
 	mov	edx, DWORD PTR [ecx]
 	push	eax
 	mov	eax, DWORD PTR [edx+8]
 	call	eax
 
-; 4630 : 			args->Push(m_pCity->getY());
+; 4652 : 			args->Push(m_pCity->getY());
 
 	mov	ecx, DWORD PTR [esi+416]
 	mov	eax, DWORD PTR [ecx+108]
-	mov	ecx, DWORD PTR _args$226690[esp+572]
+	mov	ecx, DWORD PTR _args$226735[esp+572]
 	mov	edx, DWORD PTR [ecx]
 	push	eax
 	mov	eax, DWORD PTR [edx+8]
 	call	eax
 
-; 4631 : 
-; 4632 : 			// Attempt to execute the game events.
-; 4633 : 			// Will return false if there are no registered listeners.
-; 4634 : 			bool bResult = false;
-; 4635 : 			LuaSupport::CallHook(pkScriptSystem, "CityConvertsReligion", args.get(), bResult);
+; 4653 : 
+; 4654 : 			// Attempt to execute the game events.
+; 4655 : 			// Will return false if there are no registered listeners.
+; 4656 : 			bool bResult = false;
+; 4657 : 			LuaSupport::CallHook(pkScriptSystem, "CityConvertsReligion", args.get(), bResult);
 
-	mov	edx, DWORD PTR _args$226690[esp+572]
-	lea	ecx, DWORD PTR _bResult$226691[esp+572]
+	mov	edx, DWORD PTR _args$226735[esp+572]
+	lea	ecx, DWORD PTR _bResult$226736[esp+572]
 	push	ecx
 	push	edx
-	push	OFFSET $SG226692
+	push	OFFSET $SG226737
 	push	edi
-	mov	BYTE PTR _bResult$226691[esp+588], 0
+	mov	BYTE PTR _bResult$226736[esp+588], 0
 	call	?CallHook@LuaSupport@@YA_NPAVICvEngineScriptSystem1@@PBDPAVICvEngineScriptSystemArgs1@@AA_N@Z ; LuaSupport::CallHook
 	add	esp, 16					; 00000010H
 
-; 4636 : 		}
+; 4658 : 		}
 
-	lea	ecx, DWORD PTR _args$226690[esp+572]
+	lea	ecx, DWORD PTR _args$226735[esp+572]
 	mov	DWORD PTR __$EHRec$[esp+580], -1
 	call	??1CvLuaArgsHandle@@QAE@XZ		; CvLuaArgsHandle::~CvLuaArgsHandle
 $LN1@CityConver:
 
-; 4637 : 	}
-; 4638 : }
+; 4659 : 	}
+; 4660 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+572]
 	pop	edi
@@ -29190,34 +29217,34 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?CityConvertsReligion@CvCityReligions@@AAEXW4ReligionTypes@@0W4PlayerTypes@@@Z$0:
-	lea	ecx, DWORD PTR _strMessage$226623[ebp]
+	lea	ecx, DWORD PTR _strMessage$226668[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?CityConvertsReligion@CvCityReligions@@AAEXW4ReligionTypes@@0W4PlayerTypes@@@Z$1:
-	lea	ecx, DWORD PTR _strSummary$226624[ebp]
+	lea	ecx, DWORD PTR _strSummary$226669[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?CityConvertsReligion@CvCityReligions@@AAEXW4ReligionTypes@@0W4PlayerTypes@@@Z$3:
-	lea	ecx, DWORD PTR $T238945[ebp]
+	lea	ecx, DWORD PTR $T239018[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?CityConvertsReligion@CvCityReligions@@AAEXW4ReligionTypes@@0W4PlayerTypes@@@Z$4:
-	lea	ecx, DWORD PTR $T238946[ebp]
+	lea	ecx, DWORD PTR $T239019[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?CityConvertsReligion@CvCityReligions@@AAEXW4ReligionTypes@@0W4PlayerTypes@@@Z$5:
-	lea	ecx, DWORD PTR _strMessage$226638[ebp]
+	lea	ecx, DWORD PTR _strMessage$226683[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?CityConvertsReligion@CvCityReligions@@AAEXW4ReligionTypes@@0W4PlayerTypes@@@Z$6:
-	lea	ecx, DWORD PTR _strSummary$226639[ebp]
+	lea	ecx, DWORD PTR _strSummary$226684[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?CityConvertsReligion@CvCityReligions@@AAEXW4ReligionTypes@@0W4PlayerTypes@@@Z$8:
-	lea	ecx, DWORD PTR $T238948[ebp]
+	lea	ecx, DWORD PTR $T239021[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?CityConvertsReligion@CvCityReligions@@AAEXW4ReligionTypes@@0W4PlayerTypes@@@Z$9:
-	lea	ecx, DWORD PTR $T238949[ebp]
+	lea	ecx, DWORD PTR $T239022[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?CityConvertsReligion@CvCityReligions@@AAEXW4ReligionTypes@@0W4PlayerTypes@@@Z$10:
-	lea	ecx, DWORD PTR _kStandardSize$226651[ebp]
+	lea	ecx, DWORD PTR _kStandardSize$226696[ebp]
 	jmp	DWORD PTR __imp_??1Results@Database@@UAE@XZ
 __unwindfunclet$?CityConvertsReligion@CvCityReligions@@AAEXW4ReligionTypes@@0W4PlayerTypes@@@Z$11:
-	lea	ecx, DWORD PTR _args$226690[ebp]
+	lea	ecx, DWORD PTR _args$226735[ebp]
 	jmp	??1CvLuaArgsHandle@@QAE@XZ		; CvLuaArgsHandle::~CvLuaArgsHandle
 __ehhandler$?CityConvertsReligion@CvCityReligions@@AAEXW4ReligionTypes@@0W4PlayerTypes@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?CityConvertsReligion@CvCityReligions@@AAEXW4ReligionTypes@@0W4PlayerTypes@@@Z
@@ -29245,14 +29272,14 @@ _TEXT	SEGMENT
 tv238 = -32						; size = 4
 _pBestCity$ = -28					; size = 4
 _eMyReligion$ = -24					; size = 4
-_iLoop$227599 = -20					; size = 4
-$T239291 = -16						; size = 4
+_iLoop$227644 = -20					; size = 4
+$T239364 = -16						; size = 4
 __$EHRec$ = -12						; size = 12
 _pUnit$ = 8						; size = 8
 ?ChooseMissionaryTargetCity@CvReligionAI@@QAEPAVCvCity@@V?$FObjectHandle@VCvUnit@@@@@Z PROC ; CvReligionAI::ChooseMissionaryTargetCity, COMDAT
 ; _this$ = ecx
 
-; 5176 : {
+; 5198 : {
 
 	push	-1
 	push	__ehhandler$?ChooseMissionaryTargetCity@CvReligionAI@@QAEPAVCvCity@@V?$FObjectHandle@VCvUnit@@@@@Z
@@ -29268,25 +29295,25 @@ _pUnit$ = 8						; size = 8
 	xor	edi, edi
 	mov	DWORD PTR __$EHRec$[esp+56], edi
 
-; 5177 : 	ReligionTypes eMyReligion = GetReligionToSpread();
+; 5199 : 	ReligionTypes eMyReligion = GetReligionToSpread();
 
 	call	?GetReligionToSpread@CvReligionAI@@QBE?AW4ReligionTypes@@XZ ; CvReligionAI::GetReligionToSpread
 
-; 5178 : 	int iBestScore = 0;
+; 5200 : 	int iBestScore = 0;
 
 	xor	ebx, ebx
 
-; 5179 : 	CvCity* pBestCity = NULL;
-; 5180 : 
-; 5181 : 	if(eMyReligion <= RELIGION_PANTHEON)
+; 5201 : 	CvCity* pBestCity = NULL;
+; 5202 : 
+; 5203 : 	if(eMyReligion <= RELIGION_PANTHEON)
 
 	cmp	eax, edi
 	mov	DWORD PTR _eMyReligion$[esp+48], eax
 	mov	DWORD PTR _pBestCity$[esp+48], edi
 	jg	SHORT $LN10@ChooseMiss
 
-; 5182 : 	{
-; 5183 : 		return NULL;
+; 5204 : 	{
+; 5205 : 		return NULL;
 
 	mov	ecx, DWORD PTR _pUnit$[esp+44]
 	mov	DWORD PTR __$EHRec$[esp+56], -1
@@ -29296,7 +29323,7 @@ _pUnit$ = 8						; size = 8
 $LN18@ChooseMiss:
 	xor	eax, eax
 
-; 5216 : }
+; 5238 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+48]
 	mov	DWORD PTR fs:0, ecx
@@ -29308,39 +29335,39 @@ $LN18@ChooseMiss:
 	ret	8
 $LN10@ChooseMiss:
 
-; 5184 : 	}
-; 5185 : 
-; 5186 : #pragma warning ( push )
-; 5187 : #pragma warning ( disable : 6011 ) // Dereferencing NULL pointer
-; 5188 : 	AI_PERF_FORMAT("AI-perf-tact.csv", ("ChooseMissionaryTargetCity: %s %d, Turn %03d, %s", pUnit->getName().c_str(), pUnit->GetID(), GC.getGame().getElapsedGameTurns(), m_pPlayer->getCivilizationShortDescription()) );
-; 5189 : #pragma warning ( pop )
-; 5190 : 
-; 5191 : 	// Loop through all the players
-; 5192 : 	for(int iI = 0; iI < MAX_PLAYERS; iI++)
+; 5206 : 	}
+; 5207 : 
+; 5208 : #pragma warning ( push )
+; 5209 : #pragma warning ( disable : 6011 ) // Dereferencing NULL pointer
+; 5210 : 	AI_PERF_FORMAT("AI-perf-tact.csv", ("ChooseMissionaryTargetCity: %s %d, Turn %03d, %s", pUnit->getName().c_str(), pUnit->GetID(), GC.getGame().getElapsedGameTurns(), m_pPlayer->getCivilizationShortDescription()) );
+; 5211 : #pragma warning ( pop )
+; 5212 : 
+; 5213 : 	// Loop through all the players
+; 5214 : 	for(int iI = 0; iI < MAX_PLAYERS; iI++)
 
 	mov	DWORD PTR tv238[esp+48], edi
 	npad	9
 $LL43@ChooseMiss:
 
-; 5193 : 	{
-; 5194 : 		CvPlayer& kPlayer = GET_PLAYER((PlayerTypes)iI);
+; 5215 : 	{
+; 5216 : 		CvPlayer& kPlayer = GET_PLAYER((PlayerTypes)iI);
 
 	mov	eax, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	add	edi, eax
 
-; 5195 : 		if(kPlayer.isAlive())
+; 5217 : 		if(kPlayer.isAlive())
 
 	cmp	BYTE PTR [edi+2256], 0
 	je	SHORT $LN8@ChooseMiss
 
-; 5196 : 		{
-; 5197 : 			// Loop through each of their cities
-; 5198 : 			int iLoop;
-; 5199 : 			CvCity* pLoopCity;
-; 5200 : 			for(pLoopCity = kPlayer.firstCity(&iLoop); pLoopCity != NULL; pLoopCity = kPlayer.nextCity(&iLoop))
+; 5218 : 		{
+; 5219 : 			// Loop through each of their cities
+; 5220 : 			int iLoop;
+; 5221 : 			CvCity* pLoopCity;
+; 5222 : 			for(pLoopCity = kPlayer.firstCity(&iLoop); pLoopCity != NULL; pLoopCity = kPlayer.nextCity(&iLoop))
 
 	push	0
-	lea	ecx, DWORD PTR _iLoop$227599[esp+52]
+	lea	ecx, DWORD PTR _iLoop$227644[esp+52]
 	push	ecx
 	mov	ecx, edi
 	call	?firstCity@CvPlayer@@QAEPAVCvCity@@PAH_N@Z ; CvPlayer::firstCity
@@ -29349,8 +29376,8 @@ $LL43@ChooseMiss:
 	je	SHORT $LN8@ChooseMiss
 $LN46@ChooseMiss:
 
-; 5201 : 			{
-; 5202 : 				if(pLoopCity && !pLoopCity->GetCityReligions()->IsDefendedAgainstSpread(eMyReligion))
+; 5223 : 			{
+; 5224 : 				if(pLoopCity && !pLoopCity->GetCityReligions()->IsDefendedAgainstSpread(eMyReligion))
 
 	mov	edx, DWORD PTR _eMyReligion$[esp+48]
 	push	edx
@@ -29361,8 +29388,8 @@ $LN46@ChooseMiss:
 	test	al, al
 	jne	SHORT $LN4@ChooseMiss
 
-; 5203 : 				{
-; 5204 : 					int iScore = ScoreCityForMissionary(pLoopCity, pUnit);
+; 5225 : 				{
+; 5226 : 					int iScore = ScoreCityForMissionary(pLoopCity, pUnit);
 
 	mov	ecx, DWORD PTR _pUnit$[esp+44]
 	sub	esp, 8
@@ -29371,7 +29398,7 @@ $LN46@ChooseMiss:
 	mov	dl, BYTE PTR _pUnit$[esp+56]
 	mov	BYTE PTR [eax+4], dl
 	mov	eax, ecx
-	mov	DWORD PTR $T239291[esp+56], esp
+	mov	DWORD PTR $T239364[esp+56], esp
 	test	eax, eax
 	je	SHORT $LN29@ChooseMiss
 	call	?getDestructionNotification@CvUnit@@QAEAAU?$DestructionNotification@V?$FObjectHandle@VCvUnit@@@@@@XZ ; CvUnit::getDestructionNotification
@@ -29380,22 +29407,22 @@ $LN29@ChooseMiss:
 	mov	ecx, ebp
 	call	?ScoreCityForMissionary@CvReligionAI@@AAEHPAVCvCity@@V?$FObjectHandle@VCvUnit@@@@@Z ; CvReligionAI::ScoreCityForMissionary
 
-; 5205 : 					if(iScore > iBestScore)
+; 5227 : 					if(iScore > iBestScore)
 
 	cmp	eax, ebx
 	jle	SHORT $LN4@ChooseMiss
 
-; 5206 : 					{
-; 5207 : 						iBestScore = iScore;
+; 5228 : 					{
+; 5229 : 						iBestScore = iScore;
 
 	mov	ebx, eax
 
-; 5208 : 						pBestCity = pLoopCity;
+; 5230 : 						pBestCity = pLoopCity;
 
 	mov	DWORD PTR _pBestCity$[esp+48], esi
 $LN4@ChooseMiss:
 	push	0
-	lea	eax, DWORD PTR _iLoop$227599[esp+52]
+	lea	eax, DWORD PTR _iLoop$227644[esp+52]
 	push	eax
 	mov	ecx, edi
 	call	?nextCity@CvPlayer@@QAEPAVCvCity@@PAH_N@Z ; CvPlayer::nextCity
@@ -29404,15 +29431,15 @@ $LN4@ChooseMiss:
 	jne	SHORT $LN46@ChooseMiss
 $LN8@ChooseMiss:
 
-; 5184 : 	}
-; 5185 : 
-; 5186 : #pragma warning ( push )
-; 5187 : #pragma warning ( disable : 6011 ) // Dereferencing NULL pointer
-; 5188 : 	AI_PERF_FORMAT("AI-perf-tact.csv", ("ChooseMissionaryTargetCity: %s %d, Turn %03d, %s", pUnit->getName().c_str(), pUnit->GetID(), GC.getGame().getElapsedGameTurns(), m_pPlayer->getCivilizationShortDescription()) );
-; 5189 : #pragma warning ( pop )
-; 5190 : 
-; 5191 : 	// Loop through all the players
-; 5192 : 	for(int iI = 0; iI < MAX_PLAYERS; iI++)
+; 5206 : 	}
+; 5207 : 
+; 5208 : #pragma warning ( push )
+; 5209 : #pragma warning ( disable : 6011 ) // Dereferencing NULL pointer
+; 5210 : 	AI_PERF_FORMAT("AI-perf-tact.csv", ("ChooseMissionaryTargetCity: %s %d, Turn %03d, %s", pUnit->getName().c_str(), pUnit->GetID(), GC.getGame().getElapsedGameTurns(), m_pPlayer->getCivilizationShortDescription()) );
+; 5211 : #pragma warning ( pop )
+; 5212 : 
+; 5213 : 	// Loop through all the players
+; 5214 : 	for(int iI = 0; iI < MAX_PLAYERS; iI++)
 
 	mov	edi, DWORD PTR tv238[esp+48]
 	add	edi, 63236				; 0000f704H
@@ -29420,13 +29447,13 @@ $LN8@ChooseMiss:
 	mov	DWORD PTR tv238[esp+48], edi
 	jl	$LL43@ChooseMiss
 
-; 5209 : 					}
-; 5210 : 				}
-; 5211 : 			}
-; 5212 : 		}
-; 5213 : 	}
-; 5214 : 
-; 5215 : 	return pBestCity;
+; 5231 : 					}
+; 5232 : 				}
+; 5233 : 			}
+; 5234 : 		}
+; 5235 : 	}
+; 5236 : 
+; 5237 : 	return pBestCity;
 
 	mov	ecx, DWORD PTR _pUnit$[esp+44]
 	mov	DWORD PTR __$EHRec$[esp+56], -1
@@ -29435,7 +29462,7 @@ $LN8@ChooseMiss:
 	call	?getDestructionNotification@CvUnit@@QAEAAU?$DestructionNotification@V?$FObjectHandle@VCvUnit@@@@@@XZ ; CvUnit::getDestructionNotification
 $LN34@ChooseMiss:
 
-; 5216 : }
+; 5238 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+48]
 	mov	eax, DWORD PTR _pBestCity$[esp+48]
@@ -29479,19 +29506,19 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 _iBestNumTurns$ = -36					; size = 4
 _iBestDistance$ = -32					; size = 4
-_iI$227632 = -28					; size = 4
-$T239356 = -28						; size = 4
+_iI$227677 = -28					; size = 4
+$T239429 = -28						; size = 4
 _pBestTarget$ = -24					; size = 4
-$T239354 = -24						; size = 4
+$T239427 = -24						; size = 4
 _this$ = -20						; size = 4
-$T239358 = -16						; size = 4
+$T239431 = -16						; size = 4
 __$EHRec$ = -12						; size = 12
 _pUnit$ = 8						; size = 8
 _piTurns$ = 16						; size = 4
 ?ChooseMissionaryTargetPlot@CvReligionAI@@QAEPAVCvPlot@@V?$FObjectHandle@VCvUnit@@@@PAH@Z PROC ; CvReligionAI::ChooseMissionaryTargetPlot, COMDAT
 ; _this$ = ecx
 
-; 5224 : {
+; 5246 : {
 
 	push	-1
 	push	__ehhandler$?ChooseMissionaryTargetPlot@CvReligionAI@@QAEPAVCvPlot@@V?$FObjectHandle@VCvUnit@@@@PAH@Z
@@ -29506,7 +29533,7 @@ _piTurns$ = 16						; size = 4
 	mov	edi, ecx
 	mov	DWORD PTR _this$[esp+52], edi
 
-; 5225 : 	CvCity* pCity = ChooseMissionaryTargetCity(pUnit);
+; 5247 : 	CvCity* pCity = ChooseMissionaryTargetCity(pUnit);
 
 	mov	ecx, DWORD PTR _pUnit$[esp+48]
 	sub	esp, 8
@@ -29517,7 +29544,7 @@ _piTurns$ = 16						; size = 4
 	mov	BYTE PTR [eax+4], dl
 	mov	eax, ecx
 	mov	DWORD PTR __$EHRec$[esp+68], esi
-	mov	DWORD PTR $T239354[esp+60], esp
+	mov	DWORD PTR $T239427[esp+60], esp
 	cmp	eax, esi
 	je	SHORT $LN26@ChooseMiss@2
 	call	?getDestructionNotification@CvUnit@@QAEAAU?$DestructionNotification@V?$FObjectHandle@VCvUnit@@@@@@XZ ; CvUnit::getDestructionNotification
@@ -29526,29 +29553,29 @@ $LN26@ChooseMiss@2:
 	call	?ChooseMissionaryTargetCity@CvReligionAI@@QAEPAVCvCity@@V?$FObjectHandle@VCvUnit@@@@@Z ; CvReligionAI::ChooseMissionaryTargetCity
 	mov	ebp, eax
 
-; 5226 : 	int iBestNumTurns = MAX_INT;
+; 5248 : 	int iBestNumTurns = MAX_INT;
 
 	mov	ebx, 2147483647				; 7fffffffH
 	mov	DWORD PTR _iBestNumTurns$[esp+52], ebx
 
-; 5227 : 	int iTurns;
-; 5228 : 	int iBestDistance = MAX_INT;
+; 5249 : 	int iTurns;
+; 5250 : 	int iBestDistance = MAX_INT;
 
 	mov	DWORD PTR _iBestDistance$[esp+52], ebx
 
-; 5229 : 	int iDistance;
-; 5230 : 	CvPlot* pBestTarget = NULL;
+; 5251 : 	int iDistance;
+; 5252 : 	CvPlot* pBestTarget = NULL;
 
 	mov	DWORD PTR _pBestTarget$[esp+52], esi
 
-; 5231 : 
-; 5232 : 	if(pCity == NULL)
+; 5253 : 
+; 5254 : 	if(pCity == NULL)
 
 	cmp	ebp, esi
 	jne	SHORT $LN16@ChooseMiss@2
 
-; 5233 : 	{
-; 5234 : 		return NULL;
+; 5255 : 	{
+; 5256 : 		return NULL;
 
 	mov	ecx, DWORD PTR _pUnit$[esp+48]
 	mov	DWORD PTR __$EHRec$[esp+60], -1
@@ -29558,7 +29585,7 @@ $LN26@ChooseMiss@2:
 $LN31@ChooseMiss@2:
 	xor	eax, eax
 
-; 5302 : }
+; 5324 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+52]
 	mov	DWORD PTR fs:0, ecx
@@ -29570,10 +29597,10 @@ $LN31@ChooseMiss@2:
 	ret	12					; 0000000cH
 $LN16@ChooseMiss@2:
 
-; 5235 : 	}
-; 5236 : 
-; 5237 : 	// Our city with no civilian units?  If so go right in there
-; 5238 : 	if(pCity->getOwner() == m_pPlayer->GetID())
+; 5257 : 	}
+; 5258 : 
+; 5259 : 	// Our city with no civilian units?  If so go right in there
+; 5260 : 	if(pCity->getOwner() == m_pPlayer->GetID())
 
 	mov	ecx, DWORD PTR [edi+4]
 	mov	eax, DWORD PTR [ebp+84]
@@ -29581,8 +29608,8 @@ $LN16@ChooseMiss@2:
 	cmp	eax, ecx
 	jne	$LN12@ChooseMiss@2
 
-; 5239 : 	{
-; 5240 : 		CvUnit* pFirstUnit = pCity->plot()->getUnitByIndex(0);
+; 5261 : 	{
+; 5262 : 		CvUnit* pFirstUnit = pCity->plot()->getUnitByIndex(0);
 
 	push	esi
 	mov	ecx, ebp
@@ -29590,7 +29617,7 @@ $LN16@ChooseMiss@2:
 	mov	ecx, eax
 	call	?getUnitByIndex@CvPlot@@QBEPAVCvUnit@@H@Z ; CvPlot::getUnitByIndex
 
-; 5241 : 		if(!pFirstUnit || pFirstUnit->IsCombatUnit())
+; 5263 : 		if(!pFirstUnit || pFirstUnit->IsCombatUnit())
 
 	cmp	eax, esi
 	je	SHORT $LN13@ChooseMiss@2
@@ -29598,8 +29625,8 @@ $LN16@ChooseMiss@2:
 	jle	SHORT $LN12@ChooseMiss@2
 $LN13@ChooseMiss@2:
 
-; 5242 : 		{
-; 5243 : 			iTurns = TurnsToReachTarget(pUnit, pCity->plot(), true /* bReusePaths */);
+; 5264 : 		{
+; 5265 : 			iTurns = TurnsToReachTarget(pUnit, pCity->plot(), true /* bReusePaths */);
 
 	push	esi
 	push	esi
@@ -29614,7 +29641,7 @@ $LN13@ChooseMiss@2:
 	mov	cl, BYTE PTR _pUnit$[esp+76]
 	mov	BYTE PTR [eax+4], cl
 	mov	eax, edx
-	mov	DWORD PTR $T239356[esp+76], esp
+	mov	DWORD PTR $T239429[esp+76], esp
 	cmp	eax, esi
 	je	SHORT $LN48@ChooseMiss@2
 	mov	ecx, eax
@@ -29623,17 +29650,17 @@ $LN48@ChooseMiss@2:
 	call	?TurnsToReachTarget@@YAHV?$FObjectHandle@VCvUnit@@@@PAVCvPlot@@_N22@Z ; TurnsToReachTarget
 	add	esp, 24					; 00000018H
 
-; 5244 : 			if(iTurns < MAX_INT)
+; 5266 : 			if(iTurns < MAX_INT)
 
 	cmp	eax, ebx
 	jge	SHORT $LN12@ChooseMiss@2
 
-; 5245 : 			{
-; 5246 : 				*piTurns = iTurns;
+; 5267 : 			{
+; 5268 : 				*piTurns = iTurns;
 
 	mov	edx, DWORD PTR _piTurns$[esp+48]
 
-; 5247 : 				return pCity->plot();
+; 5269 : 				return pCity->plot();
 
 	mov	ecx, ebp
 	mov	DWORD PTR [edx], eax
@@ -29647,7 +29674,7 @@ $LN48@ChooseMiss@2:
 $LN53@ChooseMiss@2:
 	mov	eax, esi
 
-; 5302 : }
+; 5324 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+52]
 	mov	DWORD PTR fs:0, ecx
@@ -29659,33 +29686,33 @@ $LN53@ChooseMiss@2:
 	ret	12					; 0000000cH
 $LN12@ChooseMiss@2:
 
-; 5248 : 			}
-; 5249 : 		}
-; 5250 : 	}
-; 5251 : 
-; 5252 : #pragma warning ( push )
-; 5253 : #pragma warning ( disable : 6011 ) // Dereferencing NULL pointer
-; 5254 : #ifdef AUI_PERF_LOGGING_FORMATTING_TWEAKS
-; 5255 : 	AI_PERF_FORMAT("AI-perf-tact.csv", ("ChooseMissionaryTargetPlot: %s %d (Targeting %s), Turn %03d, %s", pUnit->getName().c_str(), pUnit->GetID(), pCity->getName().c_str(), GC.getGame().getElapsedGameTurns(), m_pPlayer->getCivilizationShortDescription()));
-; 5256 : #else
-; 5257 : 	AI_PERF_FORMAT("AI-perf-tact.csv", ("ChooseMissionaryTargetPlot: %s %d; %s, Turn %03d, %s", pUnit->getName().c_str(), pUnit->GetID(), pCity->getName().c_str(), GC.getGame().getElapsedGameTurns(), m_pPlayer->getCivilizationShortDescription()) );
-; 5258 : #endif
-; 5259 : #pragma warning ( pop )
-; 5260 : 
-; 5261 : 	// Find adjacent plot with no units (that aren't our own)
-; 5262 : 	CvPlot* pLoopPlot;
-; 5263 : 	for(int iI = 0; iI < NUM_DIRECTION_TYPES; iI++)
+; 5270 : 			}
+; 5271 : 		}
+; 5272 : 	}
+; 5273 : 
+; 5274 : #pragma warning ( push )
+; 5275 : #pragma warning ( disable : 6011 ) // Dereferencing NULL pointer
+; 5276 : #ifdef AUI_PERF_LOGGING_FORMATTING_TWEAKS
+; 5277 : 	AI_PERF_FORMAT("AI-perf-tact.csv", ("ChooseMissionaryTargetPlot: %s %d (Targeting %s), Turn %03d, %s", pUnit->getName().c_str(), pUnit->GetID(), pCity->getName().c_str(), GC.getGame().getElapsedGameTurns(), m_pPlayer->getCivilizationShortDescription()));
+; 5278 : #else
+; 5279 : 	AI_PERF_FORMAT("AI-perf-tact.csv", ("ChooseMissionaryTargetPlot: %s %d; %s, Turn %03d, %s", pUnit->getName().c_str(), pUnit->GetID(), pCity->getName().c_str(), GC.getGame().getElapsedGameTurns(), m_pPlayer->getCivilizationShortDescription()) );
+; 5280 : #endif
+; 5281 : #pragma warning ( pop )
+; 5282 : 
+; 5283 : 	// Find adjacent plot with no units (that aren't our own)
+; 5284 : 	CvPlot* pLoopPlot;
+; 5285 : 	for(int iI = 0; iI < NUM_DIRECTION_TYPES; iI++)
 
 	mov	ebx, DWORD PTR _pUnit$[esp+48]
 	xor	edx, edx
-	mov	DWORD PTR _iI$227632[esp+52], edx
+	mov	DWORD PTR _iI$227677[esp+52], edx
 	jmp	SHORT $LN11@ChooseMiss@2
 $LL107@ChooseMiss@2:
 	mov	edi, DWORD PTR _this$[esp+52]
 $LN11@ChooseMiss@2:
 
-; 5264 : 	{
-; 5265 : 		pLoopPlot = plotDirection(pCity->getX(), pCity->getY(), ((DirectionTypes)iI));
+; 5286 : 	{
+; 5287 : 		pLoopPlot = plotDirection(pCity->getX(), pCity->getY(), ((DirectionTypes)iI));
 
 	mov	eax, DWORD PTR [ebp+108]
 	mov	ecx, DWORD PTR [ebp+96]
@@ -29696,20 +29723,20 @@ $LN11@ChooseMiss@2:
 	mov	esi, eax
 	add	esp, 12					; 0000000cH
 
-; 5266 : 
-; 5267 : 		if(pLoopPlot != NULL)
+; 5288 : 
+; 5289 : 		if(pLoopPlot != NULL)
 
 	test	esi, esi
 	je	$LN10@ChooseMiss@2
 
-; 5268 : 		{
-; 5269 : 			CvUnit* pFirstUnit = pLoopPlot->getUnitByIndex(0);
+; 5290 : 		{
+; 5291 : 			CvUnit* pFirstUnit = pLoopPlot->getUnitByIndex(0);
 
 	push	0
 	mov	ecx, esi
 	call	?getUnitByIndex@CvPlot@@QBEPAVCvUnit@@H@Z ; CvPlot::getUnitByIndex
 
-; 5270 : 			if(pFirstUnit && pFirstUnit->getOwner() != m_pPlayer->GetID())
+; 5292 : 			if(pFirstUnit && pFirstUnit->getOwner() != m_pPlayer->GetID())
 
 	test	eax, eax
 	je	SHORT $LN7@ChooseMiss@2
@@ -29719,11 +29746,11 @@ $LN11@ChooseMiss@2:
 	jne	$LN103@ChooseMiss@2
 $LN7@ChooseMiss@2:
 
-; 5271 : 			{
-; 5272 : 				continue;
-; 5273 : 			}
-; 5274 : 
-; 5275 : 			if(pUnit->CanSpreadReligion(pLoopPlot))
+; 5293 : 			{
+; 5294 : 				continue;
+; 5295 : 			}
+; 5296 : 
+; 5297 : 			if(pUnit->CanSpreadReligion(pLoopPlot))
 
 	mov	ecx, DWORD PTR _pUnit$[esp+48]
 	push	esi
@@ -29731,8 +29758,8 @@ $LN7@ChooseMiss@2:
 	test	al, al
 	je	$LN103@ChooseMiss@2
 
-; 5276 : 			{
-; 5277 : 				iTurns = TurnsToReachTarget(pUnit, pLoopPlot, true /* bReusePaths */);
+; 5298 : 			{
+; 5299 : 				iTurns = TurnsToReachTarget(pUnit, pLoopPlot, true /* bReusePaths */);
 
 	mov	edx, DWORD PTR _pUnit$[esp+48]
 	push	0
@@ -29745,7 +29772,7 @@ $LN7@ChooseMiss@2:
 	mov	cl, BYTE PTR _pUnit$[esp+76]
 	mov	BYTE PTR [eax+4], cl
 	mov	eax, edx
-	mov	DWORD PTR $T239358[esp+76], esp
+	mov	DWORD PTR $T239431[esp+76], esp
 	test	eax, eax
 	je	SHORT $LN76@ChooseMiss@2
 	mov	ecx, eax
@@ -29755,13 +29782,13 @@ $LN76@ChooseMiss@2:
 	mov	edi, eax
 	add	esp, 24					; 00000018H
 
-; 5278 : 				if(iTurns < MAX_INT)
+; 5300 : 				if(iTurns < MAX_INT)
 
 	cmp	edi, 2147483647				; 7fffffffH
 	jge	SHORT $LN103@ChooseMiss@2
 
-; 5279 : 				{
-; 5280 : 					iDistance = plotDistance(pUnit->getX(), pUnit->getY(), pLoopPlot->getX(), pLoopPlot->getY());
+; 5301 : 				{
+; 5302 : 					iDistance = plotDistance(pUnit->getX(), pUnit->getY(), pLoopPlot->getX(), pLoopPlot->getY());
 
 	movsx	edx, WORD PTR [esi+2]
 	mov	ebx, DWORD PTR _pUnit$[esp+48]
@@ -29775,22 +29802,22 @@ $LN76@ChooseMiss@2:
 	call	?plotDistance@@YAHHHHH@Z		; plotDistance
 	add	esp, 16					; 00000010H
 
-; 5281 : 
-; 5282 : 					// Consider it to be twice as far if a water plot (those are dangerous!)
-; 5283 : 					if(pLoopPlot->isWater())
+; 5303 : 
+; 5304 : 					// Consider it to be twice as far if a water plot (those are dangerous!)
+; 5305 : 					if(pLoopPlot->isWater())
 
 	cmp	BYTE PTR [esi+5], 3
 	jne	SHORT $LN4@ChooseMiss@2
 
-; 5284 : 					{
-; 5285 : 						iDistance *= 2;
+; 5306 : 					{
+; 5307 : 						iDistance *= 2;
 
 	add	eax, eax
 $LN4@ChooseMiss@2:
 
-; 5286 : 					}
-; 5287 : 
-; 5288 : 					if(iTurns < iBestNumTurns || (iTurns == iBestNumTurns && iDistance < iBestDistance))
+; 5308 : 					}
+; 5309 : 
+; 5310 : 					if(iTurns < iBestNumTurns || (iTurns == iBestNumTurns && iDistance < iBestDistance))
 
 	mov	ecx, DWORD PTR _iBestNumTurns$[esp+52]
 	cmp	edi, ecx
@@ -29800,16 +29827,16 @@ $LN4@ChooseMiss@2:
 	jge	SHORT $LN10@ChooseMiss@2
 $LN2@ChooseMiss@2:
 
-; 5289 : 					{
-; 5290 : 						iBestNumTurns = iTurns;
+; 5311 : 					{
+; 5312 : 						iBestNumTurns = iTurns;
 
 	mov	DWORD PTR _iBestNumTurns$[esp+52], edi
 
-; 5291 : 						iBestDistance = iDistance;
+; 5313 : 						iBestDistance = iDistance;
 
 	mov	DWORD PTR _iBestDistance$[esp+52], eax
 
-; 5292 : 						pBestTarget = pLoopPlot;
+; 5314 : 						pBestTarget = pLoopPlot;
 
 	mov	DWORD PTR _pBestTarget$[esp+52], esi
 	jmp	SHORT $LN10@ChooseMiss@2
@@ -29817,48 +29844,48 @@ $LN103@ChooseMiss@2:
 	mov	ebx, DWORD PTR _pUnit$[esp+48]
 $LN10@ChooseMiss@2:
 
-; 5248 : 			}
-; 5249 : 		}
-; 5250 : 	}
-; 5251 : 
-; 5252 : #pragma warning ( push )
-; 5253 : #pragma warning ( disable : 6011 ) // Dereferencing NULL pointer
-; 5254 : #ifdef AUI_PERF_LOGGING_FORMATTING_TWEAKS
-; 5255 : 	AI_PERF_FORMAT("AI-perf-tact.csv", ("ChooseMissionaryTargetPlot: %s %d (Targeting %s), Turn %03d, %s", pUnit->getName().c_str(), pUnit->GetID(), pCity->getName().c_str(), GC.getGame().getElapsedGameTurns(), m_pPlayer->getCivilizationShortDescription()));
-; 5256 : #else
-; 5257 : 	AI_PERF_FORMAT("AI-perf-tact.csv", ("ChooseMissionaryTargetPlot: %s %d; %s, Turn %03d, %s", pUnit->getName().c_str(), pUnit->GetID(), pCity->getName().c_str(), GC.getGame().getElapsedGameTurns(), m_pPlayer->getCivilizationShortDescription()) );
-; 5258 : #endif
-; 5259 : #pragma warning ( pop )
-; 5260 : 
-; 5261 : 	// Find adjacent plot with no units (that aren't our own)
-; 5262 : 	CvPlot* pLoopPlot;
-; 5263 : 	for(int iI = 0; iI < NUM_DIRECTION_TYPES; iI++)
+; 5270 : 			}
+; 5271 : 		}
+; 5272 : 	}
+; 5273 : 
+; 5274 : #pragma warning ( push )
+; 5275 : #pragma warning ( disable : 6011 ) // Dereferencing NULL pointer
+; 5276 : #ifdef AUI_PERF_LOGGING_FORMATTING_TWEAKS
+; 5277 : 	AI_PERF_FORMAT("AI-perf-tact.csv", ("ChooseMissionaryTargetPlot: %s %d (Targeting %s), Turn %03d, %s", pUnit->getName().c_str(), pUnit->GetID(), pCity->getName().c_str(), GC.getGame().getElapsedGameTurns(), m_pPlayer->getCivilizationShortDescription()));
+; 5278 : #else
+; 5279 : 	AI_PERF_FORMAT("AI-perf-tact.csv", ("ChooseMissionaryTargetPlot: %s %d; %s, Turn %03d, %s", pUnit->getName().c_str(), pUnit->GetID(), pCity->getName().c_str(), GC.getGame().getElapsedGameTurns(), m_pPlayer->getCivilizationShortDescription()) );
+; 5280 : #endif
+; 5281 : #pragma warning ( pop )
+; 5282 : 
+; 5283 : 	// Find adjacent plot with no units (that aren't our own)
+; 5284 : 	CvPlot* pLoopPlot;
+; 5285 : 	for(int iI = 0; iI < NUM_DIRECTION_TYPES; iI++)
 
-	mov	edx, DWORD PTR _iI$227632[esp+52]
+	mov	edx, DWORD PTR _iI$227677[esp+52]
 	inc	edx
 	cmp	edx, 6
-	mov	DWORD PTR _iI$227632[esp+52], edx
+	mov	DWORD PTR _iI$227677[esp+52], edx
 	jl	$LL107@ChooseMiss@2
 
-; 5293 : 					}
-; 5294 : 				}
-; 5295 : 			}
-; 5296 : 		}
-; 5297 : 	}
-; 5298 : 
-; 5299 : 	if(piTurns)
+; 5315 : 					}
+; 5316 : 				}
+; 5317 : 			}
+; 5318 : 		}
+; 5319 : 	}
+; 5320 : 
+; 5321 : 	if(piTurns)
 
 	mov	eax, DWORD PTR _piTurns$[esp+48]
 	test	eax, eax
 	je	SHORT $LN1@ChooseMiss@2
 
-; 5300 : 		*piTurns = iBestNumTurns;
+; 5322 : 		*piTurns = iBestNumTurns;
 
 	mov	ecx, DWORD PTR _iBestNumTurns$[esp+52]
 	mov	DWORD PTR [eax], ecx
 $LN1@ChooseMiss@2:
 
-; 5301 : 	return pBestTarget;
+; 5323 : 	return pBestTarget;
 
 	mov	DWORD PTR __$EHRec$[esp+60], -1
 	test	ebx, ebx
@@ -29867,7 +29894,7 @@ $LN1@ChooseMiss@2:
 	call	?getDestructionNotification@CvUnit@@QAEAAU?$DestructionNotification@V?$FObjectHandle@VCvUnit@@@@@@XZ ; CvUnit::getDestructionNotification
 $LN99@ChooseMiss@2:
 
-; 5302 : }
+; 5324 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+52]
 	mov	eax, DWORD PTR _pBestTarget$[esp+52]
@@ -29908,13 +29935,13 @@ xdata$x	ENDS
 ;	COMDAT ?ChooseInquisitorTargetCity@CvReligionAI@@QAEPAVCvCity@@V?$FObjectHandle@VCvUnit@@@@@Z
 _TEXT	SEGMENT
 _iLoop$ = -20						; size = 4
-$T239537 = -16						; size = 4
+$T239610 = -16						; size = 4
 __$EHRec$ = -12						; size = 12
 _pUnit$ = 8						; size = 8
 ?ChooseInquisitorTargetCity@CvReligionAI@@QAEPAVCvCity@@V?$FObjectHandle@VCvUnit@@@@@Z PROC ; CvReligionAI::ChooseInquisitorTargetCity, COMDAT
 ; _this$ = ecx
 
-; 5310 : {
+; 5332 : {
 
 	push	-1
 	push	__ehhandler$?ChooseInquisitorTargetCity@CvReligionAI@@QAEPAVCvCity@@V?$FObjectHandle@VCvUnit@@@@@Z
@@ -29930,23 +29957,23 @@ _pUnit$ = 8						; size = 8
 	xor	ebp, ebp
 	mov	DWORD PTR __$EHRec$[esp+44], ebp
 
-; 5311 : 	ReligionTypes eMyReligion = GetReligionToSpread();
+; 5333 : 	ReligionTypes eMyReligion = GetReligionToSpread();
 
 	call	?GetReligionToSpread@CvReligionAI@@QBE?AW4ReligionTypes@@XZ ; CvReligionAI::GetReligionToSpread
 
-; 5312 : 	int iBestScore = 0;
+; 5334 : 	int iBestScore = 0;
 
 	xor	ebx, ebx
 
-; 5313 : 	CvCity* pBestCity = NULL;
-; 5314 : 
-; 5315 : 	if(eMyReligion <= RELIGION_PANTHEON)
+; 5335 : 	CvCity* pBestCity = NULL;
+; 5336 : 
+; 5337 : 	if(eMyReligion <= RELIGION_PANTHEON)
 
 	cmp	eax, ebp
 	jg	SHORT $LN6@ChooseInqu
 
-; 5316 : 	{
-; 5317 : 		return NULL;
+; 5338 : 	{
+; 5339 : 		return NULL;
 
 	mov	ecx, DWORD PTR _pUnit$[esp+32]
 	mov	DWORD PTR __$EHRec$[esp+44], -1
@@ -29956,7 +29983,7 @@ _pUnit$ = 8						; size = 8
 $LN14@ChooseInqu:
 	xor	eax, eax
 
-; 5342 : }
+; 5364 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+36]
 	mov	DWORD PTR fs:0, ecx
@@ -29968,17 +29995,17 @@ $LN14@ChooseInqu:
 	ret	8
 $LN6@ChooseInqu:
 
-; 5318 : 	}
-; 5319 : 
-; 5320 : #pragma warning ( push )
-; 5321 : #pragma warning ( disable : 6011 ) // Dereferencing NULL pointer
-; 5322 : 	AI_PERF_FORMAT("AI-perf-tact.csv", ("ChooseInquisitorTargetCity: %s %d, Turn %03d, %s", pUnit->getName().c_str(), pUnit->GetID(), GC.getGame().getElapsedGameTurns(), m_pPlayer->getCivilizationShortDescription()) );
-; 5323 : #pragma warning ( pop )
-; 5324 : 
-; 5325 : 	// Loop through each of my cities
-; 5326 : 	int iLoop;
-; 5327 : 	CvCity* pLoopCity;
-; 5328 : 	for(pLoopCity = m_pPlayer->firstCity(&iLoop); pLoopCity != NULL; pLoopCity = m_pPlayer->nextCity(&iLoop))
+; 5340 : 	}
+; 5341 : 
+; 5342 : #pragma warning ( push )
+; 5343 : #pragma warning ( disable : 6011 ) // Dereferencing NULL pointer
+; 5344 : 	AI_PERF_FORMAT("AI-perf-tact.csv", ("ChooseInquisitorTargetCity: %s %d, Turn %03d, %s", pUnit->getName().c_str(), pUnit->GetID(), GC.getGame().getElapsedGameTurns(), m_pPlayer->getCivilizationShortDescription()) );
+; 5345 : #pragma warning ( pop )
+; 5346 : 
+; 5347 : 	// Loop through each of my cities
+; 5348 : 	int iLoop;
+; 5349 : 	CvCity* pLoopCity;
+; 5350 : 	for(pLoopCity = m_pPlayer->firstCity(&iLoop); pLoopCity != NULL; pLoopCity = m_pPlayer->nextCity(&iLoop))
 
 	mov	ecx, DWORD PTR [edi+4]
 	push	ebp
@@ -29990,10 +30017,10 @@ $LN6@ChooseInqu:
 	je	SHORT $LN3@ChooseInqu
 $LN32@ChooseInqu:
 
-; 5329 : 	{
-; 5330 : 		if(pLoopCity)
-; 5331 : 		{
-; 5332 : 			int iScore = ScoreCityForInquisitor(pLoopCity, pUnit);
+; 5351 : 	{
+; 5352 : 		if(pLoopCity)
+; 5353 : 		{
+; 5354 : 			int iScore = ScoreCityForInquisitor(pLoopCity, pUnit);
 
 	mov	ecx, DWORD PTR _pUnit$[esp+32]
 	sub	esp, 8
@@ -30002,7 +30029,7 @@ $LN32@ChooseInqu:
 	mov	dl, BYTE PTR _pUnit$[esp+44]
 	mov	BYTE PTR [eax+4], dl
 	mov	eax, ecx
-	mov	DWORD PTR $T239537[esp+44], esp
+	mov	DWORD PTR $T239610[esp+44], esp
 	test	eax, eax
 	je	SHORT $LN19@ChooseInqu
 	call	?getDestructionNotification@CvUnit@@QAEAAU?$DestructionNotification@V?$FObjectHandle@VCvUnit@@@@@@XZ ; CvUnit::getDestructionNotification
@@ -30011,17 +30038,17 @@ $LN19@ChooseInqu:
 	mov	ecx, edi
 	call	?ScoreCityForInquisitor@CvReligionAI@@AAEHPAVCvCity@@V?$FObjectHandle@VCvUnit@@@@@Z ; CvReligionAI::ScoreCityForInquisitor
 
-; 5333 : 			if(iScore > iBestScore)
+; 5355 : 			if(iScore > iBestScore)
 
 	cmp	eax, ebx
 	jle	SHORT $LN4@ChooseInqu
 
-; 5334 : 			{
-; 5335 : 				iBestScore = iScore;
+; 5356 : 			{
+; 5357 : 				iBestScore = iScore;
 
 	mov	ebx, eax
 
-; 5336 : 				pBestCity = pLoopCity;
+; 5358 : 				pBestCity = pLoopCity;
 
 	mov	ebp, esi
 $LN4@ChooseInqu:
@@ -30035,11 +30062,11 @@ $LN4@ChooseInqu:
 	jne	SHORT $LN32@ChooseInqu
 $LN3@ChooseInqu:
 
-; 5337 : 			}
-; 5338 : 		}
-; 5339 : 	}
-; 5340 : 
-; 5341 : 	return pBestCity;
+; 5359 : 			}
+; 5360 : 		}
+; 5361 : 	}
+; 5362 : 
+; 5363 : 	return pBestCity;
 
 	mov	ecx, DWORD PTR _pUnit$[esp+32]
 	mov	DWORD PTR __$EHRec$[esp+44], -1
@@ -30048,7 +30075,7 @@ $LN3@ChooseInqu:
 	call	?getDestructionNotification@CvUnit@@QAEAAU?$DestructionNotification@V?$FObjectHandle@VCvUnit@@@@@@XZ ; CvUnit::getDestructionNotification
 $LN24@ChooseInqu:
 
-; 5342 : }
+; 5364 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+36]
 	pop	edi
@@ -30091,19 +30118,19 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 _iBestNumTurns$ = -36					; size = 4
 _iBestDistance$ = -32					; size = 4
-_iI$227691 = -28					; size = 4
-$T239586 = -28						; size = 4
+_iI$227736 = -28					; size = 4
+$T239659 = -28						; size = 4
 _pBestTarget$ = -24					; size = 4
-$T239584 = -24						; size = 4
+$T239657 = -24						; size = 4
 _this$ = -20						; size = 4
-$T239588 = -16						; size = 4
+$T239661 = -16						; size = 4
 __$EHRec$ = -12						; size = 12
 _pUnit$ = 8						; size = 8
 _piTurns$ = 16						; size = 4
 ?ChooseInquisitorTargetPlot@CvReligionAI@@QAEPAVCvPlot@@V?$FObjectHandle@VCvUnit@@@@PAH@Z PROC ; CvReligionAI::ChooseInquisitorTargetPlot, COMDAT
 ; _this$ = ecx
 
-; 5350 : {
+; 5372 : {
 
 	push	-1
 	push	__ehhandler$?ChooseInquisitorTargetPlot@CvReligionAI@@QAEPAVCvPlot@@V?$FObjectHandle@VCvUnit@@@@PAH@Z
@@ -30118,7 +30145,7 @@ _piTurns$ = 16						; size = 4
 	mov	edi, ecx
 	mov	DWORD PTR _this$[esp+52], edi
 
-; 5351 : 	CvCity* pCity = ChooseInquisitorTargetCity(pUnit);
+; 5373 : 	CvCity* pCity = ChooseInquisitorTargetCity(pUnit);
 
 	mov	ecx, DWORD PTR _pUnit$[esp+48]
 	sub	esp, 8
@@ -30129,7 +30156,7 @@ _piTurns$ = 16						; size = 4
 	mov	BYTE PTR [eax+4], dl
 	mov	eax, ecx
 	mov	DWORD PTR __$EHRec$[esp+68], esi
-	mov	DWORD PTR $T239584[esp+60], esp
+	mov	DWORD PTR $T239657[esp+60], esp
 	cmp	eax, esi
 	je	SHORT $LN26@ChooseInqu@2
 	call	?getDestructionNotification@CvUnit@@QAEAAU?$DestructionNotification@V?$FObjectHandle@VCvUnit@@@@@@XZ ; CvUnit::getDestructionNotification
@@ -30138,29 +30165,29 @@ $LN26@ChooseInqu@2:
 	call	?ChooseInquisitorTargetCity@CvReligionAI@@QAEPAVCvCity@@V?$FObjectHandle@VCvUnit@@@@@Z ; CvReligionAI::ChooseInquisitorTargetCity
 	mov	ebp, eax
 
-; 5352 : 	int iBestNumTurns = MAX_INT;
+; 5374 : 	int iBestNumTurns = MAX_INT;
 
 	mov	ebx, 2147483647				; 7fffffffH
 	mov	DWORD PTR _iBestNumTurns$[esp+52], ebx
 
-; 5353 : 	int iTurns;
-; 5354 : 	int iBestDistance = MAX_INT;
+; 5375 : 	int iTurns;
+; 5376 : 	int iBestDistance = MAX_INT;
 
 	mov	DWORD PTR _iBestDistance$[esp+52], ebx
 
-; 5355 : 	int iDistance;
-; 5356 : 	CvPlot* pBestTarget = NULL;
+; 5377 : 	int iDistance;
+; 5378 : 	CvPlot* pBestTarget = NULL;
 
 	mov	DWORD PTR _pBestTarget$[esp+52], esi
 
-; 5357 : 
-; 5358 : 	if(pCity == NULL)
+; 5379 : 
+; 5380 : 	if(pCity == NULL)
 
 	cmp	ebp, esi
 	jne	SHORT $LN16@ChooseInqu@2
 
-; 5359 : 	{
-; 5360 : 		return NULL;
+; 5381 : 	{
+; 5382 : 		return NULL;
 
 	mov	ecx, DWORD PTR _pUnit$[esp+48]
 	mov	DWORD PTR __$EHRec$[esp+60], -1
@@ -30170,7 +30197,7 @@ $LN26@ChooseInqu@2:
 $LN31@ChooseInqu@2:
 	xor	eax, eax
 
-; 5424 : }
+; 5446 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+52]
 	mov	DWORD PTR fs:0, ecx
@@ -30182,10 +30209,10 @@ $LN31@ChooseInqu@2:
 	ret	12					; 0000000cH
 $LN16@ChooseInqu@2:
 
-; 5361 : 	}
-; 5362 : 
-; 5363 : 	// Our city with no civilian units?  If so go right in there
-; 5364 : 	if(pCity->getOwner() == m_pPlayer->GetID())
+; 5383 : 	}
+; 5384 : 
+; 5385 : 	// Our city with no civilian units?  If so go right in there
+; 5386 : 	if(pCity->getOwner() == m_pPlayer->GetID())
 
 	mov	ecx, DWORD PTR [edi+4]
 	mov	eax, DWORD PTR [ebp+84]
@@ -30193,8 +30220,8 @@ $LN16@ChooseInqu@2:
 	cmp	eax, ecx
 	jne	$LN12@ChooseInqu@2
 
-; 5365 : 	{
-; 5366 : 		CvUnit* pFirstUnit = pCity->plot()->getUnitByIndex(0);
+; 5387 : 	{
+; 5388 : 		CvUnit* pFirstUnit = pCity->plot()->getUnitByIndex(0);
 
 	push	esi
 	mov	ecx, ebp
@@ -30202,7 +30229,7 @@ $LN16@ChooseInqu@2:
 	mov	ecx, eax
 	call	?getUnitByIndex@CvPlot@@QBEPAVCvUnit@@H@Z ; CvPlot::getUnitByIndex
 
-; 5367 : 		if(!pFirstUnit || pFirstUnit->IsCombatUnit())
+; 5389 : 		if(!pFirstUnit || pFirstUnit->IsCombatUnit())
 
 	cmp	eax, esi
 	je	SHORT $LN13@ChooseInqu@2
@@ -30210,8 +30237,8 @@ $LN16@ChooseInqu@2:
 	jle	SHORT $LN12@ChooseInqu@2
 $LN13@ChooseInqu@2:
 
-; 5368 : 		{
-; 5369 : 			iTurns = TurnsToReachTarget(pUnit, pCity->plot(), true /* bReusePaths */);
+; 5390 : 		{
+; 5391 : 			iTurns = TurnsToReachTarget(pUnit, pCity->plot(), true /* bReusePaths */);
 
 	push	esi
 	push	esi
@@ -30226,7 +30253,7 @@ $LN13@ChooseInqu@2:
 	mov	cl, BYTE PTR _pUnit$[esp+76]
 	mov	BYTE PTR [eax+4], cl
 	mov	eax, edx
-	mov	DWORD PTR $T239586[esp+76], esp
+	mov	DWORD PTR $T239659[esp+76], esp
 	cmp	eax, esi
 	je	SHORT $LN48@ChooseInqu@2
 	mov	ecx, eax
@@ -30235,17 +30262,17 @@ $LN48@ChooseInqu@2:
 	call	?TurnsToReachTarget@@YAHV?$FObjectHandle@VCvUnit@@@@PAVCvPlot@@_N22@Z ; TurnsToReachTarget
 	add	esp, 24					; 00000018H
 
-; 5370 : 			if(iTurns < MAX_INT)
+; 5392 : 			if(iTurns < MAX_INT)
 
 	cmp	eax, ebx
 	jge	SHORT $LN12@ChooseInqu@2
 
-; 5371 : 			{
-; 5372 : 				*piTurns = iTurns;
+; 5393 : 			{
+; 5394 : 				*piTurns = iTurns;
 
 	mov	edx, DWORD PTR _piTurns$[esp+48]
 
-; 5373 : 				return pCity->plot();
+; 5395 : 				return pCity->plot();
 
 	mov	ecx, ebp
 	mov	DWORD PTR [edx], eax
@@ -30259,7 +30286,7 @@ $LN48@ChooseInqu@2:
 $LN53@ChooseInqu@2:
 	mov	eax, esi
 
-; 5424 : }
+; 5446 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+52]
 	mov	DWORD PTR fs:0, ecx
@@ -30271,29 +30298,29 @@ $LN53@ChooseInqu@2:
 	ret	12					; 0000000cH
 $LN12@ChooseInqu@2:
 
-; 5374 : 			}
-; 5375 : 		}
-; 5376 : 	}
-; 5377 : 
-; 5378 : #pragma warning ( push )
-; 5379 : #pragma warning ( disable : 6011 ) // Dereferencing NULL pointer
-; 5380 : 	AI_PERF_FORMAT("AI-perf-tact.csv", ("ChooseInquisitorTargetPlot: %s %d; %s, Turn %03d, %s", pUnit->getName().c_str(), pUnit->GetID(), pCity->getName().c_str(), GC.getGame().getElapsedGameTurns(), m_pPlayer->getCivilizationShortDescription()) );
-; 5381 : #pragma warning ( pop )
-; 5382 : 
-; 5383 : 	// Find adjacent plot with no units (that aren't our own)
-; 5384 : 	CvPlot* pLoopPlot;
-; 5385 : 	for(int iI = 0; iI < NUM_DIRECTION_TYPES; iI++)
+; 5396 : 			}
+; 5397 : 		}
+; 5398 : 	}
+; 5399 : 
+; 5400 : #pragma warning ( push )
+; 5401 : #pragma warning ( disable : 6011 ) // Dereferencing NULL pointer
+; 5402 : 	AI_PERF_FORMAT("AI-perf-tact.csv", ("ChooseInquisitorTargetPlot: %s %d; %s, Turn %03d, %s", pUnit->getName().c_str(), pUnit->GetID(), pCity->getName().c_str(), GC.getGame().getElapsedGameTurns(), m_pPlayer->getCivilizationShortDescription()) );
+; 5403 : #pragma warning ( pop )
+; 5404 : 
+; 5405 : 	// Find adjacent plot with no units (that aren't our own)
+; 5406 : 	CvPlot* pLoopPlot;
+; 5407 : 	for(int iI = 0; iI < NUM_DIRECTION_TYPES; iI++)
 
 	mov	ebx, DWORD PTR _pUnit$[esp+48]
 	xor	edx, edx
-	mov	DWORD PTR _iI$227691[esp+52], edx
+	mov	DWORD PTR _iI$227736[esp+52], edx
 	jmp	SHORT $LN11@ChooseInqu@2
 $LL107@ChooseInqu@2:
 	mov	edi, DWORD PTR _this$[esp+52]
 $LN11@ChooseInqu@2:
 
-; 5386 : 	{
-; 5387 : 		pLoopPlot = plotDirection(pCity->getX(), pCity->getY(), ((DirectionTypes)iI));
+; 5408 : 	{
+; 5409 : 		pLoopPlot = plotDirection(pCity->getX(), pCity->getY(), ((DirectionTypes)iI));
 
 	mov	eax, DWORD PTR [ebp+108]
 	mov	ecx, DWORD PTR [ebp+96]
@@ -30304,20 +30331,20 @@ $LN11@ChooseInqu@2:
 	mov	esi, eax
 	add	esp, 12					; 0000000cH
 
-; 5388 : 
-; 5389 : 		if(pLoopPlot != NULL)
+; 5410 : 
+; 5411 : 		if(pLoopPlot != NULL)
 
 	test	esi, esi
 	je	$LN10@ChooseInqu@2
 
-; 5390 : 		{
-; 5391 : 			CvUnit* pFirstUnit = pLoopPlot->getUnitByIndex(0);
+; 5412 : 		{
+; 5413 : 			CvUnit* pFirstUnit = pLoopPlot->getUnitByIndex(0);
 
 	push	0
 	mov	ecx, esi
 	call	?getUnitByIndex@CvPlot@@QBEPAVCvUnit@@H@Z ; CvPlot::getUnitByIndex
 
-; 5392 : 			if(pFirstUnit && pFirstUnit->getOwner() != m_pPlayer->GetID())
+; 5414 : 			if(pFirstUnit && pFirstUnit->getOwner() != m_pPlayer->GetID())
 
 	test	eax, eax
 	je	SHORT $LN7@ChooseInqu@2
@@ -30327,11 +30354,11 @@ $LN11@ChooseInqu@2:
 	jne	$LN103@ChooseInqu@2
 $LN7@ChooseInqu@2:
 
-; 5393 : 			{
-; 5394 : 				continue;
-; 5395 : 			}
-; 5396 : 
-; 5397 : 			if(pUnit->CanRemoveHeresy(pLoopPlot))
+; 5415 : 			{
+; 5416 : 				continue;
+; 5417 : 			}
+; 5418 : 
+; 5419 : 			if(pUnit->CanRemoveHeresy(pLoopPlot))
 
 	mov	ecx, DWORD PTR _pUnit$[esp+48]
 	push	esi
@@ -30339,8 +30366,8 @@ $LN7@ChooseInqu@2:
 	test	al, al
 	je	$LN103@ChooseInqu@2
 
-; 5398 : 			{
-; 5399 : 				iTurns = TurnsToReachTarget(pUnit, pLoopPlot, true /* bReusePaths */);
+; 5420 : 			{
+; 5421 : 				iTurns = TurnsToReachTarget(pUnit, pLoopPlot, true /* bReusePaths */);
 
 	mov	edx, DWORD PTR _pUnit$[esp+48]
 	push	0
@@ -30353,7 +30380,7 @@ $LN7@ChooseInqu@2:
 	mov	cl, BYTE PTR _pUnit$[esp+76]
 	mov	BYTE PTR [eax+4], cl
 	mov	eax, edx
-	mov	DWORD PTR $T239588[esp+76], esp
+	mov	DWORD PTR $T239661[esp+76], esp
 	test	eax, eax
 	je	SHORT $LN76@ChooseInqu@2
 	mov	ecx, eax
@@ -30363,13 +30390,13 @@ $LN76@ChooseInqu@2:
 	mov	edi, eax
 	add	esp, 24					; 00000018H
 
-; 5400 : 				if(iTurns < MAX_INT)
+; 5422 : 				if(iTurns < MAX_INT)
 
 	cmp	edi, 2147483647				; 7fffffffH
 	jge	SHORT $LN103@ChooseInqu@2
 
-; 5401 : 				{
-; 5402 : 					iDistance = plotDistance(pUnit->getX(), pUnit->getY(), pLoopPlot->getX(), pLoopPlot->getY());
+; 5423 : 				{
+; 5424 : 					iDistance = plotDistance(pUnit->getX(), pUnit->getY(), pLoopPlot->getX(), pLoopPlot->getY());
 
 	movsx	edx, WORD PTR [esi+2]
 	mov	ebx, DWORD PTR _pUnit$[esp+48]
@@ -30383,22 +30410,22 @@ $LN76@ChooseInqu@2:
 	call	?plotDistance@@YAHHHHH@Z		; plotDistance
 	add	esp, 16					; 00000010H
 
-; 5403 : 
-; 5404 : 					// Consider it to be twice as far if a water plot (those are dangerous!)
-; 5405 : 					if(pLoopPlot->isWater())
+; 5425 : 
+; 5426 : 					// Consider it to be twice as far if a water plot (those are dangerous!)
+; 5427 : 					if(pLoopPlot->isWater())
 
 	cmp	BYTE PTR [esi+5], 3
 	jne	SHORT $LN4@ChooseInqu@2
 
-; 5406 : 					{
-; 5407 : 						iDistance *= 2;
+; 5428 : 					{
+; 5429 : 						iDistance *= 2;
 
 	add	eax, eax
 $LN4@ChooseInqu@2:
 
-; 5408 : 					}
-; 5409 : 
-; 5410 : 					if(iTurns < iBestNumTurns || (iTurns == iBestNumTurns && iDistance < iBestDistance))
+; 5430 : 					}
+; 5431 : 
+; 5432 : 					if(iTurns < iBestNumTurns || (iTurns == iBestNumTurns && iDistance < iBestDistance))
 
 	mov	ecx, DWORD PTR _iBestNumTurns$[esp+52]
 	cmp	edi, ecx
@@ -30408,16 +30435,16 @@ $LN4@ChooseInqu@2:
 	jge	SHORT $LN10@ChooseInqu@2
 $LN2@ChooseInqu@2:
 
-; 5411 : 					{
-; 5412 : 						iBestNumTurns = iTurns;
+; 5433 : 					{
+; 5434 : 						iBestNumTurns = iTurns;
 
 	mov	DWORD PTR _iBestNumTurns$[esp+52], edi
 
-; 5413 : 						iBestDistance = iDistance;
+; 5435 : 						iBestDistance = iDistance;
 
 	mov	DWORD PTR _iBestDistance$[esp+52], eax
 
-; 5414 : 						pBestTarget = pLoopPlot;
+; 5436 : 						pBestTarget = pLoopPlot;
 
 	mov	DWORD PTR _pBestTarget$[esp+52], esi
 	jmp	SHORT $LN10@ChooseInqu@2
@@ -30425,44 +30452,44 @@ $LN103@ChooseInqu@2:
 	mov	ebx, DWORD PTR _pUnit$[esp+48]
 $LN10@ChooseInqu@2:
 
-; 5374 : 			}
-; 5375 : 		}
-; 5376 : 	}
-; 5377 : 
-; 5378 : #pragma warning ( push )
-; 5379 : #pragma warning ( disable : 6011 ) // Dereferencing NULL pointer
-; 5380 : 	AI_PERF_FORMAT("AI-perf-tact.csv", ("ChooseInquisitorTargetPlot: %s %d; %s, Turn %03d, %s", pUnit->getName().c_str(), pUnit->GetID(), pCity->getName().c_str(), GC.getGame().getElapsedGameTurns(), m_pPlayer->getCivilizationShortDescription()) );
-; 5381 : #pragma warning ( pop )
-; 5382 : 
-; 5383 : 	// Find adjacent plot with no units (that aren't our own)
-; 5384 : 	CvPlot* pLoopPlot;
-; 5385 : 	for(int iI = 0; iI < NUM_DIRECTION_TYPES; iI++)
+; 5396 : 			}
+; 5397 : 		}
+; 5398 : 	}
+; 5399 : 
+; 5400 : #pragma warning ( push )
+; 5401 : #pragma warning ( disable : 6011 ) // Dereferencing NULL pointer
+; 5402 : 	AI_PERF_FORMAT("AI-perf-tact.csv", ("ChooseInquisitorTargetPlot: %s %d; %s, Turn %03d, %s", pUnit->getName().c_str(), pUnit->GetID(), pCity->getName().c_str(), GC.getGame().getElapsedGameTurns(), m_pPlayer->getCivilizationShortDescription()) );
+; 5403 : #pragma warning ( pop )
+; 5404 : 
+; 5405 : 	// Find adjacent plot with no units (that aren't our own)
+; 5406 : 	CvPlot* pLoopPlot;
+; 5407 : 	for(int iI = 0; iI < NUM_DIRECTION_TYPES; iI++)
 
-	mov	edx, DWORD PTR _iI$227691[esp+52]
+	mov	edx, DWORD PTR _iI$227736[esp+52]
 	inc	edx
 	cmp	edx, 6
-	mov	DWORD PTR _iI$227691[esp+52], edx
+	mov	DWORD PTR _iI$227736[esp+52], edx
 	jl	$LL107@ChooseInqu@2
 
-; 5415 : 					}
-; 5416 : 				}
-; 5417 : 			}
-; 5418 : 		}
-; 5419 : 	}
-; 5420 : 
-; 5421 : 	if(piTurns)
+; 5437 : 					}
+; 5438 : 				}
+; 5439 : 			}
+; 5440 : 		}
+; 5441 : 	}
+; 5442 : 
+; 5443 : 	if(piTurns)
 
 	mov	eax, DWORD PTR _piTurns$[esp+48]
 	test	eax, eax
 	je	SHORT $LN1@ChooseInqu@2
 
-; 5422 : 		*piTurns = iBestNumTurns;
+; 5444 : 		*piTurns = iBestNumTurns;
 
 	mov	ecx, DWORD PTR _iBestNumTurns$[esp+52]
 	mov	DWORD PTR [eax], ecx
 $LN1@ChooseInqu@2:
 
-; 5423 : 	return pBestTarget;
+; 5445 : 	return pBestTarget;
 
 	mov	DWORD PTR __$EHRec$[esp+60], -1
 	test	ebx, ebx
@@ -30471,7 +30498,7 @@ $LN1@ChooseInqu@2:
 	call	?getDestructionNotification@CvUnit@@QAEAAU?$DestructionNotification@V?$FObjectHandle@VCvUnit@@@@@@XZ ; CvUnit::getDestructionNotification
 $LN99@ChooseInqu@2:
 
-; 5424 : }
+; 5446 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+52]
 	mov	eax, DWORD PTR _pBestTarget$[esp+52]
@@ -30500,61 +30527,61 @@ _TEXT	SEGMENT
 _eReligion$ = -36					; size = 4
 _iBestScore$ = -32					; size = 4
 _this$ = -28						; size = 4
-_iPlayerLoop$227736 = -24				; size = 4
+_iPlayerLoop$227781 = -24				; size = 4
 _pBestCity$ = -20					; size = 4
-_eMajorityReligion$227754 = -16				; size = 4
+_eMajorityReligion$227803 = -16				; size = 4
 _iLoop$ = -12						; size = 4
 _pHolyCity$ = -8					; size = 4
-_iCityLoop$227747 = -4					; size = 4
-tv967 = 8						; size = 4
+_iCityLoop$227796 = -4					; size = 4
+tv1003 = 8						; size = 4
 _bOnlyBetterThanEnhancingReligion$ = 8			; size = 1
 ?ChooseProphetConversionCity@CvReligionAI@@QBEPAVCvCity@@_N@Z PROC ; CvReligionAI::ChooseProphetConversionCity, COMDAT
 ; _this$ = ecx
 
-; 5428 : {
+; 5450 : {
 
 	sub	esp, 36					; 00000024H
 	push	esi
 	mov	esi, ecx
 	mov	DWORD PTR _this$[esp+40], esi
 
-; 5429 : 	CvCity *pBestCity = NULL;
+; 5451 : 	CvCity *pBestCity = NULL;
 
 	mov	DWORD PTR _pBestCity$[esp+40], 0
 
-; 5430 : 	CvCity *pHolyCity = NULL;
-; 5431 : 	int iBestScore = 50;  // Not zero because we don't want prophets to ALWAYS pick something up
+; 5452 : 	CvCity *pHolyCity = NULL;
+; 5453 : 	int iBestScore = 50;  // Not zero because we don't want prophets to ALWAYS pick something up
 
 	mov	DWORD PTR _iBestScore$[esp+40], 50	; 00000032H
 
-; 5432 : 
-; 5433 : 	// Make sure we're spreading a religion and find holy city
-; 5434 : 	ReligionTypes eReligion = GetReligionToSpread();
+; 5454 : 
+; 5455 : 	// Make sure we're spreading a religion and find holy city
+; 5456 : 	ReligionTypes eReligion = GetReligionToSpread();
 
 	call	?GetReligionToSpread@CvReligionAI@@QBE?AW4ReligionTypes@@XZ ; CvReligionAI::GetReligionToSpread
 	mov	ecx, eax
 	mov	DWORD PTR _eReligion$[esp+40], ecx
 
-; 5435 : 	if (eReligion <= RELIGION_PANTHEON)
+; 5457 : 	if (eReligion <= RELIGION_PANTHEON)
 
 	test	ecx, ecx
-	jg	SHORT $LN27@ChooseProp
+	jg	SHORT $LN29@ChooseProp
 
-; 5436 : 	{
-; 5437 : 		return pBestCity;
+; 5458 : 	{
+; 5459 : 		return pBestCity;
 
 	xor	eax, eax
 	pop	esi
 
-; 5553 : }
+; 5575 : }
 
 	add	esp, 36					; 00000024H
 	ret	4
-$LN27@ChooseProp:
+$LN29@ChooseProp:
 
-; 5438 : 	}
-; 5439 : 
-; 5440 : 	const CvReligion* pkReligion = GC.getGame().GetGameReligions()->GetReligion(eReligion, m_pPlayer->GetID());
+; 5460 : 	}
+; 5461 : 
+; 5462 : 	const CvReligion* pkReligion = GC.getGame().GetGameReligions()->GetReligion(eReligion, m_pPlayer->GetID());
 
 	mov	eax, DWORD PTR [esi+4]
 	mov	eax, DWORD PTR [eax+44]
@@ -30568,87 +30595,87 @@ $LN27@ChooseProp:
 	mov	ecx, eax
 	call	?GetReligion@CvGameReligions@@QBEPBVCvReligion@@W4ReligionTypes@@W4PlayerTypes@@@Z ; CvGameReligions::GetReligion
 
-; 5441 : 	if (pkReligion)
+; 5463 : 	if (pkReligion)
 
 	test	eax, eax
-	je	$LN191@ChooseProp
+	je	$LN197@ChooseProp
 
-; 5442 : 	{
-; 5443 : 		CvPlot* pkPlot = GC.getMap().plot(pkReligion->m_iHolyCityX, pkReligion->m_iHolyCityY);
+; 5464 : 	{
+; 5465 : 		CvPlot* pkPlot = GC.getMap().plot(pkReligion->m_iHolyCityX, pkReligion->m_iHolyCityY);
 
 	mov	ebx, DWORD PTR [eax+12]
 	mov	eax, DWORD PTR [eax+8]
 	cmp	eax, -2147483647			; 80000001H
-	je	$LN191@ChooseProp
+	je	$LN197@ChooseProp
 	cmp	ebx, -2147483647			; 80000001H
-	je	$LN191@ChooseProp
+	je	$LN197@ChooseProp
 	mov	ebp, DWORD PTR ?gGlobals@@3VCvGlobals@@A+52
 	cmp	BYTE PTR [ebp+4056], 0
 	mov	ecx, DWORD PTR [ebp+4020]
-	je	SHORT $LN48@ChooseProp
+	je	SHORT $LN50@ChooseProp
 	test	eax, eax
-	jge	SHORT $LN50@ChooseProp
+	jge	SHORT $LN52@ChooseProp
 	cdq
 	idiv	ecx
 	mov	esi, edx
 	add	esi, ecx
-	jmp	SHORT $LN52@ChooseProp
-$LN50@ChooseProp:
+	jmp	SHORT $LN54@ChooseProp
+$LN52@ChooseProp:
 	cmp	eax, ecx
-	jl	SHORT $LN48@ChooseProp
+	jl	SHORT $LN50@ChooseProp
 	cdq
 	idiv	ecx
 	mov	esi, edx
-	jmp	SHORT $LN52@ChooseProp
-$LN48@ChooseProp:
+	jmp	SHORT $LN54@ChooseProp
+$LN50@ChooseProp:
 	mov	esi, eax
-$LN52@ChooseProp:
+$LN54@ChooseProp:
 	cmp	BYTE PTR [ebp+4057], 0
 	mov	edi, DWORD PTR [ebp+4024]
-	je	SHORT $LN195@ChooseProp
+	je	SHORT $LN201@ChooseProp
 	test	ebx, ebx
-	jge	SHORT $LN60@ChooseProp
+	jge	SHORT $LN62@ChooseProp
 	mov	eax, ebx
 	cdq
 	idiv	edi
 	add	edx, edi
-	jmp	SHORT $LN62@ChooseProp
-$LN60@ChooseProp:
+	jmp	SHORT $LN64@ChooseProp
+$LN62@ChooseProp:
 	cmp	ebx, edi
-	jl	SHORT $LN195@ChooseProp
+	jl	SHORT $LN201@ChooseProp
 	mov	eax, ebx
 	cdq
 	idiv	edi
-	jmp	SHORT $LN62@ChooseProp
-$LN195@ChooseProp:
+	jmp	SHORT $LN64@ChooseProp
+$LN201@ChooseProp:
 	mov	edx, ebx
-$LN62@ChooseProp:
+$LN64@ChooseProp:
 	test	esi, esi
-	jl	SHORT $LN191@ChooseProp
+	jl	SHORT $LN197@ChooseProp
 	cmp	esi, ecx
-	jge	SHORT $LN191@ChooseProp
+	jge	SHORT $LN197@ChooseProp
 	test	edx, edx
-	jl	SHORT $LN191@ChooseProp
+	jl	SHORT $LN197@ChooseProp
 	cmp	edx, edi
-	jge	SHORT $LN191@ChooseProp
+	jge	SHORT $LN197@ChooseProp
 	imul	ecx, edx
 	add	ecx, esi
 	imul	ecx, 484				; 000001e4H
 	add	ecx, DWORD PTR [ebp+4068]
 
-; 5444 : 		if(pkPlot)
+; 5466 : 		if(pkPlot)
 
 	test	ecx, ecx
-	je	SHORT $LN191@ChooseProp
+	je	SHORT $LN197@ChooseProp
 
-; 5445 : 		{
-; 5446 : 			pHolyCity = pkPlot->getPlotCity();
+; 5467 : 		{
+; 5468 : 			pHolyCity = pkPlot->getPlotCity();
 
 	mov	eax, DWORD PTR [ecx+104]
 	test	eax, eax
-	jl	SHORT $LN191@ChooseProp
+	jl	SHORT $LN197@ChooseProp
 	cmp	eax, 64					; 00000040H
-	jge	SHORT $LN191@ChooseProp
+	jge	SHORT $LN197@ChooseProp
 	mov	ecx, DWORD PTR [ecx+108]
 	imul	eax, 63236				; 0000f704H
 	add	eax, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
@@ -30658,35 +30685,35 @@ $LN62@ChooseProp:
 	mov	ebp, eax
 	mov	DWORD PTR _pHolyCity$[esp+52], ebp
 
-; 5447 : 		}
-; 5448 : 	}
-; 5449 : 	if (!pHolyCity)
+; 5469 : 		}
+; 5470 : 	}
+; 5471 : 	if (!pHolyCity)
 
 	test	ebp, ebp
-	jne	SHORT $LN24@ChooseProp
-$LN191@ChooseProp:
+	jne	SHORT $LN26@ChooseProp
+$LN197@ChooseProp:
 	pop	edi
 	pop	ebp
 	pop	ebx
 
-; 5450 : 	{
-; 5451 : 		return pBestCity;
+; 5472 : 	{
+; 5473 : 		return pBestCity;
 
 	xor	eax, eax
 	pop	esi
 
-; 5553 : }
+; 5575 : }
 
 	add	esp, 36					; 00000024H
 	ret	4
-$LN24@ChooseProp:
+$LN26@ChooseProp:
 
-; 5452 : 	}
-; 5453 : 
-; 5454 : 	// Look at our cities first, checking them for followers of other religions
-; 5455 : 	int iLoop;
-; 5456 : 	CvCity* pLoopCity;
-; 5457 : 	for(pLoopCity = m_pPlayer->firstCity(&iLoop); pLoopCity != NULL; pLoopCity = m_pPlayer->nextCity(&iLoop))
+; 5474 : 	}
+; 5475 : 
+; 5476 : 	// Look at our cities first, checking them for followers of other religions
+; 5477 : 	int iLoop;
+; 5478 : 	CvCity* pLoopCity;
+; 5479 : 	for(pLoopCity = m_pPlayer->firstCity(&iLoop); pLoopCity != NULL; pLoopCity = m_pPlayer->nextCity(&iLoop))
 
 	mov	eax, DWORD PTR _this$[esp+52]
 	mov	ecx, DWORD PTR [eax+4]
@@ -30696,18 +30723,18 @@ $LN24@ChooseProp:
 	call	?firstCity@CvPlayer@@QAEPAVCvCity@@PAH_N@Z ; CvPlayer::firstCity
 	mov	esi, eax
 	test	esi, esi
-	je	$LN21@ChooseProp
-$LL23@ChooseProp:
+	je	$LN23@ChooseProp
+$LL25@ChooseProp:
 
-; 5458 : 	{
-; 5459 : 		ReligionTypes eMajorityReligion = pLoopCity->GetCityReligions()->GetReligiousMajority();
+; 5480 : 	{
+; 5481 : 		ReligionTypes eMajorityReligion = pLoopCity->GetCityReligions()->GetReligiousMajority();
 
 	mov	ecx, esi
 	call	?GetCityReligions@CvCity@@QBEPAVCvCityReligions@@XZ ; CvCity::GetCityReligions
 	mov	ecx, eax
 	call	?GetReligiousMajority@CvCityReligions@@QAE?AW4ReligionTypes@@XZ ; CvCityReligions::GetReligiousMajority
 
-; 5460 : 		int iHeretics = pLoopCity->GetCityReligions()->GetFollowersOtherReligions(eReligion);
+; 5482 : 		int iHeretics = pLoopCity->GetCityReligions()->GetFollowersOtherReligions(eReligion);
 
 	mov	ecx, esi
 	mov	ebx, eax
@@ -30718,22 +30745,22 @@ $LL23@ChooseProp:
 	lea	edx, DWORD PTR [ecx+edx*8]
 	xor	edi, edi
 	cmp	ecx, edx
-	je	SHORT $LN82@ChooseProp
+	je	SHORT $LN84@ChooseProp
 	npad	1
-$LL84@ChooseProp:
+$LL86@ChooseProp:
 	mov	eax, DWORD PTR [ecx]
 	test	eax, eax
-	jle	SHORT $LN83@ChooseProp
+	jle	SHORT $LN85@ChooseProp
 	cmp	eax, DWORD PTR _eReligion$[esp+52]
-	je	SHORT $LN83@ChooseProp
+	je	SHORT $LN85@ChooseProp
 	add	edi, DWORD PTR [ecx+8]
-$LN83@ChooseProp:
+$LN85@ChooseProp:
 	add	ecx, 24					; 00000018H
 	cmp	ecx, edx
-	jne	SHORT $LL84@ChooseProp
-$LN82@ChooseProp:
+	jne	SHORT $LL86@ChooseProp
+$LN84@ChooseProp:
 
-; 5461 : 		int iDistanceToHolyCity = plotDistance(pLoopCity->getX(), pLoopCity->getY(), pHolyCity->getX(), pHolyCity->getY());
+; 5483 : 		int iDistanceToHolyCity = plotDistance(pLoopCity->getX(), pLoopCity->getY(), pHolyCity->getX(), pHolyCity->getY());
 
 	mov	eax, DWORD PTR [ebp+108]
 	mov	ecx, DWORD PTR [ebp+96]
@@ -30747,20 +30774,20 @@ $LN82@ChooseProp:
 	add	esp, 16					; 00000010H
 	mov	ecx, eax
 
-; 5462 : 
-; 5463 : 		// If this is the holy city and it has been converted, want to go there no matter what
-; 5464 : 		if (pLoopCity == pHolyCity && eMajorityReligion != eReligion)
+; 5484 : 
+; 5485 : 		// If this is the holy city and it has been converted, want to go there no matter what
+; 5486 : 		if (pLoopCity == pHolyCity && eMajorityReligion != eReligion)
 
 	cmp	esi, ebp
-	jne	SHORT $LN196@ChooseProp
+	jne	SHORT $LN202@ChooseProp
 	cmp	ebx, DWORD PTR _eReligion$[esp+52]
-	jne	$LN183@ChooseProp
-$LN196@ChooseProp:
+	jne	$LN189@ChooseProp
+$LN202@ChooseProp:
 
-; 5467 : 		}
-; 5468 : 
-; 5469 : 		// Otherwise score this city
-; 5470 : 		int iScore = (iHeretics * 100) / (iDistanceToHolyCity + 1);
+; 5489 : 		}
+; 5490 : 
+; 5491 : 		// Otherwise score this city
+; 5492 : 		int iScore = (iHeretics * 100) / (iDistanceToHolyCity + 1);
 
 	mov	eax, edi
 	imul	eax, 100				; 00000064H
@@ -30768,50 +30795,50 @@ $LN196@ChooseProp:
 	cdq
 	idiv	ecx
 
-; 5471 : 		if (eMajorityReligion != eReligion && eMajorityReligion > RELIGION_PANTHEON)
+; 5493 : 		if (eMajorityReligion != eReligion && eMajorityReligion > RELIGION_PANTHEON)
 
 	cmp	ebx, DWORD PTR _eReligion$[esp+52]
-	je	SHORT $LN199@ChooseProp
+	je	SHORT $LN205@ChooseProp
 	test	ebx, ebx
-	jle	SHORT $LN199@ChooseProp
+	jle	SHORT $LN205@ChooseProp
 
-; 5472 : 		{
-; 5473 : 			iScore *= 3;
+; 5494 : 		{
+; 5495 : 			iScore *= 3;
 
 	lea	eax, DWORD PTR [eax+eax*2]
-	jmp	SHORT $LN200@ChooseProp
-$LN199@ChooseProp:
+	jmp	SHORT $LN206@ChooseProp
+$LN205@ChooseProp:
 
-; 5474 : 		}
-; 5475 : 
-; 5476 : 		// Don't give it any score if our religion hasn't been enhanced yet
-; 5477 : 		else if (bOnlyBetterThanEnhancingReligion)
+; 5496 : 		}
+; 5497 : 
+; 5498 : 		// Don't give it any score if our religion hasn't been enhanced yet
+; 5499 : 		else if (bOnlyBetterThanEnhancingReligion)
 
 	cmp	BYTE PTR _bOnlyBetterThanEnhancingReligion$[esp+48], 0
-	je	SHORT $LN200@ChooseProp
+	je	SHORT $LN206@ChooseProp
 
-; 5478 : 		{
-; 5479 : 			iScore = 0;
+; 5500 : 		{
+; 5501 : 			iScore = 0;
 
 	xor	eax, eax
-$LN200@ChooseProp:
+$LN206@ChooseProp:
 
-; 5480 : 		}
-; 5481 : 
-; 5482 : 		if (iScore > iBestScore)
+; 5502 : 		}
+; 5503 : 
+; 5504 : 		if (iScore > iBestScore)
 
 	cmp	eax, DWORD PTR _iBestScore$[esp+52]
-	jle	SHORT $LN22@ChooseProp
+	jle	SHORT $LN24@ChooseProp
 
-; 5483 : 		{
-; 5484 : 			iBestScore = iScore;
+; 5505 : 		{
+; 5506 : 			iBestScore = iScore;
 
 	mov	DWORD PTR _iBestScore$[esp+52], eax
 
-; 5485 : 			pBestCity = pLoopCity;
+; 5507 : 			pBestCity = pLoopCity;
 
 	mov	DWORD PTR _pBestCity$[esp+52], esi
-$LN22@ChooseProp:
+$LN24@ChooseProp:
 	mov	edx, DWORD PTR _this$[esp+52]
 	push	0
 	lea	ecx, DWORD PTR _iLoop$[esp+56]
@@ -30820,97 +30847,108 @@ $LN22@ChooseProp:
 	call	?nextCity@CvPlayer@@QAEPAVCvCity@@PAH_N@Z ; CvPlayer::nextCity
 	mov	esi, eax
 	test	esi, esi
-	jne	$LL23@ChooseProp
-$LN21@ChooseProp:
+	jne	$LL25@ChooseProp
+$LN23@ChooseProp:
 
-; 5486 : 		}
-; 5487 : 	}
-; 5488 : 
-; 5489 : 	// Now try other players, assuming don't need to enhance religion
-; 5490 : 	if (!bOnlyBetterThanEnhancingReligion)
+; 5508 : 		}
+; 5509 : 	}
+; 5510 : 
+; 5511 : 	// Now try other players, assuming don't need to enhance religion
+; 5512 : 	if (!bOnlyBetterThanEnhancingReligion)
 
 	cmp	BYTE PTR _bOnlyBetterThanEnhancingReligion$[esp+48], 0
-	jne	$LN12@ChooseProp
+	jne	$LN14@ChooseProp
 
-; 5491 : 	{
-; 5492 : 		for(int iPlayerLoop = 0; iPlayerLoop < MAX_CIV_PLAYERS; iPlayerLoop++)
+; 5513 : 	{
+; 5514 : 		for(int iPlayerLoop = 0; iPlayerLoop < MAX_CIV_PLAYERS; iPlayerLoop++)
 
 	xor	edi, edi
-	mov	DWORD PTR _iPlayerLoop$227736[esp+52], edi
-	mov	DWORD PTR tv967[esp+48], edi
+	mov	DWORD PTR _iPlayerLoop$227781[esp+52], edi
+	mov	DWORD PTR tv1003[esp+48], edi
 	npad	1
-$LL201@ChooseProp:
+$LL207@ChooseProp:
 
-; 5493 : 		{
-; 5494 : 			CvPlayer &kLoopPlayer = GET_PLAYER((PlayerTypes)iPlayerLoop);
+; 5515 : 		{
+; 5516 : 			CvPlayer &kLoopPlayer = GET_PLAYER((PlayerTypes)iPlayerLoop);
 
 	mov	eax, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 
-; 5495 : 			if(kLoopPlayer.isAlive() && iPlayerLoop != m_pPlayer->GetID())
+; 5517 : 			if(kLoopPlayer.isAlive() && iPlayerLoop != m_pPlayer->GetID())
 
 	cmp	BYTE PTR [edi+eax+2256], 0
 	lea	esi, DWORD PTR [edi+eax]
-	je	$LN13@ChooseProp
+	je	$LN15@ChooseProp
 	mov	ecx, DWORD PTR _this$[esp+52]
 	mov	edx, DWORD PTR [ecx+4]
-	mov	eax, DWORD PTR _iPlayerLoop$227736[esp+52]
+	mov	eax, DWORD PTR _iPlayerLoop$227781[esp+52]
 	cmp	eax, DWORD PTR [edx+44]
-	je	$LN13@ChooseProp
+	je	$LN15@ChooseProp
 
-; 5496 : 			{
-; 5497 : #ifdef NQM_AI_GIMP_NO_RELIGION_SPREAD
-; 5498 : 				if (GC.getGame().isOption("GAMEOPTION_AI_GIMP_NO_RELIGION_SPREAD") && kLoopPlayer.isHuman())
+; 5518 : 			{
+; 5519 : #ifdef NQM_AI_GIMP_NO_RELIGION_SPREAD
+; 5520 : 				if ((GC.getGame().isOption("GAMEOPTION_AI_TWEAKS") || GC.getGame().isOption("GAMEOPTION_AI_GIMP_NO_RELIGION_SPREAD")) && kLoopPlayer.isHuman())
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
-	push	OFFSET $SG227744
+	push	OFFSET $SG227790
 	call	?isOption@CvGame@@QBE_NPBD@Z		; CvGame::isOption
 	test	al, al
-	je	SHORT $LN10@ChooseProp
+	jne	SHORT $LN11@ChooseProp
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
+	push	OFFSET $SG227791
+	call	?isOption@CvGame@@QBE_NPBD@Z		; CvGame::isOption
+	test	al, al
+	je	SHORT $LN12@ChooseProp
+$LN11@ChooseProp:
 	mov	ecx, esi
 	call	?isHuman@CvPlayer@@QBE_NXZ		; CvPlayer::isHuman
 	test	al, al
-	jne	$LN13@ChooseProp
-$LN10@ChooseProp:
+	jne	$LN15@ChooseProp
+$LN12@ChooseProp:
 
-; 5499 : 					continue;
-; 5500 : #endif
-; 5501 : #ifdef NQ_AI_GIMP_NO_MINOR_SPREAD // NQMP_Bing - AI cannot spread religion to City-States
-; 5502 : 				if (GC.getGame().isOption("GAMEOPTION_AI_GIMP_NO_MINOR_RELIGION_SPREAD") && kLoopPlayer.isMinorCiv())
+; 5521 : 					continue;
+; 5522 : #endif
+; 5523 : #ifdef NQ_AI_GIMP_NO_MINOR_SPREAD // NQMP_Bing - AI cannot spread religion to City-States
+; 5524 : 				if ((GC.getGame().isOption("GAMEOPTION_AI_TWEAKS") || GC.getGame().isOption("GAMEOPTION_AI_GIMP_NO_MINOR_RELIGION_SPREAD")) && kLoopPlayer.isMinorCiv())
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
-	push	OFFSET $SG227746
+	push	OFFSET $SG227794
 	call	?isOption@CvGame@@QBE_NPBD@Z		; CvGame::isOption
 	test	al, al
-	je	SHORT $LN9@ChooseProp
+	jne	SHORT $LN9@ChooseProp
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
+	push	OFFSET $SG227795
+	call	?isOption@CvGame@@QBE_NPBD@Z		; CvGame::isOption
+	test	al, al
+	je	SHORT $LN10@ChooseProp
+$LN9@ChooseProp:
 	mov	ecx, esi
 	call	?isMinorCiv@CvPlayer@@QBE_NXZ		; CvPlayer::isMinorCiv
 	test	al, al
-	jne	$LN13@ChooseProp
-$LN9@ChooseProp:
+	jne	$LN15@ChooseProp
+$LN10@ChooseProp:
 
-; 5503 : 					continue;
-; 5504 : #endif
-; 5505 : #ifdef AUI_RELIGION_FIX_CHOOSE_PROPHET_CONVERSION_CITY_HONOR_NONCONVERT_PROMISE
-; 5506 : 				if (m_pPlayer->GetDiplomacyAI()->IsPlayerAgreeNotToConvert((PlayerTypes)iPlayerLoop))
-; 5507 : 					continue;
-; 5508 : #endif
-; 5509 : 				int iCityLoop;
-; 5510 : 				for(pLoopCity = GET_PLAYER((PlayerTypes)iPlayerLoop).firstCity(&iCityLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER((PlayerTypes)iPlayerLoop).nextCity(&iCityLoop))
+; 5525 : 					continue;
+; 5526 : #endif
+; 5527 : #ifdef AUI_RELIGION_FIX_CHOOSE_PROPHET_CONVERSION_CITY_HONOR_NONCONVERT_PROMISE
+; 5528 : 				if (m_pPlayer->GetDiplomacyAI()->IsPlayerAgreeNotToConvert((PlayerTypes)iPlayerLoop))
+; 5529 : 					continue;
+; 5530 : #endif
+; 5531 : 				int iCityLoop;
+; 5532 : 				for(pLoopCity = GET_PLAYER((PlayerTypes)iPlayerLoop).firstCity(&iCityLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER((PlayerTypes)iPlayerLoop).nextCity(&iCityLoop))
 
 	mov	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	push	0
-	lea	edx, DWORD PTR _iCityLoop$227747[esp+56]
+	lea	edx, DWORD PTR _iCityLoop$227796[esp+56]
 	add	ecx, edi
 	push	edx
 	call	?firstCity@CvPlayer@@QAEPAVCvCity@@PAH_N@Z ; CvPlayer::firstCity
 	mov	esi, eax
 	test	esi, esi
-	je	$LN13@ChooseProp
-	npad	2
+	je	$LN15@ChooseProp
 $LL8@ChooseProp:
 
-; 5511 : 				{
-; 5512 : 					if (!pLoopCity->GetCityReligions()->IsDefendedAgainstSpread(eReligion))
+; 5533 : 				{
+; 5534 : 					if (!pLoopCity->GetCityReligions()->IsDefendedAgainstSpread(eReligion))
 
 	mov	ebp, DWORD PTR _eReligion$[esp+52]
 	push	ebp
@@ -30921,18 +30959,18 @@ $LL8@ChooseProp:
 	test	al, al
 	jne	$LN7@ChooseProp
 
-; 5513 : 					{
-; 5514 : 						ReligionTypes eMajorityReligion = pLoopCity->GetCityReligions()->GetReligiousMajority();
+; 5535 : 					{
+; 5536 : 						ReligionTypes eMajorityReligion = pLoopCity->GetCityReligions()->GetReligiousMajority();
 
 	mov	ecx, esi
 	call	?GetCityReligions@CvCity@@QBEPAVCvCityReligions@@XZ ; CvCity::GetCityReligions
 	mov	ecx, eax
 	call	?GetReligiousMajority@CvCityReligions@@QAE?AW4ReligionTypes@@XZ ; CvCityReligions::GetReligiousMajority
 
-; 5515 : 						int iHeretics = pLoopCity->GetCityReligions()->GetFollowersOtherReligions(eReligion);
+; 5537 : 						int iHeretics = pLoopCity->GetCityReligions()->GetFollowersOtherReligions(eReligion);
 
 	mov	ecx, esi
-	mov	DWORD PTR _eMajorityReligion$227754[esp+52], eax
+	mov	DWORD PTR _eMajorityReligion$227803[esp+52], eax
 	call	?GetCityReligions@CvCity@@QBEPAVCvCityReligions@@XZ ; CvCity::GetCityReligions
 	mov	ecx, DWORD PTR [eax]
 	mov	eax, DWORD PTR [eax+4]
@@ -30940,21 +30978,22 @@ $LL8@ChooseProp:
 	lea	edx, DWORD PTR [ecx+eax*8]
 	xor	edi, edi
 	cmp	ecx, edx
-	je	SHORT $LN126@ChooseProp
-$LL128@ChooseProp:
+	je	SHORT $LN132@ChooseProp
+	npad	5
+$LL134@ChooseProp:
 	mov	eax, DWORD PTR [ecx]
 	test	eax, eax
-	jle	SHORT $LN127@ChooseProp
+	jle	SHORT $LN133@ChooseProp
 	cmp	eax, ebp
-	je	SHORT $LN127@ChooseProp
+	je	SHORT $LN133@ChooseProp
 	add	edi, DWORD PTR [ecx+8]
-$LN127@ChooseProp:
+$LN133@ChooseProp:
 	add	ecx, 24					; 00000018H
 	cmp	ecx, edx
-	jne	SHORT $LL128@ChooseProp
-$LN126@ChooseProp:
+	jne	SHORT $LL134@ChooseProp
+$LN132@ChooseProp:
 
-; 5516 : 						int iDistanceToHolyCity = plotDistance(pLoopCity->getX(), pLoopCity->getY(), pHolyCity->getX(), pHolyCity->getY());
+; 5538 : 						int iDistanceToHolyCity = plotDistance(pLoopCity->getX(), pLoopCity->getY(), pHolyCity->getX(), pHolyCity->getY());
 
 	mov	eax, DWORD PTR _pHolyCity$[esp+52]
 	mov	ecx, DWORD PTR [eax+108]
@@ -30968,9 +31007,9 @@ $LN126@ChooseProp:
 	call	?plotDistance@@YAHHHHH@Z		; plotDistance
 	mov	ecx, eax
 
-; 5517 : 
-; 5518 : 						// Score this city
-; 5519 : 						int iScore = (iHeretics * 50) / (iDistanceToHolyCity + 1);
+; 5539 : 
+; 5540 : 						// Score this city
+; 5541 : 						int iScore = (iHeretics * 50) / (iDistanceToHolyCity + 1);
 
 	mov	eax, edi
 	imul	eax, 50					; 00000032H
@@ -30980,26 +31019,26 @@ $LN126@ChooseProp:
 	add	esp, 16					; 00000010H
 	mov	ebx, eax
 
-; 5520 : 
-; 5521 : 						//    - high score if this city has another religion as its majority
-; 5522 : 						if (eMajorityReligion != eReligion)
+; 5542 : 
+; 5543 : 						//    - high score if this city has another religion as its majority
+; 5544 : 						if (eMajorityReligion != eReligion)
 
-	cmp	DWORD PTR _eMajorityReligion$227754[esp+52], ebp
+	cmp	DWORD PTR _eMajorityReligion$227803[esp+52], ebp
 	je	SHORT $LN4@ChooseProp
 
-; 5523 : 						{
-; 5524 : 							iScore *= 3;
+; 5545 : 						{
+; 5546 : 							iScore *= 3;
 
 	lea	ebx, DWORD PTR [ebx+ebx*2]
 $LN4@ChooseProp:
 
-; 5525 : 						}
-; 5526 : 
-; 5527 : 						//    - Holy city will anger folks, let's not do that one right away
-; 5528 : 						ReligionTypes eCityOwnersReligion = GET_PLAYER((PlayerTypes)iPlayerLoop).GetReligions()->GetReligionCreatedByPlayer();
+; 5547 : 						}
+; 5548 : 
+; 5549 : 						//    - Holy city will anger folks, let's not do that one right away
+; 5550 : 						ReligionTypes eCityOwnersReligion = GET_PLAYER((PlayerTypes)iPlayerLoop).GetReligions()->GetReligionCreatedByPlayer();
 
 	mov	edx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
-	mov	eax, DWORD PTR tv967[esp+48]
+	mov	eax, DWORD PTR tv1003[esp+48]
 	lea	ecx, DWORD PTR [eax+edx]
 	call	?GetReligions@CvPlayer@@QBEPAVCvPlayerReligions@@XZ ; CvPlayer::GetReligions
 	mov	ecx, DWORD PTR [eax]
@@ -31011,7 +31050,7 @@ $LN4@ChooseProp:
 	call	?GetReligionCreatedByPlayer@CvGameReligions@@QBE?AW4ReligionTypes@@W4PlayerTypes@@@Z ; CvGameReligions::GetReligionCreatedByPlayer
 	mov	edi, eax
 
-; 5529 : 						if (eCityOwnersReligion > RELIGION_PANTHEON && pLoopCity->GetCityReligions()->IsHolyCityForReligion(eCityOwnersReligion))
+; 5551 : 						if (eCityOwnersReligion > RELIGION_PANTHEON && pLoopCity->GetCityReligions()->IsHolyCityForReligion(eCityOwnersReligion))
 
 	test	edi, edi
 	jle	SHORT $LN3@ChooseProp
@@ -31023,37 +31062,38 @@ $LN4@ChooseProp:
 	lea	eax, DWORD PTR [ecx+edx*8]
 	cmp	ecx, eax
 	je	SHORT $LN3@ChooseProp
-$LL164@ChooseProp:
+	npad	4
+$LL170@ChooseProp:
 	cmp	DWORD PTR [ecx], edi
-	je	SHORT $LN184@ChooseProp
+	je	SHORT $LN190@ChooseProp
 	add	ecx, 24					; 00000018H
 	cmp	ecx, eax
-	jne	SHORT $LL164@ChooseProp
+	jne	SHORT $LL170@ChooseProp
 	jmp	SHORT $LN3@ChooseProp
-$LN183@ChooseProp:
+$LN189@ChooseProp:
 	pop	edi
 
-; 5465 : 		{
-; 5466 : 			return pHolyCity;
+; 5487 : 		{
+; 5488 : 			return pHolyCity;
 
 	mov	eax, ebp
 	pop	ebp
 	pop	ebx
 	pop	esi
 
-; 5553 : }
+; 5575 : }
 
 	add	esp, 36					; 00000024H
 	ret	4
-$LN184@ChooseProp:
+$LN190@ChooseProp:
 
-; 5529 : 						if (eCityOwnersReligion > RELIGION_PANTHEON && pLoopCity->GetCityReligions()->IsHolyCityForReligion(eCityOwnersReligion))
+; 5551 : 						if (eCityOwnersReligion > RELIGION_PANTHEON && pLoopCity->GetCityReligions()->IsHolyCityForReligion(eCityOwnersReligion))
 
 	cmp	BYTE PTR [ecx+4], 0
 	je	SHORT $LN3@ChooseProp
 
-; 5530 : 						{
-; 5531 : 							iScore /= 2;
+; 5552 : 						{
+; 5553 : 							iScore /= 2;
 
 	mov	eax, ebx
 	cdq
@@ -31062,12 +31102,12 @@ $LN184@ChooseProp:
 	mov	ebx, eax
 $LN3@ChooseProp:
 
-; 5532 : 						}
-; 5533 : 
-; 5534 : 						//    - City not owned by religion founder, won't anger folks as much
-; 5535 : 						const CvReligion* pkMajorityReligion = GC.getGame().GetGameReligions()->GetReligion(eMajorityReligion, NO_PLAYER);
+; 5554 : 						}
+; 5555 : 
+; 5556 : 						//    - City not owned by religion founder, won't anger folks as much
+; 5557 : 						const CvReligion* pkMajorityReligion = GC.getGame().GetGameReligions()->GetReligion(eMajorityReligion, NO_PLAYER);
 
-	mov	eax, DWORD PTR _eMajorityReligion$227754[esp+52]
+	mov	eax, DWORD PTR _eMajorityReligion$227803[esp+52]
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	-1
 	push	eax
@@ -31075,7 +31115,7 @@ $LN3@ChooseProp:
 	mov	ecx, eax
 	call	?GetReligion@CvGameReligions@@QBEPBVCvReligion@@W4ReligionTypes@@W4PlayerTypes@@@Z ; CvGameReligions::GetReligion
 
-; 5536 : 						if (pkMajorityReligion && pkMajorityReligion->m_eFounder != pLoopCity->getOwner())
+; 5558 : 						if (pkMajorityReligion && pkMajorityReligion->m_eFounder != pLoopCity->getOwner())
 
 	test	eax, eax
 	je	SHORT $LN2@ChooseProp
@@ -31083,56 +31123,56 @@ $LN3@ChooseProp:
 	cmp	ecx, DWORD PTR [esi+84]
 	je	SHORT $LN2@ChooseProp
 
-; 5537 : 						{
-; 5538 : 							iScore *= 2;
+; 5559 : 						{
+; 5560 : 							iScore *= 2;
 
 	add	ebx, ebx
 $LN2@ChooseProp:
 
-; 5539 : 						}
-; 5540 : 
-; 5541 : 						if (iScore > iBestScore)
+; 5561 : 						}
+; 5562 : 
+; 5563 : 						if (iScore > iBestScore)
 
 	cmp	ebx, DWORD PTR _iBestScore$[esp+52]
 
-; 5542 : 						{
-; 5543 : 							iBestScore = iScore;
-; 5544 : 							pBestCity = pLoopCity;
+; 5564 : 						{
+; 5565 : 							iBestScore = iScore;
+; 5566 : 							pBestCity = pLoopCity;
 
-	mov	edi, DWORD PTR tv967[esp+48]
+	mov	edi, DWORD PTR tv1003[esp+48]
 	jle	SHORT $LN7@ChooseProp
 	mov	DWORD PTR _iBestScore$[esp+52], ebx
 	mov	DWORD PTR _pBestCity$[esp+52], esi
 $LN7@ChooseProp:
 	mov	edx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	push	0
-	lea	eax, DWORD PTR _iCityLoop$227747[esp+56]
+	lea	eax, DWORD PTR _iCityLoop$227796[esp+56]
 	lea	ecx, DWORD PTR [edi+edx]
 	push	eax
 	call	?nextCity@CvPlayer@@QAEPAVCvCity@@PAH_N@Z ; CvPlayer::nextCity
 	mov	esi, eax
 	test	esi, esi
 	jne	$LL8@ChooseProp
-$LN13@ChooseProp:
+$LN15@ChooseProp:
 
-; 5491 : 	{
-; 5492 : 		for(int iPlayerLoop = 0; iPlayerLoop < MAX_CIV_PLAYERS; iPlayerLoop++)
+; 5513 : 	{
+; 5514 : 		for(int iPlayerLoop = 0; iPlayerLoop < MAX_CIV_PLAYERS; iPlayerLoop++)
 
-	inc	DWORD PTR _iPlayerLoop$227736[esp+52]
+	inc	DWORD PTR _iPlayerLoop$227781[esp+52]
 	add	edi, 63236				; 0000f704H
 	cmp	edi, 3983868				; 003cc9fcH
-	mov	DWORD PTR tv967[esp+48], edi
-	jl	$LL201@ChooseProp
-$LN12@ChooseProp:
+	mov	DWORD PTR tv1003[esp+48], edi
+	jl	$LL207@ChooseProp
+$LN14@ChooseProp:
 
-; 5545 : 						}
-; 5546 : 					}
-; 5547 : 				}
-; 5548 : 			}
-; 5549 : 		}
-; 5550 : 	}
-; 5551 : 
-; 5552 : 	return pBestCity;
+; 5567 : 						}
+; 5568 : 					}
+; 5569 : 				}
+; 5570 : 			}
+; 5571 : 		}
+; 5572 : 	}
+; 5573 : 
+; 5574 : 	return pBestCity;
 
 	mov	eax, DWORD PTR _pBestCity$[esp+52]
 	pop	edi
@@ -31140,7 +31180,7 @@ $LN12@ChooseProp:
 	pop	ebx
 	pop	esi
 
-; 5553 : }
+; 5575 : }
 
 	add	esp, 36					; 00000024H
 	ret	4
@@ -31166,18 +31206,18 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 _iBestNumTurns$ = -36					; size = 4
 _iBestDistance$ = -32					; size = 4
-_iI$227787 = -28					; size = 4
-$T240140 = -28						; size = 4
+_iI$227836 = -28					; size = 4
+$T240221 = -28						; size = 4
 _pBestTarget$ = -24					; size = 4
 _this$ = -20						; size = 4
-$T240142 = -16						; size = 4
+$T240223 = -16						; size = 4
 __$EHRec$ = -12						; size = 12
 _pUnit$ = 8						; size = 8
 _piTurns$ = 16						; size = 4
 ?ChooseProphetTargetPlot@CvReligionAI@@QAEPAVCvPlot@@V?$FObjectHandle@VCvUnit@@@@PAH@Z PROC ; CvReligionAI::ChooseProphetTargetPlot, COMDAT
 ; _this$ = ecx
 
-; 5561 : {
+; 5583 : {
 
 	push	-1
 	push	__ehhandler$?ChooseProphetTargetPlot@CvReligionAI@@QAEPAVCvPlot@@V?$FObjectHandle@VCvUnit@@@@PAH@Z
@@ -31193,36 +31233,36 @@ _piTurns$ = 16						; size = 4
 	mov	DWORD PTR _this$[esp+52], edi
 	xor	esi, esi
 
-; 5562 : 	CvCity* pCity = ChooseProphetConversionCity(false/*bOnlyBetterThanEnhancingReligion*/);
+; 5584 : 	CvCity* pCity = ChooseProphetConversionCity(false/*bOnlyBetterThanEnhancingReligion*/);
 
 	push	esi
 	mov	DWORD PTR __$EHRec$[esp+64], esi
 	call	?ChooseProphetConversionCity@CvReligionAI@@QBEPAVCvCity@@_N@Z ; CvReligionAI::ChooseProphetConversionCity
 	mov	ebp, eax
 
-; 5563 : 	int iBestNumTurns = MAX_INT;
+; 5585 : 	int iBestNumTurns = MAX_INT;
 
 	mov	ebx, 2147483647				; 7fffffffH
 	mov	DWORD PTR _iBestNumTurns$[esp+52], ebx
 
-; 5564 : 	int iTurns;
-; 5565 : 	int iBestDistance = MAX_INT;
+; 5586 : 	int iTurns;
+; 5587 : 	int iBestDistance = MAX_INT;
 
 	mov	DWORD PTR _iBestDistance$[esp+52], ebx
 
-; 5566 : 	int iDistance;
-; 5567 : 	CvPlot* pBestTarget = NULL;
+; 5588 : 	int iDistance;
+; 5589 : 	CvPlot* pBestTarget = NULL;
 
 	mov	DWORD PTR _pBestTarget$[esp+52], esi
 
-; 5568 : 
-; 5569 : 	if(pCity == NULL)
+; 5590 : 
+; 5591 : 	if(pCity == NULL)
 
 	cmp	ebp, esi
 	jne	SHORT $LN16@ChooseProp@2
 
-; 5570 : 	{
-; 5571 : 		return NULL;
+; 5592 : 	{
+; 5593 : 		return NULL;
 
 	mov	ecx, DWORD PTR _pUnit$[esp+48]
 	mov	DWORD PTR __$EHRec$[esp+60], -1
@@ -31232,7 +31272,7 @@ _piTurns$ = 16						; size = 4
 $LN25@ChooseProp@2:
 	xor	eax, eax
 
-; 5635 : }
+; 5657 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+52]
 	mov	DWORD PTR fs:0, ecx
@@ -31244,10 +31284,10 @@ $LN25@ChooseProp@2:
 	ret	12					; 0000000cH
 $LN16@ChooseProp@2:
 
-; 5572 : 	}
-; 5573 : 
-; 5574 : 	// Our city with no civilian units?  If so go right in there
-; 5575 : 	if(pCity->getOwner() == m_pPlayer->GetID())
+; 5594 : 	}
+; 5595 : 
+; 5596 : 	// Our city with no civilian units?  If so go right in there
+; 5597 : 	if(pCity->getOwner() == m_pPlayer->GetID())
 
 	mov	ecx, DWORD PTR [edi+4]
 	mov	eax, DWORD PTR [ebp+84]
@@ -31255,8 +31295,8 @@ $LN16@ChooseProp@2:
 	cmp	eax, ecx
 	jne	$LN12@ChooseProp@2
 
-; 5576 : 	{
-; 5577 : 		CvUnit* pFirstUnit = pCity->plot()->getUnitByIndex(0);
+; 5598 : 	{
+; 5599 : 		CvUnit* pFirstUnit = pCity->plot()->getUnitByIndex(0);
 
 	push	esi
 	mov	ecx, ebp
@@ -31264,7 +31304,7 @@ $LN16@ChooseProp@2:
 	mov	ecx, eax
 	call	?getUnitByIndex@CvPlot@@QBEPAVCvUnit@@H@Z ; CvPlot::getUnitByIndex
 
-; 5578 : 		if(!pFirstUnit || pFirstUnit->IsCombatUnit())
+; 5600 : 		if(!pFirstUnit || pFirstUnit->IsCombatUnit())
 
 	cmp	eax, esi
 	je	SHORT $LN13@ChooseProp@2
@@ -31272,8 +31312,8 @@ $LN16@ChooseProp@2:
 	jle	SHORT $LN12@ChooseProp@2
 $LN13@ChooseProp@2:
 
-; 5579 : 		{
-; 5580 : 			iTurns = TurnsToReachTarget(pUnit, pCity->plot(), true /* bReusePaths */);
+; 5601 : 		{
+; 5602 : 			iTurns = TurnsToReachTarget(pUnit, pCity->plot(), true /* bReusePaths */);
 
 	push	esi
 	push	esi
@@ -31288,7 +31328,7 @@ $LN13@ChooseProp@2:
 	mov	cl, BYTE PTR _pUnit$[esp+76]
 	mov	BYTE PTR [eax+4], cl
 	mov	eax, edx
-	mov	DWORD PTR $T240140[esp+76], esp
+	mov	DWORD PTR $T240221[esp+76], esp
 	cmp	eax, esi
 	je	SHORT $LN42@ChooseProp@2
 	mov	ecx, eax
@@ -31297,17 +31337,17 @@ $LN42@ChooseProp@2:
 	call	?TurnsToReachTarget@@YAHV?$FObjectHandle@VCvUnit@@@@PAVCvPlot@@_N22@Z ; TurnsToReachTarget
 	add	esp, 24					; 00000018H
 
-; 5581 : 			if(iTurns < MAX_INT)
+; 5603 : 			if(iTurns < MAX_INT)
 
 	cmp	eax, ebx
 	jge	SHORT $LN12@ChooseProp@2
 
-; 5582 : 			{
-; 5583 : 				*piTurns = iTurns;
+; 5604 : 			{
+; 5605 : 				*piTurns = iTurns;
 
 	mov	edx, DWORD PTR _piTurns$[esp+48]
 
-; 5584 : 				return pCity->plot();
+; 5606 : 				return pCity->plot();
 
 	mov	ecx, ebp
 	mov	DWORD PTR [edx], eax
@@ -31321,7 +31361,7 @@ $LN42@ChooseProp@2:
 $LN47@ChooseProp@2:
 	mov	eax, esi
 
-; 5635 : }
+; 5657 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+52]
 	mov	DWORD PTR fs:0, ecx
@@ -31333,30 +31373,30 @@ $LN47@ChooseProp@2:
 	ret	12					; 0000000cH
 $LN12@ChooseProp@2:
 
-; 5585 : 			}
-; 5586 : 		}
-; 5587 : 	}
-; 5588 : 
-; 5589 : #pragma warning ( push )
-; 5590 : #pragma warning ( disable : 6011 ) // Dereferencing NULL pointer
-; 5591 : 	AI_PERF_FORMAT("AI-perf-tact.csv", ("ChooseProphetTargetPlot: %s %d; %s, Turn %03d, %s", pUnit->getName().c_str(), pUnit->GetID(), pCity->getName().c_str(), GC.getGame().getElapsedGameTurns(), m_pPlayer->getCivilizationShortDescription()) );
-; 5592 : #pragma warning ( pop )
-; 5593 : 
-; 5594 : 	// Find adjacent plot with no units (that aren't our own)
-; 5595 : 	CvPlot* pLoopPlot;
-; 5596 : 	for(int iI = 0; iI < NUM_DIRECTION_TYPES; iI++)
+; 5607 : 			}
+; 5608 : 		}
+; 5609 : 	}
+; 5610 : 
+; 5611 : #pragma warning ( push )
+; 5612 : #pragma warning ( disable : 6011 ) // Dereferencing NULL pointer
+; 5613 : 	AI_PERF_FORMAT("AI-perf-tact.csv", ("ChooseProphetTargetPlot: %s %d; %s, Turn %03d, %s", pUnit->getName().c_str(), pUnit->GetID(), pCity->getName().c_str(), GC.getGame().getElapsedGameTurns(), m_pPlayer->getCivilizationShortDescription()) );
+; 5614 : #pragma warning ( pop )
+; 5615 : 
+; 5616 : 	// Find adjacent plot with no units (that aren't our own)
+; 5617 : 	CvPlot* pLoopPlot;
+; 5618 : 	for(int iI = 0; iI < NUM_DIRECTION_TYPES; iI++)
 
 	mov	ebx, DWORD PTR _pUnit$[esp+48]
 	xor	edx, edx
-	mov	DWORD PTR _iI$227787[esp+52], edx
+	mov	DWORD PTR _iI$227836[esp+52], edx
 	jmp	SHORT $LN11@ChooseProp@2
 	npad	1
 $LL101@ChooseProp@2:
 	mov	edi, DWORD PTR _this$[esp+52]
 $LN11@ChooseProp@2:
 
-; 5597 : 	{
-; 5598 : 		pLoopPlot = plotDirection(pCity->getX(), pCity->getY(), ((DirectionTypes)iI));
+; 5619 : 	{
+; 5620 : 		pLoopPlot = plotDirection(pCity->getX(), pCity->getY(), ((DirectionTypes)iI));
 
 	mov	eax, DWORD PTR [ebp+108]
 	mov	ecx, DWORD PTR [ebp+96]
@@ -31367,20 +31407,20 @@ $LN11@ChooseProp@2:
 	mov	esi, eax
 	add	esp, 12					; 0000000cH
 
-; 5599 : 
-; 5600 : 		if(pLoopPlot != NULL)
+; 5621 : 
+; 5622 : 		if(pLoopPlot != NULL)
 
 	test	esi, esi
 	je	$LN10@ChooseProp@2
 
-; 5601 : 		{
-; 5602 : 			CvUnit* pFirstUnit = pLoopPlot->getUnitByIndex(0);
+; 5623 : 		{
+; 5624 : 			CvUnit* pFirstUnit = pLoopPlot->getUnitByIndex(0);
 
 	push	0
 	mov	ecx, esi
 	call	?getUnitByIndex@CvPlot@@QBEPAVCvUnit@@H@Z ; CvPlot::getUnitByIndex
 
-; 5603 : 			if(pFirstUnit && pFirstUnit->getOwner() != m_pPlayer->GetID())
+; 5625 : 			if(pFirstUnit && pFirstUnit->getOwner() != m_pPlayer->GetID())
 
 	test	eax, eax
 	je	SHORT $LN7@ChooseProp@2
@@ -31390,11 +31430,11 @@ $LN11@ChooseProp@2:
 	jne	$LN97@ChooseProp@2
 $LN7@ChooseProp@2:
 
-; 5604 : 			{
-; 5605 : 				continue;
-; 5606 : 			}
-; 5607 : 
-; 5608 : 			if(pUnit->CanSpreadReligion(pLoopPlot))
+; 5626 : 			{
+; 5627 : 				continue;
+; 5628 : 			}
+; 5629 : 
+; 5630 : 			if(pUnit->CanSpreadReligion(pLoopPlot))
 
 	mov	ecx, DWORD PTR _pUnit$[esp+48]
 	push	esi
@@ -31402,8 +31442,8 @@ $LN7@ChooseProp@2:
 	test	al, al
 	je	$LN97@ChooseProp@2
 
-; 5609 : 			{
-; 5610 : 				iTurns = TurnsToReachTarget(pUnit, pLoopPlot, true /* bReusePaths */);
+; 5631 : 			{
+; 5632 : 				iTurns = TurnsToReachTarget(pUnit, pLoopPlot, true /* bReusePaths */);
 
 	mov	edx, DWORD PTR _pUnit$[esp+48]
 	push	0
@@ -31416,7 +31456,7 @@ $LN7@ChooseProp@2:
 	mov	cl, BYTE PTR _pUnit$[esp+76]
 	mov	BYTE PTR [eax+4], cl
 	mov	eax, edx
-	mov	DWORD PTR $T240142[esp+76], esp
+	mov	DWORD PTR $T240223[esp+76], esp
 	test	eax, eax
 	je	SHORT $LN70@ChooseProp@2
 	mov	ecx, eax
@@ -31426,13 +31466,13 @@ $LN70@ChooseProp@2:
 	mov	edi, eax
 	add	esp, 24					; 00000018H
 
-; 5611 : 				if(iTurns < MAX_INT)
+; 5633 : 				if(iTurns < MAX_INT)
 
 	cmp	edi, 2147483647				; 7fffffffH
 	jge	SHORT $LN97@ChooseProp@2
 
-; 5612 : 				{
-; 5613 : 					iDistance = plotDistance(pUnit->getX(), pUnit->getY(), pLoopPlot->getX(), pLoopPlot->getY());
+; 5634 : 				{
+; 5635 : 					iDistance = plotDistance(pUnit->getX(), pUnit->getY(), pLoopPlot->getX(), pLoopPlot->getY());
 
 	movsx	edx, WORD PTR [esi+2]
 	mov	ebx, DWORD PTR _pUnit$[esp+48]
@@ -31446,22 +31486,22 @@ $LN70@ChooseProp@2:
 	call	?plotDistance@@YAHHHHH@Z		; plotDistance
 	add	esp, 16					; 00000010H
 
-; 5614 : 
-; 5615 : 					// Consider it to be twice as far if a water plot (those are dangerous!)
-; 5616 : 					if(pLoopPlot->isWater())
+; 5636 : 
+; 5637 : 					// Consider it to be twice as far if a water plot (those are dangerous!)
+; 5638 : 					if(pLoopPlot->isWater())
 
 	cmp	BYTE PTR [esi+5], 3
 	jne	SHORT $LN4@ChooseProp@2
 
-; 5617 : 					{
-; 5618 : 						iDistance *= 2;
+; 5639 : 					{
+; 5640 : 						iDistance *= 2;
 
 	add	eax, eax
 $LN4@ChooseProp@2:
 
-; 5619 : 					}
-; 5620 : 
-; 5621 : 					if(iTurns < iBestNumTurns || (iTurns == iBestNumTurns && iDistance < iBestDistance))
+; 5641 : 					}
+; 5642 : 
+; 5643 : 					if(iTurns < iBestNumTurns || (iTurns == iBestNumTurns && iDistance < iBestDistance))
 
 	mov	ecx, DWORD PTR _iBestNumTurns$[esp+52]
 	cmp	edi, ecx
@@ -31471,16 +31511,16 @@ $LN4@ChooseProp@2:
 	jge	SHORT $LN10@ChooseProp@2
 $LN2@ChooseProp@2:
 
-; 5622 : 					{
-; 5623 : 						iBestNumTurns = iTurns;
+; 5644 : 					{
+; 5645 : 						iBestNumTurns = iTurns;
 
 	mov	DWORD PTR _iBestNumTurns$[esp+52], edi
 
-; 5624 : 						iBestDistance = iDistance;
+; 5646 : 						iBestDistance = iDistance;
 
 	mov	DWORD PTR _iBestDistance$[esp+52], eax
 
-; 5625 : 						pBestTarget = pLoopPlot;
+; 5647 : 						pBestTarget = pLoopPlot;
 
 	mov	DWORD PTR _pBestTarget$[esp+52], esi
 	jmp	SHORT $LN10@ChooseProp@2
@@ -31488,44 +31528,44 @@ $LN97@ChooseProp@2:
 	mov	ebx, DWORD PTR _pUnit$[esp+48]
 $LN10@ChooseProp@2:
 
-; 5585 : 			}
-; 5586 : 		}
-; 5587 : 	}
-; 5588 : 
-; 5589 : #pragma warning ( push )
-; 5590 : #pragma warning ( disable : 6011 ) // Dereferencing NULL pointer
-; 5591 : 	AI_PERF_FORMAT("AI-perf-tact.csv", ("ChooseProphetTargetPlot: %s %d; %s, Turn %03d, %s", pUnit->getName().c_str(), pUnit->GetID(), pCity->getName().c_str(), GC.getGame().getElapsedGameTurns(), m_pPlayer->getCivilizationShortDescription()) );
-; 5592 : #pragma warning ( pop )
-; 5593 : 
-; 5594 : 	// Find adjacent plot with no units (that aren't our own)
-; 5595 : 	CvPlot* pLoopPlot;
-; 5596 : 	for(int iI = 0; iI < NUM_DIRECTION_TYPES; iI++)
+; 5607 : 			}
+; 5608 : 		}
+; 5609 : 	}
+; 5610 : 
+; 5611 : #pragma warning ( push )
+; 5612 : #pragma warning ( disable : 6011 ) // Dereferencing NULL pointer
+; 5613 : 	AI_PERF_FORMAT("AI-perf-tact.csv", ("ChooseProphetTargetPlot: %s %d; %s, Turn %03d, %s", pUnit->getName().c_str(), pUnit->GetID(), pCity->getName().c_str(), GC.getGame().getElapsedGameTurns(), m_pPlayer->getCivilizationShortDescription()) );
+; 5614 : #pragma warning ( pop )
+; 5615 : 
+; 5616 : 	// Find adjacent plot with no units (that aren't our own)
+; 5617 : 	CvPlot* pLoopPlot;
+; 5618 : 	for(int iI = 0; iI < NUM_DIRECTION_TYPES; iI++)
 
-	mov	edx, DWORD PTR _iI$227787[esp+52]
+	mov	edx, DWORD PTR _iI$227836[esp+52]
 	inc	edx
 	cmp	edx, 6
-	mov	DWORD PTR _iI$227787[esp+52], edx
+	mov	DWORD PTR _iI$227836[esp+52], edx
 	jl	$LL101@ChooseProp@2
 
-; 5626 : 					}
-; 5627 : 				}
-; 5628 : 			}
-; 5629 : 		}
-; 5630 : 	}
-; 5631 : 
-; 5632 : 	if(piTurns)
+; 5648 : 					}
+; 5649 : 				}
+; 5650 : 			}
+; 5651 : 		}
+; 5652 : 	}
+; 5653 : 
+; 5654 : 	if(piTurns)
 
 	mov	eax, DWORD PTR _piTurns$[esp+48]
 	test	eax, eax
 	je	SHORT $LN1@ChooseProp@2
 
-; 5633 : 		*piTurns = iBestNumTurns;
+; 5655 : 		*piTurns = iBestNumTurns;
 
 	mov	ecx, DWORD PTR _iBestNumTurns$[esp+52]
 	mov	DWORD PTR [eax], ecx
 $LN1@ChooseProp@2:
 
-; 5634 : 	return pBestTarget;
+; 5656 : 	return pBestTarget;
 
 	mov	DWORD PTR __$EHRec$[esp+60], -1
 	test	ebx, ebx
@@ -31534,7 +31574,7 @@ $LN1@ChooseProp@2:
 	call	?getDestructionNotification@CvUnit@@QAEAAU?$DestructionNotification@V?$FObjectHandle@VCvUnit@@@@@@XZ ; CvUnit::getDestructionNotification
 $LN93@ChooseProp@2:
 
-; 5635 : }
+; 5657 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+52]
 	mov	eax, DWORD PTR _pBestTarget$[esp+52]
@@ -31564,7 +31604,7 @@ _eReligion$ = 8						; size = 4
 ?BuyMissionary@CvReligionAI@@AAEXW4ReligionTypes@@@Z PROC ; CvReligionAI::BuyMissionary, COMDAT
 ; _this$ = ecx
 
-; 5862 : 	CvPlayer &kPlayer = GET_PLAYER(m_pPlayer->GetID());
+; 5884 : 	CvPlayer &kPlayer = GET_PLAYER(m_pPlayer->GetID());
 
 	mov	eax, DWORD PTR [ecx+4]
 	push	esi
@@ -31573,34 +31613,34 @@ _eReligion$ = 8						; size = 4
 	add	esi, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	push	edi
 
-; 5863 : 	UnitTypes eMissionary = (UnitTypes)GC.getInfoTypeForString("UNIT_MISSIONARY");
+; 5885 : 	UnitTypes eMissionary = (UnitTypes)GC.getInfoTypeForString("UNIT_MISSIONARY");
 
 	push	0
-	push	OFFSET $SG227892
+	push	OFFSET $SG227941
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 
-; 5864 : 	CvCity *pCapital = kPlayer.getCapitalCity();
+; 5886 : 	CvCity *pCapital = kPlayer.getCapitalCity();
 
 	mov	ecx, esi
 	mov	edi, eax
 	call	?getCapitalCity@CvPlayer@@QAEPAVCvCity@@XZ ; CvPlayer::getCapitalCity
 
-; 5865 : 	if (pCapital)
+; 5887 : 	if (pCapital)
 
 	test	eax, eax
 	je	SHORT $LN1@BuyMission
 	push	ebx
 
-; 5866 : 	{
-; 5867 : 		int iCost = pCapital->GetFaithPurchaseCost(eMissionary, true /*bIncludeBeliefDiscounts*/);
+; 5888 : 	{
+; 5889 : 		int iCost = pCapital->GetFaithPurchaseCost(eMissionary, true /*bIncludeBeliefDiscounts*/);
 
 	push	1
 	push	edi
 	mov	ecx, eax
 	call	?GetFaithPurchaseCost@CvCity@@QAEHW4UnitTypes@@_N@Z ; CvCity::GetFaithPurchaseCost
 
-; 5868 : 		if (iCost <= kPlayer.GetFaith())
+; 5890 : 		if (iCost <= kPlayer.GetFaith())
 
 	mov	ecx, esi
 	mov	ebx, eax
@@ -31609,8 +31649,8 @@ _eReligion$ = 8						; size = 4
 	pop	ebx
 	jg	SHORT $LN1@BuyMission
 
-; 5869 : 		{
-; 5870 : 			CvCity *pBestCity = CvReligionAIHelpers::GetBestCityFaithUnitPurchase(kPlayer, eMissionary, eReligion);
+; 5891 : 		{
+; 5892 : 			CvCity *pBestCity = CvReligionAIHelpers::GetBestCityFaithUnitPurchase(kPlayer, eMissionary, eReligion);
 
 	mov	ecx, DWORD PTR _eReligion$[esp+4]
 	push	ecx
@@ -31619,13 +31659,13 @@ _eReligion$ = 8						; size = 4
 	call	?GetBestCityFaithUnitPurchase@CvReligionAIHelpers@@YAPAVCvCity@@AAVCvPlayer@@W4UnitTypes@@W4ReligionTypes@@@Z ; CvReligionAIHelpers::GetBestCityFaithUnitPurchase
 	add	esp, 12					; 0000000cH
 
-; 5871 : 			if (pBestCity)
+; 5893 : 			if (pBestCity)
 
 	test	eax, eax
 	je	SHORT $LN1@BuyMission
 
-; 5872 : 			{
-; 5873 : 				pBestCity->Purchase(eMissionary, (BuildingTypes)-1, (ProjectTypes)-1, YIELD_FAITH);
+; 5894 : 			{
+; 5895 : 				pBestCity->Purchase(eMissionary, (BuildingTypes)-1, (ProjectTypes)-1, YIELD_FAITH);
 
 	push	5
 	push	-1
@@ -31637,10 +31677,10 @@ $LN1@BuyMission:
 	pop	edi
 	pop	esi
 
-; 5874 : 			}
-; 5875 : 		}
-; 5876 : 	}
-; 5877 : }
+; 5896 : 			}
+; 5897 : 		}
+; 5898 : 	}
+; 5899 : }
 
 	ret	4
 ?BuyMissionary@CvReligionAI@@AAEXW4ReligionTypes@@@Z ENDP ; CvReligionAI::BuyMissionary
@@ -31653,7 +31693,7 @@ _eReligion$ = 8						; size = 4
 ?BuyInquisitor@CvReligionAI@@AAEXW4ReligionTypes@@@Z PROC ; CvReligionAI::BuyInquisitor, COMDAT
 ; _this$ = ecx
 
-; 5882 : 	CvPlayer &kPlayer = GET_PLAYER(m_pPlayer->GetID());
+; 5904 : 	CvPlayer &kPlayer = GET_PLAYER(m_pPlayer->GetID());
 
 	mov	eax, DWORD PTR [ecx+4]
 	push	esi
@@ -31662,34 +31702,34 @@ _eReligion$ = 8						; size = 4
 	add	esi, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	push	edi
 
-; 5883 : 	UnitTypes eInquisitor = (UnitTypes)GC.getInfoTypeForString("UNIT_INQUISITOR");
+; 5905 : 	UnitTypes eInquisitor = (UnitTypes)GC.getInfoTypeForString("UNIT_INQUISITOR");
 
 	push	0
-	push	OFFSET $SG227908
+	push	OFFSET $SG227957
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 
-; 5884 : 	CvCity *pCapital = kPlayer.getCapitalCity();
+; 5906 : 	CvCity *pCapital = kPlayer.getCapitalCity();
 
 	mov	ecx, esi
 	mov	edi, eax
 	call	?getCapitalCity@CvPlayer@@QAEPAVCvCity@@XZ ; CvPlayer::getCapitalCity
 
-; 5885 : 	if (pCapital)
+; 5907 : 	if (pCapital)
 
 	test	eax, eax
 	je	SHORT $LN1@BuyInquisi
 	push	ebx
 
-; 5886 : 	{
-; 5887 : 		int iCost = pCapital->GetFaithPurchaseCost(eInquisitor, true /*bIncludeBeliefDiscounts*/);
+; 5908 : 	{
+; 5909 : 		int iCost = pCapital->GetFaithPurchaseCost(eInquisitor, true /*bIncludeBeliefDiscounts*/);
 
 	push	1
 	push	edi
 	mov	ecx, eax
 	call	?GetFaithPurchaseCost@CvCity@@QAEHW4UnitTypes@@_N@Z ; CvCity::GetFaithPurchaseCost
 
-; 5888 : 		if (iCost <= kPlayer.GetFaith())
+; 5910 : 		if (iCost <= kPlayer.GetFaith())
 
 	mov	ecx, esi
 	mov	ebx, eax
@@ -31698,8 +31738,8 @@ _eReligion$ = 8						; size = 4
 	pop	ebx
 	jg	SHORT $LN1@BuyInquisi
 
-; 5889 : 		{
-; 5890 : 			CvCity *pBestCity = CvReligionAIHelpers::GetBestCityFaithUnitPurchase(kPlayer, eInquisitor, eReligion);
+; 5911 : 		{
+; 5912 : 			CvCity *pBestCity = CvReligionAIHelpers::GetBestCityFaithUnitPurchase(kPlayer, eInquisitor, eReligion);
 
 	mov	ecx, DWORD PTR _eReligion$[esp+4]
 	push	ecx
@@ -31708,13 +31748,13 @@ _eReligion$ = 8						; size = 4
 	call	?GetBestCityFaithUnitPurchase@CvReligionAIHelpers@@YAPAVCvCity@@AAVCvPlayer@@W4UnitTypes@@W4ReligionTypes@@@Z ; CvReligionAIHelpers::GetBestCityFaithUnitPurchase
 	add	esp, 12					; 0000000cH
 
-; 5891 : 			if (pBestCity)
+; 5913 : 			if (pBestCity)
 
 	test	eax, eax
 	je	SHORT $LN1@BuyInquisi
 
-; 5892 : 			{
-; 5893 : 				pBestCity->Purchase(eInquisitor, (BuildingTypes)-1, (ProjectTypes)-1, YIELD_FAITH);
+; 5914 : 			{
+; 5915 : 				pBestCity->Purchase(eInquisitor, (BuildingTypes)-1, (ProjectTypes)-1, YIELD_FAITH);
 
 	push	5
 	push	-1
@@ -31726,10 +31766,10 @@ $LN1@BuyInquisi:
 	pop	edi
 	pop	esi
 
-; 5894 : 			}
-; 5895 : 		}
-; 5896 : 	}
-; 5897 : }
+; 5916 : 			}
+; 5917 : 		}
+; 5918 : 	}
+; 5919 : }
 
 	ret	4
 ?BuyInquisitor@CvReligionAI@@AAEXW4ReligionTypes@@@Z ENDP ; CvReligionAI::BuyInquisitor
@@ -31742,7 +31782,7 @@ _eUnit$ = 8						; size = 4
 ?BuyGreatPerson@CvReligionAI@@AAEXW4UnitTypes@@@Z PROC	; CvReligionAI::BuyGreatPerson, COMDAT
 ; _this$ = ecx
 
-; 5902 : 	CvPlayer &kPlayer = GET_PLAYER(m_pPlayer->GetID());
+; 5924 : 	CvPlayer &kPlayer = GET_PLAYER(m_pPlayer->GetID());
 
 	mov	eax, DWORD PTR [ecx+4]
 	push	esi
@@ -31750,20 +31790,20 @@ _eUnit$ = 8						; size = 4
 	imul	esi, 63236				; 0000f704H
 	add	esi, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 
-; 5903 : 	CvCity *pCapital = kPlayer.getCapitalCity();
+; 5925 : 	CvCity *pCapital = kPlayer.getCapitalCity();
 
 	mov	ecx, esi
 	call	?getCapitalCity@CvPlayer@@QAEPAVCvCity@@XZ ; CvPlayer::getCapitalCity
 
-; 5904 : 	if (pCapital)
+; 5926 : 	if (pCapital)
 
 	test	eax, eax
 	je	SHORT $LN1@BuyGreatPe
 	push	ebx
 	push	edi
 
-; 5905 : 	{
-; 5906 : 		int iCost = pCapital->GetFaithPurchaseCost(eUnit, true /*bIncludeBeliefDiscounts*/);
+; 5927 : 	{
+; 5928 : 		int iCost = pCapital->GetFaithPurchaseCost(eUnit, true /*bIncludeBeliefDiscounts*/);
 
 	mov	edi, DWORD PTR _eUnit$[esp+8]
 	push	1
@@ -31771,7 +31811,7 @@ _eUnit$ = 8						; size = 4
 	mov	ecx, eax
 	call	?GetFaithPurchaseCost@CvCity@@QAEHW4UnitTypes@@_N@Z ; CvCity::GetFaithPurchaseCost
 
-; 5907 : 		if (iCost <= kPlayer.GetFaith())
+; 5929 : 		if (iCost <= kPlayer.GetFaith())
 
 	mov	ecx, esi
 	mov	ebx, eax
@@ -31779,8 +31819,8 @@ _eUnit$ = 8						; size = 4
 	cmp	ebx, eax
 	jg	SHORT $LN12@BuyGreatPe
 
-; 5908 : 		{
-; 5909 : 			CvCity *pBestCity = CvReligionAIHelpers::GetBestCityFaithUnitPurchase(kPlayer, eUnit, NO_RELIGION);
+; 5930 : 		{
+; 5931 : 			CvCity *pBestCity = CvReligionAIHelpers::GetBestCityFaithUnitPurchase(kPlayer, eUnit, NO_RELIGION);
 
 	push	-1
 	push	edi
@@ -31788,13 +31828,13 @@ _eUnit$ = 8						; size = 4
 	call	?GetBestCityFaithUnitPurchase@CvReligionAIHelpers@@YAPAVCvCity@@AAVCvPlayer@@W4UnitTypes@@W4ReligionTypes@@@Z ; CvReligionAIHelpers::GetBestCityFaithUnitPurchase
 	add	esp, 12					; 0000000cH
 
-; 5910 : 			if (pBestCity)
+; 5932 : 			if (pBestCity)
 
 	test	eax, eax
 	je	SHORT $LN12@BuyGreatPe
 
-; 5911 : 			{
-; 5912 : 				pBestCity->Purchase(eUnit, (BuildingTypes)-1, (ProjectTypes)-1, YIELD_FAITH);
+; 5933 : 			{
+; 5934 : 				pBestCity->Purchase(eUnit, (BuildingTypes)-1, (ProjectTypes)-1, YIELD_FAITH);
 
 	push	5
 	push	-1
@@ -31808,10 +31848,10 @@ $LN12@BuyGreatPe:
 $LN1@BuyGreatPe:
 	pop	esi
 
-; 5913 : 			}
-; 5914 : 		}
-; 5915 : 	}
-; 5916 : }
+; 5935 : 			}
+; 5936 : 		}
+; 5937 : 	}
+; 5938 : }
 
 	ret	4
 ?BuyGreatPerson@CvReligionAI@@AAEXW4UnitTypes@@@Z ENDP	; CvReligionAI::BuyGreatPerson
@@ -31825,11 +31865,11 @@ _eBuildingClass$ = 12					; size = 4
 ?BuyFaithBuilding@CvReligionAI@@AAEXW4ReligionTypes@@W4BuildingClassTypes@@@Z PROC ; CvReligionAI::BuyFaithBuilding, COMDAT
 ; _this$ = ecx
 
-; 5921 : 	CvPlayer &kPlayer = GET_PLAYER(m_pPlayer->GetID());
+; 5943 : 	CvPlayer &kPlayer = GET_PLAYER(m_pPlayer->GetID());
 
 	mov	ecx, DWORD PTR [ecx+4]
 
-; 5922 : 	BuildingTypes eBuilding = (BuildingTypes)m_pPlayer->getCivilizationInfo().getCivilizationBuildings(eBuildingClass);
+; 5944 : 	BuildingTypes eBuilding = (BuildingTypes)m_pPlayer->getCivilizationInfo().getCivilizationBuildings(eBuildingClass);
 
 	mov	eax, DWORD PTR _eBuildingClass$[esp-4]
 	push	esi
@@ -31842,26 +31882,26 @@ _eBuildingClass$ = 12					; size = 4
 	mov	ecx, eax
 	call	?getCivilizationBuildings@CvCivilizationInfo@@QBEHH@Z ; CvCivilizationInfo::getCivilizationBuildings
 
-; 5923 : 	CvCity *pCapital = kPlayer.getCapitalCity();
+; 5945 : 	CvCity *pCapital = kPlayer.getCapitalCity();
 
 	mov	ecx, esi
 	mov	edi, eax
 	call	?getCapitalCity@CvPlayer@@QAEPAVCvCity@@XZ ; CvPlayer::getCapitalCity
 
-; 5924 : 	if (pCapital)
+; 5946 : 	if (pCapital)
 
 	test	eax, eax
 	je	SHORT $LN1@BuyFaithBu
 	push	ebx
 
-; 5925 : 	{
-; 5926 : 		int iCost = pCapital->GetFaithPurchaseCost(eBuilding);
+; 5947 : 	{
+; 5948 : 		int iCost = pCapital->GetFaithPurchaseCost(eBuilding);
 
 	push	edi
 	mov	ecx, eax
 	call	?GetFaithPurchaseCost@CvCity@@QAEHW4BuildingTypes@@@Z ; CvCity::GetFaithPurchaseCost
 
-; 5927 : 		if (iCost <= kPlayer.GetFaith())
+; 5949 : 		if (iCost <= kPlayer.GetFaith())
 
 	mov	ecx, esi
 	mov	ebx, eax
@@ -31870,8 +31910,8 @@ _eBuildingClass$ = 12					; size = 4
 	pop	ebx
 	jg	SHORT $LN1@BuyFaithBu
 
-; 5928 : 		{
-; 5929 : 			CvCity *pBestCity = CvReligionAIHelpers::GetBestCityFaithBuildingPurchase(kPlayer, eBuilding, eReligion);
+; 5950 : 		{
+; 5951 : 			CvCity *pBestCity = CvReligionAIHelpers::GetBestCityFaithBuildingPurchase(kPlayer, eBuilding, eReligion);
 
 	mov	ecx, DWORD PTR _eReligion$[esp+4]
 	push	ecx
@@ -31880,13 +31920,13 @@ _eBuildingClass$ = 12					; size = 4
 	call	?GetBestCityFaithBuildingPurchase@CvReligionAIHelpers@@YAPAVCvCity@@AAVCvPlayer@@W4BuildingTypes@@W4ReligionTypes@@@Z ; CvReligionAIHelpers::GetBestCityFaithBuildingPurchase
 	add	esp, 12					; 0000000cH
 
-; 5930 : 			if (pBestCity)
+; 5952 : 			if (pBestCity)
 
 	test	eax, eax
 	je	SHORT $LN1@BuyFaithBu
 
-; 5931 : 			{
-; 5932 : 				pBestCity->Purchase((UnitTypes)-1, eBuilding, (ProjectTypes)-1, YIELD_FAITH);
+; 5953 : 			{
+; 5954 : 				pBestCity->Purchase((UnitTypes)-1, eBuilding, (ProjectTypes)-1, YIELD_FAITH);
 
 	push	5
 	push	-1
@@ -31898,10 +31938,10 @@ $LN1@BuyFaithBu:
 	pop	edi
 	pop	esi
 
-; 5933 : 			}
-; 5934 : 		}
-; 5935 : 	}
-; 5936 : }
+; 5955 : 			}
+; 5956 : 		}
+; 5957 : 	}
+; 5958 : }
 
 	ret	8
 ?BuyFaithBuilding@CvReligionAI@@AAEXW4ReligionTypes@@W4BuildingClassTypes@@@Z ENDP ; CvReligionAI::BuyFaithBuilding
@@ -31914,22 +31954,22 @@ _iLoop$ = -4						; size = 4
 ?BuyAnyAvailableFaithBuilding@CvReligionAI@@AAE_NXZ PROC ; CvReligionAI::BuyAnyAvailableFaithBuilding, COMDAT
 ; _this$ = ecx
 
-; 5975 : {
+; 5997 : {
 
 	push	ecx
 	push	ebx
 	push	ebp
 	mov	ebp, ecx
 
-; 5976 : 	PlayerTypes ePlayer = m_pPlayer->GetID();
+; 5998 : 	PlayerTypes ePlayer = m_pPlayer->GetID();
 
 	mov	eax, DWORD PTR [ebp+4]
 	mov	ebx, DWORD PTR [eax+44]
 
-; 5977 : 
-; 5978 : 	int iLoop;
-; 5979 : 	CvCity* pLoopCity;
-; 5980 : 	for(pLoopCity = GET_PLAYER(ePlayer).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(ePlayer).nextCity(&iLoop))
+; 5999 : 
+; 6000 : 	int iLoop;
+; 6001 : 	CvCity* pLoopCity;
+; 6002 : 	for(pLoopCity = GET_PLAYER(ePlayer).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(ePlayer).nextCity(&iLoop))
 
 	mov	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	imul	ebx, 63236				; 0000f704H
@@ -31946,41 +31986,41 @@ _iLoop$ = -4						; size = 4
 	npad	3
 $LL7@BuyAnyAvai@2:
 
-; 5981 : 	{
-; 5982 : 		ReligionTypes eReligion = pLoopCity->GetCityReligions()->GetReligiousMajority();
+; 6003 : 	{
+; 6004 : 		ReligionTypes eReligion = pLoopCity->GetCityReligions()->GetReligiousMajority();
 
 	mov	ecx, esi
 	call	?GetCityReligions@CvCity@@QBEPAVCvCityReligions@@XZ ; CvCity::GetCityReligions
 	mov	ecx, eax
 	call	?GetReligiousMajority@CvCityReligions@@QAE?AW4ReligionTypes@@XZ ; CvCityReligions::GetReligiousMajority
 
-; 5983 : 		if(eReligion > RELIGION_PANTHEON)
+; 6005 : 		if(eReligion > RELIGION_PANTHEON)
 
 	test	eax, eax
 	jle	SHORT $LN6@BuyAnyAvai@2
 
-; 5984 : 		{
-; 5985 : #ifdef AUI_RELIGION_FIX_MULTIPLE_FAITH_BUILDINGS
-; 5986 : 			std::vector<BuildingClassTypes> eBuildingClass = FaithBuildingAvailable(eReligion);
-; 5987 : 			if (eBuildingClass.size() > 0)
-; 5988 : 			{
-; 5989 : 				for (std::vector<BuildingClassTypes>::iterator it = eBuildingClass.begin(); it != eBuildingClass.end(); ++it)
-; 5990 : 				{
-; 5991 : 					BuildingTypes eBuilding = (BuildingTypes)m_pPlayer->getCivilizationInfo().getCivilizationBuildings((*it));
-; 5992 : #else
-; 5993 : 			BuildingClassTypes eBuildingClass = FaithBuildingAvailable(eReligion);
+; 6006 : 		{
+; 6007 : #ifdef AUI_RELIGION_FIX_MULTIPLE_FAITH_BUILDINGS
+; 6008 : 			std::vector<BuildingClassTypes> eBuildingClass = FaithBuildingAvailable(eReligion);
+; 6009 : 			if (eBuildingClass.size() > 0)
+; 6010 : 			{
+; 6011 : 				for (std::vector<BuildingClassTypes>::iterator it = eBuildingClass.begin(); it != eBuildingClass.end(); ++it)
+; 6012 : 				{
+; 6013 : 					BuildingTypes eBuilding = (BuildingTypes)m_pPlayer->getCivilizationInfo().getCivilizationBuildings((*it));
+; 6014 : #else
+; 6015 : 			BuildingClassTypes eBuildingClass = FaithBuildingAvailable(eReligion);
 
 	push	eax
 	mov	ecx, ebp
 	call	?FaithBuildingAvailable@CvReligionAI@@ABE?AW4BuildingClassTypes@@W4ReligionTypes@@@Z ; CvReligionAI::FaithBuildingAvailable
 
-; 5994 : 			if(eBuildingClass != NO_BUILDINGCLASS)
+; 6016 : 			if(eBuildingClass != NO_BUILDINGCLASS)
 
 	cmp	eax, -1
 	je	SHORT $LN6@BuyAnyAvai@2
 
-; 5995 : 			{
-; 5996 : 				BuildingTypes eBuilding = (BuildingTypes)m_pPlayer->getCivilizationInfo().getCivilizationBuildings(eBuildingClass);
+; 6017 : 			{
+; 6018 : 				BuildingTypes eBuilding = (BuildingTypes)m_pPlayer->getCivilizationInfo().getCivilizationBuildings(eBuildingClass);
 
 	mov	ecx, DWORD PTR [ebp+4]
 	push	eax
@@ -31989,14 +32029,14 @@ $LL7@BuyAnyAvai@2:
 	call	?getCivilizationBuildings@CvCivilizationInfo@@QBEHH@Z ; CvCivilizationInfo::getCivilizationBuildings
 	mov	edi, eax
 
-; 5997 : #endif
-; 5998 : 				if(eBuilding != NO_BUILDING)
+; 6019 : #endif
+; 6020 : 				if(eBuilding != NO_BUILDING)
 
 	cmp	edi, -1
 	je	SHORT $LN6@BuyAnyAvai@2
 
-; 5999 : 				{
-; 6000 : 					if(pLoopCity->IsCanPurchase(true, true, (UnitTypes)-1, eBuilding, (ProjectTypes)-1, YIELD_FAITH))
+; 6021 : 				{
+; 6022 : 					if(pLoopCity->IsCanPurchase(true, true, (UnitTypes)-1, eBuilding, (ProjectTypes)-1, YIELD_FAITH))
 
 	push	5
 	push	-1
@@ -32010,10 +32050,10 @@ $LL7@BuyAnyAvai@2:
 	jne	SHORT $LN19@BuyAnyAvai@2
 $LN6@BuyAnyAvai@2:
 
-; 5977 : 
-; 5978 : 	int iLoop;
-; 5979 : 	CvCity* pLoopCity;
-; 5980 : 	for(pLoopCity = GET_PLAYER(ePlayer).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(ePlayer).nextCity(&iLoop))
+; 5999 : 
+; 6000 : 	int iLoop;
+; 6001 : 	CvCity* pLoopCity;
+; 6002 : 	for(pLoopCity = GET_PLAYER(ePlayer).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(ePlayer).nextCity(&iLoop))
 
 	mov	eax, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	push	0
@@ -32029,27 +32069,27 @@ $LN5@BuyAnyAvai@2:
 	pop	esi
 	pop	ebp
 
-; 6004 : 					}
-; 6005 : 				}
-; 6006 : #ifdef AUI_RELIGION_FIX_MULTIPLE_FAITH_BUILDINGS
-; 6007 : 				}
-; 6008 : #endif
-; 6009 : 			}
-; 6010 : 		}
-; 6011 : 	}
-; 6012 : 	return false;
+; 6026 : 					}
+; 6027 : 				}
+; 6028 : #ifdef AUI_RELIGION_FIX_MULTIPLE_FAITH_BUILDINGS
+; 6029 : 				}
+; 6030 : #endif
+; 6031 : 			}
+; 6032 : 		}
+; 6033 : 	}
+; 6034 : 	return false;
 
 	xor	al, al
 	pop	ebx
 
-; 6013 : }
+; 6035 : }
 
 	pop	ecx
 	ret	0
 $LN19@BuyAnyAvai@2:
 
-; 6001 : 					{
-; 6002 : 						pLoopCity->Purchase((UnitTypes)-1, eBuilding, (ProjectTypes)-1, YIELD_FAITH);
+; 6023 : 					{
+; 6024 : 						pLoopCity->Purchase((UnitTypes)-1, eBuilding, (ProjectTypes)-1, YIELD_FAITH);
 
 	push	5
 	push	-1
@@ -32061,12 +32101,12 @@ $LN19@BuyAnyAvai@2:
 	pop	esi
 	pop	ebp
 
-; 6003 : 						return true;
+; 6025 : 						return true;
 
 	mov	al, 1
 	pop	ebx
 
-; 6013 : }
+; 6035 : }
 
 	pop	ecx
 	ret	0
@@ -32081,29 +32121,29 @@ _TEXT	SEGMENT
 tv316 = -20						; size = 4
 _iRtnValue$ = -16					; size = 4
 _iPlotLoop$ = -12					; size = 4
-_ePlotOwner$228000 = -8					; size = 4
+_ePlotOwner$228049 = -8					; size = 4
 _iLoop$ = -4						; size = 4
 _pEntry$ = 8						; size = 4
 ?ScoreBelief@CvReligionAI@@AAEHPAVCvBeliefEntry@@@Z PROC ; CvReligionAI::ScoreBelief, COMDAT
 ; _this$ = ecx
 
-; 6021 : {
+; 6043 : {
 
 	sub	esp, 20					; 00000014H
 	push	ebx
 	push	esi
 	mov	ebx, ecx
 
-; 6022 : 	int iRtnValue = 5;  // Base value since everything has SOME value
-; 6023 : 
-; 6024 : 	// Loop through each plot on map
-; 6025 : #ifdef AUI_WARNING_FIXES
-; 6026 : 	CvPlot* pPlot;
-; 6027 : 	for (uint iPlotLoop = 0; iPlotLoop < GC.getMap().numPlots(); iPlotLoop++)
-; 6028 : #else
-; 6029 : 	int iPlotLoop;
-; 6030 : 	CvPlot* pPlot;
-; 6031 : 	for(iPlotLoop = 0; iPlotLoop < GC.getMap().numPlots(); iPlotLoop++)
+; 6044 : 	int iRtnValue = 5;  // Base value since everything has SOME value
+; 6045 : 
+; 6046 : 	// Loop through each plot on map
+; 6047 : #ifdef AUI_WARNING_FIXES
+; 6048 : 	CvPlot* pPlot;
+; 6049 : 	for (uint iPlotLoop = 0; iPlotLoop < GC.getMap().numPlots(); iPlotLoop++)
+; 6050 : #else
+; 6051 : 	int iPlotLoop;
+; 6052 : 	CvPlot* pPlot;
+; 6053 : 	for(iPlotLoop = 0; iPlotLoop < GC.getMap().numPlots(); iPlotLoop++)
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+52
 	xor	eax, eax
@@ -32118,22 +32158,22 @@ _pEntry$ = 8						; size = 4
 	npad	2
 $LL14@ScoreBelie@4:
 
-; 6032 : #endif
-; 6033 : 	{
-; 6034 : 		pPlot = GC.getMap().plotByIndexUnchecked(iPlotLoop);
+; 6054 : #endif
+; 6055 : 	{
+; 6056 : 		pPlot = GC.getMap().plotByIndexUnchecked(iPlotLoop);
 
 	mov	esi, DWORD PTR [ecx+4068]
 	add	esi, DWORD PTR tv316[esp+36]
 
-; 6035 : 
-; 6036 : 		// Skip if not revealed or in enemy territory
-; 6037 : 		PlayerTypes ePlotOwner = pPlot->getOwner();
-; 6038 : 		if(pPlot->isRevealed(m_pPlayer->getTeam()) && (ePlotOwner == NO_PLAYER || ePlotOwner == m_pPlayer->GetID()))
+; 6057 : 
+; 6058 : 		// Skip if not revealed or in enemy territory
+; 6059 : 		PlayerTypes ePlotOwner = pPlot->getOwner();
+; 6060 : 		if(pPlot->isRevealed(m_pPlayer->getTeam()) && (ePlotOwner == NO_PLAYER || ePlotOwner == m_pPlayer->GetID()))
 
 	mov	edi, DWORD PTR [ebx+4]
 	movsx	eax, BYTE PTR [esi+4]
 	mov	edx, DWORD PTR [edi+44]
-	mov	DWORD PTR _ePlotOwner$228000[esp+36], eax
+	mov	DWORD PTR _ePlotOwner$228049[esp+36], eax
 	cmp	edx, 63					; 0000003fH
 	ja	SHORT $LN31@ScoreBelie@4
 	mov	ecx, DWORD PTR ?sr_TeamTypes@CvPreGame@@3ABV?$vector@W4TeamTypes@@V?$allocator@W4TeamTypes@@@std@@@std@@B ; CvPreGame::sr_TeamTypes
@@ -32152,30 +32192,30 @@ $LN32@ScoreBelie@4:
 	shl	ebp, cl
 	test	ebp, DWORD PTR [esi+eax*4+8]
 	je	SHORT $LN13@ScoreBelie@4
-	mov	ebp, DWORD PTR _ePlotOwner$228000[esp+36]
+	mov	ebp, DWORD PTR _ePlotOwner$228049[esp+36]
 	cmp	ebp, -1
 	je	SHORT $LN10@ScoreBelie@4
 	cmp	ebp, edx
 	jne	SHORT $LN13@ScoreBelie@4
 $LN10@ScoreBelie@4:
 
-; 6039 : 		{
-; 6040 : 			// Also skip if closest city of ours is not within 3
-; 6041 : 			CvCity* pClosestCity = m_pPlayer->GetClosestFriendlyCity(*pPlot, 3);
+; 6061 : 		{
+; 6062 : 			// Also skip if closest city of ours is not within 3
+; 6063 : 			CvCity* pClosestCity = m_pPlayer->GetClosestFriendlyCity(*pPlot, 3);
 
 	push	3
 	push	esi
 	mov	ecx, edi
 	call	?GetClosestFriendlyCity@CvPlayer@@QAEPAVCvCity@@AAVCvPlot@@H@Z ; CvPlayer::GetClosestFriendlyCity
 
-; 6042 : 			if(pClosestCity)
+; 6064 : 			if(pClosestCity)
 
 	test	eax, eax
 	je	SHORT $LN13@ScoreBelie@4
 
-; 6043 : 			{
-; 6044 : 				// Score it
-; 6045 : 				int iScoreAtPlot = ScoreBeliefAtPlot(pEntry, pPlot);
+; 6065 : 			{
+; 6066 : 				// Score it
+; 6067 : 				int iScoreAtPlot = ScoreBeliefAtPlot(pEntry, pPlot);
 
 	mov	ecx, DWORD PTR _pEntry$[esp+32]
 	push	esi
@@ -32183,9 +32223,9 @@ $LN10@ScoreBelie@4:
 	mov	ecx, ebx
 	call	?ScoreBeliefAtPlot@CvReligionAI@@AAEHPAVCvBeliefEntry@@PAVCvPlot@@@Z ; CvReligionAI::ScoreBeliefAtPlot
 
-; 6046 : 
-; 6047 : 				// Apply multiplier based on whether or not being worked, within culture borders, or not
-; 6048 : 				if(pPlot->isBeingWorked())
+; 6068 : 
+; 6069 : 				// Apply multiplier based on whether or not being worked, within culture borders, or not
+; 6070 : 				if(pPlot->isBeingWorked())
 
 	mov	ecx, esi
 	mov	edi, eax
@@ -32193,34 +32233,34 @@ $LN10@ScoreBelie@4:
 	test	al, al
 	je	SHORT $LN8@ScoreBelie@4
 
-; 6049 : 				{
-; 6050 : 					iScoreAtPlot *= GC.getRELIGION_BELIEF_SCORE_WORKED_PLOT_MULTIPLIER();
+; 6071 : 				{
+; 6072 : 					iScoreAtPlot *= GC.getRELIGION_BELIEF_SCORE_WORKED_PLOT_MULTIPLIER();
 
 	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+3420
 	jmp	SHORT $LN60@ScoreBelie@4
 $LN8@ScoreBelie@4:
 
-; 6051 : 				}
-; 6052 : 				else if(ePlotOwner != NO_PLAYER)
-; 6053 : 				{
-; 6054 : 					iScoreAtPlot *= GC.getRELIGION_BELIEF_SCORE_OWNED_PLOT_MULTIPLIER();
+; 6073 : 				}
+; 6074 : 				else if(ePlotOwner != NO_PLAYER)
+; 6075 : 				{
+; 6076 : 					iScoreAtPlot *= GC.getRELIGION_BELIEF_SCORE_OWNED_PLOT_MULTIPLIER();
 
 	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+3424
 	cmp	ebp, -1
 	jne	SHORT $LN60@ScoreBelie@4
 
-; 6055 : 				}
-; 6056 : 				else
-; 6057 : 				{
-; 6058 : 					iScoreAtPlot *= GC.getRELIGION_BELIEF_SCORE_UNOWNED_PLOT_MULTIPLIER();
+; 6077 : 				}
+; 6078 : 				else
+; 6079 : 				{
+; 6080 : 					iScoreAtPlot *= GC.getRELIGION_BELIEF_SCORE_UNOWNED_PLOT_MULTIPLIER();
 
 	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+3428
 $LN60@ScoreBelie@4:
 	imul	eax, edi
 
-; 6059 : 				}
-; 6060 : 
-; 6061 : 				iRtnValue += iScoreAtPlot;
+; 6081 : 				}
+; 6082 : 
+; 6083 : 				iRtnValue += iScoreAtPlot;
 
 	add	DWORD PTR _iRtnValue$[esp+36], eax
 $LN13@ScoreBelie@4:
@@ -32235,14 +32275,14 @@ $LN13@ScoreBelie@4:
 	pop	ebp
 $LN12@ScoreBelie@4:
 
-; 6062 : 			}
-; 6063 : 		}
-; 6064 : 	}
-; 6065 : 
-; 6066 : 	// Add in value at city level
-; 6067 : 	int iLoop;
-; 6068 : 	CvCity* pLoopCity;
-; 6069 : 	for(pLoopCity = m_pPlayer->firstCity(&iLoop); pLoopCity != NULL; pLoopCity = m_pPlayer->nextCity(&iLoop))
+; 6084 : 			}
+; 6085 : 		}
+; 6086 : 	}
+; 6087 : 
+; 6088 : 	// Add in value at city level
+; 6089 : 	int iLoop;
+; 6090 : 	CvCity* pLoopCity;
+; 6091 : 	for(pLoopCity = m_pPlayer->firstCity(&iLoop); pLoopCity != NULL; pLoopCity = m_pPlayer->nextCity(&iLoop))
 
 	mov	ecx, DWORD PTR [ebx+4]
 	push	0
@@ -32253,8 +32293,8 @@ $LN12@ScoreBelie@4:
 	je	SHORT $LN2@ScoreBelie@4
 $LL4@ScoreBelie@4:
 
-; 6070 : 	{
-; 6071 : 		int iScoreAtCity = ScoreBeliefAtCity(pEntry, pLoopCity);
+; 6092 : 	{
+; 6093 : 		int iScoreAtCity = ScoreBeliefAtCity(pEntry, pLoopCity);
 
 	push	eax
 	mov	eax, DWORD PTR _pEntry$[esp+32]
@@ -32262,15 +32302,15 @@ $LL4@ScoreBelie@4:
 	mov	ecx, ebx
 	call	?ScoreBeliefAtCity@CvReligionAI@@AAEHPAVCvBeliefEntry@@PAVCvCity@@@Z ; CvReligionAI::ScoreBeliefAtCity
 
-; 6072 : 		iScoreAtCity *= GC.getRELIGION_BELIEF_SCORE_CITY_MULTIPLIER();
+; 6094 : 		iScoreAtCity *= GC.getRELIGION_BELIEF_SCORE_CITY_MULTIPLIER();
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+3416
 	imul	ecx, eax
 	push	0
 	lea	edx, DWORD PTR _iLoop$[esp+36]
 
-; 6073 : 
-; 6074 : 		iRtnValue += iScoreAtCity;
+; 6095 : 
+; 6096 : 		iRtnValue += iScoreAtCity;
 
 	add	edi, ecx
 	mov	ecx, DWORD PTR [ebx+4]
@@ -32280,27 +32320,27 @@ $LL4@ScoreBelie@4:
 	jne	SHORT $LL4@ScoreBelie@4
 $LN2@ScoreBelie@4:
 
-; 6075 : 	}
-; 6076 : 
-; 6077 : 	// Add in player-level value
-; 6078 : 	iRtnValue += ScoreBeliefForPlayer(pEntry);
+; 6097 : 	}
+; 6098 : 
+; 6099 : 	// Add in player-level value
+; 6100 : 	iRtnValue += ScoreBeliefForPlayer(pEntry);
 
 	mov	esi, DWORD PTR _pEntry$[esp+28]
 	push	esi
 	mov	ecx, ebx
 	call	?ScoreBeliefForPlayer@CvReligionAI@@AAEHPAVCvBeliefEntry@@@Z ; CvReligionAI::ScoreBeliefForPlayer
 
-; 6079 : 
-; 6080 : 	// Divide by 2 if a Pantheon belief (to deemphasize these to Byzantine bonus belief)
-; 6081 : 	if (pEntry->IsPantheonBelief())
+; 6101 : 
+; 6102 : 	// Divide by 2 if a Pantheon belief (to deemphasize these to Byzantine bonus belief)
+; 6103 : 	if (pEntry->IsPantheonBelief())
 
 	mov	ecx, esi
 	add	edi, eax
 	call	?IsPantheonBelief@CvBeliefEntry@@QBE_NXZ ; CvBeliefEntry::IsPantheonBelief
 	test	al, al
 
-; 6082 : 	{
-; 6083 : 		iRtnValue /= 2;
+; 6104 : 	{
+; 6105 : 		iRtnValue /= 2;
 
 	mov	eax, edi
 	je	SHORT $LN1@ScoreBelie@4
@@ -32312,10 +32352,10 @@ $LN1@ScoreBelie@4:
 	pop	esi
 	pop	ebx
 
-; 6084 : 	}
-; 6085 : 
-; 6086 : 	return iRtnValue;
-; 6087 : }
+; 6106 : 	}
+; 6107 : 
+; 6108 : 	return iRtnValue;
+; 6109 : }
 
 	add	esp, 20					; 00000014H
 	ret	4
@@ -32332,28 +32372,28 @@ _bIncludePuppets$ = 12					; size = 1
 ?AreAllOurCitiesHaveFaithBuilding@CvReligionAI@@ABE_NW4ReligionTypes@@_N@Z PROC ; CvReligionAI::AreAllOurCitiesHaveFaithBuilding, COMDAT
 ; _this$ = ecx
 
-; 6745 : {
+; 6767 : {
 
 	push	ecx
 	push	ebx
 
-; 6746 : 	bool bRtnValue = true;
-; 6747 : #ifdef AUI_RELIGION_FIX_MULTIPLE_FAITH_BUILDINGS
-; 6748 : 	std::vector<BuildingClassTypes> eFaithBuildingClass = FaithBuildingAvailable(eReligion);
-; 6749 : 	if (eFaithBuildingClass.size() == 0)
-; 6750 : 	{
-; 6751 : 		return true;
-; 6752 : 	}
-; 6753 : 	for (std::vector<BuildingClassTypes>::iterator it = eFaithBuildingClass.begin(); it != eFaithBuildingClass.end() && bRtnValue; ++it)
-; 6754 : 	{
-; 6755 : 		BuildingTypes eFaithBuilding = (BuildingTypes)m_pPlayer->getCivilizationInfo().getCivilizationBuildings((*it));
-; 6756 : 
-; 6757 : 		if (eFaithBuilding == NO_BUILDING)
-; 6758 : 		{
-; 6759 : 			continue;
-; 6760 : 		}
-; 6761 : #else
-; 6762 : 	BuildingClassTypes eFaithBuildingClass = FaithBuildingAvailable(eReligion);
+; 6768 : 	bool bRtnValue = true;
+; 6769 : #ifdef AUI_RELIGION_FIX_MULTIPLE_FAITH_BUILDINGS
+; 6770 : 	std::vector<BuildingClassTypes> eFaithBuildingClass = FaithBuildingAvailable(eReligion);
+; 6771 : 	if (eFaithBuildingClass.size() == 0)
+; 6772 : 	{
+; 6773 : 		return true;
+; 6774 : 	}
+; 6775 : 	for (std::vector<BuildingClassTypes>::iterator it = eFaithBuildingClass.begin(); it != eFaithBuildingClass.end() && bRtnValue; ++it)
+; 6776 : 	{
+; 6777 : 		BuildingTypes eFaithBuilding = (BuildingTypes)m_pPlayer->getCivilizationInfo().getCivilizationBuildings((*it));
+; 6778 : 
+; 6779 : 		if (eFaithBuilding == NO_BUILDING)
+; 6780 : 		{
+; 6781 : 			continue;
+; 6782 : 		}
+; 6783 : #else
+; 6784 : 	BuildingClassTypes eFaithBuildingClass = FaithBuildingAvailable(eReligion);
 
 	mov	ebx, DWORD PTR _eReligion$[esp+4]
 	push	ebp
@@ -32364,7 +32404,7 @@ _bIncludePuppets$ = 12					; size = 1
 	mov	BYTE PTR _bRtnValue$[esp+24], 1
 	call	?FaithBuildingAvailable@CvReligionAI@@ABE?AW4BuildingClassTypes@@W4ReligionTypes@@@Z ; CvReligionAI::FaithBuildingAvailable
 
-; 6763 : 	BuildingTypes eFaithBuilding = (BuildingTypes)m_pPlayer->getCivilizationInfo().getCivilizationBuildings(eFaithBuildingClass);
+; 6785 : 	BuildingTypes eFaithBuilding = (BuildingTypes)m_pPlayer->getCivilizationInfo().getCivilizationBuildings(eFaithBuildingClass);
 
 	mov	ecx, DWORD PTR [edi+4]
 	mov	esi, eax
@@ -32374,20 +32414,20 @@ _bIncludePuppets$ = 12					; size = 1
 	call	?getCivilizationBuildings@CvCivilizationInfo@@QBEHH@Z ; CvCivilizationInfo::getCivilizationBuildings
 	mov	ebp, eax
 
-; 6764 : 
-; 6765 : 	if(eFaithBuildingClass == NO_BUILDINGCLASS || eFaithBuilding == NO_BUILDING)
+; 6786 : 
+; 6787 : 	if(eFaithBuildingClass == NO_BUILDINGCLASS || eFaithBuilding == NO_BUILDING)
 
 	cmp	esi, -1
 	je	$LN8@AreAllOurC@2
 	cmp	ebp, -1
 	je	$LN8@AreAllOurC@2
 
-; 6768 : 	}
-; 6769 : #endif
-; 6770 : 
-; 6771 : 	int iLoop;
-; 6772 : 	CvCity* pLoopCity;
-; 6773 : 	for(pLoopCity = m_pPlayer->firstCity(&iLoop); pLoopCity != NULL; pLoopCity = m_pPlayer->nextCity(&iLoop))
+; 6790 : 	}
+; 6791 : #endif
+; 6792 : 
+; 6793 : 	int iLoop;
+; 6794 : 	CvCity* pLoopCity;
+; 6795 : 	for(pLoopCity = m_pPlayer->firstCity(&iLoop); pLoopCity != NULL; pLoopCity = m_pPlayer->nextCity(&iLoop))
 
 	mov	ecx, DWORD PTR [edi+4]
 	push	0
@@ -32399,8 +32439,8 @@ _bIncludePuppets$ = 12					; size = 1
 	je	SHORT $LN15@AreAllOurC@2
 $LL7@AreAllOurC@2:
 
-; 6774 : 	{
-; 6775 : 		if(pLoopCity->GetCityReligions()->GetReligiousMajority() == eReligion)
+; 6796 : 	{
+; 6797 : 		if(pLoopCity->GetCityReligions()->GetReligiousMajority() == eReligion)
 
 	mov	ecx, esi
 	call	?GetCityReligions@CvCity@@QBEPAVCvCityReligions@@XZ ; CvCity::GetCityReligions
@@ -32409,8 +32449,8 @@ $LL7@AreAllOurC@2:
 	cmp	eax, ebx
 	jne	SHORT $LN6@AreAllOurC@2
 
-; 6776 : 		{
-; 6777 : 			if(bIncludePuppets || !pLoopCity->IsPuppet())
+; 6798 : 		{
+; 6799 : 			if(bIncludePuppets || !pLoopCity->IsPuppet())
 
 	cmp	BYTE PTR _bIncludePuppets$[esp+16], 0
 	jne	SHORT $LN2@AreAllOurC@2
@@ -32420,8 +32460,8 @@ $LL7@AreAllOurC@2:
 	jne	SHORT $LN6@AreAllOurC@2
 $LN2@AreAllOurC@2:
 
-; 6778 : 			{
-; 6779 : 				if(pLoopCity->GetCityBuildings()->GetNumBuilding(eFaithBuilding) < 1)
+; 6800 : 			{
+; 6801 : 				if(pLoopCity->GetCityBuildings()->GetNumBuilding(eFaithBuilding) < 1)
 
 	push	ebp
 	mov	ecx, esi
@@ -32432,12 +32472,12 @@ $LN2@AreAllOurC@2:
 	jl	SHORT $LN13@AreAllOurC@2
 $LN6@AreAllOurC@2:
 
-; 6768 : 	}
-; 6769 : #endif
-; 6770 : 
-; 6771 : 	int iLoop;
-; 6772 : 	CvCity* pLoopCity;
-; 6773 : 	for(pLoopCity = m_pPlayer->firstCity(&iLoop); pLoopCity != NULL; pLoopCity = m_pPlayer->nextCity(&iLoop))
+; 6790 : 	}
+; 6791 : #endif
+; 6792 : 
+; 6793 : 	int iLoop;
+; 6794 : 	CvCity* pLoopCity;
+; 6795 : 	for(pLoopCity = m_pPlayer->firstCity(&iLoop); pLoopCity != NULL; pLoopCity = m_pPlayer->nextCity(&iLoop))
 
 	push	0
 	lea	ecx, DWORD PTR _iLoop$[esp+20]
@@ -32448,16 +32488,16 @@ $LN6@AreAllOurC@2:
 	test	esi, esi
 	jne	SHORT $LL7@AreAllOurC@2
 
-; 6782 : 					break;
-; 6783 : 				}
-; 6784 : 			}
-; 6785 : 		}
-; 6786 : 	}
-; 6787 : #ifdef AUI_RELIGION_FIX_MULTIPLE_FAITH_BUILDINGS
-; 6788 : 	}
-; 6789 : #endif
-; 6790 : 
-; 6791 : 	return bRtnValue;
+; 6804 : 					break;
+; 6805 : 				}
+; 6806 : 			}
+; 6807 : 		}
+; 6808 : 	}
+; 6809 : #ifdef AUI_RELIGION_FIX_MULTIPLE_FAITH_BUILDINGS
+; 6810 : 	}
+; 6811 : #endif
+; 6812 : 
+; 6813 : 	return bRtnValue;
 
 	mov	al, BYTE PTR _bRtnValue$[esp+20]
 	pop	edi
@@ -32465,28 +32505,28 @@ $LN6@AreAllOurC@2:
 	pop	ebp
 	pop	ebx
 
-; 6792 : }
+; 6814 : }
 
 	pop	ecx
 	ret	8
 $LN13@AreAllOurC@2:
 
-; 6780 : 				{
-; 6781 : 					bRtnValue = false;
+; 6802 : 				{
+; 6803 : 					bRtnValue = false;
 
 	mov	BYTE PTR _bRtnValue$[esp+20], 0
 $LN15@AreAllOurC@2:
 
-; 6782 : 					break;
-; 6783 : 				}
-; 6784 : 			}
-; 6785 : 		}
-; 6786 : 	}
-; 6787 : #ifdef AUI_RELIGION_FIX_MULTIPLE_FAITH_BUILDINGS
-; 6788 : 	}
-; 6789 : #endif
-; 6790 : 
-; 6791 : 	return bRtnValue;
+; 6804 : 					break;
+; 6805 : 				}
+; 6806 : 			}
+; 6807 : 		}
+; 6808 : 	}
+; 6809 : #ifdef AUI_RELIGION_FIX_MULTIPLE_FAITH_BUILDINGS
+; 6810 : 	}
+; 6811 : #endif
+; 6812 : 
+; 6813 : 	return bRtnValue;
 
 	mov	al, BYTE PTR _bRtnValue$[esp+20]
 	pop	edi
@@ -32494,7 +32534,7 @@ $LN15@AreAllOurC@2:
 	pop	ebp
 	pop	ebx
 
-; 6792 : }
+; 6814 : }
 
 	pop	ecx
 	ret	8
@@ -32503,13 +32543,13 @@ $LN8@AreAllOurC@2:
 	pop	esi
 	pop	ebp
 
-; 6766 : 	{
-; 6767 : 		return true;
+; 6788 : 	{
+; 6789 : 		return true;
 
 	mov	al, 1
 	pop	ebx
 
-; 6792 : }
+; 6814 : }
 
 	pop	ecx
 	ret	8
@@ -32536,7 +32576,7 @@ EXTRN	?GetUnitClassType@CvUnitEntry@@QBEHXZ:PROC	; CvUnitEntry::GetUnitClassType
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?GetDesiredFaithGreatPerson@CvReligionAI@@ABE?AW4UnitTypes@@XZ
 _TEXT	SEGMENT
-_iUnitLoop$228420 = -20					; size = 4
+_iUnitLoop$228477 = -20					; size = 4
 _eReligion$ = -16					; size = 4
 _iBestScore$ = -12					; size = 4
 _eRtnValue$ = -8					; size = 4
@@ -32544,28 +32584,28 @@ _eSpecialUnitGreatPerson$ = -4				; size = 4
 ?GetDesiredFaithGreatPerson@CvReligionAI@@ABE?AW4UnitTypes@@XZ PROC ; CvReligionAI::GetDesiredFaithGreatPerson, COMDAT
 ; _this$ = ecx
 
-; 6998 : {
+; 7020 : {
 
 	sub	esp, 20					; 00000014H
 	push	ebx
 	push	esi
 	push	edi
 
-; 6999 : 	SpecialUnitTypes eSpecialUnitGreatPerson = (SpecialUnitTypes) GC.getInfoTypeForString("SPECIALUNIT_PEOPLE");
+; 7021 : 	SpecialUnitTypes eSpecialUnitGreatPerson = (SpecialUnitTypes) GC.getInfoTypeForString("SPECIALUNIT_PEOPLE");
 
 	xor	esi, esi
 	push	esi
 	mov	ebx, ecx
-	push	OFFSET $SG228416
+	push	OFFSET $SG228473
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 
-; 7000 : 	UnitTypes eRtnValue = NO_UNIT;
+; 7022 : 	UnitTypes eRtnValue = NO_UNIT;
 
 	or	edi, -1
 
-; 7001 : 	int iBestScore = 0;
-; 7002 : 	ReligionTypes eReligion = GetReligionToSpread();
+; 7023 : 	int iBestScore = 0;
+; 7024 : 	ReligionTypes eReligion = GetReligionToSpread();
 
 	mov	ecx, ebx
 	mov	DWORD PTR _eSpecialUnitGreatPerson$[esp+32], eax
@@ -32573,16 +32613,16 @@ _eSpecialUnitGreatPerson$ = -4				; size = 4
 	mov	DWORD PTR _iBestScore$[esp+32], esi
 	call	?GetReligionToSpread@CvReligionAI@@QBE?AW4ReligionTypes@@XZ ; CvReligionAI::GetReligionToSpread
 
-; 7003 : 
-; 7004 : 	// Loop through all Units and see if they're possible
-; 7005 : #ifdef AUI_WARNING_FIXES
-; 7006 : 	for (uint iUnitLoop = 0; iUnitLoop < GC.getNumUnitInfos(); iUnitLoop++)
-; 7007 : #else
-; 7008 : 	for(int iUnitLoop = 0; iUnitLoop < GC.getNumUnitInfos(); iUnitLoop++)
+; 7025 : 
+; 7026 : 	// Loop through all Units and see if they're possible
+; 7027 : #ifdef AUI_WARNING_FIXES
+; 7028 : 	for (uint iUnitLoop = 0; iUnitLoop < GC.getNumUnitInfos(); iUnitLoop++)
+; 7029 : #else
+; 7030 : 	for(int iUnitLoop = 0; iUnitLoop < GC.getNumUnitInfos(); iUnitLoop++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	DWORD PTR _eReligion$[esp+32], eax
-	mov	DWORD PTR _iUnitLoop$228420[esp+32], esi
+	mov	DWORD PTR _iUnitLoop$228477[esp+32], esi
 	call	?getNumUnitInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumUnitInfos
 	test	eax, eax
 	jle	$LN64@GetDesired
@@ -32590,32 +32630,32 @@ _eSpecialUnitGreatPerson$ = -4				; size = 4
 	npad	5
 $LL69@GetDesired:
 
-; 7009 : #endif
-; 7010 : 	{
-; 7011 : 		const UnitTypes eUnit = static_cast<UnitTypes>(iUnitLoop);
-; 7012 : 		CvUnitEntry* pkUnitInfo = GC.getUnitInfo(eUnit);
+; 7031 : #endif
+; 7032 : 	{
+; 7033 : 		const UnitTypes eUnit = static_cast<UnitTypes>(iUnitLoop);
+; 7034 : 		CvUnitEntry* pkUnitInfo = GC.getUnitInfo(eUnit);
 
 	push	esi
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getUnitInfo@CvGlobals@@QAEPAVCvUnitEntry@@W4UnitTypes@@@Z ; CvGlobals::getUnitInfo
 	mov	edi, eax
 
-; 7013 : 
-; 7014 : 		if(pkUnitInfo == NULL)
+; 7035 : 
+; 7036 : 		if(pkUnitInfo == NULL)
 
 	test	edi, edi
 	je	$LN52@GetDesired
 
-; 7015 : 			continue;
-; 7016 : 
-; 7017 : 		UnitClassTypes eUnitClass = (UnitClassTypes)pkUnitInfo->GetUnitClassType();
+; 7037 : 			continue;
+; 7038 : 
+; 7039 : 		UnitClassTypes eUnitClass = (UnitClassTypes)pkUnitInfo->GetUnitClassType();
 
 	mov	ecx, edi
 	call	?GetUnitClassType@CvUnitEntry@@QBEHXZ	; CvUnitEntry::GetUnitClassType
 
-; 7018 : 
-; 7019 : 		// Can't be able to train it
-; 7020 : 		if(pkUnitInfo->GetProductionCost() != -1)
+; 7040 : 
+; 7041 : 		// Can't be able to train it
+; 7042 : 		if(pkUnitInfo->GetProductionCost() != -1)
 
 	mov	ecx, edi
 	mov	ebp, eax
@@ -32623,24 +32663,24 @@ $LL69@GetDesired:
 	cmp	eax, -1
 	jne	$LN52@GetDesired
 
-; 7021 : 		{
-; 7022 : 			continue;
-; 7023 : 		}
-; 7024 : 
-; 7025 : 		// Must be a Great Person (defined in SpecialUnitType in Unit XML)
-; 7026 : 		if(pkUnitInfo->GetSpecialUnitType() != eSpecialUnitGreatPerson)
+; 7043 : 		{
+; 7044 : 			continue;
+; 7045 : 		}
+; 7046 : 
+; 7047 : 		// Must be a Great Person (defined in SpecialUnitType in Unit XML)
+; 7048 : 		if(pkUnitInfo->GetSpecialUnitType() != eSpecialUnitGreatPerson)
 
 	mov	ecx, edi
 	call	?GetSpecialUnitType@CvUnitEntry@@QBEHXZ	; CvUnitEntry::GetSpecialUnitType
 	cmp	eax, DWORD PTR _eSpecialUnitGreatPerson$[esp+36]
 	jne	$LN52@GetDesired
 
-; 7027 : 		{
-; 7028 : 			continue;
-; 7029 : 		}
-; 7030 : 
-; 7031 : 		// Must be a Great Person for this player's civ
-; 7032 : 		if(!m_pPlayer->canTrain(eUnit, false /*bContinue*/, false /*bTestVisible*/, true /*bIgnoreCost*/))
+; 7049 : 		{
+; 7050 : 			continue;
+; 7051 : 		}
+; 7052 : 
+; 7053 : 		// Must be a Great Person for this player's civ
+; 7054 : 		if(!m_pPlayer->canTrain(eUnit, false /*bContinue*/, false /*bTestVisible*/, true /*bIgnoreCost*/))
 
 	mov	ecx, DWORD PTR [ebx+4]
 	push	0
@@ -32653,23 +32693,23 @@ $LL69@GetDesired:
 	test	al, al
 	je	$LN52@GetDesired
 
-; 7033 : 		{
-; 7034 : 			continue;
-; 7035 : 		}
-; 7036 : 
-; 7037 : 		// Can we purchase this one in the capital?
-; 7038 : 		CvCity *pCapital = m_pPlayer->getCapitalCity();
+; 7055 : 		{
+; 7056 : 			continue;
+; 7057 : 		}
+; 7058 : 
+; 7059 : 		// Can we purchase this one in the capital?
+; 7060 : 		CvCity *pCapital = m_pPlayer->getCapitalCity();
 
 	mov	ecx, DWORD PTR [ebx+4]
 	call	?getCapitalCity@CvPlayer@@QAEPAVCvCity@@XZ ; CvPlayer::getCapitalCity
 
-; 7039 : 		if (pCapital)
+; 7061 : 		if (pCapital)
 
 	test	eax, eax
 	je	$LN52@GetDesired
 
-; 7040 : 		{
-; 7041 : 			if (pCapital->IsCanPurchase(false/*bTestPurchaseCost*/, false/*bTestTrainable*/, eUnit, NO_BUILDING, NO_PROJECT, YIELD_FAITH))
+; 7062 : 		{
+; 7063 : 			if (pCapital->IsCanPurchase(false/*bTestPurchaseCost*/, false/*bTestTrainable*/, eUnit, NO_BUILDING, NO_PROJECT, YIELD_FAITH))
 
 	push	5
 	push	-1
@@ -32682,9 +32722,9 @@ $LL69@GetDesired:
 	test	al, al
 	je	$LN52@GetDesired
 
-; 7042 : 			{
-; 7043 : 				int iScore = 0;
-; 7044 : 				AIGrandStrategyTypes eVictoryStrategy = m_pPlayer->GetGrandStrategyAI()->GetActiveGrandStrategy();
+; 7064 : 			{
+; 7065 : 				int iScore = 0;
+; 7066 : 				AIGrandStrategyTypes eVictoryStrategy = m_pPlayer->GetGrandStrategyAI()->GetActiveGrandStrategy();
 
 	mov	ecx, DWORD PTR [ebx+4]
 	xor	edi, edi
@@ -32692,28 +32732,28 @@ $LL69@GetDesired:
 	mov	ecx, eax
 	call	?GetActiveGrandStrategy@CvGrandStrategyAI@@QBE?AW4AIGrandStrategyTypes@@XZ ; CvGrandStrategyAI::GetActiveGrandStrategy
 
-; 7045 : 
-; 7046 : 				// Score it
-; 7047 : 				if (eUnitClass == GC.getInfoTypeForString("UNITCLASS_PROPHET"))
+; 7067 : 
+; 7068 : 				// Score it
+; 7069 : 				if (eUnitClass == GC.getInfoTypeForString("UNITCLASS_PROPHET"))
 
 	push	edi
-	push	OFFSET $SG228439
+	push	OFFSET $SG228496
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	esi, eax
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	cmp	ebp, eax
 	jne	SHORT $LN44@GetDesired
 
-; 7048 : 				{
-; 7049 : 					if (GetReligionToSpread() > RELIGION_PANTHEON)
+; 7070 : 				{
+; 7071 : 					if (GetReligionToSpread() > RELIGION_PANTHEON)
 
 	mov	ecx, ebx
 	call	?GetReligionToSpread@CvReligionAI@@QBE?AW4ReligionTypes@@XZ ; CvReligionAI::GetReligionToSpread
 	test	eax, eax
 	jle	$LN2@GetDesired
 
-; 7050 : 					{
-; 7051 : 						if (ChooseProphetConversionCity(true/*bOnlyBetterThanEnhancingReligion*/))
+; 7072 : 					{
+; 7073 : 						if (ChooseProphetConversionCity(true/*bOnlyBetterThanEnhancingReligion*/))
 
 	push	1
 	mov	ecx, ebx
@@ -32721,8 +32761,8 @@ $LL69@GetDesired:
 	test	eax, eax
 	je	SHORT $LN42@GetDesired
 
-; 7058 : 						}
-; 7059 : 						iScore /= (1+ m_pPlayer->GetReligions()->GetNumProphetsSpawned());
+; 7080 : 						}
+; 7081 : 						iScore /= (1+ m_pPlayer->GetReligions()->GetNumProphetsSpawned());
 
 	mov	ecx, DWORD PTR [ebx+4]
 	mov	edi, 1500				; 000005dcH
@@ -32730,16 +32770,16 @@ $LL69@GetDesired:
 	mov	ecx, DWORD PTR [eax+4]
 	mov	eax, edi
 
-; 7060 : 					}
-; 7061 : 				}
+; 7082 : 					}
+; 7083 : 				}
 
 	jmp	$LN70@GetDesired
 $LN42@GetDesired:
 
-; 7052 : 						{
-; 7053 : 							iScore = 1500;
-; 7054 : 						}
-; 7055 : 						else if (ChooseProphetConversionCity(false/*bOnlyBetterThanEnhancingReligion*/))
+; 7074 : 						{
+; 7075 : 							iScore = 1500;
+; 7076 : 						}
+; 7077 : 						else if (ChooseProphetConversionCity(false/*bOnlyBetterThanEnhancingReligion*/))
 
 	push	0
 	mov	ecx, ebx
@@ -32747,51 +32787,51 @@ $LN42@GetDesired:
 	test	eax, eax
 	je	SHORT $LN40@GetDesired
 
-; 7056 : 						{
-; 7057 : 							iScore = 750;
+; 7078 : 						{
+; 7079 : 							iScore = 750;
 
 	mov	edi, 750				; 000002eeH
 $LN40@GetDesired:
 
-; 7058 : 						}
-; 7059 : 						iScore /= (1+ m_pPlayer->GetReligions()->GetNumProphetsSpawned());
+; 7080 : 						}
+; 7081 : 						iScore /= (1+ m_pPlayer->GetReligions()->GetNumProphetsSpawned());
 
 	mov	ecx, DWORD PTR [ebx+4]
 	call	?GetReligions@CvPlayer@@QBEPAVCvPlayerReligions@@XZ ; CvPlayer::GetReligions
 	mov	ecx, DWORD PTR [eax+4]
 	mov	eax, edi
 
-; 7060 : 					}
-; 7061 : 				}
+; 7082 : 					}
+; 7083 : 				}
 
 	jmp	$LN70@GetDesired
 $LN44@GetDesired:
 
-; 7062 : 				else if (eUnitClass == GC.getInfoTypeForString("UNITCLASS_WRITER"))
+; 7084 : 				else if (eUnitClass == GC.getInfoTypeForString("UNITCLASS_WRITER"))
 
 	push	0
-	push	OFFSET $SG228446
+	push	OFFSET $SG228503
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 
-; 7063 : 				{
-; 7064 : 					if (eVictoryStrategy == (AIGrandStrategyTypes) GC.getInfoTypeForString("AIGRANDSTRATEGY_CULTURE"))
+; 7085 : 				{
+; 7086 : 					if (eVictoryStrategy == (AIGrandStrategyTypes) GC.getInfoTypeForString("AIGRANDSTRATEGY_CULTURE"))
 
 	push	0
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	cmp	ebp, eax
 	jne	SHORT $LN38@GetDesired
-	push	OFFSET $SG228449
+	push	OFFSET $SG228506
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 
-; 7065 : 					{
-; 7066 : 						iScore = 1000;
-; 7067 : 					}
-; 7068 : 					else
-; 7069 : 					{
-; 7070 : 						iScore = 400;
-; 7071 : 					}
-; 7072 : 					iScore /= (1+ m_pPlayer->getWritersFromFaith());
+; 7087 : 					{
+; 7088 : 						iScore = 1000;
+; 7089 : 					}
+; 7090 : 					else
+; 7091 : 					{
+; 7092 : 						iScore = 400;
+; 7093 : 					}
+; 7094 : 					iScore /= (1+ m_pPlayer->getWritersFromFaith());
 
 	mov	ecx, DWORD PTR [ebx+4]
 	sub	esi, eax
@@ -32805,30 +32845,30 @@ $LN44@GetDesired:
 	jmp	$LN70@GetDesired
 $LN38@GetDesired:
 
-; 7073 : 				}
-; 7074 : 				else if (eUnitClass == GC.getInfoTypeForString("UNITCLASS_ARTIST"))
+; 7095 : 				}
+; 7096 : 				else if (eUnitClass == GC.getInfoTypeForString("UNITCLASS_ARTIST"))
 
-	push	OFFSET $SG228453
+	push	OFFSET $SG228510
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 
-; 7075 : 				{
-; 7076 : 					if (eVictoryStrategy == (AIGrandStrategyTypes) GC.getInfoTypeForString("AIGRANDSTRATEGY_CULTURE"))
+; 7097 : 				{
+; 7098 : 					if (eVictoryStrategy == (AIGrandStrategyTypes) GC.getInfoTypeForString("AIGRANDSTRATEGY_CULTURE"))
 
 	push	0
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	cmp	ebp, eax
 	jne	SHORT $LN34@GetDesired
-	push	OFFSET $SG228456
+	push	OFFSET $SG228513
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 
-; 7077 : 					{
-; 7078 : 						iScore = 1000;
-; 7079 : 					}
-; 7080 : 					else
-; 7081 : 					{
-; 7082 : 						iScore = 400;
-; 7083 : 					}
-; 7084 : 					iScore /= (1+ m_pPlayer->getArtistsFromFaith());
+; 7099 : 					{
+; 7100 : 						iScore = 1000;
+; 7101 : 					}
+; 7102 : 					else
+; 7103 : 					{
+; 7104 : 						iScore = 400;
+; 7105 : 					}
+; 7106 : 					iScore /= (1+ m_pPlayer->getArtistsFromFaith());
 
 	mov	ecx, DWORD PTR [ebx+4]
 	sub	esi, eax
@@ -32842,30 +32882,30 @@ $LN38@GetDesired:
 	jmp	$LN70@GetDesired
 $LN34@GetDesired:
 
-; 7085 : 				}
-; 7086 : 				else if (eUnitClass == GC.getInfoTypeForString("UNITCLASS_MUSICIAN"))
+; 7107 : 				}
+; 7108 : 				else if (eUnitClass == GC.getInfoTypeForString("UNITCLASS_MUSICIAN"))
 
-	push	OFFSET $SG228460
+	push	OFFSET $SG228517
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 
-; 7087 : 				{
-; 7088 : 					if (eVictoryStrategy == (AIGrandStrategyTypes) GC.getInfoTypeForString("AIGRANDSTRATEGY_CULTURE"))
+; 7109 : 				{
+; 7110 : 					if (eVictoryStrategy == (AIGrandStrategyTypes) GC.getInfoTypeForString("AIGRANDSTRATEGY_CULTURE"))
 
 	push	0
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	cmp	ebp, eax
 	jne	SHORT $LN30@GetDesired
-	push	OFFSET $SG228463
+	push	OFFSET $SG228520
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 
-; 7089 : 					{
-; 7090 : 						iScore = 1000;
-; 7091 : 					}
-; 7092 : 					else
-; 7093 : 					{
-; 7094 : 						iScore = 400;
-; 7095 : 					}
-; 7096 : 					iScore /= (1+ m_pPlayer->getMusiciansFromFaith());
+; 7111 : 					{
+; 7112 : 						iScore = 1000;
+; 7113 : 					}
+; 7114 : 					else
+; 7115 : 					{
+; 7116 : 						iScore = 400;
+; 7117 : 					}
+; 7118 : 					iScore /= (1+ m_pPlayer->getMusiciansFromFaith());
 
 	mov	ecx, DWORD PTR [ebx+4]
 	sub	esi, eax
@@ -32879,63 +32919,63 @@ $LN34@GetDesired:
 	jmp	$LN70@GetDesired
 $LN30@GetDesired:
 
-; 7097 : 				}
-; 7098 : 				else if (eUnitClass == GC.getInfoTypeForString("UNITCLASS_SCIENTIST"))
+; 7119 : 				}
+; 7120 : 				else if (eUnitClass == GC.getInfoTypeForString("UNITCLASS_SCIENTIST"))
 
-	push	OFFSET $SG228467
+	push	OFFSET $SG228524
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 
-; 7099 : 				{
-; 7100 : 					if (eVictoryStrategy == (AIGrandStrategyTypes) GC.getInfoTypeForString("AIGRANDSTRATEGY_SPACESHIP"))
+; 7121 : 				{
+; 7122 : 					if (eVictoryStrategy == (AIGrandStrategyTypes) GC.getInfoTypeForString("AIGRANDSTRATEGY_SPACESHIP"))
 
 	push	0
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	cmp	ebp, eax
 	jne	SHORT $LN26@GetDesired
-	push	OFFSET $SG228470
+	push	OFFSET $SG228527
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 
-; 7101 : 					{
-; 7102 : 						iScore = 1000;
-; 7103 : 					}
-; 7104 : 					else
-; 7105 : 					{
-; 7106 : 						iScore = 400;
-; 7107 : 					}
-; 7108 : #ifndef AUI_WARNING_FIXES
-; 7109 : 					iScore = 1000;
-; 7110 : #endif
-; 7111 : 					iScore /= (1+ m_pPlayer->getScientistsFromFaith());
+; 7123 : 					{
+; 7124 : 						iScore = 1000;
+; 7125 : 					}
+; 7126 : 					else
+; 7127 : 					{
+; 7128 : 						iScore = 400;
+; 7129 : 					}
+; 7130 : #ifndef AUI_WARNING_FIXES
+; 7131 : 					iScore = 1000;
+; 7132 : #endif
+; 7133 : 					iScore /= (1+ m_pPlayer->getScientistsFromFaith());
 
 	mov	ecx, DWORD PTR [ebx+4]
 	call	?getScientistsFromFaith@CvPlayer@@QBEHXZ ; CvPlayer::getScientistsFromFaith
 	jmp	$LN71@GetDesired
 $LN26@GetDesired:
 
-; 7112 : 				}
-; 7113 : 				else if (eUnitClass == GC.getInfoTypeForString("UNITCLASS_MERCHANT"))
+; 7134 : 				}
+; 7135 : 				else if (eUnitClass == GC.getInfoTypeForString("UNITCLASS_MERCHANT"))
 
-	push	OFFSET $SG228474
+	push	OFFSET $SG228531
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 
-; 7114 : 				{
-; 7115 : 					if (eVictoryStrategy == (AIGrandStrategyTypes) GC.getInfoTypeForString("AIGRANDSTRATEGY_UNITED_NATIONS"))
+; 7136 : 				{
+; 7137 : 					if (eVictoryStrategy == (AIGrandStrategyTypes) GC.getInfoTypeForString("AIGRANDSTRATEGY_UNITED_NATIONS"))
 
 	push	0
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	cmp	ebp, eax
 	jne	SHORT $LN22@GetDesired
-	push	OFFSET $SG228477
+	push	OFFSET $SG228534
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 
-; 7116 : 					{
-; 7117 : 						iScore = 1000;
-; 7118 : 					}
-; 7119 : 					else
-; 7120 : 					{
-; 7121 : 						iScore = 400;
-; 7122 : 					}
-; 7123 : 					iScore /= (1+ m_pPlayer->getMerchantsFromFaith());
+; 7138 : 					{
+; 7139 : 						iScore = 1000;
+; 7140 : 					}
+; 7141 : 					else
+; 7142 : 					{
+; 7143 : 						iScore = 400;
+; 7144 : 					}
+; 7145 : 					iScore /= (1+ m_pPlayer->getMerchantsFromFaith());
 
 	mov	ecx, DWORD PTR [ebx+4]
 	sub	esi, eax
@@ -32949,23 +32989,23 @@ $LN26@GetDesired:
 	jmp	$LN70@GetDesired
 $LN22@GetDesired:
 
-; 7124 : 				}
-; 7125 : 				else if (eUnitClass == GC.getInfoTypeForString("UNITCLASS_ENGINEER"))
+; 7146 : 				}
+; 7147 : 				else if (eUnitClass == GC.getInfoTypeForString("UNITCLASS_ENGINEER"))
 
-	push	OFFSET $SG228481
+	push	OFFSET $SG228538
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 
-; 7126 : 				{
-; 7127 : 					EconomicAIStrategyTypes eStrategy = (EconomicAIStrategyTypes) GC.getInfoTypeForString("ECONOMICAISTRATEGY_GS_SPACESHIP_HOMESTRETCH");
+; 7148 : 				{
+; 7149 : 					EconomicAIStrategyTypes eStrategy = (EconomicAIStrategyTypes) GC.getInfoTypeForString("ECONOMICAISTRATEGY_GS_SPACESHIP_HOMESTRETCH");
 
 	push	0
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	cmp	ebp, eax
 	jne	SHORT $LN18@GetDesired
-	push	OFFSET $SG228484
+	push	OFFSET $SG228541
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 
-; 7128 : 					if (eStrategy != NO_ECONOMICAISTRATEGY && m_pPlayer->GetEconomicAI()->IsUsingStrategy(eStrategy))
+; 7150 : 					if (eStrategy != NO_ECONOMICAISTRATEGY && m_pPlayer->GetEconomicAI()->IsUsingStrategy(eStrategy))
 
 	cmp	eax, -1
 	je	SHORT $LN17@GetDesired
@@ -32975,24 +33015,24 @@ $LN22@GetDesired:
 	mov	ecx, eax
 	call	?IsUsingStrategy@CvEconomicAI@@QAE_NW4EconomicAIStrategyTypes@@@Z ; CvEconomicAI::IsUsingStrategy
 
-; 7129 : 					{
-; 7130 : 						iScore = 2000;
+; 7151 : 					{
+; 7152 : 						iScore = 2000;
 
 	mov	esi, 2000				; 000007d0H
 	test	al, al
 	jne	SHORT $LN16@GetDesired
 $LN17@GetDesired:
 
-; 7131 : 					}
-; 7132 : 					else
-; 7133 : 					{
-; 7134 : 						iScore = 500;
+; 7153 : 					}
+; 7154 : 					else
+; 7155 : 					{
+; 7156 : 						iScore = 500;
 
 	mov	esi, 500				; 000001f4H
 $LN16@GetDesired:
 
-; 7135 : 					}
-; 7136 : 					iScore /= (1+ m_pPlayer->getEngineersFromFaith());
+; 7157 : 					}
+; 7158 : 					iScore /= (1+ m_pPlayer->getEngineersFromFaith());
 
 	mov	ecx, DWORD PTR [ebx+4]
 	call	?getEngineersFromFaith@CvPlayer@@QBEHXZ	; CvPlayer::getEngineersFromFaith
@@ -33001,44 +33041,44 @@ $LN16@GetDesired:
 	jmp	$LN70@GetDesired
 $LN18@GetDesired:
 
-; 7137 : 				}
-; 7138 : 				else if (eUnitClass == GC.getInfoTypeForString("UNITCLASS_GREAT_GENERAL"))
+; 7159 : 				}
+; 7160 : 				else if (eUnitClass == GC.getInfoTypeForString("UNITCLASS_GREAT_GENERAL"))
 
-	push	OFFSET $SG228489
+	push	OFFSET $SG228546
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 
-; 7139 : 				{
-; 7140 : 					if (eVictoryStrategy == (AIGrandStrategyTypes) GC.getInfoTypeForString("AIGRANDSTRATEGY_CONQUEST")&& !(GC.getMap().GetAIMapHint() & 1))
+; 7161 : 				{
+; 7162 : 					if (eVictoryStrategy == (AIGrandStrategyTypes) GC.getInfoTypeForString("AIGRANDSTRATEGY_CONQUEST")&& !(GC.getMap().GetAIMapHint() & 1))
 
 	push	0
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	cmp	ebp, eax
 	jne	SHORT $LN14@GetDesired
-	push	OFFSET $SG228492
+	push	OFFSET $SG228549
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	cmp	esi, eax
 	jne	SHORT $LN13@GetDesired
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+52
 	call	?GetAIMapHint@CvMap@@QAEHXZ		; CvMap::GetAIMapHint
 
-; 7141 : 					{
-; 7142 : 						iScore = 1000;
+; 7163 : 					{
+; 7164 : 						iScore = 1000;
 
 	mov	esi, 1000				; 000003e8H
 	test	al, 1
 	je	SHORT $LN12@GetDesired
 $LN13@GetDesired:
 
-; 7143 : 					}
-; 7144 : 					else
-; 7145 : 					{
-; 7146 : 						iScore = 400;
+; 7165 : 					}
+; 7166 : 					else
+; 7167 : 					{
+; 7168 : 						iScore = 400;
 
 	mov	esi, 400				; 00000190H
 $LN12@GetDesired:
 
-; 7147 : 					}
-; 7148 : 					iScore /= (1+ m_pPlayer->getGeneralsFromFaith() + m_pPlayer->GetNumUnitsWithUnitAI(UNITAI_GENERAL));
+; 7169 : 					}
+; 7170 : 					iScore /= (1+ m_pPlayer->getGeneralsFromFaith() + m_pPlayer->GetNumUnitsWithUnitAI(UNITAI_GENERAL));
 
 	mov	ecx, DWORD PTR [ebx+4]
 	push	1
@@ -33053,44 +33093,44 @@ $LN12@GetDesired:
 	jmp	$LN72@GetDesired
 $LN14@GetDesired:
 
-; 7149 : 				}
-; 7150 : 				else if (eUnitClass == GC.getInfoTypeForString("UNITCLASS_GREAT_ADMIRAL"))
+; 7171 : 				}
+; 7172 : 				else if (eUnitClass == GC.getInfoTypeForString("UNITCLASS_GREAT_ADMIRAL"))
 
-	push	OFFSET $SG228496
+	push	OFFSET $SG228553
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 
-; 7151 : 				{
-; 7152 : 					if (eVictoryStrategy == (AIGrandStrategyTypes) GC.getInfoTypeForString("AIGRANDSTRATEGY_CONQUEST") && GC.getMap().GetAIMapHint() & 1)
+; 7173 : 				{
+; 7174 : 					if (eVictoryStrategy == (AIGrandStrategyTypes) GC.getInfoTypeForString("AIGRANDSTRATEGY_CONQUEST") && GC.getMap().GetAIMapHint() & 1)
 
 	push	0
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	cmp	ebp, eax
 	jne	SHORT $LN10@GetDesired
-	push	OFFSET $SG228499
+	push	OFFSET $SG228556
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	cmp	esi, eax
 	jne	SHORT $LN9@GetDesired
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+52
 	call	?GetAIMapHint@CvMap@@QAEHXZ		; CvMap::GetAIMapHint
 
-; 7153 : 					{
-; 7154 : 						iScore = 1000;
+; 7175 : 					{
+; 7176 : 						iScore = 1000;
 
 	mov	esi, 1000				; 000003e8H
 	test	al, 1
 	jne	SHORT $LN8@GetDesired
 $LN9@GetDesired:
 
-; 7155 : 					}
-; 7156 : 					else
-; 7157 : 					{
-; 7158 : 						iScore = 400;
+; 7177 : 					}
+; 7178 : 					else
+; 7179 : 					{
+; 7180 : 						iScore = 400;
 
 	mov	esi, 400				; 00000190H
 $LN8@GetDesired:
 
-; 7159 : 					}
-; 7160 : 					iScore /= (1+ m_pPlayer->getAdmiralsFromFaith() + m_pPlayer->GetNumUnitsWithUnitAI(UNITAI_ADMIRAL));
+; 7181 : 					}
+; 7182 : 					iScore /= (1+ m_pPlayer->getAdmiralsFromFaith() + m_pPlayer->GetNumUnitsWithUnitAI(UNITAI_ADMIRAL));
 
 	mov	ecx, DWORD PTR [ebx+4]
 	push	1
@@ -33105,14 +33145,14 @@ $LN8@GetDesired:
 	jmp	SHORT $LN72@GetDesired
 $LN10@GetDesired:
 
-; 7161 : 				}
-; 7162 : 				else if (eUnitClass == GC.getInfoTypeForString("UNITCLASS_MISSIONARY"))
+; 7183 : 				}
+; 7184 : 				else if (eUnitClass == GC.getInfoTypeForString("UNITCLASS_MISSIONARY"))
 
-	push	OFFSET $SG228503
+	push	OFFSET $SG228560
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 
-; 7163 : 				{
-; 7164 : 					if (HaveNearbyConversionTarget(eReligion, false /*bCanIncludeReligionStarter*/))
+; 7185 : 				{
+; 7186 : 					if (HaveNearbyConversionTarget(eReligion, false /*bCanIncludeReligionStarter*/))
 
 	push	0
 	cmp	ebp, eax
@@ -33124,29 +33164,29 @@ $LN10@GetDesired:
 	test	al, al
 	je	SHORT $LN2@GetDesired
 
-; 7165 : 					{
-; 7166 : 						iScore = 1000 / (m_pPlayer->GetNumUnitsWithUnitAI(UNITAI_MISSIONARY) + 1);		
+; 7187 : 					{
+; 7188 : 						iScore = 1000 / (m_pPlayer->GetNumUnitsWithUnitAI(UNITAI_MISSIONARY) + 1);		
 
 	push	1
 	push	0
 	push	35					; 00000023H
 
-; 7167 : 					}
-; 7168 : 				}
+; 7189 : 					}
+; 7190 : 				}
 
 	jmp	SHORT $LN73@GetDesired
 $LN6@GetDesired:
 
-; 7169 : 				else if (eUnitClass == GC.getInfoTypeForString("UNITCLASS_INQUISITOR"))
+; 7191 : 				else if (eUnitClass == GC.getInfoTypeForString("UNITCLASS_INQUISITOR"))
 
-	push	OFFSET $SG228507
+	push	OFFSET $SG228564
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	cmp	ebp, eax
 	jne	SHORT $LN2@GetDesired
 
-; 7170 : 				{
-; 7171 : 					if (HaveEnoughInquisitors(eReligion))
+; 7192 : 				{
+; 7193 : 					if (HaveEnoughInquisitors(eReligion))
 
 	mov	edx, DWORD PTR _eReligion$[esp+36]
 	push	edx
@@ -33155,8 +33195,8 @@ $LN6@GetDesired:
 	test	al, al
 	je	SHORT $LN2@GetDesired
 
-; 7172 : 					{
-; 7173 : 						iScore = 1000 / (m_pPlayer->GetNumUnitsWithUnitAI(UNITAI_INQUISITOR) + 1);
+; 7194 : 					{
+; 7195 : 						iScore = 1000 / (m_pPlayer->GetNumUnitsWithUnitAI(UNITAI_INQUISITOR) + 1);
 
 	push	1
 	push	0
@@ -33175,18 +33215,18 @@ $LN72@GetDesired:
 	mov	edi, eax
 $LN2@GetDesired:
 
-; 7174 : 					}
-; 7175 : 				}
-; 7176 : 
-; 7177 : 				if (iScore > iBestScore)
+; 7196 : 					}
+; 7197 : 				}
+; 7198 : 
+; 7199 : 				if (iScore > iBestScore)
 
 	cmp	edi, DWORD PTR _iBestScore$[esp+36]
 
-; 7178 : 				{
-; 7179 : 					iBestScore = iScore;
-; 7180 : 					eRtnValue = eUnit;
+; 7200 : 				{
+; 7201 : 					iBestScore = iScore;
+; 7202 : 					eRtnValue = eUnit;
 
-	mov	esi, DWORD PTR _iUnitLoop$228420[esp+36]
+	mov	esi, DWORD PTR _iUnitLoop$228477[esp+36]
 	jle	SHORT $LN52@GetDesired
 	mov	edx, esi
 	mov	DWORD PTR _iBestScore$[esp+36], edi
@@ -33194,17 +33234,17 @@ $LN2@GetDesired:
 $LN52@GetDesired:
 	inc	esi
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	mov	DWORD PTR _iUnitLoop$228420[esp+36], esi
+	mov	DWORD PTR _iUnitLoop$228477[esp+36], esi
 	call	?getNumUnitInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumUnitInfos
 	cmp	esi, eax
 	jl	$LL69@GetDesired
 
-; 7181 : 				}
-; 7182 : 			}
-; 7183 : 		}
-; 7184 : 	}
-; 7185 : 
-; 7186 : 	return eRtnValue;
+; 7203 : 				}
+; 7204 : 			}
+; 7205 : 		}
+; 7206 : 	}
+; 7207 : 
+; 7208 : 	return eRtnValue;
 
 	mov	eax, DWORD PTR _eRtnValue$[esp+36]
 	pop	ebp
@@ -33212,25 +33252,25 @@ $LN52@GetDesired:
 	pop	esi
 	pop	ebx
 
-; 7187 : }
+; 7209 : }
 
 	add	esp, 20					; 00000014H
 	ret	0
 $LN64@GetDesired:
 
-; 7181 : 				}
-; 7182 : 			}
-; 7183 : 		}
-; 7184 : 	}
-; 7185 : 
-; 7186 : 	return eRtnValue;
+; 7203 : 				}
+; 7204 : 			}
+; 7205 : 		}
+; 7206 : 	}
+; 7207 : 
+; 7208 : 	return eRtnValue;
 
 	mov	eax, edi
 	pop	edi
 	pop	esi
 	pop	ebx
 
-; 7187 : }
+; 7209 : }
 
 	add	esp, 20					; 00000014H
 	ret	0
@@ -33558,10 +33598,10 @@ xdata$x	ENDS
 ;	COMDAT ?GrowSize@?$FStaticVector@VCvReligion@@$0BA@$0A@$0BCJ@$0A@@@IAEXI@Z
 _TEXT	SEGMENT
 _pTemp$ = -20						; size = 4
-$T240897 = -16						; size = 4
+$T240978 = -16						; size = 4
 __$EHRec$ = -12						; size = 12
-$T240952 = 8						; size = 4
-_i$228893 = 8						; size = 4
+$T241033 = 8						; size = 4
+_i$228950 = 8						; size = 4
 _uiFit$ = 8						; size = 4
 ?GrowSize@?$FStaticVector@VCvReligion@@$0BA@$0A@$0BCJ@$0A@@@IAEXI@Z PROC ; FStaticVector<CvReligion,16,0,297,0>::GrowSize, COMDAT
 ; _this$ = ecx
@@ -33660,7 +33700,7 @@ $LN15@GrowSize@3:
 	xor	edi, edi
 	push	ebp
 	mov	DWORD PTR _pTemp$[esp+36], ebx
-	mov	DWORD PTR _i$228893[esp+32], edi
+	mov	DWORD PTR _i$228950[esp+32], edi
 	cmp	DWORD PTR [esi+4], edi
 	jbe	SHORT $LN1@GrowSize@3
 	or	ebp, -1
@@ -33671,7 +33711,7 @@ $LL3@GrowSize@3:
 	mov	eax, edi
 	imul	eax, 328				; 00000148H
 	lea	ecx, DWORD PTR [eax+ebx]
-	mov	DWORD PTR $T240897[esp+36], ecx
+	mov	DWORD PTR $T240978[esp+36], ecx
 	mov	DWORD PTR __$EHRec$[esp+44], 0
 	test	ecx, ecx
 	je	SHORT $LN12@GrowSize@3
@@ -33682,7 +33722,7 @@ $LL3@GrowSize@3:
 $LN12@GrowSize@3:
 	inc	edi
 	mov	DWORD PTR __$EHRec$[esp+44], ebp
-	mov	DWORD PTR _i$228893[esp+32], edi
+	mov	DWORD PTR _i$228950[esp+32], edi
 	cmp	edi, DWORD PTR [esi+4]
 	jb	SHORT $LL3@GrowSize@3
 $LN1@GrowSize@3:
@@ -33692,7 +33732,7 @@ $LN1@GrowSize@3:
 
 	mov	eax, DWORD PTR [esi+4]
 	mov	edi, DWORD PTR [esi]
-	mov	DWORD PTR $T240952[esp+32], edi
+	mov	DWORD PTR $T241033[esp+32], edi
 	test	eax, eax
 	jbe	SHORT $LN25@GrowSize@3
 	add	edi, 152				; 00000098H
@@ -33704,7 +33744,7 @@ $LL27@GrowSize@3:
 	add	edi, 328				; 00000148H
 	sub	ebp, 1
 	jne	SHORT $LL27@GrowSize@3
-	mov	edi, DWORD PTR $T240952[esp+32]
+	mov	edi, DWORD PTR $T241033[esp+32]
 $LN25@GrowSize@3:
 	lea	eax, DWORD PTR [esi+12]
 	pop	ebp
@@ -33733,11 +33773,11 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GrowSize@?$FStaticVector@VCvReligion@@$0BA@$0A@$0BCJ@$0A@@@IAEXI@Z$0:
-	mov	eax, DWORD PTR _i$228893[ebp-4]
+	mov	eax, DWORD PTR _i$228950[ebp-4]
 	imul	eax, 328				; 00000148H
 	add	eax, DWORD PTR _pTemp$[ebp]
 	push	eax
-	mov	ecx, DWORD PTR $T240897[ebp]
+	mov	ecx, DWORD PTR $T240978[ebp]
 	push	ecx
 	call	??3@YAXPAX0@Z				; operator delete
 	add	esp, 8
@@ -33828,10 +33868,10 @@ PUBLIC	??$_Ucopy@V?$_Vector_const_iterator@W4BeliefTypes@@V?$allocator@W4BeliefT
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\vector
 ;	COMDAT ??$_Ucopy@V?$_Vector_const_iterator@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@@?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@IAEPAW4BeliefTypes@@V?$_Vector_const_iterator@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@1@0PAW42@@Z
 _TEXT	SEGMENT
-$T241030 = -4						; size = 1
+$T241111 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$241034 = 16					; size = 1
+__Cat$241115 = 16					; size = 1
 __Ptr$ = 16						; size = 4
 ??$_Ucopy@V?$_Vector_const_iterator@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@@?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@IAEPAW4BeliefTypes@@V?$_Vector_const_iterator@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@1@0PAW42@@Z PROC ; std::vector<enum BeliefTypes,std::allocator<enum BeliefTypes> >::_Ucopy<std::_Vector_const_iterator<enum BeliefTypes,std::allocator<enum BeliefTypes> > >, COMDAT
 ; _this$ = ecx
@@ -33844,9 +33884,9 @@ __Ptr$ = 16						; size = 4
 ; 1140 : 		return (_STDEXT unchecked_uninitialized_copy(_First, _Last,
 ; 1141 : 			_Ptr, this->_Alval));
 
-	mov	edx, DWORD PTR __Cat$241034[esp]
-	mov	BYTE PTR $T241030[esp+4], 0
-	mov	eax, DWORD PTR $T241030[esp+4]
+	mov	edx, DWORD PTR __Cat$241115[esp]
+	mov	BYTE PTR $T241111[esp+4], 0
+	mov	eax, DWORD PTR $T241111[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Ptr$[esp+4]
 	push	edx
@@ -33885,8 +33925,8 @@ PUBLIC	??$unchecked_uninitialized_fill_n@PAW4BeliefTypes@@IW41@V?$allocator@W4Be
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ??$unchecked_uninitialized_fill_n@PAW4BeliefTypes@@IW41@V?$allocator@W4BeliefTypes@@@std@@@stdext@@YAXPAW4BeliefTypes@@IABW41@AAV?$allocator@W4BeliefTypes@@@std@@@Z
 _TEXT	SEGMENT
-$T241048 = -4						; size = 1
-__Cat$241053 = -4					; size = 1
+$T241129 = -4						; size = 1
+__Cat$241134 = -4					; size = 1
 __First$ = 8						; size = 4
 __Count$ = 12						; size = 4
 __Val$ = 16						; size = 4
@@ -33901,9 +33941,9 @@ __Al$ = 20						; size = 4
 ; 942  : 		_STD _Ptr_cat(_First, _First), _STD _Range_checked_iterator_tag());
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T241048[esp+4], 0
-	mov	eax, DWORD PTR $T241048[esp+4]
-	mov	ecx, DWORD PTR __Cat$241053[esp+4]
+	mov	BYTE PTR $T241129[esp+4], 0
+	mov	eax, DWORD PTR $T241129[esp+4]
+	mov	ecx, DWORD PTR __Cat$241134[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Val$[esp+4]
 	push	ecx
@@ -33925,10 +33965,10 @@ PUBLIC	??$_Uninit_move@V?$_Vector_iterator@W4BeliefTypes@@V?$allocator@W4BeliefT
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Uninit_move@V?$_Vector_iterator@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@PAW4BeliefTypes@@V?$allocator@W4BeliefTypes@@@2@U_Undefined_move_tag@2@@std@@YAPAW4BeliefTypes@@V?$_Vector_iterator@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@0@0PAW41@AAV?$allocator@W4BeliefTypes@@@0@U_Undefined_move_tag@0@U_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
-$T241065 = -4						; size = 1
+$T241146 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$241069 = 16					; size = 1
+__Cat$241150 = 16					; size = 1
 __Dest$ = 16						; size = 4
 __Al$ = 20						; size = 4
 ___formal$ = 24						; size = 1
@@ -33941,10 +33981,10 @@ ___formal$ = 28						; size = 1
 
 ; 207  : 	return (_STDEXT unchecked_uninitialized_copy(_First, _Last, _Dest, _Al));
 
-	mov	ecx, DWORD PTR __Cat$241069[esp]
+	mov	ecx, DWORD PTR __Cat$241150[esp]
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T241065[esp+4], 0
-	mov	eax, DWORD PTR $T241065[esp+4]
+	mov	BYTE PTR $T241146[esp+4], 0
+	mov	eax, DWORD PTR $T241146[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -33967,9 +34007,9 @@ PUBLIC	??$_Unguarded_partition@PAUWeightedElement@?$CvWeightedVector@W4BeliefTyp
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\algorithm
 ;	COMDAT ??$_Unguarded_partition@PAUWeightedElement@?$CvWeightedVector@W4BeliefTypes@@$0GE@$00@@@std@@YA?AU?$pair@PAUWeightedElement@?$CvWeightedVector@W4BeliefTypes@@$0GE@$00@@PAU12@@0@PAUWeightedElement@?$CvWeightedVector@W4BeliefTypes@@$0GE@$00@@0@Z
 _TEXT	SEGMENT
-__Tmp$241182 = -24					; size = 8
-__Tmp$241111 = -16					; size = 8
-__Tmp$241137 = -8					; size = 8
+__Tmp$241263 = -24					; size = 8
+__Tmp$241192 = -16					; size = 8
+__Tmp$241218 = -8					; size = 8
 ___$ReturnUdt$ = 8					; size = 4
 __First$ = 12						; size = 4
 __Last$ = 16						; size = 4
@@ -34096,12 +34136,12 @@ $LL21@Unguarded_:
 	je	SHORT $LN20@Unguarded_
 	mov	ebp, DWORD PTR [edx+4]
 	mov	edi, DWORD PTR [edx]
-	mov	DWORD PTR __Tmp$241111[esp+44], ebp
+	mov	DWORD PTR __Tmp$241192[esp+44], ebp
 	mov	ebp, DWORD PTR [eax]
 	mov	DWORD PTR [edx], ebp
 	mov	ebp, DWORD PTR [eax+4]
 	mov	DWORD PTR [edx+4], ebp
-	mov	edx, DWORD PTR __Tmp$241111[esp+44]
+	mov	edx, DWORD PTR __Tmp$241192[esp+44]
 	mov	DWORD PTR [eax], edi
 	mov	DWORD PTR [eax+4], edx
 $LN20@Unguarded_:
@@ -34138,13 +34178,13 @@ $LL14@Unguarded_:
 	je	SHORT $LN13@Unguarded_
 	mov	ebp, DWORD PTR [ecx+4]
 	mov	edi, DWORD PTR [ecx]
-	mov	DWORD PTR __Tmp$241137[esp+44], ebp
+	mov	DWORD PTR __Tmp$241218[esp+44], ebp
 	mov	ebp, DWORD PTR [edx]
 	mov	DWORD PTR [ecx], ebp
 	mov	ebp, DWORD PTR [edx+4]
 	mov	DWORD PTR [ecx+4], ebp
 	mov	DWORD PTR [edx], edi
-	mov	edi, DWORD PTR __Tmp$241137[esp+44]
+	mov	edi, DWORD PTR __Tmp$241218[esp+44]
 	mov	DWORD PTR [edx+4], edi
 $LN13@Unguarded_:
 	sub	ebx, 8
@@ -34194,16 +34234,16 @@ $LN64@Unguarded_:
 	cmp	edi, edx
 	je	$LL23@Unguarded_
 	mov	ebp, DWORD PTR [edi]
-	mov	DWORD PTR __Tmp$241182[esp+40], ebp
+	mov	DWORD PTR __Tmp$241263[esp+40], ebp
 	mov	ebp, DWORD PTR [edi+4]
-	mov	DWORD PTR __Tmp$241182[esp+44], ebp
+	mov	DWORD PTR __Tmp$241263[esp+44], ebp
 	mov	ebp, DWORD PTR [edx]
 	mov	DWORD PTR [edi], ebp
 	mov	ebp, DWORD PTR [edx+4]
 	mov	DWORD PTR [edi+4], ebp
-	mov	edi, DWORD PTR __Tmp$241182[esp+40]
+	mov	edi, DWORD PTR __Tmp$241263[esp+40]
 	mov	DWORD PTR [edx], edi
-	mov	edi, DWORD PTR __Tmp$241182[esp+44]
+	mov	edi, DWORD PTR __Tmp$241263[esp+44]
 	mov	DWORD PTR [edx+4], edi
 	jmp	$LL23@Unguarded_
 $LN6@Unguarded_:
@@ -34351,10 +34391,10 @@ PUBLIC	??$_Uninit_move@PAW4BeliefTypes@@PAW41@V?$allocator@W4BeliefTypes@@@std@@
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ??$_Uninit_move@PAW4BeliefTypes@@PAW41@V?$allocator@W4BeliefTypes@@@std@@U_Undefined_move_tag@3@@std@@YAPAW4BeliefTypes@@PAW41@00AAV?$allocator@W4BeliefTypes@@@0@U_Undefined_move_tag@0@U_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
-$T241292 = -4						; size = 1
+$T241373 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$241295 = 16					; size = 1
+__Cat$241376 = 16					; size = 1
 __Dest$ = 16						; size = 4
 __Al$ = 20						; size = 4
 ___formal$ = 24						; size = 1
@@ -34367,10 +34407,10 @@ ___formal$ = 28						; size = 1
 
 ; 207  : 	return (_STDEXT unchecked_uninitialized_copy(_First, _Last, _Dest, _Al));
 
-	mov	ecx, DWORD PTR __Cat$241295[esp]
+	mov	ecx, DWORD PTR __Cat$241376[esp]
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T241292[esp+4], 0
-	mov	eax, DWORD PTR $T241292[esp+4]
+	mov	BYTE PTR $T241373[esp+4], 0
+	mov	eax, DWORD PTR $T241373[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -34488,6 +34528,7 @@ EXTRN	?ChangeFaith@CvPlayer@@QAEXH@Z:PROC		; CvPlayer::ChangeFaith
 EXTRN	?DoSpawnGreatPerson@CvCityCitizens@@QAEXW4UnitTypes@@_N1@Z:PROC ; CvCityCitizens::DoSpawnGreatPerson
 EXTRN	?GetCityCitizens@CvCity@@QBEPAVCvCityCitizens@@XZ:PROC ; CvCity::GetCityCitizens
 EXTRN	?getJonRandNum@CvGame@@QAEHHPBD@Z:PROC		; CvGame::getJonRandNum
+EXTRN	?getCivilizationUnits@CvCivilizationInfo@@QBEHH@Z:PROC ; CvCivilizationInfo::getCivilizationUnits
 ;	COMDAT xdata$x
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredllutil\include\cvstring.h
 xdata$x	SEGMENT
@@ -34509,10 +34550,10 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 _this$ = -76						; size = 4
 _eUnit$ = -72						; size = 4
-_strLogMsg$225708 = -68					; size = 28
-$T241379 = -40						; size = 28
+_strLogMsg$225753 = -68					; size = 28
+$T241460 = -40						; size = 28
 __$EHRec$ = -12						; size = 12
-$T241513 = 8						; size = 4
+$T241594 = 8						; size = 4
 _iFaith$ = 8						; size = 4
 _kPlayer$ = 8						; size = 4
 ?CheckSpawnGreatProphet@CvGameReligions@@AAE_NAAVCvPlayer@@@Z PROC ; CvGameReligions::CheckSpawnGreatProphet, COMDAT
@@ -34526,72 +34567,103 @@ _kPlayer$ = 8						; size = 4
 	push	eax
 	mov	DWORD PTR fs:0, esp
 	sub	esp, 64					; 00000040H
+	push	esi
+	push	edi
 
-; 2458 : 	UnitTypes eUnit = (UnitTypes)GC.getInfoTypeForString("UNIT_PROPHET", true);
+; 2458 : #ifdef LEK_UNIQUE_FAITH_UNIT_FIX
+; 2459 : 	UnitClassTypes eUnitClass = (UnitClassTypes) GC.getInfoTypeForString("UNITCLASS_PROPHET", true);
 
 	push	1
-	mov	DWORD PTR _this$[esp+80], ecx
-	push	OFFSET $SG225688
+	mov	DWORD PTR _this$[esp+88], ecx
+	push	OFFSET $SG225730
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
-	mov	DWORD PTR _eUnit$[esp+76], eax
 
-; 2459 : 	if (eUnit == NO_UNIT)
+; 2460 : 	UnitTypes eUnit = (UnitTypes) kPlayer.getCivilizationInfo().getCivilizationUnits(eUnitClass);
 
-	cmp	eax, -1
-	jne	SHORT $LN11@CheckSpawn
+	mov	edi, DWORD PTR _kPlayer$[esp+80]
+	mov	esi, eax
+	push	esi
+	mov	ecx, edi
+	call	?getCivilizationInfo@CvPlayer@@QBEAAVCvCivilizationInfo@@XZ ; CvPlayer::getCivilizationInfo
+	mov	ecx, eax
+	call	?getCivilizationUnits@CvCivilizationInfo@@QBEHH@Z ; CvCivilizationInfo::getCivilizationUnits
+	mov	DWORD PTR _eUnit$[esp+84], eax
 
-; 2460 : 	{
-; 2461 : 		return false;
+; 2461 : #else
+; 2462 : 	UnitTypes eUnit = (UnitTypes)GC.getInfoTypeForString("UNIT_PROPHET", true);
+; 2463 : #endif
+; 2464 : 
+; 2465 : 
+; 2466 : #ifdef LEK_UNIQUE_FAITH_UNIT_FIX
+; 2467 : 	
+; 2468 : 	if (eUnitClass == NO_UNITCLASS)
+
+	cmp	esi, -1
+	jne	SHORT $LN12@CheckSpawn
+$LN95@CheckSpawn:
+	pop	edi
+
+; 2469 :     {
+; 2470 :         return false;
 
 	xor	al, al
+	pop	esi
 
-; 2533 : 
-; 2534 : 	return true;
-; 2535 : }
+; 2555 : 
+; 2556 : 	return true;
+; 2557 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+76]
 	mov	DWORD PTR fs:0, ecx
 	add	esp, 76					; 0000004cH
 	ret	4
-$LN11@CheckSpawn:
+$LN12@CheckSpawn:
+
+; 2471 :     }
+; 2472 : #endif
+; 2473 : 	if (eUnit == NO_UNIT)
+
+	cmp	eax, -1
+
+; 2474 : 	{
+; 2475 : 		return false;
+
+	je	SHORT $LN95@CheckSpawn
 	push	ebx
 	push	ebp
 
-; 2462 : 	}
-; 2463 : 
-; 2464 : 	const CvReligion* pReligion = NULL;
-; 2465 : 	const int iFaith = kPlayer.GetFaith();
+; 2476 : 	}
+; 2477 : 
+; 2478 : 	const CvReligion* pReligion = NULL;
+; 2479 : 	const int iFaith = kPlayer.GetFaith();
 
-	mov	ebp, DWORD PTR _kPlayer$[esp+80]
-	push	esi
-	push	edi
-	mov	ecx, ebp
-	xor	edi, edi
+	mov	ecx, edi
+	xor	ebp, ebp
 	call	?GetFaith@CvPlayer@@QBEHXZ		; CvPlayer::GetFaith
 
-; 2466 : 	int iCost = kPlayer.GetReligions()->GetCostNextProphet(true /*bIncludeBeliefDiscounts*/, true /*bAdjustForSpeedDifficulty*/);
+; 2480 : 	int iCost = kPlayer.GetReligions()->GetCostNextProphet(true /*bIncludeBeliefDiscounts*/, true /*bAdjustForSpeedDifficulty*/);
 
 	push	1
 	push	1
-	mov	ecx, ebp
+	mov	ecx, edi
 	mov	DWORD PTR _iFaith$[esp+96], eax
 	call	?GetReligions@CvPlayer@@QBEPAVCvPlayerReligions@@XZ ; CvPlayer::GetReligions
 	mov	ecx, eax
 	call	?GetCostNextProphet@CvPlayerReligions@@QBEH_N0@Z ; CvPlayerReligions::GetCostNextProphet
 
-; 2467 : 
-; 2468 : 	ReligionTypes ePlayerReligion = GetReligionCreatedByPlayer(kPlayer.GetID());
+; 2481 : 
+; 2482 : 	ReligionTypes ePlayerReligion = GetReligionCreatedByPlayer(kPlayer.GetID());
 
-	mov	esi, DWORD PTR [ebp+44]
+	mov	esi, DWORD PTR [edi+44]
 	mov	ecx, DWORD PTR _this$[esp+92]
 	push	esi
 	mov	ebx, eax
 	call	?GetReligionCreatedByPlayer@CvGameReligions@@QBE?AW4ReligionTypes@@W4PlayerTypes@@@Z ; CvGameReligions::GetReligionCreatedByPlayer
 
-; 2469 : 	if(ePlayerReligion > RELIGION_PANTHEON)
-; 2470 : 	{
-; 2471 : 		pReligion = GetReligion(ePlayerReligion, kPlayer.GetID());
+; 2483 : 	if(ePlayerReligion > RELIGION_PANTHEON)
+; 2484 : 	{
+; 2485 : 		pReligion = GetReligion(ePlayerReligion, kPlayer.GetID());
 
 	mov	ecx, DWORD PTR _this$[esp+92]
 	test	eax, eax
@@ -34599,71 +34671,71 @@ $LN11@CheckSpawn:
 	push	esi
 	push	eax
 	call	?GetReligion@CvGameReligions@@QBEPBVCvReligion@@W4ReligionTypes@@W4PlayerTypes@@@Z ; CvGameReligions::GetReligion
-	mov	edi, eax
+	mov	ebp, eax
 	jmp	SHORT $LN8@CheckSpawn
 $LN10@CheckSpawn:
 
-; 2472 : 	}
-; 2473 : 
-; 2474 : 	// If player hasn't founded a religion yet, drop out of this if all religions have been founded
-; 2475 : 	else if(GetNumReligionsStillToFound() <= 0)
+; 2486 : 	}
+; 2487 : 
+; 2488 : 	// If player hasn't founded a religion yet, drop out of this if all religions have been founded
+; 2489 : 	else if(GetNumReligionsStillToFound() <= 0)
 
 	call	?GetNumReligionsStillToFound@CvGameReligions@@QBEHXZ ; CvGameReligions::GetNumReligionsStillToFound
 	test	eax, eax
 
-; 2476 : 	{
-; 2477 : 		return false;
+; 2490 : 	{
+; 2491 : 		return false;
 
-	jle	SHORT $LN95@CheckSpawn
+	jle	SHORT $LN94@CheckSpawn
 $LN8@CheckSpawn:
 
-; 2478 : 	}
-; 2479 : 
-; 2480 : 	if(iFaith < iCost)
+; 2492 : 	}
+; 2493 : 
+; 2494 : 	if(iFaith < iCost)
 
 	mov	eax, DWORD PTR _iFaith$[esp+88]
 	cmp	eax, ebx
 
-; 2481 : 	{
-; 2482 : 		return false;
+; 2495 : 	{
+; 2496 : 		return false;
 
-	jl	SHORT $LN95@CheckSpawn
+	jl	SHORT $LN94@CheckSpawn
 
-; 2483 : 	}
-; 2484 : 
-; 2485 : 	int iChance = GC.getRELIGION_BASE_CHANCE_PROPHET_SPAWN();
-; 2486 : 	iChance += (iFaith - iCost);
+; 2497 : 	}
+; 2498 : 
+; 2499 : 	int iChance = GC.getRELIGION_BASE_CHANCE_PROPHET_SPAWN();
+; 2500 : 	iChance += (iFaith - iCost);
 
 	mov	esi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+7884
 
-; 2487 : 
-; 2488 : 	int iRand = GC.getGame().getJonRandNum(100, "Religion: spawn Great Prophet roll.");
+; 2501 : 
+; 2502 : 	int iRand = GC.getGame().getJonRandNum(100, "Religion: spawn Great Prophet roll.");
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
-	push	OFFSET $SG225700
+	push	OFFSET $SG225745
 	sub	esi, ebx
 	push	100					; 00000064H
 	add	esi, eax
 	call	?getJonRandNum@CvGame@@QAEHHPBD@Z	; CvGame::getJonRandNum
 
-; 2489 : 	if(iRand >= iChance)
+; 2503 : 	if(iRand >= iChance)
 
 	cmp	eax, esi
 	jl	SHORT $LN6@CheckSpawn
-$LN95@CheckSpawn:
-	pop	edi
-	pop	esi
+$LN94@CheckSpawn:
 	pop	ebp
+	pop	ebx
+	pop	edi
 
-; 2490 : 	{
-; 2491 : 		return false;
+; 2504 : 	{
+; 2505 : 		return false;
 
 	xor	al, al
-	pop	ebx
+	pop	esi
 
-; 2533 : 
-; 2534 : 	return true;
-; 2535 : }
+; 2555 : 
+; 2556 : 	return true;
+; 2557 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+76]
 	mov	DWORD PTR fs:0, ecx
@@ -34671,157 +34743,165 @@ $LN95@CheckSpawn:
 	ret	4
 $LN6@CheckSpawn:
 
-; 2492 : 	}
-; 2493 : 
-; 2494 : 	CvCity* pSpawnCity = NULL;
-; 2495 : 	if(pReligion)
+; 2506 : 	}
+; 2507 : 
+; 2508 : 	CvCity* pSpawnCity = NULL;
+; 2509 : 	if(pReligion)
 
-	test	edi, edi
+	test	ebp, ebp
 	je	$LN4@CheckSpawn
 
-; 2496 : 	{
-; 2497 : 		pSpawnCity = GC.getMap().plot(pReligion->m_iHolyCityX, pReligion->m_iHolyCityY)->getPlotCity();
+; 2510 : 	{
+; 2511 : 		pSpawnCity = GC.getMap().plot(pReligion->m_iHolyCityX, pReligion->m_iHolyCityY)->getPlotCity();
 
-	mov	eax, DWORD PTR [edi+8]
-	mov	ecx, DWORD PTR [edi+12]
-	mov	DWORD PTR $T241513[esp+88], ecx
+	mov	eax, DWORD PTR [ebp+8]
+	mov	ecx, DWORD PTR [ebp+12]
+	mov	DWORD PTR $T241594[esp+88], ecx
 	cmp	eax, -2147483647			; 80000001H
-	je	$LN30@CheckSpawn
+	je	$LN31@CheckSpawn
 	cmp	ecx, -2147483647			; 80000001H
-	je	$LN30@CheckSpawn
+	je	$LN31@CheckSpawn
 	mov	esi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+52
 	mov	dl, BYTE PTR [esi+4056]
 	mov	ecx, DWORD PTR [esi+4020]
 	test	dl, dl
-	je	SHORT $LN86@CheckSpawn
+	je	SHORT $LN87@CheckSpawn
 	test	eax, eax
-	jge	SHORT $LN42@CheckSpawn
+	jge	SHORT $LN43@CheckSpawn
 	cdq
 	idiv	ecx
-	mov	edi, edx
-	add	edi, ecx
-	jmp	SHORT $LN44@CheckSpawn
-$LN42@CheckSpawn:
+	mov	ebp, edx
+	add	ebp, ecx
+	jmp	SHORT $LN45@CheckSpawn
+$LN43@CheckSpawn:
 	cmp	eax, ecx
-	jl	SHORT $LN86@CheckSpawn
+	jl	SHORT $LN87@CheckSpawn
 	cdq
 	idiv	ecx
-	mov	edi, edx
-	jmp	SHORT $LN44@CheckSpawn
-$LN86@CheckSpawn:
-	mov	edi, eax
-$LN44@CheckSpawn:
+	mov	ebp, edx
+	jmp	SHORT $LN45@CheckSpawn
+$LN87@CheckSpawn:
+	mov	ebp, eax
+$LN45@CheckSpawn:
 	mov	al, BYTE PTR [esi+4057]
 	mov	esi, DWORD PTR [esi+4024]
 	test	al, al
-	mov	eax, DWORD PTR $T241513[esp+88]
-	je	SHORT $LN50@CheckSpawn
+	mov	eax, DWORD PTR $T241594[esp+88]
+	je	SHORT $LN51@CheckSpawn
 	test	eax, eax
-	jge	SHORT $LN52@CheckSpawn
+	jge	SHORT $LN53@CheckSpawn
 	cdq
 	idiv	esi
 	add	edx, esi
-	jmp	SHORT $LN54@CheckSpawn
-$LN52@CheckSpawn:
+	jmp	SHORT $LN55@CheckSpawn
+$LN53@CheckSpawn:
 	cmp	eax, esi
-	jl	SHORT $LN50@CheckSpawn
+	jl	SHORT $LN51@CheckSpawn
 	cdq
 	idiv	esi
-	jmp	SHORT $LN54@CheckSpawn
-$LN50@CheckSpawn:
+	jmp	SHORT $LN55@CheckSpawn
+$LN51@CheckSpawn:
 	mov	edx, eax
-$LN54@CheckSpawn:
-	test	edi, edi
-	jl	SHORT $LN30@CheckSpawn
-	cmp	edi, ecx
-	jge	SHORT $LN30@CheckSpawn
+$LN55@CheckSpawn:
+	test	ebp, ebp
+	jl	SHORT $LN31@CheckSpawn
+	cmp	ebp, ecx
+	jge	SHORT $LN31@CheckSpawn
 	test	edx, edx
-	jl	SHORT $LN30@CheckSpawn
+	jl	SHORT $LN31@CheckSpawn
 	cmp	edx, esi
-	jge	SHORT $LN30@CheckSpawn
+	jge	SHORT $LN31@CheckSpawn
 	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+52
 	imul	ecx, edx
-	add	ecx, edi
+	add	ecx, ebp
 	imul	ecx, 484				; 000001e4H
 	add	ecx, DWORD PTR [eax+4068]
-	jmp	SHORT $LN32@CheckSpawn
-$LN30@CheckSpawn:
+	jmp	SHORT $LN33@CheckSpawn
+$LN31@CheckSpawn:
 	xor	ecx, ecx
-$LN32@CheckSpawn:
+$LN33@CheckSpawn:
 	call	?getPlotCity@CvPlot@@QBEPAVCvCity@@XZ	; CvPlot::getPlotCity
 	mov	esi, eax
 
-; 2498 : 	}
-; 2499 : 
-; 2500 : 	if(pSpawnCity != NULL && pSpawnCity->getOwner() == kPlayer.GetID())
+; 2512 : 	}
+; 2513 : 
+; 2514 : 	if(pSpawnCity != NULL && pSpawnCity->getOwner() == kPlayer.GetID())
 
 	test	esi, esi
 	je	SHORT $LN4@CheckSpawn
 	mov	eax, DWORD PTR [esi+84]
-	cmp	eax, DWORD PTR [ebp+44]
+	cmp	eax, DWORD PTR [edi+44]
 	jne	SHORT $LN4@CheckSpawn
 
-; 2501 : 	{
-; 2502 : 		pSpawnCity->GetCityCitizens()->DoSpawnGreatPerson(eUnit, false /*bIncrementCount*/, true);
+; 2515 : 	{
+; 2516 : #ifdef LEK_UNIQUE_FAITH_UNIT_FIX
+; 2517 : 		pSpawnCity->GetCityCitizens()->DoSpawnGreatPerson(eUnit, false /*bIncrementCount*/, true);
 
 	mov	ecx, DWORD PTR _eUnit$[esp+92]
 	push	1
 	push	0
 	push	ecx
 
-; 2503 : #ifdef NQ_SPAWN_PROPHETS_REMOVE_ONLY_REQUIRED_FAITH
-; 2504 : 		kPlayer.ChangeFaith(-iCost);
-; 2505 : #else
-; 2506 : 		kPlayer.SetFaith(0);
-; 2507 : #endif
-; 2508 : 	}
-; 2509 : 	else
+; 2518 : #else
+; 2519 : 		pSpawnCity->GetCityCitizens()->DoSpawnGreatPerson(eUnit, false /*bIncrementCount*/, true);
+; 2520 : #endif
+; 2521 : #ifdef NQ_SPAWN_PROPHETS_REMOVE_ONLY_REQUIRED_FAITH
+; 2522 : 		kPlayer.ChangeFaith(-iCost);
+; 2523 : #else
+; 2524 : 		kPlayer.SetFaith(0);
+; 2525 : #endif
+; 2526 : 	}
+; 2527 : 	else
 
-	jmp	SHORT $LN94@CheckSpawn
+	jmp	SHORT $LN93@CheckSpawn
 $LN4@CheckSpawn:
 
-; 2510 : 	{
-; 2511 : 		pSpawnCity = kPlayer.getCapitalCity();
+; 2528 : 	{
+; 2529 : 		pSpawnCity = kPlayer.getCapitalCity();
 
-	mov	ecx, ebp
+	mov	ecx, edi
 	call	?getCapitalCity@CvPlayer@@QAEPAVCvCity@@XZ ; CvPlayer::getCapitalCity
 	mov	esi, eax
 
-; 2512 : 		if(pSpawnCity != NULL)
+; 2530 : 		if(pSpawnCity != NULL)
 
 	test	esi, esi
-	je	SHORT $LN87@CheckSpawn
+	je	SHORT $LN88@CheckSpawn
 
-; 2513 : 		{
-; 2514 : 			pSpawnCity->GetCityCitizens()->DoSpawnGreatPerson(eUnit, false /*bIncrementCount*/, true);
+; 2531 : 		{
+; 2532 : #ifdef LEK_UNIQUE_FAITH_UNIT_FIX
+; 2533 : 		pSpawnCity->GetCityCitizens()->DoSpawnGreatPerson(eUnit, false /*bIncrementCount*/, true);
 
 	mov	edx, DWORD PTR _eUnit$[esp+92]
 	push	1
 	push	0
 	push	edx
-$LN94@CheckSpawn:
+$LN93@CheckSpawn:
 	mov	ecx, esi
 	call	?GetCityCitizens@CvCity@@QBEPAVCvCityCitizens@@XZ ; CvCity::GetCityCitizens
 	mov	ecx, eax
 	call	?DoSpawnGreatPerson@CvCityCitizens@@QAEXW4UnitTypes@@_N1@Z ; CvCityCitizens::DoSpawnGreatPerson
 
-; 2515 : #ifdef NQ_SPAWN_PROPHETS_REMOVE_ONLY_REQUIRED_FAITH
-; 2516 : 			kPlayer.ChangeFaith(-iCost);
+; 2534 : #else
+; 2535 : 		pSpawnCity->GetCityCitizens()->DoSpawnGreatPerson(eUnit, false /*bIncrementCount*/, true);
+; 2536 : #endif
+; 2537 : #ifdef NQ_SPAWN_PROPHETS_REMOVE_ONLY_REQUIRED_FAITH
+; 2538 : 			kPlayer.ChangeFaith(-iCost);
 
 	neg	ebx
 	push	ebx
-	mov	ecx, ebp
+	mov	ecx, edi
 	call	?ChangeFaith@CvPlayer@@QAEXH@Z		; CvPlayer::ChangeFaith
-$LN87@CheckSpawn:
+$LN88@CheckSpawn:
 
-; 2517 : #else
-; 2518 : 			kPlayer.SetFaith(0);
-; 2519 : #endif
-; 2520 : 		}
-; 2521 : 	}
-; 2522 : 
-; 2523 : 	// Logging
-; 2524 : 	if(GC.getLogging() && pSpawnCity)
+; 2539 : #else
+; 2540 : 			kPlayer.SetFaith(0);
+; 2541 : #endif
+; 2542 : 		}
+; 2543 : 	}
+; 2544 : 
+; 2545 : 	// Logging
+; 2546 : 	if(GC.getLogging() && pSpawnCity)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getLogging@CvGlobals@@QAE_NXZ		; CvGlobals::getLogging
@@ -34830,71 +34910,71 @@ $LN87@CheckSpawn:
 	test	esi, esi
 	je	$LN1@CheckSpawn
 
-; 2525 : 	{
-; 2526 : 		CvString strLogMsg;
+; 2547 : 	{
+; 2548 : 		CvString strLogMsg;
 
-	lea	ecx, DWORD PTR _strLogMsg$225708[esp+92]
+	lea	ecx, DWORD PTR _strLogMsg$225753[esp+92]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 2527 : 		strLogMsg = kPlayer.getCivilizationShortDescription();
+; 2549 : 		strLogMsg = kPlayer.getCivilizationShortDescription();
 
-	mov	ecx, ebp
+	mov	ecx, edi
 	mov	DWORD PTR __$EHRec$[esp+100], 0
 	call	?getCivilizationShortDescription@CvPlayer@@QBEPBDXZ ; CvPlayer::getCivilizationShortDescription
 	push	eax
-	lea	ecx, DWORD PTR _strLogMsg$225708[esp+96]
+	lea	ecx, DWORD PTR _strLogMsg$225753[esp+96]
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
-; 2528 : 		strLogMsg += ", PROPHET SPAWNED, ";
+; 2550 : 		strLogMsg += ", PROPHET SPAWNED, ";
 
-	push	OFFSET $SG225709
-	lea	ecx, DWORD PTR _strLogMsg$225708[esp+96]
+	push	OFFSET $SG225754
+	lea	ecx, DWORD PTR _strLogMsg$225753[esp+96]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
-; 2529 : 		strLogMsg += pSpawnCity->getName();
+; 2551 : 		strLogMsg += pSpawnCity->getName();
 
-	lea	eax, DWORD PTR $T241379[esp+92]
+	lea	eax, DWORD PTR $T241460[esp+92]
 	push	eax
 	mov	ecx, esi
 	call	?getName@CvCity@@QBE?BVCvString@@XZ	; CvCity::getName
 	push	eax
-	lea	ecx, DWORD PTR _strLogMsg$225708[esp+96]
+	lea	ecx, DWORD PTR _strLogMsg$225753[esp+96]
 	mov	BYTE PTR __$EHRec$[esp+104], 1
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T241379[esp+92]
+	lea	ecx, DWORD PTR $T241460[esp+92]
 	mov	BYTE PTR __$EHRec$[esp+100], 0
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 2530 : 		strLogMsg += ", Faith: 0";
+; 2552 : 		strLogMsg += ", Faith: 0";
 
-	push	OFFSET $SG225711
-	lea	ecx, DWORD PTR _strLogMsg$225708[esp+96]
+	push	OFFSET $SG225756
+	lea	ecx, DWORD PTR _strLogMsg$225753[esp+96]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
-; 2531 : 		LogReligionMessage(strLogMsg);
+; 2553 : 		LogReligionMessage(strLogMsg);
 
-	lea	ecx, DWORD PTR _strLogMsg$225708[esp+92]
+	lea	ecx, DWORD PTR _strLogMsg$225753[esp+92]
 	push	ecx
 	mov	ecx, DWORD PTR _this$[esp+96]
 	call	?LogReligionMessage@CvGameReligions@@QAEXAAVCvString@@@Z ; CvGameReligions::LogReligionMessage
 
-; 2532 : 	}
+; 2554 : 	}
 
-	lea	ecx, DWORD PTR _strLogMsg$225708[esp+92]
+	lea	ecx, DWORD PTR _strLogMsg$225753[esp+92]
 	mov	DWORD PTR __$EHRec$[esp+100], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 $LN1@CheckSpawn:
 
-; 2533 : 
-; 2534 : 	return true;
-; 2535 : }
+; 2555 : 
+; 2556 : 	return true;
+; 2557 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+92]
-	pop	edi
-	pop	esi
 	pop	ebp
-	mov	al, 1
 	pop	ebx
+	pop	edi
+	mov	al, 1
+	pop	esi
 	mov	DWORD PTR fs:0, ecx
 	add	esp, 76					; 0000004cH
 	ret	4
@@ -34902,10 +34982,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?CheckSpawnGreatProphet@CvGameReligions@@AAE_NAAVCvPlayer@@@Z$0:
-	lea	ecx, DWORD PTR _strLogMsg$225708[ebp]
+	lea	ecx, DWORD PTR _strLogMsg$225753[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?CheckSpawnGreatProphet@CvGameReligions@@AAE_NAAVCvPlayer@@@Z$1:
-	lea	ecx, DWORD PTR $T241379[ebp]
+	lea	ecx, DWORD PTR $T241460[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?CheckSpawnGreatProphet@CvGameReligions@@AAE_NAAVCvPlayer@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?CheckSpawnGreatProphet@CvGameReligions@@AAE_NAAVCvPlayer@@@Z
@@ -34920,13 +35000,13 @@ _pOldCity$ = 8						; size = 4
 ?Copy@CvCityReligions@@QAEXPAV1@@Z PROC			; CvCityReligions::Copy, COMDAT
 ; _this$ = ecx
 
-; 3110 : {
+; 3132 : {
 
 	push	ebp
 
-; 3111 : 	m_ReligionStatus.clear();
-; 3112 : 
-; 3113 : 	SetPaidAdoptionBonus(pOldCity->HasPaidAdoptionBonus());
+; 3133 : 	m_ReligionStatus.clear();
+; 3134 : 
+; 3135 : 	SetPaidAdoptionBonus(pOldCity->HasPaidAdoptionBonus());
 
 	mov	ebp, DWORD PTR _pOldCity$[esp]
 	push	esi
@@ -34935,14 +35015,14 @@ _pOldCity$ = 8						; size = 4
 	mov	al, BYTE PTR [ebp+420]
 	mov	BYTE PTR [esi+420], al
 
-; 3114 : 	SetReligiousPressureModifier(pOldCity->GetReligiousPressureModifier());
+; 3136 : 	SetReligiousPressureModifier(pOldCity->GetReligiousPressureModifier());
 
 	mov	ecx, DWORD PTR [ebp+424]
 	mov	DWORD PTR [esi+424], ecx
 
-; 3115 : 
-; 3116 : 	ReligionInCityList::iterator religionIt;
-; 3117 : 	for(religionIt = pOldCity->m_ReligionStatus.begin(); religionIt != pOldCity->m_ReligionStatus.end(); ++religionIt)
+; 3137 : 
+; 3138 : 	ReligionInCityList::iterator religionIt;
+; 3139 : 	for(religionIt = pOldCity->m_ReligionStatus.begin(); religionIt != pOldCity->m_ReligionStatus.end(); ++religionIt)
 
 	mov	eax, DWORD PTR [ebp+4]
 	push	edi
@@ -34954,8 +35034,8 @@ _pOldCity$ = 8						; size = 4
 	npad	8
 $LL3@Copy:
 
-; 3118 : 	{
-; 3119 : 		m_ReligionStatus.push_back(*religionIt);
+; 3140 : 	{
+; 3141 : 		m_ReligionStatus.push_back(*religionIt);
 
 	mov	eax, DWORD PTR [esi+8]
 	mov	BYTE PTR [esi+204], 0
@@ -34997,8 +35077,8 @@ $LN1@Copy:
 	pop	esi
 	pop	ebp
 
-; 3120 : 	}
-; 3121 : }
+; 3142 : 	}
+; 3143 : }
 
 	ret	4
 ?Copy@CvCityReligions@@QAEXPAV1@@Z ENDP			; CvCityReligions::Copy
@@ -35012,27 +35092,27 @@ _eReligion$ = 8						; size = 4
 ?AdoptReligionFully@CvCityReligions@@QAEXW4ReligionTypes@@@Z PROC ; CvCityReligions::AdoptReligionFully, COMDAT
 ; _this$ = ecx
 
-; 4057 : {
+; 4079 : {
 
 	sub	esp, 24					; 00000018H
 	push	ebx
 	push	esi
 	mov	esi, ecx
 
-; 4058 : 	m_ReligionStatus.clear();
+; 4080 : 	m_ReligionStatus.clear();
 
 	xor	ebx, ebx
 	push	edi
 
-; 4059 : 
-; 4060 : 	CvReligionInCity religion;
-; 4061 : 
-; 4062 : 	// Add 1 pop of Atheism (needed in case other religions wiped out by an Inquisitor/Prophet
-; 4063 : 	religion.m_bFoundedHere = false;
-; 4064 : 	religion.m_eReligion = NO_RELIGION;
-; 4065 : 	religion.m_iFollowers = 1;
-; 4066 : 	religion.m_iPressure = religion.m_iFollowers * GC.getRELIGION_ATHEISM_PRESSURE_PER_POP();
-; 4067 : 	m_ReligionStatus.push_back(religion);
+; 4081 : 
+; 4082 : 	CvReligionInCity religion;
+; 4083 : 
+; 4084 : 	// Add 1 pop of Atheism (needed in case other religions wiped out by an Inquisitor/Prophet
+; 4085 : 	religion.m_bFoundedHere = false;
+; 4086 : 	religion.m_eReligion = NO_RELIGION;
+; 4087 : 	religion.m_iFollowers = 1;
+; 4088 : 	religion.m_iPressure = religion.m_iFollowers * GC.getRELIGION_ATHEISM_PRESSURE_PER_POP();
+; 4089 : 	m_ReligionStatus.push_back(religion);
 
 	lea	ecx, DWORD PTR _religion$[esp+36]
 	mov	DWORD PTR [esi+4], ebx
@@ -35047,27 +35127,27 @@ _eReligion$ = 8						; size = 4
 	mov	DWORD PTR _religion$[esp+52], eax
 	call	?push_back@?$FStaticVector@VCvReligionInCity@@$07$0A@$0BCJ@$0A@@@QAEIABVCvReligionInCity@@@Z ; FStaticVector<CvReligionInCity,8,0,297,0>::push_back
 
-; 4068 : 
-; 4069 : 	// Now add full pop of this religion
-; 4070 : 	religion.m_bFoundedHere = false;
-; 4071 : 	religion.m_eReligion = eReligion;
+; 4090 : 
+; 4091 : 	// Now add full pop of this religion
+; 4092 : 	religion.m_bFoundedHere = false;
+; 4093 : 	religion.m_eReligion = eReligion;
 
 	mov	edi, DWORD PTR _eReligion$[esp+32]
 
-; 4072 : 	religion.m_iFollowers = m_pCity->getPopulation();
+; 4094 : 	religion.m_iFollowers = m_pCity->getPopulation();
 
 	mov	ecx, DWORD PTR [esi+416]
 	mov	BYTE PTR _religion$[esp+40], bl
 	mov	DWORD PTR _religion$[esp+36], edi
 	call	?getPopulation@CvCity@@QBEHXZ		; CvCity::getPopulation
 
-; 4073 : 	religion.m_iPressure = religion.m_iFollowers * GC.getRELIGION_ATHEISM_PRESSURE_PER_POP();
+; 4095 : 	religion.m_iPressure = religion.m_iFollowers * GC.getRELIGION_ATHEISM_PRESSURE_PER_POP();
 
 	mov	edx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+7888
 	imul	edx, eax
 	mov	DWORD PTR _religion$[esp+44], eax
 
-; 4074 : 	m_ReligionStatus.push_back(religion);
+; 4096 : 	m_ReligionStatus.push_back(religion);
 
 	lea	eax, DWORD PTR _religion$[esp+36]
 	push	eax
@@ -35075,8 +35155,8 @@ _eReligion$ = 8						; size = 4
 	mov	DWORD PTR _religion$[esp+52], edx
 	call	?push_back@?$FStaticVector@VCvReligionInCity@@$07$0A@$0BCJ@$0A@@@QAEIABVCvReligionInCity@@@Z ; FStaticVector<CvReligionInCity,8,0,297,0>::push_back
 
-; 4075 : 
-; 4076 : 	m_pCity->UpdateReligion(eReligion);
+; 4097 : 
+; 4098 : 	m_pCity->UpdateReligion(eReligion);
 
 	mov	ecx, DWORD PTR [esi+416]
 	push	edi
@@ -35085,7 +35165,7 @@ _eReligion$ = 8						; size = 4
 	pop	esi
 	pop	ebx
 
-; 4077 : }
+; 4099 : }
 
 	add	esp, 24					; 00000018H
 	ret	4
@@ -35095,26 +35175,26 @@ PUBLIC	?RecomputeFollowers@CvCityReligions@@AAEXW4CvReligiousFollowChangeReason@
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?RecomputeFollowers@CvCityReligions@@AAEXW4CvReligiousFollowChangeReason@@W4ReligionTypes@@W4PlayerTypes@@@Z
 _TEXT	SEGMENT
-_eMostFollowers$241738 = -44				; size = 4
+_eMostFollowers$241818 = -44				; size = 4
 _iOldFollowers$ = -40					; size = 4
-_iTotalFollowers$241735 = -36				; size = 4
+_iTotalFollowers$241815 = -36				; size = 4
 tv465 = -32						; size = 4
 tv454 = -28						; size = 4
-_religion$226544 = -24					; size = 24
+_religion$226589 = -24					; size = 24
 _eReason$ = 8						; size = 4
 _eOldMajorityReligion$ = 12				; size = 4
 _eResponsibleParty$ = 16				; size = 4
 ?RecomputeFollowers@CvCityReligions@@AAEXW4CvReligiousFollowChangeReason@@W4ReligionTypes@@W4PlayerTypes@@@Z PROC ; CvCityReligions::RecomputeFollowers, COMDAT
 ; _this$ = ecx
 
-; 4261 : {
+; 4283 : {
 
 	sub	esp, 44					; 0000002cH
 	push	ebx
 	push	esi
 	mov	esi, ecx
 
-; 4262 : 	int iOldFollowers = GetNumFollowers(eOldMajorityReligion);
+; 4284 : 	int iOldFollowers = GetNumFollowers(eOldMajorityReligion);
 
 	mov	ecx, DWORD PTR [esi+4]
 	mov	eax, DWORD PTR [esi]
@@ -35138,32 +35218,32 @@ $LN101@RecomputeF:
 	mov	DWORD PTR _iOldFollowers$[esp+52], 0
 $LN25@RecomputeF:
 
-; 4263 : 	int iUnassignedFollowers = m_pCity->getPopulation();
+; 4285 : 	int iUnassignedFollowers = m_pCity->getPopulation();
 
 	mov	ecx, DWORD PTR [esi+416]
 	call	?getPopulation@CvCity@@QBEHXZ		; CvCity::getPopulation
 	mov	ebx, eax
 
-; 4264 : 	int iPressurePerFollower;
-; 4265 : 
-; 4266 : 	// Safety check to avoid divide by zero
-; 4267 : 	if (iUnassignedFollowers < 1)
+; 4286 : 	int iPressurePerFollower;
+; 4287 : 
+; 4288 : 	// Safety check to avoid divide by zero
+; 4289 : 	if (iUnassignedFollowers < 1)
 
 	cmp	ebx, 1
 	jl	$LN2@RecomputeF
 
-; 4268 : 	{
-; 4269 : 		CvAssertMsg (false, "Invalid city population when recomputing followers");
-; 4270 : 		return;
-; 4271 : 	}
-; 4272 : 
-; 4273 : 	// Find total pressure
-; 4274 : 	int iTotalPressure = 0;
-; 4275 : 	ReligionInCityList::iterator it;
-; 4276 : #ifdef AUI_ITERATOR_POSTFIX_INCREMENT_OPTIMIZATIONS
-; 4277 : 	for (it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); ++it)
-; 4278 : #else
-; 4279 : 	for(it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); it++)
+; 4290 : 	{
+; 4291 : 		CvAssertMsg (false, "Invalid city population when recomputing followers");
+; 4292 : 		return;
+; 4293 : 	}
+; 4294 : 
+; 4295 : 	// Find total pressure
+; 4296 : 	int iTotalPressure = 0;
+; 4297 : 	ReligionInCityList::iterator it;
+; 4298 : #ifdef AUI_ITERATOR_POSTFIX_INCREMENT_OPTIMIZATIONS
+; 4299 : 	for (it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); ++it)
+; 4300 : #else
+; 4301 : 	for(it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); it++)
 
 	mov	edx, DWORD PTR [esi+4]
 	mov	ecx, DWORD PTR [esi]
@@ -35178,9 +35258,9 @@ $LN25@RecomputeF:
 	mov	edx, DWORD PTR [esi+4]
 	lea	edx, DWORD PTR [edx+edx*2]
 
-; 4280 : #endif
-; 4281 : 	{
-; 4282 : 		iTotalPressure += it->m_iPressure;
+; 4302 : #endif
+; 4303 : 	{
+; 4304 : 		iTotalPressure += it->m_iPressure;
 
 	mov	ebp, ecx
 	lea	edx, DWORD PTR [ebp+edx*8]
@@ -35191,57 +35271,57 @@ $LL17@RecomputeF:
 	cmp	ecx, edx
 	jne	SHORT $LL17@RecomputeF
 
-; 4283 : 	}
-; 4284 : 
-; 4285 : 	// safety check - if pressure was wiped out somehow, just rebuild pressure of 1 atheist
-; 4286 : 	if (iTotalPressure <= 0)
+; 4305 : 	}
+; 4306 : 
+; 4307 : 	// safety check - if pressure was wiped out somehow, just rebuild pressure of 1 atheist
+; 4308 : 	if (iTotalPressure <= 0)
 
 	cmp	eax, edi
 	jg	SHORT $LN102@RecomputeF
 $LN100@RecomputeF:
 
-; 4287 : 	{
-; 4288 : 		m_ReligionStatus.clear();
-; 4289 : 
-; 4290 : 		CvReligionInCity religion;
-; 4291 : 		religion.m_bFoundedHere = false;
-; 4292 : 		religion.m_eReligion = NO_RELIGION;
-; 4293 : 		religion.m_iFollowers = 1;
-; 4294 : 		religion.m_iPressure = GC.getRELIGION_ATHEISM_PRESSURE_PER_POP();
-; 4295 : 		m_ReligionStatus.push_back(religion);
+; 4309 : 	{
+; 4310 : 		m_ReligionStatus.clear();
+; 4311 : 
+; 4312 : 		CvReligionInCity religion;
+; 4313 : 		religion.m_bFoundedHere = false;
+; 4314 : 		religion.m_eReligion = NO_RELIGION;
+; 4315 : 		religion.m_iFollowers = 1;
+; 4316 : 		religion.m_iPressure = GC.getRELIGION_ATHEISM_PRESSURE_PER_POP();
+; 4317 : 		m_ReligionStatus.push_back(religion);
 
-	lea	ecx, DWORD PTR _religion$226544[esp+60]
+	lea	ecx, DWORD PTR _religion$226589[esp+60]
 	mov	DWORD PTR [esi+4], edi
 	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+7888
 	push	ecx
 	mov	ecx, esi
-	mov	DWORD PTR _religion$226544[esp+80], edi
-	mov	DWORD PTR _religion$226544[esp+84], edi
-	mov	BYTE PTR _religion$226544[esp+68], 0
-	mov	DWORD PTR _religion$226544[esp+64], -1
-	mov	DWORD PTR _religion$226544[esp+72], 1
-	mov	DWORD PTR _religion$226544[esp+76], eax
+	mov	DWORD PTR _religion$226589[esp+80], edi
+	mov	DWORD PTR _religion$226589[esp+84], edi
+	mov	BYTE PTR _religion$226589[esp+68], 0
+	mov	DWORD PTR _religion$226589[esp+64], -1
+	mov	DWORD PTR _religion$226589[esp+72], 1
+	mov	DWORD PTR _religion$226589[esp+76], eax
 	call	?push_back@?$FStaticVector@VCvReligionInCity@@$07$0A@$0BCJ@$0A@@@QAEIABVCvReligionInCity@@@Z ; FStaticVector<CvReligionInCity,8,0,297,0>::push_back
 
-; 4296 : 
-; 4297 : 		iTotalPressure = GC.getRELIGION_ATHEISM_PRESSURE_PER_POP();
+; 4318 : 
+; 4319 : 		iTotalPressure = GC.getRELIGION_ATHEISM_PRESSURE_PER_POP();
 
 	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+7888
 $LN102@RecomputeF:
 
-; 4298 : 	}
-; 4299 : 
-; 4300 : 	iPressurePerFollower = iTotalPressure / iUnassignedFollowers;
+; 4320 : 	}
+; 4321 : 
+; 4322 : 	iPressurePerFollower = iTotalPressure / iUnassignedFollowers;
 
 	cdq
 	idiv	ebx
 
-; 4301 : 
-; 4302 : 	// Loop through each religion
-; 4303 : #ifdef AUI_ITERATOR_POSTFIX_INCREMENT_OPTIMIZATIONS
-; 4304 : 	for (it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); ++it)
-; 4305 : #else
-; 4306 : 	for(it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); it++)
+; 4323 : 
+; 4324 : 	// Loop through each religion
+; 4325 : #ifdef AUI_ITERATOR_POSTFIX_INCREMENT_OPTIMIZATIONS
+; 4326 : 	for (it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); ++it)
+; 4327 : #else
+; 4328 : 	for(it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); it++)
 
 	mov	ecx, DWORD PTR [esi]
 	mov	ebp, eax
@@ -35253,9 +35333,9 @@ $LN102@RecomputeF:
 	npad	4
 $LL13@RecomputeF:
 
-; 4307 : #endif
-; 4308 : 	{
-; 4309 : 		it->m_iFollowers = it->m_iPressure / iPressurePerFollower;
+; 4329 : #endif
+; 4330 : 	{
+; 4331 : 		it->m_iFollowers = it->m_iPressure / iPressurePerFollower;
 
 	mov	edi, DWORD PTR [ecx+12]
 	mov	eax, edi
@@ -35264,11 +35344,11 @@ $LL13@RecomputeF:
 	add	ecx, 24					; 00000018H
 	mov	DWORD PTR [ecx-16], eax
 
-; 4310 : 		iUnassignedFollowers -= it->m_iFollowers;
+; 4332 : 		iUnassignedFollowers -= it->m_iFollowers;
 
 	sub	ebx, eax
 
-; 4311 : 		it->m_iTemp = it->m_iPressure - (it->m_iFollowers * iPressurePerFollower);  // Remainder
+; 4333 : 		it->m_iTemp = it->m_iPressure - (it->m_iFollowers * iPressurePerFollower);  // Remainder
 
 	imul	eax, ebp
 	sub	edi, eax
@@ -35281,24 +35361,24 @@ $LL13@RecomputeF:
 	jne	SHORT $LL13@RecomputeF
 $LN11@RecomputeF:
 
-; 4312 : 	}
-; 4313 : 
-; 4314 : 	// Assign out the remainder
-; 4315 : 	for (int iI = 0; iI < iUnassignedFollowers; iI++)
+; 4334 : 	}
+; 4335 : 
+; 4336 : 	// Assign out the remainder
+; 4337 : 	for (int iI = 0; iI < iUnassignedFollowers; iI++)
 
 	test	ebx, ebx
 	jle	SHORT $LN8@RecomputeF
 	npad	5
 $LL103@RecomputeF:
 
-; 4316 : 	{
-; 4317 : 		ReligionInCityList::iterator itLargestRemainder = NULL;
-; 4318 : 		int iLargestRemainder = 0;
-; 4319 : 
-; 4320 : #ifdef AUI_WARNING_FIXES
-; 4321 : 		for (it = m_ReligionStatus.begin(); it != m_ReligionStatus.end() && it; ++it)
-; 4322 : #else
-; 4323 : 		for (it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); it++)
+; 4338 : 	{
+; 4339 : 		ReligionInCityList::iterator itLargestRemainder = NULL;
+; 4340 : 		int iLargestRemainder = 0;
+; 4341 : 
+; 4342 : #ifdef AUI_WARNING_FIXES
+; 4343 : 		for (it = m_ReligionStatus.begin(); it != m_ReligionStatus.end() && it; ++it)
+; 4344 : #else
+; 4345 : 		for (it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); it++)
 
 	mov	ecx, DWORD PTR [esi+4]
 	mov	eax, DWORD PTR [esi]
@@ -35311,9 +35391,9 @@ $LL103@RecomputeF:
 	mov	ecx, DWORD PTR [esi+4]
 	lea	ecx, DWORD PTR [ecx+ecx*2]
 
-; 4324 : #endif
-; 4325 : 		{
-; 4326 : 			if (it->m_iTemp > iLargestRemainder)
+; 4346 : #endif
+; 4347 : 		{
+; 4348 : 			if (it->m_iTemp > iLargestRemainder)
 
 	mov	ebp, eax
 	lea	ebp, DWORD PTR [ebp+ecx*8]
@@ -35323,12 +35403,12 @@ $LL7@RecomputeF:
 	cmp	ecx, edx
 	jle	SHORT $LN6@RecomputeF
 
-; 4327 : 			{
-; 4328 : 				iLargestRemainder = it->m_iTemp;
+; 4349 : 			{
+; 4350 : 				iLargestRemainder = it->m_iTemp;
 
 	mov	edx, ecx
 
-; 4329 : 				itLargestRemainder = it;
+; 4351 : 				itLargestRemainder = it;
 
 	mov	edi, eax
 $LN6@RecomputeF:
@@ -35336,39 +35416,39 @@ $LN6@RecomputeF:
 	cmp	eax, ebp
 	jne	SHORT $LL7@RecomputeF
 
-; 4330 : 			}
-; 4331 : 		}
-; 4332 : 
-; 4333 : 		if (itLargestRemainder && iLargestRemainder > 0)
+; 4352 : 			}
+; 4353 : 		}
+; 4354 : 
+; 4355 : 		if (itLargestRemainder && iLargestRemainder > 0)
 
 	test	edi, edi
 	je	SHORT $LN9@RecomputeF
 	test	edx, edx
 	jle	SHORT $LN9@RecomputeF
 
-; 4334 : 		{
-; 4335 : 			itLargestRemainder->m_iFollowers++;
+; 4356 : 		{
+; 4357 : 			itLargestRemainder->m_iFollowers++;
 
 	inc	DWORD PTR [edi+8]
 
-; 4336 : 			itLargestRemainder->m_iTemp = 0;
+; 4358 : 			itLargestRemainder->m_iTemp = 0;
 
 	mov	DWORD PTR [edi+20], 0
 $LN9@RecomputeF:
 
-; 4312 : 	}
-; 4313 : 
-; 4314 : 	// Assign out the remainder
-; 4315 : 	for (int iI = 0; iI < iUnassignedFollowers; iI++)
+; 4334 : 	}
+; 4335 : 
+; 4336 : 	// Assign out the remainder
+; 4337 : 	for (int iI = 0; iI < iUnassignedFollowers; iI++)
 
 	sub	ebx, 1
 	jne	SHORT $LL103@RecomputeF
 $LN8@RecomputeF:
 
-; 4337 : 		}
-; 4338 : 	}
-; 4339 : 
-; 4340 : 	ReligionTypes eMajority = GetReligiousMajority();
+; 4359 : 		}
+; 4360 : 	}
+; 4361 : 
+; 4362 : 	ReligionTypes eMajority = GetReligiousMajority();
 
 	mov	ecx, DWORD PTR [esi+4]
 	mov	edi, DWORD PTR [esi]
@@ -35378,8 +35458,8 @@ $LN8@RecomputeF:
 	or	edx, -1
 	mov	eax, edi
 	xor	ebx, ebx
-	mov	DWORD PTR _iTotalFollowers$241735[esp+60], ebp
-	mov	DWORD PTR _eMostFollowers$241738[esp+60], edx
+	mov	DWORD PTR _iTotalFollowers$241815[esp+60], ebp
+	mov	DWORD PTR _eMostFollowers$241818[esp+60], edx
 	mov	DWORD PTR tv454[esp+60], ecx
 	cmp	eax, ecx
 	je	SHORT $LN61@RecomputeF
@@ -35387,7 +35467,7 @@ $LN8@RecomputeF:
 	mov	ebp, edi
 	lea	ecx, DWORD PTR [ecx+ecx*2]
 	lea	ecx, DWORD PTR [ebp+ecx*8]
-	mov	ebp, DWORD PTR _iTotalFollowers$241735[esp+60]
+	mov	ebp, DWORD PTR _iTotalFollowers$241815[esp+60]
 	mov	DWORD PTR tv465[esp+60], ecx
 $LL63@RecomputeF:
 	mov	ecx, DWORD PTR [eax+8]
@@ -35401,7 +35481,7 @@ $LN59@RecomputeF:
 	mov	ebx, DWORD PTR [eax+12]
 	mov	edx, ecx
 	mov	ecx, DWORD PTR [eax]
-	mov	DWORD PTR _eMostFollowers$241738[esp+60], ecx
+	mov	DWORD PTR _eMostFollowers$241818[esp+60], ecx
 $LN62@RecomputeF:
 	add	eax, 24					; 00000018H
 	cmp	eax, DWORD PTR tv465[esp+60]
@@ -35411,26 +35491,26 @@ $LN61@RecomputeF:
 	add	edx, edx
 	cmp	edx, ebp
 	jl	SHORT $LN58@RecomputeF
-	mov	edx, DWORD PTR _eMostFollowers$241738[esp+60]
+	mov	edx, DWORD PTR _eMostFollowers$241818[esp+60]
 	jmp	SHORT $LN57@RecomputeF
 $LN90@RecomputeF:
 
-; 4262 : 	int iOldFollowers = GetNumFollowers(eOldMajorityReligion);
+; 4284 : 	int iOldFollowers = GetNumFollowers(eOldMajorityReligion);
 
 	mov	eax, DWORD PTR [eax+8]
 	mov	DWORD PTR _iOldFollowers$[esp+52], eax
 	jmp	$LN25@RecomputeF
 
-; 4337 : 		}
-; 4338 : 	}
-; 4339 : 
-; 4340 : 	ReligionTypes eMajority = GetReligiousMajority();
+; 4359 : 		}
+; 4360 : 	}
+; 4361 : 
+; 4362 : 	ReligionTypes eMajority = GetReligiousMajority();
 
 $LN58@RecomputeF:
 	or	edx, -1
 $LN57@RecomputeF:
 
-; 4341 : 	int iFollowers = GetNumFollowers(eMajority);
+; 4363 : 	int iFollowers = GetNumFollowers(eMajority);
 
 	mov	eax, edi
 	cmp	eax, ecx
@@ -35450,8 +35530,8 @@ $LN71@RecomputeF:
 	xor	eax, eax
 $LN74@RecomputeF:
 
-; 4342 : 
-; 4343 : 	if(eMajority != eOldMajorityReligion || iFollowers != iOldFollowers)
+; 4364 : 
+; 4365 : 	if(eMajority != eOldMajorityReligion || iFollowers != iOldFollowers)
 
 	mov	ecx, DWORD PTR _eOldMajorityReligion$[esp+56]
 	pop	edi
@@ -35462,8 +35542,8 @@ $LN74@RecomputeF:
 	je	SHORT $LN2@RecomputeF
 $LN1@RecomputeF:
 
-; 4344 : 	{
-; 4345 : 		CityConvertsReligion(eMajority, eOldMajorityReligion, eResponsibleParty);
+; 4366 : 	{
+; 4367 : 		CityConvertsReligion(eMajority, eOldMajorityReligion, eResponsibleParty);
 
 	mov	eax, DWORD PTR _eResponsibleParty$[esp+48]
 	push	eax
@@ -35472,7 +35552,7 @@ $LN1@RecomputeF:
 	mov	ecx, esi
 	call	?CityConvertsReligion@CvCityReligions@@AAEXW4ReligionTypes@@0W4PlayerTypes@@@Z ; CvCityReligions::CityConvertsReligion
 
-; 4346 : 		GC.GetEngineUserInterface()->setDirty(CityInfo_DIRTY_BIT, true);
+; 4368 : 		GC.GetEngineUserInterface()->setDirty(CityInfo_DIRTY_BIT, true);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
 	mov	edx, DWORD PTR [ecx]
@@ -35481,7 +35561,7 @@ $LN1@RecomputeF:
 	push	18					; 00000012H
 	call	eax
 
-; 4347 : 		LogFollowersChange(eReason);
+; 4369 : 		LogFollowersChange(eReason);
 
 	mov	ecx, DWORD PTR _eReason$[esp+48]
 	push	ecx
@@ -35491,14 +35571,14 @@ $LN2@RecomputeF:
 	pop	esi
 	pop	ebx
 
-; 4348 : 	}
-; 4349 : }
+; 4370 : 	}
+; 4371 : }
 
 	add	esp, 44					; 0000002cH
 	ret	12					; 0000000cH
 $LN91@RecomputeF:
 
-; 4341 : 	int iFollowers = GetNumFollowers(eMajority);
+; 4363 : 	int iFollowers = GetNumFollowers(eMajority);
 
 	mov	eax, DWORD PTR [eax+8]
 	jmp	SHORT $LN74@RecomputeF
@@ -35511,23 +35591,23 @@ _TEXT	SEGMENT
 ?CopyToSimulatedStatus@CvCityReligions@@AAEXXZ PROC	; CvCityReligions::CopyToSimulatedStatus, COMDAT
 ; _this$ = ecx
 
-; 4419 : {
+; 4441 : {
 
 	push	ebp
 	mov	ebp, ecx
 	push	esi
 
-; 4420 : 	m_SimulatedStatus.clear();
+; 4442 : 	m_SimulatedStatus.clear();
 
 	lea	esi, DWORD PTR [ebp+208]
 	mov	DWORD PTR [esi+4], 0
 
-; 4421 : 
-; 4422 : 	ReligionInCityList::iterator it;
-; 4423 : #ifdef AUI_ITERATOR_POSTFIX_INCREMENT_OPTIMIZATIONS
-; 4424 : 	for (it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); ++it)
-; 4425 : #else
-; 4426 : 	for(it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); it++)
+; 4443 : 
+; 4444 : 	ReligionInCityList::iterator it;
+; 4445 : #ifdef AUI_ITERATOR_POSTFIX_INCREMENT_OPTIMIZATIONS
+; 4446 : 	for (it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); ++it)
+; 4447 : #else
+; 4448 : 	for(it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); it++)
 
 	mov	eax, DWORD PTR [ebp+4]
 	push	edi
@@ -35538,9 +35618,9 @@ _TEXT	SEGMENT
 	je	SHORT $LN1@CopyToSimu
 $LL3@CopyToSimu:
 
-; 4427 : #endif
-; 4428 : 	{
-; 4429 : 		m_SimulatedStatus.push_back(*it);
+; 4449 : #endif
+; 4450 : 	{
+; 4451 : 		m_SimulatedStatus.push_back(*it);
 
 	mov	eax, DWORD PTR [esi+8]
 	mov	BYTE PTR [esi+204], 0
@@ -35582,8 +35662,8 @@ $LN1@CopyToSimu:
 	pop	esi
 	pop	ebp
 
-; 4430 : 	}
-; 4431 : }
+; 4452 : 	}
+; 4453 : }
 
 	ret	0
 ?CopyToSimulatedStatus@CvCityReligions@@AAEXXZ ENDP	; CvCityReligions::CopyToSimulatedStatus
@@ -35595,14 +35675,14 @@ _TEXT	SEGMENT
 _uiVersion$ = -32					; size = 4
 _iEntriesToRead$ = -28					; size = 4
 _tempItem$ = -24					; size = 24
-_bTemp$226760 = 8					; size = 1
+_bTemp$226805 = 8					; size = 1
 _loadFrom$ = 8						; size = 4
-_uiVersion$241908 = 12					; size = 4
-_iTemp$226763 = 12					; size = 4
+_uiVersion$241988 = 12					; size = 4
+_iTemp$226808 = 12					; size = 4
 _writeTo$ = 12						; size = 4
 ??5@YAAAVFDataStream@@AAV0@AAVCvCityReligions@@@Z PROC	; operator>>, COMDAT
 
-; 4739 : {
+; 4761 : {
 
 	sub	esp, 32					; 00000020H
 	push	ebx
@@ -35610,9 +35690,9 @@ _writeTo$ = 12						; size = 4
 	push	esi
 	push	edi
 
-; 4740 : 	uint uiVersion;
-; 4741 : 
-; 4742 : 	loadFrom >> uiVersion;
+; 4762 : 	uint uiVersion;
+; 4763 : 
+; 4764 : 	loadFrom >> uiVersion;
 
 	mov	edi, DWORD PTR _loadFrom$[esp+44]
 	lea	eax, DWORD PTR _uiVersion$[esp+48]
@@ -35620,81 +35700,81 @@ _writeTo$ = 12						; size = 4
 	mov	ecx, edi
 	call	?Read@FDataStream@@IAEXAAI@Z		; FDataStream::Read
 
-; 4743 : 
-; 4744 : 	if(uiVersion >= 2)
+; 4765 : 
+; 4766 : 	if(uiVersion >= 2)
 
 	xor	ebx, ebx
 	cmp	DWORD PTR _uiVersion$[esp+48], 2
 	jb	SHORT $LN7@operator@10
 
-; 4745 : 	{
-; 4746 : 		bool bTemp;
-; 4747 : 		loadFrom >> bTemp;
+; 4767 : 	{
+; 4768 : 		bool bTemp;
+; 4769 : 		loadFrom >> bTemp;
 
-	lea	ecx, DWORD PTR _bTemp$226760[esp+44]
+	lea	ecx, DWORD PTR _bTemp$226805[esp+44]
 	push	ecx
 	mov	ecx, edi
 	call	?Read@FDataStream@@IAEXAA_N@Z		; FDataStream::Read
 
-; 4748 : 		writeTo.SetPaidAdoptionBonus(bTemp);
+; 4770 : 		writeTo.SetPaidAdoptionBonus(bTemp);
 
 	mov	esi, DWORD PTR _writeTo$[esp+44]
-	mov	dl, BYTE PTR _bTemp$226760[esp+44]
+	mov	dl, BYTE PTR _bTemp$226805[esp+44]
 	mov	BYTE PTR [esi+420], dl
 
-; 4749 : 	}
-; 4750 : 	else
+; 4771 : 	}
+; 4772 : 	else
 
 	jmp	SHORT $LN16@operator@10
 $LN7@operator@10:
 
-; 4751 : 	{
-; 4752 : 		writeTo.SetPaidAdoptionBonus(false);
+; 4773 : 	{
+; 4774 : 		writeTo.SetPaidAdoptionBonus(false);
 
 	mov	esi, DWORD PTR _writeTo$[esp+44]
 	mov	BYTE PTR [esi+420], bl
 $LN16@operator@10:
 
-; 4753 : 	}
-; 4754 : 
-; 4755 : 	if (uiVersion >= 3)
+; 4775 : 	}
+; 4776 : 
+; 4777 : 	if (uiVersion >= 3)
 
 	cmp	DWORD PTR _uiVersion$[esp+48], 3
 	jb	SHORT $LN5@operator@10
 
-; 4756 : 	{
-; 4757 : 		int iTemp;
-; 4758 : 		loadFrom >> iTemp;
+; 4778 : 	{
+; 4779 : 		int iTemp;
+; 4780 : 		loadFrom >> iTemp;
 
-	lea	eax, DWORD PTR _iTemp$226763[esp+44]
+	lea	eax, DWORD PTR _iTemp$226808[esp+44]
 	push	eax
 	mov	ecx, edi
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
 
-; 4759 : 		writeTo.SetReligiousPressureModifier(iTemp);
+; 4781 : 		writeTo.SetReligiousPressureModifier(iTemp);
 
-	mov	ecx, DWORD PTR _iTemp$226763[esp+44]
+	mov	ecx, DWORD PTR _iTemp$226808[esp+44]
 	mov	DWORD PTR [esi+424], ecx
 
-; 4760 : 	}
-; 4761 : 	else
+; 4782 : 	}
+; 4783 : 	else
 
 	jmp	SHORT $LN22@operator@10
 $LN5@operator@10:
 
-; 4762 : 	{
-; 4763 : 		writeTo.SetReligiousPressureModifier(0);
+; 4784 : 	{
+; 4785 : 		writeTo.SetReligiousPressureModifier(0);
 
 	mov	DWORD PTR [esi+424], ebx
 $LN22@operator@10:
 
-; 4764 : 	}
-; 4765 : 
-; 4766 : 	int iEntriesToRead;
-; 4767 : 	CvReligionInCity tempItem;
-; 4768 : 
-; 4769 : 	writeTo.m_ReligionStatus.clear();
-; 4770 : 	loadFrom >> iEntriesToRead;
+; 4786 : 	}
+; 4787 : 
+; 4788 : 	int iEntriesToRead;
+; 4789 : 	CvReligionInCity tempItem;
+; 4790 : 
+; 4791 : 	writeTo.m_ReligionStatus.clear();
+; 4792 : 	loadFrom >> iEntriesToRead;
 
 	lea	edx, DWORD PTR _iEntriesToRead$[esp+48]
 	push	edx
@@ -35708,17 +35788,17 @@ $LN22@operator@10:
 	mov	DWORD PTR [esi+4], ebx
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
 
-; 4771 : 	for(int iI = 0; iI < iEntriesToRead; iI++)
+; 4793 : 	for(int iI = 0; iI < iEntriesToRead; iI++)
 
 	xor	ebp, ebp
 	cmp	DWORD PTR _iEntriesToRead$[esp+48], ebx
 	jle	$LN61@operator@10
 $LL3@operator@10:
 
-; 4772 : 	{
-; 4773 : 		loadFrom >> tempItem;
+; 4794 : 	{
+; 4795 : 		loadFrom >> tempItem;
 
-	lea	eax, DWORD PTR _uiVersion$241908[esp+44]
+	lea	eax, DWORD PTR _uiVersion$241988[esp+44]
 	push	eax
 	mov	ecx, edi
 	call	?Read@FDataStream@@IAEXAAI@Z		; FDataStream::Read
@@ -35739,7 +35819,7 @@ $LL3@operator@10:
 	push	ecx
 	mov	ecx, edi
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
-	cmp	DWORD PTR _uiVersion$241908[esp+44], 2
+	cmp	DWORD PTR _uiVersion$241988[esp+44], 2
 	jne	SHORT $LN37@operator@10
 	lea	edx, DWORD PTR _tempItem$[esp+64]
 	push	edx
@@ -35750,7 +35830,7 @@ $LN37@operator@10:
 	mov	DWORD PTR _tempItem$[esp+64], ebx
 $LN36@operator@10:
 
-; 4774 : 		writeTo.m_ReligionStatus.push_back(tempItem);
+; 4796 : 		writeTo.m_ReligionStatus.push_back(tempItem);
 
 	mov	eax, DWORD PTR [esi+8]
 	mov	BYTE PTR [esi+204], bl
@@ -35785,9 +35865,9 @@ $LN53@operator@10:
 	jl	$LL3@operator@10
 $LN61@operator@10:
 
-; 4775 : 	}
-; 4776 : 
-; 4777 : 	return loadFrom;
+; 4797 : 	}
+; 4798 : 
+; 4799 : 	return loadFrom;
 
 	mov	eax, edi
 	pop	edi
@@ -35795,7 +35875,7 @@ $LN61@operator@10:
 	pop	ebp
 	pop	ebx
 
-; 4778 : }
+; 4800 : }
 
 	add	esp, 32					; 00000020H
 	ret	0
@@ -35826,12 +35906,12 @@ _bTooManyMissionaries$ = -77				; size = 1
 _pMyReligion$ = -76					; size = 4
 _eFaithBuilding$ = -72					; size = 4
 _strLogMsg$ = -68					; size = 28
-_strFaith$227883 = -40					; size = 28
+_strFaith$227932 = -40					; size = 28
 __$EHRec$ = -12						; size = 12
 ?DoFaithPurchases@CvReligionAI@@AAEXXZ PROC		; CvReligionAI::DoFaithPurchases, COMDAT
 ; _this$ = ecx
 
-; 5670 : {
+; 5692 : {
 
 	push	-1
 	push	__ehhandler$?DoFaithPurchases@CvReligionAI@@AAEXXZ
@@ -35845,19 +35925,19 @@ __$EHRec$ = -12						; size = 12
 	push	edi
 	mov	esi, ecx
 
-; 5671 : 	ReligionTypes eReligion = GetReligionToSpread();
+; 5693 : 	ReligionTypes eReligion = GetReligionToSpread();
 
 	call	?GetReligionToSpread@CvReligionAI@@QBE?AW4ReligionTypes@@XZ ; CvReligionAI::GetReligionToSpread
 
-; 5672 : 
-; 5673 : 	CvGameReligions* pReligions = GC.getGame().GetGameReligions();
+; 5694 : 
+; 5695 : 	CvGameReligions* pReligions = GC.getGame().GetGameReligions();
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	mov	edi, eax
 	call	?GetGameReligions@CvGame@@QAEPAVCvGameReligions@@XZ ; CvGame::GetGameReligions
 	mov	ebx, eax
 
-; 5674 : 	const CvReligion* pMyReligion = pReligions->GetReligion(eReligion, m_pPlayer->GetID());
+; 5696 : 	const CvReligion* pMyReligion = pReligions->GetReligion(eReligion, m_pPlayer->GetID());
 
 	mov	eax, DWORD PTR [esi+4]
 	mov	eax, DWORD PTR [eax+44]
@@ -35866,18 +35946,18 @@ __$EHRec$ = -12						; size = 12
 	mov	ecx, ebx
 	call	?GetReligion@CvGameReligions@@QBEPBVCvReligion@@W4ReligionTypes@@W4PlayerTypes@@@Z ; CvGameReligions::GetReligion
 
-; 5675 : #ifdef AUI_RELIGION_FIX_MULTIPLE_FAITH_BUILDINGS
-; 5676 : 	std::vector<BuildingClassTypes> eFaithBuilding = FaithBuildingAvailable(eReligion);
-; 5677 : #else
-; 5678 : 	BuildingClassTypes eFaithBuilding = FaithBuildingAvailable(eReligion);
+; 5697 : #ifdef AUI_RELIGION_FIX_MULTIPLE_FAITH_BUILDINGS
+; 5698 : 	std::vector<BuildingClassTypes> eFaithBuilding = FaithBuildingAvailable(eReligion);
+; 5699 : #else
+; 5700 : 	BuildingClassTypes eFaithBuilding = FaithBuildingAvailable(eReligion);
 
 	push	edi
 	mov	ecx, esi
 	mov	DWORD PTR _pMyReligion$[esp+100], eax
 	call	?FaithBuildingAvailable@CvReligionAI@@ABE?AW4BuildingClassTypes@@W4ReligionTypes@@@Z ; CvReligionAI::FaithBuildingAvailable
 
-; 5679 : #endif
-; 5680 : 	bool bTooManyMissionaries = m_pPlayer->GetNumUnitsWithUnitAI(UNITAI_MISSIONARY) > GC.getRELIGION_MAX_MISSIONARIES();
+; 5701 : #endif
+; 5702 : 	bool bTooManyMissionaries = m_pPlayer->GetNumUnitsWithUnitAI(UNITAI_MISSIONARY) > GC.getRELIGION_MAX_MISSIONARIES();
 
 	mov	ecx, DWORD PTR [esi+4]
 	mov	ebp, DWORD PTR ?gGlobals@@3VCvGlobals@@A+3436
@@ -35888,14 +35968,14 @@ __$EHRec$ = -12						; size = 12
 	call	?GetNumUnitsWithUnitAI@CvPlayer@@QAEHW4UnitAITypes@@_N1@Z ; CvPlayer::GetNumUnitsWithUnitAI
 	cmp	eax, ebp
 
-; 5681 : 
-; 5682 : 	CvString strLogMsg;
+; 5703 : 
+; 5704 : 	CvString strLogMsg;
 
 	lea	ecx, DWORD PTR _strLogMsg$[esp+96]
 	setg	BYTE PTR _bTooManyMissionaries$[esp+96]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 5683 : 	if(GC.getLogging())
+; 5705 : 	if(GC.getLogging())
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	DWORD PTR __$EHRec$[esp+104], 0
@@ -35903,8 +35983,8 @@ __$EHRec$ = -12						; size = 12
 	test	al, al
 	je	SHORT $LN55@DoFaithPur
 
-; 5684 : 	{
-; 5685 : 		strLogMsg = m_pPlayer->getCivilizationShortDescription();
+; 5706 : 	{
+; 5707 : 		strLogMsg = m_pPlayer->getCivilizationShortDescription();
 
 	mov	ecx, DWORD PTR [esi+4]
 	call	?getCivilizationShortDescription@CvPlayer@@QBEPBDXZ ; CvPlayer::getCivilizationShortDescription
@@ -35918,10 +35998,10 @@ $LN56@DoFaithPur:
 	call	DWORD PTR __imp_?clear@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEXXZ
 $LN55@DoFaithPur:
 
-; 5686 : 	}
-; 5687 : 
-; 5688 : 	// Save for another prophet if haven't enhanced religion yet
-; 5689 : 	if(pMyReligion == NULL || !pMyReligion->m_bEnhanced)
+; 5708 : 	}
+; 5709 : 
+; 5710 : 	// Save for another prophet if haven't enhanced religion yet
+; 5711 : 	if(pMyReligion == NULL || !pMyReligion->m_bEnhanced)
 
 	mov	eax, DWORD PTR _pMyReligion$[esp+96]
 	test	eax, eax
@@ -35929,25 +36009,25 @@ $LN55@DoFaithPur:
 	cmp	BYTE PTR [eax+21], 0
 	je	$LN85@DoFaithPur
 
-; 5711 : 							}
-; 5712 : 						}				
-; 5713 : 					}
-; 5714 : 				}
-; 5715 : 			}
-; 5716 : 		}
-; 5717 : 	}
-; 5718 : 	else
-; 5719 : 	{
-; 5720 : 		// Do we need a prophet pronto to reestablish our religion?
-; 5721 : 		UnitTypes eProphetType = (UnitTypes)GC.getInfoTypeForString("UNIT_PROPHET", true);
+; 5733 : 							}
+; 5734 : 						}				
+; 5735 : 					}
+; 5736 : 				}
+; 5737 : 			}
+; 5738 : 		}
+; 5739 : 	}
+; 5740 : 	else
+; 5741 : 	{
+; 5742 : 		// Do we need a prophet pronto to reestablish our religion?
+; 5743 : 		UnitTypes eProphetType = (UnitTypes)GC.getInfoTypeForString("UNIT_PROPHET", true);
 
 	push	1
-	push	OFFSET $SG227842
+	push	OFFSET $SG227891
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	ebx, eax
 
-; 5722 : 		if (eProphetType != NO_UNIT && ChooseProphetConversionCity(true/*bOnlyBetterThanEnhancingReligion*/) && m_pPlayer->GetReligions()->GetNumProphetsSpawned() <= 5)
+; 5744 : 		if (eProphetType != NO_UNIT && ChooseProphetConversionCity(true/*bOnlyBetterThanEnhancingReligion*/) && m_pPlayer->GetReligions()->GetNumProphetsSpawned() <= 5)
 
 	cmp	ebx, -1
 	je	SHORT $LN29@DoFaithPur
@@ -35961,29 +36041,29 @@ $LN55@DoFaithPur:
 	cmp	DWORD PTR [eax+4], 5
 	jg	SHORT $LN29@DoFaithPur
 
-; 5723 : 		{
-; 5724 : 			BuyGreatPerson(eProphetType);
+; 5745 : 		{
+; 5746 : 			BuyGreatPerson(eProphetType);
 
 	push	ebx
 	mov	ecx, esi
 	call	?BuyGreatPerson@CvReligionAI@@AAEXW4UnitTypes@@@Z ; CvReligionAI::BuyGreatPerson
 
-; 5725 : 
-; 5726 : 			if(GC.getLogging())
+; 5747 : 
+; 5748 : 			if(GC.getLogging())
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getLogging@CvGlobals@@QAE_NXZ		; CvGlobals::getLogging
 	test	al, al
 	je	$LN84@DoFaithPur
 
-; 5727 : 			{
-; 5728 : 				strLogMsg += ", Saving for Prophet, ";
+; 5749 : 			{
+; 5750 : 				strLogMsg += ", Saving for Prophet, ";
 
-	push	OFFSET $SG227845
+	push	OFFSET $SG227894
 	lea	ecx, DWORD PTR _strLogMsg$[esp+100]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
-; 5729 : 				strLogMsg += GC.getUnitInfo(eProphetType)->GetDescription();
+; 5751 : 				strLogMsg += GC.getUnitInfo(eProphetType)->GetDescription();
 
 	push	ebx
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
@@ -35994,15 +36074,15 @@ $LN55@DoFaithPur:
 	lea	ecx, DWORD PTR _strLogMsg$[esp+100]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
-; 5730 : 			}				
-; 5731 : 		}
+; 5752 : 			}				
+; 5753 : 		}
 
 	jmp	$LN84@DoFaithPur
 $LN29@DoFaithPur:
 
-; 5732 : 
-; 5733 : 		// Besides prophets, first priority is to convert all our non-puppet cities
-; 5734 : 		else if(!bTooManyMissionaries && !AreAllOurCitiesConverted(eReligion, false /*bIncludePuppets*/))
+; 5754 : 
+; 5755 : 		// Besides prophets, first priority is to convert all our non-puppet cities
+; 5756 : 		else if(!bTooManyMissionaries && !AreAllOurCitiesConverted(eReligion, false /*bIncludePuppets*/))
 
 	cmp	BYTE PTR _bTooManyMissionaries$[esp+96], 0
 	jne	SHORT $LN26@DoFaithPur
@@ -36013,45 +36093,45 @@ $LN29@DoFaithPur:
 	test	al, al
 	jne	SHORT $LN26@DoFaithPur
 
-; 5735 : 		{
-; 5736 : 			BuyMissionary(eReligion);
+; 5757 : 		{
+; 5758 : 			BuyMissionary(eReligion);
 
 	push	edi
 	mov	ecx, esi
 	call	?BuyMissionary@CvReligionAI@@AAEXW4ReligionTypes@@@Z ; CvReligionAI::BuyMissionary
 
-; 5737 : 
-; 5738 : 			if(GC.getLogging())
+; 5759 : 
+; 5760 : 			if(GC.getLogging())
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getLogging@CvGlobals@@QAE_NXZ		; CvGlobals::getLogging
 	test	al, al
 	je	$LN84@DoFaithPur
 
-; 5739 : 			{
-; 5740 : 				strLogMsg += ", Saving for Missionary, Need to Convert Non-Puppet Cities";
+; 5761 : 			{
+; 5762 : 				strLogMsg += ", Saving for Missionary, Need to Convert Non-Puppet Cities";
 
-	push	OFFSET $SG227849
+	push	OFFSET $SG227898
 	lea	ecx, DWORD PTR _strLogMsg$[esp+100]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
-; 5741 : 			}
-; 5742 : 		}
+; 5763 : 			}
+; 5764 : 		}
 
 	jmp	$LN84@DoFaithPur
 $LN26@DoFaithPur:
 
-; 5743 : 
-; 5744 : 		// Next priority is to establish our faith building in every non-puppet city
-; 5745 : #ifdef AUI_RELIGION_FIX_MULTIPLE_FAITH_BUILDINGS
-; 5746 : 		else if (eFaithBuilding.size() > 0 && !AreAllOurCitiesHaveFaithBuilding(eReligion, false /*bIncludePuppets*/))
-; 5747 : 		{
-; 5748 : 			for (std::vector<BuildingClassTypes>::iterator it = eFaithBuilding.begin(); it != eFaithBuilding.end(); ++it)
-; 5749 : 			{
-; 5750 : 				BuyFaithBuilding(eReligion, (*it));
-; 5751 : 			}
-; 5752 : #else
-; 5753 : 		else if(eFaithBuilding != NO_BUILDINGCLASS && !AreAllOurCitiesHaveFaithBuilding(eReligion, false /*bIncludePuppets*/))
+; 5765 : 
+; 5766 : 		// Next priority is to establish our faith building in every non-puppet city
+; 5767 : #ifdef AUI_RELIGION_FIX_MULTIPLE_FAITH_BUILDINGS
+; 5768 : 		else if (eFaithBuilding.size() > 0 && !AreAllOurCitiesHaveFaithBuilding(eReligion, false /*bIncludePuppets*/))
+; 5769 : 		{
+; 5770 : 			for (std::vector<BuildingClassTypes>::iterator it = eFaithBuilding.begin(); it != eFaithBuilding.end(); ++it)
+; 5771 : 			{
+; 5772 : 				BuyFaithBuilding(eReligion, (*it));
+; 5773 : 			}
+; 5774 : #else
+; 5775 : 		else if(eFaithBuilding != NO_BUILDINGCLASS && !AreAllOurCitiesHaveFaithBuilding(eReligion, false /*bIncludePuppets*/))
 
 	mov	ebp, DWORD PTR _eFaithBuilding$[esp+96]
 	cmp	ebp, -1
@@ -36063,81 +36143,81 @@ $LN26@DoFaithPur:
 	test	al, al
 	jne	SHORT $LN80@DoFaithPur
 
-; 5754 : 		{
-; 5755 : 			BuyFaithBuilding(eReligion, eFaithBuilding);
+; 5776 : 		{
+; 5777 : 			BuyFaithBuilding(eReligion, eFaithBuilding);
 
 	push	ebp
 	push	edi
 	mov	ecx, esi
 	call	?BuyFaithBuilding@CvReligionAI@@AAEXW4ReligionTypes@@W4BuildingClassTypes@@@Z ; CvReligionAI::BuyFaithBuilding
 
-; 5756 : #endif
-; 5757 : 
-; 5758 : 			if(GC.getLogging())
+; 5778 : #endif
+; 5779 : 
+; 5780 : 			if(GC.getLogging())
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getLogging@CvGlobals@@QAE_NXZ		; CvGlobals::getLogging
 	test	al, al
 	je	$LN84@DoFaithPur
 
-; 5759 : 			{
-; 5760 : 				strLogMsg += ", Saving for Faith Building, For Our Non-Puppet Cities";
+; 5781 : 			{
+; 5782 : 				strLogMsg += ", Saving for Faith Building, For Our Non-Puppet Cities";
 
-	push	OFFSET $SG227853
+	push	OFFSET $SG227902
 	lea	ecx, DWORD PTR _strLogMsg$[esp+100]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
-; 5761 : 			}
-; 5762 : 		}
+; 5783 : 			}
+; 5784 : 		}
 
 	jmp	$LN84@DoFaithPur
 $LN80@DoFaithPur:
 
-; 5763 : 
-; 5764 : 		// Try to build other buildings with Faith if we took that belief
-; 5765 : 		else if (CanBuyNonFaithBuilding())
+; 5785 : 
+; 5786 : 		// Try to build other buildings with Faith if we took that belief
+; 5787 : 		else if (CanBuyNonFaithBuilding())
 
 	mov	ecx, esi
 	call	?CanBuyNonFaithBuilding@CvReligionAI@@ABE_NXZ ; CvReligionAI::CanBuyNonFaithBuilding
 	test	al, al
 	je	SHORT $LN20@DoFaithPur
 
-; 5766 : 		{
-; 5767 : 			if (!BuyAnyAvailableNonFaithBuilding())
+; 5788 : 		{
+; 5789 : 			if (!BuyAnyAvailableNonFaithBuilding())
 
 	mov	ecx, esi
 	call	?BuyAnyAvailableNonFaithBuilding@CvReligionAI@@AAE_NXZ ; CvReligionAI::BuyAnyAvailableNonFaithBuilding
 	test	al, al
 	jne	$LN84@DoFaithPur
 
-; 5768 : 			{
-; 5769 : 				if(GC.getLogging())
+; 5790 : 			{
+; 5791 : 				if(GC.getLogging())
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getLogging@CvGlobals@@QAE_NXZ		; CvGlobals::getLogging
 	test	al, al
 	je	$LN84@DoFaithPur
 
-; 5770 : 				{
-; 5771 : 					strLogMsg += ", Saving for Science Building, Have Reformation Belief";
+; 5792 : 				{
+; 5793 : 					strLogMsg += ", Saving for Science Building, Have Reformation Belief";
 
-	push	OFFSET $SG227858
+	push	OFFSET $SG227907
 	lea	ecx, DWORD PTR _strLogMsg$[esp+100]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
-; 5772 : 				}
-; 5773 : 			}
-; 5774 : 		}
+; 5794 : 				}
+; 5795 : 			}
+; 5796 : 		}
 
 	jmp	$LN84@DoFaithPur
 $LN20@DoFaithPur:
 
-; 5775 : 
-; 5776 : 		// If in Industrial, see if we want to save for buying a great person
-; 5777 : 		else if (m_pPlayer->GetCurrentEra() >= GC.getInfoTypeForString("ERA_INDUSTRIAL") && GetDesiredFaithGreatPerson() != NO_UNIT)
+; 5797 : 
+; 5798 : 		// If in Industrial, see if we want to save for buying a great person
+; 5799 : 		else if (m_pPlayer->GetCurrentEra() >= GC.getInfoTypeForString("ERA_INDUSTRIAL") && GetDesiredFaithGreatPerson() != NO_UNIT)
 
 	push	0
-	push	OFFSET $SG227861
+	push	OFFSET $SG227910
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	ecx, DWORD PTR [esi+4]
@@ -36150,40 +36230,40 @@ $LN20@DoFaithPur:
 	cmp	eax, -1
 	je	SHORT $LN81@DoFaithPur
 
-; 5778 : 		{
-; 5779 : 			UnitTypes eGPType = GetDesiredFaithGreatPerson();
+; 5800 : 		{
+; 5801 : 			UnitTypes eGPType = GetDesiredFaithGreatPerson();
 
 	mov	ecx, esi
 	call	?GetDesiredFaithGreatPerson@CvReligionAI@@ABE?AW4UnitTypes@@XZ ; CvReligionAI::GetDesiredFaithGreatPerson
 	mov	edi, eax
 
-; 5780 : 			BuyGreatPerson(eGPType);
+; 5802 : 			BuyGreatPerson(eGPType);
 
 	push	edi
 	mov	ecx, esi
 	call	?BuyGreatPerson@CvReligionAI@@AAEXW4UnitTypes@@@Z ; CvReligionAI::BuyGreatPerson
 
-; 5781 : 
-; 5782 : 			if(GC.getLogging())
+; 5803 : 
+; 5804 : 			if(GC.getLogging())
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getLogging@CvGlobals@@QAE_NXZ		; CvGlobals::getLogging
 	test	al, al
 	je	$LN84@DoFaithPur
 
-; 5783 : 			{
-; 5784 : 				strLogMsg += ", Saving for Great Person, ";
+; 5805 : 			{
+; 5806 : 				strLogMsg += ", Saving for Great Person, ";
 
-	push	OFFSET $SG227864
+	push	OFFSET $SG227913
 	lea	ecx, DWORD PTR _strLogMsg$[esp+100]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
-; 5785 : #ifdef AUI_WARNING_FIXES
-; 5786 : 				CvUnitEntry* pGPInfo = GC.getUnitInfo(eGPType);
-; 5787 : 				if (pGPInfo)
-; 5788 : 					strLogMsg += pGPInfo->GetDescription();
-; 5789 : #else
-; 5790 : 				strLogMsg += GC.getUnitInfo(eGPType)->GetDescription();
+; 5807 : #ifdef AUI_WARNING_FIXES
+; 5808 : 				CvUnitEntry* pGPInfo = GC.getUnitInfo(eGPType);
+; 5809 : 				if (pGPInfo)
+; 5810 : 					strLogMsg += pGPInfo->GetDescription();
+; 5811 : #else
+; 5812 : 				strLogMsg += GC.getUnitInfo(eGPType)->GetDescription();
 
 	push	edi
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
@@ -36194,19 +36274,19 @@ $LN20@DoFaithPur:
 	lea	ecx, DWORD PTR _strLogMsg$[esp+100]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
-; 5791 : #endif
-; 5792 : 			}				
-; 5793 : 		}
+; 5813 : #endif
+; 5814 : 			}				
+; 5815 : 		}
 
 	jmp	$LN84@DoFaithPur
 $LN81@DoFaithPur:
 
-; 5794 : 
-; 5795 : 		// Might as well convert puppet-cities to build our religious strength
-; 5796 : #ifdef AUI_RELIGION_FIX_MULTIPLE_FAITH_BUILDINGS
-; 5797 : 		else if (!bTooManyMissionaries && eFaithBuilding.size() > 0 && !AreAllOurCitiesHaveFaithBuilding(eReligion, true /*bIncludePuppets*/))
-; 5798 : #else
-; 5799 : 		else if(!bTooManyMissionaries && eFaithBuilding != NO_BUILDINGCLASS && !AreAllOurCitiesHaveFaithBuilding(eReligion, true /*bIncludePuppets*/))
+; 5816 : 
+; 5817 : 		// Might as well convert puppet-cities to build our religious strength
+; 5818 : #ifdef AUI_RELIGION_FIX_MULTIPLE_FAITH_BUILDINGS
+; 5819 : 		else if (!bTooManyMissionaries && eFaithBuilding.size() > 0 && !AreAllOurCitiesHaveFaithBuilding(eReligion, true /*bIncludePuppets*/))
+; 5820 : #else
+; 5821 : 		else if(!bTooManyMissionaries && eFaithBuilding != NO_BUILDINGCLASS && !AreAllOurCitiesHaveFaithBuilding(eReligion, true /*bIncludePuppets*/))
 
 	mov	bl, BYTE PTR _bTooManyMissionaries$[esp+96]
 	test	bl, bl
@@ -36220,90 +36300,13 @@ $LN81@DoFaithPur:
 	test	al, al
 	jne	SHORT $LN82@DoFaithPur
 
-; 5800 : #endif
-; 5801 : 		{
-; 5802 : 			BuyMissionary(eReligion);
-
-	push	edi
-	mov	ecx, esi
-	call	?BuyMissionary@CvReligionAI@@AAEXW4ReligionTypes@@@Z ; CvReligionAI::BuyMissionary
-
-; 5803 : 
-; 5804 : 			if(GC.getLogging())
-
-	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	call	?getLogging@CvGlobals@@QAE_NXZ		; CvGlobals::getLogging
-	test	al, al
-	je	$LN84@DoFaithPur
-
-; 5805 : 			{
-; 5806 : 				strLogMsg += ", Saving for Missionary, Need to Convert Puppet Cities";
-
-	push	OFFSET $SG227868
-	lea	ecx, DWORD PTR _strLogMsg$[esp+100]
-	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
-
-; 5807 : 			}
-; 5808 : 		}
-
-	jmp	$LN84@DoFaithPur
-$LN82@DoFaithPur:
-
-; 5809 : 
-; 5810 : 		// Have civs nearby to target who didn't start a religion?
-; 5811 : 		else if(!bTooManyMissionaries && HaveNearbyConversionTarget(eReligion, false /*bCanIncludeReligionStarter*/))
-
-	push	0
-	push	edi
-	mov	ecx, esi
-	call	?HaveNearbyConversionTarget@CvReligionAI@@ABE_NW4ReligionTypes@@_N@Z ; CvReligionAI::HaveNearbyConversionTarget
-	test	al, al
-	je	SHORT $LN83@DoFaithPur
-
-; 5812 : 		{
-; 5813 : 			BuyMissionary(eReligion);
-
-	push	edi
-	mov	ecx, esi
-	call	?BuyMissionary@CvReligionAI@@AAEXW4ReligionTypes@@@Z ; CvReligionAI::BuyMissionary
-
-; 5814 : 
-; 5815 : 			if(GC.getLogging())
-
-	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	call	?getLogging@CvGlobals@@QAE_NXZ		; CvGlobals::getLogging
-	test	al, al
-	je	$LN84@DoFaithPur
-
-; 5816 : 			{
-; 5817 : 				strLogMsg += ", Saving for Missionary, Need to Convert Cities of Non-Religion Starters";
-
-	push	OFFSET $SG227872
-	lea	ecx, DWORD PTR _strLogMsg$[esp+100]
-	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
-
-; 5818 : 			}
-; 5819 : 		}
-
-	jmp	SHORT $LN84@DoFaithPur
-$LN83@DoFaithPur:
-
-; 5820 : 
-; 5821 : 		// Have cities Inquisitors can defend?
-; 5822 : 		else if(!HaveEnoughInquisitors(eReligion))
-
-	push	edi
-	mov	ecx, esi
-	call	?HaveEnoughInquisitors@CvReligionAI@@ABE_NW4ReligionTypes@@@Z ; CvReligionAI::HaveEnoughInquisitors
-	test	al, al
-	jne	SHORT $LN7@DoFaithPur
-
+; 5822 : #endif
 ; 5823 : 		{
-; 5824 : 			BuyInquisitor(eReligion);
+; 5824 : 			BuyMissionary(eReligion);
 
 	push	edi
 	mov	ecx, esi
-	call	?BuyInquisitor@CvReligionAI@@AAEXW4ReligionTypes@@@Z ; CvReligionAI::BuyInquisitor
+	call	?BuyMissionary@CvReligionAI@@AAEXW4ReligionTypes@@@Z ; CvReligionAI::BuyMissionary
 
 ; 5825 : 
 ; 5826 : 			if(GC.getLogging())
@@ -36311,33 +36314,31 @@ $LN83@DoFaithPur:
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getLogging@CvGlobals@@QAE_NXZ		; CvGlobals::getLogging
 	test	al, al
-	je	SHORT $LN84@DoFaithPur
+	je	$LN84@DoFaithPur
 
 ; 5827 : 			{
-; 5828 : 				strLogMsg += ", Saving for Inquisitors, Need to Defend Our Cities";
+; 5828 : 				strLogMsg += ", Saving for Missionary, Need to Convert Puppet Cities";
 
-	push	OFFSET $SG227876
+	push	OFFSET $SG227917
 	lea	ecx, DWORD PTR _strLogMsg$[esp+100]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
 ; 5829 : 			}
 ; 5830 : 		}
 
-	jmp	SHORT $LN84@DoFaithPur
-$LN7@DoFaithPur:
+	jmp	$LN84@DoFaithPur
+$LN82@DoFaithPur:
 
 ; 5831 : 
-; 5832 : 		// Have civs nearby to target who did start a religion?
-; 5833 : 		else if(!bTooManyMissionaries && HaveNearbyConversionTarget(eReligion, true /*bCanIncludeReligionStarter*/))
+; 5832 : 		// Have civs nearby to target who didn't start a religion?
+; 5833 : 		else if(!bTooManyMissionaries && HaveNearbyConversionTarget(eReligion, false /*bCanIncludeReligionStarter*/))
 
-	test	bl, bl
-	jne	SHORT $LN4@DoFaithPur
-	push	1
+	push	0
 	push	edi
 	mov	ecx, esi
 	call	?HaveNearbyConversionTarget@CvReligionAI@@ABE_NW4ReligionTypes@@_N@Z ; CvReligionAI::HaveNearbyConversionTarget
 	test	al, al
-	je	SHORT $LN4@DoFaithPur
+	je	SHORT $LN83@DoFaithPur
 
 ; 5834 : 		{
 ; 5835 : 			BuyMissionary(eReligion);
@@ -36352,66 +36353,145 @@ $LN7@DoFaithPur:
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getLogging@CvGlobals@@QAE_NXZ		; CvGlobals::getLogging
 	test	al, al
-	je	SHORT $LN84@DoFaithPur
+	je	$LN84@DoFaithPur
 
 ; 5838 : 			{
-; 5839 : 				strLogMsg += ", Saving for Missionary, Need to Convert Cities of Religion Starters";
+; 5839 : 				strLogMsg += ", Saving for Missionary, Need to Convert Cities of Non-Religion Starters";
 
-	push	OFFSET $SG227880
+	push	OFFSET $SG227921
 	lea	ecx, DWORD PTR _strLogMsg$[esp+100]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
 ; 5840 : 			}
 ; 5841 : 		}
+
+	jmp	SHORT $LN84@DoFaithPur
+$LN83@DoFaithPur:
+
 ; 5842 : 
-; 5843 : 		// Any faith buildings from other religions we can buy?
-; 5844 : 		else
+; 5843 : 		// Have cities Inquisitors can defend?
+; 5844 : 		else if(!HaveEnoughInquisitors(eReligion))
+
+	push	edi
+	mov	ecx, esi
+	call	?HaveEnoughInquisitors@CvReligionAI@@ABE_NW4ReligionTypes@@@Z ; CvReligionAI::HaveEnoughInquisitors
+	test	al, al
+	jne	SHORT $LN7@DoFaithPur
+
+; 5845 : 		{
+; 5846 : 			BuyInquisitor(eReligion);
+
+	push	edi
+	mov	ecx, esi
+	call	?BuyInquisitor@CvReligionAI@@AAEXW4ReligionTypes@@@Z ; CvReligionAI::BuyInquisitor
+
+; 5847 : 
+; 5848 : 			if(GC.getLogging())
+
+	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
+	call	?getLogging@CvGlobals@@QAE_NXZ		; CvGlobals::getLogging
+	test	al, al
+	je	SHORT $LN84@DoFaithPur
+
+; 5849 : 			{
+; 5850 : 				strLogMsg += ", Saving for Inquisitors, Need to Defend Our Cities";
+
+	push	OFFSET $SG227925
+	lea	ecx, DWORD PTR _strLogMsg$[esp+100]
+	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
+
+; 5851 : 			}
+; 5852 : 		}
+
+	jmp	SHORT $LN84@DoFaithPur
+$LN7@DoFaithPur:
+
+; 5853 : 
+; 5854 : 		// Have civs nearby to target who did start a religion?
+; 5855 : 		else if(!bTooManyMissionaries && HaveNearbyConversionTarget(eReligion, true /*bCanIncludeReligionStarter*/))
+
+	test	bl, bl
+	jne	SHORT $LN4@DoFaithPur
+	push	1
+	push	edi
+	mov	ecx, esi
+	call	?HaveNearbyConversionTarget@CvReligionAI@@ABE_NW4ReligionTypes@@_N@Z ; CvReligionAI::HaveNearbyConversionTarget
+	test	al, al
+	je	SHORT $LN4@DoFaithPur
+
+; 5856 : 		{
+; 5857 : 			BuyMissionary(eReligion);
+
+	push	edi
+	mov	ecx, esi
+	call	?BuyMissionary@CvReligionAI@@AAEXW4ReligionTypes@@@Z ; CvReligionAI::BuyMissionary
+
+; 5858 : 
+; 5859 : 			if(GC.getLogging())
+
+	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
+	call	?getLogging@CvGlobals@@QAE_NXZ		; CvGlobals::getLogging
+	test	al, al
+	je	SHORT $LN84@DoFaithPur
+
+; 5860 : 			{
+; 5861 : 				strLogMsg += ", Saving for Missionary, Need to Convert Cities of Religion Starters";
+
+	push	OFFSET $SG227929
+	lea	ecx, DWORD PTR _strLogMsg$[esp+100]
+	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
+
+; 5862 : 			}
+; 5863 : 		}
+; 5864 : 
+; 5865 : 		// Any faith buildings from other religions we can buy?
+; 5866 : 		else
 
 	jmp	SHORT $LN84@DoFaithPur
 $LN4@DoFaithPur:
 
-; 5845 : 		{
-; 5846 : 			BuyAnyAvailableFaithBuilding();
+; 5867 : 		{
+; 5868 : 			BuyAnyAvailableFaithBuilding();
 
 	mov	ecx, esi
 	call	?BuyAnyAvailableFaithBuilding@CvReligionAI@@AAE_NXZ ; CvReligionAI::BuyAnyAvailableFaithBuilding
 $LN84@DoFaithPur:
 
-; 5847 : 		}
-; 5848 : 
-; 5849 : 		if(GC.getLogging())
+; 5869 : 		}
+; 5870 : 
+; 5871 : 		if(GC.getLogging())
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getLogging@CvGlobals@@QAE_NXZ		; CvGlobals::getLogging
 	test	al, al
 	je	$LN85@DoFaithPur
 
-; 5850 : 		{
-; 5851 : 			CvString strFaith;
+; 5872 : 		{
+; 5873 : 			CvString strFaith;
 
-	lea	ecx, DWORD PTR _strFaith$227883[esp+96]
+	lea	ecx, DWORD PTR _strFaith$227932[esp+96]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 5852 : 			strFaith.Format(", Faith: %d", m_pPlayer->GetFaith());
+; 5874 : 			strFaith.Format(", Faith: %d", m_pPlayer->GetFaith());
 
 	mov	ecx, DWORD PTR [esi+4]
 	mov	BYTE PTR __$EHRec$[esp+104], 1
 	call	?GetFaith@CvPlayer@@QBEHXZ		; CvPlayer::GetFaith
 	push	eax
-	lea	ecx, DWORD PTR _strFaith$227883[esp+100]
-	push	OFFSET $SG227884
+	lea	ecx, DWORD PTR _strFaith$227932[esp+100]
+	push	OFFSET $SG227933
 	push	ecx
 	call	?Format@CvString@@QAAXPBDZZ		; CvString::Format
 	add	esp, 12					; 0000000cH
 
-; 5853 : 			strLogMsg += strFaith;
+; 5875 : 			strLogMsg += strFaith;
 
-	lea	edx, DWORD PTR _strFaith$227883[esp+96]
+	lea	edx, DWORD PTR _strFaith$227932[esp+96]
 	push	edx
 	lea	ecx, DWORD PTR _strLogMsg$[esp+100]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
 
-; 5854 : 			GC.getGame().GetGameReligions()->LogReligionMessage(strLogMsg);
+; 5876 : 			GC.getGame().GetGameReligions()->LogReligionMessage(strLogMsg);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	lea	eax, DWORD PTR _strLogMsg$[esp+96]
@@ -36420,37 +36500,37 @@ $LN84@DoFaithPur:
 	mov	ecx, eax
 	call	?LogReligionMessage@CvGameReligions@@QAEXAAVCvString@@@Z ; CvGameReligions::LogReligionMessage
 
-; 5855 : 		}
+; 5877 : 		}
 
-	lea	ecx, DWORD PTR _strFaith$227883[esp+96]
+	lea	ecx, DWORD PTR _strFaith$227932[esp+96]
 	mov	BYTE PTR __$EHRec$[esp+104], 0
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 	jmp	$LN85@DoFaithPur
 $LN78@DoFaithPur:
 
-; 5690 : 	{
-; 5691 : 		// Unless all religions gone and we didn't start one
-; 5692 : 		if(pMyReligion == NULL && pReligions->GetNumReligionsStillToFound() <= 0)
+; 5712 : 	{
+; 5713 : 		// Unless all religions gone and we didn't start one
+; 5714 : 		if(pMyReligion == NULL && pReligions->GetNumReligionsStillToFound() <= 0)
 
 	mov	ecx, ebx
 	call	?GetNumReligionsStillToFound@CvGameReligions@@QBEHXZ ; CvGameReligions::GetNumReligionsStillToFound
 	test	eax, eax
 	jg	$LN85@DoFaithPur
 
-; 5693 : 		{
-; 5694 : 			// Fill our cities with any Faith buildings possible
-; 5695 : 			if(!BuyAnyAvailableFaithBuilding())
+; 5715 : 		{
+; 5716 : 			// Fill our cities with any Faith buildings possible
+; 5717 : 			if(!BuyAnyAvailableFaithBuilding())
 
 	mov	ecx, esi
 	call	?BuyAnyAvailableFaithBuilding@CvReligionAI@@AAE_NXZ ; CvReligionAI::BuyAnyAvailableFaithBuilding
 	test	al, al
 	jne	SHORT $LN85@DoFaithPur
 
-; 5696 : 			{
-; 5697 : 				if(m_pPlayer->GetCurrentEra() >= GC.getInfoTypeForString("ERA_INDUSTRIAL"))
+; 5718 : 			{
+; 5719 : 				if(m_pPlayer->GetCurrentEra() >= GC.getInfoTypeForString("ERA_INDUSTRIAL"))
 
 	push	0
-	push	OFFSET $SG227832
+	push	OFFSET $SG227881
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	ecx, DWORD PTR [esi+4]
@@ -36459,53 +36539,53 @@ $LN78@DoFaithPur:
 	cmp	eax, edi
 	jl	SHORT $LN85@DoFaithPur
 
-; 5698 : 				{
-; 5699 : 					UnitTypes eGPType = GetDesiredFaithGreatPerson();
+; 5720 : 				{
+; 5721 : 					UnitTypes eGPType = GetDesiredFaithGreatPerson();
 
 	mov	ecx, esi
 	call	?GetDesiredFaithGreatPerson@CvReligionAI@@ABE?AW4UnitTypes@@XZ ; CvReligionAI::GetDesiredFaithGreatPerson
 	mov	edi, eax
 
-; 5700 : 					if (eGPType != NO_UNIT)
+; 5722 : 					if (eGPType != NO_UNIT)
 
 	cmp	edi, -1
 	je	SHORT $LN85@DoFaithPur
 
-; 5701 : 					{
-; 5702 : 						BuyGreatPerson(eGPType);
+; 5723 : 					{
+; 5724 : 						BuyGreatPerson(eGPType);
 
 	push	edi
 	mov	ecx, esi
 	call	?BuyGreatPerson@CvReligionAI@@AAEXW4UnitTypes@@@Z ; CvReligionAI::BuyGreatPerson
 
-; 5703 : 
-; 5704 : 						if(GC.getLogging())
+; 5725 : 
+; 5726 : 						if(GC.getLogging())
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getLogging@CvGlobals@@QAE_NXZ		; CvGlobals::getLogging
 	test	al, al
 	je	SHORT $LN85@DoFaithPur
 
-; 5705 : 						{
-; 5706 : 							strLogMsg += ", Saving for Great Person, ";
+; 5727 : 						{
+; 5728 : 							strLogMsg += ", Saving for Great Person, ";
 
-	push	OFFSET $SG227836
+	push	OFFSET $SG227885
 	lea	ecx, DWORD PTR _strLogMsg$[esp+100]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
-; 5707 : 							CvUnitEntry *pkEntry = GC.getUnitInfo(eGPType);
+; 5729 : 							CvUnitEntry *pkEntry = GC.getUnitInfo(eGPType);
 
 	push	edi
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getUnitInfo@CvGlobals@@QAEPAVCvUnitEntry@@W4UnitTypes@@@Z ; CvGlobals::getUnitInfo
 
-; 5708 : 							if (pkEntry)
+; 5730 : 							if (pkEntry)
 
 	test	eax, eax
 	je	SHORT $LN85@DoFaithPur
 
-; 5709 : 							{
-; 5710 : 								strLogMsg += pkEntry->GetDescription();
+; 5731 : 							{
+; 5732 : 								strLogMsg += pkEntry->GetDescription();
 
 	lea	ecx, DWORD PTR [eax+36]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
@@ -36514,8 +36594,8 @@ $LN78@DoFaithPur:
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 $LN85@DoFaithPur:
 
-; 5856 : 	}
-; 5857 : }
+; 5878 : 	}
+; 5879 : }
 
 	lea	ecx, DWORD PTR _strLogMsg$[esp+96]
 	mov	DWORD PTR __$EHRec$[esp+104], -1
@@ -36535,7 +36615,7 @@ __unwindfunclet$?DoFaithPurchases@CvReligionAI@@AAEXXZ$0:
 	lea	ecx, DWORD PTR _strLogMsg$[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?DoFaithPurchases@CvReligionAI@@AAEXXZ$1:
-	lea	ecx, DWORD PTR _strFaith$227883[ebp]
+	lea	ecx, DWORD PTR _strFaith$227932[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?DoFaithPurchases@CvReligionAI@@AAEXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?DoFaithPurchases@CvReligionAI@@AAEXXZ
@@ -36638,7 +36718,7 @@ xdata$x	ENDS
 ;	COMDAT ?push_back@?$FStaticVector@VCvReligion@@$0BA@$0A@$0BCJ@$0A@@@QAEIABVCvReligion@@@Z
 _TEXT	SEGMENT
 _this$ = -20						; size = 4
-$T242196 = -16						; size = 4
+$T242276 = -16						; size = 4
 __$EHRec$ = -12						; size = 12
 _element$ = 8						; size = 4
 ?push_back@?$FStaticVector@VCvReligion@@$0BA@$0A@$0BCJ@$0A@@@QAEIABVCvReligion@@@Z PROC ; FStaticVector<CvReligion,16,0,297,0>::push_back, COMDAT
@@ -36675,7 +36755,7 @@ $LN1@push_back@3:
 	mov	ecx, DWORD PTR [esi+4]
 	imul	ecx, 328				; 00000148H
 	add	ecx, DWORD PTR [esi]
-	mov	DWORD PTR $T242196[esp+24], ecx
+	mov	DWORD PTR $T242276[esp+24], ecx
 	mov	DWORD PTR __$EHRec$[esp+32], 0
 	je	SHORT $LN4@push_back@3
 	mov	eax, DWORD PTR _element$[esp+20]
@@ -36706,7 +36786,7 @@ __unwindfunclet$?push_back@?$FStaticVector@VCvReligion@@$0BA@$0A@$0BCJ@$0A@@@QAE
 	mov	edx, DWORD PTR _this$[ebp]
 	add	ecx, DWORD PTR [edx]
 	push	ecx
-	mov	eax, DWORD PTR $T242196[ebp]
+	mov	eax, DWORD PTR $T242276[ebp]
 	push	eax
 	call	??3@YAXPAX0@Z				; operator delete
 	add	esp, 8
@@ -36833,10 +36913,10 @@ PUBLIC	?_Ufill@?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@I
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?_Ufill@?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@IAEPAW4BeliefTypes@@PAW43@IABW43@@Z
 _TEXT	SEGMENT
-$T242261 = -4						; size = 1
+$T242341 = -4						; size = 1
 __Ptr$ = 8						; size = 4
 __Count$ = 12						; size = 4
-__Cat$242264 = 16					; size = 1
+__Cat$242344 = 16					; size = 1
 __Val$ = 16						; size = 4
 ?_Ufill@?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@IAEPAW4BeliefTypes@@PAW43@IABW43@@Z PROC ; std::vector<enum BeliefTypes,std::allocator<enum BeliefTypes> >::_Ufill, COMDAT
 ; _this$ = ecx
@@ -36847,13 +36927,13 @@ __Val$ = 16						; size = 4
 
 ; 1254 : 		_STDEXT unchecked_uninitialized_fill_n(_Ptr, _Count, _Val, this->_Alval);
 
-	mov	edx, DWORD PTR __Cat$242264[esp]
+	mov	edx, DWORD PTR __Cat$242344[esp]
 	push	esi
 	mov	esi, DWORD PTR __Count$[esp+4]
 	push	edi
 	mov	edi, DWORD PTR __Ptr$[esp+8]
-	mov	BYTE PTR $T242261[esp+12], 0
-	mov	eax, DWORD PTR $T242261[esp+12]
+	mov	BYTE PTR $T242341[esp+12], 0
+	mov	eax, DWORD PTR $T242341[esp+12]
 	push	eax
 	mov	eax, DWORD PTR __Val$[esp+12]
 	push	edx
@@ -36881,10 +36961,10 @@ PUBLIC	??$_Unchecked_uninitialized_move@V?$_Vector_iterator@W4BeliefTypes@@V?$al
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ??$_Unchecked_uninitialized_move@V?$_Vector_iterator@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@PAW4BeliefTypes@@V?$allocator@W4BeliefTypes@@@2@@stdext@@YAPAW4BeliefTypes@@V?$_Vector_iterator@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@0PAW41@AAV?$allocator@W4BeliefTypes@@@3@@Z
 _TEXT	SEGMENT
-$T242296 = -4						; size = 1
+$T242376 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$242300 = 16					; size = 1
+__Cat$242380 = 16					; size = 1
 __Dest$ = 16						; size = 4
 __Al$ = 20						; size = 4
 ??$_Unchecked_uninitialized_move@V?$_Vector_iterator@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@PAW4BeliefTypes@@V?$allocator@W4BeliefTypes@@@2@@stdext@@YAPAW4BeliefTypes@@V?$_Vector_iterator@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@0PAW41@AAV?$allocator@W4BeliefTypes@@@3@@Z PROC ; stdext::_Unchecked_uninitialized_move<std::_Vector_iterator<enum BeliefTypes,std::allocator<enum BeliefTypes> >,enum BeliefTypes *,std::allocator<enum BeliefTypes> >, COMDAT
@@ -36897,10 +36977,10 @@ __Al$ = 20						; size = 4
 ; 863  : 		_CHECKED_BASE(_Last), _Dest, _Al,
 ; 864  : 		_STD _Move_cat(_Dest), _STD _Range_checked_iterator_tag()));
 
-	mov	ecx, DWORD PTR __Cat$242300[esp]
+	mov	ecx, DWORD PTR __Cat$242380[esp]
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T242296[esp+4], 0
-	mov	eax, DWORD PTR $T242296[esp+4]
+	mov	BYTE PTR $T242376[esp+4], 0
+	mov	eax, DWORD PTR $T242376[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -36922,10 +37002,10 @@ PUBLIC	??$_Unchecked_uninitialized_move@PAW4BeliefTypes@@PAW41@V?$allocator@W4Be
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Unchecked_uninitialized_move@PAW4BeliefTypes@@PAW41@V?$allocator@W4BeliefTypes@@@std@@@stdext@@YAPAW4BeliefTypes@@PAW41@00AAV?$allocator@W4BeliefTypes@@@std@@@Z
 _TEXT	SEGMENT
-$T242332 = -4						; size = 1
+$T242412 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$242335 = 16					; size = 1
+__Cat$242415 = 16					; size = 1
 __Dest$ = 16						; size = 4
 __Al$ = 20						; size = 4
 ??$_Unchecked_uninitialized_move@PAW4BeliefTypes@@PAW41@V?$allocator@W4BeliefTypes@@@std@@@stdext@@YAPAW4BeliefTypes@@PAW41@00AAV?$allocator@W4BeliefTypes@@@std@@@Z PROC ; stdext::_Unchecked_uninitialized_move<enum BeliefTypes *,enum BeliefTypes *,std::allocator<enum BeliefTypes> >, COMDAT
@@ -36938,10 +37018,10 @@ __Al$ = 20						; size = 4
 ; 863  : 		_CHECKED_BASE(_Last), _Dest, _Al,
 ; 864  : 		_STD _Move_cat(_Dest), _STD _Range_checked_iterator_tag()));
 
-	mov	ecx, DWORD PTR __Cat$242335[esp]
+	mov	ecx, DWORD PTR __Cat$242415[esp]
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T242332[esp+4], 0
-	mov	eax, DWORD PTR $T242332[esp+4]
+	mov	BYTE PTR $T242412[esp+4], 0
+	mov	eax, DWORD PTR $T242412[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -37064,7 +37144,7 @@ __ehfuncinfo$?DeleteArray@CvReligionXMLEntries@@QAEXXZ DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?DeleteArray@CvReligionXMLEntries@@QAEXXZ
 _TEXT	SEGMENT
-$T242632 = -16						; size = 4
+$T242721 = -16						; size = 4
 __$EHRec$ = -12						; size = 12
 ?DeleteArray@CvReligionXMLEntries@@QAEXXZ PROC		; CvReligionXMLEntries::DeleteArray, COMDAT
 ; _this$ = ecx
@@ -37094,7 +37174,7 @@ $LL14@DeleteArra:
 ; 85   : 		SAFE_DELETE(*it);
 
 	mov	esi, DWORD PTR [edi]
-	mov	DWORD PTR $T242632[esp+28], esi
+	mov	DWORD PTR $T242721[esp+28], esi
 	test	esi, esi
 	je	SHORT $LN32@DeleteArra
 	mov	DWORD PTR [esi], OFFSET ??_7CvReligionEntry@@6B@
@@ -37152,7 +37232,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?DeleteArray@CvReligionXMLEntries@@QAEXXZ$0:
-	mov	ecx, DWORD PTR $T242632[ebp]
+	mov	ecx, DWORD PTR $T242721[ebp]
 	jmp	??1CvBaseInfo@@QAE@XZ
 __ehhandler$?DeleteArray@CvReligionXMLEntries@@QAEXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?DeleteArray@CvReligionXMLEntries@@QAEXXZ
@@ -37177,14 +37257,14 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 _uiVersion$ = -352					; size = 4
 _iMinFaith$ = -348					; size = 4
-_iEntriesToRead$225787 = -344				; size = 4
-_tempItem$225788 = -340					; size = 328
+_iEntriesToRead$225832 = -344				; size = 4
+_tempItem$225833 = -340					; size = 328
 __$EHRec$ = -12						; size = 12
 _loadFrom$ = 8						; size = 4
 _writeTo$ = 12						; size = 4
 ??5@YAAAVFDataStream@@AAV0@AAVCvGameReligions@@@Z PROC	; operator>>, COMDAT
 
-; 2611 : {
+; 2633 : {
 
 	mov	eax, DWORD PTR fs:0
 	push	-1
@@ -37195,10 +37275,10 @@ _writeTo$ = 12						; size = 4
 	push	ebp
 	push	esi
 
-; 2612 : 	uint uiVersion;
-; 2613 : 	int iMinFaith;
-; 2614 : 
-; 2615 : 	loadFrom >> uiVersion;
+; 2634 : 	uint uiVersion;
+; 2635 : 	int iMinFaith;
+; 2636 : 
+; 2637 : 	loadFrom >> uiVersion;
 
 	mov	esi, DWORD PTR _loadFrom$[esp+356]
 	lea	eax, DWORD PTR _uiVersion$[esp+360]
@@ -37206,48 +37286,48 @@ _writeTo$ = 12						; size = 4
 	mov	ecx, esi
 	call	?Read@FDataStream@@IAEXAAI@Z		; FDataStream::Read
 
-; 2616 : 
-; 2617 : 	if(uiVersion >= 3)
+; 2638 : 
+; 2639 : 	if(uiVersion >= 3)
 
 	cmp	DWORD PTR _uiVersion$[esp+360], 3
 	jb	SHORT $LN7@operator@11
 
-; 2618 : 	{
-; 2619 : 		loadFrom >> iMinFaith;
+; 2640 : 	{
+; 2641 : 		loadFrom >> iMinFaith;
 
 	lea	ecx, DWORD PTR _iMinFaith$[esp+360]
 	push	ecx
 	mov	ecx, esi
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
 
-; 2620 : 		writeTo.SetMinimumFaithNextPantheon(iMinFaith);
+; 2642 : 		writeTo.SetMinimumFaithNextPantheon(iMinFaith);
 
 	mov	ebp, DWORD PTR _writeTo$[esp+356]
 	mov	edx, DWORD PTR _iMinFaith$[esp+360]
 	mov	DWORD PTR [ebp+5264], edx
 
-; 2621 : 	}
-; 2622 : 	else
+; 2643 : 	}
+; 2644 : 	else
 
 	jmp	SHORT $LN17@operator@11
 $LN7@operator@11:
 
-; 2623 : 	{
-; 2624 : 		writeTo.SetMinimumFaithNextPantheon(0);
+; 2645 : 	{
+; 2646 : 		writeTo.SetMinimumFaithNextPantheon(0);
 
 	mov	ebp, DWORD PTR _writeTo$[esp+356]
 	mov	DWORD PTR [ebp+5264], 0
 $LN17@operator@11:
 
-; 2625 : 	}
-; 2626 : 
-; 2627 : 	if(uiVersion < 4)
+; 2647 : 	}
+; 2648 : 
+; 2649 : 	if(uiVersion < 4)
 
 	cmp	DWORD PTR _uiVersion$[esp+360], 4
 	jae	SHORT $LN19@operator@11
 
-; 2628 : 	{
-; 2629 : 		loadFrom >> iMinFaith;
+; 2650 : 	{
+; 2651 : 		loadFrom >> iMinFaith;
 
 	lea	eax, DWORD PTR _iMinFaith$[esp+360]
 	push	eax
@@ -37255,92 +37335,92 @@ $LN17@operator@11:
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
 $LN19@operator@11:
 
-; 2630 : 		//	writeTo.SetMinimumFaithNextGreatProphet(iMinFaith);  -- eliminated in Version 4
-; 2631 : 	}
-; 2632 : 
-; 2633 : 	if(uiVersion >= 2)
+; 2652 : 		//	writeTo.SetMinimumFaithNextGreatProphet(iMinFaith);  -- eliminated in Version 4
+; 2653 : 	}
+; 2654 : 
+; 2655 : 	if(uiVersion >= 2)
 
 	cmp	DWORD PTR _uiVersion$[esp+360], 2
 	jb	$LN31@operator@11
 	push	ebx
 
-; 2634 : 	{
-; 2635 : 		int iEntriesToRead;
-; 2636 : 		CvReligion tempItem;
+; 2656 : 	{
+; 2657 : 		int iEntriesToRead;
+; 2658 : 		CvReligion tempItem;
 
 	or	ebx, -1
 	push	edi
-	lea	ecx, DWORD PTR _tempItem$225788[esp+520]
-	mov	DWORD PTR _tempItem$225788[esp+368], ebx
-	mov	DWORD PTR _tempItem$225788[esp+372], ebx
-	mov	DWORD PTR _tempItem$225788[esp+376], ebx
-	mov	DWORD PTR _tempItem$225788[esp+380], ebx
-	mov	DWORD PTR _tempItem$225788[esp+384], ebx
-	mov	BYTE PTR _tempItem$225788[esp+388], 0
-	mov	BYTE PTR _tempItem$225788[esp+389], 0
+	lea	ecx, DWORD PTR _tempItem$225833[esp+520]
+	mov	DWORD PTR _tempItem$225833[esp+368], ebx
+	mov	DWORD PTR _tempItem$225833[esp+372], ebx
+	mov	DWORD PTR _tempItem$225833[esp+376], ebx
+	mov	DWORD PTR _tempItem$225833[esp+380], ebx
+	mov	DWORD PTR _tempItem$225833[esp+384], ebx
+	mov	BYTE PTR _tempItem$225833[esp+388], 0
+	mov	BYTE PTR _tempItem$225833[esp+389], 0
 	call	??0CvReligionBeliefs@@QAE@XZ		; CvReligionBeliefs::CvReligionBeliefs
 	push	128					; 00000080H
 	xor	edi, edi
-	lea	ecx, DWORD PTR _tempItem$225788[esp+394]
+	lea	ecx, DWORD PTR _tempItem$225833[esp+394]
 	push	edi
 	push	ecx
 	call	_memset
 	add	esp, 12					; 0000000cH
 
-; 2637 : 
-; 2638 : 		writeTo.m_CurrentReligions.clear();
+; 2659 : 
+; 2660 : 		writeTo.m_CurrentReligions.clear();
 
 	mov	ecx, ebp
 	mov	DWORD PTR __$EHRec$[esp+376], edi
 	call	?clear@?$BaseVector@VCvReligion@@$0A@@@QAEXXZ ; BaseVector<CvReligion,0>::clear
 
-; 2639 : 		loadFrom >> iEntriesToRead;
+; 2661 : 		loadFrom >> iEntriesToRead;
 
-	lea	edx, DWORD PTR _iEntriesToRead$225787[esp+368]
+	lea	edx, DWORD PTR _iEntriesToRead$225832[esp+368]
 	push	edx
 	mov	ecx, esi
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
 
-; 2640 : 		for(int iI = 0; iI < iEntriesToRead; iI++)
+; 2662 : 		for(int iI = 0; iI < iEntriesToRead; iI++)
 
-	cmp	DWORD PTR _iEntriesToRead$225787[esp+368], edi
+	cmp	DWORD PTR _iEntriesToRead$225832[esp+368], edi
 	jle	SHORT $LN1@operator@11
 	npad	7
 $LL3@operator@11:
 
-; 2641 : 		{
-; 2642 : 			loadFrom >> tempItem;
+; 2663 : 		{
+; 2664 : 			loadFrom >> tempItem;
 
-	lea	eax, DWORD PTR _tempItem$225788[esp+368]
+	lea	eax, DWORD PTR _tempItem$225833[esp+368]
 	push	eax
 	push	esi
 	call	??5@YAAAVFDataStream@@AAV0@AAVCvReligion@@@Z ; operator>>
 	add	esp, 8
 
-; 2643 : 			writeTo.m_CurrentReligions.push_back(tempItem);
+; 2665 : 			writeTo.m_CurrentReligions.push_back(tempItem);
 
-	lea	ecx, DWORD PTR _tempItem$225788[esp+368]
+	lea	ecx, DWORD PTR _tempItem$225833[esp+368]
 	push	ecx
 	mov	ecx, ebp
 	call	?push_back@?$FStaticVector@VCvReligion@@$0BA@$0A@$0BCJ@$0A@@@QAEIABVCvReligion@@@Z ; FStaticVector<CvReligion,16,0,297,0>::push_back
 	inc	edi
-	cmp	edi, DWORD PTR _iEntriesToRead$225787[esp+368]
+	cmp	edi, DWORD PTR _iEntriesToRead$225832[esp+368]
 	jl	SHORT $LL3@operator@11
 $LN1@operator@11:
 
-; 2644 : 		}
-; 2645 : 	}
+; 2666 : 		}
+; 2667 : 	}
 
-	lea	ecx, DWORD PTR _tempItem$225788[esp+520]
+	lea	ecx, DWORD PTR _tempItem$225833[esp+520]
 	mov	DWORD PTR __$EHRec$[esp+376], ebx
 	call	??1CvReligionBeliefs@@QAE@XZ		; CvReligionBeliefs::~CvReligionBeliefs
 	pop	edi
 	pop	ebx
 $LN31@operator@11:
 
-; 2646 : 
-; 2647 : 	return loadFrom;
-; 2648 : }
+; 2668 : 
+; 2669 : 	return loadFrom;
+; 2670 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+360]
 	mov	eax, esi
@@ -37353,7 +37433,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$??5@YAAAVFDataStream@@AAV0@AAVCvGameReligions@@@Z$0:
-	lea	ecx, DWORD PTR _tempItem$225788[ebp]
+	lea	ecx, DWORD PTR _tempItem$225833[ebp]
 	jmp	??1CvReligion@@QAE@XZ
 __ehhandler$??5@YAAAVFDataStream@@AAV0@AAVCvGameReligions@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$??5@YAAAVFDataStream@@AAV0@AAVCvGameReligions@@@Z
@@ -37369,7 +37449,7 @@ _eReligion$ = 8						; size = 4
 ?DoReligionFounded@CvCityReligions@@QAEXW4ReligionTypes@@@Z PROC ; CvCityReligions::DoReligionFounded, COMDAT
 ; _this$ = ecx
 
-; 3722 : {
+; 3744 : {
 
 	sub	esp, 24					; 00000018H
 	push	ebx
@@ -37377,19 +37457,19 @@ _eReligion$ = 8						; size = 4
 	push	edi
 	mov	esi, ecx
 
-; 3723 : 	int iInitialPressure;
-; 3724 : 	ReligionTypes eOldMajorityReligion = GetReligiousMajority();
+; 3745 : 	int iInitialPressure;
+; 3746 : 	ReligionTypes eOldMajorityReligion = GetReligiousMajority();
 
 	call	?GetReligiousMajority@CvCityReligions@@QAE?AW4ReligionTypes@@XZ ; CvCityReligions::GetReligiousMajority
 
-; 3725 : 
-; 3726 : 	iInitialPressure = GC.getRELIGION_INITIAL_FOUNDING_CITY_PRESSURE() * m_pCity->getPopulation();
+; 3747 : 
+; 3748 : 	iInitialPressure = GC.getRELIGION_INITIAL_FOUNDING_CITY_PRESSURE() * m_pCity->getPopulation();
 
 	mov	ecx, DWORD PTR [esi+416]
 	mov	ebx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+7892
 	mov	edi, eax
 
-; 3727 : 	CvReligionInCity newReligion(eReligion, true, 0, iInitialPressure);
+; 3749 : 	CvReligionInCity newReligion(eReligion, true, 0, iInitialPressure);
 
 	mov	eax, DWORD PTR _eReligion$[esp+32]
 	mov	DWORD PTR _newReligion$[esp+36], eax
@@ -37398,7 +37478,7 @@ _eReligion$ = 8						; size = 4
 	call	?getPopulation@CvCity@@QBEHXZ		; CvCity::getPopulation
 	imul	eax, ebx
 
-; 3728 : 	m_ReligionStatus.push_back(newReligion);
+; 3750 : 	m_ReligionStatus.push_back(newReligion);
 
 	lea	ecx, DWORD PTR _newReligion$[esp+36]
 	push	ecx
@@ -37408,8 +37488,8 @@ _eReligion$ = 8						; size = 4
 	mov	DWORD PTR _newReligion$[esp+60], 0
 	call	?push_back@?$FStaticVector@VCvReligionInCity@@$07$0A@$0BCJ@$0A@@@QAEIABVCvReligionInCity@@@Z ; FStaticVector<CvReligionInCity,8,0,297,0>::push_back
 
-; 3729 : 
-; 3730 : 	RecomputeFollowers(FOLLOWER_CHANGE_RELIGION_FOUNDED, eOldMajorityReligion);
+; 3751 : 
+; 3752 : 	RecomputeFollowers(FOLLOWER_CHANGE_RELIGION_FOUNDED, eOldMajorityReligion);
 
 	push	-1
 	push	edi
@@ -37420,7 +37500,7 @@ _eReligion$ = 8						; size = 4
 	pop	esi
 	pop	ebx
 
-; 3731 : }
+; 3753 : }
 
 	add	esp, 24					; 00000018H
 	ret	4
@@ -37436,9 +37516,9 @@ _iAtheismPressure$ = -40				; size = 4
 _iReligionPressure$ = -36				; size = 4
 _eHolyCityReligion$ = -32				; size = 4
 _eOldMajorityReligion$ = -28				; size = 4
-_pressureRetainedReligion$226325 = -24			; size = 24
-_holyCityReligion$226323 = -24				; size = 24
-_holyCityReligion$226321 = -24				; size = 24
+_pressureRetainedReligion$226370 = -24			; size = 24
+_holyCityReligion$226368 = -24				; size = 24
+_holyCityReligion$226366 = -24				; size = 24
 _prophetReligion$ = -24					; size = 24
 _atheism$ = -24						; size = 24
 _eReligion$ = 8						; size = 4
@@ -37447,41 +37527,41 @@ _eResponsiblePlayer$ = 16				; size = 4
 ?AddProphetSpread@CvCityReligions@@QAEXW4ReligionTypes@@HW4PlayerTypes@@@Z PROC ; CvCityReligions::AddProphetSpread, COMDAT
 ; _this$ = ecx
 
-; 3735 : {
+; 3757 : {
 
 	sub	esp, 48					; 00000030H
 	push	ebx
 	push	ebp
 	push	esi
 
-; 3736 : 	int iAtheismPressure = 0;
+; 3758 : 	int iAtheismPressure = 0;
 
 	xor	ebx, ebx
 	push	edi
 	mov	esi, ecx
 	mov	DWORD PTR _iAtheismPressure$[esp+64], ebx
 
-; 3737 : 	int iReligionPressure = 0;
+; 3759 : 	int iReligionPressure = 0;
 
 	mov	DWORD PTR _iReligionPressure$[esp+64], ebx
 
-; 3738 : 	int iPressureRetained = 0;
+; 3760 : 	int iPressureRetained = 0;
 
 	xor	ebp, ebp
 
-; 3739 : 	ReligionTypes eOldMajorityReligion = GetReligiousMajority();
+; 3761 : 	ReligionTypes eOldMajorityReligion = GetReligiousMajority();
 
 	call	?GetReligiousMajority@CvCityReligions@@QAE?AW4ReligionTypes@@XZ ; CvCityReligions::GetReligiousMajority
 
-; 3740 : 	ReligionTypes eHolyCityReligion = NO_RELIGION;
-; 3741 : 	ReligionTypes ePressureRetainedReligion = NO_RELIGION;
-; 3742 : 	bool bProphetsReligionFoundedHere = false;
-; 3743 : 
-; 3744 : 	ReligionInCityList::iterator it;
-; 3745 : #ifdef AUI_ITERATOR_POSTFIX_INCREMENT_OPTIMIZATIONS
-; 3746 : 	for (it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); ++it)
-; 3747 : #else
-; 3748 : 	for(it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); it++)
+; 3762 : 	ReligionTypes eHolyCityReligion = NO_RELIGION;
+; 3763 : 	ReligionTypes ePressureRetainedReligion = NO_RELIGION;
+; 3764 : 	bool bProphetsReligionFoundedHere = false;
+; 3765 : 
+; 3766 : 	ReligionInCityList::iterator it;
+; 3767 : #ifdef AUI_ITERATOR_POSTFIX_INCREMENT_OPTIMIZATIONS
+; 3768 : 	for (it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); ++it)
+; 3769 : #else
+; 3770 : 	for(it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); it++)
 
 	mov	edi, DWORD PTR [esi]
 	mov	DWORD PTR _eOldMajorityReligion$[esp+64], eax
@@ -37496,72 +37576,72 @@ _eResponsiblePlayer$ = 16				; size = 4
 	je	$LN13@AddProphet
 $LL64@AddProphet:
 
-; 3749 : #endif
-; 3750 : 	{
-; 3751 : 		if (it->m_eReligion == NO_RELIGION)
+; 3771 : #endif
+; 3772 : 	{
+; 3773 : 		if (it->m_eReligion == NO_RELIGION)
 
 	mov	eax, DWORD PTR [edi]
 	cmp	eax, -1
 	jne	SHORT $LN12@AddProphet
 
-; 3752 : 		{
-; 3753 : 			iAtheismPressure = it->m_iPressure;
+; 3774 : 		{
+; 3775 : 			iAtheismPressure = it->m_iPressure;
 
 	mov	edx, DWORD PTR [edi+12]
 	mov	DWORD PTR _iAtheismPressure$[esp+64], edx
 	jmp	SHORT $LN7@AddProphet
 $LN12@AddProphet:
 
-; 3754 : 		}
-; 3755 : 		else if (eReligion == it->m_eReligion)
+; 3776 : 		}
+; 3777 : 		else if (eReligion == it->m_eReligion)
 
 	cmp	DWORD PTR _eReligion$[esp+60], eax
 	jne	SHORT $LN10@AddProphet
 
-; 3756 : 		{
-; 3757 : 			iReligionPressure = it->m_iPressure;
+; 3778 : 		{
+; 3779 : 			iReligionPressure = it->m_iPressure;
 
 	mov	ecx, DWORD PTR [edi+12]
 	mov	DWORD PTR _iReligionPressure$[esp+64], ecx
 
-; 3758 : 			if (it->m_bFoundedHere)
+; 3780 : 			if (it->m_bFoundedHere)
 
 	cmp	BYTE PTR [edi+4], bl
 	je	SHORT $LN7@AddProphet
 
-; 3759 : 			{
-; 3760 : 				bProphetsReligionFoundedHere = true;
+; 3781 : 			{
+; 3782 : 				bProphetsReligionFoundedHere = true;
 
 	mov	BYTE PTR _bProphetsReligionFoundedHere$[esp+64], 1
 
-; 3761 : 			}
-; 3762 : 		}
+; 3783 : 			}
+; 3784 : 		}
 
 	jmp	SHORT $LN7@AddProphet
 $LN10@AddProphet:
 
-; 3763 : 		else if (it->m_bFoundedHere)
+; 3785 : 		else if (it->m_bFoundedHere)
 
 	cmp	BYTE PTR [edi+4], bl
 	je	SHORT $LN7@AddProphet
 
-; 3764 : 		{
-; 3765 : 			eHolyCityReligion = it->m_eReligion;
+; 3786 : 		{
+; 3787 : 			eHolyCityReligion = it->m_eReligion;
 
 	mov	DWORD PTR _eHolyCityReligion$[esp+64], eax
 $LN7@AddProphet:
 
-; 3766 : 		}
-; 3767 : 
-; 3768 : 		if (it->m_eReligion > RELIGION_PANTHEON &&  it->m_eReligion != eReligion)
+; 3788 : 		}
+; 3789 : 
+; 3790 : 		if (it->m_eReligion > RELIGION_PANTHEON &&  it->m_eReligion != eReligion)
 
 	cmp	eax, ebx
 	jle	SHORT $LN14@AddProphet
 	cmp	eax, DWORD PTR _eReligion$[esp+60]
 	je	SHORT $LN14@AddProphet
 
-; 3769 : 		{
-; 3770 : 			const CvReligion *pReligion = GC.getGame().GetGameReligions()->GetReligion(it->m_eReligion, NO_PLAYER);
+; 3791 : 		{
+; 3792 : 			const CvReligion *pReligion = GC.getGame().GetGameReligions()->GetReligion(it->m_eReligion, NO_PLAYER);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	-1
@@ -37570,18 +37650,18 @@ $LN7@AddProphet:
 	mov	ecx, eax
 	call	?GetReligion@CvGameReligions@@QBEPBVCvReligion@@W4ReligionTypes@@W4PlayerTypes@@@Z ; CvGameReligions::GetReligion
 
-; 3771 : 			int iPressureRetention = pReligion->m_Beliefs.GetInquisitorPressureRetention();  // Normally 0
+; 3793 : 			int iPressureRetention = pReligion->m_Beliefs.GetInquisitorPressureRetention();  // Normally 0
 
 	mov	eax, DWORD PTR [eax+268]
 
-; 3772 : 			if (iPressureRetention > 0)
+; 3794 : 			if (iPressureRetention > 0)
 
 	cmp	eax, ebx
 	jle	SHORT $LN14@AddProphet
 
-; 3773 : 			{
-; 3774 : 				ePressureRetainedReligion = it->m_eReligion;
-; 3775 : 				iPressureRetained = it->m_iPressure * iPressureRetention / 100;
+; 3795 : 			{
+; 3796 : 				ePressureRetainedReligion = it->m_eReligion;
+; 3797 : 				iPressureRetained = it->m_iPressure * iPressureRetention / 100;
 
 	mov	ecx, DWORD PTR [edi+12]
 	mov	edx, DWORD PTR [edi]
@@ -37603,21 +37683,21 @@ $LN14@AddProphet:
 	jne	$LL64@AddProphet
 $LN13@AddProphet:
 
-; 3776 : 			}
-; 3777 : 		}
-; 3778 : 	}
-; 3779 : 
-; 3780 : 	// Clear list
-; 3781 : 	m_ReligionStatus.clear();
-; 3782 : 
-; 3783 : 	// Add atheists and this back in
-; 3784 : 	CvReligionInCity atheism(NO_RELIGION, false/*bFoundedHere*/, 0, iAtheismPressure);
+; 3798 : 			}
+; 3799 : 		}
+; 3800 : 	}
+; 3801 : 
+; 3802 : 	// Clear list
+; 3803 : 	m_ReligionStatus.clear();
+; 3804 : 
+; 3805 : 	// Add atheists and this back in
+; 3806 : 	CvReligionInCity atheism(NO_RELIGION, false/*bFoundedHere*/, 0, iAtheismPressure);
 
 	or	edi, -1
 	mov	DWORD PTR [esi+4], ebx
 	mov	BYTE PTR _atheism$[esp+68], bl
 
-; 3785 : 	m_ReligionStatus.push_back(atheism);
+; 3807 : 	m_ReligionStatus.push_back(atheism);
 
 	mov	BYTE PTR [esi+204], bl
 	cmp	DWORD PTR [esi+8], ebx
@@ -37643,7 +37723,7 @@ $LN36@AddProphet:
 	mov	DWORD PTR [eax+20], ecx
 $LN39@AddProphet:
 
-; 3786 : 	CvReligionInCity prophetReligion(eReligion, bProphetsReligionFoundedHere, 0, iReligionPressure + iPressure);
+; 3808 : 	CvReligionInCity prophetReligion(eReligion, bProphetsReligionFoundedHere, 0, iReligionPressure + iPressure);
 
 	mov	dl, BYTE PTR _bProphetsReligionFoundedHere$[esp+64]
 	mov	eax, DWORD PTR _iPressure$[esp+60]
@@ -37653,7 +37733,7 @@ $LN39@AddProphet:
 	mov	edx, DWORD PTR _iReligionPressure$[esp+64]
 	lea	ebx, DWORD PTR [edx+eax]
 
-; 3787 : 	m_ReligionStatus.push_back(prophetReligion);
+; 3809 : 	m_ReligionStatus.push_back(prophetReligion);
 
 	mov	eax, DWORD PTR [esi+8]
 	xor	edx, edx
@@ -37683,9 +37763,9 @@ $LN45@AddProphet:
 	mov	DWORD PTR [eax+20], ecx
 $LN48@AddProphet:
 
-; 3788 : 
-; 3789 : 	// Reestablish Holy City religion
-; 3790 : 	if (eHolyCityReligion != NO_RELIGION && !bProphetsReligionFoundedHere)
+; 3810 : 
+; 3811 : 	// Reestablish Holy City religion
+; 3812 : 	if (eHolyCityReligion != NO_RELIGION && !bProphetsReligionFoundedHere)
 
 	mov	edi, DWORD PTR _eHolyCityReligion$[esp+64]
 	inc	DWORD PTR [esi+4]
@@ -37694,85 +37774,85 @@ $LN48@AddProphet:
 	cmp	BYTE PTR _bProphetsReligionFoundedHere$[esp+64], 0
 	jne	SHORT $LN62@AddProphet
 
-; 3791 : 	{
-; 3792 : 		if (eHolyCityReligion == ePressureRetainedReligion)
+; 3813 : 	{
+; 3814 : 		if (eHolyCityReligion == ePressureRetainedReligion)
 
 	mov	ebx, DWORD PTR _ePressureRetainedReligion$[esp+64]
 
-; 3793 : 		{
-; 3794 : 			CvReligionInCity holyCityReligion(eHolyCityReligion, true/*bFoundedHere*/, 0, iPressureRetained);
+; 3815 : 		{
+; 3816 : 			CvReligionInCity holyCityReligion(eHolyCityReligion, true/*bFoundedHere*/, 0, iPressureRetained);
 
-	mov	DWORD PTR _holyCityReligion$226321[esp+64], edi
-	mov	BYTE PTR _holyCityReligion$226321[esp+68], 1
-	mov	DWORD PTR _holyCityReligion$226321[esp+72], edx
-	mov	DWORD PTR _holyCityReligion$226321[esp+80], edx
-	mov	DWORD PTR _holyCityReligion$226321[esp+84], edx
+	mov	DWORD PTR _holyCityReligion$226366[esp+64], edi
+	mov	BYTE PTR _holyCityReligion$226366[esp+68], 1
+	mov	DWORD PTR _holyCityReligion$226366[esp+72], edx
+	mov	DWORD PTR _holyCityReligion$226366[esp+80], edx
+	mov	DWORD PTR _holyCityReligion$226366[esp+84], edx
 
-; 3795 : 			m_ReligionStatus.push_back(holyCityReligion);			
+; 3817 : 			m_ReligionStatus.push_back(holyCityReligion);			
 
 	mov	ecx, esi
 	cmp	edi, ebx
 	jne	SHORT $LN3@AddProphet
-	lea	edx, DWORD PTR _holyCityReligion$226321[esp+64]
+	lea	edx, DWORD PTR _holyCityReligion$226366[esp+64]
 	push	edx
-	mov	DWORD PTR _holyCityReligion$226321[esp+80], ebp
+	mov	DWORD PTR _holyCityReligion$226366[esp+80], ebp
 	call	?push_back@?$FStaticVector@VCvReligionInCity@@$07$0A@$0BCJ@$0A@@@QAEIABVCvReligionInCity@@@Z ; FStaticVector<CvReligionInCity,8,0,297,0>::push_back
 
-; 3796 : 		}
-; 3797 : 		else
+; 3818 : 		}
+; 3819 : 		else
 
 	xor	edx, edx
 	jmp	SHORT $LN2@AddProphet
 $LN3@AddProphet:
 
-; 3798 : 		{
-; 3799 : 			CvReligionInCity holyCityReligion(eHolyCityReligion, true/*bFoundedHere*/, 0, 0);
-; 3800 : 			m_ReligionStatus.push_back(holyCityReligion);
+; 3820 : 		{
+; 3821 : 			CvReligionInCity holyCityReligion(eHolyCityReligion, true/*bFoundedHere*/, 0, 0);
+; 3822 : 			m_ReligionStatus.push_back(holyCityReligion);
 
-	lea	eax, DWORD PTR _holyCityReligion$226323[esp+64]
+	lea	eax, DWORD PTR _holyCityReligion$226368[esp+64]
 	push	eax
-	mov	DWORD PTR _holyCityReligion$226323[esp+80], edx
+	mov	DWORD PTR _holyCityReligion$226368[esp+80], edx
 	call	?push_back@?$FStaticVector@VCvReligionInCity@@$07$0A@$0BCJ@$0A@@@QAEIABVCvReligionInCity@@@Z ; FStaticVector<CvReligionInCity,8,0,297,0>::push_back
 	xor	edx, edx
 	jmp	SHORT $LN2@AddProphet
 $LN62@AddProphet:
 
-; 3796 : 		}
-; 3797 : 		else
+; 3818 : 		}
+; 3819 : 		else
 
 	mov	ebx, DWORD PTR _ePressureRetainedReligion$[esp+64]
 $LN2@AddProphet:
 
-; 3801 : 		}
-; 3802 : 	}
-; 3803 : 
-; 3804 : 	// Reestablish pressure-retained religion (if wasn't Holy City religion)
-; 3805 : 	if (ePressureRetainedReligion != NO_RELIGION && eHolyCityReligion != ePressureRetainedReligion)
+; 3823 : 		}
+; 3824 : 	}
+; 3825 : 
+; 3826 : 	// Reestablish pressure-retained religion (if wasn't Holy City religion)
+; 3827 : 	if (ePressureRetainedReligion != NO_RELIGION && eHolyCityReligion != ePressureRetainedReligion)
 
 	cmp	ebx, -1
 	je	SHORT $LN1@AddProphet
 	cmp	edi, ebx
 	je	SHORT $LN1@AddProphet
 
-; 3806 : 	{
-; 3807 : 		CvReligionInCity pressureRetainedReligion(ePressureRetainedReligion, false/*bFoundedHere*/, 0, iPressureRetained);
-; 3808 : 		m_ReligionStatus.push_back(pressureRetainedReligion);
+; 3828 : 	{
+; 3829 : 		CvReligionInCity pressureRetainedReligion(ePressureRetainedReligion, false/*bFoundedHere*/, 0, iPressureRetained);
+; 3830 : 		m_ReligionStatus.push_back(pressureRetainedReligion);
 
-	lea	ecx, DWORD PTR _pressureRetainedReligion$226325[esp+64]
+	lea	ecx, DWORD PTR _pressureRetainedReligion$226370[esp+64]
 	push	ecx
 	mov	ecx, esi
-	mov	DWORD PTR _pressureRetainedReligion$226325[esp+68], ebx
-	mov	BYTE PTR _pressureRetainedReligion$226325[esp+72], 0
-	mov	DWORD PTR _pressureRetainedReligion$226325[esp+76], edx
-	mov	DWORD PTR _pressureRetainedReligion$226325[esp+80], ebp
-	mov	DWORD PTR _pressureRetainedReligion$226325[esp+84], edx
-	mov	DWORD PTR _pressureRetainedReligion$226325[esp+88], edx
+	mov	DWORD PTR _pressureRetainedReligion$226370[esp+68], ebx
+	mov	BYTE PTR _pressureRetainedReligion$226370[esp+72], 0
+	mov	DWORD PTR _pressureRetainedReligion$226370[esp+76], edx
+	mov	DWORD PTR _pressureRetainedReligion$226370[esp+80], ebp
+	mov	DWORD PTR _pressureRetainedReligion$226370[esp+84], edx
+	mov	DWORD PTR _pressureRetainedReligion$226370[esp+88], edx
 	call	?push_back@?$FStaticVector@VCvReligionInCity@@$07$0A@$0BCJ@$0A@@@QAEIABVCvReligionInCity@@@Z ; FStaticVector<CvReligionInCity,8,0,297,0>::push_back
 $LN1@AddProphet:
 
-; 3809 : 	}
-; 3810 : 
-; 3811 : 	RecomputeFollowers(FOLLOWER_CHANGE_PROPHET, eOldMajorityReligion, eResponsiblePlayer);
+; 3831 : 	}
+; 3832 : 
+; 3833 : 	RecomputeFollowers(FOLLOWER_CHANGE_PROPHET, eOldMajorityReligion, eResponsiblePlayer);
 
 	mov	edx, DWORD PTR _eResponsiblePlayer$[esp+60]
 	mov	eax, DWORD PTR _eOldMajorityReligion$[esp+64]
@@ -37786,7 +37866,7 @@ $LN1@AddProphet:
 	pop	ebp
 	pop	ebx
 
-; 3812 : }
+; 3834 : }
 
 	add	esp, 48					; 00000030H
 	ret	12					; 0000000cH
@@ -37796,12 +37876,12 @@ PUBLIC	?AddReligiousPressure@CvCityReligions@@QAEXW4CvReligiousFollowChangeReaso
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?AddReligiousPressure@CvCityReligions@@QAEXW4CvReligiousFollowChangeReason@@W4ReligionTypes@@HW4PlayerTypes@@@Z
 _TEXT	SEGMENT
-$T243007 = -36						; size = 4
-$T243004 = -36						; size = 4
-$T243006 = -32						; size = 4
-$T243005 = -32						; size = 4
+$T243087 = -36						; size = 4
+$T243084 = -36						; size = 4
+$T243086 = -32						; size = 4
+$T243085 = -32						; size = 4
 _eOldMajorityReligion$ = -28				; size = 4
-_newReligion$226353 = -24				; size = 24
+_newReligion$226398 = -24				; size = 24
 _eReason$ = 8						; size = 4
 _eReligion$ = 12					; size = 4
 _iPressure$ = 16					; size = 4
@@ -37809,7 +37889,7 @@ _eResponsiblePlayer$ = 20				; size = 4
 ?AddReligiousPressure@CvCityReligions@@QAEXW4CvReligiousFollowChangeReason@@W4ReligionTypes@@HW4PlayerTypes@@@Z PROC ; CvCityReligions::AddReligiousPressure, COMDAT
 ; _this$ = ecx
 
-; 3816 : {
+; 3838 : {
 
 	sub	esp, 36					; 00000024H
 	push	ebx
@@ -37818,21 +37898,21 @@ _eResponsiblePlayer$ = 20				; size = 4
 	push	edi
 	mov	edi, ecx
 
-; 3817 : 	bool bFoundIt = false;
+; 3839 : 	bool bFoundIt = false;
 
 	xor	bl, bl
 
-; 3818 : 
-; 3819 : 	ReligionTypes eOldMajorityReligion = GetReligiousMajority();
+; 3840 : 
+; 3841 : 	ReligionTypes eOldMajorityReligion = GetReligiousMajority();
 
 	call	?GetReligiousMajority@CvCityReligions@@QAE?AW4ReligionTypes@@XZ ; CvCityReligions::GetReligiousMajority
 
-; 3820 : 
-; 3821 : 	ReligionInCityList::iterator it;
-; 3822 : #ifdef AUI_ITERATOR_POSTFIX_INCREMENT_OPTIMIZATIONS
-; 3823 : 	for (it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); ++it)
-; 3824 : #else
-; 3825 : 	for(it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); it++)
+; 3842 : 
+; 3843 : 	ReligionInCityList::iterator it;
+; 3844 : #ifdef AUI_ITERATOR_POSTFIX_INCREMENT_OPTIMIZATIONS
+; 3845 : 	for (it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); ++it)
+; 3846 : #else
+; 3847 : 	for(it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); it++)
 
 	mov	esi, DWORD PTR [edi]
 	mov	DWORD PTR _eOldMajorityReligion$[esp+52], eax
@@ -37843,31 +37923,31 @@ _eResponsiblePlayer$ = 20				; size = 4
 	je	$LN40@AddReligio
 $LL10@AddReligio:
 
-; 3826 : #endif
-; 3827 : 	{
-; 3828 : 		if(it->m_eReligion == eReligion)
+; 3848 : #endif
+; 3849 : 	{
+; 3850 : 		if(it->m_eReligion == eReligion)
 
 	mov	eax, DWORD PTR [esi]
 	mov	ecx, DWORD PTR _eReligion$[esp+48]
 	cmp	eax, ecx
 	jne	SHORT $LN7@AddReligio
 
-; 3829 : 		{
-; 3830 : 			it->m_iPressure += iPressure;
+; 3851 : 		{
+; 3852 : 			it->m_iPressure += iPressure;
 
 	mov	edx, DWORD PTR _iPressure$[esp+48]
 	add	DWORD PTR [esi+12], edx
 
-; 3831 : 			bFoundIt = true;
+; 3853 : 			bFoundIt = true;
 
 	mov	bl, 1
 	jmp	$LN9@AddReligio
 $LN7@AddReligio:
 
-; 3832 : 		}
-; 3833 : 
-; 3834 : 		//  If this is pressure from a real religion, reduce presence of pantheon by the same amount
-; 3835 : 		else if(eReligion > RELIGION_PANTHEON && it->m_eReligion == RELIGION_PANTHEON)
+; 3854 : 		}
+; 3855 : 
+; 3856 : 		//  If this is pressure from a real religion, reduce presence of pantheon by the same amount
+; 3857 : 		else if(eReligion > RELIGION_PANTHEON && it->m_eReligion == RELIGION_PANTHEON)
 
 	xor	ebp, ebp
 	cmp	ecx, ebp
@@ -37875,26 +37955,26 @@ $LN7@AddReligio:
 	cmp	eax, ebp
 	jne	SHORT $LN42@AddReligio
 
-; 3836 : 		{
-; 3837 : 			it->m_iPressure = max(0, (it->m_iPressure - iPressure));
+; 3858 : 		{
+; 3859 : 			it->m_iPressure = max(0, (it->m_iPressure - iPressure));
 
 	mov	eax, DWORD PTR [esi+12]
 	sub	eax, DWORD PTR _iPressure$[esp+48]
-	mov	DWORD PTR $T243005[esp+52], ebp
-	mov	DWORD PTR $T243004[esp+52], eax
+	mov	DWORD PTR $T243085[esp+52], ebp
+	mov	DWORD PTR $T243084[esp+52], eax
 	cmp	eax, ebp
-	lea	eax, DWORD PTR $T243004[esp+52]
+	lea	eax, DWORD PTR $T243084[esp+52]
 	jg	SHORT $LN20@AddReligio
-	lea	eax, DWORD PTR $T243005[esp+52]
+	lea	eax, DWORD PTR $T243085[esp+52]
 $LN20@AddReligio:
 	mov	eax, DWORD PTR [eax]
 	mov	DWORD PTR [esi+12], eax
 	jmp	SHORT $LN9@AddReligio
 $LN5@AddReligio:
 
-; 3838 : 		}
-; 3839 : 
-; 3840 : 		else if (it->m_eReligion > RELIGION_PANTHEON && eReason == FOLLOWER_CHANGE_MISSIONARY)
+; 3860 : 		}
+; 3861 : 
+; 3862 : 		else if (it->m_eReligion > RELIGION_PANTHEON && eReason == FOLLOWER_CHANGE_MISSIONARY)
 
 	cmp	eax, ebp
 $LN42@AddReligio:
@@ -37902,8 +37982,8 @@ $LN42@AddReligio:
 	cmp	DWORD PTR _eReason$[esp+48], 6
 	jne	SHORT $LN9@AddReligio
 
-; 3841 : 		{
-; 3842 : 			const CvReligion *pReligion = GC.getGame().GetGameReligions()->GetReligion(eReligion, NO_PLAYER);
+; 3863 : 		{
+; 3864 : 			const CvReligion *pReligion = GC.getGame().GetGameReligions()->GetReligion(eReligion, NO_PLAYER);
 
 	push	-1
 	push	ecx
@@ -37912,24 +37992,24 @@ $LN42@AddReligio:
 	mov	ecx, eax
 	call	?GetReligion@CvGameReligions@@QBEPBVCvReligion@@W4ReligionTypes@@W4PlayerTypes@@@Z ; CvGameReligions::GetReligion
 
-; 3843 : 			int iPressureErosion = pReligion->m_Beliefs.GetOtherReligionPressureErosion();  // Normally 0
+; 3865 : 			int iPressureErosion = pReligion->m_Beliefs.GetOtherReligionPressureErosion();  // Normally 0
 
 	mov	eax, DWORD PTR [eax+260]
 
-; 3844 : 			if (iPressureErosion > 0)
+; 3866 : 			if (iPressureErosion > 0)
 
 	cmp	eax, ebp
 	jle	SHORT $LN9@AddReligio
 
-; 3845 : 			{
-; 3846 : 				int iErosionAmount = iPressureErosion * iPressure / 100;
+; 3867 : 			{
+; 3868 : 				int iErosionAmount = iPressureErosion * iPressure / 100;
 
 	imul	eax, DWORD PTR _iPressure$[esp+48]
 	mov	ecx, eax
 	mov	eax, 1374389535				; 51eb851fH
 	imul	ecx
 
-; 3847 : 				it->m_iPressure = max(0, (it->m_iPressure - iErosionAmount));
+; 3869 : 				it->m_iPressure = max(0, (it->m_iPressure - iErosionAmount));
 
 	mov	eax, DWORD PTR [esi+12]
 	sar	edx, 5
@@ -37937,12 +38017,12 @@ $LN42@AddReligio:
 	shr	ecx, 31					; 0000001fH
 	add	ecx, edx
 	sub	eax, ecx
-	mov	DWORD PTR $T243006[esp+52], eax
+	mov	DWORD PTR $T243086[esp+52], eax
 	cmp	eax, ebp
-	mov	DWORD PTR $T243007[esp+52], ebp
-	lea	eax, DWORD PTR $T243006[esp+52]
+	mov	DWORD PTR $T243087[esp+52], ebp
+	lea	eax, DWORD PTR $T243086[esp+52]
 	jg	SHORT $LN28@AddReligio
-	lea	eax, DWORD PTR $T243007[esp+52]
+	lea	eax, DWORD PTR $T243087[esp+52]
 $LN28@AddReligio:
 	mov	edx, DWORD PTR [eax]
 	mov	DWORD PTR [esi+12], edx
@@ -37955,26 +38035,26 @@ $LN9@AddReligio:
 	cmp	esi, edx
 	jne	$LL10@AddReligio
 
-; 3848 : 			}
-; 3849 : 		}
-; 3850 : 	}
-; 3851 : 
-; 3852 : 	// Didn't find it, add new entry
-; 3853 : 	if(!bFoundIt)
+; 3870 : 			}
+; 3871 : 		}
+; 3872 : 	}
+; 3873 : 
+; 3874 : 	// Didn't find it, add new entry
+; 3875 : 	if(!bFoundIt)
 
 	test	bl, bl
 	jne	SHORT $LN32@AddReligio
 $LN40@AddReligio:
 
-; 3854 : 	{
-; 3855 : 		CvReligionInCity newReligion(eReligion, false, 0, iPressure);
-; 3856 : 		m_ReligionStatus.push_back(newReligion);
+; 3876 : 	{
+; 3877 : 		CvReligionInCity newReligion(eReligion, false, 0, iPressure);
+; 3878 : 		m_ReligionStatus.push_back(newReligion);
 
 	mov	eax, DWORD PTR [edi+8]
 	xor	esi, esi
 	xor	ebx, ebx
 	xor	ebp, ebp
-	mov	BYTE PTR _newReligion$226353[esp+56], 0
+	mov	BYTE PTR _newReligion$226398[esp+56], 0
 	mov	BYTE PTR [edi+204], 0
 	cmp	DWORD PTR [edi+4], eax
 	jne	SHORT $LN31@AddReligio
@@ -37989,7 +38069,7 @@ $LN31@AddReligio:
 	test	eax, eax
 	je	SHORT $LN34@AddReligio
 	mov	edx, DWORD PTR _eReligion$[esp+48]
-	mov	ecx, DWORD PTR _newReligion$226353[esp+56]
+	mov	ecx, DWORD PTR _newReligion$226398[esp+56]
 	mov	DWORD PTR [eax], edx
 	mov	edx, DWORD PTR _iPressure$[esp+48]
 	mov	DWORD PTR [eax+4], ecx
@@ -38001,9 +38081,9 @@ $LN34@AddReligio:
 	inc	DWORD PTR [edi+4]
 $LN32@AddReligio:
 
-; 3857 : 	}
-; 3858 : 
-; 3859 : 	RecomputeFollowers(eReason, eOldMajorityReligion, eResponsiblePlayer);
+; 3879 : 	}
+; 3880 : 
+; 3881 : 	RecomputeFollowers(eReason, eOldMajorityReligion, eResponsiblePlayer);
 
 	mov	eax, DWORD PTR _eResponsiblePlayer$[esp+48]
 	mov	ecx, DWORD PTR _eOldMajorityReligion$[esp+52]
@@ -38018,7 +38098,7 @@ $LN32@AddReligio:
 	pop	ebp
 	pop	ebx
 
-; 3860 : }
+; 3882 : }
 
 	add	esp, 36					; 00000024H
 	ret	16					; 00000010H
@@ -38032,7 +38112,7 @@ _ePressureRetainedReligion$ = -40			; size = 4
 _iAtheismPressure$ = -36				; size = 4
 _iReligionPressure$ = -32				; size = 4
 _this$ = -28						; size = 4
-_pressureRetainedReligion$226377 = -24			; size = 24
+_pressureRetainedReligion$226422 = -24			; size = 24
 _prophetReligion$ = -24					; size = 24
 _atheism$ = -24						; size = 24
 _eReligion$ = 8						; size = 4
@@ -38040,7 +38120,7 @@ _iPressure$ = 12					; size = 4
 ?SimulateProphetSpread@CvCityReligions@@QAEXW4ReligionTypes@@H@Z PROC ; CvCityReligions::SimulateProphetSpread, COMDAT
 ; _this$ = ecx
 
-; 3864 : {
+; 3886 : {
 
 	sub	esp, 40					; 00000028H
 	push	ebx
@@ -38048,36 +38128,36 @@ _iPressure$ = 12					; size = 4
 	push	esi
 	mov	esi, ecx
 
-; 3865 : 	int iAtheismPressure = 0;
+; 3887 : 	int iAtheismPressure = 0;
 
 	xor	ebx, ebx
 	push	edi
 	mov	DWORD PTR _this$[esp+56], esi
 	mov	DWORD PTR _iAtheismPressure$[esp+56], ebx
 
-; 3866 : 	int iReligionPressure = 0;
+; 3888 : 	int iReligionPressure = 0;
 
 	mov	DWORD PTR _iReligionPressure$[esp+56], ebx
 
-; 3867 : 	int iPressureRetained = 0;
+; 3889 : 	int iPressureRetained = 0;
 
 	xor	ebp, ebp
 
-; 3868 : 	ReligionTypes ePressureRetainedReligion = NO_RELIGION;
+; 3890 : 	ReligionTypes ePressureRetainedReligion = NO_RELIGION;
 
 	mov	DWORD PTR _ePressureRetainedReligion$[esp+56], -1
 
-; 3869 : 
-; 3870 : 	CopyToSimulatedStatus();
+; 3891 : 
+; 3892 : 	CopyToSimulatedStatus();
 
 	call	?CopyToSimulatedStatus@CvCityReligions@@AAEXXZ ; CvCityReligions::CopyToSimulatedStatus
 
-; 3871 : 
-; 3872 : 	ReligionInCityList::iterator it;
-; 3873 : #ifdef AUI_ITERATOR_POSTFIX_INCREMENT_OPTIMIZATIONS
-; 3874 : 	for (it = m_SimulatedStatus.begin(); it != m_SimulatedStatus.end(); ++it)
-; 3875 : #else
-; 3876 : 	for(it = m_SimulatedStatus.begin(); it != m_SimulatedStatus.end(); it++)
+; 3893 : 
+; 3894 : 	ReligionInCityList::iterator it;
+; 3895 : #ifdef AUI_ITERATOR_POSTFIX_INCREMENT_OPTIMIZATIONS
+; 3896 : 	for (it = m_SimulatedStatus.begin(); it != m_SimulatedStatus.end(); ++it)
+; 3897 : #else
+; 3898 : 	for(it = m_SimulatedStatus.begin(); it != m_SimulatedStatus.end(); it++)
 
 	mov	edi, DWORD PTR [esi+208]
 	mov	eax, DWORD PTR [esi+212]
@@ -38089,46 +38169,46 @@ _iPressure$ = 12					; size = 4
 	je	SHORT $LN60@SimulatePr
 $LL9@SimulatePr:
 
-; 3877 : #endif
-; 3878 : 	{
-; 3879 : 		if(it->m_eReligion == NO_RELIGION)
+; 3899 : #endif
+; 3900 : 	{
+; 3901 : 		if(it->m_eReligion == NO_RELIGION)
 
 	mov	eax, DWORD PTR [edi]
 	cmp	eax, -1
 	jne	SHORT $LN6@SimulatePr
 
-; 3880 : 		{
-; 3881 : 			iAtheismPressure = it->m_iPressure;
+; 3902 : 		{
+; 3903 : 			iAtheismPressure = it->m_iPressure;
 
 	mov	ecx, DWORD PTR [edi+12]
 	mov	DWORD PTR _iAtheismPressure$[esp+56], ecx
 	jmp	SHORT $LN4@SimulatePr
 $LN6@SimulatePr:
 
-; 3882 : 		}
-; 3883 : 		else if(eReligion == it->m_eReligion)
+; 3904 : 		}
+; 3905 : 		else if(eReligion == it->m_eReligion)
 
 	cmp	DWORD PTR _eReligion$[esp+52], eax
 	jne	SHORT $LN4@SimulatePr
 
-; 3884 : 		{
-; 3885 : 			iReligionPressure = it->m_iPressure;
+; 3906 : 		{
+; 3907 : 			iReligionPressure = it->m_iPressure;
 
 	mov	edx, DWORD PTR [edi+12]
 	mov	DWORD PTR _iReligionPressure$[esp+56], edx
 $LN4@SimulatePr:
 
-; 3886 : 		}
-; 3887 : 
-; 3888 : 		if (it->m_eReligion > RELIGION_PANTHEON && eReligion != it->m_eReligion)
+; 3908 : 		}
+; 3909 : 
+; 3910 : 		if (it->m_eReligion > RELIGION_PANTHEON && eReligion != it->m_eReligion)
 
 	cmp	eax, ebx
 	jle	SHORT $LN8@SimulatePr
 	cmp	DWORD PTR _eReligion$[esp+52], eax
 	je	SHORT $LN8@SimulatePr
 
-; 3889 : 		{
-; 3890 : 			const CvReligion *pReligion = GC.getGame().GetGameReligions()->GetReligion(it->m_eReligion, NO_PLAYER);
+; 3911 : 		{
+; 3912 : 			const CvReligion *pReligion = GC.getGame().GetGameReligions()->GetReligion(it->m_eReligion, NO_PLAYER);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	-1
@@ -38137,22 +38217,22 @@ $LN4@SimulatePr:
 	mov	ecx, eax
 	call	?GetReligion@CvGameReligions@@QBEPBVCvReligion@@W4ReligionTypes@@W4PlayerTypes@@@Z ; CvGameReligions::GetReligion
 
-; 3891 : 			int iPressureRetention = pReligion->m_Beliefs.GetInquisitorPressureRetention();  // Normally 0
+; 3913 : 			int iPressureRetention = pReligion->m_Beliefs.GetInquisitorPressureRetention();  // Normally 0
 
 	mov	eax, DWORD PTR [eax+268]
 
-; 3892 : 			if (iPressureRetention > 0)
+; 3914 : 			if (iPressureRetention > 0)
 
 	cmp	eax, ebx
 	jle	SHORT $LN8@SimulatePr
 
-; 3893 : 			{
-; 3894 : 				ePressureRetainedReligion = it->m_eReligion;
+; 3915 : 			{
+; 3916 : 				ePressureRetainedReligion = it->m_eReligion;
 
 	mov	ecx, DWORD PTR [edi]
 	mov	DWORD PTR _ePressureRetainedReligion$[esp+56], ecx
 
-; 3895 : 				iPressureRetained = it->m_iPressure * iPressureRetention / 100;
+; 3917 : 				iPressureRetained = it->m_iPressure * iPressureRetention / 100;
 
 	mov	ecx, DWORD PTR [edi+12]
 	imul	ecx, eax
@@ -38172,19 +38252,19 @@ $LN8@SimulatePr:
 	jne	SHORT $LL9@SimulatePr
 $LN60@SimulatePr:
 
-; 3896 : 			}
-; 3897 : 		}
-; 3898 : 	}
-; 3899 : 
-; 3900 : 	// Clear list
-; 3901 : 	m_SimulatedStatus.clear();
+; 3918 : 			}
+; 3919 : 		}
+; 3920 : 	}
+; 3921 : 
+; 3922 : 	// Clear list
+; 3923 : 	m_SimulatedStatus.clear();
 
 	mov	DWORD PTR [esi+4], ebx
 
-; 3902 : 
-; 3903 : 	// Add atheists and this back in
-; 3904 : 	CvReligionInCity atheism(NO_RELIGION, false, 0, iAtheismPressure);
-; 3905 : 	m_SimulatedStatus.push_back(atheism);
+; 3924 : 
+; 3925 : 	// Add atheists and this back in
+; 3926 : 	CvReligionInCity atheism(NO_RELIGION, false, 0, iAtheismPressure);
+; 3927 : 	m_SimulatedStatus.push_back(atheism);
 
 	mov	eax, DWORD PTR [esi+8]
 	or	edi, -1
@@ -38213,7 +38293,7 @@ $LN30@SimulatePr:
 	mov	DWORD PTR [eax+20], ecx
 $LN33@SimulatePr:
 
-; 3906 : 	CvReligionInCity prophetReligion(eReligion, false, 0, iReligionPressure + iPressure);
+; 3928 : 	CvReligionInCity prophetReligion(eReligion, false, 0, iReligionPressure + iPressure);
 
 	mov	eax, DWORD PTR _iPressure$[esp+52]
 	inc	DWORD PTR [esi+4]
@@ -38221,7 +38301,7 @@ $LN33@SimulatePr:
 	mov	BYTE PTR _prophetReligion$[esp+60], bl
 	lea	ebx, DWORD PTR [ecx+eax]
 
-; 3907 : 	m_SimulatedStatus.push_back(prophetReligion);
+; 3929 : 	m_SimulatedStatus.push_back(prophetReligion);
 
 	mov	eax, DWORD PTR [esi+8]
 	xor	edi, edi
@@ -38250,20 +38330,20 @@ $LN39@SimulatePr:
 $LN42@SimulatePr:
 	inc	DWORD PTR [esi+4]
 
-; 3908 : 
-; 3909 : 	if (ePressureRetainedReligion != NO_RELIGION)
+; 3930 : 
+; 3931 : 	if (ePressureRetainedReligion != NO_RELIGION)
 
 	cmp	DWORD PTR _ePressureRetainedReligion$[esp+56], -1
 	je	SHORT $LN49@SimulatePr
 
-; 3910 : 	{
-; 3911 : 		CvReligionInCity pressureRetainedReligion(ePressureRetainedReligion, false, 0, iPressureRetained);
-; 3912 : 		m_SimulatedStatus.push_back(pressureRetainedReligion);
+; 3932 : 	{
+; 3933 : 		CvReligionInCity pressureRetainedReligion(ePressureRetainedReligion, false, 0, iPressureRetained);
+; 3934 : 		m_SimulatedStatus.push_back(pressureRetainedReligion);
 
 	mov	eax, DWORD PTR [esi+8]
 	xor	ebx, ebx
 	xor	edi, edi
-	mov	BYTE PTR _pressureRetainedReligion$226377[esp+60], 0
+	mov	BYTE PTR _pressureRetainedReligion$226422[esp+60], 0
 	mov	BYTE PTR [esi+204], bl
 	cmp	DWORD PTR [esi+4], eax
 	jne	SHORT $LN48@SimulatePr
@@ -38278,7 +38358,7 @@ $LN48@SimulatePr:
 	test	eax, eax
 	je	SHORT $LN51@SimulatePr
 	mov	edx, DWORD PTR _ePressureRetainedReligion$[esp+56]
-	mov	ecx, DWORD PTR _pressureRetainedReligion$226377[esp+60]
+	mov	ecx, DWORD PTR _pressureRetainedReligion$226422[esp+60]
 	mov	DWORD PTR [eax], edx
 	mov	DWORD PTR [eax+4], ecx
 	mov	DWORD PTR [eax+8], edi
@@ -38290,10 +38370,10 @@ $LN51@SimulatePr:
 	inc	DWORD PTR [esi+4]
 $LN49@SimulatePr:
 
-; 3913 : 
-; 3914 : 	}
-; 3915 : 
-; 3916 : 	SimulateFollowers();
+; 3935 : 
+; 3936 : 	}
+; 3937 : 
+; 3938 : 	SimulateFollowers();
 
 	mov	ecx, DWORD PTR _this$[esp+56]
 	call	?SimulateFollowers@CvCityReligions@@AAEXXZ ; CvCityReligions::SimulateFollowers
@@ -38302,7 +38382,7 @@ $LN49@SimulatePr:
 	pop	ebp
 	pop	ebx
 
-; 3917 : }
+; 3939 : }
 
 	add	esp, 40					; 00000028H
 	ret	8
@@ -38313,18 +38393,18 @@ PUBLIC	?SimulateReligiousPressure@CvCityReligions@@QAEXW4ReligionTypes@@H@Z ; Cv
 ;	COMDAT ?SimulateReligiousPressure@CvCityReligions@@QAEXW4ReligionTypes@@H@Z
 _TEXT	SEGMENT
 _bFoundIt$ = -37					; size = 1
-$T243167 = -36						; size = 4
-$T243164 = -36						; size = 4
-$T243166 = -32						; size = 4
-$T243165 = -32						; size = 4
+$T243247 = -36						; size = 4
+$T243244 = -36						; size = 4
+$T243246 = -32						; size = 4
+$T243245 = -32						; size = 4
 _this$ = -28						; size = 4
-_newReligion$226402 = -24				; size = 24
+_newReligion$226447 = -24				; size = 24
 _eReligion$ = 8						; size = 4
 _iPressure$ = 12					; size = 4
 ?SimulateReligiousPressure@CvCityReligions@@QAEXW4ReligionTypes@@H@Z PROC ; CvCityReligions::SimulateReligiousPressure, COMDAT
 ; _this$ = ecx
 
-; 3921 : {
+; 3943 : {
 
 	sub	esp, 40					; 00000028H
 	push	ebx
@@ -38334,21 +38414,21 @@ _iPressure$ = 12					; size = 4
 	push	edi
 	mov	DWORD PTR _this$[esp+56], ebx
 
-; 3922 : 	bool bFoundIt = false;
+; 3944 : 	bool bFoundIt = false;
 
 	mov	BYTE PTR _bFoundIt$[esp+56], 0
 
-; 3923 : 
-; 3924 : 	CopyToSimulatedStatus();
+; 3945 : 
+; 3946 : 	CopyToSimulatedStatus();
 
 	call	?CopyToSimulatedStatus@CvCityReligions@@AAEXXZ ; CvCityReligions::CopyToSimulatedStatus
 
-; 3925 : 
-; 3926 : 	ReligionInCityList::iterator it;
-; 3927 : #ifdef AUI_ITERATOR_POSTFIX_INCREMENT_OPTIMIZATIONS
-; 3928 : 	for (it = m_SimulatedStatus.begin(); it != m_SimulatedStatus.end(); ++it)
-; 3929 : #else
-; 3930 : 	for(it = m_SimulatedStatus.begin(); it != m_SimulatedStatus.end(); it++)
+; 3947 : 
+; 3948 : 	ReligionInCityList::iterator it;
+; 3949 : #ifdef AUI_ITERATOR_POSTFIX_INCREMENT_OPTIMIZATIONS
+; 3950 : 	for (it = m_SimulatedStatus.begin(); it != m_SimulatedStatus.end(); ++it)
+; 3951 : #else
+; 3952 : 	for(it = m_SimulatedStatus.begin(); it != m_SimulatedStatus.end(); it++)
 
 	mov	esi, DWORD PTR [ebx+208]
 	mov	eax, DWORD PTR [ebx+212]
@@ -38361,31 +38441,31 @@ _iPressure$ = 12					; size = 4
 	npad	7
 $LL10@SimulateRe:
 
-; 3931 : #endif
-; 3932 : 	{
-; 3933 : 		if(it->m_eReligion == eReligion)
+; 3953 : #endif
+; 3954 : 	{
+; 3955 : 		if(it->m_eReligion == eReligion)
 
 	mov	eax, DWORD PTR [esi]
 	mov	ecx, DWORD PTR _eReligion$[esp+52]
 	cmp	eax, ecx
 	jne	SHORT $LN7@SimulateRe
 
-; 3934 : 		{
-; 3935 : 			it->m_iPressure += iPressure;
+; 3956 : 		{
+; 3957 : 			it->m_iPressure += iPressure;
 
 	mov	eax, DWORD PTR _iPressure$[esp+52]
 	add	DWORD PTR [esi+12], eax
 
-; 3936 : 			bFoundIt = true;
+; 3958 : 			bFoundIt = true;
 
 	mov	BYTE PTR _bFoundIt$[esp+56], 1
 	jmp	$LN9@SimulateRe
 $LN7@SimulateRe:
 
-; 3937 : 		}
-; 3938 : 
-; 3939 : 		//  If this is pressure from a real religion, reduce presence of pantheon by the same amount
-; 3940 : 		else if(eReligion > RELIGION_PANTHEON && it->m_eReligion == RELIGION_PANTHEON)
+; 3959 : 		}
+; 3960 : 
+; 3961 : 		//  If this is pressure from a real religion, reduce presence of pantheon by the same amount
+; 3962 : 		else if(eReligion > RELIGION_PANTHEON && it->m_eReligion == RELIGION_PANTHEON)
 
 	xor	ebp, ebp
 	cmp	ecx, ebp
@@ -38393,33 +38473,33 @@ $LN7@SimulateRe:
 	cmp	eax, ebp
 	jne	SHORT $LN41@SimulateRe
 
-; 3941 : 		{
-; 3942 : 			it->m_iPressure = max(0, (it->m_iPressure - iPressure));
+; 3963 : 		{
+; 3964 : 			it->m_iPressure = max(0, (it->m_iPressure - iPressure));
 
 	mov	eax, DWORD PTR [esi+12]
 	sub	eax, DWORD PTR _iPressure$[esp+52]
-	mov	DWORD PTR $T243165[esp+56], ebp
-	mov	DWORD PTR $T243164[esp+56], eax
+	mov	DWORD PTR $T243245[esp+56], ebp
+	mov	DWORD PTR $T243244[esp+56], eax
 	cmp	eax, ebp
-	lea	eax, DWORD PTR $T243164[esp+56]
+	lea	eax, DWORD PTR $T243244[esp+56]
 	jg	SHORT $LN20@SimulateRe
-	lea	eax, DWORD PTR $T243165[esp+56]
+	lea	eax, DWORD PTR $T243245[esp+56]
 $LN20@SimulateRe:
 	mov	ecx, DWORD PTR [eax]
 	mov	DWORD PTR [esi+12], ecx
 	jmp	SHORT $LN9@SimulateRe
 $LN5@SimulateRe:
 
-; 3943 : 		}
-; 3944 : 
-; 3945 : 		else if (it->m_eReligion > RELIGION_PANTHEON)
+; 3965 : 		}
+; 3966 : 
+; 3967 : 		else if (it->m_eReligion > RELIGION_PANTHEON)
 
 	cmp	eax, ebp
 $LN41@SimulateRe:
 	jle	SHORT $LN9@SimulateRe
 
-; 3946 : 		{
-; 3947 : 			const CvReligion *pReligion = GC.getGame().GetGameReligions()->GetReligion(eReligion, NO_PLAYER);
+; 3968 : 		{
+; 3969 : 			const CvReligion *pReligion = GC.getGame().GetGameReligions()->GetReligion(eReligion, NO_PLAYER);
 
 	push	-1
 	push	ecx
@@ -38428,17 +38508,17 @@ $LN41@SimulateRe:
 	mov	ecx, eax
 	call	?GetReligion@CvGameReligions@@QBEPBVCvReligion@@W4ReligionTypes@@W4PlayerTypes@@@Z ; CvGameReligions::GetReligion
 
-; 3948 : 			int iPressureErosion = pReligion->m_Beliefs.GetOtherReligionPressureErosion();  // Normally 0
+; 3970 : 			int iPressureErosion = pReligion->m_Beliefs.GetOtherReligionPressureErosion();  // Normally 0
 
 	mov	eax, DWORD PTR [eax+260]
 
-; 3949 : 			if (iPressureErosion > 0)
+; 3971 : 			if (iPressureErosion > 0)
 
 	cmp	eax, ebp
 	jle	SHORT $LN9@SimulateRe
 
-; 3950 : 			{
-; 3951 : 				int iErosionAmount = iPressureErosion * iPressure / 100;
+; 3972 : 			{
+; 3973 : 				int iErosionAmount = iPressureErosion * iPressure / 100;
 
 	imul	eax, DWORD PTR _iPressure$[esp+52]
 	mov	ecx, eax
@@ -38450,16 +38530,16 @@ $LN41@SimulateRe:
 	add	eax, edx
 	mov	ecx, eax
 
-; 3952 : 				it->m_iPressure = max(0, (it->m_iPressure - iErosionAmount));
+; 3974 : 				it->m_iPressure = max(0, (it->m_iPressure - iErosionAmount));
 
 	mov	eax, DWORD PTR [esi+12]
 	sub	eax, ecx
-	mov	DWORD PTR $T243166[esp+56], eax
+	mov	DWORD PTR $T243246[esp+56], eax
 	cmp	eax, ebp
-	mov	DWORD PTR $T243167[esp+56], ebp
-	lea	eax, DWORD PTR $T243166[esp+56]
+	mov	DWORD PTR $T243247[esp+56], ebp
+	lea	eax, DWORD PTR $T243246[esp+56]
 	jg	SHORT $LN28@SimulateRe
-	lea	eax, DWORD PTR $T243167[esp+56]
+	lea	eax, DWORD PTR $T243247[esp+56]
 $LN28@SimulateRe:
 	mov	edx, DWORD PTR [eax]
 	mov	DWORD PTR [esi+12], edx
@@ -38472,26 +38552,26 @@ $LN9@SimulateRe:
 	cmp	esi, edx
 	jne	$LL10@SimulateRe
 
-; 3953 : 			}
-; 3954 : 		}
-; 3955 : 	}
-; 3956 : 
-; 3957 : 	// Didn't find it, add new entry
-; 3958 : 	if(!bFoundIt)
+; 3975 : 			}
+; 3976 : 		}
+; 3977 : 	}
+; 3978 : 
+; 3979 : 	// Didn't find it, add new entry
+; 3980 : 	if(!bFoundIt)
 
 	cmp	BYTE PTR _bFoundIt$[esp+56], 0
 	jne	SHORT $LN32@SimulateRe
 $LN40@SimulateRe:
 
-; 3959 : 	{
-; 3960 : 		CvReligionInCity newReligion(eReligion, false, 0, iPressure);
-; 3961 : 		m_SimulatedStatus.push_back(newReligion);
+; 3981 : 	{
+; 3982 : 		CvReligionInCity newReligion(eReligion, false, 0, iPressure);
+; 3983 : 		m_SimulatedStatus.push_back(newReligion);
 
 	mov	eax, DWORD PTR [edi+8]
 	xor	ebx, ebx
 	xor	esi, esi
 	xor	ebp, ebp
-	mov	BYTE PTR _newReligion$226402[esp+60], 0
+	mov	BYTE PTR _newReligion$226447[esp+60], 0
 	mov	BYTE PTR [edi+204], bl
 	cmp	DWORD PTR [edi+4], eax
 	jne	SHORT $LN31@SimulateRe
@@ -38506,7 +38586,7 @@ $LN31@SimulateRe:
 	test	eax, eax
 	je	SHORT $LN34@SimulateRe
 	mov	edx, DWORD PTR _eReligion$[esp+52]
-	mov	ecx, DWORD PTR _newReligion$226402[esp+60]
+	mov	ecx, DWORD PTR _newReligion$226447[esp+60]
 	mov	DWORD PTR [eax], edx
 	mov	edx, DWORD PTR _iPressure$[esp+52]
 	mov	DWORD PTR [eax+4], ecx
@@ -38519,9 +38599,9 @@ $LN34@SimulateRe:
 	mov	ebx, DWORD PTR _this$[esp+56]
 $LN32@SimulateRe:
 
-; 3962 : 	}
-; 3963 : 
-; 3964 : 	SimulateFollowers();
+; 3984 : 	}
+; 3985 : 
+; 3986 : 	SimulateFollowers();
 
 	mov	ecx, ebx
 	call	?SimulateFollowers@CvCityReligions@@AAEXXZ ; CvCityReligions::SimulateFollowers
@@ -38530,7 +38610,7 @@ $LN32@SimulateRe:
 	pop	ebp
 	pop	ebx
 
-; 3965 : }
+; 3987 : }
 
 	add	esp, 40					; 00000028H
 	ret	8
@@ -38546,14 +38626,14 @@ _iPercent$ = 16						; size = 4
 ?ConvertPercentFollowers@CvCityReligions@@QAEXW4ReligionTypes@@0H@Z PROC ; CvCityReligions::ConvertPercentFollowers, COMDAT
 ; _this$ = ecx
 
-; 3970 : 	int iPressureConverting = 0;
-; 3971 : 
-; 3972 : 	// Find old religion
-; 3973 : 	ReligionInCityList::iterator it;
-; 3974 : #ifdef AUI_ITERATOR_POSTFIX_INCREMENT_OPTIMIZATIONS
-; 3975 : 	for (it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); ++it)
-; 3976 : #else
-; 3977 : 	for(it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); it++)
+; 3992 : 	int iPressureConverting = 0;
+; 3993 : 
+; 3994 : 	// Find old religion
+; 3995 : 	ReligionInCityList::iterator it;
+; 3996 : #ifdef AUI_ITERATOR_POSTFIX_INCREMENT_OPTIMIZATIONS
+; 3997 : 	for (it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); ++it)
+; 3998 : #else
+; 3999 : 	for(it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); it++)
 
 	mov	edx, DWORD PTR [ecx+4]
 	push	esi
@@ -38571,15 +38651,15 @@ _iPercent$ = 16						; size = 4
 	npad	3
 $LL14@ConvertPer:
 
-; 3978 : #endif
-; 3979 : 	{
-; 3980 : 		if(it->m_eReligion == eFromReligion)
+; 4000 : #endif
+; 4001 : 	{
+; 4002 : 		if(it->m_eReligion == eFromReligion)
 
 	cmp	DWORD PTR [esi], ebx
 	jne	SHORT $LN4@ConvertPer
 
-; 3981 : 		{
-; 3982 : 			iPressureConverting = it->m_iPressure * iPercent / 100;
+; 4003 : 		{
+; 4004 : 			iPressureConverting = it->m_iPressure * iPercent / 100;
 
 	mov	edx, DWORD PTR [esi+12]
 	imul	edx, edi
@@ -38590,28 +38670,28 @@ $LL14@ConvertPer:
 	shr	eax, 31					; 0000001fH
 	add	eax, edx
 
-; 3983 : 			it->m_iPressure -= iPressureConverting;
+; 4005 : 			it->m_iPressure -= iPressureConverting;
 
 	sub	DWORD PTR [esi+12], eax
 
-; 3984 : 			if (it->m_iPressure < 0)
+; 4006 : 			if (it->m_iPressure < 0)
 
 	jns	SHORT $LN4@ConvertPer
 
-; 3985 : 			{
-; 3986 : 				it->m_iPressure = 0;
+; 4007 : 			{
+; 4008 : 				it->m_iPressure = 0;
 
 	mov	DWORD PTR [esi+12], 0
 $LN4@ConvertPer:
 
-; 3970 : 	int iPressureConverting = 0;
-; 3971 : 
-; 3972 : 	// Find old religion
-; 3973 : 	ReligionInCityList::iterator it;
-; 3974 : #ifdef AUI_ITERATOR_POSTFIX_INCREMENT_OPTIMIZATIONS
-; 3975 : 	for (it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); ++it)
-; 3976 : #else
-; 3977 : 	for(it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); it++)
+; 3992 : 	int iPressureConverting = 0;
+; 3993 : 
+; 3994 : 	// Find old religion
+; 3995 : 	ReligionInCityList::iterator it;
+; 3996 : #ifdef AUI_ITERATOR_POSTFIX_INCREMENT_OPTIMIZATIONS
+; 3997 : 	for (it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); ++it)
+; 3998 : #else
+; 3999 : 	for(it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); it++)
 
 	mov	edx, DWORD PTR [ecx+4]
 	mov	ebp, DWORD PTR [ecx]
@@ -38625,10 +38705,10 @@ $LN4@ConvertPer:
 	pop	ebx
 $LN3@ConvertPer:
 
-; 3987 : 			}
-; 3988 : 		}
-; 3989 : 	}
-; 3990 : 	AddReligiousPressure(FOLLOWER_CHANGE_SCRIPTED_CONVERSION, eToReligion, iPressureConverting, NO_PLAYER);
+; 4009 : 			}
+; 4010 : 		}
+; 4011 : 	}
+; 4012 : 	AddReligiousPressure(FOLLOWER_CHANGE_SCRIPTED_CONVERSION, eToReligion, iPressureConverting, NO_PLAYER);
 
 	push	-1
 	push	eax
@@ -38638,7 +38718,7 @@ $LN3@ConvertPer:
 	call	?AddReligiousPressure@CvCityReligions@@QAEXW4CvReligiousFollowChangeReason@@W4ReligionTypes@@HW4PlayerTypes@@@Z ; CvCityReligions::AddReligiousPressure
 	pop	esi
 
-; 3991 : }
+; 4013 : }
 
 	ret	12					; 0000000cH
 ?ConvertPercentFollowers@CvCityReligions@@QAEXW4ReligionTypes@@0H@Z ENDP ; CvCityReligions::ConvertPercentFollowers
@@ -38650,7 +38730,7 @@ _TEXT	SEGMENT
 ?AddHolyCityPressure@CvCityReligions@@QAEXXZ PROC	; CvCityReligions::AddHolyCityPressure, COMDAT
 ; _this$ = ecx
 
-; 3995 : {
+; 4017 : {
 
 	push	ebx
 	push	ebp
@@ -38658,20 +38738,20 @@ _TEXT	SEGMENT
 	push	edi
 	mov	edi, ecx
 
-; 3996 : 	bool bRecompute = false;
+; 4018 : 	bool bRecompute = false;
 
 	xor	bl, bl
 
-; 3997 : 	ReligionTypes eOldMajorityReligion = GetReligiousMajority();
+; 4019 : 	ReligionTypes eOldMajorityReligion = GetReligiousMajority();
 
 	call	?GetReligiousMajority@CvCityReligions@@QAE?AW4ReligionTypes@@XZ ; CvCityReligions::GetReligiousMajority
 
-; 3998 : 
-; 3999 : 	ReligionInCityList::iterator it;
-; 4000 : #ifdef AUI_ITERATOR_POSTFIX_INCREMENT_OPTIMIZATIONS
-; 4001 : 	for (it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); ++it)
-; 4002 : #else
-; 4003 : 	for(it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); it++)
+; 4020 : 
+; 4021 : 	ReligionInCityList::iterator it;
+; 4022 : #ifdef AUI_ITERATOR_POSTFIX_INCREMENT_OPTIMIZATIONS
+; 4023 : 	for (it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); ++it)
+; 4024 : #else
+; 4025 : 	for(it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); it++)
 
 	mov	esi, DWORD PTR [edi]
 	mov	ebp, eax
@@ -38683,33 +38763,33 @@ _TEXT	SEGMENT
 	npad	2
 $LL5@AddHolyCit:
 
-; 4004 : #endif
-; 4005 : 	{
-; 4006 : 		if(it->m_bFoundedHere)
+; 4026 : #endif
+; 4027 : 	{
+; 4028 : 		if(it->m_bFoundedHere)
 
 	cmp	BYTE PTR [esi+4], 0
 	je	SHORT $LN4@AddHolyCit
 
-; 4007 : 		{
-; 4008 : 			int iPressure = GC.getGame().getGameSpeedInfo().getReligiousPressureAdjacentCity();
+; 4029 : 		{
+; 4030 : 			int iPressure = GC.getGame().getGameSpeedInfo().getReligiousPressureAdjacentCity();
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?getGameSpeedInfo@CvGame@@QBEAAVCvGameSpeedInfo@@XZ ; CvGame::getGameSpeedInfo
 	mov	ecx, eax
 	call	?getReligiousPressureAdjacentCity@CvGameSpeedInfo@@QBEHXZ ; CvGameSpeedInfo::getReligiousPressureAdjacentCity
 
-; 4009 : 			iPressure *=  GC.getRELIGION_PER_TURN_FOUNDING_CITY_PRESSURE();
+; 4031 : 			iPressure *=  GC.getRELIGION_PER_TURN_FOUNDING_CITY_PRESSURE();
 
 	mov	edx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+7896
 	imul	edx, eax
 
-; 4010 : 			it->m_iPressure += iPressure;
+; 4032 : 			it->m_iPressure += iPressure;
 
 	add	DWORD PTR [esi+12], edx
 
-; 4011 : 
-; 4012 : 			// Found it, so we're done
-; 4013 : 			bRecompute = true;
+; 4033 : 
+; 4034 : 			// Found it, so we're done
+; 4035 : 			bRecompute = true;
 
 	mov	bl, 1
 $LN4@AddHolyCit:
@@ -38721,17 +38801,17 @@ $LN4@AddHolyCit:
 	cmp	esi, edx
 	jne	SHORT $LL5@AddHolyCit
 
-; 4014 : 		}
-; 4015 : 	}
-; 4016 : 
-; 4017 : 	// Didn't find it, add new entry
-; 4018 : 	if(bRecompute)
+; 4036 : 		}
+; 4037 : 	}
+; 4038 : 
+; 4039 : 	// Didn't find it, add new entry
+; 4040 : 	if(bRecompute)
 
 	test	bl, bl
 	je	SHORT $LN1@AddHolyCit
 
-; 4019 : 	{
-; 4020 : 		RecomputeFollowers(FOLLOWER_CHANGE_HOLY_CITY, eOldMajorityReligion);
+; 4041 : 	{
+; 4042 : 		RecomputeFollowers(FOLLOWER_CHANGE_HOLY_CITY, eOldMajorityReligion);
 
 	push	-1
 	push	ebp
@@ -38744,8 +38824,8 @@ $LN1@AddHolyCit:
 	pop	ebp
 	pop	ebx
 
-; 4021 : 	}
-; 4022 : }
+; 4043 : 	}
+; 4044 : }
 
 	ret	0
 ?AddHolyCityPressure@CvCityReligions@@QAEXXZ ENDP	; CvCityReligions::AddHolyCityPressure
@@ -38760,7 +38840,7 @@ _iBasePressure$ = 12					; size = 4
 ?AddSpyPressure@CvCityReligions@@QAEXW4ReligionTypes@@H@Z PROC ; CvCityReligions::AddSpyPressure, COMDAT
 ; _this$ = ecx
 
-; 4026 : {
+; 4048 : {
 
 	push	ecx
 	push	ebx
@@ -38768,20 +38848,20 @@ _iBasePressure$ = 12					; size = 4
 	push	edi
 	mov	edi, ecx
 
-; 4027 : 	bool bRecompute = false;
+; 4049 : 	bool bRecompute = false;
 
 	xor	bl, bl
 
-; 4028 : 	ReligionTypes eOldMajorityReligion = GetReligiousMajority();
+; 4050 : 	ReligionTypes eOldMajorityReligion = GetReligiousMajority();
 
 	call	?GetReligiousMajority@CvCityReligions@@QAE?AW4ReligionTypes@@XZ ; CvCityReligions::GetReligiousMajority
 
-; 4029 : 
-; 4030 : 	ReligionInCityList::iterator it;
-; 4031 : #ifdef AUI_ITERATOR_POSTFIX_INCREMENT_OPTIMIZATIONS
-; 4032 : 	for (it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); ++it)
-; 4033 : #else
-; 4034 : 	for(it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); it++)
+; 4051 : 
+; 4052 : 	ReligionInCityList::iterator it;
+; 4053 : #ifdef AUI_ITERATOR_POSTFIX_INCREMENT_OPTIMIZATIONS
+; 4054 : 	for (it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); ++it)
+; 4055 : #else
+; 4056 : 	for(it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); it++)
 
 	mov	esi, DWORD PTR [edi]
 	mov	DWORD PTR _eOldMajorityReligion$[esp+16], eax
@@ -38794,33 +38874,33 @@ _iBasePressure$ = 12					; size = 4
 	mov	ebp, DWORD PTR _iBasePressure$[esp+16]
 $LL5@AddSpyPres:
 
-; 4035 : #endif
-; 4036 : 	{
-; 4037 : 		if(it->m_eReligion == eReligion)
+; 4057 : #endif
+; 4058 : 	{
+; 4059 : 		if(it->m_eReligion == eReligion)
 
 	mov	edx, DWORD PTR _eReligion$[esp+16]
 	cmp	DWORD PTR [esi], edx
 	jne	SHORT $LN4@AddSpyPres
 
-; 4038 : 		{
-; 4039 : 			int iPressure = GC.getGame().getGameSpeedInfo().getReligiousPressureAdjacentCity();
+; 4060 : 		{
+; 4061 : 			int iPressure = GC.getGame().getGameSpeedInfo().getReligiousPressureAdjacentCity();
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?getGameSpeedInfo@CvGame@@QBEAAVCvGameSpeedInfo@@XZ ; CvGame::getGameSpeedInfo
 	mov	ecx, eax
 	call	?getReligiousPressureAdjacentCity@CvGameSpeedInfo@@QBEHXZ ; CvGameSpeedInfo::getReligiousPressureAdjacentCity
 
-; 4040 : 			iPressure *= iBasePressure;
+; 4062 : 			iPressure *= iBasePressure;
 
 	imul	eax, ebp
 
-; 4041 : 			it->m_iPressure += iPressure;
+; 4063 : 			it->m_iPressure += iPressure;
 
 	add	DWORD PTR [esi+12], eax
 
-; 4042 : 
-; 4043 : 			// Found it, so we're done
-; 4044 : 			bRecompute = true;
+; 4064 : 
+; 4065 : 			// Found it, so we're done
+; 4066 : 			bRecompute = true;
 
 	mov	bl, 1
 $LN4@AddSpyPres:
@@ -38833,17 +38913,17 @@ $LN4@AddSpyPres:
 	jne	SHORT $LL5@AddSpyPres
 	pop	ebp
 
-; 4045 : 		}
-; 4046 : 	}
-; 4047 : 
-; 4048 : 	// Didn't find it, add new entry
-; 4049 : 	if(bRecompute)
+; 4067 : 		}
+; 4068 : 	}
+; 4069 : 
+; 4070 : 	// Didn't find it, add new entry
+; 4071 : 	if(bRecompute)
 
 	test	bl, bl
 	je	SHORT $LN1@AddSpyPres
 
-; 4050 : 	{
-; 4051 : 		RecomputeFollowers(FOLLOWER_CHANGE_SPY_PRESSURE, eOldMajorityReligion);
+; 4072 : 	{
+; 4073 : 		RecomputeFollowers(FOLLOWER_CHANGE_SPY_PRESSURE, eOldMajorityReligion);
 
 	mov	eax, DWORD PTR _eOldMajorityReligion$[esp+16]
 	push	-1
@@ -38856,8 +38936,8 @@ $LN1@AddSpyPres:
 	pop	esi
 	pop	ebx
 
-; 4052 : 	}
-; 4053 : }
+; 4074 : 	}
+; 4075 : }
 
 	pop	ecx
 	ret	8
@@ -38870,7 +38950,7 @@ _TEXT	SEGMENT
 ?RemoveFormerPantheon@CvCityReligions@@QAEXXZ PROC	; CvCityReligions::RemoveFormerPantheon, COMDAT
 ; _this$ = ecx
 
-; 4081 : {
+; 4103 : {
 
 	push	ebx
 	push	ebp
@@ -38878,22 +38958,22 @@ _TEXT	SEGMENT
 	push	edi
 	mov	esi, ecx
 
-; 4082 : #ifndef AUI_ITERATOR_POSTFIX_INCREMENT_OPTIMIZATIONS
-; 4083 : 	bool bFoundIt = false;
+; 4104 : #ifndef AUI_ITERATOR_POSTFIX_INCREMENT_OPTIMIZATIONS
+; 4105 : 	bool bFoundIt = false;
 
 	xor	bl, bl
 
-; 4084 : #endif
-; 4085 : 	ReligionTypes eOldMajorityReligion = GetReligiousMajority();
+; 4106 : #endif
+; 4107 : 	ReligionTypes eOldMajorityReligion = GetReligiousMajority();
 
 	call	?GetReligiousMajority@CvCityReligions@@QAE?AW4ReligionTypes@@XZ ; CvCityReligions::GetReligiousMajority
 
-; 4086 : 
-; 4087 : 	ReligionInCityList::iterator it;
-; 4088 : #ifdef AUI_ITERATOR_POSTFIX_INCREMENT_OPTIMIZATIONS
-; 4089 : 	for (it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); ++it)
-; 4090 : #else
-; 4091 : 	for(it = m_ReligionStatus.begin(); it != m_ReligionStatus.end() && !bFoundIt; it++)
+; 4108 : 
+; 4109 : 	ReligionInCityList::iterator it;
+; 4110 : #ifdef AUI_ITERATOR_POSTFIX_INCREMENT_OPTIMIZATIONS
+; 4111 : 	for (it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); ++it)
+; 4112 : #else
+; 4113 : 	for(it = m_ReligionStatus.begin(); it != m_ReligionStatus.end() && !bFoundIt; it++)
 
 	mov	edi, DWORD PTR [esi]
 	mov	ebp, eax
@@ -38907,26 +38987,26 @@ $LL4@RemoveForm:
 	test	bl, bl
 	jne	SHORT $LN2@RemoveForm
 
-; 4092 : #endif
-; 4093 : 	{
-; 4094 : 		if(it->m_eReligion == RELIGION_PANTHEON)
+; 4114 : #endif
+; 4115 : 	{
+; 4116 : 		if(it->m_eReligion == RELIGION_PANTHEON)
 
 	cmp	DWORD PTR [edi], 0
 	jne	SHORT $LN3@RemoveForm
 
-; 4095 : 		{
-; 4096 : 			m_ReligionStatus.erase(it);
+; 4117 : 		{
+; 4118 : 			m_ReligionStatus.erase(it);
 
 	push	edi
 	mov	ecx, esi
 	call	?erase@?$FStaticVector@VCvReligionInCity@@$07$0A@$0BCJ@$0A@@@QAEXPAVCvReligionInCity@@@Z ; FStaticVector<CvReligionInCity,8,0,297,0>::erase
 
-; 4097 : 
-; 4098 : 			// Found it, so we're done
-; 4099 : #ifdef AUI_ITERATOR_POSTFIX_INCREMENT_OPTIMIZATIONS
-; 4100 : 			break;
-; 4101 : #else
-; 4102 : 			bFoundIt = true;
+; 4119 : 
+; 4120 : 			// Found it, so we're done
+; 4121 : #ifdef AUI_ITERATOR_POSTFIX_INCREMENT_OPTIMIZATIONS
+; 4122 : 			break;
+; 4123 : #else
+; 4124 : 			bFoundIt = true;
 
 	mov	bl, 1
 $LN3@RemoveForm:
@@ -38939,11 +39019,11 @@ $LN3@RemoveForm:
 	jne	SHORT $LL4@RemoveForm
 $LN2@RemoveForm:
 
-; 4103 : #endif
-; 4104 : 		}
-; 4105 : 	}
-; 4106 : 
-; 4107 : 	RecomputeFollowers(FOLLOWER_CHANGE_CONQUEST, eOldMajorityReligion);
+; 4125 : #endif
+; 4126 : 		}
+; 4127 : 	}
+; 4128 : 
+; 4129 : 	RecomputeFollowers(FOLLOWER_CHANGE_CONQUEST, eOldMajorityReligion);
 
 	push	-1
 	push	ebp
@@ -38955,7 +39035,7 @@ $LN2@RemoveForm:
 	pop	ebp
 	pop	ebx
 
-; 4108 : }
+; 4130 : }
 
 	ret	0
 ?RemoveFormerPantheon@CvCityReligions@@QAEXXZ ENDP	; CvCityReligions::RemoveFormerPantheon
@@ -38986,7 +39066,7 @@ _eResponsiblePlayer$ = 12				; size = 4
 ?RemoveOtherReligions@CvCityReligions@@QAEXW4ReligionTypes@@W4PlayerTypes@@@Z PROC ; CvCityReligions::RemoveOtherReligions, COMDAT
 ; _this$ = ecx
 
-; 4112 : {
+; 4134 : {
 
 	push	-1
 	push	__ehhandler$?RemoveOtherReligions@CvCityReligions@@QAEXW4ReligionTypes@@W4PlayerTypes@@@Z
@@ -39000,13 +39080,13 @@ _eResponsiblePlayer$ = 12				; size = 4
 	push	edi
 	mov	edi, ecx
 
-; 4113 : 	ReligionTypes eOldMajorityReligion = GetReligiousMajority();
+; 4135 : 	ReligionTypes eOldMajorityReligion = GetReligiousMajority();
 
 	call	?GetReligiousMajority@CvCityReligions@@QAE?AW4ReligionTypes@@XZ ; CvCityReligions::GetReligiousMajority
 
-; 4114 : 
-; 4115 : 	// Copy list
-; 4116 : 	ReligionInCityList tempList;
+; 4136 : 
+; 4137 : 	// Copy list
+; 4138 : 	ReligionInCityList tempList;
 
 	xor	ecx, ecx
 	mov	ebp, 8
@@ -39017,11 +39097,11 @@ _eResponsiblePlayer$ = 12				; size = 4
 	mov	DWORD PTR _tempList$[esp+248], ebp
 	mov	DWORD PTR _tempList$[esp+240], edx
 
-; 4117 : 	ReligionInCityList::iterator it;
-; 4118 : #ifdef AUI_ITERATOR_POSTFIX_INCREMENT_OPTIMIZATIONS
-; 4119 : 	for (it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); ++it)
-; 4120 : #else
-; 4121 : 	for(it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); it++)
+; 4139 : 	ReligionInCityList::iterator it;
+; 4140 : #ifdef AUI_ITERATOR_POSTFIX_INCREMENT_OPTIMIZATIONS
+; 4141 : 	for (it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); ++it)
+; 4142 : #else
+; 4143 : 	for(it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); it++)
 
 	mov	eax, DWORD PTR [edi+4]
 	mov	esi, DWORD PTR [edi]
@@ -39036,9 +39116,9 @@ $LL98@RemoveOthe:
 	mov	ebp, DWORD PTR _tempList$[esp+248]
 $LN10@RemoveOthe:
 
-; 4122 : #endif
-; 4123 : 	{
-; 4124 : 		tempList.push_back(*it);
+; 4144 : #endif
+; 4145 : 	{
+; 4146 : 		tempList.push_back(*it);
 
 	mov	BYTE PTR _tempList$[esp+444], bl
 	cmp	ecx, ebp
@@ -39077,25 +39157,25 @@ $LN29@RemoveOthe:
 	cmp	esi, eax
 	jne	SHORT $LL98@RemoveOthe
 
-; 4117 : 	ReligionInCityList::iterator it;
-; 4118 : #ifdef AUI_ITERATOR_POSTFIX_INCREMENT_OPTIMIZATIONS
-; 4119 : 	for (it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); ++it)
-; 4120 : #else
-; 4121 : 	for(it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); it++)
+; 4139 : 	ReligionInCityList::iterator it;
+; 4140 : #ifdef AUI_ITERATOR_POSTFIX_INCREMENT_OPTIMIZATIONS
+; 4141 : 	for (it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); ++it)
+; 4142 : #else
+; 4143 : 	for(it = m_ReligionStatus.begin(); it != m_ReligionStatus.end(); it++)
 
 	mov	edx, DWORD PTR _tempList$[esp+240]
 $LN8@RemoveOthe:
 
-; 4125 : 	}
-; 4126 : 
-; 4127 : 	// Erase old list
-; 4128 : 	m_ReligionStatus.clear();
-; 4129 : 
-; 4130 : 	// Recopy just what we want to keep
-; 4131 : #ifdef AUI_ITERATOR_POSTFIX_INCREMENT_OPTIMIZATIONS
-; 4132 : 	for (it = tempList.begin(); it != tempList.end(); ++it)
-; 4133 : #else
-; 4134 : 	for(it = tempList.begin(); it != tempList.end(); it++)
+; 4147 : 	}
+; 4148 : 
+; 4149 : 	// Erase old list
+; 4150 : 	m_ReligionStatus.clear();
+; 4151 : 
+; 4152 : 	// Recopy just what we want to keep
+; 4153 : #ifdef AUI_ITERATOR_POSTFIX_INCREMENT_OPTIMIZATIONS
+; 4154 : 	for (it = tempList.begin(); it != tempList.end(); ++it)
+; 4155 : #else
+; 4156 : 	for(it = tempList.begin(); it != tempList.end(); it++)
 
 	lea	ecx, DWORD PTR [ecx+ecx*2]
 	lea	eax, DWORD PTR [edx+ecx*8]
@@ -39106,24 +39186,24 @@ $LN8@RemoveOthe:
 	npad	1
 $LL7@RemoveOthe:
 
-; 4135 : #endif
-; 4136 : 	{
-; 4137 : 		int iPressureRetained = 0;
-; 4138 : 
-; 4139 : 		ReligionTypes eLoopReligion = it->m_eReligion;
+; 4157 : #endif
+; 4158 : 	{
+; 4159 : 		int iPressureRetained = 0;
+; 4160 : 
+; 4161 : 		ReligionTypes eLoopReligion = it->m_eReligion;
 
 	mov	ebp, DWORD PTR [esi]
 	xor	eax, eax
 
-; 4140 : 		if (eLoopReligion > RELIGION_PANTHEON && eLoopReligion != eReligion)
+; 4162 : 		if (eLoopReligion > RELIGION_PANTHEON && eLoopReligion != eReligion)
 
 	cmp	ebp, ebx
 	jle	SHORT $LN97@RemoveOthe
 	cmp	ebp, DWORD PTR _eReligion$[esp+236]
 	je	SHORT $LN97@RemoveOthe
 
-; 4141 : 		{
-; 4142 : 			const CvReligion *pReligion = GC.getGame().GetGameReligions()->GetReligion(eLoopReligion, NO_PLAYER);
+; 4163 : 		{
+; 4164 : 			const CvReligion *pReligion = GC.getGame().GetGameReligions()->GetReligion(eLoopReligion, NO_PLAYER);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?GetGameReligions@CvGame@@QAEPAVCvGameReligions@@XZ ; CvGame::GetGameReligions
@@ -39150,14 +39230,14 @@ $LN51@RemoveOthe:
 	xor	ecx, ecx
 $LN54@RemoveOthe:
 
-; 4143 : 			iPressureRetained = pReligion->m_Beliefs.GetInquisitorPressureRetention();  // Normally 0
+; 4165 : 			iPressureRetained = pReligion->m_Beliefs.GetInquisitorPressureRetention();  // Normally 0
 
 	mov	eax, DWORD PTR [ecx+268]
 $LN97@RemoveOthe:
 
-; 4144 : 		}
-; 4145 : 
-; 4146 : 		if (eLoopReligion == NO_RELIGION || eLoopReligion == eReligion || iPressureRetained > 0)
+; 4166 : 		}
+; 4167 : 
+; 4168 : 		if (eLoopReligion == NO_RELIGION || eLoopReligion == eReligion || iPressureRetained > 0)
 
 	cmp	ebp, -1
 	je	SHORT $LN2@RemoveOthe
@@ -39166,8 +39246,8 @@ $LN97@RemoveOthe:
 	cmp	eax, ebx
 	jle	SHORT $LN6@RemoveOthe
 
-; 4147 : 		{
-; 4148 : 			if (iPressureRetained > 0)
+; 4169 : 		{
+; 4170 : 			if (iPressureRetained > 0)
 
 	jmp	SHORT $LN95@RemoveOthe
 $LN2@RemoveOthe:
@@ -39175,8 +39255,8 @@ $LN2@RemoveOthe:
 	jle	SHORT $LN1@RemoveOthe
 $LN95@RemoveOthe:
 
-; 4149 : 			{
-; 4150 : 				it->m_iPressure = it->m_iPressure * iPressureRetained / 100;
+; 4171 : 			{
+; 4172 : 				it->m_iPressure = it->m_iPressure * iPressureRetained / 100;
 
 	mov	ecx, DWORD PTR [esi+12]
 	imul	ecx, eax
@@ -39189,9 +39269,9 @@ $LN95@RemoveOthe:
 	mov	DWORD PTR [esi+12], eax
 $LN1@RemoveOthe:
 
-; 4151 : 			}
-; 4152 : 
-; 4153 : 			m_ReligionStatus.push_back(*it);
+; 4173 : 			}
+; 4174 : 
+; 4175 : 			m_ReligionStatus.push_back(*it);
 
 	mov	eax, DWORD PTR [edi+8]
 	mov	BYTE PTR [edi+204], bl
@@ -39223,16 +39303,16 @@ $LN65@RemoveOthe:
 	inc	DWORD PTR [edi+4]
 $LN6@RemoveOthe:
 
-; 4125 : 	}
-; 4126 : 
-; 4127 : 	// Erase old list
-; 4128 : 	m_ReligionStatus.clear();
-; 4129 : 
-; 4130 : 	// Recopy just what we want to keep
-; 4131 : #ifdef AUI_ITERATOR_POSTFIX_INCREMENT_OPTIMIZATIONS
-; 4132 : 	for (it = tempList.begin(); it != tempList.end(); ++it)
-; 4133 : #else
-; 4134 : 	for(it = tempList.begin(); it != tempList.end(); it++)
+; 4147 : 	}
+; 4148 : 
+; 4149 : 	// Erase old list
+; 4150 : 	m_ReligionStatus.clear();
+; 4151 : 
+; 4152 : 	// Recopy just what we want to keep
+; 4153 : #ifdef AUI_ITERATOR_POSTFIX_INCREMENT_OPTIMIZATIONS
+; 4154 : 	for (it = tempList.begin(); it != tempList.end(); ++it)
+; 4155 : #else
+; 4156 : 	for(it = tempList.begin(); it != tempList.end(); it++)
 
 	mov	eax, DWORD PTR _tempList$[esp+244]
 	mov	ecx, DWORD PTR _tempList$[esp+240]
@@ -39243,10 +39323,10 @@ $LN6@RemoveOthe:
 	jne	$LL7@RemoveOthe
 $LN5@RemoveOthe:
 
-; 4154 : 		}
-; 4155 : 	}
-; 4156 : 
-; 4157 : 	RecomputeFollowers(FOLLOWER_CHANGE_REMOVE_HERESY, eOldMajorityReligion, eResponsiblePlayer);
+; 4176 : 		}
+; 4177 : 	}
+; 4178 : 
+; 4179 : 	RecomputeFollowers(FOLLOWER_CHANGE_REMOVE_HERESY, eOldMajorityReligion, eResponsiblePlayer);
 
 	mov	eax, DWORD PTR _eResponsiblePlayer$[esp+236]
 	mov	ecx, DWORD PTR _eOldMajorityReligion$[esp+240]
@@ -39256,7 +39336,7 @@ $LN5@RemoveOthe:
 	mov	ecx, edi
 	call	?RecomputeFollowers@CvCityReligions@@AAEXW4CvReligiousFollowChangeReason@@W4ReligionTypes@@W4PlayerTypes@@@Z ; CvCityReligions::RecomputeFollowers
 
-; 4158 : }
+; 4180 : }
 
 	mov	eax, DWORD PTR _tempList$[esp+240]
 	pop	edi
@@ -39295,7 +39375,7 @@ _iConversionStrength$ = 12				; size = 4
 ?GetNumFollowersAfterSpread@CvCityReligions@@QAEHW4ReligionTypes@@H@Z PROC ; CvCityReligions::GetNumFollowersAfterSpread, COMDAT
 ; _this$ = ecx
 
-; 4218 : 	SimulateReligiousPressure(eReligion, iConversionStrength);
+; 4240 : 	SimulateReligiousPressure(eReligion, iConversionStrength);
 
 	mov	eax, DWORD PTR _iConversionStrength$[esp-4]
 	push	esi
@@ -39306,7 +39386,7 @@ _iConversionStrength$ = 12				; size = 4
 	mov	esi, ecx
 	call	?SimulateReligiousPressure@CvCityReligions@@QAEXW4ReligionTypes@@H@Z ; CvCityReligions::SimulateReligiousPressure
 
-; 4219 : 	return GetNumSimulatedFollowers(eReligion);
+; 4241 : 	return GetNumSimulatedFollowers(eReligion);
 
 	push	edi
 	mov	ecx, esi
@@ -39314,7 +39394,7 @@ _iConversionStrength$ = 12				; size = 4
 	pop	edi
 	pop	esi
 
-; 4220 : }
+; 4242 : }
 
 	ret	8
 ?GetNumFollowersAfterSpread@CvCityReligions@@QAEHW4ReligionTypes@@H@Z ENDP ; CvCityReligions::GetNumFollowersAfterSpread
@@ -39328,7 +39408,7 @@ _iConversionStrength$ = 12				; size = 4
 ?GetNumFollowersAfterProphetSpread@CvCityReligions@@QAEHW4ReligionTypes@@H@Z PROC ; CvCityReligions::GetNumFollowersAfterProphetSpread, COMDAT
 ; _this$ = ecx
 
-; 4225 : 	SimulateProphetSpread(eReligion, iConversionStrength);
+; 4247 : 	SimulateProphetSpread(eReligion, iConversionStrength);
 
 	mov	eax, DWORD PTR _iConversionStrength$[esp-4]
 	push	esi
@@ -39339,7 +39419,7 @@ _iConversionStrength$ = 12				; size = 4
 	mov	esi, ecx
 	call	?SimulateProphetSpread@CvCityReligions@@QAEXW4ReligionTypes@@H@Z ; CvCityReligions::SimulateProphetSpread
 
-; 4226 : 	return GetNumSimulatedFollowers(eReligion);
+; 4248 : 	return GetNumSimulatedFollowers(eReligion);
 
 	push	edi
 	mov	ecx, esi
@@ -39347,7 +39427,7 @@ _iConversionStrength$ = 12				; size = 4
 	pop	edi
 	pop	esi
 
-; 4227 : }
+; 4249 : }
 
 	ret	8
 ?GetNumFollowersAfterProphetSpread@CvCityReligions@@QAEHW4ReligionTypes@@H@Z ENDP ; CvCityReligions::GetNumFollowersAfterProphetSpread
@@ -39361,7 +39441,7 @@ _iConversionStrength$ = 12				; size = 4
 ?GetMajorityReligionAfterSpread@CvCityReligions@@QAE?AW4ReligionTypes@@W42@H@Z PROC ; CvCityReligions::GetMajorityReligionAfterSpread, COMDAT
 ; _this$ = ecx
 
-; 4232 : 	SimulateReligiousPressure(eReligion, iConversionStrength);
+; 4254 : 	SimulateReligiousPressure(eReligion, iConversionStrength);
 
 	mov	eax, DWORD PTR _iConversionStrength$[esp-4]
 	push	esi
@@ -39372,13 +39452,13 @@ _iConversionStrength$ = 12				; size = 4
 	mov	ecx, esi
 	call	?SimulateReligiousPressure@CvCityReligions@@QAEXW4ReligionTypes@@H@Z ; CvCityReligions::SimulateReligiousPressure
 
-; 4233 : 	return GetSimulatedReligiousMajority();
+; 4255 : 	return GetSimulatedReligiousMajority();
 
 	mov	ecx, esi
 	call	?GetSimulatedReligiousMajority@CvCityReligions@@QAE?AW4ReligionTypes@@XZ ; CvCityReligions::GetSimulatedReligiousMajority
 	pop	esi
 
-; 4234 : }
+; 4256 : }
 
 	ret	8
 ?GetMajorityReligionAfterSpread@CvCityReligions@@QAE?AW4ReligionTypes@@W42@H@Z ENDP ; CvCityReligions::GetMajorityReligionAfterSpread
@@ -39392,7 +39472,7 @@ _iConversionStrength$ = 12				; size = 4
 ?GetMajorityReligionAfterProphetSpread@CvCityReligions@@QAE?AW4ReligionTypes@@W42@H@Z PROC ; CvCityReligions::GetMajorityReligionAfterProphetSpread, COMDAT
 ; _this$ = ecx
 
-; 4239 : 	SimulateProphetSpread(eReligion, iConversionStrength);
+; 4261 : 	SimulateProphetSpread(eReligion, iConversionStrength);
 
 	mov	eax, DWORD PTR _iConversionStrength$[esp-4]
 	push	esi
@@ -39403,13 +39483,13 @@ _iConversionStrength$ = 12				; size = 4
 	mov	ecx, esi
 	call	?SimulateProphetSpread@CvCityReligions@@QAEXW4ReligionTypes@@H@Z ; CvCityReligions::SimulateProphetSpread
 
-; 4240 : 	return GetSimulatedReligiousMajority();
+; 4262 : 	return GetSimulatedReligiousMajority();
 
 	mov	ecx, esi
 	call	?GetSimulatedReligiousMajority@CvCityReligions@@QAE?AW4ReligionTypes@@XZ ; CvCityReligions::GetSimulatedReligiousMajority
 	pop	esi
 
-; 4241 : }
+; 4263 : }
 
 	ret	8
 ?GetMajorityReligionAfterProphetSpread@CvCityReligions@@QAE?AW4ReligionTypes@@W42@H@Z ENDP ; CvCityReligions::GetMajorityReligionAfterProphetSpread
@@ -39421,26 +39501,26 @@ _TEXT	SEGMENT
 ?DoTurn@CvReligionAI@@QAEXXZ PROC			; CvReligionAI::DoTurn, COMDAT
 ; _this$ = ecx
 
-; 4921 : {
+; 4943 : {
 
 	push	esi
 	mov	esi, ecx
 
-; 4922 : 	// Only AI players use this function for now
-; 4923 : 	if(m_pPlayer->isHuman())
+; 4944 : 	// Only AI players use this function for now
+; 4945 : 	if(m_pPlayer->isHuman())
 
 	mov	ecx, DWORD PTR [esi+4]
 	call	?isHuman@CvPlayer@@QBE_NXZ		; CvPlayer::isHuman
 	test	al, al
 	jne	SHORT $LN2@DoTurn
 
-; 4924 : 	{
-; 4925 : 		return;
-; 4926 : 	}
-; 4927 : 
-; 4928 : 	AI_PERF_FORMAT("AI-perf.csv", ("Religion AI, Turn %03d, %s", GC.getGame().getElapsedGameTurns(), m_pPlayer->getCivilizationShortDescription()) );
-; 4929 : 
-; 4930 : 	DoFaithPurchases();
+; 4946 : 	{
+; 4947 : 		return;
+; 4948 : 	}
+; 4949 : 
+; 4950 : 	AI_PERF_FORMAT("AI-perf.csv", ("Religion AI, Turn %03d, %s", GC.getGame().getElapsedGameTurns(), m_pPlayer->getCivilizationShortDescription()) );
+; 4951 : 
+; 4952 : 	DoFaithPurchases();
 
 	mov	ecx, esi
 	pop	esi
@@ -39448,7 +39528,7 @@ _TEXT	SEGMENT
 $LN2@DoTurn:
 	pop	esi
 
-; 4931 : }
+; 4953 : }
 
 	ret	0
 ?DoTurn@CvReligionAI@@QAEXXZ ENDP			; CvReligionAI::DoTurn
@@ -39485,8 +39565,8 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 _this$ = -20						; size = 4
 __$EHRec$ = -16						; size = 16
-$T243589 = 8						; size = 1
-__Cat$243592 = 8					; size = 1
+$T243669 = 8						; size = 1
+__Cat$243672 = 8					; size = 1
 __Right$ = 8						; size = 4
 ??0?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@QAE@ABV01@@Z PROC ; std::vector<enum BeliefTypes,std::allocator<enum BeliefTypes> >::vector<enum BeliefTypes,std::allocator<enum BeliefTypes> >, COMDAT
 ; _this$ = ecx
@@ -39532,10 +39612,10 @@ $LN22@vector@2:
 ; 502  : 			_TRY_BEGIN
 ; 503  : 			_Mylast = _Ucopy(_Right.begin(), _Right.end(), _Myfirst);
 
-	mov	BYTE PTR $T243589[ebp], 0
-	mov	edx, DWORD PTR $T243589[ebp]
+	mov	BYTE PTR $T243669[ebp], 0
+	mov	edx, DWORD PTR $T243669[ebp]
 	push	edx
-	mov	edx, DWORD PTR __Cat$243592[ebp]
+	mov	edx, DWORD PTR __Cat$243672[ebp]
 	push	edx
 	lea	ecx, DWORD PTR [eax+edi*4]
 	push	esi
@@ -39624,10 +39704,10 @@ PUBLIC	??$_Umove@V?$_Vector_iterator@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Umove@V?$_Vector_iterator@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@@?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@IAEPAW4BeliefTypes@@V?$_Vector_iterator@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@1@0PAW42@@Z
 _TEXT	SEGMENT
-$T243673 = -4						; size = 1
+$T243746 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$243676 = 16					; size = 1
+__Cat$243750 = 16					; size = 1
 __Ptr$ = 16						; size = 4
 ??$_Umove@V?$_Vector_iterator@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@@?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@IAEPAW4BeliefTypes@@V?$_Vector_iterator@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@1@0PAW42@@Z PROC ; std::vector<enum BeliefTypes,std::allocator<enum BeliefTypes> >::_Umove<std::_Vector_iterator<enum BeliefTypes,std::allocator<enum BeliefTypes> > >, COMDAT
 ; _this$ = ecx
@@ -39640,9 +39720,9 @@ __Ptr$ = 16						; size = 4
 ; 1147 : 		return (_STDEXT _Unchecked_uninitialized_move(_First, _Last,
 ; 1148 : 			_Ptr, this->_Alval));
 
-	mov	edx, DWORD PTR __Cat$243676[esp]
-	mov	BYTE PTR $T243673[esp+4], 0
-	mov	eax, DWORD PTR $T243673[esp+4]
+	mov	edx, DWORD PTR __Cat$243750[esp]
+	mov	BYTE PTR $T243746[esp+4], 0
+	mov	eax, DWORD PTR $T243746[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Ptr$[esp+4]
 	push	edx
@@ -39664,10 +39744,10 @@ PUBLIC	??$_Umove@PAW4BeliefTypes@@@?$vector@W4BeliefTypes@@V?$allocator@W4Belief
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Umove@PAW4BeliefTypes@@@?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@IAEPAW4BeliefTypes@@PAW42@00@Z
 _TEXT	SEGMENT
-$T243731 = -4						; size = 1
+$T243805 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$243718 = 16					; size = 1
+__Cat$243809 = 16					; size = 1
 __Ptr$ = 16						; size = 4
 ??$_Umove@PAW4BeliefTypes@@@?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@IAEPAW4BeliefTypes@@PAW42@00@Z PROC ; std::vector<enum BeliefTypes,std::allocator<enum BeliefTypes> >::_Umove<enum BeliefTypes *>, COMDAT
 ; _this$ = ecx
@@ -39680,9 +39760,9 @@ __Ptr$ = 16						; size = 4
 ; 1147 : 		return (_STDEXT _Unchecked_uninitialized_move(_First, _Last,
 ; 1148 : 			_Ptr, this->_Alval));
 
-	mov	edx, DWORD PTR __Cat$243718[esp]
-	mov	BYTE PTR $T243731[esp+4], 0
-	mov	eax, DWORD PTR $T243731[esp+4]
+	mov	edx, DWORD PTR __Cat$243809[esp]
+	mov	BYTE PTR $T243805[esp+4], 0
+	mov	eax, DWORD PTR $T243805[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Ptr$[esp+4]
 	push	edx
@@ -39794,8 +39874,8 @@ EXTRN	?GetEspionage@CvPlayer@@QBEPAVCvPlayerEspionage@@XZ:PROC ; CvPlayer::GetEs
 _TEXT	SEGMENT
 tv637 = -12						; size = 4
 _this$ = -8						; size = 4
-_iLoop$224392 = -4					; size = 4
-_iNumTradeRoutes$224400 = 8				; size = 4
+_iLoop$224434 = -4					; size = 4
+_iNumTradeRoutes$224442 = 8				; size = 4
 _pCity$ = 8						; size = 4
 ?SpreadReligionToOneCity@CvGameReligions@@QAEXPAVCvCity@@@Z PROC ; CvGameReligions::SpreadReligionToOneCity, COMDAT
 ; _this$ = ecx
@@ -39979,7 +40059,7 @@ $LN104@SpreadReli:
 ; 366  : 			for(pLoopCity = kPlayer.firstCity(&iLoop); pLoopCity != NULL; pLoopCity = kPlayer.nextCity(&iLoop))
 
 	push	0
-	lea	ecx, DWORD PTR _iLoop$224392[esp+32]
+	lea	ecx, DWORD PTR _iLoop$224434[esp+32]
 	push	ecx
 	mov	ecx, ebx
 	call	?firstCity@CvPlayer@@QAEPAVCvCity@@PAH_N@Z ; CvPlayer::firstCity
@@ -40022,12 +40102,12 @@ $LL105@SpreadReli:
 
 	mov	ecx, DWORD PTR _this$[esp+28]
 	push	0
-	lea	edx, DWORD PTR _iNumTradeRoutes$224400[esp+28]
+	lea	edx, DWORD PTR _iNumTradeRoutes$224442[esp+28]
 	push	edx
 	push	ebp
 	push	esi
 	push	edi
-	mov	DWORD PTR _iNumTradeRoutes$224400[esp+44], 0
+	mov	DWORD PTR _iNumTradeRoutes$224442[esp+44], 0
 	call	?GetAdjacentCityReligiousPressure@CvGameReligions@@QAEHW4ReligionTypes@@PAVCvCity@@1AAH_N@Z ; CvGameReligions::GetAdjacentCityReligiousPressure
 
 ; 383  : 				if (iPressure > 0)
@@ -40049,7 +40129,7 @@ $LL105@SpreadReli:
 
 ; 386  : 					if (iNumTradeRoutes != 0)
 
-	mov	esi, DWORD PTR _iNumTradeRoutes$224400[esp+24]
+	mov	esi, DWORD PTR _iNumTradeRoutes$224442[esp+24]
 	test	esi, esi
 	je	SHORT $LN6@SpreadReli
 
@@ -40085,7 +40165,7 @@ $LN6@SpreadReli:
 ; 366  : 			for(pLoopCity = kPlayer.firstCity(&iLoop); pLoopCity != NULL; pLoopCity = kPlayer.nextCity(&iLoop))
 
 	push	0
-	lea	ecx, DWORD PTR _iLoop$224392[esp+32]
+	lea	ecx, DWORD PTR _iLoop$224434[esp+32]
 	push	ecx
 	mov	ecx, ebx
 	call	?nextCity@CvPlayer@@QAEPAVCvCity@@PAH_N@Z ; CvPlayer::nextCity
@@ -40159,28 +40239,28 @@ __unwindtable$?FoundPantheon@CvGameReligions@@QAEXW4PlayerTypes@@W4BeliefTypes@@
 xdata$x	ENDS
 ;	COMDAT ?FoundPantheon@CvGameReligions@@QAEXW4PlayerTypes@@W4BeliefTypes@@@Z
 _TEXT	SEGMENT
-_iNotifyLoop$224934 = -644				; size = 4
-_args$224908 = -644					; size = 4
-$T243993 = -640						; size = 4
-_kTeam$224950 = -640					; size = 4
-_kCurNotifyPlayer$224940 = -640				; size = 4
+_iNotifyLoop$224976 = -644				; size = 4
+_args$224950 = -644					; size = 4
+$T244073 = -640						; size = 4
+_kTeam$224992 = -640					; size = 4
+_kCurNotifyPlayer$224982 = -640				; size = 4
 _kGame$ = -640						; size = 4
 tv817 = -636						; size = 4
-$T243987 = -636						; size = 4
+$T244067 = -636						; size = 4
 _pBelief$ = -632					; size = 4
 _iIncrement$ = -632					; size = 4
-_bResult$224909 = -625					; size = 1
+_bResult$224951 = -625					; size = 1
 _kPlayer$ = -624					; size = 4
 _pEntry$ = -620						; size = 4
 _this$ = -616						; size = 4
 _iLoop$ = -612						; size = 4
-_strLogMsg$224959 = -608				; size = 28
-$T243990 = -608						; size = 28
-$T243989 = -608						; size = 28
-_unknownFoundedText$224953 = -580			; size = 80
-_localizedText$224944 = -580				; size = 80
-_replayText$224922 = -500				; size = 80
-_strSummary$224919 = -420				; size = 80
+_strLogMsg$225001 = -608				; size = 28
+$T244070 = -608						; size = 28
+$T244069 = -608						; size = 28
+_unknownFoundedText$224995 = -580			; size = 80
+_localizedText$224986 = -580				; size = 80
+_replayText$224964 = -500				; size = 80
+_strSummary$224961 = -420				; size = 80
 _newReligion$ = -340					; size = 328
 __$EHRec$ = -12						; size = 12
 _ePlayer$ = 8						; size = 4
@@ -40324,12 +40404,12 @@ _eBelief$ = 12						; size = 4
 ; 796  : 	{
 ; 797  : 		CvLuaArgsHandle args;
 
-	lea	ecx, DWORD PTR _args$224908[esp+660]
+	lea	ecx, DWORD PTR _args$224950[esp+660]
 	call	??0CvLuaArgsHandle@@QAE@XZ		; CvLuaArgsHandle::CvLuaArgsHandle
 
 ; 798  : 		args->Push(ePlayer);
 
-	mov	ecx, DWORD PTR _args$224908[esp+660]
+	mov	ecx, DWORD PTR _args$224950[esp+660]
 	mov	eax, DWORD PTR [ecx]
 	mov	edx, DWORD PTR [eax+8]
 	push	ebx
@@ -40342,7 +40422,7 @@ _eBelief$ = 12						; size = 4
 ; 802  : 		args->Push(GET_PLAYER(ePlayer).getCapitalCity()->GetID());
 
 	mov	eax, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
-	mov	ebx, DWORD PTR _args$224908[esp+660]
+	mov	ebx, DWORD PTR _args$224950[esp+660]
 	add	esi, eax
 	mov	ecx, esi
 	call	?getCapitalCity@CvPlayer@@QAEPAVCvCity@@XZ ; CvPlayer::getCapitalCity
@@ -40356,7 +40436,7 @@ _eBelief$ = 12						; size = 4
 ; 803  : #endif
 ; 804  : 		args->Push(RELIGION_PANTHEON);
 
-	mov	ecx, DWORD PTR _args$224908[esp+660]
+	mov	ecx, DWORD PTR _args$224950[esp+660]
 	mov	edx, DWORD PTR [ecx]
 	mov	eax, DWORD PTR [edx+8]
 	push	0
@@ -40364,7 +40444,7 @@ _eBelief$ = 12						; size = 4
 
 ; 805  : 		args->Push(eBelief);
 
-	mov	ecx, DWORD PTR _args$224908[esp+660]
+	mov	ecx, DWORD PTR _args$224950[esp+660]
 	mov	edx, DWORD PTR [ecx]
 	mov	eax, DWORD PTR _eBelief$[esp+656]
 	mov	edx, DWORD PTR [edx+8]
@@ -40375,18 +40455,18 @@ _eBelief$ = 12						; size = 4
 ; 807  : 		bool bResult;
 ; 808  : 		LuaSupport::CallHook(pkScriptSystem, "PantheonFounded", args.get(), bResult);
 
-	mov	ecx, DWORD PTR _args$224908[esp+660]
-	lea	eax, DWORD PTR _bResult$224909[esp+660]
+	mov	ecx, DWORD PTR _args$224950[esp+660]
+	lea	eax, DWORD PTR _bResult$224951[esp+660]
 	push	eax
 	push	ecx
-	push	OFFSET $SG224910
+	push	OFFSET $SG224952
 	push	edi
 	call	?CallHook@LuaSupport@@YA_NPAVICvEngineScriptSystem1@@PBDPAVICvEngineScriptSystemArgs1@@AA_N@Z ; LuaSupport::CallHook
 	add	esp, 16					; 00000010H
 
 ; 809  : 	}
 
-	lea	ecx, DWORD PTR _args$224908[esp+660]
+	lea	ecx, DWORD PTR _args$224950[esp+660]
 	mov	BYTE PTR __$EHRec$[esp+668], 1
 	call	??1CvLuaArgsHandle@@QAE@XZ		; CvLuaArgsHandle::~CvLuaArgsHandle
 $LN148@FoundPanth:
@@ -40471,15 +40551,15 @@ $LN12@FoundPanth:
 ; 829  : 		Localization::String strSummary = Localization::Lookup("TXT_KEY_NOTIFICATION_PANTHEON_FOUNDED_S");
 
 	mov	esi, DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
-	lea	ecx, DWORD PTR _strSummary$224919[esp+660]
-	push	OFFSET $SG224921
+	lea	ecx, DWORD PTR _strSummary$224961[esp+660]
+	push	OFFSET $SG224963
 	push	ecx
 	call	esi
 
 ; 830  : 		Localization::String replayText = Localization::Lookup("TXT_KEY_NOTIFICATION_PANTHEON_FOUNDED");
 
-	lea	edx, DWORD PTR _replayText$224922[esp+668]
-	push	OFFSET $SG224924
+	lea	edx, DWORD PTR _replayText$224964[esp+668]
+	push	OFFSET $SG224966
 	push	edx
 	mov	BYTE PTR __$EHRec$[esp+684], 3
 	call	esi
@@ -40494,25 +40574,25 @@ $LN12@FoundPanth:
 	mov	edi, eax
 	call	?getShortDescription@CvBeliefEntry@@QBEPBDXZ ; CvBeliefEntry::getShortDescription
 	mov	ecx, ebp
-	mov	DWORD PTR $T243987[esp+660], eax
+	mov	DWORD PTR $T244067[esp+660], eax
 	call	?getCivilizationShortDescriptionKey@CvPlayer@@QBEPBDXZ ; CvPlayer::getCivilizationShortDescriptionKey
 	mov	esi, DWORD PTR __imp_?PushArgument@String@Localization@@QAE_NPBD@Z
 	push	eax
-	lea	ecx, DWORD PTR _replayText$224922[esp+664]
+	lea	ecx, DWORD PTR _replayText$224964[esp+664]
 	call	esi
-	mov	eax, DWORD PTR $T243987[esp+660]
+	mov	eax, DWORD PTR $T244067[esp+660]
 	push	eax
-	lea	ecx, DWORD PTR _replayText$224922[esp+664]
+	lea	ecx, DWORD PTR _replayText$224964[esp+664]
 	call	esi
 	push	edi
-	lea	ecx, DWORD PTR _replayText$224922[esp+664]
+	lea	ecx, DWORD PTR _replayText$224964[esp+664]
 	call	esi
 
 ; 832  : 
 ; 833  : 		kGame.addReplayMessage(REPLAY_MESSAGE_PANTHEON_FOUNDED, newReligion.m_eFounder, replayText.toUTF8());
 
 	mov	edi, DWORD PTR __imp_?toUTF8@String@Localization@@QAEPBDXZ
-	lea	ecx, DWORD PTR _replayText$224922[esp+660]
+	lea	ecx, DWORD PTR _replayText$224964[esp+660]
 	call	edi
 	xor	ebp, ebp
 	cmp	eax, ebp
@@ -40520,26 +40600,26 @@ $LN12@FoundPanth:
 	mov	eax, OFFSET ??_C@_00CNPNBAHC@?$AA@
 $LN86@FoundPanth:
 	push	eax
-	lea	ecx, DWORD PTR $T243989[esp+664]
+	lea	ecx, DWORD PTR $T244069[esp+664]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	mov	edx, DWORD PTR _newReligion$[esp+664]
 	push	-1
 	push	-1
-	lea	ecx, DWORD PTR $T243989[esp+668]
+	lea	ecx, DWORD PTR $T244069[esp+668]
 	push	ecx
 	mov	ecx, DWORD PTR _kGame$[esp+672]
 	push	edx
 	push	6
 	mov	BYTE PTR __$EHRec$[esp+688], 5
 	call	?addReplayMessage@CvGame@@QAEXW4ReplayMessageTypes@@W4PlayerTypes@@ABVCvString@@HH@Z ; CvGame::addReplayMessage
-	lea	ecx, DWORD PTR $T243989[esp+660]
+	lea	ecx, DWORD PTR $T244069[esp+660]
 	mov	BYTE PTR __$EHRec$[esp+668], 4
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
 ; 834  : 
 ; 835  : 		for(int iNotifyLoop = 0; iNotifyLoop < MAX_MAJOR_CIVS; ++iNotifyLoop){
 
-	mov	DWORD PTR _iNotifyLoop$224934[esp+660], ebp
+	mov	DWORD PTR _iNotifyLoop$224976[esp+660], ebp
 	mov	DWORD PTR tv817[esp+660], ebp
 $LL147@FoundPanth:
 
@@ -40549,7 +40629,7 @@ $LL147@FoundPanth:
 	mov	eax, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	mov	ecx, DWORD PTR tv817[esp+660]
 	add	ecx, eax
-	mov	DWORD PTR _kCurNotifyPlayer$224940[esp+660], ecx
+	mov	DWORD PTR _kCurNotifyPlayer$224982[esp+660], ecx
 
 ; 838  : 			CvNotifications* pNotifications = kCurNotifyPlayer.GetNotifications();
 
@@ -40564,15 +40644,15 @@ $LL147@FoundPanth:
 ; 840  : 				// Message slightly different for founder player
 ; 841  : 				if(newReligion.m_eFounder == eNotifyPlayer)
 
-	mov	edx, DWORD PTR _iNotifyLoop$224934[esp+660]
+	mov	edx, DWORD PTR _iNotifyLoop$224976[esp+660]
 	cmp	DWORD PTR _newReligion$[esp+664], edx
 	jne	$LN6@FoundPanth
 
 ; 842  : 				{
 ; 843  : 					Localization::String localizedText = GetLocalizedText("TXT_KEY_NOTIFICATION_PANTHEON_FOUNDED_ACTIVE_PLAYER");
 
-	lea	eax, DWORD PTR $T243990[esp+660]
-	push	OFFSET $SG224946
+	lea	eax, DWORD PTR $T244070[esp+660]
+	push	OFFSET $SG224988
 	push	eax
 	call	?GetLocalizedText@@YA?AVCvString@@PBD@Z	; GetLocalizedText
 	add	esp, 8
@@ -40580,9 +40660,9 @@ $LL147@FoundPanth:
 	mov	BYTE PTR __$EHRec$[esp+668], 6
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
-	lea	ecx, DWORD PTR _localizedText$224944[esp+664]
+	lea	ecx, DWORD PTR _localizedText$224986[esp+664]
 	call	DWORD PTR __imp_??0String@Localization@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T243990[esp+660]
+	lea	ecx, DWORD PTR $T244070[esp+660]
 	mov	BYTE PTR __$EHRec$[esp+668], 8
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -40594,10 +40674,10 @@ $LL147@FoundPanth:
 	mov	ebx, eax
 	call	?getShortDescription@CvBeliefEntry@@QBEPBDXZ ; CvBeliefEntry::getShortDescription
 	push	eax
-	lea	ecx, DWORD PTR _localizedText$224944[esp+664]
+	lea	ecx, DWORD PTR _localizedText$224986[esp+664]
 	call	esi
 	push	ebx
-	lea	ecx, DWORD PTR _localizedText$224944[esp+664]
+	lea	ecx, DWORD PTR _localizedText$224986[esp+664]
 	call	esi
 
 ; 845  : 
@@ -40607,10 +40687,10 @@ $LL147@FoundPanth:
 	push	-1
 	push	-1
 	push	-1
-	lea	ecx, DWORD PTR _strSummary$224919[esp+676]
+	lea	ecx, DWORD PTR _strSummary$224961[esp+676]
 	call	edi
 	push	eax
-	lea	ecx, DWORD PTR _localizedText$224944[esp+680]
+	lea	ecx, DWORD PTR _localizedText$224986[esp+680]
 	call	edi
 	push	eax
 	push	-381621422				; e940eb52H
@@ -40619,7 +40699,7 @@ $LL147@FoundPanth:
 
 ; 847  : 				}
 
-	lea	ecx, DWORD PTR _localizedText$224944[esp+660]
+	lea	ecx, DWORD PTR _localizedText$224986[esp+660]
 	mov	BYTE PTR __$EHRec$[esp+668], 4
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 
@@ -40633,7 +40713,7 @@ $LN6@FoundPanth:
 ; 850  : 					//If the notify player has not met this civ yet, display a more ambiguous notification.
 ; 851  : 					CvTeam& kTeam = GET_TEAM(kCurNotifyPlayer.getTeam());
 
-	mov	ecx, DWORD PTR _kCurNotifyPlayer$224940[esp+660]
+	mov	ecx, DWORD PTR _kCurNotifyPlayer$224982[esp+660]
 	mov	eax, DWORD PTR [ecx+44]
 	cmp	eax, 63					; 0000003fH
 	ja	SHORT $LN108@FoundPanth
@@ -40648,11 +40728,11 @@ $LN109@FoundPanth:
 ; 852  : 					if(kTeam.isHasMet(kPlayer.getTeam()))
 
 	mov	ecx, DWORD PTR _kPlayer$[esp+660]
-	imul	eax, 2980				; 00000ba4H
+	imul	eax, 2984				; 00000ba8H
 	add	eax, DWORD PTR ?m_aTeams@CvTeam@@1PAV1@A ; CvTeam::m_aTeams
-	mov	DWORD PTR _kTeam$224950[esp+660], eax
+	mov	DWORD PTR _kTeam$224992[esp+660], eax
 	call	?getTeam@CvPlayer@@QBE?AW4TeamTypes@@XZ	; CvPlayer::getTeam
-	mov	ecx, DWORD PTR _kTeam$224950[esp+660]
+	mov	ecx, DWORD PTR _kTeam$224992[esp+660]
 	push	eax
 	call	?isHasMet@CvTeam@@QBE_NW4TeamTypes@@@Z	; CvTeam::isHasMet
 	test	al, al
@@ -40665,10 +40745,10 @@ $LN109@FoundPanth:
 	push	-1
 	push	-1
 	push	-1
-	lea	ecx, DWORD PTR _strSummary$224919[esp+676]
+	lea	ecx, DWORD PTR _strSummary$224961[esp+676]
 	call	edi
 	push	eax
-	lea	ecx, DWORD PTR _replayText$224922[esp+680]
+	lea	ecx, DWORD PTR _replayText$224964[esp+680]
 	call	edi
 	push	eax
 	push	1028207137				; 3d493221H
@@ -40684,8 +40764,8 @@ $LN4@FoundPanth:
 ; 857  : 					{
 ; 858  : 						Localization::String unknownFoundedText = Localization::Lookup("TXT_KEY_NOTIFICATION_PANTHEON_FOUNDED_UNKNOWN");
 
-	lea	edx, DWORD PTR _unknownFoundedText$224953[esp+660]
-	push	OFFSET $SG224955
+	lea	edx, DWORD PTR _unknownFoundedText$224995[esp+660]
+	push	OFFSET $SG224997
 	push	edx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
@@ -40696,14 +40776,14 @@ $LN4@FoundPanth:
 	mov	BYTE PTR __$EHRec$[esp+668], 9
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	mov	ecx, ebx
-	mov	DWORD PTR $T243993[esp+660], eax
+	mov	DWORD PTR $T244073[esp+660], eax
 	call	?getShortDescription@CvBeliefEntry@@QBEPBDXZ ; CvBeliefEntry::getShortDescription
 	push	eax
-	lea	ecx, DWORD PTR _unknownFoundedText$224953[esp+664]
+	lea	ecx, DWORD PTR _unknownFoundedText$224995[esp+664]
 	call	esi
-	mov	eax, DWORD PTR $T243993[esp+660]
+	mov	eax, DWORD PTR $T244073[esp+660]
 	push	eax
-	lea	ecx, DWORD PTR _unknownFoundedText$224953[esp+664]
+	lea	ecx, DWORD PTR _unknownFoundedText$224995[esp+664]
 	call	esi
 
 ; 860  : 
@@ -40713,10 +40793,10 @@ $LN4@FoundPanth:
 	push	-1
 	push	-1
 	push	-1
-	lea	ecx, DWORD PTR _strSummary$224919[esp+676]
+	lea	ecx, DWORD PTR _strSummary$224961[esp+676]
 	call	edi
 	push	eax
-	lea	ecx, DWORD PTR _unknownFoundedText$224953[esp+680]
+	lea	ecx, DWORD PTR _unknownFoundedText$224995[esp+680]
 	call	edi
 	push	eax
 	push	1028207137				; 3d493221H
@@ -40725,12 +40805,12 @@ $LN4@FoundPanth:
 
 ; 862  : 					}
 
-	lea	ecx, DWORD PTR _unknownFoundedText$224953[esp+660]
+	lea	ecx, DWORD PTR _unknownFoundedText$224995[esp+660]
 	mov	BYTE PTR __$EHRec$[esp+668], 4
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 $LN9@FoundPanth:
 	mov	eax, DWORD PTR tv817[esp+660]
-	inc	DWORD PTR _iNotifyLoop$224934[esp+660]
+	inc	DWORD PTR _iNotifyLoop$224976[esp+660]
 	add	eax, 63236				; 0000f704H
 	cmp	eax, 1391192				; 00153a58H
 	mov	DWORD PTR tv817[esp+660], eax
@@ -40751,7 +40831,7 @@ $LN9@FoundPanth:
 ; 869  : 		{
 ; 870  : 			CvString strLogMsg;
 
-	lea	ecx, DWORD PTR _strLogMsg$224959[esp+660]
+	lea	ecx, DWORD PTR _strLogMsg$225001[esp+660]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
 ; 871  : 			strLogMsg = kPlayer.getCivilizationShortDescription();
@@ -40759,7 +40839,7 @@ $LN9@FoundPanth:
 	mov	ecx, DWORD PTR _kPlayer$[esp+660]
 	mov	BYTE PTR __$EHRec$[esp+668], 10		; 0000000aH
 	call	?getCivilizationShortDescription@CvPlayer@@QBEPBDXZ ; CvPlayer::getCivilizationShortDescription
-	lea	ecx, DWORD PTR _strLogMsg$224959[esp+660]
+	lea	ecx, DWORD PTR _strLogMsg$225001[esp+660]
 	test	eax, eax
 	je	SHORT $LN125@FoundPanth
 	push	eax
@@ -40771,8 +40851,8 @@ $LN124@FoundPanth:
 
 ; 872  : 			strLogMsg += ", PANTHEON FOUNDED, ";
 
-	push	OFFSET $SG224960
-	lea	ecx, DWORD PTR _strLogMsg$224959[esp+664]
+	push	OFFSET $SG225002
+	lea	ecx, DWORD PTR _strLogMsg$225001[esp+664]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
 ; 873  : 			strLogMsg += pEntry->GetDescription();
@@ -40781,19 +40861,19 @@ $LN124@FoundPanth:
 	add	ecx, 36					; 00000024H
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
-	lea	ecx, DWORD PTR _strLogMsg$224959[esp+664]
+	lea	ecx, DWORD PTR _strLogMsg$225001[esp+664]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
 ; 874  : 			LogReligionMessage(strLogMsg);
 
-	lea	ecx, DWORD PTR _strLogMsg$224959[esp+660]
+	lea	ecx, DWORD PTR _strLogMsg$225001[esp+660]
 	push	ecx
 	mov	ecx, DWORD PTR _this$[esp+664]
 	call	?LogReligionMessage@CvGameReligions@@QAEXAAVCvString@@@Z ; CvGameReligions::LogReligionMessage
 
 ; 875  : 		}
 
-	lea	ecx, DWORD PTR _strLogMsg$224959[esp+660]
+	lea	ecx, DWORD PTR _strLogMsg$225001[esp+660]
 	mov	BYTE PTR __$EHRec$[esp+668], 4
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 $LN2@FoundPanth:
@@ -40821,10 +40901,10 @@ $LN1@FoundPanth:
 ; 882  : 	}
 
 	mov	esi, DWORD PTR __imp_??1String@Localization@@UAE@XZ
-	lea	ecx, DWORD PTR _replayText$224922[esp+660]
+	lea	ecx, DWORD PTR _replayText$224964[esp+660]
 	mov	BYTE PTR __$EHRec$[esp+668], 3
 	call	esi
-	lea	ecx, DWORD PTR _strSummary$224919[esp+660]
+	lea	ecx, DWORD PTR _strSummary$224961[esp+660]
 	mov	BYTE PTR __$EHRec$[esp+668], 1
 	call	esi
 $LN146@FoundPanth:
@@ -40862,28 +40942,28 @@ __unwindfunclet$?FoundPantheon@CvGameReligions@@QAEXW4PlayerTypes@@W4BeliefTypes
 	lea	ecx, DWORD PTR _newReligion$[ebp]
 	jmp	??1CvReligion@@QAE@XZ
 __unwindfunclet$?FoundPantheon@CvGameReligions@@QAEXW4PlayerTypes@@W4BeliefTypes@@@Z$1:
-	lea	ecx, DWORD PTR _args$224908[ebp]
+	lea	ecx, DWORD PTR _args$224950[ebp]
 	jmp	??1CvLuaArgsHandle@@QAE@XZ		; CvLuaArgsHandle::~CvLuaArgsHandle
 __unwindfunclet$?FoundPantheon@CvGameReligions@@QAEXW4PlayerTypes@@W4BeliefTypes@@@Z$2:
-	lea	ecx, DWORD PTR _strSummary$224919[ebp]
+	lea	ecx, DWORD PTR _strSummary$224961[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?FoundPantheon@CvGameReligions@@QAEXW4PlayerTypes@@W4BeliefTypes@@@Z$3:
-	lea	ecx, DWORD PTR _replayText$224922[ebp]
+	lea	ecx, DWORD PTR _replayText$224964[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?FoundPantheon@CvGameReligions@@QAEXW4PlayerTypes@@W4BeliefTypes@@@Z$4:
-	lea	ecx, DWORD PTR $T243989[ebp]
+	lea	ecx, DWORD PTR $T244069[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?FoundPantheon@CvGameReligions@@QAEXW4PlayerTypes@@W4BeliefTypes@@@Z$5:
-	lea	ecx, DWORD PTR $T243990[ebp]
+	lea	ecx, DWORD PTR $T244070[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?FoundPantheon@CvGameReligions@@QAEXW4PlayerTypes@@W4BeliefTypes@@@Z$6:
-	lea	ecx, DWORD PTR _localizedText$224944[ebp]
+	lea	ecx, DWORD PTR _localizedText$224986[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?FoundPantheon@CvGameReligions@@QAEXW4PlayerTypes@@W4BeliefTypes@@@Z$7:
-	lea	ecx, DWORD PTR _unknownFoundedText$224953[ebp]
+	lea	ecx, DWORD PTR _unknownFoundedText$224995[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?FoundPantheon@CvGameReligions@@QAEXW4PlayerTypes@@W4BeliefTypes@@@Z$8:
-	lea	ecx, DWORD PTR _strLogMsg$224959[ebp]
+	lea	ecx, DWORD PTR _strLogMsg$225001[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?FoundPantheon@CvGameReligions@@QAEXW4PlayerTypes@@W4BeliefTypes@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?FoundPantheon@CvGameReligions@@QAEXW4PlayerTypes@@W4BeliefTypes@@@Z
@@ -40927,25 +41007,25 @@ __unwindtable$?FoundReligion@CvGameReligions@@QAEXW4PlayerTypes@@W4ReligionTypes
 xdata$x	ENDS
 ;	COMDAT ?FoundReligion@CvGameReligions@@QAEXW4PlayerTypes@@W4ReligionTypes@@PBDW4BeliefTypes@@333PAVCvCity@@@Z
 _TEXT	SEGMENT
-_iNotifyLoop$225011 = -696				; size = 4
-_args$224995 = -696					; size = 4
+_iNotifyLoop$225053 = -696				; size = 4
+_args$225037 = -696					; size = 4
 tv865 = -692						; size = 4
 _eBelief$ = -692					; size = 4
-_bResult$224996 = -685					; size = 1
-_kNotifyTeam$225026 = -684				; size = 4
-_kNotifyPlayer$225017 = -684				; size = 4
+_bResult$225038 = -685					; size = 1
+_kNotifyTeam$225068 = -684				; size = 4
+_kNotifyPlayer$225059 = -684				; size = 4
 _this$ = -680						; size = 4
 _pEntry$ = -676						; size = 4
 _kPlayer$ = -672					; size = 4
 _iLoopUnit$ = -668					; size = 4
-_strLogMsg$225033 = -664				; size = 28
-$T244235 = -664						; size = 28
-_szReligionName$225000 = -636				; size = 28
-_unknownCivText$225029 = -608				; size = 80
-_localizedText$225021 = -608				; size = 80
-_replayText$225005 = -528				; size = 80
-$T244237 = -448						; size = 28
-_strSummary$225002 = -420				; size = 80
+_strLogMsg$225075 = -664				; size = 28
+$T244315 = -664						; size = 28
+_szReligionName$225042 = -636				; size = 28
+_unknownCivText$225071 = -608				; size = 80
+_localizedText$225063 = -608				; size = 80
+_replayText$225047 = -528				; size = 80
+$T244317 = -448						; size = 28
+_strSummary$225044 = -420				; size = 80
 _kReligion$ = -340					; size = 328
 __$EHRec$ = -12						; size = 12
 _ePlayer$ = 8						; size = 4
@@ -41221,12 +41301,12 @@ $LN14@FoundRelig:
 ; 949  : 	{
 ; 950  : 		CvLuaArgsHandle args;
 
-	lea	ecx, DWORD PTR _args$224995[esp+712]
+	lea	ecx, DWORD PTR _args$225037[esp+712]
 	call	??0CvLuaArgsHandle@@QAE@XZ		; CvLuaArgsHandle::CvLuaArgsHandle
 
 ; 951  : 		args->Push(ePlayer);
 
-	mov	ecx, DWORD PTR _args$224995[esp+712]
+	mov	ecx, DWORD PTR _args$225037[esp+712]
 	mov	edx, DWORD PTR [ecx]
 	push	DWORD PTR _ePlayer$[esp+708]
 	mov	eax, DWORD PTR [edx+8]
@@ -41236,7 +41316,7 @@ $LN14@FoundRelig:
 ; 952  : 		args->Push(pkHolyCity->GetID());
 
 	mov	eax, DWORD PTR [ebp+120]
-	mov	ecx, DWORD PTR _args$224995[esp+712]
+	mov	ecx, DWORD PTR _args$225037[esp+712]
 	mov	edx, DWORD PTR [ecx]
 	push	eax
 	mov	eax, DWORD PTR [edx+8]
@@ -41244,7 +41324,7 @@ $LN14@FoundRelig:
 
 ; 953  : 		args->Push(eReligion);
 
-	mov	ecx, DWORD PTR _args$224995[esp+712]
+	mov	ecx, DWORD PTR _args$225037[esp+712]
 	mov	edx, DWORD PTR [ecx]
 	mov	eax, DWORD PTR [edx+8]
 	push	edi
@@ -41252,7 +41332,7 @@ $LN14@FoundRelig:
 
 ; 954  : 		args->Push(eBelief);
 
-	mov	ecx, DWORD PTR _args$224995[esp+712]
+	mov	ecx, DWORD PTR _args$225037[esp+712]
 	mov	edx, DWORD PTR [ecx]
 	mov	eax, DWORD PTR _eBelief$[esp+712]
 	mov	edx, DWORD PTR [edx+8]
@@ -41261,7 +41341,7 @@ $LN14@FoundRelig:
 
 ; 955  : 		args->Push(eBelief1);
 
-	mov	ecx, DWORD PTR _args$224995[esp+712]
+	mov	ecx, DWORD PTR _args$225037[esp+712]
 	mov	eax, DWORD PTR [ecx]
 	mov	edx, DWORD PTR _eBelief1$[esp+708]
 	mov	eax, DWORD PTR [eax+8]
@@ -41270,7 +41350,7 @@ $LN14@FoundRelig:
 
 ; 956  : 		args->Push(eBelief2);
 
-	mov	ecx, DWORD PTR _args$224995[esp+712]
+	mov	ecx, DWORD PTR _args$225037[esp+712]
 	mov	edx, DWORD PTR [ecx]
 	mov	eax, DWORD PTR _eBelief2$[esp+708]
 	mov	edx, DWORD PTR [edx+8]
@@ -41279,7 +41359,7 @@ $LN14@FoundRelig:
 
 ; 957  : 		args->Push(eBelief3);
 
-	mov	ecx, DWORD PTR _args$224995[esp+712]
+	mov	ecx, DWORD PTR _args$225037[esp+712]
 	mov	eax, DWORD PTR [ecx]
 	mov	edx, DWORD PTR _eBelief3$[esp+708]
 	mov	eax, DWORD PTR [eax+8]
@@ -41288,7 +41368,7 @@ $LN14@FoundRelig:
 
 ; 958  : 		args->Push(eBelief4);
 
-	mov	ecx, DWORD PTR _args$224995[esp+712]
+	mov	ecx, DWORD PTR _args$225037[esp+712]
 	mov	edx, DWORD PTR [ecx]
 	mov	eax, DWORD PTR _eBelief4$[esp+708]
 	mov	edx, DWORD PTR [edx+8]
@@ -41299,18 +41379,18 @@ $LN14@FoundRelig:
 ; 960  : 		bool bResult;
 ; 961  : 		LuaSupport::CallHook(pkScriptSystem, "ReligionFounded", args.get(), bResult);
 
-	mov	ecx, DWORD PTR _args$224995[esp+712]
-	lea	eax, DWORD PTR _bResult$224996[esp+712]
+	mov	ecx, DWORD PTR _args$225037[esp+712]
+	lea	eax, DWORD PTR _bResult$225038[esp+712]
 	push	eax
 	push	ecx
-	push	OFFSET $SG224997
+	push	OFFSET $SG225039
 	push	esi
 	call	?CallHook@LuaSupport@@YA_NPAVICvEngineScriptSystem1@@PBDPAVICvEngineScriptSystemArgs1@@AA_N@Z ; LuaSupport::CallHook
 	add	esp, 16					; 00000010H
 
 ; 962  : 	}
 
-	lea	ecx, DWORD PTR _args$224995[esp+712]
+	lea	ecx, DWORD PTR _args$225037[esp+712]
 	mov	BYTE PTR __$EHRec$[esp+720], 0
 	call	??1CvLuaArgsHandle@@QAE@XZ		; CvLuaArgsHandle::~CvLuaArgsHandle
 $LN12@FoundRelig:
@@ -41334,7 +41414,7 @@ $LN12@FoundRelig:
 ; 968  : 		//Add replay message
 ; 969  : 		CvString szReligionName = kReligion.GetName();
 
-	lea	eax, DWORD PTR _szReligionName$225000[esp+712]
+	lea	eax, DWORD PTR _szReligionName$225042[esp+712]
 	push	eax
 	lea	ecx, DWORD PTR _kReligion$[esp+716]
 	call	?GetName@CvReligion@@QBE?AVCvString@@XZ	; CvReligion::GetName
@@ -41342,16 +41422,16 @@ $LN12@FoundRelig:
 ; 970  : 		Localization::String strSummary = Localization::Lookup("TXT_KEY_NOTIFICATION_RELIGION_FOUNDED_S");
 
 	mov	esi, DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
-	lea	ecx, DWORD PTR _strSummary$225002[esp+712]
-	push	OFFSET $SG225004
+	lea	ecx, DWORD PTR _strSummary$225044[esp+712]
+	push	OFFSET $SG225046
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+728], 2
 	call	esi
 
 ; 971  : 		Localization::String replayText = Localization::Lookup("TXT_KEY_NOTIFICATION_RELIGION_FOUNDED");
 
-	lea	edx, DWORD PTR _replayText$225005[esp+720]
-	push	OFFSET $SG225007
+	lea	edx, DWORD PTR _replayText$225047[esp+720]
+	push	OFFSET $SG225049
 	push	edx
 	mov	BYTE PTR __$EHRec$[esp+736], 3
 	call	esi
@@ -41367,22 +41447,22 @@ $LN12@FoundRelig:
 	call	?getCivilizationShortDescriptionKey@CvPlayer@@QBEPBDXZ ; CvPlayer::getCivilizationShortDescriptionKey
 	mov	edi, DWORD PTR __imp_?PushArgument@String@Localization@@QAE_NPBD@Z
 	push	eax
-	lea	ecx, DWORD PTR _replayText$225005[esp+716]
+	lea	ecx, DWORD PTR _replayText$225047[esp+716]
 	call	edi
-	lea	ecx, DWORD PTR _szReligionName$225000[esp+712]
+	lea	ecx, DWORD PTR _szReligionName$225042[esp+712]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
-	lea	ecx, DWORD PTR _replayText$225005[esp+716]
+	lea	ecx, DWORD PTR _replayText$225047[esp+716]
 	call	edi
 	push	esi
-	lea	ecx, DWORD PTR _replayText$225005[esp+716]
+	lea	ecx, DWORD PTR _replayText$225047[esp+716]
 	call	edi
 
 ; 973  : 
 ; 974  : 		GC.getGame().addReplayMessage(REPLAY_MESSAGE_RELIGION_FOUNDED, kReligion.m_eFounder, replayText.toUTF8(), kReligion.m_iHolyCityX, kReligion.m_iHolyCityY);
 
 	mov	esi, DWORD PTR __imp_?toUTF8@String@Localization@@QAEPBDXZ
-	lea	ecx, DWORD PTR _replayText$225005[esp+712]
+	lea	ecx, DWORD PTR _replayText$225047[esp+712]
 	call	esi
 	xor	ebp, ebp
 	cmp	eax, ebp
@@ -41390,7 +41470,7 @@ $LN12@FoundRelig:
 	mov	eax, OFFSET ??_C@_00CNPNBAHC@?$AA@
 $LN92@FoundRelig:
 	push	eax
-	lea	ecx, DWORD PTR $T244235[esp+716]
+	lea	ecx, DWORD PTR $T244315[esp+716]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	mov	eax, DWORD PTR _kReligion$[esp+724]
 	mov	ecx, DWORD PTR _kReligion$[esp+720]
@@ -41398,13 +41478,13 @@ $LN92@FoundRelig:
 	mov	eax, DWORD PTR _kReligion$[esp+720]
 	push	ecx
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
-	lea	edx, DWORD PTR $T244235[esp+720]
+	lea	edx, DWORD PTR $T244315[esp+720]
 	push	edx
 	push	eax
 	push	5
 	mov	BYTE PTR __$EHRec$[esp+740], 5
 	call	?addReplayMessage@CvGame@@QAEXW4ReplayMessageTypes@@W4PlayerTypes@@ABVCvString@@HH@Z ; CvGame::addReplayMessage
-	lea	ecx, DWORD PTR $T244235[esp+712]
+	lea	ecx, DWORD PTR $T244315[esp+712]
 	mov	BYTE PTR __$EHRec$[esp+720], 4
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -41412,7 +41492,7 @@ $LN92@FoundRelig:
 ; 976  : 		//Notify the masses
 ; 977  : 		for(int iNotifyLoop = 0; iNotifyLoop < MAX_MAJOR_CIVS; ++iNotifyLoop){
 
-	mov	DWORD PTR _iNotifyLoop$225011[esp+712], ebp
+	mov	DWORD PTR _iNotifyLoop$225053[esp+712], ebp
 	mov	DWORD PTR tv865[esp+712], ebp
 	npad	2
 $LL154@FoundRelig:
@@ -41423,7 +41503,7 @@ $LL154@FoundRelig:
 	mov	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	mov	edx, DWORD PTR tv865[esp+712]
 	add	ecx, edx
-	mov	DWORD PTR _kNotifyPlayer$225017[esp+712], ecx
+	mov	DWORD PTR _kNotifyPlayer$225059[esp+712], ecx
 
 ; 980  : 			CvNotifications* pNotifications = kNotifyPlayer.GetNotifications();
 
@@ -41438,15 +41518,15 @@ $LL154@FoundRelig:
 ; 982  : 				// Message slightly different for founder player
 ; 983  : 				if(kReligion.m_eFounder == eNotifyPlayer)
 
-	mov	eax, DWORD PTR _iNotifyLoop$225011[esp+712]
+	mov	eax, DWORD PTR _iNotifyLoop$225053[esp+712]
 	cmp	DWORD PTR _kReligion$[esp+716], eax
 	jne	$LN6@FoundRelig
 
 ; 984  : 				{
 ; 985  : 					Localization::String localizedText = Localization::Lookup("TXT_KEY_NOTIFICATION_RELIGION_FOUNDED_ACTIVE_PLAYER");
 
-	lea	ecx, DWORD PTR _localizedText$225021[esp+712]
-	push	OFFSET $SG225023
+	lea	ecx, DWORD PTR _localizedText$225063[esp+712]
+	push	OFFSET $SG225065
 	push	ecx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
@@ -41456,14 +41536,14 @@ $LL154@FoundRelig:
 	mov	ecx, DWORD PTR _pkHolyCity$[esp+708]
 	mov	BYTE PTR __$EHRec$[esp+720], 6
 	call	?getNameKey@CvCity@@QBEPBDXZ		; CvCity::getNameKey
-	lea	ecx, DWORD PTR _szReligionName$225000[esp+712]
+	lea	ecx, DWORD PTR _szReligionName$225042[esp+712]
 	mov	ebx, eax
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
-	lea	ecx, DWORD PTR _localizedText$225021[esp+716]
+	lea	ecx, DWORD PTR _localizedText$225063[esp+716]
 	call	edi
 	push	ebx
-	lea	ecx, DWORD PTR _localizedText$225021[esp+716]
+	lea	ecx, DWORD PTR _localizedText$225063[esp+716]
 	call	edi
 
 ; 987  : 
@@ -41473,10 +41553,10 @@ $LL154@FoundRelig:
 	push	-1
 	push	-1
 	push	-1
-	lea	ecx, DWORD PTR _strSummary$225002[esp+728]
+	lea	ecx, DWORD PTR _strSummary$225044[esp+728]
 	call	esi
 	push	eax
-	lea	ecx, DWORD PTR _localizedText$225021[esp+732]
+	lea	ecx, DWORD PTR _localizedText$225063[esp+732]
 	call	esi
 	push	eax
 	push	216217508				; 0ce337a4H
@@ -41485,7 +41565,7 @@ $LL154@FoundRelig:
 
 ; 989  : 				}
 
-	lea	ecx, DWORD PTR _localizedText$225021[esp+712]
+	lea	ecx, DWORD PTR _localizedText$225063[esp+712]
 	mov	BYTE PTR __$EHRec$[esp+720], 4
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 
@@ -41498,7 +41578,7 @@ $LN6@FoundRelig:
 ; 991  : 				{
 ; 992  : 					CvTeam& kNotifyTeam = GET_TEAM(kNotifyPlayer.getTeam());
 
-	mov	edx, DWORD PTR _kNotifyPlayer$225017[esp+712]
+	mov	edx, DWORD PTR _kNotifyPlayer$225059[esp+712]
 	mov	eax, DWORD PTR [edx+44]
 	cmp	eax, 63					; 0000003fH
 	ja	SHORT $LN111@FoundRelig
@@ -41509,16 +41589,16 @@ $LN6@FoundRelig:
 $LN111@FoundRelig:
 	or	eax, -1
 $LN112@FoundRelig:
-	imul	eax, 2980				; 00000ba4H
+	imul	eax, 2984				; 00000ba8H
 	add	eax, DWORD PTR ?m_aTeams@CvTeam@@1PAV1@A ; CvTeam::m_aTeams
 
 ; 993  : 
 ; 994  : 					if(kNotifyTeam.isHasMet(kPlayer.getTeam()))
 
 	mov	ecx, ebx
-	mov	DWORD PTR _kNotifyTeam$225026[esp+712], eax
+	mov	DWORD PTR _kNotifyTeam$225068[esp+712], eax
 	call	?getTeam@CvPlayer@@QBE?AW4TeamTypes@@XZ	; CvPlayer::getTeam
-	mov	ecx, DWORD PTR _kNotifyTeam$225026[esp+712]
+	mov	ecx, DWORD PTR _kNotifyTeam$225068[esp+712]
 	push	eax
 	call	?isHasMet@CvTeam@@QBE_NW4TeamTypes@@@Z	; CvTeam::isHasMet
 	test	al, al
@@ -41531,10 +41611,10 @@ $LN112@FoundRelig:
 	push	-1
 	push	-1
 	push	-1
-	lea	ecx, DWORD PTR _strSummary$225002[esp+728]
+	lea	ecx, DWORD PTR _strSummary$225044[esp+728]
 	call	esi
 	push	eax
-	lea	ecx, DWORD PTR _replayText$225005[esp+732]
+	lea	ecx, DWORD PTR _replayText$225047[esp+732]
 	call	esi
 	push	eax
 	push	1516141982				; 5a5e7d9eH
@@ -41550,19 +41630,19 @@ $LN4@FoundRelig:
 ; 999  : 					{
 ; 1000 : 						Localization::String unknownCivText = Localization::Lookup("TXT_KEY_NOTIFICATION_RELIGION_FOUNDED_UNKNOWN");
 
-	lea	eax, DWORD PTR _unknownCivText$225029[esp+712]
-	push	OFFSET $SG225031
+	lea	eax, DWORD PTR _unknownCivText$225071[esp+712]
+	push	OFFSET $SG225073
 	push	eax
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
 
 ; 1001 : 						unknownCivText << szReligionName;
 
-	lea	ecx, DWORD PTR _szReligionName$225000[esp+712]
+	lea	ecx, DWORD PTR _szReligionName$225042[esp+712]
 	mov	BYTE PTR __$EHRec$[esp+720], 7
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
-	lea	ecx, DWORD PTR _unknownCivText$225029[esp+716]
+	lea	ecx, DWORD PTR _unknownCivText$225071[esp+716]
 	call	edi
 
 ; 1002 : 
@@ -41572,10 +41652,10 @@ $LN4@FoundRelig:
 	push	-1
 	push	-1
 	push	-1
-	lea	ecx, DWORD PTR _strSummary$225002[esp+728]
+	lea	ecx, DWORD PTR _strSummary$225044[esp+728]
 	call	esi
 	push	eax
-	lea	ecx, DWORD PTR _unknownCivText$225029[esp+732]
+	lea	ecx, DWORD PTR _unknownCivText$225071[esp+732]
 	call	esi
 	push	eax
 	push	1516141982				; 5a5e7d9eH
@@ -41584,12 +41664,12 @@ $LN4@FoundRelig:
 
 ; 1004 : 					}
 
-	lea	ecx, DWORD PTR _unknownCivText$225029[esp+712]
+	lea	ecx, DWORD PTR _unknownCivText$225071[esp+712]
 	mov	BYTE PTR __$EHRec$[esp+720], 4
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 $LN9@FoundRelig:
 	mov	eax, DWORD PTR tv865[esp+712]
-	inc	DWORD PTR _iNotifyLoop$225011[esp+712]
+	inc	DWORD PTR _iNotifyLoop$225053[esp+712]
 	add	eax, 63236				; 0000f704H
 	cmp	eax, 1391192				; 00153a58H
 	mov	DWORD PTR tv865[esp+712], eax
@@ -41610,7 +41690,7 @@ $LN9@FoundRelig:
 ; 1011 : 		{
 ; 1012 : 			CvString strLogMsg;
 
-	lea	ecx, DWORD PTR _strLogMsg$225033[esp+712]
+	lea	ecx, DWORD PTR _strLogMsg$225075[esp+712]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
 ; 1013 : 			strLogMsg = kPlayer.getCivilizationShortDescription();
@@ -41618,7 +41698,7 @@ $LN9@FoundRelig:
 	mov	ecx, ebx
 	mov	BYTE PTR __$EHRec$[esp+720], 8
 	call	?getCivilizationShortDescription@CvPlayer@@QBEPBDXZ ; CvPlayer::getCivilizationShortDescription
-	lea	ecx, DWORD PTR _strLogMsg$225033[esp+712]
+	lea	ecx, DWORD PTR _strLogMsg$225075[esp+712]
 	test	eax, eax
 	je	SHORT $LN126@FoundRelig
 	push	eax
@@ -41630,28 +41710,28 @@ $LN125@FoundRelig:
 
 ; 1014 : 			strLogMsg += ", RELIGION FOUNDED, ";
 
-	push	OFFSET $SG225034
-	lea	ecx, DWORD PTR _strLogMsg$225033[esp+716]
+	push	OFFSET $SG225076
+	lea	ecx, DWORD PTR _strLogMsg$225075[esp+716]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
 ; 1015 : 			strLogMsg += pkHolyCity->getName();
 
-	lea	ecx, DWORD PTR $T244237[esp+712]
+	lea	ecx, DWORD PTR $T244317[esp+712]
 	push	ecx
 	mov	ecx, DWORD PTR _pkHolyCity$[esp+712]
 	call	?getName@CvCity@@QBE?BVCvString@@XZ	; CvCity::getName
 	push	eax
-	lea	ecx, DWORD PTR _strLogMsg$225033[esp+716]
+	lea	ecx, DWORD PTR _strLogMsg$225075[esp+716]
 	mov	BYTE PTR __$EHRec$[esp+724], 9
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T244237[esp+712]
+	lea	ecx, DWORD PTR $T244317[esp+712]
 	mov	BYTE PTR __$EHRec$[esp+720], 8
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
 ; 1016 : 			strLogMsg += ", ";
 
-	push	OFFSET $SG225036
-	lea	ecx, DWORD PTR _strLogMsg$225033[esp+716]
+	push	OFFSET $SG225078
+	lea	ecx, DWORD PTR _strLogMsg$225075[esp+716]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
 ; 1017 : 			strLogMsg += pEntry->GetDescription();
@@ -41660,19 +41740,19 @@ $LN125@FoundRelig:
 	add	ecx, 36					; 00000024H
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
-	lea	ecx, DWORD PTR _strLogMsg$225033[esp+716]
+	lea	ecx, DWORD PTR _strLogMsg$225075[esp+716]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
 ; 1018 : 			LogReligionMessage(strLogMsg);
 
 	mov	ecx, DWORD PTR _this$[esp+712]
-	lea	edx, DWORD PTR _strLogMsg$225033[esp+712]
+	lea	edx, DWORD PTR _strLogMsg$225075[esp+712]
 	push	edx
 	call	?LogReligionMessage@CvGameReligions@@QAEXAAVCvString@@@Z ; CvGameReligions::LogReligionMessage
 
 ; 1019 : 		}
 
-	lea	ecx, DWORD PTR _strLogMsg$225033[esp+712]
+	lea	ecx, DWORD PTR _strLogMsg$225075[esp+712]
 	mov	BYTE PTR __$EHRec$[esp+720], 4
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 $LN2@FoundRelig:
@@ -41700,13 +41780,13 @@ $LN1@FoundRelig:
 ; 1026 : 	}
 
 	mov	esi, DWORD PTR __imp_??1String@Localization@@UAE@XZ
-	lea	ecx, DWORD PTR _replayText$225005[esp+712]
+	lea	ecx, DWORD PTR _replayText$225047[esp+712]
 	mov	BYTE PTR __$EHRec$[esp+720], 3
 	call	esi
-	lea	ecx, DWORD PTR _strSummary$225002[esp+712]
+	lea	ecx, DWORD PTR _strSummary$225044[esp+712]
 	mov	BYTE PTR __$EHRec$[esp+720], 2
 	call	esi
-	lea	ecx, DWORD PTR _szReligionName$225000[esp+712]
+	lea	ecx, DWORD PTR _szReligionName$225042[esp+712]
 	mov	BYTE PTR __$EHRec$[esp+720], 0
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 $LN11@FoundRelig:
@@ -41740,31 +41820,31 @@ __unwindfunclet$?FoundReligion@CvGameReligions@@QAEXW4PlayerTypes@@W4ReligionTyp
 	lea	ecx, DWORD PTR _kReligion$[ebp]
 	jmp	??1CvReligion@@QAE@XZ
 __unwindfunclet$?FoundReligion@CvGameReligions@@QAEXW4PlayerTypes@@W4ReligionTypes@@PBDW4BeliefTypes@@333PAVCvCity@@@Z$1:
-	lea	ecx, DWORD PTR _args$224995[ebp]
+	lea	ecx, DWORD PTR _args$225037[ebp]
 	jmp	??1CvLuaArgsHandle@@QAE@XZ		; CvLuaArgsHandle::~CvLuaArgsHandle
 __unwindfunclet$?FoundReligion@CvGameReligions@@QAEXW4PlayerTypes@@W4ReligionTypes@@PBDW4BeliefTypes@@333PAVCvCity@@@Z$2:
-	lea	ecx, DWORD PTR _szReligionName$225000[ebp]
+	lea	ecx, DWORD PTR _szReligionName$225042[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?FoundReligion@CvGameReligions@@QAEXW4PlayerTypes@@W4ReligionTypes@@PBDW4BeliefTypes@@333PAVCvCity@@@Z$3:
-	lea	ecx, DWORD PTR _strSummary$225002[ebp]
+	lea	ecx, DWORD PTR _strSummary$225044[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?FoundReligion@CvGameReligions@@QAEXW4PlayerTypes@@W4ReligionTypes@@PBDW4BeliefTypes@@333PAVCvCity@@@Z$4:
-	lea	ecx, DWORD PTR _replayText$225005[ebp]
+	lea	ecx, DWORD PTR _replayText$225047[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?FoundReligion@CvGameReligions@@QAEXW4PlayerTypes@@W4ReligionTypes@@PBDW4BeliefTypes@@333PAVCvCity@@@Z$5:
-	lea	ecx, DWORD PTR $T244235[ebp]
+	lea	ecx, DWORD PTR $T244315[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?FoundReligion@CvGameReligions@@QAEXW4PlayerTypes@@W4ReligionTypes@@PBDW4BeliefTypes@@333PAVCvCity@@@Z$6:
-	lea	ecx, DWORD PTR _localizedText$225021[ebp]
+	lea	ecx, DWORD PTR _localizedText$225063[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?FoundReligion@CvGameReligions@@QAEXW4PlayerTypes@@W4ReligionTypes@@PBDW4BeliefTypes@@333PAVCvCity@@@Z$7:
-	lea	ecx, DWORD PTR _unknownCivText$225029[ebp]
+	lea	ecx, DWORD PTR _unknownCivText$225071[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?FoundReligion@CvGameReligions@@QAEXW4PlayerTypes@@W4ReligionTypes@@PBDW4BeliefTypes@@333PAVCvCity@@@Z$8:
-	lea	ecx, DWORD PTR _strLogMsg$225033[ebp]
+	lea	ecx, DWORD PTR _strLogMsg$225075[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?FoundReligion@CvGameReligions@@QAEXW4PlayerTypes@@W4ReligionTypes@@PBDW4BeliefTypes@@333PAVCvCity@@@Z$9:
-	lea	ecx, DWORD PTR $T244237[ebp]
+	lea	ecx, DWORD PTR $T244317[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?FoundReligion@CvGameReligions@@QAEXW4PlayerTypes@@W4ReligionTypes@@PBDW4BeliefTypes@@333PAVCvCity@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?FoundReligion@CvGameReligions@@QAEXW4PlayerTypes@@W4ReligionTypes@@PBDW4BeliefTypes@@333PAVCvCity@@@Z
@@ -41779,25 +41859,25 @@ _iChange$ = 8						; size = 4
 ?DoPopulationChange@CvCityReligions@@QAEXH@Z PROC	; CvCityReligions::DoPopulationChange, COMDAT
 ; _this$ = ecx
 
-; 3706 : {
+; 3728 : {
 
 	push	esi
 	mov	esi, ecx
 
-; 3707 : 	ReligionTypes eMajorityReligion = GetReligiousMajority();
+; 3729 : 	ReligionTypes eMajorityReligion = GetReligiousMajority();
 
 	call	?GetReligiousMajority@CvCityReligions@@QAE?AW4ReligionTypes@@XZ ; CvCityReligions::GetReligiousMajority
 
-; 3708 : 
-; 3709 : 	// Only add pressure if the population went up; if starving, leave pressure alone (but recompute followers)
-; 3710 : 	if(iChange > 0)
+; 3730 : 
+; 3731 : 	// Only add pressure if the population went up; if starving, leave pressure alone (but recompute followers)
+; 3732 : 	if(iChange > 0)
 
 	mov	ecx, DWORD PTR _iChange$[esp]
 	test	ecx, ecx
 	jle	SHORT $LN8@DoPopulati
 
-; 3711 : 	{
-; 3712 : 		AddReligiousPressure(FOLLOWER_CHANGE_POP_CHANGE, eMajorityReligion, iChange * GC.getRELIGION_ATHEISM_PRESSURE_PER_POP());
+; 3733 : 	{
+; 3734 : 		AddReligiousPressure(FOLLOWER_CHANGE_POP_CHANGE, eMajorityReligion, iChange * GC.getRELIGION_ATHEISM_PRESSURE_PER_POP());
 
 	mov	edx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+7888
 	imul	edx, ecx
@@ -41809,19 +41889,19 @@ _iChange$ = 8						; size = 4
 	call	?AddReligiousPressure@CvCityReligions@@QAEXW4CvReligiousFollowChangeReason@@W4ReligionTypes@@HW4PlayerTypes@@@Z ; CvCityReligions::AddReligiousPressure
 	pop	esi
 
-; 3717 : 	}
-; 3718 : }
+; 3739 : 	}
+; 3740 : }
 
 	ret	4
 $LN8@DoPopulati:
 
-; 3713 : 	}
-; 3714 : 	else if (iChange < 0)
+; 3735 : 	}
+; 3736 : 	else if (iChange < 0)
 
 	jge	SHORT $LN1@DoPopulati
 
-; 3715 : 	{
-; 3716 : 		RecomputeFollowers(FOLLOWER_CHANGE_POP_CHANGE, eMajorityReligion);
+; 3737 : 	{
+; 3738 : 		RecomputeFollowers(FOLLOWER_CHANGE_POP_CHANGE, eMajorityReligion);
 
 	push	-1
 	push	eax
@@ -41831,8 +41911,8 @@ $LN8@DoPopulati:
 $LN1@DoPopulati:
 	pop	esi
 
-; 3717 : 	}
-; 3718 : }
+; 3739 : 	}
+; 3740 : }
 
 	ret	4
 ?DoPopulationChange@CvCityReligions@@QAEXH@Z ENDP	; CvCityReligions::DoPopulationChange
@@ -41867,10 +41947,10 @@ __ehfuncinfo$?reserve@?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@
 xdata$x	ENDS
 ;	COMDAT ?reserve@?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@QAEXI@Z
 _TEXT	SEGMENT
-__Ptr$228757 = -24					; size = 4
-$T244607 = -20						; size = 1
+__Ptr$228814 = -24					; size = 4
+$T244688 = -20						; size = 1
 __$EHRec$ = -16						; size = 16
-__Cat$244611 = 8					; size = 1
+__Cat$244692 = 8					; size = 1
 __Count$ = 8						; size = 4
 ?reserve@?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@QAEXI@Z PROC ; std::vector<enum BeliefTypes,std::allocator<enum BeliefTypes> >::reserve, COMDAT
 ; _this$ = ecx
@@ -41930,10 +42010,10 @@ $LN21@reserve:
 ; 610  : 			_Umove(begin(), end(), _Ptr);
 
 	mov	ecx, DWORD PTR [esi+4]
-	mov	BYTE PTR $T244607[ebp], 0
-	mov	edx, DWORD PTR $T244607[ebp]
+	mov	BYTE PTR $T244688[ebp], 0
+	mov	edx, DWORD PTR $T244688[ebp]
 	push	edx
-	mov	edx, DWORD PTR __Cat$244611[ebp]
+	mov	edx, DWORD PTR __Cat$244692[ebp]
 	push	edx
 	mov	ebx, eax
 	mov	eax, DWORD PTR [esi+8]
@@ -41941,7 +42021,7 @@ $LN21@reserve:
 	push	ebx
 	push	eax
 	push	ecx
-	mov	DWORD PTR __Ptr$228757[ebp], ebx
+	mov	DWORD PTR __Ptr$228814[ebp], ebx
 	mov	DWORD PTR __$EHRec$[ebp+12], 0
 	call	??$_Uninit_copy@V?$_Vector_iterator@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@PAW4BeliefTypes@@V?$allocator@W4BeliefTypes@@@2@@std@@YAPAW4BeliefTypes@@V?$_Vector_iterator@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@0@0PAW41@AAV?$allocator@W4BeliefTypes@@@0@U_Nonscalar_ptr_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z ; std::_Uninit_copy<std::_Vector_iterator<enum BeliefTypes,std::allocator<enum BeliefTypes> >,enum BeliefTypes *,std::allocator<enum BeliefTypes> >
 
@@ -42007,7 +42087,7 @@ __catch$?reserve@?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@
 ; 611  : 			_CATCH_ALL
 ; 612  : 			this->_Alval.deallocate(_Ptr, _Count);
 
-	mov	eax, DWORD PTR __Ptr$228757[ebp]
+	mov	eax, DWORD PTR __Ptr$228814[ebp]
 	push	eax
 	call	??3@YAXPAX@Z				; operator delete
 	add	esp, 4
@@ -42073,16 +42153,16 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 __Capacity$ = -20					; size = 4
 __$EHRec$ = -16						; size = 16
-__Cat$244842 = 8					; size = 1
-__Cat$244757 = 8					; size = 1
+__Cat$244922 = 8					; size = 1
+__Cat$244850 = 8					; size = 1
 __Where$ = 8						; size = 4
-__Tmp$229164 = 12					; size = 4
-__Tmp$229154 = 12					; size = 4
-__Newvec$229139 = 12					; size = 4
+__Tmp$229221 = 12					; size = 4
+__Tmp$229211 = 12					; size = 4
+__Newvec$229196 = 12					; size = 4
 __Count$ = 12						; size = 4
 tv515 = 16						; size = 4
-$T244838 = 16						; size = 1
-$T244770 = 16						; size = 1
+$T244918 = 16						; size = 1
+$T244846 = 16						; size = 1
 __Val$ = 16						; size = 4
 ?_Insert_n@?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@IAEXV?$_Vector_const_iterator@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@2@IABW4BeliefTypes@@@Z PROC ; std::vector<enum BeliefTypes,std::allocator<enum BeliefTypes> >::_Insert_n, COMDAT
 ; _this$ = ecx
@@ -42208,7 +42288,7 @@ $LN9@Insert_n:
 	lea	edx, DWORD PTR [eax+ebx*4]
 	push	edx
 	mov	ecx, esi
-	mov	DWORD PTR __Newvec$229139[ebp], eax
+	mov	DWORD PTR __Newvec$229196[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+12], 0
 	call	?_Ufill@?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@IAEPAW4BeliefTypes@@PAW43@IABW43@@Z ; std::vector<enum BeliefTypes,std::allocator<enum BeliefTypes> >::_Ufill
 
@@ -42216,12 +42296,12 @@ $LN9@Insert_n:
 ; 1180 : 			_Umove(this->_Myfirst, _VEC_ITER_BASE(_Where),
 ; 1181 : 				_Newvec);	// move prefix
 
-	mov	edx, DWORD PTR __Cat$244757[ebp]
+	mov	edx, DWORD PTR __Cat$244850[ebp]
 	mov	eax, DWORD PTR [esi+4]
-	mov	BYTE PTR $T244770[ebp], 0
-	mov	ecx, DWORD PTR $T244770[ebp]
+	mov	BYTE PTR $T244846[ebp], 0
+	mov	ecx, DWORD PTR $T244846[ebp]
 	push	ecx
-	mov	ecx, DWORD PTR __Newvec$229139[ebp]
+	mov	ecx, DWORD PTR __Newvec$229196[ebp]
 	push	edx
 	mov	edx, DWORD PTR __Where$[ebp]
 	push	esi
@@ -42236,13 +42316,13 @@ $LN9@Insert_n:
 
 	mov	eax, DWORD PTR [esi+8]
 	add	esp, 24					; 00000018H
-	mov	BYTE PTR $T244838[ebp], 0
-	mov	edx, DWORD PTR $T244838[ebp]
+	mov	BYTE PTR $T244918[ebp], 0
+	mov	edx, DWORD PTR $T244918[ebp]
 	push	edx
-	mov	edx, DWORD PTR __Cat$244842[ebp]
+	mov	edx, DWORD PTR __Cat$244922[ebp]
 	push	edx
 	lea	ecx, DWORD PTR [ebx+edi]
-	mov	ebx, DWORD PTR __Newvec$229139[ebp]
+	mov	ebx, DWORD PTR __Newvec$229196[ebp]
 	push	esi
 	lea	ecx, DWORD PTR [ebx+ecx*4]
 	push	ecx
@@ -42317,7 +42397,7 @@ __catch$?_Insert_n@?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@st
 ; 1189 : 				_Destroy(_Newvec + _Whereoff, _Newvec + _Whereoff + _Count);
 ; 1190 : 			this->_Alval.deallocate(_Newvec, _Capacity);
 
-	mov	edx, DWORD PTR __Newvec$229139[ebp]
+	mov	edx, DWORD PTR __Newvec$229196[ebp]
 	push	edx
 	call	??3@YAXPAX@Z				; operator delete
 	add	esp, 4
@@ -42346,7 +42426,7 @@ $LN10@Insert_n:
 
 	mov	edx, DWORD PTR __Val$[ebp]
 	mov	ecx, DWORD PTR [edx]
-	mov	DWORD PTR __Tmp$229154[ebp], ecx
+	mov	DWORD PTR __Tmp$229211[ebp], ecx
 
 ; 1212 : 
 ; 1213 : 			_Umove(_VEC_ITER_BASE(_Where), _Mylast,
@@ -42369,7 +42449,7 @@ $LN10@Insert_n:
 	mov	eax, DWORD PTR [esi+8]
 	mov	ecx, eax
 	sub	ecx, DWORD PTR __Where$[ebp]
-	lea	edx, DWORD PTR __Tmp$229154[ebp]
+	lea	edx, DWORD PTR __Tmp$229211[ebp]
 	sar	ecx, 2
 	push	edx
 	sub	edi, ecx
@@ -42398,7 +42478,7 @@ $LN10@Insert_n:
 ; 1230 : 			std::fill(_VEC_ITER_BASE(_Where), _Mylast - _Count,
 ; 1231 : 				_Tmp);	// insert up to old end
 
-	lea	edx, DWORD PTR __Tmp$229154[ebp]
+	lea	edx, DWORD PTR __Tmp$229211[ebp]
 	push	edx
 	sub	esi, eax
 	mov	eax, DWORD PTR __Where$[ebp]
@@ -42440,7 +42520,7 @@ $LN3@Insert_n:
 	push	ebx
 	push	edi
 	mov	ecx, esi
-	mov	DWORD PTR __Tmp$229164[ebp], edx
+	mov	DWORD PTR __Tmp$229221[ebp], edx
 	mov	DWORD PTR tv515[ebp], eax
 	call	??$_Umove@PAW4BeliefTypes@@@?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@IAEPAW4BeliefTypes@@PAW42@00@Z ; std::vector<enum BeliefTypes,std::allocator<enum BeliefTypes> >::_Umove<enum BeliefTypes *>
 
@@ -42464,7 +42544,7 @@ $LN3@Insert_n:
 
 	mov	eax, DWORD PTR __Where$[ebp]
 	mov	edx, DWORD PTR tv515[ebp]
-	lea	ecx, DWORD PTR __Tmp$229164[ebp]
+	lea	ecx, DWORD PTR __Tmp$229221[ebp]
 	push	ecx
 	add	edx, eax
 	push	edx
@@ -42498,7 +42578,7 @@ PUBLIC	??$_Sort@PAUWeightedElement@?$CvWeightedVector@W4BeliefTypes@@$0GE@$00@@H
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\algorithm
 ;	COMDAT ??$_Sort@PAUWeightedElement@?$CvWeightedVector@W4BeliefTypes@@$0GE@$00@@H@std@@YAXPAUWeightedElement@?$CvWeightedVector@W4BeliefTypes@@$0GE@$00@@0H@Z
 _TEXT	SEGMENT
-__Mid$229791 = -8					; size = 8
+__Mid$229848 = -8					; size = 8
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Ideal$ = 16						; size = 4
@@ -42533,7 +42613,7 @@ $LL7@Sort:
 ; 3087 : 			std::_Unguarded_partition(_First, _Last);
 
 	push	edi
-	lea	eax, DWORD PTR __Mid$229791[esp+28]
+	lea	eax, DWORD PTR __Mid$229848[esp+28]
 	push	ebx
 	push	eax
 	call	??$_Unguarded_partition@PAUWeightedElement@?$CvWeightedVector@W4BeliefTypes@@$0GE@$00@@@std@@YA?AU?$pair@PAUWeightedElement@?$CvWeightedVector@W4BeliefTypes@@$0GE@$00@@PAU12@@0@PAUWeightedElement@?$CvWeightedVector@W4BeliefTypes@@$0GE@$00@@0@Z ; std::_Unguarded_partition<CvWeightedVector<enum BeliefTypes,100,1>::WeightedElement *>
@@ -42542,7 +42622,7 @@ $LL7@Sort:
 ; 3089 : 
 ; 3090 : 		if (_Mid.first - _First < _Last - _Mid.second)
 
-	mov	ebp, DWORD PTR __Mid$229791[esp+40]
+	mov	ebp, DWORD PTR __Mid$229848[esp+40]
 	mov	eax, esi
 	cdq
 	sub	eax, edx
@@ -42552,7 +42632,7 @@ $LL7@Sort:
 	sub	eax, edx
 	sar	eax, 1
 	add	esi, eax
-	mov	eax, DWORD PTR __Mid$229791[esp+36]
+	mov	eax, DWORD PTR __Mid$229848[esp+36]
 	mov	ecx, edi
 	mov	edx, eax
 	sub	ecx, ebp
@@ -42590,7 +42670,7 @@ $LN5@Sort:
 
 ; 3098 : 			_Last = _Mid.first;
 
-	mov	edi, DWORD PTR __Mid$229791[esp+36]
+	mov	edi, DWORD PTR __Mid$229848[esp+36]
 $LN26@Sort:
 	mov	eax, edi
 	sub	eax, ebx
@@ -42671,7 +42751,7 @@ PUBLIC	?SpreadReligion@CvGameReligions@@QAEXXZ		; CvGameReligions::SpreadReligio
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredll_expansion2\cvreligionclasses.cpp
 ;	COMDAT ?SpreadReligion@CvGameReligions@@QAEXXZ
 _TEXT	SEGMENT
-_iLoop$224371 = -4					; size = 4
+_iLoop$224413 = -4					; size = 4
 ?SpreadReligion@CvGameReligions@@QAEXXZ PROC		; CvGameReligions::SpreadReligion, COMDAT
 ; _this$ = ecx
 
@@ -42708,7 +42788,7 @@ $LL7@SpreadReli@2:
 ; 323  : 			for(pLoopCity = kPlayer.firstCity(&iLoop); pLoopCity != NULL; pLoopCity = kPlayer.nextCity(&iLoop))
 
 	push	0
-	lea	ecx, DWORD PTR _iLoop$224371[esp+20]
+	lea	ecx, DWORD PTR _iLoop$224413[esp+20]
 	push	ecx
 	mov	ecx, esi
 	call	?firstCity@CvPlayer@@QAEPAVCvCity@@PAH_N@Z ; CvPlayer::firstCity
@@ -42723,7 +42803,7 @@ $LL3@SpreadReli@2:
 	mov	ecx, ebx
 	call	?SpreadReligionToOneCity@CvGameReligions@@QAEXPAVCvCity@@@Z ; CvGameReligions::SpreadReligionToOneCity
 	push	0
-	lea	edx, DWORD PTR _iLoop$224371[esp+20]
+	lea	edx, DWORD PTR _iLoop$224413[esp+20]
 	push	edx
 	mov	ecx, esi
 	call	?nextCity@CvPlayer@@QAEPAVCvCity@@PAH_N@Z ; CvPlayer::nextCity
@@ -42852,8 +42932,8 @@ PUBLIC	?push_back@?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\vector
 ;	COMDAT ?push_back@?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@QAEXABW4BeliefTypes@@@Z
 _TEXT	SEGMENT
-$T245027 = -4						; size = 1
-__Cat$245031 = 8					; size = 1
+$T245107 = -4						; size = 1
+__Cat$245111 = 8					; size = 1
 __Val$ = 8						; size = 4
 ?push_back@?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@QAEXABW4BeliefTypes@@@Z PROC ; std::vector<enum BeliefTypes,std::allocator<enum BeliefTypes> >::push_back, COMDAT
 ; _this$ = ecx
@@ -42894,10 +42974,10 @@ $LN10@push_back@5:
 ; 818  :  #else /* _HAS_ITERATOR_DEBUGGING */
 ; 819  : 			_Mylast = _Ufill(_Mylast, 1, _Val);
 
-	mov	ecx, DWORD PTR __Cat$245031[esp+8]
+	mov	ecx, DWORD PTR __Cat$245111[esp+8]
 	mov	edx, DWORD PTR __Val$[esp+8]
-	mov	BYTE PTR $T245027[esp+12], 0
-	mov	eax, DWORD PTR $T245027[esp+12]
+	mov	BYTE PTR $T245107[esp+12], 0
+	mov	eax, DWORD PTR $T245107[esp+12]
 	push	eax
 	push	ecx
 	push	esi
@@ -42983,9 +43063,9 @@ __ehfuncinfo$?GetAvailablePantheonBeliefs@CvGameReligions@@QAE?AV?$vector@W4Beli
 xdata$x	ENDS
 ;	COMDAT ?GetAvailablePantheonBeliefs@CvGameReligions@@QAE?AV?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@XZ
 _TEXT	SEGMENT
-$T245158 = -24						; size = 4
+$T245238 = -24						; size = 4
 _this$ = -20						; size = 4
-_eBelief$225313 = -16					; size = 4
+_eBelief$225355 = -16					; size = 4
 __$EHRec$ = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
 ?GetAvailablePantheonBeliefs@CvGameReligions@@QAE?AV?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@XZ PROC ; CvGameReligions::GetAvailablePantheonBeliefs, COMDAT
@@ -43003,7 +43083,7 @@ ___$ReturnUdt$ = 8					; size = 4
 	push	ebp
 	push	esi
 	xor	esi, esi
-	mov	DWORD PTR $T245158[esp+36], esi
+	mov	DWORD PTR $T245238[esp+36], esi
 	push	edi
 
 ; 1592 : 	std::vector<BeliefTypes> availableBeliefs;
@@ -43022,7 +43102,7 @@ ___$ReturnUdt$ = 8					; size = 4
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	DWORD PTR __$EHRec$[esp+48], esi
-	mov	DWORD PTR $T245158[esp+40], 1
+	mov	DWORD PTR $T245238[esp+40], 1
 	call	?GetGameBeliefs@CvGlobals@@QBEPAVCvBeliefXMLEntries@@XZ ; CvGlobals::GetGameBeliefs
 	mov	ebp, eax
 	mov	ecx, ebp
@@ -43053,7 +43133,7 @@ $LL5@GetAvailab:
 
 	mov	ecx, DWORD PTR _this$[esp+40]
 	push	esi
-	mov	DWORD PTR _eBelief$225313[esp+44], esi
+	mov	DWORD PTR _eBelief$225355[esp+44], esi
 	call	?IsInSomeReligion@CvGameReligions@@QBE_NW4BeliefTypes@@@Z ; CvGameReligions::IsInSomeReligion
 	test	al, al
 	jne	SHORT $LN4@GetAvailab
@@ -43078,7 +43158,7 @@ $LL5@GetAvailab:
 ; 1612 : 			{
 ; 1613 : 				availableBeliefs.push_back(eBelief);
 
-	lea	eax, DWORD PTR _eBelief$225313[esp+40]
+	lea	eax, DWORD PTR _eBelief$225355[esp+40]
 	push	eax
 	mov	ecx, edi
 	call	?push_back@?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@QAEXABW4BeliefTypes@@@Z ; std::vector<enum BeliefTypes,std::allocator<enum BeliefTypes> >::push_back
@@ -43103,10 +43183,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetAvailablePantheonBeliefs@CvGameReligions@@QAE?AV?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@XZ$0:
-	mov	eax, DWORD PTR $T245158[ebp]
+	mov	eax, DWORD PTR $T245238[ebp]
 	and	eax, 1
 	je	$LN9@GetAvailab
-	and	DWORD PTR $T245158[ebp], -2		; fffffffeH
+	and	DWORD PTR $T245238[ebp], -2		; fffffffeH
 	mov	ecx, DWORD PTR ___$ReturnUdt$[ebp-4]
 	jmp	??1?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@QAE@XZ ; std::vector<enum BeliefTypes,std::allocator<enum BeliefTypes> >::~vector<enum BeliefTypes,std::allocator<enum BeliefTypes> >
 $LN9@GetAvailab:
@@ -43135,9 +43215,9 @@ __ehfuncinfo$?GetAvailableFounderBeliefs@CvGameReligions@@QAE?AV?$vector@W4Belie
 xdata$x	ENDS
 ;	COMDAT ?GetAvailableFounderBeliefs@CvGameReligions@@QAE?AV?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@XZ
 _TEXT	SEGMENT
-$T245311 = -24						; size = 4
+$T245391 = -24						; size = 4
 _this$ = -20						; size = 4
-_eBelief$225469 = -16					; size = 4
+_eBelief$225511 = -16					; size = 4
 __$EHRec$ = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
 ?GetAvailableFounderBeliefs@CvGameReligions@@QAE?AV?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@XZ PROC ; CvGameReligions::GetAvailableFounderBeliefs, COMDAT
@@ -43155,7 +43235,7 @@ ___$ReturnUdt$ = 8					; size = 4
 	push	ebp
 	push	esi
 	xor	esi, esi
-	mov	DWORD PTR $T245311[esp+36], esi
+	mov	DWORD PTR $T245391[esp+36], esi
 	push	edi
 
 ; 1890 : 	std::vector<BeliefTypes> availableBeliefs;
@@ -43174,7 +43254,7 @@ ___$ReturnUdt$ = 8					; size = 4
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	DWORD PTR __$EHRec$[esp+48], esi
-	mov	DWORD PTR $T245311[esp+40], 1
+	mov	DWORD PTR $T245391[esp+40], 1
 	call	?GetGameBeliefs@CvGlobals@@QBEPAVCvBeliefXMLEntries@@XZ ; CvGlobals::GetGameBeliefs
 	mov	ebp, eax
 	mov	ecx, ebp
@@ -43205,7 +43285,7 @@ $LL5@GetAvailab@2:
 
 	mov	ecx, DWORD PTR _this$[esp+40]
 	push	esi
-	mov	DWORD PTR _eBelief$225469[esp+44], esi
+	mov	DWORD PTR _eBelief$225511[esp+44], esi
 	call	?IsInSomeReligion@CvGameReligions@@QBE_NW4BeliefTypes@@@Z ; CvGameReligions::IsInSomeReligion
 	test	al, al
 	jne	SHORT $LN4@GetAvailab@2
@@ -43230,7 +43310,7 @@ $LL5@GetAvailab@2:
 ; 1910 : 			{
 ; 1911 : 				availableBeliefs.push_back(eBelief);
 
-	lea	eax, DWORD PTR _eBelief$225469[esp+40]
+	lea	eax, DWORD PTR _eBelief$225511[esp+40]
 	push	eax
 	mov	ecx, edi
 	call	?push_back@?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@QAEXABW4BeliefTypes@@@Z ; std::vector<enum BeliefTypes,std::allocator<enum BeliefTypes> >::push_back
@@ -43255,10 +43335,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetAvailableFounderBeliefs@CvGameReligions@@QAE?AV?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@XZ$0:
-	mov	eax, DWORD PTR $T245311[ebp]
+	mov	eax, DWORD PTR $T245391[ebp]
 	and	eax, 1
 	je	$LN9@GetAvailab@2
-	and	DWORD PTR $T245311[ebp], -2		; fffffffeH
+	and	DWORD PTR $T245391[ebp], -2		; fffffffeH
 	mov	ecx, DWORD PTR ___$ReturnUdt$[ebp-4]
 	jmp	??1?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@QAE@XZ ; std::vector<enum BeliefTypes,std::allocator<enum BeliefTypes> >::~vector<enum BeliefTypes,std::allocator<enum BeliefTypes> >
 $LN9@GetAvailab@2:
@@ -43287,9 +43367,9 @@ __ehfuncinfo$?GetAvailableFollowerBeliefs@CvGameReligions@@QAE?AV?$vector@W4Beli
 xdata$x	ENDS
 ;	COMDAT ?GetAvailableFollowerBeliefs@CvGameReligions@@QAE?AV?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@XZ
 _TEXT	SEGMENT
-$T245464 = -24						; size = 4
+$T245544 = -24						; size = 4
 _this$ = -20						; size = 4
-_eBelief$225493 = -16					; size = 4
+_eBelief$225535 = -16					; size = 4
 __$EHRec$ = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
 ?GetAvailableFollowerBeliefs@CvGameReligions@@QAE?AV?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@XZ PROC ; CvGameReligions::GetAvailableFollowerBeliefs, COMDAT
@@ -43307,7 +43387,7 @@ ___$ReturnUdt$ = 8					; size = 4
 	push	ebp
 	push	esi
 	xor	esi, esi
-	mov	DWORD PTR $T245464[esp+36], esi
+	mov	DWORD PTR $T245544[esp+36], esi
 	push	edi
 
 ; 1922 : 	std::vector<BeliefTypes> availableBeliefs;
@@ -43326,7 +43406,7 @@ ___$ReturnUdt$ = 8					; size = 4
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	DWORD PTR __$EHRec$[esp+48], esi
-	mov	DWORD PTR $T245464[esp+40], 1
+	mov	DWORD PTR $T245544[esp+40], 1
 	call	?GetGameBeliefs@CvGlobals@@QBEPAVCvBeliefXMLEntries@@XZ ; CvGlobals::GetGameBeliefs
 	mov	ebp, eax
 	mov	ecx, ebp
@@ -43357,7 +43437,7 @@ $LL5@GetAvailab@3:
 
 	mov	ecx, DWORD PTR _this$[esp+40]
 	push	esi
-	mov	DWORD PTR _eBelief$225493[esp+44], esi
+	mov	DWORD PTR _eBelief$225535[esp+44], esi
 	call	?IsInSomeReligion@CvGameReligions@@QBE_NW4BeliefTypes@@@Z ; CvGameReligions::IsInSomeReligion
 	test	al, al
 	jne	SHORT $LN4@GetAvailab@3
@@ -43382,7 +43462,7 @@ $LL5@GetAvailab@3:
 ; 1942 : 			{
 ; 1943 : 				availableBeliefs.push_back(eBelief);
 
-	lea	eax, DWORD PTR _eBelief$225493[esp+40]
+	lea	eax, DWORD PTR _eBelief$225535[esp+40]
 	push	eax
 	mov	ecx, edi
 	call	?push_back@?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@QAEXABW4BeliefTypes@@@Z ; std::vector<enum BeliefTypes,std::allocator<enum BeliefTypes> >::push_back
@@ -43407,10 +43487,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetAvailableFollowerBeliefs@CvGameReligions@@QAE?AV?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@XZ$0:
-	mov	eax, DWORD PTR $T245464[ebp]
+	mov	eax, DWORD PTR $T245544[ebp]
 	and	eax, 1
 	je	$LN9@GetAvailab@3
-	and	DWORD PTR $T245464[ebp], -2		; fffffffeH
+	and	DWORD PTR $T245544[ebp], -2		; fffffffeH
 	mov	ecx, DWORD PTR ___$ReturnUdt$[ebp-4]
 	jmp	??1?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@QAE@XZ ; std::vector<enum BeliefTypes,std::allocator<enum BeliefTypes> >::~vector<enum BeliefTypes,std::allocator<enum BeliefTypes> >
 $LN9@GetAvailab@3:
@@ -43439,9 +43519,9 @@ __ehfuncinfo$?GetAvailableEnhancerBeliefs@CvGameReligions@@QAE?AV?$vector@W4Beli
 xdata$x	ENDS
 ;	COMDAT ?GetAvailableEnhancerBeliefs@CvGameReligions@@QAE?AV?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@XZ
 _TEXT	SEGMENT
-$T245617 = -24						; size = 4
+$T245697 = -24						; size = 4
 _this$ = -20						; size = 4
-_eBelief$225517 = -16					; size = 4
+_eBelief$225559 = -16					; size = 4
 __$EHRec$ = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
 ?GetAvailableEnhancerBeliefs@CvGameReligions@@QAE?AV?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@XZ PROC ; CvGameReligions::GetAvailableEnhancerBeliefs, COMDAT
@@ -43459,7 +43539,7 @@ ___$ReturnUdt$ = 8					; size = 4
 	push	ebp
 	push	esi
 	xor	esi, esi
-	mov	DWORD PTR $T245617[esp+36], esi
+	mov	DWORD PTR $T245697[esp+36], esi
 	push	edi
 
 ; 1954 : 	std::vector<BeliefTypes> availableBeliefs;
@@ -43478,7 +43558,7 @@ ___$ReturnUdt$ = 8					; size = 4
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	DWORD PTR __$EHRec$[esp+48], esi
-	mov	DWORD PTR $T245617[esp+40], 1
+	mov	DWORD PTR $T245697[esp+40], 1
 	call	?GetGameBeliefs@CvGlobals@@QBEPAVCvBeliefXMLEntries@@XZ ; CvGlobals::GetGameBeliefs
 	mov	ebp, eax
 	mov	ecx, ebp
@@ -43509,7 +43589,7 @@ $LL5@GetAvailab@4:
 
 	mov	ecx, DWORD PTR _this$[esp+40]
 	push	esi
-	mov	DWORD PTR _eBelief$225517[esp+44], esi
+	mov	DWORD PTR _eBelief$225559[esp+44], esi
 	call	?IsInSomeReligion@CvGameReligions@@QBE_NW4BeliefTypes@@@Z ; CvGameReligions::IsInSomeReligion
 	test	al, al
 	jne	SHORT $LN4@GetAvailab@4
@@ -43534,7 +43614,7 @@ $LL5@GetAvailab@4:
 ; 1974 : 			{
 ; 1975 : 				availableBeliefs.push_back(eBelief);
 
-	lea	eax, DWORD PTR _eBelief$225517[esp+40]
+	lea	eax, DWORD PTR _eBelief$225559[esp+40]
 	push	eax
 	mov	ecx, edi
 	call	?push_back@?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@QAEXABW4BeliefTypes@@@Z ; std::vector<enum BeliefTypes,std::allocator<enum BeliefTypes> >::push_back
@@ -43559,10 +43639,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetAvailableEnhancerBeliefs@CvGameReligions@@QAE?AV?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@XZ$0:
-	mov	eax, DWORD PTR $T245617[ebp]
+	mov	eax, DWORD PTR $T245697[ebp]
 	and	eax, 1
 	je	$LN9@GetAvailab@4
-	and	DWORD PTR $T245617[ebp], -2		; fffffffeH
+	and	DWORD PTR $T245697[ebp], -2		; fffffffeH
 	mov	ecx, DWORD PTR ___$ReturnUdt$[ebp-4]
 	jmp	??1?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@QAE@XZ ; std::vector<enum BeliefTypes,std::allocator<enum BeliefTypes> >::~vector<enum BeliefTypes,std::allocator<enum BeliefTypes> >
 $LN9@GetAvailab@4:
@@ -43590,10 +43670,10 @@ __ehfuncinfo$?GetAvailableBonusBeliefs@CvGameReligions@@QAE?AV?$vector@W4BeliefT
 xdata$x	ENDS
 ;	COMDAT ?GetAvailableBonusBeliefs@CvGameReligions@@QAE?AV?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@XZ
 _TEXT	SEGMENT
-$T245770 = -28						; size = 4
+$T245850 = -28						; size = 4
 _pkBeliefs$ = -24					; size = 4
 _this$ = -20						; size = 4
-_eBelief$225541 = -16					; size = 4
+_eBelief$225583 = -16					; size = 4
 __$EHRec$ = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
 ?GetAvailableBonusBeliefs@CvGameReligions@@QAE?AV?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@XZ PROC ; CvGameReligions::GetAvailableBonusBeliefs, COMDAT
@@ -43611,7 +43691,7 @@ ___$ReturnUdt$ = 8					; size = 4
 	push	ebp
 	push	esi
 	xor	esi, esi
-	mov	DWORD PTR $T245770[esp+40], esi
+	mov	DWORD PTR $T245850[esp+40], esi
 
 ; 1986 : 	std::vector<BeliefTypes> availableBeliefs;
 
@@ -43630,7 +43710,7 @@ ___$ReturnUdt$ = 8					; size = 4
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	DWORD PTR __$EHRec$[esp+52], esi
-	mov	DWORD PTR $T245770[esp+44], 1
+	mov	DWORD PTR $T245850[esp+44], 1
 	call	?GetGameBeliefs@CvGlobals@@QBEPAVCvBeliefXMLEntries@@XZ ; CvGlobals::GetGameBeliefs
 	mov	edi, eax
 	mov	ecx, edi
@@ -43667,7 +43747,7 @@ $LN6@GetAvailab@5:
 
 	mov	ecx, DWORD PTR _this$[esp+44]
 	push	esi
-	mov	DWORD PTR _eBelief$225541[esp+48], esi
+	mov	DWORD PTR _eBelief$225583[esp+48], esi
 	call	?IsInSomeReligion@CvGameReligions@@QBE_NW4BeliefTypes@@@Z ; CvGameReligions::IsInSomeReligion
 	test	al, al
 	jne	SHORT $LN5@GetAvailab@5
@@ -43706,7 +43786,7 @@ $LN1@GetAvailab@5:
 ; 2006 : 			{
 ; 2007 : 				availableBeliefs.push_back(eBelief);
 
-	lea	eax, DWORD PTR _eBelief$225541[esp+44]
+	lea	eax, DWORD PTR _eBelief$225583[esp+44]
 	push	eax
 	mov	ecx, ebx
 	call	?push_back@?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@QAEXABW4BeliefTypes@@@Z ; std::vector<enum BeliefTypes,std::allocator<enum BeliefTypes> >::push_back
@@ -43731,10 +43811,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetAvailableBonusBeliefs@CvGameReligions@@QAE?AV?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@XZ$0:
-	mov	eax, DWORD PTR $T245770[ebp]
+	mov	eax, DWORD PTR $T245850[ebp]
 	and	eax, 1
 	je	$LN10@GetAvailab@5
-	and	DWORD PTR $T245770[ebp], -2		; fffffffeH
+	and	DWORD PTR $T245850[ebp], -2		; fffffffeH
 	mov	ecx, DWORD PTR ___$ReturnUdt$[ebp-4]
 	jmp	??1?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@QAE@XZ ; std::vector<enum BeliefTypes,std::allocator<enum BeliefTypes> >::~vector<enum BeliefTypes,std::allocator<enum BeliefTypes> >
 $LN10@GetAvailab@5:
@@ -43762,9 +43842,9 @@ __ehfuncinfo$?GetAvailableReformationBeliefs@CvGameReligions@@QAE?AV?$vector@W4B
 xdata$x	ENDS
 ;	COMDAT ?GetAvailableReformationBeliefs@CvGameReligions@@QAE?AV?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@XZ
 _TEXT	SEGMENT
-$T245925 = -24						; size = 4
+$T246005 = -24						; size = 4
 _this$ = -20						; size = 4
-_eBelief$225566 = -16					; size = 4
+_eBelief$225608 = -16					; size = 4
 __$EHRec$ = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
 ?GetAvailableReformationBeliefs@CvGameReligions@@QAE?AV?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@XZ PROC ; CvGameReligions::GetAvailableReformationBeliefs, COMDAT
@@ -43782,7 +43862,7 @@ ___$ReturnUdt$ = 8					; size = 4
 	push	ebp
 	push	esi
 	xor	esi, esi
-	mov	DWORD PTR $T245925[esp+36], esi
+	mov	DWORD PTR $T246005[esp+36], esi
 	push	edi
 
 ; 2018 : 	std::vector<BeliefTypes> availableBeliefs;
@@ -43801,7 +43881,7 @@ ___$ReturnUdt$ = 8					; size = 4
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	DWORD PTR __$EHRec$[esp+48], esi
-	mov	DWORD PTR $T245925[esp+40], 1
+	mov	DWORD PTR $T246005[esp+40], 1
 	call	?GetGameBeliefs@CvGlobals@@QBEPAVCvBeliefXMLEntries@@XZ ; CvGlobals::GetGameBeliefs
 	mov	ebp, eax
 	mov	ecx, ebp
@@ -43832,7 +43912,7 @@ $LL5@GetAvailab@6:
 
 	mov	ecx, DWORD PTR _this$[esp+40]
 	push	esi
-	mov	DWORD PTR _eBelief$225566[esp+44], esi
+	mov	DWORD PTR _eBelief$225608[esp+44], esi
 	call	?IsInSomeReligion@CvGameReligions@@QBE_NW4BeliefTypes@@@Z ; CvGameReligions::IsInSomeReligion
 	test	al, al
 	jne	SHORT $LN4@GetAvailab@6
@@ -43857,7 +43937,7 @@ $LL5@GetAvailab@6:
 ; 2038 : 			{
 ; 2039 : 				availableBeliefs.push_back(eBelief);
 
-	lea	eax, DWORD PTR _eBelief$225566[esp+40]
+	lea	eax, DWORD PTR _eBelief$225608[esp+40]
 	push	eax
 	mov	ecx, edi
 	call	?push_back@?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@QAEXABW4BeliefTypes@@@Z ; std::vector<enum BeliefTypes,std::allocator<enum BeliefTypes> >::push_back
@@ -43882,10 +43962,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetAvailableReformationBeliefs@CvGameReligions@@QAE?AV?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@XZ$0:
-	mov	eax, DWORD PTR $T245925[ebp]
+	mov	eax, DWORD PTR $T246005[ebp]
 	and	eax, 1
 	je	$LN9@GetAvailab@6
-	and	DWORD PTR $T245925[ebp], -2		; fffffffeH
+	and	DWORD PTR $T246005[ebp], -2		; fffffffeH
 	mov	ecx, DWORD PTR ___$ReturnUdt$[ebp-4]
 	jmp	??1?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@QAE@XZ ; std::vector<enum BeliefTypes,std::allocator<enum BeliefTypes> >::~vector<enum BeliefTypes,std::allocator<enum BeliefTypes> >
 $LN9@GetAvailab@6:
@@ -43915,15 +43995,15 @@ __ehfuncinfo$?ChoosePantheonBelief@CvReligionAI@@QAE?AW4BeliefTypes@@XZ DD 01993
 xdata$x	ENDS
 ;	COMDAT ?ChoosePantheonBelief@CvReligionAI@@QAE?AW4BeliefTypes@@XZ
 _TEXT	SEGMENT
-$T246079 = -852						; size = 4
+$T246159 = -852						; size = 4
 _availableBeliefs$ = -848				; size = 16
-$T246078 = -832						; size = 4
+$T246158 = -832						; size = 4
 _beliefChoices$ = -828					; size = 816
 __$EHRec$ = -12						; size = 12
 ?ChoosePantheonBelief@CvReligionAI@@QAE?AW4BeliefTypes@@XZ PROC ; CvReligionAI::ChoosePantheonBelief, COMDAT
 ; _this$ = ecx
 
-; 4935 : {
+; 4957 : {
 
 	push	-1
 	push	__ehhandler$?ChoosePantheonBelief@CvReligionAI@@QAE?AW4BeliefTypes@@XZ
@@ -43936,13 +44016,13 @@ __$EHRec$ = -12						; size = 12
 	push	esi
 	mov	ebx, ecx
 
-; 4936 : 	CvGameReligions* pGameReligions = GC.getGame().GetGameReligions();
+; 4958 : 	CvGameReligions* pGameReligions = GC.getGame().GetGameReligions();
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	edi
 	call	?GetGameReligions@CvGame@@QAEPAVCvGameReligions@@XZ ; CvGame::GetGameReligions
 
-; 4937 : 	CvWeightedVector<BeliefTypes, SAFE_ESTIMATE_NUM_BELIEFS, true> beliefChoices;
+; 4959 : 	CvWeightedVector<BeliefTypes, SAFE_ESTIMATE_NUM_BELIEFS, true> beliefChoices;
 
 	xor	ecx, ecx
 	lea	edx, DWORD PTR _beliefChoices$[esp+880]
@@ -43951,65 +44031,65 @@ __$EHRec$ = -12						; size = 12
 	mov	DWORD PTR _beliefChoices$[esp+868], edx
 	mov	DWORD PTR __$EHRec$[esp+876], ecx
 
-; 4938 : 
-; 4939 : #ifdef AUI_WARNING_FIXES
-; 4940 : 	const std::vector<BeliefTypes>& availableBeliefs = pGameReligions->GetAvailablePantheonBeliefs();
-; 4941 : 
-; 4942 : 	for (std::vector<BeliefTypes>::const_iterator it = availableBeliefs.begin(); it != availableBeliefs.end(); ++it)
-; 4943 : #else
-; 4944 : 	std::vector<BeliefTypes> availableBeliefs = pGameReligions->GetAvailablePantheonBeliefs();
+; 4960 : 
+; 4961 : #ifdef AUI_WARNING_FIXES
+; 4962 : 	const std::vector<BeliefTypes>& availableBeliefs = pGameReligions->GetAvailablePantheonBeliefs();
+; 4963 : 
+; 4964 : 	for (std::vector<BeliefTypes>::const_iterator it = availableBeliefs.begin(); it != availableBeliefs.end(); ++it)
+; 4965 : #else
+; 4966 : 	std::vector<BeliefTypes> availableBeliefs = pGameReligions->GetAvailablePantheonBeliefs();
 
 	lea	ecx, DWORD PTR _availableBeliefs$[esp+868]
 	push	ecx
 	mov	ecx, eax
 	call	?GetAvailablePantheonBeliefs@CvGameReligions@@QAE?AV?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@XZ ; CvGameReligions::GetAvailablePantheonBeliefs
 
-; 4945 : 
-; 4946 : 	for(std::vector<BeliefTypes>::iterator it = availableBeliefs.begin();
+; 4967 : 
+; 4968 : 	for(std::vector<BeliefTypes>::iterator it = availableBeliefs.begin();
 
 	mov	eax, DWORD PTR _availableBeliefs$[esp+872]
 	mov	BYTE PTR __$EHRec$[esp+876], 1
 	mov	ebp, eax
 
-; 4947 : 	        it!= availableBeliefs.end(); ++it)
+; 4969 : 	        it!= availableBeliefs.end(); ++it)
 
 	cmp	eax, DWORD PTR _availableBeliefs$[esp+876]
 	je	SHORT $LN152@ChoosePant
 	npad	7
 $LL154@ChoosePant:
 
-; 4948 : #endif
-; 4949 : 	{
-; 4950 : 		const BeliefTypes eBelief = (*it);
+; 4970 : #endif
+; 4971 : 	{
+; 4972 : 		const BeliefTypes eBelief = (*it);
 
 	mov	edi, DWORD PTR [ebp]
 
-; 4951 : 		CvBeliefEntry* pEntry = m_pBeliefs->GetEntry(eBelief);
+; 4973 : 		CvBeliefEntry* pEntry = m_pBeliefs->GetEntry(eBelief);
 
 	mov	ecx, DWORD PTR [ebx]
 	push	edi
 	call	?GetEntry@CvBeliefXMLEntries@@QAEPAVCvBeliefEntry@@H@Z ; CvBeliefXMLEntries::GetEntry
 
-; 4952 : 		if(pEntry)
+; 4974 : 		if(pEntry)
 
 	test	eax, eax
 	je	SHORT $LN4@ChoosePant
 
-; 4953 : 		{
-; 4954 : 			const int iScore = ScoreBelief(pEntry);
+; 4975 : 		{
+; 4976 : 			const int iScore = ScoreBelief(pEntry);
 
 	push	eax
 	mov	ecx, ebx
 	call	?ScoreBelief@CvReligionAI@@AAEHPAVCvBeliefEntry@@@Z ; CvReligionAI::ScoreBelief
 	mov	esi, eax
 
-; 4955 : 			if(iScore > 0)
+; 4977 : 			if(iScore > 0)
 
 	test	esi, esi
 	jle	SHORT $LN4@ChoosePant
 
-; 4956 : 			{
-; 4957 : 				beliefChoices.push_back(eBelief, iScore);
+; 4978 : 			{
+; 4979 : 				beliefChoices.push_back(eBelief, iScore);
 
 	mov	eax, DWORD PTR _beliefChoices$[esp+876]
 	mov	BYTE PTR _beliefChoices$[esp+1680], 0
@@ -44030,19 +44110,19 @@ $LN54@ChoosePant:
 	inc	DWORD PTR _beliefChoices$[esp+872]
 $LN4@ChoosePant:
 
-; 4947 : 	        it!= availableBeliefs.end(); ++it)
+; 4969 : 	        it!= availableBeliefs.end(); ++it)
 
 	add	ebp, 4
 	cmp	ebp, DWORD PTR _availableBeliefs$[esp+876]
 	jne	SHORT $LL154@ChoosePant
 $LN152@ChoosePant:
 
-; 4958 : 			}
-; 4959 : 		}
-; 4960 : 	}
-; 4961 : 
-; 4962 : 	// Choose from weighted vector
-; 4963 : 	beliefChoices.SortItems();
+; 4980 : 			}
+; 4981 : 		}
+; 4982 : 	}
+; 4983 : 
+; 4984 : 	// Choose from weighted vector
+; 4985 : 	beliefChoices.SortItems();
 
 	mov	ecx, DWORD PTR _beliefChoices$[esp+868]
 	mov	edx, DWORD PTR _beliefChoices$[esp+872]
@@ -44055,21 +44135,21 @@ $LN152@ChoosePant:
 	push	ecx
 	call	??$_Sort@PAUWeightedElement@?$CvWeightedVector@W4BeliefTypes@@$0GE@$00@@H@std@@YAXPAUWeightedElement@?$CvWeightedVector@W4BeliefTypes@@$0GE@$00@@0H@Z ; std::_Sort<CvWeightedVector<enum BeliefTypes,100,1>::WeightedElement *,int>
 
-; 4964 : 	int iNumChoices = MIN(beliefChoices.size(),3);   // Throw out two-thirds of the choices -- this was way too loose as choices way down were being selected now only top 3
+; 4986 : 	int iNumChoices = MIN(beliefChoices.size(),3);   // Throw out two-thirds of the choices -- this was way too loose as choices way down were being selected now only top 3
 
 	mov	eax, DWORD PTR _beliefChoices$[esp+884]
 	add	esp, 12					; 0000000cH
 	cmp	eax, 3
-	mov	DWORD PTR $T246078[esp+868], 3
-	mov	DWORD PTR $T246079[esp+868], eax
-	lea	ecx, DWORD PTR $T246078[esp+868]
+	mov	DWORD PTR $T246158[esp+868], 3
+	mov	DWORD PTR $T246159[esp+868], eax
+	lea	ecx, DWORD PTR $T246158[esp+868]
 	jg	SHORT $LN76@ChoosePant
-	lea	ecx, DWORD PTR $T246079[esp+868]
+	lea	ecx, DWORD PTR $T246159[esp+868]
 $LN76@ChoosePant:
 	mov	edi, DWORD PTR [ecx]
 
-; 4965 : 	RandomNumberDelegate fcn = MakeDelegate(&GC.getGame(), &CvGame::getJonRandNum);
-; 4966 : 	BeliefTypes rtnValue = beliefChoices.ChooseFromTopChoices(iNumChoices, &fcn, "Choosing belief from Top Choices");
+; 4987 : 	RandomNumberDelegate fcn = MakeDelegate(&GC.getGame(), &CvGame::getJonRandNum);
+; 4988 : 	BeliefTypes rtnValue = beliefChoices.ChooseFromTopChoices(iNumChoices, &fcn, "Choosing belief from Top Choices");
 
 	cmp	edi, eax
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
@@ -44090,7 +44170,7 @@ $LL99@ChoosePant:
 	sub	ebp, 1
 	jne	SHORT $LL99@ChoosePant
 $LN97@ChoosePant:
-	push	OFFSET $SG227401
+	push	OFFSET $SG227446
 	push	edx
 	call	?getJonRandNum@CvGame@@QAEHHPBD@Z	; CvGame::getJonRandNum
 	xor	edx, edx
@@ -44107,7 +44187,7 @@ $LL96@ChoosePant:
 	jl	SHORT $LL96@ChoosePant
 $LN146@ChoosePant:
 
-; 4967 : 	LogBeliefChoices(beliefChoices, rtnValue);
+; 4989 : 	LogBeliefChoices(beliefChoices, rtnValue);
 
 	push	esi
 	lea	eax, DWORD PTR _beliefChoices$[esp+872]
@@ -44115,8 +44195,8 @@ $LN146@ChoosePant:
 	mov	ecx, ebx
 	call	?LogBeliefChoices@CvReligionAI@@AAEXAAV?$CvWeightedVector@W4BeliefTypes@@$0GE@$00@@H@Z ; CvReligionAI::LogBeliefChoices
 
-; 4968 : 
-; 4969 : 	return rtnValue;
+; 4990 : 
+; 4991 : 	return rtnValue;
 
 	mov	eax, DWORD PTR _availableBeliefs$[esp+872]
 	cmp	eax, ebp
@@ -44138,7 +44218,7 @@ $LN124@ChoosePant:
 	add	esp, 4
 $LN150@ChoosePant:
 
-; 4970 : }
+; 4992 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+868]
 	pop	edi
@@ -44183,15 +44263,15 @@ __ehfuncinfo$?ChooseFounderBelief@CvReligionAI@@QAE?AW4BeliefTypes@@XZ DD 019930
 xdata$x	ENDS
 ;	COMDAT ?ChooseFounderBelief@CvReligionAI@@QAE?AW4BeliefTypes@@XZ
 _TEXT	SEGMENT
-$T246474 = -852						; size = 4
+$T246554 = -852						; size = 4
 _availableBeliefs$ = -848				; size = 16
-$T246473 = -832						; size = 4
+$T246553 = -832						; size = 4
 _beliefChoices$ = -828					; size = 816
 __$EHRec$ = -12						; size = 12
 ?ChooseFounderBelief@CvReligionAI@@QAE?AW4BeliefTypes@@XZ PROC ; CvReligionAI::ChooseFounderBelief, COMDAT
 ; _this$ = ecx
 
-; 4974 : {
+; 4996 : {
 
 	push	-1
 	push	__ehhandler$?ChooseFounderBelief@CvReligionAI@@QAE?AW4BeliefTypes@@XZ
@@ -44204,13 +44284,13 @@ __$EHRec$ = -12						; size = 12
 	push	esi
 	mov	ebx, ecx
 
-; 4975 : 	CvGameReligions* pGameReligions = GC.getGame().GetGameReligions();
+; 4997 : 	CvGameReligions* pGameReligions = GC.getGame().GetGameReligions();
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	edi
 	call	?GetGameReligions@CvGame@@QAEPAVCvGameReligions@@XZ ; CvGame::GetGameReligions
 
-; 4976 : 	CvWeightedVector<BeliefTypes, SAFE_ESTIMATE_NUM_BELIEFS, true> beliefChoices;
+; 4998 : 	CvWeightedVector<BeliefTypes, SAFE_ESTIMATE_NUM_BELIEFS, true> beliefChoices;
 
 	xor	ecx, ecx
 	lea	edx, DWORD PTR _beliefChoices$[esp+880]
@@ -44219,65 +44299,65 @@ __$EHRec$ = -12						; size = 12
 	mov	DWORD PTR _beliefChoices$[esp+868], edx
 	mov	DWORD PTR __$EHRec$[esp+876], ecx
 
-; 4977 : 
-; 4978 : #ifdef AUI_WARNING_FIXES
-; 4979 : 	const std::vector<BeliefTypes>& availableBeliefs = pGameReligions->GetAvailableFounderBeliefs();
-; 4980 : 
-; 4981 : 	for (std::vector<BeliefTypes>::const_iterator it = availableBeliefs.begin(); it != availableBeliefs.end(); ++it)
-; 4982 : #else
-; 4983 : 	std::vector<BeliefTypes> availableBeliefs = pGameReligions->GetAvailableFounderBeliefs();
+; 4999 : 
+; 5000 : #ifdef AUI_WARNING_FIXES
+; 5001 : 	const std::vector<BeliefTypes>& availableBeliefs = pGameReligions->GetAvailableFounderBeliefs();
+; 5002 : 
+; 5003 : 	for (std::vector<BeliefTypes>::const_iterator it = availableBeliefs.begin(); it != availableBeliefs.end(); ++it)
+; 5004 : #else
+; 5005 : 	std::vector<BeliefTypes> availableBeliefs = pGameReligions->GetAvailableFounderBeliefs();
 
 	lea	ecx, DWORD PTR _availableBeliefs$[esp+868]
 	push	ecx
 	mov	ecx, eax
 	call	?GetAvailableFounderBeliefs@CvGameReligions@@QAE?AV?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@XZ ; CvGameReligions::GetAvailableFounderBeliefs
 
-; 4984 : 
-; 4985 : 	for(std::vector<BeliefTypes>::iterator it = availableBeliefs.begin();
+; 5006 : 
+; 5007 : 	for(std::vector<BeliefTypes>::iterator it = availableBeliefs.begin();
 
 	mov	eax, DWORD PTR _availableBeliefs$[esp+872]
 	mov	BYTE PTR __$EHRec$[esp+876], 1
 	mov	ebp, eax
 
-; 4986 : 	        it!= availableBeliefs.end(); ++it)
+; 5008 : 	        it!= availableBeliefs.end(); ++it)
 
 	cmp	eax, DWORD PTR _availableBeliefs$[esp+876]
 	je	SHORT $LN152@ChooseFoun
 	npad	7
 $LL154@ChooseFoun:
 
-; 4987 : #endif
-; 4988 : 	{
-; 4989 : 		const BeliefTypes eBelief = (*it);
+; 5009 : #endif
+; 5010 : 	{
+; 5011 : 		const BeliefTypes eBelief = (*it);
 
 	mov	edi, DWORD PTR [ebp]
 
-; 4990 : 		CvBeliefEntry* pEntry = m_pBeliefs->GetEntry(eBelief);
+; 5012 : 		CvBeliefEntry* pEntry = m_pBeliefs->GetEntry(eBelief);
 
 	mov	ecx, DWORD PTR [ebx]
 	push	edi
 	call	?GetEntry@CvBeliefXMLEntries@@QAEPAVCvBeliefEntry@@H@Z ; CvBeliefXMLEntries::GetEntry
 
-; 4991 : 		if(pEntry)
+; 5013 : 		if(pEntry)
 
 	test	eax, eax
 	je	SHORT $LN4@ChooseFoun
 
-; 4992 : 		{
-; 4993 : 			const int iScore = ScoreBelief(pEntry);
+; 5014 : 		{
+; 5015 : 			const int iScore = ScoreBelief(pEntry);
 
 	push	eax
 	mov	ecx, ebx
 	call	?ScoreBelief@CvReligionAI@@AAEHPAVCvBeliefEntry@@@Z ; CvReligionAI::ScoreBelief
 	mov	esi, eax
 
-; 4994 : 			if(iScore > 0)
+; 5016 : 			if(iScore > 0)
 
 	test	esi, esi
 	jle	SHORT $LN4@ChooseFoun
 
-; 4995 : 			{
-; 4996 : 				beliefChoices.push_back(eBelief, iScore);
+; 5017 : 			{
+; 5018 : 				beliefChoices.push_back(eBelief, iScore);
 
 	mov	eax, DWORD PTR _beliefChoices$[esp+876]
 	mov	BYTE PTR _beliefChoices$[esp+1680], 0
@@ -44298,19 +44378,19 @@ $LN54@ChooseFoun:
 	inc	DWORD PTR _beliefChoices$[esp+872]
 $LN4@ChooseFoun:
 
-; 4986 : 	        it!= availableBeliefs.end(); ++it)
+; 5008 : 	        it!= availableBeliefs.end(); ++it)
 
 	add	ebp, 4
 	cmp	ebp, DWORD PTR _availableBeliefs$[esp+876]
 	jne	SHORT $LL154@ChooseFoun
 $LN152@ChooseFoun:
 
-; 4997 : 			}
-; 4998 : 		}
-; 4999 : 	}
-; 5000 : 
-; 5001 : 	// Choose from weighted vector
-; 5002 : 	beliefChoices.SortItems();
+; 5019 : 			}
+; 5020 : 		}
+; 5021 : 	}
+; 5022 : 
+; 5023 : 	// Choose from weighted vector
+; 5024 : 	beliefChoices.SortItems();
 
 	mov	ecx, DWORD PTR _beliefChoices$[esp+868]
 	mov	edx, DWORD PTR _beliefChoices$[esp+872]
@@ -44323,21 +44403,21 @@ $LN152@ChooseFoun:
 	push	ecx
 	call	??$_Sort@PAUWeightedElement@?$CvWeightedVector@W4BeliefTypes@@$0GE@$00@@H@std@@YAXPAUWeightedElement@?$CvWeightedVector@W4BeliefTypes@@$0GE@$00@@0H@Z ; std::_Sort<CvWeightedVector<enum BeliefTypes,100,1>::WeightedElement *,int>
 
-; 5003 : 	int iNumChoices = MIN(beliefChoices.size(),3);   // this was way too loose as choices way down were being selected now only top 3
+; 5025 : 	int iNumChoices = MIN(beliefChoices.size(),3);   // this was way too loose as choices way down were being selected now only top 3
 
 	mov	eax, DWORD PTR _beliefChoices$[esp+884]
 	add	esp, 12					; 0000000cH
 	cmp	eax, 3
-	mov	DWORD PTR $T246473[esp+868], 3
-	mov	DWORD PTR $T246474[esp+868], eax
-	lea	ecx, DWORD PTR $T246473[esp+868]
+	mov	DWORD PTR $T246553[esp+868], 3
+	mov	DWORD PTR $T246554[esp+868], eax
+	lea	ecx, DWORD PTR $T246553[esp+868]
 	jg	SHORT $LN76@ChooseFoun
-	lea	ecx, DWORD PTR $T246474[esp+868]
+	lea	ecx, DWORD PTR $T246554[esp+868]
 $LN76@ChooseFoun:
 	mov	edi, DWORD PTR [ecx]
 
-; 5004 : 	RandomNumberDelegate fcn = MakeDelegate(&GC.getGame(), &CvGame::getJonRandNum);
-; 5005 : 	BeliefTypes rtnValue = beliefChoices.ChooseFromTopChoices(iNumChoices, &fcn, "Choosing belief from Top Choices");
+; 5026 : 	RandomNumberDelegate fcn = MakeDelegate(&GC.getGame(), &CvGame::getJonRandNum);
+; 5027 : 	BeliefTypes rtnValue = beliefChoices.ChooseFromTopChoices(iNumChoices, &fcn, "Choosing belief from Top Choices");
 
 	cmp	edi, eax
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
@@ -44358,7 +44438,7 @@ $LL99@ChooseFoun:
 	sub	ebp, 1
 	jne	SHORT $LL99@ChooseFoun
 $LN97@ChooseFoun:
-	push	OFFSET $SG227436
+	push	OFFSET $SG227481
 	push	edx
 	call	?getJonRandNum@CvGame@@QAEHHPBD@Z	; CvGame::getJonRandNum
 	xor	edx, edx
@@ -44375,7 +44455,7 @@ $LL96@ChooseFoun:
 	jl	SHORT $LL96@ChooseFoun
 $LN146@ChooseFoun:
 
-; 5006 : 	LogBeliefChoices(beliefChoices, rtnValue);
+; 5028 : 	LogBeliefChoices(beliefChoices, rtnValue);
 
 	push	esi
 	lea	eax, DWORD PTR _beliefChoices$[esp+872]
@@ -44383,8 +44463,8 @@ $LN146@ChooseFoun:
 	mov	ecx, ebx
 	call	?LogBeliefChoices@CvReligionAI@@AAEXAAV?$CvWeightedVector@W4BeliefTypes@@$0GE@$00@@H@Z ; CvReligionAI::LogBeliefChoices
 
-; 5007 : 
-; 5008 : 	return rtnValue;
+; 5029 : 
+; 5030 : 	return rtnValue;
 
 	mov	eax, DWORD PTR _availableBeliefs$[esp+872]
 	cmp	eax, ebp
@@ -44406,7 +44486,7 @@ $LN124@ChooseFoun:
 	add	esp, 4
 $LN150@ChooseFoun:
 
-; 5009 : }
+; 5031 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+868]
 	pop	edi
@@ -44451,15 +44531,15 @@ __ehfuncinfo$?ChooseFollowerBelief@CvReligionAI@@QAE?AW4BeliefTypes@@XZ DD 01993
 xdata$x	ENDS
 ;	COMDAT ?ChooseFollowerBelief@CvReligionAI@@QAE?AW4BeliefTypes@@XZ
 _TEXT	SEGMENT
-$T246869 = -852						; size = 4
+$T246949 = -852						; size = 4
 _availableBeliefs$ = -848				; size = 16
-$T246868 = -832						; size = 4
+$T246948 = -832						; size = 4
 _beliefChoices$ = -828					; size = 816
 __$EHRec$ = -12						; size = 12
 ?ChooseFollowerBelief@CvReligionAI@@QAE?AW4BeliefTypes@@XZ PROC ; CvReligionAI::ChooseFollowerBelief, COMDAT
 ; _this$ = ecx
 
-; 5013 : {
+; 5035 : {
 
 	push	-1
 	push	__ehhandler$?ChooseFollowerBelief@CvReligionAI@@QAE?AW4BeliefTypes@@XZ
@@ -44472,13 +44552,13 @@ __$EHRec$ = -12						; size = 12
 	push	esi
 	mov	ebx, ecx
 
-; 5014 : 	CvGameReligions* pGameReligions = GC.getGame().GetGameReligions();
+; 5036 : 	CvGameReligions* pGameReligions = GC.getGame().GetGameReligions();
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	edi
 	call	?GetGameReligions@CvGame@@QAEPAVCvGameReligions@@XZ ; CvGame::GetGameReligions
 
-; 5015 : 	CvWeightedVector<BeliefTypes, SAFE_ESTIMATE_NUM_BELIEFS, true> beliefChoices;
+; 5037 : 	CvWeightedVector<BeliefTypes, SAFE_ESTIMATE_NUM_BELIEFS, true> beliefChoices;
 
 	xor	ecx, ecx
 	lea	edx, DWORD PTR _beliefChoices$[esp+880]
@@ -44487,65 +44567,65 @@ __$EHRec$ = -12						; size = 12
 	mov	DWORD PTR _beliefChoices$[esp+868], edx
 	mov	DWORD PTR __$EHRec$[esp+876], ecx
 
-; 5016 : 
-; 5017 : #ifdef AUI_WARNING_FIXES
-; 5018 : 	const std::vector<BeliefTypes>& availableBeliefs = pGameReligions->GetAvailableFollowerBeliefs();
-; 5019 : 
-; 5020 : 	for (std::vector<BeliefTypes>::const_iterator it = availableBeliefs.begin(); it != availableBeliefs.end(); ++it)
-; 5021 : #else
-; 5022 : 	std::vector<BeliefTypes> availableBeliefs = pGameReligions->GetAvailableFollowerBeliefs();
+; 5038 : 
+; 5039 : #ifdef AUI_WARNING_FIXES
+; 5040 : 	const std::vector<BeliefTypes>& availableBeliefs = pGameReligions->GetAvailableFollowerBeliefs();
+; 5041 : 
+; 5042 : 	for (std::vector<BeliefTypes>::const_iterator it = availableBeliefs.begin(); it != availableBeliefs.end(); ++it)
+; 5043 : #else
+; 5044 : 	std::vector<BeliefTypes> availableBeliefs = pGameReligions->GetAvailableFollowerBeliefs();
 
 	lea	ecx, DWORD PTR _availableBeliefs$[esp+868]
 	push	ecx
 	mov	ecx, eax
 	call	?GetAvailableFollowerBeliefs@CvGameReligions@@QAE?AV?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@XZ ; CvGameReligions::GetAvailableFollowerBeliefs
 
-; 5023 : 
-; 5024 : 	for(std::vector<BeliefTypes>::iterator it = availableBeliefs.begin();
+; 5045 : 
+; 5046 : 	for(std::vector<BeliefTypes>::iterator it = availableBeliefs.begin();
 
 	mov	eax, DWORD PTR _availableBeliefs$[esp+872]
 	mov	BYTE PTR __$EHRec$[esp+876], 1
 	mov	ebp, eax
 
-; 5025 : 	        it!= availableBeliefs.end(); ++it)
+; 5047 : 	        it!= availableBeliefs.end(); ++it)
 
 	cmp	eax, DWORD PTR _availableBeliefs$[esp+876]
 	je	SHORT $LN152@ChooseFoll
 	npad	7
 $LL154@ChooseFoll:
 
-; 5026 : #endif
-; 5027 : 	{
-; 5028 : 		const BeliefTypes eBelief = (*it);
+; 5048 : #endif
+; 5049 : 	{
+; 5050 : 		const BeliefTypes eBelief = (*it);
 
 	mov	edi, DWORD PTR [ebp]
 
-; 5029 : 		CvBeliefEntry* pEntry = m_pBeliefs->GetEntry(eBelief);
+; 5051 : 		CvBeliefEntry* pEntry = m_pBeliefs->GetEntry(eBelief);
 
 	mov	ecx, DWORD PTR [ebx]
 	push	edi
 	call	?GetEntry@CvBeliefXMLEntries@@QAEPAVCvBeliefEntry@@H@Z ; CvBeliefXMLEntries::GetEntry
 
-; 5030 : 		if(pEntry)
+; 5052 : 		if(pEntry)
 
 	test	eax, eax
 	je	SHORT $LN4@ChooseFoll
 
-; 5031 : 		{
-; 5032 : 			const int iScore = ScoreBelief(pEntry);
+; 5053 : 		{
+; 5054 : 			const int iScore = ScoreBelief(pEntry);
 
 	push	eax
 	mov	ecx, ebx
 	call	?ScoreBelief@CvReligionAI@@AAEHPAVCvBeliefEntry@@@Z ; CvReligionAI::ScoreBelief
 	mov	esi, eax
 
-; 5033 : 			if(iScore > 0)
+; 5055 : 			if(iScore > 0)
 
 	test	esi, esi
 	jle	SHORT $LN4@ChooseFoll
 
-; 5034 : 			{
-; 5035 : 				beliefChoices.push_back(eBelief, iScore);
+; 5056 : 			{
+; 5057 : 				beliefChoices.push_back(eBelief, iScore);
 
 	mov	eax, DWORD PTR _beliefChoices$[esp+876]
 	mov	BYTE PTR _beliefChoices$[esp+1680], 0
@@ -44566,19 +44646,19 @@ $LN54@ChooseFoll:
 	inc	DWORD PTR _beliefChoices$[esp+872]
 $LN4@ChooseFoll:
 
-; 5025 : 	        it!= availableBeliefs.end(); ++it)
+; 5047 : 	        it!= availableBeliefs.end(); ++it)
 
 	add	ebp, 4
 	cmp	ebp, DWORD PTR _availableBeliefs$[esp+876]
 	jne	SHORT $LL154@ChooseFoll
 $LN152@ChooseFoll:
 
-; 5036 : 			}
-; 5037 : 		}
-; 5038 : 	}
-; 5039 : 
-; 5040 : 	// Choose from weighted vector
-; 5041 : 	beliefChoices.SortItems();
+; 5058 : 			}
+; 5059 : 		}
+; 5060 : 	}
+; 5061 : 
+; 5062 : 	// Choose from weighted vector
+; 5063 : 	beliefChoices.SortItems();
 
 	mov	ecx, DWORD PTR _beliefChoices$[esp+868]
 	mov	edx, DWORD PTR _beliefChoices$[esp+872]
@@ -44591,21 +44671,21 @@ $LN152@ChooseFoll:
 	push	ecx
 	call	??$_Sort@PAUWeightedElement@?$CvWeightedVector@W4BeliefTypes@@$0GE@$00@@H@std@@YAXPAUWeightedElement@?$CvWeightedVector@W4BeliefTypes@@$0GE@$00@@0H@Z ; std::_Sort<CvWeightedVector<enum BeliefTypes,100,1>::WeightedElement *,int>
 
-; 5042 : 	int iNumChoices = MIN(beliefChoices.size(),3);   // this was way too loose as choices way down were being selected now only top 3
+; 5064 : 	int iNumChoices = MIN(beliefChoices.size(),3);   // this was way too loose as choices way down were being selected now only top 3
 
 	mov	eax, DWORD PTR _beliefChoices$[esp+884]
 	add	esp, 12					; 0000000cH
 	cmp	eax, 3
-	mov	DWORD PTR $T246868[esp+868], 3
-	mov	DWORD PTR $T246869[esp+868], eax
-	lea	ecx, DWORD PTR $T246868[esp+868]
+	mov	DWORD PTR $T246948[esp+868], 3
+	mov	DWORD PTR $T246949[esp+868], eax
+	lea	ecx, DWORD PTR $T246948[esp+868]
 	jg	SHORT $LN76@ChooseFoll
-	lea	ecx, DWORD PTR $T246869[esp+868]
+	lea	ecx, DWORD PTR $T246949[esp+868]
 $LN76@ChooseFoll:
 	mov	edi, DWORD PTR [ecx]
 
-; 5043 : 	RandomNumberDelegate fcn = MakeDelegate(&GC.getGame(), &CvGame::getJonRandNum);
-; 5044 : 	BeliefTypes rtnValue = beliefChoices.ChooseFromTopChoices(iNumChoices, &fcn, "Choosing belief from Top Choices");
+; 5065 : 	RandomNumberDelegate fcn = MakeDelegate(&GC.getGame(), &CvGame::getJonRandNum);
+; 5066 : 	BeliefTypes rtnValue = beliefChoices.ChooseFromTopChoices(iNumChoices, &fcn, "Choosing belief from Top Choices");
 
 	cmp	edi, eax
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
@@ -44626,7 +44706,7 @@ $LL99@ChooseFoll:
 	sub	ebp, 1
 	jne	SHORT $LL99@ChooseFoll
 $LN97@ChooseFoll:
-	push	OFFSET $SG227471
+	push	OFFSET $SG227516
 	push	edx
 	call	?getJonRandNum@CvGame@@QAEHHPBD@Z	; CvGame::getJonRandNum
 	xor	edx, edx
@@ -44643,7 +44723,7 @@ $LL96@ChooseFoll:
 	jl	SHORT $LL96@ChooseFoll
 $LN146@ChooseFoll:
 
-; 5045 : 	LogBeliefChoices(beliefChoices, rtnValue);
+; 5067 : 	LogBeliefChoices(beliefChoices, rtnValue);
 
 	push	esi
 	lea	eax, DWORD PTR _beliefChoices$[esp+872]
@@ -44651,8 +44731,8 @@ $LN146@ChooseFoll:
 	mov	ecx, ebx
 	call	?LogBeliefChoices@CvReligionAI@@AAEXAAV?$CvWeightedVector@W4BeliefTypes@@$0GE@$00@@H@Z ; CvReligionAI::LogBeliefChoices
 
-; 5046 : 
-; 5047 : 	return rtnValue;
+; 5068 : 
+; 5069 : 	return rtnValue;
 
 	mov	eax, DWORD PTR _availableBeliefs$[esp+872]
 	cmp	eax, ebp
@@ -44674,7 +44754,7 @@ $LN124@ChooseFoll:
 	add	esp, 4
 $LN150@ChooseFoll:
 
-; 5048 : }
+; 5070 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+868]
 	pop	edi
@@ -44719,15 +44799,15 @@ __ehfuncinfo$?ChooseEnhancerBelief@CvReligionAI@@QAE?AW4BeliefTypes@@XZ DD 01993
 xdata$x	ENDS
 ;	COMDAT ?ChooseEnhancerBelief@CvReligionAI@@QAE?AW4BeliefTypes@@XZ
 _TEXT	SEGMENT
-$T247264 = -852						; size = 4
+$T247344 = -852						; size = 4
 _availableBeliefs$ = -848				; size = 16
-$T247263 = -832						; size = 4
+$T247343 = -832						; size = 4
 _beliefChoices$ = -828					; size = 816
 __$EHRec$ = -12						; size = 12
 ?ChooseEnhancerBelief@CvReligionAI@@QAE?AW4BeliefTypes@@XZ PROC ; CvReligionAI::ChooseEnhancerBelief, COMDAT
 ; _this$ = ecx
 
-; 5052 : {
+; 5074 : {
 
 	push	-1
 	push	__ehhandler$?ChooseEnhancerBelief@CvReligionAI@@QAE?AW4BeliefTypes@@XZ
@@ -44740,13 +44820,13 @@ __$EHRec$ = -12						; size = 12
 	push	esi
 	mov	ebx, ecx
 
-; 5053 : 	CvGameReligions* pGameReligions = GC.getGame().GetGameReligions();
+; 5075 : 	CvGameReligions* pGameReligions = GC.getGame().GetGameReligions();
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	edi
 	call	?GetGameReligions@CvGame@@QAEPAVCvGameReligions@@XZ ; CvGame::GetGameReligions
 
-; 5054 : 	CvWeightedVector<BeliefTypes, SAFE_ESTIMATE_NUM_BELIEFS, true> beliefChoices;
+; 5076 : 	CvWeightedVector<BeliefTypes, SAFE_ESTIMATE_NUM_BELIEFS, true> beliefChoices;
 
 	xor	ecx, ecx
 	lea	edx, DWORD PTR _beliefChoices$[esp+880]
@@ -44755,65 +44835,65 @@ __$EHRec$ = -12						; size = 12
 	mov	DWORD PTR _beliefChoices$[esp+868], edx
 	mov	DWORD PTR __$EHRec$[esp+876], ecx
 
-; 5055 : 
-; 5056 : #ifdef AUI_WARNING_FIXES
-; 5057 : 	const std::vector<BeliefTypes>& availableBeliefs = pGameReligions->GetAvailableEnhancerBeliefs();
-; 5058 : 
-; 5059 : 	for (std::vector<BeliefTypes>::const_iterator it = availableBeliefs.begin(); it != availableBeliefs.end(); ++it)
-; 5060 : #else
-; 5061 : 	std::vector<BeliefTypes> availableBeliefs = pGameReligions->GetAvailableEnhancerBeliefs();
+; 5077 : 
+; 5078 : #ifdef AUI_WARNING_FIXES
+; 5079 : 	const std::vector<BeliefTypes>& availableBeliefs = pGameReligions->GetAvailableEnhancerBeliefs();
+; 5080 : 
+; 5081 : 	for (std::vector<BeliefTypes>::const_iterator it = availableBeliefs.begin(); it != availableBeliefs.end(); ++it)
+; 5082 : #else
+; 5083 : 	std::vector<BeliefTypes> availableBeliefs = pGameReligions->GetAvailableEnhancerBeliefs();
 
 	lea	ecx, DWORD PTR _availableBeliefs$[esp+868]
 	push	ecx
 	mov	ecx, eax
 	call	?GetAvailableEnhancerBeliefs@CvGameReligions@@QAE?AV?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@XZ ; CvGameReligions::GetAvailableEnhancerBeliefs
 
-; 5062 : 
-; 5063 : 	for(std::vector<BeliefTypes>::iterator it = availableBeliefs.begin();
+; 5084 : 
+; 5085 : 	for(std::vector<BeliefTypes>::iterator it = availableBeliefs.begin();
 
 	mov	eax, DWORD PTR _availableBeliefs$[esp+872]
 	mov	BYTE PTR __$EHRec$[esp+876], 1
 	mov	ebp, eax
 
-; 5064 : 	        it!= availableBeliefs.end(); ++it)
+; 5086 : 	        it!= availableBeliefs.end(); ++it)
 
 	cmp	eax, DWORD PTR _availableBeliefs$[esp+876]
 	je	SHORT $LN152@ChooseEnha
 	npad	7
 $LL154@ChooseEnha:
 
-; 5065 : #endif
-; 5066 : 	{
-; 5067 : 		const BeliefTypes eBelief = (*it);
+; 5087 : #endif
+; 5088 : 	{
+; 5089 : 		const BeliefTypes eBelief = (*it);
 
 	mov	edi, DWORD PTR [ebp]
 
-; 5068 : 		CvBeliefEntry* pEntry = m_pBeliefs->GetEntry(eBelief);
+; 5090 : 		CvBeliefEntry* pEntry = m_pBeliefs->GetEntry(eBelief);
 
 	mov	ecx, DWORD PTR [ebx]
 	push	edi
 	call	?GetEntry@CvBeliefXMLEntries@@QAEPAVCvBeliefEntry@@H@Z ; CvBeliefXMLEntries::GetEntry
 
-; 5069 : 		if(pEntry)
+; 5091 : 		if(pEntry)
 
 	test	eax, eax
 	je	SHORT $LN4@ChooseEnha
 
-; 5070 : 		{
-; 5071 : 			const int iScore = ScoreBelief(pEntry);
+; 5092 : 		{
+; 5093 : 			const int iScore = ScoreBelief(pEntry);
 
 	push	eax
 	mov	ecx, ebx
 	call	?ScoreBelief@CvReligionAI@@AAEHPAVCvBeliefEntry@@@Z ; CvReligionAI::ScoreBelief
 	mov	esi, eax
 
-; 5072 : 			if(iScore > 0)
+; 5094 : 			if(iScore > 0)
 
 	test	esi, esi
 	jle	SHORT $LN4@ChooseEnha
 
-; 5073 : 			{
-; 5074 : 				beliefChoices.push_back(eBelief, iScore);
+; 5095 : 			{
+; 5096 : 				beliefChoices.push_back(eBelief, iScore);
 
 	mov	eax, DWORD PTR _beliefChoices$[esp+876]
 	mov	BYTE PTR _beliefChoices$[esp+1680], 0
@@ -44834,19 +44914,19 @@ $LN54@ChooseEnha:
 	inc	DWORD PTR _beliefChoices$[esp+872]
 $LN4@ChooseEnha:
 
-; 5064 : 	        it!= availableBeliefs.end(); ++it)
+; 5086 : 	        it!= availableBeliefs.end(); ++it)
 
 	add	ebp, 4
 	cmp	ebp, DWORD PTR _availableBeliefs$[esp+876]
 	jne	SHORT $LL154@ChooseEnha
 $LN152@ChooseEnha:
 
-; 5075 : 			}
-; 5076 : 		}
-; 5077 : 	}
-; 5078 : 
-; 5079 : 	// Choose from weighted vector
-; 5080 : 	beliefChoices.SortItems();
+; 5097 : 			}
+; 5098 : 		}
+; 5099 : 	}
+; 5100 : 
+; 5101 : 	// Choose from weighted vector
+; 5102 : 	beliefChoices.SortItems();
 
 	mov	ecx, DWORD PTR _beliefChoices$[esp+868]
 	mov	edx, DWORD PTR _beliefChoices$[esp+872]
@@ -44859,21 +44939,21 @@ $LN152@ChooseEnha:
 	push	ecx
 	call	??$_Sort@PAUWeightedElement@?$CvWeightedVector@W4BeliefTypes@@$0GE@$00@@H@std@@YAXPAUWeightedElement@?$CvWeightedVector@W4BeliefTypes@@$0GE@$00@@0H@Z ; std::_Sort<CvWeightedVector<enum BeliefTypes,100,1>::WeightedElement *,int>
 
-; 5081 : 	int iNumChoices = MIN(beliefChoices.size(),3);   // this was way too loose as choices way down were being selected now only top 3
+; 5103 : 	int iNumChoices = MIN(beliefChoices.size(),3);   // this was way too loose as choices way down were being selected now only top 3
 
 	mov	eax, DWORD PTR _beliefChoices$[esp+884]
 	add	esp, 12					; 0000000cH
 	cmp	eax, 3
-	mov	DWORD PTR $T247263[esp+868], 3
-	mov	DWORD PTR $T247264[esp+868], eax
-	lea	ecx, DWORD PTR $T247263[esp+868]
+	mov	DWORD PTR $T247343[esp+868], 3
+	mov	DWORD PTR $T247344[esp+868], eax
+	lea	ecx, DWORD PTR $T247343[esp+868]
 	jg	SHORT $LN76@ChooseEnha
-	lea	ecx, DWORD PTR $T247264[esp+868]
+	lea	ecx, DWORD PTR $T247344[esp+868]
 $LN76@ChooseEnha:
 	mov	edi, DWORD PTR [ecx]
 
-; 5082 : 	RandomNumberDelegate fcn = MakeDelegate(&GC.getGame(), &CvGame::getJonRandNum);
-; 5083 : 	BeliefTypes rtnValue = beliefChoices.ChooseFromTopChoices(iNumChoices, &fcn, "Choosing belief from Top Choices");
+; 5104 : 	RandomNumberDelegate fcn = MakeDelegate(&GC.getGame(), &CvGame::getJonRandNum);
+; 5105 : 	BeliefTypes rtnValue = beliefChoices.ChooseFromTopChoices(iNumChoices, &fcn, "Choosing belief from Top Choices");
 
 	cmp	edi, eax
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
@@ -44894,7 +44974,7 @@ $LL99@ChooseEnha:
 	sub	ebp, 1
 	jne	SHORT $LL99@ChooseEnha
 $LN97@ChooseEnha:
-	push	OFFSET $SG227506
+	push	OFFSET $SG227551
 	push	edx
 	call	?getJonRandNum@CvGame@@QAEHHPBD@Z	; CvGame::getJonRandNum
 	xor	edx, edx
@@ -44911,7 +44991,7 @@ $LL96@ChooseEnha:
 	jl	SHORT $LL96@ChooseEnha
 $LN146@ChooseEnha:
 
-; 5084 : 	LogBeliefChoices(beliefChoices, rtnValue);
+; 5106 : 	LogBeliefChoices(beliefChoices, rtnValue);
 
 	push	esi
 	lea	eax, DWORD PTR _beliefChoices$[esp+872]
@@ -44919,8 +44999,8 @@ $LN146@ChooseEnha:
 	mov	ecx, ebx
 	call	?LogBeliefChoices@CvReligionAI@@AAEXAAV?$CvWeightedVector@W4BeliefTypes@@$0GE@$00@@H@Z ; CvReligionAI::LogBeliefChoices
 
-; 5085 : 
-; 5086 : 	return rtnValue;
+; 5107 : 
+; 5108 : 	return rtnValue;
 
 	mov	eax, DWORD PTR _availableBeliefs$[esp+872]
 	cmp	eax, ebp
@@ -44942,7 +45022,7 @@ $LN124@ChooseEnha:
 	add	esp, 4
 $LN150@ChooseEnha:
 
-; 5087 : }
+; 5109 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+868]
 	pop	edi
@@ -44988,9 +45068,9 @@ xdata$x	ENDS
 ;	COMDAT ?ChooseBonusBelief@CvReligionAI@@QAE?AW4BeliefTypes@@HHH@Z
 _TEXT	SEGMENT
 _this$ = -856						; size = 4
-$T247658 = -852						; size = 4
-_eBelief$227533 = -852					; size = 4
-$T247659 = -848						; size = 4
+$T247738 = -852						; size = 4
+_eBelief$227578 = -852					; size = 4
+$T247739 = -848						; size = 4
 _availableBeliefs$ = -844				; size = 16
 _beliefChoices$ = -828					; size = 816
 __$EHRec$ = -12						; size = 12
@@ -45000,7 +45080,7 @@ _iExcludeBelief3$ = 16					; size = 4
 ?ChooseBonusBelief@CvReligionAI@@QAE?AW4BeliefTypes@@HHH@Z PROC ; CvReligionAI::ChooseBonusBelief, COMDAT
 ; _this$ = ecx
 
-; 5091 : {
+; 5113 : {
 
 	push	-1
 	push	__ehhandler$?ChooseBonusBelief@CvReligionAI@@QAE?AW4BeliefTypes@@HHH@Z
@@ -45013,13 +45093,13 @@ _iExcludeBelief3$ = 16					; size = 4
 	push	esi
 	mov	DWORD PTR _this$[esp+868], ecx
 
-; 5092 : 	CvGameReligions* pGameReligions = GC.getGame().GetGameReligions();
+; 5114 : 	CvGameReligions* pGameReligions = GC.getGame().GetGameReligions();
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	edi
 	call	?GetGameReligions@CvGame@@QAEPAVCvGameReligions@@XZ ; CvGame::GetGameReligions
 
-; 5093 : 	CvWeightedVector<BeliefTypes, SAFE_ESTIMATE_NUM_BELIEFS, true> beliefChoices;
+; 5115 : 	CvWeightedVector<BeliefTypes, SAFE_ESTIMATE_NUM_BELIEFS, true> beliefChoices;
 
 	xor	ebp, ebp
 	lea	ecx, DWORD PTR _beliefChoices$[esp+884]
@@ -45027,13 +45107,13 @@ _iExcludeBelief3$ = 16					; size = 4
 	mov	DWORD PTR _beliefChoices$[esp+880], 100	; 00000064H
 	mov	DWORD PTR _beliefChoices$[esp+872], ecx
 
-; 5094 : 
-; 5095 : #ifdef AUI_WARNING_FIXES
-; 5096 : 	const std::vector<BeliefTypes>& availableBeliefs = pGameReligions->GetAvailableBonusBeliefs();
-; 5097 : 
-; 5098 : 	for (std::vector<BeliefTypes>::const_iterator it = availableBeliefs.begin(); it != availableBeliefs.end(); ++it)
-; 5099 : #else
-; 5100 : 	std::vector<BeliefTypes> availableBeliefs = pGameReligions->GetAvailableBonusBeliefs();
+; 5116 : 
+; 5117 : #ifdef AUI_WARNING_FIXES
+; 5118 : 	const std::vector<BeliefTypes>& availableBeliefs = pGameReligions->GetAvailableBonusBeliefs();
+; 5119 : 
+; 5120 : 	for (std::vector<BeliefTypes>::const_iterator it = availableBeliefs.begin(); it != availableBeliefs.end(); ++it)
+; 5121 : #else
+; 5122 : 	std::vector<BeliefTypes> availableBeliefs = pGameReligions->GetAvailableBonusBeliefs();
 
 	lea	edx, DWORD PTR _availableBeliefs$[esp+872]
 	push	edx
@@ -45041,14 +45121,14 @@ _iExcludeBelief3$ = 16					; size = 4
 	mov	DWORD PTR __$EHRec$[esp+884], ebp
 	call	?GetAvailableBonusBeliefs@CvGameReligions@@QAE?AV?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@XZ ; CvGameReligions::GetAvailableBonusBeliefs
 
-; 5101 : 
-; 5102 : 	for(std::vector<BeliefTypes>::iterator it = availableBeliefs.begin();
+; 5123 : 
+; 5124 : 	for(std::vector<BeliefTypes>::iterator it = availableBeliefs.begin();
 
 	mov	eax, DWORD PTR _availableBeliefs$[esp+876]
 	mov	BYTE PTR __$EHRec$[esp+880], 1
 	mov	esi, eax
 
-; 5103 : 	        it!= availableBeliefs.end(); ++it)
+; 5125 : 	        it!= availableBeliefs.end(); ++it)
 
 	cmp	eax, DWORD PTR _availableBeliefs$[esp+880]
 	je	SHORT $LN4@ChooseBonu
@@ -45057,27 +45137,27 @@ _iExcludeBelief3$ = 16					; size = 4
 	mov	edi, DWORD PTR _iExcludeBelief1$[esp+868]
 $LL32@ChooseBonu:
 
-; 5104 : #endif
-; 5105 : 	{
-; 5106 : 		const BeliefTypes eBelief = (*it);
+; 5126 : #endif
+; 5127 : 	{
+; 5128 : 		const BeliefTypes eBelief = (*it);
 
 	mov	eax, DWORD PTR [esi]
-	mov	DWORD PTR _eBelief$227533[esp+872], eax
+	mov	DWORD PTR _eBelief$227578[esp+872], eax
 
-; 5107 : 		CvBeliefEntry* pEntry = m_pBeliefs->GetEntry(eBelief);
+; 5129 : 		CvBeliefEntry* pEntry = m_pBeliefs->GetEntry(eBelief);
 
 	push	eax
 	mov	eax, DWORD PTR _this$[esp+876]
 	mov	ecx, DWORD PTR [eax]
 	call	?GetEntry@CvBeliefXMLEntries@@QAEPAVCvBeliefEntry@@H@Z ; CvBeliefXMLEntries::GetEntry
 
-; 5108 : 		if(pEntry)
+; 5130 : 		if(pEntry)
 
 	test	eax, eax
 	je	SHORT $LN5@ChooseBonu
 
-; 5109 : 		{
-; 5110 : 			if (pEntry->GetID() != iExcludeBelief1 && pEntry->GetID() != iExcludeBelief2 && pEntry->GetID() != iExcludeBelief3)
+; 5131 : 		{
+; 5132 : 			if (pEntry->GetID() != iExcludeBelief1 && pEntry->GetID() != iExcludeBelief2 && pEntry->GetID() != iExcludeBelief3)
 
 	mov	ecx, DWORD PTR [eax+4]
 	cmp	ecx, edi
@@ -45087,23 +45167,23 @@ $LL32@ChooseBonu:
 	cmp	ecx, ebx
 	je	SHORT $LN5@ChooseBonu
 
-; 5111 : 			{
-; 5112 : 				const int iScore = ScoreBelief(pEntry);
+; 5133 : 			{
+; 5134 : 				const int iScore = ScoreBelief(pEntry);
 
 	mov	ecx, DWORD PTR _this$[esp+872]
 	push	eax
 	call	?ScoreBelief@CvReligionAI@@AAEHPAVCvBeliefEntry@@@Z ; CvReligionAI::ScoreBelief
 
-; 5113 : 				if(iScore > 0)
+; 5135 : 				if(iScore > 0)
 
 	test	eax, eax
 	jle	SHORT $LN5@ChooseBonu
 
-; 5114 : 				{
-; 5115 : 					beliefChoices.push_back(eBelief, iScore);
+; 5136 : 				{
+; 5137 : 					beliefChoices.push_back(eBelief, iScore);
 
 	push	eax
-	lea	ecx, DWORD PTR _eBelief$227533[esp+876]
+	lea	ecx, DWORD PTR _eBelief$227578[esp+876]
 	push	ecx
 	lea	ecx, DWORD PTR _beliefChoices$[esp+880]
 	call	?push_back@?$CvWeightedVector@W4BeliefTypes@@$0GE@$00@@QAEIABW4BeliefTypes@@H@Z ; CvWeightedVector<enum BeliefTypes,100,1>::push_back
@@ -45112,18 +45192,18 @@ $LN5@ChooseBonu:
 	cmp	esi, DWORD PTR _availableBeliefs$[esp+880]
 	jne	SHORT $LL32@ChooseBonu
 
-; 5103 : 	        it!= availableBeliefs.end(); ++it)
+; 5125 : 	        it!= availableBeliefs.end(); ++it)
 
 	xor	ebp, ebp
 $LN4@ChooseBonu:
 
-; 5116 : 				}
-; 5117 : 			}
-; 5118 : 		}
-; 5119 : 	}
-; 5120 : 
-; 5121 : 	// Choose from weighted vector
-; 5122 : 	beliefChoices.SortItems();
+; 5138 : 				}
+; 5139 : 			}
+; 5140 : 		}
+; 5141 : 	}
+; 5142 : 
+; 5143 : 	// Choose from weighted vector
+; 5144 : 	beliefChoices.SortItems();
 
 	mov	eax, DWORD PTR _beliefChoices$[esp+872]
 	mov	edx, DWORD PTR _beliefChoices$[esp+876]
@@ -45136,21 +45216,21 @@ $LN4@ChooseBonu:
 	push	eax
 	call	??$_Sort@PAUWeightedElement@?$CvWeightedVector@W4BeliefTypes@@$0GE@$00@@H@std@@YAXPAUWeightedElement@?$CvWeightedVector@W4BeliefTypes@@$0GE@$00@@0H@Z ; std::_Sort<CvWeightedVector<enum BeliefTypes,100,1>::WeightedElement *,int>
 
-; 5123 : 	int iNumChoices = MIN(beliefChoices.size(),3);   // this was way too loose as choices way down were being selected now only top 3
+; 5145 : 	int iNumChoices = MIN(beliefChoices.size(),3);   // this was way too loose as choices way down were being selected now only top 3
 
 	mov	eax, DWORD PTR _beliefChoices$[esp+888]
 	add	esp, 12					; 0000000cH
 	cmp	eax, 3
-	mov	DWORD PTR $T247658[esp+872], 3
-	mov	DWORD PTR $T247659[esp+872], eax
-	lea	ecx, DWORD PTR $T247658[esp+872]
+	mov	DWORD PTR $T247738[esp+872], 3
+	mov	DWORD PTR $T247739[esp+872], eax
+	lea	ecx, DWORD PTR $T247738[esp+872]
 	jg	SHORT $LN69@ChooseBonu
-	lea	ecx, DWORD PTR $T247659[esp+872]
+	lea	ecx, DWORD PTR $T247739[esp+872]
 $LN69@ChooseBonu:
 	mov	edi, DWORD PTR [ecx]
 
-; 5124 : 	RandomNumberDelegate fcn = MakeDelegate(&GC.getGame(), &CvGame::getJonRandNum);
-; 5125 : 	BeliefTypes rtnValue = beliefChoices.ChooseFromTopChoices(iNumChoices, &fcn, "Choosing belief from Top Choices");
+; 5146 : 	RandomNumberDelegate fcn = MakeDelegate(&GC.getGame(), &CvGame::getJonRandNum);
+; 5147 : 	BeliefTypes rtnValue = beliefChoices.ChooseFromTopChoices(iNumChoices, &fcn, "Choosing belief from Top Choices");
 
 	cmp	edi, eax
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
@@ -45170,7 +45250,7 @@ $LL92@ChooseBonu:
 	sub	ebx, 1
 	jne	SHORT $LL92@ChooseBonu
 $LN90@ChooseBonu:
-	push	OFFSET $SG227545
+	push	OFFSET $SG227590
 	push	edx
 	call	?getJonRandNum@CvGame@@QAEHHPBD@Z	; CvGame::getJonRandNum
 	xor	edx, edx
@@ -45187,7 +45267,7 @@ $LL89@ChooseBonu:
 	jl	SHORT $LL89@ChooseBonu
 $LN139@ChooseBonu:
 
-; 5126 : 	LogBeliefChoices(beliefChoices, rtnValue);
+; 5148 : 	LogBeliefChoices(beliefChoices, rtnValue);
 
 	mov	ecx, DWORD PTR _this$[esp+872]
 	push	esi
@@ -45195,8 +45275,8 @@ $LN139@ChooseBonu:
 	push	eax
 	call	?LogBeliefChoices@CvReligionAI@@AAEXAAV?$CvWeightedVector@W4BeliefTypes@@$0GE@$00@@H@Z ; CvReligionAI::LogBeliefChoices
 
-; 5127 : 
-; 5128 : 	return rtnValue;
+; 5149 : 
+; 5150 : 	return rtnValue;
 
 	mov	eax, DWORD PTR _availableBeliefs$[esp+876]
 	cmp	eax, ebp
@@ -45218,7 +45298,7 @@ $LN117@ChooseBonu:
 	add	esp, 4
 $LN143@ChooseBonu:
 
-; 5129 : }
+; 5151 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+872]
 	pop	edi
@@ -45263,15 +45343,15 @@ __ehfuncinfo$?ChooseReformationBelief@CvReligionAI@@QAE?AW4BeliefTypes@@XZ DD 01
 xdata$x	ENDS
 ;	COMDAT ?ChooseReformationBelief@CvReligionAI@@QAE?AW4BeliefTypes@@XZ
 _TEXT	SEGMENT
-$T248019 = -852						; size = 4
+$T248099 = -852						; size = 4
 _availableBeliefs$ = -848				; size = 16
-$T248018 = -832						; size = 4
+$T248098 = -832						; size = 4
 _beliefChoices$ = -828					; size = 816
 __$EHRec$ = -12						; size = 12
 ?ChooseReformationBelief@CvReligionAI@@QAE?AW4BeliefTypes@@XZ PROC ; CvReligionAI::ChooseReformationBelief, COMDAT
 ; _this$ = ecx
 
-; 5133 : {
+; 5155 : {
 
 	push	-1
 	push	__ehhandler$?ChooseReformationBelief@CvReligionAI@@QAE?AW4BeliefTypes@@XZ
@@ -45284,13 +45364,13 @@ __$EHRec$ = -12						; size = 12
 	push	esi
 	mov	ebx, ecx
 
-; 5134 : 	CvGameReligions* pGameReligions = GC.getGame().GetGameReligions();
+; 5156 : 	CvGameReligions* pGameReligions = GC.getGame().GetGameReligions();
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	edi
 	call	?GetGameReligions@CvGame@@QAEPAVCvGameReligions@@XZ ; CvGame::GetGameReligions
 
-; 5135 : 	CvWeightedVector<BeliefTypes, SAFE_ESTIMATE_NUM_BELIEFS, true> beliefChoices;
+; 5157 : 	CvWeightedVector<BeliefTypes, SAFE_ESTIMATE_NUM_BELIEFS, true> beliefChoices;
 
 	xor	ecx, ecx
 	lea	edx, DWORD PTR _beliefChoices$[esp+880]
@@ -45299,65 +45379,65 @@ __$EHRec$ = -12						; size = 12
 	mov	DWORD PTR _beliefChoices$[esp+868], edx
 	mov	DWORD PTR __$EHRec$[esp+876], ecx
 
-; 5136 : 
-; 5137 : #ifdef AUI_WARNING_FIXES
-; 5138 : 	const std::vector<BeliefTypes>& availableBeliefs = pGameReligions->GetAvailableReformationBeliefs();
-; 5139 : 
-; 5140 : 	for (std::vector<BeliefTypes>::const_iterator it = availableBeliefs.begin(); it != availableBeliefs.end(); ++it)
-; 5141 : #else
-; 5142 : 	std::vector<BeliefTypes> availableBeliefs = pGameReligions->GetAvailableReformationBeliefs();
+; 5158 : 
+; 5159 : #ifdef AUI_WARNING_FIXES
+; 5160 : 	const std::vector<BeliefTypes>& availableBeliefs = pGameReligions->GetAvailableReformationBeliefs();
+; 5161 : 
+; 5162 : 	for (std::vector<BeliefTypes>::const_iterator it = availableBeliefs.begin(); it != availableBeliefs.end(); ++it)
+; 5163 : #else
+; 5164 : 	std::vector<BeliefTypes> availableBeliefs = pGameReligions->GetAvailableReformationBeliefs();
 
 	lea	ecx, DWORD PTR _availableBeliefs$[esp+868]
 	push	ecx
 	mov	ecx, eax
 	call	?GetAvailableReformationBeliefs@CvGameReligions@@QAE?AV?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@XZ ; CvGameReligions::GetAvailableReformationBeliefs
 
-; 5143 : 
-; 5144 : 	for(std::vector<BeliefTypes>::iterator it = availableBeliefs.begin();
+; 5165 : 
+; 5166 : 	for(std::vector<BeliefTypes>::iterator it = availableBeliefs.begin();
 
 	mov	eax, DWORD PTR _availableBeliefs$[esp+872]
 	mov	BYTE PTR __$EHRec$[esp+876], 1
 	mov	ebp, eax
 
-; 5145 : 	        it!= availableBeliefs.end(); ++it)
+; 5167 : 	        it!= availableBeliefs.end(); ++it)
 
 	cmp	eax, DWORD PTR _availableBeliefs$[esp+876]
 	je	SHORT $LN152@ChooseRefo
 	npad	7
 $LL154@ChooseRefo:
 
-; 5146 : #endif
-; 5147 : 	{
-; 5148 : 		const BeliefTypes eBelief = (*it);
+; 5168 : #endif
+; 5169 : 	{
+; 5170 : 		const BeliefTypes eBelief = (*it);
 
 	mov	edi, DWORD PTR [ebp]
 
-; 5149 : 		CvBeliefEntry* pEntry = m_pBeliefs->GetEntry(eBelief);
+; 5171 : 		CvBeliefEntry* pEntry = m_pBeliefs->GetEntry(eBelief);
 
 	mov	ecx, DWORD PTR [ebx]
 	push	edi
 	call	?GetEntry@CvBeliefXMLEntries@@QAEPAVCvBeliefEntry@@H@Z ; CvBeliefXMLEntries::GetEntry
 
-; 5150 : 		if(pEntry)
+; 5172 : 		if(pEntry)
 
 	test	eax, eax
 	je	SHORT $LN4@ChooseRefo
 
-; 5151 : 		{
-; 5152 : 			const int iScore = ScoreBelief(pEntry);
+; 5173 : 		{
+; 5174 : 			const int iScore = ScoreBelief(pEntry);
 
 	push	eax
 	mov	ecx, ebx
 	call	?ScoreBelief@CvReligionAI@@AAEHPAVCvBeliefEntry@@@Z ; CvReligionAI::ScoreBelief
 	mov	esi, eax
 
-; 5153 : 			if(iScore > 0)
+; 5175 : 			if(iScore > 0)
 
 	test	esi, esi
 	jle	SHORT $LN4@ChooseRefo
 
-; 5154 : 			{
-; 5155 : 				beliefChoices.push_back(eBelief, iScore);
+; 5176 : 			{
+; 5177 : 				beliefChoices.push_back(eBelief, iScore);
 
 	mov	eax, DWORD PTR _beliefChoices$[esp+876]
 	mov	BYTE PTR _beliefChoices$[esp+1680], 0
@@ -45378,19 +45458,19 @@ $LN54@ChooseRefo:
 	inc	DWORD PTR _beliefChoices$[esp+872]
 $LN4@ChooseRefo:
 
-; 5145 : 	        it!= availableBeliefs.end(); ++it)
+; 5167 : 	        it!= availableBeliefs.end(); ++it)
 
 	add	ebp, 4
 	cmp	ebp, DWORD PTR _availableBeliefs$[esp+876]
 	jne	SHORT $LL154@ChooseRefo
 $LN152@ChooseRefo:
 
-; 5156 : 			}
-; 5157 : 		}
-; 5158 : 	}
-; 5159 : 
-; 5160 : 	// Choose from weighted vector
-; 5161 : 	beliefChoices.SortItems();
+; 5178 : 			}
+; 5179 : 		}
+; 5180 : 	}
+; 5181 : 
+; 5182 : 	// Choose from weighted vector
+; 5183 : 	beliefChoices.SortItems();
 
 	mov	ecx, DWORD PTR _beliefChoices$[esp+868]
 	mov	edx, DWORD PTR _beliefChoices$[esp+872]
@@ -45403,21 +45483,21 @@ $LN152@ChooseRefo:
 	push	ecx
 	call	??$_Sort@PAUWeightedElement@?$CvWeightedVector@W4BeliefTypes@@$0GE@$00@@H@std@@YAXPAUWeightedElement@?$CvWeightedVector@W4BeliefTypes@@$0GE@$00@@0H@Z ; std::_Sort<CvWeightedVector<enum BeliefTypes,100,1>::WeightedElement *,int>
 
-; 5162 : 	int iNumChoices = MIN(beliefChoices.size(),3);   // this was way too loose as choices way down were being selected now only top 3
+; 5184 : 	int iNumChoices = MIN(beliefChoices.size(),3);   // this was way too loose as choices way down were being selected now only top 3
 
 	mov	eax, DWORD PTR _beliefChoices$[esp+884]
 	add	esp, 12					; 0000000cH
 	cmp	eax, 3
-	mov	DWORD PTR $T248018[esp+868], 3
-	mov	DWORD PTR $T248019[esp+868], eax
-	lea	ecx, DWORD PTR $T248018[esp+868]
+	mov	DWORD PTR $T248098[esp+868], 3
+	mov	DWORD PTR $T248099[esp+868], eax
+	lea	ecx, DWORD PTR $T248098[esp+868]
 	jg	SHORT $LN76@ChooseRefo
-	lea	ecx, DWORD PTR $T248019[esp+868]
+	lea	ecx, DWORD PTR $T248099[esp+868]
 $LN76@ChooseRefo:
 	mov	edi, DWORD PTR [ecx]
 
-; 5163 : 	RandomNumberDelegate fcn = MakeDelegate(&GC.getGame(), &CvGame::getJonRandNum);
-; 5164 : 	BeliefTypes rtnValue = beliefChoices.ChooseFromTopChoices(iNumChoices, &fcn, "Choosing belief from Top Choices");
+; 5185 : 	RandomNumberDelegate fcn = MakeDelegate(&GC.getGame(), &CvGame::getJonRandNum);
+; 5186 : 	BeliefTypes rtnValue = beliefChoices.ChooseFromTopChoices(iNumChoices, &fcn, "Choosing belief from Top Choices");
 
 	cmp	edi, eax
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
@@ -45438,7 +45518,7 @@ $LL99@ChooseRefo:
 	sub	ebp, 1
 	jne	SHORT $LL99@ChooseRefo
 $LN97@ChooseRefo:
-	push	OFFSET $SG227580
+	push	OFFSET $SG227625
 	push	edx
 	call	?getJonRandNum@CvGame@@QAEHHPBD@Z	; CvGame::getJonRandNum
 	xor	edx, edx
@@ -45455,7 +45535,7 @@ $LL96@ChooseRefo:
 	jl	SHORT $LL96@ChooseRefo
 $LN146@ChooseRefo:
 
-; 5165 : 	LogBeliefChoices(beliefChoices, rtnValue);
+; 5187 : 	LogBeliefChoices(beliefChoices, rtnValue);
 
 	push	esi
 	lea	eax, DWORD PTR _beliefChoices$[esp+872]
@@ -45463,8 +45543,8 @@ $LN146@ChooseRefo:
 	mov	ecx, ebx
 	call	?LogBeliefChoices@CvReligionAI@@AAEXAAV?$CvWeightedVector@W4BeliefTypes@@$0GE@$00@@H@Z ; CvReligionAI::LogBeliefChoices
 
-; 5166 : 
-; 5167 : 	return rtnValue;
+; 5188 : 
+; 5189 : 	return rtnValue;
 
 	mov	eax, DWORD PTR _availableBeliefs$[esp+872]
 	cmp	eax, ebp
@@ -45486,7 +45566,7 @@ $LN124@ChooseRefo:
 	add	esp, 4
 $LN150@ChooseRefo:
 
-; 5168 : }
+; 5190 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+868]
 	pop	edi
@@ -45530,11 +45610,11 @@ __ehfuncinfo$?CanCreatePantheon@CvGameReligions@@QAE?AW4FOUNDING_RESULT@1@W4Play
 xdata$x	ENDS
 ;	COMDAT ?CanCreatePantheon@CvGameReligions@@QAE?AW4FOUNDING_RESULT@1@W4PlayerTypes@@_N@Z
 _TEXT	SEGMENT
-$T248414 = -28						; size = 16
+$T248494 = -28						; size = 16
 __$EHRec$ = -12						; size = 12
-_args$224554 = 8					; size = 4
+_args$224596 = 8					; size = 4
 _ePlayer$ = 8						; size = 4
-_bResult$224555 = 12					; size = 1
+_bResult$224597 = 12					; size = 1
 _bCheckFaithTotal$ = 12					; size = 1
 ?CanCreatePantheon@CvGameReligions@@QAE?AW4FOUNDING_RESULT@1@W4PlayerTypes@@_N@Z PROC ; CvGameReligions::CanCreatePantheon, COMDAT
 ; _this$ = ecx
@@ -45725,12 +45805,12 @@ $LN7@CanCreateP:
 ; 640  : 	{
 ; 641  : 		CvLuaArgsHandle args;
 
-	lea	ecx, DWORD PTR _args$224554[esp+40]
+	lea	ecx, DWORD PTR _args$224596[esp+40]
 	call	??0CvLuaArgsHandle@@QAE@XZ		; CvLuaArgsHandle::CvLuaArgsHandle
 
 ; 642  : 		args->Push(ePlayer);
 
-	mov	ecx, DWORD PTR _args$224554[esp+40]
+	mov	ecx, DWORD PTR _args$224596[esp+40]
 	mov	edx, DWORD PTR [ecx]
 	mov	eax, DWORD PTR [edx+8]
 	push	ebp
@@ -45743,13 +45823,13 @@ $LN7@CanCreateP:
 ; 646  : 		bool bResult = false;
 ; 647  : 		if (LuaSupport::CallTestAll(pkScriptSystem, "PlayerCanFoundPantheon", args.get(), bResult))
 
-	mov	edx, DWORD PTR _args$224554[esp+40]
-	lea	ecx, DWORD PTR _bResult$224555[esp+40]
+	mov	edx, DWORD PTR _args$224596[esp+40]
+	lea	ecx, DWORD PTR _bResult$224597[esp+40]
 	push	ecx
 	push	edx
-	push	OFFSET $SG224557
+	push	OFFSET $SG224599
 	push	edi
-	mov	BYTE PTR _bResult$224555[esp+56], 0
+	mov	BYTE PTR _bResult$224597[esp+56], 0
 	call	?CallTestAll@LuaSupport@@YA_NPAVICvEngineScriptSystem1@@PBDPAVICvEngineScriptSystemArgs1@@AA_N@Z ; LuaSupport::CallTestAll
 	add	esp, 16					; 00000010H
 	test	al, al
@@ -45758,13 +45838,13 @@ $LN7@CanCreateP:
 ; 648  : 		{
 ; 649  : 			if (bResult == false) 
 
-	cmp	BYTE PTR _bResult$224555[esp+40], 0
+	cmp	BYTE PTR _bResult$224597[esp+40], 0
 	jne	SHORT $LN2@CanCreateP
 
 ; 650  : 			{
 ; 651  : 				return FOUNDING_INVALID_PLAYER;
 
-	lea	ecx, DWORD PTR _args$224554[esp+40]
+	lea	ecx, DWORD PTR _args$224596[esp+40]
 	mov	DWORD PTR __$EHRec$[esp+52], -1
 	call	??1CvLuaArgsHandle@@QAE@XZ		; CvLuaArgsHandle::~CvLuaArgsHandle
 $LN54@CanCreateP:
@@ -45811,7 +45891,7 @@ $LN2@CanCreateP:
 ; 653  : 		}
 ; 654  : 	}
 
-	lea	ecx, DWORD PTR _args$224554[esp+40]
+	lea	ecx, DWORD PTR _args$224596[esp+40]
 	mov	DWORD PTR __$EHRec$[esp+52], -1
 	call	??1CvLuaArgsHandle@@QAE@XZ		; CvLuaArgsHandle::~CvLuaArgsHandle
 $LN4@CanCreateP:
@@ -45822,13 +45902,13 @@ $LN4@CanCreateP:
 ; 658  : #else
 ; 659  : 	if (GetAvailablePantheonBeliefs().size() == 0)
 
-	lea	eax, DWORD PTR $T248414[esp+44]
+	lea	eax, DWORD PTR $T248494[esp+44]
 	push	eax
 	mov	ecx, esi
 	call	?GetAvailablePantheonBeliefs@CvGameReligions@@QAE?AV?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@XZ ; CvGameReligions::GetAvailablePantheonBeliefs
 	mov	ecx, DWORD PTR [eax+8]
 	sub	ecx, DWORD PTR [eax+4]
-	mov	eax, DWORD PTR $T248414[esp+48]
+	mov	eax, DWORD PTR $T248494[esp+48]
 	test	ecx, -4					; fffffffcH
 	sete	bl
 	test	eax, eax
@@ -45870,7 +45950,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?CanCreatePantheon@CvGameReligions@@QAE?AW4FOUNDING_RESULT@1@W4PlayerTypes@@_N@Z$0:
-	lea	ecx, DWORD PTR _args$224554[ebp-4]
+	lea	ecx, DWORD PTR _args$224596[ebp-4]
 	jmp	??1CvLuaArgsHandle@@QAE@XZ		; CvLuaArgsHandle::~CvLuaArgsHandle
 __ehhandler$?CanCreatePantheon@CvGameReligions@@QAE?AW4FOUNDING_RESULT@1@W4PlayerTypes@@_N@Z:
 	mov	eax, OFFSET __ehfuncinfo$?CanCreatePantheon@CvGameReligions@@QAE?AW4FOUNDING_RESULT@1@W4PlayerTypes@@_N@Z
@@ -45927,26 +46007,26 @@ __unwindtable$?DoPlayerTurn@CvGameReligions@@QAEXAAVCvPlayer@@@Z DD 0ffffffffH
 xdata$x	ENDS
 ;	COMDAT ?DoPlayerTurn@CvGameReligions@@QAEXAAVCvPlayer@@@Z
 _TEXT	SEGMENT
-$T248493 = -160						; size = 4
-$T248492 = -160						; size = 4
-$T248491 = -160						; size = 4
+$T248573 = -160						; size = 4
+$T248572 = -160						; size = 4
+$T248571 = -160						; size = 4
 _ePlayer$ = -160					; size = 4
 _bCouldAtStartAffordFaithPurchase$ = -153		; size = 1
-_strBuffer$224511 = -152				; size = 28
-_strBuffer$224484 = -152				; size = 28
-_strBuffer$224449 = -152				; size = 28
-_strBuffer$224429 = -152				; size = 28
-_strSummary$224420 = -152				; size = 28
-_strSummary$224515 = -124				; size = 28
-_strSummary$224495 = -124				; size = 28
-_strSummary$224452 = -124				; size = 28
-_strSummary$224432 = -124				; size = 28
-_strBuffer$224417 = -124				; size = 28
+_strBuffer$224553 = -152				; size = 28
+_strBuffer$224526 = -152				; size = 28
+_strBuffer$224491 = -152				; size = 28
+_strBuffer$224471 = -152				; size = 28
+_strSummary$224462 = -152				; size = 28
+_strSummary$224557 = -124				; size = 28
+_strSummary$224537 = -124				; size = 28
+_strSummary$224494 = -124				; size = 28
+_strSummary$224474 = -124				; size = 28
+_strBuffer$224459 = -124				; size = 28
 _szItemName$ = -96					; size = 28
-_strSummary$224531 = -68				; size = 28
-$T248490 = -68						; size = 28
-_strBuffer$224522 = -40					; size = 28
-$T248489 = -40						; size = 28
+_strSummary$224573 = -68				; size = 28
+$T248570 = -68						; size = 28
+_strBuffer$224564 = -40					; size = 28
+$T248569 = -40						; size = 28
 __$EHRec$ = -12						; size = 12
 _kPlayer$ = 8						; size = 4
 ?DoPlayerTurn@CvGameReligions@@QAEXAAVCvPlayer@@@Z PROC	; CvGameReligions::DoPlayerTurn, COMDAT
@@ -46039,15 +46119,15 @@ $LN39@DoPlayerTu:
 ; 417  : 		{
 ; 418  : 			CvString strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_ENOUGH_FAITH_FOR_MISSIONARY");
 
-	lea	ecx, DWORD PTR _strBuffer$224417[esp+176]
-	push	OFFSET $SG224419
+	lea	ecx, DWORD PTR _strBuffer$224459[esp+176]
+	push	OFFSET $SG224461
 	push	ecx
 	call	?GetLocalizedText@@YA?AVCvString@@PBD@Z	; GetLocalizedText
 
 ; 419  : 			CvString strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_ENOUGH_FAITH_FOR_MISSIONARY");
 
-	lea	edx, DWORD PTR _strSummary$224420[esp+184]
-	push	OFFSET $SG224422
+	lea	edx, DWORD PTR _strSummary$224462[esp+184]
+	push	OFFSET $SG224464
 	push	edx
 	mov	DWORD PTR __$EHRec$[esp+200], 0
 	call	?GetLocalizedText@@YA?AVCvString@@PBD@Z	; GetLocalizedText
@@ -46055,7 +46135,7 @@ $LN39@DoPlayerTu:
 
 ; 420  : 			pNotifications->Add(NOTIFICATION_CAN_BUILD_MISSIONARY, strBuffer, strSummary, -1, -1, -1);
 
-	lea	ecx, DWORD PTR _strSummary$224420[esp+176]
+	lea	ecx, DWORD PTR _strSummary$224462[esp+176]
 	mov	BYTE PTR __$EHRec$[esp+184], 1
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	-1
@@ -46063,7 +46143,7 @@ $LN39@DoPlayerTu:
 	push	-1
 	push	-1
 	push	eax
-	lea	ecx, DWORD PTR _strBuffer$224417[esp+196]
+	lea	ecx, DWORD PTR _strBuffer$224459[esp+196]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
 	push	-1487612968				; a754d3d8H
@@ -46072,10 +46152,10 @@ $LN39@DoPlayerTu:
 
 ; 421  : 		}
 
-	lea	ecx, DWORD PTR _strSummary$224420[esp+176]
+	lea	ecx, DWORD PTR _strSummary$224462[esp+176]
 	mov	BYTE PTR __$EHRec$[esp+184], 0
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR _strBuffer$224417[esp+176]
+	lea	ecx, DWORD PTR _strBuffer$224459[esp+176]
 	mov	DWORD PTR __$EHRec$[esp+184], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 $LN179@DoPlayerTu:
@@ -46094,7 +46174,7 @@ $LN179@DoPlayerTu:
 	test	al, al
 	jne	$LN177@DoPlayerTu
 	push	0
-	push	OFFSET $SG224424
+	push	OFFSET $SG224466
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	ecx, esi
@@ -46139,16 +46219,16 @@ $LN179@DoPlayerTu:
 ; 435  : 				{
 ; 436  : 					CvString strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_ENOUGH_FAITH_FOR_PANTHEON");
 
-	lea	eax, DWORD PTR _strBuffer$224429[esp+176]
-	push	OFFSET $SG224431
+	lea	eax, DWORD PTR _strBuffer$224471[esp+176]
+	push	OFFSET $SG224473
 	push	eax
 	call	?GetLocalizedText@@YA?AVCvString@@PBD@Z	; GetLocalizedText
 
 ; 437  : 
 ; 438  : 					CvString strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_ENOUGH_FAITH_FOR_PANTHEON");
 
-	lea	ecx, DWORD PTR _strSummary$224432[esp+184]
-	push	OFFSET $SG224434
+	lea	ecx, DWORD PTR _strSummary$224474[esp+184]
+	push	OFFSET $SG224476
 	mov	ebx, 2
 	push	ecx
 	mov	DWORD PTR __$EHRec$[esp+200], ebx
@@ -46157,7 +46237,7 @@ $LN179@DoPlayerTu:
 
 ; 439  : 					pNotifications->Add(NOTIFICATION_FOUND_PANTHEON, strBuffer, strSummary, -1, -1, -1);
 
-	lea	ecx, DWORD PTR _strSummary$224432[esp+176]
+	lea	ecx, DWORD PTR _strSummary$224474[esp+176]
 	mov	BYTE PTR __$EHRec$[esp+184], 3
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	-1
@@ -46165,7 +46245,7 @@ $LN179@DoPlayerTu:
 	push	-1
 	push	-1
 	push	eax
-	lea	ecx, DWORD PTR _strBuffer$224429[esp+196]
+	lea	ecx, DWORD PTR _strBuffer$224471[esp+196]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
 	push	1279997337				; 4c4b3599H
@@ -46174,10 +46254,10 @@ $LN179@DoPlayerTu:
 
 ; 440  : 				}
 
-	lea	ecx, DWORD PTR _strSummary$224432[esp+176]
+	lea	ecx, DWORD PTR _strSummary$224474[esp+176]
 	mov	BYTE PTR __$EHRec$[esp+184], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR _strBuffer$224429[esp+176]
+	lea	ecx, DWORD PTR _strBuffer$224471[esp+176]
 	mov	DWORD PTR __$EHRec$[esp+184], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -46303,15 +46383,15 @@ $LN27@DoPlayerTu:
 ; 477  : 			{
 ; 478  : 				CvString strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_ADD_REFORMATION_BELIEF");
 
-	lea	ecx, DWORD PTR _strBuffer$224449[esp+176]
-	push	OFFSET $SG224451
+	lea	ecx, DWORD PTR _strBuffer$224491[esp+176]
+	push	OFFSET $SG224493
 	push	ecx
 	call	?GetLocalizedText@@YA?AVCvString@@PBD@Z	; GetLocalizedText
 
 ; 479  : 				CvString strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_ADD_REFORMATION_BELIEF");
 
-	lea	edx, DWORD PTR _strSummary$224452[esp+184]
-	push	OFFSET $SG224454
+	lea	edx, DWORD PTR _strSummary$224494[esp+184]
+	push	OFFSET $SG224496
 	mov	ebx, 4
 	push	edx
 	mov	DWORD PTR __$EHRec$[esp+200], ebx
@@ -46320,7 +46400,7 @@ $LN27@DoPlayerTu:
 
 ; 480  : 				pNotifications->Add(NOTIFICATION_ADD_REFORMATION_BELIEF, strBuffer, strSummary, -1, -1, -1);
 
-	lea	ecx, DWORD PTR _strSummary$224452[esp+176]
+	lea	ecx, DWORD PTR _strSummary$224494[esp+176]
 	mov	BYTE PTR __$EHRec$[esp+184], 5
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	-1
@@ -46328,7 +46408,7 @@ $LN27@DoPlayerTu:
 	push	-1
 	push	-1
 	push	eax
-	lea	ecx, DWORD PTR _strBuffer$224449[esp+196]
+	lea	ecx, DWORD PTR _strBuffer$224491[esp+196]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
 	push	84632199				; 050b6287H
@@ -46337,10 +46417,10 @@ $LN27@DoPlayerTu:
 
 ; 481  : 			}
 
-	lea	ecx, DWORD PTR _strSummary$224452[esp+176]
+	lea	ecx, DWORD PTR _strSummary$224494[esp+176]
 	mov	BYTE PTR __$EHRec$[esp+184], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR _strBuffer$224449[esp+176]
+	lea	ecx, DWORD PTR _strBuffer$224491[esp+176]
 	mov	DWORD PTR __$EHRec$[esp+184], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 $LN181@DoPlayerTu:
@@ -46352,7 +46432,7 @@ $LN181@DoPlayerTu:
 ; 486  : 	bool bSelectionStillValid = true;
 ; 487  : 	CvString szItemName = "";
 
-	push	OFFSET $SG224457
+	push	OFFSET $SG224499
 	lea	ecx, DWORD PTR _szItemName$[esp+180]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 
@@ -46490,20 +46570,20 @@ $LN113@DoPlayerTu:
 
 	mov	ecx, edi
 	call	?getNameKey@CvCity@@QBEPBDXZ		; CvCity::getNameKey
-	mov	DWORD PTR $T248491[esp+176], eax
-	lea	eax, DWORD PTR $T248491[esp+176]
+	mov	DWORD PTR $T248571[esp+176], eax
+	lea	eax, DWORD PTR $T248571[esp+176]
 	push	eax
 	lea	ecx, DWORD PTR _szItemName$[esp+180]
 	push	ecx
-	lea	edx, DWORD PTR _strBuffer$224484[esp+184]
-	push	OFFSET $SG224494
+	lea	edx, DWORD PTR _strBuffer$224526[esp+184]
+	push	OFFSET $SG224536
 	push	edx
 	call	??$GetLocalizedText@VCvString@@PBD@@YA?AVCvString@@PBDABV0@ABQBD@Z ; GetLocalizedText<CvString,char const *>
 
 ; 531  : 							CvString strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_AUTOMATIC_FAITH_PURCHASE");
 
-	lea	eax, DWORD PTR _strSummary$224495[esp+192]
-	push	OFFSET $SG224497
+	lea	eax, DWORD PTR _strSummary$224537[esp+192]
+	push	OFFSET $SG224539
 	mov	bl, 9
 	push	eax
 	mov	BYTE PTR __$EHRec$[esp+208], bl
@@ -46514,7 +46594,7 @@ $LN113@DoPlayerTu:
 
 	mov	ebp, DWORD PTR [edi+108]
 	mov	edi, DWORD PTR [edi+96]
-	lea	ecx, DWORD PTR _strSummary$224495[esp+176]
+	lea	ecx, DWORD PTR _strSummary$224537[esp+176]
 	mov	BYTE PTR __$EHRec$[esp+184], 10		; 0000000aH
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	-1
@@ -46645,20 +46725,20 @@ $LN137@DoPlayerTu:
 
 	mov	ecx, ebp
 	call	?getNameKey@CvCity@@QBEPBDXZ		; CvCity::getNameKey
-	lea	ecx, DWORD PTR $T248492[esp+176]
+	lea	ecx, DWORD PTR $T248572[esp+176]
 	push	ecx
 	lea	edx, DWORD PTR _szItemName$[esp+180]
 	push	edx
-	mov	DWORD PTR $T248492[esp+184], eax
-	lea	eax, DWORD PTR _strBuffer$224511[esp+184]
-	push	OFFSET $SG224514
+	mov	DWORD PTR $T248572[esp+184], eax
+	lea	eax, DWORD PTR _strBuffer$224553[esp+184]
+	push	OFFSET $SG224556
 	push	eax
 	call	??$GetLocalizedText@VCvString@@PBD@@YA?AVCvString@@PBDABV0@ABQBD@Z ; GetLocalizedText<CvString,char const *>
 
 ; 569  : 							CvString strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_AUTOMATIC_FAITH_PURCHASE");
 
-	lea	ecx, DWORD PTR _strSummary$224515[esp+192]
-	push	OFFSET $SG224517
+	lea	ecx, DWORD PTR _strSummary$224557[esp+192]
+	push	OFFSET $SG224559
 	mov	bl, 11					; 0000000bH
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+208], bl
@@ -46667,7 +46747,7 @@ $LN137@DoPlayerTu:
 
 ; 570  : 							pNotifications->Add(NOTIFICATION_CAN_BUILD_MISSIONARY, strBuffer, strSummary, -1, -1, -1);
 
-	lea	ecx, DWORD PTR _strSummary$224515[esp+176]
+	lea	ecx, DWORD PTR _strSummary$224557[esp+176]
 	mov	BYTE PTR __$EHRec$[esp+184], 12		; 0000000cH
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	-1
@@ -46676,7 +46756,7 @@ $LN137@DoPlayerTu:
 	push	-1
 $LN185@DoPlayerTu:
 	push	eax
-	lea	ecx, DWORD PTR _strBuffer$224511[esp+196]
+	lea	ecx, DWORD PTR _strBuffer$224553[esp+196]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
 	push	-1487612968				; a754d3d8H
@@ -46685,10 +46765,10 @@ $LN185@DoPlayerTu:
 
 ; 571  : 						}
 
-	lea	ecx, DWORD PTR _strSummary$224515[esp+176]
+	lea	ecx, DWORD PTR _strSummary$224557[esp+176]
 	mov	BYTE PTR __$EHRec$[esp+184], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR _strBuffer$224511[esp+176]
+	lea	ecx, DWORD PTR _strBuffer$224553[esp+176]
 	mov	BYTE PTR __$EHRec$[esp+184], 6
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -46712,8 +46792,8 @@ $LN22@DoPlayerTu:
 ; 494  : 		{
 ; 495  : 			szItemName = GetLocalizedText("TXT_KEY_RO_AUTO_FAITH_PROPHET");
 
-	lea	edx, DWORD PTR $T248489[esp+176]
-	push	OFFSET $SG224466
+	lea	edx, DWORD PTR $T248569[esp+176]
+	push	OFFSET $SG224508
 	push	edx
 	call	?GetLocalizedText@@YA?AVCvString@@PBD@Z	; GetLocalizedText
 	add	esp, 8
@@ -46721,7 +46801,7 @@ $LN22@DoPlayerTu:
 	lea	ecx, DWORD PTR _szItemName$[esp+180]
 	mov	BYTE PTR __$EHRec$[esp+188], 7
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T248489[esp+176]
+	lea	ecx, DWORD PTR $T248569[esp+176]
 
 ; 496  : 			bSelectionStillValid = false;
 
@@ -46732,7 +46812,7 @@ $LN21@DoPlayerTu:
 ; 498  : 		else if (kPlayer.GetCurrentEra() >= GC.getInfoTypeForString("ERA_INDUSTRIAL"))
 
 	push	0
-	push	OFFSET $SG224469
+	push	OFFSET $SG224511
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	ecx, esi
@@ -46744,8 +46824,8 @@ $LN21@DoPlayerTu:
 ; 499  : 		{
 ; 500  : 			szItemName = GetLocalizedText("TXT_KEY_RO_AUTO_FAITH_PROPHET");
 
-	lea	eax, DWORD PTR $T248490[esp+176]
-	push	OFFSET $SG224471
+	lea	eax, DWORD PTR $T248570[esp+176]
+	push	OFFSET $SG224513
 	push	eax
 	call	?GetLocalizedText@@YA?AVCvString@@PBD@Z	; GetLocalizedText
 	add	esp, 8
@@ -46753,7 +46833,7 @@ $LN21@DoPlayerTu:
 	lea	ecx, DWORD PTR _szItemName$[esp+180]
 	mov	BYTE PTR __$EHRec$[esp+188], 8
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T248490[esp+176]
+	lea	ecx, DWORD PTR $T248570[esp+176]
 $LN184@DoPlayerTu:
 	mov	BYTE PTR __$EHRec$[esp+184], 6
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
@@ -46786,19 +46866,19 @@ $LN176@DoPlayerTu:
 
 	sub	esp, 28					; 0000001cH
 	lea	edx, DWORD PTR _szItemName$[esp+204]
-	mov	DWORD PTR $T248493[esp+204], esp
+	mov	DWORD PTR $T248573[esp+204], esp
 	mov	ecx, esp
 	push	edx
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
-	lea	eax, DWORD PTR _strBuffer$224522[esp+204]
-	push	OFFSET $SG224530
+	lea	eax, DWORD PTR _strBuffer$224564[esp+204]
+	push	OFFSET $SG224572
 	push	eax
 	call	??$GetLocalizedText@VCvString@@@@YA?AVCvString@@PBDV0@@Z ; GetLocalizedText<CvString>
 
 ; 589  : 			CvString strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_NEED_NEW_AUTOMATIC_FAITH_SELECTION");
 
-	lea	ecx, DWORD PTR _strSummary$224531[esp+212]
-	push	OFFSET $SG224533
+	lea	ecx, DWORD PTR _strSummary$224573[esp+212]
+	push	OFFSET $SG224575
 	mov	bl, 13					; 0000000dH
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+228], bl
@@ -46807,7 +46887,7 @@ $LN176@DoPlayerTu:
 
 ; 590  : 			pNotifications->Add(NOTIFICATION_AUTOMATIC_FAITH_PURCHASE_STOPPED, strBuffer, strSummary, -1, -1, -1);
 
-	lea	ecx, DWORD PTR _strSummary$224531[esp+176]
+	lea	ecx, DWORD PTR _strSummary$224573[esp+176]
 	mov	BYTE PTR __$EHRec$[esp+184], 14		; 0000000eH
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	-1
@@ -46815,7 +46895,7 @@ $LN176@DoPlayerTu:
 	push	-1
 	push	-1
 	push	eax
-	lea	ecx, DWORD PTR _strBuffer$224522[esp+196]
+	lea	ecx, DWORD PTR _strBuffer$224564[esp+196]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
 	push	-2062740077				; 850d1593H
@@ -46824,10 +46904,10 @@ $LN176@DoPlayerTu:
 
 ; 591  : 		}
 
-	lea	ecx, DWORD PTR _strSummary$224531[esp+176]
+	lea	ecx, DWORD PTR _strSummary$224573[esp+176]
 	mov	BYTE PTR __$EHRec$[esp+184], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR _strBuffer$224522[esp+176]
+	lea	ecx, DWORD PTR _strBuffer$224564[esp+176]
 	mov	BYTE PTR __$EHRec$[esp+184], 6
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 $LN1@DoPlayerTu:
@@ -46863,49 +46943,49 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?DoPlayerTurn@CvGameReligions@@QAEXAAVCvPlayer@@@Z$0:
-	lea	ecx, DWORD PTR _strBuffer$224417[ebp]
+	lea	ecx, DWORD PTR _strBuffer$224459[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?DoPlayerTurn@CvGameReligions@@QAEXAAVCvPlayer@@@Z$1:
-	lea	ecx, DWORD PTR _strSummary$224420[ebp]
+	lea	ecx, DWORD PTR _strSummary$224462[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?DoPlayerTurn@CvGameReligions@@QAEXAAVCvPlayer@@@Z$2:
-	lea	ecx, DWORD PTR _strBuffer$224429[ebp]
+	lea	ecx, DWORD PTR _strBuffer$224471[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?DoPlayerTurn@CvGameReligions@@QAEXAAVCvPlayer@@@Z$3:
-	lea	ecx, DWORD PTR _strSummary$224432[ebp]
+	lea	ecx, DWORD PTR _strSummary$224474[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?DoPlayerTurn@CvGameReligions@@QAEXAAVCvPlayer@@@Z$4:
-	lea	ecx, DWORD PTR _strBuffer$224449[ebp]
+	lea	ecx, DWORD PTR _strBuffer$224491[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?DoPlayerTurn@CvGameReligions@@QAEXAAVCvPlayer@@@Z$5:
-	lea	ecx, DWORD PTR _strSummary$224452[ebp]
+	lea	ecx, DWORD PTR _strSummary$224494[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?DoPlayerTurn@CvGameReligions@@QAEXAAVCvPlayer@@@Z$6:
 	lea	ecx, DWORD PTR _szItemName$[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?DoPlayerTurn@CvGameReligions@@QAEXAAVCvPlayer@@@Z$9:
-	lea	ecx, DWORD PTR _strBuffer$224484[ebp]
+	lea	ecx, DWORD PTR _strBuffer$224526[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?DoPlayerTurn@CvGameReligions@@QAEXAAVCvPlayer@@@Z$10:
-	lea	ecx, DWORD PTR _strSummary$224495[ebp]
+	lea	ecx, DWORD PTR _strSummary$224537[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?DoPlayerTurn@CvGameReligions@@QAEXAAVCvPlayer@@@Z$11:
-	lea	ecx, DWORD PTR _strBuffer$224511[ebp]
+	lea	ecx, DWORD PTR _strBuffer$224553[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?DoPlayerTurn@CvGameReligions@@QAEXAAVCvPlayer@@@Z$12:
-	lea	ecx, DWORD PTR _strSummary$224515[ebp]
+	lea	ecx, DWORD PTR _strSummary$224557[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?DoPlayerTurn@CvGameReligions@@QAEXAAVCvPlayer@@@Z$7:
-	lea	ecx, DWORD PTR $T248489[ebp]
+	lea	ecx, DWORD PTR $T248569[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?DoPlayerTurn@CvGameReligions@@QAEXAAVCvPlayer@@@Z$8:
-	lea	ecx, DWORD PTR $T248490[ebp]
+	lea	ecx, DWORD PTR $T248570[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?DoPlayerTurn@CvGameReligions@@QAEXAAVCvPlayer@@@Z$14:
-	lea	ecx, DWORD PTR _strBuffer$224522[ebp]
+	lea	ecx, DWORD PTR _strBuffer$224564[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?DoPlayerTurn@CvGameReligions@@QAEXAAVCvPlayer@@@Z$15:
-	lea	ecx, DWORD PTR _strSummary$224531[ebp]
+	lea	ecx, DWORD PTR _strSummary$224573[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?DoPlayerTurn@CvGameReligions@@QAEXAAVCvPlayer@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?DoPlayerTurn@CvGameReligions@@QAEXAAVCvPlayer@@@Z

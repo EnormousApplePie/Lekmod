@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Context Font="TwCenMT18" ColorSet="Beige_Black_Alpha" FontStyle="Shadow">
+
+  <!-- Listing Button Instance -->
+  <Instance Name="ListingButtonInstance">
+
+    <GridButton Anchor="L,T" Size="900,28" Style="ListItem" Color="255,255,255,128"  Offset="0,0" StateOffsetIncrement="0,0" ID="Button" >
+
+      <!-- Selected State  -->
+      <AlphaAnim Anchor="C,C" Offset="0,0" Size="0.0"  Pause="0" Cycle="Bounce" Speed=".5" AlphaStart="2" AlphaEnd="1" Hidden="1" ID="SelectHighlight" >
+        <Grid Anchor="C,C"  Style="GridSquareHL8" Size="900,28"  Offset="0,0" />
+      </AlphaAnim>
+
+      <Stack Anchor="L,C" StackGrowth="Right">
+        <Box ID="ServerNameBox" Anchor="L,C" Anchorside="I.O" Size="320,24" Color="255,255,255,0">
+          <Label Anchor="L,C" Offset="10,0" Font="TwCenMT18" ColorSet="Beige_Black_Alpha" FontStyle="Shadow" ID="ServerNameLabel"/>
+        </Box>
+        <Box ID="ServerMapTypeBox" Anchor="L,C" Anchorside="I.O" Size="130,24" Color="255,255,255,0">
+          <Label Anchor="C,C" Offset="0,0" Font="TwCenMT18" ColorSet="Beige_Black_Alpha" FontStyle="Shadow" ID="ServerMapTypeLabel"/>
+        </Box>
+        <Box ID="ServerMapSizeBox" Anchor="L,C" Anchorside="I.O" Size="130,24" Color="255,255,255,0">
+          <Label Anchor="C,C" Offset="0,0" Font="TwCenMT18" ColorSet="Beige_Black_Alpha" FontStyle="Shadow" ID="ServerMapSizeLabel"/>
+        </Box>
+        <Box Anchor="L,C" Anchorside="I.O" Size="130,24" Color="255,255,255,0">
+          <Label Anchor="C,C" Offset="0,0" Font="TwCenMT18" ColorSet="Beige_Black_Alpha" FontStyle="Shadow" ID="MembersLabel"/>
+        </Box>
+        <Box Anchor="L,C" Anchorside="I.O" Size="100,24" Color="255,255,255,0">
+          <Label Anchor="C,C" Offset="0,0" Font="TwCenMT18" ColorSet="Beige_Black_Alpha" FontStyle="Shadow" ID="DLCHostedLabel"/>
+        </Box>
+
+        <!--<Box Anchor="L,C" Anchorside="I.O" Size="100,24" Color="255,255,255,0">
+					<Label Anchor="C,C" Offset="0,0" Font="TwCenMT18" ColorSet="Beige_Black_Alpha" FontStyle="Shadow" ID="ModsHostedLabel" String="TXT_KEY_MULTIPLAYER_LOBBY_NO"/>
+				</Box>-->
+      </Stack>
+
+      <!-- Join Button  -->
+      <GridButton Anchor="R,C"  Style="SmallButton" Size="100,26"  Offset="20,0" StateOffsetIncrement="0,0" ID="JoinButton" >
+        <Label Anchor="C,C"  Offset="0,0" Font="TwCenMT18" ColorSet="Beige_Black_Alpha" String="TXT_KEY_MULTIPLAYER_JOIN_GAME" FontStyle="Shadow"  />
+      </GridButton>
+
+    </GridButton>
+
+  </Instance>
+
+  <!-- Overall Screen Container -->
+
+  <Image Anchor="C,C" Offset="0,-470"  Size="170,61" Texture="lekmodlogo.dds" ID="LekmodLogo" Hidden="0"/>
+  
+  <Grid Size="960,Full" Anchor="C,B" Offset="0,-39" Padding="0,0" Style="Grid9DetailFive140" ID="MainGrid" >
+
+    <Box Style="MenuLeftSideTreatment"/>
+    <Box Style="MenuRightSideTreatment"/>
+
+    <Box Style="MenuTopTreatment"/>
+    <Box Style="MenuBottomTreatment"/>
+
+    <!-- Panel Header Text -->
+    <Label Style="MenuTitleCaption" ID="TitleLabel" />
+
+    <!-- Bottom Buttons -->
+    <Box Anchor="C,B" AnchorSide="I.I" Offset="0,54"   Size="910,56" Color="255,255,255,0" >
+
+      <Stack Anchor="L,B" Offset="0,0"   Size="128,128" StackGrowth="Right" Padding="8" ID="BottomStack">
+
+        <!-- Back Button  -->
+        <GridButton Anchor="L,B"  Style="SmallButton" Size="150,32"  Offset="14,0" StateOffsetIncrement="0,0" ID="BackButton"  >
+          <Label Anchor="C,C"  Offset="0,0"  String="TXT_KEY_BACK_BUTTON" Font="TwCenMT18" ColorSet="Beige_Black_Alpha" FontStyle="Shadow"  />
+        </GridButton>
+
+        <!-- Refresh Button  -->
+        <GridButton Anchor="L,B"  Style="SmallButton" Size="150,32"  Offset="0,0" StateOffsetIncrement="0,0" ID="RefreshButton" ToolTip="TXT_KEY_MULTIPLAYER_REFRESH_GAME_LIST_TT" >
+          <Label Anchor="C,C"  Offset="0,0" Font="TwCenMT18" ColorSet="Beige_Black_Alpha" ID="RefreshButtonLabel" String="TXT_KEY_MULTIPLAYER_REFRESH_GAME_LIST" FontStyle="Shadow"  />
+        </GridButton>
+
+        <!-- List type -->
+        <Box Anchor="L,B" Size="280,30" Offset="0,3" Color="255.255.255.0" Hidden="1">
+          <PullDown Anchor="L,C" Style="GenericPullUp" ScrollThreshold="210" Size="280,30" SpaceForScroll="0" ID="ListTypePulldown" Offset="0,0" />
+          <Label Anchor="C,C" ID="ListTypeLabel" Font="TwCenMT18" FontStyle="Shadow" TruncateWidth="280" ColorSet="Beige_Black_Alpha"  Offset="0,0" />
+        </Box>
+
+        <Label Anchor="L,B" Offset="0,10" LeadingOffset="-10" WrapWidth="300" String="TXT_KEY_MULTIPLAYER_CONNECT_TO_IP" ToolTip="TXT_KEY_MULTIPLAYER_CONNECT_TO_IP_TT" ID="ConnectIPBox" Hidden="1">
+          <Box Anchor="R,C" AnchorSide="o,i" Offset="10,0" Size="124,24" Color="255,255,200,255" >
+            <Box Anchor="C,C"  Offset="0,0" Size="122,22" Color="0,0,0,255" >
+              <EditBox EditMode="0" CallOnChar="0" FocusStop="0" Obscure="0" Size="120,18" Anchor="C,C" ID="ConnectIPEdit" Font="TwCenMT14" NumberInput="0" MaxLength="64" />
+            </Box>
+          </Box>
+        </Label>
+
+      </Stack>
+
+    </Box>
+
+    <!--  Host Button  -->
+    <GridButton Anchor="R,B" ID="HostButton" ColorSet="Beige_Black" Font="TwCenMT22" FontStyle="Shadow" Offset="38,54" Size="260,45" Style="BaseButton" String="TXT_KEY_MULTIPLAYER_HOST_GAME" ToolTip="TXT_KEY_MULTIPLAYER_HOST_GAME_TT"/>
+
+    <Image Anchor="C,B" Offset="0,110" Texture="HorizontalTrim.dds" Size="926.5" />
+
+    <Container Anchor="L,T" Offset="17,44">
+
+      <!-- Top Panel  -->
+      <Box Anchor="L,T" Size="926,27" Offset="0,0" Color="0.0.0.128" >
+
+        <Stack Anchor="L,T" Size="926,24" Offset="0,-2" Padding="0" StackGrowth="Right">
+
+          <GridButton Anchor="L,T" Size="320,28" Offset="0,-1" Style="ZoomButton" ID="SortbyServer" >
+            <Label Anchor="C,C" Offset="0,-1" String="TXT_KEY_MULTIPLAYER_SERVER_NAME" Font="TwCenMT20" FontStyle="Shadow" ColorSet="Beige_Black" />
+          </GridButton>
+
+          <GridButton Anchor="L,T" Size="130,28" Offset="0,-1" Style="ZoomButton" ID="SortbyMapName" >
+            <Label Anchor="C,C" Offset="0,-1" String="TXT_KEY_AD_SETUP_MAP_TYPE" Font="TwCenMT20" FontStyle="Shadow" ColorSet="Beige_Black" />
+          </GridButton>
+
+          <GridButton Anchor="L,T" Size="130,28" Offset="0,-1" Style="ZoomButton" ID="SortbyMapSize" >
+            <Label Anchor="C,C" Offset="0,-1" String="TXT_KEY_AD_SETUP_MAP_SIZE" Font="TwCenMT20" FontStyle="Shadow" ColorSet="Beige_Black" />
+          </GridButton>
+
+          <GridButton  Anchor="L,T" Size="130,28" Offset="0,-1"  Style="ZoomButton" ID="SortbyMembers">
+            <Label Anchor="C,C" Offset="0,-1" String="TXT_KEY_MULTIPLAYER_MEMBERS" Font="TwCenMT20" FontStyle="Shadow" ColorSet="Beige_Black" />
+          </GridButton>
+
+          <GridButton  Anchor="L,T" Size="100,28" Offset="0,-1"  Style="ZoomButton" ID="SortbyDLCHosted">
+            <Label Anchor="C,C" Offset="0,-1" String="TXT_KEY_MULTIPLAYER_DLCHOSTED" Font="TwCenMT20" FontStyle="Shadow" ColorSet="Beige_Black" />
+          </GridButton>
+
+          <!--<GridButton  Anchor="L,T" Size="100,28" Offset="0,-1"  Style="ZoomButton" ID="SortbyModsHosted">
+						<Label Anchor="C,C" Offset="0,-1" String="TXT_KEY_MULTIPLAYER_MODSHOSTED" Font="TwCenMT20" FontStyle="Shadow" ColorSet="Beige_Black" />
+					</GridButton>-->
+        </Stack>
+
+        <Image Anchor="C,B" Offset="0,0" Texture="HorizontalTrim.dds" Size="924.5" />
+
+      </Box>
+
+      <!-- Scrollable list of games -->
+      <ScrollPanel Anchor="L,T" ID="ListingScrollPanel" Vertical="1" Size="906,463" Offset="0,30" AutoScrollBar="1">
+
+        <!-- Scroll Controls -->
+        <ScrollBar Style="VertSlider" Length="420"  Anchor="R,C" AnchorSide="O,I" />
+        <UpButton  Style="ScrollBarUp"  Anchor="R,T" AnchorSide="O,I" />
+        <DownButton Style="ScrollBarDown"  Anchor="R,B" AnchorSide="O,I" />
+
+        <!-- Listing Stack (Dynamic) -->
+        <Stack ID="ListingStack" StackGrowth="B" />
+
+      </ScrollPanel>
+
+    </Container>
+  </Grid>
+
+  <LuaContext FileName="Assets/UI/FrontEnd/Multiplayer/GameSetup/MPGameSetupScreen" ID="MPGameSetupScreen" Hidden="1"/>
+
+</Context>

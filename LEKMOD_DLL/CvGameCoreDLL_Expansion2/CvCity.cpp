@@ -5308,7 +5308,8 @@ int CvCity::GetFaithPurchaseCost(UnitTypes eUnit, bool bIncludeBeliefDiscounts)
 
 				if (eUnitClass == GC.getInfoTypeForString("UNITCLASS_PROPHET", true /*bHideAssert*/)) //here
 				{
-					// Can't be bought if didn't start religion
+					
+					
 					if (eReligion == NO_RELIGION)
 					{
 						iCost = -1;
@@ -5367,6 +5368,8 @@ int CvCity::GetFaithPurchaseCost(UnitTypes eUnit, bool bIncludeBeliefDiscounts)
 						iNum = kPlayer.getAdmiralsFromFaith();
 					}
 
+					
+
 					bool bAllUnlockedByBelief = false;
 					const CvReligion* pReligion = GC.getGame().GetGameReligions()->GetReligion(eReligion, getOwner());
 					if(pReligion)
@@ -5381,6 +5384,21 @@ int CvCity::GetFaithPurchaseCost(UnitTypes eUnit, bool bIncludeBeliefDiscounts)
 					{
 						iCost = GC.getGame().GetGameReligions()->GetFaithGreatPersonNumber(iNum + 1);
 					}
+					else
+					eBranch = (PolicyBranchTypes)GC.getInfoTypeForString("POLICY_BRANCH_PIETY", true /*bHideAssert*/);
+
+					//EAP: some long if statement, but here we banish scientists once again from the faith buy realm, then check the hardcoded policy branch like all the others (sadge), if true do the piety guy buy thing.
+					if (eUnitClass != GC.getInfoTypeForString("UNITCLASS_SCIENTIST", true /*bHideAssert*/) && eBranch == (PolicyBranchTypes)GC.getInfoTypeForString("POLICY_BRANCH_PIETY", true /*bHideAssert*/) && eBranch != NO_POLICY_BRANCH_TYPE && kPlayer.GetPlayerPolicies()->IsPolicyBranchFinished(eBranch) && !kPlayer.GetPlayerPolicies()->IsPolicyBranchBlocked(eBranch))
+					{
+						if(iNum > 0)
+						{
+							iCost = -1;
+						}
+						else
+
+						iCost = GC.getGame().GetGameReligions()->GetFaithGreatPersonNumber(iNum + 2);
+					}
+
 				}
 			}
 		}
@@ -11391,6 +11409,9 @@ int CvCity::getExtraSpecialistYield(YieldTypes eIndex, SpecialistTypes eSpeciali
 	int iYieldMultiplier = GET_PLAYER(getOwner()).getSpecialistExtraYield(eSpecialist, eIndex) +
 	                       GET_PLAYER(getOwner()).getSpecialistExtraYield(eIndex) +
 	                       GET_PLAYER(getOwner()).GetPlayerTraits()->GetSpecialistYieldChange(eSpecialist, eIndex);
+#ifdef LEK_TRAIT_SPECIALIST_YIELD_MAX_ONE
+						   GET_PLAYER(getOwner()).GetPlayerTraits()->GetAnySpecificSpecialistYieldChange(eSpecialist, eIndex);
+#endif
 	int iExtraYield = GetCityCitizens()->GetSpecialistCount(eSpecialist) * iYieldMultiplier;
 
 	return iExtraYield;
@@ -14633,7 +14654,29 @@ bool CvCity::IsCanPurchase(bool bTestPurchaseCost, bool bTestTrainable, UnitType
 			{
 				return false;
 			}
+#ifdef LEK_UNIQUE_FAITH_UNIT_FIX
 
+			//EAP: Unique Faith units
+
+			CvUnitEntry* pkUnitInfo = GC.getUnitInfo(eUnitType);
+			const UnitClassTypes eUnitClass = (UnitClassTypes)pkUnitInfo->GetUnitClassType();
+			CvPlayer& kPlayer = GET_PLAYER(m_eOwner);
+			const UnitTypes eThisPlayersUnitType = (UnitTypes)kPlayer.getCivilizationInfo().getCivilizationUnits(eUnitClass);
+
+			
+			if(pkUnitInfo)
+			{
+				//EAP: Unique Faith units
+				if (eThisPlayersUnitType != eUnitType)
+				{
+					return false;
+				}
+
+				if (pkUnitInfo->IsRequiresEnhancedReligion() && !(GC.getGame().GetGameReligions()->GetReligion(eReligion, NO_PLAYER)->m_bEnhanced))
+				{
+					return false;
+				}
+#else
 			CvUnitEntry* pkUnitInfo = GC.getUnitInfo(eUnitType);
 			if(pkUnitInfo)
 			{
@@ -14641,6 +14684,9 @@ bool CvCity::IsCanPurchase(bool bTestPurchaseCost, bool bTestTrainable, UnitType
 				{
 					return false;
 				}
+#endif
+
+				
 
 				
 				if (pkUnitInfo->IsRequiresFaithPurchaseEnabled())

@@ -7653,9 +7653,9 @@ bool CvPlayer::canTrain(UnitTypes eUnit, bool bContinue, bool bTestVisible, bool
 	if(pUnitInfo.IsFound() || pUnitInfo.IsFoundAbroad())
 	{
 #if defined(NQM_AI_GIMP_NO_BUILDING_SETTLERS) && defined(AUI_PLAYER_FIX_ENSURE_NO_CS_SETTLER)
-		if (isMinorCiv() || (isHuman() && GC.getGame().isOption(GAMEOPTION_ONE_CITY_CHALLENGE)) || (!isHuman() && GC.getGame().isOption("GAMEOPTION_AI_GIMP_NO_BUILDING_SETTLERS")))
+		if (isMinorCiv() || (isHuman() && GC.getGame().isOption(GAMEOPTION_ONE_CITY_CHALLENGE)) || (!isHuman() && GC.getGame().isOption("GAMEOPTION_AI_TWEAKS")))
 #elif defined(NQM_AI_GIMP_NO_BUILDING_SETTLERS)
-		if ((isHuman() && GC.getGame().isOption(GAMEOPTION_ONE_CITY_CHALLENGE)) || (!isHuman() && GC.getGame().isOption("GAMEOPTION_AI_GIMP_NO_BUILDING_SETTLERS")))
+		if ((isHuman() && GC.getGame().isOption(GAMEOPTION_ONE_CITY_CHALLENGE)) || (!isHuman() && (GC.getGame().isOption("GAMEOPTION_AI_TWEAKS") || GC.getGame().isOption("GAMEOPTION_AI_GIMP_NO_BUILDING_SETTLERS"))))
 #elif defined(AUI_PLAYER_FIX_ENSURE_NO_CS_SETTLER)
 		if (isMinorCiv() || (GC.getGame().isOption(GAMEOPTION_ONE_CITY_CHALLENGE) && isHuman()))
 #else
@@ -9326,7 +9326,6 @@ void CvPlayer::processBuilding(BuildingTypes eBuilding, int iChange, bool bFirst
 			changeSpecialistExtraYield(((SpecialistTypes)iI), ((YieldTypes)iJ), (pBuildingInfo->GetSpecialistYieldChange(iI, iJ) * iChange));
 		}
 	}
-
 	int iOldEspionageModifier = GetEspionageModifier();
 	ChangeEspionageModifier(pBuildingInfo->GetGlobalEspionageModifier() * iChange);
 	if(iOldEspionageModifier != GetEspionageModifier())
@@ -9505,6 +9504,51 @@ bool CvPlayer::canBuild(const CvPlot* pPlot, BuildTypes eBuild, bool bTestEra, b
 			}
 		}
 	}
+
+	// EAP: NO build : Is this an improvement that cannot be built by a specific civ?
+	
+	if(eImprovement != NO_IMPROVEMENT)
+	{	
+
+		//allow CivSpecific builds regardless of the NoBuild table, so civs can still have unique builds that lead to "removed" improvements
+		CvBuildInfo* pkBuildInfo = GC.getBuildInfo(eBuild);
+		if(pkBuildInfo->IsSpecificCivRequired())
+		{
+			CivilizationTypes eCiv = pkBuildInfo->GetRequiredCivilization();
+			if(eCiv != getCivilizationType())
+			{
+				return false;
+			}
+			else
+			{
+				return true;
+			}
+		}
+		else
+		{
+			CvImprovementEntry* pkEntry = GC.getImprovementInfo(eImprovement);
+			if (GetPlayerTraits()->NoBuild(eImprovement))
+			{
+					return false;
+			}
+		}
+	}
+
+	// Is this a !!build!! that is only useable by a specific civ? ~EAP
+
+	if(eImprovement != NO_IMPROVEMENT)
+	{
+		CvBuildInfo* pkBuildInfo = GC.getBuildInfo(eBuild);
+		if(pkBuildInfo->IsSpecificCivRequired())
+		{
+			CivilizationTypes eCiv = pkBuildInfo->GetRequiredCivilization();
+			if(eCiv != getCivilizationType())
+			{
+				return false;
+			}
+		}
+	}
+
 
 	if(!bTestVisible)
 	{
@@ -10060,15 +10104,18 @@ int CvPlayer::specialistYield(SpecialistTypes eSpecialist, YieldTypes eYield) co
 		CvAssert(pkSpecialistInfo);
 		return 0;
 	}
-
+#ifndef LEK_TRAIT_SPECIALIST_YIELD_MAX_ONE
 	int iRtnValue = pkSpecialistInfo->getYieldChange(eYield) + getSpecialistExtraYield(eSpecialist, eYield) + GetPlayerTraits()->GetSpecialistYieldChange(eSpecialist, eYield);
-
+#else
+	int iRtnValue = pkSpecialistInfo->getYieldChange(eYield) + getSpecialistExtraYield(eSpecialist, eYield) + GetPlayerTraits()->GetSpecialistYieldChange(eSpecialist, eYield) + GetPlayerTraits()->GetAnySpecificSpecialistYieldChange(eSpecialist, eYield);
+#endif
 	if (eSpecialist != GC.getDEFAULT_SPECIALIST())
 	{
 		iRtnValue += getSpecialistExtraYield(eYield);
 	}
 	return (iRtnValue);
 }
+
 
 //	--------------------------------------------------------------------------------
 /// How much additional Yield does every City produce?
@@ -10601,7 +10648,11 @@ int CvPlayer::GetCulturePerTurnFromReligionTimes100() const
 			iTemp = pReligion->m_Beliefs.GetYieldChangePerXForeignFollowers(YIELD_CULTURE);
 			if (iTemp > 0)
 			{
+#ifdef LEK_CULTURE_SCIENCE_SPREAD_BELIEFS_ALL_CITIES
+				int iFollowers = pReligions->GetNumFollowers(eFoundedReligion);
+#else
 				int iFollowers = GetReligions()->GetNumForeignFollowers(false /*bAtPeace*/);
+#endif
 				if (iFollowers > 0)
 				{
 					iReligionCulturePerTurn += (iFollowers / iTemp);
@@ -19064,7 +19115,11 @@ int CvPlayer::GetScienceFromOtherPlayersTimes100() const
 			int iTemp = pReligion->m_Beliefs.GetYieldChangePerXForeignFollowers(YIELD_SCIENCE);
 			if (iTemp > 0)
 			{
+#ifdef LEK_CULTURE_SCIENCE_SPREAD_BELIEFS_ALL_CITIES
+				int iFollowers = pReligions->GetNumFollowers(eFoundedReligion);
+#else
 				int iFollowers = GetReligions()->GetNumForeignFollowers(false /*bAtPeace*/);
+#endif
 				if (iFollowers > 0)
 				{
 					iScienceFromPlayer = (iFollowers / iTemp);

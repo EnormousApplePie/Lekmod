@@ -71,6 +71,11 @@ CvTraitEntry::CvTraitEntry() :
 	m_iFreeUnitClassType(NO_UNITCLASS),
 	m_iNaturalWonderFirstFinderGold(0),
 	m_iNaturalWonderSubsequentFinderGold(0),
+
+	//EAP: Natural wonder faith for the finder
+	m_iNaturalWonderFirstFinderFaith(0),
+	m_iNaturalWonderSubsequentFinderFaith(0),
+
 	m_iNaturalWonderYieldModifier(0),
 	m_iNaturalWonderHappinessModifier(0),
 	m_iNearbyImprovementCombatBonus(0),
@@ -160,6 +165,9 @@ CvTraitEntry::CvTraitEntry() :
 #else
 	m_ppiImprovementYieldChanges(NULL),
 	m_ppiSpecialistYieldChanges(NULL),
+#ifdef LEK_TRAIT_SPECIALIST_YIELD_MAX_ONE
+	m_ppiAnySpecificSpecialistYieldChanges(NULL),
+#endif
 	m_ppiUnimprovedFeatureYieldChanges(NULL)
 #endif
 {
@@ -175,6 +183,9 @@ CvTraitEntry::~CvTraitEntry()
 #else
 	CvDatabaseUtility::SafeDelete2DArray(m_ppiImprovementYieldChanges);
 	CvDatabaseUtility::SafeDelete2DArray(m_ppiSpecialistYieldChanges);
+#ifdef LEK_TRAIT_SPECIALIST_YIELD_MAX_ONE
+	CvDatabaseUtility::SafeDelete2DArray(m_ppiAnySpecificSpecialistYieldChanges);
+#endif
 	CvDatabaseUtility::SafeDelete2DArray(m_ppiUnimprovedFeatureYieldChanges);
 #endif
 #ifdef AUI_WARNING_FIXES
@@ -457,6 +468,22 @@ int CvTraitEntry::GetNaturalWonderSubsequentFinderGold() const
 {
 	return m_iNaturalWonderSubsequentFinderGold;
 }
+
+///////////////////
+//EAP: Faith for finding a Natural Wonder
+// Accessor:: bonus faith for being first to find a natural wonder
+int CvTraitEntry::GetNaturalWonderFirstFinderFaith() const
+{
+	return m_iNaturalWonderFirstFinderFaith;
+}
+
+/// Accessor:: bonus faith for being first to find a natural wonder
+int CvTraitEntry::GetNaturalWonderSubsequentFinderFaith() const
+{
+	return m_iNaturalWonderSubsequentFinderFaith;
+}
+/////////////////
+
 
 /// Accessor:: modifier to bonuses for having natural wonders worked or in territory
 int CvTraitEntry::GetNaturalWonderYieldModifier() const
@@ -920,6 +947,20 @@ int CvTraitEntry::GetSpecialistYieldChanges(SpecialistTypes eIndex1, YieldTypes 
 #endif
 }
 
+#ifdef LEK_TRAIT_SPECIALIST_YIELD_MAX_ONE
+int CvTraitEntry::GetAnySpecificSpecialistYieldChanges(SpecialistTypes eIndex1, YieldTypes eIndex2) const
+{
+	CvAssertMsg(eIndex1 < GC.getNumSpecialistInfos(), "Index out of bounds");
+	CvAssertMsg(eIndex1 > -1, "Index out of bounds");
+	CvAssertMsg(eIndex2 < NUM_YIELD_TYPES, "Index out of bounds");
+	CvAssertMsg(eIndex2 > -1, "Index out of bounds");
+#ifdef AUI_DATABASE_UTILITY_PROPER_2D_ALLOCATION_AND_DESTRUCTION
+	return m_ppiAnySpecificSpecialistYieldChanges.first ? m_ppiAnySpecificSpecialistYieldChanges.first[eIndex1][eIndex2] : 0;
+#else
+	return m_ppiAnySpecificSpecialistYieldChanges ? m_ppiAnySpecificSpecialistYieldChanges[eIndex1][eIndex2] : 0;
+#endif
+}
+#endif
 /// Accessor:: Extra yield from an unimproved feature
 int CvTraitEntry::GetUnimprovedFeatureYieldChanges(FeatureTypes eIndex1, YieldTypes eIndex2) const
 {
@@ -1034,6 +1075,20 @@ bool CvTraitEntry::NoTrain(UnitClassTypes eUnitClass)
 	}
 }
 
+//EAP: No build
+
+bool CvTraitEntry::NoBuild(ImprovementTypes eImprovementType)
+{
+	if (eImprovementType != NO_IMPROVEMENT)
+	{
+		return m_abNoBuildImprovement[eImprovementType];
+	}
+	else
+	{
+		return false;
+	}
+}
+
 /// Load XML data
 bool CvTraitEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility& kUtility)
 {
@@ -1091,6 +1146,11 @@ bool CvTraitEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility& 
 	m_iExtraEmbarkMoves						= kResults.GetInt("ExtraEmbarkMoves");
 	m_iNaturalWonderFirstFinderGold         = kResults.GetInt("NaturalWonderFirstFinderGold");
 	m_iNaturalWonderSubsequentFinderGold    = kResults.GetInt("NaturalWonderSubsequentFinderGold");
+
+	//EAP: Faith for the Natural wonder findor
+	m_iNaturalWonderFirstFinderFaith         = kResults.GetInt("NaturalWonderFirstFinderFaith");
+	m_iNaturalWonderSubsequentFinderFaith    = kResults.GetInt("NaturalWonderSubsequentFinderFaith");
+
 	m_iNaturalWonderYieldModifier           = kResults.GetInt("NaturalWonderYieldModifier");
 	m_iNaturalWonderHappinessModifier       = kResults.GetInt("NaturalWonderHappinessModifier");
 	m_iNearbyImprovementCombatBonus			= kResults.GetInt("NearbyImprovementCombatBonus");
@@ -1369,6 +1429,7 @@ bool CvTraitEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility& 
 		kUtility.Initialize2DArray(m_ppiSpecialistYieldChanges, "Specialists", "Yields");
 #endif
 
+
 		std::string strKey("Building_SpecialistYieldChanges");
 		Database::Results* pResults = kUtility.GetResults(strKey);
 		if(pResults == NULL)
@@ -1389,9 +1450,45 @@ bool CvTraitEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility& 
 #else
 			m_ppiSpecialistYieldChanges[SpecialistID][YieldID] = yield;
 #endif
+
 		}
 	}
 
+#ifdef LEK_TRAIT_SPECIALIST_YIELD_MAX_ONE
+	//AnySpecificSpecialistYieldChanges
+	{
+#ifdef AUI_DATABASE_UTILITY_PROPER_2D_ALLOCATION_AND_DESTRUCTION
+		kUtility.Initialize2DArray(m_ppiAnySpecificSpecialistYieldChanges.first, "Specialists", "Yields");
+		m_ppiAnySpecificSpecialistYieldChanges.second = kUtility.MaxRows("Specialists");
+#else
+		kUtility.Initialize2DArray(m_ppiAnySpecificSpecialistYieldChanges, "Specialists", "Yields");
+#endif
+
+
+		std::string strKey("Building_SpecialistYieldChanges");
+		Database::Results* pResults = kUtility.GetResults(strKey);
+		if(pResults == NULL)
+		{
+			pResults = kUtility.PrepareResults(strKey, "select Specialists.ID as SpecialistID, Yields.ID as YieldID, Yield from Trait_AnySpecificSpecialistYieldChanges inner join Specialists on Specialists.Type = SpecialistType inner join Yields on Yields.Type = YieldType where TraitType = ?");
+		}
+
+		pResults->Bind(1, szTraitType);
+
+		while(pResults->Step())
+		{
+			const int SpecialistID = pResults->GetInt(0);
+			const int YieldID = pResults->GetInt(1);
+			const int yield = pResults->GetInt(2);
+
+#ifdef AUI_DATABASE_UTILITY_PROPER_2D_ALLOCATION_AND_DESTRUCTION
+			m_ppiAnySpecificSpecialistYieldChanges.first[SpecialistID][YieldID] = yield;
+#else
+			m_ppiAnySpecificSpecialistYieldChanges[SpecialistID][YieldID] = yield;
+#endif
+
+		}
+	}
+#endif
 	//UnimprovedFeatureYieldChanges
 	{
 #ifdef AUI_DATABASE_UTILITY_PROPER_2D_ALLOCATION_AND_DESTRUCTION
@@ -1451,6 +1548,34 @@ bool CvTraitEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility& 
 			m_abNoTrainUnitClass[iUnitClass] = true;
 		}
 	}
+
+
+	// EAP: NoBuild
+	{
+
+		int iImprovementLoop;
+		for(int iImprovementLoop = 0; iImprovementLoop < GC.getNumImprovementInfos(); iImprovementLoop++)
+
+		{
+			m_abNoBuildImprovement.push_back(false);
+		}
+
+		std::string strKey("Trait_NoBuild");
+		Database::Results* pResults = kUtility.GetResults(strKey);
+		if (pResults == NULL)
+		{
+			pResults = kUtility.PrepareResults(strKey, "SELECT Traits.ID, Improvements.ID FROM Trait_NoBuild inner join Traits on Trait_NoBuild.TraitType = Traits.Type inner join Improvements on Trait_NoBuild.ImprovementType = Improvements.Type where TraitType = ?");
+		}
+
+		pResults->Bind(1, szTraitType);
+
+		while (pResults->Step())
+		{
+			const int iImprovementID = pResults->GetInt(1);
+			m_abNoBuildImprovement[iImprovementID] = true;
+		}
+	}
+	
 
 	// FreeResourceXCities
 	{
@@ -1646,6 +1771,11 @@ void CvPlayerTraits::InitPlayerTraits()
 			m_iExtraEmbarkMoves += trait->GetExtraEmbarkMoves();
 			m_iNaturalWonderFirstFinderGold += trait->GetNaturalWonderFirstFinderGold();
 			m_iNaturalWonderSubsequentFinderGold += trait->GetNaturalWonderSubsequentFinderGold();
+		
+			//EAP: Natural wonder faith for the finder
+			m_iNaturalWonderFirstFinderFaith += trait->GetNaturalWonderFirstFinderFaith();
+			m_iNaturalWonderSubsequentFinderFaith += trait->GetNaturalWonderSubsequentFinderFaith();
+
 			m_iNaturalWonderYieldModifier += trait->GetNaturalWonderYieldModifier();
 			m_iNaturalWonderHappinessModifier += trait->GetNaturalWonderHappinessModifier();
 			m_iNearbyImprovementCombatBonus += trait->GetNearbyImprovementCombatBonus();
@@ -1824,6 +1954,19 @@ void CvPlayerTraits::InitPlayerTraits()
 						m_ppaaiSpecialistYieldChange[iSpecialistLoop] = yields;
 					}
 				}
+#ifdef LEK_TRAIT_SPECIALIST_YIELD_MAX_ONE
+				for(int iSpecialistLoop = 0; iSpecialistLoop < 2; iSpecialistLoop++)
+
+				{
+					int iChange = trait->GetAnySpecificSpecialistYieldChanges((SpecialistTypes)iSpecialistLoop, (YieldTypes)iYield);
+					if(iChange > 0)
+					{
+						Firaxis::Array<int, NUM_YIELD_TYPES> yields = m_ppaaiAnySpecificSpecialistYieldChange[iSpecialistLoop];
+						yields[iYield] = (m_ppaaiAnySpecificSpecialistYieldChange[iSpecialistLoop][iYield] + iChange);
+						m_ppaaiAnySpecificSpecialistYieldChange[iSpecialistLoop] = yields;
+					}
+				}
+#endif
 			}
 			CvAssert(GC.getNumTerrainInfos() <= NUM_TERRAIN_TYPES);
 #ifdef AUI_WARNING_FIXES
@@ -1851,6 +1994,12 @@ void CvPlayerTraits::InitPlayerTraits()
 #endif
 			{
 				m_abNoTrain[iUnitClass] = trait->NoTrain((UnitClassTypes)iUnitClass);
+			}
+
+			//EAP: No Build
+			for (int iImprovement = 0; iImprovement < GC.getNumImprovementInfos(); iImprovement++)
+			{
+				m_abNoBuild[iImprovement] = trait->NoBuild((ImprovementTypes)iImprovement);
 			}
 
 			FreeTraitUnit traitUnit;
@@ -1899,10 +2048,18 @@ void CvPlayerTraits::Uninit()
 {
 	m_aiResourceQuantityModifier.clear();
 	m_abNoTrain.clear();
+	//EAP: No build
+	m_abNoBuild.clear();
+
 	m_paiMovesChangeUnitCombat.clear();
 	m_paiMaintenanceModifierUnitCombat.clear();
 	m_ppaaiImprovementYieldChange.clear();
 	m_ppaaiSpecialistYieldChange.clear();
+
+#ifdef LEK_TRAIT_SPECIALIST_YIELD_MAX_ONE
+	m_ppaaiAnySpecificSpecialistYieldChange.clear();
+#endif
+
 	m_ppaaiUnimprovedFeatureYieldChange.clear();
 	m_aFreeResourceXCities.clear();
 }
@@ -1964,6 +2121,11 @@ void CvPlayerTraits::Reset()
 	m_iExtraEmbarkMoves = 0;
 	m_iNaturalWonderFirstFinderGold = 0;
 	m_iNaturalWonderSubsequentFinderGold = 0;
+
+	//EAP: Natural wonder faith for the finder
+	m_iNaturalWonderFirstFinderFaith = 0;
+	m_iNaturalWonderSubsequentFinderFaith = 0;
+
 	m_iNaturalWonderYieldModifier = 0;
 	m_iNaturalWonderHappinessModifier = 0;
 	m_iNearbyImprovementCombatBonus = 0;
@@ -2029,7 +2191,14 @@ void CvPlayerTraits::Reset()
 	m_ppaaiImprovementYieldChange.clear();
 	m_ppaaiImprovementYieldChange.resize(GC.getNumImprovementInfos());
 	m_ppaaiSpecialistYieldChange.clear();
+#ifdef LEK_TRAIT_SPECIALIST_YIELD_MAX_ONE
+	m_ppaaiAnySpecificSpecialistYieldChange.clear();
+#endif
 	m_ppaaiSpecialistYieldChange.resize(GC.getNumSpecialistInfos());
+#ifdef LEK_TRAIT_SPECIALIST_YIELD_MAX_ONE
+	m_ppaaiAnySpecificSpecialistYieldChange.resize(GC.getNumSpecialistInfos());
+#endif
+
 	m_ppaaiUnimprovedFeatureYieldChange.clear();
 	m_ppaaiUnimprovedFeatureYieldChange.resize(GC.getNumFeatureInfos());
 
@@ -2069,6 +2238,12 @@ void CvPlayerTraits::Reset()
 		{
 			m_ppaaiSpecialistYieldChange[iSpecialist] = yield;
 		}
+#ifdef LEK_TRAIT_SPECIALIST_YIELD_MAX_ONE
+		for(int iSpecialist = 0; iSpecialist < 2; iSpecialist++)
+		{
+			m_ppaaiAnySpecificSpecialistYieldChange[iSpecialist] = yield;
+		}
+#endif
 		for(int iFeature = 0; iFeature < GC.getNumFeatureInfos(); iFeature++)
 #endif
 		{
@@ -2106,6 +2281,14 @@ void CvPlayerTraits::Reset()
 #endif
 	{
 		m_abNoTrain[iUnitClass] = false;
+	}
+
+	// EAP: No build
+	m_abNoBuild.clear();
+	m_abNoBuild.resize(GC.getNumImprovementInfos());
+	for (int iImprovement = 0; iImprovement < GC.getNumUnitClassInfos(); iImprovement++)
+	{
+		m_abNoBuild[iImprovement] = false;
 	}
 
 	m_aFreeTraitUnits.clear();
@@ -2282,7 +2465,21 @@ int CvPlayerTraits::GetSpecialistYieldChange(SpecialistTypes eSpecialist, YieldT
 
 	return m_ppaaiSpecialistYieldChange[(int)eSpecialist][(int)eYield];
 }
+#ifdef LEK_TRAIT_SPECIALIST_YIELD_MAX_ONE
+/// Extra yield from specific specialist once
+int CvPlayerTraits::GetAnySpecificSpecialistYieldChange(SpecialistTypes eSpecialist, YieldTypes eYield) const
+{
+	CvAssertMsg(eSpecialist < GC.getNumSpecialistInfos(),  "Invalid eSpecialist parameter in call to CvPlayerTraits::GetAnySpecificSpecialistYieldChange()");
+	CvAssertMsg(eYield < NUM_YIELD_TYPES,  "Invalid eYield parameter in call to CvPlayerTraits::GetAnySpecificSpecialistYieldChange()");
 
+	if(eSpecialist == NO_SPECIALIST)
+	{
+		return 0;
+	}
+
+	return m_ppaaiAnySpecificSpecialistYieldChange[(int)eSpecialist][(int)eYield];
+}
+#endif
 /// Extra yield from a feature without improvement
 int CvPlayerTraits::GetUnimprovedFeatureYieldChange(FeatureTypes eFeature, YieldTypes eYield) const
 {
@@ -2608,6 +2805,20 @@ bool CvPlayerTraits::NoTrain(UnitClassTypes eUnitClassType)
 	}
 }
 
+
+// EAP: No build
+
+bool CvPlayerTraits::NoBuild(ImprovementTypes eImprovementType)
+{
+	if (eImprovementType != NO_IMPROVEMENT)
+	{
+		return m_abNoBuild[eImprovementType];
+	}
+	else
+	{
+		return false;
+	}
+}
 
 // MAYA TRAIT SPECIAL METHODS
 
@@ -3059,6 +3270,15 @@ void CvPlayerTraits::Read(FDataStream& kStream)
 
 	kStream >> m_iNaturalWonderSubsequentFinderGold;
 
+
+	//EAP: Natural wonder faith for the finder:
+
+	kStream >> m_iNaturalWonderFirstFinderFaith;
+
+	kStream >> m_iNaturalWonderSubsequentFinderFaith;
+
+	//
+
 	kStream >> m_iNaturalWonderYieldModifier;
 	kStream >> m_iNaturalWonderHappinessModifier;
 
@@ -3319,6 +3539,16 @@ void CvPlayerTraits::Read(FDataStream& kStream)
 		kStream >> bValue;
 		m_abNoTrain.push_back(bValue);
 	}
+	
+	//EAP: No build
+	kStream >> iNumEntries;
+	m_abNoBuild.clear();
+	for (int i = 0; i < iNumEntries; i++)
+	{
+		bool bValue;
+		kStream >> bValue;
+		m_abNoBuild.push_back(bValue);
+	}
 
 	kStream >> iNumEntries;
 	m_aFreeTraitUnits.clear();
@@ -3354,7 +3584,9 @@ void CvPlayerTraits::Read(FDataStream& kStream)
 
 	kStream >> m_ppaaiImprovementYieldChange;
 	kStream >> m_ppaaiSpecialistYieldChange;
-
+#ifdef LEK_TRAIT_SPECIALIST_YIELD_MAX_ONE
+	kStream >> m_ppaaiAnySpecificSpecialistYieldChange;
+#endif
 	kStream >> m_ppaaiUnimprovedFeatureYieldChange;
 
 	if (uiVersion >= 11)
@@ -3434,6 +3666,13 @@ void CvPlayerTraits::Write(FDataStream& kStream)
 	kStream << m_iNaturalWonderFirstFinderGold;
 	kStream << m_iNaturalWonderSubsequentFinderGold;
 	kStream << m_iNaturalWonderYieldModifier;
+	//EAP: Natural wonder faith for the finder
+	
+	kStream << m_iNaturalWonderFirstFinderFaith;
+	kStream << m_iNaturalWonderSubsequentFinderFaith;
+	
+
+	//
 	kStream << m_iNaturalWonderHappinessModifier;
 	kStream << m_iNearbyImprovementCombatBonus;
 	kStream << m_iNearbyImprovementBonusRange;
@@ -3528,6 +3767,13 @@ void CvPlayerTraits::Write(FDataStream& kStream)
 	{
 		kStream << m_abNoTrain[ui];
 	}
+	
+	// EAP: No build
+	kStream << m_abNoBuild.size();
+	for (uint ui = 0; ui < m_abNoBuild.size(); ui++)
+	{
+		kStream << m_abNoBuild[ui];
+	}
 
 	kStream << m_aFreeTraitUnits.size();
 	for(uint ui = 0; ui < m_aFreeTraitUnits.size(); ui++)
@@ -3549,6 +3795,9 @@ void CvPlayerTraits::Write(FDataStream& kStream)
 
 	kStream << m_ppaaiImprovementYieldChange;
 	kStream << m_ppaaiSpecialistYieldChange;
+#ifdef LEK_TRAIT_SPECIALIST_YIELD_MAX_ONE
+	kStream << m_ppaaiAnySpecificSpecialistYieldChange;
+#endif
 	kStream << m_ppaaiUnimprovedFeatureYieldChange;
 
 	kStream << (int)m_aUniqueLuxuryAreas.size();
