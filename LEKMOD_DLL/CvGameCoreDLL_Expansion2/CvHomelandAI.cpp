@@ -1211,8 +1211,8 @@ void CvHomelandAI::PlotWorkerMoves()
 		if(pUnit)
 		{
 			if(pUnit->AI_getUnitAIType() == UNITAI_WORKER  ||
-#ifdef AUI_WARNING_FIXES
-				(pUnit->IsAutomated() && pUnit->getDomainType() == DOMAIN_LAND && pUnit->GetAutomateType() == AUTOMATE_BUILD))
+#ifdef AI_WORKER_EMBARKED_FIX
+				(pUnit->IsAutomated() && (pUnit->getDomainType() == DOMAIN_LAND && (pUnit->getUnitInfo().GetUnitAIType(UNITAI_WORKER) || pUnit->getUnitInfo().GetUnitAIType(UNITAI_WORKER_SEA)) && pUnit->GetAutomateType() == AUTOMATE_BUILD)))
 #else
 			        pUnit->IsAutomated() && pUnit->getDomainType() == DOMAIN_LAND && pUnit->GetAutomateType() == AUTOMATE_BUILD)
 #endif
@@ -1273,7 +1273,12 @@ void CvHomelandAI::PlotWorkerSeaMoves()
 #ifdef AUI_WARNING_FIXES
 				(pUnit->IsAutomated() && pUnit->getDomainType() == DOMAIN_SEA && pUnit->GetAutomateType() == AUTOMATE_BUILD))
 #else
-			   pUnit->IsAutomated() && pUnit->getDomainType() == DOMAIN_SEA && pUnit->GetAutomateType() == AUTOMATE_BUILD)
+#ifdef AI_WORKER_EMBARKED_FIX
+				(pUnit->IsAutomated() && pUnit->getDomainType() == DOMAIN_SEA && pUnit->GetAutomateType() == AUTOMATE_BUILD))
+				
+#else
+				(pUnit->IsAutomated() && pUnit->getDomainType() == DOMAIN_SEA && pUnit->GetAutomateType() == AUTOMATE_BUILD))
+#endif
 #endif
 			{
 				CvHomelandUnit unit;

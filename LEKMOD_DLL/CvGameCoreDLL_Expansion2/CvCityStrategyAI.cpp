@@ -2613,7 +2613,17 @@ bool CityStrategyAIHelpers::IsTestCityStrategy_NeedNavalTileImprovement(CvCity* 
 	// Are there more Water Resources we can build an Improvement on than we have Naval Tile Improvers?
 	if(iNumUnimprovedWaterResources > iNumWaterTileImprovers)
 	{
+#ifdef AI_WORKER_EMBARKED_FIX
+		if ( iNumWaterTileImprovers >= 1 )
+		{
+			return false;
+		}
+		else {
 		return true;
+		}
+#else
+		return true;
+#endif
 	}
 
 	return false;
@@ -2635,6 +2645,68 @@ bool CityStrategyAIHelpers::IsTestCityStrategy_EnoughNavalTileImprovement(CvCity
 			return true;
 		}
 	}
+#ifdef AI_WORKER_EMBARKED_FIX
+	int iX = pCity->getX(); int iY = pCity->getY(); CvPlayerAI& iOwner = GET_PLAYER(pCity->getOwner());
+
+	int iNumWorkersHere = 0;
+	int iCanImprove = 0;
+	for (int iCityPlotLoop = 0; iCityPlotLoop < RING5_PLOTS; iCityPlotLoop++)
+	{
+		CvPlot* pLoopPlot = plotCity(iX, iY, iCityPlotLoop);
+
+		// Invalid plot or not owned by this player
+		if (pLoopPlot == NULL || pLoopPlot->getOwner() != pCity->getOwner())
+		{
+			continue;
+		}
+		//No improved, no impassable, water only.
+		if(pLoopPlot->getImprovementType() == NO_IMPROVEMENT && !pLoopPlot->isImpassable() && pLoopPlot->isWater())
+		{
+			CvUnit* pLoopUnit;
+			for(int iUnitLoop = 0; iUnitLoop < pLoopPlot->getNumUnits(); iUnitLoop++)
+			{
+				//Workers nearby?
+				pLoopUnit = pLoopPlot->getUnitByIndex(iUnitLoop);
+				if(pLoopUnit != NULL && pLoopUnit->getOwner() == pCity->GetID() && pLoopUnit->AI_getUnitAIType() == UNITAI_WORKER_SEA)
+				{
+					iNumWorkersHere++;
+				}
+			}
+			for(int iI = 0; iI < GC.getNumBuildInfos(); ++iI)
+			{
+				CvBuildInfo* pkBuildInfo = GC.getBuildInfo((BuildTypes) iI);
+				if(!pkBuildInfo)
+				{
+					continue;
+				}
+				ImprovementTypes eImprovement = (ImprovementTypes)GC.getBuildInfo((BuildTypes) iI)->getImprovement();
+				if(eImprovement != NO_IMPROVEMENT)
+				{
+					CvImprovementEntry* pkEntry = GC.getImprovementInfo(eImprovement);
+					if(pkEntry->IsCreatedByGreatPerson())
+						continue;
+				}
+
+				//Valid right now with any worker valid build?
+				if(GET_PLAYER(pCity->getOwner()).canBuild(pLoopPlot, (BuildTypes)iI))
+				{
+					iCanImprove++;
+					break;
+				}
+			}
+		}
+	}
+	//No tiles to improve?
+	if(iCanImprove <= 0)
+	{
+		return true;
+	}
+	//Enough workers already here? 1:1 ratio is good ratio.
+	if(iNumWorkersHere > iCanImprove)
+	{
+		return true;
+	}
+#endif
 
 	return false;
 }

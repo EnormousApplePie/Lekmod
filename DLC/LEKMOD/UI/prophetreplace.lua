@@ -68,6 +68,7 @@ end
 
 function PlaceExtraJuiceResource(startingPlot, resourceID)
     local plots = {}
+	print("running placeExtraJuice")
     for loopPlot in PlotAreaSweepIterator(startingPlot, 3, SECTOR_NORTH, DIRECTION_CLOCKWISE, DIRECTION_OUTWARDS, CENTRE_EXCLUDE) do
         table.insert(plots, loopPlot)
     end
@@ -77,11 +78,16 @@ function PlaceExtraJuiceResource(startingPlot, resourceID)
 		while (not isPlaced) and #plots > 0 do
 			local randomNumber = GetRandom(1, #plots)
 			local plot = plots[randomNumber]
+			local plotType = plot:GetPlotType();
+			local terrainType = plot:GetTerrainType();
 			if (plot:IsWater() and plot:GetNumResource() == 0 and not plot:IsLake()) then
-				plot:SetResourceType(resourceID, 1)
-				plot:SetFeatureType(-1)
-				isPlaced = true
-				print("placed some fish")
+				print("checkedplots")
+				if terrainType == TerrainTypes.TERRAIN_COAST then
+					plot:SetResourceType(resourceID, 1)
+					plot:SetFeatureType(-1)
+					isPlaced = true
+					print("placed some fish")
+				end
 			end
 			
 			table.remove(plots, randomNumber)
@@ -96,6 +102,7 @@ end
 local FishID = GameInfoTypes["RESOURCE_FISH"]
 local placeRes = false
 function PlaceExtraJuice()
+	print("running fish function")
 	if Game.GetGameTurn() > Game.GetStartTurn() then return end
     if (placeRes) then return end
     for playerID = 0, GameDefines.MAX_MAJOR_CIVS - 1 do
@@ -107,13 +114,8 @@ function PlaceExtraJuice()
     placeRes = true
 end
 
-Events.LoadScreenClose.Add(PlaceExtraJuice)
---=================================================================================================================
---=================================================================================================================
---									UA					UB				UU			
---=================================================================================================================
---=================================================================================================================
-
+Events.SequenceGameInitComplete.Add(PlaceExtraJuice)
+--===================================================================================================================================
 
 --Tonga ua
 
@@ -397,9 +399,6 @@ local bIsActive = JFD_IsCivilisationActive(iCiv)
 
 
 -- From Sukritacts Nabatea's Civilization
-
-
---Sukritacts Nabatea's Civilization: Gold from Trade Routes
 
 function ZabonahRouteGold(iPlayer)
 	local pPlayer = Players[iPlayer]
@@ -1333,14 +1332,14 @@ function HordeUA(playerID)
 end
 
 function HordeInit(playerID)
-	for playerID, player in pairs(Players) do
-		local player = Players[playerID];
-		if player:GetCivilizationType() == civHorde and player:IsAlive() then
-			player:SetNumFreePolicies(1);
-			player:SetNumFreePolicies(0);
-			player:SetHasPolicy(hordePolicy, true);
-		end
-	end
+    for playerID, player in pairs(Players) do
+        local player = Players[playerID];
+        if player:GetCivilizationType() == civHorde and player:IsAlive() and not player:HasPolicy(hordePolicy) then
+            player:SetNumFreePolicies(1);
+            player:SetNumFreePolicies(0);
+            player:SetHasPolicy(hordePolicy, true);
+        end
+    end
 end
 
 if hordeIsActive then
@@ -2342,7 +2341,7 @@ function LakeWonderRequireLake(playerID, cityID, buildingType)
         local isNearLake = false
             
         for pAdjacentPlot in PlotAreaSweepIterator(pCity:Plot(), 1, SECTOR_NORTH, DIRECTION_CLOCKWISE, DIRECTION_OUTWARDS, CENTRE_EXCLUDE) do
-            if pAdjacentPlot:IsLake() and pAdjacentPlot:GetOwner() == playerID then
+            if pAdjacentPlot:IsLake() or pAdjacentPlot:GetFeatureType() == GameInfoTypes["FEATURE_LAKE_VICTORIA"] and pAdjacentPlot:GetOwner() == playerID then
                 isNearLake = true
             end
             if isNearLake then
@@ -2362,7 +2361,23 @@ end
 
 GameEvents.CityCanConstruct.Add(LakeWonderRequireLake);
 
+local workBoat = GameInfoTypes["UNIT_WORKBOAT"]
 
+function WorkboatforAI(playerID, cityID, unitType)
+    local player = Players[playerID]
+    local pCity = player:GetCityByID(cityID)
+    
+    if unitType == workBoat then
+        if (not player:IsHuman()) then
+			return true
+		else return false
+		end
+    end
+    return true
+   
+end
+
+GameEvents.CityCanTrain.Add(WorkboatforAI);
 
 --=================================================================================================================
 -- Georgia
@@ -2685,22 +2700,62 @@ function YugoslaviaUA(playerID)
 end
 
 function YugoslaviaInit(playerID)
-	for playerID, player in pairs(Players) do
-		local player = Players[playerID];
-		if player:GetCivilizationType() == civYugoslavia and player:IsAlive() then
-			player:SetNumFreePolicies(1);
-			player:SetNumFreePolicies(0);
-			player:SetHasPolicy(policyA, true);
-			
-			player:SetNumFreePolicies(1);
-			player:SetNumFreePolicies(0);
-			player:SetHasPolicy(policyB, true);
-		end
-	end
+    for playerID, player in pairs(Players) do
+        local player = Players[playerID];
+        if player:GetCivilizationType() == civYugoslavia and not player:HasPolicy(policyA) and not player:HasPolicy(yugoAuto) and not player:HasPolicy(yugoFreedom) and not player:HasPolicy(yugoOrder)  then
+            player:SetNumFreePolicies(1);
+            player:SetNumFreePolicies(0);
+            player:SetHasPolicy(policyA, true);
+            
+            player:SetNumFreePolicies(1);
+            player:SetNumFreePolicies(0);
+            player:SetHasPolicy(policyB, true);
+        end
+    end
 end
 
 if yugoslaviaIsActive then
 GameEvents.PlayerDoTurn.Add(YugoslaviaUA);
 GameEvents.PlayerAdoptPolicy.Add(YugoslaviaUAAdopt);
 Events.SequenceGameInitComplete.Add(YugoslaviaInit);
+end
+
+
+-- =======================================================================================================================
+-- Colombia UA : Add a dummy building to give science from lumbermills on tech, add golden age points on city capture
+-- =======================================================================================================================
+local iCiv = GameInfoTypes["CIVILIZATION_COLOMBIA"]
+local bIsActive = JFD_IsCivilisationActive(iCiv)
+
+if (bIsActive and iCiv) then
+	function ColombiaCityCaptureGoldenAgePoints(iOldOwner, bIsCapital, iX, iY, iNewOwner, iPop, bConquest)
+		print("running colombia ga point function")
+		local player = Players[iNewOwner]
+		local pPlot = Map.GetPlot(iX, iY)
+		local pCity = pPlot:GetPlotCity()
+		local goldenAgePointBonus = 100
+		if (player:IsEverAlive()) then
+			player:ChangeGoldenAgeProgressMeter(goldenAgePointBonus)
+			if player:IsHuman() then
+				Events.AddPopupTextEvent(HexToWorld(ToHexFromGrid(Vector2(iX, iY))), Locale.ConvertTextKey("[COLOR_WHITE]+{1_Num}[ENDCOLOR] [ICON_GOLDEN_AGE]", goldenAgePointBonus), true)
+			end
+		end
+	end
+	GameEvents.CityCaptureComplete.Add(NQMP_Exploration_TreasureFleets_OnCityCaptureComplete)
+    function ColombiaTrait(iPlayer)
+        local player = Players[iPlayer];
+		local pCity = player:GetCapitalCity();
+        if (player:IsEverAlive()) then
+            if Teams[player:GetTeam()]:IsHasTech(GameInfoTypes["TECH_CHEMISTRY"]) then
+				if pCity:IsCapital() then
+					pCity:SetNumRealBuilding(GameInfoTypes["BUILDING_COLOMBIA_TRAIT"], 1);
+				end
+            end
+        end
+    end
+	GameEvents.CityCaptureComplete.Add(ColombiaCityCaptureGoldenAgePoints)
+    GameEvents.TeamSetHasTech.Add(ColombiaTrait)
+    GameEvents.CityCaptureComplete.Add(ColombiaTrait)
+	
+    GameEvents.PlayerCityFounded.Add(ColombiaTrait)
 end

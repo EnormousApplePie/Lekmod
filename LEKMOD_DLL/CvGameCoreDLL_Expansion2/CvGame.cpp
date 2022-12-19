@@ -3760,17 +3760,18 @@ void CvGame::doControl(ControlTypes eControl)
 
 	case CONTROL_UNIT_ICONS:
 #ifdef TURN_TIMER_RESET_BUTTON
-	{
-		if(isOption(GAMEOPTION_END_TURN_TIMER_ENABLED) && !isPaused() && GC.getGame().getGameState() == GAMESTATE_ON)
-		{
-			if(getElapsedGameTurns() > 0)
-			{
-				// as there is no netcode for timer reset,
-				// this function will act as one, if called with special agreed upon arguments
-				gDLL->sendGiftUnit(NO_PLAYER, -1);
-			}
-		}
-	}
+    {
+        if(isOption(GAMEOPTION_END_TURN_TIMER_ENABLED) && !isPaused() && GC.getGame().getGameState() == GAMESTATE_ON)
+        {
+            if ((getElapsedGameTurns() > 0) && GET_PLAYER(getActivePlayer()).isTurnActive())
+            {
+                // as there is no netcode for timer reset,
+                // this function will act as one, if called with special agreed upon arguments
+                resetTurnTimer(true);
+                gDLL->sendGiftUnit(NO_PLAYER, -1);
+            }
+        }
+    }
 #endif
 		break;
 

@@ -9,159 +9,168 @@
 INCLUDELIB MSVCRT
 INCLUDELIB OLDNAMES
 
+PUBLIC	?RING_PLOTS@@3PAHA				; RING_PLOTS
 CONST	SEGMENT
-$SG218061 DB	'NOPICK', 00H
-$SG218122 DB	00H
-$SG218083 DB	'Months', 00H
+$SG218062 DB	'NOPICK', 00H
+$SG218123 DB	00H
+$SG218084 DB	'Months', 00H
 	ORG $+1
-$SG218096 DB	'Months', 00H
+$SG218097 DB	'Months', 00H
 	ORG $+1
-$SG218113 DB	'Seasons', 00H
-$SG218127 DB	'1', 00H
+$SG218114 DB	'Seasons', 00H
+$SG218128 DB	'1', 00H
 	ORG $+2
-$SG218128 DB	'0', 00H
+$SG218129 DB	'0', 00H
 	ORG $+2
-$SG218150 DB	'NO_DIRECTION', 00H
+$SG218151 DB	'NO_DIRECTION', 00H
 	ORG $+3
-$SG218152 DB	'northeast', 00H
+$SG218153 DB	'northeast', 00H
 	ORG $+2
-$SG218154 DB	'east', 00H
+$SG218155 DB	'east', 00H
 	ORG $+3
-$SG218156 DB	'southeast', 00H
+$SG218157 DB	'southeast', 00H
 	ORG $+2
-$SG218158 DB	'southwest', 00H
+$SG218159 DB	'southwest', 00H
 	ORG $+2
-$SG218160 DB	'west', 00H
+$SG218161 DB	'west', 00H
 	ORG $+3
-$SG218162 DB	'northwest', 00H
+$SG218163 DB	'northwest', 00H
 	ORG $+2
-$SG218165 DB	'UNKNOWN_DIRECTION(%d)', 00H
+$SG218166 DB	'UNKNOWN_DIRECTION(%d)', 00H
 	ORG $+2
-$SG218175 DB	'NO_ACTIVITY', 00H
-$SG218177 DB	'ACTIVITY_AWAKE', 00H
+$SG218176 DB	'NO_ACTIVITY', 00H
+$SG218178 DB	'ACTIVITY_AWAKE', 00H
 	ORG $+1
-$SG218179 DB	'ACTIVITY_HOLD', 00H
+$SG218180 DB	'ACTIVITY_HOLD', 00H
 	ORG $+2
-$SG218181 DB	'ACTIVITY_SLEEP', 00H
+$SG218182 DB	'ACTIVITY_SLEEP', 00H
 	ORG $+1
-$SG218183 DB	'ACTIVITY_HEAL', 00H
+$SG218184 DB	'ACTIVITY_HEAL', 00H
 	ORG $+2
-$SG218185 DB	'ACTIVITY_SENTRY', 00H
-$SG218187 DB	'ACTIVITY_SENTRY', 00H
-$SG218189 DB	'ACTIVITY_MISSION', 00H
+$SG218186 DB	'ACTIVITY_SENTRY', 00H
+$SG218188 DB	'ACTIVITY_SENTRY', 00H
+$SG218190 DB	'ACTIVITY_MISSION', 00H
 	ORG $+3
-$SG218192 DB	'UNKNOWN_ACTIVITY(%d)', 00H
+$SG218193 DB	'UNKNOWN_ACTIVITY(%d)', 00H
 	ORG $+3
-$SG218202 DB	'NO_MISSIONAI', 00H
+$SG218203 DB	'NO_MISSIONAI', 00H
 	ORG $+3
-$SG218204 DB	'MISSIONAI_SHADOW', 00H
+$SG218205 DB	'MISSIONAI_SHADOW', 00H
 	ORG $+3
-$SG218206 DB	'MISSIONAI_GROUP', 00H
-$SG218208 DB	'MISSIONAI_LOAD_ASSAULT', 00H
+$SG218207 DB	'MISSIONAI_GROUP', 00H
+$SG218209 DB	'MISSIONAI_LOAD_ASSAULT', 00H
 	ORG $+1
-$SG218210 DB	'MISSIONAI_LOAD_SETTLER', 00H
+$SG218211 DB	'MISSIONAI_LOAD_SETTLER', 00H
 	ORG $+1
-$SG218212 DB	'MISSIONAI_LOAD_SPECIA', 00H
+$SG218213 DB	'MISSIONAI_LOAD_SPECIA', 00H
 	ORG $+2
-$SG218214 DB	'MISSIONAI_GUARD_CITY', 00H
+$SG218215 DB	'MISSIONAI_GUARD_CITY', 00H
 	ORG $+3
-$SG218216 DB	'MISSIONAI_GUARD_RESOURCE', 00H
+$SG218217 DB	'MISSIONAI_GUARD_RESOURCE', 00H
 	ORG $+3
-$SG218218 DB	'MISSIONAI_GUARD_SPY', 00H
-$SG218220 DB	'MISSIONAI_ATTACK_SPY', 00H
+$SG218219 DB	'MISSIONAI_GUARD_SPY', 00H
+$SG218221 DB	'MISSIONAI_ATTACK_SPY', 00H
 	ORG $+3
-$SG218222 DB	'MISSIONAI_SPREAD', 00H
+$SG218223 DB	'MISSIONAI_SPREAD', 00H
 	ORG $+3
-$SG218224 DB	'MISSIONAI_CONSTRUCT', 00H
-$SG218226 DB	'MISSIONAI_HURRY', 00H
-$SG218228 DB	'MISSIONAI_GREAT_WORK', 00H
+$SG218225 DB	'MISSIONAI_CONSTRUCT', 00H
+$SG218227 DB	'MISSIONAI_HURRY', 00H
+$SG218229 DB	'MISSIONAI_GREAT_WORK', 00H
 	ORG $+3
-$SG218230 DB	'MISSIONAI_EXPLORE', 00H
+$SG218231 DB	'MISSIONAI_EXPLORE', 00H
 	ORG $+2
-$SG218232 DB	'MISSIONAI_BLOCKADE', 00H
+$SG218233 DB	'MISSIONAI_BLOCKADE', 00H
 	ORG $+1
-$SG218234 DB	'MISSIONAI_PILLAGE', 00H
+$SG218235 DB	'MISSIONAI_PILLAGE', 00H
 	ORG $+2
-$SG218236 DB	'MISSIONAI_FOUND', 00H
-$SG218238 DB	'MISSIONAI_BUILD', 00H
-$SG218240 DB	'MISSIONAI_ASSAULT', 00H
+$SG218237 DB	'MISSIONAI_FOUND', 00H
+$SG218239 DB	'MISSIONAI_BUILD', 00H
+$SG218241 DB	'MISSIONAI_ASSAULT', 00H
 	ORG $+2
-$SG218242 DB	'MISSIONAI_CARRIER', 00H
+$SG218243 DB	'MISSIONAI_CARRIER', 00H
 	ORG $+2
-$SG218244 DB	'MISSIONAI_PICKUP', 00H
+$SG218245 DB	'MISSIONAI_PICKUP', 00H
 	ORG $+3
-$SG218247 DB	'UNKOWN_MISSION_AI(%d)', 00H
+$SG218248 DB	'UNKOWN_MISSION_AI(%d)', 00H
 	ORG $+2
-$SG218257 DB	'no unitAI', 00H
+$SG218258 DB	'no unitAI', 00H
 	ORG $+2
-$SG218259 DB	'unknown', 00H
-$SG218261 DB	'settle', 00H
+$SG218260 DB	'unknown', 00H
+$SG218262 DB	'settle', 00H
 	ORG $+1
-$SG218263 DB	'worker', 00H
+$SG218264 DB	'worker', 00H
 	ORG $+1
-$SG218265 DB	'attack', 00H
+$SG218266 DB	'attack', 00H
 	ORG $+1
-$SG218267 DB	'bombard city', 00H
+$SG218268 DB	'bombard city', 00H
 	ORG $+3
-$SG218269 DB	'fast attack', 00H
-$SG218271 DB	'defense', 00H
-$SG218273 DB	'counter', 00H
-$SG218275 DB	'ranged', 00H
+$SG218270 DB	'fast attack', 00H
+$SG218272 DB	'defense', 00H
+$SG218274 DB	'counter', 00H
+$SG218276 DB	'ranged', 00H
 	ORG $+1
-$SG218277 DB	'city special', 00H
+$SG218278 DB	'city special', 00H
 	ORG $+3
-$SG218279 DB	'explore', 00H
-$SG218281 DB	'artist', 00H
+$SG218280 DB	'explore', 00H
+$SG218282 DB	'artist', 00H
 	ORG $+1
-$SG218283 DB	'scientist', 00H
+$SG218284 DB	'scientist', 00H
 	ORG $+2
-$SG218285 DB	'general', 00H
-$SG218287 DB	'merchant', 00H
+$SG218286 DB	'general', 00H
+$SG218288 DB	'merchant', 00H
 	ORG $+3
-$SG218289 DB	'engineer', 00H
+$SG218290 DB	'engineer', 00H
 	ORG $+3
-$SG218291 DB	'icbm', 00H
+$SG218292 DB	'icbm', 00H
 	ORG $+3
-$SG218293 DB	'worker sea', 00H
+$SG218294 DB	'worker sea', 00H
 	ORG $+1
-$SG218295 DB	'attack sea', 00H
+$SG218296 DB	'attack sea', 00H
 	ORG $+1
-$SG218297 DB	'reserve sea', 00H
-$SG218299 DB	'escort sea', 00H
+$SG218298 DB	'reserve sea', 00H
+$SG218300 DB	'escort sea', 00H
 	ORG $+1
-$SG218301 DB	'explore sea', 00H
-$SG218303 DB	'assault sea', 00H
-$SG218305 DB	'settler sea', 00H
-$SG218307 DB	'carrier sea', 00H
-$SG218309 DB	'missile carrier', 00H
-$SG218311 DB	'pirate sea', 00H
+$SG218302 DB	'explore sea', 00H
+$SG218304 DB	'assault sea', 00H
+$SG218306 DB	'settler sea', 00H
+$SG218308 DB	'carrier sea', 00H
+$SG218310 DB	'missile carrier', 00H
+$SG218312 DB	'pirate sea', 00H
 	ORG $+1
-$SG218313 DB	'attack air', 00H
+$SG218314 DB	'attack air', 00H
 	ORG $+1
-$SG218315 DB	'defense air', 00H
-$SG218317 DB	'carrier air', 00H
-$SG218319 DB	'paradrop', 00H
+$SG218316 DB	'defense air', 00H
+$SG218318 DB	'carrier air', 00H
+$SG218320 DB	'paradrop', 00H
 	ORG $+3
-$SG218321 DB	'spaceship part', 00H
+$SG218322 DB	'spaceship part', 00H
 	ORG $+1
-$SG218323 DB	'treasure', 00H
+$SG218324 DB	'treasure', 00H
 	ORG $+3
-$SG218325 DB	'prophet', 00H
-$SG218327 DB	'missionary', 00H
+$SG218326 DB	'prophet', 00H
+$SG218328 DB	'missionary', 00H
 	ORG $+1
-$SG218329 DB	'inquisitor', 00H
+$SG218330 DB	'inquisitor', 00H
 	ORG $+1
-$SG218331 DB	'admiral', 00H
-$SG218333 DB	'trade unit', 00H
+$SG218332 DB	'admiral', 00H
+$SG218334 DB	'trade unit', 00H
 	ORG $+1
-$SG218335 DB	'archaeologist', 00H
+$SG218336 DB	'archaeologist', 00H
 	ORG $+2
-$SG218337 DB	'writer', 00H
+$SG218338 DB	'writer', 00H
 	ORG $+1
-$SG218339 DB	'musician', 00H
+$SG218340 DB	'musician', 00H
 	ORG $+3
-$SG218342 DB	'unknown(%d)', 00H
+$SG218343 DB	'unknown(%d)', 00H
 CONST	ENDS
+_DATA	SEGMENT
+?RING_PLOTS@@3PAHA DD 01H				; RING_PLOTS
+	DD	07H
+	DD	013H
+	DD	025H
+	DD	03dH
+	DD	05bH
+_DATA	ENDS
 PUBLIC	?wrapCoordDifference@@YAHHI_N@Z			; wrapCoordDifference
 ; Function compile flags: /Ogtpy
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredll_expansion2\cvgamecoreutils.h
@@ -568,27 +577,27 @@ _DATA	SEGMENT
 _DATA	ENDS
 ;	COMDAT ?estimateDirection@@YA?AW4DirectionTypes@@HH@Z
 _TEXT	SEGMENT
-_dotProduct$217662 = -16				; size = 8
+_dotProduct$217663 = -16				; size = 8
 _maximum$ = -8						; size = 8
 _iDX$ = 8						; size = 4
 _iDY$ = 12						; size = 4
 ?estimateDirection@@YA?AW4DirectionTypes@@HH@Z PROC	; estimateDirection, COMDAT
 
-; 125  : {
+; 131  : {
 
 	push	ebp
 	mov	ebp, esp
 	and	esp, -64				; ffffffc0H
 	sub	esp, 64					; 00000040H
 
-; 126  : 	const int displacementSize = 6;
-; 127  : 	//														NE				E		SE					SW					W			NW
-; 128  : 	static double displacements[displacementSize][2] = { {0.5, 0.866025}, {1, 0}, {0.5, -0.866025}, {-0.5, -0.866025}, {-1, 0}, {-0.5, -0.866025}};
-; 129  : 	double maximum = 0;
-; 130  : 	int maximumIndex = -1;
-; 131  : 	for(int i=0; i<displacementSize; i++)
-; 132  : 	{
-; 133  : 		double dotProduct = iDX * displacements[i][0] + iDY * displacements[i][1];
+; 132  : 	const int displacementSize = 6;
+; 133  : 	//														NE				E		SE					SW					W			NW
+; 134  : 	static double displacements[displacementSize][2] = { {0.5, 0.866025}, {1, 0}, {0.5, -0.866025}, {-0.5, -0.866025}, {-1, 0}, {-0.5, -0.866025}};
+; 135  : 	double maximum = 0;
+; 136  : 	int maximumIndex = -1;
+; 137  : 	for(int i=0; i<displacementSize; i++)
+; 138  : 	{
+; 139  : 		double dotProduct = iDX * displacements[i][0] + iDY * displacements[i][1];
 
 	fild	DWORD PTR _iDY$[ebp]
 	xor	edx, edx
@@ -599,25 +608,25 @@ _iDY$ = 12						; size = 4
 	fild	DWORD PTR _iDX$[ebp]
 	fmul	QWORD PTR ?displacements@?1??estimateDirection@@YA?AW4DirectionTypes@@HH@Z@4PAY01NA
 	faddp	ST(1), ST(0)
-	fstp	QWORD PTR _dotProduct$217662[esp+64]
+	fstp	QWORD PTR _dotProduct$217663[esp+64]
 
-; 134  : 		if(dotProduct > maximum)
+; 140  : 		if(dotProduct > maximum)
 
 	fldz
-	fcomp	QWORD PTR _dotProduct$217662[esp+64]
+	fcomp	QWORD PTR _dotProduct$217663[esp+64]
 	fnstsw	ax
 	test	ah, 5
 	jp	SHORT $LN3@estimateDi
 
-; 135  : 		{
-; 136  : 			maximum = dotProduct;
+; 141  : 		{
+; 142  : 			maximum = dotProduct;
 
-	mov	ecx, DWORD PTR _dotProduct$217662[esp+68]
-	mov	eax, DWORD PTR _dotProduct$217662[esp+64]
+	mov	ecx, DWORD PTR _dotProduct$217663[esp+68]
+	mov	eax, DWORD PTR _dotProduct$217663[esp+64]
 	mov	DWORD PTR _maximum$[esp+68], ecx
 	mov	DWORD PTR _maximum$[esp+64], eax
 
-; 137  : 			maximumIndex = i;
+; 143  : 			maximumIndex = i;
 
 	xor	ecx, ecx
 $LN3@estimateDi:
@@ -626,14 +635,14 @@ $LN3@estimateDi:
 	fild	DWORD PTR _iDX$[ebp]
 	fmul	QWORD PTR ?displacements@?1??estimateDirection@@YA?AW4DirectionTypes@@HH@Z@4PAY01NA+16
 	faddp	ST(1), ST(0)
-	fstp	QWORD PTR _dotProduct$217662[esp+64]
+	fstp	QWORD PTR _dotProduct$217663[esp+64]
 	fld	QWORD PTR _maximum$[esp+64]
-	fcomp	QWORD PTR _dotProduct$217662[esp+64]
+	fcomp	QWORD PTR _dotProduct$217663[esp+64]
 	fnstsw	ax
 	test	ah, 5
 	jp	SHORT $LN11@estimateDi
-	mov	edx, DWORD PTR _dotProduct$217662[esp+64]
-	mov	eax, DWORD PTR _dotProduct$217662[esp+68]
+	mov	edx, DWORD PTR _dotProduct$217663[esp+64]
+	mov	eax, DWORD PTR _dotProduct$217663[esp+68]
 	mov	DWORD PTR _maximum$[esp+64], edx
 	mov	DWORD PTR _maximum$[esp+68], eax
 	mov	ecx, 1
@@ -643,14 +652,14 @@ $LN11@estimateDi:
 	fild	DWORD PTR _iDX$[ebp]
 	fmul	QWORD PTR ?displacements@?1??estimateDirection@@YA?AW4DirectionTypes@@HH@Z@4PAY01NA+32
 	faddp	ST(1), ST(0)
-	fstp	QWORD PTR _dotProduct$217662[esp+64]
+	fstp	QWORD PTR _dotProduct$217663[esp+64]
 	fld	QWORD PTR _maximum$[esp+64]
-	fcomp	QWORD PTR _dotProduct$217662[esp+64]
+	fcomp	QWORD PTR _dotProduct$217663[esp+64]
 	fnstsw	ax
 	test	ah, 5
 	jp	SHORT $LN13@estimateDi
-	mov	ecx, DWORD PTR _dotProduct$217662[esp+64]
-	mov	edx, DWORD PTR _dotProduct$217662[esp+68]
+	mov	ecx, DWORD PTR _dotProduct$217663[esp+64]
+	mov	edx, DWORD PTR _dotProduct$217663[esp+68]
 	mov	DWORD PTR _maximum$[esp+64], ecx
 	mov	DWORD PTR _maximum$[esp+68], edx
 	mov	ecx, 2
@@ -660,14 +669,14 @@ $LN13@estimateDi:
 	fild	DWORD PTR _iDX$[ebp]
 	fmul	QWORD PTR ?displacements@?1??estimateDirection@@YA?AW4DirectionTypes@@HH@Z@4PAY01NA+48
 	faddp	ST(1), ST(0)
-	fstp	QWORD PTR _dotProduct$217662[esp+64]
+	fstp	QWORD PTR _dotProduct$217663[esp+64]
 	fld	QWORD PTR _maximum$[esp+64]
-	fcomp	QWORD PTR _dotProduct$217662[esp+64]
+	fcomp	QWORD PTR _dotProduct$217663[esp+64]
 	fnstsw	ax
 	test	ah, 5
 	jp	SHORT $LN15@estimateDi
-	mov	ecx, DWORD PTR _dotProduct$217662[esp+68]
-	mov	eax, DWORD PTR _dotProduct$217662[esp+64]
+	mov	ecx, DWORD PTR _dotProduct$217663[esp+68]
+	mov	eax, DWORD PTR _dotProduct$217663[esp+64]
 	mov	DWORD PTR _maximum$[esp+68], ecx
 	mov	DWORD PTR _maximum$[esp+64], eax
 	mov	ecx, 3
@@ -677,14 +686,14 @@ $LN15@estimateDi:
 	fild	DWORD PTR _iDX$[ebp]
 	fmul	QWORD PTR ?displacements@?1??estimateDirection@@YA?AW4DirectionTypes@@HH@Z@4PAY01NA+64
 	faddp	ST(1), ST(0)
-	fstp	QWORD PTR _dotProduct$217662[esp+64]
+	fstp	QWORD PTR _dotProduct$217663[esp+64]
 	fld	QWORD PTR _maximum$[esp+64]
-	fcomp	QWORD PTR _dotProduct$217662[esp+64]
+	fcomp	QWORD PTR _dotProduct$217663[esp+64]
 	fnstsw	ax
 	test	ah, 5
 	jp	SHORT $LN17@estimateDi
-	mov	edx, DWORD PTR _dotProduct$217662[esp+64]
-	mov	eax, DWORD PTR _dotProduct$217662[esp+68]
+	mov	edx, DWORD PTR _dotProduct$217663[esp+64]
+	mov	eax, DWORD PTR _dotProduct$217663[esp+68]
 	mov	DWORD PTR _maximum$[esp+64], edx
 	mov	DWORD PTR _maximum$[esp+68], eax
 	mov	ecx, 4
@@ -694,23 +703,23 @@ $LN17@estimateDi:
 	fild	DWORD PTR _iDX$[ebp]
 	fmul	QWORD PTR ?displacements@?1??estimateDirection@@YA?AW4DirectionTypes@@HH@Z@4PAY01NA+80
 	faddp	ST(1), ST(0)
-	fstp	QWORD PTR _dotProduct$217662[esp+64]
+	fstp	QWORD PTR _dotProduct$217663[esp+64]
 	fld	QWORD PTR _maximum$[esp+64]
-	fcomp	QWORD PTR _dotProduct$217662[esp+64]
+	fcomp	QWORD PTR _dotProduct$217663[esp+64]
 	fnstsw	ax
 	test	ah, 5
 	mov	eax, 5
 	jnp	SHORT $LN19@estimateDi
 
-; 138  : 		}
-; 139  : 	}
-; 140  : 
-; 141  : 	return (DirectionTypes) maximumIndex;
+; 144  : 		}
+; 145  : 	}
+; 146  : 
+; 147  : 	return (DirectionTypes) maximumIndex;
 
 	mov	eax, ecx
 $LN19@estimateDi:
 
-; 142  : }
+; 148  : }
 
 	mov	esp, ebp
 	pop	ebp
@@ -725,11 +734,11 @@ ___formal$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ?isPotentialEnemy@@YA_NW4TeamTypes@@0@Z PROC		; isPotentialEnemy, COMDAT
 
-; 159  : 	return false;
+; 165  : 	return false;
 
 	xor	al, al
 
-; 160  : }
+; 166  : }
 
 	ret	0
 ?isPotentialEnemy@@YA_NW4TeamTypes@@0@Z ENDP		; isPotentialEnemy
@@ -747,7 +756,7 @@ _ePromotion$ = 8					; size = 4
 _eUnit$ = 12						; size = 4
 ?IsPromotionValidForUnitCombatType@@YA_NW4PromotionTypes@@W4UnitTypes@@@Z PROC ; IsPromotionValidForUnitCombatType, COMDAT
 
-; 227  : 	CvUnitEntry* unitInfo = GC.getUnitInfo(eUnit);
+; 233  : 	CvUnitEntry* unitInfo = GC.getUnitInfo(eUnit);
 
 	mov	eax, DWORD PTR _eUnit$[esp-4]
 	push	esi
@@ -756,7 +765,7 @@ _eUnit$ = 12						; size = 4
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getUnitInfo@CvGlobals@@QAEPAVCvUnitEntry@@W4UnitTypes@@@Z ; CvGlobals::getUnitInfo
 
-; 228  : 	CvPromotionEntry* promotionInfo = GC.getPromotionInfo(ePromotion);
+; 234  : 	CvPromotionEntry* promotionInfo = GC.getPromotionInfo(ePromotion);
 
 	mov	ecx, DWORD PTR _ePromotion$[esp+4]
 	push	ecx
@@ -765,31 +774,31 @@ _eUnit$ = 12						; size = 4
 	call	?getPromotionInfo@CvGlobals@@QAEPAVCvPromotionEntry@@W4PromotionTypes@@@Z ; CvGlobals::getPromotionInfo
 	mov	edi, eax
 
-; 229  : 
-; 230  : 	if(unitInfo == NULL || promotionInfo == NULL)
+; 235  : 
+; 236  : 	if(unitInfo == NULL || promotionInfo == NULL)
 
 	test	esi, esi
 	je	SHORT $LN3@IsPromotio
 	test	edi, edi
 	je	SHORT $LN3@IsPromotio
 
-; 232  : 
-; 233  : 	// No combat class (civilians)
-; 234  : 	if(unitInfo->GetUnitCombatType() == NO_UNITCOMBAT)
+; 238  : 
+; 239  : 	// No combat class (civilians)
+; 240  : 	if(unitInfo->GetUnitCombatType() == NO_UNITCOMBAT)
 
 	mov	ecx, esi
 	call	?GetUnitCombatType@CvUnitEntry@@QBEHXZ	; CvUnitEntry::GetUnitCombatType
 	cmp	eax, -1
 
-; 235  : 	{
-; 236  : 		return false;
+; 241  : 	{
+; 242  : 		return false;
 
 	je	SHORT $LN3@IsPromotio
 
-; 237  : 	}
-; 238  : 
-; 239  : 	// Combat class not valid for this Promotion
-; 240  : 	if(!(promotionInfo->GetUnitCombatClass(unitInfo->GetUnitCombatType())))
+; 243  : 	}
+; 244  : 
+; 245  : 	// Combat class not valid for this Promotion
+; 246  : 	if(!(promotionInfo->GetUnitCombatClass(unitInfo->GetUnitCombatType())))
 
 	mov	ecx, esi
 	call	?GetUnitCombatType@CvUnitEntry@@QBEHXZ	; CvUnitEntry::GetUnitCombatType
@@ -801,28 +810,28 @@ _eUnit$ = 12						; size = 4
 	setne	al
 	pop	esi
 
-; 241  : 	{
-; 242  : 		return false;
-; 243  : 	}
-; 244  : 
-; 245  : 	return true;
-; 246  : }
+; 247  : 	{
+; 248  : 		return false;
+; 249  : 	}
+; 250  : 
+; 251  : 	return true;
+; 252  : }
 
 	ret	0
 $LN3@IsPromotio:
 	pop	edi
 
-; 231  : 		return false;
+; 237  : 		return false;
 
 	xor	al, al
 	pop	esi
 
-; 241  : 	{
-; 242  : 		return false;
-; 243  : 	}
-; 244  : 
-; 245  : 	return true;
-; 246  : }
+; 247  : 	{
+; 248  : 		return false;
+; 249  : 	}
+; 250  : 
+; 251  : 	return true;
+; 252  : }
 
 	ret	0
 ?IsPromotionValidForUnitCombatType@@YA_NW4PromotionTypes@@W4UnitTypes@@@Z ENDP ; IsPromotionValidForUnitCombatType
@@ -836,35 +845,35 @@ _ePromotion$ = 8					; size = 4
 _eUnit$ = 12						; size = 4
 ?IsPromotionValidForCivilianUnitType@@YA_NW4PromotionTypes@@W4UnitTypes@@@Z PROC ; IsPromotionValidForCivilianUnitType, COMDAT
 
-; 251  : 	CvPromotionEntry* promotionInfo = GC.getPromotionInfo(ePromotion);
+; 257  : 	CvPromotionEntry* promotionInfo = GC.getPromotionInfo(ePromotion);
 
 	mov	eax, DWORD PTR _ePromotion$[esp-4]
 	push	eax
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getPromotionInfo@CvGlobals@@QAEPAVCvPromotionEntry@@W4PromotionTypes@@@Z ; CvGlobals::getPromotionInfo
 
-; 252  : 
-; 253  : 	if(promotionInfo == NULL)
+; 258  : 
+; 259  : 	if(promotionInfo == NULL)
 
 	test	eax, eax
 	jne	SHORT $LN2@IsPromotio@2
 
-; 254  : 		return false;
+; 260  : 		return false;
 
 	xor	al, al
 
-; 257  : 	{
-; 258  : 		return false;
-; 259  : 	}
-; 260  : 
-; 261  : 	return true;
-; 262  : }
+; 263  : 	{
+; 264  : 		return false;
+; 265  : 	}
+; 266  : 
+; 267  : 	return true;
+; 268  : }
 
 	ret	0
 $LN2@IsPromotio@2:
 
-; 255  : 
-; 256  : 	if(!(promotionInfo->GetCivilianUnitType((int)eUnit)))
+; 261  : 
+; 262  : 	if(!(promotionInfo->GetCivilianUnitType((int)eUnit)))
 
 	mov	ecx, DWORD PTR _eUnit$[esp-4]
 	push	ecx
@@ -873,12 +882,12 @@ $LN2@IsPromotio@2:
 	test	al, al
 	setne	al
 
-; 257  : 	{
-; 258  : 		return false;
-; 259  : 	}
-; 260  : 
-; 261  : 	return true;
-; 262  : }
+; 263  : 	{
+; 264  : 		return false;
+; 265  : 	}
+; 266  : 
+; 267  : 	return true;
+; 268  : }
 
 	ret	0
 ?IsPromotionValidForCivilianUnitType@@YA_NW4PromotionTypes@@W4UnitTypes@@@Z ENDP ; IsPromotionValidForCivilianUnitType
@@ -915,13 +924,13 @@ _bLeader$ = 16						; size = 1
 _bTestingPrereq$ = 20					; size = 1
 ?isPromotionValid@@YA_NW4PromotionTypes@@W4UnitTypes@@_N2@Z PROC ; isPromotionValid, COMDAT
 
-; 265  : {
+; 271  : {
 
 	sub	esp, 28					; 0000001cH
 	push	ebx
 	push	ebp
 
-; 266  : 	CvUnitEntry* unitInfo = GC.getUnitInfo(eUnit);
+; 272  : 	CvUnitEntry* unitInfo = GC.getUnitInfo(eUnit);
 
 	mov	ebp, DWORD PTR _eUnit$[esp+32]
 	push	esi
@@ -930,7 +939,7 @@ _bTestingPrereq$ = 20					; size = 1
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getUnitInfo@CvGlobals@@QAEPAVCvUnitEntry@@W4UnitTypes@@@Z ; CvGlobals::getUnitInfo
 
-; 267  : 	CvPromotionEntry* promotionInfo = GC.getPromotionInfo(ePromotion);
+; 273  : 	CvPromotionEntry* promotionInfo = GC.getPromotionInfo(ePromotion);
 
 	mov	ebx, DWORD PTR _ePromotion$[esp+40]
 	push	ebx
@@ -939,17 +948,17 @@ _bTestingPrereq$ = 20					; size = 1
 	call	?getPromotionInfo@CvGlobals@@QAEPAVCvPromotionEntry@@W4PromotionTypes@@@Z ; CvGlobals::getPromotionInfo
 	mov	esi, eax
 
-; 268  : 
-; 269  : 	if(unitInfo == NULL || promotionInfo == NULL)
+; 274  : 
+; 275  : 	if(unitInfo == NULL || promotionInfo == NULL)
 
 	test	edi, edi
 	je	$LN31@isPromotio
 	test	esi, esi
 	je	$LN31@isPromotio
 
-; 271  : 
-; 272  : 	// Can this Promotion not be chosen through normal leveling?
-; 273  : 	if(!bTestingPrereq && promotionInfo->IsCannotBeChosen())
+; 277  : 
+; 278  : 	// Can this Promotion not be chosen through normal leveling?
+; 279  : 	if(!bTestingPrereq && promotionInfo->IsCannotBeChosen())
 
 	cmp	BYTE PTR _bTestingPrereq$[esp+40], 0
 	jne	SHORT $LN30@isPromotio
@@ -957,16 +966,16 @@ _bTestingPrereq$ = 20					; size = 1
 	call	?IsCannotBeChosen@CvPromotionEntry@@QBE_NXZ ; CvPromotionEntry::IsCannotBeChosen
 	test	al, al
 
-; 274  : 	{
-; 275  : 		return false;
+; 280  : 	{
+; 281  : 		return false;
 
 	jne	$LN31@isPromotio
 $LN30@isPromotio:
 
-; 276  : 	}
-; 277  : 
-; 278  : 	// If a Unit gets a Promotion for free then hand it out, no questions asked
-; 279  : 	if(unitInfo->GetFreePromotions(ePromotion))
+; 282  : 	}
+; 283  : 
+; 284  : 	// If a Unit gets a Promotion for free then hand it out, no questions asked
+; 285  : 	if(unitInfo->GetFreePromotions(ePromotion))
 
 	push	ebx
 	mov	ecx, edi
@@ -978,42 +987,26 @@ $LN1@isPromotio:
 	pop	esi
 	pop	ebp
 
-; 280  : 	{
-; 281  : 		return true;
+; 286  : 	{
+; 287  : 		return true;
 
 	mov	al, 1
 	pop	ebx
 
-; 434  : }
+; 440  : }
 
 	add	esp, 28					; 0000001cH
 	ret	0
 $LN29@isPromotio:
 
-; 282  : 	}
-; 283  : 
-; 284  : 	// If this isn't a combat Unit, no Promotion
-; 285  : 	if(unitInfo->GetUnitCombatType() == NO_UNITCOMBAT)
+; 288  : 	}
+; 289  : 
+; 290  : 	// If this isn't a combat Unit, no Promotion
+; 291  : 	if(unitInfo->GetUnitCombatType() == NO_UNITCOMBAT)
 
 	mov	ecx, edi
 	call	?GetUnitCombatType@CvUnitEntry@@QBEHXZ	; CvUnitEntry::GetUnitCombatType
 	cmp	eax, -1
-
-; 286  : 	{
-; 287  : 		return false;
-
-	je	$LN31@isPromotio
-
-; 288  : 	}
-; 289  : 
-; 290  : 	// Is this a valid Promotion for the UnitCombatType?
-; 291  : 	if(!::IsPromotionValidForUnitCombatType(ePromotion, eUnit))
-
-	push	ebp
-	push	ebx
-	call	?IsPromotionValidForUnitCombatType@@YA_NW4PromotionTypes@@W4UnitTypes@@@Z ; IsPromotionValidForUnitCombatType
-	add	esp, 8
-	test	al, al
 
 ; 292  : 	{
 ; 293  : 		return false;
@@ -1022,7 +1015,23 @@ $LN29@isPromotio:
 
 ; 294  : 	}
 ; 295  : 
-; 296  : 	if(!bLeader && promotionInfo->IsLeader())
+; 296  : 	// Is this a valid Promotion for the UnitCombatType?
+; 297  : 	if(!::IsPromotionValidForUnitCombatType(ePromotion, eUnit))
+
+	push	ebp
+	push	ebx
+	call	?IsPromotionValidForUnitCombatType@@YA_NW4PromotionTypes@@W4UnitTypes@@@Z ; IsPromotionValidForUnitCombatType
+	add	esp, 8
+	test	al, al
+
+; 298  : 	{
+; 299  : 		return false;
+
+	je	$LN31@isPromotio
+
+; 300  : 	}
+; 301  : 
+; 302  : 	if(!bLeader && promotionInfo->IsLeader())
 
 	mov	ebx, DWORD PTR _bLeader$[esp+40]
 	test	bl, bl
@@ -1031,48 +1040,48 @@ $LN29@isPromotio:
 	call	?IsLeader@CvPromotionEntry@@QBE_NXZ	; CvPromotionEntry::IsLeader
 	test	al, al
 
-; 297  : 	{
-; 298  : 		return false;
+; 303  : 	{
+; 304  : 		return false;
 
 	jne	$LN31@isPromotio
 $LN26@isPromotio:
 
-; 299  : 	}
-; 300  : 
-; 301  : 	// If the Unit only has one move then Blitz is not useful
-; 302  : 	if(unitInfo->GetMoves() == 1)
+; 305  : 	}
+; 306  : 
+; 307  : 	// If the Unit only has one move then Blitz is not useful
+; 308  : 	if(unitInfo->GetMoves() == 1)
 
 	mov	ecx, edi
 	call	?GetMoves@CvUnitEntry@@QBEHXZ		; CvUnitEntry::GetMoves
 	cmp	eax, 1
 	jne	SHORT $LN24@isPromotio
 
-; 303  : 	{
-; 304  : 		if(promotionInfo->IsBlitz())
+; 309  : 	{
+; 310  : 		if(promotionInfo->IsBlitz())
 
 	mov	ecx, esi
 	call	?IsBlitz@CvPromotionEntry@@QBE_NXZ	; CvPromotionEntry::IsBlitz
 	test	al, al
 
-; 305  : 		{
-; 306  : 			return false;
+; 311  : 		{
+; 312  : 			return false;
 
 	jne	$LN31@isPromotio
 $LN24@isPromotio:
 
-; 307  : 		}
-; 308  : 	}
-; 309  : 
-; 310  : 	// Promotion Prereqs
-; 311  : 	if(NO_PROMOTION != promotionInfo->GetPrereqPromotion())
+; 313  : 		}
+; 314  : 	}
+; 315  : 
+; 316  : 	// Promotion Prereqs
+; 317  : 	if(NO_PROMOTION != promotionInfo->GetPrereqPromotion())
 
 	mov	ecx, esi
 	call	?GetPrereqPromotion@CvPromotionEntry@@QBEHXZ ; CvPromotionEntry::GetPrereqPromotion
 	cmp	eax, -1
 	je	SHORT $LN22@isPromotio
 
-; 312  : 	{
-; 313  : 		if(!isPromotionValid((PromotionTypes)promotionInfo->GetPrereqPromotion(), eUnit, bLeader, true))
+; 318  : 	{
+; 319  : 		if(!isPromotionValid((PromotionTypes)promotionInfo->GetPrereqPromotion(), eUnit, bLeader, true))
 
 	push	1
 	push	ebx
@@ -1084,93 +1093,93 @@ $LN24@isPromotio:
 	add	esp, 16					; 00000010H
 	test	al, al
 
-; 314  : 		{
-; 315  : 			return false;
+; 320  : 		{
+; 321  : 			return false;
 
 	je	$LN31@isPromotio
 $LN22@isPromotio:
 
-; 316  : 		}
-; 317  : 	}
-; 318  : 
-; 319  : 	PromotionTypes ePrereq1 = (PromotionTypes)promotionInfo->GetPrereqOrPromotion1();
+; 322  : 		}
+; 323  : 	}
+; 324  : 
+; 325  : 	PromotionTypes ePrereq1 = (PromotionTypes)promotionInfo->GetPrereqOrPromotion1();
 
 	mov	ecx, esi
 	call	?GetPrereqOrPromotion1@CvPromotionEntry@@QBEHXZ ; CvPromotionEntry::GetPrereqOrPromotion1
 
-; 320  : 	PromotionTypes ePrereq2 = (PromotionTypes)promotionInfo->GetPrereqOrPromotion2();
+; 326  : 	PromotionTypes ePrereq2 = (PromotionTypes)promotionInfo->GetPrereqOrPromotion2();
 
 	mov	ecx, esi
 	mov	edi, eax
 	call	?GetPrereqOrPromotion2@CvPromotionEntry@@QBEHXZ ; CvPromotionEntry::GetPrereqOrPromotion2
 
-; 321  : 	PromotionTypes ePrereq3 = (PromotionTypes)promotionInfo->GetPrereqOrPromotion3();
+; 327  : 	PromotionTypes ePrereq3 = (PromotionTypes)promotionInfo->GetPrereqOrPromotion3();
 
 	mov	ecx, esi
 	mov	DWORD PTR _ePrereq2$[esp+44], eax
 	call	?GetPrereqOrPromotion3@CvPromotionEntry@@QBEHXZ ; CvPromotionEntry::GetPrereqOrPromotion3
 
-; 322  : 	PromotionTypes ePrereq4 = (PromotionTypes)promotionInfo->GetPrereqOrPromotion4();
+; 328  : 	PromotionTypes ePrereq4 = (PromotionTypes)promotionInfo->GetPrereqOrPromotion4();
 
 	mov	ecx, esi
 	mov	DWORD PTR _ePrereq3$[esp+44], eax
 	call	?GetPrereqOrPromotion4@CvPromotionEntry@@QBEHXZ ; CvPromotionEntry::GetPrereqOrPromotion4
 
-; 323  : 	PromotionTypes ePrereq5 = (PromotionTypes)promotionInfo->GetPrereqOrPromotion5();
+; 329  : 	PromotionTypes ePrereq5 = (PromotionTypes)promotionInfo->GetPrereqOrPromotion5();
 
 	mov	ecx, esi
 	mov	DWORD PTR _ePrereq4$[esp+44], eax
 	call	?GetPrereqOrPromotion5@CvPromotionEntry@@QBEHXZ ; CvPromotionEntry::GetPrereqOrPromotion5
 
-; 324  : 	PromotionTypes ePrereq6 = (PromotionTypes)promotionInfo->GetPrereqOrPromotion6();
+; 330  : 	PromotionTypes ePrereq6 = (PromotionTypes)promotionInfo->GetPrereqOrPromotion6();
 
 	mov	ecx, esi
 	mov	DWORD PTR _ePrereq5$[esp+44], eax
 	call	?GetPrereqOrPromotion6@CvPromotionEntry@@QBEHXZ ; CvPromotionEntry::GetPrereqOrPromotion6
 
-; 325  : 	PromotionTypes ePrereq7 = (PromotionTypes)promotionInfo->GetPrereqOrPromotion7();
+; 331  : 	PromotionTypes ePrereq7 = (PromotionTypes)promotionInfo->GetPrereqOrPromotion7();
 
 	mov	ecx, esi
 	mov	DWORD PTR _ePrereq6$[esp+44], eax
 	call	?GetPrereqOrPromotion7@CvPromotionEntry@@QBEHXZ ; CvPromotionEntry::GetPrereqOrPromotion7
 
-; 326  : 	PromotionTypes ePrereq8 = (PromotionTypes)promotionInfo->GetPrereqOrPromotion8();
+; 332  : 	PromotionTypes ePrereq8 = (PromotionTypes)promotionInfo->GetPrereqOrPromotion8();
 
 	mov	ecx, esi
 	mov	DWORD PTR _ePrereq7$[esp+44], eax
 	call	?GetPrereqOrPromotion8@CvPromotionEntry@@QBEHXZ ; CvPromotionEntry::GetPrereqOrPromotion8
 
-; 327  : 	PromotionTypes ePrereq9 = (PromotionTypes)promotionInfo->GetPrereqOrPromotion9();
+; 333  : 	PromotionTypes ePrereq9 = (PromotionTypes)promotionInfo->GetPrereqOrPromotion9();
 
 	mov	ecx, esi
 	mov	DWORD PTR _ePrereq8$[esp+44], eax
 	call	?GetPrereqOrPromotion9@CvPromotionEntry@@QBEHXZ ; CvPromotionEntry::GetPrereqOrPromotion9
 	mov	esi, eax
 
-; 328  : #ifdef AUI_WARNING_FIXES
-; 329  : 	if ((ePrereq1 != NO_PROMOTION || ePrereq2 != NO_PROMOTION || ePrereq3 != NO_PROMOTION || ePrereq4 != NO_PROMOTION ||
-; 330  : 			ePrereq5 != NO_PROMOTION || ePrereq6 != NO_PROMOTION || ePrereq7 != NO_PROMOTION || ePrereq8 != NO_PROMOTION || ePrereq9 != NO_PROMOTION) &&
-; 331  : 		(NO_PROMOTION == ePrereq1 || !isPromotionValid(ePrereq1, eUnit, bLeader, true)) &&
-; 332  : 		(NO_PROMOTION == ePrereq2 || !isPromotionValid(ePrereq2, eUnit, bLeader, true)) &&
-; 333  : 		(NO_PROMOTION == ePrereq3 || !isPromotionValid(ePrereq3, eUnit, bLeader, true)) &&
-; 334  : 		(NO_PROMOTION == ePrereq4 || !isPromotionValid(ePrereq4, eUnit, bLeader, true)) &&
-; 335  : 		(NO_PROMOTION == ePrereq5 || !isPromotionValid(ePrereq5, eUnit, bLeader, true)) &&
-; 336  : 		(NO_PROMOTION == ePrereq6 || !isPromotionValid(ePrereq6, eUnit, bLeader, true)) &&
-; 337  : 		(NO_PROMOTION == ePrereq7 || !isPromotionValid(ePrereq7, eUnit, bLeader, true)) &&
-; 338  : 		(NO_PROMOTION == ePrereq8 || !isPromotionValid(ePrereq8, eUnit, bLeader, true)) &&
-; 339  : 		(NO_PROMOTION == ePrereq9 || !isPromotionValid(ePrereq9, eUnit, bLeader, true)))
-; 340  : 	{
-; 341  : 		return false;
-; 342  : #else
-; 343  : 	if(ePrereq1 != NO_PROMOTION ||
-; 344  : 		ePrereq2 != NO_PROMOTION ||
-; 345  : 		ePrereq3 != NO_PROMOTION ||
-; 346  : 		ePrereq4 != NO_PROMOTION ||
-; 347  : 		ePrereq5 != NO_PROMOTION ||
-; 348  : 		ePrereq6 != NO_PROMOTION ||
-; 349  : 		ePrereq7 != NO_PROMOTION ||
-; 350  : 		ePrereq8 != NO_PROMOTION ||
-; 351  : 		ePrereq9 != NO_PROMOTION)
+; 334  : #ifdef AUI_WARNING_FIXES
+; 335  : 	if ((ePrereq1 != NO_PROMOTION || ePrereq2 != NO_PROMOTION || ePrereq3 != NO_PROMOTION || ePrereq4 != NO_PROMOTION ||
+; 336  : 			ePrereq5 != NO_PROMOTION || ePrereq6 != NO_PROMOTION || ePrereq7 != NO_PROMOTION || ePrereq8 != NO_PROMOTION || ePrereq9 != NO_PROMOTION) &&
+; 337  : 		(NO_PROMOTION == ePrereq1 || !isPromotionValid(ePrereq1, eUnit, bLeader, true)) &&
+; 338  : 		(NO_PROMOTION == ePrereq2 || !isPromotionValid(ePrereq2, eUnit, bLeader, true)) &&
+; 339  : 		(NO_PROMOTION == ePrereq3 || !isPromotionValid(ePrereq3, eUnit, bLeader, true)) &&
+; 340  : 		(NO_PROMOTION == ePrereq4 || !isPromotionValid(ePrereq4, eUnit, bLeader, true)) &&
+; 341  : 		(NO_PROMOTION == ePrereq5 || !isPromotionValid(ePrereq5, eUnit, bLeader, true)) &&
+; 342  : 		(NO_PROMOTION == ePrereq6 || !isPromotionValid(ePrereq6, eUnit, bLeader, true)) &&
+; 343  : 		(NO_PROMOTION == ePrereq7 || !isPromotionValid(ePrereq7, eUnit, bLeader, true)) &&
+; 344  : 		(NO_PROMOTION == ePrereq8 || !isPromotionValid(ePrereq8, eUnit, bLeader, true)) &&
+; 345  : 		(NO_PROMOTION == ePrereq9 || !isPromotionValid(ePrereq9, eUnit, bLeader, true)))
+; 346  : 	{
+; 347  : 		return false;
+; 348  : #else
+; 349  : 	if(ePrereq1 != NO_PROMOTION ||
+; 350  : 		ePrereq2 != NO_PROMOTION ||
+; 351  : 		ePrereq3 != NO_PROMOTION ||
+; 352  : 		ePrereq4 != NO_PROMOTION ||
+; 353  : 		ePrereq5 != NO_PROMOTION ||
+; 354  : 		ePrereq6 != NO_PROMOTION ||
+; 355  : 		ePrereq7 != NO_PROMOTION ||
+; 356  : 		ePrereq8 != NO_PROMOTION ||
+; 357  : 		ePrereq9 != NO_PROMOTION)
 
 	or	eax, -1
 	cmp	edi, eax
@@ -1192,11 +1201,11 @@ $LN22@isPromotio:
 	cmp	esi, eax
 	je	$LN1@isPromotio
 
-; 352  : 	{
-; 353  : 		bool bValid = false;
-; 354  : 		if(!bValid)
-; 355  : 		{
-; 356  : 			if(NO_PROMOTION != ePrereq1 && isPromotionValid(ePrereq1, eUnit, bLeader, true))
+; 358  : 	{
+; 359  : 		bool bValid = false;
+; 360  : 		if(!bValid)
+; 361  : 		{
+; 362  : 			if(NO_PROMOTION != ePrereq1 && isPromotionValid(ePrereq1, eUnit, bLeader, true))
 
 	jmp	$LN52@isPromotio
 $LN44@isPromotio:
@@ -1209,14 +1218,14 @@ $LN44@isPromotio:
 	test	al, al
 	jne	$LN1@isPromotio
 
-; 357  : 			{
-; 358  : 				bValid = true;
-; 359  : 			}
-; 360  : 		}
-; 361  : 
-; 362  : 		if(!bValid)
-; 363  : 		{
-; 364  : 			if(NO_PROMOTION != ePrereq2 && isPromotionValid(ePrereq2, eUnit, bLeader, true))
+; 363  : 			{
+; 364  : 				bValid = true;
+; 365  : 			}
+; 366  : 		}
+; 367  : 
+; 368  : 		if(!bValid)
+; 369  : 		{
+; 370  : 			if(NO_PROMOTION != ePrereq2 && isPromotionValid(ePrereq2, eUnit, bLeader, true))
 
 	cmp	DWORD PTR _ePrereq2$[esp+44], -1
 	je	SHORT $LN67@isPromotio
@@ -1232,14 +1241,14 @@ $LN53@isPromotio:
 	jne	$LN1@isPromotio
 $LN67@isPromotio:
 
-; 365  : 			{
-; 366  : 				bValid = true;
-; 367  : 			}
-; 368  : 		}
-; 369  : 
-; 370  : 		if(!bValid)
-; 371  : 		{
-; 372  : 			if(NO_PROMOTION != ePrereq3 && isPromotionValid(ePrereq3, eUnit, bLeader, true))
+; 371  : 			{
+; 372  : 				bValid = true;
+; 373  : 			}
+; 374  : 		}
+; 375  : 
+; 376  : 		if(!bValid)
+; 377  : 		{
+; 378  : 			if(NO_PROMOTION != ePrereq3 && isPromotionValid(ePrereq3, eUnit, bLeader, true))
 
 	cmp	DWORD PTR _ePrereq3$[esp+44], -1
 	je	SHORT $LN37@isPromotio
@@ -1255,14 +1264,14 @@ $LN55@isPromotio:
 	jne	$LN1@isPromotio
 $LN37@isPromotio:
 
-; 373  : 			{
-; 374  : 				bValid = true;
-; 375  : 			}
-; 376  : 		}
-; 377  : 
-; 378  : 		if(!bValid)
-; 379  : 		{
-; 380  : 			if(NO_PROMOTION != ePrereq4 && isPromotionValid(ePrereq4, eUnit, bLeader, true))
+; 379  : 			{
+; 380  : 				bValid = true;
+; 381  : 			}
+; 382  : 		}
+; 383  : 
+; 384  : 		if(!bValid)
+; 385  : 		{
+; 386  : 			if(NO_PROMOTION != ePrereq4 && isPromotionValid(ePrereq4, eUnit, bLeader, true))
 
 	cmp	DWORD PTR _ePrereq4$[esp+44], -1
 	je	SHORT $LN38@isPromotio
@@ -1278,14 +1287,14 @@ $LN57@isPromotio:
 	jne	$LN1@isPromotio
 $LN38@isPromotio:
 
-; 381  : 			{
-; 382  : 				bValid = true;
-; 383  : 			}
-; 384  : 		}
-; 385  : 
-; 386  : 		if(!bValid)
-; 387  : 		{
-; 388  : 			if(NO_PROMOTION != ePrereq5 && isPromotionValid(ePrereq5, eUnit, bLeader, true))
+; 387  : 			{
+; 388  : 				bValid = true;
+; 389  : 			}
+; 390  : 		}
+; 391  : 
+; 392  : 		if(!bValid)
+; 393  : 		{
+; 394  : 			if(NO_PROMOTION != ePrereq5 && isPromotionValid(ePrereq5, eUnit, bLeader, true))
 
 	cmp	DWORD PTR _ePrereq5$[esp+44], -1
 	je	SHORT $LN39@isPromotio
@@ -1301,14 +1310,14 @@ $LN59@isPromotio:
 	jne	$LN1@isPromotio
 $LN39@isPromotio:
 
-; 389  : 			{
-; 390  : 				bValid = true;
-; 391  : 			}
-; 392  : 		}
-; 393  : 
-; 394  : 		if(!bValid)
-; 395  : 		{
-; 396  : 			if(NO_PROMOTION != ePrereq6 && isPromotionValid(ePrereq6, eUnit, bLeader, true))
+; 395  : 			{
+; 396  : 				bValid = true;
+; 397  : 			}
+; 398  : 		}
+; 399  : 
+; 400  : 		if(!bValid)
+; 401  : 		{
+; 402  : 			if(NO_PROMOTION != ePrereq6 && isPromotionValid(ePrereq6, eUnit, bLeader, true))
 
 	cmp	DWORD PTR _ePrereq6$[esp+44], -1
 	je	SHORT $LN40@isPromotio
@@ -1324,14 +1333,14 @@ $LN61@isPromotio:
 	jne	$LN1@isPromotio
 $LN40@isPromotio:
 
-; 397  : 			{
-; 398  : 				bValid = true;
-; 399  : 			}
-; 400  : 		}
-; 401  : 
-; 402  : 		if(!bValid)
-; 403  : 		{
-; 404  : 			if(NO_PROMOTION != ePrereq7 && isPromotionValid(ePrereq7, eUnit, bLeader, true))
+; 403  : 			{
+; 404  : 				bValid = true;
+; 405  : 			}
+; 406  : 		}
+; 407  : 
+; 408  : 		if(!bValid)
+; 409  : 		{
+; 410  : 			if(NO_PROMOTION != ePrereq7 && isPromotionValid(ePrereq7, eUnit, bLeader, true))
 
 	cmp	DWORD PTR _ePrereq7$[esp+44], -1
 	je	SHORT $LN41@isPromotio
@@ -1347,14 +1356,14 @@ $LN63@isPromotio:
 	jne	$LN1@isPromotio
 $LN41@isPromotio:
 
-; 405  : 			{
-; 406  : 				bValid = true;
-; 407  : 			}
-; 408  : 		}
-; 409  : 
-; 410  : 		if(!bValid)
-; 411  : 		{
-; 412  : 			if(NO_PROMOTION != ePrereq8 && isPromotionValid(ePrereq8, eUnit, bLeader, true))
+; 411  : 			{
+; 412  : 				bValid = true;
+; 413  : 			}
+; 414  : 		}
+; 415  : 
+; 416  : 		if(!bValid)
+; 417  : 		{
+; 418  : 			if(NO_PROMOTION != ePrereq8 && isPromotionValid(ePrereq8, eUnit, bLeader, true))
 
 	cmp	DWORD PTR _ePrereq8$[esp+44], -1
 	je	SHORT $LN42@isPromotio
@@ -1370,14 +1379,14 @@ $LN65@isPromotio:
 	jne	$LN1@isPromotio
 $LN42@isPromotio:
 
-; 413  : 			{
-; 414  : 				bValid = true;
-; 415  : 			}
-; 416  : 		}
-; 417  : 
-; 418  : 		if(!bValid)
-; 419  : 		{
-; 420  : 			if(NO_PROMOTION != ePrereq9 && isPromotionValid(ePrereq9, eUnit, bLeader, true))
+; 419  : 			{
+; 420  : 				bValid = true;
+; 421  : 			}
+; 422  : 		}
+; 423  : 
+; 424  : 		if(!bValid)
+; 425  : 		{
+; 426  : 			if(NO_PROMOTION != ePrereq9 && isPromotionValid(ePrereq9, eUnit, bLeader, true))
 
 	cmp	esi, -1
 	je	SHORT $LN31@isPromotio
@@ -1390,19 +1399,19 @@ $LN52@isPromotio:
 	add	esp, 16					; 00000010H
 	test	al, al
 
-; 421  : 			{
-; 422  : 				bValid = true;
-; 423  : 			}
-; 424  : 		}
-; 425  : 
-; 426  : 		if(!bValid)
-; 427  : 		{
-; 428  : 			return false;
-; 429  : 		}
-; 430  : #endif
-; 431  : 	}
-; 432  : 
-; 433  : 	return true;
+; 427  : 			{
+; 428  : 				bValid = true;
+; 429  : 			}
+; 430  : 		}
+; 431  : 
+; 432  : 		if(!bValid)
+; 433  : 		{
+; 434  : 			return false;
+; 435  : 		}
+; 436  : #endif
+; 437  : 	}
+; 438  : 
+; 439  : 	return true;
 
 	jne	$LN1@isPromotio
 $LN31@isPromotio:
@@ -1410,12 +1419,12 @@ $LN31@isPromotio:
 	pop	esi
 	pop	ebp
 
-; 270  : 		return false;
+; 276  : 		return false;
 
 	xor	al, al
 	pop	ebx
 
-; 434  : }
+; 440  : }
 
 	add	esp, 28					; 0000001cH
 	ret	0
@@ -1428,12 +1437,12 @@ _TEXT	SEGMENT
 _iPopulation$ = 8					; size = 4
 ?getPopulationAsset@@YAHH@Z PROC			; getPopulationAsset, COMDAT
 
-; 438  : 	return (iPopulation * 2);
+; 444  : 	return (iPopulation * 2);
 
 	mov	eax, DWORD PTR _iPopulation$[esp-4]
 	add	eax, eax
 
-; 439  : }
+; 445  : }
 
 	ret	0
 ?getPopulationAsset@@YAHH@Z ENDP			; getPopulationAsset
@@ -1445,11 +1454,11 @@ _TEXT	SEGMENT
 _iLandPlots$ = 8					; size = 4
 ?getLandPlotsAsset@@YAHH@Z PROC				; getLandPlotsAsset, COMDAT
 
-; 443  : 	return iLandPlots;
+; 449  : 	return iLandPlots;
 
 	mov	eax, DWORD PTR _iLandPlots$[esp-4]
 
-; 444  : }
+; 450  : }
 
 	ret	0
 ?getLandPlotsAsset@@YAHH@Z ENDP				; getLandPlotsAsset
@@ -1461,14 +1470,14 @@ _TEXT	SEGMENT
 _iPopulation$ = 8					; size = 4
 ?getPopulationPower@@YAHH@Z PROC			; getPopulationPower, COMDAT
 
-; 448  : 	return (iPopulation / 2);
+; 454  : 	return (iPopulation / 2);
 
 	mov	eax, DWORD PTR _iPopulation$[esp-4]
 	cdq
 	sub	eax, edx
 	sar	eax, 1
 
-; 449  : }
+; 455  : }
 
 	ret	0
 ?getPopulationPower@@YAHH@Z ENDP			; getPopulationPower
@@ -1480,11 +1489,11 @@ _TEXT	SEGMENT
 _iPopulation$ = 8					; size = 4
 ?getPopulationScore@@YAHH@Z PROC			; getPopulationScore, COMDAT
 
-; 453  : 	return iPopulation;
+; 459  : 	return iPopulation;
 
 	mov	eax, DWORD PTR _iPopulation$[esp-4]
 
-; 454  : }
+; 460  : }
 
 	ret	0
 ?getPopulationScore@@YAHH@Z ENDP			; getPopulationScore
@@ -1496,11 +1505,11 @@ _TEXT	SEGMENT
 _iLandPlots$ = 8					; size = 4
 ?getLandPlotsScore@@YAHH@Z PROC				; getLandPlotsScore, COMDAT
 
-; 458  : 	return iLandPlots;
+; 464  : 	return iLandPlots;
 
 	mov	eax, DWORD PTR _iLandPlots$[esp-4]
 
-; 459  : }
+; 465  : }
 
 	ret	0
 ?getLandPlotsScore@@YAHH@Z ENDP				; getLandPlotsScore
@@ -1514,32 +1523,32 @@ _TEXT	SEGMENT
 _eTech$ = 8						; size = 4
 ?getTechScore@@YAHW4TechTypes@@@Z PROC			; getTechScore, COMDAT
 
-; 463  : 	CvTechEntry* pkTechInfo = GC.getTechInfo(eTech);
+; 469  : 	CvTechEntry* pkTechInfo = GC.getTechInfo(eTech);
 
 	mov	eax, DWORD PTR _eTech$[esp-4]
 	push	eax
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getTechInfo@CvGlobals@@QAEPAVCvTechEntry@@W4TechTypes@@@Z ; CvGlobals::getTechInfo
 
-; 464  : 	if(pkTechInfo == NULL)
+; 470  : 	if(pkTechInfo == NULL)
 
 	test	eax, eax
 	jne	SHORT $LN2@getTechSco
 
-; 468  : }
+; 474  : }
 
 	ret	0
 $LN2@getTechSco:
 
-; 465  : 		return 0;
-; 466  : 	else
-; 467  : 		return pkTechInfo->GetEra() + 1;
+; 471  : 		return 0;
+; 472  : 	else
+; 473  : 		return pkTechInfo->GetEra() + 1;
 
 	mov	ecx, eax
 	call	?GetEra@CvTechEntry@@QBEHXZ		; CvTechEntry::GetEra
 	inc	eax
 
-; 468  : }
+; 474  : }
 
 	ret	0
 ?getTechScore@@YAHW4TechTypes@@@Z ENDP			; getTechScore
@@ -1553,20 +1562,20 @@ _TEXT	SEGMENT
 _eWonderClass$ = 8					; size = 4
 ?getWonderScore@@YAHW4BuildingClassTypes@@@Z PROC	; getWonderScore, COMDAT
 
-; 472  : 	CvBuildingClassInfo* pkBuildingClassInfo = GC.getBuildingClassInfo(eWonderClass);
+; 478  : 	CvBuildingClassInfo* pkBuildingClassInfo = GC.getBuildingClassInfo(eWonderClass);
 
 	mov	eax, DWORD PTR _eWonderClass$[esp-4]
 	push	eax
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getBuildingClassInfo@CvGlobals@@QAEPAVCvBuildingClassInfo@@W4BuildingClassTypes@@@Z ; CvGlobals::getBuildingClassInfo
 
-; 473  : 	if(pkBuildingClassInfo)
+; 479  : 	if(pkBuildingClassInfo)
 
 	test	eax, eax
 	je	SHORT $LN1@getWonderS
 
-; 474  : 	{
-; 475  : 		if(isLimitedWonderClass(*pkBuildingClassInfo))
+; 480  : 	{
+; 481  : 		if(isLimitedWonderClass(*pkBuildingClassInfo))
 
 	push	eax
 	call	?isLimitedWonderClass@@YA_NABVCvBuildingClassInfo@@@Z ; isLimitedWonderClass
@@ -1574,22 +1583,22 @@ _eWonderClass$ = 8					; size = 4
 	test	al, al
 	je	SHORT $LN1@getWonderS
 
-; 476  : 			return 5;
+; 482  : 			return 5;
 
 	mov	eax, 5
 
-; 480  : }
+; 486  : }
 
 	ret	0
 $LN1@getWonderS:
 
-; 477  : 	}
-; 478  : 
-; 479  : 	return 0;
+; 483  : 	}
+; 484  : 
+; 485  : 	return 0;
 
 	xor	eax, eax
 
-; 480  : }
+; 486  : }
 
 	ret	0
 ?getWonderScore@@YAHW4BuildingClassTypes@@@Z ENDP	; getWonderScore
@@ -1605,14 +1614,14 @@ _eImprovement$ = 8					; size = 4
 _iCount$ = 12						; size = 4
 ?finalImprovementUpgrade@@YA?AW4ImprovementTypes@@W41@H@Z PROC ; finalImprovementUpgrade, COMDAT
 
-; 487  : {
+; 493  : {
 
 	push	esi
 	push	edi
 
-; 488  : 	CvAssertMsg(eImprovement != NO_IMPROVEMENT, "Improvement is not assigned a valid value");
-; 489  : 
-; 490  : 	if(iCount > GC.getNumImprovementInfos())
+; 494  : 	CvAssertMsg(eImprovement != NO_IMPROVEMENT, "Improvement is not assigned a valid value");
+; 495  : 
+; 496  : 	if(iCount > GC.getNumImprovementInfos())
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getNumImprovementInfos@CvGlobals@@QAEHXZ ; CvGlobals::getNumImprovementInfos
@@ -1623,9 +1632,9 @@ _iCount$ = 12						; size = 4
 	npad	8
 $LL6@finalImpro:
 
-; 493  : 	}
-; 494  : 
-; 495  : 	if(GC.getImprovementInfo(eImprovement)->GetImprovementUpgrade() != NO_IMPROVEMENT)
+; 499  : 	}
+; 500  : 
+; 501  : 	if(GC.getImprovementInfo(eImprovement)->GetImprovementUpgrade() != NO_IMPROVEMENT)
 
 	push	esi
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
@@ -1635,8 +1644,8 @@ $LL6@finalImpro:
 	cmp	eax, -1
 	je	SHORT $LN2@finalImpro
 
-; 496  : 	{
-; 497  : 		return finalImprovementUpgrade(((ImprovementTypes)(GC.getImprovementInfo(eImprovement)->GetImprovementUpgrade())), (iCount + 1));
+; 502  : 	{
+; 503  : 		return finalImprovementUpgrade(((ImprovementTypes)(GC.getImprovementInfo(eImprovement)->GetImprovementUpgrade())), (iCount + 1));
 
 	push	esi
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
@@ -1652,29 +1661,29 @@ $LL6@finalImpro:
 $LN8@finalImpro:
 	pop	edi
 
-; 491  : 	{
-; 492  : 		return NO_IMPROVEMENT;
+; 497  : 	{
+; 498  : 		return NO_IMPROVEMENT;
 
 	or	eax, -1
 	pop	esi
 
-; 502  : 	}
-; 503  : }
+; 508  : 	}
+; 509  : }
 
 	ret	0
 $LN2@finalImpro:
 	pop	edi
 
-; 498  : 	}
-; 499  : 	else
-; 500  : 	{
-; 501  : 		return eImprovement;
+; 504  : 	}
+; 505  : 	else
+; 506  : 	{
+; 507  : 		return eImprovement;
 
 	mov	eax, esi
 	pop	esi
 
-; 502  : 	}
-; 503  : }
+; 508  : 	}
+; 509  : }
 
 	ret	0
 ?finalImprovementUpgrade@@YA?AW4ImprovementTypes@@W41@H@Z ENDP ; finalImprovementUpgrade
@@ -1689,44 +1698,44 @@ _eTech$ = 8						; size = 4
 _eProject$ = 12						; size = 4
 ?isTechRequiredForProject@@YA_NW4TechTypes@@W4ProjectTypes@@@Z PROC ; isTechRequiredForProject, COMDAT
 
-; 553  : 	CvProjectEntry* pkProjectInfo = GC.getProjectInfo(eProject);
+; 559  : 	CvProjectEntry* pkProjectInfo = GC.getProjectInfo(eProject);
 
 	mov	eax, DWORD PTR _eProject$[esp-4]
 	push	eax
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getProjectInfo@CvGlobals@@QAEPAVCvProjectEntry@@W4ProjectTypes@@@Z ; CvGlobals::getProjectInfo
 
-; 554  : 	if(pkProjectInfo)
+; 560  : 	if(pkProjectInfo)
 
 	test	eax, eax
 	je	SHORT $LN1@isTechRequ
 
-; 555  : 	{
-; 556  : 		if(pkProjectInfo->GetTechPrereq() == eTech)
+; 561  : 	{
+; 562  : 		if(pkProjectInfo->GetTechPrereq() == eTech)
 
 	mov	ecx, eax
 	call	?GetTechPrereq@CvProjectEntry@@QBEHXZ	; CvProjectEntry::GetTechPrereq
 	cmp	eax, DWORD PTR _eTech$[esp-4]
 	jne	SHORT $LN1@isTechRequ
 
-; 557  : 		{
-; 558  : 			return true;
+; 563  : 		{
+; 564  : 			return true;
 
 	mov	al, 1
 
-; 563  : }
+; 569  : }
 
 	ret	0
 $LN1@isTechRequ:
 
-; 559  : 		}
-; 560  : 	}
-; 561  : 
-; 562  : 	return false;
+; 565  : 		}
+; 566  : 	}
+; 567  : 
+; 568  : 	return false;
 
 	xor	al, al
 
-; 563  : }
+; 569  : }
 
 	ret	0
 ?isTechRequiredForProject@@YA_NW4TechTypes@@W4ProjectTypes@@@Z ENDP ; isTechRequiredForProject
@@ -1740,20 +1749,20 @@ _TEXT	SEGMENT
 _eUnitClass$ = 8					; size = 4
 ?isWorldUnitClass@@YA_NW4UnitClassTypes@@@Z PROC	; isWorldUnitClass, COMDAT
 
-; 567  : 	CvUnitClassInfo* pkUnitClassInfo = GC.getUnitClassInfo(eUnitClass);
+; 573  : 	CvUnitClassInfo* pkUnitClassInfo = GC.getUnitClassInfo(eUnitClass);
 
 	mov	eax, DWORD PTR _eUnitClass$[esp-4]
 	push	eax
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getUnitClassInfo@CvGlobals@@QAEPAVCvUnitClassInfo@@W4UnitClassTypes@@@Z ; CvGlobals::getUnitClassInfo
 
-; 568  : 	if(pkUnitClassInfo)
+; 574  : 	if(pkUnitClassInfo)
 
 	test	eax, eax
 	je	SHORT $LN1@isWorldUni
 
-; 569  : 	{
-; 570  : 		return (pkUnitClassInfo->getMaxGlobalInstances() != -1);
+; 575  : 	{
+; 576  : 		return (pkUnitClassInfo->getMaxGlobalInstances() != -1);
 
 	mov	ecx, eax
 	call	?getMaxGlobalInstances@CvUnitClassInfo@@QBEHXZ ; CvUnitClassInfo::getMaxGlobalInstances
@@ -1762,17 +1771,17 @@ _eUnitClass$ = 8					; size = 4
 	setne	cl
 	mov	al, cl
 
-; 573  : }
+; 579  : }
 
 	ret	0
 $LN1@isWorldUni:
 
-; 571  : 	}
-; 572  : 	return false;
+; 577  : 	}
+; 578  : 	return false;
 
 	xor	al, al
 
-; 573  : }
+; 579  : }
 
 	ret	0
 ?isWorldUnitClass@@YA_NW4UnitClassTypes@@@Z ENDP	; isWorldUnitClass
@@ -1785,20 +1794,20 @@ _TEXT	SEGMENT
 _eUnitClass$ = 8					; size = 4
 ?isTeamUnitClass@@YA_NW4UnitClassTypes@@@Z PROC		; isTeamUnitClass, COMDAT
 
-; 577  : 	CvUnitClassInfo* pkUnitClassInfo = GC.getUnitClassInfo(eUnitClass);
+; 583  : 	CvUnitClassInfo* pkUnitClassInfo = GC.getUnitClassInfo(eUnitClass);
 
 	mov	eax, DWORD PTR _eUnitClass$[esp-4]
 	push	eax
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getUnitClassInfo@CvGlobals@@QAEPAVCvUnitClassInfo@@W4UnitClassTypes@@@Z ; CvGlobals::getUnitClassInfo
 
-; 578  : 	if(pkUnitClassInfo)
+; 584  : 	if(pkUnitClassInfo)
 
 	test	eax, eax
 	je	SHORT $LN1@isTeamUnit
 
-; 579  : 	{
-; 580  : 		return (pkUnitClassInfo->getMaxTeamInstances() != -1);
+; 585  : 	{
+; 586  : 		return (pkUnitClassInfo->getMaxTeamInstances() != -1);
 
 	mov	ecx, eax
 	call	?getMaxTeamInstances@CvUnitClassInfo@@QBEHXZ ; CvUnitClassInfo::getMaxTeamInstances
@@ -1807,17 +1816,17 @@ _eUnitClass$ = 8					; size = 4
 	setne	cl
 	mov	al, cl
 
-; 583  : }
+; 589  : }
 
 	ret	0
 $LN1@isTeamUnit:
 
-; 581  : 	}
-; 582  : 	return false;
+; 587  : 	}
+; 588  : 	return false;
 
 	xor	al, al
 
-; 583  : }
+; 589  : }
 
 	ret	0
 ?isTeamUnitClass@@YA_NW4UnitClassTypes@@@Z ENDP		; isTeamUnitClass
@@ -1830,20 +1839,20 @@ _TEXT	SEGMENT
 _eUnitClass$ = 8					; size = 4
 ?isNationalUnitClass@@YA_NW4UnitClassTypes@@@Z PROC	; isNationalUnitClass, COMDAT
 
-; 587  : 	CvUnitClassInfo* pkUnitClassInfo = GC.getUnitClassInfo(eUnitClass);
+; 593  : 	CvUnitClassInfo* pkUnitClassInfo = GC.getUnitClassInfo(eUnitClass);
 
 	mov	eax, DWORD PTR _eUnitClass$[esp-4]
 	push	eax
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getUnitClassInfo@CvGlobals@@QAEPAVCvUnitClassInfo@@W4UnitClassTypes@@@Z ; CvGlobals::getUnitClassInfo
 
-; 588  : 	if(pkUnitClassInfo)
+; 594  : 	if(pkUnitClassInfo)
 
 	test	eax, eax
 	je	SHORT $LN1@isNational
 
-; 589  : 	{
-; 590  : 		return (pkUnitClassInfo->getMaxPlayerInstances() != -1);
+; 595  : 	{
+; 596  : 		return (pkUnitClassInfo->getMaxPlayerInstances() != -1);
 
 	mov	ecx, eax
 	call	?getMaxPlayerInstances@CvUnitClassInfo@@QBEHXZ ; CvUnitClassInfo::getMaxPlayerInstances
@@ -1852,17 +1861,17 @@ _eUnitClass$ = 8					; size = 4
 	setne	cl
 	mov	al, cl
 
-; 593  : }
+; 599  : }
 
 	ret	0
 $LN1@isNational:
 
-; 591  : 	}
-; 592  : 	return false;
+; 597  : 	}
+; 598  : 	return false;
 
 	xor	al, al
 
-; 593  : }
+; 599  : }
 
 	ret	0
 ?isNationalUnitClass@@YA_NW4UnitClassTypes@@@Z ENDP	; isNationalUnitClass
@@ -1874,11 +1883,11 @@ _TEXT	SEGMENT
 _eUnitClass$ = 8					; size = 4
 ?isLimitedUnitClass@@YA_NW4UnitClassTypes@@@Z PROC	; isLimitedUnitClass, COMDAT
 
-; 596  : {
+; 602  : {
 
 	push	esi
 
-; 597  : 	return (isWorldUnitClass(eUnitClass) || isTeamUnitClass(eUnitClass) || isNationalUnitClass(eUnitClass));
+; 603  : 	return (isWorldUnitClass(eUnitClass) || isTeamUnitClass(eUnitClass) || isNationalUnitClass(eUnitClass));
 
 	mov	esi, DWORD PTR _eUnitClass$[esp]
 	push	esi
@@ -1920,17 +1929,17 @@ $LN16@isLimitedU:
 	xor	eax, eax
 	pop	esi
 
-; 598  : }
+; 604  : }
 
 	ret	0
 $LN3@isLimitedU:
 
-; 597  : 	return (isWorldUnitClass(eUnitClass) || isTeamUnitClass(eUnitClass) || isNationalUnitClass(eUnitClass));
+; 603  : 	return (isWorldUnitClass(eUnitClass) || isTeamUnitClass(eUnitClass) || isNationalUnitClass(eUnitClass));
 
 	mov	eax, 1
 	pop	esi
 
-; 598  : }
+; 604  : }
 
 	ret	0
 ?isLimitedUnitClass@@YA_NW4UnitClassTypes@@@Z ENDP	; isLimitedUnitClass
@@ -1943,20 +1952,20 @@ _TEXT	SEGMENT
 _eProject$ = 8						; size = 4
 ?isWorldProject@@YA_NW4ProjectTypes@@@Z PROC		; isWorldProject, COMDAT
 
-; 602  : 	CvProjectEntry* pkProjectInfo = GC.getProjectInfo(eProject);
+; 608  : 	CvProjectEntry* pkProjectInfo = GC.getProjectInfo(eProject);
 
 	mov	eax, DWORD PTR _eProject$[esp-4]
 	push	eax
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getProjectInfo@CvGlobals@@QAEPAVCvProjectEntry@@W4ProjectTypes@@@Z ; CvGlobals::getProjectInfo
 
-; 603  : 	if(pkProjectInfo)
+; 609  : 	if(pkProjectInfo)
 
 	test	eax, eax
 	je	SHORT $LN1@isWorldPro
 
-; 604  : 	{
-; 605  : 		return (pkProjectInfo->GetMaxGlobalInstances() != -1);
+; 610  : 	{
+; 611  : 		return (pkProjectInfo->GetMaxGlobalInstances() != -1);
 
 	mov	ecx, eax
 	call	?GetMaxGlobalInstances@CvProjectEntry@@QBEHXZ ; CvProjectEntry::GetMaxGlobalInstances
@@ -1965,17 +1974,17 @@ _eProject$ = 8						; size = 4
 	setne	cl
 	mov	al, cl
 
-; 608  : }
+; 614  : }
 
 	ret	0
 $LN1@isWorldPro:
 
-; 606  : 	}
-; 607  : 	return false;
+; 612  : 	}
+; 613  : 	return false;
 
 	xor	al, al
 
-; 608  : }
+; 614  : }
 
 	ret	0
 ?isWorldProject@@YA_NW4ProjectTypes@@@Z ENDP		; isWorldProject
@@ -1988,20 +1997,20 @@ _TEXT	SEGMENT
 _eProject$ = 8						; size = 4
 ?isTeamProject@@YA_NW4ProjectTypes@@@Z PROC		; isTeamProject, COMDAT
 
-; 612  : 	CvProjectEntry* pkProjectInfo = GC.getProjectInfo(eProject);
+; 618  : 	CvProjectEntry* pkProjectInfo = GC.getProjectInfo(eProject);
 
 	mov	eax, DWORD PTR _eProject$[esp-4]
 	push	eax
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getProjectInfo@CvGlobals@@QAEPAVCvProjectEntry@@W4ProjectTypes@@@Z ; CvGlobals::getProjectInfo
 
-; 613  : 	if(pkProjectInfo)
+; 619  : 	if(pkProjectInfo)
 
 	test	eax, eax
 	je	SHORT $LN1@isTeamProj
 
-; 614  : 	{
-; 615  : 		return (pkProjectInfo->GetMaxTeamInstances() != -1);
+; 620  : 	{
+; 621  : 		return (pkProjectInfo->GetMaxTeamInstances() != -1);
 
 	mov	ecx, eax
 	call	?GetMaxTeamInstances@CvProjectEntry@@QBEHXZ ; CvProjectEntry::GetMaxTeamInstances
@@ -2010,17 +2019,17 @@ _eProject$ = 8						; size = 4
 	setne	cl
 	mov	al, cl
 
-; 618  : }
+; 624  : }
 
 	ret	0
 $LN1@isTeamProj:
 
-; 616  : 	}
-; 617  : 	return false;
+; 622  : 	}
+; 623  : 	return false;
 
 	xor	al, al
 
-; 618  : }
+; 624  : }
 
 	ret	0
 ?isTeamProject@@YA_NW4ProjectTypes@@@Z ENDP		; isTeamProject
@@ -2032,11 +2041,11 @@ _TEXT	SEGMENT
 _eProject$ = 8						; size = 4
 ?isLimitedProject@@YA_NW4ProjectTypes@@@Z PROC		; isLimitedProject, COMDAT
 
-; 621  : {
+; 627  : {
 
 	push	esi
 
-; 622  : 	return (isWorldProject(eProject) || isTeamProject(eProject));
+; 628  : 	return (isWorldProject(eProject) || isTeamProject(eProject));
 
 	mov	esi, DWORD PTR _eProject$[esp]
 	push	esi
@@ -2066,17 +2075,17 @@ $LN12@isLimitedP:
 	xor	eax, eax
 	pop	esi
 
-; 623  : }
+; 629  : }
 
 	ret	0
 $LN3@isLimitedP:
 
-; 622  : 	return (isWorldProject(eProject) || isTeamProject(eProject));
+; 628  : 	return (isWorldProject(eProject) || isTeamProject(eProject));
 
 	mov	eax, 1
 	pop	esi
 
-; 623  : }
+; 629  : }
 
 	ret	0
 ?isLimitedProject@@YA_NW4ProjectTypes@@@Z ENDP		; isLimitedProject
@@ -2091,8 +2100,8 @@ _iData1$ = 12						; size = 4
 ___formal$ = 16						; size = 4
 ?PUF_isTeam@@YA_NPBVCvUnit@@HH@Z PROC			; PUF_isTeam, COMDAT
 
-; 699  : 	CvAssertMsg(iData1 != -1, "Invalid data argument, should be >= 0");
-; 700  : 	return (pUnit->getTeam() == iData1);
+; 705  : 	CvAssertMsg(iData1 != -1, "Invalid data argument, should be >= 0");
+; 706  : 	return (pUnit->getTeam() == iData1);
 
 	mov	ecx, DWORD PTR _pUnit$[esp-4]
 	call	?getTeam@CvUnit@@QBE?AW4TeamTypes@@XZ	; CvUnit::getTeam
@@ -2101,7 +2110,7 @@ ___formal$ = 16						; size = 4
 	sete	cl
 	mov	al, cl
 
-; 701  : }
+; 707  : }
 
 	ret	0
 ?PUF_isTeam@@YA_NPBVCvUnit@@HH@Z ENDP			; PUF_isTeam
@@ -2116,13 +2125,13 @@ ___formal$ = 12						; size = 4
 ___formal$ = 16						; size = 4
 ?PUF_canDefend@@YA_NPBVCvUnit@@HH@Z PROC		; PUF_canDefend, COMDAT
 
-; 796  : 	return pUnit->IsCanDefend();
+; 802  : 	return pUnit->IsCanDefend();
 
 	mov	ecx, DWORD PTR _pUnit$[esp-4]
 	push	0
 	call	?IsCanDefend@CvUnit@@QBE_NPBVCvPlot@@@Z	; CvUnit::IsCanDefend
 
-; 797  : }
+; 803  : }
 
 	ret	0
 ?PUF_canDefend@@YA_NPBVCvUnit@@HH@Z ENDP		; PUF_canDefend
@@ -2136,7 +2145,7 @@ ___formal$ = 12						; size = 4
 ___formal$ = 16						; size = 4
 ?PUF_cannotDefend@@YA_NPBVCvUnit@@HH@Z PROC		; PUF_cannotDefend, COMDAT
 
-; 801  : 	return !(pUnit->IsCanDefend());
+; 807  : 	return !(pUnit->IsCanDefend());
 
 	mov	ecx, DWORD PTR _pUnit$[esp-4]
 	push	0
@@ -2146,7 +2155,7 @@ ___formal$ = 16						; size = 4
 	sete	cl
 	mov	al, cl
 
-; 802  : }
+; 808  : }
 
 	ret	0
 ?PUF_cannotDefend@@YA_NPBVCvUnit@@HH@Z ENDP		; PUF_cannotDefend
@@ -2161,7 +2170,7 @@ ___formal$ = 12						; size = 4
 ___formal$ = 16						; size = 4
 ?PUF_isFighting@@YA_NPBVCvUnit@@HH@Z PROC		; PUF_isFighting, COMDAT
 
-; 819  : 	return pUnit->isFighting();
+; 825  : 	return pUnit->isFighting();
 
 	mov	ecx, DWORD PTR _pUnit$[esp-4]
 	jmp	?isFighting@CvUnit@@QBE_NXZ		; CvUnit::isFighting
@@ -2177,8 +2186,8 @@ _iData1$ = 12						; size = 4
 ___formal$ = 16						; size = 4
 ?PUF_isDomainType@@YA_NPBVCvUnit@@HH@Z PROC		; PUF_isDomainType, COMDAT
 
-; 824  : 	CvAssertMsg(iData1 != -1, "Invalid data argument, should be >= 0");
-; 825  : 	return (pUnit->getDomainType() == iData1);
+; 830  : 	CvAssertMsg(iData1 != -1, "Invalid data argument, should be >= 0");
+; 831  : 	return (pUnit->getDomainType() == iData1);
 
 	mov	ecx, DWORD PTR _pUnit$[esp-4]
 	call	?getDomainType@CvUnit@@QBE?AW4DomainTypes@@XZ ; CvUnit::getDomainType
@@ -2187,7 +2196,7 @@ ___formal$ = 16						; size = 4
 	sete	cl
 	mov	al, cl
 
-; 826  : }
+; 832  : }
 
 	ret	0
 ?PUF_isDomainType@@YA_NPBVCvUnit@@HH@Z ENDP		; PUF_isDomainType
@@ -2202,8 +2211,8 @@ _iData1$ = 12						; size = 4
 ___formal$ = 16						; size = 4
 ?PUF_isUnitType@@YA_NPBVCvUnit@@HH@Z PROC		; PUF_isUnitType, COMDAT
 
-; 830  : 	CvAssertMsg(iData1 != -1, "Invalid data argument, should be >= 0");
-; 831  : 	return (pUnit->getUnitType() == iData1);
+; 836  : 	CvAssertMsg(iData1 != -1, "Invalid data argument, should be >= 0");
+; 837  : 	return (pUnit->getUnitType() == iData1);
 
 	mov	ecx, DWORD PTR _pUnit$[esp-4]
 	call	?getUnitType@CvUnit@@QBE?BW4UnitTypes@@XZ ; CvUnit::getUnitType
@@ -2212,7 +2221,7 @@ ___formal$ = 16						; size = 4
 	sete	cl
 	mov	al, cl
 
-; 832  : }
+; 838  : }
 
 	ret	0
 ?PUF_isUnitType@@YA_NPBVCvUnit@@HH@Z ENDP		; PUF_isUnitType
@@ -2227,8 +2236,8 @@ _iData1$ = 12						; size = 4
 ___formal$ = 16						; size = 4
 ?PUF_isUnitAIType@@YA_NPBVCvUnit@@HH@Z PROC		; PUF_isUnitAIType, COMDAT
 
-; 836  : 	CvAssertMsg(iData1 != -1, "Invalid data argument, should be >= 0");
-; 837  : 	return (pUnit->AI_getUnitAIType() == iData1);
+; 842  : 	CvAssertMsg(iData1 != -1, "Invalid data argument, should be >= 0");
+; 843  : 	return (pUnit->AI_getUnitAIType() == iData1);
 
 	mov	ecx, DWORD PTR _pUnit$[esp-4]
 	call	?AI_getUnitAIType@CvUnit@@QBE?AW4UnitAITypes@@XZ ; CvUnit::AI_getUnitAIType
@@ -2237,7 +2246,7 @@ ___formal$ = 16						; size = 4
 	sete	cl
 	mov	al, cl
 
-; 838  : }
+; 844  : }
 
 	ret	0
 ?PUF_isUnitAIType@@YA_NPBVCvUnit@@HH@Z ENDP		; PUF_isUnitAIType
@@ -2252,7 +2261,7 @@ ___formal$ = 12						; size = 4
 ___formal$ = 16						; size = 4
 ?PUF_isSelected@@YA_NPBVCvUnit@@HH@Z PROC		; PUF_isSelected, COMDAT
 
-; 842  : 	return pUnit->IsSelected();
+; 848  : 	return pUnit->IsSelected();
 
 	mov	ecx, DWORD PTR _pUnit$[esp-4]
 	jmp	?IsSelected@CvUnit@@QBE_NXZ		; CvUnit::IsSelected
@@ -2268,17 +2277,17 @@ ___formal$ = 12						; size = 4
 ___formal$ = 16						; size = 4
 ?PUF_makeInfoBarDirty@@YA_NPAVCvUnit@@HH@Z PROC		; PUF_makeInfoBarDirty, COMDAT
 
-; 847  : 	pUnit->setInfoBarDirty(true);
+; 853  : 	pUnit->setInfoBarDirty(true);
 
 	mov	ecx, DWORD PTR _pUnit$[esp-4]
 	push	1
 	call	?setInfoBarDirty@CvUnit@@QAEX_N@Z	; CvUnit::setInfoBarDirty
 
-; 848  : 	return true;
+; 854  : 	return true;
 
 	mov	al, 1
 
-; 849  : }
+; 855  : }
 
 	ret	0
 ?PUF_makeInfoBarDirty@@YA_NPAVCvUnit@@HH@Z ENDP		; PUF_makeInfoBarDirty
@@ -2293,7 +2302,7 @@ ___formal$ = 12						; size = 4
 ___formal$ = 16						; size = 4
 ?PUF_isNoMission@@YA_NPBVCvUnit@@HH@Z PROC		; PUF_isNoMission, COMDAT
 
-; 853  : 	return (pUnit->GetActivityType() != ACTIVITY_MISSION);
+; 859  : 	return (pUnit->GetActivityType() != ACTIVITY_MISSION);
 
 	mov	ecx, DWORD PTR _pUnit$[esp-4]
 	call	?GetActivityType@CvUnit@@QBE?AW4ActivityTypes@@XZ ; CvUnit::GetActivityType
@@ -2302,7 +2311,7 @@ ___formal$ = 16						; size = 4
 	setne	cl
 	mov	al, cl
 
-; 854  : }
+; 860  : }
 
 	ret	0
 ?PUF_isNoMission@@YA_NPBVCvUnit@@HH@Z ENDP		; PUF_isNoMission
@@ -2318,11 +2327,11 @@ ___formal$ = 12						; size = 4
 ___formal$ = 16						; size = 4
 ?PUF_isFiniteRange@@YA_NPBVCvUnit@@HH@Z PROC		; PUF_isFiniteRange, COMDAT
 
-; 857  : {
+; 863  : {
 
 	push	esi
 
-; 858  : 	return ((pUnit->getDomainType() != DOMAIN_AIR) || (pUnit->getUnitInfo().GetRange() > 0));
+; 864  : 	return ((pUnit->getDomainType() != DOMAIN_AIR) || (pUnit->getUnitInfo().GetRange() > 0));
 
 	mov	esi, DWORD PTR _pUnit$[esp]
 	mov	ecx, esi
@@ -2338,17 +2347,17 @@ ___formal$ = 16						; size = 4
 	xor	eax, eax
 	pop	esi
 
-; 859  : }
+; 865  : }
 
 	ret	0
 $LN3@PUF_isFini:
 
-; 858  : 	return ((pUnit->getDomainType() != DOMAIN_AIR) || (pUnit->getUnitInfo().GetRange() > 0));
+; 864  : 	return ((pUnit->getDomainType() != DOMAIN_AIR) || (pUnit->getUnitInfo().GetRange() > 0));
 
 	mov	eax, 1
 	pop	esi
 
-; 859  : }
+; 865  : }
 
 	ret	0
 ?PUF_isFiniteRange@@YA_NPBVCvUnit@@HH@Z ENDP		; PUF_isFiniteRange
@@ -2363,13 +2372,13 @@ _iNum$ = 12						; size = 4
 _rand$ = 16						; size = 4
 ?shuffleArray@@YAXPAHHAAVCvRandom@@@Z PROC		; shuffleArray, COMDAT
 
-; 892  : {
+; 898  : {
 
 	push	ebx
 
-; 893  : 	int iI, iJ;
-; 894  : 
-; 895  : 	for(iI = 0; iI < iNum; iI++)
+; 899  : 	int iI, iJ;
+; 900  : 
+; 901  : 	for(iI = 0; iI < iNum; iI++)
 
 	mov	ebx, DWORD PTR _iNum$[esp]
 	push	esi
@@ -2380,8 +2389,8 @@ _rand$ = 16						; size = 4
 	jle	SHORT $LN5@shuffleArr
 $LL7@shuffleArr:
 
-; 896  : 	{
-; 897  : 		piShuffle[iI] = iI;
+; 902  : 	{
+; 903  : 		piShuffle[iI] = iI;
 
 	mov	DWORD PTR [edi+eax*4], eax
 	inc	eax
@@ -2389,9 +2398,9 @@ $LL7@shuffleArr:
 	jl	SHORT $LL7@shuffleArr
 $LN5@shuffleArr:
 
-; 898  : 	}
-; 899  : 
-; 900  : 	for(iI = 0; iI < iNum; iI++)
+; 904  : 	}
+; 905  : 
+; 906  : 	for(iI = 0; iI < iNum; iI++)
 
 	xor	esi, esi
 	test	ebx, ebx
@@ -2400,8 +2409,8 @@ $LN5@shuffleArr:
 	mov	ebp, DWORD PTR _rand$[esp+12]
 $LL14@shuffleArr:
 
-; 901  : 	{
-; 902  : 		iJ = (rand.get(iNum - iI, NULL) + iI);
+; 907  : 	{
+; 908  : 		iJ = (rand.get(iNum - iI, NULL) + iI);
 
 	mov	eax, ebx
 	push	0
@@ -2412,21 +2421,21 @@ $LL14@shuffleArr:
 	movzx	eax, ax
 	add	eax, esi
 
-; 903  : 
-; 904  : 		if(iI != iJ)
+; 909  : 
+; 910  : 		if(iI != iJ)
 
 	cmp	esi, eax
 	je	SHORT $LN3@shuffleArr
 
-; 905  : 		{
-; 906  : 			int iTemp = piShuffle[iI];
-; 907  : 			piShuffle[iI] = piShuffle[iJ];
+; 911  : 		{
+; 912  : 			int iTemp = piShuffle[iI];
+; 913  : 			piShuffle[iI] = piShuffle[iJ];
 
 	mov	edx, DWORD PTR [edi+eax*4]
 	mov	ecx, DWORD PTR [edi+esi*4]
 	mov	DWORD PTR [edi+esi*4], edx
 
-; 908  : 			piShuffle[iJ] = iTemp;
+; 914  : 			piShuffle[iJ] = iTemp;
 
 	mov	DWORD PTR [edi+eax*4], ecx
 $LN3@shuffleArr:
@@ -2439,9 +2448,9 @@ $LN2@shuffleArr:
 	pop	esi
 	pop	ebx
 
-; 909  : 		}
-; 910  : 	}
-; 911  : }
+; 915  : 		}
+; 916  : 	}
+; 917  : }
 
 	ret	0
 ?shuffleArray@@YAXPAHHAAVCvRandom@@@Z ENDP		; shuffleArray
@@ -2456,19 +2465,19 @@ _iNumBools$ = 12					; size = 4
 _ppBools$ = 16						; size = 4
 ?stringToBools@@YAXPBDPAHPAPA_N@Z PROC			; stringToBools, COMDAT
 
-; 1011 : {
+; 1017 : {
 
 	push	edi
 
-; 1012 : 	CvAssertMsg(szString, "null string");
-; 1013 : 	if(szString)
+; 1018 : 	CvAssertMsg(szString, "null string");
+; 1019 : 	if(szString)
 
 	mov	edi, DWORD PTR _szString$[esp]
 	test	edi, edi
 	je	SHORT $LN1@stringToBo
 
-; 1014 : 	{
-; 1015 : 		*iNumBools = strlen(szString);
+; 1020 : 	{
+; 1021 : 		*iNumBools = strlen(szString);
 
 	mov	eax, edi
 	lea	edx, DWORD PTR [eax+1]
@@ -2482,7 +2491,7 @@ $LL9@stringToBo:
 	push	esi
 	mov	esi, DWORD PTR _iNumBools$[esp+4]
 
-; 1016 : 		*ppBools = FNEW(bool[*iNumBools], c_eCiv5GameplayDLL, 0);
+; 1022 : 		*ppBools = FNEW(bool[*iNumBools], c_eCiv5GameplayDLL, 0);
 
 	push	eax
 	mov	DWORD PTR [esi], eax
@@ -2490,8 +2499,8 @@ $LL9@stringToBo:
 	mov	ecx, DWORD PTR _ppBools$[esp+8]
 	mov	DWORD PTR [ecx], eax
 
-; 1017 : 		int i;
-; 1018 : 		for(i=0; i<*iNumBools; i++)
+; 1023 : 		int i;
+; 1024 : 		for(i=0; i<*iNumBools; i++)
 
 	xor	eax, eax
 	add	esp, 4
@@ -2500,8 +2509,8 @@ $LL9@stringToBo:
 	push	ebx
 $LL3@stringToBo:
 
-; 1019 : 		{
-; 1020 : 			(*ppBools)[i] = (szString[i]=='1');
+; 1025 : 		{
+; 1026 : 			(*ppBools)[i] = (szString[i]=='1');
 
 	cmp	BYTE PTR [eax+edi], 49			; 00000031H
 	mov	ebx, DWORD PTR [ecx]
@@ -2516,9 +2525,9 @@ $LN10@stringToBo:
 $LN1@stringToBo:
 	pop	edi
 
-; 1021 : 		}
-; 1022 : 	}
-; 1023 : }
+; 1027 : 		}
+; 1028 : 	}
+; 1029 : }
 
 	ret	0
 ?stringToBools@@YAXPBDPAHPAPA_N@Z ENDP			; stringToBools
@@ -2534,12 +2543,12 @@ _outRotatedX$ = 20					; size = 4
 _outRotatedY$ = 24					; size = 4
 ?getRotatedPosition@@YAXHHW4DirectionTypes@@AAH1@Z PROC	; getRotatedPosition, COMDAT
 
-; 1316 : 	outRotatedX = inHexspaceX;
-; 1317 : 	outRotatedY = inHexspaceY;
-; 1318 : 
-; 1319 : 	// early out if the facing is NE as that is the base rotation that the data is supposed to be stored in
-; 1320 : 	// also early out if we are looking at the pivot
-; 1321 : 	if(DIRECTION_NORTHEAST == rotatedDirection || (inHexspaceX == 0 && inHexspaceY == 0))
+; 1322 : 	outRotatedX = inHexspaceX;
+; 1323 : 	outRotatedY = inHexspaceY;
+; 1324 : 
+; 1325 : 	// early out if the facing is NE as that is the base rotation that the data is supposed to be stored in
+; 1326 : 	// also early out if we are looking at the pivot
+; 1327 : 	if(DIRECTION_NORTHEAST == rotatedDirection || (inHexspaceX == 0 && inHexspaceY == 0))
 
 	cmp	DWORD PTR _rotatedDirection$[esp-4], 0
 	mov	eax, DWORD PTR _outRotatedX$[esp-4]
@@ -2557,12 +2566,12 @@ _outRotatedY$ = 24					; size = 4
 	je	$LN17@getRotated
 $LN18@getRotated:
 
-; 1322 : 	{
-; 1323 : 		return;
-; 1324 : 	};
-; 1325 : 
-; 1326 : 	// find the ring that this is on
-; 1327 : 	int ring = hexDistance(inHexspaceX, inHexspaceY);
+; 1328 : 	{
+; 1329 : 		return;
+; 1330 : 	};
+; 1331 : 
+; 1332 : 	// find the ring that this is on
+; 1333 : 	int ring = hexDistance(inHexspaceX, inHexspaceY);
 
 	xor	edx, edx
 	test	edi, edi
@@ -2602,9 +2611,9 @@ $LN32@getRotated:
 $LN34@getRotated:
 	push	ebp
 
-; 1328 : 
-; 1329 : 	// find the nearest spike direction
-; 1330 : 	DirectionTypes spikeDirection = hexspaceSpikeDirection(inHexspaceX, inHexspaceY);
+; 1334 : 
+; 1335 : 	// find the nearest spike direction
+; 1336 : 	DirectionTypes spikeDirection = hexspaceSpikeDirection(inHexspaceX, inHexspaceY);
 
 	push	ebx
 	push	edi
@@ -2612,95 +2621,95 @@ $LN34@getRotated:
 	mov	ebp, eax
 	add	esp, 8
 
-; 1331 : 
-; 1332 : 	int spikeX = 0;
+; 1337 : 
+; 1338 : 	int spikeX = 0;
 
 	xor	ecx, ecx
 
-; 1333 : 	int spikeY = 0;
+; 1339 : 	int spikeY = 0;
 
 	xor	edx, edx
 
-; 1334 : 	switch(spikeDirection)
+; 1340 : 	switch(spikeDirection)
 
 	cmp	ebp, 5
 	ja	SHORT $LN15@getRotated
 	jmp	DWORD PTR $LN53@getRotated[ebp*4]
 $LN13@getRotated:
 
-; 1335 : 	{
-; 1336 : 	case DIRECTION_NORTHEAST:
-; 1337 : 	{
-; 1338 : 		spikeY = ring;
-; 1339 : 	}
-; 1340 : 	break;
-; 1341 : 	case DIRECTION_EAST:
-; 1342 : 	{
-; 1343 : 		spikeX = ring;
+; 1341 : 	{
+; 1342 : 	case DIRECTION_NORTHEAST:
+; 1343 : 	{
+; 1344 : 		spikeY = ring;
+; 1345 : 	}
+; 1346 : 	break;
+; 1347 : 	case DIRECTION_EAST:
+; 1348 : 	{
+; 1349 : 		spikeX = ring;
 
 	mov	ecx, esi
-
-; 1344 : 	}
-; 1345 : 	break;
-
-	jmp	SHORT $LN15@getRotated
-$LN12@getRotated:
-
-; 1346 : 	case DIRECTION_SOUTHEAST:
-; 1347 : 	{
-; 1348 : 		spikeX = ring;
-
-	mov	ecx, esi
-$LN11@getRotated:
-
-; 1349 : 		spikeY = -ring;
-
-	mov	edx, esi
-	neg	edx
 
 ; 1350 : 	}
 ; 1351 : 	break;
 
 	jmp	SHORT $LN15@getRotated
+$LN12@getRotated:
+
+; 1352 : 	case DIRECTION_SOUTHEAST:
+; 1353 : 	{
+; 1354 : 		spikeX = ring;
+
+	mov	ecx, esi
+$LN11@getRotated:
+
+; 1355 : 		spikeY = -ring;
+
+	mov	edx, esi
+	neg	edx
+
+; 1356 : 	}
+; 1357 : 	break;
+
+	jmp	SHORT $LN15@getRotated
 $LN10@getRotated:
 
-; 1352 : 	case DIRECTION_SOUTHWEST:
-; 1353 : 	{
-; 1354 : 		spikeY = -ring;
-; 1355 : 	}
-; 1356 : 	break;
-; 1357 : 	case DIRECTION_WEST:
-; 1358 : 	{
-; 1359 : 		spikeX = -ring;
+; 1358 : 	case DIRECTION_SOUTHWEST:
+; 1359 : 	{
+; 1360 : 		spikeY = -ring;
+; 1361 : 	}
+; 1362 : 	break;
+; 1363 : 	case DIRECTION_WEST:
+; 1364 : 	{
+; 1365 : 		spikeX = -ring;
 
 	mov	ecx, esi
 	neg	ecx
 
-; 1360 : 	}
-; 1361 : 	break;
+; 1366 : 	}
+; 1367 : 	break;
 
 	jmp	SHORT $LN15@getRotated
 $LN9@getRotated:
 
-; 1362 : 	case DIRECTION_NORTHWEST:
-; 1363 : 	{
-; 1364 : 		spikeX = -ring;
+; 1368 : 	case DIRECTION_NORTHWEST:
+; 1369 : 	{
+; 1370 : 		spikeX = -ring;
 
 	mov	ecx, esi
 	neg	ecx
 $LN14@getRotated:
 
-; 1365 : 		spikeY = ring;
+; 1371 : 		spikeY = ring;
 
 	mov	edx, esi
 $LN15@getRotated:
 
-; 1366 : 	}
-; 1367 : 	break;
-; 1368 : 	}
-; 1369 : 
-; 1370 : 	// find the offset of this point from the spike
-; 1371 : 	int offsetOnThisRing = hexDistance(spikeX-inHexspaceX,spikeY-inHexspaceY);
+; 1372 : 	}
+; 1373 : 	break;
+; 1374 : 	}
+; 1375 : 
+; 1376 : 	// find the offset of this point from the spike
+; 1377 : 	int offsetOnThisRing = hexDistance(spikeX-inHexspaceX,spikeY-inHexspaceY);
 
 	sub	edx, ebx
 	sub	ecx, edi
@@ -2737,11 +2746,11 @@ $LN46@getRotated:
 	mov	ecx, edx
 $LN48@getRotated:
 
-; 1372 : 
-; 1373 : 	// find the rotated spike
-; 1374 : 	int newSpikeX = 0;
-; 1375 : 	int newSpikeY = 0;
-; 1376 : 	DirectionTypes newSpikeDirection = (DirectionTypes)((spikeDirection + rotatedDirection) % (NUM_DIRECTION_TYPES));
+; 1378 : 
+; 1379 : 	// find the rotated spike
+; 1380 : 	int newSpikeX = 0;
+; 1381 : 	int newSpikeY = 0;
+; 1382 : 	DirectionTypes newSpikeDirection = (DirectionTypes)((spikeDirection + rotatedDirection) % (NUM_DIRECTION_TYPES));
 
 	mov	edx, DWORD PTR _rotatedDirection$[esp+12]
 	lea	eax, DWORD PTR [edx+ebp]
@@ -2750,27 +2759,27 @@ $LN48@getRotated:
 	idiv	edi
 	pop	ebp
 
-; 1377 : 	switch(newSpikeDirection)
+; 1383 : 	switch(newSpikeDirection)
 
 	cmp	edx, 5
 	ja	SHORT $LN49@getRotated
 	jmp	DWORD PTR $LN54@getRotated[edx*4]
 $LN6@getRotated:
 
-; 1418 : 	}
-; 1419 : 	break;
-; 1420 : 	case DIRECTION_NORTHWEST:
-; 1421 : 	{
-; 1422 : 		newSpikeX = -ring;
-; 1423 : 		newSpikeY = ring;
-; 1424 : 		// add in the offset in the appropriate direction
-; 1425 : 		outRotatedX = newSpikeX+offsetOnThisRing;
+; 1424 : 	}
+; 1425 : 	break;
+; 1426 : 	case DIRECTION_NORTHWEST:
+; 1427 : 	{
+; 1428 : 		newSpikeX = -ring;
+; 1429 : 		newSpikeY = ring;
+; 1430 : 		// add in the offset in the appropriate direction
+; 1431 : 		outRotatedX = newSpikeX+offsetOnThisRing;
 
 	mov	eax, DWORD PTR _outRotatedX$[esp+8]
 	sub	esi, ecx
 	mov	DWORD PTR [eax], ecx
 
-; 1426 : 		outRotatedY = newSpikeY;
+; 1432 : 		outRotatedY = newSpikeY;
 
 	mov	ecx, DWORD PTR _outRotatedY$[esp+8]
 	mov	DWORD PTR [ecx], esi
@@ -2778,32 +2787,32 @@ $LN6@getRotated:
 	pop	edi
 	pop	ebx
 
-; 1427 : 	}
-; 1428 : 	break;
-; 1429 : 	}
-; 1430 : }
+; 1433 : 	}
+; 1434 : 	break;
+; 1435 : 	}
+; 1436 : }
 
 	ret	0
 $LN5@getRotated:
 
-; 1378 : 	{
-; 1379 : 	case DIRECTION_NORTHEAST:
-; 1380 : 	{
-; 1381 : 		newSpikeY = ring;
-; 1382 : 		// add in the offset in the appropriate direction
-; 1383 : 		outRotatedX = newSpikeX+offsetOnThisRing;
-; 1384 : 		outRotatedY = newSpikeY-offsetOnThisRing;
-; 1385 : 	}
-; 1386 : 	break;
-; 1387 : 	case DIRECTION_EAST:
-; 1388 : 	{
-; 1389 : 		newSpikeX = ring;
-; 1390 : 		// add in the offset in the appropriate direction
-; 1391 : 		outRotatedX = newSpikeX;
+; 1384 : 	{
+; 1385 : 	case DIRECTION_NORTHEAST:
+; 1386 : 	{
+; 1387 : 		newSpikeY = ring;
+; 1388 : 		// add in the offset in the appropriate direction
+; 1389 : 		outRotatedX = newSpikeX+offsetOnThisRing;
+; 1390 : 		outRotatedY = newSpikeY-offsetOnThisRing;
+; 1391 : 	}
+; 1392 : 	break;
+; 1393 : 	case DIRECTION_EAST:
+; 1394 : 	{
+; 1395 : 		newSpikeX = ring;
+; 1396 : 		// add in the offset in the appropriate direction
+; 1397 : 		outRotatedX = newSpikeX;
 
 	mov	edx, DWORD PTR _outRotatedX$[esp+8]
 
-; 1392 : 		outRotatedY = newSpikeY-offsetOnThisRing;
+; 1398 : 		outRotatedY = newSpikeY-offsetOnThisRing;
 
 	mov	eax, DWORD PTR _outRotatedY$[esp+8]
 	mov	DWORD PTR [edx], esi
@@ -2813,28 +2822,28 @@ $LN5@getRotated:
 	mov	DWORD PTR [eax], ecx
 	pop	ebx
 
-; 1427 : 	}
-; 1428 : 	break;
-; 1429 : 	}
-; 1430 : }
+; 1433 : 	}
+; 1434 : 	break;
+; 1435 : 	}
+; 1436 : }
 
 	ret	0
 $LN4@getRotated:
 
-; 1393 : 	}
-; 1394 : 	break;
-; 1395 : 	case DIRECTION_SOUTHEAST:
-; 1396 : 	{
-; 1397 : 		newSpikeX = ring;
-; 1398 : 		newSpikeY = -ring;
-; 1399 : 		// add in the offset in the appropriate direction
-; 1400 : 		outRotatedX = newSpikeX-offsetOnThisRing;
+; 1399 : 	}
+; 1400 : 	break;
+; 1401 : 	case DIRECTION_SOUTHEAST:
+; 1402 : 	{
+; 1403 : 		newSpikeX = ring;
+; 1404 : 		newSpikeY = -ring;
+; 1405 : 		// add in the offset in the appropriate direction
+; 1406 : 		outRotatedX = newSpikeX-offsetOnThisRing;
 
 	mov	eax, DWORD PTR _outRotatedX$[esp+8]
 	mov	edx, esi
 	sub	edx, ecx
 
-; 1426 : 		outRotatedY = newSpikeY;
+; 1432 : 		outRotatedY = newSpikeY;
 
 	mov	ecx, DWORD PTR _outRotatedY$[esp+8]
 	neg	esi
@@ -2844,28 +2853,28 @@ $LN4@getRotated:
 	pop	edi
 	pop	ebx
 
-; 1427 : 	}
-; 1428 : 	break;
-; 1429 : 	}
-; 1430 : }
+; 1433 : 	}
+; 1434 : 	break;
+; 1435 : 	}
+; 1436 : }
 
 	ret	0
 $LN3@getRotated:
 
-; 1401 : 		outRotatedY = newSpikeY;
-; 1402 : 	}
-; 1403 : 	break;
-; 1404 : 	case DIRECTION_SOUTHWEST:
-; 1405 : 	{
-; 1406 : 		newSpikeY = -ring;
-; 1407 : 		// add in the offset in the appropriate direction
-; 1408 : 		outRotatedX = newSpikeX-offsetOnThisRing;
+; 1407 : 		outRotatedY = newSpikeY;
+; 1408 : 	}
+; 1409 : 	break;
+; 1410 : 	case DIRECTION_SOUTHWEST:
+; 1411 : 	{
+; 1412 : 		newSpikeY = -ring;
+; 1413 : 		// add in the offset in the appropriate direction
+; 1414 : 		outRotatedX = newSpikeX-offsetOnThisRing;
 
 	mov	eax, DWORD PTR _outRotatedX$[esp+8]
 	mov	edx, ecx
 	neg	edx
 
-; 1409 : 		outRotatedY = newSpikeY+offsetOnThisRing;
+; 1415 : 		outRotatedY = newSpikeY+offsetOnThisRing;
 
 	sub	ecx, esi
 	pop	esi
@@ -2875,25 +2884,25 @@ $LN3@getRotated:
 	mov	DWORD PTR [edx], ecx
 	pop	ebx
 
-; 1427 : 	}
-; 1428 : 	break;
-; 1429 : 	}
-; 1430 : }
+; 1433 : 	}
+; 1434 : 	break;
+; 1435 : 	}
+; 1436 : }
 
 	ret	0
 $LN2@getRotated:
 
-; 1410 : 	}
-; 1411 : 	break;
-; 1412 : 	case DIRECTION_WEST:
-; 1413 : 	{
-; 1414 : 		newSpikeX = -ring;
-; 1415 : 		// add in the offset in the appropriate direction
-; 1416 : 		outRotatedX = newSpikeX;
+; 1416 : 	}
+; 1417 : 	break;
+; 1418 : 	case DIRECTION_WEST:
+; 1419 : 	{
+; 1420 : 		newSpikeX = -ring;
+; 1421 : 		// add in the offset in the appropriate direction
+; 1422 : 		outRotatedX = newSpikeX;
 
 	mov	eax, DWORD PTR _outRotatedX$[esp+8]
 
-; 1417 : 		outRotatedY = newSpikeY+offsetOnThisRing;
+; 1423 : 		outRotatedY = newSpikeY+offsetOnThisRing;
 
 	mov	edx, DWORD PTR _outRotatedY$[esp+8]
 	neg	esi
@@ -2903,28 +2912,28 @@ $LN2@getRotated:
 	mov	DWORD PTR [edx], ecx
 	pop	ebx
 
-; 1427 : 	}
-; 1428 : 	break;
-; 1429 : 	}
-; 1430 : }
+; 1433 : 	}
+; 1434 : 	break;
+; 1435 : 	}
+; 1436 : }
 
 	ret	0
 $LN1@getRotated:
 
-; 1418 : 	}
-; 1419 : 	break;
-; 1420 : 	case DIRECTION_NORTHWEST:
-; 1421 : 	{
-; 1422 : 		newSpikeX = -ring;
-; 1423 : 		newSpikeY = ring;
-; 1424 : 		// add in the offset in the appropriate direction
-; 1425 : 		outRotatedX = newSpikeX+offsetOnThisRing;
+; 1424 : 	}
+; 1425 : 	break;
+; 1426 : 	case DIRECTION_NORTHWEST:
+; 1427 : 	{
+; 1428 : 		newSpikeX = -ring;
+; 1429 : 		newSpikeY = ring;
+; 1430 : 		// add in the offset in the appropriate direction
+; 1431 : 		outRotatedX = newSpikeX+offsetOnThisRing;
 
 	mov	eax, DWORD PTR _outRotatedX$[esp+8]
 	sub	ecx, esi
 	mov	DWORD PTR [eax], ecx
 
-; 1426 : 		outRotatedY = newSpikeY;
+; 1432 : 		outRotatedY = newSpikeY;
 
 	mov	ecx, DWORD PTR _outRotatedY$[esp+8]
 	mov	DWORD PTR [ecx], esi
@@ -2934,10 +2943,10 @@ $LN17@getRotated:
 	pop	edi
 	pop	ebx
 
-; 1427 : 	}
-; 1428 : 	break;
-; 1429 : 	}
-; 1430 : }
+; 1433 : 	}
+; 1434 : 	break;
+; 1435 : 	}
+; 1436 : }
 
 	ret	0
 	npad	2
@@ -2964,7 +2973,7 @@ _TEXT	SEGMENT
 ; _pszGUID$ = edi
 ; _uiStartIndex$ = eax
 
-; 1435 : 	UINT uiLength = strlen(pszGUID);
+; 1441 : 	UINT uiLength = strlen(pszGUID);
 
 	mov	ecx, edi
 	push	esi
@@ -2977,20 +2986,20 @@ $LL11@SkipGUIDSe:
 	sub	ecx, esi
 	pop	esi
 
-; 1436 : 	if(uiStartIndex < uiLength)
+; 1442 : 	if(uiStartIndex < uiLength)
 
 	cmp	eax, ecx
 	jae	SHORT $LN4@SkipGUIDSe
 $LL6@SkipGUIDSe:
 
-; 1437 : 	{
-; 1438 : 		do
-; 1439 : 		{
-; 1440 : 			char ch = pszGUID[uiStartIndex];
+; 1443 : 	{
+; 1444 : 		do
+; 1445 : 		{
+; 1446 : 			char ch = pszGUID[uiStartIndex];
 
 	mov	dl, BYTE PTR [edi+eax]
 
-; 1441 : 			if(ch == '{' || ch == '-' || ch == ' ')
+; 1447 : 			if(ch == '{' || ch == '-' || ch == ' ')
 
 	cmp	dl, 123					; 0000007bH
 	je	SHORT $LN2@SkipGUIDSe
@@ -3000,23 +3009,23 @@ $LL6@SkipGUIDSe:
 	jne	SHORT $LN4@SkipGUIDSe
 $LN2@SkipGUIDSe:
 
-; 1442 : 				++uiStartIndex;
+; 1448 : 				++uiStartIndex;
 
 	inc	eax
 
-; 1443 : 			else
-; 1444 : 				break;
-; 1445 : 
-; 1446 : 		}
-; 1447 : 		while(uiStartIndex < uiLength);
+; 1449 : 			else
+; 1450 : 				break;
+; 1451 : 
+; 1452 : 		}
+; 1453 : 		while(uiStartIndex < uiLength);
 
 	cmp	eax, ecx
 	jb	SHORT $LL6@SkipGUIDSe
 $LN4@SkipGUIDSe:
 
-; 1448 : 	}
-; 1449 : 	return uiStartIndex;
-; 1450 : }
+; 1454 : 	}
+; 1455 : 	return uiStartIndex;
+; 1456 : }
 
 	ret	0
 ?SkipGUIDSeparators@@YAIPBDI@Z ENDP			; SkipGUIDSeparators
@@ -3028,87 +3037,87 @@ _TEXT	SEGMENT
 ; _ch$ = eax
 ; _uiValue$ = ecx
 
-; 1455 : 	if(ch >= '0' && ch <= '9')
+; 1461 : 	if(ch >= '0' && ch <= '9')
 
 	mov	dl, al
 	sub	dl, 48					; 00000030H
 	cmp	dl, 9
 	ja	SHORT $LN6@GetHexDigi
 
-; 1456 : 		uiValue = (uint)(ch - '0');
+; 1462 : 		uiValue = (uint)(ch - '0');
 
 	movsx	eax, al
 	sub	eax, 48					; 00000030H
 
-; 1460 : 		uiValue = (uint)((ch - 'A') + 10);
+; 1466 : 		uiValue = (uint)((ch - 'A') + 10);
 
 	mov	DWORD PTR [ecx], eax
 
-; 1463 : 
-; 1464 : 	return true;
+; 1469 : 
+; 1470 : 	return true;
 
 	mov	al, 1
 
-; 1465 : }
+; 1471 : }
 
 	ret	0
 $LN6@GetHexDigi:
 
-; 1457 : 	else if(ch >= 'a' && ch <= 'f')
+; 1463 : 	else if(ch >= 'a' && ch <= 'f')
 
 	mov	dl, al
 	sub	dl, 97					; 00000061H
 	cmp	dl, 5
 	ja	SHORT $LN4@GetHexDigi
 
-; 1458 : 		uiValue = (uint)((ch - 'a') + 10);
+; 1464 : 		uiValue = (uint)((ch - 'a') + 10);
 
 	movsx	eax, al
 	sub	eax, 87					; 00000057H
 
-; 1460 : 		uiValue = (uint)((ch - 'A') + 10);
+; 1466 : 		uiValue = (uint)((ch - 'A') + 10);
 
 	mov	DWORD PTR [ecx], eax
 
-; 1463 : 
-; 1464 : 	return true;
+; 1469 : 
+; 1470 : 	return true;
 
 	mov	al, 1
 
-; 1465 : }
+; 1471 : }
 
 	ret	0
 $LN4@GetHexDigi:
 
-; 1459 : 	else if(ch >= 'A' && ch <= 'F')
+; 1465 : 	else if(ch >= 'A' && ch <= 'F')
 
 	mov	dl, al
 	sub	dl, 65					; 00000041H
 	cmp	dl, 5
 	ja	SHORT $LN2@GetHexDigi
 
-; 1460 : 		uiValue = (uint)((ch - 'A') + 10);
+; 1466 : 		uiValue = (uint)((ch - 'A') + 10);
 
 	movsx	eax, al
 	sub	eax, 55					; 00000037H
 	mov	DWORD PTR [ecx], eax
 
-; 1463 : 
-; 1464 : 	return true;
+; 1469 : 
+; 1470 : 	return true;
 
 	mov	al, 1
 
-; 1465 : }
+; 1471 : }
 
 	ret	0
 $LN2@GetHexDigi:
 
-; 1461 : 	else
-; 1462 : 		return false;
+; 1467 : 	else
+; 1468 : 		return false;
 
 	xor	al, al
 
-; 1465 : }
+; 1471 : }
 
 	ret	0
 ?GetHexDigitValue@@YA_NDAAI@Z ENDP			; GetHexDigitValue
@@ -3120,7 +3129,7 @@ _TEXT	SEGMENT
 _kGUID$ = 8						; size = 4
 ?ClearGUID@@YAXAAU_GUID@@@Z PROC			; ClearGUID, COMDAT
 
-; 1532 : 	memset(&kGUID, 0, sizeof(GUID));
+; 1538 : 	memset(&kGUID, 0, sizeof(GUID));
 
 	mov	ecx, DWORD PTR _kGUID$[esp-4]
 	xor	eax, eax
@@ -3129,7 +3138,7 @@ _kGUID$ = 8						; size = 4
 	mov	DWORD PTR [ecx+8], eax
 	mov	DWORD PTR [ecx+12], eax
 
-; 1533 : }
+; 1539 : }
 
 	ret	0
 ?ClearGUID@@YAXAAU_GUID@@@Z ENDP			; ClearGUID
@@ -3141,7 +3150,7 @@ _TEXT	SEGMENT
 _kGUID$ = 8						; size = 4
 ?IsGUIDEmpty@@YA_NABU_GUID@@@Z PROC			; IsGUIDEmpty, COMDAT
 
-; 1538 : 	return kGUID.Data1 == 0 && kGUID.Data2 == 0 && kGUID.Data3 == 0 && *(INT32*)&kGUID.Data4[0] == 0 && *(INT32*)&kGUID.Data4[4] == 0;
+; 1544 : 	return kGUID.Data1 == 0 && kGUID.Data2 == 0 && kGUID.Data3 == 0 && *(INT32*)&kGUID.Data4[0] == 0 && *(INT32*)&kGUID.Data4[4] == 0;
 
 	mov	eax, DWORD PTR _kGUID$[esp-4]
 	cmp	DWORD PTR [eax], 0
@@ -3156,16 +3165,16 @@ _kGUID$ = 8						; size = 4
 	jne	SHORT $LN3@IsGUIDEmpt
 	mov	eax, 1
 
-; 1539 : }
+; 1545 : }
 
 	ret	0
 $LN3@IsGUIDEmpt:
 
-; 1538 : 	return kGUID.Data1 == 0 && kGUID.Data2 == 0 && kGUID.Data3 == 0 && *(INT32*)&kGUID.Data4[0] == 0 && *(INT32*)&kGUID.Data4[4] == 0;
+; 1544 : 	return kGUID.Data1 == 0 && kGUID.Data2 == 0 && kGUID.Data3 == 0 && *(INT32*)&kGUID.Data4[0] == 0 && *(INT32*)&kGUID.Data4[4] == 0;
 
 	xor	eax, eax
 
-; 1539 : }
+; 1545 : }
 
 	ret	0
 ?IsGUIDEmpty@@YA_NABU_GUID@@@Z ENDP			; IsGUIDEmpty
@@ -3179,11 +3188,11 @@ _puiIndex$ = 12						; size = 4
 _kDest$ = 16						; size = 4
 ??$GetGUIDSegment@K@@YA_NPBDPAIAAK@Z PROC		; GetGUIDSegment<unsigned long>, COMDAT
 
-; 1469 : {
+; 1475 : {
 
 	push	ebp
 
-; 1470 : 	*puiIndex = SkipGUIDSeparators(pszGUID, *puiIndex);
+; 1476 : 	*puiIndex = SkipGUIDSeparators(pszGUID, *puiIndex);
 
 	mov	ebp, DWORD PTR _pszGUID$[esp]
 	push	esi
@@ -3215,12 +3224,12 @@ $LN12@GetGUIDSeg:
 	jb	SHORT $LL16@GetGUIDSeg
 $LN14@GetGUIDSeg:
 
-; 1471 : 
-; 1472 : 	kDest = 0;
+; 1477 : 
+; 1478 : 	kDest = 0;
 
 	mov	edi, DWORD PTR _kDest$[esp+8]
 
-; 1473 : 	UINT uiLength = strlen(pszGUID);
+; 1479 : 	UINT uiLength = strlen(pszGUID);
 
 	mov	eax, ebp
 	mov	DWORD PTR [esi], ecx
@@ -3234,23 +3243,23 @@ $LL32@GetGUIDSeg:
 	sub	eax, edx
 	mov	ecx, eax
 
-; 1474 : 	if(*puiIndex < uiLength)
+; 1480 : 	if(*puiIndex < uiLength)
 
 	cmp	DWORD PTR [esi], ecx
 	jae	SHORT $LN8@GetGUIDSeg
 
-; 1475 : 	{
-; 1476 : 		UINT uiDigitCount = sizeof(T) * 2;
+; 1481 : 	{
+; 1482 : 		UINT uiDigitCount = sizeof(T) * 2;
 
 	mov	edx, 8
 	push	ebx
 	npad	3
 $LL7@GetGUIDSeg:
 
-; 1477 : 		do
-; 1478 : 		{
-; 1479 : 			UINT uiValue = 0;
-; 1480 : 			if(GetHexDigitValue(pszGUID[*puiIndex], uiValue))
+; 1483 : 		do
+; 1484 : 		{
+; 1485 : 			UINT uiValue = 0;
+; 1486 : 			if(GetHexDigitValue(pszGUID[*puiIndex], uiValue))
 
 	mov	eax, DWORD PTR [esi]
 	mov	al, BYTE PTR [eax+ebp]
@@ -3278,22 +3287,22 @@ $LN23@GetGUIDSeg:
 	sub	eax, 55					; 00000037H
 $LN20@GetGUIDSeg:
 
-; 1481 : #ifdef AUI_WARNING_FIXES
-; 1482 : 				kDest = T((kDest * 16) + uiValue);
-; 1483 : #else
-; 1484 : 				kDest = (kDest * 16) + uiValue;
+; 1487 : #ifdef AUI_WARNING_FIXES
+; 1488 : 				kDest = T((kDest * 16) + uiValue);
+; 1489 : #else
+; 1490 : 				kDest = (kDest * 16) + uiValue;
 
 	mov	ebx, DWORD PTR [edi]
 	shl	ebx, 4
 	add	ebx, eax
 	mov	DWORD PTR [edi], ebx
 
-; 1488 : 			*puiIndex += 1;
+; 1494 : 			*puiIndex += 1;
 
 	inc	DWORD PTR [esi]
 
-; 1489 : 		}
-; 1490 : 		while(*puiIndex < uiLength  && --uiDigitCount);
+; 1495 : 		}
+; 1496 : 		while(*puiIndex < uiLength  && --uiDigitCount);
 
 	cmp	DWORD PTR [esi], ecx
 	jae	SHORT $LN2@GetGUIDSeg
@@ -3304,13 +3313,13 @@ $LN2@GetGUIDSeg:
 	pop	edi
 	pop	esi
 
-; 1491 : 
-; 1492 : 		return true;
+; 1497 : 
+; 1498 : 		return true;
 
 	mov	al, 1
 	pop	ebp
 
-; 1496 : }
+; 1502 : }
 
 	ret	0
 $LN4@GetGUIDSeg:
@@ -3318,28 +3327,28 @@ $LN4@GetGUIDSeg:
 	pop	edi
 	pop	esi
 
-; 1485 : #endif
-; 1486 : 			else
-; 1487 : 				return false;
+; 1491 : #endif
+; 1492 : 			else
+; 1493 : 				return false;
 
 	xor	al, al
 	pop	ebp
 
-; 1496 : }
+; 1502 : }
 
 	ret	0
 $LN8@GetGUIDSeg:
 	pop	edi
 	pop	esi
 
-; 1493 : 	}
-; 1494 : 	else
-; 1495 : 		return false;
+; 1499 : 	}
+; 1500 : 	else
+; 1501 : 		return false;
 
 	xor	al, al
 	pop	ebp
 
-; 1496 : }
+; 1502 : }
 
 	ret	0
 ??$GetGUIDSegment@K@@YA_NPBDPAIAAK@Z ENDP		; GetGUIDSegment<unsigned long>
@@ -3353,11 +3362,11 @@ _puiIndex$ = 12						; size = 4
 _kDest$ = 16						; size = 4
 ??$GetGUIDSegment@G@@YA_NPBDPAIAAG@Z PROC		; GetGUIDSegment<unsigned short>, COMDAT
 
-; 1469 : {
+; 1475 : {
 
 	push	ebp
 
-; 1470 : 	*puiIndex = SkipGUIDSeparators(pszGUID, *puiIndex);
+; 1476 : 	*puiIndex = SkipGUIDSeparators(pszGUID, *puiIndex);
 
 	mov	ebp, DWORD PTR _pszGUID$[esp]
 	push	esi
@@ -3389,15 +3398,15 @@ $LN12@GetGUIDSeg@2:
 	jb	SHORT $LL16@GetGUIDSeg@2
 $LN14@GetGUIDSeg@2:
 
-; 1471 : 
-; 1472 : 	kDest = 0;
+; 1477 : 
+; 1478 : 	kDest = 0;
 
 	mov	edi, DWORD PTR _kDest$[esp+8]
 	xor	eax, eax
 	mov	DWORD PTR [esi], ecx
 	mov	WORD PTR [edi], ax
 
-; 1473 : 	UINT uiLength = strlen(pszGUID);
+; 1479 : 	UINT uiLength = strlen(pszGUID);
 
 	mov	eax, ebp
 	lea	edx, DWORD PTR [eax+1]
@@ -3409,23 +3418,23 @@ $LL32@GetGUIDSeg@2:
 	sub	eax, edx
 	mov	ecx, eax
 
-; 1474 : 	if(*puiIndex < uiLength)
+; 1480 : 	if(*puiIndex < uiLength)
 
 	cmp	DWORD PTR [esi], ecx
 	jae	SHORT $LN8@GetGUIDSeg@2
 
-; 1475 : 	{
-; 1476 : 		UINT uiDigitCount = sizeof(T) * 2;
+; 1481 : 	{
+; 1482 : 		UINT uiDigitCount = sizeof(T) * 2;
 
 	mov	edx, 4
 	push	ebx
 	npad	4
 $LL7@GetGUIDSeg@2:
 
-; 1477 : 		do
-; 1478 : 		{
-; 1479 : 			UINT uiValue = 0;
-; 1480 : 			if(GetHexDigitValue(pszGUID[*puiIndex], uiValue))
+; 1483 : 		do
+; 1484 : 		{
+; 1485 : 			UINT uiValue = 0;
+; 1486 : 			if(GetHexDigitValue(pszGUID[*puiIndex], uiValue))
 
 	mov	eax, DWORD PTR [esi]
 	mov	al, BYTE PTR [eax+ebp]
@@ -3453,22 +3462,22 @@ $LN23@GetGUIDSeg@2:
 	sub	eax, 55					; 00000037H
 $LN20@GetGUIDSeg@2:
 
-; 1481 : #ifdef AUI_WARNING_FIXES
-; 1482 : 				kDest = T((kDest * 16) + uiValue);
-; 1483 : #else
-; 1484 : 				kDest = (kDest * 16) + uiValue;
+; 1487 : #ifdef AUI_WARNING_FIXES
+; 1488 : 				kDest = T((kDest * 16) + uiValue);
+; 1489 : #else
+; 1490 : 				kDest = (kDest * 16) + uiValue;
 
 	mov	bx, WORD PTR [edi]
 	shl	bx, 4
 	add	bx, ax
 	mov	WORD PTR [edi], bx
 
-; 1488 : 			*puiIndex += 1;
+; 1494 : 			*puiIndex += 1;
 
 	inc	DWORD PTR [esi]
 
-; 1489 : 		}
-; 1490 : 		while(*puiIndex < uiLength  && --uiDigitCount);
+; 1495 : 		}
+; 1496 : 		while(*puiIndex < uiLength  && --uiDigitCount);
 
 	cmp	DWORD PTR [esi], ecx
 	jae	SHORT $LN2@GetGUIDSeg@2
@@ -3479,13 +3488,13 @@ $LN2@GetGUIDSeg@2:
 	pop	edi
 	pop	esi
 
-; 1491 : 
-; 1492 : 		return true;
+; 1497 : 
+; 1498 : 		return true;
 
 	mov	al, 1
 	pop	ebp
 
-; 1496 : }
+; 1502 : }
 
 	ret	0
 $LN4@GetGUIDSeg@2:
@@ -3493,28 +3502,28 @@ $LN4@GetGUIDSeg@2:
 	pop	edi
 	pop	esi
 
-; 1485 : #endif
-; 1486 : 			else
-; 1487 : 				return false;
+; 1491 : #endif
+; 1492 : 			else
+; 1493 : 				return false;
 
 	xor	al, al
 	pop	ebp
 
-; 1496 : }
+; 1502 : }
 
 	ret	0
 $LN8@GetGUIDSeg@2:
 	pop	edi
 	pop	esi
 
-; 1493 : 	}
-; 1494 : 	else
-; 1495 : 		return false;
+; 1499 : 	}
+; 1500 : 	else
+; 1501 : 		return false;
 
 	xor	al, al
 	pop	ebp
 
-; 1496 : }
+; 1502 : }
 
 	ret	0
 ??$GetGUIDSegment@G@@YA_NPBDPAIAAG@Z ENDP		; GetGUIDSegment<unsigned short>
@@ -3528,11 +3537,11 @@ _puiIndex$ = 12						; size = 4
 _kDest$ = 16						; size = 4
 ??$GetGUIDSegment@E@@YA_NPBDPAIAAE@Z PROC		; GetGUIDSegment<unsigned char>, COMDAT
 
-; 1469 : {
+; 1475 : {
 
 	push	ebp
 
-; 1470 : 	*puiIndex = SkipGUIDSeparators(pszGUID, *puiIndex);
+; 1476 : 	*puiIndex = SkipGUIDSeparators(pszGUID, *puiIndex);
 
 	mov	ebp, DWORD PTR _pszGUID$[esp]
 	push	esi
@@ -3564,12 +3573,12 @@ $LN12@GetGUIDSeg@3:
 	jb	SHORT $LL16@GetGUIDSeg@3
 $LN14@GetGUIDSeg@3:
 
-; 1471 : 
-; 1472 : 	kDest = 0;
+; 1477 : 
+; 1478 : 	kDest = 0;
 
 	mov	edi, DWORD PTR _kDest$[esp+8]
 
-; 1473 : 	UINT uiLength = strlen(pszGUID);
+; 1479 : 	UINT uiLength = strlen(pszGUID);
 
 	mov	eax, ebp
 	mov	DWORD PTR [esi], ecx
@@ -3583,23 +3592,23 @@ $LL32@GetGUIDSeg@3:
 	sub	eax, edx
 	mov	ecx, eax
 
-; 1474 : 	if(*puiIndex < uiLength)
+; 1480 : 	if(*puiIndex < uiLength)
 
 	cmp	DWORD PTR [esi], ecx
 	jae	SHORT $LN8@GetGUIDSeg@3
 
-; 1475 : 	{
-; 1476 : 		UINT uiDigitCount = sizeof(T) * 2;
+; 1481 : 	{
+; 1482 : 		UINT uiDigitCount = sizeof(T) * 2;
 
 	mov	edx, 2
 	push	ebx
 	npad	6
 $LL7@GetGUIDSeg@3:
 
-; 1477 : 		do
-; 1478 : 		{
-; 1479 : 			UINT uiValue = 0;
-; 1480 : 			if(GetHexDigitValue(pszGUID[*puiIndex], uiValue))
+; 1483 : 		do
+; 1484 : 		{
+; 1485 : 			UINT uiValue = 0;
+; 1486 : 			if(GetHexDigitValue(pszGUID[*puiIndex], uiValue))
 
 	mov	eax, DWORD PTR [esi]
 	mov	al, BYTE PTR [eax+ebp]
@@ -3627,22 +3636,22 @@ $LN23@GetGUIDSeg@3:
 	sub	eax, 55					; 00000037H
 $LN20@GetGUIDSeg@3:
 
-; 1481 : #ifdef AUI_WARNING_FIXES
-; 1482 : 				kDest = T((kDest * 16) + uiValue);
-; 1483 : #else
-; 1484 : 				kDest = (kDest * 16) + uiValue;
+; 1487 : #ifdef AUI_WARNING_FIXES
+; 1488 : 				kDest = T((kDest * 16) + uiValue);
+; 1489 : #else
+; 1490 : 				kDest = (kDest * 16) + uiValue;
 
 	mov	bl, BYTE PTR [edi]
 	shl	bl, 4
 	add	bl, al
 	mov	BYTE PTR [edi], bl
 
-; 1488 : 			*puiIndex += 1;
+; 1494 : 			*puiIndex += 1;
 
 	inc	DWORD PTR [esi]
 
-; 1489 : 		}
-; 1490 : 		while(*puiIndex < uiLength  && --uiDigitCount);
+; 1495 : 		}
+; 1496 : 		while(*puiIndex < uiLength  && --uiDigitCount);
 
 	cmp	DWORD PTR [esi], ecx
 	jae	SHORT $LN2@GetGUIDSeg@3
@@ -3653,13 +3662,13 @@ $LN2@GetGUIDSeg@3:
 	pop	edi
 	pop	esi
 
-; 1491 : 
-; 1492 : 		return true;
+; 1497 : 
+; 1498 : 		return true;
 
 	mov	al, 1
 	pop	ebp
 
-; 1496 : }
+; 1502 : }
 
 	ret	0
 $LN4@GetGUIDSeg@3:
@@ -3667,28 +3676,28 @@ $LN4@GetGUIDSeg@3:
 	pop	edi
 	pop	esi
 
-; 1485 : #endif
-; 1486 : 			else
-; 1487 : 				return false;
+; 1491 : #endif
+; 1492 : 			else
+; 1493 : 				return false;
 
 	xor	al, al
 	pop	ebp
 
-; 1496 : }
+; 1502 : }
 
 	ret	0
 $LN8@GetGUIDSeg@3:
 	pop	edi
 	pop	esi
 
-; 1493 : 	}
-; 1494 : 	else
-; 1495 : 		return false;
+; 1499 : 	}
+; 1500 : 	else
+; 1501 : 		return false;
 
 	xor	al, al
 	pop	ebp
 
-; 1496 : }
+; 1502 : }
 
 	ret	0
 ??$GetGUIDSegment@E@@YA_NPBDPAIAAE@Z ENDP		; GetGUIDSegment<unsigned char>
@@ -3945,7 +3954,7 @@ __ehfuncinfo$?format@CvString@@SA?AV1@PBDZZ DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?format@CvString@@SA?AV1@PBDZZ
 _TEXT	SEGMENT
-$T219227 = -44						; size = 4
+$T219228 = -44						; size = 4
 _result$ = -40						; size = 28
 __$EHRec$ = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
@@ -3965,7 +3974,7 @@ _fmt$ = 12						; size = 4
 ; 244  : 	std::string result;
 
 	lea	ecx, DWORD PTR _result$[esp+48]
-	mov	DWORD PTR $T219227[esp+48], 0
+	mov	DWORD PTR $T219228[esp+48], 0
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
 ; 245  : 	va_list args;
@@ -3991,7 +4000,7 @@ _fmt$ = 12						; size = 4
 	mov	ecx, esi
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	lea	ecx, DWORD PTR _result$[esp+48]
-	mov	DWORD PTR $T219227[esp+48], 1
+	mov	DWORD PTR $T219228[esp+48], 1
 	mov	BYTE PTR __$EHRec$[esp+56], 0
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -4010,10 +4019,10 @@ __unwindfunclet$?format@CvString@@SA?AV1@PBDZZ$0:
 	lea	ecx, DWORD PTR _result$[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?format@CvString@@SA?AV1@PBDZZ$1:
-	mov	eax, DWORD PTR $T219227[ebp]
+	mov	eax, DWORD PTR $T219228[ebp]
 	and	eax, 1
 	je	$LN5@format
-	and	DWORD PTR $T219227[ebp], -2		; fffffffeH
+	and	DWORD PTR $T219228[ebp], -2		; fffffffeH
 	mov	ecx, DWORD PTR ___$ReturnUdt$[ebp-4]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 $LN5@format:
@@ -4642,7 +4651,7 @@ _eTeamA$ = 8						; size = 4
 _eTeamB$ = 12						; size = 4
 ?atWar@@YA_NW4TeamTypes@@0@Z PROC			; atWar, COMDAT
 
-; 146  : 	if((eTeamA == NO_TEAM) || (eTeamB == NO_TEAM))
+; 152  : 	if((eTeamA == NO_TEAM) || (eTeamB == NO_TEAM))
 
 	mov	eax, DWORD PTR _eTeamA$[esp-4]
 	cmp	eax, -1
@@ -4651,12 +4660,12 @@ _eTeamB$ = 12						; size = 4
 	cmp	ecx, -1
 	je	SHORT $LN1@atWar
 
-; 149  : 	}
-; 150  : 
-; 151  : 	CvAssert(GET_TEAM(eTeamA).isAtWar(eTeamB) == GET_TEAM(eTeamB).isAtWar(eTeamA));
-; 152  : 	CvAssert((eTeamA != eTeamB) || !(GET_TEAM(eTeamA).isAtWar(eTeamB)));
-; 153  : 
-; 154  : 	return GET_TEAM(eTeamA).isAtWar(eTeamB);
+; 155  : 	}
+; 156  : 
+; 157  : 	CvAssert(GET_TEAM(eTeamA).isAtWar(eTeamB) == GET_TEAM(eTeamB).isAtWar(eTeamA));
+; 158  : 	CvAssert((eTeamA != eTeamB) || !(GET_TEAM(eTeamA).isAtWar(eTeamB)));
+; 159  : 
+; 160  : 	return GET_TEAM(eTeamA).isAtWar(eTeamB);
 
 	imul	eax, 2984				; 00000ba8H
 	add	eax, DWORD PTR ?m_aTeams@CvTeam@@1PAV1@A ; CvTeam::m_aTeams
@@ -4664,17 +4673,17 @@ _eTeamB$ = 12						; size = 4
 	mov	ecx, eax
 	call	?isAtWar@CvTeam@@QBE_NW4TeamTypes@@@Z	; CvTeam::isAtWar
 
-; 155  : }
+; 161  : }
 
 	ret	0
 $LN1@atWar:
 
-; 147  : 	{
-; 148  : 		return false;
+; 153  : 	{
+; 154  : 		return false;
 
 	xor	al, al
 
-; 155  : }
+; 161  : }
 
 	ret	0
 ?atWar@@YA_NW4TeamTypes@@0@Z ENDP			; atWar
@@ -4687,14 +4696,14 @@ _TEXT	SEGMENT
 _city$ = 8						; size = 8
 ?getCity@@YAPAVCvCity@@UIDInfo@@@Z PROC			; getCity, COMDAT
 
-; 164  : 	if((city.eOwner >= 0) && city.eOwner < MAX_PLAYERS)
+; 170  : 	if((city.eOwner >= 0) && city.eOwner < MAX_PLAYERS)
 
 	mov	eax, DWORD PTR _city$[esp-4]
 	cmp	eax, 63					; 0000003fH
 	ja	SHORT $LN1@getCity
 
-; 165  : 	{
-; 166  : 		return (GET_PLAYER((PlayerTypes)city.eOwner).getCity(city.iID));
+; 171  : 	{
+; 172  : 		return (GET_PLAYER((PlayerTypes)city.eOwner).getCity(city.iID));
 
 	mov	ecx, DWORD PTR _city$[esp]
 	imul	eax, 63236				; 0000f704H
@@ -4703,18 +4712,18 @@ _city$ = 8						; size = 8
 	mov	ecx, eax
 	call	?getCity@CvPlayer@@QAEPAVCvCity@@H@Z	; CvPlayer::getCity
 
-; 170  : }
+; 176  : }
 
 	ret	0
 $LN1@getCity:
 
-; 167  : 	}
-; 168  : 
-; 169  : 	return NULL;
+; 173  : 	}
+; 174  : 
+; 175  : 	return NULL;
 
 	xor	eax, eax
 
-; 170  : }
+; 176  : }
 
 	ret	0
 ?getCity@@YAPAVCvCity@@UIDInfo@@@Z ENDP			; getCity
@@ -4727,7 +4736,7 @@ _TEXT	SEGMENT
 _unit$ = 8						; size = 4
 ?getUnit@@YAPAVCvUnit@@ABUIDInfo@@@Z PROC		; getUnit, COMDAT
 
-; 174  : 	if((unit.eOwner >= 0) && unit.eOwner < MAX_PLAYERS)
+; 180  : 	if((unit.eOwner >= 0) && unit.eOwner < MAX_PLAYERS)
 
 	mov	ecx, DWORD PTR _unit$[esp-4]
 	mov	eax, DWORD PTR [ecx]
@@ -4736,8 +4745,8 @@ _unit$ = 8						; size = 4
 	cmp	eax, 64					; 00000040H
 	jge	SHORT $LN1@getUnit
 
-; 175  : 	{
-; 176  : 		return (GET_PLAYER((PlayerTypes)unit.eOwner).getUnit(unit.iID));
+; 181  : 	{
+; 182  : 		return (GET_PLAYER((PlayerTypes)unit.eOwner).getUnit(unit.iID));
 
 	mov	ecx, DWORD PTR [ecx+4]
 	imul	eax, 63236				; 0000f704H
@@ -4746,18 +4755,18 @@ _unit$ = 8						; size = 4
 	mov	ecx, eax
 	call	?getUnit@CvPlayer@@QAEPAVCvUnit@@H@Z	; CvPlayer::getUnit
 
-; 180  : }
+; 186  : }
 
 	ret	0
 $LN1@getUnit:
 
-; 177  : 	}
-; 178  : 
-; 179  : 	return NULL;
+; 183  : 	}
+; 184  : 
+; 185  : 	return NULL;
 
 	xor	eax, eax
 
-; 180  : }
+; 186  : }
 
 	ret	0
 ?getUnit@@YAPAVCvUnit@@ABUIDInfo@@@Z ENDP		; getUnit
@@ -4772,7 +4781,7 @@ _eTech$ = 8						; size = 4
 _eUnit$ = 12						; size = 4
 ?isTechRequiredForUnit@@YA_NW4TechTypes@@W4UnitTypes@@@Z PROC ; isTechRequiredForUnit, COMDAT
 
-; 507  : 	CvUnitEntry* info = GC.getUnitInfo(eUnit);
+; 513  : 	CvUnitEntry* info = GC.getUnitInfo(eUnit);
 
 	mov	eax, DWORD PTR _eUnit$[esp-4]
 	push	edi
@@ -4781,26 +4790,26 @@ _eUnit$ = 12						; size = 4
 	call	?getUnitInfo@CvGlobals@@QAEPAVCvUnitEntry@@W4UnitTypes@@@Z ; CvGlobals::getUnitInfo
 	mov	edi, eax
 
-; 508  : 	if(info == NULL)
+; 514  : 	if(info == NULL)
 
 	test	edi, edi
 	jne	SHORT $LN6@isTechRequ@2
 
-; 509  : 	{
-; 510  : 		return false;
+; 515  : 	{
+; 516  : 		return false;
 
 	xor	al, al
 	pop	edi
 
-; 527  : }
+; 533  : }
 
 	ret	0
 $LN6@isTechRequ@2:
 	push	ebx
 
-; 511  : 	}
-; 512  : 
-; 513  : 	if(info->GetPrereqAndTech() == eTech)
+; 517  : 	}
+; 518  : 
+; 519  : 	if(info->GetPrereqAndTech() == eTech)
 
 	mov	ecx, edi
 	call	?GetPrereqAndTech@CvUnitEntry@@QBEHXZ	; CvUnitEntry::GetPrereqAndTech
@@ -4809,21 +4818,21 @@ $LN6@isTechRequ@2:
 	jne	SHORT $LN5@isTechRequ@2
 	pop	ebx
 
-; 514  : 	{
-; 515  : 		return true;
+; 520  : 	{
+; 521  : 		return true;
 
 	mov	al, 1
 	pop	edi
 
-; 527  : }
+; 533  : }
 
 	ret	0
 $LN5@isTechRequ@2:
 	push	esi
 
-; 516  : 	}
-; 517  : 
-; 518  : 	for(int iI = 0; iI < GC.getNUM_UNIT_AND_TECH_PREREQS(); iI++)
+; 522  : 	}
+; 523  : 
+; 524  : 	for(int iI = 0; iI < GC.getNUM_UNIT_AND_TECH_PREREQS(); iI++)
 
 	xor	esi, esi
 	cmp	DWORD PTR ?gGlobals@@3VCvGlobals@@A+6276, esi
@@ -4831,8 +4840,8 @@ $LN5@isTechRequ@2:
 	npad	6
 $LL4@isTechRequ@2:
 
-; 519  : 	{
-; 520  : 		if(info->GetPrereqAndTechs(iI) == eTech)
+; 525  : 	{
+; 526  : 		if(info->GetPrereqAndTechs(iI) == eTech)
 
 	push	esi
 	mov	ecx, edi
@@ -4846,28 +4855,28 @@ $LN2@isTechRequ@2:
 	pop	esi
 	pop	ebx
 
-; 523  : 		}
-; 524  : 	}
-; 525  : 
-; 526  : 	return false;
+; 529  : 		}
+; 530  : 	}
+; 531  : 
+; 532  : 	return false;
 
 	xor	al, al
 	pop	edi
 
-; 527  : }
+; 533  : }
 
 	ret	0
 $LN12@isTechRequ@2:
 	pop	esi
 	pop	ebx
 
-; 521  : 		{
-; 522  : 			return true;
+; 527  : 		{
+; 528  : 			return true;
 
 	mov	al, 1
 	pop	edi
 
-; 527  : }
+; 533  : }
 
 	ret	0
 ?isTechRequiredForUnit@@YA_NW4TechTypes@@W4UnitTypes@@@Z ENDP ; isTechRequiredForUnit
@@ -4883,7 +4892,7 @@ _eTech$ = 8						; size = 4
 _eBuilding$ = 12					; size = 4
 ?isTechRequiredForBuilding@@YA_NW4TechTypes@@W4BuildingTypes@@@Z PROC ; isTechRequiredForBuilding, COMDAT
 
-; 531  : 	CvBuildingEntry* info = GC.getBuildingInfo(eBuilding);
+; 537  : 	CvBuildingEntry* info = GC.getBuildingInfo(eBuilding);
 
 	mov	eax, DWORD PTR _eBuilding$[esp-4]
 	push	ebx
@@ -4894,13 +4903,13 @@ _eBuilding$ = 12					; size = 4
 	call	?getBuildingInfo@CvGlobals@@QAEPAVCvBuildingEntry@@W4BuildingTypes@@@Z ; CvGlobals::getBuildingInfo
 	mov	edi, eax
 
-; 532  : 	if(info)
+; 538  : 	if(info)
 
 	test	edi, edi
 	je	SHORT $LN2@isTechRequ@3
 
-; 533  : 	{
-; 534  : 		if(info->GetPrereqAndTech() == eTech)
+; 539  : 	{
+; 540  : 		if(info->GetPrereqAndTech() == eTech)
 
 	mov	ecx, edi
 	call	?GetPrereqAndTech@CvBuildingEntry@@QBEHXZ ; CvBuildingEntry::GetPrereqAndTech
@@ -4911,28 +4920,28 @@ $LN12@isTechRequ@3:
 	pop	edi
 	pop	esi
 
-; 535  : 		{
-; 536  : 			return true;
+; 541  : 		{
+; 542  : 			return true;
 
 	mov	al, 1
 	pop	ebx
 
-; 549  : }
+; 555  : }
 
 	ret	0
 $LN5@isTechRequ@3:
 
-; 537  : 		}
-; 538  : 
-; 539  : 		for(int iI = 0; iI < GC.getNUM_BUILDING_AND_TECH_PREREQS(); iI++)
+; 543  : 		}
+; 544  : 
+; 545  : 		for(int iI = 0; iI < GC.getNUM_BUILDING_AND_TECH_PREREQS(); iI++)
 
 	xor	esi, esi
 	cmp	DWORD PTR ?gGlobals@@3VCvGlobals@@A+6280, esi
 	jle	SHORT $LN2@isTechRequ@3
 $LL4@isTechRequ@3:
 
-; 540  : 		{
-; 541  : 			if(info->GetPrereqAndTechs(iI) == eTech)
+; 546  : 		{
+; 547  : 			if(info->GetPrereqAndTechs(iI) == eTech)
 
 	push	esi
 	mov	ecx, edi
@@ -4946,18 +4955,18 @@ $LN2@isTechRequ@3:
 	pop	edi
 	pop	esi
 
-; 542  : 			{
-; 543  : 				return true;
-; 544  : 			}
-; 545  : 		}
-; 546  : 	}
-; 547  : 
-; 548  : 	return false;
+; 548  : 			{
+; 549  : 				return true;
+; 550  : 			}
+; 551  : 		}
+; 552  : 	}
+; 553  : 
+; 554  : 	return false;
 
 	xor	al, al
 	pop	ebx
 
-; 549  : }
+; 555  : }
 
 	ret	0
 ?isTechRequiredForBuilding@@YA_NW4TechTypes@@W4BuildingTypes@@@Z ENDP ; isTechRequiredForBuilding
@@ -4972,22 +4981,22 @@ EXTRN	?getNumTechInfos@CvGlobals@@QAEHXZ:PROC		; CvGlobals::getNumTechInfos
 ;	COMDAT ?getDiscoveryTech@@YA?AW4TechTypes@@W4UnitTypes@@W4PlayerTypes@@@Z
 _TEXT	SEGMENT
 _kPlayer$ = -16						; size = 4
-_iI$217900 = -12					; size = 4
+_iI$217901 = -12					; size = 4
 _eBestTech$ = -8					; size = 4
 _pkUnitInfo$ = -4					; size = 4
 _eUnit$ = 8						; size = 4
-_iBestValue$217899 = 12					; size = 4
+_iBestValue$217900 = 12					; size = 4
 _ePlayer$ = 12						; size = 4
 ?getDiscoveryTech@@YA?AW4TechTypes@@W4UnitTypes@@W4PlayerTypes@@@Z PROC ; getDiscoveryTech, COMDAT
 
-; 650  : {
+; 656  : {
 
 	sub	esp, 16					; 00000010H
 
-; 651  : 	TechTypes eBestTech = NO_TECH;
-; 652  : 	CvPlayerAI& kPlayer = GET_PLAYER(ePlayer);
-; 653  : 
-; 654  : 	CvUnitEntry* pkUnitInfo = GC.getUnitInfo(eUnit);
+; 657  : 	TechTypes eBestTech = NO_TECH;
+; 658  : 	CvPlayerAI& kPlayer = GET_PLAYER(ePlayer);
+; 659  : 
+; 660  : 	CvUnitEntry* pkUnitInfo = GC.getUnitInfo(eUnit);
 
 	mov	eax, DWORD PTR _eUnit$[esp+12]
 	push	ebp
@@ -5003,23 +5012,23 @@ _ePlayer$ = 12						; size = 4
 	mov	DWORD PTR _kPlayer$[esp+32], esi
 	call	?getUnitInfo@CvGlobals@@QAEPAVCvUnitEntry@@W4UnitTypes@@@Z ; CvGlobals::getUnitInfo
 
-; 655  : 	if(pkUnitInfo)
+; 661  : 	if(pkUnitInfo)
 
 	xor	ebp, ebp
 	mov	DWORD PTR _pkUnitInfo$[esp+28], eax
 	cmp	eax, ebp
 	je	$LN22@getDiscove
 
-; 656  : 	{
-; 657  : 		int iBestValue = 0;
-; 658  : #ifdef AUI_WARNING_FIXES
-; 659  : 		for (uint iI = 0; iI < GC.getNumTechInfos(); iI++)
-; 660  : #else
-; 661  : 		for(int iI = 0; iI < GC.getNumTechInfos(); iI++)
+; 662  : 	{
+; 663  : 		int iBestValue = 0;
+; 664  : #ifdef AUI_WARNING_FIXES
+; 665  : 		for (uint iI = 0; iI < GC.getNumTechInfos(); iI++)
+; 666  : #else
+; 667  : 		for(int iI = 0; iI < GC.getNumTechInfos(); iI++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	mov	DWORD PTR _iBestValue$217899[esp+24], ebp
-	mov	DWORD PTR _iI$217900[esp+28], ebp
+	mov	DWORD PTR _iBestValue$217900[esp+24], ebp
+	mov	DWORD PTR _iI$217901[esp+28], ebp
 	call	?getNumTechInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumTechInfos
 	test	eax, eax
 	jle	$LN22@getDiscove
@@ -5027,23 +5036,23 @@ _ePlayer$ = 12						; size = 4
 	npad	7
 $LL27@getDiscove:
 
-; 662  : #endif
-; 663  : 		{
-; 664  : 			const TechTypes eTech = static_cast<TechTypes>(iI);
-; 665  : 			CvTechEntry* pkTechInfo = GC.getTechInfo(eTech);
+; 668  : #endif
+; 669  : 		{
+; 670  : 			const TechTypes eTech = static_cast<TechTypes>(iI);
+; 671  : 			CvTechEntry* pkTechInfo = GC.getTechInfo(eTech);
 
 	push	ebp
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getTechInfo@CvGlobals@@QAEPAVCvTechEntry@@W4TechTypes@@@Z ; CvGlobals::getTechInfo
 	mov	ebx, eax
 
-; 666  : 			if(pkTechInfo)
+; 672  : 			if(pkTechInfo)
 
 	test	ebx, ebx
 	je	SHORT $LN8@getDiscove
 
-; 667  : 			{
-; 668  : 				if(kPlayer.GetPlayerTechs()->CanResearch(eTech))
+; 673  : 			{
+; 674  : 				if(kPlayer.GetPlayerTechs()->CanResearch(eTech))
 
 	push	0
 	push	ebp
@@ -5054,10 +5063,10 @@ $LL27@getDiscove:
 	test	al, al
 	je	SHORT $LN8@getDiscove
 
-; 669  : 				{
-; 670  : 					int iValue = 0;
-; 671  : 
-; 672  : 					for(int iJ = 0; iJ < GC.getNumFlavorTypes(); iJ++)
+; 675  : 				{
+; 676  : 					int iValue = 0;
+; 677  : 
+; 678  : 					for(int iJ = 0; iJ < GC.getNumFlavorTypes(); iJ++)
 
 	xor	esi, esi
 	xor	edi, edi
@@ -5065,8 +5074,8 @@ $LL27@getDiscove:
 	jle	SHORT $LN24@getDiscove
 $LL23@getDiscove:
 
-; 673  : 					{
-; 674  : 						iValue += (pkTechInfo->GetFlavorValue(iJ) * pkUnitInfo->GetFlavorValue(iJ));
+; 679  : 					{
+; 680  : 						iValue += (pkTechInfo->GetFlavorValue(iJ) * pkUnitInfo->GetFlavorValue(iJ));
 
 	push	esi
 	mov	ecx, ebx
@@ -5081,43 +5090,43 @@ $LL23@getDiscove:
 	cmp	esi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+1764
 	jl	SHORT $LL23@getDiscove
 
-; 669  : 				{
-; 670  : 					int iValue = 0;
-; 671  : 
-; 672  : 					for(int iJ = 0; iJ < GC.getNumFlavorTypes(); iJ++)
+; 675  : 				{
+; 676  : 					int iValue = 0;
+; 677  : 
+; 678  : 					for(int iJ = 0; iJ < GC.getNumFlavorTypes(); iJ++)
 
-	mov	ebp, DWORD PTR _iI$217900[esp+32]
+	mov	ebp, DWORD PTR _iI$217901[esp+32]
 $LN24@getDiscove:
 
-; 675  : 					}
-; 676  : 
-; 677  : 					if(iValue > iBestValue)
+; 681  : 					}
+; 682  : 
+; 683  : 					if(iValue > iBestValue)
 
-	cmp	edi, DWORD PTR _iBestValue$217899[esp+28]
+	cmp	edi, DWORD PTR _iBestValue$217900[esp+28]
 
-; 678  : 					{
-; 679  : 						iBestValue = iValue;
-; 680  : 						eBestTech = eTech;
+; 684  : 					{
+; 685  : 						iBestValue = iValue;
+; 686  : 						eBestTech = eTech;
 
 	mov	esi, DWORD PTR _kPlayer$[esp+32]
 	jle	SHORT $LN8@getDiscove
-	mov	DWORD PTR _iBestValue$217899[esp+28], edi
+	mov	DWORD PTR _iBestValue$217900[esp+28], edi
 	mov	DWORD PTR _eBestTech$[esp+32], ebp
 $LN8@getDiscove:
 	inc	ebp
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	mov	DWORD PTR _iI$217900[esp+32], ebp
+	mov	DWORD PTR _iI$217901[esp+32], ebp
 	call	?getNumTechInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumTechInfos
 	cmp	ebp, eax
 	jl	SHORT $LL27@getDiscove
 
-; 681  : 					}
-; 682  : 				}
-; 683  : 			}
-; 684  : 		}
-; 685  : 	}
-; 686  : 
-; 687  : 	return eBestTech;
+; 687  : 					}
+; 688  : 				}
+; 689  : 			}
+; 690  : 		}
+; 691  : 	}
+; 692  : 
+; 693  : 	return eBestTech;
 
 	mov	eax, DWORD PTR _eBestTech$[esp+32]
 	pop	ebx
@@ -5125,26 +5134,26 @@ $LN8@getDiscove:
 	pop	esi
 	pop	ebp
 
-; 688  : }
+; 694  : }
 
 	add	esp, 16					; 00000010H
 	ret	0
 $LN22@getDiscove:
 
-; 681  : 					}
-; 682  : 				}
-; 683  : 			}
-; 684  : 		}
-; 685  : 	}
-; 686  : 
-; 687  : 	return eBestTech;
+; 687  : 					}
+; 688  : 				}
+; 689  : 			}
+; 690  : 		}
+; 691  : 	}
+; 692  : 
+; 693  : 	return eBestTech;
 
 	mov	eax, edi
 	pop	edi
 	pop	esi
 	pop	ebp
 
-; 688  : }
+; 694  : }
 
 	add	esp, 16					; 00000010H
 	ret	0
@@ -5158,23 +5167,23 @@ _iNumYieldTypes$ = 8					; size = 4
 _iYieldStack$ = 12					; size = 4
 ?baseYieldToSymbol@@YAHHH@Z PROC			; baseYieldToSymbol, COMDAT
 
-; 864  : 	int iReturn;	// holds the return value we will be calculating
-; 865  : 
-; 866  : 	// get the base value for the iReturn value
-; 867  : 	iReturn = iNumYieldTypes * GC.getMAX_YIELD_STACK();
+; 870  : 	int iReturn;	// holds the return value we will be calculating
+; 871  : 
+; 872  : 	// get the base value for the iReturn value
+; 873  : 	iReturn = iNumYieldTypes * GC.getMAX_YIELD_STACK();
 
 	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+6232
 	imul	eax, DWORD PTR _iNumYieldTypes$[esp-4]
 
-; 868  : 	// then add the offset to the return value
-; 869  : 	iReturn += iYieldStack;
+; 874  : 	// then add the offset to the return value
+; 875  : 	iReturn += iYieldStack;
 
 	add	eax, DWORD PTR _iYieldStack$[esp-4]
 
-; 870  : 
-; 871  : 	// return the value we have calculated
-; 872  : 	return iReturn;
-; 873  : }
+; 876  : 
+; 877  : 	// return the value we have calculated
+; 878  : 	return iReturn;
+; 879  : }
 
 	ret	0
 ?baseYieldToSymbol@@YAHHH@Z ENDP			; baseYieldToSymbol
@@ -5186,14 +5195,14 @@ _TEXT	SEGMENT
 _szName$ = 8						; size = 4
 ?isPickableName@@YA_NPBD@Z PROC				; isPickableName, COMDAT
 
-; 878  : 	if(szName)
+; 884  : 	if(szName)
 
 	mov	edx, DWORD PTR _szName$[esp-4]
 	test	edx, edx
 	je	SHORT $LN1@isPickable
 
-; 879  : 	{
-; 880  : 		int iLen = _tcslen(szName);
+; 885  : 	{
+; 886  : 		int iLen = _tcslen(szName);
 
 	mov	eax, edx
 	push	esi
@@ -5206,11 +5215,11 @@ $LL7@isPickable:
 	jne	SHORT $LL7@isPickable
 	sub	eax, esi
 
-; 881  : 
-; 882  : 		if(!_tcsicmp(&szName[iLen-6], "NOPICK"))
+; 887  : 
+; 888  : 		if(!_tcsicmp(&szName[iLen-6], "NOPICK"))
 
 	lea	eax, DWORD PTR [eax+edx-6]
-	push	OFFSET $SG218061
+	push	OFFSET $SG218062
 	push	eax
 	call	DWORD PTR __imp___mbsicmp
 	add	esp, 8
@@ -5218,24 +5227,24 @@ $LL7@isPickable:
 	test	eax, eax
 	jne	SHORT $LN1@isPickable
 
-; 883  : 		{
-; 884  : 			return false;
+; 889  : 		{
+; 890  : 			return false;
 
 	xor	al, al
 
-; 889  : }
+; 895  : }
 
 	ret	0
 $LN1@isPickable:
 
-; 885  : 		}
-; 886  : 	}
-; 887  : 
-; 888  : 	return true;
+; 891  : 		}
+; 892  : 	}
+; 893  : 
+; 894  : 	return true;
 
 	mov	al, 1
 
-; 889  : }
+; 895  : }
 
 	ret	0
 ?isPickableName@@YA_NPBD@Z ENDP				; isPickableName
@@ -5248,7 +5257,7 @@ EXTRN	?getGameSpeedInfo@CvGlobals@@QAEPAVCvGameSpeedInfo@@W4GameSpeedTypes@@@Z:P
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?getTurnMonthForGame@@YAHHHW4CalendarTypes@@W4GameSpeedTypes@@@Z
 _TEXT	SEGMENT
-_iGameSpeedNumTurnIncrements$218102 = -8		; size = 4
+_iGameSpeedNumTurnIncrements$218103 = -8		; size = 4
 _pkGameSpeedInfo$ = -4					; size = 4
 _iGameTurn$ = 8						; size = 4
 _iStartYear$ = 12					; size = 4
@@ -5256,15 +5265,15 @@ _eCalendar$ = 16					; size = 4
 _eSpeed$ = 20						; size = 4
 ?getTurnMonthForGame@@YAHHHW4CalendarTypes@@W4GameSpeedTypes@@@Z PROC ; getTurnMonthForGame, COMDAT
 
-; 920  : {
+; 926  : {
 
 	sub	esp, 8
 
-; 921  : 	int iTurnMonth;
-; 922  : 	int iTurnCount;
-; 923  : 	int iI;
-; 924  : 
-; 925  : 	CvGameSpeedInfo* pkGameSpeedInfo = GC.getGameSpeedInfo(eSpeed);
+; 927  : 	int iTurnMonth;
+; 928  : 	int iTurnCount;
+; 929  : 	int iI;
+; 930  : 
+; 931  : 	CvGameSpeedInfo* pkGameSpeedInfo = GC.getGameSpeedInfo(eSpeed);
 
 	mov	eax, DWORD PTR _eSpeed$[esp+4]
 	push	edi
@@ -5274,25 +5283,25 @@ _eSpeed$ = 20						; size = 4
 	mov	edi, eax
 	mov	DWORD PTR _pkGameSpeedInfo$[esp+12], edi
 
-; 926  : 	if(pkGameSpeedInfo == NULL)
+; 932  : 	if(pkGameSpeedInfo == NULL)
 
 	test	edi, edi
 	jne	SHORT $LN16@getTurnMon
 	pop	edi
 
-; 994  : }
+; 1000 : }
 
 	add	esp, 8
 	ret	0
 $LN16@getTurnMon:
 
-; 927  : 	{
-; 928  : 		//This function requires a valid game speed type!
-; 929  : 		CvAssert(pkGameSpeedInfo);
-; 930  : 		return 0;
-; 931  : 	}
-; 932  : 
-; 933  : 	const int iNumMonths = DB.Count("Months");
+; 933  : 	{
+; 934  : 		//This function requires a valid game speed type!
+; 935  : 		CvAssert(pkGameSpeedInfo);
+; 936  : 		return 0;
+; 937  : 	}
+; 938  : 
+; 939  : 	const int iNumMonths = DB.Count("Months");
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+912
 	push	ebx
@@ -5300,14 +5309,14 @@ $LN16@getTurnMon:
 	mov	ebp, DWORD PTR __imp_?Count@Connection@Database@@QAEHPBD_N@Z
 	push	esi
 	push	1
-	push	OFFSET $SG218096
+	push	OFFSET $SG218097
 	call	ebp
 	mov	esi, eax
 
-; 934  : 
-; 935  : 	iTurnMonth = iStartYear * iNumMonths;
-; 936  : 
-; 937  : 	switch(eCalendar)
+; 940  : 
+; 941  : 	iTurnMonth = iStartYear * iNumMonths;
+; 942  : 
+; 943  : 	switch(eCalendar)
 
 	mov	eax, DWORD PTR _eCalendar$[esp+20]
 	mov	ebx, esi
@@ -5317,44 +5326,44 @@ $LN16@getTurnMon:
 	jmp	DWORD PTR $LN28@getTurnMon[eax*4]
 $LN13@getTurnMon:
 
-; 938  : 	{
-; 939  : 	case CALENDAR_DEFAULT:
-; 940  : 		{
-; 941  : 			iTurnCount = 0;
-; 942  : 			const int iGameSpeedNumTurnIncrements = pkGameSpeedInfo->getNumTurnIncrements();
+; 944  : 	{
+; 945  : 	case CALENDAR_DEFAULT:
+; 946  : 		{
+; 947  : 			iTurnCount = 0;
+; 948  : 			const int iGameSpeedNumTurnIncrements = pkGameSpeedInfo->getNumTurnIncrements();
 
 	mov	ecx, edi
 	xor	ebp, ebp
 	call	?getNumTurnIncrements@CvGameSpeedInfo@@QBEHXZ ; CvGameSpeedInfo::getNumTurnIncrements
 
-; 943  : 
-; 944  : 			for(iI = 0; iI < iGameSpeedNumTurnIncrements; iI++)
+; 949  : 
+; 950  : 			for(iI = 0; iI < iGameSpeedNumTurnIncrements; iI++)
 
 	mov	esi, DWORD PTR _iGameTurn$[esp+20]
 	xor	edi, edi
-	mov	DWORD PTR _iGameSpeedNumTurnIncrements$218102[esp+24], eax
+	mov	DWORD PTR _iGameSpeedNumTurnIncrements$218103[esp+24], eax
 	test	eax, eax
 	jle	SHORT $LN10@getTurnMon
 	npad	2
 $LL12@getTurnMon:
 
-; 945  : 			{
-; 946  : 				const GameTurnInfo& gameTurnInfo = pkGameSpeedInfo->getGameTurnInfo(iI);
+; 951  : 			{
+; 952  : 				const GameTurnInfo& gameTurnInfo = pkGameSpeedInfo->getGameTurnInfo(iI);
 
 	mov	ecx, DWORD PTR _pkGameSpeedInfo$[esp+24]
 	push	edi
 	call	?getGameTurnInfo@CvGameSpeedInfo@@QBEAAUGameTurnInfo@@H@Z ; CvGameSpeedInfo::getGameTurnInfo
 
-; 947  : 
-; 948  : 				if(iGameTurn > (iTurnCount + gameTurnInfo.iNumGameTurnsPerIncrement))
+; 953  : 
+; 954  : 				if(iGameTurn > (iTurnCount + gameTurnInfo.iNumGameTurnsPerIncrement))
 
 	mov	ecx, DWORD PTR [eax+4]
 	add	ecx, ebp
 	cmp	esi, ecx
 	jle	SHORT $LN9@getTurnMon
 
-; 949  : 				{
-; 950  : 					iTurnMonth += (gameTurnInfo.iMonthIncrement * gameTurnInfo.iNumGameTurnsPerIncrement);
+; 955  : 				{
+; 956  : 					iTurnMonth += (gameTurnInfo.iMonthIncrement * gameTurnInfo.iNumGameTurnsPerIncrement);
 
 	mov	ecx, DWORD PTR [eax+4]
 	mov	edx, DWORD PTR [eax]
@@ -5362,34 +5371,34 @@ $LL12@getTurnMon:
 	inc	edi
 	add	ebx, edx
 
-; 951  : 					iTurnCount += gameTurnInfo.iNumGameTurnsPerIncrement;
+; 957  : 					iTurnCount += gameTurnInfo.iNumGameTurnsPerIncrement;
 
 	add	ebp, ecx
-	cmp	edi, DWORD PTR _iGameSpeedNumTurnIncrements$218102[esp+24]
+	cmp	edi, DWORD PTR _iGameSpeedNumTurnIncrements$218103[esp+24]
 	jl	SHORT $LL12@getTurnMon
 
-; 943  : 
-; 944  : 			for(iI = 0; iI < iGameSpeedNumTurnIncrements; iI++)
+; 949  : 
+; 950  : 			for(iI = 0; iI < iGameSpeedNumTurnIncrements; iI++)
 
-	mov	eax, DWORD PTR _iGameSpeedNumTurnIncrements$218102[esp+24]
+	mov	eax, DWORD PTR _iGameSpeedNumTurnIncrements$218103[esp+24]
 $LN10@getTurnMon:
 
-; 952  : 				}
-; 953  : 				else
-; 954  : 				{
-; 955  : 					iTurnMonth += (gameTurnInfo.iMonthIncrement * (iGameTurn - iTurnCount));
-; 956  : 					iTurnCount += (iGameTurn - iTurnCount);
-; 957  : 					break;
 ; 958  : 				}
-; 959  : 			}
-; 960  : 
-; 961  : 			if(iGameTurn > iTurnCount)
+; 959  : 				else
+; 960  : 				{
+; 961  : 					iTurnMonth += (gameTurnInfo.iMonthIncrement * (iGameTurn - iTurnCount));
+; 962  : 					iTurnCount += (iGameTurn - iTurnCount);
+; 963  : 					break;
+; 964  : 				}
+; 965  : 			}
+; 966  : 
+; 967  : 			if(iGameTurn > iTurnCount)
 
 	cmp	esi, ebp
 	jle	$LN1@getTurnMon
 
-; 962  : 			{
-; 963  : 				iTurnMonth += (pkGameSpeedInfo->getGameTurnInfo(iGameSpeedNumTurnIncrements - 1).iMonthIncrement * (iGameTurn - iTurnCount));
+; 968  : 			{
+; 969  : 				iTurnMonth += (pkGameSpeedInfo->getGameTurnInfo(iGameSpeedNumTurnIncrements - 1).iMonthIncrement * (iGameTurn - iTurnCount));
 
 	mov	ecx, DWORD PTR _pkGameSpeedInfo$[esp+24]
 	dec	eax
@@ -5402,91 +5411,91 @@ $LN9@getTurnMon:
 	pop	esi
 	pop	ebp
 
-; 987  : 		break;
-; 988  : 
-; 989  : 	default:
-; 990  : 		CvAssert(false);
-; 991  : 	}
-; 992  : 
-; 993  : 	return iTurnMonth;
+; 993  : 		break;
+; 994  : 
+; 995  : 	default:
+; 996  : 		CvAssert(false);
+; 997  : 	}
+; 998  : 
+; 999  : 	return iTurnMonth;
 
 	mov	eax, ebx
 	pop	ebx
 	pop	edi
 
-; 994  : }
+; 1000 : }
 
 	add	esp, 8
 	ret	0
 $LN6@getTurnMon:
 
-; 964  : 			}
-; 965  : 		}
-; 966  : 		break;
-; 967  : 
-; 968  : 	case CALENDAR_BI_YEARLY:
-; 969  : 		iTurnMonth += (2 * iGameTurn * iNumMonths);
+; 970  : 			}
+; 971  : 		}
+; 972  : 		break;
+; 973  : 
+; 974  : 	case CALENDAR_BI_YEARLY:
+; 975  : 		iTurnMonth += (2 * iGameTurn * iNumMonths);
 
 	imul	esi, DWORD PTR _iGameTurn$[esp+20]
 	lea	ebx, DWORD PTR [ebx+esi*2]
 	pop	esi
 	pop	ebp
 
-; 987  : 		break;
-; 988  : 
-; 989  : 	default:
-; 990  : 		CvAssert(false);
-; 991  : 	}
-; 992  : 
-; 993  : 	return iTurnMonth;
+; 993  : 		break;
+; 994  : 
+; 995  : 	default:
+; 996  : 		CvAssert(false);
+; 997  : 	}
+; 998  : 
+; 999  : 	return iTurnMonth;
 
 	mov	eax, ebx
 	pop	ebx
 	pop	edi
 
-; 994  : }
+; 1000 : }
 
 	add	esp, 8
 	ret	0
 $LN5@getTurnMon:
 
-; 970  : 		break;
-; 971  : 
-; 972  : 	case CALENDAR_YEARS:
-; 973  : 	case CALENDAR_TURNS:
-; 974  : 		iTurnMonth += iGameTurn * iNumMonths;
+; 976  : 		break;
+; 977  : 
+; 978  : 	case CALENDAR_YEARS:
+; 979  : 	case CALENDAR_TURNS:
+; 980  : 		iTurnMonth += iGameTurn * iNumMonths;
 
 	imul	esi, DWORD PTR _iGameTurn$[esp+20]
 	add	ebx, esi
 	pop	esi
 	pop	ebp
 
-; 987  : 		break;
-; 988  : 
-; 989  : 	default:
-; 990  : 		CvAssert(false);
-; 991  : 	}
-; 992  : 
-; 993  : 	return iTurnMonth;
+; 993  : 		break;
+; 994  : 
+; 995  : 	default:
+; 996  : 		CvAssert(false);
+; 997  : 	}
+; 998  : 
+; 999  : 	return iTurnMonth;
 
 	mov	eax, ebx
 	pop	ebx
 	pop	edi
 
-; 994  : }
+; 1000 : }
 
 	add	esp, 8
 	ret	0
 $LN4@getTurnMon:
 
-; 975  : 		break;
-; 976  : 
-; 977  : 	case CALENDAR_SEASONS:
-; 978  : 		iTurnMonth += (iGameTurn * iNumMonths) / DB.Count("Seasons");
+; 981  : 		break;
+; 982  : 
+; 983  : 	case CALENDAR_SEASONS:
+; 984  : 		iTurnMonth += (iGameTurn * iNumMonths) / DB.Count("Seasons");
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+912
 	push	1
-	push	OFFSET $SG218113
+	push	OFFSET $SG218114
 	call	ebp
 	mov	ecx, eax
 	mov	eax, esi
@@ -5496,62 +5505,62 @@ $LN4@getTurnMon:
 	pop	esi
 	pop	ebp
 
-; 983  : 		break;
-; 984  : 
-; 985  : 	case CALENDAR_WEEKS:
-; 986  : 		iTurnMonth += iGameTurn / GC.getWEEKS_PER_MONTHS();
+; 989  : 		break;
+; 990  : 
+; 991  : 	case CALENDAR_WEEKS:
+; 992  : 		iTurnMonth += iGameTurn / GC.getWEEKS_PER_MONTHS();
 
 	add	ebx, eax
 
-; 987  : 		break;
-; 988  : 
-; 989  : 	default:
-; 990  : 		CvAssert(false);
-; 991  : 	}
-; 992  : 
-; 993  : 	return iTurnMonth;
+; 993  : 		break;
+; 994  : 
+; 995  : 	default:
+; 996  : 		CvAssert(false);
+; 997  : 	}
+; 998  : 
+; 999  : 	return iTurnMonth;
 
 	mov	eax, ebx
 	pop	ebx
 	pop	edi
 
-; 994  : }
+; 1000 : }
 
 	add	esp, 8
 	ret	0
 $LN3@getTurnMon:
 
-; 979  : 		break;
-; 980  : 
-; 981  : 	case CALENDAR_MONTHS:
-; 982  : 		iTurnMonth += iGameTurn;
+; 985  : 		break;
+; 986  : 
+; 987  : 	case CALENDAR_MONTHS:
+; 988  : 		iTurnMonth += iGameTurn;
 
 	add	ebx, DWORD PTR _iGameTurn$[esp+20]
 	pop	esi
 	pop	ebp
 
-; 987  : 		break;
-; 988  : 
-; 989  : 	default:
-; 990  : 		CvAssert(false);
-; 991  : 	}
-; 992  : 
-; 993  : 	return iTurnMonth;
+; 993  : 		break;
+; 994  : 
+; 995  : 	default:
+; 996  : 		CvAssert(false);
+; 997  : 	}
+; 998  : 
+; 999  : 	return iTurnMonth;
 
 	mov	eax, ebx
 	pop	ebx
 	pop	edi
 
-; 994  : }
+; 1000 : }
 
 	add	esp, 8
 	ret	0
 $LN2@getTurnMon:
 
-; 983  : 		break;
-; 984  : 
-; 985  : 	case CALENDAR_WEEKS:
-; 986  : 		iTurnMonth += iGameTurn / GC.getWEEKS_PER_MONTHS();
+; 989  : 		break;
+; 990  : 
+; 991  : 	case CALENDAR_WEEKS:
+; 992  : 		iTurnMonth += iGameTurn / GC.getWEEKS_PER_MONTHS();
 
 	mov	eax, DWORD PTR _iGameTurn$[esp+20]
 	cdq
@@ -5561,19 +5570,19 @@ $LN1@getTurnMon:
 	pop	esi
 	pop	ebp
 
-; 987  : 		break;
-; 988  : 
-; 989  : 	default:
-; 990  : 		CvAssert(false);
-; 991  : 	}
-; 992  : 
-; 993  : 	return iTurnMonth;
+; 993  : 		break;
+; 994  : 
+; 995  : 	default:
+; 996  : 		CvAssert(false);
+; 997  : 	}
+; 998  : 
+; 999  : 	return iTurnMonth;
 
 	mov	eax, ebx
 	pop	ebx
 	pop	edi
 
-; 994  : }
+; 1000 : }
 
 	add	esp, 8
 	ret	0
@@ -5598,21 +5607,21 @@ _iNumBools$ = 12					; size = 4
 _szOut$ = 16						; size = 4
 ?boolsToString@@YAXPB_NHPAVCvString@@@Z PROC		; boolsToString, COMDAT
 
-; 998  : {
+; 1004 : {
 
 	push	ebx
 	push	esi
 	push	edi
 
-; 999  : 	*szOut = "";
+; 1005 : 	*szOut = "";
 
 	mov	edi, DWORD PTR _szOut$[esp+8]
-	push	OFFSET $SG218122
+	push	OFFSET $SG218123
 	mov	ecx, edi
 	call	DWORD PTR __imp_?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBD@Z
 
-; 1000 : 	int i;
-; 1001 : 	for(i=0; i<iNumBools; i++)
+; 1006 : 	int i;
+; 1007 : 	for(i=0; i<iNumBools; i++)
 
 	mov	ebx, DWORD PTR _iNumBools$[esp+8]
 	xor	esi, esi
@@ -5622,13 +5631,13 @@ _szOut$ = 16						; size = 4
 	mov	ebp, DWORD PTR _pBools$[esp+12]
 $LL3@boolsToStr:
 
-; 1002 : 	{
-; 1003 : 		*szOut += pBools[i] ? "1" : "0";
+; 1008 : 	{
+; 1009 : 		*szOut += pBools[i] ? "1" : "0";
 
 	cmp	BYTE PTR [esi+ebp], 0
-	mov	eax, OFFSET $SG218127
-	jne	SHORT $LN7@boolsToStr
 	mov	eax, OFFSET $SG218128
+	jne	SHORT $LN7@boolsToStr
+	mov	eax, OFFSET $SG218129
 $LN7@boolsToStr:
 	push	eax
 	mov	ecx, edi
@@ -5642,8 +5651,8 @@ $LN1@boolsToStr:
 	pop	esi
 	pop	ebx
 
-; 1004 : 	}
-; 1005 : }
+; 1010 : 	}
+; 1011 : }
 
 	ret	0
 ?boolsToString@@YAXPB_NHPAVCvString@@@Z ENDP		; boolsToString
@@ -5666,17 +5675,17 @@ __ehfuncinfo$?getDirectionTypeString@@YAXAAVCvString@@W4DirectionTypes@@@Z DD 01
 xdata$x	ENDS
 ;	COMDAT ?getDirectionTypeString@@YAXAAVCvString@@W4DirectionTypes@@@Z
 _TEXT	SEGMENT
-$T219482 = -40						; size = 28
+$T219483 = -40						; size = 28
 __$EHRec$ = -12						; size = 12
 _strString$ = 8						; size = 4
 _eDirectionType$ = 12					; size = 4
 ?getDirectionTypeString@@YAXAAVCvString@@W4DirectionTypes@@@Z PROC ; getDirectionTypeString, COMDAT
 
-; 1028 : {
+; 1034 : {
 
 	mov	eax, DWORD PTR fs:0
 
-; 1029 : 	switch(eDirectionType)
+; 1035 : 	switch(eDirectionType)
 
 	mov	ecx, DWORD PTR _eDirectionType$[esp-4]
 	push	-1
@@ -5690,17 +5699,17 @@ _eDirectionType$ = 12					; size = 4
 	jmp	DWORD PTR $LN20@getDirecti[eax*4]
 $LN8@getDirecti:
 
-; 1030 : 	{
-; 1031 : 	case NO_DIRECTION:
-; 1032 : 		strString = "NO_DIRECTION";
+; 1036 : 	{
+; 1037 : 	case NO_DIRECTION:
+; 1038 : 		strString = "NO_DIRECTION";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218150
+	push	OFFSET $SG218151
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
-; 1058 : 		break;
-; 1059 : 	}
-; 1060 : }
+; 1064 : 		break;
+; 1065 : 	}
+; 1066 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -5708,19 +5717,19 @@ $LN8@getDirecti:
 	ret	0
 $LN7@getDirecti:
 
-; 1033 : 		break;
-; 1034 : 
-; 1035 : 		//case DIRECTION_NORTH: strString = "north"; break;
-; 1036 : 	case DIRECTION_NORTHEAST:
-; 1037 : 		strString = "northeast";
+; 1039 : 		break;
+; 1040 : 
+; 1041 : 		//case DIRECTION_NORTH: strString = "north"; break;
+; 1042 : 	case DIRECTION_NORTHEAST:
+; 1043 : 		strString = "northeast";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218152
+	push	OFFSET $SG218153
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
-; 1058 : 		break;
-; 1059 : 	}
-; 1060 : }
+; 1064 : 		break;
+; 1065 : 	}
+; 1066 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -5728,17 +5737,17 @@ $LN7@getDirecti:
 	ret	0
 $LN6@getDirecti:
 
-; 1038 : 		break;
-; 1039 : 	case DIRECTION_EAST:
-; 1040 : 		strString = "east";
+; 1044 : 		break;
+; 1045 : 	case DIRECTION_EAST:
+; 1046 : 		strString = "east";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218154
+	push	OFFSET $SG218155
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
-; 1058 : 		break;
-; 1059 : 	}
-; 1060 : }
+; 1064 : 		break;
+; 1065 : 	}
+; 1066 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -5746,17 +5755,17 @@ $LN6@getDirecti:
 	ret	0
 $LN5@getDirecti:
 
-; 1041 : 		break;
-; 1042 : 	case DIRECTION_SOUTHEAST:
-; 1043 : 		strString = "southeast";
+; 1047 : 		break;
+; 1048 : 	case DIRECTION_SOUTHEAST:
+; 1049 : 		strString = "southeast";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218156
+	push	OFFSET $SG218157
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
-; 1058 : 		break;
-; 1059 : 	}
-; 1060 : }
+; 1064 : 		break;
+; 1065 : 	}
+; 1066 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -5764,18 +5773,18 @@ $LN5@getDirecti:
 	ret	0
 $LN4@getDirecti:
 
-; 1044 : 		break;
-; 1045 : 		//case DIRECTION_SOUTH: strString = "south"; break;
-; 1046 : 	case DIRECTION_SOUTHWEST:
-; 1047 : 		strString = "southwest";
+; 1050 : 		break;
+; 1051 : 		//case DIRECTION_SOUTH: strString = "south"; break;
+; 1052 : 	case DIRECTION_SOUTHWEST:
+; 1053 : 		strString = "southwest";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218158
+	push	OFFSET $SG218159
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
-; 1058 : 		break;
-; 1059 : 	}
-; 1060 : }
+; 1064 : 		break;
+; 1065 : 	}
+; 1066 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -5783,17 +5792,17 @@ $LN4@getDirecti:
 	ret	0
 $LN3@getDirecti:
 
-; 1048 : 		break;
-; 1049 : 	case DIRECTION_WEST:
-; 1050 : 		strString = "west";
+; 1054 : 		break;
+; 1055 : 	case DIRECTION_WEST:
+; 1056 : 		strString = "west";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218160
+	push	OFFSET $SG218161
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
-; 1058 : 		break;
-; 1059 : 	}
-; 1060 : }
+; 1064 : 		break;
+; 1065 : 	}
+; 1066 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -5801,17 +5810,17 @@ $LN3@getDirecti:
 	ret	0
 $LN2@getDirecti:
 
-; 1051 : 		break;
-; 1052 : 	case DIRECTION_NORTHWEST:
-; 1053 : 		strString = "northwest";
+; 1057 : 		break;
+; 1058 : 	case DIRECTION_NORTHWEST:
+; 1059 : 		strString = "northwest";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218162
+	push	OFFSET $SG218163
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
-; 1058 : 		break;
-; 1059 : 	}
-; 1060 : }
+; 1064 : 		break;
+; 1065 : 	}
+; 1066 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -5819,14 +5828,14 @@ $LN2@getDirecti:
 	ret	0
 $LN1@getDirecti:
 
-; 1054 : 		break;
-; 1055 : 
-; 1056 : 	default:
-; 1057 : 		strString = CvString::format("UNKNOWN_DIRECTION(%d)", eDirectionType);
+; 1060 : 		break;
+; 1061 : 
+; 1062 : 	default:
+; 1063 : 		strString = CvString::format("UNKNOWN_DIRECTION(%d)", eDirectionType);
 
 	push	ecx
-	lea	eax, DWORD PTR $T219482[esp+44]
-	push	OFFSET $SG218165
+	lea	eax, DWORD PTR $T219483[esp+44]
+	push	OFFSET $SG218166
 	push	eax
 	call	?format@CvString@@SA?AV1@PBDZZ		; CvString::format
 	add	esp, 12					; 0000000cH
@@ -5834,13 +5843,13 @@ $LN1@getDirecti:
 	push	eax
 	mov	DWORD PTR __$EHRec$[esp+52], 0
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T219482[esp+40]
+	lea	ecx, DWORD PTR $T219483[esp+40]
 	mov	DWORD PTR __$EHRec$[esp+48], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 1058 : 		break;
-; 1059 : 	}
-; 1060 : }
+; 1064 : 		break;
+; 1065 : 	}
+; 1066 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -5858,7 +5867,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?getDirectionTypeString@@YAXAAVCvString@@W4DirectionTypes@@@Z$0:
-	lea	ecx, DWORD PTR $T219482[ebp]
+	lea	ecx, DWORD PTR $T219483[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?getDirectionTypeString@@YAXAAVCvString@@W4DirectionTypes@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?getDirectionTypeString@@YAXAAVCvString@@W4DirectionTypes@@@Z
@@ -5883,17 +5892,17 @@ __ehfuncinfo$?getActivityTypeString@@YAXAAVCvString@@W4ActivityTypes@@@Z DD 0199
 xdata$x	ENDS
 ;	COMDAT ?getActivityTypeString@@YAXAAVCvString@@W4ActivityTypes@@@Z
 _TEXT	SEGMENT
-$T219502 = -40						; size = 28
+$T219503 = -40						; size = 28
 __$EHRec$ = -12						; size = 12
 _strString$ = 8						; size = 4
 _eActivityType$ = 12					; size = 4
 ?getActivityTypeString@@YAXAAVCvString@@W4ActivityTypes@@@Z PROC ; getActivityTypeString, COMDAT
 
-; 1063 : {
+; 1069 : {
 
 	mov	eax, DWORD PTR fs:0
 
-; 1064 : 	switch(eActivityType)
+; 1070 : 	switch(eActivityType)
 
 	mov	ecx, DWORD PTR _eActivityType$[esp-4]
 	push	-1
@@ -5907,17 +5916,17 @@ _eActivityType$ = 12					; size = 4
 	jmp	DWORD PTR $LN21@getActivit[eax*4]
 $LN9@getActivit:
 
-; 1065 : 	{
-; 1066 : 	case NO_ACTIVITY:
-; 1067 : 		strString			= "NO_ACTIVITY";
+; 1071 : 	{
+; 1072 : 	case NO_ACTIVITY:
+; 1073 : 		strString			= "NO_ACTIVITY";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218175
+	push	OFFSET $SG218176
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
-; 1093 : 		break;
-; 1094 : 	}
-; 1095 : }
+; 1099 : 		break;
+; 1100 : 	}
+; 1101 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -5925,17 +5934,17 @@ $LN9@getActivit:
 	ret	0
 $LN8@getActivit:
 
-; 1068 : 		break;
-; 1069 : 	case ACTIVITY_AWAKE:
-; 1070 : 		strString		= "ACTIVITY_AWAKE";
+; 1074 : 		break;
+; 1075 : 	case ACTIVITY_AWAKE:
+; 1076 : 		strString		= "ACTIVITY_AWAKE";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218177
+	push	OFFSET $SG218178
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
-; 1093 : 		break;
-; 1094 : 	}
-; 1095 : }
+; 1099 : 		break;
+; 1100 : 	}
+; 1101 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -5943,17 +5952,17 @@ $LN8@getActivit:
 	ret	0
 $LN7@getActivit:
 
-; 1071 : 		break;
-; 1072 : 	case ACTIVITY_HOLD:
-; 1073 : 		strString		= "ACTIVITY_HOLD";
+; 1077 : 		break;
+; 1078 : 	case ACTIVITY_HOLD:
+; 1079 : 		strString		= "ACTIVITY_HOLD";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218179
+	push	OFFSET $SG218180
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
-; 1093 : 		break;
-; 1094 : 	}
-; 1095 : }
+; 1099 : 		break;
+; 1100 : 	}
+; 1101 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -5961,17 +5970,17 @@ $LN7@getActivit:
 	ret	0
 $LN6@getActivit:
 
-; 1074 : 		break;
-; 1075 : 	case ACTIVITY_SLEEP:
-; 1076 : 		strString		= "ACTIVITY_SLEEP";
+; 1080 : 		break;
+; 1081 : 	case ACTIVITY_SLEEP:
+; 1082 : 		strString		= "ACTIVITY_SLEEP";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218181
+	push	OFFSET $SG218182
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
-; 1093 : 		break;
-; 1094 : 	}
-; 1095 : }
+; 1099 : 		break;
+; 1100 : 	}
+; 1101 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -5979,17 +5988,17 @@ $LN6@getActivit:
 	ret	0
 $LN5@getActivit:
 
-; 1077 : 		break;
-; 1078 : 	case ACTIVITY_HEAL:
-; 1079 : 		strString		= "ACTIVITY_HEAL";
+; 1083 : 		break;
+; 1084 : 	case ACTIVITY_HEAL:
+; 1085 : 		strString		= "ACTIVITY_HEAL";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218183
+	push	OFFSET $SG218184
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
-; 1093 : 		break;
-; 1094 : 	}
-; 1095 : }
+; 1099 : 		break;
+; 1100 : 	}
+; 1101 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -5997,17 +6006,17 @@ $LN5@getActivit:
 	ret	0
 $LN4@getActivit:
 
-; 1080 : 		break;
-; 1081 : 	case ACTIVITY_SENTRY:
-; 1082 : 		strString		= "ACTIVITY_SENTRY";
+; 1086 : 		break;
+; 1087 : 	case ACTIVITY_SENTRY:
+; 1088 : 		strString		= "ACTIVITY_SENTRY";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218185
+	push	OFFSET $SG218186
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
-; 1093 : 		break;
-; 1094 : 	}
-; 1095 : }
+; 1099 : 		break;
+; 1100 : 	}
+; 1101 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -6015,17 +6024,17 @@ $LN4@getActivit:
 	ret	0
 $LN3@getActivit:
 
-; 1083 : 		break;
-; 1084 : 	case ACTIVITY_INTERCEPT:
-; 1085 : 		strString	= "ACTIVITY_SENTRY";
+; 1089 : 		break;
+; 1090 : 	case ACTIVITY_INTERCEPT:
+; 1091 : 		strString	= "ACTIVITY_SENTRY";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218187
+	push	OFFSET $SG218188
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
-; 1093 : 		break;
-; 1094 : 	}
-; 1095 : }
+; 1099 : 		break;
+; 1100 : 	}
+; 1101 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -6033,17 +6042,17 @@ $LN3@getActivit:
 	ret	0
 $LN2@getActivit:
 
-; 1086 : 		break;
-; 1087 : 	case ACTIVITY_MISSION:
-; 1088 : 		strString	= "ACTIVITY_MISSION";
+; 1092 : 		break;
+; 1093 : 	case ACTIVITY_MISSION:
+; 1094 : 		strString	= "ACTIVITY_MISSION";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218189
+	push	OFFSET $SG218190
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
-; 1093 : 		break;
-; 1094 : 	}
-; 1095 : }
+; 1099 : 		break;
+; 1100 : 	}
+; 1101 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -6051,14 +6060,14 @@ $LN2@getActivit:
 	ret	0
 $LN1@getActivit:
 
-; 1089 : 		break;
-; 1090 : 
-; 1091 : 	default:
-; 1092 : 		strString = CvString::format("UNKNOWN_ACTIVITY(%d)", eActivityType);
+; 1095 : 		break;
+; 1096 : 
+; 1097 : 	default:
+; 1098 : 		strString = CvString::format("UNKNOWN_ACTIVITY(%d)", eActivityType);
 
 	push	ecx
-	lea	eax, DWORD PTR $T219502[esp+44]
-	push	OFFSET $SG218192
+	lea	eax, DWORD PTR $T219503[esp+44]
+	push	OFFSET $SG218193
 	push	eax
 	call	?format@CvString@@SA?AV1@PBDZZ		; CvString::format
 	add	esp, 12					; 0000000cH
@@ -6066,13 +6075,13 @@ $LN1@getActivit:
 	push	eax
 	mov	DWORD PTR __$EHRec$[esp+52], 0
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T219502[esp+40]
+	lea	ecx, DWORD PTR $T219503[esp+40]
 	mov	DWORD PTR __$EHRec$[esp+48], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 1093 : 		break;
-; 1094 : 	}
-; 1095 : }
+; 1099 : 		break;
+; 1100 : 	}
+; 1101 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -6092,7 +6101,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?getActivityTypeString@@YAXAAVCvString@@W4ActivityTypes@@@Z$0:
-	lea	ecx, DWORD PTR $T219502[ebp]
+	lea	ecx, DWORD PTR $T219503[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?getActivityTypeString@@YAXAAVCvString@@W4ActivityTypes@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?getActivityTypeString@@YAXAAVCvString@@W4ActivityTypes@@@Z
@@ -6117,17 +6126,17 @@ __ehfuncinfo$?getMissionAIString@@YAXAAVCvString@@W4MissionAITypes@@@Z DD 019930
 xdata$x	ENDS
 ;	COMDAT ?getMissionAIString@@YAXAAVCvString@@W4MissionAITypes@@@Z
 _TEXT	SEGMENT
-$T219522 = -40						; size = 28
+$T219523 = -40						; size = 28
 __$EHRec$ = -12						; size = 12
 _strString$ = 8						; size = 4
 _eMissionAI$ = 12					; size = 4
 ?getMissionAIString@@YAXAAVCvString@@W4MissionAITypes@@@Z PROC ; getMissionAIString, COMDAT
 
-; 1098 : {
+; 1104 : {
 
 	mov	eax, DWORD PTR fs:0
 
-; 1099 : 	switch(eMissionAI)
+; 1105 : 	switch(eMissionAI)
 
 	mov	ecx, DWORD PTR _eMissionAI$[esp-4]
 	push	-1
@@ -6141,17 +6150,17 @@ _eMissionAI$ = 12					; size = 4
 	jmp	DWORD PTR $LN35@getMission[eax*4]
 $LN23@getMission:
 
-; 1100 : 	{
-; 1101 : 	case NO_MISSIONAI:
-; 1102 : 		strString = "NO_MISSIONAI";
+; 1106 : 	{
+; 1107 : 	case NO_MISSIONAI:
+; 1108 : 		strString = "NO_MISSIONAI";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218202
+	push	OFFSET $SG218203
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
-; 1171 : 		break;
-; 1172 : 	}
-; 1173 : }
+; 1177 : 		break;
+; 1178 : 	}
+; 1179 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -6159,18 +6168,18 @@ $LN23@getMission:
 	ret	0
 $LN22@getMission:
 
-; 1103 : 		break;
-; 1104 : 
-; 1105 : 	case MISSIONAI_SHADOW:
-; 1106 : 		strString = "MISSIONAI_SHADOW";
+; 1109 : 		break;
+; 1110 : 
+; 1111 : 	case MISSIONAI_SHADOW:
+; 1112 : 		strString = "MISSIONAI_SHADOW";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218204
+	push	OFFSET $SG218205
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
-; 1171 : 		break;
-; 1172 : 	}
-; 1173 : }
+; 1177 : 		break;
+; 1178 : 	}
+; 1179 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -6178,17 +6187,17 @@ $LN22@getMission:
 	ret	0
 $LN21@getMission:
 
-; 1107 : 		break;
-; 1108 : 	case MISSIONAI_GROUP:
-; 1109 : 		strString = "MISSIONAI_GROUP";
+; 1113 : 		break;
+; 1114 : 	case MISSIONAI_GROUP:
+; 1115 : 		strString = "MISSIONAI_GROUP";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218206
+	push	OFFSET $SG218207
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
-; 1171 : 		break;
-; 1172 : 	}
-; 1173 : }
+; 1177 : 		break;
+; 1178 : 	}
+; 1179 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -6196,17 +6205,17 @@ $LN21@getMission:
 	ret	0
 $LN20@getMission:
 
-; 1110 : 		break;
-; 1111 : 	case MISSIONAI_LOAD_ASSAULT:
-; 1112 : 		strString = "MISSIONAI_LOAD_ASSAULT";
+; 1116 : 		break;
+; 1117 : 	case MISSIONAI_LOAD_ASSAULT:
+; 1118 : 		strString = "MISSIONAI_LOAD_ASSAULT";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218208
+	push	OFFSET $SG218209
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
-; 1171 : 		break;
-; 1172 : 	}
-; 1173 : }
+; 1177 : 		break;
+; 1178 : 	}
+; 1179 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -6214,17 +6223,17 @@ $LN20@getMission:
 	ret	0
 $LN19@getMission:
 
-; 1113 : 		break;
-; 1114 : 	case MISSIONAI_LOAD_SETTLER:
-; 1115 : 		strString = "MISSIONAI_LOAD_SETTLER";
+; 1119 : 		break;
+; 1120 : 	case MISSIONAI_LOAD_SETTLER:
+; 1121 : 		strString = "MISSIONAI_LOAD_SETTLER";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218210
+	push	OFFSET $SG218211
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
-; 1171 : 		break;
-; 1172 : 	}
-; 1173 : }
+; 1177 : 		break;
+; 1178 : 	}
+; 1179 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -6232,17 +6241,17 @@ $LN19@getMission:
 	ret	0
 $LN18@getMission:
 
-; 1116 : 		break;
-; 1117 : 	case MISSIONAI_LOAD_SPECIAL:
-; 1118 : 		strString = "MISSIONAI_LOAD_SPECIA";
+; 1122 : 		break;
+; 1123 : 	case MISSIONAI_LOAD_SPECIAL:
+; 1124 : 		strString = "MISSIONAI_LOAD_SPECIA";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218212
+	push	OFFSET $SG218213
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
-; 1171 : 		break;
-; 1172 : 	}
-; 1173 : }
+; 1177 : 		break;
+; 1178 : 	}
+; 1179 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -6250,17 +6259,17 @@ $LN18@getMission:
 	ret	0
 $LN17@getMission:
 
-; 1119 : 		break;
-; 1120 : 	case MISSIONAI_GUARD_CITY:
-; 1121 : 		strString = "MISSIONAI_GUARD_CITY";
+; 1125 : 		break;
+; 1126 : 	case MISSIONAI_GUARD_CITY:
+; 1127 : 		strString = "MISSIONAI_GUARD_CITY";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218214
+	push	OFFSET $SG218215
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
-; 1171 : 		break;
-; 1172 : 	}
-; 1173 : }
+; 1177 : 		break;
+; 1178 : 	}
+; 1179 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -6268,17 +6277,17 @@ $LN17@getMission:
 	ret	0
 $LN16@getMission:
 
-; 1122 : 		break;
-; 1123 : 	case MISSIONAI_GUARD_RESOURCE:
-; 1124 : 		strString = "MISSIONAI_GUARD_RESOURCE";
+; 1128 : 		break;
+; 1129 : 	case MISSIONAI_GUARD_RESOURCE:
+; 1130 : 		strString = "MISSIONAI_GUARD_RESOURCE";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218216
+	push	OFFSET $SG218217
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
-; 1171 : 		break;
-; 1172 : 	}
-; 1173 : }
+; 1177 : 		break;
+; 1178 : 	}
+; 1179 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -6286,17 +6295,17 @@ $LN16@getMission:
 	ret	0
 $LN15@getMission:
 
-; 1125 : 		break;
-; 1126 : 	case MISSIONAI_GUARD_SPY:
-; 1127 : 		strString = "MISSIONAI_GUARD_SPY";
+; 1131 : 		break;
+; 1132 : 	case MISSIONAI_GUARD_SPY:
+; 1133 : 		strString = "MISSIONAI_GUARD_SPY";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218218
+	push	OFFSET $SG218219
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
-; 1171 : 		break;
-; 1172 : 	}
-; 1173 : }
+; 1177 : 		break;
+; 1178 : 	}
+; 1179 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -6304,17 +6313,17 @@ $LN15@getMission:
 	ret	0
 $LN14@getMission:
 
-; 1128 : 		break;
-; 1129 : 	case MISSIONAI_ATTACK_SPY:
-; 1130 : 		strString = "MISSIONAI_ATTACK_SPY";
+; 1134 : 		break;
+; 1135 : 	case MISSIONAI_ATTACK_SPY:
+; 1136 : 		strString = "MISSIONAI_ATTACK_SPY";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218220
+	push	OFFSET $SG218221
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
-; 1171 : 		break;
-; 1172 : 	}
-; 1173 : }
+; 1177 : 		break;
+; 1178 : 	}
+; 1179 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -6322,17 +6331,17 @@ $LN14@getMission:
 	ret	0
 $LN13@getMission:
 
-; 1131 : 		break;
-; 1132 : 	case MISSIONAI_SPREAD:
-; 1133 : 		strString = "MISSIONAI_SPREAD";
+; 1137 : 		break;
+; 1138 : 	case MISSIONAI_SPREAD:
+; 1139 : 		strString = "MISSIONAI_SPREAD";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218222
+	push	OFFSET $SG218223
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
-; 1171 : 		break;
-; 1172 : 	}
-; 1173 : }
+; 1177 : 		break;
+; 1178 : 	}
+; 1179 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -6340,17 +6349,17 @@ $LN13@getMission:
 	ret	0
 $LN12@getMission:
 
-; 1134 : 		break;
-; 1135 : 	case MISSIONAI_CONSTRUCT:
-; 1136 : 		strString = "MISSIONAI_CONSTRUCT";
+; 1140 : 		break;
+; 1141 : 	case MISSIONAI_CONSTRUCT:
+; 1142 : 		strString = "MISSIONAI_CONSTRUCT";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218224
+	push	OFFSET $SG218225
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
-; 1171 : 		break;
-; 1172 : 	}
-; 1173 : }
+; 1177 : 		break;
+; 1178 : 	}
+; 1179 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -6358,17 +6367,17 @@ $LN12@getMission:
 	ret	0
 $LN11@getMission:
 
-; 1137 : 		break;
-; 1138 : 	case MISSIONAI_HURRY:
-; 1139 : 		strString = "MISSIONAI_HURRY";
+; 1143 : 		break;
+; 1144 : 	case MISSIONAI_HURRY:
+; 1145 : 		strString = "MISSIONAI_HURRY";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218226
+	push	OFFSET $SG218227
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
-; 1171 : 		break;
-; 1172 : 	}
-; 1173 : }
+; 1177 : 		break;
+; 1178 : 	}
+; 1179 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -6376,17 +6385,17 @@ $LN11@getMission:
 	ret	0
 $LN10@getMission:
 
-; 1140 : 		break;
-; 1141 : 	case MISSIONAI_GREAT_WORK:
-; 1142 : 		strString = "MISSIONAI_GREAT_WORK";
+; 1146 : 		break;
+; 1147 : 	case MISSIONAI_GREAT_WORK:
+; 1148 : 		strString = "MISSIONAI_GREAT_WORK";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218228
+	push	OFFSET $SG218229
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
-; 1171 : 		break;
-; 1172 : 	}
-; 1173 : }
+; 1177 : 		break;
+; 1178 : 	}
+; 1179 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -6394,17 +6403,17 @@ $LN10@getMission:
 	ret	0
 $LN9@getMission:
 
-; 1143 : 		break;
-; 1144 : 	case MISSIONAI_EXPLORE:
-; 1145 : 		strString = "MISSIONAI_EXPLORE";
+; 1149 : 		break;
+; 1150 : 	case MISSIONAI_EXPLORE:
+; 1151 : 		strString = "MISSIONAI_EXPLORE";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218230
+	push	OFFSET $SG218231
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
-; 1171 : 		break;
-; 1172 : 	}
-; 1173 : }
+; 1177 : 		break;
+; 1178 : 	}
+; 1179 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -6412,17 +6421,17 @@ $LN9@getMission:
 	ret	0
 $LN8@getMission:
 
-; 1146 : 		break;
-; 1147 : 	case MISSIONAI_BLOCKADE:
-; 1148 : 		strString = "MISSIONAI_BLOCKADE";
+; 1152 : 		break;
+; 1153 : 	case MISSIONAI_BLOCKADE:
+; 1154 : 		strString = "MISSIONAI_BLOCKADE";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218232
+	push	OFFSET $SG218233
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
-; 1171 : 		break;
-; 1172 : 	}
-; 1173 : }
+; 1177 : 		break;
+; 1178 : 	}
+; 1179 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -6430,17 +6439,17 @@ $LN8@getMission:
 	ret	0
 $LN7@getMission:
 
-; 1149 : 		break;
-; 1150 : 	case MISSIONAI_PILLAGE:
-; 1151 : 		strString = "MISSIONAI_PILLAGE";
+; 1155 : 		break;
+; 1156 : 	case MISSIONAI_PILLAGE:
+; 1157 : 		strString = "MISSIONAI_PILLAGE";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218234
+	push	OFFSET $SG218235
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
-; 1171 : 		break;
-; 1172 : 	}
-; 1173 : }
+; 1177 : 		break;
+; 1178 : 	}
+; 1179 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -6448,17 +6457,17 @@ $LN7@getMission:
 	ret	0
 $LN6@getMission:
 
-; 1152 : 		break;
-; 1153 : 	case MISSIONAI_FOUND:
-; 1154 : 		strString = "MISSIONAI_FOUND";
+; 1158 : 		break;
+; 1159 : 	case MISSIONAI_FOUND:
+; 1160 : 		strString = "MISSIONAI_FOUND";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218236
+	push	OFFSET $SG218237
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
-; 1171 : 		break;
-; 1172 : 	}
-; 1173 : }
+; 1177 : 		break;
+; 1178 : 	}
+; 1179 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -6466,17 +6475,17 @@ $LN6@getMission:
 	ret	0
 $LN5@getMission:
 
-; 1155 : 		break;
-; 1156 : 	case MISSIONAI_BUILD:
-; 1157 : 		strString = "MISSIONAI_BUILD";
+; 1161 : 		break;
+; 1162 : 	case MISSIONAI_BUILD:
+; 1163 : 		strString = "MISSIONAI_BUILD";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218238
+	push	OFFSET $SG218239
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
-; 1171 : 		break;
-; 1172 : 	}
-; 1173 : }
+; 1177 : 		break;
+; 1178 : 	}
+; 1179 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -6484,17 +6493,17 @@ $LN5@getMission:
 	ret	0
 $LN4@getMission:
 
-; 1158 : 		break;
-; 1159 : 	case MISSIONAI_ASSAULT:
-; 1160 : 		strString = "MISSIONAI_ASSAULT";
+; 1164 : 		break;
+; 1165 : 	case MISSIONAI_ASSAULT:
+; 1166 : 		strString = "MISSIONAI_ASSAULT";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218240
+	push	OFFSET $SG218241
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
-; 1171 : 		break;
-; 1172 : 	}
-; 1173 : }
+; 1177 : 		break;
+; 1178 : 	}
+; 1179 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -6502,17 +6511,17 @@ $LN4@getMission:
 	ret	0
 $LN3@getMission:
 
-; 1161 : 		break;
-; 1162 : 	case MISSIONAI_CARRIER:
-; 1163 : 		strString = "MISSIONAI_CARRIER";
+; 1167 : 		break;
+; 1168 : 	case MISSIONAI_CARRIER:
+; 1169 : 		strString = "MISSIONAI_CARRIER";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218242
+	push	OFFSET $SG218243
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
-; 1171 : 		break;
-; 1172 : 	}
-; 1173 : }
+; 1177 : 		break;
+; 1178 : 	}
+; 1179 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -6520,17 +6529,17 @@ $LN3@getMission:
 	ret	0
 $LN2@getMission:
 
-; 1164 : 		break;
-; 1165 : 	case MISSIONAI_PICKUP:
-; 1166 : 		strString = "MISSIONAI_PICKUP";
+; 1170 : 		break;
+; 1171 : 	case MISSIONAI_PICKUP:
+; 1172 : 		strString = "MISSIONAI_PICKUP";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218244
+	push	OFFSET $SG218245
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
-; 1171 : 		break;
-; 1172 : 	}
-; 1173 : }
+; 1177 : 		break;
+; 1178 : 	}
+; 1179 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -6538,14 +6547,14 @@ $LN2@getMission:
 	ret	0
 $LN1@getMission:
 
-; 1167 : 		break;
-; 1168 : 
-; 1169 : 	default:
-; 1170 : 		strString = CvString::format("UNKOWN_MISSION_AI(%d)", eMissionAI);
+; 1173 : 		break;
+; 1174 : 
+; 1175 : 	default:
+; 1176 : 		strString = CvString::format("UNKOWN_MISSION_AI(%d)", eMissionAI);
 
 	push	ecx
-	lea	eax, DWORD PTR $T219522[esp+44]
-	push	OFFSET $SG218247
+	lea	eax, DWORD PTR $T219523[esp+44]
+	push	OFFSET $SG218248
 	push	eax
 	call	?format@CvString@@SA?AV1@PBDZZ		; CvString::format
 	add	esp, 12					; 0000000cH
@@ -6553,13 +6562,13 @@ $LN1@getMission:
 	push	eax
 	mov	DWORD PTR __$EHRec$[esp+52], 0
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T219522[esp+40]
+	lea	ecx, DWORD PTR $T219523[esp+40]
 	mov	DWORD PTR __$EHRec$[esp+48], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 1171 : 		break;
-; 1172 : 	}
-; 1173 : }
+; 1177 : 		break;
+; 1178 : 	}
+; 1179 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -6594,7 +6603,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?getMissionAIString@@YAXAAVCvString@@W4MissionAITypes@@@Z$0:
-	lea	ecx, DWORD PTR $T219522[ebp]
+	lea	ecx, DWORD PTR $T219523[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?getMissionAIString@@YAXAAVCvString@@W4MissionAITypes@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?getMissionAIString@@YAXAAVCvString@@W4MissionAITypes@@@Z
@@ -6619,13 +6628,13 @@ __ehfuncinfo$?getUnitAIString@@YAXAAVCvString@@W4UnitAITypes@@@Z DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?getUnitAIString@@YAXAAVCvString@@W4UnitAITypes@@@Z
 _TEXT	SEGMENT
-$T219542 = -40						; size = 28
+$T219543 = -40						; size = 28
 __$EHRec$ = -12						; size = 12
 _strString$ = 8						; size = 4
 _eUnitAI$ = 12						; size = 4
 ?getUnitAIString@@YAXAAVCvString@@W4UnitAITypes@@@Z PROC ; getUnitAIString, COMDAT
 
-; 1176 : {
+; 1182 : {
 
 	mov	eax, DWORD PTR fs:0
 	push	-1
@@ -6635,9 +6644,9 @@ _eUnitAI$ = 12						; size = 4
 	sub	esp, 28					; 0000001cH
 	push	esi
 
-; 1177 : 	// note, GC.getUnitAIInfo(eUnitAI).getDescription() is a international friendly way to get string (but it will be longer)
-; 1178 : 
-; 1179 : 	switch(eUnitAI)
+; 1183 : 	// note, GC.getUnitAIInfo(eUnitAI).getDescription() is a international friendly way to get string (but it will be longer)
+; 1184 : 
+; 1185 : 	switch(eUnitAI)
 
 	mov	esi, DWORD PTR _eUnitAI$[esp+40]
 	lea	eax, DWORD PTR [esi+1]
@@ -6648,19 +6657,19 @@ _eUnitAI$ = 12						; size = 4
 	jmp	DWORD PTR $LN55@getUnitAIS[eax*4]
 $LN43@getUnitAIS:
 
-; 1180 : 	{
-; 1181 : 	case NO_UNITAI:
-; 1182 : 		strString = "no unitAI";
+; 1186 : 	{
+; 1187 : 	case NO_UNITAI:
+; 1188 : 		strString = "no unitAI";
 
-	push	OFFSET $SG218257
+	push	OFFSET $SG218258
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
 	pop	esi
 
-; 1310 : 		break;
-; 1311 : 	}
-; 1312 : }
+; 1316 : 		break;
+; 1317 : 	}
+; 1318 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -6668,20 +6677,20 @@ $LN43@getUnitAIS:
 	ret	0
 $LN42@getUnitAIS:
 
-; 1183 : 		break;
-; 1184 : 
-; 1185 : 	case UNITAI_UNKNOWN:
-; 1186 : 		strString = "unknown";
+; 1189 : 		break;
+; 1190 : 
+; 1191 : 	case UNITAI_UNKNOWN:
+; 1192 : 		strString = "unknown";
 
-	push	OFFSET $SG218259
+	push	OFFSET $SG218260
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
 	pop	esi
 
-; 1310 : 		break;
-; 1311 : 	}
-; 1312 : }
+; 1316 : 		break;
+; 1317 : 	}
+; 1318 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -6689,19 +6698,19 @@ $LN42@getUnitAIS:
 	ret	0
 $LN41@getUnitAIS:
 
-; 1187 : 		break;
-; 1188 : 	case UNITAI_SETTLE:
-; 1189 : 		strString = "settle";
+; 1193 : 		break;
+; 1194 : 	case UNITAI_SETTLE:
+; 1195 : 		strString = "settle";
 
-	push	OFFSET $SG218261
+	push	OFFSET $SG218262
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
 	pop	esi
 
-; 1310 : 		break;
-; 1311 : 	}
-; 1312 : }
+; 1316 : 		break;
+; 1317 : 	}
+; 1318 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -6709,19 +6718,19 @@ $LN41@getUnitAIS:
 	ret	0
 $LN40@getUnitAIS:
 
-; 1190 : 		break;
-; 1191 : 	case UNITAI_WORKER:
-; 1192 : 		strString = "worker";
+; 1196 : 		break;
+; 1197 : 	case UNITAI_WORKER:
+; 1198 : 		strString = "worker";
 
-	push	OFFSET $SG218263
+	push	OFFSET $SG218264
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
 	pop	esi
 
-; 1310 : 		break;
-; 1311 : 	}
-; 1312 : }
+; 1316 : 		break;
+; 1317 : 	}
+; 1318 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -6729,19 +6738,19 @@ $LN40@getUnitAIS:
 	ret	0
 $LN39@getUnitAIS:
 
-; 1193 : 		break;
-; 1194 : 	case UNITAI_ATTACK:
-; 1195 : 		strString = "attack";
+; 1199 : 		break;
+; 1200 : 	case UNITAI_ATTACK:
+; 1201 : 		strString = "attack";
 
-	push	OFFSET $SG218265
+	push	OFFSET $SG218266
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
 	pop	esi
 
-; 1310 : 		break;
-; 1311 : 	}
-; 1312 : }
+; 1316 : 		break;
+; 1317 : 	}
+; 1318 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -6749,19 +6758,19 @@ $LN39@getUnitAIS:
 	ret	0
 $LN38@getUnitAIS:
 
-; 1196 : 		break;
-; 1197 : 	case UNITAI_CITY_BOMBARD:
-; 1198 : 		strString = "bombard city";
+; 1202 : 		break;
+; 1203 : 	case UNITAI_CITY_BOMBARD:
+; 1204 : 		strString = "bombard city";
 
-	push	OFFSET $SG218267
+	push	OFFSET $SG218268
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
 	pop	esi
 
-; 1310 : 		break;
-; 1311 : 	}
-; 1312 : }
+; 1316 : 		break;
+; 1317 : 	}
+; 1318 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -6769,19 +6778,19 @@ $LN38@getUnitAIS:
 	ret	0
 $LN37@getUnitAIS:
 
-; 1199 : 		break;
-; 1200 : 	case UNITAI_FAST_ATTACK:
-; 1201 : 		strString = "fast attack";
+; 1205 : 		break;
+; 1206 : 	case UNITAI_FAST_ATTACK:
+; 1207 : 		strString = "fast attack";
 
-	push	OFFSET $SG218269
+	push	OFFSET $SG218270
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
 	pop	esi
 
-; 1310 : 		break;
-; 1311 : 	}
-; 1312 : }
+; 1316 : 		break;
+; 1317 : 	}
+; 1318 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -6789,19 +6798,19 @@ $LN37@getUnitAIS:
 	ret	0
 $LN36@getUnitAIS:
 
-; 1202 : 		break;
-; 1203 : 	case UNITAI_DEFENSE:
-; 1204 : 		strString = "defense";
+; 1208 : 		break;
+; 1209 : 	case UNITAI_DEFENSE:
+; 1210 : 		strString = "defense";
 
-	push	OFFSET $SG218271
+	push	OFFSET $SG218272
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
 	pop	esi
 
-; 1310 : 		break;
-; 1311 : 	}
-; 1312 : }
+; 1316 : 		break;
+; 1317 : 	}
+; 1318 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -6809,19 +6818,19 @@ $LN36@getUnitAIS:
 	ret	0
 $LN35@getUnitAIS:
 
-; 1205 : 		break;
-; 1206 : 	case UNITAI_COUNTER:
-; 1207 : 		strString = "counter";
+; 1211 : 		break;
+; 1212 : 	case UNITAI_COUNTER:
+; 1213 : 		strString = "counter";
 
-	push	OFFSET $SG218273
+	push	OFFSET $SG218274
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
 	pop	esi
 
-; 1310 : 		break;
-; 1311 : 	}
-; 1312 : }
+; 1316 : 		break;
+; 1317 : 	}
+; 1318 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -6829,19 +6838,19 @@ $LN35@getUnitAIS:
 	ret	0
 $LN34@getUnitAIS:
 
-; 1208 : 		break;
-; 1209 : 	case UNITAI_RANGED:
-; 1210 : 		strString = "ranged";
+; 1214 : 		break;
+; 1215 : 	case UNITAI_RANGED:
+; 1216 : 		strString = "ranged";
 
-	push	OFFSET $SG218275
+	push	OFFSET $SG218276
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
 	pop	esi
 
-; 1310 : 		break;
-; 1311 : 	}
-; 1312 : }
+; 1316 : 		break;
+; 1317 : 	}
+; 1318 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -6849,19 +6858,19 @@ $LN34@getUnitAIS:
 	ret	0
 $LN33@getUnitAIS:
 
-; 1211 : 		break;
-; 1212 : 	case UNITAI_CITY_SPECIAL:
-; 1213 : 		strString = "city special";
+; 1217 : 		break;
+; 1218 : 	case UNITAI_CITY_SPECIAL:
+; 1219 : 		strString = "city special";
 
-	push	OFFSET $SG218277
+	push	OFFSET $SG218278
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
 	pop	esi
 
-; 1310 : 		break;
-; 1311 : 	}
-; 1312 : }
+; 1316 : 		break;
+; 1317 : 	}
+; 1318 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -6869,19 +6878,19 @@ $LN33@getUnitAIS:
 	ret	0
 $LN32@getUnitAIS:
 
-; 1214 : 		break;
-; 1215 : 	case UNITAI_EXPLORE:
-; 1216 : 		strString = "explore";
+; 1220 : 		break;
+; 1221 : 	case UNITAI_EXPLORE:
+; 1222 : 		strString = "explore";
 
-	push	OFFSET $SG218279
+	push	OFFSET $SG218280
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
 	pop	esi
 
-; 1310 : 		break;
-; 1311 : 	}
-; 1312 : }
+; 1316 : 		break;
+; 1317 : 	}
+; 1318 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -6889,19 +6898,19 @@ $LN32@getUnitAIS:
 	ret	0
 $LN31@getUnitAIS:
 
-; 1217 : 		break;
-; 1218 : 	case UNITAI_ARTIST:
-; 1219 : 		strString = "artist";
+; 1223 : 		break;
+; 1224 : 	case UNITAI_ARTIST:
+; 1225 : 		strString = "artist";
 
-	push	OFFSET $SG218281
+	push	OFFSET $SG218282
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
 	pop	esi
 
-; 1310 : 		break;
-; 1311 : 	}
-; 1312 : }
+; 1316 : 		break;
+; 1317 : 	}
+; 1318 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -6909,19 +6918,19 @@ $LN31@getUnitAIS:
 	ret	0
 $LN30@getUnitAIS:
 
-; 1220 : 		break;
-; 1221 : 	case UNITAI_SCIENTIST:
-; 1222 : 		strString = "scientist";
+; 1226 : 		break;
+; 1227 : 	case UNITAI_SCIENTIST:
+; 1228 : 		strString = "scientist";
 
-	push	OFFSET $SG218283
+	push	OFFSET $SG218284
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
 	pop	esi
 
-; 1310 : 		break;
-; 1311 : 	}
-; 1312 : }
+; 1316 : 		break;
+; 1317 : 	}
+; 1318 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -6929,19 +6938,19 @@ $LN30@getUnitAIS:
 	ret	0
 $LN29@getUnitAIS:
 
-; 1223 : 		break;
-; 1224 : 	case UNITAI_GENERAL:
-; 1225 : 		strString = "general";
+; 1229 : 		break;
+; 1230 : 	case UNITAI_GENERAL:
+; 1231 : 		strString = "general";
 
-	push	OFFSET $SG218285
+	push	OFFSET $SG218286
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
 	pop	esi
 
-; 1310 : 		break;
-; 1311 : 	}
-; 1312 : }
+; 1316 : 		break;
+; 1317 : 	}
+; 1318 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -6949,19 +6958,19 @@ $LN29@getUnitAIS:
 	ret	0
 $LN28@getUnitAIS:
 
-; 1226 : 		break;
-; 1227 : 	case UNITAI_MERCHANT:
-; 1228 : 		strString = "merchant";
+; 1232 : 		break;
+; 1233 : 	case UNITAI_MERCHANT:
+; 1234 : 		strString = "merchant";
 
-	push	OFFSET $SG218287
+	push	OFFSET $SG218288
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
 	pop	esi
 
-; 1310 : 		break;
-; 1311 : 	}
-; 1312 : }
+; 1316 : 		break;
+; 1317 : 	}
+; 1318 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -6969,19 +6978,19 @@ $LN28@getUnitAIS:
 	ret	0
 $LN27@getUnitAIS:
 
-; 1229 : 		break;
-; 1230 : 	case UNITAI_ENGINEER:
-; 1231 : 		strString = "engineer";
+; 1235 : 		break;
+; 1236 : 	case UNITAI_ENGINEER:
+; 1237 : 		strString = "engineer";
 
-	push	OFFSET $SG218289
+	push	OFFSET $SG218290
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
 	pop	esi
 
-; 1310 : 		break;
-; 1311 : 	}
-; 1312 : }
+; 1316 : 		break;
+; 1317 : 	}
+; 1318 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -6989,19 +6998,19 @@ $LN27@getUnitAIS:
 	ret	0
 $LN26@getUnitAIS:
 
-; 1232 : 		break;
-; 1233 : 	case UNITAI_ICBM:
-; 1234 : 		strString = "icbm";
+; 1238 : 		break;
+; 1239 : 	case UNITAI_ICBM:
+; 1240 : 		strString = "icbm";
 
-	push	OFFSET $SG218291
+	push	OFFSET $SG218292
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
 	pop	esi
 
-; 1310 : 		break;
-; 1311 : 	}
-; 1312 : }
+; 1316 : 		break;
+; 1317 : 	}
+; 1318 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -7009,19 +7018,19 @@ $LN26@getUnitAIS:
 	ret	0
 $LN25@getUnitAIS:
 
-; 1235 : 		break;
-; 1236 : 	case UNITAI_WORKER_SEA:
-; 1237 : 		strString = "worker sea";
+; 1241 : 		break;
+; 1242 : 	case UNITAI_WORKER_SEA:
+; 1243 : 		strString = "worker sea";
 
-	push	OFFSET $SG218293
+	push	OFFSET $SG218294
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
 	pop	esi
 
-; 1310 : 		break;
-; 1311 : 	}
-; 1312 : }
+; 1316 : 		break;
+; 1317 : 	}
+; 1318 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -7029,19 +7038,19 @@ $LN25@getUnitAIS:
 	ret	0
 $LN24@getUnitAIS:
 
-; 1238 : 		break;
-; 1239 : 	case UNITAI_ATTACK_SEA:
-; 1240 : 		strString = "attack sea";
+; 1244 : 		break;
+; 1245 : 	case UNITAI_ATTACK_SEA:
+; 1246 : 		strString = "attack sea";
 
-	push	OFFSET $SG218295
+	push	OFFSET $SG218296
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
 	pop	esi
 
-; 1310 : 		break;
-; 1311 : 	}
-; 1312 : }
+; 1316 : 		break;
+; 1317 : 	}
+; 1318 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -7049,19 +7058,19 @@ $LN24@getUnitAIS:
 	ret	0
 $LN23@getUnitAIS:
 
-; 1241 : 		break;
-; 1242 : 	case UNITAI_RESERVE_SEA:
-; 1243 : 		strString = "reserve sea";
+; 1247 : 		break;
+; 1248 : 	case UNITAI_RESERVE_SEA:
+; 1249 : 		strString = "reserve sea";
 
-	push	OFFSET $SG218297
+	push	OFFSET $SG218298
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
 	pop	esi
 
-; 1310 : 		break;
-; 1311 : 	}
-; 1312 : }
+; 1316 : 		break;
+; 1317 : 	}
+; 1318 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -7069,19 +7078,19 @@ $LN23@getUnitAIS:
 	ret	0
 $LN22@getUnitAIS:
 
-; 1244 : 		break;
-; 1245 : 	case UNITAI_ESCORT_SEA:
-; 1246 : 		strString = "escort sea";
+; 1250 : 		break;
+; 1251 : 	case UNITAI_ESCORT_SEA:
+; 1252 : 		strString = "escort sea";
 
-	push	OFFSET $SG218299
+	push	OFFSET $SG218300
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
 	pop	esi
 
-; 1310 : 		break;
-; 1311 : 	}
-; 1312 : }
+; 1316 : 		break;
+; 1317 : 	}
+; 1318 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -7089,19 +7098,19 @@ $LN22@getUnitAIS:
 	ret	0
 $LN21@getUnitAIS:
 
-; 1247 : 		break;
-; 1248 : 	case UNITAI_EXPLORE_SEA:
-; 1249 : 		strString = "explore sea";
+; 1253 : 		break;
+; 1254 : 	case UNITAI_EXPLORE_SEA:
+; 1255 : 		strString = "explore sea";
 
-	push	OFFSET $SG218301
+	push	OFFSET $SG218302
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
 	pop	esi
 
-; 1310 : 		break;
-; 1311 : 	}
-; 1312 : }
+; 1316 : 		break;
+; 1317 : 	}
+; 1318 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -7109,19 +7118,19 @@ $LN21@getUnitAIS:
 	ret	0
 $LN20@getUnitAIS:
 
-; 1250 : 		break;
-; 1251 : 	case UNITAI_ASSAULT_SEA:
-; 1252 : 		strString = "assault sea";
+; 1256 : 		break;
+; 1257 : 	case UNITAI_ASSAULT_SEA:
+; 1258 : 		strString = "assault sea";
 
-	push	OFFSET $SG218303
+	push	OFFSET $SG218304
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
 	pop	esi
 
-; 1310 : 		break;
-; 1311 : 	}
-; 1312 : }
+; 1316 : 		break;
+; 1317 : 	}
+; 1318 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -7129,19 +7138,19 @@ $LN20@getUnitAIS:
 	ret	0
 $LN19@getUnitAIS:
 
-; 1253 : 		break;
-; 1254 : 	case UNITAI_SETTLER_SEA:
-; 1255 : 		strString = "settler sea";
+; 1259 : 		break;
+; 1260 : 	case UNITAI_SETTLER_SEA:
+; 1261 : 		strString = "settler sea";
 
-	push	OFFSET $SG218305
+	push	OFFSET $SG218306
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
 	pop	esi
 
-; 1310 : 		break;
-; 1311 : 	}
-; 1312 : }
+; 1316 : 		break;
+; 1317 : 	}
+; 1318 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -7149,19 +7158,19 @@ $LN19@getUnitAIS:
 	ret	0
 $LN18@getUnitAIS:
 
-; 1256 : 		break;
-; 1257 : 	case UNITAI_CARRIER_SEA:
-; 1258 : 		strString = "carrier sea";
+; 1262 : 		break;
+; 1263 : 	case UNITAI_CARRIER_SEA:
+; 1264 : 		strString = "carrier sea";
 
-	push	OFFSET $SG218307
+	push	OFFSET $SG218308
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
 	pop	esi
 
-; 1310 : 		break;
-; 1311 : 	}
-; 1312 : }
+; 1316 : 		break;
+; 1317 : 	}
+; 1318 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -7169,19 +7178,19 @@ $LN18@getUnitAIS:
 	ret	0
 $LN17@getUnitAIS:
 
-; 1259 : 		break;
-; 1260 : 	case UNITAI_MISSILE_CARRIER_SEA:
-; 1261 : 		strString = "missile carrier";
+; 1265 : 		break;
+; 1266 : 	case UNITAI_MISSILE_CARRIER_SEA:
+; 1267 : 		strString = "missile carrier";
 
-	push	OFFSET $SG218309
+	push	OFFSET $SG218310
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
 	pop	esi
 
-; 1310 : 		break;
-; 1311 : 	}
-; 1312 : }
+; 1316 : 		break;
+; 1317 : 	}
+; 1318 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -7189,19 +7198,19 @@ $LN17@getUnitAIS:
 	ret	0
 $LN16@getUnitAIS:
 
-; 1262 : 		break;
-; 1263 : 	case UNITAI_PIRATE_SEA:
-; 1264 : 		strString = "pirate sea";
+; 1268 : 		break;
+; 1269 : 	case UNITAI_PIRATE_SEA:
+; 1270 : 		strString = "pirate sea";
 
-	push	OFFSET $SG218311
+	push	OFFSET $SG218312
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
 	pop	esi
 
-; 1310 : 		break;
-; 1311 : 	}
-; 1312 : }
+; 1316 : 		break;
+; 1317 : 	}
+; 1318 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -7209,19 +7218,19 @@ $LN16@getUnitAIS:
 	ret	0
 $LN15@getUnitAIS:
 
-; 1265 : 		break;
-; 1266 : 	case UNITAI_ATTACK_AIR:
-; 1267 : 		strString = "attack air";
+; 1271 : 		break;
+; 1272 : 	case UNITAI_ATTACK_AIR:
+; 1273 : 		strString = "attack air";
 
-	push	OFFSET $SG218313
+	push	OFFSET $SG218314
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
 	pop	esi
 
-; 1310 : 		break;
-; 1311 : 	}
-; 1312 : }
+; 1316 : 		break;
+; 1317 : 	}
+; 1318 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -7229,19 +7238,19 @@ $LN15@getUnitAIS:
 	ret	0
 $LN14@getUnitAIS:
 
-; 1268 : 		break;
-; 1269 : 	case UNITAI_DEFENSE_AIR:
-; 1270 : 		strString = "defense air";
+; 1274 : 		break;
+; 1275 : 	case UNITAI_DEFENSE_AIR:
+; 1276 : 		strString = "defense air";
 
-	push	OFFSET $SG218315
+	push	OFFSET $SG218316
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
 	pop	esi
 
-; 1310 : 		break;
-; 1311 : 	}
-; 1312 : }
+; 1316 : 		break;
+; 1317 : 	}
+; 1318 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -7249,19 +7258,19 @@ $LN14@getUnitAIS:
 	ret	0
 $LN13@getUnitAIS:
 
-; 1271 : 		break;
-; 1272 : 	case UNITAI_CARRIER_AIR:
-; 1273 : 		strString = "carrier air";
+; 1277 : 		break;
+; 1278 : 	case UNITAI_CARRIER_AIR:
+; 1279 : 		strString = "carrier air";
 
-	push	OFFSET $SG218317
+	push	OFFSET $SG218318
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
 	pop	esi
 
-; 1310 : 		break;
-; 1311 : 	}
-; 1312 : }
+; 1316 : 		break;
+; 1317 : 	}
+; 1318 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -7269,19 +7278,19 @@ $LN13@getUnitAIS:
 	ret	0
 $LN12@getUnitAIS:
 
-; 1274 : 		break;
-; 1275 : 	case UNITAI_PARADROP:
-; 1276 : 		strString = "paradrop";
+; 1280 : 		break;
+; 1281 : 	case UNITAI_PARADROP:
+; 1282 : 		strString = "paradrop";
 
-	push	OFFSET $SG218319
+	push	OFFSET $SG218320
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
 	pop	esi
 
-; 1310 : 		break;
-; 1311 : 	}
-; 1312 : }
+; 1316 : 		break;
+; 1317 : 	}
+; 1318 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -7289,19 +7298,19 @@ $LN12@getUnitAIS:
 	ret	0
 $LN11@getUnitAIS:
 
-; 1277 : 		break;
-; 1278 : 	case UNITAI_SPACESHIP_PART:
-; 1279 : 		strString = "spaceship part";
+; 1283 : 		break;
+; 1284 : 	case UNITAI_SPACESHIP_PART:
+; 1285 : 		strString = "spaceship part";
 
-	push	OFFSET $SG218321
+	push	OFFSET $SG218322
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
 	pop	esi
 
-; 1310 : 		break;
-; 1311 : 	}
-; 1312 : }
+; 1316 : 		break;
+; 1317 : 	}
+; 1318 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -7309,19 +7318,19 @@ $LN11@getUnitAIS:
 	ret	0
 $LN10@getUnitAIS:
 
-; 1280 : 		break;
-; 1281 : 	case UNITAI_TREASURE:
-; 1282 : 		strString = "treasure";
+; 1286 : 		break;
+; 1287 : 	case UNITAI_TREASURE:
+; 1288 : 		strString = "treasure";
 
-	push	OFFSET $SG218323
+	push	OFFSET $SG218324
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
 	pop	esi
 
-; 1310 : 		break;
-; 1311 : 	}
-; 1312 : }
+; 1316 : 		break;
+; 1317 : 	}
+; 1318 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -7329,19 +7338,19 @@ $LN10@getUnitAIS:
 	ret	0
 $LN9@getUnitAIS:
 
-; 1283 : 		break;
-; 1284 : 	case UNITAI_PROPHET:
-; 1285 : 		strString = "prophet";
+; 1289 : 		break;
+; 1290 : 	case UNITAI_PROPHET:
+; 1291 : 		strString = "prophet";
 
-	push	OFFSET $SG218325
+	push	OFFSET $SG218326
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
 	pop	esi
 
-; 1310 : 		break;
-; 1311 : 	}
-; 1312 : }
+; 1316 : 		break;
+; 1317 : 	}
+; 1318 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -7349,19 +7358,19 @@ $LN9@getUnitAIS:
 	ret	0
 $LN8@getUnitAIS:
 
-; 1286 : 		break;
-; 1287 : 	case UNITAI_MISSIONARY:
-; 1288 : 		strString = "missionary";
+; 1292 : 		break;
+; 1293 : 	case UNITAI_MISSIONARY:
+; 1294 : 		strString = "missionary";
 
-	push	OFFSET $SG218327
+	push	OFFSET $SG218328
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
 	pop	esi
 
-; 1310 : 		break;
-; 1311 : 	}
-; 1312 : }
+; 1316 : 		break;
+; 1317 : 	}
+; 1318 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -7369,19 +7378,19 @@ $LN8@getUnitAIS:
 	ret	0
 $LN7@getUnitAIS:
 
-; 1289 : 		break;
-; 1290 : 	case UNITAI_INQUISITOR:
-; 1291 : 		strString = "inquisitor";
+; 1295 : 		break;
+; 1296 : 	case UNITAI_INQUISITOR:
+; 1297 : 		strString = "inquisitor";
 
-	push	OFFSET $SG218329
+	push	OFFSET $SG218330
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
 	pop	esi
 
-; 1310 : 		break;
-; 1311 : 	}
-; 1312 : }
+; 1316 : 		break;
+; 1317 : 	}
+; 1318 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -7389,19 +7398,19 @@ $LN7@getUnitAIS:
 	ret	0
 $LN6@getUnitAIS:
 
-; 1292 : 		break;
-; 1293 : 	case UNITAI_ADMIRAL:
-; 1294 : 		strString = "admiral";
+; 1298 : 		break;
+; 1299 : 	case UNITAI_ADMIRAL:
+; 1300 : 		strString = "admiral";
 
-	push	OFFSET $SG218331
+	push	OFFSET $SG218332
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
 	pop	esi
 
-; 1310 : 		break;
-; 1311 : 	}
-; 1312 : }
+; 1316 : 		break;
+; 1317 : 	}
+; 1318 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -7409,19 +7418,19 @@ $LN6@getUnitAIS:
 	ret	0
 $LN5@getUnitAIS:
 
-; 1295 : 		break;
-; 1296 : 	case UNITAI_TRADE_UNIT:
-; 1297 : 		strString = "trade unit";
+; 1301 : 		break;
+; 1302 : 	case UNITAI_TRADE_UNIT:
+; 1303 : 		strString = "trade unit";
 
-	push	OFFSET $SG218333
+	push	OFFSET $SG218334
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
 	pop	esi
 
-; 1310 : 		break;
-; 1311 : 	}
-; 1312 : }
+; 1316 : 		break;
+; 1317 : 	}
+; 1318 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -7429,19 +7438,19 @@ $LN5@getUnitAIS:
 	ret	0
 $LN4@getUnitAIS:
 
-; 1298 : 		break;
-; 1299 : 	case UNITAI_ARCHAEOLOGIST:
-; 1300 : 		strString = "archaeologist";
+; 1304 : 		break;
+; 1305 : 	case UNITAI_ARCHAEOLOGIST:
+; 1306 : 		strString = "archaeologist";
 
-	push	OFFSET $SG218335
+	push	OFFSET $SG218336
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
 	pop	esi
 
-; 1310 : 		break;
-; 1311 : 	}
-; 1312 : }
+; 1316 : 		break;
+; 1317 : 	}
+; 1318 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -7449,19 +7458,19 @@ $LN4@getUnitAIS:
 	ret	0
 $LN3@getUnitAIS:
 
-; 1301 : 		break;
-; 1302 : 	case UNITAI_WRITER:
-; 1303 : 		strString = "writer";
+; 1307 : 		break;
+; 1308 : 	case UNITAI_WRITER:
+; 1309 : 		strString = "writer";
 
-	push	OFFSET $SG218337
+	push	OFFSET $SG218338
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
 	pop	esi
 
-; 1310 : 		break;
-; 1311 : 	}
-; 1312 : }
+; 1316 : 		break;
+; 1317 : 	}
+; 1318 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -7469,22 +7478,22 @@ $LN3@getUnitAIS:
 	ret	0
 $LN2@getUnitAIS:
 
-; 1304 : 		break;
-; 1305 : 	case UNITAI_MUSICIAN:
-; 1306 : 		strString = "musician";
+; 1310 : 		break;
+; 1311 : 	case UNITAI_MUSICIAN:
+; 1312 : 		strString = "musician";
 
-	push	OFFSET $SG218339
+	push	OFFSET $SG218340
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 $LN1@getUnitAIS:
 
-; 1307 : 
-; 1308 : 	default:
-; 1309 : 		strString = CvString::format("unknown(%d)", eUnitAI);
+; 1313 : 
+; 1314 : 	default:
+; 1315 : 		strString = CvString::format("unknown(%d)", eUnitAI);
 
 	push	esi
-	lea	eax, DWORD PTR $T219542[esp+52]
-	push	OFFSET $SG218342
+	lea	eax, DWORD PTR $T219543[esp+52]
+	push	OFFSET $SG218343
 	push	eax
 	call	?format@CvString@@SA?AV1@PBDZZ		; CvString::format
 	add	esp, 12					; 0000000cH
@@ -7492,13 +7501,13 @@ $LN1@getUnitAIS:
 	mov	ecx, edi
 	mov	DWORD PTR __$EHRec$[esp+60], 0
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T219542[esp+48]
+	lea	ecx, DWORD PTR $T219543[esp+48]
 	mov	DWORD PTR __$EHRec$[esp+56], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 1310 : 		break;
-; 1311 : 	}
-; 1312 : }
+; 1316 : 		break;
+; 1317 : 	}
+; 1318 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+48]
 	pop	edi
@@ -7555,7 +7564,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?getUnitAIString@@YAXAAVCvString@@W4UnitAITypes@@@Z$0:
-	lea	ecx, DWORD PTR $T219542[ebp]
+	lea	ecx, DWORD PTR $T219543[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?getUnitAIString@@YAXAAVCvString@@W4UnitAITypes@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?getUnitAIString@@YAXAAVCvString@@W4UnitAITypes@@@Z
@@ -7566,17 +7575,17 @@ PUBLIC	?ExtractGUID@@YA_NPBDAAU_GUID@@PAI@Z		; ExtractGUID
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?ExtractGUID@@YA_NPBDAAU_GUID@@PAI@Z
 _TEXT	SEGMENT
-_uiIndex$218417 = 8					; size = 4
+_uiIndex$218418 = 8					; size = 4
 _pszGUID$ = 8						; size = 4
 _kGUID$ = 12						; size = 4
 _puiStartIndex$ = 16					; size = 4
 ?ExtractGUID@@YA_NPBDAAU_GUID@@PAI@Z PROC		; ExtractGUID, COMDAT
 
-; 1499 : {
+; 1505 : {
 
 	push	ebx
 
-; 1500 : 	if(pszGUID)
+; 1506 : 	if(pszGUID)
 
 	mov	ebx, DWORD PTR _pszGUID$[esp]
 	push	ebp
@@ -7586,25 +7595,25 @@ _puiStartIndex$ = 16					; size = 4
 	cmp	ebx, esi
 	je	$LN6@ExtractGUI
 
-; 1501 : 	{
-; 1502 : 		UINT uiIndex = (puiStartIndex != NULL)?(*puiStartIndex):0;
+; 1507 : 	{
+; 1508 : 		UINT uiIndex = (puiStartIndex != NULL)?(*puiStartIndex):0;
 
 	mov	ebp, DWORD PTR _puiStartIndex$[esp+12]
 	cmp	ebp, esi
 	je	SHORT $LN12@ExtractGUI
 	mov	eax, DWORD PTR [ebp]
-	mov	DWORD PTR _uiIndex$218417[esp+12], eax
+	mov	DWORD PTR _uiIndex$218418[esp+12], eax
 	jmp	SHORT $LN13@ExtractGUI
 $LN12@ExtractGUI:
-	mov	DWORD PTR _uiIndex$218417[esp+12], esi
+	mov	DWORD PTR _uiIndex$218418[esp+12], esi
 $LN13@ExtractGUI:
 
-; 1503 : 
-; 1504 : 		if(GetGUIDSegment(pszGUID, &uiIndex, kGUID.Data1))
+; 1509 : 
+; 1510 : 		if(GetGUIDSegment(pszGUID, &uiIndex, kGUID.Data1))
 
 	mov	edi, DWORD PTR _kGUID$[esp+12]
 	push	edi
-	lea	ecx, DWORD PTR _uiIndex$218417[esp+16]
+	lea	ecx, DWORD PTR _uiIndex$218418[esp+16]
 	push	ecx
 	push	ebx
 	call	??$GetGUIDSegment@K@@YA_NPBDPAIAAK@Z	; GetGUIDSegment<unsigned long>
@@ -7612,12 +7621,12 @@ $LN13@ExtractGUI:
 	test	al, al
 	je	SHORT $LN6@ExtractGUI
 
-; 1505 : 		{
-; 1506 : 			if(GetGUIDSegment(pszGUID, &uiIndex, kGUID.Data2))
+; 1511 : 		{
+; 1512 : 			if(GetGUIDSegment(pszGUID, &uiIndex, kGUID.Data2))
 
 	lea	edx, DWORD PTR [edi+4]
 	push	edx
-	lea	eax, DWORD PTR _uiIndex$218417[esp+16]
+	lea	eax, DWORD PTR _uiIndex$218418[esp+16]
 	push	eax
 	push	ebx
 	call	??$GetGUIDSegment@G@@YA_NPBDPAIAAG@Z	; GetGUIDSegment<unsigned short>
@@ -7625,12 +7634,12 @@ $LN13@ExtractGUI:
 	test	al, al
 	je	SHORT $LN6@ExtractGUI
 
-; 1507 : 			{
-; 1508 : 				if(GetGUIDSegment(pszGUID, &uiIndex, kGUID.Data3))
+; 1513 : 			{
+; 1514 : 				if(GetGUIDSegment(pszGUID, &uiIndex, kGUID.Data3))
 
 	lea	ecx, DWORD PTR [edi+6]
 	push	ecx
-	lea	edx, DWORD PTR _uiIndex$218417[esp+16]
+	lea	edx, DWORD PTR _uiIndex$218418[esp+16]
 	push	edx
 	push	ebx
 	call	??$GetGUIDSegment@G@@YA_NPBDPAIAAG@Z	; GetGUIDSegment<unsigned short>
@@ -7640,16 +7649,16 @@ $LN13@ExtractGUI:
 	npad	6
 $LL5@ExtractGUI:
 
-; 1509 : 				{
-; 1510 : 					for(int iByte = 0; iByte < 8; ++iByte)
+; 1515 : 				{
+; 1516 : 					for(int iByte = 0; iByte < 8; ++iByte)
 
 	lea	eax, DWORD PTR [edi+esi+8]
 
-; 1511 : 					{
-; 1512 : 						if(!GetGUIDSegment(pszGUID, &uiIndex, kGUID.Data4[iByte]))
+; 1517 : 					{
+; 1518 : 						if(!GetGUIDSegment(pszGUID, &uiIndex, kGUID.Data4[iByte]))
 
 	push	eax
-	lea	ecx, DWORD PTR _uiIndex$218417[esp+16]
+	lea	ecx, DWORD PTR _uiIndex$218418[esp+16]
 	push	ecx
 	push	ebx
 	call	??$GetGUIDSegment@E@@YA_NPBDPAIAAE@Z	; GetGUIDSegment<unsigned char>
@@ -7660,31 +7669,31 @@ $LL5@ExtractGUI:
 	cmp	esi, 8
 	jl	SHORT $LL5@ExtractGUI
 
-; 1513 : 						{
-; 1514 : 							return false;
-; 1515 : 						}
-; 1516 : 					}
-; 1517 : 
-; 1518 : 					if(puiStartIndex)
+; 1519 : 						{
+; 1520 : 							return false;
+; 1521 : 						}
+; 1522 : 					}
+; 1523 : 
+; 1524 : 					if(puiStartIndex)
 
 	test	ebp, ebp
 	je	SHORT $LN1@ExtractGUI
 
-; 1519 : 						*puiStartIndex = uiIndex;
+; 1525 : 						*puiStartIndex = uiIndex;
 
-	mov	edx, DWORD PTR _uiIndex$218417[esp+12]
+	mov	edx, DWORD PTR _uiIndex$218418[esp+12]
 	mov	DWORD PTR [ebp], edx
 $LN1@ExtractGUI:
 	pop	edi
 	pop	esi
 	pop	ebp
 
-; 1520 : 					return true;
+; 1526 : 					return true;
 
 	mov	al, 1
 	pop	ebx
 
-; 1527 : }
+; 1533 : }
 
 	ret	0
 $LN6@ExtractGUI:
@@ -7692,17 +7701,17 @@ $LN6@ExtractGUI:
 	pop	esi
 	pop	ebp
 
-; 1521 : 				}
-; 1522 : 			}
-; 1523 : 		}
-; 1524 : 	}
-; 1525 : 
-; 1526 : 	return false;
+; 1527 : 				}
+; 1528 : 			}
+; 1529 : 		}
+; 1530 : 	}
+; 1531 : 
+; 1532 : 	return false;
 
 	xor	al, al
 	pop	ebx
 
-; 1527 : }
+; 1533 : }
 
 	ret	0
 ?ExtractGUID@@YA_NPBDAAU_GUID@@PAI@Z ENDP		; ExtractGUID
@@ -8256,9 +8265,9 @@ _iY$ = 12						; size = 4
 _iIndex$ = 16						; size = 4
 ?plotCity@@YAPAVCvPlot@@HHH@Z PROC			; plotCity, COMDAT
 
-; 32   : 	int iDeltaHexX = 0;
-; 33   : 	int iDeltaHexY = 0;
-; 34   : 	if(iIndex < NUM_CITY_PLOTS)
+; 38   : 	int iDeltaHexX = 0;
+; 39   : 	int iDeltaHexY = 0;
+; 40   : 	if(iIndex < NUM_CITY_PLOTS)
 
 	mov	edx, DWORD PTR _iIndex$[esp-4]
 	cmp	edx, 37					; 00000025H
@@ -8266,57 +8275,57 @@ _iIndex$ = 16						; size = 4
 	push	edi
 	jge	SHORT $LN13@plotCity
 
-; 35   : 	{
-; 36   : 		iDeltaHexX = GC.getCityPlotX()[iIndex]; // getCityPlotX now uses hex-space coords
+; 41   : 	{
+; 42   : 		iDeltaHexX = GC.getCityPlotX()[iIndex]; // getCityPlotX now uses hex-space coords
 
 	mov	esi, DWORD PTR ?gGlobals@@3VCvGlobals@@A[edx*4+160]
 
-; 37   : 		iDeltaHexY = GC.getCityPlotY()[iIndex];
+; 43   : 		iDeltaHexY = GC.getCityPlotY()[iIndex];
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A[edx*4+308]
 
-; 38   : 	}
-; 39   : 	else
+; 44   : 	}
+; 45   : 	else
 
 	jmp	SHORT $LN8@plotCity
 $LN13@plotCity:
 
-; 40   : 	{
-; 41   : 		// loop till we find the ring this is on
-; 42   : 		int iThisRing = 0;
+; 46   : 	{
+; 47   : 		// loop till we find the ring this is on
+; 48   : 		int iThisRing = 0;
 
 	xor	ecx, ecx
 
-; 43   : 		int iHighestValueOnThisRing = 0;
+; 49   : 		int iHighestValueOnThisRing = 0;
 
 	xor	eax, eax
 
-; 44   : 		int iLowestValueOnThisRing = 0;
+; 50   : 		int iLowestValueOnThisRing = 0;
 
 	xor	edi, edi
 
-; 45   : 		while(iHighestValueOnThisRing < iIndex)
+; 51   : 		while(iHighestValueOnThisRing < iIndex)
 
 	test	edx, edx
 	jle	SHORT $LN10@plotCity
 
-; 40   : 	{
-; 41   : 		// loop till we find the ring this is on
-; 42   : 		int iThisRing = 0;
+; 46   : 	{
+; 47   : 		// loop till we find the ring this is on
+; 48   : 		int iThisRing = 0;
 
 	xor	esi, esi
 $LL11@plotCity:
 
-; 46   : 		{
-; 47   : 			iThisRing++;
+; 52   : 		{
+; 53   : 			iThisRing++;
 
 	add	esi, 6
 
-; 48   : 			iLowestValueOnThisRing = iHighestValueOnThisRing + 1;
+; 54   : 			iLowestValueOnThisRing = iHighestValueOnThisRing + 1;
 
 	lea	edi, DWORD PTR [eax+1]
 
-; 49   : 			iHighestValueOnThisRing += iThisRing*6;
+; 55   : 			iHighestValueOnThisRing += iThisRing*6;
 
 	add	eax, esi
 	inc	ecx
@@ -8324,111 +8333,111 @@ $LL11@plotCity:
 	jl	SHORT $LL11@plotCity
 $LN10@plotCity:
 
-; 50   : 		}
-; 51   : 		// determine what side of the hex we are on
-; 52   : 		int iDiff = (iIndex - iLowestValueOnThisRing);
+; 56   : 		}
+; 57   : 		// determine what side of the hex we are on
+; 58   : 		int iDiff = (iIndex - iLowestValueOnThisRing);
 
 	sub	edx, edi
 	mov	eax, edx
 
-; 53   : 		int iSide = iDiff / iThisRing;
-; 54   : 		int iOffset = iDiff % iThisRing;
+; 59   : 		int iSide = iDiff / iThisRing;
+; 60   : 		int iOffset = iDiff % iThisRing;
 
 	cdq
 	idiv	ecx
 
-; 55   : 
-; 56   : 		switch(iSide)
+; 61   : 
+; 62   : 		switch(iSide)
 
 	cmp	eax, 5
 	ja	$LN1@plotCity
 	jmp	DWORD PTR $LN75@plotCity[eax*4]
 $LN7@plotCity:
 
-; 57   : 		{
-; 58   : 		case 0:
-; 59   : 			iDeltaHexX = 0 + iOffset;
-; 60   : 			iDeltaHexY = iThisRing - iOffset;
+; 63   : 		{
+; 64   : 		case 0:
+; 65   : 			iDeltaHexX = 0 + iOffset;
+; 66   : 			iDeltaHexY = iThisRing - iOffset;
 
 	sub	ecx, edx
 
-; 61   : 			break;
+; 67   : 			break;
 
 	jmp	SHORT $LN72@plotCity
 $LN6@plotCity:
 
-; 62   : 		case 1:
-; 63   : 			iDeltaHexX = iThisRing;
-; 64   : 			iDeltaHexY = 0 - iOffset;
+; 68   : 		case 1:
+; 69   : 			iDeltaHexX = iThisRing;
+; 70   : 			iDeltaHexY = 0 - iOffset;
 
 	neg	edx
 	mov	esi, ecx
 	mov	ecx, edx
 
-; 65   : 			break;
+; 71   : 			break;
 
 	jmp	SHORT $LN8@plotCity
 $LN5@plotCity:
 
-; 66   : 		case 2:
-; 67   : 			iDeltaHexX = iThisRing - iOffset;
+; 72   : 		case 2:
+; 73   : 			iDeltaHexX = iThisRing - iOffset;
 
 	mov	esi, ecx
 	sub	esi, edx
 
-; 68   : 			iDeltaHexY = -iThisRing;
+; 74   : 			iDeltaHexY = -iThisRing;
 
 	neg	ecx
 
-; 69   : 			break;
+; 75   : 			break;
 
 	jmp	SHORT $LN8@plotCity
 $LN4@plotCity:
 
-; 70   : 		case 3:
-; 71   : 			iDeltaHexX = 0 - iOffset;
+; 76   : 		case 3:
+; 77   : 			iDeltaHexX = 0 - iOffset;
 
 	mov	esi, edx
 	neg	esi
 
-; 72   : 			iDeltaHexY = -iThisRing + iOffset;
+; 78   : 			iDeltaHexY = -iThisRing + iOffset;
 
 	sub	edx, ecx
 	mov	ecx, edx
 
-; 73   : 			break;
+; 79   : 			break;
 
 	jmp	SHORT $LN8@plotCity
 $LN3@plotCity:
 
-; 74   : 		case 4:
-; 75   : 			iDeltaHexX = -iThisRing;
+; 80   : 		case 4:
+; 81   : 			iDeltaHexX = -iThisRing;
 
 	neg	ecx
 	mov	esi, ecx
 
-; 76   : 			iDeltaHexY = 0 + iOffset;
+; 82   : 			iDeltaHexY = 0 + iOffset;
 
 	mov	ecx, edx
 
-; 77   : 			break;
+; 83   : 			break;
 
 	jmp	SHORT $LN8@plotCity
 $LN2@plotCity:
 
-; 78   : 		case 5:
-; 79   : 			iDeltaHexX = -iThisRing + iOffset;
+; 84   : 		case 5:
+; 85   : 			iDeltaHexX = -iThisRing + iOffset;
 
 	sub	edx, ecx
 $LN72@plotCity:
 	mov	esi, edx
 $LN8@plotCity:
 
-; 84   : 		}
-; 85   : 
-; 86   : 	}
-; 87   : 	// convert the city coord to hex-space coordinates
-; 88   : 	int iCityHexX = xToHexspaceX(iX, iY);
+; 90   : 		}
+; 91   : 
+; 92   : 	}
+; 93   : 	// convert the city coord to hex-space coordinates
+; 94   : 	int iCityHexX = xToHexspaceX(iX, iY);
 
 	mov	edi, DWORD PTR _iY$[esp+4]
 	test	edi, edi
@@ -8442,19 +8451,19 @@ $LN22@plotCity:
 $LN73@plotCity:
 	sar	eax, 1
 
-; 89   : 
-; 90   : 	int iPlotHexX = iCityHexX + iDeltaHexX;
+; 95   : 
+; 96   : 	int iPlotHexX = iCityHexX + iDeltaHexX;
 
 	sub	esi, eax
 	add	esi, DWORD PTR _iX$[esp+4]
 
-; 91   : 	int iPlotY = iY + iDeltaHexY; // Y is the same in both coordinate systems
+; 97   : 	int iPlotY = iY + iDeltaHexY; // Y is the same in both coordinate systems
 
 	add	edi, ecx
 
-; 92   : 
-; 93   : 	// convert from hex-space coordinates to the storage array
-; 94   : 	int iPlotX = hexspaceXToX(iPlotHexX, iPlotY);
+; 98   : 
+; 99   : 	// convert from hex-space coordinates to the storage array
+; 100  : 	int iPlotX = hexspaceXToX(iPlotHexX, iPlotY);
 
 	js	SHORT $LN26@plotCity
 	mov	eax, edi
@@ -8469,8 +8478,8 @@ $LN74@plotCity:
 	push	ebx
 	push	ebp
 
-; 95   : 
-; 96   : 	return GC.getMap().plot(iPlotX , iPlotY);
+; 101  : 
+; 102  : 	return GC.getMap().plot(iPlotX , iPlotY);
 
 	cmp	eax, -2147483647			; 80000001H
 	je	$LN30@plotCity
@@ -8535,12 +8544,12 @@ $LN54@plotCity:
 	mov	eax, ecx
 	pop	esi
 
-; 97   : }
+; 103  : }
 
 	ret	0
 
-; 95   : 
-; 96   : 	return GC.getMap().plot(iPlotX , iPlotY);
+; 101  : 
+; 102  : 	return GC.getMap().plot(iPlotX , iPlotY);
 
 $LN30@plotCity:
 	pop	ebp
@@ -8549,21 +8558,21 @@ $LN30@plotCity:
 	xor	eax, eax
 	pop	esi
 
-; 97   : }
+; 103  : }
 
 	ret	0
 $LN1@plotCity:
 	pop	edi
 
-; 80   : 			iDeltaHexY = iThisRing;
-; 81   : 			break;
-; 82   : 		default:
-; 83   : 			return 0;
+; 86   : 			iDeltaHexY = iThisRing;
+; 87   : 			break;
+; 88   : 		default:
+; 89   : 			return 0;
 
 	xor	eax, eax
 	pop	esi
 
-; 97   : }
+; 103  : }
 
 	ret	0
 	npad	2
@@ -8581,18 +8590,18 @@ EXTRN	?getXYCityPlot@CvGlobals@@QAEHHH@Z:PROC		; CvGlobals::getXYCityPlot
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?plotCityXY@@YAHPBVCvCity@@PBVCvPlot@@@Z
 _TEXT	SEGMENT
-$T220113 = 8						; size = 4
+$T220114 = 8						; size = 4
 _pCity$ = 8						; size = 4
 _pPlot$ = 12						; size = 4
 ?plotCityXY@@YAHPBVCvCity@@PBVCvPlot@@@Z PROC		; plotCityXY, COMDAT
 
-; 101  : {
+; 107  : {
 
 	push	ebx
 
-; 102  : 
-; 103  : 	int iDX;
-; 104  : 	int iWrappedDX = dxWrap(pPlot->getX() - pCity->getX());
+; 108  : 
+; 109  : 	int iDX;
+; 110  : 	int iWrappedDX = dxWrap(pPlot->getX() - pCity->getX());
 
 	mov	ebx, DWORD PTR _pCity$[esp]
 	mov	ecx, DWORD PTR [ebx+96]
@@ -8612,10 +8621,10 @@ _pPlot$ = 12						; size = 4
 	jle	SHORT $LN21@plotCityXY
 	sub	eax, esi
 $LN19@plotCityXY:
-	mov	DWORD PTR $T220113[esp+12], eax
+	mov	DWORD PTR $T220114[esp+12], eax
 $LN23@plotCityXY:
 
-; 105  : 	int iWrappedDY = dyWrap(pPlot->getY() - pCity->getY());
+; 111  : 	int iWrappedDY = dyWrap(pPlot->getY() - pCity->getY());
 
 	movsx	eax, WORD PTR [ebp+2]
 	mov	ebx, DWORD PTR [ebx+108]
@@ -8630,19 +8639,19 @@ $LN23@plotCityXY:
 	sub	eax, esi
 	jmp	SHORT $LN97@plotCityXY
 
-; 102  : 
-; 103  : 	int iDX;
-; 104  : 	int iWrappedDX = dxWrap(pPlot->getX() - pCity->getX());
+; 108  : 
+; 109  : 	int iDX;
+; 110  : 	int iWrappedDX = dxWrap(pPlot->getX() - pCity->getX());
 
 $LN21@plotCityXY:
 	neg	edx
 	cmp	eax, edx
 	jge	SHORT $LN19@plotCityXY
 	add	esi, eax
-	mov	DWORD PTR $T220113[esp+12], esi
+	mov	DWORD PTR $T220114[esp+12], esi
 	jmp	SHORT $LN23@plotCityXY
 
-; 105  : 	int iWrappedDY = dyWrap(pPlot->getY() - pCity->getY());
+; 111  : 	int iWrappedDY = dyWrap(pPlot->getY() - pCity->getY());
 
 $LN41@plotCityXY:
 	neg	edx
@@ -8653,10 +8662,10 @@ $LN97@plotCityXY:
 	mov	ebp, eax
 $LN43@plotCityXY:
 
-; 106  : 	int iDY = iWrappedDY;
-; 107  : 
-; 108  : 	// convert to hex-space coordinates - the coordinate system axes are E and NE (not orthogonal)
-; 109  : 	int iCityHexX = xToHexspaceX(pCity->getX(), pCity->getY());
+; 112  : 	int iDY = iWrappedDY;
+; 113  : 
+; 114  : 	// convert to hex-space coordinates - the coordinate system axes are E and NE (not orthogonal)
+; 115  : 	int iCityHexX = xToHexspaceX(pCity->getX(), pCity->getY());
 
 	test	ebx, ebx
 	jl	SHORT $LN55@plotCityXY
@@ -8671,7 +8680,7 @@ $LN98@plotCityXY:
 	mov	esi, ecx
 	sub	esi, eax
 
-; 110  : 	int iPlotHexX = xToHexspaceX(pCity->getX() + iWrappedDX, pCity->getY() + iWrappedDY);
+; 116  : 	int iPlotHexX = xToHexspaceX(pCity->getX() + iWrappedDX, pCity->getY() + iWrappedDY);
 
 	lea	eax, DWORD PTR [ebx+ebp]
 	test	eax, eax
@@ -8682,13 +8691,13 @@ $LN98@plotCityXY:
 $LN99@plotCityXY:
 	sar	eax, 1
 
-; 111  : 
-; 112  : 	iDX = dxWrap(iPlotHexX - iCityHexX);
+; 117  : 
+; 118  : 	iDX = dxWrap(iPlotHexX - iCityHexX);
 
 	sub	ecx, eax
 	mov	eax, DWORD PTR [edi+4020]
 	sub	ecx, esi
-	add	ecx, DWORD PTR $T220113[esp+12]
+	add	ecx, DWORD PTR $T220114[esp+12]
 	cmp	BYTE PTR [edi+4056], 0
 	je	SHORT $LN77@plotCityXY
 	mov	edx, eax
@@ -8704,8 +8713,8 @@ $LN79@plotCityXY:
 	add	ecx, eax
 $LN77@plotCityXY:
 
-; 113  : 
-; 114  : 	if(hexDistance(iDX, iDY) > CITY_PLOTS_RADIUS)
+; 119  : 
+; 120  : 	if(hexDistance(iDX, iDY) > CITY_PLOTS_RADIUS)
 
 	xor	eax, eax
 	test	ecx, ecx
@@ -8747,22 +8756,22 @@ $LN95@plotCityXY:
 	pop	esi
 	pop	ebp
 
-; 115  : 	{
-; 116  : 		return -1;
+; 121  : 	{
+; 122  : 		return -1;
 
 	or	eax, -1
 	pop	ebx
 
-; 121  : 	}
-; 122  : }
+; 127  : 	}
+; 128  : }
 
 	ret	0
 $LN2@plotCityXY:
 
-; 117  : 	}
-; 118  : 	else
-; 119  : 	{
-; 120  : 		return GC.getXYCityPlot((iDX + CITY_PLOTS_RADIUS), (iDY + CITY_PLOTS_RADIUS));
+; 123  : 	}
+; 124  : 	else
+; 125  : 	{
+; 126  : 		return GC.getXYCityPlot((iDX + CITY_PLOTS_RADIUS), (iDY + CITY_PLOTS_RADIUS));
 
 	add	ebp, 3
 	add	ecx, 3
@@ -8775,8 +8784,8 @@ $LN2@plotCityXY:
 	pop	ebp
 	pop	ebx
 
-; 121  : 	}
-; 122  : }
+; 127  : 	}
+; 128  : }
 
 	ret	0
 ?plotCityXY@@YAHPBVCvCity@@PBVCvPlot@@@Z ENDP		; plotCityXY
@@ -8792,16 +8801,16 @@ _pFirstUnit$ = 8					; size = 4
 _pSecondUnit$ = 12					; size = 4
 ?isBeforeUnitCycle@@YA_NPBVCvUnit@@0@Z PROC		; isBeforeUnitCycle, COMDAT
 
-; 183  : {
+; 189  : {
 
 	push	esi
 	push	edi
 
-; 184  : 	CvAssert(pFirstUnit != NULL);
-; 185  : 	CvAssert(pSecondUnit != NULL);
-; 186  : 	CvAssert(pFirstUnit != pSecondUnit);
-; 187  : 
-; 188  : 	if(!pFirstUnit || !pSecondUnit)
+; 190  : 	CvAssert(pFirstUnit != NULL);
+; 191  : 	CvAssert(pSecondUnit != NULL);
+; 192  : 	CvAssert(pFirstUnit != pSecondUnit);
+; 193  : 
+; 194  : 	if(!pFirstUnit || !pSecondUnit)
 
 	mov	edi, DWORD PTR _pFirstUnit$[esp+4]
 	test	edi, edi
@@ -8810,16 +8819,16 @@ _pSecondUnit$ = 12					; size = 4
 	test	esi, esi
 	je	$LN7@isBeforeUn
 
-; 190  : 
-; 191  : 	if(pFirstUnit->getOwner() != pSecondUnit->getOwner())
+; 196  : 
+; 197  : 	if(pFirstUnit->getOwner() != pSecondUnit->getOwner())
 
 	mov	eax, DWORD PTR [edi+40]
 	mov	ecx, DWORD PTR [esi+40]
 	cmp	eax, ecx
 	je	SHORT $LN6@isBeforeUn
 
-; 192  : 	{
-; 193  : 		return (pFirstUnit->getOwner() < pSecondUnit->getOwner());
+; 198  : 	{
+; 199  : 		return (pFirstUnit->getOwner() < pSecondUnit->getOwner());
 
 	xor	edx, edx
 	cmp	eax, ecx
@@ -8828,15 +8837,15 @@ _pSecondUnit$ = 12					; size = 4
 	mov	al, dl
 	pop	esi
 
-; 222  : }
+; 228  : }
 
 	ret	0
 $LN6@isBeforeUn:
 	push	ebx
 
-; 194  : 	}
-; 195  : 
-; 196  : 	if(pFirstUnit->getDomainType() != pSecondUnit->getDomainType())
+; 200  : 	}
+; 201  : 
+; 202  : 	if(pFirstUnit->getDomainType() != pSecondUnit->getDomainType())
 
 	mov	ecx, edi
 	call	?getDomainType@CvUnit@@QBE?AW4DomainTypes@@XZ ; CvUnit::getDomainType
@@ -8844,8 +8853,8 @@ $LN6@isBeforeUn:
 	mov	ebx, eax
 	call	?getDomainType@CvUnit@@QBE?AW4DomainTypes@@XZ ; CvUnit::getDomainType
 
-; 197  : 	{
-; 198  : 		return (pFirstUnit->getDomainType() < pSecondUnit->getDomainType());
+; 203  : 	{
+; 204  : 		return (pFirstUnit->getDomainType() < pSecondUnit->getDomainType());
 
 	mov	ecx, edi
 	cmp	ebx, eax
@@ -8860,20 +8869,20 @@ $LN6@isBeforeUn:
 	setl	cl
 	pop	edi
 
-; 207  : 	{
-; 208  : 		return (pFirstUnit->getUnitType() > pSecondUnit->getUnitType());
+; 213  : 	{
+; 214  : 		return (pFirstUnit->getUnitType() > pSecondUnit->getUnitType());
 
 	mov	al, cl
 	pop	esi
 
-; 222  : }
+; 228  : }
 
 	ret	0
 $LN5@isBeforeUn:
 
-; 199  : 	}
-; 200  : 
-; 201  : 	if(pFirstUnit->GetBaseCombatStrength() != pSecondUnit->GetBaseCombatStrength())
+; 205  : 	}
+; 206  : 
+; 207  : 	if(pFirstUnit->GetBaseCombatStrength() != pSecondUnit->GetBaseCombatStrength())
 
 	push	0
 	call	?GetBaseCombatStrength@CvUnit@@QBEH_N@Z	; CvUnit::GetBaseCombatStrength
@@ -8882,8 +8891,8 @@ $LN5@isBeforeUn:
 	mov	ebx, eax
 	call	?GetBaseCombatStrength@CvUnit@@QBEH_N@Z	; CvUnit::GetBaseCombatStrength
 
-; 202  : 	{
-; 203  : 		return (pFirstUnit->GetBaseCombatStrength() > pSecondUnit->GetBaseCombatStrength());
+; 208  : 	{
+; 209  : 		return (pFirstUnit->GetBaseCombatStrength() > pSecondUnit->GetBaseCombatStrength());
 
 	mov	ecx, edi
 	cmp	ebx, eax
@@ -8902,22 +8911,22 @@ $LN5@isBeforeUn:
 	mov	al, dl
 	pop	esi
 
-; 222  : }
+; 228  : }
 
 	ret	0
 $LN4@isBeforeUn:
 
-; 204  : 	}
-; 205  : 
-; 206  : 	if(pFirstUnit->getUnitType() != pSecondUnit->getUnitType())
+; 210  : 	}
+; 211  : 
+; 212  : 	if(pFirstUnit->getUnitType() != pSecondUnit->getUnitType())
 
 	call	?getUnitType@CvUnit@@QBE?BW4UnitTypes@@XZ ; CvUnit::getUnitType
 	mov	ecx, esi
 	mov	ebx, eax
 	call	?getUnitType@CvUnit@@QBE?BW4UnitTypes@@XZ ; CvUnit::getUnitType
 
-; 207  : 	{
-; 208  : 		return (pFirstUnit->getUnitType() > pSecondUnit->getUnitType());
+; 213  : 	{
+; 214  : 		return (pFirstUnit->getUnitType() > pSecondUnit->getUnitType());
 
 	mov	ecx, edi
 	cmp	ebx, eax
@@ -8934,22 +8943,22 @@ $LN4@isBeforeUn:
 	mov	al, cl
 	pop	esi
 
-; 222  : }
+; 228  : }
 
 	ret	0
 $LN3@isBeforeUn:
 
-; 209  : 	}
-; 210  : 
-; 211  : 	if(pFirstUnit->getLevel() != pSecondUnit->getLevel())
+; 215  : 	}
+; 216  : 
+; 217  : 	if(pFirstUnit->getLevel() != pSecondUnit->getLevel())
 
 	call	?getLevel@CvUnit@@QBEHXZ		; CvUnit::getLevel
 	mov	ecx, esi
 	mov	ebx, eax
 	call	?getLevel@CvUnit@@QBEHXZ		; CvUnit::getLevel
 
-; 212  : 	{
-; 213  : 		return (pFirstUnit->getLevel() > pSecondUnit->getLevel());
+; 218  : 	{
+; 219  : 		return (pFirstUnit->getLevel() > pSecondUnit->getLevel());
 
 	mov	ecx, edi
 	cmp	ebx, eax
@@ -8966,14 +8975,14 @@ $LN3@isBeforeUn:
 	mov	al, dl
 	pop	esi
 
-; 222  : }
+; 228  : }
 
 	ret	0
 $LN2@isBeforeUn:
 
-; 214  : 	}
-; 215  : 
-; 216  : 	if(pFirstUnit->getExperience() != pSecondUnit->getExperience())
+; 220  : 	}
+; 221  : 
+; 222  : 	if(pFirstUnit->getExperience() != pSecondUnit->getExperience())
 
 	call	?getExperience@CvUnit@@QBEHXZ		; CvUnit::getExperience
 	mov	ecx, esi
@@ -8982,8 +8991,8 @@ $LN2@isBeforeUn:
 	cmp	ebx, eax
 	je	SHORT $LN1@isBeforeUn
 
-; 217  : 	{
-; 218  : 		return (pFirstUnit->getExperience() > pSecondUnit->getExperience());
+; 223  : 	{
+; 224  : 		return (pFirstUnit->getExperience() > pSecondUnit->getExperience());
 
 	mov	ecx, edi
 	call	?getExperience@CvUnit@@QBEHXZ		; CvUnit::getExperience
@@ -8998,14 +9007,14 @@ $LN2@isBeforeUn:
 	mov	al, cl
 	pop	esi
 
-; 222  : }
+; 228  : }
 
 	ret	0
 $LN1@isBeforeUn:
 
-; 219  : 	}
-; 220  : 
-; 221  : 	return (pFirstUnit->GetID() < pSecondUnit->GetID());
+; 225  : 	}
+; 226  : 
+; 227  : 	return (pFirstUnit->GetID() < pSecondUnit->GetID());
 
 	mov	edx, DWORD PTR [edi+100]
 	xor	eax, eax
@@ -9015,18 +9024,18 @@ $LN1@isBeforeUn:
 	setl	al
 	pop	esi
 
-; 222  : }
+; 228  : }
 
 	ret	0
 $LN7@isBeforeUn:
 	pop	edi
 
-; 189  : 		return false;
+; 195  : 		return false;
 
 	xor	al, al
 	pop	esi
 
-; 222  : }
+; 228  : }
 
 	ret	0
 ?isBeforeUnitCycle@@YA_NPBVCvUnit@@0@Z ENDP		; isBeforeUnitCycle
@@ -9035,25 +9044,25 @@ PUBLIC	?OnSameBodyOfWater@@YA_NPAVCvCity@@0@Z		; OnSameBodyOfWater
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?OnSameBodyOfWater@@YA_NPAVCvCity@@0@Z
 _TEXT	SEGMENT
-_iI$217876 = -12					; size = 4
+_iI$217877 = -12					; size = 4
 tv163 = -8						; size = 4
 tv166 = -4						; size = 4
 _pCity1$ = 8						; size = 4
 _pCity2$ = 12						; size = 4
 ?OnSameBodyOfWater@@YA_NPAVCvCity@@0@Z PROC		; OnSameBodyOfWater, COMDAT
 
-; 626  : {
+; 632  : {
 
 	sub	esp, 12					; 0000000cH
 
-; 627  : 	for(int iI = 0; iI < NUM_DIRECTION_TYPES; iI++)
+; 633  : 	for(int iI = 0; iI < NUM_DIRECTION_TYPES; iI++)
 
 	mov	eax, DWORD PTR _pCity1$[esp+8]
 
-; 628  : 	{
-; 629  : 		CvPlot* pAdjacentPlot1 = plotDirection(pCity1->getX(), pCity1->getY(), ((DirectionTypes)iI));
-; 630  : 
-; 631  : 		if(pAdjacentPlot1 != NULL && pAdjacentPlot1->isWater())
+; 634  : 	{
+; 635  : 		CvPlot* pAdjacentPlot1 = plotDirection(pCity1->getX(), pCity1->getY(), ((DirectionTypes)iI));
+; 636  : 
+; 637  : 		if(pAdjacentPlot1 != NULL && pAdjacentPlot1->isWater())
 
 	mov	ecx, DWORD PTR [eax+108]
 	mov	edx, DWORD PTR [eax+96]
@@ -9062,7 +9071,7 @@ _pCity2$ = 12						; size = 4
 	push	esi
 	xor	esi, esi
 	push	edi
-	mov	DWORD PTR _iI$217876[esp+28], esi
+	mov	DWORD PTR _iI$217877[esp+28], esi
 	mov	DWORD PTR tv163[esp+28], ecx
 	mov	DWORD PTR tv166[esp+28], edx
 	npad	1
@@ -9080,8 +9089,8 @@ $LL41@OnSameBody:
 	cmp	BYTE PTR [ebx+5], 3
 	jne	SHORT $LN8@OnSameBody
 
-; 632  : 		{
-; 633  : 			for(int jJ = 0; jJ < NUM_DIRECTION_TYPES; jJ++)
+; 638  : 		{
+; 639  : 			for(int jJ = 0; jJ < NUM_DIRECTION_TYPES; jJ++)
 
 	mov	eax, DWORD PTR _pCity2$[esp+24]
 	mov	edi, DWORD PTR [eax+108]
@@ -9090,8 +9099,8 @@ $LL41@OnSameBody:
 	npad	5
 $LL5@OnSameBody:
 
-; 634  : 			{
-; 635  : 				CvPlot* pAdjacentPlot2 = plotDirection(pCity2->getX(), pCity2->getY(), ((DirectionTypes)jJ));
+; 640  : 			{
+; 641  : 				CvPlot* pAdjacentPlot2 = plotDirection(pCity2->getX(), pCity2->getY(), ((DirectionTypes)jJ));
 
 	push	esi
 	push	edi
@@ -9099,51 +9108,51 @@ $LL5@OnSameBody:
 	call	?plotDirection@@YAPAVCvPlot@@HHW4DirectionTypes@@@Z ; plotDirection
 	add	esp, 12					; 0000000cH
 
-; 636  : 				if(pAdjacentPlot2 != NULL && pAdjacentPlot2->isWater())
+; 642  : 				if(pAdjacentPlot2 != NULL && pAdjacentPlot2->isWater())
 
 	test	eax, eax
 	je	SHORT $LN4@OnSameBody
 	cmp	BYTE PTR [eax+5], 3
 	jne	SHORT $LN4@OnSameBody
 
-; 637  : 				{
-; 638  : 					if(pAdjacentPlot2->getArea() == pAdjacentPlot1->getArea())
+; 643  : 				{
+; 644  : 					if(pAdjacentPlot2->getArea() == pAdjacentPlot1->getArea())
 
 	mov	edx, DWORD PTR [eax+356]
 	cmp	edx, DWORD PTR [ebx+356]
 	je	SHORT $LN38@OnSameBody
 $LN4@OnSameBody:
 
-; 632  : 		{
-; 633  : 			for(int jJ = 0; jJ < NUM_DIRECTION_TYPES; jJ++)
+; 638  : 		{
+; 639  : 			for(int jJ = 0; jJ < NUM_DIRECTION_TYPES; jJ++)
 
 	inc	esi
 	cmp	esi, 6
 	jl	SHORT $LL5@OnSameBody
-	mov	esi, DWORD PTR _iI$217876[esp+28]
+	mov	esi, DWORD PTR _iI$217877[esp+28]
 $LN8@OnSameBody:
 
-; 627  : 	for(int iI = 0; iI < NUM_DIRECTION_TYPES; iI++)
+; 633  : 	for(int iI = 0; iI < NUM_DIRECTION_TYPES; iI++)
 
 	inc	esi
 	cmp	esi, 6
-	mov	DWORD PTR _iI$217876[esp+28], esi
+	mov	DWORD PTR _iI$217877[esp+28], esi
 	jl	SHORT $LL41@OnSameBody
 	pop	edi
 	pop	esi
 	pop	ebp
 
-; 641  : 					}
-; 642  : 				}
-; 643  : 			}
-; 644  : 		}
-; 645  : 	}
-; 646  : 	return false;
+; 647  : 					}
+; 648  : 				}
+; 649  : 			}
+; 650  : 		}
+; 651  : 	}
+; 652  : 	return false;
 
 	xor	al, al
 	pop	ebx
 
-; 647  : }
+; 653  : }
 
 	add	esp, 12					; 0000000cH
 	ret	0
@@ -9152,13 +9161,13 @@ $LN38@OnSameBody:
 	pop	esi
 	pop	ebp
 
-; 639  : 					{
-; 640  : 						return true;
+; 645  : 					{
+; 646  : 						return true;
 
 	mov	al, 1
 	pop	ebx
 
-; 647  : }
+; 653  : }
 
 	add	esp, 12					; 0000000cH
 	ret	0
@@ -9173,8 +9182,8 @@ _iData1$ = 12						; size = 4
 ___formal$ = 16						; size = 4
 ?PUF_isPlayer@@YA_NPBVCvUnit@@HH@Z PROC			; PUF_isPlayer, COMDAT
 
-; 693  : 	CvAssertMsg(iData1 != -1, "Invalid data argument, should be >= 0");
-; 694  : 	return (pUnit->getOwner() == iData1);
+; 699  : 	CvAssertMsg(iData1 != -1, "Invalid data argument, should be >= 0");
+; 700  : 	return (pUnit->getOwner() == iData1);
 
 	mov	ecx, DWORD PTR _pUnit$[esp-4]
 	mov	edx, DWORD PTR [ecx+40]
@@ -9182,7 +9191,7 @@ ___formal$ = 16						; size = 4
 	cmp	edx, DWORD PTR _iData1$[esp-4]
 	sete	al
 
-; 695  : }
+; 701  : }
 
 	ret	0
 ?PUF_isPlayer@@YA_NPBVCvUnit@@HH@Z ENDP			; PUF_isPlayer
@@ -9199,14 +9208,14 @@ _iData1$ = 12						; size = 4
 _iData2$ = 16						; size = 4
 ?PUF_isCombatTeam@@YA_NPBVCvUnit@@HH@Z PROC		; PUF_isCombatTeam, COMDAT
 
-; 704  : {
+; 710  : {
 
 	push	esi
 
-; 705  : 	CvAssertMsg(iData1 != -1, "Invalid data argument, should be >= 0");
-; 706  : 	CvAssertMsg(iData2 != -1, "Invalid data argument, should be >= 0");
-; 707  : 
-; 708  : 	return (GET_PLAYER(pUnit->getCombatOwner((TeamTypes)iData2, *(pUnit->plot()))).getTeam() == iData1 && !pUnit->isInvisible((TeamTypes)iData2, false, false));
+; 711  : 	CvAssertMsg(iData1 != -1, "Invalid data argument, should be >= 0");
+; 712  : 	CvAssertMsg(iData2 != -1, "Invalid data argument, should be >= 0");
+; 713  : 
+; 714  : 	return (GET_PLAYER(pUnit->getCombatOwner((TeamTypes)iData2, *(pUnit->plot()))).getTeam() == iData1 && !pUnit->isInvisible((TeamTypes)iData2, false, false));
 
 	mov	esi, DWORD PTR _pUnit$[esp]
 	push	edi
@@ -9242,21 +9251,21 @@ $LN12@PUF_isComb:
 	mov	eax, 1
 	pop	esi
 
-; 709  : }
+; 715  : }
 
 	ret	0
 $LN3@PUF_isComb:
 	pop	edi
 
-; 705  : 	CvAssertMsg(iData1 != -1, "Invalid data argument, should be >= 0");
-; 706  : 	CvAssertMsg(iData2 != -1, "Invalid data argument, should be >= 0");
-; 707  : 
-; 708  : 	return (GET_PLAYER(pUnit->getCombatOwner((TeamTypes)iData2, *(pUnit->plot()))).getTeam() == iData1 && !pUnit->isInvisible((TeamTypes)iData2, false, false));
+; 711  : 	CvAssertMsg(iData1 != -1, "Invalid data argument, should be >= 0");
+; 712  : 	CvAssertMsg(iData2 != -1, "Invalid data argument, should be >= 0");
+; 713  : 
+; 714  : 	return (GET_PLAYER(pUnit->getCombatOwner((TeamTypes)iData2, *(pUnit->plot()))).getTeam() == iData1 && !pUnit->isInvisible((TeamTypes)iData2, false, false));
 
 	xor	eax, eax
 	pop	esi
 
-; 709  : }
+; 715  : }
 
 	ret	0
 ?PUF_isCombatTeam@@YA_NPBVCvUnit@@HH@Z ENDP		; PUF_isCombatTeam
@@ -9270,8 +9279,8 @@ _iData1$ = 12						; size = 4
 ___formal$ = 16						; size = 4
 ?PUF_isOtherPlayer@@YA_NPBVCvUnit@@HH@Z PROC		; PUF_isOtherPlayer, COMDAT
 
-; 713  : 	CvAssertMsg(iData1 != -1, "Invalid data argument, should be >= 0");
-; 714  : 	return (pUnit->getOwner() != iData1);
+; 719  : 	CvAssertMsg(iData1 != -1, "Invalid data argument, should be >= 0");
+; 720  : 	return (pUnit->getOwner() != iData1);
 
 	mov	ecx, DWORD PTR _pUnit$[esp-4]
 	mov	edx, DWORD PTR [ecx+40]
@@ -9279,7 +9288,7 @@ ___formal$ = 16						; size = 4
 	cmp	edx, DWORD PTR _iData1$[esp-4]
 	setne	al
 
-; 715  : }
+; 721  : }
 
 	ret	0
 ?PUF_isOtherPlayer@@YA_NPBVCvUnit@@HH@Z ENDP		; PUF_isOtherPlayer
@@ -9294,8 +9303,8 @@ _iData1$ = 12						; size = 4
 ___formal$ = 16						; size = 4
 ?PUF_isOtherTeam@@YA_NPBVCvUnit@@HH@Z PROC		; PUF_isOtherTeam, COMDAT
 
-; 719  : 	CvAssertMsg(iData1 != -1, "Invalid data argument, should be >= 0");
-; 720  : 	TeamTypes eTeam = GET_PLAYER((PlayerTypes)iData1).getTeam();
+; 725  : 	CvAssertMsg(iData1 != -1, "Invalid data argument, should be >= 0");
+; 726  : 	TeamTypes eTeam = GET_PLAYER((PlayerTypes)iData1).getTeam();
 
 	mov	eax, DWORD PTR _iData1$[esp-4]
 	mov	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
@@ -9313,7 +9322,7 @@ $LN10@PUF_isOthe:
 	or	esi, -1
 $LN11@PUF_isOthe:
 
-; 721  : 	if(pUnit->canCoexistWithEnemyUnit(eTeam))
+; 727  : 	if(pUnit->canCoexistWithEnemyUnit(eTeam))
 
 	mov	edi, DWORD PTR _pUnit$[esp+4]
 	push	esi
@@ -9323,20 +9332,20 @@ $LN11@PUF_isOthe:
 	je	SHORT $LN1@PUF_isOthe
 	pop	edi
 
-; 722  : 	{
-; 723  : 		return false;
+; 728  : 	{
+; 729  : 		return false;
 
 	xor	al, al
 	pop	esi
 
-; 727  : }
+; 733  : }
 
 	ret	0
 $LN1@PUF_isOthe:
 
-; 724  : 	}
-; 725  : 
-; 726  : 	return (pUnit->getTeam() != eTeam);
+; 730  : 	}
+; 731  : 
+; 732  : 	return (pUnit->getTeam() != eTeam);
 
 	mov	ecx, edi
 	call	?getTeam@CvUnit@@QBE?AW4TeamTypes@@XZ	; CvUnit::getTeam
@@ -9347,7 +9356,7 @@ $LN1@PUF_isOthe:
 	mov	al, dl
 	pop	esi
 
-; 727  : }
+; 733  : }
 
 	ret	0
 ?PUF_isOtherTeam@@YA_NPBVCvUnit@@HH@Z ENDP		; PUF_isOtherTeam
@@ -9361,10 +9370,10 @@ _iData1$ = 12						; size = 4
 _iData2$ = 16						; size = 4
 ?PUF_isEnemy@@YA_NPBVCvUnit@@HH@Z PROC			; PUF_isEnemy, COMDAT
 
-; 731  : 	CvAssertMsg(iData1 != -1, "Invalid data argument, should be >= 0");
-; 732  : 	CvAssertMsg(iData2 != -1, "Invalid data argument, should be >= 0");
-; 733  : 
-; 734  : 	TeamTypes eOtherTeam = GET_PLAYER((PlayerTypes)iData1).getTeam();
+; 737  : 	CvAssertMsg(iData1 != -1, "Invalid data argument, should be >= 0");
+; 738  : 	CvAssertMsg(iData2 != -1, "Invalid data argument, should be >= 0");
+; 739  : 
+; 740  : 	TeamTypes eOtherTeam = GET_PLAYER((PlayerTypes)iData1).getTeam();
 
 	mov	eax, DWORD PTR _iData1$[esp-4]
 	mov	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
@@ -9383,7 +9392,7 @@ $LN12@PUF_isEnem:
 $LN13@PUF_isEnem:
 	push	ebx
 
-; 735  : 	TeamTypes eOurTeam = GET_PLAYER(pUnit->getCombatOwner(eOtherTeam, *(pUnit->plot()))).getTeam();
+; 741  : 	TeamTypes eOurTeam = GET_PLAYER(pUnit->getCombatOwner(eOtherTeam, *(pUnit->plot()))).getTeam();
 
 	mov	ebx, DWORD PTR _pUnit$[esp+8]
 	mov	ecx, ebx
@@ -9405,8 +9414,8 @@ $LN23@PUF_isEnem:
 	or	edi, -1
 $LN24@PUF_isEnem:
 
-; 736  : 
-; 737  : 	if(pUnit->canCoexistWithEnemyUnit(eOtherTeam))
+; 742  : 
+; 743  : 	if(pUnit->canCoexistWithEnemyUnit(eOtherTeam))
 
 	push	esi
 	mov	ecx, ebx
@@ -9416,20 +9425,20 @@ $LN24@PUF_isEnem:
 	je	SHORT $LN1@PUF_isEnem
 	pop	edi
 
-; 738  : 	{
-; 739  : 		return false;
+; 744  : 	{
+; 745  : 		return false;
 
 	xor	al, al
 	pop	esi
 
-; 743  : }
+; 749  : }
 
 	ret	0
 $LN1@PUF_isEnem:
 
-; 740  : 	}
-; 741  : 
-; 742  : 	return (iData2 ? eOtherTeam != eOurTeam : atWar(eOtherTeam, eOurTeam));
+; 746  : 	}
+; 747  : 
+; 748  : 	return (iData2 ? eOtherTeam != eOurTeam : atWar(eOtherTeam, eOurTeam));
 
 	cmp	DWORD PTR _iData2$[esp+4], 0
 	je	SHORT $LN4@PUF_isEnem
@@ -9439,14 +9448,14 @@ $LN1@PUF_isEnem:
 	setne	al
 	pop	esi
 
-; 743  : }
+; 749  : }
 
 	ret	0
 $LN4@PUF_isEnem:
 
-; 740  : 	}
-; 741  : 
-; 742  : 	return (iData2 ? eOtherTeam != eOurTeam : atWar(eOtherTeam, eOurTeam));
+; 746  : 	}
+; 747  : 
+; 748  : 	return (iData2 ? eOtherTeam != eOurTeam : atWar(eOtherTeam, eOurTeam));
 
 	cmp	esi, -1
 	je	SHORT $LN28@PUF_isEnem
@@ -9461,13 +9470,13 @@ $LN4@PUF_isEnem:
 	movzx	eax, al
 	pop	esi
 
-; 743  : }
+; 749  : }
 
 	ret	0
 
-; 740  : 	}
-; 741  : 
-; 742  : 	return (iData2 ? eOtherTeam != eOurTeam : atWar(eOtherTeam, eOurTeam));
+; 746  : 	}
+; 747  : 
+; 748  : 	return (iData2 ? eOtherTeam != eOurTeam : atWar(eOtherTeam, eOurTeam));
 
 $LN28@PUF_isEnem:
 	xor	al, al
@@ -9475,7 +9484,7 @@ $LN28@PUF_isEnem:
 	movzx	eax, al
 	pop	esi
 
-; 743  : }
+; 749  : }
 
 	ret	0
 ?PUF_isEnemy@@YA_NPBVCvUnit@@HH@Z ENDP			; PUF_isEnemy
@@ -9489,8 +9498,8 @@ _iData1$ = 12						; size = 4
 ___formal$ = 16						; size = 4
 ?PUF_isVisible@@YA_NPBVCvUnit@@HH@Z PROC		; PUF_isVisible, COMDAT
 
-; 747  : 	CvAssertMsg(iData1 != -1, "Invalid data argument, should be >= 0");
-; 748  : 	return !(pUnit->isInvisible(GET_PLAYER((PlayerTypes)iData1).getTeam(), false));
+; 753  : 	CvAssertMsg(iData1 != -1, "Invalid data argument, should be >= 0");
+; 754  : 	return !(pUnit->isInvisible(GET_PLAYER((PlayerTypes)iData1).getTeam(), false));
 
 	mov	eax, DWORD PTR _iData1$[esp-4]
 	mov	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
@@ -9515,7 +9524,7 @@ $LN10@PUF_isVisi:
 	sete	dl
 	mov	al, dl
 
-; 749  : }
+; 755  : }
 
 	ret	0
 ?PUF_isVisible@@YA_NPBVCvUnit@@HH@Z ENDP		; PUF_isVisible
@@ -9529,8 +9538,8 @@ _iData1$ = 12						; size = 4
 ___formal$ = 16						; size = 4
 ?PUF_isVisibleDebug@@YA_NPBVCvUnit@@HH@Z PROC		; PUF_isVisibleDebug, COMDAT
 
-; 753  : 	CvAssertMsg(iData1 != -1, "Invalid data argument, should be >= 0");
-; 754  : 	return !(pUnit->isInvisible(GET_PLAYER((PlayerTypes)iData1).getTeam(), true));
+; 759  : 	CvAssertMsg(iData1 != -1, "Invalid data argument, should be >= 0");
+; 760  : 	return !(pUnit->isInvisible(GET_PLAYER((PlayerTypes)iData1).getTeam(), true));
 
 	mov	eax, DWORD PTR _iData1$[esp-4]
 	mov	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
@@ -9555,7 +9564,7 @@ $LN10@PUF_isVisi@2:
 	sete	dl
 	mov	al, dl
 
-; 755  : }
+; 761  : }
 
 	ret	0
 ?PUF_isVisibleDebug@@YA_NPBVCvUnit@@HH@Z ENDP		; PUF_isVisibleDebug
@@ -9570,8 +9579,8 @@ _iData1$ = 12						; size = 4
 ___formal$ = 16						; size = 4
 ?PUF_canSiege@@YA_NPBVCvUnit@@HH@Z PROC			; PUF_canSiege, COMDAT
 
-; 759  : 	CvAssertMsg(iData1 != -1, "Invalid data argument, should be >= 0");
-; 760  : 	return pUnit->canSiege(GET_PLAYER((PlayerTypes)iData1).getTeam());
+; 765  : 	CvAssertMsg(iData1 != -1, "Invalid data argument, should be >= 0");
+; 766  : 	return pUnit->canSiege(GET_PLAYER((PlayerTypes)iData1).getTeam());
 
 	mov	eax, DWORD PTR _iData1$[esp-4]
 	mov	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
@@ -9586,12 +9595,12 @@ ___formal$ = 16						; size = 4
 	push	eax
 	call	?canSiege@CvUnit@@QBE_NW4TeamTypes@@@Z	; CvUnit::canSiege
 
-; 761  : }
+; 767  : }
 
 	ret	0
 
-; 759  : 	CvAssertMsg(iData1 != -1, "Invalid data argument, should be >= 0");
-; 760  : 	return pUnit->canSiege(GET_PLAYER((PlayerTypes)iData1).getTeam());
+; 765  : 	CvAssertMsg(iData1 != -1, "Invalid data argument, should be >= 0");
+; 766  : 	return pUnit->canSiege(GET_PLAYER((PlayerTypes)iData1).getTeam());
 
 $LN9@PUF_canSie:
 	mov	ecx, DWORD PTR _pUnit$[esp-4]
@@ -9599,7 +9608,7 @@ $LN9@PUF_canSie:
 	push	eax
 	call	?canSiege@CvUnit@@QBE_NW4TeamTypes@@@Z	; CvUnit::canSiege
 
-; 761  : }
+; 767  : }
 
 	ret	0
 ?PUF_canSiege@@YA_NPBVCvUnit@@HH@Z ENDP			; PUF_canSiege
@@ -9613,10 +9622,10 @@ _iData1$ = 12						; size = 4
 _iData2$ = 16						; size = 4
 ?PUF_isPotentialEnemy@@YA_NPBVCvUnit@@HH@Z PROC		; PUF_isPotentialEnemy, COMDAT
 
-; 765  : 	CvAssertMsg(iData1 != -1, "Invalid data argument, should be >= 0");
-; 766  : 	CvAssertMsg(iData2 != -1, "Invalid data argument, should be >= 0");
-; 767  : 
-; 768  : 	TeamTypes eOtherTeam = GET_PLAYER((PlayerTypes)iData1).getTeam();
+; 771  : 	CvAssertMsg(iData1 != -1, "Invalid data argument, should be >= 0");
+; 772  : 	CvAssertMsg(iData2 != -1, "Invalid data argument, should be >= 0");
+; 773  : 
+; 774  : 	TeamTypes eOtherTeam = GET_PLAYER((PlayerTypes)iData1).getTeam();
 
 	mov	eax, DWORD PTR _iData1$[esp-4]
 	mov	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
@@ -9635,7 +9644,7 @@ $LN12@PUF_isPote:
 	or	esi, -1
 $LN13@PUF_isPote:
 
-; 769  : 	TeamTypes eOurTeam = GET_PLAYER(pUnit->getCombatOwner(eOtherTeam, *(pUnit->plot()))).getTeam();
+; 775  : 	TeamTypes eOurTeam = GET_PLAYER(pUnit->getCombatOwner(eOtherTeam, *(pUnit->plot()))).getTeam();
 
 	mov	edi, DWORD PTR _pUnit$[esp+8]
 	mov	ecx, edi
@@ -9657,8 +9666,8 @@ $LN23@PUF_isPote:
 	or	ebx, -1
 $LN24@PUF_isPote:
 
-; 770  : 
-; 771  : 	if(pUnit->canCoexistWithEnemyUnit(eOtherTeam))
+; 776  : 
+; 777  : 	if(pUnit->canCoexistWithEnemyUnit(eOtherTeam))
 
 	push	esi
 	mov	ecx, edi
@@ -9668,19 +9677,19 @@ $LN24@PUF_isPote:
 	pop	edi
 	pop	esi
 
-; 772  : 	{
-; 773  : 		return false;
+; 778  : 	{
+; 779  : 		return false;
 
 	xor	al, al
 	pop	ebx
 
-; 776  : }
+; 782  : }
 
 	ret	0
 $LN1@PUF_isPote:
 
-; 774  : 	}
-; 775  : 	return (iData2 ? eOtherTeam != eOurTeam : isPotentialEnemy(eOtherTeam, eOurTeam));
+; 780  : 	}
+; 781  : 	return (iData2 ? eOtherTeam != eOurTeam : isPotentialEnemy(eOtherTeam, eOurTeam));
 
 	xor	eax, eax
 	cmp	DWORD PTR _iData2$[esp+8], eax
@@ -9692,7 +9701,7 @@ $LN2@PUF_isPote:
 	pop	esi
 	pop	ebx
 
-; 776  : }
+; 782  : }
 
 	ret	0
 ?PUF_isPotentialEnemy@@YA_NPBVCvUnit@@HH@Z ENDP		; PUF_isPotentialEnemy
@@ -9707,10 +9716,10 @@ _iData1$ = 12						; size = 4
 _iData2$ = 16						; size = 4
 ?PUF_canDeclareWar@@YA_NPBVCvUnit@@HH@Z PROC		; PUF_canDeclareWar, COMDAT
 
-; 780  : 	CvAssertMsg(iData1 != -1, "Invalid data argument, should be >= 0");
-; 781  : 	CvAssertMsg(iData2 != -1, "Invalid data argument, should be >= 0");
-; 782  : 
-; 783  : 	TeamTypes eOtherTeam = GET_PLAYER((PlayerTypes)iData1).getTeam();
+; 786  : 	CvAssertMsg(iData1 != -1, "Invalid data argument, should be >= 0");
+; 787  : 	CvAssertMsg(iData2 != -1, "Invalid data argument, should be >= 0");
+; 788  : 
+; 789  : 	TeamTypes eOtherTeam = GET_PLAYER((PlayerTypes)iData1).getTeam();
 
 	mov	eax, DWORD PTR _iData1$[esp-4]
 	mov	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
@@ -9729,7 +9738,7 @@ $LN12@PUF_canDec:
 	or	esi, -1
 $LN13@PUF_canDec:
 
-; 784  : 	TeamTypes eOurTeam = GET_PLAYER(pUnit->getCombatOwner(eOtherTeam, *(pUnit->plot()))).getTeam();
+; 790  : 	TeamTypes eOurTeam = GET_PLAYER(pUnit->getCombatOwner(eOtherTeam, *(pUnit->plot()))).getTeam();
 
 	mov	edi, DWORD PTR _pUnit$[esp+8]
 	mov	ecx, edi
@@ -9751,8 +9760,8 @@ $LN23@PUF_canDec:
 	or	ebx, -1
 $LN24@PUF_canDec:
 
-; 785  : 
-; 786  : 	if(pUnit->canCoexistWithEnemyUnit(eOtherTeam))
+; 791  : 
+; 792  : 	if(pUnit->canCoexistWithEnemyUnit(eOtherTeam))
 
 	push	esi
 	mov	ecx, edi
@@ -9763,20 +9772,20 @@ $LN30@PUF_canDec:
 	pop	edi
 	pop	esi
 
-; 787  : 	{
-; 788  : 		return false;
+; 793  : 	{
+; 794  : 		return false;
 
 	xor	al, al
 	pop	ebx
 
-; 792  : }
+; 798  : }
 
 	ret	0
 $LN1@PUF_canDec:
 
-; 789  : 	}
-; 790  : 
-; 791  : 	return (iData2 ? false : GET_TEAM(eOtherTeam).canDeclareWar(eOurTeam));
+; 795  : 	}
+; 796  : 
+; 797  : 	return (iData2 ? false : GET_TEAM(eOtherTeam).canDeclareWar(eOurTeam));
 
 	cmp	DWORD PTR _iData2$[esp+8], 0
 	jne	SHORT $LN30@PUF_canDec
@@ -9789,7 +9798,7 @@ $LN1@PUF_canDec:
 	pop	esi
 	pop	ebx
 
-; 792  : }
+; 798  : }
 
 	ret	0
 ?PUF_canDeclareWar@@YA_NPBVCvUnit@@HH@Z ENDP		; PUF_canDeclareWar
@@ -9803,13 +9812,13 @@ _iData1$ = 12						; size = 4
 _iData2$ = 16						; size = 4
 ?PUF_canDefendEnemy@@YA_NPBVCvUnit@@HH@Z PROC		; PUF_canDefendEnemy, COMDAT
 
-; 805  : {
+; 811  : {
 
 	push	esi
 
-; 806  : 	CvAssertMsg(iData1 != -1, "Invalid data argument, should be >= 0");
-; 807  : 	CvAssertMsg(iData2 != -1, "Invalid data argument, should be >= 0");
-; 808  : 	return (PUF_canDefend(pUnit, iData1, iData2) && PUF_isEnemy(pUnit, iData1, iData2));
+; 812  : 	CvAssertMsg(iData1 != -1, "Invalid data argument, should be >= 0");
+; 813  : 	CvAssertMsg(iData2 != -1, "Invalid data argument, should be >= 0");
+; 814  : 	return (PUF_canDefend(pUnit, iData1, iData2) && PUF_isEnemy(pUnit, iData1, iData2));
 
 	mov	esi, DWORD PTR _pUnit$[esp]
 	push	0
@@ -9829,19 +9838,19 @@ _iData2$ = 16						; size = 4
 	mov	eax, 1
 	pop	esi
 
-; 809  : }
+; 815  : }
 
 	ret	0
 $LN3@PUF_canDef:
 
-; 806  : 	CvAssertMsg(iData1 != -1, "Invalid data argument, should be >= 0");
-; 807  : 	CvAssertMsg(iData2 != -1, "Invalid data argument, should be >= 0");
-; 808  : 	return (PUF_canDefend(pUnit, iData1, iData2) && PUF_isEnemy(pUnit, iData1, iData2));
+; 812  : 	CvAssertMsg(iData1 != -1, "Invalid data argument, should be >= 0");
+; 813  : 	CvAssertMsg(iData2 != -1, "Invalid data argument, should be >= 0");
+; 814  : 	return (PUF_canDefend(pUnit, iData1, iData2) && PUF_isEnemy(pUnit, iData1, iData2));
 
 	xor	eax, eax
 	pop	esi
 
-; 809  : }
+; 815  : }
 
 	ret	0
 ?PUF_canDefendEnemy@@YA_NPBVCvUnit@@HH@Z ENDP		; PUF_canDefendEnemy
@@ -9855,12 +9864,12 @@ _iData1$ = 12						; size = 4
 _iData2$ = 16						; size = 4
 ?PUF_canDefendPotentialEnemy@@YA_NPBVCvUnit@@HH@Z PROC	; PUF_canDefendPotentialEnemy, COMDAT
 
-; 812  : {
+; 818  : {
 
 	push	esi
 
-; 813  : 	CvAssertMsg(iData1 != -1, "Invalid data argument, should be >= 0");
-; 814  : 	return (PUF_canDefend(pUnit, iData1, iData2) && PUF_isPotentialEnemy(pUnit, iData1, iData2));
+; 819  : 	CvAssertMsg(iData1 != -1, "Invalid data argument, should be >= 0");
+; 820  : 	return (PUF_canDefend(pUnit, iData1, iData2) && PUF_isPotentialEnemy(pUnit, iData1, iData2));
 
 	mov	esi, DWORD PTR _pUnit$[esp]
 	push	0
@@ -9880,18 +9889,18 @@ _iData2$ = 16						; size = 4
 	mov	eax, 1
 	pop	esi
 
-; 815  : }
+; 821  : }
 
 	ret	0
 $LN3@PUF_canDef@2:
 
-; 813  : 	CvAssertMsg(iData1 != -1, "Invalid data argument, should be >= 0");
-; 814  : 	return (PUF_canDefend(pUnit, iData1, iData2) && PUF_isPotentialEnemy(pUnit, iData1, iData2));
+; 819  : 	CvAssertMsg(iData1 != -1, "Invalid data argument, should be >= 0");
+; 820  : 	return (PUF_canDefend(pUnit, iData1, iData2) && PUF_isPotentialEnemy(pUnit, iData1, iData2));
 
 	xor	eax, eax
 	pop	esi
 
-; 815  : }
+; 821  : }
 
 	ret	0
 ?PUF_canDefendPotentialEnemy@@YA_NPBVCvUnit@@HH@Z ENDP	; PUF_canDefendPotentialEnemy
@@ -9906,7 +9915,7 @@ _eCalendar$ = 16					; size = 4
 _eSpeed$ = 20						; size = 4
 ?getTurnYearForGame@@YAHHHW4CalendarTypes@@W4GameSpeedTypes@@@Z PROC ; getTurnYearForGame, COMDAT
 
-; 915  : 	return (getTurnMonthForGame(iGameTurn, iStartYear, eCalendar, eSpeed) / DB.Count("Months"));
+; 921  : 	return (getTurnMonthForGame(iGameTurn, iStartYear, eCalendar, eSpeed) / DB.Count("Months"));
 
 	mov	eax, DWORD PTR _eSpeed$[esp-4]
 	mov	ecx, DWORD PTR _eCalendar$[esp-4]
@@ -9922,7 +9931,7 @@ _eSpeed$ = 20						; size = 4
 	call	?getTurnMonthForGame@@YAHHHW4CalendarTypes@@W4GameSpeedTypes@@@Z ; getTurnMonthForGame
 	add	esp, 16					; 00000010H
 	push	1
-	push	OFFSET $SG218083
+	push	OFFSET $SG218084
 	mov	ecx, esi
 	mov	edi, eax
 	call	DWORD PTR __imp_?Count@Connection@Database@@QAEHPBD_N@Z
@@ -9933,7 +9942,7 @@ _eSpeed$ = 20						; size = 4
 	idiv	ecx
 	pop	esi
 
-; 916  : }
+; 922  : }
 
 	ret	0
 ?getTurnYearForGame@@YAHHHW4CalendarTypes@@W4GameSpeedTypes@@@Z ENDP ; getTurnYearForGame

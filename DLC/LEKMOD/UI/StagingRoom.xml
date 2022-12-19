@@ -38,7 +38,7 @@
       <Box ID="PlayerNameBox" Anchor="L,T" Size="260,32" Offset="128,38" Color="255.255.255.0" >
 				<Stack Anchor="L,B"  Offset="0,0" Padding="0" StackGrowth="Right" >
 					<Box ID="HostBox" Color="0,0,255,0" Anchor="L,C" Offset="0,0" Size="24,32">
-       			<Label Anchor="C,C"  String="[ICON_FOOD]" Offset="0,0" Hidden="1" ID="HostIcon" ToolTip="TXT_KEY_HOST" />
+       			<Label Anchor="C,C"  String="[ICON_CAPITAL]" Offset="0,0" Hidden="1" ID="HostIcon" ToolTip="TXT_KEY_HOST" />
 					</Box>
 					<Box ID="ConnectedBox" Color="0,255,0,0" Anchor="L,C" Offset="0,0" Size="32,32">
 						<Image Anchor="C,C"  Offset="-2,2" ID="ConnectionStatus" Size="32,32" Texture="assets/UI/Art/Icons/MarcPips.DDS" ToolTip="TXT_KEY_MP_PLAYER_CONNECTED" hidden="1" />

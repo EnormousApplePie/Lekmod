@@ -3665,7 +3665,7 @@ void CvPlayerTraits::Write(FDataStream& kStream)
 	kStream << m_iExtraEmbarkMoves;
 	kStream << m_iNaturalWonderFirstFinderGold;
 	kStream << m_iNaturalWonderSubsequentFinderGold;
-	kStream << m_iNaturalWonderYieldModifier;
+	
 	//EAP: Natural wonder faith for the finder
 	
 	kStream << m_iNaturalWonderFirstFinderFaith;
@@ -3673,6 +3673,7 @@ void CvPlayerTraits::Write(FDataStream& kStream)
 	
 
 	//
+	kStream << m_iNaturalWonderYieldModifier;
 	kStream << m_iNaturalWonderHappinessModifier;
 	kStream << m_iNearbyImprovementCombatBonus;
 	kStream << m_iNearbyImprovementBonusRange;

@@ -10056,7 +10056,7 @@ bool CvUnit::canBuild(const CvPlot* pPlot, BuildTypes eBuild, bool bTestVisible,
 
  	if (pPlot->isWater())
  	{
-		if ((isEmbarked() && !pkBuildInfo->IsCanBeEmbarked())  && (strcmp("UNIT_JAPANESE_SAMURAI", getUnitInfo().GetType()) != 0))
+		if ((isEmbarked() && !pkBuildInfo->IsCanBeEmbarked())  /*&& (strcmp("UNIT_JAPANESE_SAMURAI", getUnitInfo().GetType()) != 0)*/ )
 		{
  			return false;
 		}

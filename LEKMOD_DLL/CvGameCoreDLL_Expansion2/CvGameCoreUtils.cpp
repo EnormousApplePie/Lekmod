@@ -25,6 +25,12 @@
 
 // must be included after all other headers
 #include "LintFree.h"
+#ifdef AI_WORKER_EMBARKED_FIX
+int RING_PLOTS[6] = {RING0_PLOTS,RING1_PLOTS,RING2_PLOTS,RING3_PLOTS,RING4_PLOTS,RING5_PLOTS};
+
+#endif
+
+
 
 /// This function will return the CvPlot associated with the Index (0 to 36) of a City at iX,iY.  The lower the Index the closer the Plot is to the City (roughly)
 CvPlot* plotCity(int iX, int iY, int iIndex)

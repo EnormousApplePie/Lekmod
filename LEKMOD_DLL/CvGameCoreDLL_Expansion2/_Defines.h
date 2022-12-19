@@ -885,6 +885,19 @@
 //#define LEK_EMBARK_1_MOVEMENT
 //EAP: Benched for now: Added a new table for Guruship effect on traits and with specific specialist type. AKA: If city is working any [insert specialist] slot, receive x yield (aka switzerland depending on when you read this)
 //#define LEK_TRAIT_SPECIALIST_YIELD_MAX_ONE
+//EAP: AI will now use workers like workboats
+//#define AI_WORKER_EMBARKED_FIX
+
+/// EAP: Some stuff related to the above
+#define RING0_PLOTS											(1)
+#define RING1_PLOTS											(7)
+#define RING2_PLOTS											(19)
+#define RING3_PLOTS											(37)
+#define RING4_PLOTS											(61)
+#define RING5_PLOTS											(91)
+#define MAX_CITY_PLOTS										((6 * (1+MAX_CITY_RADIUS) * MAX_CITY_RADIUS / 2) + 1)
+#define MAX_CITY_RADIUS										(5)
+
 
 /////////////////////from ImmoS - Not all things implemented as is, some changed have been made compared to the original code.
 

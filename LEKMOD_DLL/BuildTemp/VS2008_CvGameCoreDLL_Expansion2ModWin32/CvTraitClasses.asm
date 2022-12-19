@@ -18947,7 +18947,7 @@ _pPlot$ = 8						; size = 4
 ?ConvertBarbarianCamp@CvPlayerTraits@@AAE_NPAVCvPlot@@@Z PROC ; CvPlayerTraits::ConvertBarbarianCamp, COMDAT
 ; _this$ = ecx
 
-; 3814 : {
+; 3815 : {
 
 	push	-1
 	push	__ehhandler$?ConvertBarbarianCamp@CvPlayerTraits@@AAE_NPAVCvPlot@@@Z
@@ -18958,7 +18958,7 @@ _pPlot$ = 8						; size = 4
 	push	ebx
 	push	esi
 
-; 3815 : 	UnitHandle pGiftUnit;
+; 3816 : 	UnitHandle pGiftUnit;
 
 	xor	ebx, ebx
 	push	edi
@@ -18966,9 +18966,9 @@ _pPlot$ = 8						; size = 4
 	mov	DWORD PTR _pGiftUnit$[esp+116], ebx
 	mov	BYTE PTR _pGiftUnit$[esp+120], bl
 
-; 3816 : 
-; 3817 : 	// Has this camp already decided not to convert?
-; 3818 : 	if(pPlot->IsBarbarianCampNotConverting())
+; 3817 : 
+; 3818 : 	// Has this camp already decided not to convert?
+; 3819 : 	if(pPlot->IsBarbarianCampNotConverting())
 
 	mov	edi, DWORD PTR _pPlot$[esp+112]
 	mov	ecx, edi
@@ -18976,15 +18976,15 @@ _pPlot$ = 8						; size = 4
 	call	?IsBarbarianCampNotConverting@CvPlot@@QBE_NXZ ; CvPlot::IsBarbarianCampNotConverting
 	test	al, al
 
-; 3819 : 	{
-; 3820 : 		return false;
+; 3820 : 	{
+; 3821 : 		return false;
 
 	jne	$LN112@ConvertBar
 
-; 3821 : 	}
-; 3822 : 
-; 3823 : 	// Roll die to see if it converts
-; 3824 : 	if(GC.getGame().getJonRandNum(100, "Barbarian Camp Conversion") < m_iLandBarbarianConversionPercent)
+; 3822 : 	}
+; 3823 : 
+; 3824 : 	// Roll die to see if it converts
+; 3825 : 	if(GC.getGame().getJonRandNum(100, "Barbarian Camp Conversion") < m_iLandBarbarianConversionPercent)
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	OFFSET $SG224144
@@ -18992,8 +18992,8 @@ _pPlot$ = 8						; size = 4
 	call	?getJonRandNum@CvGame@@QAEHHPBD@Z	; CvGame::getJonRandNum
 	cmp	eax, DWORD PTR [esi+100]
 
-; 3825 : 	{
-; 3826 : 		pPlot->setImprovementType(NO_IMPROVEMENT);
+; 3826 : 	{
+; 3827 : 		pPlot->setImprovementType(NO_IMPROVEMENT);
 
 	mov	ecx, edi
 	jge	$LN11@ConvertBar
@@ -19002,12 +19002,12 @@ _pPlot$ = 8						; size = 4
 	push	-1
 	call	?setImprovementType@CvPlot@@QAEXW4ImprovementTypes@@W4PlayerTypes@@@Z ; CvPlot::setImprovementType
 
-; 3827 : 
-; 3828 : 		int iNumGold = /*25*/ GC.getGOLD_FROM_BARBARIAN_CONVERSION();
+; 3828 : 
+; 3829 : 		int iNumGold = /*25*/ GC.getGOLD_FROM_BARBARIAN_CONVERSION();
 
 	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+7068
 
-; 3829 : 		m_pPlayer->GetTreasury()->ChangeGold(iNumGold);
+; 3830 : 		m_pPlayer->GetTreasury()->ChangeGold(iNumGold);
 
 	mov	ecx, DWORD PTR [esi+4]
 	push	eax
@@ -19015,9 +19015,9 @@ _pPlot$ = 8						; size = 4
 	mov	ecx, eax
 	call	?ChangeGold@CvTreasury@@QAEXH@Z		; CvTreasury::ChangeGold
 
-; 3830 : 
-; 3831 : 		// Set who last cleared the camp here
-; 3832 : 		pPlot->SetPlayerThatClearedBarbCampHere(m_pPlayer->GetID());
+; 3831 : 
+; 3832 : 		// Set who last cleared the camp here
+; 3833 : 		pPlot->SetPlayerThatClearedBarbCampHere(m_pPlayer->GetID());
 
 	mov	eax, DWORD PTR [esi+4]
 	mov	eax, DWORD PTR [eax+44]
@@ -19025,10 +19025,10 @@ _pPlot$ = 8						; size = 4
 	mov	ecx, edi
 	call	?SetPlayerThatClearedBarbCampHere@CvPlot@@QAEXW4PlayerTypes@@@Z ; CvPlot::SetPlayerThatClearedBarbCampHere
 
-; 3833 : 
-; 3834 : 		// Convert the barbarian into our unit
-; 3835 : 		FAssertMsg(m_eCampGuardType < GC.getNumUnitInfos(), "Illegal camp guard unit type");
-; 3836 : 		pGiftUnit = m_pPlayer->initUnit(m_eCampGuardType, pPlot->getX(), pPlot->getY(), NO_UNITAI, NO_DIRECTION, true /*bNoMove*/);
+; 3834 : 
+; 3835 : 		// Convert the barbarian into our unit
+; 3836 : 		FAssertMsg(m_eCampGuardType < GC.getNumUnitInfos(), "Illegal camp guard unit type");
+; 3837 : 		pGiftUnit = m_pPlayer->initUnit(m_eCampGuardType, pPlot->getX(), pPlot->getY(), NO_UNITAI, NO_DIRECTION, true /*bNoMove*/);
 
 	movsx	eax, WORD PTR [edi+2]
 	movsx	ecx, WORD PTR [edi]
@@ -19053,12 +19053,12 @@ _pPlot$ = 8						; size = 4
 	call	?getDestructionNotification@CvUnit@@QAEAAU?$DestructionNotification@V?$FObjectHandle@VCvUnit@@@@@@XZ ; CvUnit::getDestructionNotification
 $LN44@ConvertBar:
 
-; 3837 : 		if (!pGiftUnit->jumpToNearestValidPlot())
+; 3838 : 		if (!pGiftUnit->jumpToNearestValidPlot())
 
 	mov	ecx, ebp
 	call	?jumpToNearestValidPlot@CvUnit@@QAE_NXZ	; CvUnit::jumpToNearestValidPlot
 
-; 3838 : 			pGiftUnit->kill(false);
+; 3839 : 			pGiftUnit->kill(false);
 
 	mov	ecx, ebp
 	test	al, al
@@ -19067,19 +19067,19 @@ $LN44@ConvertBar:
 	push	0
 	call	?kill@CvUnit@@QAEX_NW4PlayerTypes@@@Z	; CvUnit::kill
 
-; 3839 : 		else
+; 3840 : 		else
 
 	jmp	SHORT $LN9@ConvertBar
 $LN10@ConvertBar:
 
-; 3840 : 			pGiftUnit->finishMoves();
+; 3841 : 			pGiftUnit->finishMoves();
 
 	call	?finishMoves@CvUnit@@QAEXXZ		; CvUnit::finishMoves
 $LN9@ConvertBar:
 
-; 3841 : 
-; 3842 : 		// Convert any extra units
-; 3843 : 		for(int iI = 0; iI < m_iLandBarbarianConversionExtraUnits; iI++)
+; 3842 : 
+; 3843 : 		// Convert any extra units
+; 3844 : 		for(int iI = 0; iI < m_iLandBarbarianConversionExtraUnits; iI++)
 
 	cmp	DWORD PTR [esi+104], 0
 	mov	DWORD PTR _iI$224148[esp+116], 0
@@ -19087,8 +19087,8 @@ $LN9@ConvertBar:
 	npad	8
 $LL110@ConvertBar:
 
-; 3844 : 		{
-; 3845 : 			pGiftUnit = m_pPlayer->initUnit(m_eCampGuardType, pPlot->getX(), pPlot->getY(), NO_UNITAI, NO_DIRECTION, true /*bNoMove*/);
+; 3845 : 		{
+; 3846 : 			pGiftUnit = m_pPlayer->initUnit(m_eCampGuardType, pPlot->getX(), pPlot->getY(), NO_UNITAI, NO_DIRECTION, true /*bNoMove*/);
 
 	movsx	eax, WORD PTR [edi+2]
 	movsx	ecx, WORD PTR [edi]
@@ -19118,12 +19118,12 @@ $LN60@ConvertBar:
 	call	?getDestructionNotification@CvUnit@@QAEAAU?$DestructionNotification@V?$FObjectHandle@VCvUnit@@@@@@XZ ; CvUnit::getDestructionNotification
 $LN62@ConvertBar:
 
-; 3846 : 			if (!pGiftUnit->jumpToNearestValidPlot())
+; 3847 : 			if (!pGiftUnit->jumpToNearestValidPlot())
 
 	mov	ecx, ebp
 	call	?jumpToNearestValidPlot@CvUnit@@QAE_NXZ	; CvUnit::jumpToNearestValidPlot
 
-; 3847 : 				pGiftUnit->kill(false);
+; 3848 : 				pGiftUnit->kill(false);
 
 	mov	ecx, ebp
 	test	al, al
@@ -19132,19 +19132,19 @@ $LN62@ConvertBar:
 	push	0
 	call	?kill@CvUnit@@QAEX_NW4PlayerTypes@@@Z	; CvUnit::kill
 
-; 3848 : 			else
+; 3849 : 			else
 
 	jmp	SHORT $LN7@ConvertBar
 $LN5@ConvertBar:
 
-; 3849 : 				pGiftUnit->finishMoves();
+; 3850 : 				pGiftUnit->finishMoves();
 
 	call	?finishMoves@CvUnit@@QAEXXZ		; CvUnit::finishMoves
 $LN7@ConvertBar:
 
-; 3841 : 
-; 3842 : 		// Convert any extra units
-; 3843 : 		for(int iI = 0; iI < m_iLandBarbarianConversionExtraUnits; iI++)
+; 3842 : 
+; 3843 : 		// Convert any extra units
+; 3844 : 		for(int iI = 0; iI < m_iLandBarbarianConversionExtraUnits; iI++)
 
 	mov	eax, DWORD PTR _iI$224148[esp+116]
 	inc	eax
@@ -19153,9 +19153,9 @@ $LN7@ConvertBar:
 	jl	SHORT $LL110@ConvertBar
 $LN6@ConvertBar:
 
-; 3850 : 		}
-; 3851 : 
-; 3852 : 		if(GC.getLogging() && GC.getAILogging())
+; 3851 : 		}
+; 3852 : 
+; 3853 : 		if(GC.getLogging() && GC.getAILogging())
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getLogging@CvGlobals@@QAE_NXZ		; CvGlobals::getLogging
@@ -19166,13 +19166,13 @@ $LN6@ConvertBar:
 	test	al, al
 	je	SHORT $LN3@ConvertBar
 
-; 3853 : 		{
-; 3854 : 			CvString logMsg;
+; 3854 : 		{
+; 3855 : 			CvString logMsg;
 
 	lea	ecx, DWORD PTR _logMsg$224155[esp+120]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 3855 : 			logMsg.Format("Converted barbarian camp, X: %d, Y: %d", pPlot->getX(), pPlot->getY());
+; 3856 : 			logMsg.Format("Converted barbarian camp, X: %d, Y: %d", pPlot->getX(), pPlot->getY());
 
 	movsx	eax, WORD PTR [edi+2]
 	movsx	ecx, WORD PTR [edi]
@@ -19184,7 +19184,7 @@ $LN6@ConvertBar:
 	mov	BYTE PTR __$EHRec$[esp+144], 1
 	call	?Format@CvString@@QAAXPBDZZ		; CvString::Format
 
-; 3856 : 			m_pPlayer->GetHomelandAI()->LogHomelandMessage(logMsg);
+; 3857 : 			m_pPlayer->GetHomelandAI()->LogHomelandMessage(logMsg);
 
 	mov	ecx, DWORD PTR [esi+4]
 	add	esp, 16					; 00000010H
@@ -19194,22 +19194,22 @@ $LN6@ConvertBar:
 	mov	ecx, eax
 	call	?LogHomelandMessage@CvHomelandAI@@QAEXAAVCvString@@@Z ; CvHomelandAI::LogHomelandMessage
 
-; 3857 : 		}
+; 3858 : 		}
 
 	lea	ecx, DWORD PTR _logMsg$224155[esp+120]
 	mov	BYTE PTR __$EHRec$[esp+128], 0
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 $LN3@ConvertBar:
 
-; 3858 : 
-; 3859 : 		CvString strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_BARB_CAMP_CONVERTS");
+; 3859 : 
+; 3860 : 		CvString strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_BARB_CAMP_CONVERTS");
 
 	lea	ecx, DWORD PTR _strBuffer$224157[esp+120]
 	push	OFFSET $SG224159
 	push	ecx
 	call	?GetLocalizedText@@YA?AVCvString@@PBD@Z	; GetLocalizedText
 
-; 3860 : 		CvString strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_BARB_CAMP_CONVERTS");
+; 3861 : 		CvString strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_BARB_CAMP_CONVERTS");
 
 	lea	edx, DWORD PTR _strSummary$224160[esp+128]
 	push	OFFSET $SG224162
@@ -19218,7 +19218,7 @@ $LN3@ConvertBar:
 	call	?GetLocalizedText@@YA?AVCvString@@PBD@Z	; GetLocalizedText
 	add	esp, 16					; 00000010H
 
-; 3861 : 		m_pPlayer->GetNotifications()->Add(NOTIFICATION_GENERIC, strBuffer, strSummary, pPlot->getX(), pPlot->getY(), -1);
+; 3862 : 		m_pPlayer->GetNotifications()->Add(NOTIFICATION_GENERIC, strBuffer, strSummary, pPlot->getX(), pPlot->getY(), -1);
 
 	movsx	ebp, WORD PTR [edi+2]
 	movsx	edi, WORD PTR [edi]
@@ -19241,8 +19241,8 @@ $LN3@ConvertBar:
 	mov	ecx, eax
 	call	?Add@CvNotifications@@QAEHW4NotificationTypes@@PBD1HHHH@Z ; CvNotifications::Add
 
-; 3862 : 		//Increase Stat
-; 3863 : 		if(m_pPlayer->isHuman() &&!GC.getGame().isGameMultiPlayer())
+; 3863 : 		//Increase Stat
+; 3864 : 		if(m_pPlayer->isHuman() &&!GC.getGame().isGameMultiPlayer())
 
 	mov	ecx, DWORD PTR [esi+4]
 	call	?isHuman@CvPlayer@@QBE_NXZ		; CvPlayer::isHuman
@@ -19254,8 +19254,8 @@ $LN3@ConvertBar:
 	test	al, al
 	jne	SHORT $LN2@ConvertBar
 
-; 3864 : 		{
-; 3865 : 			gDLL->IncrementSteamStatAndUnlock(ESTEAMSTAT_BARBSCONVERTED, 10, ACHIEVEMENT_SPECIAL_BARBARIANWARLORD);
+; 3865 : 		{
+; 3866 : 			gDLL->IncrementSteamStatAndUnlock(ESTEAMSTAT_BARBSCONVERTED, 10, ACHIEVEMENT_SPECIAL_BARBARIANWARLORD);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8564
 	mov	edx, DWORD PTR [ecx]
@@ -19266,8 +19266,8 @@ $LN3@ConvertBar:
 	call	eax
 $LN2@ConvertBar:
 
-; 3866 : 		}
-; 3867 : 	}
+; 3867 : 		}
+; 3868 : 	}
 
 	lea	ecx, DWORD PTR _strSummary$224160[esp+116]
 	mov	BYTE PTR __$EHRec$[esp+124], 2
@@ -19276,10 +19276,10 @@ $LN2@ConvertBar:
 	mov	BYTE PTR __$EHRec$[esp+124], 0
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 3873 : 		return false;
-; 3874 : 	}
-; 3875 : 
-; 3876 : 	return true;
+; 3874 : 		return false;
+; 3875 : 	}
+; 3876 : 
+; 3877 : 	return true;
 
 	mov	DWORD PTR __$EHRec$[esp+124], -1
 	test	ebx, ebx
@@ -19292,7 +19292,7 @@ $LN106@ConvertBar:
 	mov	al, 1
 	pop	ebx
 
-; 3877 : }
+; 3878 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+104]
 	mov	DWORD PTR fs:0, ecx
@@ -19300,17 +19300,17 @@ $LN106@ConvertBar:
 	ret	4
 $LN11@ConvertBar:
 
-; 3868 : 
-; 3869 : 	// Decided not to
-; 3870 : 	else
-; 3871 : 	{
-; 3872 : 		pPlot->SetBarbarianCampNotConverting(true);
+; 3869 : 
+; 3870 : 	// Decided not to
+; 3871 : 	else
+; 3872 : 	{
+; 3873 : 		pPlot->SetBarbarianCampNotConverting(true);
 
 	push	1
 	call	?SetBarbarianCampNotConverting@CvPlot@@QAEX_N@Z ; CvPlot::SetBarbarianCampNotConverting
 $LN112@ConvertBar:
 
-; 3877 : }
+; 3878 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+116]
 	pop	edi
@@ -19383,7 +19383,7 @@ _pUnit$ = 8						; size = 8
 ?ConvertBarbarianNavalUnit@CvPlayerTraits@@AAE_NV?$FObjectHandle@VCvUnit@@@@@Z PROC ; CvPlayerTraits::ConvertBarbarianNavalUnit, COMDAT
 ; _this$ = ecx
 
-; 3881 : {
+; 3882 : {
 
 	push	-1
 	push	__ehhandler$?ConvertBarbarianNavalUnit@CvPlayerTraits@@AAE_NV?$FObjectHandle@VCvUnit@@@@@Z
@@ -19397,29 +19397,29 @@ _pUnit$ = 8						; size = 8
 	xor	edi, edi
 	mov	DWORD PTR __$EHRec$[esp+124], edi
 
-; 3882 : 	UnitHandle pGiftUnit;
+; 3883 : 	UnitHandle pGiftUnit;
 
 	mov	DWORD PTR _pGiftUnit$[esp+116], edi
 	mov	BYTE PTR _pGiftUnit$[esp+120], 0
 
-; 3883 : 
-; 3884 : 	// Has this unit already decided not to convert?
-; 3885 : 	if(pUnit->IsNotConverting())
+; 3884 : 
+; 3885 : 	// Has this unit already decided not to convert?
+; 3886 : 	if(pUnit->IsNotConverting())
 
 	mov	ecx, DWORD PTR _pUnit$[esp+112]
 	mov	BYTE PTR __$EHRec$[esp+124], 1
 	call	?IsNotConverting@CvUnit@@QBE_NXZ	; CvUnit::IsNotConverting
 	test	al, al
 
-; 3886 : 	{
-; 3887 : 		return false;
+; 3887 : 	{
+; 3888 : 		return false;
 
 	jne	$LN146@ConvertBar@2
 
-; 3888 : 	}
-; 3889 : 
-; 3890 : 	// Roll die to see if it converts
-; 3891 : 	if(GC.getGame().getJonRandNum(100, "Barbarian Naval Unit Conversion") < m_iSeaBarbarianConversionPercent)
+; 3889 : 	}
+; 3890 : 
+; 3891 : 	// Roll die to see if it converts
+; 3892 : 	if(GC.getGame().getJonRandNum(100, "Barbarian Naval Unit Conversion") < m_iSeaBarbarianConversionPercent)
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	OFFSET $SG224175
@@ -19428,12 +19428,12 @@ _pUnit$ = 8						; size = 8
 	cmp	eax, DWORD PTR [esi+108]
 	jge	$LN4@ConvertBar@2
 
-; 3892 : 	{
-; 3893 : 		int iNumGold = /*25*/ GC.getGOLD_FROM_BARBARIAN_CONVERSION();
+; 3893 : 	{
+; 3894 : 		int iNumGold = /*25*/ GC.getGOLD_FROM_BARBARIAN_CONVERSION();
 
 	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+7068
 
-; 3894 : 		m_pPlayer->GetTreasury()->ChangeGold(iNumGold);
+; 3895 : 		m_pPlayer->GetTreasury()->ChangeGold(iNumGold);
 
 	mov	ecx, DWORD PTR [esi+4]
 	push	ebx
@@ -19443,12 +19443,12 @@ _pUnit$ = 8						; size = 8
 	mov	ecx, eax
 	call	?ChangeGold@CvTreasury@@QAEXH@Z		; CvTreasury::ChangeGold
 
-; 3895 : 
-; 3896 : 		// Convert the barbarian into our unit
-; 3897 : #ifdef AUI_UNIT_FIX_GIFTED_UNITS_ARE_GIFTED_NOT_CLONED
-; 3898 : 		pGiftUnit = m_pPlayer->initUnit(pUnit->getUnitType(), pUnit->getX(), pUnit->getY(), pUnit->AI_getUnitAIType(), NO_DIRECTION, true /*bNoMove*/, false, DEFAULT_UNIT_MAP_LAYER, 0, true);
-; 3899 : #else
-; 3900 : 		pGiftUnit = m_pPlayer->initUnit(pUnit->getUnitType(), pUnit->getX(), pUnit->getY(), pUnit->AI_getUnitAIType(), NO_DIRECTION, true /*bNoMove*/, false);
+; 3896 : 
+; 3897 : 		// Convert the barbarian into our unit
+; 3898 : #ifdef AUI_UNIT_FIX_GIFTED_UNITS_ARE_GIFTED_NOT_CLONED
+; 3899 : 		pGiftUnit = m_pPlayer->initUnit(pUnit->getUnitType(), pUnit->getX(), pUnit->getY(), pUnit->AI_getUnitAIType(), NO_DIRECTION, true /*bNoMove*/, false, DEFAULT_UNIT_MAP_LAYER, 0, true);
+; 3900 : #else
+; 3901 : 		pGiftUnit = m_pPlayer->initUnit(pUnit->getUnitType(), pUnit->getX(), pUnit->getY(), pUnit->AI_getUnitAIType(), NO_DIRECTION, true /*bNoMove*/, false);
 
 	mov	ecx, DWORD PTR _pUnit$[esp+120]
 	mov	edi, DWORD PTR [ecx+88]
@@ -19476,9 +19476,9 @@ _pUnit$ = 8						; size = 8
 	call	?getDestructionNotification@CvUnit@@QAEAAU?$DestructionNotification@V?$FObjectHandle@VCvUnit@@@@@@XZ ; CvUnit::getDestructionNotification
 $LN53@ConvertBar@2:
 
-; 3901 : #endif
-; 3902 : 		CvAssertMsg(pGiftUnit, "GiftUnit is not assigned a valid value");
-; 3903 : 		pGiftUnit->convert(pUnit.pointer(), false);
+; 3902 : #endif
+; 3903 : 		CvAssertMsg(pGiftUnit, "GiftUnit is not assigned a valid value");
+; 3904 : 		pGiftUnit->convert(pUnit.pointer(), false);
 
 	mov	eax, DWORD PTR _pUnit$[esp+120]
 	push	0
@@ -19486,19 +19486,19 @@ $LN53@ConvertBar@2:
 	mov	ecx, edi
 	call	?convert@CvUnit@@QAEXPAV1@_N@Z		; CvUnit::convert
 
-; 3904 : 		pGiftUnit->setupGraphical();
+; 3905 : 		pGiftUnit->setupGraphical();
 
 	mov	ecx, edi
 	call	?setupGraphical@CvUnit@@QAEXXZ		; CvUnit::setupGraphical
 
-; 3905 : 		pGiftUnit->finishMoves(); // No move first turn
+; 3906 : 		pGiftUnit->finishMoves(); // No move first turn
 
 	mov	ecx, edi
 	call	?finishMoves@CvUnit@@QAEXXZ		; CvUnit::finishMoves
 
-; 3906 : 
-; 3907 : 		// Validate that the achievement is reached by a live human and active player at the same time
-; 3908 : 		if(m_pPlayer->isHuman() && !GC.getGame().isGameMultiPlayer() && m_pPlayer->getLeaderInfo().GetType() && _stricmp(m_pPlayer->getLeaderInfo().GetType(), "LEADER_SULEIMAN") == 0)
+; 3907 : 
+; 3908 : 		// Validate that the achievement is reached by a live human and active player at the same time
+; 3909 : 		if(m_pPlayer->isHuman() && !GC.getGame().isGameMultiPlayer() && m_pPlayer->getLeaderInfo().GetType() && _stricmp(m_pPlayer->getLeaderInfo().GetType(), "LEADER_SULEIMAN") == 0)
 
 	mov	ecx, DWORD PTR [esi+4]
 	call	?isHuman@CvPlayer@@QBE_NXZ		; CvPlayer::isHuman
@@ -19525,8 +19525,8 @@ $LN53@ConvertBar@2:
 	test	eax, eax
 	jne	SHORT $LN3@ConvertBar@2
 
-; 3909 : 		{
-; 3910 : 			gDLL->IncrementSteamStatAndUnlock(ESTEAMSTAT_BARBSNAVALCONVERTED, 10, ACHIEVEMENT_SPECIAL_BARBARYPIRATE);
+; 3910 : 		{
+; 3911 : 			gDLL->IncrementSteamStatAndUnlock(ESTEAMSTAT_BARBSNAVALCONVERTED, 10, ACHIEVEMENT_SPECIAL_BARBARYPIRATE);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8564
 	mov	edx, DWORD PTR [ecx]
@@ -19537,9 +19537,9 @@ $LN53@ConvertBar@2:
 	call	eax
 $LN3@ConvertBar@2:
 
-; 3911 : 		}
-; 3912 : 
-; 3913 : 		if(GC.getLogging() && GC.getAILogging())
+; 3912 : 		}
+; 3913 : 
+; 3914 : 		if(GC.getLogging() && GC.getAILogging())
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getLogging@CvGlobals@@QAE_NXZ		; CvGlobals::getLogging
@@ -19550,13 +19550,13 @@ $LN3@ConvertBar@2:
 	test	al, al
 	je	SHORT $LN2@ConvertBar@2
 
-; 3914 : 		{
-; 3915 : 			CvString logMsg;
+; 3915 : 		{
+; 3916 : 			CvString logMsg;
 
 	lea	ecx, DWORD PTR _logMsg$224180[esp+124]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 3916 : 			logMsg.Format("Converted barbarian naval unit, X: %d, Y: %d", pUnit->getX(), pUnit->getY());
+; 3917 : 			logMsg.Format("Converted barbarian naval unit, X: %d, Y: %d", pUnit->getX(), pUnit->getY());
 
 	mov	eax, DWORD PTR _pUnit$[esp+120]
 	mov	ecx, DWORD PTR [eax+88]
@@ -19569,7 +19569,7 @@ $LN3@ConvertBar@2:
 	mov	BYTE PTR __$EHRec$[esp+148], 2
 	call	?Format@CvString@@QAAXPBDZZ		; CvString::Format
 
-; 3917 : 			m_pPlayer->GetHomelandAI()->LogHomelandMessage(logMsg);
+; 3918 : 			m_pPlayer->GetHomelandAI()->LogHomelandMessage(logMsg);
 
 	mov	ecx, DWORD PTR [esi+4]
 	add	esp, 16					; 00000010H
@@ -19579,22 +19579,22 @@ $LN3@ConvertBar@2:
 	mov	ecx, eax
 	call	?LogHomelandMessage@CvHomelandAI@@QAEXAAVCvString@@@Z ; CvHomelandAI::LogHomelandMessage
 
-; 3918 : 		}
+; 3919 : 		}
 
 	lea	ecx, DWORD PTR _logMsg$224180[esp+124]
 	mov	BYTE PTR __$EHRec$[esp+132], 1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 $LN2@ConvertBar@2:
 
-; 3919 : 
-; 3920 : 		CvString strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_BARB_NAVAL_UNIT_CONVERTS");
+; 3920 : 
+; 3921 : 		CvString strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_BARB_NAVAL_UNIT_CONVERTS");
 
 	lea	eax, DWORD PTR _strBuffer$224182[esp+124]
 	push	OFFSET $SG224184
 	push	eax
 	call	?GetLocalizedText@@YA?AVCvString@@PBD@Z	; GetLocalizedText
 
-; 3921 : 		CvString strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_BARB_NAVAL_UNIT_CONVERTS");
+; 3922 : 		CvString strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_BARB_NAVAL_UNIT_CONVERTS");
 
 	lea	ecx, DWORD PTR _strSummary$224185[esp+132]
 	push	OFFSET $SG224187
@@ -19603,7 +19603,7 @@ $LN2@ConvertBar@2:
 	call	?GetLocalizedText@@YA?AVCvString@@PBD@Z	; GetLocalizedText
 	add	esp, 16					; 00000010H
 
-; 3922 : 		m_pPlayer->GetNotifications()->Add(NOTIFICATION_GENERIC, strBuffer, strSummary, pUnit->getX(), pUnit->getY(), -1);
+; 3923 : 		m_pPlayer->GetNotifications()->Add(NOTIFICATION_GENERIC, strBuffer, strSummary, pUnit->getX(), pUnit->getY(), -1);
 
 	mov	eax, DWORD PTR _pUnit$[esp+120]
 	mov	ebp, DWORD PTR [eax+88]
@@ -19627,7 +19627,7 @@ $LN2@ConvertBar@2:
 	mov	ecx, eax
 	call	?Add@CvNotifications@@QAEHW4NotificationTypes@@PBD1HHHH@Z ; CvNotifications::Add
 
-; 3923 : 		return true;
+; 3924 : 		return true;
 
 	lea	ecx, DWORD PTR _strSummary$224185[esp+124]
 	mov	BYTE PTR __$EHRec$[esp+132], 3
@@ -19653,8 +19653,8 @@ $LN119@ConvertBar@2:
 	mov	al, 1
 	pop	esi
 
-; 3931 : 	}
-; 3932 : }
+; 3932 : 	}
+; 3933 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+108]
 	mov	DWORD PTR fs:0, ecx
@@ -19662,19 +19662,19 @@ $LN119@ConvertBar@2:
 	ret	8
 $LN4@ConvertBar@2:
 
-; 3924 : 	}
-; 3925 : 
-; 3926 : 	// Decided not to
-; 3927 : 	else
-; 3928 : 	{
-; 3929 : 		pUnit->SetNotConverting(true);
+; 3925 : 	}
+; 3926 : 
+; 3927 : 	// Decided not to
+; 3928 : 	else
+; 3929 : 	{
+; 3930 : 		pUnit->SetNotConverting(true);
 
 	mov	ecx, DWORD PTR _pUnit$[esp+112]
 	push	1
 	call	?SetNotConverting@CvUnit@@QAEX_N@Z	; CvUnit::SetNotConverting
 $LN146@ConvertBar@2:
 
-; 3930 : 		return false;
+; 3931 : 		return false;
 
 	mov	ecx, DWORD PTR _pUnit$[esp+112]
 	mov	DWORD PTR __$EHRec$[esp+124], -1
@@ -19683,8 +19683,8 @@ $LN146@ConvertBar@2:
 	call	?getDestructionNotification@CvUnit@@QAEAAU?$DestructionNotification@V?$FObjectHandle@VCvUnit@@@@@@XZ ; CvUnit::getDestructionNotification
 $LN131@ConvertBar@2:
 
-; 3931 : 	}
-; 3932 : }
+; 3932 : 	}
+; 3933 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+116]
 	pop	edi
@@ -28323,372 +28323,373 @@ _kStream$ = 8						; size = 4
 	mov	ecx, edi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
-; 3668 : 	kStream << m_iNaturalWonderYieldModifier;
-
-	lea	ecx, DWORD PTR [esi+212]
-	push	ecx
-	mov	ecx, edi
-	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
-
+; 3668 : 	
 ; 3669 : 	//EAP: Natural wonder faith for the finder
 ; 3670 : 	
 ; 3671 : 	kStream << m_iNaturalWonderFirstFinderFaith;
 
-	lea	edx, DWORD PTR [esi+216]
-	push	edx
+	lea	ecx, DWORD PTR [esi+216]
+	push	ecx
 	mov	ecx, edi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
 ; 3672 : 	kStream << m_iNaturalWonderSubsequentFinderFaith;
 
-	lea	eax, DWORD PTR [esi+220]
-	push	eax
+	lea	edx, DWORD PTR [esi+220]
+	push	edx
 	mov	ecx, edi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
 ; 3673 : 	
 ; 3674 : 
 ; 3675 : 	//
-; 3676 : 	kStream << m_iNaturalWonderHappinessModifier;
+; 3676 : 	kStream << m_iNaturalWonderYieldModifier;
+
+	lea	eax, DWORD PTR [esi+212]
+	push	eax
+	mov	ecx, edi
+	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
+
+; 3677 : 	kStream << m_iNaturalWonderHappinessModifier;
 
 	lea	ecx, DWORD PTR [esi+224]
 	push	ecx
 	mov	ecx, edi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
-; 3677 : 	kStream << m_iNearbyImprovementCombatBonus;
+; 3678 : 	kStream << m_iNearbyImprovementCombatBonus;
 
 	lea	edx, DWORD PTR [esi+228]
 	push	edx
 	mov	ecx, edi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
-; 3678 : 	kStream << m_iNearbyImprovementBonusRange;
+; 3679 : 	kStream << m_iNearbyImprovementBonusRange;
 
 	lea	eax, DWORD PTR [esi+232]
 	push	eax
 	mov	ecx, edi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
-; 3679 : 	kStream << m_iCultureBuildingYieldChange;
+; 3680 : 	kStream << m_iCultureBuildingYieldChange;
 
 	lea	ecx, DWORD PTR [esi+236]
 	push	ecx
 	mov	ecx, edi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
-; 3680 : 	kStream << m_iCombatBonusVsHigherTech;
+; 3681 : 	kStream << m_iCombatBonusVsHigherTech;
 
 	lea	edx, DWORD PTR [esi+240]
 	push	edx
 	mov	ecx, edi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
-; 3681 : 	kStream << m_iCombatBonusVsLargerCiv;
+; 3682 : 	kStream << m_iCombatBonusVsLargerCiv;
 
 	lea	eax, DWORD PTR [esi+244]
 	push	eax
 	mov	ecx, edi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
-; 3682 : 	kStream << m_iLandUnitMaintenanceModifier;
+; 3683 : 	kStream << m_iLandUnitMaintenanceModifier;
 
 	lea	ecx, DWORD PTR [esi+248]
 	push	ecx
 	mov	ecx, edi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
-; 3683 : 	kStream << m_iNavalUnitMaintenanceModifier;
+; 3684 : 	kStream << m_iNavalUnitMaintenanceModifier;
 
 	lea	edx, DWORD PTR [esi+252]
 	push	edx
 	mov	ecx, edi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
-; 3684 : 	kStream << m_iRazeSpeedModifier;
+; 3685 : 	kStream << m_iRazeSpeedModifier;
 
 	lea	eax, DWORD PTR [esi+256]
 	push	eax
 	mov	ecx, edi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
-; 3685 : 	kStream << m_iDOFGreatPersonModifier;
+; 3686 : 	kStream << m_iDOFGreatPersonModifier;
 
 	lea	ecx, DWORD PTR [esi+260]
 	push	ecx
 	mov	ecx, edi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
-; 3686 : 	kStream << m_iLuxuryHappinessRetention;
+; 3687 : 	kStream << m_iLuxuryHappinessRetention;
 
 	lea	edx, DWORD PTR [esi+264]
 	push	edx
 	mov	ecx, edi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
-; 3687 : 	kStream << m_iExtraHappinessPerLuxury; // NQMP GJS - New Netherlands UA
+; 3688 : 	kStream << m_iExtraHappinessPerLuxury; // NQMP GJS - New Netherlands UA
 
 	lea	eax, DWORD PTR [esi+268]
 	push	eax
 	mov	ecx, edi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
-; 3688 : 	kStream << m_iExtraSpies;
+; 3689 : 	kStream << m_iExtraSpies;
 
 	lea	ecx, DWORD PTR [esi+272]
 	push	ecx
 	mov	ecx, edi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
-; 3689 : 	kStream << m_iHappinessPerReligion; // NQMP GJS - New Ottoman UA
+; 3690 : 	kStream << m_iHappinessPerReligion; // NQMP GJS - New Ottoman UA
 
 	lea	edx, DWORD PTR [esi+276]
 	push	edx
 	mov	ecx, edi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
-; 3690 : 	kStream << m_iUnresearchedTechBonusFromKills;
+; 3691 : 	kStream << m_iUnresearchedTechBonusFromKills;
 
 	lea	eax, DWORD PTR [esi+280]
 	push	eax
 	mov	ecx, edi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
-; 3691 : 	kStream << m_iExtraFoundedCityTerritoryClaimRange;
+; 3692 : 	kStream << m_iExtraFoundedCityTerritoryClaimRange;
 
 	lea	ecx, DWORD PTR [esi+284]
 	push	ecx
 	mov	ecx, edi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
-; 3692 : 	kStream << m_iFreeSocialPoliciesPerEra;
+; 3693 : 	kStream << m_iFreeSocialPoliciesPerEra;
 
 	lea	edx, DWORD PTR [esi+288]
 	push	edx
 	mov	ecx, edi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
-; 3693 : 	kStream << m_iNumTradeRoutesModifier;
+; 3694 : 	kStream << m_iNumTradeRoutesModifier;
 
 	lea	eax, DWORD PTR [esi+292]
 	push	eax
 	mov	ecx, edi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
-; 3694 : 	kStream << m_iTradeRouteResourceModifier;
+; 3695 : 	kStream << m_iTradeRouteResourceModifier;
 
 	lea	ecx, DWORD PTR [esi+296]
 	push	ecx
 	mov	ecx, edi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
-; 3695 : 	kStream << m_iUniqueLuxuryCities;
+; 3696 : 	kStream << m_iUniqueLuxuryCities;
 
 	lea	edx, DWORD PTR [esi+300]
 	push	edx
 	mov	ecx, edi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
-; 3696 : 	kStream << m_iUniqueLuxuryQuantity;
+; 3697 : 	kStream << m_iUniqueLuxuryQuantity;
 
 	lea	eax, DWORD PTR [esi+304]
 	push	eax
 	mov	ecx, edi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
-; 3697 : 	kStream << m_iUniqueLuxuryCitiesPlaced;
+; 3698 : 	kStream << m_iUniqueLuxuryCitiesPlaced;
 
 	lea	ecx, DWORD PTR [esi+308]
 	push	ecx
 	mov	ecx, edi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
-; 3698 : 	kStream << m_iWorkerSpeedModifier;
+; 3699 : 	kStream << m_iWorkerSpeedModifier;
 
 	lea	edx, DWORD PTR [esi+312]
 	push	edx
 	mov	ecx, edi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
-; 3699 : 	kStream << m_iAfraidMinorPerTurnInfluence;
+; 3700 : 	kStream << m_iAfraidMinorPerTurnInfluence;
 
 	lea	eax, DWORD PTR [esi+316]
 	push	eax
 	mov	ecx, edi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
-; 3700 : 	kStream << m_iLandTradeRouteRangeBonus;
+; 3701 : 	kStream << m_iLandTradeRouteRangeBonus;
 
 	lea	ecx, DWORD PTR [esi+320]
 	push	ecx
 	mov	ecx, edi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
-; 3701 : 	kStream << m_iTradeReligionModifier;
+; 3702 : 	kStream << m_iTradeReligionModifier;
 
 	lea	edx, DWORD PTR [esi+324]
 	push	edx
 	mov	ecx, edi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
-; 3702 : 	kStream << m_iTradeBuildingModifier;
+; 3703 : 	kStream << m_iTradeBuildingModifier;
 
 	lea	eax, DWORD PTR [esi+328]
 	push	eax
 	mov	ecx, edi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
-; 3703 : 
-; 3704 : 	kStream << m_bFightWellDamaged;
+; 3704 : 
+; 3705 : 	kStream << m_bFightWellDamaged;
 
 	lea	ecx, DWORD PTR [esi+332]
 	push	ecx
 	mov	ecx, edi
 	call	?Write@FDataStream@@IAEXAB_N@Z		; FDataStream::Write
 
-; 3705 : 	kStream << m_bMoveFriendlyWoodsAsRoad;
+; 3706 : 	kStream << m_bMoveFriendlyWoodsAsRoad;
 
 	lea	edx, DWORD PTR [esi+333]
 	push	edx
 	mov	ecx, edi
 	call	?Write@FDataStream@@IAEXAB_N@Z		; FDataStream::Write
 
-; 3706 : 	kStream << m_bFasterAlongRiver;
+; 3707 : 	kStream << m_bFasterAlongRiver;
 
 	lea	eax, DWORD PTR [esi+334]
 	push	eax
 	mov	ecx, edi
 	call	?Write@FDataStream@@IAEXAB_N@Z		; FDataStream::Write
 
-; 3707 : 	kStream << m_bFasterInHills;
+; 3708 : 	kStream << m_bFasterInHills;
 
 	lea	ecx, DWORD PTR [esi+335]
 	push	ecx
 	mov	ecx, edi
 	call	?Write@FDataStream@@IAEXAB_N@Z		; FDataStream::Write
 
-; 3708 : 	kStream << m_bEmbarkedAllWater;
+; 3709 : 	kStream << m_bEmbarkedAllWater;
 
 	lea	edx, DWORD PTR [esi+336]
 	push	edx
 	mov	ecx, edi
 	call	?Write@FDataStream@@IAEXAB_N@Z		; FDataStream::Write
 
-; 3709 : 	kStream << m_bEmbarkedToLandFlatCost;
+; 3710 : 	kStream << m_bEmbarkedToLandFlatCost;
 
 	lea	eax, DWORD PTR [esi+337]
 	push	eax
 	mov	ecx, edi
 	call	?Write@FDataStream@@IAEXAB_N@Z		; FDataStream::Write
 
-; 3710 : 	kStream << m_bNoHillsImprovementMaintenance;
+; 3711 : 	kStream << m_bNoHillsImprovementMaintenance;
 
 	lea	ecx, DWORD PTR [esi+338]
 	push	ecx
 	mov	ecx, edi
 	call	?Write@FDataStream@@IAEXAB_N@Z		; FDataStream::Write
 
-; 3711 : 	kStream << m_bTechBoostFromCapitalScienceBuildings;
+; 3712 : 	kStream << m_bTechBoostFromCapitalScienceBuildings;
 
 	lea	edx, DWORD PTR [esi+339]
 	push	edx
 	mov	ecx, edi
 	call	?Write@FDataStream@@IAEXAB_N@Z		; FDataStream::Write
 
-; 3712 : 	kStream << m_bStaysAliveZeroCities;
+; 3713 : 	kStream << m_bStaysAliveZeroCities;
 
 	lea	eax, DWORD PTR [esi+340]
 	push	eax
 	mov	ecx, edi
 	call	?Write@FDataStream@@IAEXAB_N@Z		; FDataStream::Write
 
-; 3713 : 	kStream << m_bFaithFromUnimprovedForest;
+; 3714 : 	kStream << m_bFaithFromUnimprovedForest;
 
 	lea	ecx, DWORD PTR [esi+341]
 	push	ecx
 	mov	ecx, edi
 	call	?Write@FDataStream@@IAEXAB_N@Z		; FDataStream::Write
 
-; 3714 : #ifdef NQ_UNIT_IMMUNE_TO_PLUNDER_FROM_TRAIT
-; 3715 : 	kStream << m_bSeaTradeRoutesArePlunderImmune;
+; 3715 : #ifdef NQ_UNIT_IMMUNE_TO_PLUNDER_FROM_TRAIT
+; 3716 : 	kStream << m_bSeaTradeRoutesArePlunderImmune;
 
 	lea	edx, DWORD PTR [esi+342]
 	push	edx
 	mov	ecx, edi
 	call	?Write@FDataStream@@IAEXAB_N@Z		; FDataStream::Write
 
-; 3716 : #endif
-; 3717 : 
-; 3718 : 	// NQMP GJS - New France UA begin
-; 3719 : 	kStream << m_bEarnsGreatPersonOnSlotOrGuild;
+; 3717 : #endif
+; 3718 : 
+; 3719 : 	// NQMP GJS - New France UA begin
+; 3720 : 	kStream << m_bEarnsGreatPersonOnSlotOrGuild;
 
 	lea	eax, DWORD PTR [esi+343]
 	push	eax
 	mov	ecx, edi
 	call	?Write@FDataStream@@IAEXAB_N@Z		; FDataStream::Write
 
-; 3720 : 	kStream << m_bHasBuiltWritersGuild;
+; 3721 : 	kStream << m_bHasBuiltWritersGuild;
 
 	lea	ecx, DWORD PTR [esi+344]
 	push	ecx
 	mov	ecx, edi
 	call	?Write@FDataStream@@IAEXAB_N@Z		; FDataStream::Write
 
-; 3721 : 	kStream << m_bHasBuiltArtistsGuild;
+; 3722 : 	kStream << m_bHasBuiltArtistsGuild;
 
 	lea	edx, DWORD PTR [esi+345]
 	push	edx
 	mov	ecx, edi
 	call	?Write@FDataStream@@IAEXAB_N@Z		; FDataStream::Write
 
-; 3722 : 	kStream << m_bHasBuiltMusiciansGuild;
+; 3723 : 	kStream << m_bHasBuiltMusiciansGuild;
 
 	lea	eax, DWORD PTR [esi+346]
 	push	eax
 	mov	ecx, edi
 	call	?Write@FDataStream@@IAEXAB_N@Z		; FDataStream::Write
 
-; 3723 : 	// NQMP GJS - New France UA end
-; 3724 : 
-; 3725 : 	kStream << m_bBonusReligiousBelief;
+; 3724 : 	// NQMP GJS - New France UA end
+; 3725 : 
+; 3726 : 	kStream << m_bBonusReligiousBelief;
 
 	lea	ecx, DWORD PTR [esi+347]
 	push	ecx
 	mov	ecx, edi
 	call	?Write@FDataStream@@IAEXAB_N@Z		; FDataStream::Write
 
-; 3726 : 	kStream << m_bAbleToAnnexCityStates;
+; 3727 : 	kStream << m_bAbleToAnnexCityStates;
 
 	lea	edx, DWORD PTR [esi+348]
 	push	edx
 	mov	ecx, edi
 	call	?Write@FDataStream@@IAEXAB_N@Z		; FDataStream::Write
 
-; 3727 : 	kStream << m_bCrossesMountainsAfterGreatGeneral;
+; 3728 : 	kStream << m_bCrossesMountainsAfterGreatGeneral;
 
 	lea	eax, DWORD PTR [esi+349]
 	push	eax
 	mov	ecx, edi
 	call	?Write@FDataStream@@IAEXAB_N@Z		; FDataStream::Write
 
-; 3728 : 	kStream << m_bMayaCalendarBonuses;
+; 3729 : 	kStream << m_bMayaCalendarBonuses;
 
 	lea	ecx, DWORD PTR [esi+350]
 	push	ecx
 	mov	ecx, edi
 	call	?Write@FDataStream@@IAEXAB_N@Z		; FDataStream::Write
 
-; 3729 : 
-; 3730 : 	kStream << m_iBaktunPreviousTurn;
+; 3730 : 
+; 3731 : 	kStream << m_iBaktunPreviousTurn;
 
 	lea	edx, DWORD PTR [esi+740]
 	push	edx
 	mov	ecx, edi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
-; 3731 : 
-; 3732 : 	std::vector<MayaBonusChoice>::const_iterator it;
-; 3733 : 	kStream << m_aMayaBonusChoices.size();
+; 3732 : 
+; 3733 : 	std::vector<MayaBonusChoice>::const_iterator it;
+; 3734 : 	kStream << m_aMayaBonusChoices.size();
 
 	mov	eax, DWORD PTR [esi+772]
 	sub	eax, DWORD PTR [esi+768]
@@ -28699,19 +28700,19 @@ _kStream$ = 8						; size = 4
 	mov	DWORD PTR $T241322[esp+28], eax
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 
-; 3734 : #ifdef AUI_ITERATOR_POSTFIX_INCREMENT_OPTIMIZATIONS
-; 3735 : 	for (it = m_aMayaBonusChoices.begin(); it != m_aMayaBonusChoices.end(); ++it)
-; 3736 : #else
-; 3737 : 	for(it = m_aMayaBonusChoices.begin(); it != m_aMayaBonusChoices.end(); it++)
+; 3735 : #ifdef AUI_ITERATOR_POSTFIX_INCREMENT_OPTIMIZATIONS
+; 3736 : 	for (it = m_aMayaBonusChoices.begin(); it != m_aMayaBonusChoices.end(); ++it)
+; 3737 : #else
+; 3738 : 	for(it = m_aMayaBonusChoices.begin(); it != m_aMayaBonusChoices.end(); it++)
 
 	mov	ebx, DWORD PTR [esi+768]
 	cmp	ebx, DWORD PTR [esi+772]
 	je	SHORT $LN19@Write
 $LL224@Write:
 
-; 3738 : #endif
-; 3739 : 	{
-; 3740 : 		kStream << it->m_eUnitType;
+; 3739 : #endif
+; 3740 : 	{
+; 3741 : 		kStream << it->m_eUnitType;
 
 	push	ebx
 	push	edi
@@ -28719,7 +28720,7 @@ $LL224@Write:
 	add	esp, 8
 	lea	edx, DWORD PTR [ebx+4]
 
-; 3741 : 		kStream << it->m_iBaktunJustFinished;
+; 3742 : 		kStream << it->m_iBaktunJustFinished;
 
 	push	edx
 	mov	ecx, edi
@@ -28730,52 +28731,52 @@ $LL224@Write:
 $LN19@Write:
 	push	ebp
 
-; 3742 : 	}
-; 3743 : 
-; 3744 : 	kStream << m_bNoAnnexing;
+; 3743 : 	}
+; 3744 : 
+; 3745 : 	kStream << m_bNoAnnexing;
 
 	lea	eax, DWORD PTR [esi+351]
 	push	eax
 	mov	ecx, edi
 	call	?Write@FDataStream@@IAEXAB_N@Z		; FDataStream::Write
 
-; 3745 : 	kStream << m_bTechFromCityConquer;
+; 3746 : 	kStream << m_bTechFromCityConquer;
 
 	lea	ecx, DWORD PTR [esi+352]
 	push	ecx
 	mov	ecx, edi
 	call	?Write@FDataStream@@IAEXAB_N@Z		; FDataStream::Write
 
-; 3746 : 	kStream << m_bUniqueLuxuryRequiresNewArea;
+; 3747 : 	kStream << m_bUniqueLuxuryRequiresNewArea;
 
 	lea	edx, DWORD PTR [esi+353]
 	push	edx
 	mov	ecx, edi
 	call	?Write@FDataStream@@IAEXAB_N@Z		; FDataStream::Write
 
-; 3747 : 	kStream << m_bRiverTradeRoad;
+; 3748 : 	kStream << m_bRiverTradeRoad;
 
 	lea	eax, DWORD PTR [esi+354]
 	push	eax
 	mov	ecx, edi
 	call	?Write@FDataStream@@IAEXAB_N@Z		; FDataStream::Write
 
-; 3748 : 	kStream << m_bAngerFreeIntrusionOfCityStates;
+; 3749 : 	kStream << m_bAngerFreeIntrusionOfCityStates;
 
 	lea	ecx, DWORD PTR [esi+355]
 	push	ecx
 	mov	ecx, edi
 	call	?Write@FDataStream@@IAEXAB_N@Z		; FDataStream::Write
 
-; 3749 : 
-; 3750 : 	kStream << m_eCampGuardType;
+; 3750 : 
+; 3751 : 	kStream << m_eCampGuardType;
 
 	lea	edx, DWORD PTR [esi+356]
 	push	edx
 	push	edi
 	call	??6@YAAAVFDataStream@@AAV0@ABW4UnitTypes@@@Z ; operator<<
 
-; 3751 : 	kStream << m_eCombatBonusImprovement;
+; 3752 : 	kStream << m_eCombatBonusImprovement;
 
 	lea	eax, DWORD PTR [esi+368]
 	push	eax
@@ -28783,8 +28784,8 @@ $LN19@Write:
 	call	??6@YAAAVFDataStream@@AAV0@ABW4ImprovementTypes@@@Z ; operator<<
 	add	esp, 16					; 00000010H
 
-; 3752 : 
-; 3753 : 	kStream << ArrayWrapper<int>(NUM_YIELD_TYPES, m_iExtraYieldThreshold);
+; 3753 : 
+; 3754 : 	kStream << ArrayWrapper<int>(NUM_YIELD_TYPES, m_iExtraYieldThreshold);
 
 	lea	ebx, DWORD PTR [esi+384]
 	mov	ebp, 6
@@ -28796,7 +28797,7 @@ $LL260@Write:
 	sub	ebp, 1
 	jne	SHORT $LL260@Write
 
-; 3754 : 	kStream << ArrayWrapper<int>(NUM_YIELD_TYPES, m_iFreeCityYield);
+; 3755 : 	kStream << ArrayWrapper<int>(NUM_YIELD_TYPES, m_iFreeCityYield);
 
 	lea	ebx, DWORD PTR [esi+408]
 	mov	ebp, 6
@@ -28808,7 +28809,7 @@ $LL273@Write:
 	sub	ebp, 1
 	jne	SHORT $LL273@Write
 
-; 3755 : 	kStream << ArrayWrapper<int>(NUM_YIELD_TYPES, m_iYieldChangeStrategicResources);
+; 3756 : 	kStream << ArrayWrapper<int>(NUM_YIELD_TYPES, m_iYieldChangeStrategicResources);
 
 	lea	ebx, DWORD PTR [esi+432]
 	mov	ebp, 6
@@ -28821,7 +28822,7 @@ $LL286@Write:
 	sub	ebp, 1
 	jne	SHORT $LL286@Write
 
-; 3756 : 	kStream << ArrayWrapper<int>(NUM_YIELD_TYPES, m_iYieldChangeLuxuryResources); // NQMP GJS - New Netherlands UA
+; 3757 : 	kStream << ArrayWrapper<int>(NUM_YIELD_TYPES, m_iYieldChangeLuxuryResources); // NQMP GJS - New Netherlands UA
 
 	lea	ebx, DWORD PTR [esi+456]
 	mov	ebp, 6
@@ -28834,7 +28835,7 @@ $LL299@Write:
 	sub	ebp, 1
 	jne	SHORT $LL299@Write
 
-; 3757 : 	kStream << ArrayWrapper<int>(NUM_YIELD_TYPES, m_iYieldRateModifier);
+; 3758 : 	kStream << ArrayWrapper<int>(NUM_YIELD_TYPES, m_iYieldRateModifier);
 
 	lea	ebx, DWORD PTR [esi+552]
 	mov	ebp, 6
@@ -28847,7 +28848,7 @@ $LL312@Write:
 	sub	ebp, 1
 	jne	SHORT $LL312@Write
 
-; 3758 : 	kStream << ArrayWrapper<int>(NUM_YIELD_TYPES, m_iYieldChangeNaturalWonder);
+; 3759 : 	kStream << ArrayWrapper<int>(NUM_YIELD_TYPES, m_iYieldChangeNaturalWonder);
 
 	lea	ebx, DWORD PTR [esi+480]
 	mov	ebp, 6
@@ -28860,7 +28861,7 @@ $LL325@Write:
 	sub	ebp, 1
 	jne	SHORT $LL325@Write
 
-; 3759 : 	kStream << ArrayWrapper<int>(NUM_YIELD_TYPES, m_iYieldChangePerTradePartner);
+; 3760 : 	kStream << ArrayWrapper<int>(NUM_YIELD_TYPES, m_iYieldChangePerTradePartner);
 
 	lea	ebx, DWORD PTR [esi+504]
 	mov	ebp, 6
@@ -28873,7 +28874,7 @@ $LL338@Write:
 	sub	ebp, 1
 	jne	SHORT $LL338@Write
 
-; 3760 : 	kStream << ArrayWrapper<int>(NUM_YIELD_TYPES, m_iYieldChangeIncomingTradeRoute);
+; 3761 : 	kStream << ArrayWrapper<int>(NUM_YIELD_TYPES, m_iYieldChangeIncomingTradeRoute);
 
 	lea	ebx, DWORD PTR [esi+528]
 	mov	ebp, 6
@@ -28886,8 +28887,8 @@ $LL351@Write:
 	sub	ebp, 1
 	jne	SHORT $LL351@Write
 
-; 3761 : 	
-; 3762 : 	CvInfosSerializationHelper::WriteHashedDataArray<TerrainTypes>(kStream, &m_iStrategicResourceQuantityModifier[0], GC.getNumTerrainInfos());
+; 3762 : 	
+; 3763 : 	CvInfosSerializationHelper::WriteHashedDataArray<TerrainTypes>(kStream, &m_iStrategicResourceQuantityModifier[0], GC.getNumTerrainInfos());
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getNumTerrainInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumTerrainInfos
@@ -28897,15 +28898,15 @@ $LL351@Write:
 	push	edi
 	call	??$WriteHashedDataArray@W4TerrainTypes@@H@CvInfosSerializationHelper@@YAXAAVFDataStream@@PAHI@Z ; CvInfosSerializationHelper::WriteHashedDataArray<enum TerrainTypes,int>
 
-; 3763 : 	CvInfosSerializationHelper::WriteHashedDataArray<ResourceTypes>(kStream, m_aiResourceQuantityModifier);
+; 3764 : 	CvInfosSerializationHelper::WriteHashedDataArray<ResourceTypes>(kStream, m_aiResourceQuantityModifier);
 
 	lea	edx, DWORD PTR [esi+612]
 	push	edx
 	push	edi
 	call	??$WriteHashedDataArray@W4ResourceTypes@@H@CvInfosSerializationHelper@@YAXAAVFDataStream@@ABV?$vector@HV?$allocator@H@std@@@std@@@Z ; CvInfosSerializationHelper::WriteHashedDataArray<enum ResourceTypes,int>
 
-; 3764 : 
-; 3765 : 	kStream << m_abNoTrain.size();
+; 3765 : 
+; 3766 : 	kStream << m_abNoTrain.size();
 
 	mov	eax, DWORD PTR [esi+628]
 	add	esp, 20					; 00000014H
@@ -28915,7 +28916,7 @@ $LL351@Write:
 	mov	DWORD PTR $T241334[esp+32], eax
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 
-; 3766 : 	for (uint ui = 0; ui < m_abNoTrain.size(); ui++)
+; 3767 : 	for (uint ui = 0; ui < m_abNoTrain.size(); ui++)
 
 	xor	ebx, ebx
 	cmp	DWORD PTR [esi+628], ebx
@@ -28923,8 +28924,8 @@ $LL351@Write:
 	npad	8
 $LL563@Write:
 
-; 3767 : 	{
-; 3768 : 		kStream << m_abNoTrain[ui];
+; 3768 : 	{
+; 3769 : 		kStream << m_abNoTrain[ui];
 
 	mov	eax, DWORD PTR [esi+636]
 	mov	ecx, ebp
@@ -28965,10 +28966,10 @@ $LN386@Write:
 	jb	SHORT $LL563@Write
 $LN16@Write:
 
-; 3769 : 	}
-; 3770 : 	
-; 3771 : 	// EAP: No build
-; 3772 : 	kStream << m_abNoBuild.size();
+; 3770 : 	}
+; 3771 : 	
+; 3772 : 	// EAP: No build
+; 3773 : 	kStream << m_abNoBuild.size();
 
 	mov	edx, DWORD PTR [esi+648]
 	lea	eax, DWORD PTR $T241336[esp+28]
@@ -28977,14 +28978,14 @@ $LN16@Write:
 	mov	DWORD PTR $T241336[esp+32], edx
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 
-; 3773 : 	for (uint ui = 0; ui < m_abNoBuild.size(); ui++)
+; 3774 : 	for (uint ui = 0; ui < m_abNoBuild.size(); ui++)
 
 	xor	ebx, ebx
 	cmp	DWORD PTR [esi+648], ebx
 	jbe	SHORT $LN13@Write
 
-; 3774 : 	{
-; 3775 : 		kStream << m_abNoBuild[ui];
+; 3775 : 	{
+; 3776 : 		kStream << m_abNoBuild[ui];
 
 	xor	ebp, ebp
 	npad	1
@@ -29028,9 +29029,9 @@ $LN433@Write:
 	jb	SHORT $LL562@Write
 $LN13@Write:
 
-; 3776 : 	}
-; 3777 : 
-; 3778 : 	kStream << m_aFreeTraitUnits.size();
+; 3777 : 	}
+; 3778 : 
+; 3779 : 	kStream << m_aFreeTraitUnits.size();
 
 	mov	edx, DWORD PTR [esi+672]
 	lea	eax, DWORD PTR $T241338[esp+28]
@@ -29039,7 +29040,7 @@ $LN13@Write:
 	mov	DWORD PTR $T241338[esp+32], edx
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 
-; 3779 : 	for(uint ui = 0; ui < m_aFreeTraitUnits.size(); ui++)
+; 3780 : 	for(uint ui = 0; ui < m_aFreeTraitUnits.size(); ui++)
 
 	xor	ebx, ebx
 	cmp	DWORD PTR [esi+672], ebx
@@ -29050,14 +29051,14 @@ $LL12@Write:
 	lea	ebp, DWORD PTR [ebx*8]
 	add	ecx, ebp
 
-; 3780 : 	{
-; 3781 : 		kStream << m_aFreeTraitUnits[ui].m_iFreeUnit;
+; 3781 : 	{
+; 3782 : 		kStream << m_aFreeTraitUnits[ui].m_iFreeUnit;
 
 	push	ecx
 	push	edi
 	call	??6@YAAAVFDataStream@@AAV0@ABW4UnitTypes@@@Z ; operator<<
 
-; 3782 : 		kStream << m_aFreeTraitUnits[ui].m_ePrereqTech;
+; 3783 : 		kStream << m_aFreeTraitUnits[ui].m_ePrereqTech;
 
 	mov	edx, DWORD PTR [esi+668]
 	lea	eax, DWORD PTR [edx+ebp+4]
@@ -29070,14 +29071,14 @@ $LL12@Write:
 	jb	SHORT $LL12@Write
 $LN10@Write:
 
-; 3783 : 	}
-; 3784 : 
-; 3785 : 	int iNumUnitCombatClassInfos = GC.getNumUnitCombatClassInfos();
+; 3784 : 	}
+; 3785 : 
+; 3786 : 	int iNumUnitCombatClassInfos = GC.getNumUnitCombatClassInfos();
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getNumUnitCombatClassInfos@CvGlobals@@QAEHXZ ; CvGlobals::getNumUnitCombatClassInfos
 
-; 3786 : 	kStream << 	iNumUnitCombatClassInfos;
+; 3787 : 	kStream << 	iNumUnitCombatClassInfos;
 
 	lea	ecx, DWORD PTR _iNumUnitCombatClassInfos$[esp+32]
 	push	ecx
@@ -29085,7 +29086,7 @@ $LN10@Write:
 	mov	DWORD PTR _iNumUnitCombatClassInfos$[esp+36], eax
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
-; 3787 : 	for(int iI = 0; iI < iNumUnitCombatClassInfos; iI++)
+; 3788 : 	for(int iI = 0; iI < iNumUnitCombatClassInfos; iI++)
 
 	mov	eax, DWORD PTR _iNumUnitCombatClassInfos$[esp+32]
 	xor	ebx, ebx
@@ -29097,8 +29098,8 @@ $LL9@Write:
 	mov	edx, DWORD PTR [esi+784]
 	lea	eax, DWORD PTR [edx+ebx*4]
 
-; 3788 : 	{
-; 3789 : 		kStream << m_paiMovesChangeUnitCombat[iI];
+; 3789 : 	{
+; 3790 : 		kStream << m_paiMovesChangeUnitCombat[iI];
 
 	push	eax
 	mov	ecx, edi
@@ -29109,8 +29110,8 @@ $LL9@Write:
 	jl	SHORT $LL9@Write
 $LN7@Write:
 
-; 3790 : 	}
-; 3791 : 	for(int iI = 0; iI < iNumUnitCombatClassInfos; iI++)
+; 3791 : 	}
+; 3792 : 	for(int iI = 0; iI < iNumUnitCombatClassInfos; iI++)
 
 	xor	ebx, ebx
 	test	eax, eax
@@ -29119,8 +29120,8 @@ $LL6@Write:
 	mov	ecx, DWORD PTR [esi+800]
 	lea	edx, DWORD PTR [ecx+ebx*4]
 
-; 3792 : 	{
-; 3793 : 		kStream << m_paiMaintenanceModifierUnitCombat[iI];
+; 3793 : 	{
+; 3794 : 		kStream << m_paiMaintenanceModifierUnitCombat[iI];
 
 	push	edx
 	mov	ecx, edi
@@ -29130,9 +29131,9 @@ $LL6@Write:
 	jl	SHORT $LL6@Write
 $LN4@Write:
 
-; 3794 : 	}
-; 3795 : 
-; 3796 : 	kStream << m_ppaaiImprovementYieldChange;
+; 3795 : 	}
+; 3796 : 
+; 3797 : 	kStream << m_ppaaiImprovementYieldChange;
 
 	mov	ecx, DWORD PTR [esi+820]
 	sub	ecx, DWORD PTR [esi+816]
@@ -29158,7 +29159,7 @@ $LN4@Write:
 	push	edx
 	call	??$for_each@V?$_Vector_const_iterator@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@std@@U?$SerializeFromSequenceContainer@$$CBV?$Array@H$05@Firaxis@@$$CBV?$vector@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@std@@@@@std@@YA?AU?$SerializeFromSequenceContainer@$$CBV?$Array@H$05@Firaxis@@$$CBV?$vector@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@std@@@@V?$_Vector_const_iterator@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@0@0U1@@Z ; std::for_each<std::_Vector_const_iterator<Firaxis::Array<int,6>,std::allocator<Firaxis::Array<int,6> > >,SerializeFromSequenceContainer<Firaxis::Array<int,6> const ,std::vector<Firaxis::Array<int,6>,std::allocator<Firaxis::Array<int,6> > > const > >
 
-; 3797 : 	kStream << m_ppaaiSpecialistYieldChange;
+; 3798 : 	kStream << m_ppaaiSpecialistYieldChange;
 
 	mov	ecx, DWORD PTR [esi+836]
 	sub	ecx, DWORD PTR [esi+832]
@@ -29185,10 +29186,10 @@ $LN4@Write:
 	push	edx
 	call	??$for_each@V?$_Vector_const_iterator@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@std@@U?$SerializeFromSequenceContainer@$$CBV?$Array@H$05@Firaxis@@$$CBV?$vector@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@std@@@@@std@@YA?AU?$SerializeFromSequenceContainer@$$CBV?$Array@H$05@Firaxis@@$$CBV?$vector@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@std@@@@V?$_Vector_const_iterator@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@0@0U1@@Z ; std::for_each<std::_Vector_const_iterator<Firaxis::Array<int,6>,std::allocator<Firaxis::Array<int,6> > >,SerializeFromSequenceContainer<Firaxis::Array<int,6> const ,std::vector<Firaxis::Array<int,6>,std::allocator<Firaxis::Array<int,6> > > const > >
 
-; 3798 : #ifdef LEK_TRAIT_SPECIALIST_YIELD_MAX_ONE
-; 3799 : 	kStream << m_ppaaiAnySpecificSpecialistYieldChange;
-; 3800 : #endif
-; 3801 : 	kStream << m_ppaaiUnimprovedFeatureYieldChange;
+; 3799 : #ifdef LEK_TRAIT_SPECIALIST_YIELD_MAX_ONE
+; 3800 : 	kStream << m_ppaaiAnySpecificSpecialistYieldChange;
+; 3801 : #endif
+; 3802 : 	kStream << m_ppaaiUnimprovedFeatureYieldChange;
 
 	mov	ecx, DWORD PTR [esi+852]
 	sub	ecx, DWORD PTR [esi+848]
@@ -29215,8 +29216,8 @@ $LN4@Write:
 	push	edx
 	call	??$for_each@V?$_Vector_const_iterator@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@std@@U?$SerializeFromSequenceContainer@$$CBV?$Array@H$05@Firaxis@@$$CBV?$vector@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@std@@@@@std@@YA?AU?$SerializeFromSequenceContainer@$$CBV?$Array@H$05@Firaxis@@$$CBV?$vector@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@std@@@@V?$_Vector_const_iterator@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@0@0U1@@Z ; std::for_each<std::_Vector_const_iterator<Firaxis::Array<int,6>,std::allocator<Firaxis::Array<int,6> > >,SerializeFromSequenceContainer<Firaxis::Array<int,6> const ,std::vector<Firaxis::Array<int,6>,std::allocator<Firaxis::Array<int,6> > > const > >
 
-; 3802 : 
-; 3803 : 	kStream << (int)m_aUniqueLuxuryAreas.size();
+; 3803 : 
+; 3804 : 	kStream << (int)m_aUniqueLuxuryAreas.size();
 
 	mov	eax, DWORD PTR [esi+732]
 	sub	eax, DWORD PTR [esi+728]
@@ -29228,7 +29229,7 @@ $LN4@Write:
 	mov	DWORD PTR $T241339[esp+28], eax
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
-; 3804 : 	for (unsigned int iI = 0; iI < m_aUniqueLuxuryAreas.size(); iI++)
+; 3805 : 	for (unsigned int iI = 0; iI < m_aUniqueLuxuryAreas.size(); iI++)
 
 	xor	ebx, ebx
 	mov	edx, DWORD PTR [esi+732]
@@ -29241,8 +29242,8 @@ $LL3@Write:
 	mov	eax, DWORD PTR [esi+728]
 	lea	ecx, DWORD PTR [eax+ebx*4]
 
-; 3805 : 	{
-; 3806 : 		kStream << m_aUniqueLuxuryAreas[iI];
+; 3806 : 	{
+; 3807 : 		kStream << m_aUniqueLuxuryAreas[iI];
 
 	push	ecx
 	mov	ecx, edi
@@ -29258,8 +29259,8 @@ $LN1@Write:
 	pop	esi
 	pop	ebx
 
-; 3807 : 	}
-; 3808 : }
+; 3808 : 	}
+; 3809 : }
 
 	add	esp, 16					; 00000010H
 	ret	4
