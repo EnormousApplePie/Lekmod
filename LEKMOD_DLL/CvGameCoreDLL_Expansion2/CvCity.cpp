@@ -6136,13 +6136,13 @@ int CvCity::getCurrentProductionDifference(bool bIgnoreFood, bool bOverflow) con
 
 //	--------------------------------------------------------------------------------
 // What is the production of this city, not counting modifiers specific to what we happen to be building?
-int CvCity::getRawProductionDifference(bool bDisregardIsFoodProduction, bool bOverflow) const
+int CvCity::getRawProductionDifference(bool bIgnoreFood, bool bOverflow) const
 {
 	VALIDATE_OBJECT
 #ifdef AUI_CITY_FIX_DO_PRODUCTION_NO_OVERFLOW_EXPLOIT
-	return getProductionDifference(getProductionNeeded(), getProductionTimes100(), getGeneralProductionModifiers(), (!bDisregardIsFoodProduction && isFoodProduction()), bOverflow);
+	return getProductionDifference(getProductionNeeded(), getProductionTimes100(), getGeneralProductionModifiers(), (!bIgnoreFood && isFoodProduction()), bOverflow);
 #else
-	return getProductionDifference(getProductionNeeded(), getProduction(), getGeneralProductionModifiers(), (!bDisregardIsFoodProduction && isFoodProduction()), bOverflow);
+	return getProductionDifference(getProductionNeeded(), getProduction(), getGeneralProductionModifiers(), (!bIgnoreFood && isFoodProduction()), bOverflow);
 #endif
 }
 
@@ -6221,10 +6221,10 @@ int CvCity::getCurrentProductionDifferenceTimes100(bool bIgnoreFood, bool bOverf
 
 //	--------------------------------------------------------------------------------
 // What is the production of this city, not counting modifiers specific to what we happen to be building?
-int CvCity::getRawProductionDifferenceTimes100(bool bDisregardIsFoodProduction, bool bOverflow) const
+int CvCity::getRawProductionDifferenceTimes100(bool bIgnoreFood, bool bOverflow) const
 {
 	VALIDATE_OBJECT
-	return getProductionDifferenceTimes100(getProductionNeeded(), getProductionTimes100(), getGeneralProductionModifiers(), (!bDisregardIsFoodProduction && isFoodProduction()), bOverflow);
+	return getProductionDifferenceTimes100(getProductionNeeded(), getProductionTimes100(), getGeneralProductionModifiers(), (!bIgnoreFood && isFoodProduction()), bOverflow);
 }
 
 
