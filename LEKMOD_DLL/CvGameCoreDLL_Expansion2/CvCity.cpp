@@ -6124,25 +6124,25 @@ int CvCity::getProductionDifference(int /*iProductionNeeded*/, int /*iProduction
 
 
 //	--------------------------------------------------------------------------------
-int CvCity::getCurrentProductionDifference(bool bIgnoreFood, bool bOverflow) const
+int CvCity::getCurrentProductionDifference(bool bDisregardIsFoodProduction, bool bOverflow) const
 {
 	VALIDATE_OBJECT
 #ifdef AUI_CITY_FIX_DO_PRODUCTION_NO_OVERFLOW_EXPLOIT
-	return getProductionDifference(getProductionNeeded(), getProductionTimes100(), getProductionModifier(), (!bIgnoreFood && isFoodProduction()), bOverflow);
+	return getProductionDifference(getProductionNeeded(), getProductionTimes100(), getProductionModifier(), (!bDisregardIsFoodProduction && isFoodProduction()), bOverflow);
 #else
-	return getProductionDifference(getProductionNeeded(), getProduction(), getProductionModifier(), (!bIgnoreFood && isFoodProduction()), bOverflow);
+	return getProductionDifference(getProductionNeeded(), getProduction(), getProductionModifier(), (!bDisregardIsFoodProduction && isFoodProduction()), bOverflow);
 #endif
 }
 
 //	--------------------------------------------------------------------------------
 // What is the production of this city, not counting modifiers specific to what we happen to be building?
-int CvCity::getRawProductionDifference(bool bIgnoreFood, bool bOverflow) const
+int CvCity::getRawProductionDifference(bool bDisregardIsFoodProduction, bool bOverflow) const
 {
 	VALIDATE_OBJECT
 #ifdef AUI_CITY_FIX_DO_PRODUCTION_NO_OVERFLOW_EXPLOIT
-	return getProductionDifference(getProductionNeeded(), getProductionTimes100(), getGeneralProductionModifiers(), (!bIgnoreFood && isFoodProduction()), bOverflow);
+	return getProductionDifference(getProductionNeeded(), getProductionTimes100(), getGeneralProductionModifiers(), (!bDisregardIsFoodProduction && isFoodProduction()), bOverflow);
 #else
-	return getProductionDifference(getProductionNeeded(), getProduction(), getGeneralProductionModifiers(), (!bIgnoreFood && isFoodProduction()), bOverflow);
+	return getProductionDifference(getProductionNeeded(), getProduction(), getGeneralProductionModifiers(), (!bDisregardIsFoodProduction && isFoodProduction()), bOverflow);
 #endif
 }
 
@@ -6213,18 +6213,18 @@ int CvCity::getProductionDifferenceTimes100(int /*iProductionNeeded*/, int /*iPr
 
 
 //	--------------------------------------------------------------------------------
-int CvCity::getCurrentProductionDifferenceTimes100(bool bIgnoreFood, bool bOverflow) const
+int CvCity::getCurrentProductionDifferenceTimes100(bool bDisregardIsFoodProduction, bool bOverflow) const
 {
 	VALIDATE_OBJECT
-	return getProductionDifferenceTimes100(getProductionNeeded(), getProductionTimes100(), getProductionModifier(), (!bIgnoreFood && isFoodProduction()), bOverflow);
+	return getProductionDifferenceTimes100(getProductionNeeded(), getProductionTimes100(), getProductionModifier(), (!bDisregardIsFoodProduction && isFoodProduction()), bOverflow);
 }
 
 //	--------------------------------------------------------------------------------
 // What is the production of this city, not counting modifiers specific to what we happen to be building?
-int CvCity::getRawProductionDifferenceTimes100(bool bIgnoreFood, bool bOverflow) const
+int CvCity::getRawProductionDifferenceTimes100(bool bDisregardIsFoodProduction, bool bOverflow) const
 {
 	VALIDATE_OBJECT
-	return getProductionDifferenceTimes100(getProductionNeeded(), getProductionTimes100(), getGeneralProductionModifiers(), (!bIgnoreFood && isFoodProduction()), bOverflow);
+	return getProductionDifferenceTimes100(getProductionNeeded(), getProductionTimes100(), getGeneralProductionModifiers(), (!bDisregardIsFoodProduction && isFoodProduction()), bOverflow);
 }
 
 

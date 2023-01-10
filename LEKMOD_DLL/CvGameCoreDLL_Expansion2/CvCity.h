@@ -253,11 +253,11 @@ public:
 	int getOverflowProductionDifference(int iProductionNeeded, int iProduction, int iProductionModifier, int iDiff, int iModifiedProduction) const;
 #endif
 	int getProductionDifference(int iProductionNeeded, int iProduction, int iProductionModifier, bool bFoodProduction, bool bOverflow) const;
-	int getCurrentProductionDifference(bool bIgnoreFood, bool bOverflow) const;
-	int getRawProductionDifference(bool bIgnoreFood, bool bOverflow) const;
+	int getCurrentProductionDifference(bool bDisregardIsFoodProduction, bool bOverflow) const;
+	int getRawProductionDifference(bool bDisregardIsFoodProduction, bool bOverflow) const;
 	int getProductionDifferenceTimes100(int iProductionNeeded, int iProduction, int iProductionModifier, bool bFoodProduction, bool bOverflow) const;
-	int getCurrentProductionDifferenceTimes100(bool bIgnoreFood, bool bOverflow) const;
-	int getRawProductionDifferenceTimes100(bool bIgnoreFood, bool bOverflow) const;
+	int getCurrentProductionDifferenceTimes100(bool bDisregardIsFoodProduction, bool bOverflow) const;
+	int getRawProductionDifferenceTimes100(bool bDisregardIsFoodProduction, bool bOverflow) const;
 	int getExtraProductionDifference(int iExtra) const;
 	int GetFoodProduction(int iExcessFood) const;
 
