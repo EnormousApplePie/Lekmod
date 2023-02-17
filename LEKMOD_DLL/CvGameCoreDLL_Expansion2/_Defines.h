@@ -928,6 +928,13 @@
 #define TURN_TIMER_RESET_BUTTON
 
 
+/////////////////////from Mandritti - for safe refactoring
+
+// Space for redundant code segments
+#define MND_RF_BLANK
+// Directive to ignore changes mid-refactor
+#define MND_RF_MIDCLEAN
+
 
 /////////////////////
 

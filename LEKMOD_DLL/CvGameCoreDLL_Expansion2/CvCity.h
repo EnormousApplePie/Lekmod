@@ -76,6 +76,9 @@ public:
 	int getCachedCultureT100ForThisTurn() const;
 #endif
 	void doTurn();
+#ifdef MND_RF_BLANK
+
+#endif
 
 	bool isCitySelected();
 	bool canBeSelected() const;
