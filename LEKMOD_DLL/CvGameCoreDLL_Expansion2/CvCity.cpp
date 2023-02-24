@@ -2080,16 +2080,22 @@ void CvCity::doTurn()
 	}
 }
 
+#ifdef MND_RF_MIDCLEAN
 //	--------------------------------------------------------------------------------
-#ifdef MND_RF_BLANK
+int CvCity::afterModifiersCityBuildingsDefense()
+{
+	VALIDATE_OBJECT
 
-
-
-
-
-
-
+	int iBuildingDefense = m_pCityBuildings->GetBuildingDefense();
+#ifdef NQ_BUILDING_DEFENSE_FROM_CITIZENS
+	iBuildingDefense += (m_pCityBuildings->GetBuildingDefensePerCitizen() * getPopulation());
 #endif
+
+	return AfterModifiers(m_pCityBuildings->GetBuildingDefenseMod(), iBuildingDefense);  //see: define MND_CLEAN_UTILS
+}
+#endif
+
+
 #ifdef MND_RF_MIDCLEAN
 //	--------------------------------------------------------------------------------
 void CvCity::doCityHPHealing_at_doTurn() {
@@ -2102,17 +2108,7 @@ void CvCity::doCityHPHealing_at_doTurn() {
 		{
 			iHitsHealed++;
 		}
-
-		int iBuildingDefense;
-		iBuildingDefense = m_pCityBuildings->GetBuildingDefense();
-#ifdef NQ_BUILDING_DEFENSE_FROM_CITIZENS
-		// add in defense per citizen here
-		iBuildingDefense += (m_pCityBuildings->GetBuildingDefensePerCitizen() * getPopulation());
-#endif
-		iBuildingDefense *= (100 + m_pCityBuildings->GetBuildingDefenseMod());
-		iBuildingDefense /= 100;
-
-
+		int iBuildingDefense = afterModifiersCityBuildingsDefense();  //hide Message Chaining and subformula
 		iHitsHealed += iBuildingDefense / 500;
 		changeDamage(-iHitsHealed);
 	}
@@ -2135,7 +2131,7 @@ void CvCity::doTurn_rfDuplicate()
 	CvPlot* pLoopPlot;
 	int iI;
 
-	doCityHPHealing_at_doTurn();  //extract method - doCityHPHealing @ doTurn()
+	doCityHPHealing_at_doTurn();  //extract method - doCityHPHealing@doTurn()
 	setDrafted(false);
 	setMadeAttack(false);
 	GetCityBuildings()->SetSoldBuildingThisTurn(false);

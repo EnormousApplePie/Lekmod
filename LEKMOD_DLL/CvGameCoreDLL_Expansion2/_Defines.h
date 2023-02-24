@@ -935,6 +935,9 @@
 // Directive to ignore changes mid-refactor
 #define MND_RF_MIDCLEAN
 
+// Pure functions
+#define MND_CLEAN_UTILS
+
 
 /////////////////////
 
