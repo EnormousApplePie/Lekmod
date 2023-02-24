@@ -2081,7 +2081,7 @@ void CvCity::doTurn()
 }
 
 //	--------------------------------------------------------------------------------
-#ifndef MND_RF_MIDCLEAN
+#ifdef MND_RF_BLANK
 
 
 
@@ -2089,9 +2089,8 @@ void CvCity::doTurn()
 
 
 
-
-
-
+#endif
+#ifdef MND_RF_MIDCLEAN
 //	--------------------------------------------------------------------------------
 void CvCity::doCityHPHealing_at_doTurn() {
 	if (getDamage() > 0)
@@ -2103,13 +2102,17 @@ void CvCity::doCityHPHealing_at_doTurn() {
 		{
 			iHitsHealed++;
 		}
-		int iBuildingDefense = m_pCityBuildings->GetBuildingDefense();
+
+		int iBuildingDefense;
+		iBuildingDefense = m_pCityBuildings->GetBuildingDefense();
 #ifdef NQ_BUILDING_DEFENSE_FROM_CITIZENS
 		// add in defense per citizen here
 		iBuildingDefense += (m_pCityBuildings->GetBuildingDefensePerCitizen() * getPopulation());
 #endif
 		iBuildingDefense *= (100 + m_pCityBuildings->GetBuildingDefenseMod());
 		iBuildingDefense /= 100;
+
+
 		iHitsHealed += iBuildingDefense / 500;
 		changeDamage(-iHitsHealed);
 	}
@@ -2118,7 +2121,6 @@ void CvCity::doCityHPHealing_at_doTurn() {
 		setDamage(0);
 	}
 }
-
 
 //	--------------------------------------------------------------------------------
 void CvCity::doTurn_rfDuplicate()
@@ -2357,8 +2359,6 @@ void CvCity::doTurn_rfDuplicate()
 		// XXX
 	}
 }
-#endif
-#ifdef MND_RF_BLANK
 #endif
 
 //	--------------------------------------------------------------------------------
