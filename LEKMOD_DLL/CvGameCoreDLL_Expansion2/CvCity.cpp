@@ -2084,263 +2084,281 @@ void CvCity::doTurn()
 #ifndef MND_RF_MIDCLEAN
 void CvCity::doTurn_rfDuplicate()
 {
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#ifdef AUI_PERF_LOGGING_FORMATTING_TWEAKS
+	AI_PERF_FORMAT("City-AI-perf.csv", ("CvCity::doTurn, Turn %03d, %s, %s", GC.getGame().getElapsedGameTurns(), GetPlayer()->getCivilizationShortDescription(), getName().c_str()));
+#else
+	AI_PERF_FORMAT("City-AI-perf.csv", ("CvCity::doTurn, Turn %03d, %s, %s,", GC.getGame().getElapsedGameTurns(), GetPlayer()->getCivilizationShortDescription(), getName().c_str()));
+#endif
+
+	VALIDATE_OBJECT
+	CvPlot* pLoopPlot;
+	int iI;
+
+	if (getDamage() > 0)
+	{
+		CvAssertMsg(m_iDamage <= GetMaxHitPoints(), "Somehow a city has more damage than hit points. Please show this to a gameplay programmer immediately.");
+
+		int iHitsHealed = GC.getCITY_HIT_POINTS_HEALED_PER_TURN();
+		if (isCapital() && !GET_PLAYER(getOwner()).isMinorCiv())
+		{
+			iHitsHealed++;
+		}
+		int iBuildingDefense = m_pCityBuildings->GetBuildingDefense();
+#ifdef NQ_BUILDING_DEFENSE_FROM_CITIZENS
+		// add in defense per citizen here
+		iBuildingDefense += (m_pCityBuildings->GetBuildingDefensePerCitizen() * getPopulation());
+#endif
+		iBuildingDefense *= (100 + m_pCityBuildings->GetBuildingDefenseMod());
+		iBuildingDefense /= 100;
+		iHitsHealed += iBuildingDefense / 500;
+		changeDamage(-iHitsHealed);
+	}
+	if (getDamage() < 0)
+	{
+		setDamage(0);
+	}
+
+	setDrafted(false);
+	setMadeAttack(false);
+	GetCityBuildings()->SetSoldBuildingThisTurn(false);
+
+	DoUpdateFeatureSurrounded();
+
+	GetCityStrategyAI()->DoTurn();
+
+#ifndef AUI_YIELDS_APPLIED_AFTER_TURN_NOT_BEFORE
+	GetCityCitizens()->DoTurn();
+#endif
+
+	AI_doTurn();
+
+	bool bRazed = DoRazingTurn();
+
+	if (!bRazed)
+	{
+		DoResistanceTurn();
+
+#ifdef AUI_YIELDS_APPLIED_AFTER_TURN_NOT_BEFORE
+		if (!isHuman() || isProductionAutomated())
+		{
+			if (!isProduction() || isProductionProcess() || AI_isChooseProductionDirty())
+			{
+				AI_chooseProduction(false /*bInterruptWonders*/);
+			}
+		}
+#endif
+		bool bAllowNoProduction = !doCheckProduction();
+
+		doGrowth();
+
+		DoUpdateIndustrialRouteToCapital();
+
+		doProduction(bAllowNoProduction);
+
+		doDecay();
+
+		doMeltdown();
+
+		{
+			AI_PERF_FORMAT_NESTED("City-AI-perf.csv", ("doImprovement, Turn %03d, %s, %s", GC.getGame().getElapsedGameTurns(), GetPlayer()->getCivilizationShortDescription(), getName().c_str()));
+			for (iI = 0; iI < NUM_CITY_PLOTS; iI++)
+			{
+				pLoopPlot = GetCityCitizens()->GetCityPlotFromIndex(iI);
+
+				if (pLoopPlot != NULL)
+				{
+					if (pLoopPlot->getWorkingCity() == this)
+					{
+						if (pLoopPlot->isBeingWorked())
+						{
+							pLoopPlot->doImprovement();
+						}
+					}
+				}
+			}
+		}
+
+#ifndef AUI_YIELDS_APPLIED_AFTER_TURN_NOT_BEFORE
+		// Following function also looks at WLTKD stuff
+		DoTestResourceDemanded();
+#endif
+
+		// Culture accumulation
+#ifdef AUI_YIELDS_APPLIED_AFTER_TURN_NOT_BEFORE
+		if (getCachedCultureT100ForThisTurn() > 0)
+		{
+#ifdef AUI_PLAYER_FIX_JONS_CULTURE_IS_T100
+			ChangeJONSCultureStoredTimes100(getCachedCultureT100ForThisTurn());
+#else
+			ChangeJONSCultureStored(getCachedCultureT100ForThisTurn());
+#endif
+#elif defined(AUI_PLAYER_FIX_JONS_CULTURE_IS_T100)
+		if (getJONSCulturePerTurnTimes100() > 0)
+		{
+			ChangeJONSCultureStoredTimes100(getJONSCulturePerTurnTimes100());
+#else
+		if (getJONSCulturePerTurn() > 0)
+		{
+			ChangeJONSCultureStored(getJONSCulturePerTurn());
+#endif
+		}
+
+		// Enough Culture to acquire a new Plot?
+#ifdef AUI_PLAYER_FIX_JONS_CULTURE_IS_T100
+		if (GetJONSCultureStoredTimes100() >= GetJONSCultureThreshold() * 100)
+#else
+		if (GetJONSCultureStored() >= GetJONSCultureThreshold())
+#endif
+		{
+			DoJONSCultureLevelIncrease();
+		}
+
+#ifdef AUI_YIELDS_APPLIED_AFTER_TURN_NOT_BEFORE
+		GetCityCitizens()->DoTurn();
+#else
+
+		// Resource Demanded Counter
+		if (GetResourceDemandedCountdown() > 0)
+		{
+			ChangeResourceDemandedCountdown(-1);
+
+			if (GetResourceDemandedCountdown() == 0)
+			{
+				// Pick a Resource to demand
+				DoPickResourceDemanded();
+			}
+		}
+#endif
+
+		updateStrengthValue();
+
+		DoNearbyEnemy();
+
+		//Check for Achievements
+		if (isHuman() && !GC.getGame().isGameMultiPlayer() && GET_PLAYER(GC.getGame().getActivePlayer()).isLocalPlayer())
+		{
+			if (getJONSCulturePerTurn() >= 100)
+			{
+				gDLL->UnlockAchievement(ACHIEVEMENT_CITY_100CULTURE);
+			}
+			if (getYieldRate(YIELD_GOLD, false) >= 100)
+			{
+				gDLL->UnlockAchievement(ACHIEVEMENT_CITY_100GOLD);
+			}
+			if (getYieldRate(YIELD_SCIENCE, false) >= 100)
+			{
+				gDLL->UnlockAchievement(ACHIEVEMENT_CITY_100SCIENCE);
+			}
+		}
+
+		// sending notifications on when routes are connected to the capital
+		if (!isCapital())
+		{
+			CvNotifications* pNotifications = GET_PLAYER(m_eOwner).GetNotifications();
+			if (pNotifications)
+			{
+				CvCity* pPlayerCapital = GET_PLAYER(m_eOwner).getCapitalCity();
+				CvAssertMsg(pPlayerCapital, "No capital city?");
+
+				if (m_bRouteToCapitalConnectedLastTurn != m_bRouteToCapitalConnectedThisTurn && pPlayerCapital)
+				{
+					Localization::String strMessage;
+					Localization::String strSummary;
+
+					if (m_bRouteToCapitalConnectedThisTurn)  // connected this turn
+					{
+						strMessage = Localization::Lookup("TXT_KEY_NOTIFICATION_TRADE_ROUTE_ESTABLISHED");
+						strSummary = Localization::Lookup("TXT_KEY_NOTIFICATION_SUMMARY_TRADE_ROUTE_ESTABLISHED");
+						strMessage << getNameKey();
+						strMessage << pPlayerCapital->getNameKey();
+						pNotifications->Add(NOTIFICATION_TRADE_ROUTE, strMessage.toUTF8(), strSummary.toUTF8(), -1, -1, -1);
+					}
+					else // lost connection this turn
+					{
+						strMessage = Localization::Lookup("TXT_KEY_NOTIFICATION_TRADE_ROUTE_BROKEN");
+						strSummary = Localization::Lookup("TXT_KEY_NOTIFICATION_SUMMARY_TRADE_ROUTE_BROKEN");
+						strMessage << getNameKey();
+						strMessage << pPlayerCapital->getNameKey();
+						pNotifications->Add(NOTIFICATION_TRADE_ROUTE_BROKEN, strMessage.toUTF8(), strSummary.toUTF8(), -1, -1, -1);
+					}
+				}
+			}
+
+			m_bRouteToCapitalConnectedLastTurn = m_bRouteToCapitalConnectedThisTurn;
+		}
+
+		// XXX
+#ifdef _DEBUG
+		{
+			CvPlot* pPlot;
+			int iCount;
+
+			for (iI = 0; iI < NUM_YIELD_TYPES; iI++)
+			{
+				CvAssert(getBaseYieldRate((YieldTypes)iI) >= 0);
+				CvAssert(getYieldRate((YieldTypes)iI, false) >= 0);
+
+				iCount = 0;
+
+				for (int iJ = 0; iJ < NUM_CITY_PLOTS; iJ++)
+				{
+					pPlot = GetCityCitizens()->GetCityPlotFromIndex(iJ);
+
+					if (pPlot != NULL)
+					{
+						if (GetCityCitizens()->IsWorkingPlot(pPlot))
+						{
+							iCount += pPlot->getYield((YieldTypes)iI);
+						}
+					}
+				}
+
+				for (int iJ = 0; iJ < GC.getNumSpecialistInfos(); iJ++)
+				{
+					iCount += (GET_PLAYER(getOwner()).specialistYield(((SpecialistTypes)iJ), ((YieldTypes)iI)) * (GetCityCitizens()->GetSpecialistCount((SpecialistTypes)iJ)));
+				}
+
+				for (int iJ = 0; iJ < GC.getNumBuildingInfos(); iJ++)
+				{
+					const BuildingTypes eBuilding = static_cast<BuildingTypes>(iJ);
+					CvBuildingEntry* pkBuildingInfo = GC.getBuildingInfo(eBuilding);
+					if (pkBuildingInfo)
+					{
+						iCount += m_pCityBuildings->GetNumActiveBuilding(eBuilding) * (pkBuildingInfo->GetYieldChange(iI) + m_pCityBuildings->GetBuildingYieldChange((BuildingClassTypes)pkBuildingInfo->GetBuildingClassType(), (YieldTypes)iI));
+					}
+				}
+
+				// Science from Population
+				if ((YieldTypes)iI == YIELD_SCIENCE)
+				{
+					iCount += getPopulation() * GC.getSCIENCE_PER_POPULATION();
+				}
+
+				CvAssert(iCount == getBaseYieldRate((YieldTypes)iI));
+			}
+		}
+#endif
+		// XXX
+	}
 }
+#endif
+#ifdef MND_RF_BLANK
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #endif
 
 //	--------------------------------------------------------------------------------

@@ -76,6 +76,9 @@ public:
 	int getCachedCultureT100ForThisTurn() const;
 #endif
 	void doTurn();
+#ifndef MND_RF_MIDCLEAN
+	void doTurn_rfDuplicate()
+#endif
 #ifdef MND_RF_BLANK
 
 #endif
