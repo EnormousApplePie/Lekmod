@@ -2082,18 +2082,18 @@ void CvCity::doTurn()
 
 //	--------------------------------------------------------------------------------
 #ifndef MND_RF_MIDCLEAN
-void CvCity::doTurn_rfDuplicate()
-{
-#ifdef AUI_PERF_LOGGING_FORMATTING_TWEAKS
-	AI_PERF_FORMAT("City-AI-perf.csv", ("CvCity::doTurn, Turn %03d, %s, %s", GC.getGame().getElapsedGameTurns(), GetPlayer()->getCivilizationShortDescription(), getName().c_str()));
-#else
-	AI_PERF_FORMAT("City-AI-perf.csv", ("CvCity::doTurn, Turn %03d, %s, %s,", GC.getGame().getElapsedGameTurns(), GetPlayer()->getCivilizationShortDescription(), getName().c_str()));
-#endif
 
-	VALIDATE_OBJECT
-	CvPlot* pLoopPlot;
-	int iI;
 
+
+
+
+
+
+
+
+
+//	--------------------------------------------------------------------------------
+void CvCity::doCityHPHealing_at_doTurn() {
 	if (getDamage() > 0)
 	{
 		CvAssertMsg(m_iDamage <= GetMaxHitPoints(), "Somehow a city has more damage than hit points. Please show this to a gameplay programmer immediately.");
@@ -2117,7 +2117,23 @@ void CvCity::doTurn_rfDuplicate()
 	{
 		setDamage(0);
 	}
+}
 
+
+//	--------------------------------------------------------------------------------
+void CvCity::doTurn_rfDuplicate()
+{
+#ifdef AUI_PERF_LOGGING_FORMATTING_TWEAKS
+	AI_PERF_FORMAT("City-AI-perf.csv", ("CvCity::doTurn, Turn %03d, %s, %s", GC.getGame().getElapsedGameTurns(), GetPlayer()->getCivilizationShortDescription(), getName().c_str()));
+#else
+	AI_PERF_FORMAT("City-AI-perf.csv", ("CvCity::doTurn, Turn %03d, %s, %s,", GC.getGame().getElapsedGameTurns(), GetPlayer()->getCivilizationShortDescription(), getName().c_str()));
+#endif
+
+	VALIDATE_OBJECT
+	CvPlot* pLoopPlot;
+	int iI;
+
+	doCityHPHealing_at_doTurn();  //extract method - doCityHPHealing @ doTurn()
 	setDrafted(false);
 	setMadeAttack(false);
 	GetCityBuildings()->SetSoldBuildingThisTurn(false);
@@ -2343,22 +2359,6 @@ void CvCity::doTurn_rfDuplicate()
 }
 #endif
 #ifdef MND_RF_BLANK
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #endif
 
 //	--------------------------------------------------------------------------------

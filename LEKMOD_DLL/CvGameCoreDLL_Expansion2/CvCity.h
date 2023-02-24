@@ -79,6 +79,9 @@ public:
 #ifndef MND_RF_MIDCLEAN
 	void doTurn_rfDuplicate()
 #endif
+#ifndef MND_RF_MIDCLEAN
+	void doCityHPHealing_at_doTurn()
+#endif
 #ifdef MND_RF_BLANK
 
 #endif
