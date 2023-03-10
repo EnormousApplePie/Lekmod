@@ -10,9 +10,9 @@ INCLUDELIB MSVCRT
 INCLUDELIB OLDNAMES
 
 CONST	SEGMENT
-$SG220687 DB	'Sl', 00H
-$SG220691 DB	00H
-$SG220692 DB	'%s:%d', 0aH, 00H
+$SG221196 DB	'Sl', 00H
+$SG221200 DB	00H
+$SG221201 DB	'%s:%d', 0aH, 00H
 CONST	ENDS
 PUBLIC	?luaL_optbool@@YA_NPAUlua_State@@H_N@Z		; luaL_optbool
 EXTRN	_lua_toboolean:PROC
@@ -1092,9 +1092,9 @@ __ehfuncinfo$?DumpCallStack@LuaSupport@@YAXPAUlua_State@@@Z DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?DumpCallStack@LuaSupport@@YAXPAUlua_State@@@Z
 _TEXT	SEGMENT
-_szTemp$220689 = -640					; size = 4
-_ar$220685 = -636					; size = 100
-_FStringFixedBuffer_szTemp$220690 = -536		; size = 524
+_szTemp$221198 = -640					; size = 4
+_ar$221194 = -636					; size = 100
+_FStringFixedBuffer_szTemp$221199 = -536		; size = 524
 __$EHRec$ = -12						; size = 12
 _L$ = 8							; size = 4
 ?DumpCallStack@LuaSupport@@YAXPAUlua_State@@@Z PROC	; LuaSupport::DumpCallStack, COMDAT
@@ -1124,7 +1124,7 @@ $LL5@DumpCallSt:
 ; 57   : 		lua_Debug ar;
 ; 58   : 		if(lua_getstack(L, i, &ar))
 
-	lea	eax, DWORD PTR _ar$220685[esp+656]
+	lea	eax, DWORD PTR _ar$221194[esp+656]
 	push	eax
 	push	ebx
 	push	ebp
@@ -1136,16 +1136,16 @@ $LL5@DumpCallSt:
 ; 59   : 		{
 ; 60   : 			lua_getinfo(L, "Sl", &ar);
 
-	lea	ecx, DWORD PTR _ar$220685[esp+656]
+	lea	ecx, DWORD PTR _ar$221194[esp+656]
 	push	ecx
-	push	OFFSET $SG220687
+	push	OFFSET $SG221196
 	push	ebp
 	call	_lua_getinfo
 	add	esp, 12					; 0000000cH
 
 ; 61   : 			if(ar.currentline > 0)
 
-	cmp	DWORD PTR _ar$220685[esp+676], edi
+	cmp	DWORD PTR _ar$221194[esp+676], edi
 	jle	$LN4@DumpCallSt
 
 ; 62   : 			{
@@ -1153,32 +1153,32 @@ $LL5@DumpCallSt:
 
 	call	?FStringA_GetStringInitData@@YAPAUFStringAData@FStringA@@XZ ; FStringA_GetStringInitData
 	add	eax, 12					; 0000000cH
-	mov	DWORD PTR _szTemp$220689[esp+656], eax
-	lea	edx, DWORD PTR _szTemp$220689[esp+656]
+	mov	DWORD PTR _szTemp$221198[esp+656], eax
+	lea	edx, DWORD PTR _szTemp$221198[esp+656]
 	push	edx
-	lea	ecx, DWORD PTR _FStringFixedBuffer_szTemp$220690[esp+660]
+	lea	ecx, DWORD PTR _FStringFixedBuffer_szTemp$221199[esp+660]
 	mov	DWORD PTR __$EHRec$[esp+668], edi
 	call	??0?$FStringAFixedBuffer@$0CAA@@FStringA@@QAE@AAV1@@Z ; FStringA::FStringAFixedBuffer<512>::FStringAFixedBuffer<512>
 
 ; 64   : 				szTemp.Format("%s:%d\n", (ar.source)?ar.source:"", ar.currentline);
 
-	mov	eax, DWORD PTR _ar$220685[esp+672]
+	mov	eax, DWORD PTR _ar$221194[esp+672]
 	cmp	eax, edi
 	jne	SHORT $LN9@DumpCallSt
-	mov	eax, OFFSET $SG220691
+	mov	eax, OFFSET $SG221200
 $LN9@DumpCallSt:
-	mov	ecx, DWORD PTR _ar$220685[esp+676]
+	mov	ecx, DWORD PTR _ar$221194[esp+676]
 	push	ecx
 	push	eax
-	lea	edx, DWORD PTR _szTemp$220689[esp+664]
-	push	OFFSET $SG220692
+	lea	edx, DWORD PTR _szTemp$221198[esp+664]
+	push	OFFSET $SG221201
 	push	edx
 	call	?Format@FStringA@@QAAXPBDZZ		; FStringA::Format
 
 ; 65   : 				OutputDebugString(szTemp.c_str());
 ; 66   : 			}
 
-	mov	esi, DWORD PTR _szTemp$220689[esp+672]
+	mov	esi, DWORD PTR _szTemp$221198[esp+672]
 	add	esi, -12				; fffffff4H
 	add	esp, 16					; 00000010H
 	mov	DWORD PTR __$EHRec$[esp+664], -1
@@ -1193,10 +1193,10 @@ $LN9@DumpCallSt:
 	call	??_V@YAXPAX@Z				; operator delete[]
 	add	esp, 4
 $LN23@DumpCallSt:
-	mov	DWORD PTR _szTemp$220689[esp+656], edi
+	mov	DWORD PTR _szTemp$221198[esp+656], edi
 	call	?FStringA_GetStringInitData@@YAPAUFStringAData@FStringA@@XZ ; FStringA_GetStringInitData
 	add	eax, 12					; 0000000cH
-	mov	DWORD PTR _szTemp$220689[esp+656], eax
+	mov	DWORD PTR _szTemp$221198[esp+656], eax
 $LN4@DumpCallSt:
 	inc	ebx
 	cmp	ebx, 10					; 0000000aH
@@ -1218,7 +1218,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?DumpCallStack@LuaSupport@@YAXPAUlua_State@@@Z$0:
-	lea	ecx, DWORD PTR _szTemp$220689[ebp]
+	lea	ecx, DWORD PTR _szTemp$221198[ebp]
 	jmp	??1FStringA@@QAE@XZ			; FStringA::~FStringA
 __ehhandler$?DumpCallStack@LuaSupport@@YAXPAUlua_State@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?DumpCallStack@LuaSupport@@YAXPAUlua_State@@@Z

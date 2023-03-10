@@ -12,300 +12,300 @@ INCLUDELIB OLDNAMES
 PUBLIC	?NO_QUEST_DATA@CvMinorCivQuest@@2HB		; CvMinorCivQuest::NO_QUEST_DATA
 PUBLIC	?NO_TURN@CvMinorCivQuest@@2HB			; CvMinorCivQuest::NO_TURN
 CONST	SEGMENT
-$SG222514 DB	'ShortDescription', 00H
+$SG222991 DB	'ShortDescription', 00H
 	ORG $+3
-$SG222515 DB	'LevelExperienceModifier', 00H
-$SG222516 DB	'GreatPeopleRateModifier', 00H
-$SG222517 DB	'GreatScientistRateModifier', 00H
+$SG222992 DB	'LevelExperienceModifier', 00H
+$SG222993 DB	'GreatPeopleRateModifier', 00H
+$SG222994 DB	'GreatScientistRateModifier', 00H
 	ORG $+1
-$SG222518 DB	'GreatGeneralRateModifier', 00H
+$SG222995 DB	'GreatGeneralRateModifier', 00H
 	ORG $+3
-$SG222519 DB	'GreatGeneralExtraBonus', 00H
+$SG222996 DB	'GreatGeneralExtraBonus', 00H
 	ORG $+1
-$SG222520 DB	'GreatPersonGiftInfluence', 00H
+$SG222997 DB	'GreatPersonGiftInfluence', 00H
 	ORG $+3
-$SG222521 DB	'MaxGlobalBuildingProductionModifier', 00H
-$SG222522 DB	'MaxTeamBuildingProductionModifier', 00H
+$SG222998 DB	'MaxGlobalBuildingProductionModifier', 00H
+$SG222999 DB	'MaxTeamBuildingProductionModifier', 00H
 	ORG $+2
-$SG222523 DB	'MaxPlayerBuildingProductionModifier', 00H
-$SG222524 DB	'CityUnhappinessModifier', 00H
-$SG222525 DB	'PopulationUnhappinessModifier', 00H
+$SG223000 DB	'MaxPlayerBuildingProductionModifier', 00H
+$SG223001 DB	'CityUnhappinessModifier', 00H
+$SG223002 DB	'PopulationUnhappinessModifier', 00H
 	ORG $+2
-$SG222526 DB	'CityStateBonusModifier', 00H
+$SG223003 DB	'CityStateBonusModifier', 00H
 	ORG $+1
-$SG222527 DB	'CityStateFriendshipModifier', 00H
-$SG222528 DB	'CityStateCombatModifier', 00H
-$SG222529 DB	'LandBarbarianConversionPercent', 00H
+$SG223004 DB	'CityStateFriendshipModifier', 00H
+$SG223005 DB	'CityStateCombatModifier', 00H
+$SG223006 DB	'LandBarbarianConversionPercent', 00H
 	ORG $+1
-$SG222530 DB	'LandBarbarianConversionExtraUnits', 00H
+$SG223007 DB	'LandBarbarianConversionExtraUnits', 00H
 	ORG $+2
-$SG222531 DB	'SeaBarbarianConversionPercent', 00H
+$SG223008 DB	'SeaBarbarianConversionPercent', 00H
 	ORG $+2
-$SG222532 DB	'CapitalBuildingModifier', 00H
-$SG222533 DB	'PlotBuyCostModifier', 00H
-$SG222534 DB	'PlotCultureCostModifier', 00H
-$SG222535 DB	'SciencePerGreatPersonBorn', 00H
+$SG223009 DB	'CapitalBuildingModifier', 00H
+$SG223010 DB	'PlotBuyCostModifier', 00H
+$SG223011 DB	'PlotCultureCostModifier', 00H
+$SG223012 DB	'SciencePerGreatPersonBorn', 00H
 	ORG $+2
-$SG222536 DB	'NumTurnsBeforeMinorAlliesRefuseBribes', 00H
+$SG223013 DB	'NumTurnsBeforeMinorAlliesRefuseBribes', 00H
 	ORG $+2
-$SG222537 DB	'GoldenAgeTileBonusFaith', 00H
-$SG222538 DB	'CultureFromKills', 00H
+$SG223014 DB	'GoldenAgeTileBonusFaith', 00H
+$SG223015 DB	'CultureFromKills', 00H
 	ORG $+3
-$SG222539 DB	'FaithFromKills', 00H
+$SG223016 DB	'FaithFromKills', 00H
 	ORG $+1
-$SG222540 DB	'CityCultureBonus', 00H
+$SG223017 DB	'CityCultureBonus', 00H
 	ORG $+3
-$SG222541 DB	'CapitalThemingBonusModifier', 00H
-$SG222542 DB	'PolicyCostModifier', 00H
+$SG223018 DB	'CapitalThemingBonusModifier', 00H
+$SG223019 DB	'PolicyCostModifier', 00H
 	ORG $+1
-$SG222543 DB	'CityConnectionTradeRouteChange', 00H
+$SG223020 DB	'CityConnectionTradeRouteChange', 00H
 	ORG $+1
-$SG222544 DB	'WonderProductionModifier', 00H
+$SG223021 DB	'WonderProductionModifier', 00H
 	ORG $+3
-$SG222545 DB	'PlunderModifier', 00H
-$SG222546 DB	'ImprovementMaintenanceModifier', 00H
+$SG223022 DB	'PlunderModifier', 00H
+$SG223023 DB	'ImprovementMaintenanceModifier', 00H
 	ORG $+1
-$SG222547 DB	'GoldenAgeDurationModifier', 00H
+$SG223024 DB	'GoldenAgeDurationModifier', 00H
 	ORG $+2
-$SG222548 DB	'GoldenAgeMoveChange', 00H
-$SG222549 DB	'GoldenAgeCombatModifier', 00H
-$SG222550 DB	'GoldenAgeTourismModifier', 00H
+$SG223025 DB	'GoldenAgeMoveChange', 00H
+$SG223026 DB	'GoldenAgeCombatModifier', 00H
+$SG223027 DB	'GoldenAgeTourismModifier', 00H
 	ORG $+3
-$SG222551 DB	'GoldenAgeGreatArtistRateModifier', 00H
+$SG223028 DB	'GoldenAgeGreatArtistRateModifier', 00H
 	ORG $+3
-$SG222552 DB	'GoldenAgeGreatMusicianRateModifier', 00H
+$SG223029 DB	'GoldenAgeGreatMusicianRateModifier', 00H
 	ORG $+1
-$SG222553 DB	'GoldenAgeGreatWriterRateModifier', 00H
+$SG223030 DB	'GoldenAgeGreatWriterRateModifier', 00H
 	ORG $+3
-$SG222554 DB	'ExtraEmbarkMoves', 00H
+$SG223031 DB	'ExtraEmbarkMoves', 00H
 	ORG $+3
-$SG222555 DB	'NaturalWonderFirstFinderGold', 00H
+$SG223032 DB	'NaturalWonderFirstFinderGold', 00H
 	ORG $+3
-$SG222556 DB	'NaturalWonderSubsequentFinderGold', 00H
+$SG223033 DB	'NaturalWonderSubsequentFinderGold', 00H
 	ORG $+2
-$SG222557 DB	'NaturalWonderFirstFinderFaith', 00H
+$SG223034 DB	'NaturalWonderFirstFinderFaith', 00H
 	ORG $+2
-$SG222558 DB	'NaturalWonderSubsequentFinderFaith', 00H
+$SG223035 DB	'NaturalWonderSubsequentFinderFaith', 00H
 	ORG $+1
-$SG222559 DB	'NaturalWonderYieldModifier', 00H
+$SG223036 DB	'NaturalWonderYieldModifier', 00H
 	ORG $+1
-$SG222560 DB	'NaturalWonderHappinessModifier', 00H
+$SG223037 DB	'NaturalWonderHappinessModifier', 00H
 	ORG $+1
-$SG222561 DB	'NearbyImprovementCombatBonus', 00H
+$SG223038 DB	'NearbyImprovementCombatBonus', 00H
 	ORG $+3
-$SG222562 DB	'NearbyImprovementBonusRange', 00H
-$SG222563 DB	'CultureBuildingYieldChange', 00H
+$SG223039 DB	'NearbyImprovementBonusRange', 00H
+$SG223040 DB	'CultureBuildingYieldChange', 00H
 	ORG $+1
-$SG222564 DB	'CombatBonusVsHigherTech', 00H
-$SG222565 DB	'CombatBonusVsLargerCiv', 00H
+$SG223041 DB	'CombatBonusVsHigherTech', 00H
+$SG223042 DB	'CombatBonusVsLargerCiv', 00H
 	ORG $+1
-$SG222566 DB	'LandUnitMaintenanceModifier', 00H
-$SG222567 DB	'NavalUnitMaintenanceModifier', 00H
+$SG223043 DB	'LandUnitMaintenanceModifier', 00H
+$SG223044 DB	'NavalUnitMaintenanceModifier', 00H
 	ORG $+3
-$SG222568 DB	'RazeSpeedModifier', 00H
+$SG223045 DB	'RazeSpeedModifier', 00H
 	ORG $+2
-$SG222569 DB	'DOFGreatPersonModifier', 00H
+$SG223046 DB	'DOFGreatPersonModifier', 00H
 	ORG $+1
-$SG222570 DB	'LuxuryHappinessRetention', 00H
+$SG223047 DB	'LuxuryHappinessRetention', 00H
 	ORG $+3
-$SG222571 DB	'ExtraHappinessPerLuxury', 00H
-$SG222572 DB	'ExtraSpies', 00H
+$SG223048 DB	'ExtraHappinessPerLuxury', 00H
+$SG223049 DB	'ExtraSpies', 00H
 	ORG $+1
-$SG222573 DB	'HappinessPerReligion', 00H
+$SG223050 DB	'HappinessPerReligion', 00H
 	ORG $+3
-$SG222574 DB	'UnresearchedTechBonusFromKills', 00H
+$SG223051 DB	'UnresearchedTechBonusFromKills', 00H
 	ORG $+1
-$SG222575 DB	'ExtraFoundedCityTerritoryClaimRange', 00H
-$SG222576 DB	'FreeSocialPoliciesPerEra', 00H
+$SG223052 DB	'ExtraFoundedCityTerritoryClaimRange', 00H
+$SG223053 DB	'FreeSocialPoliciesPerEra', 00H
 	ORG $+3
-$SG222577 DB	'NumTradeRoutesModifier', 00H
+$SG223054 DB	'NumTradeRoutesModifier', 00H
 	ORG $+1
-$SG222578 DB	'TradeRouteResourceModifier', 00H
+$SG223055 DB	'TradeRouteResourceModifier', 00H
 	ORG $+1
-$SG222579 DB	'UniqueLuxuryCities', 00H
+$SG223056 DB	'UniqueLuxuryCities', 00H
 	ORG $+1
-$SG222580 DB	'UniqueLuxuryQuantity', 00H
+$SG223057 DB	'UniqueLuxuryQuantity', 00H
 	ORG $+3
-$SG222581 DB	'WorkerSpeedModifier', 00H
-$SG222582 DB	'AfraidMinorPerTurnInfluence', 00H
-$SG222583 DB	'LandTradeRouteRangeBonus', 00H
+$SG223058 DB	'WorkerSpeedModifier', 00H
+$SG223059 DB	'AfraidMinorPerTurnInfluence', 00H
+$SG223060 DB	'LandTradeRouteRangeBonus', 00H
 	ORG $+3
-$SG222584 DB	'TradeReligionModifier', 00H
+$SG223061 DB	'TradeReligionModifier', 00H
 	ORG $+2
-$SG222585 DB	'TradeBuildingModifier', 00H
+$SG223062 DB	'TradeBuildingModifier', 00H
 	ORG $+2
-$SG222587 DB	'FreeUnit', 00H
+$SG223064 DB	'FreeUnit', 00H
 	ORG $+3
-$SG222589 DB	'FreeUnitPrereqTech', 00H
+$SG223066 DB	'FreeUnitPrereqTech', 00H
 	ORG $+1
-$SG222592 DB	'FreeBuildingPrereqTech', 00H
+$SG223069 DB	'FreeBuildingPrereqTech', 00H
 	ORG $+1
-$SG222595 DB	'CapitalFreeBuildingPrereqTech', 00H
+$SG223072 DB	'CapitalFreeBuildingPrereqTech', 00H
 	ORG $+2
-$SG222598 DB	'CombatBonusImprovement', 00H
+$SG223075 DB	'CombatBonusImprovement', 00H
 	ORG $+1
-$SG222601 DB	'ObsoleteTech', 00H
+$SG223078 DB	'ObsoleteTech', 00H
 	ORG $+3
-$SG222603 DB	'PrereqTech', 00H
+$SG223080 DB	'PrereqTech', 00H
 	ORG $+1
-$SG222605 DB	'FreeBuilding', 00H
+$SG223082 DB	'FreeBuilding', 00H
 	ORG $+3
-$SG222608 DB	'FreeCapitalBuilding', 00H
-$SG222611 DB	'FreeBuildingOnConquest', 00H
+$SG223085 DB	'FreeCapitalBuilding', 00H
+$SG223088 DB	'FreeBuildingOnConquest', 00H
 	ORG $+1
-$SG222614 DB	'FightWellDamaged', 00H
+$SG223091 DB	'FightWellDamaged', 00H
 	ORG $+3
-$SG222615 DB	'MoveFriendlyWoodsAsRoad', 00H
-$SG222616 DB	'FasterAlongRiver', 00H
+$SG223092 DB	'MoveFriendlyWoodsAsRoad', 00H
+$SG223093 DB	'FasterAlongRiver', 00H
 	ORG $+3
-$SG222617 DB	'FasterInHills', 00H
+$SG223094 DB	'FasterInHills', 00H
 	ORG $+2
-$SG222618 DB	'EmbarkedAllWater', 00H
+$SG223095 DB	'EmbarkedAllWater', 00H
 	ORG $+3
-$SG222619 DB	'EmbarkedToLandFlatCost', 00H
+$SG223096 DB	'EmbarkedToLandFlatCost', 00H
 	ORG $+1
-$SG222620 DB	'NoHillsImprovementMaintenance', 00H
+$SG223097 DB	'NoHillsImprovementMaintenance', 00H
 	ORG $+2
-$SG222621 DB	'TechBoostFromCapitalScienceBuildings', 00H
+$SG223098 DB	'TechBoostFromCapitalScienceBuildings', 00H
 	ORG $+3
-$SG222622 DB	'StaysAliveZeroCities', 00H
+$SG223099 DB	'StaysAliveZeroCities', 00H
 	ORG $+3
-$SG222623 DB	'FaithFromUnimprovedForest', 00H
+$SG223100 DB	'FaithFromUnimprovedForest', 00H
 	ORG $+2
-$SG222624 DB	'SeaTradeRoutesArePlunderImmune', 00H
+$SG223101 DB	'SeaTradeRoutesArePlunderImmune', 00H
 	ORG $+1
-$SG222625 DB	'EarnsGreatPersonOnSlotOrGuild', 00H
+$SG223102 DB	'EarnsGreatPersonOnSlotOrGuild', 00H
 	ORG $+2
-$SG222626 DB	'BonusReligiousBelief', 00H
+$SG223103 DB	'BonusReligiousBelief', 00H
 	ORG $+3
-$SG222627 DB	'AbleToAnnexCityStates', 00H
+$SG223104 DB	'AbleToAnnexCityStates', 00H
 	ORG $+2
-$SG222628 DB	'CrossesMountainsAfterGreatGeneral', 00H
+$SG223105 DB	'CrossesMountainsAfterGreatGeneral', 00H
 	ORG $+2
-$SG222629 DB	'MayaCalendarBonuses', 00H
-$SG222630 DB	'NoAnnexing', 00H
+$SG223106 DB	'MayaCalendarBonuses', 00H
+$SG223107 DB	'NoAnnexing', 00H
 	ORG $+1
-$SG222631 DB	'TechFromCityConquer', 00H
-$SG222632 DB	'UniqueLuxuryRequiresNewArea', 00H
-$SG222633 DB	'RiverTradeRoad', 00H
+$SG223108 DB	'TechFromCityConquer', 00H
+$SG223109 DB	'UniqueLuxuryRequiresNewArea', 00H
+$SG223110 DB	'RiverTradeRoad', 00H
 	ORG $+1
-$SG222634 DB	'AngerFreeIntrusionOfCityStates', 00H
+$SG223111 DB	'AngerFreeIntrusionOfCityStates', 00H
 	ORG $+1
-$SG222636 DB	'TraitType', 00H
+$SG223113 DB	'TraitType', 00H
 	ORG $+2
-$SG222637 DB	'Trait_ExtraYieldThresholds', 00H
+$SG223114 DB	'Trait_ExtraYieldThresholds', 00H
 	ORG $+1
-$SG222638 DB	'TraitType', 00H
+$SG223115 DB	'TraitType', 00H
 	ORG $+2
-$SG222639 DB	'Trait_YieldChanges', 00H
+$SG223116 DB	'Trait_YieldChanges', 00H
 	ORG $+1
-$SG222640 DB	'TraitType', 00H
+$SG223117 DB	'TraitType', 00H
 	ORG $+2
-$SG222641 DB	'Trait_YieldChangesStrategicResources', 00H
+$SG223118 DB	'Trait_YieldChangesStrategicResources', 00H
 	ORG $+3
-$SG222642 DB	'TraitType', 00H
+$SG223119 DB	'TraitType', 00H
 	ORG $+2
-$SG222643 DB	'Trait_YieldChangesLuxuryResources', 00H
+$SG223120 DB	'Trait_YieldChangesLuxuryResources', 00H
 	ORG $+2
-$SG222644 DB	'TraitType', 00H
+$SG223121 DB	'TraitType', 00H
 	ORG $+2
-$SG222645 DB	'Trait_YieldChangesNaturalWonder', 00H
-$SG222646 DB	'TraitType', 00H
+$SG223122 DB	'Trait_YieldChangesNaturalWonder', 00H
+$SG223123 DB	'TraitType', 00H
 	ORG $+2
-$SG222647 DB	'Trait_YieldChangesPerTradePartner', 00H
+$SG223124 DB	'Trait_YieldChangesPerTradePartner', 00H
 	ORG $+2
-$SG222648 DB	'TraitType', 00H
+$SG223125 DB	'TraitType', 00H
 	ORG $+2
-$SG222649 DB	'Trait_YieldChangesIncomingTradeRoute', 00H
+$SG223126 DB	'Trait_YieldChangesIncomingTradeRoute', 00H
 	ORG $+3
-$SG222650 DB	'TraitType', 00H
+$SG223127 DB	'TraitType', 00H
 	ORG $+2
-$SG222651 DB	'Trait_YieldModifiers', 00H
+$SG223128 DB	'Trait_YieldModifiers', 00H
 	ORG $+3
-$SG222659 DB	'Trait_Terrains', 00H
+$SG223136 DB	'Trait_Terrains', 00H
 	ORG $+1
-$SG222663 DB	'select TraitType, Terrains.ID as TerrainID, StrategicRes'
+$SG223140 DB	'select TraitType, Terrains.ID as TerrainID, StrategicRes'
 	DB	'ourceQuantityModifier from Trait_Terrains join Terrains on Te'
 	DB	'rrains.Type = TerrainType where TraitType = ?', 00H
 	ORG $+1
-$SG222668 DB	'TerrainID', 00H
+$SG223145 DB	'TerrainID', 00H
 	ORG $+2
-$SG222670 DB	'StrategicResourceQuantityModifier', 00H
+$SG223147 DB	'StrategicResourceQuantityModifier', 00H
 	ORG $+2
-$SG222672 DB	'FreePromotionUnitCombats', 00H
+$SG223149 DB	'FreePromotionUnitCombats', 00H
 	ORG $+3
-$SG222676 DB	'select UnitPromotions.ID, UnitCombatInfos.ID from Trait_'
+$SG223153 DB	'select UnitPromotions.ID, UnitCombatInfos.ID from Trait_'
 	DB	'FreePromotionUnitCombats, UnitPromotions, UnitCombatInfos whe'
 	DB	're TraitType = ? and PromotionType = UnitPromotions.Type and '
 	DB	'UnitCombatType = UnitCombatInfos.Type', 00H
-$SG222756 DB	'ResourceQuantityModifier', 00H
+$SG223233 DB	'ResourceQuantityModifier', 00H
 	ORG $+3
-$SG222757 DB	'TraitType', 00H
+$SG223234 DB	'TraitType', 00H
 	ORG $+2
-$SG222758 DB	'ResourceType', 00H
+$SG223235 DB	'ResourceType', 00H
 	ORG $+3
-$SG222759 DB	'Trait_ResourceQuantityModifiers', 00H
-$SG222760 DB	'Resources', 00H
+$SG223236 DB	'Trait_ResourceQuantityModifiers', 00H
+$SG223237 DB	'Resources', 00H
 	ORG $+2
-$SG222762 DB	'UnitCombatInfos', 00H
-$SG222764 DB	'Trait_MovesChangeUnitCombats', 00H
+$SG223239 DB	'UnitCombatInfos', 00H
+$SG223241 DB	'Trait_MovesChangeUnitCombats', 00H
 	ORG $+7
-$SG222768 DB	'select UnitCombatInfos.ID, MovesChange from Trait_MovesC'
+$SG223245 DB	'select UnitCombatInfos.ID, MovesChange from Trait_MovesC'
 	DB	'hangeUnitCombats inner join UnitCombatInfos on UnitCombatInfo'
 	DB	's.Type = UnitCombatType where TraitType = ?;', 00H
 	ORG $+2
-$SG222775 DB	'UnitCombatInfos', 00H
-$SG222777 DB	'Trait_MaintenanceModifierUnitCombats', 00H
+$SG223252 DB	'UnitCombatInfos', 00H
+$SG223254 DB	'Trait_MaintenanceModifierUnitCombats', 00H
 	ORG $+7
-$SG222781 DB	'select UnitCombatInfos.ID, MaintenanceModifier from Trai'
+$SG223258 DB	'select UnitCombatInfos.ID, MaintenanceModifier from Trai'
 	DB	't_MaintenanceModifierUnitCombats inner join UnitCombatInfos o'
 	DB	'n UnitCombatInfos.Type = UnitCombatType where TraitType = ?;', 00H
 	ORG $+2
-$SG222787 DB	'Yields', 00H
+$SG223264 DB	'Yields', 00H
 	ORG $+1
-$SG222788 DB	'Improvements', 00H
+$SG223265 DB	'Improvements', 00H
 	ORG $+3
-$SG222790 DB	'Trait_ImprovementYieldChanges', 00H
+$SG223267 DB	'Trait_ImprovementYieldChanges', 00H
 	ORG $+6
-$SG222793 DB	'select Improvements.ID as ImprovementID, Yields.ID as Yi'
+$SG223270 DB	'select Improvements.ID as ImprovementID, Yields.ID as Yi'
 	DB	'eldID, Yield from Trait_ImprovementYieldChanges inner join Im'
 	DB	'provements on Improvements.Type = ImprovementType inner join '
 	DB	'Yields on Yields.Type = YieldType where TraitType = ?', 00H
-$SG222800 DB	'Yields', 00H
+$SG223277 DB	'Yields', 00H
 	ORG $+1
-$SG222801 DB	'Specialists', 00H
-$SG222803 DB	'Building_SpecialistYieldChanges', 00H
-$SG222814 DB	'Features', 00H
+$SG223278 DB	'Specialists', 00H
+$SG223280 DB	'Building_SpecialistYieldChanges', 00H
+$SG223291 DB	'Features', 00H
 	ORG $+3
-$SG222806 DB	'select Specialists.ID as SpecialistID, Yields.ID as Yiel'
+$SG223283 DB	'select Specialists.ID as SpecialistID, Yields.ID as Yiel'
 	DB	'dID, Yield from Trait_SpecialistYieldChanges inner join Speci'
 	DB	'alists on Specialists.Type = SpecialistType inner join Yields'
 	DB	' on Yields.Type = YieldType where TraitType = ?', 00H
 	ORG $+2
-$SG222813 DB	'Yields', 00H
+$SG223290 DB	'Yields', 00H
 	ORG $+1
-$SG222816 DB	'Trait_UnimprovedFeatureYieldChanges', 00H
-$SG222819 DB	'select Features.ID as FeatureID, Yields.ID as YieldID, Y'
+$SG223293 DB	'Trait_UnimprovedFeatureYieldChanges', 00H
+$SG223296 DB	'select Features.ID as FeatureID, Yields.ID as YieldID, Y'
 	DB	'ield from Trait_UnimprovedFeatureYieldChanges inner join Feat'
 	DB	'ures on Features.Type = FeatureType inner join Yields on Yiel'
 	DB	'ds.Type = YieldType where TraitType = ?', 00H
 	ORG $+2
-$SG222831 DB	'Trait_NoTrain', 00H
+$SG223308 DB	'Trait_NoTrain', 00H
 	ORG $+6
-$SG222834 DB	'SELECT Traits.ID, UnitClasses.ID FROM Trait_NoTrain inne'
+$SG223311 DB	'SELECT Traits.ID, UnitClasses.ID FROM Trait_NoTrain inne'
 	DB	'r join Traits on Trait_NoTrain.TraitType = Traits.Type inner '
 	DB	'join UnitClasses on Trait_NoTrain.UnitClassType = UnitClasses'
 	DB	'.Type where TraitType = ?', 00H
-$SG222846 DB	'Trait_NoBuild', 00H
+$SG223323 DB	'Trait_NoBuild', 00H
 	ORG $+6
-$SG222849 DB	'SELECT Traits.ID, Improvements.ID FROM Trait_NoBuild inn'
+$SG223326 DB	'SELECT Traits.ID, Improvements.ID FROM Trait_NoBuild inn'
 	DB	'er join Traits on Trait_NoBuild.TraitType = Traits.Type inner'
 	DB	' join Improvements on Trait_NoBuild.ImprovementType = Improve'
 	DB	'ments.Type where TraitType = ?', 00H
 	ORG $+3
-$SG222861 DB	'Trait_FreeResourceFirstXCities', 00H
+$SG223338 DB	'Trait_FreeResourceFirstXCities', 00H
 	ORG $+5
-$SG222864 DB	'select Resources.ID as ResourceID, ResourceQuantity, Num'
+$SG223341 DB	'select Resources.ID as ResourceID, ResourceQuantity, Num'
 	DB	'Cities from Trait_FreeResourceFirstXCities inner join Resourc'
 	DB	'es on Resources.Type = ResourceType where TraitType = ?', 00H
 	ORG $+3
@@ -315,59 +315,59 @@ _DAYS_IN_KATUN DD 045e10000r			; 7200
 _DAYS_IN_TUN DD	043b40000r			; 360
 _DAYS_IN_WINAL DD 041a00000r			; 20
 _DAYS_IN_YEAR DD 043b69f00r			; 365.242
-$SG223528 DB	'%d.%d.%d.%d.%d', 00H
+$SG224005 DB	'%d.%d.%d.%d.%d', 00H
 	ORG $+1
-$SG223548 DB	'TXT_KEY_MAYA_CALENDAR_LONG_STRING', 00H
+$SG224025 DB	'TXT_KEY_MAYA_CALENDAR_LONG_STRING', 00H
 	ORG $+2
-$SG223555 DB	'UNIT_PROPHET', 00H
+$SG224032 DB	'UNIT_PROPHET', 00H
 	ORG $+3
-$SG223566 DB	'UNIT_ENGINEER', 00H
+$SG224043 DB	'UNIT_ENGINEER', 00H
 	ORG $+2
-$SG223572 DB	'UNIT_SCIENTIST', 00H
+$SG224049 DB	'UNIT_SCIENTIST', 00H
 	ORG $+1
-$SG223576 DB	'AIGRANDSTRATEGY_SPACESHIP', 00H
+$SG224053 DB	'AIGRANDSTRATEGY_SPACESHIP', 00H
 	ORG $+2
-$SG223579 DB	'UNIT_ARTIST', 00H
-$SG223583 DB	'AIGRANDSTRATEGY_CULTURE', 00H
-$SG223586 DB	'UNIT_MERCHANT', 00H
+$SG224056 DB	'UNIT_ARTIST', 00H
+$SG224060 DB	'AIGRANDSTRATEGY_CULTURE', 00H
+$SG224063 DB	'UNIT_MERCHANT', 00H
 	ORG $+2
-$SG223590 DB	'AIGRANDSTRATEGY_UNITED_NATIONS', 00H
+$SG224067 DB	'AIGRANDSTRATEGY_UNITED_NATIONS', 00H
 	ORG $+1
-$SG223593 DB	'UNIT_GREAT_GENERAL', 00H
+$SG224070 DB	'UNIT_GREAT_GENERAL', 00H
 	ORG $+1
-$SG223597 DB	'AIGRANDSTRATEGY_CONQUEST', 00H
+$SG224074 DB	'AIGRANDSTRATEGY_CONQUEST', 00H
 	ORG $+3
-$SG223600 DB	'UNIT_PROPHET', 00H
+$SG224077 DB	'UNIT_PROPHET', 00H
 	ORG $+3
-$SG223604 DB	'UNIT_ENGINEER', 00H
+$SG224081 DB	'UNIT_ENGINEER', 00H
 	ORG $+2
-$SG223608 DB	'UNIT_WRITER', 00H
-$SG223612 DB	'UNIT_MERCHANT', 00H
+$SG224085 DB	'UNIT_WRITER', 00H
+$SG224089 DB	'UNIT_MERCHANT', 00H
 	ORG $+2
-$SG223616 DB	'UNIT_SCIENTIST', 00H
+$SG224093 DB	'UNIT_SCIENTIST', 00H
 	ORG $+1
-$SG223620 DB	'UNIT_ARTIST', 00H
-$SG223624 DB	'UNIT_MUSICIAN', 00H
+$SG224097 DB	'UNIT_ARTIST', 00H
+$SG224101 DB	'UNIT_MUSICIAN', 00H
 	ORG $+2
-$SG223628 DB	'UNIT_GREAT_GENERAL', 00H
+$SG224105 DB	'UNIT_GREAT_GENERAL', 00H
 	ORG $+1
-$SG223632 DB	'UNIT_GREAT_ADMIRAL', 00H
+$SG224109 DB	'UNIT_GREAT_ADMIRAL', 00H
 	ORG $+1
-$SG223786 DB	'SPECIALUNIT_PEOPLE', 00H
+$SG224263 DB	'SPECIALUNIT_PEOPLE', 00H
 	ORG $+1
-$SG224144 DB	'Barbarian Camp Conversion', 00H
+$SG224621 DB	'Barbarian Camp Conversion', 00H
 	ORG $+2
-$SG224156 DB	'Converted barbarian camp, X: %d, Y: %d', 00H
+$SG224633 DB	'Converted barbarian camp, X: %d, Y: %d', 00H
 	ORG $+1
-$SG224159 DB	'TXT_KEY_NOTIFICATION_BARB_CAMP_CONVERTS', 00H
-$SG224162 DB	'TXT_KEY_NOTIFICATION_SUMMARY_BARB_CAMP_CONVERTS', 00H
-$SG224175 DB	'Barbarian Naval Unit Conversion', 00H
-$SG224178 DB	'LEADER_SULEIMAN', 00H
-$SG224181 DB	'Converted barbarian naval unit, X: %d, Y: %d', 00H
+$SG224636 DB	'TXT_KEY_NOTIFICATION_BARB_CAMP_CONVERTS', 00H
+$SG224639 DB	'TXT_KEY_NOTIFICATION_SUMMARY_BARB_CAMP_CONVERTS', 00H
+$SG224652 DB	'Barbarian Naval Unit Conversion', 00H
+$SG224655 DB	'LEADER_SULEIMAN', 00H
+$SG224658 DB	'Converted barbarian naval unit, X: %d, Y: %d', 00H
 	ORG $+3
-$SG224184 DB	'TXT_KEY_NOTIFICATION_BARB_NAVAL_UNIT_CONVERTS', 00H
+$SG224661 DB	'TXT_KEY_NOTIFICATION_BARB_NAVAL_UNIT_CONVERTS', 00H
 	ORG $+2
-$SG224187 DB	'TXT_KEY_NOTIFICATION_SUMMARY_BARB_NAVAL_UNIT_CONVERTS', 00H
+$SG224664 DB	'TXT_KEY_NOTIFICATION_SUMMARY_BARB_NAVAL_UNIT_CONVERTS', 00H
 CONST	ENDS
 ;	COMDAT ?NO_TURN@CvMinorCivQuest@@2HB
 CONST	SEGMENT
@@ -4920,8 +4920,8 @@ __ehfuncinfo$?_Xlen@?$vector@UFreeResourceXCities@@V?$allocator@UFreeResourceXCi
 xdata$x	ENDS
 ;	COMDAT ?_Xlen@?$vector@UFreeResourceXCities@@V?$allocator@UFreeResourceXCities@@@std@@@std@@KAXXZ
 _TEXT	SEGMENT
-$T228880 = -80						; size = 28
-$T228879 = -52						; size = 40
+$T229357 = -80						; size = 28
+$T229356 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ?_Xlen@?$vector@UFreeResourceXCities@@V?$allocator@UFreeResourceXCities@@@std@@@std@@KAXXZ PROC ; std::vector<FreeResourceXCities,std::allocator<FreeResourceXCities> >::_Xlen, COMDAT
 
@@ -4937,22 +4937,22 @@ __$EHRec$ = -12						; size = 12
 ; 1260 : 		_THROW(length_error, "vector<T> too long");
 
 	push	OFFSET ??_C@_0BD@OLBABOEK@vector?$DMT?$DO?5too?5long?$AA@
-	lea	ecx, DWORD PTR $T228880[esp+84]
+	lea	ecx, DWORD PTR $T229357[esp+84]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T228879[esp+80]
+	lea	ecx, DWORD PTR $T229356[esp+80]
 	mov	DWORD PTR __$EHRec$[esp+88], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T228880[esp+80]
+	lea	eax, DWORD PTR $T229357[esp+80]
 	push	eax
-	lea	ecx, DWORD PTR $T228879[esp+96]
+	lea	ecx, DWORD PTR $T229356[esp+96]
 	mov	BYTE PTR __$EHRec$[esp+92], 1
-	mov	DWORD PTR $T228879[esp+84], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T229356[esp+84], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVlength_error@std@@
-	lea	ecx, DWORD PTR $T228879[esp+84]
+	lea	ecx, DWORD PTR $T229356[esp+84]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+96], 0
-	mov	DWORD PTR $T228879[esp+88], OFFSET ??_7length_error@std@@6B@
+	mov	DWORD PTR $T229356[esp+88], OFFSET ??_7length_error@std@@6B@
 	call	__CxxThrowException@8
 $LN13@Xlen:
 $LN12@Xlen:
@@ -4961,10 +4961,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Xlen@?$vector@UFreeResourceXCities@@V?$allocator@UFreeResourceXCities@@@std@@@std@@KAXXZ$0:
-	lea	ecx, DWORD PTR $T228880[ebp]
+	lea	ecx, DWORD PTR $T229357[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Xlen@?$vector@UFreeResourceXCities@@V?$allocator@UFreeResourceXCities@@@std@@@std@@KAXXZ$2:
-	lea	ecx, DWORD PTR $T228879[ebp]
+	lea	ecx, DWORD PTR $T229356[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Xlen@?$vector@UFreeResourceXCities@@V?$allocator@UFreeResourceXCities@@@std@@@std@@KAXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?_Xlen@?$vector@UFreeResourceXCities@@V?$allocator@UFreeResourceXCities@@@std@@@std@@KAXXZ
@@ -5046,8 +5046,8 @@ __ehfuncinfo$?_Xlen@?$vector@PAVCvTraitEntry@@V?$allocator@PAVCvTraitEntry@@@std
 xdata$x	ENDS
 ;	COMDAT ?_Xlen@?$vector@PAVCvTraitEntry@@V?$allocator@PAVCvTraitEntry@@@std@@@std@@KAXXZ
 _TEXT	SEGMENT
-$T228915 = -80						; size = 28
-$T228914 = -52						; size = 40
+$T229392 = -80						; size = 28
+$T229391 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ?_Xlen@?$vector@PAVCvTraitEntry@@V?$allocator@PAVCvTraitEntry@@@std@@@std@@KAXXZ PROC ; std::vector<CvTraitEntry *,std::allocator<CvTraitEntry *> >::_Xlen, COMDAT
 
@@ -5063,22 +5063,22 @@ __$EHRec$ = -12						; size = 12
 ; 1260 : 		_THROW(length_error, "vector<T> too long");
 
 	push	OFFSET ??_C@_0BD@OLBABOEK@vector?$DMT?$DO?5too?5long?$AA@
-	lea	ecx, DWORD PTR $T228915[esp+84]
+	lea	ecx, DWORD PTR $T229392[esp+84]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T228914[esp+80]
+	lea	ecx, DWORD PTR $T229391[esp+80]
 	mov	DWORD PTR __$EHRec$[esp+88], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T228915[esp+80]
+	lea	eax, DWORD PTR $T229392[esp+80]
 	push	eax
-	lea	ecx, DWORD PTR $T228914[esp+96]
+	lea	ecx, DWORD PTR $T229391[esp+96]
 	mov	BYTE PTR __$EHRec$[esp+92], 1
-	mov	DWORD PTR $T228914[esp+84], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T229391[esp+84], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVlength_error@std@@
-	lea	ecx, DWORD PTR $T228914[esp+84]
+	lea	ecx, DWORD PTR $T229391[esp+84]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+96], 0
-	mov	DWORD PTR $T228914[esp+88], OFFSET ??_7length_error@std@@6B@
+	mov	DWORD PTR $T229391[esp+88], OFFSET ??_7length_error@std@@6B@
 	call	__CxxThrowException@8
 $LN13@Xlen@2:
 $LN12@Xlen@2:
@@ -5087,10 +5087,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Xlen@?$vector@PAVCvTraitEntry@@V?$allocator@PAVCvTraitEntry@@@std@@@std@@KAXXZ$0:
-	lea	ecx, DWORD PTR $T228915[ebp]
+	lea	ecx, DWORD PTR $T229392[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Xlen@?$vector@PAVCvTraitEntry@@V?$allocator@PAVCvTraitEntry@@@std@@@std@@KAXXZ$2:
-	lea	ecx, DWORD PTR $T228914[ebp]
+	lea	ecx, DWORD PTR $T229391[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Xlen@?$vector@PAVCvTraitEntry@@V?$allocator@PAVCvTraitEntry@@@std@@@std@@KAXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?_Xlen@?$vector@PAVCvTraitEntry@@V?$allocator@PAVCvTraitEntry@@@std@@@std@@KAXXZ
@@ -5193,8 +5193,8 @@ __ehfuncinfo$?_Xlen@?$vector@UMayaBonusChoice@@V?$allocator@UMayaBonusChoice@@@s
 xdata$x	ENDS
 ;	COMDAT ?_Xlen@?$vector@UMayaBonusChoice@@V?$allocator@UMayaBonusChoice@@@std@@@std@@KAXXZ
 _TEXT	SEGMENT
-$T228960 = -80						; size = 28
-$T228959 = -52						; size = 40
+$T229437 = -80						; size = 28
+$T229436 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ?_Xlen@?$vector@UMayaBonusChoice@@V?$allocator@UMayaBonusChoice@@@std@@@std@@KAXXZ PROC ; std::vector<MayaBonusChoice,std::allocator<MayaBonusChoice> >::_Xlen, COMDAT
 
@@ -5210,22 +5210,22 @@ __$EHRec$ = -12						; size = 12
 ; 1260 : 		_THROW(length_error, "vector<T> too long");
 
 	push	OFFSET ??_C@_0BD@OLBABOEK@vector?$DMT?$DO?5too?5long?$AA@
-	lea	ecx, DWORD PTR $T228960[esp+84]
+	lea	ecx, DWORD PTR $T229437[esp+84]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T228959[esp+80]
+	lea	ecx, DWORD PTR $T229436[esp+80]
 	mov	DWORD PTR __$EHRec$[esp+88], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T228960[esp+80]
+	lea	eax, DWORD PTR $T229437[esp+80]
 	push	eax
-	lea	ecx, DWORD PTR $T228959[esp+96]
+	lea	ecx, DWORD PTR $T229436[esp+96]
 	mov	BYTE PTR __$EHRec$[esp+92], 1
-	mov	DWORD PTR $T228959[esp+84], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T229436[esp+84], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVlength_error@std@@
-	lea	ecx, DWORD PTR $T228959[esp+84]
+	lea	ecx, DWORD PTR $T229436[esp+84]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+96], 0
-	mov	DWORD PTR $T228959[esp+88], OFFSET ??_7length_error@std@@6B@
+	mov	DWORD PTR $T229436[esp+88], OFFSET ??_7length_error@std@@6B@
 	call	__CxxThrowException@8
 $LN13@Xlen@3:
 $LN12@Xlen@3:
@@ -5234,10 +5234,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Xlen@?$vector@UMayaBonusChoice@@V?$allocator@UMayaBonusChoice@@@std@@@std@@KAXXZ$0:
-	lea	ecx, DWORD PTR $T228960[ebp]
+	lea	ecx, DWORD PTR $T229437[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Xlen@?$vector@UMayaBonusChoice@@V?$allocator@UMayaBonusChoice@@@std@@@std@@KAXXZ$2:
-	lea	ecx, DWORD PTR $T228959[ebp]
+	lea	ecx, DWORD PTR $T229436[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Xlen@?$vector@UMayaBonusChoice@@V?$allocator@UMayaBonusChoice@@@std@@@std@@KAXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?_Xlen@?$vector@UMayaBonusChoice@@V?$allocator@UMayaBonusChoice@@@std@@@std@@KAXXZ
@@ -6349,8 +6349,8 @@ __TI2?AVbad_alloc@std@@ DD 00H
 xdata$x	ENDS
 ;	COMDAT ??$_Allocate@UFreeResourceXCities@@@std@@YAPAUFreeResourceXCities@@IPAU1@@Z
 _TEXT	SEGMENT
-$T229305 = -12						; size = 12
-$T229309 = 8						; size = 4
+$T229782 = -12						; size = 12
+$T229786 = 8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ??$_Allocate@UFreeResourceXCities@@@std@@YAPAUFreeResourceXCities@@IPAU1@@Z PROC ; std::_Allocate<FreeResourceXCities>, COMDAT
@@ -6392,15 +6392,15 @@ $LN3@Allocate:
 
 ; 40   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T229309[esp+8]
+	lea	eax, DWORD PTR $T229786[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T229305[esp+16]
-	mov	DWORD PTR $T229309[esp+12], 0
+	lea	ecx, DWORD PTR $T229782[esp+16]
+	mov	DWORD PTR $T229786[esp+12], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T229305[esp+16]
+	lea	ecx, DWORD PTR $T229782[esp+16]
 	push	ecx
-	mov	DWORD PTR $T229305[esp+20], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T229782[esp+20], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN9@Allocate:
 $LN8@Allocate:
@@ -6411,8 +6411,8 @@ PUBLIC	??$_Allocate@PAVCvTraitEntry@@@std@@YAPAPAVCvTraitEntry@@IPAPAV1@@Z ; std
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Allocate@PAVCvTraitEntry@@@std@@YAPAPAVCvTraitEntry@@IPAPAV1@@Z
 _TEXT	SEGMENT
-$T229315 = -12						; size = 12
-$T229319 = 8						; size = 4
+$T229792 = -12						; size = 12
+$T229796 = 8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ??$_Allocate@PAVCvTraitEntry@@@std@@YAPAPAVCvTraitEntry@@IPAPAV1@@Z PROC ; std::_Allocate<CvTraitEntry *>, COMDAT
@@ -6454,15 +6454,15 @@ $LN3@Allocate@2:
 
 ; 40   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T229319[esp+8]
+	lea	eax, DWORD PTR $T229796[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T229315[esp+16]
-	mov	DWORD PTR $T229319[esp+12], 0
+	lea	ecx, DWORD PTR $T229792[esp+16]
+	mov	DWORD PTR $T229796[esp+12], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T229315[esp+16]
+	lea	ecx, DWORD PTR $T229792[esp+16]
 	push	ecx
-	mov	DWORD PTR $T229315[esp+20], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T229792[esp+20], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN9@Allocate@2:
 $LN8@Allocate@2:
@@ -6473,8 +6473,8 @@ PUBLIC	??$_Allocate@UMayaBonusChoice@@@std@@YAPAUMayaBonusChoice@@IPAU1@@Z ; std
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Allocate@UMayaBonusChoice@@@std@@YAPAUMayaBonusChoice@@IPAU1@@Z
 _TEXT	SEGMENT
-$T229325 = -12						; size = 12
-$T229329 = 8						; size = 4
+$T229802 = -12						; size = 12
+$T229806 = 8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ??$_Allocate@UMayaBonusChoice@@@std@@YAPAUMayaBonusChoice@@IPAU1@@Z PROC ; std::_Allocate<MayaBonusChoice>, COMDAT
@@ -6516,15 +6516,15 @@ $LN3@Allocate@3:
 
 ; 40   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T229329[esp+8]
+	lea	eax, DWORD PTR $T229806[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T229325[esp+16]
-	mov	DWORD PTR $T229329[esp+12], 0
+	lea	ecx, DWORD PTR $T229802[esp+16]
+	mov	DWORD PTR $T229806[esp+12], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T229325[esp+16]
+	lea	ecx, DWORD PTR $T229802[esp+16]
 	push	ecx
-	mov	DWORD PTR $T229325[esp+20], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T229802[esp+20], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN9@Allocate@3:
 $LN8@Allocate@3:
@@ -6553,8 +6553,8 @@ PUBLIC	??$_Allocate@U_Node@?$_Tree_nod@V?$_Tmap_traits@HHU?$less@H@std@@V?$alloc
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Allocate@U_Node@?$_Tree_nod@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$00@std@@@std@@@std@@YAPAU_Node@?$_Tree_nod@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$00@std@@@0@IPAU120@@Z
 _TEXT	SEGMENT
-$T229338 = -12						; size = 12
-$T229342 = 8						; size = 4
+$T229815 = -12						; size = 12
+$T229819 = 8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ??$_Allocate@U_Node@?$_Tree_nod@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$00@std@@@std@@@std@@YAPAU_Node@?$_Tree_nod@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$00@std@@@0@IPAU120@@Z PROC ; std::_Allocate<std::_Tree_nod<std::_Tmap_traits<int,int,std::less<int>,std::allocator<std::pair<int const ,int> >,1> >::_Node>, COMDAT
@@ -6599,15 +6599,15 @@ $LN3@Allocate@4:
 
 ; 40   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T229342[esp+8]
+	lea	eax, DWORD PTR $T229819[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T229338[esp+16]
-	mov	DWORD PTR $T229342[esp+12], 0
+	lea	ecx, DWORD PTR $T229815[esp+16]
+	mov	DWORD PTR $T229819[esp+12], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T229338[esp+16]
+	lea	ecx, DWORD PTR $T229815[esp+16]
 	push	ecx
-	mov	DWORD PTR $T229338[esp+20], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T229815[esp+20], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN9@Allocate@4:
 $LN8@Allocate@4:
@@ -8578,8 +8578,8 @@ __ehfuncinfo$?_Xlen@?$vector@HV?$allocator@H@std@@@std@@KAXXZ DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?_Xlen@?$vector@HV?$allocator@H@std@@@std@@KAXXZ
 _TEXT	SEGMENT
-$T229644 = -80						; size = 28
-$T229643 = -52						; size = 40
+$T230121 = -80						; size = 28
+$T230120 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ?_Xlen@?$vector@HV?$allocator@H@std@@@std@@KAXXZ PROC	; std::vector<int,std::allocator<int> >::_Xlen, COMDAT
 
@@ -8595,22 +8595,22 @@ __$EHRec$ = -12						; size = 12
 ; 1260 : 		_THROW(length_error, "vector<T> too long");
 
 	push	OFFSET ??_C@_0BD@OLBABOEK@vector?$DMT?$DO?5too?5long?$AA@
-	lea	ecx, DWORD PTR $T229644[esp+84]
+	lea	ecx, DWORD PTR $T230121[esp+84]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T229643[esp+80]
+	lea	ecx, DWORD PTR $T230120[esp+80]
 	mov	DWORD PTR __$EHRec$[esp+88], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T229644[esp+80]
+	lea	eax, DWORD PTR $T230121[esp+80]
 	push	eax
-	lea	ecx, DWORD PTR $T229643[esp+96]
+	lea	ecx, DWORD PTR $T230120[esp+96]
 	mov	BYTE PTR __$EHRec$[esp+92], 1
-	mov	DWORD PTR $T229643[esp+84], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T230120[esp+84], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVlength_error@std@@
-	lea	ecx, DWORD PTR $T229643[esp+84]
+	lea	ecx, DWORD PTR $T230120[esp+84]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+96], 0
-	mov	DWORD PTR $T229643[esp+88], OFFSET ??_7length_error@std@@6B@
+	mov	DWORD PTR $T230120[esp+88], OFFSET ??_7length_error@std@@6B@
 	call	__CxxThrowException@8
 $LN13@Xlen@4:
 $LN12@Xlen@4:
@@ -8619,10 +8619,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Xlen@?$vector@HV?$allocator@H@std@@@std@@KAXXZ$0:
-	lea	ecx, DWORD PTR $T229644[ebp]
+	lea	ecx, DWORD PTR $T230121[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Xlen@?$vector@HV?$allocator@H@std@@@std@@KAXXZ$2:
-	lea	ecx, DWORD PTR $T229643[ebp]
+	lea	ecx, DWORD PTR $T230120[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Xlen@?$vector@HV?$allocator@H@std@@@std@@KAXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?_Xlen@?$vector@HV?$allocator@H@std@@@std@@KAXXZ
@@ -8704,8 +8704,8 @@ __ehfuncinfo$?_Xlen@?$vector@W4TraitTypes@@V?$allocator@W4TraitTypes@@@std@@@std
 xdata$x	ENDS
 ;	COMDAT ?_Xlen@?$vector@W4TraitTypes@@V?$allocator@W4TraitTypes@@@std@@@std@@KAXXZ
 _TEXT	SEGMENT
-$T229678 = -80						; size = 28
-$T229677 = -52						; size = 40
+$T230155 = -80						; size = 28
+$T230154 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ?_Xlen@?$vector@W4TraitTypes@@V?$allocator@W4TraitTypes@@@std@@@std@@KAXXZ PROC ; std::vector<enum TraitTypes,std::allocator<enum TraitTypes> >::_Xlen, COMDAT
 
@@ -8721,22 +8721,22 @@ __$EHRec$ = -12						; size = 12
 ; 1260 : 		_THROW(length_error, "vector<T> too long");
 
 	push	OFFSET ??_C@_0BD@OLBABOEK@vector?$DMT?$DO?5too?5long?$AA@
-	lea	ecx, DWORD PTR $T229678[esp+84]
+	lea	ecx, DWORD PTR $T230155[esp+84]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T229677[esp+80]
+	lea	ecx, DWORD PTR $T230154[esp+80]
 	mov	DWORD PTR __$EHRec$[esp+88], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T229678[esp+80]
+	lea	eax, DWORD PTR $T230155[esp+80]
 	push	eax
-	lea	ecx, DWORD PTR $T229677[esp+96]
+	lea	ecx, DWORD PTR $T230154[esp+96]
 	mov	BYTE PTR __$EHRec$[esp+92], 1
-	mov	DWORD PTR $T229677[esp+84], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T230154[esp+84], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVlength_error@std@@
-	lea	ecx, DWORD PTR $T229677[esp+84]
+	lea	ecx, DWORD PTR $T230154[esp+84]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+96], 0
-	mov	DWORD PTR $T229677[esp+88], OFFSET ??_7length_error@std@@6B@
+	mov	DWORD PTR $T230154[esp+88], OFFSET ??_7length_error@std@@6B@
 	call	__CxxThrowException@8
 $LN13@Xlen@5:
 $LN12@Xlen@5:
@@ -8745,10 +8745,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Xlen@?$vector@W4TraitTypes@@V?$allocator@W4TraitTypes@@@std@@@std@@KAXXZ$0:
-	lea	ecx, DWORD PTR $T229678[ebp]
+	lea	ecx, DWORD PTR $T230155[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Xlen@?$vector@W4TraitTypes@@V?$allocator@W4TraitTypes@@@std@@@std@@KAXXZ$2:
-	lea	ecx, DWORD PTR $T229677[ebp]
+	lea	ecx, DWORD PTR $T230154[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Xlen@?$vector@W4TraitTypes@@V?$allocator@W4TraitTypes@@@std@@@std@@KAXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?_Xlen@?$vector@W4TraitTypes@@V?$allocator@W4TraitTypes@@@std@@@std@@KAXXZ
@@ -9015,8 +9015,8 @@ PUBLIC	??$_Allocate@H@std@@YAPAHIPAH@Z			; std::_Allocate<int>
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xmemory
 ;	COMDAT ??$_Allocate@H@std@@YAPAHIPAH@Z
 _TEXT	SEGMENT
-$T229739 = -12						; size = 12
-$T229743 = 8						; size = 4
+$T230216 = -12						; size = 12
+$T230220 = 8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ??$_Allocate@H@std@@YAPAHIPAH@Z PROC			; std::_Allocate<int>, COMDAT
@@ -9058,15 +9058,15 @@ $LN3@Allocate@5:
 
 ; 40   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T229743[esp+8]
+	lea	eax, DWORD PTR $T230220[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T229739[esp+16]
-	mov	DWORD PTR $T229743[esp+12], 0
+	lea	ecx, DWORD PTR $T230216[esp+16]
+	mov	DWORD PTR $T230220[esp+12], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T229739[esp+16]
+	lea	ecx, DWORD PTR $T230216[esp+16]
 	push	ecx
-	mov	DWORD PTR $T229739[esp+20], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T230216[esp+20], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN9@Allocate@5:
 $LN8@Allocate@5:
@@ -9077,8 +9077,8 @@ PUBLIC	??$_Allocate@W4TraitTypes@@@std@@YAPAW4TraitTypes@@IPAW41@@Z ; std::_Allo
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Allocate@W4TraitTypes@@@std@@YAPAW4TraitTypes@@IPAW41@@Z
 _TEXT	SEGMENT
-$T229749 = -12						; size = 12
-$T229753 = 8						; size = 4
+$T230226 = -12						; size = 12
+$T230230 = 8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ??$_Allocate@W4TraitTypes@@@std@@YAPAW4TraitTypes@@IPAW41@@Z PROC ; std::_Allocate<enum TraitTypes>, COMDAT
@@ -9120,15 +9120,15 @@ $LN3@Allocate@6:
 
 ; 40   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T229753[esp+8]
+	lea	eax, DWORD PTR $T230230[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T229749[esp+16]
-	mov	DWORD PTR $T229753[esp+12], 0
+	lea	ecx, DWORD PTR $T230226[esp+16]
+	mov	DWORD PTR $T230230[esp+12], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T229749[esp+16]
+	lea	ecx, DWORD PTR $T230226[esp+16]
 	push	ecx
-	mov	DWORD PTR $T229749[esp+20], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T230226[esp+20], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN9@Allocate@6:
 $LN8@Allocate@6:
@@ -9279,8 +9279,8 @@ __ehfuncinfo$?_Xlen@?$vector@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@F
 xdata$x	ENDS
 ;	COMDAT ?_Xlen@?$vector@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@std@@KAXXZ
 _TEXT	SEGMENT
-$T229785 = -80						; size = 28
-$T229784 = -52						; size = 40
+$T230262 = -80						; size = 28
+$T230261 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ?_Xlen@?$vector@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@std@@KAXXZ PROC ; std::vector<Firaxis::Array<int,6>,std::allocator<Firaxis::Array<int,6> > >::_Xlen, COMDAT
 
@@ -9296,22 +9296,22 @@ __$EHRec$ = -12						; size = 12
 ; 1260 : 		_THROW(length_error, "vector<T> too long");
 
 	push	OFFSET ??_C@_0BD@OLBABOEK@vector?$DMT?$DO?5too?5long?$AA@
-	lea	ecx, DWORD PTR $T229785[esp+84]
+	lea	ecx, DWORD PTR $T230262[esp+84]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T229784[esp+80]
+	lea	ecx, DWORD PTR $T230261[esp+80]
 	mov	DWORD PTR __$EHRec$[esp+88], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T229785[esp+80]
+	lea	eax, DWORD PTR $T230262[esp+80]
 	push	eax
-	lea	ecx, DWORD PTR $T229784[esp+96]
+	lea	ecx, DWORD PTR $T230261[esp+96]
 	mov	BYTE PTR __$EHRec$[esp+92], 1
-	mov	DWORD PTR $T229784[esp+84], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T230261[esp+84], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVlength_error@std@@
-	lea	ecx, DWORD PTR $T229784[esp+84]
+	lea	ecx, DWORD PTR $T230261[esp+84]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+96], 0
-	mov	DWORD PTR $T229784[esp+88], OFFSET ??_7length_error@std@@6B@
+	mov	DWORD PTR $T230261[esp+88], OFFSET ??_7length_error@std@@6B@
 	call	__CxxThrowException@8
 $LN13@Xlen@6:
 $LN12@Xlen@6:
@@ -9320,10 +9320,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Xlen@?$vector@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@std@@KAXXZ$0:
-	lea	ecx, DWORD PTR $T229785[ebp]
+	lea	ecx, DWORD PTR $T230262[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Xlen@?$vector@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@std@@KAXXZ$2:
-	lea	ecx, DWORD PTR $T229784[ebp]
+	lea	ecx, DWORD PTR $T230261[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Xlen@?$vector@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@std@@KAXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?_Xlen@?$vector@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@std@@KAXXZ
@@ -9430,8 +9430,8 @@ __ehfuncinfo$?_Xlen@?$vector@_NV?$allocator@_N@std@@@std@@IBEXXZ DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?_Xlen@?$vector@_NV?$allocator@_N@std@@@std@@IBEXXZ
 _TEXT	SEGMENT
-$T229822 = -80						; size = 28
-$T229821 = -52						; size = 40
+$T230299 = -80						; size = 28
+$T230298 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ?_Xlen@?$vector@_NV?$allocator@_N@std@@@std@@IBEXXZ PROC ; std::vector<bool,std::allocator<bool> >::_Xlen, COMDAT
 ; _this$ = ecx
@@ -9448,22 +9448,22 @@ __$EHRec$ = -12						; size = 12
 ; 2375 : 		_THROW(length_error, "vector<bool> too long");
 
 	push	OFFSET ??_C@_0BG@EOMJEIFA@vector?$DMbool?$DO?5too?5long?$AA@
-	lea	ecx, DWORD PTR $T229822[esp+84]
+	lea	ecx, DWORD PTR $T230299[esp+84]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T229821[esp+80]
+	lea	ecx, DWORD PTR $T230298[esp+80]
 	mov	DWORD PTR __$EHRec$[esp+88], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T229822[esp+80]
+	lea	eax, DWORD PTR $T230299[esp+80]
 	push	eax
-	lea	ecx, DWORD PTR $T229821[esp+96]
+	lea	ecx, DWORD PTR $T230298[esp+96]
 	mov	BYTE PTR __$EHRec$[esp+92], 1
-	mov	DWORD PTR $T229821[esp+84], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T230298[esp+84], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVlength_error@std@@
-	lea	ecx, DWORD PTR $T229821[esp+84]
+	lea	ecx, DWORD PTR $T230298[esp+84]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+96], 0
-	mov	DWORD PTR $T229821[esp+88], OFFSET ??_7length_error@std@@6B@
+	mov	DWORD PTR $T230298[esp+88], OFFSET ??_7length_error@std@@6B@
 	call	__CxxThrowException@8
 $LN13@Xlen@7:
 $LN12@Xlen@7:
@@ -9472,10 +9472,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Xlen@?$vector@_NV?$allocator@_N@std@@@std@@IBEXXZ$0:
-	lea	ecx, DWORD PTR $T229822[ebp]
+	lea	ecx, DWORD PTR $T230299[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Xlen@?$vector@_NV?$allocator@_N@std@@@std@@IBEXXZ$2:
-	lea	ecx, DWORD PTR $T229821[ebp]
+	lea	ecx, DWORD PTR $T230298[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Xlen@?$vector@_NV?$allocator@_N@std@@@std@@IBEXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?_Xlen@?$vector@_NV?$allocator@_N@std@@@std@@IBEXXZ
@@ -9549,8 +9549,8 @@ __ehfuncinfo$?_Xlen@?$vector@IV?$allocator@I@std@@@std@@KAXXZ DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?_Xlen@?$vector@IV?$allocator@I@std@@@std@@KAXXZ
 _TEXT	SEGMENT
-$T229853 = -80						; size = 28
-$T229852 = -52						; size = 40
+$T230330 = -80						; size = 28
+$T230329 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ?_Xlen@?$vector@IV?$allocator@I@std@@@std@@KAXXZ PROC	; std::vector<unsigned int,std::allocator<unsigned int> >::_Xlen, COMDAT
 
@@ -9566,22 +9566,22 @@ __$EHRec$ = -12						; size = 12
 ; 1260 : 		_THROW(length_error, "vector<T> too long");
 
 	push	OFFSET ??_C@_0BD@OLBABOEK@vector?$DMT?$DO?5too?5long?$AA@
-	lea	ecx, DWORD PTR $T229853[esp+84]
+	lea	ecx, DWORD PTR $T230330[esp+84]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T229852[esp+80]
+	lea	ecx, DWORD PTR $T230329[esp+80]
 	mov	DWORD PTR __$EHRec$[esp+88], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T229853[esp+80]
+	lea	eax, DWORD PTR $T230330[esp+80]
 	push	eax
-	lea	ecx, DWORD PTR $T229852[esp+96]
+	lea	ecx, DWORD PTR $T230329[esp+96]
 	mov	BYTE PTR __$EHRec$[esp+92], 1
-	mov	DWORD PTR $T229852[esp+84], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T230329[esp+84], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVlength_error@std@@
-	lea	ecx, DWORD PTR $T229852[esp+84]
+	lea	ecx, DWORD PTR $T230329[esp+84]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+96], 0
-	mov	DWORD PTR $T229852[esp+88], OFFSET ??_7length_error@std@@6B@
+	mov	DWORD PTR $T230329[esp+88], OFFSET ??_7length_error@std@@6B@
 	call	__CxxThrowException@8
 $LN13@Xlen@8:
 $LN12@Xlen@8:
@@ -9590,10 +9590,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Xlen@?$vector@IV?$allocator@I@std@@@std@@KAXXZ$0:
-	lea	ecx, DWORD PTR $T229853[ebp]
+	lea	ecx, DWORD PTR $T230330[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Xlen@?$vector@IV?$allocator@I@std@@@std@@KAXXZ$2:
-	lea	ecx, DWORD PTR $T229852[ebp]
+	lea	ecx, DWORD PTR $T230329[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Xlen@?$vector@IV?$allocator@I@std@@@std@@KAXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?_Xlen@?$vector@IV?$allocator@I@std@@@std@@KAXXZ
@@ -10236,8 +10236,8 @@ PUBLIC	??$_Allocate@V?$Array@H$05@Firaxis@@@std@@YAPAV?$Array@H$05@Firaxis@@IPAV
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xmemory
 ;	COMDAT ??$_Allocate@V?$Array@H$05@Firaxis@@@std@@YAPAV?$Array@H$05@Firaxis@@IPAV12@@Z
 _TEXT	SEGMENT
-$T229948 = -12						; size = 12
-$T229952 = 8						; size = 4
+$T230425 = -12						; size = 12
+$T230429 = 8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ??$_Allocate@V?$Array@H$05@Firaxis@@@std@@YAPAV?$Array@H$05@Firaxis@@IPAV12@@Z PROC ; std::_Allocate<Firaxis::Array<int,6> >, COMDAT
@@ -10282,15 +10282,15 @@ $LN3@Allocate@7:
 
 ; 40   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T229952[esp+8]
+	lea	eax, DWORD PTR $T230429[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T229948[esp+16]
-	mov	DWORD PTR $T229952[esp+12], 0
+	lea	ecx, DWORD PTR $T230425[esp+16]
+	mov	DWORD PTR $T230429[esp+12], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T229948[esp+16]
+	lea	ecx, DWORD PTR $T230425[esp+16]
 	push	ecx
-	mov	DWORD PTR $T229948[esp+20], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T230425[esp+20], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN9@Allocate@7:
 $LN8@Allocate@7:
@@ -10301,8 +10301,8 @@ PUBLIC	??$_Allocate@I@std@@YAPAIIPAI@Z			; std::_Allocate<unsigned int>
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Allocate@I@std@@YAPAIIPAI@Z
 _TEXT	SEGMENT
-$T229958 = -12						; size = 12
-$T229962 = 8						; size = 4
+$T230435 = -12						; size = 12
+$T230439 = 8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ??$_Allocate@I@std@@YAPAIIPAI@Z PROC			; std::_Allocate<unsigned int>, COMDAT
@@ -10344,15 +10344,15 @@ $LN3@Allocate@8:
 
 ; 40   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T229962[esp+8]
+	lea	eax, DWORD PTR $T230439[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T229958[esp+16]
-	mov	DWORD PTR $T229962[esp+12], 0
+	lea	ecx, DWORD PTR $T230435[esp+16]
+	mov	DWORD PTR $T230439[esp+12], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T229958[esp+16]
+	lea	ecx, DWORD PTR $T230435[esp+16]
 	push	ecx
-	mov	DWORD PTR $T229958[esp+20], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T230435[esp+20], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN9@Allocate@8:
 $LN8@Allocate@8:
@@ -10600,7 +10600,7 @@ PUBLIC	??0?$SerializeFromSequenceContainer@$$CBV?$Array@H$05@Firaxis@@$$CBV?$vec
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\fireplace\include\fireworks\fstlcontainerserialization.h
 ;	COMDAT ??0?$SerializeFromSequenceContainer@$$CBV?$Array@H$05@Firaxis@@$$CBV?$vector@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@std@@@@QAE@AAVFDataStream@@ABV?$vector@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@std@@@Z
 _TEXT	SEGMENT
-$T230014 = 8						; size = 4
+$T230491 = 8						; size = 4
 _saveTo$ = 8						; size = 4
 _container$ = 12					; size = 4
 ??0?$SerializeFromSequenceContainer@$$CBV?$Array@H$05@Firaxis@@$$CBV?$vector@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@std@@@@QAE@AAVFDataStream@@ABV?$vector@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@std@@@Z PROC ; SerializeFromSequenceContainer<Firaxis::Array<int,6> const ,std::vector<Firaxis::Array<int,6>,std::allocator<Firaxis::Array<int,6> > > const >::SerializeFromSequenceContainer<Firaxis::Array<int,6> const ,std::vector<Firaxis::Array<int,6>,std::allocator<Firaxis::Array<int,6> > > const >, COMDAT
@@ -10625,9 +10625,9 @@ _container$ = 12					; size = 4
 	mov	eax, edx
 	shr	eax, 31					; 0000001fH
 	add	eax, edx
-	lea	edx, DWORD PTR $T230014[esp]
+	lea	edx, DWORD PTR $T230491[esp]
 	push	edx
-	mov	DWORD PTR $T230014[esp+4], eax
+	mov	DWORD PTR $T230491[esp+4], eax
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 
 ; 71   : 	}
@@ -12235,7 +12235,7 @@ xdata$x	ENDS
 ;	COMDAT ?GetLocalizedText@@YA?AVCvString@@PBD@Z
 _TEXT	SEGMENT
 _bytes$ = -100						; size = 4
-$T230279 = -96						; size = 4
+$T230756 = -96						; size = 4
 _text$ = -92						; size = 80
 __$EHRec$ = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
@@ -12262,7 +12262,7 @@ _szString$ = 12						; size = 4
 	xor	ebx, ebx
 	push	ecx
 	mov	DWORD PTR __$EHRec$[esp+128], ebx
-	mov	DWORD PTR $T230279[esp+120], ebx
+	mov	DWORD PTR $T230756[esp+120], ebx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
 
@@ -12292,7 +12292,7 @@ _szString$ = 12						; size = 4
 	push	eax
 	push	edi
 	mov	ecx, esi
-	mov	DWORD PTR $T230279[esp+120], 1
+	mov	DWORD PTR $T230756[esp+120], 1
 	call	DWORD PTR __imp_?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBDI@Z
 	lea	ecx, DWORD PTR _text$[esp+112]
 	mov	BYTE PTR __$EHRec$[esp+120], bl
@@ -12315,10 +12315,10 @@ __unwindfunclet$?GetLocalizedText@@YA?AVCvString@@PBD@Z$0:
 	lea	ecx, DWORD PTR _text$[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?GetLocalizedText@@YA?AVCvString@@PBD@Z$1:
-	mov	eax, DWORD PTR $T230279[ebp]
+	mov	eax, DWORD PTR $T230756[ebp]
 	and	eax, 1
 	je	$LN5@GetLocaliz
-	and	DWORD PTR $T230279[ebp], -2		; fffffffeH
+	and	DWORD PTR $T230756[ebp], -2		; fffffffeH
 	mov	ecx, DWORD PTR ___$ReturnUdt$[ebp-4]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 $LN5@GetLocaliz:
@@ -13015,7 +13015,7 @@ tv272 = -4						; size = 4
 tv260 = -4						; size = 4
 tv248 = -4						; size = 4
 tv236 = -4						; size = 4
-_fDays$223645 = -4					; size = 4
+_fDays$224122 = -4					; size = 4
 _fYear$ = -4						; size = 4
 ?ComputeMayaDate@CvPlayerTraits@@QAEXXZ PROC		; CvPlayerTraits::ComputeMayaDate, COMDAT
 ; _this$ = ecx
@@ -13054,11 +13054,11 @@ _fYear$ = -4						; size = 4
 
 	fsubp	ST(1), ST(0)
 	fmul	DWORD PTR _DAYS_IN_YEAR
-	fstp	DWORD PTR _fDays$223645[esp+8]
+	fstp	DWORD PTR _fDays$224122[esp+8]
 
 ; 3089 : 		m_iBaktun = (int)(fDays / DAYS_IN_BAKTUN);
 
-	fld	DWORD PTR _fDays$223645[esp+8]
+	fld	DWORD PTR _fDays$224122[esp+8]
 	fld	ST(0)
 	fld	DWORD PTR _DAYS_IN_BAKTUN
 	fld	ST(0)
@@ -13072,11 +13072,11 @@ _fYear$ = -4						; size = 4
 	fimul	DWORD PTR tv236[esp+8]
 	mov	DWORD PTR [esi+744], eax
 	fsubp	ST(1), ST(0)
-	fstp	DWORD PTR _fDays$223645[esp+8]
+	fstp	DWORD PTR _fDays$224122[esp+8]
 
 ; 3091 : 		m_iKatun = (int)(fDays / DAYS_IN_KATUN);
 
-	fld	DWORD PTR _fDays$223645[esp+8]
+	fld	DWORD PTR _fDays$224122[esp+8]
 	fld	ST(0)
 	fld	DWORD PTR _DAYS_IN_KATUN
 	fld	ST(0)
@@ -13090,11 +13090,11 @@ _fYear$ = -4						; size = 4
 	fimul	DWORD PTR tv248[esp+8]
 	mov	DWORD PTR [esi+748], eax
 	fsubp	ST(1), ST(0)
-	fstp	DWORD PTR _fDays$223645[esp+8]
+	fstp	DWORD PTR _fDays$224122[esp+8]
 
 ; 3093 : 		m_iTun = (int)(fDays / DAYS_IN_TUN);
 
-	fld	DWORD PTR _fDays$223645[esp+8]
+	fld	DWORD PTR _fDays$224122[esp+8]
 	fld	ST(0)
 	fld	DWORD PTR _DAYS_IN_TUN
 	fld	ST(0)
@@ -13108,11 +13108,11 @@ _fYear$ = -4						; size = 4
 	fimul	DWORD PTR tv260[esp+8]
 	mov	DWORD PTR [esi+752], eax
 	fsubp	ST(1), ST(0)
-	fstp	DWORD PTR _fDays$223645[esp+8]
+	fstp	DWORD PTR _fDays$224122[esp+8]
 
 ; 3095 : 		m_iWinal = (int)(fDays / DAYS_IN_WINAL);
 
-	fld	DWORD PTR _fDays$223645[esp+8]
+	fld	DWORD PTR _fDays$224122[esp+8]
 	fld	ST(0)
 	fld	DWORD PTR _DAYS_IN_WINAL
 	fld	ST(0)
@@ -13126,11 +13126,11 @@ _fYear$ = -4						; size = 4
 	fimul	DWORD PTR tv272[esp+8]
 	mov	DWORD PTR [esi+756], eax
 	fsubp	ST(1), ST(0)
-	fstp	DWORD PTR _fDays$223645[esp+8]
+	fstp	DWORD PTR _fDays$224122[esp+8]
 
 ; 3097 : 		m_iKin = (int)fDays;
 
-	fld	DWORD PTR _fDays$223645[esp+8]
+	fld	DWORD PTR _fDays$224122[esp+8]
 	call	__ftol2_sse_excpt
 	mov	DWORD PTR [esi+760], eax
 	pop	esi
@@ -13186,7 +13186,7 @@ _TEXT	SEGMENT
 
 	push	ebx
 	mov	edi, ecx
-	push	OFFSET $SG223786
+	push	OFFSET $SG224263
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 
@@ -14601,7 +14601,7 @@ xdata$x	ENDS
 ;	COMDAT ??$GetLocalizedText@HHHHH@@YA?AVCvString@@PBDABH1111@Z
 _TEXT	SEGMENT
 _bytes$ = -100						; size = 4
-$T231056 = -96						; size = 4
+$T231533 = -96						; size = 4
 _text$ = -92						; size = 80
 __$EHRec$ = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
@@ -14633,7 +14633,7 @@ _arg5$ = 32						; size = 4
 	xor	ebx, ebx
 	push	ecx
 	mov	DWORD PTR __$EHRec$[esp+128], ebx
-	mov	DWORD PTR $T231056[esp+120], ebx
+	mov	DWORD PTR $T231533[esp+120], ebx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
 
@@ -14692,7 +14692,7 @@ _arg5$ = 32						; size = 4
 	push	ecx
 	push	edi
 	mov	ecx, esi
-	mov	DWORD PTR $T231056[esp+120], 1
+	mov	DWORD PTR $T231533[esp+120], 1
 	call	DWORD PTR __imp_?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBDI@Z
 	lea	ecx, DWORD PTR _text$[esp+112]
 	mov	BYTE PTR __$EHRec$[esp+120], bl
@@ -14715,10 +14715,10 @@ __unwindfunclet$??$GetLocalizedText@HHHHH@@YA?AVCvString@@PBDABH1111@Z$0:
 	lea	ecx, DWORD PTR _text$[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$??$GetLocalizedText@HHHHH@@YA?AVCvString@@PBDABH1111@Z$1:
-	mov	eax, DWORD PTR $T231056[ebp]
+	mov	eax, DWORD PTR $T231533[ebp]
 	and	eax, 1
 	je	$LN5@GetLocaliz@2
-	and	DWORD PTR $T231056[ebp], -2		; fffffffeH
+	and	DWORD PTR $T231533[ebp], -2		; fffffffeH
 	mov	ecx, DWORD PTR ___$ReturnUdt$[ebp-4]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 $LN5@GetLocaliz@2:
@@ -14798,10 +14798,10 @@ EXTRN	?ReadHashed@CvInfosSerializationHelper@@YAHAAVFDataStream@@PA_N@Z:PROC ; C
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredll_expansion2\cvinfosserializationhelper.h
 ;	COMDAT ??$ReadHashedDataArray@H@CvInfosSerializationHelper@@YAXAAVFDataStream@@PAHH@Z
 _TEXT	SEGMENT
-_bValid$225804 = -13					; size = 1
+_bValid$226281 = -13					; size = 1
 _uiNumEntries$ = -12					; size = 4
-_tValue$225807 = -8					; size = 4
-_tValue$225812 = -4					; size = 4
+_tValue$226284 = -8					; size = 4
+_tValue$226289 = -4					; size = 4
 _kStream$ = 8						; size = 4
 _paArray$ = 12						; size = 4
 _iArraySize$ = 16					; size = 4
@@ -14838,7 +14838,7 @@ $LL7@ReadHashed:
 ; 255  : 		bool bValid;
 ; 256  : 		int iType = ReadHashed(kStream, &bValid);
 
-	lea	ecx, DWORD PTR _bValid$225804[esp+32]
+	lea	ecx, DWORD PTR _bValid$226281[esp+32]
 	push	ecx
 	push	edi
 	call	?ReadHashed@CvInfosSerializationHelper@@YAHAAVFDataStream@@PA_N@Z ; CvInfosSerializationHelper::ReadHashed
@@ -14854,7 +14854,7 @@ $LL7@ReadHashed:
 ; 259  : 			TData tValue;
 ; 260  : 			kStream >> tValue;
 
-	lea	edx, DWORD PTR _tValue$225807[esp+32]
+	lea	edx, DWORD PTR _tValue$226284[esp+32]
 	push	edx
 	mov	ecx, edi
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
@@ -14866,7 +14866,7 @@ $LL7@ReadHashed:
 
 ; 262  : 				paArray[iType] = tValue;
 
-	mov	eax, DWORD PTR _tValue$225807[esp+32]
+	mov	eax, DWORD PTR _tValue$226284[esp+32]
 	mov	ecx, DWORD PTR _paArray$[esp+28]
 	mov	DWORD PTR [ecx+esi*4], eax
 
@@ -14877,14 +14877,14 @@ $LN4@ReadHashed:
 
 ; 264  : 		else if(!bValid)
 
-	cmp	BYTE PTR _bValid$225804[esp+32], 0
+	cmp	BYTE PTR _bValid$226281[esp+32], 0
 	jne	SHORT $LN6@ReadHashed
 
 ; 265  : 		{
 ; 266  : 			TData tValue;
 ; 267  : 			kStream >> tValue;
 
-	lea	edx, DWORD PTR _tValue$225812[esp+32]
+	lea	edx, DWORD PTR _tValue$226289[esp+32]
 	push	edx
 	mov	ecx, edi
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
@@ -15045,7 +15045,7 @@ EXTRN	?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4ResourceTyp
 ;	COMDAT ??$WriteHashedDataArray@W4ResourceTypes@@H@CvInfosSerializationHelper@@YAXAAVFDataStream@@ABV?$vector@HV?$allocator@H@std@@@std@@@Z
 _TEXT	SEGMENT
 _kStream$ = 8						; size = 4
-$T231141 = 12						; size = 4
+$T231618 = 12						; size = 4
 _aArray$ = 12						; size = 4
 ??$WriteHashedDataArray@W4ResourceTypes@@H@CvInfosSerializationHelper@@YAXAAVFDataStream@@ABV?$vector@HV?$allocator@H@std@@@std@@@Z PROC ; CvInfosSerializationHelper::WriteHashedDataArray<enum ResourceTypes,int>, COMDAT
 
@@ -15061,11 +15061,11 @@ _aArray$ = 12						; size = 4
 	mov	eax, DWORD PTR [esi+8]
 	sub	eax, DWORD PTR [esi+4]
 	push	edi
-	lea	ecx, DWORD PTR $T231141[esp+8]
+	lea	ecx, DWORD PTR $T231618[esp+8]
 	sar	eax, 2
 	push	ecx
 	mov	ecx, ebx
-	mov	DWORD PTR $T231141[esp+12], eax
+	mov	DWORD PTR $T231618[esp+12], eax
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 
 ; 593  : 
@@ -17272,8 +17272,8 @@ PUBLIC	??$_Move_backward_opt@PAV?$Array@H$05@Firaxis@@PAV12@Urandom_access_itera
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Move_backward_opt@PAV?$Array@H$05@Firaxis@@PAV12@Urandom_access_iterator_tag@std@@U_Undefined_move_tag@4@@std@@YAPAV?$Array@H$05@Firaxis@@PAV12@00Urandom_access_iterator_tag@0@U_Undefined_move_tag@0@U_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
-$T232218 = -4						; size = 1
-__Cat$232222 = -4					; size = 1
+$T232695 = -4						; size = 1
+__Cat$232700 = -4					; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
@@ -17290,9 +17290,9 @@ ___formal$ = 28						; size = 1
 ; 2754 : 		_First_dest_cat, _Ptr_cat(_First, _Dest), _Range_checked_iterator_tag());
 
 	mov	edx, DWORD PTR __First_dest_cat$[esp]
-	mov	BYTE PTR $T232218[esp+4], 0
-	mov	eax, DWORD PTR $T232218[esp+4]
-	mov	ecx, DWORD PTR __Cat$232222[esp+4]
+	mov	BYTE PTR $T232695[esp+4], 0
+	mov	eax, DWORD PTR $T232695[esp+4]
+	mov	ecx, DWORD PTR __Cat$232700[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -18652,7 +18652,7 @@ __ehfuncinfo$?GetMayaCalendarString@CvPlayerTraits@@QAE?AVCvString@@XZ DD 019930
 xdata$x	ENDS
 ;	COMDAT ?GetMayaCalendarString@CvPlayerTraits@@QAE?AVCvString@@XZ
 _TEXT	SEGMENT
-$T232850 = -16						; size = 4
+$T233327 = -16						; size = 4
 __$EHRec$ = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
 ?GetMayaCalendarString@CvPlayerTraits@@QAE?AVCvString@@XZ PROC ; CvPlayerTraits::GetMayaCalendarString, COMDAT
@@ -18668,7 +18668,7 @@ ___$ReturnUdt$ = 8					; size = 4
 	push	ecx
 	push	esi
 	push	edi
-	mov	DWORD PTR $T232850[esp+24], 0
+	mov	DWORD PTR $T233327[esp+24], 0
 
 ; 2883 : 	CvString szRtnValue;
 
@@ -18684,7 +18684,7 @@ ___$ReturnUdt$ = 8					; size = 4
 
 	mov	ecx, esi
 	mov	DWORD PTR __$EHRec$[esp+32], 0
-	mov	DWORD PTR $T232850[esp+24], 1
+	mov	DWORD PTR $T233327[esp+24], 1
 	call	?ComputeMayaDate@CvPlayerTraits@@QAEXXZ	; CvPlayerTraits::ComputeMayaDate
 	mov	eax, DWORD PTR [esi+760]
 	mov	ecx, DWORD PTR [esi+756]
@@ -18696,7 +18696,7 @@ ___$ReturnUdt$ = 8					; size = 4
 	push	edx
 	push	eax
 	push	ecx
-	push	OFFSET $SG223528
+	push	OFFSET $SG224005
 	push	edi
 	call	?Format@CvString@@QAAXPBDZZ		; CvString::Format
 
@@ -18714,10 +18714,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetMayaCalendarString@CvPlayerTraits@@QAE?AVCvString@@XZ$0:
-	mov	eax, DWORD PTR $T232850[ebp]
+	mov	eax, DWORD PTR $T233327[ebp]
 	and	eax, 1
 	je	$LN4@GetMayaCal
-	and	DWORD PTR $T232850[ebp], -2		; fffffffeH
+	and	DWORD PTR $T233327[ebp], -2		; fffffffeH
 	mov	ecx, DWORD PTR ___$ReturnUdt$[ebp-4]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 $LN4@GetMayaCal:
@@ -18747,8 +18747,8 @@ __ehfuncinfo$?GetMayaCalendarLongString@CvPlayerTraits@@QAE?AVCvString@@XZ DD 01
 xdata$x	ENDS
 ;	COMDAT ?GetMayaCalendarLongString@CvPlayerTraits@@QAE?AVCvString@@XZ
 _TEXT	SEGMENT
-$T232867 = -44						; size = 4
-$T232865 = -40						; size = 28
+$T233344 = -44						; size = 4
+$T233342 = -40						; size = 28
 __$EHRec$ = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
 ?GetMayaCalendarLongString@CvPlayerTraits@@QAE?AVCvString@@XZ PROC ; CvPlayerTraits::GetMayaCalendarLongString, COMDAT
@@ -18766,7 +18766,7 @@ ___$ReturnUdt$ = 8					; size = 4
 	push	esi
 	xor	ebx, ebx
 	push	edi
-	mov	DWORD PTR $T232867[esp+56], ebx
+	mov	DWORD PTR $T233344[esp+56], ebx
 
 ; 2892 : 	CvString szRtnValue;
 
@@ -18782,7 +18782,7 @@ ___$ReturnUdt$ = 8					; size = 4
 
 	mov	ecx, esi
 	mov	DWORD PTR __$EHRec$[esp+64], ebx
-	mov	DWORD PTR $T232867[esp+56], 1
+	mov	DWORD PTR $T233344[esp+56], 1
 	call	?ComputeMayaDate@CvPlayerTraits@@QAEXXZ	; CvPlayerTraits::ComputeMayaDate
 	lea	eax, DWORD PTR [esi+760]
 	push	eax
@@ -18794,8 +18794,8 @@ ___$ReturnUdt$ = 8					; size = 4
 	push	eax
 	add	esi, 744				; 000002e8H
 	push	esi
-	lea	ecx, DWORD PTR $T232865[esp+76]
-	push	OFFSET $SG223548
+	lea	ecx, DWORD PTR $T233342[esp+76]
+	push	OFFSET $SG224025
 	push	ecx
 	call	??$GetLocalizedText@HHHHH@@YA?AVCvString@@PBDABH1111@Z ; GetLocalizedText<int,int,int,int,int>
 	add	esp, 28					; 0000001cH
@@ -18803,7 +18803,7 @@ ___$ReturnUdt$ = 8					; size = 4
 	mov	ecx, edi
 	mov	DWORD PTR __$EHRec$[esp+68], 1
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T232865[esp+56]
+	lea	ecx, DWORD PTR $T233342[esp+56]
 	mov	BYTE PTR __$EHRec$[esp+64], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -18821,16 +18821,16 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetMayaCalendarLongString@CvPlayerTraits@@QAE?AVCvString@@XZ$0:
-	mov	eax, DWORD PTR $T232867[ebp]
+	mov	eax, DWORD PTR $T233344[ebp]
 	and	eax, 1
 	je	$LN4@GetMayaCal@2
-	and	DWORD PTR $T232867[ebp], -2		; fffffffeH
+	and	DWORD PTR $T233344[ebp], -2		; fffffffeH
 	mov	ecx, DWORD PTR ___$ReturnUdt$[ebp-4]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 $LN4@GetMayaCal@2:
 	ret	0
 __unwindfunclet$?GetMayaCalendarLongString@CvPlayerTraits@@QAE?AVCvString@@XZ$1:
-	lea	ecx, DWORD PTR $T232865[ebp]
+	lea	ecx, DWORD PTR $T233342[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?GetMayaCalendarLongString@CvPlayerTraits@@QAE?AVCvString@@XZ:
 	mov	eax, OFFSET __ehfuncinfo$?GetMayaCalendarLongString@CvPlayerTraits@@QAE?AVCvString@@XZ
@@ -18937,12 +18937,12 @@ xdata$x	ENDS
 ;	COMDAT ?ConvertBarbarianCamp@CvPlayerTraits@@AAE_NPAVCvPlot@@@Z
 _TEXT	SEGMENT
 _pGiftUnit$ = -104					; size = 8
-_logMsg$224155 = -96					; size = 28
-_strSummary$224160 = -68				; size = 28
-_strBuffer$224157 = -40					; size = 28
+_logMsg$224632 = -96					; size = 28
+_strSummary$224637 = -68				; size = 28
+_strBuffer$224634 = -40					; size = 28
 __$EHRec$ = -12						; size = 12
-$T233083 = 8						; size = 4
-_iI$224148 = 8						; size = 4
+$T233560 = 8						; size = 4
+_iI$224625 = 8						; size = 4
 _pPlot$ = 8						; size = 4
 ?ConvertBarbarianCamp@CvPlayerTraits@@AAE_NPAVCvPlot@@@Z PROC ; CvPlayerTraits::ConvertBarbarianCamp, COMDAT
 ; _this$ = ecx
@@ -18987,7 +18987,7 @@ _pPlot$ = 8						; size = 4
 ; 3825 : 	if(GC.getGame().getJonRandNum(100, "Barbarian Camp Conversion") < m_iLandBarbarianConversionPercent)
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
-	push	OFFSET $SG224144
+	push	OFFSET $SG224621
 	push	100					; 00000064H
 	call	?getJonRandNum@CvGame@@QAEHHPBD@Z	; CvGame::getJonRandNum
 	cmp	eax, DWORD PTR [esi+100]
@@ -19082,7 +19082,7 @@ $LN9@ConvertBar:
 ; 3844 : 		for(int iI = 0; iI < m_iLandBarbarianConversionExtraUnits; iI++)
 
 	cmp	DWORD PTR [esi+104], 0
-	mov	DWORD PTR _iI$224148[esp+116], 0
+	mov	DWORD PTR _iI$224625[esp+116], 0
 	jle	SHORT $LN6@ConvertBar
 	npad	8
 $LL110@ConvertBar:
@@ -19146,10 +19146,10 @@ $LN7@ConvertBar:
 ; 3843 : 		// Convert any extra units
 ; 3844 : 		for(int iI = 0; iI < m_iLandBarbarianConversionExtraUnits; iI++)
 
-	mov	eax, DWORD PTR _iI$224148[esp+116]
+	mov	eax, DWORD PTR _iI$224625[esp+116]
 	inc	eax
 	cmp	eax, DWORD PTR [esi+104]
-	mov	DWORD PTR _iI$224148[esp+116], eax
+	mov	DWORD PTR _iI$224625[esp+116], eax
 	jl	SHORT $LL110@ConvertBar
 $LN6@ConvertBar:
 
@@ -19169,7 +19169,7 @@ $LN6@ConvertBar:
 ; 3854 : 		{
 ; 3855 : 			CvString logMsg;
 
-	lea	ecx, DWORD PTR _logMsg$224155[esp+120]
+	lea	ecx, DWORD PTR _logMsg$224632[esp+120]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
 ; 3856 : 			logMsg.Format("Converted barbarian camp, X: %d, Y: %d", pPlot->getX(), pPlot->getY());
@@ -19178,8 +19178,8 @@ $LN6@ConvertBar:
 	movsx	ecx, WORD PTR [edi]
 	push	eax
 	push	ecx
-	lea	edx, DWORD PTR _logMsg$224155[esp+128]
-	push	OFFSET $SG224156
+	lea	edx, DWORD PTR _logMsg$224632[esp+128]
+	push	OFFSET $SG224633
 	push	edx
 	mov	BYTE PTR __$EHRec$[esp+144], 1
 	call	?Format@CvString@@QAAXPBDZZ		; CvString::Format
@@ -19188,7 +19188,7 @@ $LN6@ConvertBar:
 
 	mov	ecx, DWORD PTR [esi+4]
 	add	esp, 16					; 00000010H
-	lea	eax, DWORD PTR _logMsg$224155[esp+120]
+	lea	eax, DWORD PTR _logMsg$224632[esp+120]
 	push	eax
 	call	?GetHomelandAI@CvPlayer@@QBEPAVCvHomelandAI@@XZ ; CvPlayer::GetHomelandAI
 	mov	ecx, eax
@@ -19196,7 +19196,7 @@ $LN6@ConvertBar:
 
 ; 3858 : 		}
 
-	lea	ecx, DWORD PTR _logMsg$224155[esp+120]
+	lea	ecx, DWORD PTR _logMsg$224632[esp+120]
 	mov	BYTE PTR __$EHRec$[esp+128], 0
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 $LN3@ConvertBar:
@@ -19204,15 +19204,15 @@ $LN3@ConvertBar:
 ; 3859 : 
 ; 3860 : 		CvString strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_BARB_CAMP_CONVERTS");
 
-	lea	ecx, DWORD PTR _strBuffer$224157[esp+120]
-	push	OFFSET $SG224159
+	lea	ecx, DWORD PTR _strBuffer$224634[esp+120]
+	push	OFFSET $SG224636
 	push	ecx
 	call	?GetLocalizedText@@YA?AVCvString@@PBD@Z	; GetLocalizedText
 
 ; 3861 : 		CvString strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_BARB_CAMP_CONVERTS");
 
-	lea	edx, DWORD PTR _strSummary$224160[esp+128]
-	push	OFFSET $SG224162
+	lea	edx, DWORD PTR _strSummary$224637[esp+128]
+	push	OFFSET $SG224639
 	push	edx
 	mov	BYTE PTR __$EHRec$[esp+144], 2
 	call	?GetLocalizedText@@YA?AVCvString@@PBD@Z	; GetLocalizedText
@@ -19222,13 +19222,13 @@ $LN3@ConvertBar:
 
 	movsx	ebp, WORD PTR [edi+2]
 	movsx	edi, WORD PTR [edi]
-	lea	ecx, DWORD PTR _strSummary$224160[esp+120]
+	lea	ecx, DWORD PTR _strSummary$224637[esp+120]
 	mov	BYTE PTR __$EHRec$[esp+128], 3
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
-	lea	ecx, DWORD PTR _strBuffer$224157[esp+120]
-	mov	DWORD PTR $T233083[esp+116], eax
+	lea	ecx, DWORD PTR _strBuffer$224634[esp+120]
+	mov	DWORD PTR $T233560[esp+116], eax
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
-	mov	ecx, DWORD PTR $T233083[esp+116]
+	mov	ecx, DWORD PTR $T233560[esp+116]
 	push	-1
 	push	-1
 	push	ebp
@@ -19269,10 +19269,10 @@ $LN2@ConvertBar:
 ; 3867 : 		}
 ; 3868 : 	}
 
-	lea	ecx, DWORD PTR _strSummary$224160[esp+116]
+	lea	ecx, DWORD PTR _strSummary$224637[esp+116]
 	mov	BYTE PTR __$EHRec$[esp+124], 2
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR _strBuffer$224157[esp+116]
+	lea	ecx, DWORD PTR _strBuffer$224634[esp+116]
 	mov	BYTE PTR __$EHRec$[esp+124], 0
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -19327,13 +19327,13 @@ __unwindfunclet$?ConvertBarbarianCamp@CvPlayerTraits@@AAE_NPAVCvPlot@@@Z$0:
 	lea	ecx, DWORD PTR _pGiftUnit$[ebp]
 	jmp	??1?$FObjectHandle@VCvUnit@@@@QAE@XZ	; FObjectHandle<CvUnit>::~FObjectHandle<CvUnit>
 __unwindfunclet$?ConvertBarbarianCamp@CvPlayerTraits@@AAE_NPAVCvPlot@@@Z$1:
-	lea	ecx, DWORD PTR _logMsg$224155[ebp]
+	lea	ecx, DWORD PTR _logMsg$224632[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?ConvertBarbarianCamp@CvPlayerTraits@@AAE_NPAVCvPlot@@@Z$2:
-	lea	ecx, DWORD PTR _strBuffer$224157[ebp]
+	lea	ecx, DWORD PTR _strBuffer$224634[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?ConvertBarbarianCamp@CvPlayerTraits@@AAE_NPAVCvPlot@@@Z$3:
-	lea	ecx, DWORD PTR _strSummary$224160[ebp]
+	lea	ecx, DWORD PTR _strSummary$224637[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?ConvertBarbarianCamp@CvPlayerTraits@@AAE_NPAVCvPlot@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?ConvertBarbarianCamp@CvPlayerTraits@@AAE_NPAVCvPlot@@@Z
@@ -19373,11 +19373,11 @@ __unwindtable$?ConvertBarbarianNavalUnit@CvPlayerTraits@@AAE_NV?$FObjectHandle@V
 xdata$x	ENDS
 ;	COMDAT ?ConvertBarbarianNavalUnit@CvPlayerTraits@@AAE_NV?$FObjectHandle@VCvUnit@@@@@Z
 _TEXT	SEGMENT
-$T233315 = -108						; size = 4
+$T233792 = -108						; size = 4
 _pGiftUnit$ = -104					; size = 8
-_logMsg$224180 = -96					; size = 28
-_strSummary$224185 = -68				; size = 28
-_strBuffer$224182 = -40					; size = 28
+_logMsg$224657 = -96					; size = 28
+_strSummary$224662 = -68				; size = 28
+_strBuffer$224659 = -40					; size = 28
 __$EHRec$ = -12						; size = 12
 _pUnit$ = 8						; size = 8
 ?ConvertBarbarianNavalUnit@CvPlayerTraits@@AAE_NV?$FObjectHandle@VCvUnit@@@@@Z PROC ; CvPlayerTraits::ConvertBarbarianNavalUnit, COMDAT
@@ -19422,7 +19422,7 @@ _pUnit$ = 8						; size = 8
 ; 3892 : 	if(GC.getGame().getJonRandNum(100, "Barbarian Naval Unit Conversion") < m_iSeaBarbarianConversionPercent)
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
-	push	OFFSET $SG224175
+	push	OFFSET $SG224652
 	push	100					; 00000064H
 	call	?getJonRandNum@CvGame@@QAEHHPBD@Z	; CvGame::getJonRandNum
 	cmp	eax, DWORD PTR [esi+108]
@@ -19518,7 +19518,7 @@ $LN53@ConvertBar@2:
 	call	?getLeaderInfo@CvPlayer@@QBEAAVCvLeaderHeadInfo@@XZ ; CvPlayer::getLeaderInfo
 	lea	ecx, DWORD PTR [eax+176]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
-	push	OFFSET $SG224178
+	push	OFFSET $SG224655
 	push	eax
 	call	DWORD PTR __imp___stricmp
 	add	esp, 8
@@ -19553,7 +19553,7 @@ $LN3@ConvertBar@2:
 ; 3915 : 		{
 ; 3916 : 			CvString logMsg;
 
-	lea	ecx, DWORD PTR _logMsg$224180[esp+124]
+	lea	ecx, DWORD PTR _logMsg$224657[esp+124]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
 ; 3917 : 			logMsg.Format("Converted barbarian naval unit, X: %d, Y: %d", pUnit->getX(), pUnit->getY());
@@ -19563,8 +19563,8 @@ $LN3@ConvertBar@2:
 	mov	eax, DWORD PTR [eax+76]
 	push	ecx
 	push	eax
-	lea	ecx, DWORD PTR _logMsg$224180[esp+132]
-	push	OFFSET $SG224181
+	lea	ecx, DWORD PTR _logMsg$224657[esp+132]
+	push	OFFSET $SG224658
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+148], 2
 	call	?Format@CvString@@QAAXPBDZZ		; CvString::Format
@@ -19573,7 +19573,7 @@ $LN3@ConvertBar@2:
 
 	mov	ecx, DWORD PTR [esi+4]
 	add	esp, 16					; 00000010H
-	lea	edx, DWORD PTR _logMsg$224180[esp+124]
+	lea	edx, DWORD PTR _logMsg$224657[esp+124]
 	push	edx
 	call	?GetHomelandAI@CvPlayer@@QBEPAVCvHomelandAI@@XZ ; CvPlayer::GetHomelandAI
 	mov	ecx, eax
@@ -19581,7 +19581,7 @@ $LN3@ConvertBar@2:
 
 ; 3919 : 		}
 
-	lea	ecx, DWORD PTR _logMsg$224180[esp+124]
+	lea	ecx, DWORD PTR _logMsg$224657[esp+124]
 	mov	BYTE PTR __$EHRec$[esp+132], 1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 $LN2@ConvertBar@2:
@@ -19589,15 +19589,15 @@ $LN2@ConvertBar@2:
 ; 3920 : 
 ; 3921 : 		CvString strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_BARB_NAVAL_UNIT_CONVERTS");
 
-	lea	eax, DWORD PTR _strBuffer$224182[esp+124]
-	push	OFFSET $SG224184
+	lea	eax, DWORD PTR _strBuffer$224659[esp+124]
+	push	OFFSET $SG224661
 	push	eax
 	call	?GetLocalizedText@@YA?AVCvString@@PBD@Z	; GetLocalizedText
 
 ; 3922 : 		CvString strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_BARB_NAVAL_UNIT_CONVERTS");
 
-	lea	ecx, DWORD PTR _strSummary$224185[esp+132]
-	push	OFFSET $SG224187
+	lea	ecx, DWORD PTR _strSummary$224662[esp+132]
+	push	OFFSET $SG224664
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+148], 3
 	call	?GetLocalizedText@@YA?AVCvString@@PBD@Z	; GetLocalizedText
@@ -19608,13 +19608,13 @@ $LN2@ConvertBar@2:
 	mov	eax, DWORD PTR _pUnit$[esp+120]
 	mov	ebp, DWORD PTR [eax+88]
 	mov	ebx, DWORD PTR [eax+76]
-	lea	ecx, DWORD PTR _strSummary$224185[esp+124]
+	lea	ecx, DWORD PTR _strSummary$224662[esp+124]
 	mov	BYTE PTR __$EHRec$[esp+132], 4
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
-	lea	ecx, DWORD PTR _strBuffer$224182[esp+124]
-	mov	DWORD PTR $T233315[esp+124], eax
+	lea	ecx, DWORD PTR _strBuffer$224659[esp+124]
+	mov	DWORD PTR $T233792[esp+124], eax
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
-	mov	edx, DWORD PTR $T233315[esp+124]
+	mov	edx, DWORD PTR $T233792[esp+124]
 	mov	ecx, DWORD PTR [esi+4]
 	push	-1
 	push	-1
@@ -19629,10 +19629,10 @@ $LN2@ConvertBar@2:
 
 ; 3924 : 		return true;
 
-	lea	ecx, DWORD PTR _strSummary$224185[esp+124]
+	lea	ecx, DWORD PTR _strSummary$224662[esp+124]
 	mov	BYTE PTR __$EHRec$[esp+132], 3
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR _strBuffer$224182[esp+124]
+	lea	ecx, DWORD PTR _strBuffer$224659[esp+124]
 	mov	BYTE PTR __$EHRec$[esp+132], 1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 	pop	ebp
@@ -19703,13 +19703,13 @@ __unwindfunclet$?ConvertBarbarianNavalUnit@CvPlayerTraits@@AAE_NV?$FObjectHandle
 	lea	ecx, DWORD PTR _pGiftUnit$[ebp]
 	jmp	??1?$FObjectHandle@VCvUnit@@@@QAE@XZ	; FObjectHandle<CvUnit>::~FObjectHandle<CvUnit>
 __unwindfunclet$?ConvertBarbarianNavalUnit@CvPlayerTraits@@AAE_NV?$FObjectHandle@VCvUnit@@@@@Z$2:
-	lea	ecx, DWORD PTR _logMsg$224180[ebp]
+	lea	ecx, DWORD PTR _logMsg$224657[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?ConvertBarbarianNavalUnit@CvPlayerTraits@@AAE_NV?$FObjectHandle@VCvUnit@@@@@Z$3:
-	lea	ecx, DWORD PTR _strBuffer$224182[ebp]
+	lea	ecx, DWORD PTR _strBuffer$224659[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?ConvertBarbarianNavalUnit@CvPlayerTraits@@AAE_NV?$FObjectHandle@VCvUnit@@@@@Z$4:
-	lea	ecx, DWORD PTR _strSummary$224185[ebp]
+	lea	ecx, DWORD PTR _strSummary$224662[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?ConvertBarbarianNavalUnit@CvPlayerTraits@@AAE_NV?$FObjectHandle@VCvUnit@@@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?ConvertBarbarianNavalUnit@CvPlayerTraits@@AAE_NV?$FObjectHandle@VCvUnit@@@@@Z
@@ -20635,8 +20635,8 @@ xdata$x	ENDS
 ;	COMDAT ?erase@?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$00@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@@Z
 _TEXT	SEGMENT
 __Erasednode$ = -84					; size = 4
-$T233974 = -80						; size = 28
-$T233973 = -52						; size = 40
+$T234451 = -80						; size = 28
+$T234450 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
 __Where$ = 12						; size = 4
@@ -20672,22 +20672,22 @@ __Where$ = 12						; size = 4
 ; 775  : 			_THROW(out_of_range, "invalid map/set<T> iterator");
 
 	push	OFFSET ??_C@_0BM@PAPJHAGI@invalid?5map?1set?$DMT?$DO?5iterator?$AA@
-	lea	ecx, DWORD PTR $T233974[esp+92]
+	lea	ecx, DWORD PTR $T234451[esp+92]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T233973[esp+88]
+	lea	ecx, DWORD PTR $T234450[esp+88]
 	mov	DWORD PTR __$EHRec$[esp+96], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T233974[esp+88]
+	lea	eax, DWORD PTR $T234451[esp+88]
 	push	eax
-	lea	ecx, DWORD PTR $T233973[esp+104]
+	lea	ecx, DWORD PTR $T234450[esp+104]
 	mov	BYTE PTR __$EHRec$[esp+100], 1
-	mov	DWORD PTR $T233973[esp+92], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T234450[esp+92], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVout_of_range@std@@
-	lea	ecx, DWORD PTR $T233973[esp+92]
+	lea	ecx, DWORD PTR $T234450[esp+92]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+104], 0
-	mov	DWORD PTR $T233973[esp+96], OFFSET ??_7out_of_range@std@@6B@
+	mov	DWORD PTR $T234450[esp+96], OFFSET ??_7out_of_range@std@@6B@
 	call	__CxxThrowException@8
 $LN293@erase:
 $LN40@erase:
@@ -21281,10 +21281,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?erase@?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$00@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@@Z$0:
-	lea	ecx, DWORD PTR $T233974[ebp]
+	lea	ecx, DWORD PTR $T234451[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?erase@?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$00@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@@Z$2:
-	lea	ecx, DWORD PTR $T233973[ebp]
+	lea	ecx, DWORD PTR $T234450[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?erase@?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$00@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?erase@?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$00@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@@Z
@@ -21465,7 +21465,7 @@ PUBLIC	??$?6V?$_Vb_reference@IHV?$vector@_NV?$allocator@_N@std@@@std@@@std@@@FDa
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\fireplace\include\fireworks\fdatastream.h
 ;	COMDAT ??$?6V?$_Vb_reference@IHV?$vector@_NV?$allocator@_N@std@@@std@@@std@@@FDataStream@@QAEAAV0@ABV?$_Vb_reference@IHV?$vector@_NV?$allocator@_N@std@@@std@@@std@@@Z
 _TEXT	SEGMENT
-$T234497 = 8						; size = 1
+$T234974 = 8						; size = 1
 _kData$ = 8						; size = 4
 ??$?6V?$_Vb_reference@IHV?$vector@_NV?$allocator@_N@std@@@std@@@std@@@FDataStream@@QAEAAV0@ABV?$_Vb_reference@IHV?$vector@_NV?$allocator@_N@std@@@std@@@std@@@Z PROC ; FDataStream::operator<<<std::_Vb_reference<unsigned int,int,std::vector<bool,std::allocator<bool> > > >, COMDAT
 ; _this$ = ecx
@@ -21487,9 +21487,9 @@ _kData$ = 8						; size = 4
 	mov	edx, 1
 	shl	edx, cl
 	test	edx, DWORD PTR [eax]
-	lea	edx, DWORD PTR $T234497[esp]
+	lea	edx, DWORD PTR $T234974[esp]
 	setne	cl
-	mov	BYTE PTR $T234497[esp], cl
+	mov	BYTE PTR $T234974[esp], cl
 	push	edx
 	mov	ecx, esi
 	call	?Write@FDataStream@@IAEXAB_N@Z		; FDataStream::Write
@@ -21914,8 +21914,8 @@ PUBLIC	??$unchecked_uninitialized_copy@PAUFreeResourceXCities@@PAU1@V?$allocator
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ??$unchecked_uninitialized_copy@PAUFreeResourceXCities@@PAU1@V?$allocator@UFreeResourceXCities@@@std@@@stdext@@YAPAUFreeResourceXCities@@PAU1@00AAV?$allocator@UFreeResourceXCities@@@std@@@Z
 _TEXT	SEGMENT
-$T234858 = -4						; size = 1
-__Cat$234862 = -4					; size = 1
+$T235335 = -4						; size = 1
+__Cat$235339 = -4					; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
@@ -21931,9 +21931,9 @@ __Al$ = 20						; size = 4
 ; 822  : 		_STD _Ptr_cat(_First, _Dest), _STD _Range_checked_iterator_tag()));
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T234858[esp+4], 0
-	mov	eax, DWORD PTR $T234858[esp+4]
-	mov	ecx, DWORD PTR __Cat$234862[esp+4]
+	mov	BYTE PTR $T235335[esp+4], 0
+	mov	eax, DWORD PTR $T235335[esp+4]
+	mov	ecx, DWORD PTR __Cat$235339[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -22649,9 +22649,9 @@ PUBLIC	??$unchecked_copy@PAV?$Array@H$05@Firaxis@@PAV12@@stdext@@YAPAV?$Array@H$
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xutility
 ;	COMDAT ??$unchecked_copy@PAV?$Array@H$05@Firaxis@@PAV12@@stdext@@YAPAV?$Array@H$05@Firaxis@@PAV12@00@Z
 _TEXT	SEGMENT
-$T235199 = -4						; size = 1
-__Cat$235204 = -4					; size = 1
-$T235201 = -4						; size = 1
+$T235676 = -4						; size = 1
+__Cat$235682 = -4					; size = 1
+$T235678 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
@@ -22664,10 +22664,10 @@ __Dest$ = 16						; size = 4
 ; 3605 : 		return (_STD _Copy_opt(_CHECKED_BASE(_First), _CHECKED_BASE(_Last), _Dest,
 ; 3606 : 			_STD _Iter_random(_First, _Dest), _STD _Ptr_cat(_First, _Dest), _STD _Range_checked_iterator_tag()));
 
-	mov	BYTE PTR $T235199[esp+4], 0
-	mov	eax, DWORD PTR $T235199[esp+4]
-	mov	ecx, DWORD PTR __Cat$235204[esp+4]
-	mov	edx, DWORD PTR $T235201[esp+4]
+	mov	BYTE PTR $T235676[esp+4], 0
+	mov	eax, DWORD PTR $T235676[esp+4]
+	mov	ecx, DWORD PTR __Cat$235682[esp+4]
+	mov	edx, DWORD PTR $T235678[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -22950,11 +22950,11 @@ PUBLIC	??$_Unchecked_move_backward@PAV?$Array@H$05@Firaxis@@PAV12@@stdext@@YAPAV
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Unchecked_move_backward@PAV?$Array@H$05@Firaxis@@PAV12@@stdext@@YAPAV?$Array@H$05@Firaxis@@PAV12@00@Z
 _TEXT	SEGMENT
-$T235497 = -4						; size = 1
+$T235973 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$235500 = 16					; size = 1
-$T235479 = 16						; size = 1
+__Cat$235977 = 16					; size = 1
+$T235956 = 16						; size = 1
 __Dest$ = 16						; size = 4
 ??$_Unchecked_move_backward@PAV?$Array@H$05@Firaxis@@PAV12@@stdext@@YAPAV?$Array@H$05@Firaxis@@PAV12@00@Z PROC ; stdext::_Unchecked_move_backward<Firaxis::Array<int,6> *,Firaxis::Array<int,6> *>, COMDAT
 
@@ -22965,10 +22965,10 @@ __Dest$ = 16						; size = 4
 ; 3695 : 		return (_STD _Move_backward_opt(_CHECKED_BASE(_First), _CHECKED_BASE(_Last), _Dest,
 ; 3696 : 			_STD _Iter_random(_First, _Dest), _STD _Move_cat(_Dest), _STD _Range_checked_iterator_tag()));
 
-	mov	ecx, DWORD PTR __Cat$235500[esp]
-	mov	edx, DWORD PTR $T235479[esp]
-	mov	BYTE PTR $T235497[esp+4], 0
-	mov	eax, DWORD PTR $T235497[esp+4]
+	mov	ecx, DWORD PTR __Cat$235977[esp]
+	mov	edx, DWORD PTR $T235956[esp]
+	mov	BYTE PTR $T235973[esp+4], 0
+	mov	eax, DWORD PTR $T235973[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -23280,8 +23280,8 @@ PUBLIC	??$unchecked_uninitialized_copy@PAV?$Array@H$05@Firaxis@@PAV12@V?$allocat
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ??$unchecked_uninitialized_copy@PAV?$Array@H$05@Firaxis@@PAV12@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@stdext@@YAPAV?$Array@H$05@Firaxis@@PAV12@00AAV?$allocator@V?$Array@H$05@Firaxis@@@std@@@Z
 _TEXT	SEGMENT
-$T235743 = -4						; size = 1
-__Cat$235747 = -4					; size = 1
+$T236220 = -4						; size = 1
+__Cat$236224 = -4					; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
@@ -23297,9 +23297,9 @@ __Al$ = 20						; size = 4
 ; 822  : 		_STD _Ptr_cat(_First, _Dest), _STD _Range_checked_iterator_tag()));
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T235743[esp+4], 0
-	mov	eax, DWORD PTR $T235743[esp+4]
-	mov	ecx, DWORD PTR __Cat$235747[esp+4]
+	mov	BYTE PTR $T236220[esp+4], 0
+	mov	eax, DWORD PTR $T236220[esp+4]
+	mov	ecx, DWORD PTR __Cat$236224[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -23338,9 +23338,9 @@ xdata$x	ENDS
 ;	COMDAT ?CheckForBarbarianConversion@CvPlayerTraits@@QAE_NPAVCvPlot@@@Z
 _TEXT	SEGMENT
 _bRtnValue$ = -21					; size = 1
-_pNavalUnit$223424 = -20				; size = 8
+_pNavalUnit$223901 = -20				; size = 8
 __$EHRec$ = -12						; size = 12
-$T235752 = 8						; size = 4
+$T236229 = 8						; size = 4
 _pPlot$ = 8						; size = 4
 ?CheckForBarbarianConversion@CvPlayerTraits@@QAE_NPAVCvPlot@@@Z PROC ; CvPlayerTraits::CheckForBarbarianConversion, COMDAT
 ; _this$ = ecx
@@ -23413,14 +23413,14 @@ $LL9@CheckForBa:
 	push	0
 	push	-1
 	push	63					; 0000003fH
-	lea	edx, DWORD PTR _pNavalUnit$223424[esp+64]
+	lea	edx, DWORD PTR _pNavalUnit$223901[esp+64]
 	push	edx
 	mov	ecx, eax
 	call	?getBestDefender@CvPlot@@QAE?AV?$FObjectHandle@VCvUnit@@@@W4PlayerTypes@@0PBVCvUnit@@_N222@Z ; CvPlot::getBestDefender
 
 ; 2681 : 					if(pNavalUnit)
 
-	mov	ecx, DWORD PTR _pNavalUnit$223424[esp+36]
+	mov	ecx, DWORD PTR _pNavalUnit$223901[esp+36]
 	mov	DWORD PTR __$EHRec$[esp+44], 0
 	test	ecx, ecx
 	je	SHORT $LN3@CheckForBa
@@ -23431,10 +23431,10 @@ $LL9@CheckForBa:
 	sub	esp, 8
 	mov	eax, esp
 	mov	DWORD PTR [eax], ecx
-	mov	cl, BYTE PTR _pNavalUnit$223424[esp+48]
+	mov	cl, BYTE PTR _pNavalUnit$223901[esp+48]
 	mov	BYTE PTR [eax+4], cl
 	mov	eax, DWORD PTR [eax]
-	mov	DWORD PTR $T235752[esp+40], esp
+	mov	DWORD PTR $T236229[esp+40], esp
 	test	eax, eax
 	je	SHORT $LN30@CheckForBa
 	mov	ecx, eax
@@ -23446,7 +23446,7 @@ $LN30@CheckForBa:
 ; 2684 : 						{
 ; 2685 : 							bRtnValue = true;
 
-	mov	ecx, DWORD PTR _pNavalUnit$223424[esp+36]
+	mov	ecx, DWORD PTR _pNavalUnit$223901[esp+36]
 	test	al, al
 	je	SHORT $LN3@CheckForBa
 	mov	BYTE PTR _bRtnValue$[esp+36], 1
@@ -23525,7 +23525,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?CheckForBarbarianConversion@CvPlayerTraits@@QAE_NPAVCvPlot@@@Z$0:
-	lea	ecx, DWORD PTR _pNavalUnit$223424[ebp]
+	lea	ecx, DWORD PTR _pNavalUnit$223901[ebp]
 	jmp	??1?$FObjectHandle@VCvUnit@@@@QAE@XZ	; FObjectHandle<CvUnit>::~FObjectHandle<CvUnit>
 __ehhandler$?CheckForBarbarianConversion@CvPlayerTraits@@QAE_NPAVCvPlot@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?CheckForBarbarianConversion@CvPlayerTraits@@QAE_NPAVCvPlot@@@Z
@@ -23537,7 +23537,7 @@ PUBLIC	?find@?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBH
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xtree
 ;	COMDAT ?find@?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$00@std@@@std@@QBE?AVconst_iterator@12@ABH@Z
 _TEXT	SEGMENT
-$T235819 = -4						; size = 4
+$T236296 = -4						; size = 4
 ___$ReturnUdt$ = 8					; size = 4
 __Where$ = 12						; size = 4
 __Keyval$ = 12						; size = 4
@@ -23601,8 +23601,8 @@ $LN3@find:
 ; 990  : 				_Keyval, _Key(_Where._Mynode()))
 ; 991  : 					? end() : _Where);
 
-	mov	DWORD PTR $T235819[esp+8], eax
-	lea	eax, DWORD PTR $T235819[esp+8]
+	mov	DWORD PTR $T236296[esp+8], eax
+	lea	eax, DWORD PTR $T236296[esp+8]
 	mov	edx, DWORD PTR [eax]
 	mov	eax, DWORD PTR ___$ReturnUdt$[esp+4]
 	mov	DWORD PTR [eax], edx
@@ -24123,8 +24123,8 @@ __ehfuncinfo$?_Insert@?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$p
 xdata$x	ENDS
 ;	COMDAT ?_Insert@?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$00@std@@@std@@IAE?AViterator@12@_NPAU_Node@?$_Tree_nod@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$00@std@@@2@ABU?$pair@$$CBHH@2@@Z
 _TEXT	SEGMENT
-$T236543 = -80						; size = 28
-$T236542 = -52						; size = 40
+$T237020 = -80						; size = 28
+$T237019 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
 __Addleft$ = 12						; size = 1
@@ -24152,22 +24152,22 @@ __Val$ = 20						; size = 4
 ; 1189 : 			_THROW(length_error, "map/set<T> too long");
 
 	push	OFFSET ??_C@_0BE@JONHPENG@map?1set?$DMT?$DO?5too?5long?$AA@
-	lea	ecx, DWORD PTR $T236543[esp+88]
+	lea	ecx, DWORD PTR $T237020[esp+88]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T236542[esp+84]
+	lea	ecx, DWORD PTR $T237019[esp+84]
 	mov	DWORD PTR __$EHRec$[esp+92], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T236543[esp+84]
+	lea	eax, DWORD PTR $T237020[esp+84]
 	push	eax
-	lea	ecx, DWORD PTR $T236542[esp+100]
+	lea	ecx, DWORD PTR $T237019[esp+100]
 	mov	BYTE PTR __$EHRec$[esp+96], 1
-	mov	DWORD PTR $T236542[esp+88], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T237019[esp+88], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVlength_error@std@@
-	lea	ecx, DWORD PTR $T236542[esp+88]
+	lea	ecx, DWORD PTR $T237019[esp+88]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+100], 0
-	mov	DWORD PTR $T236542[esp+92], OFFSET ??_7length_error@std@@6B@
+	mov	DWORD PTR $T237019[esp+92], OFFSET ??_7length_error@std@@6B@
 	call	__CxxThrowException@8
 $LN228@Insert:
 $LN17@Insert:
@@ -24486,10 +24486,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Insert@?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$00@std@@@std@@IAE?AViterator@12@_NPAU_Node@?$_Tree_nod@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$00@std@@@2@ABU?$pair@$$CBHH@2@@Z$0:
-	lea	ecx, DWORD PTR $T236543[ebp]
+	lea	ecx, DWORD PTR $T237020[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Insert@?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$00@std@@@std@@IAE?AViterator@12@_NPAU_Node@?$_Tree_nod@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$00@std@@@2@ABU?$pair@$$CBHH@2@@Z$2:
-	lea	ecx, DWORD PTR $T236542[ebp]
+	lea	ecx, DWORD PTR $T237019[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Insert@?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$00@std@@@std@@IAE?AViterator@12@_NPAU_Node@?$_Tree_nod@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$00@std@@@2@ABU?$pair@$$CBHH@2@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?_Insert@?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$00@std@@@std@@IAE?AViterator@12@_NPAU_Node@?$_Tree_nod@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$00@std@@@2@ABU?$pair@$$CBHH@2@@Z
@@ -24638,8 +24638,8 @@ PUBLIC	??$unchecked_uninitialized_fill_n@PAUFreeResourceXCities@@IU1@V?$allocato
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ??$unchecked_uninitialized_fill_n@PAUFreeResourceXCities@@IU1@V?$allocator@UFreeResourceXCities@@@std@@@stdext@@YAXPAUFreeResourceXCities@@IABU1@AAV?$allocator@UFreeResourceXCities@@@std@@@Z
 _TEXT	SEGMENT
-$T237125 = -4						; size = 1
-__Cat$237129 = -4					; size = 1
+$T237602 = -4						; size = 1
+__Cat$237607 = -4					; size = 1
 __First$ = 8						; size = 4
 __Count$ = 12						; size = 4
 __Val$ = 16						; size = 4
@@ -24654,9 +24654,9 @@ __Al$ = 20						; size = 4
 ; 942  : 		_STD _Ptr_cat(_First, _First), _STD _Range_checked_iterator_tag());
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T237125[esp+4], 0
-	mov	eax, DWORD PTR $T237125[esp+4]
-	mov	ecx, DWORD PTR __Cat$237129[esp+4]
+	mov	BYTE PTR $T237602[esp+4], 0
+	mov	eax, DWORD PTR $T237602[esp+4]
+	mov	ecx, DWORD PTR __Cat$237607[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Val$[esp+4]
 	push	ecx
@@ -24678,8 +24678,8 @@ PUBLIC	??$unchecked_uninitialized_fill_n@PAW4TraitTypes@@IW41@V?$allocator@W4Tra
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$unchecked_uninitialized_fill_n@PAW4TraitTypes@@IW41@V?$allocator@W4TraitTypes@@@std@@@stdext@@YAXPAW4TraitTypes@@IABW41@AAV?$allocator@W4TraitTypes@@@std@@@Z
 _TEXT	SEGMENT
-$T237134 = -4						; size = 1
-__Cat$237138 = -4					; size = 1
+$T237611 = -4						; size = 1
+__Cat$237616 = -4					; size = 1
 __First$ = 8						; size = 4
 __Count$ = 12						; size = 4
 __Val$ = 16						; size = 4
@@ -24694,9 +24694,9 @@ __Al$ = 20						; size = 4
 ; 942  : 		_STD _Ptr_cat(_First, _First), _STD _Range_checked_iterator_tag());
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T237134[esp+4], 0
-	mov	eax, DWORD PTR $T237134[esp+4]
-	mov	ecx, DWORD PTR __Cat$237138[esp+4]
+	mov	BYTE PTR $T237611[esp+4], 0
+	mov	eax, DWORD PTR $T237611[esp+4]
+	mov	ecx, DWORD PTR __Cat$237616[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Val$[esp+4]
 	push	ecx
@@ -24807,10 +24807,10 @@ PUBLIC	??$_Uninit_move@PAUFreeResourceXCities@@PAU1@V?$allocator@UFreeResourceXC
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Uninit_move@PAUFreeResourceXCities@@PAU1@V?$allocator@UFreeResourceXCities@@@std@@U_Undefined_move_tag@3@@std@@YAPAUFreeResourceXCities@@PAU1@00AAV?$allocator@UFreeResourceXCities@@@0@U_Undefined_move_tag@0@U_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
-$T237216 = -4						; size = 1
+$T237693 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$237219 = 16					; size = 1
+__Cat$237697 = 16					; size = 1
 __Dest$ = 16						; size = 4
 __Al$ = 20						; size = 4
 ___formal$ = 24						; size = 1
@@ -24823,10 +24823,10 @@ ___formal$ = 28						; size = 1
 
 ; 207  : 	return (_STDEXT unchecked_uninitialized_copy(_First, _Last, _Dest, _Al));
 
-	mov	ecx, DWORD PTR __Cat$237219[esp]
+	mov	ecx, DWORD PTR __Cat$237697[esp]
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T237216[esp+4], 0
-	mov	eax, DWORD PTR $T237216[esp+4]
+	mov	BYTE PTR $T237693[esp+4], 0
+	mov	eax, DWORD PTR $T237693[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -24848,8 +24848,8 @@ PUBLIC	??$unchecked_uninitialized_copy@PAW4TraitTypes@@PAW41@V?$allocator@W4Trai
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$unchecked_uninitialized_copy@PAW4TraitTypes@@PAW41@V?$allocator@W4TraitTypes@@@std@@@stdext@@YAPAW4TraitTypes@@PAW41@00AAV?$allocator@W4TraitTypes@@@std@@@Z
 _TEXT	SEGMENT
-$T237226 = -4						; size = 1
-__Cat$237230 = -4					; size = 1
+$T237703 = -4						; size = 1
+__Cat$237708 = -4					; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
@@ -24865,9 +24865,9 @@ __Al$ = 20						; size = 4
 ; 822  : 		_STD _Ptr_cat(_First, _Dest), _STD _Range_checked_iterator_tag()));
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T237226[esp+4], 0
-	mov	eax, DWORD PTR $T237226[esp+4]
-	mov	ecx, DWORD PTR __Cat$237230[esp+4]
+	mov	BYTE PTR $T237703[esp+4], 0
+	mov	eax, DWORD PTR $T237703[esp+4]
+	mov	ecx, DWORD PTR __Cat$237708[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -24889,8 +24889,8 @@ PUBLIC	??$unchecked_uninitialized_copy@PAUMayaBonusChoice@@PAU1@V?$allocator@UMa
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$unchecked_uninitialized_copy@PAUMayaBonusChoice@@PAU1@V?$allocator@UMayaBonusChoice@@@std@@@stdext@@YAPAUMayaBonusChoice@@PAU1@00AAV?$allocator@UMayaBonusChoice@@@std@@@Z
 _TEXT	SEGMENT
-$T237235 = -4						; size = 1
-__Cat$237239 = -4					; size = 1
+$T237712 = -4						; size = 1
+__Cat$237717 = -4					; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
@@ -24906,9 +24906,9 @@ __Al$ = 20						; size = 4
 ; 822  : 		_STD _Ptr_cat(_First, _Dest), _STD _Range_checked_iterator_tag()));
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T237235[esp+4], 0
-	mov	eax, DWORD PTR $T237235[esp+4]
-	mov	ecx, DWORD PTR __Cat$237239[esp+4]
+	mov	BYTE PTR $T237712[esp+4], 0
+	mov	eax, DWORD PTR $T237712[esp+4]
+	mov	ecx, DWORD PTR __Cat$237717[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -25380,9 +25380,9 @@ PUBLIC	??$copy@V?$_Vb_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@@@std@@V1
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xutility
 ;	COMDAT ??$copy@V?$_Vb_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@@@std@@V12@@std@@YA?AV?$_Vb_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@@@0@V10@00@Z
 _TEXT	SEGMENT
-$T237943 = -4						; size = 1
-__Cat$237948 = 8					; size = 1
-$T237945 = 8						; size = 1
+$T238420 = -4						; size = 1
+__Cat$238425 = 8					; size = 1
+$T238422 = 8						; size = 1
 ___$ReturnUdt$ = 8					; size = 4
 __First$ = 12						; size = 8
 __Last$ = 20						; size = 8
@@ -25396,12 +25396,12 @@ __Dest$ = 28						; size = 8
 ; 2588 : 	return (_Copy_opt(_CHECKED_BASE(_First), _CHECKED_BASE(_Last), _Dest, 
 ; 2589 : 		_Iter_random(_First, _Dest), _Ptr_cat(_First, _Dest), _Range_checked_iterator_tag()));
 
-	mov	ecx, DWORD PTR __Cat$237948[esp]
-	mov	edx, DWORD PTR $T237945[esp]
+	mov	ecx, DWORD PTR __Cat$238425[esp]
+	mov	edx, DWORD PTR $T238422[esp]
 	push	esi
 	mov	esi, DWORD PTR ___$ReturnUdt$[esp+4]
-	mov	BYTE PTR $T237943[esp+8], 0
-	mov	eax, DWORD PTR $T237943[esp+8]
+	mov	BYTE PTR $T238420[esp+8], 0
+	mov	eax, DWORD PTR $T238420[esp+8]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+12]
 	push	ecx
@@ -25516,8 +25516,8 @@ PUBLIC	??$unchecked_uninitialized_fill_n@PAV?$Array@H$05@Firaxis@@IV12@V?$alloca
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ??$unchecked_uninitialized_fill_n@PAV?$Array@H$05@Firaxis@@IV12@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@stdext@@YAXPAV?$Array@H$05@Firaxis@@IABV12@AAV?$allocator@V?$Array@H$05@Firaxis@@@std@@@Z
 _TEXT	SEGMENT
-$T238025 = -4						; size = 1
-__Cat$238029 = -4					; size = 1
+$T238502 = -4						; size = 1
+__Cat$238506 = -4					; size = 1
 __First$ = 8						; size = 4
 __Count$ = 12						; size = 4
 __Val$ = 16						; size = 4
@@ -25532,9 +25532,9 @@ __Al$ = 20						; size = 4
 ; 942  : 		_STD _Ptr_cat(_First, _First), _STD _Range_checked_iterator_tag());
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T238025[esp+4], 0
-	mov	eax, DWORD PTR $T238025[esp+4]
-	mov	ecx, DWORD PTR __Cat$238029[esp+4]
+	mov	BYTE PTR $T238502[esp+4], 0
+	mov	eax, DWORD PTR $T238502[esp+4]
+	mov	ecx, DWORD PTR __Cat$238506[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Val$[esp+4]
 	push	ecx
@@ -25795,10 +25795,10 @@ PUBLIC	??$_Uninit_move@PAV?$Array@H$05@Firaxis@@PAV12@V?$allocator@V?$Array@H$05
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Uninit_move@PAV?$Array@H$05@Firaxis@@PAV12@V?$allocator@V?$Array@H$05@Firaxis@@@std@@U_Undefined_move_tag@4@@std@@YAPAV?$Array@H$05@Firaxis@@PAV12@00AAV?$allocator@V?$Array@H$05@Firaxis@@@0@U_Undefined_move_tag@0@U_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
-$T238417 = -4						; size = 1
+$T238894 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$238420 = 16					; size = 1
+__Cat$238898 = 16					; size = 1
 __Dest$ = 16						; size = 4
 __Al$ = 20						; size = 4
 ___formal$ = 24						; size = 1
@@ -25811,10 +25811,10 @@ ___formal$ = 28						; size = 1
 
 ; 207  : 	return (_STDEXT unchecked_uninitialized_copy(_First, _Last, _Dest, _Al));
 
-	mov	ecx, DWORD PTR __Cat$238420[esp]
+	mov	ecx, DWORD PTR __Cat$238898[esp]
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T238417[esp+4], 0
-	mov	eax, DWORD PTR $T238417[esp+4]
+	mov	BYTE PTR $T238894[esp+4], 0
+	mov	eax, DWORD PTR $T238894[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -25952,11 +25952,11 @@ EXTRN	?GetNumCitiesFounded@CvPlayer@@QBEHXZ:PROC	; CvPlayer::GetNumCitiesFounded
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?WillGetUniqueLuxury@CvPlayerTraits@@QBE_NPAVCvArea@@@Z
 _TEXT	SEGMENT
-_iArea$223266 = -8					; size = 4
+_iArea$223743 = -8					; size = 4
 _this$ = -4						; size = 4
 tv392 = 8						; size = 4
-$T238584 = 8						; size = 4
-$T238575 = 8						; size = 4
+$T239061 = 8						; size = 4
+$T239052 = 8						; size = 4
 _pArea$ = 8						; size = 4
 ?WillGetUniqueLuxury@CvPlayerTraits@@QBE_NPAVCvArea@@@Z PROC ; CvPlayerTraits::WillGetUniqueLuxury, COMDAT
 ; _this$ = ecx
@@ -26002,7 +26002,7 @@ _pArea$ = 8						; size = 4
 	cmp	BYTE PTR [ebp+353], 0
 	mov	ecx, DWORD PTR _pArea$[esp+20]
 	mov	edx, DWORD PTR [ecx+4]
-	mov	DWORD PTR _iArea$223266[esp+24], edx
+	mov	DWORD PTR _iArea$223743[esp+24], edx
 	je	$LN82@WillGetUni
 
 ; 2364 : 		{
@@ -26018,7 +26018,7 @@ _pArea$ = 8						; size = 4
 
 	mov	edi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+52
 	mov	ecx, DWORD PTR [ebp+4]
-	mov	DWORD PTR $T238584[esp+20], edi
+	mov	DWORD PTR $T239061[esp+20], edi
 	call	?GetOriginalCapitalY@CvPlayer@@QBEHXZ	; CvPlayer::GetOriginalCapitalY
 	mov	ecx, DWORD PTR [ebp+4]
 	mov	ebx, eax
@@ -26047,7 +26047,7 @@ $LN30@WillGetUni:
 $LN80@WillGetUni:
 	mov	esi, eax
 $LN32@WillGetUni:
-	mov	eax, DWORD PTR $T238584[esp+20]
+	mov	eax, DWORD PTR $T239061[esp+20]
 	cmp	BYTE PTR [eax+4057], 0
 	mov	edi, DWORD PTR [edi+4024]
 	je	SHORT $LN85@WillGetUni
@@ -26077,7 +26077,7 @@ $LN42@WillGetUni:
 	cmp	edx, edi
 	jge	SHORT $LN81@WillGetUni
 	imul	ecx, edx
-	mov	edx, DWORD PTR $T238584[esp+20]
+	mov	edx, DWORD PTR $T239061[esp+20]
 	add	ecx, esi
 	imul	ecx, 484				; 000001e4H
 	add	ecx, DWORD PTR [edx+4068]
@@ -26090,7 +26090,7 @@ $LN42@WillGetUni:
 ; 2375 : 			{
 ; 2376 : 				if (pOriginalCapitalPlot->getArea() == iArea)
 
-	mov	eax, DWORD PTR _iArea$223266[esp+24]
+	mov	eax, DWORD PTR _iArea$223743[esp+24]
 	cmp	DWORD PTR [ecx+356], eax
 
 ; 2377 : 				{
@@ -26107,11 +26107,11 @@ $LN81@WillGetUni:
 
 	mov	esi, DWORD PTR [ebp+732]
 	mov	eax, DWORD PTR [ebp+728]
-	lea	ecx, DWORD PTR _iArea$223266[esp+24]
+	lea	ecx, DWORD PTR _iArea$223743[esp+24]
 	push	ecx
 	push	esi
 	push	eax
-	lea	edx, DWORD PTR $T238575[esp+32]
+	lea	edx, DWORD PTR $T239052[esp+32]
 	push	edx
 	call	??$find@V?$_Vector_const_iterator@HV?$allocator@H@std@@@std@@H@std@@YA?AV?$_Vector_const_iterator@HV?$allocator@H@std@@@0@V10@0ABH@Z ; std::find<std::_Vector_const_iterator<int,std::allocator<int> >,int>
 	add	esp, 16					; 00000010H
@@ -26354,7 +26354,7 @@ PUBLIC	??A?$vector@_NV?$allocator@_N@std@@@std@@QAE?AV?$_Vb_reference@IHV?$vecto
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\vector
 ;	COMDAT ??A?$vector@_NV?$allocator@_N@std@@@std@@QAE?AV?$_Vb_reference@IHV?$vector@_NV?$allocator@_N@std@@@std@@@1@I@Z
 _TEXT	SEGMENT
-__Tmp$238808 = -8					; size = 8
+__Tmp$239285 = -8					; size = 8
 ___$ReturnUdt$ = 8					; size = 4
 __Off$ = 12						; size = 4
 ??A?$vector@_NV?$allocator@_N@std@@@std@@QAE?AV?$_Vb_reference@IHV?$vector@_NV?$allocator@_N@std@@@std@@@1@I@Z PROC ; std::vector<bool,std::allocator<bool> >::operator[], COMDAT
@@ -26368,15 +26368,15 @@ __Off$ = 12						; size = 4
 
 	mov	ecx, DWORD PTR [ecx+8]
 	xor	eax, eax
-	mov	DWORD PTR __Tmp$238808[esp+12], eax
+	mov	DWORD PTR __Tmp$239285[esp+12], eax
 	mov	eax, DWORD PTR __Off$[esp+4]
-	mov	DWORD PTR __Tmp$238808[esp+8], ecx
+	mov	DWORD PTR __Tmp$239285[esp+8], ecx
 	push	eax
-	lea	ecx, DWORD PTR __Tmp$238808[esp+12]
+	lea	ecx, DWORD PTR __Tmp$239285[esp+12]
 	call	??Y?$_Vb_const_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@@@std@@QAEAAV01@H@Z ; std::_Vb_const_iterator<unsigned int,int,std::vector<bool,std::allocator<bool> > >::operator+=
 	mov	eax, DWORD PTR ___$ReturnUdt$[esp+4]
-	mov	ecx, DWORD PTR __Tmp$238808[esp+8]
-	mov	edx, DWORD PTR __Tmp$238808[esp+12]
+	mov	ecx, DWORD PTR __Tmp$239285[esp+8]
+	mov	edx, DWORD PTR __Tmp$239285[esp+12]
 	mov	DWORD PTR [eax], ecx
 	mov	DWORD PTR [eax+4], edx
 
@@ -26523,7 +26523,7 @@ PUBLIC	?insert@?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$C
 _TEXT	SEGMENT
 __Addleft$ = -4						; size = 1
 ___$ReturnUdt$ = 8					; size = 4
-$T239168 = 12						; size = 4
+$T239645 = 12						; size = 4
 __Val$ = 12						; size = 4
 ?insert@?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$00@std@@@std@@QAE?AU?$pair@Viterator@?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$00@std@@@std@@_N@2@ABU?$pair@$$CBHH@2@@Z PROC ; std::_Tree<std::_Tmap_traits<int,int,std::less<int>,std::allocator<std::pair<int const ,int> >,1> >::insert, COMDAT
 ; _this$ = ecx
@@ -26591,7 +26591,7 @@ $LN9@insert:
 	push	ebp
 	push	esi
 	push	eax
-	lea	edx, DWORD PTR $T239168[esp+20]
+	lea	edx, DWORD PTR $T239645[esp+20]
 	push	edx
 	call	?_Insert@?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$00@std@@@std@@IAE?AViterator@12@_NPAU_Node@?$_Tree_nod@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$00@std@@@2@ABU?$pair@$$CBHH@2@@Z ; std::_Tree<std::_Tmap_traits<int,int,std::less<int>,std::allocator<std::pair<int const ,int> >,1> >::_Insert
 	mov	ecx, DWORD PTR [eax]
@@ -26738,10 +26738,10 @@ PUBLIC	?_Ufill@?$vector@UFreeResourceXCities@@V?$allocator@UFreeResourceXCities@
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\vector
 ;	COMDAT ?_Ufill@?$vector@UFreeResourceXCities@@V?$allocator@UFreeResourceXCities@@@std@@@std@@IAEPAUFreeResourceXCities@@PAU3@IABU3@@Z
 _TEXT	SEGMENT
-$T239526 = -4						; size = 1
+$T240003 = -4						; size = 1
 __Ptr$ = 8						; size = 4
 __Count$ = 12						; size = 4
-__Cat$239529 = 16					; size = 1
+__Cat$240007 = 16					; size = 1
 __Val$ = 16						; size = 4
 ?_Ufill@?$vector@UFreeResourceXCities@@V?$allocator@UFreeResourceXCities@@@std@@@std@@IAEPAUFreeResourceXCities@@PAU3@IABU3@@Z PROC ; std::vector<FreeResourceXCities,std::allocator<FreeResourceXCities> >::_Ufill, COMDAT
 ; _this$ = ecx
@@ -26752,13 +26752,13 @@ __Val$ = 16						; size = 4
 
 ; 1254 : 		_STDEXT unchecked_uninitialized_fill_n(_Ptr, _Count, _Val, this->_Alval);
 
-	mov	edx, DWORD PTR __Cat$239529[esp]
+	mov	edx, DWORD PTR __Cat$240007[esp]
 	push	esi
 	mov	esi, DWORD PTR __Count$[esp+4]
 	push	edi
 	mov	edi, DWORD PTR __Ptr$[esp+8]
-	mov	BYTE PTR $T239526[esp+12], 0
-	mov	eax, DWORD PTR $T239526[esp+12]
+	mov	BYTE PTR $T240003[esp+12], 0
+	mov	eax, DWORD PTR $T240003[esp+12]
 	push	eax
 	mov	eax, DWORD PTR __Val$[esp+12]
 	push	edx
@@ -26785,10 +26785,10 @@ PUBLIC	?_Ufill@?$vector@W4TraitTypes@@V?$allocator@W4TraitTypes@@@std@@@std@@IAE
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?_Ufill@?$vector@W4TraitTypes@@V?$allocator@W4TraitTypes@@@std@@@std@@IAEPAW4TraitTypes@@PAW43@IABW43@@Z
 _TEXT	SEGMENT
-$T239544 = -4						; size = 1
+$T240021 = -4						; size = 1
 __Ptr$ = 8						; size = 4
 __Count$ = 12						; size = 4
-__Cat$239547 = 16					; size = 1
+__Cat$240025 = 16					; size = 1
 __Val$ = 16						; size = 4
 ?_Ufill@?$vector@W4TraitTypes@@V?$allocator@W4TraitTypes@@@std@@@std@@IAEPAW4TraitTypes@@PAW43@IABW43@@Z PROC ; std::vector<enum TraitTypes,std::allocator<enum TraitTypes> >::_Ufill, COMDAT
 ; _this$ = ecx
@@ -26799,13 +26799,13 @@ __Val$ = 16						; size = 4
 
 ; 1254 : 		_STDEXT unchecked_uninitialized_fill_n(_Ptr, _Count, _Val, this->_Alval);
 
-	mov	edx, DWORD PTR __Cat$239547[esp]
+	mov	edx, DWORD PTR __Cat$240025[esp]
 	push	esi
 	mov	esi, DWORD PTR __Count$[esp+4]
 	push	edi
 	mov	edi, DWORD PTR __Ptr$[esp+8]
-	mov	BYTE PTR $T239544[esp+12], 0
-	mov	eax, DWORD PTR $T239544[esp+12]
+	mov	BYTE PTR $T240021[esp+12], 0
+	mov	eax, DWORD PTR $T240021[esp+12]
 	push	eax
 	mov	eax, DWORD PTR __Val$[esp+12]
 	push	edx
@@ -26833,7 +26833,7 @@ PUBLIC	?erase@?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CB
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xtree
 ;	COMDAT ?erase@?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$00@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@0@Z
 _TEXT	SEGMENT
-$T239556 = -4						; size = 4
+$T240033 = -4						; size = 4
 ___$ReturnUdt$ = 8					; size = 4
 __First$ = 12						; size = 4
 __Last$ = 16						; size = 4
@@ -26934,7 +26934,7 @@ $LN63@erase@5:
 	mov	DWORD PTR __First$[esp+4], eax
 $LN65@erase@5:
 	push	edx
-	lea	eax, DWORD PTR $T239556[esp+12]
+	lea	eax, DWORD PTR $T240033[esp+12]
 	push	eax
 	mov	ecx, esi
 	call	?erase@?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$00@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@@Z ; std::_Tree<std::_Tmap_traits<int,int,std::less<int>,std::allocator<std::pair<int const ,int> >,1> >::erase
@@ -26992,8 +26992,8 @@ PUBLIC	??$unchecked_uninitialized_fill_n@PAUMayaBonusChoice@@IU1@V?$allocator@UM
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ??$unchecked_uninitialized_fill_n@PAUMayaBonusChoice@@IU1@V?$allocator@UMayaBonusChoice@@@std@@@stdext@@YAXPAUMayaBonusChoice@@IABU1@AAV?$allocator@UMayaBonusChoice@@@std@@@Z
 _TEXT	SEGMENT
-$T239881 = -4						; size = 1
-__Cat$239886 = -4					; size = 1
+$T240358 = -4						; size = 1
+__Cat$240363 = -4					; size = 1
 __First$ = 8						; size = 4
 __Count$ = 12						; size = 4
 __Val$ = 16						; size = 4
@@ -27008,9 +27008,9 @@ __Al$ = 20						; size = 4
 ; 942  : 		_STD _Ptr_cat(_First, _First), _STD _Range_checked_iterator_tag());
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T239881[esp+4], 0
-	mov	eax, DWORD PTR $T239881[esp+4]
-	mov	ecx, DWORD PTR __Cat$239886[esp+4]
+	mov	BYTE PTR $T240358[esp+4], 0
+	mov	eax, DWORD PTR $T240358[esp+4]
+	mov	ecx, DWORD PTR __Cat$240363[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Val$[esp+4]
 	push	ecx
@@ -27032,10 +27032,10 @@ PUBLIC	??$_Unchecked_uninitialized_move@PAUFreeResourceXCities@@PAU1@V?$allocato
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Unchecked_uninitialized_move@PAUFreeResourceXCities@@PAU1@V?$allocator@UFreeResourceXCities@@@std@@@stdext@@YAPAUFreeResourceXCities@@PAU1@00AAV?$allocator@UFreeResourceXCities@@@std@@@Z
 _TEXT	SEGMENT
-$T239915 = -4						; size = 1
+$T240394 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$239919 = 16					; size = 1
+__Cat$240398 = 16					; size = 1
 __Dest$ = 16						; size = 4
 __Al$ = 20						; size = 4
 ??$_Unchecked_uninitialized_move@PAUFreeResourceXCities@@PAU1@V?$allocator@UFreeResourceXCities@@@std@@@stdext@@YAPAUFreeResourceXCities@@PAU1@00AAV?$allocator@UFreeResourceXCities@@@std@@@Z PROC ; stdext::_Unchecked_uninitialized_move<FreeResourceXCities *,FreeResourceXCities *,std::allocator<FreeResourceXCities> >, COMDAT
@@ -27048,10 +27048,10 @@ __Al$ = 20						; size = 4
 ; 863  : 		_CHECKED_BASE(_Last), _Dest, _Al,
 ; 864  : 		_STD _Move_cat(_Dest), _STD _Range_checked_iterator_tag()));
 
-	mov	ecx, DWORD PTR __Cat$239919[esp]
+	mov	ecx, DWORD PTR __Cat$240398[esp]
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T239915[esp+4], 0
-	mov	eax, DWORD PTR $T239915[esp+4]
+	mov	BYTE PTR $T240394[esp+4], 0
+	mov	eax, DWORD PTR $T240394[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -27073,10 +27073,10 @@ PUBLIC	??$_Uninit_move@PAW4TraitTypes@@PAW41@V?$allocator@W4TraitTypes@@@std@@U_
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Uninit_move@PAW4TraitTypes@@PAW41@V?$allocator@W4TraitTypes@@@std@@U_Undefined_move_tag@3@@std@@YAPAW4TraitTypes@@PAW41@00AAV?$allocator@W4TraitTypes@@@0@U_Undefined_move_tag@0@U_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
-$T239935 = -4						; size = 1
+$T240413 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$239938 = 16					; size = 1
+__Cat$240416 = 16					; size = 1
 __Dest$ = 16						; size = 4
 __Al$ = 20						; size = 4
 ___formal$ = 24						; size = 1
@@ -27089,10 +27089,10 @@ ___formal$ = 28						; size = 1
 
 ; 207  : 	return (_STDEXT unchecked_uninitialized_copy(_First, _Last, _Dest, _Al));
 
-	mov	ecx, DWORD PTR __Cat$239938[esp]
+	mov	ecx, DWORD PTR __Cat$240416[esp]
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T239935[esp+4], 0
-	mov	eax, DWORD PTR $T239935[esp+4]
+	mov	BYTE PTR $T240413[esp+4], 0
+	mov	eax, DWORD PTR $T240413[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -27114,10 +27114,10 @@ PUBLIC	??$_Uninit_move@PAUMayaBonusChoice@@PAU1@V?$allocator@UMayaBonusChoice@@@
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Uninit_move@PAUMayaBonusChoice@@PAU1@V?$allocator@UMayaBonusChoice@@@std@@U_Undefined_move_tag@3@@std@@YAPAUMayaBonusChoice@@PAU1@00AAV?$allocator@UMayaBonusChoice@@@0@U_Undefined_move_tag@0@U_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
-$T239954 = -4						; size = 1
+$T240432 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$239958 = 16					; size = 1
+__Cat$240436 = 16					; size = 1
 __Dest$ = 16						; size = 4
 __Al$ = 20						; size = 4
 ___formal$ = 24						; size = 1
@@ -27130,10 +27130,10 @@ ___formal$ = 28						; size = 1
 
 ; 207  : 	return (_STDEXT unchecked_uninitialized_copy(_First, _Last, _Dest, _Al));
 
-	mov	ecx, DWORD PTR __Cat$239958[esp]
+	mov	ecx, DWORD PTR __Cat$240436[esp]
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T239954[esp+4], 0
-	mov	eax, DWORD PTR $T239954[esp+4]
+	mov	BYTE PTR $T240432[esp+4], 0
+	mov	eax, DWORD PTR $T240432[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -27278,7 +27278,7 @@ PUBLIC	?_Trim@?$vector@_NV?$allocator@_N@std@@@std@@IAEXI@Z ; std::vector<bool,s
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?_Trim@?$vector@_NV?$allocator@_N@std@@@std@@IAEXI@Z
 _TEXT	SEGMENT
-$T240159 = 8						; size = 4
+$T240636 = 8						; size = 4
 __Size$ = 8						; size = 4
 ?_Trim@?$vector@_NV?$allocator@_N@std@@@std@@IAEXI@Z PROC ; std::vector<bool,std::allocator<bool> >::_Trim, COMDAT
 ; _this$ = ecx
@@ -27322,7 +27322,7 @@ $LN3@Trim:
 	push	eax
 	lea	edx, DWORD PTR [edx+esi*4]
 	push	edx
-	lea	eax, DWORD PTR $T240159[esp+16]
+	lea	eax, DWORD PTR $T240636[esp+16]
 	push	eax
 	call	?erase@?$vector@IV?$allocator@I@std@@@std@@QAE?AV?$_Vector_iterator@IV?$allocator@I@std@@@2@V?$_Vector_const_iterator@IV?$allocator@I@std@@@2@0@Z ; std::vector<unsigned int,std::allocator<unsigned int> >::erase
 $LN2@Trim:
@@ -27379,8 +27379,8 @@ PUBLIC	??$?6V?$Array@H$05@Firaxis@@@@YAAAVFDataStream@@AAV0@ABV?$vector@V?$Array
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\fireplace\include\fireworks\fstlcontainerserialization.h
 ;	COMDAT ??$?6V?$Array@H$05@Firaxis@@@@YAAAVFDataStream@@AAV0@ABV?$vector@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@std@@@Z
 _TEXT	SEGMENT
-$T240261 = -8						; size = 8
-$T240273 = 8						; size = 4
+$T240738 = -8						; size = 8
+$T240749 = 8						; size = 4
 _saveTo$ = 8						; size = 4
 _readFrom$ = 12						; size = 4
 ??$?6V?$Array@H$05@Firaxis@@@@YAAAVFDataStream@@AAV0@ABV?$vector@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@std@@@Z PROC ; operator<<<Firaxis::Array<int,6> >, COMDAT
@@ -27402,11 +27402,11 @@ _readFrom$ = 12						; size = 4
 	push	edi
 	mov	edi, DWORD PTR _saveTo$[esp+12]
 	shr	eax, 31					; 0000001fH
-	lea	ecx, DWORD PTR $T240273[esp+12]
+	lea	ecx, DWORD PTR $T240749[esp+12]
 	add	eax, edx
 	push	ecx
 	mov	ecx, edi
-	mov	DWORD PTR $T240273[esp+16], eax
+	mov	DWORD PTR $T240749[esp+16], eax
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 	mov	eax, DWORD PTR [esi+8]
 	mov	ecx, DWORD PTR [esi+4]
@@ -27414,7 +27414,7 @@ _readFrom$ = 12						; size = 4
 	push	edi
 	push	eax
 	push	ecx
-	lea	edx, DWORD PTR $T240261[esp+32]
+	lea	edx, DWORD PTR $T240738[esp+32]
 	push	edx
 	call	??$for_each@V?$_Vector_const_iterator@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@std@@U?$SerializeFromSequenceContainer@$$CBV?$Array@H$05@Firaxis@@$$CBV?$vector@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@std@@@@@std@@YA?AU?$SerializeFromSequenceContainer@$$CBV?$Array@H$05@Firaxis@@$$CBV?$vector@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@std@@@@V?$_Vector_const_iterator@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@0@0U1@@Z ; std::for_each<std::_Vector_const_iterator<Firaxis::Array<int,6>,std::allocator<Firaxis::Array<int,6> > >,SerializeFromSequenceContainer<Firaxis::Array<int,6> const ,std::vector<Firaxis::Array<int,6>,std::allocator<Firaxis::Array<int,6> > > const > >
 	add	esp, 20					; 00000014H
@@ -27436,10 +27436,10 @@ PUBLIC	?_Ufill@?$vector@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxi
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\vector
 ;	COMDAT ?_Ufill@?$vector@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@std@@IAEPAV?$Array@H$05@Firaxis@@PAV34@IABV34@@Z
 _TEXT	SEGMENT
-$T240308 = -4						; size = 1
+$T240784 = -4						; size = 1
 __Ptr$ = 8						; size = 4
 __Count$ = 12						; size = 4
-__Cat$240311 = 16					; size = 1
+__Cat$240788 = 16					; size = 1
 __Val$ = 16						; size = 4
 ?_Ufill@?$vector@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@std@@IAEPAV?$Array@H$05@Firaxis@@PAV34@IABV34@@Z PROC ; std::vector<Firaxis::Array<int,6>,std::allocator<Firaxis::Array<int,6> > >::_Ufill, COMDAT
 ; _this$ = ecx
@@ -27450,13 +27450,13 @@ __Val$ = 16						; size = 4
 
 ; 1254 : 		_STDEXT unchecked_uninitialized_fill_n(_Ptr, _Count, _Val, this->_Alval);
 
-	mov	edx, DWORD PTR __Cat$240311[esp]
+	mov	edx, DWORD PTR __Cat$240788[esp]
 	push	esi
 	mov	esi, DWORD PTR __Count$[esp+4]
 	push	edi
 	mov	edi, DWORD PTR __Ptr$[esp+8]
-	mov	BYTE PTR $T240308[esp+12], 0
-	mov	eax, DWORD PTR $T240308[esp+12]
+	mov	BYTE PTR $T240784[esp+12], 0
+	mov	eax, DWORD PTR $T240784[esp+12]
 	push	eax
 	mov	eax, DWORD PTR __Val$[esp+12]
 	push	edx
@@ -27562,9 +27562,9 @@ PUBLIC	??$copy_backward@V?$_Vb_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xutility
 ;	COMDAT ??$copy_backward@V?$_Vb_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@@@std@@V12@@std@@YA?AV?$_Vb_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@@@0@V10@00@Z
 _TEXT	SEGMENT
-$T240473 = -4						; size = 1
-__Cat$240478 = 8					; size = 1
-$T240475 = 8						; size = 1
+$T240950 = -4						; size = 1
+__Cat$240956 = 8					; size = 1
+$T240952 = 8						; size = 1
 ___$ReturnUdt$ = 8					; size = 4
 __First$ = 12						; size = 8
 __Last$ = 20						; size = 8
@@ -27578,12 +27578,12 @@ __Dest$ = 28						; size = 8
 ; 2741 : 	return _Copy_backward_opt(_CHECKED_BASE(_First), _CHECKED_BASE(_Last), _Dest,
 ; 2742 : 		_Iter_random(_First, _Dest), _Ptr_cat(_First, _Dest), _STD _Range_checked_iterator_tag());
 
-	mov	ecx, DWORD PTR __Cat$240478[esp]
-	mov	edx, DWORD PTR $T240475[esp]
+	mov	ecx, DWORD PTR __Cat$240956[esp]
+	mov	edx, DWORD PTR $T240952[esp]
 	push	esi
 	mov	esi, DWORD PTR ___$ReturnUdt$[esp+4]
-	mov	BYTE PTR $T240473[esp+8], 0
-	mov	eax, DWORD PTR $T240473[esp+8]
+	mov	BYTE PTR $T240950[esp+8], 0
+	mov	eax, DWORD PTR $T240950[esp+8]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+12]
 	push	ecx
@@ -27692,10 +27692,10 @@ PUBLIC	??$_Unchecked_uninitialized_move@PAV?$Array@H$05@Firaxis@@PAV12@V?$alloca
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Unchecked_uninitialized_move@PAV?$Array@H$05@Firaxis@@PAV12@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@stdext@@YAPAV?$Array@H$05@Firaxis@@PAV12@00AAV?$allocator@V?$Array@H$05@Firaxis@@@std@@@Z
 _TEXT	SEGMENT
-$T240668 = -4						; size = 1
+$T241146 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$240672 = 16					; size = 1
+__Cat$241150 = 16					; size = 1
 __Dest$ = 16						; size = 4
 __Al$ = 20						; size = 4
 ??$_Unchecked_uninitialized_move@PAV?$Array@H$05@Firaxis@@PAV12@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@stdext@@YAPAV?$Array@H$05@Firaxis@@PAV12@00AAV?$allocator@V?$Array@H$05@Firaxis@@@std@@@Z PROC ; stdext::_Unchecked_uninitialized_move<Firaxis::Array<int,6> *,Firaxis::Array<int,6> *,std::allocator<Firaxis::Array<int,6> > >, COMDAT
@@ -27708,10 +27708,10 @@ __Al$ = 20						; size = 4
 ; 863  : 		_CHECKED_BASE(_Last), _Dest, _Al,
 ; 864  : 		_STD _Move_cat(_Dest), _STD _Range_checked_iterator_tag()));
 
-	mov	ecx, DWORD PTR __Cat$240672[esp]
+	mov	ecx, DWORD PTR __Cat$241150[esp]
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T240668[esp+4], 0
-	mov	eax, DWORD PTR $T240668[esp+4]
+	mov	BYTE PTR $T241146[esp+4], 0
+	mov	eax, DWORD PTR $T241146[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -27734,7 +27734,7 @@ PUBLIC	?NoTrain@CvTraitEntry@@QAE_NW4UnitClassTypes@@@Z ; CvTraitEntry::NoTrain
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredll_expansion2\cvtraitclasses.cpp
 ;	COMDAT ?NoTrain@CvTraitEntry@@QAE_NW4UnitClassTypes@@@Z
 _TEXT	SEGMENT
-__Tmp$240781 = -8					; size = 8
+__Tmp$241259 = -8					; size = 8
 _eUnitClass$ = 8					; size = 4
 ?NoTrain@CvTraitEntry@@QAE_NW4UnitClassTypes@@@Z PROC	; CvTraitEntry::NoTrain, COMDAT
 ; _this$ = ecx
@@ -27751,15 +27751,15 @@ _eUnitClass$ = 8					; size = 4
 
 	mov	eax, DWORD PTR [ecx+732]
 	xor	ecx, ecx
-	mov	DWORD PTR __Tmp$240781[esp+12], ecx
+	mov	DWORD PTR __Tmp$241259[esp+12], ecx
 	push	edx
-	lea	ecx, DWORD PTR __Tmp$240781[esp+12]
-	mov	DWORD PTR __Tmp$240781[esp+12], eax
+	lea	ecx, DWORD PTR __Tmp$241259[esp+12]
+	mov	DWORD PTR __Tmp$241259[esp+12], eax
 	call	??Y?$_Vb_const_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@@@std@@QAEAAV01@H@Z ; std::_Vb_const_iterator<unsigned int,int,std::vector<bool,std::allocator<bool> > >::operator+=
-	mov	ecx, DWORD PTR __Tmp$240781[esp+12]
+	mov	ecx, DWORD PTR __Tmp$241259[esp+12]
 	mov	eax, 1
 	shl	eax, cl
-	mov	ecx, DWORD PTR __Tmp$240781[esp+8]
+	mov	ecx, DWORD PTR __Tmp$241259[esp+8]
 	and	eax, DWORD PTR [ecx]
 	neg	eax
 	sbb	eax, eax
@@ -27790,7 +27790,7 @@ PUBLIC	?NoBuild@CvTraitEntry@@QAE_NW4ImprovementTypes@@@Z ; CvTraitEntry::NoBuil
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?NoBuild@CvTraitEntry@@QAE_NW4ImprovementTypes@@@Z
 _TEXT	SEGMENT
-__Tmp$240903 = -8					; size = 8
+__Tmp$241381 = -8					; size = 8
 _eImprovementType$ = 8					; size = 4
 ?NoBuild@CvTraitEntry@@QAE_NW4ImprovementTypes@@@Z PROC	; CvTraitEntry::NoBuild, COMDAT
 ; _this$ = ecx
@@ -27807,15 +27807,15 @@ _eImprovementType$ = 8					; size = 4
 
 	mov	eax, DWORD PTR [ecx+752]
 	xor	ecx, ecx
-	mov	DWORD PTR __Tmp$240903[esp+12], ecx
+	mov	DWORD PTR __Tmp$241381[esp+12], ecx
 	push	edx
-	lea	ecx, DWORD PTR __Tmp$240903[esp+12]
-	mov	DWORD PTR __Tmp$240903[esp+12], eax
+	lea	ecx, DWORD PTR __Tmp$241381[esp+12]
+	mov	DWORD PTR __Tmp$241381[esp+12], eax
 	call	??Y?$_Vb_const_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@@@std@@QAEAAV01@H@Z ; std::_Vb_const_iterator<unsigned int,int,std::vector<bool,std::allocator<bool> > >::operator+=
-	mov	ecx, DWORD PTR __Tmp$240903[esp+12]
+	mov	ecx, DWORD PTR __Tmp$241381[esp+12]
 	mov	eax, 1
 	shl	eax, cl
-	mov	ecx, DWORD PTR __Tmp$240903[esp+8]
+	mov	ecx, DWORD PTR __Tmp$241381[esp+8]
 	and	eax, DWORD PTR [ecx]
 	neg	eax
 	sbb	eax, eax
@@ -27867,7 +27867,7 @@ PUBLIC	?NoTrain@CvPlayerTraits@@QAE_NW4UnitClassTypes@@@Z ; CvPlayerTraits::NoTr
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?NoTrain@CvPlayerTraits@@QAE_NW4UnitClassTypes@@@Z
 _TEXT	SEGMENT
-__Tmp$241170 = -8					; size = 8
+__Tmp$241648 = -8					; size = 8
 _eUnitClassType$ = 8					; size = 4
 ?NoTrain@CvPlayerTraits@@QAE_NW4UnitClassTypes@@@Z PROC	; CvPlayerTraits::NoTrain, COMDAT
 ; _this$ = ecx
@@ -27884,15 +27884,15 @@ _eUnitClassType$ = 8					; size = 4
 
 	mov	eax, DWORD PTR [ecx+636]
 	xor	ecx, ecx
-	mov	DWORD PTR __Tmp$241170[esp+12], ecx
+	mov	DWORD PTR __Tmp$241648[esp+12], ecx
 	push	edx
-	lea	ecx, DWORD PTR __Tmp$241170[esp+12]
-	mov	DWORD PTR __Tmp$241170[esp+12], eax
+	lea	ecx, DWORD PTR __Tmp$241648[esp+12]
+	mov	DWORD PTR __Tmp$241648[esp+12], eax
 	call	??Y?$_Vb_const_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@@@std@@QAEAAV01@H@Z ; std::_Vb_const_iterator<unsigned int,int,std::vector<bool,std::allocator<bool> > >::operator+=
-	mov	ecx, DWORD PTR __Tmp$241170[esp+12]
+	mov	ecx, DWORD PTR __Tmp$241648[esp+12]
 	mov	eax, 1
 	shl	eax, cl
-	mov	ecx, DWORD PTR __Tmp$241170[esp+8]
+	mov	ecx, DWORD PTR __Tmp$241648[esp+8]
 	and	eax, DWORD PTR [ecx]
 	neg	eax
 	sbb	eax, eax
@@ -27923,7 +27923,7 @@ PUBLIC	?NoBuild@CvPlayerTraits@@QAE_NW4ImprovementTypes@@@Z ; CvPlayerTraits::No
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?NoBuild@CvPlayerTraits@@QAE_NW4ImprovementTypes@@@Z
 _TEXT	SEGMENT
-__Tmp$241295 = -8					; size = 8
+__Tmp$241775 = -8					; size = 8
 _eImprovementType$ = 8					; size = 4
 ?NoBuild@CvPlayerTraits@@QAE_NW4ImprovementTypes@@@Z PROC ; CvPlayerTraits::NoBuild, COMDAT
 ; _this$ = ecx
@@ -27940,15 +27940,15 @@ _eImprovementType$ = 8					; size = 4
 
 	mov	eax, DWORD PTR [ecx+656]
 	xor	ecx, ecx
-	mov	DWORD PTR __Tmp$241295[esp+12], ecx
+	mov	DWORD PTR __Tmp$241775[esp+12], ecx
 	push	edx
-	lea	ecx, DWORD PTR __Tmp$241295[esp+12]
-	mov	DWORD PTR __Tmp$241295[esp+12], eax
+	lea	ecx, DWORD PTR __Tmp$241775[esp+12]
+	mov	DWORD PTR __Tmp$241775[esp+12], eax
 	call	??Y?$_Vb_const_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@@@std@@QAEAAV01@H@Z ; std::_Vb_const_iterator<unsigned int,int,std::vector<bool,std::allocator<bool> > >::operator+=
-	mov	ecx, DWORD PTR __Tmp$241295[esp+12]
+	mov	ecx, DWORD PTR __Tmp$241775[esp+12]
 	mov	eax, 1
 	shl	eax, cl
-	mov	ecx, DWORD PTR __Tmp$241295[esp+8]
+	mov	ecx, DWORD PTR __Tmp$241775[esp+8]
 	and	eax, DWORD PTR [ecx]
 	neg	eax
 	sbb	eax, eax
@@ -27986,19 +27986,19 @@ EXTRN	??6@YAAAVFDataStream@@AAV0@ABW4UnitTypes@@@Z:PROC ; operator<<
 _TEXT	SEGMENT
 _iNumUnitCombatClassInfos$ = -16			; size = 4
 _uiVersion$ = -12					; size = 4
-$T242472 = -8						; size = 8
-$T242411 = -8						; size = 8
-$T242350 = -8						; size = 8
-$T242475 = 8						; size = 4
-$T242414 = 8						; size = 4
-$T242353 = 8						; size = 4
-$T242266 = 8						; size = 1
-$T242093 = 8						; size = 1
-$T241339 = 8						; size = 4
-$T241338 = 8						; size = 4
-$T241336 = 8						; size = 4
-$T241334 = 8						; size = 4
-$T241322 = 8						; size = 4
+$T242949 = -8						; size = 8
+$T242888 = -8						; size = 8
+$T242827 = -8						; size = 8
+$T242951 = 8						; size = 4
+$T242890 = 8						; size = 4
+$T242829 = 8						; size = 4
+$T242743 = 8						; size = 1
+$T242571 = 8						; size = 1
+$T241816 = 8						; size = 4
+$T241815 = 8						; size = 4
+$T241813 = 8						; size = 4
+$T241811 = 8						; size = 4
+$T241799 = 8						; size = 4
 _kStream$ = 8						; size = 4
 ?Write@CvPlayerTraits@@QAEXAAVFDataStream@@@Z PROC	; CvPlayerTraits::Write, COMDAT
 ; _this$ = ecx
@@ -28693,11 +28693,11 @@ _kStream$ = 8						; size = 4
 
 	mov	eax, DWORD PTR [esi+772]
 	sub	eax, DWORD PTR [esi+768]
-	lea	ecx, DWORD PTR $T241322[esp+24]
+	lea	ecx, DWORD PTR $T241799[esp+24]
 	sar	eax, 3
 	push	ecx
 	mov	ecx, edi
-	mov	DWORD PTR $T241322[esp+28], eax
+	mov	DWORD PTR $T241799[esp+28], eax
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 
 ; 3735 : #ifdef AUI_ITERATOR_POSTFIX_INCREMENT_OPTIMIZATIONS
@@ -28910,10 +28910,10 @@ $LL351@Write:
 
 	mov	eax, DWORD PTR [esi+628]
 	add	esp, 20					; 00000014H
-	lea	ecx, DWORD PTR $T241334[esp+28]
+	lea	ecx, DWORD PTR $T241811[esp+28]
 	push	ecx
 	mov	ecx, edi
-	mov	DWORD PTR $T241334[esp+32], eax
+	mov	DWORD PTR $T241811[esp+32], eax
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 
 ; 3767 : 	for (uint ui = 0; ui < m_abNoTrain.size(); ui++)
@@ -28954,12 +28954,12 @@ $LN564@Write:
 $LN386@Write:
 	mov	edx, 1
 	shl	edx, cl
-	lea	ecx, DWORD PTR $T242093[esp+28]
+	lea	ecx, DWORD PTR $T242571[esp+28]
 	push	ecx
 	mov	ecx, edi
 	test	edx, DWORD PTR [eax]
 	setne	al
-	mov	BYTE PTR $T242093[esp+32], al
+	mov	BYTE PTR $T242571[esp+32], al
 	call	?Write@FDataStream@@IAEXAB_N@Z		; FDataStream::Write
 	inc	ebx
 	cmp	ebx, DWORD PTR [esi+628]
@@ -28972,10 +28972,10 @@ $LN16@Write:
 ; 3773 : 	kStream << m_abNoBuild.size();
 
 	mov	edx, DWORD PTR [esi+648]
-	lea	eax, DWORD PTR $T241336[esp+28]
+	lea	eax, DWORD PTR $T241813[esp+28]
 	push	eax
 	mov	ecx, edi
-	mov	DWORD PTR $T241336[esp+32], edx
+	mov	DWORD PTR $T241813[esp+32], edx
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 
 ; 3774 : 	for (uint ui = 0; ui < m_abNoBuild.size(); ui++)
@@ -29017,12 +29017,12 @@ $LN565@Write:
 $LN433@Write:
 	mov	edx, 1
 	shl	edx, cl
-	lea	ecx, DWORD PTR $T242266[esp+28]
+	lea	ecx, DWORD PTR $T242743[esp+28]
 	push	ecx
 	mov	ecx, edi
 	test	edx, DWORD PTR [eax]
 	setne	al
-	mov	BYTE PTR $T242266[esp+32], al
+	mov	BYTE PTR $T242743[esp+32], al
 	call	?Write@FDataStream@@IAEXAB_N@Z		; FDataStream::Write
 	inc	ebx
 	cmp	ebx, DWORD PTR [esi+648]
@@ -29034,10 +29034,10 @@ $LN13@Write:
 ; 3779 : 	kStream << m_aFreeTraitUnits.size();
 
 	mov	edx, DWORD PTR [esi+672]
-	lea	eax, DWORD PTR $T241338[esp+28]
+	lea	eax, DWORD PTR $T241815[esp+28]
 	push	eax
 	mov	ecx, edi
-	mov	DWORD PTR $T241338[esp+32], edx
+	mov	DWORD PTR $T241815[esp+32], edx
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 
 ; 3780 : 	for(uint ui = 0; ui < m_aFreeTraitUnits.size(); ui++)
@@ -29143,11 +29143,11 @@ $LN4@Write:
 	sar	edx, 2
 	mov	eax, edx
 	shr	eax, 31					; 0000001fH
-	lea	ecx, DWORD PTR $T242353[esp+24]
+	lea	ecx, DWORD PTR $T242829[esp+24]
 	add	eax, edx
 	push	ecx
 	mov	ecx, edi
-	mov	DWORD PTR $T242353[esp+28], eax
+	mov	DWORD PTR $T242829[esp+28], eax
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 	mov	eax, DWORD PTR [ebx+8]
 	mov	ecx, DWORD PTR [ebx+4]
@@ -29155,7 +29155,7 @@ $LN4@Write:
 	push	edi
 	push	eax
 	push	ecx
-	lea	edx, DWORD PTR $T242350[esp+44]
+	lea	edx, DWORD PTR $T242827[esp+44]
 	push	edx
 	call	??$for_each@V?$_Vector_const_iterator@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@std@@U?$SerializeFromSequenceContainer@$$CBV?$Array@H$05@Firaxis@@$$CBV?$vector@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@std@@@@@std@@YA?AU?$SerializeFromSequenceContainer@$$CBV?$Array@H$05@Firaxis@@$$CBV?$vector@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@std@@@@V?$_Vector_const_iterator@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@0@0U1@@Z ; std::for_each<std::_Vector_const_iterator<Firaxis::Array<int,6>,std::allocator<Firaxis::Array<int,6> > >,SerializeFromSequenceContainer<Firaxis::Array<int,6> const ,std::vector<Firaxis::Array<int,6>,std::allocator<Firaxis::Array<int,6> > > const > >
 
@@ -29170,11 +29170,11 @@ $LN4@Write:
 	mov	eax, edx
 	add	esp, 20					; 00000014H
 	shr	eax, 31					; 0000001fH
-	lea	ecx, DWORD PTR $T242414[esp+24]
+	lea	ecx, DWORD PTR $T242890[esp+24]
 	add	eax, edx
 	push	ecx
 	mov	ecx, edi
-	mov	DWORD PTR $T242414[esp+28], eax
+	mov	DWORD PTR $T242890[esp+28], eax
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 	mov	eax, DWORD PTR [ebx+8]
 	mov	ecx, DWORD PTR [ebx+4]
@@ -29182,7 +29182,7 @@ $LN4@Write:
 	push	edi
 	push	eax
 	push	ecx
-	lea	edx, DWORD PTR $T242411[esp+44]
+	lea	edx, DWORD PTR $T242888[esp+44]
 	push	edx
 	call	??$for_each@V?$_Vector_const_iterator@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@std@@U?$SerializeFromSequenceContainer@$$CBV?$Array@H$05@Firaxis@@$$CBV?$vector@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@std@@@@@std@@YA?AU?$SerializeFromSequenceContainer@$$CBV?$Array@H$05@Firaxis@@$$CBV?$vector@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@std@@@@V?$_Vector_const_iterator@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@0@0U1@@Z ; std::for_each<std::_Vector_const_iterator<Firaxis::Array<int,6>,std::allocator<Firaxis::Array<int,6> > >,SerializeFromSequenceContainer<Firaxis::Array<int,6> const ,std::vector<Firaxis::Array<int,6>,std::allocator<Firaxis::Array<int,6> > > const > >
 
@@ -29200,11 +29200,11 @@ $LN4@Write:
 	mov	eax, edx
 	add	esp, 20					; 00000014H
 	shr	eax, 31					; 0000001fH
-	lea	ecx, DWORD PTR $T242475[esp+24]
+	lea	ecx, DWORD PTR $T242951[esp+24]
 	add	eax, edx
 	push	ecx
 	mov	ecx, edi
-	mov	DWORD PTR $T242475[esp+28], eax
+	mov	DWORD PTR $T242951[esp+28], eax
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 	mov	eax, DWORD PTR [ebx+8]
 	mov	ecx, DWORD PTR [ebx+4]
@@ -29212,7 +29212,7 @@ $LN4@Write:
 	push	edi
 	push	eax
 	push	ecx
-	lea	edx, DWORD PTR $T242472[esp+44]
+	lea	edx, DWORD PTR $T242949[esp+44]
 	push	edx
 	call	??$for_each@V?$_Vector_const_iterator@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@std@@U?$SerializeFromSequenceContainer@$$CBV?$Array@H$05@Firaxis@@$$CBV?$vector@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@std@@@@@std@@YA?AU?$SerializeFromSequenceContainer@$$CBV?$Array@H$05@Firaxis@@$$CBV?$vector@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@std@@@@V?$_Vector_const_iterator@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@0@0U1@@Z ; std::for_each<std::_Vector_const_iterator<Firaxis::Array<int,6>,std::allocator<Firaxis::Array<int,6> > >,SerializeFromSequenceContainer<Firaxis::Array<int,6> const ,std::vector<Firaxis::Array<int,6>,std::allocator<Firaxis::Array<int,6> > > const > >
 
@@ -29222,11 +29222,11 @@ $LN4@Write:
 	mov	eax, DWORD PTR [esi+732]
 	sub	eax, DWORD PTR [esi+728]
 	add	esp, 20					; 00000014H
-	lea	ecx, DWORD PTR $T241339[esp+24]
+	lea	ecx, DWORD PTR $T241816[esp+24]
 	sar	eax, 2
 	push	ecx
 	mov	ecx, edi
-	mov	DWORD PTR $T241339[esp+28], eax
+	mov	DWORD PTR $T241816[esp+28], eax
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
 ; 3805 : 	for (unsigned int iI = 0; iI < m_aUniqueLuxuryAreas.size(); iI++)
@@ -29487,7 +29487,7 @@ PUBLIC	?insert@?$multimap@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@@
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\map
 ;	COMDAT ?insert@?$multimap@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@@std@@QAE?AViterator@?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$00@std@@@2@ABU?$pair@$$CBHH@2@@Z
 _TEXT	SEGMENT
-$T242587 = -8						; size = 8
+$T243064 = -8						; size = 8
 ___$ReturnUdt$ = 8					; size = 4
 __Val$ = 12						; size = 4
 ?insert@?$multimap@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@@std@@QAE?AViterator@?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$00@std@@@2@ABU?$pair@$$CBHH@2@@Z PROC ; std::multimap<int,int,std::less<int>,std::allocator<std::pair<int const ,int> > >::insert, COMDAT
@@ -29498,7 +29498,7 @@ __Val$ = 12						; size = 4
 	mov	eax, DWORD PTR __Val$[esp-4]
 	sub	esp, 8
 	push	eax
-	lea	edx, DWORD PTR $T242587[esp+12]
+	lea	edx, DWORD PTR $T243064[esp+12]
 	push	edx
 	call	?insert@?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$00@std@@@std@@QAE?AU?$pair@Viterator@?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$00@std@@@std@@_N@2@ABU?$pair@$$CBHH@2@@Z ; std::_Tree<std::_Tmap_traits<int,int,std::less<int>,std::allocator<std::pair<int const ,int> >,1> >::insert
 	mov	ecx, DWORD PTR [eax]
@@ -29550,7 +29550,7 @@ PUBLIC	??4?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@s
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??4?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$00@std@@@std@@QAEAAV01@ABV01@@Z
 _TEXT	SEGMENT
-$T242759 = 8						; size = 4
+$T243236 = 8						; size = 4
 __Right$ = 8						; size = 4
 ??4?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$00@std@@@std@@QAEAAV01@ABV01@@Z PROC ; std::_Tree<std::_Tmap_traits<int,int,std::less<int>,std::allocator<std::pair<int const ,int> >,1> >::operator=, COMDAT
 ; _this$ = ecx
@@ -29574,7 +29574,7 @@ __Right$ = 8						; size = 4
 	mov	ecx, DWORD PTR [eax]
 	push	eax
 	push	ecx
-	lea	eax, DWORD PTR $T242759[esp+12]
+	lea	eax, DWORD PTR $T243236[esp+12]
 	push	eax
 	mov	ecx, esi
 	call	?erase@?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$00@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@0@Z ; std::_Tree<std::_Tmap_traits<int,int,std::less<int>,std::allocator<std::pair<int const ,int> >,1> >::erase
@@ -29603,7 +29603,7 @@ PUBLIC	?_Tidy@?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CB
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?_Tidy@?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$00@std@@@std@@IAEXXZ
 _TEXT	SEGMENT
-$T242813 = -4						; size = 4
+$T243290 = -4						; size = 4
 ?_Tidy@?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$00@std@@@std@@IAEXXZ PROC ; std::_Tree<std::_Tmap_traits<int,int,std::less<int>,std::allocator<std::pair<int const ,int> >,1> >::_Tidy, COMDAT
 ; _this$ = ecx
 
@@ -29619,7 +29619,7 @@ $T242813 = -4						; size = 4
 	mov	ecx, DWORD PTR [eax]
 	push	eax
 	push	ecx
-	lea	eax, DWORD PTR $T242813[esp+16]
+	lea	eax, DWORD PTR $T243290[esp+16]
 	push	eax
 	mov	ecx, esi
 	call	?erase@?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$00@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@0@Z ; std::_Tree<std::_Tmap_traits<int,int,std::less<int>,std::allocator<std::pair<int const ,int> >,1> >::erase
@@ -29968,10 +29968,10 @@ PUBLIC	?_Ufill@?$vector@UMayaBonusChoice@@V?$allocator@UMayaBonusChoice@@@std@@@
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?_Ufill@?$vector@UMayaBonusChoice@@V?$allocator@UMayaBonusChoice@@@std@@@std@@IAEPAUMayaBonusChoice@@PAU3@IABU3@@Z
 _TEXT	SEGMENT
-$T243155 = -4						; size = 1
+$T243633 = -4						; size = 1
 __Ptr$ = 8						; size = 4
 __Count$ = 12						; size = 4
-__Cat$243158 = 16					; size = 1
+__Cat$243636 = 16					; size = 1
 __Val$ = 16						; size = 4
 ?_Ufill@?$vector@UMayaBonusChoice@@V?$allocator@UMayaBonusChoice@@@std@@@std@@IAEPAUMayaBonusChoice@@PAU3@IABU3@@Z PROC ; std::vector<MayaBonusChoice,std::allocator<MayaBonusChoice> >::_Ufill, COMDAT
 ; _this$ = ecx
@@ -29982,13 +29982,13 @@ __Val$ = 16						; size = 4
 
 ; 1254 : 		_STDEXT unchecked_uninitialized_fill_n(_Ptr, _Count, _Val, this->_Alval);
 
-	mov	edx, DWORD PTR __Cat$243158[esp]
+	mov	edx, DWORD PTR __Cat$243636[esp]
 	push	esi
 	mov	esi, DWORD PTR __Count$[esp+4]
 	push	edi
 	mov	edi, DWORD PTR __Ptr$[esp+8]
-	mov	BYTE PTR $T243155[esp+12], 0
-	mov	eax, DWORD PTR $T243155[esp+12]
+	mov	BYTE PTR $T243633[esp+12], 0
+	mov	eax, DWORD PTR $T243633[esp+12]
 	push	eax
 	mov	eax, DWORD PTR __Val$[esp+12]
 	push	edx
@@ -30015,10 +30015,10 @@ PUBLIC	??$_Umove@PAUFreeResourceXCities@@@?$vector@UFreeResourceXCities@@V?$allo
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Umove@PAUFreeResourceXCities@@@?$vector@UFreeResourceXCities@@V?$allocator@UFreeResourceXCities@@@std@@@std@@IAEPAUFreeResourceXCities@@PAU2@00@Z
 _TEXT	SEGMENT
-$T243209 = -4						; size = 1
+$T243688 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$243212 = 16					; size = 1
+__Cat$243691 = 16					; size = 1
 __Ptr$ = 16						; size = 4
 ??$_Umove@PAUFreeResourceXCities@@@?$vector@UFreeResourceXCities@@V?$allocator@UFreeResourceXCities@@@std@@@std@@IAEPAUFreeResourceXCities@@PAU2@00@Z PROC ; std::vector<FreeResourceXCities,std::allocator<FreeResourceXCities> >::_Umove<FreeResourceXCities *>, COMDAT
 ; _this$ = ecx
@@ -30031,9 +30031,9 @@ __Ptr$ = 16						; size = 4
 ; 1147 : 		return (_STDEXT _Unchecked_uninitialized_move(_First, _Last,
 ; 1148 : 			_Ptr, this->_Alval));
 
-	mov	edx, DWORD PTR __Cat$243212[esp]
-	mov	BYTE PTR $T243209[esp+4], 0
-	mov	eax, DWORD PTR $T243209[esp+4]
+	mov	edx, DWORD PTR __Cat$243691[esp]
+	mov	BYTE PTR $T243688[esp+4], 0
+	mov	eax, DWORD PTR $T243688[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Ptr$[esp+4]
 	push	edx
@@ -30056,10 +30056,10 @@ PUBLIC	??$_Unchecked_uninitialized_move@PAW4TraitTypes@@PAW41@V?$allocator@W4Tra
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ??$_Unchecked_uninitialized_move@PAW4TraitTypes@@PAW41@V?$allocator@W4TraitTypes@@@std@@@stdext@@YAPAW4TraitTypes@@PAW41@00AAV?$allocator@W4TraitTypes@@@std@@@Z
 _TEXT	SEGMENT
-$T243245 = -4						; size = 1
+$T243721 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$243248 = 16					; size = 1
+__Cat$243724 = 16					; size = 1
 __Dest$ = 16						; size = 4
 __Al$ = 20						; size = 4
 ??$_Unchecked_uninitialized_move@PAW4TraitTypes@@PAW41@V?$allocator@W4TraitTypes@@@std@@@stdext@@YAPAW4TraitTypes@@PAW41@00AAV?$allocator@W4TraitTypes@@@std@@@Z PROC ; stdext::_Unchecked_uninitialized_move<enum TraitTypes *,enum TraitTypes *,std::allocator<enum TraitTypes> >, COMDAT
@@ -30072,10 +30072,10 @@ __Al$ = 20						; size = 4
 ; 863  : 		_CHECKED_BASE(_Last), _Dest, _Al,
 ; 864  : 		_STD _Move_cat(_Dest), _STD _Range_checked_iterator_tag()));
 
-	mov	ecx, DWORD PTR __Cat$243248[esp]
+	mov	ecx, DWORD PTR __Cat$243724[esp]
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T243245[esp+4], 0
-	mov	eax, DWORD PTR $T243245[esp+4]
+	mov	BYTE PTR $T243721[esp+4], 0
+	mov	eax, DWORD PTR $T243721[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -30097,10 +30097,10 @@ PUBLIC	??$_Unchecked_uninitialized_move@PAUMayaBonusChoice@@PAU1@V?$allocator@UM
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Unchecked_uninitialized_move@PAUMayaBonusChoice@@PAU1@V?$allocator@UMayaBonusChoice@@@std@@@stdext@@YAPAUMayaBonusChoice@@PAU1@00AAV?$allocator@UMayaBonusChoice@@@std@@@Z
 _TEXT	SEGMENT
-$T243282 = -4						; size = 1
+$T243759 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$243285 = 16					; size = 1
+__Cat$243763 = 16					; size = 1
 __Dest$ = 16						; size = 4
 __Al$ = 20						; size = 4
 ??$_Unchecked_uninitialized_move@PAUMayaBonusChoice@@PAU1@V?$allocator@UMayaBonusChoice@@@std@@@stdext@@YAPAUMayaBonusChoice@@PAU1@00AAV?$allocator@UMayaBonusChoice@@@std@@@Z PROC ; stdext::_Unchecked_uninitialized_move<MayaBonusChoice *,MayaBonusChoice *,std::allocator<MayaBonusChoice> >, COMDAT
@@ -30113,10 +30113,10 @@ __Al$ = 20						; size = 4
 ; 863  : 		_CHECKED_BASE(_Last), _Dest, _Al,
 ; 864  : 		_STD _Move_cat(_Dest), _STD _Range_checked_iterator_tag()));
 
-	mov	ecx, DWORD PTR __Cat$243285[esp]
+	mov	ecx, DWORD PTR __Cat$243763[esp]
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T243282[esp+4], 0
-	mov	eax, DWORD PTR $T243282[esp+4]
+	mov	BYTE PTR $T243759[esp+4], 0
+	mov	eax, DWORD PTR $T243759[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -30237,15 +30237,15 @@ PUBLIC	?erase@?$vector@_NV?$allocator@_N@std@@@std@@QAE?AV?$_Vb_iterator@IHV?$ve
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?erase@?$vector@_NV?$allocator@_N@std@@@std@@QAE?AV?$_Vb_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@@@2@V?$_Vb_const_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@@@2@0@Z
 _TEXT	SEGMENT
-$T243924 = -28						; size = 1
+$T244401 = -28						; size = 1
 __First$ = -24						; size = 8
-$T243482 = -16						; size = 8
+$T243959 = -16						; size = 8
 __Next$ = -8						; size = 8
 __Last$ = -8						; size = 8
-__Cat$243928 = 8					; size = 1
-$T243926 = 8						; size = 1
+__Cat$244405 = 8					; size = 1
+$T244403 = 8						; size = 1
 ___$ReturnUdt$ = 8					; size = 4
-__Tmp$244048 = 12					; size = 8
+__Tmp$244525 = 12					; size = 8
 __First_arg$ = 12					; size = 8
 __Last_arg$ = 20					; size = 8
 ?erase@?$vector@_NV?$allocator@_N@std@@@std@@QAE?AV?$_Vb_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@@@2@V?$_Vb_const_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@@@2@0@Z PROC ; std::vector<bool,std::allocator<bool> >::erase, COMDAT
@@ -30315,26 +30315,26 @@ $LN71@erase@9:
 ; 2234 :  #else /* _HAS_ITERATOR_DEBUGGING */
 ; 2235 : 		iterator _Next = std::copy(_Last, end(), _First);
 
-	mov	DWORD PTR $T243482[esp+44], ebx
-	mov	DWORD PTR $T243482[esp+48], 0
+	mov	DWORD PTR $T243959[esp+44], ebx
+	mov	DWORD PTR $T243959[esp+48], 0
 	test	ebp, ebp
 	jbe	SHORT $LN108@erase@9
 	push	ebp
-	lea	ecx, DWORD PTR $T243482[esp+48]
+	lea	ecx, DWORD PTR $T243959[esp+48]
 	call	??Y?$_Vb_const_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@@@std@@QAEAAV01@H@Z ; std::_Vb_const_iterator<unsigned int,int,std::vector<bool,std::allocator<bool> > >::operator+=
 $LN108@erase@9:
-	mov	eax, DWORD PTR __Cat$243928[esp+40]
-	mov	ecx, DWORD PTR $T243926[esp+40]
-	mov	BYTE PTR $T243924[esp+44], 0
-	mov	edx, DWORD PTR $T243924[esp+44]
+	mov	eax, DWORD PTR __Cat$244405[esp+40]
+	mov	ecx, DWORD PTR $T244403[esp+40]
+	mov	BYTE PTR $T244401[esp+44], 0
+	mov	edx, DWORD PTR $T244401[esp+44]
 	push	edx
 	mov	edx, DWORD PTR __First$[esp+52]
 	push	eax
 	mov	eax, DWORD PTR __First$[esp+52]
 	push	ecx
-	mov	ecx, DWORD PTR $T243482[esp+60]
+	mov	ecx, DWORD PTR $T243959[esp+60]
 	push	edx
-	mov	edx, DWORD PTR $T243482[esp+60]
+	mov	edx, DWORD PTR $T243959[esp+60]
 	push	eax
 	mov	eax, DWORD PTR __Last$[esp+68]
 	push	ecx
@@ -30366,13 +30366,13 @@ $LN108@erase@9:
 	mov	edi, DWORD PTR [edi+8]
 	xor	eax, eax
 	push	esi
-	lea	ecx, DWORD PTR __Tmp$244048[esp+44]
-	mov	DWORD PTR __Tmp$244048[esp+44], edi
-	mov	DWORD PTR __Tmp$244048[esp+48], eax
+	lea	ecx, DWORD PTR __Tmp$244525[esp+44]
+	mov	DWORD PTR __Tmp$244525[esp+44], edi
+	mov	DWORD PTR __Tmp$244525[esp+48], eax
 	call	??Y?$_Vb_const_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@@@std@@QAEAAV01@H@Z ; std::_Vb_const_iterator<unsigned int,int,std::vector<bool,std::allocator<bool> > >::operator+=
 	mov	eax, DWORD PTR ___$ReturnUdt$[esp+40]
-	mov	edx, DWORD PTR __Tmp$244048[esp+40]
-	mov	ecx, DWORD PTR __Tmp$244048[esp+44]
+	mov	edx, DWORD PTR __Tmp$244525[esp+40]
+	mov	ecx, DWORD PTR __Tmp$244525[esp+44]
 	pop	edi
 	pop	esi
 	pop	ebp
@@ -30390,10 +30390,10 @@ PUBLIC	?erase@?$vector@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?erase@?$vector@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@std@@QAE?AV?$_Vector_iterator@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@2@V?$_Vector_const_iterator@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@2@0@Z
 _TEXT	SEGMENT
-$T244106 = 8						; size = 1
+$T244584 = 8						; size = 1
 ___$ReturnUdt$ = 8					; size = 4
-__Cat$244110 = 12					; size = 1
-$T244108 = 12						; size = 1
+__Cat$244588 = 12					; size = 1
+$T244586 = 12						; size = 1
 __First_arg$ = 12					; size = 4
 __Last_arg$ = 16					; size = 4
 ?erase@?$vector@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@std@@QAE?AV?$_Vector_iterator@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@2@V?$_Vector_const_iterator@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@2@0@Z PROC ; std::vector<Firaxis::Array<int,6>,std::allocator<Firaxis::Array<int,6> > >::erase, COMDAT
@@ -30432,12 +30432,12 @@ __Last_arg$ = 16					; size = 4
 
 	mov	ecx, DWORD PTR [esi+8]
 	push	ebx
-	mov	BYTE PTR $T244106[esp+8], 0
-	mov	ebx, DWORD PTR $T244106[esp+8]
+	mov	BYTE PTR $T244584[esp+8], 0
+	mov	ebx, DWORD PTR $T244584[esp+8]
 	push	ebx
-	mov	ebx, DWORD PTR __Cat$244110[esp+12]
+	mov	ebx, DWORD PTR __Cat$244588[esp+12]
 	push	ebx
-	mov	ebx, DWORD PTR $T244108[esp+16]
+	mov	ebx, DWORD PTR $T244586[esp+16]
 	push	ebx
 	push	eax
 	push	ecx
@@ -30568,8 +30568,8 @@ _TEXT	SEGMENT
 __Capacity$ = -4					; size = 4
 __Where$ = 8						; size = 4
 __Count$ = 12						; size = 4
-__Tmp$214892 = 16					; size = 4
-__Tmp$214882 = 16					; size = 4
+__Tmp$215369 = 16					; size = 4
+__Tmp$215359 = 16					; size = 4
 __Val$ = 16						; size = 4
 ?_Insert_n@?$vector@HV?$allocator@H@std@@@std@@IAEXV?$_Vector_const_iterator@HV?$allocator@H@std@@@2@IABH@Z PROC ; std::vector<int,std::allocator<int> >::_Insert_n, COMDAT
 ; _this$ = ecx
@@ -30800,7 +30800,7 @@ $LN10@Insert_n:
 ; 1214 : 				_VEC_ITER_BASE(_Where) + _Count);	// copy suffix
 
 	lea	ebp, DWORD PTR [edi*4]
-	mov	DWORD PTR __Tmp$214882[esp+16], edx
+	mov	DWORD PTR __Tmp$215359[esp+16], edx
 	jae	SHORT $LN3@Insert_n
 	lea	ecx, DWORD PTR [eax+ebp]
 	push	ecx
@@ -30817,7 +30817,7 @@ $LN10@Insert_n:
 	mov	eax, DWORD PTR [esi+8]
 	mov	ecx, eax
 	sub	ecx, DWORD PTR __Where$[esp+16]
-	lea	edx, DWORD PTR __Tmp$214882[esp+16]
+	lea	edx, DWORD PTR __Tmp$215359[esp+16]
 	sar	ecx, 2
 	push	edx
 	sub	edi, ecx
@@ -30845,7 +30845,7 @@ $LN10@Insert_n:
 ; 1231 : 				_Tmp);	// insert up to old end
 
 	mov	eax, DWORD PTR __Where$[esp+16]
-	lea	edx, DWORD PTR __Tmp$214882[esp+16]
+	lea	edx, DWORD PTR __Tmp$215359[esp+16]
 	push	edx
 	sub	esi, ebp
 	push	esi
@@ -30900,7 +30900,7 @@ $LN3@Insert_n:
 ; 1248 : 				_Tmp);	// insert into hole
 
 	mov	eax, DWORD PTR __Where$[esp+28]
-	lea	ecx, DWORD PTR __Tmp$214892[esp+28]
+	lea	ecx, DWORD PTR __Tmp$215369[esp+28]
 	push	ecx
 	add	ebp, eax
 	push	ebp
@@ -30971,10 +30971,10 @@ PUBLIC	??$_Umove@PAV?$Array@H$05@Firaxis@@@?$vector@V?$Array@H$05@Firaxis@@V?$al
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Umove@PAV?$Array@H$05@Firaxis@@@?$vector@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@std@@IAEPAV?$Array@H$05@Firaxis@@PAV23@00@Z
 _TEXT	SEGMENT
-$T244469 = -4						; size = 1
+$T244944 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$244472 = 16					; size = 1
+__Cat$244948 = 16					; size = 1
 __Ptr$ = 16						; size = 4
 ??$_Umove@PAV?$Array@H$05@Firaxis@@@?$vector@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@std@@IAEPAV?$Array@H$05@Firaxis@@PAV23@00@Z PROC ; std::vector<Firaxis::Array<int,6>,std::allocator<Firaxis::Array<int,6> > >::_Umove<Firaxis::Array<int,6> *>, COMDAT
 ; _this$ = ecx
@@ -30987,9 +30987,9 @@ __Ptr$ = 16						; size = 4
 ; 1147 : 		return (_STDEXT _Unchecked_uninitialized_move(_First, _Last,
 ; 1148 : 			_Ptr, this->_Alval));
 
-	mov	edx, DWORD PTR __Cat$244472[esp]
-	mov	BYTE PTR $T244469[esp+4], 0
-	mov	eax, DWORD PTR $T244469[esp+4]
+	mov	edx, DWORD PTR __Cat$244948[esp]
+	mov	BYTE PTR $T244944[esp+4], 0
+	mov	eax, DWORD PTR $T244944[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Ptr$[esp+4]
 	push	edx
@@ -31142,7 +31142,7 @@ PUBLIC	??1?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@s
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??1?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$00@std@@@std@@QAE@XZ
 _TEXT	SEGMENT
-$T244742 = -4						; size = 4
+$T245219 = -4						; size = 4
 ??1?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$00@std@@@std@@QAE@XZ PROC ; std::_Tree<std::_Tmap_traits<int,int,std::less<int>,std::allocator<std::pair<int const ,int> >,1> >::~_Tree<std::_Tmap_traits<int,int,std::less<int>,std::allocator<std::pair<int const ,int> >,1> >, COMDAT
 ; _this$ = ecx
 
@@ -31158,7 +31158,7 @@ $T244742 = -4						; size = 4
 	mov	ecx, DWORD PTR [eax]
 	push	eax
 	push	ecx
-	lea	eax, DWORD PTR $T244742[esp+16]
+	lea	eax, DWORD PTR $T245219[esp+16]
 	push	eax
 	mov	ecx, esi
 	call	?erase@?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$00@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@0@Z ; std::_Tree<std::_Tmap_traits<int,int,std::less<int>,std::allocator<std::pair<int const ,int> >,1> >::erase
@@ -31458,7 +31458,7 @@ PUBLIC	?resize@?$vector@HV?$allocator@H@std@@@std@@QAEXIH@Z ; std::vector<int,st
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?resize@?$vector@HV?$allocator@H@std@@@std@@QAEXIH@Z
 _TEXT	SEGMENT
-$T245616 = 8						; size = 4
+$T246093 = 8						; size = 4
 __Newsize$ = 8						; size = 4
 __Val$ = 12						; size = 4
 ?resize@?$vector@HV?$allocator@H@std@@@std@@QAEXIH@Z PROC ; std::vector<int,std::allocator<int> >::resize, COMDAT
@@ -31502,7 +31502,7 @@ $LN36@resize:
 	lea	eax, DWORD PTR [edi+edx*4]
 	push	esi
 	push	eax
-	lea	eax, DWORD PTR $T245616[esp+12]
+	lea	eax, DWORD PTR $T246093[esp+12]
 	push	eax
 	call	?erase@?$vector@HV?$allocator@H@std@@@std@@QAE?AV?$_Vector_iterator@HV?$allocator@H@std@@@2@V?$_Vector_const_iterator@HV?$allocator@H@std@@@2@0@Z ; std::vector<int,std::allocator<int> >::erase
 $LN1@resize:
@@ -31633,18 +31633,18 @@ __tryblocktable$?_Insert_n@?$vector@UFreeResourceXCities@@V?$allocator@UFreeReso
 xdata$x	ENDS
 ;	COMDAT ?_Insert_n@?$vector@UFreeResourceXCities@@V?$allocator@UFreeResourceXCities@@@std@@@std@@IAEXV?$_Vector_const_iterator@UFreeResourceXCities@@V?$allocator@UFreeResourceXCities@@@std@@@2@IABUFreeResourceXCities@@@Z
 _TEXT	SEGMENT
-__Tmp$225345 = -24					; size = 8
-__Tmp$225335 = -24					; size = 8
+__Tmp$225822 = -24					; size = 8
+__Tmp$225812 = -24					; size = 8
 __Capacity$ = -20					; size = 4
 __$EHRec$ = -16						; size = 16
-__Cat$246073 = 8					; size = 1
-__Cat$246001 = 8					; size = 1
+__Cat$246553 = 8					; size = 1
+__Cat$246481 = 8					; size = 1
 __Where$ = 8						; size = 4
-__Newvec$225320 = 12					; size = 4
+__Newvec$225797 = 12					; size = 4
 __Count$ = 12						; size = 4
 tv515 = 16						; size = 4
-$T246069 = 16						; size = 1
-$T245997 = 16						; size = 1
+$T246549 = 16						; size = 1
+$T246477 = 16						; size = 1
 __Val$ = 16						; size = 4
 ?_Insert_n@?$vector@UFreeResourceXCities@@V?$allocator@UFreeResourceXCities@@@std@@@std@@IAEXV?$_Vector_const_iterator@UFreeResourceXCities@@V?$allocator@UFreeResourceXCities@@@std@@@2@IABUFreeResourceXCities@@@Z PROC ; std::vector<FreeResourceXCities,std::allocator<FreeResourceXCities> >::_Insert_n, COMDAT
 ; _this$ = ecx
@@ -31770,7 +31770,7 @@ $LN9@Insert_n@2:
 	lea	edx, DWORD PTR [eax+edi*8]
 	push	edx
 	mov	ecx, esi
-	mov	DWORD PTR __Newvec$225320[ebp], eax
+	mov	DWORD PTR __Newvec$225797[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+12], 0
 	call	?_Ufill@?$vector@UFreeResourceXCities@@V?$allocator@UFreeResourceXCities@@@std@@@std@@IAEPAUFreeResourceXCities@@PAU3@IABU3@@Z ; std::vector<FreeResourceXCities,std::allocator<FreeResourceXCities> >::_Ufill
 
@@ -31778,12 +31778,12 @@ $LN9@Insert_n@2:
 ; 1180 : 			_Umove(this->_Myfirst, _VEC_ITER_BASE(_Where),
 ; 1181 : 				_Newvec);	// move prefix
 
-	mov	edx, DWORD PTR __Cat$246001[ebp]
+	mov	edx, DWORD PTR __Cat$246481[ebp]
 	mov	eax, DWORD PTR [esi+4]
-	mov	BYTE PTR $T245997[ebp], 0
-	mov	ecx, DWORD PTR $T245997[ebp]
+	mov	BYTE PTR $T246477[ebp], 0
+	mov	ecx, DWORD PTR $T246477[ebp]
 	push	ecx
-	mov	ecx, DWORD PTR __Newvec$225320[ebp]
+	mov	ecx, DWORD PTR __Newvec$225797[ebp]
 	push	edx
 	mov	edx, DWORD PTR __Where$[ebp]
 	push	esi
@@ -31798,13 +31798,13 @@ $LN9@Insert_n@2:
 
 	mov	eax, DWORD PTR [esi+8]
 	add	esp, 24					; 00000018H
-	mov	BYTE PTR $T246069[ebp], 0
-	mov	edx, DWORD PTR $T246069[ebp]
+	mov	BYTE PTR $T246549[ebp], 0
+	mov	edx, DWORD PTR $T246549[ebp]
 	push	edx
-	mov	edx, DWORD PTR __Cat$246073[ebp]
+	mov	edx, DWORD PTR __Cat$246553[ebp]
 	push	edx
 	lea	ecx, DWORD PTR [edi+ebx]
-	mov	edi, DWORD PTR __Newvec$225320[ebp]
+	mov	edi, DWORD PTR __Newvec$225797[ebp]
 	push	esi
 	lea	ecx, DWORD PTR [edi+ecx*8]
 	push	ecx
@@ -31879,7 +31879,7 @@ __catch$?_Insert_n@?$vector@UFreeResourceXCities@@V?$allocator@UFreeResourceXCit
 ; 1189 : 				_Destroy(_Newvec + _Whereoff, _Newvec + _Whereoff + _Count);
 ; 1190 : 			this->_Alval.deallocate(_Newvec, _Capacity);
 
-	mov	edx, DWORD PTR __Newvec$225320[ebp]
+	mov	edx, DWORD PTR __Newvec$225797[ebp]
 	push	edx
 	call	??3@YAXPAX@Z				; operator delete
 	add	esp, 4
@@ -31909,7 +31909,7 @@ $LN10@Insert_n@2:
 	mov	ecx, DWORD PTR __Val$[ebp]
 	mov	edx, DWORD PTR [ecx]
 	mov	ecx, DWORD PTR [ecx+4]
-	mov	DWORD PTR __Tmp$225335[ebp+4], ecx
+	mov	DWORD PTR __Tmp$225812[ebp+4], ecx
 
 ; 1212 : 
 ; 1213 : 			_Umove(_VEC_ITER_BASE(_Where), _Mylast,
@@ -31922,7 +31922,7 @@ $LN10@Insert_n@2:
 	push	edi
 	push	eax
 	mov	ecx, esi
-	mov	DWORD PTR __Tmp$225335[ebp], edx
+	mov	DWORD PTR __Tmp$225812[ebp], edx
 	call	??$_Umove@PAUFreeResourceXCities@@@?$vector@UFreeResourceXCities@@V?$allocator@UFreeResourceXCities@@@std@@@std@@IAEPAUFreeResourceXCities@@PAU2@00@Z ; std::vector<FreeResourceXCities,std::allocator<FreeResourceXCities> >::_Umove<FreeResourceXCities *>
 
 ; 1215 : 
@@ -31933,7 +31933,7 @@ $LN10@Insert_n@2:
 	mov	eax, DWORD PTR [esi+8]
 	mov	ecx, eax
 	sub	ecx, DWORD PTR __Where$[ebp]
-	lea	edx, DWORD PTR __Tmp$225335[ebp]
+	lea	edx, DWORD PTR __Tmp$225812[ebp]
 	sar	ecx, 3
 	push	edx
 	sub	ebx, ecx
@@ -31962,7 +31962,7 @@ $LN10@Insert_n@2:
 ; 1230 : 			std::fill(_VEC_ITER_BASE(_Where), _Mylast - _Count,
 ; 1231 : 				_Tmp);	// insert up to old end
 
-	lea	edx, DWORD PTR __Tmp$225335[ebp]
+	lea	edx, DWORD PTR __Tmp$225812[ebp]
 	push	edx
 	sub	esi, eax
 	mov	eax, DWORD PTR __Where$[ebp]
@@ -32003,10 +32003,10 @@ $LN3@Insert_n@2:
 	mov	ebx, edi
 	sub	ebx, eax
 	push	edi
-	mov	DWORD PTR __Tmp$225345[ebp], ecx
+	mov	DWORD PTR __Tmp$225822[ebp], ecx
 	push	ebx
 	mov	ecx, esi
-	mov	DWORD PTR __Tmp$225345[ebp+4], edx
+	mov	DWORD PTR __Tmp$225822[ebp+4], edx
 	mov	DWORD PTR tv515[ebp], eax
 	call	??$_Umove@PAUFreeResourceXCities@@@?$vector@UFreeResourceXCities@@V?$allocator@UFreeResourceXCities@@@std@@@std@@IAEPAUFreeResourceXCities@@PAU2@00@Z ; std::vector<FreeResourceXCities,std::allocator<FreeResourceXCities> >::_Umove<FreeResourceXCities *>
 
@@ -32030,7 +32030,7 @@ $LN3@Insert_n@2:
 
 	mov	eax, DWORD PTR __Where$[ebp]
 	mov	edx, DWORD PTR tv515[ebp]
-	lea	ecx, DWORD PTR __Tmp$225345[ebp]
+	lea	ecx, DWORD PTR __Tmp$225822[ebp]
 	push	ecx
 	add	edx, eax
 	push	edx
@@ -32063,10 +32063,10 @@ PUBLIC	??$_Umove@PAW4TraitTypes@@@?$vector@W4TraitTypes@@V?$allocator@W4TraitTyp
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Umove@PAW4TraitTypes@@@?$vector@W4TraitTypes@@V?$allocator@W4TraitTypes@@@std@@@std@@IAEPAW4TraitTypes@@PAW42@00@Z
 _TEXT	SEGMENT
-$T246149 = -4						; size = 1
+$T246628 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$246152 = 16					; size = 1
+__Cat$246631 = 16					; size = 1
 __Ptr$ = 16						; size = 4
 ??$_Umove@PAW4TraitTypes@@@?$vector@W4TraitTypes@@V?$allocator@W4TraitTypes@@@std@@@std@@IAEPAW4TraitTypes@@PAW42@00@Z PROC ; std::vector<enum TraitTypes,std::allocator<enum TraitTypes> >::_Umove<enum TraitTypes *>, COMDAT
 ; _this$ = ecx
@@ -32079,9 +32079,9 @@ __Ptr$ = 16						; size = 4
 ; 1147 : 		return (_STDEXT _Unchecked_uninitialized_move(_First, _Last,
 ; 1148 : 			_Ptr, this->_Alval));
 
-	mov	edx, DWORD PTR __Cat$246152[esp]
-	mov	BYTE PTR $T246149[esp+4], 0
-	mov	eax, DWORD PTR $T246149[esp+4]
+	mov	edx, DWORD PTR __Cat$246631[esp]
+	mov	BYTE PTR $T246628[esp+4], 0
+	mov	eax, DWORD PTR $T246628[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Ptr$[esp+4]
 	push	edx
@@ -32103,10 +32103,10 @@ PUBLIC	??$_Umove@PAUMayaBonusChoice@@@?$vector@UMayaBonusChoice@@V?$allocator@UM
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Umove@PAUMayaBonusChoice@@@?$vector@UMayaBonusChoice@@V?$allocator@UMayaBonusChoice@@@std@@@std@@IAEPAUMayaBonusChoice@@PAU2@00@Z
 _TEXT	SEGMENT
-$T246204 = -4						; size = 1
+$T246683 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$246207 = 16					; size = 1
+__Cat$246686 = 16					; size = 1
 __Ptr$ = 16						; size = 4
 ??$_Umove@PAUMayaBonusChoice@@@?$vector@UMayaBonusChoice@@V?$allocator@UMayaBonusChoice@@@std@@@std@@IAEPAUMayaBonusChoice@@PAU2@00@Z PROC ; std::vector<MayaBonusChoice,std::allocator<MayaBonusChoice> >::_Umove<MayaBonusChoice *>, COMDAT
 ; _this$ = ecx
@@ -32119,9 +32119,9 @@ __Ptr$ = 16						; size = 4
 ; 1147 : 		return (_STDEXT _Unchecked_uninitialized_move(_First, _Last,
 ; 1148 : 			_Ptr, this->_Alval));
 
-	mov	edx, DWORD PTR __Cat$246207[esp]
-	mov	BYTE PTR $T246204[esp+4], 0
-	mov	eax, DWORD PTR $T246204[esp+4]
+	mov	edx, DWORD PTR __Cat$246686[esp]
+	mov	BYTE PTR $T246683[esp+4], 0
+	mov	eax, DWORD PTR $T246683[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Ptr$[esp+4]
 	push	edx
@@ -32174,8 +32174,8 @@ PUBLIC	?clear@?$vector@_NV?$allocator@_N@std@@@std@@QAEXXZ ; std::vector<bool,st
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?clear@?$vector@_NV?$allocator@_N@std@@@std@@QAEXXZ
 _TEXT	SEGMENT
-$T246234 = -8						; size = 8
-$T246231 = -8						; size = 8
+$T246711 = -8						; size = 8
+$T246708 = -8						; size = 8
 ?clear@?$vector@_NV?$allocator@_N@std@@@std@@QAEXXZ PROC ; std::vector<bool,std::allocator<bool> >::clear, COMDAT
 ; _this$ = ecx
 
@@ -32190,22 +32190,22 @@ $T246231 = -8						; size = 8
 	mov	eax, DWORD PTR [esi]
 	push	edi
 	mov	edi, DWORD PTR [esi+8]
-	mov	DWORD PTR $T246231[esp+16], edi
-	mov	DWORD PTR $T246231[esp+20], 0
+	mov	DWORD PTR $T246708[esp+16], edi
+	mov	DWORD PTR $T246708[esp+20], 0
 	test	eax, eax
 	jbe	SHORT $LN20@clear@7
 	push	eax
-	lea	ecx, DWORD PTR $T246231[esp+20]
+	lea	ecx, DWORD PTR $T246708[esp+20]
 	call	??Y?$_Vb_const_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@@@std@@QAEAAV01@H@Z ; std::_Vb_const_iterator<unsigned int,int,std::vector<bool,std::allocator<bool> > >::operator+=
 $LN20@clear@7:
-	mov	ecx, DWORD PTR $T246231[esp+20]
-	mov	edx, DWORD PTR $T246231[esp+16]
+	mov	ecx, DWORD PTR $T246708[esp+20]
+	mov	edx, DWORD PTR $T246708[esp+16]
 	push	ecx
 	push	edx
 	xor	eax, eax
 	push	eax
 	push	edi
-	lea	eax, DWORD PTR $T246234[esp+32]
+	lea	eax, DWORD PTR $T246711[esp+32]
 	push	eax
 	mov	ecx, esi
 	call	?erase@?$vector@_NV?$allocator@_N@std@@@std@@QAE?AV?$_Vb_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@@@2@V?$_Vb_const_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@@@2@0@Z ; std::vector<bool,std::allocator<bool> >::erase
@@ -32253,9 +32253,9 @@ PUBLIC	?clear@?$vector@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?clear@?$vector@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@std@@QAEXXZ
 _TEXT	SEGMENT
-$T246496 = -4						; size = 1
-$T246498 = -4						; size = 1
-__Cat$246500 = -4					; size = 1
+$T246973 = -4						; size = 1
+$T246975 = -4						; size = 1
+__Cat$246978 = -4					; size = 1
 ?clear@?$vector@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@std@@QAEXXZ PROC ; std::vector<Firaxis::Array<int,6>,std::allocator<Firaxis::Array<int,6> > >::clear, COMDAT
 ; _this$ = ecx
 
@@ -32271,12 +32271,12 @@ __Cat$246500 = -4					; size = 1
 	mov	ecx, DWORD PTR [esi+4]
 	cmp	ecx, eax
 	je	SHORT $LN15@clear@8
-	mov	BYTE PTR $T246496[esp+8], 0
-	mov	edx, DWORD PTR $T246496[esp+8]
+	mov	BYTE PTR $T246973[esp+8], 0
+	mov	edx, DWORD PTR $T246973[esp+8]
 	push	edx
-	mov	edx, DWORD PTR __Cat$246500[esp+12]
+	mov	edx, DWORD PTR __Cat$246978[esp+12]
 	push	edx
-	mov	edx, DWORD PTR $T246498[esp+16]
+	mov	edx, DWORD PTR $T246975[esp+16]
 	push	edx
 	push	ecx
 	push	eax
@@ -32391,19 +32391,19 @@ __tryblocktable$?_Insert_n@?$vector@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array
 xdata$x	ENDS
 ;	COMDAT ?_Insert_n@?$vector@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@std@@IAEXV?$_Vector_const_iterator@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@2@IABV?$Array@H$05@Firaxis@@@Z
 _TEXT	SEGMENT
-__Tmp$214992 = -44					; size = 24
-__Tmp$214982 = -44					; size = 24
+__Tmp$215469 = -44					; size = 24
+__Tmp$215459 = -44					; size = 24
 __Capacity$ = -20					; size = 4
 __$EHRec$ = -16						; size = 16
-__Cat$246780 = 8					; size = 1
-__Cat$246708 = 8					; size = 1
+__Cat$247256 = 8					; size = 1
+__Cat$247184 = 8					; size = 1
 __Where$ = 8						; size = 4
-__Newvec$214967 = 12					; size = 4
+__Newvec$215444 = 12					; size = 4
 __Count$ = 12						; size = 4
 tv525 = 16						; size = 4
 tv515 = 16						; size = 4
-$T246777 = 16						; size = 1
-$T246705 = 16						; size = 1
+$T247252 = 16						; size = 1
+$T247180 = 16						; size = 1
 __Val$ = 16						; size = 4
 ?_Insert_n@?$vector@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@std@@IAEXV?$_Vector_const_iterator@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@2@IABV?$Array@H$05@Firaxis@@@Z PROC ; std::vector<Firaxis::Array<int,6>,std::allocator<Firaxis::Array<int,6> > >::_Insert_n, COMDAT
 ; _this$ = ecx
@@ -32544,7 +32544,7 @@ $LN9@Insert_n@3:
 	lea	edx, DWORD PTR [ebx+ebx*2]
 	lea	eax, DWORD PTR [ecx+edx*8]
 	push	edi
-	mov	DWORD PTR __Newvec$214967[ebp], ecx
+	mov	DWORD PTR __Newvec$215444[ebp], ecx
 	push	eax
 	mov	ecx, esi
 	mov	DWORD PTR __$EHRec$[ebp+12], 0
@@ -32554,12 +32554,12 @@ $LN9@Insert_n@3:
 ; 1180 : 			_Umove(this->_Myfirst, _VEC_ITER_BASE(_Where),
 ; 1181 : 				_Newvec);	// move prefix
 
-	mov	edx, DWORD PTR __Cat$246708[ebp]
+	mov	edx, DWORD PTR __Cat$247184[ebp]
 	mov	eax, DWORD PTR [esi+4]
-	mov	BYTE PTR $T246705[ebp], 0
-	mov	ecx, DWORD PTR $T246705[ebp]
+	mov	BYTE PTR $T247180[ebp], 0
+	mov	ecx, DWORD PTR $T247180[ebp]
 	push	ecx
-	mov	ecx, DWORD PTR __Newvec$214967[ebp]
+	mov	ecx, DWORD PTR __Newvec$215444[ebp]
 	push	edx
 	mov	edx, DWORD PTR __Where$[ebp]
 	push	esi
@@ -32572,16 +32572,16 @@ $LN9@Insert_n@3:
 ; 1183 : 			_Umove(_VEC_ITER_BASE(_Where), this->_Mylast,
 ; 1184 : 				_Newvec + (_Whereoff + _Count));	// move suffix
 
-	mov	edx, DWORD PTR __Newvec$214967[ebp]
+	mov	edx, DWORD PTR __Newvec$215444[ebp]
 	mov	eax, DWORD PTR [esi+8]
 	add	esp, 24					; 00000018H
 	add	ebx, edi
 	lea	ecx, DWORD PTR [ebx+ebx*2]
 	lea	ecx, DWORD PTR [edx+ecx*8]
-	mov	BYTE PTR $T246777[ebp], 0
-	mov	edx, DWORD PTR $T246777[ebp]
+	mov	BYTE PTR $T247252[ebp], 0
+	mov	edx, DWORD PTR $T247252[ebp]
 	push	edx
-	mov	edx, DWORD PTR __Cat$246780[ebp]
+	mov	edx, DWORD PTR __Cat$247256[ebp]
 	push	edx
 	push	esi
 	push	ecx
@@ -32630,7 +32630,7 @@ $LN81@Insert_n@3:
 
 	mov	eax, DWORD PTR __Capacity$[ebp]
 	lea	edx, DWORD PTR [eax+eax*2]
-	mov	eax, DWORD PTR __Newvec$214967[ebp]
+	mov	eax, DWORD PTR __Newvec$215444[ebp]
 	lea	ecx, DWORD PTR [eax+edx*8]
 
 ; 1206 : 			_Mylast = _Newvec + _Count;
@@ -32664,7 +32664,7 @@ __catch$?_Insert_n@?$vector@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Fi
 ; 1189 : 				_Destroy(_Newvec + _Whereoff, _Newvec + _Whereoff + _Count);
 ; 1190 : 			this->_Alval.deallocate(_Newvec, _Capacity);
 
-	mov	edx, DWORD PTR __Newvec$214967[ebp]
+	mov	edx, DWORD PTR __Newvec$215444[ebp]
 	push	edx
 	call	??3@YAXPAX@Z				; operator delete
 	add	esp, 4
@@ -32698,16 +32698,16 @@ $LN10@Insert_n@3:
 	mov	eax, DWORD PTR __Val$[ebp]
 	jae	$LN3@Insert_n@3
 	mov	edx, DWORD PTR [eax]
-	mov	DWORD PTR __Tmp$214982[ebp], edx
+	mov	DWORD PTR __Tmp$215459[ebp], edx
 	mov	edx, DWORD PTR [eax+4]
-	mov	DWORD PTR __Tmp$214982[ebp+4], edx
+	mov	DWORD PTR __Tmp$215459[ebp+4], edx
 	mov	edx, DWORD PTR [eax+8]
-	mov	DWORD PTR __Tmp$214982[ebp+8], edx
+	mov	DWORD PTR __Tmp$215459[ebp+8], edx
 	mov	edx, DWORD PTR [eax+12]
-	mov	DWORD PTR __Tmp$214982[ebp+12], edx
+	mov	DWORD PTR __Tmp$215459[ebp+12], edx
 	mov	edx, DWORD PTR [eax+16]
 	mov	eax, DWORD PTR [eax+20]
-	mov	DWORD PTR __Tmp$214982[ebp+20], eax
+	mov	DWORD PTR __Tmp$215459[ebp+20], eax
 
 ; 1212 : 
 ; 1213 : 			_Umove(_VEC_ITER_BASE(_Where), _Mylast,
@@ -32723,7 +32723,7 @@ $LN10@Insert_n@3:
 	push	ebx
 	push	ecx
 	mov	ecx, esi
-	mov	DWORD PTR __Tmp$214982[ebp+16], edx
+	mov	DWORD PTR __Tmp$215459[ebp+16], edx
 	call	??$_Umove@PAV?$Array@H$05@Firaxis@@@?$vector@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@std@@IAEPAV?$Array@H$05@Firaxis@@PAV23@00@Z ; std::vector<Firaxis::Array<int,6>,std::allocator<Firaxis::Array<int,6> > >::_Umove<Firaxis::Array<int,6> *>
 
 ; 1215 : 
@@ -32732,7 +32732,7 @@ $LN10@Insert_n@3:
 ; 1218 : 				_Tmp);	// insert new stuff off end
 
 	mov	ebx, DWORD PTR [esi+8]
-	lea	ecx, DWORD PTR __Tmp$214982[ebp]
+	lea	ecx, DWORD PTR __Tmp$215459[ebp]
 	push	ecx
 	mov	ecx, ebx
 	sub	ecx, DWORD PTR __Where$[ebp]
@@ -32769,7 +32769,7 @@ $LN10@Insert_n@3:
 ; 1231 : 				_Tmp);	// insert up to old end
 
 	mov	edx, DWORD PTR __Where$[ebp]
-	lea	ecx, DWORD PTR __Tmp$214982[ebp]
+	lea	ecx, DWORD PTR __Tmp$215459[ebp]
 	push	ecx
 	sub	esi, eax
 	push	esi
@@ -32797,7 +32797,7 @@ $LN3@Insert_n@3:
 
 	mov	ecx, DWORD PTR [eax]
 	mov	edx, DWORD PTR [eax+4]
-	mov	DWORD PTR __Tmp$214992[ebp], ecx
+	mov	DWORD PTR __Tmp$215469[ebp], ecx
 	mov	ecx, DWORD PTR [eax+8]
 
 ; 1236 : 
@@ -32806,12 +32806,12 @@ $LN3@Insert_n@3:
 ; 1239 : 				_Mylast);	// copy suffix
 
 	lea	edi, DWORD PTR [edi+edi*2]
-	mov	DWORD PTR __Tmp$214992[ebp+4], edx
+	mov	DWORD PTR __Tmp$215469[ebp+4], edx
 	mov	edx, DWORD PTR [eax+12]
 	add	edi, edi
-	mov	DWORD PTR __Tmp$214992[ebp+8], ecx
+	mov	DWORD PTR __Tmp$215469[ebp+8], ecx
 	mov	ecx, DWORD PTR [eax+16]
-	mov	DWORD PTR __Tmp$214992[ebp+12], edx
+	mov	DWORD PTR __Tmp$215469[ebp+12], edx
 	mov	edx, DWORD PTR [eax+20]
 	add	edi, edi
 	push	ebx
@@ -32819,10 +32819,10 @@ $LN3@Insert_n@3:
 	mov	eax, ebx
 	sub	eax, edi
 	push	ebx
-	mov	DWORD PTR __Tmp$214992[ebp+16], ecx
+	mov	DWORD PTR __Tmp$215469[ebp+16], ecx
 	push	eax
 	mov	ecx, esi
-	mov	DWORD PTR __Tmp$214992[ebp+20], edx
+	mov	DWORD PTR __Tmp$215469[ebp+20], edx
 	mov	DWORD PTR tv525[ebp], eax
 	call	??$_Umove@PAV?$Array@H$05@Firaxis@@@?$vector@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@std@@IAEPAV?$Array@H$05@Firaxis@@PAV23@00@Z ; std::vector<Firaxis::Array<int,6>,std::allocator<Firaxis::Array<int,6> > >::_Umove<Firaxis::Array<int,6> *>
 
@@ -32846,7 +32846,7 @@ $LN3@Insert_n@3:
 ; 1248 : 				_Tmp);	// insert into hole
 
 	mov	eax, DWORD PTR __Where$[ebp]
-	lea	edx, DWORD PTR __Tmp$214992[ebp]
+	lea	edx, DWORD PTR __Tmp$215469[ebp]
 	push	edx
 	add	edi, eax
 	push	edi
@@ -32882,8 +32882,8 @@ _TEXT	SEGMENT
 __Capacity$ = -4					; size = 4
 __Where$ = 8						; size = 4
 __Count$ = 12						; size = 4
-__Tmp$215104 = 16					; size = 4
-__Tmp$215094 = 16					; size = 4
+__Tmp$215581 = 16					; size = 4
+__Tmp$215571 = 16					; size = 4
 __Val$ = 16						; size = 4
 ?_Insert_n@?$vector@IV?$allocator@I@std@@@std@@IAEXV?$_Vector_const_iterator@IV?$allocator@I@std@@@2@IABI@Z PROC ; std::vector<unsigned int,std::allocator<unsigned int> >::_Insert_n, COMDAT
 ; _this$ = ecx
@@ -33114,7 +33114,7 @@ $LN10@Insert_n@4:
 ; 1214 : 				_VEC_ITER_BASE(_Where) + _Count);	// copy suffix
 
 	lea	ebp, DWORD PTR [edi*4]
-	mov	DWORD PTR __Tmp$215094[esp+16], edx
+	mov	DWORD PTR __Tmp$215571[esp+16], edx
 	jae	SHORT $LN3@Insert_n@4
 	lea	ecx, DWORD PTR [eax+ebp]
 	push	ecx
@@ -33131,7 +33131,7 @@ $LN10@Insert_n@4:
 	mov	eax, DWORD PTR [esi+8]
 	mov	ecx, eax
 	sub	ecx, DWORD PTR __Where$[esp+16]
-	lea	edx, DWORD PTR __Tmp$215094[esp+16]
+	lea	edx, DWORD PTR __Tmp$215571[esp+16]
 	sar	ecx, 2
 	push	edx
 	sub	edi, ecx
@@ -33159,7 +33159,7 @@ $LN10@Insert_n@4:
 ; 1231 : 				_Tmp);	// insert up to old end
 
 	mov	eax, DWORD PTR __Where$[esp+16]
-	lea	edx, DWORD PTR __Tmp$215094[esp+16]
+	lea	edx, DWORD PTR __Tmp$215571[esp+16]
 	push	edx
 	sub	esi, ebp
 	push	esi
@@ -33214,7 +33214,7 @@ $LN3@Insert_n@4:
 ; 1248 : 				_Tmp);	// insert into hole
 
 	mov	eax, DWORD PTR __Where$[esp+28]
-	lea	ecx, DWORD PTR __Tmp$215104[esp+28]
+	lea	ecx, DWORD PTR __Tmp$215581[esp+28]
 	push	ecx
 	add	ebp, eax
 	push	ebp
@@ -33239,7 +33239,7 @@ PUBLIC	??1?$multimap@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@@std@@
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??1?$multimap@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@@std@@QAE@XZ
 _TEXT	SEGMENT
-$T247008 = -4						; size = 4
+$T247486 = -4						; size = 4
 ??1?$multimap@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@@std@@QAE@XZ PROC ; std::multimap<int,int,std::less<int>,std::allocator<std::pair<int const ,int> > >::~multimap<int,int,std::less<int>,std::allocator<std::pair<int const ,int> > >, COMDAT
 ; _this$ = ecx
 	push	ecx
@@ -33249,7 +33249,7 @@ $T247008 = -4						; size = 4
 	mov	ecx, DWORD PTR [eax]
 	push	eax
 	push	ecx
-	lea	eax, DWORD PTR $T247008[esp+16]
+	lea	eax, DWORD PTR $T247486[esp+16]
 	push	eax
 	mov	ecx, esi
 	call	?erase@?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$00@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@0@Z ; std::_Tree<std::_Tmap_traits<int,int,std::less<int>,std::allocator<std::pair<int const ,int> >,1> >::erase
@@ -33380,7 +33380,7 @@ xdata$x	ENDS
 ;	COMDAT ??1CvTraitEntry@@QAE@XZ
 _TEXT	SEGMENT
 _this$ = -20						; size = 4
-$T247275 = -16						; size = 4
+$T247754 = -16						; size = 4
 __$EHRec$ = -12						; size = 12
 ??1CvTraitEntry@@QAE@XZ PROC				; CvTraitEntry::~CvTraitEntry, COMDAT
 ; _this$ = ecx
@@ -33483,7 +33483,7 @@ $LN36@CvTraitEnt:
 	lea	edi, DWORD PTR [esi+696]
 	push	eax
 	push	ecx
-	lea	eax, DWORD PTR $T247275[esp+40]
+	lea	eax, DWORD PTR $T247754[esp+40]
 	push	eax
 	mov	ecx, edi
 	mov	BYTE PTR __$EHRec$[esp+52], 1
@@ -33729,19 +33729,19 @@ PUBLIC	?Uninit@CvPlayerTraits@@QAEXXZ			; CvPlayerTraits::Uninit
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?Uninit@CvPlayerTraits@@QAEXXZ
 _TEXT	SEGMENT
-$T250877 = -8						; size = 1
-__Cat$250881 = -8					; size = 1
-$T250879 = -8						; size = 1
-$T250687 = -8						; size = 1
-__Cat$250691 = -8					; size = 1
-$T250689 = -8						; size = 1
-$T250493 = -8						; size = 1
-__Cat$250497 = -8					; size = 1
-$T250495 = -8						; size = 1
-$T249855 = -8						; size = 8
-$T249852 = -8						; size = 8
-$T249681 = -8						; size = 8
-$T249678 = -8						; size = 8
+$T251354 = -8						; size = 1
+__Cat$251359 = -8					; size = 1
+$T251356 = -8						; size = 1
+$T251164 = -8						; size = 1
+__Cat$251169 = -8					; size = 1
+$T251166 = -8						; size = 1
+$T250942 = -8						; size = 1
+__Cat$250935 = -8					; size = 1
+$T250944 = -8						; size = 1
+$T250331 = -8						; size = 8
+$T250328 = -8						; size = 8
+$T250157 = -8						; size = 8
+$T250154 = -8						; size = 8
 ?Uninit@CvPlayerTraits@@QAEXXZ PROC			; CvPlayerTraits::Uninit, COMDAT
 ; _this$ = ecx
 
@@ -33783,22 +33783,22 @@ $LN17@Uninit:
 	mov	eax, DWORD PTR [esi+628]
 	mov	ebp, DWORD PTR [esi+636]
 	lea	edi, DWORD PTR [esi+628]
-	mov	DWORD PTR $T249678[esp+24], ebp
-	mov	DWORD PTR $T249678[esp+28], ebx
+	mov	DWORD PTR $T250154[esp+24], ebp
+	mov	DWORD PTR $T250154[esp+28], ebx
 	cmp	eax, ebx
 	jbe	SHORT $LN64@Uninit
 	push	eax
-	lea	ecx, DWORD PTR $T249678[esp+28]
+	lea	ecx, DWORD PTR $T250154[esp+28]
 	call	??Y?$_Vb_const_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@@@std@@QAEAAV01@H@Z ; std::_Vb_const_iterator<unsigned int,int,std::vector<bool,std::allocator<bool> > >::operator+=
 $LN64@Uninit:
-	mov	ecx, DWORD PTR $T249678[esp+28]
-	mov	edx, DWORD PTR $T249678[esp+24]
+	mov	ecx, DWORD PTR $T250154[esp+28]
+	mov	edx, DWORD PTR $T250154[esp+24]
 	push	ecx
 	push	edx
 	xor	eax, eax
 	push	eax
 	push	ebp
-	lea	eax, DWORD PTR $T249681[esp+40]
+	lea	eax, DWORD PTR $T250157[esp+40]
 	push	eax
 	mov	ecx, edi
 	call	?erase@?$vector@_NV?$allocator@_N@std@@@std@@QAE?AV?$_Vb_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@@@2@V?$_Vb_const_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@@@2@0@Z ; std::vector<bool,std::allocator<bool> >::erase
@@ -33809,22 +33809,22 @@ $LN64@Uninit:
 	mov	eax, DWORD PTR [esi+648]
 	mov	ebp, DWORD PTR [esi+656]
 	lea	edi, DWORD PTR [esi+648]
-	mov	DWORD PTR $T249852[esp+24], ebp
-	mov	DWORD PTR $T249852[esp+28], ebx
+	mov	DWORD PTR $T250328[esp+24], ebp
+	mov	DWORD PTR $T250328[esp+28], ebx
 	cmp	eax, ebx
 	jbe	SHORT $LN99@Uninit
 	push	eax
-	lea	ecx, DWORD PTR $T249852[esp+28]
+	lea	ecx, DWORD PTR $T250328[esp+28]
 	call	??Y?$_Vb_const_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@@@std@@QAEAAV01@H@Z ; std::_Vb_const_iterator<unsigned int,int,std::vector<bool,std::allocator<bool> > >::operator+=
 $LN99@Uninit:
-	mov	ecx, DWORD PTR $T249852[esp+28]
-	mov	edx, DWORD PTR $T249852[esp+24]
+	mov	ecx, DWORD PTR $T250328[esp+28]
+	mov	edx, DWORD PTR $T250328[esp+24]
 	push	ecx
 	push	edx
 	xor	eax, eax
 	push	eax
 	push	ebp
-	lea	eax, DWORD PTR $T249855[esp+40]
+	lea	eax, DWORD PTR $T250331[esp+40]
 	push	eax
 	mov	ecx, edi
 	call	?erase@?$vector@_NV?$allocator@_N@std@@@std@@QAE?AV?$_Vb_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@@@2@V?$_Vb_const_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@@@2@0@Z ; std::vector<bool,std::allocator<bool> >::erase
@@ -33882,12 +33882,12 @@ $LN171@Uninit:
 	mov	eax, DWORD PTR [esi+820]
 	cmp	ecx, eax
 	je	SHORT $LN213@Uninit
-	mov	BYTE PTR $T250493[esp+24], bl
-	mov	edx, DWORD PTR $T250493[esp+24]
+	mov	BYTE PTR $T250942[esp+24], bl
+	mov	edx, DWORD PTR $T250942[esp+24]
 	push	edx
-	mov	edx, DWORD PTR __Cat$250497[esp+28]
+	mov	edx, DWORD PTR __Cat$250935[esp+28]
 	push	edx
-	mov	edx, DWORD PTR $T250495[esp+32]
+	mov	edx, DWORD PTR $T250944[esp+32]
 	push	edx
 	push	ecx
 	push	eax
@@ -33903,12 +33903,12 @@ $LN213@Uninit:
 	mov	eax, DWORD PTR [esi+836]
 	cmp	ecx, eax
 	je	SHORT $LN252@Uninit
-	mov	BYTE PTR $T250687[esp+24], bl
-	mov	edx, DWORD PTR $T250687[esp+24]
+	mov	BYTE PTR $T251164[esp+24], bl
+	mov	edx, DWORD PTR $T251164[esp+24]
 	push	edx
-	mov	edx, DWORD PTR __Cat$250691[esp+28]
+	mov	edx, DWORD PTR __Cat$251169[esp+28]
 	push	edx
-	mov	edx, DWORD PTR $T250689[esp+32]
+	mov	edx, DWORD PTR $T251166[esp+32]
 	push	edx
 	push	ecx
 	push	eax
@@ -33929,12 +33929,12 @@ $LN252@Uninit:
 	mov	eax, DWORD PTR [esi+852]
 	cmp	ecx, eax
 	je	SHORT $LN291@Uninit
-	mov	BYTE PTR $T250877[esp+24], bl
-	mov	edx, DWORD PTR $T250877[esp+24]
+	mov	BYTE PTR $T251354[esp+24], bl
+	mov	edx, DWORD PTR $T251354[esp+24]
 	push	edx
-	mov	edx, DWORD PTR __Cat$250881[esp+28]
+	mov	edx, DWORD PTR __Cat$251359[esp+28]
 	push	edx
-	mov	edx, DWORD PTR $T250879[esp+32]
+	mov	edx, DWORD PTR $T251356[esp+32]
 	push	edx
 	push	ecx
 	push	eax
@@ -33982,8 +33982,8 @@ PUBLIC	?resize@?$vector@HV?$allocator@H@std@@@std@@QAEXI@Z ; std::vector<int,std
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\vector
 ;	COMDAT ?resize@?$vector@HV?$allocator@H@std@@@std@@QAEXI@Z
 _TEXT	SEGMENT
-$T251233 = -4						; size = 4
-$T251197 = 8						; size = 4
+$T251710 = -4						; size = 4
+$T251674 = 8						; size = 4
 __Newsize$ = 8						; size = 4
 ?resize@?$vector@HV?$allocator@H@std@@@std@@QAEXI@Z PROC ; std::vector<int,std::allocator<int> >::resize, COMDAT
 ; _this$ = ecx
@@ -34002,10 +34002,10 @@ __Newsize$ = 8						; size = 4
 	mov	eax, esi
 	sub	eax, edi
 	sar	eax, 2
-	mov	DWORD PTR $T251233[esp+12], 0
+	mov	DWORD PTR $T251710[esp+12], 0
 	cmp	edx, eax
 	jbe	SHORT $LN38@resize@2
-	lea	edi, DWORD PTR $T251233[esp+12]
+	lea	edi, DWORD PTR $T251710[esp+12]
 	push	edi
 	sub	edx, eax
 	push	edx
@@ -34026,7 +34026,7 @@ $LN38@resize@2:
 	lea	eax, DWORD PTR [edi+edx*4]
 	push	esi
 	push	eax
-	lea	eax, DWORD PTR $T251197[esp+16]
+	lea	eax, DWORD PTR $T251674[esp+16]
 	push	eax
 	call	?erase@?$vector@HV?$allocator@H@std@@@std@@QAE?AV?$_Vector_iterator@HV?$allocator@H@std@@@2@V?$_Vector_const_iterator@HV?$allocator@H@std@@@2@0@Z ; std::vector<int,std::allocator<int> >::erase
 $LN3@resize@2:
@@ -34101,7 +34101,7 @@ PUBLIC	?resize@?$vector@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxi
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?resize@?$vector@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@std@@QAEXIV?$Array@H$05@Firaxis@@@Z
 _TEXT	SEGMENT
-$T251496 = 8						; size = 4
+$T251973 = 8						; size = 4
 __Newsize$ = 8						; size = 4
 __Val$ = 12						; size = 24
 ?resize@?$vector@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@std@@QAEXIV?$Array@H$05@Firaxis@@@Z PROC ; std::vector<Firaxis::Array<int,6>,std::allocator<Firaxis::Array<int,6> > >::resize, COMDAT
@@ -34154,7 +34154,7 @@ $LN36@resize@3:
 	push	esi
 	lea	eax, DWORD PTR [edi+eax*8]
 	push	eax
-	lea	edx, DWORD PTR $T251496[esp+12]
+	lea	edx, DWORD PTR $T251973[esp+12]
 	push	edx
 	call	?erase@?$vector@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@std@@QAE?AV?$_Vector_iterator@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@2@V?$_Vector_const_iterator@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@2@0@Z ; std::vector<Firaxis::Array<int,6>,std::allocator<Firaxis::Array<int,6> > >::erase
 $LN1@resize@3:
@@ -34266,16 +34266,16 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 __Capacity$ = -20					; size = 4
 __$EHRec$ = -16						; size = 16
-__Cat$251840 = 8					; size = 1
-__Cat$251768 = 8					; size = 1
+__Cat$252316 = 8					; size = 1
+__Cat$252244 = 8					; size = 1
 __Where$ = 8						; size = 4
-__Tmp$225442 = 12					; size = 4
-__Tmp$225432 = 12					; size = 4
-__Newvec$225417 = 12					; size = 4
+__Tmp$225919 = 12					; size = 4
+__Tmp$225909 = 12					; size = 4
+__Newvec$225894 = 12					; size = 4
 __Count$ = 12						; size = 4
 tv515 = 16						; size = 4
-$T251837 = 16						; size = 1
-$T251765 = 16						; size = 1
+$T252312 = 16						; size = 1
+$T252240 = 16						; size = 1
 __Val$ = 16						; size = 4
 ?_Insert_n@?$vector@W4TraitTypes@@V?$allocator@W4TraitTypes@@@std@@@std@@IAEXV?$_Vector_const_iterator@W4TraitTypes@@V?$allocator@W4TraitTypes@@@std@@@2@IABW4TraitTypes@@@Z PROC ; std::vector<enum TraitTypes,std::allocator<enum TraitTypes> >::_Insert_n, COMDAT
 ; _this$ = ecx
@@ -34401,7 +34401,7 @@ $LN9@Insert_n@5:
 	lea	edx, DWORD PTR [eax+ebx*4]
 	push	edx
 	mov	ecx, esi
-	mov	DWORD PTR __Newvec$225417[ebp], eax
+	mov	DWORD PTR __Newvec$225894[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+12], 0
 	call	?_Ufill@?$vector@W4TraitTypes@@V?$allocator@W4TraitTypes@@@std@@@std@@IAEPAW4TraitTypes@@PAW43@IABW43@@Z ; std::vector<enum TraitTypes,std::allocator<enum TraitTypes> >::_Ufill
 
@@ -34409,12 +34409,12 @@ $LN9@Insert_n@5:
 ; 1180 : 			_Umove(this->_Myfirst, _VEC_ITER_BASE(_Where),
 ; 1181 : 				_Newvec);	// move prefix
 
-	mov	edx, DWORD PTR __Cat$251768[ebp]
+	mov	edx, DWORD PTR __Cat$252244[ebp]
 	mov	eax, DWORD PTR [esi+4]
-	mov	BYTE PTR $T251765[ebp], 0
-	mov	ecx, DWORD PTR $T251765[ebp]
+	mov	BYTE PTR $T252240[ebp], 0
+	mov	ecx, DWORD PTR $T252240[ebp]
 	push	ecx
-	mov	ecx, DWORD PTR __Newvec$225417[ebp]
+	mov	ecx, DWORD PTR __Newvec$225894[ebp]
 	push	edx
 	mov	edx, DWORD PTR __Where$[ebp]
 	push	esi
@@ -34429,13 +34429,13 @@ $LN9@Insert_n@5:
 
 	mov	eax, DWORD PTR [esi+8]
 	add	esp, 24					; 00000018H
-	mov	BYTE PTR $T251837[ebp], 0
-	mov	edx, DWORD PTR $T251837[ebp]
+	mov	BYTE PTR $T252312[ebp], 0
+	mov	edx, DWORD PTR $T252312[ebp]
 	push	edx
-	mov	edx, DWORD PTR __Cat$251840[ebp]
+	mov	edx, DWORD PTR __Cat$252316[ebp]
 	push	edx
 	lea	ecx, DWORD PTR [ebx+edi]
-	mov	ebx, DWORD PTR __Newvec$225417[ebp]
+	mov	ebx, DWORD PTR __Newvec$225894[ebp]
 	push	esi
 	lea	ecx, DWORD PTR [ebx+ecx*4]
 	push	ecx
@@ -34510,7 +34510,7 @@ __catch$?_Insert_n@?$vector@W4TraitTypes@@V?$allocator@W4TraitTypes@@@std@@@std@
 ; 1189 : 				_Destroy(_Newvec + _Whereoff, _Newvec + _Whereoff + _Count);
 ; 1190 : 			this->_Alval.deallocate(_Newvec, _Capacity);
 
-	mov	edx, DWORD PTR __Newvec$225417[ebp]
+	mov	edx, DWORD PTR __Newvec$225894[ebp]
 	push	edx
 	call	??3@YAXPAX@Z				; operator delete
 	add	esp, 4
@@ -34539,7 +34539,7 @@ $LN10@Insert_n@5:
 
 	mov	edx, DWORD PTR __Val$[ebp]
 	mov	ecx, DWORD PTR [edx]
-	mov	DWORD PTR __Tmp$225432[ebp], ecx
+	mov	DWORD PTR __Tmp$225909[ebp], ecx
 
 ; 1212 : 
 ; 1213 : 			_Umove(_VEC_ITER_BASE(_Where), _Mylast,
@@ -34562,7 +34562,7 @@ $LN10@Insert_n@5:
 	mov	eax, DWORD PTR [esi+8]
 	mov	ecx, eax
 	sub	ecx, DWORD PTR __Where$[ebp]
-	lea	edx, DWORD PTR __Tmp$225432[ebp]
+	lea	edx, DWORD PTR __Tmp$225909[ebp]
 	sar	ecx, 2
 	push	edx
 	sub	edi, ecx
@@ -34591,7 +34591,7 @@ $LN10@Insert_n@5:
 ; 1230 : 			std::fill(_VEC_ITER_BASE(_Where), _Mylast - _Count,
 ; 1231 : 				_Tmp);	// insert up to old end
 
-	lea	edx, DWORD PTR __Tmp$225432[ebp]
+	lea	edx, DWORD PTR __Tmp$225909[ebp]
 	push	edx
 	sub	esi, eax
 	mov	eax, DWORD PTR __Where$[ebp]
@@ -34633,7 +34633,7 @@ $LN3@Insert_n@5:
 	push	ebx
 	push	edi
 	mov	ecx, esi
-	mov	DWORD PTR __Tmp$225442[ebp], edx
+	mov	DWORD PTR __Tmp$225919[ebp], edx
 	mov	DWORD PTR tv515[ebp], eax
 	call	??$_Umove@PAW4TraitTypes@@@?$vector@W4TraitTypes@@V?$allocator@W4TraitTypes@@@std@@@std@@IAEPAW4TraitTypes@@PAW42@00@Z ; std::vector<enum TraitTypes,std::allocator<enum TraitTypes> >::_Umove<enum TraitTypes *>
 
@@ -34657,7 +34657,7 @@ $LN3@Insert_n@5:
 
 	mov	eax, DWORD PTR __Where$[ebp]
 	mov	edx, DWORD PTR tv515[ebp]
-	lea	ecx, DWORD PTR __Tmp$225442[ebp]
+	lea	ecx, DWORD PTR __Tmp$225919[ebp]
 	push	ecx
 	add	edx, eax
 	push	edx
@@ -34729,18 +34729,18 @@ __tryblocktable$?_Insert_n@?$vector@UMayaBonusChoice@@V?$allocator@UMayaBonusCho
 xdata$x	ENDS
 ;	COMDAT ?_Insert_n@?$vector@UMayaBonusChoice@@V?$allocator@UMayaBonusChoice@@@std@@@std@@IAEXV?$_Vector_const_iterator@UMayaBonusChoice@@V?$allocator@UMayaBonusChoice@@@std@@@2@IABUMayaBonusChoice@@@Z
 _TEXT	SEGMENT
-__Tmp$225499 = -24					; size = 8
-__Tmp$225489 = -24					; size = 8
+__Tmp$225976 = -24					; size = 8
+__Tmp$225966 = -24					; size = 8
 __Capacity$ = -20					; size = 4
 __$EHRec$ = -16						; size = 16
-__Cat$252072 = 8					; size = 1
-__Cat$252000 = 8					; size = 1
+__Cat$252551 = 8					; size = 1
+__Cat$252479 = 8					; size = 1
 __Where$ = 8						; size = 4
-__Newvec$225474 = 12					; size = 4
+__Newvec$225951 = 12					; size = 4
 __Count$ = 12						; size = 4
 tv515 = 16						; size = 4
-$T252068 = 16						; size = 1
-$T251996 = 16						; size = 1
+$T252547 = 16						; size = 1
+$T252475 = 16						; size = 1
 __Val$ = 16						; size = 4
 ?_Insert_n@?$vector@UMayaBonusChoice@@V?$allocator@UMayaBonusChoice@@@std@@@std@@IAEXV?$_Vector_const_iterator@UMayaBonusChoice@@V?$allocator@UMayaBonusChoice@@@std@@@2@IABUMayaBonusChoice@@@Z PROC ; std::vector<MayaBonusChoice,std::allocator<MayaBonusChoice> >::_Insert_n, COMDAT
 ; _this$ = ecx
@@ -34866,7 +34866,7 @@ $LN9@Insert_n@6:
 	lea	edx, DWORD PTR [eax+edi*8]
 	push	edx
 	mov	ecx, esi
-	mov	DWORD PTR __Newvec$225474[ebp], eax
+	mov	DWORD PTR __Newvec$225951[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+12], 0
 	call	?_Ufill@?$vector@UMayaBonusChoice@@V?$allocator@UMayaBonusChoice@@@std@@@std@@IAEPAUMayaBonusChoice@@PAU3@IABU3@@Z ; std::vector<MayaBonusChoice,std::allocator<MayaBonusChoice> >::_Ufill
 
@@ -34874,12 +34874,12 @@ $LN9@Insert_n@6:
 ; 1180 : 			_Umove(this->_Myfirst, _VEC_ITER_BASE(_Where),
 ; 1181 : 				_Newvec);	// move prefix
 
-	mov	edx, DWORD PTR __Cat$252000[ebp]
+	mov	edx, DWORD PTR __Cat$252479[ebp]
 	mov	eax, DWORD PTR [esi+4]
-	mov	BYTE PTR $T251996[ebp], 0
-	mov	ecx, DWORD PTR $T251996[ebp]
+	mov	BYTE PTR $T252475[ebp], 0
+	mov	ecx, DWORD PTR $T252475[ebp]
 	push	ecx
-	mov	ecx, DWORD PTR __Newvec$225474[ebp]
+	mov	ecx, DWORD PTR __Newvec$225951[ebp]
 	push	edx
 	mov	edx, DWORD PTR __Where$[ebp]
 	push	esi
@@ -34894,13 +34894,13 @@ $LN9@Insert_n@6:
 
 	mov	eax, DWORD PTR [esi+8]
 	add	esp, 24					; 00000018H
-	mov	BYTE PTR $T252068[ebp], 0
-	mov	edx, DWORD PTR $T252068[ebp]
+	mov	BYTE PTR $T252547[ebp], 0
+	mov	edx, DWORD PTR $T252547[ebp]
 	push	edx
-	mov	edx, DWORD PTR __Cat$252072[ebp]
+	mov	edx, DWORD PTR __Cat$252551[ebp]
 	push	edx
 	lea	ecx, DWORD PTR [edi+ebx]
-	mov	edi, DWORD PTR __Newvec$225474[ebp]
+	mov	edi, DWORD PTR __Newvec$225951[ebp]
 	push	esi
 	lea	ecx, DWORD PTR [edi+ecx*8]
 	push	ecx
@@ -34975,7 +34975,7 @@ __catch$?_Insert_n@?$vector@UMayaBonusChoice@@V?$allocator@UMayaBonusChoice@@@st
 ; 1189 : 				_Destroy(_Newvec + _Whereoff, _Newvec + _Whereoff + _Count);
 ; 1190 : 			this->_Alval.deallocate(_Newvec, _Capacity);
 
-	mov	edx, DWORD PTR __Newvec$225474[ebp]
+	mov	edx, DWORD PTR __Newvec$225951[ebp]
 	push	edx
 	call	??3@YAXPAX@Z				; operator delete
 	add	esp, 4
@@ -35005,7 +35005,7 @@ $LN10@Insert_n@6:
 	mov	ecx, DWORD PTR __Val$[ebp]
 	mov	edx, DWORD PTR [ecx]
 	mov	ecx, DWORD PTR [ecx+4]
-	mov	DWORD PTR __Tmp$225489[ebp+4], ecx
+	mov	DWORD PTR __Tmp$225966[ebp+4], ecx
 
 ; 1212 : 
 ; 1213 : 			_Umove(_VEC_ITER_BASE(_Where), _Mylast,
@@ -35018,7 +35018,7 @@ $LN10@Insert_n@6:
 	push	edi
 	push	eax
 	mov	ecx, esi
-	mov	DWORD PTR __Tmp$225489[ebp], edx
+	mov	DWORD PTR __Tmp$225966[ebp], edx
 	call	??$_Umove@PAUMayaBonusChoice@@@?$vector@UMayaBonusChoice@@V?$allocator@UMayaBonusChoice@@@std@@@std@@IAEPAUMayaBonusChoice@@PAU2@00@Z ; std::vector<MayaBonusChoice,std::allocator<MayaBonusChoice> >::_Umove<MayaBonusChoice *>
 
 ; 1215 : 
@@ -35029,7 +35029,7 @@ $LN10@Insert_n@6:
 	mov	eax, DWORD PTR [esi+8]
 	mov	ecx, eax
 	sub	ecx, DWORD PTR __Where$[ebp]
-	lea	edx, DWORD PTR __Tmp$225489[ebp]
+	lea	edx, DWORD PTR __Tmp$225966[ebp]
 	sar	ecx, 3
 	push	edx
 	sub	ebx, ecx
@@ -35058,7 +35058,7 @@ $LN10@Insert_n@6:
 ; 1230 : 			std::fill(_VEC_ITER_BASE(_Where), _Mylast - _Count,
 ; 1231 : 				_Tmp);	// insert up to old end
 
-	lea	edx, DWORD PTR __Tmp$225489[ebp]
+	lea	edx, DWORD PTR __Tmp$225966[ebp]
 	push	edx
 	sub	esi, eax
 	mov	eax, DWORD PTR __Where$[ebp]
@@ -35099,10 +35099,10 @@ $LN3@Insert_n@6:
 	mov	ebx, edi
 	sub	ebx, eax
 	push	edi
-	mov	DWORD PTR __Tmp$225499[ebp], ecx
+	mov	DWORD PTR __Tmp$225976[ebp], ecx
 	push	ebx
 	mov	ecx, esi
-	mov	DWORD PTR __Tmp$225499[ebp+4], edx
+	mov	DWORD PTR __Tmp$225976[ebp+4], edx
 	mov	DWORD PTR tv515[ebp], eax
 	call	??$_Umove@PAUMayaBonusChoice@@@?$vector@UMayaBonusChoice@@V?$allocator@UMayaBonusChoice@@@std@@@std@@IAEPAUMayaBonusChoice@@PAU2@00@Z ; std::vector<MayaBonusChoice,std::allocator<MayaBonusChoice> >::_Umove<MayaBonusChoice *>
 
@@ -35126,7 +35126,7 @@ $LN3@Insert_n@6:
 
 	mov	eax, DWORD PTR __Where$[ebp]
 	mov	edx, DWORD PTR tv515[ebp]
-	lea	ecx, DWORD PTR __Tmp$225499[ebp]
+	lea	ecx, DWORD PTR __Tmp$225976[ebp]
 	push	ecx
 	add	edx, eax
 	push	edx
@@ -35161,12 +35161,12 @@ PUBLIC	??$ReadHashedDataArray@H@CvInfosSerializationHelper@@YAXAAVFDataStream@@A
 ;	COMDAT ??$ReadHashedDataArray@H@CvInfosSerializationHelper@@YAXAAVFDataStream@@AAV?$vector@HV?$allocator@H@std@@@std@@@Z
 _TEXT	SEGMENT
 _uiNumEntries$ = -20					; size = 4
-_iI$225816 = -16					; size = 4
-$T252247 = -12						; size = 4
-$T252257 = -8						; size = 4
-_tDummy$225827 = -4					; size = 4
+_iI$226293 = -16					; size = 4
+$T252724 = -12						; size = 4
+$T252735 = -8						; size = 4
+_tDummy$226304 = -4					; size = 4
 _kStream$ = 8						; size = 4
-_bValid$225820 = 12					; size = 1
+_bValid$226297 = 12					; size = 1
 _aiArray$ = 12						; size = 4
 ??$ReadHashedDataArray@H@CvInfosSerializationHelper@@YAXAAVFDataStream@@AAV?$vector@HV?$allocator@H@std@@@std@@@Z PROC ; CvInfosSerializationHelper::ReadHashedDataArray<int>, COMDAT
 
@@ -35208,7 +35208,7 @@ $LN8@ReadHashed@2:
 ; 397  : 
 ; 398  : 	for(uint iI = 0; iI < uiNumEntries; iI++)
 
-	mov	DWORD PTR _iI$225816[esp+28], 0
+	mov	DWORD PTR _iI$226293[esp+28], 0
 	test	eax, eax
 	jbe	$LN5@ReadHashed@2
 	push	ebp
@@ -35219,7 +35219,7 @@ $LL7@ReadHashed@2:
 ; 400  : 		bool bValid;
 ; 401  : 		int iType = ReadHashed(kStream, &bValid);
 
-	lea	edx, DWORD PTR _bValid$225820[esp+32]
+	lea	edx, DWORD PTR _bValid$226297[esp+32]
 	push	edx
 	push	ebx
 	call	?ReadHashed@CvInfosSerializationHelper@@YAHAAVFDataStream@@PA_N@Z ; CvInfosSerializationHelper::ReadHashed
@@ -35245,10 +35245,10 @@ $LL7@ReadHashed@2:
 ; 405  : 				aiArray.resize(iType+1);
 
 	lea	ecx, DWORD PTR [edi+1]
-	mov	DWORD PTR $T252247[esp+36], 0
+	mov	DWORD PTR $T252724[esp+36], 0
 	cmp	ecx, eax
 	jbe	SHORT $LN62@ReadHashed@2
-	lea	ebp, DWORD PTR $T252247[esp+36]
+	lea	ebp, DWORD PTR $T252724[esp+36]
 	push	ebp
 	sub	ecx, eax
 	push	ecx
@@ -35271,7 +35271,7 @@ $LN62@ReadHashed@2:
 	lea	eax, DWORD PTR [ebp+ecx*4]
 	push	edx
 	push	eax
-	lea	eax, DWORD PTR $T252257[esp+44]
+	lea	eax, DWORD PTR $T252735[esp+44]
 	push	eax
 	mov	ecx, esi
 	call	?erase@?$vector@HV?$allocator@H@std@@@std@@QAE?AV?$_Vector_iterator@HV?$allocator@H@std@@@2@V?$_Vector_const_iterator@HV?$allocator@H@std@@@2@0@Z ; std::vector<int,std::allocator<int> >::erase
@@ -35289,22 +35289,22 @@ $LN4@ReadHashed@2:
 ; 408  : 		}
 ; 409  : 		else if(!bValid)
 
-	cmp	BYTE PTR _bValid$225820[esp+32], 0
+	cmp	BYTE PTR _bValid$226297[esp+32], 0
 	jne	SHORT $LN6@ReadHashed@2
 
 ; 410  : 		{
 ; 411  : 			TData tDummy;
 ; 412  : 			kStream >> tDummy;
 
-	lea	eax, DWORD PTR _tDummy$225827[esp+36]
+	lea	eax, DWORD PTR _tDummy$226304[esp+36]
 	push	eax
 $LN63@ReadHashed@2:
 	mov	ecx, ebx
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
 $LN6@ReadHashed@2:
-	mov	eax, DWORD PTR _iI$225816[esp+36]
+	mov	eax, DWORD PTR _iI$226293[esp+36]
 	inc	eax
-	mov	DWORD PTR _iI$225816[esp+36], eax
+	mov	DWORD PTR _iI$226293[esp+36], eax
 	cmp	eax, DWORD PTR _uiNumEntries$[esp+36]
 	jb	$LL7@ReadHashed@2
 	pop	edi
@@ -35485,7 +35485,7 @@ PUBLIC	?resize@?$vector@IV?$allocator@I@std@@@std@@QAEXII@Z ; std::vector<unsign
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?resize@?$vector@IV?$allocator@I@std@@@std@@QAEXII@Z
 _TEXT	SEGMENT
-$T252633 = 8						; size = 4
+$T253110 = 8						; size = 4
 __Newsize$ = 8						; size = 4
 __Val$ = 12						; size = 4
 ?resize@?$vector@IV?$allocator@I@std@@@std@@QAEXII@Z PROC ; std::vector<unsigned int,std::allocator<unsigned int> >::resize, COMDAT
@@ -35529,7 +35529,7 @@ $LN36@resize@4:
 	lea	eax, DWORD PTR [edi+edx*4]
 	push	esi
 	push	eax
-	lea	eax, DWORD PTR $T252633[esp+12]
+	lea	eax, DWORD PTR $T253110[esp+12]
 	push	eax
 	call	?erase@?$vector@IV?$allocator@I@std@@@std@@QAE?AV?$_Vector_iterator@IV?$allocator@I@std@@@2@V?$_Vector_const_iterator@IV?$allocator@I@std@@@2@0@Z ; std::vector<unsigned int,std::allocator<unsigned int> >::erase
 $LN1@resize@4:
@@ -36056,10 +36056,10 @@ EXTRN	?isCoastal@CvCity@@QBE_NH@Z:PROC		; CvCity::isCoastal
 ;	COMDAT ?AddUniqueLuxuries@CvPlayerTraits@@QAEXPAVCvCity@@@Z
 _TEXT	SEGMENT
 tv433 = -8						; size = 4
-_iArea$223380 = -8					; size = 4
-$T253914 = -4						; size = 4
-_iNumUniquesFound$223399 = -4				; size = 4
-$T253909 = -4						; size = 4
+_iArea$223857 = -8					; size = 4
+$T254391 = -4						; size = 4
+_iNumUniquesFound$223876 = -4				; size = 4
+$T254386 = -4						; size = 4
 _pCity$ = 8						; size = 4
 ?AddUniqueLuxuries@CvPlayerTraits@@QAEXPAVCvCity@@@Z PROC ; CvPlayerTraits::AddUniqueLuxuries, COMDAT
 ; _this$ = ecx
@@ -36119,7 +36119,7 @@ _pCity$ = 8						; size = 4
 ; 2602 : 		if (m_bUniqueLuxuryRequiresNewArea)
 
 	cmp	BYTE PTR [ebx+353], 0
-	mov	DWORD PTR _iArea$223380[esp+24], eax
+	mov	DWORD PTR _iArea$223857[esp+24], eax
 	je	$LN88@AddUniqueL
 
 ; 2603 : 		{
@@ -36135,7 +36135,7 @@ _pCity$ = 8						; size = 4
 
 	mov	edi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+52
 	mov	ecx, DWORD PTR [ebx+4]
-	mov	DWORD PTR $T253914[esp+24], edi
+	mov	DWORD PTR $T254391[esp+24], edi
 	call	?GetOriginalCapitalY@CvPlayer@@QBEHXZ	; CvPlayer::GetOriginalCapitalY
 	mov	ecx, DWORD PTR [ebx+4]
 	mov	ebp, eax
@@ -36164,7 +36164,7 @@ $LN30@AddUniqueL:
 $LN86@AddUniqueL:
 	mov	esi, eax
 $LN32@AddUniqueL:
-	mov	edx, DWORD PTR $T253914[esp+24]
+	mov	edx, DWORD PTR $T254391[esp+24]
 	cmp	BYTE PTR [edx+4057], 0
 	mov	edi, DWORD PTR [edi+4024]
 	je	SHORT $LN93@AddUniqueL
@@ -36193,7 +36193,7 @@ $LN42@AddUniqueL:
 	jl	SHORT $LN87@AddUniqueL
 	cmp	edx, edi
 	jge	SHORT $LN87@AddUniqueL
-	mov	eax, DWORD PTR $T253914[esp+24]
+	mov	eax, DWORD PTR $T254391[esp+24]
 	imul	ecx, edx
 	add	ecx, esi
 	imul	ecx, 484				; 000001e4H
@@ -36207,7 +36207,7 @@ $LN42@AddUniqueL:
 ; 2614 : 			{
 ; 2615 : 				if (pOriginalCapitalPlot->getArea() == iArea)
 
-	mov	edx, DWORD PTR _iArea$223380[esp+24]
+	mov	edx, DWORD PTR _iArea$223857[esp+24]
 	cmp	DWORD PTR [ecx+356], edx
 	je	$LN95@AddUniqueL
 $LN87@AddUniqueL:
@@ -36222,11 +36222,11 @@ $LN87@AddUniqueL:
 
 	mov	esi, DWORD PTR [ebx+732]
 	mov	eax, DWORD PTR [ebx+728]
-	lea	ecx, DWORD PTR _iArea$223380[esp+24]
+	lea	ecx, DWORD PTR _iArea$223857[esp+24]
 	push	ecx
 	push	esi
 	push	eax
-	lea	edx, DWORD PTR $T253909[esp+36]
+	lea	edx, DWORD PTR $T254386[esp+36]
 	push	edx
 	call	??$find@V?$_Vector_iterator@HV?$allocator@H@std@@@std@@H@std@@YA?AV?$_Vector_iterator@HV?$allocator@H@std@@@0@V10@0ABH@Z ; std::find<std::_Vector_iterator<int,std::allocator<int> >,int>
 	add	esp, 16					; 00000010H
@@ -36241,7 +36241,7 @@ $LN88@AddUniqueL:
 ; 2627 : 
 ; 2628 : 		m_aUniqueLuxuryAreas.push_back(iArea);  		// Store area
 
-	lea	eax, DWORD PTR _iArea$223380[esp+24]
+	lea	eax, DWORD PTR _iArea$223857[esp+24]
 	lea	edi, DWORD PTR [ebx+724]
 	push	eax
 	mov	ecx, edi
@@ -36270,7 +36270,7 @@ $LN88@AddUniqueL:
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	sar	esi, 2
-	mov	DWORD PTR _iNumUniquesFound$223399[esp+24], edi
+	mov	DWORD PTR _iNumUniquesFound$223876[esp+24], edi
 	call	?getNumResourceInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumResourceInfos
 	test	eax, eax
 	jle	$LN95@AddUniqueL
@@ -36303,9 +36303,9 @@ $LL91@AddUniqueL:
 ; 2644 : 			{
 ; 2645 : 				iNumUniquesFound++;
 
-	mov	eax, DWORD PTR _iNumUniquesFound$223399[esp+24]
+	mov	eax, DWORD PTR _iNumUniquesFound$223876[esp+24]
 	inc	eax
-	mov	DWORD PTR _iNumUniquesFound$223399[esp+24], eax
+	mov	DWORD PTR _iNumUniquesFound$223876[esp+24], eax
 
 ; 2646 : 				if (iNumUniquesFound == iNumUniqueResourcesGiven)
 
@@ -36407,7 +36407,7 @@ _TEXT	SEGMENT
 _this$ = -16						; size = 4
 __$EHRec$ = -12						; size = 12
 __Count$ = 8						; size = 4
-$T254102 = 12						; size = 4
+$T254579 = 12						; size = 4
 __Val$ = 12						; size = 1
 ??0?$vector@_NV?$allocator@_N@std@@@std@@QAE@I_N@Z PROC	; std::vector<bool,std::allocator<bool> >::vector<bool,std::allocator<bool> >, COMDAT
 ; _this$ = ecx
@@ -36426,9 +36426,9 @@ __Val$ = 12						; size = 1
 	push	edi
 	mov	edi, DWORD PTR __Count$[esp+20]
 	sbb	eax, eax
-	mov	DWORD PTR $T254102[esp+20], eax
+	mov	DWORD PTR $T254579[esp+20], eax
 	mov	esi, ecx
-	lea	edx, DWORD PTR $T254102[esp+20]
+	lea	edx, DWORD PTR $T254579[esp+20]
 	lea	eax, DWORD PTR [edi+31]
 	push	edx
 	shr	eax, 5
@@ -36470,27 +36470,27 @@ PUBLIC	?resize@?$vector@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxi
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?resize@?$vector@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@std@@QAEXI@Z
 _TEXT	SEGMENT
-$T254168 = -24						; size = 24
+$T254645 = -24						; size = 24
 __Newsize$ = 8						; size = 4
 ?resize@?$vector@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@std@@QAEXI@Z PROC ; std::vector<Firaxis::Array<int,6>,std::allocator<Firaxis::Array<int,6> > >::resize, COMDAT
 ; _this$ = ecx
 
 ; 713  : 		resize(_Newsize, _Ty());
 
-	mov	edx, DWORD PTR $T254168[esp]
+	mov	edx, DWORD PTR $T254645[esp]
 	sub	esp, 24					; 00000018H
 	sub	esp, 24					; 00000018H
 	mov	eax, esp
 	mov	DWORD PTR [eax], edx
-	mov	edx, DWORD PTR $T254168[esp+52]
+	mov	edx, DWORD PTR $T254645[esp+52]
 	mov	DWORD PTR [eax+4], edx
-	mov	edx, DWORD PTR $T254168[esp+56]
+	mov	edx, DWORD PTR $T254645[esp+56]
 	mov	DWORD PTR [eax+8], edx
-	mov	edx, DWORD PTR $T254168[esp+60]
+	mov	edx, DWORD PTR $T254645[esp+60]
 	mov	DWORD PTR [eax+12], edx
-	mov	edx, DWORD PTR $T254168[esp+64]
+	mov	edx, DWORD PTR $T254645[esp+64]
 	mov	DWORD PTR [eax+16], edx
-	mov	edx, DWORD PTR $T254168[esp+68]
+	mov	edx, DWORD PTR $T254645[esp+68]
 	mov	DWORD PTR [eax+20], edx
 	mov	eax, DWORD PTR __Newsize$[esp+44]
 	push	eax
@@ -36506,8 +36506,8 @@ PUBLIC	?push_back@?$vector@UFreeResourceXCities@@V?$allocator@UFreeResourceXCiti
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?push_back@?$vector@UFreeResourceXCities@@V?$allocator@UFreeResourceXCities@@@std@@@std@@QAEXABUFreeResourceXCities@@@Z
 _TEXT	SEGMENT
-$T254203 = -4						; size = 1
-__Cat$254207 = 8					; size = 1
+$T254682 = -4						; size = 1
+__Cat$254686 = 8					; size = 1
 __Val$ = 8						; size = 4
 ?push_back@?$vector@UFreeResourceXCities@@V?$allocator@UFreeResourceXCities@@@std@@@std@@QAEXABUFreeResourceXCities@@@Z PROC ; std::vector<FreeResourceXCities,std::allocator<FreeResourceXCities> >::push_back, COMDAT
 ; _this$ = ecx
@@ -36548,10 +36548,10 @@ $LN10@push_back@3:
 ; 818  :  #else /* _HAS_ITERATOR_DEBUGGING */
 ; 819  : 			_Mylast = _Ufill(_Mylast, 1, _Val);
 
-	mov	ecx, DWORD PTR __Cat$254207[esp+8]
+	mov	ecx, DWORD PTR __Cat$254686[esp+8]
 	mov	edx, DWORD PTR __Val$[esp+8]
-	mov	BYTE PTR $T254203[esp+12], 0
-	mov	eax, DWORD PTR $T254203[esp+12]
+	mov	BYTE PTR $T254682[esp+12], 0
+	mov	eax, DWORD PTR $T254682[esp+12]
 	push	eax
 	push	ecx
 	push	esi
@@ -36743,7 +36743,7 @@ PUBLIC	??$SerializeToSequenceContainer@HV?$vector@HV?$allocator@H@std@@@std@@@@Y
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\fireplace\include\fireworks\fstlcontainerserialization.h
 ;	COMDAT ??$SerializeToSequenceContainer@HV?$vector@HV?$allocator@H@std@@@std@@@@YAXAAVFDataStream@@AAV?$vector@HV?$allocator@H@std@@@std@@@Z
 _TEXT	SEGMENT
-_v$213822 = -4						; size = 4
+_v$214299 = -4						; size = 4
 _loadFrom$ = 8						; size = 4
 _count$ = 12						; size = 4
 _container$ = 12					; size = 4
@@ -36803,7 +36803,7 @@ $LL117@SerializeT:
 ; 90   : 		ElementType v;
 ; 91   : 		loadFrom >> v;
 
-	lea	ecx, DWORD PTR _v$213822[esp+20]
+	lea	ecx, DWORD PTR _v$214299[esp+20]
 	push	ecx
 	mov	ecx, edi
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
@@ -36826,13 +36826,13 @@ $LN61@SerializeT:
 	sar	ebp, 2
 	cmp	ebp, eax
 	jae	SHORT $LN53@SerializeT
-	mov	edx, DWORD PTR _v$213822[esp+20]
+	mov	edx, DWORD PTR _v$214299[esp+20]
 	mov	DWORD PTR [ecx], edx
 	add	ecx, 4
 	mov	DWORD PTR [esi+8], ecx
 	jmp	SHORT $LN2@SerializeT
 $LN53@SerializeT:
-	lea	eax, DWORD PTR _v$213822[esp+20]
+	lea	eax, DWORD PTR _v$214299[esp+20]
 	push	eax
 	push	1
 	push	ecx
@@ -36860,9 +36860,9 @@ PUBLIC	?push_back@?$vector@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Fir
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\vector
 ;	COMDAT ?push_back@?$vector@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@std@@QAEXABV?$Array@H$05@Firaxis@@@Z
 _TEXT	SEGMENT
-$T255032 = -4						; size = 1
-__Cat$255036 = 8					; size = 1
-$T255003 = 8						; size = 4
+$T255510 = -4						; size = 1
+__Cat$255514 = 8					; size = 1
+$T255480 = 8						; size = 4
 __Val$ = 8						; size = 4
 ?push_back@?$vector@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@std@@QAEXABV?$Array@H$05@Firaxis@@@Z PROC ; std::vector<Firaxis::Array<int,6>,std::allocator<Firaxis::Array<int,6> > >::push_back, COMDAT
 ; _this$ = ecx
@@ -36914,10 +36914,10 @@ $LN10@push_back@4:
 ; 818  :  #else /* _HAS_ITERATOR_DEBUGGING */
 ; 819  : 			_Mylast = _Ufill(_Mylast, 1, _Val);
 
-	mov	edx, DWORD PTR __Cat$255036[esp+12]
+	mov	edx, DWORD PTR __Cat$255514[esp+12]
 	mov	eax, DWORD PTR __Val$[esp+12]
-	mov	BYTE PTR $T255032[esp+16], 0
-	mov	ecx, DWORD PTR $T255032[esp+16]
+	mov	BYTE PTR $T255510[esp+16], 0
+	mov	ecx, DWORD PTR $T255510[esp+16]
 	push	ecx
 	push	edx
 	push	esi
@@ -36946,7 +36946,7 @@ $LN2@push_back@4:
 	mov	ecx, DWORD PTR __Val$[esp+12]
 	push	ecx
 	push	edi
-	lea	edx, DWORD PTR $T255003[esp+20]
+	lea	edx, DWORD PTR $T255480[esp+20]
 	push	edx
 	mov	ecx, esi
 	call	?insert@?$vector@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@std@@QAE?AV?$_Vector_iterator@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@2@V?$_Vector_const_iterator@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@2@ABV?$Array@H$05@Firaxis@@@Z ; std::vector<Firaxis::Array<int,6>,std::allocator<Firaxis::Array<int,6> > >::insert
@@ -36964,11 +36964,11 @@ PUBLIC	?_Insert_x@?$vector@_NV?$allocator@_N@std@@@std@@IAEIV?$_Vb_const_iterato
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?_Insert_x@?$vector@_NV?$allocator@_N@std@@@std@@IAEIV?$_Vb_const_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@@@2@I@Z
 _TEXT	SEGMENT
-$T255060 = -32						; size = 8
-__Oldend$215029 = -24					; size = 8
-$T255063 = -16						; size = 8
-$T255061 = -16						; size = 8
-$T255062 = -8						; size = 8
+$T255537 = -32						; size = 8
+__Oldend$215506 = -24					; size = 8
+$T255540 = -16						; size = 8
+$T255538 = -16						; size = 8
+$T255539 = -8						; size = 8
 __Where$ = 8						; size = 8
 __Count$ = 16						; size = 4
 ?_Insert_x@?$vector@_NV?$allocator@_N@std@@@std@@IAEIV?$_Vb_const_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@@@2@I@Z PROC ; std::vector<bool,std::allocator<bool> >::_Insert_x, COMDAT
@@ -37066,12 +37066,12 @@ $LN2@Insert_x:
 ; 2316 : 				iterator _Oldend = end();
 
 	mov	ebx, DWORD PTR [esi+8]
-	mov	DWORD PTR __Oldend$215029[esp+48], ebx
-	mov	DWORD PTR __Oldend$215029[esp+52], 0
+	mov	DWORD PTR __Oldend$215506[esp+48], ebx
+	mov	DWORD PTR __Oldend$215506[esp+52], 0
 	test	edi, edi
 	jbe	SHORT $LN60@Insert_x
 	push	edi
-	lea	ecx, DWORD PTR __Oldend$215029[esp+52]
+	lea	ecx, DWORD PTR __Oldend$215506[esp+52]
 	call	??Y?$_Vb_const_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@@@std@@QAEAAV01@H@Z ; std::_Vb_const_iterator<unsigned int,int,std::vector<bool,std::allocator<bool> > >::operator+=
 $LN60@Insert_x:
 
@@ -37083,33 +37083,33 @@ $LN60@Insert_x:
 
 ; 2318 : 				std::copy_backward(begin() + _Off, _Oldend, end());
 
-	mov	DWORD PTR $T255060[esp+48], ebx
-	mov	DWORD PTR $T255060[esp+52], 0
+	mov	DWORD PTR $T255537[esp+48], ebx
+	mov	DWORD PTR $T255537[esp+52], 0
 	je	SHORT $LN79@Insert_x
 	push	eax
-	lea	ecx, DWORD PTR $T255060[esp+52]
+	lea	ecx, DWORD PTR $T255537[esp+52]
 	call	??Y?$_Vb_const_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@@@std@@QAEAAV01@H@Z ; std::_Vb_const_iterator<unsigned int,int,std::vector<bool,std::allocator<bool> > >::operator+=
 $LN79@Insert_x:
 	push	ebp
-	lea	ecx, DWORD PTR $T255062[esp+52]
+	lea	ecx, DWORD PTR $T255539[esp+52]
 	push	ecx
-	lea	ecx, DWORD PTR $T255061[esp+56]
-	mov	DWORD PTR $T255061[esp+56], ebx
-	mov	DWORD PTR $T255061[esp+60], 0
+	lea	ecx, DWORD PTR $T255538[esp+56]
+	mov	DWORD PTR $T255538[esp+56], ebx
+	mov	DWORD PTR $T255538[esp+60], 0
 	call	??H?$_Vb_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@@@std@@QBE?AV01@H@Z ; std::_Vb_iterator<unsigned int,int,std::vector<bool,std::allocator<bool> > >::operator+
-	mov	edx, DWORD PTR $T255060[esp+52]
-	mov	ecx, DWORD PTR $T255060[esp+48]
+	mov	edx, DWORD PTR $T255537[esp+52]
+	mov	ecx, DWORD PTR $T255537[esp+48]
 	push	edx
-	mov	edx, DWORD PTR __Oldend$215029[esp+56]
+	mov	edx, DWORD PTR __Oldend$215506[esp+56]
 	push	ecx
-	mov	ecx, DWORD PTR __Oldend$215029[esp+56]
+	mov	ecx, DWORD PTR __Oldend$215506[esp+56]
 	push	edx
 	mov	edx, DWORD PTR [eax+4]
 	mov	eax, DWORD PTR [eax]
 	push	ecx
 	push	edx
 	push	eax
-	lea	ecx, DWORD PTR $T255063[esp+72]
+	lea	ecx, DWORD PTR $T255540[esp+72]
 	push	ecx
 	call	??$copy_backward@V?$_Vb_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@@@std@@V12@@std@@YA?AV?$_Vb_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@@@0@V10@00@Z ; std::copy_backward<std::_Vb_iterator<unsigned int,int,std::vector<bool,std::allocator<bool> > >,std::_Vb_iterator<unsigned int,int,std::vector<bool,std::allocator<bool> > > >
 	add	esp, 28					; 0000001cH
@@ -37216,8 +37216,8 @@ PUBLIC	?push_back@?$vector@W4TraitTypes@@V?$allocator@W4TraitTypes@@@std@@@std@@
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\vector
 ;	COMDAT ?push_back@?$vector@W4TraitTypes@@V?$allocator@W4TraitTypes@@@std@@@std@@QAEXABW4TraitTypes@@@Z
 _TEXT	SEGMENT
-$T255692 = -4						; size = 1
-__Cat$255695 = 8					; size = 1
+$T256169 = -4						; size = 1
+__Cat$256173 = 8					; size = 1
 __Val$ = 8						; size = 4
 ?push_back@?$vector@W4TraitTypes@@V?$allocator@W4TraitTypes@@@std@@@std@@QAEXABW4TraitTypes@@@Z PROC ; std::vector<enum TraitTypes,std::allocator<enum TraitTypes> >::push_back, COMDAT
 ; _this$ = ecx
@@ -37258,10 +37258,10 @@ $LN10@push_back@5:
 ; 818  :  #else /* _HAS_ITERATOR_DEBUGGING */
 ; 819  : 			_Mylast = _Ufill(_Mylast, 1, _Val);
 
-	mov	ecx, DWORD PTR __Cat$255695[esp+8]
+	mov	ecx, DWORD PTR __Cat$256173[esp+8]
 	mov	edx, DWORD PTR __Val$[esp+8]
-	mov	BYTE PTR $T255692[esp+12], 0
-	mov	eax, DWORD PTR $T255692[esp+12]
+	mov	BYTE PTR $T256169[esp+12], 0
+	mov	eax, DWORD PTR $T256169[esp+12]
 	push	eax
 	push	ecx
 	push	esi
@@ -37305,8 +37305,8 @@ PUBLIC	?push_back@?$vector@UMayaBonusChoice@@V?$allocator@UMayaBonusChoice@@@std
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?push_back@?$vector@UMayaBonusChoice@@V?$allocator@UMayaBonusChoice@@@std@@@std@@QAEXABUMayaBonusChoice@@@Z
 _TEXT	SEGMENT
-$T255841 = -4						; size = 1
-__Cat$255844 = 8					; size = 1
+$T256318 = -4						; size = 1
+__Cat$256322 = 8					; size = 1
 __Val$ = 8						; size = 4
 ?push_back@?$vector@UMayaBonusChoice@@V?$allocator@UMayaBonusChoice@@@std@@@std@@QAEXABUMayaBonusChoice@@@Z PROC ; std::vector<MayaBonusChoice,std::allocator<MayaBonusChoice> >::push_back, COMDAT
 ; _this$ = ecx
@@ -37347,10 +37347,10 @@ $LN10@push_back@6:
 ; 818  :  #else /* _HAS_ITERATOR_DEBUGGING */
 ; 819  : 			_Mylast = _Ufill(_Mylast, 1, _Val);
 
-	mov	ecx, DWORD PTR __Cat$255844[esp+8]
+	mov	ecx, DWORD PTR __Cat$256322[esp+8]
 	mov	edx, DWORD PTR __Val$[esp+8]
-	mov	BYTE PTR $T255841[esp+12], 0
-	mov	eax, DWORD PTR $T255841[esp+12]
+	mov	BYTE PTR $T256318[esp+12], 0
+	mov	eax, DWORD PTR $T256318[esp+12]
 	push	eax
 	push	ecx
 	push	esi
@@ -37428,12 +37428,12 @@ PUBLIC	??$SerializeToSequenceContainer@V?$Array@H$05@Firaxis@@V?$vector@V?$Array
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$SerializeToSequenceContainer@V?$Array@H$05@Firaxis@@V?$vector@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@std@@@@YAXAAVFDataStream@@AAV?$vector@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@std@@@Z
 _TEXT	SEGMENT
-$T256113 = -28						; size = 1
+$T256616 = -28						; size = 1
 _count$ = -28						; size = 4
-_v$214000 = -24						; size = 24
+_v$214477 = -24						; size = 24
 _loadFrom$ = 8						; size = 4
-__Cat$256118 = 12					; size = 1
-$T256115 = 12						; size = 1
+__Cat$256621 = 12					; size = 1
+$T256618 = 12						; size = 1
 _container$ = 12					; size = 4
 ??$SerializeToSequenceContainer@V?$Array@H$05@Firaxis@@V?$vector@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@std@@@@YAXAAVFDataStream@@AAV?$vector@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@std@@@Z PROC ; SerializeToSequenceContainer<Firaxis::Array<int,6>,std::vector<Firaxis::Array<int,6>,std::allocator<Firaxis::Array<int,6> > > >, COMDAT
 
@@ -37452,12 +37452,12 @@ _container$ = 12					; size = 4
 	xor	ebx, ebx
 	cmp	ecx, eax
 	je	SHORT $LN20@SerializeT@2
-	mov	BYTE PTR $T256113[esp+40], bl
-	mov	edx, DWORD PTR $T256113[esp+40]
+	mov	BYTE PTR $T256616[esp+40], bl
+	mov	edx, DWORD PTR $T256616[esp+40]
 	push	edx
-	mov	edx, DWORD PTR __Cat$256118[esp+40]
+	mov	edx, DWORD PTR __Cat$256621[esp+40]
 	push	edx
-	mov	edx, DWORD PTR $T256115[esp+44]
+	mov	edx, DWORD PTR $T256618[esp+44]
 	push	edx
 	push	ecx
 	push	eax
@@ -37487,7 +37487,7 @@ $LL3@SerializeT@2:
 
 ; 84   : 	container.clear();
 
-	lea	esi, DWORD PTR _v$214000[esp+44]
+	lea	esi, DWORD PTR _v$214477[esp+44]
 	mov	edi, 6
 	npad	5
 
@@ -37505,7 +37505,7 @@ $LL49@SerializeT@2:
 
 ; 92   : 		container.push_back(v);
 
-	lea	ecx, DWORD PTR _v$214000[esp+44]
+	lea	ecx, DWORD PTR _v$214477[esp+44]
 	push	ecx
 	mov	ecx, DWORD PTR _container$[esp+44]
 	call	?push_back@?$vector@V?$Array@H$05@Firaxis@@V?$allocator@V?$Array@H$05@Firaxis@@@std@@@std@@QAEXABV?$Array@H$05@Firaxis@@@Z ; std::vector<Firaxis::Array<int,6>,std::allocator<Firaxis::Array<int,6> > >::push_back
@@ -37530,8 +37530,8 @@ PUBLIC	?_Insert_n@?$vector@_NV?$allocator@_N@std@@@std@@IAEXV?$_Vb_const_iterato
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\vector
 ;	COMDAT ?_Insert_n@?$vector@_NV?$allocator@_N@std@@@std@@IAEXV?$_Vb_const_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@@@2@I_N@Z
 _TEXT	SEGMENT
-__Tmp$256238 = -16					; size = 8
-__Tmp$256296 = -8					; size = 8
+__Tmp$256715 = -16					; size = 8
+__Tmp$256773 = -8					; size = 8
 __Where$ = 8						; size = 8
 __Count$ = 16						; size = 4
 __Val$ = 20						; size = 1
@@ -37564,23 +37564,23 @@ __Val$ = 20						; size = 1
 	lea	edx, DWORD PTR [edi+ebx]
 	xor	eax, eax
 	push	edx
-	lea	ecx, DWORD PTR __Tmp$256238[esp+32]
-	mov	DWORD PTR __Tmp$256238[esp+32], esi
-	mov	DWORD PTR __Tmp$256238[esp+36], eax
+	lea	ecx, DWORD PTR __Tmp$256715[esp+32]
+	mov	DWORD PTR __Tmp$256715[esp+32], esi
+	mov	DWORD PTR __Tmp$256715[esp+36], eax
 	call	??Y?$_Vb_const_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@@@std@@QAEAAV01@H@Z ; std::_Vb_const_iterator<unsigned int,int,std::vector<bool,std::allocator<bool> > >::operator+=
 	xor	eax, eax
 	push	edi
-	lea	ecx, DWORD PTR __Tmp$256296[esp+32]
-	mov	DWORD PTR __Tmp$256296[esp+32], esi
-	mov	DWORD PTR __Tmp$256296[esp+36], eax
+	lea	ecx, DWORD PTR __Tmp$256773[esp+32]
+	mov	DWORD PTR __Tmp$256773[esp+32], esi
+	mov	DWORD PTR __Tmp$256773[esp+36], eax
 	call	??Y?$_Vb_const_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@@@std@@QAEAAV01@H@Z ; std::_Vb_const_iterator<unsigned int,int,std::vector<bool,std::allocator<bool> > >::operator+=
-	mov	ecx, DWORD PTR __Tmp$256238[esp+32]
-	mov	edx, DWORD PTR __Tmp$256238[esp+28]
+	mov	ecx, DWORD PTR __Tmp$256715[esp+32]
+	mov	edx, DWORD PTR __Tmp$256715[esp+28]
 	lea	eax, DWORD PTR __Val$[esp+24]
 	push	eax
-	mov	eax, DWORD PTR __Tmp$256296[esp+36]
+	mov	eax, DWORD PTR __Tmp$256773[esp+36]
 	push	ecx
-	mov	ecx, DWORD PTR __Tmp$256296[esp+36]
+	mov	ecx, DWORD PTR __Tmp$256773[esp+36]
 	push	edx
 	push	eax
 	push	ecx
@@ -37676,20 +37676,20 @@ EXTRN	?isMajorCiv@CvPlayer@@QBE_NXZ:PROC		; CvPlayer::isMajorCiv
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?InitPlayerTraits@CvPlayerTraits@@QAEXXZ
 _TEXT	SEGMENT
-_iSpecialistLoop$223147 = -100				; size = 4
-_iImprovementLoop$223137 = -100				; size = 4
-_iFeatureLoop$223127 = -100				; size = 4
-_iI$223092 = -96					; size = 4
+_iSpecialistLoop$223624 = -100				; size = 4
+_iImprovementLoop$223614 = -100				; size = 4
+_iFeatureLoop$223604 = -100				; size = 4
+_iI$223569 = -96					; size = 4
 tv4199 = -92						; size = 4
 tv4099 = -92						; size = 4
 tv4000 = -92						; size = 4
-__Tmp$256824 = -92					; size = 8
+__Tmp$257304 = -92					; size = 8
 tv4477 = -84						; size = 4
-$T256339 = -84						; size = 4
-_traitUnit$223177 = -80					; size = 8
-_yields$223136 = -72					; size = 24
-_yields$223146 = -48					; size = 24
-_yields$223156 = -24					; size = 24
+$T256816 = -84						; size = 4
+_traitUnit$223654 = -80					; size = 8
+_yields$223613 = -72					; size = 24
+_yields$223623 = -48					; size = 24
+_yields$223633 = -24					; size = 24
 ?InitPlayerTraits@CvPlayerTraits@@QAEXXZ PROC		; CvPlayerTraits::InitPlayerTraits, COMDAT
 ; _this$ = ecx
 
@@ -37792,22 +37792,22 @@ $LN132@InitPlayer:
 
 	mov	eax, DWORD PTR [esi+16]
 	xor	ecx, ecx
-	mov	DWORD PTR __Tmp$256824[esp+120], ecx
+	mov	DWORD PTR __Tmp$257304[esp+120], ecx
 	push	edi
-	lea	ecx, DWORD PTR __Tmp$256824[esp+120]
-	mov	DWORD PTR __Tmp$256824[esp+120], eax
+	lea	ecx, DWORD PTR __Tmp$257304[esp+120]
+	mov	DWORD PTR __Tmp$257304[esp+120], eax
 	call	??Y?$_Vb_const_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@@@std@@QAEAAV01@H@Z ; std::_Vb_const_iterator<unsigned int,int,std::vector<bool,std::allocator<bool> > >::operator+=
-	mov	ecx, DWORD PTR __Tmp$256824[esp+120]
-	mov	eax, DWORD PTR __Tmp$256824[esp+116]
+	mov	ecx, DWORD PTR __Tmp$257304[esp+120]
+	mov	eax, DWORD PTR __Tmp$257304[esp+116]
 	mov	edx, 1
 	shl	edx, cl
 
 ; 1713 : 			m_vPotentiallyActiveLeaderTraits.push_back( (TraitTypes)iI );
 
 	mov	ecx, ebx
-	mov	DWORD PTR $T256339[esp+116], edi
+	mov	DWORD PTR $T256816[esp+116], edi
 	or	DWORD PTR [eax], edx
-	lea	eax, DWORD PTR $T256339[esp+116]
+	lea	eax, DWORD PTR $T256816[esp+116]
 	push	eax
 	call	?push_back@?$vector@W4TraitTypes@@V?$allocator@W4TraitTypes@@@std@@@std@@QAEXABW4TraitTypes@@@Z ; std::vector<enum TraitTypes,std::allocator<enum TraitTypes> >::push_back
 $LN64@InitPlayer:
@@ -37826,7 +37826,7 @@ $LN63@InitPlayer:
 ; 1719 : 	for(int iI = 0; iI < GC.getNumTraitInfos(); iI++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	mov	DWORD PTR _iI$223092[esp+116], 0
+	mov	DWORD PTR _iI$223569[esp+116], 0
 	call	?getNumTraitInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumTraitInfos
 	test	eax, eax
 	jle	$LN59@InitPlayer
@@ -37838,7 +37838,7 @@ $LL723@InitPlayer:
 ; 1722 : 	{
 ; 1723 : 		if(HasTrait((TraitTypes)iI))
 
-	mov	ecx, DWORD PTR _iI$223092[esp+116]
+	mov	ecx, DWORD PTR _iI$223569[esp+116]
 	push	ecx
 	mov	ecx, esi
 	call	?HasTrait@CvPlayerTraits@@QBE_NW4TraitTypes@@@Z ; CvPlayerTraits::HasTrait
@@ -37848,7 +37848,7 @@ $LL723@InitPlayer:
 ; 1724 : 		{
 ; 1725 : 			CvTraitEntry* trait = GC.getTraitInfo((TraitTypes)iI);
 
-	mov	edx, DWORD PTR _iI$223092[esp+116]
+	mov	edx, DWORD PTR _iI$223569[esp+116]
 	push	edx
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getTraitInfo@CvGlobals@@QAEPAVCvTraitEntry@@W4TraitTypes@@@Z ; CvGlobals::getTraitInfo
@@ -38610,7 +38610,7 @@ $LN420@InitPlayer:
 ; 1916 : 				for(int iFeatureLoop = 0; iFeatureLoop < GC.getNumFeatureInfos(); iFeatureLoop++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	mov	DWORD PTR _iFeatureLoop$223127[esp+116], 0
+	mov	DWORD PTR _iFeatureLoop$223604[esp+116], 0
 	call	?getNumFeatureInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumFeatureInfos
 	test	eax, eax
 	jle	$LN30@InitPlayer
@@ -38625,7 +38625,7 @@ $LL724@InitPlayer:
 	mov	eax, DWORD PTR [ebp+692]
 	test	eax, eax
 	je	SHORT $LN31@InitPlayer
-	mov	ecx, DWORD PTR _iFeatureLoop$223127[esp+116]
+	mov	ecx, DWORD PTR _iFeatureLoop$223604[esp+116]
 	mov	edx, DWORD PTR [eax+ecx*4]
 	mov	ecx, DWORD PTR [ebx+edx]
 
@@ -38639,46 +38639,46 @@ $LL724@InitPlayer:
 
 	mov	eax, DWORD PTR [esi+848]
 	mov	edx, DWORD PTR [edi+eax]
-	mov	DWORD PTR _yields$223136[esp+116], edx
+	mov	DWORD PTR _yields$223613[esp+116], edx
 	mov	edx, DWORD PTR [edi+eax+4]
-	mov	DWORD PTR _yields$223136[esp+120], edx
+	mov	DWORD PTR _yields$223613[esp+120], edx
 	mov	edx, DWORD PTR [edi+eax+8]
-	mov	DWORD PTR _yields$223136[esp+124], edx
+	mov	DWORD PTR _yields$223613[esp+124], edx
 	mov	edx, DWORD PTR [edi+eax+12]
-	mov	DWORD PTR _yields$223136[esp+128], edx
+	mov	DWORD PTR _yields$223613[esp+128], edx
 	mov	edx, DWORD PTR [edi+eax+16]
-	mov	DWORD PTR _yields$223136[esp+132], edx
+	mov	DWORD PTR _yields$223613[esp+132], edx
 	mov	edx, DWORD PTR [edi+eax+20]
-	mov	DWORD PTR _yields$223136[esp+136], edx
+	mov	DWORD PTR _yields$223613[esp+136], edx
 
 ; 1923 : 						yields[iYield] = (m_ppaaiUnimprovedFeatureYieldChange[iFeatureLoop][iYield] + iChange);
 
 	mov	edx, DWORD PTR tv4000[esp+116]
 	mov	edx, DWORD PTR [edx+eax]
 	add	edx, ecx
-	mov	DWORD PTR _yields$223136[esp+ebx+116], edx
+	mov	DWORD PTR _yields$223613[esp+ebx+116], edx
 
 ; 1924 : 						m_ppaaiUnimprovedFeatureYieldChange[iFeatureLoop] = yields;
 
-	mov	ecx, DWORD PTR _yields$223136[esp+116]
-	mov	edx, DWORD PTR _yields$223136[esp+120]
+	mov	ecx, DWORD PTR _yields$223613[esp+116]
+	mov	edx, DWORD PTR _yields$223613[esp+120]
 	mov	DWORD PTR [edi+eax], ecx
-	mov	ecx, DWORD PTR _yields$223136[esp+124]
+	mov	ecx, DWORD PTR _yields$223613[esp+124]
 	mov	DWORD PTR [edi+eax+4], edx
-	mov	edx, DWORD PTR _yields$223136[esp+128]
+	mov	edx, DWORD PTR _yields$223613[esp+128]
 	mov	DWORD PTR [edi+eax+8], ecx
-	mov	ecx, DWORD PTR _yields$223136[esp+132]
+	mov	ecx, DWORD PTR _yields$223613[esp+132]
 	mov	DWORD PTR [edi+eax+12], edx
-	mov	edx, DWORD PTR _yields$223136[esp+136]
+	mov	edx, DWORD PTR _yields$223613[esp+136]
 	mov	DWORD PTR [edi+eax+16], ecx
 	mov	DWORD PTR [edi+eax+20], edx
 $LN31@InitPlayer:
-	inc	DWORD PTR _iFeatureLoop$223127[esp+116]
+	inc	DWORD PTR _iFeatureLoop$223604[esp+116]
 	add	DWORD PTR tv4000[esp+116], 24		; 00000018H
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	add	edi, 24					; 00000018H
 	call	?getNumFeatureInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumFeatureInfos
-	cmp	DWORD PTR _iFeatureLoop$223127[esp+116], eax
+	cmp	DWORD PTR _iFeatureLoop$223604[esp+116], eax
 	jl	$LL724@InitPlayer
 $LN30@InitPlayer:
 
@@ -38691,7 +38691,7 @@ $LN30@InitPlayer:
 ; 1931 : 				for(int iImprovementLoop = 0; iImprovementLoop < GC.getNumImprovementInfos(); iImprovementLoop++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	mov	DWORD PTR _iImprovementLoop$223137[esp+116], 0
+	mov	DWORD PTR _iImprovementLoop$223614[esp+116], 0
 	call	?getNumImprovementInfos@CvGlobals@@QAEHXZ ; CvGlobals::getNumImprovementInfos
 	test	eax, eax
 	jle	$LN26@InitPlayer
@@ -38707,7 +38707,7 @@ $LL725@InitPlayer:
 	mov	eax, DWORD PTR [ebp+684]
 	test	eax, eax
 	je	SHORT $LN27@InitPlayer
-	mov	ecx, DWORD PTR _iImprovementLoop$223137[esp+116]
+	mov	ecx, DWORD PTR _iImprovementLoop$223614[esp+116]
 	mov	edx, DWORD PTR [eax+ecx*4]
 	mov	ecx, DWORD PTR [ebx+edx]
 
@@ -38721,46 +38721,46 @@ $LL725@InitPlayer:
 
 	mov	eax, DWORD PTR [esi+816]
 	mov	edx, DWORD PTR [edi+eax]
-	mov	DWORD PTR _yields$223146[esp+116], edx
+	mov	DWORD PTR _yields$223623[esp+116], edx
 	mov	edx, DWORD PTR [edi+eax+4]
-	mov	DWORD PTR _yields$223146[esp+120], edx
+	mov	DWORD PTR _yields$223623[esp+120], edx
 	mov	edx, DWORD PTR [edi+eax+8]
-	mov	DWORD PTR _yields$223146[esp+124], edx
+	mov	DWORD PTR _yields$223623[esp+124], edx
 	mov	edx, DWORD PTR [edi+eax+12]
-	mov	DWORD PTR _yields$223146[esp+128], edx
+	mov	DWORD PTR _yields$223623[esp+128], edx
 	mov	edx, DWORD PTR [edi+eax+16]
-	mov	DWORD PTR _yields$223146[esp+132], edx
+	mov	DWORD PTR _yields$223623[esp+132], edx
 	mov	edx, DWORD PTR [edi+eax+20]
-	mov	DWORD PTR _yields$223146[esp+136], edx
+	mov	DWORD PTR _yields$223623[esp+136], edx
 
 ; 1938 : 						yields[iYield] = (m_ppaaiImprovementYieldChange[iImprovementLoop][iYield] + iChange);
 
 	mov	edx, DWORD PTR tv4099[esp+116]
 	mov	edx, DWORD PTR [eax+edx]
 	add	edx, ecx
-	mov	DWORD PTR _yields$223146[esp+ebx+116], edx
+	mov	DWORD PTR _yields$223623[esp+ebx+116], edx
 
 ; 1939 : 						m_ppaaiImprovementYieldChange[iImprovementLoop] = yields;
 
-	mov	ecx, DWORD PTR _yields$223146[esp+116]
-	mov	edx, DWORD PTR _yields$223146[esp+120]
+	mov	ecx, DWORD PTR _yields$223623[esp+116]
+	mov	edx, DWORD PTR _yields$223623[esp+120]
 	mov	DWORD PTR [edi+eax], ecx
-	mov	ecx, DWORD PTR _yields$223146[esp+124]
+	mov	ecx, DWORD PTR _yields$223623[esp+124]
 	mov	DWORD PTR [edi+eax+4], edx
-	mov	edx, DWORD PTR _yields$223146[esp+128]
+	mov	edx, DWORD PTR _yields$223623[esp+128]
 	mov	DWORD PTR [edi+eax+8], ecx
-	mov	ecx, DWORD PTR _yields$223146[esp+132]
+	mov	ecx, DWORD PTR _yields$223623[esp+132]
 	mov	DWORD PTR [edi+eax+12], edx
-	mov	edx, DWORD PTR _yields$223146[esp+136]
+	mov	edx, DWORD PTR _yields$223623[esp+136]
 	mov	DWORD PTR [edi+eax+16], ecx
 	mov	DWORD PTR [edi+eax+20], edx
 $LN27@InitPlayer:
-	inc	DWORD PTR _iImprovementLoop$223137[esp+116]
+	inc	DWORD PTR _iImprovementLoop$223614[esp+116]
 	add	DWORD PTR tv4099[esp+116], 24		; 00000018H
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	add	edi, 24					; 00000018H
 	call	?getNumImprovementInfos@CvGlobals@@QAEHXZ ; CvGlobals::getNumImprovementInfos
-	cmp	DWORD PTR _iImprovementLoop$223137[esp+116], eax
+	cmp	DWORD PTR _iImprovementLoop$223614[esp+116], eax
 	jl	$LL725@InitPlayer
 $LN26@InitPlayer:
 
@@ -38773,7 +38773,7 @@ $LN26@InitPlayer:
 ; 1946 : 				for(int iSpecialistLoop = 0; iSpecialistLoop < GC.getNumSpecialistInfos(); iSpecialistLoop++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	mov	DWORD PTR _iSpecialistLoop$223147[esp+116], 0
+	mov	DWORD PTR _iSpecialistLoop$223624[esp+116], 0
 	call	?getNumSpecialistInfos@CvGlobals@@QAEHXZ ; CvGlobals::getNumSpecialistInfos
 	test	eax, eax
 	jle	$LN35@InitPlayer
@@ -38789,7 +38789,7 @@ $LL726@InitPlayer:
 	mov	eax, DWORD PTR [ebp+688]
 	test	eax, eax
 	je	$LN23@InitPlayer
-	mov	ecx, DWORD PTR _iSpecialistLoop$223147[esp+116]
+	mov	ecx, DWORD PTR _iSpecialistLoop$223624[esp+116]
 	mov	edx, DWORD PTR [eax+ecx*4]
 	mov	ecx, DWORD PTR [ebx+edx]
 
@@ -38804,47 +38804,47 @@ $LL726@InitPlayer:
 	mov	eax, DWORD PTR [esi+832]
 	mov	edx, DWORD PTR [eax+edi]
 	add	eax, edi
-	mov	DWORD PTR _yields$223156[esp+116], edx
+	mov	DWORD PTR _yields$223633[esp+116], edx
 	mov	edx, DWORD PTR [eax+4]
-	mov	DWORD PTR _yields$223156[esp+120], edx
+	mov	DWORD PTR _yields$223633[esp+120], edx
 	mov	edx, DWORD PTR [eax+8]
-	mov	DWORD PTR _yields$223156[esp+124], edx
+	mov	DWORD PTR _yields$223633[esp+124], edx
 	mov	edx, DWORD PTR [eax+12]
-	mov	DWORD PTR _yields$223156[esp+128], edx
+	mov	DWORD PTR _yields$223633[esp+128], edx
 	mov	edx, DWORD PTR [eax+16]
 	mov	eax, DWORD PTR [eax+20]
-	mov	DWORD PTR _yields$223156[esp+132], edx
+	mov	DWORD PTR _yields$223633[esp+132], edx
 
 ; 1953 : 						yields[iYield] = (m_ppaaiSpecialistYieldChange[iSpecialistLoop][iYield] + iChange);
 
 	mov	edx, DWORD PTR tv4199[esp+116]
-	mov	DWORD PTR _yields$223156[esp+136], eax
+	mov	DWORD PTR _yields$223633[esp+136], eax
 	mov	eax, DWORD PTR [esi+832]
 	mov	edx, DWORD PTR [eax+edx]
 	add	edx, ecx
-	mov	DWORD PTR _yields$223156[esp+ebx+116], edx
+	mov	DWORD PTR _yields$223633[esp+ebx+116], edx
 
 ; 1954 : 						m_ppaaiSpecialistYieldChange[iSpecialistLoop] = yields;
 
-	mov	ecx, DWORD PTR _yields$223156[esp+116]
-	mov	edx, DWORD PTR _yields$223156[esp+120]
+	mov	ecx, DWORD PTR _yields$223633[esp+116]
+	mov	edx, DWORD PTR _yields$223633[esp+120]
 	mov	DWORD PTR [eax+edi], ecx
-	mov	ecx, DWORD PTR _yields$223156[esp+124]
+	mov	ecx, DWORD PTR _yields$223633[esp+124]
 	mov	DWORD PTR [eax+edi+4], edx
-	mov	edx, DWORD PTR _yields$223156[esp+128]
+	mov	edx, DWORD PTR _yields$223633[esp+128]
 	mov	DWORD PTR [eax+edi+8], ecx
-	mov	ecx, DWORD PTR _yields$223156[esp+132]
+	mov	ecx, DWORD PTR _yields$223633[esp+132]
 	mov	DWORD PTR [eax+edi+12], edx
-	mov	edx, DWORD PTR _yields$223156[esp+136]
+	mov	edx, DWORD PTR _yields$223633[esp+136]
 	mov	DWORD PTR [eax+edi+16], ecx
 	mov	DWORD PTR [eax+edi+20], edx
 $LN23@InitPlayer:
-	inc	DWORD PTR _iSpecialistLoop$223147[esp+116]
+	inc	DWORD PTR _iSpecialistLoop$223624[esp+116]
 	add	DWORD PTR tv4199[esp+116], 24		; 00000018H
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	add	edi, 24					; 00000018H
 	call	?getNumSpecialistInfos@CvGlobals@@QAEHXZ ; CvGlobals::getNumSpecialistInfos
-	cmp	DWORD PTR _iSpecialistLoop$223147[esp+116], eax
+	cmp	DWORD PTR _iSpecialistLoop$223624[esp+116], eax
 	jl	$LL726@InitPlayer
 $LN35@InitPlayer:
 
@@ -39142,7 +39142,7 @@ $LN9@InitPlayer:
 ; 2009 : 			traitUnit.m_iFreeUnit = (UnitTypes)trait->GetFreeUnitClassType();
 
 	mov	eax, DWORD PTR [ebp+428]
-	mov	DWORD PTR _traitUnit$223177[esp+116], eax
+	mov	DWORD PTR _traitUnit$223654[esp+116], eax
 
 ; 2010 : #endif
 ; 2011 : 			if(traitUnit.m_iFreeUnit != NO_UNITCLASS)
@@ -39169,7 +39169,7 @@ $LN668@InitPlayer:
 	lea	eax, DWORD PTR [ecx+eax*8]
 	test	eax, eax
 	je	SHORT $LN671@InitPlayer
-	mov	edx, DWORD PTR _traitUnit$223177[esp+116]
+	mov	edx, DWORD PTR _traitUnit$223654[esp+116]
 	mov	DWORD PTR [eax], edx
 	mov	DWORD PTR [eax+4], ebx
 $LN671@InitPlayer:
@@ -39271,10 +39271,10 @@ $LN60@InitPlayer:
 ; 1718 : #else
 ; 1719 : 	for(int iI = 0; iI < GC.getNumTraitInfos(); iI++)
 
-	mov	edi, DWORD PTR _iI$223092[esp+116]
+	mov	edi, DWORD PTR _iI$223569[esp+116]
 	inc	edi
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	mov	DWORD PTR _iI$223092[esp+116], edi
+	mov	DWORD PTR _iI$223569[esp+116], edi
 	call	?getNumTraitInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumTraitInfos
 	cmp	edi, eax
 	jl	$LL723@InitPlayer
@@ -39336,10 +39336,10 @@ PUBLIC	?resize@?$vector@_NV?$allocator@_N@std@@@std@@QAEXI_N@Z ; std::vector<boo
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\vector
 ;	COMDAT ?resize@?$vector@_NV?$allocator@_N@std@@@std@@QAEXI_N@Z
 _TEXT	SEGMENT
-$T258243 = -16						; size = 8
-$T258241 = -16						; size = 8
-__Tmp$258464 = -8					; size = 8
-$T258247 = -8						; size = 8
+$T258720 = -16						; size = 8
+$T258718 = -16						; size = 8
+__Tmp$258941 = -8					; size = 8
+$T258724 = -8						; size = 8
 __Newsize$ = 8						; size = 4
 __Val$ = 12						; size = 1
 ?resize@?$vector@_NV?$allocator@_N@std@@@std@@QAEXI_N@Z PROC ; std::vector<bool,std::allocator<bool> >::resize, COMDAT
@@ -39363,17 +39363,17 @@ __Val$ = 12						; size = 1
 ; 2041 : 			_Insert_n(end(), _Newsize - size(), _Val);
 
 	mov	eax, DWORD PTR [edi+8]
-	mov	DWORD PTR $T258241[esp+28], eax
-	mov	DWORD PTR $T258241[esp+32], 0
+	mov	DWORD PTR $T258718[esp+28], eax
+	mov	DWORD PTR $T258718[esp+32], 0
 	test	esi, esi
 	jbe	SHORT $LN25@resize@5
 	push	esi
-	lea	ecx, DWORD PTR $T258241[esp+32]
+	lea	ecx, DWORD PTR $T258718[esp+32]
 	call	??Y?$_Vb_const_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@@@std@@QAEAAV01@H@Z ; std::_Vb_const_iterator<unsigned int,int,std::vector<bool,std::allocator<bool> > >::operator+=
 $LN25@resize@5:
 	mov	ecx, DWORD PTR __Val$[esp+24]
-	mov	edx, DWORD PTR $T258241[esp+32]
-	mov	eax, DWORD PTR $T258241[esp+28]
+	mov	edx, DWORD PTR $T258718[esp+32]
+	mov	eax, DWORD PTR $T258718[esp+28]
 	push	ecx
 	sub	ebx, esi
 	push	ebx
@@ -39399,29 +39399,29 @@ $LN68@resize@5:
 ; 2043 : 			erase(begin() + _Newsize, end());
 
 	mov	ebp, DWORD PTR [edi+8]
-	mov	DWORD PTR $T258243[esp+32], ebp
-	mov	DWORD PTR $T258243[esp+36], 0
+	mov	DWORD PTR $T258720[esp+32], ebp
+	mov	DWORD PTR $T258720[esp+36], 0
 	test	esi, esi
 	jbe	SHORT $LN48@resize@5
 	push	esi
-	lea	ecx, DWORD PTR $T258243[esp+36]
+	lea	ecx, DWORD PTR $T258720[esp+36]
 	call	??Y?$_Vb_const_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@@@std@@QAEAAV01@H@Z ; std::_Vb_const_iterator<unsigned int,int,std::vector<bool,std::allocator<bool> > >::operator+=
 $LN48@resize@5:
 	xor	eax, eax
 	push	ebx
-	lea	ecx, DWORD PTR __Tmp$258464[esp+36]
-	mov	DWORD PTR __Tmp$258464[esp+36], ebp
-	mov	DWORD PTR __Tmp$258464[esp+40], eax
+	lea	ecx, DWORD PTR __Tmp$258941[esp+36]
+	mov	DWORD PTR __Tmp$258941[esp+36], ebp
+	mov	DWORD PTR __Tmp$258941[esp+40], eax
 	call	??Y?$_Vb_const_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@@@std@@QAEAAV01@H@Z ; std::_Vb_const_iterator<unsigned int,int,std::vector<bool,std::allocator<bool> > >::operator+=
-	mov	ecx, DWORD PTR $T258243[esp+36]
-	mov	edx, DWORD PTR $T258243[esp+32]
-	mov	eax, DWORD PTR __Tmp$258464[esp+36]
+	mov	ecx, DWORD PTR $T258720[esp+36]
+	mov	edx, DWORD PTR $T258720[esp+32]
+	mov	eax, DWORD PTR __Tmp$258941[esp+36]
 	push	ecx
-	mov	ecx, DWORD PTR __Tmp$258464[esp+36]
+	mov	ecx, DWORD PTR __Tmp$258941[esp+36]
 	push	edx
 	push	eax
 	push	ecx
-	lea	edx, DWORD PTR $T258247[esp+48]
+	lea	edx, DWORD PTR $T258724[esp+48]
 	push	edx
 	mov	ecx, edi
 	call	?erase@?$vector@_NV?$allocator@_N@std@@@std@@QAE?AV?$_Vb_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@@@2@V?$_Vb_const_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@@@2@0@Z ; std::vector<bool,std::allocator<bool> >::erase
@@ -39477,7 +39477,7 @@ PUBLIC	?insert@?$vector@_NV?$allocator@_N@std@@@std@@QAE?AV?$_Vb_iterator@IHV?$v
 ;	COMDAT ?insert@?$vector@_NV?$allocator@_N@std@@@std@@QAE?AV?$_Vb_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@@@2@V?$_Vb_const_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@@@2@_N@Z
 _TEXT	SEGMENT
 ___$ReturnUdt$ = 8					; size = 4
-__Tmp$258583 = 12					; size = 8
+__Tmp$259060 = 12					; size = 8
 __Where$ = 12						; size = 8
 __Val$ = 20						; size = 1
 ?insert@?$vector@_NV?$allocator@_N@std@@@std@@QAE?AV?$_Vb_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@@@2@V?$_Vb_const_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@@@2@_N@Z PROC ; std::vector<bool,std::allocator<bool> >::insert, COMDAT
@@ -39510,13 +39510,13 @@ __Val$ = 20						; size = 1
 	mov	edi, DWORD PTR [edi+8]
 	xor	eax, eax
 	push	esi
-	lea	ecx, DWORD PTR __Tmp$258583[esp+8]
-	mov	DWORD PTR __Tmp$258583[esp+8], edi
-	mov	DWORD PTR __Tmp$258583[esp+12], eax
+	lea	ecx, DWORD PTR __Tmp$259060[esp+8]
+	mov	DWORD PTR __Tmp$259060[esp+8], edi
+	mov	DWORD PTR __Tmp$259060[esp+12], eax
 	call	??Y?$_Vb_const_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@@@std@@QAEAAV01@H@Z ; std::_Vb_const_iterator<unsigned int,int,std::vector<bool,std::allocator<bool> > >::operator+=
 	mov	eax, DWORD PTR ___$ReturnUdt$[esp+4]
-	mov	ecx, DWORD PTR __Tmp$258583[esp+4]
-	mov	edx, DWORD PTR __Tmp$258583[esp+8]
+	mov	ecx, DWORD PTR __Tmp$259060[esp+4]
+	mov	edx, DWORD PTR __Tmp$259060[esp+8]
 	pop	edi
 	mov	DWORD PTR [eax], ecx
 	mov	DWORD PTR [eax+4], edx
@@ -39550,36 +39550,36 @@ tv4130 = -60						; size = 4
 tv3978 = -56						; size = 4
 tv3942 = -56						; size = 4
 tv3906 = -56						; size = 4
-__Result$261104 = -56					; size = 4
-_temp$223253 = -56					; size = 8
-$T262262 = -48						; size = 1
-__Cat$262265 = -48					; size = 1
-$T259499 = -48						; size = 1
-__Cat$259503 = -48					; size = 1
-$T259501 = -48						; size = 1
+__Result$261575 = -56					; size = 4
+_temp$223730 = -56					; size = 8
+$T262706 = -48						; size = 1
+__Cat$262710 = -48					; size = 1
+$T259983 = -48						; size = 1
+__Cat$259987 = -48					; size = 1
+$T259985 = -48						; size = 1
 tv3183 = -48						; size = 4
 tv3047 = -48						; size = 4
-$T259304 = -48						; size = 1
-__Cat$259309 = -48					; size = 1
-$T259306 = -48						; size = 1
-$T259116 = -48						; size = 1
-__Cat$259120 = -48					; size = 1
-$T259118 = -48						; size = 1
-$T261987 = -48						; size = 4
-$T261974 = -48						; size = 4
-$T261614 = -48						; size = 4
-__Result$261307 = -48					; size = 4
-$T261605 = -48						; size = 4
-$T260668 = -48						; size = 8
-$T260302 = -48						; size = 8
-$T260068 = -48						; size = 4
-$T260055 = -48						; size = 4
+$T259788 = -48						; size = 1
+__Cat$259793 = -48					; size = 1
+$T259790 = -48						; size = 1
+$T259592 = -48						; size = 1
+__Cat$259597 = -48					; size = 1
+$T259594 = -48						; size = 1
+$T262460 = -48						; size = 4
+$T262451 = -48						; size = 4
+$T262092 = -48						; size = 4
+__Result$261790 = -48					; size = 4
+$T262082 = -48						; size = 4
+$T261160 = -48						; size = 8
+$T260779 = -48						; size = 8
+$T260541 = -48						; size = 4
+$T260532 = -48						; size = 4
 tv243 = -48						; size = 4
-$T258655 = -48						; size = 4
-$T259520 = -40						; size = 24
-$T259325 = -40						; size = 24
-$T259130 = -40						; size = 24
-$T258590 = -40						; size = 20
+$T259131 = -48						; size = 4
+$T259997 = -40						; size = 24
+$T259802 = -40						; size = 24
+$T259607 = -40						; size = 24
+$T259067 = -40						; size = 20
 __$EHRec$ = -12						; size = 12
 ?Reset@CvPlayerTraits@@QAEXXZ PROC			; CvPlayerTraits::Reset, COMDAT
 ; _this$ = ecx
@@ -39612,28 +39612,28 @@ __$EHRec$ = -12						; size = 12
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getNumTraitInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumTraitInfos
 	mov	edi, eax
-	lea	eax, DWORD PTR $T258655[esp+80]
+	lea	eax, DWORD PTR $T259131[esp+80]
 	lea	ecx, DWORD PTR [edi+31]
 	shr	ecx, 5
 	push	eax
 	xor	ebx, ebx
 	push	ecx
-	lea	ecx, DWORD PTR $T258590[esp+92]
-	mov	DWORD PTR $T258590[esp+88], ebx
-	mov	DWORD PTR $T258655[esp+88], ebx
+	lea	ecx, DWORD PTR $T259067[esp+92]
+	mov	DWORD PTR $T259067[esp+88], ebx
+	mov	DWORD PTR $T259131[esp+88], ebx
 	call	?_Construct_n@?$vector@IV?$allocator@I@std@@@std@@QAEXIABI@Z ; std::vector<unsigned int,std::allocator<unsigned int> >::_Construct_n
 	push	edi
-	lea	ecx, DWORD PTR $T258590[esp+84]
+	lea	ecx, DWORD PTR $T259067[esp+84]
 	mov	DWORD PTR __$EHRec$[esp+92], ebx
 	call	?_Trim@?$vector@_NV?$allocator@_N@std@@@std@@IAEXI@Z ; std::vector<bool,std::allocator<bool> >::_Trim
-	mov	edx, DWORD PTR $T258590[esp+80]
-	lea	eax, DWORD PTR $T258590[esp+84]
+	mov	edx, DWORD PTR $T259067[esp+80]
+	lea	eax, DWORD PTR $T259067[esp+84]
 	push	eax
 	lea	ecx, DWORD PTR [esi+12]
 	mov	DWORD PTR __$EHRec$[esp+92], 1
 	mov	DWORD PTR [esi+8], edx
 	call	??4?$vector@IV?$allocator@I@std@@@std@@QAEAAV01@ABV01@@Z ; std::vector<unsigned int,std::allocator<unsigned int> >::operator=
-	mov	eax, DWORD PTR $T258590[esp+88]
+	mov	eax, DWORD PTR $T259067[esp+88]
 	or	edi, -1
 	mov	DWORD PTR __$EHRec$[esp+88], edi
 	cmp	eax, ebx
@@ -40049,12 +40049,12 @@ $LN87@Reset:
 	lea	edi, DWORD PTR [esi+812]
 	cmp	ecx, eax
 	je	SHORT $LN131@Reset
-	mov	BYTE PTR $T259116[esp+80], bl
-	mov	edx, DWORD PTR $T259116[esp+80]
+	mov	BYTE PTR $T259592[esp+80], bl
+	mov	edx, DWORD PTR $T259592[esp+80]
 	push	edx
-	mov	edx, DWORD PTR __Cat$259120[esp+84]
+	mov	edx, DWORD PTR __Cat$259597[esp+84]
 	push	edx
-	mov	edx, DWORD PTR $T259118[esp+88]
+	mov	edx, DWORD PTR $T259594[esp+88]
 	push	edx
 	push	ecx
 	push	eax
@@ -40068,19 +40068,19 @@ $LN131@Reset:
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getNumImprovementInfos@CvGlobals@@QAEHXZ ; CvGlobals::getNumImprovementInfos
-	mov	edx, DWORD PTR $T259130[esp+80]
+	mov	edx, DWORD PTR $T259607[esp+80]
 	sub	esp, 24					; 00000018H
 	mov	ecx, esp
 	mov	DWORD PTR [ecx], edx
-	mov	edx, DWORD PTR $T259130[esp+108]
+	mov	edx, DWORD PTR $T259607[esp+108]
 	mov	DWORD PTR [ecx+4], edx
-	mov	edx, DWORD PTR $T259130[esp+112]
+	mov	edx, DWORD PTR $T259607[esp+112]
 	mov	DWORD PTR [ecx+8], edx
-	mov	edx, DWORD PTR $T259130[esp+116]
+	mov	edx, DWORD PTR $T259607[esp+116]
 	mov	DWORD PTR [ecx+12], edx
-	mov	edx, DWORD PTR $T259130[esp+120]
+	mov	edx, DWORD PTR $T259607[esp+120]
 	mov	DWORD PTR [ecx+16], edx
-	mov	edx, DWORD PTR $T259130[esp+124]
+	mov	edx, DWORD PTR $T259607[esp+124]
 	mov	DWORD PTR [ecx+20], edx
 	push	eax
 	mov	ecx, edi
@@ -40093,12 +40093,12 @@ $LN131@Reset:
 	lea	edi, DWORD PTR [esi+828]
 	cmp	ecx, eax
 	je	SHORT $LN172@Reset
-	mov	BYTE PTR $T259304[esp+80], bl
-	mov	edx, DWORD PTR $T259304[esp+80]
+	mov	BYTE PTR $T259788[esp+80], bl
+	mov	edx, DWORD PTR $T259788[esp+80]
 	push	edx
-	mov	edx, DWORD PTR __Cat$259309[esp+84]
+	mov	edx, DWORD PTR __Cat$259793[esp+84]
 	push	edx
-	mov	edx, DWORD PTR $T259306[esp+88]
+	mov	edx, DWORD PTR $T259790[esp+88]
 	push	edx
 	push	ecx
 	push	eax
@@ -40115,19 +40115,19 @@ $LN172@Reset:
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getNumSpecialistInfos@CvGlobals@@QAEHXZ ; CvGlobals::getNumSpecialistInfos
-	mov	edx, DWORD PTR $T259325[esp+80]
+	mov	edx, DWORD PTR $T259802[esp+80]
 	sub	esp, 24					; 00000018H
 	mov	ecx, esp
 	mov	DWORD PTR [ecx], edx
-	mov	edx, DWORD PTR $T259325[esp+108]
+	mov	edx, DWORD PTR $T259802[esp+108]
 	mov	DWORD PTR [ecx+4], edx
-	mov	edx, DWORD PTR $T259325[esp+112]
+	mov	edx, DWORD PTR $T259802[esp+112]
 	mov	DWORD PTR [ecx+8], edx
-	mov	edx, DWORD PTR $T259325[esp+116]
+	mov	edx, DWORD PTR $T259802[esp+116]
 	mov	DWORD PTR [ecx+12], edx
-	mov	edx, DWORD PTR $T259325[esp+120]
+	mov	edx, DWORD PTR $T259802[esp+120]
 	mov	DWORD PTR [ecx+16], edx
-	mov	edx, DWORD PTR $T259325[esp+124]
+	mov	edx, DWORD PTR $T259802[esp+124]
 	mov	DWORD PTR [ecx+20], edx
 	push	eax
 	mov	ecx, edi
@@ -40144,12 +40144,12 @@ $LN172@Reset:
 	lea	edi, DWORD PTR [esi+844]
 	cmp	ecx, eax
 	je	SHORT $LN213@Reset
-	mov	BYTE PTR $T259499[esp+80], bl
-	mov	edx, DWORD PTR $T259499[esp+80]
+	mov	BYTE PTR $T259983[esp+80], bl
+	mov	edx, DWORD PTR $T259983[esp+80]
 	push	edx
-	mov	edx, DWORD PTR __Cat$259503[esp+84]
+	mov	edx, DWORD PTR __Cat$259987[esp+84]
 	push	edx
-	mov	edx, DWORD PTR $T259501[esp+88]
+	mov	edx, DWORD PTR $T259985[esp+88]
 	push	edx
 	push	ecx
 	push	eax
@@ -40163,19 +40163,19 @@ $LN213@Reset:
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getNumFeatureInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumFeatureInfos
-	mov	edx, DWORD PTR $T259520[esp+80]
+	mov	edx, DWORD PTR $T259997[esp+80]
 	sub	esp, 24					; 00000018H
 	mov	ecx, esp
 	mov	DWORD PTR [ecx], edx
-	mov	edx, DWORD PTR $T259520[esp+108]
+	mov	edx, DWORD PTR $T259997[esp+108]
 	mov	DWORD PTR [ecx+4], edx
-	mov	edx, DWORD PTR $T259520[esp+112]
+	mov	edx, DWORD PTR $T259997[esp+112]
 	mov	DWORD PTR [ecx+8], edx
-	mov	edx, DWORD PTR $T259520[esp+116]
+	mov	edx, DWORD PTR $T259997[esp+116]
 	mov	DWORD PTR [ecx+12], edx
-	mov	edx, DWORD PTR $T259520[esp+120]
+	mov	edx, DWORD PTR $T259997[esp+120]
 	mov	DWORD PTR [ecx+16], edx
-	mov	edx, DWORD PTR $T259520[esp+124]
+	mov	edx, DWORD PTR $T259997[esp+124]
 	mov	DWORD PTR [ecx+20], edx
 	push	eax
 	mov	ecx, edi
@@ -40419,10 +40419,10 @@ $LN277@Reset:
 	mov	ecx, edx
 	sub	ecx, ebp
 	sar	ecx, 2
-	mov	DWORD PTR $T260055[esp+80], ebx
+	mov	DWORD PTR $T260532[esp+80], ebx
 	cmp	eax, ecx
 	jbe	SHORT $LN860@Reset
-	lea	ebp, DWORD PTR $T260055[esp+80]
+	lea	ebp, DWORD PTR $T260532[esp+80]
 	push	ebp
 	sub	eax, ecx
 	push	eax
@@ -40433,7 +40433,7 @@ $LN277@Reset:
 $LN860@Reset:
 	jae	SHORT $LN342@Reset
 	lea	ebp, DWORD PTR [ebp+eax*4]
-	mov	DWORD PTR $T260068[esp+80], ebp
+	mov	DWORD PTR $T260541[esp+80], ebp
 	cmp	ebp, edx
 	je	SHORT $LN342@Reset
 	mov	eax, edx
@@ -40446,7 +40446,7 @@ $LN860@Reset:
 	push	ecx
 	push	edx
 	push	ecx
-	mov	ecx, DWORD PTR $T260068[esp+92]
+	mov	ecx, DWORD PTR $T260541[esp+92]
 	push	ecx
 	call	DWORD PTR __imp__memmove_s
 	add	esp, 16					; 00000010H
@@ -40517,7 +40517,7 @@ $LN393@Reset:
 	push	ecx
 	push	ebx
 	push	eax
-	lea	eax, DWORD PTR $T260302[esp+96]
+	lea	eax, DWORD PTR $T260779[esp+96]
 	push	eax
 	mov	ecx, edi
 	call	?erase@?$vector@_NV?$allocator@_N@std@@@std@@QAE?AV?$_Vb_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@@@2@V?$_Vb_const_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@@@2@0@Z ; std::vector<bool,std::allocator<bool> >::erase
@@ -40620,7 +40620,7 @@ $LN480@Reset:
 	push	ecx
 	push	ebx
 	push	eax
-	lea	eax, DWORD PTR $T260668[esp+96]
+	lea	eax, DWORD PTR $T261160[esp+96]
 	push	eax
 	mov	ecx, edi
 	call	?erase@?$vector@_NV?$allocator@_N@std@@@std@@QAE?AV?$_Vb_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@@@2@V?$_Vb_const_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@@@2@0@Z ; std::vector<bool,std::allocator<bool> >::erase
@@ -40717,7 +40717,7 @@ $LN7@Reset:
 	mov	DWORD PTR tv3183[esp+80], ebp
 	add	ebp, edx
 	cmp	eax, ebx
-	mov	DWORD PTR __Result$261104[esp+80], ebp
+	mov	DWORD PTR __Result$261575[esp+80], ebp
 	jle	SHORT $LN593@Reset
 	mov	eax, DWORD PTR tv3183[esp+80]
 	push	eax
@@ -40727,7 +40727,7 @@ $LN7@Reset:
 	call	DWORD PTR __imp__memmove_s
 	add	esp, 16					; 00000010H
 $LN593@Reset:
-	mov	eax, DWORD PTR __Result$261104[esp+80]
+	mov	eax, DWORD PTR __Result$261575[esp+80]
 	lea	ebp, DWORD PTR [esi+780]
 	mov	DWORD PTR [ebp+8], eax
 $LN568@Reset:
@@ -40743,7 +40743,7 @@ $LN568@Reset:
 	lea	ecx, DWORD PTR [eax*4]
 	add	edx, ecx
 	cmp	eax, ebx
-	mov	DWORD PTR __Result$261307[esp+80], edx
+	mov	DWORD PTR __Result$261790[esp+80], edx
 	jle	SHORT $LN635@Reset
 	mov	eax, DWORD PTR [esi+804]
 	push	ecx
@@ -40754,7 +40754,7 @@ $LN568@Reset:
 	call	DWORD PTR __imp__memmove_s
 	add	esp, 16					; 00000010H
 $LN635@Reset:
-	mov	ecx, DWORD PTR __Result$261307[esp+80]
+	mov	ecx, DWORD PTR __Result$261790[esp+80]
 	mov	DWORD PTR [esi+804], ecx
 $LN610@Reset:
 
@@ -40765,10 +40765,10 @@ $LN610@Reset:
 	mov	eax, ecx
 	sub	eax, edx
 	sar	eax, 2
-	mov	DWORD PTR $T261605[esp+80], ebx
+	mov	DWORD PTR $T262082[esp+80], ebx
 	cmp	edi, eax
 	jbe	SHORT $LN865@Reset
-	lea	edx, DWORD PTR $T261605[esp+80]
+	lea	edx, DWORD PTR $T262082[esp+80]
 	push	edx
 	mov	edx, edi
 	sub	edx, eax
@@ -40780,7 +40780,7 @@ $LN610@Reset:
 $LN865@Reset:
 	jae	SHORT $LN675@Reset
 	lea	ebp, DWORD PTR [edx+edi*4]
-	mov	DWORD PTR $T261614[esp+80], ebp
+	mov	DWORD PTR $T262092[esp+80], ebp
 	cmp	ebp, ecx
 	je	SHORT $LN675@Reset
 	mov	eax, ecx
@@ -40790,7 +40790,7 @@ $LN865@Reset:
 	add	ebp, edx
 	cmp	eax, ebx
 	jle	SHORT $LN700@Reset
-	mov	eax, DWORD PTR $T261614[esp+80]
+	mov	eax, DWORD PTR $T262092[esp+80]
 	push	edx
 	push	ecx
 	push	edx
@@ -40809,10 +40809,10 @@ $LN675@Reset:
 	mov	eax, ecx
 	sub	eax, ebp
 	sar	eax, 2
-	mov	DWORD PTR $T261974[esp+80], ebx
+	mov	DWORD PTR $T262451[esp+80], ebx
 	cmp	edi, eax
 	jbe	SHORT $LN866@Reset
-	lea	ebp, DWORD PTR $T261974[esp+80]
+	lea	ebp, DWORD PTR $T262451[esp+80]
 	push	ebp
 	mov	ebp, edi
 	sub	ebp, eax
@@ -40824,7 +40824,7 @@ $LN675@Reset:
 $LN866@Reset:
 	jae	SHORT $LN740@Reset
 	lea	ebp, DWORD PTR [ebp+edi*4]
-	mov	DWORD PTR $T261987[esp+80], ebp
+	mov	DWORD PTR $T262460[esp+80], ebp
 	cmp	ebp, ecx
 	je	SHORT $LN740@Reset
 	mov	eax, ecx
@@ -40836,7 +40836,7 @@ $LN866@Reset:
 	jle	SHORT $LN765@Reset
 	push	edx
 	push	ecx
-	mov	ecx, DWORD PTR $T261987[esp+88]
+	mov	ecx, DWORD PTR $T262460[esp+88]
 	push	edx
 	push	ecx
 	call	DWORD PTR __imp__memmove_s
@@ -40886,8 +40886,8 @@ $LN4@Reset:
 ; 2324 : 	{
 ; 2325 : 		FreeResourceXCities temp;
 
-	mov	DWORD PTR _temp$223253[esp+80], ebx
-	mov	DWORD PTR _temp$223253[esp+84], ebx
+	mov	DWORD PTR _temp$223730[esp+80], ebx
+	mov	DWORD PTR _temp$223730[esp+84], ebx
 	add	esi, 860				; 0000035cH
 $LL3@Reset:
 
@@ -40909,13 +40909,13 @@ $LN783@Reset:
 	sar	edx, 3
 	cmp	edx, eax
 	jae	SHORT $LN775@Reset
-	mov	BYTE PTR $T262262[esp+80], bl
-	mov	eax, DWORD PTR $T262262[esp+80]
-	mov	ecx, DWORD PTR __Cat$262265[esp+80]
+	mov	BYTE PTR $T262706[esp+80], bl
+	mov	eax, DWORD PTR $T262706[esp+80]
+	mov	ecx, DWORD PTR __Cat$262710[esp+80]
 	push	eax
 	push	ecx
 	push	esi
-	lea	edx, DWORD PTR _temp$223253[esp+92]
+	lea	edx, DWORD PTR _temp$223730[esp+92]
 	push	edx
 	push	1
 	push	edi
@@ -40925,7 +40925,7 @@ $LN783@Reset:
 	mov	DWORD PTR [esi+8], edi
 	jmp	SHORT $LN2@Reset
 $LN775@Reset:
-	lea	eax, DWORD PTR _temp$223253[esp+80]
+	lea	eax, DWORD PTR _temp$223730[esp+80]
 	push	eax
 	push	1
 	push	edi
@@ -40955,10 +40955,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?Reset@CvPlayerTraits@@QAEXXZ$1:
-	lea	ecx, DWORD PTR $T258590[ebp+4]
+	lea	ecx, DWORD PTR $T259067[ebp+4]
 	jmp	??1?$vector@IV?$allocator@I@std@@@std@@QAE@XZ ; std::vector<unsigned int,std::allocator<unsigned int> >::~vector<unsigned int,std::allocator<unsigned int> >
 __unwindfunclet$?Reset@CvPlayerTraits@@QAEXXZ$0:
-	lea	ecx, DWORD PTR $T258590[ebp]
+	lea	ecx, DWORD PTR $T259067[ebp]
 	jmp	??1?$vector@_NV?$allocator@_N@std@@@std@@QAE@XZ ; std::vector<bool,std::allocator<bool> >::~vector<bool,std::allocator<bool> >
 __ehhandler$?Reset@CvPlayerTraits@@QAEXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?Reset@CvPlayerTraits@@QAEXXZ
@@ -40983,7 +40983,7 @@ EXTRN	?GetGameReligions@CvGame@@QAEPAVCvGameReligions@@XZ:PROC ; CvGame::GetGame
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?ChooseMayaBoost@CvPlayerTraits@@QAEXXZ
 _TEXT	SEGMENT
-_choice$263033 = -8					; size = 8
+_choice$263509 = -8					; size = 8
 _ePossibleGreatPerson$ = -8				; size = 4
 ?ChooseMayaBoost@CvPlayerTraits@@QAEXXZ PROC		; CvPlayerTraits::ChooseMayaBoost, COMDAT
 ; _this$ = ecx
@@ -41004,7 +41004,7 @@ _ePossibleGreatPerson$ = -8				; size = 4
 
 	push	1
 	mov	esi, ecx
-	push	OFFSET $SG223555
+	push	OFFSET $SG224032
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	or	edi, -1
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
@@ -41112,7 +41112,7 @@ $LN320@ChooseMaya:
 ; 2934 : 		ePossibleGreatPerson = (UnitTypes)GC.getInfoTypeForString("UNIT_ENGINEER");
 
 	push	0
-	push	OFFSET $SG223566
+	push	OFFSET $SG224043
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	ecx, DWORD PTR [esi+772]
@@ -41191,7 +41191,7 @@ $LN321@ChooseMaya:
 ; 2948 : 		ePossibleGreatPerson = (UnitTypes)GC.getInfoTypeForString("UNIT_SCIENTIST");
 
 	push	0
-	push	OFFSET $SG223572
+	push	OFFSET $SG224049
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	ecx, DWORD PTR [esi+772]
@@ -41225,7 +41225,7 @@ $LN326@ChooseMaya:
 ; 2951 : 			if(eVictoryStrategy == (AIGrandStrategyTypes) GC.getInfoTypeForString("AIGRANDSTRATEGY_SPACESHIP"))
 
 	push	0
-	push	OFFSET $SG223576
+	push	OFFSET $SG224053
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	cmp	ebx, eax
@@ -41246,7 +41246,7 @@ $LN311@ChooseMaya:
 ; 2959 : 		ePossibleGreatPerson = (UnitTypes)GC.getInfoTypeForString("UNIT_ARTIST");
 
 	push	0
-	push	OFFSET $SG223579
+	push	OFFSET $SG224056
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	ecx, DWORD PTR [esi+772]
@@ -41279,7 +41279,7 @@ $LN327@ChooseMaya:
 ; 2962 : 			if(eVictoryStrategy == (AIGrandStrategyTypes) GC.getInfoTypeForString("AIGRANDSTRATEGY_CULTURE"))
 
 	push	0
-	push	OFFSET $SG223583
+	push	OFFSET $SG224060
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	cmp	ebx, eax
@@ -41300,7 +41300,7 @@ $LN313@ChooseMaya:
 ; 2970 : 		ePossibleGreatPerson = (UnitTypes)GC.getInfoTypeForString("UNIT_MERCHANT");
 
 	push	0
-	push	OFFSET $SG223586
+	push	OFFSET $SG224063
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	ecx, DWORD PTR [esi+772]
@@ -41333,7 +41333,7 @@ $LN328@ChooseMaya:
 ; 2973 : 			if(eVictoryStrategy == (AIGrandStrategyTypes) GC.getInfoTypeForString("AIGRANDSTRATEGY_UNITED_NATIONS"))
 
 	push	0
-	push	OFFSET $SG223590
+	push	OFFSET $SG224067
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	cmp	ebx, eax
@@ -41354,7 +41354,7 @@ $LN315@ChooseMaya:
 ; 2981 : 		ePossibleGreatPerson = (UnitTypes)GC.getInfoTypeForString("UNIT_GREAT_GENERAL");
 
 	push	0
-	push	OFFSET $SG223593
+	push	OFFSET $SG224070
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	ecx, DWORD PTR [esi+772]
@@ -41388,7 +41388,7 @@ $LN329@ChooseMaya:
 ; 2984 : 			if(eVictoryStrategy == (AIGrandStrategyTypes) GC.getInfoTypeForString("AIGRANDSTRATEGY_CONQUEST"))
 
 	push	0
-	push	OFFSET $SG223597
+	push	OFFSET $SG224074
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	cmp	ebx, eax
@@ -41411,7 +41411,7 @@ $LN317@ChooseMaya:
 ; 2994 : 		ePossibleGreatPerson = (UnitTypes)GC.getInfoTypeForString("UNIT_PROPHET", true);
 
 	push	1
-	push	OFFSET $SG223600
+	push	OFFSET $SG224077
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	ecx, DWORD PTR [esi+772]
@@ -41443,7 +41443,7 @@ $LN298@ChooseMaya:
 ; 3001 : 			ePossibleGreatPerson = (UnitTypes)GC.getInfoTypeForString("UNIT_ENGINEER");
 
 	push	0
-	push	OFFSET $SG223604
+	push	OFFSET $SG224081
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	edi, eax
@@ -41466,7 +41466,7 @@ $LN298@ChooseMaya:
 ; 3008 : 				ePossibleGreatPerson = (UnitTypes)GC.getInfoTypeForString("UNIT_WRITER");
 
 	push	0
-	push	OFFSET $SG223608
+	push	OFFSET $SG224085
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	edi, eax
@@ -41489,7 +41489,7 @@ $LN298@ChooseMaya:
 ; 3015 : 					ePossibleGreatPerson = (UnitTypes)GC.getInfoTypeForString("UNIT_MERCHANT");
 
 	push	0
-	push	OFFSET $SG223612
+	push	OFFSET $SG224089
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	edi, eax
@@ -41512,7 +41512,7 @@ $LN298@ChooseMaya:
 ; 3022 : 						ePossibleGreatPerson = (UnitTypes)GC.getInfoTypeForString("UNIT_SCIENTIST");
 
 	push	0
-	push	OFFSET $SG223616
+	push	OFFSET $SG224093
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	edi, eax
@@ -41535,7 +41535,7 @@ $LN298@ChooseMaya:
 ; 3029 : 							ePossibleGreatPerson = (UnitTypes)GC.getInfoTypeForString("UNIT_ARTIST");
 
 	push	0
-	push	OFFSET $SG223620
+	push	OFFSET $SG224097
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	edi, eax
@@ -41558,7 +41558,7 @@ $LN298@ChooseMaya:
 ; 3036 : 								ePossibleGreatPerson = (UnitTypes)GC.getInfoTypeForString("UNIT_MUSICIAN");
 
 	push	0
-	push	OFFSET $SG223624
+	push	OFFSET $SG224101
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	edi, eax
@@ -41581,7 +41581,7 @@ $LN298@ChooseMaya:
 ; 3043 : 									ePossibleGreatPerson = (UnitTypes)GC.getInfoTypeForString("UNIT_GREAT_GENERAL");
 
 	push	0
-	push	OFFSET $SG223628
+	push	OFFSET $SG224105
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	edi, eax
@@ -41604,7 +41604,7 @@ $LN298@ChooseMaya:
 ; 3050 : 										ePossibleGreatPerson = (UnitTypes)GC.getInfoTypeForString("UNIT_GREAT_ADMIRAL");
 
 	push	0
-	push	OFFSET $SG223632
+	push	OFFSET $SG224109
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	edi, eax
@@ -41664,11 +41664,11 @@ $LN324@ChooseMaya:
 ; 3072 : 			SetUnitBaktun(eDesiredGreatPerson);
 
 	mov	edx, DWORD PTR [esi+744]
-	lea	eax, DWORD PTR _choice$263033[esp+24]
+	lea	eax, DWORD PTR _choice$263509[esp+24]
 	push	eax
 	lea	ecx, DWORD PTR [esi+764]
-	mov	DWORD PTR _choice$263033[esp+28], edi
-	mov	DWORD PTR _choice$263033[esp+32], edx
+	mov	DWORD PTR _choice$263509[esp+28], edi
+	mov	DWORD PTR _choice$263509[esp+32], edx
 	call	?push_back@?$vector@UMayaBonusChoice@@V?$allocator@UMayaBonusChoice@@@std@@@std@@QAEXABUMayaBonusChoice@@@Z ; std::vector<MayaBonusChoice,std::allocator<MayaBonusChoice> >::push_back
 $LN281@ChooseMaya:
 
@@ -41696,8 +41696,8 @@ PUBLIC	?push_back@?$vector@_NV?$allocator@_N@std@@@std@@QAEX_N@Z ; std::vector<b
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\vector
 ;	COMDAT ?push_back@?$vector@_NV?$allocator@_N@std@@@std@@QAEX_N@Z
 _TEXT	SEGMENT
-$T263095 = -8						; size = 8
-$T263094 = -8						; size = 8
+$T263572 = -8						; size = 8
+$T263571 = -8						; size = 8
 __Val$ = 8						; size = 1
 ?push_back@?$vector@_NV?$allocator@_N@std@@@std@@QAEX_N@Z PROC ; std::vector<bool,std::allocator<bool> >::push_back, COMDAT
 ; _this$ = ecx
@@ -41711,22 +41711,22 @@ __Val$ = 8						; size = 1
 ; 2116 : 		insert(end(), _Val);
 
 	mov	eax, DWORD PTR [esi+8]
-	mov	DWORD PTR $T263094[esp+12], eax
+	mov	DWORD PTR $T263571[esp+12], eax
 	mov	eax, DWORD PTR [esi]
-	mov	DWORD PTR $T263094[esp+16], 0
+	mov	DWORD PTR $T263571[esp+16], 0
 	test	eax, eax
 	jbe	SHORT $LN20@push_back@7
 	push	eax
-	lea	ecx, DWORD PTR $T263094[esp+16]
+	lea	ecx, DWORD PTR $T263571[esp+16]
 	call	??Y?$_Vb_const_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@@@std@@QAEAAV01@H@Z ; std::_Vb_const_iterator<unsigned int,int,std::vector<bool,std::allocator<bool> > >::operator+=
 $LN20@push_back@7:
 	mov	ecx, DWORD PTR __Val$[esp+8]
-	mov	edx, DWORD PTR $T263094[esp+16]
-	mov	eax, DWORD PTR $T263094[esp+12]
+	mov	edx, DWORD PTR $T263571[esp+16]
+	mov	eax, DWORD PTR $T263571[esp+12]
 	push	ecx
 	push	edx
 	push	eax
-	lea	ecx, DWORD PTR $T263095[esp+24]
+	lea	ecx, DWORD PTR $T263572[esp+24]
 	push	ecx
 	mov	ecx, esi
 	call	?insert@?$vector@_NV?$allocator@_N@std@@@std@@QAE?AV?$_Vb_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@@@2@V?$_Vb_const_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@@@2@_N@Z ; std::vector<bool,std::allocator<bool> >::insert
@@ -41789,44 +41789,44 @@ xdata$x	ENDS
 ;	COMDAT ?CacheResults@CvTraitEntry@@UAE_NAAVResults@Database@@AAVCvDatabaseUtility@@@Z
 _TEXT	SEGMENT
 _szTraitType$ = -96					; size = 4
-_iResourceLoop$222855 = -92				; size = 4
-_iImprovementLoop$222841 = -92				; size = 4
-_YieldID$222824 = -92					; size = 4
-_YieldID$222811 = -92					; size = 4
-_YieldID$222798 = -92					; size = 4
-$T265015 = -88						; size = 1
-__Tmp$264600 = -88					; size = 8
-$T263230 = -88						; size = 8
-_temp$222868 = -80					; size = 8
-_temp$222859 = -80					; size = 8
-$T263177 = -80						; size = 12
-$T263174 = -80						; size = 8
-_strKey$222845 = -68					; size = 28
-_strKey$222830 = -68					; size = 28
-_strKey$222815 = -68					; size = 28
-_strKey$222802 = -68					; size = 28
-_strKey$222789 = -68					; size = 28
-_sqlKey$222776 = -68					; size = 28
-_sqlKey$222763 = -68					; size = 28
-_sqlKey$222671 = -68					; size = 28
-_sqlKey$222658 = -68					; size = 28
-_strKey$222860 = -40					; size = 28
+_iResourceLoop$223332 = -92				; size = 4
+_iImprovementLoop$223318 = -92				; size = 4
+_YieldID$223301 = -92					; size = 4
+_YieldID$223288 = -92					; size = 4
+_YieldID$223275 = -92					; size = 4
+$T265489 = -88						; size = 1
+__Tmp$265107 = -88					; size = 8
+$T263707 = -88						; size = 8
+_temp$223345 = -80					; size = 8
+_temp$223336 = -80					; size = 8
+$T263654 = -80						; size = 12
+$T263651 = -80						; size = 8
+_strKey$223322 = -68					; size = 28
+_strKey$223307 = -68					; size = 28
+_strKey$223292 = -68					; size = 28
+_strKey$223279 = -68					; size = 28
+_strKey$223266 = -68					; size = 28
+_sqlKey$223253 = -68					; size = 28
+_sqlKey$223240 = -68					; size = 28
+_sqlKey$223148 = -68					; size = 28
+_sqlKey$223135 = -68					; size = 28
+_strKey$223337 = -40					; size = 28
 __$EHRec$ = -12						; size = 12
 tv3254 = 8						; size = 4
-$T264348 = 8						; size = 1
-$T263375 = 8						; size = 4
-_pResults$222847 = 8					; size = 4
-_pResults$222832 = 8					; size = 4
-_iUnitClassLoop$222826 = 8				; size = 4
-_FeatureID$222823 = 8					; size = 4
-_SpecialistID$222810 = 8				; size = 4
-_ImprovementID$222797 = 8				; size = 4
-_iUnitCombatID$222785 = 8				; size = 4
-_iUnitCombatID$222772 = 8				; size = 4
-_unitPromotionID$222680 = 8				; size = 4
-_iTerrainID$222667 = 8					; size = 4
+$T264825 = 8						; size = 1
+$T263854 = 8						; size = 4
+_pResults$223324 = 8					; size = 4
+_pResults$223309 = 8					; size = 4
+_iUnitClassLoop$223303 = 8				; size = 4
+_FeatureID$223300 = 8					; size = 4
+_SpecialistID$223287 = 8				; size = 4
+_ImprovementID$223274 = 8				; size = 4
+_iUnitCombatID$223262 = 8				; size = 4
+_iUnitCombatID$223249 = 8				; size = 4
+_unitPromotionID$223157 = 8				; size = 4
+_iTerrainID$223144 = 8					; size = 4
 _kResults$ = 8						; size = 4
-__Cat$265018 = 12					; size = 1
+__Cat$265493 = 12					; size = 1
 _kUtility$ = 12						; size = 4
 ?CacheResults@CvTraitEntry@@UAE_NAAVResults@Database@@AAVCvDatabaseUtility@@@Z PROC ; CvTraitEntry::CacheResults, COMDAT
 ; _this$ = ecx
@@ -41873,7 +41873,7 @@ $LN50@CacheResul:
 
 	mov	ebx, DWORD PTR __imp_?GetText@Results@Database@@QAEPBDPBD@Z
 	push	ebp
-	push	OFFSET $SG222514
+	push	OFFSET $SG222991
 	mov	ecx, edi
 	call	ebx
 	lea	ecx, DWORD PTR [esi+608]
@@ -41890,139 +41890,139 @@ $LN66@CacheResul:
 ; 1101 : 	m_iLevelExperienceModifier				= kResults.GetInt("LevelExperienceModifier");
 
 	mov	ebp, DWORD PTR __imp_?GetInt@Results@Database@@QAEHPBD@Z
-	push	OFFSET $SG222515
+	push	OFFSET $SG222992
 	mov	ecx, edi
 	call	ebp
 
 ; 1102 : 	m_iGreatPeopleRateModifier				= kResults.GetInt("GreatPeopleRateModifier");
 
-	push	OFFSET $SG222516
+	push	OFFSET $SG222993
 	mov	ecx, edi
 	mov	DWORD PTR [esi+260], eax
 	call	ebp
 
 ; 1103 : 	m_iGreatScientistRateModifier			= kResults.GetInt("GreatScientistRateModifier");
 
-	push	OFFSET $SG222517
+	push	OFFSET $SG222994
 	mov	ecx, edi
 	mov	DWORD PTR [esi+264], eax
 	call	ebp
 
 ; 1104 : 	m_iGreatGeneralRateModifier				= kResults.GetInt("GreatGeneralRateModifier");
 
-	push	OFFSET $SG222518
+	push	OFFSET $SG222995
 	mov	ecx, edi
 	mov	DWORD PTR [esi+268], eax
 	call	ebp
 
 ; 1105 : 	m_iGreatGeneralExtraBonus				= kResults.GetInt("GreatGeneralExtraBonus");
 
-	push	OFFSET $SG222519
+	push	OFFSET $SG222996
 	mov	ecx, edi
 	mov	DWORD PTR [esi+272], eax
 	call	ebp
 
 ; 1106 : 	m_iGreatPersonGiftInfluence				= kResults.GetInt("GreatPersonGiftInfluence");
 
-	push	OFFSET $SG222520
+	push	OFFSET $SG222997
 	mov	ecx, edi
 	mov	DWORD PTR [esi+276], eax
 	call	ebp
 
 ; 1107 : 	m_iMaxGlobalBuildingProductionModifier	= kResults.GetInt("MaxGlobalBuildingProductionModifier");
 
-	push	OFFSET $SG222521
+	push	OFFSET $SG222998
 	mov	ecx, edi
 	mov	DWORD PTR [esi+280], eax
 	call	ebp
 
 ; 1108 : 	m_iMaxTeamBuildingProductionModifier	= kResults.GetInt("MaxTeamBuildingProductionModifier");
 
-	push	OFFSET $SG222522
+	push	OFFSET $SG222999
 	mov	ecx, edi
 	mov	DWORD PTR [esi+284], eax
 	call	ebp
 
 ; 1109 : 	m_iMaxPlayerBuildingProductionModifier	= kResults.GetInt("MaxPlayerBuildingProductionModifier");
 
-	push	OFFSET $SG222523
+	push	OFFSET $SG223000
 	mov	ecx, edi
 	mov	DWORD PTR [esi+288], eax
 	call	ebp
 
 ; 1110 : 	m_iCityUnhappinessModifier           	= kResults.GetInt("CityUnhappinessModifier");
 
-	push	OFFSET $SG222524
+	push	OFFSET $SG223001
 	mov	ecx, edi
 	mov	DWORD PTR [esi+292], eax
 	call	ebp
 
 ; 1111 : 	m_iPopulationUnhappinessModifier    	= kResults.GetInt("PopulationUnhappinessModifier");
 
-	push	OFFSET $SG222525
+	push	OFFSET $SG223002
 	mov	ecx, edi
 	mov	DWORD PTR [esi+296], eax
 	call	ebp
 
 ; 1112 : 	m_iCityStateBonusModifier               = kResults.GetInt("CityStateBonusModifier");
 
-	push	OFFSET $SG222526
+	push	OFFSET $SG223003
 	mov	ecx, edi
 	mov	DWORD PTR [esi+300], eax
 	call	ebp
 
 ; 1113 : 	m_iCityStateFriendshipModifier          = kResults.GetInt("CityStateFriendshipModifier");
 
-	push	OFFSET $SG222527
+	push	OFFSET $SG223004
 	mov	ecx, edi
 	mov	DWORD PTR [esi+304], eax
 	call	ebp
 
 ; 1114 : 	m_iCityStateCombatModifier				= kResults.GetInt("CityStateCombatModifier");
 
-	push	OFFSET $SG222528
+	push	OFFSET $SG223005
 	mov	ecx, edi
 	mov	DWORD PTR [esi+308], eax
 	call	ebp
 
 ; 1115 : 	m_iLandBarbarianConversionPercent       = kResults.GetInt("LandBarbarianConversionPercent");
 
-	push	OFFSET $SG222529
+	push	OFFSET $SG223006
 	mov	ecx, edi
 	mov	DWORD PTR [esi+312], eax
 	call	ebp
 
 ; 1116 : 	m_iLandBarbarianConversionExtraUnits    = kResults.GetInt("LandBarbarianConversionExtraUnits");
 
-	push	OFFSET $SG222530
+	push	OFFSET $SG223007
 	mov	ecx, edi
 	mov	DWORD PTR [esi+316], eax
 	call	ebp
 
 ; 1117 : 	m_iSeaBarbarianConversionPercent        = kResults.GetInt("SeaBarbarianConversionPercent");
 
-	push	OFFSET $SG222531
+	push	OFFSET $SG223008
 	mov	ecx, edi
 	mov	DWORD PTR [esi+320], eax
 	call	ebp
 
 ; 1118 : 	m_iCapitalBuildingModifier				= kResults.GetInt("CapitalBuildingModifier");
 
-	push	OFFSET $SG222532
+	push	OFFSET $SG223009
 	mov	ecx, edi
 	mov	DWORD PTR [esi+324], eax
 	call	ebp
 
 ; 1119 : 	m_iPlotBuyCostModifier					= kResults.GetInt("PlotBuyCostModifier");
 
-	push	OFFSET $SG222533
+	push	OFFSET $SG223010
 	mov	ecx, edi
 	mov	DWORD PTR [esi+328], eax
 	call	ebp
 
 ; 1120 : 	m_iPlotCultureCostModifier              = kResults.GetInt("PlotCultureCostModifier");
 
-	push	OFFSET $SG222534
+	push	OFFSET $SG223011
 	mov	ecx, edi
 	mov	DWORD PTR [esi+332], eax
 	call	ebp
@@ -42031,7 +42031,7 @@ $LN66@CacheResul:
 ; 1121 : #ifdef NQ_SCIENCE_PER_GREAT_PERSON_BORN
 ; 1122 : 	m_iSciencePerGreatPersonBorn			= kResults.GetInt("SciencePerGreatPersonBorn");
 
-	push	OFFSET $SG222535
+	push	OFFSET $SG223012
 	mov	ecx, edi
 	call	ebp
 
@@ -42039,7 +42039,7 @@ $LN66@CacheResul:
 ; 1124 : #ifdef NQ_NUM_TURNS_BEFORE_MINOR_ALLIES_REFUSE_BRIBES_FROM_TRAIT
 ; 1125 : 	m_iNumTurnsBeforeMinorAlliesRefuseBribes = kResults.GetInt("NumTurnsBeforeMinorAlliesRefuseBribes");
 
-	push	OFFSET $SG222536
+	push	OFFSET $SG223013
 	mov	ecx, edi
 	mov	DWORD PTR [esi+340], eax
 	call	ebp
@@ -42048,7 +42048,7 @@ $LN66@CacheResul:
 ; 1127 : #ifdef NQ_GOLDEN_PILGRIMAGE
 ; 1128 : 	m_iGoldenAgeTileBonusFaith              = kResults.GetInt("GoldenAgeTileBonusFaith");
 
-	push	OFFSET $SG222537
+	push	OFFSET $SG223014
 	mov	ecx, edi
 	mov	DWORD PTR [esi+344], eax
 	call	ebp
@@ -42056,119 +42056,119 @@ $LN66@CacheResul:
 ; 1129 : #endif
 ; 1130 : 	m_iCultureFromKills						= kResults.GetInt("CultureFromKills");
 
-	push	OFFSET $SG222538
+	push	OFFSET $SG223015
 	mov	ecx, edi
 	mov	DWORD PTR [esi+348], eax
 	call	ebp
 
 ; 1131 : 	m_iFaithFromKills						= kResults.GetInt("FaithFromKills");
 
-	push	OFFSET $SG222539
+	push	OFFSET $SG223016
 	mov	ecx, edi
 	mov	DWORD PTR [esi+352], eax
 	call	ebp
 
 ; 1132 : 	m_iCityCultureBonus						= kResults.GetInt("CityCultureBonus");
 
-	push	OFFSET $SG222540
+	push	OFFSET $SG223017
 	mov	ecx, edi
 	mov	DWORD PTR [esi+356], eax
 	call	ebp
 
 ; 1133 : 	m_iCapitalThemingBonusModifier          = kResults.GetInt("CapitalThemingBonusModifier");
 
-	push	OFFSET $SG222541
+	push	OFFSET $SG223018
 	mov	ecx, edi
 	mov	DWORD PTR [esi+360], eax
 	call	ebp
 
 ; 1134 : 	m_iPolicyCostModifier					= kResults.GetInt("PolicyCostModifier");
 
-	push	OFFSET $SG222542
+	push	OFFSET $SG223019
 	mov	ecx, edi
 	mov	DWORD PTR [esi+364], eax
 	call	ebp
 
 ; 1135 : 	m_iCityConnectionTradeRouteChange		= kResults.GetInt("CityConnectionTradeRouteChange");
 
-	push	OFFSET $SG222543
+	push	OFFSET $SG223020
 	mov	ecx, edi
 	mov	DWORD PTR [esi+368], eax
 	call	ebp
 
 ; 1136 : 	m_iWonderProductionModifier				= kResults.GetInt("WonderProductionModifier");
 
-	push	OFFSET $SG222544
+	push	OFFSET $SG223021
 	mov	ecx, edi
 	mov	DWORD PTR [esi+372], eax
 	call	ebp
 
 ; 1137 : 	m_iPlunderModifier						= kResults.GetInt("PlunderModifier");
 
-	push	OFFSET $SG222545
+	push	OFFSET $SG223022
 	mov	ecx, edi
 	mov	DWORD PTR [esi+376], eax
 	call	ebp
 
 ; 1138 : 	m_iImprovementMaintenanceModifier       = kResults.GetInt("ImprovementMaintenanceModifier");
 
-	push	OFFSET $SG222546
+	push	OFFSET $SG223023
 	mov	ecx, edi
 	mov	DWORD PTR [esi+380], eax
 	call	ebp
 
 ; 1139 : 	m_iGoldenAgeDurationModifier			= kResults.GetInt("GoldenAgeDurationModifier");
 
-	push	OFFSET $SG222547
+	push	OFFSET $SG223024
 	mov	ecx, edi
 	mov	DWORD PTR [esi+384], eax
 	call	ebp
 
 ; 1140 : 	m_iGoldenAgeMoveChange				    = kResults.GetInt("GoldenAgeMoveChange");
 
-	push	OFFSET $SG222548
+	push	OFFSET $SG223025
 	mov	ecx, edi
 	mov	DWORD PTR [esi+388], eax
 	call	ebp
 
 ; 1141 : 	m_iGoldenAgeCombatModifier				= kResults.GetInt("GoldenAgeCombatModifier");
 
-	push	OFFSET $SG222549
+	push	OFFSET $SG223026
 	mov	ecx, edi
 	mov	DWORD PTR [esi+392], eax
 	call	ebp
 
 ; 1142 : 	m_iGoldenAgeTourismModifier				= kResults.GetInt("GoldenAgeTourismModifier");
 
-	push	OFFSET $SG222550
+	push	OFFSET $SG223027
 	mov	ecx, edi
 	mov	DWORD PTR [esi+396], eax
 	call	ebp
 
 ; 1143 : 	m_iGoldenAgeGreatArtistRateModifier		= kResults.GetInt("GoldenAgeGreatArtistRateModifier");
 
-	push	OFFSET $SG222551
+	push	OFFSET $SG223028
 	mov	ecx, edi
 	mov	DWORD PTR [esi+400], eax
 	call	ebp
 
 ; 1144 : 	m_iGoldenAgeGreatMusicianRateModifier	= kResults.GetInt("GoldenAgeGreatMusicianRateModifier");
 
-	push	OFFSET $SG222552
+	push	OFFSET $SG223029
 	mov	ecx, edi
 	mov	DWORD PTR [esi+404], eax
 	call	ebp
 
 ; 1145 : 	m_iGoldenAgeGreatWriterRateModifier		= kResults.GetInt("GoldenAgeGreatWriterRateModifier");
 
-	push	OFFSET $SG222553
+	push	OFFSET $SG223030
 	mov	ecx, edi
 	mov	DWORD PTR [esi+408], eax
 	call	ebp
 
 ; 1146 : 	m_iExtraEmbarkMoves						= kResults.GetInt("ExtraEmbarkMoves");
 
-	push	OFFSET $SG222554
+	push	OFFSET $SG223031
 	mov	ecx, edi
 	mov	DWORD PTR [esi+412], eax
 	call	ebp
@@ -42176,13 +42176,13 @@ $LN66@CacheResul:
 
 ; 1147 : 	m_iNaturalWonderFirstFinderGold         = kResults.GetInt("NaturalWonderFirstFinderGold");
 
-	push	OFFSET $SG222555
+	push	OFFSET $SG223032
 	mov	ecx, edi
 	call	ebp
 
 ; 1148 : 	m_iNaturalWonderSubsequentFinderGold    = kResults.GetInt("NaturalWonderSubsequentFinderGold");
 
-	push	OFFSET $SG222556
+	push	OFFSET $SG223033
 	mov	ecx, edi
 	mov	DWORD PTR [esi+432], eax
 	call	ebp
@@ -42191,14 +42191,14 @@ $LN66@CacheResul:
 ; 1150 : 	//EAP: Faith for the Natural wonder findor
 ; 1151 : 	m_iNaturalWonderFirstFinderFaith         = kResults.GetInt("NaturalWonderFirstFinderFaith");
 
-	push	OFFSET $SG222557
+	push	OFFSET $SG223034
 	mov	ecx, edi
 	mov	DWORD PTR [esi+436], eax
 	call	ebp
 
 ; 1152 : 	m_iNaturalWonderSubsequentFinderFaith    = kResults.GetInt("NaturalWonderSubsequentFinderFaith");
 
-	push	OFFSET $SG222558
+	push	OFFSET $SG223035
 	mov	ecx, edi
 	mov	DWORD PTR [esi+440], eax
 	call	ebp
@@ -42206,112 +42206,112 @@ $LN66@CacheResul:
 ; 1153 : 
 ; 1154 : 	m_iNaturalWonderYieldModifier           = kResults.GetInt("NaturalWonderYieldModifier");
 
-	push	OFFSET $SG222559
+	push	OFFSET $SG223036
 	mov	ecx, edi
 	mov	DWORD PTR [esi+444], eax
 	call	ebp
 
 ; 1155 : 	m_iNaturalWonderHappinessModifier       = kResults.GetInt("NaturalWonderHappinessModifier");
 
-	push	OFFSET $SG222560
+	push	OFFSET $SG223037
 	mov	ecx, edi
 	mov	DWORD PTR [esi+448], eax
 	call	ebp
 
 ; 1156 : 	m_iNearbyImprovementCombatBonus			= kResults.GetInt("NearbyImprovementCombatBonus");
 
-	push	OFFSET $SG222561
+	push	OFFSET $SG223038
 	mov	ecx, edi
 	mov	DWORD PTR [esi+452], eax
 	call	ebp
 
 ; 1157 : 	m_iNearbyImprovementBonusRange			= kResults.GetInt("NearbyImprovementBonusRange");
 
-	push	OFFSET $SG222562
+	push	OFFSET $SG223039
 	mov	ecx, edi
 	mov	DWORD PTR [esi+456], eax
 	call	ebp
 
 ; 1158 : 	m_iCultureBuildingYieldChange			= kResults.GetInt("CultureBuildingYieldChange");
 
-	push	OFFSET $SG222563
+	push	OFFSET $SG223040
 	mov	ecx, edi
 	mov	DWORD PTR [esi+460], eax
 	call	ebp
 
 ; 1159 : 	m_iCombatBonusVsHigherTech				= kResults.GetInt("CombatBonusVsHigherTech");
 
-	push	OFFSET $SG222564
+	push	OFFSET $SG223041
 	mov	ecx, edi
 	mov	DWORD PTR [esi+464], eax
 	call	ebp
 
 ; 1160 : 	m_iCombatBonusVsLargerCiv				= kResults.GetInt("CombatBonusVsLargerCiv");
 
-	push	OFFSET $SG222565
+	push	OFFSET $SG223042
 	mov	ecx, edi
 	mov	DWORD PTR [esi+468], eax
 	call	ebp
 
 ; 1161 : 	m_iLandUnitMaintenanceModifier          = kResults.GetInt("LandUnitMaintenanceModifier");
 
-	push	OFFSET $SG222566
+	push	OFFSET $SG223043
 	mov	ecx, edi
 	mov	DWORD PTR [esi+472], eax
 	call	ebp
 
 ; 1162 : 	m_iNavalUnitMaintenanceModifier         = kResults.GetInt("NavalUnitMaintenanceModifier");
 
-	push	OFFSET $SG222567
+	push	OFFSET $SG223044
 	mov	ecx, edi
 	mov	DWORD PTR [esi+476], eax
 	call	ebp
 
 ; 1163 : 	m_iRazeSpeedModifier					= kResults.GetInt("RazeSpeedModifier");
 
-	push	OFFSET $SG222568
+	push	OFFSET $SG223045
 	mov	ecx, edi
 	mov	DWORD PTR [esi+480], eax
 	call	ebp
 
 ; 1164 : 	m_iDOFGreatPersonModifier				= kResults.GetInt("DOFGreatPersonModifier");
 
-	push	OFFSET $SG222569
+	push	OFFSET $SG223046
 	mov	ecx, edi
 	mov	DWORD PTR [esi+484], eax
 	call	ebp
 
 ; 1165 : 	m_iLuxuryHappinessRetention				= kResults.GetInt("LuxuryHappinessRetention");
 
-	push	OFFSET $SG222570
+	push	OFFSET $SG223047
 	mov	ecx, edi
 	mov	DWORD PTR [esi+488], eax
 	call	ebp
 
 ; 1166 : 	m_iExtraHappinessPerLuxury				= kResults.GetInt("ExtraHappinessPerLuxury"); // NQMP GJS - New Netherlands UA
 
-	push	OFFSET $SG222571
+	push	OFFSET $SG223048
 	mov	ecx, edi
 	mov	DWORD PTR [esi+492], eax
 	call	ebp
 
 ; 1167 : 	m_iExtraSpies							= kResults.GetInt("ExtraSpies");
 
-	push	OFFSET $SG222572
+	push	OFFSET $SG223049
 	mov	ecx, edi
 	mov	DWORD PTR [esi+496], eax
 	call	ebp
 
 ; 1168 : 	m_iHappinessPerReligion					= kResults.GetInt("HappinessPerReligion"); // NQMP GJS - New Ottoman UA
 
-	push	OFFSET $SG222573
+	push	OFFSET $SG223050
 	mov	ecx, edi
 	mov	DWORD PTR [esi+500], eax
 	call	ebp
 
 ; 1169 : 	m_iUnresearchedTechBonusFromKills		= kResults.GetInt("UnresearchedTechBonusFromKills");
 
-	push	OFFSET $SG222574
+	push	OFFSET $SG223051
 	mov	ecx, edi
 	mov	DWORD PTR [esi+504], eax
 	call	ebp
@@ -42319,76 +42319,76 @@ $LN66@CacheResul:
 
 ; 1170 : 	m_iExtraFoundedCityTerritoryClaimRange  = kResults.GetInt("ExtraFoundedCityTerritoryClaimRange");
 
-	push	OFFSET $SG222575
+	push	OFFSET $SG223052
 	mov	ecx, edi
 	call	ebp
 
 ; 1171 : 	m_iFreeSocialPoliciesPerEra				= kResults.GetInt("FreeSocialPoliciesPerEra");
 
-	push	OFFSET $SG222576
+	push	OFFSET $SG223053
 	mov	ecx, edi
 	mov	DWORD PTR [esi+512], eax
 	call	ebp
 
 ; 1172 : 	m_iNumTradeRoutesModifier				= kResults.GetInt("NumTradeRoutesModifier");
 
-	push	OFFSET $SG222577
+	push	OFFSET $SG223054
 	mov	ecx, edi
 	mov	DWORD PTR [esi+516], eax
 	call	ebp
 
 ; 1173 : 	m_iTradeRouteResourceModifier			= kResults.GetInt("TradeRouteResourceModifier");
 
-	push	OFFSET $SG222578
+	push	OFFSET $SG223055
 	mov	ecx, edi
 	mov	DWORD PTR [esi+520], eax
 	call	ebp
 
 ; 1174 : 	m_iUniqueLuxuryCities					= kResults.GetInt("UniqueLuxuryCities");
 
-	push	OFFSET $SG222579
+	push	OFFSET $SG223056
 	mov	ecx, edi
 	mov	DWORD PTR [esi+524], eax
 	call	ebp
 
 ; 1175 : 	m_iUniqueLuxuryQuantity					= kResults.GetInt("UniqueLuxuryQuantity");
 
-	push	OFFSET $SG222580
+	push	OFFSET $SG223057
 	mov	ecx, edi
 	mov	DWORD PTR [esi+528], eax
 	call	ebp
 
 ; 1176 : 	m_iWorkerSpeedModifier					= kResults.GetInt("WorkerSpeedModifier");
 
-	push	OFFSET $SG222581
+	push	OFFSET $SG223058
 	mov	ecx, edi
 	mov	DWORD PTR [esi+532], eax
 	call	ebp
 
 ; 1177 : 	m_iAfraidMinorPerTurnInfluence			= kResults.GetInt("AfraidMinorPerTurnInfluence");
 
-	push	OFFSET $SG222582
+	push	OFFSET $SG223059
 	mov	ecx, edi
 	mov	DWORD PTR [esi+536], eax
 	call	ebp
 
 ; 1178 : 	m_iLandTradeRouteRangeBonus				= kResults.GetInt("LandTradeRouteRangeBonus");
 
-	push	OFFSET $SG222583
+	push	OFFSET $SG223060
 	mov	ecx, edi
 	mov	DWORD PTR [esi+540], eax
 	call	ebp
 
 ; 1179 : 	m_iTradeReligionModifier				= kResults.GetInt("TradeReligionModifier");
 
-	push	OFFSET $SG222584
+	push	OFFSET $SG223061
 	mov	ecx, edi
 	mov	DWORD PTR [esi+544], eax
 	call	ebp
 
 ; 1180 : 	m_iTradeBuildingModifier				= kResults.GetInt("TradeBuildingModifier");
 
-	push	OFFSET $SG222585
+	push	OFFSET $SG223062
 	mov	ecx, edi
 	mov	DWORD PTR [esi+548], eax
 	call	ebp
@@ -42397,7 +42397,7 @@ $LN66@CacheResul:
 ; 1182 : 	const char* szTextVal = NULL;
 ; 1183 : 	szTextVal = kResults.GetText("FreeUnit");
 
-	push	OFFSET $SG222587
+	push	OFFSET $SG223064
 	mov	ecx, edi
 	mov	DWORD PTR [esi+552], eax
 	call	ebx
@@ -42421,7 +42421,7 @@ $LN49@CacheResul:
 ; 1188 : 
 ; 1189 : 	szTextVal = kResults.GetText("FreeUnitPrereqTech");
 
-	push	OFFSET $SG222589
+	push	OFFSET $SG223066
 	mov	ecx, edi
 	call	ebx
 
@@ -42446,7 +42446,7 @@ $LN48@CacheResul:
 ; 1196 : 
 ; 1197 : 	szTextVal = kResults.GetText("FreeBuildingPrereqTech");
 
-	push	OFFSET $SG222592
+	push	OFFSET $SG223069
 	mov	ecx, edi
 	call	ebx
 
@@ -42468,7 +42468,7 @@ $LN47@CacheResul:
 ; 1201 : 	}
 ; 1202 : 	szTextVal = kResults.GetText("CapitalFreeBuildingPrereqTech");
 
-	push	OFFSET $SG222595
+	push	OFFSET $SG223072
 	mov	ecx, edi
 	call	ebx
 
@@ -42494,7 +42494,7 @@ $LN46@CacheResul:
 ; 1210 : 
 ; 1211 : 	szTextVal = kResults.GetText("CombatBonusImprovement");
 
-	push	OFFSET $SG222598
+	push	OFFSET $SG223075
 	mov	ecx, edi
 	call	ebx
 
@@ -42517,7 +42517,7 @@ $LN45@CacheResul:
 ; 1216 : 
 ; 1217 : 	szTextVal = kResults.GetText("ObsoleteTech");
 
-	push	OFFSET $SG222601
+	push	OFFSET $SG223078
 	mov	ecx, edi
 	call	ebx
 
@@ -42540,7 +42540,7 @@ $LN44@CacheResul:
 ; 1222 : 
 ; 1223 : 	szTextVal = kResults.GetText("PrereqTech");
 
-	push	OFFSET $SG222603
+	push	OFFSET $SG223080
 	mov	ecx, edi
 	call	ebx
 
@@ -42563,7 +42563,7 @@ $LN43@CacheResul:
 ; 1228 : 
 ; 1229 : 	szTextVal = kResults.GetText("FreeBuilding");
 
-	push	OFFSET $SG222605
+	push	OFFSET $SG223082
 	mov	ecx, edi
 	call	ebx
 
@@ -42586,7 +42586,7 @@ $LN42@CacheResul:
 ; 1234 : 
 ; 1235 : 	szTextVal = kResults.GetText("FreeCapitalBuilding");
 
-	push	OFFSET $SG222608
+	push	OFFSET $SG223085
 	mov	ecx, edi
 	call	ebx
 
@@ -42609,7 +42609,7 @@ $LN41@CacheResul:
 ; 1240 : 
 ; 1241 : 	szTextVal = kResults.GetText("FreeBuildingOnConquest");
 
-	push	OFFSET $SG222611
+	push	OFFSET $SG223088
 	mov	ecx, edi
 	call	ebx
 
@@ -42633,69 +42633,69 @@ $LN40@CacheResul:
 ; 1247 : 	m_bFightWellDamaged = kResults.GetBool("FightWellDamaged");
 
 	mov	ebx, DWORD PTR __imp_?GetBool@Results@Database@@QAE_NPBD@Z
-	push	OFFSET $SG222614
+	push	OFFSET $SG223091
 	mov	ecx, edi
 	call	ebx
 
 ; 1248 : 	m_bMoveFriendlyWoodsAsRoad = kResults.GetBool("MoveFriendlyWoodsAsRoad");
 
-	push	OFFSET $SG222615
+	push	OFFSET $SG223092
 	mov	ecx, edi
 	mov	BYTE PTR [esi+584], al
 	call	ebx
 
 ; 1249 : 	m_bFasterAlongRiver = kResults.GetBool("FasterAlongRiver");
 
-	push	OFFSET $SG222616
+	push	OFFSET $SG223093
 	mov	ecx, edi
 	mov	BYTE PTR [esi+585], al
 	call	ebx
 
 ; 1250 : 	m_bFasterInHills = kResults.GetBool("FasterInHills");
 
-	push	OFFSET $SG222617
+	push	OFFSET $SG223094
 	mov	ecx, edi
 	mov	BYTE PTR [esi+586], al
 	call	ebx
 
 ; 1251 : 	m_bEmbarkedAllWater = kResults.GetBool("EmbarkedAllWater");
 
-	push	OFFSET $SG222618
+	push	OFFSET $SG223095
 	mov	ecx, edi
 	mov	BYTE PTR [esi+587], al
 	call	ebx
 
 ; 1252 : 	m_bEmbarkedToLandFlatCost = kResults.GetBool("EmbarkedToLandFlatCost");
 
-	push	OFFSET $SG222619
+	push	OFFSET $SG223096
 	mov	ecx, edi
 	mov	BYTE PTR [esi+588], al
 	call	ebx
 
 ; 1253 : 	m_bNoHillsImprovementMaintenance = kResults.GetBool("NoHillsImprovementMaintenance");
 
-	push	OFFSET $SG222620
+	push	OFFSET $SG223097
 	mov	ecx, edi
 	mov	BYTE PTR [esi+589], al
 	call	ebx
 
 ; 1254 : 	m_bTechBoostFromCapitalScienceBuildings = kResults.GetBool("TechBoostFromCapitalScienceBuildings");
 
-	push	OFFSET $SG222621
+	push	OFFSET $SG223098
 	mov	ecx, edi
 	mov	BYTE PTR [esi+590], al
 	call	ebx
 
 ; 1255 : 	m_bStaysAliveZeroCities = kResults.GetBool("StaysAliveZeroCities");
 
-	push	OFFSET $SG222622
+	push	OFFSET $SG223099
 	mov	ecx, edi
 	mov	BYTE PTR [esi+591], al
 	call	ebx
 
 ; 1256 : 	m_bFaithFromUnimprovedForest = kResults.GetBool("FaithFromUnimprovedForest");
 
-	push	OFFSET $SG222623
+	push	OFFSET $SG223100
 	mov	ecx, edi
 	mov	BYTE PTR [esi+592], al
 	call	ebx
@@ -42703,7 +42703,7 @@ $LN40@CacheResul:
 ; 1257 : #ifdef NQ_UNIT_IMMUNE_TO_PLUNDER_FROM_TRAIT
 ; 1258 : 	m_bSeaTradeRoutesArePlunderImmune = kResults.GetBool("SeaTradeRoutesArePlunderImmune");
 
-	push	OFFSET $SG222624
+	push	OFFSET $SG223101
 	mov	ecx, edi
 	mov	BYTE PTR [esi+593], al
 	call	ebx
@@ -42711,63 +42711,63 @@ $LN40@CacheResul:
 ; 1259 : #endif
 ; 1260 : 	m_bEarnsGreatPersonOnSlotOrGuild = kResults.GetBool("EarnsGreatPersonOnSlotOrGuild"); // NQMP GJS - New France UA
 
-	push	OFFSET $SG222625
+	push	OFFSET $SG223102
 	mov	ecx, edi
 	mov	BYTE PTR [esi+594], al
 	call	ebx
 
 ; 1261 : 	m_bBonusReligiousBelief = kResults.GetBool("BonusReligiousBelief");
 
-	push	OFFSET $SG222626
+	push	OFFSET $SG223103
 	mov	ecx, edi
 	mov	BYTE PTR [esi+595], al
 	call	ebx
 
 ; 1262 : 	m_bAbleToAnnexCityStates = kResults.GetBool("AbleToAnnexCityStates");
 
-	push	OFFSET $SG222627
+	push	OFFSET $SG223104
 	mov	ecx, edi
 	mov	BYTE PTR [esi+599], al
 	call	ebx
 
 ; 1263 : 	m_bCrossesMountainsAfterGreatGeneral = kResults.GetBool("CrossesMountainsAfterGreatGeneral");
 
-	push	OFFSET $SG222628
+	push	OFFSET $SG223105
 	mov	ecx, edi
 	mov	BYTE PTR [esi+600], al
 	call	ebx
 
 ; 1264 : 	m_bMayaCalendarBonuses = kResults.GetBool("MayaCalendarBonuses");
 
-	push	OFFSET $SG222629
+	push	OFFSET $SG223106
 	mov	ecx, edi
 	mov	BYTE PTR [esi+601], al
 	call	ebx
 
 ; 1265 : 	m_bNoAnnexing = kResults.GetBool("NoAnnexing");
 
-	push	OFFSET $SG222630
+	push	OFFSET $SG223107
 	mov	ecx, edi
 	mov	BYTE PTR [esi+602], al
 	call	ebx
 
 ; 1266 : 	m_bTechFromCityConquer = kResults.GetBool("TechFromCityConquer");
 
-	push	OFFSET $SG222631
+	push	OFFSET $SG223108
 	mov	ecx, edi
 	mov	BYTE PTR [esi+603], al
 	call	ebx
 
 ; 1267 : 	m_bUniqueLuxuryRequiresNewArea = kResults.GetBool("UniqueLuxuryRequiresNewArea");
 
-	push	OFFSET $SG222632
+	push	OFFSET $SG223109
 	mov	ecx, edi
 	mov	BYTE PTR [esi+604], al
 	call	ebx
 
 ; 1268 : 	m_bRiverTradeRoad = kResults.GetBool("RiverTradeRoad");
 
-	push	OFFSET $SG222633
+	push	OFFSET $SG223110
 	mov	ecx, edi
 	mov	BYTE PTR [esi+605], al
 	call	ebx
@@ -42775,7 +42775,7 @@ $LN40@CacheResul:
 
 ; 1269 : 	m_bAngerFreeIntrusionOfCityStates = kResults.GetBool("AngerFreeIntrusionOfCityStates");
 
-	push	OFFSET $SG222634
+	push	OFFSET $SG223111
 	mov	ecx, edi
 	call	ebx
 
@@ -42792,8 +42792,8 @@ $LN40@CacheResul:
 	mov	edi, DWORD PTR _kUtility$[esp+108]
 	mov	ebx, eax
 	push	ebx
-	push	OFFSET $SG222636
-	push	OFFSET $SG222637
+	push	OFFSET $SG223113
+	push	OFFSET $SG223114
 	lea	ecx, DWORD PTR [esi+636]
 	push	ecx
 	mov	ecx, edi
@@ -42804,8 +42804,8 @@ $LN40@CacheResul:
 ; 1275 : 	kUtility.SetYields(m_paiYieldChange, "Trait_YieldChanges", "TraitType", szTraitType);
 
 	push	ebx
-	push	OFFSET $SG222638
-	push	OFFSET $SG222639
+	push	OFFSET $SG223115
+	push	OFFSET $SG223116
 	lea	edx, DWORD PTR [esi+640]
 	push	edx
 	mov	ecx, edi
@@ -42814,8 +42814,8 @@ $LN40@CacheResul:
 ; 1276 : 	kUtility.SetYields(m_paiYieldChangeStrategicResources, "Trait_YieldChangesStrategicResources", "TraitType", szTraitType);
 
 	push	ebx
-	push	OFFSET $SG222640
-	push	OFFSET $SG222641
+	push	OFFSET $SG223117
+	push	OFFSET $SG223118
 	lea	eax, DWORD PTR [esi+644]
 	push	eax
 	mov	ecx, edi
@@ -42824,8 +42824,8 @@ $LN40@CacheResul:
 ; 1277 : 	kUtility.SetYields(m_paiYieldChangeLuxuryResources, "Trait_YieldChangesLuxuryResources", "TraitType", szTraitType); // NQMP GJS - New Netherlands UA
 
 	push	ebx
-	push	OFFSET $SG222642
-	push	OFFSET $SG222643
+	push	OFFSET $SG223119
+	push	OFFSET $SG223120
 	lea	ecx, DWORD PTR [esi+648]
 	push	ecx
 	mov	ecx, edi
@@ -42834,8 +42834,8 @@ $LN40@CacheResul:
 ; 1278 : 	kUtility.SetYields(m_paiYieldChangeNaturalWonder, "Trait_YieldChangesNaturalWonder", "TraitType", szTraitType);
 
 	push	ebx
-	push	OFFSET $SG222644
-	push	OFFSET $SG222645
+	push	OFFSET $SG223121
+	push	OFFSET $SG223122
 	lea	edx, DWORD PTR [esi+652]
 	push	edx
 	mov	ecx, edi
@@ -42844,8 +42844,8 @@ $LN40@CacheResul:
 ; 1279 : 	kUtility.SetYields(m_paiYieldChangePerTradePartner, "Trait_YieldChangesPerTradePartner", "TraitType", szTraitType);
 
 	push	ebx
-	push	OFFSET $SG222646
-	push	OFFSET $SG222647
+	push	OFFSET $SG223123
+	push	OFFSET $SG223124
 	lea	eax, DWORD PTR [esi+656]
 	push	eax
 	mov	ecx, edi
@@ -42854,8 +42854,8 @@ $LN40@CacheResul:
 ; 1280 : 	kUtility.SetYields(m_paiYieldChangeIncomingTradeRoute, "Trait_YieldChangesIncomingTradeRoute", "TraitType", szTraitType);
 
 	push	ebx
-	push	OFFSET $SG222648
-	push	OFFSET $SG222649
+	push	OFFSET $SG223125
+	push	OFFSET $SG223126
 	lea	ecx, DWORD PTR [esi+660]
 	push	ecx
 	mov	ecx, edi
@@ -42864,8 +42864,8 @@ $LN40@CacheResul:
 ; 1281 : 	kUtility.SetYields(m_paiYieldModifier, "Trait_YieldModifiers", "TraitType", szTraitType);
 
 	push	ebx
-	push	OFFSET $SG222650
-	push	OFFSET $SG222651
+	push	OFFSET $SG223127
+	push	OFFSET $SG223128
 	lea	edx, DWORD PTR [esi+664]
 	push	edx
 	mov	ecx, edi
@@ -42902,13 +42902,13 @@ $LN40@CacheResul:
 ; 1288 : 
 ; 1289 : 		std::string sqlKey = "Trait_Terrains";
 
-	push	OFFSET $SG222659
-	lea	ecx, DWORD PTR _sqlKey$222658[esp+116]
+	push	OFFSET $SG223136
+	lea	ecx, DWORD PTR _sqlKey$223135[esp+116]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 
 ; 1290 : 		Database::Results* pResults = kUtility.GetResults(sqlKey);
 
-	lea	edx, DWORD PTR _sqlKey$222658[esp+112]
+	lea	edx, DWORD PTR _sqlKey$223135[esp+112]
 	push	edx
 	mov	ecx, edi
 	mov	DWORD PTR __$EHRec$[esp+124], 0
@@ -42925,8 +42925,8 @@ $LN40@CacheResul:
 ; 1294 : 			pResults = kUtility.PrepareResults(sqlKey, szSQL);
 
 	mov	ecx, DWORD PTR _kUtility$[esp+108]
-	push	OFFSET $SG222663
-	lea	eax, DWORD PTR _sqlKey$222658[esp+116]
+	push	OFFSET $SG223140
+	lea	eax, DWORD PTR _sqlKey$223135[esp+116]
 	push	eax
 	call	?PrepareResults@CvDatabaseUtility@@QAEPAVResults@Database@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PBD@Z ; CvDatabaseUtility::PrepareResults
 	mov	edi, eax
@@ -42956,7 +42956,7 @@ $LL38@CacheResul:
 ; 1300 : 		{
 ; 1301 : 			const int iTerrainID = pResults->GetInt("TerrainID");
 
-	push	OFFSET $SG222668
+	push	OFFSET $SG223145
 	mov	ecx, edi
 	call	ebp
 
@@ -42964,15 +42964,15 @@ $LL38@CacheResul:
 ; 1303 : 
 ; 1304 : 			const int iStrategicResourceQuantityModifier = pResults->GetInt("StrategicResourceQuantityModifier");
 
-	push	OFFSET $SG222670
+	push	OFFSET $SG223147
 	mov	ecx, edi
-	mov	DWORD PTR _iTerrainID$222667[esp+112], eax
+	mov	DWORD PTR _iTerrainID$223144[esp+112], eax
 	call	ebp
 
 ; 1305 : 			m_piStrategicResourceQuantityModifier[iTerrainID] = iStrategicResourceQuantityModifier;
 
 	mov	edx, DWORD PTR [esi+668]
-	mov	ecx, DWORD PTR _iTerrainID$222667[esp+108]
+	mov	ecx, DWORD PTR _iTerrainID$223144[esp+108]
 	mov	DWORD PTR [edx+ecx*4], eax
 	mov	ecx, edi
 	call	ebx
@@ -42983,7 +42983,7 @@ $LN37@CacheResul:
 ; 1306 : 		}
 ; 1307 : 	}
 
-	lea	ecx, DWORD PTR _sqlKey$222658[esp+112]
+	lea	ecx, DWORD PTR _sqlKey$223135[esp+112]
 	mov	DWORD PTR __$EHRec$[esp+120], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -42992,14 +42992,14 @@ $LN37@CacheResul:
 ; 1310 : 	{
 ; 1311 : 		std::string sqlKey = "FreePromotionUnitCombats";
 
-	push	OFFSET $SG222672
-	lea	ecx, DWORD PTR _sqlKey$222671[esp+116]
+	push	OFFSET $SG223149
+	lea	ecx, DWORD PTR _sqlKey$223148[esp+116]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 
 ; 1312 : 		Database::Results* pResults = kUtility.GetResults(sqlKey);
 
 	mov	edi, DWORD PTR _kUtility$[esp+108]
-	lea	edx, DWORD PTR _sqlKey$222671[esp+112]
+	lea	edx, DWORD PTR _sqlKey$223148[esp+112]
 	push	edx
 	mov	ecx, edi
 	mov	DWORD PTR __$EHRec$[esp+124], 1
@@ -43015,8 +43015,8 @@ $LN37@CacheResul:
 ; 1315 : 			const char* szSQL = "select UnitPromotions.ID, UnitCombatInfos.ID from Trait_FreePromotionUnitCombats, UnitPromotions, UnitCombatInfos where TraitType = ? and PromotionType = UnitPromotions.Type and UnitCombatType = UnitCombatInfos.Type";
 ; 1316 : 			pResults = kUtility.PrepareResults(sqlKey, szSQL);
 
-	push	OFFSET $SG222676
-	lea	eax, DWORD PTR _sqlKey$222671[esp+116]
+	push	OFFSET $SG223153
+	lea	eax, DWORD PTR _sqlKey$223148[esp+116]
 	push	eax
 	mov	ecx, edi
 	call	?PrepareResults@CvDatabaseUtility@@QAEPAVResults@Database@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PBD@Z ; CvDatabaseUtility::PrepareResults
@@ -43056,20 +43056,20 @@ $LL35@CacheResul:
 
 	push	1
 	mov	ecx, ebp
-	mov	DWORD PTR _unitPromotionID$222680[esp+112], eax
+	mov	DWORD PTR _unitPromotionID$223157[esp+112], eax
 	call	edi
 
 ; 1325 : 
 ; 1326 : 			m_FreePromotionUnitCombats.insert(std::pair<int, int>(unitPromotionID, unitCombatInfoID));
 
-	mov	edx, DWORD PTR _unitPromotionID$222680[esp+108]
-	mov	DWORD PTR $T263174[esp+116], eax
-	lea	eax, DWORD PTR $T263174[esp+112]
+	mov	edx, DWORD PTR _unitPromotionID$223157[esp+108]
+	mov	DWORD PTR $T263651[esp+116], eax
+	lea	eax, DWORD PTR $T263651[esp+112]
 	push	eax
-	lea	ecx, DWORD PTR $T263230[esp+116]
+	lea	ecx, DWORD PTR $T263707[esp+116]
 	push	ecx
 	lea	ecx, DWORD PTR [esi+696]
-	mov	DWORD PTR $T263174[esp+120], edx
+	mov	DWORD PTR $T263651[esp+120], edx
 	call	?insert@?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$00@std@@@std@@QAE?AU?$pair@Viterator@?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$00@std@@@std@@_N@2@ABU?$pair@$$CBHH@2@@Z ; std::_Tree<std::_Tmap_traits<int,int,std::less<int>,std::allocator<std::pair<int const ,int> >,1> >::insert
 	mov	ecx, ebp
 	call	ebx
@@ -43090,22 +43090,22 @@ $LN34@CacheResul:
 
 	lea	ebp, DWORD PTR [esi+696]
 	push	ebp
-	lea	ecx, DWORD PTR $T263177[esp+116]
+	lea	ecx, DWORD PTR $T263654[esp+116]
 	call	??0?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$00@std@@@std@@QAE@ABV01@@Z ; std::_Tree<std::_Tmap_traits<int,int,std::less<int>,std::allocator<std::pair<int const ,int> >,1> >::_Tree<std::_Tmap_traits<int,int,std::less<int>,std::allocator<std::pair<int const ,int> >,1> >
 	push	ebp
-	lea	ecx, DWORD PTR $T263177[esp+116]
+	lea	ecx, DWORD PTR $T263654[esp+116]
 	mov	BYTE PTR __$EHRec$[esp+124], 2
 	call	?swap@?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$00@std@@@std@@QAEXAAV12@@Z ; std::_Tree<std::_Tmap_traits<int,int,std::less<int>,std::allocator<std::pair<int const ,int> >,1> >::swap
-	mov	eax, DWORD PTR $T263177[esp+116]
+	mov	eax, DWORD PTR $T263654[esp+116]
 	mov	ecx, DWORD PTR [eax]
 	push	eax
 	push	ecx
-	lea	edx, DWORD PTR $T263375[esp+116]
+	lea	edx, DWORD PTR $T263854[esp+116]
 	push	edx
-	lea	ecx, DWORD PTR $T263177[esp+124]
+	lea	ecx, DWORD PTR $T263654[esp+124]
 	mov	BYTE PTR __$EHRec$[esp+132], 1
 	call	?erase@?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$00@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@0@Z ; std::_Tree<std::_Tmap_traits<int,int,std::less<int>,std::allocator<std::pair<int const ,int> >,1> >::erase
-	mov	eax, DWORD PTR $T263177[esp+116]
+	mov	eax, DWORD PTR $T263654[esp+116]
 	push	eax
 	call	??3@YAXPAX@Z				; operator delete
 
@@ -43117,12 +43117,12 @@ $LN34@CacheResul:
 	add	esp, 4
 	push	0
 	push	0
-	push	OFFSET $SG222756
+	push	OFFSET $SG223233
 	push	ecx
-	push	OFFSET $SG222757
-	push	OFFSET $SG222758
-	push	OFFSET $SG222759
-	push	OFFSET $SG222760
+	push	OFFSET $SG223234
+	push	OFFSET $SG223235
+	push	OFFSET $SG223236
+	push	OFFSET $SG223237
 	lea	edx, DWORD PTR [esi+672]
 	push	edx
 	mov	ecx, ebp
@@ -43130,7 +43130,7 @@ $LN34@CacheResul:
 
 ; 1335 : 	}
 
-	lea	ecx, DWORD PTR _sqlKey$222671[esp+112]
+	lea	ecx, DWORD PTR _sqlKey$223148[esp+112]
 	mov	DWORD PTR __$EHRec$[esp+120], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -43139,7 +43139,7 @@ $LN34@CacheResul:
 ; 1338 : 	{
 ; 1339 : 		const int iNumUnitCombatClasses = kUtility.MaxRows("UnitCombatInfos");
 
-	push	OFFSET $SG222762
+	push	OFFSET $SG223239
 	mov	ecx, ebp
 	call	?MaxRows@CvDatabaseUtility@@QAEHPBD@Z	; CvDatabaseUtility::MaxRows
 
@@ -43165,14 +43165,14 @@ $LN34@CacheResul:
 ; 1341 : 
 ; 1342 : 		std::string sqlKey = "Trait_MovesChangeUnitCombats";
 
-	push	OFFSET $SG222764
-	lea	ecx, DWORD PTR _sqlKey$222763[esp+116]
+	push	OFFSET $SG223241
+	lea	ecx, DWORD PTR _sqlKey$223240[esp+116]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 
 ; 1343 : 		Database::Results* pResults = kUtility.GetResults(sqlKey);
 
 	mov	ecx, DWORD PTR _kUtility$[esp+108]
-	lea	edx, DWORD PTR _sqlKey$222763[esp+112]
+	lea	edx, DWORD PTR _sqlKey$223240[esp+112]
 	push	edx
 	mov	DWORD PTR __$EHRec$[esp+124], 3
 	call	?GetResults@CvDatabaseUtility@@QAEPAVResults@Database@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z ; CvDatabaseUtility::GetResults
@@ -43188,8 +43188,8 @@ $LN34@CacheResul:
 ; 1347 : 			pResults = kUtility.PrepareResults(sqlKey, szSQL);
 
 	mov	ecx, DWORD PTR _kUtility$[esp+108]
-	push	OFFSET $SG222768
-	lea	eax, DWORD PTR _sqlKey$222763[esp+116]
+	push	OFFSET $SG223245
+	lea	eax, DWORD PTR _sqlKey$223240[esp+116]
 	push	eax
 	call	?PrepareResults@CvDatabaseUtility@@QAEPAVResults@Database@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PBD@Z ; CvDatabaseUtility::PrepareResults
 	mov	ebp, eax
@@ -43228,13 +43228,13 @@ $LL32@CacheResul:
 
 	push	1
 	mov	ecx, ebp
-	mov	DWORD PTR _iUnitCombatID$222772[esp+112], eax
+	mov	DWORD PTR _iUnitCombatID$223249[esp+112], eax
 	call	edi
 
 ; 1358 : 			m_piMovesChangeUnitCombats[iUnitCombatID] = iMovesChange;
 
 	mov	edx, DWORD PTR [esi+676]
-	mov	ecx, DWORD PTR _iUnitCombatID$222772[esp+108]
+	mov	ecx, DWORD PTR _iUnitCombatID$223249[esp+108]
 	mov	DWORD PTR [edx+ecx*4], eax
 	mov	ecx, ebp
 	call	ebx
@@ -43251,7 +43251,7 @@ $LN31@CacheResul:
 
 ; 1362 : 	}
 
-	lea	ecx, DWORD PTR _sqlKey$222763[esp+112]
+	lea	ecx, DWORD PTR _sqlKey$223240[esp+112]
 	mov	DWORD PTR __$EHRec$[esp+120], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -43261,7 +43261,7 @@ $LN31@CacheResul:
 ; 1366 : 		const int iNumUnitCombatClasses = kUtility.MaxRows("UnitCombatInfos");
 
 	mov	ecx, DWORD PTR _kUtility$[esp+108]
-	push	OFFSET $SG222775
+	push	OFFSET $SG223252
 	call	?MaxRows@CvDatabaseUtility@@QAEHPBD@Z	; CvDatabaseUtility::MaxRows
 
 ; 1367 : 		kUtility.InitializeArray(m_piMaintenanceModifierUnitCombats, iNumUnitCombatClasses, 0);
@@ -43286,14 +43286,14 @@ $LN31@CacheResul:
 ; 1368 : 
 ; 1369 : 		std::string sqlKey = "Trait_MaintenanceModifierUnitCombats";
 
-	push	OFFSET $SG222777
-	lea	ecx, DWORD PTR _sqlKey$222776[esp+116]
+	push	OFFSET $SG223254
+	lea	ecx, DWORD PTR _sqlKey$223253[esp+116]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 
 ; 1370 : 		Database::Results* pResults = kUtility.GetResults(sqlKey);
 
 	mov	ecx, DWORD PTR _kUtility$[esp+108]
-	lea	edx, DWORD PTR _sqlKey$222776[esp+112]
+	lea	edx, DWORD PTR _sqlKey$223253[esp+112]
 	push	edx
 	mov	DWORD PTR __$EHRec$[esp+124], 4
 	call	?GetResults@CvDatabaseUtility@@QAEPAVResults@Database@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z ; CvDatabaseUtility::GetResults
@@ -43309,8 +43309,8 @@ $LN31@CacheResul:
 ; 1374 : 			pResults = kUtility.PrepareResults(sqlKey, szSQL);
 
 	mov	ecx, DWORD PTR _kUtility$[esp+108]
-	push	OFFSET $SG222781
-	lea	eax, DWORD PTR _sqlKey$222776[esp+116]
+	push	OFFSET $SG223258
+	lea	eax, DWORD PTR _sqlKey$223253[esp+116]
 	push	eax
 	call	?PrepareResults@CvDatabaseUtility@@QAEPAVResults@Database@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PBD@Z ; CvDatabaseUtility::PrepareResults
 	mov	ebp, eax
@@ -43350,13 +43350,13 @@ $LL29@CacheResul:
 
 	push	1
 	mov	ecx, ebp
-	mov	DWORD PTR _iUnitCombatID$222785[esp+112], eax
+	mov	DWORD PTR _iUnitCombatID$223262[esp+112], eax
 	call	edi
 
 ; 1385 : 			m_piMaintenanceModifierUnitCombats[iUnitCombatID] = iMaintenanceModifier;
 
 	mov	edx, DWORD PTR [esi+680]
-	mov	ecx, DWORD PTR _iUnitCombatID$222785[esp+108]
+	mov	ecx, DWORD PTR _iUnitCombatID$223262[esp+108]
 	mov	DWORD PTR [edx+ecx*4], eax
 	mov	ecx, ebp
 	call	ebx
@@ -43373,7 +43373,7 @@ $LN28@CacheResul:
 
 ; 1389 : 	}
 
-	lea	ecx, DWORD PTR _sqlKey$222776[esp+112]
+	lea	ecx, DWORD PTR _sqlKey$223253[esp+112]
 	mov	DWORD PTR __$EHRec$[esp+120], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -43388,9 +43388,9 @@ $LN28@CacheResul:
 
 	mov	ebp, DWORD PTR _kUtility$[esp+108]
 	push	0
-	push	OFFSET $SG222787
+	push	OFFSET $SG223264
 	lea	eax, DWORD PTR [esi+684]
-	push	OFFSET $SG222788
+	push	OFFSET $SG223265
 	push	eax
 	mov	ecx, ebp
 	call	?Initialize2DArray@CvDatabaseUtility@@QAE_NAAPAPAHPBD1H@Z ; CvDatabaseUtility::Initialize2DArray
@@ -43399,13 +43399,13 @@ $LN28@CacheResul:
 ; 1399 : 
 ; 1400 : 		std::string strKey("Trait_ImprovementYieldChanges");
 
-	push	OFFSET $SG222790
-	lea	ecx, DWORD PTR _strKey$222789[esp+116]
+	push	OFFSET $SG223267
+	lea	ecx, DWORD PTR _strKey$223266[esp+116]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 
 ; 1401 : 		Database::Results* pResults = kUtility.GetResults(strKey);
 
-	lea	edx, DWORD PTR _strKey$222789[esp+112]
+	lea	edx, DWORD PTR _strKey$223266[esp+112]
 	push	edx
 	mov	ecx, ebp
 	mov	DWORD PTR __$EHRec$[esp+124], 5
@@ -43421,8 +43421,8 @@ $LN28@CacheResul:
 ; 1404 : 			pResults = kUtility.PrepareResults(strKey, "select Improvements.ID as ImprovementID, Yields.ID as YieldID, Yield from Trait_ImprovementYieldChanges inner join Improvements on Improvements.Type = ImprovementType inner join Yields on Yields.Type = YieldType where TraitType = ?");
 
 	mov	ecx, DWORD PTR _kUtility$[esp+108]
-	push	OFFSET $SG222793
-	lea	eax, DWORD PTR _strKey$222789[esp+116]
+	push	OFFSET $SG223270
+	lea	eax, DWORD PTR _strKey$223266[esp+116]
 	push	eax
 	call	?PrepareResults@CvDatabaseUtility@@QAEPAVResults@Database@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PBD@Z ; CvDatabaseUtility::PrepareResults
 	mov	ebp, eax
@@ -43459,14 +43459,14 @@ $LL26@CacheResul:
 
 	push	1
 	mov	ecx, ebp
-	mov	DWORD PTR _ImprovementID$222797[esp+112], eax
+	mov	DWORD PTR _ImprovementID$223274[esp+112], eax
 	call	edi
 
 ; 1413 : 			const int yield = pResults->GetInt(2);
 
 	push	2
 	mov	ecx, ebp
-	mov	DWORD PTR _YieldID$222798[esp+116], eax
+	mov	DWORD PTR _YieldID$223275[esp+116], eax
 	call	edi
 
 ; 1414 : 
@@ -43476,9 +43476,9 @@ $LL26@CacheResul:
 ; 1418 : 			m_ppiImprovementYieldChanges[ImprovementID][YieldID] = yield;
 
 	mov	edx, DWORD PTR [esi+684]
-	mov	ecx, DWORD PTR _ImprovementID$222797[esp+108]
+	mov	ecx, DWORD PTR _ImprovementID$223274[esp+108]
 	mov	edx, DWORD PTR [edx+ecx*4]
-	mov	ecx, DWORD PTR _YieldID$222798[esp+112]
+	mov	ecx, DWORD PTR _YieldID$223275[esp+112]
 	mov	DWORD PTR [edx+ecx*4], eax
 	mov	ecx, ebp
 	call	ebx
@@ -43490,7 +43490,7 @@ $LN25@CacheResul:
 ; 1420 : 		}
 ; 1421 : 	}
 
-	lea	ecx, DWORD PTR _strKey$222789[esp+112]
+	lea	ecx, DWORD PTR _strKey$223266[esp+112]
 	mov	DWORD PTR __$EHRec$[esp+120], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -43505,9 +43505,9 @@ $LN25@CacheResul:
 
 	mov	ebp, DWORD PTR _kUtility$[esp+108]
 	push	0
-	push	OFFSET $SG222800
+	push	OFFSET $SG223277
 	lea	eax, DWORD PTR [esi+688]
-	push	OFFSET $SG222801
+	push	OFFSET $SG223278
 	push	eax
 	mov	ecx, ebp
 	call	?Initialize2DArray@CvDatabaseUtility@@QAE_NAAPAPAHPBD1H@Z ; CvDatabaseUtility::Initialize2DArray
@@ -43517,13 +43517,13 @@ $LN25@CacheResul:
 ; 1432 : 
 ; 1433 : 		std::string strKey("Building_SpecialistYieldChanges");
 
-	push	OFFSET $SG222803
-	lea	ecx, DWORD PTR _strKey$222802[esp+116]
+	push	OFFSET $SG223280
+	lea	ecx, DWORD PTR _strKey$223279[esp+116]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 
 ; 1434 : 		Database::Results* pResults = kUtility.GetResults(strKey);
 
-	lea	edx, DWORD PTR _strKey$222802[esp+112]
+	lea	edx, DWORD PTR _strKey$223279[esp+112]
 	push	edx
 	mov	ecx, ebp
 	mov	DWORD PTR __$EHRec$[esp+124], 6
@@ -43539,8 +43539,8 @@ $LN25@CacheResul:
 ; 1437 : 			pResults = kUtility.PrepareResults(strKey, "select Specialists.ID as SpecialistID, Yields.ID as YieldID, Yield from Trait_SpecialistYieldChanges inner join Specialists on Specialists.Type = SpecialistType inner join Yields on Yields.Type = YieldType where TraitType = ?");
 
 	mov	ecx, DWORD PTR _kUtility$[esp+108]
-	push	OFFSET $SG222806
-	lea	eax, DWORD PTR _strKey$222802[esp+116]
+	push	OFFSET $SG223283
+	lea	eax, DWORD PTR _strKey$223279[esp+116]
 	push	eax
 	call	?PrepareResults@CvDatabaseUtility@@QAEPAVResults@Database@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PBD@Z ; CvDatabaseUtility::PrepareResults
 	mov	ebp, eax
@@ -43577,14 +43577,14 @@ $LL23@CacheResul:
 
 	push	1
 	mov	ecx, ebp
-	mov	DWORD PTR _SpecialistID$222810[esp+112], eax
+	mov	DWORD PTR _SpecialistID$223287[esp+112], eax
 	call	edi
 
 ; 1446 : 			const int yield = pResults->GetInt(2);
 
 	push	2
 	mov	ecx, ebp
-	mov	DWORD PTR _YieldID$222811[esp+116], eax
+	mov	DWORD PTR _YieldID$223288[esp+116], eax
 	call	edi
 
 ; 1447 : 
@@ -43594,9 +43594,9 @@ $LL23@CacheResul:
 ; 1451 : 			m_ppiSpecialistYieldChanges[SpecialistID][YieldID] = yield;
 
 	mov	edx, DWORD PTR [esi+688]
-	mov	ecx, DWORD PTR _SpecialistID$222810[esp+108]
+	mov	ecx, DWORD PTR _SpecialistID$223287[esp+108]
 	mov	edx, DWORD PTR [edx+ecx*4]
-	mov	ecx, DWORD PTR _YieldID$222811[esp+112]
+	mov	ecx, DWORD PTR _YieldID$223288[esp+112]
 	mov	DWORD PTR [edx+ecx*4], eax
 	mov	ecx, ebp
 	call	ebx
@@ -43609,7 +43609,7 @@ $LN22@CacheResul:
 ; 1454 : 		}
 ; 1455 : 	}
 
-	lea	ecx, DWORD PTR _strKey$222802[esp+112]
+	lea	ecx, DWORD PTR _strKey$223279[esp+112]
 	mov	DWORD PTR __$EHRec$[esp+120], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -43659,9 +43659,9 @@ $LN22@CacheResul:
 
 	mov	ebp, DWORD PTR _kUtility$[esp+108]
 	push	0
-	push	OFFSET $SG222813
+	push	OFFSET $SG223290
 	lea	eax, DWORD PTR [esi+692]
-	push	OFFSET $SG222814
+	push	OFFSET $SG223291
 	push	eax
 	mov	ecx, ebp
 	call	?Initialize2DArray@CvDatabaseUtility@@QAE_NAAPAPAHPBD1H@Z ; CvDatabaseUtility::Initialize2DArray
@@ -43670,13 +43670,13 @@ $LN22@CacheResul:
 ; 1500 : 
 ; 1501 : 		std::string strKey("Trait_UnimprovedFeatureYieldChanges");
 
-	push	OFFSET $SG222816
-	lea	ecx, DWORD PTR _strKey$222815[esp+116]
+	push	OFFSET $SG223293
+	lea	ecx, DWORD PTR _strKey$223292[esp+116]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 
 ; 1502 : 		Database::Results* pResults = kUtility.GetResults(strKey);
 
-	lea	edx, DWORD PTR _strKey$222815[esp+112]
+	lea	edx, DWORD PTR _strKey$223292[esp+112]
 	push	edx
 	mov	ecx, ebp
 	mov	DWORD PTR __$EHRec$[esp+124], 7
@@ -43692,8 +43692,8 @@ $LN22@CacheResul:
 ; 1505 : 			pResults = kUtility.PrepareResults(strKey, "select Features.ID as FeatureID, Yields.ID as YieldID, Yield from Trait_UnimprovedFeatureYieldChanges inner join Features on Features.Type = FeatureType inner join Yields on Yields.Type = YieldType where TraitType = ?");
 
 	mov	ecx, DWORD PTR _kUtility$[esp+108]
-	push	OFFSET $SG222819
-	lea	eax, DWORD PTR _strKey$222815[esp+116]
+	push	OFFSET $SG223296
+	lea	eax, DWORD PTR _strKey$223292[esp+116]
 	push	eax
 	call	?PrepareResults@CvDatabaseUtility@@QAEPAVResults@Database@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PBD@Z ; CvDatabaseUtility::PrepareResults
 	mov	ebp, eax
@@ -43731,14 +43731,14 @@ $LL20@CacheResul:
 
 	push	1
 	mov	ecx, ebp
-	mov	DWORD PTR _FeatureID$222823[esp+112], eax
+	mov	DWORD PTR _FeatureID$223300[esp+112], eax
 	call	edi
 
 ; 1514 : 			const int yield = pResults->GetInt(2);
 
 	push	2
 	mov	ecx, ebp
-	mov	DWORD PTR _YieldID$222824[esp+116], eax
+	mov	DWORD PTR _YieldID$223301[esp+116], eax
 	call	edi
 
 ; 1515 : 
@@ -43748,9 +43748,9 @@ $LL20@CacheResul:
 ; 1519 : 			m_ppiUnimprovedFeatureYieldChanges[FeatureID][YieldID] = yield;
 
 	mov	edx, DWORD PTR [esi+692]
-	mov	ecx, DWORD PTR _FeatureID$222823[esp+108]
+	mov	ecx, DWORD PTR _FeatureID$223300[esp+108]
 	mov	edx, DWORD PTR [edx+ecx*4]
-	mov	ecx, DWORD PTR _YieldID$222824[esp+112]
+	mov	ecx, DWORD PTR _YieldID$223301[esp+112]
 	mov	DWORD PTR [edx+ecx*4], eax
 	mov	ecx, ebp
 	call	ebx
@@ -43762,7 +43762,7 @@ $LN19@CacheResul:
 ; 1521 : 		}
 ; 1522 : 	}
 
-	lea	ecx, DWORD PTR _strKey$222815[esp+112]
+	lea	ecx, DWORD PTR _strKey$223292[esp+112]
 	mov	DWORD PTR __$EHRec$[esp+120], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -43776,7 +43776,7 @@ $LN19@CacheResul:
 ; 1530 : 		for (iUnitClassLoop = 0; iUnitClassLoop < GC.getNumUnitClassInfos(); iUnitClassLoop++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	mov	DWORD PTR _iUnitClassLoop$222826[esp+108], 0
+	mov	DWORD PTR _iUnitClassLoop$223303[esp+108], 0
 	call	?getNumUnitClassInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumUnitClassInfos
 	test	eax, eax
 	jle	SHORT $LN500@CacheResul
@@ -43820,10 +43820,10 @@ $LN154@CacheResul:
 	lea	ebp, DWORD PTR [esi+724]
 	mov	ecx, ebp
 	call	?_Insert_n@?$vector@_NV?$allocator@_N@std@@@std@@IAEXV?$_Vb_const_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@@@2@I_N@Z ; std::vector<bool,std::allocator<bool> >::_Insert_n
-	inc	DWORD PTR _iUnitClassLoop$222826[esp+108]
+	inc	DWORD PTR _iUnitClassLoop$223303[esp+108]
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getNumUnitClassInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumUnitClassInfos
-	cmp	DWORD PTR _iUnitClassLoop$222826[esp+108], eax
+	cmp	DWORD PTR _iUnitClassLoop$223303[esp+108], eax
 	jl	SHORT $LL18@CacheResul
 $LN500@CacheResul:
 
@@ -43831,19 +43831,19 @@ $LN500@CacheResul:
 ; 1535 : 
 ; 1536 : 		std::string strKey("Trait_NoTrain");
 
-	push	OFFSET $SG222831
-	lea	ecx, DWORD PTR _strKey$222830[esp+116]
+	push	OFFSET $SG223308
+	lea	ecx, DWORD PTR _strKey$223307[esp+116]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 
 ; 1537 : 		Database::Results* pResults = kUtility.GetResults(strKey);
 
 	mov	ecx, DWORD PTR _kUtility$[esp+108]
-	lea	eax, DWORD PTR _strKey$222830[esp+112]
+	lea	eax, DWORD PTR _strKey$223307[esp+112]
 	push	eax
 	mov	DWORD PTR __$EHRec$[esp+124], 8
 	call	?GetResults@CvDatabaseUtility@@QAEPAVResults@Database@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z ; CvDatabaseUtility::GetResults
 	mov	ebp, eax
-	mov	DWORD PTR _pResults$222832[esp+108], ebp
+	mov	DWORD PTR _pResults$223309[esp+108], ebp
 
 ; 1538 : 		if (pResults == NULL)
 
@@ -43853,13 +43853,13 @@ $LN500@CacheResul:
 ; 1539 : 		{
 ; 1540 : 			pResults = kUtility.PrepareResults(strKey, "SELECT Traits.ID, UnitClasses.ID FROM Trait_NoTrain inner join Traits on Trait_NoTrain.TraitType = Traits.Type inner join UnitClasses on Trait_NoTrain.UnitClassType = UnitClasses.Type where TraitType = ?");
 
-	push	OFFSET $SG222834
-	lea	ecx, DWORD PTR _strKey$222830[esp+116]
+	push	OFFSET $SG223311
+	lea	ecx, DWORD PTR _strKey$223307[esp+116]
 	push	ecx
 	mov	ecx, DWORD PTR _kUtility$[esp+116]
 	call	?PrepareResults@CvDatabaseUtility@@QAEPAVResults@Database@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PBD@Z ; CvDatabaseUtility::PrepareResults
 	mov	ebp, eax
-	mov	DWORD PTR _pResults$222832[esp+108], eax
+	mov	DWORD PTR _pResults$223309[esp+108], eax
 $LN15@CacheResul:
 
 ; 1541 : 		}
@@ -43907,7 +43907,7 @@ $LL14@CacheResul:
 	mov	ebp, -4					; fffffffcH
 	sub	ebp, ecx
 	add	edx, ebp
-	mov	ebp, DWORD PTR _pResults$222832[esp+108]
+	mov	ebp, DWORD PTR _pResults$223309[esp+108]
 	jmp	SHORT $LN506@CacheResul
 $LN225@CacheResul:
 	mov	ecx, eax
@@ -43929,7 +43929,7 @@ $LN13@CacheResul:
 ; 1549 : 		}
 ; 1550 : 	}
 
-	lea	ecx, DWORD PTR _strKey$222830[esp+112]
+	lea	ecx, DWORD PTR _strKey$223307[esp+112]
 	mov	DWORD PTR __$EHRec$[esp+120], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -43942,7 +43942,7 @@ $LN13@CacheResul:
 ; 1557 : 		for(int iImprovementLoop = 0; iImprovementLoop < GC.getNumImprovementInfos(); iImprovementLoop++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	mov	DWORD PTR _iImprovementLoop$222841[esp+112], 0
+	mov	DWORD PTR _iImprovementLoop$223318[esp+112], 0
 	call	?getNumImprovementInfos@CvGlobals@@QAEHXZ ; CvGlobals::getNumImprovementInfos
 	test	eax, eax
 	jle	$LN10@CacheResul
@@ -43951,7 +43951,7 @@ $LN13@CacheResul:
 ; 1559 : 		{
 ; 1560 : 			m_abNoBuildImprovement.push_back(false);
 
-	mov	BYTE PTR $T264348[esp+108], 0
+	mov	BYTE PTR $T264825[esp+108], 0
 	npad	5
 $LL12@CacheResul:
 	mov	eax, DWORD PTR [esi+744]
@@ -43990,7 +43990,7 @@ $LN501@CacheResul:
 	lea	ecx, DWORD PTR [eax+1]
 	xor	ebx, ebx
 	mov	ebp, edx
-	mov	DWORD PTR __Tmp$264600[esp+116], ebx
+	mov	DWORD PTR __Tmp$265107[esp+116], ebx
 	test	ecx, ecx
 	je	SHORT $LN498@CacheResul
 	jge	SHORT $LN316@CacheResul
@@ -44009,7 +44009,7 @@ $LN316@CacheResul:
 	lea	ebp, DWORD PTR [edx+ebx*4]
 $LN508@CacheResul:
 	and	ecx, 31					; 0000001fH
-	mov	DWORD PTR __Tmp$264600[esp+116], ecx
+	mov	DWORD PTR __Tmp$265107[esp+116], ecx
 $LN498@CacheResul:
 	xor	ecx, ecx
 	test	eax, eax
@@ -44032,19 +44032,19 @@ $LN509@CacheResul:
 	and	eax, 31					; 0000001fH
 	mov	ecx, eax
 $LN499@CacheResul:
-	lea	eax, DWORD PTR $T264348[esp+108]
+	lea	eax, DWORD PTR $T264825[esp+108]
 	push	eax
-	mov	eax, DWORD PTR __Tmp$264600[esp+120]
+	mov	eax, DWORD PTR __Tmp$265107[esp+120]
 	push	eax
 	push	ebp
 	push	ecx
 	push	edx
 	call	??$_Fill@V?$_Vb_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@@@std@@_N@std@@YAXV?$_Vb_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@@@0@0AB_N@Z ; std::_Fill<std::_Vb_iterator<unsigned int,int,std::vector<bool,std::allocator<bool> > >,bool>
-	mov	ebx, DWORD PTR _iImprovementLoop$222841[esp+132]
+	mov	ebx, DWORD PTR _iImprovementLoop$223318[esp+132]
 	inc	ebx
 	add	esp, 20					; 00000014H
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	mov	DWORD PTR _iImprovementLoop$222841[esp+112], ebx
+	mov	DWORD PTR _iImprovementLoop$223318[esp+112], ebx
 	call	?getNumImprovementInfos@CvGlobals@@QAEHXZ ; CvGlobals::getNumImprovementInfos
 	cmp	ebx, eax
 	jl	$LL12@CacheResul
@@ -44064,19 +44064,19 @@ $LN10@CacheResul:
 ; 1562 : 
 ; 1563 : 		std::string strKey("Trait_NoBuild");
 
-	push	OFFSET $SG222846
-	lea	ecx, DWORD PTR _strKey$222845[esp+116]
+	push	OFFSET $SG223323
+	lea	ecx, DWORD PTR _strKey$223322[esp+116]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 
 ; 1564 : 		Database::Results* pResults = kUtility.GetResults(strKey);
 
-	lea	ecx, DWORD PTR _strKey$222845[esp+112]
+	lea	ecx, DWORD PTR _strKey$223322[esp+112]
 	push	ecx
 	mov	ecx, DWORD PTR _kUtility$[esp+112]
 	mov	DWORD PTR __$EHRec$[esp+124], 9
 	call	?GetResults@CvDatabaseUtility@@QAEPAVResults@Database@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z ; CvDatabaseUtility::GetResults
 	mov	ebp, eax
-	mov	DWORD PTR _pResults$222847[esp+108], ebp
+	mov	DWORD PTR _pResults$223324[esp+108], ebp
 
 ; 1565 : 		if (pResults == NULL)
 
@@ -44087,12 +44087,12 @@ $LN10@CacheResul:
 ; 1567 : 			pResults = kUtility.PrepareResults(strKey, "SELECT Traits.ID, Improvements.ID FROM Trait_NoBuild inner join Traits on Trait_NoBuild.TraitType = Traits.Type inner join Improvements on Trait_NoBuild.ImprovementType = Improvements.Type where TraitType = ?");
 
 	mov	ecx, DWORD PTR _kUtility$[esp+108]
-	push	OFFSET $SG222849
-	lea	edx, DWORD PTR _strKey$222845[esp+116]
+	push	OFFSET $SG223326
+	lea	edx, DWORD PTR _strKey$223322[esp+116]
 	push	edx
 	call	?PrepareResults@CvDatabaseUtility@@QAEPAVResults@Database@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PBD@Z ; CvDatabaseUtility::PrepareResults
 	mov	ebp, eax
-	mov	DWORD PTR _pResults$222847[esp+108], eax
+	mov	DWORD PTR _pResults$223324[esp+108], eax
 $LN9@CacheResul:
 
 ; 1568 : 		}
@@ -44140,7 +44140,7 @@ $LL8@CacheResul:
 	mov	ebp, -4					; fffffffcH
 	sub	ebp, ecx
 	add	edx, ebp
-	mov	ebp, DWORD PTR _pResults$222847[esp+108]
+	mov	ebp, DWORD PTR _pResults$223324[esp+108]
 	jmp	SHORT $LN510@CacheResul
 $LN395@CacheResul:
 	mov	ecx, eax
@@ -44162,7 +44162,7 @@ $LN502@CacheResul:
 ; 1576 : 		}
 ; 1577 : 	}
 
-	lea	ecx, DWORD PTR _strKey$222845[esp+112]
+	lea	ecx, DWORD PTR _strKey$223322[esp+112]
 	mov	DWORD PTR __$EHRec$[esp+120], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -44178,7 +44178,7 @@ $LN502@CacheResul:
 ; 1587 : 		for(iResourceLoop = 0; iResourceLoop < GC.getNumResourceInfos(); iResourceLoop++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	mov	DWORD PTR _iResourceLoop$222855[esp+112], 0
+	mov	DWORD PTR _iResourceLoop$223332[esp+112], 0
 	call	?getNumResourceInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumResourceInfos
 	test	eax, eax
 	jle	$LN4@CacheResul
@@ -44188,8 +44188,8 @@ $LN502@CacheResul:
 ; 1590 : 			FreeResourceXCities temp;
 
 	xor	eax, eax
-	mov	DWORD PTR _temp$222859[esp+112], eax
-	mov	DWORD PTR _temp$222859[esp+116], eax
+	mov	DWORD PTR _temp$223336[esp+112], eax
+	mov	DWORD PTR _temp$223336[esp+116], eax
 	lea	ebp, DWORD PTR [esi+708]
 	npad	1
 $LL503@CacheResul:
@@ -44211,11 +44211,11 @@ $LN430@CacheResul:
 	sub	edx, ecx
 	sar	edx, 3
 	cmp	edx, eax
-	lea	eax, DWORD PTR _temp$222859[esp+112]
+	lea	eax, DWORD PTR _temp$223336[esp+112]
 	jae	SHORT $LN422@CacheResul
-	mov	edx, DWORD PTR __Cat$265018[esp+108]
-	mov	BYTE PTR $T265015[esp+112], 0
-	mov	ecx, DWORD PTR $T265015[esp+112]
+	mov	edx, DWORD PTR __Cat$265493[esp+108]
+	mov	BYTE PTR $T265489[esp+112], 0
+	mov	ecx, DWORD PTR $T265489[esp+112]
 	push	ecx
 	mov	ecx, DWORD PTR tv3254[esp+112]
 	push	edx
@@ -44237,10 +44237,10 @@ $LN422@CacheResul:
 	mov	ecx, ebp
 	call	?_Insert_n@?$vector@UFreeResourceXCities@@V?$allocator@UFreeResourceXCities@@@std@@@std@@IAEXV?$_Vector_const_iterator@UFreeResourceXCities@@V?$allocator@UFreeResourceXCities@@@std@@@2@IABUFreeResourceXCities@@@Z ; std::vector<FreeResourceXCities,std::allocator<FreeResourceXCities> >::_Insert_n
 $LN5@CacheResul:
-	inc	DWORD PTR _iResourceLoop$222855[esp+112]
+	inc	DWORD PTR _iResourceLoop$223332[esp+112]
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getNumResourceInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumResourceInfos
-	cmp	DWORD PTR _iResourceLoop$222855[esp+112], eax
+	cmp	DWORD PTR _iResourceLoop$223332[esp+112], eax
 	jl	SHORT $LL503@CacheResul
 $LN4@CacheResul:
 
@@ -44248,14 +44248,14 @@ $LN4@CacheResul:
 ; 1593 : 
 ; 1594 : 		std::string strKey("Trait_FreeResourceFirstXCities");
 
-	push	OFFSET $SG222861
-	lea	ecx, DWORD PTR _strKey$222860[esp+116]
+	push	OFFSET $SG223338
+	lea	ecx, DWORD PTR _strKey$223337[esp+116]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 
 ; 1595 : 		Database::Results* pResults = kUtility.GetResults(strKey);
 
 	mov	ecx, DWORD PTR _kUtility$[esp+108]
-	lea	edx, DWORD PTR _strKey$222860[esp+112]
+	lea	edx, DWORD PTR _strKey$223337[esp+112]
 	push	edx
 	mov	DWORD PTR __$EHRec$[esp+124], 10	; 0000000aH
 	call	?GetResults@CvDatabaseUtility@@QAEPAVResults@Database@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z ; CvDatabaseUtility::GetResults
@@ -44270,8 +44270,8 @@ $LN4@CacheResul:
 ; 1598 : 			pResults = kUtility.PrepareResults(strKey, "select Resources.ID as ResourceID, ResourceQuantity, NumCities from Trait_FreeResourceFirstXCities inner join Resources on Resources.Type = ResourceType where TraitType = ?");
 
 	mov	ecx, DWORD PTR _kUtility$[esp+108]
-	push	OFFSET $SG222864
-	lea	eax, DWORD PTR _strKey$222860[esp+116]
+	push	OFFSET $SG223341
+	lea	eax, DWORD PTR _strKey$223337[esp+116]
 	push	eax
 	call	?PrepareResults@CvDatabaseUtility@@QAEPAVResults@Database@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PBD@Z ; CvDatabaseUtility::PrepareResults
 	mov	ebp, eax
@@ -44317,14 +44317,14 @@ $LL2@CacheResul:
 
 	push	2
 	mov	ecx, ebp
-	mov	DWORD PTR _temp$222868[esp+120], eax
+	mov	DWORD PTR _temp$223345[esp+120], eax
 	call	edi
 
 ; 1610 : 
 ; 1611 : 			m_aFreeResourceXCities[iResource] = temp;
 
 	mov	ecx, DWORD PTR [esi+712]
-	mov	edx, DWORD PTR _temp$222868[esp+116]
+	mov	edx, DWORD PTR _temp$223345[esp+116]
 	mov	DWORD PTR [ecx+ebx*8], eax
 	mov	DWORD PTR [ecx+ebx*8+4], edx
 	mov	ecx, ebp
@@ -44336,7 +44336,7 @@ $LN1@CacheResul:
 ; 1612 : 		}
 ; 1613 : 	}
 
-	lea	ecx, DWORD PTR _strKey$222860[esp+112]
+	lea	ecx, DWORD PTR _strKey$223337[esp+112]
 	mov	DWORD PTR __$EHRec$[esp+120], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -44357,37 +44357,37 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?CacheResults@CvTraitEntry@@UAE_NAAVResults@Database@@AAVCvDatabaseUtility@@@Z$0:
-	lea	ecx, DWORD PTR _sqlKey$222658[ebp]
+	lea	ecx, DWORD PTR _sqlKey$223135[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?CacheResults@CvTraitEntry@@UAE_NAAVResults@Database@@AAVCvDatabaseUtility@@@Z$1:
-	lea	ecx, DWORD PTR _sqlKey$222671[ebp]
+	lea	ecx, DWORD PTR _sqlKey$223148[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?CacheResults@CvTraitEntry@@UAE_NAAVResults@Database@@AAVCvDatabaseUtility@@@Z$2:
-	lea	ecx, DWORD PTR $T263177[ebp]
+	lea	ecx, DWORD PTR $T263654[ebp]
 	jmp	??1?$multimap@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@@std@@QAE@XZ
 __unwindfunclet$?CacheResults@CvTraitEntry@@UAE_NAAVResults@Database@@AAVCvDatabaseUtility@@@Z$3:
-	lea	ecx, DWORD PTR _sqlKey$222763[ebp]
+	lea	ecx, DWORD PTR _sqlKey$223240[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?CacheResults@CvTraitEntry@@UAE_NAAVResults@Database@@AAVCvDatabaseUtility@@@Z$4:
-	lea	ecx, DWORD PTR _sqlKey$222776[ebp]
+	lea	ecx, DWORD PTR _sqlKey$223253[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?CacheResults@CvTraitEntry@@UAE_NAAVResults@Database@@AAVCvDatabaseUtility@@@Z$5:
-	lea	ecx, DWORD PTR _strKey$222789[ebp]
+	lea	ecx, DWORD PTR _strKey$223266[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?CacheResults@CvTraitEntry@@UAE_NAAVResults@Database@@AAVCvDatabaseUtility@@@Z$6:
-	lea	ecx, DWORD PTR _strKey$222802[ebp]
+	lea	ecx, DWORD PTR _strKey$223279[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?CacheResults@CvTraitEntry@@UAE_NAAVResults@Database@@AAVCvDatabaseUtility@@@Z$7:
-	lea	ecx, DWORD PTR _strKey$222815[ebp]
+	lea	ecx, DWORD PTR _strKey$223292[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?CacheResults@CvTraitEntry@@UAE_NAAVResults@Database@@AAVCvDatabaseUtility@@@Z$8:
-	lea	ecx, DWORD PTR _strKey$222830[ebp]
+	lea	ecx, DWORD PTR _strKey$223307[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?CacheResults@CvTraitEntry@@UAE_NAAVResults@Database@@AAVCvDatabaseUtility@@@Z$9:
-	lea	ecx, DWORD PTR _strKey$222845[ebp]
+	lea	ecx, DWORD PTR _strKey$223322[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?CacheResults@CvTraitEntry@@UAE_NAAVResults@Database@@AAVCvDatabaseUtility@@@Z$10:
-	lea	ecx, DWORD PTR _strKey$222860[ebp]
+	lea	ecx, DWORD PTR _strKey$223337[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __ehhandler$?CacheResults@CvTraitEntry@@UAE_NAAVResults@Database@@AAVCvDatabaseUtility@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?CacheResults@CvTraitEntry@@UAE_NAAVResults@Database@@AAVCvDatabaseUtility@@@Z
@@ -44414,9 +44414,9 @@ __ehfuncinfo$?Init@CvPlayerTraits@@QAEXPAVCvTraitXMLEntries@@PAVCvPlayer@@@Z DD 
 xdata$x	ENDS
 ;	COMDAT ?Init@CvPlayerTraits@@QAEXPAVCvTraitXMLEntries@@PAVCvPlayer@@@Z
 _TEXT	SEGMENT
-$T265110 = -32						; size = 20
+$T265587 = -32						; size = 20
 __$EHRec$ = -12						; size = 12
-$T265601 = 8						; size = 4
+$T266079 = 8						; size = 4
 _pTraits$ = 8						; size = 4
 _pPlayer$ = 12						; size = 4
 ?Init@CvPlayerTraits@@QAEXPAVCvTraitXMLEntries@@PAVCvPlayer@@@Z PROC ; CvPlayerTraits::Init, COMDAT
@@ -44537,27 +44537,27 @@ $LN62@Init:
 	mov	DWORD PTR [esi+308], ebx
 	call	?getNumTraitInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumTraitInfos
 	mov	edi, eax
-	lea	edx, DWORD PTR $T265601[esp+40]
+	lea	edx, DWORD PTR $T266079[esp+40]
 	lea	eax, DWORD PTR [edi+31]
 	push	edx
 	shr	eax, 5
 	push	eax
-	lea	ecx, DWORD PTR $T265110[esp+56]
-	mov	DWORD PTR $T265110[esp+52], ebx
-	mov	DWORD PTR $T265601[esp+48], ebx
+	lea	ecx, DWORD PTR $T265587[esp+56]
+	mov	DWORD PTR $T265587[esp+52], ebx
+	mov	DWORD PTR $T266079[esp+48], ebx
 	call	?_Construct_n@?$vector@IV?$allocator@I@std@@@std@@QAEXIABI@Z ; std::vector<unsigned int,std::allocator<unsigned int> >::_Construct_n
 	push	edi
-	lea	ecx, DWORD PTR $T265110[esp+48]
+	lea	ecx, DWORD PTR $T265587[esp+48]
 	mov	DWORD PTR __$EHRec$[esp+56], ebx
 	call	?_Trim@?$vector@_NV?$allocator@_N@std@@@std@@IAEXI@Z ; std::vector<bool,std::allocator<bool> >::_Trim
-	mov	ecx, DWORD PTR $T265110[esp+44]
-	lea	edx, DWORD PTR $T265110[esp+48]
+	mov	ecx, DWORD PTR $T265587[esp+44]
+	lea	edx, DWORD PTR $T265587[esp+48]
 	mov	DWORD PTR [esi+8], ecx
 	push	edx
 	lea	ecx, DWORD PTR [esi+12]
 	mov	DWORD PTR __$EHRec$[esp+56], 1
 	call	??4?$vector@IV?$allocator@I@std@@@std@@QAEAAV01@ABV01@@Z ; std::vector<unsigned int,std::allocator<unsigned int> >::operator=
-	mov	eax, DWORD PTR $T265110[esp+52]
+	mov	eax, DWORD PTR $T265587[esp+52]
 	pop	edi
 	pop	esi
 	cmp	eax, ebx
@@ -44578,10 +44578,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?Init@CvPlayerTraits@@QAEXPAVCvTraitXMLEntries@@PAVCvPlayer@@@Z$1:
-	lea	ecx, DWORD PTR $T265110[ebp+4]
+	lea	ecx, DWORD PTR $T265587[ebp+4]
 	jmp	??1?$vector@IV?$allocator@I@std@@@std@@QAE@XZ ; std::vector<unsigned int,std::allocator<unsigned int> >::~vector<unsigned int,std::allocator<unsigned int> >
 __unwindfunclet$?Init@CvPlayerTraits@@QAEXPAVCvTraitXMLEntries@@PAVCvPlayer@@@Z$0:
-	lea	ecx, DWORD PTR $T265110[ebp]
+	lea	ecx, DWORD PTR $T265587[ebp]
 	jmp	??1?$vector@_NV?$allocator@_N@std@@@std@@QAE@XZ ; std::vector<bool,std::allocator<bool> >::~vector<bool,std::allocator<bool> >
 __ehhandler$?Init@CvPlayerTraits@@QAEXPAVCvTraitXMLEntries@@PAVCvPlayer@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?Init@CvPlayerTraits@@QAEXPAVCvTraitXMLEntries@@PAVCvPlayer@@@Z
@@ -44595,28 +44595,28 @@ EXTRN	??5@YAAAVFDataStream@@AAV0@AAW4UnitTypes@@@Z:PROC ; operator>>
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?Read@CvPlayerTraits@@QAEXAAVFDataStream@@@Z
 _TEXT	SEGMENT
-$T268680 = -36						; size = 1
-$T267739 = -36						; size = 1
+$T269157 = -36						; size = 1
+$T268216 = -36						; size = 1
 _uiVersion$ = -32					; size = 4
 _iNumEntries$ = -28					; size = 4
-$T266864 = -24						; size = 1
-__Tmp$266168 = -24					; size = 8
-_i$223933 = -24						; size = 4
-_i$223928 = -24						; size = 4
+$T267373 = -24						; size = 1
+__Tmp$266648 = -24					; size = 8
+_i$224410 = -24						; size = 4
+_i$224405 = -24						; size = 4
 _choice$ = -16						; size = 8
-__Tmp$268947 = -8					; size = 8
-__Tmp$268006 = -8					; size = 8
-$T268241 = -8						; size = 8
-$T267315 = -8						; size = 8
-_trait$223942 = -8					; size = 8
-__Cat$266867 = 8					; size = 1
-$T269420 = 8						; size = 4
-$T269359 = 8						; size = 4
-_iAreaID$223966 = 8					; size = 4
-_bValue$223937 = 8					; size = 1
-_bValue$223932 = 8					; size = 1
-_iI$223845 = 8						; size = 4
-$T265682 = 8						; size = 4
+__Tmp$269467 = -8					; size = 8
+__Tmp$268464 = -8					; size = 8
+$T268717 = -8						; size = 8
+$T267776 = -8						; size = 8
+_trait$224419 = -8					; size = 8
+__Cat$267376 = 8					; size = 1
+$T269846 = 8						; size = 4
+$T269836 = 8						; size = 4
+_iAreaID$224443 = 8					; size = 4
+_bValue$224414 = 8					; size = 1
+_bValue$224409 = 8					; size = 1
+_iI$224322 = 8						; size = 4
+$T266159 = 8						; size = 4
 _kStream$ = 8						; size = 4
 ?Read@CvPlayerTraits@@QAEXAAVFDataStream@@@Z PROC	; CvPlayerTraits::Read, COMDAT
 ; _this$ = ecx
@@ -44731,22 +44731,22 @@ $LN142@Read:
 
 	mov	eax, DWORD PTR [esi+16]
 	xor	ecx, ecx
-	mov	DWORD PTR __Tmp$266168[esp+56], ecx
+	mov	DWORD PTR __Tmp$266648[esp+56], ecx
 	push	ebp
-	lea	ecx, DWORD PTR __Tmp$266168[esp+56]
-	mov	DWORD PTR __Tmp$266168[esp+56], eax
+	lea	ecx, DWORD PTR __Tmp$266648[esp+56]
+	mov	DWORD PTR __Tmp$266648[esp+56], eax
 	call	??Y?$_Vb_const_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@@@std@@QAEAAV01@H@Z ; std::_Vb_const_iterator<unsigned int,int,std::vector<bool,std::allocator<bool> > >::operator+=
-	mov	ecx, DWORD PTR __Tmp$266168[esp+56]
-	mov	eax, DWORD PTR __Tmp$266168[esp+52]
+	mov	ecx, DWORD PTR __Tmp$266648[esp+56]
+	mov	eax, DWORD PTR __Tmp$266648[esp+52]
 	mov	edx, 1
 	shl	edx, cl
 
 ; 3186 : 			m_vPotentiallyActiveLeaderTraits.push_back( (TraitTypes)iI );
 
 	mov	ecx, ebx
-	mov	DWORD PTR $T265682[esp+48], ebp
+	mov	DWORD PTR $T266159[esp+48], ebp
 	or	DWORD PTR [eax], edx
-	lea	eax, DWORD PTR $T265682[esp+48]
+	lea	eax, DWORD PTR $T266159[esp+48]
 	push	eax
 	call	?push_back@?$vector@W4TraitTypes@@V?$allocator@W4TraitTypes@@@std@@@std@@QAEXABW4TraitTypes@@@Z ; std::vector<enum TraitTypes,std::allocator<enum TraitTypes> >::push_back
 $LN72@Read:
@@ -45775,7 +45775,7 @@ $LN409@Read:
 	cmp	DWORD PTR _iNumEntries$[esp+52], ebx
 	mov	DWORD PTR _choice$[esp+52], -1
 	mov	DWORD PTR _choice$[esp+56], ebx
-	mov	DWORD PTR _iI$223845[esp+48], ebx
+	mov	DWORD PTR _iI$224322[esp+48], ebx
 	jle	$LN41@Read
 $LL1244@Read:
 
@@ -45813,9 +45813,9 @@ $LN452@Read:
 	sar	edx, 3
 	cmp	edx, eax
 	jae	SHORT $LN444@Read
-	mov	ecx, DWORD PTR __Cat$266867[esp+48]
-	mov	BYTE PTR $T266864[esp+52], 0
-	mov	eax, DWORD PTR $T266864[esp+52]
+	mov	ecx, DWORD PTR __Cat$267376[esp+48]
+	mov	BYTE PTR $T267373[esp+52], 0
+	mov	eax, DWORD PTR $T267373[esp+52]
 	push	eax
 	push	ecx
 	push	ebp
@@ -45836,10 +45836,10 @@ $LN444@Read:
 	mov	ecx, ebp
 	call	?_Insert_n@?$vector@UMayaBonusChoice@@V?$allocator@UMayaBonusChoice@@@std@@@std@@IAEXV?$_Vector_const_iterator@UMayaBonusChoice@@V?$allocator@UMayaBonusChoice@@@std@@@2@IABUMayaBonusChoice@@@Z ; std::vector<MayaBonusChoice,std::allocator<MayaBonusChoice> >::_Insert_n
 $LN42@Read:
-	mov	eax, DWORD PTR _iI$223845[esp+48]
+	mov	eax, DWORD PTR _iI$224322[esp+48]
 	inc	eax
 	cmp	eax, DWORD PTR _iNumEntries$[esp+52]
-	mov	DWORD PTR _iI$223845[esp+48], eax
+	mov	DWORD PTR _iI$224322[esp+48], eax
 	jl	$LL1244@Read
 $LN41@Read:
 
@@ -46210,14 +46210,14 @@ $LN628@Read:
 	push	eax
 	mov	eax, DWORD PTR [ecx+8]
 	push	eax
-	lea	edx, DWORD PTR $T267315[esp+68]
+	lea	edx, DWORD PTR $T267776[esp+68]
 	push	edx
 	call	?erase@?$vector@_NV?$allocator@_N@std@@@std@@QAE?AV?$_Vb_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@@@2@V?$_Vb_const_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@@@2@0@Z ; std::vector<bool,std::allocator<bool> >::erase
 
 ; 3536 : 	for (int i = 0; i < iNumEntries; i++)
 
 	cmp	DWORD PTR _iNumEntries$[esp+52], 0
-	mov	DWORD PTR _i$223928[esp+52], 0
+	mov	DWORD PTR _i$224405[esp+52], 0
 	jle	$LN25@Read
 $LL27@Read:
 
@@ -46225,7 +46225,7 @@ $LL27@Read:
 ; 3538 : 		bool bValue;
 ; 3539 : 		kStream >> bValue;
 
-	lea	eax, DWORD PTR _bValue$223932[esp+48]
+	lea	eax, DWORD PTR _bValue$224409[esp+48]
 	push	eax
 	mov	ecx, edi
 	call	?Read@FDataStream@@IAEXAA_N@Z		; FDataStream::Read
@@ -46259,18 +46259,18 @@ $LN1253@Read:
 	and	eax, 31					; 0000001fH
 	mov	edx, eax
 $LN672@Read:
-	mov	al, BYTE PTR _bValue$223932[esp+48]
+	mov	al, BYTE PTR _bValue$224409[esp+48]
 	push	1
 	push	edx
 	push	ecx
 	mov	ecx, ebp
-	mov	BYTE PTR $T267739[esp+64], al
+	mov	BYTE PTR $T268216[esp+64], al
 	call	?_Insert_x@?$vector@_NV?$allocator@_N@std@@@std@@IAEIV?$_Vb_const_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@@@2@I@Z ; std::vector<bool,std::allocator<bool> >::_Insert_x
 	mov	edx, DWORD PTR [ebp+8]
 	lea	ecx, DWORD PTR [eax+1]
 	xor	ebx, ebx
 	mov	ebp, edx
-	mov	DWORD PTR __Tmp$268006[esp+56], ebx
+	mov	DWORD PTR __Tmp$268464[esp+56], ebx
 	test	ecx, ecx
 	je	SHORT $LN1241@Read
 	jge	SHORT $LN718@Read
@@ -46289,7 +46289,7 @@ $LN718@Read:
 	lea	ebp, DWORD PTR [edx+ebx*4]
 $LN1254@Read:
 	and	ecx, 31					; 0000001fH
-	mov	DWORD PTR __Tmp$268006[esp+56], ecx
+	mov	DWORD PTR __Tmp$268464[esp+56], ecx
 $LN1241@Read:
 	xor	ecx, ecx
 	test	eax, eax
@@ -46312,19 +46312,19 @@ $LN1255@Read:
 	and	eax, 31					; 0000001fH
 	mov	ecx, eax
 $LN1243@Read:
-	lea	eax, DWORD PTR $T267739[esp+52]
+	lea	eax, DWORD PTR $T268216[esp+52]
 	push	eax
-	mov	eax, DWORD PTR __Tmp$268006[esp+60]
+	mov	eax, DWORD PTR __Tmp$268464[esp+60]
 	push	eax
 	push	ebp
 	push	ecx
 	push	edx
 	call	??$_Fill@V?$_Vb_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@@@std@@_N@std@@YAXV?$_Vb_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@@@0@0AB_N@Z ; std::_Fill<std::_Vb_iterator<unsigned int,int,std::vector<bool,std::allocator<bool> > >,bool>
-	mov	eax, DWORD PTR _i$223928[esp+72]
+	mov	eax, DWORD PTR _i$224405[esp+72]
 	inc	eax
 	add	esp, 20					; 00000014H
 	cmp	eax, DWORD PTR _iNumEntries$[esp+52]
-	mov	DWORD PTR _i$223928[esp+52], eax
+	mov	DWORD PTR _i$224405[esp+52], eax
 	jl	$LL27@Read
 $LN25@Read:
 
@@ -46373,14 +46373,14 @@ $LN799@Read:
 	push	eax
 	mov	eax, DWORD PTR [ecx+8]
 	push	eax
-	lea	edx, DWORD PTR $T268241[esp+68]
+	lea	edx, DWORD PTR $T268717[esp+68]
 	push	edx
 	call	?erase@?$vector@_NV?$allocator@_N@std@@@std@@QAE?AV?$_Vb_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@@@2@V?$_Vb_const_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@@@2@0@Z ; std::vector<bool,std::allocator<bool> >::erase
 
 ; 3546 : 	for (int i = 0; i < iNumEntries; i++)
 
 	cmp	DWORD PTR _iNumEntries$[esp+52], 0
-	mov	DWORD PTR _i$223933[esp+52], 0
+	mov	DWORD PTR _i$224410[esp+52], 0
 	jle	$LN22@Read
 	npad	2
 $LL24@Read:
@@ -46389,7 +46389,7 @@ $LL24@Read:
 ; 3548 : 		bool bValue;
 ; 3549 : 		kStream >> bValue;
 
-	lea	eax, DWORD PTR _bValue$223937[esp+48]
+	lea	eax, DWORD PTR _bValue$224414[esp+48]
 	push	eax
 	mov	ecx, edi
 	call	?Read@FDataStream@@IAEXAA_N@Z		; FDataStream::Read
@@ -46423,18 +46423,18 @@ $LN1257@Read:
 	and	eax, 31					; 0000001fH
 	mov	edx, eax
 $LN843@Read:
-	mov	al, BYTE PTR _bValue$223937[esp+48]
+	mov	al, BYTE PTR _bValue$224414[esp+48]
 	push	1
 	push	edx
 	push	ecx
 	mov	ecx, ebp
-	mov	BYTE PTR $T268680[esp+64], al
+	mov	BYTE PTR $T269157[esp+64], al
 	call	?_Insert_x@?$vector@_NV?$allocator@_N@std@@@std@@IAEIV?$_Vb_const_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@@@2@I@Z ; std::vector<bool,std::allocator<bool> >::_Insert_x
 	mov	edx, DWORD PTR [ebp+8]
 	lea	ecx, DWORD PTR [eax+1]
 	xor	ebx, ebx
 	mov	ebp, edx
-	mov	DWORD PTR __Tmp$268947[esp+56], ebx
+	mov	DWORD PTR __Tmp$269467[esp+56], ebx
 	test	ecx, ecx
 	je	SHORT $LN1240@Read
 	jge	SHORT $LN889@Read
@@ -46453,7 +46453,7 @@ $LN889@Read:
 	lea	ebp, DWORD PTR [edx+ebx*4]
 $LN1258@Read:
 	and	ecx, 31					; 0000001fH
-	mov	DWORD PTR __Tmp$268947[esp+56], ecx
+	mov	DWORD PTR __Tmp$269467[esp+56], ecx
 $LN1240@Read:
 	xor	ecx, ecx
 	test	eax, eax
@@ -46476,19 +46476,19 @@ $LN1259@Read:
 	and	eax, 31					; 0000001fH
 	mov	ecx, eax
 $LN1242@Read:
-	lea	eax, DWORD PTR $T268680[esp+52]
+	lea	eax, DWORD PTR $T269157[esp+52]
 	push	eax
-	mov	eax, DWORD PTR __Tmp$268947[esp+60]
+	mov	eax, DWORD PTR __Tmp$269467[esp+60]
 	push	eax
 	push	ebp
 	push	ecx
 	push	edx
 	call	??$_Fill@V?$_Vb_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@@@std@@_N@std@@YAXV?$_Vb_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@@@0@0AB_N@Z ; std::_Fill<std::_Vb_iterator<unsigned int,int,std::vector<bool,std::allocator<bool> > >,bool>
-	mov	eax, DWORD PTR _i$223933[esp+72]
+	mov	eax, DWORD PTR _i$224410[esp+72]
 	inc	eax
 	add	esp, 20					; 00000014H
 	cmp	eax, DWORD PTR _iNumEntries$[esp+52]
-	mov	DWORD PTR _i$223933[esp+52], eax
+	mov	DWORD PTR _i$224410[esp+52], eax
 	jl	$LL24@Read
 $LN22@Read:
 
@@ -46517,14 +46517,14 @@ $LL21@Read:
 ; 3557 : 		FreeTraitUnit trait;
 ; 3558 : 		kStream >> trait.m_iFreeUnit;
 
-	lea	edx, DWORD PTR _trait$223942[esp+52]
+	lea	edx, DWORD PTR _trait$224419[esp+52]
 	push	edx
 	push	edi
 	call	??5@YAAAVFDataStream@@AAV0@AAW4UnitTypes@@@Z ; operator>>
 
 ; 3559 : 		kStream >> trait.m_ePrereqTech;
 
-	lea	eax, DWORD PTR _trait$223942[esp+64]
+	lea	eax, DWORD PTR _trait$224419[esp+64]
 	push	eax
 	push	edi
 	call	??5@YAAAVFDataStream@@AAV0@AAW4TechTypes@@@Z ; operator>>
@@ -46545,9 +46545,9 @@ $LN957@Read:
 	lea	eax, DWORD PTR [edx+ecx*8]
 	test	eax, eax
 	je	SHORT $LN960@Read
-	mov	ecx, DWORD PTR _trait$223942[esp+52]
+	mov	ecx, DWORD PTR _trait$224419[esp+52]
 	mov	DWORD PTR [eax], ecx
-	mov	edx, DWORD PTR _trait$223942[esp+56]
+	mov	edx, DWORD PTR _trait$224419[esp+56]
 	mov	DWORD PTR [eax+4], edx
 $LN960@Read:
 	inc	DWORD PTR [ebp+4]
@@ -46637,10 +46637,10 @@ $LN15@Read:
 	mov	eax, ecx
 	sub	eax, ebx
 	sar	eax, 2
-	mov	DWORD PTR $T269359[esp+48], 0
+	mov	DWORD PTR $T269836[esp+48], 0
 	cmp	ebp, eax
 	jbe	SHORT $LN1260@Read
-	lea	ebx, DWORD PTR $T269359[esp+48]
+	lea	ebx, DWORD PTR $T269836[esp+48]
 	push	ebx
 	mov	ebx, ebp
 	sub	ebx, eax
@@ -46652,7 +46652,7 @@ $LN15@Read:
 $LN1260@Read:
 	jae	SHORT $LN1248@Read
 	lea	ebx, DWORD PTR [ebx+ebp*4]
-	mov	DWORD PTR $T269420[esp+48], ebx
+	mov	DWORD PTR $T269846[esp+48], ebx
 	cmp	ebx, ecx
 	je	SHORT $LN1248@Read
 	mov	eax, ecx
@@ -46665,7 +46665,7 @@ $LN1260@Read:
 	push	edx
 	push	ecx
 	push	edx
-	mov	edx, DWORD PTR $T269420[esp+60]
+	mov	edx, DWORD PTR $T269846[esp+60]
 	push	edx
 	call	DWORD PTR __imp__memmove_s
 	add	esp, 16					; 00000010H
@@ -46769,7 +46769,7 @@ $LL1249@Read:
 ; 3598 : 			int iAreaID;
 ; 3599 : 			kStream >> iAreaID;
 
-	lea	eax, DWORD PTR _iAreaID$223966[esp+48]
+	lea	eax, DWORD PTR _iAreaID$224443[esp+48]
 	push	eax
 	mov	ecx, edi
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
@@ -46792,13 +46792,13 @@ $LN1102@Read:
 	sar	ebp, 2
 	cmp	ebp, eax
 	jae	SHORT $LN1094@Read
-	mov	edx, DWORD PTR _iAreaID$223966[esp+48]
+	mov	edx, DWORD PTR _iAreaID$224443[esp+48]
 	mov	DWORD PTR [ecx], edx
 	add	ecx, 4
 	mov	DWORD PTR [esi+8], ecx
 	jmp	SHORT $LN5@Read
 $LN1094@Read:
-	lea	eax, DWORD PTR _iAreaID$223966[esp+48]
+	lea	eax, DWORD PTR _iAreaID$224443[esp+48]
 	push	eax
 	push	1
 	push	ecx

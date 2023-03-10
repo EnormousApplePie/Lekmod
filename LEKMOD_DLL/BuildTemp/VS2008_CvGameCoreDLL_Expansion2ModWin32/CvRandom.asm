@@ -10,17 +10,17 @@ INCLUDELIB MSVCRT
 INCLUDELIB OLDNAMES
 
 CONST	SEGMENT
-$SG220700 DB	'Game Turn, Turn Slice, Range, Value, Seed, Instance, Typ'
+$SG221177 DB	'Game Turn, Turn Slice, Range, Value, Seed, Instance, Typ'
 	DB	'e, Location', 0aH, 00H
 	ORG $+3
-$SG220701 DB	'RandCalls.csv', 00H
+$SG221178 DB	'RandCalls.csv', 00H
 	ORG $+2
-$SG220712 DB	'Unknown', 00H
-$SG220713 DB	'sync', 00H
+$SG221189 DB	'Unknown', 00H
+$SG221190 DB	'sync', 00H
 	ORG $+3
-$SG220714 DB	'async', 00H
+$SG221191 DB	'async', 00H
 	ORG $+2
-$SG220715 DB	'%d, %d, %u, %u, %u, %8x, %s, %s', 0aH, 00H
+$SG221192 DB	'%d, %d, %u, %u, %u, %8x, %s, %s', 0aH, 00H
 CONST	ENDS
 PUBLIC	??_7CvRandom@@6B@				; CvRandom::`vftable'
 PUBLIC	??0CvRandom@@QAE@_N@Z				; CvRandom::CvRandom
@@ -1373,8 +1373,8 @@ EXTRN	_memset:PROC
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?get@CvRandom@@QAEGGPBD@Z
 _TEXT	SEGMENT
-_kGame$220696 = -1028					; size = 4
-_szOut$220703 = -1024					; size = 1024
+_kGame$221173 = -1028					; size = 4
+_szOut$221180 = -1024					; size = 1024
 _usNum$ = 8						; size = 2
 _pszLog$ = 12						; size = 4
 ?get@CvRandom@@QAEGGPBD@Z PROC				; CvRandom::get, COMDAT
@@ -1451,7 +1451,7 @@ $LN4@get:
 ; 195  : 			CvGame& kGame = GC.getGame();
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
-	mov	DWORD PTR _kGame$220696[esp+1044], ecx
+	mov	DWORD PTR _kGame$221173[esp+1044], ecx
 
 ; 196  : 			if(kGame.getTurnSlice() > 0 || ((iRandLogging & RAND_LOGGING_PREGAME_FLAG) != 0))
 
@@ -1470,11 +1470,11 @@ $LN2@get:
 
 	call	?GetInstance@FILogFileMgr@@SAAAV1@XZ	; FILogFileMgr::GetInstance
 	mov	edx, DWORD PTR [eax]
-	push	OFFSET $SG220700
+	push	OFFSET $SG221177
 	push	1
 	mov	ecx, eax
 	mov	eax, DWORD PTR [edx+12]
-	push	OFFSET $SG220701
+	push	OFFSET $SG221178
 	call	eax
 	mov	ebx, eax
 
@@ -1488,10 +1488,10 @@ $LN2@get:
 ; 205  : 					char szOut[1024] = {0};
 
 	push	1023					; 000003ffH
-	lea	ecx, DWORD PTR _szOut$220703[esp+1049]
+	lea	ecx, DWORD PTR _szOut$221180[esp+1049]
 	push	0
 	push	ecx
-	mov	BYTE PTR _szOut$220703[esp+1056], 0
+	mov	BYTE PTR _szOut$221180[esp+1056], 0
 	call	_memset
 
 ; 206  : #ifdef AUI_USE_SFMT_RNG
@@ -1505,17 +1505,17 @@ $LN2@get:
 	add	esp, 12					; 0000000cH
 	test	edx, edx
 	jne	SHORT $LN10@get
-	mov	edx, OFFSET $SG220712
+	mov	edx, OFFSET $SG221189
 $LN10@get:
 	cmp	BYTE PTR [esi+16], 0
-	mov	ecx, OFFSET $SG220713
+	mov	ecx, OFFSET $SG221190
 	jne	SHORT $LN12@get
-	mov	ecx, OFFSET $SG220714
+	mov	ecx, OFFSET $SG221191
 $LN12@get:
 	mov	eax, DWORD PTR [esi+4]
 	push	edx
 	push	ecx
-	mov	ecx, DWORD PTR _kGame$220696[esp+1052]
+	mov	ecx, DWORD PTR _kGame$221173[esp+1052]
 	push	esi
 	push	eax
 	movzx	eax, WORD PTR _usNum$[esp+1056]
@@ -1523,12 +1523,12 @@ $LN12@get:
 	push	edx
 	push	eax
 	call	?getTurnSlice@CvGame@@QBEHXZ		; CvGame::getTurnSlice
-	mov	ecx, DWORD PTR _kGame$220696[esp+1068]
+	mov	ecx, DWORD PTR _kGame$221173[esp+1068]
 	push	eax
 	call	?getGameTurn@CvGame@@QAEHXZ		; CvGame::getGameTurn
 	push	eax
-	lea	eax, DWORD PTR _szOut$220703[esp+1076]
-	push	OFFSET $SG220715
+	lea	eax, DWORD PTR _szOut$221180[esp+1076]
+	push	OFFSET $SG221192
 	push	eax
 	call	??$sprintf_s@$0EAA@@@YAHAAY0EAA@DPBDZZ	; sprintf_s<1024>
 
@@ -1537,7 +1537,7 @@ $LN12@get:
 
 	mov	ecx, DWORD PTR [ebx]
 	mov	eax, DWORD PTR [ecx]
-	lea	edx, DWORD PTR _szOut$220703[esp+1084]
+	lea	edx, DWORD PTR _szOut$221180[esp+1084]
 	push	edx
 	push	ebx
 	call	eax
@@ -1757,7 +1757,7 @@ PUBLIC	?write@CvRandom@@QBEXAAVFDataStream@@@Z		; CvRandom::write
 ;	COMDAT ?write@CvRandom@@QBEXAAVFDataStream@@@Z
 _TEXT	SEGMENT
 _uiVersion$ = -4					; size = 4
-$T222034 = 8						; size = 1
+$T222511 = 8						; size = 1
 _kStream$ = 8						; size = 4
 ?write@CvRandom@@QBEXAAVFDataStream@@@Z PROC		; CvRandom::write, COMDAT
 ; _this$ = ecx
@@ -1816,10 +1816,10 @@ _kStream$ = 8						; size = 4
 ; 452  : #else
 ; 453  : 	kStream << false;
 
-	lea	eax, DWORD PTR $T222034[esp+8]
+	lea	eax, DWORD PTR $T222511[esp+8]
 	push	eax
 	mov	ecx, esi
-	mov	BYTE PTR $T222034[esp+12], 0
+	mov	BYTE PTR $T222511[esp+12], 0
 	call	?Write@FDataStream@@IAEXAB_N@Z		; FDataStream::Write
 	pop	edi
 	pop	esi
@@ -2032,8 +2032,8 @@ __ehfuncinfo$?_Xlen@?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator
 xdata$x	ENDS
 ;	COMDAT ?_Xlen@?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@KAXXZ
 _TEXT	SEGMENT
-$T222113 = -80						; size = 28
-$T222112 = -52						; size = 40
+$T222590 = -80						; size = 28
+$T222589 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ?_Xlen@?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@KAXXZ PROC ; std::vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >::_Xlen, COMDAT
 
@@ -2049,22 +2049,22 @@ __$EHRec$ = -12						; size = 12
 ; 1260 : 		_THROW(length_error, "vector<T> too long");
 
 	push	OFFSET ??_C@_0BD@OLBABOEK@vector?$DMT?$DO?5too?5long?$AA@
-	lea	ecx, DWORD PTR $T222113[esp+84]
+	lea	ecx, DWORD PTR $T222590[esp+84]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T222112[esp+80]
+	lea	ecx, DWORD PTR $T222589[esp+80]
 	mov	DWORD PTR __$EHRec$[esp+88], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T222113[esp+80]
+	lea	eax, DWORD PTR $T222590[esp+80]
 	push	eax
-	lea	ecx, DWORD PTR $T222112[esp+96]
+	lea	ecx, DWORD PTR $T222589[esp+96]
 	mov	BYTE PTR __$EHRec$[esp+92], 1
-	mov	DWORD PTR $T222112[esp+84], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T222589[esp+84], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVlength_error@std@@
-	lea	ecx, DWORD PTR $T222112[esp+84]
+	lea	ecx, DWORD PTR $T222589[esp+84]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+96], 0
-	mov	DWORD PTR $T222112[esp+88], OFFSET ??_7length_error@std@@6B@
+	mov	DWORD PTR $T222589[esp+88], OFFSET ??_7length_error@std@@6B@
 	call	__CxxThrowException@8
 $LN13@Xlen:
 $LN12@Xlen:
@@ -2073,10 +2073,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Xlen@?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@KAXXZ$0:
-	lea	ecx, DWORD PTR $T222113[ebp]
+	lea	ecx, DWORD PTR $T222590[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Xlen@?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@KAXXZ$2:
-	lea	ecx, DWORD PTR $T222112[ebp]
+	lea	ecx, DWORD PTR $T222589[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Xlen@?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@KAXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?_Xlen@?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@KAXXZ
@@ -2194,8 +2194,8 @@ __ehfuncinfo$?_Xlen@?$vector@KV?$allocator@K@std@@@std@@KAXXZ DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?_Xlen@?$vector@KV?$allocator@K@std@@@std@@KAXXZ
 _TEXT	SEGMENT
-$T222165 = -80						; size = 28
-$T222164 = -52						; size = 40
+$T222642 = -80						; size = 28
+$T222641 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ?_Xlen@?$vector@KV?$allocator@K@std@@@std@@KAXXZ PROC	; std::vector<unsigned long,std::allocator<unsigned long> >::_Xlen, COMDAT
 
@@ -2211,22 +2211,22 @@ __$EHRec$ = -12						; size = 12
 ; 1260 : 		_THROW(length_error, "vector<T> too long");
 
 	push	OFFSET ??_C@_0BD@OLBABOEK@vector?$DMT?$DO?5too?5long?$AA@
-	lea	ecx, DWORD PTR $T222165[esp+84]
+	lea	ecx, DWORD PTR $T222642[esp+84]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T222164[esp+80]
+	lea	ecx, DWORD PTR $T222641[esp+80]
 	mov	DWORD PTR __$EHRec$[esp+88], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T222165[esp+80]
+	lea	eax, DWORD PTR $T222642[esp+80]
 	push	eax
-	lea	ecx, DWORD PTR $T222164[esp+96]
+	lea	ecx, DWORD PTR $T222641[esp+96]
 	mov	BYTE PTR __$EHRec$[esp+92], 1
-	mov	DWORD PTR $T222164[esp+84], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T222641[esp+84], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVlength_error@std@@
-	lea	ecx, DWORD PTR $T222164[esp+84]
+	lea	ecx, DWORD PTR $T222641[esp+84]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+96], 0
-	mov	DWORD PTR $T222164[esp+88], OFFSET ??_7length_error@std@@6B@
+	mov	DWORD PTR $T222641[esp+88], OFFSET ??_7length_error@std@@6B@
 	call	__CxxThrowException@8
 $LN13@Xlen@2:
 $LN12@Xlen@2:
@@ -2235,10 +2235,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Xlen@?$vector@KV?$allocator@K@std@@@std@@KAXXZ$0:
-	lea	ecx, DWORD PTR $T222165[ebp]
+	lea	ecx, DWORD PTR $T222642[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Xlen@?$vector@KV?$allocator@K@std@@@std@@KAXXZ$2:
-	lea	ecx, DWORD PTR $T222164[ebp]
+	lea	ecx, DWORD PTR $T222641[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Xlen@?$vector@KV?$allocator@K@std@@@std@@KAXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?_Xlen@?$vector@KV?$allocator@K@std@@@std@@KAXXZ
@@ -2279,8 +2279,8 @@ __TI2?AVbad_alloc@std@@ DD 00H
 xdata$x	ENDS
 ;	COMDAT ??$_Allocate@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@YAPAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@IPAV10@@Z
 _TEXT	SEGMENT
-$T222189 = -12						; size = 12
-$T222193 = 8						; size = 4
+$T222666 = -12						; size = 12
+$T222670 = 8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ??$_Allocate@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@YAPAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@IPAV10@@Z PROC ; std::_Allocate<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >, COMDAT
@@ -2325,15 +2325,15 @@ $LN3@Allocate:
 
 ; 40   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T222193[esp+8]
+	lea	eax, DWORD PTR $T222670[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T222189[esp+16]
-	mov	DWORD PTR $T222193[esp+12], 0
+	lea	ecx, DWORD PTR $T222666[esp+16]
+	mov	DWORD PTR $T222670[esp+12], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T222189[esp+16]
+	lea	ecx, DWORD PTR $T222666[esp+16]
 	push	ecx
-	mov	DWORD PTR $T222189[esp+20], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T222666[esp+20], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN9@Allocate:
 $LN8@Allocate:
@@ -2376,8 +2376,8 @@ PUBLIC	??$_Allocate@K@std@@YAPAKIPAK@Z			; std::_Allocate<unsigned long>
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Allocate@K@std@@YAPAKIPAK@Z
 _TEXT	SEGMENT
-$T222214 = -12						; size = 12
-$T222218 = 8						; size = 4
+$T222691 = -12						; size = 12
+$T222695 = 8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ??$_Allocate@K@std@@YAPAKIPAK@Z PROC			; std::_Allocate<unsigned long>, COMDAT
@@ -2419,15 +2419,15 @@ $LN3@Allocate@2:
 
 ; 40   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T222218[esp+8]
+	lea	eax, DWORD PTR $T222695[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T222214[esp+16]
-	mov	DWORD PTR $T222218[esp+12], 0
+	lea	ecx, DWORD PTR $T222691[esp+16]
+	mov	DWORD PTR $T222695[esp+12], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T222214[esp+16]
+	lea	ecx, DWORD PTR $T222691[esp+16]
 	push	ecx
-	mov	DWORD PTR $T222214[esp+20], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T222691[esp+20], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN9@Allocate@2:
 $LN8@Allocate@2:

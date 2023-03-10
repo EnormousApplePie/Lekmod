@@ -16,17 +16,17 @@ _BSS	SEGMENT
 ?m_aiPlotBarbCampNumUnitsSpawned@CvBarbarians@@0PAFA DD 01H DUP (?) ; CvBarbarians::m_aiPlotBarbCampNumUnitsSpawned
 _BSS	ENDS
 CONST	SEGMENT
-$SG217920 DB	'Barb Spawn Rand call', 00H
+$SG218397 DB	'Barb Spawn Rand call', 00H
 	ORG $+3
-$SG218071 DB	'Random roll to see if Barb Camp spawns this turn', 00H
+$SG218548 DB	'Random roll to see if Barb Camp spawns this turn', 00H
 	ORG $+3
-$SG218079 DB	'Barb Camp Plot-Finding Roll - Coastal Bias 1', 00H
+$SG218556 DB	'Barb Camp Plot-Finding Roll - Coastal Bias 1', 00H
 	ORG $+3
-$SG218093 DB	'Barb Camp Plot-Finding Roll', 00H
-$SG218133 DB	'Barb Camp Plot-Finding Roll - Coastal Bias 2', 00H
+$SG218570 DB	'Barb Camp Plot-Finding Roll', 00H
+$SG218610 DB	'Barb Camp Plot-Finding Roll - Coastal Bias 2', 00H
 	ORG $+3
-$SG218193 DB	'Barb Unit Selection', 00H
-$SG218261 DB	'Barb Unit Location Spawn Roll', 00H
+$SG218670 DB	'Barb Unit Selection', 00H
+$SG218738 DB	'Barb Unit Location Spawn Roll', 00H
 CONST	ENDS
 PUBLIC	?wrapCoordDifference@@YAHHI_N@Z			; wrapCoordDifference
 ; Function compile flags: /Ogtpy
@@ -1818,7 +1818,7 @@ EXTRN	?getJonRandNum@CvGame@@QAEHHPBD@Z:PROC		; CvGame::getJonRandNum
 ;	COMDAT ?DoCampActivationNotice@CvBarbarians@@CAXPAVCvPlot@@@Z
 _TEXT	SEGMENT
 _iNumUnitsSpawned$ = -8					; size = 4
-$T218983 = -4						; size = 4
+$T219460 = -4						; size = 4
 _pPlot$ = 8						; size = 4
 ?DoCampActivationNotice@CvBarbarians@@CAXPAVCvPlot@@@Z PROC ; CvBarbarians::DoCampActivationNotice, COMDAT
 
@@ -1836,7 +1836,7 @@ _pPlot$ = 8						; size = 4
 ; 109  : 	// Default to between 8 and 12 turns per spawn
 ; 110  : 	int iNumTurnsToSpawn = 8 + kGame.getJonRandNum(5, "Barb Spawn Rand call");
 
-	push	OFFSET $SG217920
+	push	OFFSET $SG218397
 	push	5
 	mov	ecx, edi
 	call	?getJonRandNum@CvGame@@QAEHHPBD@Z	; CvGame::getJonRandNum
@@ -1878,10 +1878,10 @@ $LN3@DoCampActi:
 ; 120  : 	iNumTurnsToSpawn -= min(3, iNumUnitsSpawned);	// -1 turns if we've spawned one Unit, -3 turns if we've spawned three
 
 	cmp	eax, 3
-	mov	DWORD PTR $T218983[esp+20], 3
+	mov	DWORD PTR $T219460[esp+20], 3
 	lea	eax, DWORD PTR _iNumUnitsSpawned$[esp+20]
 	jl	SHORT $LN11@DoCampActi
-	lea	eax, DWORD PTR $T218983[esp+20]
+	lea	eax, DWORD PTR $T219460[esp+20]
 $LN11@DoCampActi:
 	sub	esi, DWORD PTR [eax]
 
@@ -2322,11 +2322,11 @@ EXTRN	?getNumUnitClassInfos@CvGlobals@@QAEHXZ:PROC	; CvGlobals::getNumUnitClassI
 ;	COMDAT ?GetRandomBarbarianUnitType@CvBarbarians@@CA?AW4UnitTypes@@PAVCvArea@@W4UnitAITypes@@@Z
 _TEXT	SEGMENT
 _iBestValue$ = -24					; size = 4
-_iUnitClassLoop$218146 = -20				; size = 4
+_iUnitClassLoop$218623 = -20				; size = 4
 _eBestUnit$ = -16					; size = 4
 _kBarbarianPlayer$ = -12				; size = 4
 _kGame$ = -8						; size = 4
-_eLoopUnit$218154 = -4					; size = 4
+_eLoopUnit$218631 = -4					; size = 4
 _pArea$ = 8						; size = 4
 _eUnitAI$ = 12						; size = 4
 ?GetRandomBarbarianUnitType@CvBarbarians@@CA?AW4UnitTypes@@PAVCvArea@@W4UnitAITypes@@@Z PROC ; CvBarbarians::GetRandomBarbarianUnitType, COMDAT
@@ -2362,7 +2362,7 @@ _eUnitAI$ = 12						; size = 4
 	mov	DWORD PTR _eBestUnit$[esp+32], edi
 	mov	DWORD PTR _iBestValue$[esp+32], esi
 	mov	DWORD PTR _kBarbarianPlayer$[esp+32], eax
-	mov	DWORD PTR _iUnitClassLoop$218146[esp+32], esi
+	mov	DWORD PTR _iUnitClassLoop$218623[esp+32], esi
 	call	?getNumUnitClassInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumUnitClassInfos
 	test	eax, eax
 	jle	$LN53@GetRandomB
@@ -2394,7 +2394,7 @@ $LL60@GetRandomB:
 	mov	ecx, eax
 	call	?getCivilizationUnits@CvCivilizationInfo@@QBEHH@Z ; CvCivilizationInfo::getCivilizationUnits
 	mov	ebx, eax
-	mov	DWORD PTR _eLoopUnit$218154[esp+40], ebx
+	mov	DWORD PTR _eLoopUnit$218631[esp+40], ebx
 
 ; 589  : 		if(eLoopUnit != NO_UNIT)
 
@@ -2648,7 +2648,7 @@ $LN4@GetRandomB:
 ; 676  : 				iValue = (1 + kGame.getJonRandNum(1000, "Barb Unit Selection"));
 
 	mov	ecx, DWORD PTR _kGame$[esp+40]
-	push	OFFSET $SG218193
+	push	OFFSET $SG218670
 	push	1000					; 000003e8H
 	call	?getJonRandNum@CvGame@@QAEHHPBD@Z	; CvGame::getJonRandNum
 
@@ -2680,17 +2680,17 @@ $LN2@GetRandomB:
 ; 684  : 				{
 ; 685  : 					eBestUnit = eLoopUnit;
 
-	mov	eax, DWORD PTR _eLoopUnit$218154[esp+40]
+	mov	eax, DWORD PTR _eLoopUnit$218631[esp+40]
 	mov	DWORD PTR _eBestUnit$[esp+40], eax
 
 ; 686  : 					iBestValue = iValue;
 
 	mov	DWORD PTR _iBestValue$[esp+40], esi
 $LN29@GetRandomB:
-	mov	esi, DWORD PTR _iUnitClassLoop$218146[esp+40]
+	mov	esi, DWORD PTR _iUnitClassLoop$218623[esp+40]
 	inc	esi
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	mov	DWORD PTR _iUnitClassLoop$218146[esp+40], esi
+	mov	DWORD PTR _iUnitClassLoop$218623[esp+40], esi
 	call	?getNumUnitClassInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumUnitClassInfos
 	cmp	esi, eax
 	jl	$LL60@GetRandomB
@@ -3758,7 +3758,7 @@ PUBLIC	?IsPlotValidForBarbCamp@CvBarbarians@@CA_NPAVCvPlot@@@Z ; CvBarbarians::I
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredll_expansion2\cvbarbarians.cpp
 ;	COMDAT ?IsPlotValidForBarbCamp@CvBarbarians@@CA_NPAVCvPlot@@@Z
 _TEXT	SEGMENT
-_iDX$217890 = -16					; size = 4
+_iDX$218367 = -16					; size = 4
 _iDY$ = -12						; size = 4
 _iPlotX$ = -8						; size = 4
 _iPlotY$ = -4						; size = 4
@@ -3807,7 +3807,7 @@ _pPlot$ = 8						; size = 4
 
 ; 45   : 	for (int iDX = -(iRange); iDX <= iRange; iDX++)
 
-	mov	DWORD PTR _iDX$217890[esp+32], -4	; fffffffcH
+	mov	DWORD PTR _iDX$218367[esp+32], -4	; fffffffcH
 	npad	5
 $LL65@IsPlotVali:
 
@@ -3816,7 +3816,7 @@ $LL65@IsPlotVali:
 ; 48   : 		{
 ; 49   : 			int iLoopPlotX = iPlotX + iDX;
 
-	mov	ecx, DWORD PTR _iDX$217890[esp+32]
+	mov	ecx, DWORD PTR _iDX$218367[esp+32]
 	mov	DWORD PTR _iDY$[esp+32], -4		; fffffffcH
 	lea	ebp, DWORD PTR [ecx+esi]
 	lea	ebx, DWORD PTR [edi-4]
@@ -3926,10 +3926,10 @@ $LN5@IsPlotVali:
 	cmp	eax, 4
 	mov	DWORD PTR _iDY$[esp+32], eax
 	jle	$LL6@IsPlotVali
-	mov	eax, DWORD PTR _iDX$217890[esp+32]
+	mov	eax, DWORD PTR _iDX$218367[esp+32]
 	inc	eax
 	cmp	eax, 4
-	mov	DWORD PTR _iDX$217890[esp+32], eax
+	mov	DWORD PTR _iDX$218367[esp+32], eax
 	jle	$LL65@IsPlotVali
 	pop	edi
 	pop	esi
@@ -4173,26 +4173,26 @@ __ehfuncinfo$?DoCamps@CvBarbarians@@SAXXZ DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?DoCamps@CvBarbarians@@SAXXZ
 _TEXT	SEGMENT
-_bWantsCoastal$218078 = -98				; size = 1
+_bWantsCoastal$218555 = -98				; size = 1
 _bAlwaysRevealedBarbCamp$ = -97				; size = 1
-_iMaxDistanceToLook$218082 = -96			; size = 4
+_iMaxDistanceToLook$218559 = -96			; size = 4
 _iNumCampsInExistence$ = -96				; size = 4
 _eCamp$ = -92						; size = 4
-_iNumCampsToAdd$218065 = -88				; size = 4
+_iNumCampsToAdd$218542 = -88				; size = 4
 _iNumNotVisiblePlots$ = -88				; size = 4
-_iCampTargetNum$218064 = -84				; size = 4
-_iDY$218085 = -80					; size = 4
-_iDX$218084 = -76					; size = 4
+_iCampTargetNum$218541 = -84				; size = 4
+_iDY$218562 = -80					; size = 4
+_iDX$218561 = -76					; size = 4
 _kGame$ = -72						; size = 4
-_kMap$218054 = -68					; size = 4
-_iNumLandPlots$218077 = -64				; size = 4
-_iNumPlots$218075 = -60					; size = 4
-_iPlayerCapitalMinDistance$218080 = -56			; size = 4
-_iBarbCampMinDistance$218081 = -52			; size = 4
+_kMap$218531 = -68					; size = 4
+_iNumLandPlots$218554 = -64				; size = 4
+_iNumPlots$218552 = -60					; size = 4
+_iPlayerCapitalMinDistance$218557 = -56			; size = 4
+_iBarbCampMinDistance$218558 = -52			; size = 4
 tv783 = -48						; size = 4
-$T220091 = -48						; size = 4
-_iCount$218073 = -44					; size = 4
-_strBuffer$218088 = -40					; size = 28
+$T220568 = -48						; size = 4
+_iCount$218550 = -44					; size = 4
+_strBuffer$218565 = -40					; size = 28
 __$EHRec$ = -12						; size = 12
 ?DoCamps@CvBarbarians@@SAXXZ PROC			; CvBarbarians::DoCamps, COMDAT
 
@@ -4263,7 +4263,7 @@ __$EHRec$ = -12						; size = 12
 	mov	eax, DWORD PTR [ebp+4028]
 	cmp	eax, edi
 	push	esi
-	mov	DWORD PTR _kMap$218054[esp+116], ebp
+	mov	DWORD PTR _kMap$218531[esp+116], ebp
 	jle	SHORT $LN48@DoCamps
 
 ; 319  : 	{
@@ -4352,15 +4352,15 @@ $LN48@DoCamps:
 	mov	eax, DWORD PTR _iNumNotVisiblePlots$[esp+116]
 	cdq
 	idiv	ecx
-	mov	DWORD PTR _iCampTargetNum$218064[esp+116], eax
+	mov	DWORD PTR _iCampTargetNum$218541[esp+116], eax
 	jmp	SHORT $LN56@DoCamps
 $LN55@DoCamps:
-	mov	DWORD PTR _iCampTargetNum$218064[esp+116], edi
+	mov	DWORD PTR _iCampTargetNum$218541[esp+116], edi
 $LN56@DoCamps:
 
 ; 351  : 		int iNumCampsToAdd = iCampTargetNum - iNumCampsInExistence;
 
-	mov	esi, DWORD PTR _iCampTargetNum$218064[esp+116]
+	mov	esi, DWORD PTR _iCampTargetNum$218541[esp+116]
 	sub	esi, DWORD PTR _iNumCampsInExistence$[esp+116]
 
 ; 352  : 
@@ -4397,7 +4397,7 @@ $LN56@DoCamps:
 	mov	eax, edx
 	shr	eax, 31					; 0000001fH
 	add	eax, edx
-	mov	DWORD PTR _iNumCampsToAdd$218065[esp+116], eax
+	mov	DWORD PTR _iNumCampsToAdd$218542[esp+116], eax
 
 ; 362  : 			}
 ; 363  : 			// Every other turn of the game there's a 1 in 2 chance of adding a new camp if we're still below the target
@@ -4410,14 +4410,14 @@ $LN43@DoCamps:
 ; 366  : 				if(kGame.getJonRandNum(/*2*/ GC.getBARBARIAN_CAMP_ODDS_OF_NEW_CAMP_SPAWNING(), "Random roll to see if Barb Camp spawns this turn") > 0)
 
 	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+7036
-	push	OFFSET $SG218071
+	push	OFFSET $SG218548
 	push	eax
 	mov	ecx, edi
 	call	?getJonRandNum@CvGame@@QAEHHPBD@Z	; CvGame::getJonRandNum
 	xor	ecx, ecx
 	test	eax, eax
 	setg	cl
-	mov	DWORD PTR _iNumCampsToAdd$218065[esp+116], ecx
+	mov	DWORD PTR _iNumCampsToAdd$218542[esp+116], ecx
 $LN41@DoCamps:
 
 ; 367  : 				{
@@ -4443,16 +4443,16 @@ $LN41@DoCamps:
 
 	mov	ecx, ebp
 	xor	esi, esi
-	mov	DWORD PTR _iNumPlots$218075[esp+116], edx
+	mov	DWORD PTR _iNumPlots$218552[esp+116], edx
 	call	?getLandPlots@CvMap@@QAEHXZ		; CvMap::getLandPlots
-	mov	DWORD PTR _iNumLandPlots$218077[esp+116], eax
+	mov	DWORD PTR _iNumLandPlots$218554[esp+116], eax
 
 ; 384  : 
 ; 385  : 			// Do a random roll to bias in favor of Coastal land Tiles so that the Barbs will spawn Boats :) - required 1/6 of the time
 ; 386  : 			bool bWantsCoastal = kGame.getJonRandNum(/*6*/ GC.getBARBARIAN_CAMP_COASTAL_SPAWN_ROLL(), "Barb Camp Plot-Finding Roll - Coastal Bias 1") == 0 ? true : false;
 
 	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+7048
-	push	OFFSET $SG218079
+	push	OFFSET $SG218556
 	push	eax
 	mov	ecx, edi
 	call	?getJonRandNum@CvGame@@QAEHHPBD@Z	; CvGame::getJonRandNum
@@ -4464,19 +4464,19 @@ $LN41@DoCamps:
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+7044
 	test	eax, eax
 	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+7040
-	sete	BYTE PTR _bWantsCoastal$218078[esp+116]
+	sete	BYTE PTR _bWantsCoastal$218555[esp+116]
 
 ; 390  : 			int iMaxDistanceToLook = iPlayerCapitalMinDistance > iBarbCampMinDistance ? iPlayerCapitalMinDistance : iBarbCampMinDistance;
 
 	cmp	eax, ecx
-	mov	DWORD PTR _iPlayerCapitalMinDistance$218080[esp+116], eax
-	mov	DWORD PTR _iBarbCampMinDistance$218081[esp+116], ecx
+	mov	DWORD PTR _iPlayerCapitalMinDistance$218557[esp+116], eax
+	mov	DWORD PTR _iBarbCampMinDistance$218558[esp+116], ecx
 	jle	SHORT $LN57@DoCamps
 	mov	ebx, eax
-	mov	DWORD PTR _iMaxDistanceToLook$218082[esp+116], ebx
+	mov	DWORD PTR _iMaxDistanceToLook$218559[esp+116], ebx
 	jmp	SHORT $LN58@DoCamps
 $LN57@DoCamps:
-	mov	DWORD PTR _iMaxDistanceToLook$218082[esp+116], ecx
+	mov	DWORD PTR _iMaxDistanceToLook$218559[esp+116], ecx
 	mov	ebx, ecx
 $LN58@DoCamps:
 
@@ -4488,7 +4488,7 @@ $LN58@DoCamps:
 ; 396  : 
 ; 397  : 			CvString strBuffer;
 
-	lea	ecx, DWORD PTR _strBuffer$218088[esp+116]
+	lea	ecx, DWORD PTR _strBuffer$218565[esp+116]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 	mov	DWORD PTR __$EHRec$[esp+124], 0
 	jmp	SHORT $LN39@DoCamps
@@ -4507,12 +4507,12 @@ $LN39@DoCamps:
 ; 405  : 
 ; 406  : 				iPlotIndex = kGame.getJonRandNum(iNumPlots, "Barb Camp Plot-Finding Roll");
 
-	mov	ecx, DWORD PTR _iNumPlots$218075[esp+116]
-	push	OFFSET $SG218093
+	mov	ecx, DWORD PTR _iNumPlots$218552[esp+116]
+	push	OFFSET $SG218570
 	push	ecx
 	inc	esi
 	mov	ecx, edi
-	mov	DWORD PTR _iCount$218073[esp+124], esi
+	mov	DWORD PTR _iCount$218550[esp+124], esi
 	call	?getJonRandNum@CvGame@@QAEHHPBD@Z	; CvGame::getJonRandNum
 
 ; 407  : 
@@ -4589,7 +4589,7 @@ $LN92@DoCamps:
 	call	?isCoastalLand@CvPlot@@QBE_NH@Z		; CvPlot::isCoastalLand
 	test	al, al
 	jne	SHORT $LN30@DoCamps
-	cmp	BYTE PTR _bWantsCoastal$218078[esp+116], al
+	cmp	BYTE PTR _bWantsCoastal$218555[esp+116], al
 	jne	$LN38@DoCamps
 $LN30@DoCamps:
 
@@ -4601,9 +4601,9 @@ $LN30@DoCamps:
 	call	?area@CvPlot@@QBEPAVCvArea@@XZ		; CvPlot::area
 	mov	ecx, eax
 	call	?getNumTiles@CvArea@@QBEHXZ		; CvArea::getNumTiles
-	imul	eax, DWORD PTR _iCampTargetNum$218064[esp+116]
+	imul	eax, DWORD PTR _iCampTargetNum$218541[esp+116]
 	cdq
-	idiv	DWORD PTR _iNumLandPlots$218077[esp+116]
+	idiv	DWORD PTR _iNumLandPlots$218554[esp+116]
 
 ; 427  : 										// Add 1 just in case the above algorithm rounded something off
 ; 428  : 										iMaxCampsThisArea++;
@@ -4666,7 +4666,7 @@ $LN171@DoCamps:
 	mov	eax, ecx
 	cmp	eax, ebx
 	mov	DWORD PTR tv783[esp+116], ecx
-	mov	DWORD PTR _iDX$218084[esp+116], ecx
+	mov	DWORD PTR _iDX$218561[esp+116], ecx
 	jg	$LN170@DoCamps
 $LL25@DoCamps:
 
@@ -4674,12 +4674,12 @@ $LL25@DoCamps:
 ; 451  : 														for(iDY = -(iMaxDistanceToLook); iDY <= iMaxDistanceToLook; iDY++)
 
 	cmp	ecx, ebx
-	mov	DWORD PTR _iDY$218085[esp+116], ecx
+	mov	DWORD PTR _iDY$218562[esp+116], ecx
 	jg	$LN20@DoCamps
 	jmp	SHORT $LN22@DoCamps
 	npad	2
 $LL172@DoCamps:
-	mov	ecx, DWORD PTR _iDY$218085[esp+116]
+	mov	ecx, DWORD PTR _iDY$218562[esp+116]
 $LN22@DoCamps:
 
 ; 452  : #endif
@@ -4723,7 +4723,7 @@ $LN22@DoCamps:
 ; 464  : 																// Can't be too close to a player
 ; 465  : 																if(iPlotDistance <= iPlayerCapitalMinDistance)
 
-	cmp	ebx, DWORD PTR _iPlayerCapitalMinDistance$218080[esp+116]
+	cmp	ebx, DWORD PTR _iPlayerCapitalMinDistance$218557[esp+116]
 	jg	SHORT $LN15@DoCamps
 
 ; 466  : 																{
@@ -4765,7 +4765,7 @@ $LN15@DoCamps:
 ; 481  : 																// Can't be too close to another Camp
 ; 482  : 																if(iPlotDistance <= iBarbCampMinDistance)
 
-	cmp	ebx, DWORD PTR _iBarbCampMinDistance$218081[esp+116]
+	cmp	ebx, DWORD PTR _iBarbCampMinDistance$218558[esp+116]
 	jg	SHORT $LN21@DoCamps
 
 ; 483  : 																{
@@ -4780,19 +4780,19 @@ $LN21@DoCamps:
 ; 450  : 													{
 ; 451  : 														for(iDY = -(iMaxDistanceToLook); iDY <= iMaxDistanceToLook; iDY++)
 
-	mov	eax, DWORD PTR _iDY$218085[esp+116]
+	mov	eax, DWORD PTR _iDY$218562[esp+116]
 	inc	eax
-	cmp	eax, DWORD PTR _iMaxDistanceToLook$218082[esp+116]
-	mov	DWORD PTR _iDY$218085[esp+116], eax
-	mov	eax, DWORD PTR _iDX$218084[esp+116]
+	cmp	eax, DWORD PTR _iMaxDistanceToLook$218559[esp+116]
+	mov	DWORD PTR _iDY$218562[esp+116], eax
+	mov	eax, DWORD PTR _iDX$218561[esp+116]
 	jle	$LL172@DoCamps
 	mov	ecx, DWORD PTR tv783[esp+116]
-	mov	ebp, DWORD PTR _kMap$218054[esp+116]
-	mov	ebx, DWORD PTR _iMaxDistanceToLook$218082[esp+116]
+	mov	ebp, DWORD PTR _kMap$218531[esp+116]
+	mov	ebx, DWORD PTR _iMaxDistanceToLook$218559[esp+116]
 $LN20@DoCamps:
 	inc	eax
 	cmp	eax, ebx
-	mov	DWORD PTR _iDX$218084[esp+116], eax
+	mov	DWORD PTR _iDX$218561[esp+116], eax
 	jle	$LL25@DoCamps
 $LN170@DoCamps:
 
@@ -4874,13 +4874,13 @@ $LN170@DoCamps:
 	push	0
 	add	ecx, 3983868				; 003cc9fcH
 	push	-1
-	mov	DWORD PTR $T220091[esp+136], ecx
+	mov	DWORD PTR $T220568[esp+136], ecx
 	push	esi
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getUnitInfo@CvGlobals@@QAEPAVCvUnitEntry@@W4UnitTypes@@@Z ; CvGlobals::getUnitInfo
 	mov	ecx, eax
 	call	?GetDefaultUnitAIType@CvUnitEntry@@QBEHXZ ; CvUnitEntry::GetDefaultUnitAIType
-	mov	ecx, DWORD PTR $T220091[esp+136]
+	mov	ecx, DWORD PTR $T220568[esp+136]
 	push	eax
 	push	ebx
 	push	ebp
@@ -4981,16 +4981,16 @@ $LN7@DoCamps:
 ; 547  : 													bWantsCoastal = kGame.getJonRandNum(/*5*/ GC.getBARBARIAN_CAMP_COASTAL_SPAWN_ROLL(), "Barb Camp Plot-Finding Roll - Coastal Bias 2") == 0 ? true : false;
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+7048
-	dec	DWORD PTR _iNumCampsToAdd$218065[esp+116]
-	push	OFFSET $SG218133
+	dec	DWORD PTR _iNumCampsToAdd$218542[esp+116]
+	push	OFFSET $SG218610
 	push	ecx
 	mov	ecx, DWORD PTR _kGame$[esp+124]
 	call	?getJonRandNum@CvGame@@QAEHHPBD@Z	; CvGame::getJonRandNum
 	test	eax, eax
-	sete	BYTE PTR _bWantsCoastal$218078[esp+116]
+	sete	BYTE PTR _bWantsCoastal$218555[esp+116]
 $LN173@DoCamps:
-	mov	ebx, DWORD PTR _iMaxDistanceToLook$218082[esp+116]
-	mov	ebp, DWORD PTR _kMap$218054[esp+116]
+	mov	ebx, DWORD PTR _iMaxDistanceToLook$218559[esp+116]
+	mov	ebp, DWORD PTR _kMap$218531[esp+116]
 $LN38@DoCamps:
 
 ; 548  : 												}
@@ -5005,16 +5005,16 @@ $LN38@DoCamps:
 ; 557  : 			}
 ; 558  : 			while(iNumCampsToAdd > 0 && iCount < iNumLandPlots);
 
-	cmp	DWORD PTR _iNumCampsToAdd$218065[esp+116], 0
+	cmp	DWORD PTR _iNumCampsToAdd$218542[esp+116], 0
 	jle	SHORT $LN2@DoCamps
-	mov	esi, DWORD PTR _iCount$218073[esp+116]
-	cmp	esi, DWORD PTR _iNumLandPlots$218077[esp+116]
+	mov	esi, DWORD PTR _iCount$218550[esp+116]
+	cmp	esi, DWORD PTR _iNumLandPlots$218554[esp+116]
 	jl	$LL177@DoCamps
 $LN2@DoCamps:
 
 ; 559  : 		}
 
-	lea	ecx, DWORD PTR _strBuffer$218088[esp+116]
+	lea	ecx, DWORD PTR _strBuffer$218565[esp+116]
 	mov	DWORD PTR __$EHRec$[esp+124], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -5047,7 +5047,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?DoCamps@CvBarbarians@@SAXXZ$0:
-	lea	ecx, DWORD PTR _strBuffer$218088[ebp]
+	lea	ecx, DWORD PTR _strBuffer$218565[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?DoCamps@CvBarbarians@@SAXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?DoCamps@CvBarbarians@@SAXXZ
@@ -5274,7 +5274,7 @@ EXTRN	?GetNumCombatUnits@CvPlot@@QAEHXZ:PROC		; CvPlot::GetNumCombatUnits
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredll_expansion2\cvbarbarians.cpp
 ;	COMDAT ?DoSpawnBarbarianUnit@CvBarbarians@@SAXPAVCvPlot@@_N1@Z
 _TEXT	SEGMENT
-_bCanSpawnBoats$218246 = -29				; size = 1
+_bCanSpawnBoats$218723 = -29				; size = 1
 tv627 = -28						; size = 4
 _iRange$ = -24						; size = 4
 tv642 = -20						; size = 4
@@ -5603,7 +5603,7 @@ $LN16@DoSpawnBar:
 	mov	esi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+7056
 	call	?getElapsedGameTurns@CvGame@@QBEHXZ	; CvGame::getElapsedGameTurns
 	cmp	eax, esi
-	setg	BYTE PTR _bCanSpawnBoats$218246[esp+48]
+	setg	BYTE PTR _bCanSpawnBoats$218723[esp+48]
 
 ; 818  : 
 ; 819  : 		// Look to see if adjacent Tiles are valid locations to spawn a Unit
@@ -5685,7 +5685,7 @@ $LN126@DoSpawnBar:
 
 	cmp	BYTE PTR [esi+5], bl
 	jne	SHORT $LN6@DoSpawnBar
-	cmp	BYTE PTR _bCanSpawnBoats$218246[esp+48], al
+	cmp	BYTE PTR _bCanSpawnBoats$218723[esp+48], al
 	je	SHORT $LN14@DoSpawnBar
 $LN6@DoSpawnBar:
 
@@ -5720,7 +5720,7 @@ $LN14@DoSpawnBar:
 ; 850  : 			int iIndex = kGame.getJonRandNum(m_aeValidBarbSpawnDirections.size(), "Barb Unit Location Spawn Roll");
 
 	mov	ecx, DWORD PTR _kGame$[esp+48]
-	push	OFFSET $SG218261
+	push	OFFSET $SG218738
 	push	eax
 	call	?getJonRandNum@CvGame@@QAEHHPBD@Z	; CvGame::getJonRandNum
 

@@ -12,8 +12,8 @@ INCLUDELIB OLDNAMES
 PUBLIC	?NO_QUEST_DATA@CvMinorCivQuest@@2HB		; CvMinorCivQuest::NO_QUEST_DATA
 PUBLIC	?NO_TURN@CvMinorCivQuest@@2HB			; CvMinorCivQuest::NO_TURN
 CONST	SEGMENT
-$SG220786 DB	00H
-$SG220787 DB	00H
+$SG221263 DB	00H
+$SG221264 DB	00H
 CONST	ENDS
 _DATA	SEGMENT
 _V1_IndexToHash DD 0be9725c6H
@@ -1095,8 +1095,8 @@ __ehfuncinfo$?_Xlen@?$vector@UNotification@CvNotifications@@V?$allocator@UNotifi
 xdata$x	ENDS
 ;	COMDAT ?_Xlen@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@KAXXZ
 _TEXT	SEGMENT
-$T223269 = -80						; size = 28
-$T223268 = -52						; size = 40
+$T223753 = -80						; size = 28
+$T223752 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ?_Xlen@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@KAXXZ PROC ; std::vector<CvNotifications::Notification,std::allocator<CvNotifications::Notification> >::_Xlen, COMDAT
 
@@ -1112,22 +1112,22 @@ __$EHRec$ = -12						; size = 12
 ; 1260 : 		_THROW(length_error, "vector<T> too long");
 
 	push	OFFSET ??_C@_0BD@OLBABOEK@vector?$DMT?$DO?5too?5long?$AA@
-	lea	ecx, DWORD PTR $T223269[esp+84]
+	lea	ecx, DWORD PTR $T223753[esp+84]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T223268[esp+80]
+	lea	ecx, DWORD PTR $T223752[esp+80]
 	mov	DWORD PTR __$EHRec$[esp+88], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T223269[esp+80]
+	lea	eax, DWORD PTR $T223753[esp+80]
 	push	eax
-	lea	ecx, DWORD PTR $T223268[esp+96]
+	lea	ecx, DWORD PTR $T223752[esp+96]
 	mov	BYTE PTR __$EHRec$[esp+92], 1
-	mov	DWORD PTR $T223268[esp+84], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T223752[esp+84], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVlength_error@std@@
-	lea	ecx, DWORD PTR $T223268[esp+84]
+	lea	ecx, DWORD PTR $T223752[esp+84]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+96], 0
-	mov	DWORD PTR $T223268[esp+88], OFFSET ??_7length_error@std@@6B@
+	mov	DWORD PTR $T223752[esp+88], OFFSET ??_7length_error@std@@6B@
 	call	__CxxThrowException@8
 $LN13@Xlen:
 $LN12@Xlen:
@@ -1136,10 +1136,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Xlen@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@KAXXZ$0:
-	lea	ecx, DWORD PTR $T223269[ebp]
+	lea	ecx, DWORD PTR $T223753[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Xlen@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@KAXXZ$2:
-	lea	ecx, DWORD PTR $T223268[ebp]
+	lea	ecx, DWORD PTR $T223752[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Xlen@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@KAXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?_Xlen@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@KAXXZ
@@ -1413,8 +1413,8 @@ __TI2?AVbad_alloc@std@@ DD 00H
 xdata$x	ENDS
 ;	COMDAT ??$_Allocate@UNotification@CvNotifications@@@std@@YAPAUNotification@CvNotifications@@IPAU12@@Z
 _TEXT	SEGMENT
-$T223328 = -12						; size = 12
-$T223332 = 8						; size = 4
+$T223812 = -12						; size = 12
+$T223816 = 8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ??$_Allocate@UNotification@CvNotifications@@@std@@YAPAUNotification@CvNotifications@@IPAU12@@Z PROC ; std::_Allocate<CvNotifications::Notification>, COMDAT
@@ -1456,15 +1456,15 @@ $LN3@Allocate:
 
 ; 40   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T223332[esp+8]
+	lea	eax, DWORD PTR $T223816[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T223328[esp+16]
-	mov	DWORD PTR $T223332[esp+12], 0
+	lea	ecx, DWORD PTR $T223812[esp+16]
+	mov	DWORD PTR $T223816[esp+12], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T223328[esp+16]
+	lea	ecx, DWORD PTR $T223812[esp+16]
 	push	ecx
-	mov	DWORD PTR $T223328[esp+20], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T223812[esp+20], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN9@Allocate:
 $LN8@Allocate:
@@ -2795,14 +2795,14 @@ _TEXT	SEGMENT
 
 ; 217  : 	m_strMessage = "";
 
-	push	OFFSET $SG220786
+	push	OFFSET $SG221263
 	lea	ecx, DWORD PTR [esi+8]
 	mov	DWORD PTR [esi], edi
 	call	DWORD PTR __imp_?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBD@Z
 
 ; 218  : 	m_strSummary = "";
 
-	push	OFFSET $SG220787
+	push	OFFSET $SG221264
 	lea	ecx, DWORD PTR [esi+36]
 	call	DWORD PTR __imp_?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBD@Z
 
@@ -3366,14 +3366,14 @@ $LL11@MayUserDis:
 	mov	eax, edi
 	imul	eax, 92					; 0000005cH
 	cmp	DWORD PTR [eax+ebx+84], ebp
-	je	SHORT $LN29@MayUserDis
+	je	SHORT $LN30@MayUserDis
 
-; 582  : 				break;
-; 583  : 			}
-; 584  : 		}
-; 585  : 
-; 586  : 		iIndex++;
-; 587  : 		if(iIndex >= (int)m_aNotifications.size())
+; 587  : 				break;
+; 588  : 			}
+; 589  : 		}
+; 590  : 
+; 591  : 		iIndex++;
+; 592  : 		if(iIndex >= (int)m_aNotifications.size())
 
 	mov	esi, DWORD PTR [ecx+12]
 	sub	esi, ebx
@@ -3388,8 +3388,8 @@ $LL11@MayUserDis:
 	cmp	edi, eax
 	jl	SHORT $LN1@MayUserDis
 
-; 588  : 		{
-; 589  : 			iIndex = 0;
+; 593  : 		{
+; 594  : 			iIndex = 0;
 
 	xor	edi, edi
 $LN1@MayUserDis:
@@ -3403,27 +3403,27 @@ $LN10@MayUserDis:
 	pop	esi
 	pop	ebp
 
-; 590  : 		}
-; 591  : 	}
-; 592  : 
-; 593  : 	return false;
+; 595  : 		}
+; 596  : 	}
+; 597  : 
+; 598  : 	return false;
 
 	xor	al, al
 	pop	ebx
 
-; 594  : }
+; 599  : }
 
 	ret	4
-$LN29@MayUserDis:
+$LN30@MayUserDis:
 
 ; 545  : 		{
 ; 546  : 			switch(m_aNotifications[iIndex].m_eNotificationType)
 
 	imul	edi, 92					; 0000005cH
 	mov	edi, DWORD PTR [edi+ebx]
-	cmp	edi, 623640104				; 252bfe28H
+	cmp	edi, 507779013				; 1e4417c5H
 	jg	SHORT $LN14@MayUserDis
-	je	SHORT $LN5@MayUserDis
+	je	SHORT $LN10@MayUserDis
 	cmp	edi, -372818113				; e9c73f3fH
 	jg	SHORT $LN15@MayUserDis
 	je	SHORT $LN10@MayUserDis
@@ -3433,21 +3433,34 @@ $LN29@MayUserDis:
 	cmp	edi, -2068323322			; 84b7e406H
 	je	SHORT $LN10@MayUserDis
 	cmp	edi, -1774532806			; 963ac73aH
-	jmp	$LN30@MayUserDis
+	jmp	$LN31@MayUserDis
 $LN16@MayUserDis:
 	cmp	edi, -1421067341			; ab4c3bb3H
-	jmp	$LN30@MayUserDis
+	je	SHORT $LN10@MayUserDis
+	cmp	edi, -832529557				; ce609b6bH
+	jmp	$LN31@MayUserDis
 $LN15@MayUserDis:
-	cmp	edi, 294822899				; 1192a3f3H
+	cmp	edi, 88900711				; 054c8467H
 	jg	SHORT $LN17@MayUserDis
 	je	SHORT $LN10@MayUserDis
-	cmp	edi, 84632199				; 050b6287H
+	cmp	edi, -300693023				; ee13c9e1H
 	je	SHORT $LN10@MayUserDis
-	cmp	edi, 88900711				; 054c8467H
-	jmp	SHORT $LN30@MayUserDis
+	cmp	edi, 84632199				; 050b6287H
+	jmp	$LN31@MayUserDis
 $LN17@MayUserDis:
-	cmp	edi, 507779013				; 1e4417c5H
-	jmp	SHORT $LN30@MayUserDis
+	cmp	edi, 294822899				; 1192a3f3H
+	jmp	$LN31@MayUserDis
+$LN14@MayUserDis:
+	cmp	edi, 1523558135				; 5acfa6f7H
+	jg	SHORT $LN18@MayUserDis
+	je	$LN10@MayUserDis
+	cmp	edi, 1218150582				; 489b80b6H
+	jg	SHORT $LN19@MayUserDis
+	je	$LN10@MayUserDis
+	cmp	edi, 623640104				; 252bfe28H
+	je	SHORT $LN5@MayUserDis
+	cmp	edi, 755914060				; 2d0e554cH
+	jmp	SHORT $LN31@MayUserDis
 $LN5@MayUserDis:
 
 ; 547  : 			{
@@ -3468,11 +3481,16 @@ $LN5@MayUserDis:
 ; 562  : 			case NOTIFICATION_CHOOSE_ARCHAEOLOGY:
 ; 563  : 			case NOTIFICATION_LEAGUE_CALL_FOR_VOTES:
 ; 564  : 			case NOTIFICATION_CHOOSE_IDEOLOGY:
-; 565  : 				return false;
-; 566  : 				break;
-; 567  : 
-; 568  : 			case NOTIFICATION_POLICY:
-; 569  : 				if(GC.getGame().isOption(GAMEOPTION_POLICY_SAVING))
+; 565  : #ifdef MP_PLAYERS_VOTING_SYSTEM
+; 566  : 			case NOTIFICATION_MP_IRR_PROPOSAL:
+; 567  : 			case NOTIFICATION_MP_CC_PROPOSAL:
+; 568  : 			case NOTIFICATION_MP_SCRAP_PROPOSAL:
+; 569  : #endif
+; 570  : 				return false;
+; 571  : 				break;
+; 572  : 
+; 573  : 			case NOTIFICATION_POLICY:
+; 574  : 				if(GC.getGame().isOption(GAMEOPTION_POLICY_SAVING))
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	12					; 0000000cH
@@ -3484,56 +3502,51 @@ $LN5@MayUserDis:
 	setne	al
 	pop	ebx
 
-; 594  : }
+; 599  : }
 
 	ret	4
-$LN14@MayUserDis:
+$LN19@MayUserDis:
 
 ; 545  : 		{
 ; 546  : 			switch(m_aNotifications[iIndex].m_eNotificationType)
 
-	cmp	edi, 1523558135				; 5acfa6f7H
-	jg	SHORT $LN18@MayUserDis
-	je	$LN10@MayUserDis
 	cmp	edi, 1279997337				; 4c4b3599H
-	jg	SHORT $LN19@MayUserDis
 	je	$LN10@MayUserDis
-	cmp	edi, 755914060				; 2d0e554cH
-	je	$LN10@MayUserDis
-	cmp	edi, 1218150582				; 489b80b6H
-	jmp	SHORT $LN30@MayUserDis
-$LN19@MayUserDis:
 	cmp	edi, 1376002242				; 520420c2H
-	jmp	SHORT $LN30@MayUserDis
+	jmp	SHORT $LN31@MayUserDis
 $LN18@MayUserDis:
-	cmp	edi, 1989681641				; 769821e9H
-	je	$LN10@MayUserDis
 	cmp	edi, 1996573794				; 77014c62H
+	jg	SHORT $LN20@MayUserDis
 	je	$LN10@MayUserDis
+	cmp	edi, 1628401511				; 610f6f67H
+	je	$LN10@MayUserDis
+	cmp	edi, 1989681641				; 769821e9H
+	jmp	SHORT $LN31@MayUserDis
+$LN20@MayUserDis:
 	cmp	edi, 2128612861				; 7ee00dfdH
-$LN30@MayUserDis:
+$LN31@MayUserDis:
 	je	$LN10@MayUserDis
 	pop	edi
 	pop	esi
 	pop	ebp
 
-; 570  : 				{
-; 571  : 					return true;
-; 572  : 					break;
-; 573  : 				}
-; 574  : 				else
 ; 575  : 				{
-; 576  : 					return false;
+; 576  : 					return true;
 ; 577  : 					break;
 ; 578  : 				}
-; 579  : 
-; 580  : 			default:
-; 581  : 				return true;
+; 579  : 				else
+; 580  : 				{
+; 581  : 					return false;
+; 582  : 					break;
+; 583  : 				}
+; 584  : 
+; 585  : 			default:
+; 586  : 				return true;
 
 	mov	al, 1
 	pop	ebx
 
-; 594  : }
+; 599  : }
 
 	ret	4
 ?MayUserDismiss@CvNotifications@@QAE_NH@Z ENDP		; CvNotifications::MayUserDismiss
@@ -3545,15 +3558,15 @@ _TEXT	SEGMENT
 ?Rebroadcast@CvNotifications@@QAEXXZ PROC		; CvNotifications::Rebroadcast, COMDAT
 ; _this$ = ecx
 
-; 598  : {
+; 603  : {
 
 	push	edi
 
-; 599  : 	int iIndex = m_iNotificationsBeginIndex;
+; 604  : 	int iIndex = m_iNotificationsBeginIndex;
 
 	mov	edi, DWORD PTR [ecx+20]
 
-; 600  : 	while(iIndex != m_iNotificationsEndIndex)
+; 605  : 	while(iIndex != m_iNotificationsEndIndex)
 
 	cmp	edi, DWORD PTR [ecx+24]
 	je	SHORT $LN3@Rebroadcas
@@ -3561,8 +3574,8 @@ _TEXT	SEGMENT
 	npad	6
 $LL4@Rebroadcas:
 
-; 601  : 	{
-; 602  : 		if(!m_aNotifications[iIndex].m_bDismissed)
+; 606  : 	{
+; 607  : 		if(!m_aNotifications[iIndex].m_bDismissed)
 
 	mov	edx, DWORD PTR [ecx+8]
 	mov	eax, edi
@@ -3571,16 +3584,16 @@ $LL4@Rebroadcas:
 	cmp	BYTE PTR [eax+89], 0
 	jne	SHORT $LN2@Rebroadcas
 
-; 603  : 		{
-; 604  : 			m_aNotifications[iIndex].m_bNeedsBroadcast = true;
+; 608  : 		{
+; 609  : 			m_aNotifications[iIndex].m_bNeedsBroadcast = true;
 
 	mov	BYTE PTR [eax+88], 1
 $LN2@Rebroadcas:
 
-; 605  : 		}
-; 606  : 
-; 607  : 		iIndex++;
-; 608  : 		if(iIndex >= (int)m_aNotifications.size())
+; 610  : 		}
+; 611  : 
+; 612  : 		iIndex++;
+; 613  : 		if(iIndex >= (int)m_aNotifications.size())
 
 	mov	esi, DWORD PTR [ecx+12]
 	sub	esi, DWORD PTR [ecx+8]
@@ -3595,13 +3608,13 @@ $LN2@Rebroadcas:
 	cmp	edi, eax
 	jl	SHORT $LN1@Rebroadcas
 
-; 609  : 		{
-; 610  : 			iIndex = 0;
+; 614  : 		{
+; 615  : 			iIndex = 0;
 
 	xor	edi, edi
 $LN1@Rebroadcas:
 
-; 600  : 	while(iIndex != m_iNotificationsEndIndex)
+; 605  : 	while(iIndex != m_iNotificationsEndIndex)
 
 	cmp	edi, DWORD PTR [ecx+24]
 	jne	SHORT $LL4@Rebroadcas
@@ -3609,9 +3622,9 @@ $LN1@Rebroadcas:
 $LN3@Rebroadcas:
 	pop	edi
 
-; 611  : 		}
-; 612  : 	}
-; 613  : }
+; 616  : 		}
+; 617  : 	}
+; 618  : }
 
 	ret	0
 ?Rebroadcast@CvNotifications@@QAEXXZ ENDP		; CvNotifications::Rebroadcast
@@ -3626,16 +3639,16 @@ _iNotificationIndex$ = 12				; size = 4
 ?GetEndTurnBlockedType@CvNotifications@@QAE_NAAW4EndTurnBlockingTypes@@AAH@Z PROC ; CvNotifications::GetEndTurnBlockedType, COMDAT
 ; _this$ = ecx
 
-; 616  : {
+; 621  : {
 
 	push	ebx
 
-; 617  : 	eBlockingType = NO_ENDTURN_BLOCKING_TYPE;
+; 622  : 	eBlockingType = NO_ENDTURN_BLOCKING_TYPE;
 
 	mov	ebx, DWORD PTR _eBlockingType$[esp]
 	push	ebp
 
-; 618  : 	iNotificationIndex = -1;
+; 623  : 	iNotificationIndex = -1;
 
 	mov	ebp, DWORD PTR _iNotificationIndex$[esp+4]
 	push	esi
@@ -3644,19 +3657,19 @@ _iNotificationIndex$ = 12				; size = 4
 	mov	edi, ecx
 	mov	DWORD PTR [ebp], -1
 
-; 619  : 
-; 620  : 	int iIndex = m_iNotificationsBeginIndex;
+; 624  : 
+; 625  : 	int iIndex = m_iNotificationsBeginIndex;
 
 	mov	esi, DWORD PTR [edi+20]
 
-; 621  : 	while(iIndex != m_iNotificationsEndIndex)
+; 626  : 	while(iIndex != m_iNotificationsEndIndex)
 
 	cmp	esi, DWORD PTR [edi+24]
 	je	$LN26@GetEndTurn
 $LL27@GetEndTurn:
 
-; 622  : 	{
-; 623  : 		if(!m_aNotifications[iIndex].m_bDismissed)
+; 627  : 	{
+; 628  : 		if(!m_aNotifications[iIndex].m_bDismissed)
 
 	mov	ecx, DWORD PTR [edi+8]
 	mov	eax, esi
@@ -3665,8 +3678,8 @@ $LL27@GetEndTurn:
 	cmp	BYTE PTR [eax+89], 0
 	jne	$LN2@GetEndTurn
 
-; 624  : 		{
-; 625  : 			switch(m_aNotifications[iIndex].m_eNotificationType)
+; 629  : 		{
+; 630  : 			switch(m_aNotifications[iIndex].m_eNotificationType)
 
 	mov	eax, DWORD PTR [eax]
 	cmp	eax, 507779013				; 1e4417c5H
@@ -3683,11 +3696,11 @@ $LL27@GetEndTurn:
 	cmp	eax, -1774532806			; 963ac73aH
 	jne	$LN2@GetEndTurn
 
-; 697  : 				break;
-; 698  : 
-; 699  : 			case NOTIFICATION_SPY_STOLE_TECH:
-; 700  : 				eBlockingType = ENDTURN_BLOCKING_STEAL_TECH;
-; 701  : 				iNotificationIndex = m_aNotifications[iIndex].m_iLookupIndex;
+; 702  : 				break;
+; 703  : 
+; 704  : 			case NOTIFICATION_SPY_STOLE_TECH:
+; 705  : 				eBlockingType = ENDTURN_BLOCKING_STEAL_TECH;
+; 706  : 				iNotificationIndex = m_aNotifications[iIndex].m_iLookupIndex;
 
 	imul	esi, 92					; 0000005cH
 	mov	DWORD PTR [ebx], 16			; 00000010H
@@ -3698,27 +3711,27 @@ $LL27@GetEndTurn:
 	mov	DWORD PTR [ebp], eax
 	pop	ebp
 
-; 702  : 				return true;
+; 707  : 				return true;
 
 	mov	al, 1
 	pop	ebx
 
-; 761  : }
+; 766  : }
 
 	ret	8
 $LN34@GetEndTurn:
 
-; 624  : 		{
-; 625  : 			switch(m_aNotifications[iIndex].m_eNotificationType)
+; 629  : 		{
+; 630  : 			switch(m_aNotifications[iIndex].m_eNotificationType)
 
 	cmp	eax, -1421067341			; ab4c3bb3H
 	jne	$LN2@GetEndTurn
 
-; 673  : 				break;
-; 674  : 
-; 675  : 			case NOTIFICATION_FREE_GREAT_PERSON:
-; 676  : 				eBlockingType = ENDTURN_BLOCKING_FREE_ITEMS;
-; 677  : 				iNotificationIndex = m_aNotifications[iIndex].m_iLookupIndex;
+; 678  : 				break;
+; 679  : 
+; 680  : 			case NOTIFICATION_FREE_GREAT_PERSON:
+; 681  : 				eBlockingType = ENDTURN_BLOCKING_FREE_ITEMS;
+; 682  : 				iNotificationIndex = m_aNotifications[iIndex].m_iLookupIndex;
 
 	imul	esi, 92					; 0000005cH
 	mov	DWORD PTR [ebx], 12			; 0000000cH
@@ -3729,20 +3742,20 @@ $LN34@GetEndTurn:
 	mov	DWORD PTR [ebp], eax
 	pop	ebp
 
-; 678  : 				return true;
+; 683  : 				return true;
 
 	mov	al, 1
 	pop	ebx
 
-; 761  : }
+; 766  : }
 
 	ret	8
 $LN22@GetEndTurn:
 
-; 626  : 			{
-; 627  : 			case NOTIFICATION_CITY_RANGE_ATTACK:
-; 628  : 			{
-; 629  : 				bool automaticallyEndTurns = GC.getGame().isGameMultiPlayer() ? GC.GetEngineUserInterface()->IsMPAutoEndTurnEnabled() : GC.GetEngineUserInterface()->IsSPAutoEndTurnEnabled();
+; 631  : 			{
+; 632  : 			case NOTIFICATION_CITY_RANGE_ATTACK:
+; 633  : 			{
+; 634  : 				bool automaticallyEndTurns = GC.getGame().isGameMultiPlayer() ? GC.GetEngineUserInterface()->IsMPAutoEndTurnEnabled() : GC.GetEngineUserInterface()->IsSPAutoEndTurnEnabled();
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?isGameMultiPlayer@CvGame@@QBE_NXZ	; CvGame::isGameMultiPlayer
@@ -3757,14 +3770,14 @@ $LN30@GetEndTurn:
 $LN91@GetEndTurn:
 	call	eax
 
-; 630  : 				if(automaticallyEndTurns)
+; 635  : 				if(automaticallyEndTurns)
 
 	test	al, al
 	je	$LN2@GetEndTurn
 
-; 631  : 				{//City range attacks only block turns if the player is using auto end turn.
-; 632  : 					eBlockingType = ENDTURN_BLOCKING_CITY_RANGE_ATTACK;
-; 633  : 					iNotificationIndex = m_aNotifications[iIndex].m_iLookupIndex;
+; 636  : 				{//City range attacks only block turns if the player is using auto end turn.
+; 637  : 					eBlockingType = ENDTURN_BLOCKING_CITY_RANGE_ATTACK;
+; 638  : 					iNotificationIndex = m_aNotifications[iIndex].m_iLookupIndex;
 
 	imul	esi, 92					; 0000005cH
 	mov	DWORD PTR [ebx], 10			; 0000000aH
@@ -3775,18 +3788,18 @@ $LN91@GetEndTurn:
 	mov	DWORD PTR [ebp], edx
 	pop	ebp
 
-; 634  : 					return true;
+; 639  : 					return true;
 
 	mov	al, 1
 	pop	ebx
 
-; 761  : }
+; 766  : }
 
 	ret	8
 $LN33@GetEndTurn:
 
-; 624  : 		{
-; 625  : 			switch(m_aNotifications[iIndex].m_eNotificationType)
+; 629  : 		{
+; 630  : 			switch(m_aNotifications[iIndex].m_eNotificationType)
 
 	cmp	eax, 88900711				; 054c8467H
 	jg	SHORT $LN35@GetEndTurn
@@ -3796,11 +3809,11 @@ $LN33@GetEndTurn:
 	cmp	eax, 84632199				; 050b6287H
 	jne	$LN2@GetEndTurn
 
-; 715  : 				break;
-; 716  : 
-; 717  : 			case NOTIFICATION_ADD_REFORMATION_BELIEF:
-; 718  : 				eBlockingType = ENDTURN_BLOCKING_ADD_REFORMATION_BELIEF;
-; 719  : 				iNotificationIndex = m_aNotifications[iIndex].m_iLookupIndex;
+; 720  : 				break;
+; 721  : 
+; 722  : 			case NOTIFICATION_ADD_REFORMATION_BELIEF:
+; 723  : 				eBlockingType = ENDTURN_BLOCKING_ADD_REFORMATION_BELIEF;
+; 724  : 				iNotificationIndex = m_aNotifications[iIndex].m_iLookupIndex;
 
 	imul	esi, 92					; 0000005cH
 	mov	DWORD PTR [ebx], 19			; 00000013H
@@ -3811,27 +3824,27 @@ $LN33@GetEndTurn:
 	mov	DWORD PTR [ebp], ecx
 	pop	ebp
 
-; 720  : 				return true;
+; 725  : 				return true;
 
 	mov	al, 1
 	pop	ebx
 
-; 761  : }
+; 766  : }
 
 	ret	8
 $LN35@GetEndTurn:
 
-; 624  : 		{
-; 625  : 			switch(m_aNotifications[iIndex].m_eNotificationType)
+; 629  : 		{
+; 630  : 			switch(m_aNotifications[iIndex].m_eNotificationType)
 
 	cmp	eax, 294822899				; 1192a3f3H
 	jne	$LN2@GetEndTurn
 
-; 739  : 				break;
-; 740  : 
-; 741  : 			case NOTIFICATION_CHOOSE_IDEOLOGY:
-; 742  : 				eBlockingType = ENDTURN_BLOCKING_CHOOSE_IDEOLOGY;
-; 743  : 				iNotificationIndex = m_aNotifications[iIndex].m_iLookupIndex;
+; 744  : 				break;
+; 745  : 
+; 746  : 			case NOTIFICATION_CHOOSE_IDEOLOGY:
+; 747  : 				eBlockingType = ENDTURN_BLOCKING_CHOOSE_IDEOLOGY;
+; 748  : 				iNotificationIndex = m_aNotifications[iIndex].m_iLookupIndex;
 
 	imul	esi, 92					; 0000005cH
 	mov	DWORD PTR [ebx], 23			; 00000017H
@@ -3842,18 +3855,18 @@ $LN35@GetEndTurn:
 	mov	DWORD PTR [ebp], ecx
 	pop	ebp
 
-; 744  : 				return true;
+; 749  : 				return true;
 
 	mov	al, 1
 	pop	ebx
 
-; 761  : }
+; 766  : }
 
 	ret	8
 $LN32@GetEndTurn:
 
-; 624  : 		{
-; 625  : 			switch(m_aNotifications[iIndex].m_eNotificationType)
+; 629  : 		{
+; 630  : 			switch(m_aNotifications[iIndex].m_eNotificationType)
 
 	cmp	eax, 1376002242				; 520420c2H
 	jg	SHORT $LN36@GetEndTurn
@@ -3866,11 +3879,11 @@ $LN32@GetEndTurn:
 	cmp	eax, 755914060				; 2d0e554cH
 	jne	$LN2@GetEndTurn
 
-; 721  : 				break;
-; 722  : 
-; 723  : 			case NOTIFICATION_LEAGUE_CALL_FOR_PROPOSALS:
-; 724  : 				eBlockingType = ENDTURN_BLOCKING_LEAGUE_CALL_FOR_PROPOSALS;
-; 725  : 				iNotificationIndex = m_aNotifications[iIndex].m_iLookupIndex;
+; 726  : 				break;
+; 727  : 
+; 728  : 			case NOTIFICATION_LEAGUE_CALL_FOR_PROPOSALS:
+; 729  : 				eBlockingType = ENDTURN_BLOCKING_LEAGUE_CALL_FOR_PROPOSALS;
+; 730  : 				iNotificationIndex = m_aNotifications[iIndex].m_iLookupIndex;
 
 	imul	esi, 92					; 0000005cH
 	mov	DWORD PTR [ebx], 20			; 00000014H
@@ -3881,27 +3894,27 @@ $LN32@GetEndTurn:
 	mov	DWORD PTR [ebp], edx
 	pop	ebp
 
-; 726  : 				return true;
+; 731  : 				return true;
 
 	mov	al, 1
 	pop	ebx
 
-; 761  : }
+; 766  : }
 
 	ret	8
 $LN37@GetEndTurn:
 
-; 624  : 		{
-; 625  : 			switch(m_aNotifications[iIndex].m_eNotificationType)
+; 629  : 		{
+; 630  : 			switch(m_aNotifications[iIndex].m_eNotificationType)
 
 	cmp	eax, 1279997337				; 4c4b3599H
 	jne	SHORT $LN2@GetEndTurn
 
-; 679  : 				break;
-; 680  : 
-; 681  : 			case NOTIFICATION_FOUND_PANTHEON:
-; 682  : 				eBlockingType = ENDTURN_BLOCKING_FOUND_PANTHEON;
-; 683  : 				iNotificationIndex = m_aNotifications[iIndex].m_iLookupIndex;
+; 684  : 				break;
+; 685  : 
+; 686  : 			case NOTIFICATION_FOUND_PANTHEON:
+; 687  : 				eBlockingType = ENDTURN_BLOCKING_FOUND_PANTHEON;
+; 688  : 				iNotificationIndex = m_aNotifications[iIndex].m_iLookupIndex;
 
 	imul	esi, 92					; 0000005cH
 	mov	DWORD PTR [ebx], 13			; 0000000dH
@@ -3912,18 +3925,18 @@ $LN37@GetEndTurn:
 	mov	DWORD PTR [ebp], edx
 	pop	ebp
 
-; 684  : 				return true;
+; 689  : 				return true;
 
 	mov	al, 1
 	pop	ebx
 
-; 761  : }
+; 766  : }
 
 	ret	8
 $LN36@GetEndTurn:
 
-; 624  : 		{
-; 625  : 			switch(m_aNotifications[iIndex].m_eNotificationType)
+; 629  : 		{
+; 630  : 			switch(m_aNotifications[iIndex].m_eNotificationType)
 
 	cmp	eax, 1996573794				; 77014c62H
 	jg	SHORT $LN38@GetEndTurn
@@ -3933,13 +3946,13 @@ $LN36@GetEndTurn:
 	cmp	eax, 1989681641				; 769821e9H
 	jne	SHORT $LN2@GetEndTurn
 
-; 635  : 				}
-; 636  : 				break;
-; 637  : 			}
-; 638  : 
-; 639  : 			case NOTIFICATION_DIPLO_VOTE:
-; 640  : 				eBlockingType = ENDTURN_BLOCKING_DIPLO_VOTE;
-; 641  : 				iNotificationIndex = m_aNotifications[iIndex].m_iLookupIndex;
+; 640  : 				}
+; 641  : 				break;
+; 642  : 			}
+; 643  : 
+; 644  : 			case NOTIFICATION_DIPLO_VOTE:
+; 645  : 				eBlockingType = ENDTURN_BLOCKING_DIPLO_VOTE;
+; 646  : 				iNotificationIndex = m_aNotifications[iIndex].m_iLookupIndex;
 
 	imul	esi, 92					; 0000005cH
 	mov	DWORD PTR [ebx], 4
@@ -3950,33 +3963,33 @@ $LN36@GetEndTurn:
 	mov	DWORD PTR [ebp], eax
 	pop	ebp
 
-; 642  : 				return true;
+; 647  : 				return true;
 
 	mov	al, 1
 	pop	ebx
 
-; 761  : }
+; 766  : }
 
 	ret	8
 $LN38@GetEndTurn:
 
-; 624  : 		{
-; 625  : 			switch(m_aNotifications[iIndex].m_eNotificationType)
+; 629  : 		{
+; 630  : 			switch(m_aNotifications[iIndex].m_eNotificationType)
 
 	cmp	eax, 2128612861				; 7ee00dfdH
 	je	$LN12@GetEndTurn
 $LN2@GetEndTurn:
 
-; 745  : 				break;
-; 746  : 
-; 747  : 			default:
-; 748  : 				// these notifications don't block, so don't return a blocking type
-; 749  : 				break;
-; 750  : 			}
-; 751  : 		}
-; 752  : 
-; 753  : 		iIndex++;
-; 754  : 		if(iIndex >= (int)m_aNotifications.size())
+; 750  : 				break;
+; 751  : 
+; 752  : 			default:
+; 753  : 				// these notifications don't block, so don't return a blocking type
+; 754  : 				break;
+; 755  : 			}
+; 756  : 		}
+; 757  : 
+; 758  : 		iIndex++;
+; 759  : 		if(iIndex >= (int)m_aNotifications.size())
 
 	mov	ecx, DWORD PTR [edi+12]
 	sub	ecx, DWORD PTR [edi+8]
@@ -3991,13 +4004,13 @@ $LN2@GetEndTurn:
 	cmp	esi, ecx
 	jl	SHORT $LN1@GetEndTurn
 
-; 755  : 		{
-; 756  : 			iIndex = 0;
+; 760  : 		{
+; 761  : 			iIndex = 0;
 
 	xor	esi, esi
 $LN1@GetEndTurn:
 
-; 621  : 	while(iIndex != m_iNotificationsEndIndex)
+; 626  : 	while(iIndex != m_iNotificationsEndIndex)
 
 	cmp	esi, DWORD PTR [edi+24]
 	jne	$LL27@GetEndTurn
@@ -4006,24 +4019,24 @@ $LN26@GetEndTurn:
 	pop	esi
 	pop	ebp
 
-; 757  : 		}
-; 758  : 	}
-; 759  : 
-; 760  : 	return false;
+; 762  : 		}
+; 763  : 	}
+; 764  : 
+; 765  : 	return false;
 
 	xor	al, al
 	pop	ebx
 
-; 761  : }
+; 766  : }
 
 	ret	8
 $LN5@GetEndTurn:
 
-; 727  : 				break;
-; 728  : 
-; 729  : 			case NOTIFICATION_CHOOSE_ARCHAEOLOGY:
-; 730  : 				eBlockingType = ENDTURN_BLOCKING_CHOOSE_ARCHAEOLOGY;
-; 731  : 				iNotificationIndex = m_aNotifications[iIndex].m_iLookupIndex;
+; 732  : 				break;
+; 733  : 
+; 734  : 			case NOTIFICATION_CHOOSE_ARCHAEOLOGY:
+; 735  : 				eBlockingType = ENDTURN_BLOCKING_CHOOSE_ARCHAEOLOGY;
+; 736  : 				iNotificationIndex = m_aNotifications[iIndex].m_iLookupIndex;
 
 	imul	esi, 92					; 0000005cH
 	mov	DWORD PTR [ebx], 21			; 00000015H
@@ -4034,21 +4047,21 @@ $LN5@GetEndTurn:
 	mov	DWORD PTR [ebp], edx
 	pop	ebp
 
-; 732  : 				return true;
+; 737  : 				return true;
 
 	mov	al, 1
 	pop	ebx
 
-; 761  : }
+; 766  : }
 
 	ret	8
 $LN4@GetEndTurn:
 
-; 733  : 				break;
-; 734  : 
-; 735  : 			case NOTIFICATION_LEAGUE_CALL_FOR_VOTES:
-; 736  : 				eBlockingType = ENDTURN_BLOCKING_LEAGUE_CALL_FOR_VOTES;
-; 737  : 				iNotificationIndex = m_aNotifications[iIndex].m_iLookupIndex;
+; 738  : 				break;
+; 739  : 
+; 740  : 			case NOTIFICATION_LEAGUE_CALL_FOR_VOTES:
+; 741  : 				eBlockingType = ENDTURN_BLOCKING_LEAGUE_CALL_FOR_VOTES;
+; 742  : 				iNotificationIndex = m_aNotifications[iIndex].m_iLookupIndex;
 
 	imul	esi, 92					; 0000005cH
 	mov	DWORD PTR [ebx], 22			; 00000016H
@@ -4059,21 +4072,21 @@ $LN4@GetEndTurn:
 	mov	DWORD PTR [ebp], ecx
 	pop	ebp
 
-; 738  : 				return true;
+; 743  : 				return true;
 
 	mov	al, 1
 	pop	ebx
 
-; 761  : }
+; 766  : }
 
 	ret	8
 $LN11@GetEndTurn:
 
-; 691  : 				break;
-; 692  : 
-; 693  : 			case NOTIFICATION_ENHANCE_RELIGION:
-; 694  : 				eBlockingType = ENDTURN_BLOCKING_ENHANCE_RELIGION;
-; 695  : 				iNotificationIndex = m_aNotifications[iIndex].m_iLookupIndex;
+; 696  : 				break;
+; 697  : 
+; 698  : 			case NOTIFICATION_ENHANCE_RELIGION:
+; 699  : 				eBlockingType = ENDTURN_BLOCKING_ENHANCE_RELIGION;
+; 700  : 				iNotificationIndex = m_aNotifications[iIndex].m_iLookupIndex;
 
 	imul	esi, 92					; 0000005cH
 	mov	DWORD PTR [ebx], 15			; 0000000fH
@@ -4084,21 +4097,21 @@ $LN11@GetEndTurn:
 	mov	DWORD PTR [ebp], eax
 	pop	ebp
 
-; 696  : 				return true;
+; 701  : 				return true;
 
 	mov	al, 1
 	pop	ebx
 
-; 761  : }
+; 766  : }
 
 	ret	8
 $LN9@GetEndTurn:
 
-; 703  : 				break;
-; 704  : 
-; 705  : 			case NOTIFICATION_MAYA_LONG_COUNT:
-; 706  : 				eBlockingType = ENDTURN_BLOCKING_MAYA_LONG_COUNT;
-; 707  : 				iNotificationIndex = m_aNotifications[iIndex].m_iLookupIndex;
+; 708  : 				break;
+; 709  : 
+; 710  : 			case NOTIFICATION_MAYA_LONG_COUNT:
+; 711  : 				eBlockingType = ENDTURN_BLOCKING_MAYA_LONG_COUNT;
+; 712  : 				iNotificationIndex = m_aNotifications[iIndex].m_iLookupIndex;
 
 	imul	esi, 92					; 0000005cH
 	mov	DWORD PTR [ebx], 17			; 00000011H
@@ -4109,21 +4122,21 @@ $LN9@GetEndTurn:
 	mov	DWORD PTR [ebp], edx
 	pop	ebp
 
-; 708  : 				return true;
+; 713  : 				return true;
 
 	mov	al, 1
 	pop	ebx
 
-; 761  : }
+; 766  : }
 
 	ret	8
 $LN17@GetEndTurn:
 
-; 655  : 				break;
-; 656  : 
-; 657  : 			case NOTIFICATION_FREE_POLICY:
-; 658  : 				eBlockingType = ENDTURN_BLOCKING_FREE_POLICY;
-; 659  : 				iNotificationIndex = m_aNotifications[iIndex].m_iLookupIndex;
+; 660  : 				break;
+; 661  : 
+; 662  : 			case NOTIFICATION_FREE_POLICY:
+; 663  : 				eBlockingType = ENDTURN_BLOCKING_FREE_POLICY;
+; 664  : 				iNotificationIndex = m_aNotifications[iIndex].m_iLookupIndex;
 
 	imul	esi, 92					; 0000005cH
 	mov	DWORD PTR [ebx], 11			; 0000000bH
@@ -4134,21 +4147,21 @@ $LN17@GetEndTurn:
 	mov	DWORD PTR [ebp], eax
 	pop	ebp
 
-; 660  : 				return true;
+; 665  : 				return true;
 
 	mov	al, 1
 	pop	ebx
 
-; 761  : }
+; 766  : }
 
 	ret	8
 $LN18@GetEndTurn:
 
-; 649  : 				break;
-; 650  : 
-; 651  : 			case NOTIFICATION_POLICY:
-; 652  : 				eBlockingType = ENDTURN_BLOCKING_POLICY;
-; 653  : 				iNotificationIndex = m_aNotifications[iIndex].m_iLookupIndex;
+; 654  : 				break;
+; 655  : 
+; 656  : 			case NOTIFICATION_POLICY:
+; 657  : 				eBlockingType = ENDTURN_BLOCKING_POLICY;
+; 658  : 				iNotificationIndex = m_aNotifications[iIndex].m_iLookupIndex;
 
 	imul	esi, 92					; 0000005cH
 	mov	DWORD PTR [ebx], 0
@@ -4159,21 +4172,21 @@ $LN18@GetEndTurn:
 	mov	DWORD PTR [ebp], ecx
 	pop	ebp
 
-; 654  : 				return true;
+; 659  : 				return true;
 
 	mov	al, 1
 	pop	ebx
 
-; 761  : }
+; 766  : }
 
 	ret	8
 $LN15@GetEndTurn:
 
-; 667  : 				break;
-; 668  : 
-; 669  : 			case NOTIFICATION_FREE_TECH:
-; 670  : 				eBlockingType = ENDTURN_BLOCKING_FREE_TECH;
-; 671  : 				iNotificationIndex = m_aNotifications[iIndex].m_iLookupIndex;
+; 672  : 				break;
+; 673  : 
+; 674  : 			case NOTIFICATION_FREE_TECH:
+; 675  : 				eBlockingType = ENDTURN_BLOCKING_FREE_TECH;
+; 676  : 				iNotificationIndex = m_aNotifications[iIndex].m_iLookupIndex;
 
 	imul	esi, 92					; 0000005cH
 	mov	DWORD PTR [ebx], 6
@@ -4184,21 +4197,21 @@ $LN15@GetEndTurn:
 	mov	DWORD PTR [ebp], eax
 	pop	ebp
 
-; 672  : 				return true;
+; 677  : 				return true;
 
 	mov	al, 1
 	pop	ebx
 
-; 761  : }
+; 766  : }
 
 	ret	8
 $LN8@GetEndTurn:
 
-; 709  : 				break;
-; 710  : 
-; 711  : 			case NOTIFICATION_FAITH_GREAT_PERSON:
-; 712  : 				eBlockingType = ENDTURN_BLOCKING_FAITH_GREAT_PERSON;
-; 713  : 				iNotificationIndex = m_aNotifications[iIndex].m_iLookupIndex;
+; 714  : 				break;
+; 715  : 
+; 716  : 			case NOTIFICATION_FAITH_GREAT_PERSON:
+; 717  : 				eBlockingType = ENDTURN_BLOCKING_FAITH_GREAT_PERSON;
+; 718  : 				iNotificationIndex = m_aNotifications[iIndex].m_iLookupIndex;
 
 	imul	esi, 92					; 0000005cH
 	mov	DWORD PTR [ebx], 18			; 00000012H
@@ -4209,21 +4222,21 @@ $LN8@GetEndTurn:
 	mov	DWORD PTR [ebp], ecx
 	pop	ebp
 
-; 714  : 				return true;
+; 719  : 				return true;
 
 	mov	al, 1
 	pop	ebx
 
-; 761  : }
+; 766  : }
 
 	ret	8
 $LN16@GetEndTurn:
 
-; 661  : 				break;
-; 662  : 
-; 663  : 			case NOTIFICATION_TECH:
-; 664  : 				eBlockingType = ENDTURN_BLOCKING_RESEARCH;
-; 665  : 				iNotificationIndex = m_aNotifications[iIndex].m_iLookupIndex;
+; 666  : 				break;
+; 667  : 
+; 668  : 			case NOTIFICATION_TECH:
+; 669  : 				eBlockingType = ENDTURN_BLOCKING_RESEARCH;
+; 670  : 				iNotificationIndex = m_aNotifications[iIndex].m_iLookupIndex;
 
 	imul	esi, 92					; 0000005cH
 	mov	DWORD PTR [ebx], 1
@@ -4234,21 +4247,21 @@ $LN16@GetEndTurn:
 	mov	DWORD PTR [ebp], edx
 	pop	ebp
 
-; 666  : 				return true;
+; 671  : 				return true;
 
 	mov	al, 1
 	pop	ebx
 
-; 761  : }
+; 766  : }
 
 	ret	8
 $LN19@GetEndTurn:
 
-; 643  : 				break;
-; 644  : 
-; 645  : 			case NOTIFICATION_PRODUCTION:
-; 646  : 				eBlockingType = ENDTURN_BLOCKING_PRODUCTION;
-; 647  : 				iNotificationIndex = m_aNotifications[iIndex].m_iLookupIndex;
+; 648  : 				break;
+; 649  : 
+; 650  : 			case NOTIFICATION_PRODUCTION:
+; 651  : 				eBlockingType = ENDTURN_BLOCKING_PRODUCTION;
+; 652  : 				iNotificationIndex = m_aNotifications[iIndex].m_iLookupIndex;
 
 	imul	esi, 92					; 0000005cH
 	mov	DWORD PTR [ebx], 2
@@ -4259,21 +4272,21 @@ $LN19@GetEndTurn:
 	mov	DWORD PTR [ebp], ecx
 	pop	ebp
 
-; 648  : 				return true;
+; 653  : 				return true;
 
 	mov	al, 1
 	pop	ebx
 
-; 761  : }
+; 766  : }
 
 	ret	8
 $LN12@GetEndTurn:
 
-; 685  : 				break;
-; 686  : 
-; 687  : 			case NOTIFICATION_FOUND_RELIGION:
-; 688  : 				eBlockingType = ENDTURN_BLOCKING_FOUND_RELIGION;
-; 689  : 				iNotificationIndex = m_aNotifications[iIndex].m_iLookupIndex;
+; 690  : 				break;
+; 691  : 
+; 692  : 			case NOTIFICATION_FOUND_RELIGION:
+; 693  : 				eBlockingType = ENDTURN_BLOCKING_FOUND_RELIGION;
+; 694  : 				iNotificationIndex = m_aNotifications[iIndex].m_iLookupIndex;
 
 	imul	esi, 92					; 0000005cH
 	mov	DWORD PTR [ebx], 14			; 0000000eH
@@ -4284,12 +4297,12 @@ $LN12@GetEndTurn:
 	mov	DWORD PTR [ebp], eax
 	pop	ebp
 
-; 690  : 				return true;
+; 695  : 				return true;
 
 	mov	al, 1
 	pop	ebx
 
-; 761  : }
+; 766  : }
 
 	ret	8
 ?GetEndTurnBlockedType@CvNotifications@@QAE_NAAW4EndTurnBlockingTypes@@AAH@Z ENDP ; CvNotifications::GetEndTurnBlockedType
@@ -4301,11 +4314,11 @@ _TEXT	SEGMENT
 ?GetNumNotifications@CvNotifications@@QAEHXZ PROC	; CvNotifications::GetNumNotifications, COMDAT
 ; _this$ = ecx
 
-; 765  : {
+; 770  : {
 
 	push	ebx
 
-; 766  : 	if(m_iNotificationsEndIndex >= m_iNotificationsBeginIndex)
+; 771  : 	if(m_iNotificationsEndIndex >= m_iNotificationsBeginIndex)
 
 	mov	ebx, DWORD PTR [ecx+20]
 	push	edi
@@ -4313,24 +4326,24 @@ _TEXT	SEGMENT
 	cmp	edi, ebx
 	jl	SHORT $LN1@GetNumNoti
 
-; 767  : 	{
-; 768  : 		int iValue = m_iNotificationsEndIndex - m_iNotificationsBeginIndex;
+; 772  : 	{
+; 773  : 		int iValue = m_iNotificationsEndIndex - m_iNotificationsBeginIndex;
 
 	mov	eax, edi
 	pop	edi
 	sub	eax, ebx
 	pop	ebx
 
-; 774  : }
+; 779  : }
 
 	ret	0
 $LN1@GetNumNoti:
 	push	esi
 
-; 769  : 		return iValue;
-; 770  : 	}
-; 771  : 
-; 772  : 	int iValue = (m_aNotifications.size() - m_iNotificationsBeginIndex) + m_iNotificationsEndIndex;
+; 774  : 		return iValue;
+; 775  : 	}
+; 776  : 
+; 777  : 	int iValue = (m_aNotifications.size() - m_iNotificationsBeginIndex) + m_iNotificationsEndIndex;
 
 	mov	esi, DWORD PTR [ecx+12]
 	sub	esi, DWORD PTR [ecx+8]
@@ -4342,7 +4355,7 @@ $LN1@GetNumNoti:
 	shr	eax, 31					; 0000001fH
 	add	eax, edx
 
-; 773  : 	return iValue;
+; 778  : 	return iValue;
 
 	sub	eax, ebx
 	pop	esi
@@ -4350,7 +4363,7 @@ $LN1@GetNumNoti:
 	pop	edi
 	pop	ebx
 
-; 774  : }
+; 779  : }
 
 	ret	0
 ?GetNumNotifications@CvNotifications@@QAEHXZ ENDP	; CvNotifications::GetNumNotifications
@@ -4359,18 +4372,18 @@ PUBLIC	?GetNotificationStr@CvNotifications@@QAE?AVCvString@@H@Z ; CvNotification
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?GetNotificationStr@CvNotifications@@QAE?AVCvString@@H@Z
 _TEXT	SEGMENT
-$T223842 = -4						; size = 4
+$T224327 = -4						; size = 4
 ___$ReturnUdt$ = 8					; size = 4
 _iZeroBasedIndex$ = 12					; size = 4
 ?GetNotificationStr@CvNotifications@@QAE?AVCvString@@H@Z PROC ; CvNotifications::GetNotificationStr, COMDAT
 ; _this$ = ecx
 
-; 777  : {
+; 782  : {
 
 	push	ecx
 	push	esi
 
-; 778  : 	int iRealIndex = (m_iNotificationsBeginIndex + iZeroBasedIndex) % m_aNotifications.size();
+; 783  : 	int iRealIndex = (m_iNotificationsBeginIndex + iZeroBasedIndex) % m_aNotifications.size();
 
 	mov	esi, DWORD PTR [ecx+12]
 	sub	esi, DWORD PTR [ecx+8]
@@ -4386,11 +4399,11 @@ _iZeroBasedIndex$ = 12					; size = 4
 	xor	edx, edx
 	div	esi
 
-; 779  : 	return m_aNotifications[iRealIndex].m_strMessage;
+; 784  : 	return m_aNotifications[iRealIndex].m_strMessage;
 
 	mov	eax, DWORD PTR [ecx+8]
 	mov	esi, DWORD PTR ___$ReturnUdt$[esp+4]
-	mov	DWORD PTR $T223842[esp+8], 0
+	mov	DWORD PTR $T224327[esp+8], 0
 	imul	edx, 92					; 0000005cH
 	lea	ecx, DWORD PTR [edx+eax+8]
 	push	ecx
@@ -4399,7 +4412,7 @@ _iZeroBasedIndex$ = 12					; size = 4
 	mov	eax, esi
 	pop	esi
 
-; 780  : }
+; 785  : }
 
 	pop	ecx
 	ret	8
@@ -4409,18 +4422,18 @@ PUBLIC	?GetNotificationSummary@CvNotifications@@QAE?AVCvString@@H@Z ; CvNotifica
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?GetNotificationSummary@CvNotifications@@QAE?AVCvString@@H@Z
 _TEXT	SEGMENT
-$T223860 = -4						; size = 4
+$T224345 = -4						; size = 4
 ___$ReturnUdt$ = 8					; size = 4
 _iZeroBasedIndex$ = 12					; size = 4
 ?GetNotificationSummary@CvNotifications@@QAE?AVCvString@@H@Z PROC ; CvNotifications::GetNotificationSummary, COMDAT
 ; _this$ = ecx
 
-; 783  : {
+; 788  : {
 
 	push	ecx
 	push	esi
 
-; 784  : 	int iRealIndex = (m_iNotificationsBeginIndex + iZeroBasedIndex) % m_aNotifications.size();
+; 789  : 	int iRealIndex = (m_iNotificationsBeginIndex + iZeroBasedIndex) % m_aNotifications.size();
 
 	mov	esi, DWORD PTR [ecx+12]
 	sub	esi, DWORD PTR [ecx+8]
@@ -4436,11 +4449,11 @@ _iZeroBasedIndex$ = 12					; size = 4
 	xor	edx, edx
 	div	esi
 
-; 785  : 	return m_aNotifications[iRealIndex].m_strSummary;
+; 790  : 	return m_aNotifications[iRealIndex].m_strSummary;
 
 	mov	eax, DWORD PTR [ecx+8]
 	mov	esi, DWORD PTR ___$ReturnUdt$[esp+4]
-	mov	DWORD PTR $T223860[esp+8], 0
+	mov	DWORD PTR $T224345[esp+8], 0
 	imul	edx, 92					; 0000005cH
 	lea	ecx, DWORD PTR [edx+eax+36]
 	push	ecx
@@ -4449,7 +4462,7 @@ _iZeroBasedIndex$ = 12					; size = 4
 	mov	eax, esi
 	pop	esi
 
-; 786  : }
+; 791  : }
 
 	pop	ecx
 	ret	8
@@ -4463,11 +4476,11 @@ _iZeroBasedIndex$ = 8					; size = 4
 ?GetNotificationID@CvNotifications@@QAEHH@Z PROC	; CvNotifications::GetNotificationID, COMDAT
 ; _this$ = ecx
 
-; 790  : {
+; 795  : {
 
 	push	esi
 
-; 791  : 	int iRealIndex = (m_iNotificationsBeginIndex + iZeroBasedIndex) % m_aNotifications.size();
+; 796  : 	int iRealIndex = (m_iNotificationsBeginIndex + iZeroBasedIndex) % m_aNotifications.size();
 
 	mov	esi, DWORD PTR [ecx+12]
 	sub	esi, DWORD PTR [ecx+8]
@@ -4483,14 +4496,14 @@ _iZeroBasedIndex$ = 8					; size = 4
 	xor	edx, edx
 	div	esi
 
-; 792  : 	return m_aNotifications[iRealIndex].m_iLookupIndex;
+; 797  : 	return m_aNotifications[iRealIndex].m_iLookupIndex;
 
 	mov	eax, DWORD PTR [ecx+8]
 	pop	esi
 	imul	edx, 92					; 0000005cH
 	mov	eax, DWORD PTR [edx+eax+84]
 
-; 793  : }
+; 798  : }
 
 	ret	4
 ?GetNotificationID@CvNotifications@@QAEHH@Z ENDP	; CvNotifications::GetNotificationID
@@ -4503,11 +4516,11 @@ _iZeroBasedIndex$ = 8					; size = 4
 ?GetNotificationTurn@CvNotifications@@QAEHH@Z PROC	; CvNotifications::GetNotificationTurn, COMDAT
 ; _this$ = ecx
 
-; 796  : {
+; 801  : {
 
 	push	esi
 
-; 797  : 	int iRealIndex = (m_iNotificationsBeginIndex + iZeroBasedIndex) % m_aNotifications.size();
+; 802  : 	int iRealIndex = (m_iNotificationsBeginIndex + iZeroBasedIndex) % m_aNotifications.size();
 
 	mov	esi, DWORD PTR [ecx+12]
 	sub	esi, DWORD PTR [ecx+8]
@@ -4523,14 +4536,14 @@ _iZeroBasedIndex$ = 8					; size = 4
 	xor	edx, edx
 	div	esi
 
-; 798  : 	return m_aNotifications[iRealIndex].m_iTurn;
+; 803  : 	return m_aNotifications[iRealIndex].m_iTurn;
 
 	mov	eax, DWORD PTR [ecx+8]
 	pop	esi
 	imul	edx, 92					; 0000005cH
 	mov	eax, DWORD PTR [edx+eax+80]
 
-; 799  : }
+; 804  : }
 
 	ret	4
 ?GetNotificationTurn@CvNotifications@@QAEHH@Z ENDP	; CvNotifications::GetNotificationTurn
@@ -4543,11 +4556,11 @@ _iZeroBasedIndex$ = 8					; size = 4
 ?IsNotificationDismissed@CvNotifications@@QAE_NH@Z PROC	; CvNotifications::IsNotificationDismissed, COMDAT
 ; _this$ = ecx
 
-; 802  : {
+; 807  : {
 
 	push	esi
 
-; 803  : 	int iRealIndex = (m_iNotificationsBeginIndex + iZeroBasedIndex) % m_aNotifications.size();
+; 808  : 	int iRealIndex = (m_iNotificationsBeginIndex + iZeroBasedIndex) % m_aNotifications.size();
 
 	mov	esi, DWORD PTR [ecx+12]
 	sub	esi, DWORD PTR [ecx+8]
@@ -4563,14 +4576,14 @@ _iZeroBasedIndex$ = 8					; size = 4
 	xor	edx, edx
 	div	esi
 
-; 804  : 	return m_aNotifications[iRealIndex].m_bDismissed;
+; 809  : 	return m_aNotifications[iRealIndex].m_bDismissed;
 
 	mov	eax, DWORD PTR [ecx+8]
 	pop	esi
 	imul	edx, 92					; 0000005cH
 	mov	al, BYTE PTR [edx+eax+89]
 
-; 805  : }
+; 810  : }
 
 	ret	4
 ?IsNotificationDismissed@CvNotifications@@QAE_NH@Z ENDP	; CvNotifications::IsNotificationDismissed
@@ -4585,7 +4598,7 @@ _iForSpecificEntry$ = 12				; size = 4
 ?IsNotificationTypeEndOfTurnExpired@CvNotifications@@QAE_NW4NotificationTypes@@H@Z PROC ; CvNotifications::IsNotificationTypeEndOfTurnExpired, COMDAT
 ; _this$ = ecx
 
-; 1836 : 	switch(eNotificationType)
+; 1858 : 	switch(eNotificationType)
 
 	mov	eax, DWORD PTR _eNotificationType$[esp-4]
 	cmp	eax, 507779013				; 1e4417c5H
@@ -4616,14 +4629,14 @@ $LN15@IsNotifica:
 	jne	$LN1@IsNotifica
 $LN6@IsNotifica:
 
-; 1859 : 		break;
-; 1860 : 
-; 1861 : 	// These multiplayer notifications expire at the end of the next turn.
-; 1862 : 	case NOTIFICATION_PLAYER_RECONNECTED:
-; 1863 : 	case NOTIFICATION_PLAYER_DISCONNECTED:
-; 1864 : 	case NOTIFICATION_HOST_MIGRATION:
-; 1865 : 	case NOTIFICATION_PLAYER_CONNECTING:
-; 1866 : 		if(iForSpecificEntry != -1 && m_aNotifications[iForSpecificEntry].m_iTurn == GC.getGame().getGameTurn()) //same turn as creation.
+; 1881 : 		break;
+; 1882 : 
+; 1883 : 	// These multiplayer notifications expire at the end of the next turn.
+; 1884 : 	case NOTIFICATION_PLAYER_RECONNECTED:
+; 1885 : 	case NOTIFICATION_PLAYER_DISCONNECTED:
+; 1886 : 	case NOTIFICATION_HOST_MIGRATION:
+; 1887 : 	case NOTIFICATION_PLAYER_CONNECTING:
+; 1888 : 		if(iForSpecificEntry != -1 && m_aNotifications[iForSpecificEntry].m_iTurn == GC.getGame().getGameTurn()) //same turn as creation.
 
 	mov	eax, DWORD PTR _iForSpecificEntry$[esp+4]
 	cmp	eax, -1
@@ -4638,38 +4651,38 @@ $LN6@IsNotifica:
 $LN7@IsNotifica:
 	pop	edi
 
-; 1837 : 	{
-; 1838 : 	case NOTIFICATION_POLICY:
-; 1839 : 	case NOTIFICATION_FREE_POLICY:
-; 1840 : 	case NOTIFICATION_TECH:
-; 1841 : 	case NOTIFICATION_FREE_TECH:
-; 1842 : 	case NOTIFICATION_PRODUCTION:
-; 1843 : 	case NOTIFICATION_DIPLO_VOTE:
-; 1844 : 	case NOTIFICATION_PLAYER_DEAL:
-; 1845 : 	case NOTIFICATION_PLAYER_DEAL_RECEIVED:
-; 1846 : 	case NOTIFICATION_FREE_GREAT_PERSON:
-; 1847 : 	case NOTIFICATION_FOUND_PANTHEON:
-; 1848 : 	case NOTIFICATION_FOUND_RELIGION:
-; 1849 : 	case NOTIFICATION_ENHANCE_RELIGION:
-; 1850 : 	case NOTIFICATION_SPY_STOLE_TECH:
-; 1851 : 	case NOTIFICATION_MAYA_LONG_COUNT:
-; 1852 : 	case NOTIFICATION_FAITH_GREAT_PERSON:
-; 1853 : 	case NOTIFICATION_ADD_REFORMATION_BELIEF:
-; 1854 : 	case NOTIFICATION_LEAGUE_CALL_FOR_PROPOSALS:
-; 1855 : 	case NOTIFICATION_CHOOSE_ARCHAEOLOGY:
-; 1856 : 	case NOTIFICATION_LEAGUE_CALL_FOR_VOTES:
-; 1857 : 	case NOTIFICATION_CHOOSE_IDEOLOGY:
-; 1858 : 		return false;
+; 1859 : 	{
+; 1860 : 	case NOTIFICATION_POLICY:
+; 1861 : 	case NOTIFICATION_FREE_POLICY:
+; 1862 : 	case NOTIFICATION_TECH:
+; 1863 : 	case NOTIFICATION_FREE_TECH:
+; 1864 : 	case NOTIFICATION_PRODUCTION:
+; 1865 : 	case NOTIFICATION_DIPLO_VOTE:
+; 1866 : 	case NOTIFICATION_PLAYER_DEAL:
+; 1867 : 	case NOTIFICATION_PLAYER_DEAL_RECEIVED:
+; 1868 : 	case NOTIFICATION_FREE_GREAT_PERSON:
+; 1869 : 	case NOTIFICATION_FOUND_PANTHEON:
+; 1870 : 	case NOTIFICATION_FOUND_RELIGION:
+; 1871 : 	case NOTIFICATION_ENHANCE_RELIGION:
+; 1872 : 	case NOTIFICATION_SPY_STOLE_TECH:
+; 1873 : 	case NOTIFICATION_MAYA_LONG_COUNT:
+; 1874 : 	case NOTIFICATION_FAITH_GREAT_PERSON:
+; 1875 : 	case NOTIFICATION_ADD_REFORMATION_BELIEF:
+; 1876 : 	case NOTIFICATION_LEAGUE_CALL_FOR_PROPOSALS:
+; 1877 : 	case NOTIFICATION_CHOOSE_ARCHAEOLOGY:
+; 1878 : 	case NOTIFICATION_LEAGUE_CALL_FOR_VOTES:
+; 1879 : 	case NOTIFICATION_CHOOSE_IDEOLOGY:
+; 1880 : 		return false;
 
 	xor	al, al
 	pop	esi
 
-; 1922 : }
+; 1944 : }
 
 	ret	8
 $LN14@IsNotifica:
 
-; 1836 : 	switch(eNotificationType)
+; 1858 : 	switch(eNotificationType)
 
 	cmp	eax, -958154983				; c6e3b719H
 	jg	SHORT $LN16@IsNotifica
@@ -4698,21 +4711,21 @@ $LN13@IsNotifica:
 	je	$LN4@IsNotifica
 	pop	edi
 
-; 1913 : 		}
-; 1914 : 		break;
-; 1915 : 
-; 1916 : 	default:
-; 1917 : 		return true;
+; 1935 : 		}
+; 1936 : 		break;
+; 1937 : 
+; 1938 : 	default:
+; 1939 : 		return true;
 
 	mov	al, 1
 	pop	esi
 
-; 1922 : }
+; 1944 : }
 
 	ret	8
 $LN18@IsNotifica:
 
-; 1836 : 	switch(eNotificationType)
+; 1858 : 	switch(eNotificationType)
 
 	cmp	eax, -66586748				; fc07f784H
 	je	$LN4@IsNotifica
@@ -4720,21 +4733,21 @@ $LN18@IsNotifica:
 	je	$LN4@IsNotifica
 	pop	edi
 
-; 1913 : 		}
-; 1914 : 		break;
-; 1915 : 
-; 1916 : 	default:
-; 1917 : 		return true;
+; 1935 : 		}
+; 1936 : 		break;
+; 1937 : 
+; 1938 : 	default:
+; 1939 : 		return true;
 
 	mov	al, 1
 	pop	esi
 
-; 1922 : }
+; 1944 : }
 
 	ret	8
 $LN17@IsNotifica:
 
-; 1836 : 	switch(eNotificationType)
+; 1858 : 	switch(eNotificationType)
 
 	cmp	eax, 216217508				; 0ce337a4H
 	jg	SHORT $LN19@IsNotifica
@@ -4745,21 +4758,21 @@ $LN17@IsNotifica:
 	je	$LN4@IsNotifica
 	pop	edi
 
-; 1913 : 		}
-; 1914 : 		break;
-; 1915 : 
-; 1916 : 	default:
-; 1917 : 		return true;
+; 1935 : 		}
+; 1936 : 		break;
+; 1937 : 
+; 1938 : 	default:
+; 1939 : 		return true;
 
 	mov	al, 1
 	pop	esi
 
-; 1922 : }
+; 1944 : }
 
 	ret	8
 $LN19@IsNotifica:
 
-; 1836 : 	switch(eNotificationType)
+; 1858 : 	switch(eNotificationType)
 
 	cmp	eax, 294822899				; 1192a3f3H
 	je	$LN7@IsNotifica
@@ -4767,21 +4780,21 @@ $LN19@IsNotifica:
 	je	$LN6@IsNotifica
 	pop	edi
 
-; 1913 : 		}
-; 1914 : 		break;
-; 1915 : 
-; 1916 : 	default:
-; 1917 : 		return true;
+; 1935 : 		}
+; 1936 : 		break;
+; 1937 : 
+; 1938 : 	default:
+; 1939 : 		return true;
 
 	mov	al, 1
 	pop	esi
 
-; 1922 : }
+; 1944 : }
 
 	ret	8
 $LN12@IsNotifica:
 
-; 1836 : 	switch(eNotificationType)
+; 1858 : 	switch(eNotificationType)
 
 	cmp	eax, 1482916943				; 5863844fH
 	jg	$LN20@IsNotifica
@@ -4805,21 +4818,21 @@ $LN22@IsNotifica:
 	je	$LN4@IsNotifica
 	pop	edi
 
-; 1913 : 		}
-; 1914 : 		break;
-; 1915 : 
-; 1916 : 	default:
-; 1917 : 		return true;
+; 1935 : 		}
+; 1936 : 		break;
+; 1937 : 
+; 1938 : 	default:
+; 1939 : 		return true;
 
 	mov	al, 1
 	pop	esi
 
-; 1922 : }
+; 1944 : }
 
 	ret	8
 $LN21@IsNotifica:
 
-; 1836 : 	switch(eNotificationType)
+; 1858 : 	switch(eNotificationType)
 
 	cmp	eax, 1319111517				; 4ea00b5dH
 	jg	SHORT $LN23@IsNotifica
@@ -4830,21 +4843,21 @@ $LN21@IsNotifica:
 	je	SHORT $LN4@IsNotifica
 	pop	edi
 
-; 1913 : 		}
-; 1914 : 		break;
-; 1915 : 
-; 1916 : 	default:
-; 1917 : 		return true;
+; 1935 : 		}
+; 1936 : 		break;
+; 1937 : 
+; 1938 : 	default:
+; 1939 : 		return true;
 
 	mov	al, 1
 	pop	esi
 
-; 1922 : }
+; 1944 : }
 
 	ret	8
 $LN23@IsNotifica:
 
-; 1836 : 	switch(eNotificationType)
+; 1858 : 	switch(eNotificationType)
 
 	cmp	eax, 1352206758				; 509909a6H
 	je	SHORT $LN4@IsNotifica
@@ -4868,21 +4881,21 @@ $LN25@IsNotifica:
 	je	SHORT $LN4@IsNotifica
 	pop	edi
 
-; 1913 : 		}
-; 1914 : 		break;
-; 1915 : 
-; 1916 : 	default:
-; 1917 : 		return true;
+; 1935 : 		}
+; 1936 : 		break;
+; 1937 : 
+; 1938 : 	default:
+; 1939 : 		return true;
 
 	mov	al, 1
 	pop	esi
 
-; 1922 : }
+; 1944 : }
 
 	ret	8
 $LN24@IsNotifica:
 
-; 1836 : 	switch(eNotificationType)
+; 1858 : 	switch(eNotificationType)
 
 	cmp	eax, 1989681641				; 769821e9H
 	jg	SHORT $LN26@IsNotifica
@@ -4893,50 +4906,50 @@ $LN24@IsNotifica:
 	jne	SHORT $LN1@IsNotifica
 $LN4@IsNotifica:
 
-; 1867 : 		{
-; 1868 : 			return false;
-; 1869 : 		}
-; 1870 : 		break;
-; 1871 : 
-; 1872 : 	// In multiplayer, these notifications expire once they've been broadcast for the player and
-; 1873 : 	// it is at least the end of the next turn.
-; 1874 : 	// These are notifications that can occur mid-turn and are important enough that they shouldn't
-; 1875 : 	// expire until the player has seen them.
-; 1876 : 	case NOTIFICATION_UNIT_PROMOTION:
-; 1877 : 	case NOTIFICATION_CAPITAL_LOST_ACTIVE_PLAYER:
-; 1878 : 	case NOTIFICATION_CAPITAL_LOST:
-; 1879 : 	case NOTIFICATION_WAR_ACTIVE_PLAYER:
-; 1880 : 	case NOTIFICATION_WAR:
-; 1881 : 	case NOTIFICATION_PEACE_ACTIVE_PLAYER:
-; 1882 : 	case NOTIFICATION_PEACE:
-; 1883 : 	case NOTIFICATION_VICTORY:
-; 1884 : 	case NOTIFICATION_UNIT_DIED:
-; 1885 : 	case NOTIFICATION_CITY_LOST:
-; 1886 : 	case NOTIFICATION_PLAYER_KILLED:
-; 1887 : 	case NOTIFICATION_DIPLOMACY_DECLARATION:
-; 1888 : 	case NOTIFICATION_OTHER_PLAYER_NEW_ERA:
-; 1889 : 	case NOTIFICATION_MINOR_BUYOUT:
-; 1890 : 	case NOTIFICATION_LIBERATED_MAJOR_CITY:
-; 1891 : 	case NOTIFICATION_RESURRECTED_MAJOR_CIV:
-; 1892 : 	case NOTIFICATION_TURN_MODE_SEQUENTIAL:
-; 1893 : 	case NOTIFICATION_TURN_MODE_SIMULTANEOUS:
-; 1894 : #ifndef AUI_WARNING_FIXES
-; 1895 : 	case NOTIFICATION_PLAYER_KICKED:
-; 1896 : #endif
-; 1897 : 
-; 1898 : 	//XP1
-; 1899 : 	case NOTIFICATION_RELIGION_FOUNDED_ACTIVE_PLAYER:
-; 1900 : 	case NOTIFICATION_RELIGION_FOUNDED:
-; 1901 : 	case NOTIFICATION_PANTHEON_FOUNDED_ACTIVE_PLAYER:
-; 1902 : 	case NOTIFICATION_PANTHEON_FOUNDED:
-; 1903 : 
-; 1904 : 	//XP2
-; 1905 : 	case NOTIFICATION_TRADE_ROUTE_BROKEN:
-; 1906 : 	case NOTIFICATION_REFORMATION_BELIEF_ADDED_ACTIVE_PLAYER:
-; 1907 : 	case NOTIFICATION_REFORMATION_BELIEF_ADDED:
-; 1908 : 		if(iForSpecificEntry != -1 && GC.getGame().isGameMultiPlayer() 
-; 1909 : 			&& (m_aNotifications[iForSpecificEntry].m_bNeedsBroadcast //not broadcast yet.
-; 1910 : 				|| m_aNotifications[iForSpecificEntry].m_iTurn == GC.getGame().getGameTurn())) //same turn as creation.
+; 1889 : 		{
+; 1890 : 			return false;
+; 1891 : 		}
+; 1892 : 		break;
+; 1893 : 
+; 1894 : 	// In multiplayer, these notifications expire once they've been broadcast for the player and
+; 1895 : 	// it is at least the end of the next turn.
+; 1896 : 	// These are notifications that can occur mid-turn and are important enough that they shouldn't
+; 1897 : 	// expire until the player has seen them.
+; 1898 : 	case NOTIFICATION_UNIT_PROMOTION:
+; 1899 : 	case NOTIFICATION_CAPITAL_LOST_ACTIVE_PLAYER:
+; 1900 : 	case NOTIFICATION_CAPITAL_LOST:
+; 1901 : 	case NOTIFICATION_WAR_ACTIVE_PLAYER:
+; 1902 : 	case NOTIFICATION_WAR:
+; 1903 : 	case NOTIFICATION_PEACE_ACTIVE_PLAYER:
+; 1904 : 	case NOTIFICATION_PEACE:
+; 1905 : 	case NOTIFICATION_VICTORY:
+; 1906 : 	case NOTIFICATION_UNIT_DIED:
+; 1907 : 	case NOTIFICATION_CITY_LOST:
+; 1908 : 	case NOTIFICATION_PLAYER_KILLED:
+; 1909 : 	case NOTIFICATION_DIPLOMACY_DECLARATION:
+; 1910 : 	case NOTIFICATION_OTHER_PLAYER_NEW_ERA:
+; 1911 : 	case NOTIFICATION_MINOR_BUYOUT:
+; 1912 : 	case NOTIFICATION_LIBERATED_MAJOR_CITY:
+; 1913 : 	case NOTIFICATION_RESURRECTED_MAJOR_CIV:
+; 1914 : 	case NOTIFICATION_TURN_MODE_SEQUENTIAL:
+; 1915 : 	case NOTIFICATION_TURN_MODE_SIMULTANEOUS:
+; 1916 : #ifndef AUI_WARNING_FIXES
+; 1917 : 	case NOTIFICATION_PLAYER_KICKED:
+; 1918 : #endif
+; 1919 : 
+; 1920 : 	//XP1
+; 1921 : 	case NOTIFICATION_RELIGION_FOUNDED_ACTIVE_PLAYER:
+; 1922 : 	case NOTIFICATION_RELIGION_FOUNDED:
+; 1923 : 	case NOTIFICATION_PANTHEON_FOUNDED_ACTIVE_PLAYER:
+; 1924 : 	case NOTIFICATION_PANTHEON_FOUNDED:
+; 1925 : 
+; 1926 : 	//XP2
+; 1927 : 	case NOTIFICATION_TRADE_ROUTE_BROKEN:
+; 1928 : 	case NOTIFICATION_REFORMATION_BELIEF_ADDED_ACTIVE_PLAYER:
+; 1929 : 	case NOTIFICATION_REFORMATION_BELIEF_ADDED:
+; 1930 : 		if(iForSpecificEntry != -1 && GC.getGame().isGameMultiPlayer() 
+; 1931 : 			&& (m_aNotifications[iForSpecificEntry].m_bNeedsBroadcast //not broadcast yet.
+; 1932 : 				|| m_aNotifications[iForSpecificEntry].m_iTurn == GC.getGame().getGameTurn())) //same turn as creation.
 
 	mov	esi, DWORD PTR _iForSpecificEntry$[esp+4]
 	cmp	esi, -1
@@ -4954,27 +4967,27 @@ $LN4@IsNotifica:
 	call	?getGameTurn@CvGame@@QAEHXZ		; CvGame::getGameTurn
 	cmp	DWORD PTR [esi+80], eax
 
-; 1911 : 		{
-; 1912 : 			return false;
+; 1933 : 		{
+; 1934 : 			return false;
 
 	je	$LN7@IsNotifica
 $LN3@IsNotifica:
 	pop	edi
 
-; 1918 : 		break;
-; 1919 : 	}
-; 1920 : 
-; 1921 : 	return true;
+; 1940 : 		break;
+; 1941 : 	}
+; 1942 : 
+; 1943 : 	return true;
 
 	mov	al, 1
 	pop	esi
 
-; 1922 : }
+; 1944 : }
 
 	ret	8
 $LN26@IsNotifica:
 
-; 1836 : 	switch(eNotificationType)
+; 1858 : 	switch(eNotificationType)
 
 	cmp	eax, 1996573794				; 77014c62H
 	je	$LN7@IsNotifica
@@ -4984,16 +4997,16 @@ $LN39@IsNotifica:
 $LN1@IsNotifica:
 	pop	edi
 
-; 1913 : 		}
-; 1914 : 		break;
-; 1915 : 
-; 1916 : 	default:
-; 1917 : 		return true;
+; 1935 : 		}
+; 1936 : 		break;
+; 1937 : 
+; 1938 : 	default:
+; 1939 : 		return true;
 
 	mov	al, 1
 	pop	esi
 
-; 1922 : }
+; 1944 : }
 
 	ret	8
 ?IsNotificationTypeEndOfTurnExpired@CvNotifications@@QAE_NW4NotificationTypes@@H@Z ENDP ; CvNotifications::IsNotificationTypeEndOfTurnExpired
@@ -5006,7 +5019,7 @@ _iIndex$ = 8						; size = 4
 ?IsNotificationEndOfTurnExpired@CvNotifications@@QAE_NH@Z PROC ; CvNotifications::IsNotificationEndOfTurnExpired, COMDAT
 ; _this$ = ecx
 
-; 1927 : 	return IsNotificationTypeEndOfTurnExpired( m_aNotifications[iIndex].m_eNotificationType, iIndex );
+; 1949 : 	return IsNotificationTypeEndOfTurnExpired( m_aNotifications[iIndex].m_eNotificationType, iIndex );
 
 	mov	edx, DWORD PTR _iIndex$[esp-4]
 	mov	eax, edx
@@ -5017,7 +5030,7 @@ _iIndex$ = 8						; size = 4
 	push	eax
 	call	?IsNotificationTypeEndOfTurnExpired@CvNotifications@@QAE_NW4NotificationTypes@@H@Z ; CvNotifications::IsNotificationTypeEndOfTurnExpired
 
-; 1928 : }
+; 1950 : }
 
 	ret	4
 ?IsNotificationEndOfTurnExpired@CvNotifications@@QAE_NH@Z ENDP ; CvNotifications::IsNotificationEndOfTurnExpired
@@ -5029,12 +5042,12 @@ _TEXT	SEGMENT
 ?IsArrayFull@CvNotifications@@IAE_NXZ PROC		; CvNotifications::IsArrayFull, COMDAT
 ; _this$ = ecx
 
-; 1932 : {
+; 1954 : {
 
 	push	esi
 
-; 1933 : 	int iAdjustedEndIndex = m_iNotificationsEndIndex + 1;
-; 1934 : 	if(iAdjustedEndIndex >= (int)m_aNotifications.size())
+; 1955 : 	int iAdjustedEndIndex = m_iNotificationsEndIndex + 1;
+; 1956 : 	if(iAdjustedEndIndex >= (int)m_aNotifications.size())
 
 	mov	esi, DWORD PTR [ecx+12]
 	sub	esi, DWORD PTR [ecx+8]
@@ -5051,29 +5064,29 @@ _TEXT	SEGMENT
 	cmp	edi, eax
 	jl	SHORT $LN3@IsArrayFul
 
-; 1935 : 	{
-; 1936 : 		iAdjustedEndIndex = 0;
+; 1957 : 	{
+; 1958 : 		iAdjustedEndIndex = 0;
 
 	xor	edi, edi
 $LN3@IsArrayFul:
 
-; 1937 : 	}
-; 1938 : 
-; 1939 : 	if(iAdjustedEndIndex == m_iNotificationsBeginIndex)
+; 1959 : 	}
+; 1960 : 
+; 1961 : 	if(iAdjustedEndIndex == m_iNotificationsBeginIndex)
 
 	cmp	edi, DWORD PTR [ecx+20]
 	pop	edi
 	sete	al
 	pop	esi
 
-; 1940 : 	{
-; 1941 : 		return true;
-; 1942 : 	}
-; 1943 : 	else
-; 1944 : 	{
-; 1945 : 		return false;
-; 1946 : 	}
-; 1947 : }
+; 1962 : 	{
+; 1963 : 		return true;
+; 1964 : 	}
+; 1965 : 	else
+; 1966 : 	{
+; 1967 : 		return false;
+; 1968 : 	}
+; 1969 : }
 
 	ret	0
 ?IsArrayFull@CvNotifications@@IAE_NXZ ENDP		; CvNotifications::IsArrayFull
@@ -5085,12 +5098,12 @@ _TEXT	SEGMENT
 ?IncrementBeginIndex@CvNotifications@@IAEXXZ PROC	; CvNotifications::IncrementBeginIndex, COMDAT
 ; _this$ = ecx
 
-; 1963 : 	m_iNotificationsBeginIndex++;
+; 1985 : 	m_iNotificationsBeginIndex++;
 
 	inc	DWORD PTR [ecx+20]
 	push	esi
 
-; 1964 : 	if(m_iNotificationsBeginIndex >= (int)m_aNotifications.size())
+; 1986 : 	if(m_iNotificationsBeginIndex >= (int)m_aNotifications.size())
 
 	mov	esi, DWORD PTR [ecx+12]
 	sub	esi, DWORD PTR [ecx+8]
@@ -5108,14 +5121,14 @@ _TEXT	SEGMENT
 	pop	esi
 	jl	SHORT $LN1@IncrementB
 
-; 1965 : 	{
-; 1966 : 		m_iNotificationsBeginIndex = 0;
+; 1987 : 	{
+; 1988 : 		m_iNotificationsBeginIndex = 0;
 
 	mov	DWORD PTR [ecx+20], 0
 $LN1@IncrementB:
 
-; 1967 : 	}
-; 1968 : }
+; 1989 : 	}
+; 1990 : }
 
 	ret	0
 ?IncrementBeginIndex@CvNotifications@@IAEXXZ ENDP	; CvNotifications::IncrementBeginIndex
@@ -5127,12 +5140,12 @@ _TEXT	SEGMENT
 ?IncrementEndIndex@CvNotifications@@IAEXXZ PROC		; CvNotifications::IncrementEndIndex, COMDAT
 ; _this$ = ecx
 
-; 1972 : 	m_iNotificationsEndIndex++;
+; 1994 : 	m_iNotificationsEndIndex++;
 
 	inc	DWORD PTR [ecx+24]
 	push	esi
 
-; 1973 : 	if(m_iNotificationsEndIndex >= (int)m_aNotifications.size())
+; 1995 : 	if(m_iNotificationsEndIndex >= (int)m_aNotifications.size())
 
 	mov	esi, DWORD PTR [ecx+12]
 	sub	esi, DWORD PTR [ecx+8]
@@ -5150,14 +5163,14 @@ _TEXT	SEGMENT
 	pop	esi
 	jl	SHORT $LN1@IncrementE
 
-; 1974 : 	{
-; 1975 : 		m_iNotificationsEndIndex = 0;
+; 1996 : 	{
+; 1997 : 		m_iNotificationsEndIndex = 0;
 
 	mov	DWORD PTR [ecx+24], 0
 $LN1@IncrementE:
 
-; 1976 : 	}
-; 1977 : }
+; 1998 : 	}
+; 1999 : }
 
 	ret	0
 ?IncrementEndIndex@CvNotifications@@IAEXXZ ENDP		; CvNotifications::IncrementEndIndex
@@ -5829,7 +5842,7 @@ __ehfuncinfo$??$_Construct@UNotification@CvNotifications@@U12@@std@@YAXPAUNotifi
 xdata$x	ENDS
 ;	COMDAT ??$_Construct@UNotification@CvNotifications@@U12@@std@@YAXPAUNotification@CvNotifications@@ABU12@@Z
 _TEXT	SEGMENT
-$T224170 = -16						; size = 4
+$T224655 = -16						; size = 4
 __$EHRec$ = -12						; size = 12
 __Vptr$ = 8						; size = 4
 __Ptr$ = 8						; size = 4
@@ -5852,7 +5865,7 @@ __Val$ = 12						; size = 4
 
 ; 52   : 	::new (_Vptr) _T1(_Val);
 
-	mov	DWORD PTR $T224170[esp+16], ecx
+	mov	DWORD PTR $T224655[esp+16], ecx
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	ecx, ecx
 	je	SHORT $LN3@Construct
@@ -5873,7 +5886,7 @@ text$x	SEGMENT
 __unwindfunclet$??$_Construct@UNotification@CvNotifications@@U12@@std@@YAXPAUNotification@CvNotifications@@ABU12@@Z$0:
 	mov	eax, DWORD PTR __Vptr$[ebp-4]
 	push	eax
-	mov	ecx, DWORD PTR $T224170[ebp]
+	mov	ecx, DWORD PTR $T224655[ebp]
 	push	ecx
 	call	??3@YAXPAX0@Z				; operator delete
 	add	esp, 8
@@ -6362,19 +6375,22 @@ PUBLIC	?Activate@CvNotifications@@QAEXAAUNotification@1@@Z ; CvNotifications::Ac
 EXTRN	?WrapUnitPointer@CvGlobals@@QAE?AV?$auto_ptr@VICvUnit1@@@std@@PAVCvUnit@@@Z:PROC ; CvGlobals::WrapUnitPointer
 EXTRN	?plot@CvUnit@@QBEPAVCvPlot@@XZ:PROC		; CvUnit::plot
 EXTRN	?getUnit@CvPlayer@@QAEPAVCvUnit@@H@Z:PROC	; CvPlayer::getUnit
+EXTRN	?GetProposalStatus@CvMPVotingSystem@@QAE?AW4MPVotingSystemProposalStatus@@H@Z:PROC ; CvMPVotingSystem::GetProposalStatus
+EXTRN	?GetProposalIDbyUIid@CvMPVotingSystem@@QAEHH@Z:PROC ; CvMPVotingSystem::GetProposalIDbyUIid
+EXTRN	?GetMPVotingSystem@CvGame@@QAEPAVCvMPVotingSystem@@XZ:PROC ; CvGame::GetMPVotingSystem
 EXTRN	?GetNumFaithGreatPeople@CvPlayer@@QBEHXZ:PROC	; CvPlayer::GetNumFaithGreatPeople
 EXTRN	?GetNumMayaBoosts@CvPlayer@@QBEHXZ:PROC		; CvPlayer::GetNumMayaBoosts
 EXTRN	?DoBeginDiploWithHumanEspionageResult@CvDiplomacyAI@@QAEXXZ:PROC ; CvDiplomacyAI::DoBeginDiploWithHumanEspionageResult
-EXTRN	?plot@CvCity@@QBEPAVCvPlot@@XZ:PROC		; CvCity::plot
-EXTRN	?getCapitalCity@CvPlayer@@QAEPAVCvCity@@XZ:PROC	; CvPlayer::getCapitalCity
-EXTRN	?WrapPlotPointer@CvGlobals@@QAE?AV?$auto_ptr@VICvPlot1@@@std@@PAVCvPlot@@@Z:PROC ; CvGlobals::WrapPlotPointer
-EXTRN	?GetNumFreeGreatPeople@CvPlayer@@QBEHXZ:PROC	; CvPlayer::GetNumFreeGreatPeople
 EXTRN	?DoBeginDiploWithHumanInDiscuss@CvDiplomacyAI@@QAEXXZ:PROC ; CvDiplomacyAI::DoBeginDiploWithHumanInDiscuss
 EXTRN	?GetDiplomacyAI@CvPlayer@@QBEPAVCvDiplomacyAI@@XZ:PROC ; CvPlayer::GetDiplomacyAI
 EXTRN	?isAtWar@CvTeam@@QBE_NW4TeamTypes@@@Z:PROC	; CvTeam::isAtWar
 EXTRN	?HasRecentIntrigueAbout@CvPlayerEspionage@@QAE_NW4PlayerTypes@@@Z:PROC ; CvPlayerEspionage::HasRecentIntrigueAbout
 EXTRN	?GetEspionage@CvPlayer@@QBEPAVCvPlayerEspionage@@XZ:PROC ; CvPlayer::GetEspionage
 EXTRN	?isHuman@CvPlayer@@QBE_NXZ:PROC			; CvPlayer::isHuman
+EXTRN	?plot@CvCity@@QBEPAVCvPlot@@XZ:PROC		; CvCity::plot
+EXTRN	?getCapitalCity@CvPlayer@@QAEPAVCvCity@@XZ:PROC	; CvPlayer::getCapitalCity
+EXTRN	?WrapPlotPointer@CvGlobals@@QAE?AV?$auto_ptr@VICvPlot1@@@std@@PAVCvPlot@@@Z:PROC ; CvGlobals::WrapPlotPointer
+EXTRN	?GetNumFreeGreatPeople@CvPlayer@@QBEHXZ:PROC	; CvPlayer::GetNumFreeGreatPeople
 ;	COMDAT xdata$x
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredllutil\include\cvdllinterfaces.h
 xdata$x	SEGMENT
@@ -6402,47 +6418,49 @@ __unwindtable$?Activate@CvNotifications@@QAEXAAUNotification@1@@Z DD 0ffffffffH
 xdata$x	ENDS
 ;	COMDAT ?Activate@CvNotifications@@QAEXAAUNotification@1@@Z
 _TEXT	SEGMENT
-$T224600 = -584						; size = 4
-$T224352 = -584						; size = 4
-_pDllPlot$221320 = -580					; size = 4
-_pDllPlot$221183 = -580					; size = 4
-$T224354 = -580						; size = 4
-_pDllPlot$221162 = -580					; size = 4
-_pDllPlot$221132 = -580					; size = 4
-_pDllUnit$221233 = -576					; size = 4
-_iQuestFlags$221158 = -576				; size = 4
-$T224357 = -572						; size = 4
-$T224355 = -568						; size = 4
-$T224350 = -564						; size = 4
-$T224360 = -560						; size = 4
-_kPopup$221315 = -556					; size = 536
-_kPopup$221306 = -556					; size = 536
-_kPopup$221302 = -556					; size = 536
-_kPopup$221298 = -556					; size = 536
-_kPopup$221294 = -556					; size = 536
-_kPopup$221277 = -556					; size = 536
-_kPopup$221274 = -556					; size = 536
-_kPopup$221271 = -556					; size = 536
-_kPopup$221269 = -556					; size = 536
-_kPopup$221265 = -556					; size = 536
-_kPopup$221263 = -556					; size = 536
-_kPopup$221261 = -556					; size = 536
-_kPopup$221259 = -556					; size = 536
-_kPopupInfo$221173 = -556				; size = 536
-_kPopup$221169 = -556					; size = 536
-_kPopup$221156 = -556					; size = 536
-_kPopup$221154 = -556					; size = 536
-_kPopup$221152 = -556					; size = 536
-_kPopup$221144 = -556					; size = 536
-_kPopup$221127 = -556					; size = 536
-_kPopup$221124 = -556					; size = 536
-_pUnit$221178 = -20					; size = 8
+$T225274 = -584						; size = 4
+$T225085 = -584						; size = 4
+$T224837 = -584						; size = 4
+_pDllPlot$221804 = -580					; size = 4
+_pDllPlot$221660 = -580					; size = 4
+$T224839 = -580						; size = 4
+_pDllPlot$221639 = -580					; size = 4
+_pDllPlot$221609 = -580					; size = 4
+_pDllUnit$221710 = -576					; size = 4
+_iQuestFlags$221635 = -576				; size = 4
+$T224842 = -572						; size = 4
+$T224840 = -568						; size = 4
+$T224835 = -564						; size = 4
+$T224845 = -560						; size = 4
+_kPopup$221799 = -556					; size = 536
+_kPopup$221792 = -556					; size = 536
+_kPopup$221783 = -556					; size = 536
+_kPopup$221779 = -556					; size = 536
+_kPopup$221775 = -556					; size = 536
+_kPopup$221771 = -556					; size = 536
+_kPopup$221754 = -556					; size = 536
+_kPopup$221751 = -556					; size = 536
+_kPopup$221748 = -556					; size = 536
+_kPopup$221746 = -556					; size = 536
+_kPopup$221742 = -556					; size = 536
+_kPopup$221740 = -556					; size = 536
+_kPopup$221738 = -556					; size = 536
+_kPopup$221736 = -556					; size = 536
+_kPopupInfo$221650 = -556				; size = 536
+_kPopup$221646 = -556					; size = 536
+_kPopup$221633 = -556					; size = 536
+_kPopup$221631 = -556					; size = 536
+_kPopup$221629 = -556					; size = 536
+_kPopup$221621 = -556					; size = 536
+_kPopup$221604 = -556					; size = 536
+_kPopup$221601 = -556					; size = 536
+_pUnit$221655 = -20					; size = 8
 __$EHRec$ = -12						; size = 12
 _notification$ = 8					; size = 4
 ?Activate@CvNotifications@@QAEXAAUNotification@1@@Z PROC ; CvNotifications::Activate, COMDAT
 ; _this$ = ecx
 
-; 809  : {
+; 814  : {
 
 	push	-1
 	mov	eax, DWORD PTR fs:0
@@ -6452,7 +6470,7 @@ _notification$ = 8					; size = 4
 	sub	esp, 572				; 0000023cH
 	push	ebx
 
-; 810  : 	GC.GetEngineUserInterface()->ActivateNotification(notification.m_iLookupIndex, notification.m_eNotificationType, notification.m_strMessage, notification.m_iX, notification.m_iY, notification.m_iGameDataIndex, notification.m_iExtraGameData, m_ePlayer);
+; 815  : 	GC.GetEngineUserInterface()->ActivateNotification(notification.m_iLookupIndex, notification.m_eNotificationType, notification.m_strMessage, notification.m_iX, notification.m_iY, notification.m_iGameDataIndex, notification.m_iExtraGameData, m_ePlayer);
 
 	mov	ebx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
 	push	ebp
@@ -6483,8 +6501,8 @@ _notification$ = 8					; size = 4
 	mov	ecx, ebx
 	call	edx
 
-; 811  : 
-; 812  : 	gDLL->GameplayMinimapNotification(notification.m_iX, notification.m_iY, notification.m_iLookupIndex+1);	// The index is used to uniquely identify each flashing dot on the minimap. We're adding 1 since the selected unit is always 0. It ain't pretty, but it'll work
+; 816  : 
+; 817  : 	gDLL->GameplayMinimapNotification(notification.m_iX, notification.m_iY, notification.m_iLookupIndex+1);	// The index is used to uniquely identify each flashing dot on the minimap. We're adding 1 since the selected unit is always 0. It ain't pretty, but it'll work
 
 	mov	edx, DWORD PTR [esi+84]
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8564
@@ -6499,95 +6517,123 @@ _notification$ = 8					; size = 4
 	push	edx
 	call	eax
 
-; 813  : 
-; 814  : 	switch(notification.m_eNotificationType)
+; 818  : 
+; 819  : 	switch(notification.m_eNotificationType)
 
 	mov	eax, DWORD PTR [esi]
-	cmp	eax, 84632199				; 050b6287H
-	jg	$LN56@Activate
-	je	$LN28@Activate
-	cmp	eax, -1168514695			; ba59e179H
-	jg	$LN57@Activate
-	je	$LN32@Activate
-	cmp	eax, -1730271966			; 98de2522H
+	cmp	eax, -30204373				; fe331e2bH
 	jg	$LN58@Activate
-	je	$LN10@Activate
-	cmp	eax, -1871397394			; 9074bdeeH
-	jg	SHORT $LN59@Activate
-	je	$LN10@Activate
-	cmp	eax, -2115432992			; 81e90de0H
-	je	$LN24@Activate
-	cmp	eax, -2068323322			; 84b7e406H
-	jne	$LN2@Activate
-
-; 1084 : 
-; 1085 : 	case NOTIFICATION_CHOOSE_ARCHAEOLOGY:
-; 1086 : 		CvAssertMsg(notification.m_iGameDataIndex >= 0, "notification.m_iGameDataIndex is out of bounds");
-; 1087 : 		if (notification.m_iGameDataIndex >= 0)
-
-	xor	ebx, ebx
-	cmp	DWORD PTR [esi+72], ebx
-	jl	$LN51@Activate
-
-; 1088 : 		{
-; 1089 : 			CvPopupInfo kPopup(BUTTONPOPUP_CHOOSE_ARCHAEOLOGY, m_ePlayer);
-
-	mov	ecx, DWORD PTR [edi]
-	mov	DWORD PTR _kPopup$221302[esp+600], ecx
-	or	eax, -1
-	mov	DWORD PTR _kPopup$221302[esp+620], 122879934 ; 0752ffbeH
-
-; 1090 : 			GC.GetEngineUserInterface()->AddPopup(kPopup);
-; 1091 : 		}
-; 1092 : 		break;
-
-	jmp	$LN463@Activate
-$LN59@Activate:
-
-; 813  : 
-; 814  : 	switch(notification.m_eNotificationType)
-
+	je	SHORT $LN12@Activate
+	cmp	eax, -1103533898			; be3968b6H
+	jg	$LN59@Activate
+	je	$LN14@Activate
+	cmp	eax, -1686889601			; 9b741b7fH
+	jg	$LN60@Activate
+	je	$LN52@Activate
 	cmp	eax, -1774532806			; 963ac73aH
-	je	SHORT $LN23@Activate
-	cmp	eax, -1746998481			; 97deeb2fH
+	jg	$LN61@Activate
+	je	$LN25@Activate
+	cmp	eax, -2115432992			; 81e90de0H
+	je	$LN26@Activate
+	cmp	eax, -2068323322			; 84b7e406H
+	je	SHORT $LN10@Activate
+	cmp	eax, -1871397394			; 9074bdeeH
 	jne	$LN2@Activate
 $LN12@Activate:
 
-; 1055 : 
-; 1056 : 	case NOTIFICATION_LEAGUE_CALL_FOR_PROPOSALS:
-; 1057 : 	case NOTIFICATION_LEAGUE_CALL_FOR_VOTES:
-; 1058 : 	case NOTIFICATION_LEAGUE_VOTING_DONE:
-; 1059 : 	case NOTIFICATION_LEAGUE_VOTING_SOON:
-; 1060 : 		CvAssertMsg(notification.m_iGameDataIndex >= 0, "notification.m_iGameDataIndex is out of bounds");
-; 1061 : 		if (notification.m_iGameDataIndex >= 0)
+; 1073 : 
+; 1074 : 	case NOTIFICATION_IDEOLOGY_CHOSEN:
+; 1075 : 	case NOTIFICATION_CULTURE_VICTORY_SOMEONE_INFLUENTIAL:
+; 1076 : 	case NOTIFICATION_CULTURE_VICTORY_WITHIN_TWO:
+; 1077 : 	case NOTIFICATION_CULTURE_VICTORY_WITHIN_TWO_ACTIVE_PLAYER:
+; 1078 : 	case NOTIFICATION_CULTURE_VICTORY_WITHIN_ONE:
+; 1079 : 	case NOTIFICATION_CULTURE_VICTORY_WITHIN_ONE_ACTIVE_PLAYER:
+; 1080 : 	case NOTIFICATION_CULTURE_VICTORY_NO_LONGER_INFLUENTIAL:
+; 1081 : 		CvAssertMsg(notification.m_iGameDataIndex >= 0, "notification.m_iGameDataIndex is out of bounds");
+; 1082 : 		if (notification.m_iGameDataIndex >= 0)
 
-	mov	esi, DWORD PTR [esi+72]
 	xor	ebx, ebx
-	cmp	esi, ebx
-	jl	$LN51@Activate
+	cmp	DWORD PTR [esi+72], ebx
+	jl	SHORT $LN11@Activate
 
-; 1062 : 		{
-; 1063 : 			LeagueTypes eLeague = (LeagueTypes) notification.m_iGameDataIndex;
-; 1064 : 			CvPopupInfo kPopup(BUTTONPOPUP_LEAGUE_OVERVIEW, eLeague);
+; 1083 : 		{
+; 1084 : 			CvPopupInfo kPopup(BUTTONPOPUP_CULTURE_OVERVIEW);
 
 	or	eax, -1
-	mov	DWORD PTR _kPopup$221294[esp+600], esi
-	mov	DWORD PTR _kPopup$221294[esp+604], eax
-	mov	DWORD PTR _kPopup$221294[esp+608], eax
-	mov	BYTE PTR _kPopup$221294[esp+616], bl
-	mov	DWORD PTR _kPopup$221294[esp+620], 1104213538 ; 41d0f622H
+	mov	DWORD PTR _kPopup$221775[esp+600], eax
+	mov	DWORD PTR _kPopup$221775[esp+620], -401251415 ; e81563a9H
 
-; 1065 : 			GC.GetEngineUserInterface()->AddPopup(kPopup);
-; 1066 : 		}
-; 1067 : 		break;
+; 1085 : 			kPopup.iData2 = 3; // Tab to select
 
-	jmp	$LN459@Activate
-$LN23@Activate:
+	mov	DWORD PTR _kPopup$221775[esp+604], 3
+$LN464@Activate:
 
-; 993  : 
-; 994  : 	case NOTIFICATION_SPY_STOLE_TECH:
-; 995  : 	{
-; 996  : 		CvPopupInfo kPopup(BUTTONPOPUP_CHOOSE_TECH_TO_STEAL, m_ePlayer, notification.m_iGameDataIndex, notification.m_iExtraGameData);
+; 1083 : 		{
+; 1084 : 			CvPopupInfo kPopup(BUTTONPOPUP_CULTURE_OVERVIEW);
+
+	mov	DWORD PTR _kPopup$221775[esp+608], eax
+$LN468@Activate:
+	mov	BYTE PTR _kPopup$221775[esp+624], bl
+	mov	BYTE PTR _kPopup$221775[esp+617], bl
+	mov	BYTE PTR _kPopup$221775[esp+616], bl
+	mov	DWORD PTR _kPopup$221775[esp+612], ebx
+$LN465@Activate:
+
+; 1086 : 			GC.GetEngineUserInterface()->AddPopup(kPopup);
+
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
+	mov	edx, DWORD PTR [ecx]
+	mov	edx, DWORD PTR [edx+180]
+	lea	eax, DWORD PTR _kPopup$221775[esp+600]
+$LN466@Activate:
+	push	eax
+	call	edx
+$LN11@Activate:
+
+; 1150 : 	}
+; 1151 : }
+
+	mov	ecx, DWORD PTR __$EHRec$[esp+600]
+	pop	edi
+	pop	esi
+	pop	ebp
+	mov	DWORD PTR fs:0, ecx
+	pop	ebx
+	add	esp, 584				; 00000248H
+	ret	4
+$LN10@Activate:
+
+; 1087 : 		}
+; 1088 : 		break;
+; 1089 : 
+; 1090 : 	case NOTIFICATION_CHOOSE_ARCHAEOLOGY:
+; 1091 : 		CvAssertMsg(notification.m_iGameDataIndex >= 0, "notification.m_iGameDataIndex is out of bounds");
+; 1092 : 		if (notification.m_iGameDataIndex >= 0)
+
+	xor	ebx, ebx
+	cmp	DWORD PTR [esi+72], ebx
+	jl	SHORT $LN11@Activate
+
+; 1093 : 		{
+; 1094 : 			CvPopupInfo kPopup(BUTTONPOPUP_CHOOSE_ARCHAEOLOGY, m_ePlayer);
+
+	mov	ecx, DWORD PTR [edi]
+	or	eax, -1
+	mov	DWORD PTR _kPopup$221779[esp+600], ecx
+	mov	DWORD PTR _kPopup$221779[esp+604], eax
+	mov	DWORD PTR _kPopup$221779[esp+620], 122879934 ; 0752ffbeH
+
+; 1095 : 			GC.GetEngineUserInterface()->AddPopup(kPopup);
+; 1096 : 		}
+; 1097 : 		break;
+
+	jmp	SHORT $LN464@Activate
+$LN25@Activate:
+
+; 998  : 
+; 999  : 	case NOTIFICATION_SPY_STOLE_TECH:
+; 1000 : 	{
+; 1001 : 		CvPopupInfo kPopup(BUTTONPOPUP_CHOOSE_TECH_TO_STEAL, m_ePlayer, notification.m_iGameDataIndex, notification.m_iExtraGameData);
 
 	mov	eax, DWORD PTR [esi+76]
 	mov	ecx, DWORD PTR [esi+72]
@@ -6600,57 +6646,451 @@ $LN23@Activate:
 	push	ecx
 	push	edx
 	push	80					; 00000050H
-	lea	ecx, DWORD PTR _kPopup$221271[esp+628]
+	lea	ecx, DWORD PTR _kPopup$221748[esp+628]
 	call	??0CvPopupInfo@@QAE@W4ButtonPopupTypes@@HHHH_N1@Z ; CvPopupInfo::CvPopupInfo
 
-; 997  : 		strcpy(kPopup.szText, notification.m_strMessage);
+; 1002 : 		strcpy(kPopup.szText, notification.m_strMessage);
 
 	mov	ecx, ebp
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
-	lea	edx, DWORD PTR _kPopup$221271[esp+624]
-$LL55@Activate:
+	lea	edx, DWORD PTR _kPopup$221748[esp+624]
+	npad	7
+$LL57@Activate:
 	mov	cl, BYTE PTR [eax]
 	mov	BYTE PTR [edx], cl
 	inc	eax
 	inc	edx
 	cmp	cl, bl
-	jne	SHORT $LL55@Activate
+	jne	SHORT $LL57@Activate
 
-; 998  : 		GC.GetEngineUserInterface()->AddPopup(kPopup);
-; 999  : 	}
-; 1000 : 	break;
+; 1003 : 		GC.GetEngineUserInterface()->AddPopup(kPopup);
 
-	jmp	$LN456@Activate
-$LN58@Activate:
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
+	mov	eax, DWORD PTR [ecx]
+	mov	eax, DWORD PTR [eax+180]
+	lea	edx, DWORD PTR _kPopup$221748[esp+600]
+	push	edx
+	call	eax
 
-; 813  : 
-; 814  : 	switch(notification.m_eNotificationType)
+; 1004 : 	}
+; 1005 : 	break;
 
-	cmp	eax, -1421067341			; ab4c3bb3H
-	jg	$LN60@Activate
-	je	$LN31@Activate
-	cmp	eax, -1686889601			; 9b741b7fH
-	je	$LN50@Activate
+	jmp	$LN11@Activate
+$LN61@Activate:
+
+; 818  : 
+; 819  : 	switch(notification.m_eNotificationType)
+
+	cmp	eax, -1746998481			; 97deeb2fH
+	je	$LN14@Activate
+	cmp	eax, -1730271966			; 98de2522H
+	je	$LN12@Activate
+	jmp	$LN2@Activate
+$LN52@Activate:
+
+; 820  : 	{
+; 821  : 	case NOTIFICATION_WONDER_COMPLETED_ACTIVE_PLAYER:
+; 822  : 	{
+; 823  : 		CvPopupInfo kPopup(BUTTONPOPUP_WONDER_COMPLETED_ACTIVE_PLAYER, notification.m_iGameDataIndex, notification.m_iExtraGameData, notification.m_iX, notification.m_iY);
+
+	mov	ecx, DWORD PTR [esi+68]
+	mov	edx, DWORD PTR [esi+64]
+	mov	eax, DWORD PTR [esi+76]
+	xor	ebx, ebx
+	push	ebx
+	push	ebx
+	push	ecx
+	mov	ecx, DWORD PTR [esi+72]
+	push	edx
+	push	eax
+	push	ecx
+	push	69					; 00000045H
+	lea	ecx, DWORD PTR _kPopup$221601[esp+628]
+	call	??0CvPopupInfo@@QAE@W4ButtonPopupTypes@@HHHH_N1@Z ; CvPopupInfo::CvPopupInfo
+
+; 824  : 		GC.GetEngineUserInterface()->AddPopup(kPopup);
+; 825  : 	}
+; 826  : 	break;
+
+	jmp	$LN465@Activate
+$LN60@Activate:
+
+; 818  : 
+; 819  : 	switch(notification.m_eNotificationType)
+
+	cmp	eax, -1365828128			; ae971de0H
+	jg	$LN62@Activate
+	je	SHORT $LN43@Activate
 	cmp	eax, -1432015642			; aaa52ce6H
+	je	$LN17@Activate
+	cmp	eax, -1421067341			; ab4c3bb3H
 	jne	$LN2@Activate
-$LN15@Activate:
 
-; 1039 : 
-; 1040 : 	case NOTIFICATION_INTRIGUE_DECEPTION:
-; 1041 : 	case NOTIFICATION_INTRIGUE_SNEAK_ATTACK_ARMY_AGAINST_KNOWN_CITY_KNOWN:
-; 1042 : 	case NOTIFICATION_INTRIGUE_SNEAK_ATTACK_ARMY_AGAINST_KNOWN_CITY_UNKNOWN:
-; 1043 : 	case NOTIFICATION_INTRIGUE_SNEAK_ATTACK_AMPHIB_AGAINST_KNOWN_CITY_UNKNOWN:
-; 1044 : 	case NOTIFICATION_INTRIGUE_SNEAK_ATTACK_AMPHIB_AGAINST_KNOWN_CITY_KNOWN:
-; 1045 : 		CvAssertMsg(notification.m_iGameDataIndex >= 0, "notification.m_iGameDataIndex is out of bounds");
-; 1046 : 		if(notification.m_iGameDataIndex >= 0)
+; 948  : 	case NOTIFICATION_FREE_GREAT_PERSON:
+; 949  : 	{
+; 950  : 		if(GET_PLAYER(m_ePlayer).GetNumFreeGreatPeople() > 0)
+
+	mov	ecx, DWORD PTR [edi]
+	imul	ecx, 63236				; 0000f704H
+	add	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
+	call	?GetNumFreeGreatPeople@CvPlayer@@QBEHXZ	; CvPlayer::GetNumFreeGreatPeople
+	test	eax, eax
+	jle	$LN11@Activate
+
+; 951  : 		{
+; 952  : 			CvPopupInfo kPopup(BUTTONPOPUP_CHOOSE_FREE_GREAT_PERSON, m_ePlayer, notification.m_iGameDataIndex, notification.m_iExtraGameData);
+
+	mov	eax, DWORD PTR [esi+76]
+	mov	ecx, DWORD PTR [esi+72]
+	mov	edx, DWORD PTR [edi]
+	xor	ebx, ebx
+	push	ebx
+	push	ebx
+	push	ebx
+	push	eax
+	push	ecx
+	push	edx
+	push	75					; 0000004bH
+	lea	ecx, DWORD PTR _kPopup$221736[esp+628]
+	call	??0CvPopupInfo@@QAE@W4ButtonPopupTypes@@HHHH_N1@Z ; CvPopupInfo::CvPopupInfo
+
+; 953  : 			GC.GetEngineUserInterface()->AddPopup(kPopup);
+
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
+	mov	eax, DWORD PTR [ecx]
+	mov	eax, DWORD PTR [eax+180]
+	lea	edx, DWORD PTR _kPopup$221736[esp+600]
+	push	edx
+	call	eax
+
+; 954  : 		}
+; 955  : 	}
+; 956  : 	break;
+
+	jmp	$LN11@Activate
+$LN43@Activate:
+
+; 875  : 	case NOTIFICATION_MINOR_QUEST:
+; 876  : 	{
+; 877  : 		int iQuestFlags = notification.m_iExtraGameData;
+; 878  : 		CvPlot* pPlot = GC.getMap().plot(notification.m_iX, notification.m_iY);
+
+	mov	edi, DWORD PTR [esi+64]
+	mov	ecx, DWORD PTR [esi+76]
+	mov	edx, DWORD PTR [esi+68]
+	xor	ebx, ebx
+	mov	DWORD PTR _iQuestFlags$221635[esp+600], ecx
+	mov	DWORD PTR $T225085[esp+600], edx
+	cmp	edi, -2147483647			; 80000001H
+	je	$LN194@Activate
+	cmp	edx, -2147483647			; 80000001H
+	je	$LN194@Activate
+	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+52
+	mov	dl, BYTE PTR [eax+4056]
+	mov	ecx, DWORD PTR [eax+4020]
+	cmp	dl, bl
+	je	SHORT $LN145@Activate
+	cmp	edi, ebx
+	jge	SHORT $LN147@Activate
+	mov	eax, edi
+	cdq
+	idiv	ecx
+	mov	edi, edx
+	add	edi, ecx
+	jmp	SHORT $LN145@Activate
+$LN147@Activate:
+	cmp	edi, ecx
+	jl	SHORT $LN145@Activate
+	mov	eax, edi
+	cdq
+	idiv	ecx
+	mov	edi, edx
+$LN145@Activate:
+	mov	edx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+52
+	mov	al, BYTE PTR [edx+4057]
+	mov	ebp, DWORD PTR [edx+4024]
+	mov	edx, DWORD PTR $T225085[esp+600]
+	cmp	al, bl
+	je	SHORT $LN155@Activate
+	cmp	edx, ebx
+	jge	SHORT $LN157@Activate
+	mov	eax, edx
+	cdq
+	idiv	ebp
+	add	edx, ebp
+	jmp	SHORT $LN155@Activate
+$LN157@Activate:
+	cmp	edx, ebp
+	jl	SHORT $LN155@Activate
+	mov	eax, edx
+	cdq
+	idiv	ebp
+$LN155@Activate:
+	cmp	edi, ebx
+	jl	$LN194@Activate
+	cmp	edi, ecx
+	jge	$LN194@Activate
+	cmp	edx, ebx
+	jl	$LN194@Activate
+	cmp	edx, ebp
+	jge	$LN194@Activate
+	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+52
+	imul	ecx, edx
+	add	ecx, edi
+	imul	ecx, 484				; 000001e4H
+	add	ecx, DWORD PTR [eax+4068]
+
+; 879  : 		if(pPlot)
+
+	cmp	ecx, ebx
+	je	SHORT $LN194@Activate
+
+; 880  : 		{
+; 881  : 			auto_ptr<ICvPlot1> pDllPlot = GC.WrapPlotPointer(pPlot);
+
+	push	ecx
+	lea	ecx, DWORD PTR $T224837[esp+604]
+	push	ecx
+	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
+	call	?WrapPlotPointer@CvGlobals@@QAE?AV?$auto_ptr@VICvPlot1@@@std@@PAVCvPlot@@@Z ; CvGlobals::WrapPlotPointer
+	mov	edi, DWORD PTR [eax]
+	mov	DWORD PTR [eax], ebx
+	mov	DWORD PTR _pDllPlot$221639[esp+600], edi
+	mov	eax, DWORD PTR $T224837[esp+600]
+	mov	DWORD PTR __$EHRec$[esp+608], 1
+	cmp	eax, ebx
+	je	SHORT $LN181@Activate
+	mov	edx, DWORD PTR [eax]
+	push	eax
+	mov	eax, DWORD PTR [edx+4]
+	call	eax
+$LN181@Activate:
+
+; 882  : 			GC.GetEngineUserInterface()->lookAt(pDllPlot.get(), CAMERALOOKAT_NORMAL);
+
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
+	mov	edx, DWORD PTR [ecx]
+	mov	eax, DWORD PTR [edx+272]
+	push	ebx
+	push	edi
+	call	eax
+
+; 883  : 			gDLL->GameplayDoFX(pDllPlot.get());
+
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8564
+	mov	edx, DWORD PTR [ecx]
+	mov	eax, DWORD PTR [edx+708]
+	push	-1
+	push	edi
+	call	eax
+
+; 884  : 		}
+
+	mov	DWORD PTR __$EHRec$[esp+608], -1
+	cmp	edi, ebx
+	je	SHORT $LN194@Activate
+	mov	ecx, DWORD PTR [edi]
+	mov	edx, DWORD PTR [ecx+4]
+	push	edi
+	call	edx
+$LN194@Activate:
+
+; 885  : 
+; 886  : 		PlayerTypes ePlayer = (PlayerTypes)notification.m_iGameDataIndex;
+
+	mov	eax, DWORD PTR [esi+72]
+
+; 887  : 		if (GET_PLAYER(ePlayer).isAlive())
+
+	mov	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
+	imul	eax, 63236				; 0000f704H
+	cmp	BYTE PTR [eax+ecx+2256], bl
+	je	$LN11@Activate
+
+; 888  : 		{
+; 889  : 			GC.GetEngineUserInterface()->SetTempString(notification.m_strMessage);
+
+	mov	edi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
+	sub	esp, 28					; 0000001cH
+	lea	eax, DWORD PTR [esi+8]
+	mov	ecx, esp
+	mov	DWORD PTR $T224839[esp+628], esp
+	push	eax
+	call	??0CvString@@QAE@ABV0@@Z
+	mov	edx, DWORD PTR [edi]
+	mov	eax, DWORD PTR [edx+524]
+	mov	ecx, edi
+	call	eax
+
+; 890  : 			CvPopupInfo kPopup(BUTTONPOPUP_CITY_STATE_MESSAGE, notification.m_iGameDataIndex, iQuestFlags);
+
+	mov	ecx, DWORD PTR [esi+72]
+	mov	edx, DWORD PTR _iQuestFlags$221635[esp+600]
+	mov	DWORD PTR _kPopup$221646[esp+600], ecx
+	mov	DWORD PTR _kPopup$221646[esp+604], edx
+	mov	DWORD PTR _kPopup$221646[esp+620], 62	; 0000003eH
+$LN471@Activate:
+	mov	DWORD PTR _kPopup$221646[esp+608], -1
+$LN470@Activate:
+
+; 891  : 			GC.GetEngineUserInterface()->AddPopup(kPopup);
+
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
+	mov	DWORD PTR _kPopup$221646[esp+612], ebx
+	mov	BYTE PTR _kPopup$221646[esp+616], bl
+	mov	BYTE PTR _kPopup$221646[esp+617], bl
+	mov	BYTE PTR _kPopup$221646[esp+624], bl
+	mov	eax, DWORD PTR [ecx]
+	mov	eax, DWORD PTR [eax+180]
+	lea	edx, DWORD PTR _kPopup$221646[esp+600]
+	push	edx
+	call	eax
+
+; 892  : 		}
+; 893  : 	}
+; 894  : 	break;
+
+	jmp	$LN11@Activate
+$LN62@Activate:
+
+; 818  : 
+; 819  : 	switch(notification.m_eNotificationType)
+
+	cmp	eax, -1328544167			; b0d00659H
+	je	$LN17@Activate
+	cmp	eax, -1168514695			; ba59e179H
+	jne	$LN2@Activate
+
+; 943  : 	case NOTIFICATION_PLAYER_DEAL_RECEIVED:
+; 944  : 	{
+; 945  : 		GC.GetEngineUserInterface()->OpenPlayerDealScreen((PlayerTypes) notification.m_iX);
+
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
+	mov	edx, DWORD PTR [ecx]
+	mov	eax, DWORD PTR [esi+64]
+	mov	edx, DWORD PTR [edx+504]
+
+; 946  : 	}
+; 947  : 	break;
+
+	jmp	$LN466@Activate
+$LN59@Activate:
+
+; 818  : 
+; 819  : 	switch(notification.m_eNotificationType)
+
+	cmp	eax, -300693023				; ee13c9e1H
+	jg	$LN63@Activate
+	je	$LN4@Activate
+	cmp	eax, -720689320				; d50b2758H
+	jg	$LN64@Activate
+	je	$LN20@Activate
+	cmp	eax, -1076480691			; bfd6354dH
+	je	$LN4@Activate
+	cmp	eax, -851367674				; cd412906H
+	je	SHORT $LN50@Activate
+	cmp	eax, -832529557				; ce609b6bH
+	je	$LN4@Activate
+	jmp	$LN2@Activate
+$LN50@Activate:
+
+; 833  : 	case NOTIFICATION_BUY_TILE:
+; 834  : 	{
+; 835  : 		// Jon say - do like Sid would!
+; 836  : 		CvCity* pCity = GET_PLAYER(m_ePlayer).getCapitalCity();
+
+	mov	ecx, DWORD PTR [edi]
+	imul	ecx, 63236				; 0000f704H
+	add	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
+	call	?getCapitalCity@CvPlayer@@QAEPAVCvCity@@XZ ; CvPlayer::getCapitalCity
+
+; 837  : 		if(pCity)
+
+	xor	ebx, ebx
+	cmp	eax, ebx
+	je	$LN11@Activate
+
+; 838  : 		{
+; 839  : 			auto_ptr<ICvPlot1> pDllPlot = GC.WrapPlotPointer(pCity->plot());
+
+	mov	ecx, eax
+	call	?plot@CvCity@@QBEPAVCvPlot@@XZ		; CvCity::plot
+	push	eax
+	lea	eax, DWORD PTR $T224835[esp+604]
+	push	eax
+	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
+	call	?WrapPlotPointer@CvGlobals@@QAE?AV?$auto_ptr@VICvPlot1@@@std@@PAVCvPlot@@@Z ; CvGlobals::WrapPlotPointer
+	mov	esi, DWORD PTR [eax]
+	mov	DWORD PTR [eax], ebx
+	mov	DWORD PTR _pDllPlot$221609[esp+600], esi
+	mov	eax, DWORD PTR $T224835[esp+600]
+	mov	DWORD PTR __$EHRec$[esp+608], ebx
+	cmp	eax, ebx
+	je	SHORT $LN105@Activate
+	mov	ecx, DWORD PTR [eax]
+	mov	edx, DWORD PTR [ecx+4]
+	push	eax
+	call	edx
+$LN105@Activate:
+
+; 840  : 			GC.GetEngineUserInterface()->lookAt(pDllPlot.get(), CAMERALOOKAT_NORMAL);
+
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
+	mov	eax, DWORD PTR [ecx]
+	mov	edx, DWORD PTR [eax+272]
+	push	ebx
+	push	esi
+	call	edx
+
+; 841  : 		}
+
+	mov	DWORD PTR __$EHRec$[esp+608], -1
+	cmp	esi, ebx
+	je	$LN11@Activate
+	mov	eax, DWORD PTR [esi]
+	mov	ecx, DWORD PTR [eax+4]
+	push	esi
+	call	ecx
+
+; 842  : 	}
+; 843  : 	break;
+
+	jmp	$LN11@Activate
+$LN64@Activate:
+
+; 818  : 
+; 819  : 	switch(notification.m_eNotificationType)
+
+	cmp	eax, -433658102				; e626e70aH
+	je	$LN26@Activate
+	cmp	eax, -372818113				; e9c73f3fH
+	jmp	$LN467@Activate
+$LN63@Activate:
+	cmp	eax, -54118376				; fcc63818H
+	jg	$LN65@Activate
+	je	$LN20@Activate
+	cmp	eax, -273578033				; efb187cfH
+	je	$LN51@Activate
+	cmp	eax, -112125243				; f9511ac5H
+	jne	$LN2@Activate
+$LN17@Activate:
+
+; 1044 : 
+; 1045 : 	case NOTIFICATION_INTRIGUE_DECEPTION:
+; 1046 : 	case NOTIFICATION_INTRIGUE_SNEAK_ATTACK_ARMY_AGAINST_KNOWN_CITY_KNOWN:
+; 1047 : 	case NOTIFICATION_INTRIGUE_SNEAK_ATTACK_ARMY_AGAINST_KNOWN_CITY_UNKNOWN:
+; 1048 : 	case NOTIFICATION_INTRIGUE_SNEAK_ATTACK_AMPHIB_AGAINST_KNOWN_CITY_UNKNOWN:
+; 1049 : 	case NOTIFICATION_INTRIGUE_SNEAK_ATTACK_AMPHIB_AGAINST_KNOWN_CITY_KNOWN:
+; 1050 : 		CvAssertMsg(notification.m_iGameDataIndex >= 0, "notification.m_iGameDataIndex is out of bounds");
+; 1051 : 		if(notification.m_iGameDataIndex >= 0)
 
 	mov	esi, DWORD PTR [esi+72]
 	test	esi, esi
-	jl	$LN51@Activate
+	jl	$LN11@Activate
 
-; 1047 : 		{
-; 1048 : 			PlayerTypes ePlayerToContact = (PlayerTypes)notification.m_iGameDataIndex;
-; 1049 : 			if (!GET_PLAYER(ePlayerToContact).isHuman() && ePlayerToContact != m_ePlayer && GET_PLAYER(m_ePlayer).GetEspionage()->HasRecentIntrigueAbout(ePlayerToContact) && !GET_TEAM(GET_PLAYER(m_ePlayer).getTeam()).isAtWar(GET_PLAYER(ePlayerToContact).getTeam()))
+; 1052 : 		{
+; 1053 : 			PlayerTypes ePlayerToContact = (PlayerTypes)notification.m_iGameDataIndex;
+; 1054 : 			if (!GET_PLAYER(ePlayerToContact).isHuman() && ePlayerToContact != m_ePlayer && GET_PLAYER(m_ePlayer).GetEspionage()->HasRecentIntrigueAbout(ePlayerToContact) && !GET_TEAM(GET_PLAYER(m_ePlayer).getTeam()).isAtWar(GET_PLAYER(ePlayerToContact).getTeam()))
 
 	mov	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	mov	ebx, esi
@@ -6658,10 +7098,10 @@ $LN15@Activate:
 	add	ecx, ebx
 	call	?isHuman@CvPlayer@@QBE_NXZ		; CvPlayer::isHuman
 	test	al, al
-	jne	$LN51@Activate
+	jne	$LN11@Activate
 	mov	eax, DWORD PTR [edi]
 	cmp	esi, eax
-	je	$LN51@Activate
+	je	$LN11@Activate
 	imul	eax, 63236				; 0000f704H
 	add	eax, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	push	esi
@@ -6670,7 +7110,7 @@ $LN15@Activate:
 	mov	ecx, eax
 	call	?HasRecentIntrigueAbout@CvPlayerEspionage@@QAE_NW4PlayerTypes@@@Z ; CvPlayerEspionage::HasRecentIntrigueAbout
 	test	al, al
-	je	$LN51@Activate
+	je	$LN11@Activate
 	mov	ecx, DWORD PTR [edi]
 	mov	eax, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	imul	ecx, 63236				; 0000f704H
@@ -6686,10 +7126,10 @@ $LN15@Activate:
 	mov	ecx, esi
 	call	?isAtWar@CvTeam@@QBE_NW4TeamTypes@@@Z	; CvTeam::isAtWar
 	test	al, al
-	jne	$LN51@Activate
+	jne	$LN11@Activate
 
-; 1050 : 			{
-; 1051 : 				GET_PLAYER(ePlayerToContact).GetDiplomacyAI()->DoBeginDiploWithHumanInDiscuss();
+; 1055 : 			{
+; 1056 : 				GET_PLAYER(ePlayerToContact).GetDiplomacyAI()->DoBeginDiploWithHumanInDiscuss();
 
 	mov	edx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	lea	ecx, DWORD PTR [ebx+edx]
@@ -6697,373 +7137,16 @@ $LN15@Activate:
 	mov	ecx, eax
 	call	?DoBeginDiploWithHumanInDiscuss@CvDiplomacyAI@@QAEXXZ ; CvDiplomacyAI::DoBeginDiploWithHumanInDiscuss
 
-; 1052 : 			}
-; 1053 : 		}
-; 1054 : 		break;
+; 1057 : 			}
+; 1058 : 		}
+; 1059 : 		break;
 
-	jmp	$LN51@Activate
-$LN50@Activate:
+	jmp	$LN11@Activate
+$LN51@Activate:
 
-; 815  : 	{
-; 816  : 	case NOTIFICATION_WONDER_COMPLETED_ACTIVE_PLAYER:
-; 817  : 	{
-; 818  : 		CvPopupInfo kPopup(BUTTONPOPUP_WONDER_COMPLETED_ACTIVE_PLAYER, notification.m_iGameDataIndex, notification.m_iExtraGameData, notification.m_iX, notification.m_iY);
-
-	mov	ecx, DWORD PTR [esi+68]
-	mov	edx, DWORD PTR [esi+64]
-	mov	eax, DWORD PTR [esi+76]
-	xor	ebx, ebx
-	push	ebx
-	push	ebx
-	push	ecx
-	mov	ecx, DWORD PTR [esi+72]
-	push	edx
-	push	eax
-	push	ecx
-	push	69					; 00000045H
-	lea	ecx, DWORD PTR _kPopup$221124[esp+628]
-	call	??0CvPopupInfo@@QAE@W4ButtonPopupTypes@@HHHH_N1@Z ; CvPopupInfo::CvPopupInfo
-
-; 819  : 		GC.GetEngineUserInterface()->AddPopup(kPopup);
-
-	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
-	mov	edx, DWORD PTR [ecx]
-	mov	edx, DWORD PTR [edx+180]
-	lea	eax, DWORD PTR _kPopup$221124[esp+600]
-	push	eax
-	call	edx
-
-; 820  : 	}
-; 821  : 	break;
-
-	jmp	$LN51@Activate
-$LN31@Activate:
-
-; 941  : 	}
-; 942  : 	break;
-; 943  : 	case NOTIFICATION_FREE_GREAT_PERSON:
-; 944  : 	{
-; 945  : 		if(GET_PLAYER(m_ePlayer).GetNumFreeGreatPeople() > 0)
-
-	mov	ecx, DWORD PTR [edi]
-	imul	ecx, 63236				; 0000f704H
-	add	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
-	call	?GetNumFreeGreatPeople@CvPlayer@@QBEHXZ	; CvPlayer::GetNumFreeGreatPeople
-	test	eax, eax
-	jle	$LN51@Activate
-
-; 946  : 		{
-; 947  : 			CvPopupInfo kPopup(BUTTONPOPUP_CHOOSE_FREE_GREAT_PERSON, m_ePlayer, notification.m_iGameDataIndex, notification.m_iExtraGameData);
-
-	mov	eax, DWORD PTR [esi+76]
-	mov	ecx, DWORD PTR [esi+72]
-	mov	edx, DWORD PTR [edi]
-	xor	ebx, ebx
-	push	ebx
-	push	ebx
-	push	ebx
-	push	eax
-	push	ecx
-	push	edx
-	push	75					; 0000004bH
-	lea	ecx, DWORD PTR _kPopup$221259[esp+628]
-	call	??0CvPopupInfo@@QAE@W4ButtonPopupTypes@@HHHH_N1@Z ; CvPopupInfo::CvPopupInfo
-
-; 948  : 			GC.GetEngineUserInterface()->AddPopup(kPopup);
-; 949  : 		}
-; 950  : 	}
-; 951  : 	break;
-
-	jmp	$LN456@Activate
-$LN60@Activate:
-
-; 813  : 
-; 814  : 	switch(notification.m_eNotificationType)
-
-	cmp	eax, -1365828128			; ae971de0H
-	je	SHORT $LN41@Activate
-	cmp	eax, -1328544167			; b0d00659H
-	je	$LN15@Activate
-	jmp	$LN2@Activate
-$LN41@Activate:
-
-; 870  : 	case NOTIFICATION_MINOR_QUEST:
-; 871  : 	{
-; 872  : 		int iQuestFlags = notification.m_iExtraGameData;
-; 873  : 		CvPlot* pPlot = GC.getMap().plot(notification.m_iX, notification.m_iY);
-
-	mov	edi, DWORD PTR [esi+64]
-	mov	ecx, DWORD PTR [esi+76]
-	mov	edx, DWORD PTR [esi+68]
-	xor	ebx, ebx
-	mov	DWORD PTR _iQuestFlags$221158[esp+600], ecx
-	mov	DWORD PTR $T224600[esp+600], edx
-	cmp	edi, -2147483647			; 80000001H
-	je	$LN192@Activate
-	cmp	edx, -2147483647			; 80000001H
-	je	$LN192@Activate
-	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+52
-	mov	dl, BYTE PTR [eax+4056]
-	mov	ecx, DWORD PTR [eax+4020]
-	cmp	dl, bl
-	je	SHORT $LN143@Activate
-	cmp	edi, ebx
-	jge	SHORT $LN145@Activate
-	mov	eax, edi
-	cdq
-	idiv	ecx
-	mov	edi, edx
-	add	edi, ecx
-	jmp	SHORT $LN143@Activate
-$LN145@Activate:
-	cmp	edi, ecx
-	jl	SHORT $LN143@Activate
-	mov	eax, edi
-	cdq
-	idiv	ecx
-	mov	edi, edx
-$LN143@Activate:
-	mov	edx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+52
-	mov	al, BYTE PTR [edx+4057]
-	mov	ebp, DWORD PTR [edx+4024]
-	mov	edx, DWORD PTR $T224600[esp+600]
-	cmp	al, bl
-	je	SHORT $LN153@Activate
-	cmp	edx, ebx
-	jge	SHORT $LN155@Activate
-	mov	eax, edx
-	cdq
-	idiv	ebp
-	add	edx, ebp
-	jmp	SHORT $LN153@Activate
-$LN155@Activate:
-	cmp	edx, ebp
-	jl	SHORT $LN153@Activate
-	mov	eax, edx
-	cdq
-	idiv	ebp
-$LN153@Activate:
-	cmp	edi, ebx
-	jl	$LN192@Activate
-	cmp	edi, ecx
-	jge	$LN192@Activate
-	cmp	edx, ebx
-	jl	$LN192@Activate
-	cmp	edx, ebp
-	jge	$LN192@Activate
-	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+52
-	imul	ecx, edx
-	add	ecx, edi
-	imul	ecx, 484				; 000001e4H
-	add	ecx, DWORD PTR [eax+4068]
-
-; 874  : 		if(pPlot)
-
-	cmp	ecx, ebx
-	je	SHORT $LN192@Activate
-
-; 875  : 		{
-; 876  : 			auto_ptr<ICvPlot1> pDllPlot = GC.WrapPlotPointer(pPlot);
-
-	push	ecx
-	lea	ecx, DWORD PTR $T224352[esp+604]
-	push	ecx
-	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	call	?WrapPlotPointer@CvGlobals@@QAE?AV?$auto_ptr@VICvPlot1@@@std@@PAVCvPlot@@@Z ; CvGlobals::WrapPlotPointer
-	mov	edi, DWORD PTR [eax]
-	mov	DWORD PTR [eax], ebx
-	mov	DWORD PTR _pDllPlot$221162[esp+600], edi
-	mov	eax, DWORD PTR $T224352[esp+600]
-	mov	DWORD PTR __$EHRec$[esp+608], 1
-	cmp	eax, ebx
-	je	SHORT $LN179@Activate
-	mov	edx, DWORD PTR [eax]
-	push	eax
-	mov	eax, DWORD PTR [edx+4]
-	call	eax
-$LN179@Activate:
-
-; 877  : 			GC.GetEngineUserInterface()->lookAt(pDllPlot.get(), CAMERALOOKAT_NORMAL);
-
-	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
-	mov	edx, DWORD PTR [ecx]
-	mov	eax, DWORD PTR [edx+272]
-	push	ebx
-	push	edi
-	call	eax
-
-; 878  : 			gDLL->GameplayDoFX(pDllPlot.get());
-
-	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8564
-	mov	edx, DWORD PTR [ecx]
-	mov	eax, DWORD PTR [edx+708]
-	push	-1
-	push	edi
-	call	eax
-
-; 879  : 		}
-
-	mov	DWORD PTR __$EHRec$[esp+608], -1
-	cmp	edi, ebx
-	je	SHORT $LN192@Activate
-	mov	ecx, DWORD PTR [edi]
-	mov	edx, DWORD PTR [ecx+4]
-	push	edi
-	call	edx
-$LN192@Activate:
-
-; 880  : 
-; 881  : 		PlayerTypes ePlayer = (PlayerTypes)notification.m_iGameDataIndex;
-
-	mov	eax, DWORD PTR [esi+72]
-
-; 882  : 		if (GET_PLAYER(ePlayer).isAlive())
-
-	mov	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
-	imul	eax, 63236				; 0000f704H
-	cmp	BYTE PTR [eax+ecx+2256], bl
-	je	$LN51@Activate
-
-; 883  : 		{
-; 884  : 			GC.GetEngineUserInterface()->SetTempString(notification.m_strMessage);
-
-	mov	edi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
-	sub	esp, 28					; 0000001cH
-	lea	eax, DWORD PTR [esi+8]
-	mov	ecx, esp
-	mov	DWORD PTR $T224354[esp+628], esp
-	push	eax
-	call	??0CvString@@QAE@ABV0@@Z
-	mov	edx, DWORD PTR [edi]
-	mov	eax, DWORD PTR [edx+524]
-	mov	ecx, edi
-	call	eax
-
-; 885  : 			CvPopupInfo kPopup(BUTTONPOPUP_CITY_STATE_MESSAGE, notification.m_iGameDataIndex, iQuestFlags);
-
-	mov	ecx, DWORD PTR [esi+72]
-	mov	edx, DWORD PTR _iQuestFlags$221158[esp+600]
-	mov	DWORD PTR _kPopup$221169[esp+600], ecx
-	mov	DWORD PTR _kPopup$221169[esp+604], edx
-	mov	BYTE PTR _kPopup$221169[esp+616], bl
-	mov	DWORD PTR _kPopup$221169[esp+620], 62	; 0000003eH
-
-; 886  : 			GC.GetEngineUserInterface()->AddPopup(kPopup);
-; 887  : 		}
-; 888  : 	}
-; 889  : 	break;
-
-	jmp	$LN457@Activate
-$LN32@Activate:
-
-; 933  : 	case NOTIFICATION_PLAYER_DEAL:
-; 934  : 	{
-; 935  : 		GC.GetEngineUserInterface()->OpenPlayerDealScreen((PlayerTypes) notification.m_iX);
-; 936  : 	}
-; 937  : 	break;
-; 938  : 	case NOTIFICATION_PLAYER_DEAL_RECEIVED:
-; 939  : 	{
-; 940  : 		GC.GetEngineUserInterface()->OpenPlayerDealScreen((PlayerTypes) notification.m_iX);
-
-	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
-	mov	edx, DWORD PTR [ecx]
-	mov	eax, DWORD PTR [esi+64]
-	mov	edx, DWORD PTR [edx+504]
-	push	eax
-	call	edx
-	jmp	$LN51@Activate
-$LN57@Activate:
-
-; 813  : 
-; 814  : 	switch(notification.m_eNotificationType)
-
-	cmp	eax, -273578033				; efb187cfH
-	jg	$LN61@Activate
-	je	$LN49@Activate
-	cmp	eax, -720689320				; d50b2758H
-	jg	$LN62@Activate
-	je	$LN18@Activate
-	cmp	eax, -1103533898			; be3968b6H
-	je	$LN12@Activate
-	cmp	eax, -851367674				; cd412906H
-	jne	$LN2@Activate
-
-; 828  : 	case NOTIFICATION_BUY_TILE:
-; 829  : 	{
-; 830  : 		// Jon say - do like Sid would!
-; 831  : 		CvCity* pCity = GET_PLAYER(m_ePlayer).getCapitalCity();
-
-	mov	ecx, DWORD PTR [edi]
-	imul	ecx, 63236				; 0000f704H
-	add	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
-	call	?getCapitalCity@CvPlayer@@QAEPAVCvCity@@XZ ; CvPlayer::getCapitalCity
-
-; 832  : 		if(pCity)
-
-	xor	ebx, ebx
-	cmp	eax, ebx
-	je	$LN51@Activate
-
-; 833  : 		{
-; 834  : 			auto_ptr<ICvPlot1> pDllPlot = GC.WrapPlotPointer(pCity->plot());
-
-	mov	ecx, eax
-	call	?plot@CvCity@@QBEPAVCvPlot@@XZ		; CvCity::plot
-	push	eax
-	lea	eax, DWORD PTR $T224350[esp+604]
-	push	eax
-	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	call	?WrapPlotPointer@CvGlobals@@QAE?AV?$auto_ptr@VICvPlot1@@@std@@PAVCvPlot@@@Z ; CvGlobals::WrapPlotPointer
-	mov	esi, DWORD PTR [eax]
-	mov	DWORD PTR [eax], ebx
-	mov	DWORD PTR _pDllPlot$221132[esp+600], esi
-	mov	eax, DWORD PTR $T224350[esp+600]
-	mov	DWORD PTR __$EHRec$[esp+608], ebx
-	cmp	eax, ebx
-	je	SHORT $LN103@Activate
-	mov	ecx, DWORD PTR [eax]
-	mov	edx, DWORD PTR [ecx+4]
-	push	eax
-	call	edx
-$LN103@Activate:
-
-; 835  : 			GC.GetEngineUserInterface()->lookAt(pDllPlot.get(), CAMERALOOKAT_NORMAL);
-
-	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
-	mov	eax, DWORD PTR [ecx]
-	mov	edx, DWORD PTR [eax+272]
-	push	ebx
-	push	esi
-	call	edx
-
-; 836  : 		}
-
-	mov	DWORD PTR __$EHRec$[esp+608], -1
-	cmp	esi, ebx
-	je	$LN51@Activate
-	mov	eax, DWORD PTR [esi]
-	mov	ecx, DWORD PTR [eax+4]
-	push	esi
-	call	ecx
-
-; 837  : 	}
-; 838  : 	break;
-
-	jmp	$LN51@Activate
-$LN62@Activate:
-
-; 813  : 
-; 814  : 	switch(notification.m_eNotificationType)
-
-	cmp	eax, -433658102				; e626e70aH
-	je	$LN24@Activate
-	cmp	eax, -372818113				; e9c73f3fH
-	jmp	$LN458@Activate
-$LN49@Activate:
-
-; 822  : 	case NOTIFICATION_GREAT_WORK_COMPLETED_ACTIVE_PLAYER:
-; 823  : 		{
-; 824  : 			CvPopupInfo kPopup(BUTTONPOPUP_GREAT_WORK_COMPLETED_ACTIVE_PLAYER, notification.m_iGameDataIndex, notification.m_iExtraGameData, notification.m_iX, notification.m_iY);
+; 827  : 	case NOTIFICATION_GREAT_WORK_COMPLETED_ACTIVE_PLAYER:
+; 828  : 		{
+; 829  : 			CvPopupInfo kPopup(BUTTONPOPUP_GREAT_WORK_COMPLETED_ACTIVE_PLAYER, notification.m_iGameDataIndex, notification.m_iExtraGameData, notification.m_iX, notification.m_iY);
 
 	mov	edx, DWORD PTR [esi+68]
 	mov	eax, DWORD PTR [esi+64]
@@ -7077,54 +7160,50 @@ $LN49@Activate:
 	push	ecx
 	push	edx
 	push	1031589465				; 3d7cce59H
-	lea	ecx, DWORD PTR _kPopup$221127[esp+628]
+	lea	ecx, DWORD PTR _kPopup$221604[esp+628]
 	call	??0CvPopupInfo@@QAE@W4ButtonPopupTypes@@HHHH_N1@Z ; CvPopupInfo::CvPopupInfo
 
-; 825  : 			GC.GetEngineUserInterface()->AddPopup(kPopup);
-; 826  : 		}
-; 827  : 		break;
+; 830  : 			GC.GetEngineUserInterface()->AddPopup(kPopup);
 
-	jmp	$LN456@Activate
-$LN61@Activate:
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
+	mov	eax, DWORD PTR [ecx]
+	mov	eax, DWORD PTR [eax+180]
+	lea	edx, DWORD PTR _kPopup$221604[esp+600]
+	push	edx
+	call	eax
 
-; 813  : 
-; 814  : 	switch(notification.m_eNotificationType)
+; 831  : 		}
+; 832  : 		break;
 
-	cmp	eax, -46207143				; fd3eef59H
-	jg	$LN63@Activate
-	je	$LN12@Activate
-	cmp	eax, -112125243				; f9511ac5H
-	je	$LN15@Activate
-	cmp	eax, -54118376				; fcc63818H
-	jne	$LN2@Activate
-$LN18@Activate:
+	jmp	$LN11@Activate
+$LN20@Activate:
 
-; 1021 : 
-; 1022 : 	case NOTIFICATION_TECH_STOLEN_SPY_IDENTIFIED:
-; 1023 : 	case NOTIFICATION_SPY_KILLED_A_SPY:
-; 1024 : 	{
-; 1025 : 		CvAssertMsg(notification.m_iGameDataIndex >= 0, "notification.m_iGameDataIndex is out of bounds");
-; 1026 : 		if(notification.m_iGameDataIndex >= 0 && notification.m_iExtraGameData == -1)
+; 1026 : 
+; 1027 : 	case NOTIFICATION_TECH_STOLEN_SPY_IDENTIFIED:
+; 1028 : 	case NOTIFICATION_SPY_KILLED_A_SPY:
+; 1029 : 	{
+; 1030 : 		CvAssertMsg(notification.m_iGameDataIndex >= 0, "notification.m_iGameDataIndex is out of bounds");
+; 1031 : 		if(notification.m_iGameDataIndex >= 0 && notification.m_iExtraGameData == -1)
 
 	mov	eax, DWORD PTR [esi+72]
 	test	eax, eax
-	jl	$LN51@Activate
+	jl	$LN11@Activate
 	cmp	DWORD PTR [esi+76], -1
-	jne	$LN51@Activate
+	jne	$LN11@Activate
 
-; 1027 : 		{
-; 1028 : 			PlayerTypes eTargetPlayer = (PlayerTypes)notification.m_iGameDataIndex;
-; 1029 : 			if (!GET_PLAYER(eTargetPlayer).isHuman())
+; 1032 : 		{
+; 1033 : 			PlayerTypes eTargetPlayer = (PlayerTypes)notification.m_iGameDataIndex;
+; 1034 : 			if (!GET_PLAYER(eTargetPlayer).isHuman())
 
 	imul	eax, 63236				; 0000f704H
 	add	eax, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	mov	ecx, eax
 	call	?isHuman@CvPlayer@@QBE_NXZ		; CvPlayer::isHuman
 	test	al, al
-	jne	SHORT $LN16@Activate
+	jne	SHORT $LN18@Activate
 
-; 1030 : 			{
-; 1031 : 				GET_PLAYER((PlayerTypes)notification.m_iGameDataIndex).GetDiplomacyAI()->DoBeginDiploWithHumanEspionageResult();
+; 1035 : 			{
+; 1036 : 				GET_PLAYER((PlayerTypes)notification.m_iGameDataIndex).GetDiplomacyAI()->DoBeginDiploWithHumanEspionageResult();
 
 	mov	ecx, DWORD PTR [esi+72]
 	imul	ecx, 63236				; 0000f704H
@@ -7132,11 +7211,11 @@ $LN18@Activate:
 	call	?GetDiplomacyAI@CvPlayer@@QBEPAVCvDiplomacyAI@@XZ ; CvPlayer::GetDiplomacyAI
 	mov	ecx, eax
 	call	?DoBeginDiploWithHumanEspionageResult@CvDiplomacyAI@@QAEXXZ ; CvDiplomacyAI::DoBeginDiploWithHumanEspionageResult
-$LN16@Activate:
+$LN18@Activate:
 
-; 1032 : 			}
-; 1033 : 
-; 1034 : 			GC.GetEngineUserInterface()->RemoveNotification(notification.m_iLookupIndex, m_ePlayer);
+; 1037 : 			}
+; 1038 : 
+; 1039 : 			GC.GetEngineUserInterface()->RemoveNotification(notification.m_iLookupIndex, m_ePlayer);
 
 	mov	eax, DWORD PTR [edi]
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
@@ -7147,71 +7226,35 @@ $LN16@Activate:
 	push	eax
 	call	edx
 
-; 1035 : 			notification.m_iExtraGameData = 1; // slewis hack to mark notification as seen so we don't re-enter diplomacy
+; 1040 : 			notification.m_iExtraGameData = 1; // slewis hack to mark notification as seen so we don't re-enter diplomacy
 
 	mov	DWORD PTR [esi+76], ebx
 
-; 1036 : 		}
-; 1037 : 	}
-; 1038 : 	break;
+; 1041 : 		}
+; 1042 : 	}
+; 1043 : 	break;
 
-	jmp	$LN51@Activate
-$LN63@Activate:
+	jmp	$LN11@Activate
+$LN65@Activate:
 
-; 813  : 
-; 814  : 	switch(notification.m_eNotificationType)
+; 818  : 
+; 819  : 	switch(notification.m_eNotificationType)
 
+	cmp	eax, -46207143				; fd3eef59H
+	je	$LN14@Activate
 	cmp	eax, -33507383				; fe00b7c9H
-	je	SHORT $LN45@Activate
-	cmp	eax, -30204373				; fe331e2bH
 	jne	$LN2@Activate
-$LN10@Activate:
 
-; 1068 : 
-; 1069 : 	case NOTIFICATION_IDEOLOGY_CHOSEN:
-; 1070 : 	case NOTIFICATION_CULTURE_VICTORY_SOMEONE_INFLUENTIAL:
-; 1071 : 	case NOTIFICATION_CULTURE_VICTORY_WITHIN_TWO:
-; 1072 : 	case NOTIFICATION_CULTURE_VICTORY_WITHIN_TWO_ACTIVE_PLAYER:
-; 1073 : 	case NOTIFICATION_CULTURE_VICTORY_WITHIN_ONE:
-; 1074 : 	case NOTIFICATION_CULTURE_VICTORY_WITHIN_ONE_ACTIVE_PLAYER:
-; 1075 : 	case NOTIFICATION_CULTURE_VICTORY_NO_LONGER_INFLUENTIAL:
-; 1076 : 		CvAssertMsg(notification.m_iGameDataIndex >= 0, "notification.m_iGameDataIndex is out of bounds");
-; 1077 : 		if (notification.m_iGameDataIndex >= 0)
-
-	xor	ebx, ebx
-	cmp	DWORD PTR [esi+72], ebx
-	jl	$LN51@Activate
-
-; 1078 : 		{
-; 1079 : 			CvPopupInfo kPopup(BUTTONPOPUP_CULTURE_OVERVIEW);
-
-	or	eax, -1
-	mov	DWORD PTR _kPopup$221298[esp+600], eax
-	mov	DWORD PTR _kPopup$221298[esp+608], eax
-	mov	BYTE PTR _kPopup$221298[esp+616], bl
-	mov	DWORD PTR _kPopup$221298[esp+620], -401251415 ; e81563a9H
-
-; 1080 : 			kPopup.iData2 = 3; // Tab to select
-
-	mov	DWORD PTR _kPopup$221298[esp+604], 3
-
-; 1081 : 			GC.GetEngineUserInterface()->AddPopup(kPopup);
-; 1082 : 		}
-; 1083 : 		break;
-
-	jmp	$LN459@Activate
-$LN45@Activate:
-
-; 847  : 	case NOTIFICATION_TECH_AWARD:
-; 848  : 	{
-; 849  : 		if(notification.m_iExtraGameData != -1)
+; 852  : 	case NOTIFICATION_TECH_AWARD:
+; 853  : 	{
+; 854  : 		if(notification.m_iExtraGameData != -1)
 
 	mov	eax, DWORD PTR [esi+76]
 	cmp	eax, -1
-	je	$LN51@Activate
+	je	$LN11@Activate
 
-; 850  : 		{
-; 851  : 			CvPopupInfo kPopup(BUTTONPOPUP_TECH_AWARD, m_ePlayer, notification.m_iGameDataIndex, notification.m_iExtraGameData);
+; 855  : 		{
+; 856  : 			CvPopupInfo kPopup(BUTTONPOPUP_TECH_AWARD, m_ePlayer, notification.m_iGameDataIndex, notification.m_iExtraGameData);
 
 	mov	ecx, DWORD PTR [edi]
 	xor	ebx, ebx
@@ -7223,105 +7266,97 @@ $LN45@Activate:
 	push	eax
 	push	ecx
 	push	68					; 00000044H
-	lea	ecx, DWORD PTR _kPopup$221152[esp+628]
+	lea	ecx, DWORD PTR _kPopup$221629[esp+628]
 	call	??0CvPopupInfo@@QAE@W4ButtonPopupTypes@@HHHH_N1@Z ; CvPopupInfo::CvPopupInfo
 
-; 852  : 			strcpy_s(kPopup.szText, notification.m_strMessage);
+; 857  : 			strcpy_s(kPopup.szText, notification.m_strMessage);
 
 	mov	ecx, ebp
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
-	lea	edx, DWORD PTR _kPopup$221152[esp+628]
+	lea	edx, DWORD PTR _kPopup$221629[esp+628]
 	push	edx
 	call	??$strcpy_s@$0CAA@@@YAHAAY0CAA@DPBD@Z	; strcpy_s<512>
+
+; 858  : 			GC.GetEngineUserInterface()->AddPopup(kPopup);
+
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
+	mov	eax, DWORD PTR [ecx]
+	mov	eax, DWORD PTR [eax+180]
 	add	esp, 8
+	lea	edx, DWORD PTR _kPopup$221629[esp+600]
+	push	edx
+	call	eax
 
-; 853  : 			GC.GetEngineUserInterface()->AddPopup(kPopup);
-; 854  : 		}
-; 855  : 	}
-; 856  : 	break;
+; 859  : 		}
+; 860  : 	}
+; 861  : 	break;
 
-	jmp	$LN456@Activate
-$LN28@Activate:
+	jmp	$LN11@Activate
+$LN58@Activate:
 
-; 958  : 
-; 959  : 	case NOTIFICATION_ADD_REFORMATION_BELIEF:
-; 960  : 	{
-; 961  : 		CvPopupInfo kPopup(BUTTONPOPUP_FOUND_PANTHEON, m_ePlayer, false /*bPantheonBelief*/);
-
-	mov	ecx, DWORD PTR [edi]
-	xor	ebx, ebx
-	mov	DWORD PTR _kPopup$221263[esp+600], ecx
-	mov	DWORD PTR _kPopup$221263[esp+604], ebx
-	mov	DWORD PTR _kPopup$221263[esp+608], -1
-	mov	DWORD PTR _kPopup$221263[esp+620], 76	; 0000004cH
-
-; 962  : 		GC.GetEngineUserInterface()->AddPopup(kPopup);
-; 963  : 	}
-; 964  : 	break;
-
-	jmp	$LN465@Activate
-$LN56@Activate:
-
-; 813  : 
-; 814  : 	switch(notification.m_eNotificationType)
+; 818  : 
+; 819  : 	switch(notification.m_eNotificationType)
 
 	cmp	eax, 1235286433				; 49a0f9a1H
-	jg	$LN64@Activate
-	je	$LN15@Activate
-	cmp	eax, 359132113				; 1567ebd1H
-	jg	$LN65@Activate
-	je	$LN10@Activate
-	cmp	eax, 180382033				; 0ac06951H
 	jg	$LN66@Activate
-	je	SHORT $LN24@Activate
+	je	$LN17@Activate
+	cmp	eax, 359132113				; 1567ebd1H
+	jg	$LN67@Activate
+	je	$LN12@Activate
+	cmp	eax, 180382033				; 0ac06951H
+	jg	$LN68@Activate
+	je	$LN26@Activate
+	cmp	eax, 84632199				; 050b6287H
+	je	$LN30@Activate
 	cmp	eax, 88900711				; 054c8467H
-	je	SHORT $LN22@Activate
+	je	SHORT $LN24@Activate
 	cmp	eax, 101802557				; 0611623dH
 	jne	$LN2@Activate
 
-; 1102 : 
-; 1103 : #ifndef AUI_WARNING_FIXES
-; 1104 : 	case NOTIFICATION_LEAGUE_PROJECT_COMPLETE:
-; 1105 : 		CvAssertMsg(notification.m_iGameDataIndex >= 0, "notification.m_iGameDataIndex is out of bounds");
-; 1106 : 		if (notification.m_iGameDataIndex >= 0)
+; 1107 : 
+; 1108 : #ifndef AUI_WARNING_FIXES
+; 1109 : 	case NOTIFICATION_LEAGUE_PROJECT_COMPLETE:
+; 1110 : 		CvAssertMsg(notification.m_iGameDataIndex >= 0, "notification.m_iGameDataIndex is out of bounds");
+; 1111 : 		if (notification.m_iGameDataIndex >= 0)
 
 	mov	eax, DWORD PTR [esi+72]
 	xor	ebx, ebx
 	cmp	eax, ebx
-	jl	$LN51@Activate
+	jl	$LN11@Activate
 
-; 1107 : 		{
-; 1108 : 			LeagueTypes eLeague = (LeagueTypes) notification.m_iGameDataIndex;
-; 1109 : 			LeagueProjectTypes eProject = (LeagueProjectTypes) notification.m_iExtraGameData;
-; 1110 : 			CvPopupInfo kPopup(BUTTONPOPUP_LEAGUE_PROJECT_COMPLETED, eLeague, eProject);
+; 1112 : 		{
+; 1113 : 			LeagueTypes eLeague = (LeagueTypes) notification.m_iGameDataIndex;
+; 1114 : 			LeagueProjectTypes eProject = (LeagueProjectTypes) notification.m_iExtraGameData;
+; 1115 : 			CvPopupInfo kPopup(BUTTONPOPUP_LEAGUE_PROJECT_COMPLETED, eLeague, eProject);
 
-	mov	DWORD PTR _kPopup$221315[esp+600], eax
-	mov	eax, DWORD PTR [esi+76]
-	mov	DWORD PTR _kPopup$221315[esp+608], -1
-	mov	DWORD PTR _kPopup$221315[esp+620], -895157342 ; caa4fba2H
+	mov	ecx, DWORD PTR [esi+76]
+	mov	DWORD PTR _kPopup$221792[esp+600], eax
+	mov	DWORD PTR _kPopup$221792[esp+604], ecx
+	mov	DWORD PTR _kPopup$221792[esp+608], -1
+	mov	DWORD PTR _kPopup$221792[esp+620], -895157342 ; caa4fba2H
 
-; 1111 : 			GC.GetEngineUserInterface()->AddPopup(kPopup);
-; 1112 : 		}
-; 1113 : 		break;
+; 1116 : 			GC.GetEngineUserInterface()->AddPopup(kPopup);
+; 1117 : 		}
+; 1118 : 		break;
 
-	jmp	$LN466@Activate
-$LN22@Activate:
+	jmp	$LN468@Activate
+$LN24@Activate:
 
-; 1001 : 
-; 1002 : 	case NOTIFICATION_MAYA_LONG_COUNT:
-; 1003 : 	{
-; 1004 : 		if(GET_PLAYER(m_ePlayer).GetNumMayaBoosts() > 0)
+; 1006 : 
+; 1007 : 	case NOTIFICATION_MAYA_LONG_COUNT:
+; 1008 : 	{
+; 1009 : 		if(GET_PLAYER(m_ePlayer).GetNumMayaBoosts() > 0)
 
 	mov	ecx, DWORD PTR [edi]
 	imul	ecx, 63236				; 0000f704H
 	add	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	call	?GetNumMayaBoosts@CvPlayer@@QBEHXZ	; CvPlayer::GetNumMayaBoosts
 	test	eax, eax
-	jle	$LN51@Activate
+	jle	$LN11@Activate
 
-; 1005 : 		{
-; 1006 : 			CvPopupInfo kPopup(BUTTONPOPUP_CHOOSE_MAYA_BONUS, m_ePlayer, notification.m_iGameDataIndex, notification.m_iExtraGameData);
+; 1010 : 		{
+; 1011 : 			CvPopupInfo kPopup(BUTTONPOPUP_CHOOSE_MAYA_BONUS, m_ePlayer, notification.m_iGameDataIndex, notification.m_iExtraGameData);
 
 	mov	eax, DWORD PTR [esi+76]
 	mov	ecx, DWORD PTR [esi+72]
@@ -7334,134 +7369,144 @@ $LN22@Activate:
 	push	ecx
 	push	edx
 	push	81					; 00000051H
-	lea	ecx, DWORD PTR _kPopup$221274[esp+628]
+	lea	ecx, DWORD PTR _kPopup$221751[esp+628]
 	call	??0CvPopupInfo@@QAE@W4ButtonPopupTypes@@HHHH_N1@Z ; CvPopupInfo::CvPopupInfo
 
-; 1007 : 			GC.GetEngineUserInterface()->AddPopup(kPopup);
-; 1008 : 		}
-; 1009 : 	}
-; 1010 : 	break;
+; 1012 : 			GC.GetEngineUserInterface()->AddPopup(kPopup);
 
-	jmp	$LN456@Activate
-$LN24@Activate:
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
+	mov	eax, DWORD PTR [ecx]
+	mov	eax, DWORD PTR [eax+180]
+	lea	edx, DWORD PTR _kPopup$221751[esp+600]
+	push	edx
+	call	eax
 
-; 982  : 	}
-; 983  : 	break;
-; 984  : 
-; 985  : 	case NOTIFICATION_SPY_CREATED_ACTIVE_PLAYER:
-; 986  : 	case NOTIFICATION_SPY_EVICTED:
-; 987  : 	case NOTIFICATION_SPY_PROMOTION:
-; 988  : 	{
-; 989  : 		CvPopupInfo kPopup(BUTTONPOPUP_ESPIONAGE_OVERVIEW, m_ePlayer);
+; 1013 : 		}
+; 1014 : 	}
+; 1015 : 	break;
+
+	jmp	$LN11@Activate
+$LN30@Activate:
+
+; 963  : 
+; 964  : 	case NOTIFICATION_ADD_REFORMATION_BELIEF:
+; 965  : 	{
+; 966  : 		CvPopupInfo kPopup(BUTTONPOPUP_FOUND_PANTHEON, m_ePlayer, false /*bPantheonBelief*/);
 
 	mov	ecx, DWORD PTR [edi]
-	mov	DWORD PTR _kPopup$221269[esp+600], ecx
-	mov	DWORD PTR _kPopup$221269[esp+620], 78	; 0000004eH
+	xor	ebx, ebx
+	mov	DWORD PTR _kPopup$221740[esp+600], ecx
+	mov	DWORD PTR _kPopup$221740[esp+604], ebx
+	mov	DWORD PTR _kPopup$221740[esp+608], -1
+	mov	DWORD PTR _kPopup$221740[esp+620], 76	; 0000004cH
 
-; 990  : 		GC.GetEngineUserInterface()->AddPopup(kPopup);
-; 991  : 	}
-; 992  : 	break;
+; 967  : 		GC.GetEngineUserInterface()->AddPopup(kPopup);
+; 968  : 	}
+; 969  : 	break;
 
-	jmp	SHORT $LN467@Activate
-$LN66@Activate:
+	jmp	$LN468@Activate
+$LN26@Activate:
 
-; 813  : 
-; 814  : 	switch(notification.m_eNotificationType)
+; 989  : 
+; 990  : 	case NOTIFICATION_SPY_CREATED_ACTIVE_PLAYER:
+; 991  : 	case NOTIFICATION_SPY_EVICTED:
+; 992  : 	case NOTIFICATION_SPY_PROMOTION:
+; 993  : 	{
+; 994  : 		CvPopupInfo kPopup(BUTTONPOPUP_ESPIONAGE_OVERVIEW, m_ePlayer);
+
+	mov	eax, DWORD PTR [edi]
+	mov	DWORD PTR _kPopup$221746[esp+600], eax
+	or	eax, -1
+	mov	DWORD PTR _kPopup$221746[esp+604], eax
+	xor	ebx, ebx
+	mov	DWORD PTR _kPopup$221746[esp+620], 78	; 0000004eH
+
+; 995  : 		GC.GetEngineUserInterface()->AddPopup(kPopup);
+; 996  : 	}
+; 997  : 	break;
+
+	jmp	$LN464@Activate
+$LN68@Activate:
+
+; 818  : 
+; 819  : 	switch(notification.m_eNotificationType)
 
 	cmp	eax, 294822899				; 1192a3f3H
-	je	SHORT $LN6@Activate
+	je	SHORT $LN8@Activate
 	cmp	eax, 301374463				; 11f69bffH
-	je	$LN10@Activate
+	je	$LN12@Activate
 	jmp	$LN2@Activate
-$LN6@Activate:
+$LN8@Activate:
 
-; 1093 : 
-; 1094 : 	case NOTIFICATION_CHOOSE_IDEOLOGY:
-; 1095 : 		CvAssertMsg(notification.m_iGameDataIndex >= 0, "notification.m_iGameDataIndex is out of bounds");
-; 1096 : 		if (notification.m_iGameDataIndex >= 0)
+; 1098 : 
+; 1099 : 	case NOTIFICATION_CHOOSE_IDEOLOGY:
+; 1100 : 		CvAssertMsg(notification.m_iGameDataIndex >= 0, "notification.m_iGameDataIndex is out of bounds");
+; 1101 : 		if (notification.m_iGameDataIndex >= 0)
 
 	xor	ebx, ebx
 	cmp	DWORD PTR [esi+72], ebx
-	jl	$LN51@Activate
+	jl	$LN11@Activate
 
-; 1097 : 		{
-; 1098 : 			CvPopupInfo kPopup(BUTTONPOPUP_CHOOSE_IDEOLOGY, m_ePlayer);
+; 1102 : 		{
+; 1103 : 			CvPopupInfo kPopup(BUTTONPOPUP_CHOOSE_IDEOLOGY, m_ePlayer);
 
 	mov	eax, DWORD PTR [edi]
-	mov	DWORD PTR _kPopup$221306[esp+600], eax
+	mov	DWORD PTR _kPopup$221783[esp+600], eax
 	or	eax, -1
-	mov	DWORD PTR _kPopup$221306[esp+620], -167467402 ; f604a676H
+	mov	DWORD PTR _kPopup$221783[esp+604], eax
+	mov	DWORD PTR _kPopup$221783[esp+620], -167467402 ; f604a676H
 
-; 1099 : 			GC.GetEngineUserInterface()->AddPopup(kPopup);
-; 1100 : 		}
-; 1101 : 		break;
+; 1104 : 			GC.GetEngineUserInterface()->AddPopup(kPopup);
+; 1105 : 		}
+; 1106 : 		break;
 
-	jmp	SHORT $LN463@Activate
-$LN65@Activate:
-
-; 813  : 
-; 814  : 	switch(notification.m_eNotificationType)
-
-	cmp	eax, 623640104				; 252bfe28H
-	jg	SHORT $LN67@Activate
-	je	SHORT $LN43@Activate
-	cmp	eax, 507398241				; 1e3e4861H
-	je	$LN15@Activate
-	cmp	eax, 507779013				; 1e4417c5H
-	jne	$LN2@Activate
-$LN43@Activate:
-
-; 857  : 	case NOTIFICATION_POLICY:
-; 858  : 	case NOTIFICATION_FREE_POLICY:
-; 859  : 	{
-; 860  : 		CvPopupInfo kPopup(BUTTONPOPUP_CHOOSEPOLICY, m_ePlayer);
-
-	mov	DWORD PTR _kPopup$221154[esp+620], 17	; 00000011H
-$LN468@Activate:
-	mov	eax, DWORD PTR [edi]
-	mov	DWORD PTR _kPopup$221154[esp+600], eax
-$LN467@Activate:
-	or	eax, -1
-	xor	ebx, ebx
-$LN463@Activate:
-	mov	DWORD PTR _kPopup$221154[esp+608], eax
-$LN466@Activate:
-	mov	DWORD PTR _kPopup$221154[esp+604], eax
-$LN465@Activate:
-	mov	BYTE PTR _kPopup$221154[esp+616], bl
-	mov	DWORD PTR _kPopup$221154[esp+612], ebx
-	mov	BYTE PTR _kPopup$221154[esp+624], bl
-$LN470@Activate:
-
-; 861  : 		GC.GetEngineUserInterface()->AddPopup(kPopup);
-
-	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
-	mov	BYTE PTR _kPopup$221154[esp+617], bl
-	mov	edx, DWORD PTR [ecx]
-	mov	edx, DWORD PTR [edx+180]
-	lea	eax, DWORD PTR _kPopup$221154[esp+600]
-	push	eax
-	call	edx
-
-; 862  : 	}
-; 863  : 	break;
-
-	jmp	$LN51@Activate
+	jmp	$LN464@Activate
 $LN67@Activate:
 
-; 813  : 
-; 814  : 	switch(notification.m_eNotificationType)
+; 818  : 
+; 819  : 	switch(notification.m_eNotificationType)
+
+	cmp	eax, 623640104				; 252bfe28H
+	jg	SHORT $LN69@Activate
+	je	SHORT $LN45@Activate
+	cmp	eax, 507398241				; 1e3e4861H
+	je	$LN17@Activate
+	cmp	eax, 507779013				; 1e4417c5H
+	jne	$LN2@Activate
+$LN45@Activate:
+
+; 862  : 	case NOTIFICATION_POLICY:
+; 863  : 	case NOTIFICATION_FREE_POLICY:
+; 864  : 	{
+; 865  : 		CvPopupInfo kPopup(BUTTONPOPUP_CHOOSEPOLICY, m_ePlayer);
+
+	mov	eax, DWORD PTR [edi]
+	mov	DWORD PTR _kPopup$221631[esp+600], eax
+	or	eax, -1
+	mov	DWORD PTR _kPopup$221631[esp+604], eax
+	xor	ebx, ebx
+	mov	DWORD PTR _kPopup$221631[esp+620], 17	; 00000011H
+
+; 866  : 		GC.GetEngineUserInterface()->AddPopup(kPopup);
+; 867  : 	}
+; 868  : 	break;
+
+	jmp	$LN464@Activate
+$LN69@Activate:
+
+; 818  : 
+; 819  : 	switch(notification.m_eNotificationType)
 
 	cmp	eax, 755914060				; 2d0e554cH
-	je	$LN12@Activate
+	je	SHORT $LN14@Activate
 	cmp	eax, 1218150582				; 489b80b6H
 	jne	$LN2@Activate
-$LN46@Activate:
+$LN48@Activate:
 
-; 839  : 	case NOTIFICATION_TECH:
-; 840  : 	case NOTIFICATION_FREE_TECH:
-; 841  : 	{
-; 842  : 		CvPopupInfo kPopup(BUTTONPOPUP_CHOOSETECH, m_ePlayer, notification.m_iGameDataIndex, notification.m_iExtraGameData);
+; 844  : 	case NOTIFICATION_TECH:
+; 845  : 	case NOTIFICATION_FREE_TECH:
+; 846  : 	{
+; 847  : 		CvPopupInfo kPopup(BUTTONPOPUP_CHOOSETECH, m_ePlayer, notification.m_iGameDataIndex, notification.m_iExtraGameData);
 
 	mov	eax, DWORD PTR [esi+76]
 	mov	ecx, DWORD PTR [esi+72]
@@ -7474,62 +7519,84 @@ $LN46@Activate:
 	push	ecx
 	push	edx
 	push	11					; 0000000bH
-	lea	ecx, DWORD PTR _kPopup$221144[esp+628]
+	lea	ecx, DWORD PTR _kPopup$221621[esp+628]
 	call	??0CvPopupInfo@@QAE@W4ButtonPopupTypes@@HHHH_N1@Z ; CvPopupInfo::CvPopupInfo
 
-; 843  : 		strcpy_s(kPopup.szText, notification.m_strMessage);
+; 848  : 		strcpy_s(kPopup.szText, notification.m_strMessage);
 
 	mov	ecx, ebp
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
-	lea	eax, DWORD PTR _kPopup$221144[esp+628]
+	lea	eax, DWORD PTR _kPopup$221621[esp+628]
 	push	eax
 	call	??$strcpy_s@$0CAA@@@YAHAAY0CAA@DPBD@Z	; strcpy_s<512>
-
-; 844  : 		GC.GetEngineUserInterface()->AddPopup(kPopup);
-
-	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
-	mov	edx, DWORD PTR [ecx]
-	mov	edx, DWORD PTR [edx+180]
 	add	esp, 8
-	lea	eax, DWORD PTR _kPopup$221144[esp+600]
-	push	eax
-	call	edx
 
-; 845  : 	}
-; 846  : 	break;
+; 849  : 		GC.GetEngineUserInterface()->AddPopup(kPopup);
+; 850  : 	}
+; 851  : 	break;
 
-	jmp	$LN51@Activate
-$LN64@Activate:
+	jmp	$LN465@Activate
+$LN14@Activate:
 
-; 813  : 
-; 814  : 	switch(notification.m_eNotificationType)
+; 1060 : 
+; 1061 : 	case NOTIFICATION_LEAGUE_CALL_FOR_PROPOSALS:
+; 1062 : 	case NOTIFICATION_LEAGUE_CALL_FOR_VOTES:
+; 1063 : 	case NOTIFICATION_LEAGUE_VOTING_DONE:
+; 1064 : 	case NOTIFICATION_LEAGUE_VOTING_SOON:
+; 1065 : 		CvAssertMsg(notification.m_iGameDataIndex >= 0, "notification.m_iGameDataIndex is out of bounds");
+; 1066 : 		if (notification.m_iGameDataIndex >= 0)
 
-	cmp	eax, 1784381333				; 6a5b7f95H
-	jg	$LN68@Activate
-	je	$LN32@Activate
+	mov	esi, DWORD PTR [esi+72]
+	xor	ebx, ebx
+	cmp	esi, ebx
+	jl	$LN11@Activate
+
+; 1067 : 		{
+; 1068 : 			LeagueTypes eLeague = (LeagueTypes) notification.m_iGameDataIndex;
+; 1069 : 			CvPopupInfo kPopup(BUTTONPOPUP_LEAGUE_OVERVIEW, eLeague);
+
+	or	eax, -1
+	mov	DWORD PTR _kPopup$221771[esp+600], esi
+	mov	DWORD PTR _kPopup$221771[esp+604], eax
+	mov	DWORD PTR _kPopup$221771[esp+608], eax
+	mov	DWORD PTR _kPopup$221771[esp+620], 1104213538 ; 41d0f622H
+
+; 1070 : 			GC.GetEngineUserInterface()->AddPopup(kPopup);
+; 1071 : 		}
+; 1072 : 		break;
+
+	jmp	$LN470@Activate
+$LN66@Activate:
+
+; 818  : 
+; 819  : 	switch(notification.m_eNotificationType)
+
+	cmp	eax, 1716970771				; 6656e513H
+	jg	$LN70@Activate
+	je	$LN12@Activate
 	cmp	eax, 1523558135				; 5acfa6f7H
-	jg	SHORT $LN69@Activate
-	je	SHORT $LN46@Activate
+	jg	$LN71@Activate
+	je	SHORT $LN48@Activate
 	cmp	eax, 1279997337				; 4c4b3599H
-	je	SHORT $LN29@Activate
+	je	SHORT $LN31@Activate
 	cmp	eax, 1376002242				; 520420c2H
 	jne	$LN2@Activate
 
-; 1011 : 
-; 1012 : 	case NOTIFICATION_FAITH_GREAT_PERSON:
-; 1013 : 	{
-; 1014 : 		if(GET_PLAYER(m_ePlayer).GetNumFaithGreatPeople() > 0)
+; 1016 : 
+; 1017 : 	case NOTIFICATION_FAITH_GREAT_PERSON:
+; 1018 : 	{
+; 1019 : 		if(GET_PLAYER(m_ePlayer).GetNumFaithGreatPeople() > 0)
 
 	mov	ecx, DWORD PTR [edi]
 	imul	ecx, 63236				; 0000f704H
 	add	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	call	?GetNumFaithGreatPeople@CvPlayer@@QBEHXZ ; CvPlayer::GetNumFaithGreatPeople
 	test	eax, eax
-	jle	$LN51@Activate
+	jle	$LN11@Activate
 
-; 1015 : 		{
-; 1016 : 			CvPopupInfo kPopup(BUTTONPOPUP_CHOOSE_FAITH_GREAT_PERSON, m_ePlayer, notification.m_iGameDataIndex, notification.m_iExtraGameData);
+; 1020 : 		{
+; 1021 : 			CvPopupInfo kPopup(BUTTONPOPUP_CHOOSE_FAITH_GREAT_PERSON, m_ePlayer, notification.m_iGameDataIndex, notification.m_iExtraGameData);
 
 	mov	eax, DWORD PTR [esi+76]
 	mov	ecx, DWORD PTR [esi+72]
@@ -7542,443 +7609,175 @@ $LN64@Activate:
 	push	ecx
 	push	edx
 	push	82					; 00000052H
-	lea	ecx, DWORD PTR _kPopup$221277[esp+628]
+	lea	ecx, DWORD PTR _kPopup$221754[esp+628]
 	call	??0CvPopupInfo@@QAE@W4ButtonPopupTypes@@HHHH_N1@Z ; CvPopupInfo::CvPopupInfo
 
-; 1017 : 			GC.GetEngineUserInterface()->AddPopup(kPopup);
-; 1018 : 		}
-; 1019 : 	}
-; 1020 : 	break;
+; 1022 : 			GC.GetEngineUserInterface()->AddPopup(kPopup);
 
-	jmp	$LN456@Activate
-$LN29@Activate:
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
+	mov	eax, DWORD PTR [ecx]
+	mov	eax, DWORD PTR [eax+180]
+	lea	edx, DWORD PTR _kPopup$221754[esp+600]
+	push	edx
+	call	eax
 
-; 952  : 	case NOTIFICATION_FOUND_PANTHEON:
-; 953  : 	{
-; 954  : 		CvPopupInfo kPopup(BUTTONPOPUP_FOUND_PANTHEON, m_ePlayer, true /*bPantheonBelief*/);
+; 1023 : 		}
+; 1024 : 	}
+; 1025 : 	break;
+
+	jmp	$LN11@Activate
+$LN31@Activate:
+
+; 957  : 	case NOTIFICATION_FOUND_PANTHEON:
+; 958  : 	{
+; 959  : 		CvPopupInfo kPopup(BUTTONPOPUP_FOUND_PANTHEON, m_ePlayer, true /*bPantheonBelief*/);
 
 	mov	ecx, DWORD PTR [edi]
-	mov	DWORD PTR _kPopup$221261[esp+604], ebx
-	mov	DWORD PTR _kPopup$221261[esp+600], ecx
-	mov	DWORD PTR _kPopup$221261[esp+608], -1
+	mov	DWORD PTR _kPopup$221738[esp+604], ebx
+	mov	DWORD PTR _kPopup$221738[esp+600], ecx
+	mov	DWORD PTR _kPopup$221738[esp+608], -1
 	xor	ebx, ebx
-	mov	DWORD PTR _kPopup$221261[esp+620], 76	; 0000004cH
+	mov	DWORD PTR _kPopup$221738[esp+620], 76	; 0000004cH
 
-; 955  : 		GC.GetEngineUserInterface()->AddPopup(kPopup);
-; 956  : 	}
-; 957  : 	break;
+; 960  : 		GC.GetEngineUserInterface()->AddPopup(kPopup);
+; 961  : 	}
+; 962  : 	break;
 
-	jmp	$LN465@Activate
-$LN69@Activate:
+	jmp	$LN468@Activate
+$LN71@Activate:
 
-; 813  : 
-; 814  : 	switch(notification.m_eNotificationType)
+; 818  : 
+; 819  : 	switch(notification.m_eNotificationType)
 
 	cmp	eax, 1591330057				; 5ed9c509H
-	je	SHORT $LN36@Activate
-	cmp	eax, 1716970771				; 6656e513H
-	je	$LN10@Activate
-	jmp	$LN2@Activate
-$LN36@Activate:
+	je	SHORT $LN38@Activate
+	cmp	eax, 1628401511				; 610f6f67H
+	jne	$LN2@Activate
+$LN4@Activate:
 
-; 915  : 	case NOTIFICATION_UNIT_PROMOTION:
-; 916  : 	{
-; 917  : 		UnitHandle pUnit = GET_PLAYER(m_ePlayer).getUnit(notification.m_iExtraGameData);
+; 1119 : #endif
+; 1120 : #ifdef MP_PLAYERS_VOTING_SYSTEM
+; 1121 : 
+; 1122 : 	case NOTIFICATION_MP_IRR_PROPOSAL:
+; 1123 : 	case NOTIFICATION_MP_CC_PROPOSAL:
+; 1124 : 	case NOTIFICATION_MP_SCRAP_PROPOSAL:
+; 1125 : 	case NOTIFICATION_MP_PROPOSAL_RESULT:
+; 1126 : 		CvAssertMsg(notification.m_iGameDataIndex >= 0, "notification.m_iGameDataIndex is out of bounds");
+; 1127 : 		if (notification.m_iGameDataIndex >= 0)
+
+	xor	ebx, ebx
+	cmp	DWORD PTR [esi+72], ebx
+	jl	$LN11@Activate
+
+; 1128 : 		{
+; 1129 : 			CvMPVotingSystem* pkMPVotingSystem = GC.getGame().GetMPVotingSystem();
+
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
+	call	?GetMPVotingSystem@CvGame@@QAEPAVCvMPVotingSystem@@XZ ; CvGame::GetMPVotingSystem
+
+; 1130 : 			int iUI_id = notification.m_iLookupIndex;
+
+	mov	esi, DWORD PTR [esi+84]
+	mov	edi, eax
+
+; 1131 : 			int iStatus = (int)pkMPVotingSystem->GetProposalStatus(pkMPVotingSystem->GetProposalIDbyUIid(iUI_id));
+
+	push	esi
+	mov	ecx, edi
+	call	?GetProposalIDbyUIid@CvMPVotingSystem@@QAEHH@Z ; CvMPVotingSystem::GetProposalIDbyUIid
+	push	eax
+	mov	ecx, edi
+	call	?GetProposalStatus@CvMPVotingSystem@@QAE?AW4MPVotingSystemProposalStatus@@H@Z ; CvMPVotingSystem::GetProposalStatus
+
+; 1132 : 			CvPopupInfo kPopup(BUTTONPOPUP_MODDER_0, iUI_id, iStatus);
+
+	mov	DWORD PTR _kPopup$221799[esp+600], esi
+	mov	DWORD PTR _kPopup$221799[esp+604], eax
+	mov	DWORD PTR _kPopup$221799[esp+620], 83	; 00000053H
+
+; 1133 : 			GC.GetEngineUserInterface()->AddPopup(kPopup);
+; 1134 : 		}
+; 1135 : 		break;
+
+	jmp	$LN471@Activate
+$LN38@Activate:
+
+; 920  : 	case NOTIFICATION_UNIT_PROMOTION:
+; 921  : 	{
+; 922  : 		UnitHandle pUnit = GET_PLAYER(m_ePlayer).getUnit(notification.m_iExtraGameData);
 
 	mov	ecx, DWORD PTR [edi]
-	mov	eax, DWORD PTR [esi+76]
+	mov	edx, DWORD PTR [esi+76]
 	imul	ecx, 63236				; 0000f704H
 	add	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
-	push	eax
+	push	edx
 	call	?getUnit@CvPlayer@@QAEPAVCvUnit@@H@Z	; CvPlayer::getUnit
 	push	eax
-	lea	ecx, DWORD PTR _pUnit$221178[esp+604]
+	lea	ecx, DWORD PTR _pUnit$221655[esp+604]
 	call	??0?$FObjectHandle@VCvUnit@@@@QAE@PAVCvUnit@@@Z ; FObjectHandle<CvUnit>::FObjectHandle<CvUnit>
 
-; 918  : 		if(pUnit)
+; 923  : 		if(pUnit)
 
-	mov	ebp, DWORD PTR _pUnit$221178[esp+600]
+	mov	ebp, DWORD PTR _pUnit$221655[esp+600]
 	xor	ebx, ebx
 	mov	DWORD PTR __$EHRec$[esp+608], 2
 	cmp	ebp, ebx
-	je	$LN304@Activate
+	je	$LN306@Activate
 
-; 919  : 		{
-; 920  : 			CvPlot* pPlot = pUnit->plot();
+; 924  : 		{
+; 925  : 			CvPlot* pPlot = pUnit->plot();
 
 	mov	ecx, ebp
 	call	?plot@CvUnit@@QBEPAVCvPlot@@XZ		; CvUnit::plot
 
-; 921  : 			if(pPlot)
+; 926  : 			if(pPlot)
 
 	cmp	eax, ebx
-	je	$LN304@Activate
+	je	$LN306@Activate
 
-; 922  : 			{
-; 923  : 				auto_ptr<ICvPlot1> pDllPlot = GC.WrapPlotPointer(pPlot);
+; 927  : 			{
+; 928  : 				auto_ptr<ICvPlot1> pDllPlot = GC.WrapPlotPointer(pPlot);
 
 	push	eax
-	lea	ecx, DWORD PTR $T224355[esp+604]
-	push	ecx
-	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	call	?WrapPlotPointer@CvGlobals@@QAE?AV?$auto_ptr@VICvPlot1@@@std@@PAVCvPlot@@@Z ; CvGlobals::WrapPlotPointer
-	mov	esi, DWORD PTR [eax]
-	mov	DWORD PTR [eax], ebx
-	mov	DWORD PTR _pDllPlot$221183[esp+600], esi
-	mov	eax, DWORD PTR $T224355[esp+600]
-	mov	BYTE PTR __$EHRec$[esp+608], 3
-	cmp	eax, ebx
-	je	SHORT $LN269@Activate
-	mov	edx, DWORD PTR [eax]
-	push	eax
-	mov	eax, DWORD PTR [edx+4]
-	call	eax
-$LN269@Activate:
-
-; 924  : 				auto_ptr<ICvUnit1> pDllUnit = GC.WrapUnitPointer(pUnit.pointer());
-
-	push	ebp
-	lea	ecx, DWORD PTR $T224357[esp+604]
-	push	ecx
-	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	call	?WrapUnitPointer@CvGlobals@@QAE?AV?$auto_ptr@VICvUnit1@@@std@@PAVCvUnit@@@Z ; CvGlobals::WrapUnitPointer
-	mov	edi, DWORD PTR [eax]
-	mov	DWORD PTR [eax], ebx
-	mov	DWORD PTR _pDllUnit$221233[esp+600], edi
-	mov	eax, DWORD PTR $T224357[esp+600]
-	mov	BYTE PTR __$EHRec$[esp+608], 4
-	cmp	eax, ebx
-	je	SHORT $LN282@Activate
-	mov	edx, DWORD PTR [eax]
-	push	eax
-	mov	eax, DWORD PTR [edx+4]
-	call	eax
-$LN282@Activate:
-
-; 925  : 
-; 926  : 				GC.GetEngineUserInterface()->lookAt(pDllPlot.get(), CAMERALOOKAT_NORMAL);
-
-	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
-	mov	edx, DWORD PTR [ecx]
-	mov	eax, DWORD PTR [edx+272]
-	push	ebx
-	push	esi
-	call	eax
-
-; 927  : 				GC.GetEngineUserInterface()->selectUnit(pDllUnit.get(), false);
-
-	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
-	mov	edx, DWORD PTR [ecx]
-	mov	eax, DWORD PTR [edx+56]
-	push	ebx
-	push	ebx
-	push	ebx
-	push	edi
-	call	eax
-
-; 928  : 				gDLL->GameplayDoFX(pDllPlot.get());
-
-	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8564
-	mov	edx, DWORD PTR [ecx]
-	mov	eax, DWORD PTR [edx+708]
-	push	-1
-	push	esi
-	call	eax
-
-; 929  : 			}
-
-	mov	BYTE PTR __$EHRec$[esp+608], 3
-	cmp	edi, ebx
-	je	SHORT $LN299@Activate
-	mov	ecx, DWORD PTR [edi]
-	mov	edx, DWORD PTR [ecx+4]
-	push	edi
-	call	edx
-$LN299@Activate:
-	mov	BYTE PTR __$EHRec$[esp+608], 2
-	cmp	esi, ebx
-	je	SHORT $LN304@Activate
-	mov	eax, DWORD PTR [esi]
-	mov	ecx, DWORD PTR [eax+4]
-	push	esi
-	call	ecx
-$LN304@Activate:
-
-; 930  : 		}
-; 931  : 	}
-
-	mov	DWORD PTR __$EHRec$[esp+608], -1
-	cmp	ebp, ebx
-	je	$LN51@Activate
-	mov	ecx, ebp
-	call	?getDestructionNotification@CvUnit@@QAEAAU?$DestructionNotification@V?$FObjectHandle@VCvUnit@@@@@@XZ ; CvUnit::getDestructionNotification
-
-; 932  : 	break;
-
-	jmp	$LN51@Activate
-$LN68@Activate:
-
-; 813  : 
-; 814  : 	switch(notification.m_eNotificationType)
-
-	cmp	eax, 2052101992				; 7a509768H
-	jg	$LN70@Activate
-	je	$LN10@Activate
-	cmp	eax, 1989681641				; 769821e9H
-	je	$LN42@Activate
-	cmp	eax, 1996573794				; 77014c62H
-	jne	$LN2@Activate
-
-; 890  : 	case NOTIFICATION_PRODUCTION:
-; 891  : 	{
-; 892  : 		CvCity* pCity = GC.getMap().plot(notification.m_iX, notification.m_iY)->getPlotCity();//GET_PLAYER(m_ePlayer).getCity(notification.m_iGameDataIndex);
-
-	mov	eax, DWORD PTR [esi+64]
-	mov	ebp, DWORD PTR [esi+68]
-	cmp	eax, -2147483647			; 80000001H
-	je	$LN209@Activate
-	cmp	ebp, -2147483647			; 80000001H
-	je	$LN209@Activate
-	mov	edx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+52
-	mov	ecx, DWORD PTR [edx+4020]
-	xor	ebx, ebx
-	cmp	BYTE PTR [edx+4056], bl
-	je	SHORT $LN219@Activate
-	cmp	eax, ebx
-	jge	SHORT $LN221@Activate
-	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+52
-	mov	edi, DWORD PTR [ecx+4020]
-	cdq
-	idiv	edi
-	mov	ecx, edx
-	mov	edx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+52
-	add	ecx, edi
-	jmp	SHORT $LN223@Activate
-$LN221@Activate:
-	cmp	eax, ecx
-	jl	SHORT $LN219@Activate
-	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+52
-	cdq
-	idiv	DWORD PTR [ecx+4020]
-	mov	ecx, edx
-	mov	edx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+52
-	jmp	SHORT $LN223@Activate
-$LN219@Activate:
-	mov	ecx, eax
-$LN223@Activate:
-	mov	edi, DWORD PTR [edx+4024]
-	cmp	BYTE PTR [edx+4057], bl
-	je	SHORT $LN229@Activate
-	cmp	ebp, ebx
-	jge	SHORT $LN231@Activate
-	mov	eax, ebp
-	cdq
-	idiv	edi
-	add	edx, edi
-	jmp	SHORT $LN233@Activate
-$LN231@Activate:
-	cmp	ebp, edi
-	jl	SHORT $LN229@Activate
-	mov	eax, ebp
-	cdq
-	idiv	edi
-	jmp	SHORT $LN233@Activate
-$LN229@Activate:
-	mov	edx, ebp
-$LN233@Activate:
-	cmp	ecx, ebx
-	jl	SHORT $LN213@Activate
-	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+52
-	mov	eax, DWORD PTR [eax+4020]
-	cmp	ecx, eax
-	jge	SHORT $LN213@Activate
-	cmp	edx, ebx
-	jl	SHORT $LN213@Activate
-	cmp	edx, edi
-	jge	SHORT $LN213@Activate
-	imul	edx, eax
-	add	edx, ecx
-	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+52
-	imul	edx, 484				; 000001e4H
-	add	edx, DWORD PTR [ecx+4068]
-	mov	ecx, edx
-	jmp	SHORT $LN211@Activate
-$LN209@Activate:
-	xor	ebx, ebx
-$LN213@Activate:
-	xor	ecx, ecx
-$LN211@Activate:
-	call	?getPlotCity@CvPlot@@QBEPAVCvCity@@XZ	; CvPlot::getPlotCity
-
-; 893  : 		if(!pCity)
-
-	cmp	eax, ebx
-	je	$LN51@Activate
-
-; 894  : 		{
-; 895  : 			return;
-; 896  : 		}
-; 897  : 
-; 898  : 		CvPopupInfo kPopupInfo(BUTTONPOPUP_CHOOSEPRODUCTION);
-
-	or	ecx, -1
-	mov	DWORD PTR _kPopupInfo$221173[esp+600], ecx
-	mov	DWORD PTR _kPopupInfo$221173[esp+604], ecx
-	mov	DWORD PTR _kPopupInfo$221173[esp+608], ecx
-
-; 899  : 
-; 900  : 		kPopupInfo.iData1 = pCity->GetID();
-; 901  : 
-; 902  : 		kPopupInfo.bOption2 = false;	// Not in purchase mode
-; 903  : 
-; 904  : 		// slewis - do we need the stuff below?
-; 905  : 		//kPopupInfo.setOption1(false);
-; 906  : 
-; 907  : 		OrderTypes eOrder = (OrderTypes) notification.m_iGameDataIndex;
-; 908  : 		int iItemID = notification.m_iExtraGameData;
-; 909  : 		kPopupInfo.iData2 = eOrder;
-; 910  : 		kPopupInfo.iData3 = iItemID;
-
-	mov	ecx, DWORD PTR [esi+76]
-	mov	DWORD PTR _kPopupInfo$221173[esp+612], ebx
-	mov	BYTE PTR _kPopupInfo$221173[esp+616], bl
-	mov	BYTE PTR _kPopupInfo$221173[esp+617], bl
-	mov	DWORD PTR _kPopupInfo$221173[esp+620], 16 ; 00000010H
-	mov	BYTE PTR _kPopupInfo$221173[esp+624], bl
-	mov	edx, DWORD PTR [eax+120]
-	mov	eax, DWORD PTR [esi+72]
-	mov	DWORD PTR _kPopupInfo$221173[esp+600], edx
-	mov	DWORD PTR _kPopupInfo$221173[esp+604], eax
-	mov	DWORD PTR _kPopupInfo$221173[esp+608], ecx
-
-; 911  : 
-; 912  : 		GC.GetEngineUserInterface()->AddPopup(kPopupInfo);
-; 913  : 	}
-; 914  : 	break;
-
-	jmp	$LN470@Activate
-$LN42@Activate:
-
-; 864  : 	case NOTIFICATION_DIPLO_VOTE:
-; 865  : 	{
-; 866  : 		CvPopupInfo kPopup(BUTTONPOPUP_DIPLO_VOTE, m_ePlayer);
-
-	mov	DWORD PTR _kPopup$221156[esp+620], 65	; 00000041H
-
-; 867  : 		GC.GetEngineUserInterface()->AddPopup(kPopup);
-; 868  : 	}
-; 869  : 	break;
-
-	jmp	$LN468@Activate
-$LN70@Activate:
-
-; 813  : 
-; 814  : 	switch(notification.m_eNotificationType)
-
-	cmp	eax, 2128612861				; 7ee00dfdH
-$LN458@Activate:
-	je	$LN27@Activate
-$LN2@Activate:
-
-; 1114 : #endif
-; 1115 : 
-; 1116 : 	default:	// Default behavior is to move the camera to the X,Y passed in
-; 1117 : 	{
-; 1118 : 		CvPlot* pPlot = GC.getMap().plot(notification.m_iX, notification.m_iY);
-
-	mov	ebp, DWORD PTR [esi+68]
-	mov	esi, DWORD PTR [esi+64]
-	cmp	esi, -2147483647			; 80000001H
-	je	$LN51@Activate
-	cmp	ebp, -2147483647			; 80000001H
-	je	$LN51@Activate
-	mov	edx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+52
-	mov	al, BYTE PTR [edx+4056]
-	mov	ecx, DWORD PTR [edx+4020]
-	xor	ebx, ebx
-	cmp	al, bl
-	je	SHORT $LN398@Activate
-	cmp	esi, ebx
-	jge	SHORT $LN400@Activate
-	mov	eax, esi
-	cdq
-	idiv	ecx
-	mov	esi, edx
-	add	esi, ecx
-	jmp	SHORT $LN469@Activate
-$LN400@Activate:
-	cmp	esi, ecx
-	jl	SHORT $LN398@Activate
-	mov	eax, esi
-	cdq
-	idiv	ecx
-	mov	esi, edx
-$LN469@Activate:
-	mov	edx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+52
-$LN398@Activate:
-	mov	al, BYTE PTR [edx+4057]
-	mov	edi, DWORD PTR [edx+4024]
-	cmp	al, bl
-	je	SHORT $LN408@Activate
-	cmp	ebp, ebx
-	jge	SHORT $LN410@Activate
-	mov	eax, ebp
-	cdq
-	idiv	edi
-	add	edx, edi
-	jmp	SHORT $LN412@Activate
-$LN410@Activate:
-	cmp	ebp, edi
-	jl	SHORT $LN408@Activate
-	mov	eax, ebp
-	cdq
-	idiv	edi
-	jmp	SHORT $LN412@Activate
-$LN408@Activate:
-	mov	edx, ebp
-$LN412@Activate:
-	cmp	esi, ebx
-	jl	$LN51@Activate
-	cmp	esi, ecx
-	jge	$LN51@Activate
-	cmp	edx, ebx
-	jl	$LN51@Activate
-	cmp	edx, edi
-	jge	$LN51@Activate
-	imul	ecx, edx
-	mov	edx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+52
-	add	ecx, esi
-	imul	ecx, 484				; 000001e4H
-	add	ecx, DWORD PTR [edx+4068]
-
-; 1119 : 		if(pPlot)
-
-	cmp	ecx, ebx
-	je	$LN51@Activate
-
-; 1120 : 		{
-; 1121 : 			auto_ptr<ICvPlot1> pDllPlot = GC.WrapPlotPointer(pPlot);
-
-	push	ecx
-	lea	eax, DWORD PTR $T224360[esp+604]
+	lea	eax, DWORD PTR $T224840[esp+604]
 	push	eax
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?WrapPlotPointer@CvGlobals@@QAE?AV?$auto_ptr@VICvPlot1@@@std@@PAVCvPlot@@@Z ; CvGlobals::WrapPlotPointer
 	mov	esi, DWORD PTR [eax]
 	mov	DWORD PTR [eax], ebx
-	mov	DWORD PTR _pDllPlot$221320[esp+600], esi
-	mov	eax, DWORD PTR $T224360[esp+600]
-	mov	DWORD PTR __$EHRec$[esp+608], 5
+	mov	DWORD PTR _pDllPlot$221660[esp+600], esi
+	mov	eax, DWORD PTR $T224840[esp+600]
+	mov	BYTE PTR __$EHRec$[esp+608], 3
 	cmp	eax, ebx
-	je	SHORT $LN434@Activate
+	je	SHORT $LN271@Activate
 	mov	ecx, DWORD PTR [eax]
 	mov	edx, DWORD PTR [ecx+4]
 	push	eax
 	call	edx
-$LN434@Activate:
+$LN271@Activate:
 
-; 1122 : 
-; 1123 : 			GC.GetEngineUserInterface()->lookAt(pDllPlot.get(), CAMERALOOKAT_NORMAL);
+; 929  : 				auto_ptr<ICvUnit1> pDllUnit = GC.WrapUnitPointer(pUnit.pointer());
+
+	push	ebp
+	lea	eax, DWORD PTR $T224842[esp+604]
+	push	eax
+	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
+	call	?WrapUnitPointer@CvGlobals@@QAE?AV?$auto_ptr@VICvUnit1@@@std@@PAVCvUnit@@@Z ; CvGlobals::WrapUnitPointer
+	mov	edi, DWORD PTR [eax]
+	mov	DWORD PTR [eax], ebx
+	mov	DWORD PTR _pDllUnit$221710[esp+600], edi
+	mov	eax, DWORD PTR $T224842[esp+600]
+	mov	BYTE PTR __$EHRec$[esp+608], 4
+	cmp	eax, ebx
+	je	SHORT $LN284@Activate
+	mov	ecx, DWORD PTR [eax]
+	mov	edx, DWORD PTR [ecx+4]
+	push	eax
+	call	edx
+$LN284@Activate:
+
+; 930  : 
+; 931  : 				GC.GetEngineUserInterface()->lookAt(pDllPlot.get(), CAMERALOOKAT_NORMAL);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
 	mov	eax, DWORD PTR [ecx]
@@ -7987,7 +7786,18 @@ $LN434@Activate:
 	push	esi
 	call	edx
 
-; 1124 : 			gDLL->GameplayDoFX(pDllPlot.get());
+; 932  : 				GC.GetEngineUserInterface()->selectUnit(pDllUnit.get(), false);
+
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
+	mov	eax, DWORD PTR [ecx]
+	mov	edx, DWORD PTR [eax+56]
+	push	ebx
+	push	ebx
+	push	ebx
+	push	edi
+	call	edx
+
+; 933  : 				gDLL->GameplayDoFX(pDllPlot.get());
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8564
 	mov	eax, DWORD PTR [ecx]
@@ -7996,103 +7806,425 @@ $LN434@Activate:
 	push	esi
 	call	edx
 
-; 1125 : 		}
+; 934  : 			}
+
+	mov	BYTE PTR __$EHRec$[esp+608], 3
+	cmp	edi, ebx
+	je	SHORT $LN301@Activate
+	mov	eax, DWORD PTR [edi]
+	mov	ecx, DWORD PTR [eax+4]
+	push	edi
+	call	ecx
+$LN301@Activate:
+	mov	BYTE PTR __$EHRec$[esp+608], 2
+	cmp	esi, ebx
+	je	SHORT $LN306@Activate
+	mov	edx, DWORD PTR [esi]
+	mov	eax, DWORD PTR [edx+4]
+	push	esi
+	call	eax
+$LN306@Activate:
+
+; 935  : 		}
+; 936  : 	}
+
+	mov	DWORD PTR __$EHRec$[esp+608], -1
+	cmp	ebp, ebx
+	je	$LN11@Activate
+	mov	ecx, ebp
+	call	?getDestructionNotification@CvUnit@@QAEAAU?$DestructionNotification@V?$FObjectHandle@VCvUnit@@@@@@XZ ; CvUnit::getDestructionNotification
+
+; 937  : 	break;
+
+	jmp	$LN11@Activate
+$LN70@Activate:
+
+; 818  : 
+; 819  : 	switch(notification.m_eNotificationType)
+
+	cmp	eax, 1996573794				; 77014c62H
+	jg	$LN72@Activate
+	je	SHORT $LN40@Activate
+	cmp	eax, 1784381333				; 6a5b7f95H
+	je	SHORT $LN35@Activate
+	cmp	eax, 1989681641				; 769821e9H
+	jne	$LN2@Activate
+
+; 869  : 	case NOTIFICATION_DIPLO_VOTE:
+; 870  : 	{
+; 871  : 		CvPopupInfo kPopup(BUTTONPOPUP_DIPLO_VOTE, m_ePlayer);
+
+	mov	ecx, DWORD PTR [edi]
+	or	eax, -1
+	mov	DWORD PTR _kPopup$221633[esp+600], ecx
+	mov	DWORD PTR _kPopup$221633[esp+604], eax
+	xor	ebx, ebx
+	mov	DWORD PTR _kPopup$221633[esp+620], 65	; 00000041H
+
+; 872  : 		GC.GetEngineUserInterface()->AddPopup(kPopup);
+; 873  : 	}
+; 874  : 	break;
+
+	jmp	$LN464@Activate
+$LN35@Activate:
+
+; 938  : 	case NOTIFICATION_PLAYER_DEAL:
+; 939  : 	{
+; 940  : 		GC.GetEngineUserInterface()->OpenPlayerDealScreen((PlayerTypes) notification.m_iX);
+
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
+	mov	eax, DWORD PTR [ecx]
+	mov	edx, DWORD PTR [esi+64]
+	mov	eax, DWORD PTR [eax+504]
+	push	edx
+	call	eax
+
+; 941  : 	}
+; 942  : 	break;
+
+	jmp	$LN11@Activate
+$LN40@Activate:
+
+; 895  : 	case NOTIFICATION_PRODUCTION:
+; 896  : 	{
+; 897  : 		CvCity* pCity = GC.getMap().plot(notification.m_iX, notification.m_iY)->getPlotCity();//GET_PLAYER(m_ePlayer).getCity(notification.m_iGameDataIndex);
+
+	mov	eax, DWORD PTR [esi+64]
+	mov	edx, DWORD PTR [esi+68]
+	mov	DWORD PTR $T225274[esp+600], edx
+	cmp	eax, -2147483647			; 80000001H
+	je	$LN211@Activate
+	cmp	edx, -2147483647			; 80000001H
+	je	$LN211@Activate
+	mov	edi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+52
+	mov	ecx, DWORD PTR [edi+4020]
+	xor	ebx, ebx
+	cmp	BYTE PTR [edi+4056], bl
+	je	SHORT $LN221@Activate
+	cmp	eax, ebx
+	jge	SHORT $LN223@Activate
+	cdq
+	idiv	ecx
+	mov	edi, edx
+	mov	edx, DWORD PTR $T225274[esp+600]
+	add	edi, ecx
+	jmp	SHORT $LN225@Activate
+$LN223@Activate:
+	cmp	eax, ecx
+	jl	SHORT $LN221@Activate
+	cdq
+	idiv	ecx
+	mov	edi, edx
+	mov	edx, DWORD PTR $T225274[esp+600]
+	jmp	SHORT $LN225@Activate
+$LN221@Activate:
+	mov	edi, eax
+$LN225@Activate:
+	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+52
+	mov	ebp, DWORD PTR [eax+4024]
+	cmp	BYTE PTR [eax+4057], bl
+	je	SHORT $LN231@Activate
+	cmp	edx, ebx
+	jge	SHORT $LN233@Activate
+	mov	eax, edx
+	cdq
+	idiv	ebp
+	add	edx, ebp
+	jmp	SHORT $LN231@Activate
+$LN233@Activate:
+	cmp	edx, ebp
+	jl	SHORT $LN231@Activate
+	mov	eax, edx
+	cdq
+	idiv	ebp
+$LN231@Activate:
+	cmp	edi, ebx
+	jl	SHORT $LN215@Activate
+	cmp	edi, ecx
+	jge	SHORT $LN215@Activate
+	cmp	edx, ebx
+	jl	SHORT $LN215@Activate
+	cmp	edx, ebp
+	jge	SHORT $LN215@Activate
+	imul	ecx, edx
+	mov	edx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+52
+	add	ecx, edi
+	imul	ecx, 484				; 000001e4H
+	add	ecx, DWORD PTR [edx+4068]
+	jmp	SHORT $LN213@Activate
+$LN211@Activate:
+	xor	ebx, ebx
+$LN215@Activate:
+	xor	ecx, ecx
+$LN213@Activate:
+	call	?getPlotCity@CvPlot@@QBEPAVCvCity@@XZ	; CvPlot::getPlotCity
+
+; 898  : 		if(!pCity)
+
+	cmp	eax, ebx
+	je	$LN11@Activate
+
+; 899  : 		{
+; 900  : 			return;
+; 901  : 		}
+; 902  : 
+; 903  : 		CvPopupInfo kPopupInfo(BUTTONPOPUP_CHOOSEPRODUCTION);
+; 904  : 
+; 905  : 		kPopupInfo.iData1 = pCity->GetID();
+; 906  : 
+; 907  : 		kPopupInfo.bOption2 = false;	// Not in purchase mode
+; 908  : 
+; 909  : 		// slewis - do we need the stuff below?
+; 910  : 		//kPopupInfo.setOption1(false);
+; 911  : 
+; 912  : 		OrderTypes eOrder = (OrderTypes) notification.m_iGameDataIndex;
+; 913  : 		int iItemID = notification.m_iExtraGameData;
+; 914  : 		kPopupInfo.iData2 = eOrder;
+; 915  : 		kPopupInfo.iData3 = iItemID;
+
+	mov	edx, DWORD PTR [esi+76]
+	or	ecx, -1
+	mov	DWORD PTR _kPopupInfo$221650[esp+600], ecx
+	mov	DWORD PTR _kPopupInfo$221650[esp+604], ecx
+	mov	DWORD PTR _kPopupInfo$221650[esp+608], ecx
+	mov	ecx, DWORD PTR [esi+72]
+	mov	BYTE PTR _kPopupInfo$221650[esp+617], bl
+	mov	DWORD PTR _kPopupInfo$221650[esp+612], ebx
+	mov	BYTE PTR _kPopupInfo$221650[esp+616], bl
+	mov	DWORD PTR _kPopupInfo$221650[esp+620], 16 ; 00000010H
+	mov	BYTE PTR _kPopupInfo$221650[esp+624], bl
+	mov	eax, DWORD PTR [eax+120]
+	mov	DWORD PTR _kPopupInfo$221650[esp+604], ecx
+
+; 916  : 
+; 917  : 		GC.GetEngineUserInterface()->AddPopup(kPopupInfo);
+
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
+	mov	DWORD PTR _kPopupInfo$221650[esp+600], eax
+	mov	DWORD PTR _kPopupInfo$221650[esp+608], edx
+	mov	BYTE PTR _kPopupInfo$221650[esp+617], bl
+	mov	eax, DWORD PTR [ecx]
+	mov	eax, DWORD PTR [eax+180]
+	lea	edx, DWORD PTR _kPopupInfo$221650[esp+600]
+	push	edx
+	call	eax
+
+; 918  : 	}
+; 919  : 	break;
+
+	jmp	$LN11@Activate
+$LN72@Activate:
+
+; 818  : 
+; 819  : 	switch(notification.m_eNotificationType)
+
+	cmp	eax, 2052101992				; 7a509768H
+	je	$LN12@Activate
+	cmp	eax, 2128612861				; 7ee00dfdH
+$LN467@Activate:
+	je	$LN29@Activate
+$LN2@Activate:
+
+; 1136 : #endif
+; 1137 : 
+; 1138 : 	default:	// Default behavior is to move the camera to the X,Y passed in
+; 1139 : 	{
+; 1140 : 		CvPlot* pPlot = GC.getMap().plot(notification.m_iX, notification.m_iY);
+
+	mov	ebp, DWORD PTR [esi+68]
+	mov	esi, DWORD PTR [esi+64]
+	cmp	esi, -2147483647			; 80000001H
+	je	$LN11@Activate
+	cmp	ebp, -2147483647			; 80000001H
+	je	$LN11@Activate
+	mov	edx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+52
+	mov	al, BYTE PTR [edx+4056]
+	mov	ecx, DWORD PTR [edx+4020]
+	xor	ebx, ebx
+	cmp	al, bl
+	je	SHORT $LN406@Activate
+	cmp	esi, ebx
+	jge	SHORT $LN408@Activate
+	mov	eax, esi
+	cdq
+	idiv	ecx
+	mov	esi, edx
+	add	esi, ecx
+	jmp	SHORT $LN472@Activate
+$LN408@Activate:
+	cmp	esi, ecx
+	jl	SHORT $LN406@Activate
+	mov	eax, esi
+	cdq
+	idiv	ecx
+	mov	esi, edx
+$LN472@Activate:
+	mov	edx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+52
+$LN406@Activate:
+	mov	al, BYTE PTR [edx+4057]
+	mov	edi, DWORD PTR [edx+4024]
+	cmp	al, bl
+	je	SHORT $LN416@Activate
+	cmp	ebp, ebx
+	jge	SHORT $LN418@Activate
+	mov	eax, ebp
+	cdq
+	idiv	edi
+	add	edx, edi
+	jmp	SHORT $LN420@Activate
+$LN418@Activate:
+	cmp	ebp, edi
+	jl	SHORT $LN416@Activate
+	mov	eax, ebp
+	cdq
+	idiv	edi
+	jmp	SHORT $LN420@Activate
+$LN416@Activate:
+	mov	edx, ebp
+$LN420@Activate:
+	cmp	esi, ebx
+	jl	$LN11@Activate
+	cmp	esi, ecx
+	jge	$LN11@Activate
+	cmp	edx, ebx
+	jl	$LN11@Activate
+	cmp	edx, edi
+	jge	$LN11@Activate
+	imul	ecx, edx
+	mov	edx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+52
+	add	ecx, esi
+	imul	ecx, 484				; 000001e4H
+	add	ecx, DWORD PTR [edx+4068]
+
+; 1141 : 		if(pPlot)
+
+	cmp	ecx, ebx
+	je	$LN11@Activate
+
+; 1142 : 		{
+; 1143 : 			auto_ptr<ICvPlot1> pDllPlot = GC.WrapPlotPointer(pPlot);
+
+	push	ecx
+	lea	eax, DWORD PTR $T224845[esp+604]
+	push	eax
+	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
+	call	?WrapPlotPointer@CvGlobals@@QAE?AV?$auto_ptr@VICvPlot1@@@std@@PAVCvPlot@@@Z ; CvGlobals::WrapPlotPointer
+	mov	esi, DWORD PTR [eax]
+	mov	DWORD PTR [eax], ebx
+	mov	DWORD PTR _pDllPlot$221804[esp+600], esi
+	mov	eax, DWORD PTR $T224845[esp+600]
+	mov	DWORD PTR __$EHRec$[esp+608], 5
+	cmp	eax, ebx
+	je	SHORT $LN442@Activate
+	mov	ecx, DWORD PTR [eax]
+	mov	edx, DWORD PTR [ecx+4]
+	push	eax
+	call	edx
+$LN442@Activate:
+
+; 1144 : 
+; 1145 : 			GC.GetEngineUserInterface()->lookAt(pDllPlot.get(), CAMERALOOKAT_NORMAL);
+
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
+	mov	eax, DWORD PTR [ecx]
+	mov	edx, DWORD PTR [eax+272]
+	push	ebx
+	push	esi
+	call	edx
+
+; 1146 : 			gDLL->GameplayDoFX(pDllPlot.get());
+
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8564
+	mov	eax, DWORD PTR [ecx]
+	mov	edx, DWORD PTR [eax+708]
+	push	-1
+	push	esi
+	call	edx
+
+; 1147 : 		}
 
 	mov	DWORD PTR __$EHRec$[esp+608], -1
 	cmp	esi, ebx
-	je	SHORT $LN51@Activate
+	je	$LN11@Activate
 	mov	eax, DWORD PTR [esi]
 	mov	ecx, DWORD PTR [eax+4]
 	push	esi
 	call	ecx
 
-; 1126 : 	}
-; 1127 : 	break;
+; 1148 : 	}
+; 1149 : 	break;
 
-	jmp	SHORT $LN51@Activate
-$LN27@Activate:
+	jmp	$LN11@Activate
+$LN29@Activate:
 
-; 970  : 		kPopup.iData1 = notification.m_iX;
+; 970  : 
+; 971  : 	case NOTIFICATION_FOUND_RELIGION:
+; 972  : 	case NOTIFICATION_ENHANCE_RELIGION:
+; 973  : 	{
+; 974  : 		CvPopupInfo kPopup(BUTTONPOPUP_FOUND_RELIGION, m_ePlayer);
+; 975  : 		kPopup.iData1 = notification.m_iX;
 
 	mov	edx, DWORD PTR [esi+64]
 
-; 971  : 		kPopup.iData2 = notification.m_iY;
+; 976  : 		kPopup.iData2 = notification.m_iY;
 
 	mov	ecx, DWORD PTR [esi+68]
 	xor	ebx, ebx
 
-; 972  : 
-; 973  : 		if(notification.m_eNotificationType == NOTIFICATION_FOUND_RELIGION)
+; 977  : 
+; 978  : 		if(notification.m_eNotificationType == NOTIFICATION_FOUND_RELIGION)
 
 	cmp	eax, 2128612861				; 7ee00dfdH
-	mov	DWORD PTR _kPopup$221265[esp+600], edx
-	sete	dl
-	mov	DWORD PTR _kPopup$221265[esp+620], 77	; 0000004dH
-	mov	DWORD PTR _kPopup$221265[esp+604], ecx
-	mov	BYTE PTR _kPopup$221265[esp+616], dl
-$LN457@Activate:
+	mov	DWORD PTR _kPopup$221742[esp+600], edx
+	mov	DWORD PTR _kPopup$221742[esp+604], ecx
 
-; 965  : 
-; 966  : 	case NOTIFICATION_FOUND_RELIGION:
-; 967  : 	case NOTIFICATION_ENHANCE_RELIGION:
-; 968  : 	{
-; 969  : 		CvPopupInfo kPopup(BUTTONPOPUP_FOUND_RELIGION, m_ePlayer);
-
-	mov	DWORD PTR _kPopup$221265[esp+608], -1
-$LN459@Activate:
-	mov	BYTE PTR _kPopup$221265[esp+624], bl
-	mov	BYTE PTR _kPopup$221265[esp+617], bl
-	mov	DWORD PTR _kPopup$221265[esp+612], ebx
-$LN456@Activate:
-
-; 974  : 		{
-; 975  : 			kPopup.bOption1 = true;
-; 976  : 		}
-; 977  : 		else
-; 978  : 		{
-; 979  : 			kPopup.bOption1 = false;
-; 980  : 		}
-; 981  : 		GC.GetEngineUserInterface()->AddPopup(kPopup);
+; 979  : 		{
+; 980  : 			kPopup.bOption1 = true;
+; 981  : 		}
+; 982  : 		else
+; 983  : 		{
+; 984  : 			kPopup.bOption1 = false;
+; 985  : 		}
+; 986  : 		GC.GetEngineUserInterface()->AddPopup(kPopup);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
+	sete	dl
+	mov	BYTE PTR _kPopup$221742[esp+616], dl
+	mov	DWORD PTR _kPopup$221742[esp+608], -1
+	mov	DWORD PTR _kPopup$221742[esp+612], ebx
+	mov	BYTE PTR _kPopup$221742[esp+617], bl
+	mov	DWORD PTR _kPopup$221742[esp+620], 77	; 0000004dH
+	mov	BYTE PTR _kPopup$221742[esp+624], bl
 	mov	eax, DWORD PTR [ecx]
 	mov	eax, DWORD PTR [eax+180]
-	lea	edx, DWORD PTR _kPopup$221265[esp+600]
+	lea	edx, DWORD PTR _kPopup$221742[esp+600]
 	push	edx
 	call	eax
-$LN51@Activate:
 
-; 1128 : 	}
-; 1129 : }
+; 987  : 	}
+; 988  : 	break;
 
-	mov	ecx, DWORD PTR __$EHRec$[esp+600]
-	pop	edi
-	pop	esi
-	pop	ebp
-	mov	DWORD PTR fs:0, ecx
-	pop	ebx
-	add	esp, 584				; 00000248H
-	ret	4
+	jmp	$LN11@Activate
 _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?Activate@CvNotifications@@QAEXAAUNotification@1@@Z$3:
-	lea	ecx, DWORD PTR _pDllPlot$221162[ebp]
+	lea	ecx, DWORD PTR _pDllPlot$221639[ebp]
 	jmp	??1?$auto_ptr@VICvPlot1@@@std@@QAE@XZ	; std::auto_ptr<ICvPlot1>::~auto_ptr<ICvPlot1>
 __unwindfunclet$?Activate@CvNotifications@@QAEXAAUNotification@1@@Z$1:
-	lea	ecx, DWORD PTR _pDllPlot$221132[ebp]
+	lea	ecx, DWORD PTR _pDllPlot$221609[ebp]
 	jmp	??1?$auto_ptr@VICvPlot1@@@std@@QAE@XZ	; std::auto_ptr<ICvPlot1>::~auto_ptr<ICvPlot1>
 __unwindfunclet$?Activate@CvNotifications@@QAEXAAUNotification@1@@Z$5:
-	lea	ecx, DWORD PTR _pUnit$221178[ebp]
+	lea	ecx, DWORD PTR _pUnit$221655[ebp]
 	jmp	??1?$FObjectHandle@VCvUnit@@@@QAE@XZ	; FObjectHandle<CvUnit>::~FObjectHandle<CvUnit>
 __unwindfunclet$?Activate@CvNotifications@@QAEXAAUNotification@1@@Z$7:
-	lea	ecx, DWORD PTR _pDllPlot$221183[ebp]
+	lea	ecx, DWORD PTR _pDllPlot$221660[ebp]
 	jmp	??1?$auto_ptr@VICvPlot1@@@std@@QAE@XZ	; std::auto_ptr<ICvPlot1>::~auto_ptr<ICvPlot1>
 __unwindfunclet$?Activate@CvNotifications@@QAEXAAUNotification@1@@Z$9:
-	lea	ecx, DWORD PTR _pDllUnit$221233[ebp]
+	lea	ecx, DWORD PTR _pDllUnit$221710[ebp]
 	jmp	??1?$auto_ptr@VICvUnit1@@@std@@QAE@XZ	; std::auto_ptr<ICvUnit1>::~auto_ptr<ICvUnit1>
 __unwindfunclet$?Activate@CvNotifications@@QAEXAAUNotification@1@@Z$11:
-	lea	ecx, DWORD PTR _pDllPlot$221320[ebp]
+	lea	ecx, DWORD PTR _pDllPlot$221804[ebp]
 	jmp	??1?$auto_ptr@VICvPlot1@@@std@@QAE@XZ	; std::auto_ptr<ICvPlot1>::~auto_ptr<ICvPlot1>
 __ehhandler$?Activate@CvNotifications@@QAEXAAUNotification@1@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?Activate@CvNotifications@@QAEXAAUNotification@1@@Z
@@ -8108,11 +8240,11 @@ _notification$ = 8					; size = 4
 ?IsNotificationRedundant@CvNotifications@@QAE_NAAUNotification@1@@Z PROC ; CvNotifications::IsNotificationRedundant, COMDAT
 ; _this$ = ecx
 
-; 1133 : {
+; 1155 : {
 
 	push	ecx
 
-; 1134 : 	switch(notification.m_eNotificationType)
+; 1156 : 	switch(notification.m_eNotificationType)
 
 	mov	edx, DWORD PTR _notification$[esp]
 	push	ebx
@@ -8141,37 +8273,37 @@ $LN19@IsNotifica@2:
 	pop	esi
 	pop	ebp
 
-; 1386 : 			}
-; 1387 : 		}
-; 1388 : 
-; 1389 : 		return false;
+; 1408 : 			}
+; 1409 : 		}
+; 1410 : 
+; 1411 : 		return false;
 
 	xor	al, al
 	pop	ebx
 
-; 1457 : 		break;
-; 1458 : 	}
-; 1459 : }
+; 1479 : 		break;
+; 1480 : 	}
+; 1481 : }
 
 	pop	ecx
 	ret	4
 $LN44@IsNotifica@2:
 
-; 1266 : 			}
-; 1267 : 		}
-; 1268 : 
-; 1269 : 		return false;
-; 1270 : 	}
-; 1271 : 	break;
-; 1272 : 
-; 1273 : 	case NOTIFICATION_ENEMY_IN_TERRITORY:
-; 1274 : 	{
-; 1275 : 		int iIndex = m_iNotificationsBeginIndex;
+; 1288 : 			}
+; 1289 : 		}
+; 1290 : 
+; 1291 : 		return false;
+; 1292 : 	}
+; 1293 : 	break;
+; 1294 : 
+; 1295 : 	case NOTIFICATION_ENEMY_IN_TERRITORY:
+; 1296 : 	{
+; 1297 : 		int iIndex = m_iNotificationsBeginIndex;
 
 	mov	edi, DWORD PTR [esi+20]
 	mov	ebp, DWORD PTR [esi+24]
 
-; 1276 : 		while(iIndex != m_iNotificationsEndIndex)
+; 1298 : 		while(iIndex != m_iNotificationsEndIndex)
 
 	cmp	edi, ebp
 	je	SHORT $LN19@IsNotifica@2
@@ -8182,9 +8314,9 @@ $LL190@IsNotifica@2:
 	mov	ecx, DWORD PTR tv641[esp+20]
 $LN43@IsNotifica@2:
 
-; 1277 : 		{
-; 1278 : 			// Only one "enemy in territory" notification at a time
-; 1279 : 			if(notification.m_eNotificationType == m_aNotifications[iIndex].m_eNotificationType)
+; 1299 : 		{
+; 1300 : 			// Only one "enemy in territory" notification at a time
+; 1301 : 			if(notification.m_eNotificationType == m_aNotifications[iIndex].m_eNotificationType)
 
 	mov	eax, edi
 	imul	eax, 92					; 0000005cH
@@ -8192,8 +8324,8 @@ $LN43@IsNotifica@2:
 	cmp	ecx, DWORD PTR [eax]
 	jne	SHORT $LN40@IsNotifica@2
 
-; 1280 : 			{
-; 1281 : 				if(!notification.m_bDismissed && !m_aNotifications[iIndex].m_bDismissed)
+; 1302 : 			{
+; 1303 : 				if(!notification.m_bDismissed && !m_aNotifications[iIndex].m_bDismissed)
 
 	cmp	BYTE PTR [edx+89], 0
 	jne	SHORT $LN40@IsNotifica@2
@@ -8201,13 +8333,13 @@ $LN43@IsNotifica@2:
 	je	$LN185@IsNotifica@2
 $LN40@IsNotifica@2:
 
-; 1282 : 				{
-; 1283 : 					return true;
-; 1284 : 				}
-; 1285 : 			}
-; 1286 : 
-; 1287 : 			iIndex++;
-; 1288 : 			if(iIndex >= (int)m_aNotifications.size())
+; 1304 : 				{
+; 1305 : 					return true;
+; 1306 : 				}
+; 1307 : 			}
+; 1308 : 
+; 1309 : 			iIndex++;
+; 1310 : 			if(iIndex >= (int)m_aNotifications.size())
 
 	mov	ecx, DWORD PTR [esi+12]
 	sub	ecx, ebx
@@ -8222,13 +8354,13 @@ $LN40@IsNotifica@2:
 	cmp	edi, ecx
 	jl	SHORT $LN39@IsNotifica@2
 
-; 1289 : 			{
-; 1290 : 				iIndex = 0;
+; 1311 : 			{
+; 1312 : 				iIndex = 0;
 
 	xor	edi, edi
 $LN39@IsNotifica@2:
 
-; 1276 : 		while(iIndex != m_iNotificationsEndIndex)
+; 1298 : 		while(iIndex != m_iNotificationsEndIndex)
 
 	cmp	edi, ebp
 	jne	SHORT $LL190@IsNotifica@2
@@ -8236,23 +8368,23 @@ $LN39@IsNotifica@2:
 	pop	esi
 	pop	ebp
 
-; 1386 : 			}
-; 1387 : 		}
-; 1388 : 
-; 1389 : 		return false;
+; 1408 : 			}
+; 1409 : 		}
+; 1410 : 
+; 1411 : 		return false;
 
 	xor	al, al
 	pop	ebx
 
-; 1457 : 		break;
-; 1458 : 	}
-; 1459 : }
+; 1479 : 		break;
+; 1480 : 	}
+; 1481 : }
 
 	pop	ecx
 	ret	4
 $LN84@IsNotifica@2:
 
-; 1134 : 	switch(notification.m_eNotificationType)
+; 1156 : 	switch(notification.m_eNotificationType)
 
 	cmp	ecx, -1103533898			; be3968b6H
 	jmp	SHORT $LN200@IsNotifica@2
@@ -8268,42 +8400,42 @@ $LN83@IsNotifica@2:
 	pop	esi
 	pop	ebp
 
-; 1386 : 			}
-; 1387 : 		}
-; 1388 : 
-; 1389 : 		return false;
+; 1408 : 			}
+; 1409 : 		}
+; 1410 : 
+; 1411 : 		return false;
 
 	xor	al, al
 	pop	ebx
 
-; 1457 : 		break;
-; 1458 : 	}
-; 1459 : }
+; 1479 : 		break;
+; 1480 : 	}
+; 1481 : }
 
 	pop	ecx
 	ret	4
 $LN85@IsNotifica@2:
 
-; 1134 : 	switch(notification.m_eNotificationType)
+; 1156 : 	switch(notification.m_eNotificationType)
 
 	cmp	ecx, 507779013				; 1e4417c5H
 	jne	$LN19@IsNotifica@2
 
-; 1213 : 			}
-; 1214 : 		}
-; 1215 : 
-; 1216 : 		return false;
-; 1217 : 	}
-; 1218 : 	break;
-; 1219 : 
-; 1220 : 	case NOTIFICATION_FREE_POLICY:
-; 1221 : 	{
-; 1222 : 		int iIndex = m_iNotificationsBeginIndex;
+; 1235 : 			}
+; 1236 : 		}
+; 1237 : 
+; 1238 : 		return false;
+; 1239 : 	}
+; 1240 : 	break;
+; 1241 : 
+; 1242 : 	case NOTIFICATION_FREE_POLICY:
+; 1243 : 	{
+; 1244 : 		int iIndex = m_iNotificationsBeginIndex;
 
 	mov	edi, DWORD PTR [esi+20]
 	mov	ebp, DWORD PTR [esi+24]
 
-; 1223 : 		while(iIndex != m_iNotificationsEndIndex)
+; 1245 : 		while(iIndex != m_iNotificationsEndIndex)
 
 	cmp	edi, ebp
 	je	$LN19@IsNotifica@2
@@ -8315,8 +8447,8 @@ $LL191@IsNotifica@2:
 	mov	ecx, DWORD PTR tv641[esp+20]
 $LN55@IsNotifica@2:
 
-; 1224 : 		{
-; 1225 : 			if(notification.m_eNotificationType == m_aNotifications[iIndex].m_eNotificationType)
+; 1246 : 		{
+; 1247 : 			if(notification.m_eNotificationType == m_aNotifications[iIndex].m_eNotificationType)
 
 	mov	eax, edi
 	imul	eax, 92					; 0000005cH
@@ -8324,8 +8456,8 @@ $LN55@IsNotifica@2:
 	cmp	ecx, DWORD PTR [eax]
 	jne	SHORT $LN52@IsNotifica@2
 
-; 1226 : 			{
-; 1227 : 				if(!notification.m_bDismissed && !m_aNotifications[iIndex].m_bDismissed)
+; 1248 : 			{
+; 1249 : 				if(!notification.m_bDismissed && !m_aNotifications[iIndex].m_bDismissed)
 
 	cmp	BYTE PTR [edx+89], 0
 	jne	SHORT $LN52@IsNotifica@2
@@ -8333,15 +8465,15 @@ $LN55@IsNotifica@2:
 	je	$LN185@IsNotifica@2
 $LN52@IsNotifica@2:
 
-; 1228 : 				{
-; 1229 : 					// we've already added a tech notification, don't need another
-; 1230 : 					return true;
-; 1231 : 				}
-; 1232 : 			}
-; 1233 : 
-; 1234 : 
-; 1235 : 			iIndex++;
-; 1236 : 			if(iIndex >= (int)m_aNotifications.size())
+; 1250 : 				{
+; 1251 : 					// we've already added a tech notification, don't need another
+; 1252 : 					return true;
+; 1253 : 				}
+; 1254 : 			}
+; 1255 : 
+; 1256 : 
+; 1257 : 			iIndex++;
+; 1258 : 			if(iIndex >= (int)m_aNotifications.size())
 
 	mov	ecx, DWORD PTR [esi+12]
 	sub	ecx, ebx
@@ -8356,13 +8488,13 @@ $LN52@IsNotifica@2:
 	cmp	edi, ecx
 	jl	SHORT $LN51@IsNotifica@2
 
-; 1237 : 			{
-; 1238 : 				iIndex = 0;
+; 1259 : 			{
+; 1260 : 				iIndex = 0;
 
 	xor	edi, edi
 $LN51@IsNotifica@2:
 
-; 1223 : 		while(iIndex != m_iNotificationsEndIndex)
+; 1245 : 		while(iIndex != m_iNotificationsEndIndex)
 
 	cmp	edi, ebp
 	jne	SHORT $LL191@IsNotifica@2
@@ -8370,37 +8502,37 @@ $LN51@IsNotifica@2:
 	pop	esi
 	pop	ebp
 
-; 1386 : 			}
-; 1387 : 		}
-; 1388 : 
-; 1389 : 		return false;
+; 1408 : 			}
+; 1409 : 		}
+; 1410 : 
+; 1411 : 		return false;
 
 	xor	al, al
 	pop	ebx
 
-; 1457 : 		break;
-; 1458 : 	}
-; 1459 : }
+; 1479 : 		break;
+; 1480 : 	}
+; 1481 : }
 
 	pop	ecx
 	ret	4
 $LN62@IsNotifica@2:
 
-; 1187 : 			}
-; 1188 : 		}
-; 1189 : 
-; 1190 : 		return false;
-; 1191 : 	}
-; 1192 : 	break;
-; 1193 : 
-; 1194 : 	case NOTIFICATION_POLICY:
-; 1195 : 	{
-; 1196 : 		int iIndex = m_iNotificationsBeginIndex;
+; 1209 : 			}
+; 1210 : 		}
+; 1211 : 
+; 1212 : 		return false;
+; 1213 : 	}
+; 1214 : 	break;
+; 1215 : 
+; 1216 : 	case NOTIFICATION_POLICY:
+; 1217 : 	{
+; 1218 : 		int iIndex = m_iNotificationsBeginIndex;
 
 	mov	edi, DWORD PTR [esi+20]
 	mov	ebp, DWORD PTR [esi+24]
 
-; 1197 : 		while(iIndex != m_iNotificationsEndIndex)
+; 1219 : 		while(iIndex != m_iNotificationsEndIndex)
 
 	cmp	edi, ebp
 	je	$LN19@IsNotifica@2
@@ -8411,8 +8543,8 @@ $LL192@IsNotifica@2:
 	mov	ecx, DWORD PTR tv641[esp+20]
 $LN61@IsNotifica@2:
 
-; 1198 : 		{
-; 1199 : 			if(notification.m_eNotificationType == m_aNotifications[iIndex].m_eNotificationType)
+; 1220 : 		{
+; 1221 : 			if(notification.m_eNotificationType == m_aNotifications[iIndex].m_eNotificationType)
 
 	mov	eax, edi
 	imul	eax, 92					; 0000005cH
@@ -8420,8 +8552,8 @@ $LN61@IsNotifica@2:
 	cmp	ecx, DWORD PTR [eax]
 	jne	SHORT $LN58@IsNotifica@2
 
-; 1200 : 			{
-; 1201 : 				if(!notification.m_bDismissed && !m_aNotifications[iIndex].m_bDismissed)
+; 1222 : 			{
+; 1223 : 				if(!notification.m_bDismissed && !m_aNotifications[iIndex].m_bDismissed)
 
 	cmp	BYTE PTR [edx+89], 0
 	jne	SHORT $LN58@IsNotifica@2
@@ -8429,15 +8561,15 @@ $LN61@IsNotifica@2:
 	je	$LN185@IsNotifica@2
 $LN58@IsNotifica@2:
 
-; 1202 : 				{
-; 1203 : 					// we've already added a policy notification, don't need another
-; 1204 : 					return true;
-; 1205 : 				}
-; 1206 : 			}
-; 1207 : 
-; 1208 : 
-; 1209 : 			iIndex++;
-; 1210 : 			if(iIndex >= (int)m_aNotifications.size())
+; 1224 : 				{
+; 1225 : 					// we've already added a policy notification, don't need another
+; 1226 : 					return true;
+; 1227 : 				}
+; 1228 : 			}
+; 1229 : 
+; 1230 : 
+; 1231 : 			iIndex++;
+; 1232 : 			if(iIndex >= (int)m_aNotifications.size())
 
 	mov	ecx, DWORD PTR [esi+12]
 	sub	ecx, ebx
@@ -8452,13 +8584,13 @@ $LN58@IsNotifica@2:
 	cmp	edi, ecx
 	jl	SHORT $LN57@IsNotifica@2
 
-; 1211 : 			{
-; 1212 : 				iIndex = 0;
+; 1233 : 			{
+; 1234 : 				iIndex = 0;
 
 	xor	edi, edi
 $LN57@IsNotifica@2:
 
-; 1197 : 		while(iIndex != m_iNotificationsEndIndex)
+; 1219 : 		while(iIndex != m_iNotificationsEndIndex)
 
 	cmp	edi, ebp
 	jne	SHORT $LL192@IsNotifica@2
@@ -8466,23 +8598,23 @@ $LN57@IsNotifica@2:
 	pop	esi
 	pop	ebp
 
-; 1386 : 			}
-; 1387 : 		}
-; 1388 : 
-; 1389 : 		return false;
+; 1408 : 			}
+; 1409 : 		}
+; 1410 : 
+; 1411 : 		return false;
 
 	xor	al, al
 	pop	ebx
 
-; 1457 : 		break;
-; 1458 : 	}
-; 1459 : }
+; 1479 : 		break;
+; 1480 : 	}
+; 1481 : }
 
 	pop	ecx
 	ret	4
 $LN82@IsNotifica@2:
 
-; 1134 : 	switch(notification.m_eNotificationType)
+; 1156 : 	switch(notification.m_eNotificationType)
 
 	cmp	ecx, 1523558135				; 5acfa6f7H
 	jg	$LN86@IsNotifica@2
@@ -8495,21 +8627,21 @@ $LN82@IsNotifica@2:
 	cmp	ecx, 1218150582				; 489b80b6H
 	jne	$LN19@IsNotifica@2
 
-; 1161 : 			}
-; 1162 : 		}
-; 1163 : 
-; 1164 : 		return false;
-; 1165 : 	}
-; 1166 : 	break;
-; 1167 : 
-; 1168 : 	case NOTIFICATION_FREE_TECH:
-; 1169 : 	{
-; 1170 : 		int iIndex = m_iNotificationsBeginIndex;
+; 1183 : 			}
+; 1184 : 		}
+; 1185 : 
+; 1186 : 		return false;
+; 1187 : 	}
+; 1188 : 	break;
+; 1189 : 
+; 1190 : 	case NOTIFICATION_FREE_TECH:
+; 1191 : 	{
+; 1192 : 		int iIndex = m_iNotificationsBeginIndex;
 
 	mov	edi, DWORD PTR [esi+20]
 	mov	ebp, DWORD PTR [esi+24]
 
-; 1171 : 		while(iIndex != m_iNotificationsEndIndex)
+; 1193 : 		while(iIndex != m_iNotificationsEndIndex)
 
 	cmp	edi, ebp
 	je	$LN19@IsNotifica@2
@@ -8521,8 +8653,8 @@ $LL193@IsNotifica@2:
 	mov	ecx, DWORD PTR tv641[esp+20]
 $LN67@IsNotifica@2:
 
-; 1172 : 		{
-; 1173 : 			if(notification.m_eNotificationType == m_aNotifications[iIndex].m_eNotificationType)
+; 1194 : 		{
+; 1195 : 			if(notification.m_eNotificationType == m_aNotifications[iIndex].m_eNotificationType)
 
 	mov	eax, edi
 	imul	eax, 92					; 0000005cH
@@ -8530,8 +8662,8 @@ $LN67@IsNotifica@2:
 	cmp	ecx, DWORD PTR [eax]
 	jne	SHORT $LN64@IsNotifica@2
 
-; 1174 : 			{
-; 1175 : 				if(!notification.m_bDismissed && !m_aNotifications[iIndex].m_bDismissed)
+; 1196 : 			{
+; 1197 : 				if(!notification.m_bDismissed && !m_aNotifications[iIndex].m_bDismissed)
 
 	cmp	BYTE PTR [edx+89], 0
 	jne	SHORT $LN64@IsNotifica@2
@@ -8539,15 +8671,15 @@ $LN67@IsNotifica@2:
 	je	$LN185@IsNotifica@2
 $LN64@IsNotifica@2:
 
-; 1176 : 				{
-; 1177 : 					// we've already added a free tech notification, don't need another
-; 1178 : 					return true;
-; 1179 : 				}
-; 1180 : 			}
-; 1181 : 
-; 1182 : 
-; 1183 : 			iIndex++;
-; 1184 : 			if(iIndex >= (int)m_aNotifications.size())
+; 1198 : 				{
+; 1199 : 					// we've already added a free tech notification, don't need another
+; 1200 : 					return true;
+; 1201 : 				}
+; 1202 : 			}
+; 1203 : 
+; 1204 : 
+; 1205 : 			iIndex++;
+; 1206 : 			if(iIndex >= (int)m_aNotifications.size())
 
 	mov	ecx, DWORD PTR [esi+12]
 	sub	ecx, ebx
@@ -8562,13 +8694,13 @@ $LN64@IsNotifica@2:
 	cmp	edi, ecx
 	jl	SHORT $LN63@IsNotifica@2
 
-; 1185 : 			{
-; 1186 : 				iIndex = 0;
+; 1207 : 			{
+; 1208 : 				iIndex = 0;
 
 	xor	edi, edi
 $LN63@IsNotifica@2:
 
-; 1171 : 		while(iIndex != m_iNotificationsEndIndex)
+; 1193 : 		while(iIndex != m_iNotificationsEndIndex)
 
 	cmp	edi, ebp
 	jne	SHORT $LL193@IsNotifica@2
@@ -8576,35 +8708,35 @@ $LN63@IsNotifica@2:
 	pop	esi
 	pop	ebp
 
-; 1386 : 			}
-; 1387 : 		}
-; 1388 : 
-; 1389 : 		return false;
+; 1408 : 			}
+; 1409 : 		}
+; 1410 : 
+; 1411 : 		return false;
 
 	xor	al, al
 	pop	ebx
 
-; 1457 : 		break;
-; 1458 : 	}
-; 1459 : }
+; 1479 : 		break;
+; 1480 : 	}
+; 1481 : }
 
 	pop	ecx
 	ret	4
 $LN15@IsNotifica@2:
 
-; 1390 : 	}
-; 1391 : 	break;
-; 1392 : 
-; 1393 : 	case NOTIFICATION_LEAGUE_CALL_FOR_PROPOSALS:
-; 1394 : 	case NOTIFICATION_LEAGUE_CALL_FOR_VOTES:
-; 1395 : 	case NOTIFICATION_LEAGUE_VOTING_SOON:
-; 1396 : 	{
-; 1397 : 		int iIndex = m_iNotificationsBeginIndex;
+; 1412 : 	}
+; 1413 : 	break;
+; 1414 : 
+; 1415 : 	case NOTIFICATION_LEAGUE_CALL_FOR_PROPOSALS:
+; 1416 : 	case NOTIFICATION_LEAGUE_CALL_FOR_VOTES:
+; 1417 : 	case NOTIFICATION_LEAGUE_VOTING_SOON:
+; 1418 : 	{
+; 1419 : 		int iIndex = m_iNotificationsBeginIndex;
 
 	mov	edi, DWORD PTR [esi+20]
 	mov	ebp, DWORD PTR [esi+24]
 
-; 1398 : 		while(iIndex != m_iNotificationsEndIndex)
+; 1420 : 		while(iIndex != m_iNotificationsEndIndex)
 
 	cmp	edi, ebp
 	je	$LN19@IsNotifica@2
@@ -8615,8 +8747,8 @@ $LL194@IsNotifica@2:
 	mov	ecx, DWORD PTR tv641[esp+20]
 $LN14@IsNotifica@2:
 
-; 1399 : 		{
-; 1400 : 			if(notification.m_eNotificationType == m_aNotifications[iIndex].m_eNotificationType)
+; 1421 : 		{
+; 1422 : 			if(notification.m_eNotificationType == m_aNotifications[iIndex].m_eNotificationType)
 
 	mov	eax, edi
 	imul	eax, 92					; 0000005cH
@@ -8624,8 +8756,8 @@ $LN14@IsNotifica@2:
 	cmp	ecx, DWORD PTR [eax]
 	jne	SHORT $LN11@IsNotifica@2
 
-; 1401 : 			{
-; 1402 : 				if(!notification.m_bDismissed && !m_aNotifications[iIndex].m_bDismissed)
+; 1423 : 			{
+; 1424 : 				if(!notification.m_bDismissed && !m_aNotifications[iIndex].m_bDismissed)
 
 	cmp	BYTE PTR [edx+89], 0
 	jne	SHORT $LN11@IsNotifica@2
@@ -8633,15 +8765,15 @@ $LN14@IsNotifica@2:
 	je	$LN185@IsNotifica@2
 $LN11@IsNotifica@2:
 
-; 1403 : 				{
-; 1404 : 					// we've already added one of this notification type, don't need another
-; 1405 : 					return true;
-; 1406 : 				}
-; 1407 : 			}
-; 1408 : 
-; 1409 : 
-; 1410 : 			iIndex++;
-; 1411 : 			if(iIndex >= (int)m_aNotifications.size())
+; 1425 : 				{
+; 1426 : 					// we've already added one of this notification type, don't need another
+; 1427 : 					return true;
+; 1428 : 				}
+; 1429 : 			}
+; 1430 : 
+; 1431 : 
+; 1432 : 			iIndex++;
+; 1433 : 			if(iIndex >= (int)m_aNotifications.size())
 
 	mov	ecx, DWORD PTR [esi+12]
 	sub	ecx, ebx
@@ -8656,13 +8788,13 @@ $LN11@IsNotifica@2:
 	cmp	edi, ecx
 	jl	SHORT $LN10@IsNotifica@2
 
-; 1412 : 			{
-; 1413 : 				iIndex = 0;
+; 1434 : 			{
+; 1435 : 				iIndex = 0;
 
 	xor	edi, edi
 $LN10@IsNotifica@2:
 
-; 1398 : 		while(iIndex != m_iNotificationsEndIndex)
+; 1420 : 		while(iIndex != m_iNotificationsEndIndex)
 
 	cmp	edi, ebp
 	jne	SHORT $LL194@IsNotifica@2
@@ -8672,54 +8804,54 @@ $LN10@IsNotifica@2:
 	xor	al, al
 	pop	ebx
 
-; 1457 : 		break;
-; 1458 : 	}
-; 1459 : }
+; 1479 : 		break;
+; 1480 : 	}
+; 1481 : }
 
 	pop	ecx
 	ret	4
 $LN87@IsNotifica@2:
 
-; 1134 : 	switch(notification.m_eNotificationType)
+; 1156 : 	switch(notification.m_eNotificationType)
 
 	cmp	ecx, 1319111517				; 4ea00b5dH
 	jne	$LN19@IsNotifica@2
 
-; 1319 : 			}
-; 1320 : 		}
-; 1321 : 
-; 1322 : 		return false;
-; 1323 : 	}
-; 1324 : 	break;
-; 1325 : 
-; 1326 : 	case NOTIFICATION_DIPLOMACY_DECLARATION:
-; 1327 : 	{
-; 1328 : 		PlayerTypes eOurPlayer1 = (PlayerTypes) notification.m_iGameDataIndex;
+; 1341 : 			}
+; 1342 : 		}
+; 1343 : 
+; 1344 : 		return false;
+; 1345 : 	}
+; 1346 : 	break;
+; 1347 : 
+; 1348 : 	case NOTIFICATION_DIPLOMACY_DECLARATION:
+; 1349 : 	{
+; 1350 : 		PlayerTypes eOurPlayer1 = (PlayerTypes) notification.m_iGameDataIndex;
 
 	mov	ebx, DWORD PTR [edx+72]
 
-; 1329 : 		PlayerTypes eOurPlayer2 = (PlayerTypes) notification.m_iExtraGameData;
+; 1351 : 		PlayerTypes eOurPlayer2 = (PlayerTypes) notification.m_iExtraGameData;
 
 	mov	ebp, DWORD PTR [edx+76]
 
-; 1330 : 
-; 1331 : 		// Notification is NOT being used to inform of a DoF or Denouncement (otherwise there would be valid players in these slots)
-; 1332 : 		if(eOurPlayer1 == -1 || eOurPlayer2 == -1)
+; 1352 : 
+; 1353 : 		// Notification is NOT being used to inform of a DoF or Denouncement (otherwise there would be valid players in these slots)
+; 1354 : 		if(eOurPlayer1 == -1 || eOurPlayer2 == -1)
 
 	cmp	ebx, -1
 	je	$LN19@IsNotifica@2
 	cmp	ebp, -1
 	je	$LN19@IsNotifica@2
 
-; 1333 : 			return false;
-; 1334 : 
-; 1335 : 		PlayerTypes eCheckingPlayer1, eCheckingPlayer2;
-; 1336 : 
-; 1337 : 		int iIndex = m_iNotificationsBeginIndex;
+; 1355 : 			return false;
+; 1356 : 
+; 1357 : 		PlayerTypes eCheckingPlayer1, eCheckingPlayer2;
+; 1358 : 
+; 1359 : 		int iIndex = m_iNotificationsBeginIndex;
 
 	mov	edi, DWORD PTR [esi+20]
 
-; 1338 : 		while(iIndex != m_iNotificationsEndIndex)
+; 1360 : 		while(iIndex != m_iNotificationsEndIndex)
 
 	cmp	edi, DWORD PTR [esi+24]
 	je	$LN19@IsNotifica@2
@@ -8728,8 +8860,8 @@ $LL195@IsNotifica@2:
 	mov	ecx, DWORD PTR tv641[esp+20]
 $LN28@IsNotifica@2:
 
-; 1339 : 		{
-; 1340 : 			if(notification.m_eNotificationType == m_aNotifications[iIndex].m_eNotificationType)
+; 1361 : 		{
+; 1362 : 			if(notification.m_eNotificationType == m_aNotifications[iIndex].m_eNotificationType)
 
 	mov	edx, DWORD PTR [esi+8]
 	mov	eax, edi
@@ -8737,20 +8869,20 @@ $LN28@IsNotifica@2:
 	cmp	ecx, DWORD PTR [eax+edx]
 	jne	SHORT $LN25@IsNotifica@2
 
-; 1341 : 			{
-; 1342 : 				eCheckingPlayer1 = (PlayerTypes) m_aNotifications[iIndex].m_iGameDataIndex;
+; 1363 : 			{
+; 1364 : 				eCheckingPlayer1 = (PlayerTypes) m_aNotifications[iIndex].m_iGameDataIndex;
 
 	mov	ecx, DWORD PTR [eax+edx+72]
 	add	eax, edx
 
-; 1343 : 				eCheckingPlayer2 = (PlayerTypes) m_aNotifications[iIndex].m_iExtraGameData;
+; 1365 : 				eCheckingPlayer2 = (PlayerTypes) m_aNotifications[iIndex].m_iExtraGameData;
 
 	mov	eax, DWORD PTR [eax+76]
 
-; 1344 : 
-; 1345 : 				// Players match - we already have a notification with this player combo
-; 1346 : 				if((eOurPlayer1 == eCheckingPlayer1 && eOurPlayer2 == eCheckingPlayer2) ||
-; 1347 : 				        (eOurPlayer1 == eCheckingPlayer2 && eOurPlayer2 == eCheckingPlayer1))
+; 1366 : 
+; 1367 : 				// Players match - we already have a notification with this player combo
+; 1368 : 				if((eOurPlayer1 == eCheckingPlayer1 && eOurPlayer2 == eCheckingPlayer2) ||
+; 1369 : 				        (eOurPlayer1 == eCheckingPlayer2 && eOurPlayer2 == eCheckingPlayer1))
 
 	cmp	ebx, ecx
 	jne	SHORT $LN23@IsNotifica@2
@@ -8763,13 +8895,13 @@ $LN23@IsNotifica@2:
 	je	$LN185@IsNotifica@2
 $LN25@IsNotifica@2:
 
-; 1348 : 				{
-; 1349 : 					return true;
-; 1350 : 				}
-; 1351 : 			}
-; 1352 : 
-; 1353 : 			iIndex++;
-; 1354 : 			if(iIndex >= (int)m_aNotifications.size())
+; 1370 : 				{
+; 1371 : 					return true;
+; 1372 : 				}
+; 1373 : 			}
+; 1374 : 
+; 1375 : 			iIndex++;
+; 1376 : 			if(iIndex >= (int)m_aNotifications.size())
 
 	mov	ecx, DWORD PTR [esi+12]
 	sub	ecx, DWORD PTR [esi+8]
@@ -8784,12 +8916,12 @@ $LN25@IsNotifica@2:
 	cmp	edi, eax
 	jl	SHORT $LN22@IsNotifica@2
 
-; 1355 : 				iIndex = 0;
+; 1377 : 				iIndex = 0;
 
 	xor	edi, edi
 $LN22@IsNotifica@2:
 
-; 1338 : 		while(iIndex != m_iNotificationsEndIndex)
+; 1360 : 		while(iIndex != m_iNotificationsEndIndex)
 
 	cmp	edi, DWORD PTR [esi+24]
 	jne	SHORT $LL195@IsNotifica@2
@@ -8797,30 +8929,30 @@ $LN22@IsNotifica@2:
 	pop	esi
 	pop	ebp
 
-; 1386 : 			}
-; 1387 : 		}
-; 1388 : 
-; 1389 : 		return false;
+; 1408 : 			}
+; 1409 : 		}
+; 1410 : 
+; 1411 : 		return false;
 
 	xor	al, al
 	pop	ebx
 
-; 1457 : 		break;
-; 1458 : 	}
-; 1459 : }
+; 1479 : 		break;
+; 1480 : 	}
+; 1481 : }
 
 	pop	ecx
 	ret	4
 $LN77@IsNotifica@2:
 
-; 1135 : 	{
-; 1136 : 	case NOTIFICATION_TECH:
-; 1137 : 	{
-; 1138 : 		int iIndex = m_iNotificationsBeginIndex;
+; 1157 : 	{
+; 1158 : 	case NOTIFICATION_TECH:
+; 1159 : 	{
+; 1160 : 		int iIndex = m_iNotificationsBeginIndex;
 
 	mov	ebx, DWORD PTR [esi+20]
 
-; 1139 : 		while(iIndex != m_iNotificationsEndIndex)
+; 1161 : 		while(iIndex != m_iNotificationsEndIndex)
 
 	cmp	ebx, DWORD PTR [esi+24]
 	je	$LN19@IsNotifica@2
@@ -8829,8 +8961,8 @@ $LL196@IsNotifica@2:
 	mov	edx, DWORD PTR _notification$[esp+16]
 $LN76@IsNotifica@2:
 
-; 1140 : 		{
-; 1141 : 			if(notification.m_eNotificationType == m_aNotifications[iIndex].m_eNotificationType)
+; 1162 : 		{
+; 1163 : 			if(notification.m_eNotificationType == m_aNotifications[iIndex].m_eNotificationType)
 
 	mov	ecx, DWORD PTR [esi+8]
 	mov	edi, ebx
@@ -8840,16 +8972,16 @@ $LN76@IsNotifica@2:
 	cmp	ecx, DWORD PTR [eax]
 	jne	SHORT $LN71@IsNotifica@2
 
-; 1142 : 			{
-; 1143 : 				if(!notification.m_bDismissed && !m_aNotifications[iIndex].m_bDismissed)
+; 1164 : 			{
+; 1165 : 				if(!notification.m_bDismissed && !m_aNotifications[iIndex].m_bDismissed)
 
 	cmp	BYTE PTR [edx+89], 0
 	jne	SHORT $LN71@IsNotifica@2
 	cmp	BYTE PTR [eax+89], 0
 	jne	SHORT $LN71@IsNotifica@2
 
-; 1144 : 				{
-; 1145 : 					if (IsNotificationTypeEndOfTurnExpired(notification.m_eNotificationType) && notification.m_bWaitExtraTurn)
+; 1166 : 				{
+; 1167 : 					if (IsNotificationTypeEndOfTurnExpired(notification.m_eNotificationType) && notification.m_bWaitExtraTurn)
 
 	push	-1
 	push	ecx
@@ -8861,24 +8993,24 @@ $LN76@IsNotifica@2:
 	cmp	BYTE PTR [edx+90], 0
 	je	SHORT $LN185@IsNotifica@2
 
-; 1146 : 					{
-; 1147 : 						if (m_aNotifications[iIndex].m_bWaitExtraTurn)
+; 1168 : 					{
+; 1169 : 						if (m_aNotifications[iIndex].m_bWaitExtraTurn)
 
 	mov	eax, DWORD PTR [esi+8]
 	cmp	BYTE PTR [edi+eax+90], 0
 	jne	SHORT $LN185@IsNotifica@2
 $LN71@IsNotifica@2:
 
-; 1149 : 					}
-; 1150 : 					else
-; 1151 : 						// We already added this kind of notification so we don't need another
-; 1152 : 						return true;
-; 1153 : 				}
-; 1154 : 			}
-; 1155 : 
-; 1156 : 
-; 1157 : 			iIndex++;
-; 1158 : 			if(iIndex >= (int)m_aNotifications.size())
+; 1171 : 					}
+; 1172 : 					else
+; 1173 : 						// We already added this kind of notification so we don't need another
+; 1174 : 						return true;
+; 1175 : 				}
+; 1176 : 			}
+; 1177 : 
+; 1178 : 
+; 1179 : 			iIndex++;
+; 1180 : 			if(iIndex >= (int)m_aNotifications.size())
 
 	mov	ecx, DWORD PTR [esi+12]
 	sub	ecx, DWORD PTR [esi+8]
@@ -8893,13 +9025,13 @@ $LN71@IsNotifica@2:
 	cmp	ebx, ecx
 	jl	SHORT $LN69@IsNotifica@2
 
-; 1159 : 			{
-; 1160 : 				iIndex = 0;
+; 1181 : 			{
+; 1182 : 				iIndex = 0;
 
 	xor	ebx, ebx
 $LN69@IsNotifica@2:
 
-; 1139 : 		while(iIndex != m_iNotificationsEndIndex)
+; 1161 : 		while(iIndex != m_iNotificationsEndIndex)
 
 	cmp	ebx, DWORD PTR [esi+24]
 	jne	SHORT $LL196@IsNotifica@2
@@ -8907,17 +9039,17 @@ $LN69@IsNotifica@2:
 	pop	esi
 	pop	ebp
 
-; 1386 : 			}
-; 1387 : 		}
-; 1388 : 
-; 1389 : 		return false;
+; 1408 : 			}
+; 1409 : 		}
+; 1410 : 
+; 1411 : 		return false;
 
 	xor	al, al
 	pop	ebx
 
-; 1457 : 		break;
-; 1458 : 	}
-; 1459 : }
+; 1479 : 		break;
+; 1480 : 	}
+; 1481 : }
 
 	pop	ecx
 	ret	4
@@ -8926,20 +9058,20 @@ $LN185@IsNotifica@2:
 	pop	esi
 	pop	ebp
 
-; 1148 : 							return true;
+; 1170 : 							return true;
 
 	mov	al, 1
 	pop	ebx
 
-; 1457 : 		break;
-; 1458 : 	}
-; 1459 : }
+; 1479 : 		break;
+; 1480 : 	}
+; 1481 : }
 
 	pop	ecx
 	ret	4
 $LN86@IsNotifica@2:
 
-; 1134 : 	switch(notification.m_eNotificationType)
+; 1156 : 	switch(notification.m_eNotificationType)
 
 	cmp	ecx, 1996573794				; 77014c62H
 	jg	$LN88@IsNotifica@2
@@ -8950,22 +9082,22 @@ $LN86@IsNotifica@2:
 	jne	$LN19@IsNotifica@2
 $LN9@IsNotifica@2:
 
-; 1414 : 			}
-; 1415 : 		}
-; 1416 : 		return false;
-; 1417 : 	}
-; 1418 : 	break;
-; 1419 : 
-; 1420 : #ifndef AUI_WARNING_FIXES
-; 1421 : 	case NOTIFICATION_LEAGUE_PROJECT_COMPLETE:
-; 1422 : 	case NOTIFICATION_LEAGUE_PROJECT_PROGRESS:
-; 1423 : 		{
-; 1424 : 			int iIndex = m_iNotificationsBeginIndex;
+; 1436 : 			}
+; 1437 : 		}
+; 1438 : 		return false;
+; 1439 : 	}
+; 1440 : 	break;
+; 1441 : 
+; 1442 : #ifndef AUI_WARNING_FIXES
+; 1443 : 	case NOTIFICATION_LEAGUE_PROJECT_COMPLETE:
+; 1444 : 	case NOTIFICATION_LEAGUE_PROJECT_PROGRESS:
+; 1445 : 		{
+; 1446 : 			int iIndex = m_iNotificationsBeginIndex;
 
 	mov	edi, DWORD PTR [esi+20]
 	mov	ebp, DWORD PTR [esi+24]
 
-; 1425 : 			while(iIndex != m_iNotificationsEndIndex)
+; 1447 : 			while(iIndex != m_iNotificationsEndIndex)
 
 	cmp	edi, ebp
 	je	$LN19@IsNotifica@2
@@ -8977,8 +9109,8 @@ $LL197@IsNotifica@2:
 	mov	ecx, DWORD PTR tv641[esp+20]
 $LN8@IsNotifica@2:
 
-; 1426 : 			{
-; 1427 : 				if(notification.m_eNotificationType == m_aNotifications[iIndex].m_eNotificationType)
+; 1448 : 			{
+; 1449 : 				if(notification.m_eNotificationType == m_aNotifications[iIndex].m_eNotificationType)
 
 	mov	eax, edi
 	imul	eax, 92					; 0000005cH
@@ -8986,41 +9118,41 @@ $LN8@IsNotifica@2:
 	cmp	ecx, DWORD PTR [eax]
 	jne	SHORT $LN3@IsNotifica@2
 
-; 1428 : 				{
-; 1429 : 					if(!notification.m_bDismissed && !m_aNotifications[iIndex].m_bDismissed)
+; 1450 : 				{
+; 1451 : 					if(!notification.m_bDismissed && !m_aNotifications[iIndex].m_bDismissed)
 
 	cmp	BYTE PTR [edx+89], 0
 	jne	SHORT $LN3@IsNotifica@2
 	cmp	BYTE PTR [eax+89], 0
 	jne	SHORT $LN3@IsNotifica@2
 
-; 1430 : 					{
-; 1431 : 						// Same League ID
-; 1432 : 						if (notification.m_iGameDataIndex == m_aNotifications[iIndex].m_iGameDataIndex)
+; 1452 : 					{
+; 1453 : 						// Same League ID
+; 1454 : 						if (notification.m_iGameDataIndex == m_aNotifications[iIndex].m_iGameDataIndex)
 
 	mov	ecx, DWORD PTR [edx+72]
 	cmp	ecx, DWORD PTR [eax+72]
 	jne	SHORT $LN3@IsNotifica@2
 
-; 1433 : 						{
-; 1434 : 							// Same Project type
-; 1435 : 							if (notification.m_iExtraGameData == m_aNotifications[iIndex].m_iExtraGameData)
+; 1455 : 						{
+; 1456 : 							// Same Project type
+; 1457 : 							if (notification.m_iExtraGameData == m_aNotifications[iIndex].m_iExtraGameData)
 
 	mov	edx, DWORD PTR [edx+76]
 	cmp	edx, DWORD PTR [eax+76]
 	je	SHORT $LN185@IsNotifica@2
 $LN3@IsNotifica@2:
 
-; 1436 : 							{
-; 1437 : 								return true;
-; 1438 : 							}
-; 1439 : 						}
-; 1440 : 					}
-; 1441 : 				}
-; 1442 : 
-; 1443 : 
-; 1444 : 				iIndex++;
-; 1445 : 				if(iIndex >= (int)m_aNotifications.size())
+; 1458 : 							{
+; 1459 : 								return true;
+; 1460 : 							}
+; 1461 : 						}
+; 1462 : 					}
+; 1463 : 				}
+; 1464 : 
+; 1465 : 
+; 1466 : 				iIndex++;
+; 1467 : 				if(iIndex >= (int)m_aNotifications.size())
 
 	mov	ecx, DWORD PTR [esi+12]
 	sub	ecx, ebx
@@ -9035,13 +9167,13 @@ $LN3@IsNotifica@2:
 	cmp	edi, eax
 	jl	SHORT $LN2@IsNotifica@2
 
-; 1446 : 				{
-; 1447 : 					iIndex = 0;
+; 1468 : 				{
+; 1469 : 					iIndex = 0;
 
 	xor	edi, edi
 $LN2@IsNotifica@2:
 
-; 1425 : 			while(iIndex != m_iNotificationsEndIndex)
+; 1447 : 			while(iIndex != m_iNotificationsEndIndex)
 
 	cmp	edi, ebp
 	jne	SHORT $LL197@IsNotifica@2
@@ -9051,29 +9183,29 @@ $LN2@IsNotifica@2:
 	xor	al, al
 	pop	ebx
 
-; 1457 : 		break;
-; 1458 : 	}
-; 1459 : }
+; 1479 : 		break;
+; 1480 : 	}
+; 1481 : }
 
 	pop	ecx
 	ret	4
 $LN38@IsNotifica@2:
 
-; 1291 : 			}
-; 1292 : 		}
-; 1293 : 
-; 1294 : 		return false;
-; 1295 : 	}
-; 1296 : 	break;
-; 1297 : 
-; 1298 : 	case NOTIFICATION_UNIT_PROMOTION:
-; 1299 : 	{
-; 1300 : 		int iIndex = m_iNotificationsBeginIndex;
+; 1313 : 			}
+; 1314 : 		}
+; 1315 : 
+; 1316 : 		return false;
+; 1317 : 	}
+; 1318 : 	break;
+; 1319 : 
+; 1320 : 	case NOTIFICATION_UNIT_PROMOTION:
+; 1321 : 	{
+; 1322 : 		int iIndex = m_iNotificationsBeginIndex;
 
 	mov	edi, DWORD PTR [esi+20]
 	mov	ebp, DWORD PTR [esi+24]
 
-; 1301 : 		while(iIndex != m_iNotificationsEndIndex)
+; 1323 : 		while(iIndex != m_iNotificationsEndIndex)
 
 	cmp	edi, ebp
 	je	$LN19@IsNotifica@2
@@ -9085,8 +9217,8 @@ $LL198@IsNotifica@2:
 	mov	ecx, DWORD PTR tv641[esp+20]
 $LN37@IsNotifica@2:
 
-; 1302 : 		{
-; 1303 : 			if(notification.m_eNotificationType == m_aNotifications[iIndex].m_eNotificationType)
+; 1324 : 		{
+; 1325 : 			if(notification.m_eNotificationType == m_aNotifications[iIndex].m_eNotificationType)
 
 	mov	eax, edi
 	imul	eax, 92					; 0000005cH
@@ -9094,15 +9226,15 @@ $LN37@IsNotifica@2:
 	cmp	ecx, DWORD PTR [eax]
 	jne	SHORT $LN33@IsNotifica@2
 
-; 1304 : 			{
-; 1305 : 				if(notification.m_iExtraGameData == m_aNotifications[iIndex].m_iExtraGameData)
+; 1326 : 			{
+; 1327 : 				if(notification.m_iExtraGameData == m_aNotifications[iIndex].m_iExtraGameData)
 
 	mov	ecx, DWORD PTR [edx+76]
 	cmp	ecx, DWORD PTR [eax+76]
 	jne	SHORT $LN33@IsNotifica@2
 
-; 1306 : 				{
-; 1307 : 					if(!notification.m_bDismissed && !m_aNotifications[iIndex].m_bDismissed)
+; 1328 : 				{
+; 1329 : 					if(!notification.m_bDismissed && !m_aNotifications[iIndex].m_bDismissed)
 
 	cmp	BYTE PTR [edx+89], 0
 	jne	SHORT $LN33@IsNotifica@2
@@ -9110,15 +9242,15 @@ $LN37@IsNotifica@2:
 	je	$LN185@IsNotifica@2
 $LN33@IsNotifica@2:
 
-; 1308 : 					{
-; 1309 : 						// we've already added a notification for this unit to the notification system, so don't add another one
-; 1310 : 						return true;
-; 1311 : 					}
-; 1312 : 				}
-; 1313 : 			}
-; 1314 : 
-; 1315 : 			iIndex++;
-; 1316 : 			if(iIndex >= (int)m_aNotifications.size())
+; 1330 : 					{
+; 1331 : 						// we've already added a notification for this unit to the notification system, so don't add another one
+; 1332 : 						return true;
+; 1333 : 					}
+; 1334 : 				}
+; 1335 : 			}
+; 1336 : 
+; 1337 : 			iIndex++;
+; 1338 : 			if(iIndex >= (int)m_aNotifications.size())
 
 	mov	ecx, DWORD PTR [esi+12]
 	sub	ecx, ebx
@@ -9133,13 +9265,13 @@ $LN33@IsNotifica@2:
 	cmp	edi, eax
 	jl	SHORT $LN32@IsNotifica@2
 
-; 1317 : 			{
-; 1318 : 				iIndex = 0;
+; 1339 : 			{
+; 1340 : 				iIndex = 0;
 
 	xor	edi, edi
 $LN32@IsNotifica@2:
 
-; 1301 : 		while(iIndex != m_iNotificationsEndIndex)
+; 1323 : 		while(iIndex != m_iNotificationsEndIndex)
 
 	cmp	edi, ebp
 	jne	SHORT $LL198@IsNotifica@2
@@ -9147,37 +9279,37 @@ $LN32@IsNotifica@2:
 	pop	esi
 	pop	ebp
 
-; 1386 : 			}
-; 1387 : 		}
-; 1388 : 
-; 1389 : 		return false;
+; 1408 : 			}
+; 1409 : 		}
+; 1410 : 
+; 1411 : 		return false;
 
 	xor	al, al
 	pop	ebx
 
-; 1457 : 		break;
-; 1458 : 	}
-; 1459 : }
+; 1479 : 		break;
+; 1480 : 	}
+; 1481 : }
 
 	pop	ecx
 	ret	4
 $LN50@IsNotifica@2:
 
-; 1239 : 			}
-; 1240 : 		}
-; 1241 : 
-; 1242 : 		return false;
-; 1243 : 	}
-; 1244 : 	break;
-; 1245 : 
-; 1246 : 	case NOTIFICATION_PRODUCTION:
-; 1247 : 	{
-; 1248 : 		int iIndex = m_iNotificationsBeginIndex;
+; 1261 : 			}
+; 1262 : 		}
+; 1263 : 
+; 1264 : 		return false;
+; 1265 : 	}
+; 1266 : 	break;
+; 1267 : 
+; 1268 : 	case NOTIFICATION_PRODUCTION:
+; 1269 : 	{
+; 1270 : 		int iIndex = m_iNotificationsBeginIndex;
 
 	mov	edi, DWORD PTR [esi+20]
 	mov	ebp, DWORD PTR [esi+24]
 
-; 1249 : 		while(iIndex != m_iNotificationsEndIndex)
+; 1271 : 		while(iIndex != m_iNotificationsEndIndex)
 
 	cmp	edi, ebp
 	je	$LN19@IsNotifica@2
@@ -9189,10 +9321,10 @@ $LL199@IsNotifica@2:
 	mov	ecx, DWORD PTR tv641[esp+20]
 $LN49@IsNotifica@2:
 
-; 1250 : 		{
-; 1251 : 			if(notification.m_eNotificationType == m_aNotifications[iIndex].m_eNotificationType &&
-; 1252 : 			        notification.m_iX == m_aNotifications[iIndex].m_iX &&
-; 1253 : 			        notification.m_iY == m_aNotifications[iIndex].m_iY)
+; 1272 : 		{
+; 1273 : 			if(notification.m_eNotificationType == m_aNotifications[iIndex].m_eNotificationType &&
+; 1274 : 			        notification.m_iX == m_aNotifications[iIndex].m_iX &&
+; 1275 : 			        notification.m_iY == m_aNotifications[iIndex].m_iY)
 
 	mov	eax, edi
 	imul	eax, 92					; 0000005cH
@@ -9206,8 +9338,8 @@ $LN49@IsNotifica@2:
 	cmp	ecx, DWORD PTR [eax+68]
 	jne	SHORT $LN46@IsNotifica@2
 
-; 1254 : 			{
-; 1255 : 				if(!notification.m_bDismissed && !m_aNotifications[iIndex].m_bDismissed)
+; 1276 : 			{
+; 1277 : 				if(!notification.m_bDismissed && !m_aNotifications[iIndex].m_bDismissed)
 
 	cmp	BYTE PTR [edx+89], 0
 	jne	SHORT $LN46@IsNotifica@2
@@ -9215,14 +9347,14 @@ $LN49@IsNotifica@2:
 	je	$LN185@IsNotifica@2
 $LN46@IsNotifica@2:
 
-; 1256 : 				{
-; 1257 : 					// we've already added a notification for this city to the notification system, so don't add another one
-; 1258 : 					return true;
-; 1259 : 				}
-; 1260 : 			}
-; 1261 : 
-; 1262 : 			iIndex++;
-; 1263 : 			if(iIndex >= (int)m_aNotifications.size())
+; 1278 : 				{
+; 1279 : 					// we've already added a notification for this city to the notification system, so don't add another one
+; 1280 : 					return true;
+; 1281 : 				}
+; 1282 : 			}
+; 1283 : 
+; 1284 : 			iIndex++;
+; 1285 : 			if(iIndex >= (int)m_aNotifications.size())
 
 	mov	ecx, DWORD PTR [esi+12]
 	sub	ecx, ebx
@@ -9237,13 +9369,13 @@ $LN46@IsNotifica@2:
 	cmp	edi, eax
 	jl	SHORT $LN45@IsNotifica@2
 
-; 1264 : 			{
-; 1265 : 				iIndex = 0;
+; 1286 : 			{
+; 1287 : 				iIndex = 0;
 
 	xor	edi, edi
 $LN45@IsNotifica@2:
 
-; 1249 : 		while(iIndex != m_iNotificationsEndIndex)
+; 1271 : 		while(iIndex != m_iNotificationsEndIndex)
 
 	cmp	edi, ebp
 	jne	SHORT $LL199@IsNotifica@2
@@ -9251,58 +9383,58 @@ $LN45@IsNotifica@2:
 	pop	esi
 	pop	ebp
 
-; 1386 : 			}
-; 1387 : 		}
-; 1388 : 
-; 1389 : 		return false;
+; 1408 : 			}
+; 1409 : 		}
+; 1410 : 
+; 1411 : 		return false;
 
 	xor	al, al
 	pop	ebx
 
-; 1457 : 		break;
-; 1458 : 	}
-; 1459 : }
+; 1479 : 		break;
+; 1480 : 	}
+; 1481 : }
 
 	pop	ecx
 	ret	4
 $LN88@IsNotifica@2:
 
-; 1134 : 	switch(notification.m_eNotificationType)
+; 1156 : 	switch(notification.m_eNotificationType)
 
 	cmp	ecx, 2128612861				; 7ee00dfdH
 
-; 1448 : 				}
-; 1449 : 			}
-; 1450 : 			return false;
-; 1451 : 		}
-; 1452 : 		break;
-; 1453 : #endif
-; 1454 : 
-; 1455 : 	default:
-; 1456 : 		return false;
+; 1470 : 				}
+; 1471 : 			}
+; 1472 : 			return false;
+; 1473 : 		}
+; 1474 : 		break;
+; 1475 : #endif
+; 1476 : 
+; 1477 : 	default:
+; 1478 : 		return false;
 
 	jne	$LN19@IsNotifica@2
 $LN21@IsNotifica@2:
 
-; 1356 : 		}
-; 1357 : 
-; 1358 : 		return false;
-; 1359 : 	}
-; 1360 : 	break;
-; 1361 : 
-; 1362 : 	case NOTIFICATION_FOUND_PANTHEON:
-; 1363 : 	case NOTIFICATION_FOUND_RELIGION:
-; 1364 : 	case NOTIFICATION_ENHANCE_RELIGION:
-; 1365 : 	case NOTIFICATION_ADD_REFORMATION_BELIEF:
-; 1366 : 	case NOTIFICATION_CHOOSE_ARCHAEOLOGY:
-; 1367 : 	case NOTIFICATION_CHOOSE_IDEOLOGY:
-; 1368 : 	{
-; 1369 : 		int iIndex = m_iNotificationsBeginIndex;
+; 1378 : 		}
+; 1379 : 
+; 1380 : 		return false;
+; 1381 : 	}
+; 1382 : 	break;
+; 1383 : 
+; 1384 : 	case NOTIFICATION_FOUND_PANTHEON:
+; 1385 : 	case NOTIFICATION_FOUND_RELIGION:
+; 1386 : 	case NOTIFICATION_ENHANCE_RELIGION:
+; 1387 : 	case NOTIFICATION_ADD_REFORMATION_BELIEF:
+; 1388 : 	case NOTIFICATION_CHOOSE_ARCHAEOLOGY:
+; 1389 : 	case NOTIFICATION_CHOOSE_IDEOLOGY:
+; 1390 : 	{
+; 1391 : 		int iIndex = m_iNotificationsBeginIndex;
 
 	mov	edi, DWORD PTR [esi+20]
 	mov	ebp, DWORD PTR [esi+24]
 
-; 1370 : 		while(iIndex != m_iNotificationsEndIndex)
+; 1392 : 		while(iIndex != m_iNotificationsEndIndex)
 
 	cmp	edi, ebp
 	je	$LN19@IsNotifica@2
@@ -9310,8 +9442,8 @@ $LN21@IsNotifica@2:
 	npad	3
 $LL20@IsNotifica@2:
 
-; 1371 : 		{
-; 1372 : 			if(notification.m_eNotificationType == m_aNotifications[iIndex].m_eNotificationType)
+; 1393 : 		{
+; 1394 : 			if(notification.m_eNotificationType == m_aNotifications[iIndex].m_eNotificationType)
 
 	mov	edx, DWORD PTR tv641[esp+20]
 	mov	ecx, edi
@@ -9320,8 +9452,8 @@ $LL20@IsNotifica@2:
 	lea	eax, DWORD PTR [ecx+ebx]
 	jne	SHORT $LN17@IsNotifica@2
 
-; 1373 : 			{
-; 1374 : 				if(!notification.m_bDismissed && !m_aNotifications[iIndex].m_bDismissed)
+; 1395 : 			{
+; 1396 : 				if(!notification.m_bDismissed && !m_aNotifications[iIndex].m_bDismissed)
 
 	mov	ecx, DWORD PTR _notification$[esp+16]
 	cmp	BYTE PTR [ecx+89], 0
@@ -9330,15 +9462,15 @@ $LL20@IsNotifica@2:
 	je	$LN185@IsNotifica@2
 $LN17@IsNotifica@2:
 
-; 1375 : 				{
-; 1376 : 					// we've already added a pantheon notification, don't need another
-; 1377 : 					return true;
-; 1378 : 				}
-; 1379 : 			}
-; 1380 : 
-; 1381 : 
-; 1382 : 			iIndex++;
-; 1383 : 			if(iIndex >= (int)m_aNotifications.size())
+; 1397 : 				{
+; 1398 : 					// we've already added a pantheon notification, don't need another
+; 1399 : 					return true;
+; 1400 : 				}
+; 1401 : 			}
+; 1402 : 
+; 1403 : 
+; 1404 : 			iIndex++;
+; 1405 : 			if(iIndex >= (int)m_aNotifications.size())
 
 	mov	ecx, DWORD PTR [esi+12]
 	sub	ecx, ebx
@@ -9353,13 +9485,13 @@ $LN17@IsNotifica@2:
 	cmp	edi, eax
 	jl	SHORT $LN16@IsNotifica@2
 
-; 1384 : 			{
-; 1385 : 				iIndex = 0;
+; 1406 : 			{
+; 1407 : 				iIndex = 0;
 
 	xor	edi, edi
 $LN16@IsNotifica@2:
 
-; 1370 : 		while(iIndex != m_iNotificationsEndIndex)
+; 1392 : 		while(iIndex != m_iNotificationsEndIndex)
 
 	cmp	edi, ebp
 	jne	SHORT $LL20@IsNotifica@2
@@ -9367,17 +9499,17 @@ $LN16@IsNotifica@2:
 	pop	esi
 	pop	ebp
 
-; 1386 : 			}
-; 1387 : 		}
-; 1388 : 
-; 1389 : 		return false;
+; 1408 : 			}
+; 1409 : 		}
+; 1410 : 
+; 1411 : 		return false;
 
 	xor	al, al
 	pop	ebx
 
-; 1457 : 		break;
-; 1458 : 	}
-; 1459 : }
+; 1479 : 		break;
+; 1480 : 	}
+; 1481 : }
 
 	pop	ecx
 	ret	4
@@ -9390,14 +9522,14 @@ _TEXT	SEGMENT
 ?RemoveOldestNotification@CvNotifications@@IAEXXZ PROC	; CvNotifications::RemoveOldestNotification, COMDAT
 ; _this$ = ecx
 
-; 1951 : {
+; 1973 : {
 
 	push	ebx
 	push	edi
 	mov	edi, ecx
 
-; 1952 : 	// if the notification is somehow active, dismiss it
-; 1953 : 	if(!m_aNotifications[m_iNotificationsBeginIndex].m_bDismissed)
+; 1974 : 	// if the notification is somehow active, dismiss it
+; 1975 : 	if(!m_aNotifications[m_iNotificationsBeginIndex].m_bDismissed)
 
 	mov	eax, DWORD PTR [edi+20]
 	mov	ecx, DWORD PTR [edi+8]
@@ -9407,8 +9539,8 @@ _TEXT	SEGMENT
 	cmp	BYTE PTR [eax+89], bl
 	jne	SHORT $LN1@RemoveOlde
 
-; 1954 : 	{
-; 1955 : 		Dismiss(m_aNotifications[m_iNotificationsBeginIndex].m_iLookupIndex, /*bUserInvoked*/ false);
+; 1976 : 	{
+; 1977 : 		Dismiss(m_aNotifications[m_iNotificationsBeginIndex].m_iLookupIndex, /*bUserInvoked*/ false);
 
 	mov	edx, DWORD PTR [eax+84]
 	push	ebx
@@ -9419,18 +9551,18 @@ $LN1@RemoveOlde:
 	push	ebp
 	push	esi
 
-; 1956 : 	}
-; 1957 : 	m_aNotifications[m_iNotificationsBeginIndex].Clear();
+; 1978 : 	}
+; 1979 : 	m_aNotifications[m_iNotificationsBeginIndex].Clear();
 
 	mov	esi, DWORD PTR [edi+20]
 	imul	esi, 92					; 0000005cH
 	add	esi, DWORD PTR [edi+8]
 	or	ebp, -1
-	push	OFFSET $SG220786
+	push	OFFSET $SG221263
 	lea	ecx, DWORD PTR [esi+8]
 	mov	DWORD PTR [esi], ebp
 	call	DWORD PTR __imp_?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBD@Z
-	push	OFFSET $SG220787
+	push	OFFSET $SG221264
 	lea	ecx, DWORD PTR [esi+36]
 	call	DWORD PTR __imp_?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBD@Z
 	mov	DWORD PTR [esi+64], ebp
@@ -9442,7 +9574,7 @@ $LN1@RemoveOlde:
 	mov	BYTE PTR [esi+89], bl
 	mov	BYTE PTR [esi+90], bl
 
-; 1958 : 	IncrementBeginIndex();
+; 1980 : 	IncrementBeginIndex();
 
 	inc	DWORD PTR [edi+20]
 	mov	ecx, DWORD PTR [edi+12]
@@ -9464,7 +9596,7 @@ $LN20@RemoveOlde:
 	pop	edi
 	pop	ebx
 
-; 1959 : }
+; 1981 : }
 
 	ret	0
 ?RemoveOldestNotification@CvNotifications@@IAEXXZ ENDP	; CvNotifications::RemoveOldestNotification
@@ -9634,9 +9766,9 @@ PUBLIC	??$unchecked_copy@PAUNotification@CvNotifications@@PAU12@@stdext@@YAPAUNo
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xutility
 ;	COMDAT ??$unchecked_copy@PAUNotification@CvNotifications@@PAU12@@stdext@@YAPAUNotification@CvNotifications@@PAU12@00@Z
 _TEXT	SEGMENT
-$T225577 = -4						; size = 1
-__Cat$225583 = -4					; size = 1
-$T225579 = -4						; size = 1
+$T226067 = -4						; size = 1
+__Cat$226073 = -4					; size = 1
+$T226069 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
@@ -9649,10 +9781,10 @@ __Dest$ = 16						; size = 4
 ; 3605 : 		return (_STD _Copy_opt(_CHECKED_BASE(_First), _CHECKED_BASE(_Last), _Dest,
 ; 3606 : 			_STD _Iter_random(_First, _Dest), _STD _Ptr_cat(_First, _Dest), _STD _Range_checked_iterator_tag()));
 
-	mov	BYTE PTR $T225577[esp+4], 0
-	mov	eax, DWORD PTR $T225577[esp+4]
-	mov	ecx, DWORD PTR __Cat$225583[esp+4]
-	mov	edx, DWORD PTR $T225579[esp+4]
+	mov	BYTE PTR $T226067[esp+4], 0
+	mov	eax, DWORD PTR $T226067[esp+4]
+	mov	ecx, DWORD PTR __Cat$226073[esp+4]
+	mov	edx, DWORD PTR $T226069[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -9688,8 +9820,8 @@ PUBLIC	??$_Move_backward_opt@PAUNotification@CvNotifications@@PAU12@Urandom_acce
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Move_backward_opt@PAUNotification@CvNotifications@@PAU12@Urandom_access_iterator_tag@std@@U_Undefined_move_tag@4@@std@@YAPAUNotification@CvNotifications@@PAU12@00Urandom_access_iterator_tag@0@U_Undefined_move_tag@0@U_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
-$T225595 = -4						; size = 1
-__Cat$225600 = -4					; size = 1
+$T226085 = -4						; size = 1
+__Cat$226090 = -4					; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
@@ -9706,9 +9838,9 @@ ___formal$ = 28						; size = 1
 ; 2754 : 		_First_dest_cat, _Ptr_cat(_First, _Dest), _Range_checked_iterator_tag());
 
 	mov	edx, DWORD PTR __First_dest_cat$[esp]
-	mov	BYTE PTR $T225595[esp+4], 0
-	mov	eax, DWORD PTR $T225595[esp+4]
-	mov	ecx, DWORD PTR __Cat$225600[esp+4]
+	mov	BYTE PTR $T226085[esp+4], 0
+	mov	eax, DWORD PTR $T226085[esp+4]
+	mov	ecx, DWORD PTR __Cat$226090[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -9762,9 +9894,9 @@ __ehfuncinfo$?construct@?$allocator@UNotification@CvNotifications@@@std@@QAEXPAU
 xdata$x	ENDS
 ;	COMDAT ?construct@?$allocator@UNotification@CvNotifications@@@std@@QAEXPAUNotification@CvNotifications@@ABU34@@Z
 _TEXT	SEGMENT
-$T225620 = -16						; size = 4
+$T226112 = -16						; size = 4
 __$EHRec$ = -12						; size = 12
-__Vptr$225626 = 8					; size = 4
+__Vptr$226109 = 8					; size = 4
 __Ptr$ = 8						; size = 4
 __Val$ = 12						; size = 4
 ?construct@?$allocator@UNotification@CvNotifications@@@std@@QAEXPAUNotification@CvNotifications@@ABU34@@Z PROC ; std::allocator<CvNotifications::Notification>::construct, COMDAT
@@ -9782,8 +9914,8 @@ __Val$ = 12						; size = 4
 ; 155  : 		_Construct(_Ptr, _Val);
 
 	mov	ecx, DWORD PTR __Ptr$[esp+12]
-	mov	DWORD PTR __Vptr$225626[esp+12], ecx
-	mov	DWORD PTR $T225620[esp+16], ecx
+	mov	DWORD PTR __Vptr$226109[esp+12], ecx
+	mov	DWORD PTR $T226112[esp+16], ecx
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	ecx, ecx
 	je	SHORT $LN5@construct
@@ -9802,9 +9934,9 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?construct@?$allocator@UNotification@CvNotifications@@@std@@QAEXPAUNotification@CvNotifications@@ABU34@@Z$0:
-	mov	eax, DWORD PTR __Vptr$225626[ebp-4]
+	mov	eax, DWORD PTR __Vptr$226109[ebp-4]
 	push	eax
-	mov	ecx, DWORD PTR $T225620[ebp]
+	mov	ecx, DWORD PTR $T226112[ebp]
 	push	ecx
 	call	??3@YAXPAX0@Z				; operator delete
 	add	esp, 8
@@ -9859,8 +9991,8 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 _newNotification$ = -104				; size = 92
 __$EHRec$ = -12						; size = 12
-$T225646 = 8						; size = 4
-_pDllPlot$220963 = 8					; size = 4
+$T226136 = 8						; size = 4
+_pDllPlot$221440 = 8					; size = 4
 _eNotificationType$ = 8					; size = 4
 _strMessage$ = 12					; size = 4
 _strSummary$ = 16					; size = 4
@@ -10232,7 +10364,7 @@ $LN75@Add:
 	push	12					; 0000000cH
 	call	??2CvDllPlot@@SAPAXI@Z			; CvDllPlot::operator new
 	add	esp, 4
-	mov	DWORD PTR $T225646[esp+116], eax
+	mov	DWORD PTR $T226136[esp+116], eax
 	mov	BYTE PTR __$EHRec$[esp+128], 1
 	test	eax, eax
 	je	SHORT $LN14@Add
@@ -10244,7 +10376,7 @@ $LN75@Add:
 $LN14@Add:
 	xor	edi, edi
 $LN15@Add:
-	mov	DWORD PTR _pDllPlot$220963[esp+116], edi
+	mov	DWORD PTR _pDllPlot$221440[esp+116], edi
 
 ; 462  : 					gDLL->GameplayDoFX(pDllPlot.get());
 
@@ -10349,13 +10481,13 @@ __unwindfunclet$?Add@CvNotifications@@QAEHW4NotificationTypes@@PBD1HHHH@Z$0:
 	lea	ecx, DWORD PTR _newNotification$[ebp]
 	jmp	??1Notification@CvNotifications@@QAE@XZ
 __unwindfunclet$?Add@CvNotifications@@QAEHW4NotificationTypes@@PBD1HHHH@Z$1:
-	mov	eax, DWORD PTR $T225646[ebp-4]
+	mov	eax, DWORD PTR $T226136[ebp-4]
 	push	eax
 	call	??3CvDllPlot@@SAXPAX@Z			; CvDllPlot::operator delete
 	pop	ecx
 	ret	0
 __unwindfunclet$?Add@CvNotifications@@QAEHW4NotificationTypes@@PBD1HHHH@Z$2:
-	lea	ecx, DWORD PTR _pDllPlot$220963[ebp-4]
+	lea	ecx, DWORD PTR _pDllPlot$221440[ebp-4]
 	jmp	??1?$auto_ptr@VICvPlot1@@@std@@QAE@XZ	; std::auto_ptr<ICvPlot1>::~auto_ptr<ICvPlot1>
 __ehhandler$?Add@CvNotifications@@QAEHW4NotificationTypes@@PBD1HHHH@Z:
 	mov	eax, OFFSET __ehfuncinfo$?Add@CvNotifications@@QAEHW4NotificationTypes@@PBD1HHHH@Z
@@ -10473,41 +10605,41 @@ _iGameDataIndex$ = 32					; size = 4
 _iExtraGameData$ = 36					; size = 4
 ?AddToPlayer@CvNotifications@@SAXW4PlayerTypes@@W4NotificationTypes@@PBD2HHHH@Z PROC ; CvNotifications::AddToPlayer, COMDAT
 
-; 1983 : 	if(ePlayer != NO_PLAYER)
+; 2005 : 	if(ePlayer != NO_PLAYER)
 
 	mov	eax, DWORD PTR _ePlayer$[esp-4]
 	cmp	eax, -1
 	je	SHORT $LN1@AddToPlaye
 
-; 1984 : 	{
-; 1985 : 		CvPlayer& kPlayer = GET_PLAYER(ePlayer);
+; 2006 : 	{
+; 2007 : 		CvPlayer& kPlayer = GET_PLAYER(ePlayer);
 
 	imul	eax, 63236				; 0000f704H
 	add	eax, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	push	esi
 	mov	esi, eax
 
-; 1986 : 
-; 1987 : 		if(kPlayer.isLocalPlayer())
+; 2008 : 
+; 2009 : 		if(kPlayer.isLocalPlayer())
 
 	mov	ecx, esi
 	call	?isLocalPlayer@CvPlayer@@QBE_NXZ	; CvPlayer::isLocalPlayer
 	test	al, al
 	je	SHORT $LN8@AddToPlaye
 
-; 1988 : 		{
-; 1989 : 			CvNotifications* pNotifications = kPlayer.GetNotifications();
+; 2010 : 		{
+; 2011 : 			CvNotifications* pNotifications = kPlayer.GetNotifications();
 
 	mov	ecx, esi
 	call	?GetNotifications@CvPlayer@@QBEPAVCvNotifications@@XZ ; CvPlayer::GetNotifications
 
-; 1990 : 			if(pNotifications)
+; 2012 : 			if(pNotifications)
 
 	test	eax, eax
 	je	SHORT $LN8@AddToPlaye
 
-; 1991 : 			{
-; 1992 : 				pNotifications->Add(eNotificationType, strMessage, strSummary, iX, iY, iGameDataIndex, iExtraGameData);
+; 2013 : 			{
+; 2014 : 				pNotifications->Add(eNotificationType, strMessage, strSummary, iX, iY, iGameDataIndex, iExtraGameData);
 
 	mov	ecx, DWORD PTR _iExtraGameData$[esp]
 	mov	edx, DWORD PTR _iGameDataIndex$[esp]
@@ -10529,10 +10661,10 @@ $LN8@AddToPlaye:
 	pop	esi
 $LN1@AddToPlaye:
 
-; 1993 : 			}
-; 1994 : 		}
-; 1995 : 	}
-; 1996 : }
+; 2015 : 			}
+; 2016 : 		}
+; 2017 : 	}
+; 2018 : }
 
 	ret	0
 ?AddToPlayer@CvNotifications@@SAXW4PlayerTypes@@W4NotificationTypes@@PBD2HHHH@Z ENDP ; CvNotifications::AddToPlayer
@@ -10566,11 +10698,11 @@ PUBLIC	??$_Unchecked_move_backward@PAUNotification@CvNotifications@@PAU12@@stdex
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xutility
 ;	COMDAT ??$_Unchecked_move_backward@PAUNotification@CvNotifications@@PAU12@@stdext@@YAPAUNotification@CvNotifications@@PAU12@00@Z
 _TEXT	SEGMENT
-$T226013 = -4						; size = 1
+$T226502 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$226016 = 16					; size = 1
-$T225995 = 16						; size = 1
+__Cat$226506 = 16					; size = 1
+$T226485 = 16						; size = 1
 __Dest$ = 16						; size = 4
 ??$_Unchecked_move_backward@PAUNotification@CvNotifications@@PAU12@@stdext@@YAPAUNotification@CvNotifications@@PAU12@00@Z PROC ; stdext::_Unchecked_move_backward<CvNotifications::Notification *,CvNotifications::Notification *>, COMDAT
 
@@ -10581,10 +10713,10 @@ __Dest$ = 16						; size = 4
 ; 3695 : 		return (_STD _Move_backward_opt(_CHECKED_BASE(_First), _CHECKED_BASE(_Last), _Dest,
 ; 3696 : 			_STD _Iter_random(_First, _Dest), _STD _Move_cat(_Dest), _STD _Range_checked_iterator_tag()));
 
-	mov	ecx, DWORD PTR __Cat$226016[esp]
-	mov	edx, DWORD PTR $T225995[esp]
-	mov	BYTE PTR $T226013[esp+4], 0
-	mov	eax, DWORD PTR $T226013[esp+4]
+	mov	ecx, DWORD PTR __Cat$226506[esp]
+	mov	edx, DWORD PTR $T226485[esp]
+	mov	BYTE PTR $T226502[esp+4], 0
+	mov	eax, DWORD PTR $T226502[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -10667,10 +10799,10 @@ __ehfuncinfo$??$_Uninit_copy@PAUNotification@CvNotifications@@PAU12@V?$allocator
 xdata$x	ENDS
 ;	COMDAT ??$_Uninit_copy@PAUNotification@CvNotifications@@PAU12@V?$allocator@UNotification@CvNotifications@@@std@@@std@@YAPAUNotification@CvNotifications@@PAU12@00AAV?$allocator@UNotification@CvNotifications@@@0@U_Nonscalar_ptr_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
-$T226075 = -24						; size = 4
+$T226564 = -24						; size = 4
 __Next$ = -20						; size = 4
 __$EHRec$ = -16						; size = 16
-__Vptr$226072 = 8					; size = 4
+__Vptr$226561 = 8					; size = 4
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
@@ -10717,8 +10849,8 @@ $LL6@Uninit_cop:
 
 ; 131  : 		_Al.construct(_Dest, *_First);
 
-	mov	DWORD PTR __Vptr$226072[ebp], esi
-	mov	DWORD PTR $T226075[ebp], esi
+	mov	DWORD PTR __Vptr$226561[ebp], esi
+	mov	DWORD PTR $T226564[ebp], esi
 	mov	BYTE PTR __$EHRec$[ebp+12], 1
 	cmp	esi, ebx
 	je	SHORT $LN18@Uninit_cop
@@ -10778,9 +10910,9 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$??$_Uninit_copy@PAUNotification@CvNotifications@@PAU12@V?$allocator@UNotification@CvNotifications@@@std@@@std@@YAPAUNotification@CvNotifications@@PAU12@00AAV?$allocator@UNotification@CvNotifications@@@0@U_Nonscalar_ptr_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z$2:
-	mov	eax, DWORD PTR __Vptr$226072[ebp]
+	mov	eax, DWORD PTR __Vptr$226561[ebp]
 	push	eax
-	mov	ecx, DWORD PTR $T226075[ebp]
+	mov	ecx, DWORD PTR $T226564[ebp]
 	push	ecx
 	call	??3@YAXPAX0@Z				; operator delete
 	add	esp, 8
@@ -10978,11 +11110,11 @@ __ehfuncinfo$??$_Uninit_fill_n@PAUNotification@CvNotifications@@IU12@V?$allocato
 xdata$x	ENDS
 ;	COMDAT ??$_Uninit_fill_n@PAUNotification@CvNotifications@@IU12@V?$allocator@UNotification@CvNotifications@@@std@@@std@@YAXPAUNotification@CvNotifications@@IABU12@AAV?$allocator@UNotification@CvNotifications@@@0@U_Nonscalar_ptr_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
-$T226215 = -24						; size = 4
+$T226704 = -24						; size = 4
 __Next$ = -20						; size = 4
 __$EHRec$ = -16						; size = 16
 __First$ = 8						; size = 4
-__Vptr$226212 = 12					; size = 4
+__Vptr$226701 = 12					; size = 4
 __Count$ = 12						; size = 4
 __Val$ = 16						; size = 4
 __Al$ = 20						; size = 4
@@ -11032,8 +11164,8 @@ $LL6@Uninit_fil:
 
 ; 404  : 		_Al.construct(_First, _Val);
 
-	mov	DWORD PTR __Vptr$226212[ebp], esi
-	mov	DWORD PTR $T226215[ebp], esi
+	mov	DWORD PTR __Vptr$226701[ebp], esi
+	mov	DWORD PTR $T226704[ebp], esi
 	mov	BYTE PTR __$EHRec$[ebp+12], 1
 	cmp	esi, ebx
 	je	SHORT $LN18@Uninit_fil
@@ -11092,9 +11224,9 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$??$_Uninit_fill_n@PAUNotification@CvNotifications@@IU12@V?$allocator@UNotification@CvNotifications@@@std@@@std@@YAXPAUNotification@CvNotifications@@IABU12@AAV?$allocator@UNotification@CvNotifications@@@0@U_Nonscalar_ptr_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z$2:
-	mov	eax, DWORD PTR __Vptr$226212[ebp]
+	mov	eax, DWORD PTR __Vptr$226701[ebp]
 	push	eax
-	mov	ecx, DWORD PTR $T226215[ebp]
+	mov	ecx, DWORD PTR $T226704[ebp]
 	push	ecx
 	call	??3@YAXPAX0@Z				; operator delete
 	add	esp, 8
@@ -11108,8 +11240,8 @@ PUBLIC	??$unchecked_uninitialized_copy@PAUNotification@CvNotifications@@PAU12@V?
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$unchecked_uninitialized_copy@PAUNotification@CvNotifications@@PAU12@V?$allocator@UNotification@CvNotifications@@@std@@@stdext@@YAPAUNotification@CvNotifications@@PAU12@00AAV?$allocator@UNotification@CvNotifications@@@std@@@Z
 _TEXT	SEGMENT
-$T226254 = -4						; size = 1
-__Cat$226258 = -4					; size = 1
+$T226744 = -4						; size = 1
+__Cat$226749 = -4					; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
@@ -11125,9 +11257,9 @@ __Al$ = 20						; size = 4
 ; 822  : 		_STD _Ptr_cat(_First, _Dest), _STD _Range_checked_iterator_tag()));
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T226254[esp+4], 0
-	mov	eax, DWORD PTR $T226254[esp+4]
-	mov	ecx, DWORD PTR __Cat$226258[esp+4]
+	mov	BYTE PTR $T226744[esp+4], 0
+	mov	eax, DWORD PTR $T226744[esp+4]
+	mov	ecx, DWORD PTR __Cat$226749[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -11196,7 +11328,7 @@ PUBLIC	??$_Destroy_range@V?$allocator@UNotification@CvNotifications@@@std@@@std@
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xmemory
 ;	COMDAT ??$_Destroy_range@V?$allocator@UNotification@CvNotifications@@@std@@@std@@YAXPAUNotification@CvNotifications@@0AAV?$allocator@UNotification@CvNotifications@@@0@@Z
 _TEXT	SEGMENT
-__Cat$226274 = -4					; size = 1
+__Cat$226765 = -4					; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Al$ = 16						; size = 4
@@ -11208,7 +11340,7 @@ __Al$ = 16						; size = 4
 
 ; 225  : 	_Destroy_range(_First, _Last, _Al, _Ptr_cat(_First, _Last));
 
-	mov	eax, DWORD PTR __Cat$226274[esp+4]
+	mov	eax, DWORD PTR __Cat$226765[esp+4]
 	mov	ecx, DWORD PTR __Al$[esp]
 	mov	edx, DWORD PTR __Last$[esp]
 	push	eax
@@ -11229,8 +11361,8 @@ PUBLIC	??$unchecked_uninitialized_fill_n@PAUNotification@CvNotifications@@IU12@V
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ??$unchecked_uninitialized_fill_n@PAUNotification@CvNotifications@@IU12@V?$allocator@UNotification@CvNotifications@@@std@@@stdext@@YAXPAUNotification@CvNotifications@@IABU12@AAV?$allocator@UNotification@CvNotifications@@@std@@@Z
 _TEXT	SEGMENT
-$T226279 = -4						; size = 1
-__Cat$226283 = -4					; size = 1
+$T226769 = -4						; size = 1
+__Cat$226774 = -4					; size = 1
 __First$ = 8						; size = 4
 __Count$ = 12						; size = 4
 __Val$ = 16						; size = 4
@@ -11245,9 +11377,9 @@ __Al$ = 20						; size = 4
 ; 942  : 		_STD _Ptr_cat(_First, _First), _STD _Range_checked_iterator_tag());
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T226279[esp+4], 0
-	mov	eax, DWORD PTR $T226279[esp+4]
-	mov	ecx, DWORD PTR __Cat$226283[esp+4]
+	mov	BYTE PTR $T226769[esp+4], 0
+	mov	eax, DWORD PTR $T226769[esp+4]
+	mov	ecx, DWORD PTR __Cat$226774[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Val$[esp+4]
 	push	ecx
@@ -11269,10 +11401,10 @@ PUBLIC	??$_Uninit_move@PAUNotification@CvNotifications@@PAU12@V?$allocator@UNoti
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Uninit_move@PAUNotification@CvNotifications@@PAU12@V?$allocator@UNotification@CvNotifications@@@std@@U_Undefined_move_tag@4@@std@@YAPAUNotification@CvNotifications@@PAU12@00AAV?$allocator@UNotification@CvNotifications@@@0@U_Undefined_move_tag@0@U_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
-$T226297 = -4						; size = 1
+$T226787 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$226300 = 16					; size = 1
+__Cat$226791 = 16					; size = 1
 __Dest$ = 16						; size = 4
 __Al$ = 20						; size = 4
 ___formal$ = 24						; size = 1
@@ -11285,10 +11417,10 @@ ___formal$ = 28						; size = 1
 
 ; 207  : 	return (_STDEXT unchecked_uninitialized_copy(_First, _Last, _Dest, _Al));
 
-	mov	ecx, DWORD PTR __Cat$226300[esp]
+	mov	ecx, DWORD PTR __Cat$226791[esp]
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T226297[esp+4], 0
-	mov	eax, DWORD PTR $T226297[esp+4]
+	mov	BYTE PTR $T226787[esp+4], 0
+	mov	eax, DWORD PTR $T226787[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -11343,14 +11475,14 @@ PUBLIC	?_Destroy@?$vector@UNotification@CvNotifications@@V?$allocator@UNotificat
 ;	COMDAT ?_Destroy@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@IAEXPAUNotification@CvNotifications@@0@Z
 _TEXT	SEGMENT
 __First$ = 8						; size = 4
-__Cat$226331 = 12					; size = 1
+__Cat$226821 = 12					; size = 1
 __Last$ = 12						; size = 4
 ?_Destroy@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@IAEXPAUNotification@CvNotifications@@0@Z PROC ; std::vector<CvNotifications::Notification,std::allocator<CvNotifications::Notification> >::_Destroy, COMDAT
 ; _this$ = ecx
 
 ; 1119 : 		_Destroy_range(_First, _Last, this->_Alval);
 
-	mov	eax, DWORD PTR __Cat$226331[esp-4]
+	mov	eax, DWORD PTR __Cat$226821[esp-4]
 	mov	edx, DWORD PTR __First$[esp-4]
 	push	eax
 	push	ecx
@@ -11369,10 +11501,10 @@ PUBLIC	?_Ufill@?$vector@UNotification@CvNotifications@@V?$allocator@UNotificatio
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?_Ufill@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@IAEPAUNotification@CvNotifications@@PAU34@IABU34@@Z
 _TEXT	SEGMENT
-$T226346 = -4						; size = 1
+$T226836 = -4						; size = 1
 __Ptr$ = 8						; size = 4
 __Count$ = 12						; size = 4
-__Cat$226350 = 16					; size = 1
+__Cat$226840 = 16					; size = 1
 __Val$ = 16						; size = 4
 ?_Ufill@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@IAEPAUNotification@CvNotifications@@PAU34@IABU34@@Z PROC ; std::vector<CvNotifications::Notification,std::allocator<CvNotifications::Notification> >::_Ufill, COMDAT
 ; _this$ = ecx
@@ -11383,13 +11515,13 @@ __Val$ = 16						; size = 4
 
 ; 1254 : 		_STDEXT unchecked_uninitialized_fill_n(_Ptr, _Count, _Val, this->_Alval);
 
-	mov	edx, DWORD PTR __Cat$226350[esp]
+	mov	edx, DWORD PTR __Cat$226840[esp]
 	push	esi
 	mov	esi, DWORD PTR __Count$[esp+4]
 	push	edi
 	mov	edi, DWORD PTR __Ptr$[esp+8]
-	mov	BYTE PTR $T226346[esp+12], 0
-	mov	eax, DWORD PTR $T226346[esp+12]
+	mov	BYTE PTR $T226836[esp+12], 0
+	mov	eax, DWORD PTR $T226836[esp+12]
 	push	eax
 	mov	eax, DWORD PTR __Val$[esp+12]
 	push	edx
@@ -11419,10 +11551,10 @@ PUBLIC	??$_Unchecked_uninitialized_move@PAUNotification@CvNotifications@@PAU12@V
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ??$_Unchecked_uninitialized_move@PAUNotification@CvNotifications@@PAU12@V?$allocator@UNotification@CvNotifications@@@std@@@stdext@@YAPAUNotification@CvNotifications@@PAU12@00AAV?$allocator@UNotification@CvNotifications@@@std@@@Z
 _TEXT	SEGMENT
-$T226381 = -4						; size = 1
+$T226873 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$226385 = 16					; size = 1
+__Cat$226877 = 16					; size = 1
 __Dest$ = 16						; size = 4
 __Al$ = 20						; size = 4
 ??$_Unchecked_uninitialized_move@PAUNotification@CvNotifications@@PAU12@V?$allocator@UNotification@CvNotifications@@@std@@@stdext@@YAPAUNotification@CvNotifications@@PAU12@00AAV?$allocator@UNotification@CvNotifications@@@std@@@Z PROC ; stdext::_Unchecked_uninitialized_move<CvNotifications::Notification *,CvNotifications::Notification *,std::allocator<CvNotifications::Notification> >, COMDAT
@@ -11435,10 +11567,10 @@ __Al$ = 20						; size = 4
 ; 863  : 		_CHECKED_BASE(_Last), _Dest, _Al,
 ; 864  : 		_STD _Move_cat(_Dest), _STD _Range_checked_iterator_tag()));
 
-	mov	ecx, DWORD PTR __Cat$226385[esp]
+	mov	ecx, DWORD PTR __Cat$226877[esp]
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T226381[esp+4], 0
-	mov	eax, DWORD PTR $T226381[esp+4]
+	mov	BYTE PTR $T226873[esp+4], 0
+	mov	eax, DWORD PTR $T226873[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -11512,16 +11644,16 @@ __ehfuncinfo$?IsNotificationExpired@CvNotifications@@QAE_NH@Z DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?IsNotificationExpired@CvNotifications@@QAE_NH@Z
 _TEXT	SEGMENT
-_pUnit$221512 = -52					; size = 8
-$T226395 = -44						; size = 16
-$T226397 = -28						; size = 16
+_pUnit$221996 = -52					; size = 8
+$T226885 = -44						; size = 16
+$T226887 = -28						; size = 16
 __$EHRec$ = -12						; size = 12
-_pkPlayerTechs$221475 = 8				; size = 4
+_pkPlayerTechs$221959 = 8				; size = 4
 _iIndex$ = 8						; size = 4
 ?IsNotificationExpired@CvNotifications@@QAE_NH@Z PROC	; CvNotifications::IsNotificationExpired, COMDAT
 ; _this$ = ecx
 
-; 1462 : {
+; 1484 : {
 
 	push	-1
 	mov	eax, DWORD PTR fs:0
@@ -11534,7 +11666,7 @@ _iIndex$ = 8						; size = 4
 	push	esi
 	push	edi
 
-; 1463 : 	switch(m_aNotifications[iIndex].m_eNotificationType)
+; 1485 : 	switch(m_aNotifications[iIndex].m_eNotificationType)
 
 	mov	edi, DWORD PTR _iIndex$[esp+64]
 	imul	edi, 92					; 0000005cH
@@ -11558,23 +11690,23 @@ _iIndex$ = 8						; size = 4
 	cmp	eax, -1746998481			; 97deeb2fH
 	jne	$LN37@IsNotifica@3
 
-; 1788 : 			{
-; 1789 : 				return true;
-; 1790 : 			}
-; 1791 : 		}
-; 1792 : 		break;
-; 1793 : 
-; 1794 : 	case NOTIFICATION_LEAGUE_CALL_FOR_VOTES:
-; 1795 : 	{
-; 1796 : #ifdef AUI_LEAGUES_FIX_POSSIBLE_DEALLOCATION_CRASH
-; 1797 : 		CvLeague* pLeague = GC.getGame().GetGameLeagues()->GetActiveLeague();
-; 1798 : 		if (pLeague && !pLeague->CanVote(m_ePlayer))
-; 1799 : #else
-; 1800 : 		LeagueTypes eLeague = (LeagueTypes) m_aNotifications[iIndex].m_iGameDataIndex;
+; 1810 : 			{
+; 1811 : 				return true;
+; 1812 : 			}
+; 1813 : 		}
+; 1814 : 		break;
+; 1815 : 
+; 1816 : 	case NOTIFICATION_LEAGUE_CALL_FOR_VOTES:
+; 1817 : 	{
+; 1818 : #ifdef AUI_LEAGUES_FIX_POSSIBLE_DEALLOCATION_CRASH
+; 1819 : 		CvLeague* pLeague = GC.getGame().GetGameLeagues()->GetActiveLeague();
+; 1820 : 		if (pLeague && !pLeague->CanVote(m_ePlayer))
+; 1821 : #else
+; 1822 : 		LeagueTypes eLeague = (LeagueTypes) m_aNotifications[iIndex].m_iGameDataIndex;
 
 	mov	edx, DWORD PTR [edx+72]
 
-; 1801 : 		CvLeague* pLeague = GC.getGame().GetGameLeagues()->GetLeague(eLeague);
+; 1823 : 		CvLeague* pLeague = GC.getGame().GetGameLeagues()->GetLeague(eLeague);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	edx
@@ -11582,7 +11714,7 @@ _iIndex$ = 8						; size = 4
 	mov	ecx, eax
 	call	?GetLeague@CvGameLeagues@@QAEPAVCvLeague@@W4LeagueTypes@@@Z ; CvGameLeagues::GetLeague
 
-; 1802 : 		if (!pLeague->CanVote(m_ePlayer))
+; 1824 : 		if (!pLeague->CanVote(m_ePlayer))
 
 	mov	ecx, DWORD PTR [esi]
 	push	ecx
@@ -11595,12 +11727,12 @@ _iIndex$ = 8						; size = 4
 	sete	al
 	pop	ebx
 
-; 1826 : 	}
-; 1827 : 	break;
-; 1828 : 	}
-; 1829 : 
-; 1830 : 	return false;
-; 1831 : }
+; 1848 : 	}
+; 1849 : 	break;
+; 1850 : 	}
+; 1851 : 
+; 1852 : 	return false;
+; 1853 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+52]
 	mov	DWORD PTR fs:0, ecx
@@ -11608,19 +11740,19 @@ _iIndex$ = 8						; size = 4
 	ret	4
 $LN16@IsNotifica@3:
 
-; 1739 : 	}
-; 1740 : 	break;
-; 1741 : 
-; 1742 : 	case NOTIFICATION_SPY_STOLE_TECH:
-; 1743 : 	{
-; 1744 : 		CvPlayerEspionage* pEspionage = GET_PLAYER(m_ePlayer).GetEspionage();
+; 1761 : 	}
+; 1762 : 	break;
+; 1763 : 
+; 1764 : 	case NOTIFICATION_SPY_STOLE_TECH:
+; 1765 : 	{
+; 1766 : 		CvPlayerEspionage* pEspionage = GET_PLAYER(m_ePlayer).GetEspionage();
 
 	mov	ecx, DWORD PTR [esi]
 	imul	ecx, 63236				; 0000f704H
 	add	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	call	?GetEspionage@CvPlayer@@QBEPAVCvPlayerEspionage@@XZ ; CvPlayer::GetEspionage
 
-; 1745 : 		if (pEspionage->m_aiNumTechsToStealList[m_aNotifications[iIndex].m_iGameDataIndex] <= 0)
+; 1767 : 		if (pEspionage->m_aiNumTechsToStealList[m_aNotifications[iIndex].m_iGameDataIndex] <= 0)
 
 	mov	edx, DWORD PTR [esi+8]
 	mov	ecx, DWORD PTR [edx+edi+72]
@@ -11632,12 +11764,12 @@ $LN16@IsNotifica@3:
 	setle	al
 	pop	ebx
 
-; 1826 : 	}
-; 1827 : 	break;
-; 1828 : 	}
-; 1829 : 
-; 1830 : 	return false;
-; 1831 : }
+; 1848 : 	}
+; 1849 : 	break;
+; 1850 : 	}
+; 1851 : 
+; 1852 : 	return false;
+; 1853 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+52]
 	mov	DWORD PTR fs:0, ecx
@@ -11645,20 +11777,20 @@ $LN16@IsNotifica@3:
 	ret	4
 $LN10@IsNotifica@3:
 
-; 1765 : #endif
-; 1766 : 		{
-; 1767 : 			return true;
-; 1768 : 		}
-; 1769 : 		else
-; 1770 : 		{
-; 1771 : 			return false;
-; 1772 : 		}
-; 1773 : 	}
-; 1774 : 	break;
-; 1775 : 
-; 1776 : 	case NOTIFICATION_CHOOSE_ARCHAEOLOGY:
-; 1777 : 	{
-; 1778 : 		if (GET_PLAYER(m_ePlayer).GetNumArchaeologyChoices() == 0)
+; 1787 : #endif
+; 1788 : 		{
+; 1789 : 			return true;
+; 1790 : 		}
+; 1791 : 		else
+; 1792 : 		{
+; 1793 : 			return false;
+; 1794 : 		}
+; 1795 : 	}
+; 1796 : 	break;
+; 1797 : 
+; 1798 : 	case NOTIFICATION_CHOOSE_ARCHAEOLOGY:
+; 1799 : 	{
+; 1800 : 		if (GET_PLAYER(m_ePlayer).GetNumArchaeologyChoices() == 0)
 
 	mov	ecx, DWORD PTR [esi]
 	imul	ecx, 63236				; 0000f704H
@@ -11666,19 +11798,19 @@ $LN10@IsNotifica@3:
 	call	?GetNumArchaeologyChoices@CvPlayer@@QBEHXZ ; CvPlayer::GetNumArchaeologyChoices
 	test	eax, eax
 
-; 1779 : 		{
-; 1780 : 			return true;
+; 1801 : 		{
+; 1802 : 			return true;
 
 	jmp	$LN372@IsNotifica@3
 $LN48@IsNotifica@3:
 
-; 1564 : 		}
-; 1565 : 	}
-; 1566 : 	break;
-; 1567 : 
-; 1568 : 	case NOTIFICATION_FREE_GREAT_PERSON:
-; 1569 : 	{
-; 1570 : 		if(GET_PLAYER(m_ePlayer).GetNumFreeGreatPeople() == 0)
+; 1586 : 		}
+; 1587 : 	}
+; 1588 : 	break;
+; 1589 : 
+; 1590 : 	case NOTIFICATION_FREE_GREAT_PERSON:
+; 1591 : 	{
+; 1592 : 		if(GET_PLAYER(m_ePlayer).GetNumFreeGreatPeople() == 0)
 
 	mov	ecx, DWORD PTR [esi]
 	imul	ecx, 63236				; 0000f704H
@@ -11690,18 +11822,18 @@ $LN48@IsNotifica@3:
 	pop	esi
 	pop	ebp
 
-; 1571 : 		{
-; 1572 : 			return true;
+; 1593 : 		{
+; 1594 : 			return true;
 
 	mov	al, 1
 	pop	ebx
 
-; 1826 : 	}
-; 1827 : 	break;
-; 1828 : 	}
-; 1829 : 
-; 1830 : 	return false;
-; 1831 : }
+; 1848 : 	}
+; 1849 : 	break;
+; 1850 : 	}
+; 1851 : 
+; 1852 : 	return false;
+; 1853 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+52]
 	mov	DWORD PTR fs:0, ecx
@@ -11709,21 +11841,21 @@ $LN48@IsNotifica@3:
 	ret	4
 $LN82@IsNotifica@3:
 
-; 1463 : 	switch(m_aNotifications[iIndex].m_eNotificationType)
+; 1485 : 	switch(m_aNotifications[iIndex].m_eNotificationType)
 
 	cmp	eax, -1417116259			; ab88859dH
 	je	SHORT $LN3@IsNotifica@3
 	cmp	eax, -1181197223			; b9985c59H
 	jne	$LN37@IsNotifica@3
 
-; 1480 : 		}
-; 1481 : 	}
-; 1482 : 	break;
-; 1483 : 
-; 1484 : 	case NOTIFICATION_CITY_RANGE_ATTACK:
-; 1485 : 	{
-; 1486 : 		int iCityID = m_aNotifications[iIndex].m_iGameDataIndex;
-; 1487 : 		CvCity* pCity = GET_PLAYER(m_ePlayer).getCity(iCityID);
+; 1502 : 		}
+; 1503 : 	}
+; 1504 : 	break;
+; 1505 : 
+; 1506 : 	case NOTIFICATION_CITY_RANGE_ATTACK:
+; 1507 : 	{
+; 1508 : 		int iCityID = m_aNotifications[iIndex].m_iGameDataIndex;
+; 1509 : 		CvCity* pCity = GET_PLAYER(m_ePlayer).getCity(iCityID);
 
 	mov	ecx, DWORD PTR [esi]
 	mov	edx, DWORD PTR [edx+72]
@@ -11732,17 +11864,17 @@ $LN82@IsNotifica@3:
 	push	edx
 	call	?getCity@CvPlayer@@QAEPAVCvCity@@H@Z	; CvPlayer::getCity
 
-; 1488 : 
-; 1489 : 		if(pCity == NULL)
+; 1510 : 
+; 1511 : 		if(pCity == NULL)
 
 	test	eax, eax
 
-; 1490 : 			return true;
+; 1512 : 			return true;
 
 	je	$LN368@IsNotifica@3
 
-; 1491 : 
-; 1492 : 		else if(!pCity->CanRangeStrikeNow())
+; 1513 : 
+; 1514 : 		else if(!pCity->CanRangeStrikeNow())
 
 	mov	ecx, eax
 	call	?CanRangeStrikeNow@CvCity@@QBE_NXZ	; CvCity::CanRangeStrikeNow
@@ -11752,17 +11884,17 @@ $LN82@IsNotifica@3:
 	pop	esi
 	pop	ebp
 
-; 1493 : 			return true;
+; 1515 : 			return true;
 
 	mov	al, 1
 	pop	ebx
 
-; 1826 : 	}
-; 1827 : 	break;
-; 1828 : 	}
-; 1829 : 
-; 1830 : 	return false;
-; 1831 : }
+; 1848 : 	}
+; 1849 : 	break;
+; 1850 : 	}
+; 1851 : 
+; 1852 : 	return false;
+; 1853 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+52]
 	mov	DWORD PTR fs:0, ecx
@@ -11770,20 +11902,20 @@ $LN82@IsNotifica@3:
 	ret	4
 $LN3@IsNotifica@3:
 
-; 1803 : #endif
-; 1804 : 		{
-; 1805 : 			return true;
-; 1806 : 		}
-; 1807 : 		else
-; 1808 : 		{
-; 1809 : 			return false;
-; 1810 : 		}
-; 1811 : 	}
-; 1812 : 	break;
-; 1813 : 
-; 1814 : 	case NOTIFICATION_PLAYER_CONNECTING:
-; 1815 : 	{
-; 1816 : 		if(!gDLL->IsPlayerHotJoining(m_aNotifications[iIndex].m_iGameDataIndex)){
+; 1825 : #endif
+; 1826 : 		{
+; 1827 : 			return true;
+; 1828 : 		}
+; 1829 : 		else
+; 1830 : 		{
+; 1831 : 			return false;
+; 1832 : 		}
+; 1833 : 	}
+; 1834 : 	break;
+; 1835 : 
+; 1836 : 	case NOTIFICATION_PLAYER_CONNECTING:
+; 1837 : 	{
+; 1838 : 		if(!gDLL->IsPlayerHotJoining(m_aNotifications[iIndex].m_iGameDataIndex)){
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8564
 	mov	eax, DWORD PTR [ecx]
@@ -11792,25 +11924,25 @@ $LN3@IsNotifica@3:
 	push	edx
 	call	eax
 
-; 1817 : 			//Player has finished hot joining.  Remove this notification, we'll add a NOTIFICATION_PLAYER_RECONNECTED in NetProxy::OnHotJoinComplete().
-; 1818 : 			return true;
+; 1839 : 			//Player has finished hot joining.  Remove this notification, we'll add a NOTIFICATION_PLAYER_RECONNECTED in NetProxy::OnHotJoinComplete().
+; 1840 : 			return true;
 
 	jmp	$LN373@IsNotifica@3
 $LN28@IsNotifica@3:
 
-; 1674 : 		}
-; 1675 : 	}
-; 1676 : 	break;
-; 1677 : 	case NOTIFICATION_PLAYER_DEAL_RECEIVED:
-; 1678 : 	{
-; 1679 : 		CvGame& game = GC.getGame();
-; 1680 : 		CvGameDeals* pDeals = game.GetGameDeals();
+; 1696 : 		}
+; 1697 : 	}
+; 1698 : 	break;
+; 1699 : 	case NOTIFICATION_PLAYER_DEAL_RECEIVED:
+; 1700 : 	{
+; 1701 : 		CvGame& game = GC.getGame();
+; 1702 : 		CvGameDeals* pDeals = game.GetGameDeals();
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?GetGameDeals@CvGame@@QAEPAVCvGameDeals@@XZ ; CvGame::GetGameDeals
 
-; 1681 : 
-; 1682 : 		if(!pDeals->ProposedDealExists((PlayerTypes)(m_aNotifications[iIndex].m_iX),  m_ePlayer))
+; 1703 : 
+; 1704 : 		if(!pDeals->ProposedDealExists((PlayerTypes)(m_aNotifications[iIndex].m_iX),  m_ePlayer))
 
 	mov	edx, DWORD PTR [esi+8]
 	mov	ecx, DWORD PTR [esi]
@@ -11819,13 +11951,13 @@ $LN28@IsNotifica@3:
 	push	ecx
 	push	edx
 
-; 1683 : 		{
-; 1684 : 			return true;
+; 1705 : 		{
+; 1706 : 			return true;
 
 	jmp	$LN370@IsNotifica@3
 $LN81@IsNotifica@3:
 
-; 1463 : 	switch(m_aNotifications[iIndex].m_eNotificationType)
+; 1485 : 	switch(m_aNotifications[iIndex].m_eNotificationType)
 
 	cmp	eax, 84632199				; 050b6287H
 	jg	$LN83@IsNotifica@3
@@ -11837,73 +11969,73 @@ $LN81@IsNotifica@3:
 	cmp	eax, -372818113				; e9c73f3fH
 	jne	$LN37@IsNotifica@3
 
-; 1714 : 	}
-; 1715 : 
-; 1716 : 	case NOTIFICATION_FOUND_RELIGION:
-; 1717 : 	{
-; 1718 : 		CvGame& kGame(GC.getGame());
-; 1719 : 		CvGameReligions* pkReligions(kGame.GetGameReligions());
-; 1720 : 		if (pkReligions->GetNumReligionsStillToFound() <= 0)
-; 1721 : 			return true;	// None left, dismiss the notification
-; 1722 : 
-; 1723 : 		return pkReligions->HasCreatedReligion(m_ePlayer);
-; 1724 : 	}
-; 1725 : 	break;
-; 1726 : 
-; 1727 : 	case NOTIFICATION_ENHANCE_RELIGION:
-; 1728 : 	{
-; 1729 : 		CvGame& kGame(GC.getGame());
-; 1730 : 		CvGameReligions* pkReligions(kGame.GetGameReligions());
+; 1736 : 	}
+; 1737 : 
+; 1738 : 	case NOTIFICATION_FOUND_RELIGION:
+; 1739 : 	{
+; 1740 : 		CvGame& kGame(GC.getGame());
+; 1741 : 		CvGameReligions* pkReligions(kGame.GetGameReligions());
+; 1742 : 		if (pkReligions->GetNumReligionsStillToFound() <= 0)
+; 1743 : 			return true;	// None left, dismiss the notification
+; 1744 : 
+; 1745 : 		return pkReligions->HasCreatedReligion(m_ePlayer);
+; 1746 : 	}
+; 1747 : 	break;
+; 1748 : 
+; 1749 : 	case NOTIFICATION_ENHANCE_RELIGION:
+; 1750 : 	{
+; 1751 : 		CvGame& kGame(GC.getGame());
+; 1752 : 		CvGameReligions* pkReligions(kGame.GetGameReligions());
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?GetGameReligions@CvGame@@QAEPAVCvGameReligions@@XZ ; CvGame::GetGameReligions
 	mov	edi, eax
 
-; 1731 : 		if (pkReligions->GetAvailableEnhancerBeliefs().size() == 0)
+; 1753 : 		if (pkReligions->GetAvailableEnhancerBeliefs().size() == 0)
 
-	lea	eax, DWORD PTR $T226395[esp+68]
+	lea	eax, DWORD PTR $T226885[esp+68]
 	push	eax
 	mov	ecx, edi
 	call	?GetAvailableEnhancerBeliefs@CvGameReligions@@QAE?AV?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@XZ ; CvGameReligions::GetAvailableEnhancerBeliefs
 	mov	ecx, DWORD PTR [eax+8]
 	sub	ecx, DWORD PTR [eax+4]
 	test	ecx, -4					; fffffffcH
-	lea	ecx, DWORD PTR $T226395[esp+68]
+	lea	ecx, DWORD PTR $T226885[esp+68]
 	sete	bl
 	call	??1?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@QAE@XZ ; std::vector<enum BeliefTypes,std::allocator<enum BeliefTypes> >::~vector<enum BeliefTypes,std::allocator<enum BeliefTypes> >
 	test	bl, bl
 
-; 1732 : 			return true;	// None left, dismiss the notification.
+; 1754 : 			return true;	// None left, dismiss the notification.
 
 	jne	$LN368@IsNotifica@3
 
-; 1733 : 		if (pkReligions->GetAvailableFollowerBeliefs().size() == 0)
+; 1755 : 		if (pkReligions->GetAvailableFollowerBeliefs().size() == 0)
 
-	lea	edx, DWORD PTR $T226397[esp+68]
+	lea	edx, DWORD PTR $T226887[esp+68]
 	push	edx
 	mov	ecx, edi
 	call	?GetAvailableFollowerBeliefs@CvGameReligions@@QAE?AV?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@XZ ; CvGameReligions::GetAvailableFollowerBeliefs
 	mov	ecx, DWORD PTR [eax+8]
 	sub	ecx, DWORD PTR [eax+4]
 	test	ecx, -4					; fffffffcH
-	lea	ecx, DWORD PTR $T226397[esp+68]
+	lea	ecx, DWORD PTR $T226887[esp+68]
 	sete	bl
 	call	??1?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@QAE@XZ ; std::vector<enum BeliefTypes,std::allocator<enum BeliefTypes> >::~vector<enum BeliefTypes,std::allocator<enum BeliefTypes> >
 	test	bl, bl
 
-; 1734 : 			return true;	// None left, dismiss the notification.		
+; 1756 : 			return true;	// None left, dismiss the notification.		
 
 	jne	$LN368@IsNotifica@3
 
-; 1735 : 
-; 1736 : 		ReligionTypes eReligion = pkReligions->GetReligionCreatedByPlayer(m_ePlayer);
+; 1757 : 
+; 1758 : 		ReligionTypes eReligion = pkReligions->GetReligionCreatedByPlayer(m_ePlayer);
 
 	mov	edx, DWORD PTR [esi]
 	push	edx
 	mov	ecx, edi
 	call	?GetReligionCreatedByPlayer@CvGameReligions@@QBE?AW4ReligionTypes@@W4PlayerTypes@@@Z ; CvGameReligions::GetReligionCreatedByPlayer
 
-; 1737 : 		const CvReligion* pReligion = pkReligions->GetReligion(eReligion, m_ePlayer);
+; 1759 : 		const CvReligion* pReligion = pkReligions->GetReligion(eReligion, m_ePlayer);
 
 	mov	ecx, DWORD PTR [esi]
 	push	ecx
@@ -11911,7 +12043,7 @@ $LN81@IsNotifica@3:
 	mov	ecx, edi
 	call	?GetReligion@CvGameReligions@@QBEPBVCvReligion@@W4ReligionTypes@@W4PlayerTypes@@@Z ; CvGameReligions::GetReligion
 
-; 1738 : 		return (NULL != pReligion && pReligion->m_bEnhanced);
+; 1760 : 		return (NULL != pReligion && pReligion->m_bEnhanced);
 
 	test	eax, eax
 	je	SHORT $LN78@IsNotifica@3
@@ -11923,12 +12055,12 @@ $LN81@IsNotifica@3:
 	mov	eax, 1
 	pop	ebx
 
-; 1826 : 	}
-; 1827 : 	break;
-; 1828 : 	}
-; 1829 : 
-; 1830 : 	return false;
-; 1831 : }
+; 1848 : 	}
+; 1849 : 	break;
+; 1850 : 	}
+; 1851 : 
+; 1852 : 	return false;
+; 1853 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+52]
 	mov	DWORD PTR fs:0, ecx
@@ -11939,17 +12071,17 @@ $LN78@IsNotifica@3:
 	pop	esi
 	pop	ebp
 
-; 1738 : 		return (NULL != pReligion && pReligion->m_bEnhanced);
+; 1760 : 		return (NULL != pReligion && pReligion->m_bEnhanced);
 
 	xor	eax, eax
 	pop	ebx
 
-; 1826 : 	}
-; 1827 : 	break;
-; 1828 : 	}
-; 1829 : 
-; 1830 : 	return false;
-; 1831 : }
+; 1848 : 	}
+; 1849 : 	break;
+; 1850 : 	}
+; 1851 : 
+; 1852 : 	return false;
+; 1853 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+52]
 	mov	DWORD PTR fs:0, ecx
@@ -11957,12 +12089,12 @@ $LN78@IsNotifica@3:
 	ret	4
 $LN65@IsNotifica@3:
 
-; 1494 : 	}
-; 1495 : 	break;
-; 1496 : 
-; 1497 : 	case NOTIFICATION_GOODY:
-; 1498 : 	{
-; 1499 : 		CvPlot* pPlot = GC.getMap().plot(m_aNotifications[iIndex].m_iX, m_aNotifications[iIndex].m_iY);
+; 1516 : 	}
+; 1517 : 	break;
+; 1518 : 
+; 1519 : 	case NOTIFICATION_GOODY:
+; 1520 : 	{
+; 1521 : 		CvPlot* pPlot = GC.getMap().plot(m_aNotifications[iIndex].m_iX, m_aNotifications[iIndex].m_iY);
 
 	mov	edx, DWORD PTR [esi+8]
 	mov	ebp, DWORD PTR [edx+edi+68]
@@ -12033,7 +12165,7 @@ $LN150@IsNotifica@3:
 	xor	edi, edi
 $LN152@IsNotifica@3:
 
-; 1500 : 		if(!pPlot->isGoody(GET_PLAYER(m_ePlayer).getTeam()))
+; 1522 : 		if(!pPlot->isGoody(GET_PLAYER(m_ePlayer).getTeam()))
 
 	mov	ecx, DWORD PTR [esi]
 	imul	ecx, 63236				; 0000f704H
@@ -12048,18 +12180,18 @@ $LN152@IsNotifica@3:
 	pop	esi
 	pop	ebp
 
-; 1501 : 		{
-; 1502 : 			return true;
+; 1523 : 		{
+; 1524 : 			return true;
 
 	mov	al, 1
 	pop	ebx
 
-; 1826 : 	}
-; 1827 : 	break;
-; 1828 : 	}
-; 1829 : 
-; 1830 : 	return false;
-; 1831 : }
+; 1848 : 	}
+; 1849 : 	break;
+; 1850 : 	}
+; 1851 : 
+; 1852 : 	return false;
+; 1853 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+52]
 	mov	DWORD PTR fs:0, ecx
@@ -12067,10 +12199,10 @@ $LN152@IsNotifica@3:
 	ret	4
 $LN73@IsNotifica@3:
 
-; 1464 : 	{
-; 1465 : 	case NOTIFICATION_BUY_TILE:
-; 1466 : 	{
-; 1467 : 		if(GET_PLAYER(m_ePlayer).GetTreasury()->GetGold() < GET_PLAYER(m_ePlayer).GetBuyPlotCost())
+; 1486 : 	{
+; 1487 : 	case NOTIFICATION_BUY_TILE:
+; 1488 : 	{
+; 1489 : 		if(GET_PLAYER(m_ePlayer).GetTreasury()->GetGold() < GET_PLAYER(m_ePlayer).GetBuyPlotCost())
 
 	mov	eax, DWORD PTR [esi]
 	mov	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
@@ -12090,18 +12222,18 @@ $LN368@IsNotifica@3:
 	pop	esi
 	pop	ebp
 
-; 1468 : 		{
-; 1469 : 			return true;
+; 1490 : 		{
+; 1491 : 			return true;
 
 	mov	al, 1
 	pop	ebx
 
-; 1826 : 	}
-; 1827 : 	break;
-; 1828 : 	}
-; 1829 : 
-; 1830 : 	return false;
-; 1831 : }
+; 1848 : 	}
+; 1849 : 	break;
+; 1850 : 	}
+; 1851 : 
+; 1852 : 	return false;
+; 1853 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+52]
 	mov	DWORD PTR fs:0, ecx
@@ -12109,18 +12241,18 @@ $LN368@IsNotifica@3:
 	ret	4
 $LN22@IsNotifica@3:
 
-; 1706 : 	}
-; 1707 : 	break;
-; 1708 : 
-; 1709 : 	case NOTIFICATION_ADD_REFORMATION_BELIEF:
-; 1710 : 	{
-; 1711 : 		CvGame& kGame(GC.getGame());
-; 1712 : 		CvGameReligions* pkReligions(kGame.GetGameReligions());
+; 1728 : 	}
+; 1729 : 	break;
+; 1730 : 
+; 1731 : 	case NOTIFICATION_ADD_REFORMATION_BELIEF:
+; 1732 : 	{
+; 1733 : 		CvGame& kGame(GC.getGame());
+; 1734 : 		CvGameReligions* pkReligions(kGame.GetGameReligions());
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?GetGameReligions@CvGame@@QAEPAVCvGameReligions@@XZ ; CvGame::GetGameReligions
 
-; 1713 : 		return pkReligions->HasAddedReformationBelief(m_ePlayer);
+; 1735 : 		return pkReligions->HasAddedReformationBelief(m_ePlayer);
 
 	mov	edx, DWORD PTR [esi]
 	push	edx
@@ -12131,12 +12263,12 @@ $LN22@IsNotifica@3:
 	pop	ebp
 	pop	ebx
 
-; 1826 : 	}
-; 1827 : 	break;
-; 1828 : 	}
-; 1829 : 
-; 1830 : 	return false;
-; 1831 : }
+; 1848 : 	}
+; 1849 : 	break;
+; 1850 : 	}
+; 1851 : 
+; 1852 : 	return false;
+; 1853 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+52]
 	mov	DWORD PTR fs:0, ecx
@@ -12144,20 +12276,20 @@ $LN22@IsNotifica@3:
 	ret	4
 $LN83@IsNotifica@3:
 
-; 1463 : 	switch(m_aNotifications[iIndex].m_eNotificationType)
+; 1485 : 	switch(m_aNotifications[iIndex].m_eNotificationType)
 
 	cmp	eax, 88900711				; 054c8467H
 	je	SHORT $LN46@IsNotifica@3
 	cmp	eax, 294822899				; 1192a3f3H
 	jne	$LN37@IsNotifica@3
 
-; 1781 : 		}
-; 1782 : 	}
-; 1783 : 	break;
-; 1784 : 
-; 1785 : 	case NOTIFICATION_CHOOSE_IDEOLOGY:
-; 1786 : 		{
-; 1787 : 			if (GET_PLAYER(m_ePlayer).GetPlayerPolicies()->GetLateGamePolicyTree() != NO_POLICY_BRANCH_TYPE)
+; 1803 : 		}
+; 1804 : 	}
+; 1805 : 	break;
+; 1806 : 
+; 1807 : 	case NOTIFICATION_CHOOSE_IDEOLOGY:
+; 1808 : 		{
+; 1809 : 			if (GET_PLAYER(m_ePlayer).GetPlayerPolicies()->GetLateGamePolicyTree() != NO_POLICY_BRANCH_TYPE)
 
 	mov	ecx, DWORD PTR [esi]
 	imul	ecx, 63236				; 0000f704H
@@ -12173,12 +12305,12 @@ $LN83@IsNotifica@3:
 	mov	al, 1
 	pop	ebx
 
-; 1826 : 	}
-; 1827 : 	break;
-; 1828 : 	}
-; 1829 : 
-; 1830 : 	return false;
-; 1831 : }
+; 1848 : 	}
+; 1849 : 	break;
+; 1850 : 	}
+; 1851 : 
+; 1852 : 	return false;
+; 1853 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+52]
 	mov	DWORD PTR fs:0, ecx
@@ -12186,13 +12318,13 @@ $LN83@IsNotifica@3:
 	ret	4
 $LN46@IsNotifica@3:
 
-; 1573 : 		}
-; 1574 : 	}
-; 1575 : 	break;
-; 1576 : 
-; 1577 : 	case NOTIFICATION_MAYA_LONG_COUNT:
-; 1578 : 	{
-; 1579 : 		if(GET_PLAYER(m_ePlayer).GetNumMayaBoosts() == 0)
+; 1595 : 		}
+; 1596 : 	}
+; 1597 : 	break;
+; 1598 : 
+; 1599 : 	case NOTIFICATION_MAYA_LONG_COUNT:
+; 1600 : 	{
+; 1601 : 		if(GET_PLAYER(m_ePlayer).GetNumMayaBoosts() == 0)
 
 	mov	ecx, DWORD PTR [esi]
 	imul	ecx, 63236				; 0000f704H
@@ -12204,18 +12336,18 @@ $LN46@IsNotifica@3:
 	pop	esi
 	pop	ebp
 
-; 1580 : 		{
-; 1581 : 			return true;
+; 1602 : 		{
+; 1603 : 			return true;
 
 	mov	al, 1
 	pop	ebx
 
-; 1826 : 	}
-; 1827 : 	break;
-; 1828 : 	}
-; 1829 : 
-; 1830 : 	return false;
-; 1831 : }
+; 1848 : 	}
+; 1849 : 	break;
+; 1850 : 	}
+; 1851 : 
+; 1852 : 	return false;
+; 1853 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+52]
 	mov	DWORD PTR fs:0, ecx
@@ -12223,30 +12355,30 @@ $LN46@IsNotifica@3:
 	ret	4
 $LN53@IsNotifica@3:
 
-; 1549 : 		}
-; 1550 : 	}
-; 1551 : 	break;
-; 1552 : 
-; 1553 : 	case NOTIFICATION_FREE_POLICY:
-; 1554 : 	{
-; 1555 : 		if(GC.getGame().isOption(GAMEOPTION_POLICY_SAVING))
+; 1571 : 		}
+; 1572 : 	}
+; 1573 : 	break;
+; 1574 : 
+; 1575 : 	case NOTIFICATION_FREE_POLICY:
+; 1576 : 	{
+; 1577 : 		if(GC.getGame().isOption(GAMEOPTION_POLICY_SAVING))
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	12					; 0000000cH
 	call	?isOption@CvGame@@QBE_NW4GameOptionTypes@@@Z ; CvGame::isOption
 	test	al, al
 
-; 1556 : 		{
-; 1557 : 			if(GET_PLAYER(m_ePlayer).GetNumFreePolicies() == 0 && GET_PLAYER(m_ePlayer).GetNumFreeTenets() == 0)
-; 1558 : 				return true;
+; 1578 : 		{
+; 1579 : 			if(GET_PLAYER(m_ePlayer).GetNumFreePolicies() == 0 && GET_PLAYER(m_ePlayer).GetNumFreeTenets() == 0)
+; 1580 : 				return true;
 
 	jne	SHORT $LN369@IsNotifica@3
 $LN52@IsNotifica@3:
 
-; 1559 : 		}
-; 1560 : 		else
-; 1561 : 		{
-; 1562 : 			if((GET_PLAYER(m_ePlayer).getJONSCulture() < GET_PLAYER(m_ePlayer).getNextPolicyCost() && GET_PLAYER(m_ePlayer).GetNumFreePolicies() == 0 && GET_PLAYER(m_ePlayer).GetNumFreeTenets() == 0))
+; 1581 : 		}
+; 1582 : 		else
+; 1583 : 		{
+; 1584 : 			if((GET_PLAYER(m_ePlayer).getJONSCulture() < GET_PLAYER(m_ePlayer).getNextPolicyCost() && GET_PLAYER(m_ePlayer).GetNumFreePolicies() == 0 && GET_PLAYER(m_ePlayer).GetNumFreeTenets() == 0))
 
 	mov	eax, DWORD PTR [esi]
 	mov	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
@@ -12276,17 +12408,17 @@ $LN369@IsNotifica@3:
 	pop	esi
 	pop	ebp
 
-; 1563 : 				return true;
+; 1585 : 				return true;
 
 	mov	al, 1
 	pop	ebx
 
-; 1826 : 	}
-; 1827 : 	break;
-; 1828 : 	}
-; 1829 : 
-; 1830 : 	return false;
-; 1831 : }
+; 1848 : 	}
+; 1849 : 	break;
+; 1850 : 	}
+; 1851 : 
+; 1852 : 	return false;
+; 1853 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+52]
 	mov	DWORD PTR fs:0, ecx
@@ -12294,7 +12426,7 @@ $LN369@IsNotifica@3:
 	ret	4
 $LN80@IsNotifica@3:
 
-; 1463 : 	switch(m_aNotifications[iIndex].m_eNotificationType)
+; 1485 : 	switch(m_aNotifications[iIndex].m_eNotificationType)
 
 	cmp	eax, 1523558135				; 5acfa6f7H
 	jg	$LN84@IsNotifica@3
@@ -12309,27 +12441,27 @@ $LN80@IsNotifica@3:
 	cmp	eax, 755914060				; 2d0e554cH
 	jne	$LN37@IsNotifica@3
 
-; 1746 : 		{
-; 1747 : 			return true;
-; 1748 : 		}
-; 1749 : 		else
-; 1750 : 		{
-; 1751 : 			return false;
-; 1752 : 		}
-; 1753 : 	}
-; 1754 : 	break;
-; 1755 : 
-; 1756 : 	case NOTIFICATION_LEAGUE_CALL_FOR_PROPOSALS:
-; 1757 : 	{
-; 1758 : #ifdef AUI_LEAGUES_FIX_POSSIBLE_DEALLOCATION_CRASH
-; 1759 : 		CvLeague* pLeague = GC.getGame().GetGameLeagues()->GetActiveLeague();
-; 1760 : 		if (pLeague && !pLeague->CanPropose(m_ePlayer))
-; 1761 : #else
-; 1762 : 		LeagueTypes eLeague = (LeagueTypes) m_aNotifications[iIndex].m_iGameDataIndex;
+; 1768 : 		{
+; 1769 : 			return true;
+; 1770 : 		}
+; 1771 : 		else
+; 1772 : 		{
+; 1773 : 			return false;
+; 1774 : 		}
+; 1775 : 	}
+; 1776 : 	break;
+; 1777 : 
+; 1778 : 	case NOTIFICATION_LEAGUE_CALL_FOR_PROPOSALS:
+; 1779 : 	{
+; 1780 : #ifdef AUI_LEAGUES_FIX_POSSIBLE_DEALLOCATION_CRASH
+; 1781 : 		CvLeague* pLeague = GC.getGame().GetGameLeagues()->GetActiveLeague();
+; 1782 : 		if (pLeague && !pLeague->CanPropose(m_ePlayer))
+; 1783 : #else
+; 1784 : 		LeagueTypes eLeague = (LeagueTypes) m_aNotifications[iIndex].m_iGameDataIndex;
 
 	mov	edx, DWORD PTR [edx+72]
 
-; 1763 : 		CvLeague* pLeague = GC.getGame().GetGameLeagues()->GetLeague(eLeague);
+; 1785 : 		CvLeague* pLeague = GC.getGame().GetGameLeagues()->GetLeague(eLeague);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	edx
@@ -12337,7 +12469,7 @@ $LN80@IsNotifica@3:
 	mov	ecx, eax
 	call	?GetLeague@CvGameLeagues@@QAEPAVCvLeague@@W4LeagueTypes@@@Z ; CvGameLeagues::GetLeague
 
-; 1764 : 		if (!pLeague->CanPropose(m_ePlayer))
+; 1786 : 		if (!pLeague->CanPropose(m_ePlayer))
 
 	mov	edx, DWORD PTR [esi]
 	push	edx
@@ -12350,12 +12482,12 @@ $LN80@IsNotifica@3:
 	sete	al
 	pop	ebx
 
-; 1826 : 	}
-; 1827 : 	break;
-; 1828 : 	}
-; 1829 : 
-; 1830 : 	return false;
-; 1831 : }
+; 1848 : 	}
+; 1849 : 	break;
+; 1850 : 	}
+; 1851 : 
+; 1852 : 	return false;
+; 1853 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+52]
 	mov	DWORD PTR fs:0, ecx
@@ -12363,22 +12495,22 @@ $LN80@IsNotifica@3:
 	ret	4
 $LN26@IsNotifica@3:
 
-; 1685 : 		}
-; 1686 : 	}
-; 1687 : 	break;
-; 1688 : 	case NOTIFICATION_DEMAND_RESOURCE:
-; 1689 : 	{
-; 1690 : 		// if this is a "you ran out of this resource" demand resource.
-; 1691 : 		// I did this so not to break the save format
-; 1692 : 		if(m_aNotifications[iIndex].m_iX == -1 && m_aNotifications[iIndex].m_iY == -1)
+; 1707 : 		}
+; 1708 : 	}
+; 1709 : 	break;
+; 1710 : 	case NOTIFICATION_DEMAND_RESOURCE:
+; 1711 : 	{
+; 1712 : 		// if this is a "you ran out of this resource" demand resource.
+; 1713 : 		// I did this so not to break the save format
+; 1714 : 		if(m_aNotifications[iIndex].m_iX == -1 && m_aNotifications[iIndex].m_iY == -1)
 
 	cmp	DWORD PTR [edx+64], -1
 	jne	SHORT $LN366@IsNotifica@3
 	cmp	DWORD PTR [edx+68], -1
 	jne	SHORT $LN366@IsNotifica@3
 
-; 1693 : 		{
-; 1694 : 			if(GET_PLAYER(m_ePlayer).getNumResourceAvailable((ResourceTypes)m_aNotifications[iIndex].m_iGameDataIndex, true) >= 0)
+; 1715 : 		{
+; 1716 : 			if(GET_PLAYER(m_ePlayer).getNumResourceAvailable((ResourceTypes)m_aNotifications[iIndex].m_iGameDataIndex, true) >= 0)
 
 	mov	ecx, DWORD PTR [esi]
 	mov	edx, DWORD PTR [edx+72]
@@ -12391,21 +12523,21 @@ $LN26@IsNotifica@3:
 	jge	$LN371@IsNotifica@3
 $LN366@IsNotifica@3:
 
-; 1695 : 			{
-; 1696 : 				return true;
-; 1697 : 			}
-; 1698 : 		}
-; 1699 : 	}
-; 1700 : 
-; 1701 : 	case NOTIFICATION_FOUND_PANTHEON:
-; 1702 : 	{
-; 1703 : 		CvGame& kGame(GC.getGame());
-; 1704 : 		CvGameReligions* pkReligions(kGame.GetGameReligions());
+; 1717 : 			{
+; 1718 : 				return true;
+; 1719 : 			}
+; 1720 : 		}
+; 1721 : 	}
+; 1722 : 
+; 1723 : 	case NOTIFICATION_FOUND_PANTHEON:
+; 1724 : 	{
+; 1725 : 		CvGame& kGame(GC.getGame());
+; 1726 : 		CvGameReligions* pkReligions(kGame.GetGameReligions());
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?GetGameReligions@CvGame@@QAEPAVCvGameReligions@@XZ ; CvGame::GetGameReligions
 
-; 1705 : 		return pkReligions->CanCreatePantheon(m_ePlayer, true) != CvGameReligions::FOUNDING_OK;
+; 1727 : 		return pkReligions->CanCreatePantheon(m_ePlayer, true) != CvGameReligions::FOUNDING_OK;
 
 	mov	ecx, DWORD PTR [esi]
 	push	1
@@ -12420,12 +12552,12 @@ $LN366@IsNotifica@3:
 	neg	eax
 	pop	ebx
 
-; 1826 : 	}
-; 1827 : 	break;
-; 1828 : 	}
-; 1829 : 
-; 1830 : 	return false;
-; 1831 : }
+; 1848 : 	}
+; 1849 : 	break;
+; 1850 : 	}
+; 1851 : 
+; 1852 : 	return false;
+; 1853 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+52]
 	mov	DWORD PTR fs:0, ecx
@@ -12433,32 +12565,32 @@ $LN366@IsNotifica@3:
 	ret	4
 $LN56@IsNotifica@3:
 
-; 1536 : 	}
-; 1537 : 	break;
-; 1538 : 	case NOTIFICATION_FREE_TECH:
-; 1539 : 	{
-; 1540 : 		CvPlayerAI& kPlayer = GET_PLAYER(m_ePlayer);
+; 1558 : 	}
+; 1559 : 	break;
+; 1560 : 	case NOTIFICATION_FREE_TECH:
+; 1561 : 	{
+; 1562 : 		CvPlayerAI& kPlayer = GET_PLAYER(m_ePlayer);
 
 	mov	esi, DWORD PTR [esi]
 	imul	esi, 63236				; 0000f704H
 	add	esi, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 
-; 1541 : 		if(kPlayer.GetNumFreeTechs() == 0)
+; 1563 : 		if(kPlayer.GetNumFreeTechs() == 0)
 
 	mov	ecx, esi
 	call	?GetNumFreeTechs@CvPlayer@@QBEHXZ	; CvPlayer::GetNumFreeTechs
 	test	eax, eax
 
-; 1542 : 		{
-; 1543 : 			return true;
+; 1564 : 		{
+; 1565 : 			return true;
 
 	je	$LN368@IsNotifica@3
 
-; 1544 : 		}
-; 1545 : 		else
-; 1546 : 		{
-; 1547 : 			//Expire this notification if there are no more techs that can be researched at this time.
-; 1548 : 			return kPlayer.GetPlayerTechs()->GetNumTechsCanBeResearched() == 0;
+; 1566 : 		}
+; 1567 : 		else
+; 1568 : 		{
+; 1569 : 			//Expire this notification if there are no more techs that can be researched at this time.
+; 1570 : 			return kPlayer.GetPlayerTechs()->GetNumTechsCanBeResearched() == 0;
 
 	mov	ecx, esi
 	call	?GetPlayerTechs@CvPlayer@@QBEPAVCvPlayerTechs@@XZ ; CvPlayer::GetPlayerTechs
@@ -12472,12 +12604,12 @@ $LN56@IsNotifica@3:
 	inc	eax
 	pop	ebx
 
-; 1826 : 	}
-; 1827 : 	break;
-; 1828 : 	}
-; 1829 : 
-; 1830 : 	return false;
-; 1831 : }
+; 1848 : 	}
+; 1849 : 	break;
+; 1850 : 	}
+; 1851 : 
+; 1852 : 	return false;
+; 1853 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+52]
 	mov	DWORD PTR fs:0, ecx
@@ -12485,20 +12617,20 @@ $LN56@IsNotifica@3:
 	ret	4
 $LN85@IsNotifica@3:
 
-; 1463 : 	switch(m_aNotifications[iIndex].m_eNotificationType)
+; 1485 : 	switch(m_aNotifications[iIndex].m_eNotificationType)
 
 	cmp	eax, 1279997337				; 4c4b3599H
 	je	SHORT $LN366@IsNotifica@3
 	cmp	eax, 1376002242				; 520420c2H
 	jne	$LN37@IsNotifica@3
 
-; 1582 : 		}
-; 1583 : 	}
-; 1584 : 	break;
-; 1585 : 
-; 1586 : 	case NOTIFICATION_FAITH_GREAT_PERSON:
-; 1587 : 	{
-; 1588 : 		if(GET_PLAYER(m_ePlayer).GetNumFaithGreatPeople() == 0)
+; 1604 : 		}
+; 1605 : 	}
+; 1606 : 	break;
+; 1607 : 
+; 1608 : 	case NOTIFICATION_FAITH_GREAT_PERSON:
+; 1609 : 	{
+; 1610 : 		if(GET_PLAYER(m_ePlayer).GetNumFaithGreatPeople() == 0)
 
 	mov	ecx, DWORD PTR [esi]
 	imul	ecx, 63236				; 0000f704H
@@ -12510,18 +12642,18 @@ $LN85@IsNotifica@3:
 	pop	esi
 	pop	ebp
 
-; 1589 : 		{
-; 1590 : 			return true;
+; 1611 : 		{
+; 1612 : 			return true;
 
 	mov	al, 1
 	pop	ebx
 
-; 1826 : 	}
-; 1827 : 	break;
-; 1828 : 	}
-; 1829 : 
-; 1830 : 	return false;
-; 1831 : }
+; 1848 : 	}
+; 1849 : 	break;
+; 1850 : 	}
+; 1851 : 
+; 1852 : 	return false;
+; 1853 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+52]
 	mov	DWORD PTR fs:0, ecx
@@ -12529,42 +12661,42 @@ $LN85@IsNotifica@3:
 	ret	4
 $LN63@IsNotifica@3:
 
-; 1503 : 		}
-; 1504 : 	}
-; 1505 : 	break;
-; 1506 : 
-; 1507 : 	case NOTIFICATION_TECH:
-; 1508 : 	{
-; 1509 : 		CvPlayerAI& kPlayer = GET_PLAYER(m_ePlayer);
+; 1525 : 		}
+; 1526 : 	}
+; 1527 : 	break;
+; 1528 : 
+; 1529 : 	case NOTIFICATION_TECH:
+; 1530 : 	{
+; 1531 : 		CvPlayerAI& kPlayer = GET_PLAYER(m_ePlayer);
 
 	mov	ecx, DWORD PTR [esi]
 	imul	ecx, 63236				; 0000f704H
 	add	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 
-; 1510 : 		CvPlayerTechs* pkPlayerTechs = kPlayer.GetPlayerTechs();
+; 1532 : 		CvPlayerTechs* pkPlayerTechs = kPlayer.GetPlayerTechs();
 
 	call	?GetPlayerTechs@CvPlayer@@QBEPAVCvPlayerTechs@@XZ ; CvPlayer::GetPlayerTechs
 	mov	ebx, eax
 
-; 1511 : 		if(pkPlayerTechs->GetCurrentResearch() != NO_TECH)
+; 1533 : 		if(pkPlayerTechs->GetCurrentResearch() != NO_TECH)
 
 	mov	ecx, ebx
-	mov	DWORD PTR _pkPlayerTechs$221475[esp+64], ebx
+	mov	DWORD PTR _pkPlayerTechs$221959[esp+64], ebx
 	call	?GetCurrentResearch@CvPlayerTechs@@QBE?AW4TechTypes@@XZ ; CvPlayerTechs::GetCurrentResearch
 	cmp	eax, -1
 
-; 1512 : 		{
-; 1513 : 			return true;
+; 1534 : 		{
+; 1535 : 			return true;
 
 	jne	$LN368@IsNotifica@3
 
-; 1514 : 		}
-; 1515 : 
-; 1516 : 		int iNotificationIndex = m_iNotificationsBeginIndex;
+; 1536 : 		}
+; 1537 : 
+; 1538 : 		int iNotificationIndex = m_iNotificationsBeginIndex;
 
 	mov	edi, DWORD PTR [esi+20]
 
-; 1517 : 		while(iNotificationIndex != m_iNotificationsEndIndex)
+; 1539 : 		while(iNotificationIndex != m_iNotificationsEndIndex)
 
 	mov	ebp, DWORD PTR [esi+24]
 	cmp	edi, ebp
@@ -12573,8 +12705,8 @@ $LN63@IsNotifica@3:
 	npad	10
 $LL61@IsNotifica@3:
 
-; 1518 : 		{
-; 1519 : 			if(NOTIFICATION_FREE_TECH == m_aNotifications[iNotificationIndex].m_eNotificationType)
+; 1540 : 		{
+; 1541 : 			if(NOTIFICATION_FREE_TECH == m_aNotifications[iNotificationIndex].m_eNotificationType)
 
 	mov	edx, edi
 	imul	edx, 92					; 0000005cH
@@ -12582,20 +12714,20 @@ $LL61@IsNotifica@3:
 	lea	eax, DWORD PTR [edx+ebx]
 	jne	SHORT $LN58@IsNotifica@3
 
-; 1520 : 			{
-; 1521 : 				if(!m_aNotifications[iNotificationIndex].m_bDismissed)
+; 1542 : 			{
+; 1543 : 				if(!m_aNotifications[iNotificationIndex].m_bDismissed)
 
 	cmp	BYTE PTR [eax+89], 0
 	je	$LN368@IsNotifica@3
 $LN58@IsNotifica@3:
 
-; 1522 : 				{
-; 1523 : 					return true;
-; 1524 : 				}
-; 1525 : 			}
-; 1526 : 
-; 1527 : 			iNotificationIndex++;
-; 1528 : 			if(iNotificationIndex >= (int)m_aNotifications.size())
+; 1544 : 				{
+; 1545 : 					return true;
+; 1546 : 				}
+; 1547 : 			}
+; 1548 : 
+; 1549 : 			iNotificationIndex++;
+; 1550 : 			if(iNotificationIndex >= (int)m_aNotifications.size())
 
 	mov	ecx, DWORD PTR [esi+12]
 	sub	ecx, ebx
@@ -12610,28 +12742,28 @@ $LN58@IsNotifica@3:
 	cmp	edi, eax
 	jl	SHORT $LN57@IsNotifica@3
 
-; 1529 : 			{
-; 1530 : 				iNotificationIndex = 0;
+; 1551 : 			{
+; 1552 : 				iNotificationIndex = 0;
 
 	xor	edi, edi
 $LN57@IsNotifica@3:
 
-; 1517 : 		while(iNotificationIndex != m_iNotificationsEndIndex)
+; 1539 : 		while(iNotificationIndex != m_iNotificationsEndIndex)
 
 	cmp	edi, ebp
 	jne	SHORT $LL61@IsNotifica@3
 
-; 1520 : 			{
-; 1521 : 				if(!m_aNotifications[iNotificationIndex].m_bDismissed)
+; 1542 : 			{
+; 1543 : 				if(!m_aNotifications[iNotificationIndex].m_bDismissed)
 
-	mov	ebx, DWORD PTR _pkPlayerTechs$221475[esp+64]
+	mov	ebx, DWORD PTR _pkPlayerTechs$221959[esp+64]
 $LN60@IsNotifica@3:
 
-; 1531 : 			}
-; 1532 : 		}
-; 1533 : 
-; 1534 : 		//Expire this notification if there are no more techs that can be researched at this time.
-; 1535 : 		return pkPlayerTechs->GetNumTechsCanBeResearched() == 0;
+; 1553 : 			}
+; 1554 : 		}
+; 1555 : 
+; 1556 : 		//Expire this notification if there are no more techs that can be researched at this time.
+; 1557 : 		return pkPlayerTechs->GetNumTechsCanBeResearched() == 0;
 
 	mov	ecx, ebx
 	call	?GetNumTechsCanBeResearched@CvPlayerTechs@@QBEHXZ ; CvPlayerTechs::GetNumTechsCanBeResearched
@@ -12643,12 +12775,12 @@ $LN60@IsNotifica@3:
 	inc	eax
 	pop	ebx
 
-; 1826 : 	}
-; 1827 : 	break;
-; 1828 : 	}
-; 1829 : 
-; 1830 : 	return false;
-; 1831 : }
+; 1848 : 	}
+; 1849 : 	break;
+; 1850 : 	}
+; 1851 : 
+; 1852 : 	return false;
+; 1853 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+52]
 	mov	DWORD PTR fs:0, ecx
@@ -12656,7 +12788,7 @@ $LN60@IsNotifica@3:
 	ret	4
 $LN84@IsNotifica@3:
 
-; 1463 : 	switch(m_aNotifications[iIndex].m_eNotificationType)
+; 1485 : 	switch(m_aNotifications[iIndex].m_eNotificationType)
 
 	cmp	eax, 1989681641				; 769821e9H
 	jg	$LN86@IsNotifica@3
@@ -12668,13 +12800,13 @@ $LN84@IsNotifica@3:
 	cmp	eax, 1892367718				; 70cb3d66H
 	jne	$LN37@IsNotifica@3
 
-; 1470 : 		}
-; 1471 : 	}
-; 1472 : 	break;
-; 1473 : 
-; 1474 : 	case NOTIFICATION_BARBARIAN:
-; 1475 : 	{
-; 1476 : 		CvPlot* pPlot = GC.getMap().plot(m_aNotifications[iIndex].m_iX, m_aNotifications[iIndex].m_iY);
+; 1492 : 		}
+; 1493 : 	}
+; 1494 : 	break;
+; 1495 : 
+; 1496 : 	case NOTIFICATION_BARBARIAN:
+; 1497 : 	{
+; 1498 : 		CvPlot* pPlot = GC.getMap().plot(m_aNotifications[iIndex].m_iX, m_aNotifications[iIndex].m_iY);
 
 	mov	ecx, DWORD PTR [esi+8]
 	mov	ebx, DWORD PTR [ecx+edi+68]
@@ -12742,7 +12874,7 @@ $LN102@IsNotifica@3:
 	xor	ecx, ecx
 $LN104@IsNotifica@3:
 
-; 1477 : 		if(!pPlot->HasBarbarianCamp())
+; 1499 : 		if(!pPlot->HasBarbarianCamp())
 
 	call	?HasBarbarianCamp@CvPlot@@QAE_NXZ	; CvPlot::HasBarbarianCamp
 	test	al, al
@@ -12751,18 +12883,18 @@ $LN104@IsNotifica@3:
 	pop	esi
 	pop	ebp
 
-; 1478 : 		{
-; 1479 : 			return true;
+; 1500 : 		{
+; 1501 : 			return true;
 
 	mov	al, 1
 	pop	ebx
 
-; 1826 : 	}
-; 1827 : 	break;
-; 1828 : 	}
-; 1829 : 
-; 1830 : 	return false;
-; 1831 : }
+; 1848 : 	}
+; 1849 : 	break;
+; 1850 : 	}
+; 1851 : 
+; 1852 : 	return false;
+; 1853 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+52]
 	mov	DWORD PTR fs:0, ecx
@@ -12770,16 +12902,16 @@ $LN104@IsNotifica@3:
 	ret	4
 $LN30@IsNotifica@3:
 
-; 1666 : 	case NOTIFICATION_PLAYER_DEAL:
-; 1667 : 	{
-; 1668 : 		CvGame& game = GC.getGame();
-; 1669 : 		CvGameDeals* pDeals = game.GetGameDeals();
+; 1688 : 	case NOTIFICATION_PLAYER_DEAL:
+; 1689 : 	{
+; 1690 : 		CvGame& game = GC.getGame();
+; 1691 : 		CvGameDeals* pDeals = game.GetGameDeals();
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?GetGameDeals@CvGame@@QAEPAVCvGameDeals@@XZ ; CvGame::GetGameDeals
 
-; 1670 : 
-; 1671 : 		if(!pDeals->ProposedDealExists(m_ePlayer, (PlayerTypes)(m_aNotifications[iIndex].m_iX)))
+; 1692 : 
+; 1693 : 		if(!pDeals->ProposedDealExists(m_ePlayer, (PlayerTypes)(m_aNotifications[iIndex].m_iX)))
 
 	mov	edx, DWORD PTR [esi+8]
 	mov	ecx, DWORD PTR [esi]
@@ -12799,18 +12931,18 @@ $LN371@IsNotifica@3:
 	pop	esi
 	pop	ebp
 
-; 1672 : 		{
-; 1673 : 			return true;
+; 1694 : 		{
+; 1695 : 			return true;
 
 	mov	al, 1
 	pop	ebx
 
-; 1826 : 	}
-; 1827 : 	break;
-; 1828 : 	}
-; 1829 : 
-; 1830 : 	return false;
-; 1831 : }
+; 1848 : 	}
+; 1849 : 	break;
+; 1850 : 	}
+; 1851 : 
+; 1852 : 	return false;
+; 1853 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+52]
 	mov	DWORD PTR fs:0, ecx
@@ -12818,12 +12950,12 @@ $LN371@IsNotifica@3:
 	ret	4
 $LN33@IsNotifica@3:
 
-; 1654 : 		}
-; 1655 : 	}
-; 1656 : 	break;
-; 1657 : 	case NOTIFICATION_UNIT_PROMOTION:
-; 1658 : 	{
-; 1659 : 		UnitHandle pUnit = GET_PLAYER(m_ePlayer).getUnit(m_aNotifications[iIndex].m_iExtraGameData);
+; 1676 : 		}
+; 1677 : 	}
+; 1678 : 	break;
+; 1679 : 	case NOTIFICATION_UNIT_PROMOTION:
+; 1680 : 	{
+; 1681 : 		UnitHandle pUnit = GET_PLAYER(m_ePlayer).getUnit(m_aNotifications[iIndex].m_iExtraGameData);
 
 	mov	ecx, DWORD PTR [esi]
 	mov	edx, DWORD PTR [edx+76]
@@ -12832,12 +12964,12 @@ $LN33@IsNotifica@3:
 	push	edx
 	call	?getUnit@CvPlayer@@QAEPAVCvUnit@@H@Z	; CvPlayer::getUnit
 	push	eax
-	lea	ecx, DWORD PTR _pUnit$221512[esp+72]
+	lea	ecx, DWORD PTR _pUnit$221996[esp+72]
 	call	??0?$FObjectHandle@VCvUnit@@@@QAE@PAVCvUnit@@@Z ; FObjectHandle<CvUnit>::FObjectHandle<CvUnit>
 
-; 1660 : 		if(!pUnit || !pUnit->isPromotionReady())
+; 1682 : 		if(!pUnit || !pUnit->isPromotionReady())
 
-	mov	esi, DWORD PTR _pUnit$221512[esp+68]
+	mov	esi, DWORD PTR _pUnit$221996[esp+68]
 	mov	DWORD PTR __$EHRec$[esp+76], 0
 	test	esi, esi
 	je	SHORT $LN31@IsNotifica@3
@@ -12846,20 +12978,20 @@ $LN33@IsNotifica@3:
 	test	al, al
 	je	SHORT $LN31@IsNotifica@3
 
-; 1663 : 		}
-; 1664 : 	}
+; 1685 : 		}
+; 1686 : 	}
 
 	mov	ecx, esi
 	mov	DWORD PTR __$EHRec$[esp+76], -1
 	call	?getDestructionNotification@CvUnit@@QAEAAU?$DestructionNotification@V?$FObjectHandle@VCvUnit@@@@@@XZ ; CvUnit::getDestructionNotification
 
-; 1665 : 	break;
+; 1687 : 	break;
 
 	jmp	$LN37@IsNotifica@3
 $LN31@IsNotifica@3:
 
-; 1661 : 		{
-; 1662 : 			return true;
+; 1683 : 		{
+; 1684 : 			return true;
 
 	mov	DWORD PTR __$EHRec$[esp+76], -1
 	test	esi, esi
@@ -12873,12 +13005,12 @@ $LN298@IsNotifica@3:
 	mov	al, 1
 	pop	ebx
 
-; 1826 : 	}
-; 1827 : 	break;
-; 1828 : 	}
-; 1829 : 
-; 1830 : 	return false;
-; 1831 : }
+; 1848 : 	}
+; 1849 : 	break;
+; 1850 : 	}
+; 1851 : 
+; 1852 : 	return false;
+; 1853 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+52]
 	mov	DWORD PTR fs:0, ecx
@@ -12886,12 +13018,12 @@ $LN298@IsNotifica@3:
 	ret	4
 $LN36@IsNotifica@3:
 
-; 1636 : 		}
-; 1637 : 	}
-; 1638 : 	break;
-; 1639 : 	case NOTIFICATION_DIPLO_VOTE:
-; 1640 : 	{
-; 1641 : 		TeamTypes eTeam = GET_PLAYER(m_ePlayer).getTeam();
+; 1658 : 		}
+; 1659 : 	}
+; 1660 : 	break;
+; 1661 : 	case NOTIFICATION_DIPLO_VOTE:
+; 1662 : 	{
+; 1663 : 		TeamTypes eTeam = GET_PLAYER(m_ePlayer).getTeam();
 
 	mov	eax, DWORD PTR [esi]
 	mov	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
@@ -12907,25 +13039,25 @@ $LN278@IsNotifica@3:
 	or	eax, -1
 $LN279@IsNotifica@3:
 
-; 1642 : 
-; 1643 : 		// Vote from this team registered
-; 1644 : 		if(GC.getGame().GetVoteCast(eTeam) != NO_TEAM)
+; 1664 : 
+; 1665 : 		// Vote from this team registered
+; 1666 : 		if(GC.getGame().GetVoteCast(eTeam) != NO_TEAM)
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	eax
 	call	?GetVoteCast@CvGame@@QBE?AW4TeamTypes@@W42@@Z ; CvGame::GetVoteCast
 	cmp	eax, -1
 
-; 1645 : 		{
-; 1646 : 			return true;
+; 1667 : 		{
+; 1668 : 			return true;
 
 	jne	$LN368@IsNotifica@3
 
-; 1647 : 		}
-; 1648 : 
-; 1649 : 		// Votes from ALL teams registered. This is necessary in addition to the above if block, because if this player is the last to vote
-; 1650 : 		// then everything gets reset immediately, and it'll be NO_TEAM by the time this function is tested again
-; 1651 : 		if(GC.getGame().GetNumVictoryVotesExpected() == 0)
+; 1669 : 		}
+; 1670 : 
+; 1671 : 		// Votes from ALL teams registered. This is necessary in addition to the above if block, because if this player is the last to vote
+; 1672 : 		// then everything gets reset immediately, and it'll be NO_TEAM by the time this function is tested again
+; 1673 : 		if(GC.getGame().GetNumVictoryVotesExpected() == 0)
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?GetNumVictoryVotesExpected@CvGame@@QBEHXZ ; CvGame::GetNumVictoryVotesExpected
@@ -12935,18 +13067,18 @@ $LN279@IsNotifica@3:
 	pop	esi
 	pop	ebp
 
-; 1652 : 		{
-; 1653 : 			return true;
+; 1674 : 		{
+; 1675 : 			return true;
 
 	mov	al, 1
 	pop	ebx
 
-; 1826 : 	}
-; 1827 : 	break;
-; 1828 : 	}
-; 1829 : 
-; 1830 : 	return false;
-; 1831 : }
+; 1848 : 	}
+; 1849 : 	break;
+; 1850 : 	}
+; 1851 : 
+; 1852 : 	return false;
+; 1853 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+52]
 	mov	DWORD PTR fs:0, ecx
@@ -12954,19 +13086,19 @@ $LN279@IsNotifica@3:
 	ret	4
 $LN86@IsNotifica@3:
 
-; 1463 : 	switch(m_aNotifications[iIndex].m_eNotificationType)
+; 1485 : 	switch(m_aNotifications[iIndex].m_eNotificationType)
 
 	cmp	eax, 1996573794				; 77014c62H
 	je	SHORT $LN40@IsNotifica@3
 	cmp	eax, 2128612861				; 7ee00dfdH
 
-; 1819 : 		}
-; 1820 : 	}
-; 1821 : 	break;
-; 1822 : 
-; 1823 : 	default:	// don't expire
-; 1824 : 	{
-; 1825 : 		return false;
+; 1841 : 		}
+; 1842 : 	}
+; 1843 : 	break;
+; 1844 : 
+; 1845 : 	default:	// don't expire
+; 1846 : 	{
+; 1847 : 		return false;
 
 	jne	$LN37@IsNotifica@3
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
@@ -12985,12 +13117,12 @@ $LN86@IsNotifica@3:
 	pop	ebp
 	pop	ebx
 
-; 1826 : 	}
-; 1827 : 	break;
-; 1828 : 	}
-; 1829 : 
-; 1830 : 	return false;
-; 1831 : }
+; 1848 : 	}
+; 1849 : 	break;
+; 1850 : 	}
+; 1851 : 
+; 1852 : 	return false;
+; 1853 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+52]
 	mov	DWORD PTR fs:0, ecx
@@ -12998,22 +13130,22 @@ $LN86@IsNotifica@3:
 	ret	4
 $LN40@IsNotifica@3:
 
-; 1591 : 		}
-; 1592 : 	}
-; 1593 : 	break;
-; 1594 : 
-; 1595 : 	case NOTIFICATION_POLICY:
-; 1596 : 	{
-; 1597 : 		if(GET_PLAYER(m_ePlayer).getJONSCulture() < GET_PLAYER(m_ePlayer).getNextPolicyCost() && GET_PLAYER(m_ePlayer).GetNumFreePolicies() == 0 && GET_PLAYER(m_ePlayer).GetNumFreeTenets() == 0)
-; 1598 : 		{
-; 1599 : 			return true;
-; 1600 : 		}
-; 1601 : 	}
-; 1602 : 	break;
-; 1603 : 	case NOTIFICATION_PRODUCTION:
-; 1604 : 	{
-; 1605 : 		//CvCity* pCity = GET_PLAYER(m_ePlayer).getCity(m_aNotifications[iIndex].m_iGameDataIndex);
-; 1606 : 		CvCity* pCity = GC.getMap().plot(m_aNotifications[iIndex].m_iX, m_aNotifications[iIndex].m_iY)->getPlotCity();//GET_PLAYER(m_ePlayer).getCity(notification.m_iGameDataIndex);
+; 1613 : 		}
+; 1614 : 	}
+; 1615 : 	break;
+; 1616 : 
+; 1617 : 	case NOTIFICATION_POLICY:
+; 1618 : 	{
+; 1619 : 		if(GET_PLAYER(m_ePlayer).getJONSCulture() < GET_PLAYER(m_ePlayer).getNextPolicyCost() && GET_PLAYER(m_ePlayer).GetNumFreePolicies() == 0 && GET_PLAYER(m_ePlayer).GetNumFreeTenets() == 0)
+; 1620 : 		{
+; 1621 : 			return true;
+; 1622 : 		}
+; 1623 : 	}
+; 1624 : 	break;
+; 1625 : 	case NOTIFICATION_PRODUCTION:
+; 1626 : 	{
+; 1627 : 		//CvCity* pCity = GET_PLAYER(m_ePlayer).getCity(m_aNotifications[iIndex].m_iGameDataIndex);
+; 1628 : 		CvCity* pCity = GC.getMap().plot(m_aNotifications[iIndex].m_iX, m_aNotifications[iIndex].m_iY)->getPlotCity();//GET_PLAYER(m_ePlayer).getCity(notification.m_iGameDataIndex);
 
 	mov	eax, DWORD PTR [esi+8]
 	mov	ebx, DWORD PTR [eax+edi+68]
@@ -13083,64 +13215,64 @@ $LN236@IsNotifica@3:
 	call	?getPlotCity@CvPlot@@QBEPAVCvCity@@XZ	; CvPlot::getPlotCity
 	mov	esi, eax
 
-; 1607 : 
-; 1608 : 		// if the city no longer exists
-; 1609 : 		if(!pCity)
+; 1629 : 
+; 1630 : 		// if the city no longer exists
+; 1631 : 		if(!pCity)
 
 	test	esi, esi
 
-; 1610 : 		{
-; 1611 : 			return true;
+; 1632 : 		{
+; 1633 : 			return true;
 
 	je	$LN368@IsNotifica@3
 
-; 1612 : 		}
-; 1613 : 
-; 1614 : #ifdef AUI_NOFITICATIONS_FIX_PRODUCTION_NOTIFICATION_REMOVAL_EXTRA_CHECKS
-; 1615 : 		if (pCity->getOwner() != m_ePlayer)
-; 1616 : 		{
-; 1617 : 			return true;
-; 1618 : 		}
-; 1619 : 
-; 1620 : 		if (pCity->isProductionAutomated())
-; 1621 : 		{
-; 1622 : 			return true;
-; 1623 : 		}
-; 1624 : #else
-; 1625 : 		// if the city is a puppet
-; 1626 : 		if(pCity->IsPuppet())
+; 1634 : 		}
+; 1635 : 
+; 1636 : #ifdef AUI_NOFITICATIONS_FIX_PRODUCTION_NOTIFICATION_REMOVAL_EXTRA_CHECKS
+; 1637 : 		if (pCity->getOwner() != m_ePlayer)
+; 1638 : 		{
+; 1639 : 			return true;
+; 1640 : 		}
+; 1641 : 
+; 1642 : 		if (pCity->isProductionAutomated())
+; 1643 : 		{
+; 1644 : 			return true;
+; 1645 : 		}
+; 1646 : #else
+; 1647 : 		// if the city is a puppet
+; 1648 : 		if(pCity->IsPuppet())
 
 	mov	ecx, esi
 	call	?IsPuppet@CvCity@@QBE_NXZ		; CvCity::IsPuppet
 	test	al, al
 
-; 1627 : 		{
-; 1628 : 			return true;
+; 1649 : 		{
+; 1650 : 			return true;
 
 	jne	$LN368@IsNotifica@3
 
-; 1629 : 		}
-; 1630 : #endif
-; 1631 : 
-; 1632 : 		// City has chosen something
-; 1633 : 		if(pCity->getOrderQueueLength() > 0)
+; 1651 : 		}
+; 1652 : #endif
+; 1653 : 
+; 1654 : 		// City has chosen something
+; 1655 : 		if(pCity->getOrderQueueLength() > 0)
 
 	mov	ecx, esi
 	call	?getOrderQueueLength@CvCity@@QAEHXZ	; CvCity::getOrderQueueLength
 	test	eax, eax
 
-; 1634 : 		{
-; 1635 : 			return true;
+; 1656 : 		{
+; 1657 : 			return true;
 
 	jg	$LN368@IsNotifica@3
 $LN37@IsNotifica@3:
 
-; 1826 : 	}
-; 1827 : 	break;
-; 1828 : 	}
-; 1829 : 
-; 1830 : 	return false;
-; 1831 : }
+; 1848 : 	}
+; 1849 : 	break;
+; 1850 : 	}
+; 1851 : 
+; 1852 : 	return false;
+; 1853 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+68]
 	pop	edi
@@ -13155,7 +13287,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?IsNotificationExpired@CvNotifications@@QAE_NH@Z$0:
-	lea	ecx, DWORD PTR _pUnit$221512[ebp]
+	lea	ecx, DWORD PTR _pUnit$221996[ebp]
 	jmp	??1?$FObjectHandle@VCvUnit@@@@QAE@XZ	; FObjectHandle<CvUnit>::~FObjectHandle<CvUnit>
 __ehhandler$?IsNotificationExpired@CvNotifications@@QAE_NH@Z:
 	mov	eax, OFFSET __ehfuncinfo$?IsNotificationExpired@CvNotifications@@QAE_NH@Z
@@ -13167,11 +13299,11 @@ PUBLIC	?erase@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\vector
 ;	COMDAT ?erase@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@QAE?AV?$_Vector_iterator@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@2@V?$_Vector_const_iterator@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@2@0@Z
 _TEXT	SEGMENT
-$T227081 = 8						; size = 1
+$T227570 = 8						; size = 1
 ___$ReturnUdt$ = 8					; size = 4
-__Cat$227114 = 12					; size = 1
-__Cat$227085 = 12					; size = 1
-$T227083 = 12						; size = 1
+__Cat$227603 = 12					; size = 1
+__Cat$227575 = 12					; size = 1
+$T227572 = 12						; size = 1
 __First_arg$ = 12					; size = 4
 __Last_arg$ = 16					; size = 4
 ?erase@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@QAE?AV?$_Vector_iterator@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@2@V?$_Vector_const_iterator@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@2@0@Z PROC ; std::vector<CvNotifications::Notification,std::allocator<CvNotifications::Notification> >::erase, COMDAT
@@ -13210,12 +13342,12 @@ __Last_arg$ = 16					; size = 4
 
 	mov	ecx, DWORD PTR [esi+8]
 	push	edi
-	mov	BYTE PTR $T227081[esp+8], 0
-	mov	edi, DWORD PTR $T227081[esp+8]
+	mov	BYTE PTR $T227570[esp+8], 0
+	mov	edi, DWORD PTR $T227570[esp+8]
 	push	edi
-	mov	edi, DWORD PTR __Cat$227085[esp+12]
+	mov	edi, DWORD PTR __Cat$227575[esp+12]
 	push	edi
-	mov	edi, DWORD PTR $T227083[esp+16]
+	mov	edi, DWORD PTR $T227572[esp+16]
 	push	edi
 	push	eax
 	push	ecx
@@ -13228,7 +13360,7 @@ __Last_arg$ = 16					; size = 4
 
 	mov	ecx, DWORD PTR [esi+8]
 	mov	edi, eax
-	mov	eax, DWORD PTR __Cat$227114[esp+32]
+	mov	eax, DWORD PTR __Cat$227603[esp+32]
 	push	eax
 	push	esi
 	push	ecx
@@ -13262,7 +13394,7 @@ PUBLIC	?_Tidy@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?_Tidy@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@IAEXXZ
 _TEXT	SEGMENT
-__Cat$227142 = -4					; size = 1
+__Cat$227631 = -4					; size = 1
 ?_Tidy@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@IAEXXZ PROC ; std::vector<CvNotifications::Notification,std::allocator<CvNotifications::Notification> >::_Tidy, COMDAT
 ; _this$ = ecx
 
@@ -13286,7 +13418,7 @@ __Cat$227142 = -4					; size = 1
 ; 1130 : 
 ; 1131 : 			_Destroy(_Myfirst, _Mylast);
 
-	mov	ecx, DWORD PTR __Cat$227142[esp+8]
+	mov	ecx, DWORD PTR __Cat$227631[esp+8]
 	mov	edx, DWORD PTR [esi+8]
 	push	ecx
 	push	esi
@@ -13320,10 +13452,10 @@ PUBLIC	??$_Umove@PAUNotification@CvNotifications@@@?$vector@UNotification@CvNoti
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Umove@PAUNotification@CvNotifications@@@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@IAEPAUNotification@CvNotifications@@PAU23@00@Z
 _TEXT	SEGMENT
-$T227200 = -4						; size = 1
+$T227689 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$227203 = 16					; size = 1
+__Cat$227693 = 16					; size = 1
 __Ptr$ = 16						; size = 4
 ??$_Umove@PAUNotification@CvNotifications@@@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@IAEPAUNotification@CvNotifications@@PAU23@00@Z PROC ; std::vector<CvNotifications::Notification,std::allocator<CvNotifications::Notification> >::_Umove<CvNotifications::Notification *>, COMDAT
 ; _this$ = ecx
@@ -13336,9 +13468,9 @@ __Ptr$ = 16						; size = 4
 ; 1147 : 		return (_STDEXT _Unchecked_uninitialized_move(_First, _Last,
 ; 1148 : 			_Ptr, this->_Alval));
 
-	mov	edx, DWORD PTR __Cat$227203[esp]
-	mov	BYTE PTR $T227200[esp+4], 0
-	mov	eax, DWORD PTR $T227200[esp+4]
+	mov	edx, DWORD PTR __Cat$227693[esp]
+	mov	BYTE PTR $T227689[esp+4], 0
+	mov	eax, DWORD PTR $T227689[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Ptr$[esp+4]
 	push	edx
@@ -13566,7 +13698,7 @@ PUBLIC	??1?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvN
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\vector
 ;	COMDAT ??1?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@QAE@XZ
 _TEXT	SEGMENT
-__Cat$227281 = -4					; size = 1
+__Cat$227770 = -4					; size = 1
 ??1?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@QAE@XZ PROC ; std::vector<CvNotifications::Notification,std::allocator<CvNotifications::Notification> >::~vector<CvNotifications::Notification,std::allocator<CvNotifications::Notification> >, COMDAT
 ; _this$ = ecx
 
@@ -13581,7 +13713,7 @@ __Cat$227281 = -4					; size = 1
 	mov	eax, DWORD PTR [esi+4]
 	test	eax, eax
 	je	SHORT $LN12@vector@2
-	mov	ecx, DWORD PTR __Cat$227281[esp+8]
+	mov	ecx, DWORD PTR __Cat$227770[esp+8]
 	mov	edx, DWORD PTR [esi+8]
 	push	ecx
 	push	esi
@@ -13608,7 +13740,7 @@ PUBLIC	?clear@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?clear@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@QAEXXZ
 _TEXT	SEGMENT
-$T227294 = -4						; size = 4
+$T227784 = -4						; size = 4
 ?clear@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@QAEXXZ PROC ; std::vector<CvNotifications::Notification,std::allocator<CvNotifications::Notification> >::clear, COMDAT
 ; _this$ = ecx
 
@@ -13622,7 +13754,7 @@ $T227294 = -4						; size = 4
 	mov	edx, DWORD PTR [ecx+4]
 	push	eax
 	push	edx
-	lea	eax, DWORD PTR $T227294[esp+12]
+	lea	eax, DWORD PTR $T227784[esp+12]
 	push	eax
 	call	?erase@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@QAE?AV?$_Vector_iterator@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@2@V?$_Vector_const_iterator@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@2@0@Z ; std::vector<CvNotifications::Notification,std::allocator<CvNotifications::Notification> >::erase
 
@@ -13679,22 +13811,22 @@ __unwindtable$?_Insert_n@?$vector@UNotification@CvNotifications@@V?$allocator@UN
 xdata$x	ENDS
 ;	COMDAT ?_Insert_n@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@IAEXV?$_Vector_const_iterator@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@2@IABUNotification@CvNotifications@@@Z
 _TEXT	SEGMENT
-__Tmp$222256 = -108					; size = 92
+__Tmp$222740 = -108					; size = 92
 __$EHRec$ = -16						; size = 16
-__Tmp$222246 = 0					; size = 92
-__Ncopied$222233 = 92					; size = 4
+__Tmp$222730 = 0					; size = 92
+__Ncopied$222717 = 92					; size = 4
 _this$ = 96						; size = 4
 tv493 = 100						; size = 4
-__Whereoff$222232 = 100					; size = 4
-__Newvec$222231 = 104					; size = 4
-__Cat$227567 = 116					; size = 1
-__Cat$227534 = 116					; size = 1
-__Cat$227462 = 116					; size = 1
+__Whereoff$222716 = 100					; size = 4
+__Newvec$222715 = 104					; size = 4
+__Cat$228057 = 116					; size = 1
+__Cat$228026 = 116					; size = 1
+__Cat$227954 = 116					; size = 1
 __Where$ = 116						; size = 4
 tv527 = 120						; size = 4
 __Count$ = 120						; size = 4
-$T227530 = 124						; size = 1
-$T227458 = 124						; size = 1
+$T228022 = 124						; size = 1
+$T227950 = 124						; size = 1
 __Val$ = 124						; size = 4
 ?_Insert_n@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@IAEXV?$_Vector_const_iterator@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@2@IABUNotification@CvNotifications@@@Z PROC ; std::vector<CvNotifications::Notification,std::allocator<CvNotifications::Notification> >::_Insert_n, COMDAT
 ; _this$ = ecx
@@ -13815,7 +13947,7 @@ $LN9@Insert_n:
 
 	mov	ecx, DWORD PTR __Where$[ebp]
 	sub	ecx, DWORD PTR [esi+4]
-	mov	DWORD PTR __Newvec$222231[ebp], eax
+	mov	DWORD PTR __Newvec$222715[ebp], eax
 	mov	eax, -1307163959			; b21642c9H
 	imul	ecx
 	add	edx, ecx
@@ -13823,7 +13955,7 @@ $LN9@Insert_n:
 	mov	eax, edx
 	shr	eax, 31					; 0000001fH
 	add	eax, edx
-	mov	DWORD PTR __Whereoff$222232[ebp], eax
+	mov	DWORD PTR __Whereoff$222716[ebp], eax
 
 ; 1175 : 			int _Ncopied = 0;
 ; 1176 : 
@@ -13831,10 +13963,10 @@ $LN9@Insert_n:
 ; 1178 : 			_Ufill(_Newvec + _Whereoff, _Count, _Val);	// add new stuff
 
 	imul	eax, 92					; 0000005cH
-	add	eax, DWORD PTR __Newvec$222231[ebp]
+	add	eax, DWORD PTR __Newvec$222715[ebp]
 	xor	ecx, ecx
 	add	esp, 8
-	mov	DWORD PTR __Ncopied$222233[ebp], ecx
+	mov	DWORD PTR __Ncopied$222717[ebp], ecx
 	mov	DWORD PTR __$EHRec$[ebp+12], ecx
 	mov	ecx, DWORD PTR __Val$[ebp]
 	push	ecx
@@ -13847,42 +13979,42 @@ $LN9@Insert_n:
 ; 1180 : 			_Umove(this->_Myfirst, _VEC_ITER_BASE(_Where),
 ; 1181 : 				_Newvec);	// move prefix
 
-	mov	ecx, DWORD PTR __Cat$227462[ebp]
+	mov	ecx, DWORD PTR __Cat$227954[ebp]
 	mov	eax, DWORD PTR [esi+4]
-	mov	BYTE PTR $T227458[ebp], 0
-	mov	edx, DWORD PTR $T227458[ebp]
+	mov	BYTE PTR $T227950[ebp], 0
+	mov	edx, DWORD PTR $T227950[ebp]
 	push	edx
-	mov	edx, DWORD PTR __Newvec$222231[ebp]
+	mov	edx, DWORD PTR __Newvec$222715[ebp]
 	push	ecx
 	mov	ecx, DWORD PTR __Where$[ebp]
 	push	esi
 	push	edx
 	push	ecx
 	push	eax
-	mov	DWORD PTR __Ncopied$222233[ebp], 1
+	mov	DWORD PTR __Ncopied$222717[ebp], 1
 	call	??$_Uninit_copy@PAUNotification@CvNotifications@@PAU12@V?$allocator@UNotification@CvNotifications@@@std@@@std@@YAPAUNotification@CvNotifications@@PAU12@00AAV?$allocator@UNotification@CvNotifications@@@0@U_Nonscalar_ptr_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z ; std::_Uninit_copy<CvNotifications::Notification *,CvNotifications::Notification *,std::allocator<CvNotifications::Notification> >
 
 ; 1182 : 			++_Ncopied;
 ; 1183 : 			_Umove(_VEC_ITER_BASE(_Where), this->_Mylast,
 ; 1184 : 				_Newvec + (_Whereoff + _Count));	// move suffix
 
-	mov	edx, DWORD PTR __Whereoff$222232[ebp]
+	mov	edx, DWORD PTR __Whereoff$222716[ebp]
 	mov	ecx, DWORD PTR [esi+8]
 	lea	eax, DWORD PTR [edx+edi]
 	imul	eax, 92					; 0000005cH
-	add	eax, DWORD PTR __Newvec$222231[ebp]
+	add	eax, DWORD PTR __Newvec$222715[ebp]
 	add	esp, 24					; 00000018H
-	mov	BYTE PTR $T227530[ebp], 0
-	mov	edx, DWORD PTR $T227530[ebp]
+	mov	BYTE PTR $T228022[ebp], 0
+	mov	edx, DWORD PTR $T228022[ebp]
 	push	edx
-	mov	edx, DWORD PTR __Cat$227534[ebp]
+	mov	edx, DWORD PTR __Cat$228026[ebp]
 	push	edx
 	push	esi
 	push	eax
 	mov	eax, DWORD PTR __Where$[ebp]
 	push	ecx
 	push	eax
-	mov	DWORD PTR __Ncopied$222233[ebp], 2
+	mov	DWORD PTR __Ncopied$222717[ebp], 2
 	call	??$_Uninit_copy@PAUNotification@CvNotifications@@PAU12@V?$allocator@UNotification@CvNotifications@@@std@@@std@@YAPAUNotification@CvNotifications@@PAU12@00AAV?$allocator@UNotification@CvNotifications@@@0@U_Nonscalar_ptr_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z ; std::_Uninit_copy<CvNotifications::Notification *,CvNotifications::Notification *,std::allocator<CvNotifications::Notification> >
 
 ; 1192 : 			_CATCH_END
@@ -13912,7 +14044,7 @@ $LN9@Insert_n:
 ; 1196 : 				{	// destroy and deallocate old array
 ; 1197 : 				_Destroy(_Myfirst, _Mylast);
 
-	mov	edx, DWORD PTR __Cat$227567[ebp]
+	mov	edx, DWORD PTR __Cat$228057[ebp]
 	mov	ecx, DWORD PTR [esi+8]
 	push	edx
 	push	esi
@@ -13936,7 +14068,7 @@ $LN89@Insert_n:
 ; 1204 : 
 ; 1205 : 			_Myend = _Newvec + _Capacity;
 
-	mov	eax, DWORD PTR __Newvec$222231[ebp]
+	mov	eax, DWORD PTR __Newvec$222715[ebp]
 	imul	ebx, 92					; 0000005cH
 
 ; 1206 : 			_Mylast = _Newvec + _Count;
@@ -13956,13 +14088,13 @@ __catch$?_Insert_n@?$vector@UNotification@CvNotifications@@V?$allocator@UNotific
 ; 1185 : 			_CATCH_ALL
 ; 1186 : 			if (1 < _Ncopied)
 
-	mov	ebx, DWORD PTR __Ncopied$222233[ebp]
+	mov	ebx, DWORD PTR __Ncopied$222717[ebp]
 	cmp	ebx, 1
 
 ; 1187 : 				_Destroy(_Newvec, _Newvec + _Whereoff);
 
-	mov	esi, DWORD PTR __Whereoff$222232[ebp]
-	mov	edi, DWORD PTR __Newvec$222231[ebp]
+	mov	esi, DWORD PTR __Whereoff$222716[ebp]
+	mov	edi, DWORD PTR __Newvec$222715[ebp]
 	jle	SHORT $LN7@Insert_n
 	mov	ecx, DWORD PTR _this$[ebp]
 	mov	eax, esi
@@ -14026,7 +14158,7 @@ $LN10@Insert_n:
 
 	mov	ecx, DWORD PTR __Val$[ebp]
 	push	ecx
-	lea	ecx, DWORD PTR __Tmp$222246[ebp]
+	lea	ecx, DWORD PTR __Tmp$222730[ebp]
 	call	??0Notification@CvNotifications@@QAE@ABU01@@Z
 
 ; 1212 : 
@@ -14052,7 +14184,7 @@ $LN10@Insert_n:
 
 	mov	ecx, DWORD PTR [esi+8]
 	sub	ecx, DWORD PTR __Where$[ebp]
-	lea	edx, DWORD PTR __Tmp$222246[ebp]
+	lea	edx, DWORD PTR __Tmp$222730[ebp]
 	push	edx
 	mov	eax, -1307163959			; b21642c9H
 	imul	ecx
@@ -14085,7 +14217,7 @@ $LN10@Insert_n:
 ; 1231 : 				_Tmp);	// insert up to old end
 
 	mov	edx, DWORD PTR __Where$[ebp]
-	lea	ecx, DWORD PTR __Tmp$222246[ebp]
+	lea	ecx, DWORD PTR __Tmp$222730[ebp]
 	push	ecx
 	sub	esi, ebx
 	push	esi
@@ -14096,7 +14228,7 @@ $LN10@Insert_n:
 
 ; 1232 : 			}
 
-	lea	ecx, DWORD PTR __Tmp$222246[ebp]
+	lea	ecx, DWORD PTR __Tmp$222730[ebp]
 
 ; 1233 : 		else
 
@@ -14130,7 +14262,7 @@ $LN3@Insert_n:
 
 	mov	eax, DWORD PTR __Val$[ebp]
 	push	eax
-	lea	ecx, DWORD PTR __Tmp$222256[ebp]
+	lea	ecx, DWORD PTR __Tmp$222740[ebp]
 	call	??0Notification@CvNotifications@@QAE@ABU01@@Z
 
 ; 1236 : 
@@ -14169,7 +14301,7 @@ $LN3@Insert_n:
 ; 1247 : 			std::fill(_VEC_ITER_BASE(_Where), _VEC_ITER_BASE(_Where) + _Count,
 ; 1248 : 				_Tmp);	// insert into hole
 
-	lea	eax, DWORD PTR __Tmp$222256[ebp]
+	lea	eax, DWORD PTR __Tmp$222740[ebp]
 	push	eax
 	mov	eax, DWORD PTR __Where$[ebp]
 	add	edi, eax
@@ -14180,7 +14312,7 @@ $LN3@Insert_n:
 
 ; 1249 : 			}
 
-	lea	ecx, DWORD PTR __Tmp$222256[ebp]
+	lea	ecx, DWORD PTR __Tmp$222740[ebp]
 $LN100@Insert_n:
 	mov	DWORD PTR __$EHRec$[ebp+12], -1
 	call	??1Notification@CvNotifications@@QAE@XZ
@@ -14202,10 +14334,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Insert_n@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@IAEXV?$_Vector_const_iterator@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@2@IABUNotification@CvNotifications@@@Z$4:
-	lea	ecx, DWORD PTR __Tmp$222246[ebp]
+	lea	ecx, DWORD PTR __Tmp$222730[ebp]
 	jmp	??1Notification@CvNotifications@@QAE@XZ
 __unwindfunclet$?_Insert_n@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@IAEXV?$_Vector_const_iterator@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@2@IABUNotification@CvNotifications@@@Z$5:
-	lea	ecx, DWORD PTR __Tmp$222256[ebp]
+	lea	ecx, DWORD PTR __Tmp$222740[ebp]
 	jmp	??1Notification@CvNotifications@@QAE@XZ
 __ehhandler$?_Insert_n@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@IAEXV?$_Vector_const_iterator@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@2@IABUNotification@CvNotifications@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?_Insert_n@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@IAEXV?$_Vector_const_iterator@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@2@IABUNotification@CvNotifications@@@Z
@@ -14217,7 +14349,7 @@ PUBLIC	?Uninit@CvNotifications@@QAEXXZ			; CvNotifications::Uninit
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredll_expansion2\cvnotifications.cpp
 ;	COMDAT ?Uninit@CvNotifications@@QAEXXZ
 _TEXT	SEGMENT
-$T227646 = -4						; size = 4
+$T228137 = -4						; size = 4
 ?Uninit@CvNotifications@@QAEXXZ PROC			; CvNotifications::Uninit, COMDAT
 ; _this$ = ecx
 
@@ -14238,7 +14370,7 @@ $T227646 = -4						; size = 4
 	mov	edx, DWORD PTR [ecx+4]
 	push	eax
 	push	edx
-	lea	eax, DWORD PTR $T227646[esp+16]
+	lea	eax, DWORD PTR $T228137[esp+16]
 	push	eax
 	call	?erase@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@QAE?AV?$_Vector_iterator@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@2@V?$_Vector_const_iterator@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@2@0@Z ; std::vector<CvNotifications::Notification,std::allocator<CvNotifications::Notification> >::erase
 
@@ -14279,7 +14411,7 @@ xdata$x	ENDS
 ;	COMDAT ?resize@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@QAEXIUNotification@CvNotifications@@@Z
 _TEXT	SEGMENT
 __$EHRec$ = -12						; size = 12
-$T227671 = 8						; size = 4
+$T228161 = 8						; size = 4
 __Newsize$ = 8						; size = 4
 __Val$ = 12						; size = 92
 ?resize@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@QAEXIUNotification@CvNotifications@@@Z PROC ; std::vector<CvNotifications::Notification,std::allocator<CvNotifications::Notification> >::resize, COMDAT
@@ -14335,7 +14467,7 @@ $LN48@resize:
 	push	edi
 	add	edx, ebx
 	push	edx
-	lea	eax, DWORD PTR $T227671[esp+28]
+	lea	eax, DWORD PTR $T228161[esp+28]
 	push	eax
 	call	?erase@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@QAE?AV?$_Vector_iterator@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@2@V?$_Vector_const_iterator@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@2@0@Z ; std::vector<CvNotifications::Notification,std::allocator<CvNotifications::Notification> >::erase
 $LN1@resize:
@@ -14387,7 +14519,7 @@ xdata$x	ENDS
 ;	COMDAT ??0CvNotifications@@QAE@XZ
 _TEXT	SEGMENT
 _this$ = -20						; size = 4
-$T227980 = -16						; size = 4
+$T228470 = -16						; size = 4
 __$EHRec$ = -12						; size = 12
 ??0CvNotifications@@QAE@XZ PROC				; CvNotifications::CvNotifications, COMDAT
 ; _this$ = ecx
@@ -14418,7 +14550,7 @@ __$EHRec$ = -12						; size = 12
 	mov	edx, DWORD PTR [ecx+4]
 	push	eax
 	push	edx
-	lea	eax, DWORD PTR $T227980[esp+32]
+	lea	eax, DWORD PTR $T228470[esp+32]
 	push	eax
 	call	?erase@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@QAE?AV?$_Vector_iterator@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@2@V?$_Vector_const_iterator@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@2@0@Z ; std::vector<CvNotifications::Notification,std::allocator<CvNotifications::Notification> >::erase
 
@@ -14463,8 +14595,8 @@ xdata$x	ENDS
 ;	COMDAT ??1CvNotifications@@QAE@XZ
 _TEXT	SEGMENT
 _this$ = -20						; size = 4
-__Cat$228139 = -16					; size = 1
-$T228071 = -16						; size = 4
+__Cat$228628 = -16					; size = 1
+$T228561 = -16						; size = 4
 __$EHRec$ = -12						; size = 12
 ??1CvNotifications@@QAE@XZ PROC				; CvNotifications::~CvNotifications, COMDAT
 ; _this$ = ecx
@@ -14493,7 +14625,7 @@ __$EHRec$ = -12						; size = 12
 	mov	ecx, DWORD PTR [esi+4]
 	push	eax
 	push	ecx
-	lea	eax, DWORD PTR $T228071[esp+40]
+	lea	eax, DWORD PTR $T228561[esp+40]
 	push	eax
 	mov	ecx, esi
 	mov	DWORD PTR __$EHRec$[esp+52], ebp
@@ -14507,7 +14639,7 @@ __$EHRec$ = -12						; size = 12
 	mov	DWORD PTR __$EHRec$[esp+40], -1
 	cmp	eax, ebp
 	je	SHORT $LN31@CvNotifica
-	mov	ecx, DWORD PTR __Cat$228139[esp+32]
+	mov	ecx, DWORD PTR __Cat$228628[esp+32]
 	mov	edx, DWORD PTR [esi+8]
 	push	ecx
 	push	esi
@@ -14559,8 +14691,8 @@ __ehfuncinfo$?resize@?$vector@UNotification@CvNotifications@@V?$allocator@UNotif
 xdata$x	ENDS
 ;	COMDAT ?resize@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@QAEXI@Z
 _TEXT	SEGMENT
-$T228176 = -16						; size = 4
-$T228155 = -16						; size = 4
+$T228666 = -16						; size = 4
+$T228645 = -16						; size = 4
 __$EHRec$ = -12						; size = 12
 __Newsize$ = 8						; size = 4
 ?resize@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@QAEXI@Z PROC ; std::vector<CvNotifications::Notification,std::allocator<CvNotifications::Notification> >::resize, COMDAT
@@ -14582,9 +14714,9 @@ __Newsize$ = 8						; size = 4
 	sub	esp, 92					; 0000005cH
 	mov	esi, esp
 	mov	edi, ecx
-	mov	DWORD PTR $T228155[esp+116], esp
+	mov	DWORD PTR $T228645[esp+116], esp
 	lea	ecx, DWORD PTR [esi+8]
-	mov	DWORD PTR $T228176[esp+116], esi
+	mov	DWORD PTR $T228666[esp+116], esi
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 	lea	ecx, DWORD PTR [esi+36]
 	mov	DWORD PTR __$EHRec$[esp+124], 0
@@ -14607,7 +14739,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?resize@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@QAEXI@Z$1:
-	mov	ecx, DWORD PTR $T228176[ebp]
+	mov	ecx, DWORD PTR $T228666[ebp]
 	add	ecx, 8
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?resize@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@QAEXI@Z:
@@ -14620,8 +14752,8 @@ PUBLIC	?Init@CvNotifications@@QAEXW4PlayerTypes@@@Z	; CvNotifications::Init
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredll_expansion2\cvnotifications.cpp
 ;	COMDAT ?Init@CvNotifications@@QAEXW4PlayerTypes@@@Z
 _TEXT	SEGMENT
-$T228253 = -4						; size = 4
-_ui$220800 = -4						; size = 4
+$T228743 = -4						; size = 4
+_ui$221277 = -4						; size = 4
 tv303 = 8						; size = 4
 _ePlayer$ = 8						; size = 4
 ?Init@CvNotifications@@QAEXW4PlayerTypes@@@Z PROC	; CvNotifications::Init, COMDAT
@@ -14647,7 +14779,7 @@ _ePlayer$ = 8						; size = 4
 	mov	ecx, DWORD PTR [edi+4]
 	push	eax
 	push	ecx
-	lea	eax, DWORD PTR $T228253[esp+28]
+	lea	eax, DWORD PTR $T228743[esp+28]
 	push	eax
 	mov	ecx, edi
 	call	?erase@?$vector@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@std@@QAE?AV?$_Vector_iterator@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@2@V?$_Vector_const_iterator@UNotification@CvNotifications@@V?$allocator@UNotification@CvNotifications@@@std@@@2@0@Z ; std::vector<CvNotifications::Notification,std::allocator<CvNotifications::Notification> >::erase
@@ -14677,7 +14809,7 @@ _ePlayer$ = 8						; size = 4
 	mov	eax, edx
 	shr	eax, 31					; 0000001fH
 	add	eax, edx
-	mov	DWORD PTR _ui$220800[esp+20], esi
+	mov	DWORD PTR _ui$221277[esp+20], esi
 	je	SHORT $LN38@Init
 
 ; 244  : 	Uninit();
@@ -14690,11 +14822,11 @@ $LL39@Init:
 
 	mov	esi, DWORD PTR [ebp+8]
 	add	esi, DWORD PTR tv303[esp+16]
-	push	OFFSET $SG220786
+	push	OFFSET $SG221263
 	lea	ecx, DWORD PTR [esi+8]
 	mov	DWORD PTR [esi], ebx
 	call	DWORD PTR __imp_?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBD@Z
-	push	OFFSET $SG220787
+	push	OFFSET $SG221264
 	lea	ecx, DWORD PTR [esi+36]
 	call	DWORD PTR __imp_?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBD@Z
 	add	DWORD PTR tv303[esp+16], 92		; 0000005cH
@@ -14708,7 +14840,7 @@ $LL39@Init:
 	mov	BYTE PTR [esi+90], 0
 	mov	ecx, DWORD PTR [edi+8]
 	sub	ecx, DWORD PTR [edi+4]
-	mov	esi, DWORD PTR _ui$220800[esp+20]
+	mov	esi, DWORD PTR _ui$221277[esp+20]
 	mov	eax, -1307163959			; b21642c9H
 	imul	ecx
 	add	edx, ecx
@@ -14717,7 +14849,7 @@ $LL39@Init:
 	shr	ecx, 31					; 0000001fH
 	inc	esi
 	add	ecx, edx
-	mov	DWORD PTR _ui$220800[esp+20], esi
+	mov	DWORD PTR _ui$221277[esp+20], esi
 	cmp	esi, ecx
 	jb	SHORT $LL39@Init
 	pop	edi

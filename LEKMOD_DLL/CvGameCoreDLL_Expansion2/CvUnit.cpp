@@ -3712,6 +3712,59 @@ void CvUnit::move(CvPlot& targetPlot, bool bShow)
 	if (pOldPlot && CanEverEmbark() && (targetPlot.isWater() != pOldPlot->isWater() || targetPlot.IsAllowsWalkWater() && pOldPlot->isWater() ||
 		targetPlot.isWater() && pOldPlot->IsAllowsWalkWater()))
 	{
+#ifdef LEKMOD_WATER_IMPROVEMENT_FIX
+
+		if(pOldPlot->isWater())  // moving from water to the land
+		{
+			if(isEmbarked()) // disembark check first
+			{
+				if (m_unitMoveLocs.size())	// If we have some queued moves, execute them now, so that the disembark is done at the proper location visually
+					PublishQueuedVisualizationMoves();
+
+				disembark(pOldPlot);
+				if (targetPlot.IsAllowsWalkWater())
+				{
+					//need to add  something for denmark..
+					finishMoves();
+				}		
+			}
+			if (!targetPlot.IsAllowsWalkWater() && targetPlot.isWater() && pOldPlot->IsAllowsWalkWater())
+				//embark when you came from a water tile you can walk on
+			{
+				if (m_unitMoveLocs.size())	// If we have some queued moves, execute them now, so that the embark is done at the proper location visually
+				PublishQueuedVisualizationMoves();
+
+				embark(pOldPlot);
+			
+				changeMoves(-iMoveCost);
+#ifndef LEK_EMBARK_1_MOVEMENT
+				//EAP: Embark to 1 movement
+				finishMoves();
+#endif
+				bShouldDeductCost = false;
+
+			}
+		}
+		else
+		{
+			if((!isEmbarked() && canEmbarkOnto(*pOldPlot, targetPlot)))  // moving from land to the water
+			{
+				if (m_unitMoveLocs.size())	// If we have some queued moves, execute them now, so that the embark is done at the proper location visually
+					PublishQueuedVisualizationMoves();
+
+				embark(pOldPlot);
+				
+				changeMoves(-iMoveCost);
+#ifndef LEK_EMBARK_1_MOVEMENT
+				//EAP: Embark to 1 movement
+				finishMoves();
+#endif
+				//finishMoves();
+				bShouldDeductCost = false;
+			}
+		}
+	}
+#else
 		if(pOldPlot->isWater() && !pOldPlot->IsAllowsWalkWater())  // moving from water to the land
 		{
 			if(isEmbarked())
@@ -3724,7 +3777,7 @@ void CvUnit::move(CvPlot& targetPlot, bool bShow)
 		}
 		else
 		{
-			if(!isEmbarked() && canEmbarkOnto(*pOldPlot, targetPlot))  // moving from land to the water
+			if((!isEmbarked() && canEmbarkOnto(*pOldPlot, targetPlot)))  // moving from land to the water
 			{
 				if (m_unitMoveLocs.size())	// If we have some queued moves, execute them now, so that the embark is done at the proper location visually
 					PublishQueuedVisualizationMoves();
@@ -3743,7 +3796,7 @@ void CvUnit::move(CvPlot& targetPlot, bool bShow)
 		}
 	}
 #endif
-
+#endif
 #ifdef NQ_FIX_MOVES_THAT_CONSUME_ALL_MOVEMENT
 	if (iMoveCost > getMoves())
 	{

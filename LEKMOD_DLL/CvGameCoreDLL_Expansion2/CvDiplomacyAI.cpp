@@ -19945,6 +19945,8 @@ void CvDiplomacyAI::SetDoFAccepted(PlayerTypes ePlayer, bool bValue)
 	}
 }
 
+
+
 #ifdef AUI_WARNING_FIXES
 int CvDiplomacyAI::GetDoFCounter(PlayerTypes ePlayer) const
 #else

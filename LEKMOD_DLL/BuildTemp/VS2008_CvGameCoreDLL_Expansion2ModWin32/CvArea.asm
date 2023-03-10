@@ -2333,7 +2333,7 @@ EXTRN	?GetIDInfo@CvCity@@QBE?AUIDInfo@@XZ:PROC	; CvCity::GetIDInfo
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?setTargetCity@CvArea@@QAEXW4PlayerTypes@@PAVCvCity@@@Z
 _TEXT	SEGMENT
-$T219071 = -8						; size = 8
+$T219548 = -8						; size = 8
 _eIndex$ = 8						; size = 4
 _pNewValue$ = 12					; size = 4
 ?setTargetCity@CvArea@@QAEXW4PlayerTypes@@PAVCvCity@@@Z PROC ; CvArea::setTargetCity, COMDAT
@@ -2364,7 +2364,7 @@ _pNewValue$ = 12					; size = 4
 ; 539  : 	{
 ; 540  : 		m_aTargetCities[eIndex] = pNewValue->GetIDInfo();
 
-	lea	eax, DWORD PTR $T219071[esp+16]
+	lea	eax, DWORD PTR $T219548[esp+16]
 	push	eax
 	call	?GetIDInfo@CvCity@@QBE?AUIDInfo@@XZ	; CvCity::GetIDInfo
 	mov	ecx, DWORD PTR [eax]
@@ -2706,10 +2706,10 @@ EXTRN	?ReadHashed@CvInfosSerializationHelper@@YAHAAVFDataStream@@PA_N@Z:PROC ; C
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredll_expansion2\cvinfosserializationhelper.h
 ;	COMDAT ??$ReadHashedDataArray@H@CvInfosSerializationHelper@@YAXAAVFDataStream@@PAHH@Z
 _TEXT	SEGMENT
-_bValid$218471 = -13					; size = 1
+_bValid$218948 = -13					; size = 1
 _uiNumEntries$ = -12					; size = 4
-_tValue$218474 = -8					; size = 4
-_tValue$218479 = -4					; size = 4
+_tValue$218951 = -8					; size = 4
+_tValue$218956 = -4					; size = 4
 _kStream$ = 8						; size = 4
 _paArray$ = 12						; size = 4
 _iArraySize$ = 16					; size = 4
@@ -2746,7 +2746,7 @@ $LL7@ReadHashed:
 ; 255  : 		bool bValid;
 ; 256  : 		int iType = ReadHashed(kStream, &bValid);
 
-	lea	ecx, DWORD PTR _bValid$218471[esp+32]
+	lea	ecx, DWORD PTR _bValid$218948[esp+32]
 	push	ecx
 	push	edi
 	call	?ReadHashed@CvInfosSerializationHelper@@YAHAAVFDataStream@@PA_N@Z ; CvInfosSerializationHelper::ReadHashed
@@ -2762,7 +2762,7 @@ $LL7@ReadHashed:
 ; 259  : 			TData tValue;
 ; 260  : 			kStream >> tValue;
 
-	lea	edx, DWORD PTR _tValue$218474[esp+32]
+	lea	edx, DWORD PTR _tValue$218951[esp+32]
 	push	edx
 	mov	ecx, edi
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
@@ -2774,7 +2774,7 @@ $LL7@ReadHashed:
 
 ; 262  : 				paArray[iType] = tValue;
 
-	mov	eax, DWORD PTR _tValue$218474[esp+32]
+	mov	eax, DWORD PTR _tValue$218951[esp+32]
 	mov	ecx, DWORD PTR _paArray$[esp+28]
 	mov	DWORD PTR [ecx+esi*4], eax
 
@@ -2785,14 +2785,14 @@ $LN4@ReadHashed:
 
 ; 264  : 		else if(!bValid)
 
-	cmp	BYTE PTR _bValid$218471[esp+32], 0
+	cmp	BYTE PTR _bValid$218948[esp+32], 0
 	jne	SHORT $LN6@ReadHashed
 
 ; 265  : 		{
 ; 266  : 			TData tValue;
 ; 267  : 			kStream >> tValue;
 
-	lea	edx, DWORD PTR _tValue$218479[esp+32]
+	lea	edx, DWORD PTR _tValue$218956[esp+32]
 	push	edx
 	mov	ecx, edi
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
@@ -3203,7 +3203,7 @@ EXTRN	?atWar@@YA_NW4TeamTypes@@0@Z:PROC		; atWar
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?getEnemyUnits@CvArea@@QBEHW4PlayerTypes@@@Z
 _TEXT	SEGMENT
-$T219292 = 8						; size = 4
+$T219769 = 8						; size = 4
 _eIndex$ = 8						; size = 4
 ?getEnemyUnits@CvArea@@QBEHW4PlayerTypes@@@Z PROC	; CvArea::getEnemyUnits, COMDAT
 ; _this$ = ecx
@@ -3228,10 +3228,10 @@ _eIndex$ = 8						; size = 4
 	mov	edx, DWORD PTR ?sr_TeamTypes@CvPreGame@@3ABV?$vector@W4TeamTypes@@V?$allocator@W4TeamTypes@@@std@@@std@@B ; CvPreGame::sr_TeamTypes
 	mov	edx, DWORD PTR [edx+4]
 	mov	eax, DWORD PTR [edx+eax*4]
-	mov	DWORD PTR $T219292[esp+12], eax
+	mov	DWORD PTR $T219769[esp+12], eax
 	jmp	SHORT $LN14@getEnemyUn
 $LN13@getEnemyUn:
-	mov	DWORD PTR $T219292[esp+12], -1
+	mov	DWORD PTR $T219769[esp+12], -1
 $LN14@getEnemyUn:
 
 ; 381  : 
@@ -3258,7 +3258,7 @@ $LL35@getEnemyUn:
 $LN24@getEnemyUn:
 	or	eax, -1
 $LN25@getEnemyUn:
-	mov	edx, DWORD PTR $T219292[esp+12]
+	mov	edx, DWORD PTR $T219769[esp+12]
 	push	edx
 	push	eax
 	call	?atWar@@YA_NW4TeamTypes@@0@Z		; atWar
@@ -3708,7 +3708,7 @@ EXTRN	??6@YAAAVFDataStream@@AAV0@ABW4PlayerTypes@@@Z:PROC ; operator<<
 _TEXT	SEGMENT
 _uiVersion$ = -4					; size = 4
 tv700 = 8						; size = 4
-$T219650 = 8						; size = 4
+$T220127 = 8						; size = 4
 _kStream$ = 8						; size = 4
 ?write@CvArea@@UBEXAAVFDataStream@@@Z PROC		; CvArea::write, COMDAT
 ; _this$ = ecx
@@ -3977,13 +3977,13 @@ $LL82@write:
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getNumResourceInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumResourceInfos
 	mov	ebp, DWORD PTR [edi+4204]
-	mov	DWORD PTR $T219650[esp+16], eax
-	lea	eax, DWORD PTR $T219650[esp+16]
+	mov	DWORD PTR $T220127[esp+16], eax
+	lea	eax, DWORD PTR $T220127[esp+16]
 	push	eax
 	mov	ecx, esi
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 	xor	ebx, ebx
-	cmp	DWORD PTR $T219650[esp+16], ebx
+	cmp	DWORD PTR $T220127[esp+16], ebx
 	jbe	SHORT $LN88@write
 $LL90@write:
 	push	ebx
@@ -3998,7 +3998,7 @@ $LL90@write:
 $LN89@write:
 	inc	ebx
 	add	ebp, 4
-	cmp	ebx, DWORD PTR $T219650[esp+16]
+	cmp	ebx, DWORD PTR $T220127[esp+16]
 	jb	SHORT $LL90@write
 $LN88@write:
 

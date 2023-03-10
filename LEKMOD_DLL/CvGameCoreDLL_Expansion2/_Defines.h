@@ -881,12 +881,26 @@
 #define LEK_EMBARK_VISIBILITY_FIX
 //EAP: Underground Sect/World Church now apply to all cities -- Kinda a HACK, would have to also update wording xml, and only applies to specific yields (culture/science).
 #define LEK_CULTURE_SCIENCE_SPREAD_BELIEFS_ALL_CITIES
+
+//EAP: Remove majority of first move cases by disallowing actions to be queued during turn transitions
+#define LEKMOD_FIRSTMOVE_FIX
+
+// Disembarkes the worker when it finishes a water walk improvement (polders/pontoon bridges)
+#define LEKMOD_WATER_IMPROVEMENT_FIX
+//added a civ requirement tag to the builds table
+#define LEKMOD_BUILD_CIV_REQ
+
+////////////////////////
+//Benched or not working
+////////////////////////
 //EAP: Embarking now only costs 1 movement
 //#define LEK_EMBARK_1_MOVEMENT
-//EAP: Benched for now: Added a new table for Guruship effect on traits and with specific specialist type. AKA: If city is working any [insert specialist] slot, receive x yield (aka switzerland depending on when you read this)
+//EAP: Benched for now: Added a new table for Guruship effect on traits and with specific specialist type. AKA: If city is working any [insert specialist] slot, receive x yield (aka switzerland depending on when you read this) CURRENTLY NOT WORKING
 //#define LEK_TRAIT_SPECIALIST_YIELD_MAX_ONE
-//EAP: AI will now use workers like workboats
+//EAP: AI will now use workers like workboats CURRENTLY NOT WORKING
 //#define AI_WORKER_EMBARKED_FIX
+//EAP: Add Tourism as an actual yield (for buildings etc) CURRENTLY NOT WORKING
+//#define LEK_YIELD_TOURISM
 
 /// EAP: Some stuff related to the above
 #define RING0_PLOTS											(1)
@@ -926,6 +940,19 @@
 #define CANT_STEAL_CLASSICAL_ERA_TECHS
 // Turn timer roll keybind
 #define TURN_TIMER_RESET_BUTTON
+//Firstmove fix, still allowing 1 move on turn load. Immos version of LEKMOD_FIRSTMOVE_FIX
+//#define GAME_ALLOW_ONLY_ONE_UNIT_MOVE_ON_TURN_LOADING
+
+//Multiplayer voting system, putting the irr,scrap and cc votes into the game with UI.
+/*MP VOTING SYSTEM START*/
+///
+#define MP_PLAYERS_VOTING_SYSTEM
+/// hashed pseudo-enums
+#define NOTIFICATION_MP_IRR_PROPOSAL -300693023
+#define NOTIFICATION_MP_CC_PROPOSAL -832529557
+#define NOTIFICATION_MP_SCRAP_PROPOSAL 1628401511
+#define NOTIFICATION_MP_PROPOSAL_RESULT -1076480691
+/*MP VOTING SYSTEM END*/
 
 
 

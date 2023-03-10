@@ -375,6 +375,24 @@ protected:
 
 	static int lGetNumArchaeologySites(lua_State *L);
 	static int lGetNumHiddenArchaeologySites(lua_State *L);
+#ifdef MP_PLAYERS_VOTING_SYSTEM
+	static int lGetLastProposalID(lua_State* L);
+	static int lGetProposalIDbyUIid(lua_State* L);
+	static int lGetProposalExpirationCounter(lua_State* L);
+	static int lGetProposalType(lua_State* L);
+	static int lGetProposalStatus(lua_State* L);
+	static int lGetProposalOwner(lua_State* L);
+	static int lGetProposalSubject(lua_State* L);
+	static int lGetProposalCompletion(lua_State* L);
+	static int lGetProposalVoterVote(lua_State* L);
+	static int lGetProposalVoterHasVoted(lua_State* L);
+	static int lGetProposalVoterEligibility(lua_State* L);
+	static int lGetYesVotes(lua_State* L);
+	static int lGetNoVotes(lua_State* L);
+	static int lGetMaxVotes(lua_State* L);
+	static int lIsPlayerHasActiveProposal(lua_State* L);
+	static int lIsAnyActiveProposalType(lua_State* L);
+#endif
 };
 
 #endif //CVLUAGAME_H

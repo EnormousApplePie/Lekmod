@@ -32,6 +32,9 @@ class CvGameCulture;
 class CvGameLeagues;
 class CvGameTrade;
 class CvTacticalAnalysisMap;
+#ifdef MP_PLAYERS_VOTING_SYSTEM
+class CvMPVotingSystem;
+#endif
 class CvAdvisorCounsel;
 class CvAdvisorRecommender;
 
@@ -249,6 +252,10 @@ public:
 	unsigned int getInitialTime();
 	void setInitialTime(unsigned int uiNewValue);
 
+#ifdef GAME_ALLOW_ONLY_ONE_UNIT_MOVE_ON_TURN_LOADING
+	bool isMPOrderedMoveOnTurnLoading() const;
+	void setMPOrderedMoveOnTurnLoading(bool bNewValue);
+#endif
 	bool isScoreDirty() const;
 	void setScoreDirty(bool bNewValue);
 
@@ -515,6 +522,9 @@ public:
 	CvGameLeagues* GetGameLeagues();
 	CvGameTrade* GetGameTrade();
 	CvTacticalAnalysisMap* GetTacticalAnalysisMap();
+#ifdef MP_PLAYERS_VOTING_SYSTEM
+	CvMPVotingSystem* GetMPVotingSystem();
+#endif
 
 	int GetAction(int iKeyStroke, bool bAlt, bool bShift, bool bCtrl);
 	int IsAction(int iKeyStroke, bool bAlt, bool bShift, bool bCtrl);
@@ -656,7 +666,9 @@ protected:
 	int m_iMapScoreMod;
 
 	unsigned int m_uiInitialTime;
-
+#ifdef GAME_ALLOW_ONLY_ONE_UNIT_MOVE_ON_TURN_LOADING
+	bool m_bMPOrderedMoveOnTurnLoading;
+#endif
 	bool m_bScoreDirty;
 	bool m_bCircumnavigated;
 	bool m_bDebugMode;
@@ -754,6 +766,9 @@ protected:
 	CvGameLeagues*             m_pGameLeagues;
 	CvGameTrade*               m_pGameTrade;
 	CvTacticalAnalysisMap*     m_pTacticalMap;
+#ifdef MP_PLAYERS_VOTING_SYSTEM
+	CvMPVotingSystem* m_pMPVotingSystem;
+#endif
 
 	CvAdvisorCounsel*          m_pAdvisorCounsel;
 	CvAdvisorRecommender*      m_pAdvisorRecommender;

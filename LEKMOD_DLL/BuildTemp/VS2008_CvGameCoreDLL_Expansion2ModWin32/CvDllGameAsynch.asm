@@ -10,10 +10,10 @@ INCLUDELIB MSVCRT
 INCLUDELIB OLDNAMES
 
 _DATA	SEGMENT
-_CIV5_XP2_DLL_VERSION DD FLAT:$SG217211
+_CIV5_XP2_DLL_VERSION DD FLAT:$SG217688
 _DATA	ENDS
 CONST	SEGMENT
-$SG217211 DB	'1.0.0', 00H
+$SG217688 DB	'1.0.0', 00H
 	ORG $+2
 _guidICvUnknown DD 0d89ba82fH
 	DW	09fa3H
@@ -725,12 +725,12 @@ PUBLIC	?GetInterfaceId@ICvUnknown@@SG?AU_GUID@@XZ	; ICvUnknown::GetInterfaceId
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredllutil\include\cvdllinterfaces.h
 ;	COMDAT ?GetInterfaceId@ICvUnknown@@SG?AU_GUID@@XZ
 _TEXT	SEGMENT
-$T218652 = 8						; size = 4
+$T219129 = 8						; size = 4
 ?GetInterfaceId@ICvUnknown@@SG?AU_GUID@@XZ PROC		; ICvUnknown::GetInterfaceId, COMDAT
 
 ; 306  : 	static GUID DLLCALL GetInterfaceId(){ return guidICvUnknown; }
 
-	mov	eax, DWORD PTR $T218652[esp-4]
+	mov	eax, DWORD PTR $T219129[esp-4]
 	mov	ecx, DWORD PTR _guidICvUnknown
 	mov	edx, DWORD PTR _guidICvUnknown+4
 	mov	DWORD PTR [eax], ecx
@@ -746,12 +746,12 @@ PUBLIC	?GetInterfaceId@ICvGame1@@SG?AU_GUID@@XZ	; ICvGame1::GetInterfaceId
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?GetInterfaceId@ICvGame1@@SG?AU_GUID@@XZ
 _TEXT	SEGMENT
-$T218656 = 8						; size = 4
+$T219133 = 8						; size = 4
 ?GetInterfaceId@ICvGame1@@SG?AU_GUID@@XZ PROC		; ICvGame1::GetInterfaceId, COMDAT
 
 ; 982  : 	static GUID DLLCALL GetInterfaceId() { return guidICvGame1; }
 
-	mov	eax, DWORD PTR $T218656[esp-4]
+	mov	eax, DWORD PTR $T219133[esp-4]
 	mov	ecx, DWORD PTR _guidICvGame1
 	mov	edx, DWORD PTR _guidICvGame1+4
 	mov	DWORD PTR [eax], ecx
@@ -812,8 +812,8 @@ _TEXT	SEGMENT
 _TEXT	ENDS
 ;	COMDAT ?QueryInterface@CvDllGameAsynch@@UAGPAXU_GUID@@@Z
 _TEXT	SEGMENT
-$T218668 = -16						; size = 16
-$T218666 = -16						; size = 16
+$T219145 = -16						; size = 16
+$T219143 = -16						; size = 16
 _this$ = 8						; size = 4
 _guidInterface$ = 12					; size = 16
 ?QueryInterface@CvDllGameAsynch@@UAGPAXU_GUID@@@Z PROC	; CvDllGameAsynch::QueryInterface, COMDAT
@@ -828,15 +828,15 @@ _guidInterface$ = 12					; size = 16
 	mov	ecx, DWORD PTR _guidICvUnknown+4
 	mov	edx, DWORD PTR _guidICvUnknown+8
 	mov	eax, DWORD PTR _guidICvUnknown
-	mov	DWORD PTR $T218666[esp+20], ecx
-	lea	ecx, DWORD PTR $T218666[esp+16]
-	mov	DWORD PTR $T218666[esp+24], edx
-	mov	DWORD PTR $T218666[esp+16], eax
+	mov	DWORD PTR $T219143[esp+20], ecx
+	lea	ecx, DWORD PTR $T219143[esp+16]
+	mov	DWORD PTR $T219143[esp+24], edx
+	mov	DWORD PTR $T219143[esp+16], eax
 	mov	eax, DWORD PTR _guidICvUnknown+12
 	push	ecx
 	lea	edx, DWORD PTR _guidInterface$[esp+16]
 	push	edx
-	mov	DWORD PTR $T218666[esp+36], eax
+	mov	DWORD PTR $T219143[esp+36], eax
 	call	_IsEqualGUID
 	add	esp, 8
 	test	eax, eax
@@ -844,15 +844,15 @@ _guidInterface$ = 12					; size = 16
 	mov	ecx, DWORD PTR _guidICvGame1+4
 	mov	edx, DWORD PTR _guidICvGame1+8
 	mov	eax, DWORD PTR _guidICvGame1
-	mov	DWORD PTR $T218668[esp+20], ecx
-	lea	ecx, DWORD PTR $T218668[esp+16]
-	mov	DWORD PTR $T218668[esp+24], edx
-	mov	DWORD PTR $T218668[esp+16], eax
+	mov	DWORD PTR $T219145[esp+20], ecx
+	lea	ecx, DWORD PTR $T219145[esp+16]
+	mov	DWORD PTR $T219145[esp+24], edx
+	mov	DWORD PTR $T219145[esp+16], eax
 	mov	eax, DWORD PTR _guidICvGame1+12
 	push	ecx
 	lea	edx, DWORD PTR _guidInterface$[esp+16]
 	push	edx
-	mov	DWORD PTR $T218668[esp+36], eax
+	mov	DWORD PTR $T219145[esp+36], eax
 	call	_IsEqualGUID
 	add	esp, 8
 	test	eax, eax

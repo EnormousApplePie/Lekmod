@@ -16,30 +16,30 @@ _BSS	SEGMENT
 ?m_aPlayers@CvPlayerAI@@1PAV1@A DD 01H DUP (?)		; CvPlayerAI::m_aPlayers
 _BSS	ENDS
 CONST	SEGMENT
-$SG225762 DB	'PlayerPreAIUnitUpdate', 00H
+$SG226239 DB	'PlayerPreAIUnitUpdate', 00H
 	ORG $+2
-$SG225827 DB	'UNIT_ENGINEER', 00H
+$SG226304 DB	'UNIT_ENGINEER', 00H
 	ORG $+2
-$SG225832 DB	'AIGRANDSTRATEGY_CONQUEST', 00H
+$SG226309 DB	'AIGRANDSTRATEGY_CONQUEST', 00H
 	ORG $+3
-$SG225834 DB	'UNIT_GREAT_GENERAL', 00H
+$SG226311 DB	'UNIT_GREAT_GENERAL', 00H
 	ORG $+1
-$SG225838 DB	'AIGRANDSTRATEGY_CULTURE', 00H
-$SG225840 DB	'UNIT_ARTIST', 00H
-$SG225844 DB	'AIGRANDSTRATEGY_UNITED_NATIONS', 00H
+$SG226315 DB	'AIGRANDSTRATEGY_CULTURE', 00H
+$SG226317 DB	'UNIT_ARTIST', 00H
+$SG226321 DB	'AIGRANDSTRATEGY_UNITED_NATIONS', 00H
 	ORG $+1
-$SG225846 DB	'UNIT_MERCHANT', 00H
+$SG226323 DB	'UNIT_MERCHANT', 00H
 	ORG $+2
-$SG225850 DB	'AIGRANDSTRATEGY_SPACESHIP', 00H
+$SG226327 DB	'AIGRANDSTRATEGY_SPACESHIP', 00H
 	ORG $+2
-$SG225852 DB	'UNIT_SCIENTIST', 00H
+$SG226329 DB	'UNIT_SCIENTIST', 00H
 	ORG $+1
-$SG226572 DB	'SPECIALUNIT_PEOPLE', 00H
+$SG227049 DB	'SPECIALUNIT_PEOPLE', 00H
 	ORG $+1
-$SG226602 DB	'MILITARYAISTRATEGY_WAR_MOBILIZATION', 00H
-$SG226614 DB	'MILITARYAISTRATEGY_AT_WAR', 00H
+$SG227079 DB	'MILITARYAISTRATEGY_WAR_MOBILIZATION', 00H
+$SG227091 DB	'MILITARYAISTRATEGY_AT_WAR', 00H
 	ORG $+2
-$SG226695 DB	'SPECIALUNIT_PEOPLE', 00H
+$SG227172 DB	'SPECIALUNIT_PEOPLE', 00H
 CONST	ENDS
 ;	COMDAT ?NO_TURN@CvMinorCivQuest@@2HB
 CONST	SEGMENT
@@ -978,7 +978,7 @@ $LN2@PreparingF:
 ; 903  : 	MilitaryAIStrategyTypes eWarMobilizationStrategy = (MilitaryAIStrategyTypes)GC.getInfoTypeForString("MILITARYAISTRATEGY_WAR_MOBILIZATION");
 
 	push	0
-	push	OFFSET $SG226602
+	push	OFFSET $SG227079
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 
@@ -1091,7 +1091,7 @@ $LN4@IsSafe:
 ; 933  : 		MilitaryAIStrategyTypes eAtWarStrategy = (MilitaryAIStrategyTypes)GC.getInfoTypeForString("MILITARYAISTRATEGY_AT_WAR");
 
 	push	0
-	push	OFFSET $SG226614
+	push	OFFSET $SG227091
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 
@@ -1606,8 +1606,8 @@ __ehfuncinfo$?_Xlen@?$vector@UCityAndProduction@@V?$allocator@UCityAndProduction
 xdata$x	ENDS
 ;	COMDAT ?_Xlen@?$vector@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@KAXXZ
 _TEXT	SEGMENT
-$T229569 = -80						; size = 28
-$T229568 = -52						; size = 40
+$T230046 = -80						; size = 28
+$T230045 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ?_Xlen@?$vector@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@KAXXZ PROC ; std::vector<CityAndProduction,std::allocator<CityAndProduction> >::_Xlen, COMDAT
 
@@ -1623,22 +1623,22 @@ __$EHRec$ = -12						; size = 12
 ; 1260 : 		_THROW(length_error, "vector<T> too long");
 
 	push	OFFSET ??_C@_0BD@OLBABOEK@vector?$DMT?$DO?5too?5long?$AA@
-	lea	ecx, DWORD PTR $T229569[esp+84]
+	lea	ecx, DWORD PTR $T230046[esp+84]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T229568[esp+80]
+	lea	ecx, DWORD PTR $T230045[esp+80]
 	mov	DWORD PTR __$EHRec$[esp+88], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T229569[esp+80]
+	lea	eax, DWORD PTR $T230046[esp+80]
 	push	eax
-	lea	ecx, DWORD PTR $T229568[esp+96]
+	lea	ecx, DWORD PTR $T230045[esp+96]
 	mov	BYTE PTR __$EHRec$[esp+92], 1
-	mov	DWORD PTR $T229568[esp+84], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T230045[esp+84], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVlength_error@std@@
-	lea	ecx, DWORD PTR $T229568[esp+84]
+	lea	ecx, DWORD PTR $T230045[esp+84]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+96], 0
-	mov	DWORD PTR $T229568[esp+88], OFFSET ??_7length_error@std@@6B@
+	mov	DWORD PTR $T230045[esp+88], OFFSET ??_7length_error@std@@6B@
 	call	__CxxThrowException@8
 $LN13@Xlen:
 $LN12@Xlen:
@@ -1647,10 +1647,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Xlen@?$vector@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@KAXXZ$0:
-	lea	ecx, DWORD PTR $T229569[ebp]
+	lea	ecx, DWORD PTR $T230046[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Xlen@?$vector@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@KAXXZ$2:
-	lea	ecx, DWORD PTR $T229568[ebp]
+	lea	ecx, DWORD PTR $T230045[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Xlen@?$vector@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@KAXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?_Xlen@?$vector@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@KAXXZ
@@ -2021,8 +2021,8 @@ __TI2?AVbad_alloc@std@@ DD 00H
 xdata$x	ENDS
 ;	COMDAT ??$_Allocate@UCityAndProduction@@@std@@YAPAUCityAndProduction@@IPAU1@@Z
 _TEXT	SEGMENT
-$T229661 = -12						; size = 12
-$T229665 = 8						; size = 4
+$T230138 = -12						; size = 12
+$T230142 = 8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ??$_Allocate@UCityAndProduction@@@std@@YAPAUCityAndProduction@@IPAU1@@Z PROC ; std::_Allocate<CityAndProduction>, COMDAT
@@ -2064,15 +2064,15 @@ $LN3@Allocate:
 
 ; 40   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T229665[esp+8]
+	lea	eax, DWORD PTR $T230142[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T229661[esp+16]
-	mov	DWORD PTR $T229665[esp+12], 0
+	lea	ecx, DWORD PTR $T230138[esp+16]
+	mov	DWORD PTR $T230142[esp+12], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T229661[esp+16]
+	lea	ecx, DWORD PTR $T230138[esp+16]
 	push	ecx
-	mov	DWORD PTR $T229661[esp+20], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T230138[esp+20], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN9@Allocate:
 $LN8@Allocate:
@@ -4397,8 +4397,8 @@ PUBLIC	??$_Allocate@U_Node@?$_Tree_nod@V?$_Tset_traits@PAVFAutoVariableBase@@U?$
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xmemory
 ;	COMDAT ??$_Allocate@U_Node@?$_Tree_nod@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@std@@@std@@YAPAU_Node@?$_Tree_nod@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@0@IPAU120@@Z
 _TEXT	SEGMENT
-$T230051 = -12						; size = 12
-$T230055 = 8						; size = 4
+$T230528 = -12						; size = 12
+$T230532 = 8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ??$_Allocate@U_Node@?$_Tree_nod@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@std@@@std@@YAPAU_Node@?$_Tree_nod@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@0@IPAU120@@Z PROC ; std::_Allocate<std::_Tree_nod<std::_Tset_traits<FAutoVariableBase *,std::less<FAutoVariableBase *>,std::allocator<FAutoVariableBase *>,0> >::_Node>, COMDAT
@@ -4442,15 +4442,15 @@ $LN3@Allocate@2:
 
 ; 40   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T230055[esp+8]
+	lea	eax, DWORD PTR $T230532[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T230051[esp+16]
-	mov	DWORD PTR $T230055[esp+12], 0
+	lea	ecx, DWORD PTR $T230528[esp+16]
+	mov	DWORD PTR $T230532[esp+12], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T230051[esp+16]
+	lea	ecx, DWORD PTR $T230528[esp+16]
 	push	ecx
-	mov	DWORD PTR $T230051[esp+20], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T230528[esp+20], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN9@Allocate@2:
 $LN8@Allocate@2:
@@ -5065,7 +5065,7 @@ $LL14@AI_chooseF:
 ; 428  : 			eDesiredGreatPerson = (UnitTypes)GC.getInfoTypeForString("UNIT_ENGINEER");
 
 	push	0
-	push	OFFSET $SG225827
+	push	OFFSET $SG226304
 
 ; 429  : 		}
 ; 430  : 		else
@@ -5085,7 +5085,7 @@ $LN12@AI_chooseF:
 ; 434  : 			if(eVictoryStrategy == (AIGrandStrategyTypes) GC.getInfoTypeForString("AIGRANDSTRATEGY_CONQUEST"))
 
 	push	0
-	push	OFFSET $SG225832
+	push	OFFSET $SG226309
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	esi, eax
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
@@ -5097,14 +5097,14 @@ $LN12@AI_chooseF:
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	cmp	esi, eax
 	jne	SHORT $LN10@AI_chooseF
-	push	OFFSET $SG225834
+	push	OFFSET $SG226311
 	jmp	SHORT $LN25@AI_chooseF
 $LN10@AI_chooseF:
 
 ; 437  : 			}
 ; 438  : 			else if(eVictoryStrategy == (AIGrandStrategyTypes) GC.getInfoTypeForString("AIGRANDSTRATEGY_CULTURE"))
 
-	push	OFFSET $SG225838
+	push	OFFSET $SG226315
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 
 ; 439  : 			{
@@ -5114,14 +5114,14 @@ $LN10@AI_chooseF:
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	cmp	esi, eax
 	jne	SHORT $LN8@AI_chooseF
-	push	OFFSET $SG225840
+	push	OFFSET $SG226317
 	jmp	SHORT $LN25@AI_chooseF
 $LN8@AI_chooseF:
 
 ; 441  : 			}
 ; 442  : 			else if(eVictoryStrategy == (AIGrandStrategyTypes) GC.getInfoTypeForString("AIGRANDSTRATEGY_UNITED_NATIONS"))
 
-	push	OFFSET $SG225844
+	push	OFFSET $SG226321
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 
 ; 443  : 			{
@@ -5131,14 +5131,14 @@ $LN8@AI_chooseF:
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	cmp	esi, eax
 	jne	SHORT $LN6@AI_chooseF
-	push	OFFSET $SG225846
+	push	OFFSET $SG226323
 	jmp	SHORT $LN25@AI_chooseF
 $LN6@AI_chooseF:
 
 ; 445  : 			}
 ; 446  : 			else if(eVictoryStrategy == (AIGrandStrategyTypes) GC.getInfoTypeForString("AIGRANDSTRATEGY_SPACESHIP"))
 
-	push	OFFSET $SG225850
+	push	OFFSET $SG226327
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	cmp	esi, eax
 	jne	SHORT $LN22@AI_chooseF
@@ -5147,7 +5147,7 @@ $LN6@AI_chooseF:
 ; 448  : 				eDesiredGreatPerson = (UnitTypes)GC.getInfoTypeForString("UNIT_SCIENTIST");
 
 	push	0
-	push	OFFSET $SG225852
+	push	OFFSET $SG226329
 $LN24@AI_chooseF:
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 $LN25@AI_chooseF:
@@ -5638,7 +5638,7 @@ EXTRN	?GetWonderProductionAI@CvPlayer@@QBEPAVCvWonderProductionAI@@XZ:PROC ; CvP
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?GetDirectiveEngineer@CvPlayerAI@@QAE?AW4GreatPeopleDirectiveTypes@@PAVCvUnit@@@Z
 _TEXT	SEGMENT
-_iNextWonderWeight$226659 = -4				; size = 4
+_iNextWonderWeight$227136 = -4				; size = 4
 _pGreatEngineer$ = 8					; size = 4
 ?GetDirectiveEngineer@CvPlayerAI@@QAE?AW4GreatPeopleDirectiveTypes@@PAVCvUnit@@@Z PROC ; CvPlayerAI::GetDirectiveEngineer, COMDAT
 ; _this$ = ecx
@@ -5657,7 +5657,7 @@ _pGreatEngineer$ = 8					; size = 4
 ; 1075 : 		int iNextWonderWeight;
 ; 1076 : 		BuildingTypes eNextWonderDesired = GetWonderProductionAI()->ChooseWonder(false /*bUseAsyncRandom*/, false /*bAdjustForOtherPlayers*/, iNextWonderWeight);
 
-	lea	eax, DWORD PTR _iNextWonderWeight$226659[esp+12]
+	lea	eax, DWORD PTR _iNextWonderWeight$227136[esp+12]
 	push	eax
 	push	0
 	push	0
@@ -6528,9 +6528,9 @@ EXTRN	?nothrow@std@@3Unothrow_t@1@B:BYTE		; std::nothrow
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ??$get_temporary_buffer@UCityAndProduction@@@std@@YA?AU?$pair@PAUCityAndProduction@@H@0@H@Z
 _TEXT	SEGMENT
-$T230632 = -12						; size = 12
+$T231109 = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
-$T230636 = 12						; size = 4
+$T231113 = 12						; size = 4
 __Count$ = 12						; size = 4
 ??$get_temporary_buffer@UCityAndProduction@@@std@@YA?AU?$pair@PAUCityAndProduction@@H@0@H@Z PROC ; std::get_temporary_buffer<CityAndProduction>, COMDAT
 
@@ -6606,15 +6606,15 @@ $LN7@get_tempor:
 
 ; 25   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T230636[esp+12]
+	lea	eax, DWORD PTR $T231113[esp+12]
 	push	eax
-	lea	ecx, DWORD PTR $T230632[esp+20]
-	mov	DWORD PTR $T230636[esp+16], 0
+	lea	ecx, DWORD PTR $T231109[esp+20]
+	mov	DWORD PTR $T231113[esp+16], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T230632[esp+20]
+	lea	ecx, DWORD PTR $T231109[esp+20]
 	push	ecx
-	mov	DWORD PTR $T230632[esp+24], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T231109[esp+24], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN18@get_tempor:
 $LN17@get_tempor:
@@ -6861,7 +6861,7 @@ PUBLIC	??$_Copy_opt@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAn
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xutility
 ;	COMDAT ??$_Copy_opt@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@V?$_Temp_iterator@UCityAndProduction@@@2@Uforward_iterator_tag@2@@std@@YA?AV?$_Temp_iterator@UCityAndProduction@@@0@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@0@0V10@Uforward_iterator_tag@0@U_Nonscalar_ptr_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
-$T230757 = -4						; size = 4
+$T231234 = -4						; size = 4
 ___$ReturnUdt$ = 8					; size = 4
 __First$ = 12						; size = 4
 __Last$ = 16						; size = 4
@@ -6882,7 +6882,7 @@ ___formal$ = 48						; size = 1
 	push	esi
 	push	edi
 	xor	edi, edi
-	mov	DWORD PTR $T230757[esp+12], edi
+	mov	DWORD PTR $T231234[esp+12], edi
 	cmp	ecx, DWORD PTR __Last$[esp+8]
 	je	SHORT $LN1@Copy_opt
 	lea	esi, DWORD PTR [edi+8]
@@ -8758,8 +8758,8 @@ tv438 = -21						; size = 1
 tv444 = -20						; size = 1
 tv450 = -19						; size = 1
 tv456 = -18						; size = 1
-_bResult$225761 = -17					; size = 1
-_args$225760 = -16					; size = 4
+_bResult$226238 = -17					; size = 1
+_args$226237 = -16					; size = 4
 __$EHRec$ = -12						; size = 12
 ?AI_unitUpdate@CvPlayerAI@@UAEXXZ PROC			; CvPlayerAI::AI_unitUpdate, COMDAT
 ; _this$ = ecx
@@ -8894,13 +8894,13 @@ $LN32@AI_unitUpd:
 ; 234  : 	{
 ; 235  : 		CvLuaArgsHandle args;
 
-	lea	ecx, DWORD PTR _args$225760[esp+36]
+	lea	ecx, DWORD PTR _args$226237[esp+36]
 	call	??0CvLuaArgsHandle@@QAE@XZ		; CvLuaArgsHandle::CvLuaArgsHandle
 
 ; 236  : 		args->Push(GetID());
 
 	mov	eax, DWORD PTR [edi+44]
-	mov	ecx, DWORD PTR _args$225760[esp+36]
+	mov	ecx, DWORD PTR _args$226237[esp+36]
 	mov	edx, DWORD PTR [ecx]
 	push	eax
 	mov	eax, DWORD PTR [edx+8]
@@ -8911,18 +8911,18 @@ $LN32@AI_unitUpd:
 ; 238  : 		bool bResult;
 ; 239  : 		LuaSupport::CallHook(pkScriptSystem, "PlayerPreAIUnitUpdate", args.get(), bResult);
 
-	mov	edx, DWORD PTR _args$225760[esp+36]
-	lea	ecx, DWORD PTR _bResult$225761[esp+36]
+	mov	edx, DWORD PTR _args$226237[esp+36]
+	lea	ecx, DWORD PTR _bResult$226238[esp+36]
 	push	ecx
 	push	edx
-	push	OFFSET $SG225762
+	push	OFFSET $SG226239
 	push	esi
 	call	?CallHook@LuaSupport@@YA_NPAVICvEngineScriptSystem1@@PBDPAVICvEngineScriptSystemArgs1@@AA_N@Z ; LuaSupport::CallHook
 	add	esp, 16					; 00000010H
 
 ; 240  : 	}
 
-	lea	ecx, DWORD PTR _args$225760[esp+36]
+	lea	ecx, DWORD PTR _args$226237[esp+36]
 	mov	DWORD PTR __$EHRec$[esp+44], -1
 	call	??1CvLuaArgsHandle@@QAE@XZ		; CvLuaArgsHandle::~CvLuaArgsHandle
 $LN5@AI_unitUpd:
@@ -9109,7 +9109,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?AI_unitUpdate@CvPlayerAI@@UAEXXZ$0:
-	lea	ecx, DWORD PTR _args$225760[ebp]
+	lea	ecx, DWORD PTR _args$226237[ebp]
 	jmp	??1CvLuaArgsHandle@@QAE@XZ		; CvLuaArgsHandle::~CvLuaArgsHandle
 __ehhandler$?AI_unitUpdate@CvPlayerAI@@UAEXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?AI_unitUpdate@CvPlayerAI@@UAEXXZ
@@ -10251,7 +10251,7 @@ _pGreatGeneral$ = 8					; size = 4
 
 	push	0
 	mov	edi, ecx
-	push	OFFSET $SG226695
+	push	OFFSET $SG227172
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	ebp, eax
@@ -10551,16 +10551,16 @@ __ehfuncinfo$?FindBestMerchantTargetPlot@CvPlayerAI@@QAEPAVCvPlot@@PAVCvUnit@@_N
 xdata$x	ENDS
 ;	COMDAT ?FindBestMerchantTargetPlot@CvPlayerAI@@QAEPAVCvPlot@@PAVCvUnit@@_N@Z
 _TEXT	SEGMENT
-_bNotAtWar$226757 = -49					; size = 1
-_iI$226746 = -48					; size = 4
+_bNotAtWar$227234 = -49					; size = 1
+_iI$227223 = -48					; size = 4
 _iBestTurnsToReach$ = -44				; size = 4
 tv530 = -40						; size = 4
 _pBestTargetPlot$ = -36					; size = 4
 tv503 = -32						; size = 4
 tv501 = -32						; size = 4
-$T232615 = -32						; size = 4
+$T233092 = -32						; size = 4
 _kTeam$ = -28						; size = 4
-_pCSPlot$226753 = -24					; size = 4
+_pCSPlot$227230 = -24					; size = 4
 _pMerchant$ = -20					; size = 8
 __$EHRec$ = -12						; size = 12
 _pGreatMerchant$ = 8					; size = 4
@@ -10647,7 +10647,7 @@ $LN29@FindBestMe:
 ; 1306 : 	// Loop through each city state
 ; 1307 : 	for(int iI = 0; iI < MAX_PLAYERS; iI++)
 
-	mov	DWORD PTR _iI$226746[esp+68], ebp
+	mov	DWORD PTR _iI$227223[esp+68], ebp
 	mov	DWORD PTR _kTeam$[esp+68], eax
 	mov	DWORD PTR tv530[esp+68], ebp
 	npad	2
@@ -10688,7 +10688,7 @@ $LL13@FindBestMe:
 	mov	ecx, esi
 	call	?getStartingPlot@CvPlayer@@QBEPAVCvPlot@@XZ ; CvPlayer::getStartingPlot
 	mov	ebx, eax
-	mov	DWORD PTR _pCSPlot$226753[esp+68], ebx
+	mov	DWORD PTR _pCSPlot$227230[esp+68], ebx
 
 ; 1329 : 		if (!pCSPlot)
 
@@ -10754,7 +10754,7 @@ $LN50@FindBestMe:
 	test	al, al
 	push	esi
 	mov	ecx, edi
-	sete	BYTE PTR _bNotAtWar$226757[esp+72]
+	sete	BYTE PTR _bNotAtWar$227234[esp+72]
 	call	?GetDiplomacyAI@CvPlayer@@QBEPAVCvDiplomacyAI@@XZ ; CvPlayer::GetDiplomacyAI
 	mov	ecx, eax
 	call	?GetWarGoal@CvDiplomacyAI@@QBE?AW4WarGoalTypes@@W4PlayerTypes@@@Z ; CvDiplomacyAI::GetWarGoal
@@ -10766,7 +10766,7 @@ $LN50@FindBestMe:
 
 	test	bl, bl
 	je	$LN12@FindBestMe
-	cmp	BYTE PTR _bNotAtWar$226757[esp+68], 0
+	cmp	BYTE PTR _bNotAtWar$227234[esp+68], 0
 	je	$LN12@FindBestMe
 	test	al, al
 	je	$LN12@FindBestMe
@@ -10781,7 +10781,7 @@ $LL6@FindBestMe:
 ; 1348 : 			{
 ; 1349 : 				CvPlot* pAdjacentPlot = plotDirection(pCSPlot->getX(), pCSPlot->getY(), ((DirectionTypes)jJ));
 
-	mov	eax, DWORD PTR _pCSPlot$226753[esp+68]
+	mov	eax, DWORD PTR _pCSPlot$227230[esp+68]
 	movsx	ecx, WORD PTR [eax+2]
 	movsx	edx, WORD PTR [eax]
 	push	ebp
@@ -10802,7 +10802,7 @@ $LL6@FindBestMe:
 ; 1354 : 					bool bRightOwner = (pAdjacentPlot->getOwner() == (PlayerTypes)iI);
 
 	movsx	eax, BYTE PTR [esi+4]
-	cmp	eax, DWORD PTR _iI$226746[esp+68]
+	cmp	eax, DWORD PTR _iI$227223[esp+68]
 
 ; 1355 : 					bool bIsRevealed = pAdjacentPlot->isRevealed(getTeam());
 
@@ -10842,7 +10842,7 @@ $LL6@FindBestMe:
 	sub	esp, 8
 	lea	eax, DWORD PTR _pMerchant$[esp+92]
 	mov	ecx, esp
-	mov	DWORD PTR $T232615[esp+92], esp
+	mov	DWORD PTR $T233092[esp+92], esp
 	push	eax
 	call	??0?$FObjectHandle@VCvUnit@@@@QAE@ABV0@@Z ; FObjectHandle<CvUnit>::FObjectHandle<CvUnit>
 	call	?TurnsToReachTarget@@YAHV?$FObjectHandle@VCvUnit@@@@PAVCvPlot@@_N22@Z ; TurnsToReachTarget
@@ -10880,7 +10880,7 @@ $LN12@FindBestMe:
 ; 1306 : 	// Loop through each city state
 ; 1307 : 	for(int iI = 0; iI < MAX_PLAYERS; iI++)
 
-	inc	DWORD PTR _iI$226746[esp+68]
+	inc	DWORD PTR _iI$227223[esp+68]
 	add	ebp, 63236				; 0000f704H
 	cmp	ebp, 4047104				; 003dc100H
 	mov	DWORD PTR tv530[esp+68], ebp
@@ -10944,16 +10944,16 @@ xdata$x	ENDS
 ;	COMDAT ?FindBestMusicianTargetPlot@CvPlayerAI@@QAEPAVCvPlot@@PAVCvUnit@@_N@Z
 _TEXT	SEGMENT
 _iBestTurnsToReach$ = -52				; size = 4
-_iJ$226809 = -48					; size = 4
-_jJ$226795 = -48					; size = 4
+_iJ$227286 = -48					; size = 4
+_jJ$227272 = -48					; size = 4
 _eTargetPlayer$ = -44					; size = 4
 _this$ = -40						; size = 4
 _pBestTargetPlot$ = -36					; size = 4
 tv503 = -32						; size = 4
-$T232758 = -32						; size = 4
+$T233235 = -32						; size = 4
 _iLoop$ = -28						; size = 4
 tv501 = -24						; size = 4
-$T232759 = -24						; size = 4
+$T233236 = -24						; size = 4
 _kTargetPlayer$ = -24					; size = 4
 _pMusician$ = -20					; size = 8
 __$EHRec$ = -12						; size = 12
@@ -11072,7 +11072,7 @@ $LN16@FindBestMu:
 ; 1402 : 		for(int jJ = 0; jJ < NUM_DIRECTION_TYPES; jJ++)
 
 	xor	edx, edx
-	mov	DWORD PTR _jJ$226795[esp+68], edx
+	mov	DWORD PTR _jJ$227272[esp+68], edx
 $LN13@FindBestMu:
 
 ; 1403 : 		{
@@ -11137,7 +11137,7 @@ $LN13@FindBestMu:
 	sub	esp, 8
 	mov	eax, esp
 	mov	ecx, edi
-	mov	DWORD PTR $T232758[esp+92], esp
+	mov	DWORD PTR $T233235[esp+92], esp
 	mov	DWORD PTR [eax], edi
 	mov	BYTE PTR [eax+4], 0
 	call	?getDestructionNotification@CvUnit@@QAEAAU?$DestructionNotification@V?$FObjectHandle@VCvUnit@@@@@@XZ ; CvUnit::getDestructionNotification
@@ -11158,10 +11158,10 @@ $LN13@FindBestMu:
 
 	mov	DWORD PTR _pBestTargetCity$[esp+64], ebp
 $LN12@FindBestMu:
-	mov	edx, DWORD PTR _jJ$226795[esp+68]
+	mov	edx, DWORD PTR _jJ$227272[esp+68]
 	inc	edx
 	cmp	edx, 6
-	mov	DWORD PTR _jJ$226795[esp+68], edx
+	mov	DWORD PTR _jJ$227272[esp+68], edx
 	jl	$LN13@FindBestMu
 	mov	ecx, DWORD PTR _kTargetPlayer$[esp+68]
 	push	0
@@ -11192,7 +11192,7 @@ $LN12@FindBestMu:
 
 	xor	edx, edx
 	mov	ebp, 2147483647				; 7fffffffH
-	mov	DWORD PTR _iJ$226809[esp+68], edx
+	mov	DWORD PTR _iJ$227286[esp+68], edx
 	jmp	SHORT $LN6@FindBestMu
 	npad	4
 $LL89@FindBestMu:
@@ -11261,7 +11261,7 @@ $LN6@FindBestMu:
 	sub	esp, 8
 	mov	eax, esp
 	mov	ecx, edi
-	mov	DWORD PTR $T232759[esp+92], esp
+	mov	DWORD PTR $T233236[esp+92], esp
 	mov	DWORD PTR [eax], edi
 	mov	BYTE PTR [eax+4], 0
 	call	?getDestructionNotification@CvUnit@@QAEAAU?$DestructionNotification@V?$FObjectHandle@VCvUnit@@@@@@XZ ; CvUnit::getDestructionNotification
@@ -11282,10 +11282,10 @@ $LN6@FindBestMu:
 
 	mov	DWORD PTR _pBestTargetPlot$[esp+68], esi
 $LN5@FindBestMu:
-	mov	edx, DWORD PTR _iJ$226809[esp+68]
+	mov	edx, DWORD PTR _iJ$227286[esp+68]
 	inc	edx
 	cmp	edx, 37					; 00000025H
-	mov	DWORD PTR _iJ$226809[esp+68], edx
+	mov	DWORD PTR _iJ$227286[esp+68], edx
 	jl	$LL89@FindBestMu
 $LN4@FindBestMu:
 
@@ -11345,12 +11345,12 @@ EXTRN	?GetPlots@CvPlayer@@QAEAAV?$FStaticVector@H$0DJAA@$00$0BCJ@$0A@@@XZ:PROC ;
 _TEXT	SEGMENT
 _this$ = -28						; size = 4
 _iBestScore$ = -24					; size = 4
-_iI$226852 = -20					; size = 4
-_ui$226830 = -16					; size = 4
+_iI$227329 = -20					; size = 4
+_ui$227307 = -16					; size = 4
 _pBestPlot$ = -12					; size = 4
 _m_aiPlots$ = -8					; size = 4
 _nPlots$ = -4						; size = 4
-_pPlot$226835 = 8					; size = 4
+_pPlot$227312 = 8					; size = 4
 _pGreatArtist$ = 8					; size = 4
 _iResultScore$ = 12					; size = 4
 ?FindBestArtistTargetPlot@CvPlayerAI@@QAEPAVCvPlot@@PAVCvUnit@@AAH@Z PROC ; CvPlayerAI::FindBestArtistTargetPlot, COMDAT
@@ -11414,7 +11414,7 @@ $LN31@FindBestAr:
 	mov	DWORD PTR _pBestPlot$[esp+36], ebx
 	mov	DWORD PTR _iBestScore$[esp+36], ebx
 	mov	DWORD PTR _nPlots$[esp+36], edx
-	mov	DWORD PTR _ui$226830[esp+36], ecx
+	mov	DWORD PTR _ui$227307[esp+36], ecx
 	cmp	edx, ebx
 	jbe	$LN28@FindBestAr
 	push	ebp
@@ -11449,10 +11449,10 @@ $LN30@FindBestAr:
 	imul	eax, 484				; 000001e4H
 	add	eax, DWORD PTR [ecx+4068]
 	mov	edi, eax
-	mov	DWORD PTR _pPlot$226835[esp+40], edi
+	mov	DWORD PTR _pPlot$227312[esp+40], edi
 	jmp	SHORT $LN48@FindBestAr
 $LN47@FindBestAr:
-	mov	DWORD PTR _pPlot$226835[esp+40], ebx
+	mov	DWORD PTR _pPlot$227312[esp+40], ebx
 	mov	edi, ebx
 $LN48@FindBestAr:
 
@@ -11584,7 +11584,7 @@ $LN18@FindBestAr:
 ; 1527 : 		for(int iI = 0; iI < NUM_DIRECTION_TYPES; ++iI)
 
 	xor	eax, eax
-	mov	DWORD PTR _iI$226852[esp+44], eax
+	mov	DWORD PTR _iI$227329[esp+44], eax
 $LL17@FindBestAr:
 
 ; 1528 : 		{
@@ -11744,7 +11744,7 @@ $LN36@FindBestAr:
 	test	al, al
 	je	SHORT $LN95@FindBestAr
 $LN102@FindBestAr:
-	mov	edi, DWORD PTR _pPlot$226835[esp+40]
+	mov	edi, DWORD PTR _pPlot$227312[esp+40]
 $LN7@FindBestAr:
 
 ; 1571 : 					break;
@@ -11812,10 +11812,10 @@ $LN16@FindBestAr:
 ; 1526 : 
 ; 1527 : 		for(int iI = 0; iI < NUM_DIRECTION_TYPES; ++iI)
 
-	mov	eax, DWORD PTR _iI$226852[esp+44]
+	mov	eax, DWORD PTR _iI$227329[esp+44]
 	inc	eax
 	cmp	eax, 6
-	mov	DWORD PTR _iI$226852[esp+44], eax
+	mov	DWORD PTR _iI$227329[esp+44], eax
 	jl	$LL17@FindBestAr
 
 ; 1566 : 
@@ -11828,7 +11828,7 @@ $LN95@FindBestAr:
 ; 1569 : 				{
 ; 1570 : 					iScore = 0;
 
-	mov	edi, DWORD PTR _pPlot$226835[esp+40]
+	mov	edi, DWORD PTR _pPlot$227312[esp+40]
 $LN94@FindBestAr:
 	xor	ebx, ebx
 $LN15@FindBestAr:
@@ -11851,9 +11851,9 @@ $LN15@FindBestAr:
 
 	mov	DWORD PTR _pBestPlot$[esp+44], edi
 $LN29@FindBestAr:
-	mov	ecx, DWORD PTR _ui$226830[esp+44]
+	mov	ecx, DWORD PTR _ui$227307[esp+44]
 	inc	ecx
-	mov	DWORD PTR _ui$226830[esp+44], ecx
+	mov	DWORD PTR _ui$227307[esp+44], ecx
 	cmp	ecx, DWORD PTR _nPlots$[esp+44]
 	jb	$LL107@FindBestAr
 	pop	edi
@@ -12249,7 +12249,7 @@ PUBLIC	?_Maxlen@?$_Temp_iterator@UCityAndProduction@@@std@@QAEHXZ ; std::_Temp_i
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ?_Maxlen@?$_Temp_iterator@UCityAndProduction@@@std@@QAEHXZ
 _TEXT	SEGMENT
-__Pair$227714 = -8					; size = 8
+__Pair$228191 = -8					; size = 8
 ?_Maxlen@?$_Temp_iterator@UCityAndProduction@@@std@@QAEHXZ PROC ; std::_Temp_iterator<CityAndProduction>::_Maxlen, COMDAT
 ; _this$ = ecx
 
@@ -12273,7 +12273,7 @@ __Pair$227714 = -8					; size = 8
 ; 611  : 				std::get_temporary_buffer<_Ty>(_Pbuf->_Size);
 
 	push	eax
-	lea	eax, DWORD PTR __Pair$227714[esp+16]
+	lea	eax, DWORD PTR __Pair$228191[esp+16]
 	push	eax
 	call	??$get_temporary_buffer@UCityAndProduction@@@std@@YA?AU?$pair@PAUCityAndProduction@@H@0@H@Z ; std::get_temporary_buffer<CityAndProduction>
 
@@ -12281,7 +12281,7 @@ __Pair$227714 = -8					; size = 8
 ; 613  : 			_Pbuf->_Begin = _Pair.first;
 
 	mov	ecx, DWORD PTR [esi+16]
-	mov	eax, DWORD PTR __Pair$227714[esp+20]
+	mov	eax, DWORD PTR __Pair$228191[esp+20]
 	mov	DWORD PTR [ecx], eax
 
 ; 614  : 			_Pbuf->_Current = _Pair.first;
@@ -12297,7 +12297,7 @@ __Pair$227714 = -8					; size = 8
 ; 616  : 			_Pbuf->_Size = _Pair.second;
 
 	mov	edx, DWORD PTR [esi+16]
-	mov	eax, DWORD PTR __Pair$227714[esp+24]
+	mov	eax, DWORD PTR __Pair$228191[esp+24]
 	mov	DWORD PTR [edx+12], eax
 
 ; 617  : 			}
@@ -12366,8 +12366,8 @@ PUBLIC	??$unchecked_uninitialized_copy@PAUCityAndProduction@@PAU1@V?$allocator@U
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ??$unchecked_uninitialized_copy@PAUCityAndProduction@@PAU1@V?$allocator@UCityAndProduction@@@std@@@stdext@@YAPAUCityAndProduction@@PAU1@00AAV?$allocator@UCityAndProduction@@@std@@@Z
 _TEXT	SEGMENT
-$T233302 = -4						; size = 1
-__Cat$233306 = -4					; size = 1
+$T233779 = -4						; size = 1
+__Cat$233784 = -4					; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
@@ -12383,9 +12383,9 @@ __Al$ = 20						; size = 4
 ; 822  : 		_STD _Ptr_cat(_First, _Dest), _STD _Range_checked_iterator_tag()));
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T233302[esp+4], 0
-	mov	eax, DWORD PTR $T233302[esp+4]
-	mov	ecx, DWORD PTR __Cat$233306[esp+4]
+	mov	BYTE PTR $T233779[esp+4], 0
+	mov	eax, DWORD PTR $T233779[esp+4]
+	mov	ecx, DWORD PTR __Cat$233784[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -12408,11 +12408,11 @@ PUBLIC	??$unchecked_copy@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UC
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xutility
 ;	COMDAT ??$unchecked_copy@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@V?$_Temp_iterator@UCityAndProduction@@@2@@stdext@@YA?AV?$_Temp_iterator@UCityAndProduction@@@std@@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@2@0V12@@Z
 _TEXT	SEGMENT
-$T233311 = -4						; size = 1
-$T233318 = -4						; size = 4
-$T233314 = -4						; size = 4
-__Cat$233322 = 8					; size = 1
-$T233313 = 8						; size = 1
+$T233788 = -4						; size = 1
+$T233795 = -4						; size = 4
+$T233791 = -4						; size = 4
+__Cat$233800 = 8					; size = 1
+$T233790 = 8						; size = 1
 ___$ReturnUdt$ = 8					; size = 4
 __First$ = 12						; size = 4
 __Last$ = 16						; size = 4
@@ -12424,17 +12424,17 @@ __Dest$ = 20						; size = 20
 	push	ecx
 	push	ebx
 	xor	ebx, ebx
-	mov	DWORD PTR $T233318[esp+8], ebx
+	mov	DWORD PTR $T233795[esp+8], ebx
 
 ; 3605 : 		return (_STD _Copy_opt(_CHECKED_BASE(_First), _CHECKED_BASE(_Last), _Dest,
 ; 3606 : 			_STD _Iter_random(_First, _Dest), _STD _Ptr_cat(_First, _Dest), _STD _Range_checked_iterator_tag()));
 
-	mov	ecx, DWORD PTR __Cat$233322[esp+4]
-	mov	edx, DWORD PTR $T233313[esp+4]
+	mov	ecx, DWORD PTR __Cat$233800[esp+4]
+	mov	edx, DWORD PTR $T233790[esp+4]
 	push	esi
 	mov	esi, DWORD PTR ___$ReturnUdt$[esp+8]
-	mov	BYTE PTR $T233311[esp+12], bl
-	mov	eax, DWORD PTR $T233311[esp+12]
+	mov	BYTE PTR $T233788[esp+12], bl
+	mov	eax, DWORD PTR $T233788[esp+12]
 	push	eax
 	push	ecx
 	push	edx
@@ -12448,7 +12448,7 @@ __Dest$ = 20						; size = 20
 	mov	DWORD PTR [eax+16], ecx
 	mov	edx, DWORD PTR __Last$[esp+40]
 	mov	eax, DWORD PTR __First$[esp+40]
-	mov	DWORD PTR $T233314[esp+44], esp
+	mov	DWORD PTR $T233791[esp+44], esp
 	push	edx
 	push	eax
 	push	esi
@@ -12475,9 +12475,9 @@ PUBLIC	??$unchecked_copy_backward@V?$_Vector_iterator@UCityAndProduction@@V?$all
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$unchecked_copy_backward@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@V12@@stdext@@YA?AV?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@V12@00@Z
 _TEXT	SEGMENT
-$T233362 = -4						; size = 1
-__Cat$233367 = 8					; size = 1
-$T233364 = 8						; size = 1
+$T233839 = -4						; size = 1
+__Cat$233845 = 8					; size = 1
+$T233841 = 8						; size = 1
 ___$ReturnUdt$ = 8					; size = 4
 __First$ = 12						; size = 4
 __Last$ = 16						; size = 4
@@ -12491,12 +12491,12 @@ __Dest$ = 20						; size = 4
 ; 3637 : 		return (_STD _Copy_backward_opt(_CHECKED_BASE(_First), _CHECKED_BASE(_Last), _Dest,
 ; 3638 : 			_STD _Iter_random(_First, _Dest), _STD _Ptr_cat(_First, _Dest), _STD _Range_checked_iterator_tag()));
 
-	mov	ecx, DWORD PTR __Cat$233367[esp]
-	mov	edx, DWORD PTR $T233364[esp]
+	mov	ecx, DWORD PTR __Cat$233845[esp]
+	mov	edx, DWORD PTR $T233841[esp]
 	push	esi
 	mov	esi, DWORD PTR ___$ReturnUdt$[esp+4]
-	mov	BYTE PTR $T233362[esp+8], 0
-	mov	eax, DWORD PTR $T233362[esp+8]
+	mov	BYTE PTR $T233839[esp+8], 0
+	mov	eax, DWORD PTR $T233839[esp+8]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+8]
 	push	ecx
@@ -12698,9 +12698,9 @@ PUBLIC	??$unchecked_copy@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UC
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xutility
 ;	COMDAT ??$unchecked_copy@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@V12@@stdext@@YA?AV?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@V12@00@Z
 _TEXT	SEGMENT
-$T233562 = -4						; size = 1
-__Cat$233568 = 8					; size = 1
-$T233564 = 8						; size = 1
+$T234039 = -4						; size = 1
+__Cat$234045 = 8					; size = 1
+$T234041 = 8						; size = 1
 ___$ReturnUdt$ = 8					; size = 4
 __First$ = 12						; size = 4
 __Last$ = 16						; size = 4
@@ -12714,12 +12714,12 @@ __Dest$ = 20						; size = 4
 ; 3605 : 		return (_STD _Copy_opt(_CHECKED_BASE(_First), _CHECKED_BASE(_Last), _Dest,
 ; 3606 : 			_STD _Iter_random(_First, _Dest), _STD _Ptr_cat(_First, _Dest), _STD _Range_checked_iterator_tag()));
 
-	mov	ecx, DWORD PTR __Cat$233568[esp]
-	mov	edx, DWORD PTR $T233564[esp]
+	mov	ecx, DWORD PTR __Cat$234045[esp]
+	mov	edx, DWORD PTR $T234041[esp]
 	push	esi
 	mov	esi, DWORD PTR ___$ReturnUdt$[esp+4]
-	mov	BYTE PTR $T233562[esp+8], 0
-	mov	eax, DWORD PTR $T233562[esp+8]
+	mov	BYTE PTR $T234039[esp+8], 0
+	mov	eax, DWORD PTR $T234039[esp+8]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+8]
 	push	ecx
@@ -12745,9 +12745,9 @@ PUBLIC	??$unchecked_copy_backward@PAUCityAndProduction@@V?$_Vector_iterator@UCit
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$unchecked_copy_backward@PAUCityAndProduction@@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@@stdext@@YA?AV?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@PAUCityAndProduction@@0V12@@Z
 _TEXT	SEGMENT
-$T233576 = -4						; size = 1
-__Cat$233582 = 8					; size = 1
-$T233578 = 8						; size = 1
+$T234053 = -4						; size = 1
+__Cat$234059 = 8					; size = 1
+$T234055 = 8						; size = 1
 ___$ReturnUdt$ = 8					; size = 4
 __First$ = 12						; size = 4
 __Last$ = 16						; size = 4
@@ -12761,12 +12761,12 @@ __Dest$ = 20						; size = 4
 ; 3637 : 		return (_STD _Copy_backward_opt(_CHECKED_BASE(_First), _CHECKED_BASE(_Last), _Dest,
 ; 3638 : 			_STD _Iter_random(_First, _Dest), _STD _Ptr_cat(_First, _Dest), _STD _Range_checked_iterator_tag()));
 
-	mov	ecx, DWORD PTR __Cat$233582[esp]
-	mov	edx, DWORD PTR $T233578[esp]
+	mov	ecx, DWORD PTR __Cat$234059[esp]
+	mov	edx, DWORD PTR $T234055[esp]
 	push	esi
 	mov	esi, DWORD PTR ___$ReturnUdt$[esp+4]
-	mov	BYTE PTR $T233576[esp+8], 0
-	mov	eax, DWORD PTR $T233576[esp+8]
+	mov	BYTE PTR $T234053[esp+8], 0
+	mov	eax, DWORD PTR $T234053[esp+8]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+8]
 	push	ecx
@@ -12792,9 +12792,9 @@ PUBLIC	??$unchecked_copy@PAUCityAndProduction@@V?$_Vector_iterator@UCityAndProdu
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$unchecked_copy@PAUCityAndProduction@@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@@stdext@@YA?AV?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@PAUCityAndProduction@@0V12@@Z
 _TEXT	SEGMENT
-$T233590 = -4						; size = 1
-__Cat$233596 = 8					; size = 1
-$T233592 = 8						; size = 1
+$T234067 = -4						; size = 1
+__Cat$234073 = 8					; size = 1
+$T234069 = 8						; size = 1
 ___$ReturnUdt$ = 8					; size = 4
 __First$ = 12						; size = 4
 __Last$ = 16						; size = 4
@@ -12808,12 +12808,12 @@ __Dest$ = 20						; size = 4
 ; 3605 : 		return (_STD _Copy_opt(_CHECKED_BASE(_First), _CHECKED_BASE(_Last), _Dest,
 ; 3606 : 			_STD _Iter_random(_First, _Dest), _STD _Ptr_cat(_First, _Dest), _STD _Range_checked_iterator_tag()));
 
-	mov	ecx, DWORD PTR __Cat$233596[esp]
-	mov	edx, DWORD PTR $T233592[esp]
+	mov	ecx, DWORD PTR __Cat$234073[esp]
+	mov	edx, DWORD PTR $T234069[esp]
 	push	esi
 	mov	esi, DWORD PTR ___$ReturnUdt$[esp+4]
-	mov	BYTE PTR $T233590[esp+8], 0
-	mov	eax, DWORD PTR $T233590[esp+8]
+	mov	BYTE PTR $T234067[esp+8], 0
+	mov	eax, DWORD PTR $T234067[esp+8]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+8]
 	push	ecx
@@ -12840,10 +12840,10 @@ PUBLIC	??$_Merge@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndPr
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\algorithm
 ;	COMDAT ??$_Merge@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@V12@V?$_Temp_iterator@UCityAndProduction@@@2@UCityAndProductionEval@@Uforward_iterator_tag@2@@std@@YA?AV?$_Temp_iterator@UCityAndProduction@@@0@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@0@000V10@UCityAndProductionEval@@Uforward_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
-$T233612 = -24						; size = 4
-$T233606 = -24						; size = 4
-$T233604 = -24						; size = 4
-$T233605 = -20						; size = 20
+$T234089 = -24						; size = 4
+$T234083 = -24						; size = 4
+$T234081 = -24						; size = 4
+$T234082 = -20						; size = 20
 ___$ReturnUdt$ = 8					; size = 4
 __First1$ = 12						; size = 4
 __Last1$ = 16						; size = 4
@@ -12868,7 +12868,7 @@ ___formal$ = 56						; size = 1
 	push	esi
 	push	edi
 	xor	edi, edi
-	mov	DWORD PTR $T233612[esp+32], edi
+	mov	DWORD PTR $T234089[esp+32], edi
 	cmp	eax, DWORD PTR __Last1$[esp+28]
 	je	$LN3@Merge
 	mov	ecx, DWORD PTR __First2$[esp+28]
@@ -12984,14 +12984,14 @@ $LN3@Merge:
 	mov	DWORD PTR [eax+16], ecx
 	mov	edx, DWORD PTR __Last1$[esp+48]
 	mov	eax, DWORD PTR __First1$[esp+48]
-	mov	DWORD PTR $T233604[esp+52], esp
+	mov	DWORD PTR $T234081[esp+52], esp
 	push	edx
 	push	eax
-	lea	ecx, DWORD PTR $T233605[esp+60]
+	lea	ecx, DWORD PTR $T234082[esp+60]
 	push	ecx
 	call	??$unchecked_copy@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@V?$_Temp_iterator@UCityAndProduction@@@2@@stdext@@YA?AV?$_Temp_iterator@UCityAndProduction@@@std@@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@2@0V12@@Z ; stdext::unchecked_copy<std::_Vector_iterator<CityAndProduction,std::allocator<CityAndProduction> >,std::_Temp_iterator<CityAndProduction> >
 	mov	edx, DWORD PTR [eax+16]
-	mov	eax, DWORD PTR $T233605[esp+64]
+	mov	eax, DWORD PTR $T234082[esp+64]
 	add	esp, 32					; 00000020H
 	mov	DWORD PTR __Dest$[esp+44], edx
 	cmp	eax, edi
@@ -13014,7 +13014,7 @@ $LN88@Merge:
 	mov	DWORD PTR [eax+16], ecx
 	mov	edx, DWORD PTR __Last2$[esp+48]
 	mov	eax, DWORD PTR __First2$[esp+48]
-	mov	DWORD PTR $T233606[esp+52], esp
+	mov	DWORD PTR $T234083[esp+52], esp
 	push	edx
 	push	eax
 	push	esi
@@ -13152,11 +13152,11 @@ PUBLIC	??$_Rotate@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndP
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Rotate@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@HUCityAndProduction@@@std@@YAXV?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@0@00PAHPAUCityAndProduction@@@Z
 _TEXT	SEGMENT
-$T234006 = -24						; size = 4
+$T234483 = -24						; size = 4
 __Shift$ = -20						; size = 4
-$T234010 = -16						; size = 4
-$T234011 = -12						; size = 4
-__Holeval$228902 = -8					; size = 8
+$T234487 = -16						; size = 4
+$T234488 = -12						; size = 4
+__Holeval$229379 = -8					; size = 8
 __First$ = 8						; size = 4
 __Mid$ = 12						; size = 4
 __Last$ = 16						; size = 4
@@ -13237,7 +13237,7 @@ $LN5@Rotate:
 	mov	ecx, DWORD PTR [edi+eax*8+4]
 	mov	ebp, DWORD PTR [edi+eax*8]
 	lea	esi, DWORD PTR [edi+eax*8]
-	mov	DWORD PTR __Holeval$228902[esp+44], ecx
+	mov	DWORD PTR __Holeval$229379[esp+44], ecx
 
 ; 1697 : 			_RanIt _Next1 = _Next + _Shift == _Last ? _First : _Next + _Shift;
 
@@ -13248,8 +13248,8 @@ $LN5@Rotate:
 	lea	ecx, DWORD PTR __First$[esp+36]
 	jmp	SHORT $LN12@Rotate
 $LN11@Rotate:
-	mov	DWORD PTR $T234006[esp+40], ecx
-	lea	ecx, DWORD PTR $T234006[esp+40]
+	mov	DWORD PTR $T234483[esp+40], ecx
+	lea	ecx, DWORD PTR $T234483[esp+40]
 $LN12@Rotate:
 	mov	ecx, DWORD PTR [ecx]
 
@@ -13278,8 +13278,8 @@ $LL2@Rotate:
 	mov	edi, ecx
 	jge	SHORT $LN13@Rotate
 	add	ecx, ebx
-	mov	DWORD PTR $T234010[esp+40], ecx
-	lea	ecx, DWORD PTR $T234010[esp+40]
+	mov	DWORD PTR $T234487[esp+40], ecx
+	lea	ecx, DWORD PTR $T234487[esp+40]
 	jmp	SHORT $LN14@Rotate
 $LN13@Rotate:
 	add	edx, edx
@@ -13288,8 +13288,8 @@ $LN13@Rotate:
 	mov	ecx, ebx
 	sub	ecx, edx
 	add	ecx, DWORD PTR __First$[esp+36]
-	mov	DWORD PTR $T234011[esp+40], ecx
-	lea	ecx, DWORD PTR $T234011[esp+40]
+	mov	DWORD PTR $T234488[esp+40], ecx
+	lea	ecx, DWORD PTR $T234488[esp+40]
 $LN14@Rotate:
 	mov	ecx, DWORD PTR [ecx]
 	cmp	ecx, esi
@@ -13299,7 +13299,7 @@ $LN1@Rotate:
 ; 1704 : 				}
 ; 1705 : 			*_Next = _Holeval;
 
-	mov	edx, DWORD PTR __Holeval$228902[esp+44]
+	mov	edx, DWORD PTR __Holeval$229379[esp+44]
 	dec	eax
 	mov	DWORD PTR [edi], ebp
 	mov	DWORD PTR [edi+4], edx
@@ -13825,8 +13825,8 @@ PUBLIC	??$unchecked_uninitialized_fill_n@PAUCityAndProduction@@IU1@V?$allocator@
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ??$unchecked_uninitialized_fill_n@PAUCityAndProduction@@IU1@V?$allocator@UCityAndProduction@@@std@@@stdext@@YAXPAUCityAndProduction@@IABU1@AAV?$allocator@UCityAndProduction@@@std@@@Z
 _TEXT	SEGMENT
-$T234435 = -4						; size = 1
-__Cat$234439 = -4					; size = 1
+$T234912 = -4						; size = 1
+__Cat$234917 = -4					; size = 1
 __First$ = 8						; size = 4
 __Count$ = 12						; size = 4
 __Val$ = 16						; size = 4
@@ -13841,9 +13841,9 @@ __Al$ = 20						; size = 4
 ; 942  : 		_STD _Ptr_cat(_First, _First), _STD _Range_checked_iterator_tag());
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T234435[esp+4], 0
-	mov	eax, DWORD PTR $T234435[esp+4]
-	mov	ecx, DWORD PTR __Cat$234439[esp+4]
+	mov	BYTE PTR $T234912[esp+4], 0
+	mov	eax, DWORD PTR $T234912[esp+4]
+	mov	ecx, DWORD PTR __Cat$234917[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Val$[esp+4]
 	push	ecx
@@ -13882,10 +13882,10 @@ PUBLIC	??$_Uninit_move@PAUCityAndProduction@@PAU1@V?$allocator@UCityAndProductio
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ??$_Uninit_move@PAUCityAndProduction@@PAU1@V?$allocator@UCityAndProduction@@@std@@U_Undefined_move_tag@3@@std@@YAPAUCityAndProduction@@PAU1@00AAV?$allocator@UCityAndProduction@@@0@U_Undefined_move_tag@0@U_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
-$T234461 = -4						; size = 1
+$T234938 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$234464 = 16					; size = 1
+__Cat$234942 = 16					; size = 1
 __Dest$ = 16						; size = 4
 __Al$ = 20						; size = 4
 ___formal$ = 24						; size = 1
@@ -13898,10 +13898,10 @@ ___formal$ = 28						; size = 1
 
 ; 207  : 	return (_STDEXT unchecked_uninitialized_copy(_First, _Last, _Dest, _Al));
 
-	mov	ecx, DWORD PTR __Cat$234464[esp]
+	mov	ecx, DWORD PTR __Cat$234942[esp]
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T234461[esp+4], 0
-	mov	eax, DWORD PTR $T234461[esp+4]
+	mov	BYTE PTR $T234938[esp+4], 0
+	mov	eax, DWORD PTR $T234938[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -13924,10 +13924,10 @@ PUBLIC	??$_Insertion_sort1@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\algorithm
 ;	COMDAT ??$_Insertion_sort1@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@UCityAndProductionEval@@UCityAndProduction@@@std@@YAXV?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@0@0UCityAndProductionEval@@PAUCityAndProduction@@@Z
 _TEXT	SEGMENT
-$T234536 = -8						; size = 1
-$T234471 = -4						; size = 4
-__Cat$234541 = 8					; size = 1
-$T234538 = 8						; size = 1
+$T235014 = -8						; size = 1
+$T234948 = -4						; size = 4
+__Cat$235019 = 8					; size = 1
+$T235016 = 8						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Pred$ = 16						; size = 1
@@ -13949,7 +13949,7 @@ ___formal$ = 20						; size = 4
 	cmp	esi, eax
 	je	SHORT $LN73@Insertion_
 	push	ebx
-	mov	ebx, DWORD PTR $T234538[esp+12]
+	mov	ebx, DWORD PTR $T235016[esp+12]
 	push	ebp
 	push	edi
 	jmp	SHORT $LN7@Insertion_
@@ -13974,17 +13974,17 @@ $LN7@Insertion_:
 ; 3131 : 				{	// found new earliest element, move to front
 ; 3132 : 				_STDEXT unchecked_copy_backward(_First, _Next, ++_Next1);
 
-	mov	BYTE PTR $T234536[esp+24], 0
-	mov	ecx, DWORD PTR $T234536[esp+24]
+	mov	BYTE PTR $T235014[esp+24], 0
+	mov	ecx, DWORD PTR $T235014[esp+24]
 	push	ecx
-	mov	ecx, DWORD PTR __Cat$234541[esp+24]
+	mov	ecx, DWORD PTR __Cat$235019[esp+24]
 	push	ecx
 	push	ebx
 	lea	eax, DWORD PTR [esi+8]
 	push	eax
 	push	esi
 	push	edx
-	lea	edx, DWORD PTR $T234471[esp+48]
+	lea	edx, DWORD PTR $T234948[esp+48]
 	push	edx
 	call	??$_Copy_backward_opt@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@V12@Urandom_access_iterator_tag@2@@std@@YA?AV?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@0@V10@00Urandom_access_iterator_tag@0@U_Nonscalar_ptr_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z ; std::_Copy_backward_opt<std::_Vector_iterator<CityAndProduction,std::allocator<CityAndProduction> >,std::_Vector_iterator<CityAndProduction,std::allocator<CityAndProduction> >,std::random_access_iterator_tag>
 
@@ -14056,7 +14056,7 @@ PUBLIC	??$lower_bound@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCity
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$lower_bound@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@UCityAndProduction@@UCityAndProductionEval@@@std@@YA?AV?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@0@V10@0ABUCityAndProduction@@UCityAndProductionEval@@@Z
 _TEXT	SEGMENT
-$T234610 = -4						; size = 4
+$T235087 = -4						; size = 4
 ___$ReturnUdt$ = 8					; size = 4
 __First$ = 12						; size = 4
 __Last$ = 16						; size = 4
@@ -14079,7 +14079,7 @@ __Pred$ = 24						; size = 1
 	push	ecx
 	push	edx
 	push	eax
-	lea	ecx, DWORD PTR $T234610[esp+24]
+	lea	ecx, DWORD PTR $T235087[esp+24]
 	push	ecx
 	call	??$_Lower_bound@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@UCityAndProduction@@HUCityAndProductionEval@@@std@@YA?AV?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@0@V10@0ABUCityAndProduction@@UCityAndProductionEval@@PAH@Z ; std::_Lower_bound<std::_Vector_iterator<CityAndProduction,std::allocator<CityAndProduction> >,CityAndProduction,int,CityAndProductionEval>
 
@@ -14100,7 +14100,7 @@ PUBLIC	??$upper_bound@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCity
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$upper_bound@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@UCityAndProduction@@UCityAndProductionEval@@@std@@YA?AV?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@0@V10@0ABUCityAndProduction@@UCityAndProductionEval@@@Z
 _TEXT	SEGMENT
-$T234617 = -4						; size = 4
+$T235094 = -4						; size = 4
 ___$ReturnUdt$ = 8					; size = 4
 __First$ = 12						; size = 4
 __Last$ = 16						; size = 4
@@ -14123,7 +14123,7 @@ __Pred$ = 24						; size = 1
 	push	ecx
 	push	edx
 	push	eax
-	lea	ecx, DWORD PTR $T234617[esp+24]
+	lea	ecx, DWORD PTR $T235094[esp+24]
 	push	ecx
 	call	??$_Upper_bound@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@UCityAndProduction@@HUCityAndProductionEval@@@std@@YA?AV?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@0@V10@0ABUCityAndProduction@@UCityAndProductionEval@@PAH@Z ; std::_Upper_bound<std::_Vector_iterator<CityAndProduction,std::allocator<CityAndProduction> >,CityAndProduction,int,CityAndProductionEval>
 
@@ -14145,13 +14145,13 @@ PUBLIC	??$_Merge@PAUCityAndProduction@@V?$_Vector_iterator@UCityAndProduction@@V
 ;	COMDAT ??$_Merge@PAUCityAndProduction@@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@V23@UCityAndProductionEval@@Urandom_access_iterator_tag@3@@std@@YA?AV?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@0@PAUCityAndProduction@@0V10@11UCityAndProductionEval@@Urandom_access_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
 ___$ReturnUdt$ = 8					; size = 4
-$T234770 = 12						; size = 1
+$T235247 = 12						; size = 1
 __First1$ = 12						; size = 4
 __Last1$ = 16						; size = 4
 __First2$ = 20						; size = 4
 __Last2$ = 24						; size = 4
-__Cat$234775 = 28					; size = 1
-$T234772 = 28						; size = 1
+__Cat$235252 = 28					; size = 1
+$T235249 = 28						; size = 1
 __Dest$ = 28						; size = 4
 __Pred$ = 32						; size = 1
 ___formal$ = 36						; size = 1
@@ -14232,11 +14232,11 @@ $LN44@Merge@3:
 
 	mov	esi, DWORD PTR ___$ReturnUdt$[esp+4]
 	mov	DWORD PTR __Dest$[esp+4], ecx
-	mov	edx, DWORD PTR __Cat$234775[esp+4]
-	mov	BYTE PTR $T234770[esp+4], 0
-	mov	eax, DWORD PTR $T234770[esp+4]
+	mov	edx, DWORD PTR __Cat$235252[esp+4]
+	mov	BYTE PTR $T235247[esp+4], 0
+	mov	eax, DWORD PTR $T235247[esp+4]
 	push	eax
-	mov	eax, DWORD PTR $T234772[esp+8]
+	mov	eax, DWORD PTR $T235249[esp+8]
 	push	edx
 	mov	edx, DWORD PTR __First2$[esp+12]
 	push	eax
@@ -14260,14 +14260,14 @@ PUBLIC	??$_Merge_backward@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@U
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Merge_backward@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@PAUCityAndProduction@@V12@UCityAndProductionEval@@@std@@YA?AV?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@0@V10@0PAUCityAndProduction@@10UCityAndProductionEval@@U_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
-$T234833 = -4						; size = 1
-$T234809 = -4						; size = 1
+$T235311 = -4						; size = 1
+$T235286 = -4						; size = 1
 ___$ReturnUdt$ = 8					; size = 4
 __First1$ = 12						; size = 4
-__Cat$234838 = 16					; size = 1
-$T234835 = 16						; size = 1
-__Cat$234814 = 16					; size = 1
-$T234811 = 16						; size = 1
+__Cat$235316 = 16					; size = 1
+$T235313 = 16						; size = 1
+__Cat$235291 = 16					; size = 1
+$T235288 = 16						; size = 1
 __Last1$ = 16						; size = 4
 __First2$ = 20						; size = 4
 __Last2$ = 24						; size = 4
@@ -14346,11 +14346,11 @@ $LN61@Merge_back:
 
 ; 2842 : 			return (_STDEXT unchecked_copy_backward(_First2, _Last2, _Dest));
 
-	mov	edx, DWORD PTR __Cat$234814[esp+8]
-	mov	BYTE PTR $T234809[esp+12], 0
-	mov	ecx, DWORD PTR $T234809[esp+12]
+	mov	edx, DWORD PTR __Cat$235291[esp+8]
+	mov	BYTE PTR $T235286[esp+12], 0
+	mov	ecx, DWORD PTR $T235286[esp+12]
 	push	ecx
-	mov	ecx, DWORD PTR $T234811[esp+12]
+	mov	ecx, DWORD PTR $T235288[esp+12]
 	push	edx
 	mov	edx, DWORD PTR __Dest$[esp+16]
 	push	ecx
@@ -14377,12 +14377,12 @@ $LN62@Merge_back:
 ; 2844 : 			return (_STDEXT unchecked_copy_backward(_First1, _Last1, _Dest));
 
 	mov	esi, DWORD PTR ___$ReturnUdt$[esp+8]
-	mov	BYTE PTR $T234833[esp+12], 0
-	mov	eax, DWORD PTR $T234833[esp+12]
+	mov	BYTE PTR $T235311[esp+12], 0
+	mov	eax, DWORD PTR $T235311[esp+12]
 	push	eax
-	mov	eax, DWORD PTR __Cat$234838[esp+12]
+	mov	eax, DWORD PTR __Cat$235316[esp+12]
 	push	eax
-	mov	eax, DWORD PTR $T234835[esp+16]
+	mov	eax, DWORD PTR $T235313[esp+16]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+20]
 	push	eax
@@ -14405,16 +14405,16 @@ PUBLIC	??$unchecked_merge@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@U
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$unchecked_merge@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@V12@V?$_Temp_iterator@UCityAndProduction@@@2@UCityAndProductionEval@@@stdext@@YA?AV?$_Temp_iterator@UCityAndProduction@@@std@@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@2@000V12@UCityAndProductionEval@@@Z
 _TEXT	SEGMENT
-$T234923 = -4						; size = 1
-$T234929 = -4						; size = 4
-$T234925 = -4						; size = 4
+$T235400 = -4						; size = 1
+$T235406 = -4						; size = 4
+$T235402 = -4						; size = 4
 ___$ReturnUdt$ = 8					; size = 4
 __First1$ = 12						; size = 4
 __Last1$ = 16						; size = 4
 __First2$ = 20						; size = 4
 __Last2$ = 24						; size = 4
 __Dest$ = 28						; size = 20
-$T234924 = 48						; size = 1
+$T235401 = 48						; size = 1
 __Pred$ = 48						; size = 1
 ??$unchecked_merge@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@V12@V?$_Temp_iterator@UCityAndProduction@@@2@UCityAndProductionEval@@@stdext@@YA?AV?$_Temp_iterator@UCityAndProduction@@@std@@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@2@000V12@UCityAndProductionEval@@@Z PROC ; stdext::unchecked_merge<std::_Vector_iterator<CityAndProduction,std::allocator<CityAndProduction> >,std::_Vector_iterator<CityAndProduction,std::allocator<CityAndProduction> >,std::_Temp_iterator<CityAndProduction>,CityAndProductionEval>, COMDAT
 
@@ -14424,16 +14424,16 @@ __Pred$ = 48						; size = 1
 	push	ebx
 	push	esi
 	xor	ebx, ebx
-	mov	DWORD PTR $T234929[esp+12], ebx
+	mov	DWORD PTR $T235406[esp+12], ebx
 
 ; 5158 : 		return _STD _Merge(_CHECKED_BASE(_First1), _CHECKED_BASE(_Last1), _CHECKED_BASE(_First2), _CHECKED_BASE(_Last2), _Dest, _Pred,
 ; 5159 : 			_STD _Iter_random(_First1, _First2,_Dest), _STD _Range_checked_iterator_tag());
 
-	mov	ecx, DWORD PTR $T234924[esp+8]
+	mov	ecx, DWORD PTR $T235401[esp+8]
 	mov	edx, DWORD PTR __Pred$[esp+8]
 	mov	esi, DWORD PTR ___$ReturnUdt$[esp+8]
-	mov	BYTE PTR $T234923[esp+12], bl
-	mov	eax, DWORD PTR $T234923[esp+12]
+	mov	BYTE PTR $T235400[esp+12], bl
+	mov	eax, DWORD PTR $T235400[esp+12]
 	push	eax
 	push	ecx
 	push	edx
@@ -14448,7 +14448,7 @@ __Pred$ = 48						; size = 1
 	mov	edx, DWORD PTR __Last2$[esp+40]
 	mov	eax, DWORD PTR __First2$[esp+40]
 	mov	ecx, DWORD PTR __Last1$[esp+40]
-	mov	DWORD PTR $T234925[esp+44], esp
+	mov	DWORD PTR $T235402[esp+44], esp
 	push	edx
 	mov	edx, DWORD PTR __First1$[esp+44]
 	push	eax
@@ -14478,8 +14478,8 @@ PUBLIC	??$unchecked_merge@PAUCityAndProduction@@PAU1@V?$_Vector_iterator@UCityAn
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$unchecked_merge@PAUCityAndProduction@@PAU1@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@UCityAndProductionEval@@@stdext@@YA?AV?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@PAUCityAndProduction@@000V12@UCityAndProductionEval@@@Z
 _TEXT	SEGMENT
-$T234969 = -4						; size = 1
-$T234970 = 8						; size = 1
+$T235446 = -4						; size = 1
+$T235447 = 8						; size = 1
 ___$ReturnUdt$ = 8					; size = 4
 __First1$ = 12						; size = 4
 __Last1$ = 16						; size = 4
@@ -14496,12 +14496,12 @@ __Pred$ = 32						; size = 1
 ; 5158 : 		return _STD _Merge(_CHECKED_BASE(_First1), _CHECKED_BASE(_Last1), _CHECKED_BASE(_First2), _CHECKED_BASE(_Last2), _Dest, _Pred,
 ; 5159 : 			_STD _Iter_random(_First1, _First2,_Dest), _STD _Range_checked_iterator_tag());
 
-	mov	ecx, DWORD PTR $T234970[esp]
+	mov	ecx, DWORD PTR $T235447[esp]
 	mov	edx, DWORD PTR __Pred$[esp]
 	push	esi
 	mov	esi, DWORD PTR ___$ReturnUdt$[esp+4]
-	mov	BYTE PTR $T234969[esp+8], 0
-	mov	eax, DWORD PTR $T234969[esp+8]
+	mov	BYTE PTR $T235446[esp+8], 0
+	mov	eax, DWORD PTR $T235446[esp+8]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+8]
 	push	ecx
@@ -14580,8 +14580,8 @@ __ehfuncinfo$?_Insert@?$_Tree@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVF
 xdata$x	ENDS
 ;	COMDAT ?_Insert@?$_Tree@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@std@@IAE?AViterator@12@_NPAU_Node@?$_Tree_nod@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@2@ABQAVFAutoVariableBase@@@Z
 _TEXT	SEGMENT
-$T234988 = -80						; size = 28
-$T234987 = -52						; size = 40
+$T235465 = -80						; size = 28
+$T235464 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
 __Addleft$ = 12						; size = 1
@@ -14609,22 +14609,22 @@ __Val$ = 20						; size = 4
 ; 1189 : 			_THROW(length_error, "map/set<T> too long");
 
 	push	OFFSET ??_C@_0BE@JONHPENG@map?1set?$DMT?$DO?5too?5long?$AA@
-	lea	ecx, DWORD PTR $T234988[esp+88]
+	lea	ecx, DWORD PTR $T235465[esp+88]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T234987[esp+84]
+	lea	ecx, DWORD PTR $T235464[esp+84]
 	mov	DWORD PTR __$EHRec$[esp+92], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T234988[esp+84]
+	lea	eax, DWORD PTR $T235465[esp+84]
 	push	eax
-	lea	ecx, DWORD PTR $T234987[esp+100]
+	lea	ecx, DWORD PTR $T235464[esp+100]
 	mov	BYTE PTR __$EHRec$[esp+96], 1
-	mov	DWORD PTR $T234987[esp+88], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T235464[esp+88], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVlength_error@std@@
-	lea	ecx, DWORD PTR $T234987[esp+88]
+	lea	ecx, DWORD PTR $T235464[esp+88]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+100], 0
-	mov	DWORD PTR $T234987[esp+92], OFFSET ??_7length_error@std@@6B@
+	mov	DWORD PTR $T235464[esp+92], OFFSET ??_7length_error@std@@6B@
 	call	__CxxThrowException@8
 $LN228@Insert:
 $LN17@Insert:
@@ -14943,10 +14943,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Insert@?$_Tree@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@std@@IAE?AViterator@12@_NPAU_Node@?$_Tree_nod@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@2@ABQAVFAutoVariableBase@@@Z$0:
-	lea	ecx, DWORD PTR $T234988[ebp]
+	lea	ecx, DWORD PTR $T235465[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Insert@?$_Tree@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@std@@IAE?AViterator@12@_NPAU_Node@?$_Tree_nod@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@2@ABQAVFAutoVariableBase@@@Z$2:
-	lea	ecx, DWORD PTR $T234987[ebp]
+	lea	ecx, DWORD PTR $T235464[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Insert@?$_Tree@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@std@@IAE?AViterator@12@_NPAU_Node@?$_Tree_nod@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@2@ABQAVFAutoVariableBase@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?_Insert@?$_Tree@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@std@@IAE?AViterator@12@_NPAU_Node@?$_Tree_nod@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@2@ABQAVFAutoVariableBase@@@Z
@@ -14983,7 +14983,7 @@ _TEXT	SEGMENT
 _TEXT	ENDS
 ;	COMDAT ?PeekAtNextUnitToBuildForOperationSlot@CvPlayerAI@@UAE?AUOperationSlot@@H@Z
 _TEXT	SEGMENT
-$T235395 = -12						; size = 12
+$T235872 = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
 _iAreaID$ = 12						; size = 4
 ?PeekAtNextUnitToBuildForOperationSlot@CvPlayerAI@@UAE?AUOperationSlot@@H@Z PROC ; CvPlayerAI::PeekAtNextUnitToBuildForOperationSlot, COMDAT
@@ -15035,7 +15035,7 @@ $LL30@PeekAtNext:
 	mov	eax, DWORD PTR [ecx]
 	mov	eax, DWORD PTR [eax+96]
 	push	ebp
-	lea	edx, DWORD PTR $T235395[esp+32]
+	lea	edx, DWORD PTR $T235872[esp+32]
 	push	edx
 	call	eax
 	mov	ecx, DWORD PTR [eax]
@@ -15135,7 +15135,7 @@ _TEXT	ENDS
 ;	COMDAT ?CityCommitToBuildUnitForOperationSlot@CvPlayerAI@@UAE?AUOperationSlot@@HHPAVCvCity@@@Z
 _TEXT	SEGMENT
 _this$ = -16						; size = 4
-$T235649 = -12						; size = 12
+$T236126 = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
 _iAreaID$ = 12						; size = 4
 _iTurns$ = 16						; size = 4
@@ -15193,7 +15193,7 @@ $LL30@CityCommit:
 	push	ebx
 	push	ebp
 	push	edx
-	lea	edx, DWORD PTR $T235649[esp+44]
+	lea	edx, DWORD PTR $T236126[esp+44]
 	push	edx
 	call	eax
 	mov	ecx, DWORD PTR [eax]
@@ -15408,7 +15408,7 @@ _iLoop$ = -4						; size = 4
 
 	push	0
 	mov	ebx, ecx
-	push	OFFSET $SG226572
+	push	OFFSET $SG227049
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 
@@ -15654,10 +15654,10 @@ PUBLIC	?_Ufill@?$vector@UCityAndProduction@@V?$allocator@UCityAndProduction@@@st
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\vector
 ;	COMDAT ?_Ufill@?$vector@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@IAEPAUCityAndProduction@@PAU3@IABU3@@Z
 _TEXT	SEGMENT
-$T236189 = -4						; size = 1
+$T236666 = -4						; size = 1
 __Ptr$ = 8						; size = 4
 __Count$ = 12						; size = 4
-__Cat$236192 = 16					; size = 1
+__Cat$236670 = 16					; size = 1
 __Val$ = 16						; size = 4
 ?_Ufill@?$vector@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@IAEPAUCityAndProduction@@PAU3@IABU3@@Z PROC ; std::vector<CityAndProduction,std::allocator<CityAndProduction> >::_Ufill, COMDAT
 ; _this$ = ecx
@@ -15668,13 +15668,13 @@ __Val$ = 16						; size = 4
 
 ; 1254 : 		_STDEXT unchecked_uninitialized_fill_n(_Ptr, _Count, _Val, this->_Alval);
 
-	mov	edx, DWORD PTR __Cat$236192[esp]
+	mov	edx, DWORD PTR __Cat$236670[esp]
 	push	esi
 	mov	esi, DWORD PTR __Count$[esp+4]
 	push	edi
 	mov	edi, DWORD PTR __Ptr$[esp+8]
-	mov	BYTE PTR $T236189[esp+12], 0
-	mov	eax, DWORD PTR $T236189[esp+12]
+	mov	BYTE PTR $T236666[esp+12], 0
+	mov	eax, DWORD PTR $T236666[esp+12]
 	push	eax
 	mov	eax, DWORD PTR __Val$[esp+12]
 	push	edx
@@ -15717,10 +15717,10 @@ PUBLIC	??$_Unchecked_uninitialized_move@PAUCityAndProduction@@PAU1@V?$allocator@
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ??$_Unchecked_uninitialized_move@PAUCityAndProduction@@PAU1@V?$allocator@UCityAndProduction@@@std@@@stdext@@YAPAUCityAndProduction@@PAU1@00AAV?$allocator@UCityAndProduction@@@std@@@Z
 _TEXT	SEGMENT
-$T236229 = -4						; size = 1
+$T236705 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$236232 = 16					; size = 1
+__Cat$236709 = 16					; size = 1
 __Dest$ = 16						; size = 4
 __Al$ = 20						; size = 4
 ??$_Unchecked_uninitialized_move@PAUCityAndProduction@@PAU1@V?$allocator@UCityAndProduction@@@std@@@stdext@@YAPAUCityAndProduction@@PAU1@00AAV?$allocator@UCityAndProduction@@@std@@@Z PROC ; stdext::_Unchecked_uninitialized_move<CityAndProduction *,CityAndProduction *,std::allocator<CityAndProduction> >, COMDAT
@@ -15733,10 +15733,10 @@ __Al$ = 20						; size = 4
 ; 863  : 		_CHECKED_BASE(_Last), _Dest, _Al,
 ; 864  : 		_STD _Move_cat(_Dest), _STD _Range_checked_iterator_tag()));
 
-	mov	ecx, DWORD PTR __Cat$236232[esp]
+	mov	ecx, DWORD PTR __Cat$236709[esp]
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T236229[esp+4], 0
-	mov	eax, DWORD PTR $T236229[esp+4]
+	mov	BYTE PTR $T236705[esp+4], 0
+	mov	eax, DWORD PTR $T236705[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -15785,8 +15785,8 @@ PUBLIC	??$unchecked_merge@PAUCityAndProduction@@V?$_Vector_iterator@UCityAndProd
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$unchecked_merge@PAUCityAndProduction@@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@V23@UCityAndProductionEval@@@stdext@@YA?AV?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@PAUCityAndProduction@@0V12@11UCityAndProductionEval@@@Z
 _TEXT	SEGMENT
-$T236245 = -4						; size = 1
-$T236246 = 8						; size = 1
+$T236722 = -4						; size = 1
+$T236723 = 8						; size = 1
 ___$ReturnUdt$ = 8					; size = 4
 __First1$ = 12						; size = 4
 __Last1$ = 16						; size = 4
@@ -15803,12 +15803,12 @@ __Pred$ = 32						; size = 1
 ; 5158 : 		return _STD _Merge(_CHECKED_BASE(_First1), _CHECKED_BASE(_Last1), _CHECKED_BASE(_First2), _CHECKED_BASE(_Last2), _Dest, _Pred,
 ; 5159 : 			_STD _Iter_random(_First1, _First2,_Dest), _STD _Range_checked_iterator_tag());
 
-	mov	ecx, DWORD PTR $T236246[esp]
+	mov	ecx, DWORD PTR $T236723[esp]
 	mov	edx, DWORD PTR __Pred$[esp]
 	push	esi
 	mov	esi, DWORD PTR ___$ReturnUdt$[esp+4]
-	mov	BYTE PTR $T236245[esp+8], 0
-	mov	eax, DWORD PTR $T236245[esp+8]
+	mov	BYTE PTR $T236722[esp+8], 0
+	mov	eax, DWORD PTR $T236722[esp+8]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+8]
 	push	ecx
@@ -15838,7 +15838,7 @@ PUBLIC	??$_Unchecked_merge_backward@V?$_Vector_iterator@UCityAndProduction@@V?$a
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Unchecked_merge_backward@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@PAUCityAndProduction@@V12@UCityAndProductionEval@@@stdext@@YA?AV?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@V12@0PAUCityAndProduction@@10UCityAndProductionEval@@@Z
 _TEXT	SEGMENT
-$T236254 = -4						; size = 1
+$T236731 = -4						; size = 1
 ___$ReturnUdt$ = 8					; size = 4
 __First1$ = 12						; size = 4
 __Last1$ = 16						; size = 4
@@ -15858,8 +15858,8 @@ __Pred$ = 32						; size = 1
 	mov	edx, DWORD PTR __Dest$[esp]
 	push	esi
 	mov	esi, DWORD PTR ___$ReturnUdt$[esp+4]
-	mov	BYTE PTR $T236254[esp+8], 0
-	mov	eax, DWORD PTR $T236254[esp+8]
+	mov	BYTE PTR $T236731[esp+8], 0
+	mov	eax, DWORD PTR $T236731[esp+8]
 	push	eax
 	mov	eax, DWORD PTR __Last2$[esp+8]
 	push	ecx
@@ -15887,16 +15887,16 @@ PUBLIC	??$_Chunked_merge@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UC
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Chunked_merge@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@V?$_Temp_iterator@UCityAndProduction@@@2@HUCityAndProductionEval@@@std@@YAXV?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@0@0V?$_Temp_iterator@UCityAndProduction@@@0@HHUCityAndProductionEval@@U_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
-$T236263 = -20						; size = 20
-$T236261 = -20						; size = 20
-$T236259 = -20						; size = 20
+$T236740 = -20						; size = 20
+$T236738 = -20						; size = 20
+$T236736 = -20						; size = 20
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 20
-$T236258 = 36						; size = 4
+$T236735 = 36						; size = 4
 __Chunk$ = 36						; size = 4
-$T236262 = 40						; size = 4
-$T236260 = 40						; size = 4
+$T236739 = 40						; size = 4
+$T236737 = 40						; size = 4
 __Count$ = 40						; size = 4
 __Pred$ = 44						; size = 1
 ___formal$ = 48						; size = 1
@@ -15934,7 +15934,7 @@ $LL5@Chunked_me:
 	sub	esp, 20					; 00000014H
 	mov	eax, esp
 	lea	ecx, DWORD PTR [esi+edi*8]
-	mov	DWORD PTR $T236258[esp+56], esp
+	mov	DWORD PTR $T236735[esp+56], esp
 	lea	esi, DWORD PTR [ecx+edi*8]
 	push	esi
 	mov	DWORD PTR [eax], ebx
@@ -15947,11 +15947,11 @@ $LL5@Chunked_me:
 	mov	DWORD PTR [eax+16], edx
 	mov	eax, DWORD PTR __First$[esp+68]
 	push	eax
-	lea	ecx, DWORD PTR $T236259[esp+76]
+	lea	ecx, DWORD PTR $T236736[esp+76]
 	push	ecx
 	call	??$unchecked_merge@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@V12@V?$_Temp_iterator@UCityAndProduction@@@2@UCityAndProductionEval@@@stdext@@YA?AV?$_Temp_iterator@UCityAndProduction@@@std@@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@2@000V12@UCityAndProductionEval@@@Z ; stdext::unchecked_merge<std::_Vector_iterator<CityAndProduction,std::allocator<CityAndProduction> >,std::_Vector_iterator<CityAndProduction,std::allocator<CityAndProduction> >,std::_Temp_iterator<CityAndProduction>,CityAndProductionEval>
 	mov	edx, DWORD PTR [eax+16]
-	mov	eax, DWORD PTR $T236259[esp+80]
+	mov	eax, DWORD PTR $T236736[esp+80]
 	add	esp, 44					; 0000002cH
 	mov	DWORD PTR __Dest$[esp+48], edx
 	cmp	eax, ebx
@@ -15990,10 +15990,10 @@ $LN3@Chunked_me:
 	mov	DWORD PTR [eax+16], ecx
 	mov	edx, DWORD PTR __Last$[esp+52]
 	mov	eax, DWORD PTR __First$[esp+52]
-	mov	DWORD PTR $T236260[esp+52], esp
+	mov	DWORD PTR $T236737[esp+52], esp
 	push	edx
 	push	eax
-	lea	ecx, DWORD PTR $T236261[esp+64]
+	lea	ecx, DWORD PTR $T236738[esp+64]
 	push	ecx
 	call	??$unchecked_copy@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@V?$_Temp_iterator@UCityAndProduction@@@2@@stdext@@YA?AV?$_Temp_iterator@UCityAndProduction@@@std@@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@2@0V12@@Z ; stdext::unchecked_copy<std::_Vector_iterator<CityAndProduction,std::allocator<CityAndProduction> >,std::_Temp_iterator<CityAndProduction> >
 	add	esp, 32					; 00000020H
@@ -16020,19 +16020,19 @@ $LN2@Chunked_me:
 	mov	edx, DWORD PTR __Dest$[esp+72]
 	mov	DWORD PTR [eax+16], edx
 	mov	eax, DWORD PTR __Last$[esp+56]
-	mov	DWORD PTR $T236262[esp+56], esp
+	mov	DWORD PTR $T236739[esp+56], esp
 	push	eax
 	lea	ecx, DWORD PTR [esi+edi*8]
 	push	ecx
 	push	ecx
 	mov	ecx, DWORD PTR __First$[esp+68]
 	push	ecx
-	lea	edx, DWORD PTR $T236263[esp+76]
+	lea	edx, DWORD PTR $T236740[esp+76]
 	push	edx
 	call	??$unchecked_merge@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@V12@V?$_Temp_iterator@UCityAndProduction@@@2@UCityAndProductionEval@@@stdext@@YA?AV?$_Temp_iterator@UCityAndProduction@@@std@@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@2@000V12@UCityAndProductionEval@@@Z ; stdext::unchecked_merge<std::_Vector_iterator<CityAndProduction,std::allocator<CityAndProduction> >,std::_Vector_iterator<CityAndProduction,std::allocator<CityAndProduction> >,std::_Temp_iterator<CityAndProduction>,CityAndProductionEval>
 	add	esp, 44					; 0000002cH
 $LN111@Chunked_me:
-	mov	eax, DWORD PTR $T236263[esp+36]
+	mov	eax, DWORD PTR $T236740[esp+36]
 	cmp	eax, ebx
 	je	SHORT $LN87@Chunked_me
 	push	eax
@@ -16062,16 +16062,16 @@ PUBLIC	??$_Chunked_merge@PAUCityAndProduction@@V?$_Vector_iterator@UCityAndProdu
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Chunked_merge@PAUCityAndProduction@@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@HUCityAndProductionEval@@@std@@YAXPAUCityAndProduction@@0V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@0@HHUCityAndProductionEval@@U_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
-$T236493 = -4						; size = 4
+$T236970 = -4						; size = 4
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
-$T236539 = 20						; size = 1
+$T237015 = 20						; size = 1
 __Chunk$ = 20						; size = 4
-$T236646 = 24						; size = 1
-$T236647 = 24						; size = 1
-$T236540 = 24						; size = 1
-$T236495 = 24						; size = 4
+$T237123 = 24						; size = 1
+$T237124 = 24						; size = 1
+$T237016 = 24						; size = 1
+$T236972 = 24						; size = 4
 __Count$ = 24						; size = 4
 __Pred$ = 28						; size = 1
 ___formal$ = 32						; size = 1
@@ -16105,10 +16105,10 @@ $LL58@Chunked_me@2:
 ; 3441 : 
 ; 3442 : 		_Dest = _STDEXT unchecked_merge(_First, _Mid1, _Mid1, _Mid2, _Dest, _Pred);
 
-	mov	BYTE PTR $T236539[esp+16], 0
-	mov	ebx, DWORD PTR $T236539[esp+16]
+	mov	BYTE PTR $T237015[esp+16], 0
+	mov	ebx, DWORD PTR $T237015[esp+16]
 	push	ebx
-	mov	ebx, DWORD PTR $T236540[esp+20]
+	mov	ebx, DWORD PTR $T237016[esp+20]
 	push	ebx
 	mov	ebx, DWORD PTR __Pred$[esp+24]
 	push	ebx
@@ -16119,11 +16119,11 @@ $LL58@Chunked_me@2:
 	push	ecx
 	push	ecx
 	push	eax
-	lea	eax, DWORD PTR $T236493[esp+52]
+	lea	eax, DWORD PTR $T236970[esp+52]
 	push	eax
 	call	??$_Merge@PAUCityAndProduction@@PAU1@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@UCityAndProductionEval@@Urandom_access_iterator_tag@3@@std@@YA?AV?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@0@PAUCityAndProduction@@000V10@UCityAndProductionEval@@Urandom_access_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z ; std::_Merge<CityAndProduction *,CityAndProduction *,std::_Vector_iterator<CityAndProduction,std::allocator<CityAndProduction> >,CityAndProductionEval,std::random_access_iterator_tag>
 	mov	ecx, DWORD PTR __Count$[esp+52]
-	mov	edx, DWORD PTR $T236493[esp+56]
+	mov	edx, DWORD PTR $T236970[esp+56]
 	sub	ecx, ebp
 	add	esp, 36					; 00000024H
 	cmp	ecx, ebp
@@ -16176,10 +16176,10 @@ $LN2@Chunked_me@2:
 ; 3452 : 
 ; 3453 : 		_STDEXT unchecked_merge(_First, _Mid1, _Mid1, _Last, _Dest, _Pred);
 
-	mov	BYTE PTR $T236646[esp+12], 0
-	mov	ecx, DWORD PTR $T236646[esp+12]
+	mov	BYTE PTR $T237123[esp+12], 0
+	mov	ecx, DWORD PTR $T237123[esp+12]
 	push	ecx
-	mov	ecx, DWORD PTR $T236647[esp+16]
+	mov	ecx, DWORD PTR $T237124[esp+16]
 	push	ecx
 	mov	ecx, DWORD PTR __Pred$[esp+20]
 	push	ecx
@@ -16190,7 +16190,7 @@ $LN2@Chunked_me@2:
 	push	edi
 	push	edi
 	push	eax
-	lea	eax, DWORD PTR $T236495[esp+44]
+	lea	eax, DWORD PTR $T236972[esp+44]
 	push	eax
 	call	??$_Merge@PAUCityAndProduction@@PAU1@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@UCityAndProductionEval@@Urandom_access_iterator_tag@3@@std@@YA?AV?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@0@PAUCityAndProduction@@000V10@UCityAndProductionEval@@Urandom_access_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z ; std::_Merge<CityAndProduction *,CityAndProduction *,std::_Vector_iterator<CityAndProduction,std::allocator<CityAndProduction> >,CityAndProductionEval,std::random_access_iterator_tag>
 	add	esp, 36					; 00000024H
@@ -16248,9 +16248,9 @@ PUBLIC	?insert@?$_Tree@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVar
 _TEXT	SEGMENT
 __Addleft$ = -4						; size = 1
 ___$ReturnUdt$ = 8					; size = 4
-$T236714 = 12						; size = 4
-$T236712 = 12						; size = 4
-__Where$198776 = 12					; size = 4
+$T237191 = 12						; size = 4
+$T237189 = 12						; size = 4
+__Where$199253 = 12					; size = 4
 __Val$ = 12						; size = 4
 ?insert@?$_Tree@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@std@@QAE?AU?$pair@Viterator@?$_Tree@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@std@@_N@2@ABQAVFAutoVariableBase@@@Z PROC ; std::_Tree<std::_Tset_traits<FAutoVariableBase *,std::less<FAutoVariableBase *>,std::allocator<FAutoVariableBase *>,0> >::insert, COMDAT
 ; _this$ = ecx
@@ -16317,7 +16317,7 @@ $LN9@insert:
 ; 646  : 			iterator _Where = _TREE_ITERATOR(_Wherenode);
 
 	mov	edx, esi
-	mov	DWORD PTR __Where$198776[esp+12], edx
+	mov	DWORD PTR __Where$199253[esp+12], edx
 
 ; 647  : 			if (!_Addleft)
 
@@ -16331,7 +16331,7 @@ $LN9@insert:
 
 ; 650  : 				return (_Pairib(_Insert(true, _Wherenode, _Val), true));
 
-	lea	ecx, DWORD PTR $T236712[esp+12]
+	lea	ecx, DWORD PTR $T237189[esp+12]
 	cmp	esi, DWORD PTR [eax]
 	jne	SHORT $LN4@insert
 	push	ebp
@@ -16363,7 +16363,7 @@ $LN4@insert:
 ; 652  : 				--_Where;	// need to test if insert before is okay
 
 	call	?_Dec@const_iterator@?$_Tree@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@std@@QAEXXZ ; std::_Tree<std::_Tset_traits<FAutoVariableBase *,std::less<FAutoVariableBase *>,std::allocator<FAutoVariableBase *>,0> >::const_iterator::_Dec
-	mov	edx, DWORD PTR __Where$198776[esp+12]
+	mov	edx, DWORD PTR __Where$199253[esp+12]
 $LN57@insert:
 
 ; 653  : 
@@ -16380,7 +16380,7 @@ $LN57@insert:
 	push	ebp
 	push	esi
 	push	ecx
-	lea	edx, DWORD PTR $T236714[esp+24]
+	lea	edx, DWORD PTR $T237191[esp+24]
 	push	edx
 	mov	ecx, edi
 	call	?_Insert@?$_Tree@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@std@@IAE?AViterator@12@_NPAU_Node@?$_Tree_nod@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@2@ABQAVFAutoVariableBase@@@Z ; std::_Tree<std::_Tset_traits<FAutoVariableBase *,std::less<FAutoVariableBase *>,std::allocator<FAutoVariableBase *>,0> >::_Insert
@@ -16575,10 +16575,10 @@ PUBLIC	??$_Umove@PAUCityAndProduction@@@?$vector@UCityAndProduction@@V?$allocato
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Umove@PAUCityAndProduction@@@?$vector@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@IAEPAUCityAndProduction@@PAU2@00@Z
 _TEXT	SEGMENT
-$T236902 = -4						; size = 1
+$T237380 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$236905 = 16					; size = 1
+__Cat$237383 = 16					; size = 1
 __Ptr$ = 16						; size = 4
 ??$_Umove@PAUCityAndProduction@@@?$vector@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@IAEPAUCityAndProduction@@PAU2@00@Z PROC ; std::vector<CityAndProduction,std::allocator<CityAndProduction> >::_Umove<CityAndProduction *>, COMDAT
 ; _this$ = ecx
@@ -16591,9 +16591,9 @@ __Ptr$ = 16						; size = 4
 ; 1147 : 		return (_STDEXT _Unchecked_uninitialized_move(_First, _Last,
 ; 1148 : 			_Ptr, this->_Alval));
 
-	mov	edx, DWORD PTR __Cat$236905[esp]
-	mov	BYTE PTR $T236902[esp+4], 0
-	mov	eax, DWORD PTR $T236902[esp+4]
+	mov	edx, DWORD PTR __Cat$237383[esp]
+	mov	BYTE PTR $T237380[esp+4], 0
+	mov	eax, DWORD PTR $T237380[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Ptr$[esp+4]
 	push	edx
@@ -16616,12 +16616,12 @@ PUBLIC	??$_Unchecked_chunked_merge@V?$_Vector_iterator@UCityAndProduction@@V?$al
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\algorithm
 ;	COMDAT ??$_Unchecked_chunked_merge@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@V?$_Temp_iterator@UCityAndProduction@@@2@HUCityAndProductionEval@@@stdext@@YAXV?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@0V?$_Temp_iterator@UCityAndProduction@@@2@HHUCityAndProductionEval@@@Z
 _TEXT	SEGMENT
-$T236913 = -4						; size = 1
+$T237390 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 20
 __Chunk$ = 36						; size = 4
-$T236914 = 40						; size = 4
+$T237391 = 40						; size = 4
 __Count$ = 40						; size = 4
 __Pred$ = 44						; size = 1
 ??$_Unchecked_chunked_merge@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@V?$_Temp_iterator@UCityAndProduction@@@2@HUCityAndProductionEval@@@stdext@@YAXV?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@0V?$_Temp_iterator@UCityAndProduction@@@2@HHUCityAndProductionEval@@@Z PROC ; stdext::_Unchecked_chunked_merge<std::_Vector_iterator<CityAndProduction,std::allocator<CityAndProduction> >,std::_Temp_iterator<CityAndProduction>,int,CityAndProductionEval>, COMDAT
@@ -16636,8 +16636,8 @@ __Pred$ = 44						; size = 1
 	mov	edx, DWORD PTR __Count$[esp]
 	push	ebx
 	xor	ebx, ebx
-	mov	BYTE PTR $T236913[esp+8], bl
-	mov	eax, DWORD PTR $T236913[esp+8]
+	mov	BYTE PTR $T237390[esp+8], bl
+	mov	eax, DWORD PTR $T237390[esp+8]
 	push	eax
 	mov	eax, DWORD PTR __Chunk$[esp+8]
 	push	ecx
@@ -16653,7 +16653,7 @@ __Pred$ = 44						; size = 1
 	mov	DWORD PTR [eax+16], ecx
 	mov	edx, DWORD PTR __Last$[esp+40]
 	mov	eax, DWORD PTR __First$[esp+40]
-	mov	DWORD PTR $T236914[esp+40], esp
+	mov	DWORD PTR $T237391[esp+40], esp
 	push	edx
 	push	eax
 	call	??$_Chunked_merge@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@V?$_Temp_iterator@UCityAndProduction@@@2@HUCityAndProductionEval@@@std@@YAXV?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@0@0V?$_Temp_iterator@UCityAndProduction@@@0@HHUCityAndProductionEval@@U_Range_checked_iterator_tag@0@@Z ; std::_Chunked_merge<std::_Vector_iterator<CityAndProduction,std::allocator<CityAndProduction> >,std::_Temp_iterator<CityAndProduction>,int,CityAndProductionEval>
@@ -16677,7 +16677,7 @@ PUBLIC	??$_Unchecked_chunked_merge@PAUCityAndProduction@@V?$_Vector_iterator@UCi
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Unchecked_chunked_merge@PAUCityAndProduction@@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@HUCityAndProductionEval@@@stdext@@YAXPAUCityAndProduction@@0V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@HHUCityAndProductionEval@@@Z
 _TEXT	SEGMENT
-$T236950 = -4						; size = 1
+$T237427 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
@@ -16694,8 +16694,8 @@ __Pred$ = 28						; size = 1
 
 	mov	ecx, DWORD PTR __Pred$[esp]
 	mov	edx, DWORD PTR __Count$[esp]
-	mov	BYTE PTR $T236950[esp+4], 0
-	mov	eax, DWORD PTR $T236950[esp+4]
+	mov	BYTE PTR $T237427[esp+4], 0
+	mov	eax, DWORD PTR $T237427[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Chunk$[esp+4]
 	push	ecx
@@ -16719,28 +16719,28 @@ PUBLIC	??$_Buffered_rotate@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Buffered_rotate@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@HUCityAndProduction@@@std@@YA?AV?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@0@V10@00HHAAV?$_Temp_iterator@UCityAndProduction@@@0@@Z
 _TEXT	SEGMENT
-$T236958 = -20						; size = 20
-$T236955 = -20						; size = 20
+$T237435 = -20						; size = 20
+$T237432 = -20						; size = 20
 ___$ReturnUdt$ = 8					; size = 4
 __First$ = 12						; size = 4
 __Mid$ = 16						; size = 4
 __Last$ = 20						; size = 4
-$T237131 = 24						; size = 1
-__Cat$237135 = 24					; size = 1
-$T237133 = 24						; size = 1
-$T237097 = 24						; size = 1
-__Cat$237101 = 24					; size = 1
-$T237099 = 24						; size = 1
-$T237042 = 24						; size = 1
-__Cat$237046 = 24					; size = 1
-$T237044 = 24						; size = 1
-$T237009 = 24						; size = 1
-__Cat$237013 = 24					; size = 1
-$T237011 = 24						; size = 1
-$T236959 = 24						; size = 4
-$T236957 = 24						; size = 4
-$T236956 = 24						; size = 4
-$T236954 = 24						; size = 4
+$T237607 = 24						; size = 1
+__Cat$237612 = 24					; size = 1
+$T237609 = 24						; size = 1
+$T237579 = 24						; size = 1
+__Cat$237583 = 24					; size = 1
+$T237581 = 24						; size = 1
+$T237519 = 24						; size = 1
+__Cat$237523 = 24					; size = 1
+$T237521 = 24						; size = 1
+$T237486 = 24						; size = 1
+__Cat$237490 = 24					; size = 1
+$T237488 = 24						; size = 1
+$T237436 = 24						; size = 4
+$T237434 = 24						; size = 4
+$T237433 = 24						; size = 4
+$T237431 = 24						; size = 4
 __Count1$ = 24						; size = 4
 __Count2$ = 28						; size = 4
 __Tempbuf$ = 32						; size = 4
@@ -16783,13 +16783,13 @@ __Tempbuf$ = 32						; size = 4
 	mov	DWORD PTR [eax+16], edx
 	mov	eax, DWORD PTR __Mid$[esp+52]
 	mov	ecx, DWORD PTR __First$[esp+52]
-	mov	DWORD PTR $T236954[esp+52], esp
+	mov	DWORD PTR $T237431[esp+52], esp
 	push	eax
 	push	ecx
-	lea	edx, DWORD PTR $T236955[esp+64]
+	lea	edx, DWORD PTR $T237432[esp+64]
 	push	edx
 	call	??$unchecked_copy@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@V?$_Temp_iterator@UCityAndProduction@@@2@@stdext@@YA?AV?$_Temp_iterator@UCityAndProduction@@@std@@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@2@0V12@@Z ; stdext::unchecked_copy<std::_Vector_iterator<CityAndProduction,std::allocator<CityAndProduction> >,std::_Temp_iterator<CityAndProduction> >
-	mov	eax, DWORD PTR $T236955[esp+68]
+	mov	eax, DWORD PTR $T237432[esp+68]
 	add	esp, 32					; 00000020H
 	cmp	eax, ebx
 	je	SHORT $LN25@Buffered_r
@@ -16800,10 +16800,10 @@ $LN25@Buffered_r:
 
 ; 2687 : 		_STDEXT unchecked_copy(_Mid, _Last, _First);
 
-	mov	BYTE PTR $T237009[esp+32], bl
-	mov	eax, DWORD PTR $T237009[esp+32]
-	mov	ecx, DWORD PTR __Cat$237013[esp+32]
-	mov	edx, DWORD PTR $T237011[esp+32]
+	mov	BYTE PTR $T237486[esp+32], bl
+	mov	eax, DWORD PTR $T237486[esp+32]
+	mov	ecx, DWORD PTR __Cat$237490[esp+32]
+	mov	edx, DWORD PTR $T237488[esp+32]
 	push	eax
 	mov	eax, DWORD PTR __First$[esp+36]
 	push	ecx
@@ -16813,7 +16813,7 @@ $LN25@Buffered_r:
 	push	eax
 	push	ecx
 	push	edx
-	lea	eax, DWORD PTR $T236956[esp+56]
+	lea	eax, DWORD PTR $T237433[esp+56]
 	push	eax
 	call	??$_Copy_opt@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@V12@Urandom_access_iterator_tag@2@@std@@YA?AV?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@0@V10@00Urandom_access_iterator_tag@0@U_Nonscalar_ptr_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z ; std::_Copy_opt<std::_Vector_iterator<CityAndProduction,std::allocator<CityAndProduction> >,std::_Vector_iterator<CityAndProduction,std::allocator<CityAndProduction> >,std::random_access_iterator_tag>
 
@@ -16821,10 +16821,10 @@ $LN25@Buffered_r:
 ; 2689 : 			_Last));
 
 	mov	esi, DWORD PTR [esi+16]
-	mov	BYTE PTR $T237042[esp+60], bl
-	mov	ecx, DWORD PTR $T237042[esp+60]
-	mov	edx, DWORD PTR __Cat$237046[esp+60]
-	mov	eax, DWORD PTR $T237044[esp+60]
+	mov	BYTE PTR $T237519[esp+60], bl
+	mov	ecx, DWORD PTR $T237519[esp+60]
+	mov	edx, DWORD PTR __Cat$237523[esp+60]
+	mov	eax, DWORD PTR $T237521[esp+60]
 	push	ecx
 	mov	ecx, DWORD PTR __Last$[esp+64]
 	push	edx
@@ -16878,13 +16878,13 @@ $LN4@Buffered_r:
 	mov	DWORD PTR [eax+16], edx
 	mov	eax, DWORD PTR __Last$[esp+52]
 	mov	ecx, DWORD PTR __Mid$[esp+52]
-	mov	DWORD PTR $T236957[esp+52], esp
+	mov	DWORD PTR $T237434[esp+52], esp
 	push	eax
 	push	ecx
-	lea	edx, DWORD PTR $T236958[esp+64]
+	lea	edx, DWORD PTR $T237435[esp+64]
 	push	edx
 	call	??$unchecked_copy@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@V?$_Temp_iterator@UCityAndProduction@@@2@@stdext@@YA?AV?$_Temp_iterator@UCityAndProduction@@@std@@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@2@0V12@@Z ; stdext::unchecked_copy<std::_Vector_iterator<CityAndProduction,std::allocator<CityAndProduction> >,std::_Temp_iterator<CityAndProduction> >
-	mov	eax, DWORD PTR $T236958[esp+68]
+	mov	eax, DWORD PTR $T237435[esp+68]
 	add	esp, 32					; 00000020H
 	cmp	eax, ebx
 	je	SHORT $LN57@Buffered_r
@@ -16895,10 +16895,10 @@ $LN57@Buffered_r:
 
 ; 2694 : 		_STDEXT unchecked_copy_backward(_First, _Mid, _Last);
 
-	mov	BYTE PTR $T237097[esp+32], bl
-	mov	eax, DWORD PTR $T237097[esp+32]
-	mov	ecx, DWORD PTR __Cat$237101[esp+32]
-	mov	edx, DWORD PTR $T237099[esp+32]
+	mov	BYTE PTR $T237579[esp+32], bl
+	mov	eax, DWORD PTR $T237579[esp+32]
+	mov	ecx, DWORD PTR __Cat$237583[esp+32]
+	mov	edx, DWORD PTR $T237581[esp+32]
 	push	eax
 	mov	eax, DWORD PTR __Last$[esp+36]
 	push	ecx
@@ -16908,17 +16908,17 @@ $LN57@Buffered_r:
 	push	eax
 	push	ecx
 	push	edx
-	lea	eax, DWORD PTR $T236959[esp+56]
+	lea	eax, DWORD PTR $T237436[esp+56]
 	push	eax
 	call	??$_Copy_backward_opt@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@V12@Urandom_access_iterator_tag@2@@std@@YA?AV?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@0@V10@00Urandom_access_iterator_tag@0@U_Nonscalar_ptr_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z ; std::_Copy_backward_opt<std::_Vector_iterator<CityAndProduction,std::allocator<CityAndProduction> >,std::_Vector_iterator<CityAndProduction,std::allocator<CityAndProduction> >,std::random_access_iterator_tag>
 
 ; 2695 : 		return (_STDEXT unchecked_copy(_Tempbuf._First(), _Tempbuf._Last(), _First));
 
 	mov	esi, DWORD PTR [esi+16]
-	mov	BYTE PTR $T237131[esp+60], bl
-	mov	ecx, DWORD PTR $T237131[esp+60]
-	mov	edx, DWORD PTR __Cat$237135[esp+60]
-	mov	eax, DWORD PTR $T237133[esp+60]
+	mov	BYTE PTR $T237607[esp+60], bl
+	mov	ecx, DWORD PTR $T237607[esp+60]
+	mov	edx, DWORD PTR __Cat$237612[esp+60]
+	mov	eax, DWORD PTR $T237609[esp+60]
 	push	ecx
 	mov	ecx, DWORD PTR __First$[esp+64]
 	push	edx
@@ -16991,8 +16991,8 @@ PUBLIC	?touch@FAutoArchive@@QAEXAAVFAutoVariableBase@@@Z ; FAutoArchive::touch
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\fireplace\include\fireworks\fautoarchive.h
 ;	COMDAT ?touch@FAutoArchive@@QAEXAAVFAutoVariableBase@@@Z
 _TEXT	SEGMENT
-$T237246 = -8						; size = 8
-$T237245 = 8						; size = 4
+$T237723 = -8						; size = 8
+$T237722 = 8						; size = 4
 _dirtyVariable$ = 8					; size = 4
 ?touch@FAutoArchive@@QAEXAAVFAutoVariableBase@@@Z PROC	; FAutoArchive::touch, COMDAT
 ; _this$ = ecx
@@ -17007,10 +17007,10 @@ _dirtyVariable$ = 8					; size = 4
 ; 59   : 		m_deltas.insert(&dirtyVariable);
 
 	mov	eax, DWORD PTR _dirtyVariable$[esp+4]
-	lea	edx, DWORD PTR $T237245[esp+4]
-	mov	DWORD PTR $T237245[esp+4], eax
+	lea	edx, DWORD PTR $T237722[esp+4]
+	mov	DWORD PTR $T237722[esp+4], eax
 	push	edx
-	lea	eax, DWORD PTR $T237246[esp+12]
+	lea	eax, DWORD PTR $T237723[esp+12]
 	push	eax
 	add	ecx, 20					; 00000014H
 	call	?insert@?$_Tree@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@std@@QAE?AU?$pair@Viterator@?$_Tree@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@std@@_N@2@ABQAVFAutoVariableBase@@@Z ; std::_Tree<std::_Tset_traits<FAutoVariableBase *,std::less<FAutoVariableBase *>,std::allocator<FAutoVariableBase *>,0> >::insert
@@ -17096,18 +17096,18 @@ __tryblocktable$?_Insert_n@?$vector@UCityAndProduction@@V?$allocator@UCityAndPro
 xdata$x	ENDS
 ;	COMDAT ?_Insert_n@?$vector@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@IAEXV?$_Vector_const_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@2@IABUCityAndProduction@@@Z
 _TEXT	SEGMENT
-__Tmp$227077 = -24					; size = 8
-__Tmp$227067 = -24					; size = 8
+__Tmp$227554 = -24					; size = 8
+__Tmp$227544 = -24					; size = 8
 __Capacity$ = -20					; size = 4
 __$EHRec$ = -16						; size = 16
-__Cat$237468 = 8					; size = 1
-__Cat$237396 = 8					; size = 1
+__Cat$237944 = 8					; size = 1
+__Cat$237872 = 8					; size = 1
 __Where$ = 8						; size = 4
-__Newvec$227052 = 12					; size = 4
+__Newvec$227529 = 12					; size = 4
 __Count$ = 12						; size = 4
 tv515 = 16						; size = 4
-$T237465 = 16						; size = 1
-$T237393 = 16						; size = 1
+$T237940 = 16						; size = 1
+$T237868 = 16						; size = 1
 __Val$ = 16						; size = 4
 ?_Insert_n@?$vector@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@IAEXV?$_Vector_const_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@2@IABUCityAndProduction@@@Z PROC ; std::vector<CityAndProduction,std::allocator<CityAndProduction> >::_Insert_n, COMDAT
 ; _this$ = ecx
@@ -17233,7 +17233,7 @@ $LN9@Insert_n:
 	lea	edx, DWORD PTR [eax+edi*8]
 	push	edx
 	mov	ecx, esi
-	mov	DWORD PTR __Newvec$227052[ebp], eax
+	mov	DWORD PTR __Newvec$227529[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+12], 0
 	call	?_Ufill@?$vector@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@IAEPAUCityAndProduction@@PAU3@IABU3@@Z ; std::vector<CityAndProduction,std::allocator<CityAndProduction> >::_Ufill
 
@@ -17241,12 +17241,12 @@ $LN9@Insert_n:
 ; 1180 : 			_Umove(this->_Myfirst, _VEC_ITER_BASE(_Where),
 ; 1181 : 				_Newvec);	// move prefix
 
-	mov	edx, DWORD PTR __Cat$237396[ebp]
+	mov	edx, DWORD PTR __Cat$237872[ebp]
 	mov	eax, DWORD PTR [esi+4]
-	mov	BYTE PTR $T237393[ebp], 0
-	mov	ecx, DWORD PTR $T237393[ebp]
+	mov	BYTE PTR $T237868[ebp], 0
+	mov	ecx, DWORD PTR $T237868[ebp]
 	push	ecx
-	mov	ecx, DWORD PTR __Newvec$227052[ebp]
+	mov	ecx, DWORD PTR __Newvec$227529[ebp]
 	push	edx
 	mov	edx, DWORD PTR __Where$[ebp]
 	push	esi
@@ -17261,13 +17261,13 @@ $LN9@Insert_n:
 
 	mov	eax, DWORD PTR [esi+8]
 	add	esp, 24					; 00000018H
-	mov	BYTE PTR $T237465[ebp], 0
-	mov	edx, DWORD PTR $T237465[ebp]
+	mov	BYTE PTR $T237940[ebp], 0
+	mov	edx, DWORD PTR $T237940[ebp]
 	push	edx
-	mov	edx, DWORD PTR __Cat$237468[ebp]
+	mov	edx, DWORD PTR __Cat$237944[ebp]
 	push	edx
 	lea	ecx, DWORD PTR [edi+ebx]
-	mov	edi, DWORD PTR __Newvec$227052[ebp]
+	mov	edi, DWORD PTR __Newvec$227529[ebp]
 	push	esi
 	lea	ecx, DWORD PTR [edi+ecx*8]
 	push	ecx
@@ -17342,7 +17342,7 @@ __catch$?_Insert_n@?$vector@UCityAndProduction@@V?$allocator@UCityAndProduction@
 ; 1189 : 				_Destroy(_Newvec + _Whereoff, _Newvec + _Whereoff + _Count);
 ; 1190 : 			this->_Alval.deallocate(_Newvec, _Capacity);
 
-	mov	edx, DWORD PTR __Newvec$227052[ebp]
+	mov	edx, DWORD PTR __Newvec$227529[ebp]
 	push	edx
 	call	??3@YAXPAX@Z				; operator delete
 	add	esp, 4
@@ -17372,7 +17372,7 @@ $LN10@Insert_n:
 	mov	ecx, DWORD PTR __Val$[ebp]
 	mov	edx, DWORD PTR [ecx]
 	mov	ecx, DWORD PTR [ecx+4]
-	mov	DWORD PTR __Tmp$227067[ebp+4], ecx
+	mov	DWORD PTR __Tmp$227544[ebp+4], ecx
 
 ; 1212 : 
 ; 1213 : 			_Umove(_VEC_ITER_BASE(_Where), _Mylast,
@@ -17385,7 +17385,7 @@ $LN10@Insert_n:
 	push	edi
 	push	eax
 	mov	ecx, esi
-	mov	DWORD PTR __Tmp$227067[ebp], edx
+	mov	DWORD PTR __Tmp$227544[ebp], edx
 	call	??$_Umove@PAUCityAndProduction@@@?$vector@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@IAEPAUCityAndProduction@@PAU2@00@Z ; std::vector<CityAndProduction,std::allocator<CityAndProduction> >::_Umove<CityAndProduction *>
 
 ; 1215 : 
@@ -17396,7 +17396,7 @@ $LN10@Insert_n:
 	mov	eax, DWORD PTR [esi+8]
 	mov	ecx, eax
 	sub	ecx, DWORD PTR __Where$[ebp]
-	lea	edx, DWORD PTR __Tmp$227067[ebp]
+	lea	edx, DWORD PTR __Tmp$227544[ebp]
 	sar	ecx, 3
 	push	edx
 	sub	ebx, ecx
@@ -17425,7 +17425,7 @@ $LN10@Insert_n:
 ; 1230 : 			std::fill(_VEC_ITER_BASE(_Where), _Mylast - _Count,
 ; 1231 : 				_Tmp);	// insert up to old end
 
-	lea	edx, DWORD PTR __Tmp$227067[ebp]
+	lea	edx, DWORD PTR __Tmp$227544[ebp]
 	push	edx
 	sub	esi, eax
 	mov	eax, DWORD PTR __Where$[ebp]
@@ -17466,10 +17466,10 @@ $LN3@Insert_n:
 	mov	ebx, edi
 	sub	ebx, eax
 	push	edi
-	mov	DWORD PTR __Tmp$227077[ebp], ecx
+	mov	DWORD PTR __Tmp$227554[ebp], ecx
 	push	ebx
 	mov	ecx, esi
-	mov	DWORD PTR __Tmp$227077[ebp+4], edx
+	mov	DWORD PTR __Tmp$227554[ebp+4], edx
 	mov	DWORD PTR tv515[ebp], eax
 	call	??$_Umove@PAUCityAndProduction@@@?$vector@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@IAEPAUCityAndProduction@@PAU2@00@Z ; std::vector<CityAndProduction,std::allocator<CityAndProduction> >::_Umove<CityAndProduction *>
 
@@ -17493,7 +17493,7 @@ $LN3@Insert_n:
 
 	mov	eax, DWORD PTR __Where$[ebp]
 	mov	edx, DWORD PTR tv515[ebp]
-	lea	ecx, DWORD PTR __Tmp$227077[ebp]
+	lea	ecx, DWORD PTR __Tmp$227554[ebp]
 	push	ecx
 	add	edx, eax
 	push	edx
@@ -17527,8 +17527,8 @@ PUBLIC	?set@?$FAutoVariable@W4PlayerTypes@@VCvPlayer@@@@QAEXABW4PlayerTypes@@@Z 
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\fireplace\include\fireworks\fautovariable.h
 ;	COMDAT ?set@?$FAutoVariable@W4PlayerTypes@@VCvPlayer@@@@QAEXABW4PlayerTypes@@@Z
 _TEXT	SEGMENT
-$T237505 = -8						; size = 8
-$T237504 = 8						; size = 4
+$T237981 = -8						; size = 8
+$T237980 = 8						; size = 4
 _source$ = 8						; size = 4
 ?set@?$FAutoVariable@W4PlayerTypes@@VCvPlayer@@@@QAEXABW4PlayerTypes@@@Z PROC ; FAutoVariable<enum PlayerTypes,CvPlayer>::set, COMDAT
 ; _this$ = ecx
@@ -17550,13 +17550,13 @@ _source$ = 8						; size = 4
 ; 227  : 	{
 ; 228  : 		m_owner.touch(*this);
 
-	lea	ecx, DWORD PTR $T237504[esp+12]
+	lea	ecx, DWORD PTR $T237980[esp+12]
 	push	ecx
 	mov	ecx, DWORD PTR [esi+8]
-	lea	edx, DWORD PTR $T237505[esp+20]
+	lea	edx, DWORD PTR $T237981[esp+20]
 	push	edx
 	add	ecx, 20					; 00000014H
-	mov	DWORD PTR $T237504[esp+20], esi
+	mov	DWORD PTR $T237980[esp+20], esi
 	call	?insert@?$_Tree@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@std@@QAE?AU?$pair@Viterator@?$_Tree@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@std@@_N@2@ABQAVFAutoVariableBase@@@Z ; std::_Tree<std::_Tset_traits<FAutoVariableBase *,std::less<FAutoVariableBase *>,std::allocator<FAutoVariableBase *>,0> >::insert
 
 ; 229  : 		m_value = source;
@@ -17579,11 +17579,11 @@ PUBLIC	??$_Buffered_merge_sort@V?$_Vector_iterator@UCityAndProduction@@V?$alloca
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\algorithm
 ;	COMDAT ??$_Buffered_merge_sort@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@HUCityAndProduction@@UCityAndProductionEval@@@std@@YAXV?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@0@0HAAV?$_Temp_iterator@UCityAndProduction@@@0@UCityAndProductionEval@@@Z
 _TEXT	SEGMENT
-$T237636 = -8						; size = 1
-$T237607 = -4						; size = 4
+$T238114 = -8						; size = 1
+$T238085 = -4						; size = 4
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-$T237606 = 16						; size = 1
+$T238084 = 16						; size = 1
 __Count$ = 16						; size = 4
 __Tempbuf$ = 20						; size = 4
 __Pred$ = 24						; size = 1
@@ -17662,8 +17662,8 @@ $LL3@Buffered_m:
 	mov	DWORD PTR [eax+4], edx
 	mov	edx, DWORD PTR __Pred$[esp+20]
 	mov	ecx, DWORD PTR [ebp+16]
-	mov	BYTE PTR $T237606[esp+20], bl
-	mov	eax, DWORD PTR $T237606[esp+20]
+	mov	BYTE PTR $T238084[esp+20], bl
+	mov	eax, DWORD PTR $T238084[esp+20]
 	push	eax
 	push	edx
 	push	edi
@@ -17677,7 +17677,7 @@ $LL3@Buffered_m:
 	mov	DWORD PTR [eax+16], ecx
 	mov	eax, DWORD PTR __Last$[esp+56]
 	mov	ecx, DWORD PTR __First$[esp+56]
-	mov	DWORD PTR $T237607[esp+60], esp
+	mov	DWORD PTR $T238085[esp+60], esp
 	push	eax
 	push	ecx
 	call	??$_Chunked_merge@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@V?$_Temp_iterator@UCityAndProduction@@@2@HUCityAndProductionEval@@@std@@YAXV?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@0@0V?$_Temp_iterator@UCityAndProduction@@@0@HHUCityAndProductionEval@@U_Range_checked_iterator_tag@0@@Z ; std::_Chunked_merge<std::_Vector_iterator<CityAndProduction,std::allocator<CityAndProduction> >,std::_Temp_iterator<CityAndProduction>,int,CityAndProductionEval>
@@ -17687,8 +17687,8 @@ $LL3@Buffered_m:
 
 	mov	ecx, DWORD PTR __Pred$[esp+64]
 	mov	eax, DWORD PTR [ebp+16]
-	mov	BYTE PTR $T237636[esp+68], bl
-	mov	edx, DWORD PTR $T237636[esp+68]
+	mov	BYTE PTR $T238114[esp+68], bl
+	mov	edx, DWORD PTR $T238114[esp+68]
 	push	edx
 	mov	edx, DWORD PTR __First$[esp+68]
 	push	ecx
@@ -17723,19 +17723,19 @@ PUBLIC	??$_Buffered_merge@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@U
 ;	COMDAT ??$_Buffered_merge@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@HUCityAndProduction@@UCityAndProductionEval@@@std@@YAXV?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@0@00HHAAV?$_Temp_iterator@UCityAndProduction@@@0@UCityAndProductionEval@@@Z
 _TEXT	SEGMENT
 tv518 = -24						; size = 4
-$T237958 = -24						; size = 4
-$T237868 = -24						; size = 4
-$T237651 = -20						; size = 20
-$T237648 = -20						; size = 20
+$T238436 = -24						; size = 4
+$T238346 = -24						; size = 4
+$T238128 = -20						; size = 20
+$T238125 = -20						; size = 20
 __First$ = 8						; size = 4
 __Mid$ = 12						; size = 4
 __Last$ = 16						; size = 4
-$T237799 = 20						; size = 1
-__Midn$227890 = 20					; size = 4
-$T237652 = 20						; size = 4
-$T237650 = 20						; size = 4
-$T237649 = 20						; size = 4
-$T237647 = 20						; size = 4
+$T238277 = 20						; size = 1
+__Midn$228367 = 20					; size = 4
+$T238129 = 20						; size = 4
+$T238127 = 20						; size = 4
+$T238126 = 20						; size = 4
+$T238124 = 20						; size = 4
 __Count1$ = 20						; size = 4
 __Count2$ = 24						; size = 4
 __Tempbuf$ = 28						; size = 4
@@ -17820,13 +17820,13 @@ $LN9@Buffered_m@2:
 	mov	DWORD PTR [eax+16], edx
 	mov	eax, DWORD PTR __Mid$[esp+56]
 	mov	ecx, DWORD PTR __First$[esp+56]
-	mov	DWORD PTR $T237647[esp+56], esp
+	mov	DWORD PTR $T238124[esp+56], esp
 	push	eax
 	push	ecx
-	lea	edx, DWORD PTR $T237648[esp+68]
+	lea	edx, DWORD PTR $T238125[esp+68]
 	push	edx
 	call	??$unchecked_copy@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@V?$_Temp_iterator@UCityAndProduction@@@2@@stdext@@YA?AV?$_Temp_iterator@UCityAndProduction@@@std@@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@2@0V12@@Z ; stdext::unchecked_copy<std::_Vector_iterator<CityAndProduction,std::allocator<CityAndProduction> >,std::_Temp_iterator<CityAndProduction> >
-	mov	eax, DWORD PTR $T237648[esp+72]
+	mov	eax, DWORD PTR $T238125[esp+72]
 	add	esp, 32					; 00000020H
 	cmp	eax, ebx
 	je	SHORT $LN53@Buffered_m@2
@@ -17851,7 +17851,7 @@ $LN53@Buffered_m@2:
 	push	eax
 	push	ecx
 	push	edx
-	lea	eax, DWORD PTR $T237649[esp+60]
+	lea	eax, DWORD PTR $T238126[esp+60]
 	push	eax
 	call	??$unchecked_merge@PAUCityAndProduction@@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@V23@UCityAndProductionEval@@@stdext@@YA?AV?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@PAUCityAndProduction@@0V12@11UCityAndProductionEval@@@Z ; stdext::unchecked_merge<CityAndProduction *,std::_Vector_iterator<CityAndProduction,std::allocator<CityAndProduction> >,std::_Vector_iterator<CityAndProduction,std::allocator<CityAndProduction> >,CityAndProductionEval>
 	add	esp, 28					; 0000001cH
@@ -17892,13 +17892,13 @@ $LN6@Buffered_m@2:
 	mov	DWORD PTR [eax+16], edx
 	mov	eax, DWORD PTR __Last$[esp+56]
 	mov	ecx, DWORD PTR __Mid$[esp+56]
-	mov	DWORD PTR $T237650[esp+56], esp
+	mov	DWORD PTR $T238127[esp+56], esp
 	push	eax
 	push	ecx
-	lea	edx, DWORD PTR $T237651[esp+68]
+	lea	edx, DWORD PTR $T238128[esp+68]
 	push	edx
 	call	??$unchecked_copy@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@V?$_Temp_iterator@UCityAndProduction@@@2@@stdext@@YA?AV?$_Temp_iterator@UCityAndProduction@@@std@@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@2@0V12@@Z ; stdext::unchecked_copy<std::_Vector_iterator<CityAndProduction,std::allocator<CityAndProduction> >,std::_Temp_iterator<CityAndProduction> >
-	mov	eax, DWORD PTR $T237651[esp+72]
+	mov	eax, DWORD PTR $T238128[esp+72]
 	add	esp, 32					; 00000020H
 	cmp	eax, ebx
 	je	SHORT $LN73@Buffered_m@2
@@ -17913,8 +17913,8 @@ $LN73@Buffered_m@2:
 	mov	ecx, DWORD PTR __Pred$[esp+36]
 	mov	esi, DWORD PTR [esi+16]
 	mov	edx, DWORD PTR __Last$[esp+36]
-	mov	BYTE PTR $T237799[esp+36], bl
-	mov	eax, DWORD PTR $T237799[esp+36]
+	mov	BYTE PTR $T238277[esp+36], bl
+	mov	eax, DWORD PTR $T238277[esp+36]
 	push	eax
 	mov	eax, DWORD PTR [esi+4]
 	push	ecx
@@ -17926,7 +17926,7 @@ $LN73@Buffered_m@2:
 	push	ecx
 	push	edx
 	push	eax
-	lea	ecx, DWORD PTR $T237652[esp+64]
+	lea	ecx, DWORD PTR $T238129[esp+64]
 	push	ecx
 	call	??$_Merge_backward@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@PAUCityAndProduction@@V12@UCityAndProductionEval@@@std@@YA?AV?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@0@V10@0PAUCityAndProduction@@10UCityAndProductionEval@@U_Range_checked_iterator_tag@0@@Z ; std::_Merge_backward<std::_Vector_iterator<CityAndProduction,std::allocator<CityAndProduction> >,CityAndProduction *,std::_Vector_iterator<CityAndProduction,std::allocator<CityAndProduction> >,CityAndProductionEval>
 	add	esp, 32					; 00000020H
@@ -17973,7 +17973,7 @@ $LN4@Buffered_m@2:
 	push	ebp
 	push	ecx
 	push	edx
-	lea	eax, DWORD PTR $T237868[esp+60]
+	lea	eax, DWORD PTR $T238346[esp+60]
 	push	eax
 	call	??$_Lower_bound@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@UCityAndProduction@@HUCityAndProductionEval@@@std@@YA?AV?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@0@V10@0ABUCityAndProduction@@UCityAndProductionEval@@PAH@Z ; std::_Lower_bound<std::_Vector_iterator<CityAndProduction,std::allocator<CityAndProduction> >,CityAndProduction,int,CityAndProductionEval>
 	mov	ebx, DWORD PTR [eax]
@@ -18010,7 +18010,7 @@ $LN2@Buffered_m@2:
 	push	ebx
 	push	eax
 	push	edx
-	lea	eax, DWORD PTR $T237958[esp+60]
+	lea	eax, DWORD PTR $T238436[esp+60]
 	push	eax
 	call	??$_Upper_bound@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@UCityAndProduction@@HUCityAndProductionEval@@@std@@YA?AV?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@0@V10@0ABUCityAndProduction@@UCityAndProductionEval@@PAH@Z ; std::_Upper_bound<std::_Vector_iterator<CityAndProduction,std::allocator<CityAndProduction> >,CityAndProduction,int,CityAndProductionEval>
 	mov	ebp, DWORD PTR [eax]
@@ -18037,7 +18037,7 @@ $LN139@Buffered_m@2:
 	push	ebx
 	push	edx
 	mov	DWORD PTR tv518[esp+60], eax
-	lea	eax, DWORD PTR __Midn$227890[esp+56]
+	lea	eax, DWORD PTR __Midn$228367[esp+56]
 	push	ebp
 	push	eax
 	call	??$_Buffered_rotate@V?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@HUCityAndProduction@@@std@@YA?AV?$_Vector_iterator@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@0@V10@00HHAAV?$_Temp_iterator@UCityAndProduction@@@0@@Z ; std::_Buffered_rotate<std::_Vector_iterator<CityAndProduction,std::allocator<CityAndProduction> >,int,CityAndProduction>
@@ -18052,7 +18052,7 @@ $LN139@Buffered_m@2:
 	push	edx
 	push	esi
 	push	edi
-	mov	edi, DWORD PTR __Midn$227890[esp+80]
+	mov	edi, DWORD PTR __Midn$228367[esp+80]
 	push	edi
 	push	ebp
 	push	eax
@@ -18150,8 +18150,8 @@ PUBLIC	??4?$FAutoVariable@W4PlayerTypes@@VCvPlayer@@@@QAEAAW4PlayerTypes@@ABW41@
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\fireplace\include\fireworks\fautovariable.h
 ;	COMDAT ??4?$FAutoVariable@W4PlayerTypes@@VCvPlayer@@@@QAEAAW4PlayerTypes@@ABW41@@Z
 _TEXT	SEGMENT
-$T238084 = -8						; size = 8
-$T238083 = 8						; size = 4
+$T238562 = -8						; size = 8
+$T238561 = 8						; size = 4
 _rhs$ = 8						; size = 4
 ??4?$FAutoVariable@W4PlayerTypes@@VCvPlayer@@@@QAEAAW4PlayerTypes@@ABW41@@Z PROC ; FAutoVariable<enum PlayerTypes,CvPlayer>::operator=, COMDAT
 ; _this$ = ecx
@@ -18173,11 +18173,11 @@ _rhs$ = 8						; size = 4
 ; 203  : 	{
 ; 204  : 		set(rhs);
 
-	mov	DWORD PTR $T238083[esp+12], ecx
+	mov	DWORD PTR $T238561[esp+12], ecx
 	mov	ecx, DWORD PTR [ecx+8]
-	lea	edx, DWORD PTR $T238083[esp+12]
+	lea	edx, DWORD PTR $T238561[esp+12]
 	push	edx
-	lea	eax, DWORD PTR $T238084[esp+20]
+	lea	eax, DWORD PTR $T238562[esp+20]
 	push	eax
 	add	ecx, 20					; 00000014H
 	call	?insert@?$_Tree@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@std@@QAE?AU?$pair@Viterator@?$_Tree@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@std@@_N@2@ABQAVFAutoVariableBase@@@Z ; std::_Tree<std::_Tset_traits<FAutoVariableBase *,std::less<FAutoVariableBase *>,std::allocator<FAutoVariableBase *>,0> >::insert
@@ -18370,9 +18370,9 @@ __ehfuncinfo$?initStatics@CvPlayerAI@@SAXXZ DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?initStatics@CvPlayerAI@@SAXXZ
 _TEXT	SEGMENT
-$T238164 = -24						; size = 4
-$T238136 = -24						; size = 4
-$T238165 = -20						; size = 8
+$T238638 = -24						; size = 4
+$T238613 = -24						; size = 4
+$T238639 = -20						; size = 8
 __$EHRec$ = -12						; size = 12
 ?initStatics@CvPlayerAI@@SAXXZ PROC			; CvPlayerAI::initStatics, COMDAT
 
@@ -18393,7 +18393,7 @@ __$EHRec$ = -12						; size = 12
 	push	4047108					; 003dc104H
 	call	??_U@YAPAXI@Z				; operator new[]
 	add	esp, 4
-	mov	DWORD PTR $T238136[esp+36], eax
+	mov	DWORD PTR $T238613[esp+36], eax
 	xor	ebx, ebx
 	mov	DWORD PTR __$EHRec$[esp+44], ebx
 	cmp	eax, ebx
@@ -18426,13 +18426,13 @@ $LL19@initStatic:
 	cmp	edi, DWORD PTR [ebx+eax+44]
 	lea	esi, DWORD PTR [ebx+eax+40]
 	je	SHORT $LN2@initStatic
-	lea	ecx, DWORD PTR $T238164[esp+36]
+	lea	ecx, DWORD PTR $T238638[esp+36]
 	push	ecx
 	mov	ecx, DWORD PTR [esi+8]
-	lea	edx, DWORD PTR $T238165[esp+40]
+	lea	edx, DWORD PTR $T238639[esp+40]
 	push	edx
 	add	ecx, 20					; 00000014H
-	mov	DWORD PTR $T238164[esp+44], esi
+	mov	DWORD PTR $T238638[esp+44], esi
 	call	?insert@?$_Tree@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@std@@QAE?AU?$pair@Viterator@?$_Tree@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@std@@_N@2@ABQAVFAutoVariableBase@@@Z ; std::_Tree<std::_Tset_traits<FAutoVariableBase *,std::less<FAutoVariableBase *>,std::allocator<FAutoVariableBase *>,0> >::insert
 	mov	DWORD PTR [esi+4], edi
 $LN2@initStatic:
@@ -18455,7 +18455,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?initStatics@CvPlayerAI@@SAXXZ$0:
-	mov	eax, DWORD PTR $T238136[ebp]
+	mov	eax, DWORD PTR $T238613[ebp]
 	push	eax
 	call	??_V@YAXPAX@Z				; operator delete[]
 	pop	ecx
@@ -18470,8 +18470,8 @@ PUBLIC	?push_back@?$vector@UCityAndProduction@@V?$allocator@UCityAndProduction@@
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\vector
 ;	COMDAT ?push_back@?$vector@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@QAEXABUCityAndProduction@@@Z
 _TEXT	SEGMENT
-$T238212 = -4						; size = 1
-__Cat$238215 = 8					; size = 1
+$T238689 = -4						; size = 1
+__Cat$238693 = 8					; size = 1
 __Val$ = 8						; size = 4
 ?push_back@?$vector@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@QAEXABUCityAndProduction@@@Z PROC ; std::vector<CityAndProduction,std::allocator<CityAndProduction> >::push_back, COMDAT
 ; _this$ = ecx
@@ -18512,10 +18512,10 @@ $LN10@push_back:
 ; 818  :  #else /* _HAS_ITERATOR_DEBUGGING */
 ; 819  : 			_Mylast = _Ufill(_Mylast, 1, _Val);
 
-	mov	ecx, DWORD PTR __Cat$238215[esp+8]
+	mov	ecx, DWORD PTR __Cat$238693[esp+8]
 	mov	edx, DWORD PTR __Val$[esp+8]
-	mov	BYTE PTR $T238212[esp+12], 0
-	mov	eax, DWORD PTR $T238212[esp+12]
+	mov	BYTE PTR $T238689[esp+12], 0
+	mov	eax, DWORD PTR $T238689[esp+12]
 	push	eax
 	push	ecx
 	push	esi
@@ -18727,9 +18727,9 @@ xdata$x	ENDS
 ;	COMDAT ?AI_considerAnnex@CvPlayerAI@@QAEXXZ
 _TEXT	SEGMENT
 tv505 = -48						; size = 2
-$T238417 = -48						; size = 1
+$T238894 = -48						; size = 1
 _fCutoffValue$ = -48					; size = 4
-_kEval$226221 = -48					; size = 8
+_kEval$226698 = -48					; size = 8
 _iLoop$ = -40						; size = 4
 tv507 = -36						; size = 4
 tv502 = -36						; size = 4
@@ -18872,15 +18872,15 @@ $LL17@AI_conside:
 	push	ebp
 	push	1
 	mov	ecx, eax
-	mov	DWORD PTR _kEval$226221[esp+72], eax
+	mov	DWORD PTR _kEval$226698[esp+72], eax
 	call	?getYieldRateTimes100@CvCity@@QBEHW4YieldTypes@@_N@Z ; CvCity::getYieldRateTimes100
 
 ; 598  : 		aCityAndProductions.push_back(kEval);
 
-	lea	ecx, DWORD PTR _kEval$226221[esp+64]
+	lea	ecx, DWORD PTR _kEval$226698[esp+64]
 	push	ecx
 	lea	ecx, DWORD PTR _aCityAndProductions$[esp+68]
-	mov	DWORD PTR _kEval$226221[esp+72], eax
+	mov	DWORD PTR _kEval$226698[esp+72], eax
 	call	?push_back@?$vector@UCityAndProduction@@V?$allocator@UCityAndProduction@@@std@@@std@@QAEXABUCityAndProduction@@@Z ; std::vector<CityAndProduction,std::allocator<CityAndProduction> >::push_back
 	push	ebp
 	lea	edx, DWORD PTR _iLoop$[esp+68]
@@ -18897,10 +18897,10 @@ $LN15@AI_conside:
 ; 600  : 	
 ; 601  : 	std::stable_sort(aCityAndProductions.begin(), aCityAndProductions.end(), CityAndProductionEval());
 
-	mov	BYTE PTR $T238417[esp+64], 0
+	mov	BYTE PTR $T238894[esp+64], 0
 	cmp	ebx, edi
 	je	SHORT $LN76@AI_conside
-	mov	eax, DWORD PTR $T238417[esp+64]
+	mov	eax, DWORD PTR $T238894[esp+64]
 	push	eax
 	push	ebp
 	push	ebp

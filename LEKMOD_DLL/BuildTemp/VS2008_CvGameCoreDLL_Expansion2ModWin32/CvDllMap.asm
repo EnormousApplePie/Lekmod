@@ -10,10 +10,10 @@ INCLUDELIB MSVCRT
 INCLUDELIB OLDNAMES
 
 _DATA	SEGMENT
-_CIV5_XP2_DLL_VERSION DD FLAT:$SG217223
+_CIV5_XP2_DLL_VERSION DD FLAT:$SG217700
 _DATA	ENDS
 CONST	SEGMENT
-$SG217223 DB	'1.0.0', 00H
+$SG217700 DB	'1.0.0', 00H
 	ORG $+2
 _guidICvUnknown DD 0d89ba82fH
 	DW	09fa3H
@@ -433,7 +433,7 @@ _bSameArea$ = 28					; size = 1
 _bCoastalOnly$ = 32					; size = 1
 _eTeamAtWarWith$ = 36					; size = 4
 _eDirection$ = 40					; size = 4
-$T218827 = 44						; size = 4
+$T219304 = 44						; size = 4
 _pSkipCity$ = 44					; size = 4
 ?FindCity@CvDllMap@@UAGPAVICvCity1@@HHW4PlayerTypes@@W4TeamTypes@@_N21W4DirectionTypes@@PAV2@@Z PROC ; CvDllMap::FindCity, COMDAT
 
@@ -493,7 +493,7 @@ $LN1@FindCity:
 	push	12					; 0000000cH
 	call	??2CvDllCity@@SAPAXI@Z			; CvDllCity::operator new
 	add	esp, 4
-	mov	DWORD PTR $T218827[esp+12], eax
+	mov	DWORD PTR $T219304[esp+12], eax
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	eax, eax
 	je	SHORT $LN6@FindCity
@@ -519,7 +519,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?FindCity@CvDllMap@@UAGPAVICvCity1@@HHW4PlayerTypes@@W4TeamTypes@@_N21W4DirectionTypes@@PAV2@@Z$0:
-	mov	eax, DWORD PTR $T218827[ebp-4]
+	mov	eax, DWORD PTR $T219304[ebp-4]
 	push	eax
 	call	??3CvDllCity@@SAXPAX@Z			; CvDllCity::operator delete
 	pop	ecx
@@ -694,12 +694,12 @@ PUBLIC	?GetInterfaceId@ICvUnknown@@SG?AU_GUID@@XZ	; ICvUnknown::GetInterfaceId
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredllutil\include\cvdllinterfaces.h
 ;	COMDAT ?GetInterfaceId@ICvUnknown@@SG?AU_GUID@@XZ
 _TEXT	SEGMENT
-$T218875 = 8						; size = 4
+$T219352 = 8						; size = 4
 ?GetInterfaceId@ICvUnknown@@SG?AU_GUID@@XZ PROC		; ICvUnknown::GetInterfaceId, COMDAT
 
 ; 306  : 	static GUID DLLCALL GetInterfaceId(){ return guidICvUnknown; }
 
-	mov	eax, DWORD PTR $T218875[esp-4]
+	mov	eax, DWORD PTR $T219352[esp-4]
 	mov	ecx, DWORD PTR _guidICvUnknown
 	mov	edx, DWORD PTR _guidICvUnknown+4
 	mov	DWORD PTR [eax], ecx
@@ -715,12 +715,12 @@ PUBLIC	?GetInterfaceId@ICvMap1@@SG?AU_GUID@@XZ		; ICvMap1::GetInterfaceId
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?GetInterfaceId@ICvMap1@@SG?AU_GUID@@XZ
 _TEXT	SEGMENT
-$T218879 = 8						; size = 4
+$T219356 = 8						; size = 4
 ?GetInterfaceId@ICvMap1@@SG?AU_GUID@@XZ PROC		; ICvMap1::GetInterfaceId, COMDAT
 
 ; 1121 : 	static GUID DLLCALL GetInterfaceId() { return guidICvMap1; }
 
-	mov	eax, DWORD PTR $T218879[esp-4]
+	mov	eax, DWORD PTR $T219356[esp-4]
 	mov	ecx, DWORD PTR _guidICvMap1
 	mov	edx, DWORD PTR _guidICvMap1+4
 	mov	DWORD PTR [eax], ecx
@@ -954,8 +954,8 @@ _TEXT	SEGMENT
 _TEXT	ENDS
 ;	COMDAT ?QueryInterface@CvDllMap@@UAGPAXU_GUID@@@Z
 _TEXT	SEGMENT
-$T218918 = -16						; size = 16
-$T218916 = -16						; size = 16
+$T219395 = -16						; size = 16
+$T219393 = -16						; size = 16
 _this$ = 8						; size = 4
 _guidInterface$ = 12					; size = 16
 ?QueryInterface@CvDllMap@@UAGPAXU_GUID@@@Z PROC		; CvDllMap::QueryInterface, COMDAT
@@ -970,15 +970,15 @@ _guidInterface$ = 12					; size = 16
 	mov	ecx, DWORD PTR _guidICvUnknown+4
 	mov	edx, DWORD PTR _guidICvUnknown+8
 	mov	eax, DWORD PTR _guidICvUnknown
-	mov	DWORD PTR $T218916[esp+20], ecx
-	lea	ecx, DWORD PTR $T218916[esp+16]
-	mov	DWORD PTR $T218916[esp+24], edx
-	mov	DWORD PTR $T218916[esp+16], eax
+	mov	DWORD PTR $T219393[esp+20], ecx
+	lea	ecx, DWORD PTR $T219393[esp+16]
+	mov	DWORD PTR $T219393[esp+24], edx
+	mov	DWORD PTR $T219393[esp+16], eax
 	mov	eax, DWORD PTR _guidICvUnknown+12
 	push	ecx
 	lea	edx, DWORD PTR _guidInterface$[esp+16]
 	push	edx
-	mov	DWORD PTR $T218916[esp+36], eax
+	mov	DWORD PTR $T219393[esp+36], eax
 	call	_IsEqualGUID
 	add	esp, 8
 	test	eax, eax
@@ -986,15 +986,15 @@ _guidInterface$ = 12					; size = 16
 	mov	ecx, DWORD PTR _guidICvMap1+4
 	mov	edx, DWORD PTR _guidICvMap1+8
 	mov	eax, DWORD PTR _guidICvMap1
-	mov	DWORD PTR $T218918[esp+20], ecx
-	lea	ecx, DWORD PTR $T218918[esp+16]
-	mov	DWORD PTR $T218918[esp+24], edx
-	mov	DWORD PTR $T218918[esp+16], eax
+	mov	DWORD PTR $T219395[esp+20], ecx
+	lea	ecx, DWORD PTR $T219395[esp+16]
+	mov	DWORD PTR $T219395[esp+24], edx
+	mov	DWORD PTR $T219395[esp+16], eax
 	mov	eax, DWORD PTR _guidICvMap1+12
 	push	ecx
 	lea	edx, DWORD PTR _guidInterface$[esp+16]
 	push	edx
-	mov	DWORD PTR $T218918[esp+36], eax
+	mov	DWORD PTR $T219395[esp+36], eax
 	call	_IsEqualGUID
 	add	esp, 8
 	test	eax, eax
@@ -1153,7 +1153,7 @@ xdata$x	ENDS
 ;	COMDAT ?GetPlotByIndex@CvDllMap@@UBGPAVICvPlot1@@H@Z
 _TEXT	SEGMENT
 __$EHRec$ = -12						; size = 12
-$T218986 = 8						; size = 4
+$T219463 = 8						; size = 4
 _this$ = 8						; size = 4
 _iIndex$ = 12						; size = 4
 ?GetPlotByIndex@CvDllMap@@UBGPAVICvPlot1@@H@Z PROC	; CvDllMap::GetPlotByIndex, COMDAT
@@ -1193,7 +1193,7 @@ _iIndex$ = 12						; size = 4
 	push	12					; 0000000cH
 	call	??2CvDllPlot@@SAPAXI@Z			; CvDllPlot::operator new
 	add	esp, 4
-	mov	DWORD PTR $T218986[esp+12], eax
+	mov	DWORD PTR $T219463[esp+12], eax
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	eax, eax
 	je	SHORT $LN1@GetPlotByI
@@ -1221,7 +1221,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetPlotByIndex@CvDllMap@@UBGPAVICvPlot1@@H@Z$0:
-	mov	eax, DWORD PTR $T218986[ebp-4]
+	mov	eax, DWORD PTR $T219463[ebp-4]
 	push	eax
 	call	??3CvDllPlot@@SAXPAX@Z			; CvDllPlot::operator delete
 	pop	ecx
@@ -1556,7 +1556,7 @@ xdata$x	ENDS
 ;	COMDAT ?GetPlot@CvDllMap@@UBGPAVICvPlot1@@HH@Z
 _TEXT	SEGMENT
 __$EHRec$ = -12						; size = 12
-$T219186 = 8						; size = 4
+$T219663 = 8						; size = 4
 _this$ = 8						; size = 4
 _iX$ = 12						; size = 4
 _iY$ = 16						; size = 4
@@ -1653,7 +1653,7 @@ $LN35@GetPlot:
 	push	12					; 0000000cH
 	call	??2CvDllPlot@@SAPAXI@Z			; CvDllPlot::operator new
 	add	esp, 4
-	mov	DWORD PTR $T219186[esp+24], eax
+	mov	DWORD PTR $T219663[esp+24], eax
 	mov	DWORD PTR __$EHRec$[esp+36], 0
 	test	eax, eax
 	je	SHORT $LN1@GetPlot
@@ -1687,7 +1687,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetPlot@CvDllMap@@UBGPAVICvPlot1@@HH@Z$0:
-	mov	eax, DWORD PTR $T219186[ebp-4]
+	mov	eax, DWORD PTR $T219663[ebp-4]
 	push	eax
 	call	??3CvDllPlot@@SAXPAX@Z			; CvDllPlot::operator delete
 	pop	ecx

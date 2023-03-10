@@ -10,10 +10,10 @@ INCLUDELIB MSVCRT
 INCLUDELIB OLDNAMES
 
 _DATA	SEGMENT
-_CIV5_XP2_DLL_VERSION DD FLAT:$SG217601
+_CIV5_XP2_DLL_VERSION DD FLAT:$SG218078
 _DATA	ENDS
 CONST	SEGMENT
-$SG217601 DB	'1.0.0', 00H
+$SG218078 DB	'1.0.0', 00H
 	ORG $+2
 _guidICvUnknown DD 0d89ba82fH
 	DW	09fa3H
@@ -4502,7 +4502,7 @@ EXTRN	?versionString@CvPreGame@@YAABV?$basic_string@DU?$char_traits@D@std@@V?$al
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?versionString@CvDllPreGame@@UAG?BV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
 _TEXT	SEGMENT
-$T222369 = -4						; size = 4
+$T222846 = -4						; size = 4
 _this$ = 8						; size = 4
 ___$ReturnUdt$ = 12					; size = 4
 ?versionString@CvDllPreGame@@UAG?BV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ PROC ; CvDllPreGame::versionString, COMDAT
@@ -4511,7 +4511,7 @@ ___$ReturnUdt$ = 12					; size = 4
 
 	push	ecx
 	push	esi
-	mov	DWORD PTR $T222369[esp+8], 0
+	mov	DWORD PTR $T222846[esp+8], 0
 
 ; 1056 : 	return CvPreGame::versionString();
 
@@ -4564,7 +4564,7 @@ __ehfuncinfo$?GetWorldInfo@CvDllPreGame@@UAGPAVICvWorldInfo1@@XZ DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?GetWorldInfo@CvDllPreGame@@UAGPAVICvWorldInfo1@@XZ
 _TEXT	SEGMENT
-$T222378 = -16						; size = 4
+$T222855 = -16						; size = 4
 __$EHRec$ = -12						; size = 12
 _this$ = 8						; size = 4
 ?GetWorldInfo@CvDllPreGame@@UAGPAVICvWorldInfo1@@XZ PROC ; CvDllPreGame::GetWorldInfo, COMDAT
@@ -4590,7 +4590,7 @@ _this$ = 8						; size = 4
 	mov	esi, eax
 	call	??2CvDllWorldInfo@@SAPAXI@Z		; CvDllWorldInfo::operator new
 	add	esp, 4
-	mov	DWORD PTR $T222378[esp+20], eax
+	mov	DWORD PTR $T222855[esp+20], eax
 	mov	DWORD PTR __$EHRec$[esp+28], 0
 	test	eax, eax
 	je	SHORT $LN3@GetWorldIn
@@ -4616,7 +4616,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetWorldInfo@CvDllPreGame@@UAGPAVICvWorldInfo1@@XZ$0:
-	mov	eax, DWORD PTR $T222378[ebp]
+	mov	eax, DWORD PTR $T222855[ebp]
 	push	eax
 	call	??3CvDllWorldInfo@@SAXPAX@Z		; CvDllWorldInfo::operator delete
 	pop	ecx
@@ -4818,7 +4818,7 @@ __ehfuncinfo$?GetDLCAllowed@CvDllPreGame@@UAGPAVICvEnumerator@@XZ DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?GetDLCAllowed@CvDllPreGame@@UAGPAVICvEnumerator@@XZ
 _TEXT	SEGMENT
-$T222415 = -16						; size = 4
+$T222892 = -16						; size = 4
 __$EHRec$ = -12						; size = 12
 _this$ = 8						; size = 4
 ?GetDLCAllowed@CvDllPreGame@@UAGPAVICvEnumerator@@XZ PROC ; CvDllPreGame::GetDLCAllowed, COMDAT
@@ -4839,7 +4839,7 @@ _this$ = 8						; size = 4
 	call	??2CvDllDlcPackageInfoList@@SAPAXI@Z	; CvDllDlcPackageInfoList::operator new
 	mov	esi, eax
 	add	esp, 4
-	mov	DWORD PTR $T222415[esp+20], esi
+	mov	DWORD PTR $T222892[esp+20], esi
 	xor	eax, eax
 	mov	DWORD PTR __$EHRec$[esp+28], eax
 	cmp	esi, eax
@@ -4861,7 +4861,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetDLCAllowed@CvDllPreGame@@UAGPAVICvEnumerator@@XZ$0:
-	mov	eax, DWORD PTR $T222415[ebp]
+	mov	eax, DWORD PTR $T222892[ebp]
 	push	eax
 	call	??3CvDllDlcPackageInfoList@@SAXPAX@Z	; CvDllDlcPackageInfoList::operator delete
 	pop	ecx
@@ -4911,7 +4911,7 @@ __ehfuncinfo$?GetDLCAvailable@CvDllPreGame@@UAGPAVICvEnumerator@@W4PlayerTypes@@
 xdata$x	ENDS
 ;	COMDAT ?GetDLCAvailable@CvDllPreGame@@UAGPAVICvEnumerator@@W4PlayerTypes@@@Z
 _TEXT	SEGMENT
-$T222441 = -16						; size = 4
+$T222918 = -16						; size = 4
 __$EHRec$ = -12						; size = 12
 _this$ = 8						; size = 4
 _p$ = 12						; size = 4
@@ -4933,7 +4933,7 @@ _p$ = 12						; size = 4
 	call	??2CvDllDlcPackageInfoList@@SAPAXI@Z	; CvDllDlcPackageInfoList::operator new
 	mov	esi, eax
 	add	esp, 4
-	mov	DWORD PTR $T222441[esp+20], esi
+	mov	DWORD PTR $T222918[esp+20], esi
 	xor	eax, eax
 	mov	DWORD PTR __$EHRec$[esp+28], eax
 	cmp	esi, eax
@@ -4958,7 +4958,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetDLCAvailable@CvDllPreGame@@UAGPAVICvEnumerator@@W4PlayerTypes@@@Z$0:
-	mov	eax, DWORD PTR $T222441[ebp]
+	mov	eax, DWORD PTR $T222918[ebp]
 	push	eax
 	call	??3CvDllDlcPackageInfoList@@SAXPAX@Z	; CvDllDlcPackageInfoList::operator delete
 	pop	ecx
@@ -5589,8 +5589,8 @@ __TI2?AVbad_alloc@std@@ DD 00H
 xdata$x	ENDS
 ;	COMDAT ??$_Allocate@U_Node@?$_List_nod@U_GUID@@V?$allocator@U_GUID@@@std@@@std@@@std@@YAPAU_Node@?$_List_nod@U_GUID@@V?$allocator@U_GUID@@@std@@@0@IPAU120@@Z
 _TEXT	SEGMENT
-$T222546 = -12						; size = 12
-$T222551 = 8						; size = 4
+$T223023 = -12						; size = 12
+$T223028 = 8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ??$_Allocate@U_Node@?$_List_nod@U_GUID@@V?$allocator@U_GUID@@@std@@@std@@@std@@YAPAU_Node@?$_List_nod@U_GUID@@V?$allocator@U_GUID@@@std@@@0@IPAU120@@Z PROC ; std::_Allocate<std::_List_nod<_GUID,std::allocator<_GUID> >::_Node>, COMDAT
@@ -5635,15 +5635,15 @@ $LN3@Allocate:
 
 ; 40   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T222551[esp+8]
+	lea	eax, DWORD PTR $T223028[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T222546[esp+16]
-	mov	DWORD PTR $T222551[esp+12], 0
+	lea	ecx, DWORD PTR $T223023[esp+16]
+	mov	DWORD PTR $T223028[esp+12], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T222546[esp+16]
+	lea	ecx, DWORD PTR $T223023[esp+16]
 	push	ecx
-	mov	DWORD PTR $T222546[esp+20], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T223023[esp+20], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN9@Allocate:
 $LN8@Allocate:
@@ -5796,12 +5796,12 @@ PUBLIC	?GetInterfaceId@ICvUnknown@@SG?AU_GUID@@XZ	; ICvUnknown::GetInterfaceId
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredllutil\include\cvdllinterfaces.h
 ;	COMDAT ?GetInterfaceId@ICvUnknown@@SG?AU_GUID@@XZ
 _TEXT	SEGMENT
-$T222594 = 8						; size = 4
+$T223071 = 8						; size = 4
 ?GetInterfaceId@ICvUnknown@@SG?AU_GUID@@XZ PROC		; ICvUnknown::GetInterfaceId, COMDAT
 
 ; 306  : 	static GUID DLLCALL GetInterfaceId(){ return guidICvUnknown; }
 
-	mov	eax, DWORD PTR $T222594[esp-4]
+	mov	eax, DWORD PTR $T223071[esp-4]
 	mov	ecx, DWORD PTR _guidICvUnknown
 	mov	edx, DWORD PTR _guidICvUnknown+4
 	mov	DWORD PTR [eax], ecx
@@ -5846,12 +5846,12 @@ PUBLIC	?GetInterfaceId@ICvEnumerator@@SG?AU_GUID@@XZ	; ICvEnumerator::GetInterfa
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?GetInterfaceId@ICvEnumerator@@SG?AU_GUID@@XZ
 _TEXT	SEGMENT
-$T222601 = 8						; size = 4
+$T223078 = 8						; size = 4
 ?GetInterfaceId@ICvEnumerator@@SG?AU_GUID@@XZ PROC	; ICvEnumerator::GetInterfaceId, COMDAT
 
 ; 332  : 	static GUID DLLCALL GetInterfaceId(){ return guidICvEnumerator; }
 
-	mov	eax, DWORD PTR $T222601[esp-4]
+	mov	eax, DWORD PTR $T223078[esp-4]
 	mov	ecx, DWORD PTR _guidICvEnumerator
 	mov	edx, DWORD PTR _guidICvEnumerator+4
 	mov	DWORD PTR [eax], ecx
@@ -5867,12 +5867,12 @@ PUBLIC	?GetInterfaceId@ICvDlcPackageInfo1@@SG?AU_GUID@@XZ ; ICvDlcPackageInfo1::
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?GetInterfaceId@ICvDlcPackageInfo1@@SG?AU_GUID@@XZ
 _TEXT	SEGMENT
-$T222605 = 8						; size = 4
+$T223082 = 8						; size = 4
 ?GetInterfaceId@ICvDlcPackageInfo1@@SG?AU_GUID@@XZ PROC	; ICvDlcPackageInfo1::GetInterfaceId, COMDAT
 
 ; 384  : 	static GUID DLLCALL GetInterfaceId() { return guidICvDlcPackageInfo1; }
 
-	mov	eax, DWORD PTR $T222605[esp-4]
+	mov	eax, DWORD PTR $T223082[esp-4]
 	mov	ecx, DWORD PTR _guidICvDlcPackageInfo1
 	mov	edx, DWORD PTR _guidICvDlcPackageInfo1+4
 	mov	DWORD PTR [eax], ecx
@@ -5888,12 +5888,12 @@ PUBLIC	?GetInterfaceId@ICvPreGame1@@SG?AU_GUID@@XZ	; ICvPreGame1::GetInterfaceId
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?GetInterfaceId@ICvPreGame1@@SG?AU_GUID@@XZ
 _TEXT	SEGMENT
-$T222609 = 8						; size = 4
+$T223086 = 8						; size = 4
 ?GetInterfaceId@ICvPreGame1@@SG?AU_GUID@@XZ PROC	; ICvPreGame1::GetInterfaceId, COMDAT
 
 ; 1421 : 	static GUID DLLCALL GetInterfaceId() { return guidICvPreGame1; }
 
-	mov	eax, DWORD PTR $T222609[esp-4]
+	mov	eax, DWORD PTR $T223086[esp-4]
 	mov	ecx, DWORD PTR _guidICvPreGame1
 	mov	edx, DWORD PTR _guidICvPreGame1+4
 	mov	DWORD PTR [eax], ecx
@@ -5910,12 +5910,12 @@ PUBLIC	?GetInterfaceId@ICvPreGame2@@SG?AU_GUID@@XZ	; ICvPreGame2::GetInterfaceId
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredllutil\include\cvdllinterfaces2.h
 ;	COMDAT ?GetInterfaceId@ICvPreGame2@@SG?AU_GUID@@XZ
 _TEXT	SEGMENT
-$T222613 = 8						; size = 4
+$T223090 = 8						; size = 4
 ?GetInterfaceId@ICvPreGame2@@SG?AU_GUID@@XZ PROC	; ICvPreGame2::GetInterfaceId, COMDAT
 
 ; 133  : 	static GUID DLLCALL GetInterfaceId() { return guidICvPreGame2; }
 
-	mov	eax, DWORD PTR $T222613[esp-4]
+	mov	eax, DWORD PTR $T223090[esp-4]
 	mov	ecx, DWORD PTR _guidICvPreGame2
 	mov	edx, DWORD PTR _guidICvPreGame2+4
 	mov	DWORD PTR [eax], ecx
@@ -6228,9 +6228,9 @@ _TEXT	SEGMENT
 _TEXT	ENDS
 ;	COMDAT ?QueryInterface@CvDllPreGame@@UAGPAXU_GUID@@@Z
 _TEXT	SEGMENT
-$T222638 = -16						; size = 16
-$T222636 = -16						; size = 16
-$T222634 = -16						; size = 16
+$T223115 = -16						; size = 16
+$T223113 = -16						; size = 16
+$T223111 = -16						; size = 16
 _this$ = 8						; size = 4
 _guidInterface$ = 12					; size = 16
 ?QueryInterface@CvDllPreGame@@UAGPAXU_GUID@@@Z PROC	; CvDllPreGame::QueryInterface, COMDAT
@@ -6246,15 +6246,15 @@ _guidInterface$ = 12					; size = 16
 	mov	ecx, DWORD PTR _guidICvUnknown+4
 	mov	edx, DWORD PTR _guidICvUnknown+8
 	mov	eax, DWORD PTR _guidICvUnknown
-	mov	DWORD PTR $T222634[esp+20], ecx
-	lea	ecx, DWORD PTR $T222634[esp+16]
-	mov	DWORD PTR $T222634[esp+24], edx
-	mov	DWORD PTR $T222634[esp+16], eax
+	mov	DWORD PTR $T223111[esp+20], ecx
+	lea	ecx, DWORD PTR $T223111[esp+16]
+	mov	DWORD PTR $T223111[esp+24], edx
+	mov	DWORD PTR $T223111[esp+16], eax
 	mov	eax, DWORD PTR _guidICvUnknown+12
 	push	ecx
 	lea	edx, DWORD PTR _guidInterface$[esp+16]
 	push	edx
-	mov	DWORD PTR $T222634[esp+36], eax
+	mov	DWORD PTR $T223111[esp+36], eax
 	call	_IsEqualGUID
 	add	esp, 8
 	test	eax, eax
@@ -6262,15 +6262,15 @@ _guidInterface$ = 12					; size = 16
 	mov	ecx, DWORD PTR _guidICvPreGame1+4
 	mov	edx, DWORD PTR _guidICvPreGame1+8
 	mov	eax, DWORD PTR _guidICvPreGame1
-	mov	DWORD PTR $T222636[esp+20], ecx
-	lea	ecx, DWORD PTR $T222636[esp+16]
-	mov	DWORD PTR $T222636[esp+24], edx
-	mov	DWORD PTR $T222636[esp+16], eax
+	mov	DWORD PTR $T223113[esp+20], ecx
+	lea	ecx, DWORD PTR $T223113[esp+16]
+	mov	DWORD PTR $T223113[esp+24], edx
+	mov	DWORD PTR $T223113[esp+16], eax
 	mov	eax, DWORD PTR _guidICvPreGame1+12
 	push	ecx
 	lea	edx, DWORD PTR _guidInterface$[esp+16]
 	push	edx
-	mov	DWORD PTR $T222636[esp+36], eax
+	mov	DWORD PTR $T223113[esp+36], eax
 	call	_IsEqualGUID
 	add	esp, 8
 	test	eax, eax
@@ -6278,15 +6278,15 @@ _guidInterface$ = 12					; size = 16
 	mov	ecx, DWORD PTR _guidICvPreGame2+4
 	mov	edx, DWORD PTR _guidICvPreGame2+8
 	mov	eax, DWORD PTR _guidICvPreGame2
-	mov	DWORD PTR $T222638[esp+20], ecx
-	lea	ecx, DWORD PTR $T222638[esp+16]
-	mov	DWORD PTR $T222638[esp+24], edx
-	mov	DWORD PTR $T222638[esp+16], eax
+	mov	DWORD PTR $T223115[esp+20], ecx
+	lea	ecx, DWORD PTR $T223115[esp+16]
+	mov	DWORD PTR $T223115[esp+24], edx
+	mov	DWORD PTR $T223115[esp+16], eax
 	mov	eax, DWORD PTR _guidICvPreGame2+12
 	push	ecx
 	lea	edx, DWORD PTR _guidInterface$[esp+16]
 	push	edx
-	mov	DWORD PTR $T222638[esp+36], eax
+	mov	DWORD PTR $T223115[esp+36], eax
 	call	_IsEqualGUID
 	add	esp, 8
 	test	eax, eax
@@ -6340,7 +6340,7 @@ EXTRN	?civilizationAdjective@CvPreGame@@YAABVCvString@@W4PlayerTypes@@@Z:PROC ; 
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?civilizationAdjective@CvDllPreGame@@UAG?AVCvString@@W4PlayerTypes@@@Z
 _TEXT	SEGMENT
-$T222675 = -4						; size = 4
+$T223152 = -4						; size = 4
 _this$ = 8						; size = 4
 ___$ReturnUdt$ = 12					; size = 4
 _p$ = 16						; size = 4
@@ -6355,7 +6355,7 @@ _p$ = 16						; size = 4
 	mov	eax, DWORD PTR _p$[esp]
 	push	esi
 	push	eax
-	mov	DWORD PTR $T222675[esp+12], 0
+	mov	DWORD PTR $T223152[esp+12], 0
 	call	?civilizationAdjective@CvPreGame@@YAABVCvString@@W4PlayerTypes@@@Z ; CvPreGame::civilizationAdjective
 	mov	esi, DWORD PTR ___$ReturnUdt$[esp+8]
 	add	esp, 4
@@ -6375,7 +6375,7 @@ EXTRN	?civilizationAdjectiveKey@CvPreGame@@YAABVCvString@@W4PlayerTypes@@@Z:PROC
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?civilizationAdjectiveKey@CvDllPreGame@@UAG?BVCvString@@W4PlayerTypes@@@Z
 _TEXT	SEGMENT
-$T222686 = -4						; size = 4
+$T223163 = -4						; size = 4
 _this$ = 8						; size = 4
 ___$ReturnUdt$ = 12					; size = 4
 _p$ = 16						; size = 4
@@ -6390,7 +6390,7 @@ _p$ = 16						; size = 4
 	mov	eax, DWORD PTR _p$[esp]
 	push	esi
 	push	eax
-	mov	DWORD PTR $T222686[esp+12], 0
+	mov	DWORD PTR $T223163[esp+12], 0
 	call	?civilizationAdjectiveKey@CvPreGame@@YAABVCvString@@W4PlayerTypes@@@Z ; CvPreGame::civilizationAdjectiveKey
 	mov	esi, DWORD PTR ___$ReturnUdt$[esp+8]
 	add	esp, 4
@@ -6410,7 +6410,7 @@ EXTRN	?civilizationDescription@CvPreGame@@YAABVCvString@@W4PlayerTypes@@@Z:PROC 
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?civilizationDescription@CvDllPreGame@@UAG?AVCvString@@W4PlayerTypes@@@Z
 _TEXT	SEGMENT
-$T222697 = -4						; size = 4
+$T223174 = -4						; size = 4
 _this$ = 8						; size = 4
 ___$ReturnUdt$ = 12					; size = 4
 _p$ = 16						; size = 4
@@ -6425,7 +6425,7 @@ _p$ = 16						; size = 4
 	mov	eax, DWORD PTR _p$[esp]
 	push	esi
 	push	eax
-	mov	DWORD PTR $T222697[esp+12], 0
+	mov	DWORD PTR $T223174[esp+12], 0
 	call	?civilizationDescription@CvPreGame@@YAABVCvString@@W4PlayerTypes@@@Z ; CvPreGame::civilizationDescription
 	mov	esi, DWORD PTR ___$ReturnUdt$[esp+8]
 	add	esp, 4
@@ -6445,7 +6445,7 @@ EXTRN	?civilizationDescriptionKey@CvPreGame@@YAABVCvString@@W4PlayerTypes@@@Z:PR
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?civilizationDescriptionKey@CvDllPreGame@@UAG?BVCvString@@W4PlayerTypes@@@Z
 _TEXT	SEGMENT
-$T222708 = -4						; size = 4
+$T223185 = -4						; size = 4
 _this$ = 8						; size = 4
 ___$ReturnUdt$ = 12					; size = 4
 _p$ = 16						; size = 4
@@ -6460,7 +6460,7 @@ _p$ = 16						; size = 4
 	mov	eax, DWORD PTR _p$[esp]
 	push	esi
 	push	eax
-	mov	DWORD PTR $T222708[esp+12], 0
+	mov	DWORD PTR $T223185[esp+12], 0
 	call	?civilizationDescriptionKey@CvPreGame@@YAABVCvString@@W4PlayerTypes@@@Z ; CvPreGame::civilizationDescriptionKey
 	mov	esi, DWORD PTR ___$ReturnUdt$[esp+8]
 	add	esp, 4
@@ -6480,7 +6480,7 @@ EXTRN	?civilizationPassword@CvPreGame@@YAABVCvString@@W4PlayerTypes@@@Z:PROC ; C
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?civilizationPassword@CvDllPreGame@@UAG?BVCvString@@W4PlayerTypes@@@Z
 _TEXT	SEGMENT
-$T222719 = -4						; size = 4
+$T223196 = -4						; size = 4
 _this$ = 8						; size = 4
 ___$ReturnUdt$ = 12					; size = 4
 _p$ = 16						; size = 4
@@ -6495,7 +6495,7 @@ _p$ = 16						; size = 4
 	mov	eax, DWORD PTR _p$[esp]
 	push	esi
 	push	eax
-	mov	DWORD PTR $T222719[esp+12], 0
+	mov	DWORD PTR $T223196[esp+12], 0
 	call	?civilizationPassword@CvPreGame@@YAABVCvString@@W4PlayerTypes@@@Z ; CvPreGame::civilizationPassword
 	mov	esi, DWORD PTR ___$ReturnUdt$[esp+8]
 	add	esp, 4
@@ -6515,7 +6515,7 @@ EXTRN	?civilizationShortDescription@CvPreGame@@YAABVCvString@@W4PlayerTypes@@@Z:
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?civilizationShortDescription@CvDllPreGame@@UAG?AVCvString@@W4PlayerTypes@@@Z
 _TEXT	SEGMENT
-$T222730 = -4						; size = 4
+$T223207 = -4						; size = 4
 _this$ = 8						; size = 4
 ___$ReturnUdt$ = 12					; size = 4
 _p$ = 16						; size = 4
@@ -6530,7 +6530,7 @@ _p$ = 16						; size = 4
 	mov	eax, DWORD PTR _p$[esp]
 	push	esi
 	push	eax
-	mov	DWORD PTR $T222730[esp+12], 0
+	mov	DWORD PTR $T223207[esp+12], 0
 	call	?civilizationShortDescription@CvPreGame@@YAABVCvString@@W4PlayerTypes@@@Z ; CvPreGame::civilizationShortDescription
 	mov	esi, DWORD PTR ___$ReturnUdt$[esp+8]
 	add	esp, 4
@@ -6550,7 +6550,7 @@ EXTRN	?civilizationShortDescriptionKey@CvPreGame@@YAABVCvString@@W4PlayerTypes@@
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?civilizationShortDescriptionKey@CvDllPreGame@@UAG?BVCvString@@W4PlayerTypes@@@Z
 _TEXT	SEGMENT
-$T222741 = -4						; size = 4
+$T223218 = -4						; size = 4
 _this$ = 8						; size = 4
 ___$ReturnUdt$ = 12					; size = 4
 _p$ = 16						; size = 4
@@ -6565,7 +6565,7 @@ _p$ = 16						; size = 4
 	mov	eax, DWORD PTR _p$[esp]
 	push	esi
 	push	eax
-	mov	DWORD PTR $T222741[esp+12], 0
+	mov	DWORD PTR $T223218[esp+12], 0
 	call	?civilizationShortDescriptionKey@CvPreGame@@YAABVCvString@@W4PlayerTypes@@@Z ; CvPreGame::civilizationShortDescriptionKey
 	mov	esi, DWORD PTR ___$ReturnUdt$[esp+8]
 	add	esp, 4
@@ -6585,7 +6585,7 @@ EXTRN	?civilizationKey@CvPreGame@@YAABVCvString@@W4PlayerTypes@@@Z:PROC ; CvPreG
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?civilizationKey@CvDllPreGame@@UAG?BVCvString@@W4PlayerTypes@@@Z
 _TEXT	SEGMENT
-$T222752 = -4						; size = 4
+$T223229 = -4						; size = 4
 _this$ = 8						; size = 4
 ___$ReturnUdt$ = 12					; size = 4
 _p$ = 16						; size = 4
@@ -6600,7 +6600,7 @@ _p$ = 16						; size = 4
 	mov	eax, DWORD PTR _p$[esp]
 	push	esi
 	push	eax
-	mov	DWORD PTR $T222752[esp+12], 0
+	mov	DWORD PTR $T223229[esp+12], 0
 	call	?civilizationKey@CvPreGame@@YAABVCvString@@W4PlayerTypes@@@Z ; CvPreGame::civilizationKey
 	mov	esi, DWORD PTR ___$ReturnUdt$[esp+8]
 	add	esp, 4
@@ -6620,7 +6620,7 @@ EXTRN	?emailAddress@CvPreGame@@YAABVCvString@@W4PlayerTypes@@@Z:PROC ; CvPreGame
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?emailAddress@CvDllPreGame@@UAG?BVCvString@@W4PlayerTypes@@@Z
 _TEXT	SEGMENT
-$T222763 = -4						; size = 4
+$T223240 = -4						; size = 4
 _this$ = 8						; size = 4
 ___$ReturnUdt$ = 12					; size = 4
 _p$ = 16						; size = 4
@@ -6635,7 +6635,7 @@ _p$ = 16						; size = 4
 	mov	eax, DWORD PTR _p$[esp]
 	push	esi
 	push	eax
-	mov	DWORD PTR $T222763[esp+12], 0
+	mov	DWORD PTR $T223240[esp+12], 0
 	call	?emailAddress@CvPreGame@@YAABVCvString@@W4PlayerTypes@@@Z ; CvPreGame::emailAddress
 	mov	esi, DWORD PTR ___$ReturnUdt$[esp+8]
 	add	esp, 4
@@ -6655,7 +6655,7 @@ EXTRN	?emailAddress@CvPreGame@@YAABVCvString@@XZ:PROC	; CvPreGame::emailAddress
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?emailAddress@CvDllPreGame@@UAG?BVCvString@@XZ
 _TEXT	SEGMENT
-$T222774 = -4						; size = 4
+$T223251 = -4						; size = 4
 _this$ = 8						; size = 4
 ___$ReturnUdt$ = 12					; size = 4
 ?emailAddress@CvDllPreGame@@UAG?BVCvString@@XZ PROC	; CvDllPreGame::emailAddress, COMDAT
@@ -6664,7 +6664,7 @@ ___$ReturnUdt$ = 12					; size = 4
 
 	push	ecx
 	push	esi
-	mov	DWORD PTR $T222774[esp+8], 0
+	mov	DWORD PTR $T223251[esp+8], 0
 
 ; 167  : 	return CvPreGame::emailAddress();
 
@@ -6686,7 +6686,7 @@ EXTRN	?gameName@CvPreGame@@YAABVCvString@@XZ:PROC	; CvPreGame::gameName
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?gameName@CvDllPreGame@@UAG?BVCvString@@XZ
 _TEXT	SEGMENT
-$T222785 = -4						; size = 4
+$T223262 = -4						; size = 4
 _this$ = 8						; size = 4
 ___$ReturnUdt$ = 12					; size = 4
 ?gameName@CvDllPreGame@@UAG?BVCvString@@XZ PROC		; CvDllPreGame::gameName, COMDAT
@@ -6695,7 +6695,7 @@ ___$ReturnUdt$ = 12					; size = 4
 
 	push	ecx
 	push	esi
-	mov	DWORD PTR $T222785[esp+8], 0
+	mov	DWORD PTR $T223262[esp+8], 0
 
 ; 192  : 	return CvPreGame::gameName();
 
@@ -6743,7 +6743,7 @@ EXTRN	?GetName@CustomOption@CvPreGame@@QBEPBDAAI@Z:PROC ; CvPreGame::CustomOptio
 ;	COMDAT ?GetGameOption@CvDllPreGame@@UAG_NIPADIAAH@Z
 _TEXT	SEGMENT
 _this$ = 8						; size = 4
-_nSourceBufferSize$219634 = 12				; size = 4
+_nSourceBufferSize$220111 = 12				; size = 4
 _uiIndex$ = 12						; size = 4
 _szOptionNameBuffer$ = 16				; size = 4
 _nOptionNameBufferSize$ = 20				; size = 4
@@ -6784,7 +6784,7 @@ _iValue$ = 24						; size = 4
 	shl	esi, 4
 	add	esi, eax
 	add	esi, esi
-	lea	edx, DWORD PTR _nSourceBufferSize$219634[esp+8]
+	lea	edx, DWORD PTR _nSourceBufferSize$220111[esp+8]
 	add	esi, esi
 	lea	ecx, DWORD PTR [esi+edi]
 	push	edx
@@ -6794,7 +6794,7 @@ _iValue$ = 24						; size = 4
 
 	mov	ecx, DWORD PTR _nOptionNameBufferSize$[esp+8]
 	inc	ecx
-	cmp	ecx, DWORD PTR _nSourceBufferSize$219634[esp+8]
+	cmp	ecx, DWORD PTR _nSourceBufferSize$220111[esp+8]
 	jbe	SHORT $LN1@GetGameOpt
 
 ; 223  : 		{
@@ -6871,7 +6871,7 @@ _TEXT	ENDS
 ;	COMDAT ?GetMapOption@CvDllPreGame@@UAG_NIPADIAAH@Z
 _TEXT	SEGMENT
 _this$ = 8						; size = 4
-_nSourceBufferSize$219653 = 12				; size = 4
+_nSourceBufferSize$220130 = 12				; size = 4
 _uiIndex$ = 12						; size = 4
 _szOptionNameBuffer$ = 16				; size = 4
 _nOptionNameBufferSize$ = 20				; size = 4
@@ -6912,7 +6912,7 @@ _iValue$ = 24						; size = 4
 	shl	esi, 4
 	add	esi, eax
 	add	esi, esi
-	lea	edx, DWORD PTR _nSourceBufferSize$219653[esp+8]
+	lea	edx, DWORD PTR _nSourceBufferSize$220130[esp+8]
 	add	esi, esi
 	lea	ecx, DWORD PTR [esi+edi]
 	push	edx
@@ -6922,7 +6922,7 @@ _iValue$ = 24						; size = 4
 
 	mov	ecx, DWORD PTR _nOptionNameBufferSize$[esp+8]
 	inc	ecx
-	cmp	ecx, DWORD PTR _nSourceBufferSize$219653[esp+8]
+	cmp	ecx, DWORD PTR _nSourceBufferSize$220130[esp+8]
 	jbe	SHORT $LN1@GetMapOpti
 
 ; 245  : 		{
@@ -6975,7 +6975,7 @@ EXTRN	?leaderName@CvPreGame@@YAABVCvString@@W4PlayerTypes@@@Z:PROC ; CvPreGame::
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?leaderName@CvDllPreGame@@UAG?AVCvString@@W4PlayerTypes@@@Z
 _TEXT	SEGMENT
-$T222842 = -4						; size = 4
+$T223319 = -4						; size = 4
 _this$ = 8						; size = 4
 ___$ReturnUdt$ = 12					; size = 4
 _p$ = 16						; size = 4
@@ -6990,7 +6990,7 @@ _p$ = 16						; size = 4
 	mov	eax, DWORD PTR _p$[esp]
 	push	esi
 	push	eax
-	mov	DWORD PTR $T222842[esp+12], 0
+	mov	DWORD PTR $T223319[esp+12], 0
 	call	?leaderName@CvPreGame@@YAABVCvString@@W4PlayerTypes@@@Z ; CvPreGame::leaderName
 	mov	esi, DWORD PTR ___$ReturnUdt$[esp+8]
 	add	esp, 4
@@ -7010,7 +7010,7 @@ EXTRN	?leaderNameKey@CvPreGame@@YAABVCvString@@W4PlayerTypes@@@Z:PROC ; CvPreGam
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?leaderNameKey@CvDllPreGame@@UAG?BVCvString@@W4PlayerTypes@@@Z
 _TEXT	SEGMENT
-$T222853 = -4						; size = 4
+$T223330 = -4						; size = 4
 _this$ = 8						; size = 4
 ___$ReturnUdt$ = 12					; size = 4
 _p$ = 16						; size = 4
@@ -7025,7 +7025,7 @@ _p$ = 16						; size = 4
 	mov	eax, DWORD PTR _p$[esp]
 	push	esi
 	push	eax
-	mov	DWORD PTR $T222853[esp+12], 0
+	mov	DWORD PTR $T223330[esp+12], 0
 	call	?leaderNameKey@CvPreGame@@YAABVCvString@@W4PlayerTypes@@@Z ; CvPreGame::leaderNameKey
 	mov	esi, DWORD PTR ___$ReturnUdt$[esp+8]
 	add	esp, 4
@@ -7045,7 +7045,7 @@ EXTRN	?leaderKey@CvPreGame@@YAABVCvString@@W4PlayerTypes@@@Z:PROC ; CvPreGame::l
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?leaderKey@CvDllPreGame@@UAG?BVCvString@@W4PlayerTypes@@@Z
 _TEXT	SEGMENT
-$T222864 = -4						; size = 4
+$T223341 = -4						; size = 4
 _this$ = 8						; size = 4
 ___$ReturnUdt$ = 12					; size = 4
 _p$ = 16						; size = 4
@@ -7060,7 +7060,7 @@ _p$ = 16						; size = 4
 	mov	eax, DWORD PTR _p$[esp]
 	push	esi
 	push	eax
-	mov	DWORD PTR $T222864[esp+12], 0
+	mov	DWORD PTR $T223341[esp+12], 0
 	call	?leaderKey@CvPreGame@@YAABVCvString@@W4PlayerTypes@@@Z ; CvPreGame::leaderKey
 	mov	esi, DWORD PTR ___$ReturnUdt$[esp+8]
 	add	esp, 4
@@ -7080,7 +7080,7 @@ EXTRN	?loadFileName@CvPreGame@@YAABVCvString@@XZ:PROC	; CvPreGame::loadFileName
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?loadFileName@CvDllPreGame@@UAG?BVCvString@@XZ
 _TEXT	SEGMENT
-$T222875 = -4						; size = 4
+$T223352 = -4						; size = 4
 _this$ = 8						; size = 4
 ___$ReturnUdt$ = 12					; size = 4
 ?loadFileName@CvDllPreGame@@UAG?BVCvString@@XZ PROC	; CvDllPreGame::loadFileName, COMDAT
@@ -7089,7 +7089,7 @@ ___$ReturnUdt$ = 12					; size = 4
 
 	push	ecx
 	push	esi
-	mov	DWORD PTR $T222875[esp+8], 0
+	mov	DWORD PTR $T223352[esp+8], 0
 
 ; 402  : 	return CvPreGame::loadFileName();
 
@@ -7111,7 +7111,7 @@ EXTRN	?mapScriptName@CvPreGame@@YAABVCvString@@XZ:PROC ; CvPreGame::mapScriptNam
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?mapScriptName@CvDllPreGame@@UAG?BVCvString@@XZ
 _TEXT	SEGMENT
-$T222886 = -4						; size = 4
+$T223363 = -4						; size = 4
 _this$ = 8						; size = 4
 ___$ReturnUdt$ = 12					; size = 4
 ?mapScriptName@CvDllPreGame@@UAG?BVCvString@@XZ PROC	; CvDllPreGame::mapScriptName, COMDAT
@@ -7120,7 +7120,7 @@ ___$ReturnUdt$ = 12					; size = 4
 
 	push	ecx
 	push	esi
-	mov	DWORD PTR $T222886[esp+8], 0
+	mov	DWORD PTR $T223363[esp+8], 0
 
 ; 432  : 	return CvPreGame::mapScriptName();
 
@@ -7142,7 +7142,7 @@ EXTRN	?nickname@CvPreGame@@YAABVCvString@@W4PlayerTypes@@@Z:PROC ; CvPreGame::ni
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?nickname@CvDllPreGame@@UAG?BVCvString@@W4PlayerTypes@@@Z
 _TEXT	SEGMENT
-$T222897 = -4						; size = 4
+$T223374 = -4						; size = 4
 _this$ = 8						; size = 4
 ___$ReturnUdt$ = 12					; size = 4
 _p$ = 16						; size = 4
@@ -7157,7 +7157,7 @@ _p$ = 16						; size = 4
 	mov	eax, DWORD PTR _p$[esp]
 	push	esi
 	push	eax
-	mov	DWORD PTR $T222897[esp+12], 0
+	mov	DWORD PTR $T223374[esp+12], 0
 	call	?nickname@CvPreGame@@YAABVCvString@@W4PlayerTypes@@@Z ; CvPreGame::nickname
 	mov	esi, DWORD PTR ___$ReturnUdt$[esp+8]
 	add	esp, 4
@@ -7177,7 +7177,7 @@ EXTRN	?nicknameDisplayed@CvPreGame@@YAABVCvString@@W4PlayerTypes@@@Z:PROC ; CvPr
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?nicknameDisplayed@CvDllPreGame@@UAG?BVCvString@@W4PlayerTypes@@@Z
 _TEXT	SEGMENT
-$T222908 = -4						; size = 4
+$T223385 = -4						; size = 4
 _this$ = 8						; size = 4
 ___$ReturnUdt$ = 12					; size = 4
 _p$ = 16						; size = 4
@@ -7192,7 +7192,7 @@ _p$ = 16						; size = 4
 	mov	eax, DWORD PTR _p$[esp]
 	push	esi
 	push	eax
-	mov	DWORD PTR $T222908[esp+12], 0
+	mov	DWORD PTR $T223385[esp+12], 0
 	call	?nicknameDisplayed@CvPreGame@@YAABVCvString@@W4PlayerTypes@@@Z ; CvPreGame::nicknameDisplayed
 	mov	esi, DWORD PTR ___$ReturnUdt$[esp+8]
 	add	esp, 4
@@ -8064,7 +8064,7 @@ __ehfuncinfo$?GetCurrent@?$CvEnumerator@VICvDlcPackageInfo1@@@@QAEPAVICvDlcPacka
 xdata$x	ENDS
 ;	COMDAT ?GetCurrent@?$CvEnumerator@VICvDlcPackageInfo1@@@@QAEPAVICvDlcPackageInfo1@@XZ
 _TEXT	SEGMENT
-_pValue$221095 = -16					; size = 4
+_pValue$221572 = -16					; size = 4
 __$EHRec$ = -12						; size = 12
 ?GetCurrent@?$CvEnumerator@VICvDlcPackageInfo1@@@@QAEPAVICvDlcPackageInfo1@@XZ PROC ; CvEnumerator<ICvDlcPackageInfo1>::GetCurrent, COMDAT
 ; _this$ = ecx
@@ -8094,7 +8094,7 @@ __$EHRec$ = -12						; size = 12
 	push	eax
 	call	edx
 	mov	esi, eax
-	mov	DWORD PTR _pValue$221095[esp+24], esi
+	mov	DWORD PTR _pValue$221572[esp+24], esi
 	mov	DWORD PTR __$EHRec$[esp+32], 0
 
 ; 1863 : 			return (pValue.get() != NULL)? pValue->QueryInterface<T>() : NULL;
@@ -8141,7 +8141,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetCurrent@?$CvEnumerator@VICvDlcPackageInfo1@@@@QAEPAVICvDlcPackageInfo1@@XZ$0:
-	lea	ecx, DWORD PTR _pValue$221095[ebp]
+	lea	ecx, DWORD PTR _pValue$221572[ebp]
 	jmp	??1?$auto_ptr@VICvUnknown@@@std@@QAE@XZ	; std::auto_ptr<ICvUnknown>::~auto_ptr<ICvUnknown>
 __ehhandler$?GetCurrent@?$CvEnumerator@VICvDlcPackageInfo1@@@@QAEPAVICvDlcPackageInfo1@@XZ:
 	mov	eax, OFFSET __ehfuncinfo$?GetCurrent@?$CvEnumerator@VICvDlcPackageInfo1@@@@QAEPAVICvDlcPackageInfo1@@XZ
@@ -8425,8 +8425,8 @@ __ehfuncinfo$?_Incsize@?$list@U_GUID@@V?$allocator@U_GUID@@@std@@@std@@IAEXI@Z D
 xdata$x	ENDS
 ;	COMDAT ?_Incsize@?$list@U_GUID@@V?$allocator@U_GUID@@@std@@@std@@IAEXI@Z
 _TEXT	SEGMENT
-$T223527 = -80						; size = 28
-$T223526 = -52						; size = 40
+$T224004 = -80						; size = 28
+$T224003 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 __Count$ = 8						; size = 4
 ?_Incsize@?$list@U_GUID@@V?$allocator@U_GUID@@@std@@@std@@IAEXI@Z PROC ; std::list<_GUID,std::allocator<_GUID> >::_Incsize, COMDAT
@@ -8455,22 +8455,22 @@ __Count$ = 8						; size = 4
 ; 1241 : 			_THROW(length_error, "list<T> too long");
 
 	push	OFFSET ??_C@_0BB@MOGOBHAF@list?$DMT?$DO?5too?5long?$AA@
-	lea	ecx, DWORD PTR $T223527[esp+84]
+	lea	ecx, DWORD PTR $T224004[esp+84]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T223526[esp+80]
+	lea	ecx, DWORD PTR $T224003[esp+80]
 	mov	DWORD PTR __$EHRec$[esp+88], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T223527[esp+80]
+	lea	eax, DWORD PTR $T224004[esp+80]
 	push	eax
-	lea	ecx, DWORD PTR $T223526[esp+96]
+	lea	ecx, DWORD PTR $T224003[esp+96]
 	mov	BYTE PTR __$EHRec$[esp+92], 1
-	mov	DWORD PTR $T223526[esp+84], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T224003[esp+84], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVlength_error@std@@
-	lea	ecx, DWORD PTR $T223526[esp+84]
+	lea	ecx, DWORD PTR $T224003[esp+84]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+96], 0
-	mov	DWORD PTR $T223526[esp+88], OFFSET ??_7length_error@std@@6B@
+	mov	DWORD PTR $T224003[esp+88], OFFSET ??_7length_error@std@@6B@
 	call	__CxxThrowException@8
 $LN20@Incsize:
 $LN1@Incsize:
@@ -8491,10 +8491,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Incsize@?$list@U_GUID@@V?$allocator@U_GUID@@@std@@@std@@IAEXI@Z$0:
-	lea	ecx, DWORD PTR $T223527[ebp]
+	lea	ecx, DWORD PTR $T224004[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Incsize@?$list@U_GUID@@V?$allocator@U_GUID@@@std@@@std@@IAEXI@Z$2:
-	lea	ecx, DWORD PTR $T223526[ebp]
+	lea	ecx, DWORD PTR $T224003[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Incsize@?$list@U_GUID@@V?$allocator@U_GUID@@@std@@@std@@IAEXI@Z:
 	mov	eax, OFFSET __ehfuncinfo$?_Incsize@?$list@U_GUID@@V?$allocator@U_GUID@@@std@@@std@@IAEXI@Z
@@ -8840,9 +8840,9 @@ __ehfuncinfo$?SetDLCAvailable@CvDllPreGame@@UAGXW4PlayerTypes@@PAVICvEnumerator@
 xdata$x	ENDS
 ;	COMDAT ?SetDLCAvailable@CvDllPreGame@@UAGXW4PlayerTypes@@PAVICvEnumerator@@@Z
 _TEXT	SEGMENT
-_pPackageInfo$220853 = -44				; size = 4
+_pPackageInfo$221330 = -44				; size = 4
 _kDLCList$ = -40					; size = 12
-$T223914 = -28						; size = 16
+$T224391 = -28						; size = 16
 __$EHRec$ = -12						; size = 12
 _this$ = 8						; size = 4
 _p$ = 12						; size = 4
@@ -8913,7 +8913,7 @@ $LL3@SetDLCAvai:
 	lea	ecx, DWORD PTR _kEnum$[esp+56]
 	call	?GetCurrent@?$CvEnumerator@VICvDlcPackageInfo1@@@@QAEPAVICvDlcPackageInfo1@@XZ ; CvEnumerator<ICvDlcPackageInfo1>::GetCurrent
 	mov	edi, eax
-	mov	DWORD PTR _pPackageInfo$220853[esp+60], edi
+	mov	DWORD PTR _pPackageInfo$221330[esp+60], edi
 	mov	BYTE PTR __$EHRec$[esp+68], 2
 
 ; 1121 : 		if(pPackageInfo.get() != NULL)
@@ -8926,7 +8926,7 @@ $LL3@SetDLCAvai:
 
 	mov	eax, DWORD PTR [edi]
 	mov	edx, DWORD PTR [eax+8]
-	lea	ecx, DWORD PTR $T223914[esp+60]
+	lea	ecx, DWORD PTR $T224391[esp+60]
 	push	ecx
 	push	edi
 	call	edx
@@ -9003,7 +9003,7 @@ __unwindfunclet$?SetDLCAvailable@CvDllPreGame@@UAGXW4PlayerTypes@@PAVICvEnumerat
 	lea	ecx, DWORD PTR _kEnum$[ebp-4]
 	jmp	??1?$CvEnumerator@VICvDlcPackageInfo1@@@@QAE@XZ
 __unwindfunclet$?SetDLCAvailable@CvDllPreGame@@UAGXW4PlayerTypes@@PAVICvEnumerator@@@Z$2:
-	lea	ecx, DWORD PTR _pPackageInfo$220853[ebp]
+	lea	ecx, DWORD PTR _pPackageInfo$221330[ebp]
 	jmp	??1?$auto_ptr@VICvDlcPackageInfo1@@@std@@QAE@XZ ; std::auto_ptr<ICvDlcPackageInfo1>::~auto_ptr<ICvDlcPackageInfo1>
 __ehhandler$?SetDLCAvailable@CvDllPreGame@@UAGXW4PlayerTypes@@PAVICvEnumerator@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?SetDLCAvailable@CvDllPreGame@@UAGXW4PlayerTypes@@PAVICvEnumerator@@@Z

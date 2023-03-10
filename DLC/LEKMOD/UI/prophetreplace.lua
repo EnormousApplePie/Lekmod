@@ -1178,7 +1178,7 @@ GameEvents.TeamSetHasTech.Add(function(iTeam, iTech, bAdopted)
 		local player = Players[playerID];
 		if player:GetCivilizationType() == GameInfoTypes["CIVILIZATION_GAUL"] then
 			if player:GetTeam() == iTeam then
-				if (iTech == GameInfoTypes["TECH_MASONRY"]) then
+				if (iTech == GameInfoTypes["TECH_MINING"]) then
 					local pCity = player:GetCapitalCity();
 					pCity:SetNumRealBuilding(GameInfoTypes["BUILDING_MURUS_GALLICUS"], 1);
 				end
@@ -2052,7 +2052,7 @@ local bIsActive = JFD_IsCivilisationActive(iCiv)
 function Italy_OnPolicyAdopted(playerID, policyID)
 
 	local player = Players[playerID]
-
+	local goldenAgePointBonus = 250
 	-- Piety finished
 	if player:GetCivilizationType() == GameInfoTypes["CIVILIZATION_ITALY"] then
 
@@ -2073,9 +2073,7 @@ function Italy_OnPolicyAdopted(playerID, policyID)
 			and player:HasPolicy(GameInfo.Policies["POLICY_FREE_RELIGION"].ID)
 			and player:HasPolicy(GameInfo.Policies["POLICY_THEOCRACY"].ID)) then
 
-			-- Finished Policy Tree, now add the building
-			local pCity = player:GetCapitalCity();
-			pCity:SetNumRealBuilding(GameInfoTypes["BUILDING_ITALY_TRAIT_PIETY"], 1);
+			player:ChangeGoldenAgeProgressMeter(goldenAgePointBonus)
 		end
 	end 
 end
@@ -2107,9 +2105,7 @@ function Italy_OnPolicyAdopted(playerID, policyID)
 			and player:HasPolicy(GameInfo.Policies["POLICY_MONARCHY"].ID)
 			and player:HasPolicy(GameInfo.Policies["POLICY_ARISTOCRACY"].ID)) then
 
-			-- Finished Policy Tree, now add the building
-			local pCity = player:GetCapitalCity();
-			pCity:SetNumRealBuilding(GameInfoTypes["BUILDING_ITALY_TRAIT_TRADITION"], 1);
+			player:ChangeGoldenAgeProgressMeter(goldenAgePointBonus)
 		end
 	end 
 end
@@ -2134,9 +2130,7 @@ function Italy_OnPolicyAdopted(playerID, policyID)
 			and player:HasPolicy(GameInfo.Policies["POLICY_COLLECTIVE_RULE"].ID)
 			and player:HasPolicy(GameInfo.Policies["POLICY_REPRESENTATION"].ID)) then
 
-			-- Finished Policy Tree, now add the building
-			local pCity = player:GetCapitalCity();
-			pCity:SetNumRealBuilding(GameInfoTypes["BUILDING_ITALY_TRAIT_LIBERTY"], 1);
+			player:ChangeGoldenAgeProgressMeter(goldenAgePointBonus)
 		end
 	end 
 end
@@ -2161,9 +2155,7 @@ function Italy_OnPolicyAdopted(playerID, policyID)
 			and player:HasPolicy(GameInfo.Policies["POLICY_MILITARY_CASTE"].ID)
 			and player:HasPolicy(GameInfo.Policies["POLICY_MILITARY_TRADITION"].ID)) then
 
-			-- Finished Policy Tree, now add the building
-			local pCity = player:GetCapitalCity();
-			pCity:SetNumRealBuilding(GameInfoTypes["BUILDING_ITALY_TRAIT_HONOR"], 1);
+			player:ChangeGoldenAgeProgressMeter(goldenAgePointBonus)
 		end
 	end 
 end
@@ -2188,9 +2180,7 @@ function Italy_OnPolicyAdopted(playerID, policyID)
 			and player:HasPolicy(GameInfo.Policies["POLICY_CONSULATES"].ID)
 			and player:HasPolicy(GameInfo.Policies["POLICY_SCHOLASTICISM"].ID)) then
 
-			-- Finished Policy Tree, now add the building
-			local pCity = player:GetCapitalCity();
-			pCity:SetNumRealBuilding(GameInfoTypes["BUILDING_ITALY_TRAIT_PATRONAGE"], 1);
+			player:ChangeGoldenAgeProgressMeter(goldenAgePointBonus)
 		end
 	end 
 end
@@ -2210,9 +2200,7 @@ function Italy_OnPolicyAdopted(playerID, policyID)
 			(policyID == GameInfo.Policies["POLICY_FLOURISHING_OF_ARTS"].ID 
 			and player:HasPolicy(GameInfo.Policies["POLICY_FINE_ARTS"].ID)) then
 
-			-- Finished Policy Tree, now add the building
-			local pCity = player:GetCapitalCity();
-			pCity:SetNumRealBuilding(GameInfoTypes["BUILDING_ITALY_TRAIT_AESTHETICS"], 1);
+			player:ChangeGoldenAgeProgressMeter(goldenAgePointBonus)
 		end
 	end 
 end
@@ -2232,9 +2220,7 @@ function Italy_OnPolicyAdopted(playerID, policyID)
 			(policyID == GameInfo.Policies["POLICY_MERCHANT_NAVY"].ID 
 			and player:HasPolicy(GameInfo.Policies["POLICY_TREASURE_FLEETS"].ID)) then
 
-			-- Finished Policy Tree, now add the building
-			local pCity = player:GetCapitalCity();
-			pCity:SetNumRealBuilding(GameInfoTypes["BUILDING_ITALY_TRAIT_EXPLORATION"], 1);
+			player:ChangeGoldenAgeProgressMeter(goldenAgePointBonus)
 		end
 	end 
 end
@@ -2254,9 +2240,7 @@ function Italy_OnPolicyAdopted(playerID, policyID)
 			(policyID == GameInfo.Policies["POLICY_HUMANISM"].ID 
 			and player:HasPolicy(GameInfo.Policies["POLICY_SECULARISM"].ID)) then
 
-			-- Finished Policy Tree, now add the building
-			local pCity = player:GetCapitalCity();
-			pCity:SetNumRealBuilding(GameInfoTypes["BUILDING_ITALY_TRAIT_RATIONALISM"], 1);
+			player:ChangeGoldenAgeProgressMeter(goldenAgePointBonus)
 		end
 	end 
 end
@@ -2281,9 +2265,7 @@ function Italy_OnPolicyAdopted(playerID, policyID)
 			and player:HasPolicy(GameInfo.Policies["POLICY_ENTREPRENEURSHIP"].ID)
 			and player:HasPolicy(GameInfo.Policies["POLICY_PROTECTIONISM"].ID)) then
 
-			-- Finished Policy Tree, now add the building
-			local pCity = player:GetCapitalCity();
-			pCity:SetNumRealBuilding(GameInfoTypes["BUILDING_ITALY_TRAIT_COMMERCE"], 1);
+			player:ChangeGoldenAgeProgressMeter(goldenAgePointBonus)
 		end
 	end 
 end
@@ -2291,16 +2273,6 @@ end
 if bIsActive then
 GameEvents.PlayerAdoptPolicy.Add(Italy_OnPolicyAdopted);
 end
-
-
-
--- PietyChanges
--- Author: Cirra
--- DateCreated: 10/17/2019 1:22:18 AM
---------------------------------------------------------------
-
-
-
 
 -- HonorChanges
 -- Author: Cirra
@@ -2549,23 +2521,34 @@ local mountaineerActive = GameInfoTypes["PROMOTION_SWISS_MOUNTAINEER_ACTIVE"];
 
 local reislaufer = GameInfoTypes["UNIT_SWISS_REISLAUFER"];
 
+local skiResortM = {GameInfoTypes["BUILDING_SWISS_SKI_RESORT_MOUNTAIN_1"], GameInfoTypes["BUILDING_SWISS_SKI_RESORT_MOUNTAIN_2"], GameInfoTypes["BUILDING_SWISS_SKI_RESORT_MOUNTAIN_3"], GameInfoTypes["BUILDING_SWISS_SKI_RESORT_MOUNTAIN_4"],GameInfoTypes["BUILDING_SWISS_SKI_RESORT_MOUNTAIN_5"]
+}
 function SkiResortMountain(playerID)
-	local player = Players[playerID];
-	
-	if player:GetCivilizationType() == civSwiss and player:IsAlive() then
-		for pCity in player:Cities() do
-			if pCity:IsHasBuilding(skiResort) and (not pCity:IsHasBuilding(skiResortM)) then
-				local pPlot = pCity:Plot()
-				for pAdjacentPlot in PlotAreaSweepIterator(pPlot, 2, SECTOR_NORTH, DIRECTION_CLOCKWISE, DIRECTION_OUTWARDS, CENTRE_EXCLUDE) do
-					if pAdjacentPlot:IsMountain() and pAdjacentPlot:GetOwner() == playerID then
-						pCity:SetNumRealBuilding(skiResortM, 1);
-					end
-				end
-			else
-				pCity:SetNumRealBuilding(skiResortM, 0);
-			end
-		end
-	end
+    local player = Players[playerID];
+    
+    if player:GetCivilizationType() == civSwiss and player:IsAlive() then
+        for pCity in player:Cities() do 
+            if pCity:IsHasBuilding(skiResort) then  --and (not pCity:IsHasBuilding(skiResortM))
+                local pPlot = pCity:Plot()
+                local MountainCount = 0
+                for pAdjacentPlot in PlotAreaSweepIterator(pPlot, 3, SECTOR_NORTH, DIRECTION_CLOCKWISE, DIRECTION_OUTWARDS, CENTRE_EXCLUDE) do
+                    
+                    if pAdjacentPlot:IsMountain() and pAdjacentPlot:GetOwner() == playerID and MountainCount <= 5 then
+                        -- count the mountains, then add a dummy building for the amount counted
+                        print(MountainCount)
+						MountainCount = MountainCount + 1
+                        pCity:SetNumRealBuilding(skiResortM[MountainCount], 1)
+                        
+                    end
+                end
+                
+            else
+                for i in 0, 4 do 
+                  pCity:SetNumRealBuilding(skiResortM[i], 0)
+                end
+            end
+        end
+    end
 end
 
 function Mountaineer(playerID, unitID, x, y)
@@ -2734,7 +2717,7 @@ if (bIsActive and iCiv) then
 		local pPlot = Map.GetPlot(iX, iY)
 		local pCity = pPlot:GetPlotCity()
 		local goldenAgePointBonus = 100
-		if (player:IsEverAlive()) then
+		if (player:IsEverAlive() and player:GetCivilizationType() == iCiv) then
 			player:ChangeGoldenAgeProgressMeter(goldenAgePointBonus)
 			if player:IsHuman() then
 				Events.AddPopupTextEvent(HexToWorld(ToHexFromGrid(Vector2(iX, iY))), Locale.ConvertTextKey("[COLOR_WHITE]+{1_Num}[ENDCOLOR] [ICON_GOLDEN_AGE]", goldenAgePointBonus), true)
@@ -2756,6 +2739,27 @@ if (bIsActive and iCiv) then
 	GameEvents.CityCaptureComplete.Add(ColombiaCityCaptureGoldenAgePoints)
     GameEvents.TeamSetHasTech.Add(ColombiaTrait)
     GameEvents.CityCaptureComplete.Add(ColombiaTrait)
-	
     GameEvents.PlayerCityFounded.Add(ColombiaTrait)
+end
+-- =======================================================================================================================
+-- Phoenicia UA : Add +1 Population after Optics on new cities
+-- =======================================================================================================================
+
+local iCiv = GameInfoTypes["CIVILIZATION_PHOENICIAN"]
+local bIsActive = JFD_IsCivilisationActive(iCiv)
+
+local iBuilding = GameInfoTypes["BUILDING_PHOENICIAN_TRAIT"]
+
+function PhoeniciaUACityBonus(playerID, iX, iY)
+    local pPlayer = Players[playerID]
+    if pPlayer:GetCivilizationType() == GameInfoTypes["CIVILIZATION_PHOENICIAN"] and pPlayer:IsAlive() then
+		if Teams[pPlayer:GetTeam()]:IsHasTech(GameInfoTypes["TECH_OPTICS"]) then
+			local pPlot = Map.GetPlot(iX, iY)
+			local pCity = pPlot:GetPlotCity()
+			pCity:SetNumRealBuilding(iBuilding, 1)
+		end
+    end
+end
+if bIsActive then
+	GameEvents.PlayerCityFounded.Add(PhoeniciaUACityBonus)
 end

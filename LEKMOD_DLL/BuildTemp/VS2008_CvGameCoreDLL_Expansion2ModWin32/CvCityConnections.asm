@@ -1540,7 +1540,7 @@ PUBLIC	?Write@CvCityConnections@@QBEXAAVFDataStream@@@Z ; CvCityConnections::Wri
 ;	COMDAT ?Write@CvCityConnections@@QBEXAAVFDataStream@@@Z
 _TEXT	SEGMENT
 _uiVersion$ = -4					; size = 4
-$T221707 = 8						; size = 4
+$T222184 = 8						; size = 4
 _kStream$ = 8						; size = 4
 ?Write@CvCityConnections@@QBEXAAVFDataStream@@@Z PROC	; CvCityConnections::Write, COMDAT
 ; _this$ = ecx
@@ -1614,10 +1614,10 @@ $LN4@Write:
 ; 131  : 	kStream << m_aiCityPlotIDs.size();
 
 	mov	eax, DWORD PTR [esi+16]
-	lea	ecx, DWORD PTR $T221707[esp+16]
+	lea	ecx, DWORD PTR $T222184[esp+16]
 	push	ecx
 	mov	ecx, edi
-	mov	DWORD PTR $T221707[esp+20], eax
+	mov	DWORD PTR $T222184[esp+20], eax
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 
 ; 132  : 	for(uint ui = 0; ui < m_aiCityPlotIDs.size(); ui++)
@@ -1926,7 +1926,7 @@ xdata$x	ENDS
 ;	COMDAT ?ResizeRouteInfo@CvCityConnections@@IAEXI@Z
 _TEXT	SEGMENT
 __$EHRec$ = -12						; size = 12
-$T221857 = 8						; size = 4
+$T222334 = 8						; size = 4
 _uiNewSize$ = 8						; size = 4
 ?ResizeRouteInfo@CvCityConnections@@IAEXI@Z PROC	; CvCityConnections::ResizeRouteInfo, COMDAT
 ; _this$ = ecx
@@ -1980,7 +1980,7 @@ $LN1@ResizeRout:
 	call	??_U@YAPAXI@Z				; operator new[]
 	mov	ebx, eax
 	add	esp, 4
-	mov	DWORD PTR $T221857[esp+24], ebx
+	mov	DWORD PTR $T222334[esp+24], ebx
 	xor	eax, eax
 	mov	DWORD PTR __$EHRec$[esp+36], eax
 	cmp	ebx, eax
@@ -2013,7 +2013,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?ResizeRouteInfo@CvCityConnections@@IAEXI@Z$0:
-	mov	eax, DWORD PTR $T221857[ebp-4]
+	mov	eax, DWORD PTR $T222334[ebp-4]
 	push	eax
 	call	??_V@YAXPAX@Z				; operator delete[]
 	pop	ecx
@@ -3809,7 +3809,7 @@ PUBLIC	?Read@CvCityConnections@@QAEXAAVFDataStream@@@Z	; CvCityConnections::Read
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?Read@CvCityConnections@@QAEXAAVFDataStream@@@Z
 _TEXT	SEGMENT
-_iValue$220709 = -8					; size = 4
+_iValue$221186 = -8					; size = 4
 _uiVersion$ = -4					; size = 4
 _iNumCityIDs$ = 8					; size = 4
 _kStream$ = 8						; size = 4
@@ -3912,7 +3912,7 @@ $LL3@Read:
 ; 111  : 		int iValue;
 ; 112  : 		kStream >> iValue;
 
-	lea	eax, DWORD PTR _iValue$220709[esp+24]
+	lea	eax, DWORD PTR _iValue$221186[esp+24]
 	push	eax
 	mov	ecx, ebp
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
@@ -3932,7 +3932,7 @@ $LN29@Read:
 	lea	eax, DWORD PTR [edx+ecx*4]
 	test	eax, eax
 	je	SHORT $LN32@Read
-	mov	ecx, DWORD PTR _iValue$220709[esp+24]
+	mov	ecx, DWORD PTR _iValue$221186[esp+24]
 	mov	DWORD PTR [eax], ecx
 $LN32@Read:
 	inc	DWORD PTR [esi+4]
@@ -3962,7 +3962,7 @@ EXTRN	?firstCity@CvPlayer@@QAEPAVCvCity@@PAH_N@Z:PROC	; CvPlayer::firstCity
 ;	COMDAT ?UpdateCityPlotIDs@CvCityConnections@@QAEXXZ
 _TEXT	SEGMENT
 _this$ = -12						; size = 4
-_ui$220736 = -8						; size = 4
+_ui$221213 = -8						; size = 4
 _iLoop$ = -4						; size = 4
 ?UpdateCityPlotIDs@CvCityConnections@@QAEXXZ PROC	; CvCityConnections::UpdateCityPlotIDs, COMDAT
 ; _this$ = ecx
@@ -3988,7 +3988,7 @@ _iLoop$ = -4						; size = 4
 ; 159  : 
 ; 160  : 	for(uint ui = 0; ui < MAX_CIV_PLAYERS; ui++)
 
-	mov	DWORD PTR _ui$220736[esp+28], ebx
+	mov	DWORD PTR _ui$221213[esp+28], ebx
 	xor	ebp, ebp
 	npad	8
 $LL11@UpdateCity:
@@ -4098,7 +4098,7 @@ $LN53@UpdateCity:
 
 	jmp	SHORT $LN72@UpdateCity
 $LN7@UpdateCity:
-	mov	eax, DWORD PTR _ui$220736[esp+28]
+	mov	eax, DWORD PTR _ui$221213[esp+28]
 	push	eax
 	mov	ecx, edi
 	call	?ShouldConnectToOtherPlayer@CvCityConnections@@QAE_NW4PlayerTypes@@@Z ; CvCityConnections::ShouldConnectToOtherPlayer
@@ -4156,7 +4156,7 @@ $LN10@UpdateCity:
 ; 159  : 
 ; 160  : 	for(uint ui = 0; ui < MAX_CIV_PLAYERS; ui++)
 
-	inc	DWORD PTR _ui$220736[esp+28]
+	inc	DWORD PTR _ui$221213[esp+28]
 	add	ebp, 63236				; 0000f704H
 	cmp	ebp, 3983868				; 003cc9fcH
 	jb	$LL11@UpdateCity
@@ -4479,7 +4479,7 @@ PUBLIC	?ConnectPlotRoute@CvCityConnections@@IAEXPAVCvPlot@@@Z ; CvCityConnection
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?ConnectPlotRoute@CvCityConnections@@IAEXPAVCvPlot@@@Z
 _TEXT	SEGMENT
-_info$221111 = -8					; size = 8
+_info$221588 = -8					; size = 8
 _iPlotIndex$ = 8					; size = 4
 _pPlot$ = 8						; size = 4
 ?ConnectPlotRoute@CvCityConnections@@IAEXPAVCvPlot@@@Z PROC ; CvCityConnections::ConnectPlotRoute, COMDAT
@@ -4576,7 +4576,7 @@ $LN5@ConnectPlo:
 	push	ebx
 	or	ebx, -1
 	mov	edi, ecx
-	mov	BYTE PTR _info$221111[esp+28], 0
+	mov	BYTE PTR _info$221588[esp+28], 0
 	mov	BYTE PTR [esi+812], 0
 	cmp	DWORD PTR [esi+4], eax
 	jne	SHORT $LN22@ConnectPlo
@@ -4589,7 +4589,7 @@ $LN22@ConnectPlo:
 	lea	eax, DWORD PTR [ecx+eax*8]
 	test	eax, eax
 	je	SHORT $LN25@ConnectPlo
-	mov	edx, DWORD PTR _info$221111[esp+28]
+	mov	edx, DWORD PTR _info$221588[esp+28]
 	mov	DWORD PTR [eax], ebx
 	mov	DWORD PTR [eax+4], edx
 $LN25@ConnectPlo:
@@ -4663,26 +4663,26 @@ __ehfuncinfo$?UpdateRouteInfo@CvCityConnections@@QAEXXZ DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?UpdateRouteInfo@CvCityConnections@@QAEXXZ
 _TEXT	SEGMENT
-_bAnyRouteFound$220999 = -330				; size = 1
-_bFirstCityHasHarbor$220986 = -330			; size = 1
+_bAnyRouteFound$221476 = -330				; size = 1
+_bFirstCityHasHarbor$221463 = -330			; size = 1
 _bAllowWaterRoutes$ = -329				; size = 1
 tv1253 = -328						; size = 2
-_bSecondCityHasHarbor$220987 = -328			; size = 1
-_pSecondCity$220965 = -328				; size = 4
-_pNode$221013 = -324					; size = 4
-_pRouteInfo$220978 = -324				; size = 4
+_bSecondCityHasHarbor$221464 = -328			; size = 1
+_pSecondCity$221442 = -328				; size = 4
+_pNode$221490 = -324					; size = 4
+_pRouteInfo$221455 = -324				; size = 4
 tv1251 = -320						; size = 4
-_iPass$220957 = -320					; size = 4
-_pFirstCity$220964 = -316				; size = 4
-_uiFirstCityIndex$220967 = -312				; size = 4
-_ui$220932 = -312					; size = 4
+_iPass$221434 = -320					; size = 4
+_pFirstCity$221441 = -316				; size = 4
+_uiFirstCityIndex$221444 = -312				; size = 4
+_ui$221409 = -312					; size = 4
 tv1249 = -308						; size = 4
-_uiSecondCityIndex$220972 = -308			; size = 4
+_uiSecondCityIndex$221449 = -308			; size = 4
 _eBestRouteType$ = -304					; size = 4
-_pkLandRouteFinder$220966 = -300			; size = 4
+_pkLandRouteFinder$221443 = -300			; size = 4
 tv1255 = -296						; size = 4
 tv1247 = -296						; size = 8
-_iFirstCityArrayIndex$220971 = -296			; size = 4
+_iFirstCityArrayIndex$221448 = -296			; size = 4
 _iLoop$ = -288						; size = 4
 _vpCities$ = -284					; size = 272
 __$EHRec$ = -12						; size = 12
@@ -4732,7 +4732,7 @@ __$EHRec$ = -12						; size = 12
 	xor	ecx, ecx
 	mov	DWORD PTR __$EHRec$[esp+356], ebp
 	mov	BYTE PTR _bAllowWaterRoutes$[esp+348], 0
-	mov	DWORD PTR _ui$220932[esp+348], esi
+	mov	DWORD PTR _ui$221409[esp+348], esi
 	mov	DWORD PTR tv1251[esp+348], ecx
 	npad	5
 $LL57@UpdateRout:
@@ -4912,10 +4912,10 @@ $LN56@UpdateRout:
 ; 237  : 	for(uint ui = 0; ui < MAX_CIV_PLAYERS; ui++)
 
 	mov	ecx, DWORD PTR tv1251[esp+348]
-	mov	esi, DWORD PTR _ui$220932[esp+348]
+	mov	esi, DWORD PTR _ui$221409[esp+348]
 	add	ecx, 63236				; 0000f704H
 	inc	esi
-	mov	DWORD PTR _ui$220932[esp+348], esi
+	mov	DWORD PTR _ui$221409[esp+348], esi
 	mov	DWORD PTR tv1251[esp+348], ecx
 	cmp	ecx, 3983868				; 003cc9fcH
 	jb	$LL57@UpdateRout
@@ -4989,11 +4989,11 @@ $LN271@UpdateRout:
 ; 292  : 	for(int iPass = 0; iPass < 2; iPass++)
 
 	xor	eax, eax
-	mov	DWORD PTR _iPass$220957[esp+348], eax
+	mov	DWORD PTR _iPass$221434[esp+348], eax
 	jmp	SHORT $LN39@UpdateRout
 	npad	4
 $LL272@UpdateRout:
-	mov	eax, DWORD PTR _iPass$220957[esp+348]
+	mov	eax, DWORD PTR _iPass$221434[esp+348]
 $LN39@UpdateRout:
 
 ; 293  : #endif
@@ -5035,8 +5035,8 @@ $LN275@UpdateRout:
 ; 310  : 		for(uint uiFirstCityIndex = 0; uiFirstCityIndex < vpCities.size(); uiFirstCityIndex++)
 
 	xor	esi, esi
-	mov	DWORD PTR _pkLandRouteFinder$220966[esp+348], eax
-	mov	DWORD PTR _uiFirstCityIndex$220967[esp+348], esi
+	mov	DWORD PTR _pkLandRouteFinder$221443[esp+348], eax
+	mov	DWORD PTR _uiFirstCityIndex$221444[esp+348], esi
 	cmp	DWORD PTR _vpCities$[esp+352], esi
 	jbe	$LN38@UpdateRout
 	npad	4
@@ -5052,7 +5052,7 @@ $LL277@UpdateRout:
 
 	push	eax
 	mov	ecx, ebx
-	mov	DWORD PTR _pFirstCity$220964[esp+352], eax
+	mov	DWORD PTR _pFirstCity$221441[esp+352], eax
 	call	?GetIndexFromCity@CvCityConnections@@QAEIPAVCvCity@@@Z ; CvCityConnections::GetIndexFromCity
 
 ; 314  : 
@@ -5061,14 +5061,14 @@ $LL277@UpdateRout:
 	mov	ecx, DWORD PTR _vpCities$[esp+352]
 	mov	edi, eax
 	xor	eax, eax
-	mov	DWORD PTR _iFirstCityArrayIndex$220971[esp+348], edi
-	mov	DWORD PTR _uiSecondCityIndex$220972[esp+348], eax
+	mov	DWORD PTR _iFirstCityArrayIndex$221448[esp+348], edi
+	mov	DWORD PTR _uiSecondCityIndex$221449[esp+348], eax
 	test	ecx, ecx
 	jbe	$LN32@UpdateRout
 	jmp	SHORT $LN30@UpdateRout
 	npad	3
 $LL274@UpdateRout:
-	mov	edi, DWORD PTR _iFirstCityArrayIndex$220971[esp+348]
+	mov	edi, DWORD PTR _iFirstCityArrayIndex$221448[esp+348]
 $LN30@UpdateRout:
 
 ; 316  : 			{
@@ -5090,7 +5090,7 @@ $LN30@UpdateRout:
 
 	push	ebp
 	mov	ecx, ebx
-	mov	DWORD PTR _pSecondCity$220965[esp+352], ebp
+	mov	DWORD PTR _pSecondCity$221442[esp+352], ebp
 	call	?GetIndexFromCity@CvCityConnections@@QAEIPAVCvCity@@@Z ; CvCityConnections::GetIndexFromCity
 
 ; 324  : 
@@ -5110,7 +5110,7 @@ $LN30@UpdateRout:
 $LN119@UpdateRout:
 	xor	esi, esi
 $LN283@UpdateRout:
-	mov	DWORD PTR _pRouteInfo$220978[esp+348], esi
+	mov	DWORD PTR _pRouteInfo$221455[esp+348], esi
 
 ; 326  : 				RouteInfo* pInverseRouteInfo = GetRouteInfo(iSecondCityArrayIndex, iFirstCityArrayIndex);
 
@@ -5144,7 +5144,7 @@ $LN125@UpdateRout:
 ; 335  : 				if(pInverseRouteInfo->m_cPassEval > iPass)
 
 	mov	dl, BYTE PTR [eax+1]
-	mov	ecx, DWORD PTR _iPass$220957[esp+348]
+	mov	ecx, DWORD PTR _iPass$221434[esp+348]
 	movsx	edi, dl
 	cmp	edi, ecx
 	jle	SHORT $LN24@UpdateRout
@@ -5188,7 +5188,7 @@ $LN24@UpdateRout:
 ; 352  : 					// if either city is blockaded, don't consider a water connection
 ; 353  : 					if(pFirstCity->IsBlockaded() || pSecondCity->IsBlockaded())
 
-	mov	ecx, DWORD PTR _pFirstCity$220964[esp+348]
+	mov	ecx, DWORD PTR _pFirstCity$221441[esp+348]
 	call	?IsBlockaded@CvCity@@QBE_NXZ		; CvCity::IsBlockaded
 	test	al, al
 	jne	$LN29@UpdateRout
@@ -5209,8 +5209,8 @@ $LN24@UpdateRout:
 
 	xor	edi, edi
 	cmp	DWORD PTR [ebx+288], edi
-	mov	BYTE PTR _bFirstCityHasHarbor$220986[esp+348], al
-	mov	BYTE PTR _bSecondCityHasHarbor$220987[esp+348], al
+	mov	BYTE PTR _bFirstCityHasHarbor$221463[esp+348], al
+	mov	BYTE PTR _bSecondCityHasHarbor$221464[esp+348], al
 	jle	$LN29@UpdateRout
 $LL20@UpdateRout:
 	mov	eax, DWORD PTR [ebx+284]
@@ -5218,7 +5218,7 @@ $LL20@UpdateRout:
 ; 363  : 					{
 ; 364  : 						if(pFirstCity->GetCityBuildings()->GetNumActiveBuilding(m_aBuildingsAllowWaterRoutes[i]) > 0)
 
-	mov	ecx, DWORD PTR _pFirstCity$220964[esp+348]
+	mov	ecx, DWORD PTR _pFirstCity$221441[esp+348]
 	lea	esi, DWORD PTR [edi*4]
 	add	eax, esi
 	mov	eax, DWORD PTR [eax]
@@ -5232,7 +5232,7 @@ $LL20@UpdateRout:
 ; 365  : 						{
 ; 366  : 							bFirstCityHasHarbor = true;
 
-	mov	BYTE PTR _bFirstCityHasHarbor$220986[esp+348], 1
+	mov	BYTE PTR _bFirstCityHasHarbor$221463[esp+348], 1
 $LN17@UpdateRout:
 
 ; 354  : 					{
@@ -5264,7 +5264,7 @@ $LN17@UpdateRout:
 ; 370  : 						{
 ; 371  : 							bSecondCityHasHarbor = true;
 
-	mov	BYTE PTR _bSecondCityHasHarbor$220987[esp+348], 1
+	mov	BYTE PTR _bSecondCityHasHarbor$221464[esp+348], 1
 $LN19@UpdateRout:
 
 ; 354  : 					{
@@ -5286,9 +5286,9 @@ $LN19@UpdateRout:
 ; 374  : 
 ; 375  : 					if(bFirstCityHasHarbor && bSecondCityHasHarbor)
 
-	cmp	BYTE PTR _bFirstCityHasHarbor$220986[esp+348], 0
+	cmp	BYTE PTR _bFirstCityHasHarbor$221463[esp+348], 0
 	je	$LN29@UpdateRout
-	cmp	BYTE PTR _bSecondCityHasHarbor$220987[esp+348], 0
+	cmp	BYTE PTR _bSecondCityHasHarbor$221464[esp+348], 0
 	je	$LN29@UpdateRout
 
 ; 376  : 					{
@@ -5298,7 +5298,7 @@ $LN19@UpdateRout:
 	mov	eax, DWORD PTR [edx+44]
 	mov	ecx, DWORD PTR [ebp+108]
 	mov	edx, DWORD PTR [ebp+96]
-	mov	edi, DWORD PTR _pFirstCity$220964[esp+348]
+	mov	edi, DWORD PTR _pFirstCity$221441[esp+348]
 	mov	esi, DWORD PTR [edi+108]
 	mov	edi, DWORD PTR [edi+96]
 	push	1
@@ -5317,7 +5317,7 @@ $LN19@UpdateRout:
 ; 378  : 						{
 ; 379  : 							pRouteInfo->m_cRouteState |= HAS_ANY_ROUTE | HAS_WATER_ROUTE;
 
-	mov	eax, DWORD PTR _pRouteInfo$220978[esp+348]
+	mov	eax, DWORD PTR _pRouteInfo$221455[esp+348]
 	or	BYTE PTR [eax], 3
 
 ; 380  : 						}
@@ -5347,10 +5347,10 @@ $LN23@UpdateRout:
 
 	mov	ecx, DWORD PTR [ebx]
 	mov	ecx, DWORD PTR [ecx+44]
-	mov	esi, DWORD PTR _pSecondCity$220965[esp+348]
+	mov	esi, DWORD PTR _pSecondCity$221442[esp+348]
 	mov	edx, DWORD PTR [esi+108]
 	mov	esi, DWORD PTR [esi+96]
-	mov	ebp, DWORD PTR _pFirstCity$220964[esp+348]
+	mov	ebp, DWORD PTR _pFirstCity$221441[esp+348]
 	mov	edi, DWORD PTR [ebp+108]
 	mov	ebp, DWORD PTR [ebp+96]
 	inc	eax
@@ -5358,12 +5358,12 @@ $LN23@UpdateRout:
 	shl	eax, 8
 	or	ecx, eax
 	push	ecx
-	mov	ecx, DWORD PTR _pkLandRouteFinder$220966[esp+356]
+	mov	ecx, DWORD PTR _pkLandRouteFinder$221443[esp+356]
 	push	edx
 	push	esi
 	push	edi
 	push	ebp
-	mov	BYTE PTR _bAnyRouteFound$220999[esp+372], 0
+	mov	BYTE PTR _bAnyRouteFound$221476[esp+372], 0
 	call	?GeneratePath@CvAStar@@QAE_NHHHHH_N@Z	; CvAStar::GeneratePath
 	test	al, al
 	je	SHORT $LN266@UpdateRout
@@ -5377,9 +5377,9 @@ $LN23@UpdateRout:
 ; 407  : 					{
 ; 408  : 						pRouteInfo->m_cRouteState |= HAS_BEST_ROUTE | HAS_ANY_ROUTE;
 
-	mov	eax, DWORD PTR _pRouteInfo$220978[esp+348]
+	mov	eax, DWORD PTR _pRouteInfo$221455[esp+348]
 	or	BYTE PTR [eax], 5
-	mov	BYTE PTR _bAnyRouteFound$220999[esp+348], 1
+	mov	BYTE PTR _bAnyRouteFound$221476[esp+348], 1
 	jmp	SHORT $LN6@UpdateRout
 $LN266@UpdateRout:
 
@@ -5394,17 +5394,17 @@ $LN266@UpdateRout:
 
 	mov	edx, DWORD PTR [ebx]
 	mov	eax, DWORD PTR [edx+44]
-	mov	edx, DWORD PTR _pSecondCity$220965[esp+348]
+	mov	edx, DWORD PTR _pSecondCity$221442[esp+348]
 	mov	ecx, DWORD PTR [edx+108]
 	mov	edx, DWORD PTR [edx+96]
-	mov	edi, DWORD PTR _pFirstCity$220964[esp+348]
+	mov	edi, DWORD PTR _pFirstCity$221441[esp+348]
 	mov	esi, DWORD PTR [edi+108]
 	mov	edi, DWORD PTR [edi+96]
 	push	1
 	or	eax, -2147483648			; 80000000H
 	push	eax
 	push	ecx
-	mov	ecx, DWORD PTR _pkLandRouteFinder$220966[esp+360]
+	mov	ecx, DWORD PTR _pkLandRouteFinder$221443[esp+360]
 	push	edx
 	push	esi
 	push	edi
@@ -5417,9 +5417,9 @@ $LN266@UpdateRout:
 ; 411  : 					{
 ; 412  : 						pRouteInfo->m_cRouteState |= HAS_ANY_ROUTE;
 
-	mov	eax, DWORD PTR _pRouteInfo$220978[esp+348]
+	mov	eax, DWORD PTR _pRouteInfo$221455[esp+348]
 	or	BYTE PTR [eax], 1
-	mov	BYTE PTR _bAnyRouteFound$220999[esp+348], 1
+	mov	BYTE PTR _bAnyRouteFound$221476[esp+348], 1
 $LN6@UpdateRout:
 
 ; 413  : 					}
@@ -5427,11 +5427,11 @@ $LN6@UpdateRout:
 ; 415  : 					// walk through the nodes for plot route info
 ; 416  : 					if(pFirstCity->isCapital() || pSecondCity->isCapital())
 
-	mov	ecx, DWORD PTR _pFirstCity$220964[esp+348]
+	mov	ecx, DWORD PTR _pFirstCity$221441[esp+348]
 	call	?isCapital@CvCity@@QBE_NXZ		; CvCity::isCapital
 	test	al, al
 	jne	SHORT $LN4@UpdateRout
-	mov	ecx, DWORD PTR _pSecondCity$220965[esp+348]
+	mov	ecx, DWORD PTR _pSecondCity$221442[esp+348]
 	call	?isCapital@CvCity@@QBE_NXZ		; CvCity::isCapital
 	test	al, al
 	je	$LN29@UpdateRout
@@ -5440,16 +5440,16 @@ $LN4@UpdateRout:
 ; 417  : 					{
 ; 418  : 						if(bAnyRouteFound)
 
-	cmp	BYTE PTR _bAnyRouteFound$220999[esp+348], 0
+	cmp	BYTE PTR _bAnyRouteFound$221476[esp+348], 0
 	je	$LN29@UpdateRout
 
 ; 419  : 						{
 ; 420  : 							CvPlot* pPlot = NULL;
 ; 421  : 							CvAStarNode* pNode = pkLandRouteFinder->GetLastNode();
 
-	mov	eax, DWORD PTR _pkLandRouteFinder$220966[esp+348]
+	mov	eax, DWORD PTR _pkLandRouteFinder$221443[esp+348]
 	mov	esi, DWORD PTR [eax+96]
-	mov	DWORD PTR _pNode$221013[esp+348], esi
+	mov	DWORD PTR _pNode$221490[esp+348], esi
 
 ; 422  : 							while(pNode)
 
@@ -5521,12 +5521,12 @@ $LN221@UpdateRout:
 	imul	ecx, edx
 	mov	edx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+52
 	add	ecx, esi
-	mov	esi, DWORD PTR _pNode$221013[esp+348]
+	mov	esi, DWORD PTR _pNode$221490[esp+348]
 	imul	ecx, 484				; 000001e4H
 	add	ecx, DWORD PTR [edx+4068]
 	jmp	SHORT $LN199@UpdateRout
 $LN201@UpdateRout:
-	mov	esi, DWORD PTR _pNode$221013[esp+348]
+	mov	esi, DWORD PTR _pNode$221490[esp+348]
 $LN197@UpdateRout:
 	xor	ecx, ecx
 $LN199@UpdateRout:
@@ -5540,7 +5540,7 @@ $LN199@UpdateRout:
 ; 426  : 								pNode = pNode->m_pParent;
 
 	mov	esi, DWORD PTR [esi+24]
-	mov	DWORD PTR _pNode$221013[esp+348], esi
+	mov	DWORD PTR _pNode$221490[esp+348], esi
 	test	esi, esi
 	jne	$LL2@UpdateRout
 $LN1@UpdateRout:
@@ -5549,21 +5549,21 @@ $LN1@UpdateRout:
 ; 428  : 
 ; 429  : 							pFirstCity->SetRouteToCapitalConnected(true);
 
-	mov	ecx, DWORD PTR _pFirstCity$220964[esp+348]
+	mov	ecx, DWORD PTR _pFirstCity$221441[esp+348]
 	push	1
 	call	?SetRouteToCapitalConnected@CvCity@@QAEX_N@Z ; CvCity::SetRouteToCapitalConnected
 
 ; 430  : 							pSecondCity->SetRouteToCapitalConnected(true);
 
-	mov	ecx, DWORD PTR _pSecondCity$220965[esp+348]
+	mov	ecx, DWORD PTR _pSecondCity$221442[esp+348]
 	push	1
 	call	?SetRouteToCapitalConnected@CvCity@@QAEX_N@Z ; CvCity::SetRouteToCapitalConnected
 $LN29@UpdateRout:
-	mov	eax, DWORD PTR _uiSecondCityIndex$220972[esp+348]
+	mov	eax, DWORD PTR _uiSecondCityIndex$221449[esp+348]
 	mov	ecx, DWORD PTR _vpCities$[esp+352]
-	mov	esi, DWORD PTR _uiFirstCityIndex$220967[esp+348]
+	mov	esi, DWORD PTR _uiFirstCityIndex$221444[esp+348]
 	inc	eax
-	mov	DWORD PTR _uiSecondCityIndex$220972[esp+348], eax
+	mov	DWORD PTR _uiSecondCityIndex$221449[esp+348], eax
 	cmp	eax, ecx
 	jb	$LL274@UpdateRout
 $LN32@UpdateRout:
@@ -5572,7 +5572,7 @@ $LN32@UpdateRout:
 ; 310  : 		for(uint uiFirstCityIndex = 0; uiFirstCityIndex < vpCities.size(); uiFirstCityIndex++)
 
 	inc	esi
-	mov	DWORD PTR _uiFirstCityIndex$220967[esp+348], esi
+	mov	DWORD PTR _uiFirstCityIndex$221444[esp+348], esi
 	cmp	esi, ecx
 	jb	$LL277@UpdateRout
 $LN38@UpdateRout:
@@ -5586,10 +5586,10 @@ $LN38@UpdateRout:
 ; 291  : #else
 ; 292  : 	for(int iPass = 0; iPass < 2; iPass++)
 
-	mov	eax, DWORD PTR _iPass$220957[esp+348]
+	mov	eax, DWORD PTR _iPass$221434[esp+348]
 	inc	eax
 	cmp	eax, 2
-	mov	DWORD PTR _iPass$220957[esp+348], eax
+	mov	DWORD PTR _iPass$221434[esp+348], eax
 	jl	$LL272@UpdateRout
 
 ; 431  : 						}

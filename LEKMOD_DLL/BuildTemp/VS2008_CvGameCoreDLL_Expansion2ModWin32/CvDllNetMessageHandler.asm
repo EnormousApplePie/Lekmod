@@ -20,64 +20,69 @@ CONST	SEGMENT
 ?NO_QUEST_DATA@CvMinorCivQuest@@2HB DD 0ffffffffH	; CvMinorCivQuest::NO_QUEST_DATA
 CONST	ENDS
 _DATA	SEGMENT
-_CIV5_XP2_DLL_VERSION DD FLAT:$SG217483
+_CIV5_XP2_DLL_VERSION DD FLAT:$SG217960
 _DATA	ENDS
 CONST	SEGMENT
-$SG217483 DB	'1.0.0', 00H
+$SG217960 DB	'1.0.0', 00H
 	ORG $+2
-$SG222925 DB	'TXT_KEY_NOTIFICATION_FOUND_RELIGION', 00H
-$SG222928 DB	'TXT_KEY_NOTIFICATION_SUMMARY_FOUND_RELIGION', 00H
-$SG222951 DB	'TXT_KEY_NOTIFICATION_ENHANCE_RELIGION', 00H
+$SG223402 DB	'TXT_KEY_NOTIFICATION_FOUND_RELIGION', 00H
+$SG223405 DB	'TXT_KEY_NOTIFICATION_SUMMARY_FOUND_RELIGION', 00H
+$SG223428 DB	'TXT_KEY_NOTIFICATION_ENHANCE_RELIGION', 00H
 	ORG $+2
-$SG222954 DB	'TXT_KEY_NOTIFICATION_SUMMARY_ENHANCE_RELIGION', 00H
+$SG223431 DB	'TXT_KEY_NOTIFICATION_SUMMARY_ENHANCE_RELIGION', 00H
 	ORG $+2
-$SG223045 DB	'GREAT_WORK_ARTIFACT', 00H
-$SG223048 DB	'GREAT_WORK_ART', 00H
+$SG223522 DB	'GREAT_WORK_ARTIFACT', 00H
+$SG223525 DB	'GREAT_WORK_ART', 00H
 	ORG $+1
-$SG223051 DB	'GREAT_WORK_LITERATURE', 00H
+$SG223528 DB	'GREAT_WORK_LITERATURE', 00H
 	ORG $+2
-$SG223054 DB	'GREAT_WORK_MUSIC', 00H
+$SG223531 DB	'GREAT_WORK_MUSIC', 00H
 	ORG $+3
-$SG223058 DB	'GREAT_WORK_ARTIFACT', 00H
-$SG223061 DB	'GREAT_WORK_ART', 00H
+$SG223535 DB	'GREAT_WORK_ARTIFACT', 00H
+$SG223538 DB	'GREAT_WORK_ART', 00H
 	ORG $+1
-$SG223064 DB	'GREAT_WORK_LITERATURE', 00H
+$SG223541 DB	'GREAT_WORK_LITERATURE', 00H
 	ORG $+2
-$SG223067 DB	'GREAT_WORK_MUSIC', 00H
+$SG223544 DB	'GREAT_WORK_MUSIC', 00H
 	ORG $+3
-$SG223105 DB	'TXT_KEY_MISC_TURN_TIMER_RESET', 00H
+$SG223588 DB	'TXT_KEY_MP_MESSAGE_PROPOSED_IRR', 00H
+$SG223600 DB	'TXT_KEY_MP_MESSAGE_PROPOSED_CC', 00H
+	ORG $+1
+$SG223603 DB	'TXT_KEY_MP_MESSAGE_PROPOSED_SCRAP', 00H
 	ORG $+2
-$SG223176 DB	'TXT_KEY_DEAL_EXPIRED', 00H
+$SG223611 DB	'TXT_KEY_MISC_TURN_TIMER_RESET', 00H
+	ORG $+2
+$SG223682 DB	'TXT_KEY_DEAL_EXPIRED', 00H
 	ORG $+3
-$SG223181 DB	'TXT_KEY_DEAL_EXPIRED_FROM_YOU', 00H
+$SG223687 DB	'TXT_KEY_DEAL_EXPIRED_FROM_YOU', 00H
 	ORG $+2
-$SG223189 DB	'TXT_KEY_DEAL_EXPIRED_FROM_THEM', 00H
+$SG223695 DB	'TXT_KEY_DEAL_EXPIRED_FROM_THEM', 00H
 	ORG $+1
-$SG223197 DB	'TXT_KEY_DEAL_ACCEPTED', 00H
+$SG223703 DB	'TXT_KEY_DEAL_ACCEPTED', 00H
 	ORG $+2
-$SG223200 DB	'TXT_KEY_DEAL_ACCEPTED_BY_THEM', 00H
+$SG223706 DB	'TXT_KEY_DEAL_ACCEPTED_BY_THEM', 00H
 	ORG $+2
-$SG223203 DB	'TXT_KEY_DEAL_ACCEPTED', 00H
+$SG223709 DB	'TXT_KEY_DEAL_ACCEPTED', 00H
 	ORG $+2
-$SG223205 DB	'TXT_KEY_DEAL_ACCEPTED_BY_YOU', 00H
+$SG223711 DB	'TXT_KEY_DEAL_ACCEPTED_BY_YOU', 00H
 	ORG $+3
-$SG223211 DB	'TXT_KEY_DEAL_WITHDRAWN', 00H
+$SG223717 DB	'TXT_KEY_DEAL_WITHDRAWN', 00H
 	ORG $+1
-$SG223214 DB	'TXT_KEY_DEAL_WITHDRAWN_BY_YOU', 00H
+$SG223720 DB	'TXT_KEY_DEAL_WITHDRAWN_BY_YOU', 00H
 	ORG $+2
-$SG223217 DB	'TXT_KEY_DEAL_WITHDRAWN', 00H
+$SG223723 DB	'TXT_KEY_DEAL_WITHDRAWN', 00H
 	ORG $+1
-$SG223219 DB	'TXT_KEY_DEAL_WITHDRAWN_BY_THEM', 00H
+$SG223725 DB	'TXT_KEY_DEAL_WITHDRAWN_BY_THEM', 00H
 	ORG $+1
-$SG223224 DB	'TXT_KEY_DEAL_REJECTED', 00H
+$SG223730 DB	'TXT_KEY_DEAL_REJECTED', 00H
 	ORG $+2
-$SG223227 DB	'TXT_KEY_DEAL_REJECTED_BY_THEM', 00H
+$SG223733 DB	'TXT_KEY_DEAL_REJECTED_BY_THEM', 00H
 	ORG $+2
-$SG223230 DB	'TXT_KEY_DEAL_REJECTED', 00H
+$SG223736 DB	'TXT_KEY_DEAL_REJECTED', 00H
 	ORG $+2
-$SG223232 DB	'TXT_KEY_DEAL_REJECTED_BY_YOU', 00H
+$SG223738 DB	'TXT_KEY_DEAL_REJECTED_BY_YOU', 00H
 	ORG $+3
-$SG223381 DB	'CitySoldBuilding', 00H
+$SG223887 DB	'CitySoldBuilding', 00H
 	ORG $+3
 _guidICvUnknown DD 0d89ba82fH
 	DW	09fa3H
@@ -661,7 +666,7 @@ _iDiscover$ = 20					; size = 4
 _bShift$ = 24						; size = 1
 ?ResponseResearch@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@W4TechTypes@@H_N@Z PROC ; CvDllNetMessageHandler::ResponseResearch, COMDAT
 
-; 977  : 	ResponseResearch(ePlayer, eTech, iDiscover, NO_PLAYER, bShift);
+; 1008 : 	ResponseResearch(ePlayer, eTech, iDiscover, NO_PLAYER, bShift);
 
 	mov	edx, DWORD PTR _bShift$[esp-4]
 	mov	eax, DWORD PTR _this$[esp-4]
@@ -678,7 +683,7 @@ _bShift$ = 24						; size = 1
 	mov	eax, DWORD PTR [ecx+204]
 	call	eax
 
-; 978  : }
+; 1009 : }
 
 	ret	20					; 00000014H
 ?ResponseResearch@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@W4TechTypes@@H_N@Z ENDP ; CvDllNetMessageHandler::ResponseResearch
@@ -850,12 +855,12 @@ PUBLIC	?GetInterfaceId@ICvUnknown@@SG?AU_GUID@@XZ	; ICvUnknown::GetInterfaceId
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredllutil\include\cvdllinterfaces.h
 ;	COMDAT ?GetInterfaceId@ICvUnknown@@SG?AU_GUID@@XZ
 _TEXT	SEGMENT
-$T223844 = 8						; size = 4
+$T224358 = 8						; size = 4
 ?GetInterfaceId@ICvUnknown@@SG?AU_GUID@@XZ PROC		; ICvUnknown::GetInterfaceId, COMDAT
 
 ; 306  : 	static GUID DLLCALL GetInterfaceId(){ return guidICvUnknown; }
 
-	mov	eax, DWORD PTR $T223844[esp-4]
+	mov	eax, DWORD PTR $T224358[esp-4]
 	mov	ecx, DWORD PTR _guidICvUnknown
 	mov	edx, DWORD PTR _guidICvUnknown+4
 	mov	DWORD PTR [eax], ecx
@@ -871,12 +876,12 @@ PUBLIC	?GetInterfaceId@ICvNetMessageHandler1@@SG?AU_GUID@@XZ ; ICvNetMessageHand
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?GetInterfaceId@ICvNetMessageHandler1@@SG?AU_GUID@@XZ
 _TEXT	SEGMENT
-$T223848 = 8						; size = 4
+$T224362 = 8						; size = 4
 ?GetInterfaceId@ICvNetMessageHandler1@@SG?AU_GUID@@XZ PROC ; ICvNetMessageHandler1::GetInterfaceId, COMDAT
 
 ; 1175 : 	static GUID DLLCALL GetInterfaceId() { return guidICvNetMessageHandler1; }
 
-	mov	eax, DWORD PTR $T223848[esp-4]
+	mov	eax, DWORD PTR $T224362[esp-4]
 	mov	ecx, DWORD PTR _guidICvNetMessageHandler1
 	mov	edx, DWORD PTR _guidICvNetMessageHandler1+4
 	mov	DWORD PTR [eax], ecx
@@ -892,12 +897,12 @@ PUBLIC	?GetInterfaceId@ICvNetMessageHandler2@@SG?AU_GUID@@XZ ; ICvNetMessageHand
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?GetInterfaceId@ICvNetMessageHandler2@@SG?AU_GUID@@XZ
 _TEXT	SEGMENT
-$T223852 = 8						; size = 4
+$T224366 = 8						; size = 4
 ?GetInterfaceId@ICvNetMessageHandler2@@SG?AU_GUID@@XZ PROC ; ICvNetMessageHandler2::GetInterfaceId, COMDAT
 
 ; 1217 : 	static GUID DLLCALL GetInterfaceId() { return guidICvNetMessageHandler2; }
 
-	mov	eax, DWORD PTR $T223852[esp-4]
+	mov	eax, DWORD PTR $T224366[esp-4]
 	mov	ecx, DWORD PTR _guidICvNetMessageHandler2
 	mov	edx, DWORD PTR _guidICvNetMessageHandler2+4
 	mov	DWORD PTR [eax], ecx
@@ -914,12 +919,12 @@ PUBLIC	?GetInterfaceId@ICvNetMessageHandler3@@SG?AU_GUID@@XZ ; ICvNetMessageHand
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredllutil\include\cvdllinterfaces2.h
 ;	COMDAT ?GetInterfaceId@ICvNetMessageHandler3@@SG?AU_GUID@@XZ
 _TEXT	SEGMENT
-$T223856 = 8						; size = 4
+$T224370 = 8						; size = 4
 ?GetInterfaceId@ICvNetMessageHandler3@@SG?AU_GUID@@XZ PROC ; ICvNetMessageHandler3::GetInterfaceId, COMDAT
 
 ; 92   : 	static GUID DLLCALL GetInterfaceId() { return guidICvNetMessageHandler3; }
 
-	mov	eax, DWORD PTR $T223856[esp-4]
+	mov	eax, DWORD PTR $T224370[esp-4]
 	mov	ecx, DWORD PTR _guidICvNetMessageHandler3
 	mov	edx, DWORD PTR _guidICvNetMessageHandler3+4
 	mov	DWORD PTR [eax], ecx
@@ -1461,7 +1466,7 @@ xdata$x	ENDS
 ;	COMDAT ?GetLocalizedText@@YA?AVCvString@@PBD@Z
 _TEXT	SEGMENT
 _bytes$ = -100						; size = 4
-$T223942 = -96						; size = 4
+$T224456 = -96						; size = 4
 _text$ = -92						; size = 80
 __$EHRec$ = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
@@ -1488,7 +1493,7 @@ _szString$ = 12						; size = 4
 	xor	ebx, ebx
 	push	ecx
 	mov	DWORD PTR __$EHRec$[esp+128], ebx
-	mov	DWORD PTR $T223942[esp+120], ebx
+	mov	DWORD PTR $T224456[esp+120], ebx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
 
@@ -1518,7 +1523,7 @@ _szString$ = 12						; size = 4
 	push	eax
 	push	edi
 	mov	ecx, esi
-	mov	DWORD PTR $T223942[esp+120], 1
+	mov	DWORD PTR $T224456[esp+120], 1
 	call	DWORD PTR __imp_?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBDI@Z
 	lea	ecx, DWORD PTR _text$[esp+112]
 	mov	BYTE PTR __$EHRec$[esp+120], bl
@@ -1541,10 +1546,10 @@ __unwindfunclet$?GetLocalizedText@@YA?AVCvString@@PBD@Z$0:
 	lea	ecx, DWORD PTR _text$[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?GetLocalizedText@@YA?AVCvString@@PBD@Z$1:
-	mov	eax, DWORD PTR $T223942[ebp]
+	mov	eax, DWORD PTR $T224456[ebp]
 	and	eax, 1
 	je	$LN5@GetLocaliz
-	and	DWORD PTR $T223942[ebp], -2		; fffffffeH
+	and	DWORD PTR $T224456[ebp], -2		; fffffffeH
 	mov	ecx, DWORD PTR ___$ReturnUdt$[ebp-4]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 $LN5@GetLocaliz:
@@ -1620,10 +1625,10 @@ _TEXT	SEGMENT
 _TEXT	ENDS
 ;	COMDAT ?QueryInterface@CvDllNetMessageHandler@@UAGPAXU_GUID@@@Z
 _TEXT	SEGMENT
-$T223972 = -16						; size = 16
-$T223970 = -16						; size = 16
-$T223968 = -16						; size = 16
-$T223966 = -16						; size = 16
+$T224486 = -16						; size = 16
+$T224484 = -16						; size = 16
+$T224482 = -16						; size = 16
+$T224480 = -16						; size = 16
 _this$ = 8						; size = 4
 _guidInterface$ = 12					; size = 16
 ?QueryInterface@CvDllNetMessageHandler@@UAGPAXU_GUID@@@Z PROC ; CvDllNetMessageHandler::QueryInterface, COMDAT
@@ -1640,15 +1645,15 @@ _guidInterface$ = 12					; size = 16
 	mov	ecx, DWORD PTR _guidICvUnknown+4
 	mov	edx, DWORD PTR _guidICvUnknown+8
 	mov	eax, DWORD PTR _guidICvUnknown
-	mov	DWORD PTR $T223966[esp+20], ecx
-	lea	ecx, DWORD PTR $T223966[esp+16]
-	mov	DWORD PTR $T223966[esp+24], edx
-	mov	DWORD PTR $T223966[esp+16], eax
+	mov	DWORD PTR $T224480[esp+20], ecx
+	lea	ecx, DWORD PTR $T224480[esp+16]
+	mov	DWORD PTR $T224480[esp+24], edx
+	mov	DWORD PTR $T224480[esp+16], eax
 	mov	eax, DWORD PTR _guidICvUnknown+12
 	push	ecx
 	lea	edx, DWORD PTR _guidInterface$[esp+16]
 	push	edx
-	mov	DWORD PTR $T223966[esp+36], eax
+	mov	DWORD PTR $T224480[esp+36], eax
 	call	_IsEqualGUID
 	add	esp, 8
 	test	eax, eax
@@ -1656,15 +1661,15 @@ _guidInterface$ = 12					; size = 16
 	mov	ecx, DWORD PTR _guidICvNetMessageHandler1+4
 	mov	edx, DWORD PTR _guidICvNetMessageHandler1+8
 	mov	eax, DWORD PTR _guidICvNetMessageHandler1
-	mov	DWORD PTR $T223968[esp+20], ecx
-	lea	ecx, DWORD PTR $T223968[esp+16]
-	mov	DWORD PTR $T223968[esp+24], edx
-	mov	DWORD PTR $T223968[esp+16], eax
+	mov	DWORD PTR $T224482[esp+20], ecx
+	lea	ecx, DWORD PTR $T224482[esp+16]
+	mov	DWORD PTR $T224482[esp+24], edx
+	mov	DWORD PTR $T224482[esp+16], eax
 	mov	eax, DWORD PTR _guidICvNetMessageHandler1+12
 	push	ecx
 	lea	edx, DWORD PTR _guidInterface$[esp+16]
 	push	edx
-	mov	DWORD PTR $T223968[esp+36], eax
+	mov	DWORD PTR $T224482[esp+36], eax
 	call	_IsEqualGUID
 	add	esp, 8
 	test	eax, eax
@@ -1672,15 +1677,15 @@ _guidInterface$ = 12					; size = 16
 	mov	ecx, DWORD PTR _guidICvNetMessageHandler2+4
 	mov	edx, DWORD PTR _guidICvNetMessageHandler2+8
 	mov	eax, DWORD PTR _guidICvNetMessageHandler2
-	mov	DWORD PTR $T223970[esp+20], ecx
-	lea	ecx, DWORD PTR $T223970[esp+16]
-	mov	DWORD PTR $T223970[esp+24], edx
-	mov	DWORD PTR $T223970[esp+16], eax
+	mov	DWORD PTR $T224484[esp+20], ecx
+	lea	ecx, DWORD PTR $T224484[esp+16]
+	mov	DWORD PTR $T224484[esp+24], edx
+	mov	DWORD PTR $T224484[esp+16], eax
 	mov	eax, DWORD PTR _guidICvNetMessageHandler2+12
 	push	ecx
 	lea	edx, DWORD PTR _guidInterface$[esp+16]
 	push	edx
-	mov	DWORD PTR $T223970[esp+36], eax
+	mov	DWORD PTR $T224484[esp+36], eax
 	call	_IsEqualGUID
 	add	esp, 8
 	test	eax, eax
@@ -1688,15 +1693,15 @@ _guidInterface$ = 12					; size = 16
 	mov	ecx, DWORD PTR _guidICvNetMessageHandler3+4
 	mov	edx, DWORD PTR _guidICvNetMessageHandler3+8
 	mov	eax, DWORD PTR _guidICvNetMessageHandler3
-	mov	DWORD PTR $T223972[esp+20], ecx
-	lea	ecx, DWORD PTR $T223972[esp+16]
-	mov	DWORD PTR $T223972[esp+24], edx
-	mov	DWORD PTR $T223972[esp+16], eax
+	mov	DWORD PTR $T224486[esp+20], ecx
+	lea	ecx, DWORD PTR $T224486[esp+16]
+	mov	DWORD PTR $T224486[esp+24], edx
+	mov	DWORD PTR $T224486[esp+16], eax
 	mov	eax, DWORD PTR _guidICvNetMessageHandler3+12
 	push	ecx
 	lea	edx, DWORD PTR _guidInterface$[esp+16]
 	push	edx
-	mov	DWORD PTR $T223972[esp+36], eax
+	mov	DWORD PTR $T224486[esp+36], eax
 	call	_IsEqualGUID
 	add	esp, 8
 	test	eax, eax
@@ -2250,13 +2255,13 @@ EXTRN	?getCommandInfo@CvGlobals@@QAEPAVCvCommandInfo@@W4CommandTypes@@@Z:PROC ; 
 ;	COMDAT ?ResponseDoCommand@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@HW4CommandTypes@@HH_N@Z
 _TEXT	SEGMENT
 _this$ = 8						; size = 4
-_eUnitType$222866 = 12					; size = 4
+_eUnitType$223343 = 12					; size = 4
 _ePlayer$ = 12						; size = 4
 _iUnitID$ = 16						; size = 4
 _eCommand$ = 20						; size = 4
 _iData1$ = 24						; size = 4
 _iData2$ = 28						; size = 4
-_iLoop$222868 = 32					; size = 4
+_iLoop$223345 = 32					; size = 4
 _bAlt$ = 32						; size = 1
 ?ResponseDoCommand@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@HW4CommandTypes@@HH_N@Z PROC ; CvDllNetMessageHandler::ResponseDoCommand, COMDAT
 
@@ -2312,11 +2317,11 @@ _bAlt$ = 32						; size = 1
 ; 272  : 			for(pkLoopUnit = kPlayer.firstUnit(&iLoop); pkLoopUnit != NULL; pkLoopUnit = kPlayer.nextUnit(&iLoop))
 
 	push	0
-	lea	edx, DWORD PTR _iLoop$222868[esp+8]
+	lea	edx, DWORD PTR _iLoop$223345[esp+8]
 	push	edx
 	mov	ecx, edi
-	mov	DWORD PTR _eUnitType$222866[esp+12], eax
-	mov	DWORD PTR _iLoop$222868[esp+12], 0
+	mov	DWORD PTR _eUnitType$223343[esp+12], eax
+	mov	DWORD PTR _iLoop$223345[esp+12], 0
 	call	?firstUnit@CvPlayer@@QAEPAVCvUnit@@PAH_N@Z ; CvPlayer::firstUnit
 	mov	esi, eax
 	test	esi, esi
@@ -2333,7 +2338,7 @@ $LL5@ResponseDo:
 
 	mov	ecx, esi
 	call	?getUnitType@CvUnit@@QBE?BW4UnitTypes@@XZ ; CvUnit::getUnitType
-	cmp	eax, DWORD PTR _eUnitType$222866[esp+12]
+	cmp	eax, DWORD PTR _eUnitType$223343[esp+12]
 	jne	SHORT $LN4@ResponseDo
 
 ; 275  : 				{
@@ -2347,7 +2352,7 @@ $LL5@ResponseDo:
 	call	?doCommand@CvUnit@@QAEXW4CommandTypes@@HH@Z ; CvUnit::doCommand
 $LN4@ResponseDo:
 	push	0
-	lea	ecx, DWORD PTR _iLoop$222868[esp+16]
+	lea	ecx, DWORD PTR _iLoop$223345[esp+16]
 	push	ecx
 	mov	ecx, edi
 	call	?nextUnit@CvPlayer@@QAEPAVCvUnit@@PAH_N@Z ; CvPlayer::nextUnit
@@ -3191,7 +3196,7 @@ _eLiberatedPlayer$ = 16					; size = 4
 _iCityID$ = 20						; size = 4
 ?ResponseLiberatePlayer@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@0H@Z PROC ; CvDllNetMessageHandler::ResponseLiberatePlayer, COMDAT
 
-; 734  : 	GET_PLAYER(ePlayer).DoLiberatePlayer(eLiberatedPlayer, iCityID);
+; 765  : 	GET_PLAYER(ePlayer).DoLiberatePlayer(eLiberatedPlayer, iCityID);
 
 	mov	eax, DWORD PTR _iCityID$[esp-4]
 	mov	ecx, DWORD PTR _eLiberatedPlayer$[esp-4]
@@ -3202,7 +3207,7 @@ _iCityID$ = 20						; size = 4
 	add	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	call	?DoLiberatePlayer@CvPlayer@@QAEXW4PlayerTypes@@H@Z ; CvPlayer::DoLiberatePlayer
 
-; 735  : }
+; 766  : }
 
 	ret	16					; 00000010H
 ?ResponseLiberatePlayer@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@0H@Z ENDP ; CvDllNetMessageHandler::ResponseLiberatePlayer
@@ -3218,7 +3223,7 @@ _eMinor$ = 16						; size = 4
 _iGold$ = 20						; size = 4
 ?ResponseMinorCivBullyGold@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@0H@Z PROC ; CvDllNetMessageHandler::ResponseMinorCivBullyGold, COMDAT
 
-; 739  : 	GET_PLAYER(eMinor).GetMinorCivAI()->DoMajorBullyGold(ePlayer, iGold);
+; 770  : 	GET_PLAYER(eMinor).GetMinorCivAI()->DoMajorBullyGold(ePlayer, iGold);
 
 	mov	ecx, DWORD PTR _eMinor$[esp-4]
 	mov	eax, DWORD PTR _iGold$[esp-4]
@@ -3231,7 +3236,7 @@ _iGold$ = 20						; size = 4
 	mov	ecx, eax
 	call	?DoMajorBullyGold@CvMinorCivAI@@QAEXW4PlayerTypes@@H@Z ; CvMinorCivAI::DoMajorBullyGold
 
-; 740  : }
+; 771  : }
 
 	ret	16					; 00000010H
 ?ResponseMinorCivBullyGold@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@0H@Z ENDP ; CvDllNetMessageHandler::ResponseMinorCivBullyGold
@@ -3246,7 +3251,7 @@ _eMinor$ = 16						; size = 4
 _eUnitType$ = 20					; size = 4
 ?ResponseMinorCivBullyUnit@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@0W4UnitTypes@@@Z PROC ; CvDllNetMessageHandler::ResponseMinorCivBullyUnit, COMDAT
 
-; 744  : 	GET_PLAYER(eMinor).GetMinorCivAI()->DoMajorBullyUnit(ePlayer, eUnitType);
+; 775  : 	GET_PLAYER(eMinor).GetMinorCivAI()->DoMajorBullyUnit(ePlayer, eUnitType);
 
 	mov	ecx, DWORD PTR _eMinor$[esp-4]
 	mov	eax, DWORD PTR _eUnitType$[esp-4]
@@ -3259,7 +3264,7 @@ _eUnitType$ = 20					; size = 4
 	mov	ecx, eax
 	call	?DoMajorBullyUnit@CvMinorCivAI@@QAEXW4PlayerTypes@@W4UnitTypes@@@Z ; CvMinorCivAI::DoMajorBullyUnit
 
-; 745  : }
+; 776  : }
 
 	ret	16					; 00000010H
 ?ResponseMinorCivBullyUnit@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@0W4UnitTypes@@@Z ENDP ; CvDllNetMessageHandler::ResponseMinorCivBullyUnit
@@ -3276,20 +3281,20 @@ _eMinor$ = 16						; size = 4
 _iGold$ = 20						; size = 4
 ?ResponseMinorCivGiftGold@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@0H@Z PROC ; CvDllNetMessageHandler::ResponseMinorCivGiftGold, COMDAT
 
-; 748  : {
+; 779  : {
 
 	push	esi
 
-; 749  : #ifdef NQ_BELIEF_TOGGLE_ALLOW_FAITH_GIFTS_TO_MINORS
-; 750  : 	if (iGold > 100000) // HACK!!! ... when sending a faith gift, we still use this function but we add in 100K to clue us in
+; 780  : #ifdef NQ_BELIEF_TOGGLE_ALLOW_FAITH_GIFTS_TO_MINORS
+; 781  : 	if (iGold > 100000) // HACK!!! ... when sending a faith gift, we still use this function but we add in 100K to clue us in
 
 	mov	esi, DWORD PTR _iGold$[esp]
 	push	edi
 
-; 751  : 	{
-; 752  : 		int iFaith = iGold - 100000;
-; 753  : 		// Enough Faith?
-; 754  : 		if(GET_PLAYER(ePlayer).GetFaith() >= iFaith)
+; 782  : 	{
+; 783  : 		int iFaith = iGold - 100000;
+; 784  : 		// Enough Faith?
+; 785  : 		if(GET_PLAYER(ePlayer).GetFaith() >= iFaith)
 
 	mov	edi, DWORD PTR _ePlayer$[esp+4]
 	mov	ecx, edi
@@ -3302,8 +3307,8 @@ _iGold$ = 20						; size = 4
 	cmp	eax, esi
 	jl	SHORT $LN1@ResponseMi
 
-; 755  : 		{
-; 756  : 			GET_PLAYER(eMinor).GetMinorCivAI()->DoFaithGiftFromMajor(ePlayer, iFaith);
+; 786  : 		{
+; 787  : 			GET_PLAYER(eMinor).GetMinorCivAI()->DoFaithGiftFromMajor(ePlayer, iFaith);
 
 	mov	ecx, DWORD PTR _eMinor$[esp+4]
 	imul	ecx, 63236				; 0000f704H
@@ -3316,26 +3321,26 @@ _iGold$ = 20						; size = 4
 	pop	edi
 	pop	esi
 
-; 765  : 		}
-; 766  : 	}
-; 767  : #else
-; 768  : 	// Enough Gold?
-; 769  : 	if(GET_PLAYER(ePlayer).GetTreasury()->GetGold() >= iGold)
-; 770  : 	{
-; 771  : 		GET_PLAYER(eMinor).GetMinorCivAI()->DoGoldGiftFromMajor(ePlayer, iGold);
-; 772  : 	}
-; 773  : #endif
-; 774  : }
+; 796  : 		}
+; 797  : 	}
+; 798  : #else
+; 799  : 	// Enough Gold?
+; 800  : 	if(GET_PLAYER(ePlayer).GetTreasury()->GetGold() >= iGold)
+; 801  : 	{
+; 802  : 		GET_PLAYER(eMinor).GetMinorCivAI()->DoGoldGiftFromMajor(ePlayer, iGold);
+; 803  : 	}
+; 804  : #endif
+; 805  : }
 
 	ret	16					; 00000010H
 $LN4@ResponseMi:
 
-; 757  : 		}
-; 758  : 	}
-; 759  : 	else
-; 760  : 	{
-; 761  : 		// Enough Gold?
-; 762  : 		if(GET_PLAYER(ePlayer).GetTreasury()->GetGold() >= iGold)
+; 788  : 		}
+; 789  : 	}
+; 790  : 	else
+; 791  : 	{
+; 792  : 		// Enough Gold?
+; 793  : 		if(GET_PLAYER(ePlayer).GetTreasury()->GetGold() >= iGold)
 
 	call	?GetTreasury@CvPlayer@@QBEPAVCvTreasury@@XZ ; CvPlayer::GetTreasury
 	mov	ecx, eax
@@ -3343,8 +3348,8 @@ $LN4@ResponseMi:
 	cmp	eax, esi
 	jl	SHORT $LN1@ResponseMi
 
-; 763  : 		{
-; 764  : 			GET_PLAYER(eMinor).GetMinorCivAI()->DoGoldGiftFromMajor(ePlayer, iGold);
+; 794  : 		{
+; 795  : 			GET_PLAYER(eMinor).GetMinorCivAI()->DoGoldGiftFromMajor(ePlayer, iGold);
 
 	mov	ecx, DWORD PTR _eMinor$[esp+4]
 	imul	ecx, 63236				; 0000f704H
@@ -3358,16 +3363,16 @@ $LN1@ResponseMi:
 	pop	edi
 	pop	esi
 
-; 765  : 		}
-; 766  : 	}
-; 767  : #else
-; 768  : 	// Enough Gold?
-; 769  : 	if(GET_PLAYER(ePlayer).GetTreasury()->GetGold() >= iGold)
-; 770  : 	{
-; 771  : 		GET_PLAYER(eMinor).GetMinorCivAI()->DoGoldGiftFromMajor(ePlayer, iGold);
-; 772  : 	}
-; 773  : #endif
-; 774  : }
+; 796  : 		}
+; 797  : 	}
+; 798  : #else
+; 799  : 	// Enough Gold?
+; 800  : 	if(GET_PLAYER(ePlayer).GetTreasury()->GetGold() >= iGold)
+; 801  : 	{
+; 802  : 		GET_PLAYER(eMinor).GetMinorCivAI()->DoGoldGiftFromMajor(ePlayer, iGold);
+; 803  : 	}
+; 804  : #endif
+; 805  : }
 
 	ret	16					; 00000010H
 ?ResponseMinorCivGiftGold@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@0H@Z ENDP ; CvDllNetMessageHandler::ResponseMinorCivGiftGold
@@ -3383,7 +3388,7 @@ _iPlotX$ = 20						; size = 4
 _iPlotY$ = 24						; size = 4
 ?ResponseMinorCivGiftTileImprovement@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@0HH@Z PROC ; CvDllNetMessageHandler::ResponseMinorCivGiftTileImprovement, COMDAT
 
-; 778  : 	GET_PLAYER(eMinor).GetMinorCivAI()->DoTileImprovementGiftFromMajor(eMajor, iPlotX, iPlotY);
+; 809  : 	GET_PLAYER(eMinor).GetMinorCivAI()->DoTileImprovementGiftFromMajor(eMajor, iPlotX, iPlotY);
 
 	mov	ecx, DWORD PTR _eMinor$[esp-4]
 	mov	eax, DWORD PTR _iPlotY$[esp-4]
@@ -3398,7 +3403,7 @@ _iPlotY$ = 24						; size = 4
 	mov	ecx, eax
 	call	?DoTileImprovementGiftFromMajor@CvMinorCivAI@@QAEXW4PlayerTypes@@HH@Z ; CvMinorCivAI::DoTileImprovementGiftFromMajor
 
-; 779  : }
+; 810  : }
 
 	ret	20					; 00000014H
 ?ResponseMinorCivGiftTileImprovement@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@0HH@Z ENDP ; CvDllNetMessageHandler::ResponseMinorCivGiftTileImprovement
@@ -3412,7 +3417,7 @@ _eMajor$ = 12						; size = 4
 _eMinor$ = 16						; size = 4
 ?ResponseMinorCivBuyout@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@0@Z PROC ; CvDllNetMessageHandler::ResponseMinorCivBuyout, COMDAT
 
-; 783  : 	GET_PLAYER(eMinor).GetMinorCivAI()->DoBuyout(eMajor);
+; 814  : 	GET_PLAYER(eMinor).GetMinorCivAI()->DoBuyout(eMajor);
 
 	mov	ecx, DWORD PTR _eMinor$[esp-4]
 	mov	eax, DWORD PTR _eMajor$[esp-4]
@@ -3423,7 +3428,7 @@ _eMinor$ = 16						; size = 4
 	mov	ecx, eax
 	call	?DoBuyout@CvMinorCivAI@@QAEXW4PlayerTypes@@@Z ; CvMinorCivAI::DoBuyout
 
-; 784  : }
+; 815  : }
 
 	ret	12					; 0000000cH
 ?ResponseMinorCivBuyout@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@0@Z ENDP ; CvDllNetMessageHandler::ResponseMinorCivBuyout
@@ -3438,7 +3443,7 @@ _eMinor$ = 16						; size = 4
 _bValue$ = 20						; size = 1
 ?ResponseMinorNoUnitSpawning@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@0_N@Z PROC ; CvDllNetMessageHandler::ResponseMinorNoUnitSpawning, COMDAT
 
-; 788  : 	GET_PLAYER(eMinor).GetMinorCivAI()->SetUnitSpawningDisabled(ePlayer, bValue);
+; 819  : 	GET_PLAYER(eMinor).GetMinorCivAI()->SetUnitSpawningDisabled(ePlayer, bValue);
 
 	mov	ecx, DWORD PTR _eMinor$[esp-4]
 	mov	eax, DWORD PTR _bValue$[esp-4]
@@ -3451,7 +3456,7 @@ _bValue$ = 20						; size = 1
 	mov	ecx, eax
 	call	?SetUnitSpawningDisabled@CvMinorCivAI@@QAEXW4PlayerTypes@@_N@Z ; CvMinorCivAI::SetUnitSpawningDisabled
 
-; 789  : }
+; 820  : }
 
 	ret	16					; 00000010H
 ?ResponseMinorNoUnitSpawning@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@0_N@Z ENDP ; CvDllNetMessageHandler::ResponseMinorNoUnitSpawning
@@ -3512,22 +3517,22 @@ __unwindtable$?ResponsePlayerDealFinalized@CvDllNetMessageHandler@@UAGXW4PlayerT
 xdata$x	ENDS
 ;	COMDAT ?ResponsePlayerDealFinalized@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@00_N@Z
 _TEXT	SEGMENT
-_strMessage$223212 = -492				; size = 80
-_strMessage$223198 = -492				; size = 80
-_strMessage$223173 = -492				; size = 80
-_strSummary$223209 = -412				; size = 80
-_strSummary$223195 = -412				; size = 80
-_strSummary$223174 = -412				; size = 80
-$T224253 = -332						; size = 80
-$T224250 = -332						; size = 80
-$T224249 = -332						; size = 80
-$T224246 = -332						; size = 80
-$T224245 = -332						; size = 80
-$T224242 = -332						; size = 80
-$T224240 = -332						; size = 80
-_strMessage$223225 = -252				; size = 80
-_strSummary$223222 = -172				; size = 80
-$T224254 = -92						; size = 80
+_strMessage$223718 = -492				; size = 80
+_strMessage$223704 = -492				; size = 80
+_strMessage$223679 = -492				; size = 80
+_strSummary$223715 = -412				; size = 80
+_strSummary$223701 = -412				; size = 80
+_strSummary$223680 = -412				; size = 80
+$T224767 = -332						; size = 80
+$T224764 = -332						; size = 80
+$T224763 = -332						; size = 80
+$T224760 = -332						; size = 80
+$T224759 = -332						; size = 80
+$T224756 = -332						; size = 80
+$T224754 = -332						; size = 80
+_strMessage$223731 = -252				; size = 80
+_strSummary$223728 = -172				; size = 80
+$T224768 = -92						; size = 80
 __$EHRec$ = -12						; size = 12
 _this$ = 8						; size = 4
 _eFromPlayer$ = 12					; size = 4
@@ -3536,7 +3541,7 @@ _eActBy$ = 20						; size = 4
 _bAccepted$ = 24					; size = 1
 ?ResponsePlayerDealFinalized@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@00_N@Z PROC ; CvDllNetMessageHandler::ResponsePlayerDealFinalized, COMDAT
 
-; 792  : {
+; 823  : {
 
 	mov	eax, DWORD PTR fs:0
 	push	-1
@@ -3548,21 +3553,21 @@ _bAccepted$ = 24					; size = 1
 	push	ebp
 	push	esi
 
-; 793  : 	CvGame& game = GC.getGame();
+; 824  : 	CvGame& game = GC.getGame();
 
 	mov	esi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	edi
 
-; 794  : #ifndef AUI_WARNING_FIXES
-; 795  : 	PlayerTypes eActivePlayer = game.getActivePlayer();
+; 825  : #ifndef AUI_WARNING_FIXES
+; 826  : 	PlayerTypes eActivePlayer = game.getActivePlayer();
 
 	mov	ecx, esi
 	call	?getActivePlayer@CvGame@@QBE?AW4PlayerTypes@@XZ ; CvGame::getActivePlayer
 
-; 796  : #endif
-; 797  : 
-; 798  : 	// is the deal valid?
-; 799  : 	if(!game.GetGameDeals()->FinalizeDeal(eFromPlayer, eToPlayer, bAccepted))
+; 827  : #endif
+; 828  : 
+; 829  : 	// is the deal valid?
+; 830  : 	if(!game.GetGameDeals()->FinalizeDeal(eFromPlayer, eToPlayer, bAccepted))
 
 	mov	eax, DWORD PTR _bAccepted$[esp+504]
 	mov	ebx, DWORD PTR _eToPlayer$[esp+504]
@@ -3577,40 +3582,40 @@ _bAccepted$ = 24					; size = 1
 	test	al, al
 	jne	$LN6@ResponsePl
 
-; 800  : 	{
-; 801  : 		Localization::String strMessage;
+; 831  : 	{
+; 832  : 		Localization::String strMessage;
 
-	lea	ecx, DWORD PTR _strMessage$223173[esp+508]
+	lea	ecx, DWORD PTR _strMessage$223679[esp+508]
 	call	DWORD PTR __imp_??0String@Localization@@QAE@XZ
 
-; 802  : 		Localization::String strSummary = Localization::Lookup("TXT_KEY_DEAL_EXPIRED");
+; 833  : 		Localization::String strSummary = Localization::Lookup("TXT_KEY_DEAL_EXPIRED");
 
-	lea	ecx, DWORD PTR _strSummary$223174[esp+508]
-	push	OFFSET $SG223176
+	lea	ecx, DWORD PTR _strSummary$223680[esp+508]
+	push	OFFSET $SG223682
 	push	ecx
 	mov	DWORD PTR __$EHRec$[esp+524], 0
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 
-; 803  : 
-; 804  : 		CvPlayerAI& kToPlayer = GET_PLAYER(eToPlayer);
+; 834  : 
+; 835  : 		CvPlayerAI& kToPlayer = GET_PLAYER(eToPlayer);
 
 	mov	eax, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	mov	esi, ebx
 
-; 805  : 		CvPlayerAI& kFromPlayer = GET_PLAYER(eFromPlayer);
+; 836  : 		CvPlayerAI& kFromPlayer = GET_PLAYER(eFromPlayer);
 
 	mov	edi, ebp
 	imul	esi, 63236				; 0000f704H
 	imul	edi, 63236				; 0000f704H
 
-; 806  : #ifndef AUI_WARNING_FIXES
-; 807  : 		CvPlayerAI& kActivePlayer = GET_PLAYER(eActivePlayer);
-; 808  : #endif
-; 809  : 
-; 810  : 		strMessage = Localization::Lookup("TXT_KEY_DEAL_EXPIRED_FROM_YOU");
+; 837  : #ifndef AUI_WARNING_FIXES
+; 838  : 		CvPlayerAI& kActivePlayer = GET_PLAYER(eActivePlayer);
+; 839  : #endif
+; 840  : 
+; 841  : 		strMessage = Localization::Lookup("TXT_KEY_DEAL_EXPIRED_FROM_YOU");
 
-	lea	edx, DWORD PTR $T224240[esp+516]
-	push	OFFSET $SG223181
+	lea	edx, DWORD PTR $T224754[esp+516]
+	push	OFFSET $SG223687
 	push	edx
 	mov	BYTE PTR __$EHRec$[esp+532], 1
 	add	esi, eax
@@ -3618,32 +3623,32 @@ _bAccepted$ = 24					; size = 1
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 16					; 00000010H
 	push	eax
-	lea	ecx, DWORD PTR _strMessage$223173[esp+512]
+	lea	ecx, DWORD PTR _strMessage$223679[esp+512]
 	mov	BYTE PTR __$EHRec$[esp+520], 2
 	call	DWORD PTR __imp_??4String@Localization@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T224240[esp+508]
+	lea	ecx, DWORD PTR $T224754[esp+508]
 	mov	BYTE PTR __$EHRec$[esp+516], 1
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 
-; 811  : 		strMessage << kToPlayer.getNickName();
+; 842  : 		strMessage << kToPlayer.getNickName();
 
 	mov	ecx, esi
 	call	?getNickName@CvPlayer@@QBEQBDXZ		; CvPlayer::getNickName
 	push	eax
-	lea	ecx, DWORD PTR _strMessage$223173[esp+512]
+	lea	ecx, DWORD PTR _strMessage$223679[esp+512]
 	call	DWORD PTR __imp_?PushArgument@String@Localization@@QAE_NPBD@Z
 
-; 812  : 		kFromPlayer.GetNotifications()->Add(NOTIFICATION_PLAYER_DEAL_RESOLVED, strMessage.toUTF8(), strSummary.toUTF8(), eToPlayer, -1, -1);
+; 843  : 		kFromPlayer.GetNotifications()->Add(NOTIFICATION_PLAYER_DEAL_RESOLVED, strMessage.toUTF8(), strSummary.toUTF8(), eToPlayer, -1, -1);
 
 	push	-1
 	push	-1
 	push	-1
 	push	ebx
 	mov	ebx, DWORD PTR __imp_?toUTF8@String@Localization@@QAEPBDXZ
-	lea	ecx, DWORD PTR _strSummary$223174[esp+524]
+	lea	ecx, DWORD PTR _strSummary$223680[esp+524]
 	call	ebx
 	push	eax
-	lea	ecx, DWORD PTR _strMessage$223173[esp+528]
+	lea	ecx, DWORD PTR _strMessage$223679[esp+528]
 	call	ebx
 	push	eax
 	push	-991884431				; c4e10b71H
@@ -3652,40 +3657,40 @@ _bAccepted$ = 24					; size = 1
 	mov	ecx, eax
 	call	?Add@CvNotifications@@QAEHW4NotificationTypes@@PBD1HHHH@Z ; CvNotifications::Add
 
-; 813  : 
-; 814  : 		strMessage = Localization::Lookup("TXT_KEY_DEAL_EXPIRED_FROM_THEM");
+; 844  : 
+; 845  : 		strMessage = Localization::Lookup("TXT_KEY_DEAL_EXPIRED_FROM_THEM");
 
-	lea	eax, DWORD PTR $T224242[esp+508]
-	push	OFFSET $SG223189
+	lea	eax, DWORD PTR $T224756[esp+508]
+	push	OFFSET $SG223695
 	push	eax
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
 	push	eax
-	lea	ecx, DWORD PTR _strMessage$223173[esp+512]
+	lea	ecx, DWORD PTR _strMessage$223679[esp+512]
 	mov	BYTE PTR __$EHRec$[esp+520], 3
 	call	DWORD PTR __imp_??4String@Localization@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T224242[esp+508]
+	lea	ecx, DWORD PTR $T224756[esp+508]
 	mov	BYTE PTR __$EHRec$[esp+516], 1
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 
-; 815  : 		strMessage << kFromPlayer.getNickName();
+; 846  : 		strMessage << kFromPlayer.getNickName();
 
 	mov	ecx, edi
 	call	?getNickName@CvPlayer@@QBEQBDXZ		; CvPlayer::getNickName
 	push	eax
-	lea	ecx, DWORD PTR _strMessage$223173[esp+512]
+	lea	ecx, DWORD PTR _strMessage$223679[esp+512]
 	call	DWORD PTR __imp_?PushArgument@String@Localization@@QAE_NPBD@Z
 
-; 816  : 		kToPlayer.GetNotifications()->Add(NOTIFICATION_PLAYER_DEAL_RESOLVED, strMessage.toUTF8(), strSummary.toUTF8(), eFromPlayer, -1, -1);
+; 847  : 		kToPlayer.GetNotifications()->Add(NOTIFICATION_PLAYER_DEAL_RESOLVED, strMessage.toUTF8(), strSummary.toUTF8(), eFromPlayer, -1, -1);
 
 	push	-1
 	push	-1
 	push	-1
 	push	ebp
-	lea	ecx, DWORD PTR _strSummary$223174[esp+524]
+	lea	ecx, DWORD PTR _strSummary$223680[esp+524]
 	call	ebx
 	push	eax
-	lea	ecx, DWORD PTR _strMessage$223173[esp+528]
+	lea	ecx, DWORD PTR _strMessage$223679[esp+528]
 	call	ebx
 	push	eax
 	push	-991884431				; c4e10b71H
@@ -3694,26 +3699,26 @@ _bAccepted$ = 24					; size = 1
 	mov	ecx, eax
 	call	?Add@CvNotifications@@QAEHW4NotificationTypes@@PBD1HHHH@Z ; CvNotifications::Add
 
-; 817  : 	}
+; 848  : 	}
 
 	mov	esi, DWORD PTR __imp_??1String@Localization@@UAE@XZ
-	lea	ecx, DWORD PTR _strSummary$223174[esp+508]
+	lea	ecx, DWORD PTR _strSummary$223680[esp+508]
 	mov	BYTE PTR __$EHRec$[esp+516], 0
 	call	esi
-	lea	ecx, DWORD PTR _strMessage$223173[esp+508]
+	lea	ecx, DWORD PTR _strMessage$223679[esp+508]
 
-; 818  : 	else
+; 849  : 	else
 
 	jmp	$LN54@ResponsePl
 $LN6@ResponsePl:
 
-; 819  : 	{
-; 820  : 		CvPlayerAI& kToPlayer = GET_PLAYER(eToPlayer);
+; 850  : 	{
+; 851  : 		CvPlayerAI& kToPlayer = GET_PLAYER(eToPlayer);
 
 	mov	eax, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	mov	esi, ebx
 
-; 821  : 		CvPlayerAI& kFromPlayer = GET_PLAYER(eFromPlayer);
+; 852  : 		CvPlayerAI& kFromPlayer = GET_PLAYER(eFromPlayer);
 
 	mov	edi, ebp
 	imul	esi, 63236				; 0000f704H
@@ -3721,48 +3726,48 @@ $LN6@ResponsePl:
 	add	esi, eax
 	add	edi, eax
 
-; 822  : 		if(bAccepted)
+; 853  : 		if(bAccepted)
 
 	cmp	BYTE PTR _bAccepted$[esp+504], 0
 	je	$LN4@ResponsePl
 
-; 823  : 		{
-; 824  : 			Localization::String strSummary = Localization::Lookup("TXT_KEY_DEAL_ACCEPTED");
+; 854  : 		{
+; 855  : 			Localization::String strSummary = Localization::Lookup("TXT_KEY_DEAL_ACCEPTED");
 
-	lea	ecx, DWORD PTR _strSummary$223195[esp+508]
-	push	OFFSET $SG223197
+	lea	ecx, DWORD PTR _strSummary$223701[esp+508]
+	push	OFFSET $SG223703
 	push	ecx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 
-; 825  : 			Localization::String strMessage = Localization::Lookup("TXT_KEY_DEAL_ACCEPTED_BY_THEM");
+; 856  : 			Localization::String strMessage = Localization::Lookup("TXT_KEY_DEAL_ACCEPTED_BY_THEM");
 
-	lea	edx, DWORD PTR _strMessage$223198[esp+516]
-	push	OFFSET $SG223200
+	lea	edx, DWORD PTR _strMessage$223704[esp+516]
+	push	OFFSET $SG223706
 	push	edx
 	mov	DWORD PTR __$EHRec$[esp+532], 4
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 16					; 00000010H
 
-; 826  : 			strMessage << kToPlayer.getNickName();
+; 857  : 			strMessage << kToPlayer.getNickName();
 
 	mov	ecx, esi
 	mov	BYTE PTR __$EHRec$[esp+516], 5
 	call	?getNickName@CvPlayer@@QBEQBDXZ		; CvPlayer::getNickName
 	push	eax
-	lea	ecx, DWORD PTR _strMessage$223198[esp+512]
+	lea	ecx, DWORD PTR _strMessage$223704[esp+512]
 	call	DWORD PTR __imp_?PushArgument@String@Localization@@QAE_NPBD@Z
 
-; 827  : 			kFromPlayer.GetNotifications()->Add(NOTIFICATION_PLAYER_DEAL_RESOLVED, strMessage.toUTF8(), strSummary.toUTF8(), eToPlayer, -1, -1);
+; 858  : 			kFromPlayer.GetNotifications()->Add(NOTIFICATION_PLAYER_DEAL_RESOLVED, strMessage.toUTF8(), strSummary.toUTF8(), eToPlayer, -1, -1);
 
 	push	-1
 	push	-1
 	push	-1
 	push	ebx
 	mov	ebx, DWORD PTR __imp_?toUTF8@String@Localization@@QAEPBDXZ
-	lea	ecx, DWORD PTR _strSummary$223195[esp+524]
+	lea	ecx, DWORD PTR _strSummary$223701[esp+524]
 	call	ebx
 	push	eax
-	lea	ecx, DWORD PTR _strMessage$223198[esp+528]
+	lea	ecx, DWORD PTR _strMessage$223704[esp+528]
 	call	ebx
 	push	eax
 	push	-991884431				; c4e10b71H
@@ -3771,55 +3776,55 @@ $LN6@ResponsePl:
 	mov	ecx, eax
 	call	?Add@CvNotifications@@QAEHW4NotificationTypes@@PBD1HHHH@Z ; CvNotifications::Add
 
-; 828  : 
-; 829  : 			strSummary = Localization::Lookup("TXT_KEY_DEAL_ACCEPTED");
+; 859  : 
+; 860  : 			strSummary = Localization::Lookup("TXT_KEY_DEAL_ACCEPTED");
 
-	lea	eax, DWORD PTR $T224245[esp+508]
-	push	OFFSET $SG223203
+	lea	eax, DWORD PTR $T224759[esp+508]
+	push	OFFSET $SG223709
 	push	eax
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
 	push	eax
-	lea	ecx, DWORD PTR _strSummary$223195[esp+512]
+	lea	ecx, DWORD PTR _strSummary$223701[esp+512]
 	mov	BYTE PTR __$EHRec$[esp+520], 6
 	call	DWORD PTR __imp_??4String@Localization@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T224245[esp+508]
+	lea	ecx, DWORD PTR $T224759[esp+508]
 	mov	BYTE PTR __$EHRec$[esp+516], 5
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 
-; 830  : 			strMessage = Localization::Lookup("TXT_KEY_DEAL_ACCEPTED_BY_YOU");
+; 861  : 			strMessage = Localization::Lookup("TXT_KEY_DEAL_ACCEPTED_BY_YOU");
 
-	lea	ecx, DWORD PTR $T224246[esp+508]
-	push	OFFSET $SG223205
+	lea	ecx, DWORD PTR $T224760[esp+508]
+	push	OFFSET $SG223711
 	push	ecx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
 	push	eax
-	lea	ecx, DWORD PTR _strMessage$223198[esp+512]
+	lea	ecx, DWORD PTR _strMessage$223704[esp+512]
 	mov	BYTE PTR __$EHRec$[esp+520], 7
 	call	DWORD PTR __imp_??4String@Localization@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T224246[esp+508]
+	lea	ecx, DWORD PTR $T224760[esp+508]
 	mov	BYTE PTR __$EHRec$[esp+516], 5
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 
-; 831  : 			strMessage << kFromPlayer.getNickName();
+; 862  : 			strMessage << kFromPlayer.getNickName();
 
 	mov	ecx, edi
 	call	?getNickName@CvPlayer@@QBEQBDXZ		; CvPlayer::getNickName
 	push	eax
-	lea	ecx, DWORD PTR _strMessage$223198[esp+512]
+	lea	ecx, DWORD PTR _strMessage$223704[esp+512]
 	call	DWORD PTR __imp_?PushArgument@String@Localization@@QAE_NPBD@Z
 
-; 832  : 			kToPlayer.GetNotifications()->Add(NOTIFICATION_PLAYER_DEAL_RESOLVED, strMessage.toUTF8(), strSummary.toUTF8(), eFromPlayer, -1, -1);
+; 863  : 			kToPlayer.GetNotifications()->Add(NOTIFICATION_PLAYER_DEAL_RESOLVED, strMessage.toUTF8(), strSummary.toUTF8(), eFromPlayer, -1, -1);
 
 	push	-1
 	push	-1
 	push	-1
 	push	ebp
-	lea	ecx, DWORD PTR _strSummary$223195[esp+524]
+	lea	ecx, DWORD PTR _strSummary$223701[esp+524]
 	call	ebx
 	push	eax
-	lea	ecx, DWORD PTR _strMessage$223198[esp+528]
+	lea	ecx, DWORD PTR _strMessage$223704[esp+528]
 	call	ebx
 	push	eax
 	push	-991884431				; c4e10b71H
@@ -3828,62 +3833,62 @@ $LN6@ResponsePl:
 	mov	ecx, eax
 	call	?Add@CvNotifications@@QAEHW4NotificationTypes@@PBD1HHHH@Z ; CvNotifications::Add
 
-; 833  : 		}
+; 864  : 		}
 
 	mov	BYTE PTR __$EHRec$[esp+516], 4
 	mov	esi, DWORD PTR __imp_??1String@Localization@@UAE@XZ
-	lea	ecx, DWORD PTR _strMessage$223198[esp+508]
+	lea	ecx, DWORD PTR _strMessage$223704[esp+508]
 	call	esi
-	lea	ecx, DWORD PTR _strSummary$223195[esp+508]
+	lea	ecx, DWORD PTR _strSummary$223701[esp+508]
 
-; 834  : 		else
+; 865  : 		else
 
 	jmp	$LN54@ResponsePl
 $LN4@ResponsePl:
 
-; 835  : 		{
-; 836  : 			if(eActBy == eFromPlayer)
+; 866  : 		{
+; 867  : 			if(eActBy == eFromPlayer)
 
 	cmp	DWORD PTR _eActBy$[esp+504], ebp
 	jne	$LN2@ResponsePl
 
-; 837  : 			{
-; 838  : 				Localization::String strSummary = Localization::Lookup("TXT_KEY_DEAL_WITHDRAWN");
+; 868  : 			{
+; 869  : 				Localization::String strSummary = Localization::Lookup("TXT_KEY_DEAL_WITHDRAWN");
 
-	lea	edx, DWORD PTR _strSummary$223209[esp+508]
-	push	OFFSET $SG223211
+	lea	edx, DWORD PTR _strSummary$223715[esp+508]
+	push	OFFSET $SG223717
 	push	edx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 
-; 839  : 				Localization::String strMessage = Localization::Lookup("TXT_KEY_DEAL_WITHDRAWN_BY_YOU");
+; 870  : 				Localization::String strMessage = Localization::Lookup("TXT_KEY_DEAL_WITHDRAWN_BY_YOU");
 
-	lea	eax, DWORD PTR _strMessage$223212[esp+516]
-	push	OFFSET $SG223214
+	lea	eax, DWORD PTR _strMessage$223718[esp+516]
+	push	OFFSET $SG223720
 	push	eax
 	mov	DWORD PTR __$EHRec$[esp+532], 8
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 16					; 00000010H
 
-; 840  : 				strMessage << kToPlayer.getNickName();
+; 871  : 				strMessage << kToPlayer.getNickName();
 
 	mov	ecx, esi
 	mov	BYTE PTR __$EHRec$[esp+516], 9
 	call	?getNickName@CvPlayer@@QBEQBDXZ		; CvPlayer::getNickName
 	push	eax
-	lea	ecx, DWORD PTR _strMessage$223212[esp+512]
+	lea	ecx, DWORD PTR _strMessage$223718[esp+512]
 	call	DWORD PTR __imp_?PushArgument@String@Localization@@QAE_NPBD@Z
 
-; 841  : 				kFromPlayer.GetNotifications()->Add(NOTIFICATION_PLAYER_DEAL_RESOLVED, strMessage.toUTF8(), strSummary.toUTF8(), eToPlayer, -1, -1);
+; 872  : 				kFromPlayer.GetNotifications()->Add(NOTIFICATION_PLAYER_DEAL_RESOLVED, strMessage.toUTF8(), strSummary.toUTF8(), eToPlayer, -1, -1);
 
 	push	-1
 	push	-1
 	push	-1
 	push	ebx
 	mov	ebx, DWORD PTR __imp_?toUTF8@String@Localization@@QAEPBDXZ
-	lea	ecx, DWORD PTR _strSummary$223209[esp+524]
+	lea	ecx, DWORD PTR _strSummary$223715[esp+524]
 	call	ebx
 	push	eax
-	lea	ecx, DWORD PTR _strMessage$223212[esp+528]
+	lea	ecx, DWORD PTR _strMessage$223718[esp+528]
 	call	ebx
 	push	eax
 	push	-991884431				; c4e10b71H
@@ -3892,55 +3897,55 @@ $LN4@ResponsePl:
 	mov	ecx, eax
 	call	?Add@CvNotifications@@QAEHW4NotificationTypes@@PBD1HHHH@Z ; CvNotifications::Add
 
-; 842  : 
-; 843  : 				strSummary = Localization::Lookup("TXT_KEY_DEAL_WITHDRAWN");
+; 873  : 
+; 874  : 				strSummary = Localization::Lookup("TXT_KEY_DEAL_WITHDRAWN");
 
-	lea	ecx, DWORD PTR $T224249[esp+508]
-	push	OFFSET $SG223217
+	lea	ecx, DWORD PTR $T224763[esp+508]
+	push	OFFSET $SG223723
 	push	ecx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
 	push	eax
-	lea	ecx, DWORD PTR _strSummary$223209[esp+512]
+	lea	ecx, DWORD PTR _strSummary$223715[esp+512]
 	mov	BYTE PTR __$EHRec$[esp+520], 10		; 0000000aH
 	call	DWORD PTR __imp_??4String@Localization@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T224249[esp+508]
+	lea	ecx, DWORD PTR $T224763[esp+508]
 	mov	BYTE PTR __$EHRec$[esp+516], 9
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 
-; 844  : 				strMessage = Localization::Lookup("TXT_KEY_DEAL_WITHDRAWN_BY_THEM");
+; 875  : 				strMessage = Localization::Lookup("TXT_KEY_DEAL_WITHDRAWN_BY_THEM");
 
-	lea	edx, DWORD PTR $T224250[esp+508]
-	push	OFFSET $SG223219
+	lea	edx, DWORD PTR $T224764[esp+508]
+	push	OFFSET $SG223725
 	push	edx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
 	push	eax
-	lea	ecx, DWORD PTR _strMessage$223212[esp+512]
+	lea	ecx, DWORD PTR _strMessage$223718[esp+512]
 	mov	BYTE PTR __$EHRec$[esp+520], 11		; 0000000bH
 	call	DWORD PTR __imp_??4String@Localization@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T224250[esp+508]
+	lea	ecx, DWORD PTR $T224764[esp+508]
 	mov	BYTE PTR __$EHRec$[esp+516], 9
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 
-; 845  : 				strMessage << kFromPlayer.getNickName();
+; 876  : 				strMessage << kFromPlayer.getNickName();
 
 	mov	ecx, edi
 	call	?getNickName@CvPlayer@@QBEQBDXZ		; CvPlayer::getNickName
 	push	eax
-	lea	ecx, DWORD PTR _strMessage$223212[esp+512]
+	lea	ecx, DWORD PTR _strMessage$223718[esp+512]
 	call	DWORD PTR __imp_?PushArgument@String@Localization@@QAE_NPBD@Z
 
-; 846  : 				kToPlayer.GetNotifications()->Add(NOTIFICATION_PLAYER_DEAL_RESOLVED, strMessage.toUTF8(), strSummary.toUTF8(), eFromPlayer, -1, -1);
+; 877  : 				kToPlayer.GetNotifications()->Add(NOTIFICATION_PLAYER_DEAL_RESOLVED, strMessage.toUTF8(), strSummary.toUTF8(), eFromPlayer, -1, -1);
 
 	push	-1
 	push	-1
 	push	-1
 	push	ebp
-	lea	ecx, DWORD PTR _strSummary$223209[esp+524]
+	lea	ecx, DWORD PTR _strSummary$223715[esp+524]
 	call	ebx
 	push	eax
-	lea	ecx, DWORD PTR _strMessage$223212[esp+528]
+	lea	ecx, DWORD PTR _strMessage$223718[esp+528]
 	call	ebx
 	push	eax
 	push	-991884431				; c4e10b71H
@@ -3949,56 +3954,56 @@ $LN4@ResponsePl:
 	mov	ecx, eax
 	call	?Add@CvNotifications@@QAEHW4NotificationTypes@@PBD1HHHH@Z ; CvNotifications::Add
 
-; 847  : 			}
+; 878  : 			}
 
 	mov	BYTE PTR __$EHRec$[esp+516], 8
 	mov	esi, DWORD PTR __imp_??1String@Localization@@UAE@XZ
-	lea	ecx, DWORD PTR _strMessage$223212[esp+508]
+	lea	ecx, DWORD PTR _strMessage$223718[esp+508]
 	call	esi
-	lea	ecx, DWORD PTR _strSummary$223209[esp+508]
+	lea	ecx, DWORD PTR _strSummary$223715[esp+508]
 
-; 848  : 			else
+; 879  : 			else
 
 	jmp	$LN54@ResponsePl
 $LN2@ResponsePl:
 
-; 849  : 			{
-; 850  : 				Localization::String strSummary = Localization::Lookup("TXT_KEY_DEAL_REJECTED");
+; 880  : 			{
+; 881  : 				Localization::String strSummary = Localization::Lookup("TXT_KEY_DEAL_REJECTED");
 
-	lea	eax, DWORD PTR _strSummary$223222[esp+508]
-	push	OFFSET $SG223224
+	lea	eax, DWORD PTR _strSummary$223728[esp+508]
+	push	OFFSET $SG223730
 	push	eax
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 
-; 851  : 				Localization::String strMessage = Localization::Lookup("TXT_KEY_DEAL_REJECTED_BY_THEM");
+; 882  : 				Localization::String strMessage = Localization::Lookup("TXT_KEY_DEAL_REJECTED_BY_THEM");
 
-	lea	ecx, DWORD PTR _strMessage$223225[esp+516]
-	push	OFFSET $SG223227
+	lea	ecx, DWORD PTR _strMessage$223731[esp+516]
+	push	OFFSET $SG223733
 	push	ecx
 	mov	DWORD PTR __$EHRec$[esp+532], 12	; 0000000cH
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 16					; 00000010H
 
-; 852  : 				strMessage << kToPlayer.getNickName();
+; 883  : 				strMessage << kToPlayer.getNickName();
 
 	mov	ecx, esi
 	mov	BYTE PTR __$EHRec$[esp+516], 13		; 0000000dH
 	call	?getNickName@CvPlayer@@QBEQBDXZ		; CvPlayer::getNickName
 	push	eax
-	lea	ecx, DWORD PTR _strMessage$223225[esp+512]
+	lea	ecx, DWORD PTR _strMessage$223731[esp+512]
 	call	DWORD PTR __imp_?PushArgument@String@Localization@@QAE_NPBD@Z
 
-; 853  : 				kFromPlayer.GetNotifications()->Add(NOTIFICATION_PLAYER_DEAL_RESOLVED, strMessage.toUTF8(), strSummary.toUTF8(), eToPlayer, -1, -1);
+; 884  : 				kFromPlayer.GetNotifications()->Add(NOTIFICATION_PLAYER_DEAL_RESOLVED, strMessage.toUTF8(), strSummary.toUTF8(), eToPlayer, -1, -1);
 
 	push	-1
 	push	-1
 	push	-1
 	push	ebx
 	mov	ebx, DWORD PTR __imp_?toUTF8@String@Localization@@QAEPBDXZ
-	lea	ecx, DWORD PTR _strSummary$223222[esp+524]
+	lea	ecx, DWORD PTR _strSummary$223728[esp+524]
 	call	ebx
 	push	eax
-	lea	ecx, DWORD PTR _strMessage$223225[esp+528]
+	lea	ecx, DWORD PTR _strMessage$223731[esp+528]
 	call	ebx
 	push	eax
 	push	-991884431				; c4e10b71H
@@ -4007,55 +4012,55 @@ $LN2@ResponsePl:
 	mov	ecx, eax
 	call	?Add@CvNotifications@@QAEHW4NotificationTypes@@PBD1HHHH@Z ; CvNotifications::Add
 
-; 854  : 
-; 855  : 				strSummary = Localization::Lookup("TXT_KEY_DEAL_REJECTED");
+; 885  : 
+; 886  : 				strSummary = Localization::Lookup("TXT_KEY_DEAL_REJECTED");
 
-	lea	edx, DWORD PTR $T224253[esp+508]
-	push	OFFSET $SG223230
+	lea	edx, DWORD PTR $T224767[esp+508]
+	push	OFFSET $SG223736
 	push	edx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
 	push	eax
-	lea	ecx, DWORD PTR _strSummary$223222[esp+512]
+	lea	ecx, DWORD PTR _strSummary$223728[esp+512]
 	mov	BYTE PTR __$EHRec$[esp+520], 14		; 0000000eH
 	call	DWORD PTR __imp_??4String@Localization@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T224253[esp+508]
+	lea	ecx, DWORD PTR $T224767[esp+508]
 	mov	BYTE PTR __$EHRec$[esp+516], 13		; 0000000dH
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 
-; 856  : 				strMessage = Localization::Lookup("TXT_KEY_DEAL_REJECTED_BY_YOU");
+; 887  : 				strMessage = Localization::Lookup("TXT_KEY_DEAL_REJECTED_BY_YOU");
 
-	lea	eax, DWORD PTR $T224254[esp+508]
-	push	OFFSET $SG223232
+	lea	eax, DWORD PTR $T224768[esp+508]
+	push	OFFSET $SG223738
 	push	eax
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
 	push	eax
-	lea	ecx, DWORD PTR _strMessage$223225[esp+512]
+	lea	ecx, DWORD PTR _strMessage$223731[esp+512]
 	mov	BYTE PTR __$EHRec$[esp+520], 15		; 0000000fH
 	call	DWORD PTR __imp_??4String@Localization@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T224254[esp+508]
+	lea	ecx, DWORD PTR $T224768[esp+508]
 	mov	BYTE PTR __$EHRec$[esp+516], 13		; 0000000dH
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 
-; 857  : 				strMessage << kFromPlayer.getNickName();
+; 888  : 				strMessage << kFromPlayer.getNickName();
 
 	mov	ecx, edi
 	call	?getNickName@CvPlayer@@QBEQBDXZ		; CvPlayer::getNickName
 	push	eax
-	lea	ecx, DWORD PTR _strMessage$223225[esp+512]
+	lea	ecx, DWORD PTR _strMessage$223731[esp+512]
 	call	DWORD PTR __imp_?PushArgument@String@Localization@@QAE_NPBD@Z
 
-; 858  : 				kToPlayer.GetNotifications()->Add(NOTIFICATION_PLAYER_DEAL_RESOLVED, strMessage.toUTF8(), strSummary.toUTF8(), eFromPlayer, -1, -1);
+; 889  : 				kToPlayer.GetNotifications()->Add(NOTIFICATION_PLAYER_DEAL_RESOLVED, strMessage.toUTF8(), strSummary.toUTF8(), eFromPlayer, -1, -1);
 
 	push	-1
 	push	-1
 	push	-1
 	push	ebp
-	lea	ecx, DWORD PTR _strSummary$223222[esp+524]
+	lea	ecx, DWORD PTR _strSummary$223728[esp+524]
 	call	ebx
 	push	eax
-	lea	ecx, DWORD PTR _strMessage$223225[esp+528]
+	lea	ecx, DWORD PTR _strMessage$223731[esp+528]
 	call	ebx
 	push	eax
 	push	-991884431				; c4e10b71H
@@ -4064,20 +4069,20 @@ $LN2@ResponsePl:
 	mov	ecx, eax
 	call	?Add@CvNotifications@@QAEHW4NotificationTypes@@PBD1HHHH@Z ; CvNotifications::Add
 
-; 859  : 			}
+; 890  : 			}
 
 	mov	BYTE PTR __$EHRec$[esp+516], 12		; 0000000cH
 	mov	esi, DWORD PTR __imp_??1String@Localization@@UAE@XZ
-	lea	ecx, DWORD PTR _strMessage$223225[esp+508]
+	lea	ecx, DWORD PTR _strMessage$223731[esp+508]
 	call	esi
-	lea	ecx, DWORD PTR _strSummary$223222[esp+508]
+	lea	ecx, DWORD PTR _strSummary$223728[esp+508]
 $LN54@ResponsePl:
 	mov	DWORD PTR __$EHRec$[esp+516], -1
 	call	esi
 
-; 860  : 		}
-; 861  : 	}
-; 862  : }
+; 891  : 		}
+; 892  : 	}
+; 893  : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+508]
 	pop	edi
@@ -4091,52 +4096,52 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?ResponsePlayerDealFinalized@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@00_N@Z$0:
-	lea	ecx, DWORD PTR _strMessage$223173[ebp]
+	lea	ecx, DWORD PTR _strMessage$223679[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?ResponsePlayerDealFinalized@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@00_N@Z$1:
-	lea	ecx, DWORD PTR _strSummary$223174[ebp]
+	lea	ecx, DWORD PTR _strSummary$223680[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?ResponsePlayerDealFinalized@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@00_N@Z$2:
-	lea	ecx, DWORD PTR $T224240[ebp]
+	lea	ecx, DWORD PTR $T224754[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?ResponsePlayerDealFinalized@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@00_N@Z$3:
-	lea	ecx, DWORD PTR $T224242[ebp]
+	lea	ecx, DWORD PTR $T224756[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?ResponsePlayerDealFinalized@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@00_N@Z$4:
-	lea	ecx, DWORD PTR _strSummary$223195[ebp]
+	lea	ecx, DWORD PTR _strSummary$223701[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?ResponsePlayerDealFinalized@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@00_N@Z$5:
-	lea	ecx, DWORD PTR _strMessage$223198[ebp]
+	lea	ecx, DWORD PTR _strMessage$223704[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?ResponsePlayerDealFinalized@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@00_N@Z$6:
-	lea	ecx, DWORD PTR $T224245[ebp]
+	lea	ecx, DWORD PTR $T224759[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?ResponsePlayerDealFinalized@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@00_N@Z$7:
-	lea	ecx, DWORD PTR $T224246[ebp]
+	lea	ecx, DWORD PTR $T224760[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?ResponsePlayerDealFinalized@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@00_N@Z$8:
-	lea	ecx, DWORD PTR _strSummary$223209[ebp]
+	lea	ecx, DWORD PTR _strSummary$223715[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?ResponsePlayerDealFinalized@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@00_N@Z$9:
-	lea	ecx, DWORD PTR _strMessage$223212[ebp]
+	lea	ecx, DWORD PTR _strMessage$223718[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?ResponsePlayerDealFinalized@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@00_N@Z$10:
-	lea	ecx, DWORD PTR $T224249[ebp]
+	lea	ecx, DWORD PTR $T224763[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?ResponsePlayerDealFinalized@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@00_N@Z$11:
-	lea	ecx, DWORD PTR $T224250[ebp]
+	lea	ecx, DWORD PTR $T224764[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?ResponsePlayerDealFinalized@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@00_N@Z$12:
-	lea	ecx, DWORD PTR _strSummary$223222[ebp]
+	lea	ecx, DWORD PTR _strSummary$223728[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?ResponsePlayerDealFinalized@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@00_N@Z$13:
-	lea	ecx, DWORD PTR _strMessage$223225[ebp]
+	lea	ecx, DWORD PTR _strMessage$223731[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?ResponsePlayerDealFinalized@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@00_N@Z$14:
-	lea	ecx, DWORD PTR $T224253[ebp]
+	lea	ecx, DWORD PTR $T224767[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?ResponsePlayerDealFinalized@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@00_N@Z$15:
-	lea	ecx, DWORD PTR $T224254[ebp]
+	lea	ecx, DWORD PTR $T224768[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __ehhandler$?ResponsePlayerDealFinalized@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@00_N@Z:
 	mov	eax, OFFSET __ehfuncinfo$?ResponsePlayerDealFinalized@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@00_N@Z
@@ -4153,7 +4158,7 @@ _eOption$ = 16						; size = 4
 _bValue$ = 20						; size = 1
 ?ResponsePlayerOption@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@W4PlayerOptionTypes@@_N@Z PROC ; CvDllNetMessageHandler::ResponsePlayerOption, COMDAT
 
-; 866  : 	GET_PLAYER(ePlayer).setOption(eOption, bValue);
+; 897  : 	GET_PLAYER(ePlayer).setOption(eOption, bValue);
 
 	mov	eax, DWORD PTR _bValue$[esp-4]
 	mov	ecx, DWORD PTR _eOption$[esp-4]
@@ -4164,7 +4169,7 @@ _bValue$ = 20						; size = 1
 	add	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	call	?setOption@CvPlayer@@QAEXW4PlayerOptionTypes@@_N@Z ; CvPlayer::setOption
 
-; 867  : }
+; 898  : }
 
 	ret	16					; 00000010H
 ?ResponsePlayerOption@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@W4PlayerOptionTypes@@_N@Z ENDP ; CvDllNetMessageHandler::ResponsePlayerOption
@@ -4180,7 +4185,7 @@ _bValue$ = 20						; size = 1
 _bPledgeNowBroken$ = 24					; size = 1
 ?ResponsePledgeMinorProtection@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@0_N1@Z PROC ; CvDllNetMessageHandler::ResponsePledgeMinorProtection, COMDAT
 
-; 871  : 	GET_PLAYER(eMinor).GetMinorCivAI()->DoChangeProtectionFromMajor(ePlayer, bValue, bPledgeNowBroken);
+; 902  : 	GET_PLAYER(eMinor).GetMinorCivAI()->DoChangeProtectionFromMajor(ePlayer, bValue, bPledgeNowBroken);
 
 	mov	ecx, DWORD PTR _eMinor$[esp-4]
 	mov	eax, DWORD PTR _bPledgeNowBroken$[esp-4]
@@ -4195,7 +4200,7 @@ _bPledgeNowBroken$ = 24					; size = 1
 	mov	ecx, eax
 	call	?DoChangeProtectionFromMajor@CvMinorCivAI@@QAEXW4PlayerTypes@@_N1@Z ; CvMinorCivAI::DoChangeProtectionFromMajor
 
-; 872  : }
+; 903  : }
 
 	ret	20					; 00000014H
 ?ResponsePledgeMinorProtection@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@0_N1@Z ENDP ; CvDllNetMessageHandler::ResponsePledgeMinorProtection
@@ -4215,17 +4220,17 @@ _iFlags$ = 32						; size = 4
 _bShift$ = 36						; size = 1
 ?ResponsePushMission@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@HW4MissionTypes@@HHH_N@Z PROC ; CvDllNetMessageHandler::ResponsePushMission, COMDAT
 
-; 876  : 	CvUnit::dispatchingNetMessage(true);
+; 907  : 	CvUnit::dispatchingNetMessage(true);
 
 	push	1
 	call	?dispatchingNetMessage@CvUnit@@SAX_N@Z	; CvUnit::dispatchingNetMessage
 
-; 877  : 
-; 878  : 	CvPlayerAI& kPlayer = GET_PLAYER(ePlayer);
+; 908  : 
+; 909  : 	CvPlayerAI& kPlayer = GET_PLAYER(ePlayer);
 
 	mov	ecx, DWORD PTR _ePlayer$[esp]
 
-; 879  : 	CvUnit* pkUnit = kPlayer.getUnit(iUnitID);
+; 910  : 	CvUnit* pkUnit = kPlayer.getUnit(iUnitID);
 
 	mov	eax, DWORD PTR _iUnitID$[esp]
 	imul	ecx, 63236				; 0000f704H
@@ -4234,14 +4239,14 @@ _bShift$ = 36						; size = 1
 	push	eax
 	call	?getUnit@CvPlayer@@QAEPAVCvUnit@@H@Z	; CvPlayer::getUnit
 
-; 880  : 
-; 881  : 	if(pkUnit != NULL)
+; 911  : 
+; 912  : 	if(pkUnit != NULL)
 
 	test	eax, eax
 	je	SHORT $LN1@ResponsePu
 
-; 882  : 	{
-; 883  : 		pkUnit->PushMission(eMission, iData1, iData2, iFlags, bShift, true);
+; 913  : 	{
+; 914  : 		pkUnit->PushMission(eMission, iData1, iData2, iFlags, bShift, true);
 
 	mov	ecx, DWORD PTR _bShift$[esp-4]
 	mov	edx, DWORD PTR _iFlags$[esp-4]
@@ -4261,15 +4266,15 @@ _bShift$ = 36						; size = 1
 	call	?PushMission@CvUnit@@QAEXW4MissionTypes@@HHH_N1W4MissionAITypes@@PAVCvPlot@@PAV1@@Z ; CvUnit::PushMission
 $LN1@ResponsePu:
 
-; 884  : 	}
-; 885  : 
-; 886  : 	CvUnit::dispatchingNetMessage(false);
+; 915  : 	}
+; 916  : 
+; 917  : 	CvUnit::dispatchingNetMessage(false);
 
 	push	0
 	call	?dispatchingNetMessage@CvUnit@@SAX_N@Z	; CvUnit::dispatchingNetMessage
 	pop	ecx
 
-; 887  : }
+; 918  : }
 
 	ret	32					; 00000020H
 ?ResponsePushMission@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@HW4MissionTypes@@HHH_N@Z ENDP ; CvDllNetMessageHandler::ResponsePushMission
@@ -4286,32 +4291,32 @@ _ePlayer$ = 12						; size = 4
 _eGreatPersonUnit$ = 16					; size = 4
 ?ResponseGreatPersonChoice@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@W4UnitTypes@@@Z PROC ; CvDllNetMessageHandler::ResponseGreatPersonChoice, COMDAT
 
-; 890  : {
+; 921  : {
 
 	push	esi
 
-; 891  : 	CvPlayerAI& kPlayer = GET_PLAYER(ePlayer);
+; 922  : 	CvPlayerAI& kPlayer = GET_PLAYER(ePlayer);
 
 	mov	esi, DWORD PTR _ePlayer$[esp]
 	imul	esi, 63236				; 0000f704H
 	add	esi, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	push	edi
 
-; 892  : 	CvCity* pCity = kPlayer.GetGreatPersonSpawnCity(eGreatPersonUnit);
+; 923  : 	CvCity* pCity = kPlayer.GetGreatPersonSpawnCity(eGreatPersonUnit);
 
 	mov	edi, DWORD PTR _eGreatPersonUnit$[esp+4]
 	push	edi
 	mov	ecx, esi
 	call	?GetGreatPersonSpawnCity@CvPlayer@@QAEPAVCvCity@@W4UnitTypes@@@Z ; CvPlayer::GetGreatPersonSpawnCity
 
-; 893  : 	if(pCity)
+; 924  : 	if(pCity)
 
 	test	eax, eax
 	je	SHORT $LN1@ResponseGr
 
-; 894  : 	{
-; 895  : 		// GJS NQMP - changed 2nd parameter to false so that "free" Great People from liberty finisher & buildings are actually free
-; 896  : 		pCity->GetCityCitizens()->DoSpawnGreatPerson(eGreatPersonUnit, false, false);
+; 925  : 	{
+; 926  : 		// GJS NQMP - changed 2nd parameter to false so that "free" Great People from liberty finisher & buildings are actually free
+; 927  : 		pCity->GetCityCitizens()->DoSpawnGreatPerson(eGreatPersonUnit, false, false);
 
 	push	0
 	push	0
@@ -4322,8 +4327,8 @@ _eGreatPersonUnit$ = 16					; size = 4
 	call	?DoSpawnGreatPerson@CvCityCitizens@@QAEXW4UnitTypes@@_N1@Z ; CvCityCitizens::DoSpawnGreatPerson
 $LN1@ResponseGr:
 
-; 897  : 	}
-; 898  : 	kPlayer.ChangeNumFreeGreatPeople(-1);
+; 928  : 	}
+; 929  : 	kPlayer.ChangeNumFreeGreatPeople(-1);
 
 	push	-1
 	mov	ecx, esi
@@ -4331,7 +4336,7 @@ $LN1@ResponseGr:
 	pop	edi
 	pop	esi
 
-; 899  : }
+; 930  : }
 
 	ret	12					; 0000000cH
 ?ResponseGreatPersonChoice@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@W4UnitTypes@@@Z ENDP ; CvDllNetMessageHandler::ResponseGreatPersonChoice
@@ -4347,31 +4352,31 @@ _ePlayer$ = 12						; size = 4
 _eGreatPersonUnit$ = 16					; size = 4
 ?ResponseMayaBonusChoice@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@W4UnitTypes@@@Z PROC ; CvDllNetMessageHandler::ResponseMayaBonusChoice, COMDAT
 
-; 902  : {
+; 933  : {
 
 	push	esi
 
-; 903  : 	CvPlayerAI& kPlayer = GET_PLAYER(ePlayer);
+; 934  : 	CvPlayerAI& kPlayer = GET_PLAYER(ePlayer);
 
 	mov	esi, DWORD PTR _ePlayer$[esp]
 	imul	esi, 63236				; 0000f704H
 	add	esi, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	push	edi
 
-; 904  : 	CvCity* pCity = kPlayer.GetGreatPersonSpawnCity(eGreatPersonUnit);
+; 935  : 	CvCity* pCity = kPlayer.GetGreatPersonSpawnCity(eGreatPersonUnit);
 
 	mov	edi, DWORD PTR _eGreatPersonUnit$[esp+4]
 	push	edi
 	mov	ecx, esi
 	call	?GetGreatPersonSpawnCity@CvPlayer@@QAEPAVCvCity@@W4UnitTypes@@@Z ; CvPlayer::GetGreatPersonSpawnCity
 
-; 905  : 	if(pCity)
+; 936  : 	if(pCity)
 
 	test	eax, eax
 	je	SHORT $LN1@ResponseMa
 
-; 906  : 	{
-; 907  : 		pCity->GetCityCitizens()->DoSpawnGreatPerson(eGreatPersonUnit, true, false);
+; 937  : 	{
+; 938  : 		pCity->GetCityCitizens()->DoSpawnGreatPerson(eGreatPersonUnit, true, false);
 
 	push	0
 	push	1
@@ -4382,14 +4387,14 @@ _eGreatPersonUnit$ = 16					; size = 4
 	call	?DoSpawnGreatPerson@CvCityCitizens@@QAEXW4UnitTypes@@_N1@Z ; CvCityCitizens::DoSpawnGreatPerson
 $LN1@ResponseMa:
 
-; 908  : 	}
-; 909  : 	kPlayer.ChangeNumMayaBoosts(-1);
+; 939  : 	}
+; 940  : 	kPlayer.ChangeNumMayaBoosts(-1);
 
 	push	-1
 	mov	ecx, esi
 	call	?ChangeNumMayaBoosts@CvPlayer@@QAEXH@Z	; CvPlayer::ChangeNumMayaBoosts
 
-; 910  : 	kPlayer.GetPlayerTraits()->SetUnitBaktun(eGreatPersonUnit);
+; 941  : 	kPlayer.GetPlayerTraits()->SetUnitBaktun(eGreatPersonUnit);
 
 	push	edi
 	mov	ecx, esi
@@ -4399,7 +4404,7 @@ $LN1@ResponseMa:
 	pop	edi
 	pop	esi
 
-; 911  : }
+; 942  : }
 
 	ret	12					; 0000000cH
 ?ResponseMayaBonusChoice@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@W4UnitTypes@@@Z ENDP ; CvDllNetMessageHandler::ResponseMayaBonusChoice
@@ -4413,31 +4418,31 @@ _ePlayer$ = 12						; size = 4
 _eGreatPersonUnit$ = 16					; size = 4
 ?ResponseFaithGreatPersonChoice@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@W4UnitTypes@@@Z PROC ; CvDllNetMessageHandler::ResponseFaithGreatPersonChoice, COMDAT
 
-; 914  : {
+; 945  : {
 
 	push	esi
 
-; 915  : 	CvPlayerAI& kPlayer = GET_PLAYER(ePlayer);
+; 946  : 	CvPlayerAI& kPlayer = GET_PLAYER(ePlayer);
 
 	mov	esi, DWORD PTR _ePlayer$[esp]
 	imul	esi, 63236				; 0000f704H
 	add	esi, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	push	edi
 
-; 916  : 	CvCity* pCity = kPlayer.GetGreatPersonSpawnCity(eGreatPersonUnit);
+; 947  : 	CvCity* pCity = kPlayer.GetGreatPersonSpawnCity(eGreatPersonUnit);
 
 	mov	edi, DWORD PTR _eGreatPersonUnit$[esp+4]
 	push	edi
 	mov	ecx, esi
 	call	?GetGreatPersonSpawnCity@CvPlayer@@QAEPAVCvCity@@W4UnitTypes@@@Z ; CvPlayer::GetGreatPersonSpawnCity
 
-; 917  : 	if(pCity)
+; 948  : 	if(pCity)
 
 	test	eax, eax
 	je	SHORT $LN1@ResponseFa
 
-; 918  : 	{
-; 919  : 		pCity->GetCityCitizens()->DoSpawnGreatPerson(eGreatPersonUnit, true, true);
+; 949  : 	{
+; 950  : 		pCity->GetCityCitizens()->DoSpawnGreatPerson(eGreatPersonUnit, true, true);
 
 	push	1
 	push	1
@@ -4448,8 +4453,8 @@ _eGreatPersonUnit$ = 16					; size = 4
 	call	?DoSpawnGreatPerson@CvCityCitizens@@QAEXW4UnitTypes@@_N1@Z ; CvCityCitizens::DoSpawnGreatPerson
 $LN1@ResponseFa:
 
-; 920  : 	}
-; 921  : 	kPlayer.ChangeNumFaithGreatPeople(-1);
+; 951  : 	}
+; 952  : 	kPlayer.ChangeNumFaithGreatPeople(-1);
 
 	push	-1
 	mov	ecx, esi
@@ -4457,7 +4462,7 @@ $LN1@ResponseFa:
 	pop	edi
 	pop	esi
 
-; 922  : }
+; 953  : }
 
 	ret	12					; 0000000cH
 ?ResponseFaithGreatPersonChoice@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@W4UnitTypes@@@Z ENDP ; CvDllNetMessageHandler::ResponseFaithGreatPersonChoice
@@ -4472,11 +4477,11 @@ _ePlayer$ = 12						; size = 4
 _eChoice$ = 16						; size = 4
 ?ResponseArchaeologyChoice@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@W4ArchaeologyChoiceType@@@Z PROC ; CvDllNetMessageHandler::ResponseArchaeologyChoice, COMDAT
 
-; 935  : 	CvPlayerAI& kPlayer = GET_PLAYER(ePlayer);
+; 966  : 	CvPlayerAI& kPlayer = GET_PLAYER(ePlayer);
 
 	mov	ecx, DWORD PTR _ePlayer$[esp-4]
 
-; 936  : 	kPlayer.GetCulture()->DoArchaeologyChoice(eChoice);
+; 967  : 	kPlayer.GetCulture()->DoArchaeologyChoice(eChoice);
 
 	mov	eax, DWORD PTR _eChoice$[esp-4]
 	imul	ecx, 63236				; 0000f704H
@@ -4486,7 +4491,7 @@ _eChoice$ = 16						; size = 4
 	mov	ecx, eax
 	call	?DoArchaeologyChoice@CvPlayerCulture@@QAEXW4ArchaeologyChoiceType@@@Z ; CvPlayerCulture::DoArchaeologyChoice
 
-; 937  : }
+; 968  : }
 
 	ret	12					; 0000000cH
 ?ResponseArchaeologyChoice@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@W4ArchaeologyChoiceType@@@Z ENDP ; CvDllNetMessageHandler::ResponseArchaeologyChoice
@@ -4501,11 +4506,11 @@ _ePlayer$ = 12						; size = 4
 _eChoice$ = 16						; size = 4
 ?ResponseIdeologyChoice@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@W4PolicyBranchTypes@@@Z PROC ; CvDllNetMessageHandler::ResponseIdeologyChoice, COMDAT
 
-; 941  : 	CvPlayerAI& kPlayer = GET_PLAYER(ePlayer);
+; 972  : 	CvPlayerAI& kPlayer = GET_PLAYER(ePlayer);
 
 	mov	ecx, DWORD PTR _ePlayer$[esp-4]
 
-; 942  : 	kPlayer.GetPlayerPolicies()->SetPolicyBranchUnlocked(eChoice, true, false);
+; 973  : 	kPlayer.GetPlayerPolicies()->SetPolicyBranchUnlocked(eChoice, true, false);
 
 	mov	eax, DWORD PTR _eChoice$[esp-4]
 	imul	ecx, 63236				; 0000f704H
@@ -4517,7 +4522,7 @@ _eChoice$ = 16						; size = 4
 	mov	ecx, eax
 	call	?SetPolicyBranchUnlocked@CvPlayerPolicies@@QAEXW4PolicyBranchTypes@@_N1@Z ; CvPlayerPolicies::SetPolicyBranchUnlocked
 
-; 943  : }
+; 974  : }
 
 	ret	12					; 0000000cH
 ?ResponseIdeologyChoice@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@W4PolicyBranchTypes@@@Z ENDP ; CvDllNetMessageHandler::ResponseIdeologyChoice
@@ -4540,7 +4545,7 @@ __ehfuncinfo$?ResponseRenameCity@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@HPBD
 xdata$x	ENDS
 ;	COMDAT ?ResponseRenameCity@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@HPBD@Z
 _TEXT	SEGMENT
-_strName$223316 = -40					; size = 28
+_strName$223822 = -40					; size = 28
 __$EHRec$ = -12						; size = 12
 _this$ = 8						; size = 4
 _ePlayer$ = 12						; size = 4
@@ -4548,7 +4553,7 @@ _iCityID$ = 16						; size = 4
 _szName$ = 20						; size = 4
 ?ResponseRenameCity@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@HPBD@Z PROC ; CvDllNetMessageHandler::ResponseRenameCity, COMDAT
 
-; 951  : 	CvPlayerAI& kPlayer = GET_PLAYER(ePlayer);
+; 982  : 	CvPlayerAI& kPlayer = GET_PLAYER(ePlayer);
 
 	mov	ecx, DWORD PTR _ePlayer$[esp-4]
 	mov	eax, DWORD PTR fs:0
@@ -4557,7 +4562,7 @@ _szName$ = 20						; size = 4
 	push	__ehhandler$?ResponseRenameCity@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@HPBD@Z
 	push	eax
 
-; 952  : 	CvCity* pkCity = kPlayer.getCity(iCityID);
+; 983  : 	CvCity* pkCity = kPlayer.getCity(iCityID);
 
 	mov	eax, DWORD PTR _iCityID$[esp+8]
 	mov	DWORD PTR fs:0, esp
@@ -4568,13 +4573,13 @@ _szName$ = 20						; size = 4
 	call	?getCity@CvPlayer@@QAEPAVCvCity@@H@Z	; CvPlayer::getCity
 	mov	esi, eax
 
-; 953  : 	if(pkCity)
+; 984  : 	if(pkCity)
 
 	test	esi, esi
 	je	SHORT $LN1@ResponseRe
 
-; 954  : 	{
-; 955  : 		CvString strName = szName;
+; 985  : 	{
+; 986  : 		CvString strName = szName;
 
 	mov	eax, DWORD PTR _szName$[esp+40]
 	test	eax, eax
@@ -4582,27 +4587,27 @@ _szName$ = 20						; size = 4
 	mov	eax, OFFSET ??_C@_00CNPNBAHC@?$AA@
 $LN10@ResponseRe:
 	push	eax
-	lea	ecx, DWORD PTR _strName$223316[esp+48]
+	lea	ecx, DWORD PTR _strName$223822[esp+48]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 
-; 956  : 		pkCity->setName(strName);
+; 987  : 		pkCity->setName(strName);
 
 	push	0
-	lea	ecx, DWORD PTR _strName$223316[esp+48]
+	lea	ecx, DWORD PTR _strName$223822[esp+48]
 	mov	DWORD PTR __$EHRec$[esp+56], 0
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
 	mov	ecx, esi
 	call	?setName@CvCity@@QAEXPBD_N@Z		; CvCity::setName
 
-; 957  : 	}
+; 988  : 	}
 
-	lea	ecx, DWORD PTR _strName$223316[esp+44]
+	lea	ecx, DWORD PTR _strName$223822[esp+44]
 	mov	DWORD PTR __$EHRec$[esp+52], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 $LN1@ResponseRe:
 
-; 958  : }
+; 989  : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+44]
 	pop	esi
@@ -4613,7 +4618,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?ResponseRenameCity@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@HPBD@Z$0:
-	lea	ecx, DWORD PTR _strName$223316[ebp]
+	lea	ecx, DWORD PTR _strName$223822[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?ResponseRenameCity@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@HPBD@Z:
 	mov	eax, OFFSET __ehfuncinfo$?ResponseRenameCity@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@HPBD@Z
@@ -4638,16 +4643,16 @@ __ehfuncinfo$?ResponseRenameUnit@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@HPBD
 xdata$x	ENDS
 ;	COMDAT ?ResponseRenameUnit@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@HPBD@Z
 _TEXT	SEGMENT
-_strName$223326 = -40					; size = 28
+_strName$223832 = -40					; size = 28
 __$EHRec$ = -12						; size = 12
 _this$ = 8						; size = 4
-$T224401 = 12						; size = 4
+$T224915 = 12						; size = 4
 _ePlayer$ = 12						; size = 4
 _iUnitID$ = 16						; size = 4
 _szName$ = 20						; size = 4
 ?ResponseRenameUnit@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@HPBD@Z PROC ; CvDllNetMessageHandler::ResponseRenameUnit, COMDAT
 
-; 966  : 	CvPlayerAI& kPlayer = GET_PLAYER(ePlayer);
+; 997  : 	CvPlayerAI& kPlayer = GET_PLAYER(ePlayer);
 
 	mov	ecx, DWORD PTR _ePlayer$[esp-4]
 	mov	eax, DWORD PTR fs:0
@@ -4656,7 +4661,7 @@ _szName$ = 20						; size = 4
 	push	__ehhandler$?ResponseRenameUnit@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@HPBD@Z
 	push	eax
 
-; 967  : 	CvUnit* pkUnit = kPlayer.getUnit(iUnitID);
+; 998  : 	CvUnit* pkUnit = kPlayer.getUnit(iUnitID);
 
 	mov	eax, DWORD PTR _iUnitID$[esp+8]
 	mov	DWORD PTR fs:0, esp
@@ -4667,13 +4672,13 @@ _szName$ = 20						; size = 4
 	call	?getUnit@CvPlayer@@QAEPAVCvUnit@@H@Z	; CvPlayer::getUnit
 	mov	esi, eax
 
-; 968  : 	if(pkUnit)
+; 999  : 	if(pkUnit)
 
 	test	esi, esi
 	je	SHORT $LN1@ResponseRe@2
 
-; 969  : 	{
-; 970  : 		CvString strName = szName;
+; 1000 : 	{
+; 1001 : 		CvString strName = szName;
 
 	mov	eax, DWORD PTR _szName$[esp+40]
 	test	eax, eax
@@ -4681,14 +4686,14 @@ _szName$ = 20						; size = 4
 	mov	eax, OFFSET ??_C@_00CNPNBAHC@?$AA@
 $LN11@ResponseRe@2:
 	push	eax
-	lea	ecx, DWORD PTR _strName$223326[esp+48]
+	lea	ecx, DWORD PTR _strName$223832[esp+48]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 
-; 971  : 		pkUnit->setName(strName);
+; 1002 : 		pkUnit->setName(strName);
 
 	sub	esp, 28					; 0000001cH
-	lea	edx, DWORD PTR _strName$223326[esp+72]
-	mov	DWORD PTR $T224401[esp+68], esp
+	lea	edx, DWORD PTR _strName$223832[esp+72]
+	mov	DWORD PTR $T224915[esp+68], esp
 	mov	ecx, esp
 	push	edx
 	mov	DWORD PTR __$EHRec$[esp+84], 0
@@ -4696,14 +4701,14 @@ $LN11@ResponseRe@2:
 	mov	ecx, esi
 	call	?setName@CvUnit@@QAEXVCvString@@@Z	; CvUnit::setName
 
-; 972  : 	}
+; 1003 : 	}
 
-	lea	ecx, DWORD PTR _strName$223326[esp+44]
+	lea	ecx, DWORD PTR _strName$223832[esp+44]
 	mov	DWORD PTR __$EHRec$[esp+52], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 $LN1@ResponseRe@2:
 
-; 973  : }
+; 1004 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+44]
 	mov	DWORD PTR fs:0, ecx
@@ -4714,7 +4719,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?ResponseRenameUnit@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@HPBD@Z$0:
-	lea	ecx, DWORD PTR _strName$223326[ebp]
+	lea	ecx, DWORD PTR _strName$223832[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?ResponseRenameUnit@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@HPBD@Z:
 	mov	eax, OFFSET __ehfuncinfo$?ResponseRenameUnit@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@HPBD@Z
@@ -4732,7 +4737,7 @@ _iUnitID$ = 20						; size = 4
 _bReturn$ = 24						; size = 1
 ?ResponseReturnCivilian@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@0H_N@Z PROC ; CvDllNetMessageHandler::ResponseReturnCivilian, COMDAT
 
-; 1041 : 	GET_PLAYER(ePlayer).DoCivilianReturnLogic(bReturn, eToPlayer, iUnitID);
+; 1072 : 	GET_PLAYER(ePlayer).DoCivilianReturnLogic(bReturn, eToPlayer, iUnitID);
 
 	mov	eax, DWORD PTR _iUnitID$[esp-4]
 	mov	ecx, DWORD PTR _eToPlayer$[esp-4]
@@ -4745,7 +4750,7 @@ _bReturn$ = 24						; size = 1
 	push	edx
 	call	?DoCivilianReturnLogic@CvPlayer@@QAEX_NW4PlayerTypes@@H@Z ; CvPlayer::DoCivilianReturnLogic
 
-; 1042 : }
+; 1073 : }
 
 	ret	20					; 00000014H
 ?ResponseReturnCivilian@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@0H_N@Z ENDP ; CvDllNetMessageHandler::ResponseReturnCivilian
@@ -4774,14 +4779,14 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 __$EHRec$ = -12						; size = 12
 _this$ = 8						; size = 4
-_bResult$223380 = 12					; size = 1
+_bResult$223886 = 12					; size = 1
 _ePlayer$ = 12						; size = 4
-_args$223379 = 16					; size = 4
+_args$223885 = 16					; size = 4
 _iCityID$ = 16						; size = 4
 _eBuilding$ = 20					; size = 4
 ?ResponseSellBuilding@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@HW4BuildingTypes@@@Z PROC ; CvDllNetMessageHandler::ResponseSellBuilding, COMDAT
 
-; 1045 : {
+; 1076 : {
 
 	mov	eax, DWORD PTR fs:0
 	push	-1
@@ -4790,7 +4795,7 @@ _eBuilding$ = 20					; size = 4
 	mov	DWORD PTR fs:0, esp
 	push	ebx
 
-; 1046 : 	CvCity* pCity = GET_PLAYER(ePlayer).getCity(iCityID);
+; 1077 : 	CvCity* pCity = GET_PLAYER(ePlayer).getCity(iCityID);
 
 	mov	ebx, DWORD PTR _ePlayer$[esp+12]
 	mov	ecx, ebx
@@ -4803,13 +4808,13 @@ _eBuilding$ = 20					; size = 4
 	push	ebp
 	call	?getCity@CvPlayer@@QAEPAVCvCity@@H@Z	; CvPlayer::getCity
 
-; 1047 : 	if(pCity)
+; 1078 : 	if(pCity)
 
 	test	eax, eax
 	je	$LN1@ResponseSe
 
-; 1048 : 	{
-; 1049 : 		pCity->GetCityBuildings()->DoSellBuilding(eBuilding);
+; 1079 : 	{
+; 1080 : 		pCity->GetCityBuildings()->DoSellBuilding(eBuilding);
 
 	mov	edi, DWORD PTR _eBuilding$[esp+24]
 	push	edi
@@ -4818,8 +4823,8 @@ _eBuilding$ = 20					; size = 4
 	mov	ecx, eax
 	call	?DoSellBuilding@CvCityBuildings@@QAEXW4BuildingTypes@@@Z ; CvCityBuildings::DoSellBuilding
 
-; 1050 : 
-; 1051 : 		ICvEngineScriptSystem1* pkScriptSystem = gDLL->GetScriptSystem();
+; 1081 : 
+; 1082 : 		ICvEngineScriptSystem1* pkScriptSystem = gDLL->GetScriptSystem();
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8564
 	mov	eax, DWORD PTR [ecx]
@@ -4827,64 +4832,64 @@ _eBuilding$ = 20					; size = 4
 	call	edx
 	mov	esi, eax
 
-; 1052 : 		if (pkScriptSystem) 
+; 1083 : 		if (pkScriptSystem) 
 
 	test	esi, esi
 	je	SHORT $LN1@ResponseSe
 
-; 1053 : 		{
-; 1054 : 			CvLuaArgsHandle args;
+; 1084 : 		{
+; 1085 : 			CvLuaArgsHandle args;
 
-	lea	ecx, DWORD PTR _args$223379[esp+24]
+	lea	ecx, DWORD PTR _args$223885[esp+24]
 	call	??0CvLuaArgsHandle@@QAE@XZ		; CvLuaArgsHandle::CvLuaArgsHandle
 
-; 1055 : 			args->Push(ePlayer);
+; 1086 : 			args->Push(ePlayer);
 
-	mov	ecx, DWORD PTR _args$223379[esp+24]
+	mov	ecx, DWORD PTR _args$223885[esp+24]
 	mov	eax, DWORD PTR [ecx]
 	mov	edx, DWORD PTR [eax+8]
 	push	ebx
 	mov	DWORD PTR __$EHRec$[esp+40], 0
 	call	edx
 
-; 1056 : 			args->Push(iCityID);
+; 1087 : 			args->Push(iCityID);
 
-	mov	ecx, DWORD PTR _args$223379[esp+24]
+	mov	ecx, DWORD PTR _args$223885[esp+24]
 	mov	eax, DWORD PTR [ecx]
 	mov	edx, DWORD PTR [eax+8]
 	push	ebp
 	call	edx
 
-; 1057 : 			args->Push(eBuilding);
+; 1088 : 			args->Push(eBuilding);
 
-	mov	ecx, DWORD PTR _args$223379[esp+24]
+	mov	ecx, DWORD PTR _args$223885[esp+24]
 	mov	eax, DWORD PTR [ecx]
 	mov	edx, DWORD PTR [eax+8]
 	push	edi
 	call	edx
 
-; 1058 : 
-; 1059 : 			bool bResult;
-; 1060 : 			LuaSupport::CallHook(pkScriptSystem, "CitySoldBuilding", args.get(), bResult);
+; 1089 : 
+; 1090 : 			bool bResult;
+; 1091 : 			LuaSupport::CallHook(pkScriptSystem, "CitySoldBuilding", args.get(), bResult);
 
-	mov	ecx, DWORD PTR _args$223379[esp+24]
-	lea	eax, DWORD PTR _bResult$223380[esp+24]
+	mov	ecx, DWORD PTR _args$223885[esp+24]
+	lea	eax, DWORD PTR _bResult$223886[esp+24]
 	push	eax
 	push	ecx
-	push	OFFSET $SG223381
+	push	OFFSET $SG223887
 	push	esi
 	call	?CallHook@LuaSupport@@YA_NPAVICvEngineScriptSystem1@@PBDPAVICvEngineScriptSystemArgs1@@AA_N@Z ; LuaSupport::CallHook
 	add	esp, 16					; 00000010H
 
-; 1061 : 		}
+; 1092 : 		}
 
-	lea	ecx, DWORD PTR _args$223379[esp+24]
+	lea	ecx, DWORD PTR _args$223885[esp+24]
 	mov	DWORD PTR __$EHRec$[esp+36], -1
 	call	??1CvLuaArgsHandle@@QAE@XZ		; CvLuaArgsHandle::~CvLuaArgsHandle
 $LN1@ResponseSe:
 
-; 1062 : 	}
-; 1063 : }
+; 1093 : 	}
+; 1094 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+28]
 	pop	edi
@@ -4898,7 +4903,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?ResponseSellBuilding@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@HW4BuildingTypes@@@Z$0:
-	lea	ecx, DWORD PTR _args$223379[ebp-4]
+	lea	ecx, DWORD PTR _args$223885[ebp-4]
 	jmp	??1CvLuaArgsHandle@@QAE@XZ		; CvLuaArgsHandle::~CvLuaArgsHandle
 __ehhandler$?ResponseSellBuilding@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@HW4BuildingTypes@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?ResponseSellBuilding@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@HW4BuildingTypes@@@Z
@@ -4915,7 +4920,7 @@ _iCityID$ = 16						; size = 4
 _eFocus$ = 20						; size = 4
 ?ResponseSetCityAIFocus@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@HW4CityAIFocusTypes@@@Z PROC ; CvDllNetMessageHandler::ResponseSetCityAIFocus, COMDAT
 
-; 1067 : 	CvCity* pCity = GET_PLAYER(ePlayer).getCity(iCityID);
+; 1098 : 	CvCity* pCity = GET_PLAYER(ePlayer).getCity(iCityID);
 
 	mov	ecx, DWORD PTR _ePlayer$[esp-4]
 	mov	eax, DWORD PTR _iCityID$[esp-4]
@@ -4924,24 +4929,24 @@ _eFocus$ = 20						; size = 4
 	push	eax
 	call	?getCity@CvPlayer@@QAEPAVCvCity@@H@Z	; CvPlayer::getCity
 
-; 1068 : 	if(pCity != NULL)
+; 1099 : 	if(pCity != NULL)
 
 	test	eax, eax
 	je	SHORT $LN1@ResponseSe@2
 
-; 1069 : 	{
-; 1070 : 		CvCityCitizens* pkCitizens = pCity->GetCityCitizens();
+; 1100 : 	{
+; 1101 : 		CvCityCitizens* pkCitizens = pCity->GetCityCitizens();
 
 	mov	ecx, eax
 	call	?GetCityCitizens@CvCity@@QBEPAVCvCityCitizens@@XZ ; CvCity::GetCityCitizens
 
-; 1071 : 		if(pkCitizens != NULL)
+; 1102 : 		if(pkCitizens != NULL)
 
 	test	eax, eax
 	je	SHORT $LN1@ResponseSe@2
 
-; 1072 : 		{
-; 1073 : 			pkCitizens->SetFocusType(eFocus);
+; 1103 : 		{
+; 1104 : 			pkCitizens->SetFocusType(eFocus);
 
 	mov	ecx, DWORD PTR _eFocus$[esp-4]
 	push	ecx
@@ -4949,9 +4954,9 @@ _eFocus$ = 20						; size = 4
 	call	?SetFocusType@CvCityCitizens@@QAEXW4CityAIFocusTypes@@@Z ; CvCityCitizens::SetFocusType
 $LN1@ResponseSe@2:
 
-; 1074 : 		}
-; 1075 : 	}
-; 1076 : }
+; 1105 : 		}
+; 1106 : 	}
+; 1107 : }
 
 	ret	16					; 00000010H
 ?ResponseSetCityAIFocus@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@HW4CityAIFocusTypes@@@Z ENDP ; CvDllNetMessageHandler::ResponseSetCityAIFocus
@@ -4966,7 +4971,7 @@ _iCityID$ = 16						; size = 4
 _bAvoidGrowth$ = 20					; size = 1
 ?ResponseSetCityAvoidGrowth@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@H_N@Z PROC ; CvDllNetMessageHandler::ResponseSetCityAvoidGrowth, COMDAT
 
-; 1080 : 	CvCity* pCity = GET_PLAYER(ePlayer).getCity(iCityID);
+; 1111 : 	CvCity* pCity = GET_PLAYER(ePlayer).getCity(iCityID);
 
 	mov	ecx, DWORD PTR _ePlayer$[esp-4]
 	mov	eax, DWORD PTR _iCityID$[esp-4]
@@ -4975,24 +4980,24 @@ _bAvoidGrowth$ = 20					; size = 1
 	push	eax
 	call	?getCity@CvPlayer@@QAEPAVCvCity@@H@Z	; CvPlayer::getCity
 
-; 1081 : 	if(pCity != NULL)
+; 1112 : 	if(pCity != NULL)
 
 	test	eax, eax
 	je	SHORT $LN1@ResponseSe@3
 
-; 1082 : 	{
-; 1083 : 		CvCityCitizens* pkCitizens = pCity->GetCityCitizens();
+; 1113 : 	{
+; 1114 : 		CvCityCitizens* pkCitizens = pCity->GetCityCitizens();
 
 	mov	ecx, eax
 	call	?GetCityCitizens@CvCity@@QBEPAVCvCityCitizens@@XZ ; CvCity::GetCityCitizens
 
-; 1084 : 		if(pkCitizens != NULL)
+; 1115 : 		if(pkCitizens != NULL)
 
 	test	eax, eax
 	je	SHORT $LN1@ResponseSe@3
 
-; 1085 : 		{
-; 1086 : 			pkCitizens->SetForcedAvoidGrowth(bAvoidGrowth);
+; 1116 : 		{
+; 1117 : 			pkCitizens->SetForcedAvoidGrowth(bAvoidGrowth);
 
 	mov	ecx, DWORD PTR _bAvoidGrowth$[esp-4]
 	push	ecx
@@ -5000,9 +5005,9 @@ _bAvoidGrowth$ = 20					; size = 1
 	call	?SetForcedAvoidGrowth@CvCityCitizens@@QAEX_N@Z ; CvCityCitizens::SetForcedAvoidGrowth
 $LN1@ResponseSe@3:
 
-; 1087 : 		}
-; 1088 : 	}
-; 1089 : }
+; 1118 : 		}
+; 1119 : 	}
+; 1120 : }
 
 	ret	16					; 00000010H
 ?ResponseSetCityAvoidGrowth@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@H_N@Z ENDP ; CvDllNetMessageHandler::ResponseSetCityAvoidGrowth
@@ -5017,7 +5022,7 @@ _ePlayer$ = 12						; size = 4
 _iCityID$ = 16						; size = 4
 ?ResponseUpdateCityCitizens@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@H@Z PROC ; CvDllNetMessageHandler::ResponseUpdateCityCitizens, COMDAT
 
-; 1137 : 	CvCity* pCity = GET_PLAYER(ePlayer).getCity(iCityID);
+; 1168 : 	CvCity* pCity = GET_PLAYER(ePlayer).getCity(iCityID);
 
 	mov	ecx, DWORD PTR _ePlayer$[esp-4]
 	mov	eax, DWORD PTR _iCityID$[esp-4]
@@ -5028,7 +5033,7 @@ _iCityID$ = 16						; size = 4
 	call	?getCity@CvPlayer@@QAEPAVCvCity@@H@Z	; CvPlayer::getCity
 	mov	esi, eax
 
-; 1138 : 	if(NULL != pCity && pCity->GetCityCitizens())
+; 1169 : 	if(NULL != pCity && pCity->GetCityCitizens())
 
 	test	esi, esi
 	je	SHORT $LN1@ResponseUp
@@ -5037,34 +5042,34 @@ _iCityID$ = 16						; size = 4
 	test	eax, eax
 	je	SHORT $LN1@ResponseUp
 
-; 1139 : 	{
-; 1140 : 		CvCityCitizens* pkCitizens = pCity->GetCityCitizens();
+; 1170 : 	{
+; 1171 : 		CvCityCitizens* pkCitizens = pCity->GetCityCitizens();
 
 	mov	ecx, esi
 	call	?GetCityCitizens@CvCity@@QBEPAVCvCityCitizens@@XZ ; CvCity::GetCityCitizens
 	mov	esi, eax
 
-; 1141 : 		if(pkCitizens != NULL)
+; 1172 : 		if(pkCitizens != NULL)
 
 	test	esi, esi
 	je	SHORT $LN1@ResponseUp
 
-; 1142 : 		{
-; 1143 : 			pkCitizens->DoVerifyWorkingPlots();
+; 1173 : 		{
+; 1174 : 			pkCitizens->DoVerifyWorkingPlots();
 
 	mov	ecx, esi
 	call	?DoVerifyWorkingPlots@CvCityCitizens@@QAEXXZ ; CvCityCitizens::DoVerifyWorkingPlots
 
-; 1144 : 			pkCitizens->DoReallocateCitizens();
+; 1175 : 			pkCitizens->DoReallocateCitizens();
 
 	mov	ecx, esi
 	call	?DoReallocateCitizens@CvCityCitizens@@QAEXXZ ; CvCityCitizens::DoReallocateCitizens
 $LN1@ResponseUp:
 	pop	esi
 
-; 1145 : 		}
-; 1146 : 	}
-; 1147 : }
+; 1176 : 		}
+; 1177 : 	}
+; 1178 : }
 
 	ret	12					; 0000000cH
 ?ResponseUpdateCityCitizens@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@H@Z ENDP ; CvDllNetMessageHandler::ResponseUpdateCityCitizens
@@ -5086,32 +5091,32 @@ _iPolicyID$ = 20					; size = 4
 _bValue$ = 24						; size = 1
 ?ResponseUpdatePolicies@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@_NH1@Z PROC ; CvDllNetMessageHandler::ResponseUpdatePolicies, COMDAT
 
-; 1150 : {
+; 1181 : {
 
 	push	esi
 
-; 1151 : 	CvPlayerAI& kPlayer = GET_PLAYER(ePlayer);
+; 1182 : 	CvPlayerAI& kPlayer = GET_PLAYER(ePlayer);
 
 	mov	esi, DWORD PTR _ePlayer$[esp]
 	imul	esi, 63236				; 0000f704H
 	add	esi, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 
-; 1152 : 
-; 1153 : 	// Policy Update
-; 1154 : 	if(bNOTPolicyBranch)
+; 1183 : 
+; 1184 : 	// Policy Update
+; 1185 : 	if(bNOTPolicyBranch)
 
 	cmp	BYTE PTR _bNOTPolicyBranch$[esp], 0
 	je	SHORT $LN7@ResponseUp@2
 
-; 1155 : 	{
-; 1156 : 		const PolicyTypes ePolicy = static_cast<PolicyTypes>(iPolicyID);
-; 1157 : 		if(bValue)
+; 1186 : 	{
+; 1187 : 		const PolicyTypes ePolicy = static_cast<PolicyTypes>(iPolicyID);
+; 1188 : 		if(bValue)
 
 	cmp	BYTE PTR _bValue$[esp], 0
 	je	SHORT $LN6@ResponseUp@2
 
-; 1158 : 		{
-; 1159 : 			kPlayer.doAdoptPolicy(ePolicy);
+; 1189 : 		{
+; 1190 : 			kPlayer.doAdoptPolicy(ePolicy);
 
 	mov	eax, DWORD PTR _iPolicyID$[esp]
 	push	eax
@@ -5119,17 +5124,17 @@ _bValue$ = 24						; size = 1
 	call	?doAdoptPolicy@CvPlayer@@QAEXW4PolicyTypes@@@Z ; CvPlayer::doAdoptPolicy
 	pop	esi
 
-; 1191 : 		}
-; 1192 : 	}
-; 1193 : }
+; 1222 : 		}
+; 1223 : 	}
+; 1224 : }
 
 	ret	20					; 00000014H
 $LN6@ResponseUp@2:
 
-; 1160 : 		}
-; 1161 : 		else
-; 1162 : 		{
-; 1163 : 			kPlayer.setHasPolicy(ePolicy, bValue);
+; 1191 : 		}
+; 1192 : 		else
+; 1193 : 		{
+; 1194 : 			kPlayer.setHasPolicy(ePolicy, bValue);
 
 	mov	ecx, DWORD PTR _iPolicyID$[esp]
 	push	0
@@ -5137,37 +5142,37 @@ $LN6@ResponseUp@2:
 	mov	ecx, esi
 	call	?setHasPolicy@CvPlayer@@QAEXW4PolicyTypes@@_N@Z ; CvPlayer::setHasPolicy
 
-; 1164 : 			kPlayer.DoUpdateHappiness();
+; 1195 : 			kPlayer.DoUpdateHappiness();
 
 	mov	ecx, esi
 	call	?DoUpdateHappiness@CvPlayer@@QAEXXZ	; CvPlayer::DoUpdateHappiness
 	pop	esi
 
-; 1191 : 		}
-; 1192 : 	}
-; 1193 : }
+; 1222 : 		}
+; 1223 : 	}
+; 1224 : }
 
 	ret	20					; 00000014H
 $LN7@ResponseUp@2:
 	push	edi
 
-; 1165 : #ifdef AUI_CITIZENS_MID_TURN_ASSIGN_RUNS_SELF_CONSISTENCY
-; 1166 : 			kPlayer.doSelfConsistencyCheckAllCities();
-; 1167 : #endif
-; 1168 : 		}
-; 1169 : 	}
-; 1170 : 	// Policy Branch Update
-; 1171 : 	else
-; 1172 : 	{
-; 1173 : 		const PolicyBranchTypes eBranch = static_cast<PolicyBranchTypes>(iPolicyID);
-; 1174 : 		CvPlayerPolicies* pPlayerPolicies = kPlayer.GetPlayerPolicies();
+; 1196 : #ifdef AUI_CITIZENS_MID_TURN_ASSIGN_RUNS_SELF_CONSISTENCY
+; 1197 : 			kPlayer.doSelfConsistencyCheckAllCities();
+; 1198 : #endif
+; 1199 : 		}
+; 1200 : 	}
+; 1201 : 	// Policy Branch Update
+; 1202 : 	else
+; 1203 : 	{
+; 1204 : 		const PolicyBranchTypes eBranch = static_cast<PolicyBranchTypes>(iPolicyID);
+; 1205 : 		CvPlayerPolicies* pPlayerPolicies = kPlayer.GetPlayerPolicies();
 
 	mov	ecx, esi
 	call	?GetPlayerPolicies@CvPlayer@@QBEPAVCvPlayerPolicies@@XZ ; CvPlayer::GetPlayerPolicies
 
-; 1175 : 
-; 1176 : 		// If Branch was blocked by another branch, then unblock this one - this may be the only thing this NetMessage does
-; 1177 : 		if(pPlayerPolicies->IsPolicyBranchBlocked(eBranch))
+; 1206 : 
+; 1207 : 		// If Branch was blocked by another branch, then unblock this one - this may be the only thing this NetMessage does
+; 1208 : 		if(pPlayerPolicies->IsPolicyBranchBlocked(eBranch))
 
 	mov	edi, DWORD PTR _iPolicyID$[esp+4]
 	mov	esi, eax
@@ -5177,9 +5182,9 @@ $LN7@ResponseUp@2:
 	test	al, al
 	je	SHORT $LN2@ResponseUp@2
 
-; 1178 : 		{
-; 1179 : 			// Can't switch to a Branch that's still locked. DoUnlockPolicyBranch below will handle this for us
-; 1180 : 			if(pPlayerPolicies->IsPolicyBranchUnlocked(eBranch))
+; 1209 : 		{
+; 1210 : 			// Can't switch to a Branch that's still locked. DoUnlockPolicyBranch below will handle this for us
+; 1211 : 			if(pPlayerPolicies->IsPolicyBranchUnlocked(eBranch))
 
 	push	edi
 	mov	ecx, esi
@@ -5187,20 +5192,20 @@ $LN7@ResponseUp@2:
 	test	al, al
 	je	SHORT $LN2@ResponseUp@2
 
-; 1181 : 			{
-; 1182 : 				//pPlayerPolicies->ChangePolicyBranchBlockedCount(eBranch, -1);
-; 1183 : 				pPlayerPolicies->DoSwitchToPolicyBranch(eBranch);
+; 1212 : 			{
+; 1213 : 				//pPlayerPolicies->ChangePolicyBranchBlockedCount(eBranch, -1);
+; 1214 : 				pPlayerPolicies->DoSwitchToPolicyBranch(eBranch);
 
 	push	edi
 	mov	ecx, esi
 	call	?DoSwitchToPolicyBranch@CvPlayerPolicies@@QAEXW4PolicyBranchTypes@@@Z ; CvPlayerPolicies::DoSwitchToPolicyBranch
 $LN2@ResponseUp@2:
 
-; 1184 : 			}
-; 1185 : 		}
-; 1186 : 
-; 1187 : 		// Unlock the branch if it hasn't been already
-; 1188 : 		if(!pPlayerPolicies->IsPolicyBranchUnlocked(eBranch))
+; 1215 : 			}
+; 1216 : 		}
+; 1217 : 
+; 1218 : 		// Unlock the branch if it hasn't been already
+; 1219 : 		if(!pPlayerPolicies->IsPolicyBranchUnlocked(eBranch))
 
 	push	edi
 	mov	ecx, esi
@@ -5208,8 +5213,8 @@ $LN2@ResponseUp@2:
 	test	al, al
 	jne	SHORT $LN12@ResponseUp@2
 
-; 1189 : 		{
-; 1190 : 			pPlayerPolicies->DoUnlockPolicyBranch(eBranch);
+; 1220 : 		{
+; 1221 : 			pPlayerPolicies->DoUnlockPolicyBranch(eBranch);
 
 	push	edi
 	mov	ecx, esi
@@ -5218,9 +5223,9 @@ $LN12@ResponseUp@2:
 	pop	edi
 	pop	esi
 
-; 1191 : 		}
-; 1192 : 	}
-; 1193 : }
+; 1222 : 		}
+; 1223 : 	}
+; 1224 : }
 
 	ret	20					; 00000014H
 ?ResponseUpdatePolicies@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@_NH1@Z ENDP ; CvDllNetMessageHandler::ResponseUpdatePolicies
@@ -5246,7 +5251,7 @@ xdata$x	ENDS
 ;	COMDAT ??$GetLocalizedText@PBD@@YA?AVCvString@@PBD0@Z
 _TEXT	SEGMENT
 _bytes$ = -100						; size = 4
-$T224499 = -96						; size = 4
+$T225013 = -96						; size = 4
 _text$ = -92						; size = 80
 __$EHRec$ = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
@@ -5274,7 +5279,7 @@ _arg1$ = 16						; size = 4
 	xor	ebx, ebx
 	push	ecx
 	mov	DWORD PTR __$EHRec$[esp+128], ebx
-	mov	DWORD PTR $T224499[esp+120], ebx
+	mov	DWORD PTR $T225013[esp+120], ebx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
 
@@ -5311,7 +5316,7 @@ _arg1$ = 16						; size = 4
 	push	ecx
 	push	edi
 	mov	ecx, esi
-	mov	DWORD PTR $T224499[esp+120], 1
+	mov	DWORD PTR $T225013[esp+120], 1
 	call	DWORD PTR __imp_?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBDI@Z
 	lea	ecx, DWORD PTR _text$[esp+112]
 	mov	BYTE PTR __$EHRec$[esp+120], bl
@@ -5334,10 +5339,10 @@ __unwindfunclet$??$GetLocalizedText@PBD@@YA?AVCvString@@PBD0@Z$0:
 	lea	ecx, DWORD PTR _text$[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$??$GetLocalizedText@PBD@@YA?AVCvString@@PBD0@Z$1:
-	mov	eax, DWORD PTR $T224499[ebp]
+	mov	eax, DWORD PTR $T225013[ebp]
 	and	eax, 1
 	je	$LN5@GetLocaliz@2
-	and	DWORD PTR $T224499[ebp], -2		; fffffffeH
+	and	DWORD PTR $T225013[ebp], -2		; fffffffeH
 	mov	ecx, DWORD PTR ___$ReturnUdt$[ebp-4]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 $LN5@GetLocaliz@2:
@@ -5347,6 +5352,136 @@ __ehhandler$??$GetLocalizedText@PBD@@YA?AVCvString@@PBD0@Z:
 	jmp	___CxxFrameHandler3
 text$x	ENDS
 ??$GetLocalizedText@PBD@@YA?AVCvString@@PBD0@Z ENDP	; GetLocalizedText<char const *>
+PUBLIC	??$GetLocalizedText@PBDPBD@@YA?AVCvString@@PBDABQBD1@Z ; GetLocalizedText<char const *,char const *>
+;	COMDAT xdata$x
+; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredllutil\include\cvstring.h
+xdata$x	SEGMENT
+__unwindtable$??$GetLocalizedText@PBDPBD@@YA?AVCvString@@PBDABQBD1@Z DD 0ffffffffH
+	DD	FLAT:__unwindfunclet$??$GetLocalizedText@PBDPBD@@YA?AVCvString@@PBDABQBD1@Z$1
+	DD	00H
+	DD	FLAT:__unwindfunclet$??$GetLocalizedText@PBDPBD@@YA?AVCvString@@PBDABQBD1@Z$0
+__ehfuncinfo$??$GetLocalizedText@PBDPBD@@YA?AVCvString@@PBDABQBD1@Z DD 019930522H
+	DD	02H
+	DD	FLAT:__unwindtable$??$GetLocalizedText@PBDPBD@@YA?AVCvString@@PBDABQBD1@Z
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	01H
+; Function compile flags: /Ogtpy
+; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredll_expansion2\cvgamecoreutils.h
+xdata$x	ENDS
+;	COMDAT ??$GetLocalizedText@PBDPBD@@YA?AVCvString@@PBDABQBD1@Z
+_TEXT	SEGMENT
+_bytes$ = -100						; size = 4
+$T225033 = -96						; size = 4
+_text$ = -92						; size = 80
+__$EHRec$ = -12						; size = 12
+___$ReturnUdt$ = 8					; size = 4
+_szString$ = 12						; size = 4
+_arg1$ = 16						; size = 4
+_arg2$ = 20						; size = 4
+??$GetLocalizedText@PBDPBD@@YA?AVCvString@@PBDABQBD1@Z PROC ; GetLocalizedText<char const *,char const *>, COMDAT
+
+; 514  : {
+
+	push	-1
+	push	__ehhandler$??$GetLocalizedText@PBDPBD@@YA?AVCvString@@PBDABQBD1@Z
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	mov	DWORD PTR fs:0, esp
+	sub	esp, 88					; 00000058H
+
+; 515  : 	Localization::String text = Localization::Lookup(szString);
+
+	mov	eax, DWORD PTR _szString$[esp+96]
+	push	ebx
+	push	esi
+	push	edi
+	push	eax
+	lea	ecx, DWORD PTR _text$[esp+116]
+	xor	ebx, ebx
+	push	ecx
+	mov	DWORD PTR __$EHRec$[esp+128], ebx
+	mov	DWORD PTR $T225033[esp+120], ebx
+	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
+	add	esp, 8
+
+; 516  : 	text << arg1 << arg2;
+
+	mov	edx, DWORD PTR _arg1$[esp+108]
+	mov	eax, DWORD PTR [edx]
+	mov	esi, DWORD PTR __imp_?PushArgument@String@Localization@@QAE_NPBD@Z
+	push	eax
+	lea	ecx, DWORD PTR _text$[esp+116]
+	mov	DWORD PTR __$EHRec$[esp+124], 1
+	call	esi
+	mov	ecx, DWORD PTR _arg2$[esp+108]
+	mov	edx, DWORD PTR [ecx]
+	push	edx
+	lea	ecx, DWORD PTR _text$[esp+116]
+	call	esi
+
+; 517  : 
+; 518  : 	size_t bytes = 0;
+; 519  : 	const char* szComposedString = text.toUTF8(bytes);
+
+	push	1
+	lea	eax, DWORD PTR _bytes$[esp+116]
+	push	eax
+	lea	ecx, DWORD PTR _text$[esp+120]
+	mov	DWORD PTR _bytes$[esp+120], ebx
+	call	DWORD PTR __imp_?toUTF8@String@Localization@@QAEPBDAAIH@Z
+
+; 520  : 	CvString str;
+
+	mov	esi, DWORD PTR ___$ReturnUdt$[esp+108]
+	mov	ecx, esi
+	mov	edi, eax
+	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
+
+; 521  : 	str.assign(szComposedString, bytes);
+; 522  : 	return str;
+
+	mov	ecx, DWORD PTR _bytes$[esp+112]
+	push	ecx
+	push	edi
+	mov	ecx, esi
+	mov	DWORD PTR $T225033[esp+120], 1
+	call	DWORD PTR __imp_?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBDI@Z
+	lea	ecx, DWORD PTR _text$[esp+112]
+	mov	BYTE PTR __$EHRec$[esp+120], bl
+	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
+
+; 523  : }
+
+	mov	ecx, DWORD PTR __$EHRec$[esp+112]
+	pop	edi
+	mov	eax, esi
+	pop	esi
+	pop	ebx
+	mov	DWORD PTR fs:0, ecx
+	add	esp, 100				; 00000064H
+	ret	0
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__unwindfunclet$??$GetLocalizedText@PBDPBD@@YA?AVCvString@@PBDABQBD1@Z$0:
+	lea	ecx, DWORD PTR _text$[ebp]
+	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
+__unwindfunclet$??$GetLocalizedText@PBDPBD@@YA?AVCvString@@PBDABQBD1@Z$1:
+	mov	eax, DWORD PTR $T225033[ebp]
+	and	eax, 1
+	je	$LN5@GetLocaliz@3
+	and	DWORD PTR $T225033[ebp], -2		; fffffffeH
+	mov	ecx, DWORD PTR ___$ReturnUdt$[ebp-4]
+	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
+$LN5@GetLocaliz@3:
+	ret	0
+__ehhandler$??$GetLocalizedText@PBDPBD@@YA?AVCvString@@PBDABQBD1@Z:
+	mov	eax, OFFSET __ehfuncinfo$??$GetLocalizedText@PBDPBD@@YA?AVCvString@@PBDABQBD1@Z
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+??$GetLocalizedText@PBDPBD@@YA?AVCvString@@PBDABQBD1@Z ENDP ; GetLocalizedText<char const *,char const *>
 EXTRN	?sr_TeamTypes@CvPreGame@@3ABV?$vector@W4TeamTypes@@V?$allocator@W4TeamTypes@@@std@@@std@@B:DWORD ; CvPreGame::sr_TeamTypes
 ; Function compile flags: /Ogtpy
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredll_expansion2\cvpregame.h
@@ -6104,8 +6239,8 @@ xdata$x	ENDS
 ;	COMDAT ?ResponseFoundReligion@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@W4ReligionTypes@@PBDW4BeliefTypes@@333HH@Z
 _TEXT	SEGMENT
 _pkGameReligions$ = -72					; size = 4
-_strSummary$222926 = -68				; size = 28
-_strBuffer$222923 = -40					; size = 28
+_strSummary$223403 = -68				; size = 28
+_strBuffer$223400 = -40					; size = 28
 __$EHRec$ = -12						; size = 12
 _this$ = 8						; size = 4
 _ePlayer$ = 12						; size = 4
@@ -6342,15 +6477,15 @@ $LN4@ResponseFo@2:
 ; 371  : 				{
 ; 372  : 					CvString strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_FOUND_RELIGION");
 
-	lea	eax, DWORD PTR _strBuffer$222923[esp+88]
-	push	OFFSET $SG222925
+	lea	eax, DWORD PTR _strBuffer$223400[esp+88]
+	push	OFFSET $SG223402
 	push	eax
 	call	?GetLocalizedText@@YA?AVCvString@@PBD@Z	; GetLocalizedText
 
 ; 373  : 					CvString strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_FOUND_RELIGION");
 
-	lea	ecx, DWORD PTR _strSummary$222926[esp+96]
-	push	OFFSET $SG222928
+	lea	ecx, DWORD PTR _strSummary$223403[esp+96]
+	push	OFFSET $SG223405
 	push	ecx
 	mov	DWORD PTR __$EHRec$[esp+112], 0
 	call	?GetLocalizedText@@YA?AVCvString@@PBD@Z	; GetLocalizedText
@@ -6359,7 +6494,7 @@ $LN4@ResponseFo@2:
 ; 374  : 					pNotifications->Add(NOTIFICATION_FOUND_RELIGION, strBuffer, strSummary, iCityX, iCityY, -1, pkCity->GetID());
 
 	mov	edi, DWORD PTR [edi+120]
-	lea	ecx, DWORD PTR _strSummary$222926[esp+88]
+	lea	ecx, DWORD PTR _strSummary$223403[esp+88]
 	mov	BYTE PTR __$EHRec$[esp+96], bl
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	mov	edx, DWORD PTR _iCityY$[esp+84]
@@ -6369,7 +6504,7 @@ $LN4@ResponseFo@2:
 	push	edx
 	push	ecx
 	push	eax
-	lea	ecx, DWORD PTR _strBuffer$222923[esp+108]
+	lea	ecx, DWORD PTR _strBuffer$223400[esp+108]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
 	push	2128612861				; 7ee00dfdH
@@ -6378,10 +6513,10 @@ $LN4@ResponseFo@2:
 
 ; 375  : 				}
 
-	lea	ecx, DWORD PTR _strSummary$222926[esp+88]
+	lea	ecx, DWORD PTR _strSummary$223403[esp+88]
 	mov	BYTE PTR __$EHRec$[esp+96], 0
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR _strBuffer$222923[esp+88]
+	lea	ecx, DWORD PTR _strBuffer$223400[esp+88]
 	mov	DWORD PTR __$EHRec$[esp+96], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 $LN1@ResponseFo@2:
@@ -6420,10 +6555,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?ResponseFoundReligion@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@W4ReligionTypes@@PBDW4BeliefTypes@@333HH@Z$0:
-	lea	ecx, DWORD PTR _strBuffer$222923[ebp]
+	lea	ecx, DWORD PTR _strBuffer$223400[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?ResponseFoundReligion@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@W4ReligionTypes@@PBDW4BeliefTypes@@333HH@Z$1:
-	lea	ecx, DWORD PTR _strSummary$222926[ebp]
+	lea	ecx, DWORD PTR _strSummary$223403[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?ResponseFoundReligion@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@W4ReligionTypes@@PBDW4BeliefTypes@@333HH@Z:
 	mov	eax, OFFSET __ehfuncinfo$?ResponseFoundReligion@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@W4ReligionTypes@@PBDW4BeliefTypes@@333HH@Z
@@ -6451,8 +6586,8 @@ __ehfuncinfo$?ResponseEnhanceReligion@CvDllNetMessageHandler@@UAGXW4PlayerTypes@
 xdata$x	ENDS
 ;	COMDAT ?ResponseEnhanceReligion@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@W4ReligionTypes@@PBDW4BeliefTypes@@3HH@Z
 _TEXT	SEGMENT
-_strSummary$222952 = -68				; size = 28
-_strBuffer$222949 = -40					; size = 28
+_strSummary$223429 = -68				; size = 28
+_strBuffer$223426 = -40					; size = 28
 __$EHRec$ = -12						; size = 12
 _this$ = 8						; size = 4
 _ePlayer$ = 12						; size = 4
@@ -6667,15 +6802,15 @@ $LN52@ResponseEn:
 ; 418  : 			{
 ; 419  : 				CvString strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_ENHANCE_RELIGION");
 
-	lea	eax, DWORD PTR _strBuffer$222949[esp+84]
-	push	OFFSET $SG222951
+	lea	eax, DWORD PTR _strBuffer$223426[esp+84]
+	push	OFFSET $SG223428
 	push	eax
 	call	?GetLocalizedText@@YA?AVCvString@@PBD@Z	; GetLocalizedText
 
 ; 420  : 				CvString strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_ENHANCE_RELIGION");
 
-	lea	ecx, DWORD PTR _strSummary$222952[esp+92]
-	push	OFFSET $SG222954
+	lea	ecx, DWORD PTR _strSummary$223429[esp+92]
+	push	OFFSET $SG223431
 	push	ecx
 	mov	DWORD PTR __$EHRec$[esp+108], 0
 	call	?GetLocalizedText@@YA?AVCvString@@PBD@Z	; GetLocalizedText
@@ -6684,7 +6819,7 @@ $LN52@ResponseEn:
 ; 421  : 				pNotifications->Add(NOTIFICATION_ENHANCE_RELIGION, strBuffer, strSummary, iCityX, iCityY, -1, pkCity->GetID());
 
 	mov	esi, DWORD PTR [esi+120]
-	lea	ecx, DWORD PTR _strSummary$222952[esp+84]
+	lea	ecx, DWORD PTR _strSummary$223429[esp+84]
 	mov	BYTE PTR __$EHRec$[esp+92], bl
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	mov	edx, DWORD PTR _iCityY$[esp+80]
@@ -6694,7 +6829,7 @@ $LN52@ResponseEn:
 	push	edx
 	push	ecx
 	push	eax
-	lea	ecx, DWORD PTR _strBuffer$222949[esp+104]
+	lea	ecx, DWORD PTR _strBuffer$223426[esp+104]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
 	push	-372818113				; e9c73f3fH
@@ -6703,10 +6838,10 @@ $LN52@ResponseEn:
 
 ; 422  : 			}
 
-	lea	ecx, DWORD PTR _strSummary$222952[esp+84]
+	lea	ecx, DWORD PTR _strSummary$223429[esp+84]
 	mov	BYTE PTR __$EHRec$[esp+92], 0
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR _strBuffer$222949[esp+84]
+	lea	ecx, DWORD PTR _strBuffer$223426[esp+84]
 	mov	DWORD PTR __$EHRec$[esp+92], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 $LN1@ResponseEn:
@@ -6744,10 +6879,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?ResponseEnhanceReligion@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@W4ReligionTypes@@PBDW4BeliefTypes@@3HH@Z$0:
-	lea	ecx, DWORD PTR _strBuffer$222949[ebp]
+	lea	ecx, DWORD PTR _strBuffer$223426[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?ResponseEnhanceReligion@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@W4ReligionTypes@@PBDW4BeliefTypes@@3HH@Z$1:
-	lea	ecx, DWORD PTR _strSummary$222952[ebp]
+	lea	ecx, DWORD PTR _strSummary$223429[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?ResponseEnhanceReligion@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@W4ReligionTypes@@PBDW4BeliefTypes@@3HH@Z:
 	mov	eax, OFFSET __ehfuncinfo$?ResponseEnhanceReligion@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@W4ReligionTypes@@PBDW4BeliefTypes@@3HH@Z
@@ -6795,7 +6930,7 @@ _iWorkIndex$ = 20					; size = 4
 ; 633  : 			if (iWorkClass == GC.getInfoTypeForString("GREAT_WORK_ARTIFACT"))
 
 	push	0
-	push	OFFSET $SG223045
+	push	OFFSET $SG223522
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	edi, DWORD PTR _iWorkClass$[esp+4]
@@ -6818,7 +6953,7 @@ $LN16@ResponseSe@4:
 ; 637  : 			else if (iWorkClass == GC.getInfoTypeForString("GREAT_WORK_ART"))
 
 	push	0
-	push	OFFSET $SG223048
+	push	OFFSET $SG223525
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	cmp	edi, eax
@@ -6840,7 +6975,7 @@ $LN14@ResponseSe@4:
 ; 641  : 			else if (iWorkClass == GC.getInfoTypeForString("GREAT_WORK_LITERATURE"))
 
 	push	0
-	push	OFFSET $SG223051
+	push	OFFSET $SG223528
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	cmp	edi, eax
@@ -6862,7 +6997,7 @@ $LN12@ResponseSe@4:
 ; 645  : 			else if (iWorkClass == GC.getInfoTypeForString("GREAT_WORK_MUSIC"))
 
 	push	0
-	push	OFFSET $SG223054
+	push	OFFSET $SG223531
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	cmp	edi, eax
@@ -6901,7 +7036,7 @@ $LN17@ResponseSe@4:
 ; 655  : 				if (iWorkClass == GC.getInfoTypeForString("GREAT_WORK_ARTIFACT"))
 
 	push	0
-	push	OFFSET $SG223058
+	push	OFFSET $SG223535
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	ebx, DWORD PTR _iWorkClass$[esp+8]
@@ -6924,7 +7059,7 @@ $LN7@ResponseSe@4:
 ; 659  : 				else if (iWorkClass == GC.getInfoTypeForString("GREAT_WORK_ART"))
 
 	push	0
-	push	OFFSET $SG223061
+	push	OFFSET $SG223538
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	cmp	ebx, eax
@@ -6946,7 +7081,7 @@ $LN5@ResponseSe@4:
 ; 663  : 				else if (iWorkClass == GC.getInfoTypeForString("GREAT_WORK_LITERATURE"))
 
 	push	0
-	push	OFFSET $SG223064
+	push	OFFSET $SG223541
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	cmp	ebx, eax
@@ -6968,7 +7103,7 @@ $LN3@ResponseSe@4:
 ; 667  : 				else if (iWorkClass == GC.getInfoTypeForString("GREAT_WORK_MUSIC"))
 
 	push	0
-	push	OFFSET $SG223067
+	push	OFFSET $SG223544
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	cmp	ebx, eax
@@ -7071,16 +7206,25 @@ $LN1@ResponseCh@2:
 ?ResponseChangeIdeology@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@@Z ENDP ; CvDllNetMessageHandler::ResponseChangeIdeology
 _TEXT	ENDS
 EXTRN	?DoDistanceGift@CvPlayer@@QAEXW4PlayerTypes@@PAVCvUnit@@@Z:PROC ; CvPlayer::DoDistanceGift
+EXTRN	?resetTurnTimer@CvGame@@QAEX_N@Z:PROC		; CvGame::resetTurnTimer
+EXTRN	?DoVote@CvMPVotingSystem@@QAEXHW4PlayerTypes@@_N@Z:PROC ; CvMPVotingSystem::DoVote
 EXTRN	?activePlayer@CvPreGame@@YA?AW4PlayerTypes@@XZ:PROC ; CvPreGame::activePlayer
 EXTRN	?getName@CvPlayer@@QBEPBDXZ:PROC		; CvPlayer::getName
-EXTRN	?resetTurnTimer@CvGame@@QAEX_N@Z:PROC		; CvGame::resetTurnTimer
+EXTRN	?AddProposal@CvMPVotingSystem@@QAEXW4MPVotingSystemProposalTypes@@W4PlayerTypes@@1@Z:PROC ; CvMPVotingSystem::AddProposal
+EXTRN	?GetMPVotingSystem@CvGame@@QAEPAVCvMPVotingSystem@@XZ:PROC ; CvGame::GetMPVotingSystem
 ;	COMDAT xdata$x
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredll_expansion2\cvplayerai.h
 xdata$x	SEGMENT
 __unwindtable$?ResponseGiftUnit@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@0H@Z DD 0ffffffffH
 	DD	FLAT:__unwindfunclet$?ResponseGiftUnit@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@0H@Z$0
+	DD	0ffffffffH
+	DD	FLAT:__unwindfunclet$?ResponseGiftUnit@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@0H@Z$1
+	DD	0ffffffffH
+	DD	FLAT:__unwindfunclet$?ResponseGiftUnit@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@0H@Z$2
+	DD	0ffffffffH
+	DD	FLAT:__unwindfunclet$?ResponseGiftUnit@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@0H@Z$3
 __ehfuncinfo$?ResponseGiftUnit@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@0H@Z DD 019930522H
-	DD	01H
+	DD	04H
 	DD	FLAT:__unwindtable$?ResponseGiftUnit@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@0H@Z
 	DD	2 DUP(00H)
 	DD	2 DUP(00H)
@@ -7091,7 +7235,12 @@ __ehfuncinfo$?ResponseGiftUnit@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@0H@Z D
 xdata$x	ENDS
 ;	COMDAT ?ResponseGiftUnit@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@0H@Z
 _TEXT	SEGMENT
-$T225370 = -40						; size = 28
+$T225908 = -132						; size = 4
+$T225909 = -128						; size = 4
+$T225907 = -124						; size = 28
+$T225910 = -96						; size = 28
+$T225911 = -68						; size = 28
+$T225912 = -40						; size = 28
 __$EHRec$ = -12						; size = 12
 _this$ = 8						; size = 4
 _ePlayer$ = 12						; size = 4
@@ -7105,40 +7254,270 @@ _iUnitID$ = 20						; size = 4
 	push	-1
 	push	__ehhandler$?ResponseGiftUnit@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@0H@Z
 	push	eax
-
-; 705  : #ifdef TURN_TIMER_RESET_BUTTON
-; 706  : 	// here we intercept response, when UnitID equals -1 we agree to reset timer
-; 707  : 	if (iUnitID == -1) {
-
-	mov	eax, DWORD PTR _iUnitID$[esp+8]
 	mov	DWORD PTR fs:0, esp
-	sub	esp, 28					; 0000001cH
+	sub	esp, 120				; 00000078H
 	push	esi
+	push	edi
+
+; 705  : #ifdef MP_PLAYERS_VOTING_SYSTEM
+; 706  : 	// -2 -- irr
+; 707  : 	// -3 -- cc
+; 708  : 	// -4 -- scrap
+; 709  : 	// -5 -- vote yes
+; 710  : 	// -6 -- vote no
+; 711  : 	CvGame& game = GC.getGame();
+
+	mov	edi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
+
+; 712  : 	CvMPVotingSystem* pkMPVotingSystem = game.GetMPVotingSystem();
+
+	mov	ecx, edi
+	call	?GetMPVotingSystem@CvGame@@QAEPAVCvMPVotingSystem@@XZ ; CvGame::GetMPVotingSystem
+	mov	ecx, eax
+
+; 713  : 	switch (iUnitID) {
+
+	mov	eax, DWORD PTR _iUnitID$[esp+136]
+	lea	edx, DWORD PTR [eax+6]
+	cmp	edx, 4
+	ja	$LN3@ResponseGi
+	jmp	DWORD PTR $LN72@ResponseGi[edx*4]
+$LN8@ResponseGi:
+
+; 714  : 	case -2:
+; 715  : 		game.GetMPVotingSystem()->AddProposal(PROPOSAL_IRR, ePlayer, ePlayer);
+
+	mov	esi, DWORD PTR _ePlayer$[esp+136]
+	push	esi
+	push	esi
+	push	0
+	mov	ecx, edi
+	call	?GetMPVotingSystem@CvGame@@QAEPAVCvMPVotingSystem@@XZ ; CvGame::GetMPVotingSystem
+	mov	ecx, eax
+	call	?AddProposal@CvMPVotingSystem@@QAEXW4MPVotingSystemProposalTypes@@W4PlayerTypes@@1@Z ; CvMPVotingSystem::AddProposal
+
+; 716  : 		DLLUI->AddMessage(0, CvPreGame::activePlayer(), true, GC.getEVENT_MESSAGE_TIME(), GetLocalizedText("TXT_KEY_MP_MESSAGE_PROPOSED_IRR", GET_PLAYER(ePlayer).getName()).GetCString());
+
+	imul	esi, 63236				; 0000f704H
+	add	esi, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
+	mov	edi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
+	mov	ecx, esi
+	call	?getName@CvPlayer@@QBEPBDXZ		; CvPlayer::getName
+	push	eax
+	lea	eax, DWORD PTR $T225907[esp+144]
+	push	OFFSET $SG223588
+	push	eax
+	call	??$GetLocalizedText@PBD@@YA?AVCvString@@PBD0@Z ; GetLocalizedText<char const *>
+	add	esp, 12					; 0000000cH
+	mov	ecx, eax
+	mov	DWORD PTR __$EHRec$[esp+148], 0
+	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+6176
+	mov	esi, DWORD PTR [edi]
+	push	0
+	push	0
+	push	-1
+	push	-1
+	push	-1
+	push	0
+	push	0
+	push	0
+	push	eax
+	push	ecx
+	push	1
+	call	?activePlayer@CvPreGame@@YA?AW4PlayerTypes@@XZ ; CvPreGame::activePlayer
+	mov	edx, DWORD PTR [esi+160]
+	push	eax
+	push	0
+	mov	ecx, edi
+	call	edx
+	lea	ecx, DWORD PTR $T225907[esp+140]
+	mov	DWORD PTR __$EHRec$[esp+148], -1
+	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
+
+; 717  : 		return;
+
+	jmp	$LN1@ResponseGi
+$LN7@ResponseGi:
+
+; 718  : 	case -3:
+; 719  : 		pkMPVotingSystem->AddProposal(PROPOSAL_CC, ePlayer, eMinor);
+
+	mov	esi, DWORD PTR _eMinor$[esp+136]
+	mov	edi, DWORD PTR _ePlayer$[esp+136]
+	push	esi
+	push	edi
+	push	1
+	call	?AddProposal@CvMPVotingSystem@@QAEXW4MPVotingSystemProposalTypes@@W4PlayerTypes@@1@Z ; CvMPVotingSystem::AddProposal
+
+; 720  : 		DLLUI->AddMessage(0, CvPreGame::activePlayer(), true, GC.getEVENT_MESSAGE_TIME(), GetLocalizedText("TXT_KEY_MP_MESSAGE_PROPOSED_CC", GET_PLAYER(ePlayer).getName(), GET_PLAYER(eMinor).getName()).GetCString());
+
+	imul	esi, 63236				; 0000f704H
+	add	esi, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
+	mov	ecx, esi
+	call	?getName@CvPlayer@@QBEPBDXZ		; CvPlayer::getName
+	imul	edi, 63236				; 0000f704H
+	add	edi, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
+	mov	DWORD PTR $T225908[esp+140], eax
+	mov	ecx, edi
+	call	?getName@CvPlayer@@QBEPBDXZ		; CvPlayer::getName
+	mov	esi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
+	mov	DWORD PTR $T225909[esp+140], eax
+	lea	eax, DWORD PTR $T225908[esp+140]
+	push	eax
+	lea	ecx, DWORD PTR $T225909[esp+144]
+	push	ecx
+	lea	edx, DWORD PTR $T225910[esp+148]
+	push	OFFSET $SG223600
+	push	edx
+	call	??$GetLocalizedText@PBDPBD@@YA?AVCvString@@PBDABQBD1@Z ; GetLocalizedText<char const *,char const *>
+	add	esp, 16					; 00000010H
+	mov	ecx, eax
+	mov	DWORD PTR __$EHRec$[esp+148], 1
+	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
+	mov	edi, DWORD PTR [esi]
+	push	0
+	push	0
+	push	-1
+	push	-1
+	push	-1
+	push	0
+	push	0
+	push	0
+	push	eax
+	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+6176
+	push	eax
+	push	1
+	call	?activePlayer@CvPreGame@@YA?AW4PlayerTypes@@XZ ; CvPreGame::activePlayer
+	mov	edx, DWORD PTR [edi+160]
+	push	eax
+	push	0
+	mov	ecx, esi
+	call	edx
+	lea	ecx, DWORD PTR $T225910[esp+140]
+	mov	DWORD PTR __$EHRec$[esp+148], -1
+	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
+
+; 721  : 		return;
+
+	jmp	$LN1@ResponseGi
+$LN6@ResponseGi:
+
+; 722  : 	case -4:
+; 723  : 		pkMPVotingSystem->AddProposal(PROPOSAL_SCRAP, ePlayer, NO_PLAYER);
+
+	mov	esi, DWORD PTR _ePlayer$[esp+136]
+	push	-1
+	push	esi
+	push	2
+	call	?AddProposal@CvMPVotingSystem@@QAEXW4MPVotingSystemProposalTypes@@W4PlayerTypes@@1@Z ; CvMPVotingSystem::AddProposal
+
+; 724  : 		DLLUI->AddMessage(0, CvPreGame::activePlayer(), true, GC.getEVENT_MESSAGE_TIME(), GetLocalizedText("TXT_KEY_MP_MESSAGE_PROPOSED_SCRAP", GET_PLAYER(ePlayer).getName()).GetCString());
+
+	imul	esi, 63236				; 0000f704H
+	add	esi, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
+	mov	edi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
+	mov	ecx, esi
+	call	?getName@CvPlayer@@QBEPBDXZ		; CvPlayer::getName
+	push	eax
+	lea	eax, DWORD PTR $T225911[esp+144]
+	push	OFFSET $SG223603
+	push	eax
+	call	??$GetLocalizedText@PBD@@YA?AVCvString@@PBD0@Z ; GetLocalizedText<char const *>
+	add	esp, 12					; 0000000cH
+	mov	ecx, eax
+	mov	DWORD PTR __$EHRec$[esp+148], 2
+	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+6176
+	mov	esi, DWORD PTR [edi]
+	push	0
+	push	0
+	push	-1
+	push	-1
+	push	-1
+	push	0
+	push	0
+	push	0
+	push	eax
+	push	ecx
+	push	1
+	call	?activePlayer@CvPreGame@@YA?AW4PlayerTypes@@XZ ; CvPreGame::activePlayer
+	mov	edx, DWORD PTR [esi+160]
+	push	eax
+	push	0
+	mov	ecx, edi
+	call	edx
+	lea	ecx, DWORD PTR $T225911[esp+140]
+	mov	DWORD PTR __$EHRec$[esp+148], -1
+	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
+
+; 725  : 		return;
+
+	jmp	$LN1@ResponseGi
+$LN5@ResponseGi:
+
+; 726  : 	case -5:
+; 727  : 		pkMPVotingSystem->DoVote((int)eMinor, ePlayer, true);
+
+	mov	eax, DWORD PTR _ePlayer$[esp+136]
+	mov	edx, DWORD PTR _eMinor$[esp+136]
+	push	1
+	push	eax
+	push	edx
+	call	?DoVote@CvMPVotingSystem@@QAEXHW4PlayerTypes@@_N@Z ; CvMPVotingSystem::DoVote
+
+; 728  : 		return;
+
+	jmp	$LN1@ResponseGi
+$LN4@ResponseGi:
+
+; 729  : 	case -6:
+; 730  : 		pkMPVotingSystem->DoVote((int)eMinor, ePlayer, false);
+
+	mov	eax, DWORD PTR _ePlayer$[esp+136]
+	mov	edx, DWORD PTR _eMinor$[esp+136]
+	push	0
+	push	eax
+	push	edx
+	call	?DoVote@CvMPVotingSystem@@QAEXHW4PlayerTypes@@_N@Z ; CvMPVotingSystem::DoVote
+
+; 731  : 		return;
+
+	jmp	$LN1@ResponseGi
+$LN3@ResponseGi:
+
+; 732  : 	default:
+; 733  : 		break;
+; 734  : 	}
+; 735  : #endif
+; 736  : #ifdef TURN_TIMER_RESET_BUTTON
+; 737  : 	// here we intercept response, when UnitID equals -1 we agree to reset timer
+; 738  : 	if (iUnitID == -1) {
+
 	cmp	eax, -1
 	jne	$LN2@ResponseGi
 
-; 708  : 		GC.getGame().resetTurnTimer(true);
+; 739  : 		GC.getGame().resetTurnTimer(true);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
-	push	edi
 	push	1
 	call	?resetTurnTimer@CvGame@@QAEX_N@Z	; CvGame::resetTurnTimer
 
-; 709  : 		DLLUI->AddMessage(0, CvPreGame::activePlayer(), true, GC.getEVENT_MESSAGE_TIME(), GetLocalizedText("TXT_KEY_MISC_TURN_TIMER_RESET", GET_PLAYER(ePlayer).getName()).GetCString());
+; 740  : 		DLLUI->AddMessage(0, CvPreGame::activePlayer(), true, GC.getEVENT_MESSAGE_TIME(), GetLocalizedText("TXT_KEY_MISC_TURN_TIMER_RESET", GET_PLAYER(ePlayer).getName()).GetCString());
 
-	mov	ecx, DWORD PTR _ePlayer$[esp+44]
+	mov	ecx, DWORD PTR _ePlayer$[esp+136]
 	mov	esi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
 	imul	ecx, 63236				; 0000f704H
 	add	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	call	?getName@CvPlayer@@QBEPBDXZ		; CvPlayer::getName
 	push	eax
-	lea	eax, DWORD PTR $T225370[esp+52]
-	push	OFFSET $SG223105
+	lea	eax, DWORD PTR $T225912[esp+144]
+	push	OFFSET $SG223611
 	push	eax
 	call	??$GetLocalizedText@PBD@@YA?AVCvString@@PBD0@Z ; GetLocalizedText<char const *>
 	add	esp, 12					; 0000000cH
 	mov	ecx, eax
-	mov	DWORD PTR __$EHRec$[esp+56], 0
+	mov	DWORD PTR __$EHRec$[esp+148], 3
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+6176
 	mov	edi, DWORD PTR [esi]
@@ -7159,60 +7538,69 @@ _iUnitID$ = 20						; size = 4
 	push	0
 	mov	ecx, esi
 	call	edx
-	lea	ecx, DWORD PTR $T225370[esp+48]
-	mov	DWORD PTR __$EHRec$[esp+56], -1
+	lea	ecx, DWORD PTR $T225912[esp+140]
+	mov	DWORD PTR __$EHRec$[esp+148], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	pop	edi
-	pop	esi
 
-; 716  : #ifdef TURN_TIMER_RESET_BUTTON
-; 717  : 	}
-; 718  : #endif
-; 719  : }
+; 741  : 	}
+; 742  : 	else
 
-	mov	ecx, DWORD PTR __$EHRec$[esp+40]
-	mov	DWORD PTR fs:0, ecx
-	add	esp, 40					; 00000028H
-	ret	16					; 00000010H
+	jmp	SHORT $LN1@ResponseGi
 $LN2@ResponseGi:
 
-; 710  : 	}
-; 711  : 	else
-; 712  : 	{
-; 713  : #endif
-; 714  : 	CvUnit* pkUnit = GET_PLAYER(ePlayer).getUnit(iUnitID);
+; 743  : 	{
+; 744  : #endif
+; 745  : 	CvUnit* pkUnit = GET_PLAYER(ePlayer).getUnit(iUnitID);
 
-	mov	esi, DWORD PTR _ePlayer$[esp+40]
+	mov	esi, DWORD PTR _ePlayer$[esp+136]
 	mov	ecx, esi
 	imul	ecx, 63236				; 0000f704H
 	add	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	push	eax
 	call	?getUnit@CvPlayer@@QAEPAVCvUnit@@H@Z	; CvPlayer::getUnit
 
-; 715  : 	GET_PLAYER(eMinor).DoDistanceGift(ePlayer, pkUnit);
+; 746  : 	GET_PLAYER(eMinor).DoDistanceGift(ePlayer, pkUnit);
 
-	mov	ecx, DWORD PTR _eMinor$[esp+40]
+	mov	ecx, DWORD PTR _eMinor$[esp+136]
 	imul	ecx, 63236				; 0000f704H
 	add	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	push	eax
 	push	esi
 	call	?DoDistanceGift@CvPlayer@@QAEXW4PlayerTypes@@PAVCvUnit@@@Z ; CvPlayer::DoDistanceGift
+$LN1@ResponseGi:
 
-; 716  : #ifdef TURN_TIMER_RESET_BUTTON
-; 717  : 	}
-; 718  : #endif
-; 719  : }
+; 747  : #ifdef TURN_TIMER_RESET_BUTTON
+; 748  : 	}
+; 749  : #endif
+; 750  : }
 
-	mov	ecx, DWORD PTR __$EHRec$[esp+44]
+	mov	ecx, DWORD PTR __$EHRec$[esp+140]
+	pop	edi
 	pop	esi
 	mov	DWORD PTR fs:0, ecx
-	add	esp, 40					; 00000028H
+	add	esp, 132				; 00000084H
 	ret	16					; 00000010H
+	npad	3
+$LN72@ResponseGi:
+	DD	$LN4@ResponseGi
+	DD	$LN5@ResponseGi
+	DD	$LN6@ResponseGi
+	DD	$LN7@ResponseGi
+	DD	$LN8@ResponseGi
 _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?ResponseGiftUnit@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@0H@Z$0:
-	lea	ecx, DWORD PTR $T225370[ebp]
+	lea	ecx, DWORD PTR $T225907[ebp]
+	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
+__unwindfunclet$?ResponseGiftUnit@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@0H@Z$1:
+	lea	ecx, DWORD PTR $T225910[ebp]
+	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
+__unwindfunclet$?ResponseGiftUnit@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@0H@Z$2:
+	lea	ecx, DWORD PTR $T225911[ebp]
+	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
+__unwindfunclet$?ResponseGiftUnit@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@0H@Z$3:
+	lea	ecx, DWORD PTR $T225912[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?ResponseGiftUnit@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@0H@Z:
 	mov	eax, OFFSET __ehfuncinfo$?ResponseGiftUnit@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@0H@Z
@@ -7229,18 +7617,18 @@ _ePlayer$ = 12						; size = 4
 _eVictory$ = 16						; size = 4
 ?ResponseLaunchSpaceship@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@W4VictoryTypes@@@Z PROC ; CvDllNetMessageHandler::ResponseLaunchSpaceship, COMDAT
 
-; 722  : {
+; 753  : {
 
 	push	esi
 
-; 723  : 	CvPlayerAI& kPlayer = GET_PLAYER(ePlayer);
+; 754  : 	CvPlayerAI& kPlayer = GET_PLAYER(ePlayer);
 
 	mov	esi, DWORD PTR _ePlayer$[esp]
 	imul	esi, 63236				; 0000f704H
 	add	esi, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	push	edi
 
-; 724  : 	CvTeam& kTeam = GET_TEAM(kPlayer.getTeam());
+; 755  : 	CvTeam& kTeam = GET_TEAM(kPlayer.getTeam());
 
 	mov	eax, DWORD PTR [esi+44]
 	cmp	eax, 63					; 0000003fH
@@ -7253,8 +7641,8 @@ $LN10@ResponseLa:
 	or	eax, -1
 $LN11@ResponseLa:
 
-; 725  : 
-; 726  : 	if(kTeam.canLaunch(eVictory))
+; 756  : 
+; 757  : 	if(kTeam.canLaunch(eVictory))
 
 	mov	edi, DWORD PTR _eVictory$[esp+4]
 	imul	eax, 2984				; 00000ba8H
@@ -7265,8 +7653,8 @@ $LN11@ResponseLa:
 	test	al, al
 	je	SHORT $LN1@ResponseLa
 
-; 727  : 	{
-; 728  : 		kPlayer.launch(eVictory);
+; 758  : 	{
+; 759  : 		kPlayer.launch(eVictory);
 
 	push	edi
 	mov	ecx, esi
@@ -7275,8 +7663,8 @@ $LN1@ResponseLa:
 	pop	edi
 	pop	esi
 
-; 729  : 	}
-; 730  : }
+; 760  : 	}
+; 761  : }
 
 	ret	12					; 0000000cH
 ?ResponseLaunchSpaceship@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@W4VictoryTypes@@@Z ENDP ; CvDllNetMessageHandler::ResponseLaunchSpaceship
@@ -7294,8 +7682,8 @@ _eGoody$ = 24						; size = 4
 _iUnitID$ = 28						; size = 4
 ?ResponseGoodyChoice@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@HHW4GoodyTypes@@H@Z PROC ; CvDllNetMessageHandler::ResponseGoodyChoice, COMDAT
 
-; 926  : 	CvPlayerAI& kPlayer = GET_PLAYER(ePlayer);
-; 927  : 	CvPlot* pPlot = GC.getMap().plot(iPlotX, iPlotY);
+; 957  : 	CvPlayerAI& kPlayer = GET_PLAYER(ePlayer);
+; 958  : 	CvPlot* pPlot = GC.getMap().plot(iPlotX, iPlotY);
 
 	mov	eax, DWORD PTR _iPlotX$[esp-4]
 	push	ebx
@@ -7373,14 +7761,14 @@ $LN7@ResponseGo:
 	xor	esi, esi
 $LN9@ResponseGo:
 
-; 928  : 	CvUnit* pUnit = kPlayer.getUnit(iUnitID);
+; 959  : 	CvUnit* pUnit = kPlayer.getUnit(iUnitID);
 
 	mov	eax, DWORD PTR _iUnitID$[esp+12]
 	push	eax
 	mov	ecx, edi
 	call	?getUnit@CvPlayer@@QAEPAVCvUnit@@H@Z	; CvPlayer::getUnit
 
-; 929  : 	kPlayer.receiveGoody(pPlot, eGoody, pUnit);
+; 960  : 	kPlayer.receiveGoody(pPlot, eGoody, pUnit);
 
 	mov	ecx, DWORD PTR _eGoody$[esp+12]
 	push	eax
@@ -7393,7 +7781,7 @@ $LN9@ResponseGo:
 	pop	ebp
 	pop	ebx
 
-; 930  : }
+; 961  : }
 
 	ret	24					; 00000018H
 ?ResponseGoodyChoice@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@HHW4GoodyTypes@@H@Z ENDP ; CvDllNetMessageHandler::ResponseGoodyChoice
@@ -7414,20 +7802,20 @@ EXTRN	?GetPlayerTechs@CvPlayer@@QBEPAVCvPlayerTechs@@XZ:PROC ; CvPlayer::GetPlay
 _TEXT	SEGMENT
 _this$ = 8						; size = 4
 _ePlayer$ = 12						; size = 4
-$T225561 = 16						; size = 4
+$T226177 = 16						; size = 4
 _eTech$ = 16						; size = 4
 _iDiscover$ = 20					; size = 4
 _ePlayerToStealFrom$ = 24				; size = 4
-$T225560 = 28						; size = 4
+$T226176 = 28						; size = 4
 _bShift$ = 28						; size = 1
 ?ResponseResearch@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@W4TechTypes@@H0_N@Z PROC ; CvDllNetMessageHandler::ResponseResearch, COMDAT
 
-; 981  : {
+; 1012 : {
 
 	push	ebx
 	push	ebp
 
-; 982  : 	CvPlayerAI& kPlayer = GET_PLAYER(ePlayer);
+; 1013 : 	CvPlayerAI& kPlayer = GET_PLAYER(ePlayer);
 
 	mov	ebp, DWORD PTR _ePlayer$[esp+4]
 	push	esi
@@ -7436,7 +7824,7 @@ _bShift$ = 28						; size = 1
 	add	esi, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	push	edi
 
-; 983  : 	CvTeam& kTeam = GET_TEAM(kPlayer.getTeam());
+; 1014 : 	CvTeam& kTeam = GET_TEAM(kPlayer.getTeam());
 
 	mov	eax, DWORD PTR [esi+44]
 	cmp	eax, 63					; 0000003fH
@@ -7449,17 +7837,17 @@ $LN22@ResponseRe@3:
 	or	eax, -1
 $LN23@ResponseRe@3:
 
-; 984  : 
-; 985  : 	// Free tech
-; 986  : 	if(iDiscover > 0)
+; 1015 : 
+; 1016 : 	// Free tech
+; 1017 : 	if(iDiscover > 0)
 
 	mov	ebx, DWORD PTR _iDiscover$[esp+12]
 	imul	eax, 2984				; 00000ba8H
 	add	eax, DWORD PTR ?m_aTeams@CvTeam@@1PAV1@A ; CvTeam::m_aTeams
 
-; 987  : 	{
-; 988  : 		// Make sure we can research this tech for free
-; 989  : 		if(kPlayer.GetPlayerTechs()->CanResearchForFree(eTech))
+; 1018 : 	{
+; 1019 : 		// Make sure we can research this tech for free
+; 1020 : 		if(kPlayer.GetPlayerTechs()->CanResearchForFree(eTech))
 
 	mov	ecx, esi
 	mov	edi, eax
@@ -7473,8 +7861,8 @@ $LN23@ResponseRe@3:
 	test	al, al
 	je	$LN3@ResponseRe@3
 
-; 990  : 		{
-; 991  : 			kTeam.setHasTech(eTech, true, ePlayer, true, true);
+; 1021 : 		{
+; 1022 : 			kTeam.setHasTech(eTech, true, ePlayer, true, true);
 
 	mov	ecx, DWORD PTR _eTech$[esp+12]
 	push	1
@@ -7485,22 +7873,22 @@ $LN23@ResponseRe@3:
 	mov	ecx, edi
 	call	?setHasTech@CvTeam@@QAEXW4TechTypes@@_NW4PlayerTypes@@11@Z ; CvTeam::setHasTech
 
-; 992  : 
-; 993  : 			if(iDiscover > 1)
+; 1023 : 
+; 1024 : 			if(iDiscover > 1)
 
 	cmp	ebx, 1
 	jle	SHORT $LN39@ResponseRe@3
 
-; 994  : 			{
-; 995  : 				if(ePlayer == GC.getGame().getActivePlayer())
+; 1025 : 			{
+; 1026 : 				if(ePlayer == GC.getGame().getActivePlayer())
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?getActivePlayer@CvGame@@QBE?AW4PlayerTypes@@XZ ; CvGame::getActivePlayer
 	cmp	ebp, eax
 	jne	SHORT $LN39@ResponseRe@3
 
-; 996  : 				{
-; 997  : 					kPlayer.chooseTech(iDiscover - 1);
+; 1027 : 				{
+; 1028 : 					kPlayer.chooseTech(iDiscover - 1);
 
 	push	-1
 	push	0
@@ -7510,17 +7898,17 @@ $LN23@ResponseRe@3:
 	call	?chooseTech@CvPlayer@@QAEXHPBDW4TechTypes@@@Z ; CvPlayer::chooseTech
 $LN39@ResponseRe@3:
 
-; 998  : 				}
-; 999  : 			}
-; 1000 : 			kPlayer.SetNumFreeTechs(max(0, iDiscover - 1));
+; 1029 : 				}
+; 1030 : 			}
+; 1031 : 			kPlayer.SetNumFreeTechs(max(0, iDiscover - 1));
 
 	dec	ebx
-	mov	DWORD PTR $T225560[esp+12], ebx
-	mov	DWORD PTR $T225561[esp+12], 0
-	lea	eax, DWORD PTR $T225560[esp+12]
+	mov	DWORD PTR $T226176[esp+12], ebx
+	mov	DWORD PTR $T226177[esp+12], 0
+	lea	eax, DWORD PTR $T226176[esp+12]
 	test	ebx, ebx
 	jg	SHORT $LN34@ResponseRe@3
-	lea	eax, DWORD PTR $T225561[esp+12]
+	lea	eax, DWORD PTR $T226177[esp+12]
 $LN34@ResponseRe@3:
 	mov	eax, DWORD PTR [eax]
 	push	eax
@@ -7531,29 +7919,29 @@ $LN34@ResponseRe@3:
 	pop	ebp
 	pop	ebx
 
-; 1035 : 		}
-; 1036 : 	}
-; 1037 : }
+; 1066 : 		}
+; 1067 : 	}
+; 1068 : }
 
 	ret	24					; 00000018H
 $LN13@ResponseRe@3:
 
-; 1001 : 		}
-; 1002 : 	}
-; 1003 : 	// Stealing tech
-; 1004 : 	else if(ePlayerToStealFrom != NO_PLAYER)
+; 1032 : 		}
+; 1033 : 	}
+; 1034 : 	// Stealing tech
+; 1035 : 	else if(ePlayerToStealFrom != NO_PLAYER)
 
 	mov	ebx, DWORD PTR _ePlayerToStealFrom$[esp+12]
 	cmp	ebx, -1
 	je	SHORT $LN8@ResponseRe@3
 
-; 1005 : 	{
-; 1006 : 		// make sure we can still take a tech
-; 1007 : 		CvAssertMsg(kPlayer.GetEspionage()->m_aiNumTechsToStealList[ePlayerToStealFrom] > 0, "No techs to steal from player");
-; 1008 : 		CvAssertMsg(kPlayer.GetEspionage()->m_aaPlayerStealableTechList[ePlayerToStealFrom].size() > 0, "No techs to be stolen from this player");
-; 1009 : 		CvAssertMsg(kPlayer.GetPlayerTechs()->CanResearch(eTech), "Player can't research this technology");
-; 1010 : 		CvAssertMsg(GET_TEAM(GET_PLAYER(ePlayerToStealFrom).getTeam()).GetTeamTechs()->HasTech(eTech), "ePlayerToStealFrom does not have the requested tech");
-; 1011 : 		if (kPlayer.GetEspionage()->m_aiNumTechsToStealList[ePlayerToStealFrom] > 0)
+; 1036 : 	{
+; 1037 : 		// make sure we can still take a tech
+; 1038 : 		CvAssertMsg(kPlayer.GetEspionage()->m_aiNumTechsToStealList[ePlayerToStealFrom] > 0, "No techs to steal from player");
+; 1039 : 		CvAssertMsg(kPlayer.GetEspionage()->m_aaPlayerStealableTechList[ePlayerToStealFrom].size() > 0, "No techs to be stolen from this player");
+; 1040 : 		CvAssertMsg(kPlayer.GetPlayerTechs()->CanResearch(eTech), "Player can't research this technology");
+; 1041 : 		CvAssertMsg(GET_TEAM(GET_PLAYER(ePlayerToStealFrom).getTeam()).GetTeamTechs()->HasTech(eTech), "ePlayerToStealFrom does not have the requested tech");
+; 1042 : 		if (kPlayer.GetEspionage()->m_aiNumTechsToStealList[ePlayerToStealFrom] > 0)
 
 	call	?GetEspionage@CvPlayer@@QBEPAVCvPlayerEspionage@@XZ ; CvPlayer::GetEspionage
 	mov	ecx, DWORD PTR [eax+720]
@@ -7561,8 +7949,8 @@ $LN13@ResponseRe@3:
 	cmp	DWORD PTR [ecx+ebx*4], 0
 	jle	$LN3@ResponseRe@3
 
-; 1012 : 		{
-; 1013 : 			kTeam.setHasTech(eTech, true, ePlayer, true, true);
+; 1043 : 		{
+; 1044 : 			kTeam.setHasTech(eTech, true, ePlayer, true, true);
 
 	mov	edx, DWORD PTR _eTech$[esp+12]
 	push	1
@@ -7573,7 +7961,7 @@ $LN13@ResponseRe@3:
 	mov	ecx, edi
 	call	?setHasTech@CvTeam@@QAEXW4TechTypes@@_NW4PlayerTypes@@11@Z ; CvTeam::setHasTech
 
-; 1014 : 			kPlayer.GetEspionage()->m_aiNumTechsToStealList[ePlayerToStealFrom]--;
+; 1045 : 			kPlayer.GetEspionage()->m_aiNumTechsToStealList[ePlayerToStealFrom]--;
 
 	mov	ecx, esi
 	call	?GetEspionage@CvPlayer@@QBEPAVCvPlayerEspionage@@XZ ; CvPlayer::GetEspionage
@@ -7586,38 +7974,38 @@ $LN13@ResponseRe@3:
 	pop	ebp
 	pop	ebx
 
-; 1035 : 		}
-; 1036 : 	}
-; 1037 : }
+; 1066 : 		}
+; 1067 : 	}
+; 1068 : }
 
 	ret	24					; 00000018H
 $LN8@ResponseRe@3:
 
-; 1015 : 		}
-; 1016 : 	}
-; 1017 : 	// Normal tech
-; 1018 : 	else
-; 1019 : 	{
-; 1020 : 		CvPlayerTechs* pPlayerTechs = kPlayer.GetPlayerTechs();
+; 1046 : 		}
+; 1047 : 	}
+; 1048 : 	// Normal tech
+; 1049 : 	else
+; 1050 : 	{
+; 1051 : 		CvPlayerTechs* pPlayerTechs = kPlayer.GetPlayerTechs();
 
 	call	?GetPlayerTechs@CvPlayer@@QBEPAVCvPlayerTechs@@XZ ; CvPlayer::GetPlayerTechs
 
-; 1021 : 		CvTeamTechs* pTeamTechs = kTeam.GetTeamTechs();
+; 1052 : 		CvTeamTechs* pTeamTechs = kTeam.GetTeamTechs();
 
 	mov	ecx, edi
 	mov	ebp, eax
 	call	?GetTeamTechs@CvTeam@@QBEPAVCvTeamTechs@@XZ ; CvTeam::GetTeamTechs
 
-; 1022 : 
-; 1023 : 		if(eTech == NO_TECH)
+; 1053 : 
+; 1054 : 		if(eTech == NO_TECH)
 
 	mov	edi, DWORD PTR _eTech$[esp+12]
 	mov	ebx, eax
 	cmp	edi, -1
 	jne	SHORT $LN5@ResponseRe@3
 
-; 1024 : 		{
-; 1025 : 			kPlayer.clearResearchQueue();
+; 1055 : 		{
+; 1056 : 			kPlayer.clearResearchQueue();
 
 	mov	ecx, esi
 	call	?clearResearchQueue@CvPlayer@@QAEXXZ	; CvPlayer::clearResearchQueue
@@ -7626,15 +8014,15 @@ $LN8@ResponseRe@3:
 	pop	ebp
 	pop	ebx
 
-; 1035 : 		}
-; 1036 : 	}
-; 1037 : }
+; 1066 : 		}
+; 1067 : 	}
+; 1068 : }
 
 	ret	24					; 00000018H
 $LN5@ResponseRe@3:
 
-; 1026 : 		}
-; 1027 : 		else if(pPlayerTechs->CanEverResearch(eTech))
+; 1057 : 		}
+; 1058 : 		else if(pPlayerTechs->CanEverResearch(eTech))
 
 	push	edi
 	mov	ecx, ebp
@@ -7642,8 +8030,8 @@ $LN5@ResponseRe@3:
 	test	al, al
 	je	SHORT $LN3@ResponseRe@3
 
-; 1028 : 		{
-; 1029 : 			if((pTeamTechs->HasTech(eTech) || pPlayerTechs->IsResearchingTech(eTech)) && !bShift)
+; 1059 : 		{
+; 1060 : 			if((pTeamTechs->HasTech(eTech) || pPlayerTechs->IsResearchingTech(eTech)) && !bShift)
 
 	push	edi
 	mov	ecx, ebx
@@ -7660,16 +8048,16 @@ $LN1@ResponseRe@3:
 	test	bl, bl
 	jne	SHORT $LN40@ResponseRe@3
 
-; 1030 : 			{
-; 1031 : 				kPlayer.clearResearchQueue();
+; 1061 : 			{
+; 1062 : 				kPlayer.clearResearchQueue();
 
 	mov	ecx, esi
 	call	?clearResearchQueue@CvPlayer@@QAEXXZ	; CvPlayer::clearResearchQueue
 $LN2@ResponseRe@3:
 
-; 1032 : 			}
-; 1033 : 
-; 1034 : 			kPlayer.pushResearch(eTech, !bShift);
+; 1063 : 			}
+; 1064 : 
+; 1065 : 			kPlayer.pushResearch(eTech, !bShift);
 
 	test	bl, bl
 $LN40@ResponseRe@3:
@@ -7685,9 +8073,9 @@ $LN3@ResponseRe@3:
 	pop	ebp
 	pop	ebx
 
-; 1035 : 		}
-; 1036 : 	}
-; 1037 : }
+; 1066 : 		}
+; 1067 : 	}
+; 1068 : }
 
 	ret	24					; 00000018H
 ?ResponseResearch@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@W4TechTypes@@H0_N@Z ENDP ; CvDllNetMessageHandler::ResponseResearch
@@ -7703,7 +8091,7 @@ _TEXT	SEGMENT
 _this$ = 8						; size = 4
 _pkUnit$ = 12						; size = 4
 _ePlayer$ = 12						; size = 4
-_iI$223419 = 16						; size = 4
+_iI$223925 = 16						; size = 4
 _iUnitID$ = 16						; size = 4
 _eMission$ = 20						; size = 4
 _iData1$ = 24						; size = 4
@@ -7712,17 +8100,17 @@ _iFlags$ = 32						; size = 4
 _bShift$ = 36						; size = 1
 ?ResponseSwapUnits@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@HW4MissionTypes@@HHH_N@Z PROC ; CvDllNetMessageHandler::ResponseSwapUnits, COMDAT
 
-; 1097 : 	CvUnit::dispatchingNetMessage(true);
+; 1128 : 	CvUnit::dispatchingNetMessage(true);
 
 	push	1
 	call	?dispatchingNetMessage@CvUnit@@SAX_N@Z	; CvUnit::dispatchingNetMessage
 
-; 1098 : 
-; 1099 : 	CvPlayerAI& kPlayer = GET_PLAYER(ePlayer);
+; 1129 : 
+; 1130 : 	CvPlayerAI& kPlayer = GET_PLAYER(ePlayer);
 
 	mov	ecx, DWORD PTR _ePlayer$[esp]
 
-; 1100 : 	CvUnit* pkUnit = kPlayer.getUnit(iUnitID);
+; 1131 : 	CvUnit* pkUnit = kPlayer.getUnit(iUnitID);
 
 	mov	eax, DWORD PTR _iUnitID$[esp]
 	imul	ecx, 63236				; 0000f704H
@@ -7732,16 +8120,16 @@ _bShift$ = 36						; size = 1
 	call	?getUnit@CvPlayer@@QAEPAVCvUnit@@H@Z	; CvPlayer::getUnit
 	mov	DWORD PTR _pkUnit$[esp-4], eax
 
-; 1101 : 
-; 1102 : 	if(pkUnit != NULL)
+; 1132 : 
+; 1133 : 	if(pkUnit != NULL)
 
 	test	eax, eax
 	je	$LN60@ResponseSw
 
-; 1103 : 	{
-; 1104 : 		// Get target plot
-; 1105 : 		CvMap& kMap = GC.getMap();
-; 1106 : 		CvPlot* pkTargetPlot = kMap.plot(iData1, iData2);
+; 1134 : 	{
+; 1135 : 		// Get target plot
+; 1136 : 		CvMap& kMap = GC.getMap();
+; 1137 : 		CvPlot* pkTargetPlot = kMap.plot(iData1, iData2);
 
 	mov	eax, DWORD PTR _iData1$[esp-4]
 	push	ebp
@@ -7808,27 +8196,27 @@ $LN37@ResponseSw:
 	add	ecx, DWORD PTR [ebp+4068]
 	mov	ebx, ecx
 
-; 1107 : 
-; 1108 : 		if(pkTargetPlot != NULL)
+; 1138 : 
+; 1139 : 		if(pkTargetPlot != NULL)
 
 	je	$LN64@ResponseSw
 
-; 1109 : 		{
-; 1110 : 			CvPlot* pkOriginationPlot = pkUnit->plot();
+; 1140 : 		{
+; 1141 : 			CvPlot* pkOriginationPlot = pkUnit->plot();
 
 	mov	ecx, DWORD PTR _pkUnit$[esp+12]
 	call	?plot@CvUnit@@QBEPAVCvPlot@@XZ		; CvUnit::plot
 
-; 1111 : 
-; 1112 : 			// Find unit to move out
-; 1113 : #ifdef AUI_WARNING_FIXES
-; 1114 : 			for (uint iI = 0; iI < pkTargetPlot->getNumUnits(); iI++)
-; 1115 : #else
-; 1116 : 			for(int iI = 0; iI < pkTargetPlot->getNumUnits(); iI++)
+; 1142 : 
+; 1143 : 			// Find unit to move out
+; 1144 : #ifdef AUI_WARNING_FIXES
+; 1145 : 			for (uint iI = 0; iI < pkTargetPlot->getNumUnits(); iI++)
+; 1146 : #else
+; 1147 : 			for(int iI = 0; iI < pkTargetPlot->getNumUnits(); iI++)
 
 	mov	ecx, ebx
 	mov	edi, eax
-	mov	DWORD PTR _iI$223419[esp+12], 0
+	mov	DWORD PTR _iI$223925[esp+12], 0
 	call	?getNumUnits@CvPlot@@QBEHXZ		; CvPlot::getNumUnits
 	test	eax, eax
 	jle	$LN64@ResponseSw
@@ -7836,18 +8224,18 @@ $LN37@ResponseSw:
 	npad	6
 $LL58@ResponseSw:
 
-; 1117 : #endif
-; 1118 : 			{
-; 1119 : 				CvUnit* pkUnit2 = pkTargetPlot->getUnitByIndex(iI);
+; 1148 : #endif
+; 1149 : 			{
+; 1150 : 				CvUnit* pkUnit2 = pkTargetPlot->getUnitByIndex(iI);
 
-	mov	ecx, DWORD PTR _iI$223419[esp+12]
+	mov	ecx, DWORD PTR _iI$223925[esp+12]
 	push	ecx
 	mov	ecx, ebx
 	call	?getUnitByIndex@CvPlot@@QBEPAVCvUnit@@H@Z ; CvPlot::getUnitByIndex
 	mov	esi, eax
 
-; 1120 : 
-; 1121 : 				if(pkUnit2 && pkUnit2->AreUnitsOfSameType(*pkUnit))
+; 1151 : 
+; 1152 : 				if(pkUnit2 && pkUnit2->AreUnitsOfSameType(*pkUnit))
 
 	test	esi, esi
 	je	SHORT $LN3@ResponseSw
@@ -7859,9 +8247,9 @@ $LL58@ResponseSw:
 	test	al, al
 	je	SHORT $LN3@ResponseSw
 
-; 1122 : 				{
-; 1123 : 					// Start the swap
-; 1124 : 					pkUnit->PushMission(CvTypes::getMISSION_MOVE_TO(), iData1, iData2, MOVE_IGNORE_STACKING, bShift, true);
+; 1153 : 				{
+; 1154 : 					// Start the swap
+; 1155 : 					pkUnit->PushMission(CvTypes::getMISSION_MOVE_TO(), iData1, iData2, MOVE_IGNORE_STACKING, bShift, true);
 
 	mov	eax, DWORD PTR _iData2$[esp+12]
 	mov	ecx, DWORD PTR _iData1$[esp+12]
@@ -7878,9 +8266,9 @@ $LL58@ResponseSw:
 	push	eax
 	call	?PushMission@CvUnit@@QAEXW4MissionTypes@@HHH_N1W4MissionAITypes@@PAVCvPlot@@PAV1@@Z ; CvUnit::PushMission
 
-; 1125 : 
-; 1126 : 					// Move the other unit back out, again splitting if necessary
-; 1127 : 					pkUnit2->PushMission(CvTypes::getMISSION_MOVE_TO(), pkOriginationPlot->getX(), pkOriginationPlot->getY());
+; 1156 : 
+; 1157 : 					// Move the other unit back out, again splitting if necessary
+; 1158 : 					pkUnit2->PushMission(CvTypes::getMISSION_MOVE_TO(), pkOriginationPlot->getX(), pkOriginationPlot->getY());
 
 	movsx	eax, WORD PTR [edi+2]
 	movsx	ecx, WORD PTR [edi]
@@ -7897,10 +8285,10 @@ $LL58@ResponseSw:
 	mov	ecx, esi
 	call	?PushMission@CvUnit@@QAEXW4MissionTypes@@HHH_N1W4MissionAITypes@@PAVCvPlot@@PAV1@@Z ; CvUnit::PushMission
 $LN3@ResponseSw:
-	mov	esi, DWORD PTR _iI$223419[esp+12]
+	mov	esi, DWORD PTR _iI$223925[esp+12]
 	inc	esi
 	mov	ecx, ebx
-	mov	DWORD PTR _iI$223419[esp+12], esi
+	mov	DWORD PTR _iI$223925[esp+12], esi
 	call	?getNumUnits@CvPlot@@QBEHXZ		; CvPlot::getNumUnits
 	cmp	esi, eax
 	jl	SHORT $LL58@ResponseSw
@@ -7913,17 +8301,17 @@ $LN61@ResponseSw:
 	pop	ebp
 $LN60@ResponseSw:
 
-; 1128 : 				}
-; 1129 : 			}
-; 1130 : 		}
-; 1131 : 	}
-; 1132 : 	CvUnit::dispatchingNetMessage(false);
+; 1159 : 				}
+; 1160 : 			}
+; 1161 : 		}
+; 1162 : 	}
+; 1163 : 	CvUnit::dispatchingNetMessage(false);
 
 	push	0
 	call	?dispatchingNetMessage@CvUnit@@SAX_N@Z	; CvUnit::dispatchingNetMessage
 	pop	ecx
 
-; 1133 : }
+; 1164 : }
 
 	ret	32					; 00000020H
 ?ResponseSwapUnits@CvDllNetMessageHandler@@UAGXW4PlayerTypes@@HW4MissionTypes@@HHH_N@Z ENDP ; CvDllNetMessageHandler::ResponseSwapUnits

@@ -10,10 +10,10 @@ INCLUDELIB MSVCRT
 INCLUDELIB OLDNAMES
 
 _DATA	SEGMENT
-_CIV5_XP2_DLL_VERSION DD FLAT:$SG217221
+_CIV5_XP2_DLL_VERSION DD FLAT:$SG217698
 _DATA	ENDS
 CONST	SEGMENT
-$SG217221 DB	'1.0.0', 00H
+$SG217698 DB	'1.0.0', 00H
 	ORG $+2
 _guidICvUnknown DD 0d89ba82fH
 	DW	09fa3H
@@ -908,12 +908,12 @@ PUBLIC	?GetInterfaceId@ICvUnknown@@SG?AU_GUID@@XZ	; ICvUnknown::GetInterfaceId
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredllutil\include\cvdllinterfaces.h
 ;	COMDAT ?GetInterfaceId@ICvUnknown@@SG?AU_GUID@@XZ
 _TEXT	SEGMENT
-$T218797 = 8						; size = 4
+$T219274 = 8						; size = 4
 ?GetInterfaceId@ICvUnknown@@SG?AU_GUID@@XZ PROC		; ICvUnknown::GetInterfaceId, COMDAT
 
 ; 306  : 	static GUID DLLCALL GetInterfaceId(){ return guidICvUnknown; }
 
-	mov	eax, DWORD PTR $T218797[esp-4]
+	mov	eax, DWORD PTR $T219274[esp-4]
 	mov	ecx, DWORD PTR _guidICvUnknown
 	mov	edx, DWORD PTR _guidICvUnknown+4
 	mov	DWORD PTR [eax], ecx
@@ -929,12 +929,12 @@ PUBLIC	?GetInterfaceId@ICvWorldBuilderMapLoader1@@SG?AU_GUID@@XZ ; ICvWorldBuild
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?GetInterfaceId@ICvWorldBuilderMapLoader1@@SG?AU_GUID@@XZ
 _TEXT	SEGMENT
-$T218801 = 8						; size = 4
+$T219278 = 8						; size = 4
 ?GetInterfaceId@ICvWorldBuilderMapLoader1@@SG?AU_GUID@@XZ PROC ; ICvWorldBuilderMapLoader1::GetInterfaceId, COMDAT
 
 ; 1804 : 	static GUID DLLCALL GetInterfaceId() { return guidICvWorldBuilderMapLoader1; }
 
-	mov	eax, DWORD PTR $T218801[esp-4]
+	mov	eax, DWORD PTR $T219278[esp-4]
 	mov	ecx, DWORD PTR _guidICvWorldBuilderMapLoader1
 	mov	edx, DWORD PTR _guidICvWorldBuilderMapLoader1+4
 	mov	DWORD PTR [eax], ecx
@@ -951,12 +951,12 @@ PUBLIC	?GetInterfaceId@ICvWorldBuilderMapLoader2@@SG?AU_GUID@@XZ ; ICvWorldBuild
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredllutil\include\cvdllinterfaces2.h
 ;	COMDAT ?GetInterfaceId@ICvWorldBuilderMapLoader2@@SG?AU_GUID@@XZ
 _TEXT	SEGMENT
-$T218805 = 8						; size = 4
+$T219282 = 8						; size = 4
 ?GetInterfaceId@ICvWorldBuilderMapLoader2@@SG?AU_GUID@@XZ PROC ; ICvWorldBuilderMapLoader2::GetInterfaceId, COMDAT
 
 ; 178  : 	static GUID DLLCALL GetInterfaceId() {return guidICvWorldBuilderMapLoader2; }
 
-	mov	eax, DWORD PTR $T218805[esp-4]
+	mov	eax, DWORD PTR $T219282[esp-4]
 	mov	ecx, DWORD PTR _guidICvWorldBuilderMapLoader2
 	mov	edx, DWORD PTR _guidICvWorldBuilderMapLoader2+4
 	mov	DWORD PTR [eax], ecx
@@ -1022,9 +1022,9 @@ _TEXT	SEGMENT
 _TEXT	ENDS
 ;	COMDAT ?QueryInterface@CvDllWorldBuilderMapLoader@@UAGPAXU_GUID@@@Z
 _TEXT	SEGMENT
-$T218819 = -16						; size = 16
-$T218817 = -16						; size = 16
-$T218815 = -16						; size = 16
+$T219296 = -16						; size = 16
+$T219294 = -16						; size = 16
+$T219292 = -16						; size = 16
 _this$ = 8						; size = 4
 _guidInterface$ = 12					; size = 16
 ?QueryInterface@CvDllWorldBuilderMapLoader@@UAGPAXU_GUID@@@Z PROC ; CvDllWorldBuilderMapLoader::QueryInterface, COMDAT
@@ -1040,15 +1040,15 @@ _guidInterface$ = 12					; size = 16
 	mov	ecx, DWORD PTR _guidICvUnknown+4
 	mov	edx, DWORD PTR _guidICvUnknown+8
 	mov	eax, DWORD PTR _guidICvUnknown
-	mov	DWORD PTR $T218815[esp+20], ecx
-	lea	ecx, DWORD PTR $T218815[esp+16]
-	mov	DWORD PTR $T218815[esp+24], edx
-	mov	DWORD PTR $T218815[esp+16], eax
+	mov	DWORD PTR $T219292[esp+20], ecx
+	lea	ecx, DWORD PTR $T219292[esp+16]
+	mov	DWORD PTR $T219292[esp+24], edx
+	mov	DWORD PTR $T219292[esp+16], eax
 	mov	eax, DWORD PTR _guidICvUnknown+12
 	push	ecx
 	lea	edx, DWORD PTR _guidInterface$[esp+16]
 	push	edx
-	mov	DWORD PTR $T218815[esp+36], eax
+	mov	DWORD PTR $T219292[esp+36], eax
 	call	_IsEqualGUID
 	add	esp, 8
 	test	eax, eax
@@ -1056,15 +1056,15 @@ _guidInterface$ = 12					; size = 16
 	mov	ecx, DWORD PTR _guidICvWorldBuilderMapLoader1+4
 	mov	edx, DWORD PTR _guidICvWorldBuilderMapLoader1+8
 	mov	eax, DWORD PTR _guidICvWorldBuilderMapLoader1
-	mov	DWORD PTR $T218817[esp+20], ecx
-	lea	ecx, DWORD PTR $T218817[esp+16]
-	mov	DWORD PTR $T218817[esp+24], edx
-	mov	DWORD PTR $T218817[esp+16], eax
+	mov	DWORD PTR $T219294[esp+20], ecx
+	lea	ecx, DWORD PTR $T219294[esp+16]
+	mov	DWORD PTR $T219294[esp+24], edx
+	mov	DWORD PTR $T219294[esp+16], eax
 	mov	eax, DWORD PTR _guidICvWorldBuilderMapLoader1+12
 	push	ecx
 	lea	edx, DWORD PTR _guidInterface$[esp+16]
 	push	edx
-	mov	DWORD PTR $T218817[esp+36], eax
+	mov	DWORD PTR $T219294[esp+36], eax
 	call	_IsEqualGUID
 	add	esp, 8
 	test	eax, eax
@@ -1072,15 +1072,15 @@ _guidInterface$ = 12					; size = 16
 	mov	ecx, DWORD PTR _guidICvWorldBuilderMapLoader2+4
 	mov	edx, DWORD PTR _guidICvWorldBuilderMapLoader2+8
 	mov	eax, DWORD PTR _guidICvWorldBuilderMapLoader2
-	mov	DWORD PTR $T218819[esp+20], ecx
-	lea	ecx, DWORD PTR $T218819[esp+16]
-	mov	DWORD PTR $T218819[esp+24], edx
-	mov	DWORD PTR $T218819[esp+16], eax
+	mov	DWORD PTR $T219296[esp+20], ecx
+	lea	ecx, DWORD PTR $T219296[esp+16]
+	mov	DWORD PTR $T219296[esp+24], edx
+	mov	DWORD PTR $T219296[esp+16], eax
 	mov	eax, DWORD PTR _guidICvWorldBuilderMapLoader2+12
 	push	ecx
 	lea	edx, DWORD PTR _guidInterface$[esp+16]
 	push	edx
-	mov	DWORD PTR $T218819[esp+36], eax
+	mov	DWORD PTR $T219296[esp+36], eax
 	call	_IsEqualGUID
 	add	esp, 8
 	test	eax, eax

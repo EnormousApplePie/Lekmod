@@ -383,6 +383,24 @@ void CvLuaGame::RegisterMembers(lua_State* L)
 
 	Method(GetNumArchaeologySites);
 	Method(GetNumHiddenArchaeologySites);
+#ifdef MP_PLAYERS_VOTING_SYSTEM
+	Method(GetLastProposalID);
+	Method(GetProposalIDbyUIid);
+	Method(GetProposalExpirationCounter);
+	Method(GetProposalType);
+	Method(GetProposalStatus);
+	Method(GetProposalOwner);
+	Method(GetProposalSubject);
+	Method(GetProposalCompletion);
+	Method(GetProposalVoterVote);
+	Method(GetProposalVoterHasVoted);
+	Method(GetProposalVoterEligibility);
+	Method(GetYesVotes);
+	Method(GetNoVotes);
+	Method(GetMaxVotes);
+	Method(IsPlayerHasActiveProposal);
+	Method(IsAnyActiveProposalType);
+#endif
 }
 //------------------------------------------------------------------------------
 
@@ -2987,3 +3005,145 @@ int CvLuaGame::lGetNumHiddenArchaeologySites(lua_State* L)
 	lua_pushinteger(L, GC.getGame().GetNumHiddenArchaeologySites());
 	return 1;
 }
+#ifdef MP_PLAYERS_VOTING_SYSTEM
+//------------------------------------------------------------------------------
+int CvLuaGame::lGetLastProposalID(lua_State* L)
+{
+	lua_pushinteger(L, GC.getGame().GetMPVotingSystem()->GetLastProposalID());
+	return 1;
+}
+//------------------------------------------------------------------------------
+int CvLuaGame::lGetProposalIDbyUIid(lua_State* L)
+{
+	const int iUI_Id = luaL_checkint(L, 1);
+	lua_pushinteger(L, GC.getGame().GetMPVotingSystem()->GetProposalIDbyUIid(iUI_Id));
+	return 1;
+}
+//------------------------------------------------------------------------------
+int CvLuaGame::lGetProposalExpirationCounter(lua_State* L)
+{
+	const int iUI_Id = luaL_checkint(L, 1);
+	const int iProposalId = GC.getGame().GetMPVotingSystem()->GetProposalIDbyUIid(iUI_Id);
+
+	lua_pushinteger(L, GC.getGame().GetMPVotingSystem()->GetProposalExpirationCounter(iProposalId));
+	return 1;
+}
+//------------------------------------------------------------------------------
+int CvLuaGame::lGetProposalType(lua_State* L)
+{
+	const int iUI_Id = luaL_checkint(L, 1);
+	const int iProposalId = GC.getGame().GetMPVotingSystem()->GetProposalIDbyUIid(iUI_Id);
+
+	lua_pushinteger(L, static_cast<int>(GC.getGame().GetMPVotingSystem()->GetProposalType(iProposalId)));
+	return 1;
+}
+//------------------------------------------------------------------------------
+int CvLuaGame::lGetProposalStatus(lua_State* L)
+{
+	const int iUI_Id = luaL_checkint(L, 1);
+	const int iProposalId = GC.getGame().GetMPVotingSystem()->GetProposalIDbyUIid(iUI_Id);
+
+	lua_pushinteger(L, static_cast<int>(GC.getGame().GetMPVotingSystem()->GetProposalStatus(iProposalId)));
+	return 1;
+}
+//------------------------------------------------------------------------------
+int CvLuaGame::lGetProposalOwner(lua_State* L)
+{
+	const int iUI_Id = luaL_checkint(L, 1);
+	const int iProposalId = GC.getGame().GetMPVotingSystem()->GetProposalIDbyUIid(iUI_Id);
+
+	lua_pushinteger(L, static_cast<int>(GC.getGame().GetMPVotingSystem()->GetProposalOwner(iProposalId)));
+	return 1;
+}
+//------------------------------------------------------------------------------
+int CvLuaGame::lGetProposalSubject(lua_State* L)
+{
+	const int iUI_Id = luaL_checkint(L, 1);
+	const int iProposalId = GC.getGame().GetMPVotingSystem()->GetProposalIDbyUIid(iUI_Id);
+
+	lua_pushinteger(L, static_cast<int>(GC.getGame().GetMPVotingSystem()->GetProposalSubject(iProposalId)));
+	return 1;
+}
+//------------------------------------------------------------------------------
+int CvLuaGame::lGetProposalCompletion(lua_State* L)
+{
+	const int iUI_Id = luaL_checkint(L, 1);
+	const int iProposalId = GC.getGame().GetMPVotingSystem()->GetProposalIDbyUIid(iUI_Id);
+
+	lua_pushboolean(L, GC.getGame().GetMPVotingSystem()->GetProposalCompletion(iProposalId));
+	return 1;
+}
+//------------------------------------------------------------------------------
+int CvLuaGame::lGetProposalVoterVote(lua_State* L)
+{
+	const int iUI_Id = luaL_checkint(L, 1);
+	const int iProposalId = GC.getGame().GetMPVotingSystem()->GetProposalIDbyUIid(iUI_Id);
+	const PlayerTypes ePlayer = static_cast<PlayerTypes>(luaL_checkint(L, 2));
+
+	lua_pushboolean(L, GC.getGame().GetMPVotingSystem()->GetVoterVote(iProposalId, ePlayer));
+	return 1;
+}
+//------------------------------------------------------------------------------
+int CvLuaGame::lGetProposalVoterHasVoted(lua_State* L)
+{
+	const int iUI_Id = luaL_checkint(L, 1);
+	const int iProposalId = GC.getGame().GetMPVotingSystem()->GetProposalIDbyUIid(iUI_Id);
+	const PlayerTypes ePlayer = static_cast<PlayerTypes>(luaL_checkint(L, 2));
+
+	lua_pushboolean(L, GC.getGame().GetMPVotingSystem()->GetVoterHasVoted(iProposalId, ePlayer));
+	return 1;
+}
+//------------------------------------------------------------------------------
+int CvLuaGame::lGetProposalVoterEligibility(lua_State* L)
+{
+	const int iUI_Id = luaL_checkint(L, 1);
+	const int iProposalId = GC.getGame().GetMPVotingSystem()->GetProposalIDbyUIid(iUI_Id);
+	const PlayerTypes ePlayer = static_cast<PlayerTypes>(luaL_checkint(L, 2));
+
+	lua_pushboolean(L, GC.getGame().GetMPVotingSystem()->GetVoterEligibility(iProposalId, ePlayer));
+	return 1;
+}
+//------------------------------------------------------------------------------
+int CvLuaGame::lGetYesVotes(lua_State* L)
+{
+	const int iUI_Id = luaL_checkint(L, 1);
+	const int iProposalId = GC.getGame().GetMPVotingSystem()->GetProposalIDbyUIid(iUI_Id);
+
+	lua_pushinteger(L, GC.getGame().GetMPVotingSystem()->GetYesVotes(iProposalId));
+	return 1;
+}
+//------------------------------------------------------------------------------
+int CvLuaGame::lGetNoVotes(lua_State* L)
+{
+	const int iUI_Id = luaL_checkint(L, 1);
+	const int iProposalId = GC.getGame().GetMPVotingSystem()->GetProposalIDbyUIid(iUI_Id);
+
+	lua_pushinteger(L, GC.getGame().GetMPVotingSystem()->GetNoVotes(iProposalId));
+	return 1;
+}
+//------------------------------------------------------------------------------
+int CvLuaGame::lGetMaxVotes(lua_State* L)
+{
+	const int iUI_Id = luaL_checkint(L, 1);
+	const int iProposalId = GC.getGame().GetMPVotingSystem()->GetProposalIDbyUIid(iUI_Id);
+
+	lua_pushinteger(L, GC.getGame().GetMPVotingSystem()->GetMaxVotes(iProposalId));
+	return 1;
+}
+//------------------------------------------------------------------------------
+int CvLuaGame::lIsPlayerHasActiveProposal(lua_State* L)
+{
+	const PlayerTypes ePlayer = static_cast<PlayerTypes>(luaL_checkint(L, 1));
+
+	lua_pushboolean(L, GC.getGame().GetMPVotingSystem()->IsPlayerHasActiveProposal(ePlayer));
+	return 1;
+}
+//------------------------------------------------------------------------------
+int CvLuaGame::lIsAnyActiveProposalType(lua_State* L)
+{
+	const MPVotingSystemProposalTypes eType = static_cast<MPVotingSystemProposalTypes>(luaL_checkint(L, 1));
+
+	lua_pushboolean(L, GC.getGame().GetMPVotingSystem()->IsAnyActiveProposalType(eType));
+	return 1;
+}
+#endif

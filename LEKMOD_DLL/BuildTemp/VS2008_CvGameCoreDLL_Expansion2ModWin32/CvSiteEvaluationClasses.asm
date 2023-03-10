@@ -12,36 +12,36 @@ INCLUDELIB OLDNAMES
 PUBLIC	?NO_QUEST_DATA@CvMinorCivQuest@@2HB		; CvMinorCivQuest::NO_QUEST_DATA
 PUBLIC	?NO_TURN@CvMinorCivQuest@@2HB			; CvMinorCivQuest::NO_TURN
 CONST	SEGMENT
-$SG222946 DB	'FLAVOR_GROWTH', 00H
+$SG223423 DB	'FLAVOR_GROWTH', 00H
 	ORG $+2
-$SG222947 DB	'FLAVOR_EXPANSION', 00H
+$SG223424 DB	'FLAVOR_EXPANSION', 00H
 	ORG $+3
-$SG222948 DB	'FLAVOR_NAVAL', 00H
+$SG223425 DB	'FLAVOR_NAVAL', 00H
 	ORG $+3
-$SG222967 DB	'GAMEOPTION_AI_TWEAKS', 00H
+$SG223444 DB	'GAMEOPTION_AI_TWEAKS', 00H
 	ORG $+3
-$SG222968 DB	'GAMEOPTION_AI_GIMP_NO_BUILDING_SETTLERS', 00H
-$SG223019 DB	'FLAVOR_GROWTH', 00H
+$SG223445 DB	'GAMEOPTION_AI_GIMP_NO_BUILDING_SETTLERS', 00H
+$SG223496 DB	'FLAVOR_GROWTH', 00H
 	ORG $+2
-$SG223020 DB	'FLAVOR_EXPANSION', 00H
+$SG223497 DB	'FLAVOR_EXPANSION', 00H
 	ORG $+3
-$SG223025 DB	'FLAVOR_GOLD', 00H
-$SG223026 DB	'FLAVOR_TILE_IMPROVEMENT', 00H
-$SG223031 DB	'FLAVOR_PRODUCTION', 00H
+$SG223502 DB	'FLAVOR_GOLD', 00H
+$SG223503 DB	'FLAVOR_TILE_IMPROVEMENT', 00H
+$SG223508 DB	'FLAVOR_PRODUCTION', 00H
 	ORG $+2
-$SG223032 DB	'FLAVOR_WONDER', 00H
+$SG223509 DB	'FLAVOR_WONDER', 00H
 	ORG $+2
-$SG223036 DB	'FLAVOR_SCIENCE', 00H
+$SG223513 DB	'FLAVOR_SCIENCE', 00H
 	ORG $+1
-$SG223040 DB	'FLAVOR_HAPPINESS', 00H
+$SG223517 DB	'FLAVOR_HAPPINESS', 00H
 	ORG $+3
-$SG223044 DB	'FLAVOR_RELIGION', 00H
-$SG223091 DB	'IMPROVEMENT_TERRACE_FARM', 00H
+$SG223521 DB	'FLAVOR_RELIGION', 00H
+$SG223568 DB	'IMPROVEMENT_TERRACE_FARM', 00H
 	ORG $+3
-$SG223168 DB	'IMPROVEMENT_BRAZILWOOD_CAMP', 00H
-$SG223176 DB	'IMPROVEMENT_KASBAH', 00H
+$SG223645 DB	'IMPROVEMENT_BRAZILWOOD_CAMP', 00H
+$SG223653 DB	'IMPROVEMENT_KASBAH', 00H
 	ORG $+1
-$SG223184 DB	'IMPROVEMENT_POLDER', 00H
+$SG223661 DB	'IMPROVEMENT_POLDER', 00H
 CONST	ENDS
 ;	COMDAT ?NO_TURN@CvMinorCivQuest@@2HB
 CONST	SEGMENT
@@ -2038,7 +2038,7 @@ _TEXT	SEGMENT
 
 	push	0
 	mov	DWORD PTR [esi+60], ecx
-	push	OFFSET $SG222946
+	push	OFFSET $SG223423
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	DWORD PTR [esi+64], 0
 	mov	DWORD PTR [esi+68], 0
@@ -2047,7 +2047,7 @@ _TEXT	SEGMENT
 ; 48   : 	m_iExpansionIndex = GC.getInfoTypeForString("FLAVOR_EXPANSION");
 
 	push	0
-	push	OFFSET $SG222947
+	push	OFFSET $SG223424
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	DWORD PTR [esi+76], eax
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
@@ -2055,7 +2055,7 @@ _TEXT	SEGMENT
 ; 49   : 	m_iNavalIndex = GC.getInfoTypeForString("FLAVOR_NAVAL");
 
 	push	0
-	push	OFFSET $SG222948
+	push	OFFSET $SG223425
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	DWORD PTR [esi+72], eax
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
@@ -2173,13 +2173,13 @@ $LL64@ComputeFla:
 ; 215  : 		if(strFlavor == "FLAVOR_GROWTH" ||
 ; 216  : 		        strFlavor == "FLAVOR_EXPANSION")
 
-	push	OFFSET $SG223019
+	push	OFFSET $SG223496
 	push	ebx
 	call	DWORD PTR __imp_??$?8DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PBD@Z
 	add	esp, 8
 	test	al, al
 	jne	$LN23@ComputeFla
-	push	OFFSET $SG223020
+	push	OFFSET $SG223497
 	push	ebx
 	call	DWORD PTR __imp_??$?8DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PBD@Z
 	add	esp, 8
@@ -2191,13 +2191,13 @@ $LL64@ComputeFla:
 ; 224  : 		else if(strFlavor == "FLAVOR_GOLD" ||
 ; 225  : 		        strFlavor == "FLAVOR_TILE_IMPROVEMENT")
 
-	push	OFFSET $SG223025
+	push	OFFSET $SG223502
 	push	ebx
 	call	DWORD PTR __imp_??$?8DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PBD@Z
 	add	esp, 8
 	test	al, al
 	jne	$LN19@ComputeFla
-	push	OFFSET $SG223026
+	push	OFFSET $SG223503
 	push	ebx
 	call	DWORD PTR __imp_??$?8DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PBD@Z
 	add	esp, 8
@@ -2206,13 +2206,13 @@ $LL64@ComputeFla:
 
 ; 234  : 		        strFlavor == "FLAVOR_WONDER")
 
-	push	OFFSET $SG223031
+	push	OFFSET $SG223508
 	push	ebx
 	call	DWORD PTR __imp_??$?8DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PBD@Z
 	add	esp, 8
 	test	al, al
 	jne	$LN15@ComputeFla
-	push	OFFSET $SG223032
+	push	OFFSET $SG223509
 	push	ebx
 	call	DWORD PTR __imp_??$?8DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PBD@Z
 	add	esp, 8
@@ -2221,7 +2221,7 @@ $LL64@ComputeFla:
 
 ; 242  : 		else if(strFlavor == "FLAVOR_SCIENCE")
 
-	push	OFFSET $SG223036
+	push	OFFSET $SG223513
 	push	ebx
 	call	DWORD PTR __imp_??$?8DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PBD@Z
 	add	esp, 8
@@ -2262,7 +2262,7 @@ $LN12@ComputeFla:
 
 ; 251  : 		else if(strFlavor == "FLAVOR_HAPPINESS")
 
-	push	OFFSET $SG223040
+	push	OFFSET $SG223517
 	push	ebx
 	call	DWORD PTR __imp_??$?8DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PBD@Z
 	add	esp, 8
@@ -2303,7 +2303,7 @@ $LN9@ComputeFla:
 
 ; 260  : 		else if(strFlavor == "FLAVOR_RELIGION")
 
-	push	OFFSET $SG223044
+	push	OFFSET $SG223521
 	push	ebx
 	call	DWORD PTR __imp_??$?8DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PBD@Z
 	add	esp, 8
@@ -3313,12 +3313,12 @@ $LN31@CanFound:
 	test	al, al
 	jne	SHORT $LN29@CanFound
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
-	push	OFFSET $SG222967
+	push	OFFSET $SG223444
 	call	?isOption@CvGame@@QBE_NPBD@Z		; CvGame::isOption
 	test	al, al
 	jne	SHORT $LN30@CanFound
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
-	push	OFFSET $SG222968
+	push	OFFSET $SG223445
 	call	?isOption@CvGame@@QBE_NPBD@Z		; CvGame::isOption
 	test	al, al
 	je	SHORT $LN29@CanFound
@@ -3693,39 +3693,39 @@ EXTRN	?getCapitalCity@CvPlayer@@QAEPAVCvCity@@XZ:PROC	; CvPlayer::getCapitalCity
 ;	COMDAT ?PlotFoundValue@CvCitySiteEvaluator@@UAEHPAVCvPlot@@PAVCvPlayer@@W4YieldTypes@@_N@Z
 _TEXT	SEGMENT
 _bIsInca$ = -85						; size = 1
-_iDistance$223107 = -84					; size = 4
+_iDistance$223584 = -84					; size = 4
 _rtnValue$ = -80					; size = 4
 _iClosestEnemyCity$ = -76				; size = 4
 _iClosestCityOfMine$ = -72				; size = 4
-_iDX$223097 = -68					; size = 4
+_iDX$223574 = -68					; size = 4
 _iCelticForestCount$ = -64				; size = 4
 _iIroquoisForestCount$ = -60				; size = 4
 _iNaturalWonderCount$ = -56				; size = 4
 _iBrazilJungleCount$ = -52				; size = 4
 _iDesertCount$ = -48					; size = 4
 _iWetlandsCount$ = -44					; size = 4
-$T224633 = -40						; size = 4
+$T225110 = -40						; size = 4
 _iFaithValue$ = -40					; size = 4
-$T224629 = -36						; size = 4
+$T225106 = -36						; size = 4
 _iScienceValue$ = -36					; size = 4
-$T224625 = -32						; size = 4
+$T225102 = -32						; size = 4
 _iGoldValue$ = -32					; size = 4
-$T224621 = -28						; size = 4
+$T225098 = -28						; size = 4
 _iProductionValue$ = -28				; size = 4
 _iHappinessValue$ = -24					; size = 4
-$T224617 = -20						; size = 4
+$T225094 = -20						; size = 4
 _iFoodValue$ = -20					; size = 4
 _iStrategicValue$ = -16					; size = 4
-_iDY$223101 = -12					; size = 4
+_iDY$223578 = -12					; size = 4
 _iCapitalArea$ = -8					; size = 4
-$T224648 = -4						; size = 4
-$T224644 = -4						; size = 4
-_ePlotResource$223134 = -4				; size = 4
+$T225125 = -4						; size = 4
+$T225121 = -4						; size = 4
+_ePlotResource$223611 = -4				; size = 4
 _pPlot$ = 8						; size = 4
-_iSweetSpot$223209 = 12					; size = 4
+_iSweetSpot$223686 = 12					; size = 4
 _pPlayer$ = 12						; size = 4
-$T224569 = 16						; size = 4
-$T224568 = 16						; size = 4
+$T225046 = 16						; size = 4
+$T225045 = 16						; size = 4
 _eYield$ = 16						; size = 4
 ___formal$ = 20						; size = 1
 ?PlotFoundValue@CvCitySiteEvaluator@@UAEHPAVCvPlot@@PAVCvPlayer@@W4YieldTypes@@_N@Z PROC ; CvCitySiteEvaluator::PlotFoundValue, COMDAT
@@ -3871,7 +3871,7 @@ $LN98@PlotFoundV:
 ; 341  : 	ImprovementTypes eIncaImprovement = (ImprovementTypes)GC.getInfoTypeForString("IMPROVEMENT_TERRACE_FARM", true);  
 
 	push	1
-	push	OFFSET $SG223091
+	push	OFFSET $SG223568
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 
@@ -3921,8 +3921,8 @@ $LN95@PlotFoundV:
 ; 364  : 		for (int iDY = -7; iDY <= 7; iDY++)
 
 	mov	eax, -7					; fffffff9H
-	mov	DWORD PTR _iDX$223097[esp+104], -7	; fffffff9H
-	mov	DWORD PTR _iDY$223101[esp+104], eax
+	mov	DWORD PTR _iDX$223574[esp+104], -7	; fffffff9H
+	mov	DWORD PTR _iDY$223578[esp+104], eax
 	jmp	SHORT $LN91@PlotFoundV
 	npad	1
 $LL210@PlotFoundV:
@@ -3946,7 +3946,7 @@ $LL210@PlotFoundV:
 ; 364  : 		for (int iDY = -7; iDY <= 7; iDY++)
 
 	mov	eax, -7					; fffffff9H
-	mov	DWORD PTR _iDY$223101[esp+104], eax
+	mov	DWORD PTR _iDY$223578[esp+104], eax
 	jmp	SHORT $LN91@PlotFoundV
 	npad	1
 $LL211@PlotFoundV:
@@ -3960,7 +3960,7 @@ $LN91@PlotFoundV:
 	movsx	edi, WORD PTR [esi+2]
 	movsx	ebp, WORD PTR [esi]
 	push	eax
-	mov	eax, DWORD PTR _iDX$223097[esp+108]
+	mov	eax, DWORD PTR _iDX$223574[esp+108]
 	push	eax
 	push	edi
 	push	ebp
@@ -3995,7 +3995,7 @@ $LN91@PlotFoundV:
 ; 377  : 				if (iDistance <= 7)
 
 	cmp	edi, 7
-	mov	DWORD PTR _iDistance$223107[esp+104], edi
+	mov	DWORD PTR _iDistance$223584[esp+104], edi
 	jg	$LN90@PlotFoundV
 
 ; 378  : #endif
@@ -4097,7 +4097,7 @@ $LN83@PlotFoundV:
 ; 393  : 						{
 ; 394  : 							int iRingModifier = m_iRingModifier[iDistance];
 
-	mov	eax, DWORD PTR _iDistance$223107[esp+104]
+	mov	eax, DWORD PTR _iDistance$223584[esp+104]
 	mov	ebp, DWORD PTR [ebx+eax*4+40]
 
 ; 395  : 
@@ -4141,12 +4141,12 @@ $LN79@PlotFoundV:
 	mov	ecx, DWORD PTR _pPlayer$[esp+100]
 	mov	eax, DWORD PTR [ebx]
 	push	ecx
-	mov	DWORD PTR $T224617[esp+108], edx
+	mov	DWORD PTR $T225094[esp+108], edx
 	mov	edx, DWORD PTR [eax+24]
 	push	esi
 	mov	ecx, ebx
 	call	edx
-	imul	eax, DWORD PTR $T224617[esp+104]
+	imul	eax, DWORD PTR $T225094[esp+104]
 	imul	eax, ebp
 	mov	DWORD PTR _iFoodValue$[esp+104], eax
 	mov	eax, DWORD PTR _eYield$[esp+100]
@@ -4167,13 +4167,13 @@ $LN77@PlotFoundV:
 	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+7204
 	mov	edx, DWORD PTR [ebx]
 	mov	edx, DWORD PTR [edx+32]
-	mov	DWORD PTR $T224621[esp+104], eax
+	mov	DWORD PTR $T225098[esp+104], eax
 	mov	eax, DWORD PTR _pPlayer$[esp+100]
 	push	eax
 	push	esi
 	mov	ecx, ebx
 	call	edx
-	imul	eax, DWORD PTR $T224621[esp+104]
+	imul	eax, DWORD PTR $T225098[esp+104]
 	imul	eax, ebp
 	mov	DWORD PTR _iProductionValue$[esp+104], eax
 	mov	eax, DWORD PTR _eYield$[esp+100]
@@ -4194,13 +4194,13 @@ $LN75@PlotFoundV:
 	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+7208
 	mov	edx, DWORD PTR [ebx]
 	mov	edx, DWORD PTR [edx+36]
-	mov	DWORD PTR $T224625[esp+104], eax
+	mov	DWORD PTR $T225102[esp+104], eax
 	mov	eax, DWORD PTR _pPlayer$[esp+100]
 	push	eax
 	push	esi
 	mov	ecx, ebx
 	call	edx
-	imul	eax, DWORD PTR $T224625[esp+104]
+	imul	eax, DWORD PTR $T225102[esp+104]
 	imul	eax, ebp
 	mov	DWORD PTR _iGoldValue$[esp+104], eax
 	mov	eax, DWORD PTR _eYield$[esp+100]
@@ -4221,13 +4221,13 @@ $LN73@PlotFoundV:
 	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+7212
 	mov	edx, DWORD PTR [ebx]
 	mov	edx, DWORD PTR [edx+40]
-	mov	DWORD PTR $T224629[esp+104], eax
+	mov	DWORD PTR $T225106[esp+104], eax
 	mov	eax, DWORD PTR _pPlayer$[esp+100]
 	push	eax
 	push	esi
 	mov	ecx, ebx
 	call	edx
-	imul	eax, DWORD PTR $T224629[esp+104]
+	imul	eax, DWORD PTR $T225106[esp+104]
 	imul	eax, ebp
 	mov	DWORD PTR _iScienceValue$[esp+104], eax
 	mov	eax, DWORD PTR _eYield$[esp+100]
@@ -4248,13 +4248,13 @@ $LN71@PlotFoundV:
 	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+7216
 	mov	edx, DWORD PTR [ebx]
 	mov	edx, DWORD PTR [edx+44]
-	mov	DWORD PTR $T224633[esp+104], eax
+	mov	DWORD PTR $T225110[esp+104], eax
 	mov	eax, DWORD PTR _pPlayer$[esp+100]
 	push	eax
 	push	esi
 	mov	ecx, ebx
 	call	edx
-	imul	eax, DWORD PTR $T224633[esp+104]
+	imul	eax, DWORD PTR $T225110[esp+104]
 	imul	eax, ebp
 	mov	DWORD PTR _iFaithValue$[esp+104], eax
 $LN72@PlotFoundV:
@@ -4288,19 +4288,19 @@ $LN72@PlotFoundV:
 	mov	edx, DWORD PTR [edx+48]
 	mov	DWORD PTR _iHappinessValue$[esp+104], eax
 	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+7220
-	mov	DWORD PTR $T224644[esp+104], eax
+	mov	DWORD PTR $T225121[esp+104], eax
 	mov	eax, DWORD PTR _pPlayer$[esp+100]
 	push	eax
 	push	esi
 	mov	ecx, ebx
 	call	edx
 	mov	edi, eax
-	imul	edi, DWORD PTR $T224644[esp+104]
+	imul	edi, DWORD PTR $T225121[esp+104]
 	imul	edi, ebp
 
 ; 433  : 								if (iDistance)
 
-	cmp	DWORD PTR _iDistance$223107[esp+104], 0
+	cmp	DWORD PTR _iDistance$223584[esp+104], 0
 	je	SHORT $LN69@PlotFoundV
 
 ; 434  : 									iStrategicValue = ComputeStrategicValue(pLoopPlot, pPlayer, iDistance) * /*1*/ GC.getSETTLER_STRATEGIC_MULTIPLIER();  // the ring is included in the computation
@@ -4309,14 +4309,14 @@ $LN72@PlotFoundV:
 	mov	ecx, DWORD PTR _pPlayer$[esp+100]
 	mov	edx, DWORD PTR [ebx]
 	mov	edx, DWORD PTR [edx+52]
-	mov	DWORD PTR $T224648[esp+104], eax
-	mov	eax, DWORD PTR _iDistance$223107[esp+104]
+	mov	DWORD PTR $T225125[esp+104], eax
+	mov	eax, DWORD PTR _iDistance$223584[esp+104]
 	push	eax
 	push	ecx
 	push	esi
 	mov	ecx, ebx
 	call	edx
-	imul	eax, DWORD PTR $T224648[esp+104]
+	imul	eax, DWORD PTR $T225125[esp+104]
 	mov	DWORD PTR _iStrategicValue$[esp+104], eax
 $LN69@PlotFoundV:
 
@@ -4369,7 +4369,7 @@ $LN68@PlotFoundV:
 	call	?IsNaturalWonder@CvPlot@@QBE_NXZ	; CvPlot::IsNaturalWonder
 	test	al, al
 	je	SHORT $LN212@PlotFoundV
-	mov	eax, DWORD PTR _iDistance$223107[esp+104]
+	mov	eax, DWORD PTR _iDistance$223584[esp+104]
 	dec	eax
 	cmp	eax, 2
 	ja	SHORT $LN212@PlotFoundV
@@ -4427,7 +4427,7 @@ $LN213@PlotFoundV:
 	mov	ecx, esi
 	mov	ebp, eax
 	call	?getResourceType@CvPlot@@QBE?AW4ResourceTypes@@W4TeamTypes@@@Z ; CvPlot::getResourceType
-	mov	DWORD PTR _ePlotResource$223134[esp+104], eax
+	mov	DWORD PTR _ePlotResource$223611[esp+104], eax
 
 ; 474  : 
 ; 475  : 							if (ePlotFeature == FEATURE_FOREST)
@@ -4443,7 +4443,7 @@ $LN213@PlotFoundV:
 
 ; 480  : 									if (iDistance == 1)
 
-	cmp	DWORD PTR _iDistance$223107[esp+104], eax
+	cmp	DWORD PTR _iDistance$223584[esp+104], eax
 	jne	SHORT $LN55@PlotFoundV
 
 ; 481  : 									{
@@ -4473,7 +4473,7 @@ $LN65@PlotFoundV:
 ; 490  : 							{
 ; 491  : 								if (iDistance <= NUM_CITY_RINGS)
 
-	cmp	DWORD PTR _iDistance$223107[esp+104], 3
+	cmp	DWORD PTR _iDistance$223584[esp+104], 3
 	jg	SHORT $LN55@PlotFoundV
 
 ; 492  : 								{
@@ -4498,7 +4498,7 @@ $LN56@PlotFoundV:
 ; 497  : 							{
 ; 498  : 								if (iDistance <= NUM_CITY_RINGS)
 
-	cmp	DWORD PTR _iDistance$223107[esp+104], 3
+	cmp	DWORD PTR _iDistance$223584[esp+104], 3
 	jg	SHORT $LN55@PlotFoundV
 
 ; 499  : 								{
@@ -4521,7 +4521,7 @@ $LN55@PlotFoundV:
 
 	mov	eax, 1
 	je	SHORT $LN53@PlotFoundV
-	cmp	DWORD PTR _iDistance$223107[esp+104], eax
+	cmp	DWORD PTR _iDistance$223584[esp+104], eax
 	jg	SHORT $LN53@PlotFoundV
 
 ; 507  : 								{
@@ -4541,13 +4541,13 @@ $LN53@PlotFoundV:
 ; 513  : 							{
 ; 514  : 								if (iDistance <= NUM_CITY_RINGS)
 
-	cmp	DWORD PTR _iDistance$223107[esp+104], 3
+	cmp	DWORD PTR _iDistance$223584[esp+104], 3
 	jg	SHORT $LN50@PlotFoundV
 
 ; 515  : 								{
 ; 516  : 									if (ePlotResource == NO_RESOURCE)
 
-	cmp	DWORD PTR _ePlotResource$223134[esp+104], -1
+	cmp	DWORD PTR _ePlotResource$223611[esp+104], -1
 	jne	SHORT $LN50@PlotFoundV
 
 ; 517  : 									{
@@ -4574,7 +4574,7 @@ $LN50@PlotFoundV:
 ; 526  : 								{
 ; 527  : 									if (iDistance <= NUM_CITY_RINGS)
 
-	cmp	DWORD PTR _iDistance$223107[esp+104], 3
+	cmp	DWORD PTR _iDistance$223584[esp+104], 3
 	jg	SHORT $LN90@PlotFoundV
 
 ; 528  : 									{
@@ -4597,15 +4597,15 @@ $LN50@PlotFoundV:
 	imul	eax, DWORD PTR [ebx+100]
 	add	DWORD PTR _rtnValue$[esp+104], eax
 $LN90@PlotFoundV:
-	mov	eax, DWORD PTR _iDY$223101[esp+104]
+	mov	eax, DWORD PTR _iDY$223578[esp+104]
 	inc	eax
 	cmp	eax, 7
-	mov	DWORD PTR _iDY$223101[esp+104], eax
+	mov	DWORD PTR _iDY$223578[esp+104], eax
 	jle	$LL211@PlotFoundV
-	mov	eax, DWORD PTR _iDX$223097[esp+104]
+	mov	eax, DWORD PTR _iDX$223574[esp+104]
 	inc	eax
 	cmp	eax, 7
-	mov	DWORD PTR _iDX$223097[esp+104], eax
+	mov	DWORD PTR _iDX$223574[esp+104], eax
 	jle	$LL210@PlotFoundV
 
 ; 549  : 							}
@@ -4700,7 +4700,7 @@ $LN35@PlotFoundV:
 ; 578  : 	ImprovementTypes eBrazilImprovement = (ImprovementTypes)GC.getInfoTypeForString("IMPROVEMENT_BRAZILWOOD_CAMP", true);  
 
 	push	1
-	push	OFFSET $SG223168
+	push	OFFSET $SG223645
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 
@@ -4756,7 +4756,7 @@ $LN217@PlotFoundV:
 ; 593  : 	ImprovementTypes eMoroccoImprovement = (ImprovementTypes)GC.getInfoTypeForString("IMPROVEMENT_KASBAH", true);  
 
 	push	1
-	push	OFFSET $SG223176
+	push	OFFSET $SG223653
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 
@@ -4812,7 +4812,7 @@ $LN218@PlotFoundV:
 ; 608  : 	ImprovementTypes ePolderImprovement = (ImprovementTypes)GC.getInfoTypeForString("IMPROVEMENT_POLDER", true);  
 
 	push	1
-	push	OFFSET $SG223184
+	push	OFFSET $SG223661
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 
@@ -5080,7 +5080,7 @@ $LN19@PlotFoundV:
 
 ; 678  : 		iSweetSpot = max(4,iSweetSpot);
 
-	mov	DWORD PTR $T224568[esp+100], 4
+	mov	DWORD PTR $T225045[esp+100], 4
 	dec	ecx
 	cmp	eax, 4
 	setl	dl
@@ -5094,22 +5094,22 @@ $LN19@PlotFoundV:
 	setge	dl
 	dec	edx
 	lea	eax, DWORD PTR [ecx+edx+5]
-	mov	DWORD PTR _iSweetSpot$223209[esp+100], eax
+	mov	DWORD PTR _iSweetSpot$223686[esp+100], eax
 	cmp	eax, 4
-	lea	eax, DWORD PTR _iSweetSpot$223209[esp+100]
+	lea	eax, DWORD PTR _iSweetSpot$223686[esp+100]
 	jg	SHORT $LN199@PlotFoundV
-	lea	eax, DWORD PTR $T224568[esp+100]
+	lea	eax, DWORD PTR $T225045[esp+100]
 $LN199@PlotFoundV:
 	mov	eax, DWORD PTR [eax]
-	mov	DWORD PTR _iSweetSpot$223209[esp+100], eax
+	mov	DWORD PTR _iSweetSpot$223686[esp+100], eax
 
 ; 679  : 		iSweetSpot = min(6,iSweetSpot);
 
 	cmp	eax, 6
-	mov	DWORD PTR $T224569[esp+100], 6
-	lea	eax, DWORD PTR _iSweetSpot$223209[esp+100]
+	mov	DWORD PTR $T225046[esp+100], 6
+	lea	eax, DWORD PTR _iSweetSpot$223686[esp+100]
 	jl	SHORT $LN203@PlotFoundV
-	lea	eax, DWORD PTR $T224569[esp+100]
+	lea	eax, DWORD PTR $T225046[esp+100]
 $LN203@PlotFoundV:
 	mov	eax, DWORD PTR [eax]
 
@@ -6778,15 +6778,15 @@ EXTRN	?isGoody@CvPlot@@QBE_NW4TeamTypes@@@Z:PROC	; CvPlot::isGoody
 _TEXT	SEGMENT
 _iI$ = -16						; size = 4
 _iCelticForestCount$ = -12				; size = 4
-_iDistance$223424 = -8					; size = 4
-$T225244 = -4						; size = 4
-$T225240 = -4						; size = 4
-$T225236 = -4						; size = 4
-$T225232 = -4						; size = 4
-$T225228 = -4						; size = 4
-$T225224 = -4						; size = 4
-$T225220 = -4						; size = 4
-$T225216 = -4						; size = 4
+_iDistance$223901 = -8					; size = 4
+$T225721 = -4						; size = 4
+$T225717 = -4						; size = 4
+$T225713 = -4						; size = 4
+$T225709 = -4						; size = 4
+$T225705 = -4						; size = 4
+$T225701 = -4						; size = 4
+$T225697 = -4						; size = 4
+$T225693 = -4						; size = 4
 _pPlot$ = 8						; size = 4
 _pPlayer$ = 12						; size = 4
 ___formal$ = 16						; size = 4
@@ -6912,7 +6912,7 @@ $LL71@PlotFoundV@3:
 ; 1209 : 			if(iDistance > NUM_CITY_RINGS) continue;
 
 	cmp	eax, 3
-	mov	DWORD PTR _iDistance$223424[esp+32], eax
+	mov	DWORD PTR _iDistance$223901[esp+32], eax
 	jg	$LN16@PlotFoundV@3
 
 ; 1210 : 			int iRingModifier = m_iRingModifier[iDistance];
@@ -6934,11 +6934,11 @@ $LL71@PlotFoundV@3:
 	mov	edx, DWORD PTR [esi]
 	mov	edx, DWORD PTR [edx+24]
 	push	eax
-	mov	DWORD PTR $T225216[esp+36], ecx
+	mov	DWORD PTR $T225693[esp+36], ecx
 	push	edi
 	mov	ecx, esi
 	call	edx
-	imul	eax, DWORD PTR $T225216[esp+32]
+	imul	eax, DWORD PTR $T225693[esp+32]
 
 ; 1216 : 				rtnValue += iRingModifier * ComputeHappinessValue(pLoopPlot, pPlayer) * /*12*/ GC.getSTART_AREA_HAPPINESS_MULTIPLIER();
 
@@ -6947,13 +6947,13 @@ $LL71@PlotFoundV@3:
 	mov	edx, DWORD PTR [edx+28]
 	add	ebx, eax
 	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+7164
-	mov	DWORD PTR $T225220[esp+32], eax
+	mov	DWORD PTR $T225697[esp+32], eax
 	mov	eax, DWORD PTR _pPlayer$[esp+28]
 	push	eax
 	push	edi
 	mov	ecx, esi
 	call	edx
-	imul	eax, DWORD PTR $T225220[esp+32]
+	imul	eax, DWORD PTR $T225697[esp+32]
 
 ; 1217 : 				rtnValue += iRingModifier * ComputeProductionValue(pLoopPlot, pPlayer) * /*8*/ GC.getSTART_AREA_PRODUCTION_MULTIPLIER();
 
@@ -6962,13 +6962,13 @@ $LL71@PlotFoundV@3:
 	mov	edx, DWORD PTR [edx+32]
 	add	ebx, eax
 	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+7168
-	mov	DWORD PTR $T225224[esp+32], eax
+	mov	DWORD PTR $T225701[esp+32], eax
 	mov	eax, DWORD PTR _pPlayer$[esp+28]
 	push	eax
 	push	edi
 	mov	ecx, esi
 	call	edx
-	imul	eax, DWORD PTR $T225224[esp+32]
+	imul	eax, DWORD PTR $T225701[esp+32]
 
 ; 1218 : 				rtnValue += iRingModifier * ComputeGoldValue(pLoopPlot, pPlayer) * /*2*/ GC.getSTART_AREA_GOLD_MULTIPLIER();
 
@@ -6977,13 +6977,13 @@ $LL71@PlotFoundV@3:
 	mov	edx, DWORD PTR [edx+36]
 	add	ebx, eax
 	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+7172
-	mov	DWORD PTR $T225228[esp+32], eax
+	mov	DWORD PTR $T225705[esp+32], eax
 	mov	eax, DWORD PTR _pPlayer$[esp+28]
 	push	eax
 	push	edi
 	mov	ecx, esi
 	call	edx
-	imul	eax, DWORD PTR $T225228[esp+32]
+	imul	eax, DWORD PTR $T225705[esp+32]
 
 ; 1219 : 				rtnValue += iRingModifier * ComputeScienceValue(pLoopPlot, pPlayer) * /*1*/ GC.getSTART_AREA_SCIENCE_MULTIPLIER();
 
@@ -6992,13 +6992,13 @@ $LL71@PlotFoundV@3:
 	mov	edx, DWORD PTR [edx+40]
 	add	ebx, eax
 	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+7176
-	mov	DWORD PTR $T225232[esp+32], eax
+	mov	DWORD PTR $T225709[esp+32], eax
 	mov	eax, DWORD PTR _pPlayer$[esp+28]
 	push	eax
 	push	edi
 	mov	ecx, esi
 	call	edx
-	imul	eax, DWORD PTR $T225232[esp+32]
+	imul	eax, DWORD PTR $T225709[esp+32]
 
 ; 1220 : 				rtnValue += iRingModifier * ComputeFaithValue(pLoopPlot, pPlayer) * /*1*/ GC.getSTART_AREA_FAITH_MULTIPLIER();
 
@@ -7007,13 +7007,13 @@ $LL71@PlotFoundV@3:
 	mov	edx, DWORD PTR [edx+44]
 	add	ebx, eax
 	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+7180
-	mov	DWORD PTR $T225236[esp+32], eax
+	mov	DWORD PTR $T225713[esp+32], eax
 	mov	eax, DWORD PTR _pPlayer$[esp+28]
 	push	eax
 	push	edi
 	mov	ecx, esi
 	call	edx
-	imul	eax, DWORD PTR $T225236[esp+32]
+	imul	eax, DWORD PTR $T225713[esp+32]
 
 ; 1221 : 				rtnValue += iRingModifier * ComputeTradeableResourceValue(pLoopPlot, pPlayer) * /*1*/ GC.getSTART_AREA_RESOURCE_MULTIPLIER();
 
@@ -7022,13 +7022,13 @@ $LL71@PlotFoundV@3:
 	mov	edx, DWORD PTR [edx+48]
 	add	ebx, eax
 	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+7184
-	mov	DWORD PTR $T225240[esp+32], eax
+	mov	DWORD PTR $T225717[esp+32], eax
 	mov	eax, DWORD PTR _pPlayer$[esp+28]
 	push	eax
 	push	edi
 	mov	ecx, esi
 	call	edx
-	imul	eax, DWORD PTR $T225240[esp+32]
+	imul	eax, DWORD PTR $T225717[esp+32]
 
 ; 1222 : 				rtnValue += iRingModifier * ComputeStrategicValue(pLoopPlot, pPlayer, iDistance) * /*1*/ GC.getSTART_AREA_STRATEGIC_MULTIPLIER();
 
@@ -7038,17 +7038,17 @@ $LL71@PlotFoundV@3:
 	mov	edx, DWORD PTR [edx+52]
 	add	ebx, eax
 	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+7188
-	mov	DWORD PTR $T225244[esp+32], eax
-	mov	eax, DWORD PTR _iDistance$223424[esp+32]
+	mov	DWORD PTR $T225721[esp+32], eax
+	mov	eax, DWORD PTR _iDistance$223901[esp+32]
 	push	eax
 	push	ecx
 	push	edi
 	mov	ecx, esi
 	call	edx
-	imul	eax, DWORD PTR $T225244[esp+32]
+	imul	eax, DWORD PTR $T225721[esp+32]
 	imul	eax, ebp
 	add	ebx, eax
-	mov	eax, DWORD PTR _iDistance$223424[esp+32]
+	mov	eax, DWORD PTR _iDistance$223901[esp+32]
 $LN11@PlotFoundV@3:
 
 ; 1223 : 			}

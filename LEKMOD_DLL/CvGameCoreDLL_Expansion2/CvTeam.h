@@ -290,6 +290,12 @@ public:
 	bool IsHasDefensivePact(TeamTypes eIndex) const;
 	void SetHasDefensivePact(TeamTypes eIndex, bool bNewValue);
 
+
+#ifdef NEW_DEFENSIVE_PACT
+	void SendDefensivePactMessage(PlayerTypes ePlayer);
+#endif
+
+
 	int GetTotalNumResearchAgreements() const;
 	bool IsHasResearchAgreement(TeamTypes eIndex) const;
 	void SetHasResearchAgreement(TeamTypes eIndex, bool bNewValue);

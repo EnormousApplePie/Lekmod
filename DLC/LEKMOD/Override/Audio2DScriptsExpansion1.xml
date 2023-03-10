@@ -390,6 +390,17 @@
 			<bIsMusic>0</bIsMusic> 
 			<iPriority>1</iPriority> 
 		</Script2DSound>
+		<!--Victory Speech
+		-->
+		<Script2DSound>
+		  <ScriptID>AS2D_VICTORY_SPEECH_SCRAP</ScriptID>
+		  <SoundID>SND_VICTORY_SPEECH_SCRAP</SoundID>
+		  <SoundType>GAME_SPEECH</SoundType>
+		  <iMaxVolume>85</iMaxVolume>
+		  <iMinVolume>85</iMinVolume>
+		  <fTaperSoundtrackVolume>0.85</fTaperSoundtrackVolume>
+		</Script2DSound>
 	</Script2DSounds>
+	
 </Script2DFile> 
 

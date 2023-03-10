@@ -249,5 +249,12 @@
 			<bDontCache>0</bDontCache> 
 		</SoundData>
 	</SoundDatas>
+	<SoundData>
+      <SoundID>SND_VICTORY_SPEECH_SCRAP</SoundID>
+      <Filename>ChristoRedentor_01</Filename>
+      <bDontCache/>
+      <bOnlyLoadOneVariationEachTime/>
+      <LoadType>DYNAMIC_RES</LoadType>
+    </SoundData>
 </AudioDefinesFile> 
 

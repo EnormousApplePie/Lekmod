@@ -10,10 +10,10 @@ INCLUDELIB MSVCRT
 INCLUDELIB OLDNAMES
 
 _DATA	SEGMENT
-_CIV5_XP2_DLL_VERSION DD FLAT:$SG217223
+_CIV5_XP2_DLL_VERSION DD FLAT:$SG217700
 _DATA	ENDS
 CONST	SEGMENT
-$SG217223 DB	'1.0.0', 00H
+$SG217700 DB	'1.0.0', 00H
 	ORG $+2
 _guidICvUnknown DD 0d89ba82fH
 	DW	09fa3H
@@ -363,7 +363,7 @@ xdata$x	ENDS
 ;	COMDAT ?Plot@CvDllCity@@UBGPAVICvPlot1@@XZ
 _TEXT	SEGMENT
 __$EHRec$ = -12						; size = 12
-$T218763 = 8						; size = 4
+$T219240 = 8						; size = 4
 _this$ = 8						; size = 4
 ?Plot@CvDllCity@@UBGPAVICvPlot1@@XZ PROC		; CvDllCity::Plot, COMDAT
 
@@ -390,7 +390,7 @@ _this$ = 8						; size = 4
 	push	12					; 0000000cH
 	call	??2CvDllPlot@@SAPAXI@Z			; CvDllPlot::operator new
 	add	esp, 4
-	mov	DWORD PTR $T218763[esp+12], eax
+	mov	DWORD PTR $T219240[esp+12], eax
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	eax, eax
 	je	SHORT $LN5@Plot
@@ -416,7 +416,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?Plot@CvDllCity@@UBGPAVICvPlot1@@XZ$0:
-	mov	eax, DWORD PTR $T218763[ebp-4]
+	mov	eax, DWORD PTR $T219240[ebp-4]
 	push	eax
 	call	??3CvDllPlot@@SAXPAX@Z			; CvDllPlot::operator delete
 	pop	ecx
@@ -887,7 +887,7 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 __$EHRec$ = -12						; size = 12
 _this$ = 8						; size = 4
-$T218853 = 12						; size = 4
+$T219330 = 12						; size = 4
 _iIndex$ = 12						; size = 4
 ?GetCityPlotFromIndex@CvDllCity@@UBGPAVICvPlot1@@H@Z PROC ; CvDllCity::GetCityPlotFromIndex, COMDAT
 
@@ -918,7 +918,7 @@ _iIndex$ = 12						; size = 4
 	push	12					; 0000000cH
 	call	??2CvDllPlot@@SAPAXI@Z			; CvDllPlot::operator new
 	add	esp, 4
-	mov	DWORD PTR $T218853[esp+12], eax
+	mov	DWORD PTR $T219330[esp+12], eax
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	eax, eax
 	je	SHORT $LN5@GetCityPlo
@@ -944,7 +944,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetCityPlotFromIndex@CvDllCity@@UBGPAVICvPlot1@@H@Z$0:
-	mov	eax, DWORD PTR $T218853[ebp-4]
+	mov	eax, DWORD PTR $T219330[ebp-4]
 	push	eax
 	call	??3CvDllPlot@@SAXPAX@Z			; CvDllPlot::operator delete
 	pop	ecx
@@ -977,12 +977,12 @@ PUBLIC	?GetInterfaceId@ICvUnknown@@SG?AU_GUID@@XZ	; ICvUnknown::GetInterfaceId
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredllutil\include\cvdllinterfaces.h
 ;	COMDAT ?GetInterfaceId@ICvUnknown@@SG?AU_GUID@@XZ
 _TEXT	SEGMENT
-$T218871 = 8						; size = 4
+$T219348 = 8						; size = 4
 ?GetInterfaceId@ICvUnknown@@SG?AU_GUID@@XZ PROC		; ICvUnknown::GetInterfaceId, COMDAT
 
 ; 306  : 	static GUID DLLCALL GetInterfaceId(){ return guidICvUnknown; }
 
-	mov	eax, DWORD PTR $T218871[esp-4]
+	mov	eax, DWORD PTR $T219348[esp-4]
 	mov	ecx, DWORD PTR _guidICvUnknown
 	mov	edx, DWORD PTR _guidICvUnknown+4
 	mov	DWORD PTR [eax], ecx
@@ -998,12 +998,12 @@ PUBLIC	?GetInterfaceId@ICvCity1@@SG?AU_GUID@@XZ	; ICvCity1::GetInterfaceId
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?GetInterfaceId@ICvCity1@@SG?AU_GUID@@XZ
 _TEXT	SEGMENT
-$T218875 = 8						; size = 4
+$T219352 = 8						; size = 4
 ?GetInterfaceId@ICvCity1@@SG?AU_GUID@@XZ PROC		; ICvCity1::GetInterfaceId, COMDAT
 
 ; 855  : 	static GUID DLLCALL GetInterfaceId() { return guidICvCity1; }
 
-	mov	eax, DWORD PTR $T218875[esp-4]
+	mov	eax, DWORD PTR $T219352[esp-4]
 	mov	ecx, DWORD PTR _guidICvCity1
 	mov	edx, DWORD PTR _guidICvCity1+4
 	mov	DWORD PTR [eax], ecx
@@ -1103,8 +1103,8 @@ _TEXT	SEGMENT
 _TEXT	ENDS
 ;	COMDAT ?QueryInterface@CvDllCity@@UAGPAXU_GUID@@@Z
 _TEXT	SEGMENT
-$T218893 = -16						; size = 16
-$T218891 = -16						; size = 16
+$T219370 = -16						; size = 16
+$T219368 = -16						; size = 16
 _this$ = 8						; size = 4
 _guidInterface$ = 12					; size = 16
 ?QueryInterface@CvDllCity@@UAGPAXU_GUID@@@Z PROC	; CvDllCity::QueryInterface, COMDAT
@@ -1119,15 +1119,15 @@ _guidInterface$ = 12					; size = 16
 	mov	ecx, DWORD PTR _guidICvUnknown+4
 	mov	edx, DWORD PTR _guidICvUnknown+8
 	mov	eax, DWORD PTR _guidICvUnknown
-	mov	DWORD PTR $T218891[esp+20], ecx
-	lea	ecx, DWORD PTR $T218891[esp+16]
-	mov	DWORD PTR $T218891[esp+24], edx
-	mov	DWORD PTR $T218891[esp+16], eax
+	mov	DWORD PTR $T219368[esp+20], ecx
+	lea	ecx, DWORD PTR $T219368[esp+16]
+	mov	DWORD PTR $T219368[esp+24], edx
+	mov	DWORD PTR $T219368[esp+16], eax
 	mov	eax, DWORD PTR _guidICvUnknown+12
 	push	ecx
 	lea	edx, DWORD PTR _guidInterface$[esp+16]
 	push	edx
-	mov	DWORD PTR $T218891[esp+36], eax
+	mov	DWORD PTR $T219368[esp+36], eax
 	call	_IsEqualGUID
 	add	esp, 8
 	test	eax, eax
@@ -1135,15 +1135,15 @@ _guidInterface$ = 12					; size = 16
 	mov	ecx, DWORD PTR _guidICvCity1+4
 	mov	edx, DWORD PTR _guidICvCity1+8
 	mov	eax, DWORD PTR _guidICvCity1
-	mov	DWORD PTR $T218893[esp+20], ecx
-	lea	ecx, DWORD PTR $T218893[esp+16]
-	mov	DWORD PTR $T218893[esp+24], edx
-	mov	DWORD PTR $T218893[esp+16], eax
+	mov	DWORD PTR $T219370[esp+20], ecx
+	lea	ecx, DWORD PTR $T219370[esp+16]
+	mov	DWORD PTR $T219370[esp+24], edx
+	mov	DWORD PTR $T219370[esp+16], eax
 	mov	eax, DWORD PTR _guidICvCity1+12
 	push	ecx
 	lea	edx, DWORD PTR _guidInterface$[esp+16]
 	push	edx
-	mov	DWORD PTR $T218893[esp+36], eax
+	mov	DWORD PTR $T219370[esp+36], eax
 	call	_IsEqualGUID
 	add	esp, 8
 	test	eax, eax

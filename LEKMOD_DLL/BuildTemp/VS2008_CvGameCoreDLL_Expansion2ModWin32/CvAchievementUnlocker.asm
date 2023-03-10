@@ -16,39 +16,39 @@ _BSS	SEGMENT
 ?ms_iNumImprovementsPillagedPerTurn@CvAchievementUnlocker@@0HA DD 01H DUP (?) ; CvAchievementUnlocker::ms_iNumImprovementsPillagedPerTurn
 _BSS	ENDS
 CONST	SEGMENT
-$SG218735 DB	'LEADER_ALEXANDER', 00H
+$SG219212 DB	'LEADER_ALEXANDER', 00H
 	ORG $+3
-$SG218774 DB	'BELIEF_PAPAL_PRIMACY', 00H
+$SG219251 DB	'BELIEF_PAPAL_PRIMACY', 00H
 	ORG $+3
-$SG218800 DB	'CIVILIZATION_ETHIOPIA', 00H
+$SG219277 DB	'CIVILIZATION_ETHIOPIA', 00H
 	ORG $+2
-$SG218803 DB	'UNIT_PROPHET', 00H
+$SG219280 DB	'UNIT_PROPHET', 00H
 	ORG $+3
-$SG218815 DB	'CIVILIZATION_CARTHAGE', 00H
+$SG219292 DB	'CIVILIZATION_CARTHAGE', 00H
 	ORG $+2
-$SG218818 DB	'CIVILIZATION_ROME', 00H
+$SG219295 DB	'CIVILIZATION_ROME', 00H
 	ORG $+2
-$SG218821 DB	'UNIT_CARTHAGINIAN_FOREST_ELEPHANT', 00H
+$SG219298 DB	'UNIT_CARTHAGINIAN_FOREST_ELEPHANT', 00H
 	ORG $+2
-$SG218837 DB	'CIVILIZATION_BYZANTIUM', 00H
+$SG219314 DB	'CIVILIZATION_BYZANTIUM', 00H
 	ORG $+1
-$SG218840 DB	'CIVILIZATION_GREECE', 00H
-$SG218843 DB	'UNIT_BYZANTINE_DROMON', 00H
+$SG219317 DB	'CIVILIZATION_GREECE', 00H
+$SG219320 DB	'UNIT_BYZANTINE_DROMON', 00H
 	ORG $+2
-$SG218851 DB	'UNIT_SKY_FORTRESS', 00H
+$SG219328 DB	'UNIT_SKY_FORTRESS', 00H
 	ORG $+2
-$SG218870 DB	'CIVILIZATION_SWEDEN', 00H
-$SG218873 DB	'UNIT_GREAT_GENERAL', 00H
+$SG219347 DB	'CIVILIZATION_SWEDEN', 00H
+$SG219350 DB	'UNIT_GREAT_GENERAL', 00H
 	ORG $+1
-$SG218876 DB	'UNIT_SWEDISH_HAKKAPELIITTA', 00H
+$SG219353 DB	'UNIT_SWEDISH_HAKKAPELIITTA', 00H
 	ORG $+1
-$SG218904 DB	'BUILDING_COLOSSUS', 00H
+$SG219381 DB	'BUILDING_COLOSSUS', 00H
 	ORG $+2
-$SG218907 DB	'BUILDING_PETRA', 00H
+$SG219384 DB	'BUILDING_PETRA', 00H
 	ORG $+1
-$SG218910 DB	'BUILDING_CARAVANSARY', 00H
+$SG219387 DB	'BUILDING_CARAVANSARY', 00H
 	ORG $+3
-$SG218913 DB	'BUILDING_HARBOR', 00H
+$SG219390 DB	'BUILDING_HARBOR', 00H
 $SG92492 DB	'b103d2e0-3aab-40d7-a2f3-375d2eabfcaf', 00H
 	ORG $+3
 _CIV5_XP1_SCENARIO3_MODID DD FLAT:$SG92492
@@ -746,7 +746,7 @@ _eBuilding$ = 12					; size = 4
 ; 407  : 		m_eCollossusType = (BuildingTypes)GC.getInfoTypeForString("BUILDING_COLOSSUS", true);
 
 	push	1
-	push	OFFSET $SG218904
+	push	OFFSET $SG219381
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	DWORD PTR [esi+16], eax
@@ -763,7 +763,7 @@ $LN7@FinishedBu:
 ; 412  : 		m_ePetraType = (BuildingTypes)GC.getInfoTypeForString("BUILDING_PETRA", true);
 
 	push	1
-	push	OFFSET $SG218907
+	push	OFFSET $SG219384
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	DWORD PTR [esi+20], eax
@@ -780,7 +780,7 @@ $LN6@FinishedBu:
 ; 417  : 		m_eCaravansaryType = (BuildingTypes)GC.getInfoTypeForString("BUILDING_CARAVANSARY", true);
 
 	push	1
-	push	OFFSET $SG218910
+	push	OFFSET $SG219387
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	DWORD PTR [esi+24], eax
@@ -797,7 +797,7 @@ $LN5@FinishedBu:
 ; 422  : 		m_eHarborType = (BuildingTypes)GC.getInfoTypeForString("BUILDING_HARBOR", true);
 
 	push	1
-	push	OFFSET $SG218913
+	push	OFFSET $SG219390
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	DWORD PTR [esi+28], eax
@@ -1324,7 +1324,7 @@ __ehfuncinfo$?AlexanderConquest@CvAchievementUnlocker@@SAXW4PlayerTypes@@@Z DD 0
 xdata$x	ENDS
 ;	COMDAT ?AlexanderConquest@CvAchievementUnlocker@@SAXW4PlayerTypes@@@Z
 _TEXT	SEGMENT
-_szLeaderName$218731 = -40				; size = 28
+_szLeaderName$219208 = -40				; size = 28
 __$EHRec$ = -12						; size = 12
 _ePlayer$ = 8						; size = 4
 ?AlexanderConquest@CvAchievementUnlocker@@SAXW4PlayerTypes@@@Z PROC ; CvAchievementUnlocker::AlexanderConquest, COMDAT
@@ -1366,13 +1366,13 @@ _ePlayer$ = 8						; size = 4
 $LN20@AlexanderC:
 	push	esi
 	push	eax
-	lea	ecx, DWORD PTR _szLeaderName$218731[esp+56]
+	lea	ecx, DWORD PTR _szLeaderName$219208[esp+56]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 
 ; 74   : 		if(szLeaderName == "LEADER_ALEXANDER")
 
-	lea	eax, DWORD PTR _szLeaderName$218731[esp+52]
-	push	OFFSET $SG218735
+	lea	eax, DWORD PTR _szLeaderName$219208[esp+52]
+	push	OFFSET $SG219212
 	push	eax
 	mov	DWORD PTR __$EHRec$[esp+68], edi
 	call	DWORD PTR __imp_??$?8DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PBD@Z
@@ -1483,7 +1483,7 @@ $LN7@AlexanderC:
 ; 97   : 		}
 ; 98   : 	}
 
-	lea	ecx, DWORD PTR _szLeaderName$218731[esp+52]
+	lea	ecx, DWORD PTR _szLeaderName$219208[esp+52]
 	mov	DWORD PTR __$EHRec$[esp+60], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 	pop	esi
@@ -1501,7 +1501,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?AlexanderConquest@CvAchievementUnlocker@@SAXW4PlayerTypes@@@Z$0:
-	lea	ecx, DWORD PTR _szLeaderName$218731[ebp]
+	lea	ecx, DWORD PTR _szLeaderName$219208[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?AlexanderConquest@CvAchievementUnlocker@@SAXW4PlayerTypes@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?AlexanderConquest@CvAchievementUnlocker@@SAXW4PlayerTypes@@@Z
@@ -1550,7 +1550,7 @@ _eNewCityStateAlly$ = 8					; size = 4
 ; 138  : 		m_ePapalPrimacyType = (BeliefTypes)GC.getInfoTypeForString("BELIEF_PAPAL_PRIMACY", true);
 
 	push	1
-	push	OFFSET $SG218774
+	push	OFFSET $SG219251
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	DWORD PTR [ebx+12], eax
@@ -1727,7 +1727,7 @@ _pUnit$ = 8						; size = 4
 ; 183  : 		m_eEthiopiaType = (CivilizationTypes)GC.getInfoTypeForString("CIVILIZATION_ETHIOPIA", true);
 
 	push	1
-	push	OFFSET $SG218800
+	push	OFFSET $SG219277
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	DWORD PTR [esi+32], eax
@@ -1744,7 +1744,7 @@ $LN5@AddUnit:
 ; 188  : 		m_eGreatProphetType = (UnitTypes)GC.getInfoTypeForString("UNIT_PROPHET", true);
 
 	push	1
-	push	OFFSET $SG218803
+	push	OFFSET $SG219280
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	DWORD PTR [esi+60], eax
@@ -1843,7 +1843,7 @@ _pDefendingUnit$ = 12					; size = 4
 ; 212  : 		m_eCarthageType = (CivilizationTypes)GC.getInfoTypeForString("CIVILIZATION_CARTHAGE", true);
 
 	push	1
-	push	OFFSET $SG218815
+	push	OFFSET $SG219292
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	DWORD PTR [esi+44], eax
@@ -1860,7 +1860,7 @@ $LN5@AttackedUn:
 ; 217  : 		m_eRomeType = (CivilizationTypes)GC.getInfoTypeForString("CIVILIZATION_ROME", true);
 
 	push	1
-	push	OFFSET $SG218818
+	push	OFFSET $SG219295
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	DWORD PTR [esi+48], eax
@@ -1877,7 +1877,7 @@ $LN4@AttackedUn:
 ; 222  : 		m_eAfricanForestElephantType = (UnitTypes)GC.getInfoTypeForString("UNIT_CARTHAGINIAN_FOREST_ELEPHANT", true);
 
 	push	1
-	push	OFFSET $SG218821
+	push	OFFSET $SG219298
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	DWORD PTR [esi+64], eax
@@ -1978,7 +1978,7 @@ _pKilledUnit$ = 12					; size = 4
 ; 252  : 		m_eByzantinesType = (CivilizationTypes)GC.getInfoTypeForString("CIVILIZATION_BYZANTIUM", true);
 
 	push	1
-	push	OFFSET $SG218837
+	push	OFFSET $SG219314
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	DWORD PTR [ebx+36], eax
@@ -1995,7 +1995,7 @@ $LN82@KilledUnit:
 ; 257  : 		m_eGreekType = (CivilizationTypes)GC.getInfoTypeForString("CIVILIZATION_GREECE", true);
 
 	push	1
-	push	OFFSET $SG218840
+	push	OFFSET $SG219317
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	DWORD PTR [ebx+40], eax
@@ -2012,7 +2012,7 @@ $LN85@KilledUnit:
 ; 262  : 		m_eDromonType = (UnitTypes)GC.getInfoTypeForString("UNIT_BYZANTINE_DROMON", true);
 
 	push	1
-	push	OFFSET $SG218843
+	push	OFFSET $SG219320
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	DWORD PTR [ebx+56], eax
@@ -2104,7 +2104,7 @@ $LN84@KilledUnit:
 ; 286  : 			m_eSkyFortress = (UnitTypes)GC.getInfoTypeForString("UNIT_SKY_FORTRESS" , true);
 
 	push	1
-	push	OFFSET $SG218851
+	push	OFFSET $SG219328
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	DWORD PTR [ebx+76], eax
@@ -2261,7 +2261,7 @@ EXTRN	?firstUnit@CvPlayer@@QBEPBVCvUnit@@PAH_N@Z:PROC	; CvPlayer::firstUnit
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?StartTurn@CvPlayerAchievements@@QAEXXZ
 _TEXT	SEGMENT
-_iLoop$218879 = -4					; size = 4
+_iLoop$219356 = -4					; size = 4
 ?StartTurn@CvPlayerAchievements@@QAEXXZ PROC		; CvPlayerAchievements::StartTurn, COMDAT
 ; _this$ = ecx
 
@@ -2293,7 +2293,7 @@ _iLoop$218879 = -4					; size = 4
 ; 318  : 		m_eSwedenType = (CivilizationTypes)GC.getInfoTypeForString("CIVILIZATION_SWEDEN", true);
 
 	push	1
-	push	OFFSET $SG218870
+	push	OFFSET $SG219347
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	DWORD PTR [edi+52], eax
@@ -2310,7 +2310,7 @@ $LN31@StartTurn:
 ; 323  : 		m_eGreatGeneralType = (UnitTypes)GC.getInfoTypeForString("UNIT_GREAT_GENERAL", true);
 
 	push	1
-	push	OFFSET $SG218873
+	push	OFFSET $SG219350
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	DWORD PTR [edi+68], eax
@@ -2327,7 +2327,7 @@ $LN33@StartTurn:
 ; 328  : 		m_eHakkapelittaType = (UnitTypes)GC.getInfoTypeForString("UNIT_SWEDISH_HAKKAPELIITTA", true);
 
 	push	1
-	push	OFFSET $SG218876
+	push	OFFSET $SG219353
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	DWORD PTR [edi+72], eax
@@ -2358,10 +2358,10 @@ $LN12@StartTurn:
 ; 336  : 			for(const CvUnit* pUnit = m_kPlayer.firstUnit(&iLoop); pUnit != NULL; pUnit = m_kPlayer.nextUnit(&iLoop))
 
 	push	0
-	lea	ecx, DWORD PTR _iLoop$218879[esp+16]
+	lea	ecx, DWORD PTR _iLoop$219356[esp+16]
 	push	ecx
 	mov	ecx, DWORD PTR [edi]
-	mov	DWORD PTR _iLoop$218879[esp+20], 0
+	mov	DWORD PTR _iLoop$219356[esp+20], 0
 	call	?firstUnit@CvPlayer@@QBEPBVCvUnit@@PAH_N@Z ; CvPlayer::firstUnit
 	mov	esi, eax
 	test	esi, esi
@@ -2429,7 +2429,7 @@ $LN8@StartTurn:
 
 	mov	ecx, DWORD PTR [edi]
 	push	0
-	lea	edx, DWORD PTR _iLoop$218879[esp+24]
+	lea	edx, DWORD PTR _iLoop$219356[esp+24]
 	push	edx
 	call	?nextUnit@CvPlayer@@QBEPBVCvUnit@@PAH_N@Z ; CvPlayer::nextUnit
 	mov	esi, eax

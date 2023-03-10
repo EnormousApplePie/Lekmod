@@ -4481,6 +4481,10 @@ int CvCityCulture::GetBaseTourismBeforeModifiers()
 
 	iBase += m_pCity->GetCityBuildings()->GetThemingBonuses();
 
+#ifdef LEK_YIELD_TOURISM
+	iBase += m_pCity->getYieldRate(YIELD_TOURISM, false);
+#endif
+
 	int iPercent = m_pCity->GetCityBuildings()->GetLandmarksTourismPercent();
 	if (iPercent > 0)
 	{
@@ -4624,7 +4628,13 @@ int CvCityCulture::GetBaseTourism()
 			}
 		}
 	}
-
+#ifdef LEK_YIELD_TOURISM
+	int iCityBaseTourismYieldRateMod = m_pCity->getBaseYieldRateModifier(YIELD_TOURISM) - 100;
+	if (iCityBaseTourismYieldRateMod != 0)
+	{
+		iModifier += iCityBaseTourismYieldRateMod;
+	}
+#endif
 	if (iModifier > 0)
 	{
 		iBase = iBase * (100 + iModifier) / 100;

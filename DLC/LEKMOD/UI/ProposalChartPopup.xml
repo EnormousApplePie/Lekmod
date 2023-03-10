@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Anton Strenger (Firaxis Games) -->
+<!-- edit: MP voting system for EUI & vanilla UI -->
+<Context ColorSet="Beige_Black" Font="TwCenMT20" FontStyle="Shadow">
+  <Box Style="BGBlock_ClearTopBar" ID="BGBlock" />
+  <Instance Name="TeamEntry" >
+    <Stack ID="Root" ConsumeMouse="1" >
+	  <Box Size="356,54" Color="0,0,0,128" ID="TeamBox">
+        <Label Anchor="C,C" Offset="6,0" Font="TwCenMT20" ColorSet="Beige_Black_Alpha" FontStyle="Shadow" String="Team Name" ID="TeamName" ConsumeMouse="0"/>
+        <Box Anchor="C,B" Size="175,1" Offset="0,1" Color="255,255,200,128" ID="TeamHeaderSeparator"/>
+	  </Box>
+	  <Stack StackGrowth="Bottom" ID="TeamStack" />
+      <Box Anchor="C,B" AnchorSide="i,o" Size="175,1" Offset="0,-1" Color="255,255,200,128" ID="TeamSeparator"/>
+    </Stack>
+  </Instance>
+
+  <Instance Name="PlayerEntry" >
+	<Box Anchor="R,T" Size="356,54" Color="0,0,0,128" ID="Root" ConsumeMouse="1" >
+      <Stack ID="PlayerDataStack" StackGrowth="Right">
+        <Box ID="LeftMarginBox" Color="0,0,255,0" Anchor="L,C" Offset="0,0" Size="10,32"/>
+        <Box ID="IconBox" Color="255,255,255,0" Anchor="L,B" Offset="0,0" Size="45,45">
+          <Image ID="CivIconBG" Size="45.45" Anchor="C,C" Offset="0,0" TextureOffset="32,0" Texture="CivIconBGSizes.dds" />
+          <Image ID="CivIconShadow" Size="32.32" Anchor="C,C" Offset="1,1" Texture="CivSymbolAtlas32.dds" Color="Black.128"/>
+          <Image ID="Icon" Size="32.32" Offset="0,0"  Anchor="C,C" Texture="CivSymbolsColor512.dds" />
+        </Box>
+        <Box ID="NameBox" Color="128,0,0,0" Anchor="L,C" Offset="0,0" Size="245,32">
+          <Label Anchor="L,C" Offset="0,0" TruncateWidth="250" Font="TwCenMT20" ColorSet="Beige_Black_Alpha" FontStyle="Shadow" String="Player Name" ID="Name" ConsumeMouse="0"/>
+        </Box>
+        <Box ID="VoteBox" Color="0,128,0,0" Anchor="L,C" Offset="0,0" Size="40,32">
+          <Label Anchor="R,C" Offset="10,0" Font="TwCenMT20" ColorSet="Beige_Black_Alpha" FontStyle="Stroke" String="123" ID="Vote" ConsumeMouse="0"/>
+        </Box>
+        <Box ID="RightMarginBox" Color="0,0,255,0" Anchor="L,C" Offset="0,0" Size="10,32"/>
+      </Stack>
+      <Box Anchor="C,B" Size="175,1" Offset="0,1" Color="255,255,200,128" ID="Seperator" />
+    </Box>
+  </Instance>
+
+  <Grid Size="690,475" Anchor="C,C" Offset="0,20" Style="Grid9DetailFive140" ConsumeMouse="1" ID="InGameSet">
+
+    <Box Anchor="C,B" AnchorSide="I.I" Offset="0,50"   Size="670,56" Color="255,255,255,0" >
+	  <Stack ID="VoteLabelStack" Anchor="L.B" Offset="6,32" Padding="12" StackGrowth="Bottom">
+	  </Stack>
+	  <!-- Close Button  -->
+	  <GridButton Anchor="L,B"  Style="SmallButton" Size="150,32"  Offset="14,0" StateOffsetIncrement="0,0" ID="CloseButton"  >
+		<Label Anchor="C,C"  Offset="0,0"  String="TXT_KEY_CLOSE" Font="TwCenMT18" ColorSet="Beige_Black_Alpha" FontStyle="Shadow"  />
+	  </GridButton>
+    </Box>
+
+	<!-- Side treatments -->
+    <Box Style="MenuLeftSideTreatment"/>
+    <Box Style="MenuRightSideTreatment"/>
+
+    <!-- Top -->
+    <Image Anchor="C,T" AnchorSide="I.O" Size="256,64" Offset="0,-16"  Texture="assets\UI\Art\Icons\Top512IconTrim.dds" >
+	  <Image Anchor="C,C" Offset="0,0" Size="64,64" Texture="worldcongressvote64.dds" />
+            <!--
+			<Image ID="CivIconBG" Size="64.64" Anchor="C,C" Offset="-1,-1" TextureOffset="77,0" Texture="CivIconBGSizes.dds" />
+            <Image ID="CivIconShadow" Size="48.48" Anchor="C,C" Offset="0,0" Texture="CivSymbolAtlas48.dds" Color="Black.128"/>
+            <Image ID="Icon" Size="48,48" Offset="-1,-1"  Anchor="C,C" Texture="CivSymbolsColor512.dds" />
+			-->
+    </Image>
+    <!-- Panel Header Text -->
+    <Label String="TXT_KEY_MP_PROPOSAL_SCREEN_TITLE" Anchor="C,T" Offset="0,19" Font="TwCenMT20"/>
+
+    <!-- Left Panel  -->
+	<Stack Anchor="L,T" Size="0,0" Offset="18,44" Padding="0" StackGrowth="Bottom">
+	<!-- SCORE -->
+	  <Box Anchor="C,T" Size="300,32" Offset="0,0" Color="0.0.0.128">
+		<Stack Anchor="L,T" Size="300,32" Offset="0,0" Padding="0" StackGrowth="Right">
+		  <Box Anchor="L,T" Size="300,24" Offset="0,0" Color="0.0.0.128">
+			<Label Anchor="c,C" Offset="0,0" ColorSet="Beige_Black" Font="TwCenMT22" FontStyle="Shadow" String="TXT_KEY_MP_PROPOSAL_SCREEN_CURRENT_PROPOSAL_LABEL"/>
+		  </Box>
+		  <Image Anchor="R,T" Offset="0,0" Texture="VerticalTrim.dds" Size="5.389"/>
+		  <Box Anchor="C,T" Size="626,24" Offset="0,0" Color="255.255.255.0">
+		  </Box>
+		</Stack>
+		<Image Anchor="L,B" Offset="0,0" Texture="HorizontalTrim.dds" Size="301.5"/>
+	  </Box>
+	  <Box ID="TimeStack" Size="300,538" Offset="0,0" Color="255,255,255,0">
+	    <Stack ID="ProposalPropertiesLabelStack" Anchor="L.T" Offset="6,8" Padding="12" StackGrowth="Bottom">
+	      <Label ID="ProposalName" Offset="0,0" Anchor="L,T"/>
+	      <Label ID="ProposalStartedBy" Offset="0,0" Anchor="L,T"/>
+	      <Image Offset="-6,0" Anchor="L,T" Texture="bar300x2.dds" Size="300.1"/>
+		  <Label Offset="0,0" Anchor="L,T" String="TXT_KEY_MP_PROPOSAL_SCREEN_EXPIRATION_TURN"/>
+		  <Label Offset="0,0" Anchor="L,T" String="TXT_KEY_MP_PROPOSAL_SCREEN_MAX_VOTERS"/>
+		  <Label Offset="0,0" Anchor="L,T" String="TXT_KEY_MP_PROPOSAL_SCREEN_RECEIVED_VOTES"/>
+		  <Label Offset="0,0" Anchor="L,T" String="TXT_KEY_MP_PROPOSAL_SCREEN_MISSING_VOTES"/>
+		  <Image Offset="-6,0" Anchor="L,T" Texture="bar300x2.dds" Size="300.1"/>
+		  <Label ID="ProposalResultLabel" Offset="-10,20" Anchor="C,T" Font="TwCenMT20"/>
+		  <GridButton Anchor="L,B" Style="SmallButton" Size="150,32" Offset="70,0" StateOffsetIncrement="0,0" ID="VoteYesButton">
+		    <Label ID="VoteYesLabel" Anchor="C,C" Offset="0,0" String="TXT_KEY_MP_PROPOSAL_SCREEN_VOTE_YES_BUTTON" Font="TwCenMT20" ColorSet="Beige_Black_Alpha" FontStyle="Shadow"/>
+		  </GridButton>
+		  <GridButton Anchor="L,B" Style="SmallButton" Size="150,32"  Offset="70,0" StateOffsetIncrement="0,0" ID="VoteNoButton">
+		    <Label ID="VoteNoLabel" Anchor="C,C" Offset="0,0" String="TXT_KEY_MP_PROPOSAL_SCREEN_VOTE_NO_BUTTON" Font="TwCenMT20" ColorSet="Beige_Black_Alpha" FontStyle="Shadow"/>
+		  </GridButton>
+	    </Stack>
+	    <Stack ID="ProposalDetailsStack" Anchor="L,T" Offset="225,32" Padding="12" StackGrowth="Bottom">
+		  <Box Offset="0,0" Size="1,27" Color="255,255,255,0"/>
+		  <Box Offset="0,0" Size="44,13" Color="0.0.0.0">
+		    <Label ID="Expiration" Offset="0,0" Anchor="R,T"/>
+		  </Box>
+		  <Box Offset="0,0" Size="44,13" Color="0.0.0.0">
+		    <Label ID="MaxVoters" Offset="0,0" Anchor="R,T"/>
+		  </Box>
+		  <Box Offset="0,0" Size="44,13" Color="0.0.0.0">
+		    <Label ID="ReceivedVotes" Offset="0,0" Anchor="R,T"/>
+		  </Box>
+		  <Box Offset="0,0" Size="44,13" Color="0.0.0.0">
+		    <Label ID="MissingVotes" Offset="0,0" Anchor="R,T"/>
+		  </Box>
+	    </Stack>
+	  </Box>
+	</Stack>
+    <ScrollPanel Anchor="R,T" Size="356,388" Offset="14,44" Vertical="1" ID="MPListScroll" Hidden="0" >
+        
+      <Stack StackGrowth="Bottom" Anchor="C,T" ID="MPListStack" />
+        
+	  <ScrollBar  Offset="0,0" Style="VertSlider"      Anchor="R,C"   AnchorSide="o,i"    ID="ScrollBar"/>
+	  <UpButton   Offset="0,0" Style="ScrollBarUp"     Anchor="R,T"   AnchorSide="o,i"    ID="UpButton"/>
+	  <DownButton Offset="0,0" Style="ScrollBarDown"   Anchor="R,B"   AnchorSide="o,i"    ID="DownButton"/>
+    </ScrollPanel>
+  </Grid>
+</Context>

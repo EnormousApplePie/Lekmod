@@ -10,90 +10,90 @@ INCLUDELIB MSVCRT
 INCLUDELIB OLDNAMES
 
 CONST	SEGMENT
-$SG217955 DB	'.csv', 00H
-$SG217983 DB	00H
-$SG217996 DB	00H
-$SG218009 DB	00H
-$SG217956 DB	'ExpenditureLog_', 00H
-$SG217958 DB	'ExpenditureLog.csv', 00H
-$SG218022 DB	00H
-$SG217963 DB	'Civ Name', 00H
-$SG218035 DB	00H
-$SG218048 DB	00H
-$SG218061 DB	00H
-$SG217965 DB	'Turn', 00H
-$SG218074 DB	00H
+$SG218432 DB	'.csv', 00H
+$SG218460 DB	00H
+$SG218473 DB	00H
+$SG218486 DB	00H
+$SG218433 DB	'ExpenditureLog_', 00H
+$SG218435 DB	'ExpenditureLog.csv', 00H
+$SG218499 DB	00H
+$SG218440 DB	'Civ Name', 00H
+$SG218512 DB	00H
+$SG218525 DB	00H
+$SG218538 DB	00H
+$SG218442 DB	'Turn', 00H
+$SG218551 DB	00H
 	ORG $+2
-$SG217967 DB	'Treasury Before Purchase', 00H
+$SG218444 DB	'Treasury Before Purchase', 00H
 	ORG $+3
-$SG217970 DB	'Cost of Plot:', 00H
+$SG218447 DB	'Cost of Plot:', 00H
 	ORG $+2
-$SG217973 DB	'Cost of Plot:', 00H
+$SG218450 DB	'Cost of Plot:', 00H
 	ORG $+2
-$SG217977 DB	'City Bought:', 00H
+$SG218454 DB	'City Bought:', 00H
 	ORG $+3
-$SG217979 DB	'City Spent:', 00H
-$SG217984 DB	'City Bought:', 00H
+$SG218456 DB	'City Spent:', 00H
+$SG218461 DB	'City Bought:', 00H
 	ORG $+3
-$SG217986 DB	'City Spent:', 00H
-$SG217990 DB	'Unit Upgraded:', 00H
+$SG218463 DB	'City Spent:', 00H
+$SG218467 DB	'Unit Upgraded:', 00H
 	ORG $+1
-$SG217992 DB	'Spent on Upgrade:', 00H
+$SG218469 DB	'Spent on Upgrade:', 00H
 	ORG $+2
-$SG217997 DB	'Unit Upgrade:', 00H
+$SG218474 DB	'Unit Upgrade:', 00H
 	ORG $+2
-$SG217999 DB	'Spent on Upgrade:', 00H
+$SG218476 DB	'Spent on Upgrade:', 00H
 	ORG $+2
-$SG218003 DB	'City State Gold Gifted:', 00H
-$SG218005 DB	'Gold Gift Amount:', 00H
+$SG218480 DB	'City State Gold Gifted:', 00H
+$SG218482 DB	'Gold Gift Amount:', 00H
 	ORG $+2
-$SG218010 DB	'City State Gold Gifted:', 00H
-$SG218012 DB	'Gold Gift Amount:', 00H
+$SG218487 DB	'City State Gold Gifted:', 00H
+$SG218489 DB	'Gold Gift Amount:', 00H
 	ORG $+2
-$SG218016 DB	'City State Improved:', 00H
+$SG218493 DB	'City State Improved:', 00H
 	ORG $+3
-$SG218018 DB	'Gold for Improvement Amount:', 00H
+$SG218495 DB	'Gold for Improvement Amount:', 00H
 	ORG $+3
-$SG218023 DB	'City State Improved:', 00H
+$SG218500 DB	'City State Improved:', 00H
 	ORG $+3
-$SG218025 DB	'Gold for Improvement Amount:', 00H
+$SG218502 DB	'Gold for Improvement Amount:', 00H
 	ORG $+3
-$SG218029 DB	'City State Bought:', 00H
+$SG218506 DB	'City State Bought:', 00H
 	ORG $+1
-$SG218031 DB	'Bought for:', 00H
-$SG218036 DB	'City State Bought:', 00H
+$SG218508 DB	'Bought for:', 00H
+$SG218513 DB	'City State Bought:', 00H
 	ORG $+1
-$SG218038 DB	'Bought for:', 00H
-$SG218042 DB	'Emergency Unit:', 00H
-$SG218044 DB	'Emergency Unit Cost:', 00H
+$SG218515 DB	'Bought for:', 00H
+$SG218519 DB	'Emergency Unit:', 00H
+$SG218521 DB	'Emergency Unit Cost:', 00H
 	ORG $+3
-$SG218049 DB	'Emergency Unit:', 00H
-$SG218051 DB	'Emergency Unit Cost:', 00H
+$SG218526 DB	'Emergency Unit:', 00H
+$SG218528 DB	'Emergency Unit Cost:', 00H
 	ORG $+3
-$SG218055 DB	'Emergency Building:', 00H
-$SG218057 DB	'Emergency Building Cost:', 00H
+$SG218532 DB	'Emergency Building:', 00H
+$SG218534 DB	'Emergency Building Cost:', 00H
 	ORG $+3
-$SG218062 DB	'Emergency Building:', 00H
-$SG218064 DB	'Emergency Building Cost:', 00H
+$SG218539 DB	'Emergency Building:', 00H
+$SG218541 DB	'Emergency Building Cost:', 00H
 	ORG $+3
-$SG218068 DB	'Research Agreement with:', 00H
+$SG218545 DB	'Research Agreement with:', 00H
 	ORG $+3
-$SG218070 DB	'Research Agreement Cost:', 00H
+$SG218547 DB	'Research Agreement Cost:', 00H
 	ORG $+3
-$SG218075 DB	'Research Agreement with:', 00H
+$SG218552 DB	'Research Agreement with:', 00H
 	ORG $+3
-$SG218077 DB	'Research Agreement Cost:', 00H
+$SG218554 DB	'Research Agreement Cost:', 00H
 	ORG $+3
-$SG218095 DB	',', 00H
+$SG218572 DB	',', 00H
 	ORG $+2
-$SG218096 DB	',', 00H
+$SG218573 DB	',', 00H
 	ORG $+2
-$SG218103 DB	',', 00H
+$SG218580 DB	',', 00H
 	ORG $+2
-$SG218105 DB	'%d,', 00H
-$SG218112 DB	',', 00H
+$SG218582 DB	'%d,', 00H
+$SG218589 DB	',', 00H
 	ORG $+2
-$SG218114 DB	'%.2f,', 00H
+$SG218591 DB	'%.2f,', 00H
 CONST	ENDS
 PUBLIC	?Uninit@CvTreasury@@QAEXXZ			; CvTreasury::Uninit
 ; Function compile flags: /Ogtpy
@@ -1898,8 +1898,8 @@ __ehfuncinfo$?_Xlen@?$vector@HV?$allocator@H@std@@@std@@KAXXZ DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?_Xlen@?$vector@HV?$allocator@H@std@@@std@@KAXXZ
 _TEXT	SEGMENT
-$T218985 = -80						; size = 28
-$T218984 = -52						; size = 40
+$T219462 = -80						; size = 28
+$T219461 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ?_Xlen@?$vector@HV?$allocator@H@std@@@std@@KAXXZ PROC	; std::vector<int,std::allocator<int> >::_Xlen, COMDAT
 
@@ -1915,22 +1915,22 @@ __$EHRec$ = -12						; size = 12
 ; 1260 : 		_THROW(length_error, "vector<T> too long");
 
 	push	OFFSET ??_C@_0BD@OLBABOEK@vector?$DMT?$DO?5too?5long?$AA@
-	lea	ecx, DWORD PTR $T218985[esp+84]
+	lea	ecx, DWORD PTR $T219462[esp+84]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T218984[esp+80]
+	lea	ecx, DWORD PTR $T219461[esp+80]
 	mov	DWORD PTR __$EHRec$[esp+88], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T218985[esp+80]
+	lea	eax, DWORD PTR $T219462[esp+80]
 	push	eax
-	lea	ecx, DWORD PTR $T218984[esp+96]
+	lea	ecx, DWORD PTR $T219461[esp+96]
 	mov	BYTE PTR __$EHRec$[esp+92], 1
-	mov	DWORD PTR $T218984[esp+84], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T219461[esp+84], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVlength_error@std@@
-	lea	ecx, DWORD PTR $T218984[esp+84]
+	lea	ecx, DWORD PTR $T219461[esp+84]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+96], 0
-	mov	DWORD PTR $T218984[esp+88], OFFSET ??_7length_error@std@@6B@
+	mov	DWORD PTR $T219461[esp+88], OFFSET ??_7length_error@std@@6B@
 	call	__CxxThrowException@8
 $LN13@Xlen:
 $LN12@Xlen:
@@ -1939,10 +1939,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Xlen@?$vector@HV?$allocator@H@std@@@std@@KAXXZ$0:
-	lea	ecx, DWORD PTR $T218985[ebp]
+	lea	ecx, DWORD PTR $T219462[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Xlen@?$vector@HV?$allocator@H@std@@@std@@KAXXZ$2:
-	lea	ecx, DWORD PTR $T218984[ebp]
+	lea	ecx, DWORD PTR $T219461[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Xlen@?$vector@HV?$allocator@H@std@@@std@@KAXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?_Xlen@?$vector@HV?$allocator@H@std@@@std@@KAXXZ
@@ -2216,8 +2216,8 @@ __TI2?AVbad_alloc@std@@ DD 00H
 xdata$x	ENDS
 ;	COMDAT ??$_Allocate@H@std@@YAPAHIPAH@Z
 _TEXT	SEGMENT
-$T219048 = -12						; size = 12
-$T219052 = 8						; size = 4
+$T219525 = -12						; size = 12
+$T219529 = 8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ??$_Allocate@H@std@@YAPAHIPAH@Z PROC			; std::_Allocate<int>, COMDAT
@@ -2259,15 +2259,15 @@ $LN3@Allocate:
 
 ; 40   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T219052[esp+8]
+	lea	eax, DWORD PTR $T219529[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T219048[esp+16]
-	mov	DWORD PTR $T219052[esp+12], 0
+	lea	ecx, DWORD PTR $T219525[esp+16]
+	mov	DWORD PTR $T219529[esp+12], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T219048[esp+16]
+	lea	ecx, DWORD PTR $T219525[esp+16]
 	push	ecx
-	mov	DWORD PTR $T219048[esp+20], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T219525[esp+20], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN9@Allocate:
 $LN8@Allocate:
@@ -2558,7 +2558,7 @@ PUBLIC	??0?$SerializeFromSequenceContainer@$$CBH$$CBV?$vector@HV?$allocator@H@st
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\fireplace\include\fireworks\fstlcontainerserialization.h
 ;	COMDAT ??0?$SerializeFromSequenceContainer@$$CBH$$CBV?$vector@HV?$allocator@H@std@@@std@@@@QAE@AAVFDataStream@@ABV?$vector@HV?$allocator@H@std@@@std@@@Z
 _TEXT	SEGMENT
-$T219100 = 8						; size = 4
+$T219577 = 8						; size = 4
 _saveTo$ = 8						; size = 4
 _container$ = 12					; size = 4
 ??0?$SerializeFromSequenceContainer@$$CBH$$CBV?$vector@HV?$allocator@H@std@@@std@@@@QAE@AAVFDataStream@@ABV?$vector@HV?$allocator@H@std@@@std@@@Z PROC ; SerializeFromSequenceContainer<int const ,std::vector<int,std::allocator<int> > const >::SerializeFromSequenceContainer<int const ,std::vector<int,std::allocator<int> > const >, COMDAT
@@ -2577,10 +2577,10 @@ _container$ = 12					; size = 4
 
 	mov	edx, DWORD PTR [eax+8]
 	sub	edx, DWORD PTR [eax+4]
-	lea	eax, DWORD PTR $T219100[esp]
+	lea	eax, DWORD PTR $T219577[esp]
 	sar	edx, 2
 	push	eax
-	mov	DWORD PTR $T219100[esp+4], edx
+	mov	DWORD PTR $T219577[esp+4], edx
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 
 ; 71   : 	}
@@ -3520,25 +3520,25 @@ CONST	ENDS
 _TEXT	SEGMENT
 tv225 = -32						; size = 8
 _fExponentialFactor$ = -32				; size = 8
-_iNumUnits$217820 = -32					; size = 4
-$T219222 = -32						; size = 4
+_iNumUnits$218297 = -32					; size = 4
+$T219699 = -32						; size = 4
 _dFinalCost$ = -24					; size = 8
-_iI$217810 = -24					; size = 4
+_iI$218287 = -24					; size = 4
 _iNavalUnitMod$ = -24					; size = 4
 _iLandUnitMod$ = -24					; size = 4
-$T219221 = -24						; size = 4
+$T219698 = -24						; size = 4
 _iSupport$ = -24					; size = 4
 tv436 = -16						; size = 4
 tv432 = -16						; size = 4
 tv412 = -16						; size = 4
-$T219224 = -16						; size = 4
+$T219701 = -16						; size = 4
 _fTempCost$ = -16					; size = 8
 _fMultiplyFactor$ = -16					; size = 8
 _fGameProgressFactor$ = -16				; size = 8
-_iModifier$217818 = -16					; size = 4
+_iModifier$218295 = -16					; size = 4
 tv408 = -4						; size = 4
 tv403 = -4						; size = 4
-$T219223 = -4						; size = 4
+$T219700 = -4						; size = 4
 _playerHandicap$ = -4					; size = 4
 _iFreeUnits$ = 8					; size = 4
 _iPaidUnits$ = 12					; size = 4
@@ -3617,12 +3617,12 @@ $LN12@CalculateU:
 	mov	ecx, DWORD PTR [esi+4]
 	call	?getNumUnits@CvPlayer@@QBEHXZ		; CvPlayer::getNumUnits
 	sub	eax, DWORD PTR [edi]
-	mov	DWORD PTR $T219222[esp+64], 0
-	mov	DWORD PTR $T219221[esp+64], eax
+	mov	DWORD PTR $T219699[esp+64], 0
+	mov	DWORD PTR $T219698[esp+64], eax
 	test	eax, eax
-	lea	eax, DWORD PTR $T219221[esp+64]
+	lea	eax, DWORD PTR $T219698[esp+64]
 	jg	SHORT $LN18@CalculateU
-	lea	eax, DWORD PTR $T219222[esp+64]
+	lea	eax, DWORD PTR $T219699[esp+64]
 $LN18@CalculateU:
 	mov	eax, DWORD PTR [eax]
 	mov	edi, DWORD PTR _iPaidUnits$[ebp]
@@ -3744,7 +3744,7 @@ $LN10@CalculateU:
 
 	xor	ebx, ebx
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	mov	DWORD PTR _iI$217810[esp+64], ebx
+	mov	DWORD PTR _iI$218287[esp+64], ebx
 	call	?getNumUnitCombatClassInfos@CvGlobals@@QAEHXZ ; CvGlobals::getNumUnitCombatClassInfos
 	test	eax, eax
 	jle	$LN7@CalculateU
@@ -3772,7 +3772,7 @@ $LL9@CalculateU:
 	call	?GetPlayerTraits@CvPlayer@@QBEPAVCvPlayerTraits@@XZ ; CvPlayer::GetPlayerTraits
 	mov	ecx, eax
 	call	?GetMaintenanceModifierUnitCombat@CvPlayerTraits@@QBEHH@Z ; CvPlayerTraits::GetMaintenanceModifierUnitCombat
-	mov	DWORD PTR _iModifier$217818[esp+64], eax
+	mov	DWORD PTR _iModifier$218295[esp+64], eax
 
 ; 594  : 			if (iModifier != 0)
 
@@ -3789,20 +3789,20 @@ $LL9@CalculateU:
 ; 597  : 				int iCost = iNumUnits * m_pPlayer->getGoldPerUnitTimes100(); 
 
 	mov	ecx, DWORD PTR [esi+4]
-	mov	DWORD PTR _iNumUnits$217820[esp+64], eax
+	mov	DWORD PTR _iNumUnits$218297[esp+64], eax
 	call	?getGoldPerUnitTimes100@CvPlayer@@QBEHXZ ; CvPlayer::getGoldPerUnitTimes100
 
 ; 598  : 				int iModifiedCost = iNumUnits * m_pPlayer->getGoldPerUnitTimes100() * (100 + iModifier) / 100; 
 
 	mov	ecx, DWORD PTR [esi+4]
 	mov	ebx, eax
-	imul	ebx, DWORD PTR _iNumUnits$217820[esp+64]
+	imul	ebx, DWORD PTR _iNumUnits$218297[esp+64]
 	call	?getGoldPerUnitTimes100@CvPlayer@@QBEHXZ ; CvPlayer::getGoldPerUnitTimes100
-	mov	edx, DWORD PTR _iModifier$217818[esp+64]
+	mov	edx, DWORD PTR _iModifier$218295[esp+64]
 	mov	ecx, eax
 	add	edx, 100				; 00000064H
 	imul	ecx, edx
-	imul	ecx, DWORD PTR _iNumUnits$217820[esp+64]
+	imul	ecx, DWORD PTR _iNumUnits$218297[esp+64]
 	mov	eax, 1374389535				; 51eb851fH
 	imul	ecx
 	sar	edx, 5
@@ -3816,11 +3816,11 @@ $LL9@CalculateU:
 
 	sub	eax, ebx
 	add	DWORD PTR [edi], eax
-	mov	ebx, DWORD PTR _iI$217810[esp+64]
+	mov	ebx, DWORD PTR _iI$218287[esp+64]
 $LN8@CalculateU:
 	inc	ebx
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	mov	DWORD PTR _iI$217810[esp+64], ebx
+	mov	DWORD PTR _iI$218287[esp+64], ebx
 	call	?getNumUnitCombatClassInfos@CvGlobals@@QAEHXZ ; CvGlobals::getNumUnitCombatClassInfos
 	cmp	ebx, eax
 	jl	$LL9@CalculateU
@@ -3992,12 +3992,12 @@ $LN1@CalculateU:
 
 	fld	QWORD PTR _dFinalCost$[esp+64]
 	call	__ftol2_sse_excpt
-	mov	DWORD PTR $T219223[esp+64], eax
+	mov	DWORD PTR $T219700[esp+64], eax
 	test	eax, eax
-	mov	DWORD PTR $T219224[esp+64], 0
-	lea	eax, DWORD PTR $T219223[esp+64]
+	mov	DWORD PTR $T219701[esp+64], 0
+	lea	eax, DWORD PTR $T219700[esp+64]
 	jg	SHORT $LN36@CalculateU
-	lea	eax, DWORD PTR $T219224[esp+64]
+	lea	eax, DWORD PTR $T219701[esp+64]
 $LN36@CalculateU:
 	mov	eax, DWORD PTR [eax]
 
@@ -4022,17 +4022,17 @@ EXTRN	?getNumOutsideUnits@CvPlayer@@QAEHXZ:PROC	; CvPlayer::getNumOutsideUnits
 _TEXT	SEGMENT
 _fTempCost$ = -16					; size = 8
 _fMultiplyFactor$ = -16					; size = 8
-$T219283 = -16						; size = 4
+$T219760 = -16						; size = 4
 tv158 = -8						; size = 8
 _fExponentialFactor$ = -8				; size = 8
 _fGameProgressFactor$ = -8				; size = 8
-$T219284 = -8						; size = 4
-$T219285 = 8						; size = 4
+$T219761 = -8						; size = 4
+$T219762 = 8						; size = 4
 _iSupply$ = 8						; size = 4
 _iPaidUnits$ = 8					; size = 4
 tv269 = 12						; size = 4
 tv267 = 12						; size = 4
-$T219286 = 12						; size = 4
+$T219763 = 12						; size = 4
 _iBaseSupplyCost$ = 12					; size = 4
 ?CalculateUnitSupply@CvTreasury@@QAEHAAH0@Z PROC	; CvTreasury::CalculateUnitSupply, COMDAT
 ; _this$ = ecx
@@ -4053,12 +4053,12 @@ _iBaseSupplyCost$ = 12					; size = 4
 	mov	ecx, DWORD PTR [edi+4]
 	call	?getNumOutsideUnits@CvPlayer@@QAEHXZ	; CvPlayer::getNumOutsideUnits
 	sub	eax, esi
-	mov	DWORD PTR $T219283[esp+28], eax
+	mov	DWORD PTR $T219760[esp+28], eax
 	test	eax, eax
-	mov	DWORD PTR $T219284[esp+28], 0
-	lea	eax, DWORD PTR $T219283[esp+28]
+	mov	DWORD PTR $T219761[esp+28], 0
+	lea	eax, DWORD PTR $T219760[esp+28]
 	jg	SHORT $LN10@CalculateU@2
-	lea	eax, DWORD PTR $T219284[esp+28]
+	lea	eax, DWORD PTR $T219761[esp+28]
 $LN10@CalculateU@2:
 	mov	eax, DWORD PTR [eax]
 	mov	ecx, DWORD PTR _iPaidUnits$[esp+24]
@@ -4138,12 +4138,12 @@ $LN10@CalculateU@2:
 	call	?GetCurrentEra@CvPlayer@@QBE?AW4EraTypes@@XZ ; CvPlayer::GetCurrentEra
 	imul	ebx, eax
 	add	ebx, 100				; 00000064H
-	mov	DWORD PTR $T219285[esp+24], ebx
-	mov	DWORD PTR $T219286[esp+24], 0
-	lea	eax, DWORD PTR $T219285[esp+24]
+	mov	DWORD PTR $T219762[esp+24], ebx
+	mov	DWORD PTR $T219763[esp+24], 0
+	lea	eax, DWORD PTR $T219762[esp+24]
 	test	ebx, ebx
 	jg	SHORT $LN18@CalculateU@2
-	lea	eax, DWORD PTR $T219286[esp+24]
+	lea	eax, DWORD PTR $T219763[esp+24]
 $LN18@CalculateU@2:
 	mov	ecx, DWORD PTR [eax]
 	imul	ecx, esi
@@ -4275,12 +4275,12 @@ EXTRN	?getGameSpeedInfo@CvGame@@QBEAAVCvGameSpeedInfo@@XZ:PROC ; CvGame::getGame
 ;	COMDAT ?CalculateInflationRate@CvTreasury@@QAEHXZ
 _TEXT	SEGMENT
 tv197 = -12						; size = 4
-$T219338 = -12						; size = 4
-$T219340 = -8						; size = 4
-$T219337 = -8						; size = 4
+$T219815 = -12						; size = 4
+$T219817 = -8						; size = 4
+$T219814 = -8						; size = 4
 _gameHandicap$ = -8					; size = 4
-$T219339 = -4						; size = 4
-_iAIModifier$217874 = -4				; size = 4
+$T219816 = -4						; size = 4
+_iAIModifier$218351 = -4				; size = 4
 ?CalculateInflationRate@CvTreasury@@QAEHXZ PROC		; CvTreasury::CalculateInflationRate, COMDAT
 ; _this$ = ecx
 
@@ -4407,22 +4407,22 @@ $LN2@CalculateI:
 ; 745  : 		iAIModifier *= std::max(0, ((gameHandicap.getAIPerEraModifier() * m_pPlayer->GetCurrentEra()) + 100));
 
 	mov	ecx, ebx
-	mov	DWORD PTR _iAIModifier$217874[esp+28], eax
+	mov	DWORD PTR _iAIModifier$218351[esp+28], eax
 	call	?getAIPerEraModifier@CvHandicapInfo@@QBEHXZ ; CvHandicapInfo::getAIPerEraModifier
 	mov	ecx, DWORD PTR [ebp+4]
 	mov	ebx, eax
 	call	?GetCurrentEra@CvPlayer@@QBE?AW4EraTypes@@XZ ; CvPlayer::GetCurrentEra
 	imul	ebx, eax
 	add	ebx, 100				; 00000064H
-	mov	DWORD PTR $T219337[esp+28], ebx
-	mov	DWORD PTR $T219338[esp+28], 0
-	lea	eax, DWORD PTR $T219337[esp+28]
+	mov	DWORD PTR $T219814[esp+28], ebx
+	mov	DWORD PTR $T219815[esp+28], 0
+	lea	eax, DWORD PTR $T219814[esp+28]
 	test	ebx, ebx
 	jg	SHORT $LN10@CalculateI
-	lea	eax, DWORD PTR $T219338[esp+28]
+	lea	eax, DWORD PTR $T219815[esp+28]
 $LN10@CalculateI:
 	mov	ecx, DWORD PTR [eax]
-	imul	ecx, DWORD PTR _iAIModifier$217874[esp+28]
+	imul	ecx, DWORD PTR _iAIModifier$218351[esp+28]
 
 ; 746  : 		iAIModifier /= 100;
 
@@ -4441,12 +4441,12 @@ $LN1@CalculateI:
 ; 751  : 	iInflationPerTurnTimes10000 *= std::max(0, 100 + iModifier);
 
 	add	ebx, 100				; 00000064H
-	mov	DWORD PTR $T219339[esp+28], ebx
-	mov	DWORD PTR $T219340[esp+28], 0
-	lea	eax, DWORD PTR $T219339[esp+28]
+	mov	DWORD PTR $T219816[esp+28], ebx
+	mov	DWORD PTR $T219817[esp+28], 0
+	lea	eax, DWORD PTR $T219816[esp+28]
 	test	ebx, ebx
 	jg	SHORT $LN14@CalculateI
-	lea	eax, DWORD PTR $T219340[esp+28]
+	lea	eax, DWORD PTR $T219817[esp+28]
 $LN14@CalculateI:
 	mov	ecx, DWORD PTR [eax]
 	imul	ecx, edi
@@ -4651,8 +4651,8 @@ __real@0000000000000000 DQ 00000000000000000r	; 0
 CONST	ENDS
 ;	COMDAT ?AverageIncome@CvTreasury@@QAENH@Z
 _TEXT	SEGMENT
-$T219379 = -8						; size = 8
-_iSamples$217927 = -8					; size = 4
+$T219856 = -8						; size = 8
+_iSamples$218404 = -8					; size = 4
 tv248 = 8						; size = 4
 _iTurns$ = 8						; size = 4
 ?AverageIncome@CvTreasury@@QAENH@Z PROC			; CvTreasury::AverageIncome, COMDAT
@@ -4692,7 +4692,7 @@ _iTurns$ = 8						; size = 4
 	dec	eax
 	xor	ebp, ebp
 	cmp	ebx, 2
-	mov	DWORD PTR _iSamples$217927[esp+24], edi
+	mov	DWORD PTR _iSamples$218404[esp+24], edi
 	jl	SHORT $LN16@AverageInc
 
 ; 888  : 		{
@@ -4705,7 +4705,7 @@ _iTurns$ = 8						; size = 4
 	inc	edx
 	imul	esi, edx
 	lea	edi, DWORD PTR [edx+edx]
-	mov	DWORD PTR _iSamples$217927[esp+24], edi
+	mov	DWORD PTR _iSamples$218404[esp+24], edi
 	mov	edx, esi
 $LN16@AverageInc:
 
@@ -4725,7 +4725,7 @@ $LN16@AverageInc:
 ; 890  : 			iSamples++;
 
 	inc	edi
-	mov	DWORD PTR _iSamples$217927[esp+24], edi
+	mov	DWORD PTR _iSamples$218404[esp+24], edi
 $LN14@AverageInc:
 	add	esi, edx
 
@@ -4739,11 +4739,11 @@ $LN14@AverageInc:
 	pop	edi
 	pop	esi
 	pop	ebp
-	fidiv	DWORD PTR _iSamples$217927[esp+12]
+	fidiv	DWORD PTR _iSamples$218404[esp+12]
 	pop	ebx
 	fdiv	QWORD PTR __real@4059000000000000
-	fstp	QWORD PTR $T219379[esp+8]
-	fld	QWORD PTR $T219379[esp+8]
+	fstp	QWORD PTR $T219856[esp+8]
+	fld	QWORD PTR $T219856[esp+8]
 
 ; 897  : }
 
@@ -4812,7 +4812,7 @@ _strValue$ = 44						; size = 28
 
 ; 1094 : 	strHeader += ",";
 
-	push	OFFSET $SG218095
+	push	OFFSET $SG218572
 	mov	ecx, esi
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
@@ -4826,7 +4826,7 @@ _strValue$ = 44						; size = 28
 
 ; 1096 : 	strLog += ",";
 
-	push	OFFSET $SG218096
+	push	OFFSET $SG218573
 	mov	ecx, esi
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
@@ -4906,7 +4906,7 @@ _iValue$ = 44						; size = 4
 
 ; 1102 : 	strHeader += ",";
 
-	push	OFFSET $SG218103
+	push	OFFSET $SG218580
 	mov	ecx, esi
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
@@ -4920,7 +4920,7 @@ _iValue$ = 44						; size = 4
 	mov	ecx, DWORD PTR _iValue$[esp+40]
 	push	ecx
 	lea	edx, DWORD PTR _str$[esp+48]
-	push	OFFSET $SG218105
+	push	OFFSET $SG218582
 	push	edx
 	mov	BYTE PTR __$EHRec$[esp+64], 1
 	call	?Format@CvString@@QAAXPBDZZ		; CvString::Format
@@ -5009,7 +5009,7 @@ _fValue$ = 44						; size = 4
 
 ; 1111 : 	strHeader += ",";
 
-	push	OFFSET $SG218112
+	push	OFFSET $SG218589
 	mov	ecx, esi
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
@@ -5024,7 +5024,7 @@ _fValue$ = 44						; size = 4
 	sub	esp, 8
 	fstp	QWORD PTR [esp]
 	lea	ecx, DWORD PTR _str$[esp+52]
-	push	OFFSET $SG218114
+	push	OFFSET $SG218591
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+68], 1
 	call	?Format@CvString@@QAAXPBDZZ		; CvString::Format
@@ -5658,7 +5658,7 @@ PUBLIC	?DoUpdateCityConnectionGold@CvTreasury@@QAEXXZ	; CvTreasury::DoUpdateCity
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?DoUpdateCityConnectionGold@CvTreasury@@QAEXXZ
 _TEXT	SEGMENT
-_iLoop$217700 = -4					; size = 4
+_iLoop$218177 = -4					; size = 4
 ?DoUpdateCityConnectionGold@CvTreasury@@QAEXXZ PROC	; CvTreasury::DoUpdateCityConnectionGold, COMDAT
 ; _this$ = ecx
 
@@ -5699,7 +5699,7 @@ _iLoop$217700 = -4					; size = 4
 	mov	ecx, DWORD PTR [esi+4]
 	push	edi
 	push	ebp
-	lea	eax, DWORD PTR _iLoop$217700[esp+24]
+	lea	eax, DWORD PTR _iLoop$218177[esp+24]
 	push	eax
 	call	?firstCity@CvPlayer@@QAEPAVCvCity@@PAH_N@Z ; CvPlayer::firstCity
 	mov	edi, eax
@@ -5733,7 +5733,7 @@ $LL14@DoUpdateCi:
 	add	ebp, eax
 $LN4@DoUpdateCi:
 	push	0
-	lea	ecx, DWORD PTR _iLoop$217700[esp+24]
+	lea	ecx, DWORD PTR _iLoop$218177[esp+24]
 	push	ecx
 	mov	ecx, DWORD PTR [esi+4]
 	call	?nextCity@CvPlayer@@QAEPAVCvCity@@PAH_N@Z ; CvPlayer::nextCity
@@ -5852,7 +5852,7 @@ EXTRN	?GetGameReligions@CvGame@@QAEPAVCvGameReligions@@XZ:PROC ; CvGame::GetGame
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?GetGoldPerTurnFromReligion@CvTreasury@@QBEHXZ
 _TEXT	SEGMENT
-_iGoldPerFollowingCity$217768 = -4			; size = 4
+_iGoldPerFollowingCity$218245 = -4			; size = 4
 ?GetGoldPerTurnFromReligion@CvTreasury@@QBEHXZ PROC	; CvTreasury::GetGoldPerTurnFromReligion, COMDAT
 ; _this$ = ecx
 
@@ -5914,10 +5914,10 @@ _iGoldPerFollowingCity$217768 = -4			; size = 4
 
 	push	ebx
 	mov	ecx, edi
-	mov	DWORD PTR _iGoldPerFollowingCity$217768[esp+24], eax
+	mov	DWORD PTR _iGoldPerFollowingCity$218245[esp+24], eax
 	call	?GetNumCitiesFollowing@CvGameReligions@@QBEHW4ReligionTypes@@@Z ; CvGameReligions::GetNumCitiesFollowing
 	mov	esi, eax
-	imul	esi, DWORD PTR _iGoldPerFollowingCity$217768[esp+20]
+	imul	esi, DWORD PTR _iGoldPerFollowingCity$218245[esp+20]
 
 ; 475  : 
 ; 476  : 			int iGoldPerXFollowers = pReligion->m_Beliefs.GetGoldPerXFollowers();
@@ -6331,67 +6331,67 @@ __unwindtable$?LogExpenditure@CvTreasury@@QAEXVCvString@@HH@Z DD 0ffffffffH
 xdata$x	ENDS
 ;	COMDAT ?LogExpenditure@CvTreasury@@QAEXVCvString@@HH@Z
 _TEXT	SEGMENT
-$T219929 = -220						; size = 4
-$T219927 = -220						; size = 4
-$T219926 = -220						; size = 4
-$T219924 = -220						; size = 4
-$T219923 = -220						; size = 4
-$T219921 = -220						; size = 4
-$T219920 = -220						; size = 4
-$T219918 = -220						; size = 4
-$T219917 = -220						; size = 4
-$T219915 = -220						; size = 4
-$T219914 = -220						; size = 4
-$T219912 = -220						; size = 4
-$T219911 = -220						; size = 4
-$T219909 = -220						; size = 4
-$T219908 = -220						; size = 4
-$T219906 = -220						; size = 4
-$T219905 = -220						; size = 4
-$T219903 = -220						; size = 4
-$T219902 = -220						; size = 4
-$T219900 = -220						; size = 4
-$T219899 = -220						; size = 4
-$T219897 = -220						; size = 4
-$T219896 = -220						; size = 4
-$T219894 = -220						; size = 4
-$T219893 = -220						; size = 4
-$T219891 = -220						; size = 4
-$T219890 = -220						; size = 4
-$T219888 = -220						; size = 4
-$T219887 = -220						; size = 4
-$T219885 = -220						; size = 4
-$T219884 = -220						; size = 4
-$T219882 = -220						; size = 4
-$T219881 = -220						; size = 4
-$T219880 = -220						; size = 4
-$T219879 = -220						; size = 4
-$T219878 = -220						; size = 4
-$T219877 = -220						; size = 4
-$T219928 = -216						; size = 4
-$T219925 = -216						; size = 4
-$T219922 = -216						; size = 4
-$T219919 = -216						; size = 4
-$T219916 = -216						; size = 4
-$T219913 = -216						; size = 4
-$T219910 = -216						; size = 4
-$T219907 = -216						; size = 4
-$T219904 = -216						; size = 4
-$T219901 = -216						; size = 4
-$T219898 = -216						; size = 4
-$T219895 = -216						; size = 4
-$T219892 = -216						; size = 4
-$T219889 = -216						; size = 4
-$T219886 = -216						; size = 4
-$T219883 = -216						; size = 4
-$T219876 = -216						; size = 4
+$T220406 = -220						; size = 4
+$T220404 = -220						; size = 4
+$T220403 = -220						; size = 4
+$T220401 = -220						; size = 4
+$T220400 = -220						; size = 4
+$T220398 = -220						; size = 4
+$T220397 = -220						; size = 4
+$T220395 = -220						; size = 4
+$T220394 = -220						; size = 4
+$T220392 = -220						; size = 4
+$T220391 = -220						; size = 4
+$T220389 = -220						; size = 4
+$T220388 = -220						; size = 4
+$T220386 = -220						; size = 4
+$T220385 = -220						; size = 4
+$T220383 = -220						; size = 4
+$T220382 = -220						; size = 4
+$T220380 = -220						; size = 4
+$T220379 = -220						; size = 4
+$T220377 = -220						; size = 4
+$T220376 = -220						; size = 4
+$T220374 = -220						; size = 4
+$T220373 = -220						; size = 4
+$T220371 = -220						; size = 4
+$T220370 = -220						; size = 4
+$T220368 = -220						; size = 4
+$T220367 = -220						; size = 4
+$T220365 = -220						; size = 4
+$T220364 = -220						; size = 4
+$T220362 = -220						; size = 4
+$T220361 = -220						; size = 4
+$T220359 = -220						; size = 4
+$T220358 = -220						; size = 4
+$T220357 = -220						; size = 4
+$T220356 = -220						; size = 4
+$T220355 = -220						; size = 4
+$T220354 = -220						; size = 4
+$T220405 = -216						; size = 4
+$T220402 = -216						; size = 4
+$T220399 = -216						; size = 4
+$T220396 = -216						; size = 4
+$T220393 = -216						; size = 4
+$T220390 = -216						; size = 4
+$T220387 = -216						; size = 4
+$T220384 = -216						; size = 4
+$T220381 = -216						; size = 4
+$T220378 = -216						; size = 4
+$T220375 = -216						; size = 4
+$T220372 = -216						; size = 4
+$T220369 = -216						; size = 4
+$T220366 = -216						; size = 4
+$T220363 = -216						; size = 4
+$T220360 = -216						; size = 4
+$T220353 = -216						; size = 4
 _bBuildHeader$ = -209					; size = 1
 _strHeader$ = -208					; size = 28
 _strLog$ = -180						; size = 28
 _strPlayerName$ = -152					; size = 28
 _strLogName$ = -124					; size = 28
-$T219874 = -96						; size = 28
-$T219875 = -68						; size = 28
+$T220351 = -96						; size = 28
+$T220352 = -68						; size = 28
 _str$ = -40						; size = 28
 __$EHRec$ = -12						; size = 12
 _strExpenditure$ = 8					; size = 28
@@ -6518,13 +6518,13 @@ $LN105@LogExpendi:
 
 	lea	eax, DWORD PTR _strPlayerName$[esp+236]
 	push	eax
-	lea	ecx, DWORD PTR $T219874[esp+240]
-	push	OFFSET $SG217956
+	lea	ecx, DWORD PTR $T220351[esp+240]
+	push	OFFSET $SG218433
 	push	ecx
 	call	DWORD PTR __imp_??$?HDU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PBDABV10@@Z
-	push	OFFSET $SG217955
+	push	OFFSET $SG218432
 	push	eax
-	lea	edx, DWORD PTR $T219875[esp+256]
+	lea	edx, DWORD PTR $T220352[esp+256]
 	push	edx
 	mov	BYTE PTR __$EHRec$[esp+268], 5
 	call	DWORD PTR __imp_??$?HDU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@ABV10@PBD@Z
@@ -6535,10 +6535,10 @@ $LN105@LogExpendi:
 	push	eax
 	lea	ecx, DWORD PTR _strLogName$[esp+240]
 	call	DWORD PTR __imp_?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBD@Z
-	lea	ecx, DWORD PTR $T219875[esp+236]
+	lea	ecx, DWORD PTR $T220352[esp+236]
 	mov	BYTE PTR __$EHRec$[esp+244], 5
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T219874[esp+236]
+	lea	ecx, DWORD PTR $T220351[esp+236]
 	mov	BYTE PTR __$EHRec$[esp+244], 4
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -6551,7 +6551,7 @@ $LN21@LogExpendi:
 ; 934  : 	{
 ; 935  : 		strLogName = "ExpenditureLog.csv";
 
-	push	OFFSET $SG217958
+	push	OFFSET $SG218435
 	lea	ecx, DWORD PTR _strLogName$[esp+240]
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 $LN20@LogExpendi:
@@ -6587,16 +6587,16 @@ $LN20@LogExpendi:
 
 	sub	esp, 28					; 0000001cH
 	lea	edx, DWORD PTR _strPlayerName$[esp+264]
-	mov	DWORD PTR $T219876[esp+264], esp
+	mov	DWORD PTR $T220353[esp+264], esp
 	mov	ecx, esp
 	mov	ebx, 7
 	push	edx
 	mov	BYTE PTR __$EHRec$[esp+276], bl
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T219877[esp+292], esp
+	mov	DWORD PTR $T220354[esp+292], esp
 	mov	ecx, esp
-	push	OFFSET $SG217963
+	push	OFFSET $SG218440
 	mov	BYTE PTR __$EHRec$[esp+304], 8
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	eax, DWORD PTR _strLog$[esp+292]
@@ -6615,9 +6615,9 @@ $LN20@LogExpendi:
 	call	?getGameTurn@CvGame@@QAEHXZ		; CvGame::getGameTurn
 	push	eax
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T219878[esp+268], esp
+	mov	DWORD PTR $T220355[esp+268], esp
 	mov	ecx, esp
-	push	OFFSET $SG217965
+	push	OFFSET $SG218442
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	edx, DWORD PTR _strLog$[esp+268]
 	push	edx
@@ -6641,9 +6641,9 @@ $LN20@LogExpendi:
 	add	ecx, edx
 	push	ecx
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T219879[esp+268], esp
+	mov	DWORD PTR $T220356[esp+268], esp
 	mov	ecx, esp
-	push	OFFSET $SG217967
+	push	OFFSET $SG218444
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	edx, DWORD PTR _strLog$[esp+268]
 	push	edx
@@ -6665,9 +6665,9 @@ $LN20@LogExpendi:
 
 	push	edi
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T219880[esp+268], esp
+	mov	DWORD PTR $T220357[esp+268], esp
 	mov	ecx, esp
-	push	OFFSET $SG217970
+	push	OFFSET $SG218447
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	ecx, DWORD PTR _strLog$[esp+268]
 	push	ecx
@@ -6682,14 +6682,14 @@ $LN17@LogExpendi:
 ; 967  : 		TreasuryHelpers::AppendToLog(strHeader, strLog, "City Bought:", "");
 
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T219885[esp+264], esp
+	mov	DWORD PTR $T220362[esp+264], esp
 	mov	ecx, esp
-	push	OFFSET $SG217983
+	push	OFFSET $SG218460
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T219886[esp+292], esp
+	mov	DWORD PTR $T220363[esp+292], esp
 	mov	ecx, esp
-	push	OFFSET $SG217984
+	push	OFFSET $SG218461
 	mov	BYTE PTR __$EHRec$[esp+304], 10		; 0000000aH
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	ecx, DWORD PTR _strLog$[esp+292]
@@ -6704,9 +6704,9 @@ $LN17@LogExpendi:
 
 	push	0
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T219887[esp+268], esp
+	mov	DWORD PTR $T220364[esp+268], esp
 	mov	ecx, esp
-	push	OFFSET $SG217986
+	push	OFFSET $SG218463
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	eax, DWORD PTR _strLog$[esp+268]
 	push	eax
@@ -6727,14 +6727,14 @@ $LN17@LogExpendi:
 
 	sub	esp, 28					; 0000001cH
 	lea	edx, DWORD PTR _strExpenditure$[esp+260]
-	mov	DWORD PTR $T219888[esp+264], esp
+	mov	DWORD PTR $T220365[esp+264], esp
 	mov	ecx, esp
 	push	edx
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T219889[esp+292], esp
+	mov	DWORD PTR $T220366[esp+292], esp
 	mov	ecx, esp
-	push	OFFSET $SG217990
+	push	OFFSET $SG218467
 	mov	BYTE PTR __$EHRec$[esp+304], 11		; 0000000bH
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	eax, DWORD PTR _strLog$[esp+292]
@@ -6749,9 +6749,9 @@ $LN17@LogExpendi:
 
 	push	edi
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T219890[esp+268], esp
+	mov	DWORD PTR $T220367[esp+268], esp
 	mov	ecx, esp
-	push	OFFSET $SG217992
+	push	OFFSET $SG218469
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	edx, DWORD PTR _strLog$[esp+268]
 	push	edx
@@ -6766,14 +6766,14 @@ $LN13@LogExpendi:
 ; 987  : 		TreasuryHelpers::AppendToLog(strHeader, strLog, "City State Gold Gifted:", "");
 
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T219897[esp+264], esp
+	mov	DWORD PTR $T220374[esp+264], esp
 	mov	ecx, esp
-	push	OFFSET $SG218009
+	push	OFFSET $SG218486
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T219898[esp+292], esp
+	mov	DWORD PTR $T220375[esp+292], esp
 	mov	ecx, esp
-	push	OFFSET $SG218010
+	push	OFFSET $SG218487
 	mov	BYTE PTR __$EHRec$[esp+304], 14		; 0000000eH
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	ecx, DWORD PTR _strLog$[esp+292]
@@ -6788,9 +6788,9 @@ $LN13@LogExpendi:
 
 	push	0
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T219899[esp+268], esp
+	mov	DWORD PTR $T220376[esp+268], esp
 	mov	ecx, esp
-	push	OFFSET $SG218012
+	push	OFFSET $SG218489
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	eax, DWORD PTR _strLog$[esp+268]
 	push	eax
@@ -6811,14 +6811,14 @@ $LN13@LogExpendi:
 
 	sub	esp, 28					; 0000001cH
 	lea	edx, DWORD PTR _strExpenditure$[esp+260]
-	mov	DWORD PTR $T219900[esp+264], esp
+	mov	DWORD PTR $T220377[esp+264], esp
 	mov	ecx, esp
 	push	edx
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T219901[esp+292], esp
+	mov	DWORD PTR $T220378[esp+292], esp
 	mov	ecx, esp
-	push	OFFSET $SG218016
+	push	OFFSET $SG218493
 	mov	BYTE PTR __$EHRec$[esp+304], 15		; 0000000fH
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	eax, DWORD PTR _strLog$[esp+292]
@@ -6833,9 +6833,9 @@ $LN13@LogExpendi:
 
 	push	edi
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T219902[esp+268], esp
+	mov	DWORD PTR $T220379[esp+268], esp
 	mov	ecx, esp
-	push	OFFSET $SG218018
+	push	OFFSET $SG218495
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	edx, DWORD PTR _strLog$[esp+268]
 	push	edx
@@ -6850,14 +6850,14 @@ $LN9@LogExpendi:
 ; 1007 : 		TreasuryHelpers::AppendToLog(strHeader, strLog, "City State Bought:", "");
 
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T219909[esp+264], esp
+	mov	DWORD PTR $T220386[esp+264], esp
 	mov	ecx, esp
-	push	OFFSET $SG218035
+	push	OFFSET $SG218512
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T219910[esp+292], esp
+	mov	DWORD PTR $T220387[esp+292], esp
 	mov	ecx, esp
-	push	OFFSET $SG218036
+	push	OFFSET $SG218513
 	mov	BYTE PTR __$EHRec$[esp+304], 18		; 00000012H
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	ecx, DWORD PTR _strLog$[esp+292]
@@ -6872,9 +6872,9 @@ $LN9@LogExpendi:
 
 	push	0
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T219911[esp+268], esp
+	mov	DWORD PTR $T220388[esp+268], esp
 	mov	ecx, esp
-	push	OFFSET $SG218038
+	push	OFFSET $SG218515
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	eax, DWORD PTR _strLog$[esp+268]
 	push	eax
@@ -6895,14 +6895,14 @@ $LN9@LogExpendi:
 
 	sub	esp, 28					; 0000001cH
 	lea	edx, DWORD PTR _strExpenditure$[esp+260]
-	mov	DWORD PTR $T219912[esp+264], esp
+	mov	DWORD PTR $T220389[esp+264], esp
 	mov	ecx, esp
 	push	edx
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T219913[esp+292], esp
+	mov	DWORD PTR $T220390[esp+292], esp
 	mov	ecx, esp
-	push	OFFSET $SG218042
+	push	OFFSET $SG218519
 	mov	BYTE PTR __$EHRec$[esp+304], 19		; 00000013H
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	eax, DWORD PTR _strLog$[esp+292]
@@ -6917,9 +6917,9 @@ $LN9@LogExpendi:
 
 	push	edi
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T219914[esp+268], esp
+	mov	DWORD PTR $T220391[esp+268], esp
 	mov	ecx, esp
-	push	OFFSET $SG218044
+	push	OFFSET $SG218521
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	edx, DWORD PTR _strLog$[esp+268]
 	push	edx
@@ -6934,14 +6934,14 @@ $LN5@LogExpendi:
 ; 1027 : 		TreasuryHelpers::AppendToLog(strHeader, strLog, "Emergency Building:", "");
 
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T219921[esp+264], esp
+	mov	DWORD PTR $T220398[esp+264], esp
 	mov	ecx, esp
-	push	OFFSET $SG218061
+	push	OFFSET $SG218538
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T219922[esp+292], esp
+	mov	DWORD PTR $T220399[esp+292], esp
 	mov	ecx, esp
-	push	OFFSET $SG218062
+	push	OFFSET $SG218539
 	mov	BYTE PTR __$EHRec$[esp+304], 22		; 00000016H
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	ecx, DWORD PTR _strLog$[esp+292]
@@ -6956,9 +6956,9 @@ $LN5@LogExpendi:
 
 	push	0
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T219923[esp+268], esp
+	mov	DWORD PTR $T220400[esp+268], esp
 	mov	ecx, esp
-	push	OFFSET $SG218064
+	push	OFFSET $SG218541
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	eax, DWORD PTR _strLog$[esp+268]
 	push	eax
@@ -6979,14 +6979,14 @@ $LN5@LogExpendi:
 
 	sub	esp, 28					; 0000001cH
 	lea	edx, DWORD PTR _strExpenditure$[esp+260]
-	mov	DWORD PTR $T219924[esp+264], esp
+	mov	DWORD PTR $T220401[esp+264], esp
 	mov	ecx, esp
 	push	edx
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T219925[esp+292], esp
+	mov	DWORD PTR $T220402[esp+292], esp
 	mov	ecx, esp
-	push	OFFSET $SG218068
+	push	OFFSET $SG218545
 	mov	BYTE PTR __$EHRec$[esp+304], 23		; 00000017H
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	eax, DWORD PTR _strLog$[esp+292]
@@ -7001,9 +7001,9 @@ $LN5@LogExpendi:
 
 	push	edi
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T219926[esp+268], esp
+	mov	DWORD PTR $T220403[esp+268], esp
 	mov	ecx, esp
-	push	OFFSET $SG218070
+	push	OFFSET $SG218547
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	edx, DWORD PTR _strLog$[esp+268]
 	push	edx
@@ -7022,9 +7022,9 @@ $LN19@LogExpendi:
 
 	push	0
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T219881[esp+268], esp
+	mov	DWORD PTR $T220358[esp+268], esp
 	mov	ecx, esp
-	push	OFFSET $SG217973
+	push	OFFSET $SG218450
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	eax, DWORD PTR _strLog$[esp+268]
 	push	eax
@@ -7045,14 +7045,14 @@ $LN19@LogExpendi:
 
 	sub	esp, 28					; 0000001cH
 	lea	edx, DWORD PTR _strExpenditure$[esp+260]
-	mov	DWORD PTR $T219882[esp+264], esp
+	mov	DWORD PTR $T220359[esp+264], esp
 	mov	ecx, esp
 	push	edx
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T219883[esp+292], esp
+	mov	DWORD PTR $T220360[esp+292], esp
 	mov	ecx, esp
-	push	OFFSET $SG217977
+	push	OFFSET $SG218454
 	mov	BYTE PTR __$EHRec$[esp+304], 9
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	eax, DWORD PTR _strLog$[esp+292]
@@ -7068,9 +7068,9 @@ $LN19@LogExpendi:
 	add	esp, 64					; 00000040H
 	push	edi
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T219884[esp+268], esp
+	mov	DWORD PTR $T220361[esp+268], esp
 	mov	ecx, esp
-	push	OFFSET $SG217979
+	push	OFFSET $SG218456
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	edx, DWORD PTR _strLog$[esp+268]
 	push	edx
@@ -7085,14 +7085,14 @@ $LN15@LogExpendi:
 ; 977  : 		TreasuryHelpers::AppendToLog(strHeader, strLog, "Unit Upgrade:", "");
 
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T219891[esp+264], esp
+	mov	DWORD PTR $T220368[esp+264], esp
 	mov	ecx, esp
-	push	OFFSET $SG217996
+	push	OFFSET $SG218473
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T219892[esp+292], esp
+	mov	DWORD PTR $T220369[esp+292], esp
 	mov	ecx, esp
-	push	OFFSET $SG217997
+	push	OFFSET $SG218474
 	mov	BYTE PTR __$EHRec$[esp+304], 12		; 0000000cH
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	ecx, DWORD PTR _strLog$[esp+292]
@@ -7107,9 +7107,9 @@ $LN15@LogExpendi:
 
 	push	0
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T219893[esp+268], esp
+	mov	DWORD PTR $T220370[esp+268], esp
 	mov	ecx, esp
-	push	OFFSET $SG217999
+	push	OFFSET $SG218476
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	eax, DWORD PTR _strLog$[esp+268]
 	push	eax
@@ -7130,14 +7130,14 @@ $LN15@LogExpendi:
 
 	sub	esp, 28					; 0000001cH
 	lea	edx, DWORD PTR _strExpenditure$[esp+260]
-	mov	DWORD PTR $T219894[esp+264], esp
+	mov	DWORD PTR $T220371[esp+264], esp
 	mov	ecx, esp
 	push	edx
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T219895[esp+292], esp
+	mov	DWORD PTR $T220372[esp+292], esp
 	mov	ecx, esp
-	push	OFFSET $SG218003
+	push	OFFSET $SG218480
 	mov	BYTE PTR __$EHRec$[esp+304], 13		; 0000000dH
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	eax, DWORD PTR _strLog$[esp+292]
@@ -7152,9 +7152,9 @@ $LN15@LogExpendi:
 
 	push	edi
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T219896[esp+268], esp
+	mov	DWORD PTR $T220373[esp+268], esp
 	mov	ecx, esp
-	push	OFFSET $SG218005
+	push	OFFSET $SG218482
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	edx, DWORD PTR _strLog$[esp+268]
 	push	edx
@@ -7169,14 +7169,14 @@ $LN11@LogExpendi:
 ; 997  : 		TreasuryHelpers::AppendToLog(strHeader, strLog, "City State Improved:", "");
 
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T219903[esp+264], esp
+	mov	DWORD PTR $T220380[esp+264], esp
 	mov	ecx, esp
-	push	OFFSET $SG218022
+	push	OFFSET $SG218499
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T219904[esp+292], esp
+	mov	DWORD PTR $T220381[esp+292], esp
 	mov	ecx, esp
-	push	OFFSET $SG218023
+	push	OFFSET $SG218500
 	mov	BYTE PTR __$EHRec$[esp+304], 16		; 00000010H
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	ecx, DWORD PTR _strLog$[esp+292]
@@ -7191,9 +7191,9 @@ $LN11@LogExpendi:
 
 	push	0
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T219905[esp+268], esp
+	mov	DWORD PTR $T220382[esp+268], esp
 	mov	ecx, esp
-	push	OFFSET $SG218025
+	push	OFFSET $SG218502
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	eax, DWORD PTR _strLog$[esp+268]
 	push	eax
@@ -7214,14 +7214,14 @@ $LN11@LogExpendi:
 
 	sub	esp, 28					; 0000001cH
 	lea	edx, DWORD PTR _strExpenditure$[esp+260]
-	mov	DWORD PTR $T219906[esp+264], esp
+	mov	DWORD PTR $T220383[esp+264], esp
 	mov	ecx, esp
 	push	edx
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T219907[esp+292], esp
+	mov	DWORD PTR $T220384[esp+292], esp
 	mov	ecx, esp
-	push	OFFSET $SG218029
+	push	OFFSET $SG218506
 	mov	BYTE PTR __$EHRec$[esp+304], 17		; 00000011H
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	eax, DWORD PTR _strLog$[esp+292]
@@ -7236,9 +7236,9 @@ $LN11@LogExpendi:
 
 	push	edi
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T219908[esp+268], esp
+	mov	DWORD PTR $T220385[esp+268], esp
 	mov	ecx, esp
-	push	OFFSET $SG218031
+	push	OFFSET $SG218508
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	edx, DWORD PTR _strLog$[esp+268]
 	push	edx
@@ -7253,14 +7253,14 @@ $LN7@LogExpendi:
 ; 1017 : 		TreasuryHelpers::AppendToLog(strHeader, strLog, "Emergency Unit:", "");
 
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T219915[esp+264], esp
+	mov	DWORD PTR $T220392[esp+264], esp
 	mov	ecx, esp
-	push	OFFSET $SG218048
+	push	OFFSET $SG218525
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T219916[esp+292], esp
+	mov	DWORD PTR $T220393[esp+292], esp
 	mov	ecx, esp
-	push	OFFSET $SG218049
+	push	OFFSET $SG218526
 	mov	BYTE PTR __$EHRec$[esp+304], 20		; 00000014H
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	ecx, DWORD PTR _strLog$[esp+292]
@@ -7275,9 +7275,9 @@ $LN7@LogExpendi:
 
 	push	0
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T219917[esp+268], esp
+	mov	DWORD PTR $T220394[esp+268], esp
 	mov	ecx, esp
-	push	OFFSET $SG218051
+	push	OFFSET $SG218528
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	eax, DWORD PTR _strLog$[esp+268]
 	push	eax
@@ -7298,14 +7298,14 @@ $LN7@LogExpendi:
 
 	sub	esp, 28					; 0000001cH
 	lea	edx, DWORD PTR _strExpenditure$[esp+260]
-	mov	DWORD PTR $T219918[esp+264], esp
+	mov	DWORD PTR $T220395[esp+264], esp
 	mov	ecx, esp
 	push	edx
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T219919[esp+292], esp
+	mov	DWORD PTR $T220396[esp+292], esp
 	mov	ecx, esp
-	push	OFFSET $SG218055
+	push	OFFSET $SG218532
 	mov	BYTE PTR __$EHRec$[esp+304], 21		; 00000015H
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	eax, DWORD PTR _strLog$[esp+292]
@@ -7320,9 +7320,9 @@ $LN7@LogExpendi:
 
 	push	edi
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T219920[esp+268], esp
+	mov	DWORD PTR $T220397[esp+268], esp
 	mov	ecx, esp
-	push	OFFSET $SG218057
+	push	OFFSET $SG218534
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	edx, DWORD PTR _strLog$[esp+268]
 	push	edx
@@ -7335,14 +7335,14 @@ $LN3@LogExpendi:
 ; 1037 : 		TreasuryHelpers::AppendToLog(strHeader, strLog, "Research Agreement with:", "");
 
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T219927[esp+264], esp
+	mov	DWORD PTR $T220404[esp+264], esp
 	mov	ecx, esp
-	push	OFFSET $SG218074
+	push	OFFSET $SG218551
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T219928[esp+292], esp
+	mov	DWORD PTR $T220405[esp+292], esp
 	mov	ecx, esp
-	push	OFFSET $SG218075
+	push	OFFSET $SG218552
 	mov	BYTE PTR __$EHRec$[esp+304], 24		; 00000018H
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	ecx, DWORD PTR _strLog$[esp+292]
@@ -7357,9 +7357,9 @@ $LN3@LogExpendi:
 
 	push	0
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T219929[esp+268], esp
+	mov	DWORD PTR $T220406[esp+268], esp
 	mov	ecx, esp
-	push	OFFSET $SG218077
+	push	OFFSET $SG218554
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	eax, DWORD PTR _strLog$[esp+268]
 	push	eax
@@ -7449,64 +7449,64 @@ __unwindfunclet$?LogExpenditure@CvTreasury@@QAEXVCvString@@HH@Z$4:
 	lea	ecx, DWORD PTR _strLogName$[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?LogExpenditure@CvTreasury@@QAEXVCvString@@HH@Z$5:
-	lea	ecx, DWORD PTR $T219874[ebp]
+	lea	ecx, DWORD PTR $T220351[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?LogExpenditure@CvTreasury@@QAEXVCvString@@HH@Z$6:
-	lea	ecx, DWORD PTR $T219875[ebp]
+	lea	ecx, DWORD PTR $T220352[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?LogExpenditure@CvTreasury@@QAEXVCvString@@HH@Z$7:
 	lea	ecx, DWORD PTR _str$[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?LogExpenditure@CvTreasury@@QAEXVCvString@@HH@Z$8:
-	mov	ecx, DWORD PTR $T219876[ebp]
+	mov	ecx, DWORD PTR $T220353[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?LogExpenditure@CvTreasury@@QAEXVCvString@@HH@Z$17:
-	mov	ecx, DWORD PTR $T219885[ebp]
+	mov	ecx, DWORD PTR $T220362[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?LogExpenditure@CvTreasury@@QAEXVCvString@@HH@Z$20:
-	mov	ecx, DWORD PTR $T219888[ebp]
+	mov	ecx, DWORD PTR $T220365[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?LogExpenditure@CvTreasury@@QAEXVCvString@@HH@Z$29:
-	mov	ecx, DWORD PTR $T219897[ebp]
+	mov	ecx, DWORD PTR $T220374[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?LogExpenditure@CvTreasury@@QAEXVCvString@@HH@Z$32:
-	mov	ecx, DWORD PTR $T219900[ebp]
+	mov	ecx, DWORD PTR $T220377[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?LogExpenditure@CvTreasury@@QAEXVCvString@@HH@Z$41:
-	mov	ecx, DWORD PTR $T219909[ebp]
+	mov	ecx, DWORD PTR $T220386[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?LogExpenditure@CvTreasury@@QAEXVCvString@@HH@Z$44:
-	mov	ecx, DWORD PTR $T219912[ebp]
+	mov	ecx, DWORD PTR $T220389[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?LogExpenditure@CvTreasury@@QAEXVCvString@@HH@Z$53:
-	mov	ecx, DWORD PTR $T219921[ebp]
+	mov	ecx, DWORD PTR $T220398[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?LogExpenditure@CvTreasury@@QAEXVCvString@@HH@Z$56:
-	mov	ecx, DWORD PTR $T219924[ebp]
+	mov	ecx, DWORD PTR $T220401[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?LogExpenditure@CvTreasury@@QAEXVCvString@@HH@Z$14:
-	mov	ecx, DWORD PTR $T219882[ebp]
+	mov	ecx, DWORD PTR $T220359[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?LogExpenditure@CvTreasury@@QAEXVCvString@@HH@Z$23:
-	mov	ecx, DWORD PTR $T219891[ebp]
+	mov	ecx, DWORD PTR $T220368[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?LogExpenditure@CvTreasury@@QAEXVCvString@@HH@Z$26:
-	mov	ecx, DWORD PTR $T219894[ebp]
+	mov	ecx, DWORD PTR $T220371[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?LogExpenditure@CvTreasury@@QAEXVCvString@@HH@Z$35:
-	mov	ecx, DWORD PTR $T219903[ebp]
+	mov	ecx, DWORD PTR $T220380[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?LogExpenditure@CvTreasury@@QAEXVCvString@@HH@Z$38:
-	mov	ecx, DWORD PTR $T219906[ebp]
+	mov	ecx, DWORD PTR $T220383[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?LogExpenditure@CvTreasury@@QAEXVCvString@@HH@Z$47:
-	mov	ecx, DWORD PTR $T219915[ebp]
+	mov	ecx, DWORD PTR $T220392[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?LogExpenditure@CvTreasury@@QAEXVCvString@@HH@Z$50:
-	mov	ecx, DWORD PTR $T219918[ebp]
+	mov	ecx, DWORD PTR $T220395[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?LogExpenditure@CvTreasury@@QAEXVCvString@@HH@Z$59:
-	mov	ecx, DWORD PTR $T219927[ebp]
+	mov	ecx, DWORD PTR $T220404[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?LogExpenditure@CvTreasury@@QAEXVCvString@@HH@Z:
 	mov	eax, OFFSET __ehfuncinfo$?LogExpenditure@CvTreasury@@QAEXVCvString@@HH@Z
@@ -7728,7 +7728,7 @@ PUBLIC	??$?6H@@YAAAVFDataStream@@AAV0@ABV?$vector@HV?$allocator@H@std@@@std@@@Z 
 ;	COMDAT ??$?6H@@YAAAVFDataStream@@AAV0@ABV?$vector@HV?$allocator@H@std@@@std@@@Z
 _TEXT	SEGMENT
 _saveTo$ = 8						; size = 4
-$T220675 = 12						; size = 4
+$T221152 = 12						; size = 4
 _readFrom$ = 12						; size = 4
 ??$?6H@@YAAAVFDataStream@@AAV0@ABV?$vector@HV?$allocator@H@std@@@std@@@Z PROC ; operator<<<int>, COMDAT
 
@@ -7744,11 +7744,11 @@ _readFrom$ = 12						; size = 4
 	mov	eax, DWORD PTR [esi+8]
 	sub	eax, DWORD PTR [esi+4]
 	push	edi
-	lea	ecx, DWORD PTR $T220675[esp+8]
+	lea	ecx, DWORD PTR $T221152[esp+8]
 	sar	eax, 2
 	push	ecx
 	mov	ecx, ebx
-	mov	DWORD PTR $T220675[esp+12], eax
+	mov	DWORD PTR $T221152[esp+12], eax
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 	mov	edi, DWORD PTR [esi+8]
 	mov	esi, DWORD PTR [esi+4]
@@ -8133,8 +8133,8 @@ PUBLIC	??$unchecked_uninitialized_copy@V?$_Vector_iterator@HV?$allocator@H@std@@
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ??$unchecked_uninitialized_copy@V?$_Vector_iterator@HV?$allocator@H@std@@@std@@PAHV?$allocator@H@2@@stdext@@YAPAHV?$_Vector_iterator@HV?$allocator@H@std@@@std@@0PAHAAV?$allocator@H@2@@Z
 _TEXT	SEGMENT
-$T220939 = -4						; size = 1
-__Cat$220943 = -4					; size = 1
+$T221416 = -4						; size = 1
+__Cat$221421 = -4					; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
@@ -8150,9 +8150,9 @@ __Al$ = 20						; size = 4
 ; 822  : 		_STD _Ptr_cat(_First, _Dest), _STD _Range_checked_iterator_tag()));
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T220939[esp+4], 0
-	mov	eax, DWORD PTR $T220939[esp+4]
-	mov	ecx, DWORD PTR __Cat$220943[esp+4]
+	mov	BYTE PTR $T221416[esp+4], 0
+	mov	eax, DWORD PTR $T221416[esp+4]
+	mov	ecx, DWORD PTR __Cat$221421[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -8441,10 +8441,10 @@ PUBLIC	??$_Uninit_move@V?$_Vector_iterator@HV?$allocator@H@std@@@std@@PAHV?$allo
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ??$_Uninit_move@V?$_Vector_iterator@HV?$allocator@H@std@@@std@@PAHV?$allocator@H@2@U_Undefined_move_tag@2@@std@@YAPAHV?$_Vector_iterator@HV?$allocator@H@std@@@0@0PAHAAV?$allocator@H@0@U_Undefined_move_tag@0@U_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
-$T221270 = -4						; size = 1
+$T221747 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$221275 = 16					; size = 1
+__Cat$221752 = 16					; size = 1
 __Dest$ = 16						; size = 4
 __Al$ = 20						; size = 4
 ___formal$ = 24						; size = 1
@@ -8457,10 +8457,10 @@ ___formal$ = 28						; size = 1
 
 ; 207  : 	return (_STDEXT unchecked_uninitialized_copy(_First, _Last, _Dest, _Al));
 
-	mov	ecx, DWORD PTR __Cat$221275[esp]
+	mov	ecx, DWORD PTR __Cat$221752[esp]
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T221270[esp+4], 0
-	mov	eax, DWORD PTR $T221270[esp+4]
+	mov	BYTE PTR $T221747[esp+4], 0
+	mov	eax, DWORD PTR $T221747[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -8797,10 +8797,10 @@ PUBLIC	??$_Unchecked_uninitialized_move@V?$_Vector_iterator@HV?$allocator@H@std@
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ??$_Unchecked_uninitialized_move@V?$_Vector_iterator@HV?$allocator@H@std@@@std@@PAHV?$allocator@H@2@@stdext@@YAPAHV?$_Vector_iterator@HV?$allocator@H@std@@@std@@0PAHAAV?$allocator@H@2@@Z
 _TEXT	SEGMENT
-$T221969 = -4						; size = 1
+$T222444 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$221972 = 16					; size = 1
+__Cat$222448 = 16					; size = 1
 __Dest$ = 16						; size = 4
 __Al$ = 20						; size = 4
 ??$_Unchecked_uninitialized_move@V?$_Vector_iterator@HV?$allocator@H@std@@@std@@PAHV?$allocator@H@2@@stdext@@YAPAHV?$_Vector_iterator@HV?$allocator@H@std@@@std@@0PAHAAV?$allocator@H@2@@Z PROC ; stdext::_Unchecked_uninitialized_move<std::_Vector_iterator<int,std::allocator<int> >,int *,std::allocator<int> >, COMDAT
@@ -8813,10 +8813,10 @@ __Al$ = 20						; size = 4
 ; 863  : 		_CHECKED_BASE(_Last), _Dest, _Al,
 ; 864  : 		_STD _Move_cat(_Dest), _STD _Range_checked_iterator_tag()));
 
-	mov	ecx, DWORD PTR __Cat$221972[esp]
+	mov	ecx, DWORD PTR __Cat$222448[esp]
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T221969[esp+4], 0
-	mov	eax, DWORD PTR $T221969[esp+4]
+	mov	BYTE PTR $T222444[esp+4], 0
+	mov	eax, DWORD PTR $T222444[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -8888,8 +8888,8 @@ _TEXT	SEGMENT
 __Capacity$ = -4					; size = 4
 __Where$ = 8						; size = 4
 __Count$ = 12						; size = 4
-__Tmp$214892 = 16					; size = 4
-__Tmp$214882 = 16					; size = 4
+__Tmp$215369 = 16					; size = 4
+__Tmp$215359 = 16					; size = 4
 __Val$ = 16						; size = 4
 ?_Insert_n@?$vector@HV?$allocator@H@std@@@std@@IAEXV?$_Vector_const_iterator@HV?$allocator@H@std@@@2@IABH@Z PROC ; std::vector<int,std::allocator<int> >::_Insert_n, COMDAT
 ; _this$ = ecx
@@ -9120,7 +9120,7 @@ $LN10@Insert_n:
 ; 1214 : 				_VEC_ITER_BASE(_Where) + _Count);	// copy suffix
 
 	lea	ebp, DWORD PTR [edi*4]
-	mov	DWORD PTR __Tmp$214882[esp+16], edx
+	mov	DWORD PTR __Tmp$215359[esp+16], edx
 	jae	SHORT $LN3@Insert_n
 	lea	ecx, DWORD PTR [eax+ebp]
 	push	ecx
@@ -9137,7 +9137,7 @@ $LN10@Insert_n:
 	mov	eax, DWORD PTR [esi+8]
 	mov	ecx, eax
 	sub	ecx, DWORD PTR __Where$[esp+16]
-	lea	edx, DWORD PTR __Tmp$214882[esp+16]
+	lea	edx, DWORD PTR __Tmp$215359[esp+16]
 	sar	ecx, 2
 	push	edx
 	sub	edi, ecx
@@ -9165,7 +9165,7 @@ $LN10@Insert_n:
 ; 1231 : 				_Tmp);	// insert up to old end
 
 	mov	eax, DWORD PTR __Where$[esp+16]
-	lea	edx, DWORD PTR __Tmp$214882[esp+16]
+	lea	edx, DWORD PTR __Tmp$215359[esp+16]
 	push	edx
 	sub	esi, ebp
 	push	esi
@@ -9220,7 +9220,7 @@ $LN3@Insert_n:
 ; 1248 : 				_Tmp);	// insert into hole
 
 	mov	eax, DWORD PTR __Where$[esp+28]
-	lea	ecx, DWORD PTR __Tmp$214892[esp+28]
+	lea	ecx, DWORD PTR __Tmp$215369[esp+28]
 	push	ecx
 	add	ebp, eax
 	push	ebp
@@ -9288,10 +9288,10 @@ PUBLIC	??$_Umove@V?$_Vector_iterator@HV?$allocator@H@std@@@std@@@?$vector@HV?$al
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Umove@V?$_Vector_iterator@HV?$allocator@H@std@@@std@@@?$vector@HV?$allocator@H@std@@@std@@IAEPAHV?$_Vector_iterator@HV?$allocator@H@std@@@1@0PAH@Z
 _TEXT	SEGMENT
-$T222273 = -4						; size = 1
+$T222750 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$222277 = 16					; size = 1
+__Cat$222754 = 16					; size = 1
 __Ptr$ = 16						; size = 4
 ??$_Umove@V?$_Vector_iterator@HV?$allocator@H@std@@@std@@@?$vector@HV?$allocator@H@std@@@std@@IAEPAHV?$_Vector_iterator@HV?$allocator@H@std@@@1@0PAH@Z PROC ; std::vector<int,std::allocator<int> >::_Umove<std::_Vector_iterator<int,std::allocator<int> > >, COMDAT
 ; _this$ = ecx
@@ -9304,9 +9304,9 @@ __Ptr$ = 16						; size = 4
 ; 1147 : 		return (_STDEXT _Unchecked_uninitialized_move(_First, _Last,
 ; 1148 : 			_Ptr, this->_Alval));
 
-	mov	edx, DWORD PTR __Cat$222277[esp]
-	mov	BYTE PTR $T222273[esp+4], 0
-	mov	eax, DWORD PTR $T222273[esp+4]
+	mov	edx, DWORD PTR __Cat$222754[esp]
+	mov	BYTE PTR $T222750[esp+4], 0
+	mov	eax, DWORD PTR $T222750[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Ptr$[esp+4]
 	push	edx
@@ -9409,10 +9409,10 @@ __ehfuncinfo$?reserve@?$vector@HV?$allocator@H@std@@@std@@QAEXI@Z DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?reserve@?$vector@HV?$allocator@H@std@@@std@@QAEXI@Z
 _TEXT	SEGMENT
-__Ptr$218122 = -24					; size = 4
-$T222475 = -20						; size = 1
+__Ptr$218599 = -24					; size = 4
+$T222952 = -20						; size = 1
 __$EHRec$ = -16						; size = 16
-__Cat$222478 = 8					; size = 1
+__Cat$222955 = 8					; size = 1
 __Count$ = 8						; size = 4
 ?reserve@?$vector@HV?$allocator@H@std@@@std@@QAEXI@Z PROC ; std::vector<int,std::allocator<int> >::reserve, COMDAT
 ; _this$ = ecx
@@ -9472,10 +9472,10 @@ $LN21@reserve:
 ; 610  : 			_Umove(begin(), end(), _Ptr);
 
 	mov	ecx, DWORD PTR [esi+4]
-	mov	BYTE PTR $T222475[ebp], 0
-	mov	edx, DWORD PTR $T222475[ebp]
+	mov	BYTE PTR $T222952[ebp], 0
+	mov	edx, DWORD PTR $T222952[ebp]
 	push	edx
-	mov	edx, DWORD PTR __Cat$222478[ebp]
+	mov	edx, DWORD PTR __Cat$222955[ebp]
 	push	edx
 	mov	ebx, eax
 	mov	eax, DWORD PTR [esi+8]
@@ -9483,7 +9483,7 @@ $LN21@reserve:
 	push	ebx
 	push	eax
 	push	ecx
-	mov	DWORD PTR __Ptr$218122[ebp], ebx
+	mov	DWORD PTR __Ptr$218599[ebp], ebx
 	mov	DWORD PTR __$EHRec$[ebp+12], 0
 	call	??$_Uninit_copy@V?$_Vector_iterator@HV?$allocator@H@std@@@std@@PAHV?$allocator@H@2@@std@@YAPAHV?$_Vector_iterator@HV?$allocator@H@std@@@0@0PAHAAV?$allocator@H@0@U_Nonscalar_ptr_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z ; std::_Uninit_copy<std::_Vector_iterator<int,std::allocator<int> >,int *,std::allocator<int> >
 
@@ -9549,7 +9549,7 @@ __catch$?reserve@?$vector@HV?$allocator@H@std@@@std@@QAEXI@Z$0:
 ; 611  : 			_CATCH_ALL
 ; 612  : 			this->_Alval.deallocate(_Ptr, _Count);
 
-	mov	eax, DWORD PTR __Ptr$218122[ebp]
+	mov	eax, DWORD PTR __Ptr$218599[ebp]
 	push	eax
 	call	??3@YAXPAX@Z				; operator delete
 	add	esp, 4
@@ -9768,7 +9768,7 @@ EXTRN	?calculateGoldRateTimes100@CvPlayer@@QBEHXZ:PROC ; CvPlayer::calculateGold
 ;	COMDAT ?DoGold@CvTreasury@@QAEXXZ
 _TEXT	SEGMENT
 _iGoldChange$ = -8					; size = 4
-$T223188 = -4						; size = 4
+$T223665 = -4						; size = 4
 ?DoGold@CvTreasury@@QAEXXZ PROC				; CvTreasury::DoGold, COMDAT
 ; _this$ = ecx
 
@@ -9883,7 +9883,7 @@ $LN5@DoGold:
 
 	mov	edx, DWORD PTR [edi+4]
 	mov	ebx, DWORD PTR [esi+8]
-	mov	DWORD PTR $T223188[esp+20], ebx
+	mov	DWORD PTR $T223665[esp+20], ebx
 	test	edx, edx
 	jne	SHORT $LN37@DoGold
 	xor	eax, eax
@@ -9906,7 +9906,7 @@ $LN38@DoGold:
 	mov	DWORD PTR [edi+8], ecx
 	jmp	SHORT $LN84@DoGold
 $LN30@DoGold:
-	lea	eax, DWORD PTR $T223188[esp+20]
+	lea	eax, DWORD PTR $T223665[esp+20]
 	push	eax
 	push	1
 	push	ecx
@@ -10024,7 +10024,7 @@ PUBLIC	??$SerializeToSequenceContainer@HV?$vector@HV?$allocator@H@std@@@std@@@@Y
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\fireplace\include\fireworks\fstlcontainerserialization.h
 ;	COMDAT ??$SerializeToSequenceContainer@HV?$vector@HV?$allocator@H@std@@@std@@@@YAXAAVFDataStream@@AAV?$vector@HV?$allocator@H@std@@@std@@@Z
 _TEXT	SEGMENT
-_v$213822 = -4						; size = 4
+_v$214299 = -4						; size = 4
 _loadFrom$ = 8						; size = 4
 _count$ = 12						; size = 4
 _container$ = 12					; size = 4
@@ -10084,7 +10084,7 @@ $LL117@SerializeT:
 ; 90   : 		ElementType v;
 ; 91   : 		loadFrom >> v;
 
-	lea	ecx, DWORD PTR _v$213822[esp+20]
+	lea	ecx, DWORD PTR _v$214299[esp+20]
 	push	ecx
 	mov	ecx, edi
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
@@ -10107,13 +10107,13 @@ $LN61@SerializeT:
 	sar	ebp, 2
 	cmp	ebp, eax
 	jae	SHORT $LN53@SerializeT
-	mov	edx, DWORD PTR _v$213822[esp+20]
+	mov	edx, DWORD PTR _v$214299[esp+20]
 	mov	DWORD PTR [ecx], edx
 	add	ecx, 4
 	mov	DWORD PTR [esi+8], ecx
 	jmp	SHORT $LN2@SerializeT
 $LN53@SerializeT:
-	lea	eax, DWORD PTR _v$213822[esp+20]
+	lea	eax, DWORD PTR _v$214299[esp+20]
 	push	eax
 	push	1
 	push	ecx

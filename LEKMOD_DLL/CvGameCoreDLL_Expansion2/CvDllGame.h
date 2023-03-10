@@ -71,6 +71,9 @@ public:
 	bool DLLCALL Init2();
 	void DLLCALL InitScoreCalculation();
 	void DLLCALL InitTacticalAnalysisMap(int iNumPlots);
+#ifdef MP_PLAYERS_VOTING_SYSTEM
+	void DLLCALL InitMPVotingSystem();
+#endif
 	bool DLLCALL IsCityScreenBlocked();
 	bool DLLCALL CanOpenCityScreen(PlayerTypes eOpener, ICvCity1* pCity);
 	bool DLLCALL IsDebugMode() const;

@@ -702,6 +702,37 @@ void CvDllNetMessageHandler::ResponseChangeIdeology(PlayerTypes ePlayer)
 //------------------------------------------------------------------------------
 void CvDllNetMessageHandler::ResponseGiftUnit(PlayerTypes ePlayer, PlayerTypes eMinor, int iUnitID)
 {
+#ifdef MP_PLAYERS_VOTING_SYSTEM
+	// -2 -- irr
+	// -3 -- cc
+	// -4 -- scrap
+	// -5 -- vote yes
+	// -6 -- vote no
+	CvGame& game = GC.getGame();
+	CvMPVotingSystem* pkMPVotingSystem = game.GetMPVotingSystem();
+	switch (iUnitID) {
+	case -2:
+		game.GetMPVotingSystem()->AddProposal(PROPOSAL_IRR, ePlayer, ePlayer);
+		DLLUI->AddMessage(0, CvPreGame::activePlayer(), true, GC.getEVENT_MESSAGE_TIME(), GetLocalizedText("TXT_KEY_MP_MESSAGE_PROPOSED_IRR", GET_PLAYER(ePlayer).getName()).GetCString());
+		return;
+	case -3:
+		pkMPVotingSystem->AddProposal(PROPOSAL_CC, ePlayer, eMinor);
+		DLLUI->AddMessage(0, CvPreGame::activePlayer(), true, GC.getEVENT_MESSAGE_TIME(), GetLocalizedText("TXT_KEY_MP_MESSAGE_PROPOSED_CC", GET_PLAYER(ePlayer).getName(), GET_PLAYER(eMinor).getName()).GetCString());
+		return;
+	case -4:
+		pkMPVotingSystem->AddProposal(PROPOSAL_SCRAP, ePlayer, NO_PLAYER);
+		DLLUI->AddMessage(0, CvPreGame::activePlayer(), true, GC.getEVENT_MESSAGE_TIME(), GetLocalizedText("TXT_KEY_MP_MESSAGE_PROPOSED_SCRAP", GET_PLAYER(ePlayer).getName()).GetCString());
+		return;
+	case -5:
+		pkMPVotingSystem->DoVote((int)eMinor, ePlayer, true);
+		return;
+	case -6:
+		pkMPVotingSystem->DoVote((int)eMinor, ePlayer, false);
+		return;
+	default:
+		break;
+	}
+#endif
 #ifdef TURN_TIMER_RESET_BUTTON
 	// here we intercept response, when UnitID equals -1 we agree to reset timer
 	if (iUnitID == -1) {

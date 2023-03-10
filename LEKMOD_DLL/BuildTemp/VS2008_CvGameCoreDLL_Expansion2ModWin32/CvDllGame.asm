@@ -10,10 +10,10 @@ INCLUDELIB MSVCRT
 INCLUDELIB OLDNAMES
 
 _DATA	SEGMENT
-_CIV5_XP2_DLL_VERSION DD FLAT:$SG217341
+_CIV5_XP2_DLL_VERSION DD FLAT:$SG217819
 _DATA	ENDS
 CONST	SEGMENT
-$SG217341 DB	'1.0.0', 00H
+$SG217819 DB	'1.0.0', 00H
 	ORG $+2
 _guidICvUnknown DD 0d89ba82fH
 	DW	09fa3H
@@ -752,7 +752,7 @@ xdata$x	ENDS
 ;	COMDAT ?GetGameDeals@CvDllGame@@UAGPAVICvGameDeals1@@XZ
 _TEXT	SEGMENT
 __$EHRec$ = -12						; size = 12
-$T219816 = 8						; size = 4
+$T220298 = 8						; size = 4
 _this$ = 8						; size = 4
 ?GetGameDeals@CvDllGame@@UAGPAVICvGameDeals1@@XZ PROC	; CvDllGame::GetGameDeals, COMDAT
 
@@ -779,7 +779,7 @@ _this$ = 8						; size = 4
 	push	12					; 0000000cH
 	call	??2CvDllGameDeals@@SAPAXI@Z		; CvDllGameDeals::operator new
 	add	esp, 4
-	mov	DWORD PTR $T219816[esp+12], eax
+	mov	DWORD PTR $T220298[esp+12], eax
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	eax, eax
 	je	SHORT $LN5@GetGameDea
@@ -805,7 +805,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetGameDeals@CvDllGame@@UAGPAVICvGameDeals1@@XZ$0:
-	mov	eax, DWORD PTR $T219816[ebp-4]
+	mov	eax, DWORD PTR $T220298[ebp-4]
 	push	eax
 	call	??3CvDllGameDeals@@SAXPAX@Z		; CvDllGameDeals::operator delete
 	pop	ecx
@@ -892,7 +892,7 @@ __ehfuncinfo$?GetRandomNumberGenerator@CvDllGame@@UAGPAVICvRandom1@@XZ DD 019930
 xdata$x	ENDS
 ;	COMDAT ?GetRandomNumberGenerator@CvDllGame@@UAGPAVICvRandom1@@XZ
 _TEXT	SEGMENT
-$T219841 = -16						; size = 4
+$T220323 = -16						; size = 4
 __$EHRec$ = -12						; size = 12
 _this$ = 8						; size = 4
 ?GetRandomNumberGenerator@CvDllGame@@UAGPAVICvRandom1@@XZ PROC ; CvDllGame::GetRandomNumberGenerator, COMDAT
@@ -913,7 +913,7 @@ _this$ = 8						; size = 4
 	call	??2CvDllRandom@@SAPAXI@Z		; CvDllRandom::operator new
 	mov	esi, eax
 	add	esp, 4
-	mov	DWORD PTR $T219841[esp+20], esi
+	mov	DWORD PTR $T220323[esp+20], esi
 	xor	eax, eax
 	mov	DWORD PTR __$EHRec$[esp+28], eax
 	cmp	esi, eax
@@ -937,7 +937,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetRandomNumberGenerator@CvDllGame@@UAGPAVICvRandom1@@XZ$0:
-	mov	eax, DWORD PTR $T219841[ebp]
+	mov	eax, DWORD PTR $T220323[ebp]
 	push	eax
 	call	??3CvDllRandom@@SAXPAX@Z		; CvDllRandom::operator delete
 	pop	ecx
@@ -1070,7 +1070,7 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 __$EHRec$ = -12						; size = 12
 _this$ = 8						; size = 4
-$T219872 = 12						; size = 4
+$T220354 = 12						; size = 4
 _pPlot$ = 12						; size = 4
 _iIndex$ = 16						; size = 4
 ?GetPlotUnit@CvDllGame@@UAGPAVICvUnit1@@PAVICvPlot1@@H@Z PROC ; CvDllGame::GetPlotUnit, COMDAT
@@ -1113,7 +1113,7 @@ $LN4@GetPlotUni:
 	push	12					; 0000000cH
 	call	??2CvDllUnit@@SAPAXI@Z			; CvDllUnit::operator new
 	add	esp, 4
-	mov	DWORD PTR $T219872[esp+12], eax
+	mov	DWORD PTR $T220354[esp+12], eax
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	eax, eax
 	je	SHORT $LN7@GetPlotUni
@@ -1139,7 +1139,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetPlotUnit@CvDllGame@@UAGPAVICvUnit1@@PAVICvPlot1@@H@Z$0:
-	mov	eax, DWORD PTR $T219872[ebp-4]
+	mov	eax, DWORD PTR $T220354[ebp-4]
 	push	eax
 	call	??3CvDllUnit@@SAXPAX@Z			; CvDllUnit::operator delete
 	pop	ecx
@@ -1445,6 +1445,28 @@ _iNumPlots$ = 12					; size = 4
 	ret	8
 ?InitTacticalAnalysisMap@CvDllGame@@UAGXH@Z ENDP	; CvDllGame::InitTacticalAnalysisMap
 _TEXT	ENDS
+PUBLIC	?InitMPVotingSystem@CvDllGame@@QAGXXZ		; CvDllGame::InitMPVotingSystem
+EXTRN	?Init@CvMPVotingSystem@@QAEXXZ:PROC		; CvMPVotingSystem::Init
+EXTRN	?GetMPVotingSystem@CvGame@@QAEPAVCvMPVotingSystem@@XZ:PROC ; CvGame::GetMPVotingSystem
+; Function compile flags: /Ogtpy
+;	COMDAT ?InitMPVotingSystem@CvDllGame@@QAGXXZ
+_TEXT	SEGMENT
+_this$ = 8						; size = 4
+?InitMPVotingSystem@CvDllGame@@QAGXXZ PROC		; CvDllGame::InitMPVotingSystem, COMDAT
+
+; 321  : 	m_pGame->GetMPVotingSystem()->Init();
+
+	mov	eax, DWORD PTR _this$[esp-4]
+	mov	ecx, DWORD PTR [eax+8]
+	call	?GetMPVotingSystem@CvGame@@QAEPAVCvMPVotingSystem@@XZ ; CvGame::GetMPVotingSystem
+	mov	ecx, eax
+	call	?Init@CvMPVotingSystem@@QAEXXZ		; CvMPVotingSystem::Init
+
+; 322  : }
+
+	ret	4
+?InitMPVotingSystem@CvDllGame@@QAGXXZ ENDP		; CvDllGame::InitMPVotingSystem
+_TEXT	ENDS
 PUBLIC	?IsCityScreenBlocked@CvDllGame@@UAG_NXZ		; CvDllGame::IsCityScreenBlocked
 EXTRN	?IsCityScreenBlocked@CvGame@@QAE_NXZ:PROC	; CvGame::IsCityScreenBlocked
 ; Function compile flags: /Ogtpy
@@ -1453,13 +1475,13 @@ _TEXT	SEGMENT
 _this$ = 8						; size = 4
 ?IsCityScreenBlocked@CvDllGame@@UAG_NXZ PROC		; CvDllGame::IsCityScreenBlocked, COMDAT
 
-; 320  : 	return m_pGame->IsCityScreenBlocked();
+; 327  : 	return m_pGame->IsCityScreenBlocked();
 
 	mov	eax, DWORD PTR _this$[esp-4]
 	mov	ecx, DWORD PTR [eax+8]
 	call	?IsCityScreenBlocked@CvGame@@QAE_NXZ	; CvGame::IsCityScreenBlocked
 
-; 321  : }
+; 328  : }
 
 	ret	4
 ?IsCityScreenBlocked@CvDllGame@@UAG_NXZ ENDP		; CvDllGame::IsCityScreenBlocked
@@ -1476,14 +1498,14 @@ _eOpener$ = 12						; size = 4
 _pkCity$ = 16						; size = 4
 ?CanOpenCityScreen@CvDllGame@@UAG_NW4PlayerTypes@@PAVICvCity1@@@Z PROC ; CvDllGame::CanOpenCityScreen, COMDAT
 
-; 325  : 	CvCity* pCity = GC.UnwrapCityPointer(pkCity);
+; 332  : 	CvCity* pCity = GC.UnwrapCityPointer(pkCity);
 
 	mov	eax, DWORD PTR _pkCity$[esp-4]
 	push	eax
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?UnwrapCityPointer@CvGlobals@@QAEPAVCvCity@@PAVICvCity1@@@Z ; CvGlobals::UnwrapCityPointer
 
-; 326  : 	return m_pGame->CanOpenCityScreen(eOpener, pCity);
+; 333  : 	return m_pGame->CanOpenCityScreen(eOpener, pCity);
 
 	mov	ecx, DWORD PTR _eOpener$[esp-4]
 	mov	edx, DWORD PTR _this$[esp-4]
@@ -1492,7 +1514,7 @@ _pkCity$ = 16						; size = 4
 	mov	ecx, DWORD PTR [edx+8]
 	call	?CanOpenCityScreen@CvGame@@QAE_NW4PlayerTypes@@PAVCvCity@@@Z ; CvGame::CanOpenCityScreen
 
-; 327  : }
+; 334  : }
 
 	ret	12					; 0000000cH
 ?CanOpenCityScreen@CvDllGame@@UAG_NW4PlayerTypes@@PAVICvCity1@@@Z ENDP ; CvDllGame::CanOpenCityScreen
@@ -1505,13 +1527,13 @@ _TEXT	SEGMENT
 _this$ = 8						; size = 4
 ?IsDebugMode@CvDllGame@@UBG_NXZ PROC			; CvDllGame::IsDebugMode, COMDAT
 
-; 331  : 	return m_pGame->isDebugMode();
+; 338  : 	return m_pGame->isDebugMode();
 
 	mov	eax, DWORD PTR _this$[esp-4]
 	mov	ecx, DWORD PTR [eax+8]
 	call	?isDebugMode@CvGame@@QBE_NXZ		; CvGame::isDebugMode
 
-; 332  : }
+; 339  : }
 
 	ret	4
 ?IsDebugMode@CvDllGame@@UBG_NXZ ENDP			; CvDllGame::IsDebugMode
@@ -1524,13 +1546,13 @@ _TEXT	SEGMENT
 _this$ = 8						; size = 4
 ?IsFinalInitialized@CvDllGame@@UBG_NXZ PROC		; CvDllGame::IsFinalInitialized, COMDAT
 
-; 336  : 	return m_pGame->isFinalInitialized();
+; 343  : 	return m_pGame->isFinalInitialized();
 
 	mov	eax, DWORD PTR _this$[esp-4]
 	mov	ecx, DWORD PTR [eax+8]
 	call	?isFinalInitialized@CvGame@@QBE_NXZ	; CvGame::isFinalInitialized
 
-; 337  : }
+; 344  : }
 
 	ret	4
 ?IsFinalInitialized@CvDllGame@@UBG_NXZ ENDP		; CvDllGame::IsFinalInitialized
@@ -1543,13 +1565,13 @@ _TEXT	SEGMENT
 _this$ = 8						; size = 4
 ?IsGameMultiPlayer@CvDllGame@@UBG_NXZ PROC		; CvDllGame::IsGameMultiPlayer, COMDAT
 
-; 341  : 	return m_pGame->isGameMultiPlayer();
+; 348  : 	return m_pGame->isGameMultiPlayer();
 
 	mov	eax, DWORD PTR _this$[esp-4]
 	mov	ecx, DWORD PTR [eax+8]
 	call	?isGameMultiPlayer@CvGame@@QBE_NXZ	; CvGame::isGameMultiPlayer
 
-; 342  : }
+; 349  : }
 
 	ret	4
 ?IsGameMultiPlayer@CvDllGame@@UBG_NXZ ENDP		; CvDllGame::IsGameMultiPlayer
@@ -1562,13 +1584,13 @@ _TEXT	SEGMENT
 _this$ = 8						; size = 4
 ?IsHotSeat@CvDllGame@@UBG_NXZ PROC			; CvDllGame::IsHotSeat, COMDAT
 
-; 346  : 	return m_pGame->isHotSeat();
+; 353  : 	return m_pGame->isHotSeat();
 
 	mov	eax, DWORD PTR _this$[esp-4]
 	mov	ecx, DWORD PTR [eax+8]
 	call	?isHotSeat@CvGame@@QBE_NXZ		; CvGame::isHotSeat
 
-; 347  : }
+; 354  : }
 
 	ret	4
 ?IsHotSeat@CvDllGame@@UBG_NXZ ENDP			; CvDllGame::IsHotSeat
@@ -1582,7 +1604,7 @@ _eIndex$ = 8						; size = 4
 ?IsMPOption@CvDllGame@@UBE_NW4MultiplayerOptionTypes@@@Z PROC ; CvDllGame::IsMPOption, COMDAT
 ; _this$ = ecx
 
-; 351  : 	return m_pGame->isMPOption(eIndex);
+; 358  : 	return m_pGame->isMPOption(eIndex);
 
 	mov	ecx, DWORD PTR [ecx+8]
 	jmp	?isMPOption@CvGame@@QBE_NW4MultiplayerOptionTypes@@@Z ; CvGame::isMPOption
@@ -1596,13 +1618,13 @@ _TEXT	SEGMENT
 _this$ = 8						; size = 4
 ?IsNetworkMultiPlayer@CvDllGame@@UBG_NXZ PROC		; CvDllGame::IsNetworkMultiPlayer, COMDAT
 
-; 356  : 	return m_pGame->isNetworkMultiPlayer();
+; 363  : 	return m_pGame->isNetworkMultiPlayer();
 
 	mov	eax, DWORD PTR _this$[esp-4]
 	mov	ecx, DWORD PTR [eax+8]
 	call	?isNetworkMultiPlayer@CvGame@@QBE_NXZ	; CvGame::isNetworkMultiPlayer
 
-; 357  : }
+; 364  : }
 
 	ret	4
 ?IsNetworkMultiPlayer@CvDllGame@@UBG_NXZ ENDP		; CvDllGame::IsNetworkMultiPlayer
@@ -1616,7 +1638,7 @@ _eIndex$ = 8						; size = 4
 ?IsOption@CvDllGame@@UBE_NW4GameOptionTypes@@@Z PROC	; CvDllGame::IsOption, COMDAT
 ; _this$ = ecx
 
-; 361  : 	return m_pGame->isOption(eIndex);
+; 368  : 	return m_pGame->isOption(eIndex);
 
 	mov	ecx, DWORD PTR [ecx+8]
 	jmp	?isOption@CvGame@@QBE_NW4GameOptionTypes@@@Z ; CvGame::isOption
@@ -1630,13 +1652,13 @@ _TEXT	SEGMENT
 _this$ = 8						; size = 4
 ?IsPaused@CvDllGame@@UAG_NXZ PROC			; CvDllGame::IsPaused, COMDAT
 
-; 366  : 	return m_pGame->isPaused();
+; 373  : 	return m_pGame->isPaused();
 
 	mov	eax, DWORD PTR _this$[esp-4]
 	mov	ecx, DWORD PTR [eax+8]
 	call	?isPaused@CvGame@@QAE_NXZ		; CvGame::isPaused
 
-; 367  : }
+; 374  : }
 
 	ret	4
 ?IsPaused@CvDllGame@@UAG_NXZ ENDP			; CvDllGame::IsPaused
@@ -1649,13 +1671,13 @@ _TEXT	SEGMENT
 _this$ = 8						; size = 4
 ?IsPbem@CvDllGame@@UBG_NXZ PROC				; CvDllGame::IsPbem, COMDAT
 
-; 371  : 	return m_pGame->isPbem();
+; 378  : 	return m_pGame->isPbem();
 
 	mov	eax, DWORD PTR _this$[esp-4]
 	mov	ecx, DWORD PTR [eax+8]
 	call	?isPbem@CvGame@@QBE_NXZ			; CvGame::isPbem
 
-; 372  : }
+; 379  : }
 
 	ret	4
 ?IsPbem@CvDllGame@@UBG_NXZ ENDP				; CvDllGame::IsPbem
@@ -1668,13 +1690,13 @@ _TEXT	SEGMENT
 _this$ = 8						; size = 4
 ?IsTeamGame@CvDllGame@@UBG_NXZ PROC			; CvDllGame::IsTeamGame, COMDAT
 
-; 376  : 	return m_pGame->isTeamGame();
+; 383  : 	return m_pGame->isTeamGame();
 
 	mov	eax, DWORD PTR _this$[esp-4]
 	mov	ecx, DWORD PTR [eax+8]
 	call	?isTeamGame@CvGame@@QBE_NXZ		; CvGame::isTeamGame
 
-; 377  : }
+; 384  : }
 
 	ret	4
 ?IsTeamGame@CvDllGame@@UBG_NXZ ENDP			; CvDllGame::IsTeamGame
@@ -1688,7 +1710,7 @@ _this$ = 8						; size = 4
 _bLogHeaders$ = 12					; size = 1
 ?LogGameState@CvDllGame@@UAGX_N@Z PROC			; CvDllGame::LogGameState, COMDAT
 
-; 381  : 	m_pGame->LogGameState(bLogHeaders);
+; 388  : 	m_pGame->LogGameState(bLogHeaders);
 
 	mov	eax, DWORD PTR _bLogHeaders$[esp-4]
 	mov	ecx, DWORD PTR _this$[esp-4]
@@ -1696,7 +1718,7 @@ _bLogHeaders$ = 12					; size = 1
 	push	eax
 	call	?LogGameState@CvGame@@QAEX_N@Z		; CvGame::LogGameState
 
-; 382  : }
+; 389  : }
 
 	ret	8
 ?LogGameState@CvDllGame@@UAGX_N@Z ENDP			; CvDllGame::LogGameState
@@ -1709,14 +1731,14 @@ _TEXT	SEGMENT
 _this$ = 8						; size = 4
 ?ResetTurnTimer@CvDllGame@@UAGXXZ PROC			; CvDllGame::ResetTurnTimer, COMDAT
 
-; 386  : 	m_pGame->resetTurnTimer();
+; 393  : 	m_pGame->resetTurnTimer();
 
 	mov	eax, DWORD PTR _this$[esp-4]
 	mov	ecx, DWORD PTR [eax+8]
 	push	1
 	call	?resetTurnTimer@CvGame@@QAEX_N@Z	; CvGame::resetTurnTimer
 
-; 387  : }
+; 394  : }
 
 	ret	4
 ?ResetTurnTimer@CvDllGame@@UAGXXZ ENDP			; CvDllGame::ResetTurnTimer
@@ -1730,37 +1752,37 @@ _this$ = 8						; size = 4
 _pPlot$ = 12						; size = 4
 ?SelectAll@CvDllGame@@UAGXPAVICvPlot1@@@Z PROC		; CvDllGame::SelectAll, COMDAT
 
-; 391  : 	CvPlot* pkPlot = (NULL != pPlot)? static_cast<CvDllPlot*>(pPlot)->GetInstance() : NULL;
+; 398  : 	CvPlot* pkPlot = (NULL != pPlot)? static_cast<CvDllPlot*>(pPlot)->GetInstance() : NULL;
 
 	mov	ecx, DWORD PTR _pPlot$[esp-4]
 	test	ecx, ecx
 	je	SHORT $LN3@SelectAll
 	call	?GetInstance@CvDllPlot@@QAEPAVCvPlot@@XZ ; CvDllPlot::GetInstance
 
-; 392  : 	m_pGame->selectAll(pkPlot);
+; 399  : 	m_pGame->selectAll(pkPlot);
 
 	push	eax
 	mov	eax, DWORD PTR _this$[esp]
 	mov	ecx, DWORD PTR [eax+8]
 	call	?selectAll@CvGame@@QAEXPAVCvPlot@@@Z	; CvGame::selectAll
 
-; 393  : }
+; 400  : }
 
 	ret	8
 $LN3@SelectAll:
 
-; 391  : 	CvPlot* pkPlot = (NULL != pPlot)? static_cast<CvDllPlot*>(pPlot)->GetInstance() : NULL;
+; 398  : 	CvPlot* pkPlot = (NULL != pPlot)? static_cast<CvDllPlot*>(pPlot)->GetInstance() : NULL;
 
 	xor	eax, eax
 
-; 392  : 	m_pGame->selectAll(pkPlot);
+; 399  : 	m_pGame->selectAll(pkPlot);
 
 	push	eax
 	mov	eax, DWORD PTR _this$[esp]
 	mov	ecx, DWORD PTR [eax+8]
 	call	?selectAll@CvGame@@QAEXPAVCvPlot@@@Z	; CvGame::selectAll
 
-; 393  : }
+; 400  : }
 
 	ret	8
 ?SelectAll@CvDllGame@@UAGXPAVICvPlot1@@@Z ENDP		; CvDllGame::SelectAll
@@ -1778,7 +1800,7 @@ _bCtrl$ = 20						; size = 1
 _bAlt$ = 24						; size = 1
 ?SelectGroup@CvDllGame@@UAGXPAVICvUnit1@@_N11@Z PROC	; CvDllGame::SelectGroup, COMDAT
 
-; 397  : 	CvUnit* pkUnit = (NULL != pUnit)? static_cast<CvDllUnit*>(pUnit)->GetInstance() : NULL;
+; 404  : 	CvUnit* pkUnit = (NULL != pUnit)? static_cast<CvDllUnit*>(pUnit)->GetInstance() : NULL;
 
 	mov	ecx, DWORD PTR _pUnit$[esp-4]
 	test	ecx, ecx
@@ -1789,7 +1811,7 @@ $LN3@SelectGrou:
 	xor	eax, eax
 $LN4@SelectGrou:
 
-; 398  : 	m_pGame->selectGroup(pkUnit, bShift, bCtrl, bAlt);
+; 405  : 	m_pGame->selectGroup(pkUnit, bShift, bCtrl, bAlt);
 
 	mov	ecx, DWORD PTR _bAlt$[esp-4]
 	mov	edx, DWORD PTR _bCtrl$[esp-4]
@@ -1802,7 +1824,7 @@ $LN4@SelectGrou:
 	push	eax
 	call	?selectGroup@CvGame@@QAEXPAVCvUnit@@_N11@Z ; CvGame::selectGroup
 
-; 399  : }
+; 406  : }
 
 	ret	20					; 00000014H
 ?SelectGroup@CvDllGame@@UAGXPAVICvUnit1@@_N11@Z ENDP	; CvDllGame::SelectGroup
@@ -1815,13 +1837,13 @@ _TEXT	SEGMENT
 _this$ = 8						; size = 4
 ?SelectionListIgnoreBuildingDefense@CvDllGame@@UAG_NXZ PROC ; CvDllGame::SelectionListIgnoreBuildingDefense, COMDAT
 
-; 403  : 	return m_pGame->selectionListIgnoreBuildingDefense();
+; 410  : 	return m_pGame->selectionListIgnoreBuildingDefense();
 
 	mov	eax, DWORD PTR _this$[esp-4]
 	mov	ecx, DWORD PTR [eax+8]
 	call	?selectionListIgnoreBuildingDefense@CvGame@@QAE_NXZ ; CvGame::selectionListIgnoreBuildingDefense
 
-; 404  : }
+; 411  : }
 
 	ret	4
 ?SelectionListIgnoreBuildingDefense@CvDllGame@@UAG_NXZ ENDP ; CvDllGame::SelectionListIgnoreBuildingDefense
@@ -1836,14 +1858,14 @@ _pPlot$ = 12						; size = 4
 _bShift$ = 16						; size = 1
 ?SelectionListMove@CvDllGame@@UAGXPAVICvPlot1@@_N@Z PROC ; CvDllGame::SelectionListMove, COMDAT
 
-; 408  : 	CvPlot* pkPlot = (NULL != pPlot)? static_cast<CvDllPlot*>(pPlot)->GetInstance() : NULL;
+; 415  : 	CvPlot* pkPlot = (NULL != pPlot)? static_cast<CvDllPlot*>(pPlot)->GetInstance() : NULL;
 
 	mov	ecx, DWORD PTR _pPlot$[esp-4]
 	test	ecx, ecx
 	je	SHORT $LN3@SelectionL
 	call	?GetInstance@CvDllPlot@@QAEPAVCvPlot@@XZ ; CvDllPlot::GetInstance
 
-; 409  : 	m_pGame->selectionListMove(pkPlot, bShift);
+; 416  : 	m_pGame->selectionListMove(pkPlot, bShift);
 
 	mov	ecx, DWORD PTR _bShift$[esp-4]
 	mov	edx, DWORD PTR _this$[esp-4]
@@ -1852,12 +1874,12 @@ _bShift$ = 16						; size = 1
 	push	eax
 	call	?selectionListMove@CvGame@@QAEXPAVCvPlot@@_N@Z ; CvGame::selectionListMove
 
-; 410  : }
+; 417  : }
 
 	ret	12					; 0000000cH
 $LN3@SelectionL:
 
-; 409  : 	m_pGame->selectionListMove(pkPlot, bShift);
+; 416  : 	m_pGame->selectionListMove(pkPlot, bShift);
 
 	mov	ecx, DWORD PTR _bShift$[esp-4]
 	mov	edx, DWORD PTR _this$[esp-4]
@@ -1867,7 +1889,7 @@ $LN3@SelectionL:
 	push	eax
 	call	?selectionListMove@CvGame@@QAEXPAVCvPlot@@_N@Z ; CvGame::selectionListMove
 
-; 410  : }
+; 417  : }
 
 	ret	12					; 0000000cH
 ?SelectionListMove@CvDllGame@@UAGXPAVICvPlot1@@_N@Z ENDP ; CvDllGame::SelectionListMove
@@ -1880,13 +1902,13 @@ _TEXT	SEGMENT
 _this$ = 8						; size = 4
 ?SelectSettler@CvDllGame@@UAGXXZ PROC			; CvDllGame::SelectSettler, COMDAT
 
-; 414  : 	m_pGame->SelectSettler();
+; 421  : 	m_pGame->SelectSettler();
 
 	mov	eax, DWORD PTR _this$[esp-4]
 	mov	ecx, DWORD PTR [eax+8]
 	call	?SelectSettler@CvGame@@QAEXXZ		; CvGame::SelectSettler
 
-; 415  : }
+; 422  : }
 
 	ret	4
 ?SelectSettler@CvDllGame@@UAGXXZ ENDP			; CvDllGame::SelectSettler
@@ -1903,7 +1925,7 @@ _bToggle$ = 20						; size = 1
 _bSound$ = 24						; size = 1
 ?SelectUnit@CvDllGame@@UAGXPAVICvUnit1@@_N11@Z PROC	; CvDllGame::SelectUnit, COMDAT
 
-; 419  : 	CvUnit* pkUnit = (NULL != pUnit)? static_cast<CvDllUnit*>(pUnit)->GetInstance() : NULL;
+; 426  : 	CvUnit* pkUnit = (NULL != pUnit)? static_cast<CvDllUnit*>(pUnit)->GetInstance() : NULL;
 
 	mov	ecx, DWORD PTR _pUnit$[esp-4]
 	test	ecx, ecx
@@ -1914,7 +1936,7 @@ $LN3@SelectUnit:
 	xor	eax, eax
 $LN4@SelectUnit:
 
-; 420  : 	m_pGame->selectUnit(pkUnit, bClear, bToggle, bSound);
+; 427  : 	m_pGame->selectUnit(pkUnit, bClear, bToggle, bSound);
 
 	mov	ecx, DWORD PTR _bSound$[esp-4]
 	mov	edx, DWORD PTR _bToggle$[esp-4]
@@ -1927,7 +1949,7 @@ $LN4@SelectUnit:
 	push	eax
 	call	?selectUnit@CvGame@@QAEXPAVCvUnit@@_N11@Z ; CvGame::selectUnit
 
-; 421  : }
+; 428  : }
 
 	ret	20					; 00000014H
 ?SelectUnit@CvDllGame@@UAGXPAVICvUnit1@@_N11@Z ENDP	; CvDllGame::SelectUnit
@@ -1941,7 +1963,7 @@ _this$ = 8						; size = 4
 _bForce$ = 12						; size = 1
 ?SendPlayerOptions@CvDllGame@@UAGX_N@Z PROC		; CvDllGame::SendPlayerOptions, COMDAT
 
-; 425  : 	m_pGame->sendPlayerOptions(bForce);
+; 432  : 	m_pGame->sendPlayerOptions(bForce);
 
 	mov	eax, DWORD PTR _bForce$[esp-4]
 	mov	ecx, DWORD PTR _this$[esp-4]
@@ -1949,7 +1971,7 @@ _bForce$ = 12						; size = 1
 	push	eax
 	call	?sendPlayerOptions@CvGame@@QAEX_N@Z	; CvGame::sendPlayerOptions
 
-; 426  : }
+; 433  : }
 
 	ret	8
 ?SendPlayerOptions@CvDllGame@@UAGX_N@Z ENDP		; CvDllGame::SendPlayerOptions
@@ -1963,7 +1985,7 @@ _this$ = 8						; size = 4
 _bDebugMode$ = 12					; size = 1
 ?SetDebugMode@CvDllGame@@UAGX_N@Z PROC			; CvDllGame::SetDebugMode, COMDAT
 
-; 430  : 	m_pGame->setDebugMode(bDebugMode);
+; 437  : 	m_pGame->setDebugMode(bDebugMode);
 
 	mov	eax, DWORD PTR _bDebugMode$[esp-4]
 	mov	ecx, DWORD PTR _this$[esp-4]
@@ -1971,7 +1993,7 @@ _bDebugMode$ = 12					; size = 1
 	push	eax
 	call	?setDebugMode@CvGame@@QAEX_N@Z		; CvGame::setDebugMode
 
-; 431  : }
+; 438  : }
 
 	ret	8
 ?SetDebugMode@CvDllGame@@UAGX_N@Z ENDP			; CvDllGame::SetDebugMode
@@ -1985,7 +2007,7 @@ _this$ = 8						; size = 4
 _bNewValue$ = 12					; size = 1
 ?SetFinalInitialized@CvDllGame@@UAGX_N@Z PROC		; CvDllGame::SetFinalInitialized, COMDAT
 
-; 435  : 	m_pGame->setFinalInitialized(bNewValue);
+; 442  : 	m_pGame->setFinalInitialized(bNewValue);
 
 	mov	eax, DWORD PTR _bNewValue$[esp-4]
 	mov	ecx, DWORD PTR _this$[esp-4]
@@ -1993,7 +2015,7 @@ _bNewValue$ = 12					; size = 1
 	push	eax
 	call	?setFinalInitialized@CvGame@@QAEX_N@Z	; CvGame::setFinalInitialized
 
-; 436  : }
+; 443  : }
 
 	ret	8
 ?SetFinalInitialized@CvDllGame@@UAGX_N@Z ENDP		; CvDllGame::SetFinalInitialized
@@ -2007,7 +2029,7 @@ _this$ = 8						; size = 4
 _uiNewValue$ = 12					; size = 4
 ?SetInitialTime@CvDllGame@@UAGXI@Z PROC			; CvDllGame::SetInitialTime, COMDAT
 
-; 440  : 	m_pGame->setInitialTime(uiNewValue);
+; 447  : 	m_pGame->setInitialTime(uiNewValue);
 
 	mov	eax, DWORD PTR _uiNewValue$[esp-4]
 	mov	ecx, DWORD PTR _this$[esp-4]
@@ -2015,7 +2037,7 @@ _uiNewValue$ = 12					; size = 4
 	push	eax
 	call	?setInitialTime@CvGame@@QAEXI@Z		; CvGame::setInitialTime
 
-; 441  : }
+; 448  : }
 
 	ret	8
 ?SetInitialTime@CvDllGame@@UAGXI@Z ENDP			; CvDllGame::SetInitialTime
@@ -2030,7 +2052,7 @@ _bEnabled$ = 12						; size = 1
 ?SetMPOption@CvDllGame@@UAEXW4MultiplayerOptionTypes@@_N@Z PROC ; CvDllGame::SetMPOption, COMDAT
 ; _this$ = ecx
 
-; 445  : 	m_pGame->setMPOption(eIndex, bEnabled);
+; 452  : 	m_pGame->setMPOption(eIndex, bEnabled);
 
 	mov	ecx, DWORD PTR [ecx+8]
 	jmp	?setMPOption@CvGame@@QAEXW4MultiplayerOptionTypes@@_N@Z ; CvGame::setMPOption
@@ -2045,7 +2067,7 @@ _this$ = 8						; size = 4
 _eNewValue$ = 12					; size = 4
 ?SetPausePlayer@CvDllGame@@UAGXW4PlayerTypes@@@Z PROC	; CvDllGame::SetPausePlayer, COMDAT
 
-; 450  : 	m_pGame->setPausePlayer(eNewValue);
+; 457  : 	m_pGame->setPausePlayer(eNewValue);
 
 	mov	eax, DWORD PTR _eNewValue$[esp-4]
 	mov	ecx, DWORD PTR _this$[esp-4]
@@ -2053,7 +2075,7 @@ _eNewValue$ = 12					; size = 4
 	push	eax
 	call	?setPausePlayer@CvGame@@QAEXW4PlayerTypes@@@Z ; CvGame::setPausePlayer
 
-; 451  : }
+; 458  : }
 
 	ret	8
 ?SetPausePlayer@CvDllGame@@UAGXW4PlayerTypes@@@Z ENDP	; CvDllGame::SetPausePlayer
@@ -2066,13 +2088,13 @@ _TEXT	SEGMENT
 _this$ = 8						; size = 4
 ?TunerEverConnected@CvDllGame@@UBG_NXZ PROC		; CvDllGame::TunerEverConnected, COMDAT
 
-; 471  : 	return m_pGame->TunerEverConnected();
+; 478  : 	return m_pGame->TunerEverConnected();
 
 	mov	eax, DWORD PTR _this$[esp-4]
 	mov	ecx, DWORD PTR [eax+8]
 	call	?TunerEverConnected@CvGame@@QBE_NXZ	; CvGame::TunerEverConnected
 
-; 472  : }
+; 479  : }
 
 	ret	4
 ?TunerEverConnected@CvDllGame@@UBG_NXZ ENDP		; CvDllGame::TunerEverConnected
@@ -2085,13 +2107,13 @@ _TEXT	SEGMENT
 _this$ = 8						; size = 4
 ?Uninit@CvDllGame@@UAGXXZ PROC				; CvDllGame::Uninit, COMDAT
 
-; 476  : 	m_pGame->uninit();
+; 483  : 	m_pGame->uninit();
 
 	mov	eax, DWORD PTR _this$[esp-4]
 	mov	ecx, DWORD PTR [eax+8]
 	call	?uninit@CvGame@@QAEXXZ			; CvGame::uninit
 
-; 477  : }
+; 484  : }
 
 	ret	4
 ?Uninit@CvDllGame@@UAGXXZ ENDP				; CvDllGame::Uninit
@@ -2104,13 +2126,13 @@ _TEXT	SEGMENT
 _this$ = 8						; size = 4
 ?UnitIsMoving@CvDllGame@@UAGXXZ PROC			; CvDllGame::UnitIsMoving, COMDAT
 
-; 481  : 	m_pGame->unitIsMoving();
+; 488  : 	m_pGame->unitIsMoving();
 
 	mov	eax, DWORD PTR _this$[esp-4]
 	mov	ecx, DWORD PTR [eax+8]
 	call	?unitIsMoving@CvGame@@QAEXXZ		; CvGame::unitIsMoving
 
-; 482  : }
+; 489  : }
 
 	ret	4
 ?UnitIsMoving@CvDllGame@@UAGXXZ ENDP			; CvDllGame::UnitIsMoving
@@ -2123,13 +2145,13 @@ _TEXT	SEGMENT
 _this$ = 8						; size = 4
 ?Update@CvDllGame@@UAGXXZ PROC				; CvDllGame::Update, COMDAT
 
-; 486  : 	m_pGame->update();
+; 493  : 	m_pGame->update();
 
 	mov	eax, DWORD PTR _this$[esp-4]
 	mov	ecx, DWORD PTR [eax+8]
 	call	?update@CvGame@@QAEXXZ			; CvGame::update
 
-; 487  : }
+; 494  : }
 
 	ret	4
 ?Update@CvDllGame@@UAGXXZ ENDP				; CvDllGame::Update
@@ -2142,13 +2164,13 @@ _TEXT	SEGMENT
 _this$ = 8						; size = 4
 ?UpdateSelectionList@CvDllGame@@UAGXXZ PROC		; CvDllGame::UpdateSelectionList, COMDAT
 
-; 491  : 	m_pGame->updateSelectionList();
+; 498  : 	m_pGame->updateSelectionList();
 
 	mov	eax, DWORD PTR _this$[esp-4]
 	mov	ecx, DWORD PTR [eax+8]
 	call	?updateSelectionList@CvGame@@QAEXXZ	; CvGame::updateSelectionList
 
-; 492  : }
+; 499  : }
 
 	ret	4
 ?UpdateSelectionList@CvDllGame@@UAGXXZ ENDP		; CvDllGame::UpdateSelectionList
@@ -2161,13 +2183,13 @@ _TEXT	SEGMENT
 _this$ = 8						; size = 4
 ?UpdateTestEndTurn@CvDllGame@@UAGXXZ PROC		; CvDllGame::UpdateTestEndTurn, COMDAT
 
-; 496  : 	m_pGame->updateTestEndTurn();
+; 503  : 	m_pGame->updateTestEndTurn();
 
 	mov	eax, DWORD PTR _this$[esp-4]
 	mov	ecx, DWORD PTR [eax+8]
 	call	?updateTestEndTurn@CvGame@@QAEXXZ	; CvGame::updateTestEndTurn
 
-; 497  : }
+; 504  : }
 
 	ret	4
 ?UpdateTestEndTurn@CvDllGame@@UAGXXZ ENDP		; CvDllGame::UpdateTestEndTurn
@@ -2181,7 +2203,7 @@ _this$ = 8						; size = 4
 _kStream$ = 12						; size = 4
 ?Read@CvDllGame@@UAGXAAVFDataStream@@@Z PROC		; CvDllGame::Read, COMDAT
 
-; 501  : 	m_pGame->Read(kStream);
+; 508  : 	m_pGame->Read(kStream);
 
 	mov	eax, DWORD PTR _kStream$[esp-4]
 	mov	ecx, DWORD PTR _this$[esp-4]
@@ -2189,7 +2211,7 @@ _kStream$ = 12						; size = 4
 	push	eax
 	call	?Read@CvGame@@QAEXAAVFDataStream@@@Z	; CvGame::Read
 
-; 502  : }
+; 509  : }
 
 	ret	8
 ?Read@CvDllGame@@UAGXAAVFDataStream@@@Z ENDP		; CvDllGame::Read
@@ -2203,7 +2225,7 @@ _this$ = 8						; size = 4
 _kStream$ = 12						; size = 4
 ?Write@CvDllGame@@UBGXAAVFDataStream@@@Z PROC		; CvDllGame::Write, COMDAT
 
-; 506  : 	m_pGame->Write(kStream);
+; 513  : 	m_pGame->Write(kStream);
 
 	mov	eax, DWORD PTR _kStream$[esp-4]
 	mov	ecx, DWORD PTR _this$[esp-4]
@@ -2211,7 +2233,7 @@ _kStream$ = 12						; size = 4
 	push	eax
 	call	?Write@CvGame@@QBEXAAVFDataStream@@@Z	; CvGame::Write
 
-; 507  : }
+; 514  : }
 
 	ret	8
 ?Write@CvDllGame@@UBGXAAVFDataStream@@@Z ENDP		; CvDllGame::Write
@@ -2225,7 +2247,7 @@ _this$ = 8						; size = 4
 _kStream$ = 12						; size = 4
 ?ReadSupportingClassData@CvDllGame@@UAGXAAVFDataStream@@@Z PROC ; CvDllGame::ReadSupportingClassData, COMDAT
 
-; 511  : 	m_pGame->ReadSupportingClassData(kStream);
+; 518  : 	m_pGame->ReadSupportingClassData(kStream);
 
 	mov	eax, DWORD PTR _kStream$[esp-4]
 	mov	ecx, DWORD PTR _this$[esp-4]
@@ -2233,7 +2255,7 @@ _kStream$ = 12						; size = 4
 	push	eax
 	call	?ReadSupportingClassData@CvGame@@QAEXAAVFDataStream@@@Z ; CvGame::ReadSupportingClassData
 
-; 512  : }
+; 519  : }
 
 	ret	8
 ?ReadSupportingClassData@CvDllGame@@UAGXAAVFDataStream@@@Z ENDP ; CvDllGame::ReadSupportingClassData
@@ -2247,7 +2269,7 @@ _this$ = 8						; size = 4
 _kStream$ = 12						; size = 4
 ?WriteSupportingClassData@CvDllGame@@UBGXAAVFDataStream@@@Z PROC ; CvDllGame::WriteSupportingClassData, COMDAT
 
-; 516  : 	m_pGame->WriteSupportingClassData(kStream);
+; 523  : 	m_pGame->WriteSupportingClassData(kStream);
 
 	mov	eax, DWORD PTR _kStream$[esp-4]
 	mov	ecx, DWORD PTR _this$[esp-4]
@@ -2255,7 +2277,7 @@ _kStream$ = 12						; size = 4
 	push	eax
 	call	?WriteSupportingClassData@CvGame@@QAEXAAVFDataStream@@@Z ; CvGame::WriteSupportingClassData
 
-; 517  : }
+; 524  : }
 
 	ret	8
 ?WriteSupportingClassData@CvDllGame@@UBGXAAVFDataStream@@@Z ENDP ; CvDllGame::WriteSupportingClassData
@@ -2269,7 +2291,7 @@ _this$ = 8						; size = 4
 _kStream$ = 12						; size = 4
 ?WriteReplay@CvDllGame@@UBGXAAVFDataStream@@@Z PROC	; CvDllGame::WriteReplay, COMDAT
 
-; 521  : 	m_pGame->writeReplay(kStream);
+; 528  : 	m_pGame->writeReplay(kStream);
 
 	mov	eax, DWORD PTR _kStream$[esp-4]
 	mov	ecx, DWORD PTR _this$[esp-4]
@@ -2277,7 +2299,7 @@ _kStream$ = 12						; size = 4
 	push	eax
 	call	?writeReplay@CvGame@@QAEXAAVFDataStream@@@Z ; CvGame::writeReplay
 
-; 522  : }
+; 529  : }
 
 	ret	8
 ?WriteReplay@CvDllGame@@UBGXAAVFDataStream@@@Z ENDP	; CvDllGame::WriteReplay
@@ -2290,13 +2312,13 @@ _TEXT	SEGMENT
 _this$ = 8						; size = 4
 ?NetMessageStaticsReset@CvDllGame@@UAGXXZ PROC		; CvDllGame::NetMessageStaticsReset, COMDAT
 
-; 562  : 	m_pGame->NetMessageStaticsReset();
+; 569  : 	m_pGame->NetMessageStaticsReset();
 
 	mov	eax, DWORD PTR _this$[esp-4]
 	mov	ecx, DWORD PTR [eax+8]
 	call	?NetMessageStaticsReset@CvGame@@QAEXXZ	; CvGame::NetMessageStaticsReset
 
-; 563  : }
+; 570  : }
 
 	ret	4
 ?NetMessageStaticsReset@CvDllGame@@UAGXXZ ENDP		; CvDllGame::NetMessageStaticsReset
@@ -2309,13 +2331,13 @@ _TEXT	SEGMENT
 _this$ = 8						; size = 4
 ?SetLastTurnAICivsProcessed@CvDllGame@@UAGXXZ PROC	; CvDllGame::SetLastTurnAICivsProcessed, COMDAT
 
-; 591  : 	m_pGame->SetLastTurnAICivsProcessed();
+; 598  : 	m_pGame->SetLastTurnAICivsProcessed();
 
 	mov	eax, DWORD PTR _this$[esp-4]
 	mov	ecx, DWORD PTR [eax+8]
 	call	?SetLastTurnAICivsProcessed@CvGame@@QAEXXZ ; CvGame::SetLastTurnAICivsProcessed
 
-; 592  : }
+; 599  : }
 
 	ret	4
 ?SetLastTurnAICivsProcessed@CvDllGame@@UAGXXZ ENDP	; CvDllGame::SetLastTurnAICivsProcessed
@@ -2368,12 +2390,12 @@ PUBLIC	?GetInterfaceId@ICvUnknown@@SG?AU_GUID@@XZ	; ICvUnknown::GetInterfaceId
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredllutil\include\cvdllinterfaces.h
 ;	COMDAT ?GetInterfaceId@ICvUnknown@@SG?AU_GUID@@XZ
 _TEXT	SEGMENT
-$T220072 = 8						; size = 4
+$T220557 = 8						; size = 4
 ?GetInterfaceId@ICvUnknown@@SG?AU_GUID@@XZ PROC		; ICvUnknown::GetInterfaceId, COMDAT
 
 ; 306  : 	static GUID DLLCALL GetInterfaceId(){ return guidICvUnknown; }
 
-	mov	eax, DWORD PTR $T220072[esp-4]
+	mov	eax, DWORD PTR $T220557[esp-4]
 	mov	ecx, DWORD PTR _guidICvUnknown
 	mov	edx, DWORD PTR _guidICvUnknown+4
 	mov	DWORD PTR [eax], ecx
@@ -2389,12 +2411,12 @@ PUBLIC	?GetInterfaceId@ICvGame1@@SG?AU_GUID@@XZ	; ICvGame1::GetInterfaceId
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?GetInterfaceId@ICvGame1@@SG?AU_GUID@@XZ
 _TEXT	SEGMENT
-$T220076 = 8						; size = 4
+$T220561 = 8						; size = 4
 ?GetInterfaceId@ICvGame1@@SG?AU_GUID@@XZ PROC		; ICvGame1::GetInterfaceId, COMDAT
 
 ; 982  : 	static GUID DLLCALL GetInterfaceId() { return guidICvGame1; }
 
-	mov	eax, DWORD PTR $T220076[esp-4]
+	mov	eax, DWORD PTR $T220561[esp-4]
 	mov	ecx, DWORD PTR _guidICvGame1
 	mov	edx, DWORD PTR _guidICvGame1+4
 	mov	DWORD PTR [eax], ecx
@@ -2411,12 +2433,12 @@ PUBLIC	?GetInterfaceId@ICvGame2@@SG?AU_GUID@@XZ	; ICvGame2::GetInterfaceId
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredllutil\include\cvdllinterfaces2.h
 ;	COMDAT ?GetInterfaceId@ICvGame2@@SG?AU_GUID@@XZ
 _TEXT	SEGMENT
-$T220080 = 8						; size = 4
+$T220565 = 8						; size = 4
 ?GetInterfaceId@ICvGame2@@SG?AU_GUID@@XZ PROC		; ICvGame2::GetInterfaceId, COMDAT
 
 ; 79   : 	static GUID DLLCALL GetInterfaceId() { return guidICvGame2; }
 
-	mov	eax, DWORD PTR $T220080[esp-4]
+	mov	eax, DWORD PTR $T220565[esp-4]
 	mov	ecx, DWORD PTR _guidICvGame2
 	mov	edx, DWORD PTR _guidICvGame2+4
 	mov	DWORD PTR [eax], ecx
@@ -2926,9 +2948,9 @@ $LN1@CvDllGame:
 _TEXT	ENDS
 ;	COMDAT ?QueryInterface@CvDllGame@@UAGPAXU_GUID@@@Z
 _TEXT	SEGMENT
-$T220128 = -16						; size = 16
-$T220126 = -16						; size = 16
-$T220124 = -16						; size = 16
+$T220613 = -16						; size = 16
+$T220611 = -16						; size = 16
+$T220609 = -16						; size = 16
 _this$ = 8						; size = 4
 _guidInterface$ = 12					; size = 16
 ?QueryInterface@CvDllGame@@UAGPAXU_GUID@@@Z PROC	; CvDllGame::QueryInterface, COMDAT
@@ -2944,15 +2966,15 @@ _guidInterface$ = 12					; size = 16
 	mov	ecx, DWORD PTR _guidICvUnknown+4
 	mov	edx, DWORD PTR _guidICvUnknown+8
 	mov	eax, DWORD PTR _guidICvUnknown
-	mov	DWORD PTR $T220124[esp+20], ecx
-	lea	ecx, DWORD PTR $T220124[esp+16]
-	mov	DWORD PTR $T220124[esp+24], edx
-	mov	DWORD PTR $T220124[esp+16], eax
+	mov	DWORD PTR $T220609[esp+20], ecx
+	lea	ecx, DWORD PTR $T220609[esp+16]
+	mov	DWORD PTR $T220609[esp+24], edx
+	mov	DWORD PTR $T220609[esp+16], eax
 	mov	eax, DWORD PTR _guidICvUnknown+12
 	push	ecx
 	lea	edx, DWORD PTR _guidInterface$[esp+16]
 	push	edx
-	mov	DWORD PTR $T220124[esp+36], eax
+	mov	DWORD PTR $T220609[esp+36], eax
 	call	_IsEqualGUID
 	add	esp, 8
 	test	eax, eax
@@ -2960,15 +2982,15 @@ _guidInterface$ = 12					; size = 16
 	mov	ecx, DWORD PTR _guidICvGame1+4
 	mov	edx, DWORD PTR _guidICvGame1+8
 	mov	eax, DWORD PTR _guidICvGame1
-	mov	DWORD PTR $T220126[esp+20], ecx
-	lea	ecx, DWORD PTR $T220126[esp+16]
-	mov	DWORD PTR $T220126[esp+24], edx
-	mov	DWORD PTR $T220126[esp+16], eax
+	mov	DWORD PTR $T220611[esp+20], ecx
+	lea	ecx, DWORD PTR $T220611[esp+16]
+	mov	DWORD PTR $T220611[esp+24], edx
+	mov	DWORD PTR $T220611[esp+16], eax
 	mov	eax, DWORD PTR _guidICvGame1+12
 	push	ecx
 	lea	edx, DWORD PTR _guidInterface$[esp+16]
 	push	edx
-	mov	DWORD PTR $T220126[esp+36], eax
+	mov	DWORD PTR $T220611[esp+36], eax
 	call	_IsEqualGUID
 	add	esp, 8
 	test	eax, eax
@@ -2976,15 +2998,15 @@ _guidInterface$ = 12					; size = 16
 	mov	ecx, DWORD PTR _guidICvGame2+4
 	mov	edx, DWORD PTR _guidICvGame2+8
 	mov	eax, DWORD PTR _guidICvGame2
-	mov	DWORD PTR $T220128[esp+20], ecx
-	lea	ecx, DWORD PTR $T220128[esp+16]
-	mov	DWORD PTR $T220128[esp+24], edx
-	mov	DWORD PTR $T220128[esp+16], eax
+	mov	DWORD PTR $T220613[esp+20], ecx
+	lea	ecx, DWORD PTR $T220613[esp+16]
+	mov	DWORD PTR $T220613[esp+24], edx
+	mov	DWORD PTR $T220613[esp+16], eax
 	mov	eax, DWORD PTR _guidICvGame2+12
 	push	ecx
 	lea	edx, DWORD PTR _guidInterface$[esp+16]
 	push	edx
-	mov	DWORD PTR $T220128[esp+36], eax
+	mov	DWORD PTR $T220613[esp+36], eax
 	call	_IsEqualGUID
 	add	esp, 8
 	test	eax, eax
@@ -3064,7 +3086,7 @@ __ehfuncinfo$?GetPlayer@CvDllGame@@UAGPAVICvPlayer1@@W4PlayerTypes@@@Z DD 019930
 xdata$x	ENDS
 ;	COMDAT ?GetPlayer@CvDllGame@@UAGPAVICvPlayer1@@W4PlayerTypes@@@Z
 _TEXT	SEGMENT
-$T220181 = -16						; size = 4
+$T220666 = -16						; size = 4
 __$EHRec$ = -12						; size = 12
 _this$ = 8						; size = 4
 _ePlayer$ = 12						; size = 4
@@ -3084,7 +3106,7 @@ _ePlayer$ = 12						; size = 4
 	push	12					; 0000000cH
 	call	??2CvDllPlayer@@SAPAXI@Z		; CvDllPlayer::operator new
 	add	esp, 4
-	mov	DWORD PTR $T220181[esp+16], eax
+	mov	DWORD PTR $T220666[esp+16], eax
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	eax, eax
 	je	SHORT $LN3@GetPlayer
@@ -3111,7 +3133,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetPlayer@CvDllGame@@UAGPAVICvPlayer1@@W4PlayerTypes@@@Z$0:
-	mov	eax, DWORD PTR $T220181[ebp]
+	mov	eax, DWORD PTR $T220666[ebp]
 	push	eax
 	call	??3CvDllPlayer@@SAXPAX@Z		; CvDllPlayer::operator delete
 	pop	ecx
@@ -3143,7 +3165,7 @@ __ehfuncinfo$?SetTimeStr@CvDllGame@@UAGXPADH_N@Z DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?SetTimeStr@CvDllGame@@UAGXPADH_N@Z
 _TEXT	SEGMENT
-_strString$219383 = -40					; size = 28
+_strString$219864 = -40					; size = 28
 __$EHRec$ = -12						; size = 12
 _this$ = 8						; size = 4
 _szString$ = 12						; size = 4
@@ -3151,7 +3173,7 @@ _iGameTurn$ = 16					; size = 4
 _bSave$ = 20						; size = 1
 ?SetTimeStr@CvDllGame@@UAGXPADH_N@Z PROC		; CvDllGame::SetTimeStr, COMDAT
 
-; 454  : {
+; 461  : {
 
 	mov	eax, DWORD PTR fs:0
 	push	-1
@@ -3161,25 +3183,25 @@ _bSave$ = 20						; size = 1
 	sub	esp, 28					; 0000001cH
 	push	edi
 
-; 455  : 	if(szString)
+; 462  : 	if(szString)
 
 	mov	edi, DWORD PTR _szString$[esp+40]
 	test	edi, edi
 	je	SHORT $LN1@SetTimeStr
 	push	esi
 
-; 456  : 	{
-; 457  : 		CvString strString;
+; 463  : 	{
+; 464  : 		CvString strString;
 
-	lea	ecx, DWORD PTR _strString$219383[esp+48]
+	lea	ecx, DWORD PTR _strString$219864[esp+48]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 458  : 		CvGameTextMgr::setDateStr(strString,
-; 459  : 		                          iGameTurn,
-; 460  : 		                          bSave,
-; 461  : 		                          m_pGame->getCalendar(),
-; 462  : 		                          m_pGame->getStartYear(),
-; 463  : 		                          m_pGame->getGameSpeedType());
+; 465  : 		CvGameTextMgr::setDateStr(strString,
+; 466  : 		                          iGameTurn,
+; 467  : 		                          bSave,
+; 468  : 		                          m_pGame->getCalendar(),
+; 469  : 		                          m_pGame->getStartYear(),
+; 470  : 		                          m_pGame->getGameSpeedType());
 
 	mov	esi, DWORD PTR _this$[esp+44]
 	mov	ecx, DWORD PTR [esi+8]
@@ -3196,15 +3218,15 @@ _bSave$ = 20						; size = 1
 	mov	eax, DWORD PTR _bSave$[esp+56]
 	push	eax
 	push	ecx
-	lea	edx, DWORD PTR _strString$219383[esp+68]
+	lea	edx, DWORD PTR _strString$219864[esp+68]
 	push	edx
 	call	?setDateStr@CvGameTextMgr@@SAXAAVCvString@@H_NW4CalendarTypes@@HW4GameSpeedTypes@@@Z ; CvGameTextMgr::setDateStr
 	add	esp, 24					; 00000018H
 
-; 464  : 
-; 465  : 		strcpy_s(szString, 256, strString.c_str());
+; 471  : 
+; 472  : 		strcpy_s(szString, 256, strString.c_str());
 
-	lea	ecx, DWORD PTR _strString$219383[esp+48]
+	lea	ecx, DWORD PTR _strString$219864[esp+48]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
 	push	256					; 00000100H
@@ -3212,15 +3234,15 @@ _bSave$ = 20						; size = 1
 	call	DWORD PTR __imp__strcpy_s
 	add	esp, 12					; 0000000cH
 
-; 466  : 	}
+; 473  : 	}
 
-	lea	ecx, DWORD PTR _strString$219383[esp+48]
+	lea	ecx, DWORD PTR _strString$219864[esp+48]
 	mov	DWORD PTR __$EHRec$[esp+56], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 	pop	esi
 $LN1@SetTimeStr:
 
-; 467  : }
+; 474  : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+44]
 	pop	edi
@@ -3231,7 +3253,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?SetTimeStr@CvDllGame@@UAGXPADH_N@Z$0:
-	lea	ecx, DWORD PTR _strString$219383[ebp]
+	lea	ecx, DWORD PTR _strString$219864[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?SetTimeStr@CvDllGame@@UAGXPADH_N@Z:
 	mov	eax, OFFSET __ehfuncinfo$?SetTimeStr@CvDllGame@@UAGXPADH_N@Z
@@ -3258,7 +3280,7 @@ __ehfuncinfo$?GetGreatWorkAudio@CvDllGame@@UAG_NHPADH@Z DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?GetGreatWorkAudio@CvDllGame@@UAG_NHPADH@Z
 _TEXT	SEGMENT
-_audio$219448 = -40					; size = 28
+_audio$219929 = -40					; size = 28
 __$EHRec$ = -12						; size = 12
 _this$ = 8						; size = 4
 _GreatWorkIndex$ = 12					; size = 4
@@ -3266,14 +3288,14 @@ _strSound$ = 16						; size = 4
 _length$ = 20						; size = 4
 ?GetGreatWorkAudio@CvDllGame@@UAG_NHPADH@Z PROC		; CvDllGame::GetGreatWorkAudio, COMDAT
 
-; 566  : {
+; 573  : {
 
 	mov	eax, DWORD PTR fs:0
 	push	-1
 	push	__ehhandler$?GetGreatWorkAudio@CvDllGame@@UAG_NHPADH@Z
 	push	eax
 
-; 567  : 	if (GreatWorkIndex == -1)
+; 574  : 	if (GreatWorkIndex == -1)
 
 	mov	eax, DWORD PTR _GreatWorkIndex$[esp+8]
 	mov	DWORD PTR fs:0, esp
@@ -3281,14 +3303,14 @@ _length$ = 20						; size = 4
 	cmp	eax, -1
 	jne	SHORT $LN4@GetGreatWo
 
-; 568  : 	{
-; 569  : 		return false;
+; 575  : 	{
+; 576  : 		return false;
 
 	xor	al, al
 
-; 585  : 
-; 586  : 	return false;
-; 587  : }
+; 592  : 
+; 593  : 	return false;
+; 594  : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -3297,9 +3319,9 @@ _length$ = 20						; size = 4
 $LN4@GetGreatWo:
 	push	esi
 
-; 570  : 	}
-; 571  : 
-; 572  : 	const GreatWorkType eType = m_pGame->GetGameCulture()->GetGreatWorkType(GreatWorkIndex);
+; 577  : 	}
+; 578  : 
+; 579  : 	const GreatWorkType eType = m_pGame->GetGameCulture()->GetGreatWorkType(GreatWorkIndex);
 
 	push	eax
 	mov	eax, DWORD PTR _this$[esp+44]
@@ -3308,34 +3330,34 @@ $LN4@GetGreatWo:
 	mov	ecx, eax
 	call	?GetGreatWorkType@CvGameCulture@@QBE?AW4GreatWorkType@@H@Z ; CvGameCulture::GetGreatWorkType
 
-; 573  : 	if(eType != NO_GREAT_WORK)
+; 580  : 	if(eType != NO_GREAT_WORK)
 
 	cmp	eax, -1
 	je	SHORT $LN3@GetGreatWo
 
-; 574  : 	{
-; 575  : 		const CvString audio = CultureHelpers::GetGreatWorkAudio(eType);
+; 581  : 	{
+; 582  : 		const CvString audio = CultureHelpers::GetGreatWorkAudio(eType);
 
 	push	eax
-	lea	ecx, DWORD PTR _audio$219448[esp+48]
+	lea	ecx, DWORD PTR _audio$219929[esp+48]
 	push	ecx
 	call	?GetGreatWorkAudio@CultureHelpers@@YA?AVCvString@@W4GreatWorkType@@@Z ; CultureHelpers::GetGreatWorkAudio
 	add	esp, 8
 
-; 576  : 
-; 577  : 		if(audio.GetLength() <= length)
+; 583  : 
+; 584  : 		if(audio.GetLength() <= length)
 
-	lea	ecx, DWORD PTR _audio$219448[esp+44]
+	lea	ecx, DWORD PTR _audio$219929[esp+44]
 	mov	DWORD PTR __$EHRec$[esp+52], 0
 	call	DWORD PTR __imp_?size@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEIXZ
 	mov	esi, DWORD PTR _length$[esp+40]
 	cmp	eax, esi
 	jg	SHORT $LN1@GetGreatWo
 
-; 578  : 		{
-; 579  : 			if(strcpy_s(strSound, length, audio.c_str()) == 0)
+; 585  : 		{
+; 586  : 			if(strcpy_s(strSound, length, audio.c_str()) == 0)
 
-	lea	ecx, DWORD PTR _audio$219448[esp+44]
+	lea	ecx, DWORD PTR _audio$219929[esp+44]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	mov	edx, DWORD PTR _strSound$[esp+40]
 	push	eax
@@ -3346,18 +3368,18 @@ $LN4@GetGreatWo:
 	test	eax, eax
 	jne	SHORT $LN1@GetGreatWo
 
-; 580  : 			{
-; 581  : 				return true;
+; 587  : 			{
+; 588  : 				return true;
 
-	lea	ecx, DWORD PTR _audio$219448[esp+44]
+	lea	ecx, DWORD PTR _audio$219929[esp+44]
 	mov	DWORD PTR __$EHRec$[esp+52], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 	mov	al, 1
 	pop	esi
 
-; 585  : 
-; 586  : 	return false;
-; 587  : }
+; 592  : 
+; 593  : 	return false;
+; 594  : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -3365,18 +3387,18 @@ $LN4@GetGreatWo:
 	ret	16					; 00000010H
 $LN1@GetGreatWo:
 
-; 582  : 			}
-; 583  : 		}
-; 584  : 	}
+; 589  : 			}
+; 590  : 		}
+; 591  : 	}
 
-	lea	ecx, DWORD PTR _audio$219448[esp+44]
+	lea	ecx, DWORD PTR _audio$219929[esp+44]
 	mov	DWORD PTR __$EHRec$[esp+52], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 $LN3@GetGreatWo:
 
-; 585  : 
-; 586  : 	return false;
-; 587  : }
+; 592  : 
+; 593  : 	return false;
+; 594  : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+44]
 	xor	al, al
@@ -3388,7 +3410,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetGreatWorkAudio@CvDllGame@@UAG_NHPADH@Z$0:
-	lea	ecx, DWORD PTR _audio$219448[ebp]
+	lea	ecx, DWORD PTR _audio$219929[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?GetGreatWorkAudio@CvDllGame@@UAG_NHPADH@Z:
 	mov	eax, OFFSET __ehfuncinfo$?GetGreatWorkAudio@CvDllGame@@UAG_NHPADH@Z
@@ -3659,7 +3681,7 @@ _pUnit$ = 12						; size = 4
 _pPlot$ = 16						; size = 4
 ?CanMoveUnitTo@CvDllGame@@UBG_NPAVICvUnit1@@PAVICvPlot1@@@Z PROC ; CvDllGame::CanMoveUnitTo, COMDAT
 
-; 526  : 	if(pUnit == NULL || pPlot == NULL)
+; 533  : 	if(pUnit == NULL || pPlot == NULL)
 
 	mov	eax, DWORD PTR _pUnit$[esp-4]
 	push	edi
@@ -3670,23 +3692,23 @@ _pPlot$ = 16						; size = 4
 	je	SHORT $LN4@CanMoveUni
 	push	esi
 
-; 529  : 	}
-; 530  : 
-; 531  : 	CvUnit* pkUnit = GC.UnwrapUnitPointer(pUnit);
+; 536  : 	}
+; 537  : 
+; 538  : 	CvUnit* pkUnit = GC.UnwrapUnitPointer(pUnit);
 
 	push	eax
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?UnwrapUnitPointer@CvGlobals@@QAEPAVCvUnit@@PAVICvUnit1@@@Z ; CvGlobals::UnwrapUnitPointer
 
-; 532  : 	CvPlot* pkPlot = GC.UnwrapPlotPointer(pPlot);
+; 539  : 	CvPlot* pkPlot = GC.UnwrapPlotPointer(pPlot);
 
 	push	edi
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	esi, eax
 	call	?UnwrapPlotPointer@CvGlobals@@QAEPAVCvPlot@@PAVICvPlot1@@@Z ; CvGlobals::UnwrapPlotPointer
 
-; 533  : 
-; 534  : 	GC.getInterfacePathFinder().SetData(pkUnit);
+; 540  : 
+; 541  : 	GC.getInterfacePathFinder().SetData(pkUnit);
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	edi, eax
@@ -3699,9 +3721,9 @@ _pPlot$ = 16						; size = 4
 $LN8@CanMoveUni:
 	mov	DWORD PTR [eax+44], esi
 
-; 535  : 
-; 536  : 	// can the unit actually walk there
-; 537  : 	bool bCanFindPath = GC.getInterfacePathFinder().GeneratePath(pkUnit->getX(), pkUnit->getY(), pkPlot->getX(), pkPlot->getY(), MOVE_UNITS_IGNORE_DANGER | MOVE_UNITS_THROUGH_ENEMY /*iFlags*/, true/*bReuse*/);
+; 542  : 
+; 543  : 	// can the unit actually walk there
+; 544  : 	bool bCanFindPath = GC.getInterfacePathFinder().GeneratePath(pkUnit->getX(), pkUnit->getY(), pkPlot->getX(), pkPlot->getY(), MOVE_UNITS_IGNORE_DANGER | MOVE_UNITS_THROUGH_ENEMY /*iFlags*/, true/*bReuse*/);
 
 	movsx	eax, WORD PTR [edi+2]
 	movsx	ecx, WORD PTR [edi]
@@ -3719,27 +3741,9 @@ $LN8@CanMoveUni:
 	call	?GeneratePath@CvAStar@@QAE_NHHHHH_N@Z	; CvAStar::GeneratePath
 	pop	esi
 
-; 538  : 	if(!bCanFindPath)
+; 545  : 	if(!bCanFindPath)
 
 	test	al, al
-
-; 539  : 	{
-; 540  : 		return false;
-
-	je	SHORT $LN4@CanMoveUni
-
-; 541  : 	}
-; 542  : 
-; 543  : 	CvAStarNode* pNode = GC.getInterfacePathFinder().GetLastNode();
-
-	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	call	?getInterfacePathFinder@CvGlobals@@QAEAAVCvTwoLayerPathFinder@@XZ ; CvGlobals::getInterfacePathFinder
-	mov	eax, DWORD PTR [eax+96]
-
-; 544  : 	FAssertMsg(pNode, "Invalid node. What?");
-; 545  : 	if(!pNode)
-
-	test	eax, eax
 
 ; 546  : 	{
 ; 547  : 		return false;
@@ -3748,35 +3752,53 @@ $LN8@CanMoveUni:
 
 ; 548  : 	}
 ; 549  : 
-; 550  : 	// move is too far away
-; 551  : 	if(pNode->m_iData2 >= 2)
+; 550  : 	CvAStarNode* pNode = GC.getInterfacePathFinder().GetLastNode();
+
+	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
+	call	?getInterfacePathFinder@CvGlobals@@QAEAAVCvTwoLayerPathFinder@@XZ ; CvGlobals::getInterfacePathFinder
+	mov	eax, DWORD PTR [eax+96]
+
+; 551  : 	FAssertMsg(pNode, "Invalid node. What?");
+; 552  : 	if(!pNode)
+
+	test	eax, eax
+
+; 553  : 	{
+; 554  : 		return false;
+
+	je	SHORT $LN4@CanMoveUni
+
+; 555  : 	}
+; 556  : 
+; 557  : 	// move is too far away
+; 558  : 	if(pNode->m_iData2 >= 2)
 
 	cmp	DWORD PTR [eax+16], 2
 	pop	edi
 	setl	al
 
-; 552  : 	{
-; 553  : 		return false;
-; 554  : 	}
-; 555  : 
-; 556  : 	return true;
-; 557  : }
+; 559  : 	{
+; 560  : 		return false;
+; 561  : 	}
+; 562  : 
+; 563  : 	return true;
+; 564  : }
 
 	ret	12					; 0000000cH
 $LN4@CanMoveUni:
 
-; 527  : 	{
-; 528  : 		return false;
+; 534  : 	{
+; 535  : 		return false;
 
 	xor	al, al
 	pop	edi
 
-; 552  : 	{
-; 553  : 		return false;
-; 554  : 	}
-; 555  : 
-; 556  : 	return true;
-; 557  : }
+; 559  : 	{
+; 560  : 		return false;
+; 561  : 	}
+; 562  : 
+; 563  : 	return true;
+; 564  : }
 
 	ret	12					; 0000000cH
 ?CanMoveUnitTo@CvDllGame@@UBG_NPAVICvUnit1@@PAVICvPlot1@@@Z ENDP ; CvDllGame::CanMoveUnitTo

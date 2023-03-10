@@ -1885,22 +1885,22 @@ _bFasterAlongRiver$ = -26				; size = 1
 _bFasterInHills$ = -25					; size = 1
 _kUnitTeam$ = -24					; size = 4
 _iMoveDenominator$ = -20				; size = 4
-_iFromMovementCost$217678 = -16				; size = 4
+_iFromMovementCost$218155 = -16				; size = 4
 _pTraits$ = -16						; size = 4
 _eFeature$ = -12					; size = 4
-$T218677 = -8						; size = 4
+$T219154 = -8						; size = 4
 _eTerrain$ = -4						; size = 4
 tv671 = 8						; size = 4
 _pUnit$ = 8						; size = 4
-$T218691 = 12						; size = 4
-$T218688 = 12						; size = 4
-_iMovementCost$217681 = 12				; size = 4
-$T218676 = 12						; size = 4
+$T219168 = 12						; size = 4
+$T219165 = 12						; size = 4
+_iMovementCost$218158 = 12				; size = 4
+$T219153 = 12						; size = 4
 _pFeatureInfo$ = 12					; size = 4
 _pFromPlot$ = 12					; size = 4
-$T218690 = 16						; size = 4
-$T218689 = 16						; size = 4
-_eFromPlotRoute$217672 = 16				; size = 4
+$T219167 = 16						; size = 4
+$T219166 = 16						; size = 4
+_eFromPlotRoute$218149 = 16				; size = 4
 _bRiverCrossing$ = 16					; size = 1
 _pToPlot$ = 16						; size = 4
 _iBaseMoves$ = 20					; size = 4
@@ -2105,11 +2105,11 @@ $LN136@GetCostsFo:
 	mov	ecx, DWORD PTR [ebp]
 	sub	ecx, eax
 	cmp	ecx, 1
-	mov	DWORD PTR $T218676[esp+40], ecx
-	mov	DWORD PTR $T218677[esp+44], 1
-	lea	eax, DWORD PTR $T218676[esp+40]
+	mov	DWORD PTR $T219153[esp+40], ecx
+	mov	DWORD PTR $T219154[esp+44], 1
+	lea	eax, DWORD PTR $T219153[esp+40]
 	jg	SHORT $LN95@GetCostsFo
-	lea	eax, DWORD PTR $T218677[esp+44]
+	lea	eax, DWORD PTR $T219154[esp+44]
 $LN95@GetCostsFo:
 	mov	ecx, DWORD PTR [eax]
 	mov	DWORD PTR [ebp], ecx
@@ -2282,7 +2282,7 @@ $LN10@GetCostsFo:
 ; 93   : 		RouteTypes eToPlotRoute = pToPlot->getRouteType();
 
 	mov	ecx, edi
-	mov	DWORD PTR _eFromPlotRoute$217672[esp+40], ebx
+	mov	DWORD PTR _eFromPlotRoute$218149[esp+40], ebx
 	call	?getRouteType@CvPlot@@QBE?AW4RouteTypes@@XZ ; CvPlot::getRouteType
 
 ; 94   : 		if (pTraits->IsMoveFriendlyWoodsAsRoad())
@@ -2300,8 +2300,8 @@ $LN10@GetCostsFo:
 
 ; 97   : 				eFromPlotRoute = ROUTE_ROAD;
 
-	mov	DWORD PTR _eFromPlotRoute$217672[esp+40], 0
-	mov	ebx, DWORD PTR _eFromPlotRoute$217672[esp+40]
+	mov	DWORD PTR _eFromPlotRoute$218149[esp+40], 0
+	mov	ebx, DWORD PTR _eFromPlotRoute$218149[esp+40]
 $LN141@GetCostsFo:
 
 ; 98   : 			if (eToPlotRoute == NO_ROUTE)
@@ -2337,7 +2337,7 @@ $LN142@GetCostsFo:
 ; 108  : 		int iFromFlatMovementCost = (pFromRouteInfo != NULL)? pFromRouteInfo->getFlatMovementCost() : 0;
 
 	mov	ecx, ebx
-	mov	DWORD PTR _iFromMovementCost$217678[esp+44], eax
+	mov	DWORD PTR _iFromMovementCost$218155[esp+44], eax
 	call	?getFlatMovementCost@CvRouteInfo@@QBEHXZ ; CvRouteInfo::getFlatMovementCost
 	mov	ebx, eax
 	jmp	SHORT $LN42@GetCostsFo
@@ -2350,7 +2350,7 @@ $LN39@GetCostsFo:
 ; 106  : 
 ; 107  : 		int iFromMovementCost = (pFromRouteInfo != NULL)? pFromRouteInfo->getMovementCost() : 0;
 
-	mov	DWORD PTR _iFromMovementCost$217678[esp+44], 0
+	mov	DWORD PTR _iFromMovementCost$218155[esp+44], 0
 
 ; 108  : 		int iFromFlatMovementCost = (pFromRouteInfo != NULL)? pFromRouteInfo->getFlatMovementCost() : 0;
 
@@ -2381,7 +2381,7 @@ $LN42@GetCostsFo:
 ; 118  : 		int iFlatMovementCost = (pRouteInfo != NULL)? pRouteInfo->getFlatMovementCost() : 0;
 
 	mov	ecx, ebp
-	mov	DWORD PTR _iMovementCost$217681[esp+40], eax
+	mov	DWORD PTR _iMovementCost$218158[esp+40], eax
 	call	?getFlatMovementCost@CvRouteInfo@@QBEHXZ ; CvRouteInfo::getFlatMovementCost
 	mov	ebp, eax
 	jmp	SHORT $LN46@GetCostsFo
@@ -2394,7 +2394,7 @@ $LN43@GetCostsFo:
 ; 116  : 
 ; 117  : 		int iMovementCost = (pRouteInfo != NULL)? pRouteInfo->getMovementCost() : 0;
 
-	mov	DWORD PTR _iMovementCost$217681[esp+40], 0
+	mov	DWORD PTR _iMovementCost$218158[esp+40], 0
 
 ; 118  : 		int iFlatMovementCost = (pRouteInfo != NULL)? pRouteInfo->getFlatMovementCost() : 0;
 
@@ -2416,19 +2416,19 @@ $LN46@GetCostsFo:
 	mov	ecx, DWORD PTR _kUnitTeam$[esp+44]
 	push	esi
 	call	?getRouteChange@CvTeam@@QBEHW4RouteTypes@@@Z ; CvTeam::getRouteChange
-	mov	edx, DWORD PTR _eFromPlotRoute$217672[esp+40]
+	mov	edx, DWORD PTR _eFromPlotRoute$218149[esp+40]
 	mov	ecx, DWORD PTR _kUnitTeam$[esp+44]
 	mov	esi, eax
-	add	esi, DWORD PTR _iMovementCost$217681[esp+40]
+	add	esi, DWORD PTR _iMovementCost$218158[esp+40]
 	push	edx
-	mov	DWORD PTR $T218688[esp+44], esi
+	mov	DWORD PTR $T219165[esp+44], esi
 	call	?getRouteChange@CvTeam@@QBEHW4RouteTypes@@@Z ; CvTeam::getRouteChange
-	add	eax, DWORD PTR _iFromMovementCost$217678[esp+44]
-	mov	DWORD PTR $T218689[esp+40], eax
+	add	eax, DWORD PTR _iFromMovementCost$218155[esp+44]
+	mov	DWORD PTR $T219166[esp+40], eax
 	cmp	eax, esi
-	lea	eax, DWORD PTR $T218688[esp+40]
+	lea	eax, DWORD PTR $T219165[esp+40]
 	jl	SHORT $LN121@GetCostsFo
-	lea	eax, DWORD PTR $T218689[esp+40]
+	lea	eax, DWORD PTR $T219166[esp+40]
 $LN121@GetCostsFo:
 	mov	eax, DWORD PTR [eax]
 	mov	esi, DWORD PTR _iRouteCost$[esp+40]
@@ -2443,11 +2443,11 @@ $LN121@GetCostsFo:
 	imul	ebp, eax
 	imul	ebx, eax
 	cmp	ebx, ebp
-	mov	DWORD PTR $T218690[esp+40], ebp
-	mov	DWORD PTR $T218691[esp+40], ebx
-	lea	eax, DWORD PTR $T218690[esp+40]
+	mov	DWORD PTR $T219167[esp+40], ebp
+	mov	DWORD PTR $T219168[esp+40], ebx
+	lea	eax, DWORD PTR $T219167[esp+40]
 	jl	SHORT $LN125@GetCostsFo
-	lea	eax, DWORD PTR $T218691[esp+40]
+	lea	eax, DWORD PTR $T219168[esp+40]
 $LN125@GetCostsFo:
 	mov	ecx, DWORD PTR [eax]
 	mov	ebp, DWORD PTR _iRouteFlatCost$[esp+40]
@@ -3011,16 +3011,16 @@ EXTRN	?IsIgnoreZOC@CvUnit@@QBE_NXZ:PROC		; CvUnit::IsIgnoreZOC
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?IsSlowedByZOC@CvUnitMovement@@SA_NPBVCvUnit@@PBVCvPlot@@1@Z
 _TEXT	SEGMENT
-_bIsVisibleEnemyUnit$217778 = -37			; size = 1
-_iToPlotX$217774 = -36					; size = 4
-_iToPlotY$217775 = -32					; size = 4
-_pAdjUnitNode$217770 = -28				; size = 4
-_iDirection0$217780 = -24				; size = 4
-_iFromPlotY$217773 = -20				; size = 4
-_iFromPlotX$217772 = -16				; size = 4
-_unit_team_type$217776 = -12				; size = 4
-_kUnitTeam$217779 = -8					; size = 4
-_unit_domain_type$217777 = -4				; size = 4
+_bIsVisibleEnemyUnit$218255 = -37			; size = 1
+_iToPlotX$218251 = -36					; size = 4
+_iToPlotY$218252 = -32					; size = 4
+_pAdjUnitNode$218247 = -28				; size = 4
+_iDirection0$218257 = -24				; size = 4
+_iFromPlotY$218250 = -20				; size = 4
+_iFromPlotX$218249 = -16				; size = 4
+_unit_team_type$218253 = -12				; size = 4
+_kUnitTeam$218256 = -8					; size = 4
+_unit_domain_type$218254 = -4				; size = 4
 _pUnit$ = 8						; size = 4
 _pFromPlot$ = 12					; size = 4
 _pToPlot$ = 16						; size = 4
@@ -3074,55 +3074,55 @@ _pToPlot$ = 16						; size = 4
 ; 383  : 		int iToPlotX = pToPlot->getX();
 
 	movsx	edx, WORD PTR [esi]
-	mov	DWORD PTR _iFromPlotX$217772[esp+56], eax
+	mov	DWORD PTR _iFromPlotX$218249[esp+56], eax
 
 ; 384  : 		int iToPlotY = pToPlot->getY();
 
 	movsx	eax, WORD PTR [esi+2]
-	mov	DWORD PTR _iFromPlotY$217773[esp+56], ecx
+	mov	DWORD PTR _iFromPlotY$218250[esp+56], ecx
 
 ; 385  : 		TeamTypes unit_team_type     = pUnit->getTeam();
 
 	mov	ecx, ebp
-	mov	DWORD PTR _iToPlotX$217774[esp+56], edx
-	mov	DWORD PTR _iToPlotY$217775[esp+56], eax
+	mov	DWORD PTR _iToPlotX$218251[esp+56], edx
+	mov	DWORD PTR _iToPlotY$218252[esp+56], eax
 	call	?getTeam@CvUnit@@QBE?AW4TeamTypes@@XZ	; CvUnit::getTeam
 	mov	edi, eax
 
 ; 386  : 		DomainTypes unit_domain_type = pUnit->getDomainType();
 
 	mov	ecx, ebp
-	mov	DWORD PTR _unit_team_type$217776[esp+56], edi
+	mov	DWORD PTR _unit_team_type$218253[esp+56], edi
 	call	?getDomainType@CvUnit@@QBE?AW4DomainTypes@@XZ ; CvUnit::getDomainType
 
 ; 387  : 		bool bIsVisibleEnemyUnit     = pToPlot->isVisibleEnemyUnit(pUnit);
 
 	push	ebp
 	mov	ecx, esi
-	mov	DWORD PTR _unit_domain_type$217777[esp+60], eax
+	mov	DWORD PTR _unit_domain_type$218254[esp+60], eax
 	call	?isVisibleEnemyUnit@CvPlot@@QBE_NPBVCvUnit@@@Z ; CvPlot::isVisibleEnemyUnit
-	mov	BYTE PTR _bIsVisibleEnemyUnit$217778[esp+56], al
+	mov	BYTE PTR _bIsVisibleEnemyUnit$218255[esp+56], al
 
 ; 388  : 		CvTeam& kUnitTeam = GET_TEAM(unit_team_type);
 
 	mov	eax, edi
 	imul	eax, 2984				; 00000ba8H
 	add	eax, DWORD PTR ?m_aTeams@CvTeam@@1PAV1@A ; CvTeam::m_aTeams
-	mov	DWORD PTR _kUnitTeam$217779[esp+56], eax
+	mov	DWORD PTR _kUnitTeam$218256[esp+56], eax
 
 ; 389  : 
 ; 390  : 		for(int iDirection0 = 0; iDirection0 < NUM_DIRECTION_TYPES; iDirection0++)
 
 	xor	eax, eax
-	mov	DWORD PTR _iDirection0$217780[esp+56], eax
+	mov	DWORD PTR _iDirection0$218257[esp+56], eax
 	npad	4
 $LL106@IsSlowedBy:
 
 ; 391  : 		{
 ; 392  : 			CvPlot* pAdjPlot = plotDirection(iFromPlotX, iFromPlotY, ((DirectionTypes)iDirection0));
 
-	mov	ecx, DWORD PTR _iFromPlotY$217773[esp+56]
-	mov	edx, DWORD PTR _iFromPlotX$217772[esp+56]
+	mov	ecx, DWORD PTR _iFromPlotY$218250[esp+56]
+	mov	edx, DWORD PTR _iFromPlotX$218249[esp+56]
 	push	eax
 	push	ecx
 	push	edx
@@ -3195,10 +3195,10 @@ $LL25@IsSlowedBy:
 ; 409  : 							if(pEnemyAdjPlot->getX() == iToPlotX && pEnemyAdjPlot->getY() == iToPlotY)
 
 	movsx	ecx, WORD PTR [eax]
-	cmp	ecx, DWORD PTR _iToPlotX$217774[esp+56]
+	cmp	ecx, DWORD PTR _iToPlotX$218251[esp+56]
 	jne	SHORT $LN24@IsSlowedBy
 	movsx	edx, WORD PTR [eax+2]
-	cmp	edx, DWORD PTR _iToPlotY$217775[esp+56]
+	cmp	edx, DWORD PTR _iToPlotY$218252[esp+56]
 	je	$LN94@IsSlowedBy
 $LN24@IsSlowedBy:
 
@@ -3256,7 +3256,7 @@ $LN20@IsSlowedBy:
 	je	$LN30@IsSlowedBy
 	jmp	SHORT $LN19@IsSlowedBy
 $LL101@IsSlowedBy:
-	mov	edi, DWORD PTR _pAdjUnitNode$217770[esp+56]
+	mov	edi, DWORD PTR _pAdjUnitNode$218247[esp+56]
 $LN19@IsSlowedBy:
 
 ; 424  : 				{
@@ -3298,7 +3298,7 @@ $LN16@IsSlowedBy:
 	push	edi
 	mov	ecx, ebx
 	call	?nextUnitNode@CvPlot@@QAEPAUIDInfo@@PAU2@@Z ; CvPlot::nextUnitNode
-	mov	DWORD PTR _pAdjUnitNode$217770[esp+56], eax
+	mov	DWORD PTR _pAdjUnitNode$218247[esp+56], eax
 
 ; 435  : 
 ; 436  : 					if(!pLoopUnit) continue;
@@ -3322,7 +3322,7 @@ $LN16@IsSlowedBy:
 
 	push	1
 	mov	edi, eax
-	mov	eax, DWORD PTR _unit_team_type$217776[esp+60]
+	mov	eax, DWORD PTR _unit_team_type$218253[esp+60]
 	push	0
 	push	eax
 	mov	ecx, esi
@@ -3346,7 +3346,7 @@ $LN16@IsSlowedBy:
 
 	cmp	edi, 63					; 0000003fH
 	je	SHORT $LN11@IsSlowedBy
-	mov	ecx, DWORD PTR _kUnitTeam$217779[esp+56]
+	mov	ecx, DWORD PTR _kUnitTeam$218256[esp+56]
 	push	edi
 	call	?isAtWar@CvTeam@@QBE_NW4TeamTypes@@@Z	; CvTeam::isAtWar
 	test	al, al
@@ -3364,7 +3364,7 @@ $LN11@IsSlowedBy:
 
 ; 460  : 						if(loop_unit_domain_type != unit_domain_type)
 
-	mov	ecx, DWORD PTR _unit_domain_type$217777[esp+56]
+	mov	ecx, DWORD PTR _unit_domain_type$218254[esp+56]
 	cmp	eax, ecx
 	je	SHORT $LN8@IsSlowedBy
 
@@ -3431,7 +3431,7 @@ $LL6@IsSlowedBy:
 ; 488  : 							// Don't check Enemy Unit's plot
 ; 489  : 							if(!bIsVisibleEnemyUnit)
 
-	cmp	BYTE PTR _bIsVisibleEnemyUnit$217778[esp+56], 0
+	cmp	BYTE PTR _bIsVisibleEnemyUnit$218255[esp+56], 0
 	jne	SHORT $LN5@IsSlowedBy
 
 ; 490  : 							{
@@ -3439,10 +3439,10 @@ $LL6@IsSlowedBy:
 ; 492  : 								if(pEnemyAdjPlot->getX() == iToPlotX && pEnemyAdjPlot->getY() == iToPlotY)
 
 	movsx	ecx, WORD PTR [eax]
-	cmp	ecx, DWORD PTR _iToPlotX$217774[esp+56]
+	cmp	ecx, DWORD PTR _iToPlotX$218251[esp+56]
 	jne	SHORT $LN5@IsSlowedBy
 	movsx	edx, WORD PTR [eax+2]
-	cmp	edx, DWORD PTR _iToPlotY$217775[esp+56]
+	cmp	edx, DWORD PTR _iToPlotY$218252[esp+56]
 	je	SHORT $LN94@IsSlowedBy
 $LN5@IsSlowedBy:
 
@@ -3462,17 +3462,17 @@ $LN103@IsSlowedBy:
 ; 422  : 				// Loop through all units to see if there's an enemy unit here
 ; 423  : 				while(pAdjUnitNode != NULL)
 
-	cmp	DWORD PTR _pAdjUnitNode$217770[esp+56], 0
+	cmp	DWORD PTR _pAdjUnitNode$218247[esp+56], 0
 	jne	$LL101@IsSlowedBy
 $LN30@IsSlowedBy:
 
 ; 389  : 
 ; 390  : 		for(int iDirection0 = 0; iDirection0 < NUM_DIRECTION_TYPES; iDirection0++)
 
-	mov	eax, DWORD PTR _iDirection0$217780[esp+56]
+	mov	eax, DWORD PTR _iDirection0$218257[esp+56]
 	inc	eax
 	cmp	eax, 6
-	mov	DWORD PTR _iDirection0$217780[esp+56], eax
+	mov	DWORD PTR _iDirection0$218257[esp+56], eax
 	jl	$LL106@IsSlowedBy
 $LN29@IsSlowedBy:
 	pop	ebx
@@ -3534,7 +3534,7 @@ _TEXT	SEGMENT
 _iRouteFlatCost$ = -16					; size = 4
 _iRouteCost$ = -12					; size = 4
 _iRegularCost$ = -8					; size = 4
-$T219078 = -4						; size = 4
+$T219555 = -4						; size = 4
 _pUnit$ = 8						; size = 4
 _pFromPlot$ = 12					; size = 4
 _pToPlot$ = 16						; size = 4
@@ -3660,7 +3660,7 @@ $LN5@MovementCo:
 	mov	ecx, DWORD PTR _iRouteFlatCost$[esp+56]
 	add	esp, 28					; 0000001cH
 	cmp	ecx, DWORD PTR _iRouteCost$[esp+28]
-	mov	DWORD PTR $T219078[esp+28], 1
+	mov	DWORD PTR $T219555[esp+28], 1
 	lea	eax, DWORD PTR _iRouteFlatCost$[esp+28]
 	jl	SHORT $LN17@MovementCo
 	lea	eax, DWORD PTR _iRouteCost$[esp+28]
@@ -3672,7 +3672,7 @@ $LN17@MovementCo:
 $LN21@MovementCo:
 	cmp	DWORD PTR [eax], 1
 	jg	SHORT $LN25@MovementCo
-	lea	eax, DWORD PTR $T219078[esp+28]
+	lea	eax, DWORD PTR $T219555[esp+28]
 $LN25@MovementCo:
 	mov	eax, DWORD PTR [eax]
 $LN10@MovementCo:
@@ -3693,7 +3693,7 @@ _TEXT	SEGMENT
 _iRouteFlatCost$ = -16					; size = 4
 _iRouteCost$ = -12					; size = 4
 _iRegularCost$ = -8					; size = 4
-$T219114 = -4						; size = 4
+$T219591 = -4						; size = 4
 _pUnit$ = 8						; size = 4
 _pFromPlot$ = 12					; size = 4
 _pToPlot$ = 16						; size = 4
@@ -3800,7 +3800,7 @@ $LN1@MovementCo@2:
 	mov	ecx, DWORD PTR _iRouteFlatCost$[esp+56]
 	add	esp, 28					; 0000001cH
 	cmp	ecx, DWORD PTR _iRouteCost$[esp+28]
-	mov	DWORD PTR $T219114[esp+28], 1
+	mov	DWORD PTR $T219591[esp+28], 1
 	lea	eax, DWORD PTR _iRouteFlatCost$[esp+28]
 	jl	SHORT $LN13@MovementCo@2
 	lea	eax, DWORD PTR _iRouteCost$[esp+28]
@@ -3812,7 +3812,7 @@ $LN13@MovementCo@2:
 $LN17@MovementCo@2:
 	cmp	DWORD PTR [eax], 1
 	jg	SHORT $LN21@MovementCo@2
-	lea	eax, DWORD PTR $T219114[esp+28]
+	lea	eax, DWORD PTR $T219591[esp+28]
 $LN21@MovementCo@2:
 	mov	eax, DWORD PTR [eax]
 $LN6@MovementCo@2:

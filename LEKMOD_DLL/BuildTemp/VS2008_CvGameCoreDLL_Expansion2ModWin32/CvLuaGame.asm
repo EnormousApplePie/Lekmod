@@ -10,538 +10,564 @@ INCLUDELIB MSVCRT
 INCLUDELIB OLDNAMES
 
 CONST	SEGMENT
-$SG221614 DB	'Game', 00H
+$SG222123 DB	'Game', 00H
 	ORG $+3
-$SG221622 DB	'CanHandleAction', 00H
-$SG221623 DB	'HandleAction', 00H
+$SG222131 DB	'CanHandleAction', 00H
+$SG222132 DB	'HandleAction', 00H
 	ORG $+3
-$SG221624 DB	'UpdateScore', 00H
-$SG221625 DB	'CycleCities', 00H
-$SG221626 DB	'CycleUnits', 00H
+$SG222133 DB	'UpdateScore', 00H
+$SG222134 DB	'CycleCities', 00H
+$SG222135 DB	'CycleUnits', 00H
 	ORG $+1
-$SG221627 DB	'CyclePlotUnits', 00H
+$SG222136 DB	'CyclePlotUnits', 00H
 	ORG $+1
-$SG221628 DB	'SelectionListMove', 00H
+$SG222137 DB	'SelectionListMove', 00H
 	ORG $+2
-$SG221629 DB	'SelectionListGameNetMessage', 00H
-$SG221630 DB	'SelectedCitiesGameNetMessage', 00H
+$SG222138 DB	'SelectionListGameNetMessage', 00H
+$SG222139 DB	'SelectedCitiesGameNetMessage', 00H
 	ORG $+3
-$SG221631 DB	'CityPushOrder', 00H
+$SG222140 DB	'CityPushOrder', 00H
 	ORG $+2
-$SG221632 DB	'CityPurchaseUnit', 00H
+$SG222141 DB	'CityPurchaseUnit', 00H
 	ORG $+3
-$SG221633 DB	'CityPurchaseBuilding', 00H
+$SG222142 DB	'CityPurchaseBuilding', 00H
 	ORG $+3
-$SG221634 DB	'CityPurchaseProject', 00H
-$SG221635 DB	'GetProductionPerPopulation', 00H
+$SG222143 DB	'CityPurchaseProject', 00H
+$SG222144 DB	'GetProductionPerPopulation', 00H
 	ORG $+1
-$SG221636 DB	'GetAdjustedPopulationPercent', 00H
+$SG222145 DB	'GetAdjustedPopulationPercent', 00H
 	ORG $+3
-$SG221637 DB	'GetAdjustedLandPercent', 00H
+$SG222146 DB	'GetAdjustedLandPercent', 00H
 	ORG $+1
-$SG221638 DB	'GetUnitedNationsCountdown', 00H
+$SG222147 DB	'GetUnitedNationsCountdown', 00H
 	ORG $+2
-$SG221639 DB	'SetUnitedNationsCountdown', 00H
+$SG222148 DB	'SetUnitedNationsCountdown', 00H
 	ORG $+2
-$SG221640 DB	'CountCivPlayersAlive', 00H
+$SG222149 DB	'CountCivPlayersAlive', 00H
 	ORG $+3
-$SG221641 DB	'CountCivPlayersEverAlive', 00H
+$SG222150 DB	'CountCivPlayersEverAlive', 00H
 	ORG $+3
-$SG221642 DB	'CountCivTeamsAlive', 00H
+$SG222151 DB	'CountCivTeamsAlive', 00H
 	ORG $+1
-$SG221643 DB	'CountCivTeamsEverAlive', 00H
+$SG222152 DB	'CountCivTeamsEverAlive', 00H
 	ORG $+1
-$SG221644 DB	'CountHumanPlayersAlive', 00H
+$SG222153 DB	'CountHumanPlayersAlive', 00H
 	ORG $+1
-$SG221645 DB	'CountHumanPlayersEverAlive', 00H
+$SG222154 DB	'CountHumanPlayersEverAlive', 00H
 	ORG $+1
-$SG221646 DB	'CountTotalCivPower', 00H
+$SG222155 DB	'CountTotalCivPower', 00H
 	ORG $+1
-$SG221647 DB	'CountTotalNukeUnits', 00H
-$SG221648 DB	'CountKnownTechNumTeams', 00H
+$SG222156 DB	'CountTotalNukeUnits', 00H
+$SG222157 DB	'CountKnownTechNumTeams', 00H
 	ORG $+1
-$SG221649 DB	'GoldenAgeLength', 00H
-$SG221650 DB	'VictoryDelay', 00H
+$SG222158 DB	'GoldenAgeLength', 00H
+$SG222159 DB	'VictoryDelay', 00H
 	ORG $+3
-$SG221651 DB	'GetImprovementUpgradeTime', 00H
+$SG222160 DB	'GetImprovementUpgradeTime', 00H
 	ORG $+2
-$SG221652 DB	'CanTrainNukes', 00H
+$SG222161 DB	'CanTrainNukes', 00H
 	ORG $+2
-$SG221653 DB	'GetCurrentEra', 00H
+$SG222162 DB	'GetCurrentEra', 00H
 	ORG $+2
-$SG221654 DB	'GetDiploResponse', 00H
+$SG222163 DB	'GetDiploResponse', 00H
 	ORG $+3
-$SG221655 DB	'GetActiveTeam', 00H
+$SG222164 DB	'GetActiveTeam', 00H
 	ORG $+2
-$SG221656 DB	'GetActiveCivilizationType', 00H
+$SG222165 DB	'GetActiveCivilizationType', 00H
 	ORG $+2
-$SG221657 DB	'IsNetworkMultiPlayer', 00H
+$SG222166 DB	'IsNetworkMultiPlayer', 00H
 	ORG $+3
-$SG221658 DB	'IsGameMultiPlayer', 00H
+$SG222167 DB	'IsGameMultiPlayer', 00H
 	ORG $+2
-$SG221659 DB	'IsTeamGame', 00H
+$SG222168 DB	'IsTeamGame', 00H
 	ORG $+1
-$SG221660 DB	'ReviveActivePlayer', 00H
+$SG222169 DB	'ReviveActivePlayer', 00H
 	ORG $+1
-$SG221661 DB	'GetNumHumanPlayers', 00H
+$SG222170 DB	'GetNumHumanPlayers', 00H
 	ORG $+1
-$SG221662 DB	'GetNumSequentialHumans', 00H
+$SG222171 DB	'GetNumSequentialHumans', 00H
 	ORG $+1
-$SG221663 DB	'GetGameTurn', 00H
-$SG221664 DB	'SetGameTurn', 00H
-$SG221665 DB	'GetTurnYear', 00H
-$SG221666 DB	'GetGameTurnYear', 00H
-$SG221667 DB	'GetTurnString', 00H
+$SG222172 DB	'GetGameTurn', 00H
+$SG222173 DB	'SetGameTurn', 00H
+$SG222174 DB	'GetTurnYear', 00H
+$SG222175 DB	'GetGameTurnYear', 00H
+$SG222176 DB	'GetTurnString', 00H
 	ORG $+2
-$SG221668 DB	'GetElapsedGameTurns', 00H
-$SG221669 DB	'GetMaxTurns', 00H
-$SG221670 DB	'SetMaxTurns', 00H
-$SG221671 DB	'ChangeMaxTurns', 00H
+$SG222177 DB	'GetElapsedGameTurns', 00H
+$SG222178 DB	'GetMaxTurns', 00H
+$SG222179 DB	'SetMaxTurns', 00H
+$SG222180 DB	'ChangeMaxTurns', 00H
 	ORG $+1
-$SG221672 DB	'GetMaxCityElimination', 00H
+$SG222181 DB	'GetMaxCityElimination', 00H
 	ORG $+2
-$SG221673 DB	'SetMaxCityElimination', 00H
+$SG222182 DB	'SetMaxCityElimination', 00H
 	ORG $+2
-$SG221674 DB	'GetNumAdvancedStartPoints', 00H
+$SG222183 DB	'GetNumAdvancedStartPoints', 00H
 	ORG $+2
-$SG221675 DB	'SetNumAdvancedStartPoints', 00H
+$SG222184 DB	'SetNumAdvancedStartPoints', 00H
 	ORG $+2
-$SG221676 DB	'GetStartTurn', 00H
+$SG222185 DB	'GetStartTurn', 00H
 	ORG $+3
-$SG221677 DB	'GetWinningTurn', 00H
+$SG222186 DB	'GetWinningTurn', 00H
 	ORG $+1
-$SG221678 DB	'GetStartYear', 00H
+$SG222187 DB	'GetStartYear', 00H
 	ORG $+3
-$SG221679 DB	'SetStartYear', 00H
+$SG222188 DB	'SetStartYear', 00H
 	ORG $+3
-$SG221680 DB	'GetEstimateEndTurn', 00H
+$SG222189 DB	'GetEstimateEndTurn', 00H
 	ORG $+1
-$SG221681 DB	'SetEstimateEndTurn', 00H
+$SG222190 DB	'SetEstimateEndTurn', 00H
 	ORG $+1
-$SG221682 DB	'GetTurnSlice', 00H
+$SG222191 DB	'GetTurnSlice', 00H
 	ORG $+3
-$SG221683 DB	'GetMinutesPlayed', 00H
+$SG222192 DB	'GetMinutesPlayed', 00H
 	ORG $+3
-$SG221684 DB	'GetTargetScore', 00H
+$SG222193 DB	'GetTargetScore', 00H
 	ORG $+1
-$SG221685 DB	'SetTargetScore', 00H
+$SG222194 DB	'SetTargetScore', 00H
 	ORG $+1
-$SG221686 DB	'IsStaticTutorialActive', 00H
+$SG222195 DB	'IsStaticTutorialActive', 00H
 	ORG $+1
-$SG221687 DB	'SetStaticTutorialActive', 00H
-$SG221688 DB	'IsEverRightClickMoved', 00H
+$SG222196 DB	'SetStaticTutorialActive', 00H
+$SG222197 DB	'IsEverRightClickMoved', 00H
 	ORG $+2
-$SG221689 DB	'SetEverRightClickMoved', 00H
+$SG222198 DB	'SetEverRightClickMoved', 00H
 	ORG $+1
-$SG221690 DB	'IsTutorialLogging', 00H
+$SG222199 DB	'IsTutorialLogging', 00H
 	ORG $+2
-$SG221691 DB	'IsTutorialDebugging', 00H
-$SG221692 DB	'GetTutorialLevel', 00H
+$SG222200 DB	'IsTutorialDebugging', 00H
+$SG222201 DB	'GetTutorialLevel', 00H
 	ORG $+3
-$SG221693 DB	'HasAdvisorMessageBeenSeen', 00H
+$SG222202 DB	'HasAdvisorMessageBeenSeen', 00H
 	ORG $+2
-$SG221694 DB	'SetAdvisorMessageHasBeenSeen', 00H
+$SG222203 DB	'SetAdvisorMessageHasBeenSeen', 00H
 	ORG $+3
-$SG221695 DB	'SetAdvisorBadAttackInterrupt', 00H
+$SG222204 DB	'SetAdvisorBadAttackInterrupt', 00H
 	ORG $+3
-$SG221696 DB	'SetAdvisorCityAttackInterrupt', 00H
+$SG222205 DB	'SetAdvisorCityAttackInterrupt', 00H
 	ORG $+2
-$SG221697 DB	'GetAllowRClickMovementWhileScrolling', 00H
+$SG222206 DB	'GetAllowRClickMovementWhileScrolling', 00H
 	ORG $+3
-$SG221698 DB	'GetNumGameTurnActive', 00H
+$SG222207 DB	'GetNumGameTurnActive', 00H
 	ORG $+3
-$SG221699 DB	'CountNumHumanGameTurnActive', 00H
-$SG221700 DB	'GetNumCities', 00H
+$SG222208 DB	'CountNumHumanGameTurnActive', 00H
+$SG222209 DB	'GetNumCities', 00H
 	ORG $+3
-$SG221701 DB	'GetNumCivCities', 00H
-$SG221702 DB	'GetTotalPopulation', 00H
+$SG222210 DB	'GetNumCivCities', 00H
+$SG222211 DB	'GetTotalPopulation', 00H
 	ORG $+1
-$SG221703 DB	'GetNoNukesCount', 00H
-$SG221704 DB	'IsNoNukes', 00H
+$SG222212 DB	'GetNoNukesCount', 00H
+$SG222213 DB	'IsNoNukes', 00H
 	ORG $+2
-$SG221705 DB	'ChangeNoNukesCount', 00H
+$SG222214 DB	'ChangeNoNukesCount', 00H
 	ORG $+1
-$SG221706 DB	'GetNukesExploded', 00H
+$SG222215 DB	'GetNukesExploded', 00H
 	ORG $+3
-$SG221707 DB	'ChangeNukesExploded', 00H
-$SG221708 DB	'GetMaxPopulation', 00H
+$SG222216 DB	'ChangeNukesExploded', 00H
+$SG222217 DB	'GetMaxPopulation', 00H
 	ORG $+3
-$SG221709 DB	'GetInitPopulation', 00H
+$SG222218 DB	'GetInitPopulation', 00H
 	ORG $+2
-$SG221710 DB	'GetInitLand', 00H
-$SG221711 DB	'GetInitTech', 00H
-$SG221712 DB	'GetInitWonders', 00H
+$SG222219 DB	'GetInitLand', 00H
+$SG222220 DB	'GetInitTech', 00H
+$SG222221 DB	'GetInitWonders', 00H
 	ORG $+1
-$SG221713 DB	'GetNumWorldWonders', 00H
+$SG222222 DB	'GetNumWorldWonders', 00H
 	ORG $+1
-$SG221714 DB	'GetAIAutoPlay', 00H
+$SG222223 DB	'GetAIAutoPlay', 00H
 	ORG $+2
-$SG221715 DB	'SetAIAutoPlay', 00H
+$SG222224 DB	'SetAIAutoPlay', 00H
 	ORG $+2
-$SG221716 DB	'IsScoreDirty', 00H
+$SG222225 DB	'IsScoreDirty', 00H
 	ORG $+3
-$SG221717 DB	'SetScoreDirty', 00H
+$SG222226 DB	'SetScoreDirty', 00H
 	ORG $+2
-$SG221718 DB	'IsCircumnavigated', 00H
+$SG222227 DB	'IsCircumnavigated', 00H
 	ORG $+2
-$SG221719 DB	'MakeCircumnavigated', 00H
-$SG221720 DB	'DoFromUIDiploEvent', 00H
+$SG222228 DB	'MakeCircumnavigated', 00H
+$SG222229 DB	'DoFromUIDiploEvent', 00H
 	ORG $+1
-$SG221721 DB	'IsDebugMode', 00H
-$SG221722 DB	'SetDebugMode', 00H
+$SG222230 DB	'IsDebugMode', 00H
+$SG222231 DB	'SetDebugMode', 00H
 	ORG $+3
-$SG221723 DB	'ToggleDebugMode', 00H
-$SG221724 DB	'UpdateFOW', 00H
+$SG222232 DB	'ToggleDebugMode', 00H
+$SG222233 DB	'UpdateFOW', 00H
 	ORG $+2
-$SG221725 DB	'GetPitbossTurnTime', 00H
+$SG222234 DB	'GetPitbossTurnTime', 00H
 	ORG $+1
-$SG221726 DB	'SetPitbossTurnTime', 00H
+$SG222235 DB	'SetPitbossTurnTime', 00H
 	ORG $+1
-$SG221727 DB	'IsHotSeat', 00H
+$SG222236 DB	'IsHotSeat', 00H
 	ORG $+2
-$SG221728 DB	'IsPbem', 00H
+$SG222237 DB	'IsPbem', 00H
 	ORG $+1
-$SG221729 DB	'IsPitboss', 00H
+$SG222238 DB	'IsPitboss', 00H
 	ORG $+2
-$SG221730 DB	'IsSimultaneousTeamTurns', 00H
-$SG221731 DB	'IsFinalInitialized', 00H
+$SG222239 DB	'IsSimultaneousTeamTurns', 00H
+$SG222240 DB	'IsFinalInitialized', 00H
 	ORG $+1
-$SG221732 DB	'GetActivePlayer', 00H
-$SG221733 DB	'SetActivePlayer', 00H
-$SG221734 DB	'GetPausePlayer', 00H
+$SG222241 DB	'GetActivePlayer', 00H
+$SG222242 DB	'SetActivePlayer', 00H
+$SG222243 DB	'GetPausePlayer', 00H
 	ORG $+1
-$SG221735 DB	'SetPausePlayer', 00H
+$SG222244 DB	'SetPausePlayer', 00H
 	ORG $+1
-$SG221736 DB	'IsPaused', 00H
+$SG222245 DB	'IsPaused', 00H
 	ORG $+3
-$SG221737 DB	'GetBestLandUnit', 00H
-$SG221738 DB	'GetBestLandUnitCombat', 00H
+$SG222246 DB	'GetBestLandUnit', 00H
+$SG222247 DB	'GetBestLandUnitCombat', 00H
 	ORG $+2
-$SG221739 DB	'GetFaithCost', 00H
+$SG222248 DB	'GetFaithCost', 00H
 	ORG $+3
-$SG221740 DB	'GetWinner', 00H
+$SG222249 DB	'GetWinner', 00H
 	ORG $+2
-$SG221741 DB	'GetVictory', 00H
+$SG222250 DB	'GetVictory', 00H
 	ORG $+1
-$SG221742 DB	'SetWinner', 00H
+$SG222251 DB	'SetWinner', 00H
 	ORG $+2
-$SG221743 DB	'GetGameState', 00H
+$SG222252 DB	'GetGameState', 00H
 	ORG $+3
-$SG221744 DB	'SetGameState', 00H
+$SG222253 DB	'SetGameState', 00H
 	ORG $+3
-$SG221745 DB	'GetVotesNeededForDiploVictory', 00H
+$SG222254 DB	'GetVotesNeededForDiploVictory', 00H
 	ORG $+2
-$SG221746 DB	'IsUnitedNationsActive', 00H
+$SG222255 DB	'IsUnitedNationsActive', 00H
 	ORG $+2
-$SG221747 DB	'GetNumVictoryVotesTallied', 00H
+$SG222256 DB	'GetNumVictoryVotesTallied', 00H
 	ORG $+2
-$SG221748 DB	'GetVoteCast', 00H
-$SG221749 DB	'GetPreviousVoteCast', 00H
-$SG221750 DB	'GetNumVotesForTeam', 00H
+$SG222257 DB	'GetVoteCast', 00H
+$SG222258 DB	'GetPreviousVoteCast', 00H
+$SG222259 DB	'GetNumVotesForTeam', 00H
 	ORG $+1
-$SG221751 DB	'SetNumVotesForTeam', 00H
+$SG222260 DB	'SetNumVotesForTeam', 00H
 	ORG $+1
-$SG221752 DB	'ChangeNumVotesForTeam', 00H
+$SG222261 DB	'ChangeNumVotesForTeam', 00H
 	ORG $+2
-$SG221753 DB	'GetHandicapType', 00H
-$SG221754 DB	'GetCalendar', 00H
-$SG221755 DB	'GetStartEra', 00H
-$SG221756 DB	'GetGameSpeedType', 00H
+$SG222262 DB	'GetHandicapType', 00H
+$SG222263 DB	'GetCalendar', 00H
+$SG222264 DB	'GetStartEra', 00H
+$SG222265 DB	'GetGameSpeedType', 00H
 	ORG $+3
-$SG221757 DB	'GetRankPlayer', 00H
+$SG222266 DB	'GetRankPlayer', 00H
 	ORG $+2
-$SG221758 DB	'GetPlayerRank', 00H
+$SG222267 DB	'GetPlayerRank', 00H
 	ORG $+2
-$SG221759 DB	'GetPlayerScore', 00H
+$SG222268 DB	'GetPlayerScore', 00H
 	ORG $+1
-$SG221760 DB	'GetRankTeam', 00H
-$SG221761 DB	'GetTeamRank', 00H
-$SG221762 DB	'GetTeamScore', 00H
+$SG222269 DB	'GetRankTeam', 00H
+$SG222270 DB	'GetTeamRank', 00H
+$SG222271 DB	'GetTeamScore', 00H
 	ORG $+3
-$SG221763 DB	'IsOption', 00H
+$SG222272 DB	'IsOption', 00H
 	ORG $+3
-$SG221764 DB	'SetOption', 00H
+$SG222273 DB	'SetOption', 00H
 	ORG $+2
-$SG221765 DB	'IsMPOption', 00H
+$SG222274 DB	'IsMPOption', 00H
 	ORG $+1
-$SG221766 DB	'GetUnitCreatedCount', 00H
-$SG221767 DB	'GetUnitClassCreatedCount', 00H
+$SG222275 DB	'GetUnitCreatedCount', 00H
+$SG222276 DB	'GetUnitClassCreatedCount', 00H
 	ORG $+3
-$SG221768 DB	'IsUnitClassMaxedOut', 00H
-$SG221769 DB	'GetBuildingClassCreatedCount', 00H
+$SG222277 DB	'IsUnitClassMaxedOut', 00H
+$SG222278 DB	'GetBuildingClassCreatedCount', 00H
 	ORG $+3
-$SG221770 DB	'IsBuildingClassMaxedOut', 00H
-$SG221771 DB	'GetProjectCreatedCount', 00H
+$SG222279 DB	'IsBuildingClassMaxedOut', 00H
+$SG222280 DB	'GetProjectCreatedCount', 00H
 	ORG $+1
-$SG221772 DB	'IsProjectMaxedOut', 00H
+$SG222281 DB	'IsProjectMaxedOut', 00H
 	ORG $+2
-$SG221773 DB	'IsVictoryValid', 00H
+$SG222282 DB	'IsVictoryValid', 00H
 	ORG $+1
-$SG221774 DB	'SetVictoryValid', 00H
-$SG221775 DB	'IsSpecialUnitValid', 00H
+$SG222283 DB	'SetVictoryValid', 00H
+$SG222284 DB	'IsSpecialUnitValid', 00H
 	ORG $+1
-$SG221776 DB	'MakeSpecialUnitValid', 00H
+$SG222285 DB	'MakeSpecialUnitValid', 00H
 	ORG $+3
-$SG221777 DB	'IsNukesValid', 00H
+$SG222286 DB	'IsNukesValid', 00H
 	ORG $+3
-$SG221778 DB	'MakeNukesValid', 00H
+$SG222287 DB	'MakeNukesValid', 00H
 	ORG $+1
-$SG221779 DB	'IsInAdvancedStart', 00H
+$SG222288 DB	'IsInAdvancedStart', 00H
 	ORG $+2
-$SG221780 DB	'SetName', 00H
-$SG221781 DB	'GetName', 00H
-$SG221782 DB	'Rand', 00H
+$SG222289 DB	'SetName', 00H
+$SG222290 DB	'GetName', 00H
+$SG222291 DB	'Rand', 00H
 	ORG $+3
-$SG221783 DB	'CalculateSyncChecksum', 00H
+$SG222292 DB	'CalculateSyncChecksum', 00H
 	ORG $+2
-$SG221784 DB	'CalculateOptionsChecksum', 00H
+$SG222293 DB	'CalculateOptionsChecksum', 00H
 	ORG $+3
-$SG221785 DB	'GetReplayMessage', 00H
+$SG222294 DB	'GetReplayMessage', 00H
 	ORG $+3
-$SG221786 DB	'GetReplayMessages', 00H
+$SG222295 DB	'GetReplayMessages', 00H
 	ORG $+2
-$SG221787 DB	'GetNumReplayMessages', 00H
+$SG222296 DB	'GetNumReplayMessages', 00H
 	ORG $+3
-$SG221788 DB	'GetReplayInfo', 00H
+$SG222297 DB	'GetReplayInfo', 00H
 	ORG $+2
-$SG221789 DB	'SaveReplay', 00H
+$SG222298 DB	'SaveReplay', 00H
 	ORG $+1
-$SG221790 DB	'AddPlayer', 00H
+$SG222299 DB	'AddPlayer', 00H
 	ORG $+2
-$SG221791 DB	'SetPlotExtraYield', 00H
+$SG222300 DB	'SetPlotExtraYield', 00H
 	ORG $+2
-$SG221792 DB	'ChangePlotExtraCost', 00H
-$SG221793 DB	'IsCivEverActive', 00H
-$SG221794 DB	'IsLeaderEverActive', 00H
+$SG222301 DB	'ChangePlotExtraCost', 00H
+$SG222302 DB	'IsCivEverActive', 00H
+$SG222303 DB	'IsLeaderEverActive', 00H
 	ORG $+1
-$SG221795 DB	'IsUnitEverActive', 00H
+$SG222304 DB	'IsUnitEverActive', 00H
 	ORG $+3
-$SG221796 DB	'IsBuildingEverActive', 00H
+$SG222305 DB	'IsBuildingEverActive', 00H
 	ORG $+3
-$SG221797 DB	'CanDoControl', 00H
+$SG222306 DB	'CanDoControl', 00H
 	ORG $+3
-$SG221798 DB	'DoControl', 00H
+$SG222307 DB	'DoControl', 00H
 	ORG $+2
-$SG221799 DB	'DoMinorPledgeProtection', 00H
-$SG221800 DB	'DoMinorGoldGift', 00H
-$SG221801 DB	'DoMinorGiftGold', 00H
-$SG221802 DB	'DoMinorGiftTileImprovement', 00H
+$SG222308 DB	'DoMinorPledgeProtection', 00H
+$SG222309 DB	'DoMinorGoldGift', 00H
+$SG222310 DB	'DoMinorGiftGold', 00H
+$SG222311 DB	'DoMinorGiftTileImprovement', 00H
 	ORG $+1
-$SG221803 DB	'DoMinorBullyGold', 00H
+$SG222312 DB	'DoMinorBullyGold', 00H
 	ORG $+3
-$SG221804 DB	'DoMinorBullyUnit', 00H
+$SG222313 DB	'DoMinorBullyUnit', 00H
 	ORG $+3
-$SG221805 DB	'DoMinorBuyout', 00H
+$SG222314 DB	'DoMinorBuyout', 00H
 	ORG $+2
-$SG221806 DB	'GetBestWondersPlayer', 00H
+$SG222315 DB	'GetBestWondersPlayer', 00H
 	ORG $+3
-$SG221807 DB	'GetBestPoliciesPlayer', 00H
+$SG222316 DB	'GetBestPoliciesPlayer', 00H
 	ORG $+2
-$SG221808 DB	'GetBestGreatPeoplePlayer', 00H
+$SG222317 DB	'GetBestGreatPeoplePlayer', 00H
 	ORG $+3
-$SG221809 DB	'IsEverAttackedTutorial', 00H
+$SG222318 DB	'IsEverAttackedTutorial', 00H
 	ORG $+1
-$SG221810 DB	'GameplayDiplomacyAILeaderMessage', 00H
+$SG222319 DB	'GameplayDiplomacyAILeaderMessage', 00H
 	ORG $+3
-$SG221811 DB	'GetResourceUsageType', 00H
+$SG222320 DB	'GetResourceUsageType', 00H
 	ORG $+3
-$SG221812 DB	'GetNumResourceRequiredForUnit', 00H
+$SG222321 DB	'GetNumResourceRequiredForUnit', 00H
 	ORG $+2
-$SG221813 DB	'GetNumResourceRequiredForBuilding', 00H
+$SG222322 DB	'GetNumResourceRequiredForBuilding', 00H
 	ORG $+2
-$SG221814 DB	'IsCombatWarned', 00H
+$SG222323 DB	'IsCombatWarned', 00H
 	ORG $+1
-$SG221815 DB	'SetCombatWarned', 00H
-$SG221816 DB	'GetAdvisorCounsel', 00H
+$SG222324 DB	'SetCombatWarned', 00H
+$SG222325 DB	'GetAdvisorCounsel', 00H
 	ORG $+2
-$SG221817 DB	'SetAdvisorRecommenderCity', 00H
+$SG222326 DB	'SetAdvisorRecommenderCity', 00H
 	ORG $+2
-$SG221818 DB	'IsUnitRecommended', 00H
+$SG222327 DB	'IsUnitRecommended', 00H
 	ORG $+2
-$SG221819 DB	'IsBuildingRecommended', 00H
+$SG222328 DB	'IsBuildingRecommended', 00H
 	ORG $+2
-$SG221820 DB	'IsProjectRecommended', 00H
+$SG222329 DB	'IsProjectRecommended', 00H
 	ORG $+3
-$SG221821 DB	'SetAdvisorRecommenderTech', 00H
+$SG222330 DB	'SetAdvisorRecommenderTech', 00H
 	ORG $+2
-$SG221822 DB	'IsTechRecommended', 00H
+$SG222331 DB	'IsTechRecommended', 00H
 	ORG $+2
-$SG221823 DB	'GetVariableCitySizeFromPopulation', 00H
+$SG222332 DB	'GetVariableCitySizeFromPopulation', 00H
 	ORG $+2
-$SG221824 DB	'GetResearchAgreementCost', 00H
+$SG222333 DB	'GetResearchAgreementCost', 00H
 	ORG $+3
-$SG221825 DB	'GetCustomOption', 00H
-$SG221826 DB	'GetNumCitiesPolicyCostMod', 00H
+$SG222334 DB	'GetCustomOption', 00H
+$SG222335 DB	'GetNumCitiesPolicyCostMod', 00H
 	ORG $+2
-$SG221827 DB	'GetNumCitiesTechCostMod', 00H
-$SG221828 DB	'GetBuildingYieldChange', 00H
+$SG222336 DB	'GetNumCitiesTechCostMod', 00H
+$SG222337 DB	'GetBuildingYieldChange', 00H
 	ORG $+1
-$SG221829 DB	'GetBuildingYieldModifier', 00H
+$SG222338 DB	'GetBuildingYieldModifier', 00H
 	ORG $+3
-$SG221830 DB	'GetWorldNumCitiesUnhappinessPercent', 00H
-$SG221831 DB	'GetDealDuration', 00H
-$SG221832 DB	'GetPeaceDuration', 00H
+$SG222339 DB	'GetWorldNumCitiesUnhappinessPercent', 00H
+$SG222340 DB	'GetDealDuration', 00H
+$SG222341 DB	'GetPeaceDuration', 00H
 	ORG $+3
-$SG221833 DB	'GetUnitUpgradesTo', 00H
+$SG222342 DB	'GetUnitUpgradesTo', 00H
 	ORG $+2
-$SG221834 DB	'GetCombatPrediction', 00H
-$SG221835 DB	'GetTimeString', 00H
+$SG222343 DB	'GetCombatPrediction', 00H
+$SG222344 DB	'GetTimeString', 00H
 	ORG $+2
-$SG221836 DB	'GetMinimumFaithNextPantheon', 00H
-$SG221837 DB	'SetMinimumFaithNextPantheon', 00H
-$SG221838 DB	'GetAvailablePantheonBeliefs', 00H
-$SG221839 DB	'GetAvailableFounderBeliefs', 00H
+$SG222345 DB	'GetMinimumFaithNextPantheon', 00H
+$SG222346 DB	'SetMinimumFaithNextPantheon', 00H
+$SG222347 DB	'GetAvailablePantheonBeliefs', 00H
+$SG222348 DB	'GetAvailableFounderBeliefs', 00H
 	ORG $+1
-$SG221840 DB	'GetAvailableFollowerBeliefs', 00H
-$SG221841 DB	'GetAvailableEnhancerBeliefs', 00H
-$SG221842 DB	'GetAvailableBonusBeliefs', 00H
+$SG222349 DB	'GetAvailableFollowerBeliefs', 00H
+$SG222350 DB	'GetAvailableEnhancerBeliefs', 00H
+$SG222351 DB	'GetAvailableBonusBeliefs', 00H
 	ORG $+3
-$SG221843 DB	'GetAvailableReformationBeliefs', 00H
+$SG222352 DB	'GetAvailableReformationBeliefs', 00H
 	ORG $+1
-$SG221844 DB	'GetNumFollowers', 00H
-$SG221845 DB	'GetNumCitiesFollowing', 00H
+$SG222353 DB	'GetNumFollowers', 00H
+$SG222354 DB	'GetNumCitiesFollowing', 00H
 	ORG $+2
-$SG221846 DB	'GetBeliefsInReligion', 00H
+$SG222355 DB	'GetBeliefsInReligion', 00H
 	ORG $+3
-$SG221847 DB	'GetNumReligionsStillToFound', 00H
-$SG221848 DB	'GetNumReligionsFounded', 00H
+$SG222356 DB	'GetNumReligionsStillToFound', 00H
+$SG222357 DB	'GetNumReligionsFounded', 00H
 	ORG $+1
-$SG221849 DB	'GetHolyCityForReligion', 00H
+$SG222358 DB	'GetHolyCityForReligion', 00H
 	ORG $+1
-$SG221850 DB	'GetReligionName', 00H
-$SG221851 DB	'GetFounderBenefitsReligion', 00H
+$SG222359 DB	'GetReligionName', 00H
+$SG222360 DB	'GetFounderBenefitsReligion', 00H
 	ORG $+1
-$SG221852 DB	'FoundPantheon', 00H
+$SG222361 DB	'FoundPantheon', 00H
 	ORG $+2
-$SG221853 DB	'FoundReligion', 00H
+$SG222362 DB	'FoundReligion', 00H
 	ORG $+2
-$SG221854 DB	'EnhanceReligion', 00H
-$SG221855 DB	'SetHolyCity', 00H
-$SG221856 DB	'GetFounder', 00H
+$SG222363 DB	'EnhanceReligion', 00H
+$SG222364 DB	'SetHolyCity', 00H
+$SG222365 DB	'GetFounder', 00H
 	ORG $+1
-$SG221857 DB	'SetFounder', 00H
+$SG222366 DB	'SetFounder', 00H
 	ORG $+1
-$SG221858 DB	'GetTurnsBetweenMinorCivElections', 00H
+$SG222367 DB	'GetTurnsBetweenMinorCivElections', 00H
 	ORG $+3
-$SG221859 DB	'GetTurnsUntilMinorCivElection', 00H
+$SG222368 DB	'GetTurnsUntilMinorCivElection', 00H
 	ORG $+2
-$SG221860 DB	'GetNumActiveLeagues', 00H
-$SG221861 DB	'GetNumLeaguesEverFounded', 00H
+$SG222369 DB	'GetNumActiveLeagues', 00H
+$SG222370 DB	'GetNumLeaguesEverFounded', 00H
 	ORG $+3
-$SG221862 DB	'GetLeague', 00H
+$SG222371 DB	'GetLeague', 00H
 	ORG $+2
-$SG221863 DB	'GetActiveLeague', 00H
-$SG221864 DB	'IsProcessingMessages', 00H
+$SG222372 DB	'GetActiveLeague', 00H
+$SG222373 DB	'IsProcessingMessages', 00H
 	ORG $+3
-$SG221865 DB	'GetGreatWorkTooltip', 00H
-$SG221866 DB	'GetGreatWorkName', 00H
+$SG222374 DB	'GetGreatWorkTooltip', 00H
+$SG222375 DB	'GetGreatWorkName', 00H
 	ORG $+3
-$SG221867 DB	'GetGreatWorkType', 00H
+$SG222376 DB	'GetGreatWorkType', 00H
 	ORG $+3
-$SG221868 DB	'GetGreatWorkClass', 00H
+$SG222377 DB	'GetGreatWorkClass', 00H
 	ORG $+2
-$SG221869 DB	'GetGreatWorkArtist', 00H
+$SG222378 DB	'GetGreatWorkArtist', 00H
 	ORG $+1
-$SG221870 DB	'GetGreatWorkEra', 00H
-$SG221871 DB	'GetGreatWorkEraAbbreviation', 00H
-$SG221872 DB	'GetGreatWorkEraShort', 00H
+$SG222379 DB	'GetGreatWorkEra', 00H
+$SG222380 DB	'GetGreatWorkEraAbbreviation', 00H
+$SG222381 DB	'GetGreatWorkEraShort', 00H
 	ORG $+3
-$SG221873 DB	'GetGreatWorkCreator', 00H
-$SG221874 DB	'GetGreatWorkController', 00H
+$SG222382 DB	'GetGreatWorkCreator', 00H
+$SG222383 DB	'GetGreatWorkController', 00H
 	ORG $+1
-$SG221875 DB	'GetGreatWorkCurrentThemingBonus', 00H
-$SG221876 DB	'GetArtifactName', 00H
-$SG221877 DB	'GetNumFreePolicies', 00H
+$SG222384 DB	'GetGreatWorkCurrentThemingBonus', 00H
+$SG222385 DB	'GetArtifactName', 00H
+$SG222386 DB	'GetNumFreePolicies', 00H
 	ORG $+1
-$SG221878 DB	'GetLongestCityConnectionPlots', 00H
+$SG222387 DB	'GetLongestCityConnectionPlots', 00H
 	ORG $+2
-$SG221879 DB	'SelectedUnit_SpeculativePopupTradeRoute_Display', 00H
-$SG221880 DB	'SelectedUnit_SpeculativePopupTradeRoute_Hide', 00H
+$SG222388 DB	'SelectedUnit_SpeculativePopupTradeRoute_Display', 00H
+$SG222389 DB	'SelectedUnit_SpeculativePopupTradeRoute_Hide', 00H
 	ORG $+3
-$SG221881 DB	'MouseoverUnit', 00H
+$SG222390 DB	'MouseoverUnit', 00H
 	ORG $+2
-$SG221882 DB	'GetNumArchaeologySites', 00H
+$SG222391 DB	'GetNumArchaeologySites', 00H
 	ORG $+1
-$SG221883 DB	'GetNumHiddenArchaeologySites', 00H
+$SG222392 DB	'GetNumHiddenArchaeologySites', 00H
 	ORG $+3
-$SG223611 DB	'NYI', 00H
-$SG223634 DB	'Player', 00H
+$SG222393 DB	'GetLastProposalID', 00H
+	ORG $+2
+$SG222394 DB	'GetProposalIDbyUIid', 00H
+$SG222395 DB	'GetProposalExpirationCounter', 00H
+	ORG $+3
+$SG222396 DB	'GetProposalType', 00H
+$SG222397 DB	'GetProposalStatus', 00H
+	ORG $+2
+$SG222398 DB	'GetProposalOwner', 00H
+	ORG $+3
+$SG222399 DB	'GetProposalSubject', 00H
 	ORG $+1
-$SG223635 DB	'Turn', 00H
-	ORG $+3
-$SG223636 DB	'Type', 00H
-	ORG $+3
-$SG223639 DB	'Text', 00H
-	ORG $+3
-$SG223651 DB	'X', 00H
+$SG222400 DB	'GetProposalCompletion', 00H
 	ORG $+2
-$SG223652 DB	'Y', 00H
-	ORG $+2
-$SG223653 DB	'Plots', 00H
-	ORG $+2
-$SG223667 DB	'Player', 00H
+$SG222401 DB	'GetProposalVoterVote', 00H
+	ORG $+3
+$SG222402 DB	'GetProposalVoterHasVoted', 00H
+	ORG $+3
+$SG222403 DB	'GetProposalVoterEligibility', 00H
+$SG222404 DB	'GetYesVotes', 00H
+$SG222405 DB	'GetNoVotes', 00H
 	ORG $+1
-$SG223668 DB	'Turn', 00H
-	ORG $+3
-$SG223669 DB	'Type', 00H
-	ORG $+3
-$SG223672 DB	'Text', 00H
-	ORG $+3
-$SG223684 DB	'X', 00H
+$SG222406 DB	'GetMaxVotes', 00H
+$SG222407 DB	'IsPlayerHasActiveProposal', 00H
 	ORG $+2
-$SG223685 DB	'Y', 00H
-	ORG $+2
-$SG223686 DB	'Plots', 00H
-	ORG $+2
-$SG223709 DB	'NYI', 00H
-$SG224214 DB	'TEMP', 00H
-	ORG $+3
-$SG224233 DB	'Unit row at ID %d is empty.', 00H
-$SG224381 DB	'Unit row at ID %d is empty.', 00H
-$SG225351 DB	'CIVILIZATION_ENGLAND', 00H
-	ORG $+3
-$SG225482 DB	'__instances', 00H
-$SG225483 DB	'__mode', 00H
+$SG222408 DB	'IsAnyActiveProposalType', 00H
+$SG224136 DB	'NYI', 00H
+$SG224159 DB	'Player', 00H
 	ORG $+1
-$SG225484 DB	'v', 00H
+$SG224160 DB	'Turn', 00H
+	ORG $+3
+$SG224161 DB	'Type', 00H
+	ORG $+3
+$SG224164 DB	'Text', 00H
+	ORG $+3
+$SG224176 DB	'X', 00H
 	ORG $+2
-$SG225486 DB	'__instances', 00H
-$SG225489 DB	'__instance', 00H
+$SG224177 DB	'Y', 00H
+	ORG $+2
+$SG224178 DB	'Plots', 00H
+	ORG $+2
+$SG224192 DB	'Player', 00H
 	ORG $+1
-$SG225490 DB	'__index', 00H
-$SG225505 DB	'__instance', 00H
-	ORG $+5
-$SG225511 DB	'Not a valid instance.  Either the instance is NULL or yo'
+$SG224193 DB	'Turn', 00H
+	ORG $+3
+$SG224194 DB	'Type', 00H
+	ORG $+3
+$SG224197 DB	'Text', 00H
+	ORG $+3
+$SG224209 DB	'X', 00H
+	ORG $+2
+$SG224210 DB	'Y', 00H
+	ORG $+2
+$SG224211 DB	'Plots', 00H
+	ORG $+2
+$SG224234 DB	'NYI', 00H
+$SG224739 DB	'TEMP', 00H
+	ORG $+3
+$SG224758 DB	'Unit row at ID %d is empty.', 00H
+$SG224906 DB	'Unit row at ID %d is empty.', 00H
+$SG225876 DB	'CIVILIZATION_ENGLAND', 00H
+	ORG $+3
+$SG226112 DB	'__instances', 00H
+$SG226113 DB	'__mode', 00H
+	ORG $+1
+$SG226114 DB	'v', 00H
+	ORG $+2
+$SG226116 DB	'__instances', 00H
+$SG226119 DB	'__instance', 00H
+	ORG $+1
+$SG226120 DB	'__index', 00H
+$SG226135 DB	'__instance', 00H
+	ORG $+1
+$SG226141 DB	'Not a valid instance.  Either the instance is NULL or yo'
 	DB	'u used ''.'' instead of '':''.', 00H
 	ORG $+1
-$SG225540 DB	'__instances', 00H
-$SG225541 DB	'__mode', 00H
+$SG226170 DB	'__instances', 00H
+$SG226171 DB	'__mode', 00H
 	ORG $+1
-$SG225542 DB	'v', 00H
+$SG226172 DB	'v', 00H
 	ORG $+2
-$SG225544 DB	'__instances', 00H
-$SG225547 DB	'__instance', 00H
+$SG226174 DB	'__instances', 00H
+$SG226177 DB	'__instance', 00H
 	ORG $+1
-$SG225548 DB	'__index', 00H
-$SG225563 DB	'__instance', 00H
+$SG226178 DB	'__index', 00H
+$SG226193 DB	'__instance', 00H
 	ORG $+1
-$SG225569 DB	'Not a valid instance.  Either the instance is NULL or yo'
+$SG226199 DB	'Not a valid instance.  Either the instance is NULL or yo'
 	DB	'u used ''.'' instead of '':''.', 00H
 	ORG $+1
-$SG225583 DB	'__instance', 00H
+$SG226213 DB	'__instance', 00H
 	ORG $+1
-$SG225589 DB	'Not a valid instance.  Either the instance is NULL or yo'
+$SG226219 DB	'Not a valid instance.  Either the instance is NULL or yo'
 	DB	'u used ''.'' instead of '':''.', 00H
 	ORG $+1
-$SG225600 DB	'__instances', 00H
-$SG225601 DB	'__mode', 00H
+$SG226230 DB	'__instances', 00H
+$SG226231 DB	'__mode', 00H
 	ORG $+1
-$SG225602 DB	'v', 00H
+$SG226232 DB	'v', 00H
 	ORG $+2
-$SG225604 DB	'__instances', 00H
-$SG225607 DB	'__instance', 00H
+$SG226234 DB	'__instances', 00H
+$SG226237 DB	'__instance', 00H
 	ORG $+1
-$SG225608 DB	'__index', 00H
+$SG226238 DB	'__index', 00H
 $SG92498 DB	'f2eb1642-3334-4d2c-8db1-08e6aede3532', 00H
 	ORG $+3
 _CIV5_XP2_SCENARIO2_MODID DD FLAT:$SG92498
@@ -731,7 +757,7 @@ _TEXT	SEGMENT
 
 ; 35   : 	return "Game";
 
-	mov	eax, OFFSET $SG221614
+	mov	eax, OFFSET $SG222123
 
 ; 36   : }
 
@@ -747,7 +773,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lIsTutorialLogging@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lIsTutorialLogging, COMDAT
 
-; 878  : 	lua_pushboolean(L, GC.GetTutorialLogging());
+; 896  : 	lua_pushboolean(L, GC.GetTutorialLogging());
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?GetTutorialLogging@CvGlobals@@QAE_NXZ	; CvGlobals::GetTutorialLogging
@@ -758,11 +784,11 @@ _L$ = 8							; size = 4
 	call	_lua_pushboolean
 	add	esp, 8
 
-; 879  : 	return 1;
+; 897  : 	return 1;
 
 	mov	eax, 1
 
-; 880  : }
+; 898  : }
 
 	ret	0
 ?lIsTutorialLogging@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lIsTutorialLogging
@@ -775,7 +801,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lIsTutorialDebugging@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lIsTutorialDebugging, COMDAT
 
-; 884  : 	lua_pushboolean(L, GC.GetTutorialDebugging());
+; 902  : 	lua_pushboolean(L, GC.GetTutorialDebugging());
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?GetTutorialDebugging@CvGlobals@@QAE_NXZ ; CvGlobals::GetTutorialDebugging
@@ -786,11 +812,11 @@ _L$ = 8							; size = 4
 	call	_lua_pushboolean
 	add	esp, 8
 
-; 885  : 	return 1;
+; 903  : 	return 1;
 
 	mov	eax, 1
 
-; 886  : }
+; 904  : }
 
 	ret	0
 ?lIsTutorialDebugging@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lIsTutorialDebugging
@@ -803,7 +829,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetAllowRClickMovementWhileScrolling@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetAllowRClickMovementWhileScrolling, COMDAT
 
-; 928  : 	lua_pushboolean(L, GC.GetAllowRClickMovementWhileScrolling());
+; 946  : 	lua_pushboolean(L, GC.GetAllowRClickMovementWhileScrolling());
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?GetAllowRClickMovementWhileScrolling@CvGlobals@@QAE_NXZ ; CvGlobals::GetAllowRClickMovementWhileScrolling
@@ -814,11 +840,11 @@ _L$ = 8							; size = 4
 	call	_lua_pushboolean
 	add	esp, 8
 
-; 929  : 	return 1;
+; 947  : 	return 1;
 
 	mov	eax, 1
 
-; 930  : }
+; 948  : }
 
 	ret	0
 ?lGetAllowRClickMovementWhileScrolling@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lGetAllowRClickMovementWhileScrolling
@@ -831,19 +857,19 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetName@CvLuaGame@@KAHPAUlua_State@@@Z PROC		; CvLuaGame::lGetName, COMDAT
 
-; 1510 : 	luaL_error(L, "NYI");
+; 1528 : 	luaL_error(L, "NYI");
 
 	mov	eax, DWORD PTR _L$[esp-4]
-	push	OFFSET $SG223611
+	push	OFFSET $SG224136
 	push	eax
 	call	_luaL_error
 	add	esp, 8
 
-; 1511 : 	return 0;
+; 1529 : 	return 0;
 
 	xor	eax, eax
 
-; 1512 : }
+; 1530 : }
 
 	ret	0
 ?lGetName@CvLuaGame@@KAHPAUlua_State@@@Z ENDP		; CvLuaGame::lGetName
@@ -855,19 +881,19 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetReplayInfo@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetReplayInfo, COMDAT
 
-; 1667 : 	luaL_error(L, "NYI");
+; 1685 : 	luaL_error(L, "NYI");
 
 	mov	eax, DWORD PTR _L$[esp-4]
-	push	OFFSET $SG223709
+	push	OFFSET $SG224234
 	push	eax
 	call	_luaL_error
 	add	esp, 8
 
-; 1668 : 	return 0;
+; 1686 : 	return 0;
 
 	xor	eax, eax
 
-; 1669 : }
+; 1687 : }
 
 	ret	0
 ?lGetReplayInfo@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lGetReplayInfo
@@ -881,12 +907,12 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetResourceUsageType@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetResourceUsageType, COMDAT
 
-; 1826 : {
+; 1844 : {
 
 	push	esi
 	push	edi
 
-; 1827 : 	const ResourceTypes eResource = (ResourceTypes) lua_tointeger(L, 1);
+; 1845 : 	const ResourceTypes eResource = (ResourceTypes) lua_tointeger(L, 1);
 
 	mov	edi, DWORD PTR _L$[esp+4]
 	push	1
@@ -895,19 +921,19 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	esi, eax
 
-; 1828 : 	const CvResourceInfo* pkResourceInfo = GC.getResourceInfo(eResource);
+; 1846 : 	const CvResourceInfo* pkResourceInfo = GC.getResourceInfo(eResource);
 
 	push	esi
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getResourceInfo@CvGlobals@@QAEPAVCvResourceInfo@@W4ResourceTypes@@@Z ; CvGlobals::getResourceInfo
 
-; 1829 : 	if (pkResourceInfo)
+; 1847 : 	if (pkResourceInfo)
 
 	test	eax, eax
 	je	SHORT $LN2@lGetResour
 
-; 1830 : 	{
-; 1831 : 		ResourceUsageTypes eUsage = GC.getResourceInfo(eResource)->getResourceUsage();
+; 1848 : 	{
+; 1849 : 		ResourceUsageTypes eUsage = GC.getResourceInfo(eResource)->getResourceUsage();
 
 	push	esi
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
@@ -915,33 +941,33 @@ _L$ = 8							; size = 4
 	mov	ecx, eax
 	call	?getResourceUsage@CvResourceInfo@@QBE?AW4ResourceUsageTypes@@XZ ; CvResourceInfo::getResourceUsage
 
-; 1832 : 		lua_pushinteger(L, eUsage);
+; 1850 : 		lua_pushinteger(L, eUsage);
 
 	push	eax
 
-; 1833 : 	}
-; 1834 : 	else
-; 1835 : 		lua_pushinteger(L, -1);		// NO_USAGE
+; 1851 : 	}
+; 1852 : 	else
+; 1853 : 		lua_pushinteger(L, -1);		// NO_USAGE
 
 	push	edi
 	call	_lua_pushinteger
 	add	esp, 8
 	pop	edi
 
-; 1836 : 
-; 1837 : 	return 1;
+; 1854 : 
+; 1855 : 	return 1;
 
 	mov	eax, 1
 	pop	esi
 
-; 1838 : }
+; 1856 : }
 
 	ret	0
 $LN2@lGetResour:
 
-; 1833 : 	}
-; 1834 : 	else
-; 1835 : 		lua_pushinteger(L, -1);		// NO_USAGE
+; 1851 : 	}
+; 1852 : 	else
+; 1853 : 		lua_pushinteger(L, -1);		// NO_USAGE
 
 	push	-1
 	push	edi
@@ -949,13 +975,13 @@ $LN2@lGetResour:
 	add	esp, 8
 	pop	edi
 
-; 1836 : 
-; 1837 : 	return 1;
+; 1854 : 
+; 1855 : 	return 1;
 
 	mov	eax, 1
 	pop	esi
 
-; 1838 : }
+; 1856 : }
 
 	ret	0
 ?lGetResourceUsageType@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lGetResourceUsageType
@@ -969,12 +995,12 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetNumResourceRequiredForUnit@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetNumResourceRequiredForUnit, COMDAT
 
-; 1841 : {
+; 1859 : {
 
 	push	ebx
 	push	esi
 
-; 1842 : 	const UnitTypes eUnit = (UnitTypes) lua_tointeger(L, 1);
+; 1860 : 	const UnitTypes eUnit = (UnitTypes) lua_tointeger(L, 1);
 
 	mov	esi, DWORD PTR _L$[esp+4]
 	push	edi
@@ -982,7 +1008,7 @@ _L$ = 8							; size = 4
 	push	esi
 	call	_lua_tointeger
 
-; 1843 : 	const ResourceTypes eResource = (ResourceTypes) lua_tointeger(L, 2);
+; 1861 : 	const ResourceTypes eResource = (ResourceTypes) lua_tointeger(L, 2);
 
 	push	2
 	push	esi
@@ -990,50 +1016,50 @@ _L$ = 8							; size = 4
 	call	_lua_tointeger
 	add	esp, 16					; 00000010H
 
-; 1844 : 
-; 1845 : 	CvUnitEntry* pkUnitInfo = GC.getUnitInfo(eUnit);
+; 1862 : 
+; 1863 : 	CvUnitEntry* pkUnitInfo = GC.getUnitInfo(eUnit);
 
 	push	edi
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	ebx, eax
 	call	?getUnitInfo@CvGlobals@@QAEPAVCvUnitEntry@@W4UnitTypes@@@Z ; CvGlobals::getUnitInfo
 
-; 1846 : 	if(pkUnitInfo == NULL)
+; 1864 : 	if(pkUnitInfo == NULL)
 
 	test	eax, eax
 	jne	SHORT $LN1@lGetNumRes
 
-; 1847 : 	{
-; 1848 : 		luaL_error(L, "Unit row at ID %d is empty.", eUnit);
+; 1865 : 	{
+; 1866 : 		luaL_error(L, "Unit row at ID %d is empty.", eUnit);
 
 	push	edi
-	push	OFFSET $SG224233
+	push	OFFSET $SG224758
 	push	esi
 	call	_luaL_error
 	add	esp, 12					; 0000000cH
 	pop	edi
 	pop	esi
 
-; 1849 : 		return 0;
+; 1867 : 		return 0;
 
 	xor	eax, eax
 	pop	ebx
 
-; 1857 : }
+; 1875 : }
 
 	ret	0
 $LN1@lGetNumRes:
 
-; 1850 : 	}
-; 1851 : 
-; 1852 : 	const int iNumNeeded = pkUnitInfo->GetResourceQuantityRequirement(eResource);
+; 1868 : 	}
+; 1869 : 
+; 1870 : 	const int iNumNeeded = pkUnitInfo->GetResourceQuantityRequirement(eResource);
 
 	push	ebx
 	mov	ecx, eax
 	call	?GetResourceQuantityRequirement@CvUnitEntry@@QBEHH@Z ; CvUnitEntry::GetResourceQuantityRequirement
 
-; 1853 : 
-; 1854 : 	lua_pushinteger(L, iNumNeeded);
+; 1871 : 
+; 1872 : 	lua_pushinteger(L, iNumNeeded);
 
 	push	eax
 	push	esi
@@ -1042,13 +1068,13 @@ $LN1@lGetNumRes:
 	pop	edi
 	pop	esi
 
-; 1855 : 
-; 1856 : 	return 1;
+; 1873 : 
+; 1874 : 	return 1;
 
 	mov	eax, 1
 	pop	ebx
 
-; 1857 : }
+; 1875 : }
 
 	ret	0
 ?lGetNumResourceRequiredForUnit@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lGetNumResourceRequiredForUnit
@@ -1063,11 +1089,11 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetNumResourceRequiredForBuilding@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetNumResourceRequiredForBuilding, COMDAT
 
-; 1860 : {
+; 1878 : {
 
 	push	ebx
 
-; 1861 : 	const BuildingTypes eBuilding = (BuildingTypes) luaL_checkint(L, 1);
+; 1879 : 	const BuildingTypes eBuilding = (BuildingTypes) luaL_checkint(L, 1);
 
 	mov	ebx, DWORD PTR _L$[esp]
 	push	esi
@@ -1076,7 +1102,7 @@ _L$ = 8							; size = 4
 	push	ebx
 	call	_luaL_checkinteger
 
-; 1862 : 	const ResourceTypes eResource = (ResourceTypes) luaL_checkint(L, 2);
+; 1880 : 	const ResourceTypes eResource = (ResourceTypes) luaL_checkint(L, 2);
 
 	push	2
 	push	ebx
@@ -1084,15 +1110,15 @@ _L$ = 8							; size = 4
 	call	_luaL_checkinteger
 	add	esp, 16					; 00000010H
 
-; 1863 : 
-; 1864 : 	CvBuildingEntry* pkBuildingInfo = GC.getBuildingInfo(eBuilding);
+; 1881 : 
+; 1882 : 	CvBuildingEntry* pkBuildingInfo = GC.getBuildingInfo(eBuilding);
 
 	push	edi
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	esi, eax
 	call	?getBuildingInfo@CvGlobals@@QAEPAVCvBuildingEntry@@W4BuildingTypes@@@Z ; CvGlobals::getBuildingInfo
 
-; 1865 : 	CvResourceInfo* pkResourceInfo = GC.getResourceInfo(eResource);
+; 1883 : 	CvResourceInfo* pkResourceInfo = GC.getResourceInfo(eResource);
 
 	push	esi
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
@@ -1100,29 +1126,29 @@ _L$ = 8							; size = 4
 	call	?getResourceInfo@CvGlobals@@QAEPAVCvResourceInfo@@W4ResourceTypes@@@Z ; CvGlobals::getResourceInfo
 	mov	ecx, eax
 
-; 1866 : 
-; 1867 : 	int iNumNeeded = 0;
+; 1884 : 
+; 1885 : 	int iNumNeeded = 0;
 
 	xor	eax, eax
 
-; 1868 : 	if(pkBuildingInfo && pkResourceInfo)
+; 1886 : 	if(pkBuildingInfo && pkResourceInfo)
 
 	test	edi, edi
 	je	SHORT $LN1@lGetNumRes@2
 	test	ecx, ecx
 	je	SHORT $LN1@lGetNumRes@2
 
-; 1869 : 	{
-; 1870 : 		iNumNeeded = pkBuildingInfo->GetResourceQuantityRequirement(eResource);
+; 1887 : 	{
+; 1888 : 		iNumNeeded = pkBuildingInfo->GetResourceQuantityRequirement(eResource);
 
 	push	esi
 	mov	ecx, edi
 	call	?GetResourceQuantityRequirement@CvBuildingEntry@@QBEHH@Z ; CvBuildingEntry::GetResourceQuantityRequirement
 $LN1@lGetNumRes@2:
 
-; 1871 : 	}
-; 1872 : 
-; 1873 : 	lua_pushinteger(L, iNumNeeded);
+; 1889 : 	}
+; 1890 : 
+; 1891 : 	lua_pushinteger(L, iNumNeeded);
 
 	push	eax
 	push	ebx
@@ -1131,12 +1157,12 @@ $LN1@lGetNumRes@2:
 	pop	edi
 	pop	esi
 
-; 1874 : 	return 1;
+; 1892 : 	return 1;
 
 	mov	eax, 1
 	pop	ebx
 
-; 1875 : }
+; 1893 : }
 
 	ret	0
 ?lGetNumResourceRequiredForBuilding@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lGetNumResourceRequiredForBuilding
@@ -1151,12 +1177,12 @@ _i$ = -4						; size = 4
 _L$ = 8							; size = 4
 ?lGetCustomOption@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetCustomOption, COMDAT
 
-; 2019 : {
+; 2037 : {
 
 	push	ecx
 	push	esi
 
-; 2020 : 	const char* szOptionName = luaL_checkstring(L, 1);
+; 2038 : 	const char* szOptionName = luaL_checkstring(L, 1);
 
 	mov	esi, DWORD PTR _L$[esp+4]
 	push	0
@@ -1164,8 +1190,8 @@ _L$ = 8							; size = 4
 	push	esi
 	call	_luaL_checklstring
 
-; 2021 : 	int i = 0;
-; 2022 : 	if(CvPreGame::GetGameOption(szOptionName, i))
+; 2039 : 	int i = 0;
+; 2040 : 	if(CvPreGame::GetGameOption(szOptionName, i))
 
 	lea	ecx, DWORD PTR _i$[esp+20]
 	push	ecx
@@ -1176,8 +1202,8 @@ _L$ = 8							; size = 4
 	test	al, al
 	je	SHORT $LN1@lGetCustom
 
-; 2023 : 	{
-; 2024 : 		lua_pushinteger(L, i);
+; 2041 : 	{
+; 2042 : 		lua_pushinteger(L, i);
 
 	mov	edx, DWORD PTR _i$[esp+8]
 	push	edx
@@ -1185,25 +1211,25 @@ _L$ = 8							; size = 4
 	call	_lua_pushinteger
 	add	esp, 8
 
-; 2025 : 		return 1;
+; 2043 : 		return 1;
 
 	mov	eax, 1
 	pop	esi
 
-; 2029 : }
+; 2047 : }
 
 	pop	ecx
 	ret	0
 $LN1@lGetCustom:
 
-; 2026 : 	}
-; 2027 : 
-; 2028 : 	return 0;
+; 2044 : 	}
+; 2045 : 
+; 2046 : 	return 0;
 
 	xor	eax, eax
 	pop	esi
 
-; 2029 : }
+; 2047 : }
 
 	pop	ecx
 	ret	0
@@ -1217,92 +1243,6 @@ EXTRN	?getYieldInfo@CvGlobals@@QAEPAVCvYieldInfo@@W4YieldTypes@@@Z:PROC ; CvGlob
 _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetBuildingYieldChange@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetBuildingYieldChange, COMDAT
-
-; 2044 : {
-
-	push	ebx
-
-; 2045 : 	const BuildingTypes eBuilding = (BuildingTypes) luaL_checkint(L, 1);
-
-	mov	ebx, DWORD PTR _L$[esp]
-	push	esi
-	push	edi
-	push	1
-	push	ebx
-	call	_luaL_checkinteger
-
-; 2046 : 	const YieldTypes eYield = (YieldTypes) luaL_checkint(L, 2);
-
-	push	2
-	push	ebx
-	mov	edi, eax
-	call	_luaL_checkinteger
-	add	esp, 16					; 00000010H
-
-; 2047 : 
-; 2048 : 	CvBuildingEntry* pkBuildingInfo = GC.getBuildingInfo(eBuilding);
-
-	push	edi
-	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	mov	esi, eax
-	call	?getBuildingInfo@CvGlobals@@QAEPAVCvBuildingEntry@@W4BuildingTypes@@@Z ; CvGlobals::getBuildingInfo
-
-; 2049 : 	CvYieldInfo* pkYieldInfo = GC.getYieldInfo(eYield);
-
-	push	esi
-	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	mov	edi, eax
-	call	?getYieldInfo@CvGlobals@@QAEPAVCvYieldInfo@@W4YieldTypes@@@Z ; CvGlobals::getYieldInfo
-	mov	ecx, eax
-
-; 2050 : 
-; 2051 : 	int iYieldChange = 0;
-
-	xor	eax, eax
-
-; 2052 : 	if(pkBuildingInfo && pkYieldInfo)
-
-	test	edi, edi
-	je	SHORT $LN1@lGetBuildi
-	test	ecx, ecx
-	je	SHORT $LN1@lGetBuildi
-
-; 2053 : 	{
-; 2054 : 		iYieldChange = pkBuildingInfo->GetYieldChange(eYield);
-
-	push	esi
-	mov	ecx, edi
-	call	?GetYieldChange@CvBuildingEntry@@QBEHH@Z ; CvBuildingEntry::GetYieldChange
-$LN1@lGetBuildi:
-
-; 2055 : 	}
-; 2056 : 
-; 2057 : 	lua_pushinteger(L, iYieldChange);
-
-	push	eax
-	push	ebx
-	call	_lua_pushinteger
-	add	esp, 8
-	pop	edi
-	pop	esi
-
-; 2058 : 	return 1;
-
-	mov	eax, 1
-	pop	ebx
-
-; 2059 : }
-
-	ret	0
-?lGetBuildingYieldChange@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lGetBuildingYieldChange
-_TEXT	ENDS
-PUBLIC	?lGetBuildingYieldModifier@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetBuildingYieldModifier
-EXTRN	?GetYieldModifier@CvBuildingEntry@@QBEHH@Z:PROC	; CvBuildingEntry::GetYieldModifier
-; Function compile flags: /Ogtpy
-;	COMDAT ?lGetBuildingYieldModifier@CvLuaGame@@KAHPAUlua_State@@@Z
-_TEXT	SEGMENT
-_L$ = 8							; size = 4
-?lGetBuildingYieldModifier@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetBuildingYieldModifier, COMDAT
 
 ; 2062 : {
 
@@ -1342,28 +1282,28 @@ _L$ = 8							; size = 4
 	mov	ecx, eax
 
 ; 2068 : 
-; 2069 : 	int iYieldModifier = 0;
+; 2069 : 	int iYieldChange = 0;
 
 	xor	eax, eax
 
 ; 2070 : 	if(pkBuildingInfo && pkYieldInfo)
 
 	test	edi, edi
-	je	SHORT $LN1@lGetBuildi@2
+	je	SHORT $LN1@lGetBuildi
 	test	ecx, ecx
-	je	SHORT $LN1@lGetBuildi@2
+	je	SHORT $LN1@lGetBuildi
 
 ; 2071 : 	{
-; 2072 : 		iYieldModifier= pkBuildingInfo->GetYieldModifier(eYield);
+; 2072 : 		iYieldChange = pkBuildingInfo->GetYieldChange(eYield);
 
 	push	esi
 	mov	ecx, edi
-	call	?GetYieldModifier@CvBuildingEntry@@QBEHH@Z ; CvBuildingEntry::GetYieldModifier
-$LN1@lGetBuildi@2:
+	call	?GetYieldChange@CvBuildingEntry@@QBEHH@Z ; CvBuildingEntry::GetYieldChange
+$LN1@lGetBuildi:
 
 ; 2073 : 	}
 ; 2074 : 
-; 2075 : 	lua_pushinteger(L, iYieldModifier);
+; 2075 : 	lua_pushinteger(L, iYieldChange);
 
 	push	eax
 	push	ebx
@@ -1380,6 +1320,92 @@ $LN1@lGetBuildi@2:
 ; 2077 : }
 
 	ret	0
+?lGetBuildingYieldChange@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lGetBuildingYieldChange
+_TEXT	ENDS
+PUBLIC	?lGetBuildingYieldModifier@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetBuildingYieldModifier
+EXTRN	?GetYieldModifier@CvBuildingEntry@@QBEHH@Z:PROC	; CvBuildingEntry::GetYieldModifier
+; Function compile flags: /Ogtpy
+;	COMDAT ?lGetBuildingYieldModifier@CvLuaGame@@KAHPAUlua_State@@@Z
+_TEXT	SEGMENT
+_L$ = 8							; size = 4
+?lGetBuildingYieldModifier@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetBuildingYieldModifier, COMDAT
+
+; 2080 : {
+
+	push	ebx
+
+; 2081 : 	const BuildingTypes eBuilding = (BuildingTypes) luaL_checkint(L, 1);
+
+	mov	ebx, DWORD PTR _L$[esp]
+	push	esi
+	push	edi
+	push	1
+	push	ebx
+	call	_luaL_checkinteger
+
+; 2082 : 	const YieldTypes eYield = (YieldTypes) luaL_checkint(L, 2);
+
+	push	2
+	push	ebx
+	mov	edi, eax
+	call	_luaL_checkinteger
+	add	esp, 16					; 00000010H
+
+; 2083 : 
+; 2084 : 	CvBuildingEntry* pkBuildingInfo = GC.getBuildingInfo(eBuilding);
+
+	push	edi
+	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
+	mov	esi, eax
+	call	?getBuildingInfo@CvGlobals@@QAEPAVCvBuildingEntry@@W4BuildingTypes@@@Z ; CvGlobals::getBuildingInfo
+
+; 2085 : 	CvYieldInfo* pkYieldInfo = GC.getYieldInfo(eYield);
+
+	push	esi
+	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
+	mov	edi, eax
+	call	?getYieldInfo@CvGlobals@@QAEPAVCvYieldInfo@@W4YieldTypes@@@Z ; CvGlobals::getYieldInfo
+	mov	ecx, eax
+
+; 2086 : 
+; 2087 : 	int iYieldModifier = 0;
+
+	xor	eax, eax
+
+; 2088 : 	if(pkBuildingInfo && pkYieldInfo)
+
+	test	edi, edi
+	je	SHORT $LN1@lGetBuildi@2
+	test	ecx, ecx
+	je	SHORT $LN1@lGetBuildi@2
+
+; 2089 : 	{
+; 2090 : 		iYieldModifier= pkBuildingInfo->GetYieldModifier(eYield);
+
+	push	esi
+	mov	ecx, edi
+	call	?GetYieldModifier@CvBuildingEntry@@QBEHH@Z ; CvBuildingEntry::GetYieldModifier
+$LN1@lGetBuildi@2:
+
+; 2091 : 	}
+; 2092 : 
+; 2093 : 	lua_pushinteger(L, iYieldModifier);
+
+	push	eax
+	push	ebx
+	call	_lua_pushinteger
+	add	esp, 8
+	pop	edi
+	pop	esi
+
+; 2094 : 	return 1;
+
+	mov	eax, 1
+	pop	ebx
+
+; 2095 : }
+
+	ret	0
 ?lGetBuildingYieldModifier@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lGetBuildingYieldModifier
 _TEXT	ENDS
 PUBLIC	?lGetUnitUpgradesTo@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetUnitUpgradesTo
@@ -1393,12 +1419,12 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetUnitUpgradesTo@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetUnitUpgradesTo, COMDAT
 
-; 2097 : {
+; 2115 : {
 
 	push	ebx
 	push	ebp
 
-; 2098 : 	const UnitTypes eUnit = (UnitTypes) lua_tointeger(L, 1);
+; 2116 : 	const UnitTypes eUnit = (UnitTypes) lua_tointeger(L, 1);
 
 	mov	ebp, DWORD PTR _L$[esp+4]
 	push	esi
@@ -1408,47 +1434,47 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	esi, eax
 
-; 2099 : 
-; 2100 : 	CvUnitEntry* pkUnitInfo = GC.getUnitInfo(eUnit);
+; 2117 : 
+; 2118 : 	CvUnitEntry* pkUnitInfo = GC.getUnitInfo(eUnit);
 
 	push	esi
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getUnitInfo@CvGlobals@@QAEPAVCvUnitEntry@@W4UnitTypes@@@Z ; CvGlobals::getUnitInfo
 	mov	ebx, eax
 
-; 2101 : 	if(pkUnitInfo == NULL)
+; 2119 : 	if(pkUnitInfo == NULL)
 
 	test	ebx, ebx
 	jne	SHORT $LN6@lGetUnitUp
 
-; 2102 : 	{
-; 2103 : 		luaL_error(L, "Unit row at ID %d is empty.", eUnit);
+; 2120 : 	{
+; 2121 : 		luaL_error(L, "Unit row at ID %d is empty.", eUnit);
 
 	push	esi
-	push	OFFSET $SG224381
+	push	OFFSET $SG224906
 	push	ebp
 	call	_luaL_error
 	add	esp, 12					; 0000000cH
 	pop	esi
 	pop	ebp
 
-; 2104 : 		return 0;
+; 2122 : 		return 0;
 
 	xor	eax, eax
 	pop	ebx
 
-; 2126 : }
+; 2144 : }
 
 	ret	0
 $LN6@lGetUnitUp:
 	push	edi
 
-; 2105 : 	}
-; 2106 : 
-; 2107 : #ifdef AUI_WARNING_FIXES
-; 2108 : 	for (uint iUnitClassLoop = 0; iUnitClassLoop < GC.getNumUnitClassInfos(); iUnitClassLoop++)
-; 2109 : #else
-; 2110 : 	for(int iUnitClassLoop = 0; iUnitClassLoop < GC.getNumUnitClassInfos(); iUnitClassLoop++)
+; 2123 : 	}
+; 2124 : 
+; 2125 : #ifdef AUI_WARNING_FIXES
+; 2126 : 	for (uint iUnitClassLoop = 0; iUnitClassLoop < GC.getNumUnitClassInfos(); iUnitClassLoop++)
+; 2127 : #else
+; 2128 : 	for(int iUnitClassLoop = 0; iUnitClassLoop < GC.getNumUnitClassInfos(); iUnitClassLoop++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	xor	esi, esi
@@ -1458,22 +1484,22 @@ $LN6@lGetUnitUp:
 	npad	5
 $LL12@lGetUnitUp:
 
-; 2111 : #endif
-; 2112 : 	{
-; 2113 : 		CvUnitClassInfo* pkUnitClassInfo = GC.getUnitClassInfo((UnitClassTypes) iUnitClassLoop);
+; 2129 : #endif
+; 2130 : 	{
+; 2131 : 		CvUnitClassInfo* pkUnitClassInfo = GC.getUnitClassInfo((UnitClassTypes) iUnitClassLoop);
 
 	push	esi
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getUnitClassInfo@CvGlobals@@QAEPAVCvUnitClassInfo@@W4UnitClassTypes@@@Z ; CvGlobals::getUnitClassInfo
 	mov	edi, eax
 
-; 2114 : 		if(pkUnitClassInfo != NULL)
+; 2132 : 		if(pkUnitClassInfo != NULL)
 
 	test	edi, edi
 	je	SHORT $LN4@lGetUnitUp
 
-; 2115 : 		{
-; 2116 : 			if(pkUnitInfo->GetUpgradeUnitClass(iUnitClassLoop))	// Hardcoded to look at entry 0
+; 2133 : 		{
+; 2134 : 			if(pkUnitInfo->GetUpgradeUnitClass(iUnitClassLoop))	// Hardcoded to look at entry 0
 
 	push	esi
 	mov	ecx, ebx
@@ -1482,12 +1508,12 @@ $LL12@lGetUnitUp:
 	jne	SHORT $LN10@lGetUnitUp
 $LN4@lGetUnitUp:
 
-; 2105 : 	}
-; 2106 : 
-; 2107 : #ifdef AUI_WARNING_FIXES
-; 2108 : 	for (uint iUnitClassLoop = 0; iUnitClassLoop < GC.getNumUnitClassInfos(); iUnitClassLoop++)
-; 2109 : #else
-; 2110 : 	for(int iUnitClassLoop = 0; iUnitClassLoop < GC.getNumUnitClassInfos(); iUnitClassLoop++)
+; 2123 : 	}
+; 2124 : 
+; 2125 : #ifdef AUI_WARNING_FIXES
+; 2126 : 	for (uint iUnitClassLoop = 0; iUnitClassLoop < GC.getNumUnitClassInfos(); iUnitClassLoop++)
+; 2127 : #else
+; 2128 : 	for(int iUnitClassLoop = 0; iUnitClassLoop < GC.getNumUnitClassInfos(); iUnitClassLoop++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	inc	esi
@@ -1496,11 +1522,11 @@ $LN4@lGetUnitUp:
 	jl	SHORT $LL12@lGetUnitUp
 $LN3@lGetUnitUp:
 
-; 2120 : 			}
-; 2121 : 		}
-; 2122 : 	}
-; 2123 : 
-; 2124 : 	lua_pushinteger(L, -1);
+; 2138 : 			}
+; 2139 : 		}
+; 2140 : 	}
+; 2141 : 
+; 2142 : 	lua_pushinteger(L, -1);
 
 	push	-1
 	push	ebp
@@ -1510,18 +1536,18 @@ $LN3@lGetUnitUp:
 	pop	esi
 	pop	ebp
 
-; 2125 : 	return 0;
+; 2143 : 	return 0;
 
 	xor	eax, eax
 	pop	ebx
 
-; 2126 : }
+; 2144 : }
 
 	ret	0
 $LN10@lGetUnitUp:
 
-; 2117 : 			{
-; 2118 : 				lua_pushinteger(L, pkUnitClassInfo->getDefaultUnitIndex());
+; 2135 : 			{
+; 2136 : 				lua_pushinteger(L, pkUnitClassInfo->getDefaultUnitIndex());
 
 	mov	ecx, edi
 	call	?getDefaultUnitIndex@CvUnitClassInfo@@QBEHXZ ; CvUnitClassInfo::getDefaultUnitIndex
@@ -1533,12 +1559,12 @@ $LN10@lGetUnitUp:
 	pop	esi
 	pop	ebp
 
-; 2119 : 				return 1;
+; 2137 : 				return 1;
 
 	mov	eax, 1
 	pop	ebx
 
-; 2126 : }
+; 2144 : }
 
 	ret	0
 ?lGetUnitUpgradesTo@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lGetUnitUpgradesTo
@@ -1551,18 +1577,18 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetNumFreePolicies@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetNumFreePolicies, COMDAT
 
-; 2845 : {
+; 2863 : {
 
 	push	esi
 
-; 2846 : 	const PolicyBranchTypes eBranch = static_cast<PolicyBranchTypes>(luaL_checkint(L, 1));
+; 2864 : 	const PolicyBranchTypes eBranch = static_cast<PolicyBranchTypes>(luaL_checkint(L, 1));
 
 	mov	esi, DWORD PTR _L$[esp]
 	push	1
 	push	esi
 	call	_luaL_checkinteger
 
-; 2847 : 	lua_pushinteger(L, PolicyHelpers::GetNumFreePolicies(eBranch));
+; 2865 : 	lua_pushinteger(L, PolicyHelpers::GetNumFreePolicies(eBranch));
 
 	push	eax
 	call	?GetNumFreePolicies@PolicyHelpers@@YAHW4PolicyBranchTypes@@@Z ; PolicyHelpers::GetNumFreePolicies
@@ -1571,12 +1597,12 @@ _L$ = 8							; size = 4
 	call	_lua_pushinteger
 	add	esp, 20					; 00000014H
 
-; 2848 : 	return 1;
+; 2866 : 	return 1;
 
 	mov	eax, 1
 	pop	esi
 
-; 2849 : }
+; 2867 : }
 
 	ret	0
 ?lGetNumFreePolicies@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lGetNumFreePolicies
@@ -1856,7 +1882,7 @@ _pkType$ = 12						; size = 4
 ; 61   : 			//Create weak __instances table.
 ; 62   : 			lua_pushstring(L, "__instances");
 
-	push	OFFSET $SG225482
+	push	OFFSET $SG226112
 	push	esi
 	call	_lua_pushstring
 
@@ -1878,13 +1904,13 @@ _pkType$ = 12						; size = 4
 
 ; 67   : 			lua_pushstring(L, "__mode");
 
-	push	OFFSET $SG225483
+	push	OFFSET $SG226113
 	push	esi
 	call	_lua_pushstring
 
 ; 68   : 			lua_pushstring(L, "v");
 
-	push	OFFSET $SG225484
+	push	OFFSET $SG226114
 	push	esi
 	call	_lua_pushstring
 	add	esp, 68					; 00000044H
@@ -1944,7 +1970,7 @@ $LN7@Push:
 ; 81   : 
 ; 82   : 		lua_pushstring(L, "__instances");
 
-	push	OFFSET $SG225486
+	push	OFFSET $SG226116
 	push	esi
 	mov	ebx, eax
 	call	_lua_pushstring
@@ -2010,7 +2036,7 @@ $LN7@Push:
 
 ; 98   : 			lua_setfield(L, -2, "__instance");
 
-	push	OFFSET $SG225489
+	push	OFFSET $SG226119
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -2025,7 +2051,7 @@ $LN7@Push:
 
 ; 101  : 			lua_pushstring(L, "__index");
 
-	push	OFFSET $SG225490
+	push	OFFSET $SG226120
 	push	esi
 	call	_lua_pushstring
 
@@ -2160,7 +2186,7 @@ _bErrorOnFail$ = 16					; size = 1
 ; 134  : 		lua_getfield(L, idx, "__instance");
 
 	mov	ecx, DWORD PTR _idx$[esp+12]
-	push	OFFSET $SG225505
+	push	OFFSET $SG226135
 	push	ecx
 	push	esi
 	call	_lua_getfield
@@ -2221,7 +2247,7 @@ $LN3@GetInstanc:
 
 ; 150  : 			luaL_error(L, "Not a valid instance.  Either the instance is NULL or you used '.' instead of ':'.");
 
-	push	OFFSET $SG225511
+	push	OFFSET $SG226141
 	push	esi
 	call	_luaL_error
 	add	esp, 8
@@ -2358,7 +2384,7 @@ _pkType$ = 12						; size = 4
 ; 61   : 			//Create weak __instances table.
 ; 62   : 			lua_pushstring(L, "__instances");
 
-	push	OFFSET $SG225540
+	push	OFFSET $SG226170
 	push	esi
 	call	_lua_pushstring
 
@@ -2380,13 +2406,13 @@ _pkType$ = 12						; size = 4
 
 ; 67   : 			lua_pushstring(L, "__mode");
 
-	push	OFFSET $SG225541
+	push	OFFSET $SG226171
 	push	esi
 	call	_lua_pushstring
 
 ; 68   : 			lua_pushstring(L, "v");
 
-	push	OFFSET $SG225542
+	push	OFFSET $SG226172
 	push	esi
 	call	_lua_pushstring
 	add	esp, 68					; 00000044H
@@ -2446,7 +2472,7 @@ $LN7@Push@2:
 ; 81   : 
 ; 82   : 		lua_pushstring(L, "__instances");
 
-	push	OFFSET $SG225544
+	push	OFFSET $SG226174
 	push	esi
 	mov	ebx, eax
 	call	_lua_pushstring
@@ -2512,7 +2538,7 @@ $LN7@Push@2:
 
 ; 98   : 			lua_setfield(L, -2, "__instance");
 
-	push	OFFSET $SG225547
+	push	OFFSET $SG226177
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -2527,7 +2553,7 @@ $LN7@Push@2:
 
 ; 101  : 			lua_pushstring(L, "__index");
 
-	push	OFFSET $SG225548
+	push	OFFSET $SG226178
 	push	esi
 	call	_lua_pushstring
 
@@ -2661,7 +2687,7 @@ _bErrorOnFail$ = 16					; size = 1
 ; 134  : 		lua_getfield(L, idx, "__instance");
 
 	mov	ecx, DWORD PTR _idx$[esp+12]
-	push	OFFSET $SG225563
+	push	OFFSET $SG226193
 	push	ecx
 	push	esi
 	call	_lua_getfield
@@ -2722,7 +2748,7 @@ $LN3@GetInstanc@2:
 
 ; 150  : 			luaL_error(L, "Not a valid instance.  Either the instance is NULL or you used '.' instead of ':'.");
 
-	push	OFFSET $SG225569
+	push	OFFSET $SG226199
 	push	esi
 	call	_luaL_error
 	add	esp, 8
@@ -2792,7 +2818,7 @@ _bErrorOnFail$ = 16					; size = 1
 ; 134  : 		lua_getfield(L, idx, "__instance");
 
 	mov	ecx, DWORD PTR _idx$[esp+12]
-	push	OFFSET $SG225583
+	push	OFFSET $SG226213
 	push	ecx
 	push	esi
 	call	_lua_getfield
@@ -2853,7 +2879,7 @@ $LN3@GetInstanc@3:
 
 ; 150  : 			luaL_error(L, "Not a valid instance.  Either the instance is NULL or you used '.' instead of ':'.");
 
-	push	OFFSET $SG225589
+	push	OFFSET $SG226219
 	push	esi
 	call	_luaL_error
 	add	esp, 8
@@ -2953,7 +2979,7 @@ _pkType$ = 12						; size = 4
 ; 61   : 			//Create weak __instances table.
 ; 62   : 			lua_pushstring(L, "__instances");
 
-	push	OFFSET $SG225600
+	push	OFFSET $SG226230
 	push	esi
 	call	_lua_pushstring
 
@@ -2975,13 +3001,13 @@ _pkType$ = 12						; size = 4
 
 ; 67   : 			lua_pushstring(L, "__mode");
 
-	push	OFFSET $SG225601
+	push	OFFSET $SG226231
 	push	esi
 	call	_lua_pushstring
 
 ; 68   : 			lua_pushstring(L, "v");
 
-	push	OFFSET $SG225602
+	push	OFFSET $SG226232
 	push	esi
 	call	_lua_pushstring
 	add	esp, 68					; 00000044H
@@ -3041,7 +3067,7 @@ $LN7@Push@3:
 ; 81   : 
 ; 82   : 		lua_pushstring(L, "__instances");
 
-	push	OFFSET $SG225604
+	push	OFFSET $SG226234
 	push	esi
 	mov	ebx, eax
 	call	_lua_pushstring
@@ -3107,7 +3133,7 @@ $LN7@Push@3:
 
 ; 98   : 			lua_setfield(L, -2, "__instance");
 
-	push	OFFSET $SG225607
+	push	OFFSET $SG226237
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -3122,7 +3148,7 @@ $LN7@Push@3:
 
 ; 101  : 			lua_pushstring(L, "__index");
 
-	push	OFFSET $SG225608
+	push	OFFSET $SG226238
 	push	esi
 	call	_lua_pushstring
 
@@ -4680,14 +4706,14 @@ _bTestVisible$ = -4					; size = 1
 _L$ = 8							; size = 4
 ?lCanHandleAction@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lCanHandleAction, COMDAT
 
-; 394  : {
+; 412  : {
 
 	push	ecx
 	push	ebx
 	push	ebp
 	push	esi
 
-; 395  : 	const int iAction = lua_tointeger(L, 1);
+; 413  : 	const int iAction = lua_tointeger(L, 1);
 
 	mov	esi, DWORD PTR _L$[esp+12]
 	push	edi
@@ -4695,7 +4721,7 @@ _L$ = 8							; size = 4
 	push	esi
 	call	_lua_tointeger
 
-; 396  : 	CvPlot* pkPlot = CvLuaPlot::GetInstance(L, 2, false);
+; 414  : 	CvPlot* pkPlot = CvLuaPlot::GetInstance(L, 2, false);
 
 	push	esi
 	mov	ebx, eax
@@ -4708,7 +4734,7 @@ _L$ = 8							; size = 4
 	add	esp, 20					; 00000014H
 	cmp	eax, 5
 	jne	SHORT $LN5@lCanHandle
-	push	OFFSET $SG225563
+	push	OFFSET $SG226193
 	push	2
 	push	esi
 	call	_lua_getfield
@@ -4728,14 +4754,14 @@ $LN5@lCanHandle:
 	push	esi
 	call	_lua_settop
 
-; 397  : 	const bool bTestVisible = luaL_optbool(L, 3, 0);
+; 415  : 	const bool bTestVisible = luaL_optbool(L, 3, 0);
 
 	push	0
 	push	3
 	push	esi
 	call	?luaL_optbool@@YA_NPAUlua_State@@H_N@Z	; luaL_optbool
 
-; 398  : 	const bool bResult = GetInstance()->canHandleAction(iAction, pkPlot, bTestVisible);
+; 416  : 	const bool bResult = GetInstance()->canHandleAction(iAction, pkPlot, bTestVisible);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	add	esp, 20					; 00000014H
@@ -4746,7 +4772,7 @@ $LN5@lCanHandle:
 	push	ebx
 	call	?canHandleAction@CvGame@@QAE_NHPAVCvPlot@@_N@Z ; CvGame::canHandleAction
 
-; 399  : 	lua_pushboolean(L, bResult);
+; 417  : 	lua_pushboolean(L, bResult);
 
 	movzx	ecx, al
 	push	ecx
@@ -4757,12 +4783,12 @@ $LN5@lCanHandle:
 	pop	esi
 	pop	ebp
 
-; 400  : 	return 1;
+; 418  : 	return 1;
 
 	mov	eax, 1
 	pop	ebx
 
-; 401  : }
+; 419  : }
 
 	pop	ecx
 	ret	0
@@ -4776,25 +4802,25 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lHandleAction@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lHandleAction, COMDAT
 
-; 406  : 	const int iAction = lua_tointeger(L, 1);
+; 424  : 	const int iAction = lua_tointeger(L, 1);
 
 	mov	eax, DWORD PTR _L$[esp-4]
 	push	1
 	push	eax
 	call	_lua_tointeger
 
-; 407  : 	GetInstance()->handleAction(iAction);
+; 425  : 	GetInstance()->handleAction(iAction);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	add	esp, 8
 	push	eax
 	call	?handleAction@CvGame@@QAEXH@Z		; CvGame::handleAction
 
-; 408  : 	return 0;
+; 426  : 	return 0;
 
 	xor	eax, eax
 
-; 409  : }
+; 427  : }
 
 	ret	0
 ?lHandleAction@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lHandleAction
@@ -4809,14 +4835,14 @@ _bForward$ = -4						; size = 1
 _L$ = 8							; size = 4
 ?lCyclePlotUnits@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lCyclePlotUnits, COMDAT
 
-; 431  : {
+; 449  : {
 
 	sub	esp, 8
 	push	ebx
 	push	ebp
 	push	esi
 
-; 432  : 	CvPlot* pkPlot = CvLuaPlot::GetInstance(L, 1);
+; 450  : 	CvPlot* pkPlot = CvLuaPlot::GetInstance(L, 1);
 
 	mov	esi, DWORD PTR _L$[esp+16]
 	push	edi
@@ -4831,7 +4857,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lCyclePlot
-	push	OFFSET $SG225563
+	push	OFFSET $SG226193
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -4856,7 +4882,7 @@ $LN5@lCyclePlot:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN4@lCyclePlot
-	push	OFFSET $SG225569
+	push	OFFSET $SG226199
 	push	esi
 	call	_luaL_error
 	push	esi
@@ -4864,7 +4890,7 @@ $LN5@lCyclePlot:
 	add	esp, 12					; 0000000cH
 $LN4@lCyclePlot:
 
-; 433  : 	const bool bForward = lua_toboolean(L, 2);
+; 451  : 	const bool bForward = lua_toboolean(L, 2);
 
 	push	2
 	push	esi
@@ -4872,7 +4898,7 @@ $LN4@lCyclePlot:
 	test	eax, eax
 	setne	al
 
-; 434  : 	const bool bAuto = lua_toboolean(L, 3);
+; 452  : 	const bool bAuto = lua_toboolean(L, 3);
 
 	push	3
 	push	esi
@@ -4881,15 +4907,15 @@ $LN4@lCyclePlot:
 	test	eax, eax
 	setne	cl
 
-; 435  : 	const int iCount = lua_tointeger(L, 4);
+; 453  : 	const int iCount = lua_tointeger(L, 4);
 
 	push	4
 	push	esi
 	mov	BYTE PTR _bAuto$[esp+48], cl
 	call	_lua_tointeger
 
-; 436  : 
-; 437  : 	const bool bResult = GetInstance()->cyclePlotUnits(pkPlot, bForward, bAuto, iCount);
+; 454  : 
+; 455  : 	const bool bResult = GetInstance()->cyclePlotUnits(pkPlot, bForward, bAuto, iCount);
 
 	mov	edx, DWORD PTR _bAuto$[esp+48]
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
@@ -4901,7 +4927,7 @@ $LN4@lCyclePlot:
 	push	edi
 	call	?cyclePlotUnits@CvGame@@QAE_NPAVCvPlot@@_N1H@Z ; CvGame::cyclePlotUnits
 
-; 438  : 	lua_pushboolean(L, bResult);
+; 456  : 	lua_pushboolean(L, bResult);
 
 	movzx	ecx, al
 	push	ecx
@@ -4912,12 +4938,12 @@ $LN4@lCyclePlot:
 	pop	esi
 	pop	ebp
 
-; 439  : 	return 1;
+; 457  : 	return 1;
 
 	mov	eax, 1
 	pop	ebx
 
-; 440  : }
+; 458  : }
 
 	add	esp, 8
 	ret	0
@@ -4932,14 +4958,14 @@ _bShift$ = -4						; size = 1
 _L$ = 8							; size = 4
 ?lSelectionListMove@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lSelectionListMove, COMDAT
 
-; 444  : {
+; 462  : {
 
 	push	ecx
 	push	ebx
 	push	ebp
 	push	esi
 
-; 445  : 	CvPlot* pkPlot = CvLuaPlot::GetInstance(L, 1);
+; 463  : 	CvPlot* pkPlot = CvLuaPlot::GetInstance(L, 1);
 
 	mov	esi, DWORD PTR _L$[esp+12]
 	push	edi
@@ -4954,7 +4980,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lSelection
-	push	OFFSET $SG225563
+	push	OFFSET $SG226193
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -4979,7 +5005,7 @@ $LN5@lSelection:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN4@lSelection
-	push	OFFSET $SG225569
+	push	OFFSET $SG226199
 	push	esi
 	call	_luaL_error
 	push	esi
@@ -4987,7 +5013,7 @@ $LN5@lSelection:
 	add	esp, 12					; 0000000cH
 $LN4@lSelection:
 
-; 446  : 	const bool bShift = lua_toboolean(L, 3);
+; 464  : 	const bool bShift = lua_toboolean(L, 3);
 
 	push	3
 	push	esi
@@ -4997,8 +5023,8 @@ $LN4@lSelection:
 	setne	al
 	mov	BYTE PTR _bShift$[esp+20], al
 
-; 447  : 
-; 448  : 	GetInstance()->selectionListMove(pkPlot, bShift);
+; 465  : 
+; 466  : 	GetInstance()->selectionListMove(pkPlot, bShift);
 
 	mov	ecx, DWORD PTR _bShift$[esp+20]
 	push	ecx
@@ -5009,12 +5035,12 @@ $LN4@lSelection:
 	pop	esi
 	pop	ebp
 
-; 449  : 	return 0;
+; 467  : 	return 0;
 
 	xor	eax, eax
 	pop	ebx
 
-; 450  : }
+; 468  : }
 
 	pop	ecx
 	ret	0
@@ -5033,14 +5059,14 @@ _iData4$ = -4						; size = 4
 _L$ = 8							; size = 4
 ?lSelectionListGameNetMessage@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lSelectionListGameNetMessage, COMDAT
 
-; 454  : {
+; 472  : {
 
 	sub	esp, 16					; 00000010H
 	push	ebx
 	push	ebp
 	push	esi
 
-; 455  : 	const int eMessage	= lua_tointeger(L, 1);
+; 473  : 	const int eMessage	= lua_tointeger(L, 1);
 
 	mov	esi, DWORD PTR _L$[esp+24]
 	push	edi
@@ -5048,7 +5074,7 @@ _L$ = 8							; size = 4
 	push	esi
 	call	_lua_tointeger
 
-; 456  : 	const int iData2	= luaL_optint(L, 2, -1);
+; 474  : 	const int iData2	= luaL_optint(L, 2, -1);
 
 	push	-1
 	push	2
@@ -5056,7 +5082,7 @@ _L$ = 8							; size = 4
 	mov	edi, eax
 	call	_luaL_optinteger
 
-; 457  : 	const int iData3	= luaL_optint(L, 3, -1);
+; 475  : 	const int iData3	= luaL_optint(L, 3, -1);
 
 	push	-1
 	push	3
@@ -5064,7 +5090,7 @@ _L$ = 8							; size = 4
 	mov	ebx, eax
 	call	_luaL_optinteger
 
-; 458  : 	const int iData4	= luaL_optint(L, 4, -1);
+; 476  : 	const int iData4	= luaL_optint(L, 4, -1);
 
 	push	-1
 	push	4
@@ -5072,7 +5098,7 @@ _L$ = 8							; size = 4
 	mov	ebp, eax
 	call	_luaL_optinteger
 
-; 459  : 	const int iFlags	= luaL_optint(L, 5, 0);
+; 477  : 	const int iFlags	= luaL_optint(L, 5, 0);
 
 	push	0
 	push	5
@@ -5080,7 +5106,7 @@ _L$ = 8							; size = 4
 	mov	DWORD PTR _iData4$[esp+88], eax
 	call	_luaL_optinteger
 
-; 460  : 	const bool bAlt		= luaL_optbool(L, 6, 0);
+; 478  : 	const bool bAlt		= luaL_optbool(L, 6, 0);
 
 	push	0
 	push	6
@@ -5089,7 +5115,7 @@ _L$ = 8							; size = 4
 	call	?luaL_optbool@@YA_NPAUlua_State@@H_N@Z	; luaL_optbool
 	add	esp, 68					; 00000044H
 
-; 461  : 	const bool bShift	= luaL_optbool(L, 7, 0);
+; 479  : 	const bool bShift	= luaL_optbool(L, 7, 0);
 
 	push	0
 	push	7
@@ -5097,8 +5123,8 @@ _L$ = 8							; size = 4
 	mov	BYTE PTR _bAlt$[esp+44], al
 	call	?luaL_optbool@@YA_NPAUlua_State@@H_N@Z	; luaL_optbool
 
-; 462  : 
-; 463  : 	GetInstance()->selectionListGameNetMessage(eMessage, iData2, iData3, iData4, iFlags, bAlt, bShift);
+; 480  : 
+; 481  : 	GetInstance()->selectionListGameNetMessage(eMessage, iData2, iData3, iData4, iFlags, bAlt, bShift);
 
 	mov	ecx, DWORD PTR _bAlt$[esp+44]
 	mov	edx, DWORD PTR _iFlags$[esp+44]
@@ -5119,12 +5145,12 @@ _L$ = 8							; size = 4
 	pop	esi
 	pop	ebp
 
-; 464  : 	return 0;
+; 482  : 	return 0;
 
 	xor	eax, eax
 	pop	ebx
 
-; 465  : }
+; 483  : }
 
 	add	esp, 16					; 00000010H
 	ret	0
@@ -5143,14 +5169,14 @@ _iData4$ = -4						; size = 4
 _L$ = 8							; size = 4
 ?lSelectedCitiesGameNetMessage@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lSelectedCitiesGameNetMessage, COMDAT
 
-; 469  : {
+; 487  : {
 
 	sub	esp, 20					; 00000014H
 	push	ebx
 	push	ebp
 	push	esi
 
-; 470  : 	const int eMessage = lua_tointeger(L, 1);
+; 488  : 	const int eMessage = lua_tointeger(L, 1);
 
 	mov	esi, DWORD PTR _L$[esp+28]
 	push	edi
@@ -5158,7 +5184,7 @@ _L$ = 8							; size = 4
 	push	esi
 	call	_lua_tointeger
 
-; 471  : 	const int iData2 = luaL_optint(L, 2, -1);
+; 489  : 	const int iData2 = luaL_optint(L, 2, -1);
 
 	push	-1
 	push	2
@@ -5166,7 +5192,7 @@ _L$ = 8							; size = 4
 	mov	edi, eax
 	call	_luaL_optinteger
 
-; 472  : 	const int iData3 = luaL_optint(L, 3, -1);
+; 490  : 	const int iData3 = luaL_optint(L, 3, -1);
 
 	push	-1
 	push	3
@@ -5174,7 +5200,7 @@ _L$ = 8							; size = 4
 	mov	ebx, eax
 	call	_luaL_optinteger
 
-; 473  : 	const int iData4 = luaL_optint(L, 4, -1);
+; 491  : 	const int iData4 = luaL_optint(L, 4, -1);
 
 	push	-1
 	push	4
@@ -5182,7 +5208,7 @@ _L$ = 8							; size = 4
 	mov	ebp, eax
 	call	_luaL_optinteger
 
-; 474  : 	const bool bOption	= luaL_optbool(L, 5, 0);
+; 492  : 	const bool bOption	= luaL_optbool(L, 5, 0);
 
 	push	0
 	push	5
@@ -5190,7 +5216,7 @@ _L$ = 8							; size = 4
 	mov	DWORD PTR _iData4$[esp+92], eax
 	call	?luaL_optbool@@YA_NPAUlua_State@@H_N@Z	; luaL_optbool
 
-; 475  : 	const bool bAlt		= luaL_optbool(L, 6, 0);
+; 493  : 	const bool bAlt		= luaL_optbool(L, 6, 0);
 
 	push	0
 	push	6
@@ -5199,7 +5225,7 @@ _L$ = 8							; size = 4
 	call	?luaL_optbool@@YA_NPAUlua_State@@H_N@Z	; luaL_optbool
 	add	esp, 68					; 00000044H
 
-; 476  : 	const bool bShift	= luaL_optbool(L, 7, 0);
+; 494  : 	const bool bShift	= luaL_optbool(L, 7, 0);
 
 	push	0
 	push	7
@@ -5207,7 +5233,7 @@ _L$ = 8							; size = 4
 	mov	BYTE PTR _bAlt$[esp+48], al
 	call	?luaL_optbool@@YA_NPAUlua_State@@H_N@Z	; luaL_optbool
 
-; 477  : 	const bool bCtrl	= luaL_optbool(L, 8, 0);
+; 495  : 	const bool bCtrl	= luaL_optbool(L, 8, 0);
 
 	push	0
 	push	8
@@ -5215,7 +5241,7 @@ _L$ = 8							; size = 4
 	mov	BYTE PTR _bShift$[esp+60], al
 	call	?luaL_optbool@@YA_NPAUlua_State@@H_N@Z	; luaL_optbool
 
-; 478  : 	GetInstance()->selectedCitiesGameNetMessage(eMessage, iData2, iData3, iData4, bOption, bAlt, bShift, bCtrl);
+; 496  : 	GetInstance()->selectedCitiesGameNetMessage(eMessage, iData2, iData3, iData4, bOption, bAlt, bShift, bCtrl);
 
 	mov	ecx, DWORD PTR _bShift$[esp+60]
 	mov	edx, DWORD PTR _bAlt$[esp+60]
@@ -5238,12 +5264,12 @@ _L$ = 8							; size = 4
 	pop	esi
 	pop	ebp
 
-; 479  : 	return 0;
+; 497  : 	return 0;
 
 	xor	eax, eax
 	pop	ebx
 
-; 480  : }
+; 498  : }
 
 	add	esp, 20					; 00000014H
 	ret	0
@@ -5260,14 +5286,14 @@ _bAlt$ = -4						; size = 1
 _L$ = 8							; size = 4
 ?lCityPushOrder@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lCityPushOrder, COMDAT
 
-; 484  : {
+; 502  : {
 
 	sub	esp, 12					; 0000000cH
 	push	ebx
 	push	ebp
 	push	esi
 
-; 485  : 	CvCity* pkCity			= CvLuaCity::GetInstance(L, 1);
+; 503  : 	CvCity* pkCity			= CvLuaCity::GetInstance(L, 1);
 
 	mov	esi, DWORD PTR _L$[esp+20]
 	push	edi
@@ -5282,7 +5308,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lCityPushO
-	push	OFFSET $SG225505
+	push	OFFSET $SG226135
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -5307,7 +5333,7 @@ $LN5@lCityPushO:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN4@lCityPushO
-	push	OFFSET $SG225511
+	push	OFFSET $SG226141
 	push	esi
 	call	_luaL_error
 	push	esi
@@ -5315,20 +5341,20 @@ $LN5@lCityPushO:
 	add	esp, 12					; 0000000cH
 $LN4@lCityPushO:
 
-; 486  : 	const OrderTypes eOrder	= (OrderTypes)lua_tointeger(L, 2);
+; 504  : 	const OrderTypes eOrder	= (OrderTypes)lua_tointeger(L, 2);
 
 	push	2
 	push	esi
 	call	_lua_tointeger
 
-; 487  : 	const int iData			= lua_tointeger(L, 3);
+; 505  : 	const int iData			= lua_tointeger(L, 3);
 
 	push	3
 	push	esi
 	mov	ebx, eax
 	call	_lua_tointeger
 
-; 488  : 	const bool bAlt			= luaL_optbool(L, 4, 0);
+; 506  : 	const bool bAlt			= luaL_optbool(L, 4, 0);
 
 	push	0
 	push	4
@@ -5336,7 +5362,7 @@ $LN4@lCityPushO:
 	mov	ebp, eax
 	call	?luaL_optbool@@YA_NPAUlua_State@@H_N@Z	; luaL_optbool
 
-; 489  : 	const bool bShift		= luaL_optbool(L, 5, 0);
+; 507  : 	const bool bShift		= luaL_optbool(L, 5, 0);
 
 	push	0
 	push	5
@@ -5344,7 +5370,7 @@ $LN4@lCityPushO:
 	mov	BYTE PTR _bAlt$[esp+68], al
 	call	?luaL_optbool@@YA_NPAUlua_State@@H_N@Z	; luaL_optbool
 
-; 490  : 	const bool bCtrl		= luaL_optbool(L, 6, 0);
+; 508  : 	const bool bCtrl		= luaL_optbool(L, 6, 0);
 
 	push	0
 	push	6
@@ -5352,8 +5378,8 @@ $LN4@lCityPushO:
 	mov	BYTE PTR _bShift$[esp+80], al
 	call	?luaL_optbool@@YA_NPAUlua_State@@H_N@Z	; luaL_optbool
 
-; 491  : 
-; 492  : 	GetInstance()->cityPushOrder(pkCity, eOrder, iData, bAlt, bShift, bCtrl);
+; 509  : 
+; 510  : 	GetInstance()->cityPushOrder(pkCity, eOrder, iData, bAlt, bShift, bCtrl);
 
 	mov	ecx, DWORD PTR _bShift$[esp+80]
 	mov	edx, DWORD PTR _bAlt$[esp+80]
@@ -5372,12 +5398,12 @@ $LN4@lCityPushO:
 	pop	esi
 	pop	ebp
 
-; 493  : 	return 0;
+; 511  : 	return 0;
 
 	xor	eax, eax
 	pop	ebx
 
-; 494  : }
+; 512  : }
 
 	add	esp, 12					; 0000000cH
 	ret	0
@@ -5391,13 +5417,13 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lCityPurchaseUnit@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lCityPurchaseUnit, COMDAT
 
-; 498  : {
+; 516  : {
 
 	push	ebx
 	push	ebp
 	push	esi
 
-; 499  : 	CvCity* pkCity = CvLuaCity::GetInstance(L, 1);
+; 517  : 	CvCity* pkCity = CvLuaCity::GetInstance(L, 1);
 
 	mov	esi, DWORD PTR _L$[esp+8]
 	push	edi
@@ -5412,7 +5438,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lCityPurch
-	push	OFFSET $SG225505
+	push	OFFSET $SG226135
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -5437,7 +5463,7 @@ $LN5@lCityPurch:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN4@lCityPurch
-	push	OFFSET $SG225511
+	push	OFFSET $SG226141
 	push	esi
 	call	_luaL_error
 	push	esi
@@ -5445,21 +5471,21 @@ $LN5@lCityPurch:
 	add	esp, 12					; 0000000cH
 $LN4@lCityPurch:
 
-; 500  : 	const UnitTypes eUnitType = (UnitTypes)lua_tointeger(L, 2);
+; 518  : 	const UnitTypes eUnitType = (UnitTypes)lua_tointeger(L, 2);
 
 	push	2
 	push	esi
 	call	_lua_tointeger
 
-; 501  : 	const YieldTypes ePurchaseYield = (YieldTypes)lua_tointeger(L, 3);
+; 519  : 	const YieldTypes ePurchaseYield = (YieldTypes)lua_tointeger(L, 3);
 
 	push	3
 	push	esi
 	mov	ebx, eax
 	call	_lua_tointeger
 
-; 502  : 
-; 503  : 	GetInstance()->CityPurchase(pkCity, eUnitType, NO_BUILDING, NO_PROJECT, ePurchaseYield);
+; 520  : 
+; 521  : 	GetInstance()->CityPurchase(pkCity, eUnitType, NO_BUILDING, NO_PROJECT, ePurchaseYield);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	add	esp, 16					; 00000010H
@@ -5473,12 +5499,12 @@ $LN4@lCityPurch:
 	pop	esi
 	pop	ebp
 
-; 504  : 	return 0;
+; 522  : 	return 0;
 
 	xor	eax, eax
 	pop	ebx
 
-; 505  : }
+; 523  : }
 
 	ret	0
 ?lCityPurchaseUnit@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lCityPurchaseUnit
@@ -5490,13 +5516,13 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lCityPurchaseBuilding@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lCityPurchaseBuilding, COMDAT
 
-; 509  : {
+; 527  : {
 
 	push	ebx
 	push	ebp
 	push	esi
 
-; 510  : 	CvCity* pkCity = CvLuaCity::GetInstance(L, 1);
+; 528  : 	CvCity* pkCity = CvLuaCity::GetInstance(L, 1);
 
 	mov	esi, DWORD PTR _L$[esp+8]
 	push	edi
@@ -5511,7 +5537,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lCityPurch@2
-	push	OFFSET $SG225505
+	push	OFFSET $SG226135
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -5536,7 +5562,7 @@ $LN5@lCityPurch@2:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN4@lCityPurch@2
-	push	OFFSET $SG225511
+	push	OFFSET $SG226141
 	push	esi
 	call	_luaL_error
 	push	esi
@@ -5544,21 +5570,21 @@ $LN5@lCityPurch@2:
 	add	esp, 12					; 0000000cH
 $LN4@lCityPurch@2:
 
-; 511  : 	const BuildingTypes eBuildingType = (BuildingTypes)lua_tointeger(L, 2);
+; 529  : 	const BuildingTypes eBuildingType = (BuildingTypes)lua_tointeger(L, 2);
 
 	push	2
 	push	esi
 	call	_lua_tointeger
 
-; 512  : 	const YieldTypes ePurchaseYield = (YieldTypes)lua_tointeger(L, 3);
+; 530  : 	const YieldTypes ePurchaseYield = (YieldTypes)lua_tointeger(L, 3);
 
 	push	3
 	push	esi
 	mov	ebx, eax
 	call	_lua_tointeger
 
-; 513  : 
-; 514  : 	GetInstance()->CityPurchase(pkCity, NO_UNIT, eBuildingType, NO_PROJECT, ePurchaseYield);
+; 531  : 
+; 532  : 	GetInstance()->CityPurchase(pkCity, NO_UNIT, eBuildingType, NO_PROJECT, ePurchaseYield);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	add	esp, 16					; 00000010H
@@ -5572,12 +5598,12 @@ $LN4@lCityPurch@2:
 	pop	esi
 	pop	ebp
 
-; 515  : 	return 0;
+; 533  : 	return 0;
 
 	xor	eax, eax
 	pop	ebx
 
-; 516  : }
+; 534  : }
 
 	ret	0
 ?lCityPurchaseBuilding@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lCityPurchaseBuilding
@@ -5589,13 +5615,13 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lCityPurchaseProject@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lCityPurchaseProject, COMDAT
 
-; 520  : {
+; 538  : {
 
 	push	ebx
 	push	ebp
 	push	esi
 
-; 521  : 	CvCity* pkCity = CvLuaCity::GetInstance(L, 1);
+; 539  : 	CvCity* pkCity = CvLuaCity::GetInstance(L, 1);
 
 	mov	esi, DWORD PTR _L$[esp+8]
 	push	edi
@@ -5610,7 +5636,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lCityPurch@3
-	push	OFFSET $SG225505
+	push	OFFSET $SG226135
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -5635,7 +5661,7 @@ $LN5@lCityPurch@3:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN4@lCityPurch@3
-	push	OFFSET $SG225511
+	push	OFFSET $SG226141
 	push	esi
 	call	_luaL_error
 	push	esi
@@ -5643,21 +5669,21 @@ $LN5@lCityPurch@3:
 	add	esp, 12					; 0000000cH
 $LN4@lCityPurch@3:
 
-; 522  : 	const ProjectTypes eProjectType = (ProjectTypes)lua_tointeger(L, 2);
+; 540  : 	const ProjectTypes eProjectType = (ProjectTypes)lua_tointeger(L, 2);
 
 	push	2
 	push	esi
 	call	_lua_tointeger
 
-; 523  : 	const YieldTypes ePurchaseYield = (YieldTypes)lua_tointeger(L, 3);
+; 541  : 	const YieldTypes ePurchaseYield = (YieldTypes)lua_tointeger(L, 3);
 
 	push	3
 	push	esi
 	mov	ebx, eax
 	call	_lua_tointeger
 
-; 524  : 
-; 525  : 	GetInstance()->CityPurchase(pkCity, NO_UNIT, NO_BUILDING, eProjectType, ePurchaseYield);
+; 542  : 
+; 543  : 	GetInstance()->CityPurchase(pkCity, NO_UNIT, NO_BUILDING, eProjectType, ePurchaseYield);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	add	esp, 16					; 00000010H
@@ -5671,12 +5697,12 @@ $LN4@lCityPurch@3:
 	pop	esi
 	pop	ebp
 
-; 526  : 	return 0;
+; 544  : 	return 0;
 
 	xor	eax, eax
 	pop	ebx
 
-; 527  : }
+; 545  : }
 
 	ret	0
 ?lCityPurchaseProject@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lCityPurchaseProject
@@ -5689,25 +5715,25 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lSetUnitedNationsCountdown@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lSetUnitedNationsCountdown, COMDAT
 
-; 556  : 	int iTurns = luaL_checkint(L, 1);
+; 574  : 	int iTurns = luaL_checkint(L, 1);
 
 	mov	eax, DWORD PTR _L$[esp-4]
 	push	1
 	push	eax
 	call	_luaL_checkinteger
 
-; 557  : 	GC.getGame().SetUnitedNationsCountdown(iTurns);
+; 575  : 	GC.getGame().SetUnitedNationsCountdown(iTurns);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	add	esp, 8
 	push	eax
 	call	?SetUnitedNationsCountdown@CvGame@@QAEXH@Z ; CvGame::SetUnitedNationsCountdown
 
-; 558  : 	return 0;
+; 576  : 	return 0;
 
 	xor	eax, eax
 
-; 559  : }
+; 577  : }
 
 	ret	0
 ?lSetUnitedNationsCountdown@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lSetUnitedNationsCountdown
@@ -5740,7 +5766,7 @@ __$EHRec$ = -12						; size = 12
 _L$ = 8							; size = 4
 ?lGetDiploResponse@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetDiploResponse, COMDAT
 
-; 647  : {
+; 665  : {
 
 	push	-1
 	push	__ehhandler$?lGetDiploResponse@CvLuaGame@@KAHPAUlua_State@@@Z
@@ -5751,8 +5777,8 @@ _L$ = 8							; size = 4
 	push	ebx
 	push	esi
 
-; 648  : 	CvGame& game = GC.getGame();
-; 649  : 	const char* szLeaderType = luaL_checkstring(L, 1);
+; 666  : 	CvGame& game = GC.getGame();
+; 667  : 	const char* szLeaderType = luaL_checkstring(L, 1);
 
 	mov	esi, DWORD PTR _L$[esp+96]
 	push	edi
@@ -5762,7 +5788,7 @@ _L$ = 8							; size = 4
 	push	esi
 	call	_luaL_checklstring
 
-; 650  : 	const char* szResponseType = luaL_checkstring(L, 2);
+; 668  : 	const char* szResponseType = luaL_checkstring(L, 2);
 
 	push	0
 	push	2
@@ -5770,9 +5796,9 @@ _L$ = 8							; size = 4
 	mov	ebx, eax
 	call	_luaL_checklstring
 
-; 651  : 
-; 652  : 	Localization::String response
-; 653  : 		= game.GetDiploResponse(szLeaderType, szResponseType, Localization::String::Empty, Localization::String::Empty);
+; 669  : 
+; 670  : 	Localization::String response
+; 671  : 		= game.GetDiploResponse(szLeaderType, szResponseType, Localization::String::Empty, Localization::String::Empty);
 
 	mov	ecx, DWORD PTR __imp_?Empty@String@Localization@@2V12@A
 	add	esp, 24					; 00000018H
@@ -5785,8 +5811,8 @@ _L$ = 8							; size = 4
 	mov	ecx, edi
 	call	?GetDiploResponse@CvGame@@QAE?AVString@Localization@@PBD0ABV23@1@Z ; CvGame::GetDiploResponse
 
-; 654  : 
-; 655  : 	lua_pushstring(L, response.toUTF8());
+; 672  : 
+; 673  : 	lua_pushstring(L, response.toUTF8());
 
 	lea	ecx, DWORD PTR _response$[esp+104]
 	mov	DWORD PTR __$EHRec$[esp+112], 0
@@ -5796,14 +5822,14 @@ _L$ = 8							; size = 4
 	call	_lua_pushstring
 	add	esp, 8
 
-; 656  : 
-; 657  : 	return 1;
+; 674  : 
+; 675  : 	return 1;
 
 	lea	ecx, DWORD PTR _response$[esp+104]
 	mov	DWORD PTR __$EHRec$[esp+112], -1
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 
-; 658  : }
+; 676  : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+104]
 	pop	edi
@@ -5852,7 +5878,7 @@ __$EHRec$ = -12						; size = 12
 _L$ = 8							; size = 4
 ?lGetTurnString@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetTurnString, COMDAT
 
-; 734  : {
+; 752  : {
 
 	push	-1
 	push	__ehhandler$?lGetTurnString@CvLuaGame@@KAHPAUlua_State@@@Z
@@ -5862,21 +5888,21 @@ _L$ = 8							; size = 4
 	sub	esp, 28					; 0000001cH
 	push	esi
 
-; 735  : 	CvGame& game = GC.getGame();
+; 753  : 	CvGame& game = GC.getGame();
 
 	mov	esi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 
-; 736  : 	CvString strString;
+; 754  : 	CvString strString;
 
 	lea	ecx, DWORD PTR _strString$[esp+44]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 737  : 	CvGameTextMgr::setDateStr(strString,
-; 738  : 		game.getGameTurn(),
-; 739  : 		false,
-; 740  : 		game.getCalendar(),
-; 741  : 		game.getStartYear(),
-; 742  : 		game.getGameSpeedType());
+; 755  : 	CvGameTextMgr::setDateStr(strString,
+; 756  : 		game.getGameTurn(),
+; 757  : 		false,
+; 758  : 		game.getCalendar(),
+; 759  : 		game.getStartYear(),
+; 760  : 		game.getGameSpeedType());
 
 	mov	ecx, esi
 	mov	DWORD PTR __$EHRec$[esp+52], 0
@@ -5897,8 +5923,8 @@ _L$ = 8							; size = 4
 	call	?setDateStr@CvGameTextMgr@@SAXAAVCvString@@H_NW4CalendarTypes@@HW4GameSpeedTypes@@@Z ; CvGameTextMgr::setDateStr
 	add	esp, 24					; 00000018H
 
-; 743  : 
-; 744  : 	lua_pushstring(L, strString);
+; 761  : 
+; 762  : 	lua_pushstring(L, strString);
 
 	lea	ecx, DWORD PTR _strString$[esp+44]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
@@ -5908,13 +5934,13 @@ _L$ = 8							; size = 4
 	call	_lua_pushstring
 	add	esp, 8
 
-; 745  : 	return 1;
+; 763  : 	return 1;
 
 	lea	ecx, DWORD PTR _strString$[esp+44]
 	mov	DWORD PTR __$EHRec$[esp+52], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 746  : }
+; 764  : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+44]
 	mov	eax, 1
@@ -5940,7 +5966,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetTutorialLevel@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetTutorialLevel, COMDAT
 
-; 890  : 	lua_pushinteger(L, gDLL->GetTutorialLevel());
+; 908  : 	lua_pushinteger(L, gDLL->GetTutorialLevel());
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8564
 	mov	eax, DWORD PTR [ecx]
@@ -5952,11 +5978,11 @@ _L$ = 8							; size = 4
 	call	_lua_pushinteger
 	add	esp, 8
 
-; 891  : 	return 1;
+; 909  : 	return 1;
 
 	mov	eax, 1
 
-; 892  : }
+; 910  : }
 
 	ret	0
 ?lGetTutorialLevel@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lGetTutorialLevel
@@ -5969,11 +5995,11 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lHasAdvisorMessageBeenSeen@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lHasAdvisorMessageBeenSeen, COMDAT
 
-; 895  : {
+; 913  : {
 
 	push	esi
 
-; 896  : 	const char* szAdvisorMessage = luaL_checkstring(L, 1);
+; 914  : 	const char* szAdvisorMessage = luaL_checkstring(L, 1);
 
 	mov	esi, DWORD PTR _L$[esp]
 	push	0
@@ -5981,14 +6007,14 @@ _L$ = 8							; size = 4
 	push	esi
 	call	_luaL_checklstring
 
-; 897  : 	const bool bResult = GC.getGame().HasAdvisorMessageBeenSeen(szAdvisorMessage);
+; 915  : 	const bool bResult = GC.getGame().HasAdvisorMessageBeenSeen(szAdvisorMessage);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	add	esp, 12					; 0000000cH
 	push	eax
 	call	?HasAdvisorMessageBeenSeen@CvGame@@QAE_NPBD@Z ; CvGame::HasAdvisorMessageBeenSeen
 
-; 898  : 	lua_pushboolean(L, bResult);
+; 916  : 	lua_pushboolean(L, bResult);
 
 	movzx	eax, al
 	push	eax
@@ -5996,12 +6022,12 @@ _L$ = 8							; size = 4
 	call	_lua_pushboolean
 	add	esp, 8
 
-; 899  : 	return 1;
+; 917  : 	return 1;
 
 	mov	eax, 1
 	pop	esi
 
-; 900  : }
+; 918  : }
 
 	ret	0
 ?lHasAdvisorMessageBeenSeen@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lHasAdvisorMessageBeenSeen
@@ -6015,12 +6041,12 @@ _bSeen$ = -4						; size = 1
 _L$ = 8							; size = 4
 ?lSetAdvisorMessageHasBeenSeen@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lSetAdvisorMessageHasBeenSeen, COMDAT
 
-; 903  : {
+; 921  : {
 
 	push	ecx
 	push	esi
 
-; 904  : 	const char* szAdvisorMessage = luaL_checkstring(L, 1);
+; 922  : 	const char* szAdvisorMessage = luaL_checkstring(L, 1);
 
 	mov	esi, DWORD PTR _L$[esp+4]
 	push	edi
@@ -6029,7 +6055,7 @@ _L$ = 8							; size = 4
 	push	esi
 	call	_luaL_checklstring
 
-; 905  : 	const bool bSeen = lua_toboolean(L, 2);
+; 923  : 	const bool bSeen = lua_toboolean(L, 2);
 
 	push	2
 	push	esi
@@ -6040,7 +6066,7 @@ _L$ = 8							; size = 4
 	setne	al
 	mov	BYTE PTR _bSeen$[esp+12], al
 
-; 906  : 	GC.getGame().SetAdvisorMessageHasBeenSeen(szAdvisorMessage, bSeen);
+; 924  : 	GC.getGame().SetAdvisorMessageHasBeenSeen(szAdvisorMessage, bSeen);
 
 	mov	ecx, DWORD PTR _bSeen$[esp+12]
 	push	ecx
@@ -6049,12 +6075,12 @@ _L$ = 8							; size = 4
 	call	?SetAdvisorMessageHasBeenSeen@CvGame@@QAEXPBD_N@Z ; CvGame::SetAdvisorMessageHasBeenSeen
 	pop	edi
 
-; 907  : 	return 0;
+; 925  : 	return 0;
 
 	xor	eax, eax
 	pop	esi
 
-; 908  : }
+; 926  : }
 
 	pop	ecx
 	ret	0
@@ -6068,11 +6094,11 @@ _bValue$ = -4						; size = 1
 _L$ = 8							; size = 4
 ?lSetAdvisorBadAttackInterrupt@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lSetAdvisorBadAttackInterrupt, COMDAT
 
-; 911  : {
+; 929  : {
 
 	push	ecx
 
-; 912  : 	bool bValue = lua_toboolean(L, 1);
+; 930  : 	bool bValue = lua_toboolean(L, 1);
 
 	mov	eax, DWORD PTR _L$[esp]
 	push	1
@@ -6083,7 +6109,7 @@ _L$ = 8							; size = 4
 	setne	cl
 	mov	BYTE PTR _bValue$[esp+4], cl
 
-; 913  : 	gDLL->SetAdvisorBadAttackInterrupt(bValue);
+; 931  : 	gDLL->SetAdvisorBadAttackInterrupt(bValue);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8564
 	mov	edx, DWORD PTR [ecx]
@@ -6092,11 +6118,11 @@ _L$ = 8							; size = 4
 	push	eax
 	call	edx
 
-; 914  : 	return 1;
+; 932  : 	return 1;
 
 	mov	eax, 1
 
-; 915  : }
+; 933  : }
 
 	pop	ecx
 	ret	0
@@ -6110,11 +6136,11 @@ _bValue$ = -4						; size = 1
 _L$ = 8							; size = 4
 ?lSetAdvisorCityAttackInterrupt@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lSetAdvisorCityAttackInterrupt, COMDAT
 
-; 919  : {
+; 937  : {
 
 	push	ecx
 
-; 920  : 	bool bValue = lua_toboolean(L, 1);
+; 938  : 	bool bValue = lua_toboolean(L, 1);
 
 	mov	eax, DWORD PTR _L$[esp]
 	push	1
@@ -6125,7 +6151,7 @@ _L$ = 8							; size = 4
 	setne	cl
 	mov	BYTE PTR _bValue$[esp+4], cl
 
-; 921  : 	gDLL->SetAdvisorCityAttackInterrupt(bValue);
+; 939  : 	gDLL->SetAdvisorCityAttackInterrupt(bValue);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8564
 	mov	edx, DWORD PTR [ecx]
@@ -6134,11 +6160,11 @@ _L$ = 8							; size = 4
 	push	eax
 	call	edx
 
-; 922  : 	return 1;
+; 940  : 	return 1;
 
 	mov	eax, 1
 
-; 923  : }
+; 941  : }
 
 	pop	ecx
 	ret	0
@@ -6152,25 +6178,25 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lChangeNoNukesCount@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lChangeNoNukesCount, COMDAT
 
-; 978  : 	int iNumNukes = lua_tointeger(L, 2);
+; 996  : 	int iNumNukes = lua_tointeger(L, 2);
 
 	mov	eax, DWORD PTR _L$[esp-4]
 	push	2
 	push	eax
 	call	_lua_tointeger
 
-; 979  : 	GC.getGame().changeNoNukesCount(iNumNukes);
+; 997  : 	GC.getGame().changeNoNukesCount(iNumNukes);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	add	esp, 8
 	push	eax
 	call	?changeNoNukesCount@CvGame@@QAEXH@Z	; CvGame::changeNoNukesCount
 
-; 980  : 	return 1;
+; 998  : 	return 1;
 
 	mov	eax, 1
 
-; 981  : }
+; 999  : }
 
 	ret	0
 ?lChangeNoNukesCount@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lChangeNoNukesCount
@@ -6183,25 +6209,25 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lChangeNukesExploded@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lChangeNukesExploded, COMDAT
 
-; 992  : 	int iNumNukes = lua_tointeger(L, 2);
+; 1010 : 	int iNumNukes = lua_tointeger(L, 2);
 
 	mov	eax, DWORD PTR _L$[esp-4]
 	push	2
 	push	eax
 	call	_lua_tointeger
 
-; 993  : 	GC.getGame().changeNukesExploded(iNumNukes);
+; 1011 : 	GC.getGame().changeNukesExploded(iNumNukes);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	add	esp, 8
 	push	eax
 	call	?changeNukesExploded@CvGame@@QAEXH@Z	; CvGame::changeNukesExploded
 
-; 994  : 	return 1;
+; 1012 : 	return 1;
 
 	mov	eax, 1
 
-; 995  : }
+; 1013 : }
 
 	ret	0
 ?lChangeNukesExploded@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lChangeNukesExploded
@@ -6217,13 +6243,13 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetNumWorldWonders@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetNumWorldWonders, COMDAT
 
-; 1029 : {
+; 1047 : {
 
 	push	ebx
 	push	ebp
 	push	esi
 
-; 1030 : 	int iWonderCount = 0;
+; 1048 : 	int iWonderCount = 0;
 
 	xor	ebp, ebp
 	push	edi
@@ -6231,18 +6257,18 @@ _L$ = 8							; size = 4
 	npad	8
 $LL17@lGetNumWor:
 
-; 1035 : 	{
-; 1036 : 		eLoopPlayer = (PlayerTypes) iPlayerLoop;
-; 1037 : 		CvPlayerAI& kLoopPlayer = GET_PLAYER(eLoopPlayer);
+; 1053 : 	{
+; 1054 : 		eLoopPlayer = (PlayerTypes) iPlayerLoop;
+; 1055 : 		CvPlayerAI& kLoopPlayer = GET_PLAYER(eLoopPlayer);
 
 	mov	eax, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 
-; 1038 : 
-; 1039 : 		// Loop through all buildings, see if they're a world wonder
-; 1040 : #ifdef AUI_WARNING_FIXES
-; 1041 : 		for (uint iBuildingLoop = 0; iBuildingLoop < GC.getNumBuildingInfos(); iBuildingLoop++)
-; 1042 : #else
-; 1043 : 		for(int iBuildingLoop = 0; iBuildingLoop < GC.getNumBuildingInfos(); iBuildingLoop++)
+; 1056 : 
+; 1057 : 		// Loop through all buildings, see if they're a world wonder
+; 1058 : #ifdef AUI_WARNING_FIXES
+; 1059 : 		for (uint iBuildingLoop = 0; iBuildingLoop < GC.getNumBuildingInfos(); iBuildingLoop++)
+; 1060 : #else
+; 1061 : 		for(int iBuildingLoop = 0; iBuildingLoop < GC.getNumBuildingInfos(); iBuildingLoop++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	lea	edi, DWORD PTR [ebx+eax]
@@ -6253,22 +6279,22 @@ $LL17@lGetNumWor:
 	npad	8
 $LL5@lGetNumWor:
 
-; 1044 : #endif
-; 1045 : 		{
-; 1046 : 			const BuildingTypes eBuilding = static_cast<BuildingTypes>(iBuildingLoop);
-; 1047 : 			CvBuildingEntry* pkBuildingInfo = GC.getBuildingInfo(eBuilding);
+; 1062 : #endif
+; 1063 : 		{
+; 1064 : 			const BuildingTypes eBuilding = static_cast<BuildingTypes>(iBuildingLoop);
+; 1065 : 			CvBuildingEntry* pkBuildingInfo = GC.getBuildingInfo(eBuilding);
 
 	push	esi
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getBuildingInfo@CvGlobals@@QAEPAVCvBuildingEntry@@W4BuildingTypes@@@Z ; CvGlobals::getBuildingInfo
 
-; 1048 : 			if(pkBuildingInfo)
+; 1066 : 			if(pkBuildingInfo)
 
 	test	eax, eax
 	je	SHORT $LN4@lGetNumWor
 
-; 1049 : 			{
-; 1050 : 				if(::isWorldWonderClass(pkBuildingInfo->GetBuildingClassInfo()))
+; 1067 : 			{
+; 1068 : 				if(::isWorldWonderClass(pkBuildingInfo->GetBuildingClassInfo()))
 
 	mov	ecx, eax
 	call	?GetBuildingClassInfo@CvBuildingEntry@@QBEABVCvBuildingClassInfo@@XZ ; CvBuildingEntry::GetBuildingClassInfo
@@ -6278,8 +6304,8 @@ $LL5@lGetNumWor:
 	test	al, al
 	je	SHORT $LN4@lGetNumWor
 
-; 1051 : 				{
-; 1052 : 					iWonderCount += kLoopPlayer.countNumBuildings(eBuilding);
+; 1069 : 				{
+; 1070 : 					iWonderCount += kLoopPlayer.countNumBuildings(eBuilding);
 
 	push	esi
 	mov	ecx, edi
@@ -6293,21 +6319,21 @@ $LN4@lGetNumWor:
 	jl	SHORT $LL5@lGetNumWor
 $LN7@lGetNumWor:
 
-; 1031 : 
-; 1032 : 	// Loop through all players
-; 1033 : 	PlayerTypes eLoopPlayer;
-; 1034 : 	for(int iPlayerLoop = 0; iPlayerLoop < MAX_PLAYERS; iPlayerLoop++)
+; 1049 : 
+; 1050 : 	// Loop through all players
+; 1051 : 	PlayerTypes eLoopPlayer;
+; 1052 : 	for(int iPlayerLoop = 0; iPlayerLoop < MAX_PLAYERS; iPlayerLoop++)
 
 	add	ebx, 63236				; 0000f704H
 	cmp	ebx, 4047104				; 003dc100H
 	jl	SHORT $LL17@lGetNumWor
 
-; 1053 : 				}
-; 1054 : 			}
-; 1055 : 		}
-; 1056 : 	}
-; 1057 : 
-; 1058 : 	lua_pushinteger(L, iWonderCount);
+; 1071 : 				}
+; 1072 : 			}
+; 1073 : 		}
+; 1074 : 	}
+; 1075 : 
+; 1076 : 	lua_pushinteger(L, iWonderCount);
 
 	mov	ecx, DWORD PTR _L$[esp+12]
 	push	ebp
@@ -6318,12 +6344,12 @@ $LN7@lGetNumWor:
 	pop	esi
 	pop	ebp
 
-; 1059 : 	return 1;
+; 1077 : 	return 1;
 
 	mov	eax, 1
 	pop	ebx
 
-; 1060 : }
+; 1078 : }
 
 	ret	0
 ?lGetNumWorldWonders@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lGetNumWorldWonders
@@ -6337,23 +6363,23 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lSetPausePlayer@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lSetPausePlayer, COMDAT
 
-; 1193 : {
+; 1211 : {
 
 	push	esi
 
-; 1194 : 	CvGame& game = GC.getGame();
+; 1212 : 	CvGame& game = GC.getGame();
 
 	mov	esi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 
-; 1195 : 	if(!game.isNetworkMultiPlayer())
+; 1213 : 	if(!game.isNetworkMultiPlayer())
 
 	mov	ecx, esi
 	call	?isNetworkMultiPlayer@CvGame@@QBE_NXZ	; CvGame::isNetworkMultiPlayer
 	test	al, al
 	jne	SHORT $LN6@lSetPauseP
 
-; 1196 : 	{
-; 1197 : 		int iPlayer = lua_tointeger(L, 1);
+; 1214 : 	{
+; 1215 : 		int iPlayer = lua_tointeger(L, 1);
 
 	mov	eax, DWORD PTR _L$[esp]
 	push	1
@@ -6361,21 +6387,21 @@ _L$ = 8							; size = 4
 	call	_lua_tointeger
 	add	esp, 8
 
-; 1198 : 		game.setPausePlayer((PlayerTypes)iPlayer);
+; 1216 : 		game.setPausePlayer((PlayerTypes)iPlayer);
 
 	push	eax
 	mov	ecx, esi
 	call	?setPausePlayer@CvGame@@QAEXW4PlayerTypes@@@Z ; CvGame::setPausePlayer
 $LN6@lSetPauseP:
 
-; 1199 : 	}
-; 1200 : 
-; 1201 : 	return 1;
+; 1217 : 	}
+; 1218 : 
+; 1219 : 	return 1;
 
 	mov	eax, 1
 	pop	esi
 
-; 1202 : }
+; 1220 : }
 
 	ret	0
 ?lSetPausePlayer@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lSetPausePlayer
@@ -6388,11 +6414,11 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetFaithCost@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetFaithCost, COMDAT
 
-; 1224 : {
+; 1242 : {
 
 	push	esi
 
-; 1225 : 	const UnitTypes eUnit = (UnitTypes) lua_tointeger(L, 1);
+; 1243 : 	const UnitTypes eUnit = (UnitTypes) lua_tointeger(L, 1);
 
 	mov	esi, DWORD PTR _L$[esp]
 	push	1
@@ -6400,31 +6426,31 @@ _L$ = 8							; size = 4
 	call	_lua_tointeger
 	add	esp, 8
 
-; 1226 : 	CvUnitEntry* pkUnitInfo = GC.getUnitInfo(eUnit);
+; 1244 : 	CvUnitEntry* pkUnitInfo = GC.getUnitInfo(eUnit);
 
 	push	eax
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getUnitInfo@CvGlobals@@QAEPAVCvUnitEntry@@W4UnitTypes@@@Z ; CvGlobals::getUnitInfo
 
-; 1227 : 	const int iResult = GC.getGame().GetFaithCost(pkUnitInfo);
+; 1245 : 	const int iResult = GC.getGame().GetFaithCost(pkUnitInfo);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	eax
 	call	?GetFaithCost@CvGame@@QBEHPAVCvUnitEntry@@@Z ; CvGame::GetFaithCost
 
-; 1228 : 	lua_pushinteger(L, iResult);
+; 1246 : 	lua_pushinteger(L, iResult);
 
 	push	eax
 	push	esi
 	call	_lua_pushinteger
 	add	esp, 8
 
-; 1229 : 	return 1;
+; 1247 : 	return 1;
 
 	mov	eax, 1
 	pop	esi
 
-; 1230 : }
+; 1248 : }
 
 	ret	0
 ?lGetFaithCost@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lGetFaithCost
@@ -6437,27 +6463,27 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lSetGameState@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lSetGameState, COMDAT
 
-; 1259 : 	int iGameState = luaL_checkint(L, 1);
+; 1277 : 	int iGameState = luaL_checkint(L, 1);
 
 	mov	eax, DWORD PTR _L$[esp-4]
 	push	1
 	push	eax
 	call	_luaL_checkinteger
 
-; 1260 : 	GameStateTypes eGameState = static_cast<GameStateTypes>(iGameState);
-; 1261 : 
-; 1262 : 	GC.getGame().setGameState(eGameState);
+; 1278 : 	GameStateTypes eGameState = static_cast<GameStateTypes>(iGameState);
+; 1279 : 
+; 1280 : 	GC.getGame().setGameState(eGameState);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	add	esp, 8
 	push	eax
 	call	?setGameState@CvGame@@QAEXW4GameStateTypes@@@Z ; CvGame::setGameState
 
-; 1263 : 	return 0;
+; 1281 : 	return 0;
 
 	xor	eax, eax
 
-; 1264 : }
+; 1282 : }
 
 	ret	0
 ?lSetGameState@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lSetGameState
@@ -6473,13 +6499,13 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lIsOption@CvLuaGame@@KAHPAUlua_State@@@Z PROC		; CvLuaGame::lIsOption, COMDAT
 
-; 1377 : {
+; 1395 : {
 
 	push	esi
 
-; 1378 : 	CvGame& kGame = GC.getGame();
-; 1379 : 	bool bResult = false;
-; 1380 : 	if(lua_isnumber(L, 1))
+; 1396 : 	CvGame& kGame = GC.getGame();
+; 1397 : 	bool bResult = false;
+; 1398 : 	if(lua_isnumber(L, 1))
 
 	mov	esi, DWORD PTR _L$[esp]
 	push	edi
@@ -6491,7 +6517,7 @@ _L$ = 8							; size = 4
 	test	eax, eax
 	je	SHORT $LN2@lIsOption
 
-; 1381 : 		bResult = kGame.isOption((GameOptionTypes)lua_tointeger(L, 1));
+; 1399 : 		bResult = kGame.isOption((GameOptionTypes)lua_tointeger(L, 1));
 
 	push	1
 	push	esi
@@ -6501,12 +6527,12 @@ _L$ = 8							; size = 4
 	mov	ecx, edi
 	call	?isOption@CvGame@@QBE_NW4GameOptionTypes@@@Z ; CvGame::isOption
 
-; 1382 : 	else
+; 1400 : 	else
 
 	jmp	SHORT $LN1@lIsOption
 $LN2@lIsOption:
 
-; 1383 : 		bResult = kGame.isOption(lua_tostring(L, 1));
+; 1401 : 		bResult = kGame.isOption(lua_tostring(L, 1));
 
 	push	0
 	push	1
@@ -6518,8 +6544,8 @@ $LN2@lIsOption:
 	call	?isOption@CvGame@@QBE_NPBD@Z		; CvGame::isOption
 $LN1@lIsOption:
 
-; 1384 : 
-; 1385 : 	lua_pushboolean(L, bResult);
+; 1402 : 
+; 1403 : 	lua_pushboolean(L, bResult);
 
 	movzx	eax, al
 	push	eax
@@ -6528,12 +6554,12 @@ $LN1@lIsOption:
 	add	esp, 8
 	pop	edi
 
-; 1386 : 	return 1;
+; 1404 : 	return 1;
 
 	mov	eax, 1
 	pop	esi
 
-; 1387 : }
+; 1405 : }
 
 	ret	0
 ?lIsOption@CvLuaGame@@KAHPAUlua_State@@@Z ENDP		; CvLuaGame::lIsOption
@@ -6547,12 +6573,12 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lSetOption@CvLuaGame@@KAHPAUlua_State@@@Z PROC		; CvLuaGame::lSetOption, COMDAT
 
-; 1392 : {
+; 1410 : {
 
 	push	esi
 
-; 1393 : 	CvGame& kGame = GC.getGame();
-; 1394 : 	if(lua_isnumber(L, 1))
+; 1411 : 	CvGame& kGame = GC.getGame();
+; 1412 : 	if(lua_isnumber(L, 1))
 
 	mov	esi, DWORD PTR _L$[esp]
 	push	edi
@@ -6562,7 +6588,7 @@ _L$ = 8							; size = 4
 	call	_lua_isnumber
 	add	esp, 8
 
-; 1395 : 		kGame.setOption((GameOptionTypes)lua_tointeger(L, 1), lua_toboolean(L, 2));
+; 1413 : 		kGame.setOption((GameOptionTypes)lua_tointeger(L, 1), lua_toboolean(L, 2));
 
 	push	2
 	push	esi
@@ -6583,19 +6609,19 @@ _L$ = 8							; size = 4
 	call	?setOption@CvGame@@QAEXW4GameOptionTypes@@_N@Z ; CvGame::setOption
 	pop	edi
 
-; 1398 : 
-; 1399 : 	return 0;
+; 1416 : 
+; 1417 : 	return 0;
 
 	xor	eax, eax
 	pop	esi
 
-; 1400 : }
+; 1418 : }
 
 	ret	0
 $LN2@lSetOption:
 
-; 1396 : 	else
-; 1397 : 		kGame.setOption(lua_tostring(L, 1), lua_toboolean(L, 2));
+; 1414 : 	else
+; 1415 : 		kGame.setOption(lua_tostring(L, 1), lua_toboolean(L, 2));
 
 	call	_lua_toboolean
 	add	esp, 8
@@ -6613,13 +6639,13 @@ $LN2@lSetOption:
 	call	?setOption@CvGame@@QAEXPBD_N@Z		; CvGame::setOption
 	pop	edi
 
-; 1398 : 
-; 1399 : 	return 0;
+; 1416 : 
+; 1417 : 	return 0;
 
 	xor	eax, eax
 	pop	esi
 
-; 1400 : }
+; 1418 : }
 
 	ret	0
 ?lSetOption@CvLuaGame@@KAHPAUlua_State@@@Z ENDP		; CvLuaGame::lSetOption
@@ -6633,25 +6659,25 @@ _bValid$ = -4						; size = 1
 _L$ = 8							; size = 4
 ?lSetVictoryValid@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lSetVictoryValid, COMDAT
 
-; 1458 : {
+; 1476 : {
 
 	push	ecx
 	push	ebx
 	push	esi
 
-; 1459 : 	CvGame& game = GC.getGame();
+; 1477 : 	CvGame& game = GC.getGame();
 
 	mov	esi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	edi
 
-; 1460 : 	VictoryTypes eVictoryType = (VictoryTypes)lua_tointeger(L, 1);
+; 1478 : 	VictoryTypes eVictoryType = (VictoryTypes)lua_tointeger(L, 1);
 
 	mov	edi, DWORD PTR _L$[esp+12]
 	push	1
 	push	edi
 	call	_lua_tointeger
 
-; 1461 : 	bool bValid = lua_toboolean(L, 2);
+; 1479 : 	bool bValid = lua_toboolean(L, 2);
 
 	push	2
 	push	edi
@@ -6662,7 +6688,7 @@ _L$ = 8							; size = 4
 	setne	al
 	mov	BYTE PTR _bValid$[esp+16], al
 
-; 1462 : 	game.setVictoryValid(eVictoryType, bValid);
+; 1480 : 	game.setVictoryValid(eVictoryType, bValid);
 
 	mov	ecx, DWORD PTR _bValid$[esp+16]
 	push	ecx
@@ -6672,17 +6698,17 @@ _L$ = 8							; size = 4
 	pop	edi
 	pop	esi
 
-; 1463 : 
-; 1464 : #ifdef AUI_WARNING_FIXES
-; 1465 : 	return 0;
-; 1466 : #else
-; 1467 : 	return true;
+; 1481 : 
+; 1482 : #ifdef AUI_WARNING_FIXES
+; 1483 : 	return 0;
+; 1484 : #else
+; 1485 : 	return true;
 
 	mov	eax, 1
 	pop	ebx
 
-; 1468 : #endif
-; 1469 : }
+; 1486 : #endif
+; 1487 : }
 
 	pop	ecx
 	ret	0
@@ -6697,11 +6723,11 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lRand@CvLuaGame@@KAHPAUlua_State@@@Z PROC		; CvLuaGame::lRand, COMDAT
 
-; 1516 : {
+; 1534 : {
 
 	push	esi
 
-; 1517 : 	const int max_num = luaL_checkinteger(L, 1);
+; 1535 : 	const int max_num = luaL_checkinteger(L, 1);
 
 	mov	esi, DWORD PTR _L$[esp]
 	push	edi
@@ -6709,7 +6735,7 @@ _L$ = 8							; size = 4
 	push	esi
 	call	_luaL_checkinteger
 
-; 1518 : 	const char* strLog = luaL_checkstring(L, 2);
+; 1536 : 	const char* strLog = luaL_checkstring(L, 2);
 
 	push	0
 	push	2
@@ -6717,7 +6743,7 @@ _L$ = 8							; size = 4
 	mov	edi, eax
 	call	_luaL_checklstring
 
-; 1519 : 	const int rand_val = GetInstance()->getJonRand().get(max_num, strLog);
+; 1537 : 	const int rand_val = GetInstance()->getJonRand().get(max_num, strLog);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	add	esp, 20					; 00000014H
@@ -6728,8 +6754,8 @@ _L$ = 8							; size = 4
 	call	?get@CvRandom@@QAEGGPBD@Z		; CvRandom::get
 	movzx	eax, ax
 
-; 1520 : 
-; 1521 : 	lua_pushinteger(L, rand_val);
+; 1538 : 
+; 1539 : 	lua_pushinteger(L, rand_val);
 
 	push	eax
 	push	esi
@@ -6737,12 +6763,12 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	pop	edi
 
-; 1522 : 	return 1;
+; 1540 : 	return 1;
 
 	mov	eax, 1
 	pop	esi
 
-; 1523 : }
+; 1541 : }
 
 	ret	0
 ?lRand@CvLuaGame@@KAHPAUlua_State@@@Z ENDP		; CvLuaGame::lRand
@@ -6760,32 +6786,32 @@ EXTRN	?getNumReplayMessages@CvGame@@QBEIXZ:PROC	; CvGame::getNumReplayMessages
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?lGetReplayMessage@CvLuaGame@@KAHPAUlua_State@@@Z
 _TEXT	SEGMENT
-_i$223644 = -20						; size = 4
-_nPlots$223640 = -16					; size = 4
-_iPlotX$223648 = -12					; size = 4
-_iPlotY$223649 = -8					; size = 4
-_t$223633 = -4						; size = 4
+_i$224169 = -20						; size = 4
+_nPlots$224165 = -16					; size = 4
+_iPlotX$224173 = -12					; size = 4
+_iPlotY$224174 = -8					; size = 4
+_t$224158 = -4						; size = 4
 _L$ = 8							; size = 4
 ?lGetReplayMessage@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetReplayMessage, COMDAT
 
-; 1538 : {
+; 1556 : {
 
 	sub	esp, 20					; 00000014H
 	push	ebx
 	push	esi
 	push	edi
 
-; 1539 : 	CvGame& game = GC.getGame();
+; 1557 : 	CvGame& game = GC.getGame();
 
 	mov	edi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 
-; 1540 : 	const size_t nReplayMessages = game.getNumReplayMessages();
+; 1558 : 	const size_t nReplayMessages = game.getNumReplayMessages();
 
 	mov	ecx, edi
 	call	?getNumReplayMessages@CvGame@@QBEIXZ	; CvGame::getNumReplayMessages
 
-; 1541 : 
-; 1542 : 	unsigned int idx = luaL_checkint(L, 1);
+; 1559 : 
+; 1560 : 	unsigned int idx = luaL_checkint(L, 1);
 
 	mov	esi, DWORD PTR _L$[esp+28]
 	push	1
@@ -6794,21 +6820,21 @@ _L$ = 8							; size = 4
 	call	_luaL_checkinteger
 	add	esp, 8
 
-; 1543 : 	if(idx < nReplayMessages)
+; 1561 : 	if(idx < nReplayMessages)
 
 	cmp	eax, ebx
 	jae	$LN7@lGetReplay
 	push	ebp
 
-; 1544 : 	{
-; 1545 : 		const CvReplayMessage* pMessage = game.getReplayMessage(idx);
+; 1562 : 	{
+; 1563 : 		const CvReplayMessage* pMessage = game.getReplayMessage(idx);
 
 	push	eax
 	mov	ecx, edi
 	call	?getReplayMessage@CvGame@@QBEPBVCvReplayMessage@@I@Z ; CvGame::getReplayMessage
 
-; 1546 : 
-; 1547 : 		lua_createtable(L, 0, 5);
+; 1564 : 
+; 1565 : 		lua_createtable(L, 0, 5);
 
 	push	5
 	push	0
@@ -6816,33 +6842,33 @@ _L$ = 8							; size = 4
 	mov	ebx, eax
 	call	_lua_createtable
 
-; 1548 : 		const int t = lua_gettop(L);
+; 1566 : 		const int t = lua_gettop(L);
 
 	push	esi
 	call	_lua_gettop
 	mov	edi, eax
 	add	esp, 16					; 00000010H
 
-; 1549 : 
-; 1550 : 		lua_pushinteger(L, pMessage->getPlayer());
+; 1567 : 
+; 1568 : 		lua_pushinteger(L, pMessage->getPlayer());
 
 	mov	ecx, ebx
-	mov	DWORD PTR _t$223633[esp+36], edi
+	mov	DWORD PTR _t$224158[esp+36], edi
 	call	?getPlayer@CvReplayMessage@@QBE?AW4PlayerTypes@@XZ ; CvReplayMessage::getPlayer
 	push	eax
 	push	esi
 	call	_lua_pushinteger
 
-; 1551 : 		lua_setfield(L, t, "Player");
+; 1569 : 		lua_setfield(L, t, "Player");
 
-	push	OFFSET $SG223634
+	push	OFFSET $SG224159
 	push	edi
 	push	esi
 	call	_lua_setfield
 	add	esp, 20					; 00000014H
 
-; 1552 : 
-; 1553 : 		lua_pushinteger(L, pMessage->getTurn());
+; 1570 : 
+; 1571 : 		lua_pushinteger(L, pMessage->getTurn());
 
 	mov	ecx, ebx
 	call	?getTurn@CvReplayMessage@@QBEHXZ	; CvReplayMessage::getTurn
@@ -6850,16 +6876,16 @@ _L$ = 8							; size = 4
 	push	esi
 	call	_lua_pushinteger
 
-; 1554 : 		lua_setfield(L, t, "Turn");
+; 1572 : 		lua_setfield(L, t, "Turn");
 
-	push	OFFSET $SG223635
+	push	OFFSET $SG224160
 	push	edi
 	push	esi
 	call	_lua_setfield
 	add	esp, 20					; 00000014H
 
-; 1555 : 
-; 1556 : 		lua_pushinteger(L, pMessage->getType());
+; 1573 : 
+; 1574 : 		lua_pushinteger(L, pMessage->getType());
 
 	mov	ecx, ebx
 	call	?getType@CvReplayMessage@@QBE?AW4ReplayMessageTypes@@XZ ; CvReplayMessage::getType
@@ -6867,30 +6893,30 @@ _L$ = 8							; size = 4
 	push	esi
 	call	_lua_pushinteger
 
-; 1557 : 		lua_setfield(L, t, "Type");
+; 1575 : 		lua_setfield(L, t, "Type");
 
-	push	OFFSET $SG223636
+	push	OFFSET $SG224161
 	push	edi
 	push	esi
 	call	_lua_setfield
 	add	esp, 20					; 00000014H
 
-; 1558 : 
-; 1559 : 		const CvString& text = pMessage->getText();
+; 1576 : 
+; 1577 : 		const CvString& text = pMessage->getText();
 
 	mov	ecx, ebx
 	call	?getText@CvReplayMessage@@QBEABVCvString@@XZ ; CvReplayMessage::getText
 	mov	ebp, eax
 
-; 1560 : 		if(text.GetLength() > 0)
+; 1578 : 		if(text.GetLength() > 0)
 
 	mov	ecx, ebp
 	call	DWORD PTR __imp_?size@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEIXZ
 	test	eax, eax
 	jle	SHORT $LN6@lGetReplay
 
-; 1561 : 		{
-; 1562 : 			lua_pushstring(L, text.c_str());
+; 1579 : 		{
+; 1580 : 			lua_pushstring(L, text.c_str());
 
 	mov	ecx, ebp
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
@@ -6898,61 +6924,61 @@ _L$ = 8							; size = 4
 	push	esi
 	call	_lua_pushstring
 
-; 1563 : 			lua_setfield(L, t, "Text");
+; 1581 : 			lua_setfield(L, t, "Text");
 
-	push	OFFSET $SG223639
+	push	OFFSET $SG224164
 	push	edi
 	push	esi
 	call	_lua_setfield
 	add	esp, 20					; 00000014H
 $LN6@lGetReplay:
 
-; 1564 : 		}
-; 1565 : 
-; 1566 : 		const unsigned int nPlots = pMessage->getNumPlots();
+; 1582 : 		}
+; 1583 : 
+; 1584 : 		const unsigned int nPlots = pMessage->getNumPlots();
 
 	mov	ecx, ebx
 	call	?getNumPlots@CvReplayMessage@@QBEIXZ	; CvReplayMessage::getNumPlots
-	mov	DWORD PTR _nPlots$223640[esp+36], eax
+	mov	DWORD PTR _nPlots$224165[esp+36], eax
 
-; 1567 : 		if(nPlots > 0)
+; 1585 : 		if(nPlots > 0)
 
 	test	eax, eax
 	jbe	$LN5@lGetReplay
 
-; 1568 : 		{
-; 1569 : 			lua_createtable(L, nPlots, 0);
+; 1586 : 		{
+; 1587 : 			lua_createtable(L, nPlots, 0);
 
 	push	0
 	push	eax
 	push	esi
 	call	_lua_createtable
 
-; 1570 : 			int plots_idx = 1;
-; 1571 : 			int plots_t = lua_gettop(L);
+; 1588 : 			int plots_idx = 1;
+; 1589 : 			int plots_t = lua_gettop(L);
 
 	push	esi
 	mov	edi, 1
 	call	_lua_gettop
 	add	esp, 16					; 00000010H
 
-; 1572 : 
-; 1573 : 			for(unsigned int i = 0; i < nPlots; i++)
+; 1590 : 
+; 1591 : 			for(unsigned int i = 0; i < nPlots; i++)
 
-	cmp	DWORD PTR _nPlots$223640[esp+36], 0
+	cmp	DWORD PTR _nPlots$224165[esp+36], 0
 	mov	ebp, eax
-	mov	DWORD PTR _i$223644[esp+36], 0
+	mov	DWORD PTR _i$224169[esp+36], 0
 	jbe	SHORT $LN2@lGetReplay
 $LL16@lGetReplay:
 
-; 1574 : 			{
-; 1575 : 				int iPlotX, iPlotY;
-; 1576 : 				if(pMessage->getPlot(i, iPlotX, iPlotY))
+; 1592 : 			{
+; 1593 : 				int iPlotX, iPlotY;
+; 1594 : 				if(pMessage->getPlot(i, iPlotX, iPlotY))
 
-	mov	edx, DWORD PTR _i$223644[esp+36]
-	lea	eax, DWORD PTR _iPlotY$223649[esp+36]
+	mov	edx, DWORD PTR _i$224169[esp+36]
+	lea	eax, DWORD PTR _iPlotY$224174[esp+36]
 	push	eax
-	lea	ecx, DWORD PTR _iPlotX$223648[esp+40]
+	lea	ecx, DWORD PTR _iPlotX$224173[esp+40]
 	push	ecx
 	push	edx
 	mov	ecx, ebx
@@ -6960,43 +6986,43 @@ $LL16@lGetReplay:
 	test	al, al
 	je	SHORT $LN3@lGetReplay
 
-; 1577 : 				{
-; 1578 : 					lua_createtable(L, 0, 2);
+; 1595 : 				{
+; 1596 : 					lua_createtable(L, 0, 2);
 
 	push	2
 	push	0
 	push	esi
 	call	_lua_createtable
 
-; 1579 : 					lua_pushinteger(L, iPlotX);
+; 1597 : 					lua_pushinteger(L, iPlotX);
 
-	mov	eax, DWORD PTR _iPlotX$223648[esp+48]
+	mov	eax, DWORD PTR _iPlotX$224173[esp+48]
 	push	eax
 	push	esi
 	call	_lua_pushinteger
 
-; 1580 : 					lua_setfield(L, -2, "X");
+; 1598 : 					lua_setfield(L, -2, "X");
 
-	push	OFFSET $SG223651
+	push	OFFSET $SG224176
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
 
-; 1581 : 					lua_pushinteger(L, iPlotY);
+; 1599 : 					lua_pushinteger(L, iPlotY);
 
-	mov	ecx, DWORD PTR _iPlotY$223649[esp+68]
+	mov	ecx, DWORD PTR _iPlotY$224174[esp+68]
 	push	ecx
 	push	esi
 	call	_lua_pushinteger
 
-; 1582 : 					lua_setfield(L, -2, "Y");
+; 1600 : 					lua_setfield(L, -2, "Y");
 
-	push	OFFSET $SG223652
+	push	OFFSET $SG224177
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
 
-; 1583 : 					lua_rawseti(L, plots_t, plots_idx++);
+; 1601 : 					lua_rawseti(L, plots_t, plots_idx++);
 
 	push	edi
 	push	ebp
@@ -7005,20 +7031,20 @@ $LL16@lGetReplay:
 	add	esp, 64					; 00000040H
 	inc	edi
 $LN3@lGetReplay:
-	mov	eax, DWORD PTR _i$223644[esp+36]
+	mov	eax, DWORD PTR _i$224169[esp+36]
 	inc	eax
-	mov	DWORD PTR _i$223644[esp+36], eax
-	cmp	eax, DWORD PTR _nPlots$223640[esp+36]
+	mov	DWORD PTR _i$224169[esp+36], eax
+	cmp	eax, DWORD PTR _nPlots$224165[esp+36]
 	jb	SHORT $LL16@lGetReplay
 $LN2@lGetReplay:
 
-; 1584 : 				}
-; 1585 : 			}
-; 1586 : 
-; 1587 : 			lua_setfield(L, t, "Plots");
+; 1602 : 				}
+; 1603 : 			}
+; 1604 : 
+; 1605 : 			lua_setfield(L, t, "Plots");
 
-	mov	edx, DWORD PTR _t$223633[esp+36]
-	push	OFFSET $SG223653
+	mov	edx, DWORD PTR _t$224158[esp+36]
+	push	OFFSET $SG224178
 	push	edx
 	push	esi
 	call	_lua_setfield
@@ -7028,14 +7054,14 @@ $LN5@lGetReplay:
 	pop	edi
 	pop	esi
 
-; 1588 : 		}
-; 1589 : 
-; 1590 : 		return 1;
+; 1606 : 		}
+; 1607 : 
+; 1608 : 		return 1;
 
 	mov	eax, 1
 	pop	ebx
 
-; 1594 : }
+; 1612 : }
 
 	add	esp, 20					; 00000014H
 	ret	0
@@ -7043,14 +7069,14 @@ $LN7@lGetReplay:
 	pop	edi
 	pop	esi
 
-; 1591 : 	}
-; 1592 : 
-; 1593 : 	return 0;
+; 1609 : 	}
+; 1610 : 
+; 1611 : 	return 0;
 
 	xor	eax, eax
 	pop	ebx
 
-; 1594 : }
+; 1612 : }
 
 	add	esp, 20					; 00000014H
 	ret	0
@@ -7060,37 +7086,37 @@ PUBLIC	?lGetReplayMessages@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetRepla
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?lGetReplayMessages@CvLuaGame@@KAHPAUlua_State@@@Z
 _TEXT	SEGMENT
-_j$223677 = -36						; size = 4
-_i$223661 = -32						; size = 4
-_nPlots$223673 = -28					; size = 4
+_j$224202 = -36						; size = 4
+_i$224186 = -32						; size = 4
+_nPlots$224198 = -28					; size = 4
 _game$ = -24						; size = 4
-_iPlotX$223681 = -20					; size = 4
-_iPlotY$223682 = -16					; size = 4
-_plots_idx$223676 = -12					; size = 4
+_iPlotX$224206 = -20					; size = 4
+_iPlotY$224207 = -16					; size = 4
+_plots_idx$224201 = -12					; size = 4
 _messages_t$ = -8					; size = 4
 _nMessages$ = -4					; size = 4
 _L$ = 8							; size = 4
 ?lGetReplayMessages@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetReplayMessages, COMDAT
 
-; 1597 : {
+; 1615 : {
 
 	sub	esp, 36					; 00000024H
 	push	ebx
 	push	esi
 	push	edi
 
-; 1598 : 	CvGame& game = GC.getGame();
+; 1616 : 	CvGame& game = GC.getGame();
 
 	mov	edi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 
-; 1599 : 	const unsigned int nMessages = game.getNumReplayMessages();
+; 1617 : 	const unsigned int nMessages = game.getNumReplayMessages();
 
 	mov	ecx, edi
 	mov	DWORD PTR _game$[esp+48], edi
 	call	?getNumReplayMessages@CvGame@@QBEIXZ	; CvGame::getNumReplayMessages
 
-; 1600 : 
-; 1601 : 	lua_createtable(L, nMessages, 0);
+; 1618 : 
+; 1619 : 	lua_createtable(L, nMessages, 0);
 
 	mov	esi, DWORD PTR _L$[esp+44]
 	mov	ebx, eax
@@ -7100,18 +7126,18 @@ _L$ = 8							; size = 4
 	mov	DWORD PTR _nMessages$[esp+60], ebx
 	call	_lua_createtable
 
-; 1602 : 	const int messages_t = lua_gettop(L);
+; 1620 : 	const int messages_t = lua_gettop(L);
 
 	push	esi
 	call	_lua_gettop
 	add	esp, 16					; 00000010H
 	mov	DWORD PTR _messages_t$[esp+48], eax
 
-; 1603 : 	int messages_idx = 1;
-; 1604 : 
-; 1605 : 	for(unsigned int i = 0; i < nMessages; i++)
+; 1621 : 	int messages_idx = 1;
+; 1622 : 
+; 1623 : 	for(unsigned int i = 0; i < nMessages; i++)
 
-	mov	DWORD PTR _i$223661[esp+48], 0
+	mov	DWORD PTR _i$224186[esp+48], 0
 	test	ebx, ebx
 	jbe	$LN20@lGetReplay@2
 	push	ebp
@@ -7121,16 +7147,16 @@ $LL21@lGetReplay@2:
 	mov	edi, DWORD PTR _game$[esp+52]
 $LN9@lGetReplay@2:
 
-; 1606 : 	{
-; 1607 : 		const CvReplayMessage* pMessage = game.getReplayMessage(i);
+; 1624 : 	{
+; 1625 : 		const CvReplayMessage* pMessage = game.getReplayMessage(i);
 
-	mov	eax, DWORD PTR _i$223661[esp+52]
+	mov	eax, DWORD PTR _i$224186[esp+52]
 	push	eax
 	mov	ecx, edi
 	call	?getReplayMessage@CvGame@@QBEPBVCvReplayMessage@@I@Z ; CvGame::getReplayMessage
 
-; 1608 : 
-; 1609 : 		lua_createtable(L, 0, 5);
+; 1626 : 
+; 1627 : 		lua_createtable(L, 0, 5);
 
 	push	5
 	push	0
@@ -7138,14 +7164,14 @@ $LN9@lGetReplay@2:
 	mov	edi, eax
 	call	_lua_createtable
 
-; 1610 : 		const int t = lua_gettop(L);
+; 1628 : 		const int t = lua_gettop(L);
 
 	push	esi
 	call	_lua_gettop
 	add	esp, 16					; 00000010H
 
-; 1611 : 
-; 1612 : 		lua_pushinteger(L, pMessage->getPlayer());
+; 1629 : 
+; 1630 : 		lua_pushinteger(L, pMessage->getPlayer());
 
 	mov	ecx, edi
 	mov	ebp, eax
@@ -7154,16 +7180,16 @@ $LN9@lGetReplay@2:
 	push	esi
 	call	_lua_pushinteger
 
-; 1613 : 		lua_setfield(L, t, "Player");
+; 1631 : 		lua_setfield(L, t, "Player");
 
-	push	OFFSET $SG223667
+	push	OFFSET $SG224192
 	push	ebp
 	push	esi
 	call	_lua_setfield
 	add	esp, 20					; 00000014H
 
-; 1614 : 
-; 1615 : 		lua_pushinteger(L, pMessage->getTurn());
+; 1632 : 
+; 1633 : 		lua_pushinteger(L, pMessage->getTurn());
 
 	mov	ecx, edi
 	call	?getTurn@CvReplayMessage@@QBEHXZ	; CvReplayMessage::getTurn
@@ -7171,16 +7197,16 @@ $LN9@lGetReplay@2:
 	push	esi
 	call	_lua_pushinteger
 
-; 1616 : 		lua_setfield(L, t, "Turn");
+; 1634 : 		lua_setfield(L, t, "Turn");
 
-	push	OFFSET $SG223668
+	push	OFFSET $SG224193
 	push	ebp
 	push	esi
 	call	_lua_setfield
 	add	esp, 20					; 00000014H
 
-; 1617 : 
-; 1618 : 		lua_pushinteger(L, pMessage->getType());
+; 1635 : 
+; 1636 : 		lua_pushinteger(L, pMessage->getType());
 
 	mov	ecx, edi
 	call	?getType@CvReplayMessage@@QBE?AW4ReplayMessageTypes@@XZ ; CvReplayMessage::getType
@@ -7188,30 +7214,30 @@ $LN9@lGetReplay@2:
 	push	esi
 	call	_lua_pushinteger
 
-; 1619 : 		lua_setfield(L, t, "Type");
+; 1637 : 		lua_setfield(L, t, "Type");
 
-	push	OFFSET $SG223669
+	push	OFFSET $SG224194
 	push	ebp
 	push	esi
 	call	_lua_setfield
 	add	esp, 20					; 00000014H
 
-; 1620 : 
-; 1621 : 		const CvString& text = pMessage->getText();
+; 1638 : 
+; 1639 : 		const CvString& text = pMessage->getText();
 
 	mov	ecx, edi
 	call	?getText@CvReplayMessage@@QBEABVCvString@@XZ ; CvReplayMessage::getText
 	mov	ebx, eax
 
-; 1622 : 		if(text.GetLength() > 0)
+; 1640 : 		if(text.GetLength() > 0)
 
 	mov	ecx, ebx
 	call	DWORD PTR __imp_?size@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEIXZ
 	test	eax, eax
 	jle	SHORT $LN6@lGetReplay@2
 
-; 1623 : 		{
-; 1624 : 			lua_pushstring(L, text.c_str());
+; 1641 : 		{
+; 1642 : 			lua_pushstring(L, text.c_str());
 
 	mov	ecx, ebx
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
@@ -7219,62 +7245,62 @@ $LN9@lGetReplay@2:
 	push	esi
 	call	_lua_pushstring
 
-; 1625 : 			lua_setfield(L, t, "Text");
+; 1643 : 			lua_setfield(L, t, "Text");
 
-	push	OFFSET $SG223672
+	push	OFFSET $SG224197
 	push	ebp
 	push	esi
 	call	_lua_setfield
 	add	esp, 20					; 00000014H
 $LN6@lGetReplay@2:
 
-; 1626 : 		}
-; 1627 : 
-; 1628 : 		const unsigned int nPlots = pMessage->getNumPlots();
+; 1644 : 		}
+; 1645 : 
+; 1646 : 		const unsigned int nPlots = pMessage->getNumPlots();
 
 	mov	ecx, edi
 	call	?getNumPlots@CvReplayMessage@@QBEIXZ	; CvReplayMessage::getNumPlots
-	mov	DWORD PTR _nPlots$223673[esp+52], eax
+	mov	DWORD PTR _nPlots$224198[esp+52], eax
 
-; 1629 : 		if(nPlots > 0)
+; 1647 : 		if(nPlots > 0)
 
 	test	eax, eax
 	jbe	$LN5@lGetReplay@2
 
-; 1630 : 		{
-; 1631 : 			lua_createtable(L, nPlots, 0);
+; 1648 : 		{
+; 1649 : 			lua_createtable(L, nPlots, 0);
 
 	push	0
 	push	eax
 	push	esi
 	call	_lua_createtable
 
-; 1632 : 			int idx = 1;
-; 1633 : 			int plots_idx = lua_gettop(L);
+; 1650 : 			int idx = 1;
+; 1651 : 			int plots_idx = lua_gettop(L);
 
 	push	esi
 	mov	ebx, 1
 	call	_lua_gettop
 	add	esp, 16					; 00000010H
 
-; 1634 : 
-; 1635 : 			for(unsigned int j = 0; j < nPlots; j++)
+; 1652 : 
+; 1653 : 			for(unsigned int j = 0; j < nPlots; j++)
 
-	cmp	DWORD PTR _nPlots$223673[esp+52], 0
-	mov	DWORD PTR _plots_idx$223676[esp+52], eax
-	mov	DWORD PTR _j$223677[esp+52], 0
+	cmp	DWORD PTR _nPlots$224198[esp+52], 0
+	mov	DWORD PTR _plots_idx$224201[esp+52], eax
+	mov	DWORD PTR _j$224202[esp+52], 0
 	jbe	SHORT $LN2@lGetReplay@2
 	npad	2
 $LL22@lGetReplay@2:
 
-; 1636 : 			{
-; 1637 : 				int iPlotX, iPlotY;
-; 1638 : 				if(pMessage->getPlot(j, iPlotX, iPlotY))
+; 1654 : 			{
+; 1655 : 				int iPlotX, iPlotY;
+; 1656 : 				if(pMessage->getPlot(j, iPlotX, iPlotY))
 
-	mov	eax, DWORD PTR _j$223677[esp+52]
-	lea	ecx, DWORD PTR _iPlotY$223682[esp+52]
+	mov	eax, DWORD PTR _j$224202[esp+52]
+	lea	ecx, DWORD PTR _iPlotY$224207[esp+52]
 	push	ecx
-	lea	edx, DWORD PTR _iPlotX$223681[esp+56]
+	lea	edx, DWORD PTR _iPlotX$224206[esp+56]
 	push	edx
 	push	eax
 	mov	ecx, edi
@@ -7282,45 +7308,45 @@ $LL22@lGetReplay@2:
 	test	al, al
 	je	SHORT $LN3@lGetReplay@2
 
-; 1639 : 				{
-; 1640 : 					lua_createtable(L, 0, 2);
+; 1657 : 				{
+; 1658 : 					lua_createtable(L, 0, 2);
 
 	push	2
 	push	0
 	push	esi
 	call	_lua_createtable
 
-; 1641 : 					lua_pushinteger(L, iPlotX);
+; 1659 : 					lua_pushinteger(L, iPlotX);
 
-	mov	ecx, DWORD PTR _iPlotX$223681[esp+64]
+	mov	ecx, DWORD PTR _iPlotX$224206[esp+64]
 	push	ecx
 	push	esi
 	call	_lua_pushinteger
 
-; 1642 : 					lua_setfield(L, -2, "X");
+; 1660 : 					lua_setfield(L, -2, "X");
 
-	push	OFFSET $SG223684
+	push	OFFSET $SG224209
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
 
-; 1643 : 					lua_pushinteger(L, iPlotY);
+; 1661 : 					lua_pushinteger(L, iPlotY);
 
-	mov	edx, DWORD PTR _iPlotY$223682[esp+84]
+	mov	edx, DWORD PTR _iPlotY$224207[esp+84]
 	push	edx
 	push	esi
 	call	_lua_pushinteger
 
-; 1644 : 					lua_setfield(L, -2, "Y");
+; 1662 : 					lua_setfield(L, -2, "Y");
 
-	push	OFFSET $SG223685
+	push	OFFSET $SG224210
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
 
-; 1645 : 					lua_rawseti(L, plots_idx, idx++);
+; 1663 : 					lua_rawseti(L, plots_idx, idx++);
 
-	mov	eax, DWORD PTR _plots_idx$223676[esp+104]
+	mov	eax, DWORD PTR _plots_idx$224201[esp+104]
 	push	ebx
 	push	eax
 	push	esi
@@ -7328,30 +7354,30 @@ $LL22@lGetReplay@2:
 	add	esp, 64					; 00000040H
 	inc	ebx
 $LN3@lGetReplay@2:
-	mov	eax, DWORD PTR _j$223677[esp+52]
+	mov	eax, DWORD PTR _j$224202[esp+52]
 	inc	eax
-	mov	DWORD PTR _j$223677[esp+52], eax
-	cmp	eax, DWORD PTR _nPlots$223673[esp+52]
+	mov	DWORD PTR _j$224202[esp+52], eax
+	cmp	eax, DWORD PTR _nPlots$224198[esp+52]
 	jb	SHORT $LL22@lGetReplay@2
 $LN2@lGetReplay@2:
 
-; 1646 : 				}
-; 1647 : 			}
-; 1648 : 
-; 1649 : 			lua_setfield(L, t, "Plots");
+; 1664 : 				}
+; 1665 : 			}
+; 1666 : 
+; 1667 : 			lua_setfield(L, t, "Plots");
 
-	push	OFFSET $SG223686
+	push	OFFSET $SG224211
 	push	ebp
 	push	esi
 	call	_lua_setfield
 	add	esp, 12					; 0000000cH
 $LN5@lGetReplay@2:
 
-; 1650 : 		}
-; 1651 : 
-; 1652 : 		lua_rawseti(L, messages_t, messages_idx++);
+; 1668 : 		}
+; 1669 : 
+; 1670 : 		lua_rawseti(L, messages_t, messages_idx++);
 
-	mov	edi, DWORD PTR _i$223661[esp+52]
+	mov	edi, DWORD PTR _i$224186[esp+52]
 	mov	ecx, DWORD PTR _messages_t$[esp+52]
 	inc	edi
 	push	edi
@@ -7359,7 +7385,7 @@ $LN5@lGetReplay@2:
 	push	esi
 	call	_lua_rawseti
 	add	esp, 12					; 0000000cH
-	mov	DWORD PTR _i$223661[esp+52], edi
+	mov	DWORD PTR _i$224186[esp+52], edi
 	cmp	edi, DWORD PTR _nMessages$[esp+52]
 	jb	$LL21@lGetReplay@2
 	pop	ebp
@@ -7367,14 +7393,14 @@ $LN20@lGetReplay@2:
 	pop	edi
 	pop	esi
 
-; 1653 : 	}
-; 1654 : 
-; 1655 : 	return 1;
+; 1671 : 	}
+; 1672 : 
+; 1673 : 	return 1;
 
 	mov	eax, 1
 	pop	ebx
 
-; 1656 : }
+; 1674 : }
 
 	add	esp, 36					; 00000024H
 	ret	0
@@ -7389,13 +7415,13 @@ _bProtect$ = -4						; size = 1
 _L$ = 8							; size = 4
 ?lDoMinorPledgeProtection@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lDoMinorPledgeProtection, COMDAT
 
-; 1733 : {
+; 1751 : {
 
 	push	ecx
 	push	ebx
 	push	esi
 
-; 1734 : 	const int iMajor = lua_tointeger(L, 1);
+; 1752 : 	const int iMajor = lua_tointeger(L, 1);
 
 	mov	esi, DWORD PTR _L$[esp+8]
 	push	edi
@@ -7403,14 +7429,14 @@ _L$ = 8							; size = 4
 	push	esi
 	call	_lua_tointeger
 
-; 1735 : 	const int iMinor = lua_tointeger(L, 2);
+; 1753 : 	const int iMinor = lua_tointeger(L, 2);
 
 	push	2
 	push	esi
 	mov	edi, eax
 	call	_lua_tointeger
 
-; 1736 : 	const bool bProtect = lua_toboolean(L, 3);
+; 1754 : 	const bool bProtect = lua_toboolean(L, 3);
 
 	push	3
 	push	esi
@@ -7421,7 +7447,7 @@ _L$ = 8							; size = 4
 	setne	al
 	mov	BYTE PTR _bProtect$[esp+16], al
 
-; 1737 : 	GC.getGame().DoMinorPledgeProtection((PlayerTypes)iMajor, (PlayerTypes)iMinor, bProtect);
+; 1755 : 	GC.getGame().DoMinorPledgeProtection((PlayerTypes)iMajor, (PlayerTypes)iMinor, bProtect);
 
 	mov	ecx, DWORD PTR _bProtect$[esp+16]
 	push	0
@@ -7433,13 +7459,13 @@ _L$ = 8							; size = 4
 	pop	edi
 	pop	esi
 
-; 1738 : 
-; 1739 : 	return 1;
+; 1756 : 
+; 1757 : 	return 1;
 
 	mov	eax, 1
 	pop	ebx
 
-; 1740 : }
+; 1758 : }
 
 	pop	ecx
 	ret	0
@@ -7453,11 +7479,11 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lDoMinorBullyGold@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lDoMinorBullyGold, COMDAT
 
-; 1763 : {
+; 1781 : {
 
 	push	esi
 
-; 1764 : 	const int iBully = lua_tointeger(L, 1);
+; 1782 : 	const int iBully = lua_tointeger(L, 1);
 
 	mov	esi, DWORD PTR _L$[esp]
 	push	edi
@@ -7465,14 +7491,14 @@ _L$ = 8							; size = 4
 	push	esi
 	call	_lua_tointeger
 
-; 1765 : 	const int iMinor = lua_tointeger(L, 2);
+; 1783 : 	const int iMinor = lua_tointeger(L, 2);
 
 	push	2
 	push	esi
 	mov	edi, eax
 	call	_lua_tointeger
 
-; 1766 : 	GC.getGame().DoMinorBullyGold((PlayerTypes)iBully, (PlayerTypes)iMinor);
+; 1784 : 	GC.getGame().DoMinorBullyGold((PlayerTypes)iBully, (PlayerTypes)iMinor);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	add	esp, 16					; 00000010H
@@ -7481,13 +7507,13 @@ _L$ = 8							; size = 4
 	call	?DoMinorBullyGold@CvGame@@QAEXW4PlayerTypes@@0@Z ; CvGame::DoMinorBullyGold
 	pop	edi
 
-; 1767 : 
-; 1768 : 	return 1;
+; 1785 : 
+; 1786 : 	return 1;
 
 	mov	eax, 1
 	pop	esi
 
-; 1769 : }
+; 1787 : }
 
 	ret	0
 ?lDoMinorBullyGold@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lDoMinorBullyGold
@@ -7500,11 +7526,11 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lDoMinorBullyUnit@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lDoMinorBullyUnit, COMDAT
 
-; 1773 : {
+; 1791 : {
 
 	push	esi
 
-; 1774 : 	const int iBully = lua_tointeger(L, 1);
+; 1792 : 	const int iBully = lua_tointeger(L, 1);
 
 	mov	esi, DWORD PTR _L$[esp]
 	push	edi
@@ -7512,14 +7538,14 @@ _L$ = 8							; size = 4
 	push	esi
 	call	_lua_tointeger
 
-; 1775 : 	const int iMinor = lua_tointeger(L, 2);
+; 1793 : 	const int iMinor = lua_tointeger(L, 2);
 
 	push	2
 	push	esi
 	mov	edi, eax
 	call	_lua_tointeger
 
-; 1776 : 	GC.getGame().DoMinorBullyUnit((PlayerTypes)iBully, (PlayerTypes)iMinor);
+; 1794 : 	GC.getGame().DoMinorBullyUnit((PlayerTypes)iBully, (PlayerTypes)iMinor);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	add	esp, 16					; 00000010H
@@ -7528,13 +7554,13 @@ _L$ = 8							; size = 4
 	call	?DoMinorBullyUnit@CvGame@@QAEXW4PlayerTypes@@0@Z ; CvGame::DoMinorBullyUnit
 	pop	edi
 
-; 1777 : 
-; 1778 : 	return 1;
+; 1795 : 
+; 1796 : 	return 1;
 
 	mov	eax, 1
 	pop	esi
 
-; 1779 : }
+; 1797 : }
 
 	ret	0
 ?lDoMinorBullyUnit@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lDoMinorBullyUnit
@@ -7547,11 +7573,11 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lDoMinorBuyout@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lDoMinorBuyout, COMDAT
 
-; 1783 : {
+; 1801 : {
 
 	push	esi
 
-; 1784 : 	const int iMajor = lua_tointeger(L, 1);
+; 1802 : 	const int iMajor = lua_tointeger(L, 1);
 
 	mov	esi, DWORD PTR _L$[esp]
 	push	edi
@@ -7559,14 +7585,14 @@ _L$ = 8							; size = 4
 	push	esi
 	call	_lua_tointeger
 
-; 1785 : 	const int iMinor = lua_tointeger(L, 2);
+; 1803 : 	const int iMinor = lua_tointeger(L, 2);
 
 	push	2
 	push	esi
 	mov	edi, eax
 	call	_lua_tointeger
 
-; 1786 : 	GC.getGame().DoMinorBuyout((PlayerTypes)iMajor, (PlayerTypes)iMinor);
+; 1804 : 	GC.getGame().DoMinorBuyout((PlayerTypes)iMajor, (PlayerTypes)iMinor);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	add	esp, 16					; 00000010H
@@ -7575,13 +7601,13 @@ _L$ = 8							; size = 4
 	call	?DoMinorBuyout@CvGame@@QAEXW4PlayerTypes@@0@Z ; CvGame::DoMinorBuyout
 	pop	edi
 
-; 1787 : 
-; 1788 : 	return 1;
+; 1805 : 
+; 1806 : 	return 1;
 
 	mov	eax, 1
 	pop	esi
 
-; 1789 : }
+; 1807 : }
 
 	ret	0
 ?lDoMinorBuyout@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lDoMinorBuyout
@@ -7593,12 +7619,12 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGameplayDiplomacyAILeaderMessage@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGameplayDiplomacyAILeaderMessage, COMDAT
 
-; 1815 : {
+; 1833 : {
 
 	push	ebx
 	push	esi
 
-; 1816 : 	const int iPlayer = lua_tointeger(L, 1);
+; 1834 : 	const int iPlayer = lua_tointeger(L, 1);
 
 	mov	esi, DWORD PTR _L$[esp+4]
 	push	edi
@@ -7606,21 +7632,21 @@ _L$ = 8							; size = 4
 	push	esi
 	call	_lua_tointeger
 
-; 1817 : 	const int eMessage = lua_tointeger(L, 2);
+; 1835 : 	const int eMessage = lua_tointeger(L, 2);
 
 	push	2
 	push	esi
 	mov	edi, eax
 	call	_lua_tointeger
 
-; 1818 : 	const int iData1 = lua_tointeger(L, 3);
+; 1836 : 	const int iData1 = lua_tointeger(L, 3);
 
 	push	3
 	push	esi
 	mov	ebx, eax
 	call	_lua_tointeger
 
-; 1819 : 	gDLL->GameplayDiplomacyAILeaderMessage((PlayerTypes) iPlayer, DIPLO_UI_STATE_DEFAULT_ROOT, "TEMP", (LeaderheadAnimationTypes) eMessage, iData1);
+; 1837 : 	gDLL->GameplayDiplomacyAILeaderMessage((PlayerTypes) iPlayer, DIPLO_UI_STATE_DEFAULT_ROOT, "TEMP", (LeaderheadAnimationTypes) eMessage, iData1);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8564
 	mov	edx, DWORD PTR [ecx]
@@ -7628,20 +7654,20 @@ _L$ = 8							; size = 4
 	push	eax
 	mov	eax, DWORD PTR [edx+736]
 	push	ebx
-	push	OFFSET $SG224214
+	push	OFFSET $SG224739
 	push	0
 	push	edi
 	call	eax
 	pop	edi
 	pop	esi
 
-; 1820 : 
-; 1821 : 	return 1;
+; 1838 : 
+; 1839 : 	return 1;
 
 	mov	eax, 1
 	pop	ebx
 
-; 1822 : }
+; 1840 : }
 
 	ret	0
 ?lGameplayDiplomacyAILeaderMessage@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lGameplayDiplomacyAILeaderMessage
@@ -7654,7 +7680,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lIsCombatWarned@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lIsCombatWarned, COMDAT
 
-; 1880 : 	lua_pushboolean(L, GC.getGame().IsCombatWarned());
+; 1898 : 	lua_pushboolean(L, GC.getGame().IsCombatWarned());
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?IsCombatWarned@CvGame@@QBE_NXZ		; CvGame::IsCombatWarned
@@ -7665,11 +7691,11 @@ _L$ = 8							; size = 4
 	call	_lua_pushboolean
 	add	esp, 8
 
-; 1881 : 	return 1;
+; 1899 : 	return 1;
 
 	mov	eax, 1
 
-; 1882 : }
+; 1900 : }
 
 	ret	0
 ?lIsCombatWarned@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lIsCombatWarned
@@ -7682,7 +7708,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lSetCombatWarned@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lSetCombatWarned, COMDAT
 
-; 1887 : 	GC.getGame().SetCombatWarned(lua_toboolean(L, 1));
+; 1905 : 	GC.getGame().SetCombatWarned(lua_toboolean(L, 1));
 
 	mov	eax, DWORD PTR _L$[esp-4]
 	push	esi
@@ -7698,12 +7724,12 @@ _L$ = 8							; size = 4
 	mov	ecx, esi
 	call	?SetCombatWarned@CvGame@@QAEX_N@Z	; CvGame::SetCombatWarned
 
-; 1888 : 	return 1;
+; 1906 : 	return 1;
 
 	mov	eax, 1
 	pop	esi
 
-; 1889 : }
+; 1907 : }
 
 	ret	0
 ?lSetCombatWarned@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lSetCombatWarned
@@ -7716,17 +7742,17 @@ EXTRN	?getActivePlayer@CvGame@@QBE?AW4PlayerTypes@@XZ:PROC ; CvGame::getActivePl
 ;	COMDAT ?lGetAdvisorCounsel@CvLuaGame@@KAHPAUlua_State@@@Z
 _TEXT	SEGMENT
 _bTableOpen$ = -13					; size = 1
-_ui$224263 = -12					; size = 4
+_ui$224788 = -12					; size = 4
 _eCurrentAdvisorType$ = -8				; size = 4
 _iTopLevelLua$ = -4					; size = 4
 _L$ = 8							; size = 4
 ?lGetAdvisorCounsel@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetAdvisorCounsel, COMDAT
 
-; 1893 : {
+; 1911 : {
 
 	sub	esp, 16					; 00000010H
 
-; 1894 : 	const PlayerTypes ePlayer = GC.getGame().getActivePlayer();
+; 1912 : 	const PlayerTypes ePlayer = GC.getGame().getActivePlayer();
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	ebx
@@ -7735,7 +7761,7 @@ _L$ = 8							; size = 4
 	push	edi
 	call	?getActivePlayer@CvGame@@QBE?AW4PlayerTypes@@XZ ; CvGame::getActivePlayer
 
-; 1895 : 	GC.getGame().GetAdvisorCounsel()->BuildCounselList(ePlayer);
+; 1913 : 	GC.getGame().GetAdvisorCounsel()->BuildCounselList(ePlayer);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	eax
@@ -7743,7 +7769,7 @@ _L$ = 8							; size = 4
 	mov	ecx, eax
 	call	?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z ; CvAdvisorCounsel::BuildCounselList
 
-; 1896 : 	lua_createtable(L, 0, 0);
+; 1914 : 	lua_createtable(L, 0, 0);
 
 	mov	esi, DWORD PTR _L$[esp+28]
 	xor	ebx, ebx
@@ -7752,17 +7778,17 @@ _L$ = 8							; size = 4
 	push	esi
 	call	_lua_createtable
 
-; 1897 : 	int iTopLevelLua = lua_gettop(L);
+; 1915 : 	int iTopLevelLua = lua_gettop(L);
 
 	push	esi
 	call	_lua_gettop
 
-; 1898 : 
-; 1899 : 	AdvisorTypes eCurrentAdvisorType = NUM_ADVISOR_TYPES;
-; 1900 : 	int iAdvisorTableLevel = -1;
-; 1901 : 	int iAdvisorIndex = 0;
-; 1902 : 	bool bTableOpen = false;
-; 1903 : 	for(uint ui = 0; ui < GC.getGame().GetAdvisorCounsel()->m_aCounsel.size(); ui++)
+; 1916 : 
+; 1917 : 	AdvisorTypes eCurrentAdvisorType = NUM_ADVISOR_TYPES;
+; 1918 : 	int iAdvisorTableLevel = -1;
+; 1919 : 	int iAdvisorIndex = 0;
+; 1920 : 	bool bTableOpen = false;
+; 1921 : 	for(uint ui = 0; ui < GC.getGame().GetAdvisorCounsel()->m_aCounsel.size(); ui++)
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	add	esp, 16					; 00000010H
@@ -7771,15 +7797,15 @@ _L$ = 8							; size = 4
 	or	ebp, -1
 	xor	edi, edi
 	mov	BYTE PTR _bTableOpen$[esp+32], bl
-	mov	DWORD PTR _ui$224263[esp+32], ebx
+	mov	DWORD PTR _ui$224788[esp+32], ebx
 	call	?GetAdvisorCounsel@CvGame@@QAEPAVCvAdvisorCounsel@@XZ ; CvGame::GetAdvisorCounsel
 	cmp	DWORD PTR [eax+4], ebx
 	jbe	$LN34@lGetAdviso
 	npad	7
 $LL7@lGetAdviso:
 
-; 1904 : 	{
-; 1905 : 		if(GC.getGame().GetAdvisorCounsel()->m_aCounsel[ui].m_eAdvisor != eCurrentAdvisorType)
+; 1922 : 	{
+; 1923 : 		if(GC.getGame().GetAdvisorCounsel()->m_aCounsel[ui].m_eAdvisor != eCurrentAdvisorType)
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?GetAdvisorCounsel@CvGame@@QAEPAVCvAdvisorCounsel@@XZ ; CvGame::GetAdvisorCounsel
@@ -7788,16 +7814,16 @@ $LL7@lGetAdviso:
 	cmp	DWORD PTR [ebx+ecx], eax
 	je	SHORT $LN4@lGetAdviso
 
-; 1906 : 		{
-; 1907 : 			// close out previous table
-; 1908 : 			if(eCurrentAdvisorType != NUM_ADVISOR_TYPES)
+; 1924 : 		{
+; 1925 : 			// close out previous table
+; 1926 : 			if(eCurrentAdvisorType != NUM_ADVISOR_TYPES)
 
 	cmp	eax, 4
 	je	SHORT $LN35@lGetAdviso
 
-; 1909 : 			{
-; 1910 : 				CvAssertMsg(bTableOpen, "Table should be open");
-; 1911 : 				lua_rawseti(L, iTopLevelLua, eCurrentAdvisorType);
+; 1927 : 			{
+; 1928 : 				CvAssertMsg(bTableOpen, "Table should be open");
+; 1929 : 				lua_rawseti(L, iTopLevelLua, eCurrentAdvisorType);
 
 	mov	edx, DWORD PTR _iTopLevelLua$[esp+32]
 	push	eax
@@ -7806,32 +7832,32 @@ $LL7@lGetAdviso:
 	call	_lua_rawseti
 	add	esp, 12					; 0000000cH
 
-; 1912 : 				bTableOpen = false;
+; 1930 : 				bTableOpen = false;
 
 	mov	BYTE PTR _bTableOpen$[esp+32], 0
 $LN35@lGetAdviso:
 
-; 1913 : 			}
-; 1914 : 
-; 1915 : 			AdvisorTypes eNextAdvisorType = GC.getGame().GetAdvisorCounsel()->m_aCounsel[ui].m_eAdvisor;
+; 1931 : 			}
+; 1932 : 
+; 1933 : 			AdvisorTypes eNextAdvisorType = GC.getGame().GetAdvisorCounsel()->m_aCounsel[ui].m_eAdvisor;
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?GetAdvisorCounsel@CvGame@@QAEPAVCvAdvisorCounsel@@XZ ; CvGame::GetAdvisorCounsel
 	mov	eax, DWORD PTR [eax]
 	mov	eax, DWORD PTR [ebx+eax]
 
-; 1916 : 			if(eNextAdvisorType == NO_ADVISOR_TYPE)
+; 1934 : 			if(eNextAdvisorType == NO_ADVISOR_TYPE)
 
 	cmp	eax, -1
 	je	SHORT $LN31@lGetAdviso
 
-; 1917 : 			{
-; 1918 : 				// no more valid advisor info. Bail out!
-; 1919 : 				break;
-; 1920 : 			}
-; 1921 : 			eCurrentAdvisorType = eNextAdvisorType;
-; 1922 : 			CvAssertMsg(!bTableOpen, "table should be open");
-; 1923 : 			lua_createtable(L, 0, 0);
+; 1935 : 			{
+; 1936 : 				// no more valid advisor info. Bail out!
+; 1937 : 				break;
+; 1938 : 			}
+; 1939 : 			eCurrentAdvisorType = eNextAdvisorType;
+; 1940 : 			CvAssertMsg(!bTableOpen, "table should be open");
+; 1941 : 			lua_createtable(L, 0, 0);
 
 	push	0
 	push	0
@@ -7839,8 +7865,8 @@ $LN35@lGetAdviso:
 	mov	DWORD PTR _eCurrentAdvisorType$[esp+44], eax
 	call	_lua_createtable
 
-; 1924 : 			bTableOpen = true;
-; 1925 : 			iAdvisorTableLevel = lua_gettop(L);
+; 1942 : 			bTableOpen = true;
+; 1943 : 			iAdvisorTableLevel = lua_gettop(L);
 
 	push	esi
 	mov	BYTE PTR _bTableOpen$[esp+48], 1
@@ -7848,15 +7874,15 @@ $LN35@lGetAdviso:
 	add	esp, 16					; 00000010H
 	mov	ebp, eax
 
-; 1926 : 			iAdvisorIndex = 0;
+; 1944 : 			iAdvisorIndex = 0;
 
 	xor	edi, edi
 $LN4@lGetAdviso:
 
-; 1927 : 		}
-; 1928 : 
-; 1929 : 		CvAssertMsg(bTableOpen, "Table should be open");
-; 1930 : 		lua_pushstring(L, GC.getGame().GetAdvisorCounsel()->m_aCounsel[ui].m_strTxtKey);
+; 1945 : 		}
+; 1946 : 
+; 1947 : 		CvAssertMsg(bTableOpen, "Table should be open");
+; 1948 : 		lua_pushstring(L, GC.getGame().GetAdvisorCounsel()->m_aCounsel[ui].m_strTxtKey);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?GetAdvisorCounsel@CvGame@@QAEPAVCvAdvisorCounsel@@XZ ; CvGame::GetAdvisorCounsel
@@ -7866,35 +7892,35 @@ $LN4@lGetAdviso:
 	push	esi
 	call	_lua_pushstring
 
-; 1931 : 		lua_rawseti(L, iAdvisorTableLevel, iAdvisorIndex);
+; 1949 : 		lua_rawseti(L, iAdvisorTableLevel, iAdvisorIndex);
 
 	push	edi
 	push	ebp
 	push	esi
 	call	_lua_rawseti
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
-	inc	DWORD PTR _ui$224263[esp+52]
+	inc	DWORD PTR _ui$224788[esp+52]
 	add	esp, 20					; 00000014H
 
-; 1932 : 		iAdvisorIndex++;
+; 1950 : 		iAdvisorIndex++;
 
 	inc	edi
 	add	ebx, 520				; 00000208H
 	call	?GetAdvisorCounsel@CvGame@@QAEPAVCvAdvisorCounsel@@XZ ; CvGame::GetAdvisorCounsel
-	mov	ecx, DWORD PTR _ui$224263[esp+32]
+	mov	ecx, DWORD PTR _ui$224788[esp+32]
 	cmp	ecx, DWORD PTR [eax+4]
 	jb	$LL7@lGetAdviso
 $LN31@lGetAdviso:
 
-; 1933 : 	}
-; 1934 : 
-; 1935 : 	if(bTableOpen)
+; 1951 : 	}
+; 1952 : 
+; 1953 : 	if(bTableOpen)
 
 	cmp	BYTE PTR _bTableOpen$[esp+32], 0
 	je	SHORT $LN34@lGetAdviso
 
-; 1936 : 	{
-; 1937 : 		lua_rawseti(L, iTopLevelLua, eCurrentAdvisorType);
+; 1954 : 	{
+; 1955 : 		lua_rawseti(L, iTopLevelLua, eCurrentAdvisorType);
 
 	mov	edx, DWORD PTR _eCurrentAdvisorType$[esp+32]
 	mov	eax, DWORD PTR _iTopLevelLua$[esp+32]
@@ -7908,14 +7934,14 @@ $LN34@lGetAdviso:
 	pop	esi
 	pop	ebp
 
-; 1938 : 	}
-; 1939 : 
-; 1940 : 	return 1;
+; 1956 : 	}
+; 1957 : 
+; 1958 : 	return 1;
 
 	mov	eax, 1
 	pop	ebx
 
-; 1941 : }
+; 1959 : }
 
 	add	esp, 16					; 00000010H
 	ret	0
@@ -7930,13 +7956,13 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lSetAdvisorRecommenderCity@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lSetAdvisorRecommenderCity, COMDAT
 
-; 1945 : {
+; 1963 : {
 
 	push	ebx
 	push	ebp
 	push	esi
 
-; 1946 : 	CvCity* pkCity = CvLuaCity::GetInstance(L, 1);
+; 1964 : 	CvCity* pkCity = CvLuaCity::GetInstance(L, 1);
 
 	mov	esi, DWORD PTR _L$[esp+8]
 	push	edi
@@ -7951,7 +7977,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lSetAdviso
-	push	OFFSET $SG225505
+	push	OFFSET $SG226135
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -7976,7 +8002,7 @@ $LN5@lSetAdviso:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN4@lSetAdviso
-	push	OFFSET $SG225511
+	push	OFFSET $SG226141
 	push	esi
 	call	_luaL_error
 	push	esi
@@ -7984,7 +8010,7 @@ $LN5@lSetAdviso:
 	add	esp, 12					; 0000000cH
 $LN4@lSetAdviso:
 
-; 1947 : 	GC.getGame().GetAdvisorRecommender()->UpdateCityRecommendations(pkCity);
+; 1965 : 	GC.getGame().GetAdvisorRecommender()->UpdateCityRecommendations(pkCity);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	edi
@@ -7995,12 +8021,12 @@ $LN4@lSetAdviso:
 	pop	esi
 	pop	ebp
 
-; 1948 : 	return 1;
+; 1966 : 	return 1;
 
 	mov	eax, 1
 	pop	ebx
 
-; 1949 : }
+; 1967 : }
 
 	ret	0
 ?lSetAdvisorRecommenderCity@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lSetAdvisorRecommenderCity
@@ -8013,11 +8039,11 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lIsUnitRecommended@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lIsUnitRecommended, COMDAT
 
-; 1953 : {
+; 1971 : {
 
 	push	esi
 
-; 1954 : 	UnitTypes eUnit = (UnitTypes)lua_tointeger(L, 1);
+; 1972 : 	UnitTypes eUnit = (UnitTypes)lua_tointeger(L, 1);
 
 	mov	esi, DWORD PTR _L$[esp]
 	push	edi
@@ -8025,14 +8051,14 @@ _L$ = 8							; size = 4
 	push	esi
 	call	_lua_tointeger
 
-; 1955 : 	AdvisorTypes eAdvisor = (AdvisorTypes)lua_tointeger(L, 2);
+; 1973 : 	AdvisorTypes eAdvisor = (AdvisorTypes)lua_tointeger(L, 2);
 
 	push	2
 	push	esi
 	mov	edi, eax
 	call	_lua_tointeger
 
-; 1956 : 	bool bResult = GC.getGame().GetAdvisorRecommender()->IsUnitRecommended(eUnit, eAdvisor);
+; 1974 : 	bool bResult = GC.getGame().GetAdvisorRecommender()->IsUnitRecommended(eUnit, eAdvisor);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	add	esp, 16					; 00000010H
@@ -8042,7 +8068,7 @@ _L$ = 8							; size = 4
 	mov	ecx, eax
 	call	?IsUnitRecommended@CvAdvisorRecommender@@QAE_NW4UnitTypes@@W4AdvisorTypes@@@Z ; CvAdvisorRecommender::IsUnitRecommended
 
-; 1957 : 	lua_pushboolean(L, bResult);
+; 1975 : 	lua_pushboolean(L, bResult);
 
 	movzx	eax, al
 	push	eax
@@ -8051,12 +8077,12 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	pop	edi
 
-; 1958 : 	return 1;
+; 1976 : 	return 1;
 
 	mov	eax, 1
 	pop	esi
 
-; 1959 : }
+; 1977 : }
 
 	ret	0
 ?lIsUnitRecommended@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lIsUnitRecommended
@@ -8069,11 +8095,11 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lIsBuildingRecommended@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lIsBuildingRecommended, COMDAT
 
-; 1963 : {
+; 1981 : {
 
 	push	esi
 
-; 1964 : 	BuildingTypes eBuilding = (BuildingTypes)lua_tointeger(L, 1);
+; 1982 : 	BuildingTypes eBuilding = (BuildingTypes)lua_tointeger(L, 1);
 
 	mov	esi, DWORD PTR _L$[esp]
 	push	edi
@@ -8081,14 +8107,14 @@ _L$ = 8							; size = 4
 	push	esi
 	call	_lua_tointeger
 
-; 1965 : 	AdvisorTypes eAdvisor = (AdvisorTypes)lua_tointeger(L, 2);
+; 1983 : 	AdvisorTypes eAdvisor = (AdvisorTypes)lua_tointeger(L, 2);
 
 	push	2
 	push	esi
 	mov	edi, eax
 	call	_lua_tointeger
 
-; 1966 : 	bool bResult = GC.getGame().GetAdvisorRecommender()->IsBuildingRecommended(eBuilding, eAdvisor);
+; 1984 : 	bool bResult = GC.getGame().GetAdvisorRecommender()->IsBuildingRecommended(eBuilding, eAdvisor);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	add	esp, 16					; 00000010H
@@ -8098,7 +8124,7 @@ _L$ = 8							; size = 4
 	mov	ecx, eax
 	call	?IsBuildingRecommended@CvAdvisorRecommender@@QAE_NW4BuildingTypes@@W4AdvisorTypes@@@Z ; CvAdvisorRecommender::IsBuildingRecommended
 
-; 1967 : 	lua_pushboolean(L, bResult);
+; 1985 : 	lua_pushboolean(L, bResult);
 
 	movzx	eax, al
 	push	eax
@@ -8107,12 +8133,12 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	pop	edi
 
-; 1968 : 	return 1;
+; 1986 : 	return 1;
 
 	mov	eax, 1
 	pop	esi
 
-; 1969 : }
+; 1987 : }
 
 	ret	0
 ?lIsBuildingRecommended@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lIsBuildingRecommended
@@ -8125,100 +8151,11 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lIsProjectRecommended@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lIsProjectRecommended, COMDAT
 
-; 1973 : {
-
-	push	esi
-
-; 1974 : 	ProjectTypes eProject = (ProjectTypes)lua_tointeger(L, 1);
-
-	mov	esi, DWORD PTR _L$[esp]
-	push	edi
-	push	1
-	push	esi
-	call	_lua_tointeger
-
-; 1975 : 	AdvisorTypes eAdvisor = (AdvisorTypes)lua_tointeger(L, 2);
-
-	push	2
-	push	esi
-	mov	edi, eax
-	call	_lua_tointeger
-
-; 1976 : 	bool bResult = GC.getGame().GetAdvisorRecommender()->IsProjectRecommended(eProject, eAdvisor);
-
-	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
-	add	esp, 16					; 00000010H
-	push	eax
-	push	edi
-	call	?GetAdvisorRecommender@CvGame@@QAEPAVCvAdvisorRecommender@@XZ ; CvGame::GetAdvisorRecommender
-	mov	ecx, eax
-	call	?IsProjectRecommended@CvAdvisorRecommender@@QAE_NW4ProjectTypes@@W4AdvisorTypes@@@Z ; CvAdvisorRecommender::IsProjectRecommended
-
-; 1977 : 	lua_pushboolean(L, bResult);
-
-	movzx	eax, al
-	push	eax
-	push	esi
-	call	_lua_pushboolean
-	add	esp, 8
-	pop	edi
-
-; 1978 : 	return 1;
-
-	mov	eax, 1
-	pop	esi
-
-; 1979 : }
-
-	ret	0
-?lIsProjectRecommended@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lIsProjectRecommended
-_TEXT	ENDS
-PUBLIC	?lSetAdvisorRecommenderTech@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSetAdvisorRecommenderTech
-EXTRN	?UpdateTechRecommendations@CvAdvisorRecommender@@QAEXW4PlayerTypes@@@Z:PROC ; CvAdvisorRecommender::UpdateTechRecommendations
-; Function compile flags: /Ogtpy
-;	COMDAT ?lSetAdvisorRecommenderTech@CvLuaGame@@KAHPAUlua_State@@@Z
-_TEXT	SEGMENT
-_L$ = 8							; size = 4
-?lSetAdvisorRecommenderTech@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lSetAdvisorRecommenderTech, COMDAT
-
-; 1984 : 	PlayerTypes ePlayer = (PlayerTypes)lua_tointeger(L, 1);
-
-	mov	eax, DWORD PTR _L$[esp-4]
-	push	1
-	push	eax
-	call	_lua_tointeger
-
-; 1985 : 	GC.getGame().GetAdvisorRecommender()->UpdateTechRecommendations(ePlayer);
-
-	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
-	add	esp, 8
-	push	eax
-	call	?GetAdvisorRecommender@CvGame@@QAEPAVCvAdvisorRecommender@@XZ ; CvGame::GetAdvisorRecommender
-	mov	ecx, eax
-	call	?UpdateTechRecommendations@CvAdvisorRecommender@@QAEXW4PlayerTypes@@@Z ; CvAdvisorRecommender::UpdateTechRecommendations
-
-; 1986 : 	return 1;
-
-	mov	eax, 1
-
-; 1987 : }
-
-	ret	0
-?lSetAdvisorRecommenderTech@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lSetAdvisorRecommenderTech
-_TEXT	ENDS
-PUBLIC	?lIsTechRecommended@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsTechRecommended
-EXTRN	?IsTechRecommended@CvAdvisorRecommender@@QAE_NW4TechTypes@@W4AdvisorTypes@@@Z:PROC ; CvAdvisorRecommender::IsTechRecommended
-; Function compile flags: /Ogtpy
-;	COMDAT ?lIsTechRecommended@CvLuaGame@@KAHPAUlua_State@@@Z
-_TEXT	SEGMENT
-_L$ = 8							; size = 4
-?lIsTechRecommended@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lIsTechRecommended, COMDAT
-
 ; 1991 : {
 
 	push	esi
 
-; 1992 : 	TechTypes eTech = (TechTypes)lua_tointeger(L, 1);
+; 1992 : 	ProjectTypes eProject = (ProjectTypes)lua_tointeger(L, 1);
 
 	mov	esi, DWORD PTR _L$[esp]
 	push	edi
@@ -8233,7 +8170,7 @@ _L$ = 8							; size = 4
 	mov	edi, eax
 	call	_lua_tointeger
 
-; 1994 : 	bool bResult = GC.getGame().GetAdvisorRecommender()->IsTechRecommended(eTech, eAdvisor);
+; 1994 : 	bool bResult = GC.getGame().GetAdvisorRecommender()->IsProjectRecommended(eProject, eAdvisor);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	add	esp, 16					; 00000010H
@@ -8241,7 +8178,7 @@ _L$ = 8							; size = 4
 	push	edi
 	call	?GetAdvisorRecommender@CvGame@@QAEPAVCvAdvisorRecommender@@XZ ; CvGame::GetAdvisorRecommender
 	mov	ecx, eax
-	call	?IsTechRecommended@CvAdvisorRecommender@@QAE_NW4TechTypes@@W4AdvisorTypes@@@Z ; CvAdvisorRecommender::IsTechRecommended
+	call	?IsProjectRecommended@CvAdvisorRecommender@@QAE_NW4ProjectTypes@@W4AdvisorTypes@@@Z ; CvAdvisorRecommender::IsProjectRecommended
 
 ; 1995 : 	lua_pushboolean(L, bResult);
 
@@ -8260,6 +8197,95 @@ _L$ = 8							; size = 4
 ; 1997 : }
 
 	ret	0
+?lIsProjectRecommended@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lIsProjectRecommended
+_TEXT	ENDS
+PUBLIC	?lSetAdvisorRecommenderTech@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSetAdvisorRecommenderTech
+EXTRN	?UpdateTechRecommendations@CvAdvisorRecommender@@QAEXW4PlayerTypes@@@Z:PROC ; CvAdvisorRecommender::UpdateTechRecommendations
+; Function compile flags: /Ogtpy
+;	COMDAT ?lSetAdvisorRecommenderTech@CvLuaGame@@KAHPAUlua_State@@@Z
+_TEXT	SEGMENT
+_L$ = 8							; size = 4
+?lSetAdvisorRecommenderTech@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lSetAdvisorRecommenderTech, COMDAT
+
+; 2002 : 	PlayerTypes ePlayer = (PlayerTypes)lua_tointeger(L, 1);
+
+	mov	eax, DWORD PTR _L$[esp-4]
+	push	1
+	push	eax
+	call	_lua_tointeger
+
+; 2003 : 	GC.getGame().GetAdvisorRecommender()->UpdateTechRecommendations(ePlayer);
+
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
+	add	esp, 8
+	push	eax
+	call	?GetAdvisorRecommender@CvGame@@QAEPAVCvAdvisorRecommender@@XZ ; CvGame::GetAdvisorRecommender
+	mov	ecx, eax
+	call	?UpdateTechRecommendations@CvAdvisorRecommender@@QAEXW4PlayerTypes@@@Z ; CvAdvisorRecommender::UpdateTechRecommendations
+
+; 2004 : 	return 1;
+
+	mov	eax, 1
+
+; 2005 : }
+
+	ret	0
+?lSetAdvisorRecommenderTech@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lSetAdvisorRecommenderTech
+_TEXT	ENDS
+PUBLIC	?lIsTechRecommended@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsTechRecommended
+EXTRN	?IsTechRecommended@CvAdvisorRecommender@@QAE_NW4TechTypes@@W4AdvisorTypes@@@Z:PROC ; CvAdvisorRecommender::IsTechRecommended
+; Function compile flags: /Ogtpy
+;	COMDAT ?lIsTechRecommended@CvLuaGame@@KAHPAUlua_State@@@Z
+_TEXT	SEGMENT
+_L$ = 8							; size = 4
+?lIsTechRecommended@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lIsTechRecommended, COMDAT
+
+; 2009 : {
+
+	push	esi
+
+; 2010 : 	TechTypes eTech = (TechTypes)lua_tointeger(L, 1);
+
+	mov	esi, DWORD PTR _L$[esp]
+	push	edi
+	push	1
+	push	esi
+	call	_lua_tointeger
+
+; 2011 : 	AdvisorTypes eAdvisor = (AdvisorTypes)lua_tointeger(L, 2);
+
+	push	2
+	push	esi
+	mov	edi, eax
+	call	_lua_tointeger
+
+; 2012 : 	bool bResult = GC.getGame().GetAdvisorRecommender()->IsTechRecommended(eTech, eAdvisor);
+
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
+	add	esp, 16					; 00000010H
+	push	eax
+	push	edi
+	call	?GetAdvisorRecommender@CvGame@@QAEPAVCvAdvisorRecommender@@XZ ; CvGame::GetAdvisorRecommender
+	mov	ecx, eax
+	call	?IsTechRecommended@CvAdvisorRecommender@@QAE_NW4TechTypes@@W4AdvisorTypes@@@Z ; CvAdvisorRecommender::IsTechRecommended
+
+; 2013 : 	lua_pushboolean(L, bResult);
+
+	movzx	eax, al
+	push	eax
+	push	esi
+	call	_lua_pushboolean
+	add	esp, 8
+	pop	edi
+
+; 2014 : 	return 1;
+
+	mov	eax, 1
+	pop	esi
+
+; 2015 : }
+
+	ret	0
 ?lIsTechRecommended@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lIsTechRecommended
 _TEXT	ENDS
 PUBLIC	?lGetVariableCitySizeFromPopulation@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetVariableCitySizeFromPopulation
@@ -8270,38 +8296,38 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetVariableCitySizeFromPopulation@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetVariableCitySizeFromPopulation, COMDAT
 
-; 2000 : {
+; 2018 : {
 
 	push	esi
 
-; 2001 : 	unsigned int nPopulation = (unsigned int)lua_tointeger(L, 1);
+; 2019 : 	unsigned int nPopulation = (unsigned int)lua_tointeger(L, 1);
 
 	mov	esi, DWORD PTR _L$[esp]
 	push	1
 	push	esi
 	call	_lua_tointeger
 
-; 2002 : 	unsigned int nSize = GC.getGame().GetVariableCitySizeFromPopulation(nPopulation);
+; 2020 : 	unsigned int nSize = GC.getGame().GetVariableCitySizeFromPopulation(nPopulation);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	add	esp, 8
 	push	eax
 	call	?GetVariableCitySizeFromPopulation@CvGame@@QAEII@Z ; CvGame::GetVariableCitySizeFromPopulation
 
-; 2003 : 	lua_pushinteger(L, nSize);
+; 2021 : 	lua_pushinteger(L, nSize);
 
 	push	eax
 	push	esi
 	call	_lua_pushinteger
 	add	esp, 8
 
-; 2004 : 
-; 2005 : 	return 1;
+; 2022 : 
+; 2023 : 	return 1;
 
 	mov	eax, 1
 	pop	esi
 
-; 2006 : }
+; 2024 : }
 
 	ret	0
 ?lGetVariableCitySizeFromPopulation@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lGetVariableCitySizeFromPopulation
@@ -8314,11 +8340,11 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetResearchAgreementCost@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetResearchAgreementCost, COMDAT
 
-; 2009 : {
+; 2027 : {
 
 	push	esi
 
-; 2010 : 	const PlayerTypes ePlayer1 = (PlayerTypes) lua_tointeger(L, 1);
+; 2028 : 	const PlayerTypes ePlayer1 = (PlayerTypes) lua_tointeger(L, 1);
 
 	mov	esi, DWORD PTR _L$[esp]
 	push	edi
@@ -8326,14 +8352,14 @@ _L$ = 8							; size = 4
 	push	esi
 	call	_lua_tointeger
 
-; 2011 : 	const PlayerTypes ePlayer2 = (PlayerTypes) lua_tointeger(L, 2);
+; 2029 : 	const PlayerTypes ePlayer2 = (PlayerTypes) lua_tointeger(L, 2);
 
 	push	2
 	push	esi
 	mov	edi, eax
 	call	_lua_tointeger
 
-; 2012 : 	int iCost = GC.getGame().GetResearchAgreementCost(ePlayer1, ePlayer2);
+; 2030 : 	int iCost = GC.getGame().GetResearchAgreementCost(ePlayer1, ePlayer2);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	add	esp, 16					; 00000010H
@@ -8341,7 +8367,7 @@ _L$ = 8							; size = 4
 	push	edi
 	call	?GetResearchAgreementCost@CvGame@@QAEHW4PlayerTypes@@0@Z ; CvGame::GetResearchAgreementCost
 
-; 2013 : 	lua_pushinteger(L, iCost);
+; 2031 : 	lua_pushinteger(L, iCost);
 
 	push	eax
 	push	esi
@@ -8349,13 +8375,13 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	pop	edi
 
-; 2014 : 
-; 2015 : 	return 1;
+; 2032 : 
+; 2033 : 	return 1;
 
 	mov	eax, 1
 	pop	esi
 
-; 2016 : }
+; 2034 : }
 
 	ret	0
 ?lGetResearchAgreementCost@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lGetResearchAgreementCost
@@ -8369,7 +8395,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetNumCitiesPolicyCostMod@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetNumCitiesPolicyCostMod, COMDAT
 
-; 2033 : 	lua_pushinteger(L, GC.getMap().getWorldInfo().GetNumCitiesPolicyCostMod());
+; 2051 : 	lua_pushinteger(L, GC.getMap().getWorldInfo().GetNumCitiesPolicyCostMod());
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+52
 	call	?getWorldInfo@CvMap@@QBEABVCvWorldInfo@@XZ ; CvMap::getWorldInfo
@@ -8381,11 +8407,11 @@ _L$ = 8							; size = 4
 	call	_lua_pushinteger
 	add	esp, 8
 
-; 2034 : 	return 1;
+; 2052 : 	return 1;
 
 	mov	eax, 1
 
-; 2035 : }
+; 2053 : }
 
 	ret	0
 ?lGetNumCitiesPolicyCostMod@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lGetNumCitiesPolicyCostMod
@@ -8398,7 +8424,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetNumCitiesTechCostMod@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetNumCitiesTechCostMod, COMDAT
 
-; 2039 : 	lua_pushinteger(L, GC.getMap().getWorldInfo().GetNumCitiesTechCostMod());
+; 2057 : 	lua_pushinteger(L, GC.getMap().getWorldInfo().GetNumCitiesTechCostMod());
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+52
 	call	?getWorldInfo@CvMap@@QBEABVCvWorldInfo@@XZ ; CvMap::getWorldInfo
@@ -8410,11 +8436,11 @@ _L$ = 8							; size = 4
 	call	_lua_pushinteger
 	add	esp, 8
 
-; 2040 : 	return 1;
+; 2058 : 	return 1;
 
 	mov	eax, 1
 
-; 2041 : }
+; 2059 : }
 
 	ret	0
 ?lGetNumCitiesTechCostMod@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lGetNumCitiesTechCostMod
@@ -8427,7 +8453,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetWorldNumCitiesUnhappinessPercent@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetWorldNumCitiesUnhappinessPercent, COMDAT
 
-; 2081 : 	lua_pushinteger(L, GC.getMap().getWorldInfo().getNumCitiesUnhappinessPercent());
+; 2099 : 	lua_pushinteger(L, GC.getMap().getWorldInfo().getNumCitiesUnhappinessPercent());
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+52
 	call	?getWorldInfo@CvMap@@QBEABVCvWorldInfo@@XZ ; CvMap::getWorldInfo
@@ -8439,11 +8465,11 @@ _L$ = 8							; size = 4
 	call	_lua_pushinteger
 	add	esp, 8
 
-; 2082 : 	return 1;
+; 2100 : 	return 1;
 
 	mov	eax, 1
 
-; 2083 : }
+; 2101 : }
 
 	ret	0
 ?lGetWorldNumCitiesUnhappinessPercent@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lGetWorldNumCitiesUnhappinessPercent
@@ -8453,18 +8479,18 @@ EXTRN	?GetCombatPrediction@CvGame@@QAE?AW4CombatPredictionTypes@@PBVCvUnit@@0@Z:
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?lGetCombatPrediction@CvLuaGame@@KAHPAUlua_State@@@Z
 _TEXT	SEGMENT
-_pkInstance$227796 = -4					; size = 4
+_pkInstance$228443 = -4					; size = 4
 _L$ = 8							; size = 4
 ?lGetCombatPrediction@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetCombatPrediction, COMDAT
 
-; 2130 : {
+; 2148 : {
 
 	push	ecx
 	push	ebx
 	push	ebp
 	push	esi
 
-; 2131 : 	const CvUnit* pAttackingUnit = CvLuaUnit::GetInstance(L, 1);
+; 2149 : 	const CvUnit* pAttackingUnit = CvLuaUnit::GetInstance(L, 1);
 
 	mov	esi, DWORD PTR _L$[esp+12]
 	push	edi
@@ -8474,12 +8500,12 @@ _L$ = 8							; size = 4
 	push	esi
 	mov	edi, eax
 	mov	bl, 1
-	mov	DWORD PTR _pkInstance$227796[esp+32], 0
+	mov	DWORD PTR _pkInstance$228443[esp+32], 0
 	call	_lua_type
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lGetCombat
-	push	OFFSET $SG225583
+	push	OFFSET $SG226213
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -8493,7 +8519,7 @@ _L$ = 8							; size = 4
 	push	esi
 	call	_lua_touserdata
 	add	esp, 8
-	mov	DWORD PTR _pkInstance$227796[esp+20], eax
+	mov	DWORD PTR _pkInstance$228443[esp+20], eax
 	test	eax, eax
 	je	SHORT $LN5@lGetCombat
 	xor	bl, bl
@@ -8504,7 +8530,7 @@ $LN5@lGetCombat:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN4@lGetCombat
-	push	OFFSET $SG225589
+	push	OFFSET $SG226219
 	push	esi
 	call	_luaL_error
 	push	esi
@@ -8512,7 +8538,7 @@ $LN5@lGetCombat:
 	add	esp, 12					; 0000000cH
 $LN4@lGetCombat:
 
-; 2132 : 	const CvUnit* pDefendingUnit = CvLuaUnit::GetInstance(L, 2);
+; 2150 : 	const CvUnit* pDefendingUnit = CvLuaUnit::GetInstance(L, 2);
 
 	push	esi
 	call	_lua_gettop
@@ -8525,7 +8551,7 @@ $LN4@lGetCombat:
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN12@lGetCombat
-	push	OFFSET $SG225583
+	push	OFFSET $SG226213
 	push	2
 	push	esi
 	call	_lua_getfield
@@ -8555,15 +8581,15 @@ $LN12@lGetCombat:
 	add	esp, 4
 $LN11@lGetCombat:
 
-; 2133 : 	CombatPredictionTypes ePrediction = GC.getGame().GetCombatPrediction(pAttackingUnit, pDefendingUnit);
+; 2151 : 	CombatPredictionTypes ePrediction = GC.getGame().GetCombatPrediction(pAttackingUnit, pDefendingUnit);
 
-	mov	eax, DWORD PTR _pkInstance$227796[esp+20]
+	mov	eax, DWORD PTR _pkInstance$228443[esp+20]
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	edi
 	push	eax
 	call	?GetCombatPrediction@CvGame@@QAE?AW4CombatPredictionTypes@@PBVCvUnit@@0@Z ; CvGame::GetCombatPrediction
 
-; 2134 : 	lua_pushinteger(L, ePrediction);
+; 2152 : 	lua_pushinteger(L, ePrediction);
 
 	push	eax
 	push	esi
@@ -8573,12 +8599,12 @@ $LN11@lGetCombat:
 	pop	esi
 	pop	ebp
 
-; 2135 : 	return 1;
+; 2153 : 	return 1;
 
 	mov	eax, 1
 	pop	ebx
 
-; 2136 : }
+; 2154 : }
 
 	pop	ecx
 	ret	0
@@ -8607,7 +8633,7 @@ __$EHRec$ = -12						; size = 12
 _L$ = 8							; size = 4
 ?lGetTimeString@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetTimeString, COMDAT
 
-; 2140 : {
+; 2158 : {
 
 	push	-1
 	push	__ehhandler$?lGetTimeString@CvLuaGame@@KAHPAUlua_State@@@Z
@@ -8617,17 +8643,17 @@ _L$ = 8							; size = 4
 	sub	esp, 28					; 0000001cH
 	push	esi
 
-; 2141 : 	CvString timeString;
+; 2159 : 	CvString timeString;
 
 	lea	ecx, DWORD PTR _timeString$[esp+44]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 2142 : 
-; 2143 : 	CvGame& kGame = GC.getGame();
+; 2160 : 
+; 2161 : 	CvGame& kGame = GC.getGame();
 
 	mov	esi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 
-; 2144 : 	CvGameTextMgr::setDateStr(timeString, kGame.getGameTurn(), true, kGame.getCalendar(), kGame.getStartYear(), kGame.getGameSpeedType());
+; 2162 : 	CvGameTextMgr::setDateStr(timeString, kGame.getGameTurn(), true, kGame.getCalendar(), kGame.getStartYear(), kGame.getGameSpeedType());
 
 	mov	ecx, esi
 	mov	DWORD PTR __$EHRec$[esp+52], 0
@@ -8648,8 +8674,8 @@ _L$ = 8							; size = 4
 	call	?setDateStr@CvGameTextMgr@@SAXAAVCvString@@H_NW4CalendarTypes@@HW4GameSpeedTypes@@@Z ; CvGameTextMgr::setDateStr
 	add	esp, 24					; 00000018H
 
-; 2145 : 
-; 2146 : 	lua_pushstring(L, timeString.GetCString());
+; 2163 : 
+; 2164 : 	lua_pushstring(L, timeString.GetCString());
 
 	lea	ecx, DWORD PTR _timeString$[esp+44]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
@@ -8659,13 +8685,13 @@ _L$ = 8							; size = 4
 	call	_lua_pushstring
 	add	esp, 8
 
-; 2147 : 	return 1;
+; 2165 : 	return 1;
 
 	lea	ecx, DWORD PTR _timeString$[esp+44]
 	mov	DWORD PTR __$EHRec$[esp+52], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 2148 : }
+; 2166 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+44]
 	mov	eax, 1
@@ -8692,12 +8718,12 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetMinimumFaithNextPantheon@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetMinimumFaithNextPantheon, COMDAT
 
-; 2152 : 	int iFaith = GC.getGame().GetGameReligions()->GetMinimumFaithNextPantheon();
+; 2170 : 	int iFaith = GC.getGame().GetGameReligions()->GetMinimumFaithNextPantheon();
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?GetGameReligions@CvGame@@QAEPAVCvGameReligions@@XZ ; CvGame::GetGameReligions
 
-; 2153 : 	lua_pushinteger(L, iFaith);
+; 2171 : 	lua_pushinteger(L, iFaith);
 
 	mov	eax, DWORD PTR [eax+5264]
 	mov	ecx, DWORD PTR _L$[esp-4]
@@ -8706,11 +8732,11 @@ _L$ = 8							; size = 4
 	call	_lua_pushinteger
 	add	esp, 8
 
-; 2154 : 	return 1;
+; 2172 : 	return 1;
 
 	mov	eax, 1
 
-; 2155 : }
+; 2173 : }
 
 	ret	0
 ?lGetMinimumFaithNextPantheon@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lGetMinimumFaithNextPantheon
@@ -8722,7 +8748,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lSetMinimumFaithNextPantheon@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lSetMinimumFaithNextPantheon, COMDAT
 
-; 2159 : 	GC.getGame().GetGameReligions()->SetMinimumFaithNextPantheon(lua_tointeger(L, 1));
+; 2177 : 	GC.getGame().GetGameReligions()->SetMinimumFaithNextPantheon(lua_tointeger(L, 1));
 
 	mov	eax, DWORD PTR _L$[esp-4]
 	push	esi
@@ -8738,12 +8764,12 @@ _L$ = 8							; size = 4
 	mov	DWORD PTR [eax+5264], edi
 	pop	edi
 
-; 2160 : 	return 1;
+; 2178 : 	return 1;
 
 	mov	eax, 1
 	pop	esi
 
-; 2161 : }
+; 2179 : }
 
 	ret	0
 ?lSetMinimumFaithNextPantheon@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lSetMinimumFaithNextPantheon
@@ -8756,20 +8782,20 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetNumFollowers@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetNumFollowers, COMDAT
 
-; 2302 : {
+; 2320 : {
 
 	push	esi
 
-; 2303 : 	int iRtnValue;
-; 2304 : 	ReligionTypes eReligion;
-; 2305 : 	eReligion = (ReligionTypes)lua_tointeger(L, 1);
+; 2321 : 	int iRtnValue;
+; 2322 : 	ReligionTypes eReligion;
+; 2323 : 	eReligion = (ReligionTypes)lua_tointeger(L, 1);
 
 	mov	esi, DWORD PTR _L$[esp]
 	push	1
 	push	esi
 	call	_lua_tointeger
 
-; 2306 : 	iRtnValue = GC.getGame().GetGameReligions()->GetNumFollowers(eReligion);
+; 2324 : 	iRtnValue = GC.getGame().GetGameReligions()->GetNumFollowers(eReligion);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	add	esp, 8
@@ -8778,19 +8804,19 @@ _L$ = 8							; size = 4
 	mov	ecx, eax
 	call	?GetNumFollowers@CvGameReligions@@QBEHW4ReligionTypes@@@Z ; CvGameReligions::GetNumFollowers
 
-; 2307 : 	lua_pushinteger(L, iRtnValue);
+; 2325 : 	lua_pushinteger(L, iRtnValue);
 
 	push	eax
 	push	esi
 	call	_lua_pushinteger
 	add	esp, 8
 
-; 2308 : 	return 1;
+; 2326 : 	return 1;
 
 	mov	eax, 1
 	pop	esi
 
-; 2309 : }
+; 2327 : }
 
 	ret	0
 ?lGetNumFollowers@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lGetNumFollowers
@@ -8803,20 +8829,20 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetNumCitiesFollowing@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetNumCitiesFollowing, COMDAT
 
-; 2312 : {
+; 2330 : {
 
 	push	esi
 
-; 2313 : 	int iRtnValue;
-; 2314 : 	ReligionTypes eReligion;
-; 2315 : 	eReligion = (ReligionTypes)lua_tointeger(L, 1);
+; 2331 : 	int iRtnValue;
+; 2332 : 	ReligionTypes eReligion;
+; 2333 : 	eReligion = (ReligionTypes)lua_tointeger(L, 1);
 
 	mov	esi, DWORD PTR _L$[esp]
 	push	1
 	push	esi
 	call	_lua_tointeger
 
-; 2316 : 	iRtnValue = GC.getGame().GetGameReligions()->GetNumCitiesFollowing(eReligion);
+; 2334 : 	iRtnValue = GC.getGame().GetGameReligions()->GetNumCitiesFollowing(eReligion);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	add	esp, 8
@@ -8825,19 +8851,19 @@ _L$ = 8							; size = 4
 	mov	ecx, eax
 	call	?GetNumCitiesFollowing@CvGameReligions@@QBEHW4ReligionTypes@@@Z ; CvGameReligions::GetNumCitiesFollowing
 
-; 2317 : 	lua_pushinteger(L, iRtnValue);
+; 2335 : 	lua_pushinteger(L, iRtnValue);
 
 	push	eax
 	push	esi
 	call	_lua_pushinteger
 	add	esp, 8
 
-; 2318 : 	return 1;
+; 2336 : 	return 1;
 
 	mov	eax, 1
 	pop	esi
 
-; 2319 : }
+; 2337 : }
 
 	ret	0
 ?lGetNumCitiesFollowing@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lGetNumCitiesFollowing
@@ -8870,7 +8896,7 @@ __$EHRec$ = -12						; size = 12
 _L$ = 8							; size = 4
 ?lGetBeliefsInReligion@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetBeliefsInReligion, COMDAT
 
-; 2322 : {
+; 2340 : {
 
 	push	-1
 	push	__ehhandler$?lGetBeliefsInReligion@CvLuaGame@@KAHPAUlua_State@@@Z
@@ -8882,16 +8908,16 @@ _L$ = 8							; size = 4
 	push	esi
 	push	edi
 
-; 2323 : 	ReligionTypes eReligion;
-; 2324 : 	eReligion = (ReligionTypes)lua_tointeger(L, 1);
+; 2341 : 	ReligionTypes eReligion;
+; 2342 : 	eReligion = (ReligionTypes)lua_tointeger(L, 1);
 
 	mov	edi, DWORD PTR _L$[esp+196]
 	push	1
 	push	edi
 	call	_lua_tointeger
 
-; 2325 : 
-; 2326 : 	lua_createtable(L, 0, 0);
+; 2343 : 
+; 2344 : 	lua_createtable(L, 0, 0);
 
 	push	0
 	push	0
@@ -8899,17 +8925,17 @@ _L$ = 8							; size = 4
 	mov	esi, eax
 	call	_lua_createtable
 
-; 2327 : 	const int t = lua_gettop(L);
+; 2345 : 	const int t = lua_gettop(L);
 
 	push	edi
 	call	_lua_gettop
 
-; 2328 : 	int idx = 1;
-; 2329 : 
-; 2330 : #ifdef AUI_WARNING_FIXES
-; 2331 : 	const CvReligionBeliefs& beliefs = GC.getGame().GetGameReligions()->GetReligion(eReligion, NO_PLAYER)->m_Beliefs;
-; 2332 : #else
-; 2333 : 	CvReligionBeliefs beliefs = GC.getGame().GetGameReligions()->GetReligion(eReligion, NO_PLAYER)->m_Beliefs;
+; 2346 : 	int idx = 1;
+; 2347 : 
+; 2348 : #ifdef AUI_WARNING_FIXES
+; 2349 : 	const CvReligionBeliefs& beliefs = GC.getGame().GetGameReligions()->GetReligion(eReligion, NO_PLAYER)->m_Beliefs;
+; 2350 : #else
+; 2351 : 	CvReligionBeliefs beliefs = GC.getGame().GetGameReligions()->GetReligion(eReligion, NO_PLAYER)->m_Beliefs;
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	add	esp, 24					; 00000018H
@@ -8924,8 +8950,8 @@ _L$ = 8							; size = 4
 	lea	ecx, DWORD PTR _beliefs$[esp+204]
 	call	??0CvReligionBeliefs@@QAE@ABV0@@Z	; CvReligionBeliefs::CvReligionBeliefs
 
-; 2334 : #endif
-; 2335 : 	for(int iI = 0; iI < beliefs.GetNumBeliefs(); iI++)
+; 2352 : #endif
+; 2353 : 	for(int iI = 0; iI < beliefs.GetNumBeliefs(); iI++)
 
 	lea	ecx, DWORD PTR _beliefs$[esp+200]
 	mov	DWORD PTR __$EHRec$[esp+208], 0
@@ -8935,20 +8961,20 @@ _L$ = 8							; size = 4
 	jle	SHORT $LN1@lGetBelief
 $LL3@lGetBelief:
 
-; 2336 : 	{
-; 2337 : 		const BeliefTypes eBelief = beliefs.GetBelief(iI);
+; 2354 : 	{
+; 2355 : 		const BeliefTypes eBelief = beliefs.GetBelief(iI);
 
 	push	esi
 	lea	ecx, DWORD PTR _beliefs$[esp+204]
 	call	?GetBelief@CvReligionBeliefs@@QBE?AW4BeliefTypes@@H@Z ; CvReligionBeliefs::GetBelief
 
-; 2338 : 		lua_pushinteger(L, eBelief);
+; 2356 : 		lua_pushinteger(L, eBelief);
 
 	push	eax
 	push	edi
 	call	_lua_pushinteger
 
-; 2339 : 		lua_rawseti(L, t, idx++);
+; 2357 : 		lua_rawseti(L, t, idx++);
 
 	inc	esi
 	push	esi
@@ -8962,15 +8988,15 @@ $LL3@lGetBelief:
 	jl	SHORT $LL3@lGetBelief
 $LN1@lGetBelief:
 
-; 2340 : 	}
-; 2341 : 
-; 2342 : 	return 1;
+; 2358 : 	}
+; 2359 : 
+; 2360 : 	return 1;
 
 	lea	ecx, DWORD PTR _beliefs$[esp+200]
 	mov	DWORD PTR __$EHRec$[esp+208], -1
 	call	??1CvReligionBeliefs@@QAE@XZ		; CvReligionBeliefs::~CvReligionBeliefs
 
-; 2343 : }
+; 2361 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+200]
 	pop	edi
@@ -8999,15 +9025,15 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetNumReligionsStillToFound@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetNumReligionsStillToFound, COMDAT
 
-; 2347 : 	int iRtnValue;
-; 2348 : 	iRtnValue = GC.getGame().GetGameReligions()->GetNumReligionsStillToFound();
+; 2365 : 	int iRtnValue;
+; 2366 : 	iRtnValue = GC.getGame().GetGameReligions()->GetNumReligionsStillToFound();
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?GetGameReligions@CvGame@@QAEPAVCvGameReligions@@XZ ; CvGame::GetGameReligions
 	mov	ecx, eax
 	call	?GetNumReligionsStillToFound@CvGameReligions@@QBEHXZ ; CvGameReligions::GetNumReligionsStillToFound
 
-; 2349 : 	lua_pushinteger(L, iRtnValue);
+; 2367 : 	lua_pushinteger(L, iRtnValue);
 
 	push	eax
 	mov	eax, DWORD PTR _L$[esp]
@@ -9015,11 +9041,11 @@ _L$ = 8							; size = 4
 	call	_lua_pushinteger
 	add	esp, 8
 
-; 2350 : 	return 1;
+; 2368 : 	return 1;
 
 	mov	eax, 1
 
-; 2351 : }
+; 2369 : }
 
 	ret	0
 ?lGetNumReligionsStillToFound@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lGetNumReligionsStillToFound
@@ -9032,15 +9058,15 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetNumReligionsFounded@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetNumReligionsFounded, COMDAT
 
-; 2355 : 	int iRtnValue;
-; 2356 : 	iRtnValue = GC.getGame().GetGameReligions()->GetNumReligionsFounded();
+; 2373 : 	int iRtnValue;
+; 2374 : 	iRtnValue = GC.getGame().GetGameReligions()->GetNumReligionsFounded();
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?GetGameReligions@CvGame@@QAEPAVCvGameReligions@@XZ ; CvGame::GetGameReligions
 	mov	ecx, eax
 	call	?GetNumReligionsFounded@CvGameReligions@@QBEHXZ ; CvGameReligions::GetNumReligionsFounded
 
-; 2357 : 	lua_pushinteger(L, iRtnValue);
+; 2375 : 	lua_pushinteger(L, iRtnValue);
 
 	push	eax
 	mov	eax, DWORD PTR _L$[esp]
@@ -9048,11 +9074,11 @@ _L$ = 8							; size = 4
 	call	_lua_pushinteger
 	add	esp, 8
 
-; 2358 : 	return 1;
+; 2376 : 	return 1;
 
 	mov	eax, 1
 
-; 2359 : }
+; 2377 : }
 
 	ret	0
 ?lGetNumReligionsFounded@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lGetNumReligionsFounded
@@ -9066,20 +9092,20 @@ tv79 = -4						; size = 4
 _L$ = 8							; size = 4
 ?lGetReligionName@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetReligionName, COMDAT
 
-; 2390 : {
+; 2408 : {
 
 	push	ecx
 	push	esi
 	push	edi
 
-; 2391 : 	const ReligionTypes eReligion = static_cast<ReligionTypes>(luaL_checkint(L, 1));
+; 2409 : 	const ReligionTypes eReligion = static_cast<ReligionTypes>(luaL_checkint(L, 1));
 
 	mov	edi, DWORD PTR _L$[esp+8]
 	push	1
 	push	edi
 	call	_luaL_checkinteger
 
-; 2392 : 	const CvReligion* pkReligion = GC.getGame().GetGameReligions()->GetReligion(eReligion, NO_PLAYER);
+; 2410 : 	const CvReligion* pkReligion = GC.getGame().GetGameReligions()->GetReligion(eReligion, NO_PLAYER);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	add	esp, 8
@@ -9090,10 +9116,10 @@ _L$ = 8							; size = 4
 	mov	ecx, eax
 	call	?GetReligion@CvGameReligions@@QBEPBVCvReligion@@W4ReligionTypes@@W4PlayerTypes@@@Z ; CvGameReligions::GetReligion
 
-; 2393 : #ifdef AUI_WARNING_FIXES
-; 2394 : 	if (pkReligion && pkReligion->m_szCustomName[0] != '\0')
-; 2395 : #else
-; 2396 : 	if(pkReligion && strlen(pkReligion->m_szCustomName) > 0)
+; 2411 : #ifdef AUI_WARNING_FIXES
+; 2412 : 	if (pkReligion && pkReligion->m_szCustomName[0] != '\0')
+; 2413 : #else
+; 2414 : 	if(pkReligion && strlen(pkReligion->m_szCustomName) > 0)
 
 	test	eax, eax
 	je	SHORT $LN2@lGetReligi
@@ -9110,9 +9136,9 @@ $LL9@lGetReligi:
 	pop	ebx
 	je	SHORT $LN2@lGetReligi
 
-; 2397 : #endif
-; 2398 : 	{
-; 2399 : 		lua_pushstring(L, pkReligion->m_szCustomName);
+; 2415 : #endif
+; 2416 : 	{
+; 2417 : 		lua_pushstring(L, pkReligion->m_szCustomName);
 
 	push	edx
 	push	edi
@@ -9120,32 +9146,32 @@ $LL9@lGetReligi:
 	add	esp, 8
 	pop	edi
 
-; 2400 : 		return 1;
+; 2418 : 		return 1;
 
 	mov	eax, 1
 	pop	esi
 
-; 2411 : }
+; 2429 : }
 
 	pop	ecx
 	ret	0
 $LN2@lGetReligi:
 
-; 2401 : 	}
-; 2402 : 
-; 2403 : 	CvReligionEntry* pkEntry = GC.getReligionInfo(eReligion);
+; 2419 : 	}
+; 2420 : 
+; 2421 : 	CvReligionEntry* pkEntry = GC.getReligionInfo(eReligion);
 
 	push	esi
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getReligionInfo@CvGlobals@@QAEPAVCvReligionEntry@@W4ReligionTypes@@@Z ; CvGlobals::getReligionInfo
 
-; 2404 : 	if(pkEntry != NULL)
+; 2422 : 	if(pkEntry != NULL)
 
 	test	eax, eax
 	je	SHORT $LN1@lGetReligi
 
-; 2405 : 	{
-; 2406 : 		lua_pushstring(L, pkEntry->GetDescriptionKey());
+; 2423 : 	{
+; 2424 : 		lua_pushstring(L, pkEntry->GetDescriptionKey());
 
 	lea	ecx, DWORD PTR [eax+64]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
@@ -9155,26 +9181,26 @@ $LN2@lGetReligi:
 	add	esp, 8
 	pop	edi
 
-; 2407 : 		return 1;
+; 2425 : 		return 1;
 
 	mov	eax, 1
 	pop	esi
 
-; 2411 : }
+; 2429 : }
 
 	pop	ecx
 	ret	0
 $LN1@lGetReligi:
 	pop	edi
 
-; 2408 : 	}
-; 2409 : 
-; 2410 : 	return 0;
+; 2426 : 	}
+; 2427 : 
+; 2428 : 	return 0;
 
 	xor	eax, eax
 	pop	esi
 
-; 2411 : }
+; 2429 : }
 
 	pop	ecx
 	ret	0
@@ -9188,18 +9214,18 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetFounderBenefitsReligion@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetFounderBenefitsReligion, COMDAT
 
-; 2414 : {
+; 2432 : {
 
 	push	esi
 
-; 2415 : 	const PlayerTypes ePlayer = static_cast<PlayerTypes>(luaL_checkint(L, 1));
+; 2433 : 	const PlayerTypes ePlayer = static_cast<PlayerTypes>(luaL_checkint(L, 1));
 
 	mov	esi, DWORD PTR _L$[esp]
 	push	1
 	push	esi
 	call	_luaL_checkinteger
 
-; 2416 : 	ReligionTypes eReligion = GC.getGame().GetGameReligions()->GetFounderBenefitsReligion(ePlayer);
+; 2434 : 	ReligionTypes eReligion = GC.getGame().GetGameReligions()->GetFounderBenefitsReligion(ePlayer);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	add	esp, 8
@@ -9208,19 +9234,19 @@ _L$ = 8							; size = 4
 	mov	ecx, eax
 	call	?GetFounderBenefitsReligion@CvGameReligions@@QBE?AW4ReligionTypes@@W4PlayerTypes@@@Z ; CvGameReligions::GetFounderBenefitsReligion
 
-; 2417 : 	lua_pushinteger(L, eReligion);
+; 2435 : 	lua_pushinteger(L, eReligion);
 
 	push	eax
 	push	esi
 	call	_lua_pushinteger
 	add	esp, 8
 
-; 2418 : 	return 1;
+; 2436 : 	return 1;
 
 	mov	eax, 1
 	pop	esi
 
-; 2419 : }
+; 2437 : }
 
 	ret	0
 ?lGetFounderBenefitsReligion@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lGetFounderBenefitsReligion
@@ -9233,11 +9259,11 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lFoundPantheon@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lFoundPantheon, COMDAT
 
-; 2422 : {
+; 2440 : {
 
 	push	esi
 
-; 2423 : 	const PlayerTypes ePlayer = static_cast<PlayerTypes>(luaL_checkint(L, 1));
+; 2441 : 	const PlayerTypes ePlayer = static_cast<PlayerTypes>(luaL_checkint(L, 1));
 
 	mov	esi, DWORD PTR _L$[esp]
 	push	edi
@@ -9245,34 +9271,34 @@ _L$ = 8							; size = 4
 	push	esi
 	call	_luaL_checkinteger
 
-; 2424 : 	const BeliefTypes eBelief = static_cast<BeliefTypes>(luaL_checkint(L, 2));
+; 2442 : 	const BeliefTypes eBelief = static_cast<BeliefTypes>(luaL_checkint(L, 2));
 
 	push	2
 	push	esi
 	mov	edi, eax
 	call	_luaL_checkinteger
 
-; 2425 : 
-; 2426 : #ifdef AUI_RELIGION_FIX_SIMULTANEOUS_ENHANCE_OR_FOUND_CAUSING_MULTIPLE
-; 2427 : 	CvGameReligions* pkGameReligions(GC.getGame().GetGameReligions());
-; 2428 : 	CvGameReligions::FOUNDING_RESULT eResult = pkGameReligions->CanCreatePantheon(ePlayer, true);
-; 2429 : 	if (eResult == CvGameReligions::FOUNDING_OK)
-; 2430 : 	{
-; 2431 : 		if (pkGameReligions->IsPantheonBeliefAvailable(eBelief))
-; 2432 : 		{
-; 2433 : 			pkGameReligions->FoundPantheon(ePlayer, eBelief);
-; 2434 : 		}
-; 2435 : 		else
-; 2436 : 		{
-; 2437 : 			CvGameReligions::NotifyPlayer(ePlayer, CvGameReligions::FOUNDING_BELIEF_IN_USE);
-; 2438 : 		}
-; 2439 : 	}
-; 2440 : 	else
-; 2441 : 	{
-; 2442 : 		CvGameReligions::NotifyPlayer(ePlayer, eResult);
-; 2443 : 	}
-; 2444 : #else
-; 2445 : 	GC.getGame().GetGameReligions()->FoundPantheon(ePlayer, eBelief);
+; 2443 : 
+; 2444 : #ifdef AUI_RELIGION_FIX_SIMULTANEOUS_ENHANCE_OR_FOUND_CAUSING_MULTIPLE
+; 2445 : 	CvGameReligions* pkGameReligions(GC.getGame().GetGameReligions());
+; 2446 : 	CvGameReligions::FOUNDING_RESULT eResult = pkGameReligions->CanCreatePantheon(ePlayer, true);
+; 2447 : 	if (eResult == CvGameReligions::FOUNDING_OK)
+; 2448 : 	{
+; 2449 : 		if (pkGameReligions->IsPantheonBeliefAvailable(eBelief))
+; 2450 : 		{
+; 2451 : 			pkGameReligions->FoundPantheon(ePlayer, eBelief);
+; 2452 : 		}
+; 2453 : 		else
+; 2454 : 		{
+; 2455 : 			CvGameReligions::NotifyPlayer(ePlayer, CvGameReligions::FOUNDING_BELIEF_IN_USE);
+; 2456 : 		}
+; 2457 : 	}
+; 2458 : 	else
+; 2459 : 	{
+; 2460 : 		CvGameReligions::NotifyPlayer(ePlayer, eResult);
+; 2461 : 	}
+; 2462 : #else
+; 2463 : 	GC.getGame().GetGameReligions()->FoundPantheon(ePlayer, eBelief);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	add	esp, 16					; 00000010H
@@ -9283,14 +9309,14 @@ _L$ = 8							; size = 4
 	call	?FoundPantheon@CvGameReligions@@QAEXW4PlayerTypes@@W4BeliefTypes@@@Z ; CvGameReligions::FoundPantheon
 	pop	edi
 
-; 2446 : #endif
-; 2447 : 
-; 2448 : 	return 0;
+; 2464 : #endif
+; 2465 : 
+; 2466 : 	return 0;
 
 	xor	eax, eax
 	pop	esi
 
-; 2449 : }
+; 2467 : }
 
 	ret	0
 ?lFoundPantheon@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lFoundPantheon
@@ -9300,7 +9326,7 @@ EXTRN	?FoundReligion@CvGameReligions@@QAEXW4PlayerTypes@@W4ReligionTypes@@PBDW4B
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?lFoundReligion@CvLuaGame@@KAHPAUlua_State@@@Z
 _TEXT	SEGMENT
-_stack_size$227941 = -28				; size = 4
+_stack_size$228588 = -28				; size = 4
 _eBelief4$ = -24					; size = 4
 _eBelief3$ = -20					; size = 4
 _eBelief2$ = -16					; size = 4
@@ -9310,14 +9336,14 @@ _eReligion$ = -4					; size = 4
 _L$ = 8							; size = 4
 ?lFoundReligion@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lFoundReligion, COMDAT
 
-; 2452 : {
+; 2470 : {
 
 	sub	esp, 28					; 0000001cH
 	push	ebx
 	push	ebp
 	push	esi
 
-; 2453 : 	const PlayerTypes ePlayer = static_cast<PlayerTypes>(luaL_checkint(L, 1));
+; 2471 : 	const PlayerTypes ePlayer = static_cast<PlayerTypes>(luaL_checkint(L, 1));
 
 	mov	esi, DWORD PTR _L$[esp+36]
 	push	edi
@@ -9325,14 +9351,14 @@ _L$ = 8							; size = 4
 	push	esi
 	call	_luaL_checkinteger
 
-; 2454 : 	const ReligionTypes eReligion = static_cast<ReligionTypes>(luaL_checkint(L, 2));
+; 2472 : 	const ReligionTypes eReligion = static_cast<ReligionTypes>(luaL_checkint(L, 2));
 
 	push	2
 	push	esi
 	mov	ebp, eax
 	call	_luaL_checkinteger
 
-; 2455 : 	const char* szCustomName = lua_tostring(L, 3);
+; 2473 : 	const char* szCustomName = lua_tostring(L, 3);
 
 	push	0
 	push	3
@@ -9340,35 +9366,35 @@ _L$ = 8							; size = 4
 	mov	DWORD PTR _eReligion$[esp+72], eax
 	call	_lua_tolstring
 
-; 2456 : 	const BeliefTypes eBelief1 = static_cast<BeliefTypes>(luaL_checkint(L, 4));
+; 2474 : 	const BeliefTypes eBelief1 = static_cast<BeliefTypes>(luaL_checkint(L, 4));
 
 	push	4
 	push	esi
 	mov	DWORD PTR _szCustomName$[esp+80], eax
 	call	_luaL_checkinteger
 
-; 2457 : 	const BeliefTypes eBelief2 = static_cast<BeliefTypes>(luaL_checkint(L, 5));
+; 2475 : 	const BeliefTypes eBelief2 = static_cast<BeliefTypes>(luaL_checkint(L, 5));
 
 	push	5
 	push	esi
 	mov	DWORD PTR _eBelief1$[esp+88], eax
 	call	_luaL_checkinteger
 
-; 2458 : 	const BeliefTypes eBelief3 = static_cast<BeliefTypes>(luaL_checkint(L, 6));
+; 2476 : 	const BeliefTypes eBelief3 = static_cast<BeliefTypes>(luaL_checkint(L, 6));
 
 	push	6
 	push	esi
 	mov	DWORD PTR _eBelief2$[esp+96], eax
 	call	_luaL_checkinteger
 
-; 2459 : 	const BeliefTypes eBelief4 = static_cast<BeliefTypes>(luaL_checkint(L, 7));
+; 2477 : 	const BeliefTypes eBelief4 = static_cast<BeliefTypes>(luaL_checkint(L, 7));
 
 	push	7
 	push	esi
 	mov	DWORD PTR _eBelief3$[esp+104], eax
 	call	_luaL_checkinteger
 
-; 2460 : 	CvCity* pkHolyCity	= CvLuaCity::GetInstance(L, 8);
+; 2478 : 	CvCity* pkHolyCity	= CvLuaCity::GetInstance(L, 8);
 
 	push	esi
 	mov	DWORD PTR _eBelief4$[esp+108], eax
@@ -9376,14 +9402,14 @@ _L$ = 8							; size = 4
 	add	esp, 64					; 00000040H
 	push	8
 	push	esi
-	mov	DWORD PTR _stack_size$227941[esp+52], eax
+	mov	DWORD PTR _stack_size$228588[esp+52], eax
 	mov	bl, 1
 	xor	edi, edi
 	call	_lua_type
 	add	esp, 8
 	cmp	eax, 5
 	jne	SHORT $LN5@lFoundReli
-	push	OFFSET $SG225505
+	push	OFFSET $SG226135
 	push	8
 	push	esi
 	call	_lua_getfield
@@ -9402,7 +9428,7 @@ _L$ = 8							; size = 4
 	je	SHORT $LN5@lFoundReli
 	xor	bl, bl
 $LN5@lFoundReli:
-	mov	eax, DWORD PTR _stack_size$227941[esp+44]
+	mov	eax, DWORD PTR _stack_size$228588[esp+44]
 	push	eax
 	push	esi
 	call	_lua_settop
@@ -9414,44 +9440,44 @@ $LN5@lFoundReli:
 	add	esp, 4
 $LN4@lFoundReli:
 
-; 2461 : 
-; 2462 : #ifdef AUI_RELIGION_FIX_SIMULTANEOUS_ENHANCE_OR_FOUND_CAUSING_MULTIPLE
-; 2463 : 	if (pkHolyCity && ePlayer != NO_PLAYER)
-; 2464 : 	{
-; 2465 : 		CvGameReligions* pkGameReligions(GC.getGame().GetGameReligions());
-; 2466 : 		CvGameReligions::FOUNDING_RESULT eResult = pkGameReligions->CanFoundReligion(ePlayer, eReligion, szCustomName, eBelief1, eBelief2, eBelief3, eBelief4, pkHolyCity);
-; 2467 : 		if (eResult == CvGameReligions::FOUNDING_OK)
-; 2468 : 			pkGameReligions->FoundReligion(ePlayer, eReligion, szCustomName, eBelief1, eBelief2, eBelief3, eBelief4, pkHolyCity);
-; 2469 : 		else
-; 2470 : 		{
-; 2471 : 			CvGameReligions::NotifyPlayer(ePlayer, eResult);
-; 2472 : 			// We don't want them to lose the opportunity to found the religion, and the Great Prophet is already gone so just repost the notification
-; 2473 : 			CvPlayerAI& kPlayer = GET_PLAYER(ePlayer);
-; 2474 : 			if (kPlayer.isHuman() && eResult != CvGameReligions::FOUNDING_NO_RELIGIONS_AVAILABLE && eResult != CvGameReligions::FOUNDING_NO_BELIEFS_AVAILABLE)
-; 2475 : 			{
-; 2476 : 				CvNotifications* pNotifications = kPlayer.GetNotifications();
-; 2477 : 				if (pNotifications)
-; 2478 : 				{
-; 2479 : 					CvString strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_FOUND_RELIGION");
-; 2480 : 					CvString strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_FOUND_RELIGION");
-; 2481 : 					pNotifications->Add(NOTIFICATION_FOUND_RELIGION, strBuffer, strSummary, pkHolyCity->getX(), pkHolyCity->getY(), -1, pkHolyCity->GetID());
-; 2482 : 				}
-; 2483 : 				kPlayer.GetReligions()->SetFoundingReligion(true);
-; 2484 : 			}
-; 2485 : #ifdef AUI_DLLNETMESSAGEHANDLER_FIX_RESPAWN_PROPHET_IF_BEATEN_TO_LAST_RELIGION
-; 2486 : 			else if (kPlayer.getCapitalCity())
-; 2487 : 			{
-; 2488 : 				UnitTypes eUnit = (UnitTypes)GC.getInfoTypeForString("UNIT_PROPHET", true);
-; 2489 : 				if (eUnit != NO_UNIT)
-; 2490 : 				{
-; 2491 : 					kPlayer.getCapitalCity()->GetCityCitizens()->DoSpawnGreatPerson(eUnit, false /*bIncrementCount*/, false, true);
-; 2492 : 				}
-; 2493 : 			}
-; 2494 : #endif
-; 2495 : 		}
-; 2496 : 	}
-; 2497 : #else
-; 2498 : 	GC.getGame().GetGameReligions()->FoundReligion(ePlayer, eReligion, szCustomName, eBelief1, eBelief2, eBelief3, eBelief4, pkHolyCity);
+; 2479 : 
+; 2480 : #ifdef AUI_RELIGION_FIX_SIMULTANEOUS_ENHANCE_OR_FOUND_CAUSING_MULTIPLE
+; 2481 : 	if (pkHolyCity && ePlayer != NO_PLAYER)
+; 2482 : 	{
+; 2483 : 		CvGameReligions* pkGameReligions(GC.getGame().GetGameReligions());
+; 2484 : 		CvGameReligions::FOUNDING_RESULT eResult = pkGameReligions->CanFoundReligion(ePlayer, eReligion, szCustomName, eBelief1, eBelief2, eBelief3, eBelief4, pkHolyCity);
+; 2485 : 		if (eResult == CvGameReligions::FOUNDING_OK)
+; 2486 : 			pkGameReligions->FoundReligion(ePlayer, eReligion, szCustomName, eBelief1, eBelief2, eBelief3, eBelief4, pkHolyCity);
+; 2487 : 		else
+; 2488 : 		{
+; 2489 : 			CvGameReligions::NotifyPlayer(ePlayer, eResult);
+; 2490 : 			// We don't want them to lose the opportunity to found the religion, and the Great Prophet is already gone so just repost the notification
+; 2491 : 			CvPlayerAI& kPlayer = GET_PLAYER(ePlayer);
+; 2492 : 			if (kPlayer.isHuman() && eResult != CvGameReligions::FOUNDING_NO_RELIGIONS_AVAILABLE && eResult != CvGameReligions::FOUNDING_NO_BELIEFS_AVAILABLE)
+; 2493 : 			{
+; 2494 : 				CvNotifications* pNotifications = kPlayer.GetNotifications();
+; 2495 : 				if (pNotifications)
+; 2496 : 				{
+; 2497 : 					CvString strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_FOUND_RELIGION");
+; 2498 : 					CvString strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_FOUND_RELIGION");
+; 2499 : 					pNotifications->Add(NOTIFICATION_FOUND_RELIGION, strBuffer, strSummary, pkHolyCity->getX(), pkHolyCity->getY(), -1, pkHolyCity->GetID());
+; 2500 : 				}
+; 2501 : 				kPlayer.GetReligions()->SetFoundingReligion(true);
+; 2502 : 			}
+; 2503 : #ifdef AUI_DLLNETMESSAGEHANDLER_FIX_RESPAWN_PROPHET_IF_BEATEN_TO_LAST_RELIGION
+; 2504 : 			else if (kPlayer.getCapitalCity())
+; 2505 : 			{
+; 2506 : 				UnitTypes eUnit = (UnitTypes)GC.getInfoTypeForString("UNIT_PROPHET", true);
+; 2507 : 				if (eUnit != NO_UNIT)
+; 2508 : 				{
+; 2509 : 					kPlayer.getCapitalCity()->GetCityCitizens()->DoSpawnGreatPerson(eUnit, false /*bIncrementCount*/, false, true);
+; 2510 : 				}
+; 2511 : 			}
+; 2512 : #endif
+; 2513 : 		}
+; 2514 : 	}
+; 2515 : #else
+; 2516 : 	GC.getGame().GetGameReligions()->FoundReligion(ePlayer, eReligion, szCustomName, eBelief1, eBelief2, eBelief3, eBelief4, pkHolyCity);
 
 	mov	ecx, DWORD PTR _eBelief4$[esp+44]
 	mov	edx, DWORD PTR _eBelief3$[esp+44]
@@ -9475,14 +9501,14 @@ $LN4@lFoundReli:
 	pop	esi
 	pop	ebp
 
-; 2499 : #endif
-; 2500 : 
-; 2501 : 	return 0;
+; 2517 : #endif
+; 2518 : 
+; 2519 : 	return 0;
 
 	xor	eax, eax
 	pop	ebx
 
-; 2502 : }
+; 2520 : }
 
 	add	esp, 28					; 0000001cH
 	ret	0
@@ -9496,13 +9522,13 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lEnhanceReligion@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lEnhanceReligion, COMDAT
 
-; 2505 : {
+; 2523 : {
 
 	push	ebx
 	push	ebp
 	push	esi
 
-; 2506 : 	const PlayerTypes ePlayer = static_cast<PlayerTypes>(luaL_checkint(L, 1));
+; 2524 : 	const PlayerTypes ePlayer = static_cast<PlayerTypes>(luaL_checkint(L, 1));
 
 	mov	esi, DWORD PTR _L$[esp+8]
 	push	edi
@@ -9510,64 +9536,64 @@ _L$ = 8							; size = 4
 	push	esi
 	call	_luaL_checkinteger
 
-; 2507 : 	const ReligionTypes eReligion = static_cast<ReligionTypes>(luaL_checkint(L, 2));
+; 2525 : 	const ReligionTypes eReligion = static_cast<ReligionTypes>(luaL_checkint(L, 2));
 
 	push	2
 	push	esi
 	mov	edi, eax
 	call	_luaL_checkinteger
 
-; 2508 : 	const BeliefTypes eBelief1 = static_cast<BeliefTypes>(luaL_checkint(L, 3));
+; 2526 : 	const BeliefTypes eBelief1 = static_cast<BeliefTypes>(luaL_checkint(L, 3));
 
 	push	3
 	push	esi
 	mov	ebx, eax
 	call	_luaL_checkinteger
 
-; 2509 : 	const BeliefTypes eBelief2 = static_cast<BeliefTypes>(luaL_checkint(L, 4));
+; 2527 : 	const BeliefTypes eBelief2 = static_cast<BeliefTypes>(luaL_checkint(L, 4));
 
 	push	4
 	push	esi
 	mov	ebp, eax
 	call	_luaL_checkinteger
 
-; 2510 : 
-; 2511 : #ifdef AUI_RELIGION_FIX_SIMULTANEOUS_ENHANCE_OR_FOUND_CAUSING_MULTIPLE
-; 2512 : 	CvGameReligions* pkGameReligions(GC.getGame().GetGameReligions());
-; 2513 : 
-; 2514 : 	CvGameReligions::FOUNDING_RESULT eResult = pkGameReligions->CanEnhanceReligion(ePlayer, eReligion, eBelief1, eBelief2);
-; 2515 : 	if (eResult == CvGameReligions::FOUNDING_OK)
-; 2516 : 		pkGameReligions->EnhanceReligion(ePlayer, eReligion, eBelief1, eBelief2);
-; 2517 : 	else
-; 2518 : 	{
-; 2519 : 		CvGameReligions::NotifyPlayer(ePlayer, eResult);
-; 2520 : 		// We don't want them to lose the opportunity to enhance the religion, and the Great Prophet is already gone so just repost the notification
-; 2521 : 		CvPlayerAI& kPlayer = GET_PLAYER(ePlayer);
-; 2522 : 		CvCity* pkCity = kPlayer.getCapitalCity();
-; 2523 : 		if (kPlayer.isHuman() && pkCity && eResult != CvGameReligions::FOUNDING_NO_BELIEFS_AVAILABLE)
-; 2524 : 		{
-; 2525 : 			CvNotifications* pNotifications = kPlayer.GetNotifications();
-; 2526 : 			if (pNotifications)
-; 2527 : 			{
-; 2528 : 				CvString strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_ENHANCE_RELIGION");
-; 2529 : 				CvString strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_ENHANCE_RELIGION");
-; 2530 : 				pNotifications->Add(NOTIFICATION_ENHANCE_RELIGION, strBuffer, strSummary, pkCity->getX(), pkCity->getY(), -1, pkCity->GetID());
-; 2531 : 			}
-; 2532 : 			kPlayer.GetReligions()->SetFoundingReligion(true);
-; 2533 : 		}
-; 2534 : #ifdef AUI_DLLNETMESSAGEHANDLER_FIX_RESPAWN_PROPHET_IF_BEATEN_TO_LAST_RELIGION
-; 2535 : 		else if (kPlayer.getCapitalCity())
-; 2536 : 		{
-; 2537 : 			UnitTypes eUnit = (UnitTypes)GC.getInfoTypeForString("UNIT_PROPHET", true);
-; 2538 : 			if (eUnit != NO_UNIT)
-; 2539 : 			{
-; 2540 : 				kPlayer.getCapitalCity()->GetCityCitizens()->DoSpawnGreatPerson(eUnit, false /*bIncrementCount*/, false, true);
-; 2541 : 			}
-; 2542 : 	}
-; 2543 : #endif
-; 2544 : 	}
-; 2545 : #else
-; 2546 : 	GC.getGame().GetGameReligions()->EnhanceReligion(ePlayer, eReligion, eBelief1, eBelief2);
+; 2528 : 
+; 2529 : #ifdef AUI_RELIGION_FIX_SIMULTANEOUS_ENHANCE_OR_FOUND_CAUSING_MULTIPLE
+; 2530 : 	CvGameReligions* pkGameReligions(GC.getGame().GetGameReligions());
+; 2531 : 
+; 2532 : 	CvGameReligions::FOUNDING_RESULT eResult = pkGameReligions->CanEnhanceReligion(ePlayer, eReligion, eBelief1, eBelief2);
+; 2533 : 	if (eResult == CvGameReligions::FOUNDING_OK)
+; 2534 : 		pkGameReligions->EnhanceReligion(ePlayer, eReligion, eBelief1, eBelief2);
+; 2535 : 	else
+; 2536 : 	{
+; 2537 : 		CvGameReligions::NotifyPlayer(ePlayer, eResult);
+; 2538 : 		// We don't want them to lose the opportunity to enhance the religion, and the Great Prophet is already gone so just repost the notification
+; 2539 : 		CvPlayerAI& kPlayer = GET_PLAYER(ePlayer);
+; 2540 : 		CvCity* pkCity = kPlayer.getCapitalCity();
+; 2541 : 		if (kPlayer.isHuman() && pkCity && eResult != CvGameReligions::FOUNDING_NO_BELIEFS_AVAILABLE)
+; 2542 : 		{
+; 2543 : 			CvNotifications* pNotifications = kPlayer.GetNotifications();
+; 2544 : 			if (pNotifications)
+; 2545 : 			{
+; 2546 : 				CvString strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_ENHANCE_RELIGION");
+; 2547 : 				CvString strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_ENHANCE_RELIGION");
+; 2548 : 				pNotifications->Add(NOTIFICATION_ENHANCE_RELIGION, strBuffer, strSummary, pkCity->getX(), pkCity->getY(), -1, pkCity->GetID());
+; 2549 : 			}
+; 2550 : 			kPlayer.GetReligions()->SetFoundingReligion(true);
+; 2551 : 		}
+; 2552 : #ifdef AUI_DLLNETMESSAGEHANDLER_FIX_RESPAWN_PROPHET_IF_BEATEN_TO_LAST_RELIGION
+; 2553 : 		else if (kPlayer.getCapitalCity())
+; 2554 : 		{
+; 2555 : 			UnitTypes eUnit = (UnitTypes)GC.getInfoTypeForString("UNIT_PROPHET", true);
+; 2556 : 			if (eUnit != NO_UNIT)
+; 2557 : 			{
+; 2558 : 				kPlayer.getCapitalCity()->GetCityCitizens()->DoSpawnGreatPerson(eUnit, false /*bIncrementCount*/, false, true);
+; 2559 : 			}
+; 2560 : 	}
+; 2561 : #endif
+; 2562 : 	}
+; 2563 : #else
+; 2564 : 	GC.getGame().GetGameReligions()->EnhanceReligion(ePlayer, eReligion, eBelief1, eBelief2);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	add	esp, 32					; 00000020H
@@ -9582,14 +9608,14 @@ _L$ = 8							; size = 4
 	pop	esi
 	pop	ebp
 
-; 2547 : #endif
-; 2548 : 
-; 2549 : 	return 0;
+; 2565 : #endif
+; 2566 : 
+; 2567 : 	return 0;
 
 	xor	eax, eax
 	pop	ebx
 
-; 2550 : }
+; 2568 : }
 
 	ret	0
 ?lEnhanceReligion@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lEnhanceReligion
@@ -9603,14 +9629,14 @@ _eReligion$ = -4					; size = 4
 _L$ = 8							; size = 4
 ?lSetHolyCity@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lSetHolyCity, COMDAT
 
-; 2553 : {
+; 2571 : {
 
 	push	ecx
 	push	ebx
 	push	ebp
 	push	esi
 
-; 2554 : 	const ReligionTypes eReligion = static_cast<ReligionTypes>(luaL_checkint(L, 1));
+; 2572 : 	const ReligionTypes eReligion = static_cast<ReligionTypes>(luaL_checkint(L, 1));
 
 	mov	esi, DWORD PTR _L$[esp+12]
 	push	edi
@@ -9618,7 +9644,7 @@ _L$ = 8							; size = 4
 	push	esi
 	call	_luaL_checkinteger
 
-; 2555 : 	CvCity* pkHolyCity	= CvLuaCity::GetInstance(L, 2);
+; 2573 : 	CvCity* pkHolyCity	= CvLuaCity::GetInstance(L, 2);
 
 	push	esi
 	mov	DWORD PTR _eReligion$[esp+32], eax
@@ -9632,7 +9658,7 @@ _L$ = 8							; size = 4
 	add	esp, 20					; 00000014H
 	cmp	eax, 5
 	jne	SHORT $LN5@lSetHolyCi
-	push	OFFSET $SG225505
+	push	OFFSET $SG226135
 	push	2
 	push	esi
 	call	_lua_getfield
@@ -9662,8 +9688,8 @@ $LN5@lSetHolyCi:
 	add	esp, 4
 $LN4@lSetHolyCi:
 
-; 2556 : 
-; 2557 : 	GC.getGame().GetGameReligions()->SetHolyCity(eReligion, pkHolyCity);
+; 2574 : 
+; 2575 : 	GC.getGame().GetGameReligions()->SetHolyCity(eReligion, pkHolyCity);
 
 	mov	eax, DWORD PTR _eReligion$[esp+20]
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
@@ -9676,13 +9702,13 @@ $LN4@lSetHolyCi:
 	pop	esi
 	pop	ebp
 
-; 2558 : 
-; 2559 : 	return 0;
+; 2576 : 
+; 2577 : 	return 0;
 
 	xor	eax, eax
 	pop	ebx
 
-; 2560 : }
+; 2578 : }
 
 	pop	ecx
 	ret	0
@@ -9695,11 +9721,11 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetFounder@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetFounder, COMDAT
 
-; 2563 : {
+; 2581 : {
 
 	push	esi
 
-; 2564 : 	const ReligionTypes eReligion = static_cast<ReligionTypes>(luaL_checkint(L, 1));
+; 2582 : 	const ReligionTypes eReligion = static_cast<ReligionTypes>(luaL_checkint(L, 1));
 
 	mov	esi, DWORD PTR _L$[esp]
 	push	edi
@@ -9707,15 +9733,15 @@ _L$ = 8							; size = 4
 	push	esi
 	call	_luaL_checkinteger
 
-; 2565 : 	const PlayerTypes ePlayer = static_cast<PlayerTypes>(luaL_checkint(L, 2));
+; 2583 : 	const PlayerTypes ePlayer = static_cast<PlayerTypes>(luaL_checkint(L, 2));
 
 	push	2
 	push	esi
 	mov	edi, eax
 	call	_luaL_checkinteger
 
-; 2566 : 
-; 2567 : 	const CvReligion* pReligion = GC.getGame().GetGameReligions()->GetReligion(eReligion, ePlayer);
+; 2584 : 
+; 2585 : 	const CvReligion* pReligion = GC.getGame().GetGameReligions()->GetReligion(eReligion, ePlayer);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	add	esp, 16					; 00000010H
@@ -9725,8 +9751,8 @@ _L$ = 8							; size = 4
 	mov	ecx, eax
 	call	?GetReligion@CvGameReligions@@QBEPBVCvReligion@@W4ReligionTypes@@W4PlayerTypes@@@Z ; CvGameReligions::GetReligion
 
-; 2568 : 
-; 2569 : 	lua_pushinteger(L, (int)pReligion->m_eFounder);
+; 2586 : 
+; 2587 : 	lua_pushinteger(L, (int)pReligion->m_eFounder);
 
 	mov	eax, DWORD PTR [eax+4]
 	push	eax
@@ -9735,12 +9761,12 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	pop	edi
 
-; 2570 : 	return 1;
+; 2588 : 	return 1;
 
 	mov	eax, 1
 	pop	esi
 
-; 2571 : }
+; 2589 : }
 
 	ret	0
 ?lGetFounder@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lGetFounder
@@ -9753,11 +9779,11 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lSetFounder@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lSetFounder, COMDAT
 
-; 2574 : {
+; 2592 : {
 
 	push	esi
 
-; 2575 : 	const ReligionTypes eReligion = static_cast<ReligionTypes>(luaL_checkint(L, 1));
+; 2593 : 	const ReligionTypes eReligion = static_cast<ReligionTypes>(luaL_checkint(L, 1));
 
 	mov	esi, DWORD PTR _L$[esp]
 	push	edi
@@ -9765,15 +9791,15 @@ _L$ = 8							; size = 4
 	push	esi
 	call	_luaL_checkinteger
 
-; 2576 : 	const PlayerTypes eFounder = static_cast<PlayerTypes>(luaL_checkint(L, 2));
+; 2594 : 	const PlayerTypes eFounder = static_cast<PlayerTypes>(luaL_checkint(L, 2));
 
 	push	2
 	push	esi
 	mov	edi, eax
 	call	_luaL_checkinteger
 
-; 2577 : 
-; 2578 : 	GC.getGame().GetGameReligions()->SetFounder(eReligion, eFounder);
+; 2595 : 
+; 2596 : 	GC.getGame().GetGameReligions()->SetFounder(eReligion, eFounder);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	add	esp, 16					; 00000010H
@@ -9784,13 +9810,13 @@ _L$ = 8							; size = 4
 	call	?SetFounder@CvGameReligions@@QAEXW4ReligionTypes@@W4PlayerTypes@@@Z ; CvGameReligions::SetFounder
 	pop	edi
 
-; 2579 : 
-; 2580 : 	return 0;
+; 2597 : 
+; 2598 : 	return 0;
 
 	xor	eax, eax
 	pop	esi
 
-; 2581 : }
+; 2599 : }
 
 	ret	0
 ?lSetFounder@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lSetFounder
@@ -9803,7 +9829,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetTurnsBetweenMinorCivElections@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetTurnsBetweenMinorCivElections, COMDAT
 
-; 2585 : 	lua_pushinteger(L, GC.getGame().GetTurnsBetweenMinorCivElections());
+; 2603 : 	lua_pushinteger(L, GC.getGame().GetTurnsBetweenMinorCivElections());
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?GetTurnsBetweenMinorCivElections@CvGame@@QAEHXZ ; CvGame::GetTurnsBetweenMinorCivElections
@@ -9813,11 +9839,11 @@ _L$ = 8							; size = 4
 	call	_lua_pushinteger
 	add	esp, 8
 
-; 2586 : 	return 1;
+; 2604 : 	return 1;
 
 	mov	eax, 1
 
-; 2587 : }
+; 2605 : }
 
 	ret	0
 ?lGetTurnsBetweenMinorCivElections@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lGetTurnsBetweenMinorCivElections
@@ -9830,7 +9856,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetTurnsUntilMinorCivElection@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetTurnsUntilMinorCivElection, COMDAT
 
-; 2591 : 	lua_pushinteger(L, GC.getGame().GetTurnsUntilMinorCivElection());
+; 2609 : 	lua_pushinteger(L, GC.getGame().GetTurnsUntilMinorCivElection());
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?GetTurnsUntilMinorCivElection@CvGame@@QAEHXZ ; CvGame::GetTurnsUntilMinorCivElection
@@ -9840,11 +9866,11 @@ _L$ = 8							; size = 4
 	call	_lua_pushinteger
 	add	esp, 8
 
-; 2592 : 	return 1;
+; 2610 : 	return 1;
 
 	mov	eax, 1
 
-; 2593 : }
+; 2611 : }
 
 	ret	0
 ?lGetTurnsUntilMinorCivElection@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lGetTurnsUntilMinorCivElection
@@ -9858,7 +9884,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetNumActiveLeagues@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetNumActiveLeagues, COMDAT
 
-; 2597 : 	lua_pushinteger(L, GC.getGame().GetGameLeagues()->GetNumActiveLeagues());
+; 2615 : 	lua_pushinteger(L, GC.getGame().GetGameLeagues()->GetNumActiveLeagues());
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?GetGameLeagues@CvGame@@QAEPAVCvGameLeagues@@XZ ; CvGame::GetGameLeagues
@@ -9870,11 +9896,11 @@ _L$ = 8							; size = 4
 	call	_lua_pushinteger
 	add	esp, 8
 
-; 2598 : 	return 1;
+; 2616 : 	return 1;
 
 	mov	eax, 1
 
-; 2599 : }
+; 2617 : }
 
 	ret	0
 ?lGetNumActiveLeagues@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lGetNumActiveLeagues
@@ -9887,10 +9913,10 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetNumLeaguesEverFounded@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetNumLeaguesEverFounded, COMDAT
 
-; 2603 : #ifdef AUI_LEAGUES_FIX_POSSIBLE_DEALLOCATION_CRASH
-; 2604 : 	lua_pushinteger(L, GC.getGame().GetGameLeagues()->GetNumActiveLeagues());
-; 2605 : #else
-; 2606 : 	lua_pushinteger(L, GC.getGame().GetGameLeagues()->GetNumLeaguesEverFounded());
+; 2621 : #ifdef AUI_LEAGUES_FIX_POSSIBLE_DEALLOCATION_CRASH
+; 2622 : 	lua_pushinteger(L, GC.getGame().GetGameLeagues()->GetNumActiveLeagues());
+; 2623 : #else
+; 2624 : 	lua_pushinteger(L, GC.getGame().GetGameLeagues()->GetNumLeaguesEverFounded());
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?GetGameLeagues@CvGame@@QAEPAVCvGameLeagues@@XZ ; CvGame::GetGameLeagues
@@ -9902,12 +9928,12 @@ _L$ = 8							; size = 4
 	call	_lua_pushinteger
 	add	esp, 8
 
-; 2607 : #endif
-; 2608 : 	return 1;
+; 2625 : #endif
+; 2626 : 	return 1;
 
 	mov	eax, 1
 
-; 2609 : }
+; 2627 : }
 
 	ret	0
 ?lGetNumLeaguesEverFounded@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lGetNumLeaguesEverFounded
@@ -9920,22 +9946,22 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetLeague@CvLuaGame@@KAHPAUlua_State@@@Z PROC		; CvLuaGame::lGetLeague, COMDAT
 
-; 2612 : {
+; 2630 : {
 
 	push	esi
 
-; 2613 : #ifdef AUI_LEAGUES_FIX_POSSIBLE_DEALLOCATION_CRASH
-; 2614 : 	CvLeague* pLeague = GC.getGame().GetGameLeagues()->GetActiveLeague();
-; 2615 : #else
-; 2616 : 	const LeagueTypes eLeague = (LeagueTypes) lua_tointeger(L, 1);
+; 2631 : #ifdef AUI_LEAGUES_FIX_POSSIBLE_DEALLOCATION_CRASH
+; 2632 : 	CvLeague* pLeague = GC.getGame().GetGameLeagues()->GetActiveLeague();
+; 2633 : #else
+; 2634 : 	const LeagueTypes eLeague = (LeagueTypes) lua_tointeger(L, 1);
 
 	mov	esi, DWORD PTR _L$[esp]
 	push	1
 	push	esi
 	call	_lua_tointeger
 
-; 2617 : 
-; 2618 : 	CvLeague* pLeague = GC.getGame().GetGameLeagues()->GetLeague(eLeague);
+; 2635 : 
+; 2636 : 	CvLeague* pLeague = GC.getGame().GetGameLeagues()->GetLeague(eLeague);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	add	esp, 8
@@ -9944,47 +9970,47 @@ _L$ = 8							; size = 4
 	mov	ecx, eax
 	call	?GetLeague@CvGameLeagues@@QAEPAVCvLeague@@W4LeagueTypes@@@Z ; CvGameLeagues::GetLeague
 
-; 2619 : #endif
-; 2620 : 	if (pLeague != NULL)
+; 2637 : #endif
+; 2638 : 	if (pLeague != NULL)
 
 	test	eax, eax
 	je	SHORT $LN2@lGetLeague
 
-; 2621 : 	{
-; 2622 : 		CvLuaLeague::Push(L, pLeague);
+; 2639 : 	{
+; 2640 : 		CvLuaLeague::Push(L, pLeague);
 
 	push	eax
 	push	esi
 	call	?Push@?$CvLuaScopedInstance@VCvLuaLeague@@VCvLeague@@@@SAXPAUlua_State@@PAVCvLeague@@@Z ; CvLuaScopedInstance<CvLuaLeague,CvLeague>::Push
 	add	esp, 8
 
-; 2627 : 	}
-; 2628 : 	return 1;
+; 2645 : 	}
+; 2646 : 	return 1;
 
 	mov	eax, 1
 	pop	esi
 
-; 2629 : }
+; 2647 : }
 
 	ret	0
 $LN2@lGetLeague:
 
-; 2623 : 	}
-; 2624 : 	else
-; 2625 : 	{
-; 2626 : 		lua_pushnil(L);
+; 2641 : 	}
+; 2642 : 	else
+; 2643 : 	{
+; 2644 : 		lua_pushnil(L);
 
 	push	esi
 	call	_lua_pushnil
 	add	esp, 4
 
-; 2627 : 	}
-; 2628 : 	return 1;
+; 2645 : 	}
+; 2646 : 	return 1;
 
 	mov	eax, 1
 	pop	esi
 
-; 2629 : }
+; 2647 : }
 
 	ret	0
 ?lGetLeague@CvLuaGame@@KAHPAUlua_State@@@Z ENDP		; CvLuaGame::lGetLeague
@@ -9997,20 +10023,20 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetActiveLeague@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetActiveLeague, COMDAT
 
-; 2633 : 	CvLeague* pLeague = GC.getGame().GetGameLeagues()->GetActiveLeague();
+; 2651 : 	CvLeague* pLeague = GC.getGame().GetGameLeagues()->GetActiveLeague();
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?GetGameLeagues@CvGame@@QAEPAVCvGameLeagues@@XZ ; CvGame::GetGameLeagues
 	mov	ecx, eax
 	call	?GetActiveLeague@CvGameLeagues@@QAEPAVCvLeague@@XZ ; CvGameLeagues::GetActiveLeague
 
-; 2634 : 	if (pLeague != NULL)
+; 2652 : 	if (pLeague != NULL)
 
 	test	eax, eax
 	je	SHORT $LN2@lGetActive
 
-; 2635 : 	{
-; 2636 : 		CvLuaLeague::Push(L, pLeague);
+; 2653 : 	{
+; 2654 : 		CvLuaLeague::Push(L, pLeague);
 
 	push	eax
 	mov	eax, DWORD PTR _L$[esp]
@@ -10018,32 +10044,32 @@ _L$ = 8							; size = 4
 	call	?Push@?$CvLuaScopedInstance@VCvLuaLeague@@VCvLeague@@@@SAXPAUlua_State@@PAVCvLeague@@@Z ; CvLuaScopedInstance<CvLuaLeague,CvLeague>::Push
 	add	esp, 8
 
-; 2641 : 	}
-; 2642 : 	return 1;
+; 2659 : 	}
+; 2660 : 	return 1;
 
 	mov	eax, 1
 
-; 2643 : }
+; 2661 : }
 
 	ret	0
 $LN2@lGetActive:
 
-; 2637 : 	}
-; 2638 : 	else
-; 2639 : 	{
-; 2640 : 		lua_pushnil(L);
+; 2655 : 	}
+; 2656 : 	else
+; 2657 : 	{
+; 2658 : 		lua_pushnil(L);
 
 	mov	ecx, DWORD PTR _L$[esp-4]
 	push	ecx
 	call	_lua_pushnil
 	add	esp, 4
 
-; 2641 : 	}
-; 2642 : 	return 1;
+; 2659 : 	}
+; 2660 : 	return 1;
 
 	mov	eax, 1
 
-; 2643 : }
+; 2661 : }
 
 	ret	0
 ?lGetActiveLeague@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lGetActiveLeague
@@ -10055,7 +10081,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lIsProcessingMessages@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lIsProcessingMessages, COMDAT
 
-; 2647 : 	lua_pushboolean(L, gDLL->IsProcessingGameCoreMessages());
+; 2665 : 	lua_pushboolean(L, gDLL->IsProcessingGameCoreMessages());
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8564
 	mov	eax, DWORD PTR [ecx]
@@ -10068,11 +10094,11 @@ _L$ = 8							; size = 4
 	call	_lua_pushboolean
 	add	esp, 8
 
-; 2648 : 	return 1;
+; 2666 : 	return 1;
 
 	mov	eax, 1
 
-; 2649 : }
+; 2667 : }
 
 	ret	0
 ?lIsProcessingMessages@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lIsProcessingMessages
@@ -10102,7 +10128,7 @@ __$EHRec$ = -12						; size = 12
 _L$ = 8							; size = 4
 ?lGetArtifactName@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetArtifactName, COMDAT
 
-; 2836 : {
+; 2854 : {
 
 	mov	eax, DWORD PTR fs:0
 	push	-1
@@ -10113,7 +10139,7 @@ _L$ = 8							; size = 4
 	push	ebx
 	push	esi
 
-; 2837 : 	CvPlot* pkPlot = CvLuaPlot::GetInstance(L, 1, false);
+; 2855 : 	CvPlot* pkPlot = CvLuaPlot::GetInstance(L, 1, false);
 
 	mov	esi, DWORD PTR _L$[esp+44]
 	push	edi
@@ -10127,7 +10153,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN6@lGetArtifa
-	push	OFFSET $SG225563
+	push	OFFSET $SG226193
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -10147,12 +10173,12 @@ $LN6@lGetArtifa:
 	push	esi
 	call	_lua_settop
 
-; 2838 : 	GreatWorkType eGreatWork = CultureHelpers::GetArtifact(pkPlot);
+; 2856 : 	GreatWorkType eGreatWork = CultureHelpers::GetArtifact(pkPlot);
 
 	push	edi
 	call	?GetArtifact@CultureHelpers@@YA?AW4GreatWorkType@@PAVCvPlot@@@Z ; CultureHelpers::GetArtifact
 
-; 2839 : 	CvString szName = CultureHelpers::GetGreatWorkName(eGreatWork);
+; 2857 : 	CvString szName = CultureHelpers::GetGreatWorkName(eGreatWork);
 
 	push	eax
 	lea	eax, DWORD PTR _szName$[esp+68]
@@ -10160,7 +10186,7 @@ $LN6@lGetArtifa:
 	call	?GetGreatWorkName@CultureHelpers@@YA?AVCvString@@W4GreatWorkType@@@Z ; CultureHelpers::GetGreatWorkName
 	add	esp, 20					; 00000014H
 
-; 2840 : 	lua_pushstring(L, szName);
+; 2858 : 	lua_pushstring(L, szName);
 
 	lea	ecx, DWORD PTR _szName$[esp+52]
 	mov	DWORD PTR __$EHRec$[esp+60], 0
@@ -10170,13 +10196,13 @@ $LN6@lGetArtifa:
 	call	_lua_pushstring
 	add	esp, 8
 
-; 2841 : 	return 1;
+; 2859 : 	return 1;
 
 	lea	ecx, DWORD PTR _szName$[esp+52]
 	mov	DWORD PTR __$EHRec$[esp+60], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 2842 : }
+; 2860 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+52]
 	pop	edi
@@ -10209,21 +10235,21 @@ EXTRN	?getRouteFinder@CvGlobals@@QAEAAVCvAStar@@XZ:PROC ; CvGlobals::getRouteFin
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?lGetLongestCityConnectionPlots@CvLuaGame@@KAHPAUlua_State@@@Z
 _TEXT	SEGMENT
-_ui$225327 = -44					; size = 4
-_pFirstCityPlot$225340 = -40				; size = 4
-_pFirstCity$225333 = -36				; size = 4
+_ui$225852 = -44					; size = 4
+_pFirstCityPlot$225865 = -40				; size = 4
+_pFirstCity$225858 = -36				; size = 4
 tv483 = -32						; size = 4
 _iFurthestPlotDistance$ = -28				; size = 4
 _pPlot1$ = -24						; size = 4
 _pPlot2$ = -20						; size = 4
-_pSecondCityPlot$225345 = -16				; size = 4
-_iThisPlotDistance$225356 = -12				; size = 4
-_iLoop2$225336 = -8					; size = 4
-_iLoop1$225335 = -4					; size = 4
+_pSecondCityPlot$225870 = -16				; size = 4
+_iThisPlotDistance$225881 = -12				; size = 4
+_iLoop2$225861 = -8					; size = 4
+_iLoop1$225860 = -4					; size = 4
 _L$ = 8							; size = 4
 ?lGetLongestCityConnectionPlots@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetLongestCityConnectionPlots, COMDAT
 
-; 2852 : {
+; 2870 : {
 
 	sub	esp, 44					; 0000002cH
 	push	ebx
@@ -10231,12 +10257,12 @@ _L$ = 8							; size = 4
 	push	esi
 	push	edi
 
-; 2853 : 	CvPlot* pPlot1 = NULL;
-; 2854 : 	CvPlot* pPlot2 = NULL;
-; 2855 : 
-; 2856 : 	int iFurthestPlotDistance = 0;
-; 2857 : 
-; 2858 : 	GC.getRouteFinder().SetNumExtraChildrenFunc(NULL);
+; 2871 : 	CvPlot* pPlot1 = NULL;
+; 2872 : 	CvPlot* pPlot2 = NULL;
+; 2873 : 
+; 2874 : 	int iFurthestPlotDistance = 0;
+; 2875 : 
+; 2876 : 	GC.getRouteFinder().SetNumExtraChildrenFunc(NULL);
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	DWORD PTR _pPlot1$[esp+60], 0
@@ -10244,91 +10270,91 @@ _L$ = 8							; size = 4
 	mov	DWORD PTR _iFurthestPlotDistance$[esp+60], 0
 	call	?getRouteFinder@CvGlobals@@QAEAAVCvAStar@@XZ ; CvGlobals::getRouteFinder
 
-; 2859 : 	GC.getRouteFinder().SetExtraChildGetterFunc(NULL);
+; 2877 : 	GC.getRouteFinder().SetExtraChildGetterFunc(NULL);
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	DWORD PTR [eax+28], 0
 	call	?getRouteFinder@CvGlobals@@QAEAAVCvAStar@@XZ ; CvGlobals::getRouteFinder
 
-; 2860 : 
-; 2861 : 	for(uint ui = 0; ui < MAX_MAJOR_CIVS; ui++)
+; 2878 : 
+; 2879 : 	for(uint ui = 0; ui < MAX_MAJOR_CIVS; ui++)
 
 	xor	ebp, ebp
 	xor	esi, esi
 	mov	DWORD PTR [eax+32], 0
-	mov	DWORD PTR _ui$225327[esp+60], ebp
+	mov	DWORD PTR _ui$225852[esp+60], ebp
 	mov	DWORD PTR tv483[esp+60], esi
 	npad	3
 $LL17@lGetLonges:
 
-; 2862 : 	{
-; 2863 : 		PlayerTypes ePlayer = (PlayerTypes)ui;
-; 2864 : 
-; 2865 : 		CvCity* pFirstCity = NULL;
-; 2866 : 		CvCity* pSecondCity = NULL;
-; 2867 : 		int iLoop1;
-; 2868 : 		int iLoop2;
-; 2869 : 
-; 2870 : 		for (pFirstCity = GET_PLAYER(ePlayer).firstCity(&iLoop1); pFirstCity != NULL; pFirstCity = GET_PLAYER(ePlayer).nextCity(&iLoop1))
+; 2880 : 	{
+; 2881 : 		PlayerTypes ePlayer = (PlayerTypes)ui;
+; 2882 : 
+; 2883 : 		CvCity* pFirstCity = NULL;
+; 2884 : 		CvCity* pSecondCity = NULL;
+; 2885 : 		int iLoop1;
+; 2886 : 		int iLoop2;
+; 2887 : 
+; 2888 : 		for (pFirstCity = GET_PLAYER(ePlayer).firstCity(&iLoop1); pFirstCity != NULL; pFirstCity = GET_PLAYER(ePlayer).nextCity(&iLoop1))
 
 	mov	eax, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	push	0
-	lea	edx, DWORD PTR _iLoop1$225335[esp+64]
+	lea	edx, DWORD PTR _iLoop1$225860[esp+64]
 	lea	ecx, DWORD PTR [esi+eax]
 	push	edx
 	call	?firstCity@CvPlayer@@QAEPAVCvCity@@PAH_N@Z ; CvPlayer::firstCity
-	mov	DWORD PTR _pFirstCity$225333[esp+60], eax
+	mov	DWORD PTR _pFirstCity$225858[esp+60], eax
 	test	eax, eax
 	je	$LN16@lGetLonges
 $LL91@lGetLonges:
 
-; 2871 : 		{
-; 2872 : 			CvPlot* pFirstCityPlot = pFirstCity->plot();
+; 2889 : 		{
+; 2890 : 			CvPlot* pFirstCityPlot = pFirstCity->plot();
 
-	mov	ecx, DWORD PTR _pFirstCity$225333[esp+60]
+	mov	ecx, DWORD PTR _pFirstCity$225858[esp+60]
 	call	?plot@CvCity@@QBEPAVCvPlot@@XZ		; CvCity::plot
 	mov	ebx, eax
 
-; 2873 : 
-; 2874 : 			for (pSecondCity = GET_PLAYER(ePlayer).firstCity(&iLoop2); pSecondCity != NULL; pSecondCity = GET_PLAYER(ePlayer).nextCity(&iLoop2))
+; 2891 : 
+; 2892 : 			for (pSecondCity = GET_PLAYER(ePlayer).firstCity(&iLoop2); pSecondCity != NULL; pSecondCity = GET_PLAYER(ePlayer).nextCity(&iLoop2))
 
 	mov	eax, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	push	0
-	lea	edx, DWORD PTR _iLoop2$225336[esp+64]
+	lea	edx, DWORD PTR _iLoop2$225861[esp+64]
 	lea	ecx, DWORD PTR [esi+eax]
 	push	edx
-	mov	DWORD PTR _pFirstCityPlot$225340[esp+68], ebx
+	mov	DWORD PTR _pFirstCityPlot$225865[esp+68], ebx
 	call	?firstCity@CvPlayer@@QAEPAVCvCity@@PAH_N@Z ; CvPlayer::firstCity
 	test	eax, eax
 	je	$LN13@lGetLonges
 	npad	5
 $LL11@lGetLonges:
 
-; 2875 : 			{
-; 2876 : 				// don't measure distance to same city
-; 2877 : 				if (pFirstCity == pSecondCity)
+; 2893 : 			{
+; 2894 : 				// don't measure distance to same city
+; 2895 : 				if (pFirstCity == pSecondCity)
 
-	cmp	DWORD PTR _pFirstCity$225333[esp+60], eax
+	cmp	DWORD PTR _pFirstCity$225858[esp+60], eax
 	je	$LN10@lGetLonges
 
-; 2878 : 				{
-; 2879 : 					continue;
-; 2880 : 				}
-; 2881 : 
-; 2882 : 				CvPlot* pSecondCityPlot = pSecondCity->plot();
+; 2896 : 				{
+; 2897 : 					continue;
+; 2898 : 				}
+; 2899 : 
+; 2900 : 				CvPlot* pSecondCityPlot = pSecondCity->plot();
 
 	mov	ecx, eax
 	call	?plot@CvCity@@QBEPAVCvPlot@@XZ		; CvCity::plot
 
-; 2883 : 
-; 2884 : 				bool bUsingXP2Scenario2 = gDLL->IsModActivated(CIV5_XP2_SCENARIO2_MODID) || gDLL->IsModActivated(CIV5_COMPLETE_SCENARIO1_MODID);
+; 2901 : 
+; 2902 : 				bool bUsingXP2Scenario2 = gDLL->IsModActivated(CIV5_XP2_SCENARIO2_MODID) || gDLL->IsModActivated(CIV5_COMPLETE_SCENARIO1_MODID);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8564
 	mov	edi, eax
 	mov	eax, DWORD PTR [ecx]
 	mov	edx, DWORD PTR [eax+44]
 	push	OFFSET $SG92498
-	mov	DWORD PTR _pSecondCityPlot$225345[esp+64], edi
+	mov	DWORD PTR _pSecondCityPlot$225870[esp+64], edi
 	call	edx
 	test	al, al
 	jne	SHORT $LN20@lGetLonges
@@ -10341,26 +10367,26 @@ $LL11@lGetLonges:
 	je	$LN3@lGetLonges
 $LN20@lGetLonges:
 
-; 2885 : 				if(bUsingXP2Scenario2)
-; 2886 : 				{
-; 2887 : 					// active player
-; 2888 : 					if (GC.getGame().getActivePlayer() == ePlayer)
+; 2903 : 				if(bUsingXP2Scenario2)
+; 2904 : 				{
+; 2905 : 					// active player
+; 2906 : 					if (GC.getGame().getActivePlayer() == ePlayer)
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?getActivePlayer@CvGame@@QBE?AW4PlayerTypes@@XZ ; CvGame::getActivePlayer
 	cmp	eax, ebp
 	jne	$LN3@lGetLonges
 
-; 2889 : 					{
-; 2890 : 						const char* szCivKey = GET_PLAYER(ePlayer).getCivilizationTypeKey();
+; 2907 : 					{
+; 2908 : 						const char* szCivKey = GET_PLAYER(ePlayer).getCivilizationTypeKey();
 
 	mov	eax, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	lea	ecx, DWORD PTR [esi+eax]
 	call	?getCivilizationTypeKey@CvPlayer@@QBEPBDXZ ; CvPlayer::getCivilizationTypeKey
 
-; 2891 : 						if (strcmp(szCivKey, "CIVILIZATION_ENGLAND") == 0)
+; 2909 : 						if (strcmp(szCivKey, "CIVILIZATION_ENGLAND") == 0)
 
-	mov	ecx, OFFSET $SG225351
+	mov	ecx, OFFSET $SG225876
 	npad	4
 $LL87@lGetLonges:
 	mov	dl, BYTE PTR [eax]
@@ -10385,9 +10411,9 @@ $LN90@lGetLonges:
 	test	eax, eax
 	jne	SHORT $LN3@lGetLonges
 
-; 2892 : 						{
-; 2893 : 							if (pFirstCityPlot->getX() == 41 && pFirstCityPlot->getY() == 62 && // cairo
-; 2894 : 								pSecondCityPlot->getX() == 32 && pSecondCityPlot->getY() == 6) // cape town
+; 2910 : 						{
+; 2911 : 							if (pFirstCityPlot->getX() == 41 && pFirstCityPlot->getY() == 62 && // cairo
+; 2912 : 								pSecondCityPlot->getX() == 32 && pSecondCityPlot->getY() == 6) // cape town
 
 	cmp	WORD PTR [ebx], 41			; 00000029H
 	jne	SHORT $LN3@lGetLonges
@@ -10398,13 +10424,13 @@ $LN90@lGetLonges:
 	cmp	WORD PTR [edi+2], 6
 	jne	SHORT $LN3@lGetLonges
 
-; 2895 : 							{
-; 2896 : 								// assuming that there are fewer than 256 players
-; 2897 : 								int iRouteValue = ROUTE_RAILROAD + 1;
-; 2898 : 								int iPathfinderFlags = ui;
-; 2899 : 								iPathfinderFlags |= (iRouteValue << 8);
-; 2900 : 
-; 2901 : 								if (GC.getRouteFinder().GeneratePath(pFirstCityPlot->getX(), pFirstCityPlot->getY(), pSecondCityPlot->getX(), pSecondCityPlot->getY(), iPathfinderFlags, true))
+; 2913 : 							{
+; 2914 : 								// assuming that there are fewer than 256 players
+; 2915 : 								int iRouteValue = ROUTE_RAILROAD + 1;
+; 2916 : 								int iPathfinderFlags = ui;
+; 2917 : 								iPathfinderFlags |= (iRouteValue << 8);
+; 2918 : 
+; 2919 : 								if (GC.getRouteFinder().GeneratePath(pFirstCityPlot->getX(), pFirstCityPlot->getY(), pSecondCityPlot->getX(), pSecondCityPlot->getY(), iPathfinderFlags, true))
 
 	push	1
 	or	ebp, 512				; 00000200H
@@ -10420,8 +10446,8 @@ $LN90@lGetLonges:
 	test	al, al
 	je	SHORT $LN3@lGetLonges
 
-; 2902 : 								{
-; 2903 : 									gDLL->UnlockAchievement(ACHIEVEMENT_XP2_53);
+; 2920 : 								{
+; 2921 : 									gDLL->UnlockAchievement(ACHIEVEMENT_XP2_53);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8564
 	mov	edx, DWORD PTR [ecx]
@@ -10430,13 +10456,13 @@ $LN90@lGetLonges:
 	call	eax
 $LN3@lGetLonges:
 
-; 2904 : 								}								
-; 2905 : 							}
-; 2906 : 						}
-; 2907 : 					}
-; 2908 : 				}
-; 2909 : 
-; 2910 : 				int iThisPlotDistance = plotDistance(pFirstCityPlot->getX(), pFirstCityPlot->getY(), pSecondCityPlot->getX(), pSecondCityPlot->getY());
+; 2922 : 								}								
+; 2923 : 							}
+; 2924 : 						}
+; 2925 : 					}
+; 2926 : 				}
+; 2927 : 
+; 2928 : 				int iThisPlotDistance = plotDistance(pFirstCityPlot->getX(), pFirstCityPlot->getY(), pSecondCityPlot->getX(), pSecondCityPlot->getY());
 
 	movsx	esi, WORD PTR [edi+2]
 	movsx	edi, WORD PTR [edi]
@@ -10449,22 +10475,22 @@ $LN3@lGetLonges:
 	call	?plotDistance@@YAHHHHH@Z		; plotDistance
 	add	esp, 16					; 00000010H
 
-; 2911 : 				if (iThisPlotDistance > iFurthestPlotDistance)
+; 2929 : 				if (iThisPlotDistance > iFurthestPlotDistance)
 
 	cmp	eax, DWORD PTR _iFurthestPlotDistance$[esp+60]
-	mov	DWORD PTR _iThisPlotDistance$225356[esp+60], eax
+	mov	DWORD PTR _iThisPlotDistance$225881[esp+60], eax
 	jle	SHORT $LN92@lGetLonges
 
-; 2912 : 				{
-; 2913 : 					// assuming that there are fewer than 256 players
-; 2914 : 					int iRouteValue = ROUTE_RAILROAD + 1;
-; 2915 : 					int iPathfinderFlags = ui;
-; 2916 : 					iPathfinderFlags |= (iRouteValue << 8);
+; 2930 : 				{
+; 2931 : 					// assuming that there are fewer than 256 players
+; 2932 : 					int iRouteValue = ROUTE_RAILROAD + 1;
+; 2933 : 					int iPathfinderFlags = ui;
+; 2934 : 					iPathfinderFlags |= (iRouteValue << 8);
 
-	mov	ecx, DWORD PTR _ui$225327[esp+60]
+	mov	ecx, DWORD PTR _ui$225852[esp+60]
 
-; 2917 : 
-; 2918 : 					if (GC.getRouteFinder().GeneratePath(pFirstCityPlot->getX(), pFirstCityPlot->getY(), pSecondCityPlot->getX(), pSecondCityPlot->getY(), iPathfinderFlags, true))
+; 2935 : 
+; 2936 : 					if (GC.getRouteFinder().GeneratePath(pFirstCityPlot->getX(), pFirstCityPlot->getY(), pSecondCityPlot->getX(), pSecondCityPlot->getY(), iPathfinderFlags, true))
 
 	push	1
 	or	ecx, 512				; 00000200H
@@ -10480,88 +10506,88 @@ $LN3@lGetLonges:
 	test	al, al
 	je	SHORT $LN92@lGetLonges
 
-; 2919 : 					{
-; 2920 : 						// found a connection
-; 2921 : 						pPlot1 = pFirstCityPlot;
+; 2937 : 					{
+; 2938 : 						// found a connection
+; 2939 : 						pPlot1 = pFirstCityPlot;
 
-	mov	edx, DWORD PTR _pFirstCityPlot$225340[esp+60]
+	mov	edx, DWORD PTR _pFirstCityPlot$225865[esp+60]
 
-; 2922 : 						pPlot2 = pSecondCityPlot;
+; 2940 : 						pPlot2 = pSecondCityPlot;
 
-	mov	eax, DWORD PTR _pSecondCityPlot$225345[esp+60]
+	mov	eax, DWORD PTR _pSecondCityPlot$225870[esp+60]
 
-; 2923 : 						iFurthestPlotDistance = iThisPlotDistance;
+; 2941 : 						iFurthestPlotDistance = iThisPlotDistance;
 
-	mov	ecx, DWORD PTR _iThisPlotDistance$225356[esp+60]
+	mov	ecx, DWORD PTR _iThisPlotDistance$225881[esp+60]
 	mov	DWORD PTR _pPlot1$[esp+60], edx
 	mov	DWORD PTR _pPlot2$[esp+60], eax
 	mov	DWORD PTR _iFurthestPlotDistance$[esp+60], ecx
 $LN92@lGetLonges:
 	mov	esi, DWORD PTR tv483[esp+60]
-	mov	ebx, DWORD PTR _pFirstCityPlot$225340[esp+60]
+	mov	ebx, DWORD PTR _pFirstCityPlot$225865[esp+60]
 $LN10@lGetLonges:
 	mov	edx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	push	0
-	lea	eax, DWORD PTR _iLoop2$225336[esp+64]
+	lea	eax, DWORD PTR _iLoop2$225861[esp+64]
 	lea	ecx, DWORD PTR [esi+edx]
 	push	eax
 	call	?nextCity@CvPlayer@@QAEPAVCvCity@@PAH_N@Z ; CvPlayer::nextCity
-	mov	ebp, DWORD PTR _ui$225327[esp+60]
+	mov	ebp, DWORD PTR _ui$225852[esp+60]
 	test	eax, eax
 	jne	$LL11@lGetLonges
 $LN13@lGetLonges:
 
-; 2862 : 	{
-; 2863 : 		PlayerTypes ePlayer = (PlayerTypes)ui;
-; 2864 : 
-; 2865 : 		CvCity* pFirstCity = NULL;
-; 2866 : 		CvCity* pSecondCity = NULL;
-; 2867 : 		int iLoop1;
-; 2868 : 		int iLoop2;
-; 2869 : 
-; 2870 : 		for (pFirstCity = GET_PLAYER(ePlayer).firstCity(&iLoop1); pFirstCity != NULL; pFirstCity = GET_PLAYER(ePlayer).nextCity(&iLoop1))
+; 2880 : 	{
+; 2881 : 		PlayerTypes ePlayer = (PlayerTypes)ui;
+; 2882 : 
+; 2883 : 		CvCity* pFirstCity = NULL;
+; 2884 : 		CvCity* pSecondCity = NULL;
+; 2885 : 		int iLoop1;
+; 2886 : 		int iLoop2;
+; 2887 : 
+; 2888 : 		for (pFirstCity = GET_PLAYER(ePlayer).firstCity(&iLoop1); pFirstCity != NULL; pFirstCity = GET_PLAYER(ePlayer).nextCity(&iLoop1))
 
 	mov	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	push	0
-	lea	edx, DWORD PTR _iLoop1$225335[esp+64]
+	lea	edx, DWORD PTR _iLoop1$225860[esp+64]
 	add	ecx, esi
 	push	edx
 	call	?nextCity@CvPlayer@@QAEPAVCvCity@@PAH_N@Z ; CvPlayer::nextCity
-	mov	DWORD PTR _pFirstCity$225333[esp+60], eax
+	mov	DWORD PTR _pFirstCity$225858[esp+60], eax
 	test	eax, eax
 	jne	$LL91@lGetLonges
 $LN16@lGetLonges:
 
-; 2860 : 
-; 2861 : 	for(uint ui = 0; ui < MAX_MAJOR_CIVS; ui++)
+; 2878 : 
+; 2879 : 	for(uint ui = 0; ui < MAX_MAJOR_CIVS; ui++)
 
 	add	esi, 63236				; 0000f704H
 	inc	ebp
-	mov	DWORD PTR _ui$225327[esp+60], ebp
+	mov	DWORD PTR _ui$225852[esp+60], ebp
 	mov	DWORD PTR tv483[esp+60], esi
 	cmp	esi, 1391192				; 00153a58H
 	jb	$LL17@lGetLonges
 
-; 2924 : 					}
-; 2925 : 				}
-; 2926 : 			}
-; 2927 : 		}
-; 2928 : 	}
-; 2929 : 
-; 2930 : 	// reconnect the land route pathfinder water methods
-; 2931 : 	GC.getRouteFinder().SetNumExtraChildrenFunc(RouteGetNumExtraChildren);
+; 2942 : 					}
+; 2943 : 				}
+; 2944 : 			}
+; 2945 : 		}
+; 2946 : 	}
+; 2947 : 
+; 2948 : 	// reconnect the land route pathfinder water methods
+; 2949 : 	GC.getRouteFinder().SetNumExtraChildrenFunc(RouteGetNumExtraChildren);
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getRouteFinder@CvGlobals@@QAEAAVCvAStar@@XZ ; CvGlobals::getRouteFinder
 
-; 2932 : 	GC.getRouteFinder().SetExtraChildGetterFunc(RouteGetExtraChild);
+; 2950 : 	GC.getRouteFinder().SetExtraChildGetterFunc(RouteGetExtraChild);
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	DWORD PTR [eax+28], OFFSET ?RouteGetNumExtraChildren@@YAHPAVCvAStarNode@@PAVCvAStar@@@Z ; RouteGetNumExtraChildren
 	call	?getRouteFinder@CvGlobals@@QAEAAVCvAStar@@XZ ; CvGlobals::getRouteFinder
 
-; 2933 : 
-; 2934 : 	CvLuaPlot::Push(L, pPlot1);
+; 2951 : 
+; 2952 : 	CvLuaPlot::Push(L, pPlot1);
 
 	mov	esi, DWORD PTR _L$[esp+56]
 	mov	DWORD PTR [eax+32], OFFSET ?RouteGetExtraChild@@YAHPAVCvAStarNode@@HAAH1PAVCvAStar@@@Z ; RouteGetExtraChild
@@ -10570,7 +10596,7 @@ $LN16@lGetLonges:
 	push	esi
 	call	?Push@?$CvLuaScopedInstance@VCvLuaPlot@@VCvPlot@@@@SAXPAUlua_State@@PAVCvPlot@@@Z ; CvLuaScopedInstance<CvLuaPlot,CvPlot>::Push
 
-; 2935 : 	CvLuaPlot::Push(L, pPlot2);
+; 2953 : 	CvLuaPlot::Push(L, pPlot2);
 
 	mov	ecx, DWORD PTR _pPlot2$[esp+68]
 	push	ecx
@@ -10581,12 +10607,12 @@ $LN16@lGetLonges:
 	pop	esi
 	pop	ebp
 
-; 2936 : 	return 2;
+; 2954 : 	return 2;
 
 	mov	eax, 2
 	pop	ebx
 
-; 2937 : }
+; 2955 : }
 
 	add	esp, 44					; 0000002cH
 	ret	0
@@ -10601,17 +10627,17 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lSelectedUnit_SpeculativePopupTradeRoute_Display@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lSelectedUnit_SpeculativePopupTradeRoute_Display, COMDAT
 
-; 2941 : {
+; 2959 : {
 
 	push	ebx
 	push	ebp
 	push	esi
 
-; 2942 : 	int iPlotX,iPlotY;
-; 2943 : 	TradeConnectionType type;
-; 2944 : 	DomainTypes eDomain;
-; 2945 : 
-; 2946 : 	iPlotX = lua_tointeger(L,1);
+; 2960 : 	int iPlotX,iPlotY;
+; 2961 : 	TradeConnectionType type;
+; 2962 : 	DomainTypes eDomain;
+; 2963 : 
+; 2964 : 	iPlotX = lua_tointeger(L,1);
 
 	mov	esi, DWORD PTR _L$[esp+8]
 	push	edi
@@ -10619,29 +10645,29 @@ _L$ = 8							; size = 4
 	push	esi
 	call	_lua_tointeger
 
-; 2947 : 	iPlotY = lua_tointeger(L,2);
+; 2965 : 	iPlotY = lua_tointeger(L,2);
 
 	push	2
 	push	esi
 	mov	edi, eax
 	call	_lua_tointeger
 
-; 2948 : 	type = (TradeConnectionType)lua_tointeger(L,3);
+; 2966 : 	type = (TradeConnectionType)lua_tointeger(L,3);
 
 	push	3
 	push	esi
 	mov	ebx, eax
 	call	_lua_tointeger
 
-; 2949 : 	eDomain = (DomainTypes)lua_tointeger(L, 4);
+; 2967 : 	eDomain = (DomainTypes)lua_tointeger(L, 4);
 
 	push	4
 	push	esi
 	mov	ebp, eax
 	call	_lua_tointeger
 
-; 2950 : 
-; 2951 : 	GC.getGame().GetGameTrade()->DisplayTemporaryPopupTradeRoute(iPlotX,iPlotY,type, eDomain);
+; 2968 : 
+; 2969 : 	GC.getGame().GetGameTrade()->DisplayTemporaryPopupTradeRoute(iPlotX,iPlotY,type, eDomain);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	add	esp, 32					; 00000020H
@@ -10656,12 +10682,12 @@ _L$ = 8							; size = 4
 	pop	esi
 	pop	ebp
 
-; 2952 : 	return 0;
+; 2970 : 	return 0;
 
 	xor	eax, eax
 	pop	ebx
 
-; 2953 : }
+; 2971 : }
 
 	ret	0
 ?lSelectedUnit_SpeculativePopupTradeRoute_Display@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lSelectedUnit_SpeculativePopupTradeRoute_Display
@@ -10674,15 +10700,15 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lSelectedUnit_SpeculativePopupTradeRoute_Hide@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lSelectedUnit_SpeculativePopupTradeRoute_Hide, COMDAT
 
-; 2956 : {
+; 2974 : {
 
 	push	ebx
 	push	esi
 
-; 2957 : 	int iPlotX,iPlotY;
-; 2958 : 	TradeConnectionType type;
-; 2959 : 	
-; 2960 : 	iPlotX = lua_tointeger(L,1);
+; 2975 : 	int iPlotX,iPlotY;
+; 2976 : 	TradeConnectionType type;
+; 2977 : 	
+; 2978 : 	iPlotX = lua_tointeger(L,1);
 
 	mov	esi, DWORD PTR _L$[esp+4]
 	push	edi
@@ -10690,21 +10716,21 @@ _L$ = 8							; size = 4
 	push	esi
 	call	_lua_tointeger
 
-; 2961 : 	iPlotY = lua_tointeger(L,2);
+; 2979 : 	iPlotY = lua_tointeger(L,2);
 
 	push	2
 	push	esi
 	mov	edi, eax
 	call	_lua_tointeger
 
-; 2962 : 	type = (TradeConnectionType)lua_tointeger(L,3);
+; 2980 : 	type = (TradeConnectionType)lua_tointeger(L,3);
 
 	push	3
 	push	esi
 	mov	ebx, eax
 	call	_lua_tointeger
 
-; 2963 : 	GC.getGame().GetGameTrade()->HideTemporaryPopupTradeRoute(iPlotX,iPlotY,type);
+; 2981 : 	GC.getGame().GetGameTrade()->HideTemporaryPopupTradeRoute(iPlotX,iPlotY,type);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	add	esp, 24					; 00000018H
@@ -10717,12 +10743,12 @@ _L$ = 8							; size = 4
 	pop	edi
 	pop	esi
 
-; 2964 : 	return 0;
+; 2982 : 	return 0;
 
 	xor	eax, eax
 	pop	ebx
 
-; 2965 : }
+; 2983 : }
 
 	ret	0
 ?lSelectedUnit_SpeculativePopupTradeRoute_Hide@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lSelectedUnit_SpeculativePopupTradeRoute_Hide
@@ -10736,17 +10762,17 @@ _bEnter$ = -4						; size = 1
 _L$ = 8							; size = 4
 ?lMouseoverUnit@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lMouseoverUnit, COMDAT
 
-; 2968 : {
+; 2986 : {
 
 	push	ecx
 	push	ebx
 	push	ebp
 	push	esi
 
-; 2969 : 	CvUnit* pUnit;
-; 2970 : 	bool bEnter;
-; 2971 : 
-; 2972 : 	pUnit = CvLuaUnit::GetInstance(L, 1);
+; 2987 : 	CvUnit* pUnit;
+; 2988 : 	bool bEnter;
+; 2989 : 
+; 2990 : 	pUnit = CvLuaUnit::GetInstance(L, 1);
 
 	mov	esi, DWORD PTR _L$[esp+12]
 	push	edi
@@ -10761,7 +10787,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lMouseover
-	push	OFFSET $SG225583
+	push	OFFSET $SG226213
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -10786,7 +10812,7 @@ $LN5@lMouseover:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN4@lMouseover
-	push	OFFSET $SG225589
+	push	OFFSET $SG226219
 	push	esi
 	call	_luaL_error
 	push	esi
@@ -10794,7 +10820,7 @@ $LN5@lMouseover:
 	add	esp, 12					; 0000000cH
 $LN4@lMouseover:
 
-; 2973 : 	bEnter = lua_toboolean(L, 2);
+; 2991 : 	bEnter = lua_toboolean(L, 2);
 
 	push	2
 	push	esi
@@ -10804,8 +10830,8 @@ $LN4@lMouseover:
 	setne	al
 	mov	BYTE PTR _bEnter$[esp+20], al
 
-; 2974 : 
-; 2975 : 	GC.getGame().mouseoverUnit(pUnit, bEnter);
+; 2992 : 
+; 2993 : 	GC.getGame().mouseoverUnit(pUnit, bEnter);
 
 	mov	ecx, DWORD PTR _bEnter$[esp+20]
 	push	ecx
@@ -10816,12 +10842,12 @@ $LN4@lMouseover:
 	pop	esi
 	pop	ebp
 
-; 2976 : 	return 0;
+; 2994 : 	return 0;
 
 	xor	eax, eax
 	pop	ebx
 
-; 2977 : }
+; 2995 : }
 
 	pop	ecx
 	ret	0
@@ -10835,7 +10861,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetNumArchaeologySites@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetNumArchaeologySites, COMDAT
 
-; 2981 : 	lua_pushinteger(L, GC.getGame().GetNumArchaeologySites());
+; 2999 : 	lua_pushinteger(L, GC.getGame().GetNumArchaeologySites());
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?GetNumArchaeologySites@CvGame@@QBEHXZ	; CvGame::GetNumArchaeologySites
@@ -10845,11 +10871,11 @@ _L$ = 8							; size = 4
 	call	_lua_pushinteger
 	add	esp, 8
 
-; 2982 : 	return 1;
+; 3000 : 	return 1;
 
 	mov	eax, 1
 
-; 2983 : }
+; 3001 : }
 
 	ret	0
 ?lGetNumArchaeologySites@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lGetNumArchaeologySites
@@ -10862,7 +10888,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetNumHiddenArchaeologySites@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetNumHiddenArchaeologySites, COMDAT
 
-; 2987 : 	lua_pushinteger(L, GC.getGame().GetNumHiddenArchaeologySites());
+; 3005 : 	lua_pushinteger(L, GC.getGame().GetNumHiddenArchaeologySites());
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?GetNumHiddenArchaeologySites@CvGame@@QBEHXZ ; CvGame::GetNumHiddenArchaeologySites
@@ -10872,14 +10898,823 @@ _L$ = 8							; size = 4
 	call	_lua_pushinteger
 	add	esp, 8
 
-; 2988 : 	return 1;
+; 3006 : 	return 1;
 
 	mov	eax, 1
 
-; 2989 : }
+; 3007 : }
 
 	ret	0
 ?lGetNumHiddenArchaeologySites@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lGetNumHiddenArchaeologySites
+_TEXT	ENDS
+PUBLIC	?lGetLastProposalID@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetLastProposalID
+EXTRN	?GetLastProposalID@CvMPVotingSystem@@QAEHXZ:PROC ; CvMPVotingSystem::GetLastProposalID
+EXTRN	?GetMPVotingSystem@CvGame@@QAEPAVCvMPVotingSystem@@XZ:PROC ; CvGame::GetMPVotingSystem
+; Function compile flags: /Ogtpy
+;	COMDAT ?lGetLastProposalID@CvLuaGame@@KAHPAUlua_State@@@Z
+_TEXT	SEGMENT
+_L$ = 8							; size = 4
+?lGetLastProposalID@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetLastProposalID, COMDAT
+
+; 3012 : 	lua_pushinteger(L, GC.getGame().GetMPVotingSystem()->GetLastProposalID());
+
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
+	call	?GetMPVotingSystem@CvGame@@QAEPAVCvMPVotingSystem@@XZ ; CvGame::GetMPVotingSystem
+	mov	ecx, eax
+	call	?GetLastProposalID@CvMPVotingSystem@@QAEHXZ ; CvMPVotingSystem::GetLastProposalID
+	push	eax
+	mov	eax, DWORD PTR _L$[esp]
+	push	eax
+	call	_lua_pushinteger
+	add	esp, 8
+
+; 3013 : 	return 1;
+
+	mov	eax, 1
+
+; 3014 : }
+
+	ret	0
+?lGetLastProposalID@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lGetLastProposalID
+_TEXT	ENDS
+PUBLIC	?lGetProposalIDbyUIid@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetProposalIDbyUIid
+EXTRN	?GetProposalIDbyUIid@CvMPVotingSystem@@QAEHH@Z:PROC ; CvMPVotingSystem::GetProposalIDbyUIid
+; Function compile flags: /Ogtpy
+;	COMDAT ?lGetProposalIDbyUIid@CvLuaGame@@KAHPAUlua_State@@@Z
+_TEXT	SEGMENT
+_L$ = 8							; size = 4
+?lGetProposalIDbyUIid@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetProposalIDbyUIid, COMDAT
+
+; 3017 : {
+
+	push	esi
+
+; 3018 : 	const int iUI_Id = luaL_checkint(L, 1);
+
+	mov	esi, DWORD PTR _L$[esp]
+	push	1
+	push	esi
+	call	_luaL_checkinteger
+
+; 3019 : 	lua_pushinteger(L, GC.getGame().GetMPVotingSystem()->GetProposalIDbyUIid(iUI_Id));
+
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
+	add	esp, 8
+	push	eax
+	call	?GetMPVotingSystem@CvGame@@QAEPAVCvMPVotingSystem@@XZ ; CvGame::GetMPVotingSystem
+	mov	ecx, eax
+	call	?GetProposalIDbyUIid@CvMPVotingSystem@@QAEHH@Z ; CvMPVotingSystem::GetProposalIDbyUIid
+	push	eax
+	push	esi
+	call	_lua_pushinteger
+	add	esp, 8
+
+; 3020 : 	return 1;
+
+	mov	eax, 1
+	pop	esi
+
+; 3021 : }
+
+	ret	0
+?lGetProposalIDbyUIid@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lGetProposalIDbyUIid
+_TEXT	ENDS
+PUBLIC	?lGetProposalExpirationCounter@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetProposalExpirationCounter
+EXTRN	?GetProposalExpirationCounter@CvMPVotingSystem@@QAEHH@Z:PROC ; CvMPVotingSystem::GetProposalExpirationCounter
+; Function compile flags: /Ogtpy
+;	COMDAT ?lGetProposalExpirationCounter@CvLuaGame@@KAHPAUlua_State@@@Z
+_TEXT	SEGMENT
+_L$ = 8							; size = 4
+?lGetProposalExpirationCounter@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetProposalExpirationCounter, COMDAT
+
+; 3024 : {
+
+	push	esi
+
+; 3025 : 	const int iUI_Id = luaL_checkint(L, 1);
+
+	mov	esi, DWORD PTR _L$[esp]
+	push	1
+	push	esi
+	call	_luaL_checkinteger
+
+; 3026 : 	const int iProposalId = GC.getGame().GetMPVotingSystem()->GetProposalIDbyUIid(iUI_Id);
+
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
+	add	esp, 8
+	push	eax
+	call	?GetMPVotingSystem@CvGame@@QAEPAVCvMPVotingSystem@@XZ ; CvGame::GetMPVotingSystem
+	mov	ecx, eax
+	call	?GetProposalIDbyUIid@CvMPVotingSystem@@QAEHH@Z ; CvMPVotingSystem::GetProposalIDbyUIid
+
+; 3027 : 
+; 3028 : 	lua_pushinteger(L, GC.getGame().GetMPVotingSystem()->GetProposalExpirationCounter(iProposalId));
+
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
+	push	eax
+	call	?GetMPVotingSystem@CvGame@@QAEPAVCvMPVotingSystem@@XZ ; CvGame::GetMPVotingSystem
+	mov	ecx, eax
+	call	?GetProposalExpirationCounter@CvMPVotingSystem@@QAEHH@Z ; CvMPVotingSystem::GetProposalExpirationCounter
+	push	eax
+	push	esi
+	call	_lua_pushinteger
+	add	esp, 8
+
+; 3029 : 	return 1;
+
+	mov	eax, 1
+	pop	esi
+
+; 3030 : }
+
+	ret	0
+?lGetProposalExpirationCounter@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lGetProposalExpirationCounter
+_TEXT	ENDS
+PUBLIC	?lGetProposalType@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetProposalType
+EXTRN	?GetProposalType@CvMPVotingSystem@@QAE?AW4MPVotingSystemProposalTypes@@H@Z:PROC ; CvMPVotingSystem::GetProposalType
+; Function compile flags: /Ogtpy
+;	COMDAT ?lGetProposalType@CvLuaGame@@KAHPAUlua_State@@@Z
+_TEXT	SEGMENT
+_L$ = 8							; size = 4
+?lGetProposalType@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetProposalType, COMDAT
+
+; 3033 : {
+
+	push	esi
+
+; 3034 : 	const int iUI_Id = luaL_checkint(L, 1);
+
+	mov	esi, DWORD PTR _L$[esp]
+	push	1
+	push	esi
+	call	_luaL_checkinteger
+
+; 3035 : 	const int iProposalId = GC.getGame().GetMPVotingSystem()->GetProposalIDbyUIid(iUI_Id);
+
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
+	add	esp, 8
+	push	eax
+	call	?GetMPVotingSystem@CvGame@@QAEPAVCvMPVotingSystem@@XZ ; CvGame::GetMPVotingSystem
+	mov	ecx, eax
+	call	?GetProposalIDbyUIid@CvMPVotingSystem@@QAEHH@Z ; CvMPVotingSystem::GetProposalIDbyUIid
+
+; 3036 : 
+; 3037 : 	lua_pushinteger(L, static_cast<int>(GC.getGame().GetMPVotingSystem()->GetProposalType(iProposalId)));
+
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
+	push	eax
+	call	?GetMPVotingSystem@CvGame@@QAEPAVCvMPVotingSystem@@XZ ; CvGame::GetMPVotingSystem
+	mov	ecx, eax
+	call	?GetProposalType@CvMPVotingSystem@@QAE?AW4MPVotingSystemProposalTypes@@H@Z ; CvMPVotingSystem::GetProposalType
+	push	eax
+	push	esi
+	call	_lua_pushinteger
+	add	esp, 8
+
+; 3038 : 	return 1;
+
+	mov	eax, 1
+	pop	esi
+
+; 3039 : }
+
+	ret	0
+?lGetProposalType@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lGetProposalType
+_TEXT	ENDS
+PUBLIC	?lGetProposalStatus@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetProposalStatus
+EXTRN	?GetProposalStatus@CvMPVotingSystem@@QAE?AW4MPVotingSystemProposalStatus@@H@Z:PROC ; CvMPVotingSystem::GetProposalStatus
+; Function compile flags: /Ogtpy
+;	COMDAT ?lGetProposalStatus@CvLuaGame@@KAHPAUlua_State@@@Z
+_TEXT	SEGMENT
+_L$ = 8							; size = 4
+?lGetProposalStatus@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetProposalStatus, COMDAT
+
+; 3042 : {
+
+	push	esi
+
+; 3043 : 	const int iUI_Id = luaL_checkint(L, 1);
+
+	mov	esi, DWORD PTR _L$[esp]
+	push	1
+	push	esi
+	call	_luaL_checkinteger
+
+; 3044 : 	const int iProposalId = GC.getGame().GetMPVotingSystem()->GetProposalIDbyUIid(iUI_Id);
+
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
+	add	esp, 8
+	push	eax
+	call	?GetMPVotingSystem@CvGame@@QAEPAVCvMPVotingSystem@@XZ ; CvGame::GetMPVotingSystem
+	mov	ecx, eax
+	call	?GetProposalIDbyUIid@CvMPVotingSystem@@QAEHH@Z ; CvMPVotingSystem::GetProposalIDbyUIid
+
+; 3045 : 
+; 3046 : 	lua_pushinteger(L, static_cast<int>(GC.getGame().GetMPVotingSystem()->GetProposalStatus(iProposalId)));
+
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
+	push	eax
+	call	?GetMPVotingSystem@CvGame@@QAEPAVCvMPVotingSystem@@XZ ; CvGame::GetMPVotingSystem
+	mov	ecx, eax
+	call	?GetProposalStatus@CvMPVotingSystem@@QAE?AW4MPVotingSystemProposalStatus@@H@Z ; CvMPVotingSystem::GetProposalStatus
+	push	eax
+	push	esi
+	call	_lua_pushinteger
+	add	esp, 8
+
+; 3047 : 	return 1;
+
+	mov	eax, 1
+	pop	esi
+
+; 3048 : }
+
+	ret	0
+?lGetProposalStatus@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lGetProposalStatus
+_TEXT	ENDS
+PUBLIC	?lGetProposalOwner@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetProposalOwner
+EXTRN	?GetProposalOwner@CvMPVotingSystem@@QAE?AW4PlayerTypes@@H@Z:PROC ; CvMPVotingSystem::GetProposalOwner
+; Function compile flags: /Ogtpy
+;	COMDAT ?lGetProposalOwner@CvLuaGame@@KAHPAUlua_State@@@Z
+_TEXT	SEGMENT
+_L$ = 8							; size = 4
+?lGetProposalOwner@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetProposalOwner, COMDAT
+
+; 3051 : {
+
+	push	esi
+
+; 3052 : 	const int iUI_Id = luaL_checkint(L, 1);
+
+	mov	esi, DWORD PTR _L$[esp]
+	push	1
+	push	esi
+	call	_luaL_checkinteger
+
+; 3053 : 	const int iProposalId = GC.getGame().GetMPVotingSystem()->GetProposalIDbyUIid(iUI_Id);
+
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
+	add	esp, 8
+	push	eax
+	call	?GetMPVotingSystem@CvGame@@QAEPAVCvMPVotingSystem@@XZ ; CvGame::GetMPVotingSystem
+	mov	ecx, eax
+	call	?GetProposalIDbyUIid@CvMPVotingSystem@@QAEHH@Z ; CvMPVotingSystem::GetProposalIDbyUIid
+
+; 3054 : 
+; 3055 : 	lua_pushinteger(L, static_cast<int>(GC.getGame().GetMPVotingSystem()->GetProposalOwner(iProposalId)));
+
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
+	push	eax
+	call	?GetMPVotingSystem@CvGame@@QAEPAVCvMPVotingSystem@@XZ ; CvGame::GetMPVotingSystem
+	mov	ecx, eax
+	call	?GetProposalOwner@CvMPVotingSystem@@QAE?AW4PlayerTypes@@H@Z ; CvMPVotingSystem::GetProposalOwner
+	push	eax
+	push	esi
+	call	_lua_pushinteger
+	add	esp, 8
+
+; 3056 : 	return 1;
+
+	mov	eax, 1
+	pop	esi
+
+; 3057 : }
+
+	ret	0
+?lGetProposalOwner@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lGetProposalOwner
+_TEXT	ENDS
+PUBLIC	?lGetProposalSubject@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetProposalSubject
+EXTRN	?GetProposalSubject@CvMPVotingSystem@@QAE?AW4PlayerTypes@@H@Z:PROC ; CvMPVotingSystem::GetProposalSubject
+; Function compile flags: /Ogtpy
+;	COMDAT ?lGetProposalSubject@CvLuaGame@@KAHPAUlua_State@@@Z
+_TEXT	SEGMENT
+_L$ = 8							; size = 4
+?lGetProposalSubject@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetProposalSubject, COMDAT
+
+; 3060 : {
+
+	push	esi
+
+; 3061 : 	const int iUI_Id = luaL_checkint(L, 1);
+
+	mov	esi, DWORD PTR _L$[esp]
+	push	1
+	push	esi
+	call	_luaL_checkinteger
+
+; 3062 : 	const int iProposalId = GC.getGame().GetMPVotingSystem()->GetProposalIDbyUIid(iUI_Id);
+
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
+	add	esp, 8
+	push	eax
+	call	?GetMPVotingSystem@CvGame@@QAEPAVCvMPVotingSystem@@XZ ; CvGame::GetMPVotingSystem
+	mov	ecx, eax
+	call	?GetProposalIDbyUIid@CvMPVotingSystem@@QAEHH@Z ; CvMPVotingSystem::GetProposalIDbyUIid
+
+; 3063 : 
+; 3064 : 	lua_pushinteger(L, static_cast<int>(GC.getGame().GetMPVotingSystem()->GetProposalSubject(iProposalId)));
+
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
+	push	eax
+	call	?GetMPVotingSystem@CvGame@@QAEPAVCvMPVotingSystem@@XZ ; CvGame::GetMPVotingSystem
+	mov	ecx, eax
+	call	?GetProposalSubject@CvMPVotingSystem@@QAE?AW4PlayerTypes@@H@Z ; CvMPVotingSystem::GetProposalSubject
+	push	eax
+	push	esi
+	call	_lua_pushinteger
+	add	esp, 8
+
+; 3065 : 	return 1;
+
+	mov	eax, 1
+	pop	esi
+
+; 3066 : }
+
+	ret	0
+?lGetProposalSubject@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lGetProposalSubject
+_TEXT	ENDS
+PUBLIC	?lGetProposalCompletion@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetProposalCompletion
+EXTRN	?GetProposalCompletion@CvMPVotingSystem@@QAE_NH@Z:PROC ; CvMPVotingSystem::GetProposalCompletion
+; Function compile flags: /Ogtpy
+;	COMDAT ?lGetProposalCompletion@CvLuaGame@@KAHPAUlua_State@@@Z
+_TEXT	SEGMENT
+_L$ = 8							; size = 4
+?lGetProposalCompletion@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetProposalCompletion, COMDAT
+
+; 3069 : {
+
+	push	esi
+
+; 3070 : 	const int iUI_Id = luaL_checkint(L, 1);
+
+	mov	esi, DWORD PTR _L$[esp]
+	push	1
+	push	esi
+	call	_luaL_checkinteger
+
+; 3071 : 	const int iProposalId = GC.getGame().GetMPVotingSystem()->GetProposalIDbyUIid(iUI_Id);
+
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
+	add	esp, 8
+	push	eax
+	call	?GetMPVotingSystem@CvGame@@QAEPAVCvMPVotingSystem@@XZ ; CvGame::GetMPVotingSystem
+	mov	ecx, eax
+	call	?GetProposalIDbyUIid@CvMPVotingSystem@@QAEHH@Z ; CvMPVotingSystem::GetProposalIDbyUIid
+
+; 3072 : 
+; 3073 : 	lua_pushboolean(L, GC.getGame().GetMPVotingSystem()->GetProposalCompletion(iProposalId));
+
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
+	push	eax
+	call	?GetMPVotingSystem@CvGame@@QAEPAVCvMPVotingSystem@@XZ ; CvGame::GetMPVotingSystem
+	mov	ecx, eax
+	call	?GetProposalCompletion@CvMPVotingSystem@@QAE_NH@Z ; CvMPVotingSystem::GetProposalCompletion
+	movzx	eax, al
+	push	eax
+	push	esi
+	call	_lua_pushboolean
+	add	esp, 8
+
+; 3074 : 	return 1;
+
+	mov	eax, 1
+	pop	esi
+
+; 3075 : }
+
+	ret	0
+?lGetProposalCompletion@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lGetProposalCompletion
+_TEXT	ENDS
+PUBLIC	?lGetProposalVoterVote@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetProposalVoterVote
+EXTRN	?GetVoterVote@CvMPVotingSystem@@QAE_NHW4PlayerTypes@@@Z:PROC ; CvMPVotingSystem::GetVoterVote
+; Function compile flags: /Ogtpy
+;	COMDAT ?lGetProposalVoterVote@CvLuaGame@@KAHPAUlua_State@@@Z
+_TEXT	SEGMENT
+_L$ = 8							; size = 4
+?lGetProposalVoterVote@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetProposalVoterVote, COMDAT
+
+; 3078 : {
+
+	push	esi
+
+; 3079 : 	const int iUI_Id = luaL_checkint(L, 1);
+
+	mov	esi, DWORD PTR _L$[esp]
+	push	edi
+	push	1
+	push	esi
+	call	_luaL_checkinteger
+
+; 3080 : 	const int iProposalId = GC.getGame().GetMPVotingSystem()->GetProposalIDbyUIid(iUI_Id);
+
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
+	add	esp, 8
+	push	eax
+	call	?GetMPVotingSystem@CvGame@@QAEPAVCvMPVotingSystem@@XZ ; CvGame::GetMPVotingSystem
+	mov	ecx, eax
+	call	?GetProposalIDbyUIid@CvMPVotingSystem@@QAEHH@Z ; CvMPVotingSystem::GetProposalIDbyUIid
+
+; 3081 : 	const PlayerTypes ePlayer = static_cast<PlayerTypes>(luaL_checkint(L, 2));
+
+	push	2
+	push	esi
+	mov	edi, eax
+	call	_luaL_checkinteger
+
+; 3082 : 
+; 3083 : 	lua_pushboolean(L, GC.getGame().GetMPVotingSystem()->GetVoterVote(iProposalId, ePlayer));
+
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
+	add	esp, 8
+	push	eax
+	push	edi
+	call	?GetMPVotingSystem@CvGame@@QAEPAVCvMPVotingSystem@@XZ ; CvGame::GetMPVotingSystem
+	mov	ecx, eax
+	call	?GetVoterVote@CvMPVotingSystem@@QAE_NHW4PlayerTypes@@@Z ; CvMPVotingSystem::GetVoterVote
+	movzx	eax, al
+	push	eax
+	push	esi
+	call	_lua_pushboolean
+	add	esp, 8
+	pop	edi
+
+; 3084 : 	return 1;
+
+	mov	eax, 1
+	pop	esi
+
+; 3085 : }
+
+	ret	0
+?lGetProposalVoterVote@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lGetProposalVoterVote
+_TEXT	ENDS
+PUBLIC	?lGetProposalVoterHasVoted@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetProposalVoterHasVoted
+EXTRN	?GetVoterHasVoted@CvMPVotingSystem@@QAE_NHW4PlayerTypes@@@Z:PROC ; CvMPVotingSystem::GetVoterHasVoted
+; Function compile flags: /Ogtpy
+;	COMDAT ?lGetProposalVoterHasVoted@CvLuaGame@@KAHPAUlua_State@@@Z
+_TEXT	SEGMENT
+_L$ = 8							; size = 4
+?lGetProposalVoterHasVoted@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetProposalVoterHasVoted, COMDAT
+
+; 3088 : {
+
+	push	esi
+
+; 3089 : 	const int iUI_Id = luaL_checkint(L, 1);
+
+	mov	esi, DWORD PTR _L$[esp]
+	push	edi
+	push	1
+	push	esi
+	call	_luaL_checkinteger
+
+; 3090 : 	const int iProposalId = GC.getGame().GetMPVotingSystem()->GetProposalIDbyUIid(iUI_Id);
+
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
+	add	esp, 8
+	push	eax
+	call	?GetMPVotingSystem@CvGame@@QAEPAVCvMPVotingSystem@@XZ ; CvGame::GetMPVotingSystem
+	mov	ecx, eax
+	call	?GetProposalIDbyUIid@CvMPVotingSystem@@QAEHH@Z ; CvMPVotingSystem::GetProposalIDbyUIid
+
+; 3091 : 	const PlayerTypes ePlayer = static_cast<PlayerTypes>(luaL_checkint(L, 2));
+
+	push	2
+	push	esi
+	mov	edi, eax
+	call	_luaL_checkinteger
+
+; 3092 : 
+; 3093 : 	lua_pushboolean(L, GC.getGame().GetMPVotingSystem()->GetVoterHasVoted(iProposalId, ePlayer));
+
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
+	add	esp, 8
+	push	eax
+	push	edi
+	call	?GetMPVotingSystem@CvGame@@QAEPAVCvMPVotingSystem@@XZ ; CvGame::GetMPVotingSystem
+	mov	ecx, eax
+	call	?GetVoterHasVoted@CvMPVotingSystem@@QAE_NHW4PlayerTypes@@@Z ; CvMPVotingSystem::GetVoterHasVoted
+	movzx	eax, al
+	push	eax
+	push	esi
+	call	_lua_pushboolean
+	add	esp, 8
+	pop	edi
+
+; 3094 : 	return 1;
+
+	mov	eax, 1
+	pop	esi
+
+; 3095 : }
+
+	ret	0
+?lGetProposalVoterHasVoted@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lGetProposalVoterHasVoted
+_TEXT	ENDS
+PUBLIC	?lGetProposalVoterEligibility@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetProposalVoterEligibility
+EXTRN	?GetVoterEligibility@CvMPVotingSystem@@QAE_NHW4PlayerTypes@@@Z:PROC ; CvMPVotingSystem::GetVoterEligibility
+; Function compile flags: /Ogtpy
+;	COMDAT ?lGetProposalVoterEligibility@CvLuaGame@@KAHPAUlua_State@@@Z
+_TEXT	SEGMENT
+_L$ = 8							; size = 4
+?lGetProposalVoterEligibility@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetProposalVoterEligibility, COMDAT
+
+; 3098 : {
+
+	push	esi
+
+; 3099 : 	const int iUI_Id = luaL_checkint(L, 1);
+
+	mov	esi, DWORD PTR _L$[esp]
+	push	edi
+	push	1
+	push	esi
+	call	_luaL_checkinteger
+
+; 3100 : 	const int iProposalId = GC.getGame().GetMPVotingSystem()->GetProposalIDbyUIid(iUI_Id);
+
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
+	add	esp, 8
+	push	eax
+	call	?GetMPVotingSystem@CvGame@@QAEPAVCvMPVotingSystem@@XZ ; CvGame::GetMPVotingSystem
+	mov	ecx, eax
+	call	?GetProposalIDbyUIid@CvMPVotingSystem@@QAEHH@Z ; CvMPVotingSystem::GetProposalIDbyUIid
+
+; 3101 : 	const PlayerTypes ePlayer = static_cast<PlayerTypes>(luaL_checkint(L, 2));
+
+	push	2
+	push	esi
+	mov	edi, eax
+	call	_luaL_checkinteger
+
+; 3102 : 
+; 3103 : 	lua_pushboolean(L, GC.getGame().GetMPVotingSystem()->GetVoterEligibility(iProposalId, ePlayer));
+
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
+	add	esp, 8
+	push	eax
+	push	edi
+	call	?GetMPVotingSystem@CvGame@@QAEPAVCvMPVotingSystem@@XZ ; CvGame::GetMPVotingSystem
+	mov	ecx, eax
+	call	?GetVoterEligibility@CvMPVotingSystem@@QAE_NHW4PlayerTypes@@@Z ; CvMPVotingSystem::GetVoterEligibility
+	movzx	eax, al
+	push	eax
+	push	esi
+	call	_lua_pushboolean
+	add	esp, 8
+	pop	edi
+
+; 3104 : 	return 1;
+
+	mov	eax, 1
+	pop	esi
+
+; 3105 : }
+
+	ret	0
+?lGetProposalVoterEligibility@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lGetProposalVoterEligibility
+_TEXT	ENDS
+PUBLIC	?lGetYesVotes@CvLuaGame@@KAHPAUlua_State@@@Z	; CvLuaGame::lGetYesVotes
+EXTRN	?GetYesVotes@CvMPVotingSystem@@QAEHH@Z:PROC	; CvMPVotingSystem::GetYesVotes
+; Function compile flags: /Ogtpy
+;	COMDAT ?lGetYesVotes@CvLuaGame@@KAHPAUlua_State@@@Z
+_TEXT	SEGMENT
+_L$ = 8							; size = 4
+?lGetYesVotes@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetYesVotes, COMDAT
+
+; 3108 : {
+
+	push	esi
+
+; 3109 : 	const int iUI_Id = luaL_checkint(L, 1);
+
+	mov	esi, DWORD PTR _L$[esp]
+	push	1
+	push	esi
+	call	_luaL_checkinteger
+
+; 3110 : 	const int iProposalId = GC.getGame().GetMPVotingSystem()->GetProposalIDbyUIid(iUI_Id);
+
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
+	add	esp, 8
+	push	eax
+	call	?GetMPVotingSystem@CvGame@@QAEPAVCvMPVotingSystem@@XZ ; CvGame::GetMPVotingSystem
+	mov	ecx, eax
+	call	?GetProposalIDbyUIid@CvMPVotingSystem@@QAEHH@Z ; CvMPVotingSystem::GetProposalIDbyUIid
+
+; 3111 : 
+; 3112 : 	lua_pushinteger(L, GC.getGame().GetMPVotingSystem()->GetYesVotes(iProposalId));
+
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
+	push	eax
+	call	?GetMPVotingSystem@CvGame@@QAEPAVCvMPVotingSystem@@XZ ; CvGame::GetMPVotingSystem
+	mov	ecx, eax
+	call	?GetYesVotes@CvMPVotingSystem@@QAEHH@Z	; CvMPVotingSystem::GetYesVotes
+	push	eax
+	push	esi
+	call	_lua_pushinteger
+	add	esp, 8
+
+; 3113 : 	return 1;
+
+	mov	eax, 1
+	pop	esi
+
+; 3114 : }
+
+	ret	0
+?lGetYesVotes@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lGetYesVotes
+_TEXT	ENDS
+PUBLIC	?lGetNoVotes@CvLuaGame@@KAHPAUlua_State@@@Z	; CvLuaGame::lGetNoVotes
+EXTRN	?GetNoVotes@CvMPVotingSystem@@QAEHH@Z:PROC	; CvMPVotingSystem::GetNoVotes
+; Function compile flags: /Ogtpy
+;	COMDAT ?lGetNoVotes@CvLuaGame@@KAHPAUlua_State@@@Z
+_TEXT	SEGMENT
+_L$ = 8							; size = 4
+?lGetNoVotes@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetNoVotes, COMDAT
+
+; 3117 : {
+
+	push	esi
+
+; 3118 : 	const int iUI_Id = luaL_checkint(L, 1);
+
+	mov	esi, DWORD PTR _L$[esp]
+	push	1
+	push	esi
+	call	_luaL_checkinteger
+
+; 3119 : 	const int iProposalId = GC.getGame().GetMPVotingSystem()->GetProposalIDbyUIid(iUI_Id);
+
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
+	add	esp, 8
+	push	eax
+	call	?GetMPVotingSystem@CvGame@@QAEPAVCvMPVotingSystem@@XZ ; CvGame::GetMPVotingSystem
+	mov	ecx, eax
+	call	?GetProposalIDbyUIid@CvMPVotingSystem@@QAEHH@Z ; CvMPVotingSystem::GetProposalIDbyUIid
+
+; 3120 : 
+; 3121 : 	lua_pushinteger(L, GC.getGame().GetMPVotingSystem()->GetNoVotes(iProposalId));
+
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
+	push	eax
+	call	?GetMPVotingSystem@CvGame@@QAEPAVCvMPVotingSystem@@XZ ; CvGame::GetMPVotingSystem
+	mov	ecx, eax
+	call	?GetNoVotes@CvMPVotingSystem@@QAEHH@Z	; CvMPVotingSystem::GetNoVotes
+	push	eax
+	push	esi
+	call	_lua_pushinteger
+	add	esp, 8
+
+; 3122 : 	return 1;
+
+	mov	eax, 1
+	pop	esi
+
+; 3123 : }
+
+	ret	0
+?lGetNoVotes@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lGetNoVotes
+_TEXT	ENDS
+PUBLIC	?lGetMaxVotes@CvLuaGame@@KAHPAUlua_State@@@Z	; CvLuaGame::lGetMaxVotes
+EXTRN	?GetMaxVotes@CvMPVotingSystem@@QAEHH@Z:PROC	; CvMPVotingSystem::GetMaxVotes
+; Function compile flags: /Ogtpy
+;	COMDAT ?lGetMaxVotes@CvLuaGame@@KAHPAUlua_State@@@Z
+_TEXT	SEGMENT
+_L$ = 8							; size = 4
+?lGetMaxVotes@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetMaxVotes, COMDAT
+
+; 3126 : {
+
+	push	esi
+
+; 3127 : 	const int iUI_Id = luaL_checkint(L, 1);
+
+	mov	esi, DWORD PTR _L$[esp]
+	push	1
+	push	esi
+	call	_luaL_checkinteger
+
+; 3128 : 	const int iProposalId = GC.getGame().GetMPVotingSystem()->GetProposalIDbyUIid(iUI_Id);
+
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
+	add	esp, 8
+	push	eax
+	call	?GetMPVotingSystem@CvGame@@QAEPAVCvMPVotingSystem@@XZ ; CvGame::GetMPVotingSystem
+	mov	ecx, eax
+	call	?GetProposalIDbyUIid@CvMPVotingSystem@@QAEHH@Z ; CvMPVotingSystem::GetProposalIDbyUIid
+
+; 3129 : 
+; 3130 : 	lua_pushinteger(L, GC.getGame().GetMPVotingSystem()->GetMaxVotes(iProposalId));
+
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
+	push	eax
+	call	?GetMPVotingSystem@CvGame@@QAEPAVCvMPVotingSystem@@XZ ; CvGame::GetMPVotingSystem
+	mov	ecx, eax
+	call	?GetMaxVotes@CvMPVotingSystem@@QAEHH@Z	; CvMPVotingSystem::GetMaxVotes
+	push	eax
+	push	esi
+	call	_lua_pushinteger
+	add	esp, 8
+
+; 3131 : 	return 1;
+
+	mov	eax, 1
+	pop	esi
+
+; 3132 : }
+
+	ret	0
+?lGetMaxVotes@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lGetMaxVotes
+_TEXT	ENDS
+PUBLIC	?lIsPlayerHasActiveProposal@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsPlayerHasActiveProposal
+EXTRN	?IsPlayerHasActiveProposal@CvMPVotingSystem@@QAE_NW4PlayerTypes@@@Z:PROC ; CvMPVotingSystem::IsPlayerHasActiveProposal
+; Function compile flags: /Ogtpy
+;	COMDAT ?lIsPlayerHasActiveProposal@CvLuaGame@@KAHPAUlua_State@@@Z
+_TEXT	SEGMENT
+_L$ = 8							; size = 4
+?lIsPlayerHasActiveProposal@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lIsPlayerHasActiveProposal, COMDAT
+
+; 3135 : {
+
+	push	esi
+
+; 3136 : 	const PlayerTypes ePlayer = static_cast<PlayerTypes>(luaL_checkint(L, 1));
+
+	mov	esi, DWORD PTR _L$[esp]
+	push	1
+	push	esi
+	call	_luaL_checkinteger
+
+; 3137 : 
+; 3138 : 	lua_pushboolean(L, GC.getGame().GetMPVotingSystem()->IsPlayerHasActiveProposal(ePlayer));
+
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
+	add	esp, 8
+	push	eax
+	call	?GetMPVotingSystem@CvGame@@QAEPAVCvMPVotingSystem@@XZ ; CvGame::GetMPVotingSystem
+	mov	ecx, eax
+	call	?IsPlayerHasActiveProposal@CvMPVotingSystem@@QAE_NW4PlayerTypes@@@Z ; CvMPVotingSystem::IsPlayerHasActiveProposal
+	movzx	eax, al
+	push	eax
+	push	esi
+	call	_lua_pushboolean
+	add	esp, 8
+
+; 3139 : 	return 1;
+
+	mov	eax, 1
+	pop	esi
+
+; 3140 : }
+
+	ret	0
+?lIsPlayerHasActiveProposal@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lIsPlayerHasActiveProposal
+_TEXT	ENDS
+PUBLIC	?lIsAnyActiveProposalType@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsAnyActiveProposalType
+EXTRN	?IsAnyActiveProposalType@CvMPVotingSystem@@QAE_NW4MPVotingSystemProposalTypes@@@Z:PROC ; CvMPVotingSystem::IsAnyActiveProposalType
+; Function compile flags: /Ogtpy
+;	COMDAT ?lIsAnyActiveProposalType@CvLuaGame@@KAHPAUlua_State@@@Z
+_TEXT	SEGMENT
+_L$ = 8							; size = 4
+?lIsAnyActiveProposalType@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lIsAnyActiveProposalType, COMDAT
+
+; 3143 : {
+
+	push	esi
+
+; 3144 : 	const MPVotingSystemProposalTypes eType = static_cast<MPVotingSystemProposalTypes>(luaL_checkint(L, 1));
+
+	mov	esi, DWORD PTR _L$[esp]
+	push	1
+	push	esi
+	call	_luaL_checkinteger
+
+; 3145 : 
+; 3146 : 	lua_pushboolean(L, GC.getGame().GetMPVotingSystem()->IsAnyActiveProposalType(eType));
+
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
+	add	esp, 8
+	push	eax
+	call	?GetMPVotingSystem@CvGame@@QAEPAVCvMPVotingSystem@@XZ ; CvGame::GetMPVotingSystem
+	mov	ecx, eax
+	call	?IsAnyActiveProposalType@CvMPVotingSystem@@QAE_NW4MPVotingSystemProposalTypes@@@Z ; CvMPVotingSystem::IsAnyActiveProposalType
+	movzx	eax, al
+	push	eax
+	push	esi
+	call	_lua_pushboolean
+	add	esp, 8
+
+; 3147 : 	return 1;
+
+	mov	eax, 1
+	pop	esi
+
+; 3148 : }
+
+	ret	0
+?lIsAnyActiveProposalType@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lIsAnyActiveProposalType
 _TEXT	ENDS
 PUBLIC	??D?$_Vector_iterator@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@QBEAAW4BeliefTypes@@XZ ; std::_Vector_iterator<enum BeliefTypes,std::allocator<enum BeliefTypes> >::operator*
 ; Function compile flags: /Ogtpy
@@ -11033,7 +11868,7 @@ PUBLIC	??$BasicLuaMethod@_N_N@?$CvLuaMethodWrapper@VCvLuaGame@@VCvGame@@@@KAHPAU
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$BasicLuaMethod@_N_N@?$CvLuaMethodWrapper@VCvLuaGame@@VCvGame@@@@KAHPAUlua_State@@P8CvGame@@AEX_N1@Z@Z
 _TEXT	SEGMENT
-$T228325 = -4						; size = 1
+$T229131 = -4						; size = 1
 _L$ = 8							; size = 4
 _func$ = 12						; size = 4
 ??$BasicLuaMethod@_N_N@?$CvLuaMethodWrapper@VCvLuaGame@@VCvGame@@@@KAHPAUlua_State@@P8CvGame@@AEX_N1@Z@Z PROC ; CvLuaMethodWrapper<CvLuaGame,CvGame>::BasicLuaMethod<bool,bool>, COMDAT
@@ -11058,8 +11893,8 @@ _func$ = 12						; size = 4
 	add	esp, 8
 	test	eax, eax
 	setne	al
-	mov	BYTE PTR $T228325[esp+12], al
-	mov	ecx, DWORD PTR $T228325[esp+12]
+	mov	BYTE PTR $T229131[esp+12], al
+	mov	ecx, DWORD PTR $T229131[esp+12]
 	push	ecx
 	push	1
 	push	edi
@@ -11088,8 +11923,8 @@ PUBLIC	??$BasicLuaMethod@_N_N_N@?$CvLuaMethodWrapper@VCvLuaGame@@VCvGame@@@@KAHP
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$BasicLuaMethod@_N_N_N@?$CvLuaMethodWrapper@VCvLuaGame@@VCvGame@@@@KAHPAUlua_State@@P8CvGame@@AEX_N11@Z@Z
 _TEXT	SEGMENT
-$T228347 = -8						; size = 1
-$T228351 = -4						; size = 1
+$T229153 = -8						; size = 1
+$T229157 = -4						; size = 1
 _L$ = 8							; size = 4
 _func$ = 12						; size = 4
 ??$BasicLuaMethod@_N_N_N@?$CvLuaMethodWrapper@VCvLuaGame@@VCvGame@@@@KAHPAUlua_State@@P8CvGame@@AEX_N11@Z@Z PROC ; CvLuaMethodWrapper<CvLuaGame,CvGame>::BasicLuaMethod<bool,bool,bool>, COMDAT
@@ -11113,14 +11948,14 @@ _func$ = 12						; size = 4
 	setne	al
 	push	2
 	push	esi
-	mov	BYTE PTR $T228347[esp+32], al
+	mov	BYTE PTR $T229153[esp+32], al
 	call	_lua_toboolean
-	mov	edx, DWORD PTR $T228347[esp+32]
+	mov	edx, DWORD PTR $T229153[esp+32]
 	add	esp, 16					; 00000010H
 	test	eax, eax
 	setne	cl
-	mov	BYTE PTR $T228351[esp+16], cl
-	mov	eax, DWORD PTR $T228351[esp+16]
+	mov	BYTE PTR $T229157[esp+16], cl
+	mov	eax, DWORD PTR $T229157[esp+16]
 	push	edx
 	push	eax
 	push	1
@@ -11764,8 +12599,8 @@ PUBLIC	??$BasicLuaMethod@W4PlayerTypes@@_N_N@?$CvLuaMethodWrapper@VCvLuaGame@@VC
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$BasicLuaMethod@W4PlayerTypes@@_N_N@?$CvLuaMethodWrapper@VCvLuaGame@@VCvGame@@@@KAHPAUlua_State@@P8CvGame@@AEXW4PlayerTypes@@_N2@Z@Z
 _TEXT	SEGMENT
-$T228697 = -8						; size = 1
-$T228701 = -4						; size = 1
+$T229503 = -8						; size = 1
+$T229507 = -4						; size = 1
 _L$ = 8							; size = 4
 _func$ = 12						; size = 4
 ??$BasicLuaMethod@W4PlayerTypes@@_N_N@?$CvLuaMethodWrapper@VCvLuaGame@@VCvGame@@@@KAHPAUlua_State@@P8CvGame@@AEXW4PlayerTypes@@_N2@Z@Z PROC ; CvLuaMethodWrapper<CvLuaGame,CvGame>::BasicLuaMethod<enum PlayerTypes,bool,bool>, COMDAT
@@ -11789,14 +12624,14 @@ _func$ = 12						; size = 4
 	setne	al
 	push	2
 	push	esi
-	mov	BYTE PTR $T228697[esp+32], al
+	mov	BYTE PTR $T229503[esp+32], al
 	call	_lua_toboolean
-	mov	edx, DWORD PTR $T228697[esp+32]
+	mov	edx, DWORD PTR $T229503[esp+32]
 	add	esp, 16					; 00000010H
 	test	eax, eax
 	setne	cl
-	mov	BYTE PTR $T228701[esp+16], cl
-	mov	eax, DWORD PTR $T228701[esp+16]
+	mov	BYTE PTR $T229507[esp+16], cl
+	mov	eax, DWORD PTR $T229507[esp+16]
 	push	edx
 	push	eax
 	push	1
@@ -13710,7 +14545,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lUpdateScore@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lUpdateScore, COMDAT
 
-; 414  : 	return BasicLuaMethod(L, &CvGame::updateScore);
+; 432  : 	return BasicLuaMethod(L, &CvGame::updateScore);
 
 	mov	eax, DWORD PTR _L$[esp-4]
 	push	esi
@@ -13728,7 +14563,7 @@ _L$ = 8							; size = 4
 	xor	eax, eax
 	pop	esi
 
-; 415  : }
+; 433  : }
 
 	ret	0
 ?lUpdateScore@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lUpdateScore
@@ -13738,16 +14573,16 @@ EXTRN	?cycleCities@CvGame@@QAEX_N0@Z:PROC		; CvGame::cycleCities
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?lCycleCities@CvLuaGame@@KAHPAUlua_State@@@Z
 _TEXT	SEGMENT
-$T229717 = -4						; size = 1
+$T230523 = -4						; size = 1
 _L$ = 8							; size = 4
 ?lCycleCities@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lCycleCities, COMDAT
 
-; 419  : {
+; 437  : {
 
 	push	ecx
 	push	esi
 
-; 420  : 	return BasicLuaMethod(L, &CvGame::cycleCities);
+; 438  : 	return BasicLuaMethod(L, &CvGame::cycleCities);
 
 	mov	esi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	edi
@@ -13758,8 +14593,8 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	test	eax, eax
 	setne	al
-	mov	BYTE PTR $T229717[esp+12], al
-	mov	ecx, DWORD PTR $T229717[esp+12]
+	mov	BYTE PTR $T230523[esp+12], al
+	mov	ecx, DWORD PTR $T230523[esp+12]
 	push	ecx
 	push	1
 	push	edi
@@ -13775,7 +14610,7 @@ _L$ = 8							; size = 4
 	xor	eax, eax
 	pop	esi
 
-; 421  : }
+; 439  : }
 
 	pop	ecx
 	ret	0
@@ -13789,7 +14624,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lCycleUnits@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lCycleUnits, COMDAT
 
-; 426  : 	return BasicLuaMethod(L, &CvGame::cycleUnits);
+; 444  : 	return BasicLuaMethod(L, &CvGame::cycleUnits);
 
 	mov	eax, DWORD PTR _L$[esp-4]
 	push	OFFSET ?cycleUnits@CvGame@@QAEX_N00@Z	; CvGame::cycleUnits
@@ -13797,7 +14632,7 @@ _L$ = 8							; size = 4
 	call	??$BasicLuaMethod@_N_N_N@?$CvLuaMethodWrapper@VCvLuaGame@@VCvGame@@@@KAHPAUlua_State@@P8CvGame@@AEX_N11@Z@Z ; CvLuaMethodWrapper<CvLuaGame,CvGame>::BasicLuaMethod<bool,bool,bool>
 	add	esp, 8
 
-; 427  : }
+; 445  : }
 
 	ret	0
 ?lCycleUnits@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lCycleUnits
@@ -13810,11 +14645,11 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetProductionPerPopulation@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetProductionPerPopulation, COMDAT
 
-; 531  : {
+; 549  : {
 
 	push	esi
 
-; 532  : 	return BasicLuaMethod(L, &CvGame::getProductionPerPopulation);
+; 550  : 	return BasicLuaMethod(L, &CvGame::getProductionPerPopulation);
 
 	mov	esi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	edi
@@ -13834,7 +14669,7 @@ _L$ = 8							; size = 4
 	mov	eax, 1
 	pop	esi
 
-; 533  : }
+; 551  : }
 
 	ret	0
 ?lGetProductionPerPopulation@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lGetProductionPerPopulation
@@ -13847,11 +14682,11 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetAdjustedPopulationPercent@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetAdjustedPopulationPercent, COMDAT
 
-; 537  : {
+; 555  : {
 
 	push	esi
 
-; 538  : 	return BasicLuaMethod(L, &CvGame::getAdjustedPopulationPercent);
+; 556  : 	return BasicLuaMethod(L, &CvGame::getAdjustedPopulationPercent);
 
 	mov	esi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	edi
@@ -13871,7 +14706,7 @@ _L$ = 8							; size = 4
 	mov	eax, 1
 	pop	esi
 
-; 539  : }
+; 557  : }
 
 	ret	0
 ?lGetAdjustedPopulationPercent@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lGetAdjustedPopulationPercent
@@ -13884,11 +14719,11 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetAdjustedLandPercent@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetAdjustedLandPercent, COMDAT
 
-; 543  : {
+; 561  : {
 
 	push	esi
 
-; 544  : 	return BasicLuaMethod(L, &CvGame::getAdjustedLandPercent);
+; 562  : 	return BasicLuaMethod(L, &CvGame::getAdjustedLandPercent);
 
 	mov	esi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	edi
@@ -13908,7 +14743,7 @@ _L$ = 8							; size = 4
 	mov	eax, 1
 	pop	esi
 
-; 545  : }
+; 563  : }
 
 	ret	0
 ?lGetAdjustedLandPercent@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lGetAdjustedLandPercent
@@ -13921,7 +14756,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetUnitedNationsCountdown@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetUnitedNationsCountdown, COMDAT
 
-; 550  : 	return BasicLuaMethod(L, &CvGame::GetUnitedNationsCountdown);
+; 568  : 	return BasicLuaMethod(L, &CvGame::GetUnitedNationsCountdown);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?GetUnitedNationsCountdown@CvGame@@QBEHXZ ; CvGame::GetUnitedNationsCountdown
@@ -13932,7 +14767,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 551  : }
+; 569  : }
 
 	ret	0
 ?lGetUnitedNationsCountdown@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lGetUnitedNationsCountdown
@@ -13945,7 +14780,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lCountCivPlayersAlive@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lCountCivPlayersAlive, COMDAT
 
-; 564  : 	return BasicLuaMethod(L, &CvGame::countCivPlayersAlive);
+; 582  : 	return BasicLuaMethod(L, &CvGame::countCivPlayersAlive);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?countCivPlayersAlive@CvGame@@QBEHXZ	; CvGame::countCivPlayersAlive
@@ -13956,7 +14791,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 565  : }
+; 583  : }
 
 	ret	0
 ?lCountCivPlayersAlive@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lCountCivPlayersAlive
@@ -13969,7 +14804,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lCountCivPlayersEverAlive@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lCountCivPlayersEverAlive, COMDAT
 
-; 570  : 	return BasicLuaMethod(L, &CvGame::countCivPlayersEverAlive);
+; 588  : 	return BasicLuaMethod(L, &CvGame::countCivPlayersEverAlive);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?countCivPlayersEverAlive@CvGame@@QBEHXZ ; CvGame::countCivPlayersEverAlive
@@ -13980,7 +14815,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 571  : }
+; 589  : }
 
 	ret	0
 ?lCountCivPlayersEverAlive@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lCountCivPlayersEverAlive
@@ -13993,7 +14828,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lCountCivTeamsAlive@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lCountCivTeamsAlive, COMDAT
 
-; 576  : 	return BasicLuaMethod(L, &CvGame::countCivTeamsAlive);
+; 594  : 	return BasicLuaMethod(L, &CvGame::countCivTeamsAlive);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?countCivTeamsAlive@CvGame@@QBEHXZ	; CvGame::countCivTeamsAlive
@@ -14004,7 +14839,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 577  : }
+; 595  : }
 
 	ret	0
 ?lCountCivTeamsAlive@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lCountCivTeamsAlive
@@ -14017,7 +14852,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lCountCivTeamsEverAlive@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lCountCivTeamsEverAlive, COMDAT
 
-; 582  : 	return BasicLuaMethod(L, &CvGame::countCivTeamsEverAlive);
+; 600  : 	return BasicLuaMethod(L, &CvGame::countCivTeamsEverAlive);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?countCivTeamsEverAlive@CvGame@@QBEHXZ	; CvGame::countCivTeamsEverAlive
@@ -14028,7 +14863,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 583  : }
+; 601  : }
 
 	ret	0
 ?lCountCivTeamsEverAlive@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lCountCivTeamsEverAlive
@@ -14041,7 +14876,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lCountHumanPlayersAlive@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lCountHumanPlayersAlive, COMDAT
 
-; 588  : 	return BasicLuaMethod(L, &CvGame::countHumanPlayersAlive);
+; 606  : 	return BasicLuaMethod(L, &CvGame::countHumanPlayersAlive);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?countHumanPlayersAlive@CvGame@@QBEHXZ	; CvGame::countHumanPlayersAlive
@@ -14052,7 +14887,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 589  : }
+; 607  : }
 
 	ret	0
 ?lCountHumanPlayersAlive@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lCountHumanPlayersAlive
@@ -14065,7 +14900,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lCountHumanPlayersEverAlive@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lCountHumanPlayersEverAlive, COMDAT
 
-; 594  : 	return BasicLuaMethod(L, &CvGame::countHumanPlayersEverAlive);
+; 612  : 	return BasicLuaMethod(L, &CvGame::countHumanPlayersEverAlive);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?countHumanPlayersEverAlive@CvGame@@QBEHXZ ; CvGame::countHumanPlayersEverAlive
@@ -14076,7 +14911,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 595  : }
+; 613  : }
 
 	ret	0
 ?lCountHumanPlayersEverAlive@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lCountHumanPlayersEverAlive
@@ -14089,7 +14924,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lCountTotalCivPower@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lCountTotalCivPower, COMDAT
 
-; 600  : 	return BasicLuaMethod(L, &CvGame::countTotalCivPower);
+; 618  : 	return BasicLuaMethod(L, &CvGame::countTotalCivPower);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?countTotalCivPower@CvGame@@QAEHXZ	; CvGame::countTotalCivPower
@@ -14100,7 +14935,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 601  : }
+; 619  : }
 
 	ret	0
 ?lCountTotalCivPower@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lCountTotalCivPower
@@ -14113,7 +14948,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lCountTotalNukeUnits@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lCountTotalNukeUnits, COMDAT
 
-; 606  : 	return BasicLuaMethod(L, &CvGame::countTotalNukeUnits);
+; 624  : 	return BasicLuaMethod(L, &CvGame::countTotalNukeUnits);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?countTotalNukeUnits@CvGame@@QAEHXZ	; CvGame::countTotalNukeUnits
@@ -14124,7 +14959,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 607  : }
+; 625  : }
 
 	ret	0
 ?lCountTotalNukeUnits@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lCountTotalNukeUnits
@@ -14137,11 +14972,11 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lCountKnownTechNumTeams@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lCountKnownTechNumTeams, COMDAT
 
-; 611  : {
+; 629  : {
 
 	push	esi
 
-; 612  : 	return BasicLuaMethod(L, &CvGame::countKnownTechNumTeams);
+; 630  : 	return BasicLuaMethod(L, &CvGame::countKnownTechNumTeams);
 
 	mov	esi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	edi
@@ -14161,7 +14996,7 @@ _L$ = 8							; size = 4
 	mov	eax, 1
 	pop	esi
 
-; 613  : }
+; 631  : }
 
 	ret	0
 ?lCountKnownTechNumTeams@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lCountKnownTechNumTeams
@@ -14174,7 +15009,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGoldenAgeLength@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGoldenAgeLength, COMDAT
 
-; 618  : 	return BasicLuaMethod(L, &CvGame::goldenAgeLength);
+; 636  : 	return BasicLuaMethod(L, &CvGame::goldenAgeLength);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?goldenAgeLength@CvGame@@QBEHXZ		; CvGame::goldenAgeLength
@@ -14185,7 +15020,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 619  : }
+; 637  : }
 
 	ret	0
 ?lGoldenAgeLength@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lGoldenAgeLength
@@ -14198,11 +15033,11 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lVictoryDelay@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lVictoryDelay, COMDAT
 
-; 623  : {
+; 641  : {
 
 	push	esi
 
-; 624  : 	return BasicLuaMethod(L, &CvGame::victoryDelay);
+; 642  : 	return BasicLuaMethod(L, &CvGame::victoryDelay);
 
 	mov	esi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	edi
@@ -14222,7 +15057,7 @@ _L$ = 8							; size = 4
 	mov	eax, 1
 	pop	esi
 
-; 625  : }
+; 643  : }
 
 	ret	0
 ?lVictoryDelay@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lVictoryDelay
@@ -14235,12 +15070,12 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetImprovementUpgradeTime@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetImprovementUpgradeTime, COMDAT
 
-; 629  : {
+; 647  : {
 
 	push	ebx
 	push	esi
 
-; 630  : 	return BasicLuaMethod(L, &CvGame::getImprovementUpgradeTime);
+; 648  : 	return BasicLuaMethod(L, &CvGame::getImprovementUpgradeTime);
 
 	mov	esi, DWORD PTR _L$[esp+4]
 	push	edi
@@ -14266,7 +15101,7 @@ _L$ = 8							; size = 4
 	mov	eax, 1
 	pop	ebx
 
-; 631  : }
+; 649  : }
 
 	ret	0
 ?lGetImprovementUpgradeTime@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lGetImprovementUpgradeTime
@@ -14279,7 +15114,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lCanTrainNukes@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lCanTrainNukes, COMDAT
 
-; 636  : 	return BasicLuaMethod(L, &CvGame::canTrainNukes);
+; 654  : 	return BasicLuaMethod(L, &CvGame::canTrainNukes);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?canTrainNukes@CvGame@@QBE_NXZ		; CvGame::canTrainNukes
@@ -14291,7 +15126,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 637  : }
+; 655  : }
 
 	ret	0
 ?lCanTrainNukes@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lCanTrainNukes
@@ -14304,7 +15139,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetCurrentEra@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetCurrentEra, COMDAT
 
-; 642  : 	return BasicLuaMethod(L, &CvGame::getCurrentEra);
+; 660  : 	return BasicLuaMethod(L, &CvGame::getCurrentEra);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?getCurrentEra@CvGame@@QBE?AW4EraTypes@@XZ ; CvGame::getCurrentEra
@@ -14315,7 +15150,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 643  : }
+; 661  : }
 
 	ret	0
 ?lGetCurrentEra@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lGetCurrentEra
@@ -14328,7 +15163,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetActiveTeam@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetActiveTeam, COMDAT
 
-; 663  : 	return BasicLuaMethod(L, &CvGame::getActiveTeam);
+; 681  : 	return BasicLuaMethod(L, &CvGame::getActiveTeam);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?getActiveTeam@CvGame@@QAE?AW4TeamTypes@@XZ ; CvGame::getActiveTeam
@@ -14339,7 +15174,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 664  : }
+; 682  : }
 
 	ret	0
 ?lGetActiveTeam@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lGetActiveTeam
@@ -14352,7 +15187,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetActiveCivilizationType@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetActiveCivilizationType, COMDAT
 
-; 669  : 	return BasicLuaMethod(L, &CvGame::getActiveCivilizationType);
+; 687  : 	return BasicLuaMethod(L, &CvGame::getActiveCivilizationType);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?getActiveCivilizationType@CvGame@@QAE?AW4CivilizationTypes@@XZ ; CvGame::getActiveCivilizationType
@@ -14363,7 +15198,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 670  : }
+; 688  : }
 
 	ret	0
 ?lGetActiveCivilizationType@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lGetActiveCivilizationType
@@ -14375,7 +15210,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lIsNetworkMultiPlayer@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lIsNetworkMultiPlayer, COMDAT
 
-; 675  : 	return BasicLuaMethod(L, &CvGame::isNetworkMultiPlayer);
+; 693  : 	return BasicLuaMethod(L, &CvGame::isNetworkMultiPlayer);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?isNetworkMultiPlayer@CvGame@@QBE_NXZ	; CvGame::isNetworkMultiPlayer
@@ -14387,7 +15222,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 676  : }
+; 694  : }
 
 	ret	0
 ?lIsNetworkMultiPlayer@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lIsNetworkMultiPlayer
@@ -14400,7 +15235,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lIsGameMultiPlayer@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lIsGameMultiPlayer, COMDAT
 
-; 681  : 	return BasicLuaMethod(L, &CvGame::isGameMultiPlayer);
+; 699  : 	return BasicLuaMethod(L, &CvGame::isGameMultiPlayer);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?isGameMultiPlayer@CvGame@@QBE_NXZ	; CvGame::isGameMultiPlayer
@@ -14412,7 +15247,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 682  : }
+; 700  : }
 
 	ret	0
 ?lIsGameMultiPlayer@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lIsGameMultiPlayer
@@ -14425,7 +15260,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lIsTeamGame@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lIsTeamGame, COMDAT
 
-; 687  : 	return BasicLuaMethod(L, &CvGame::isTeamGame);
+; 705  : 	return BasicLuaMethod(L, &CvGame::isTeamGame);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?isTeamGame@CvGame@@QBE_NXZ		; CvGame::isTeamGame
@@ -14437,7 +15272,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 688  : }
+; 706  : }
 
 	ret	0
 ?lIsTeamGame@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lIsTeamGame
@@ -14450,13 +15285,13 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lReviveActivePlayer@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lReviveActivePlayer, COMDAT
 
-; 693  : 	return BasicLuaMethod(L, &CvGame::ReviveActivePlayer);
+; 711  : 	return BasicLuaMethod(L, &CvGame::ReviveActivePlayer);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?ReviveActivePlayer@CvGame@@QAEXXZ	; CvGame::ReviveActivePlayer
 	xor	eax, eax
 
-; 694  : }
+; 712  : }
 
 	ret	0
 ?lReviveActivePlayer@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lReviveActivePlayer
@@ -14469,7 +15304,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetNumHumanPlayers@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetNumHumanPlayers, COMDAT
 
-; 699  : 	return BasicLuaMethod(L, &CvGame::getNumHumanPlayers);
+; 717  : 	return BasicLuaMethod(L, &CvGame::getNumHumanPlayers);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?getNumHumanPlayers@CvGame@@QAEHXZ	; CvGame::getNumHumanPlayers
@@ -14480,7 +15315,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 700  : }
+; 718  : }
 
 	ret	0
 ?lGetNumHumanPlayers@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lGetNumHumanPlayers
@@ -14493,11 +15328,11 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetNumSequentialHumans@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetNumSequentialHumans, COMDAT
 
-; 704  : {
+; 722  : {
 
 	push	esi
 
-; 705  : 	return BasicLuaMethod(L, &CvGame::getNumSequentialHumans);
+; 723  : 	return BasicLuaMethod(L, &CvGame::getNumSequentialHumans);
 
 	mov	esi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	edi
@@ -14517,7 +15352,7 @@ _L$ = 8							; size = 4
 	mov	eax, 1
 	pop	esi
 
-; 706  : }
+; 724  : }
 
 	ret	0
 ?lGetNumSequentialHumans@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lGetNumSequentialHumans
@@ -14529,7 +15364,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetGameTurn@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetGameTurn, COMDAT
 
-; 711  : 	return BasicLuaMethod(L, &CvGame::getGameTurn);
+; 729  : 	return BasicLuaMethod(L, &CvGame::getGameTurn);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?getGameTurn@CvGame@@QAEHXZ		; CvGame::getGameTurn
@@ -14540,7 +15375,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 712  : }
+; 730  : }
 
 	ret	0
 ?lGetGameTurn@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lGetGameTurn
@@ -14553,7 +15388,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lSetGameTurn@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lSetGameTurn, COMDAT
 
-; 717  : 	return BasicLuaMethod(L, &CvGame::setGameTurn);
+; 735  : 	return BasicLuaMethod(L, &CvGame::setGameTurn);
 
 	mov	eax, DWORD PTR _L$[esp-4]
 	push	esi
@@ -14568,7 +15403,7 @@ _L$ = 8							; size = 4
 	xor	eax, eax
 	pop	esi
 
-; 718  : }
+; 736  : }
 
 	ret	0
 ?lSetGameTurn@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lSetGameTurn
@@ -14581,11 +15416,11 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetTurnYear@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetTurnYear, COMDAT
 
-; 722  : {
+; 740  : {
 
 	push	esi
 
-; 723  : 	return BasicLuaMethod(L, &CvGame::getTurnYear);
+; 741  : 	return BasicLuaMethod(L, &CvGame::getTurnYear);
 
 	mov	esi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	edi
@@ -14605,7 +15440,7 @@ _L$ = 8							; size = 4
 	mov	eax, 1
 	pop	esi
 
-; 724  : }
+; 742  : }
 
 	ret	0
 ?lGetTurnYear@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lGetTurnYear
@@ -14618,7 +15453,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetGameTurnYear@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetGameTurnYear, COMDAT
 
-; 729  : 	return BasicLuaMethod(L, &CvGame::getGameTurnYear);
+; 747  : 	return BasicLuaMethod(L, &CvGame::getGameTurnYear);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?getGameTurnYear@CvGame@@QAEHXZ		; CvGame::getGameTurnYear
@@ -14629,7 +15464,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 730  : }
+; 748  : }
 
 	ret	0
 ?lGetGameTurnYear@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lGetGameTurnYear
@@ -14642,7 +15477,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetElapsedGameTurns@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetElapsedGameTurns, COMDAT
 
-; 751  : 	return BasicLuaMethod(L, &CvGame::getElapsedGameTurns);
+; 769  : 	return BasicLuaMethod(L, &CvGame::getElapsedGameTurns);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?getElapsedGameTurns@CvGame@@QBEHXZ	; CvGame::getElapsedGameTurns
@@ -14653,7 +15488,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 752  : }
+; 770  : }
 
 	ret	0
 ?lGetElapsedGameTurns@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lGetElapsedGameTurns
@@ -14666,7 +15501,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetMaxTurns@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetMaxTurns, COMDAT
 
-; 757  : 	return BasicLuaMethod(L, &CvGame::getMaxTurns);
+; 775  : 	return BasicLuaMethod(L, &CvGame::getMaxTurns);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?getMaxTurns@CvGame@@QBEHXZ		; CvGame::getMaxTurns
@@ -14677,7 +15512,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 758  : }
+; 776  : }
 
 	ret	0
 ?lGetMaxTurns@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lGetMaxTurns
@@ -14690,7 +15525,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lSetMaxTurns@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lSetMaxTurns, COMDAT
 
-; 763  : 	return BasicLuaMethod(L, &CvGame::setMaxTurns);
+; 781  : 	return BasicLuaMethod(L, &CvGame::setMaxTurns);
 
 	mov	eax, DWORD PTR _L$[esp-4]
 	push	esi
@@ -14705,7 +15540,7 @@ _L$ = 8							; size = 4
 	xor	eax, eax
 	pop	esi
 
-; 764  : }
+; 782  : }
 
 	ret	0
 ?lSetMaxTurns@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lSetMaxTurns
@@ -14718,7 +15553,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lChangeMaxTurns@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lChangeMaxTurns, COMDAT
 
-; 769  : 	return BasicLuaMethod(L, &CvGame::changeMaxTurns);
+; 787  : 	return BasicLuaMethod(L, &CvGame::changeMaxTurns);
 
 	mov	eax, DWORD PTR _L$[esp-4]
 	push	esi
@@ -14733,7 +15568,7 @@ _L$ = 8							; size = 4
 	xor	eax, eax
 	pop	esi
 
-; 770  : }
+; 788  : }
 
 	ret	0
 ?lChangeMaxTurns@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lChangeMaxTurns
@@ -14746,7 +15581,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetMaxCityElimination@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetMaxCityElimination, COMDAT
 
-; 775  : 	return BasicLuaMethod(L, &CvGame::getMaxCityElimination);
+; 793  : 	return BasicLuaMethod(L, &CvGame::getMaxCityElimination);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?getMaxCityElimination@CvGame@@QBEHXZ	; CvGame::getMaxCityElimination
@@ -14757,7 +15592,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 776  : }
+; 794  : }
 
 	ret	0
 ?lGetMaxCityElimination@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lGetMaxCityElimination
@@ -14770,7 +15605,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lSetMaxCityElimination@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lSetMaxCityElimination, COMDAT
 
-; 781  : 	return BasicLuaMethod(L, &CvGame::setMaxCityElimination);
+; 799  : 	return BasicLuaMethod(L, &CvGame::setMaxCityElimination);
 
 	mov	eax, DWORD PTR _L$[esp-4]
 	push	esi
@@ -14785,7 +15620,7 @@ _L$ = 8							; size = 4
 	xor	eax, eax
 	pop	esi
 
-; 782  : }
+; 800  : }
 
 	ret	0
 ?lSetMaxCityElimination@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lSetMaxCityElimination
@@ -14798,7 +15633,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetNumAdvancedStartPoints@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetNumAdvancedStartPoints, COMDAT
 
-; 787  : 	return BasicLuaMethod(L, &CvGame::getNumAdvancedStartPoints);
+; 805  : 	return BasicLuaMethod(L, &CvGame::getNumAdvancedStartPoints);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?getNumAdvancedStartPoints@CvGame@@QBEHXZ ; CvGame::getNumAdvancedStartPoints
@@ -14809,7 +15644,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 788  : }
+; 806  : }
 
 	ret	0
 ?lGetNumAdvancedStartPoints@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lGetNumAdvancedStartPoints
@@ -14822,7 +15657,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lSetNumAdvancedStartPoints@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lSetNumAdvancedStartPoints, COMDAT
 
-; 793  : 	return BasicLuaMethod(L, &CvGame::setNumAdvancedStartPoints);
+; 811  : 	return BasicLuaMethod(L, &CvGame::setNumAdvancedStartPoints);
 
 	mov	eax, DWORD PTR _L$[esp-4]
 	push	esi
@@ -14837,7 +15672,7 @@ _L$ = 8							; size = 4
 	xor	eax, eax
 	pop	esi
 
-; 794  : }
+; 812  : }
 
 	ret	0
 ?lSetNumAdvancedStartPoints@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lSetNumAdvancedStartPoints
@@ -14850,7 +15685,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetStartTurn@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetStartTurn, COMDAT
 
-; 799  : 	return BasicLuaMethod(L, &CvGame::getStartTurn);
+; 817  : 	return BasicLuaMethod(L, &CvGame::getStartTurn);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?getStartTurn@CvGame@@QBEHXZ		; CvGame::getStartTurn
@@ -14861,7 +15696,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 800  : }
+; 818  : }
 
 	ret	0
 ?lGetStartTurn@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lGetStartTurn
@@ -14874,7 +15709,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetWinningTurn@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetWinningTurn, COMDAT
 
-; 805  : 	return BasicLuaMethod(L, &CvGame::GetWinningTurn);
+; 823  : 	return BasicLuaMethod(L, &CvGame::GetWinningTurn);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?GetWinningTurn@CvGame@@QBEHXZ		; CvGame::GetWinningTurn
@@ -14885,7 +15720,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 806  : }
+; 824  : }
 
 	ret	0
 ?lGetWinningTurn@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lGetWinningTurn
@@ -14897,7 +15732,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetStartYear@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetStartYear, COMDAT
 
-; 811  : 	return BasicLuaMethod(L, &CvGame::getStartYear);
+; 829  : 	return BasicLuaMethod(L, &CvGame::getStartYear);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?getStartYear@CvGame@@QBEHXZ		; CvGame::getStartYear
@@ -14908,7 +15743,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 812  : }
+; 830  : }
 
 	ret	0
 ?lGetStartYear@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lGetStartYear
@@ -14921,7 +15756,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lSetStartYear@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lSetStartYear, COMDAT
 
-; 817  : 	return BasicLuaMethod(L, &CvGame::setStartYear);
+; 835  : 	return BasicLuaMethod(L, &CvGame::setStartYear);
 
 	mov	eax, DWORD PTR _L$[esp-4]
 	push	esi
@@ -14936,7 +15771,7 @@ _L$ = 8							; size = 4
 	xor	eax, eax
 	pop	esi
 
-; 818  : }
+; 836  : }
 
 	ret	0
 ?lSetStartYear@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lSetStartYear
@@ -14949,7 +15784,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetEstimateEndTurn@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetEstimateEndTurn, COMDAT
 
-; 823  : 	return BasicLuaMethod(L, &CvGame::getEstimateEndTurn);
+; 841  : 	return BasicLuaMethod(L, &CvGame::getEstimateEndTurn);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?getEstimateEndTurn@CvGame@@QBEHXZ	; CvGame::getEstimateEndTurn
@@ -14960,7 +15795,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 824  : }
+; 842  : }
 
 	ret	0
 ?lGetEstimateEndTurn@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lGetEstimateEndTurn
@@ -14973,7 +15808,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lSetEstimateEndTurn@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lSetEstimateEndTurn, COMDAT
 
-; 829  : 	return BasicLuaMethod(L, &CvGame::setEstimateEndTurn);
+; 847  : 	return BasicLuaMethod(L, &CvGame::setEstimateEndTurn);
 
 	mov	eax, DWORD PTR _L$[esp-4]
 	push	esi
@@ -14988,7 +15823,7 @@ _L$ = 8							; size = 4
 	xor	eax, eax
 	pop	esi
 
-; 830  : }
+; 848  : }
 
 	ret	0
 ?lSetEstimateEndTurn@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lSetEstimateEndTurn
@@ -15001,7 +15836,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetTurnSlice@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetTurnSlice, COMDAT
 
-; 835  : 	return BasicLuaMethod(L, &CvGame::getTurnSlice);
+; 853  : 	return BasicLuaMethod(L, &CvGame::getTurnSlice);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?getTurnSlice@CvGame@@QBEHXZ		; CvGame::getTurnSlice
@@ -15012,7 +15847,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 836  : }
+; 854  : }
 
 	ret	0
 ?lGetTurnSlice@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lGetTurnSlice
@@ -15025,7 +15860,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetMinutesPlayed@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetMinutesPlayed, COMDAT
 
-; 841  : 	return BasicLuaMethod(L, &CvGame::getMinutesPlayed);
+; 859  : 	return BasicLuaMethod(L, &CvGame::getMinutesPlayed);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?getMinutesPlayed@CvGame@@QBEHXZ	; CvGame::getMinutesPlayed
@@ -15036,7 +15871,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 842  : }
+; 860  : }
 
 	ret	0
 ?lGetMinutesPlayed@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lGetMinutesPlayed
@@ -15049,7 +15884,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetTargetScore@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetTargetScore, COMDAT
 
-; 847  : 	return BasicLuaMethod(L, &CvGame::getTargetScore);
+; 865  : 	return BasicLuaMethod(L, &CvGame::getTargetScore);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?getTargetScore@CvGame@@QBEHXZ		; CvGame::getTargetScore
@@ -15060,7 +15895,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 848  : }
+; 866  : }
 
 	ret	0
 ?lGetTargetScore@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lGetTargetScore
@@ -15073,7 +15908,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lSetTargetScore@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lSetTargetScore, COMDAT
 
-; 853  : 	return BasicLuaMethod(L, &CvGame::setTargetScore);
+; 871  : 	return BasicLuaMethod(L, &CvGame::setTargetScore);
 
 	mov	eax, DWORD PTR _L$[esp-4]
 	push	esi
@@ -15088,7 +15923,7 @@ _L$ = 8							; size = 4
 	xor	eax, eax
 	pop	esi
 
-; 854  : }
+; 872  : }
 
 	ret	0
 ?lSetTargetScore@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lSetTargetScore
@@ -15101,7 +15936,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lIsStaticTutorialActive@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lIsStaticTutorialActive, COMDAT
 
-; 858  : 	return BasicLuaMethod(L, &CvGame::IsStaticTutorialActive);
+; 876  : 	return BasicLuaMethod(L, &CvGame::IsStaticTutorialActive);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?IsStaticTutorialActive@CvGame@@QBE_NXZ	; CvGame::IsStaticTutorialActive
@@ -15113,7 +15948,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 859  : }
+; 877  : }
 
 	ret	0
 ?lIsStaticTutorialActive@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lIsStaticTutorialActive
@@ -15126,7 +15961,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lSetStaticTutorialActive@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lSetStaticTutorialActive, COMDAT
 
-; 863  : 	return BasicLuaMethod(L, &CvGame::SetStaticTutorialActive);
+; 881  : 	return BasicLuaMethod(L, &CvGame::SetStaticTutorialActive);
 
 	mov	eax, DWORD PTR _L$[esp-4]
 	push	esi
@@ -15144,7 +15979,7 @@ _L$ = 8							; size = 4
 	xor	eax, eax
 	pop	esi
 
-; 864  : }
+; 882  : }
 
 	ret	0
 ?lSetStaticTutorialActive@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lSetStaticTutorialActive
@@ -15157,7 +15992,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lIsEverRightClickMoved@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lIsEverRightClickMoved, COMDAT
 
-; 868  : 	return BasicLuaMethod(L, &CvGame::IsEverRightClickMoved);
+; 886  : 	return BasicLuaMethod(L, &CvGame::IsEverRightClickMoved);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?IsEverRightClickMoved@CvGame@@QBE_NXZ	; CvGame::IsEverRightClickMoved
@@ -15169,7 +16004,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 869  : }
+; 887  : }
 
 	ret	0
 ?lIsEverRightClickMoved@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lIsEverRightClickMoved
@@ -15182,7 +16017,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lSetEverRightClickMoved@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lSetEverRightClickMoved, COMDAT
 
-; 873  : 	return BasicLuaMethod(L, &CvGame::SetEverRightClickMoved);
+; 891  : 	return BasicLuaMethod(L, &CvGame::SetEverRightClickMoved);
 
 	mov	eax, DWORD PTR _L$[esp-4]
 	push	esi
@@ -15200,7 +16035,7 @@ _L$ = 8							; size = 4
 	xor	eax, eax
 	pop	esi
 
-; 874  : }
+; 892  : }
 
 	ret	0
 ?lSetEverRightClickMoved@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lSetEverRightClickMoved
@@ -15213,7 +16048,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetNumGameTurnActive@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetNumGameTurnActive, COMDAT
 
-; 936  : 	return BasicLuaMethod(L, &CvGame::getNumGameTurnActive);
+; 954  : 	return BasicLuaMethod(L, &CvGame::getNumGameTurnActive);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?getNumGameTurnActive@CvGame@@QAEHXZ	; CvGame::getNumGameTurnActive
@@ -15224,7 +16059,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 937  : }
+; 955  : }
 
 	ret	0
 ?lGetNumGameTurnActive@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lGetNumGameTurnActive
@@ -15237,7 +16072,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lCountNumHumanGameTurnActive@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lCountNumHumanGameTurnActive, COMDAT
 
-; 942  : 	return BasicLuaMethod(L, &CvGame::countNumHumanGameTurnActive);
+; 960  : 	return BasicLuaMethod(L, &CvGame::countNumHumanGameTurnActive);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?countNumHumanGameTurnActive@CvGame@@QAEHXZ ; CvGame::countNumHumanGameTurnActive
@@ -15248,7 +16083,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 943  : }
+; 961  : }
 
 	ret	0
 ?lCountNumHumanGameTurnActive@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lCountNumHumanGameTurnActive
@@ -15261,7 +16096,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetNumCities@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetNumCities, COMDAT
 
-; 948  : 	return BasicLuaMethod(L, &CvGame::getNumCities);
+; 966  : 	return BasicLuaMethod(L, &CvGame::getNumCities);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?getNumCities@CvGame@@QBEHXZ		; CvGame::getNumCities
@@ -15272,7 +16107,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 949  : }
+; 967  : }
 
 	ret	0
 ?lGetNumCities@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lGetNumCities
@@ -15285,7 +16120,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetNumCivCities@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetNumCivCities, COMDAT
 
-; 954  : 	return BasicLuaMethod(L, &CvGame::getNumCivCities);
+; 972  : 	return BasicLuaMethod(L, &CvGame::getNumCivCities);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?getNumCivCities@CvGame@@QBEHXZ		; CvGame::getNumCivCities
@@ -15296,7 +16131,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 955  : }
+; 973  : }
 
 	ret	0
 ?lGetNumCivCities@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lGetNumCivCities
@@ -15309,7 +16144,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetTotalPopulation@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetTotalPopulation, COMDAT
 
-; 960  : 	return BasicLuaMethod(L, &CvGame::getTotalPopulation);
+; 978  : 	return BasicLuaMethod(L, &CvGame::getTotalPopulation);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?getTotalPopulation@CvGame@@QBEHXZ	; CvGame::getTotalPopulation
@@ -15320,7 +16155,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 961  : }
+; 979  : }
 
 	ret	0
 ?lGetTotalPopulation@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lGetTotalPopulation
@@ -15333,7 +16168,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetNoNukesCount@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetNoNukesCount, COMDAT
 
-; 966  : 	return BasicLuaMethod(L, &CvGame::getNoNukesCount);
+; 984  : 	return BasicLuaMethod(L, &CvGame::getNoNukesCount);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?getNoNukesCount@CvGame@@QBEHXZ		; CvGame::getNoNukesCount
@@ -15344,7 +16179,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 967  : }
+; 985  : }
 
 	ret	0
 ?lGetNoNukesCount@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lGetNoNukesCount
@@ -15357,7 +16192,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lIsNoNukes@CvLuaGame@@KAHPAUlua_State@@@Z PROC		; CvLuaGame::lIsNoNukes, COMDAT
 
-; 972  : 	return BasicLuaMethod(L, &CvGame::isNoNukes);
+; 990  : 	return BasicLuaMethod(L, &CvGame::isNoNukes);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?isNoNukes@CvGame@@QBE_NXZ		; CvGame::isNoNukes
@@ -15369,7 +16204,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 973  : }
+; 991  : }
 
 	ret	0
 ?lIsNoNukes@CvLuaGame@@KAHPAUlua_State@@@Z ENDP		; CvLuaGame::lIsNoNukes
@@ -15382,7 +16217,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetNukesExploded@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetNukesExploded, COMDAT
 
-; 986  : 	return BasicLuaMethod(L, &CvGame::getNukesExploded);
+; 1004 : 	return BasicLuaMethod(L, &CvGame::getNukesExploded);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?getNukesExploded@CvGame@@QBEHXZ	; CvGame::getNukesExploded
@@ -15393,7 +16228,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 987  : }
+; 1005 : }
 
 	ret	0
 ?lGetNukesExploded@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lGetNukesExploded
@@ -15406,7 +16241,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetMaxPopulation@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetMaxPopulation, COMDAT
 
-; 1000 : 	return BasicLuaMethod(L, &CvGame::getMaxPopulation);
+; 1018 : 	return BasicLuaMethod(L, &CvGame::getMaxPopulation);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?getMaxPopulation@CvGame@@QBEHXZ	; CvGame::getMaxPopulation
@@ -15417,7 +16252,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 1001 : }
+; 1019 : }
 
 	ret	0
 ?lGetMaxPopulation@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lGetMaxPopulation
@@ -15430,7 +16265,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetInitPopulation@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetInitPopulation, COMDAT
 
-; 1006 : 	return BasicLuaMethod(L, &CvGame::getInitPopulation);
+; 1024 : 	return BasicLuaMethod(L, &CvGame::getInitPopulation);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?getInitPopulation@CvGame@@QBEHXZ	; CvGame::getInitPopulation
@@ -15441,7 +16276,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 1007 : }
+; 1025 : }
 
 	ret	0
 ?lGetInitPopulation@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lGetInitPopulation
@@ -15454,7 +16289,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetInitLand@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetInitLand, COMDAT
 
-; 1012 : 	return BasicLuaMethod(L, &CvGame::getInitLand);
+; 1030 : 	return BasicLuaMethod(L, &CvGame::getInitLand);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?getInitLand@CvGame@@QBEHXZ		; CvGame::getInitLand
@@ -15465,7 +16300,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 1013 : }
+; 1031 : }
 
 	ret	0
 ?lGetInitLand@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lGetInitLand
@@ -15478,7 +16313,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetInitTech@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetInitTech, COMDAT
 
-; 1018 : 	return BasicLuaMethod(L, &CvGame::getInitTech);
+; 1036 : 	return BasicLuaMethod(L, &CvGame::getInitTech);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?getInitTech@CvGame@@QBEHXZ		; CvGame::getInitTech
@@ -15489,7 +16324,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 1019 : }
+; 1037 : }
 
 	ret	0
 ?lGetInitTech@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lGetInitTech
@@ -15502,7 +16337,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetInitWonders@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetInitWonders, COMDAT
 
-; 1024 : 	return BasicLuaMethod(L, &CvGame::getInitWonders);
+; 1042 : 	return BasicLuaMethod(L, &CvGame::getInitWonders);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?getInitWonders@CvGame@@QBEHXZ		; CvGame::getInitWonders
@@ -15513,7 +16348,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 1025 : }
+; 1043 : }
 
 	ret	0
 ?lGetInitWonders@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lGetInitWonders
@@ -15526,7 +16361,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetAIAutoPlay@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetAIAutoPlay, COMDAT
 
-; 1065 : 	return BasicLuaMethod(L, &CvGame::getAIAutoPlay);
+; 1083 : 	return BasicLuaMethod(L, &CvGame::getAIAutoPlay);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?getAIAutoPlay@CvGame@@QAEHXZ		; CvGame::getAIAutoPlay
@@ -15537,7 +16372,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 1066 : }
+; 1084 : }
 
 	ret	0
 ?lGetAIAutoPlay@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lGetAIAutoPlay
@@ -15550,11 +16385,11 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lSetAIAutoPlay@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lSetAIAutoPlay, COMDAT
 
-; 1070 : {
+; 1088 : {
 
 	push	esi
 
-; 1071 : 	return BasicLuaMethod(L, &CvGame::setAIAutoPlay);
+; 1089 : 	return BasicLuaMethod(L, &CvGame::setAIAutoPlay);
 
 	mov	esi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	edi
@@ -15575,7 +16410,7 @@ _L$ = 8							; size = 4
 	xor	eax, eax
 	pop	esi
 
-; 1072 : }
+; 1090 : }
 
 	ret	0
 ?lSetAIAutoPlay@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lSetAIAutoPlay
@@ -15588,7 +16423,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lIsScoreDirty@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lIsScoreDirty, COMDAT
 
-; 1077 : 	return BasicLuaMethod(L, &CvGame::isScoreDirty);
+; 1095 : 	return BasicLuaMethod(L, &CvGame::isScoreDirty);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?isScoreDirty@CvGame@@QBE_NXZ		; CvGame::isScoreDirty
@@ -15600,7 +16435,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 1078 : }
+; 1096 : }
 
 	ret	0
 ?lIsScoreDirty@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lIsScoreDirty
@@ -15613,7 +16448,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lSetScoreDirty@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lSetScoreDirty, COMDAT
 
-; 1083 : 	return BasicLuaMethod(L, &CvGame::setScoreDirty);
+; 1101 : 	return BasicLuaMethod(L, &CvGame::setScoreDirty);
 
 	mov	eax, DWORD PTR _L$[esp-4]
 	push	esi
@@ -15631,7 +16466,7 @@ _L$ = 8							; size = 4
 	xor	eax, eax
 	pop	esi
 
-; 1084 : }
+; 1102 : }
 
 	ret	0
 ?lSetScoreDirty@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lSetScoreDirty
@@ -15644,7 +16479,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lIsCircumnavigated@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lIsCircumnavigated, COMDAT
 
-; 1089 : 	return BasicLuaMethod(L, &CvGame::isCircumnavigated);
+; 1107 : 	return BasicLuaMethod(L, &CvGame::isCircumnavigated);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?isCircumnavigated@CvGame@@QBE_NXZ	; CvGame::isCircumnavigated
@@ -15656,7 +16491,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 1090 : }
+; 1108 : }
 
 	ret	0
 ?lIsCircumnavigated@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lIsCircumnavigated
@@ -15669,13 +16504,13 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lMakeCircumnavigated@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lMakeCircumnavigated, COMDAT
 
-; 1095 : 	return BasicLuaMethod(L, &CvGame::makeCircumnavigated);
+; 1113 : 	return BasicLuaMethod(L, &CvGame::makeCircumnavigated);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?makeCircumnavigated@CvGame@@QAEXXZ	; CvGame::makeCircumnavigated
 	xor	eax, eax
 
-; 1096 : }
+; 1114 : }
 
 	ret	0
 ?lMakeCircumnavigated@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lMakeCircumnavigated
@@ -15688,13 +16523,13 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lDoFromUIDiploEvent@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lDoFromUIDiploEvent, COMDAT
 
-; 1100 : {
+; 1118 : {
 
 	push	ebx
 	push	ebp
 	push	esi
 
-; 1101 : 	return BasicLuaMethod(L, &CvGame::DoFromUIDiploEvent);
+; 1119 : 	return BasicLuaMethod(L, &CvGame::DoFromUIDiploEvent);
 
 	mov	esi, DWORD PTR _L$[esp+8]
 	push	edi
@@ -15727,7 +16562,7 @@ _L$ = 8							; size = 4
 	xor	eax, eax
 	pop	ebx
 
-; 1102 : }
+; 1120 : }
 
 	ret	0
 ?lDoFromUIDiploEvent@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lDoFromUIDiploEvent
@@ -15740,7 +16575,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lIsDebugMode@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lIsDebugMode, COMDAT
 
-; 1107 : 	return BasicLuaMethod(L, &CvGame::isDebugMode);
+; 1125 : 	return BasicLuaMethod(L, &CvGame::isDebugMode);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?isDebugMode@CvGame@@QBE_NXZ		; CvGame::isDebugMode
@@ -15752,7 +16587,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 1108 : }
+; 1126 : }
 
 	ret	0
 ?lIsDebugMode@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lIsDebugMode
@@ -15765,7 +16600,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lSetDebugMode@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lSetDebugMode, COMDAT
 
-; 1113 : 	return BasicLuaMethod(L, &CvGame::setDebugMode);
+; 1131 : 	return BasicLuaMethod(L, &CvGame::setDebugMode);
 
 	mov	eax, DWORD PTR _L$[esp-4]
 	push	esi
@@ -15783,7 +16618,7 @@ _L$ = 8							; size = 4
 	xor	eax, eax
 	pop	esi
 
-; 1114 : }
+; 1132 : }
 
 	ret	0
 ?lSetDebugMode@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lSetDebugMode
@@ -15796,13 +16631,13 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lToggleDebugMode@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lToggleDebugMode, COMDAT
 
-; 1119 : 	return BasicLuaMethod(L, &CvGame::toggleDebugMode);
+; 1137 : 	return BasicLuaMethod(L, &CvGame::toggleDebugMode);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?toggleDebugMode@CvGame@@QAEXXZ		; CvGame::toggleDebugMode
 	xor	eax, eax
 
-; 1120 : }
+; 1138 : }
 
 	ret	0
 ?lToggleDebugMode@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lToggleDebugMode
@@ -15815,7 +16650,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lUpdateFOW@CvLuaGame@@KAHPAUlua_State@@@Z PROC		; CvLuaGame::lUpdateFOW, COMDAT
 
-; 1125 : 	return BasicLuaMethod(L, &CvGame::setFOW);
+; 1143 : 	return BasicLuaMethod(L, &CvGame::setFOW);
 
 	mov	eax, DWORD PTR _L$[esp-4]
 	push	esi
@@ -15833,7 +16668,7 @@ _L$ = 8							; size = 4
 	xor	eax, eax
 	pop	esi
 
-; 1126 : }
+; 1144 : }
 
 	ret	0
 ?lUpdateFOW@CvLuaGame@@KAHPAUlua_State@@@Z ENDP		; CvLuaGame::lUpdateFOW
@@ -15846,7 +16681,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetPitbossTurnTime@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetPitbossTurnTime, COMDAT
 
-; 1131 : 	return BasicLuaMethod(L, &CvGame::getPitbossTurnTime);
+; 1149 : 	return BasicLuaMethod(L, &CvGame::getPitbossTurnTime);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?getPitbossTurnTime@CvGame@@QBEHXZ	; CvGame::getPitbossTurnTime
@@ -15857,7 +16692,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 1132 : }
+; 1150 : }
 
 	ret	0
 ?lGetPitbossTurnTime@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lGetPitbossTurnTime
@@ -15870,7 +16705,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lSetPitbossTurnTime@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lSetPitbossTurnTime, COMDAT
 
-; 1137 : 	return BasicLuaMethod(L, &CvGame::setPitbossTurnTime);
+; 1155 : 	return BasicLuaMethod(L, &CvGame::setPitbossTurnTime);
 
 	mov	eax, DWORD PTR _L$[esp-4]
 	push	esi
@@ -15885,7 +16720,7 @@ _L$ = 8							; size = 4
 	xor	eax, eax
 	pop	esi
 
-; 1138 : }
+; 1156 : }
 
 	ret	0
 ?lSetPitbossTurnTime@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lSetPitbossTurnTime
@@ -15898,7 +16733,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lIsHotSeat@CvLuaGame@@KAHPAUlua_State@@@Z PROC		; CvLuaGame::lIsHotSeat, COMDAT
 
-; 1143 : 	return BasicLuaMethod(L, &CvGame::isHotSeat);
+; 1161 : 	return BasicLuaMethod(L, &CvGame::isHotSeat);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?isHotSeat@CvGame@@QBE_NXZ		; CvGame::isHotSeat
@@ -15910,7 +16745,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 1144 : }
+; 1162 : }
 
 	ret	0
 ?lIsHotSeat@CvLuaGame@@KAHPAUlua_State@@@Z ENDP		; CvLuaGame::lIsHotSeat
@@ -15923,7 +16758,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lIsPbem@CvLuaGame@@KAHPAUlua_State@@@Z PROC		; CvLuaGame::lIsPbem, COMDAT
 
-; 1149 : 	return BasicLuaMethod(L, &CvGame::isPbem);
+; 1167 : 	return BasicLuaMethod(L, &CvGame::isPbem);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?isPbem@CvGame@@QBE_NXZ			; CvGame::isPbem
@@ -15935,7 +16770,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 1150 : }
+; 1168 : }
 
 	ret	0
 ?lIsPbem@CvLuaGame@@KAHPAUlua_State@@@Z ENDP		; CvLuaGame::lIsPbem
@@ -15948,7 +16783,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lIsPitboss@CvLuaGame@@KAHPAUlua_State@@@Z PROC		; CvLuaGame::lIsPitboss, COMDAT
 
-; 1155 : 	return BasicLuaMethod(L, &CvGame::isPitboss);
+; 1173 : 	return BasicLuaMethod(L, &CvGame::isPitboss);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?isPitboss@CvGame@@QBE_NXZ		; CvGame::isPitboss
@@ -15960,7 +16795,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 1156 : }
+; 1174 : }
 
 	ret	0
 ?lIsPitboss@CvLuaGame@@KAHPAUlua_State@@@Z ENDP		; CvLuaGame::lIsPitboss
@@ -15973,10 +16808,10 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lIsSimultaneousTeamTurns@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lIsSimultaneousTeamTurns, COMDAT
 
-; 1161 : #ifdef AUI_GAME_BETTER_HYBRID_MODE
-; 1162 : 	return BasicLuaMethod(L, &CvGame::isAnySimultaneousTurns);
-; 1163 : #else
-; 1164 : 	return BasicLuaMethod(L, &CvGame::isSimultaneousTeamTurns);
+; 1179 : #ifdef AUI_GAME_BETTER_HYBRID_MODE
+; 1180 : 	return BasicLuaMethod(L, &CvGame::isAnySimultaneousTurns);
+; 1181 : #else
+; 1182 : 	return BasicLuaMethod(L, &CvGame::isSimultaneousTeamTurns);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?isSimultaneousTeamTurns@CvGame@@QBE_NXZ ; CvGame::isSimultaneousTeamTurns
@@ -15988,8 +16823,8 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 1165 : #endif
-; 1166 : }
+; 1183 : #endif
+; 1184 : }
 
 	ret	0
 ?lIsSimultaneousTeamTurns@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lIsSimultaneousTeamTurns
@@ -16002,7 +16837,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lIsFinalInitialized@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lIsFinalInitialized, COMDAT
 
-; 1171 : 	return BasicLuaMethod(L, &CvGame::isFinalInitialized);
+; 1189 : 	return BasicLuaMethod(L, &CvGame::isFinalInitialized);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?isFinalInitialized@CvGame@@QBE_NXZ	; CvGame::isFinalInitialized
@@ -16014,7 +16849,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 1172 : }
+; 1190 : }
 
 	ret	0
 ?lIsFinalInitialized@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lIsFinalInitialized
@@ -16026,7 +16861,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetActivePlayer@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetActivePlayer, COMDAT
 
-; 1177 : 	return BasicLuaMethod(L, &CvGame::getActivePlayer);
+; 1195 : 	return BasicLuaMethod(L, &CvGame::getActivePlayer);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?getActivePlayer@CvGame@@QBE?AW4PlayerTypes@@XZ ; CvGame::getActivePlayer
@@ -16037,7 +16872,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 1178 : }
+; 1196 : }
 
 	ret	0
 ?lGetActivePlayer@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lGetActivePlayer
@@ -16050,7 +16885,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lSetActivePlayer@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lSetActivePlayer, COMDAT
 
-; 1183 : 	return BasicLuaMethod(L, &CvGame::setActivePlayer);
+; 1201 : 	return BasicLuaMethod(L, &CvGame::setActivePlayer);
 
 	mov	eax, DWORD PTR _L$[esp-4]
 	push	OFFSET ?setActivePlayer@CvGame@@QAEXW4PlayerTypes@@_N1@Z ; CvGame::setActivePlayer
@@ -16058,7 +16893,7 @@ _L$ = 8							; size = 4
 	call	??$BasicLuaMethod@W4PlayerTypes@@_N_N@?$CvLuaMethodWrapper@VCvLuaGame@@VCvGame@@@@KAHPAUlua_State@@P8CvGame@@AEXW4PlayerTypes@@_N2@Z@Z ; CvLuaMethodWrapper<CvLuaGame,CvGame>::BasicLuaMethod<enum PlayerTypes,bool,bool>
 	add	esp, 8
 
-; 1184 : }
+; 1202 : }
 
 	ret	0
 ?lSetActivePlayer@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lSetActivePlayer
@@ -16071,7 +16906,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetPausePlayer@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetPausePlayer, COMDAT
 
-; 1189 : 	return BasicLuaMethod(L, &CvGame::getPausePlayer);
+; 1207 : 	return BasicLuaMethod(L, &CvGame::getPausePlayer);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?getPausePlayer@CvGame@@QAE?AW4PlayerTypes@@XZ ; CvGame::getPausePlayer
@@ -16082,7 +16917,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 1190 : }
+; 1208 : }
 
 	ret	0
 ?lGetPausePlayer@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lGetPausePlayer
@@ -16095,7 +16930,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lIsPaused@CvLuaGame@@KAHPAUlua_State@@@Z PROC		; CvLuaGame::lIsPaused, COMDAT
 
-; 1207 : 	return BasicLuaMethod(L, &CvGame::isPaused);
+; 1225 : 	return BasicLuaMethod(L, &CvGame::isPaused);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?isPaused@CvGame@@QAE_NXZ		; CvGame::isPaused
@@ -16107,7 +16942,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 1208 : }
+; 1226 : }
 
 	ret	0
 ?lIsPaused@CvLuaGame@@KAHPAUlua_State@@@Z ENDP		; CvLuaGame::lIsPaused
@@ -16120,7 +16955,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetBestLandUnit@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetBestLandUnit, COMDAT
 
-; 1213 : 	return BasicLuaMethod(L, &CvGame::getBestLandUnit);
+; 1231 : 	return BasicLuaMethod(L, &CvGame::getBestLandUnit);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?getBestLandUnit@CvGame@@QAE?AW4UnitTypes@@XZ ; CvGame::getBestLandUnit
@@ -16131,7 +16966,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 1214 : }
+; 1232 : }
 
 	ret	0
 ?lGetBestLandUnit@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lGetBestLandUnit
@@ -16144,7 +16979,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetBestLandUnitCombat@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetBestLandUnitCombat, COMDAT
 
-; 1219 : 	return BasicLuaMethod(L, &CvGame::getBestLandUnitCombat);
+; 1237 : 	return BasicLuaMethod(L, &CvGame::getBestLandUnitCombat);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?getBestLandUnitCombat@CvGame@@QAEHXZ	; CvGame::getBestLandUnitCombat
@@ -16155,7 +16990,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 1220 : }
+; 1238 : }
 
 	ret	0
 ?lGetBestLandUnitCombat@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lGetBestLandUnitCombat
@@ -16168,7 +17003,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetWinner@CvLuaGame@@KAHPAUlua_State@@@Z PROC		; CvLuaGame::lGetWinner, COMDAT
 
-; 1235 : 	return BasicLuaMethod(L, &CvGame::getWinner);
+; 1253 : 	return BasicLuaMethod(L, &CvGame::getWinner);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?getWinner@CvGame@@QBE?AW4TeamTypes@@XZ	; CvGame::getWinner
@@ -16179,7 +17014,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 1236 : }
+; 1254 : }
 
 	ret	0
 ?lGetWinner@CvLuaGame@@KAHPAUlua_State@@@Z ENDP		; CvLuaGame::lGetWinner
@@ -16192,7 +17027,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetVictory@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetVictory, COMDAT
 
-; 1241 : 	return BasicLuaMethod(L, &CvGame::getVictory);
+; 1259 : 	return BasicLuaMethod(L, &CvGame::getVictory);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?getVictory@CvGame@@QBE?AW4VictoryTypes@@XZ ; CvGame::getVictory
@@ -16203,7 +17038,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 1242 : }
+; 1260 : }
 
 	ret	0
 ?lGetVictory@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lGetVictory
@@ -16216,11 +17051,11 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lSetWinner@CvLuaGame@@KAHPAUlua_State@@@Z PROC		; CvLuaGame::lSetWinner, COMDAT
 
-; 1246 : {
+; 1264 : {
 
 	push	esi
 
-; 1247 : 	return BasicLuaMethod(L, &CvGame::setWinner);
+; 1265 : 	return BasicLuaMethod(L, &CvGame::setWinner);
 
 	mov	esi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	edi
@@ -16241,7 +17076,7 @@ _L$ = 8							; size = 4
 	xor	eax, eax
 	pop	esi
 
-; 1248 : }
+; 1266 : }
 
 	ret	0
 ?lSetWinner@CvLuaGame@@KAHPAUlua_State@@@Z ENDP		; CvLuaGame::lSetWinner
@@ -16254,7 +17089,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetGameState@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetGameState, COMDAT
 
-; 1253 : 	return BasicLuaMethod(L, &CvGame::getGameState);
+; 1271 : 	return BasicLuaMethod(L, &CvGame::getGameState);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?getGameState@CvGame@@QAE?AW4GameStateTypes@@XZ ; CvGame::getGameState
@@ -16265,7 +17100,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 1254 : }
+; 1272 : }
 
 	ret	0
 ?lGetGameState@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lGetGameState
@@ -16278,7 +17113,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetVotesNeededForDiploVictory@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetVotesNeededForDiploVictory, COMDAT
 
-; 1269 : 	return BasicLuaMethod(L, &CvGame::GetVotesNeededForDiploVictory);
+; 1287 : 	return BasicLuaMethod(L, &CvGame::GetVotesNeededForDiploVictory);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?GetVotesNeededForDiploVictory@CvGame@@QBEHXZ ; CvGame::GetVotesNeededForDiploVictory
@@ -16289,7 +17124,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 1270 : }
+; 1288 : }
 
 	ret	0
 ?lGetVotesNeededForDiploVictory@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lGetVotesNeededForDiploVictory
@@ -16302,7 +17137,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lIsUnitedNationsActive@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lIsUnitedNationsActive, COMDAT
 
-; 1275 : 	return BasicLuaMethod(L, &CvGame::IsUnitedNationsActive);
+; 1293 : 	return BasicLuaMethod(L, &CvGame::IsUnitedNationsActive);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?IsUnitedNationsActive@CvGame@@QAE_NXZ	; CvGame::IsUnitedNationsActive
@@ -16314,7 +17149,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 1276 : }
+; 1294 : }
 
 	ret	0
 ?lIsUnitedNationsActive@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lIsUnitedNationsActive
@@ -16327,7 +17162,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetNumVictoryVotesTallied@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetNumVictoryVotesTallied, COMDAT
 
-; 1281 : 	return BasicLuaMethod(L, &CvGame::GetNumVictoryVotesTallied);
+; 1299 : 	return BasicLuaMethod(L, &CvGame::GetNumVictoryVotesTallied);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?GetNumVictoryVotesTallied@CvGame@@QBEHXZ ; CvGame::GetNumVictoryVotesTallied
@@ -16338,7 +17173,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 1282 : }
+; 1300 : }
 
 	ret	0
 ?lGetNumVictoryVotesTallied@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lGetNumVictoryVotesTallied
@@ -16351,11 +17186,11 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetVoteCast@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetVoteCast, COMDAT
 
-; 1286 : {
+; 1304 : {
 
 	push	esi
 
-; 1287 : 	return BasicLuaMethod(L, &CvGame::GetVoteCast);
+; 1305 : 	return BasicLuaMethod(L, &CvGame::GetVoteCast);
 
 	mov	esi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	edi
@@ -16375,7 +17210,7 @@ _L$ = 8							; size = 4
 	mov	eax, 1
 	pop	esi
 
-; 1288 : }
+; 1306 : }
 
 	ret	0
 ?lGetVoteCast@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lGetVoteCast
@@ -16388,11 +17223,11 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetPreviousVoteCast@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetPreviousVoteCast, COMDAT
 
-; 1292 : {
+; 1310 : {
 
 	push	esi
 
-; 1293 : 	return BasicLuaMethod(L, &CvGame::GetPreviousVoteCast);
+; 1311 : 	return BasicLuaMethod(L, &CvGame::GetPreviousVoteCast);
 
 	mov	esi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	edi
@@ -16412,7 +17247,7 @@ _L$ = 8							; size = 4
 	mov	eax, 1
 	pop	esi
 
-; 1294 : }
+; 1312 : }
 
 	ret	0
 ?lGetPreviousVoteCast@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lGetPreviousVoteCast
@@ -16425,11 +17260,11 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetNumVotesForTeam@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetNumVotesForTeam, COMDAT
 
-; 1298 : {
+; 1316 : {
 
 	push	esi
 
-; 1299 : 	return BasicLuaMethod(L, &CvGame::GetNumVotesForTeam);
+; 1317 : 	return BasicLuaMethod(L, &CvGame::GetNumVotesForTeam);
 
 	mov	esi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	edi
@@ -16449,7 +17284,7 @@ _L$ = 8							; size = 4
 	mov	eax, 1
 	pop	esi
 
-; 1300 : }
+; 1318 : }
 
 	ret	0
 ?lGetNumVotesForTeam@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lGetNumVotesForTeam
@@ -16462,11 +17297,11 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lSetNumVotesForTeam@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lSetNumVotesForTeam, COMDAT
 
-; 1304 : {
+; 1322 : {
 
 	push	esi
 
-; 1305 : 	return BasicLuaMethod(L, &CvGame::SetNumVotesForTeam);
+; 1323 : 	return BasicLuaMethod(L, &CvGame::SetNumVotesForTeam);
 
 	mov	esi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	edi
@@ -16487,7 +17322,7 @@ _L$ = 8							; size = 4
 	xor	eax, eax
 	pop	esi
 
-; 1306 : }
+; 1324 : }
 
 	ret	0
 ?lSetNumVotesForTeam@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lSetNumVotesForTeam
@@ -16500,11 +17335,11 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lChangeNumVotesForTeam@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lChangeNumVotesForTeam, COMDAT
 
-; 1310 : {
+; 1328 : {
 
 	push	esi
 
-; 1311 : 	return BasicLuaMethod(L, &CvGame::ChangeNumVotesForTeam);
+; 1329 : 	return BasicLuaMethod(L, &CvGame::ChangeNumVotesForTeam);
 
 	mov	esi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	edi
@@ -16525,7 +17360,7 @@ _L$ = 8							; size = 4
 	xor	eax, eax
 	pop	esi
 
-; 1312 : }
+; 1330 : }
 
 	ret	0
 ?lChangeNumVotesForTeam@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lChangeNumVotesForTeam
@@ -16538,7 +17373,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetHandicapType@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetHandicapType, COMDAT
 
-; 1317 : 	return BasicLuaMethod(L, &CvGame::getHandicapType);
+; 1335 : 	return BasicLuaMethod(L, &CvGame::getHandicapType);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?getHandicapType@CvGame@@QBE?AW4HandicapTypes@@XZ ; CvGame::getHandicapType
@@ -16549,7 +17384,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 1318 : }
+; 1336 : }
 
 	ret	0
 ?lGetHandicapType@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lGetHandicapType
@@ -16561,7 +17396,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetCalendar@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetCalendar, COMDAT
 
-; 1323 : 	return BasicLuaMethod(L, &CvGame::getCalendar);
+; 1341 : 	return BasicLuaMethod(L, &CvGame::getCalendar);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?getCalendar@CvGame@@QBE?AW4CalendarTypes@@XZ ; CvGame::getCalendar
@@ -16572,7 +17407,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 1324 : }
+; 1342 : }
 
 	ret	0
 ?lGetCalendar@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lGetCalendar
@@ -16585,7 +17420,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetStartEra@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetStartEra, COMDAT
 
-; 1329 : 	return BasicLuaMethod(L, &CvGame::getStartEra);
+; 1347 : 	return BasicLuaMethod(L, &CvGame::getStartEra);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?getStartEra@CvGame@@QBE?AW4EraTypes@@XZ ; CvGame::getStartEra
@@ -16596,7 +17431,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 1330 : }
+; 1348 : }
 
 	ret	0
 ?lGetStartEra@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lGetStartEra
@@ -16608,7 +17443,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetGameSpeedType@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetGameSpeedType, COMDAT
 
-; 1335 : 	return BasicLuaMethod(L, &CvGame::getGameSpeedType);
+; 1353 : 	return BasicLuaMethod(L, &CvGame::getGameSpeedType);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?getGameSpeedType@CvGame@@QBE?AW4GameSpeedTypes@@XZ ; CvGame::getGameSpeedType
@@ -16619,7 +17454,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 1336 : }
+; 1354 : }
 
 	ret	0
 ?lGetGameSpeedType@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lGetGameSpeedType
@@ -16632,11 +17467,11 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetRankPlayer@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetRankPlayer, COMDAT
 
-; 1340 : {
+; 1358 : {
 
 	push	esi
 
-; 1341 : 	return BasicLuaMethod(L, &CvGame::getRankPlayer);
+; 1359 : 	return BasicLuaMethod(L, &CvGame::getRankPlayer);
 
 	mov	esi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	edi
@@ -16656,7 +17491,7 @@ _L$ = 8							; size = 4
 	mov	eax, 1
 	pop	esi
 
-; 1342 : }
+; 1360 : }
 
 	ret	0
 ?lGetRankPlayer@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lGetRankPlayer
@@ -16669,11 +17504,11 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetPlayerRank@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetPlayerRank, COMDAT
 
-; 1346 : {
+; 1364 : {
 
 	push	esi
 
-; 1347 : 	return BasicLuaMethod(L, &CvGame::getPlayerRank);
+; 1365 : 	return BasicLuaMethod(L, &CvGame::getPlayerRank);
 
 	mov	esi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	edi
@@ -16693,7 +17528,7 @@ _L$ = 8							; size = 4
 	mov	eax, 1
 	pop	esi
 
-; 1348 : }
+; 1366 : }
 
 	ret	0
 ?lGetPlayerRank@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lGetPlayerRank
@@ -16706,11 +17541,11 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetPlayerScore@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetPlayerScore, COMDAT
 
-; 1352 : {
+; 1370 : {
 
 	push	esi
 
-; 1353 : 	return BasicLuaMethod(L, &CvGame::getPlayerScore);
+; 1371 : 	return BasicLuaMethod(L, &CvGame::getPlayerScore);
 
 	mov	esi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	edi
@@ -16730,7 +17565,7 @@ _L$ = 8							; size = 4
 	mov	eax, 1
 	pop	esi
 
-; 1354 : }
+; 1372 : }
 
 	ret	0
 ?lGetPlayerScore@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lGetPlayerScore
@@ -16743,11 +17578,11 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetRankTeam@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetRankTeam, COMDAT
 
-; 1358 : {
+; 1376 : {
 
 	push	esi
 
-; 1359 : 	return BasicLuaMethod(L, &CvGame::getRankTeam);
+; 1377 : 	return BasicLuaMethod(L, &CvGame::getRankTeam);
 
 	mov	esi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	edi
@@ -16767,7 +17602,7 @@ _L$ = 8							; size = 4
 	mov	eax, 1
 	pop	esi
 
-; 1360 : }
+; 1378 : }
 
 	ret	0
 ?lGetRankTeam@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lGetRankTeam
@@ -16780,11 +17615,11 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetTeamRank@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetTeamRank, COMDAT
 
-; 1364 : {
+; 1382 : {
 
 	push	esi
 
-; 1365 : 	return BasicLuaMethod(L, &CvGame::getTeamRank);
+; 1383 : 	return BasicLuaMethod(L, &CvGame::getTeamRank);
 
 	mov	esi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	edi
@@ -16804,7 +17639,7 @@ _L$ = 8							; size = 4
 	mov	eax, 1
 	pop	esi
 
-; 1366 : }
+; 1384 : }
 
 	ret	0
 ?lGetTeamRank@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lGetTeamRank
@@ -16817,11 +17652,11 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetTeamScore@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetTeamScore, COMDAT
 
-; 1370 : {
+; 1388 : {
 
 	push	esi
 
-; 1371 : 	return BasicLuaMethod(L, &CvGame::getTeamScore);
+; 1389 : 	return BasicLuaMethod(L, &CvGame::getTeamScore);
 
 	mov	esi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	edi
@@ -16841,7 +17676,7 @@ _L$ = 8							; size = 4
 	mov	eax, 1
 	pop	esi
 
-; 1372 : }
+; 1390 : }
 
 	ret	0
 ?lGetTeamScore@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lGetTeamScore
@@ -16854,11 +17689,11 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lIsMPOption@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lIsMPOption, COMDAT
 
-; 1404 : {
+; 1422 : {
 
 	push	esi
 
-; 1405 : 	return BasicLuaMethod(L, &CvGame::isMPOption);
+; 1423 : 	return BasicLuaMethod(L, &CvGame::isMPOption);
 
 	mov	esi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	edi
@@ -16879,7 +17714,7 @@ _L$ = 8							; size = 4
 	mov	eax, 1
 	pop	esi
 
-; 1406 : }
+; 1424 : }
 
 	ret	0
 ?lIsMPOption@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lIsMPOption
@@ -16892,11 +17727,11 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetUnitCreatedCount@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetUnitCreatedCount, COMDAT
 
-; 1410 : {
+; 1428 : {
 
 	push	esi
 
-; 1411 : 	return BasicLuaMethod(L, &CvGame::getUnitCreatedCount);
+; 1429 : 	return BasicLuaMethod(L, &CvGame::getUnitCreatedCount);
 
 	mov	esi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	edi
@@ -16916,7 +17751,7 @@ _L$ = 8							; size = 4
 	mov	eax, 1
 	pop	esi
 
-; 1412 : }
+; 1430 : }
 
 	ret	0
 ?lGetUnitCreatedCount@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lGetUnitCreatedCount
@@ -16929,11 +17764,11 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetUnitClassCreatedCount@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetUnitClassCreatedCount, COMDAT
 
-; 1416 : {
+; 1434 : {
 
 	push	esi
 
-; 1417 : 	return BasicLuaMethod(L, &CvGame::getUnitClassCreatedCount);
+; 1435 : 	return BasicLuaMethod(L, &CvGame::getUnitClassCreatedCount);
 
 	mov	esi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	edi
@@ -16953,7 +17788,7 @@ _L$ = 8							; size = 4
 	mov	eax, 1
 	pop	esi
 
-; 1418 : }
+; 1436 : }
 
 	ret	0
 ?lGetUnitClassCreatedCount@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lGetUnitClassCreatedCount
@@ -16966,12 +17801,12 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lIsUnitClassMaxedOut@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lIsUnitClassMaxedOut, COMDAT
 
-; 1422 : {
+; 1440 : {
 
 	push	ebx
 	push	esi
 
-; 1423 : 	return BasicLuaMethod(L, &CvGame::isUnitClassMaxedOut);
+; 1441 : 	return BasicLuaMethod(L, &CvGame::isUnitClassMaxedOut);
 
 	mov	esi, DWORD PTR _L$[esp+4]
 	push	edi
@@ -16998,7 +17833,7 @@ _L$ = 8							; size = 4
 	mov	eax, 1
 	pop	ebx
 
-; 1424 : }
+; 1442 : }
 
 	ret	0
 ?lIsUnitClassMaxedOut@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lIsUnitClassMaxedOut
@@ -17011,11 +17846,11 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetBuildingClassCreatedCount@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetBuildingClassCreatedCount, COMDAT
 
-; 1428 : {
+; 1446 : {
 
 	push	esi
 
-; 1429 : 	return BasicLuaMethod(L, &CvGame::getBuildingClassCreatedCount);
+; 1447 : 	return BasicLuaMethod(L, &CvGame::getBuildingClassCreatedCount);
 
 	mov	esi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	edi
@@ -17035,7 +17870,7 @@ _L$ = 8							; size = 4
 	mov	eax, 1
 	pop	esi
 
-; 1430 : }
+; 1448 : }
 
 	ret	0
 ?lGetBuildingClassCreatedCount@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lGetBuildingClassCreatedCount
@@ -17048,12 +17883,12 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lIsBuildingClassMaxedOut@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lIsBuildingClassMaxedOut, COMDAT
 
-; 1434 : {
+; 1452 : {
 
 	push	ebx
 	push	esi
 
-; 1435 : 	return BasicLuaMethod(L, &CvGame::isBuildingClassMaxedOut);
+; 1453 : 	return BasicLuaMethod(L, &CvGame::isBuildingClassMaxedOut);
 
 	mov	esi, DWORD PTR _L$[esp+4]
 	push	edi
@@ -17080,7 +17915,7 @@ _L$ = 8							; size = 4
 	mov	eax, 1
 	pop	ebx
 
-; 1436 : }
+; 1454 : }
 
 	ret	0
 ?lIsBuildingClassMaxedOut@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lIsBuildingClassMaxedOut
@@ -17093,11 +17928,11 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetProjectCreatedCount@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetProjectCreatedCount, COMDAT
 
-; 1440 : {
+; 1458 : {
 
 	push	esi
 
-; 1441 : 	return BasicLuaMethod(L, &CvGame::getProjectCreatedCount);
+; 1459 : 	return BasicLuaMethod(L, &CvGame::getProjectCreatedCount);
 
 	mov	esi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	edi
@@ -17117,7 +17952,7 @@ _L$ = 8							; size = 4
 	mov	eax, 1
 	pop	esi
 
-; 1442 : }
+; 1460 : }
 
 	ret	0
 ?lGetProjectCreatedCount@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lGetProjectCreatedCount
@@ -17130,12 +17965,12 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lIsProjectMaxedOut@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lIsProjectMaxedOut, COMDAT
 
-; 1446 : {
+; 1464 : {
 
 	push	ebx
 	push	esi
 
-; 1447 : 	return BasicLuaMethod(L, &CvGame::isProjectMaxedOut);
+; 1465 : 	return BasicLuaMethod(L, &CvGame::isProjectMaxedOut);
 
 	mov	esi, DWORD PTR _L$[esp+4]
 	push	edi
@@ -17162,7 +17997,7 @@ _L$ = 8							; size = 4
 	mov	eax, 1
 	pop	ebx
 
-; 1448 : }
+; 1466 : }
 
 	ret	0
 ?lIsProjectMaxedOut@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lIsProjectMaxedOut
@@ -17175,11 +18010,11 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lIsVictoryValid@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lIsVictoryValid, COMDAT
 
-; 1452 : {
+; 1470 : {
 
 	push	esi
 
-; 1453 : 	return BasicLuaMethod(L, &CvGame::isVictoryValid);
+; 1471 : 	return BasicLuaMethod(L, &CvGame::isVictoryValid);
 
 	mov	esi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	edi
@@ -17200,7 +18035,7 @@ _L$ = 8							; size = 4
 	mov	eax, 1
 	pop	esi
 
-; 1454 : }
+; 1472 : }
 
 	ret	0
 ?lIsVictoryValid@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lIsVictoryValid
@@ -17213,11 +18048,11 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lIsSpecialUnitValid@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lIsSpecialUnitValid, COMDAT
 
-; 1473 : {
+; 1491 : {
 
 	push	esi
 
-; 1474 : 	return BasicLuaMethod(L, &CvGame::isSpecialUnitValid);
+; 1492 : 	return BasicLuaMethod(L, &CvGame::isSpecialUnitValid);
 
 	mov	esi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	edi
@@ -17238,7 +18073,7 @@ _L$ = 8							; size = 4
 	mov	eax, 1
 	pop	esi
 
-; 1475 : }
+; 1493 : }
 
 	ret	0
 ?lIsSpecialUnitValid@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lIsSpecialUnitValid
@@ -17251,7 +18086,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lMakeSpecialUnitValid@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lMakeSpecialUnitValid, COMDAT
 
-; 1480 : 	return BasicLuaMethod(L, &CvGame::makeSpecialUnitValid);
+; 1498 : 	return BasicLuaMethod(L, &CvGame::makeSpecialUnitValid);
 
 	mov	eax, DWORD PTR _L$[esp-4]
 	push	esi
@@ -17266,7 +18101,7 @@ _L$ = 8							; size = 4
 	xor	eax, eax
 	pop	esi
 
-; 1481 : }
+; 1499 : }
 
 	ret	0
 ?lMakeSpecialUnitValid@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lMakeSpecialUnitValid
@@ -17279,7 +18114,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lIsNukesValid@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lIsNukesValid, COMDAT
 
-; 1486 : 	return BasicLuaMethod(L, &CvGame::isNukesValid);
+; 1504 : 	return BasicLuaMethod(L, &CvGame::isNukesValid);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?isNukesValid@CvGame@@QBE_NXZ		; CvGame::isNukesValid
@@ -17291,7 +18126,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 1487 : }
+; 1505 : }
 
 	ret	0
 ?lIsNukesValid@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lIsNukesValid
@@ -17304,7 +18139,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lMakeNukesValid@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lMakeNukesValid, COMDAT
 
-; 1492 : 	return BasicLuaMethod(L, &CvGame::makeNukesValid);
+; 1510 : 	return BasicLuaMethod(L, &CvGame::makeNukesValid);
 
 	mov	eax, DWORD PTR _L$[esp-4]
 	push	esi
@@ -17322,7 +18157,7 @@ _L$ = 8							; size = 4
 	xor	eax, eax
 	pop	esi
 
-; 1493 : }
+; 1511 : }
 
 	ret	0
 ?lMakeNukesValid@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lMakeNukesValid
@@ -17335,7 +18170,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lIsInAdvancedStart@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lIsInAdvancedStart, COMDAT
 
-; 1498 : 	return BasicLuaMethod(L, &CvGame::isInAdvancedStart);
+; 1516 : 	return BasicLuaMethod(L, &CvGame::isInAdvancedStart);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?isInAdvancedStart@CvGame@@QBE_NXZ	; CvGame::isInAdvancedStart
@@ -17347,7 +18182,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 1499 : }
+; 1517 : }
 
 	ret	0
 ?lIsInAdvancedStart@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lIsInAdvancedStart
@@ -17360,7 +18195,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lSetName@CvLuaGame@@KAHPAUlua_State@@@Z PROC		; CvLuaGame::lSetName, COMDAT
 
-; 1504 : 	return BasicLuaMethod(L, &CvGame::setName);
+; 1522 : 	return BasicLuaMethod(L, &CvGame::setName);
 
 	mov	eax, DWORD PTR _L$[esp-4]
 	push	esi
@@ -17375,7 +18210,7 @@ _L$ = 8							; size = 4
 	xor	eax, eax
 	pop	esi
 
-; 1505 : }
+; 1523 : }
 
 	ret	0
 ?lSetName@CvLuaGame@@KAHPAUlua_State@@@Z ENDP		; CvLuaGame::lSetName
@@ -17388,7 +18223,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lCalculateSyncChecksum@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lCalculateSyncChecksum, COMDAT
 
-; 1528 : 	return BasicLuaMethod(L, &CvGame::calculateSyncChecksum);
+; 1546 : 	return BasicLuaMethod(L, &CvGame::calculateSyncChecksum);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?calculateSyncChecksum@CvGame@@QAEHXZ	; CvGame::calculateSyncChecksum
@@ -17399,7 +18234,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 1529 : }
+; 1547 : }
 
 	ret	0
 ?lCalculateSyncChecksum@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lCalculateSyncChecksum
@@ -17412,7 +18247,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lCalculateOptionsChecksum@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lCalculateOptionsChecksum, COMDAT
 
-; 1534 : 	return BasicLuaMethod(L, &CvGame::calculateOptionsChecksum);
+; 1552 : 	return BasicLuaMethod(L, &CvGame::calculateOptionsChecksum);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?calculateOptionsChecksum@CvGame@@QAEHXZ ; CvGame::calculateOptionsChecksum
@@ -17423,7 +18258,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 1535 : }
+; 1553 : }
 
 	ret	0
 ?lCalculateOptionsChecksum@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lCalculateOptionsChecksum
@@ -17435,7 +18270,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetNumReplayMessages@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetNumReplayMessages, COMDAT
 
-; 1661 : 	return BasicLuaMethod(L, &CvGame::getNumReplayMessages);
+; 1679 : 	return BasicLuaMethod(L, &CvGame::getNumReplayMessages);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?getNumReplayMessages@CvGame@@QBEIXZ	; CvGame::getNumReplayMessages
@@ -17446,7 +18281,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 1662 : }
+; 1680 : }
 
 	ret	0
 ?lGetNumReplayMessages@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lGetNumReplayMessages
@@ -17459,13 +18294,13 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lSaveReplay@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lSaveReplay, COMDAT
 
-; 1674 : 	return BasicLuaMethod(L, &CvGame::saveReplay);
+; 1692 : 	return BasicLuaMethod(L, &CvGame::saveReplay);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?saveReplay@CvGame@@QAEXXZ		; CvGame::saveReplay
 	xor	eax, eax
 
-; 1675 : }
+; 1693 : }
 
 	ret	0
 ?lSaveReplay@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lSaveReplay
@@ -17478,12 +18313,12 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lAddPlayer@CvLuaGame@@KAHPAUlua_State@@@Z PROC		; CvLuaGame::lAddPlayer, COMDAT
 
-; 1679 : {
+; 1697 : {
 
 	push	ebx
 	push	esi
 
-; 1680 : 	return BasicLuaMethod(L, &CvGame::addPlayer);
+; 1698 : 	return BasicLuaMethod(L, &CvGame::addPlayer);
 
 	mov	esi, DWORD PTR _L$[esp+4]
 	push	edi
@@ -17510,7 +18345,7 @@ _L$ = 8							; size = 4
 	xor	eax, eax
 	pop	ebx
 
-; 1681 : }
+; 1699 : }
 
 	ret	0
 ?lAddPlayer@CvLuaGame@@KAHPAUlua_State@@@Z ENDP		; CvLuaGame::lAddPlayer
@@ -17523,13 +18358,13 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lSetPlotExtraYield@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lSetPlotExtraYield, COMDAT
 
-; 1685 : {
+; 1703 : {
 
 	push	ebx
 	push	ebp
 	push	esi
 
-; 1686 : 	return BasicLuaMethod(L, &CvGame::setPlotExtraYield);
+; 1704 : 	return BasicLuaMethod(L, &CvGame::setPlotExtraYield);
 
 	mov	esi, DWORD PTR _L$[esp+8]
 	push	edi
@@ -17562,7 +18397,7 @@ _L$ = 8							; size = 4
 	xor	eax, eax
 	pop	ebx
 
-; 1687 : }
+; 1705 : }
 
 	ret	0
 ?lSetPlotExtraYield@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lSetPlotExtraYield
@@ -17575,12 +18410,12 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lChangePlotExtraCost@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lChangePlotExtraCost, COMDAT
 
-; 1691 : {
+; 1709 : {
 
 	push	ebx
 	push	esi
 
-; 1692 : 	return BasicLuaMethod(L, &CvGame::changePlotExtraCost);
+; 1710 : 	return BasicLuaMethod(L, &CvGame::changePlotExtraCost);
 
 	mov	esi, DWORD PTR _L$[esp+4]
 	push	edi
@@ -17607,7 +18442,7 @@ _L$ = 8							; size = 4
 	xor	eax, eax
 	pop	ebx
 
-; 1693 : }
+; 1711 : }
 
 	ret	0
 ?lChangePlotExtraCost@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lChangePlotExtraCost
@@ -17620,11 +18455,11 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lIsCivEverActive@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lIsCivEverActive, COMDAT
 
-; 1697 : {
+; 1715 : {
 
 	push	esi
 
-; 1698 : 	return BasicLuaMethod(L, &CvGame::isCivEverActive);
+; 1716 : 	return BasicLuaMethod(L, &CvGame::isCivEverActive);
 
 	mov	esi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	edi
@@ -17645,7 +18480,7 @@ _L$ = 8							; size = 4
 	mov	eax, 1
 	pop	esi
 
-; 1699 : }
+; 1717 : }
 
 	ret	0
 ?lIsCivEverActive@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lIsCivEverActive
@@ -17658,11 +18493,11 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lIsLeaderEverActive@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lIsLeaderEverActive, COMDAT
 
-; 1703 : {
+; 1721 : {
 
 	push	esi
 
-; 1704 : 	return BasicLuaMethod(L, &CvGame::isLeaderEverActive);
+; 1722 : 	return BasicLuaMethod(L, &CvGame::isLeaderEverActive);
 
 	mov	esi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	edi
@@ -17683,7 +18518,7 @@ _L$ = 8							; size = 4
 	mov	eax, 1
 	pop	esi
 
-; 1705 : }
+; 1723 : }
 
 	ret	0
 ?lIsLeaderEverActive@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lIsLeaderEverActive
@@ -17696,11 +18531,11 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lIsUnitEverActive@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lIsUnitEverActive, COMDAT
 
-; 1709 : {
+; 1727 : {
 
 	push	esi
 
-; 1710 : 	return BasicLuaMethod(L, &CvGame::isUnitEverActive);
+; 1728 : 	return BasicLuaMethod(L, &CvGame::isUnitEverActive);
 
 	mov	esi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	edi
@@ -17721,7 +18556,7 @@ _L$ = 8							; size = 4
 	mov	eax, 1
 	pop	esi
 
-; 1711 : }
+; 1729 : }
 
 	ret	0
 ?lIsUnitEverActive@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lIsUnitEverActive
@@ -17734,11 +18569,11 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lIsBuildingEverActive@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lIsBuildingEverActive, COMDAT
 
-; 1715 : {
+; 1733 : {
 
 	push	esi
 
-; 1716 : 	return BasicLuaMethod(L, &CvGame::isBuildingEverActive);
+; 1734 : 	return BasicLuaMethod(L, &CvGame::isBuildingEverActive);
 
 	mov	esi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	edi
@@ -17759,7 +18594,7 @@ _L$ = 8							; size = 4
 	mov	eax, 1
 	pop	esi
 
-; 1717 : }
+; 1735 : }
 
 	ret	0
 ?lIsBuildingEverActive@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lIsBuildingEverActive
@@ -17772,11 +18607,11 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lCanDoControl@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lCanDoControl, COMDAT
 
-; 1721 : {
+; 1739 : {
 
 	push	esi
 
-; 1722 : 	return BasicLuaMethod(L, &CvGame::canDoControl);
+; 1740 : 	return BasicLuaMethod(L, &CvGame::canDoControl);
 
 	mov	esi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	edi
@@ -17797,7 +18632,7 @@ _L$ = 8							; size = 4
 	mov	eax, 1
 	pop	esi
 
-; 1723 : }
+; 1741 : }
 
 	ret	0
 ?lCanDoControl@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lCanDoControl
@@ -17810,7 +18645,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lDoControl@CvLuaGame@@KAHPAUlua_State@@@Z PROC		; CvLuaGame::lDoControl, COMDAT
 
-; 1728 : 	return BasicLuaMethod(L, &CvGame::doControl);
+; 1746 : 	return BasicLuaMethod(L, &CvGame::doControl);
 
 	mov	eax, DWORD PTR _L$[esp-4]
 	push	esi
@@ -17825,7 +18660,7 @@ _L$ = 8							; size = 4
 	xor	eax, eax
 	pop	esi
 
-; 1729 : }
+; 1747 : }
 
 	ret	0
 ?lDoControl@CvLuaGame@@KAHPAUlua_State@@@Z ENDP		; CvLuaGame::lDoControl
@@ -17838,11 +18673,11 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lDoMinorGiftGold@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lDoMinorGiftGold, COMDAT
 
-; 1751 : {
+; 1769 : {
 
 	push	esi
 
-; 1752 : 	return BasicLuaMethod(L, &CvGame::DoMinorGiftGold);
+; 1770 : 	return BasicLuaMethod(L, &CvGame::DoMinorGiftGold);
 
 	mov	esi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	edi
@@ -17863,7 +18698,7 @@ _L$ = 8							; size = 4
 	xor	eax, eax
 	pop	esi
 
-; 1753 : }
+; 1771 : }
 
 	ret	0
 ?lDoMinorGiftGold@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lDoMinorGiftGold
@@ -17876,13 +18711,13 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lDoMinorGiftTileImprovement@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lDoMinorGiftTileImprovement, COMDAT
 
-; 1757 : {
+; 1775 : {
 
 	push	ebx
 	push	ebp
 	push	esi
 
-; 1758 : 	return BasicLuaMethod(L, &CvGame::DoMinorGiftTileImprovement);
+; 1776 : 	return BasicLuaMethod(L, &CvGame::DoMinorGiftTileImprovement);
 
 	mov	esi, DWORD PTR _L$[esp+8]
 	push	edi
@@ -17915,7 +18750,7 @@ _L$ = 8							; size = 4
 	xor	eax, eax
 	pop	ebx
 
-; 1759 : }
+; 1777 : }
 
 	ret	0
 ?lDoMinorGiftTileImprovement@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lDoMinorGiftTileImprovement
@@ -17928,7 +18763,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetBestWondersPlayer@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetBestWondersPlayer, COMDAT
 
-; 1794 : 	return BasicLuaMethod(L, &CvGame::GetBestWondersPlayer);
+; 1812 : 	return BasicLuaMethod(L, &CvGame::GetBestWondersPlayer);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?GetBestWondersPlayer@CvGame@@QAE?AW4PlayerTypes@@XZ ; CvGame::GetBestWondersPlayer
@@ -17939,7 +18774,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 1795 : }
+; 1813 : }
 
 	ret	0
 ?lGetBestWondersPlayer@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lGetBestWondersPlayer
@@ -17952,7 +18787,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetBestPoliciesPlayer@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetBestPoliciesPlayer, COMDAT
 
-; 1800 : 	return BasicLuaMethod(L, &CvGame::GetBestPoliciesPlayer);
+; 1818 : 	return BasicLuaMethod(L, &CvGame::GetBestPoliciesPlayer);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?GetBestPoliciesPlayer@CvGame@@QAE?AW4PlayerTypes@@XZ ; CvGame::GetBestPoliciesPlayer
@@ -17963,7 +18798,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 1801 : }
+; 1819 : }
 
 	ret	0
 ?lGetBestPoliciesPlayer@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lGetBestPoliciesPlayer
@@ -17976,7 +18811,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetBestGreatPeoplePlayer@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetBestGreatPeoplePlayer, COMDAT
 
-; 1806 : 	return BasicLuaMethod(L, &CvGame::GetBestGreatPeoplePlayer);
+; 1824 : 	return BasicLuaMethod(L, &CvGame::GetBestGreatPeoplePlayer);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?GetBestGreatPeoplePlayer@CvGame@@QAE?AW4PlayerTypes@@XZ ; CvGame::GetBestGreatPeoplePlayer
@@ -17987,7 +18822,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 1807 : }
+; 1825 : }
 
 	ret	0
 ?lGetBestGreatPeoplePlayer@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lGetBestGreatPeoplePlayer
@@ -18000,7 +18835,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lIsEverAttackedTutorial@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lIsEverAttackedTutorial, COMDAT
 
-; 1811 : 	return BasicLuaMethod(L, &CvGame::IsEverAttackedTutorial);
+; 1829 : 	return BasicLuaMethod(L, &CvGame::IsEverAttackedTutorial);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?IsEverAttackedTutorial@CvGame@@QBE_NXZ	; CvGame::IsEverAttackedTutorial
@@ -18012,7 +18847,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 1812 : }
+; 1830 : }
 
 	ret	0
 ?lIsEverAttackedTutorial@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lIsEverAttackedTutorial
@@ -18025,7 +18860,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetDealDuration@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetDealDuration, COMDAT
 
-; 2087 : 	return BasicLuaMethod(L, &CvGame::GetDealDuration);
+; 2105 : 	return BasicLuaMethod(L, &CvGame::GetDealDuration);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?GetDealDuration@CvGame@@QAEHXZ		; CvGame::GetDealDuration
@@ -18036,7 +18871,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 2088 : }
+; 2106 : }
 
 	ret	0
 ?lGetDealDuration@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lGetDealDuration
@@ -18049,7 +18884,7 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetPeaceDuration@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetPeaceDuration, COMDAT
 
-; 2092 : 	return BasicLuaMethod(L, &CvGame::GetPeaceDuration);
+; 2110 : 	return BasicLuaMethod(L, &CvGame::GetPeaceDuration);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?GetPeaceDuration@CvGame@@QAEHXZ	; CvGame::GetPeaceDuration
@@ -18060,7 +18895,7 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	mov	eax, 1
 
-; 2093 : }
+; 2111 : }
 
 	ret	0
 ?lGetPeaceDuration@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lGetPeaceDuration
@@ -18072,28 +18907,28 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetHolyCityForReligion@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetHolyCityForReligion, COMDAT
 
-; 2362 : {
+; 2380 : {
 
 	push	ebx
 	push	ebp
 	push	esi
 	push	edi
 
-; 2363 : 	const ReligionTypes eReligion = static_cast<ReligionTypes>(luaL_checkint(L, 1));
+; 2381 : 	const ReligionTypes eReligion = static_cast<ReligionTypes>(luaL_checkint(L, 1));
 
 	mov	edi, DWORD PTR _L$[esp+12]
 	push	1
 	push	edi
 	call	_luaL_checkinteger
 
-; 2364 : 	const PlayerTypes ePlayer = static_cast<PlayerTypes>(luaL_checkint(L, 2));
+; 2382 : 	const PlayerTypes ePlayer = static_cast<PlayerTypes>(luaL_checkint(L, 2));
 
 	push	2
 	push	edi
 	mov	esi, eax
 	call	_luaL_checkinteger
 
-; 2365 : 	const CvReligion* pkReligion = GC.getGame().GetGameReligions()->GetReligion(eReligion, ePlayer);
+; 2383 : 	const CvReligion* pkReligion = GC.getGame().GetGameReligions()->GetReligion(eReligion, ePlayer);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	add	esp, 16					; 00000010H
@@ -18103,15 +18938,15 @@ _L$ = 8							; size = 4
 	mov	ecx, eax
 	call	?GetReligion@CvGameReligions@@QBEPBVCvReligion@@W4ReligionTypes@@W4PlayerTypes@@@Z ; CvGameReligions::GetReligion
 
-; 2366 : 
-; 2367 : 	CvCity* pkHolyCity = NULL;
-; 2368 : 	if(pkReligion)
+; 2384 : 
+; 2385 : 	CvCity* pkHolyCity = NULL;
+; 2386 : 	if(pkReligion)
 
 	test	eax, eax
 	je	$LN2@lGetHolyCi
 
-; 2369 : 	{
-; 2370 : 		CvPlot* pkPlot = GC.getMap().plot(pkReligion->m_iHolyCityX, pkReligion->m_iHolyCityY);
+; 2387 : 	{
+; 2388 : 		CvPlot* pkPlot = GC.getMap().plot(pkReligion->m_iHolyCityX, pkReligion->m_iHolyCityY);
 
 	mov	ebx, DWORD PTR [eax+12]
 	mov	eax, DWORD PTR [eax+8]
@@ -18173,13 +19008,13 @@ $LN35@lGetHolyCi:
 	imul	ecx, 484				; 000001e4H
 	add	ecx, DWORD PTR [ebp+4068]
 
-; 2371 : 		if(pkPlot)
+; 2389 : 		if(pkPlot)
 
 	test	ecx, ecx
 	je	SHORT $LN55@lGetHolyCi
 
-; 2372 : 		{
-; 2373 : 			pkHolyCity = pkPlot->getPlotCity();
+; 2390 : 		{
+; 2391 : 			pkHolyCity = pkPlot->getPlotCity();
 
 	mov	eax, DWORD PTR [ecx+104]
 	test	eax, eax
@@ -18193,16 +19028,16 @@ $LN35@lGetHolyCi:
 	mov	ecx, eax
 	call	?getCity@CvPlayer@@QAEPAVCvCity@@H@Z	; CvPlayer::getCity
 
-; 2374 : 		}
-; 2375 : 	}
-; 2376 : 
-; 2377 : 	if(pkHolyCity)
+; 2392 : 		}
+; 2393 : 	}
+; 2394 : 
+; 2395 : 	if(pkHolyCity)
 
 	test	eax, eax
 	je	SHORT $LN55@lGetHolyCi
 
-; 2378 : 	{
-; 2379 : 		CvLuaCity::Push(L, pkHolyCity);
+; 2396 : 	{
+; 2397 : 		CvLuaCity::Push(L, pkHolyCity);
 
 	mov	edx, DWORD PTR _L$[esp+12]
 	push	eax
@@ -18213,26 +19048,26 @@ $LN35@lGetHolyCi:
 	pop	esi
 	pop	ebp
 
-; 2384 : 	}
-; 2385 : 
-; 2386 : 	return 1;
+; 2402 : 	}
+; 2403 : 
+; 2404 : 	return 1;
 
 	mov	eax, 1
 	pop	ebx
 
-; 2387 : }
+; 2405 : }
 
 	ret	0
 $LN55@lGetHolyCi:
 
-; 2380 : 	}
-; 2381 : 	else
+; 2398 : 	}
+; 2399 : 	else
 
 	mov	edi, DWORD PTR _L$[esp+12]
 $LN2@lGetHolyCi:
 
-; 2382 : 	{
-; 2383 : 		lua_pushnil(L);
+; 2400 : 	{
+; 2401 : 		lua_pushnil(L);
 
 	push	edi
 	call	_lua_pushnil
@@ -18241,14 +19076,14 @@ $LN2@lGetHolyCi:
 	pop	esi
 	pop	ebp
 
-; 2384 : 	}
-; 2385 : 
-; 2386 : 	return 1;
+; 2402 : 	}
+; 2403 : 
+; 2404 : 	return 1;
 
 	mov	eax, 1
 	pop	ebx
 
-; 2387 : }
+; 2405 : }
 
 	ret	0
 ?lGetHolyCityForReligion@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lGetHolyCityForReligion
@@ -18273,12 +19108,12 @@ __ehfuncinfo$?lGetGreatWorkTooltip@CvLuaGame@@KAHPAUlua_State@@@Z DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?lGetGreatWorkTooltip@CvLuaGame@@KAHPAUlua_State@@@Z
 _TEXT	SEGMENT
-_szTooltip$225234 = -40					; size = 28
+_szTooltip$225759 = -40					; size = 28
 __$EHRec$ = -12						; size = 12
 _L$ = 8							; size = 4
 ?lGetGreatWorkTooltip@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetGreatWorkTooltip, COMDAT
 
-; 2652 : {
+; 2670 : {
 
 	mov	eax, DWORD PTR fs:0
 	push	-1
@@ -18289,10 +19124,10 @@ _L$ = 8							; size = 4
 	push	ebx
 	push	esi
 
-; 2653 : #ifdef AUI_WARNING_FIXES
-; 2654 : 	const uint iIndex = lua_tointeger(L, 1);
-; 2655 : #else
-; 2656 : 	const int iIndex = lua_tointeger(L, 1);
+; 2671 : #ifdef AUI_WARNING_FIXES
+; 2672 : 	const uint iIndex = lua_tointeger(L, 1);
+; 2673 : #else
+; 2674 : 	const int iIndex = lua_tointeger(L, 1);
 
 	mov	esi, DWORD PTR _L$[esp+44]
 	push	edi
@@ -18300,15 +19135,15 @@ _L$ = 8							; size = 4
 	push	esi
 	call	_lua_tointeger
 
-; 2657 : #endif
-; 2658 : 	PlayerTypes eOwner = (PlayerTypes)lua_tointeger(L, 2);
+; 2675 : #endif
+; 2676 : 	PlayerTypes eOwner = (PlayerTypes)lua_tointeger(L, 2);
 
 	push	2
 	push	esi
 	mov	edi, eax
 	call	_lua_tointeger
 
-; 2659 : 	if (iIndex < GC.getGame().GetGameCulture()->GetNumGreatWorks())
+; 2677 : 	if (iIndex < GC.getGame().GetGameCulture()->GetNumGreatWorks())
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	add	esp, 16					; 00000010H
@@ -18317,21 +19152,21 @@ _L$ = 8							; size = 4
 	cmp	edi, DWORD PTR [eax+4]
 	jge	SHORT $LN1@lGetGreatW
 
-; 2660 : 	{
-; 2661 : 		CvString szTooltip = GC.getGame().GetGameCulture()->GetGreatWorkTooltip(iIndex, eOwner);
+; 2678 : 	{
+; 2679 : 		CvString szTooltip = GC.getGame().GetGameCulture()->GetGreatWorkTooltip(iIndex, eOwner);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	ebx
 	push	edi
-	lea	eax, DWORD PTR _szTooltip$225234[esp+60]
+	lea	eax, DWORD PTR _szTooltip$225759[esp+60]
 	push	eax
 	call	?GetGameCulture@CvGame@@QAEPAVCvGameCulture@@XZ ; CvGame::GetGameCulture
 	mov	ecx, eax
 	call	?GetGreatWorkTooltip@CvGameCulture@@QBE?AVCvString@@HW4PlayerTypes@@@Z ; CvGameCulture::GetGreatWorkTooltip
 
-; 2662 : 		lua_pushstring(L, szTooltip);
+; 2680 : 		lua_pushstring(L, szTooltip);
 
-	lea	ecx, DWORD PTR _szTooltip$225234[esp+52]
+	lea	ecx, DWORD PTR _szTooltip$225759[esp+52]
 	mov	DWORD PTR __$EHRec$[esp+60], 0
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
@@ -18339,9 +19174,9 @@ _L$ = 8							; size = 4
 	call	_lua_pushstring
 	add	esp, 8
 
-; 2663 : 		return 1;
+; 2681 : 		return 1;
 
-	lea	ecx, DWORD PTR _szTooltip$225234[esp+52]
+	lea	ecx, DWORD PTR _szTooltip$225759[esp+52]
 	mov	DWORD PTR __$EHRec$[esp+60], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 	pop	edi
@@ -18349,9 +19184,9 @@ _L$ = 8							; size = 4
 	mov	eax, 1
 	pop	ebx
 
-; 2664 : 	}
-; 2665 : 	return 0;
-; 2666 : }
+; 2682 : 	}
+; 2683 : 	return 0;
+; 2684 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -18370,7 +19205,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?lGetGreatWorkTooltip@CvLuaGame@@KAHPAUlua_State@@@Z$0:
-	lea	ecx, DWORD PTR _szTooltip$225234[ebp]
+	lea	ecx, DWORD PTR _szTooltip$225759[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?lGetGreatWorkTooltip@CvLuaGame@@KAHPAUlua_State@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?lGetGreatWorkTooltip@CvLuaGame@@KAHPAUlua_State@@@Z
@@ -18396,12 +19231,12 @@ __ehfuncinfo$?lGetGreatWorkName@CvLuaGame@@KAHPAUlua_State@@@Z DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?lGetGreatWorkName@CvLuaGame@@KAHPAUlua_State@@@Z
 _TEXT	SEGMENT
-_szTooltip$225242 = -40					; size = 28
+_szTooltip$225767 = -40					; size = 28
 __$EHRec$ = -12						; size = 12
 _L$ = 8							; size = 4
 ?lGetGreatWorkName@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetGreatWorkName, COMDAT
 
-; 2669 : {
+; 2687 : {
 
 	mov	eax, DWORD PTR fs:0
 	push	-1
@@ -18412,18 +19247,18 @@ _L$ = 8							; size = 4
 	push	esi
 	push	edi
 
-; 2670 : #ifdef AUI_WARNING_FIXES
-; 2671 : 	const uint iIndex = lua_tointeger(L, 1);
-; 2672 : #else
-; 2673 : 	const int iIndex = lua_tointeger(L, 1);
+; 2688 : #ifdef AUI_WARNING_FIXES
+; 2689 : 	const uint iIndex = lua_tointeger(L, 1);
+; 2690 : #else
+; 2691 : 	const int iIndex = lua_tointeger(L, 1);
 
 	mov	edi, DWORD PTR _L$[esp+44]
 	push	1
 	push	edi
 	call	_lua_tointeger
 
-; 2674 : #endif
-; 2675 : 	if (iIndex < GC.getGame().GetGameCulture()->GetNumGreatWorks())
+; 2692 : #endif
+; 2693 : 	if (iIndex < GC.getGame().GetGameCulture()->GetNumGreatWorks())
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	add	esp, 8
@@ -18432,20 +19267,20 @@ _L$ = 8							; size = 4
 	cmp	esi, DWORD PTR [eax+4]
 	jge	SHORT $LN1@lGetGreatW@2
 
-; 2676 : 	{
-; 2677 : 		CvString szTooltip = GC.getGame().GetGameCulture()->GetGreatWorkName(iIndex);
+; 2694 : 	{
+; 2695 : 		CvString szTooltip = GC.getGame().GetGameCulture()->GetGreatWorkName(iIndex);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	esi
-	lea	eax, DWORD PTR _szTooltip$225242[esp+52]
+	lea	eax, DWORD PTR _szTooltip$225767[esp+52]
 	push	eax
 	call	?GetGameCulture@CvGame@@QAEPAVCvGameCulture@@XZ ; CvGame::GetGameCulture
 	mov	ecx, eax
 	call	?GetGreatWorkName@CvGameCulture@@QBE?AVCvString@@H@Z ; CvGameCulture::GetGreatWorkName
 
-; 2678 : 		lua_pushstring(L, szTooltip);
+; 2696 : 		lua_pushstring(L, szTooltip);
 
-	lea	ecx, DWORD PTR _szTooltip$225242[esp+48]
+	lea	ecx, DWORD PTR _szTooltip$225767[esp+48]
 	mov	DWORD PTR __$EHRec$[esp+56], 0
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
@@ -18453,18 +19288,18 @@ _L$ = 8							; size = 4
 	call	_lua_pushstring
 	add	esp, 8
 
-; 2679 : 		return 1;
+; 2697 : 		return 1;
 
-	lea	ecx, DWORD PTR _szTooltip$225242[esp+48]
+	lea	ecx, DWORD PTR _szTooltip$225767[esp+48]
 	mov	DWORD PTR __$EHRec$[esp+56], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 	pop	edi
 	mov	eax, 1
 	pop	esi
 
-; 2680 : 	}
-; 2681 : 	return 0;
-; 2682 : }
+; 2698 : 	}
+; 2699 : 	return 0;
+; 2700 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -18482,7 +19317,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?lGetGreatWorkName@CvLuaGame@@KAHPAUlua_State@@@Z$0:
-	lea	ecx, DWORD PTR _szTooltip$225242[ebp]
+	lea	ecx, DWORD PTR _szTooltip$225767[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?lGetGreatWorkName@CvLuaGame@@KAHPAUlua_State@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?lGetGreatWorkName@CvLuaGame@@KAHPAUlua_State@@@Z
@@ -18497,23 +19332,23 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetGreatWorkType@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetGreatWorkType, COMDAT
 
-; 2685 : {
+; 2703 : {
 
 	push	esi
 	push	edi
 
-; 2686 : #ifdef AUI_WARNING_FIXES
-; 2687 : 	const uint iIndex = lua_tointeger(L, 1);
-; 2688 : #else
-; 2689 : 	const int iIndex = lua_tointeger(L, 1);
+; 2704 : #ifdef AUI_WARNING_FIXES
+; 2705 : 	const uint iIndex = lua_tointeger(L, 1);
+; 2706 : #else
+; 2707 : 	const int iIndex = lua_tointeger(L, 1);
 
 	mov	edi, DWORD PTR _L$[esp+4]
 	push	1
 	push	edi
 	call	_lua_tointeger
 
-; 2690 : #endif
-; 2691 : 	if (iIndex < GC.getGame().GetGameCulture()->GetNumGreatWorks())
+; 2708 : #endif
+; 2709 : 	if (iIndex < GC.getGame().GetGameCulture()->GetNumGreatWorks())
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	add	esp, 8
@@ -18522,8 +19357,8 @@ _L$ = 8							; size = 4
 	cmp	esi, DWORD PTR [eax+4]
 	jge	SHORT $LN1@lGetGreatW@3
 
-; 2692 : 	{
-; 2693 : 		GreatWorkType eGreatWork = GC.getGame().GetGameCulture()->GetGreatWorkType(iIndex);
+; 2710 : 	{
+; 2711 : 		GreatWorkType eGreatWork = GC.getGame().GetGameCulture()->GetGreatWorkType(iIndex);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	esi
@@ -18531,7 +19366,7 @@ _L$ = 8							; size = 4
 	mov	ecx, eax
 	call	?GetGreatWorkType@CvGameCulture@@QBE?AW4GreatWorkType@@H@Z ; CvGameCulture::GetGreatWorkType
 
-; 2694 : 		lua_pushinteger(L, eGreatWork);
+; 2712 : 		lua_pushinteger(L, eGreatWork);
 
 	push	eax
 	push	edi
@@ -18539,25 +19374,25 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	pop	edi
 
-; 2695 : 		return 1;
+; 2713 : 		return 1;
 
 	mov	eax, 1
 	pop	esi
 
-; 2699 : }
+; 2717 : }
 
 	ret	0
 $LN1@lGetGreatW@3:
 	pop	edi
 
-; 2696 : 	}
-; 2697 : 
-; 2698 : 	return 0;
+; 2714 : 	}
+; 2715 : 
+; 2716 : 	return 0;
 
 	xor	eax, eax
 	pop	esi
 
-; 2699 : }
+; 2717 : }
 
 	ret	0
 ?lGetGreatWorkType@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lGetGreatWorkType
@@ -18570,23 +19405,23 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetGreatWorkClass@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetGreatWorkClass, COMDAT
 
-; 2702 : {
+; 2720 : {
 
 	push	esi
 	push	edi
 
-; 2703 : #ifdef AUI_WARNING_FIXES
-; 2704 : 	const uint iIndex = lua_tointeger(L, 1);
-; 2705 : #else
-; 2706 : 	const int iIndex = lua_tointeger(L, 1);
+; 2721 : #ifdef AUI_WARNING_FIXES
+; 2722 : 	const uint iIndex = lua_tointeger(L, 1);
+; 2723 : #else
+; 2724 : 	const int iIndex = lua_tointeger(L, 1);
 
 	mov	edi, DWORD PTR _L$[esp+4]
 	push	1
 	push	edi
 	call	_lua_tointeger
 
-; 2707 : #endif
-; 2708 : 	if (iIndex < GC.getGame().GetGameCulture()->GetNumGreatWorks())
+; 2725 : #endif
+; 2726 : 	if (iIndex < GC.getGame().GetGameCulture()->GetNumGreatWorks())
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	add	esp, 8
@@ -18595,8 +19430,8 @@ _L$ = 8							; size = 4
 	cmp	esi, DWORD PTR [eax+4]
 	jge	SHORT $LN1@lGetGreatW@4
 
-; 2709 : 	{
-; 2710 : 		GreatWorkClass eGreatWork = GC.getGame().GetGameCulture()->GetGreatWorkClass(iIndex);
+; 2727 : 	{
+; 2728 : 		GreatWorkClass eGreatWork = GC.getGame().GetGameCulture()->GetGreatWorkClass(iIndex);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	esi
@@ -18604,7 +19439,7 @@ _L$ = 8							; size = 4
 	mov	ecx, eax
 	call	?GetGreatWorkClass@CvGameCulture@@QBE?AW4GreatWorkClass@@H@Z ; CvGameCulture::GetGreatWorkClass
 
-; 2711 : 		lua_pushinteger(L, eGreatWork);
+; 2729 : 		lua_pushinteger(L, eGreatWork);
 
 	push	eax
 	push	edi
@@ -18612,25 +19447,25 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	pop	edi
 
-; 2712 : 		return 1;
+; 2730 : 		return 1;
 
 	mov	eax, 1
 	pop	esi
 
-; 2716 : }
+; 2734 : }
 
 	ret	0
 $LN1@lGetGreatW@4:
 	pop	edi
 
-; 2713 : 	}
-; 2714 : 
-; 2715 : 	return 0;
+; 2731 : 	}
+; 2732 : 
+; 2733 : 	return 0;
 
 	xor	eax, eax
 	pop	esi
 
-; 2716 : }
+; 2734 : }
 
 	ret	0
 ?lGetGreatWorkClass@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lGetGreatWorkClass
@@ -18654,12 +19489,12 @@ __ehfuncinfo$?lGetGreatWorkArtist@CvLuaGame@@KAHPAUlua_State@@@Z DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?lGetGreatWorkArtist@CvLuaGame@@KAHPAUlua_State@@@Z
 _TEXT	SEGMENT
-_szTooltip$225262 = -40					; size = 28
+_szTooltip$225787 = -40					; size = 28
 __$EHRec$ = -12						; size = 12
 _L$ = 8							; size = 4
 ?lGetGreatWorkArtist@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetGreatWorkArtist, COMDAT
 
-; 2719 : {
+; 2737 : {
 
 	mov	eax, DWORD PTR fs:0
 	push	-1
@@ -18670,18 +19505,18 @@ _L$ = 8							; size = 4
 	push	esi
 	push	edi
 
-; 2720 : #ifdef AUI_WARNING_FIXES
-; 2721 : 	const uint iIndex = lua_tointeger(L, 1);
-; 2722 : #else
-; 2723 : 	const int iIndex = lua_tointeger(L, 1);
+; 2738 : #ifdef AUI_WARNING_FIXES
+; 2739 : 	const uint iIndex = lua_tointeger(L, 1);
+; 2740 : #else
+; 2741 : 	const int iIndex = lua_tointeger(L, 1);
 
 	mov	edi, DWORD PTR _L$[esp+44]
 	push	1
 	push	edi
 	call	_lua_tointeger
 
-; 2724 : #endif
-; 2725 : 	if (iIndex < GC.getGame().GetGameCulture()->GetNumGreatWorks())
+; 2742 : #endif
+; 2743 : 	if (iIndex < GC.getGame().GetGameCulture()->GetNumGreatWorks())
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	add	esp, 8
@@ -18690,20 +19525,20 @@ _L$ = 8							; size = 4
 	cmp	esi, DWORD PTR [eax+4]
 	jge	SHORT $LN1@lGetGreatW@5
 
-; 2726 : 	{
-; 2727 : 		CvString szTooltip = GC.getGame().GetGameCulture()->GetGreatWorkArtist(iIndex);
+; 2744 : 	{
+; 2745 : 		CvString szTooltip = GC.getGame().GetGameCulture()->GetGreatWorkArtist(iIndex);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	esi
-	lea	eax, DWORD PTR _szTooltip$225262[esp+52]
+	lea	eax, DWORD PTR _szTooltip$225787[esp+52]
 	push	eax
 	call	?GetGameCulture@CvGame@@QAEPAVCvGameCulture@@XZ ; CvGame::GetGameCulture
 	mov	ecx, eax
 	call	?GetGreatWorkArtist@CvGameCulture@@QBE?AVCvString@@H@Z ; CvGameCulture::GetGreatWorkArtist
 
-; 2728 : 		lua_pushstring(L, szTooltip);
+; 2746 : 		lua_pushstring(L, szTooltip);
 
-	lea	ecx, DWORD PTR _szTooltip$225262[esp+48]
+	lea	ecx, DWORD PTR _szTooltip$225787[esp+48]
 	mov	DWORD PTR __$EHRec$[esp+56], 0
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
@@ -18711,18 +19546,18 @@ _L$ = 8							; size = 4
 	call	_lua_pushstring
 	add	esp, 8
 
-; 2729 : 		return 1;
+; 2747 : 		return 1;
 
-	lea	ecx, DWORD PTR _szTooltip$225262[esp+48]
+	lea	ecx, DWORD PTR _szTooltip$225787[esp+48]
 	mov	DWORD PTR __$EHRec$[esp+56], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 	pop	edi
 	mov	eax, 1
 	pop	esi
 
-; 2730 : 	}
-; 2731 : 	return 0;
-; 2732 : }
+; 2748 : 	}
+; 2749 : 	return 0;
+; 2750 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -18740,7 +19575,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?lGetGreatWorkArtist@CvLuaGame@@KAHPAUlua_State@@@Z$0:
-	lea	ecx, DWORD PTR _szTooltip$225262[ebp]
+	lea	ecx, DWORD PTR _szTooltip$225787[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?lGetGreatWorkArtist@CvLuaGame@@KAHPAUlua_State@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?lGetGreatWorkArtist@CvLuaGame@@KAHPAUlua_State@@@Z
@@ -18766,12 +19601,12 @@ __ehfuncinfo$?lGetGreatWorkEra@CvLuaGame@@KAHPAUlua_State@@@Z DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?lGetGreatWorkEra@CvLuaGame@@KAHPAUlua_State@@@Z
 _TEXT	SEGMENT
-_szTooltip$225270 = -40					; size = 28
+_szTooltip$225795 = -40					; size = 28
 __$EHRec$ = -12						; size = 12
 _L$ = 8							; size = 4
 ?lGetGreatWorkEra@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lGetGreatWorkEra, COMDAT
 
-; 2735 : {
+; 2753 : {
 
 	mov	eax, DWORD PTR fs:0
 	push	-1
@@ -18782,18 +19617,18 @@ _L$ = 8							; size = 4
 	push	esi
 	push	edi
 
-; 2736 : #ifdef AUI_WARNING_FIXES
-; 2737 : 	const uint iIndex = lua_tointeger(L, 1);
-; 2738 : #else
-; 2739 : 	const int iIndex = lua_tointeger(L, 1);
+; 2754 : #ifdef AUI_WARNING_FIXES
+; 2755 : 	const uint iIndex = lua_tointeger(L, 1);
+; 2756 : #else
+; 2757 : 	const int iIndex = lua_tointeger(L, 1);
 
 	mov	edi, DWORD PTR _L$[esp+44]
 	push	1
 	push	edi
 	call	_lua_tointeger
 
-; 2740 : #endif
-; 2741 : 	if (iIndex < GC.getGame().GetGameCulture()->GetNumGreatWorks())
+; 2758 : #endif
+; 2759 : 	if (iIndex < GC.getGame().GetGameCulture()->GetNumGreatWorks())
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	add	esp, 8
@@ -18802,20 +19637,20 @@ _L$ = 8							; size = 4
 	cmp	esi, DWORD PTR [eax+4]
 	jge	SHORT $LN1@lGetGreatW@6
 
-; 2742 : 	{
-; 2743 : 		CvString szTooltip = GC.getGame().GetGameCulture()->GetGreatWorkEra(iIndex);
+; 2760 : 	{
+; 2761 : 		CvString szTooltip = GC.getGame().GetGameCulture()->GetGreatWorkEra(iIndex);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	esi
-	lea	eax, DWORD PTR _szTooltip$225270[esp+52]
+	lea	eax, DWORD PTR _szTooltip$225795[esp+52]
 	push	eax
 	call	?GetGameCulture@CvGame@@QAEPAVCvGameCulture@@XZ ; CvGame::GetGameCulture
 	mov	ecx, eax
 	call	?GetGreatWorkEra@CvGameCulture@@QBE?AVCvString@@H@Z ; CvGameCulture::GetGreatWorkEra
 
-; 2744 : 		lua_pushstring(L, szTooltip);
+; 2762 : 		lua_pushstring(L, szTooltip);
 
-	lea	ecx, DWORD PTR _szTooltip$225270[esp+48]
+	lea	ecx, DWORD PTR _szTooltip$225795[esp+48]
 	mov	DWORD PTR __$EHRec$[esp+56], 0
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
@@ -18823,18 +19658,18 @@ _L$ = 8							; size = 4
 	call	_lua_pushstring
 	add	esp, 8
 
-; 2745 : 		return 1;
+; 2763 : 		return 1;
 
-	lea	ecx, DWORD PTR _szTooltip$225270[esp+48]
+	lea	ecx, DWORD PTR _szTooltip$225795[esp+48]
 	mov	DWORD PTR __$EHRec$[esp+56], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 	pop	edi
 	mov	eax, 1
 	pop	esi
 
-; 2746 : 	}
-; 2747 : 	return 0;
-; 2748 : }
+; 2764 : 	}
+; 2765 : 	return 0;
+; 2766 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -18852,7 +19687,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?lGetGreatWorkEra@CvLuaGame@@KAHPAUlua_State@@@Z$0:
-	lea	ecx, DWORD PTR _szTooltip$225270[ebp]
+	lea	ecx, DWORD PTR _szTooltip$225795[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?lGetGreatWorkEra@CvLuaGame@@KAHPAUlua_State@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?lGetGreatWorkEra@CvLuaGame@@KAHPAUlua_State@@@Z
@@ -18878,12 +19713,12 @@ __ehfuncinfo$?lGetGreatWorkEraAbbreviation@CvLuaGame@@KAHPAUlua_State@@@Z DD 019
 xdata$x	ENDS
 ;	COMDAT ?lGetGreatWorkEraAbbreviation@CvLuaGame@@KAHPAUlua_State@@@Z
 _TEXT	SEGMENT
-_szTooltip$225278 = -40					; size = 28
+_szTooltip$225803 = -40					; size = 28
 __$EHRec$ = -12						; size = 12
 _L$ = 8							; size = 4
 ?lGetGreatWorkEraAbbreviation@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetGreatWorkEraAbbreviation, COMDAT
 
-; 2751 : {
+; 2769 : {
 
 	mov	eax, DWORD PTR fs:0
 	push	-1
@@ -18894,18 +19729,18 @@ _L$ = 8							; size = 4
 	push	esi
 	push	edi
 
-; 2752 : #ifdef AUI_WARNING_FIXES
-; 2753 : 	const uint iIndex = lua_tointeger(L, 1);
-; 2754 : #else
-; 2755 : 	const int iIndex = lua_tointeger(L, 1);
+; 2770 : #ifdef AUI_WARNING_FIXES
+; 2771 : 	const uint iIndex = lua_tointeger(L, 1);
+; 2772 : #else
+; 2773 : 	const int iIndex = lua_tointeger(L, 1);
 
 	mov	edi, DWORD PTR _L$[esp+44]
 	push	1
 	push	edi
 	call	_lua_tointeger
 
-; 2756 : #endif
-; 2757 : 	if (iIndex < GC.getGame().GetGameCulture()->GetNumGreatWorks())
+; 2774 : #endif
+; 2775 : 	if (iIndex < GC.getGame().GetGameCulture()->GetNumGreatWorks())
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	add	esp, 8
@@ -18914,20 +19749,20 @@ _L$ = 8							; size = 4
 	cmp	esi, DWORD PTR [eax+4]
 	jge	SHORT $LN1@lGetGreatW@7
 
-; 2758 : 	{
-; 2759 : 		CvString szTooltip = GC.getGame().GetGameCulture()->GetGreatWorkEraAbbreviation(iIndex);
+; 2776 : 	{
+; 2777 : 		CvString szTooltip = GC.getGame().GetGameCulture()->GetGreatWorkEraAbbreviation(iIndex);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	esi
-	lea	eax, DWORD PTR _szTooltip$225278[esp+52]
+	lea	eax, DWORD PTR _szTooltip$225803[esp+52]
 	push	eax
 	call	?GetGameCulture@CvGame@@QAEPAVCvGameCulture@@XZ ; CvGame::GetGameCulture
 	mov	ecx, eax
 	call	?GetGreatWorkEraAbbreviation@CvGameCulture@@QBE?AVCvString@@H@Z ; CvGameCulture::GetGreatWorkEraAbbreviation
 
-; 2760 : 		lua_pushstring(L, szTooltip);
+; 2778 : 		lua_pushstring(L, szTooltip);
 
-	lea	ecx, DWORD PTR _szTooltip$225278[esp+48]
+	lea	ecx, DWORD PTR _szTooltip$225803[esp+48]
 	mov	DWORD PTR __$EHRec$[esp+56], 0
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
@@ -18935,18 +19770,18 @@ _L$ = 8							; size = 4
 	call	_lua_pushstring
 	add	esp, 8
 
-; 2761 : 		return 1;
+; 2779 : 		return 1;
 
-	lea	ecx, DWORD PTR _szTooltip$225278[esp+48]
+	lea	ecx, DWORD PTR _szTooltip$225803[esp+48]
 	mov	DWORD PTR __$EHRec$[esp+56], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 	pop	edi
 	mov	eax, 1
 	pop	esi
 
-; 2762 : 	}
-; 2763 : 	return 0;
-; 2764 : }
+; 2780 : 	}
+; 2781 : 	return 0;
+; 2782 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -18964,7 +19799,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?lGetGreatWorkEraAbbreviation@CvLuaGame@@KAHPAUlua_State@@@Z$0:
-	lea	ecx, DWORD PTR _szTooltip$225278[ebp]
+	lea	ecx, DWORD PTR _szTooltip$225803[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?lGetGreatWorkEraAbbreviation@CvLuaGame@@KAHPAUlua_State@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?lGetGreatWorkEraAbbreviation@CvLuaGame@@KAHPAUlua_State@@@Z
@@ -18990,12 +19825,12 @@ __ehfuncinfo$?lGetGreatWorkEraShort@CvLuaGame@@KAHPAUlua_State@@@Z DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?lGetGreatWorkEraShort@CvLuaGame@@KAHPAUlua_State@@@Z
 _TEXT	SEGMENT
-_szTooltip$225286 = -40					; size = 28
+_szTooltip$225811 = -40					; size = 28
 __$EHRec$ = -12						; size = 12
 _L$ = 8							; size = 4
 ?lGetGreatWorkEraShort@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetGreatWorkEraShort, COMDAT
 
-; 2768 : {
+; 2786 : {
 
 	mov	eax, DWORD PTR fs:0
 	push	-1
@@ -19006,18 +19841,18 @@ _L$ = 8							; size = 4
 	push	esi
 	push	edi
 
-; 2769 : #ifdef AUI_WARNING_FIXES
-; 2770 : 	const uint iIndex = lua_tointeger(L, 1);
-; 2771 : #else
-; 2772 : 	const int iIndex = lua_tointeger(L, 1);
+; 2787 : #ifdef AUI_WARNING_FIXES
+; 2788 : 	const uint iIndex = lua_tointeger(L, 1);
+; 2789 : #else
+; 2790 : 	const int iIndex = lua_tointeger(L, 1);
 
 	mov	edi, DWORD PTR _L$[esp+44]
 	push	1
 	push	edi
 	call	_lua_tointeger
 
-; 2773 : #endif
-; 2774 : 	if (iIndex < GC.getGame().GetGameCulture()->GetNumGreatWorks())
+; 2791 : #endif
+; 2792 : 	if (iIndex < GC.getGame().GetGameCulture()->GetNumGreatWorks())
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	add	esp, 8
@@ -19026,20 +19861,20 @@ _L$ = 8							; size = 4
 	cmp	esi, DWORD PTR [eax+4]
 	jge	SHORT $LN1@lGetGreatW@8
 
-; 2775 : 	{
-; 2776 : 		CvString szTooltip = GC.getGame().GetGameCulture()->GetGreatWorkEraShort(iIndex);
+; 2793 : 	{
+; 2794 : 		CvString szTooltip = GC.getGame().GetGameCulture()->GetGreatWorkEraShort(iIndex);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	esi
-	lea	eax, DWORD PTR _szTooltip$225286[esp+52]
+	lea	eax, DWORD PTR _szTooltip$225811[esp+52]
 	push	eax
 	call	?GetGameCulture@CvGame@@QAEPAVCvGameCulture@@XZ ; CvGame::GetGameCulture
 	mov	ecx, eax
 	call	?GetGreatWorkEraShort@CvGameCulture@@QBE?AVCvString@@H@Z ; CvGameCulture::GetGreatWorkEraShort
 
-; 2777 : 		lua_pushstring(L, szTooltip);
+; 2795 : 		lua_pushstring(L, szTooltip);
 
-	lea	ecx, DWORD PTR _szTooltip$225286[esp+48]
+	lea	ecx, DWORD PTR _szTooltip$225811[esp+48]
 	mov	DWORD PTR __$EHRec$[esp+56], 0
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
@@ -19047,18 +19882,18 @@ _L$ = 8							; size = 4
 	call	_lua_pushstring
 	add	esp, 8
 
-; 2778 : 		return 1;
+; 2796 : 		return 1;
 
-	lea	ecx, DWORD PTR _szTooltip$225286[esp+48]
+	lea	ecx, DWORD PTR _szTooltip$225811[esp+48]
 	mov	DWORD PTR __$EHRec$[esp+56], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 	pop	edi
 	mov	eax, 1
 	pop	esi
 
-; 2779 : 	}
-; 2780 : 	return 0;
-; 2781 : }
+; 2797 : 	}
+; 2798 : 	return 0;
+; 2799 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+40]
 	mov	DWORD PTR fs:0, ecx
@@ -19076,7 +19911,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?lGetGreatWorkEraShort@CvLuaGame@@KAHPAUlua_State@@@Z$0:
-	lea	ecx, DWORD PTR _szTooltip$225286[ebp]
+	lea	ecx, DWORD PTR _szTooltip$225811[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?lGetGreatWorkEraShort@CvLuaGame@@KAHPAUlua_State@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?lGetGreatWorkEraShort@CvLuaGame@@KAHPAUlua_State@@@Z
@@ -19091,23 +19926,23 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetGreatWorkCreator@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetGreatWorkCreator, COMDAT
 
-; 2785 : {
+; 2803 : {
 
 	push	esi
 	push	edi
 
-; 2786 : #ifdef AUI_WARNING_FIXES
-; 2787 : 	const uint iIndex = lua_tointeger(L, 1);
-; 2788 : #else
-; 2789 : 	const int iIndex = lua_tointeger(L, 1);
+; 2804 : #ifdef AUI_WARNING_FIXES
+; 2805 : 	const uint iIndex = lua_tointeger(L, 1);
+; 2806 : #else
+; 2807 : 	const int iIndex = lua_tointeger(L, 1);
 
 	mov	edi, DWORD PTR _L$[esp+4]
 	push	1
 	push	edi
 	call	_lua_tointeger
 
-; 2790 : #endif
-; 2791 : 	if (iIndex < GC.getGame().GetGameCulture()->GetNumGreatWorks())
+; 2808 : #endif
+; 2809 : 	if (iIndex < GC.getGame().GetGameCulture()->GetNumGreatWorks())
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	add	esp, 8
@@ -19116,8 +19951,8 @@ _L$ = 8							; size = 4
 	cmp	esi, DWORD PTR [eax+4]
 	jge	SHORT $LN1@lGetGreatW@9
 
-; 2792 : 	{
-; 2793 : 		PlayerTypes ePlayer = GC.getGame().GetGameCulture()->GetGreatWorkCreator(iIndex);
+; 2810 : 	{
+; 2811 : 		PlayerTypes ePlayer = GC.getGame().GetGameCulture()->GetGreatWorkCreator(iIndex);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	esi
@@ -19125,7 +19960,7 @@ _L$ = 8							; size = 4
 	mov	ecx, eax
 	call	?GetGreatWorkCreator@CvGameCulture@@QBE?AW4PlayerTypes@@H@Z ; CvGameCulture::GetGreatWorkCreator
 
-; 2794 : 		lua_pushinteger(L, ePlayer);
+; 2812 : 		lua_pushinteger(L, ePlayer);
 
 	push	eax
 	push	edi
@@ -19133,24 +19968,24 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	pop	edi
 
-; 2795 : 		return 1;
+; 2813 : 		return 1;
 
 	mov	eax, 1
 	pop	esi
 
-; 2798 : }
+; 2816 : }
 
 	ret	0
 $LN1@lGetGreatW@9:
 	pop	edi
 
-; 2796 : 	}
-; 2797 : 	return 0;
+; 2814 : 	}
+; 2815 : 	return 0;
 
 	xor	eax, eax
 	pop	esi
 
-; 2798 : }
+; 2816 : }
 
 	ret	0
 ?lGetGreatWorkCreator@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lGetGreatWorkCreator
@@ -19163,23 +19998,23 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetGreatWorkController@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetGreatWorkController, COMDAT
 
-; 2802 : {
+; 2820 : {
 
 	push	esi
 	push	edi
 
-; 2803 : #ifdef AUI_WARNING_FIXES
-; 2804 : 	const uint iIndex = lua_tointeger(L, 1);
-; 2805 : #else
-; 2806 : 	const int iIndex = lua_tointeger(L, 1);
+; 2821 : #ifdef AUI_WARNING_FIXES
+; 2822 : 	const uint iIndex = lua_tointeger(L, 1);
+; 2823 : #else
+; 2824 : 	const int iIndex = lua_tointeger(L, 1);
 
 	mov	edi, DWORD PTR _L$[esp+4]
 	push	1
 	push	edi
 	call	_lua_tointeger
 
-; 2807 : #endif
-; 2808 : 	if (iIndex < GC.getGame().GetGameCulture()->GetNumGreatWorks())
+; 2825 : #endif
+; 2826 : 	if (iIndex < GC.getGame().GetGameCulture()->GetNumGreatWorks())
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	add	esp, 8
@@ -19188,8 +20023,8 @@ _L$ = 8							; size = 4
 	cmp	esi, DWORD PTR [eax+4]
 	jge	SHORT $LN1@lGetGreatW@10
 
-; 2809 : 	{
-; 2810 : 		PlayerTypes ePlayer = GC.getGame().GetGameCulture()->GetGreatWorkController(iIndex);
+; 2827 : 	{
+; 2828 : 		PlayerTypes ePlayer = GC.getGame().GetGameCulture()->GetGreatWorkController(iIndex);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	esi
@@ -19197,7 +20032,7 @@ _L$ = 8							; size = 4
 	mov	ecx, eax
 	call	?GetGreatWorkController@CvGameCulture@@QBE?AW4PlayerTypes@@H@Z ; CvGameCulture::GetGreatWorkController
 
-; 2811 : 		lua_pushinteger(L, ePlayer);
+; 2829 : 		lua_pushinteger(L, ePlayer);
 
 	push	eax
 	push	edi
@@ -19205,24 +20040,24 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	pop	edi
 
-; 2812 : 		return 1;
+; 2830 : 		return 1;
 
 	mov	eax, 1
 	pop	esi
 
-; 2815 : }
+; 2833 : }
 
 	ret	0
 $LN1@lGetGreatW@10:
 	pop	edi
 
-; 2813 : 	}
-; 2814 : 	return 0;
+; 2831 : 	}
+; 2832 : 	return 0;
 
 	xor	eax, eax
 	pop	esi
 
-; 2815 : }
+; 2833 : }
 
 	ret	0
 ?lGetGreatWorkController@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lGetGreatWorkController
@@ -19235,23 +20070,23 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lGetGreatWorkCurrentThemingBonus@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetGreatWorkCurrentThemingBonus, COMDAT
 
-; 2819 : {
+; 2837 : {
 
 	push	esi
 	push	edi
 
-; 2820 : #ifdef AUI_WARNING_FIXES
-; 2821 : 	const uint iIndex = lua_tointeger(L, 1);
-; 2822 : #else
-; 2823 : 	const int iIndex = lua_tointeger(L, 1);
+; 2838 : #ifdef AUI_WARNING_FIXES
+; 2839 : 	const uint iIndex = lua_tointeger(L, 1);
+; 2840 : #else
+; 2841 : 	const int iIndex = lua_tointeger(L, 1);
 
 	mov	edi, DWORD PTR _L$[esp+4]
 	push	1
 	push	edi
 	call	_lua_tointeger
 
-; 2824 : #endif
-; 2825 : 	if (iIndex < GC.getGame().GetGameCulture()->GetNumGreatWorks())
+; 2842 : #endif
+; 2843 : 	if (iIndex < GC.getGame().GetGameCulture()->GetNumGreatWorks())
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	add	esp, 8
@@ -19260,8 +20095,8 @@ _L$ = 8							; size = 4
 	cmp	esi, DWORD PTR [eax+4]
 	jge	SHORT $LN1@lGetGreatW@11
 
-; 2826 : 	{
-; 2827 : 		int iBonus = GC.getGame().GetGameCulture()->GetGreatWorkCurrentThemingBonus(iIndex);
+; 2844 : 	{
+; 2845 : 		int iBonus = GC.getGame().GetGameCulture()->GetGreatWorkCurrentThemingBonus(iIndex);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	esi
@@ -19269,7 +20104,7 @@ _L$ = 8							; size = 4
 	mov	ecx, eax
 	call	?GetGreatWorkCurrentThemingBonus@CvGameCulture@@QBEHH@Z ; CvGameCulture::GetGreatWorkCurrentThemingBonus
 
-; 2828 : 		lua_pushinteger(L, iBonus);
+; 2846 : 		lua_pushinteger(L, iBonus);
 
 	push	eax
 	push	edi
@@ -19277,24 +20112,24 @@ _L$ = 8							; size = 4
 	add	esp, 8
 	pop	edi
 
-; 2829 : 		return 1;
+; 2847 : 		return 1;
 
 	mov	eax, 1
 	pop	esi
 
-; 2832 : }
+; 2850 : }
 
 	ret	0
 $LN1@lGetGreatW@11:
 	pop	edi
 
-; 2830 : 	}
-; 2831 : 	return 0;
+; 2848 : 	}
+; 2849 : 	return 0;
 
 	xor	eax, eax
 	pop	esi
 
-; 2832 : }
+; 2850 : }
 
 	ret	0
 ?lGetGreatWorkCurrentThemingBonus@CvLuaGame@@KAHPAUlua_State@@@Z ENDP ; CvLuaGame::lGetGreatWorkCurrentThemingBonus
@@ -19364,11 +20199,11 @@ _TEXT	SEGMENT
 _L$ = 8							; size = 4
 ?lDoMinorGoldGift@CvLuaGame@@KAHPAUlua_State@@@Z PROC	; CvLuaGame::lDoMinorGoldGift, COMDAT
 
-; 1745 : {
+; 1763 : {
 
 	push	esi
 
-; 1746 : 	return lDoMinorGiftGold(L);
+; 1764 : 	return lDoMinorGiftGold(L);
 
 	mov	esi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	edi
@@ -19389,7 +20224,7 @@ _L$ = 8							; size = 4
 	xor	eax, eax
 	pop	esi
 
-; 1747 : }
+; 1765 : }
 
 	ret	0
 ?lDoMinorGoldGift@CvLuaGame@@KAHPAUlua_State@@@Z ENDP	; CvLuaGame::lDoMinorGoldGift
@@ -19512,7 +20347,7 @@ _availableBeliefs$ = -16				; size = 16
 _L$ = 8							; size = 4
 ?lGetAvailablePantheonBeliefs@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetAvailablePantheonBeliefs, COMDAT
 
-; 2164 : {
+; 2182 : {
 
 	sub	esp, 16					; 00000010H
 	push	ebx
@@ -19520,7 +20355,7 @@ _L$ = 8							; size = 4
 	push	esi
 	push	edi
 
-; 2165 : 	lua_createtable(L, 0, 0);
+; 2183 : 	lua_createtable(L, 0, 0);
 
 	mov	edi, DWORD PTR _L$[esp+28]
 	push	0
@@ -19528,18 +20363,18 @@ _L$ = 8							; size = 4
 	push	edi
 	call	_lua_createtable
 
-; 2166 : 	const int t = lua_gettop(L);
+; 2184 : 	const int t = lua_gettop(L);
 
 	push	edi
 	call	_lua_gettop
 
-; 2167 : 	int idx = 1;
-; 2168 : 
-; 2169 : #ifdef AUI_WARNING_FIXES
-; 2170 : 	const std::vector<BeliefTypes>& availableBeliefs = GC.getGame().GetGameReligions()->GetAvailablePantheonBeliefs();
-; 2171 : 	for (std::vector<BeliefTypes>::const_iterator it = availableBeliefs.begin(); it != availableBeliefs.end(); ++it)
-; 2172 : #else
-; 2173 : 	std::vector<BeliefTypes> availableBeliefs = GC.getGame().GetGameReligions()->GetAvailablePantheonBeliefs();
+; 2185 : 	int idx = 1;
+; 2186 : 
+; 2187 : #ifdef AUI_WARNING_FIXES
+; 2188 : 	const std::vector<BeliefTypes>& availableBeliefs = GC.getGame().GetGameReligions()->GetAvailablePantheonBeliefs();
+; 2189 : 	for (std::vector<BeliefTypes>::const_iterator it = availableBeliefs.begin(); it != availableBeliefs.end(); ++it)
+; 2190 : #else
+; 2191 : 	std::vector<BeliefTypes> availableBeliefs = GC.getGame().GetGameReligions()->GetAvailablePantheonBeliefs();
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	mov	ebp, eax
@@ -19551,27 +20386,27 @@ _L$ = 8							; size = 4
 	mov	ecx, eax
 	call	?GetAvailablePantheonBeliefs@CvGameReligions@@QAE?AV?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@XZ ; CvGameReligions::GetAvailablePantheonBeliefs
 
-; 2174 : 	for(std::vector<BeliefTypes>::iterator it = availableBeliefs.begin();
+; 2192 : 	for(std::vector<BeliefTypes>::iterator it = availableBeliefs.begin();
 
 	mov	esi, DWORD PTR _availableBeliefs$[esp+36]
 
-; 2175 : 	        it!= availableBeliefs.end(); ++it)
+; 2193 : 	        it!= availableBeliefs.end(); ++it)
 
 	cmp	esi, DWORD PTR _availableBeliefs$[esp+40]
 	je	SHORT $LN1@lGetAvaila
 $LL17@lGetAvaila:
 
-; 2176 : #endif
-; 2177 : 	{
-; 2178 : 		const BeliefTypes eBelief = (*it);
-; 2179 : 		lua_pushinteger(L, eBelief);
+; 2194 : #endif
+; 2195 : 	{
+; 2196 : 		const BeliefTypes eBelief = (*it);
+; 2197 : 		lua_pushinteger(L, eBelief);
 
 	mov	ecx, DWORD PTR [esi]
 	push	ecx
 	push	edi
 	call	_lua_pushinteger
 
-; 2180 : 		lua_rawseti(L, t, idx++);
+; 2198 : 		lua_rawseti(L, t, idx++);
 
 	push	ebx
 	push	ebp
@@ -19583,14 +20418,14 @@ $LL17@lGetAvaila:
 	cmp	esi, DWORD PTR _availableBeliefs$[esp+40]
 	jne	SHORT $LL17@lGetAvaila
 
-; 2175 : 	        it!= availableBeliefs.end(); ++it)
+; 2193 : 	        it!= availableBeliefs.end(); ++it)
 
 	mov	esi, DWORD PTR _availableBeliefs$[esp+36]
 $LN1@lGetAvaila:
 
-; 2181 : 	}
-; 2182 : 
-; 2183 : 	return 1;
+; 2199 : 	}
+; 2200 : 
+; 2201 : 	return 1;
 
 	test	esi, esi
 	je	SHORT $LN42@lGetAvaila
@@ -19604,7 +20439,7 @@ $LN42@lGetAvaila:
 	mov	eax, 1
 	pop	ebx
 
-; 2184 : }
+; 2202 : }
 
 	add	esp, 16					; 00000010H
 	ret	0
@@ -19619,7 +20454,7 @@ _availableBeliefs$ = -16				; size = 16
 _L$ = 8							; size = 4
 ?lGetAvailableFounderBeliefs@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetAvailableFounderBeliefs, COMDAT
 
-; 2187 : {
+; 2205 : {
 
 	sub	esp, 16					; 00000010H
 	push	ebx
@@ -19627,7 +20462,7 @@ _L$ = 8							; size = 4
 	push	esi
 	push	edi
 
-; 2188 : 	lua_createtable(L, 0, 0);
+; 2206 : 	lua_createtable(L, 0, 0);
 
 	mov	edi, DWORD PTR _L$[esp+28]
 	push	0
@@ -19635,18 +20470,18 @@ _L$ = 8							; size = 4
 	push	edi
 	call	_lua_createtable
 
-; 2189 : 	const int t = lua_gettop(L);
+; 2207 : 	const int t = lua_gettop(L);
 
 	push	edi
 	call	_lua_gettop
 
-; 2190 : 	int idx = 1;
-; 2191 : 
-; 2192 : #ifdef AUI_WARNING_FIXES
-; 2193 : 	const std::vector<BeliefTypes>& availableBeliefs = GC.getGame().GetGameReligions()->GetAvailableFounderBeliefs();
-; 2194 : 	for (std::vector<BeliefTypes>::const_iterator it = availableBeliefs.begin(); it != availableBeliefs.end(); ++it)
-; 2195 : #else
-; 2196 : 	std::vector<BeliefTypes> availableBeliefs = GC.getGame().GetGameReligions()->GetAvailableFounderBeliefs();
+; 2208 : 	int idx = 1;
+; 2209 : 
+; 2210 : #ifdef AUI_WARNING_FIXES
+; 2211 : 	const std::vector<BeliefTypes>& availableBeliefs = GC.getGame().GetGameReligions()->GetAvailableFounderBeliefs();
+; 2212 : 	for (std::vector<BeliefTypes>::const_iterator it = availableBeliefs.begin(); it != availableBeliefs.end(); ++it)
+; 2213 : #else
+; 2214 : 	std::vector<BeliefTypes> availableBeliefs = GC.getGame().GetGameReligions()->GetAvailableFounderBeliefs();
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	mov	ebp, eax
@@ -19658,27 +20493,27 @@ _L$ = 8							; size = 4
 	mov	ecx, eax
 	call	?GetAvailableFounderBeliefs@CvGameReligions@@QAE?AV?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@XZ ; CvGameReligions::GetAvailableFounderBeliefs
 
-; 2197 : 	for(std::vector<BeliefTypes>::iterator it = availableBeliefs.begin();
+; 2215 : 	for(std::vector<BeliefTypes>::iterator it = availableBeliefs.begin();
 
 	mov	esi, DWORD PTR _availableBeliefs$[esp+36]
 
-; 2198 : 	        it!= availableBeliefs.end(); ++it)
+; 2216 : 	        it!= availableBeliefs.end(); ++it)
 
 	cmp	esi, DWORD PTR _availableBeliefs$[esp+40]
 	je	SHORT $LN1@lGetAvaila@2
 $LL17@lGetAvaila@2:
 
-; 2199 : #endif
-; 2200 : 	{
-; 2201 : 		const BeliefTypes eBelief = (*it);
-; 2202 : 		lua_pushinteger(L, eBelief);
+; 2217 : #endif
+; 2218 : 	{
+; 2219 : 		const BeliefTypes eBelief = (*it);
+; 2220 : 		lua_pushinteger(L, eBelief);
 
 	mov	ecx, DWORD PTR [esi]
 	push	ecx
 	push	edi
 	call	_lua_pushinteger
 
-; 2203 : 		lua_rawseti(L, t, idx++);
+; 2221 : 		lua_rawseti(L, t, idx++);
 
 	push	ebx
 	push	ebp
@@ -19690,14 +20525,14 @@ $LL17@lGetAvaila@2:
 	cmp	esi, DWORD PTR _availableBeliefs$[esp+40]
 	jne	SHORT $LL17@lGetAvaila@2
 
-; 2198 : 	        it!= availableBeliefs.end(); ++it)
+; 2216 : 	        it!= availableBeliefs.end(); ++it)
 
 	mov	esi, DWORD PTR _availableBeliefs$[esp+36]
 $LN1@lGetAvaila@2:
 
-; 2204 : 	}
-; 2205 : 
-; 2206 : 	return 1;
+; 2222 : 	}
+; 2223 : 
+; 2224 : 	return 1;
 
 	test	esi, esi
 	je	SHORT $LN42@lGetAvaila@2
@@ -19711,7 +20546,7 @@ $LN42@lGetAvaila@2:
 	mov	eax, 1
 	pop	ebx
 
-; 2207 : }
+; 2225 : }
 
 	add	esp, 16					; 00000010H
 	ret	0
@@ -19726,7 +20561,7 @@ _availableBeliefs$ = -16				; size = 16
 _L$ = 8							; size = 4
 ?lGetAvailableFollowerBeliefs@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetAvailableFollowerBeliefs, COMDAT
 
-; 2210 : {
+; 2228 : {
 
 	sub	esp, 16					; 00000010H
 	push	ebx
@@ -19734,7 +20569,7 @@ _L$ = 8							; size = 4
 	push	esi
 	push	edi
 
-; 2211 : 	lua_createtable(L, 0, 0);
+; 2229 : 	lua_createtable(L, 0, 0);
 
 	mov	edi, DWORD PTR _L$[esp+28]
 	push	0
@@ -19742,18 +20577,18 @@ _L$ = 8							; size = 4
 	push	edi
 	call	_lua_createtable
 
-; 2212 : 	const int t = lua_gettop(L);
+; 2230 : 	const int t = lua_gettop(L);
 
 	push	edi
 	call	_lua_gettop
 
-; 2213 : 	int idx = 1;
-; 2214 : 
-; 2215 : #ifdef AUI_WARNING_FIXES
-; 2216 : 	const std::vector<BeliefTypes>& availableBeliefs = GC.getGame().GetGameReligions()->GetAvailableFollowerBeliefs();
-; 2217 : 	for (std::vector<BeliefTypes>::const_iterator it = availableBeliefs.begin(); it != availableBeliefs.end(); ++it)
-; 2218 : #else
-; 2219 : 	std::vector<BeliefTypes> availableBeliefs = GC.getGame().GetGameReligions()->GetAvailableFollowerBeliefs();
+; 2231 : 	int idx = 1;
+; 2232 : 
+; 2233 : #ifdef AUI_WARNING_FIXES
+; 2234 : 	const std::vector<BeliefTypes>& availableBeliefs = GC.getGame().GetGameReligions()->GetAvailableFollowerBeliefs();
+; 2235 : 	for (std::vector<BeliefTypes>::const_iterator it = availableBeliefs.begin(); it != availableBeliefs.end(); ++it)
+; 2236 : #else
+; 2237 : 	std::vector<BeliefTypes> availableBeliefs = GC.getGame().GetGameReligions()->GetAvailableFollowerBeliefs();
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	mov	ebp, eax
@@ -19765,27 +20600,27 @@ _L$ = 8							; size = 4
 	mov	ecx, eax
 	call	?GetAvailableFollowerBeliefs@CvGameReligions@@QAE?AV?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@XZ ; CvGameReligions::GetAvailableFollowerBeliefs
 
-; 2220 : 	for(std::vector<BeliefTypes>::iterator it = availableBeliefs.begin();
+; 2238 : 	for(std::vector<BeliefTypes>::iterator it = availableBeliefs.begin();
 
 	mov	esi, DWORD PTR _availableBeliefs$[esp+36]
 
-; 2221 : 	        it!= availableBeliefs.end(); ++it)
+; 2239 : 	        it!= availableBeliefs.end(); ++it)
 
 	cmp	esi, DWORD PTR _availableBeliefs$[esp+40]
 	je	SHORT $LN1@lGetAvaila@3
 $LL17@lGetAvaila@3:
 
-; 2222 : #endif
-; 2223 : 	{
-; 2224 : 		const BeliefTypes eBelief = (*it);
-; 2225 : 		lua_pushinteger(L, eBelief);
+; 2240 : #endif
+; 2241 : 	{
+; 2242 : 		const BeliefTypes eBelief = (*it);
+; 2243 : 		lua_pushinteger(L, eBelief);
 
 	mov	ecx, DWORD PTR [esi]
 	push	ecx
 	push	edi
 	call	_lua_pushinteger
 
-; 2226 : 		lua_rawseti(L, t, idx++);
+; 2244 : 		lua_rawseti(L, t, idx++);
 
 	push	ebx
 	push	ebp
@@ -19797,14 +20632,14 @@ $LL17@lGetAvaila@3:
 	cmp	esi, DWORD PTR _availableBeliefs$[esp+40]
 	jne	SHORT $LL17@lGetAvaila@3
 
-; 2221 : 	        it!= availableBeliefs.end(); ++it)
+; 2239 : 	        it!= availableBeliefs.end(); ++it)
 
 	mov	esi, DWORD PTR _availableBeliefs$[esp+36]
 $LN1@lGetAvaila@3:
 
-; 2227 : 	}
-; 2228 : 
-; 2229 : 	return 1;
+; 2245 : 	}
+; 2246 : 
+; 2247 : 	return 1;
 
 	test	esi, esi
 	je	SHORT $LN42@lGetAvaila@3
@@ -19818,7 +20653,7 @@ $LN42@lGetAvaila@3:
 	mov	eax, 1
 	pop	ebx
 
-; 2230 : }
+; 2248 : }
 
 	add	esp, 16					; 00000010H
 	ret	0
@@ -19833,7 +20668,7 @@ _availableBeliefs$ = -16				; size = 16
 _L$ = 8							; size = 4
 ?lGetAvailableEnhancerBeliefs@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetAvailableEnhancerBeliefs, COMDAT
 
-; 2233 : {
+; 2251 : {
 
 	sub	esp, 16					; 00000010H
 	push	ebx
@@ -19841,7 +20676,7 @@ _L$ = 8							; size = 4
 	push	esi
 	push	edi
 
-; 2234 : 	lua_createtable(L, 0, 0);
+; 2252 : 	lua_createtable(L, 0, 0);
 
 	mov	edi, DWORD PTR _L$[esp+28]
 	push	0
@@ -19849,18 +20684,18 @@ _L$ = 8							; size = 4
 	push	edi
 	call	_lua_createtable
 
-; 2235 : 	const int t = lua_gettop(L);
+; 2253 : 	const int t = lua_gettop(L);
 
 	push	edi
 	call	_lua_gettop
 
-; 2236 : 	int idx = 1;
-; 2237 : 
-; 2238 : #ifdef AUI_WARNING_FIXES
-; 2239 : 	const std::vector<BeliefTypes>& availableBeliefs = GC.getGame().GetGameReligions()->GetAvailableEnhancerBeliefs();
-; 2240 : 	for (std::vector<BeliefTypes>::const_iterator it = availableBeliefs.begin(); it != availableBeliefs.end(); ++it)
-; 2241 : #else
-; 2242 : 	std::vector<BeliefTypes> availableBeliefs = GC.getGame().GetGameReligions()->GetAvailableEnhancerBeliefs();
+; 2254 : 	int idx = 1;
+; 2255 : 
+; 2256 : #ifdef AUI_WARNING_FIXES
+; 2257 : 	const std::vector<BeliefTypes>& availableBeliefs = GC.getGame().GetGameReligions()->GetAvailableEnhancerBeliefs();
+; 2258 : 	for (std::vector<BeliefTypes>::const_iterator it = availableBeliefs.begin(); it != availableBeliefs.end(); ++it)
+; 2259 : #else
+; 2260 : 	std::vector<BeliefTypes> availableBeliefs = GC.getGame().GetGameReligions()->GetAvailableEnhancerBeliefs();
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	mov	ebp, eax
@@ -19872,27 +20707,27 @@ _L$ = 8							; size = 4
 	mov	ecx, eax
 	call	?GetAvailableEnhancerBeliefs@CvGameReligions@@QAE?AV?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@XZ ; CvGameReligions::GetAvailableEnhancerBeliefs
 
-; 2243 : 	for(std::vector<BeliefTypes>::iterator it = availableBeliefs.begin();
+; 2261 : 	for(std::vector<BeliefTypes>::iterator it = availableBeliefs.begin();
 
 	mov	esi, DWORD PTR _availableBeliefs$[esp+36]
 
-; 2244 : 	        it!= availableBeliefs.end(); ++it)
+; 2262 : 	        it!= availableBeliefs.end(); ++it)
 
 	cmp	esi, DWORD PTR _availableBeliefs$[esp+40]
 	je	SHORT $LN1@lGetAvaila@4
 $LL17@lGetAvaila@4:
 
-; 2245 : #endif
-; 2246 : 	{
-; 2247 : 		const BeliefTypes eBelief = (*it);
-; 2248 : 		lua_pushinteger(L, eBelief);
+; 2263 : #endif
+; 2264 : 	{
+; 2265 : 		const BeliefTypes eBelief = (*it);
+; 2266 : 		lua_pushinteger(L, eBelief);
 
 	mov	ecx, DWORD PTR [esi]
 	push	ecx
 	push	edi
 	call	_lua_pushinteger
 
-; 2249 : 		lua_rawseti(L, t, idx++);
+; 2267 : 		lua_rawseti(L, t, idx++);
 
 	push	ebx
 	push	ebp
@@ -19904,14 +20739,14 @@ $LL17@lGetAvaila@4:
 	cmp	esi, DWORD PTR _availableBeliefs$[esp+40]
 	jne	SHORT $LL17@lGetAvaila@4
 
-; 2244 : 	        it!= availableBeliefs.end(); ++it)
+; 2262 : 	        it!= availableBeliefs.end(); ++it)
 
 	mov	esi, DWORD PTR _availableBeliefs$[esp+36]
 $LN1@lGetAvaila@4:
 
-; 2250 : 	}
-; 2251 : 
-; 2252 : 	return 1;
+; 2268 : 	}
+; 2269 : 
+; 2270 : 	return 1;
 
 	test	esi, esi
 	je	SHORT $LN42@lGetAvaila@4
@@ -19925,7 +20760,7 @@ $LN42@lGetAvaila@4:
 	mov	eax, 1
 	pop	ebx
 
-; 2253 : }
+; 2271 : }
 
 	add	esp, 16					; 00000010H
 	ret	0
@@ -19940,7 +20775,7 @@ _availableBeliefs$ = -16				; size = 16
 _L$ = 8							; size = 4
 ?lGetAvailableBonusBeliefs@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetAvailableBonusBeliefs, COMDAT
 
-; 2256 : {
+; 2274 : {
 
 	sub	esp, 16					; 00000010H
 	push	ebx
@@ -19948,7 +20783,7 @@ _L$ = 8							; size = 4
 	push	esi
 	push	edi
 
-; 2257 : 	lua_createtable(L, 0, 0);
+; 2275 : 	lua_createtable(L, 0, 0);
 
 	mov	edi, DWORD PTR _L$[esp+28]
 	push	0
@@ -19956,18 +20791,18 @@ _L$ = 8							; size = 4
 	push	edi
 	call	_lua_createtable
 
-; 2258 : 	const int t = lua_gettop(L);
+; 2276 : 	const int t = lua_gettop(L);
 
 	push	edi
 	call	_lua_gettop
 
-; 2259 : 	int idx = 1;
-; 2260 : 
-; 2261 : #ifdef AUI_WARNING_FIXES
-; 2262 : 	const std::vector<BeliefTypes>& availableBeliefs = GC.getGame().GetGameReligions()->GetAvailableBonusBeliefs();
-; 2263 : 	for (std::vector<BeliefTypes>::const_iterator it = availableBeliefs.begin(); it != availableBeliefs.end(); ++it)
-; 2264 : #else
-; 2265 : 	std::vector<BeliefTypes> availableBeliefs = GC.getGame().GetGameReligions()->GetAvailableBonusBeliefs();
+; 2277 : 	int idx = 1;
+; 2278 : 
+; 2279 : #ifdef AUI_WARNING_FIXES
+; 2280 : 	const std::vector<BeliefTypes>& availableBeliefs = GC.getGame().GetGameReligions()->GetAvailableBonusBeliefs();
+; 2281 : 	for (std::vector<BeliefTypes>::const_iterator it = availableBeliefs.begin(); it != availableBeliefs.end(); ++it)
+; 2282 : #else
+; 2283 : 	std::vector<BeliefTypes> availableBeliefs = GC.getGame().GetGameReligions()->GetAvailableBonusBeliefs();
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	mov	ebp, eax
@@ -19979,27 +20814,27 @@ _L$ = 8							; size = 4
 	mov	ecx, eax
 	call	?GetAvailableBonusBeliefs@CvGameReligions@@QAE?AV?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@XZ ; CvGameReligions::GetAvailableBonusBeliefs
 
-; 2266 : 	for(std::vector<BeliefTypes>::iterator it = availableBeliefs.begin();
+; 2284 : 	for(std::vector<BeliefTypes>::iterator it = availableBeliefs.begin();
 
 	mov	esi, DWORD PTR _availableBeliefs$[esp+36]
 
-; 2267 : 	        it!= availableBeliefs.end(); ++it)
+; 2285 : 	        it!= availableBeliefs.end(); ++it)
 
 	cmp	esi, DWORD PTR _availableBeliefs$[esp+40]
 	je	SHORT $LN1@lGetAvaila@5
 $LL17@lGetAvaila@5:
 
-; 2268 : #endif
-; 2269 : 	{
-; 2270 : 		const BeliefTypes eBelief = (*it);
-; 2271 : 		lua_pushinteger(L, eBelief);
+; 2286 : #endif
+; 2287 : 	{
+; 2288 : 		const BeliefTypes eBelief = (*it);
+; 2289 : 		lua_pushinteger(L, eBelief);
 
 	mov	ecx, DWORD PTR [esi]
 	push	ecx
 	push	edi
 	call	_lua_pushinteger
 
-; 2272 : 		lua_rawseti(L, t, idx++);
+; 2290 : 		lua_rawseti(L, t, idx++);
 
 	push	ebx
 	push	ebp
@@ -20011,14 +20846,14 @@ $LL17@lGetAvaila@5:
 	cmp	esi, DWORD PTR _availableBeliefs$[esp+40]
 	jne	SHORT $LL17@lGetAvaila@5
 
-; 2267 : 	        it!= availableBeliefs.end(); ++it)
+; 2285 : 	        it!= availableBeliefs.end(); ++it)
 
 	mov	esi, DWORD PTR _availableBeliefs$[esp+36]
 $LN1@lGetAvaila@5:
 
-; 2273 : 	}
-; 2274 : 
-; 2275 : 	return 1;
+; 2291 : 	}
+; 2292 : 
+; 2293 : 	return 1;
 
 	test	esi, esi
 	je	SHORT $LN42@lGetAvaila@5
@@ -20032,7 +20867,7 @@ $LN42@lGetAvaila@5:
 	mov	eax, 1
 	pop	ebx
 
-; 2276 : }
+; 2294 : }
 
 	add	esp, 16					; 00000010H
 	ret	0
@@ -20047,7 +20882,7 @@ _availableBeliefs$ = -16				; size = 16
 _L$ = 8							; size = 4
 ?lGetAvailableReformationBeliefs@CvLuaGame@@KAHPAUlua_State@@@Z PROC ; CvLuaGame::lGetAvailableReformationBeliefs, COMDAT
 
-; 2279 : {
+; 2297 : {
 
 	sub	esp, 16					; 00000010H
 	push	ebx
@@ -20055,7 +20890,7 @@ _L$ = 8							; size = 4
 	push	esi
 	push	edi
 
-; 2280 : 	lua_createtable(L, 0, 0);
+; 2298 : 	lua_createtable(L, 0, 0);
 
 	mov	edi, DWORD PTR _L$[esp+28]
 	push	0
@@ -20063,18 +20898,18 @@ _L$ = 8							; size = 4
 	push	edi
 	call	_lua_createtable
 
-; 2281 : 	const int t = lua_gettop(L);
+; 2299 : 	const int t = lua_gettop(L);
 
 	push	edi
 	call	_lua_gettop
 
-; 2282 : 	int idx = 1;
-; 2283 : 
-; 2284 : #ifdef AUI_WARNING_FIXES
-; 2285 : 	const std::vector<BeliefTypes>& availableBeliefs = GC.getGame().GetGameReligions()->GetAvailableReformationBeliefs();
-; 2286 : 	for (std::vector<BeliefTypes>::const_iterator it = availableBeliefs.begin(); it != availableBeliefs.end(); ++it)
-; 2287 : #else
-; 2288 : 	std::vector<BeliefTypes> availableBeliefs = GC.getGame().GetGameReligions()->GetAvailableReformationBeliefs();
+; 2300 : 	int idx = 1;
+; 2301 : 
+; 2302 : #ifdef AUI_WARNING_FIXES
+; 2303 : 	const std::vector<BeliefTypes>& availableBeliefs = GC.getGame().GetGameReligions()->GetAvailableReformationBeliefs();
+; 2304 : 	for (std::vector<BeliefTypes>::const_iterator it = availableBeliefs.begin(); it != availableBeliefs.end(); ++it)
+; 2305 : #else
+; 2306 : 	std::vector<BeliefTypes> availableBeliefs = GC.getGame().GetGameReligions()->GetAvailableReformationBeliefs();
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	mov	ebp, eax
@@ -20086,27 +20921,27 @@ _L$ = 8							; size = 4
 	mov	ecx, eax
 	call	?GetAvailableReformationBeliefs@CvGameReligions@@QAE?AV?$vector@W4BeliefTypes@@V?$allocator@W4BeliefTypes@@@std@@@std@@XZ ; CvGameReligions::GetAvailableReformationBeliefs
 
-; 2289 : 	for(std::vector<BeliefTypes>::iterator it = availableBeliefs.begin();
+; 2307 : 	for(std::vector<BeliefTypes>::iterator it = availableBeliefs.begin();
 
 	mov	esi, DWORD PTR _availableBeliefs$[esp+36]
 
-; 2290 : 	        it!= availableBeliefs.end(); ++it)
+; 2308 : 	        it!= availableBeliefs.end(); ++it)
 
 	cmp	esi, DWORD PTR _availableBeliefs$[esp+40]
 	je	SHORT $LN1@lGetAvaila@6
 $LL17@lGetAvaila@6:
 
-; 2291 : #endif
-; 2292 : 	{
-; 2293 : 		const BeliefTypes eBelief = (*it);
-; 2294 : 		lua_pushinteger(L, eBelief);
+; 2309 : #endif
+; 2310 : 	{
+; 2311 : 		const BeliefTypes eBelief = (*it);
+; 2312 : 		lua_pushinteger(L, eBelief);
 
 	mov	ecx, DWORD PTR [esi]
 	push	ecx
 	push	edi
 	call	_lua_pushinteger
 
-; 2295 : 		lua_rawseti(L, t, idx++);
+; 2313 : 		lua_rawseti(L, t, idx++);
 
 	push	ebx
 	push	ebp
@@ -20118,14 +20953,14 @@ $LL17@lGetAvaila@6:
 	cmp	esi, DWORD PTR _availableBeliefs$[esp+40]
 	jne	SHORT $LL17@lGetAvaila@6
 
-; 2290 : 	        it!= availableBeliefs.end(); ++it)
+; 2308 : 	        it!= availableBeliefs.end(); ++it)
 
 	mov	esi, DWORD PTR _availableBeliefs$[esp+36]
 $LN1@lGetAvaila@6:
 
-; 2296 : 	}
-; 2297 : 
-; 2298 : 	return 1;
+; 2314 : 	}
+; 2315 : 
+; 2316 : 	return 1;
 
 	test	esi, esi
 	je	SHORT $LN42@lGetAvaila@6
@@ -20139,7 +20974,7 @@ $LN42@lGetAvaila@6:
 	mov	eax, 1
 	pop	ebx
 
-; 2299 : }
+; 2317 : }
 
 	add	esp, 16					; 00000010H
 	ret	0
@@ -20163,7 +20998,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lCanHandleAction@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lCanHandleAction
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221622
+	push	OFFSET $SG222131
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20174,7 +21009,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lHandleAction@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lHandleAction
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221623
+	push	OFFSET $SG222132
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20185,7 +21020,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lUpdateScore@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lUpdateScore
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221624
+	push	OFFSET $SG222133
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20197,7 +21032,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lCycleCities@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lCycleCities
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221625
+	push	OFFSET $SG222134
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20208,7 +21043,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lCycleUnits@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lCycleUnits
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221626
+	push	OFFSET $SG222135
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20219,7 +21054,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lCyclePlotUnits@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lCyclePlotUnits
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221627
+	push	OFFSET $SG222136
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20232,7 +21067,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSelectionListMove@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSelectionListMove
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221628
+	push	OFFSET $SG222137
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20243,7 +21078,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSelectionListGameNetMessage@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSelectionListGameNetMessage
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221629
+	push	OFFSET $SG222138
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20254,7 +21089,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSelectedCitiesGameNetMessage@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSelectedCitiesGameNetMessage
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221630
+	push	OFFSET $SG222139
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20266,7 +21101,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lCityPushOrder@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lCityPushOrder
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221631
+	push	OFFSET $SG222140
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20277,7 +21112,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lCityPurchaseUnit@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lCityPurchaseUnit
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221632
+	push	OFFSET $SG222141
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20288,7 +21123,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lCityPurchaseBuilding@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lCityPurchaseBuilding
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221633
+	push	OFFSET $SG222142
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20300,7 +21135,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lCityPurchaseProject@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lCityPurchaseProject
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221634
+	push	OFFSET $SG222143
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20312,7 +21147,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetProductionPerPopulation@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetProductionPerPopulation
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221635
+	push	OFFSET $SG222144
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20324,7 +21159,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetAdjustedPopulationPercent@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetAdjustedPopulationPercent
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221636
+	push	OFFSET $SG222145
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20336,7 +21171,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetAdjustedLandPercent@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetAdjustedLandPercent
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221637
+	push	OFFSET $SG222146
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20348,7 +21183,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetUnitedNationsCountdown@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetUnitedNationsCountdown
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221638
+	push	OFFSET $SG222147
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20359,7 +21194,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSetUnitedNationsCountdown@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSetUnitedNationsCountdown
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221639
+	push	OFFSET $SG222148
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20372,7 +21207,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lCountCivPlayersAlive@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lCountCivPlayersAlive
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221640
+	push	OFFSET $SG222149
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20383,7 +21218,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lCountCivPlayersEverAlive@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lCountCivPlayersEverAlive
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221641
+	push	OFFSET $SG222150
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20394,7 +21229,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lCountCivTeamsAlive@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lCountCivTeamsAlive
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221642
+	push	OFFSET $SG222151
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20406,7 +21241,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lCountCivTeamsEverAlive@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lCountCivTeamsEverAlive
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221643
+	push	OFFSET $SG222152
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20417,7 +21252,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lCountHumanPlayersAlive@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lCountHumanPlayersAlive
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221644
+	push	OFFSET $SG222153
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20428,7 +21263,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lCountHumanPlayersEverAlive@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lCountHumanPlayersEverAlive
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221645
+	push	OFFSET $SG222154
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20441,7 +21276,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lCountTotalCivPower@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lCountTotalCivPower
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221646
+	push	OFFSET $SG222155
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20452,7 +21287,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lCountTotalNukeUnits@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lCountTotalNukeUnits
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221647
+	push	OFFSET $SG222156
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20463,7 +21298,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lCountKnownTechNumTeams@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lCountKnownTechNumTeams
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221648
+	push	OFFSET $SG222157
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20476,7 +21311,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGoldenAgeLength@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGoldenAgeLength
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221649
+	push	OFFSET $SG222158
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20487,7 +21322,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lVictoryDelay@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lVictoryDelay
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221650
+	push	OFFSET $SG222159
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20498,7 +21333,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetImprovementUpgradeTime@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetImprovementUpgradeTime
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221651
+	push	OFFSET $SG222160
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20510,7 +21345,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lCanTrainNukes@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lCanTrainNukes
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221652
+	push	OFFSET $SG222161
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20522,7 +21357,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetCurrentEra@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetCurrentEra
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221653
+	push	OFFSET $SG222162
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20534,7 +21369,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetDiploResponse@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetDiploResponse
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221654
+	push	OFFSET $SG222163
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20547,7 +21382,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetActiveTeam@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetActiveTeam
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221655
+	push	OFFSET $SG222164
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20558,7 +21393,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetActiveCivilizationType@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetActiveCivilizationType
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221656
+	push	OFFSET $SG222165
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20569,7 +21404,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsNetworkMultiPlayer@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsNetworkMultiPlayer
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221657
+	push	OFFSET $SG222166
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20581,7 +21416,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsGameMultiPlayer@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsGameMultiPlayer
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221658
+	push	OFFSET $SG222167
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20592,7 +21427,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsTeamGame@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsTeamGame
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221659
+	push	OFFSET $SG222168
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20604,7 +21439,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lReviveActivePlayer@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lReviveActivePlayer
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221660
+	push	OFFSET $SG222169
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20617,7 +21452,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetNumHumanPlayers@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetNumHumanPlayers
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221661
+	push	OFFSET $SG222170
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20628,7 +21463,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetNumSequentialHumans@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetNumSequentialHumans
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221662
+	push	OFFSET $SG222171
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20639,7 +21474,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetGameTurn@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetGameTurn
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221663
+	push	OFFSET $SG222172
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20651,7 +21486,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSetGameTurn@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSetGameTurn
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221664
+	push	OFFSET $SG222173
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20662,7 +21497,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetTurnYear@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetTurnYear
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221665
+	push	OFFSET $SG222174
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20673,7 +21508,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetGameTurnYear@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetGameTurnYear
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221666
+	push	OFFSET $SG222175
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20685,7 +21520,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetTurnString@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetTurnString
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221667
+	push	OFFSET $SG222176
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20697,7 +21532,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetElapsedGameTurns@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetElapsedGameTurns
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221668
+	push	OFFSET $SG222177
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20708,7 +21543,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetMaxTurns@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetMaxTurns
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221669
+	push	OFFSET $SG222178
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20720,7 +21555,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSetMaxTurns@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSetMaxTurns
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221670
+	push	OFFSET $SG222179
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20731,7 +21566,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lChangeMaxTurns@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lChangeMaxTurns
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221671
+	push	OFFSET $SG222180
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20742,7 +21577,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetMaxCityElimination@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetMaxCityElimination
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221672
+	push	OFFSET $SG222181
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20754,7 +21589,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSetMaxCityElimination@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSetMaxCityElimination
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221673
+	push	OFFSET $SG222182
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20765,7 +21600,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetNumAdvancedStartPoints@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetNumAdvancedStartPoints
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221674
+	push	OFFSET $SG222183
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20776,7 +21611,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSetNumAdvancedStartPoints@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSetNumAdvancedStartPoints
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221675
+	push	OFFSET $SG222184
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20788,7 +21623,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetStartTurn@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetStartTurn
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221676
+	push	OFFSET $SG222185
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20799,7 +21634,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetWinningTurn@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetWinningTurn
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221677
+	push	OFFSET $SG222186
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20810,7 +21645,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetStartYear@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetStartYear
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221678
+	push	OFFSET $SG222187
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20822,7 +21657,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSetStartYear@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSetStartYear
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221679
+	push	OFFSET $SG222188
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20833,7 +21668,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetEstimateEndTurn@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetEstimateEndTurn
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221680
+	push	OFFSET $SG222189
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20844,7 +21679,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSetEstimateEndTurn@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSetEstimateEndTurn
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221681
+	push	OFFSET $SG222190
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20856,7 +21691,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetTurnSlice@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetTurnSlice
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221682
+	push	OFFSET $SG222191
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20867,7 +21702,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetMinutesPlayed@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetMinutesPlayed
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221683
+	push	OFFSET $SG222192
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20878,7 +21713,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetTargetScore@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetTargetScore
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221684
+	push	OFFSET $SG222193
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20890,7 +21725,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSetTargetScore@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSetTargetScore
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221685
+	push	OFFSET $SG222194
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20902,7 +21737,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsStaticTutorialActive@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsStaticTutorialActive
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221686
+	push	OFFSET $SG222195
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20913,7 +21748,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSetStaticTutorialActive@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSetStaticTutorialActive
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221687
+	push	OFFSET $SG222196
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20925,7 +21760,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsEverRightClickMoved@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsEverRightClickMoved
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221688
+	push	OFFSET $SG222197
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20936,7 +21771,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSetEverRightClickMoved@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSetEverRightClickMoved
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221689
+	push	OFFSET $SG222198
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20948,7 +21783,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsTutorialLogging@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsTutorialLogging
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221690
+	push	OFFSET $SG222199
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20960,7 +21795,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsTutorialDebugging@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsTutorialDebugging
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221691
+	push	OFFSET $SG222200
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20971,7 +21806,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetTutorialLevel@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetTutorialLevel
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221692
+	push	OFFSET $SG222201
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20983,7 +21818,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lHasAdvisorMessageBeenSeen@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lHasAdvisorMessageBeenSeen
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221693
+	push	OFFSET $SG222202
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -20995,7 +21830,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSetAdvisorMessageHasBeenSeen@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSetAdvisorMessageHasBeenSeen
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221694
+	push	OFFSET $SG222203
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21007,7 +21842,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSetAdvisorBadAttackInterrupt@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSetAdvisorBadAttackInterrupt
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221695
+	push	OFFSET $SG222204
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21018,7 +21853,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSetAdvisorCityAttackInterrupt@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSetAdvisorCityAttackInterrupt
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221696
+	push	OFFSET $SG222205
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21031,7 +21866,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetAllowRClickMovementWhileScrolling@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetAllowRClickMovementWhileScrolling
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221697
+	push	OFFSET $SG222206
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21043,7 +21878,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetNumGameTurnActive@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetNumGameTurnActive
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221698
+	push	OFFSET $SG222207
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21054,7 +21889,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lCountNumHumanGameTurnActive@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lCountNumHumanGameTurnActive
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221699
+	push	OFFSET $SG222208
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21066,7 +21901,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetNumCities@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetNumCities
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221700
+	push	OFFSET $SG222209
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21077,7 +21912,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetNumCivCities@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetNumCivCities
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221701
+	push	OFFSET $SG222210
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21088,7 +21923,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetTotalPopulation@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetTotalPopulation
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221702
+	push	OFFSET $SG222211
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21101,7 +21936,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetNoNukesCount@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetNoNukesCount
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221703
+	push	OFFSET $SG222212
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21112,7 +21947,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsNoNukes@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsNoNukes
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221704
+	push	OFFSET $SG222213
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21123,7 +21958,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lChangeNoNukesCount@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lChangeNoNukesCount
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221705
+	push	OFFSET $SG222214
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21135,7 +21970,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetNukesExploded@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetNukesExploded
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221706
+	push	OFFSET $SG222215
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21146,7 +21981,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lChangeNukesExploded@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lChangeNukesExploded
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221707
+	push	OFFSET $SG222216
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21158,7 +21993,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetMaxPopulation@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetMaxPopulation
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221708
+	push	OFFSET $SG222217
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21170,7 +22005,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetInitPopulation@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetInitPopulation
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221709
+	push	OFFSET $SG222218
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21181,7 +22016,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetInitLand@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetInitLand
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221710
+	push	OFFSET $SG222219
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21192,7 +22027,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetInitTech@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetInitTech
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221711
+	push	OFFSET $SG222220
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21204,7 +22039,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetInitWonders@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetInitWonders
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221712
+	push	OFFSET $SG222221
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21215,7 +22050,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetNumWorldWonders@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetNumWorldWonders
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221713
+	push	OFFSET $SG222222
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21227,7 +22062,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetAIAutoPlay@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetAIAutoPlay
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221714
+	push	OFFSET $SG222223
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21239,7 +22074,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSetAIAutoPlay@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSetAIAutoPlay
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221715
+	push	OFFSET $SG222224
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21251,7 +22086,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsScoreDirty@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsScoreDirty
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221716
+	push	OFFSET $SG222225
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21262,7 +22097,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSetScoreDirty@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSetScoreDirty
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221717
+	push	OFFSET $SG222226
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21274,7 +22109,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsCircumnavigated@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsCircumnavigated
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221718
+	push	OFFSET $SG222227
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21285,7 +22120,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lMakeCircumnavigated@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lMakeCircumnavigated
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221719
+	push	OFFSET $SG222228
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21297,7 +22132,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lDoFromUIDiploEvent@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lDoFromUIDiploEvent
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221720
+	push	OFFSET $SG222229
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21310,7 +22145,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsDebugMode@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsDebugMode
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221721
+	push	OFFSET $SG222230
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21321,7 +22156,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSetDebugMode@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSetDebugMode
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221722
+	push	OFFSET $SG222231
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21332,7 +22167,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lToggleDebugMode@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lToggleDebugMode
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221723
+	push	OFFSET $SG222232
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21344,7 +22179,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lUpdateFOW@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lUpdateFOW
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221724
+	push	OFFSET $SG222233
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21356,7 +22191,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetPitbossTurnTime@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetPitbossTurnTime
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221725
+	push	OFFSET $SG222234
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21367,7 +22202,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSetPitbossTurnTime@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSetPitbossTurnTime
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221726
+	push	OFFSET $SG222235
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21379,7 +22214,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsHotSeat@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsHotSeat
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221727
+	push	OFFSET $SG222236
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21390,7 +22225,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsPbem@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsPbem
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221728
+	push	OFFSET $SG222237
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21401,7 +22236,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsPitboss@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsPitboss
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221729
+	push	OFFSET $SG222238
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21413,7 +22248,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsSimultaneousTeamTurns@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsSimultaneousTeamTurns
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221730
+	push	OFFSET $SG222239
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21425,7 +22260,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsFinalInitialized@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsFinalInitialized
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221731
+	push	OFFSET $SG222240
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21437,7 +22272,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetActivePlayer@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetActivePlayer
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221732
+	push	OFFSET $SG222241
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21449,7 +22284,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSetActivePlayer@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSetActivePlayer
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221733
+	push	OFFSET $SG222242
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21460,7 +22295,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetPausePlayer@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetPausePlayer
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221734
+	push	OFFSET $SG222243
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21471,7 +22306,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSetPausePlayer@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSetPausePlayer
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221735
+	push	OFFSET $SG222244
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21483,7 +22318,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsPaused@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsPaused
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221736
+	push	OFFSET $SG222245
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21494,7 +22329,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetBestLandUnit@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetBestLandUnit
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221737
+	push	OFFSET $SG222246
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21505,7 +22340,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetBestLandUnitCombat@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetBestLandUnitCombat
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221738
+	push	OFFSET $SG222247
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21518,7 +22353,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetFaithCost@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetFaithCost
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221739
+	push	OFFSET $SG222248
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21530,7 +22365,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetWinner@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetWinner
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221740
+	push	OFFSET $SG222249
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21541,7 +22376,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetVictory@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetVictory
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221741
+	push	OFFSET $SG222250
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21553,7 +22388,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSetWinner@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSetWinner
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221742
+	push	OFFSET $SG222251
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21564,7 +22399,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetGameState@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetGameState
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221743
+	push	OFFSET $SG222252
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21575,7 +22410,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSetGameState@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSetGameState
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221744
+	push	OFFSET $SG222253
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21588,7 +22423,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetVotesNeededForDiploVictory@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetVotesNeededForDiploVictory
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221745
+	push	OFFSET $SG222254
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21599,7 +22434,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsUnitedNationsActive@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsUnitedNationsActive
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221746
+	push	OFFSET $SG222255
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21611,7 +22446,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetNumVictoryVotesTallied@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetNumVictoryVotesTallied
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221747
+	push	OFFSET $SG222256
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21623,7 +22458,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetVoteCast@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetVoteCast
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221748
+	push	OFFSET $SG222257
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21634,7 +22469,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetPreviousVoteCast@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetPreviousVoteCast
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221749
+	push	OFFSET $SG222258
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21645,7 +22480,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetNumVotesForTeam@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetNumVotesForTeam
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221750
+	push	OFFSET $SG222259
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21657,7 +22492,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSetNumVotesForTeam@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSetNumVotesForTeam
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221751
+	push	OFFSET $SG222260
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21668,7 +22503,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lChangeNumVotesForTeam@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lChangeNumVotesForTeam
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221752
+	push	OFFSET $SG222261
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21680,7 +22515,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetHandicapType@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetHandicapType
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221753
+	push	OFFSET $SG222262
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21692,7 +22527,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetCalendar@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetCalendar
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221754
+	push	OFFSET $SG222263
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21703,7 +22538,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetStartEra@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetStartEra
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221755
+	push	OFFSET $SG222264
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21714,7 +22549,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetGameSpeedType@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetGameSpeedType
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221756
+	push	OFFSET $SG222265
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21726,7 +22561,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetRankPlayer@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetRankPlayer
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221757
+	push	OFFSET $SG222266
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21737,7 +22572,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetPlayerRank@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetPlayerRank
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221758
+	push	OFFSET $SG222267
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21748,7 +22583,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetPlayerScore@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetPlayerScore
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221759
+	push	OFFSET $SG222268
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21760,7 +22595,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetRankTeam@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetRankTeam
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221760
+	push	OFFSET $SG222269
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21771,7 +22606,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetTeamRank@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetTeamRank
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221761
+	push	OFFSET $SG222270
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21782,7 +22617,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetTeamScore@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetTeamScore
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221762
+	push	OFFSET $SG222271
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21794,7 +22629,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsOption@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsOption
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221763
+	push	OFFSET $SG222272
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21805,7 +22640,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSetOption@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSetOption
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221764
+	push	OFFSET $SG222273
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21816,7 +22651,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsMPOption@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsMPOption
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221765
+	push	OFFSET $SG222274
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21828,7 +22663,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetUnitCreatedCount@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetUnitCreatedCount
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221766
+	push	OFFSET $SG222275
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21839,7 +22674,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetUnitClassCreatedCount@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetUnitClassCreatedCount
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221767
+	push	OFFSET $SG222276
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21850,7 +22685,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsUnitClassMaxedOut@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsUnitClassMaxedOut
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221768
+	push	OFFSET $SG222277
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21862,7 +22697,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetBuildingClassCreatedCount@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetBuildingClassCreatedCount
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221769
+	push	OFFSET $SG222278
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21873,7 +22708,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsBuildingClassMaxedOut@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsBuildingClassMaxedOut
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221770
+	push	OFFSET $SG222279
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21885,7 +22720,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetProjectCreatedCount@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetProjectCreatedCount
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221771
+	push	OFFSET $SG222280
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21897,7 +22732,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsProjectMaxedOut@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsProjectMaxedOut
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221772
+	push	OFFSET $SG222281
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21909,7 +22744,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsVictoryValid@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsVictoryValid
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221773
+	push	OFFSET $SG222282
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21920,7 +22755,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSetVictoryValid@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSetVictoryValid
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221774
+	push	OFFSET $SG222283
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21932,7 +22767,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsSpecialUnitValid@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsSpecialUnitValid
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221775
+	push	OFFSET $SG222284
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21943,7 +22778,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lMakeSpecialUnitValid@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lMakeSpecialUnitValid
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221776
+	push	OFFSET $SG222285
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21954,7 +22789,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsNukesValid@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsNukesValid
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221777
+	push	OFFSET $SG222286
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21966,7 +22801,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lMakeNukesValid@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lMakeNukesValid
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221778
+	push	OFFSET $SG222287
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21977,7 +22812,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsInAdvancedStart@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsInAdvancedStart
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221779
+	push	OFFSET $SG222288
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -21989,7 +22824,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSetName@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSetName
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221780
+	push	OFFSET $SG222289
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22001,7 +22836,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetName@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetName
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221781
+	push	OFFSET $SG222290
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22012,7 +22847,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lRand@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lRand
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221782
+	push	OFFSET $SG222291
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22023,7 +22858,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lCalculateSyncChecksum@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lCalculateSyncChecksum
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221783
+	push	OFFSET $SG222292
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22035,7 +22870,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lCalculateOptionsChecksum@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lCalculateOptionsChecksum
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221784
+	push	OFFSET $SG222293
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22047,7 +22882,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetReplayMessage@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetReplayMessage
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221785
+	push	OFFSET $SG222294
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22058,7 +22893,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetReplayMessages@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetReplayMessages
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221786
+	push	OFFSET $SG222295
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22070,7 +22905,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetNumReplayMessages@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetNumReplayMessages
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221787
+	push	OFFSET $SG222296
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22081,7 +22916,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetReplayInfo@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetReplayInfo
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221788
+	push	OFFSET $SG222297
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22093,7 +22928,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSaveReplay@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSaveReplay
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221789
+	push	OFFSET $SG222298
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22106,7 +22941,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lAddPlayer@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lAddPlayer
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221790
+	push	OFFSET $SG222299
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22118,7 +22953,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSetPlotExtraYield@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSetPlotExtraYield
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221791
+	push	OFFSET $SG222300
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22129,7 +22964,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lChangePlotExtraCost@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lChangePlotExtraCost
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221792
+	push	OFFSET $SG222301
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22142,7 +22977,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsCivEverActive@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsCivEverActive
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221793
+	push	OFFSET $SG222302
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22153,7 +22988,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsLeaderEverActive@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsLeaderEverActive
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221794
+	push	OFFSET $SG222303
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22164,7 +22999,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsUnitEverActive@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsUnitEverActive
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221795
+	push	OFFSET $SG222304
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22176,7 +23011,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsBuildingEverActive@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsBuildingEverActive
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221796
+	push	OFFSET $SG222305
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22188,7 +23023,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lCanDoControl@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lCanDoControl
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221797
+	push	OFFSET $SG222306
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22199,7 +23034,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lDoControl@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lDoControl
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221798
+	push	OFFSET $SG222307
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22212,7 +23047,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lDoMinorPledgeProtection@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lDoMinorPledgeProtection
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221799
+	push	OFFSET $SG222308
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22223,7 +23058,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lDoMinorGoldGift@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lDoMinorGoldGift
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221800
+	push	OFFSET $SG222309
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22234,7 +23069,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lDoMinorGiftGold@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lDoMinorGiftGold
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221801
+	push	OFFSET $SG222310
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22246,7 +23081,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lDoMinorGiftTileImprovement@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lDoMinorGiftTileImprovement
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221802
+	push	OFFSET $SG222311
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22257,7 +23092,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lDoMinorBullyGold@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lDoMinorBullyGold
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221803
+	push	OFFSET $SG222312
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22268,7 +23103,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lDoMinorBullyUnit@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lDoMinorBullyUnit
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221804
+	push	OFFSET $SG222313
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22280,7 +23115,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lDoMinorBuyout@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lDoMinorBuyout
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221805
+	push	OFFSET $SG222314
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22292,7 +23127,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetBestWondersPlayer@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetBestWondersPlayer
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221806
+	push	OFFSET $SG222315
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22303,7 +23138,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetBestPoliciesPlayer@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetBestPoliciesPlayer
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221807
+	push	OFFSET $SG222316
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22315,7 +23150,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetBestGreatPeoplePlayer@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetBestGreatPeoplePlayer
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221808
+	push	OFFSET $SG222317
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22327,7 +23162,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsEverAttackedTutorial@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsEverAttackedTutorial
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221809
+	push	OFFSET $SG222318
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22339,7 +23174,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGameplayDiplomacyAILeaderMessage@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGameplayDiplomacyAILeaderMessage
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221810
+	push	OFFSET $SG222319
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22352,7 +23187,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetResourceUsageType@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetResourceUsageType
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221811
+	push	OFFSET $SG222320
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22364,7 +23199,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetNumResourceRequiredForUnit@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetNumResourceRequiredForUnit
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221812
+	push	OFFSET $SG222321
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22375,7 +23210,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetNumResourceRequiredForBuilding@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetNumResourceRequiredForBuilding
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221813
+	push	OFFSET $SG222322
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22388,7 +23223,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsCombatWarned@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsCombatWarned
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221814
+	push	OFFSET $SG222323
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22399,7 +23234,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSetCombatWarned@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSetCombatWarned
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221815
+	push	OFFSET $SG222324
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22411,7 +23246,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetAdvisorCounsel@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetAdvisorCounsel
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221816
+	push	OFFSET $SG222325
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22423,7 +23258,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSetAdvisorRecommenderCity@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSetAdvisorRecommenderCity
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221817
+	push	OFFSET $SG222326
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22435,7 +23270,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsUnitRecommended@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsUnitRecommended
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221818
+	push	OFFSET $SG222327
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22446,7 +23281,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsBuildingRecommended@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsBuildingRecommended
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221819
+	push	OFFSET $SG222328
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22458,7 +23293,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsProjectRecommended@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsProjectRecommended
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221820
+	push	OFFSET $SG222329
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22470,7 +23305,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSetAdvisorRecommenderTech@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSetAdvisorRecommenderTech
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221821
+	push	OFFSET $SG222330
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22481,7 +23316,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsTechRecommended@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsTechRecommended
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221822
+	push	OFFSET $SG222331
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22494,7 +23329,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetVariableCitySizeFromPopulation@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetVariableCitySizeFromPopulation
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221823
+	push	OFFSET $SG222332
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22506,7 +23341,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetResearchAgreementCost@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetResearchAgreementCost
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221824
+	push	OFFSET $SG222333
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22518,7 +23353,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetCustomOption@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetCustomOption
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221825
+	push	OFFSET $SG222334
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22531,7 +23366,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetNumCitiesPolicyCostMod@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetNumCitiesPolicyCostMod
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221826
+	push	OFFSET $SG222335
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22542,7 +23377,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetNumCitiesTechCostMod@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetNumCitiesTechCostMod
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221827
+	push	OFFSET $SG222336
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22554,7 +23389,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetBuildingYieldChange@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetBuildingYieldChange
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221828
+	push	OFFSET $SG222337
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22566,7 +23401,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetBuildingYieldModifier@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetBuildingYieldModifier
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221829
+	push	OFFSET $SG222338
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22578,7 +23413,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetWorldNumCitiesUnhappinessPercent@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetWorldNumCitiesUnhappinessPercent
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221830
+	push	OFFSET $SG222339
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22590,7 +23425,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetDealDuration@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetDealDuration
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221831
+	push	OFFSET $SG222340
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22602,7 +23437,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetPeaceDuration@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetPeaceDuration
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221832
+	push	OFFSET $SG222341
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22614,7 +23449,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetUnitUpgradesTo@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetUnitUpgradesTo
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221833
+	push	OFFSET $SG222342
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22626,7 +23461,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetCombatPrediction@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetCombatPrediction
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221834
+	push	OFFSET $SG222343
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22639,7 +23474,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetTimeString@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetTimeString
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221835
+	push	OFFSET $SG222344
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22651,7 +23486,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetMinimumFaithNextPantheon@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetMinimumFaithNextPantheon
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221836
+	push	OFFSET $SG222345
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22662,7 +23497,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSetMinimumFaithNextPantheon@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSetMinimumFaithNextPantheon
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221837
+	push	OFFSET $SG222346
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22675,7 +23510,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetAvailablePantheonBeliefs@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetAvailablePantheonBeliefs
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221838
+	push	OFFSET $SG222347
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22686,7 +23521,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetAvailableFounderBeliefs@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetAvailableFounderBeliefs
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221839
+	push	OFFSET $SG222348
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22697,7 +23532,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetAvailableFollowerBeliefs@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetAvailableFollowerBeliefs
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221840
+	push	OFFSET $SG222349
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22709,7 +23544,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetAvailableEnhancerBeliefs@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetAvailableEnhancerBeliefs
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221841
+	push	OFFSET $SG222350
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22720,7 +23555,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetAvailableBonusBeliefs@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetAvailableBonusBeliefs
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221842
+	push	OFFSET $SG222351
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22731,7 +23566,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetAvailableReformationBeliefs@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetAvailableReformationBeliefs
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221843
+	push	OFFSET $SG222352
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22744,7 +23579,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetNumFollowers@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetNumFollowers
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221844
+	push	OFFSET $SG222353
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22755,7 +23590,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetNumCitiesFollowing@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetNumCitiesFollowing
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221845
+	push	OFFSET $SG222354
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22767,7 +23602,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetBeliefsInReligion@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetBeliefsInReligion
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221846
+	push	OFFSET $SG222355
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22779,7 +23614,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetNumReligionsStillToFound@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetNumReligionsStillToFound
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221847
+	push	OFFSET $SG222356
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22790,7 +23625,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetNumReligionsFounded@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetNumReligionsFounded
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221848
+	push	OFFSET $SG222357
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22801,7 +23636,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetHolyCityForReligion@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetHolyCityForReligion
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221849
+	push	OFFSET $SG222358
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22813,7 +23648,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetReligionName@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetReligionName
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221850
+	push	OFFSET $SG222359
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22824,7 +23659,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetFounderBenefitsReligion@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetFounderBenefitsReligion
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221851
+	push	OFFSET $SG222360
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22836,7 +23671,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lFoundPantheon@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lFoundPantheon
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221852
+	push	OFFSET $SG222361
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22848,7 +23683,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lFoundReligion@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lFoundReligion
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221853
+	push	OFFSET $SG222362
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22859,7 +23694,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lEnhanceReligion@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lEnhanceReligion
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221854
+	push	OFFSET $SG222363
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22870,7 +23705,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSetHolyCity@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSetHolyCity
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221855
+	push	OFFSET $SG222364
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22882,7 +23717,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetFounder@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetFounder
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221856
+	push	OFFSET $SG222365
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22893,7 +23728,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSetFounder@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSetFounder
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221857
+	push	OFFSET $SG222366
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22905,7 +23740,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetTurnsBetweenMinorCivElections@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetTurnsBetweenMinorCivElections
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221858
+	push	OFFSET $SG222367
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22917,7 +23752,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetTurnsUntilMinorCivElection@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetTurnsUntilMinorCivElection
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221859
+	push	OFFSET $SG222368
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22929,7 +23764,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetNumActiveLeagues@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetNumActiveLeagues
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221860
+	push	OFFSET $SG222369
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22940,7 +23775,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetNumLeaguesEverFounded@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetNumLeaguesEverFounded
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221861
+	push	OFFSET $SG222370
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22952,7 +23787,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetLeague@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetLeague
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221862
+	push	OFFSET $SG222371
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22963,7 +23798,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetActiveLeague@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetActiveLeague
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221863
+	push	OFFSET $SG222372
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22975,7 +23810,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsProcessingMessages@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsProcessingMessages
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221864
+	push	OFFSET $SG222373
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22988,7 +23823,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetGreatWorkTooltip@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetGreatWorkTooltip
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221865
+	push	OFFSET $SG222374
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -22999,7 +23834,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetGreatWorkName@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetGreatWorkName
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221866
+	push	OFFSET $SG222375
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -23010,7 +23845,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetGreatWorkType@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetGreatWorkType
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221867
+	push	OFFSET $SG222376
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -23022,7 +23857,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetGreatWorkClass@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetGreatWorkClass
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221868
+	push	OFFSET $SG222377
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -23033,7 +23868,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetGreatWorkArtist@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetGreatWorkArtist
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221869
+	push	OFFSET $SG222378
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -23044,7 +23879,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetGreatWorkEra@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetGreatWorkEra
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221870
+	push	OFFSET $SG222379
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -23056,7 +23891,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetGreatWorkEraAbbreviation@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetGreatWorkEraAbbreviation
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221871
+	push	OFFSET $SG222380
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -23067,7 +23902,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetGreatWorkEraShort@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetGreatWorkEraShort
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221872
+	push	OFFSET $SG222381
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -23078,7 +23913,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetGreatWorkCreator@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetGreatWorkCreator
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221873
+	push	OFFSET $SG222382
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -23090,7 +23925,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetGreatWorkController@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetGreatWorkController
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221874
+	push	OFFSET $SG222383
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -23101,7 +23936,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetGreatWorkCurrentThemingBonus@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetGreatWorkCurrentThemingBonus
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221875
+	push	OFFSET $SG222384
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -23112,7 +23947,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetArtifactName@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetArtifactName
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221876
+	push	OFFSET $SG222385
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -23125,7 +23960,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetNumFreePolicies@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetNumFreePolicies
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221877
+	push	OFFSET $SG222386
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -23137,7 +23972,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetLongestCityConnectionPlots@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetLongestCityConnectionPlots
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221878
+	push	OFFSET $SG222387
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -23149,7 +23984,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSelectedUnit_SpeculativePopupTradeRoute_Display@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSelectedUnit_SpeculativePopupTradeRoute_Display
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221879
+	push	OFFSET $SG222388
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -23161,7 +23996,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lSelectedUnit_SpeculativePopupTradeRoute_Hide@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lSelectedUnit_SpeculativePopupTradeRoute_Hide
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221880
+	push	OFFSET $SG222389
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -23172,7 +24007,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lMouseoverUnit@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lMouseoverUnit
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221881
+	push	OFFSET $SG222390
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -23184,7 +24019,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetNumArchaeologySites@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetNumArchaeologySites
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221882
+	push	OFFSET $SG222391
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -23196,14 +24031,197 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetNumHiddenArchaeologySites@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetNumHiddenArchaeologySites
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG221883
+	push	OFFSET $SG222392
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
-	add	esp, 24					; 00000018H
+
+; 386  : #ifdef MP_PLAYERS_VOTING_SYSTEM
+; 387  : 	Method(GetLastProposalID);
+
+	push	0
+	push	OFFSET ?lGetLastProposalID@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetLastProposalID
+	push	esi
+	call	_lua_pushcclosure
+	push	OFFSET $SG222393
+	push	-2					; fffffffeH
+	push	esi
+	call	_lua_setfield
+
+; 388  : 	Method(GetProposalIDbyUIid);
+
+	push	0
+	push	OFFSET ?lGetProposalIDbyUIid@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetProposalIDbyUIid
+	push	esi
+	call	_lua_pushcclosure
+	push	OFFSET $SG222394
+	push	-2					; fffffffeH
+	push	esi
+	call	_lua_setfield
+	add	esp, 72					; 00000048H
+
+; 389  : 	Method(GetProposalExpirationCounter);
+
+	push	0
+	push	OFFSET ?lGetProposalExpirationCounter@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetProposalExpirationCounter
+	push	esi
+	call	_lua_pushcclosure
+	push	OFFSET $SG222395
+	push	-2					; fffffffeH
+	push	esi
+	call	_lua_setfield
+
+; 390  : 	Method(GetProposalType);
+
+	push	0
+	push	OFFSET ?lGetProposalType@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetProposalType
+	push	esi
+	call	_lua_pushcclosure
+	push	OFFSET $SG222396
+	push	-2					; fffffffeH
+	push	esi
+	call	_lua_setfield
+
+; 391  : 	Method(GetProposalStatus);
+
+	push	0
+	push	OFFSET ?lGetProposalStatus@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetProposalStatus
+	push	esi
+	call	_lua_pushcclosure
+	push	OFFSET $SG222397
+	push	-2					; fffffffeH
+	push	esi
+	call	_lua_setfield
+	add	esp, 72					; 00000048H
+
+; 392  : 	Method(GetProposalOwner);
+
+	push	0
+	push	OFFSET ?lGetProposalOwner@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetProposalOwner
+	push	esi
+	call	_lua_pushcclosure
+	push	OFFSET $SG222398
+	push	-2					; fffffffeH
+	push	esi
+	call	_lua_setfield
+
+; 393  : 	Method(GetProposalSubject);
+
+	push	0
+	push	OFFSET ?lGetProposalSubject@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetProposalSubject
+	push	esi
+	call	_lua_pushcclosure
+	push	OFFSET $SG222399
+	push	-2					; fffffffeH
+	push	esi
+	call	_lua_setfield
+
+; 394  : 	Method(GetProposalCompletion);
+
+	push	0
+	push	OFFSET ?lGetProposalCompletion@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetProposalCompletion
+	push	esi
+	call	_lua_pushcclosure
+	push	OFFSET $SG222400
+	push	-2					; fffffffeH
+	push	esi
+	call	_lua_setfield
+	add	esp, 72					; 00000048H
+
+; 395  : 	Method(GetProposalVoterVote);
+
+	push	0
+	push	OFFSET ?lGetProposalVoterVote@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetProposalVoterVote
+	push	esi
+	call	_lua_pushcclosure
+	push	OFFSET $SG222401
+	push	-2					; fffffffeH
+	push	esi
+	call	_lua_setfield
+
+; 396  : 	Method(GetProposalVoterHasVoted);
+
+	push	0
+	push	OFFSET ?lGetProposalVoterHasVoted@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetProposalVoterHasVoted
+	push	esi
+	call	_lua_pushcclosure
+	push	OFFSET $SG222402
+	push	-2					; fffffffeH
+	push	esi
+	call	_lua_setfield
+
+; 397  : 	Method(GetProposalVoterEligibility);
+
+	push	0
+	push	OFFSET ?lGetProposalVoterEligibility@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetProposalVoterEligibility
+	push	esi
+	call	_lua_pushcclosure
+	push	OFFSET $SG222403
+	push	-2					; fffffffeH
+	push	esi
+	call	_lua_setfield
+	add	esp, 72					; 00000048H
+
+; 398  : 	Method(GetYesVotes);
+
+	push	0
+	push	OFFSET ?lGetYesVotes@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetYesVotes
+	push	esi
+	call	_lua_pushcclosure
+	push	OFFSET $SG222404
+	push	-2					; fffffffeH
+	push	esi
+	call	_lua_setfield
+
+; 399  : 	Method(GetNoVotes);
+
+	push	0
+	push	OFFSET ?lGetNoVotes@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetNoVotes
+	push	esi
+	call	_lua_pushcclosure
+	push	OFFSET $SG222405
+	push	-2					; fffffffeH
+	push	esi
+	call	_lua_setfield
+
+; 400  : 	Method(GetMaxVotes);
+
+	push	0
+	push	OFFSET ?lGetMaxVotes@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lGetMaxVotes
+	push	esi
+	call	_lua_pushcclosure
+	push	OFFSET $SG222406
+	push	-2					; fffffffeH
+	push	esi
+	call	_lua_setfield
+	add	esp, 72					; 00000048H
+
+; 401  : 	Method(IsPlayerHasActiveProposal);
+
+	push	0
+	push	OFFSET ?lIsPlayerHasActiveProposal@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsPlayerHasActiveProposal
+	push	esi
+	call	_lua_pushcclosure
+	push	OFFSET $SG222407
+	push	-2					; fffffffeH
+	push	esi
+	call	_lua_setfield
+
+; 402  : 	Method(IsAnyActiveProposalType);
+
+	push	0
+	push	OFFSET ?lIsAnyActiveProposalType@CvLuaGame@@KAHPAUlua_State@@@Z ; CvLuaGame::lIsAnyActiveProposalType
+	push	esi
+	call	_lua_pushcclosure
+	push	OFFSET $SG222408
+	push	-2					; fffffffeH
+	push	esi
+	call	_lua_setfield
+	add	esp, 48					; 00000030H
 	pop	esi
 
-; 386  : }
+; 403  : #endif
+; 404  : }
 
 	ret	0
 ?RegisterMembers@CvLuaGame@@SAXPAUlua_State@@@Z ENDP	; CvLuaGame::RegisterMembers

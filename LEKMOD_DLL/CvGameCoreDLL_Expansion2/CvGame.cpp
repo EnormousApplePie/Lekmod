@@ -133,7 +133,9 @@ CvGame::CvGame() :
 	m_pGameLeagues = NULL;
 	m_pGameTrade = NULL;
 	m_pTacticalMap = NULL;
-
+#ifdef MP_PLAYERS_VOTING_SYSTEM
+	m_pMPVotingSystem = NULL;
+#endif
 	m_pAdvisorCounsel = NULL;
 	m_pAdvisorRecommender = NULL;
 
@@ -401,6 +403,10 @@ void CvGame::init(HandicapTypes eHandicap)
 
 	m_bArchaeologyTriggered = false;
 	CvGoodyHuts::Reset();
+
+#ifdef GAME_ALLOW_ONLY_ONE_UNIT_MOVE_ON_TURN_LOADING
+	setMPOrderedMoveOnTurnLoading(false);
+#endif
 
 #ifdef AUI_GAME_BETTER_HYBRID_MODE
 	m_iCurrentTurnOrderActive = 0;
@@ -1050,7 +1056,9 @@ void CvGame::uninit()
 	SAFE_DELETE(m_pGameLeagues);
 	SAFE_DELETE(m_pGameTrade);
 	SAFE_DELETE(m_pTacticalMap);
-
+#ifdef MP_PLAYERS_VOTING_SYSTEM
+	SAFE_DELETE(m_pMPVotingSystem);
+#endif
 	SAFE_DELETE(m_pAdvisorCounsel);
 	SAFE_DELETE(m_pAdvisorRecommender);
 
@@ -1350,7 +1358,11 @@ void CvGame::reset(HandicapTypes eHandicap, bool bConstructorCall)
 
 		CvAssertMsg(m_pTacticalMap==NULL, "about to leak memory, CvGame::m_pTacticalMap");
 		m_pTacticalMap = FNEW(CvTacticalAnalysisMap, c_eCiv5GameplayDLL, 0);
+#ifdef MP_PLAYERS_VOTING_SYSTEM
+		CvAssertMsg(m_pMPVotingSystem == NULL, "about to leak memory, CvGame::m_pTacticalMap");
+		m_pMPVotingSystem = FNEW(CvMPVotingSystem, c_eCiv5GameplayDLL, 0);
 
+#endif
 		CvAssertMsg(m_pAdvisorCounsel==NULL, "about to leak memory, CvGame::m_pAdvisorCounsel");
 		m_pAdvisorCounsel = FNEW(CvAdvisorCounsel, c_eCiv5GameplayDLL, 0);
 
@@ -2800,13 +2812,41 @@ void CvGame::selectionListGameNetMessage(int eMessage, int iData2, int iData3, i
 				{
 					MissionTypes eMission = (MissionTypes)iData2;
 					CvPlot* pPlot = GC.getMap().plot(iData3, iData4);
+#ifdef GAME_ALLOW_ONLY_ONE_UNIT_MOVE_ON_TURN_LOADING
+					bool bTurnActive = GET_PLAYER(getActivePlayer()).isTurnActive();
+					bool bAllAICivsProcessedThisTurn = gDLL->allAICivsProcessedThisTurn();
+					if (bTurnActive && bAllAICivsProcessedThisTurn && isMPOrderedMoveOnTurnLoading())
+					{
+						setMPOrderedMoveOnTurnLoading(false);  // Turn has already started; reset value
+					}
+#endif
 					if(pPlot && pkSelectedUnit->CanSwapWithUnitHere(*pPlot) && eMission != CvTypes::getMISSION_ROUTE_TO())
 					{
+#ifdef GAME_ALLOW_ONLY_ONE_UNIT_MOVE_ON_TURN_LOADING
+						// DLLUI->AddMessage(0, CvPreGame::activePlayer(), true, GC.getEVENT_MESSAGE_TIME(), GetLocalizedText("isTurnActive: {1_Num}, allAICivsProcessedThisTurn: {2_Num}", bTurnActive, bAllAICivsProcessedThisTurn));
+						if (!isGameMultiPlayer() || !isMPOrderedMoveOnTurnLoading())  // First move allowed, all the following blocked
+						{
+#endif
 						gDLL->sendSwapUnits(pkSelectedUnit->GetID(), ((MissionTypes)iData2), iData3, iData4, iFlags, bShift);
+#ifdef GAME_ALLOW_ONLY_ONE_UNIT_MOVE_ON_TURN_LOADING
+							if (!bTurnActive || !bAllAICivsProcessedThisTurn || !isMPOrderedMoveOnTurnLoading())
+								setMPOrderedMoveOnTurnLoading(true);
+						}
+#endif
 					}
 					else
 					{
+#ifdef GAME_ALLOW_ONLY_ONE_UNIT_MOVE_ON_TURN_LOADING
+						// DLLUI->AddMessage(0, CvPreGame::activePlayer(), true, GC.getEVENT_MESSAGE_TIME(), GetLocalizedText("isTurnActive: {1_Num}, allAICivsProcessedThisTurn: {2_Num}", bTurnActive, bAllAICivsProcessedThisTurn));
+						if (!isGameMultiPlayer() || !isMPOrderedMoveOnTurnLoading())  // First move allowed, all the following blocked
+						{
+#endif
 						gDLL->sendPushMission(pkSelectedUnit->GetID(), ((MissionTypes)iData2), iData3, iData4, iFlags, bShift);
+#ifdef GAME_ALLOW_ONLY_ONE_UNIT_MOVE_ON_TURN_LOADING
+							if (!bTurnActive || !bAllAICivsProcessedThisTurn || !isMPOrderedMoveOnTurnLoading())
+								setMPOrderedMoveOnTurnLoading(true);
+						}
+#endif
 					}
 				}
 				else
@@ -2816,7 +2856,23 @@ void CvGame::selectionListGameNetMessage(int eMessage, int iData2, int iData3, i
 			}
 			else if((eMessage == GAMEMESSAGE_SWAP_UNITS))
 			{
-				gDLL->sendSwapUnits(pkSelectedUnit->GetID(), ((MissionTypes)iData2), iData3, iData4, iFlags, bShift);
+#ifdef GAME_ALLOW_ONLY_ONE_UNIT_MOVE_ON_TURN_LOADING
+				bool bTurnActive = GET_PLAYER(getActivePlayer()).isTurnActive();
+				bool bAllAICivsProcessedThisTurn = gDLL->allAICivsProcessedThisTurn();
+				if (bTurnActive && bAllAICivsProcessedThisTurn && isMPOrderedMoveOnTurnLoading())
+				{
+					setMPOrderedMoveOnTurnLoading(false);  // Turn has already started; reset value
+				}
+				// DLLUI->AddMessage(0, CvPreGame::activePlayer(), true, GC.getEVENT_MESSAGE_TIME(), GetLocalizedText("isTurnActive: {1_Num}, allAICivsProcessedThisTurn: {2_Num}", bTurnActive, bAllAICivsProcessedThisTurn));
+				if (!isGameMultiPlayer() || !isMPOrderedMoveOnTurnLoading())  // First move allowed, all the following blocked
+				{
+#endif
+					gDLL->sendSwapUnits(pkSelectedUnit->GetID(), ((MissionTypes)iData2), iData3, iData4, iFlags, bShift);
+#ifdef GAME_ALLOW_ONLY_ONE_UNIT_MOVE_ON_TURN_LOADING
+					if (!bTurnActive || !bAllAICivsProcessedThisTurn || !isMPOrderedMoveOnTurnLoading())
+						setMPOrderedMoveOnTurnLoading(true);
+				}
+#endif
 			}
 			else
 			{
@@ -5402,6 +5458,22 @@ void CvGame::setInitialTime(unsigned int uiNewValue)
 	m_uiInitialTime = uiNewValue;
 }
 
+#ifdef GAME_ALLOW_ONLY_ONE_UNIT_MOVE_ON_TURN_LOADING
+//	--------------------------------------------------------------------------------
+bool CvGame::isMPOrderedMoveOnTurnLoading() const
+{
+	return m_bMPOrderedMoveOnTurnLoading;
+}
+
+
+//	--------------------------------------------------------------------------------
+void CvGame::setMPOrderedMoveOnTurnLoading(bool bNewValue)
+{
+	m_bMPOrderedMoveOnTurnLoading = bNewValue;
+}
+
+
+#endif
 
 //	--------------------------------------------------------------------------------
 bool CvGame::isScoreDirty() const
@@ -8085,6 +8157,9 @@ void CvGame::doTurn()
 #ifndef AUI_YIELDS_APPLIED_AFTER_TURN_NOT_BEFORE
 	GetGameCulture()->DoTurn();
 #endif
+#ifdef MP_PLAYERS_VOTING_SYSTEM
+	GetMPVotingSystem()->DoTurn();
+#endif
 
 #ifdef AUI_WARNING_FIXES
 	kEngineUserInterface.setCanEndTurn(false);
@@ -10347,6 +10422,9 @@ void CvGame::Read(FDataStream& kStream)
 	kStream >> *m_pGameCulture;
 	kStream >> *m_pGameLeagues;
 	kStream >> *m_pGameTrade;
+#ifdef MP_PLAYERS_VOTING_SYSTEM
+	kStream >> *m_pMPVotingSystem;
+#endif
 
 	unsigned int lSize = 0;
 	kStream >> lSize;
@@ -10531,6 +10609,9 @@ void CvGame::Write(FDataStream& kStream) const
 	kStream << *m_pGameCulture;
 	kStream << *m_pGameLeagues;
 	kStream << *m_pGameTrade;
+#ifdef MP_PLAYERS_VOTING_SYSTEM
+	kStream << *m_pMPVotingSystem;
+#endif
 
 	//In Version 8, Serialize Saved Game database
 	CvString strPath = gDLL->GetCacheFolderPath();
@@ -11022,6 +11103,14 @@ CvTacticalAnalysisMap* CvGame::GetTacticalAnalysisMap()
 	return m_pTacticalMap;
 }
 
+#ifdef MP_PLAYERS_VOTING_SYSTEM
+//	--------------------------------------------------------------------------------
+CvMPVotingSystem* CvGame::GetMPVotingSystem()
+{
+	return m_pMPVotingSystem;
+}
+
+#endif
 //	--------------------------------------------------------------------------------
 CvAdvisorCounsel* CvGame::GetAdvisorCounsel()
 {

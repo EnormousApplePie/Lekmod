@@ -12,381 +12,381 @@ INCLUDELIB OLDNAMES
 PUBLIC	?NO_QUEST_DATA@CvMinorCivQuest@@2HB		; CvMinorCivQuest::NO_QUEST_DATA
 PUBLIC	?NO_TURN@CvMinorCivQuest@@2HB			; CvMinorCivQuest::NO_TURN
 CONST	SEGMENT
-$SG225189 DB	'NoMinorCivs', 00H
-$SG225190 DB	'CheckTriggerTurnCount', 00H
-$SG226453 DB	00H
-$SG226454 DB	00H
-$SG225191 DB	'MinimumNumTurnsExecuted', 00H
-$SG225192 DB	'WeightThreshold', 00H
-$SG225193 DB	'FirstTurnExecuted', 00H
+$SG225666 DB	'NoMinorCivs', 00H
+$SG225667 DB	'CheckTriggerTurnCount', 00H
+$SG226930 DB	00H
+$SG226931 DB	00H
+$SG225668 DB	'MinimumNumTurnsExecuted', 00H
+$SG225669 DB	'WeightThreshold', 00H
+$SG225670 DB	'FirstTurnExecuted', 00H
 	ORG $+2
-$SG225195 DB	'Advisor', 00H
-$SG225198 DB	'MILITARY', 00H
+$SG225672 DB	'Advisor', 00H
+$SG225675 DB	'MILITARY', 00H
 	ORG $+3
-$SG225201 DB	'ECONOMIC', 00H
+$SG225678 DB	'ECONOMIC', 00H
 	ORG $+3
-$SG225204 DB	'FOREIGN', 00H
-$SG225207 DB	'SCIENCE', 00H
-$SG225208 DB	'AdvisorCounsel', 00H
+$SG225681 DB	'FOREIGN', 00H
+$SG225684 DB	'SCIENCE', 00H
+$SG225685 DB	'AdvisorCounsel', 00H
 	ORG $+1
-$SG225209 DB	'AdvisorCounselImportance', 00H
+$SG225686 DB	'AdvisorCounselImportance', 00H
 	ORG $+3
-$SG225211 DB	'TechPrereq', 00H
+$SG225688 DB	'TechPrereq', 00H
 	ORG $+1
-$SG225212 DB	'TechObsolete', 00H
+$SG225689 DB	'TechObsolete', 00H
 	ORG $+3
-$SG225214 DB	'AIEconomicStrategyType', 00H
+$SG225691 DB	'AIEconomicStrategyType', 00H
 	ORG $+1
-$SG225215 DB	'AIEconomicStrategy_Player_Flavors', 00H
+$SG225692 DB	'AIEconomicStrategy_Player_Flavors', 00H
 	ORG $+2
-$SG225216 DB	'AIEconomicStrategyType', 00H
+$SG225693 DB	'AIEconomicStrategyType', 00H
 	ORG $+1
-$SG225217 DB	'AIEconomicStrategy_City_Flavors', 00H
-$SG225218 DB	'AIEconomicStrategyType', 00H
+$SG225694 DB	'AIEconomicStrategy_City_Flavors', 00H
+$SG225695 DB	'AIEconomicStrategyType', 00H
 	ORG $+1
-$SG225219 DB	'AIEconomicStrategy_PersonalityFlavorThresholdMods', 00H
+$SG225696 DB	'AIEconomicStrategy_PersonalityFlavorThresholdMods', 00H
 	ORG $+2
-$SG225749 DB	'ECONOMICAISTRATEGY_NEED_RECON', 00H
+$SG226226 DB	'ECONOMICAISTRATEGY_NEED_RECON', 00H
 	ORG $+2
-$SG225752 DB	'ECONOMICAISTRATEGY_ENOUGH_RECON', 00H
-$SG225755 DB	'ECONOMICAISTRATEGY_REALLY_NEED_RECON_SEA', 00H
+$SG226229 DB	'ECONOMICAISTRATEGY_ENOUGH_RECON', 00H
+$SG226232 DB	'ECONOMICAISTRATEGY_REALLY_NEED_RECON_SEA', 00H
 	ORG $+3
-$SG225758 DB	'ECONOMICAISTRATEGY_NEED_RECON_SEA', 00H
+$SG226235 DB	'ECONOMICAISTRATEGY_NEED_RECON_SEA', 00H
 	ORG $+2
-$SG225761 DB	'ECONOMICAISTRATEGY_ENOUGH_RECON_SEA', 00H
-$SG225764 DB	'ECONOMICAISTRATEGY_EARLY_EXPANSION', 00H
+$SG226238 DB	'ECONOMICAISTRATEGY_ENOUGH_RECON_SEA', 00H
+$SG226241 DB	'ECONOMICAISTRATEGY_EARLY_EXPANSION', 00H
 	ORG $+1
-$SG225767 DB	'ECONOMICAISTRATEGY_ENOUGH_EXPANSION', 00H
-$SG225770 DB	'ECONOMICAISTRATEGY_NEED_HAPPINESS', 00H
+$SG226244 DB	'ECONOMICAISTRATEGY_ENOUGH_EXPANSION', 00H
+$SG226247 DB	'ECONOMICAISTRATEGY_NEED_HAPPINESS', 00H
 	ORG $+2
-$SG225773 DB	'ECONOMICAISTRATEGY_NEED_HAPPINESS_CRITICAL', 00H
+$SG226250 DB	'ECONOMICAISTRATEGY_NEED_HAPPINESS_CRITICAL', 00H
 	ORG $+1
-$SG225776 DB	'ECONOMICAISTRATEGY_CITIES_NEED_NAVAL_GROWTH', 00H
-$SG225779 DB	'ECONOMICAISTRATEGY_CITIES_NEED_NAVAL_TILE_IMPROVEMENT', 00H
+$SG226253 DB	'ECONOMICAISTRATEGY_CITIES_NEED_NAVAL_GROWTH', 00H
+$SG226256 DB	'ECONOMICAISTRATEGY_CITIES_NEED_NAVAL_TILE_IMPROVEMENT', 00H
 	ORG $+2
-$SG225782 DB	'ECONOMICAISTRATEGY_FOUND_CITY', 00H
+$SG226259 DB	'ECONOMICAISTRATEGY_FOUND_CITY', 00H
 	ORG $+2
-$SG225785 DB	'ECONOMICAISTRATEGY_TRADE_WITH_CITY_STATE', 00H
+$SG226262 DB	'ECONOMICAISTRATEGY_TRADE_WITH_CITY_STATE', 00H
 	ORG $+3
-$SG225788 DB	'ECONOMICAISTRATEGY_NEED_IMPROVEMENT_FOOD', 00H
+$SG226265 DB	'ECONOMICAISTRATEGY_NEED_IMPROVEMENT_FOOD', 00H
 	ORG $+3
-$SG225791 DB	'ECONOMICAISTRATEGY_NEED_IMPROVEMENT_PRODUCTION', 00H
+$SG226268 DB	'ECONOMICAISTRATEGY_NEED_IMPROVEMENT_PRODUCTION', 00H
 	ORG $+1
-$SG225794 DB	'ECONOMICAISTRATEGY_ONE_OR_FEWER_COASTAL_CITIES', 00H
+$SG226271 DB	'ECONOMICAISTRATEGY_ONE_OR_FEWER_COASTAL_CITIES', 00H
 	ORG $+1
-$SG225797 DB	'ECONOMICAISTRATEGY_LOSING_MONEY', 00H
-$SG225800 DB	'ECONOMICAISTRATEGY_HALT_GROWTH_BUILDINGS', 00H
+$SG226274 DB	'ECONOMICAISTRATEGY_LOSING_MONEY', 00H
+$SG226277 DB	'ECONOMICAISTRATEGY_HALT_GROWTH_BUILDINGS', 00H
 	ORG $+3
-$SG225803 DB	'ECONOMICAISTRATEGY_TOO_MANY_UNITS', 00H
+$SG226280 DB	'ECONOMICAISTRATEGY_TOO_MANY_UNITS', 00H
 	ORG $+2
-$SG225806 DB	'ECONOMICAISTRATEGY_ISLAND_START', 00H
-$SG225809 DB	'ECONOMICAISTRATEGY_EXPAND_TO_OTHER_CONTINENTS', 00H
+$SG226283 DB	'ECONOMICAISTRATEGY_ISLAND_START', 00H
+$SG226286 DB	'ECONOMICAISTRATEGY_EXPAND_TO_OTHER_CONTINENTS', 00H
 	ORG $+2
-$SG225812 DB	'ECONOMICAISTRATEGY_REALLY_EXPAND_TO_OTHER_CONTINENTS', 00H
+$SG226289 DB	'ECONOMICAISTRATEGY_REALLY_EXPAND_TO_OTHER_CONTINENTS', 00H
 	ORG $+3
-$SG225815 DB	'ECONOMICAISTRATEGY_MOSTLY_ON_THE_COAST', 00H
+$SG226292 DB	'ECONOMICAISTRATEGY_MOSTLY_ON_THE_COAST', 00H
 	ORG $+1
-$SG225818 DB	'ECONOMICAISTRATEGY_EXPAND_LIKE_CRAZY', 00H
+$SG226295 DB	'ECONOMICAISTRATEGY_EXPAND_LIKE_CRAZY', 00H
 	ORG $+3
-$SG225821 DB	'ECONOMICAISTRATEGY_GROW_LIKE_CRAZY', 00H
+$SG226298 DB	'ECONOMICAISTRATEGY_GROW_LIKE_CRAZY', 00H
 	ORG $+1
-$SG225824 DB	'ECONOMICAISTRATEGY_GS_CULTURE', 00H
+$SG226301 DB	'ECONOMICAISTRATEGY_GS_CULTURE', 00H
 	ORG $+2
-$SG225827 DB	'ECONOMICAISTRATEGY_GS_CONQUEST', 00H
+$SG226304 DB	'ECONOMICAISTRATEGY_GS_CONQUEST', 00H
 	ORG $+1
-$SG225830 DB	'ECONOMICAISTRATEGY_GS_DIPLOMACY', 00H
-$SG225833 DB	'ECONOMICAISTRATEGY_GS_SPACESHIP', 00H
-$SG225836 DB	'ECONOMICAISTRATEGY_GS_SPACESHIP_HOMESTRETCH', 00H
-$SG225839 DB	'ECONOMICAISTRATEGY_NAVAL_MAP', 00H
+$SG226307 DB	'ECONOMICAISTRATEGY_GS_DIPLOMACY', 00H
+$SG226310 DB	'ECONOMICAISTRATEGY_GS_SPACESHIP', 00H
+$SG226313 DB	'ECONOMICAISTRATEGY_GS_SPACESHIP_HOMESTRETCH', 00H
+$SG226316 DB	'ECONOMICAISTRATEGY_NAVAL_MAP', 00H
 	ORG $+3
-$SG225842 DB	'ECONOMICAISTRATEGY_OFFSHORE_EXPANSION_MAP', 00H
+$SG226319 DB	'ECONOMICAISTRATEGY_OFFSHORE_EXPANSION_MAP', 00H
 	ORG $+2
-$SG225845 DB	'ECONOMICAISTRATEGY_DEVELOPING_RELIGION', 00H
+$SG226322 DB	'ECONOMICAISTRATEGY_DEVELOPING_RELIGION', 00H
 	ORG $+1
-$SG225848 DB	'ECONOMICAISTRATEGY_TECH_LEADER', 00H
+$SG226325 DB	'ECONOMICAISTRATEGY_TECH_LEADER', 00H
 	ORG $+1
-$SG225851 DB	'ECONOMICAISTRATEGY_NEED_ARCHAEOLOGISTS', 00H
+$SG226328 DB	'ECONOMICAISTRATEGY_NEED_ARCHAEOLOGISTS', 00H
 	ORG $+1
-$SG225854 DB	'ECONOMICAISTRATEGY_ENOUGH_ARCHAEOLOGISTS', 00H
+$SG226331 DB	'ECONOMICAISTRATEGY_ENOUGH_ARCHAEOLOGISTS', 00H
 	ORG $+3
-$SG225857 DB	'ECONOMICAISTRATEGY_NEED_MUSEUMS', 00H
-$SG225860 DB	'ECONOMICAISTRATEGY_NEED_GUILDS', 00H
+$SG226334 DB	'ECONOMICAISTRATEGY_NEED_MUSEUMS', 00H
+$SG226337 DB	'ECONOMICAISTRATEGY_NEED_GUILDS', 00H
 	ORG $+1
-$SG225863 DB	'ECONOMICAISTRATEGY_CONCERT_TOUR', 00H
-$SG225866 DB	'ECONOMICAISTRATEGY_STARTED_PIETY', 00H
+$SG226340 DB	'ECONOMICAISTRATEGY_CONCERT_TOUR', 00H
+$SG226343 DB	'ECONOMICAISTRATEGY_STARTED_PIETY', 00H
 	ORG $+3
-$SG225873 DB	'EconomicStrategyCanActivate', 00H
-$SG225926 DB	',', 00H
+$SG226350 DB	'EconomicStrategyCanActivate', 00H
+$SG226403 DB	',', 00H
 	ORG $+2
-$SG225927 DB	',', 00H
+$SG226404 DB	',', 00H
 	ORG $+2
-$SG225935 DB	',', 00H
+$SG226412 DB	',', 00H
 	ORG $+2
-$SG225937 DB	'%d,', 00H
-$SG225945 DB	',', 00H
+$SG226414 DB	'%d,', 00H
+$SG226422 DB	',', 00H
 	ORG $+2
-$SG225947 DB	'%.2f,', 00H
+$SG226424 DB	'%.2f,', 00H
 	ORG $+2
-$SG226177 DB	'.csv', 00H
+$SG226654 DB	'.csv', 00H
 	ORG $+3
-$SG226178 DB	'EconomicMonitorLog_', 00H
-$SG226180 DB	'EconomicMonitorLog.csv', 00H
+$SG226655 DB	'EconomicMonitorLog_', 00H
+$SG226657 DB	'EconomicMonitorLog.csv', 00H
 	ORG $+1
-$SG226185 DB	'Civ Name', 00H
+$SG226662 DB	'Civ Name', 00H
 	ORG $+3
-$SG226187 DB	'Turn', 00H
+$SG226664 DB	'Turn', 00H
 	ORG $+3
-$SG226189 DB	'# Cities', 00H
+$SG226666 DB	'# Cities', 00H
 	ORG $+3
-$SG226197 DB	'Pop', 00H
-$SG226209 DB	'Food', 00H
+$SG226674 DB	'Pop', 00H
+$SG226686 DB	'Food', 00H
 	ORG $+3
-$SG226213 DB	'Production', 00H
+$SG226690 DB	'Production', 00H
 	ORG $+1
-$SG226217 DB	'City Gold', 00H
+$SG226694 DB	'City Gold', 00H
 	ORG $+2
-$SG226221 DB	'Science', 00H
-$SG226224 DB	'Culture', 00H
-$SG226227 DB	'Faith', 00H
+$SG226698 DB	'Science', 00H
+$SG226701 DB	'Culture', 00H
+$SG226704 DB	'Faith', 00H
 	ORG $+2
-$SG226229 DB	'Num Techs', 00H
+$SG226706 DB	'Num Techs', 00H
 	ORG $+2
-$SG226231 DB	'Policies', 00H
+$SG226708 DB	'Policies', 00H
 	ORG $+3
-$SG226233 DB	'Culture (lifetime)', 00H
+$SG226710 DB	'Culture (lifetime)', 00H
 	ORG $+1
-$SG226235 DB	'Faith', 00H
+$SG226712 DB	'Faith', 00H
 	ORG $+2
-$SG226244 DB	'# Workers', 00H
+$SG226721 DB	'# Workers', 00H
 	ORG $+2
-$SG226246 DB	'Positive Happiness', 00H
+$SG226723 DB	'Positive Happiness', 00H
 	ORG $+1
-$SG226248 DB	'Negative Happiness', 00H
+$SG226725 DB	'Negative Happiness', 00H
 	ORG $+1
-$SG226250 DB	'Net Happiness', 00H
+$SG226727 DB	'Net Happiness', 00H
 	ORG $+2
-$SG226344 DB	'Tiles', 00H
+$SG226821 DB	'Tiles', 00H
 	ORG $+2
-$SG226346 DB	'Worked (non-city) tiles', 00H
-$SG226348 DB	'Improved tiles', 00H
+$SG226823 DB	'Worked (non-city) tiles', 00H
+$SG226825 DB	'Improved tiles', 00H
 	ORG $+1
-$SG226350 DB	'Trade Routes established', 00H
+$SG226827 DB	'Trade Routes established', 00H
 	ORG $+3
-$SG226353 DB	'Trade Routes available', 00H
+$SG226830 DB	'Trade Routes available', 00H
 	ORG $+1
-$SG226357 DB	'Gold From Cities', 00H
+$SG226834 DB	'Gold From Cities', 00H
 	ORG $+3
-$SG226360 DB	'Gold From Trade Routes', 00H
+$SG226837 DB	'Gold From Trade Routes', 00H
 	ORG $+1
-$SG226362 DB	'Treasury', 00H
+$SG226839 DB	'Treasury', 00H
 	ORG $+3
-$SG226364 DB	'GPT - Connects', 00H
+$SG226841 DB	'GPT - Connects', 00H
 	ORG $+1
-$SG226366 DB	'GPT - Diplo', 00H
-$SG226368 DB	'GPT - Religion', 00H
+$SG226843 DB	'GPT - Diplo', 00H
+$SG226845 DB	'GPT - Religion', 00H
 	ORG $+1
-$SG226370 DB	'GPT - Traits', 00H
+$SG226847 DB	'GPT - Traits', 00H
 	ORG $+3
-$SG226380 DB	'Total Income', 00H
+$SG226857 DB	'Total Income', 00H
 	ORG $+3
-$SG226383 DB	'Unit Maint', 00H
+$SG226860 DB	'Unit Maint', 00H
 	ORG $+1
-$SG226385 DB	'Build Maint', 00H
-$SG226387 DB	'Improve Maint', 00H
+$SG226862 DB	'Build Maint', 00H
+$SG226864 DB	'Improve Maint', 00H
 	ORG $+2
-$SG226389 DB	'Total Expenses', 00H
+$SG226866 DB	'Total Expenses', 00H
 	ORG $+1
-$SG226391 DB	'Net GPT', 00H
-$SG226411 DB	'.csv', 00H
+$SG226868 DB	'Net GPT', 00H
+$SG226888 DB	'.csv', 00H
 	ORG $+3
-$SG226412 DB	'EconomicCityMonitorLog_', 00H
-$SG226414 DB	'EconomicCityMonitorLog.csv', 00H
+$SG226889 DB	'EconomicCityMonitorLog_', 00H
+$SG226891 DB	'EconomicCityMonitorLog.csv', 00H
 	ORG $+1
-$SG226457 DB	'Civ Name', 00H
+$SG226934 DB	'Civ Name', 00H
 	ORG $+3
-$SG226459 DB	'Turn', 00H
+$SG226936 DB	'Turn', 00H
 	ORG $+3
-$SG226463 DB	'City Name', 00H
+$SG226940 DB	'City Name', 00H
 	ORG $+2
-$SG226465 DB	'Population', 00H
+$SG226942 DB	'Population', 00H
 	ORG $+1
-$SG226477 DB	'food', 00H
+$SG226954 DB	'food', 00H
 	ORG $+3
-$SG226480 DB	'production', 00H
+$SG226957 DB	'production', 00H
 	ORG $+1
-$SG226483 DB	'science', 00H
-$SG226486 DB	'city gold', 00H
+$SG226960 DB	'science', 00H
+$SG226963 DB	'city gold', 00H
 	ORG $+2
-$SG226489 DB	'culture', 00H
-$SG226492 DB	'faith', 00H
+$SG226966 DB	'culture', 00H
+$SG226969 DB	'faith', 00H
 	ORG $+2
-$SG226505 DB	'food / pop', 00H
+$SG226982 DB	'food / pop', 00H
 	ORG $+1
-$SG226508 DB	'production / pop', 00H
+$SG226985 DB	'production / pop', 00H
 	ORG $+3
-$SG226511 DB	'science / pop', 00H
+$SG226988 DB	'science / pop', 00H
 	ORG $+2
-$SG226514 DB	'gold / pop', 00H
+$SG226991 DB	'gold / pop', 00H
 	ORG $+1
-$SG226517 DB	'culture / pop', 00H
+$SG226994 DB	'culture / pop', 00H
 	ORG $+2
-$SG226520 DB	'faith / pop', 00H
-$SG226532 DB	'food specialist', 00H
-$SG226535 DB	'production specialist', 00H
+$SG226997 DB	'faith / pop', 00H
+$SG227009 DB	'food specialist', 00H
+$SG227012 DB	'production specialist', 00H
 	ORG $+2
-$SG226538 DB	'science specialist', 00H
+$SG227015 DB	'science specialist', 00H
 	ORG $+1
-$SG226541 DB	'gold specialist', 00H
-$SG226544 DB	'culture specialist', 00H
+$SG227018 DB	'gold specialist', 00H
+$SG227021 DB	'culture specialist', 00H
 	ORG $+1
-$SG226547 DB	'faith specialist', 00H
+$SG227024 DB	'faith specialist', 00H
 	ORG $+3
-$SG226560 DB	'food specialist / food', 00H
+$SG227037 DB	'food specialist / food', 00H
 	ORG $+1
-$SG226563 DB	'production specialist / production', 00H
+$SG227040 DB	'production specialist / production', 00H
 	ORG $+1
-$SG226566 DB	'science specialist / science', 00H
+$SG227043 DB	'science specialist / science', 00H
 	ORG $+3
-$SG226569 DB	'gold specialist / gold', 00H
+$SG227046 DB	'gold specialist / gold', 00H
 	ORG $+1
-$SG226572 DB	'culture specialist / culture', 00H
+$SG227049 DB	'culture specialist / culture', 00H
 	ORG $+3
-$SG226575 DB	'faith specialist / faith', 00H
+$SG227052 DB	'faith specialist / faith', 00H
 	ORG $+3
-$SG226591 DB	'Tiles', 00H
+$SG227068 DB	'Tiles', 00H
 	ORG $+2
-$SG226593 DB	'Worked (non-city) tiles', 00H
-$SG226595 DB	'Improved tiles', 00H
+$SG227070 DB	'Worked (non-city) tiles', 00H
+$SG227072 DB	'Improved tiles', 00H
 	ORG $+1
-$SG226599 DB	'improved / worked', 00H
+$SG227076 DB	'improved / worked', 00H
 	ORG $+2
-$SG226651 DB	'MILITARYAISTRATEGY_AT_WAR', 00H
+$SG227128 DB	'MILITARYAISTRATEGY_AT_WAR', 00H
 	ORG $+2
-$SG226671 DB	'Buying plot, X: %d, Y: %d, Cost: %d, Balance (before buy'
+$SG227148 DB	'Buying plot, X: %d, Y: %d, Cost: %d, Balance (before buy'
 	DB	'): %d, Priority: %d', 00H
-$SG226711 DB	'FLAVOR_RECON', 00H
+$SG227188 DB	'FLAVOR_RECON', 00H
 	ORG $+3
-$SG226730 DB	'Assigning exploring %s back to attack AI, X: %d, Y: %d', 00H
+$SG227207 DB	'Assigning exploring %s back to attack AI, X: %d, Y: %d', 00H
 	ORG $+1
-$SG226741 DB	'FLAVOR_NAVAL_RECON', 00H
+$SG227218 DB	'FLAVOR_NAVAL_RECON', 00H
 	ORG $+1
-$SG226759 DB	'Assigning naval explorer back to attack sea AI to %s, X:'
+$SG227236 DB	'Assigning naval explorer back to attack sea AI to %s, X:'
 	DB	' %d, Y: %d', 00H
 	ORG $+1
-$SG226781 DB	'ECONOMICAISTRATEGY_LOSING_MONEY', 00H
-$SG226838 DB	'POLICY_EXPLORATION_FINISHER', 00H
-$SG226844 DB	'UNIT_ARCHAEOLOGIST', 00H
+$SG227258 DB	'ECONOMICAISTRATEGY_LOSING_MONEY', 00H
+$SG227315 DB	'POLICY_EXPLORATION_FINISHER', 00H
+$SG227321 DB	'UNIT_ARCHAEOLOGIST', 00H
 	ORG $+1
-$SG227239 DB	'UNIT_WORKER', 00H
-$SG227252 DB	'UNIT_ARCHAEOLOGIST', 00H
+$SG227716 DB	'UNIT_WORKER', 00H
+$SG227729 DB	'UNIT_ARCHAEOLOGIST', 00H
 	ORG $+1
-$SG227262 DB	'FlavorAILog.csv', 00H
-$SG227266 DB	'.csv', 00H
+$SG227739 DB	'FlavorAILog.csv', 00H
+$SG227743 DB	'.csv', 00H
 	ORG $+3
-$SG227267 DB	'FlavorAILog_', 00H
+$SG227744 DB	'FlavorAILog_', 00H
 	ORG $+3
-$SG227270 DB	'%03d, ', 00H
+$SG227747 DB	'%03d, ', 00H
 	ORG $+1
-$SG227272 DB	', ', 00H
+$SG227749 DB	', ', 00H
 	ORG $+1
-$SG227277 DB	'%s, %d', 00H
+$SG227754 DB	'%s, %d', 00H
 	ORG $+1
-$SG227281 DB	'.csv', 00H
+$SG227758 DB	'.csv', 00H
 	ORG $+3
-$SG227282 DB	'TechAILog_', 00H
+$SG227759 DB	'TechAILog_', 00H
 	ORG $+1
-$SG227294 DB	'.csv', 00H
+$SG227771 DB	'.csv', 00H
 	ORG $+3
-$SG227295 DB	'_', 00H
+$SG227772 DB	'_', 00H
 	ORG $+2
-$SG227296 DB	'CityStrategyAILog_', 00H
+$SG227773 DB	'CityStrategyAILog_', 00H
 	ORG $+1
-$SG227298 DB	'CityStrategyAILog.csv', 00H
+$SG227775 DB	'CityStrategyAILog.csv', 00H
 	ORG $+2
-$SG227299 DB	'TechAILog.csv', 00H
+$SG227776 DB	'TechAILog.csv', 00H
 	ORG $+6
-$SG227312 DB	'Disbanding worker. %s, X: %d, Y: %d, iNumWorkers: %d, iN'
+$SG227789 DB	'Disbanding worker. %s, X: %d, Y: %d, iNumWorkers: %d, iN'
 	DB	'umCities: %d, improved/valid plots: %d/%d', 00H
 	ORG $+2
-$SG227372 DB	'MILITARYAISTRATEGY_AT_WAR', 00H
+$SG227849 DB	'MILITARYAISTRATEGY_AT_WAR', 00H
 	ORG $+2
-$SG227429 DB	'MILITARYAISTRATEGY_LOSING_WARS', 00H
+$SG227906 DB	'MILITARYAISTRATEGY_LOSING_WARS', 00H
 	ORG $+1
-$SG227478 DB	'FLAVOR_ESPIONAGE', 00H
+$SG227955 DB	'FLAVOR_ESPIONAGE', 00H
 	ORG $+3
-$SG227495 DB	'GAMEOPTION_AI_TWEAKS', 00H
+$SG227972 DB	'GAMEOPTION_AI_TWEAKS', 00H
 	ORG $+3
-$SG227496 DB	'GAMEOPTION_AI_GIMP_NO_BUILDING_SETTLERS', 00H
-$SG227504 DB	'FLAVOR_EXPANSION', 00H
+$SG227973 DB	'GAMEOPTION_AI_GIMP_NO_BUILDING_SETTLERS', 00H
+$SG227981 DB	'FLAVOR_EXPANSION', 00H
 	ORG $+3
-$SG227509 DB	'FLAVOR_GROWTH', 00H
+$SG227986 DB	'FLAVOR_GROWTH', 00H
 	ORG $+2
-$SG227541 DB	'GAMEOPTION_AI_TWEAKS', 00H
+$SG228018 DB	'GAMEOPTION_AI_TWEAKS', 00H
 	ORG $+3
-$SG227542 DB	'GAMEOPTION_AI_GIMP_NO_BUILDING_SETTLERS', 00H
-$SG227549 DB	'ECONOMICAISTRATEGY_REALLY_EXPAND_TO_OTHER_CONTINENTS', 00H
+$SG228019 DB	'GAMEOPTION_AI_GIMP_NO_BUILDING_SETTLERS', 00H
+$SG228026 DB	'ECONOMICAISTRATEGY_REALLY_EXPAND_TO_OTHER_CONTINENTS', 00H
 	ORG $+3
-$SG227555 DB	'FLAVOR_EXPANSION', 00H
+$SG228032 DB	'FLAVOR_EXPANSION', 00H
 	ORG $+3
-$SG227593 DB	'AICITYSTRATEGY_NEED_NAVAL_GROWTH', 00H
+$SG228070 DB	'AICITYSTRATEGY_NEED_NAVAL_GROWTH', 00H
 	ORG $+3
-$SG227614 DB	'AICITYSTRATEGY_NEED_NAVAL_TILE_IMPROVEMENT', 00H
+$SG228091 DB	'AICITYSTRATEGY_NEED_NAVAL_TILE_IMPROVEMENT', 00H
 	ORG $+1
-$SG227643 DB	'GAMEOPTION_AI_TWEAKS', 00H
+$SG228120 DB	'GAMEOPTION_AI_TWEAKS', 00H
 	ORG $+3
-$SG227644 DB	'GAMEOPTION_AI_GIMP_NO_BUILDING_SETTLERS', 00H
-$SG227658 DB	'Randomly choose an area to settle', 00H
+$SG228121 DB	'GAMEOPTION_AI_GIMP_NO_BUILDING_SETTLERS', 00H
+$SG228135 DB	'Randomly choose an area to settle', 00H
 	ORG $+2
-$SG227717 DB	'AICITYSTRATEGY_NEED_IMPROVEMENT_FOOD', 00H
+$SG228194 DB	'AICITYSTRATEGY_NEED_IMPROVEMENT_FOOD', 00H
 	ORG $+3
-$SG227720 DB	'AICITYSTRATEGY_NEED_IMPROVEMENT_PRODUCTION', 00H
+$SG228197 DB	'AICITYSTRATEGY_NEED_IMPROVEMENT_PRODUCTION', 00H
 	ORG $+1
-$SG227833 DB	'GAMEOPTION_AI_TWEAKS', 00H
+$SG228310 DB	'GAMEOPTION_AI_TWEAKS', 00H
 	ORG $+3
-$SG227834 DB	'GAMEOPTION_AI_GIMP_NO_BUILDING_SETTLERS', 00H
-$SG227837 DB	'ECONOMICAISTRATEGY_ISLAND_START', 00H
-$SG227842 DB	'ECONOMICAISTRATEGY_EARLY_EXPANSION', 00H
+$SG228311 DB	'GAMEOPTION_AI_GIMP_NO_BUILDING_SETTLERS', 00H
+$SG228314 DB	'ECONOMICAISTRATEGY_ISLAND_START', 00H
+$SG228319 DB	'ECONOMICAISTRATEGY_EARLY_EXPANSION', 00H
 	ORG $+1
-$SG227847 DB	'MILITARYAISTRATEGY_LOSING_WARS', 00H
+$SG228324 DB	'MILITARYAISTRATEGY_LOSING_WARS', 00H
 	ORG $+1
-$SG227864 DB	'GAMEOPTION_AI_TWEAKS', 00H
+$SG228341 DB	'GAMEOPTION_AI_TWEAKS', 00H
 	ORG $+3
-$SG227865 DB	'GAMEOPTION_AI_GIMP_NO_BUILDING_SETTLERS', 00H
-$SG227868 DB	'ECONOMICAISTRATEGY_EXPAND_TO_OTHER_CONTINENTS', 00H
+$SG228342 DB	'GAMEOPTION_AI_GIMP_NO_BUILDING_SETTLERS', 00H
+$SG228345 DB	'ECONOMICAISTRATEGY_EXPAND_TO_OTHER_CONTINENTS', 00H
 	ORG $+2
-$SG227873 DB	'MILITARYAISTRATEGY_LOSING_WARS', 00H
+$SG228350 DB	'MILITARYAISTRATEGY_LOSING_WARS', 00H
 	ORG $+1
-$SG227879 DB	'MILITARYAISTRATEGY_AT_WAR', 00H
+$SG228356 DB	'MILITARYAISTRATEGY_AT_WAR', 00H
 	ORG $+2
-$SG227884 DB	'FLAVOR_GROWTH', 00H
+$SG228361 DB	'FLAVOR_GROWTH', 00H
 	ORG $+2
-$SG227887 DB	'FLAVOR_EXPANSION', 00H
+$SG228364 DB	'FLAVOR_EXPANSION', 00H
 	ORG $+3
-$SG227912 DB	'GAMEOPTION_AI_TWEAKS', 00H
+$SG228389 DB	'GAMEOPTION_AI_TWEAKS', 00H
 	ORG $+3
-$SG227913 DB	'GAMEOPTION_AI_GIMP_NO_BUILDING_SETTLERS', 00H
-$SG227916 DB	'AIGRANDSTRATEGY_CULTURE', 00H
-$SG227922 DB	'FLAVOR_EXPANSION', 00H
+$SG228390 DB	'GAMEOPTION_AI_GIMP_NO_BUILDING_SETTLERS', 00H
+$SG228393 DB	'AIGRANDSTRATEGY_CULTURE', 00H
+$SG228399 DB	'FLAVOR_EXPANSION', 00H
 	ORG $+3
-$SG227931 DB	'FLAVOR_GROWTH', 00H
+$SG228408 DB	'FLAVOR_GROWTH', 00H
 	ORG $+2
-$SG227939 DB	'AIGRANDSTRATEGY_CULTURE', 00H
-$SG227947 DB	'AIGRANDSTRATEGY_CONQUEST', 00H
+$SG228416 DB	'AIGRANDSTRATEGY_CULTURE', 00H
+$SG228424 DB	'AIGRANDSTRATEGY_CONQUEST', 00H
 	ORG $+3
-$SG227955 DB	'AIGRANDSTRATEGY_UNITED_NATIONS', 00H
+$SG228432 DB	'AIGRANDSTRATEGY_UNITED_NATIONS', 00H
 	ORG $+1
-$SG227963 DB	'AIGRANDSTRATEGY_SPACESHIP', 00H
+$SG228440 DB	'AIGRANDSTRATEGY_SPACESHIP', 00H
 	ORG $+2
-$SG227971 DB	'PROJECT_APOLLO_PROGRAM', 00H
+$SG228448 DB	'PROJECT_APOLLO_PROGRAM', 00H
 	ORG $+1
-$SG227988 DB	'POLICY_EXPLORATION_FINISHER', 00H
-$SG228006 DB	'BUILDING_WRITERS_GUILD', 00H
+$SG228465 DB	'POLICY_EXPLORATION_FINISHER', 00H
+$SG228483 DB	'BUILDING_WRITERS_GUILD', 00H
 	ORG $+1
-$SG228009 DB	'BUILDING_ARTISTS_GUILD', 00H
+$SG228486 DB	'BUILDING_ARTISTS_GUILD', 00H
 	ORG $+1
-$SG228012 DB	'BUILDING_MUSICIANS_GUILD', 00H
+$SG228489 DB	'BUILDING_MUSICIANS_GUILD', 00H
 	ORG $+3
-$SG228035 DB	'POLICY_BRANCH_PIETY', 00H
+$SG228512 DB	'POLICY_BRANCH_PIETY', 00H
 CONST	ENDS
 ;	COMDAT ?NO_TURN@CvMinorCivQuest@@2HB
 CONST	SEGMENT
@@ -1980,7 +1980,7 @@ $LN12@FindArchae:
 ; 2712 : 		UnitTypes eArch = (UnitTypes) GC.getInfoTypeForString("UNIT_ARCHAEOLOGIST", true);
 
 	push	1
-	push	OFFSET $SG227252
+	push	OFFSET $SG227729
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 
@@ -2049,7 +2049,7 @@ _pPlayer$ = 8						; size = 4
 ; 2896 : 	MilitaryAIStrategyTypes eStrategyAtWar = (MilitaryAIStrategyTypes) GC.getInfoTypeForString("MILITARYAISTRATEGY_AT_WAR");
 
 	push	0
-	push	OFFSET $SG227372
+	push	OFFSET $SG227849
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 
@@ -2135,7 +2135,7 @@ _pPlayer$ = 8						; size = 4
 ; 3015 : 	MilitaryAIStrategyTypes eStrategyAtWar = (MilitaryAIStrategyTypes) GC.getInfoTypeForString("MILITARYAISTRATEGY_LOSING_WARS");
 
 	push	0
-	push	OFFSET $SG227429
+	push	OFFSET $SG227906
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 
@@ -2564,7 +2564,7 @@ _pPlayer$ = 8						; size = 4
 ; 4079 : 	AIGrandStrategyTypes eGrandStrategy = (AIGrandStrategyTypes) GC.getInfoTypeForString("AIGRANDSTRATEGY_CULTURE");
 
 	push	0
-	push	OFFSET $SG227939
+	push	OFFSET $SG228416
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	esi, eax
@@ -2623,7 +2623,7 @@ _pPlayer$ = 8						; size = 4
 ; 4095 : 	AIGrandStrategyTypes eGrandStrategy = (AIGrandStrategyTypes) GC.getInfoTypeForString("AIGRANDSTRATEGY_CONQUEST");
 
 	push	0
-	push	OFFSET $SG227947
+	push	OFFSET $SG228424
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	esi, eax
@@ -2682,7 +2682,7 @@ _pPlayer$ = 8						; size = 4
 ; 4111 : 	AIGrandStrategyTypes eGrandStrategy = (AIGrandStrategyTypes) GC.getInfoTypeForString("AIGRANDSTRATEGY_UNITED_NATIONS");
 
 	push	0
-	push	OFFSET $SG227955
+	push	OFFSET $SG228432
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	esi, eax
@@ -2741,7 +2741,7 @@ _pPlayer$ = 8						; size = 4
 ; 4127 : 	AIGrandStrategyTypes eGrandStrategy = (AIGrandStrategyTypes) GC.getInfoTypeForString("AIGRANDSTRATEGY_SPACESHIP");
 
 	push	0
-	push	OFFSET $SG227963
+	push	OFFSET $SG228440
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	esi, eax
@@ -2897,7 +2897,7 @@ _pPlayer$ = 8						; size = 4
 ; 4261 : 	PolicyBranchTypes eBranch = (PolicyBranchTypes)GC.getInfoTypeForString("POLICY_BRANCH_PIETY", true);
 
 	push	1
-	push	OFFSET $SG228035
+	push	OFFSET $SG228512
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 
@@ -4137,8 +4137,8 @@ __ehfuncinfo$?_Xlen@?$vector@PAVCvEconomicAIStrategyXMLEntry@@V?$allocator@PAVCv
 xdata$x	ENDS
 ;	COMDAT ?_Xlen@?$vector@PAVCvEconomicAIStrategyXMLEntry@@V?$allocator@PAVCvEconomicAIStrategyXMLEntry@@@std@@@std@@KAXXZ
 _TEXT	SEGMENT
-$T231682 = -80						; size = 28
-$T231681 = -52						; size = 40
+$T232159 = -80						; size = 28
+$T232158 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ?_Xlen@?$vector@PAVCvEconomicAIStrategyXMLEntry@@V?$allocator@PAVCvEconomicAIStrategyXMLEntry@@@std@@@std@@KAXXZ PROC ; std::vector<CvEconomicAIStrategyXMLEntry *,std::allocator<CvEconomicAIStrategyXMLEntry *> >::_Xlen, COMDAT
 
@@ -4154,22 +4154,22 @@ __$EHRec$ = -12						; size = 12
 ; 1260 : 		_THROW(length_error, "vector<T> too long");
 
 	push	OFFSET ??_C@_0BD@OLBABOEK@vector?$DMT?$DO?5too?5long?$AA@
-	lea	ecx, DWORD PTR $T231682[esp+84]
+	lea	ecx, DWORD PTR $T232159[esp+84]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T231681[esp+80]
+	lea	ecx, DWORD PTR $T232158[esp+80]
 	mov	DWORD PTR __$EHRec$[esp+88], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T231682[esp+80]
+	lea	eax, DWORD PTR $T232159[esp+80]
 	push	eax
-	lea	ecx, DWORD PTR $T231681[esp+96]
+	lea	ecx, DWORD PTR $T232158[esp+96]
 	mov	BYTE PTR __$EHRec$[esp+92], 1
-	mov	DWORD PTR $T231681[esp+84], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T232158[esp+84], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVlength_error@std@@
-	lea	ecx, DWORD PTR $T231681[esp+84]
+	lea	ecx, DWORD PTR $T232158[esp+84]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+96], 0
-	mov	DWORD PTR $T231681[esp+88], OFFSET ??_7length_error@std@@6B@
+	mov	DWORD PTR $T232158[esp+88], OFFSET ??_7length_error@std@@6B@
 	call	__CxxThrowException@8
 $LN13@Xlen:
 $LN12@Xlen:
@@ -4178,10 +4178,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Xlen@?$vector@PAVCvEconomicAIStrategyXMLEntry@@V?$allocator@PAVCvEconomicAIStrategyXMLEntry@@@std@@@std@@KAXXZ$0:
-	lea	ecx, DWORD PTR $T231682[ebp]
+	lea	ecx, DWORD PTR $T232159[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Xlen@?$vector@PAVCvEconomicAIStrategyXMLEntry@@V?$allocator@PAVCvEconomicAIStrategyXMLEntry@@@std@@@std@@KAXXZ$2:
-	lea	ecx, DWORD PTR $T231681[ebp]
+	lea	ecx, DWORD PTR $T232158[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Xlen@?$vector@PAVCvEconomicAIStrategyXMLEntry@@V?$allocator@PAVCvEconomicAIStrategyXMLEntry@@@std@@@std@@KAXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?_Xlen@?$vector@PAVCvEconomicAIStrategyXMLEntry@@V?$allocator@PAVCvEconomicAIStrategyXMLEntry@@@std@@@std@@KAXXZ
@@ -4784,8 +4784,8 @@ __TI2?AVbad_alloc@std@@ DD 00H
 xdata$x	ENDS
 ;	COMDAT ??$_Allocate@PAVCvEconomicAIStrategyXMLEntry@@@std@@YAPAPAVCvEconomicAIStrategyXMLEntry@@IPAPAV1@@Z
 _TEXT	SEGMENT
-$T231823 = -12						; size = 12
-$T231827 = 8						; size = 4
+$T232300 = -12						; size = 12
+$T232304 = 8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ??$_Allocate@PAVCvEconomicAIStrategyXMLEntry@@@std@@YAPAPAVCvEconomicAIStrategyXMLEntry@@IPAPAV1@@Z PROC ; std::_Allocate<CvEconomicAIStrategyXMLEntry *>, COMDAT
@@ -4827,15 +4827,15 @@ $LN3@Allocate:
 
 ; 40   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T231827[esp+8]
+	lea	eax, DWORD PTR $T232304[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T231823[esp+16]
-	mov	DWORD PTR $T231827[esp+12], 0
+	lea	ecx, DWORD PTR $T232300[esp+16]
+	mov	DWORD PTR $T232304[esp+12], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T231823[esp+16]
+	lea	ecx, DWORD PTR $T232300[esp+16]
 	push	ecx
-	mov	DWORD PTR $T231823[esp+20], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T232300[esp+20], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN9@Allocate:
 $LN8@Allocate:
@@ -6041,7 +6041,7 @@ PUBLIC	??$_Rotate@PAVCvPurchaseRequest@@HV1@@std@@YAXPAVCvPurchaseRequest@@00PAH
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\algorithm
 ;	COMDAT ??$_Rotate@PAVCvPurchaseRequest@@HV1@@std@@YAXPAVCvPurchaseRequest@@00PAH0@Z
 _TEXT	SEGMENT
-__Holeval$230511 = -12					; size = 12
+__Holeval$230988 = -12					; size = 12
 __First$ = 8						; size = 4
 tv172 = 12						; size = 4
 __Mid$ = 12						; size = 4
@@ -6132,15 +6132,15 @@ $LL5@Rotate:
 
 	mov	ecx, DWORD PTR [ebx+4]
 	mov	edx, DWORD PTR [ebx]
-	mov	DWORD PTR __Holeval$230511[esp+32], ecx
-	mov	DWORD PTR __Holeval$230511[esp+28], edx
+	mov	DWORD PTR __Holeval$230988[esp+32], ecx
+	mov	DWORD PTR __Holeval$230988[esp+28], edx
 	mov	edx, DWORD PTR [ebx+8]
 
 ; 1697 : 			_RanIt _Next1 = _Next + _Shift == _Last ? _First : _Next + _Shift;
 
 	lea	ecx, DWORD PTR [ebx+eax]
 	mov	esi, ebx
-	mov	DWORD PTR __Holeval$230511[esp+36], edx
+	mov	DWORD PTR __Holeval$230988[esp+36], edx
 	cmp	ecx, DWORD PTR __Last$[esp+24]
 	jne	SHORT $LN11@Rotate
 	mov	ecx, DWORD PTR __First$[esp+24]
@@ -6197,10 +6197,10 @@ $LN22@Rotate:
 ; 1704 : 				}
 ; 1705 : 			*_Next = _Holeval;
 
-	mov	ecx, DWORD PTR __Holeval$230511[esp+28]
-	mov	edx, DWORD PTR __Holeval$230511[esp+32]
+	mov	ecx, DWORD PTR __Holeval$230988[esp+28]
+	mov	edx, DWORD PTR __Holeval$230988[esp+32]
 	mov	DWORD PTR [esi], ecx
-	mov	ecx, DWORD PTR __Holeval$230511[esp+36]
+	mov	ecx, DWORD PTR __Holeval$230988[esp+36]
 	dec	ebp
 	sub	ebx, 12					; 0000000cH
 	mov	DWORD PTR [esi+4], edx
@@ -8557,35 +8557,35 @@ $LN9@CacheResul:
 ; 58   : 	//Basic Properties
 ; 59   : 	m_bNoMinorCivs					= kResults.GetBool("NoMinorCivs");
 
-	push	OFFSET $SG225189
+	push	OFFSET $SG225666
 	mov	ecx, edi
 	call	DWORD PTR __imp_?GetBool@Results@Database@@QAE_NPBD@Z
 
 ; 60   : 	m_iCheckTriggerTurnCount		= kResults.GetInt("CheckTriggerTurnCount");
 
 	mov	ebp, DWORD PTR __imp_?GetInt@Results@Database@@QAEHPBD@Z
-	push	OFFSET $SG225190
+	push	OFFSET $SG225667
 	mov	ecx, edi
 	mov	BYTE PTR [esi+276], al
 	call	ebp
 
 ; 61   : 	m_iMinimumNumTurnsExecuted		= kResults.GetInt("MinimumNumTurnsExecuted");
 
-	push	OFFSET $SG225191
+	push	OFFSET $SG225668
 	mov	ecx, edi
 	mov	DWORD PTR [esi+292], eax
 	call	ebp
 
 ; 62   : 	m_iWeightThreshold				= kResults.GetInt("WeightThreshold");
 
-	push	OFFSET $SG225192
+	push	OFFSET $SG225669
 	mov	ecx, edi
 	mov	DWORD PTR [esi+288], eax
 	call	ebp
 
 ; 63   : 	m_iFirstTurnExecuted            = kResults.GetInt("FirstTurnExecuted");
 
-	push	OFFSET $SG225193
+	push	OFFSET $SG225670
 	mov	ecx, edi
 	mov	DWORD PTR [esi+268], eax
 	call	ebp
@@ -8593,7 +8593,7 @@ $LN9@CacheResul:
 ; 64   : 
 ; 65   : 	const char* strAdvisor = kResults.GetText("Advisor");
 
-	push	OFFSET $SG225195
+	push	OFFSET $SG225672
 	mov	ecx, edi
 	mov	DWORD PTR [esi+296], eax
 	call	DWORD PTR __imp_?GetText@Results@Database@@QAEPBDPBD@Z
@@ -8610,7 +8610,7 @@ $LN9@CacheResul:
 ; 68   : 	{
 ; 69   : 		if(strcmp(strAdvisor, "MILITARY") == 0)
 
-	mov	edx, OFFSET $SG225198
+	mov	edx, OFFSET $SG225675
 	mov	ecx, eax
 	npad	7
 $LL18@CacheResul:
@@ -8646,7 +8646,7 @@ $LN7@CacheResul:
 ; 72   : 		}
 ; 73   : 		else if(strcmp(strAdvisor, "ECONOMIC") == 0)
 
-	mov	edx, OFFSET $SG225201
+	mov	edx, OFFSET $SG225678
 	mov	ecx, eax
 	npad	5
 $LL22@CacheResul:
@@ -8682,7 +8682,7 @@ $LN5@CacheResul:
 ; 76   : 		}
 ; 77   : 		else if(strcmp(strAdvisor, "FOREIGN") == 0)
 
-	mov	edx, OFFSET $SG225204
+	mov	edx, OFFSET $SG225681
 	mov	ecx, eax
 	npad	4
 $LL26@CacheResul:
@@ -8718,7 +8718,7 @@ $LN3@CacheResul:
 ; 80   : 		}
 ; 81   : 		else if(strcmp(strAdvisor, "SCIENCE") == 0)
 
-	mov	ecx, OFFSET $SG225207
+	mov	ecx, OFFSET $SG225684
 	npad	6
 $LL30@CacheResul:
 	mov	dl, BYTE PTR [eax]
@@ -8755,7 +8755,7 @@ $LN35@CacheResul:
 ; 87   : 	m_strAdvisorCounselText = kResults.GetText("AdvisorCounsel");
 
 	mov	ebx, DWORD PTR __imp_?GetText@Results@Database@@QAEPBDPBD@Z
-	push	OFFSET $SG225208
+	push	OFFSET $SG225685
 	mov	ecx, edi
 	call	ebx
 	lea	ecx, DWORD PTR [esi+304]
@@ -8770,7 +8770,7 @@ $LN12@CacheResul:
 
 ; 88   : 	m_iAdvisorCounselImportance = kResults.GetInt("AdvisorCounselImportance");
 
-	push	OFFSET $SG225209
+	push	OFFSET $SG225686
 	mov	ecx, edi
 	call	ebp
 
@@ -8779,7 +8779,7 @@ $LN12@CacheResul:
 ; 91   : 	const char* szTextVal = NULL;
 ; 92   : 	szTextVal = kResults.GetText("TechPrereq");
 
-	push	OFFSET $SG225211
+	push	OFFSET $SG225688
 	mov	ecx, edi
 	mov	DWORD PTR [esi+332], eax
 	call	ebx
@@ -8794,7 +8794,7 @@ $LN12@CacheResul:
 ; 94   : 
 ; 95   : 	szTextVal = kResults.GetText("TechObsolete");
 
-	push	OFFSET $SG225212
+	push	OFFSET $SG225689
 	mov	ecx, edi
 	mov	DWORD PTR [esi+280], eax
 	call	ebx
@@ -8822,8 +8822,8 @@ $LN12@CacheResul:
 	push	0
 	mov	edi, eax
 	push	edi
-	push	OFFSET $SG225214
-	push	OFFSET $SG225215
+	push	OFFSET $SG225691
+	push	OFFSET $SG225692
 	lea	ecx, DWORD PTR [esi+260]
 	push	ecx
 	mov	ecx, ebx
@@ -8834,8 +8834,8 @@ $LN12@CacheResul:
 
 	push	0
 	push	edi
-	push	OFFSET $SG225216
-	push	OFFSET $SG225217
+	push	OFFSET $SG225693
+	push	OFFSET $SG225694
 	lea	edx, DWORD PTR [esi+264]
 	push	edx
 	mov	ecx, ebx
@@ -8849,8 +8849,8 @@ $LN12@CacheResul:
 
 	push	0
 	push	edi
-	push	OFFSET $SG225218
-	push	OFFSET $SG225219
+	push	OFFSET $SG225695
+	push	OFFSET $SG225696
 	add	esi, 272				; 00000110H
 	push	esi
 	mov	ecx, ebx
@@ -8996,7 +8996,7 @@ _strValue$ = 44						; size = 28
 
 ; 879  : 	strHeader += ",";
 
-	push	OFFSET $SG225926
+	push	OFFSET $SG226403
 	mov	ecx, esi
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
@@ -9010,7 +9010,7 @@ _strValue$ = 44						; size = 28
 
 ; 881  : 	strLog += ",";
 
-	push	OFFSET $SG225927
+	push	OFFSET $SG226404
 	mov	ecx, esi
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
@@ -9090,7 +9090,7 @@ _iValue$ = 44						; size = 4
 
 ; 891  : 	strHeader += ",";
 
-	push	OFFSET $SG225935
+	push	OFFSET $SG226412
 	mov	ecx, esi
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
@@ -9104,7 +9104,7 @@ _iValue$ = 44						; size = 4
 	mov	ecx, DWORD PTR _iValue$[esp+40]
 	push	ecx
 	lea	edx, DWORD PTR _str$[esp+48]
-	push	OFFSET $SG225937
+	push	OFFSET $SG226414
 	push	edx
 	mov	BYTE PTR __$EHRec$[esp+64], 1
 	call	?Format@CvString@@QAAXPBDZZ		; CvString::Format
@@ -9193,7 +9193,7 @@ _fValue$ = 44						; size = 4
 
 ; 904  : 	strHeader += ",";
 
-	push	OFFSET $SG225945
+	push	OFFSET $SG226422
 	mov	ecx, esi
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
@@ -9208,7 +9208,7 @@ _fValue$ = 44						; size = 4
 	sub	esp, 8
 	fstp	QWORD PTR [esp]
 	lea	ecx, DWORD PTR _str$[esp+52]
-	push	OFFSET $SG225947
+	push	OFFSET $SG226424
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+68], 1
 	call	?Format@CvString@@QAAXPBDZZ		; CvString::Format
@@ -9578,23 +9578,23 @@ xdata$x	ENDS
 ;	COMDAT ?LogStrategy@CvEconomicAI@@AAEXW4EconomicAIStrategyTypes@@_N@Z
 _TEXT	SEGMENT
 _this$ = -272						; size = 4
-_iLoop$227285 = -268					; size = 4
-_cityName$227283 = -264					; size = 28
-_strTemp$227276 = -264					; size = 28
-$T232775 = -264						; size = 28
-_strLogName$227261 = -236				; size = 28
-_strOutBuf$227273 = -208				; size = 28
-$T232782 = -180						; size = 28
-$T232778 = -180						; size = 28
-$T232776 = -180						; size = 28
-$T232774 = -180						; size = 28
-$T232783 = -152						; size = 28
-$T232779 = -152						; size = 28
-$T232777 = -152						; size = 28
-_playerName$227260 = -124				; size = 28
-_strBaseString$227269 = -96				; size = 28
-$T232781 = -68						; size = 28
-$T232780 = -40						; size = 28
+_iLoop$227762 = -268					; size = 4
+_cityName$227760 = -264					; size = 28
+_strTemp$227753 = -264					; size = 28
+$T233252 = -264						; size = 28
+_strLogName$227738 = -236				; size = 28
+_strOutBuf$227750 = -208				; size = 28
+$T233259 = -180						; size = 28
+$T233255 = -180						; size = 28
+$T233253 = -180						; size = 28
+$T233251 = -180						; size = 28
+$T233260 = -152						; size = 28
+$T233256 = -152						; size = 28
+$T233254 = -152						; size = 28
+_playerName$227737 = -124				; size = 28
+_strBaseString$227746 = -96				; size = 28
+$T233258 = -68						; size = 28
+$T233257 = -40						; size = 28
 __$EHRec$ = -12						; size = 12
 _eStrategy$ = 8						; size = 4
 _bValue$ = 12						; size = 1
@@ -9638,15 +9638,15 @@ $LN32@LogStrateg:
 	push	ebp
 	push	edi
 	push	eax
-	lea	ecx, DWORD PTR _playerName$227260[esp+292]
+	lea	ecx, DWORD PTR _playerName$227737[esp+292]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 
 ; 2729 : 
 ; 2730 : 		// Open the log file
 ; 2731 : 		CvString strLogName = "FlavorAILog.csv";
 
-	push	OFFSET $SG227262
-	lea	ecx, DWORD PTR _strLogName$227261[esp+292]
+	push	OFFSET $SG227739
+	lea	ecx, DWORD PTR _strLogName$227738[esp+292]
 	mov	DWORD PTR __$EHRec$[esp+300], 0
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 
@@ -9663,15 +9663,15 @@ $LN32@LogStrateg:
 ; 2733 : 		{
 ; 2734 : 			strLogName = "FlavorAILog_" + playerName + ".csv";
 
-	lea	eax, DWORD PTR _playerName$227260[esp+288]
+	lea	eax, DWORD PTR _playerName$227737[esp+288]
 	push	eax
-	lea	ecx, DWORD PTR $T232774[esp+292]
-	push	OFFSET $SG227267
+	lea	ecx, DWORD PTR $T233251[esp+292]
+	push	OFFSET $SG227744
 	push	ecx
 	call	ebp
-	push	OFFSET $SG227266
+	push	OFFSET $SG227743
 	push	eax
-	lea	edx, DWORD PTR $T232775[esp+308]
+	lea	edx, DWORD PTR $T233252[esp+308]
 	mov	bl, 2
 	push	edx
 	mov	BYTE PTR __$EHRec$[esp+320], bl
@@ -9681,12 +9681,12 @@ $LN32@LogStrateg:
 	mov	BYTE PTR __$EHRec$[esp+296], 3
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
-	lea	ecx, DWORD PTR _strLogName$227261[esp+292]
+	lea	ecx, DWORD PTR _strLogName$227738[esp+292]
 	call	DWORD PTR __imp_?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBD@Z
-	lea	ecx, DWORD PTR $T232775[esp+288]
+	lea	ecx, DWORD PTR $T233252[esp+288]
 	mov	BYTE PTR __$EHRec$[esp+296], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T232774[esp+288]
+	lea	ecx, DWORD PTR $T233251[esp+288]
 	mov	BYTE PTR __$EHRec$[esp+296], 1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 $LN7@LogStrateg:
@@ -9696,7 +9696,7 @@ $LN7@LogStrateg:
 ; 2737 : 		FILogFile* pLog = LOGFILEMGR.GetLog(strLogName, FILogFile::kDontTimeStamp);
 
 	call	?GetInstance@FILogFileMgr@@SAAAV1@XZ	; FILogFileMgr::GetInstance
-	lea	ecx, DWORD PTR _strLogName$227261[esp+288]
+	lea	ecx, DWORD PTR _strLogName$227738[esp+288]
 	mov	ebx, eax
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	mov	edx, DWORD PTR [ebx]
@@ -9711,7 +9711,7 @@ $LN7@LogStrateg:
 ; 2739 : 		// Get the leading info for this line
 ; 2740 : 		CvString strBaseString;
 
-	lea	ecx, DWORD PTR _strBaseString$227269[esp+288]
+	lea	ecx, DWORD PTR _strBaseString$227746[esp+288]
 	mov	esi, eax
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -9721,34 +9721,34 @@ $LN7@LogStrateg:
 	mov	BYTE PTR __$EHRec$[esp+296], 4
 	call	?getElapsedGameTurns@CvGame@@QBEHXZ	; CvGame::getElapsedGameTurns
 	push	eax
-	lea	ecx, DWORD PTR _strBaseString$227269[esp+292]
-	push	OFFSET $SG227270
+	lea	ecx, DWORD PTR _strBaseString$227746[esp+292]
+	push	OFFSET $SG227747
 	push	ecx
 	call	?Format@CvString@@QAAXPBDZZ		; CvString::Format
 
 ; 2742 : 		strBaseString += playerName + ", ";
 
-	push	OFFSET $SG227272
-	lea	edx, DWORD PTR _playerName$227260[esp+304]
+	push	OFFSET $SG227749
+	lea	edx, DWORD PTR _playerName$227737[esp+304]
 	push	edx
-	lea	eax, DWORD PTR $T232776[esp+308]
+	lea	eax, DWORD PTR $T233253[esp+308]
 	push	eax
 	call	edi
 	add	esp, 24					; 00000018H
 	push	eax
-	lea	ecx, DWORD PTR _strBaseString$227269[esp+292]
+	lea	ecx, DWORD PTR _strBaseString$227746[esp+292]
 	mov	BYTE PTR __$EHRec$[esp+300], 5
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T232776[esp+288]
+	lea	ecx, DWORD PTR $T233253[esp+288]
 	mov	BYTE PTR __$EHRec$[esp+296], 4
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
 ; 2743 : 
 ; 2744 : 		CvString strOutBuf = strBaseString;
 
-	lea	ecx, DWORD PTR _strBaseString$227269[esp+288]
+	lea	ecx, DWORD PTR _strBaseString$227746[esp+288]
 	push	ecx
-	lea	ecx, DWORD PTR _strOutBuf$227273[esp+292]
+	lea	ecx, DWORD PTR _strOutBuf$227750[esp+292]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 
 ; 2745 : 
@@ -9770,7 +9770,7 @@ $LN7@LogStrateg:
 ; 2749 : 		{
 ; 2750 : 			CvString strTemp;
 
-	lea	ecx, DWORD PTR _strTemp$227276[esp+288]
+	lea	ecx, DWORD PTR _strTemp$227753[esp+288]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
 ; 2751 : 			strTemp.Format("%s, %d", pEconomicAIStrategyEntry->GetType(), bValue);
@@ -9781,22 +9781,22 @@ $LN7@LogStrateg:
 	mov	BYTE PTR __$EHRec$[esp+300], 7
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
-	lea	ecx, DWORD PTR _strTemp$227276[esp+296]
-	push	OFFSET $SG227277
+	lea	ecx, DWORD PTR _strTemp$227753[esp+296]
+	push	OFFSET $SG227754
 	push	ecx
 	call	?Format@CvString@@QAAXPBDZZ		; CvString::Format
 	add	esp, 16					; 00000010H
 
 ; 2752 : 			strOutBuf += strTemp;
 
-	lea	edx, DWORD PTR _strTemp$227276[esp+288]
+	lea	edx, DWORD PTR _strTemp$227753[esp+288]
 	push	edx
-	lea	ecx, DWORD PTR _strOutBuf$227273[esp+292]
+	lea	ecx, DWORD PTR _strOutBuf$227750[esp+292]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
 
 ; 2753 : 		}
 
-	lea	ecx, DWORD PTR _strTemp$227276[esp+288]
+	lea	ecx, DWORD PTR _strTemp$227753[esp+288]
 	mov	BYTE PTR __$EHRec$[esp+296], 6
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 $LN6@LogStrateg:
@@ -9804,7 +9804,7 @@ $LN6@LogStrateg:
 ; 2754 : 
 ; 2755 : 		pLog->Msg(strOutBuf);
 
-	lea	ecx, DWORD PTR _strOutBuf$227273[esp+288]
+	lea	ecx, DWORD PTR _strOutBuf$227750[esp+288]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	mov	ecx, DWORD PTR [esi]
 	mov	edx, DWORD PTR [ecx]
@@ -9826,15 +9826,15 @@ $LN6@LogStrateg:
 ; 2760 : 		{
 ; 2761 : 			strLogName = "TechAILog_" + playerName + ".csv";
 
-	lea	eax, DWORD PTR _playerName$227260[esp+288]
+	lea	eax, DWORD PTR _playerName$227737[esp+288]
 	push	eax
-	lea	ecx, DWORD PTR $T232777[esp+292]
-	push	OFFSET $SG227282
+	lea	ecx, DWORD PTR $T233254[esp+292]
+	push	OFFSET $SG227759
 	push	ecx
 	call	ebp
-	push	OFFSET $SG227281
+	push	OFFSET $SG227758
 	push	eax
-	lea	edx, DWORD PTR $T232778[esp+308]
+	lea	edx, DWORD PTR $T233255[esp+308]
 	mov	bl, 8
 	push	edx
 	mov	BYTE PTR __$EHRec$[esp+320], bl
@@ -9844,19 +9844,19 @@ $LN6@LogStrateg:
 	mov	BYTE PTR __$EHRec$[esp+296], 9
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
-	lea	ecx, DWORD PTR _strLogName$227261[esp+292]
+	lea	ecx, DWORD PTR _strLogName$227738[esp+292]
 	call	DWORD PTR __imp_?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBD@Z
-	lea	ecx, DWORD PTR $T232778[esp+288]
+	lea	ecx, DWORD PTR $T233255[esp+288]
 	mov	BYTE PTR __$EHRec$[esp+296], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T232777[esp+288]
+	lea	ecx, DWORD PTR $T233254[esp+288]
 	mov	BYTE PTR __$EHRec$[esp+296], 6
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
 ; 2762 : 			pLog = LOGFILEMGR.GetLog(strLogName, FILogFile::kDontTimeStamp);
 
 	call	?GetInstance@FILogFileMgr@@SAAAV1@XZ	; FILogFileMgr::GetInstance
-	lea	ecx, DWORD PTR _strLogName$227261[esp+288]
+	lea	ecx, DWORD PTR _strLogName$227738[esp+288]
 	mov	ebx, eax
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	mov	edx, DWORD PTR [ebx]
@@ -9869,7 +9869,7 @@ $LN6@LogStrateg:
 
 ; 2763 : 			pLog->Msg(strOutBuf);
 
-	lea	ecx, DWORD PTR _strOutBuf$227273[esp+288]
+	lea	ecx, DWORD PTR _strOutBuf$227750[esp+288]
 	mov	ebx, eax
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	mov	ecx, DWORD PTR [ebx]
@@ -9882,7 +9882,7 @@ $LN6@LogStrateg:
 ; 2764 : 
 ; 2765 : 			CvString cityName;
 
-	lea	ecx, DWORD PTR _cityName$227283[esp+288]
+	lea	ecx, DWORD PTR _cityName$227760[esp+288]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
 ; 2766 : 
@@ -9894,7 +9894,7 @@ $LN6@LogStrateg:
 	mov	eax, DWORD PTR _this$[esp+288]
 	mov	ecx, DWORD PTR [eax+4]
 	push	0
-	lea	edx, DWORD PTR _iLoop$227285[esp+292]
+	lea	edx, DWORD PTR _iLoop$227762[esp+292]
 	mov	bl, 10					; 0000000aH
 	push	edx
 	mov	BYTE PTR __$EHRec$[esp+304], bl
@@ -9906,42 +9906,42 @@ $LL4@LogStrateg:
 ; 2771 : 			{
 ; 2772 : 				cityName = pLoopCity->getName();
 
-	lea	ecx, DWORD PTR $T232779[esp+288]
+	lea	ecx, DWORD PTR $T233256[esp+288]
 	push	ecx
 	mov	ecx, eax
 	call	?getName@CvCity@@QBE?BVCvString@@XZ	; CvCity::getName
 	push	eax
-	lea	ecx, DWORD PTR _cityName$227283[esp+292]
+	lea	ecx, DWORD PTR _cityName$227760[esp+292]
 	mov	BYTE PTR __$EHRec$[esp+300], 11		; 0000000bH
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T232779[esp+288]
+	lea	ecx, DWORD PTR $T233256[esp+288]
 	mov	BYTE PTR __$EHRec$[esp+296], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
 ; 2773 : 				strLogName = "CityStrategyAILog_" + playerName + "_" + cityName + ".csv";
 
-	lea	edx, DWORD PTR _playerName$227260[esp+288]
+	lea	edx, DWORD PTR _playerName$227737[esp+288]
 	push	edx
-	lea	eax, DWORD PTR $T232780[esp+292]
-	push	OFFSET $SG227296
+	lea	eax, DWORD PTR $T233257[esp+292]
+	push	OFFSET $SG227773
 	push	eax
 	call	ebp
-	push	OFFSET $SG227295
+	push	OFFSET $SG227772
 	push	eax
-	lea	ecx, DWORD PTR $T232781[esp+308]
+	lea	ecx, DWORD PTR $T233258[esp+308]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+320], 12		; 0000000cH
 	call	edi
-	lea	edx, DWORD PTR _cityName$227283[esp+312]
+	lea	edx, DWORD PTR _cityName$227760[esp+312]
 	push	edx
 	push	eax
-	lea	eax, DWORD PTR $T232782[esp+320]
+	lea	eax, DWORD PTR $T233259[esp+320]
 	push	eax
 	mov	BYTE PTR __$EHRec$[esp+332], 13		; 0000000dH
 	call	DWORD PTR __imp_??$?HDU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@ABV10@0@Z
-	push	OFFSET $SG227294
+	push	OFFSET $SG227771
 	push	eax
-	lea	ecx, DWORD PTR $T232783[esp+332]
+	lea	ecx, DWORD PTR $T233260[esp+332]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+344], 14		; 0000000eH
 	call	edi
@@ -9950,25 +9950,25 @@ $LL4@LogStrateg:
 	mov	BYTE PTR __$EHRec$[esp+296], 15		; 0000000fH
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
-	lea	ecx, DWORD PTR _strLogName$227261[esp+292]
+	lea	ecx, DWORD PTR _strLogName$227738[esp+292]
 	call	DWORD PTR __imp_?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBD@Z
-	lea	ecx, DWORD PTR $T232783[esp+288]
+	lea	ecx, DWORD PTR $T233260[esp+288]
 	mov	BYTE PTR __$EHRec$[esp+296], 14		; 0000000eH
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T232782[esp+288]
+	lea	ecx, DWORD PTR $T233259[esp+288]
 	mov	BYTE PTR __$EHRec$[esp+296], 13		; 0000000dH
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T232781[esp+288]
+	lea	ecx, DWORD PTR $T233258[esp+288]
 	mov	BYTE PTR __$EHRec$[esp+296], 12		; 0000000cH
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T232780[esp+288]
+	lea	ecx, DWORD PTR $T233257[esp+288]
 	mov	BYTE PTR __$EHRec$[esp+296], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
 ; 2774 : 				pLog = LOGFILEMGR.GetLog(strLogName, FILogFile::kDontTimeStamp);
 
 	call	?GetInstance@FILogFileMgr@@SAAAV1@XZ	; FILogFileMgr::GetInstance
-	lea	ecx, DWORD PTR _strLogName$227261[esp+288]
+	lea	ecx, DWORD PTR _strLogName$227738[esp+288]
 	mov	esi, eax
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	mov	edx, DWORD PTR [esi]
@@ -9981,7 +9981,7 @@ $LL4@LogStrateg:
 
 ; 2775 : 				pLog->Msg(strOutBuf);
 
-	lea	ecx, DWORD PTR _strOutBuf$227273[esp+288]
+	lea	ecx, DWORD PTR _strOutBuf$227750[esp+288]
 	mov	esi, eax
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	mov	ecx, DWORD PTR [esi]
@@ -9993,7 +9993,7 @@ $LL4@LogStrateg:
 	add	esp, 8
 	mov	ecx, DWORD PTR [eax+4]
 	push	0
-	lea	edx, DWORD PTR _iLoop$227285[esp+292]
+	lea	edx, DWORD PTR _iLoop$227762[esp+292]
 	push	edx
 	call	?nextCity@CvPlayer@@QAEPAVCvCity@@PAH_N@Z ; CvPlayer::nextCity
 	test	eax, eax
@@ -10003,7 +10003,7 @@ $LN2@LogStrateg:
 ; 2776 : 			}
 ; 2777 : 		}
 
-	lea	ecx, DWORD PTR _cityName$227283[esp+288]
+	lea	ecx, DWORD PTR _cityName$227760[esp+288]
 	mov	BYTE PTR __$EHRec$[esp+296], 6
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -10021,12 +10021,12 @@ $LN5@LogStrateg:
 	push	1
 	mov	ecx, eax
 	mov	eax, DWORD PTR [edx+12]
-	push	OFFSET $SG227298
+	push	OFFSET $SG227775
 	call	eax
 
 ; 2781 : 			pLog->Msg(strOutBuf);
 
-	lea	ecx, DWORD PTR _strOutBuf$227273[esp+288]
+	lea	ecx, DWORD PTR _strOutBuf$227750[esp+288]
 	mov	esi, eax
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	mov	ecx, DWORD PTR [esi]
@@ -10044,12 +10044,12 @@ $LN5@LogStrateg:
 	push	1
 	mov	ecx, eax
 	mov	eax, DWORD PTR [edx+12]
-	push	OFFSET $SG227299
+	push	OFFSET $SG227776
 	call	eax
 
 ; 2783 : 			pLog->Msg(strOutBuf);
 
-	lea	ecx, DWORD PTR _strOutBuf$227273[esp+288]
+	lea	ecx, DWORD PTR _strOutBuf$227750[esp+288]
 	mov	esi, eax
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	mov	ecx, DWORD PTR [esi]
@@ -10063,16 +10063,16 @@ $LN1@LogStrateg:
 ; 2784 : 		}
 ; 2785 : 	}
 
-	lea	ecx, DWORD PTR _strOutBuf$227273[esp+288]
+	lea	ecx, DWORD PTR _strOutBuf$227750[esp+288]
 	mov	BYTE PTR __$EHRec$[esp+296], 4
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR _strBaseString$227269[esp+288]
+	lea	ecx, DWORD PTR _strBaseString$227746[esp+288]
 	mov	BYTE PTR __$EHRec$[esp+296], 1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR _strLogName$227261[esp+288]
+	lea	ecx, DWORD PTR _strLogName$227738[esp+288]
 	mov	BYTE PTR __$EHRec$[esp+296], 0
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR _playerName$227260[esp+288]
+	lea	ecx, DWORD PTR _playerName$227737[esp+288]
 	mov	DWORD PTR __$EHRec$[esp+296], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 	pop	edi
@@ -10091,52 +10091,52 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?LogStrategy@CvEconomicAI@@AAEXW4EconomicAIStrategyTypes@@_N@Z$0:
-	lea	ecx, DWORD PTR _playerName$227260[ebp]
+	lea	ecx, DWORD PTR _playerName$227737[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?LogStrategy@CvEconomicAI@@AAEXW4EconomicAIStrategyTypes@@_N@Z$1:
-	lea	ecx, DWORD PTR _strLogName$227261[ebp]
+	lea	ecx, DWORD PTR _strLogName$227738[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?LogStrategy@CvEconomicAI@@AAEXW4EconomicAIStrategyTypes@@_N@Z$2:
-	lea	ecx, DWORD PTR $T232774[ebp]
+	lea	ecx, DWORD PTR $T233251[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?LogStrategy@CvEconomicAI@@AAEXW4EconomicAIStrategyTypes@@_N@Z$3:
-	lea	ecx, DWORD PTR $T232775[ebp]
+	lea	ecx, DWORD PTR $T233252[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?LogStrategy@CvEconomicAI@@AAEXW4EconomicAIStrategyTypes@@_N@Z$4:
-	lea	ecx, DWORD PTR _strBaseString$227269[ebp]
+	lea	ecx, DWORD PTR _strBaseString$227746[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?LogStrategy@CvEconomicAI@@AAEXW4EconomicAIStrategyTypes@@_N@Z$5:
-	lea	ecx, DWORD PTR $T232776[ebp]
+	lea	ecx, DWORD PTR $T233253[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?LogStrategy@CvEconomicAI@@AAEXW4EconomicAIStrategyTypes@@_N@Z$6:
-	lea	ecx, DWORD PTR _strOutBuf$227273[ebp]
+	lea	ecx, DWORD PTR _strOutBuf$227750[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?LogStrategy@CvEconomicAI@@AAEXW4EconomicAIStrategyTypes@@_N@Z$7:
-	lea	ecx, DWORD PTR _strTemp$227276[ebp]
+	lea	ecx, DWORD PTR _strTemp$227753[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?LogStrategy@CvEconomicAI@@AAEXW4EconomicAIStrategyTypes@@_N@Z$8:
-	lea	ecx, DWORD PTR $T232777[ebp]
+	lea	ecx, DWORD PTR $T233254[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?LogStrategy@CvEconomicAI@@AAEXW4EconomicAIStrategyTypes@@_N@Z$9:
-	lea	ecx, DWORD PTR $T232778[ebp]
+	lea	ecx, DWORD PTR $T233255[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?LogStrategy@CvEconomicAI@@AAEXW4EconomicAIStrategyTypes@@_N@Z$10:
-	lea	ecx, DWORD PTR _cityName$227283[ebp]
+	lea	ecx, DWORD PTR _cityName$227760[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?LogStrategy@CvEconomicAI@@AAEXW4EconomicAIStrategyTypes@@_N@Z$11:
-	lea	ecx, DWORD PTR $T232779[ebp]
+	lea	ecx, DWORD PTR $T233256[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?LogStrategy@CvEconomicAI@@AAEXW4EconomicAIStrategyTypes@@_N@Z$12:
-	lea	ecx, DWORD PTR $T232780[ebp]
+	lea	ecx, DWORD PTR $T233257[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?LogStrategy@CvEconomicAI@@AAEXW4EconomicAIStrategyTypes@@_N@Z$13:
-	lea	ecx, DWORD PTR $T232781[ebp]
+	lea	ecx, DWORD PTR $T233258[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?LogStrategy@CvEconomicAI@@AAEXW4EconomicAIStrategyTypes@@_N@Z$14:
-	lea	ecx, DWORD PTR $T232782[ebp]
+	lea	ecx, DWORD PTR $T233259[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?LogStrategy@CvEconomicAI@@AAEXW4EconomicAIStrategyTypes@@_N@Z$15:
-	lea	ecx, DWORD PTR $T232783[ebp]
+	lea	ecx, DWORD PTR $T233260[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __ehhandler$?LogStrategy@CvEconomicAI@@AAEXW4EconomicAIStrategyTypes@@_N@Z:
 	mov	eax, OFFSET __ehfuncinfo$?LogStrategy@CvEconomicAI@@AAEXW4EconomicAIStrategyTypes@@_N@Z
@@ -10148,7 +10148,7 @@ PUBLIC	??6@YAAAVFDataStream@@AAV0@ABVCvPurchaseRequest@@@Z ; operator<<
 ;	COMDAT ??6@YAAAVFDataStream@@AAV0@ABVCvPurchaseRequest@@@Z
 _TEXT	SEGMENT
 _saveTo$ = 8						; size = 4
-$T232939 = 12						; size = 4
+$T233416 = 12						; size = 4
 _readFrom$ = 12						; size = 4
 ??6@YAAAVFDataStream@@AAV0@ABVCvPurchaseRequest@@@Z PROC ; operator<<, COMDAT
 
@@ -10162,10 +10162,10 @@ _readFrom$ = 12						; size = 4
 	push	edi
 	mov	edi, DWORD PTR _readFrom$[esp+4]
 	mov	eax, DWORD PTR [edi]
-	lea	ecx, DWORD PTR $T232939[esp+4]
+	lea	ecx, DWORD PTR $T233416[esp+4]
 	push	ecx
 	mov	ecx, esi
-	mov	DWORD PTR $T232939[esp+8], eax
+	mov	DWORD PTR $T233416[esp+8], eax
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
 ; 2804 : 	saveTo << readFrom.m_iAmount;
@@ -10430,18 +10430,18 @@ EXTRN	?isOption@CvGame@@QBE_NW4GameOptionTypes@@@Z:PROC ; CvGame::isOption
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?IsTestStrategy_EarlyExpansion@EconomicAIHelpers@@YA_NPAVCvPlayer@@@Z
 _TEXT	SEGMENT
-$T233012 = -24						; size = 4
+$T233489 = -24						; size = 4
 _iFlavorGrowth$ = -24					; size = 4
-$T233100 = -20						; size = 4
+$T233576 = -20						; size = 4
 _iFlavorExpansion$ = -20				; size = 4
-_iSecondBestArea$227519 = -16				; size = 4
-$T233011 = -16						; size = 4
-$T233009 = -16						; size = 4
-_iBestArea$227518 = -12					; size = 4
-$T233010 = -12						; size = 4
+_iSecondBestArea$227996 = -16				; size = 4
+$T233488 = -16						; size = 4
+$T233486 = -16						; size = 4
+_iBestArea$227995 = -12					; size = 4
+$T233487 = -12						; size = 4
 _iDesiredCities$ = -12					; size = 4
-$T233013 = -8						; size = 4
-_iNumUnownedTiles$227523 = -4				; size = 4
+$T233490 = -8						; size = 4
+_iNumUnownedTiles$228000 = -4				; size = 4
 _pPlayer$ = 8						; size = 4
 ?IsTestStrategy_EarlyExpansion@EconomicAIHelpers@@YA_NPAVCvPlayer@@@Z PROC ; EconomicAIHelpers::IsTestStrategy_EarlyExpansion, COMDAT
 
@@ -10477,12 +10477,12 @@ $LN13@IsTestStra@13:
 	test	al, al
 	jne	SHORT $LN15@IsTestStra@13
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
-	push	OFFSET $SG227495
+	push	OFFSET $SG227972
 	call	?isOption@CvGame@@QBE_NPBD@Z		; CvGame::isOption
 	test	al, al
 	jne	SHORT $LN12@IsTestStra@13
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
-	push	OFFSET $SG227496
+	push	OFFSET $SG227973
 	call	?isOption@CvGame@@QBE_NPBD@Z		; CvGame::isOption
 	test	al, al
 	je	SHORT $LN15@IsTestStra@13
@@ -10542,7 +10542,7 @@ $LN8@IsTestStra@13:
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+1760
 	lea	eax, DWORD PTR [edi+ecx]
-	push	OFFSET $SG227504
+	push	OFFSET $SG227981
 	push	eax
 	call	ebx
 	add	esp, 8
@@ -10566,7 +10566,7 @@ $LN7@IsTestStra@13:
 
 	mov	edx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+1760
 	lea	eax, DWORD PTR [edi+edx]
-	push	OFFSET $SG227509
+	push	OFFSET $SG227986
 	push	eax
 	call	ebx
 	add	esp, 8
@@ -10596,8 +10596,8 @@ $LN67@IsTestStra@13:
 
 	mov	eax, 1
 	cmp	DWORD PTR _iFlavorGrowth$[esp+40], eax
-	mov	DWORD PTR $T233009[esp+40], eax
-	lea	ecx, DWORD PTR $T233009[esp+40]
+	mov	DWORD PTR $T233486[esp+40], eax
+	lea	ecx, DWORD PTR $T233486[esp+40]
 	jl	SHORT $LN35@IsTestStra@13
 	lea	ecx, DWORD PTR _iFlavorGrowth$[esp+40]
 $LN35@IsTestStra@13:
@@ -10613,12 +10613,12 @@ $LN35@IsTestStra@13:
 	call	?getHandicapInfo@CvGame@@QBEAAVCvHandicapInfo@@XZ ; CvGame::getHandicapInfo
 	mov	eax, DWORD PTR [eax+4]
 	sub	eax, 3
-	mov	DWORD PTR $T233010[esp+40], eax
+	mov	DWORD PTR $T233487[esp+40], eax
 	test	eax, eax
-	mov	DWORD PTR $T233011[esp+40], 0
-	lea	eax, DWORD PTR $T233010[esp+40]
+	mov	DWORD PTR $T233488[esp+40], 0
+	lea	eax, DWORD PTR $T233487[esp+40]
 	jg	SHORT $LN43@IsTestStra@13
-	lea	eax, DWORD PTR $T233011[esp+40]
+	lea	eax, DWORD PTR $T233488[esp+40]
 $LN43@IsTestStra@13:
 
 ; 3183 : 	iDesiredCities += iDifficulty;
@@ -10673,9 +10673,9 @@ $LN43@IsTestStra@13:
 	mov	edi, eax
 	call	?GetEconomicAI@CvPlayer@@QBEPAVCvEconomicAI@@XZ ; CvPlayer::GetEconomicAI
 	mov	eax, DWORD PTR [eax+48]
-	lea	ecx, DWORD PTR _iSecondBestArea$227519[esp+40]
+	lea	ecx, DWORD PTR _iSecondBestArea$227996[esp+40]
 	push	ecx
-	lea	edx, DWORD PTR _iBestArea$227518[esp+44]
+	lea	edx, DWORD PTR _iBestArea$227995[esp+44]
 	push	edx
 	push	eax
 	mov	ecx, esi
@@ -10684,9 +10684,9 @@ $LN43@IsTestStra@13:
 ; 3200 : 			if(iBestArea == pArea->GetID() || iSecondBestArea == pArea->GetID())
 
 	mov	eax, DWORD PTR [edi+4]
-	cmp	DWORD PTR _iBestArea$227518[esp+40], eax
+	cmp	DWORD PTR _iBestArea$227995[esp+40], eax
 	je	SHORT $LN2@IsTestStra@13
-	cmp	DWORD PTR _iSecondBestArea$227519[esp+40], eax
+	cmp	DWORD PTR _iSecondBestArea$227996[esp+40], eax
 	jne	$LN1@IsTestStra@13
 $LN2@IsTestStra@13:
 
@@ -10705,18 +10705,18 @@ $LN2@IsTestStra@13:
 ; 3204 : 				int iNumTiles = max(1,pArea->getNumTiles());
 
 	mov	ecx, edi
-	mov	DWORD PTR _iNumUnownedTiles$227523[esp+40], eax
+	mov	DWORD PTR _iNumUnownedTiles$228000[esp+40], eax
 	call	?getNumTiles@CvArea@@QBEHXZ		; CvArea::getNumTiles
 	cmp	eax, 1
-	mov	DWORD PTR $T233012[esp+40], eax
-	mov	DWORD PTR $T233013[esp+40], 1
+	mov	DWORD PTR $T233489[esp+40], eax
+	mov	DWORD PTR $T233490[esp+40], 1
 	jle	SHORT $LN58@IsTestStra@13
-	lea	ecx, DWORD PTR $T233012[esp+40]
-	mov	DWORD PTR $T233100[esp+40], ecx
+	lea	ecx, DWORD PTR $T233489[esp+40]
+	mov	DWORD PTR $T233576[esp+40], ecx
 	jmp	SHORT $LN59@IsTestStra@13
 $LN58@IsTestStra@13:
-	lea	edx, DWORD PTR $T233013[esp+40]
-	mov	DWORD PTR $T233100[esp+40], edx
+	lea	edx, DWORD PTR $T233490[esp+40]
+	mov	DWORD PTR $T233576[esp+40], edx
 $LN59@IsTestStra@13:
 
 ; 3205 : 
@@ -10737,7 +10737,7 @@ $LN59@IsTestStra@13:
 	mov	ecx, esi
 	sub	edi, eax
 	call	?GetNumUnitsWithUnitAI@CvPlayer@@QAEHW4UnitAITypes@@_N1@Z ; CvPlayer::GetNumUnitsWithUnitAI
-	mov	esi, DWORD PTR $T233100[esp+40]
+	mov	esi, DWORD PTR $T233576[esp+40]
 	mov	ecx, eax
 	mov	eax, ebx
 	imul	eax, 100				; 00000064H
@@ -10754,7 +10754,7 @@ $LN59@IsTestStra@13:
 	add	ecx, edi
 	cmp	ecx, ebp
 	jge	SHORT $LN1@IsTestStra@13
-	mov	eax, DWORD PTR _iNumUnownedTiles$227523[esp+40]
+	mov	eax, DWORD PTR _iNumUnownedTiles$228000[esp+40]
 	cmp	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+2008
 	jl	SHORT $LN1@IsTestStra@13
 	pop	ebp
@@ -10829,12 +10829,12 @@ $LN10@IsTestStra@14:
 	test	al, al
 	jne	SHORT $LN12@IsTestStra@14
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
-	push	OFFSET $SG227541
+	push	OFFSET $SG228018
 	call	?isOption@CvGame@@QBE_NPBD@Z		; CvGame::isOption
 	test	al, al
 	jne	SHORT $LN9@IsTestStra@14
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
-	push	OFFSET $SG227542
+	push	OFFSET $SG228019
 	call	?isOption@CvGame@@QBE_NPBD@Z		; CvGame::isOption
 	test	al, al
 	je	SHORT $LN12@IsTestStra@14
@@ -10904,7 +10904,7 @@ $LN12@IsTestStra@14:
 ; 3250 : 		EconomicAIStrategyTypes eStrategyExpandToOtherContinents = (EconomicAIStrategyTypes) GC.getInfoTypeForString("ECONOMICAISTRATEGY_REALLY_EXPAND_TO_OTHER_CONTINENTS");
 
 	push	0
-	push	OFFSET $SG227549
+	push	OFFSET $SG228026
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	edi, eax
@@ -10947,7 +10947,7 @@ $LN4@IsTestStra@14:
 ; 3264 : 		int iFlavorExpansion = pPlayer->GetGrandStrategyAI()->GetPersonalityAndGrandStrategy((FlavorTypes)GC.getInfoTypeForString("FLAVOR_EXPANSION"));
 
 	push	0
-	push	OFFSET $SG227555
+	push	OFFSET $SG228032
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	push	eax
@@ -11269,7 +11269,7 @@ _pPlayer$ = 12						; size = 4
 ; 3349 : 	AICityStrategyTypes eStrategyNeedNavalGrowth = (AICityStrategyTypes) GC.getInfoTypeForString("AICITYSTRATEGY_NEED_NAVAL_GROWTH");
 
 	push	ebp
-	push	OFFSET $SG227593
+	push	OFFSET $SG228070
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	edi, eax
@@ -11451,7 +11451,7 @@ _pPlayer$ = 12						; size = 4
 ; 3395 : 	AICityStrategyTypes eStrategyNeedNavalTileImprovement = (AICityStrategyTypes) GC.getInfoTypeForString("AICITYSTRATEGY_NEED_NAVAL_TILE_IMPROVEMENT");
 
 	push	ebp
-	push	OFFSET $SG227614
+	push	OFFSET $SG228091
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	edi, eax
@@ -11945,7 +11945,7 @@ EXTRN	?getGameTurn@CvGame@@QAEHXZ:PROC		; CvGame::getGameTurn
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?IsTestStrategy_LosingMoney@EconomicAIHelpers@@YA_NW4EconomicAIStrategyTypes@@PAVCvPlayer@@@Z
 _TEXT	SEGMENT
-$T233333 = 8						; size = 4
+$T233810 = 8						; size = 4
 _eStrategy$ = 8						; size = 4
 _pPlayer$ = 12						; size = 4
 ?IsTestStrategy_LosingMoney@EconomicAIHelpers@@YA_NW4EconomicAIStrategyTypes@@PAVCvPlayer@@@Z PROC ; EconomicAIHelpers::IsTestStrategy_LosingMoney, COMDAT
@@ -11998,11 +11998,11 @@ $LN1@IsTestStra@21:
 	mov	eax, DWORD PTR [esi+268]
 	push	edi
 	mov	ecx, ebx
-	mov	DWORD PTR $T233333[esp+12], eax
+	mov	DWORD PTR $T233810[esp+12], eax
 	call	?GetTreasury@CvPlayer@@QBEPAVCvTreasury@@XZ ; CvPlayer::GetTreasury
 	mov	ecx, eax
 	call	?AverageIncome@CvTreasury@@QAENH@Z	; CvTreasury::AverageIncome
-	fild	DWORD PTR $T233333[esp+8]
+	fild	DWORD PTR $T233810[esp+8]
 	fcompp
 	fnstsw	ax
 	test	ah, 65					; 00000041H
@@ -12036,8 +12036,8 @@ PUBLIC	?IsTestStrategy_ExpandToOtherContinents@EconomicAIHelpers@@YA_NPAVCvPlaye
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?IsTestStrategy_ExpandToOtherContinents@EconomicAIHelpers@@YA_NPAVCvPlayer@@@Z
 _TEXT	SEGMENT
-_iBestArea$227852 = -8					; size = 4
-_iSecondBestArea$227853 = -4				; size = 4
+_iBestArea$228329 = -8					; size = 4
+_iSecondBestArea$228330 = -4				; size = 4
 _pPlayer$ = 8						; size = 4
 ?IsTestStrategy_ExpandToOtherContinents@EconomicAIHelpers@@YA_NPAVCvPlayer@@@Z PROC ; EconomicAIHelpers::IsTestStrategy_ExpandToOtherContinents, COMDAT
 
@@ -12065,12 +12065,12 @@ $LN12@IsTestStra@22:
 	test	al, al
 	jne	SHORT $LN14@IsTestStra@22
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
-	push	OFFSET $SG227833
+	push	OFFSET $SG228310
 	call	?isOption@CvGame@@QBE_NPBD@Z		; CvGame::isOption
 	test	al, al
 	jne	SHORT $LN11@IsTestStra@22
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
-	push	OFFSET $SG227834
+	push	OFFSET $SG228311
 	call	?isOption@CvGame@@QBE_NPBD@Z		; CvGame::isOption
 	test	al, al
 	je	SHORT $LN14@IsTestStra@22
@@ -12098,7 +12098,7 @@ $LN14@IsTestStra@22:
 ; 3895 : 	EconomicAIStrategyTypes eStrategyIslandStart = (EconomicAIStrategyTypes) GC.getInfoTypeForString("ECONOMICAISTRATEGY_ISLAND_START");
 
 	push	0
-	push	OFFSET $SG227837
+	push	OFFSET $SG228314
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	edi, eax
@@ -12129,7 +12129,7 @@ $LN9@IsTestStra@22:
 ; 3905 : 	EconomicAIStrategyTypes eEarlyExpansion = (EconomicAIStrategyTypes) GC.getInfoTypeForString("ECONOMICAISTRATEGY_EARLY_EXPANSION");
 
 	push	0
-	push	OFFSET $SG227842
+	push	OFFSET $SG228319
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	edi, eax
@@ -12160,7 +12160,7 @@ $LN7@IsTestStra@22:
 ; 3915 : 	MilitaryAIStrategyTypes eStrategyAtWar = (MilitaryAIStrategyTypes) GC.getInfoTypeForString("MILITARYAISTRATEGY_LOSING_WARS");
 
 	push	0
-	push	OFFSET $SG227847
+	push	OFFSET $SG228324
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 
@@ -12215,10 +12215,10 @@ $LN5@IsTestStra@22:
 	mov	ecx, esi
 	mov	edi, eax
 	call	?GetEconomicAI@CvPlayer@@QBEPAVCvEconomicAI@@XZ ; CvPlayer::GetEconomicAI
-	lea	edx, DWORD PTR _iSecondBestArea$227853[esp+16]
+	lea	edx, DWORD PTR _iSecondBestArea$228330[esp+16]
 	push	edx
 	mov	edx, DWORD PTR [eax+48]
-	lea	ecx, DWORD PTR _iBestArea$227852[esp+20]
+	lea	ecx, DWORD PTR _iBestArea$228329[esp+20]
 	push	ecx
 	push	edx
 	mov	ecx, esi
@@ -12228,13 +12228,13 @@ $LN5@IsTestStra@22:
 ; 3932 : 		if((iBestArea != pArea->GetID() && iBestArea != -1) || (iSecondBestArea != pArea->GetID() && iSecondBestArea != -1))
 
 	mov	eax, DWORD PTR [edi+4]
-	mov	ecx, DWORD PTR _iBestArea$227852[esp+16]
+	mov	ecx, DWORD PTR _iBestArea$228329[esp+16]
 	cmp	ecx, eax
 	je	SHORT $LN1@IsTestStra@22
 	cmp	ecx, -1
 	jne	SHORT $LN2@IsTestStra@22
 $LN1@IsTestStra@22:
-	mov	ecx, DWORD PTR _iSecondBestArea$227853[esp+16]
+	mov	ecx, DWORD PTR _iSecondBestArea$228330[esp+16]
 	cmp	ecx, eax
 	je	SHORT $LN3@IsTestStra@22
 	cmp	ecx, -1
@@ -12273,8 +12273,8 @@ PUBLIC	?IsTestStrategy_ReallyExpandToOtherContinents@EconomicAIHelpers@@YA_NPAVC
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?IsTestStrategy_ReallyExpandToOtherContinents@EconomicAIHelpers@@YA_NPAVCvPlayer@@@Z
 _TEXT	SEGMENT
-_iBestArea$227889 = -8					; size = 4
-_iSecondBestArea$227890 = -4				; size = 4
+_iBestArea$228366 = -8					; size = 4
+_iSecondBestArea$228367 = -4				; size = 4
 _pPlayer$ = 8						; size = 4
 ?IsTestStrategy_ReallyExpandToOtherContinents@EconomicAIHelpers@@YA_NPAVCvPlayer@@@Z PROC ; EconomicAIHelpers::IsTestStrategy_ReallyExpandToOtherContinents, COMDAT
 
@@ -12302,12 +12302,12 @@ $LN11@IsTestStra@23:
 	test	al, al
 	jne	SHORT $LN13@IsTestStra@23
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
-	push	OFFSET $SG227864
+	push	OFFSET $SG228341
 	call	?isOption@CvGame@@QBE_NPBD@Z		; CvGame::isOption
 	test	al, al
 	jne	SHORT $LN10@IsTestStra@23
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
-	push	OFFSET $SG227865
+	push	OFFSET $SG228342
 	call	?isOption@CvGame@@QBE_NPBD@Z		; CvGame::isOption
 	test	al, al
 	je	SHORT $LN13@IsTestStra@23
@@ -12335,7 +12335,7 @@ $LN13@IsTestStra@23:
 ; 3955 : 	EconomicAIStrategyTypes eStrategyExpandToOtherContinents = (EconomicAIStrategyTypes) GC.getInfoTypeForString("ECONOMICAISTRATEGY_EXPAND_TO_OTHER_CONTINENTS");
 
 	push	0
-	push	OFFSET $SG227868
+	push	OFFSET $SG228345
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	edi, eax
@@ -12365,7 +12365,7 @@ $LN8@IsTestStra@23:
 ; 3964 : 	MilitaryAIStrategyTypes eStrategyLosingAtWar = (MilitaryAIStrategyTypes) GC.getInfoTypeForString("MILITARYAISTRATEGY_LOSING_WARS");
 
 	push	0
-	push	OFFSET $SG227873
+	push	OFFSET $SG228350
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 
@@ -12405,7 +12405,7 @@ $LN6@IsTestStra@23:
 ; 3976 : 		MilitaryAIStrategyTypes eStrategyAtWar = (MilitaryAIStrategyTypes) GC.getInfoTypeForString("MILITARYAISTRATEGY_AT_WAR");
 
 	push	0
-	push	OFFSET $SG227879
+	push	OFFSET $SG228356
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 
@@ -12437,7 +12437,7 @@ $LN3@IsTestStra@23:
 ; 3986 : 	int iFlavorGrowth = pPlayer->GetGrandStrategyAI()->GetPersonalityAndGrandStrategy((FlavorTypes)GC.getInfoTypeForString("FLAVOR_GROWTH"));
 
 	push	0
-	push	OFFSET $SG227884
+	push	OFFSET $SG228361
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	push	eax
@@ -12449,7 +12449,7 @@ $LN3@IsTestStra@23:
 ; 3987 : 	int iFlavorExpansion = pPlayer->GetGrandStrategyAI()->GetPersonalityAndGrandStrategy((FlavorTypes)GC.getInfoTypeForString("FLAVOR_EXPANSION"));
 
 	push	0
-	push	OFFSET $SG227887
+	push	OFFSET $SG228364
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	edi, eax
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
@@ -12481,9 +12481,9 @@ $LN3@IsTestStra@23:
 	mov	ecx, esi
 	call	?GetEconomicAI@CvPlayer@@QBEPAVCvEconomicAI@@XZ ; CvPlayer::GetEconomicAI
 	mov	eax, DWORD PTR [eax+48]
-	lea	ecx, DWORD PTR _iSecondBestArea$227890[esp+16]
+	lea	ecx, DWORD PTR _iSecondBestArea$228367[esp+16]
 	push	ecx
-	lea	edx, DWORD PTR _iBestArea$227889[esp+20]
+	lea	edx, DWORD PTR _iBestArea$228366[esp+20]
 	push	edx
 	push	eax
 	mov	ecx, esi
@@ -12495,7 +12495,7 @@ $LN3@IsTestStra@23:
 	call	?getCapitalCity@CvPlayer@@QAEPAVCvCity@@XZ ; CvPlayer::getCapitalCity
 	mov	ecx, eax
 	call	?getArea@CvCity@@QBEHXZ			; CvCity::getArea
-	mov	ecx, DWORD PTR _iBestArea$227889[esp+16]
+	mov	ecx, DWORD PTR _iBestArea$228366[esp+16]
 	cmp	ecx, eax
 	je	SHORT $LN1@IsTestStra@23
 	cmp	ecx, -1
@@ -12562,12 +12562,12 @@ $LN6@IsTestStra@24:
 	test	al, al
 	jne	SHORT $LN8@IsTestStra@24
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
-	push	OFFSET $SG227912
+	push	OFFSET $SG228389
 	call	?isOption@CvGame@@QBE_NPBD@Z		; CvGame::isOption
 	test	al, al
 	jne	SHORT $LN5@IsTestStra@24
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
-	push	OFFSET $SG227913
+	push	OFFSET $SG228390
 	call	?isOption@CvGame@@QBE_NPBD@Z		; CvGame::isOption
 	test	al, al
 	je	SHORT $LN8@IsTestStra@24
@@ -12599,7 +12599,7 @@ $LN8@IsTestStra@24:
 ; 4038 : 	AIGrandStrategyTypes eGrandStrategy = (AIGrandStrategyTypes) GC.getInfoTypeForString("AIGRANDSTRATEGY_CULTURE");
 
 	push	0
-	push	OFFSET $SG227916
+	push	OFFSET $SG228393
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	edi, eax
@@ -12654,7 +12654,7 @@ $LN2@IsTestStra@24:
 ; 4051 : 	int iFlavorExpansion = pPlayer->GetGrandStrategyAI()->GetPersonalityAndGrandStrategy((FlavorTypes)GC.getInfoTypeForString("FLAVOR_EXPANSION"));
 
 	push	0
-	push	OFFSET $SG227922
+	push	OFFSET $SG228399
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	push	eax
@@ -12706,7 +12706,7 @@ _pPlayer$ = 12						; size = 4
 ; 4063 : 	int iFlavorGrowth = pPlayer->GetGrandStrategyAI()->GetPersonalityAndGrandStrategy((FlavorTypes)GC.getInfoTypeForString("FLAVOR_GROWTH"));
 
 	push	0
-	push	OFFSET $SG227931
+	push	OFFSET $SG228408
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	esi, DWORD PTR _pPlayer$[esp+4]
@@ -12786,7 +12786,7 @@ _pPlayer$ = 8						; size = 4
 ; 4176 : 	PolicyTypes eExpFinisher = (PolicyTypes) GC.getInfoTypeForString("POLICY_EXPLORATION_FINISHER", true /*bHideAssert*/);
 
 	push	1
-	push	OFFSET $SG227988
+	push	OFFSET $SG228465
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	DWORD PTR _iNumArchaeologists$[esp+20], eax
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
@@ -14142,9 +14142,9 @@ EXTRN	?nothrow@std@@3Unothrow_t@1@B:BYTE		; std::nothrow
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ??$get_temporary_buffer@VCvPurchaseRequest@@@std@@YA?AU?$pair@PAVCvPurchaseRequest@@H@0@H@Z
 _TEXT	SEGMENT
-$T233929 = -12						; size = 12
+$T234406 = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
-$T233933 = 12						; size = 4
+$T234410 = 12						; size = 4
 __Count$ = 12						; size = 4
 ??$get_temporary_buffer@VCvPurchaseRequest@@@std@@YA?AU?$pair@PAVCvPurchaseRequest@@H@0@H@Z PROC ; std::get_temporary_buffer<CvPurchaseRequest>, COMDAT
 
@@ -14221,15 +14221,15 @@ $LN7@get_tempor:
 
 ; 25   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T233933[esp+12]
+	lea	eax, DWORD PTR $T234410[esp+12]
 	push	eax
-	lea	ecx, DWORD PTR $T233929[esp+20]
-	mov	DWORD PTR $T233933[esp+16], 0
+	lea	ecx, DWORD PTR $T234406[esp+20]
+	mov	DWORD PTR $T234410[esp+16], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T233929[esp+20]
+	lea	ecx, DWORD PTR $T234406[esp+20]
 	push	ecx
-	mov	DWORD PTR $T233929[esp+24], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T234406[esp+24], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN18@get_tempor:
 $LN17@get_tempor:
@@ -16156,15 +16156,15 @@ PUBLIC	?Write@CvEconomicAI@@QAEXAAVFDataStream@@@Z	; CvEconomicAI::Write
 ;	COMDAT ?Write@CvEconomicAI@@QAEXAAVFDataStream@@@Z
 _TEXT	SEGMENT
 _uiVersion$ = -12					; size = 4
-$T235111 = -8						; size = 4
-$T234936 = -8						; size = 8
+$T235588 = -8						; size = 4
+$T235413 = -8						; size = 8
 tv547 = 8						; size = 4
-$T234942 = 8						; size = 4
-$T234941 = 8						; size = 4
-$T234940 = 8						; size = 4
-$T234939 = 8						; size = 4
-$T234938 = 8						; size = 4
-$T234935 = 8						; size = 4
+$T235419 = 8						; size = 4
+$T235418 = 8						; size = 4
+$T235417 = 8						; size = 4
+$T235416 = 8						; size = 4
+$T235415 = 8						; size = 4
+$T235412 = 8						; size = 4
 _kStream$ = 8						; size = 4
 ?Write@CvEconomicAI@@QAEXAAVFDataStream@@@Z PROC	; CvEconomicAI::Write, COMDAT
 ; _this$ = ecx
@@ -16194,9 +16194,9 @@ _kStream$ = 8						; size = 4
 	mov	eax, DWORD PTR [esi+8]
 	mov	ecx, DWORD PTR [eax+8]
 	sub	ecx, DWORD PTR [eax+4]
-	lea	edx, DWORD PTR $T234935[esp+24]
+	lea	edx, DWORD PTR $T235412[esp+24]
 	sar	ecx, 2
-	mov	DWORD PTR $T234935[esp+24], ecx
+	mov	DWORD PTR $T235412[esp+24], ecx
 	push	edx
 	mov	ecx, edi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
@@ -16207,12 +16207,12 @@ _kStream$ = 8						; size = 4
 	mov	edx, DWORD PTR [eax+8]
 	sub	edx, DWORD PTR [eax+4]
 	mov	ecx, DWORD PTR [esi+12]
-	lea	eax, DWORD PTR $T234936[esp+28]
+	lea	eax, DWORD PTR $T235413[esp+28]
 	push	eax
 	sar	edx, 2
 	push	edi
-	mov	DWORD PTR $T234936[esp+36], ecx
-	mov	DWORD PTR $T234936[esp+40], edx
+	mov	DWORD PTR $T235413[esp+36], ecx
+	mov	DWORD PTR $T235413[esp+40], edx
 	call	??$?6_N@@YAAAVFDataStream@@AAV0@ABV?$ArrayWrapper@_N@@@Z ; operator<<<bool>
 
 ; 452  : 	kStream << ArrayWrapper<int>(m_pAIStrategies->GetNumEconomicAIStrategies(), m_paiTurnStrategyAdopted);
@@ -16271,10 +16271,10 @@ $LL12@Write:
 ; 459  : 	kStream << m_aiExplorationPlots.size();
 
 	mov	edx, DWORD PTR [esi+68]
-	lea	eax, DWORD PTR $T234938[esp+24]
+	lea	eax, DWORD PTR $T235415[esp+24]
 	push	eax
 	mov	ecx, edi
-	mov	DWORD PTR $T234938[esp+28], edx
+	mov	DWORD PTR $T235415[esp+28], edx
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 
 ; 460  : 	for(uint ui = 0; ui < m_aiExplorationPlots.size(); ui++)
@@ -16312,10 +16312,10 @@ $LN7@Write:
 ; 466  : 	kStream << m_aiGoodyHutPlots.size();
 
 	mov	eax, DWORD PTR [esi+92]
-	lea	ecx, DWORD PTR $T234939[esp+24]
+	lea	ecx, DWORD PTR $T235416[esp+24]
 	push	ecx
 	mov	ecx, edi
-	mov	DWORD PTR $T234939[esp+28], eax
+	mov	DWORD PTR $T235416[esp+28], eax
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 
 ; 467  : 	for(uint ui = 0; ui < m_aiGoodyHutPlots.size(); ui++)
@@ -16351,19 +16351,19 @@ $LN4@Write:
 ; 473  : 	kStream << (int)m_eReconState;
 
 	mov	eax, DWORD PTR [esi+28]
-	lea	ecx, DWORD PTR $T234940[esp+24]
+	lea	ecx, DWORD PTR $T235417[esp+24]
 	push	ecx
 	mov	ecx, edi
-	mov	DWORD PTR $T234940[esp+28], eax
+	mov	DWORD PTR $T235417[esp+28], eax
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
 ; 474  : 	kStream << (int)m_eNavalReconState;
 
 	mov	edx, DWORD PTR [esi+32]
-	lea	eax, DWORD PTR $T234941[esp+24]
+	lea	eax, DWORD PTR $T235418[esp+24]
 	push	eax
 	mov	ecx, edi
-	mov	DWORD PTR $T234941[esp+28], edx
+	mov	DWORD PTR $T235418[esp+28], edx
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
 ; 475  : 	kStream << m_iExplorersDisbanded;
@@ -16391,8 +16391,8 @@ $LN4@Write:
 ; 479  : 	kStream << (int)m_RequestedSavings.size();
 
 	mov	ecx, DWORD PTR [esi+116]
-	lea	edx, DWORD PTR $T234942[esp+24]
-	mov	DWORD PTR $T234942[esp+24], ecx
+	lea	edx, DWORD PTR $T235419[esp+24]
+	mov	DWORD PTR $T235419[esp+24], ecx
 	push	edx
 	mov	ecx, edi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
@@ -16416,11 +16416,11 @@ $LL116@Write:
 
 	mov	ebx, DWORD PTR [esi+112]
 	add	ebx, DWORD PTR tv547[esp+24]
-	lea	ecx, DWORD PTR $T235111[esp+28]
+	lea	ecx, DWORD PTR $T235588[esp+28]
 	mov	eax, DWORD PTR [ebx]
 	push	ecx
 	mov	ecx, edi
-	mov	DWORD PTR $T235111[esp+32], eax
+	mov	DWORD PTR $T235588[esp+32], eax
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 	lea	edx, DWORD PTR [ebx+4]
 	push	edx
@@ -16771,14 +16771,14 @@ _TEXT	SEGMENT
 _iResultValue$ = -32					; size = 4
 _iPlotY$ = -28						; size = 4
 _iPlotX$ = -24						; size = 4
-_iY$226029 = -20					; size = 4
+_iY$226506 = -20					; size = 4
 tv590 = -16						; size = 4
 tv566 = -12						; size = 4
 tv395 = -8						; size = 4
 tv391 = -4						; size = 4
 _pPlot$ = 8						; size = 4
 _eTeam$ = 12						; size = 4
-_iX$226025 = 16						; size = 4
+_iX$226502 = 16						; size = 4
 _iRange$ = 16						; size = 4
 _eDomainType$ = 20					; size = 4
 ?ScoreExplorePlot@CvEconomicAI@@SAHPAVCvPlot@@W4TeamTypes@@HW4DomainTypes@@@Z PROC ; CvEconomicAI::ScoreExplorePlot, COMDAT
@@ -16831,7 +16831,7 @@ _eDomainType$ = 20					; size = 4
 	mov	DWORD PTR _iPlotX$[esp+44], edx
 	mov	DWORD PTR _iPlotY$[esp+44], eax
 	mov	DWORD PTR tv391[esp+44], ebp
-	mov	DWORD PTR _iX$226025[esp+40], edi
+	mov	DWORD PTR _iX$226502[esp+40], edi
 	jg	$LN107@ScoreExplo
 	push	esi
 	mov	esi, edi
@@ -16843,7 +16843,7 @@ $LL117@ScoreExplo:
 ; 1007 : 		for(int iY = -iRange; iY <= iRange; iY++)
 
 	cmp	ebp, ebx
-	mov	DWORD PTR _iY$226029[esp+48], ebp
+	mov	DWORD PTR _iY$226506[esp+48], ebp
 	jg	$LN35@ScoreExplo
 
 ; 1008 : 		{
@@ -17057,9 +17057,9 @@ $LN24@ScoreExplo:
 ; 1117 : 			int iDistance = plotDistance(iPlotX, iPlotY, pEvalPlot->getX(), pEvalPlot->getY());
 ; 1118 : 			iResultValue += (iRange - iDistance) * iAdjacencyBonus;
 
-	mov	ebp, DWORD PTR _iY$226029[esp+48]
+	mov	ebp, DWORD PTR _iY$226506[esp+48]
 $LN114@ScoreExplo:
-	mov	edi, DWORD PTR _iX$226025[esp+44]
+	mov	edi, DWORD PTR _iX$226502[esp+44]
 $LN32@ScoreExplo:
 
 ; 1006 : 	{
@@ -17070,7 +17070,7 @@ $LN32@ScoreExplo:
 	inc	ebp
 	dec	eax
 	cmp	ebp, ebx
-	mov	DWORD PTR _iY$226029[esp+48], ebp
+	mov	DWORD PTR _iY$226506[esp+48], ebp
 	mov	DWORD PTR tv566[esp+48], eax
 	jle	$LL33@ScoreExplo
 	mov	ebp, DWORD PTR tv391[esp+48]
@@ -17094,7 +17094,7 @@ $LN35@ScoreExplo:
 	inc	edi
 	dec	esi
 	cmp	edi, ebx
-	mov	DWORD PTR _iX$226025[esp+44], edi
+	mov	DWORD PTR _iX$226502[esp+44], edi
 	mov	DWORD PTR tv590[esp+48], esi
 	jle	$LL117@ScoreExplo
 
@@ -17122,7 +17122,7 @@ $LN108@ScoreExplo:
 ; 1038 : 					bool bViewBlocked = true;
 ; 1039 : 					for(int i = 0; i < NUM_DIRECTION_TYPES; ++i)
 
-	mov	ebp, DWORD PTR _iY$226029[esp+48]
+	mov	ebp, DWORD PTR _iY$226506[esp+48]
 $LN17@ScoreExplo:
 
 ; 1054 : 								{
@@ -17345,10 +17345,10 @@ tv952 = -140						; size = 4
 _iNumCoastalTilesRevealed$ = -136			; size = 4
 _iNumLandPlotsWithAdjacentFog$ = -132			; size = 4
 _iCityLoop$ = -128					; size = 4
-_strLogString$226757 = -124				; size = 28
-_strLogString$226728 = -96				; size = 28
-$T235337 = -68						; size = 28
-$T235338 = -40						; size = 28
+_strLogString$227234 = -124				; size = 28
+_strLogString$227205 = -96				; size = 28
+$T235814 = -68						; size = 28
+$T235815 = -40						; size = 28
 __$EHRec$ = -12						; size = 12
 ?DoReconState@CvEconomicAI@@AAEXXZ PROC			; CvEconomicAI::DoReconState, COMDAT
 ; _this$ = ecx
@@ -17714,7 +17714,7 @@ $LN45@DoReconSta:
 	push	0
 	mov	ebp, eax
 	add	ebp, DWORD PTR [edi+36]
-	push	OFFSET $SG226711
+	push	OFFSET $SG227188
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	ecx, DWORD PTR [edi+4]
@@ -17889,12 +17889,12 @@ $LN21@DoReconSta:
 ; 2096 : 						{
 ; 2097 : 							CvString strLogString;
 
-	lea	ecx, DWORD PTR _strLogString$226728[esp+176]
+	lea	ecx, DWORD PTR _strLogString$227205[esp+176]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
 ; 2098 : 							strLogString.Format("Assigning exploring %s back to attack AI, X: %d, Y: %d", pLoopUnit->getName().GetCString(), pLoopUnit->getX(), pLoopUnit->getY());
 
-	lea	eax, DWORD PTR $T235337[esp+176]
+	lea	eax, DWORD PTR $T235814[esp+176]
 	push	eax
 	mov	ecx, esi
 	mov	DWORD PTR __$EHRec$[esp+188], ebp
@@ -17907,19 +17907,19 @@ $LN21@DoReconSta:
 	mov	BYTE PTR __$EHRec$[esp+192], 1
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
-	lea	ecx, DWORD PTR _strLogString$226728[esp+188]
-	push	OFFSET $SG226730
+	lea	ecx, DWORD PTR _strLogString$227205[esp+188]
+	push	OFFSET $SG227207
 	push	ecx
 	call	?Format@CvString@@QAAXPBDZZ		; CvString::Format
 	add	esp, 20					; 00000014H
-	lea	ecx, DWORD PTR $T235337[esp+176]
+	lea	ecx, DWORD PTR $T235814[esp+176]
 	mov	BYTE PTR __$EHRec$[esp+184], 0
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
 ; 2099 : 							m_pPlayer->GetHomelandAI()->LogHomelandMessage(strLogString);
 
 	mov	ecx, DWORD PTR [edi+4]
-	lea	edx, DWORD PTR _strLogString$226728[esp+176]
+	lea	edx, DWORD PTR _strLogString$227205[esp+176]
 	push	edx
 	call	?GetHomelandAI@CvPlayer@@QBEPAVCvHomelandAI@@XZ ; CvPlayer::GetHomelandAI
 	mov	ecx, eax
@@ -17927,7 +17927,7 @@ $LN21@DoReconSta:
 
 ; 2100 : 						}
 
-	lea	ecx, DWORD PTR _strLogString$226728[esp+176]
+	lea	ecx, DWORD PTR _strLogString$227205[esp+176]
 	mov	DWORD PTR __$EHRec$[esp+184], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 $LN24@DoReconSta:
@@ -18046,7 +18046,7 @@ $LN14@DoReconSta:
 
 	mov	esi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+2004
 	push	0
-	push	OFFSET $SG226741
+	push	OFFSET $SG227218
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	ebp, eax
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
@@ -18200,12 +18200,12 @@ $LL7@DoReconSta:
 ; 2174 : 							{
 ; 2175 : 								CvString strLogString;
 
-	lea	ecx, DWORD PTR _strLogString$226757[esp+176]
+	lea	ecx, DWORD PTR _strLogString$227234[esp+176]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
 ; 2176 : 								strLogString.Format("Assigning naval explorer back to attack sea AI to %s, X: %d, Y: %d", pLoopUnit->getName().GetCString(), pLoopUnit->getX(), pLoopUnit->getY());
 
-	lea	eax, DWORD PTR $T235338[esp+176]
+	lea	eax, DWORD PTR $T235815[esp+176]
 	push	eax
 	mov	ecx, esi
 	mov	DWORD PTR __$EHRec$[esp+188], 2
@@ -18218,19 +18218,19 @@ $LL7@DoReconSta:
 	mov	BYTE PTR __$EHRec$[esp+192], 3
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
-	lea	ecx, DWORD PTR _strLogString$226757[esp+188]
-	push	OFFSET $SG226759
+	lea	ecx, DWORD PTR _strLogString$227234[esp+188]
+	push	OFFSET $SG227236
 	push	ecx
 	call	?Format@CvString@@QAAXPBDZZ		; CvString::Format
 	add	esp, 20					; 00000014H
-	lea	ecx, DWORD PTR $T235338[esp+176]
+	lea	ecx, DWORD PTR $T235815[esp+176]
 	mov	BYTE PTR __$EHRec$[esp+184], 2
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
 ; 2177 : 								m_pPlayer->GetHomelandAI()->LogHomelandMessage(strLogString);
 
 	mov	ecx, DWORD PTR [edi+4]
-	lea	edx, DWORD PTR _strLogString$226757[esp+176]
+	lea	edx, DWORD PTR _strLogString$227234[esp+176]
 	push	edx
 	call	?GetHomelandAI@CvPlayer@@QBEPAVCvHomelandAI@@XZ ; CvPlayer::GetHomelandAI
 	mov	ecx, eax
@@ -18238,7 +18238,7 @@ $LL7@DoReconSta:
 
 ; 2178 : 							}
 
-	lea	ecx, DWORD PTR _strLogString$226757[esp+176]
+	lea	ecx, DWORD PTR _strLogString$227234[esp+176]
 	mov	DWORD PTR __$EHRec$[esp+184], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 $LN6@DoReconSta:
@@ -18272,16 +18272,16 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?DoReconState@CvEconomicAI@@AAEXXZ$0:
-	lea	ecx, DWORD PTR _strLogString$226728[ebp]
+	lea	ecx, DWORD PTR _strLogString$227205[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?DoReconState@CvEconomicAI@@AAEXXZ$1:
-	lea	ecx, DWORD PTR $T235337[ebp]
+	lea	ecx, DWORD PTR $T235814[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?DoReconState@CvEconomicAI@@AAEXXZ$2:
-	lea	ecx, DWORD PTR _strLogString$226757[ebp]
+	lea	ecx, DWORD PTR _strLogString$227234[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?DoReconState@CvEconomicAI@@AAEXXZ$3:
-	lea	ecx, DWORD PTR $T235338[ebp]
+	lea	ecx, DWORD PTR $T235815[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?DoReconState@CvEconomicAI@@AAEXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?DoReconState@CvEconomicAI@@AAEXXZ
@@ -18494,7 +18494,7 @@ $LN16@FindWorker:
 ; 2690 : 		UnitTypes eWorker = (UnitTypes) GC.getInfoTypeForString("UNIT_WORKER");
 
 	push	0
-	push	OFFSET $SG227239
+	push	OFFSET $SG227716
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 
@@ -18586,7 +18586,7 @@ xdata$x	ENDS
 ;	COMDAT ?LogScrapUnit@CvEconomicAI@@AAEXV?$FObjectHandle@VCvUnit@@@@HHHH@Z
 _TEXT	SEGMENT
 _strLogString$ = -68					; size = 28
-$T235757 = -40						; size = 28
+$T236234 = -40						; size = 28
 __$EHRec$ = -12						; size = 12
 _pUnit$ = 8						; size = 8
 _iNumWorkers$ = 16					; size = 4
@@ -18630,7 +18630,7 @@ _iNumValidPlots$ = 28					; size = 4
 ; 2797 : 	strLogString.Format("Disbanding worker. %s, X: %d, Y: %d, iNumWorkers: %d, iNumCities: %d, improved/valid plots: %d/%d", pUnit->getName().GetCString(), pUnit->getX(), pUnit->getY(), iNumWorkers, iNumCities, iNumImprovedPlots, iNumValidPlots);
 
 	mov	ecx, DWORD PTR _pUnit$[esp+72]
-	lea	eax, DWORD PTR $T235757[esp+76]
+	lea	eax, DWORD PTR $T236234[esp+76]
 	push	eax
 	mov	BYTE PTR __$EHRec$[esp+88], 1
 	call	?getName@CvUnit@@QBE?BVCvString@@XZ	; CvUnit::getName
@@ -18652,11 +18652,11 @@ _iNumValidPlots$ = 28					; size = 4
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
 	lea	ecx, DWORD PTR _strLogString$[esp+104]
-	push	OFFSET $SG227312
+	push	OFFSET $SG227789
 	push	ecx
 	call	?Format@CvString@@QAAXPBDZZ		; CvString::Format
 	add	esp, 36					; 00000024H
-	lea	ecx, DWORD PTR $T235757[esp+76]
+	lea	ecx, DWORD PTR $T236234[esp+76]
 	mov	BYTE PTR __$EHRec$[esp+84], 1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -18704,7 +18704,7 @@ __unwindfunclet$?LogScrapUnit@CvEconomicAI@@AAEXV?$FObjectHandle@VCvUnit@@@@HHHH
 	lea	ecx, DWORD PTR _strLogString$[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?LogScrapUnit@CvEconomicAI@@AAEXV?$FObjectHandle@VCvUnit@@@@HHHH@Z$2:
-	lea	ecx, DWORD PTR $T235757[ebp]
+	lea	ecx, DWORD PTR $T236234[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?LogScrapUnit@CvEconomicAI@@AAEXV?$FObjectHandle@VCvUnit@@@@HHHH@Z:
 	mov	eax, OFFSET __ehfuncinfo$?LogScrapUnit@CvEconomicAI@@AAEXV?$FObjectHandle@VCvUnit@@@@HHHH@Z
@@ -18718,10 +18718,10 @@ EXTRN	?getAreaBoundaries@CvArea@@QBE?AUCvAreaBoundaries@@XZ:PROC ; CvArea::getAr
 ;	COMDAT ?IsAreaSafeForQuickColony@EconomicAIHelpers@@YA_NHPAVCvPlayer@@@Z
 _TEXT	SEGMENT
 _iBeginSearchY$ = -52					; size = 4
-$T235835 = -48						; size = 16
-$T235836 = -32						; size = 16
-$T235838 = -16						; size = 16
-$T235837 = -16						; size = 16
+$T236312 = -48						; size = 16
+$T236313 = -32						; size = 16
+$T236315 = -16						; size = 16
+$T236314 = -16						; size = 16
 _iAreaID$ = 8						; size = 4
 _pPlayer$ = 12						; size = 4
 ?IsAreaSafeForQuickColony@EconomicAIHelpers@@YA_NHPAVCvPlayer@@@Z PROC ; EconomicAIHelpers::IsAreaSafeForQuickColony, COMDAT
@@ -18791,7 +18791,7 @@ $LN10@IsAreaSafe:
 
 ; 2863 : 	int iBeginSearchX = pArea->getAreaBoundaries().m_iWestEdge;
 
-	lea	eax, DWORD PTR $T235835[esp+68]
+	lea	eax, DWORD PTR $T236312[esp+68]
 	push	eax
 	mov	ecx, esi
 	call	?getAreaBoundaries@CvArea@@QBE?AUCvAreaBoundaries@@XZ ; CvArea::getAreaBoundaries
@@ -18799,7 +18799,7 @@ $LN10@IsAreaSafe:
 
 ; 2864 : 	int iBeginSearchY = pArea->getAreaBoundaries().m_iSouthEdge;
 
-	lea	ecx, DWORD PTR $T235836[esp+68]
+	lea	ecx, DWORD PTR $T236313[esp+68]
 	push	ecx
 	mov	ecx, esi
 	call	?getAreaBoundaries@CvArea@@QBE?AUCvAreaBoundaries@@XZ ; CvArea::getAreaBoundaries
@@ -18807,7 +18807,7 @@ $LN10@IsAreaSafe:
 
 ; 2865 : 	int iEndSearchX   = pArea->getAreaBoundaries().m_iEastEdge;
 
-	lea	eax, DWORD PTR $T235837[esp+68]
+	lea	eax, DWORD PTR $T236314[esp+68]
 	push	eax
 	mov	ecx, esi
 	mov	DWORD PTR _iBeginSearchY$[esp+72], edx
@@ -18816,7 +18816,7 @@ $LN10@IsAreaSafe:
 
 ; 2866 : 	int iEndSearchY   = pArea->getAreaBoundaries().m_iNorthEdge;
 
-	lea	ecx, DWORD PTR $T235838[esp+68]
+	lea	ecx, DWORD PTR $T236315[esp+68]
 	push	ecx
 	mov	ecx, esi
 	call	?getAreaBoundaries@CvArea@@QBE?AUCvAreaBoundaries@@XZ ; CvArea::getAreaBoundaries
@@ -18944,8 +18944,8 @@ EXTRN	?getNumPromotionInfos@CvGlobals@@QAEHXZ:PROC	; CvGlobals::getNumPromotionI
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?IsTestStrategy_ReallyNeedReconSea@EconomicAIHelpers@@YA_NPAVCvPlayer@@@Z
 _TEXT	SEGMENT
-_iLoop$227412 = -4					; size = 4
-_iLoop$227385 = -4					; size = 4
+_iLoop$227889 = -4					; size = 4
+_iLoop$227862 = -4					; size = 4
 _pPlayer$ = 8						; size = 4
 ?IsTestStrategy_ReallyNeedReconSea@EconomicAIHelpers@@YA_NPAVCvPlayer@@@Z PROC ; EconomicAIHelpers::IsTestStrategy_ReallyNeedReconSea, COMDAT
 
@@ -18992,7 +18992,7 @@ $LN40@IsTestStra@26:
 ; 2926 : 			for(pLoopUnit = pPlayer->firstUnit(&iLoop); pLoopUnit != NULL; pLoopUnit = pPlayer->nextUnit(&iLoop))
 
 	push	0
-	lea	eax, DWORD PTR _iLoop$227385[esp+16]
+	lea	eax, DWORD PTR _iLoop$227862[esp+16]
 	push	eax
 	mov	ecx, ebx
 	call	?firstUnit@CvPlayer@@QAEPAVCvUnit@@PAH_N@Z ; CvPlayer::firstUnit
@@ -19022,7 +19022,7 @@ $LN27@IsTestStra@26:
 ; 2926 : 			for(pLoopUnit = pPlayer->firstUnit(&iLoop); pLoopUnit != NULL; pLoopUnit = pPlayer->nextUnit(&iLoop))
 
 	push	0
-	lea	edx, DWORD PTR _iLoop$227385[esp+16]
+	lea	edx, DWORD PTR _iLoop$227862[esp+16]
 	push	edx
 	mov	ecx, ebx
 	call	?nextUnit@CvPlayer@@QAEPAVCvUnit@@PAH_N@Z ; CvPlayer::nextUnit
@@ -19135,7 +19135,7 @@ $LN22@IsTestStra@26:
 ; 2955 : 			for(pLoopCity = pPlayer->firstCity(&iLoop); pLoopCity != NULL; pLoopCity = pPlayer->nextCity(&iLoop))
 
 	push	0
-	lea	eax, DWORD PTR _iLoop$227385[esp+24]
+	lea	eax, DWORD PTR _iLoop$227862[esp+24]
 	push	eax
 	mov	ecx, ebx
 	call	?firstCity@CvPlayer@@QAEPAVCvCity@@PAH_N@Z ; CvPlayer::firstCity
@@ -19199,7 +19199,7 @@ $LN18@IsTestStra@26:
 ; 2955 : 			for(pLoopCity = pPlayer->firstCity(&iLoop); pLoopCity != NULL; pLoopCity = pPlayer->nextCity(&iLoop))
 
 	push	0
-	lea	ecx, DWORD PTR _iLoop$227385[esp+24]
+	lea	ecx, DWORD PTR _iLoop$227862[esp+24]
 	push	ecx
 	mov	ecx, ebx
 	call	?nextCity@CvPlayer@@QAEPAVCvCity@@PAH_N@Z ; CvPlayer::nextCity
@@ -19279,7 +19279,7 @@ $LN57@IsTestStra@26:
 ; 2981 : 			for(pLoopUnit = pPlayer->firstUnit(&iLoop); pLoopUnit != NULL; pLoopUnit = pPlayer->nextUnit(&iLoop))
 
 	push	0
-	lea	edx, DWORD PTR _iLoop$227412[esp+16]
+	lea	edx, DWORD PTR _iLoop$227889[esp+16]
 	push	edx
 	mov	ecx, ebx
 	call	?firstUnit@CvPlayer@@QAEPAVCvUnit@@PAH_N@Z ; CvPlayer::firstUnit
@@ -19295,7 +19295,7 @@ $LL10@IsTestStra@26:
 	cmp	eax, 21					; 00000015H
 	je	$LN68@IsTestStra@26
 	push	0
-	lea	eax, DWORD PTR _iLoop$227412[esp+16]
+	lea	eax, DWORD PTR _iLoop$227889[esp+16]
 	push	eax
 	mov	ecx, ebx
 	call	?nextUnit@CvPlayer@@QAEPAVCvUnit@@PAH_N@Z ; CvPlayer::nextUnit
@@ -19312,7 +19312,7 @@ $LN79@IsTestStra@26:
 ; 2990 : 			for(pLoopCity = pPlayer->firstCity(&iLoop); pLoopCity != NULL; pLoopCity = pPlayer->nextCity(&iLoop))
 
 	push	0
-	lea	ecx, DWORD PTR _iLoop$227412[esp+16]
+	lea	ecx, DWORD PTR _iLoop$227889[esp+16]
 	push	ecx
 	mov	ecx, ebx
 	call	?firstCity@CvPlayer@@QAEPAVCvCity@@PAH_N@Z ; CvPlayer::firstCity
@@ -19366,7 +19366,7 @@ $LN5@IsTestStra@26:
 ; 2990 : 			for(pLoopCity = pPlayer->firstCity(&iLoop); pLoopCity != NULL; pLoopCity = pPlayer->nextCity(&iLoop))
 
 	push	0
-	lea	edx, DWORD PTR _iLoop$227412[esp+16]
+	lea	edx, DWORD PTR _iLoop$227889[esp+16]
 	push	edx
 	mov	ecx, ebx
 	call	?nextCity@CvPlayer@@QAEPAVCvCity@@PAH_N@Z ; CvPlayer::nextCity
@@ -19516,10 +19516,10 @@ CONST	ENDS
 ;	COMDAT ?IsTestStrategy_TechLeader@EconomicAIHelpers@@YA_NPAVCvPlayer@@@Z
 _TEXT	SEGMENT
 _iNumPlayersAheadInTech$ = -12				; size = 4
-_fRatio$227479 = -8					; size = 4
+_fRatio$227956 = -8					; size = 4
 _iNumOtherPlayers$ = -8					; size = 4
 tv397 = -4						; size = 4
-_fCutOff$227481 = -4					; size = 4
+_fCutOff$227958 = -4					; size = 4
 _iMyTechNum$ = -4					; size = 4
 _pPlayer$ = 8						; size = 4
 ?IsTestStrategy_TechLeader@EconomicAIHelpers@@YA_NPAVCvPlayer@@@Z PROC ; EconomicAIHelpers::IsTestStrategy_TechLeader, COMDAT
@@ -19700,7 +19700,7 @@ $LL7@IsTestStra@28:
 
 	mov	edx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+1760
 	lea	eax, DWORD PTR [edi+edx]
-	push	OFFSET $SG227478
+	push	OFFSET $SG227955
 	push	eax
 	call	ebx
 	add	esp, 8
@@ -19736,20 +19736,20 @@ $LN5@IsTestStra@28:
 	mov	ecx, DWORD PTR _pPlayer$[esp+24]
 	push	ebp
 	fidiv	DWORD PTR _iNumOtherPlayers$[esp+32]
-	fstp	DWORD PTR _fRatio$227479[esp+32]
+	fstp	DWORD PTR _fRatio$227956[esp+32]
 	call	?GetFlavorManager@CvPlayer@@QBEPAVCvFlavorManager@@XZ ; CvPlayer::GetFlavorManager
 	mov	ecx, eax
 	call	?GetPersonalityIndividualFlavor@CvFlavorManager@@QAEHW4FlavorTypes@@@Z ; CvFlavorManager::GetPersonalityIndividualFlavor
 	mov	DWORD PTR tv397[esp+28], eax
 	fild	DWORD PTR tv397[esp+28]
 	fmul	DWORD PTR __real@3d4ccccd
-	fstp	DWORD PTR _fCutOff$227481[esp+28]
+	fstp	DWORD PTR _fCutOff$227958[esp+28]
 
 ; 3136 : 
 ; 3137 : 		if (fRatio < fCutOff)
 
-	fld	DWORD PTR _fRatio$227479[esp+28]
-	fld	DWORD PTR _fCutOff$227481[esp+28]
+	fld	DWORD PTR _fRatio$227956[esp+28]
+	fld	DWORD PTR _fCutOff$227958[esp+28]
 	fcompp
 	fnstsw	ax
 	test	ah, 65					; 00000041H
@@ -19844,12 +19844,12 @@ $LN20@IsTestStra@29:
 	test	al, al
 	jne	SHORT $LN22@IsTestStra@29
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
-	push	OFFSET $SG227643
+	push	OFFSET $SG228120
 	call	?isOption@CvGame@@QBE_NPBD@Z		; CvGame::isOption
 	test	al, al
 	jne	SHORT $LN19@IsTestStra@29
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
-	push	OFFSET $SG227644
+	push	OFFSET $SG228121
 	call	?isOption@CvGame@@QBE_NPBD@Z		; CvGame::isOption
 	test	al, al
 	je	SHORT $LN22@IsTestStra@29
@@ -20030,7 +20030,7 @@ $LN25@IsTestStra@29:
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	ebx
-	push	OFFSET $SG227658
+	push	OFFSET $SG228135
 	push	6
 	call	?getJonRandNum@CvGame@@QAEHHPBD@Z	; CvGame::getJonRandNum
 
@@ -20199,7 +20199,7 @@ _iCityLoop$ = -20					; size = 4
 _iNumCitiesConcerned$ = -16				; size = 4
 _iUnitLoop$ = -12					; size = 4
 _fWarningRatio$ = -12					; size = 8
-_eImprovement$227753 = -4				; size = 4
+_eImprovement$228230 = -4				; size = 4
 _iNumCities$ = -4					; size = 4
 _pPlayer$ = 8						; size = 4
 _eYield$ = 12						; size = 4
@@ -20224,7 +20224,7 @@ _eYield$ = 12						; size = 4
 ; 3637 : 		eCityStrategy = (AICityStrategyTypes)GC.getInfoTypeForString("AICITYSTRATEGY_NEED_IMPROVEMENT_PRODUCTION");
 
 	push	ebx
-	push	OFFSET $SG227720
+	push	OFFSET $SG228197
 
 ; 3638 : 		break;
 
@@ -20236,7 +20236,7 @@ $LN28@IsTestStra@30:
 ; 3634 : 		eCityStrategy = (AICityStrategyTypes)GC.getInfoTypeForString("AICITYSTRATEGY_NEED_IMPROVEMENT_FOOD");
 
 	push	ebx
-	push	OFFSET $SG227717
+	push	OFFSET $SG228194
 $LN70@IsTestStra@30:
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
@@ -20519,7 +20519,7 @@ $LN9@IsTestStra@30:
 	call	?getBuildInfo@CvGlobals@@QAEPAVCvBuildInfo@@W4BuildTypes@@@Z ; CvGlobals::getBuildInfo
 	mov	ecx, eax
 	call	?getImprovement@CvBuildInfo@@QBEHXZ	; CvBuildInfo::getImprovement
-	mov	DWORD PTR _eImprovement$227753[esp+36], eax
+	mov	DWORD PTR _eImprovement$228230[esp+36], eax
 
 ; 3718 : 			if(eImprovement == NO_IMPROVEMENT)
 
@@ -20602,7 +20602,7 @@ $LN48@IsTestStra@30:
 	jmp	SHORT $LN13@IsTestStra@30
 $LN57@IsTestStra@30:
 	mov	edx, DWORD PTR _eYield$[esp+32]
-	mov	eax, DWORD PTR _eImprovement$227753[esp+36]
+	mov	eax, DWORD PTR _eImprovement$228230[esp+36]
 	push	edx
 	push	eax
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
@@ -20883,7 +20883,7 @@ _pPlayer$ = 8						; size = 4
 ; 4144 : 	ProjectTypes eApolloProgram = (ProjectTypes) GC.getInfoTypeForString("PROJECT_APOLLO_PROGRAM", true);
 
 	push	1
-	push	OFFSET $SG227971
+	push	OFFSET $SG228448
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 
@@ -20970,7 +20970,7 @@ $LN17@IsTestStra@33:
 ; 4214 : 	BuildingTypes eWritersGuild = (BuildingTypes)GC.getInfoTypeForString("BUILDING_WRITERS_GUILD", true);
 
 	push	1
-	push	OFFSET $SG228006
+	push	OFFSET $SG228483
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	ebx, eax
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
@@ -20978,7 +20978,7 @@ $LN17@IsTestStra@33:
 ; 4215 : 	BuildingTypes eArtistsGuild = (BuildingTypes)GC.getInfoTypeForString("BUILDING_ARTISTS_GUILD", true);
 
 	push	1
-	push	OFFSET $SG228009
+	push	OFFSET $SG228486
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	esi, eax
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
@@ -20986,7 +20986,7 @@ $LN17@IsTestStra@33:
 ; 4216 : 	BuildingTypes eMusiciansGuild = (BuildingTypes)GC.getInfoTypeForString("BUILDING_MUSICIANS_GUILD", true);
 
 	push	1
-	push	OFFSET $SG228012
+	push	OFFSET $SG228489
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	edi, eax
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
@@ -23069,7 +23069,7 @@ PUBLIC	?_Maxlen@?$_Temp_iterator@VCvPurchaseRequest@@@std@@QAEHXZ ; std::_Temp_i
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ?_Maxlen@?$_Temp_iterator@VCvPurchaseRequest@@@std@@QAEHXZ
 _TEXT	SEGMENT
-__Pair$229419 = -8					; size = 8
+__Pair$229896 = -8					; size = 8
 ?_Maxlen@?$_Temp_iterator@VCvPurchaseRequest@@@std@@QAEHXZ PROC ; std::_Temp_iterator<CvPurchaseRequest>::_Maxlen, COMDAT
 ; _this$ = ecx
 
@@ -23093,7 +23093,7 @@ __Pair$229419 = -8					; size = 8
 ; 611  : 				std::get_temporary_buffer<_Ty>(_Pbuf->_Size);
 
 	push	eax
-	lea	eax, DWORD PTR __Pair$229419[esp+16]
+	lea	eax, DWORD PTR __Pair$229896[esp+16]
 	push	eax
 	call	??$get_temporary_buffer@VCvPurchaseRequest@@@std@@YA?AU?$pair@PAVCvPurchaseRequest@@H@0@H@Z ; std::get_temporary_buffer<CvPurchaseRequest>
 
@@ -23101,7 +23101,7 @@ __Pair$229419 = -8					; size = 8
 ; 613  : 			_Pbuf->_Begin = _Pair.first;
 
 	mov	ecx, DWORD PTR [esi+16]
-	mov	eax, DWORD PTR __Pair$229419[esp+20]
+	mov	eax, DWORD PTR __Pair$229896[esp+20]
 	mov	DWORD PTR [ecx], eax
 
 ; 614  : 			_Pbuf->_Current = _Pair.first;
@@ -23117,7 +23117,7 @@ __Pair$229419 = -8					; size = 8
 ; 616  : 			_Pbuf->_Size = _Pair.second;
 
 	mov	edx, DWORD PTR [esi+16]
-	mov	eax, DWORD PTR __Pair$229419[esp+24]
+	mov	eax, DWORD PTR __Pair$229896[esp+24]
 	mov	DWORD PTR [edx+12], eax
 
 ; 617  : 			}
@@ -23458,7 +23458,7 @@ PUBLIC	??$_Insertion_sort1@PAVCvPurchaseRequest@@V1@@std@@YAXPAVCvPurchaseReques
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Insertion_sort1@PAVCvPurchaseRequest@@V1@@std@@YAXPAVCvPurchaseRequest@@00@Z
 _TEXT	SEGMENT
-__Val$229696 = -12					; size = 12
+__Val$230173 = -12					; size = 12
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 ___formal$ = 16						; size = 4
@@ -23496,7 +23496,7 @@ $LL7@Insertion_@2:
 	mov	ebp, DWORD PTR [edx+4]
 	mov	ebx, DWORD PTR [edx]
 	mov	ecx, edx
-	mov	DWORD PTR __Val$229696[esp+32], ebp
+	mov	DWORD PTR __Val$230173[esp+32], ebp
 	jle	SHORT $LN5@Insertion_@2
 
 ; 2975 : 				{	// found new earliest element, move to front
@@ -23559,7 +23559,7 @@ $LL3@Insertion_@2:
 ; 2982 : 					_DEBUG_LT(_Val, *--_First1);
 ; 2983 : 					_Next1 = _First1)
 
-	mov	ebp, DWORD PTR __Val$229696[esp+32]
+	mov	ebp, DWORD PTR __Val$230173[esp+32]
 $LN1@Insertion_@2:
 
 ; 2985 : 				*_Next1 = _Val;	// insert element in hole
@@ -23589,7 +23589,7 @@ PUBLIC	??$_Unchecked_merge_backward@PAVCvPurchaseRequest@@PAV1@PAV1@@stdext@@YAP
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Unchecked_merge_backward@PAVCvPurchaseRequest@@PAV1@PAV1@@stdext@@YAPAVCvPurchaseRequest@@PAV1@0000@Z
 _TEXT	SEGMENT
-$T237408 = -4						; size = 1
+$T237885 = -4						; size = 1
 __First1$ = 8						; size = 4
 __Last1$ = 12						; size = 4
 __First2$ = 16						; size = 4
@@ -23605,8 +23605,8 @@ __Dest$ = 24						; size = 4
 
 	mov	ecx, DWORD PTR __Dest$[esp]
 	mov	edx, DWORD PTR __Last2$[esp]
-	mov	BYTE PTR $T237408[esp+4], 0
-	mov	eax, DWORD PTR $T237408[esp+4]
+	mov	BYTE PTR $T237885[esp+4], 0
+	mov	eax, DWORD PTR $T237885[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __First2$[esp+4]
 	push	ecx
@@ -23685,7 +23685,7 @@ PUBLIC	??$_Copy_opt@PAVCvPurchaseRequest@@V?$_Temp_iterator@VCvPurchaseRequest@@
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xutility
 ;	COMDAT ??$_Copy_opt@PAVCvPurchaseRequest@@V?$_Temp_iterator@VCvPurchaseRequest@@@std@@Uforward_iterator_tag@3@@std@@YA?AV?$_Temp_iterator@VCvPurchaseRequest@@@0@PAVCvPurchaseRequest@@0V10@Uforward_iterator_tag@0@U_Nonscalar_ptr_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
-$T237426 = -4						; size = 4
+$T237903 = -4						; size = 4
 ___$ReturnUdt$ = 8					; size = 4
 __First$ = 12						; size = 4
 __Last$ = 16						; size = 4
@@ -23708,7 +23708,7 @@ ___formal$ = 48						; size = 1
 	push	edi
 	mov	edi, DWORD PTR __Last$[esp+12]
 	xor	ebx, ebx
-	mov	DWORD PTR $T237426[esp+16], ebx
+	mov	DWORD PTR $T237903[esp+16], ebx
 	cmp	ecx, edi
 	je	SHORT $LN1@Copy_opt@3
 	lea	esi, DWORD PTR [ebx+12]
@@ -24270,10 +24270,10 @@ _iNumValidPlots$ = -24					; size = 4
 _iNumImprovedPlots$ = -20				; size = 4
 _fCurrentRatio$ = -20					; size = 8
 _iNumWorkers$ = -12					; size = 4
-$T238282 = -12						; size = 4
-$T238283 = -8						; size = 4
+$T238759 = -12						; size = 4
+$T238760 = -8						; size = 4
 _iNumCities$ = -8					; size = 4
-$T238281 = -8						; size = 4
+$T238758 = -8						; size = 4
 _iLoop$ = -4						; size = 4
 ?DisbandExtraWorkers@CvEconomicAI@@AAEXXZ PROC		; CvEconomicAI::DisbandExtraWorkers, COMDAT
 ; _this$ = ecx
@@ -24291,7 +24291,7 @@ _iLoop$ = -4						; size = 4
 
 	push	0
 	mov	edi, ecx
-	push	OFFSET $SG226781
+	push	OFFSET $SG227258
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 
@@ -24315,11 +24315,11 @@ _iLoop$ = -4						; size = 4
 	mov	esi, DWORD PTR [eax+16]
 	call	?getNumUnits@CvPlayer@@QBEHXZ		; CvPlayer::getNumUnits
 	cmp	eax, 1
-	mov	DWORD PTR $T238281[esp+48], eax
-	mov	DWORD PTR $T238282[esp+48], 1
-	lea	ecx, DWORD PTR $T238281[esp+48]
+	mov	DWORD PTR $T238758[esp+48], eax
+	mov	DWORD PTR $T238759[esp+48], 1
+	lea	ecx, DWORD PTR $T238758[esp+48]
 	jg	SHORT $LN33@DisbandExt
-	lea	ecx, DWORD PTR $T238282[esp+48]
+	lea	ecx, DWORD PTR $T238759[esp+48]
 $LN33@DisbandExt:
 	mov	eax, esi
 	cdq
@@ -24665,7 +24665,7 @@ $LN5@DisbandExt:
 	sub	esp, 8
 	mov	eax, esp
 	mov	ecx, esi
-	mov	DWORD PTR $T238283[esp+72], esp
+	mov	DWORD PTR $T238760[esp+72], esp
 	mov	DWORD PTR [eax], esi
 	mov	BYTE PTR [eax+4], 0
 	call	?getDestructionNotification@CvUnit@@QAEAAU?$DestructionNotification@V?$FObjectHandle@VCvUnit@@@@@@XZ ; CvUnit::getDestructionNotification
@@ -24688,7 +24688,7 @@ PUBLIC	?DisbandExtraArchaeologists@CvEconomicAI@@AAEXXZ ; CvEconomicAI::DisbandE
 ;	COMDAT ?DisbandExtraArchaeologists@CvEconomicAI@@AAEXXZ
 _TEXT	SEGMENT
 _iNumSites$ = -8					; size = 4
-$T238370 = -4						; size = 4
+$T238847 = -4						; size = 4
 _iNumArchaeologists$ = -4				; size = 4
 ?DisbandExtraArchaeologists@CvEconomicAI@@AAEXXZ PROC	; CvEconomicAI::DisbandExtraArchaeologists, COMDAT
 ; _this$ = ecx
@@ -24722,7 +24722,7 @@ _iNumArchaeologists$ = -4				; size = 4
 
 	push	1
 	mov	ebp, eax
-	push	OFFSET $SG226838
+	push	OFFSET $SG227315
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	DWORD PTR _iNumArchaeologists$[esp+32], ebp
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
@@ -24759,7 +24759,7 @@ $LN4@DisbandExt@2:
 ; 2345 : 	UnitTypes eArch = (UnitTypes) GC.getInfoTypeForString("UNIT_ARCHAEOLOGIST", true /*bHideAssert*/);
 
 	push	1
-	push	OFFSET $SG226844
+	push	OFFSET $SG227321
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 
@@ -24811,7 +24811,7 @@ $LN4@DisbandExt@2:
 	sub	esp, 8
 	mov	eax, esp
 	mov	ecx, esi
-	mov	DWORD PTR $T238370[esp+48], esp
+	mov	DWORD PTR $T238847[esp+48], esp
 	mov	DWORD PTR [eax], esi
 	mov	BYTE PTR [eax+4], 0
 	call	?getDestructionNotification@CvUnit@@QAEAAU?$DestructionNotification@V?$FObjectHandle@VCvUnit@@@@@@XZ ; CvUnit::getDestructionNotification
@@ -25662,9 +25662,9 @@ PUBLIC	??$_Unguarded_partition@PAUWeightedElement@?$CvWeightedVector@PAVCvUnit@@
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\algorithm
 ;	COMDAT ??$_Unguarded_partition@PAUWeightedElement@?$CvWeightedVector@PAVCvUnit@@$0DC@$00@@@std@@YA?AU?$pair@PAUWeightedElement@?$CvWeightedVector@PAVCvUnit@@$0DC@$00@@PAU12@@0@PAUWeightedElement@?$CvWeightedVector@PAVCvUnit@@$0DC@$00@@0@Z
 _TEXT	SEGMENT
-__Tmp$238889 = -24					; size = 8
-__Tmp$238817 = -16					; size = 8
-__Tmp$238844 = -8					; size = 8
+__Tmp$239363 = -24					; size = 8
+__Tmp$239291 = -16					; size = 8
+__Tmp$239318 = -8					; size = 8
 ___$ReturnUdt$ = 8					; size = 4
 __First$ = 12						; size = 4
 __Last$ = 16						; size = 4
@@ -25791,12 +25791,12 @@ $LL21@Unguarded_:
 	je	SHORT $LN20@Unguarded_
 	mov	ebp, DWORD PTR [edx+4]
 	mov	edi, DWORD PTR [edx]
-	mov	DWORD PTR __Tmp$238817[esp+44], ebp
+	mov	DWORD PTR __Tmp$239291[esp+44], ebp
 	mov	ebp, DWORD PTR [eax]
 	mov	DWORD PTR [edx], ebp
 	mov	ebp, DWORD PTR [eax+4]
 	mov	DWORD PTR [edx+4], ebp
-	mov	edx, DWORD PTR __Tmp$238817[esp+44]
+	mov	edx, DWORD PTR __Tmp$239291[esp+44]
 	mov	DWORD PTR [eax], edi
 	mov	DWORD PTR [eax+4], edx
 $LN20@Unguarded_:
@@ -25833,13 +25833,13 @@ $LL14@Unguarded_:
 	je	SHORT $LN13@Unguarded_
 	mov	ebp, DWORD PTR [ecx+4]
 	mov	edi, DWORD PTR [ecx]
-	mov	DWORD PTR __Tmp$238844[esp+44], ebp
+	mov	DWORD PTR __Tmp$239318[esp+44], ebp
 	mov	ebp, DWORD PTR [edx]
 	mov	DWORD PTR [ecx], ebp
 	mov	ebp, DWORD PTR [edx+4]
 	mov	DWORD PTR [ecx+4], ebp
 	mov	DWORD PTR [edx], edi
-	mov	edi, DWORD PTR __Tmp$238844[esp+44]
+	mov	edi, DWORD PTR __Tmp$239318[esp+44]
 	mov	DWORD PTR [edx+4], edi
 $LN13@Unguarded_:
 	sub	ebx, 8
@@ -25889,16 +25889,16 @@ $LN64@Unguarded_:
 	cmp	edi, edx
 	je	$LL23@Unguarded_
 	mov	ebp, DWORD PTR [edi]
-	mov	DWORD PTR __Tmp$238889[esp+40], ebp
+	mov	DWORD PTR __Tmp$239363[esp+40], ebp
 	mov	ebp, DWORD PTR [edi+4]
-	mov	DWORD PTR __Tmp$238889[esp+44], ebp
+	mov	DWORD PTR __Tmp$239363[esp+44], ebp
 	mov	ebp, DWORD PTR [edx]
 	mov	DWORD PTR [edi], ebp
 	mov	ebp, DWORD PTR [edx+4]
 	mov	DWORD PTR [edi+4], ebp
-	mov	edi, DWORD PTR __Tmp$238889[esp+40]
+	mov	edi, DWORD PTR __Tmp$239363[esp+40]
 	mov	DWORD PTR [edx], edi
-	mov	edi, DWORD PTR __Tmp$238889[esp+44]
+	mov	edi, DWORD PTR __Tmp$239363[esp+44]
 	mov	DWORD PTR [edx+4], edi
 	jmp	$LL23@Unguarded_
 $LN6@Unguarded_:
@@ -26069,11 +26069,11 @@ PUBLIC	??$unchecked_copy@PAVCvPurchaseRequest@@V?$_Temp_iterator@VCvPurchaseRequ
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xutility
 ;	COMDAT ??$unchecked_copy@PAVCvPurchaseRequest@@V?$_Temp_iterator@VCvPurchaseRequest@@@std@@@stdext@@YA?AV?$_Temp_iterator@VCvPurchaseRequest@@@std@@PAVCvPurchaseRequest@@0V12@@Z
 _TEXT	SEGMENT
-$T238996 = -4						; size = 1
-$T239003 = -4						; size = 4
-$T238999 = -4						; size = 4
-__Cat$239008 = 8					; size = 1
-$T238998 = 8						; size = 1
+$T239473 = -4						; size = 1
+$T239480 = -4						; size = 4
+$T239476 = -4						; size = 4
+__Cat$239484 = 8					; size = 1
+$T239475 = 8						; size = 1
 ___$ReturnUdt$ = 8					; size = 4
 __First$ = 12						; size = 4
 __Last$ = 16						; size = 4
@@ -26085,17 +26085,17 @@ __Dest$ = 20						; size = 20
 	push	ecx
 	push	ebx
 	xor	ebx, ebx
-	mov	DWORD PTR $T239003[esp+8], ebx
+	mov	DWORD PTR $T239480[esp+8], ebx
 
 ; 3605 : 		return (_STD _Copy_opt(_CHECKED_BASE(_First), _CHECKED_BASE(_Last), _Dest,
 ; 3606 : 			_STD _Iter_random(_First, _Dest), _STD _Ptr_cat(_First, _Dest), _STD _Range_checked_iterator_tag()));
 
-	mov	ecx, DWORD PTR __Cat$239008[esp+4]
-	mov	edx, DWORD PTR $T238998[esp+4]
+	mov	ecx, DWORD PTR __Cat$239484[esp+4]
+	mov	edx, DWORD PTR $T239475[esp+4]
 	push	esi
 	mov	esi, DWORD PTR ___$ReturnUdt$[esp+8]
-	mov	BYTE PTR $T238996[esp+12], bl
-	mov	eax, DWORD PTR $T238996[esp+12]
+	mov	BYTE PTR $T239473[esp+12], bl
+	mov	eax, DWORD PTR $T239473[esp+12]
 	push	eax
 	push	ecx
 	push	edx
@@ -26107,7 +26107,7 @@ __Dest$ = 20						; size = 20
 	mov	DWORD PTR [eax+8], ebx
 	mov	DWORD PTR [eax+12], ebx
 	mov	ecx, DWORD PTR __Dest$[esp+56]
-	mov	DWORD PTR $T238999[esp+44], esp
+	mov	DWORD PTR $T239476[esp+44], esp
 	mov	DWORD PTR [eax+16], ecx
 	mov	eax, DWORD PTR __First$[esp+40]
 	push	edx
@@ -26137,8 +26137,8 @@ PUBLIC	??$unchecked_merge@PAVCvPurchaseRequest@@PAV1@PAV1@@stdext@@YAPAVCvPurcha
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\algorithm
 ;	COMDAT ??$unchecked_merge@PAVCvPurchaseRequest@@PAV1@PAV1@@stdext@@YAPAVCvPurchaseRequest@@PAV1@0000@Z
 _TEXT	SEGMENT
-$T239047 = -4						; size = 1
-$T239048 = -4						; size = 1
+$T239524 = -4						; size = 1
+$T239525 = -4						; size = 1
 __First1$ = 8						; size = 4
 __Last1$ = 12						; size = 4
 __First2$ = 16						; size = 4
@@ -26154,9 +26154,9 @@ __Dest$ = 24						; size = 4
 ; 5116 : 			_STD _Iter_random(_First1, _First2, _Dest), _STD _Range_checked_iterator_tag());
 
 	mov	edx, DWORD PTR __Dest$[esp]
-	mov	BYTE PTR $T239047[esp+4], 0
-	mov	eax, DWORD PTR $T239047[esp+4]
-	mov	ecx, DWORD PTR $T239048[esp+4]
+	mov	BYTE PTR $T239524[esp+4], 0
+	mov	eax, DWORD PTR $T239524[esp+4]
+	mov	ecx, DWORD PTR $T239525[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Last2$[esp+4]
 	push	ecx
@@ -26180,13 +26180,13 @@ PUBLIC	??$_Buffered_rotate@PAVCvPurchaseRequest@@HV1@@std@@YAPAVCvPurchaseReques
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Buffered_rotate@PAVCvPurchaseRequest@@HV1@@std@@YAPAVCvPurchaseRequest@@PAV1@00HHAAV?$_Temp_iterator@VCvPurchaseRequest@@@0@@Z
 _TEXT	SEGMENT
-$T239059 = -20						; size = 20
-$T239057 = -20						; size = 20
+$T239536 = -20						; size = 20
+$T239534 = -20						; size = 20
 __First$ = 8						; size = 4
 __Mid$ = 12						; size = 4
 __Last$ = 16						; size = 4
-$T239058 = 20						; size = 4
-$T239056 = 20						; size = 4
+$T239535 = 20						; size = 4
+$T239533 = 20						; size = 4
 __Count1$ = 20						; size = 4
 __Count2$ = 24						; size = 4
 __Tempbuf$ = 28						; size = 4
@@ -26228,14 +26228,14 @@ __Tempbuf$ = 28						; size = 4
 	mov	DWORD PTR [eax+8], edi
 	mov	DWORD PTR [eax+12], edi
 	mov	edx, DWORD PTR [esi+16]
-	mov	DWORD PTR $T239056[esp+52], esp
+	mov	DWORD PTR $T239533[esp+52], esp
 	push	ebx
 	mov	DWORD PTR [eax+16], edx
-	lea	eax, DWORD PTR $T239057[esp+60]
+	lea	eax, DWORD PTR $T239534[esp+60]
 	push	ebp
 	push	eax
 	call	??$unchecked_copy@PAVCvPurchaseRequest@@V?$_Temp_iterator@VCvPurchaseRequest@@@std@@@stdext@@YA?AV?$_Temp_iterator@VCvPurchaseRequest@@@std@@PAVCvPurchaseRequest@@0V12@@Z ; stdext::unchecked_copy<CvPurchaseRequest *,std::_Temp_iterator<CvPurchaseRequest> >
-	mov	eax, DWORD PTR $T239057[esp+68]
+	mov	eax, DWORD PTR $T239534[esp+68]
 	add	esp, 32					; 00000020H
 	cmp	eax, edi
 	je	SHORT $LN25@Buffered_r
@@ -26300,14 +26300,14 @@ $LN4@Buffered_r:
 	mov	DWORD PTR [eax+8], edi
 	mov	DWORD PTR [eax+12], edi
 	mov	edx, DWORD PTR [esi+16]
-	mov	DWORD PTR $T239058[esp+52], esp
+	mov	DWORD PTR $T239535[esp+52], esp
 	push	ebx
 	mov	DWORD PTR [eax+16], edx
-	lea	eax, DWORD PTR $T239059[esp+60]
+	lea	eax, DWORD PTR $T239536[esp+60]
 	push	ebp
 	push	eax
 	call	??$unchecked_copy@PAVCvPurchaseRequest@@V?$_Temp_iterator@VCvPurchaseRequest@@@std@@@stdext@@YA?AV?$_Temp_iterator@VCvPurchaseRequest@@@std@@PAVCvPurchaseRequest@@0V12@@Z ; stdext::unchecked_copy<CvPurchaseRequest *,std::_Temp_iterator<CvPurchaseRequest> >
-	mov	eax, DWORD PTR $T239059[esp+68]
+	mov	eax, DWORD PTR $T239536[esp+68]
 	add	esp, 32					; 00000020H
 	cmp	eax, edi
 	je	SHORT $LN45@Buffered_r
@@ -26443,14 +26443,14 @@ PUBLIC	??$_Chunked_merge@PAVCvPurchaseRequest@@PAV1@H@std@@YAXPAVCvPurchaseReque
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Chunked_merge@PAVCvPurchaseRequest@@PAV1@H@std@@YAXPAVCvPurchaseRequest@@00HHU_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
-$T239284 = -4						; size = 1
+$T239760 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
 __Chunk$ = 20						; size = 4
-$T239360 = 24						; size = 1
-$T239361 = 24						; size = 1
-$T239285 = 24						; size = 1
+$T239836 = 24						; size = 1
+$T239837 = 24						; size = 1
+$T239761 = 24						; size = 1
 __Count$ = 24						; size = 4
 ___formal$ = 28						; size = 1
 ??$_Chunked_merge@PAVCvPurchaseRequest@@PAV1@H@std@@YAXPAVCvPurchaseRequest@@00HHU_Range_checked_iterator_tag@0@@Z PROC ; std::_Chunked_merge<CvPurchaseRequest *,CvPurchaseRequest *,int>, COMDAT
@@ -26485,10 +26485,10 @@ $LL50@Chunked_me:
 ; 3295 : 
 ; 3296 : 		_Dest = _STDEXT unchecked_merge(_First, _Mid1, _Mid1, _Mid2, _Dest);
 
-	mov	BYTE PTR $T239284[esp+20], 0
-	mov	ebx, DWORD PTR $T239284[esp+20]
+	mov	BYTE PTR $T239760[esp+20], 0
+	mov	ebx, DWORD PTR $T239760[esp+20]
 	push	ebx
-	mov	ebx, DWORD PTR $T239285[esp+20]
+	mov	ebx, DWORD PTR $T239761[esp+20]
 	push	ebx
 	lea	edx, DWORD PTR [ecx+ebp]
 	push	eax
@@ -26554,10 +26554,10 @@ $LN2@Chunked_me:
 ; 3306 : 
 ; 3307 : 		_STDEXT unchecked_merge(_First, _Mid, _Mid, _Last, _Dest);
 
-	mov	BYTE PTR $T239360[esp+12], 0
-	mov	esi, DWORD PTR $T239360[esp+12]
+	mov	BYTE PTR $T239836[esp+12], 0
+	mov	esi, DWORD PTR $T239836[esp+12]
 	push	esi
-	mov	esi, DWORD PTR $T239361[esp+16]
+	mov	esi, DWORD PTR $T239837[esp+16]
 	push	esi
 	push	eax
 	mov	eax, DWORD PTR __Last$[esp+24]
@@ -26585,11 +26585,11 @@ PUBLIC	??$_Merge@PAVCvPurchaseRequest@@PAV1@V?$_Temp_iterator@VCvPurchaseRequest
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Merge@PAVCvPurchaseRequest@@PAV1@V?$_Temp_iterator@VCvPurchaseRequest@@@std@@Uforward_iterator_tag@3@@std@@YA?AV?$_Temp_iterator@VCvPurchaseRequest@@@0@PAVCvPurchaseRequest@@000V10@Uforward_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
-$T239386 = -24						; size = 4
-$T239379 = -20						; size = 20
+$T239863 = -24						; size = 4
+$T239856 = -20						; size = 20
 ___$ReturnUdt$ = 8					; size = 4
-$T239380 = 12						; size = 4
-$T239378 = 12						; size = 4
+$T239857 = 12						; size = 4
+$T239855 = 12						; size = 4
 __First1$ = 12						; size = 4
 __Last1$ = 16						; size = 4
 __First2$ = 20						; size = 4
@@ -26616,7 +26616,7 @@ ___formal$ = 52						; size = 1
 	xor	ebx, ebx
 	push	edi
 	mov	edi, DWORD PTR __First2$[esp+36]
-	mov	DWORD PTR $T239386[esp+40], ebx
+	mov	DWORD PTR $T239863[esp+40], ebx
 	cmp	esi, ebp
 	je	SHORT $LN3@Merge@2
 	npad	3
@@ -26663,21 +26663,21 @@ $LN3@Merge@2:
 
 	sub	esp, 20					; 00000014H
 	mov	eax, esp
-	mov	DWORD PTR $T239378[esp+56], esp
+	mov	DWORD PTR $T239855[esp+56], esp
 	push	ebp
 	mov	DWORD PTR [eax], ebx
 	mov	DWORD PTR [eax+4], ebx
 	mov	DWORD PTR [eax+8], ebx
 	mov	DWORD PTR [eax+12], ebx
 	mov	ecx, DWORD PTR __Dest$[esp+76]
-	lea	edx, DWORD PTR $T239379[esp+64]
+	lea	edx, DWORD PTR $T239856[esp+64]
 	push	esi
 	push	edx
 	mov	DWORD PTR [eax+16], ecx
 	call	??$unchecked_copy@PAVCvPurchaseRequest@@V?$_Temp_iterator@VCvPurchaseRequest@@@std@@@stdext@@YA?AV?$_Temp_iterator@VCvPurchaseRequest@@@std@@PAVCvPurchaseRequest@@0V12@@Z ; stdext::unchecked_copy<CvPurchaseRequest *,std::_Temp_iterator<CvPurchaseRequest> >
 	mov	eax, DWORD PTR [eax+16]
 	mov	DWORD PTR __Dest$[esp+84], eax
-	mov	eax, DWORD PTR $T239379[esp+72]
+	mov	eax, DWORD PTR $T239856[esp+72]
 	add	esp, 32					; 00000020H
 	cmp	eax, ebx
 	je	SHORT $LN36@Merge@2
@@ -26692,7 +26692,7 @@ $LN36@Merge@2:
 	mov	esi, DWORD PTR ___$ReturnUdt$[esp+36]
 	sub	esp, 20					; 00000014H
 	mov	eax, esp
-	mov	DWORD PTR $T239380[esp+56], esp
+	mov	DWORD PTR $T239857[esp+56], esp
 	push	edx
 	mov	DWORD PTR [eax], ebx
 	mov	DWORD PTR [eax+4], ebx
@@ -26940,15 +26940,15 @@ PUBLIC	?Read@CvEconomicAI@@QAEXAAVFDataStream@@@Z	; CvEconomicAI::Read
 _TEXT	SEGMENT
 _this$ = -20						; size = 4
 _iTemp$ = -16						; size = 4
-_iTemp$239798 = -12					; size = 4
-$T239731 = -12						; size = 4
-$T239710 = -12						; size = 4
-$T239657 = -12						; size = 4
-$T239636 = -12						; size = 4
-_iDummy$225599 = -12					; size = 4
-$T239553 = -12						; size = 4
-_iDummy$225589 = -12					; size = 4
-$T239552 = -12						; size = 4
+_iTemp$240268 = -12					; size = 4
+$T240208 = -12						; size = 4
+$T240187 = -12						; size = 4
+$T240134 = -12						; size = 4
+$T240113 = -12						; size = 4
+_iDummy$226076 = -12					; size = 4
+$T240030 = -12						; size = 4
+_iDummy$226066 = -12					; size = 4
+$T240029 = -12						; size = 4
 _wrapGetNumEconomicAIStrategies$ = -12			; size = 8
 _uiVersion$ = -4					; size = 4
 _iEntriesToRead$ = 8					; size = 4
@@ -27069,10 +27069,10 @@ $LL18@Read:
 
 	mov	eax, 14841				; 000039f9H
 	cmp	DWORD PTR _iEntriesToRead$[esp+32], eax
-	mov	DWORD PTR $T239552[esp+36], eax
+	mov	DWORD PTR $T240029[esp+36], eax
 	lea	eax, DWORD PTR _iEntriesToRead$[esp+32]
 	jl	SHORT $LN51@Read
-	lea	eax, DWORD PTR $T239552[esp+36]
+	lea	eax, DWORD PTR $T240029[esp+36]
 $LN51@Read:
 	mov	edi, DWORD PTR [eax]
 
@@ -27080,7 +27080,7 @@ $LN51@Read:
 ; 387  : 	m_aiExplorationPlots.resize(iMaxEntriesToRead);
 
 	lea	ebx, DWORD PTR [ebp+64]
-	mov	DWORD PTR $T239636[esp+36], edi
+	mov	DWORD PTR $T240113[esp+36], edi
 	cmp	DWORD PTR [ebx+8], edi
 	jae	SHORT $LN52@Read
 	push	edi
@@ -27090,7 +27090,7 @@ $LN52@Read:
 	cmp	DWORD PTR [ebx+8], edi
 	lea	eax, DWORD PTR [ebx+8]
 	jb	SHORT $LN58@Read
-	lea	eax, DWORD PTR $T239636[esp+36]
+	lea	eax, DWORD PTR $T240113[esp+36]
 $LN58@Read:
 	mov	ecx, DWORD PTR [eax]
 	mov	DWORD PTR [ebx+4], ecx
@@ -27098,7 +27098,7 @@ $LN58@Read:
 ; 388  : 	m_aiExplorationPlotRatings.resize(iMaxEntriesToRead);
 
 	lea	ebx, DWORD PTR [ebp+76]
-	mov	DWORD PTR $T239657[esp+36], edi
+	mov	DWORD PTR $T240134[esp+36], edi
 	cmp	DWORD PTR [ebx+8], edi
 	jae	SHORT $LN59@Read
 	push	edi
@@ -27108,7 +27108,7 @@ $LN59@Read:
 	cmp	DWORD PTR [ebx+8], edi
 	lea	eax, DWORD PTR [ebx+8]
 	jb	SHORT $LN65@Read
-	lea	eax, DWORD PTR $T239657[esp+36]
+	lea	eax, DWORD PTR $T240134[esp+36]
 $LN65@Read:
 	mov	edx, DWORD PTR [eax]
 	mov	DWORD PTR [ebx+4], edx
@@ -27165,14 +27165,14 @@ $LL12@Read:
 ; 399  : 		int iDummy;
 ; 400  : 		kStream >> iDummy;
 
-	lea	edx, DWORD PTR _iDummy$225589[esp+36]
+	lea	edx, DWORD PTR _iDummy$226066[esp+36]
 	push	edx
 	mov	ecx, esi
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
 
 ; 401  : 		kStream >> iDummy;
 
-	lea	eax, DWORD PTR _iDummy$225589[esp+36]
+	lea	eax, DWORD PTR _iDummy$226066[esp+36]
 	push	eax
 	mov	ecx, esi
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
@@ -27195,17 +27195,17 @@ $LN10@Read:
 
 	mov	eax, 14841				; 000039f9H
 	cmp	DWORD PTR _iEntriesToRead$[esp+32], eax
-	mov	DWORD PTR $T239553[esp+36], eax
+	mov	DWORD PTR $T240030[esp+36], eax
 	lea	eax, DWORD PTR _iEntriesToRead$[esp+32]
 	jl	SHORT $LN83@Read
-	lea	eax, DWORD PTR $T239553[esp+36]
+	lea	eax, DWORD PTR $T240030[esp+36]
 $LN83@Read:
 	mov	ebx, DWORD PTR [eax]
 
 ; 407  : 	m_aiGoodyHutPlots.resize(iMaxEntriesToRead);
 
 	lea	edi, DWORD PTR [ebp+88]
-	mov	DWORD PTR $T239710[esp+36], ebx
+	mov	DWORD PTR $T240187[esp+36], ebx
 	cmp	DWORD PTR [edi+8], ebx
 	jae	SHORT $LN84@Read
 	push	ebx
@@ -27215,7 +27215,7 @@ $LN84@Read:
 	cmp	DWORD PTR [edi+8], ebx
 	lea	eax, DWORD PTR [edi+8]
 	jb	SHORT $LN90@Read
-	lea	eax, DWORD PTR $T239710[esp+36]
+	lea	eax, DWORD PTR $T240187[esp+36]
 $LN90@Read:
 	mov	edx, DWORD PTR [eax]
 
@@ -27224,7 +27224,7 @@ $LN90@Read:
 	add	ebp, 100				; 00000064H
 	mov	DWORD PTR [edi+4], edx
 	lea	edi, DWORD PTR [ebp+8]
-	mov	DWORD PTR $T239731[esp+36], ebx
+	mov	DWORD PTR $T240208[esp+36], ebx
 	cmp	DWORD PTR [edi], ebx
 	jae	SHORT $LN96@Read
 	push	ebx
@@ -27233,7 +27233,7 @@ $LN90@Read:
 	cmp	DWORD PTR [edi], ebx
 	jb	SHORT $LN97@Read
 $LN96@Read:
-	lea	edi, DWORD PTR $T239731[esp+36]
+	lea	edi, DWORD PTR $T240208[esp+36]
 $LN97@Read:
 	mov	eax, DWORD PTR [edi]
 
@@ -27292,14 +27292,14 @@ $LL6@Read:
 ; 420  : 		int iDummy;
 ; 421  : 		kStream >> iDummy;
 
-	lea	ecx, DWORD PTR _iDummy$225599[esp+36]
+	lea	ecx, DWORD PTR _iDummy$226076[esp+36]
 	push	ecx
 	mov	ecx, esi
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
 
 ; 422  : 		kStream >> iDummy;
 
-	lea	edx, DWORD PTR _iDummy$225599[esp+36]
+	lea	edx, DWORD PTR _iDummy$226076[esp+36]
 	push	edx
 	mov	ecx, esi
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
@@ -27387,12 +27387,12 @@ $LN3@Read:
 ; 438  : 		kStream >> m_RequestedSavings[i];
 
 	mov	edi, DWORD PTR [edi+112]
-	lea	edx, DWORD PTR _iTemp$239798[esp+36]
+	lea	edx, DWORD PTR _iTemp$240268[esp+36]
 	push	edx
 	mov	ecx, esi
 	add	edi, ebp
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
-	mov	eax, DWORD PTR _iTemp$239798[esp+36]
+	mov	eax, DWORD PTR _iTemp$240268[esp+36]
 	lea	ecx, DWORD PTR [edi+4]
 	push	ecx
 	mov	ecx, esi
@@ -27479,48 +27479,48 @@ xdata$x	ENDS
 ;	COMDAT ?LogMonitor@CvEconomicAI@@QAEXXZ
 _TEXT	SEGMENT
 tv2253 = -248						; size = 4
-$T239859 = -248						; size = 4
-$T239858 = -248						; size = 4
-$T239857 = -248						; size = 4
-$T239856 = -248						; size = 4
-$T239855 = -248						; size = 4
-$T239854 = -248						; size = 4
+$T240336 = -248						; size = 4
+$T240335 = -248						; size = 4
+$T240334 = -248						; size = 4
+$T240333 = -248						; size = 4
+$T240332 = -248						; size = 4
+$T240331 = -248						; size = 4
 _iGPTFromReligion$ = -248				; size = 4
-$T239853 = -248						; size = 4
-$T239852 = -248						; size = 4
-$T239851 = -248						; size = 4
-$T239850 = -248						; size = 4
-$T239849 = -248						; size = 4
-$T239848 = -248						; size = 4
-$T239847 = -248						; size = 4
-$T239846 = -248						; size = 4
-$T239845 = -248						; size = 4
-$T239844 = -248						; size = 4
-$T239843 = -248						; size = 4
-$T239842 = -248						; size = 4
-_uiPlotIndex$226333 = -248				; size = 4
-$T239840 = -248						; size = 4
-$T239839 = -248						; size = 4
-$T239838 = -248						; size = 4
-$T239837 = -248						; size = 4
-$T239836 = -248						; size = 4
-$T239835 = -248						; size = 4
-$T239834 = -248						; size = 4
-$T239833 = -248						; size = 4
-$T239832 = -248						; size = 4
-$T239831 = -248						; size = 4
-$T239830 = -248						; size = 4
-$T239829 = -248						; size = 4
-$T239828 = -248						; size = 4
-$T239827 = -248						; size = 4
-$T239826 = -248						; size = 4
-$T239825 = -248						; size = 4
-$T239824 = -248						; size = 4
-$T239822 = -248						; size = 4
+$T240330 = -248						; size = 4
+$T240329 = -248						; size = 4
+$T240328 = -248						; size = 4
+$T240327 = -248						; size = 4
+$T240326 = -248						; size = 4
+$T240325 = -248						; size = 4
+$T240324 = -248						; size = 4
+$T240323 = -248						; size = 4
+$T240322 = -248						; size = 4
+$T240321 = -248						; size = 4
+$T240320 = -248						; size = 4
+$T240319 = -248						; size = 4
+_uiPlotIndex$226810 = -248				; size = 4
+$T240317 = -248						; size = 4
+$T240316 = -248						; size = 4
+$T240315 = -248						; size = 4
+$T240314 = -248						; size = 4
+$T240313 = -248						; size = 4
+$T240312 = -248						; size = 4
+$T240311 = -248						; size = 4
+$T240310 = -248						; size = 4
+$T240309 = -248						; size = 4
+$T240308 = -248						; size = 4
+$T240307 = -248						; size = 4
+$T240306 = -248						; size = 4
+$T240305 = -248						; size = 4
+$T240304 = -248						; size = 4
+$T240303 = -248						; size = 4
+$T240302 = -248						; size = 4
+$T240301 = -248						; size = 4
+$T240299 = -248						; size = 4
 _bBuildHeader$ = -241					; size = 1
 _iGPTFromDiplomacy$ = -240				; size = 4
 _aiPlots$ = -240					; size = 4
-$T239823 = -240						; size = 4
+$T240300 = -240						; size = 4
 _strHeader$ = -236					; size = 28
 _strLog$ = -208						; size = 28
 _iWorkedTiles$ = -180					; size = 4
@@ -27530,8 +27530,8 @@ _m_aiNumImprovements$ = -168				; size = 12
 _iLoopUnit$ = -156					; size = 4
 _strPlayerName$ = -152					; size = 28
 _strLogName$ = -124					; size = 28
-$T239820 = -96						; size = 28
-$T239821 = -68						; size = 28
+$T240297 = -96						; size = 28
+$T240298 = -68						; size = 28
 _str$ = -40						; size = 28
 __$EHRec$ = -12						; size = 12
 ?LogMonitor@CvEconomicAI@@QAEXXZ PROC			; CvEconomicAI::LogMonitor, COMDAT
@@ -27653,13 +27653,13 @@ $LN90@LogMonitor:
 
 	lea	eax, DWORD PTR _strPlayerName$[esp+264]
 	push	eax
-	lea	ecx, DWORD PTR $T239820[esp+268]
-	push	OFFSET $SG226178
+	lea	ecx, DWORD PTR $T240297[esp+268]
+	push	OFFSET $SG226655
 	push	ecx
 	call	DWORD PTR __imp_??$?HDU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PBDABV10@@Z
-	push	OFFSET $SG226177
+	push	OFFSET $SG226654
 	push	eax
-	lea	edx, DWORD PTR $T239821[esp+284]
+	lea	edx, DWORD PTR $T240298[esp+284]
 	push	edx
 	mov	BYTE PTR __$EHRec$[esp+296], 4
 	call	DWORD PTR __imp_??$?HDU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@ABV10@PBD@Z
@@ -27670,10 +27670,10 @@ $LN90@LogMonitor:
 	push	eax
 	lea	ecx, DWORD PTR _strLogName$[esp+268]
 	call	DWORD PTR __imp_?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBD@Z
-	lea	ecx, DWORD PTR $T239821[esp+264]
+	lea	ecx, DWORD PTR $T240298[esp+264]
 	mov	BYTE PTR __$EHRec$[esp+272], 4
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T239820[esp+264]
+	lea	ecx, DWORD PTR $T240297[esp+264]
 	mov	BYTE PTR __$EHRec$[esp+272], 3
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -27686,7 +27686,7 @@ $LN29@LogMonitor:
 ; 1351 : 	{
 ; 1352 : 		strLogName = "EconomicMonitorLog.csv";
 
-	push	OFFSET $SG226180
+	push	OFFSET $SG226657
 	lea	ecx, DWORD PTR _strLogName$[esp+268]
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 $LN28@LogMonitor:
@@ -27721,15 +27721,15 @@ $LN28@LogMonitor:
 
 	sub	esp, 28					; 0000001cH
 	lea	edx, DWORD PTR _strPlayerName$[esp+292]
-	mov	DWORD PTR $T239822[esp+292], esp
+	mov	DWORD PTR $T240299[esp+292], esp
 	mov	ecx, esp
 	push	edx
 	mov	BYTE PTR __$EHRec$[esp+304], 6
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T239823[esp+320], esp
+	mov	DWORD PTR $T240300[esp+320], esp
 	mov	ecx, esp
-	push	OFFSET $SG226185
+	push	OFFSET $SG226662
 	mov	BYTE PTR __$EHRec$[esp+332], 7
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	eax, DWORD PTR _strLog$[esp+320]
@@ -27748,9 +27748,9 @@ $LN28@LogMonitor:
 	call	?getGameTurn@CvGame@@QAEHXZ		; CvGame::getGameTurn
 	push	eax
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T239824[esp+296], esp
+	mov	DWORD PTR $T240301[esp+296], esp
 	mov	ecx, esp
-	push	OFFSET $SG226187
+	push	OFFSET $SG226664
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	edx, DWORD PTR _strLog$[esp+296]
 	push	edx
@@ -27767,9 +27767,9 @@ $LN28@LogMonitor:
 	call	?getNumCities@CvPlayer@@QBEHXZ		; CvPlayer::getNumCities
 	push	eax
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T239825[esp+296], esp
+	mov	DWORD PTR $T240302[esp+296], esp
 	mov	ecx, esp
-	push	OFFSET $SG226189
+	push	OFFSET $SG226666
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	ecx, DWORD PTR _strLog$[esp+296]
 	push	ecx
@@ -27817,9 +27817,9 @@ $LN25@LogMonitor:
 
 	push	edi
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T239826[esp+296], esp
+	mov	DWORD PTR $T240303[esp+296], esp
 	mov	ecx, esp
-	push	OFFSET $SG226197
+	push	OFFSET $SG226674
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	eax, DWORD PTR _strLog$[esp+296]
 	push	eax
@@ -27852,9 +27852,9 @@ $LN19@LogMonitor:
 	call	?calculateTotalYield@CvPlayer@@QBEHW4YieldTypes@@@Z ; CvPlayer::calculateTotalYield
 	push	eax
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T239827[esp+296], esp
+	mov	DWORD PTR $T240304[esp+296], esp
 	mov	ecx, esp
-	push	OFFSET $SG226209
+	push	OFFSET $SG226686
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	edx, DWORD PTR _strLog$[esp+296]
 	push	edx
@@ -27874,9 +27874,9 @@ $LN18@LogMonitor:
 	call	?calculateTotalYield@CvPlayer@@QBEHW4YieldTypes@@@Z ; CvPlayer::calculateTotalYield
 	push	eax
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T239828[esp+296], esp
+	mov	DWORD PTR $T240305[esp+296], esp
 	mov	ecx, esp
-	push	OFFSET $SG226213
+	push	OFFSET $SG226690
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	ecx, DWORD PTR _strLog$[esp+296]
 	push	ecx
@@ -27896,9 +27896,9 @@ $LN17@LogMonitor:
 	call	?calculateTotalYield@CvPlayer@@QBEHW4YieldTypes@@@Z ; CvPlayer::calculateTotalYield
 	push	eax
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T239829[esp+296], esp
+	mov	DWORD PTR $T240306[esp+296], esp
 	mov	ecx, esp
-	push	OFFSET $SG226217
+	push	OFFSET $SG226694
 
 ; 1392 : 			break;
 
@@ -27913,9 +27913,9 @@ $LN16@LogMonitor:
 	call	?calculateTotalYield@CvPlayer@@QBEHW4YieldTypes@@@Z ; CvPlayer::calculateTotalYield
 	push	eax
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T239830[esp+296], esp
+	mov	DWORD PTR $T240307[esp+296], esp
 	mov	ecx, esp
-	push	OFFSET $SG226221
+	push	OFFSET $SG226698
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	edx, DWORD PTR _strLog$[esp+296]
 	push	edx
@@ -27934,9 +27934,9 @@ $LN15@LogMonitor:
 	call	?GetTotalJONSCulturePerTurn@CvPlayer@@QBEHXZ ; CvPlayer::GetTotalJONSCulturePerTurn
 	push	eax
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T239831[esp+296], esp
+	mov	DWORD PTR $T240308[esp+296], esp
 	mov	ecx, esp
-	push	OFFSET $SG226224
+	push	OFFSET $SG226701
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	ecx, DWORD PTR _strLog$[esp+296]
 	push	ecx
@@ -27955,9 +27955,9 @@ $LN14@LogMonitor:
 	call	?GetTotalFaithPerTurn@CvPlayer@@QBEHXZ	; CvPlayer::GetTotalFaithPerTurn
 	push	eax
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T239832[esp+296], esp
+	mov	DWORD PTR $T240309[esp+296], esp
 	mov	ecx, esp
-	push	OFFSET $SG226227
+	push	OFFSET $SG226704
 $LN407@LogMonitor:
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	eax, DWORD PTR _strLog$[esp+296]
@@ -27998,9 +27998,9 @@ $LN170@LogMonitor:
 	call	?GetNumTechsKnown@CvTeamTechs@@QBEHXZ	; CvTeamTechs::GetNumTechsKnown
 	push	eax
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T239833[esp+296], esp
+	mov	DWORD PTR $T240310[esp+296], esp
 	mov	ecx, esp
-	push	OFFSET $SG226229
+	push	OFFSET $SG226706
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	edx, DWORD PTR _strLog$[esp+296]
 	push	edx
@@ -28019,9 +28019,9 @@ $LN170@LogMonitor:
 	call	?GetNumPoliciesOwned@CvPlayerPolicies@@QBEHXZ ; CvPlayerPolicies::GetNumPoliciesOwned
 	push	eax
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T239834[esp+296], esp
+	mov	DWORD PTR $T240311[esp+296], esp
 	mov	ecx, esp
-	push	OFFSET $SG226231
+	push	OFFSET $SG226708
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	ecx, DWORD PTR _strLog$[esp+296]
 	push	ecx
@@ -28036,9 +28036,9 @@ $LN170@LogMonitor:
 	call	?GetJONSCultureEverGenerated@CvPlayer@@QBEHXZ ; CvPlayer::GetJONSCultureEverGenerated
 	push	eax
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T239835[esp+296], esp
+	mov	DWORD PTR $T240312[esp+296], esp
 	mov	ecx, esp
-	push	OFFSET $SG226233
+	push	OFFSET $SG226710
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	eax, DWORD PTR _strLog$[esp+296]
 	push	eax
@@ -28055,9 +28055,9 @@ $LN170@LogMonitor:
 	call	?GetFaith@CvPlayer@@QBEHXZ		; CvPlayer::GetFaith
 	push	eax
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T239836[esp+296], esp
+	mov	DWORD PTR $T240313[esp+296], esp
 	mov	ecx, esp
-	push	OFFSET $SG226235
+	push	OFFSET $SG226712
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	edx, DWORD PTR _strLog$[esp+296]
 	push	edx
@@ -28120,9 +28120,9 @@ $LN11@LogMonitor:
 
 	push	edi
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T239837[esp+296], esp
+	mov	DWORD PTR $T240314[esp+296], esp
 	mov	ecx, esp
-	push	OFFSET $SG226244
+	push	OFFSET $SG226721
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	eax, DWORD PTR _strLog$[esp+296]
 	push	eax
@@ -28137,9 +28137,9 @@ $LN11@LogMonitor:
 	call	?GetHappiness@CvPlayer@@QBEHXZ		; CvPlayer::GetHappiness
 	push	eax
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T239838[esp+296], esp
+	mov	DWORD PTR $T240315[esp+296], esp
 	mov	ecx, esp
-	push	OFFSET $SG226246
+	push	OFFSET $SG226723
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	edx, DWORD PTR _strLog$[esp+296]
 	push	edx
@@ -28156,9 +28156,9 @@ $LN11@LogMonitor:
 	call	?GetUnhappiness@CvPlayer@@QBEHPAVCvCity@@0@Z ; CvPlayer::GetUnhappiness
 	push	eax
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T239839[esp+296], esp
+	mov	DWORD PTR $T240316[esp+296], esp
 	mov	ecx, esp
-	push	OFFSET $SG226248
+	push	OFFSET $SG226725
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	ecx, DWORD PTR _strLog$[esp+296]
 	push	ecx
@@ -28173,9 +28173,9 @@ $LN11@LogMonitor:
 	call	?GetExcessHappiness@CvPlayer@@QBEHXZ	; CvPlayer::GetExcessHappiness
 	push	eax
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T239840[esp+296], esp
+	mov	DWORD PTR $T240317[esp+296], esp
 	mov	ecx, esp
-	push	OFFSET $SG226250
+	push	OFFSET $SG226727
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	eax, DWORD PTR _strLog$[esp+296]
 	push	eax
@@ -28242,7 +28242,7 @@ $LN231@LogMonitor:
 	xor	ebp, ebp
 	mov	DWORD PTR _aiPlots$[esp+264], ecx
 	mov	DWORD PTR _iWorkedTiles$[esp+264], ebx
-	mov	DWORD PTR _uiPlotIndex$226333[esp+264], eax
+	mov	DWORD PTR _uiPlotIndex$226810[esp+264], eax
 	cmp	DWORD PTR [ecx+4], eax
 	jbe	$LN393@LogMonitor
 $LN9@LogMonitor:
@@ -28341,9 +28341,9 @@ $LN8@LogMonitor:
 ; 1441 : 	int iImprovedTiles = 0;
 ; 1442 : 	for(uint uiPlotIndex = 0; uiPlotIndex < aiPlots.size(); uiPlotIndex++)
 
-	mov	eax, DWORD PTR _uiPlotIndex$226333[esp+264]
+	mov	eax, DWORD PTR _uiPlotIndex$226810[esp+264]
 	inc	eax
-	mov	DWORD PTR _uiPlotIndex$226333[esp+264], eax
+	mov	DWORD PTR _uiPlotIndex$226810[esp+264], eax
 	cmp	eax, DWORD PTR [ecx+4]
 	jb	$LN9@LogMonitor
 $LN393@LogMonitor:
@@ -28355,9 +28355,9 @@ $LN393@LogMonitor:
 
 	push	ebx
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T239842[esp+296], esp
+	mov	DWORD PTR $T240319[esp+296], esp
 	mov	ecx, esp
-	push	OFFSET $SG226344
+	push	OFFSET $SG226821
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	edx, DWORD PTR _strLog$[esp+296]
 	push	edx
@@ -28371,9 +28371,9 @@ $LN393@LogMonitor:
 	add	esp, 40					; 00000028H
 	push	ecx
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T239843[esp+296], esp
+	mov	DWORD PTR $T240320[esp+296], esp
 	mov	ecx, esp
-	push	OFFSET $SG226346
+	push	OFFSET $SG226823
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	edx, DWORD PTR _strLog$[esp+296]
 	push	edx
@@ -28386,9 +28386,9 @@ $LN393@LogMonitor:
 
 	push	ebp
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T239844[esp+296], esp
+	mov	DWORD PTR $T240321[esp+296], esp
 	mov	ecx, esp
-	push	OFFSET $SG226348
+	push	OFFSET $SG226825
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	ecx, DWORD PTR _strLog$[esp+296]
 	push	ecx
@@ -28407,9 +28407,9 @@ $LN393@LogMonitor:
 	call	?GetNumTradeRoutesUsed@CvPlayerTrade@@QAEH_N@Z ; CvPlayerTrade::GetNumTradeRoutesUsed
 	push	eax
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T239845[esp+296], esp
+	mov	DWORD PTR $T240322[esp+296], esp
 	mov	ecx, esp
-	push	OFFSET $SG226350
+	push	OFFSET $SG226827
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	eax, DWORD PTR _strLog$[esp+296]
 	push	eax
@@ -28426,9 +28426,9 @@ $LN393@LogMonitor:
 	call	?GetNumTradeRoutesPossible@CvPlayerTrade@@QAEIXZ ; CvPlayerTrade::GetNumTradeRoutesPossible
 	push	eax
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T239846[esp+296], esp
+	mov	DWORD PTR $T240323[esp+296], esp
 	mov	ecx, esp
-	push	OFFSET $SG226353
+	push	OFFSET $SG226830
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	edx, DWORD PTR _strLog$[esp+296]
 	push	edx
@@ -28471,9 +28471,9 @@ $LN393@LogMonitor:
 	add	ecx, edx
 	push	ecx
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T239847[esp+296], esp
+	mov	DWORD PTR $T240324[esp+296], esp
 	mov	ecx, esp
-	push	OFFSET $SG226357
+	push	OFFSET $SG226834
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	edx, DWORD PTR _strLog$[esp+296]
 	push	edx
@@ -28492,9 +28492,9 @@ $LN393@LogMonitor:
 	add	edi, edx
 	push	edi
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T239848[esp+296], esp
+	mov	DWORD PTR $T240325[esp+296], esp
 	mov	ecx, esp
-	push	OFFSET $SG226360
+	push	OFFSET $SG226837
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	ecx, DWORD PTR _strLog$[esp+296]
 	push	ecx
@@ -28509,9 +28509,9 @@ $LN393@LogMonitor:
 	call	?GetGold@CvTreasury@@QBEHXZ		; CvTreasury::GetGold
 	push	eax
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T239849[esp+296], esp
+	mov	DWORD PTR $T240326[esp+296], esp
 	mov	ecx, esp
-	push	OFFSET $SG226362
+	push	OFFSET $SG226839
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	eax, DWORD PTR _strLog$[esp+296]
 	push	eax
@@ -28526,9 +28526,9 @@ $LN393@LogMonitor:
 	call	?GetCityConnectionGold@CvTreasury@@QBEHXZ ; CvTreasury::GetCityConnectionGold
 	push	eax
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T239850[esp+296], esp
+	mov	DWORD PTR $T240327[esp+296], esp
 	mov	ecx, esp
-	push	OFFSET $SG226364
+	push	OFFSET $SG226841
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	edx, DWORD PTR _strLog$[esp+296]
 	push	edx
@@ -28543,9 +28543,9 @@ $LN393@LogMonitor:
 	call	?GetGoldPerTurnFromDiplomacy@CvTreasury@@QBEHXZ ; CvTreasury::GetGoldPerTurnFromDiplomacy
 	push	eax
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T239851[esp+296], esp
+	mov	DWORD PTR $T240328[esp+296], esp
 	mov	ecx, esp
-	push	OFFSET $SG226366
+	push	OFFSET $SG226843
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	ecx, DWORD PTR _strLog$[esp+296]
 	push	ecx
@@ -28560,9 +28560,9 @@ $LN393@LogMonitor:
 	call	?GetGoldPerTurnFromReligion@CvTreasury@@QBEHXZ ; CvTreasury::GetGoldPerTurnFromReligion
 	push	eax
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T239852[esp+296], esp
+	mov	DWORD PTR $T240329[esp+296], esp
 	mov	ecx, esp
-	push	OFFSET $SG226368
+	push	OFFSET $SG226845
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	eax, DWORD PTR _strLog$[esp+296]
 	push	eax
@@ -28577,9 +28577,9 @@ $LN393@LogMonitor:
 	call	?GetGoldPerTurnFromTraits@CvTreasury@@QBEHXZ ; CvTreasury::GetGoldPerTurnFromTraits
 	push	eax
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T239853[esp+296], esp
+	mov	DWORD PTR $T240330[esp+296], esp
 	mov	ecx, esp
-	push	OFFSET $SG226370
+	push	OFFSET $SG226847
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	edx, DWORD PTR _strLog$[esp+296]
 	push	edx
@@ -28644,9 +28644,9 @@ $LN393@LogMonitor:
 
 	push	edi
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T239854[esp+296], esp
+	mov	DWORD PTR $T240331[esp+296], esp
 	mov	ecx, esp
-	push	OFFSET $SG226380
+	push	OFFSET $SG226857
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	ecx, DWORD PTR _strLog$[esp+296]
 	push	ecx
@@ -28675,9 +28675,9 @@ $LN393@LogMonitor:
 	mov	eax, DWORD PTR [esi+16]
 	push	eax
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T239855[esp+296], esp
+	mov	DWORD PTR $T240332[esp+296], esp
 	mov	ecx, esp
-	push	OFFSET $SG226383
+	push	OFFSET $SG226860
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	eax, DWORD PTR _strLog$[esp+296]
 	push	eax
@@ -28692,9 +28692,9 @@ $LN393@LogMonitor:
 	call	?GetBuildingGoldMaintenance@CvTreasury@@QBEHXZ ; CvTreasury::GetBuildingGoldMaintenance
 	push	eax
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T239856[esp+296], esp
+	mov	DWORD PTR $T240333[esp+296], esp
 	mov	ecx, esp
-	push	OFFSET $SG226385
+	push	OFFSET $SG226862
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	edx, DWORD PTR _strLog$[esp+296]
 	push	edx
@@ -28709,9 +28709,9 @@ $LN393@LogMonitor:
 	call	?GetImprovementGoldMaintenance@CvTreasury@@QBEHXZ ; CvTreasury::GetImprovementGoldMaintenance
 	push	eax
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T239857[esp+296], esp
+	mov	DWORD PTR $T240334[esp+296], esp
 	mov	ecx, esp
-	push	OFFSET $SG226387
+	push	OFFSET $SG226864
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	ecx, DWORD PTR _strLog$[esp+296]
 	push	ecx
@@ -28724,9 +28724,9 @@ $LN393@LogMonitor:
 
 	push	ebx
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T239858[esp+296], esp
+	mov	DWORD PTR $T240335[esp+296], esp
 	mov	ecx, esp
-	push	OFFSET $SG226389
+	push	OFFSET $SG226866
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	eax, DWORD PTR _strLog$[esp+296]
 	push	eax
@@ -28740,9 +28740,9 @@ $LN393@LogMonitor:
 	sub	edi, ebx
 	push	edi
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T239859[esp+296], esp
+	mov	DWORD PTR $T240336[esp+296], esp
 	mov	ecx, esp
-	push	OFFSET $SG226391
+	push	OFFSET $SG226868
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	edx, DWORD PTR _strLog$[esp+296]
 	push	edx
@@ -28840,16 +28840,16 @@ __unwindfunclet$?LogMonitor@CvEconomicAI@@QAEXXZ$3:
 	lea	ecx, DWORD PTR _strLogName$[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?LogMonitor@CvEconomicAI@@QAEXXZ$4:
-	lea	ecx, DWORD PTR $T239820[ebp]
+	lea	ecx, DWORD PTR $T240297[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?LogMonitor@CvEconomicAI@@QAEXXZ$5:
-	lea	ecx, DWORD PTR $T239821[ebp]
+	lea	ecx, DWORD PTR $T240298[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?LogMonitor@CvEconomicAI@@QAEXXZ$6:
 	lea	ecx, DWORD PTR _str$[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?LogMonitor@CvEconomicAI@@QAEXXZ$7:
-	mov	ecx, DWORD PTR $T239822[ebp]
+	mov	ecx, DWORD PTR $T240299[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?LogMonitor@CvEconomicAI@@QAEXXZ$26:
 	lea	ecx, DWORD PTR _m_aiNumImprovements$[ebp]
@@ -28910,48 +28910,48 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 tv2523 = -276						; size = 4
 tv2176 = -276						; size = 4
-$T240557 = -276						; size = 4
-_iWorkedTiles$226577 = -276				; size = 4
-$T240553 = -276						; size = 4
-$T240552 = -276						; size = 4
-$T240551 = -276						; size = 4
-$T240550 = -276						; size = 4
-$T240549 = -276						; size = 4
-$T240548 = -276						; size = 4
-$T240547 = -276						; size = 4
-$T240546 = -276						; size = 4
-$T240545 = -276						; size = 4
-$T240544 = -276						; size = 4
-$T240543 = -276						; size = 4
-$T240542 = -276						; size = 4
-$T240541 = -276						; size = 4
-$T240540 = -276						; size = 4
-$T240539 = -276						; size = 4
-$T240538 = -276						; size = 4
-$T240537 = -276						; size = 4
-$T240536 = -276						; size = 4
-$T240535 = -276						; size = 4
-$T240534 = -276						; size = 4
-$T240533 = -276						; size = 4
-$T240532 = -276						; size = 4
-$T240531 = -276						; size = 4
-$T240530 = -276						; size = 4
-$T240529 = -276						; size = 4
-$T240527 = -276						; size = 4
-$T240525 = -276						; size = 4
-$T240523 = -276						; size = 4
-$T240522 = -276						; size = 4
-$T240521 = -276						; size = 4
+$T241034 = -276						; size = 4
+_iWorkedTiles$227054 = -276				; size = 4
+$T241030 = -276						; size = 4
+$T241029 = -276						; size = 4
+$T241028 = -276						; size = 4
+$T241027 = -276						; size = 4
+$T241026 = -276						; size = 4
+$T241025 = -276						; size = 4
+$T241024 = -276						; size = 4
+$T241023 = -276						; size = 4
+$T241022 = -276						; size = 4
+$T241021 = -276						; size = 4
+$T241020 = -276						; size = 4
+$T241019 = -276						; size = 4
+$T241018 = -276						; size = 4
+$T241017 = -276						; size = 4
+$T241016 = -276						; size = 4
+$T241015 = -276						; size = 4
+$T241014 = -276						; size = 4
+$T241013 = -276						; size = 4
+$T241012 = -276						; size = 4
+$T241011 = -276						; size = 4
+$T241010 = -276						; size = 4
+$T241009 = -276						; size = 4
+$T241008 = -276						; size = 4
+$T241007 = -276						; size = 4
+$T241006 = -276						; size = 4
+$T241004 = -276						; size = 4
+$T241002 = -276						; size = 4
+$T241000 = -276						; size = 4
+$T240999 = -276						; size = 4
+$T240998 = -276						; size = 4
 _bBuildHeader$ = -269					; size = 1
-$T240556 = -268						; size = 4
-$T240555 = -268						; size = 4
-$T240554 = -268						; size = 4
+$T241033 = -268						; size = 4
+$T241032 = -268						; size = 4
+$T241031 = -268						; size = 4
 _pLoopCity$ = -268					; size = 4
 tv1848 = -264						; size = 8
-_iImprovedTiles$226578 = -264				; size = 4
+_iImprovedTiles$227055 = -264				; size = 4
 _fRatio$ = -264						; size = 4
-$T240528 = -264						; size = 4
-$T240524 = -264						; size = 4
+$T241005 = -264						; size = 4
+$T241001 = -264						; size = 4
 _strHeader$ = -252					; size = 28
 _strLog$ = -224						; size = 28
 _aiPlots$ = -196					; size = 4
@@ -28962,10 +28962,10 @@ _aiCityYields$ = -172					; size = 12
 _this$ = -160						; size = 4
 _strPlayerName$ = -156					; size = 28
 _strLogName$ = -128					; size = 28
-$T240526 = -100						; size = 28
-$T240519 = -100						; size = 28
+$T241003 = -100						; size = 28
+$T240996 = -100						; size = 28
 _str$ = -72						; size = 28
-$T240520 = -44						; size = 28
+$T240997 = -44						; size = 28
 __$EHRec$ = -12						; size = 12
 ?LogCityMonitor@CvEconomicAI@@QAEXXZ PROC		; CvEconomicAI::LogCityMonitor, COMDAT
 ; _this$ = ecx
@@ -29098,13 +29098,13 @@ $LN128@LogCityMon:
 
 	lea	eax, DWORD PTR _strPlayerName$[esp+296]
 	push	eax
-	lea	ecx, DWORD PTR $T240519[esp+300]
-	push	OFFSET $SG226412
+	lea	ecx, DWORD PTR $T240996[esp+300]
+	push	OFFSET $SG226889
 	push	ecx
 	call	DWORD PTR __imp_??$?HDU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PBDABV10@@Z
-	push	OFFSET $SG226411
+	push	OFFSET $SG226888
 	push	eax
-	lea	edx, DWORD PTR $T240520[esp+316]
+	lea	edx, DWORD PTR $T240997[esp+316]
 	mov	bl, 4
 	push	edx
 	mov	BYTE PTR __$EHRec$[esp+328], bl
@@ -29116,10 +29116,10 @@ $LN128@LogCityMon:
 	push	eax
 	lea	ecx, DWORD PTR _strLogName$[esp+300]
 	call	DWORD PTR __imp_?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBD@Z
-	lea	ecx, DWORD PTR $T240520[esp+296]
+	lea	ecx, DWORD PTR $T240997[esp+296]
 	mov	BYTE PTR __$EHRec$[esp+304], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T240519[esp+296]
+	lea	ecx, DWORD PTR $T240996[esp+296]
 	mov	BYTE PTR __$EHRec$[esp+304], 3
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -29132,7 +29132,7 @@ $LN68@LogCityMon:
 ; 1555 : 	{
 ; 1556 : 		strLogName = "EconomicCityMonitorLog.csv";
 
-	push	OFFSET $SG226414
+	push	OFFSET $SG226891
 	lea	ecx, DWORD PTR _strLogName$[esp+300]
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 $LN67@LogCityMon:
@@ -29180,12 +29180,12 @@ $LN67@LogCityMon:
 ; 1571 : 	aiCityYields.push_back_copy(-1, NUM_YIELD_TYPES);
 
 	push	6
-	lea	ecx, DWORD PTR $T240521[esp+300]
+	lea	ecx, DWORD PTR $T240998[esp+300]
 	push	ecx
 	or	esi, -1
 	lea	ecx, DWORD PTR _aiCityYields$[esp+304]
 	mov	BYTE PTR __$EHRec$[esp+312], 7
-	mov	DWORD PTR $T240521[esp+304], esi
+	mov	DWORD PTR $T240998[esp+304], esi
 	call	?push_back_copy@?$FFastVector@H$0A@$0A@$0A@UFDefaultFastVectorAllocator@?$BaseVector@H$0A@@@@@QAEXABHI@Z ; FFastVector<int,0,0,0,BaseVector<int,0>::FDefaultFastVectorAllocator>::push_back_copy
 
 ; 1572 : 
@@ -29198,11 +29198,11 @@ $LN67@LogCityMon:
 ; 1574 : 	aiSpecialistsYields.push_back_copy(-1, NUM_YIELD_TYPES);
 
 	push	6
-	lea	edx, DWORD PTR $T240522[esp+300]
+	lea	edx, DWORD PTR $T240999[esp+300]
 	push	edx
 	lea	ecx, DWORD PTR _aiSpecialistsYields$[esp+304]
 	mov	BYTE PTR __$EHRec$[esp+312], 8
-	mov	DWORD PTR $T240522[esp+304], esi
+	mov	DWORD PTR $T240999[esp+304], esi
 	call	?push_back_copy@?$FFastVector@H$0A@$0A@$0A@UFDefaultFastVectorAllocator@?$BaseVector@H$0A@@@@@QAEXABHI@Z ; FFastVector<int,0,0,0,BaseVector<int,0>::FDefaultFastVectorAllocator>::push_back_copy
 
 ; 1575 : 
@@ -29256,13 +29256,13 @@ $LN60@LogCityMon:
 ; 1587 : 
 ; 1588 : 		strHeader = "";
 
-	push	OFFSET $SG226453
+	push	OFFSET $SG226930
 	lea	ecx, DWORD PTR _strHeader$[esp+300]
 	call	DWORD PTR __imp_?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBD@Z
 
 ; 1589 : 		strLog = "";
 
-	push	OFFSET $SG226454
+	push	OFFSET $SG226931
 	lea	ecx, DWORD PTR _strLog$[esp+300]
 	call	DWORD PTR __imp_?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBD@Z
 
@@ -29272,14 +29272,14 @@ $LN60@LogCityMon:
 
 	sub	esp, 28					; 0000001cH
 	lea	edx, DWORD PTR _strPlayerName$[esp+324]
-	mov	DWORD PTR $T240523[esp+324], esp
+	mov	DWORD PTR $T241000[esp+324], esp
 	mov	ecx, esp
 	push	edx
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T240524[esp+352], esp
+	mov	DWORD PTR $T241001[esp+352], esp
 	mov	ecx, esp
-	push	OFFSET $SG226457
+	push	OFFSET $SG226934
 	mov	BYTE PTR __$EHRec$[esp+364], 9
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	eax, DWORD PTR _strLog$[esp+352]
@@ -29298,9 +29298,9 @@ $LN60@LogCityMon:
 	call	?getGameTurn@CvGame@@QAEHXZ		; CvGame::getGameTurn
 	push	eax
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T240525[esp+328], esp
+	mov	DWORD PTR $T241002[esp+328], esp
 	mov	ecx, esp
-	push	OFFSET $SG226459
+	push	OFFSET $SG226936
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	edx, DWORD PTR _strLog$[esp+328]
 	push	edx
@@ -29313,7 +29313,7 @@ $LN60@LogCityMon:
 ; 1597 : 		// city name
 ; 1598 : 		str = pLoopCity->getName();
 
-	lea	ecx, DWORD PTR $T240526[esp+296]
+	lea	ecx, DWORD PTR $T241003[esp+296]
 	push	ecx
 	mov	ecx, ebx
 	call	?getName@CvCity@@QBE?BVCvString@@XZ	; CvCity::getName
@@ -29321,7 +29321,7 @@ $LN60@LogCityMon:
 	lea	ecx, DWORD PTR _str$[esp+300]
 	mov	BYTE PTR __$EHRec$[esp+308], 10		; 0000000aH
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T240526[esp+296]
+	lea	ecx, DWORD PTR $T241003[esp+296]
 	mov	BYTE PTR __$EHRec$[esp+304], 8
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -29329,14 +29329,14 @@ $LN60@LogCityMon:
 
 	sub	esp, 28					; 0000001cH
 	lea	edx, DWORD PTR _str$[esp+324]
-	mov	DWORD PTR $T240527[esp+324], esp
+	mov	DWORD PTR $T241004[esp+324], esp
 	mov	ecx, esp
 	push	edx
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T240528[esp+352], esp
+	mov	DWORD PTR $T241005[esp+352], esp
 	mov	ecx, esp
-	push	OFFSET $SG226463
+	push	OFFSET $SG226940
 	mov	BYTE PTR __$EHRec$[esp+364], 11		; 0000000bH
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	eax, DWORD PTR _strLog$[esp+352]
@@ -29355,9 +29355,9 @@ $LN60@LogCityMon:
 	call	?getPopulation@CvCity@@QBEHXZ		; CvCity::getPopulation
 	push	eax
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T240529[esp+328], esp
+	mov	DWORD PTR $T241006[esp+328], esp
 	mov	ecx, esp
-	push	OFFSET $SG226465
+	push	OFFSET $SG226942
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	edx, DWORD PTR _strLog$[esp+328]
 	push	edx
@@ -29396,9 +29396,9 @@ $LN52@LogCityMon:
 	mov	ecx, eax
 	push	ecx
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T240530[esp+328], esp
+	mov	DWORD PTR $T241007[esp+328], esp
 	mov	ecx, esp
-	push	OFFSET $SG226477
+	push	OFFSET $SG226954
 
 ; 1612 : 				break;
 
@@ -29411,9 +29411,9 @@ $LN51@LogCityMon:
 	mov	ecx, eax
 	push	ecx
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T240531[esp+328], esp
+	mov	DWORD PTR $T241008[esp+328], esp
 	mov	ecx, esp
-	push	OFFSET $SG226480
+	push	OFFSET $SG226957
 
 ; 1615 : 				break;
 
@@ -29426,9 +29426,9 @@ $LN50@LogCityMon:
 	mov	ecx, eax
 	push	ecx
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T240532[esp+328], esp
+	mov	DWORD PTR $T241009[esp+328], esp
 	mov	ecx, esp
-	push	OFFSET $SG226483
+	push	OFFSET $SG226960
 
 ; 1618 : 				break;
 
@@ -29441,9 +29441,9 @@ $LN49@LogCityMon:
 	mov	ecx, eax
 	push	ecx
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T240533[esp+328], esp
+	mov	DWORD PTR $T241010[esp+328], esp
 	mov	ecx, esp
-	push	OFFSET $SG226486
+	push	OFFSET $SG226963
 
 ; 1621 : 				break;
 
@@ -29456,9 +29456,9 @@ $LN48@LogCityMon:
 	mov	ecx, eax
 	push	ecx
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T240534[esp+328], esp
+	mov	DWORD PTR $T241011[esp+328], esp
 	mov	ecx, esp
-	push	OFFSET $SG226489
+	push	OFFSET $SG226966
 
 ; 1624 : 				break;
 
@@ -29471,9 +29471,9 @@ $LN47@LogCityMon:
 	mov	ecx, eax
 	push	ecx
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T240535[esp+328], esp
+	mov	DWORD PTR $T241012[esp+328], esp
 	mov	ecx, esp
-	push	OFFSET $SG226492
+	push	OFFSET $SG226969
 $LN487@LogCityMon:
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	edx, DWORD PTR _strLog$[esp+328]
@@ -29536,9 +29536,9 @@ $LN40@LogCityMon:
 
 	sub	esp, 32					; 00000020H
 	mov	DWORD PTR [esp+28], esi
-	mov	DWORD PTR $T240536[esp+328], esp
+	mov	DWORD PTR $T241013[esp+328], esp
 	mov	ecx, esp
-	push	OFFSET $SG226505
+	push	OFFSET $SG226982
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	ecx, DWORD PTR _strLog$[esp+328]
 	push	ecx
@@ -29555,9 +29555,9 @@ $LN39@LogCityMon:
 
 	sub	esp, 32					; 00000020H
 	mov	DWORD PTR [esp+28], esi
-	mov	DWORD PTR $T240537[esp+328], esp
+	mov	DWORD PTR $T241014[esp+328], esp
 	mov	ecx, esp
-	push	OFFSET $SG226508
+	push	OFFSET $SG226985
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	eax, DWORD PTR _strLog$[esp+328]
 	push	eax
@@ -29574,9 +29574,9 @@ $LN38@LogCityMon:
 
 	sub	esp, 32					; 00000020H
 	mov	DWORD PTR [esp+28], esi
-	mov	DWORD PTR $T240538[esp+328], esp
+	mov	DWORD PTR $T241015[esp+328], esp
 	mov	ecx, esp
-	push	OFFSET $SG226511
+	push	OFFSET $SG226988
 
 ; 1650 : 				break;
 
@@ -29588,9 +29588,9 @@ $LN37@LogCityMon:
 
 	sub	esp, 32					; 00000020H
 	mov	DWORD PTR [esp+28], esi
-	mov	DWORD PTR $T240539[esp+328], esp
+	mov	DWORD PTR $T241016[esp+328], esp
 	mov	ecx, esp
-	push	OFFSET $SG226514
+	push	OFFSET $SG226991
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	ecx, DWORD PTR _strLog$[esp+328]
 	push	ecx
@@ -29607,9 +29607,9 @@ $LN36@LogCityMon:
 
 	sub	esp, 32					; 00000020H
 	mov	DWORD PTR [esp+28], esi
-	mov	DWORD PTR $T240540[esp+328], esp
+	mov	DWORD PTR $T241017[esp+328], esp
 	mov	ecx, esp
-	push	OFFSET $SG226517
+	push	OFFSET $SG226994
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	eax, DWORD PTR _strLog$[esp+328]
 	push	eax
@@ -29626,9 +29626,9 @@ $LN35@LogCityMon:
 
 	sub	esp, 32					; 00000020H
 	mov	DWORD PTR [esp+28], esi
-	mov	DWORD PTR $T240541[esp+328], esp
+	mov	DWORD PTR $T241018[esp+328], esp
 	mov	ecx, esp
-	push	OFFSET $SG226520
+	push	OFFSET $SG226997
 $LN489@LogCityMon:
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	edx, DWORD PTR _strLog$[esp+328]
@@ -29676,9 +29676,9 @@ $LN29@LogCityMon:
 	mov	ecx, eax
 	push	ecx
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T240542[esp+328], esp
+	mov	DWORD PTR $T241019[esp+328], esp
 	mov	ecx, esp
-	push	OFFSET $SG226532
+	push	OFFSET $SG227009
 
 ; 1671 : 				break;
 
@@ -29691,9 +29691,9 @@ $LN28@LogCityMon:
 	mov	ecx, eax
 	push	ecx
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T240543[esp+328], esp
+	mov	DWORD PTR $T241020[esp+328], esp
 	mov	ecx, esp
-	push	OFFSET $SG226535
+	push	OFFSET $SG227012
 
 ; 1674 : 				break;
 
@@ -29706,9 +29706,9 @@ $LN27@LogCityMon:
 	mov	ecx, eax
 	push	ecx
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T240544[esp+328], esp
+	mov	DWORD PTR $T241021[esp+328], esp
 	mov	ecx, esp
-	push	OFFSET $SG226538
+	push	OFFSET $SG227015
 
 ; 1677 : 				break;
 
@@ -29721,9 +29721,9 @@ $LN26@LogCityMon:
 	mov	ecx, eax
 	push	ecx
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T240545[esp+328], esp
+	mov	DWORD PTR $T241022[esp+328], esp
 	mov	ecx, esp
-	push	OFFSET $SG226541
+	push	OFFSET $SG227018
 
 ; 1680 : 				break;
 
@@ -29736,9 +29736,9 @@ $LN25@LogCityMon:
 	mov	ecx, eax
 	push	ecx
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T240546[esp+328], esp
+	mov	DWORD PTR $T241023[esp+328], esp
 	mov	ecx, esp
-	push	OFFSET $SG226544
+	push	OFFSET $SG227021
 
 ; 1683 : 				break;
 
@@ -29751,9 +29751,9 @@ $LN24@LogCityMon:
 	mov	ecx, eax
 	push	ecx
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T240547[esp+328], esp
+	mov	DWORD PTR $T241024[esp+328], esp
 	mov	ecx, esp
-	push	OFFSET $SG226547
+	push	OFFSET $SG227024
 $LN490@LogCityMon:
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	edx, DWORD PTR _strLog$[esp+328]
@@ -29811,9 +29811,9 @@ $LN17@LogCityMon:
 
 	sub	esp, 32					; 00000020H
 	mov	DWORD PTR [esp+28], eax
-	mov	DWORD PTR $T240548[esp+328], esp
+	mov	DWORD PTR $T241025[esp+328], esp
 	mov	ecx, esp
-	push	OFFSET $SG226560
+	push	OFFSET $SG227037
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	ecx, DWORD PTR _strLog$[esp+328]
 	push	ecx
@@ -29830,9 +29830,9 @@ $LN16@LogCityMon:
 
 	sub	esp, 32					; 00000020H
 	mov	DWORD PTR [esp+28], eax
-	mov	DWORD PTR $T240549[esp+328], esp
+	mov	DWORD PTR $T241026[esp+328], esp
 	mov	ecx, esp
-	push	OFFSET $SG226563
+	push	OFFSET $SG227040
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	eax, DWORD PTR _strLog$[esp+328]
 	push	eax
@@ -29849,9 +29849,9 @@ $LN15@LogCityMon:
 
 	sub	esp, 32					; 00000020H
 	mov	DWORD PTR [esp+28], eax
-	mov	DWORD PTR $T240550[esp+328], esp
+	mov	DWORD PTR $T241027[esp+328], esp
 	mov	ecx, esp
-	push	OFFSET $SG226566
+	push	OFFSET $SG227043
 
 ; 1708 : 				break;
 
@@ -29863,9 +29863,9 @@ $LN14@LogCityMon:
 
 	sub	esp, 32					; 00000020H
 	mov	DWORD PTR [esp+28], eax
-	mov	DWORD PTR $T240551[esp+328], esp
+	mov	DWORD PTR $T241028[esp+328], esp
 	mov	ecx, esp
-	push	OFFSET $SG226569
+	push	OFFSET $SG227046
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	ecx, DWORD PTR _strLog$[esp+328]
 	push	ecx
@@ -29882,9 +29882,9 @@ $LN13@LogCityMon:
 
 	sub	esp, 32					; 00000020H
 	mov	DWORD PTR [esp+28], eax
-	mov	DWORD PTR $T240552[esp+328], esp
+	mov	DWORD PTR $T241029[esp+328], esp
 	mov	ecx, esp
-	push	OFFSET $SG226572
+	push	OFFSET $SG227049
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	eax, DWORD PTR _strLog$[esp+328]
 	push	eax
@@ -29901,9 +29901,9 @@ $LN12@LogCityMon:
 
 	sub	esp, 32					; 00000020H
 	mov	DWORD PTR [esp+28], eax
-	mov	DWORD PTR $T240553[esp+328], esp
+	mov	DWORD PTR $T241030[esp+328], esp
 	mov	ecx, esp
-	push	OFFSET $SG226575
+	push	OFFSET $SG227052
 $LN492@LogCityMon:
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	edx, DWORD PTR _strLog$[esp+328]
@@ -29933,8 +29933,8 @@ $LN22@LogCityMon:
 	xor	edi, edi
 	xor	ebx, ebx
 	xor	ebp, ebp
-	mov	DWORD PTR _iWorkedTiles$226577[esp+296], ebx
-	mov	DWORD PTR _iImprovedTiles$226578[esp+296], edi
+	mov	DWORD PTR _iWorkedTiles$227054[esp+296], ebx
+	mov	DWORD PTR _iImprovedTiles$227055[esp+296], edi
 	cmp	DWORD PTR [eax+4], edi
 	jbe	$LN465@LogCityMon
 $LN11@LogCityMon:
@@ -30035,7 +30035,7 @@ $LN4@LogCityMon:
 ; 1759 : 			{
 ; 1760 : 				iImprovedTiles++;
 
-	inc	DWORD PTR _iImprovedTiles$226578[esp+296]
+	inc	DWORD PTR _iImprovedTiles$227055[esp+296]
 $LN10@LogCityMon:
 
 ; 1717 : 				break;
@@ -30058,7 +30058,7 @@ $LN485@LogCityMon:
 ; 1754 : 			{
 ; 1755 : 				iWorkedTiles++;
 
-	mov	DWORD PTR _iWorkedTiles$226577[esp+296], ebx
+	mov	DWORD PTR _iWorkedTiles$227054[esp+296], ebx
 $LN465@LogCityMon:
 
 ; 1761 : 			}
@@ -30068,9 +30068,9 @@ $LN465@LogCityMon:
 
 	push	ebp
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T240554[esp+328], esp
+	mov	DWORD PTR $T241031[esp+328], esp
 	mov	ecx, esp
-	push	OFFSET $SG226591
+	push	OFFSET $SG227068
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	eax, DWORD PTR _strLog$[esp+328]
 	push	eax
@@ -30083,9 +30083,9 @@ $LN465@LogCityMon:
 
 	push	ebx
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T240555[esp+328], esp
+	mov	DWORD PTR $T241032[esp+328], esp
 	mov	ecx, esp
-	push	OFFSET $SG226593
+	push	OFFSET $SG227070
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	edx, DWORD PTR _strLog$[esp+328]
 	push	edx
@@ -30095,13 +30095,13 @@ $LN465@LogCityMon:
 
 ; 1766 : 		AppendToLog(strHeader, strLog, "Improved tiles", iImprovedTiles);
 
-	mov	ecx, DWORD PTR _iImprovedTiles$226578[esp+336]
+	mov	ecx, DWORD PTR _iImprovedTiles$227055[esp+336]
 	add	esp, 40					; 00000028H
 	push	ecx
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T240556[esp+328], esp
+	mov	DWORD PTR $T241033[esp+328], esp
 	mov	ecx, esp
-	push	OFFSET $SG226595
+	push	OFFSET $SG227072
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	edx, DWORD PTR _strLog$[esp+328]
 	push	edx
@@ -30125,8 +30125,8 @@ $LN465@LogCityMon:
 ; 1772 : 		{
 ; 1773 : 			fRatio = iImprovedTiles / (float)iWorkedTiles;
 
-	fild	DWORD PTR _iImprovedTiles$226578[esp+296]
-	fidiv	DWORD PTR _iWorkedTiles$226577[esp+296]
+	fild	DWORD PTR _iImprovedTiles$227055[esp+296]
+	fidiv	DWORD PTR _iWorkedTiles$227054[esp+296]
 	fstp	DWORD PTR _fRatio$[esp+296]
 	mov	eax, DWORD PTR _fRatio$[esp+296]
 $LN2@LogCityMon:
@@ -30136,9 +30136,9 @@ $LN2@LogCityMon:
 
 	sub	esp, 32					; 00000020H
 	mov	DWORD PTR [esp+28], eax
-	mov	DWORD PTR $T240557[esp+328], esp
+	mov	DWORD PTR $T241034[esp+328], esp
 	mov	ecx, esp
-	push	OFFSET $SG226599
+	push	OFFSET $SG227076
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	lea	ecx, DWORD PTR _strLog$[esp+328]
 	push	ecx
@@ -30281,10 +30281,10 @@ __unwindfunclet$?LogCityMonitor@CvEconomicAI@@QAEXXZ$3:
 	lea	ecx, DWORD PTR _strLogName$[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?LogCityMonitor@CvEconomicAI@@QAEXXZ$4:
-	lea	ecx, DWORD PTR $T240519[ebp]
+	lea	ecx, DWORD PTR $T240996[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?LogCityMonitor@CvEconomicAI@@QAEXXZ$5:
-	lea	ecx, DWORD PTR $T240520[ebp]
+	lea	ecx, DWORD PTR $T240997[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?LogCityMonitor@CvEconomicAI@@QAEXXZ$6:
 	lea	ecx, DWORD PTR _str$[ebp]
@@ -30296,13 +30296,13 @@ __unwindfunclet$?LogCityMonitor@CvEconomicAI@@QAEXXZ$8:
 	lea	ecx, DWORD PTR _aiSpecialistsYields$[ebp]
 	jmp	??1?$FFastVector@H$0A@$0A@$0A@UFDefaultFastVectorAllocator@?$BaseVector@H$0A@@@@@QAE@XZ ; FFastVector<int,0,0,0,BaseVector<int,0>::FDefaultFastVectorAllocator>::~FFastVector<int,0,0,0,BaseVector<int,0>::FDefaultFastVectorAllocator>
 __unwindfunclet$?LogCityMonitor@CvEconomicAI@@QAEXXZ$9:
-	mov	ecx, DWORD PTR $T240523[ebp]
+	mov	ecx, DWORD PTR $T241000[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?LogCityMonitor@CvEconomicAI@@QAEXXZ$12:
-	lea	ecx, DWORD PTR $T240526[ebp]
+	lea	ecx, DWORD PTR $T241003[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?LogCityMonitor@CvEconomicAI@@QAEXXZ$13:
-	mov	ecx, DWORD PTR $T240527[ebp]
+	mov	ecx, DWORD PTR $T241004[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?LogCityMonitor@CvEconomicAI@@QAEXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?LogCityMonitor@CvEconomicAI@@QAEXXZ
@@ -30332,13 +30332,13 @@ __ehfuncinfo$?AssignHutsToExplorers@CvEconomicAI@@AAEXXZ DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?AssignHutsToExplorers@CvEconomicAI@@AAEXXZ
 _TEXT	SEGMENT
-_uiGoody$227199 = -56					; size = 4
-_uiHutIndex$227197 = -52				; size = 4
+_uiGoody$227676 = -56					; size = 4
+_uiHutIndex$227674 = -52				; size = 4
 _this$ = -48						; size = 4
-_iClosestEstimateTurns$227198 = -44			; size = 4
-_uiExplorer$227192 = -40				; size = 4
+_iClosestEstimateTurns$227675 = -44			; size = 4
+_uiExplorer$227669 = -40				; size = 4
 _aiHutIndices$ = -36					; size = 12
-_tempHutIndices$227222 = -24				; size = 12
+_tempHutIndices$227699 = -24				; size = 12
 __$EHRec$ = -12						; size = 12
 ?AssignHutsToExplorers@CvEconomicAI@@AAEXXZ PROC	; CvEconomicAI::AssignHutsToExplorers, COMDAT
 ; _this$ = ecx
@@ -30408,7 +30408,7 @@ $LN16@AssignHuts:
 
 	mov	eax, DWORD PTR [edi+292]
 	xor	edx, edx
-	mov	DWORD PTR _uiExplorer$227192[esp+72], edx
+	mov	DWORD PTR _uiExplorer$227669[esp+72], edx
 	cmp	eax, ebp
 	jbe	$LN13@AssignHuts
 	jmp	SHORT $LN15@AssignHuts
@@ -30426,17 +30426,17 @@ $LN15@AssignHuts:
 ; 2630 : 		uint uiHutIndex = MAX_INT;
 
 	mov	eax, 2147483647				; 7fffffffH
-	mov	DWORD PTR _uiHutIndex$227197[esp+72], eax
+	mov	DWORD PTR _uiHutIndex$227674[esp+72], eax
 
 ; 2631 : 		int iClosestEstimateTurns = MAX_INT;
 
-	mov	DWORD PTR _iClosestEstimateTurns$227198[esp+72], eax
+	mov	DWORD PTR _iClosestEstimateTurns$227675[esp+72], eax
 
 ; 2632 : 
 ; 2633 : 		for(uint uiGoody = 0; uiGoody < aiHutIndices.size(); uiGoody++)
 
 	xor	eax, eax
-	mov	DWORD PTR _uiGoody$227199[esp+72], eax
+	mov	DWORD PTR _uiGoody$227676[esp+72], eax
 	test	ecx, ecx
 	jbe	$LN14@AssignHuts
 	jmp	SHORT $LN12@AssignHuts
@@ -30516,7 +30516,7 @@ $LN8@AssignHuts:
 ; 2648 : 
 ; 2649 : 			if(iEstimateTurns < iClosestEstimateTurns)
 
-	cmp	ebp, DWORD PTR _iClosestEstimateTurns$227198[esp+72]
+	cmp	ebp, DWORD PTR _iClosestEstimateTurns$227675[esp+72]
 	jge	SHORT $LN189@AssignHuts
 
 ; 2650 : 			{
@@ -30548,10 +30548,10 @@ $LN8@AssignHuts:
 	test	al, al
 	je	SHORT $LN11@AssignHuts
 	mov	edx, DWORD PTR _aiHutIndices$[esp+72]
-	mov	eax, DWORD PTR _uiGoody$227199[esp+72]
+	mov	eax, DWORD PTR _uiGoody$227676[esp+72]
 	mov	ecx, DWORD PTR [edx+eax*4]
-	mov	DWORD PTR _iClosestEstimateTurns$227198[esp+72], ebp
-	mov	DWORD PTR _uiHutIndex$227197[esp+72], ecx
+	mov	DWORD PTR _iClosestEstimateTurns$227675[esp+72], ebp
+	mov	DWORD PTR _uiHutIndex$227674[esp+72], ecx
 	jmp	SHORT $LN11@AssignHuts
 $LN189@AssignHuts:
 	mov	ebx, DWORD PTR _aiHutIndices$[esp+80]
@@ -30560,10 +30560,10 @@ $LN11@AssignHuts:
 ; 2632 : 
 ; 2633 : 		for(uint uiGoody = 0; uiGoody < aiHutIndices.size(); uiGoody++)
 
-	mov	eax, DWORD PTR _uiGoody$227199[esp+72]
+	mov	eax, DWORD PTR _uiGoody$227676[esp+72]
 	mov	ebp, DWORD PTR _aiHutIndices$[esp+76]
 	inc	eax
-	mov	DWORD PTR _uiGoody$227199[esp+72], eax
+	mov	DWORD PTR _uiGoody$227676[esp+72], eax
 	cmp	eax, ebp
 	jb	$LL193@AssignHuts
 
@@ -30573,7 +30573,7 @@ $LN11@AssignHuts:
 ; 2660 : 
 ; 2661 : 		if(uiHutIndex != MAX_INT)
 
-	mov	edx, DWORD PTR _uiHutIndex$227197[esp+72]
+	mov	edx, DWORD PTR _uiHutIndex$227674[esp+72]
 	cmp	edx, 2147483647				; 7fffffffH
 	je	$LN14@AssignHuts
 
@@ -30591,8 +30591,8 @@ $LN11@AssignHuts:
 	xor	edi, edi
 	mov	DWORD PTR [eax+edx*8], esi
 	mov	DWORD PTR [eax+edx*8+4], ecx
-	mov	DWORD PTR _tempHutIndices$227222[esp+72], edi
-	mov	DWORD PTR _tempHutIndices$227222[esp+80], ebx
+	mov	DWORD PTR _tempHutIndices$227699[esp+72], edi
+	mov	DWORD PTR _tempHutIndices$227699[esp+80], ebx
 	test	ebx, ebx
 	je	SHORT $LN190@AssignHuts
 	jbe	SHORT $LN104@AssignHuts
@@ -30603,16 +30603,16 @@ $LN11@AssignHuts:
 	push	ecx
 	call	?FireMallocAlignedNoTracking@@YAPAXIIPBDH@Z ; FireMallocAlignedNoTracking
 	add	esp, 16					; 00000010H
-	mov	DWORD PTR _tempHutIndices$227222[esp+80], ebx
+	mov	DWORD PTR _tempHutIndices$227699[esp+80], ebx
 	jmp	SHORT $LN105@AssignHuts
 $LN104@AssignHuts:
 	xor	eax, eax
 $LN105@AssignHuts:
 	mov	edi, eax
-	mov	DWORD PTR _tempHutIndices$227222[esp+72], edi
+	mov	DWORD PTR _tempHutIndices$227699[esp+72], edi
 $LN190@AssignHuts:
 	mov	ecx, DWORD PTR _aiHutIndices$[esp+72]
-	mov	DWORD PTR _tempHutIndices$227222[esp+76], ebp
+	mov	DWORD PTR _tempHutIndices$227699[esp+76], ebp
 	mov	eax, edi
 	sub	ecx, edi
 	mov	edx, ebp
@@ -30643,7 +30643,7 @@ $LL4@AssignHuts:
 ; 2668 : 			{
 ; 2669 : 				if(tempHutIndices[uiHut] != uiHutIndex)
 
-	mov	edx, DWORD PTR _uiHutIndex$227197[esp+72]
+	mov	edx, DWORD PTR _uiHutIndex$227674[esp+72]
 	cmp	DWORD PTR [edi+esi*4], edx
 	je	SHORT $LN3@AssignHuts
 
@@ -30682,10 +30682,10 @@ $LN2@AssignHuts:
 	call	?FireFreeAlignedNoTracking@@YAXPAX@Z	; FireFreeAlignedNoTracking
 	add	esp, 4
 $LN14@AssignHuts:
-	mov	edx, DWORD PTR _uiExplorer$227192[esp+72]
+	mov	edx, DWORD PTR _uiExplorer$227669[esp+72]
 	mov	edi, DWORD PTR _this$[esp+72]
 	inc	edx
-	mov	DWORD PTR _uiExplorer$227192[esp+72], edx
+	mov	DWORD PTR _uiExplorer$227669[esp+72], edx
 	cmp	edx, DWORD PTR [edi+292]
 	jb	$LL192@AssignHuts
 $LN13@AssignHuts:
@@ -30713,7 +30713,7 @@ __unwindfunclet$?AssignHutsToExplorers@CvEconomicAI@@AAEXXZ$0:
 	lea	ecx, DWORD PTR _aiHutIndices$[ebp]
 	jmp	??1?$FFastVector@I$0A@$0A@$0A@UFDefaultFastVectorAllocator@?$BaseVector@I$0A@@@@@QAE@XZ ; FFastVector<unsigned int,0,0,0,BaseVector<unsigned int,0>::FDefaultFastVectorAllocator>::~FFastVector<unsigned int,0,0,0,BaseVector<unsigned int,0>::FDefaultFastVectorAllocator>
 __unwindfunclet$?AssignHutsToExplorers@CvEconomicAI@@AAEXXZ$1:
-	lea	ecx, DWORD PTR _tempHutIndices$227222[ebp]
+	lea	ecx, DWORD PTR _tempHutIndices$227699[ebp]
 	jmp	??1?$FFastVector@I$0A@$0A@$0A@UFDefaultFastVectorAllocator@?$BaseVector@I$0A@@@@@QAE@XZ ; FFastVector<unsigned int,0,0,0,BaseVector<unsigned int,0>::FDefaultFastVectorAllocator>::~FFastVector<unsigned int,0,0,0,BaseVector<unsigned int,0>::FDefaultFastVectorAllocator>
 __ehhandler$?AssignHutsToExplorers@CvEconomicAI@@AAEXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?AssignHutsToExplorers@CvEconomicAI@@AAEXXZ
@@ -30867,20 +30867,20 @@ PUBLIC	??$_Buffered_merge@PAVCvPurchaseRequest@@HV1@@std@@YAXPAVCvPurchaseReques
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\algorithm
 ;	COMDAT ??$_Buffered_merge@PAVCvPurchaseRequest@@HV1@@std@@YAXPAVCvPurchaseRequest@@00HHAAV?$_Temp_iterator@VCvPurchaseRequest@@@0@@Z
 _TEXT	SEGMENT
-__Firstn$229559 = -32					; size = 4
-__Lastn$229560 = -28					; size = 4
-__Midn$229579 = -24					; size = 4
-$T241889 = -20						; size = 20
-$T241887 = -20						; size = 20
+__Firstn$230036 = -32					; size = 4
+__Lastn$230037 = -28					; size = 4
+__Midn$230056 = -24					; size = 4
+$T242366 = -20						; size = 20
+$T242364 = -20						; size = 20
 __First$ = 8						; size = 4
 __Mid$ = 12						; size = 4
 __Last$ = 16						; size = 4
 tv368 = 20						; size = 4
-$T242007 = 20						; size = 1
-$T241956 = 20						; size = 1
-$T241957 = 20						; size = 1
-$T241888 = 20						; size = 4
-$T241886 = 20						; size = 4
+$T242485 = 20						; size = 1
+$T242433 = 20						; size = 1
+$T242434 = 20						; size = 1
+$T242365 = 20						; size = 4
+$T242363 = 20						; size = 4
 __Count1$ = 20						; size = 4
 __Count2$ = 24						; size = 4
 __Tempbuf$ = 28						; size = 4
@@ -30954,7 +30954,7 @@ $LN6@Buffered_m:
 	push	eax
 	push	edx
 	push	ebp
-	mov	DWORD PTR __Firstn$229559[esp+64], eax
+	mov	DWORD PTR __Firstn$230036[esp+64], eax
 	call	??$_Lower_bound@PAVCvPurchaseRequest@@V1@H@std@@YAPAVCvPurchaseRequest@@PAV1@0ABV1@PAH@Z ; std::_Lower_bound<CvPurchaseRequest *,CvPurchaseRequest,int>
 	mov	ecx, eax
 
@@ -30968,7 +30968,7 @@ $LN6@Buffered_m:
 	mov	esi, edx
 	shr	esi, 31					; 0000001fH
 	add	esp, 16					; 00000010H
-	mov	DWORD PTR __Lastn$229560[esp+48], ecx
+	mov	DWORD PTR __Lastn$230037[esp+48], ecx
 	add	esi, edx
 
 ; 2788 : 			}
@@ -30997,14 +30997,14 @@ $LN2@Buffered_m:
 	push	eax
 	push	ebp
 	push	ebx
-	mov	DWORD PTR __Lastn$229560[esp+64], eax
+	mov	DWORD PTR __Lastn$230037[esp+64], eax
 	call	??$_Upper_bound@PAVCvPurchaseRequest@@V1@H@std@@YAPAVCvPurchaseRequest@@PAV1@0ABV1@PAH@Z ; std::_Upper_bound<CvPurchaseRequest *,CvPurchaseRequest,int>
 
 ; 2795 : 			_Distance(_First, _Firstn, _Count1n);
 
-	mov	ecx, DWORD PTR __Lastn$229560[esp+64]
+	mov	ecx, DWORD PTR __Lastn$230037[esp+64]
 	mov	edx, eax
-	mov	DWORD PTR __Firstn$229559[esp+64], eax
+	mov	DWORD PTR __Firstn$230036[esp+64], eax
 	sub	edx, ebx
 	mov	eax, 715827883				; 2aaaaaabH
 	imul	edx
@@ -31028,7 +31028,7 @@ $LN99@Buffered_m:
 	push	eax
 	push	ecx
 	mov	DWORD PTR tv368[esp+60], eax
-	mov	eax, DWORD PTR __Firstn$229559[esp+64]
+	mov	eax, DWORD PTR __Firstn$230036[esp+64]
 	push	ebp
 	push	eax
 	call	??$_Buffered_rotate@PAVCvPurchaseRequest@@HV1@@std@@YAPAVCvPurchaseRequest@@PAV1@00HHAAV?$_Temp_iterator@VCvPurchaseRequest@@@0@@Z ; std::_Buffered_rotate<CvPurchaseRequest *,int,CvPurchaseRequest>
@@ -31037,14 +31037,14 @@ $LN99@Buffered_m:
 ; 2801 : 			_Count1n, _Count2n, _Tempbuf);	// merge each new part
 
 	mov	ecx, DWORD PTR __Tempbuf$[esp+68]
-	mov	edx, DWORD PTR __Firstn$229559[esp+72]
+	mov	edx, DWORD PTR __Firstn$230036[esp+72]
 	push	ecx
 	push	esi
 	push	edi
 	push	eax
 	push	edx
 	push	ebx
-	mov	DWORD PTR __Midn$229579[esp+96], eax
+	mov	DWORD PTR __Midn$230056[esp+96], eax
 	call	??$_Buffered_merge@PAVCvPurchaseRequest@@HV1@@std@@YAXPAVCvPurchaseRequest@@00HHAAV?$_Temp_iterator@VCvPurchaseRequest@@@0@@Z ; std::_Buffered_merge<CvPurchaseRequest *,int,CvPurchaseRequest>
 
 ; 2802 : 		_Buffered_merge(_Midn, _Lastn, _Last,
@@ -31052,8 +31052,8 @@ $LN99@Buffered_m:
 
 	mov	eax, DWORD PTR __Count2$[esp+92]
 	mov	ecx, DWORD PTR tv368[esp+92]
-	mov	ebp, DWORD PTR __Lastn$229560[esp+96]
-	mov	ebx, DWORD PTR __Midn$229579[esp+96]
+	mov	ebp, DWORD PTR __Lastn$230037[esp+96]
+	mov	ebx, DWORD PTR __Midn$230056[esp+96]
 	sub	eax, esi
 	mov	DWORD PTR __Count1$[esp+92], ecx
 	add	ecx, eax
@@ -31112,14 +31112,14 @@ $LN107@Buffered_m:
 	mov	DWORD PTR [eax+8], edi
 	mov	DWORD PTR [eax+12], edi
 	mov	edx, DWORD PTR [esi+16]
-	mov	DWORD PTR $T241886[esp+64], esp
+	mov	DWORD PTR $T242363[esp+64], esp
 	push	ebp
 	mov	DWORD PTR [eax+16], edx
-	lea	eax, DWORD PTR $T241887[esp+72]
+	lea	eax, DWORD PTR $T242364[esp+72]
 	push	ebx
 	push	eax
 	call	??$unchecked_copy@PAVCvPurchaseRequest@@V?$_Temp_iterator@VCvPurchaseRequest@@@std@@@stdext@@YA?AV?$_Temp_iterator@VCvPurchaseRequest@@@std@@PAVCvPurchaseRequest@@0V12@@Z ; stdext::unchecked_copy<CvPurchaseRequest *,std::_Temp_iterator<CvPurchaseRequest> >
-	mov	eax, DWORD PTR $T241887[esp+80]
+	mov	eax, DWORD PTR $T242364[esp+80]
 	add	esp, 32					; 00000020H
 	cmp	eax, edi
 	je	SHORT $LN37@Buffered_m
@@ -31132,9 +31132,9 @@ $LN37@Buffered_m:
 
 	mov	eax, DWORD PTR __Last$[esp+44]
 	mov	esi, DWORD PTR [esi+16]
-	mov	BYTE PTR $T241956[esp+44], 0
-	mov	ecx, DWORD PTR $T241956[esp+44]
-	mov	edx, DWORD PTR $T241957[esp+44]
+	mov	BYTE PTR $T242433[esp+44], 0
+	mov	ecx, DWORD PTR $T242433[esp+44]
+	mov	edx, DWORD PTR $T242434[esp+44]
 	push	ecx
 	mov	ecx, DWORD PTR [esi+4]
 	push	edx
@@ -31173,14 +31173,14 @@ $LN108@Buffered_m:
 	mov	DWORD PTR [eax+8], ecx
 	mov	DWORD PTR [eax+12], ecx
 	mov	edx, DWORD PTR [esi+16]
-	mov	DWORD PTR $T241888[esp+64], esp
+	mov	DWORD PTR $T242365[esp+64], esp
 	push	edi
 	mov	DWORD PTR [eax+16], edx
-	lea	eax, DWORD PTR $T241889[esp+72]
+	lea	eax, DWORD PTR $T242366[esp+72]
 	push	ebp
 	push	eax
 	call	??$unchecked_copy@PAVCvPurchaseRequest@@V?$_Temp_iterator@VCvPurchaseRequest@@@std@@@stdext@@YA?AV?$_Temp_iterator@VCvPurchaseRequest@@@std@@PAVCvPurchaseRequest@@0V12@@Z ; stdext::unchecked_copy<CvPurchaseRequest *,std::_Temp_iterator<CvPurchaseRequest> >
-	mov	eax, DWORD PTR $T241889[esp+80]
+	mov	eax, DWORD PTR $T242366[esp+80]
 	add	esp, 32					; 00000020H
 	test	eax, eax
 	je	SHORT $LN61@Buffered_m
@@ -31195,8 +31195,8 @@ $LN61@Buffered_m:
 	mov	esi, DWORD PTR [esi+16]
 	mov	edx, DWORD PTR [esi+4]
 	mov	eax, DWORD PTR [esi]
-	mov	BYTE PTR $T242007[esp+44], 0
-	mov	ecx, DWORD PTR $T242007[esp+44]
+	mov	BYTE PTR $T242485[esp+44], 0
+	mov	ecx, DWORD PTR $T242485[esp+44]
 	push	ecx
 	push	edi
 	push	edx
@@ -31286,7 +31286,7 @@ PUBLIC	??$_Unchecked_chunked_merge@PAVCvPurchaseRequest@@PAV1@H@stdext@@YAXPAVCv
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Unchecked_chunked_merge@PAVCvPurchaseRequest@@PAV1@H@stdext@@YAXPAVCvPurchaseRequest@@00HH@Z
 _TEXT	SEGMENT
-$T242176 = -4						; size = 1
+$T242653 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
@@ -31302,8 +31302,8 @@ __Count$ = 24						; size = 4
 
 	mov	ecx, DWORD PTR __Count$[esp]
 	mov	edx, DWORD PTR __Chunk$[esp]
-	mov	BYTE PTR $T242176[esp+4], 0
-	mov	eax, DWORD PTR $T242176[esp+4]
+	mov	BYTE PTR $T242653[esp+4], 0
+	mov	eax, DWORD PTR $T242653[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -31325,10 +31325,10 @@ PUBLIC	??$unchecked_merge@PAVCvPurchaseRequest@@PAV1@V?$_Temp_iterator@VCvPurcha
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$unchecked_merge@PAVCvPurchaseRequest@@PAV1@V?$_Temp_iterator@VCvPurchaseRequest@@@std@@@stdext@@YA?AV?$_Temp_iterator@VCvPurchaseRequest@@@std@@PAVCvPurchaseRequest@@000V12@@Z
 _TEXT	SEGMENT
-$T242180 = -4						; size = 1
-$T242186 = -4						; size = 4
-$T242182 = -4						; size = 4
-$T242181 = 8						; size = 1
+$T242657 = -4						; size = 1
+$T242663 = -4						; size = 4
+$T242659 = -4						; size = 4
+$T242658 = 8						; size = 1
 ___$ReturnUdt$ = 8					; size = 4
 __First1$ = 12						; size = 4
 __Last1$ = 16						; size = 4
@@ -31342,16 +31342,16 @@ __Dest$ = 28						; size = 20
 	push	ecx
 	push	ebx
 	xor	ebx, ebx
-	mov	DWORD PTR $T242186[esp+8], ebx
+	mov	DWORD PTR $T242663[esp+8], ebx
 
 ; 5115 : 		return _STD _Merge(_CHECKED_BASE(_First1), _CHECKED_BASE(_Last1), _CHECKED_BASE(_First2), _CHECKED_BASE(_Last2), _Dest,
 ; 5116 : 			_STD _Iter_random(_First1, _First2, _Dest), _STD _Range_checked_iterator_tag());
 
-	mov	ecx, DWORD PTR $T242181[esp+4]
+	mov	ecx, DWORD PTR $T242658[esp+4]
 	push	esi
 	mov	esi, DWORD PTR ___$ReturnUdt$[esp+8]
-	mov	BYTE PTR $T242180[esp+12], bl
-	mov	eax, DWORD PTR $T242180[esp+12]
+	mov	BYTE PTR $T242657[esp+12], bl
+	mov	eax, DWORD PTR $T242657[esp+12]
 	push	eax
 	push	ecx
 	mov	ecx, DWORD PTR __First2$[esp+16]
@@ -31365,7 +31365,7 @@ __Dest$ = 28						; size = 20
 	mov	DWORD PTR [eax+16], edx
 	mov	eax, DWORD PTR __Last2$[esp+36]
 	mov	edx, DWORD PTR __Last1$[esp+36]
-	mov	DWORD PTR $T242182[esp+40], esp
+	mov	DWORD PTR $T242659[esp+40], esp
 	push	eax
 	mov	eax, DWORD PTR __First1$[esp+40]
 	push	ecx
@@ -31489,7 +31489,7 @@ PUBLIC	?Init@CvEconomicAI@@QAEXPAVCvEconomicAIStrategyXMLEntries@@PAVCvPlayer@@@
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?Init@CvEconomicAI@@QAEXPAVCvEconomicAIStrategyXMLEntries@@PAVCvPlayer@@@Z
 _TEXT	SEGMENT
-$T242658 = 8						; size = 4
+$T243135 = 8						; size = 4
 _pAIStrategies$ = 8					; size = 4
 _pPlayer$ = 12						; size = 4
 ?Init@CvEconomicAI@@QAEXPAVCvEconomicAIStrategyXMLEntries@@PAVCvPlayer@@@Z PROC ; CvEconomicAI::Init, COMDAT
@@ -31561,11 +31561,11 @@ _pPlayer$ = 12						; size = 4
 ; 280  : 	m_auiYields.push_back_copy(-1, NUM_YIELD_TYPES);
 
 	push	6
-	lea	eax, DWORD PTR $T242658[esp+4]
+	lea	eax, DWORD PTR $T243135[esp+4]
 	lea	ecx, DWORD PTR [esi+52]
 	push	eax
 	mov	DWORD PTR [ecx+4], 0
-	mov	DWORD PTR $T242658[esp+8], -1
+	mov	DWORD PTR $T243135[esp+8], -1
 	call	?push_back_copy@?$FFastVector@I$0A@$0A@$0A@UFDefaultFastVectorAllocator@?$BaseVector@I$0A@@@@@QAEXABII@Z ; FFastVector<unsigned int,0,0,0,BaseVector<unsigned int,0>::FDefaultFastVectorAllocator>::push_back_copy
 
 ; 281  : #endif
@@ -31602,15 +31602,15 @@ PUBLIC	??$_Chunked_merge@PAVCvPurchaseRequest@@V?$_Temp_iterator@VCvPurchaseRequ
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Chunked_merge@PAVCvPurchaseRequest@@V?$_Temp_iterator@VCvPurchaseRequest@@@std@@H@std@@YAXPAVCvPurchaseRequest@@0V?$_Temp_iterator@VCvPurchaseRequest@@@0@HHU_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
-$T242730 = -24						; size = 4
-$T242735 = -20						; size = 20
-$T242733 = -20						; size = 20
-$T242731 = -20						; size = 20
+$T243207 = -24						; size = 4
+$T243212 = -20						; size = 20
+$T243210 = -20						; size = 20
+$T243208 = -20						; size = 20
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 20
 __Chunk$ = 36						; size = 4
-$T242732 = 40						; size = 4
+$T243209 = 40						; size = 4
 __Count$ = 40						; size = 4
 ___formal$ = 44						; size = 1
 ??$_Chunked_merge@PAVCvPurchaseRequest@@V?$_Temp_iterator@VCvPurchaseRequest@@@std@@H@std@@YAXPAVCvPurchaseRequest@@0V?$_Temp_iterator@VCvPurchaseRequest@@@0@HHU_Range_checked_iterator_tag@0@@Z PROC ; std::_Chunked_merge<CvPurchaseRequest *,std::_Temp_iterator<CvPurchaseRequest>,int>, COMDAT
@@ -31645,7 +31645,7 @@ $LL5@Chunked_me@2:
 	sub	esp, 20					; 00000014H
 	mov	eax, esp
 	lea	ecx, DWORD PTR [edi+edx]
-	mov	DWORD PTR $T242730[esp+60], esp
+	mov	DWORD PTR $T243207[esp+60], esp
 	lea	esi, DWORD PTR [edi+ecx]
 	push	esi
 	push	ecx
@@ -31657,11 +31657,11 @@ $LL5@Chunked_me@2:
 	push	ecx
 	mov	DWORD PTR [eax+16], ebp
 	push	edx
-	lea	eax, DWORD PTR $T242731[esp+76]
+	lea	eax, DWORD PTR $T243208[esp+76]
 	push	eax
 	call	??$unchecked_merge@PAVCvPurchaseRequest@@PAV1@V?$_Temp_iterator@VCvPurchaseRequest@@@std@@@stdext@@YA?AV?$_Temp_iterator@VCvPurchaseRequest@@@std@@PAVCvPurchaseRequest@@000V12@@Z ; stdext::unchecked_merge<CvPurchaseRequest *,CvPurchaseRequest *,std::_Temp_iterator<CvPurchaseRequest> >
 	mov	ecx, DWORD PTR [eax+16]
-	mov	eax, DWORD PTR $T242731[esp+80]
+	mov	eax, DWORD PTR $T243208[esp+80]
 	add	esp, 40					; 00000028H
 	mov	DWORD PTR __Dest$[esp+52], ecx
 	cmp	eax, ebx
@@ -31690,7 +31690,7 @@ $LN3@Chunked_me@2:
 
 	sub	esp, 20					; 00000014H
 	cmp	esi, eax
-	mov	DWORD PTR $T242732[esp+56], esp
+	mov	DWORD PTR $T243209[esp+56], esp
 	jg	SHORT $LN2@Chunked_me@2
 	mov	eax, esp
 	mov	DWORD PTR [eax], ebx
@@ -31702,7 +31702,7 @@ $LN3@Chunked_me@2:
 	mov	eax, DWORD PTR __Last$[esp+56]
 	push	eax
 	push	edx
-	lea	ecx, DWORD PTR $T242733[esp+68]
+	lea	ecx, DWORD PTR $T243210[esp+68]
 	push	ecx
 	call	??$unchecked_copy@PAVCvPurchaseRequest@@V?$_Temp_iterator@VCvPurchaseRequest@@@std@@@stdext@@YA?AV?$_Temp_iterator@VCvPurchaseRequest@@@std@@PAVCvPurchaseRequest@@0V12@@Z ; stdext::unchecked_copy<CvPurchaseRequest *,std::_Temp_iterator<CvPurchaseRequest> >
 	add	esp, 32					; 00000020H
@@ -31734,12 +31734,12 @@ $LN2@Chunked_me@2:
 	push	ecx
 	push	ecx
 	push	edx
-	lea	ecx, DWORD PTR $T242735[esp+76]
+	lea	ecx, DWORD PTR $T243212[esp+76]
 	push	ecx
 	call	??$unchecked_merge@PAVCvPurchaseRequest@@PAV1@V?$_Temp_iterator@VCvPurchaseRequest@@@std@@@stdext@@YA?AV?$_Temp_iterator@VCvPurchaseRequest@@@std@@PAVCvPurchaseRequest@@000V12@@Z ; stdext::unchecked_merge<CvPurchaseRequest *,CvPurchaseRequest *,std::_Temp_iterator<CvPurchaseRequest> >
 	add	esp, 40					; 00000028H
 $LN99@Chunked_me@2:
-	mov	eax, DWORD PTR $T242735[esp+40]
+	mov	eax, DWORD PTR $T243212[esp+40]
 	cmp	eax, ebx
 	je	SHORT $LN75@Chunked_me@2
 	push	eax
@@ -31841,7 +31841,7 @@ PUBLIC	??$_Sort@PAUWeightedElement@?$CvWeightedVector@PAVCvUnit@@$0DC@$00@@H@std
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\algorithm
 ;	COMDAT ??$_Sort@PAUWeightedElement@?$CvWeightedVector@PAVCvUnit@@$0DC@$00@@H@std@@YAXPAUWeightedElement@?$CvWeightedVector@PAVCvUnit@@$0DC@$00@@0H@Z
 _TEXT	SEGMENT
-__Mid$229133 = -8					; size = 8
+__Mid$229610 = -8					; size = 8
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Ideal$ = 16						; size = 4
@@ -31876,7 +31876,7 @@ $LL7@Sort:
 ; 3087 : 			std::_Unguarded_partition(_First, _Last);
 
 	push	edi
-	lea	eax, DWORD PTR __Mid$229133[esp+28]
+	lea	eax, DWORD PTR __Mid$229610[esp+28]
 	push	ebx
 	push	eax
 	call	??$_Unguarded_partition@PAUWeightedElement@?$CvWeightedVector@PAVCvUnit@@$0DC@$00@@@std@@YA?AU?$pair@PAUWeightedElement@?$CvWeightedVector@PAVCvUnit@@$0DC@$00@@PAU12@@0@PAUWeightedElement@?$CvWeightedVector@PAVCvUnit@@$0DC@$00@@0@Z ; std::_Unguarded_partition<CvWeightedVector<CvUnit *,50,1>::WeightedElement *>
@@ -31885,7 +31885,7 @@ $LL7@Sort:
 ; 3089 : 
 ; 3090 : 		if (_Mid.first - _First < _Last - _Mid.second)
 
-	mov	ebp, DWORD PTR __Mid$229133[esp+40]
+	mov	ebp, DWORD PTR __Mid$229610[esp+40]
 	mov	eax, esi
 	cdq
 	sub	eax, edx
@@ -31895,7 +31895,7 @@ $LL7@Sort:
 	sub	eax, edx
 	sar	eax, 1
 	add	esi, eax
-	mov	eax, DWORD PTR __Mid$229133[esp+36]
+	mov	eax, DWORD PTR __Mid$229610[esp+36]
 	mov	ecx, edi
 	mov	edx, eax
 	sub	ecx, ebp
@@ -31933,7 +31933,7 @@ $LN5@Sort:
 
 ; 3098 : 			_Last = _Mid.first;
 
-	mov	edi, DWORD PTR __Mid$229133[esp+36]
+	mov	edi, DWORD PTR __Mid$229610[esp+36]
 $LN26@Sort:
 	mov	eax, edi
 	sub	eax, ebx
@@ -32013,12 +32013,12 @@ PUBLIC	??$_Unchecked_chunked_merge@PAVCvPurchaseRequest@@V?$_Temp_iterator@VCvPu
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Unchecked_chunked_merge@PAVCvPurchaseRequest@@V?$_Temp_iterator@VCvPurchaseRequest@@@std@@H@stdext@@YAXPAVCvPurchaseRequest@@0V?$_Temp_iterator@VCvPurchaseRequest@@@std@@HH@Z
 _TEXT	SEGMENT
-$T242978 = -4						; size = 1
+$T243455 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 20
 __Chunk$ = 36						; size = 4
-$T242979 = 40						; size = 4
+$T243456 = 40						; size = 4
 __Count$ = 40						; size = 4
 ??$_Unchecked_chunked_merge@PAVCvPurchaseRequest@@V?$_Temp_iterator@VCvPurchaseRequest@@@std@@H@stdext@@YAXPAVCvPurchaseRequest@@0V?$_Temp_iterator@VCvPurchaseRequest@@@std@@HH@Z PROC ; stdext::_Unchecked_chunked_merge<CvPurchaseRequest *,std::_Temp_iterator<CvPurchaseRequest>,int>, COMDAT
 
@@ -32032,8 +32032,8 @@ __Count$ = 40						; size = 4
 	mov	edx, DWORD PTR __Chunk$[esp]
 	push	ebx
 	xor	ebx, ebx
-	mov	BYTE PTR $T242978[esp+8], bl
-	mov	eax, DWORD PTR $T242978[esp+8]
+	mov	BYTE PTR $T243455[esp+8], bl
+	mov	eax, DWORD PTR $T243455[esp+8]
 	push	eax
 	push	ecx
 	push	edx
@@ -32045,7 +32045,7 @@ __Count$ = 40						; size = 4
 	mov	DWORD PTR [eax+8], ebx
 	mov	DWORD PTR [eax+12], ebx
 	mov	ecx, DWORD PTR __Dest$[esp+52]
-	mov	DWORD PTR $T242979[esp+36], esp
+	mov	DWORD PTR $T243456[esp+36], esp
 	mov	DWORD PTR [eax+16], ecx
 	mov	eax, DWORD PTR __First$[esp+36]
 	push	edx
@@ -32098,11 +32098,11 @@ PUBLIC	??$_Buffered_merge_sort@PAVCvPurchaseRequest@@HV1@@std@@YAXPAVCvPurchaseR
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Buffered_merge_sort@PAVCvPurchaseRequest@@HV1@@std@@YAXPAVCvPurchaseRequest@@0HAAV?$_Temp_iterator@VCvPurchaseRequest@@@0@@Z
 _TEXT	SEGMENT
-$T243129 = -8						; size = 1
-$T243100 = -4						; size = 4
+$T243606 = -8						; size = 1
+$T243577 = -4						; size = 4
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-$T243099 = 16						; size = 1
+$T243576 = 16						; size = 1
 __Count$ = 16						; size = 4
 __Tempbuf$ = 20						; size = 4
 ??$_Buffered_merge_sort@PAVCvPurchaseRequest@@HV1@@std@@YAXPAVCvPurchaseRequest@@0HAAV?$_Temp_iterator@VCvPurchaseRequest@@@0@@Z PROC ; std::_Buffered_merge_sort<CvPurchaseRequest *,int,CvPurchaseRequest>, COMDAT
@@ -32177,8 +32177,8 @@ $LL3@Buffered_m@2:
 	mov	DWORD PTR [eax+4], edx
 	mov	ecx, DWORD PTR [ebp+16]
 	mov	edx, DWORD PTR __First$[esp+20]
-	mov	BYTE PTR $T243099[esp+20], bl
-	mov	eax, DWORD PTR $T243099[esp+20]
+	mov	BYTE PTR $T243576[esp+20], bl
+	mov	eax, DWORD PTR $T243576[esp+20]
 	push	eax
 	push	edi
 	push	esi
@@ -32186,7 +32186,7 @@ $LL3@Buffered_m@2:
 	mov	eax, esp
 	mov	DWORD PTR [eax+16], ecx
 	mov	ecx, DWORD PTR __Last$[esp+52]
-	mov	DWORD PTR $T243100[esp+56], esp
+	mov	DWORD PTR $T243577[esp+56], esp
 	push	ecx
 	push	edx
 	mov	DWORD PTR [eax], ebx
@@ -32200,8 +32200,8 @@ $LL3@Buffered_m@2:
 
 	mov	eax, DWORD PTR [ebp+16]
 	mov	edx, DWORD PTR __First$[esp+60]
-	mov	BYTE PTR $T243129[esp+64], bl
-	mov	ecx, DWORD PTR $T243129[esp+64]
+	mov	BYTE PTR $T243606[esp+64], bl
+	mov	ecx, DWORD PTR $T243606[esp+64]
 	push	ecx
 	mov	ecx, DWORD PTR [eax+4]
 	push	edi
@@ -32414,13 +32414,13 @@ __ehfuncinfo$?AssignExplorersToHuts@CvEconomicAI@@AAEXXZ DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?AssignExplorersToHuts@CvEconomicAI@@AAEXXZ
 _TEXT	SEGMENT
-_uiExplorer$227139 = -460				; size = 4
-_iUnitID$227137 = -460					; size = 4
+_uiExplorer$227616 = -460				; size = 4
+_iUnitID$227614 = -460					; size = 4
 _this$ = -456						; size = 4
-_uiGoodyPlots$227131 = -452				; size = 4
+_uiGoodyPlots$227608 = -452				; size = 4
 _kPathFinder$ = -448					; size = 4
-_iStepPlotID$227138 = -444				; size = 4
-_tempExplorers$227169 = -440				; size = 12
+_iStepPlotID$227615 = -444				; size = 4
+_tempExplorers$227646 = -440				; size = 12
 _aBestUnitList$ = -428					; size = 416
 __$EHRec$ = -12						; size = 12
 ?AssignExplorersToHuts@CvEconomicAI@@AAEXXZ PROC	; CvEconomicAI::AssignExplorersToHuts, COMDAT
@@ -32468,7 +32468,7 @@ __$EHRec$ = -12						; size = 12
 
 	mov	eax, DWORD PTR [ebx+92]
 	xor	ecx, ecx
-	mov	DWORD PTR _uiGoodyPlots$227131[esp+468], ecx
+	mov	DWORD PTR _uiGoodyPlots$227608[esp+468], ecx
 	cmp	eax, edi
 	jbe	$LN227@AssignExpl
 	push	ebp
@@ -32510,7 +32510,7 @@ $LN51@AssignExpl:
 ; 2537 : 		int iUnitID = NO_UNIT;
 ; 2538 : 		int iStepPlotID = -1;
 
-	mov	DWORD PTR _iStepPlotID$227138[esp+476], -1
+	mov	DWORD PTR _iStepPlotID$227615[esp+476], -1
 
 ; 2539 : 
 ; 2540 : 		aBestUnitList.clear();
@@ -32520,7 +32520,7 @@ $LN51@AssignExpl:
 ; 2541 : 
 ; 2542 : 		for(uint uiExplorer = 0; uiExplorer < m_apExplorers.size(); uiExplorer++)
 
-	mov	DWORD PTR _uiExplorer$227139[esp+476], edi
+	mov	DWORD PTR _uiExplorer$227616[esp+476], edi
 	cmp	DWORD PTR [ebx+292], edi
 	jbe	$LN230@AssignExpl
 $LL234@AssignExpl:
@@ -32532,7 +32532,7 @@ $LL234@AssignExpl:
 
 	movsx	edx, WORD PTR [ebp+2]
 	mov	eax, DWORD PTR [ebx+288]
-	mov	ecx, DWORD PTR _uiExplorer$227139[esp+476]
+	mov	ecx, DWORD PTR _uiExplorer$227616[esp+476]
 	mov	esi, DWORD PTR [eax+ecx*4]
 	mov	eax, DWORD PTR [esi+88]
 	mov	ecx, DWORD PTR [esi+76]
@@ -32589,9 +32589,9 @@ $LN89@AssignExpl:
 	inc	DWORD PTR _aBestUnitList$[esp+480]
 	mov	ebx, DWORD PTR _this$[esp+476]
 $LN13@AssignExpl:
-	mov	eax, DWORD PTR _uiExplorer$227139[esp+476]
+	mov	eax, DWORD PTR _uiExplorer$227616[esp+476]
 	inc	eax
-	mov	DWORD PTR _uiExplorer$227139[esp+476], eax
+	mov	DWORD PTR _uiExplorer$227616[esp+476], eax
 	cmp	eax, DWORD PTR [ebx+292]
 	jb	$LL234@AssignExpl
 
@@ -32695,7 +32695,7 @@ $LN217@AssignExpl:
 ; 2590 : 					CvPlot* pPlot = kPathFinder.GetPathEndTurnPlot();
 
 	mov	ecx, ebx
-	mov	DWORD PTR _iUnitID$227137[esp+476], esi
+	mov	DWORD PTR _iUnitID$227614[esp+476], esi
 	call	?GetPathEndTurnPlot@CvTwoLayerPathFinder@@QBEPAVCvPlot@@XZ ; CvTwoLayerPathFinder::GetPathEndTurnPlot
 
 ; 2591 : 					if(pPlot)
@@ -32709,7 +32709,7 @@ $LN217@AssignExpl:
 	call	?GetPlotIndex@CvPlot@@QBEHXZ		; CvPlot::GetPlotIndex
 	jmp	SHORT $LN6@AssignExpl
 $LN228@AssignExpl:
-	mov	eax, DWORD PTR _iStepPlotID$227138[esp+476]
+	mov	eax, DWORD PTR _iStepPlotID$227615[esp+476]
 $LN6@AssignExpl:
 
 ; 2593 : 					break;
@@ -32728,7 +32728,7 @@ $LN6@AssignExpl:
 
 	mov	edi, DWORD PTR _this$[esp+476]
 	mov	ecx, DWORD PTR [edi+100]
-	mov	edx, DWORD PTR _uiGoodyPlots$227131[esp+476]
+	mov	edx, DWORD PTR _uiGoodyPlots$227608[esp+476]
 	mov	DWORD PTR [ecx+edx*8], esi
 
 ; 2602 : 
@@ -32738,8 +32738,8 @@ $LN6@AssignExpl:
 	mov	DWORD PTR [ecx+edx*8+4], eax
 	mov	eax, DWORD PTR [edi+8]
 	xor	esi, esi
-	mov	DWORD PTR _tempExplorers$227169[esp+476], esi
-	mov	DWORD PTR _tempExplorers$227169[esp+484], eax
+	mov	DWORD PTR _tempExplorers$227646[esp+476], esi
+	mov	DWORD PTR _tempExplorers$227646[esp+484], eax
 	test	eax, eax
 	je	SHORT $LN229@AssignExpl
 	mov	ebx, eax
@@ -32752,18 +32752,18 @@ $LN6@AssignExpl:
 	push	ecx
 	call	?FireMallocAlignedNoTracking@@YAPAXIIPBDH@Z ; FireMallocAlignedNoTracking
 	add	esp, 16					; 00000010H
-	mov	DWORD PTR _tempExplorers$227169[esp+484], ebx
+	mov	DWORD PTR _tempExplorers$227646[esp+484], ebx
 	jmp	SHORT $LN138@AssignExpl
 $LN137@AssignExpl:
 	xor	eax, eax
 $LN138@AssignExpl:
 	mov	esi, eax
-	mov	DWORD PTR _tempExplorers$227169[esp+476], esi
+	mov	DWORD PTR _tempExplorers$227646[esp+476], esi
 $LN229@AssignExpl:
 	mov	ebp, DWORD PTR [edi+4]
 	xor	ebx, ebx
 	xor	eax, eax
-	mov	DWORD PTR _tempExplorers$227169[esp+480], ebp
+	mov	DWORD PTR _tempExplorers$227646[esp+480], ebp
 	cmp	ebp, ebx
 	jbe	SHORT $LN142@AssignExpl
 	mov	ecx, esi
@@ -32796,7 +32796,7 @@ $LL4@AssignExpl:
 ; 2607 : 				if(tempExplorers[uiExplorer]->GetID() != iUnitID)
 
 	mov	eax, DWORD PTR [esi+ebx*4]
-	mov	ecx, DWORD PTR _iUnitID$227137[esp+476]
+	mov	ecx, DWORD PTR _iUnitID$227614[esp+476]
 	cmp	DWORD PTR [eax+100], ecx
 	je	SHORT $LN3@AssignExpl
 
@@ -32842,9 +32842,9 @@ $LN17@AssignExpl:
 
 ; 2526 : 	for(uint uiGoodyPlots = 0; uiGoodyPlots < m_aiGoodyHutPlots.size(); uiGoodyPlots++)
 
-	mov	ecx, DWORD PTR _uiGoodyPlots$227131[esp+476]
+	mov	ecx, DWORD PTR _uiGoodyPlots$227608[esp+476]
 	inc	ecx
-	mov	DWORD PTR _uiGoodyPlots$227131[esp+476], ecx
+	mov	DWORD PTR _uiGoodyPlots$227608[esp+476], ecx
 	cmp	ecx, DWORD PTR [ebx+92]
 	jb	$LL235@AssignExpl
 	pop	esi
@@ -32876,7 +32876,7 @@ __unwindfunclet$?AssignExplorersToHuts@CvEconomicAI@@AAEXXZ$0:
 	lea	ecx, DWORD PTR _aBestUnitList$[ebp]
 	jmp	??1?$CvWeightedVector@PAVCvUnit@@$0DC@$00@@QAE@XZ ; CvWeightedVector<CvUnit *,50,1>::~CvWeightedVector<CvUnit *,50,1>
 __unwindfunclet$?AssignExplorersToHuts@CvEconomicAI@@AAEXXZ$1:
-	lea	ecx, DWORD PTR _tempExplorers$227169[ebp]
+	lea	ecx, DWORD PTR _tempExplorers$227646[ebp]
 	jmp	??1?$FFastVector@PAVCvUnit@@$0A@$0A@$0A@UFDefaultFastVectorAllocator@?$BaseVector@PAVCvUnit@@$0A@@@@@QAE@XZ ; FFastVector<CvUnit *,0,0,0,BaseVector<CvUnit *,0>::FDefaultFastVectorAllocator>::~FFastVector<CvUnit *,0,0,0,BaseVector<CvUnit *,0>::FDefaultFastVectorAllocator>
 __ehhandler$?AssignExplorersToHuts@CvEconomicAI@@AAEXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?AssignExplorersToHuts@CvEconomicAI@@AAEXXZ
@@ -32997,9 +32997,9 @@ EXTRN	?isRevealedGoody@CvPlot@@QBE_NW4TeamTypes@@@Z:PROC ; CvPlot::isRevealedGoo
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredll_expansion2\cveconomicai.cpp
 ;	COMDAT ?UpdatePlots@CvEconomicAI@@QAEXXZ
 _TEXT	SEGMENT
-_i$226876 = -32						; size = 4
+_i$227353 = -32						; size = 4
 _uiGoodyHutPlotIndex$ = -28				; size = 4
-$T243815 = -24						; size = 4
+$T244292 = -24						; size = 4
 _uiExplorationPlotIndex$ = -20				; size = 4
 tv1286 = -16						; size = 4
 _iLoopCity$ = -12					; size = 4
@@ -33123,10 +33123,10 @@ $LN24@UpdatePlot:
 	mov	ecx, DWORD PTR ?sr_TeamTypes@CvPreGame@@3ABV?$vector@W4TeamTypes@@V?$allocator@W4TeamTypes@@@std@@@std@@B ; CvPreGame::sr_TeamTypes
 	mov	edx, DWORD PTR [ecx+4]
 	mov	eax, DWORD PTR [edx+eax*4]
-	mov	DWORD PTR $T243815[esp+48], eax
+	mov	DWORD PTR $T244292[esp+48], eax
 	jmp	SHORT $LN62@UpdatePlot
 $LN61@UpdatePlot:
-	mov	DWORD PTR $T243815[esp+48], -1
+	mov	DWORD PTR $T244292[esp+48], -1
 $LN62@UpdatePlot:
 
 ; 2402 : 
@@ -33138,7 +33138,7 @@ $LN62@UpdatePlot:
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+52
 	cmp	DWORD PTR [ecx+4028], ebx
-	mov	DWORD PTR _i$226876[esp+48], ebx
+	mov	DWORD PTR _i$227353[esp+48], ebx
 	jle	$LN20@UpdatePlot
 	mov	DWORD PTR tv1286[esp+48], ebx
 	npad	7
@@ -33162,7 +33162,7 @@ $LL22@UpdatePlot:
 ; 2415 : 
 ; 2416 : 		if(!pPlot->isRevealed(ePlayerTeam))
 
-	mov	ebp, DWORD PTR $T243815[esp+48]
+	mov	ebp, DWORD PTR $T244292[esp+48]
 	mov	eax, ebp
 	shr	eax, 5
 	mov	ecx, eax
@@ -33249,12 +33249,12 @@ $LN94@UpdatePlot:
 ; 2428 : 			m_aiGoodyHutPlots[uiGoodyHutPlotIndex] = i;
 
 	mov	edx, DWORD PTR [esi+88]
-	mov	eax, DWORD PTR _i$226876[esp+48]
+	mov	eax, DWORD PTR _i$227353[esp+48]
 
 ; 2429 : 			m_aiGoodyHutUnitAssignments[uiGoodyHutPlotIndex].Clear();
 ; 2430 : 			++uiGoodyHutPlotIndex;
 
-	mov	ebp, DWORD PTR $T243815[esp+48]
+	mov	ebp, DWORD PTR $T244292[esp+48]
 	mov	DWORD PTR [edx+ebx*4], eax
 	mov	ecx, DWORD PTR [esi+100]
 	lea	eax, DWORD PTR [ecx+ebx*8]
@@ -33336,12 +33336,12 @@ $LN118@UpdatePlot:
 ; 2441 : 				m_aiGoodyHutPlots[uiGoodyHutPlotIndex] = i;
 
 	mov	eax, DWORD PTR [esi+88]
-	mov	ecx, DWORD PTR _i$226876[esp+48]
+	mov	ecx, DWORD PTR _i$227353[esp+48]
 
 ; 2442 : 				m_aiGoodyHutUnitAssignments[uiGoodyHutPlotIndex].Clear();
 ; 2443 : 				++uiGoodyHutPlotIndex;
 
-	mov	ebp, DWORD PTR $T243815[esp+48]
+	mov	ebp, DWORD PTR $T244292[esp+48]
 	mov	DWORD PTR [eax+ebx*4], ecx
 	mov	edx, DWORD PTR [esi+100]
 	lea	eax, DWORD PTR [edx+ebx*8]
@@ -33441,7 +33441,7 @@ $LN187@UpdatePlot:
 ; 2466 : 		m_aiExplorationPlots[uiExplorationPlotIndex] = i;
 
 	mov	ecx, DWORD PTR [esi+64]
-	mov	edx, DWORD PTR _i$226876[esp+48]
+	mov	edx, DWORD PTR _i$227353[esp+48]
 	mov	DWORD PTR [ecx+eax*4], edx
 
 ; 2467 : 		m_aiExplorationPlotRatings[uiExplorationPlotIndex] = iScore;
@@ -33454,12 +33454,12 @@ $LN187@UpdatePlot:
 	inc	eax
 	mov	DWORD PTR _uiExplorationPlotIndex$[esp+48], eax
 $LN21@UpdatePlot:
-	mov	eax, DWORD PTR _i$226876[esp+48]
+	mov	eax, DWORD PTR _i$227353[esp+48]
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+52
 	add	DWORD PTR tv1286[esp+48], 484		; 000001e4H
 	inc	eax
 	cmp	eax, DWORD PTR [ecx+4028]
-	mov	DWORD PTR _i$226876[esp+48], eax
+	mov	DWORD PTR _i$227353[esp+48], eax
 	jl	$LL22@UpdatePlot
 
 ; 2402 : 
@@ -33901,7 +33901,7 @@ PUBLIC	?CanWithdrawMoneyForPurchase@CvEconomicAI@@QAE_NW4PurchaseType@@HH@Z ; Cv
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?CanWithdrawMoneyForPurchase@CvEconomicAI@@QAE_NW4PurchaseType@@HH@Z
 _TEXT	SEGMENT
-_request$226113 = -12					; size = 12
+_request$226590 = -12					; size = 12
 _ePurchase$ = 8						; size = 4
 _iAmount$ = 12						; size = 4
 _iPriority$ = 16					; size = 4
@@ -33988,7 +33988,7 @@ $LL7@CanWithdra:
 	mov	ecx, DWORD PTR [eax]
 	mov	ebp, DWORD PTR [eax+8]
 	mov	esi, DWORD PTR [eax+4]
-	mov	DWORD PTR _request$226113[esp+36], ebp
+	mov	DWORD PTR _request$226590[esp+36], ebp
 
 ; 1178 : 
 ; 1179 : 		// Is this higher priority than the request we care about?
@@ -34060,7 +34060,7 @@ PUBLIC	?AmountAvailableForPurchase@CvEconomicAI@@QAEHW4PurchaseType@@@Z ; CvEcon
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?AmountAvailableForPurchase@CvEconomicAI@@QAEHW4PurchaseType@@@Z
 _TEXT	SEGMENT
-_request$226128 = -12					; size = 12
+_request$226605 = -12					; size = 12
 _ePurchase$ = 8						; size = 4
 ?AmountAvailableForPurchase@CvEconomicAI@@QAEHW4PurchaseType@@@Z PROC ; CvEconomicAI::AmountAvailableForPurchase, COMDAT
 ; _this$ = ecx
@@ -34133,7 +34133,7 @@ $LL7@AmountAvai:
 	mov	eax, DWORD PTR [esi]
 	mov	ebp, DWORD PTR [esi+8]
 	mov	edx, DWORD PTR [esi+4]
-	mov	DWORD PTR _request$226128[esp+36], ebp
+	mov	DWORD PTR _request$226605[esp+36], ebp
 
 ; 1226 : #endif
 ; 1227 : 
@@ -34234,7 +34234,7 @@ _iTempX$ = -56						; size = 4
 _iTempY$ = -52						; size = 4
 _iLoop$ = -48						; size = 4
 _iBestY$ = -44						; size = 4
-_strLogString$226670 = -40				; size = 28
+_strLogString$227147 = -40				; size = 28
 __$EHRec$ = -12						; size = 12
 ?DoPlotPurchases@CvEconomicAI@@AAEXXZ PROC		; CvEconomicAI::DoPlotPurchases, COMDAT
 ; _this$ = ecx
@@ -34287,7 +34287,7 @@ __$EHRec$ = -12						; size = 12
 ; 1899 : 	MilitaryAIStrategyTypes eStrategyAtWar = (MilitaryAIStrategyTypes) GC.getInfoTypeForString("MILITARYAISTRATEGY_AT_WAR");
 
 	push	esi
-	push	OFFSET $SG226651
+	push	OFFSET $SG227128
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 
@@ -34478,7 +34478,7 @@ $LN8@DoPlotPurc:
 ; 1948 : 					{
 ; 1949 : 						CvString strLogString;
 
-	lea	ecx, DWORD PTR _strLogString$226670[esp+80]
+	lea	ecx, DWORD PTR _strLogString$227147[esp+80]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
 ; 1950 : 						strLogString.Format("Buying plot, X: %d, Y: %d, Cost: %d, Balance (before buy): %d, Priority: %d", iBestX, iBestY,
@@ -34495,8 +34495,8 @@ $LN8@DoPlotPurc:
 	push	esi
 	push	ebp
 	push	ecx
-	lea	edx, DWORD PTR _strLogString$226670[esp+100]
-	push	OFFSET $SG226671
+	lea	edx, DWORD PTR _strLogString$227147[esp+100]
+	push	OFFSET $SG227148
 	push	edx
 	call	?Format@CvString@@QAAXPBDZZ		; CvString::Format
 
@@ -34504,7 +34504,7 @@ $LN8@DoPlotPurc:
 
 	mov	ecx, DWORD PTR [ebx+4]
 	add	esp, 28					; 0000001cH
-	lea	eax, DWORD PTR _strLogString$226670[esp+80]
+	lea	eax, DWORD PTR _strLogString$227147[esp+80]
 	push	eax
 	call	?GetHomelandAI@CvPlayer@@QBEPAVCvHomelandAI@@XZ ; CvPlayer::GetHomelandAI
 	mov	ecx, eax
@@ -34512,7 +34512,7 @@ $LN8@DoPlotPurc:
 
 ; 1953 : 					}
 
-	lea	ecx, DWORD PTR _strLogString$226670[esp+80]
+	lea	ecx, DWORD PTR _strLogString$227147[esp+80]
 	mov	DWORD PTR __$EHRec$[esp+88], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 $LN29@DoPlotPurc:
@@ -34545,7 +34545,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?DoPlotPurchases@CvEconomicAI@@AAEXXZ$0:
-	lea	ecx, DWORD PTR _strLogString$226670[ebp]
+	lea	ecx, DWORD PTR _strLogString$227147[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?DoPlotPurchases@CvEconomicAI@@AAEXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?DoPlotPurchases@CvEconomicAI@@AAEXXZ
@@ -34576,12 +34576,12 @@ __ehfuncinfo$?DoTurn@CvEconomicAI@@QAEXXZ DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?DoTurn@CvEconomicAI@@QAEXXZ
 _TEXT	SEGMENT
-_bTestStrategyStart$225725 = -51			; size = 1
-_bTestStrategyEnd$225733 = -50				; size = 1
-_bResult$225871 = -49					; size = 1
-_pStrategy$225723 = -48					; size = 4
-_args$225870 = -44					; size = 4
-_strStrategyName$225745 = -40				; size = 28
+_bTestStrategyStart$226202 = -51			; size = 1
+_bTestStrategyEnd$226210 = -50				; size = 1
+_bResult$226348 = -49					; size = 1
+_pStrategy$226200 = -48					; size = 4
+_args$226347 = -44					; size = 4
+_strStrategyName$226222 = -40				; size = 28
 __$EHRec$ = -12						; size = 12
 ?DoTurn@CvEconomicAI@@QAEXXZ PROC			; CvEconomicAI::DoTurn, COMDAT
 ; _this$ = ecx
@@ -34654,7 +34654,7 @@ $LL336@DoTurn:
 ; 571  : 		if(m_pPlayer->isMinorCiv() && pStrategy->IsNoMinorCivs())
 
 	mov	ecx, DWORD PTR [esi+4]
-	mov	DWORD PTR _pStrategy$225723[esp+68], edi
+	mov	DWORD PTR _pStrategy$226200[esp+68], edi
 	call	?isMinorCiv@CvPlayer@@QBE_NXZ		; CvPlayer::isMinorCiv
 	test	al, al
 	je	SHORT $LN124@DoTurn
@@ -34673,7 +34673,7 @@ $LN124@DoTurn:
 
 	mov	eax, DWORD PTR [esi+12]
 	cmp	BYTE PTR [eax+ebp], 0
-	mov	BYTE PTR _bTestStrategyStart$225725[esp+68], 1
+	mov	BYTE PTR _bTestStrategyStart$226202[esp+68], 1
 
 ; 580  : 		{
 ; 581  : 			bTestStrategyStart = false;
@@ -34746,7 +34746,7 @@ $LN344@DoTurn:
 ; 593  : 			{
 ; 594  : 				bTestStrategyStart = false;
 
-	mov	BYTE PTR _bTestStrategyStart$225725[esp+68], 0
+	mov	BYTE PTR _bTestStrategyStart$226202[esp+68], 0
 $LN120@DoTurn:
 
 ; 595  : 			}
@@ -34764,7 +34764,7 @@ $LN343@DoTurn:
 ; 599  : 			{
 ; 600  : 				bTestStrategyStart = false;
 
-	mov	BYTE PTR _bTestStrategyStart$225725[esp+68], 0
+	mov	BYTE PTR _bTestStrategyStart$226202[esp+68], 0
 $LN119@DoTurn:
 
 ; 601  : 			}
@@ -34777,13 +34777,13 @@ $LN119@DoTurn:
 
 	mov	eax, DWORD PTR [esi+12]
 	cmp	BYTE PTR [eax+ebp], 0
-	mov	BYTE PTR _bTestStrategyEnd$225733[esp+68], 0
+	mov	BYTE PTR _bTestStrategyEnd$226210[esp+68], 0
 	je	SHORT $LN334@DoTurn
 
 ; 608  : 		{
 ; 609  : 			if(pStrategy->GetCheckTriggerTurnCount() > 0)
 
-	mov	ecx, DWORD PTR _pStrategy$225723[esp+68]
+	mov	ecx, DWORD PTR _pStrategy$226200[esp+68]
 	mov	edi, DWORD PTR [ecx+292]
 	test	edi, edi
 	jle	SHORT $LN334@DoTurn
@@ -34809,9 +34809,9 @@ $LN119@DoTurn:
 ; 617  : 
 ; 618  : 			if(bTestStrategyEnd && pStrategy->GetMinimumNumTurnsExecuted() > 0)
 
-	mov	eax, DWORD PTR _pStrategy$225723[esp+68]
+	mov	eax, DWORD PTR _pStrategy$226200[esp+68]
 	mov	edi, DWORD PTR [eax+288]
-	mov	BYTE PTR _bTestStrategyEnd$225733[esp+68], 1
+	mov	BYTE PTR _bTestStrategyEnd$226210[esp+68], 1
 	test	edi, edi
 	jle	SHORT $LN334@DoTurn
 
@@ -34830,7 +34830,7 @@ $LN119@DoTurn:
 ; 622  : 				{
 ; 623  : 					bTestStrategyEnd = false;
 
-	mov	BYTE PTR _bTestStrategyEnd$225733[esp+68], 0
+	mov	BYTE PTR _bTestStrategyEnd$226210[esp+68], 0
 $LN334@DoTurn:
 
 ; 624  : 				}
@@ -34842,9 +34842,9 @@ $LN334@DoTurn:
 ; 630  : 
 ; 631  : 		if(bTestStrategyStart || bTestStrategyEnd)
 
-	cmp	BYTE PTR _bTestStrategyStart$225725[esp+68], 0
+	cmp	BYTE PTR _bTestStrategyStart$226202[esp+68], 0
 	jne	SHORT $LN112@DoTurn
-	cmp	BYTE PTR _bTestStrategyEnd$225733[esp+68], 0
+	cmp	BYTE PTR _bTestStrategyEnd$226210[esp+68], 0
 	je	$LN126@DoTurn
 $LN112@DoTurn:
 
@@ -34854,7 +34854,7 @@ $LN112@DoTurn:
 ; 635  : 			// Has the Tech which obsoletes this Strategy? If so, Strategy should be deactivated regardless of other factors
 ; 636  : 			if(pStrategy->GetTechObsolete() != NO_TECH && GET_TEAM(GetPlayer()->getTeam()).GetTeamTechs()->HasTech((TechTypes) pStrategy->GetTechObsolete()))
 
-	mov	edi, DWORD PTR _pStrategy$225723[esp+68]
+	mov	edi, DWORD PTR _pStrategy$226200[esp+68]
 	mov	ecx, DWORD PTR [edi+284]
 	cmp	ecx, -1
 	je	SHORT $LN111@DoTurn
@@ -34897,7 +34897,7 @@ $LN111@DoTurn:
 	mov	eax, OFFSET ??_C@_00CNPNBAHC@?$AA@
 $LN226@DoTurn:
 	push	eax
-	lea	ecx, DWORD PTR _strStrategyName$225745[esp+72]
+	lea	ecx, DWORD PTR _strStrategyName$226222[esp+72]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 
 ; 644  : 
@@ -34905,8 +34905,8 @@ $LN226@DoTurn:
 ; 646  : 				if(strStrategyName == "ECONOMICAISTRATEGY_NEED_RECON")
 
 	mov	edi, DWORD PTR __imp_??$?8DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PBD@Z
-	lea	eax, DWORD PTR _strStrategyName$225745[esp+68]
-	push	OFFSET $SG225749
+	lea	eax, DWORD PTR _strStrategyName$226222[esp+68]
+	push	OFFSET $SG226226
 	push	eax
 	mov	DWORD PTR __$EHRec$[esp+84], 0
 	call	edi
@@ -34918,7 +34918,7 @@ $LN226@DoTurn:
 
 	mov	edi, DWORD PTR [esi+4]
 	push	0
-	push	OFFSET $SG227372
+	push	OFFSET $SG227849
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	cmp	eax, -1
@@ -34942,8 +34942,8 @@ $LN109@DoTurn:
 
 ; 648  : 				else if(strStrategyName == "ECONOMICAISTRATEGY_ENOUGH_RECON")
 
-	lea	ecx, DWORD PTR _strStrategyName$225745[esp+68]
-	push	OFFSET $SG225752
+	lea	ecx, DWORD PTR _strStrategyName$226222[esp+68]
+	push	OFFSET $SG226229
 	push	ecx
 	call	edi
 	add	esp, 8
@@ -34961,8 +34961,8 @@ $LN107@DoTurn:
 
 ; 650  : 				else if(strStrategyName == "ECONOMICAISTRATEGY_REALLY_NEED_RECON_SEA")
 
-	lea	edx, DWORD PTR _strStrategyName$225745[esp+68]
-	push	OFFSET $SG225755
+	lea	edx, DWORD PTR _strStrategyName$226222[esp+68]
+	push	OFFSET $SG226232
 	push	edx
 	call	edi
 	add	esp, 8
@@ -34981,8 +34981,8 @@ $LN105@DoTurn:
 
 ; 652  : 				else if(strStrategyName == "ECONOMICAISTRATEGY_NEED_RECON_SEA")
 
-	lea	ecx, DWORD PTR _strStrategyName$225745[esp+68]
-	push	OFFSET $SG225758
+	lea	ecx, DWORD PTR _strStrategyName$226222[esp+68]
+	push	OFFSET $SG226235
 	push	ecx
 	call	edi
 	add	esp, 8
@@ -35001,8 +35001,8 @@ $LN103@DoTurn:
 
 ; 654  : 				else if(strStrategyName == "ECONOMICAISTRATEGY_ENOUGH_RECON_SEA")
 
-	lea	eax, DWORD PTR _strStrategyName$225745[esp+68]
-	push	OFFSET $SG225761
+	lea	eax, DWORD PTR _strStrategyName$226222[esp+68]
+	push	OFFSET $SG226238
 	push	eax
 	call	edi
 	add	esp, 8
@@ -35020,8 +35020,8 @@ $LN101@DoTurn:
 
 ; 656  : 				else if(strStrategyName == "ECONOMICAISTRATEGY_EARLY_EXPANSION")
 
-	lea	ecx, DWORD PTR _strStrategyName$225745[esp+68]
-	push	OFFSET $SG225764
+	lea	ecx, DWORD PTR _strStrategyName$226222[esp+68]
+	push	OFFSET $SG226241
 	push	ecx
 	call	edi
 	add	esp, 8
@@ -35040,8 +35040,8 @@ $LN99@DoTurn:
 
 ; 658  : 				else if(strStrategyName == "ECONOMICAISTRATEGY_ENOUGH_EXPANSION")
 
-	lea	eax, DWORD PTR _strStrategyName$225745[esp+68]
-	push	OFFSET $SG225767
+	lea	eax, DWORD PTR _strStrategyName$226222[esp+68]
+	push	OFFSET $SG226244
 	push	eax
 	call	edi
 	add	esp, 8
@@ -35061,8 +35061,8 @@ $LN97@DoTurn:
 
 ; 660  : 				else if(strStrategyName == "ECONOMICAISTRATEGY_NEED_HAPPINESS")
 
-	lea	edx, DWORD PTR _strStrategyName$225745[esp+68]
-	push	OFFSET $SG225770
+	lea	edx, DWORD PTR _strStrategyName$226222[esp+68]
+	push	OFFSET $SG226247
 	push	edx
 	call	edi
 	add	esp, 8
@@ -35082,8 +35082,8 @@ $LN95@DoTurn:
 
 ; 662  : 				else if(strStrategyName == "ECONOMICAISTRATEGY_NEED_HAPPINESS_CRITICAL")
 
-	lea	ecx, DWORD PTR _strStrategyName$225745[esp+68]
-	push	OFFSET $SG225773
+	lea	ecx, DWORD PTR _strStrategyName$226222[esp+68]
+	push	OFFSET $SG226250
 	push	ecx
 	call	edi
 	add	esp, 8
@@ -35103,8 +35103,8 @@ $LN93@DoTurn:
 
 ; 664  : 				else if(strStrategyName == "ECONOMICAISTRATEGY_CITIES_NEED_NAVAL_GROWTH")
 
-	lea	eax, DWORD PTR _strStrategyName$225745[esp+68]
-	push	OFFSET $SG225776
+	lea	eax, DWORD PTR _strStrategyName$226222[esp+68]
+	push	OFFSET $SG226253
 	push	eax
 	call	edi
 	add	esp, 8
@@ -35124,8 +35124,8 @@ $LN91@DoTurn:
 
 ; 666  : 				else if(strStrategyName == "ECONOMICAISTRATEGY_CITIES_NEED_NAVAL_TILE_IMPROVEMENT")
 
-	lea	edx, DWORD PTR _strStrategyName$225745[esp+68]
-	push	OFFSET $SG225779
+	lea	edx, DWORD PTR _strStrategyName$226222[esp+68]
+	push	OFFSET $SG226256
 	push	edx
 	call	edi
 	add	esp, 8
@@ -35145,8 +35145,8 @@ $LN89@DoTurn:
 
 ; 668  : 				else if(strStrategyName == "ECONOMICAISTRATEGY_FOUND_CITY")
 
-	lea	ecx, DWORD PTR _strStrategyName$225745[esp+68]
-	push	OFFSET $SG225782
+	lea	ecx, DWORD PTR _strStrategyName$226222[esp+68]
+	push	OFFSET $SG226259
 	push	ecx
 	call	edi
 	add	esp, 8
@@ -35166,8 +35166,8 @@ $LN87@DoTurn:
 
 ; 670  : 				else if(strStrategyName == "ECONOMICAISTRATEGY_TRADE_WITH_CITY_STATE")
 
-	lea	eax, DWORD PTR _strStrategyName$225745[esp+68]
-	push	OFFSET $SG225785
+	lea	eax, DWORD PTR _strStrategyName$226222[esp+68]
+	push	OFFSET $SG226262
 	push	eax
 	call	edi
 	add	esp, 8
@@ -35187,8 +35187,8 @@ $LN85@DoTurn:
 
 ; 672  : 				else if(strStrategyName == "ECONOMICAISTRATEGY_NEED_IMPROVEMENT_FOOD")
 
-	lea	edx, DWORD PTR _strStrategyName$225745[esp+68]
-	push	OFFSET $SG225788
+	lea	edx, DWORD PTR _strStrategyName$226222[esp+68]
+	push	OFFSET $SG226265
 	push	edx
 	call	edi
 	add	esp, 8
@@ -35208,8 +35208,8 @@ $LN83@DoTurn:
 
 ; 674  : 				else if(strStrategyName == "ECONOMICAISTRATEGY_NEED_IMPROVEMENT_PRODUCTION")
 
-	lea	ecx, DWORD PTR _strStrategyName$225745[esp+68]
-	push	OFFSET $SG225791
+	lea	ecx, DWORD PTR _strStrategyName$226222[esp+68]
+	push	OFFSET $SG226268
 	push	ecx
 	call	edi
 	add	esp, 8
@@ -35229,8 +35229,8 @@ $LN81@DoTurn:
 
 ; 676  : 				else if(strStrategyName == "ECONOMICAISTRATEGY_ONE_OR_FEWER_COASTAL_CITIES")
 
-	lea	eax, DWORD PTR _strStrategyName$225745[esp+68]
-	push	OFFSET $SG225794
+	lea	eax, DWORD PTR _strStrategyName$226222[esp+68]
+	push	OFFSET $SG226271
 	push	eax
 	call	edi
 	add	esp, 8
@@ -35249,8 +35249,8 @@ $LN79@DoTurn:
 
 ; 678  : 				else if(strStrategyName == "ECONOMICAISTRATEGY_LOSING_MONEY")
 
-	lea	edx, DWORD PTR _strStrategyName$225745[esp+68]
-	push	OFFSET $SG225797
+	lea	edx, DWORD PTR _strStrategyName$226222[esp+68]
+	push	OFFSET $SG226274
 	push	edx
 	call	edi
 	add	esp, 8
@@ -35270,8 +35270,8 @@ $LN77@DoTurn:
 
 ; 680  : 				else if(strStrategyName == "ECONOMICAISTRATEGY_HALT_GROWTH_BUILDINGS")
 
-	lea	ecx, DWORD PTR _strStrategyName$225745[esp+68]
-	push	OFFSET $SG225800
+	lea	ecx, DWORD PTR _strStrategyName$226222[esp+68]
+	push	OFFSET $SG226277
 	push	ecx
 	call	edi
 	add	esp, 8
@@ -35290,8 +35290,8 @@ $LN75@DoTurn:
 
 ; 682  : 				else if(strStrategyName == "ECONOMICAISTRATEGY_TOO_MANY_UNITS")
 
-	lea	eax, DWORD PTR _strStrategyName$225745[esp+68]
-	push	OFFSET $SG225803
+	lea	eax, DWORD PTR _strStrategyName$226222[esp+68]
+	push	OFFSET $SG226280
 	push	eax
 	call	edi
 	add	esp, 8
@@ -35309,8 +35309,8 @@ $LN73@DoTurn:
 
 ; 684  : 				else if(strStrategyName == "ECONOMICAISTRATEGY_ISLAND_START")
 
-	lea	ecx, DWORD PTR _strStrategyName$225745[esp+68]
-	push	OFFSET $SG225806
+	lea	ecx, DWORD PTR _strStrategyName$226222[esp+68]
+	push	OFFSET $SG226283
 	push	ecx
 	call	edi
 	add	esp, 8
@@ -35330,8 +35330,8 @@ $LN71@DoTurn:
 
 ; 686  : 				else if(strStrategyName == "ECONOMICAISTRATEGY_EXPAND_TO_OTHER_CONTINENTS")
 
-	lea	eax, DWORD PTR _strStrategyName$225745[esp+68]
-	push	OFFSET $SG225809
+	lea	eax, DWORD PTR _strStrategyName$226222[esp+68]
+	push	OFFSET $SG226286
 	push	eax
 	call	edi
 	add	esp, 8
@@ -35350,8 +35350,8 @@ $LN69@DoTurn:
 
 ; 688  : 				else if(strStrategyName == "ECONOMICAISTRATEGY_REALLY_EXPAND_TO_OTHER_CONTINENTS")
 
-	lea	edx, DWORD PTR _strStrategyName$225745[esp+68]
-	push	OFFSET $SG225812
+	lea	edx, DWORD PTR _strStrategyName$226222[esp+68]
+	push	OFFSET $SG226289
 	push	edx
 	call	edi
 	add	esp, 8
@@ -35370,8 +35370,8 @@ $LN67@DoTurn:
 
 ; 690  : 				else if(strStrategyName == "ECONOMICAISTRATEGY_MOSTLY_ON_THE_COAST")
 
-	lea	ecx, DWORD PTR _strStrategyName$225745[esp+68]
-	push	OFFSET $SG225815
+	lea	ecx, DWORD PTR _strStrategyName$226222[esp+68]
+	push	OFFSET $SG226292
 	push	ecx
 	call	edi
 	add	esp, 8
@@ -35390,8 +35390,8 @@ $LN65@DoTurn:
 
 ; 692  : 				else if(strStrategyName == "ECONOMICAISTRATEGY_EXPAND_LIKE_CRAZY")
 
-	lea	eax, DWORD PTR _strStrategyName$225745[esp+68]
-	push	OFFSET $SG225818
+	lea	eax, DWORD PTR _strStrategyName$226222[esp+68]
+	push	OFFSET $SG226295
 	push	eax
 	call	edi
 	add	esp, 8
@@ -35411,8 +35411,8 @@ $LN63@DoTurn:
 
 ; 694  : 				else if(strStrategyName == "ECONOMICAISTRATEGY_GROW_LIKE_CRAZY")
 
-	lea	edx, DWORD PTR _strStrategyName$225745[esp+68]
-	push	OFFSET $SG225821
+	lea	edx, DWORD PTR _strStrategyName$226222[esp+68]
+	push	OFFSET $SG226298
 	push	edx
 	call	edi
 	add	esp, 8
@@ -35432,8 +35432,8 @@ $LN61@DoTurn:
 
 ; 696  : 				else if(strStrategyName == "ECONOMICAISTRATEGY_GS_CULTURE")
 
-	lea	ecx, DWORD PTR _strStrategyName$225745[esp+68]
-	push	OFFSET $SG225824
+	lea	ecx, DWORD PTR _strStrategyName$226222[esp+68]
+	push	OFFSET $SG226301
 	push	ecx
 	call	edi
 	add	esp, 8
@@ -35452,8 +35452,8 @@ $LN59@DoTurn:
 
 ; 698  : 				else if(strStrategyName == "ECONOMICAISTRATEGY_GS_CONQUEST")
 
-	lea	eax, DWORD PTR _strStrategyName$225745[esp+68]
-	push	OFFSET $SG225827
+	lea	eax, DWORD PTR _strStrategyName$226222[esp+68]
+	push	OFFSET $SG226304
 	push	eax
 	call	edi
 	add	esp, 8
@@ -35472,8 +35472,8 @@ $LN57@DoTurn:
 
 ; 700  : 				else if(strStrategyName == "ECONOMICAISTRATEGY_GS_DIPLOMACY")
 
-	lea	edx, DWORD PTR _strStrategyName$225745[esp+68]
-	push	OFFSET $SG225830
+	lea	edx, DWORD PTR _strStrategyName$226222[esp+68]
+	push	OFFSET $SG226307
 	push	edx
 	call	edi
 	add	esp, 8
@@ -35492,8 +35492,8 @@ $LN55@DoTurn:
 
 ; 702  : 				else if(strStrategyName == "ECONOMICAISTRATEGY_GS_SPACESHIP")
 
-	lea	ecx, DWORD PTR _strStrategyName$225745[esp+68]
-	push	OFFSET $SG225833
+	lea	ecx, DWORD PTR _strStrategyName$226222[esp+68]
+	push	OFFSET $SG226310
 	push	ecx
 	call	edi
 	add	esp, 8
@@ -35512,8 +35512,8 @@ $LN53@DoTurn:
 
 ; 704  : 				else if(strStrategyName == "ECONOMICAISTRATEGY_GS_SPACESHIP_HOMESTRETCH")
 
-	lea	eax, DWORD PTR _strStrategyName$225745[esp+68]
-	push	OFFSET $SG225836
+	lea	eax, DWORD PTR _strStrategyName$226222[esp+68]
+	push	OFFSET $SG226313
 	push	eax
 	call	edi
 	add	esp, 8
@@ -35532,8 +35532,8 @@ $LN51@DoTurn:
 
 ; 706  : 				else if(strStrategyName == "ECONOMICAISTRATEGY_NAVAL_MAP")
 
-	lea	edx, DWORD PTR _strStrategyName$225745[esp+68]
-	push	OFFSET $SG225839
+	lea	edx, DWORD PTR _strStrategyName$226222[esp+68]
+	push	OFFSET $SG226316
 	push	edx
 	call	edi
 	add	esp, 8
@@ -35552,8 +35552,8 @@ $LN49@DoTurn:
 
 ; 708  : 				else if(strStrategyName == "ECONOMICAISTRATEGY_OFFSHORE_EXPANSION_MAP")
 
-	lea	ecx, DWORD PTR _strStrategyName$225745[esp+68]
-	push	OFFSET $SG225842
+	lea	ecx, DWORD PTR _strStrategyName$226222[esp+68]
+	push	OFFSET $SG226319
 	push	ecx
 	call	edi
 	add	esp, 8
@@ -35572,8 +35572,8 @@ $LN47@DoTurn:
 
 ; 710  : 				else if(strStrategyName == "ECONOMICAISTRATEGY_DEVELOPING_RELIGION")
 
-	lea	eax, DWORD PTR _strStrategyName$225745[esp+68]
-	push	OFFSET $SG225845
+	lea	eax, DWORD PTR _strStrategyName$226222[esp+68]
+	push	OFFSET $SG226322
 	push	eax
 	call	edi
 	add	esp, 8
@@ -35592,8 +35592,8 @@ $LN45@DoTurn:
 
 ; 712  : 				else if(strStrategyName == "ECONOMICAISTRATEGY_TECH_LEADER")
 
-	lea	edx, DWORD PTR _strStrategyName$225745[esp+68]
-	push	OFFSET $SG225848
+	lea	edx, DWORD PTR _strStrategyName$226222[esp+68]
+	push	OFFSET $SG226325
 	push	edx
 	call	edi
 	add	esp, 8
@@ -35612,8 +35612,8 @@ $LN43@DoTurn:
 
 ; 714  : 				else if(strStrategyName == "ECONOMICAISTRATEGY_NEED_ARCHAEOLOGISTS")
 
-	lea	ecx, DWORD PTR _strStrategyName$225745[esp+68]
-	push	OFFSET $SG225851
+	lea	ecx, DWORD PTR _strStrategyName$226222[esp+68]
+	push	OFFSET $SG226328
 	push	ecx
 	call	edi
 	add	esp, 8
@@ -35632,8 +35632,8 @@ $LN41@DoTurn:
 
 ; 716  : 				else if(strStrategyName == "ECONOMICAISTRATEGY_ENOUGH_ARCHAEOLOGISTS")
 
-	lea	eax, DWORD PTR _strStrategyName$225745[esp+68]
-	push	OFFSET $SG225854
+	lea	eax, DWORD PTR _strStrategyName$226222[esp+68]
+	push	OFFSET $SG226331
 	push	eax
 	call	edi
 	add	esp, 8
@@ -35652,8 +35652,8 @@ $LN39@DoTurn:
 
 ; 718  : 				else if(strStrategyName == "ECONOMICAISTRATEGY_NEED_MUSEUMS")
 
-	lea	edx, DWORD PTR _strStrategyName$225745[esp+68]
-	push	OFFSET $SG225857
+	lea	edx, DWORD PTR _strStrategyName$226222[esp+68]
+	push	OFFSET $SG226334
 	push	edx
 	call	edi
 	add	esp, 8
@@ -35672,8 +35672,8 @@ $LN37@DoTurn:
 
 ; 720  : 				else if(strStrategyName == "ECONOMICAISTRATEGY_NEED_GUILDS")
 
-	lea	ecx, DWORD PTR _strStrategyName$225745[esp+68]
-	push	OFFSET $SG225860
+	lea	ecx, DWORD PTR _strStrategyName$226222[esp+68]
+	push	OFFSET $SG226337
 	push	ecx
 	call	edi
 	add	esp, 8
@@ -35692,8 +35692,8 @@ $LN35@DoTurn:
 
 ; 722  : 				else if(strStrategyName == "ECONOMICAISTRATEGY_CONCERT_TOUR")
 
-	lea	eax, DWORD PTR _strStrategyName$225745[esp+68]
-	push	OFFSET $SG225863
+	lea	eax, DWORD PTR _strStrategyName$226222[esp+68]
+	push	OFFSET $SG226340
 	push	eax
 	call	edi
 	add	esp, 8
@@ -35713,8 +35713,8 @@ $LN33@DoTurn:
 
 ; 724  : 				else if(strStrategyName == "ECONOMICAISTRATEGY_STARTED_PIETY")
 
-	lea	edx, DWORD PTR _strStrategyName$225745[esp+68]
-	push	OFFSET $SG225866
+	lea	edx, DWORD PTR _strStrategyName$226222[esp+68]
+	push	OFFSET $SG226343
 	push	edx
 	call	edi
 	add	esp, 8
@@ -35763,12 +35763,12 @@ $LN30@DoTurn:
 ; 736  : 				{
 ; 737  : 					CvLuaArgsHandle args;
 
-	lea	ecx, DWORD PTR _args$225870[esp+68]
+	lea	ecx, DWORD PTR _args$226347[esp+68]
 	call	??0CvLuaArgsHandle@@QAE@XZ		; CvLuaArgsHandle::CvLuaArgsHandle
 
 ; 738  : 					args->Push(iStrategiesLoop);
 
-	mov	ecx, DWORD PTR _args$225870[esp+68]
+	mov	ecx, DWORD PTR _args$226347[esp+68]
 	mov	edx, DWORD PTR [ecx]
 	mov	eax, DWORD PTR [edx+8]
 	push	ebp
@@ -35779,7 +35779,7 @@ $LN30@DoTurn:
 
 	mov	ecx, DWORD PTR [esi+4]
 	mov	eax, DWORD PTR [ecx+44]
-	mov	ecx, DWORD PTR _args$225870[esp+68]
+	mov	ecx, DWORD PTR _args$226347[esp+68]
 	mov	edx, DWORD PTR [ecx]
 	push	eax
 	mov	eax, DWORD PTR [edx+8]
@@ -35791,13 +35791,13 @@ $LN30@DoTurn:
 ; 743  : 					bool bResult = false;
 ; 744  : 					if(LuaSupport::CallTestAll(pkScriptSystem, "EconomicStrategyCanActivate", args.get(), bResult))
 
-	mov	edx, DWORD PTR _args$225870[esp+68]
-	lea	ecx, DWORD PTR _bResult$225871[esp+68]
+	mov	edx, DWORD PTR _args$226347[esp+68]
+	lea	ecx, DWORD PTR _bResult$226348[esp+68]
 	push	ecx
 	push	edx
-	push	OFFSET $SG225873
+	push	OFFSET $SG226350
 	push	edi
-	mov	BYTE PTR _bResult$225871[esp+84], 0
+	mov	BYTE PTR _bResult$226348[esp+84], 0
 	call	?CallTestAll@LuaSupport@@YA_NPAVICvEngineScriptSystem1@@PBDPAVICvEngineScriptSystemArgs1@@AA_N@Z ; LuaSupport::CallTestAll
 	add	esp, 16					; 00000010H
 	test	al, al
@@ -35807,7 +35807,7 @@ $LN30@DoTurn:
 ; 746  : 						// Check the result.
 ; 747  : 						if(bResult == false)
 
-	cmp	BYTE PTR _bResult$225871[esp+68], 0
+	cmp	BYTE PTR _bResult$226348[esp+68], 0
 	jne	SHORT $LN27@DoTurn
 
 ; 748  : 						{
@@ -35820,14 +35820,14 @@ $LN27@DoTurn:
 ; 751  : 					}
 ; 752  : 				}
 
-	lea	ecx, DWORD PTR _args$225870[esp+68]
+	lea	ecx, DWORD PTR _args$226347[esp+68]
 	mov	BYTE PTR __$EHRec$[esp+76], 0
 	call	??1CvLuaArgsHandle@@QAE@XZ		; CvLuaArgsHandle::~CvLuaArgsHandle
 $LN29@DoTurn:
 
 ; 753  : 			}
 
-	lea	ecx, DWORD PTR _strStrategyName$225745[esp+68]
+	lea	ecx, DWORD PTR _strStrategyName$226222[esp+68]
 	mov	DWORD PTR __$EHRec$[esp+76], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -35844,7 +35844,7 @@ $LN29@DoTurn:
 ; 760  : 			{
 ; 761  : 				if(bTestStrategyStart)
 
-	cmp	BYTE PTR _bTestStrategyStart$225725[esp+68], 0
+	cmp	BYTE PTR _bTestStrategyStart$226202[esp+68], 0
 
 ; 762  : 				{
 ; 763  : 					bAdoptOrEndStrategy = true;
@@ -35888,7 +35888,7 @@ $LN337@DoTurn:
 ; 792  : 
 ; 793  : 					for(iFlavorLoop = 0; iFlavorLoop < GC.getNumFlavorTypes(); iFlavorLoop++)
 
-	mov	edi, DWORD PTR _pStrategy$225723[esp+68]
+	mov	edi, DWORD PTR _pStrategy$226200[esp+68]
 	xor	eax, eax
 	cmp	DWORD PTR ?gGlobals@@3VCvGlobals@@A+1764, eax
 	jle	$LN14@DoTurn
@@ -35913,13 +35913,13 @@ $LN331@DoTurn:
 ; 770  : 			// Strategy should be off, and if it's not, turn it off
 ; 771  : 			else
 
-	mov	edi, DWORD PTR _pStrategy$225723[esp+68]
+	mov	edi, DWORD PTR _pStrategy$226200[esp+68]
 $LN332@DoTurn:
 
 ; 772  : 			{
 ; 773  : 				if(bTestStrategyStart)
 
-	cmp	BYTE PTR _bTestStrategyStart$225725[esp+68], 0
+	cmp	BYTE PTR _bTestStrategyStart$226202[esp+68], 0
 
 ; 774  : 				{
 ; 775  : 					bAdoptOrEndStrategy = false;
@@ -35929,7 +35929,7 @@ $LN332@DoTurn:
 ; 776  : 				}
 ; 777  : 				else if(bTestStrategyEnd)
 
-	cmp	BYTE PTR _bTestStrategyEnd$225733[esp+68], 0
+	cmp	BYTE PTR _bTestStrategyEnd$226210[esp+68], 0
 	je	$LN126@DoTurn
 
 ; 806  : 				}
@@ -36173,10 +36173,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?DoTurn@CvEconomicAI@@QAEXXZ$0:
-	lea	ecx, DWORD PTR _strStrategyName$225745[ebp]
+	lea	ecx, DWORD PTR _strStrategyName$226222[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?DoTurn@CvEconomicAI@@QAEXXZ$1:
-	lea	ecx, DWORD PTR _args$225870[ebp]
+	lea	ecx, DWORD PTR _args$226347[ebp]
 	jmp	??1CvLuaArgsHandle@@QAE@XZ		; CvLuaArgsHandle::~CvLuaArgsHandle
 __ehhandler$?DoTurn@CvEconomicAI@@QAEXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?DoTurn@CvEconomicAI@@QAEXXZ

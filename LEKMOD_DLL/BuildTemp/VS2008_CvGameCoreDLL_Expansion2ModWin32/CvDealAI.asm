@@ -12,17 +12,17 @@ INCLUDELIB OLDNAMES
 PUBLIC	?NO_QUEST_DATA@CvMinorCivQuest@@2HB		; CvMinorCivQuest::NO_QUEST_DATA
 PUBLIC	?NO_TURN@CvMinorCivQuest@@2HB			; CvMinorCivQuest::NO_TURN
 CONST	SEGMENT
-$SG221889 DB	00H
+$SG222366 DB	00H
 	ORG $+7
-$SG222052 DB	'Deal AI: ASYNC RAND call to determine if AI will give in'
+$SG222529 DB	'Deal AI: ASYNC RAND call to determine if AI will give in'
 	DB	'to a human demand.', 00H
 	ORG $+1
-$SG222237 DB	'GAMEOPTION_AI_TWEAKS', 00H
+$SG222714 DB	'GAMEOPTION_AI_TWEAKS', 00H
 	ORG $+3
-$SG222238 DB	'GAMEOPTION_AI_GIMP_ALWAYS_WHITE_PEACE', 00H
+$SG222715 DB	'GAMEOPTION_AI_GIMP_ALWAYS_WHITE_PEACE', 00H
 	ORG $+2
-$SG222644 DB	'AIGRANDSTRATEGY_CULTURE', 00H
-$SG222661 DB	'AIGRANDSTRATEGY_CULTURE', 00H
+$SG223121 DB	'AIGRANDSTRATEGY_CULTURE', 00H
+$SG223138 DB	'AIGRANDSTRATEGY_CULTURE', 00H
 CONST	ENDS
 ;	COMDAT ?NO_TURN@CvMinorCivQuest@@2HB
 CONST	SEGMENT
@@ -3194,11 +3194,11 @@ xdata$x	ENDS
 ;	COMDAT ?DoAcceptedDeal@CvDealAI@@QAEXW4PlayerTypes@@ABVCvDeal@@HHH@Z
 _TEXT	SEGMENT
 _iDealType$ = -20					; size = 4
-$T225617 = -16						; size = 4
+$T226094 = -16						; size = 4
 __$EHRec$ = -12						; size = 12
-$T225709 = 8						; size = 4
-$T225671 = 8						; size = 4
-_szText$222000 = 8					; size = 4
+$T226186 = 8						; size = 4
+$T226148 = 8						; size = 4
+_szText$222477 = 8					; size = 4
 _eFromPlayer$ = 8					; size = 4
 _kDeal$ = 12						; size = 4
 _iDealValueToMe$ = 16					; size = 4
@@ -3277,7 +3277,7 @@ $LN16@DoAccepted:
 
 	sub	esp, 76					; 0000004cH
 	mov	ecx, esp
-	mov	DWORD PTR $T225617[esp+112], esp
+	mov	DWORD PTR $T226094[esp+112], esp
 	push	ebp
 	call	??0CvDeal@@QAE@ABV0@@Z			; CvDeal::CvDeal
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
@@ -3351,9 +3351,9 @@ $LN13@DoAccepted:
 	mov	ecx, DWORD PTR [esi]
 	mov	edx, DWORD PTR [ecx+44]
 	mov	ecx, ebp
-	mov	DWORD PTR $T225671[esp+32], edx
+	mov	DWORD PTR $T226148[esp+32], edx
 	call	?GetDemandingPlayer@CvDeal@@QBE?AW4PlayerTypes@@XZ ; CvDeal::GetDemandingPlayer
-	cmp	eax, DWORD PTR $T225671[esp+32]
+	cmp	eax, DWORD PTR $T226148[esp+32]
 	jne	SHORT $LN12@DoAccepted
 
 ; 224  : 		{
@@ -3411,10 +3411,10 @@ $LN12@DoAccepted:
 
 	mov	eax, DWORD PTR [esi]
 	mov	ecx, DWORD PTR [eax+44]
-	mov	DWORD PTR $T225709[esp+32], ecx
+	mov	DWORD PTR $T226186[esp+32], ecx
 	mov	ecx, ebp
 	call	?GetRequestingPlayer@CvDeal@@QBE?AW4PlayerTypes@@XZ ; CvDeal::GetRequestingPlayer
-	cmp	eax, DWORD PTR $T225709[esp+32]
+	cmp	eax, DWORD PTR $T226186[esp+32]
 	jne	SHORT $LN10@DoAccepted
 
 ; 236  : 		{
@@ -3502,7 +3502,7 @@ $LN10@DoAccepted:
 	call	?GetDiplomacyAI@CvPlayer@@QBEPAVCvDiplomacyAI@@XZ ; CvPlayer::GetDiplomacyAI
 	mov	ecx, eax
 	call	?GetDiploStringForMessage@CvDiplomacyAI@@QAEPBDW4DiploMessageTypes@@W4PlayerTypes@@@Z ; CvDiplomacyAI::GetDiploStringForMessage
-	mov	DWORD PTR _szText$222000[esp+32], eax
+	mov	DWORD PTR _szText$222477[esp+32], eax
 
 ; 260  : 			eAnimation = LEADERHEAD_ANIM_YES;
 ; 261  : 			GetPlayer()->GetDiplomacyAI()->ChangeRecentTradeValue(eFromPlayer, (iDealValueToMe / 2));
@@ -3524,7 +3524,7 @@ $LN7@DoAccepted:
 	call	?GetDiplomacyAI@CvPlayer@@QBEPAVCvDiplomacyAI@@XZ ; CvPlayer::GetDiplomacyAI
 	mov	ecx, eax
 	call	?GetDiploStringForMessage@CvDiplomacyAI@@QAEPBDW4DiploMessageTypes@@W4PlayerTypes@@@Z ; CvDiplomacyAI::GetDiploStringForMessage
-	mov	DWORD PTR _szText$222000[esp+32], eax
+	mov	DWORD PTR _szText$222477[esp+32], eax
 
 ; 253  : 			eAnimation = LEADERHEAD_ANIM_YES;
 ; 254  : 			GetPlayer()->GetDiplomacyAI()->ChangeRecentTradeValue(eFromPlayer, iDealValueToMe);
@@ -3583,7 +3583,7 @@ $LN4@DoAccepted:
 
 ; 275  : 			gDLL->GameplayDiplomacyAILeaderMessage(GetPlayer()->GetID(), eUIState, szText, eAnimation);
 
-	mov	eax, DWORD PTR _szText$222000[esp+32]
+	mov	eax, DWORD PTR _szText$222477[esp+32]
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8564
 	mov	edx, DWORD PTR [ecx]
 	mov	edx, DWORD PTR [edx+736]
@@ -3637,7 +3637,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?DoAcceptedDeal@CvDealAI@@QAEXW4PlayerTypes@@ABVCvDeal@@HHH@Z$0:
-	mov	ecx, DWORD PTR $T225617[ebp]
+	mov	ecx, DWORD PTR $T226094[ebp]
 	jmp	??1CvDeal@@UAE@XZ			; CvDeal::~CvDeal
 __ehhandler$?DoAcceptedDeal@CvDealAI@@QAEXW4PlayerTypes@@ABVCvDeal@@HHH@Z:
 	mov	eax, OFFSET __ehfuncinfo$?DoAcceptedDeal@CvDealAI@@QAEXW4PlayerTypes@@ABVCvDeal@@HHH@Z
@@ -3648,7 +3648,7 @@ PUBLIC	?DoAcceptedDemand@CvDealAI@@QAEXW4PlayerTypes@@ABVCvDeal@@@Z ; CvDealAI::
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?DoAcceptedDemand@CvDealAI@@QAEXW4PlayerTypes@@ABVCvDeal@@@Z
 _TEXT	SEGMENT
-$T225824 = -4						; size = 4
+$T226301 = -4						; size = 4
 _eFromPlayer$ = 8					; size = 4
 _kDeal$ = 12						; size = 4
 ?DoAcceptedDemand@CvDealAI@@QAEXW4PlayerTypes@@ABVCvDeal@@@Z PROC ; CvDealAI::DoAcceptedDemand, COMDAT
@@ -3688,7 +3688,7 @@ _kDeal$ = 12						; size = 4
 	mov	eax, DWORD PTR [ebx]
 	mov	ebx, DWORD PTR [eax+44]
 	mov	ecx, esp
-	mov	DWORD PTR $T225824[esp+96], esp
+	mov	DWORD PTR $T226301[esp+96], esp
 	push	edx
 	call	??0CvDeal@@QAE@ABV0@@Z			; CvDeal::CvDeal
 	mov	ecx, edi
@@ -4613,8 +4613,8 @@ EXTRN	?getResourceInfo@CvGlobals@@QAEPAVCvResourceInfo@@W4ResourceTypes@@@Z:PROC
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?GetResourceValue@CvDealAI@@QAEHW4ResourceTypes@@HH_NW4PlayerTypes@@@Z
 _TEXT	SEGMENT
-$T225926 = -4						; size = 4
-$T225925 = 8						; size = 4
+$T226403 = -4						; size = 4
+$T226402 = 8						; size = 4
 _eResource$ = 8						; size = 4
 _iResourceQuantity$ = 12				; size = 4
 _iNumTurns$ = 16					; size = 4
@@ -4797,12 +4797,12 @@ $LN23@GetResourc:
 
 	mov	ecx, DWORD PTR [ebp]
 	call	?getNumCities@CvPlayer@@QBEHXZ		; CvPlayer::getNumCities
-	mov	DWORD PTR $T225925[esp+16], eax
+	mov	DWORD PTR $T226402[esp+16], eax
 	cmp	eax, 5
-	mov	DWORD PTR $T225926[esp+20], 5
-	lea	eax, DWORD PTR $T225925[esp+16]
+	mov	DWORD PTR $T226403[esp+20], 5
+	lea	eax, DWORD PTR $T226402[esp+16]
 	jg	SHORT $LN59@GetResourc
-	lea	eax, DWORD PTR $T225926[esp+20]
+	lea	eax, DWORD PTR $T226403[esp+20]
 $LN59@GetResourc:
 	mov	ecx, DWORD PTR _iResourceQuantity$[esp+16]
 	cmp	ecx, DWORD PTR [eax]
@@ -5070,20 +5070,20 @@ EXTRN	?getPopulation@CvCity@@QBEHXZ:PROC		; CvCity::getPopulation
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?GetCityValue@CvDealAI@@QAEHHH_NW4PlayerTypes@@0@Z
 _TEXT	SEGMENT
-_iGoldValueOfResourcePlots$222530 = -40			; size = 4
+_iGoldValueOfResourcePlots$223007 = -40			; size = 4
 _this$ = -36						; size = 4
-_iGoldValueOfImprovedPlots$222529 = -32			; size = 4
-_iGoldValueOfPlots$222528 = -28				; size = 4
+_iGoldValueOfImprovedPlots$223006 = -32			; size = 4
+_iGoldValueOfPlots$223005 = -28				; size = 4
 _pCity$ = -24						; size = 4
-_goldPerPlot$222527 = -20				; size = 4
-_iI$222531 = -16					; size = 4
-$T226035 = -12						; size = 4
-$T226033 = -12						; size = 4
-_eUsage$222543 = -12					; size = 4
-$T226034 = -8						; size = 4
-_iNumTurns$222546 = -8					; size = 4
-_iCityLoop$222575 = -4					; size = 4
-_eResource$222539 = -4					; size = 4
+_goldPerPlot$223004 = -20				; size = 4
+_iI$223008 = -16					; size = 4
+$T226512 = -12						; size = 4
+$T226510 = -12						; size = 4
+_eUsage$223020 = -12					; size = 4
+$T226511 = -8						; size = 4
+_iNumTurns$223023 = -8					; size = 4
+_iCityLoop$223052 = -4					; size = 4
+_eResource$223016 = -4					; size = 4
 _iX$ = 8						; size = 4
 _iY$ = 12						; size = 4
 _bFromMe$ = 16						; size = 1
@@ -5217,20 +5217,20 @@ $LN46@GetCityVal:
 ; 1333 : 		int iGoldValueOfPlots = 0;
 
 	xor	ebp, ebp
-	mov	DWORD PTR _goldPerPlot$222527[esp+56], eax
-	mov	DWORD PTR _iGoldValueOfPlots$222528[esp+56], ebp
+	mov	DWORD PTR _goldPerPlot$223004[esp+56], eax
+	mov	DWORD PTR _iGoldValueOfPlots$223005[esp+56], ebp
 
 ; 1334 : 		int iGoldValueOfImprovedPlots = 0;
 
-	mov	DWORD PTR _iGoldValueOfImprovedPlots$222529[esp+56], ebp
+	mov	DWORD PTR _iGoldValueOfImprovedPlots$223006[esp+56], ebp
 
 ; 1335 : 		int iGoldValueOfResourcePlots = 0;
 
-	mov	DWORD PTR _iGoldValueOfResourcePlots$222530[esp+56], ebp
+	mov	DWORD PTR _iGoldValueOfResourcePlots$223007[esp+56], ebp
 
 ; 1336 : 		for(int iI = 0; iI < NUM_CITY_PLOTS; iI++)
 
-	mov	DWORD PTR _iI$222531[esp+56], ebp
+	mov	DWORD PTR _iI$223008[esp+56], ebp
 	jmp	SHORT $LN34@GetCityVal
 $LL202@GetCityVal:
 	mov	edi, DWORD PTR _pCity$[esp+56]
@@ -5265,8 +5265,8 @@ $LN34@GetCityVal:
 ; 1342 : 				{
 ; 1343 : 					iGoldValueOfPlots += goldPerPlot; // this is a bargain, but at least it's in the ballpark
 
-	mov	eax, DWORD PTR _goldPerPlot$222527[esp+56]
-	add	DWORD PTR _iGoldValueOfPlots$222528[esp+56], eax
+	mov	eax, DWORD PTR _goldPerPlot$223004[esp+56]
+	add	DWORD PTR _iGoldValueOfPlots$223005[esp+56], eax
 $LN203@GetCityVal:
 
 ; 1344 : 				}
@@ -5280,9 +5280,9 @@ $LN203@GetCityVal:
 ; 1346 : 				{
 ; 1347 : 					iGoldValueOfImprovedPlots += goldPerPlot * 25;
 
-	mov	ecx, DWORD PTR _goldPerPlot$222527[esp+56]
+	mov	ecx, DWORD PTR _goldPerPlot$223004[esp+56]
 	imul	ecx, 25					; 00000019H
-	add	DWORD PTR _iGoldValueOfImprovedPlots$222529[esp+56], ecx
+	add	DWORD PTR _iGoldValueOfImprovedPlots$223006[esp+56], ecx
 $LN29@GetCityVal:
 
 ; 1348 : 				}
@@ -5303,7 +5303,7 @@ $LN100@GetCityVal:
 	push	eax
 	mov	ecx, esi
 	call	?getNonObsoleteResourceType@CvPlot@@QBE?AW4ResourceTypes@@W4TeamTypes@@@Z ; CvPlot::getNonObsoleteResourceType
-	mov	DWORD PTR _eResource$222539[esp+56], eax
+	mov	DWORD PTR _eResource$223016[esp+56], eax
 
 ; 1350 : 				if(eResource != NO_RESOURCE)
 
@@ -5332,14 +5332,14 @@ $LN100@GetCityVal:
 ; 1356 : 						int iResourceQuantity = pLoopPlot->getNumResource();
 
 	mov	ecx, esi
-	mov	DWORD PTR _eUsage$222543[esp+56], eax
+	mov	DWORD PTR _eUsage$223020[esp+56], eax
 	call	?getNumResource@CvPlot@@QBEHXZ		; CvPlot::getNumResource
 	mov	edi, eax
 
 ; 1357 : 						// Luxury Resource
 ; 1358 : 						if(eUsage == RESOURCEUSAGE_LUXURY)
 
-	mov	eax, DWORD PTR _eUsage$222543[esp+56]
+	mov	eax, DWORD PTR _eUsage$223020[esp+56]
 	cmp	eax, 2
 	jne	$LN26@GetCityVal
 
@@ -5357,22 +5357,22 @@ $LN100@GetCityVal:
 	call	?getGameTurn@CvGame@@QAEHXZ		; CvGame::getGameTurn
 	sub	esi, eax
 	cmp	esi, 1
-	mov	DWORD PTR $T226033[esp+56], esi
-	mov	DWORD PTR $T226034[esp+56], 1
-	lea	eax, DWORD PTR $T226033[esp+56]
+	mov	DWORD PTR $T226510[esp+56], esi
+	mov	DWORD PTR $T226511[esp+56], 1
+	lea	eax, DWORD PTR $T226510[esp+56]
 	jl	SHORT $LN111@GetCityVal
-	lea	eax, DWORD PTR $T226034[esp+56]
+	lea	eax, DWORD PTR $T226511[esp+56]
 $LN111@GetCityVal:
 	mov	eax, DWORD PTR [eax]
-	mov	DWORD PTR _iNumTurns$222546[esp+56], eax
+	mov	DWORD PTR _iNumTurns$223023[esp+56], eax
 
 ; 1365 : 							iNumTurns = max(120,iNumTurns); // let's not go hog wild here
 
 	cmp	eax, 120				; 00000078H
-	mov	DWORD PTR $T226035[esp+56], 120		; 00000078H
-	lea	eax, DWORD PTR _iNumTurns$222546[esp+56]
+	mov	DWORD PTR $T226512[esp+56], 120		; 00000078H
+	lea	eax, DWORD PTR _iNumTurns$223023[esp+56]
 	jg	SHORT $LN115@GetCityVal
-	lea	eax, DWORD PTR $T226035[esp+56]
+	lea	eax, DWORD PTR $T226512[esp+56]
 $LN115@GetCityVal:
 	mov	esi, DWORD PTR [eax]
 
@@ -5386,7 +5386,7 @@ $LN115@GetCityVal:
 
 	imul	eax, esi
 	mov	esi, eax
-	mov	eax, DWORD PTR _iGoldValueOfResourcePlots$222530[esp+56]
+	mov	eax, DWORD PTR _iGoldValueOfResourcePlots$223007[esp+56]
 	imul	esi, edi
 
 ; 1369 : 							// If we only have 1 of a Luxury then we value it much more
@@ -5394,14 +5394,14 @@ $LN115@GetCityVal:
 
 	cmp	BYTE PTR _bFromMe$[esp+52], 0
 	lea	ecx, DWORD PTR [eax+esi*2]
-	mov	DWORD PTR _iGoldValueOfResourcePlots$222530[esp+56], ecx
+	mov	DWORD PTR _iGoldValueOfResourcePlots$223007[esp+56], ecx
 	je	SHORT $LN33@GetCityVal
 
 ; 1371 : 							{
 ; 1372 : 								if(GetPlayer()->getNumResourceAvailable(eResource) == 1)
 
 	mov	edx, DWORD PTR _this$[esp+56]
-	mov	eax, DWORD PTR _eResource$222539[esp+56]
+	mov	eax, DWORD PTR _eResource$223016[esp+56]
 	mov	ecx, DWORD PTR [edx]
 	push	1
 	push	eax
@@ -5412,9 +5412,9 @@ $LN115@GetCityVal:
 ; 1373 : 								{
 ; 1374 : 									iGoldValueOfResourcePlots += (iResourceQuantity * iHappinessFromResource * iNumTurns * 4);
 
-	mov	ecx, DWORD PTR _iGoldValueOfResourcePlots$222530[esp+56]
+	mov	ecx, DWORD PTR _iGoldValueOfResourcePlots$223007[esp+56]
 	lea	edx, DWORD PTR [ecx+esi*4]
-	mov	DWORD PTR _iGoldValueOfResourcePlots$222530[esp+56], edx
+	mov	DWORD PTR _iGoldValueOfResourcePlots$223007[esp+56], edx
 
 ; 1375 : 								}
 ; 1376 : 							}
@@ -5440,12 +5440,12 @@ $LN26@GetCityVal:
 	mov	eax, edx
 	shr	eax, 31					; 0000001fH
 	add	eax, edx
-	add	DWORD PTR _iGoldValueOfResourcePlots$222530[esp+56], eax
+	add	DWORD PTR _iGoldValueOfResourcePlots$223007[esp+56], eax
 $LN33@GetCityVal:
-	mov	ebp, DWORD PTR _iI$222531[esp+56]
+	mov	ebp, DWORD PTR _iI$223008[esp+56]
 	inc	ebp
 	cmp	ebp, 37					; 00000025H
-	mov	DWORD PTR _iI$222531[esp+56], ebp
+	mov	DWORD PTR _iI$223008[esp+56], ebp
 	jl	$LL202@GetCityVal
 
 ; 1383 : 						}
@@ -5456,7 +5456,7 @@ $LN33@GetCityVal:
 ; 1388 : 		iGoldValueOfImprovedPlots /= 100;
 
 	mov	eax, 1374389535				; 51eb851fH
-	imul	DWORD PTR _iGoldValueOfImprovedPlots$222529[esp+56]
+	imul	DWORD PTR _iGoldValueOfImprovedPlots$223006[esp+56]
 	sar	edx, 5
 	mov	ecx, edx
 	shr	ecx, 31					; 0000001fH
@@ -5465,8 +5465,8 @@ $LN33@GetCityVal:
 ; 1389 : 
 ; 1390 : 		iItemValue = iItemValue + iGoldValueOfPlots + iGoldValueOfImprovedPlots + iGoldValueOfResourcePlots;
 
-	add	ecx, DWORD PTR _iGoldValueOfResourcePlots$222530[esp+56]
-	add	ecx, DWORD PTR _iGoldValueOfPlots$222528[esp+56]
+	add	ecx, DWORD PTR _iGoldValueOfResourcePlots$223007[esp+56]
+	add	ecx, DWORD PTR _iGoldValueOfPlots$223005[esp+56]
 	add	ebx, ecx
 
 ; 1391 : 
@@ -5682,7 +5682,7 @@ $LN162@GetCityVal:
 
 	mov	ecx, DWORD PTR [edi]
 	push	0
-	lea	eax, DWORD PTR _iCityLoop$222575[esp+60]
+	lea	eax, DWORD PTR _iCityLoop$223052[esp+60]
 	push	eax
 	mov	esi, 99					; 00000063H
 	call	?firstCity@CvPlayer@@QAEPAVCvCity@@PAH_N@Z ; CvPlayer::firstCity
@@ -5724,7 +5724,7 @@ $LN5@GetCityVal:
 
 	mov	ecx, DWORD PTR [edi]
 	push	0
-	lea	edx, DWORD PTR _iCityLoop$222575[esp+60]
+	lea	edx, DWORD PTR _iCityLoop$223052[esp+60]
 	push	edx
 	call	?nextCity@CvPlayer@@QAEPAVCvCity@@PAH_N@Z ; CvPlayer::nextCity
 	test	eax, eax
@@ -6151,7 +6151,7 @@ $LN21@GetOpenBor:
 ; 1619 : 		AIGrandStrategyTypes eCultureStrategy = (AIGrandStrategyTypes) GC.getInfoTypeForString("AIGRANDSTRATEGY_CULTURE");
 
 	push	0
-	push	OFFSET $SG222644
+	push	OFFSET $SG223121
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	ebx, eax
@@ -6306,7 +6306,7 @@ $LN10@GetOpenBor:
 ; 1665 : 		AIGrandStrategyTypes eCultureStrategy = (AIGrandStrategyTypes) GC.getInfoTypeForString("AIGRANDSTRATEGY_CULTURE");
 
 	push	0
-	push	OFFSET $SG222661
+	push	OFFSET $SG223138
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	ebx, eax
@@ -6743,9 +6743,9 @@ EXTRN	?GetCurrentEra@CvTeam@@QBE?AW4EraTypes@@XZ:PROC	; CvTeam::GetCurrentEra
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?GetResearchAgreementValue@CvDealAI@@QAEH_NW4PlayerTypes@@0@Z
 _TEXT	SEGMENT
-$T226556 = 8						; size = 4
+$T227033 = 8						; size = 4
 _bFromMe$ = 8						; size = 1
-$T226557 = 12						; size = 4
+$T227034 = 12						; size = 4
 _eOtherPlayer$ = 12					; size = 4
 _bUseEvenValue$ = 16					; size = 1
 ?GetResearchAgreementValue@CvDealAI@@QAEH_NW4PlayerTypes@@0@Z PROC ; CvDealAI::GetResearchAgreementValue, COMDAT
@@ -6816,12 +6816,12 @@ $LN33@GetResearc:
 ; 1846 : 		int iAdditionalValue = iItemValue * max(0,(int)(eTheirEra-eMyEra));
 
 	sub	eax, esi
-	mov	DWORD PTR $T226556[esp+12], eax
+	mov	DWORD PTR $T227033[esp+12], eax
 	test	eax, eax
-	mov	DWORD PTR $T226557[esp+12], 0
-	lea	eax, DWORD PTR $T226556[esp+12]
+	mov	DWORD PTR $T227034[esp+12], 0
+	lea	eax, DWORD PTR $T227033[esp+12]
 	jg	SHORT $LN42@GetResearc
-	lea	eax, DWORD PTR $T226557[esp+12]
+	lea	eax, DWORD PTR $T227034[esp+12]
 $LN42@GetResearc:
 
 ; 1847 : 		iItemValue += iAdditionalValue;
@@ -8235,8 +8235,8 @@ _eOtherPlayer$ = 12					; size = 4
 _iProposalID$ = 16					; size = 4
 _iVoteChoice$ = 20					; size = 4
 tv347 = 24						; size = 4
-$T226925 = 24						; size = 4
-_fVotesRatio$222904 = 24				; size = 4
+$T227402 = 24						; size = 4
+_fVotesRatio$223381 = 24				; size = 4
 _iNumVotes$ = 24					; size = 4
 _bRepeal$ = 28						; size = 1
 _bUseEvenValue$ = 32					; size = 1
@@ -8586,11 +8586,11 @@ $LN74@GetVoteCom:
 	mov	DWORD PTR tv347[esp+16], eax
 	fild	DWORD PTR tv347[esp+16]
 	fdivr	DWORD PTR tv325[esp+20]
-	fstp	DWORD PTR _fVotesRatio$222904[esp+16]
+	fstp	DWORD PTR _fVotesRatio$223381[esp+16]
 
 ; 2361 : 				if (fVotesRatio > 0.5f)
 
-	fld	DWORD PTR _fVotesRatio$222904[esp+16]
+	fld	DWORD PTR _fVotesRatio$223381[esp+16]
 	fld	DWORD PTR __real@3f000000
 	fcomp	ST(1)
 	fnstsw	ax
@@ -8639,8 +8639,8 @@ $LN68@GetVoteCom:
 ; 2378 : 
 ; 2379 : 	iValue = MAX(iValue, 0);
 
-	mov	DWORD PTR $T226925[esp+16], 0
-	lea	eax, DWORD PTR $T226925[esp+16]
+	mov	DWORD PTR $T227402[esp+16], 0
+	lea	eax, DWORD PTR $T227402[esp+16]
 	test	edi, edi
 	jl	SHORT $LN57@GetVoteCom
 	lea	eax, DWORD PTR _iValue$[esp+16]
@@ -10283,9 +10283,9 @@ PUBLIC	??$_Unguarded_partition@PAUWeightedElement@?$CvWeightedVector@H$00$0A@@@@
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\algorithm
 ;	COMDAT ??$_Unguarded_partition@PAUWeightedElement@?$CvWeightedVector@H$00$0A@@@@std@@YA?AU?$pair@PAUWeightedElement@?$CvWeightedVector@H$00$0A@@@PAU12@@0@PAUWeightedElement@?$CvWeightedVector@H$00$0A@@@0@Z
 _TEXT	SEGMENT
-__Tmp$227918 = -24					; size = 8
-__Tmp$227847 = -16					; size = 8
-__Tmp$227873 = -8					; size = 8
+__Tmp$228398 = -24					; size = 8
+__Tmp$228325 = -16					; size = 8
+__Tmp$228351 = -8					; size = 8
 ___$ReturnUdt$ = 8					; size = 4
 __First$ = 12						; size = 4
 __Last$ = 16						; size = 4
@@ -10412,12 +10412,12 @@ $LL21@Unguarded_:
 	je	SHORT $LN20@Unguarded_
 	mov	ebp, DWORD PTR [edx+4]
 	mov	edi, DWORD PTR [edx]
-	mov	DWORD PTR __Tmp$227847[esp+44], ebp
+	mov	DWORD PTR __Tmp$228325[esp+44], ebp
 	mov	ebp, DWORD PTR [eax]
 	mov	DWORD PTR [edx], ebp
 	mov	ebp, DWORD PTR [eax+4]
 	mov	DWORD PTR [edx+4], ebp
-	mov	edx, DWORD PTR __Tmp$227847[esp+44]
+	mov	edx, DWORD PTR __Tmp$228325[esp+44]
 	mov	DWORD PTR [eax], edi
 	mov	DWORD PTR [eax+4], edx
 $LN20@Unguarded_:
@@ -10454,13 +10454,13 @@ $LL14@Unguarded_:
 	je	SHORT $LN13@Unguarded_
 	mov	ebp, DWORD PTR [ecx+4]
 	mov	edi, DWORD PTR [ecx]
-	mov	DWORD PTR __Tmp$227873[esp+44], ebp
+	mov	DWORD PTR __Tmp$228351[esp+44], ebp
 	mov	ebp, DWORD PTR [edx]
 	mov	DWORD PTR [ecx], ebp
 	mov	ebp, DWORD PTR [edx+4]
 	mov	DWORD PTR [ecx+4], ebp
 	mov	DWORD PTR [edx], edi
-	mov	edi, DWORD PTR __Tmp$227873[esp+44]
+	mov	edi, DWORD PTR __Tmp$228351[esp+44]
 	mov	DWORD PTR [edx+4], edi
 $LN13@Unguarded_:
 	sub	ebx, 8
@@ -10510,16 +10510,16 @@ $LN64@Unguarded_:
 	cmp	edi, edx
 	je	$LL23@Unguarded_
 	mov	ebp, DWORD PTR [edi]
-	mov	DWORD PTR __Tmp$227918[esp+40], ebp
+	mov	DWORD PTR __Tmp$228398[esp+40], ebp
 	mov	ebp, DWORD PTR [edi+4]
-	mov	DWORD PTR __Tmp$227918[esp+44], ebp
+	mov	DWORD PTR __Tmp$228398[esp+44], ebp
 	mov	ebp, DWORD PTR [edx]
 	mov	DWORD PTR [edi], ebp
 	mov	ebp, DWORD PTR [edx+4]
 	mov	DWORD PTR [edi+4], ebp
-	mov	edi, DWORD PTR __Tmp$227918[esp+40]
+	mov	edi, DWORD PTR __Tmp$228398[esp+40]
 	mov	DWORD PTR [edx], edi
-	mov	edi, DWORD PTR __Tmp$227918[esp+44]
+	mov	edi, DWORD PTR __Tmp$228398[esp+44]
 	mov	DWORD PTR [edx+4], edi
 	jmp	$LL23@Unguarded_
 $LN6@Unguarded_:
@@ -11256,19 +11256,19 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 _eResponse$ = -128					; size = 4
 _iValueWillingToGiveUp$ = -124				; size = 4
-_iGPT$222056 = -120					; size = 4
-_eMilitaryStrength$222025 = -120			; size = 4
-_iModdedGoldValue$222058 = -116				; size = 4
-_eMilitaryPosture$222026 = -116				; size = 4
+_iGPT$222533 = -120					; size = 4
+_eMilitaryStrength$222502 = -120			; size = 4
+_iModdedGoldValue$222535 = -116				; size = 4
+_eMilitaryPosture$222503 = -116				; size = 4
 _eFromPlayer$ = -112					; size = 4
-_pDllDeal$222197 = -108					; size = 4
+_pDllDeal$222674 = -108					; size = 4
 _eMyPlayer$ = -108					; size = 4
 _this$ = -104						; size = 4
-$T228218 = -100						; size = 4
-_iTempGold$222057 = -100				; size = 4
-$T228217 = -96						; size = 8
-$T228215 = -96						; size = 8
-_kDeal$222195 = -88					; size = 76
+$T228695 = -100						; size = 4
+_iTempGold$222534 = -100				; size = 4
+$T228694 = -96						; size = 8
+$T228692 = -96						; size = 8
+_kDeal$222672 = -88					; size = 76
 __$EHRec$ = -12						; size = 12
 _pDeal$ = 8						; size = 4
 ?DoHumanDemand@CvDealAI@@QAE?AW4DemandResponseTypes@@PAVCvDeal@@@Z PROC ; CvDealAI::DoHumanDemand, COMDAT
@@ -11356,7 +11356,7 @@ $LN44@DoHumanDem:
 
 	push	ebx
 	mov	ecx, esi
-	mov	DWORD PTR _eMilitaryStrength$222025[esp+148], eax
+	mov	DWORD PTR _eMilitaryStrength$222502[esp+148], eax
 	call	?GetMilitaryAggressivePosture@CvDiplomacyAI@@QBE?AW4AggressivePostureTypes@@W4PlayerTypes@@@Z ; CvDiplomacyAI::GetMilitaryAggressivePosture
 
 ; 305  : 		PlayerProximityTypes eProximity = GET_PLAYER(eMyPlayer).GetProximityToPlayer(eFromPlayer);
@@ -11364,7 +11364,7 @@ $LN44@DoHumanDem:
 	mov	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	add	ecx, edi
 	push	ebx
-	mov	DWORD PTR _eMilitaryPosture$222026[esp+148], eax
+	mov	DWORD PTR _eMilitaryPosture$222503[esp+148], eax
 	call	?GetProximityToPlayer@CvPlayer@@QBE?AW4PlayerProximityTypes@@W4PlayerTypes@@@Z ; CvPlayer::GetProximityToPlayer
 
 ; 306  : 
@@ -11402,7 +11402,7 @@ $LN40@DoHumanDem:
 ; 315  : 		// Our military is stronger: AI will never give in
 ; 316  : 		else if(eMilitaryStrength < STRENGTH_AVERAGE)
 
-	cmp	DWORD PTR _eMilitaryStrength$222025[esp+144], 3
+	cmp	DWORD PTR _eMilitaryStrength$222502[esp+144], 3
 	jge	SHORT $LN38@DoHumanDem
 
 ; 317  : 			eResponse = DEMAND_RESPONSE_REFUSE_WEAK;
@@ -11417,7 +11417,7 @@ $LN38@DoHumanDem:
 
 	cmp	edi, eax
 	jg	SHORT $LN197@DoHumanDem
-	cmp	DWORD PTR _eMilitaryPosture$222026[esp+144], 0
+	cmp	DWORD PTR _eMilitaryPosture$222503[esp+144], 0
 	jne	SHORT $LN197@DoHumanDem
 
 ; 321  : 			eResponse = DEMAND_RESPONSE_REFUSE_WEAK;
@@ -11473,7 +11473,7 @@ $LN34@DoHumanDem:
 ; 340  : 				// How strong are they compared to us?
 ; 341  : 				switch(eMilitaryStrength)
 
-	mov	eax, DWORD PTR _eMilitaryStrength$222025[esp+144]
+	mov	eax, DWORD PTR _eMilitaryStrength$222502[esp+144]
 	cmp	eax, 6
 	ja	SHORT $LN23@DoHumanDem
 	jmp	DWORD PTR $LN203@DoHumanDem[eax*4]
@@ -11574,7 +11574,7 @@ $LN23@DoHumanDem:
 ; 379  : 			int iAsyncRand = GC.getGame().getAsyncRandNum(100, "Deal AI: ASYNC RAND call to determine if AI will give into a human demand.");
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
-	push	OFFSET $SG222052
+	push	OFFSET $SG222529
 	push	100					; 00000064H
 	call	?getAsyncRandNum@CvGame@@QAEHHPBD@Z	; CvGame::getAsyncRandNum
 
@@ -11621,15 +11621,15 @@ $LN194@DoHumanDem:
 ; 402  : 		for(it = pDeal->m_TradedItems.begin(); it != pDeal->m_TradedItems.end(); ++it)
 
 	mov	esi, DWORD PTR _pDeal$[esp+140]
-	mov	DWORD PTR _iGPT$222056[esp+144], eax
-	lea	eax, DWORD PTR $T228215[esp+144]
+	mov	DWORD PTR _iGPT$222533[esp+144], eax
+	lea	eax, DWORD PTR $T228692[esp+144]
 	add	esi, 44					; 0000002cH
 	push	eax
 	mov	ecx, esi
 	call	?begin@?$FFastList@UCvTradedItem@@$0BF@$0A@@@QAE?AViterator@1@XZ ; FFastList<CvTradedItem,21,0>::begin
 	mov	ebp, DWORD PTR [eax]
 	mov	ebx, DWORD PTR [eax+4]
-	lea	ecx, DWORD PTR $T228217[esp+144]
+	lea	ecx, DWORD PTR $T228694[esp+144]
 	push	ecx
 	mov	ecx, esi
 	call	?end@?$FFastList@UCvTradedItem@@$0BF@$0A@@@QAE?AViterator@1@XZ ; FFastList<CvTradedItem,21,0>::end
@@ -11668,9 +11668,9 @@ $LN14@DoHumanDem:
 ; 412  : 					iTempGold = it->m_iData1;
 ; 413  : 					if (iGPT > 0)
 
-	cmp	DWORD PTR _iGPT$222056[esp+144], 0
+	cmp	DWORD PTR _iGPT$222533[esp+144], 0
 	mov	ecx, DWORD PTR [eax+20]
-	mov	DWORD PTR _iTempGold$222057[esp+144], ecx
+	mov	DWORD PTR _iTempGold$222534[esp+144], ecx
 	jle	SHORT $LN13@DoHumanDem
 
 ; 414  : 						iModdedGoldValue = iTempGold * 10 / iGPT;
@@ -11678,7 +11678,7 @@ $LN14@DoHumanDem:
 	lea	eax, DWORD PTR [ecx+ecx*4]
 	add	eax, eax
 	cdq
-	idiv	DWORD PTR _iGPT$222056[esp+144]
+	idiv	DWORD PTR _iGPT$222533[esp+144]
 
 ; 415  : 					else
 
@@ -11689,15 +11689,15 @@ $LN13@DoHumanDem:
 
 	xor	eax, eax
 $LN202@DoHumanDem:
-	mov	DWORD PTR _iModdedGoldValue$222058[esp+144], eax
+	mov	DWORD PTR _iModdedGoldValue$222535[esp+144], eax
 
 ; 417  : 
 ; 418  : 					iValueDemanded += max(iTempGold, iModdedGoldValue);
 
 	cmp	ecx, eax
-	lea	eax, DWORD PTR _iModdedGoldValue$222058[esp+144]
+	lea	eax, DWORD PTR _iModdedGoldValue$222535[esp+144]
 	jl	SHORT $LN121@DoHumanDem
-	lea	eax, DWORD PTR _iTempGold$222057[esp+144]
+	lea	eax, DWORD PTR _iTempGold$222534[esp+144]
 $LN121@DoHumanDem:
 	add	edi, DWORD PTR [eax]
 
@@ -11822,7 +11822,7 @@ $LN75@DoHumanDem:
 	mov	eax, DWORD PTR [ebp+8]
 	mov	ebx, DWORD PTR [esi+eax]
 $LN193@DoHumanDem:
-	lea	ecx, DWORD PTR $T228217[esp+144]
+	lea	ecx, DWORD PTR $T228694[esp+144]
 	push	ecx
 	mov	ecx, DWORD PTR _pDeal$[esp+144]
 	add	ecx, 44					; 0000002cH
@@ -11893,7 +11893,7 @@ $LN3@DoHumanDem:
 
 	mov	ecx, DWORD PTR _pDeal$[esp+136]
 	push	ecx
-	lea	ecx, DWORD PTR _kDeal$222195[esp+144]
+	lea	ecx, DWORD PTR _kDeal$222672[esp+144]
 	call	??0CvDeal@@QAE@ABV0@@Z			; CvDeal::CvDeal
 
 ; 485  : 		//gDLL->sendNetDealAccepted(eFromPlayer, GetPlayer()->GetID(), kDeal, -1, -1, -1);
@@ -11909,16 +11909,16 @@ $LN3@DoHumanDem:
 ; 487  : 
 ; 488  : 		auto_ptr<ICvDeal1> pDllDeal = GC.WrapDealPointer(&kDeal);
 
-	lea	ecx, DWORD PTR _kDeal$222195[esp+140]
+	lea	ecx, DWORD PTR _kDeal$222672[esp+140]
 	push	ecx
-	lea	edx, DWORD PTR $T228218[esp+144]
+	lea	edx, DWORD PTR $T228695[esp+144]
 	push	edx
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?WrapDealPointer@CvGlobals@@QAE?AV?$auto_ptr@VICvDeal1@@@std@@PAVCvDeal@@@Z ; CvGlobals::WrapDealPointer
 	mov	esi, DWORD PTR [eax]
 	mov	DWORD PTR [eax], edi
-	mov	DWORD PTR _pDllDeal$222197[esp+140], esi
-	mov	eax, DWORD PTR $T228218[esp+140]
+	mov	DWORD PTR _pDllDeal$222674[esp+140], esi
+	mov	eax, DWORD PTR $T228695[esp+140]
 	mov	BYTE PTR __$EHRec$[esp+148], 1
 	test	eax, eax
 	je	SHORT $LN174@DoHumanDem
@@ -11951,7 +11951,7 @@ $LN174@DoHumanDem:
 	push	esi
 	call	edx
 $LN189@DoHumanDem:
-	lea	ecx, DWORD PTR _kDeal$222195[esp+140]
+	lea	ecx, DWORD PTR _kDeal$222672[esp+140]
 	mov	DWORD PTR __$EHRec$[esp+148], -1
 	call	??1CvDeal@@UAE@XZ			; CvDeal::~CvDeal
 $LN196@DoHumanDem:
@@ -11989,10 +11989,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?DoHumanDemand@CvDealAI@@QAE?AW4DemandResponseTypes@@PAVCvDeal@@@Z$0:
-	lea	ecx, DWORD PTR _kDeal$222195[ebp]
+	lea	ecx, DWORD PTR _kDeal$222672[ebp]
 	jmp	??1CvDeal@@UAE@XZ			; CvDeal::~CvDeal
 __unwindfunclet$?DoHumanDemand@CvDealAI@@QAE?AW4DemandResponseTypes@@PAVCvDeal@@@Z$2:
-	lea	ecx, DWORD PTR _pDllDeal$222197[ebp]
+	lea	ecx, DWORD PTR _pDllDeal$222674[ebp]
 	jmp	??1?$auto_ptr@VICvDeal1@@@std@@QAE@XZ	; std::auto_ptr<ICvDeal1>::~auto_ptr<ICvDeal1>
 __ehhandler$?DoHumanDemand@CvDealAI@@QAE?AW4DemandResponseTypes@@PAVCvDeal@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?DoHumanDemand@CvDealAI@@QAE?AW4DemandResponseTypes@@PAVCvDeal@@@Z
@@ -12008,8 +12008,8 @@ _iDealValue$ = -24					; size = 4
 _eMyPlayer$ = -20					; size = 4
 _bFromMe$ = -16						; size = 1
 _this$ = -12						; size = 4
-$T228634 = -8						; size = 8
-$T228632 = -8						; size = 8
+$T229111 = -8						; size = 8
+$T229109 = -8						; size = 8
 _pDeal$ = 8						; size = 4
 _iValueImOffering$ = 12					; size = 4
 _iValueTheyreOffering$ = 16				; size = 4
@@ -12054,7 +12054,7 @@ _bUseEvenValue$ = 20					; size = 1
 	mov	DWORD PTR _this$[esp+36], ecx
 	mov	ecx, DWORD PTR [eax+44]
 	push	edi
-	lea	edx, DWORD PTR $T228632[esp+40]
+	lea	edx, DWORD PTR $T229109[esp+40]
 	mov	DWORD PTR _eMyPlayer$[esp+40], ecx
 	add	esi, 44					; 0000002cH
 	push	edx
@@ -12063,7 +12063,7 @@ _bUseEvenValue$ = 20					; size = 1
 	call	?begin@?$FFastList@UCvTradedItem@@$0BF@$0A@@@QAE?AViterator@1@XZ ; FFastList<CvTradedItem,21,0>::begin
 	mov	edi, DWORD PTR [eax]
 	mov	ebp, DWORD PTR [eax+4]
-	lea	eax, DWORD PTR $T228634[esp+40]
+	lea	eax, DWORD PTR $T229111[esp+40]
 	push	eax
 	mov	ecx, esi
 	call	?end@?$FFastList@UCvTradedItem@@$0BF@$0A@@@QAE?AViterator@1@XZ ; FFastList<CvTradedItem,21,0>::end
@@ -12195,7 +12195,7 @@ $LN27@GetDealVal:
 	mov	eax, DWORD PTR [edi+8]
 	mov	ebp, DWORD PTR [esi+eax]
 $LN121@GetDealVal:
-	lea	ecx, DWORD PTR $T228634[esp+40]
+	lea	ecx, DWORD PTR $T229111[esp+40]
 	push	ecx
 	mov	ecx, DWORD PTR _pDeal$[esp+40]
 	add	ecx, 44					; 0000002cH
@@ -12259,9 +12259,9 @@ xdata$x	ENDS
 ;	COMDAT ?DoAddVoteCommitmentToThem@CvDealAI@@QAEXPAVCvDeal@@W4PlayerTypes@@_NAAH33H2@Z
 _TEXT	SEGMENT
 _this$ = -120						; size = 4
-_bRepeal$222937 = -116					; size = 1
-_eMyPlayer$222926 = -112				; size = 4
-_vDesiredCommitments$222928 = -108			; size = 96
+_bRepeal$223414 = -116					; size = 1
+_eMyPlayer$223403 = -112				; size = 4
+_vDesiredCommitments$223405 = -108			; size = 96
 __$EHRec$ = -12						; size = 12
 _pDeal$ = 8						; size = 4
 _eThem$ = 12						; size = 4
@@ -12320,7 +12320,7 @@ _bUseEvenValue$ = 36					; size = 1
 	mov	edi, DWORD PTR _eThem$[esp+132]
 	push	edi
 	mov	ecx, ebp
-	mov	DWORD PTR _eMyPlayer$222926[esp+140], ebx
+	mov	DWORD PTR _eMyPlayer$223403[esp+140], ebx
 	call	?IsVoteCommitmentTrade@CvDeal@@QAE_NW4PlayerTypes@@@Z ; CvDeal::IsVoteCommitmentTrade
 	test	al, al
 	jne	$LN269@DoAddVoteC
@@ -12335,7 +12335,7 @@ _bUseEvenValue$ = 36					; size = 1
 
 	mov	ecx, DWORD PTR [esi]
 	push	edi
-	lea	edx, DWORD PTR _vDesiredCommitments$222928[esp+140]
+	lea	edx, DWORD PTR _vDesiredCommitments$223405[esp+140]
 	push	edx
 	call	?GetLeagueAI@CvPlayer@@QBEPAVCvLeagueAI@@XZ ; CvPlayer::GetLeagueAI
 	mov	ecx, eax
@@ -12343,8 +12343,8 @@ _bUseEvenValue$ = 36					; size = 1
 
 ; 2412 : 				for (CvLeagueAI::VoteCommitmentList::iterator it = vDesiredCommitments.begin(); it != vDesiredCommitments.end(); ++it)
 
-	mov	ebp, DWORD PTR _vDesiredCommitments$222928[esp+140]
-	mov	ecx, DWORD PTR _vDesiredCommitments$222928[esp+136]
+	mov	ebp, DWORD PTR _vDesiredCommitments$223405[esp+140]
+	mov	ecx, DWORD PTR _vDesiredCommitments$223405[esp+136]
 	lea	eax, DWORD PTR [ebp+ebp*4]
 	lea	edx, DWORD PTR [ecx+eax*4]
 	mov	DWORD PTR __$EHRec$[esp+144], 0
@@ -12365,15 +12365,15 @@ $LL5@DoAddVoteC:
 	mov	edi, DWORD PTR [eax]
 	mov	ebx, DWORD PTR [eax+4]
 	sete	dl
-	mov	BYTE PTR _bRepeal$222937[esp+136], dl
+	mov	BYTE PTR _bRepeal$223414[esp+136], dl
 
 ; 2418 : 
 ; 2419 : 					if (iProposalID != -1 && pDeal->IsPossibleToTradeItem(eThem, eMyPlayer, TRADE_ITEM_VOTE_COMMITMENT, iProposalID, iVoteChoice, iNumVotes, bRepeal))
 
 	cmp	esi, -1
 	je	$LN4@DoAddVoteC
-	mov	ebp, DWORD PTR _bRepeal$222937[esp+136]
-	mov	eax, DWORD PTR _eMyPlayer$222926[esp+136]
+	mov	ebp, DWORD PTR _bRepeal$223414[esp+136]
+	mov	eax, DWORD PTR _eMyPlayer$223403[esp+136]
 	mov	ecx, DWORD PTR _eThem$[esp+132]
 	push	0
 	push	1
@@ -12442,8 +12442,8 @@ $LL5@DoAddVoteC:
 	mov	DWORD PTR [ecx], eax
 $LN266@DoAddVoteC:
 	mov	eax, DWORD PTR tv779[esp+132]
-	mov	ecx, DWORD PTR _vDesiredCommitments$222928[esp+136]
-	mov	ebp, DWORD PTR _vDesiredCommitments$222928[esp+140]
+	mov	ecx, DWORD PTR _vDesiredCommitments$223405[esp+136]
+	mov	ebp, DWORD PTR _vDesiredCommitments$223405[esp+140]
 $LN4@DoAddVoteC:
 	add	eax, 20					; 00000014H
 	lea	edx, DWORD PTR [ebp+ebp*4]
@@ -12471,7 +12471,7 @@ $LL253@DoAddVoteC:
 	sub	ebp, 1
 	jne	SHORT $LL253@DoAddVoteC
 $LN251@DoAddVoteC:
-	lea	eax, DWORD PTR _vDesiredCommitments$222928[esp+148]
+	lea	eax, DWORD PTR _vDesiredCommitments$223405[esp+148]
 	cmp	edi, eax
 	je	SHORT $LN269@DoAddVoteC
 	push	edi
@@ -12496,7 +12496,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?DoAddVoteCommitmentToThem@CvDealAI@@QAEXPAVCvDeal@@W4PlayerTypes@@_NAAH33H2@Z$0:
-	lea	ecx, DWORD PTR _vDesiredCommitments$222928[ebp]
+	lea	ecx, DWORD PTR _vDesiredCommitments$223405[ebp]
 	jmp	??1?$FStaticVector@UVoteCommitment@CvLeagueAI@@$03$0A@$0BCJ@$0A@@@QAE@XZ ; FStaticVector<CvLeagueAI::VoteCommitment,4,0,297,0>::~FStaticVector<CvLeagueAI::VoteCommitment,4,0,297,0>
 __ehhandler$?DoAddVoteCommitmentToThem@CvDealAI@@QAEXPAVCvDeal@@W4PlayerTypes@@_NAAH33H2@Z:
 	mov	eax, OFFSET __ehfuncinfo$?DoAddVoteCommitmentToThem@CvDealAI@@QAEXPAVCvDeal@@W4PlayerTypes@@_NAAH33H2@Z
@@ -12521,10 +12521,10 @@ __ehfuncinfo$?DoAddVoteCommitmentToUs@CvDealAI@@QAEXPAVCvDeal@@W4PlayerTypes@@_N
 xdata$x	ENDS
 ;	COMDAT ?DoAddVoteCommitmentToUs@CvDealAI@@QAEXPAVCvDeal@@W4PlayerTypes@@_NAAH33H2@Z
 _TEXT	SEGMENT
-_eMyPlayer$222954 = -120				; size = 4
+_eMyPlayer$223431 = -120				; size = 4
 _this$ = -116						; size = 4
-_bRepeal$222965 = -112					; size = 1
-_vDesiredCommitments$222956 = -108			; size = 96
+_bRepeal$223442 = -112					; size = 1
+_vDesiredCommitments$223433 = -108			; size = 96
 __$EHRec$ = -12						; size = 12
 _pDeal$ = 8						; size = 4
 _eThem$ = 12						; size = 4
@@ -12581,7 +12581,7 @@ _bUseEvenValue$ = 36					; size = 1
 	mov	edi, DWORD PTR _eThem$[esp+128]
 	push	edi
 	mov	ecx, ebx
-	mov	DWORD PTR _eMyPlayer$222954[esp+136], esi
+	mov	DWORD PTR _eMyPlayer$223431[esp+136], esi
 	call	?IsVoteCommitmentTrade@CvDeal@@QAE_NW4PlayerTypes@@@Z ; CvDeal::IsVoteCommitmentTrade
 	test	al, al
 	jne	$LN147@DoAddVoteC@2
@@ -12599,7 +12599,7 @@ _bUseEvenValue$ = 36					; size = 1
 	add	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	push	ebp
 	push	esi
-	lea	edx, DWORD PTR _vDesiredCommitments$222956[esp+140]
+	lea	edx, DWORD PTR _vDesiredCommitments$223433[esp+140]
 	push	edx
 	call	?GetLeagueAI@CvPlayer@@QBEPAVCvLeagueAI@@XZ ; CvPlayer::GetLeagueAI
 	mov	ecx, eax
@@ -12607,8 +12607,8 @@ _bUseEvenValue$ = 36					; size = 1
 
 ; 2453 : 				for (CvLeagueAI::VoteCommitmentList::iterator it = vDesiredCommitments.begin(); it != vDesiredCommitments.end(); ++it)
 
-	mov	ebp, DWORD PTR _vDesiredCommitments$222956[esp+140]
-	mov	ecx, DWORD PTR _vDesiredCommitments$222956[esp+136]
+	mov	ebp, DWORD PTR _vDesiredCommitments$223433[esp+140]
+	mov	ecx, DWORD PTR _vDesiredCommitments$223433[esp+136]
 	lea	eax, DWORD PTR [ebp+ebp*4]
 	lea	edx, DWORD PTR [ecx+eax*4]
 	mov	DWORD PTR __$EHRec$[esp+144], 0
@@ -12629,16 +12629,16 @@ $LL5@DoAddVoteC@2:
 	mov	edi, DWORD PTR [eax]
 	mov	ebx, DWORD PTR [eax+4]
 	sete	dl
-	mov	BYTE PTR _bRepeal$222965[esp+136], dl
+	mov	BYTE PTR _bRepeal$223442[esp+136], dl
 
 ; 2459 : 
 ; 2460 : 					if (iProposalID != -1 && pDeal->IsPossibleToTradeItem(eMyPlayer, eThem, TRADE_ITEM_VOTE_COMMITMENT, iProposalID, iVoteChoice, iNumVotes, bRepeal))
 
 	cmp	esi, -1
 	je	$LN4@DoAddVoteC@2
-	mov	ebp, DWORD PTR _bRepeal$222965[esp+136]
+	mov	ebp, DWORD PTR _bRepeal$223442[esp+136]
 	mov	eax, DWORD PTR _eThem$[esp+132]
-	mov	ecx, DWORD PTR _eMyPlayer$222954[esp+136]
+	mov	ecx, DWORD PTR _eMyPlayer$223431[esp+136]
 	push	0
 	push	1
 	push	ebp
@@ -12681,7 +12681,7 @@ $LL5@DoAddVoteC@2:
 ; 2466 : 						{
 ; 2467 : 							pDeal->AddVoteCommitment(eMyPlayer, iProposalID, iVoteChoice, iNumVotes, bRepeal);
 
-	mov	eax, DWORD PTR _eMyPlayer$222954[esp+136]
+	mov	eax, DWORD PTR _eMyPlayer$223431[esp+136]
 	push	ebp
 	push	ebx
 	push	edi
@@ -12706,8 +12706,8 @@ $LL5@DoAddVoteC@2:
 	mov	DWORD PTR [ecx], eax
 $LN144@DoAddVoteC@2:
 	mov	eax, DWORD PTR tv557[esp+132]
-	mov	ecx, DWORD PTR _vDesiredCommitments$222956[esp+136]
-	mov	ebp, DWORD PTR _vDesiredCommitments$222956[esp+140]
+	mov	ecx, DWORD PTR _vDesiredCommitments$223433[esp+136]
+	mov	ebp, DWORD PTR _vDesiredCommitments$223433[esp+140]
 $LN4@DoAddVoteC@2:
 	add	eax, 20					; 00000014H
 	lea	edx, DWORD PTR [ebp+ebp*4]
@@ -12736,7 +12736,7 @@ $LL131@DoAddVoteC@2:
 	sub	ebp, 1
 	jne	SHORT $LL131@DoAddVoteC@2
 $LN129@DoAddVoteC@2:
-	lea	eax, DWORD PTR _vDesiredCommitments$222956[esp+148]
+	lea	eax, DWORD PTR _vDesiredCommitments$223433[esp+148]
 	pop	ebp
 	cmp	edi, eax
 	je	SHORT $LN147@DoAddVoteC@2
@@ -12761,7 +12761,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?DoAddVoteCommitmentToUs@CvDealAI@@QAEXPAVCvDeal@@W4PlayerTypes@@_NAAH33H2@Z$0:
-	lea	ecx, DWORD PTR _vDesiredCommitments$222956[ebp]
+	lea	ecx, DWORD PTR _vDesiredCommitments$223433[ebp]
 	jmp	??1?$FStaticVector@UVoteCommitment@CvLeagueAI@@$03$0A@$0BCJ@$0A@@@QAE@XZ ; FStaticVector<CvLeagueAI::VoteCommitment,4,0,297,0>::~FStaticVector<CvLeagueAI::VoteCommitment,4,0,297,0>
 __ehhandler$?DoAddVoteCommitmentToUs@CvDealAI@@QAEXPAVCvDeal@@W4PlayerTypes@@_NAAH33H2@Z:
 	mov	eax, OFFSET __ehfuncinfo$?DoAddVoteCommitmentToUs@CvDealAI@@QAEXPAVCvDeal@@W4PlayerTypes@@_NAAH33H2@Z
@@ -12776,11 +12776,11 @@ EXTRN	?getNumResourceInfos@CvGlobals@@QAEHXZ:PROC	; CvGlobals::getNumResourceInf
 ;	COMDAT ?DoAddResourceToThem@CvDealAI@@QAEXPAVCvDeal@@W4PlayerTypes@@_NAAH33HH2@Z
 _TEXT	SEGMENT
 _this$ = -4						; size = 4
-$T230094 = 8						; size = 4
+$T230571 = 8						; size = 4
 _pDeal$ = 8						; size = 4
-_iResourceQuantity$222987 = 12				; size = 4
+_iResourceQuantity$223464 = 12				; size = 4
 _eThem$ = 12						; size = 4
-_eMyPlayer$222983 = 16					; size = 4
+_eMyPlayer$223460 = 16					; size = 4
 _bDontChangeTheirExistingItems$ = 16			; size = 1
 _iTotalValue$ = 20					; size = 4
 _iValueImOffering$ = 24					; size = 4
@@ -12837,7 +12837,7 @@ _bUseEvenValue$ = 40					; size = 1
 ; 2501 : 			for(iResourceLoop = 0; iResourceLoop < GC.getNumResourceInfos(); iResourceLoop++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	mov	DWORD PTR _eMyPlayer$222983[esp+16], ebx
+	mov	DWORD PTR _eMyPlayer$223460[esp+16], ebx
 	xor	edi, edi
 	call	?getNumResourceInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumResourceInfos
 	mov	esi, DWORD PTR _eThem$[esp+16]
@@ -12847,7 +12847,7 @@ _bUseEvenValue$ = 40					; size = 1
 	jmp	SHORT $LN19@DoAddResou
 	npad	9
 $LL489@DoAddResou:
-	mov	ebx, DWORD PTR _eMyPlayer$222983[esp+16]
+	mov	ebx, DWORD PTR _eMyPlayer$223460[esp+16]
 $LN19@DoAddResou:
 
 ; 2502 : 			{
@@ -13032,7 +13032,7 @@ $LL490@DoAddResou:
 	push	0
 	push	edi
 	call	?getNumResourceAvailable@CvPlayer@@QBEHW4ResourceTypes@@_N@Z ; CvPlayer::getNumResourceAvailable
-	mov	DWORD PTR _iResourceQuantity$222987[esp+16], eax
+	mov	DWORD PTR _iResourceQuantity$223464[esp+16], eax
 
 ; 2550 : 
 ; 2551 : 				// Don't bother looking at this Resource if the other player doesn't even have any of it
@@ -13047,10 +13047,10 @@ $LL490@DoAddResou:
 ; 2556 : 				iResourceQuantity = min(5, iResourceQuantity);	// 5 or what they have, whichever is less
 
 	cmp	eax, 5
-	mov	DWORD PTR $T230094[esp+16], 5
-	lea	eax, DWORD PTR _iResourceQuantity$222987[esp+16]
+	mov	DWORD PTR $T230571[esp+16], 5
+	lea	eax, DWORD PTR _iResourceQuantity$223464[esp+16]
 	jl	SHORT $LN260@DoAddResou
-	lea	eax, DWORD PTR $T230094[esp+16]
+	lea	eax, DWORD PTR $T230571[esp+16]
 $LN260@DoAddResou:
 	mov	ebx, DWORD PTR [eax]
 
@@ -13058,7 +13058,7 @@ $LN260@DoAddResou:
 ; 2558 : 				// See if they can actually trade it to us
 ; 2559 : 				if(pDeal->IsPossibleToTradeItem(eThem, eMyPlayer, TRADE_ITEM_RESOURCES, eResource, iResourceQuantity))
 
-	mov	eax, DWORD PTR _eMyPlayer$222983[esp+16]
+	mov	eax, DWORD PTR _eMyPlayer$223460[esp+16]
 	push	0
 	push	1
 	push	0
@@ -13163,8 +13163,8 @@ PUBLIC	?DoAddResourceToUs@CvDealAI@@QAEXPAVCvDeal@@W4PlayerTypes@@_NAAH33HH2@Z ;
 ;	COMDAT ?DoAddResourceToUs@CvDealAI@@QAEXPAVCvDeal@@W4PlayerTypes@@_NAAH33HH2@Z
 _TEXT	SEGMENT
 _this$ = -8						; size = 4
-$T231468 = -4						; size = 4
-_iResourceQuantity$223029 = 8				; size = 4
+$T231945 = -4						; size = 4
+_iResourceQuantity$223506 = 8				; size = 4
 _pDeal$ = 8						; size = 4
 _eThem$ = 12						; size = 4
 tv458 = 16						; size = 4
@@ -13245,7 +13245,7 @@ $LN11@DoAddResou@2:
 	push	esi
 	call	?getNumResourceAvailable@CvPlayer@@QBEHW4ResourceTypes@@_N@Z ; CvPlayer::getNumResourceAvailable
 	mov	edi, eax
-	mov	DWORD PTR _iResourceQuantity$223029[esp+20], edi
+	mov	DWORD PTR _iResourceQuantity$223506[esp+20], edi
 
 ; 2604 : 
 ; 2605 : 				// Don't bother looking at this Resource if we don't even have any of it
@@ -13307,10 +13307,10 @@ $LN6@DoAddResou@2:
 ; 2626 : 					iResourceQuantity = min(5, iResourceQuantity);	// 5 or what we have, whichever is less
 
 	cmp	edi, 5
-	mov	DWORD PTR $T231468[esp+24], 5
-	lea	eax, DWORD PTR _iResourceQuantity$223029[esp+20]
+	mov	DWORD PTR $T231945[esp+24], 5
+	lea	eax, DWORD PTR _iResourceQuantity$223506[esp+20]
 	jl	SHORT $LN29@DoAddResou@2
-	lea	eax, DWORD PTR $T231468[esp+24]
+	lea	eax, DWORD PTR $T231945[esp+24]
 $LN29@DoAddResou@2:
 	mov	edi, DWORD PTR [eax]
 $LN4@DoAddResou@2:
@@ -13950,10 +13950,10 @@ EXTRN	?GetGoldTrade@CvDeal@@QAEHW4PlayerTypes@@@Z:PROC ; CvDeal::GetGoldTrade
 ;	COMDAT ?DoAddGoldToThem@CvDealAI@@QAEXPAVCvDeal@@W4PlayerTypes@@_NAAH332@Z
 _TEXT	SEGMENT
 _this$ = -4						; size = 4
-_iNumGold$223388 = 8					; size = 4
+_iNumGold$223865 = 8					; size = 4
 _pDeal$ = 8						; size = 4
 _eThem$ = 12						; size = 4
-$T233730 = 16						; size = 4
+$T234207 = 16						; size = 4
 _bDontChangeTheirExistingItems$ = 16			; size = 1
 _iTotalValue$ = 20					; size = 4
 _iValueImOffering$ = 24					; size = 4
@@ -14058,13 +14058,13 @@ $LN13@DoAddGoldT:
 	add	esi, edi
 	push	ebp
 	mov	ecx, ebx
-	mov	DWORD PTR _iNumGold$223388[esp+24], esi
+	mov	DWORD PTR _iNumGold$223865[esp+24], esi
 	call	?GetGoldAvailable@CvDeal@@QAEHW4PlayerTypes@@W4TradeableItems@@@Z ; CvDeal::GetGoldAvailable
-	mov	DWORD PTR $T233730[esp+16], eax
+	mov	DWORD PTR $T234207[esp+16], eax
 	cmp	eax, esi
-	lea	eax, DWORD PTR $T233730[esp+16]
+	lea	eax, DWORD PTR $T234207[esp+16]
 	jl	SHORT $LN62@DoAddGoldT
-	lea	eax, DWORD PTR _iNumGold$223388[esp+16]
+	lea	eax, DWORD PTR _iNumGold$223865[esp+16]
 $LN62@DoAddGoldT:
 	mov	esi, DWORD PTR [eax]
 
@@ -14128,9 +14128,9 @@ PUBLIC	?DoAddGoldToUs@CvDealAI@@QAEXPAVCvDeal@@W4PlayerTypes@@_NAAH332@Z ; CvDea
 _TEXT	SEGMENT
 _this$ = -4						; size = 4
 _pDeal$ = 8						; size = 4
-_iNumGold$223406 = 12					; size = 4
+_iNumGold$223883 = 12					; size = 4
 _eThem$ = 12						; size = 4
-$T233840 = 16						; size = 4
+$T234317 = 16						; size = 4
 _bDontChangeMyExistingItems$ = 16			; size = 1
 _iTotalValue$ = 20					; size = 4
 _iValueImOffering$ = 24					; size = 4
@@ -14211,13 +14211,13 @@ _bUseEvenValue$ = 32					; size = 1
 	add	edi, ebp
 	push	esi
 	mov	ecx, ebx
-	mov	DWORD PTR _iNumGold$223406[esp+24], edi
+	mov	DWORD PTR _iNumGold$223883[esp+24], edi
 	call	?GetGoldAvailable@CvDeal@@QAEHW4PlayerTypes@@W4TradeableItems@@@Z ; CvDeal::GetGoldAvailable
-	mov	DWORD PTR $T233840[esp+16], eax
+	mov	DWORD PTR $T234317[esp+16], eax
 	cmp	eax, edi
-	lea	eax, DWORD PTR $T233840[esp+16]
+	lea	eax, DWORD PTR $T234317[esp+16]
 	jl	SHORT $LN16@DoAddGoldT@2
-	lea	eax, DWORD PTR _iNumGold$223406[esp+16]
+	lea	eax, DWORD PTR _iNumGold$223883[esp+16]
 $LN16@DoAddGoldT@2:
 	mov	edi, DWORD PTR [eax]
 
@@ -14285,12 +14285,12 @@ _TEXT	SEGMENT
 _this$ = -4						; size = 4
 _pDeal$ = 8						; size = 4
 _eThem$ = 12						; size = 4
-$T233867 = 16						; size = 4
+$T234344 = 16						; size = 4
 _bDontChangeTheirExistingItems$ = 16			; size = 1
 _iTotalValue$ = 20					; size = 4
 _iValueImOffering$ = 24					; size = 4
 _iValueTheyreOffering$ = 28				; size = 4
-_iNumGPT$223426 = 32					; size = 4
+_iNumGPT$223903 = 32					; size = 4
 _iDealDuration$ = 32					; size = 4
 _bUseEvenValue$ = 36					; size = 1
 ?DoAddGPTToThem@CvDealAI@@QAEXPAVCvDeal@@W4PlayerTypes@@_NAAH33H2@Z PROC ; CvDealAI::DoAddGPTToThem, COMDAT
@@ -14400,13 +14400,13 @@ $LN16@DoAddGPTTo:
 	mov	eax, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	add	esi, edi
 	lea	ecx, DWORD PTR [eax+ebp]
-	mov	DWORD PTR _iNumGPT$223426[esp+16], esi
+	mov	DWORD PTR _iNumGPT$223903[esp+16], esi
 	call	?calculateGoldRate@CvPlayer@@QBEHXZ	; CvPlayer::calculateGoldRate
-	mov	DWORD PTR $T233867[esp+16], eax
+	mov	DWORD PTR $T234344[esp+16], eax
 	cmp	eax, esi
-	lea	eax, DWORD PTR $T233867[esp+16]
+	lea	eax, DWORD PTR $T234344[esp+16]
 	jl	SHORT $LN68@DoAddGPTTo
-	lea	eax, DWORD PTR _iNumGPT$223426[esp+16]
+	lea	eax, DWORD PTR _iNumGPT$223903[esp+16]
 $LN68@DoAddGPTTo:
 	mov	esi, DWORD PTR [eax]
 
@@ -14474,9 +14474,9 @@ PUBLIC	?DoAddGPTToUs@CvDealAI@@QAEXPAVCvDeal@@W4PlayerTypes@@_NAAH33H2@Z ; CvDea
 _TEXT	SEGMENT
 _this$ = -4						; size = 4
 _pDeal$ = 8						; size = 4
-_iNumGPT$223446 = 12					; size = 4
+_iNumGPT$223923 = 12					; size = 4
 _eThem$ = 12						; size = 4
-$T233989 = 16						; size = 4
+$T234466 = 16						; size = 4
 _bDontChangeMyExistingItems$ = 16			; size = 1
 _iTotalValue$ = 20					; size = 4
 _iValueImOffering$ = 24					; size = 4
@@ -14571,13 +14571,13 @@ _bUseEvenValue$ = 36					; size = 1
 	mov	ebx, eax
 	add	esi, ebx
 	add	ecx, edi
-	mov	DWORD PTR _iNumGPT$223446[esp+16], esi
+	mov	DWORD PTR _iNumGPT$223923[esp+16], esi
 	call	?calculateGoldRate@CvPlayer@@QBEHXZ	; CvPlayer::calculateGoldRate
-	mov	DWORD PTR $T233989[esp+16], eax
+	mov	DWORD PTR $T234466[esp+16], eax
 	cmp	eax, esi
-	lea	eax, DWORD PTR $T233989[esp+16]
+	lea	eax, DWORD PTR $T234466[esp+16]
 	jl	SHORT $LN21@DoAddGPTTo@2
-	lea	eax, DWORD PTR _iNumGPT$223446[esp+16]
+	lea	eax, DWORD PTR _iNumGPT$223923[esp+16]
 $LN21@DoAddGPTTo@2:
 	mov	esi, DWORD PTR [eax]
 
@@ -14646,12 +14646,12 @@ EXTRN	?RemoveByType@CvDeal@@QAEXW4TradeableItems@@W4PlayerTypes@@@Z:PROC ; CvDea
 _TEXT	SEGMENT
 _this$ = -4						; size = 4
 _pDeal$ = 8						; size = 4
-_iNumGoldPerTurnToRemove$223462 = 12			; size = 4
+_iNumGoldPerTurnToRemove$223939 = 12			; size = 4
 _eThem$ = 12						; size = 4
 _iTotalValue$ = 16					; size = 4
 _iValueImOffering$ = 20					; size = 4
 _iValueTheyreOffering$ = 24				; size = 4
-_iNumGoldPerTurnInThisDeal$223463 = 28			; size = 4
+_iNumGoldPerTurnInThisDeal$223940 = 28			; size = 4
 _iDealDuration$ = 28					; size = 4
 _bUseEvenValue$ = 32					; size = 1
 ?DoRemoveGPTFromThem@CvDealAI@@QAEXPAVCvDeal@@W4PlayerTypes@@AAH22H_N@Z PROC ; CvDealAI::DoRemoveGPTFromThem, COMDAT
@@ -14739,9 +14739,9 @@ $LN8@DoRemoveGP:
 	mov	esi, DWORD PTR _pDeal$[esp+16]
 	push	ebx
 	mov	ecx, esi
-	mov	DWORD PTR _iNumGoldPerTurnToRemove$223462[esp+20], edi
+	mov	DWORD PTR _iNumGoldPerTurnToRemove$223939[esp+20], edi
 	call	?GetGoldPerTurnTrade@CvDeal@@QAEHW4PlayerTypes@@@Z ; CvDeal::GetGoldPerTurnTrade
-	mov	DWORD PTR _iNumGoldPerTurnInThisDeal$223463[esp+16], eax
+	mov	DWORD PTR _iNumGoldPerTurnInThisDeal$223940[esp+16], eax
 
 ; 3045 : 			if(iNumGoldPerTurnInThisDeal > 0)
 
@@ -14753,9 +14753,9 @@ $LN8@DoRemoveGP:
 ; 3048 : 				iNumGoldPerTurnToRemove = min(iNumGoldPerTurnToRemove, iNumGoldPerTurnInThisDeal);
 
 	cmp	eax, edi
-	lea	ecx, DWORD PTR _iNumGoldPerTurnInThisDeal$223463[esp+16]
+	lea	ecx, DWORD PTR _iNumGoldPerTurnInThisDeal$223940[esp+16]
 	jl	SHORT $LN58@DoRemoveGP
-	lea	ecx, DWORD PTR _iNumGoldPerTurnToRemove$223462[esp+16]
+	lea	ecx, DWORD PTR _iNumGoldPerTurnToRemove$223939[esp+16]
 $LN58@DoRemoveGP:
 
 ; 3049 : 				iNumGoldPerTurnInThisDeal -= iNumGoldPerTurnToRemove;
@@ -14852,14 +14852,14 @@ PUBLIC	?DoRemoveGPTFromUs@CvDealAI@@QAEXPAVCvDeal@@W4PlayerTypes@@AAH22H_N@Z ; C
 ;	COMDAT ?DoRemoveGPTFromUs@CvDealAI@@QAEXPAVCvDeal@@W4PlayerTypes@@AAH22H_N@Z
 _TEXT	SEGMENT
 _pDeal$ = 8						; size = 4
-_iNumGoldPerTurnInThisDeal$223482 = 12			; size = 4
+_iNumGoldPerTurnInThisDeal$223959 = 12			; size = 4
 _eThem$ = 12						; size = 4
 _iTotalValue$ = 16					; size = 4
 _iValueImOffering$ = 20					; size = 4
 _iValueTheyreOffering$ = 24				; size = 4
 _iDealDuration$ = 28					; size = 4
 _bUseEvenValue$ = 32					; size = 1
-_iNumGoldPerTurnToRemove$223480 = 32			; size = 4
+_iNumGoldPerTurnToRemove$223957 = 32			; size = 4
 ?DoRemoveGPTFromUs@CvDealAI@@QAEXPAVCvDeal@@W4PlayerTypes@@AAH22H_N@Z PROC ; CvDealAI::DoRemoveGPTFromUs, COMDAT
 ; _this$ = ecx
 
@@ -14919,13 +14919,13 @@ _iNumGoldPerTurnToRemove$223480 = 32			; size = 4
 ; 3091 : 			int iNumGoldPerTurnInThisDeal = pDeal->GetGoldPerTurnTrade(eMyPlayer);
 
 	mov	edi, DWORD PTR _pDeal$[esp+12]
-	mov	DWORD PTR _iNumGoldPerTurnToRemove$223480[esp+12], eax
+	mov	DWORD PTR _iNumGoldPerTurnToRemove$223957[esp+12], eax
 	mov	eax, DWORD PTR [esi]
 	mov	ebx, DWORD PTR [eax+44]
 	push	ebx
 	mov	ecx, edi
 	call	?GetGoldPerTurnTrade@CvDeal@@QAEHW4PlayerTypes@@@Z ; CvDeal::GetGoldPerTurnTrade
-	mov	DWORD PTR _iNumGoldPerTurnInThisDeal$223482[esp+12], eax
+	mov	DWORD PTR _iNumGoldPerTurnInThisDeal$223959[esp+12], eax
 
 ; 3092 : 			if(iNumGoldPerTurnInThisDeal > 0)
 
@@ -14936,10 +14936,10 @@ _iNumGoldPerTurnToRemove$223480 = 32			; size = 4
 ; 3094 : 				// Found some GoldPerTurn to remove
 ; 3095 : 				iNumGoldPerTurnToRemove = min(iNumGoldPerTurnToRemove, iNumGoldPerTurnInThisDeal);
 
-	cmp	eax, DWORD PTR _iNumGoldPerTurnToRemove$223480[esp+12]
-	lea	ecx, DWORD PTR _iNumGoldPerTurnInThisDeal$223482[esp+12]
+	cmp	eax, DWORD PTR _iNumGoldPerTurnToRemove$223957[esp+12]
+	lea	ecx, DWORD PTR _iNumGoldPerTurnInThisDeal$223959[esp+12]
 	jl	SHORT $LN17@DoRemoveGP@2
-	lea	ecx, DWORD PTR _iNumGoldPerTurnToRemove$223480[esp+12]
+	lea	ecx, DWORD PTR _iNumGoldPerTurnToRemove$223957[esp+12]
 $LN17@DoRemoveGP@2:
 
 ; 3096 : 				iNumGoldPerTurnInThisDeal -= iNumGoldPerTurnToRemove;
@@ -15032,8 +15032,8 @@ PUBLIC	?DoRemoveGoldFromThem@CvDealAI@@QAEXPAVCvDeal@@W4PlayerTypes@@AAH22_N@Z ;
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?DoRemoveGoldFromThem@CvDealAI@@QAEXPAVCvDeal@@W4PlayerTypes@@AAH22_N@Z
 _TEXT	SEGMENT
-$T234154 = -4						; size = 4
-_iNumGoldInThisDeal$223497 = 8				; size = 4
+$T234631 = -4						; size = 4
+_iNumGoldInThisDeal$223974 = 8				; size = 4
 _pDeal$ = 8						; size = 4
 _eThem$ = 12						; size = 4
 _iTotalValue$ = 16					; size = 4
@@ -15071,7 +15071,7 @@ _bUseEvenValue$ = 28					; size = 1
 	push	eax
 	mov	ecx, ebp
 	call	?GetGoldTrade@CvDeal@@QAEHW4PlayerTypes@@@Z ; CvDeal::GetGoldTrade
-	mov	DWORD PTR _iNumGoldInThisDeal$223497[esp+12], eax
+	mov	DWORD PTR _iNumGoldInThisDeal$223974[esp+12], eax
 
 ; 3131 : 			if(iNumGoldInThisDeal > 0)
 
@@ -15117,13 +15117,13 @@ $LN34@DoRemoveGo:
 	sar	eax, 1
 	mov	esi, eax
 $LN8@DoRemoveGo:
-	mov	eax, DWORD PTR _iNumGoldInThisDeal$223497[esp+16]
+	mov	eax, DWORD PTR _iNumGoldInThisDeal$223974[esp+16]
 	cmp	esi, eax
-	mov	DWORD PTR $T234154[esp+20], esi
+	mov	DWORD PTR $T234631[esp+20], esi
 	pop	edi
-	lea	ecx, DWORD PTR $T234154[esp+16]
+	lea	ecx, DWORD PTR $T234631[esp+16]
 	jl	SHORT $LN57@DoRemoveGo
-	lea	ecx, DWORD PTR _iNumGoldInThisDeal$223497[esp+12]
+	lea	ecx, DWORD PTR _iNumGoldInThisDeal$223974[esp+12]
 $LN57@DoRemoveGo:
 
 ; 3135 : 				iNumGoldInThisDeal -= iNumGoldToRemove;
@@ -15217,11 +15217,11 @@ PUBLIC	?DoRemoveGoldFromUs@CvDealAI@@QAEXPAVCvDeal@@W4PlayerTypes@@AAH22_N@Z ; C
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?DoRemoveGoldFromUs@CvDealAI@@QAEXPAVCvDeal@@W4PlayerTypes@@AAH22_N@Z
 _TEXT	SEGMENT
-_eMyPlayer$223514 = -4					; size = 4
-_iNumGoldInThisDeal$223515 = 8				; size = 4
+_eMyPlayer$223991 = -4					; size = 4
+_iNumGoldInThisDeal$223992 = 8				; size = 4
 _pDeal$ = 8						; size = 4
 _eThem$ = 12						; size = 4
-$T234251 = 16						; size = 4
+$T234728 = 16						; size = 4
 _iTotalValue$ = 16					; size = 4
 _iValueImOffering$ = 20					; size = 4
 _iValueTheyreOffering$ = 24				; size = 4
@@ -15262,10 +15262,10 @@ _bUseEvenValue$ = 28					; size = 1
 	push	esi
 	push	eax
 	mov	ecx, ebx
-	mov	DWORD PTR _eMyPlayer$223514[esp+24], eax
+	mov	DWORD PTR _eMyPlayer$223991[esp+24], eax
 	call	?GetGoldTrade@CvDeal@@QAEHW4PlayerTypes@@@Z ; CvDeal::GetGoldTrade
 	mov	esi, eax
-	mov	DWORD PTR _iNumGoldInThisDeal$223515[esp+16], esi
+	mov	DWORD PTR _iNumGoldInThisDeal$223992[esp+16], esi
 
 ; 3172 : 			if(iNumGoldInThisDeal > 0)
 
@@ -15288,11 +15288,11 @@ _bUseEvenValue$ = 28					; size = 1
 	push	eax
 	mov	ecx, edi
 	call	?GetGoldForForValueExchange@CvDealAI@@QAEHH_N0W4PlayerTypes@@00@Z ; CvDealAI::GetGoldForForValueExchange
-	mov	DWORD PTR $T234251[esp+16], eax
+	mov	DWORD PTR $T234728[esp+16], eax
 	cmp	eax, esi
-	lea	eax, DWORD PTR $T234251[esp+16]
+	lea	eax, DWORD PTR $T234728[esp+16]
 	jl	SHORT $LN17@DoRemoveGo@2
-	lea	eax, DWORD PTR _iNumGoldInThisDeal$223515[esp+16]
+	lea	eax, DWORD PTR _iNumGoldInThisDeal$223992[esp+16]
 $LN17@DoRemoveGo@2:
 
 ; 3176 : 				iNumGoldInThisDeal -= iNumGoldToRemove;
@@ -15353,7 +15353,7 @@ $LN3@DoRemoveGo@2:
 ; 3186 : 				{
 ; 3187 : 					if(!pDeal->ChangeGoldTrade(eMyPlayer, iNumGoldInThisDeal))
 
-	mov	ecx, DWORD PTR _eMyPlayer$223514[esp+20]
+	mov	ecx, DWORD PTR _eMyPlayer$223991[esp+20]
 	push	esi
 	push	ecx
 	mov	ecx, ebx
@@ -15584,12 +15584,12 @@ $LN11@IsDealWith:
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	mov	esi, DWORD PTR [esi+4]
-	push	OFFSET $SG222237
+	push	OFFSET $SG222714
 	call	?isOption@CvGame@@QBE_NPBD@Z		; CvGame::isOption
 	test	al, al
 	jne	SHORT $LN6@IsDealWith
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
-	push	OFFSET $SG222238
+	push	OFFSET $SG222715
 	call	?isOption@CvGame@@QBE_NPBD@Z		; CvGame::isOption
 	test	al, al
 	je	SHORT $LN7@IsDealWith
@@ -15692,11 +15692,11 @@ _iEvenValueImOffering$ = -16				; size = 4
 _iTotalValue$ = -12					; size = 4
 _iDealDuration$ = -8					; size = 4
 _iAmountUnderWeWillOffer$ = -4				; size = 4
-_iValueTheyThinkTheyreOffering$222295 = 8		; size = 4
-_iValueIThinkImOffering$222291 = 8			; size = 4
+_iValueTheyThinkTheyreOffering$222772 = 8		; size = 4
+_iValueIThinkImOffering$222768 = 8			; size = 4
 _pDeal$ = 8						; size = 4
-_iValueTheyThinkTheyreGetting$222296 = 12		; size = 4
-_iValueIThinkImGetting$222292 = 12			; size = 4
+_iValueTheyThinkTheyreGetting$222773 = 12		; size = 4
+_iValueIThinkImGetting$222769 = 12			; size = 4
 _eOtherPlayer$ = 12					; size = 4
 ?DoEqualizeDealWithAI@CvDealAI@@QAE_NPAVCvDeal@@W4PlayerTypes@@@Z PROC ; CvDealAI::DoEqualizeDealWithAI, COMDAT
 ; _this$ = ecx
@@ -16061,9 +16061,9 @@ $LN5@DoEqualize:
 
 	mov	edi, DWORD PTR _pDeal$[esp+36]
 	push	0
-	lea	ecx, DWORD PTR _iValueIThinkImGetting$222292[esp+40]
+	lea	ecx, DWORD PTR _iValueIThinkImGetting$222769[esp+40]
 	push	ecx
-	lea	edx, DWORD PTR _iValueIThinkImOffering$222291[esp+44]
+	lea	edx, DWORD PTR _iValueIThinkImOffering$222768[esp+44]
 	push	edx
 	push	edi
 	mov	ecx, esi
@@ -16073,7 +16073,7 @@ $LN5@DoEqualize:
 ; 770  : 			// We don't think we're getting enough for what's on our side of the table
 ; 771  : 			int iLowEndOfWhatIWillAccept = iValueIThinkImOffering - (iValueIThinkImOffering * -iPercentUnderWeWillOffer / 100);
 
-	mov	ecx, DWORD PTR _iValueIThinkImOffering$222291[esp+36]
+	mov	ecx, DWORD PTR _iValueIThinkImOffering$222768[esp+36]
 	mov	edx, ecx
 	imul	edx, 25					; 00000019H
 	mov	eax, 1374389535				; 51eb851fH
@@ -16086,7 +16086,7 @@ $LN5@DoEqualize:
 
 ; 772  : 			if(iValueIThinkImGetting < iLowEndOfWhatIWillAccept)
 
-	cmp	DWORD PTR _iValueIThinkImGetting$222292[esp+36], ecx
+	cmp	DWORD PTR _iValueIThinkImGetting$222769[esp+36], ecx
 	jge	SHORT $LN2@DoEqualize
 $LN378@DoEqualize:
 	pop	edi
@@ -16113,9 +16113,9 @@ $LN2@DoEqualize:
 	mov	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	imul	ebp, 63236				; 0000f704H
 	push	0
-	lea	edx, DWORD PTR _iValueTheyThinkTheyreGetting$222296[esp+40]
+	lea	edx, DWORD PTR _iValueTheyThinkTheyreGetting$222773[esp+40]
 	push	edx
-	lea	eax, DWORD PTR _iValueTheyThinkTheyreOffering$222295[esp+44]
+	lea	eax, DWORD PTR _iValueTheyThinkTheyreOffering$222772[esp+44]
 	push	eax
 	add	ecx, ebp
 	push	edi
@@ -16130,7 +16130,7 @@ $LN2@DoEqualize:
 	mov	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	add	ecx, ebp
 	call	?GetDealAI@CvPlayer@@QBEPAVCvDealAI@@XZ	; CvPlayer::GetDealAI
-	mov	ecx, DWORD PTR _iValueTheyThinkTheyreOffering$222295[esp+36]
+	mov	ecx, DWORD PTR _iValueTheyThinkTheyreOffering$222772[esp+36]
 	mov	edx, ecx
 	imul	edx, 25					; 00000019H
 	mov	eax, 1374389535				; 51eb851fH
@@ -16143,7 +16143,7 @@ $LN2@DoEqualize:
 
 ; 782  : 			if(iValueTheyThinkTheyreGetting < iLowEndOfWhatTheyWillAccept)
 
-	cmp	DWORD PTR _iValueTheyThinkTheyreGetting$222296[esp+36], ecx
+	cmp	DWORD PTR _iValueTheyThinkTheyreGetting$222773[esp+36], ecx
 
 ; 783  : 			{
 ; 784  : 				return false;
@@ -16179,7 +16179,7 @@ PUBLIC	??$_Sort@PAUWeightedElement@?$CvWeightedVector@H$00$0A@@@H@std@@YAXPAUWei
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\algorithm
 ;	COMDAT ??$_Sort@PAUWeightedElement@?$CvWeightedVector@H$00$0A@@@H@std@@YAXPAUWeightedElement@?$CvWeightedVector@H$00$0A@@@0H@Z
 _TEXT	SEGMENT
-__Mid$224050 = -8					; size = 8
+__Mid$224527 = -8					; size = 8
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Ideal$ = 16						; size = 4
@@ -16214,7 +16214,7 @@ $LL7@Sort:
 ; 3087 : 			std::_Unguarded_partition(_First, _Last);
 
 	push	edi
-	lea	eax, DWORD PTR __Mid$224050[esp+28]
+	lea	eax, DWORD PTR __Mid$224527[esp+28]
 	push	ebx
 	push	eax
 	call	??$_Unguarded_partition@PAUWeightedElement@?$CvWeightedVector@H$00$0A@@@@std@@YA?AU?$pair@PAUWeightedElement@?$CvWeightedVector@H$00$0A@@@PAU12@@0@PAUWeightedElement@?$CvWeightedVector@H$00$0A@@@0@Z ; std::_Unguarded_partition<CvWeightedVector<int,1,0>::WeightedElement *>
@@ -16223,7 +16223,7 @@ $LL7@Sort:
 ; 3089 : 
 ; 3090 : 		if (_Mid.first - _First < _Last - _Mid.second)
 
-	mov	ebp, DWORD PTR __Mid$224050[esp+40]
+	mov	ebp, DWORD PTR __Mid$224527[esp+40]
 	mov	eax, esi
 	cdq
 	sub	eax, edx
@@ -16233,7 +16233,7 @@ $LL7@Sort:
 	sub	eax, edx
 	sar	eax, 1
 	add	esi, eax
-	mov	eax, DWORD PTR __Mid$224050[esp+36]
+	mov	eax, DWORD PTR __Mid$224527[esp+36]
 	mov	ecx, edi
 	mov	edx, eax
 	sub	ecx, ebp
@@ -16271,7 +16271,7 @@ $LN5@Sort:
 
 ; 3098 : 			_Last = _Mid.first;
 
-	mov	edi, DWORD PTR __Mid$224050[esp+36]
+	mov	edi, DWORD PTR __Mid$224527[esp+36]
 $LN26@Sort:
 	mov	eax, edi
 	sub	eax, ebx
@@ -16375,12 +16375,12 @@ _eResponse$ = -116					; size = 4
 _iDealValueToMe$ = -112					; size = 4
 _eAnimation$ = -108					; size = 4
 _eUIState$ = -104					; size = 4
-$T235761 = -100						; size = 4
-$T235831 = -96						; size = 4
+$T236238 = -100						; size = 4
+$T236308 = -96						; size = 4
 _iAmountUnderWeWillOffer$ = -96				; size = 4
-_pDllDeal$221952 = -92					; size = 4
+_pDllDeal$222429 = -92					; size = 4
 _iAmountOverWeWillRequest$ = -92			; size = 4
-_kDeal$221903 = -88					; size = 76
+_kDeal$222380 = -88					; size = 76
 __$EHRec$ = -12						; size = 12
 _pDeal$ = 8						; size = 4
 ?DoHumanOfferDealToThisAI@CvDealAI@@QAE?AW4DealOfferResponseTypes@@PAVCvDeal@@@Z PROC ; CvDealAI::DoHumanOfferDealToThisAI, COMDAT
@@ -16414,7 +16414,7 @@ _pDeal$ = 8						; size = 4
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	mov	DWORD PTR _eResponse$[esp+144], eax
 	mov	DWORD PTR _eUIState$[esp+144], eax
-	mov	ebx, OFFSET $SG221889
+	mov	ebx, OFFSET $SG222366
 	mov	DWORD PTR _eAnimation$[esp+144], eax
 	call	?getActivePlayer@CvGame@@QBE?AW4PlayerTypes@@XZ ; CvGame::getActivePlayer
 
@@ -16480,7 +16480,7 @@ $LN80@DoHumanOff:
 ; 125  : 		CvDeal kDeal = *pDeal;
 
 	push	ebp
-	lea	ecx, DWORD PTR _kDeal$221903[esp+148]
+	lea	ecx, DWORD PTR _kDeal$222380[esp+148]
 	call	??0CvDeal@@QAE@ABV0@@Z			; CvDeal::CvDeal
 
 ; 126  : 
@@ -16506,16 +16506,16 @@ $LN80@DoHumanOff:
 
 ; 131  : 			auto_ptr<ICvDeal1> pDllDeal = GC.WrapDealPointer(&kDeal);
 
-	lea	eax, DWORD PTR _kDeal$221903[esp+144]
+	lea	eax, DWORD PTR _kDeal$222380[esp+144]
 	push	eax
-	lea	ecx, DWORD PTR $T235761[esp+148]
+	lea	ecx, DWORD PTR $T236238[esp+148]
 	push	ecx
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?WrapDealPointer@CvGlobals@@QAE?AV?$auto_ptr@VICvDeal1@@@std@@PAVCvDeal@@@Z ; CvGlobals::WrapDealPointer
 	mov	ebp, DWORD PTR [eax]
 	mov	DWORD PTR [eax], 0
-	mov	DWORD PTR _pDllDeal$221952[esp+144], ebp
-	mov	eax, DWORD PTR $T235761[esp+144]
+	mov	DWORD PTR _pDllDeal$222429[esp+144], ebp
+	mov	eax, DWORD PTR $T236238[esp+144]
 	mov	BYTE PTR __$EHRec$[esp+152], 1
 	test	eax, eax
 	je	SHORT $LN37@DoHumanOff
@@ -16532,14 +16532,14 @@ $LN37@DoHumanOff:
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8564
 	mov	eax, DWORD PTR [ecx]
 	mov	eax, DWORD PTR [eax+360]
-	mov	DWORD PTR $T235831[esp+144], edx
+	mov	DWORD PTR $T236308[esp+144], edx
 	mov	edx, DWORD PTR _iValueTheyreOffering$[esp+144]
 	push	edx
 	mov	edx, DWORD PTR _iValueImOffering$[esp+148]
 	push	edx
 	mov	edx, DWORD PTR _iDealValueToMe$[esp+152]
 	push	edx
-	mov	edx, DWORD PTR $T235831[esp+156]
+	mov	edx, DWORD PTR $T236308[esp+156]
 	push	ebp
 	push	edx
 	push	esi
@@ -16570,7 +16570,7 @@ $LN12@DoHumanOff:
 	push	eax
 	push	ecx
 	push	edx
-	lea	eax, DWORD PTR _kDeal$221903[esp+156]
+	lea	eax, DWORD PTR _kDeal$222380[esp+156]
 	push	eax
 	push	esi
 	mov	ecx, edi
@@ -16580,7 +16580,7 @@ $LN81@DoHumanOff:
 ; 138  : 		}
 ; 139  : 	}
 
-	lea	ecx, DWORD PTR _kDeal$221903[esp+144]
+	lea	ecx, DWORD PTR _kDeal$222380[esp+144]
 	mov	DWORD PTR __$EHRec$[esp+152], -1
 	call	??1CvDeal@@UAE@XZ			; CvDeal::~CvDeal
 
@@ -16771,10 +16771,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?DoHumanOfferDealToThisAI@CvDealAI@@QAE?AW4DealOfferResponseTypes@@PAVCvDeal@@@Z$0:
-	lea	ecx, DWORD PTR _kDeal$221903[ebp]
+	lea	ecx, DWORD PTR _kDeal$222380[ebp]
 	jmp	??1CvDeal@@UAE@XZ			; CvDeal::~CvDeal
 __unwindfunclet$?DoHumanOfferDealToThisAI@CvDealAI@@QAE?AW4DealOfferResponseTypes@@PAVCvDeal@@@Z$2:
-	lea	ecx, DWORD PTR _pDllDeal$221952[ebp]
+	lea	ecx, DWORD PTR _pDllDeal$222429[ebp]
 	jmp	??1?$auto_ptr@VICvDeal1@@@std@@QAE@XZ	; std::auto_ptr<ICvDeal1>::~auto_ptr<ICvDeal1>
 __ehhandler$?DoHumanOfferDealToThisAI@CvDealAI@@QAE?AW4DealOfferResponseTypes@@PAVCvDeal@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?DoHumanOfferDealToThisAI@CvDealAI@@QAE?AW4DealOfferResponseTypes@@PAVCvDeal@@@Z
@@ -16860,7 +16860,7 @@ _TEXT	SEGMENT
 _eMyPlayer$ = -56					; size = 4
 _this$ = -52						; size = 4
 _pWinnerCapital$ = -48					; size = 4
-$T235924 = -44						; size = 4
+$T236401 = -44						; size = 4
 _iCityLoop$ = -40					; size = 4
 _viCityProximities$ = -36				; size = 24
 __$EHRec$ = -12						; size = 12
@@ -17054,10 +17054,10 @@ $LN7@DoAddCitie:
 
 	mov	eax, DWORD PTR [esi+120]
 	push	ebp
-	lea	ecx, DWORD PTR $T235924[esp+76]
+	lea	ecx, DWORD PTR $T236401[esp+76]
 	push	ecx
 	lea	ecx, DWORD PTR _viCityProximities$[esp+80]
-	mov	DWORD PTR $T235924[esp+80], eax
+	mov	DWORD PTR $T236401[esp+80], eax
 	call	?push_back@?$CvWeightedVector@H$00$0A@@@QAEIABHH@Z ; CvWeightedVector<int,1,0>::push_back
 $LN9@DoAddCitie:
 	mov	ecx, DWORD PTR _pLosingPlayer$[esp+68]
@@ -17265,20 +17265,20 @@ _bGiveOnlyOneCity$ = -78				; size = 1
 _bGiveUpLuxuryResources$ = -77				; size = 1
 tv90 = -76						; size = 4
 _pLosingPlayer$ = -72					; size = 4
-_iCityDistanceFromWinnersCapital$223640 = -68		; size = 4
+_iCityDistanceFromWinnersCapital$224117 = -68		; size = 4
 _iPercentGPTToGive$ = -68				; size = 4
 _iPercentCitiesGiveUp$ = -64				; size = 4
-_iSortedCityIndex$223658 = -60				; size = 4
-_iWinnerCapitalY$223642 = -60				; size = 4
+_iSortedCityIndex$224135 = -60				; size = 4
+_iWinnerCapitalY$224119 = -60				; size = 4
 _iDuration$ = -60					; size = 4
 _iCityLoop$ = -56					; size = 4
 _this$ = -52						; size = 4
-_iWinnerCapitalX$223641 = -48				; size = 4
-$T236175 = -48						; size = 4
-$T236176 = -44						; size = 4
-_pWinnerCapital$223643 = -40				; size = 4
+_iWinnerCapitalX$224118 = -48				; size = 4
+$T236652 = -48						; size = 4
+$T236653 = -44						; size = 4
+_pWinnerCapital$224120 = -40				; size = 4
 _pWinningPlayer$ = -40					; size = 4
-_viCityProximities$223646 = -36				; size = 24
+_viCityProximities$224123 = -36				; size = 24
 __$EHRec$ = -12						; size = 12
 _eOtherPlayer$ = 8					; size = 4
 _pDeal$ = 12						; size = 4
@@ -17607,13 +17607,13 @@ $LN224@DoAddItems:
 	idiv	esi
 	mov	ecx, DWORD PTR _pLosingPlayer$[esp+96]
 	mov	esi, eax
-	mov	DWORD PTR $T236175[esp+96], esi
+	mov	DWORD PTR $T236652[esp+96], esi
 	call	?calculateGoldRate@CvPlayer@@QBEHXZ	; CvPlayer::calculateGoldRate
-	mov	DWORD PTR $T236176[esp+96], eax
+	mov	DWORD PTR $T236653[esp+96], eax
 	cmp	esi, eax
-	lea	eax, DWORD PTR $T236175[esp+96]
+	lea	eax, DWORD PTR $T236652[esp+96]
 	jl	SHORT $LN83@DoAddItems
-	lea	eax, DWORD PTR $T236176[esp+96]
+	lea	eax, DWORD PTR $T236653[esp+96]
 $LN83@DoAddItems:
 	mov	eax, DWORD PTR [eax]
 
@@ -17986,11 +17986,11 @@ $LN15@DoAddItems:
 	or	eax, -1
 	xor	esi, esi
 	xor	edi, edi
-	mov	DWORD PTR _iCityDistanceFromWinnersCapital$223640[esp+96], esi
-	mov	DWORD PTR _iWinnerCapitalX$223641[esp+96], eax
-	mov	DWORD PTR _iWinnerCapitalY$223642[esp+96], eax
+	mov	DWORD PTR _iCityDistanceFromWinnersCapital$224117[esp+96], esi
+	mov	DWORD PTR _iWinnerCapitalX$224118[esp+96], eax
+	mov	DWORD PTR _iWinnerCapitalY$224119[esp+96], eax
 	call	?getCapitalCity@CvPlayer@@QAEPAVCvCity@@XZ ; CvPlayer::getCapitalCity
-	mov	DWORD PTR _pWinnerCapital$223643[esp+96], eax
+	mov	DWORD PTR _pWinnerCapital$224120[esp+96], eax
 
 ; 3565 : 		if(pWinnerCapital != NULL)
 
@@ -18005,8 +18005,8 @@ $LN15@DoAddItems:
 ; 3568 : 			iWinnerCapitalY = pWinnerCapital->getY();
 
 	mov	eax, DWORD PTR [eax+108]
-	mov	DWORD PTR _iWinnerCapitalX$223641[esp+96], edx
-	mov	DWORD PTR _iWinnerCapitalY$223642[esp+96], eax
+	mov	DWORD PTR _iWinnerCapitalX$224118[esp+96], edx
+	mov	DWORD PTR _iWinnerCapitalY$224119[esp+96], eax
 $LN100@DoAddItems:
 
 ; 3569 : 		}
@@ -18014,10 +18014,10 @@ $LN100@DoAddItems:
 ; 3571 : 		// Create vector of the losing players' Cities so we can see which are the closest to the winner
 ; 3572 : 		CvWeightedVector<int> viCityProximities;
 
-	lea	ecx, DWORD PTR _viCityProximities$223646[esp+108]
-	mov	DWORD PTR _viCityProximities$223646[esp+100], esi
-	mov	DWORD PTR _viCityProximities$223646[esp+104], 1
-	mov	DWORD PTR _viCityProximities$223646[esp+96], ecx
+	lea	ecx, DWORD PTR _viCityProximities$224123[esp+108]
+	mov	DWORD PTR _viCityProximities$224123[esp+100], esi
+	mov	DWORD PTR _viCityProximities$224123[esp+104], 1
+	mov	DWORD PTR _viCityProximities$224123[esp+96], ecx
 
 ; 3573 : 
 ; 3574 : 		// Loop through all of the loser's Cities
@@ -18055,7 +18055,7 @@ $LL223@DoAddItems:
 ; 3580 : 			// If winner has no capital, Distance defaults to 0
 ; 3581 : 			if(pWinnerCapital != NULL)
 
-	cmp	DWORD PTR _pWinnerCapital$223643[esp+96], 0
+	cmp	DWORD PTR _pWinnerCapital$224120[esp+96], 0
 	je	SHORT $LN10@DoAddItems
 
 ; 3582 : 			{
@@ -18064,14 +18064,14 @@ $LL223@DoAddItems:
 	mov	eax, DWORD PTR [esi+108]
 	mov	ecx, DWORD PTR [esi+96]
 	push	eax
-	mov	eax, DWORD PTR _iWinnerCapitalY$223642[esp+100]
+	mov	eax, DWORD PTR _iWinnerCapitalY$224119[esp+100]
 	push	ecx
-	mov	ecx, DWORD PTR _iWinnerCapitalX$223641[esp+104]
+	mov	ecx, DWORD PTR _iWinnerCapitalX$224118[esp+104]
 	push	eax
 	push	ecx
 	call	?plotDistance@@YAHHHHH@Z		; plotDistance
 	add	esp, 16					; 00000010H
-	mov	DWORD PTR _iCityDistanceFromWinnersCapital$223640[esp+96], eax
+	mov	DWORD PTR _iCityDistanceFromWinnersCapital$224117[esp+96], eax
 $LN10@DoAddItems:
 
 ; 3584 : 			}
@@ -18088,11 +18088,11 @@ $LN10@DoAddItems:
 ; 3589 : 				iCityDistanceFromWinnersCapital /= 3;
 
 	mov	eax, 1431655766				; 55555556H
-	imul	DWORD PTR _iCityDistanceFromWinnersCapital$223640[esp+96]
+	imul	DWORD PTR _iCityDistanceFromWinnersCapital$224117[esp+96]
 	mov	eax, edx
 	shr	eax, 31					; 0000001fH
 	add	eax, edx
-	mov	DWORD PTR _iCityDistanceFromWinnersCapital$223640[esp+96], eax
+	mov	DWORD PTR _iCityDistanceFromWinnersCapital$224117[esp+96], eax
 $LN9@DoAddItems:
 
 ; 3590 : 			}
@@ -18109,24 +18109,24 @@ $LN9@DoAddItems:
 ; 3595 : 				viCityProximities.push_back(pLoopCity->GetID(), iCityDistanceFromWinnersCapital);
 
 	mov	esi, DWORD PTR [esi+120]
-	mov	BYTE PTR _viCityProximities$223646[esp+116], al
-	mov	eax, DWORD PTR _viCityProximities$223646[esp+104]
-	cmp	DWORD PTR _viCityProximities$223646[esp+100], eax
+	mov	BYTE PTR _viCityProximities$224123[esp+116], al
+	mov	eax, DWORD PTR _viCityProximities$224123[esp+104]
+	cmp	DWORD PTR _viCityProximities$224123[esp+100], eax
 	jne	SHORT $LN139@DoAddItems
 	push	eax
-	lea	ecx, DWORD PTR _viCityProximities$223646[esp+100]
+	lea	ecx, DWORD PTR _viCityProximities$224123[esp+100]
 	call	?GrowSize@?$FStaticVector@UWeightedElement@?$CvWeightedVector@H$00$0A@@@$00$0A@$0A@$0A@@@IAEXI@Z ; FStaticVector<CvWeightedVector<int,1,0>::WeightedElement,1,0,0,0>::GrowSize
 $LN139@DoAddItems:
-	mov	ecx, DWORD PTR _viCityProximities$223646[esp+96]
-	mov	edx, DWORD PTR _viCityProximities$223646[esp+100]
+	mov	ecx, DWORD PTR _viCityProximities$224123[esp+96]
+	mov	edx, DWORD PTR _viCityProximities$224123[esp+100]
 	lea	eax, DWORD PTR [ecx+edx*8]
 	test	eax, eax
 	je	SHORT $LN142@DoAddItems
-	mov	ecx, DWORD PTR _iCityDistanceFromWinnersCapital$223640[esp+96]
+	mov	ecx, DWORD PTR _iCityDistanceFromWinnersCapital$224117[esp+96]
 	mov	DWORD PTR [eax], esi
 	mov	DWORD PTR [eax+4], ecx
 $LN142@DoAddItems:
-	inc	DWORD PTR _viCityProximities$223646[esp+100]
+	inc	DWORD PTR _viCityProximities$224123[esp+100]
 $LN12@DoAddItems:
 
 ; 3573 : 
@@ -18150,8 +18150,8 @@ $LN11@DoAddItems:
 ; 3599 : 		// Sort the vector based on distance from winner's capital
 ; 3600 : 		viCityProximities.SortItems();
 
-	mov	eax, DWORD PTR _viCityProximities$223646[esp+96]
-	mov	ecx, DWORD PTR _viCityProximities$223646[esp+100]
+	mov	eax, DWORD PTR _viCityProximities$224123[esp+96]
+	mov	ecx, DWORD PTR _viCityProximities$224123[esp+100]
 	lea	ecx, DWORD PTR [eax+ecx*8]
 	mov	edx, ecx
 	sub	edx, eax
@@ -18173,8 +18173,8 @@ $LN11@DoAddItems:
 ; 3605 : 		{
 ; 3606 : 			iSortedCityID = viCityProximities.GetElement(viCityProximities.size() - 1);
 
-	mov	ecx, DWORD PTR _viCityProximities$223646[esp+96]
-	mov	eax, DWORD PTR _viCityProximities$223646[esp+100]
+	mov	ecx, DWORD PTR _viCityProximities$224123[esp+96]
+	mov	eax, DWORD PTR _viCityProximities$224123[esp+100]
 	mov	eax, DWORD PTR [ecx+eax*8-8]
 
 ; 3607 : 			pDeal->AddCityTrade(eLosingPlayer, iSortedCityID);
@@ -18204,24 +18204,24 @@ $LN7@DoAddItems:
 ; 3615 : 			// Loop through sorted Cities and add them to the deal if they're under the amount to give up - start from the back of the list, because that's where the CLOSEST cities are
 ; 3616 : 			for(int iSortedCityIndex = viCityProximities.size() - 1; iSortedCityIndex > -1 ; iSortedCityIndex--)
 
-	mov	eax, DWORD PTR _viCityProximities$223646[esp+100]
+	mov	eax, DWORD PTR _viCityProximities$224123[esp+100]
 	sar	edx, 5
 	mov	edi, edx
 	shr	edi, 31					; 0000001fH
 	dec	eax
 	add	edi, edx
 	cmp	eax, -1
-	mov	DWORD PTR _iSortedCityIndex$223658[esp+96], eax
+	mov	DWORD PTR _iSortedCityIndex$224135[esp+96], eax
 	jle	$LN3@DoAddItems
 	jmp	SHORT $LN5@DoAddItems
 $LL218@DoAddItems:
-	mov	eax, DWORD PTR _iSortedCityIndex$223658[esp+96]
+	mov	eax, DWORD PTR _iSortedCityIndex$224135[esp+96]
 $LN5@DoAddItems:
 
 ; 3617 : 			{
 ; 3618 : 				iSortedCityID = viCityProximities.GetElement(iSortedCityIndex);
 
-	mov	edx, DWORD PTR _viCityProximities$223646[esp+96]
+	mov	edx, DWORD PTR _viCityProximities$224123[esp+96]
 	mov	ebp, DWORD PTR [edx+eax*8]
 
 ; 3619 : 				pLoopCity = pLosingPlayer->getCity(iSortedCityID);
@@ -18289,10 +18289,10 @@ $LN5@DoAddItems:
 
 	sub	edi, ebx
 $LN4@DoAddItems:
-	mov	eax, DWORD PTR _iSortedCityIndex$223658[esp+96]
+	mov	eax, DWORD PTR _iSortedCityIndex$224135[esp+96]
 	dec	eax
 	cmp	eax, -1
-	mov	DWORD PTR _iSortedCityIndex$223658[esp+96], eax
+	mov	DWORD PTR _iSortedCityIndex$224135[esp+96], eax
 	jg	$LL218@DoAddItems
 $LN3@DoAddItems:
 
@@ -18302,8 +18302,8 @@ $LN3@DoAddItems:
 ; 3633 : 		}
 ; 3634 : 	}
 
-	mov	eax, DWORD PTR _viCityProximities$223646[esp+96]
-	lea	ecx, DWORD PTR _viCityProximities$223646[esp+108]
+	mov	eax, DWORD PTR _viCityProximities$224123[esp+96]
+	lea	ecx, DWORD PTR _viCityProximities$224123[esp+108]
 	mov	DWORD PTR __$EHRec$[esp+104], -1
 	cmp	eax, ecx
 	je	SHORT $LN194@DoAddItems
@@ -18336,7 +18336,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?DoAddItemsToDealForPeaceTreaty@CvDealAI@@QAEXW4PlayerTypes@@PAVCvDeal@@W4PeaceTreatyTypes@@_N@Z$0:
-	lea	ecx, DWORD PTR _viCityProximities$223646[ebp]
+	lea	ecx, DWORD PTR _viCityProximities$224123[ebp]
 	jmp	??1?$CvWeightedVector@H$00$0A@@@QAE@XZ	; CvWeightedVector<int,1,0>::~CvWeightedVector<int,1,0>
 __ehhandler$?DoAddItemsToDealForPeaceTreaty@CvDealAI@@QAEXW4PlayerTypes@@PAVCvDeal@@W4PeaceTreatyTypes@@_N@Z:
 	mov	eax, OFFSET __ehfuncinfo$?DoAddItemsToDealForPeaceTreaty@CvDealAI@@QAEXW4PlayerTypes@@PAVCvDeal@@W4PeaceTreatyTypes@@_N@Z
@@ -18371,14 +18371,14 @@ __ehfuncinfo$?DoTradeScreenOpened@CvDealAI@@QAEXXZ DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?DoTradeScreenOpened@CvDealAI@@QAEXXZ
 _TEXT	SEGMENT
-_eMyPlayer$223777 = -28					; size = 4
-_iValueImOffering$223790 = -24				; size = 4
-_iValueTheyreOffering$223787 = -24			; size = 4
-_ePeaceTreatyImWillingToOffer$223778 = -24		; size = 4
-_iValueTheyreOffering$223791 = -20			; size = 4
-_iValueImOffering$223786 = -20				; size = 4
-_ePeaceTreatyImWillingToAccept$223779 = -20		; size = 4
-_pUIDeal$223782 = -16					; size = 4
+_eMyPlayer$224254 = -28					; size = 4
+_iValueImOffering$224267 = -24				; size = 4
+_iValueTheyreOffering$224264 = -24			; size = 4
+_ePeaceTreatyImWillingToOffer$224255 = -24		; size = 4
+_iValueTheyreOffering$224268 = -20			; size = 4
+_iValueImOffering$224263 = -20				; size = 4
+_ePeaceTreatyImWillingToAccept$224256 = -20		; size = 4
+_pUIDeal$224259 = -16					; size = 4
 __$EHRec$ = -12						; size = 12
 ?DoTradeScreenOpened@CvDealAI@@QAEXXZ PROC		; CvDealAI::DoTradeScreenOpened, COMDAT
 ; _this$ = ecx
@@ -18440,7 +18440,7 @@ $LN22@DoTradeScr@2:
 ; 3955 : 		PeaceTreatyTypes ePeaceTreatyImWillingToOffer = GetPlayer()->GetDiplomacyAI()->GetTreatyWillingToOffer(eActivePlayer);
 
 	push	edi
-	mov	DWORD PTR _eMyPlayer$223777[esp+44], eax
+	mov	DWORD PTR _eMyPlayer$224254[esp+44], eax
 	call	?GetDiplomacyAI@CvPlayer@@QBEPAVCvDiplomacyAI@@XZ ; CvPlayer::GetDiplomacyAI
 	mov	ecx, eax
 	call	?GetTreatyWillingToOffer@CvDiplomacyAI@@QBE?AW4PeaceTreatyTypes@@W4PlayerTypes@@@Z ; CvDiplomacyAI::GetTreatyWillingToOffer
@@ -18450,11 +18450,11 @@ $LN22@DoTradeScr@2:
 	mov	ecx, DWORD PTR [ebp]
 	mov	esi, eax
 	push	edi
-	mov	DWORD PTR _ePeaceTreatyImWillingToOffer$223778[esp+44], esi
+	mov	DWORD PTR _ePeaceTreatyImWillingToOffer$224255[esp+44], esi
 	call	?GetDiplomacyAI@CvPlayer@@QBEPAVCvDiplomacyAI@@XZ ; CvPlayer::GetDiplomacyAI
 	mov	ecx, eax
 	call	?GetTreatyWillingToAccept@CvDiplomacyAI@@QBE?AW4PeaceTreatyTypes@@W4PlayerTypes@@@Z ; CvDiplomacyAI::GetTreatyWillingToAccept
-	mov	DWORD PTR _ePeaceTreatyImWillingToAccept$223779[esp+40], eax
+	mov	DWORD PTR _ePeaceTreatyImWillingToAccept$224256[esp+40], eax
 
 ; 3957 : 
 ; 3958 : 		// Does the AI actually want peace?
@@ -18474,7 +18474,7 @@ $LN22@DoTradeScr@2:
 	mov	eax, DWORD PTR [edx+28]
 	push	ebx
 	call	eax
-	mov	DWORD PTR _pUIDeal$223782[esp+44], eax
+	mov	DWORD PTR _pUIDeal$224259[esp+44], eax
 
 ; 3963 : 			CvDeal* pkUIDeal = GC.UnwrapDealPointer(pUIDeal.get());
 
@@ -18511,7 +18511,7 @@ $LN22@DoTradeScr@2:
 
 ; 3969 : 			pDeal->SetToPlayer(eMyPlayer);	// The order of these is very important!
 
-	mov	ecx, DWORD PTR _eMyPlayer$223777[esp+44]
+	mov	ecx, DWORD PTR _eMyPlayer$224254[esp+44]
 	push	ecx
 	mov	ecx, ebx
 	call	?SetToPlayer@CvDeal@@QAEXW4PlayerTypes@@@Z ; CvDeal::SetToPlayer
@@ -18520,20 +18520,20 @@ $LN22@DoTradeScr@2:
 ; 3971 : 			// AI is surrendering
 ; 3972 : 			if(ePeaceTreatyImWillingToOffer > PEACE_TREATY_WHITE_PEACE)
 
-	cmp	DWORD PTR _ePeaceTreatyImWillingToOffer$223778[esp+44], 0
+	cmp	DWORD PTR _ePeaceTreatyImWillingToOffer$224255[esp+44], 0
 	jle	SHORT $LN5@DoTradeScr@2
 
 ; 3973 : 			{
 ; 3974 : 				pkUIDeal->SetSurrenderingPlayer(eMyPlayer);
 
-	mov	edx, DWORD PTR _eMyPlayer$223777[esp+44]
+	mov	edx, DWORD PTR _eMyPlayer$224254[esp+44]
 	push	edx
 	mov	ecx, esi
 	call	?SetSurrenderingPlayer@CvDeal@@QAEXW4PlayerTypes@@@Z ; CvDeal::SetSurrenderingPlayer
 
 ; 3975 : 				pkUIDeal->SetPeaceTreatyType(ePeaceTreatyImWillingToOffer);
 
-	mov	eax, DWORD PTR _ePeaceTreatyImWillingToOffer$223778[esp+44]
+	mov	eax, DWORD PTR _ePeaceTreatyImWillingToOffer$224255[esp+44]
 	push	eax
 	mov	ecx, esi
 	call	?SetPeaceTreatyType@CvDeal@@QAEXW4PeaceTreatyTypes@@@Z ; CvDeal::SetPeaceTreatyType
@@ -18541,7 +18541,7 @@ $LN22@DoTradeScr@2:
 ; 3976 : 
 ; 3977 : 				DoAddItemsToDealForPeaceTreaty(eActivePlayer, pDeal, ePeaceTreatyImWillingToOffer, /*bMeSurrendering*/ true);
 
-	mov	ecx, DWORD PTR _ePeaceTreatyImWillingToOffer$223778[esp+44]
+	mov	ecx, DWORD PTR _ePeaceTreatyImWillingToOffer$224255[esp+44]
 	push	1
 	push	ecx
 	push	ebx
@@ -18555,9 +18555,9 @@ $LN22@DoTradeScr@2:
 ; 3981 : 				GetDealValue(pDeal, iValueImOffering, iValueTheyreOffering, /*bUseEvenValue*/ false);
 
 	push	0
-	lea	edx, DWORD PTR _iValueTheyreOffering$223787[esp+48]
+	lea	edx, DWORD PTR _iValueTheyreOffering$224264[esp+48]
 	push	edx
-	lea	eax, DWORD PTR _iValueImOffering$223786[esp+52]
+	lea	eax, DWORD PTR _iValueImOffering$224263[esp+52]
 	push	eax
 	push	ebx
 	mov	ecx, ebp
@@ -18565,7 +18565,7 @@ $LN22@DoTradeScr@2:
 
 ; 3982 : 				SetCachedValueOfPeaceWithHuman(-iValueImOffering);
 
-	mov	eax, DWORD PTR _iValueImOffering$223786[esp+44]
+	mov	eax, DWORD PTR _iValueImOffering$224263[esp+44]
 	neg	eax
 	mov	DWORD PTR [ebp+4], eax
 	jmp	SHORT $LN48@DoTradeScr@2
@@ -18575,7 +18575,7 @@ $LN5@DoTradeScr@2:
 ; 3984 : 			// AI is asking human to surrender
 ; 3985 : 			else if(ePeaceTreatyImWillingToAccept > PEACE_TREATY_WHITE_PEACE)
 
-	cmp	DWORD PTR _ePeaceTreatyImWillingToAccept$223779[esp+44], 0
+	cmp	DWORD PTR _ePeaceTreatyImWillingToAccept$224256[esp+44], 0
 	jle	SHORT $LN48@DoTradeScr@2
 
 ; 3986 : 			{
@@ -18587,7 +18587,7 @@ $LN5@DoTradeScr@2:
 
 ; 3988 : 				pkUIDeal->SetPeaceTreatyType(ePeaceTreatyImWillingToAccept);
 
-	mov	ecx, DWORD PTR _ePeaceTreatyImWillingToAccept$223779[esp+44]
+	mov	ecx, DWORD PTR _ePeaceTreatyImWillingToAccept$224256[esp+44]
 	push	ecx
 	mov	ecx, esi
 	call	?SetPeaceTreatyType@CvDeal@@QAEXW4PeaceTreatyTypes@@@Z ; CvDeal::SetPeaceTreatyType
@@ -18595,7 +18595,7 @@ $LN5@DoTradeScr@2:
 ; 3989 : 
 ; 3990 : 				DoAddItemsToDealForPeaceTreaty(eActivePlayer, pDeal, ePeaceTreatyImWillingToAccept, /*bMeSurrendering*/ false);
 
-	mov	edx, DWORD PTR _ePeaceTreatyImWillingToAccept$223779[esp+44]
+	mov	edx, DWORD PTR _ePeaceTreatyImWillingToAccept$224256[esp+44]
 	push	0
 	push	edx
 	push	ebx
@@ -18609,9 +18609,9 @@ $LN5@DoTradeScr@2:
 ; 3994 : 				GetDealValue(pDeal, iValueImOffering, iValueTheyreOffering, /*bUseEvenValue*/ false);
 
 	push	0
-	lea	eax, DWORD PTR _iValueTheyreOffering$223791[esp+48]
+	lea	eax, DWORD PTR _iValueTheyreOffering$224268[esp+48]
 	push	eax
-	lea	ecx, DWORD PTR _iValueImOffering$223790[esp+52]
+	lea	ecx, DWORD PTR _iValueImOffering$224267[esp+52]
 	push	ecx
 	push	ebx
 	mov	ecx, ebp
@@ -18619,7 +18619,7 @@ $LN5@DoTradeScr@2:
 
 ; 3995 : 				SetCachedValueOfPeaceWithHuman(iValueTheyreOffering);
 
-	mov	edx, DWORD PTR _iValueTheyreOffering$223791[esp+44]
+	mov	edx, DWORD PTR _iValueTheyreOffering$224268[esp+44]
 	mov	DWORD PTR [ebp+4], edx
 $LN48@DoTradeScr@2:
 
@@ -18640,7 +18640,7 @@ $LN48@DoTradeScr@2:
 
 ; 4002 : 			pkUIDeal->SetToPlayer(eMyPlayer);	// The order of these is very important!
 
-	mov	ebx, DWORD PTR _eMyPlayer$223777[esp+44]
+	mov	ebx, DWORD PTR _eMyPlayer$224254[esp+44]
 	push	ebx
 	mov	ecx, esi
 	call	?SetToPlayer@CvDeal@@QAEXW4PlayerTypes@@@Z ; CvDeal::SetToPlayer
@@ -18686,7 +18686,7 @@ $LN1@DoTradeScr@2:
 ; 4012 : 			}
 ; 4013 : 			pkUIDeal->AddPeaceTreaty(eMyPlayer, iPeaceTreatyLength);
 
-	mov	eax, DWORD PTR _eMyPlayer$223777[esp+44]
+	mov	eax, DWORD PTR _eMyPlayer$224254[esp+44]
 	push	ebx
 	push	eax
 	mov	ecx, esi
@@ -18722,7 +18722,7 @@ $LN1@DoTradeScr@2:
 
 ; 4025 : 		}
 
-	mov	eax, DWORD PTR _pUIDeal$223782[esp+44]
+	mov	eax, DWORD PTR _pUIDeal$224259[esp+44]
 	mov	DWORD PTR __$EHRec$[esp+52], -1
 	pop	ebx
 	test	eax, eax
@@ -18747,7 +18747,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?DoTradeScreenOpened@CvDealAI@@QAEXXZ$0:
-	lea	ecx, DWORD PTR _pUIDeal$223782[ebp]
+	lea	ecx, DWORD PTR _pUIDeal$224259[ebp]
 	jmp	??1?$auto_ptr@VICvDeal1@@@std@@QAE@XZ	; std::auto_ptr<ICvDeal1>::~auto_ptr<ICvDeal1>
 __ehhandler$?DoTradeScreenOpened@CvDealAI@@QAEXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?DoTradeScreenOpened@CvDealAI@@QAEXXZ
@@ -18759,17 +18759,17 @@ PUBLIC	?IsOfferPeace@CvDealAI@@QAE_NW4PlayerTypes@@PAVCvDeal@@_N@Z ; CvDealAI::I
 ;	COMDAT ?IsOfferPeace@CvDealAI@@QAE_NW4PlayerTypes@@PAVCvDeal@@_N@Z
 _TEXT	SEGMENT
 _ePeaceTreatyImWillingToAccept$ = -12			; size = 4
-_iValueImOffering$223561 = -8				; size = 4
-_iValueTheyreOffering$223557 = -8			; size = 4
-_ePeaceTreatyTheyreWillingToAccept$223535 = -8		; size = 4
-_iValueTheyreOffering$223562 = -4			; size = 4
-_iValueImOffering$223556 = -4				; size = 4
+_iValueImOffering$224038 = -8				; size = 4
+_iValueTheyreOffering$224034 = -8			; size = 4
+_ePeaceTreatyTheyreWillingToAccept$224012 = -8		; size = 4
+_iValueTheyreOffering$224039 = -4			; size = 4
+_iValueImOffering$224033 = -4				; size = 4
 _ePeaceTreatyImWillingToOffer$ = -4			; size = 4
 _eMyPlayer$ = 8						; size = 4
 _eOtherPlayer$ = 8					; size = 4
 tv391 = 12						; size = 4
 _pDeal$ = 12						; size = 4
-_ePeaceTreatyTheyreWillingToOffer$223536 = 16		; size = 4
+_ePeaceTreatyTheyreWillingToOffer$224013 = 16		; size = 4
 _bEqualizingDeals$ = 16					; size = 1
 ?IsOfferPeace@CvDealAI@@QAE_NW4PlayerTypes@@PAVCvDeal@@_N@Z PROC ; CvDealAI::IsOfferPeace, COMDAT
 ; _this$ = ecx
@@ -18903,7 +18903,7 @@ $LN22@IsOfferPea:
 
 	mov	edx, DWORD PTR _eMyPlayer$[esp+24]
 	mov	ecx, DWORD PTR tv391[esp+24]
-	mov	DWORD PTR _ePeaceTreatyTheyreWillingToAccept$223535[esp+28], eax
+	mov	DWORD PTR _ePeaceTreatyTheyreWillingToAccept$224012[esp+28], eax
 	mov	eax, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	add	ecx, eax
 	push	edx
@@ -18915,10 +18915,10 @@ $LN22@IsOfferPea:
 ; 3228 : 		// Is what we're willing to offer acceptable to eOtherPlayer?
 ; 3229 : 		if(ePeaceTreatyImWillingToOffer < ePeaceTreatyTheyreWillingToAccept)
 
-	mov	edx, DWORD PTR _ePeaceTreatyTheyreWillingToAccept$223535[esp+28]
+	mov	edx, DWORD PTR _ePeaceTreatyTheyreWillingToAccept$224012[esp+28]
 	cmp	ebp, edx
 	mov	ecx, eax
-	mov	DWORD PTR _ePeaceTreatyTheyreWillingToOffer$223536[esp+24], ecx
+	mov	DWORD PTR _ePeaceTreatyTheyreWillingToOffer$224013[esp+24], ecx
 
 ; 3230 : 		{
 ; 3231 : 			return false;
@@ -18962,7 +18962,7 @@ $LN18@IsOfferPea:
 ; 3242 : 			int iAmountToReduce = min(ePeaceTreatyImWillingToOffer, ePeaceTreatyTheyreWillingToOffer);
 
 	cmp	ecx, ebp
-	lea	eax, DWORD PTR _ePeaceTreatyTheyreWillingToOffer$223536[esp+24]
+	lea	eax, DWORD PTR _ePeaceTreatyTheyreWillingToOffer$224013[esp+24]
 	jl	SHORT $LN56@IsOfferPea
 	lea	eax, DWORD PTR _ePeaceTreatyImWillingToOffer$[esp+28]
 $LN56@IsOfferPea:
@@ -18976,7 +18976,7 @@ $LN56@IsOfferPea:
 ; 3245 : 			ePeaceTreatyTheyreWillingToOffer = PeaceTreatyTypes(ePeaceTreatyTheyreWillingToOffer - iAmountToReduce);
 
 	sub	ecx, eax
-	mov	DWORD PTR _ePeaceTreatyTheyreWillingToOffer$223536[esp+24], ecx
+	mov	DWORD PTR _ePeaceTreatyTheyreWillingToOffer$224013[esp+24], ecx
 $LN17@IsOfferPea:
 
 ; 3246 : 		}
@@ -19011,7 +19011,7 @@ $LN16@IsOfferPea:
 	cdq
 	sub	eax, edx
 	sar	eax, 1
-	mov	DWORD PTR _ePeaceTreatyTheyreWillingToOffer$223536[esp+24], eax
+	mov	DWORD PTR _ePeaceTreatyTheyreWillingToOffer$224013[esp+24], eax
 	mov	ecx, eax
 $LN15@IsOfferPea:
 
@@ -19083,7 +19083,7 @@ $LN74@IsOfferPea:
 
 ; 3273 : 			pDeal->SetPeaceTreatyType(ePeaceTreatyTheyreWillingToOffer);
 
-	mov	ebp, DWORD PTR _ePeaceTreatyTheyreWillingToOffer$223536[esp+24]
+	mov	ebp, DWORD PTR _ePeaceTreatyTheyreWillingToOffer$224013[esp+24]
 	push	ebp
 	mov	ecx, esi
 	call	?SetPeaceTreatyType@CvDeal@@QAEXW4PeaceTreatyTypes@@@Z ; CvDeal::SetPeaceTreatyType
@@ -19163,9 +19163,9 @@ $LN20@IsOfferPea:
 ; 3311 : 			GetDealValue(pDeal, iValueImOffering, iValueTheyreOffering, /*bUseEvenValue*/ false);
 
 	push	0
-	lea	ecx, DWORD PTR _iValueTheyreOffering$223557[esp+32]
+	lea	ecx, DWORD PTR _iValueTheyreOffering$224034[esp+32]
 	push	ecx
-	lea	edx, DWORD PTR _iValueImOffering$223556[esp+36]
+	lea	edx, DWORD PTR _iValueImOffering$224033[esp+36]
 	push	edx
 	push	esi
 	mov	ecx, edi
@@ -19179,7 +19179,7 @@ $LN20@IsOfferPea:
 ; 3313 : 			{
 ; 3314 : 				SetCachedValueOfPeaceWithHuman(-iValueImOffering);
 
-	mov	eax, DWORD PTR _iValueImOffering$223556[esp+28]
+	mov	eax, DWORD PTR _iValueImOffering$224033[esp+28]
 	neg	eax
 	mov	DWORD PTR [edi+4], eax
 
@@ -19225,9 +19225,9 @@ $LN8@IsOfferPea:
 ; 3327 : 			GetDealValue(pDeal, iValueImOffering, iValueTheyreOffering, /*bUseEvenValue*/ false);
 
 	push	0
-	lea	ecx, DWORD PTR _iValueTheyreOffering$223562[esp+32]
+	lea	ecx, DWORD PTR _iValueTheyreOffering$224039[esp+32]
 	push	ecx
-	lea	edx, DWORD PTR _iValueImOffering$223561[esp+36]
+	lea	edx, DWORD PTR _iValueImOffering$224038[esp+36]
 	push	edx
 	push	esi
 	mov	ecx, edi
@@ -19241,7 +19241,7 @@ $LN8@IsOfferPea:
 ; 3329 : 			{
 ; 3330 : 				SetCachedValueOfPeaceWithHuman(iValueTheyreOffering);
 
-	mov	eax, DWORD PTR _iValueTheyreOffering$223562[esp+28]
+	mov	eax, DWORD PTR _iValueTheyreOffering$224039[esp+28]
 	mov	DWORD PTR [edi+4], eax
 
 ; 3331 : 			}
@@ -19342,12 +19342,12 @@ PUBLIC	?DoEqualizeDealWithHuman@CvDealAI@@QAE_NPAVCvDeal@@W4PlayerTypes@@_N2AA_N
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?DoEqualizeDealWithHuman@CvDealAI@@QAE_NPAVCvDeal@@W4PlayerTypes@@_N2AA_N3@Z
 _TEXT	SEGMENT
-_iValueTheyreOffering$222259 = -20			; size = 4
-_iValueImOffering$222258 = -16				; size = 4
+_iValueTheyreOffering$222736 = -20			; size = 4
+_iValueImOffering$222735 = -16				; size = 4
 _iDealDuration$ = -12					; size = 4
-_iAmountUnderWeWillOffer$222261 = -8			; size = 4
-_iAmountOverWeWillRequest$222260 = -4			; size = 4
-_iTotalValueToMe$222257 = 8				; size = 4
+_iAmountUnderWeWillOffer$222738 = -8			; size = 4
+_iAmountOverWeWillRequest$222737 = -4			; size = 4
+_iTotalValueToMe$222734 = 8				; size = 4
 _pDeal$ = 8						; size = 4
 _bMakeOffer$ = 12					; size = 1
 _eOtherPlayer$ = 12					; size = 4
@@ -19434,15 +19434,15 @@ $LN9@DoEqualize@2:
 ; 612  : 		bMakeOffer = IsDealWithHumanAcceptable(pDeal, GC.getGame().getActivePlayer(), /*Passed by reference*/ iTotalValueToMe, iValueImOffering, iValueTheyreOffering, iAmountOverWeWillRequest, iAmountUnderWeWillOffer, bCantMatchOffer);
 
 	push	ebx
-	lea	eax, DWORD PTR _iAmountUnderWeWillOffer$222261[esp+40]
+	lea	eax, DWORD PTR _iAmountUnderWeWillOffer$222738[esp+40]
 	push	eax
-	lea	ecx, DWORD PTR _iAmountOverWeWillRequest$222260[esp+44]
+	lea	ecx, DWORD PTR _iAmountOverWeWillRequest$222737[esp+44]
 	push	ecx
-	lea	edx, DWORD PTR _iValueTheyreOffering$222259[esp+48]
+	lea	edx, DWORD PTR _iValueTheyreOffering$222736[esp+48]
 	push	edx
-	lea	eax, DWORD PTR _iValueImOffering$222258[esp+52]
+	lea	eax, DWORD PTR _iValueImOffering$222735[esp+52]
 	push	eax
-	lea	ecx, DWORD PTR _iTotalValueToMe$222257[esp+52]
+	lea	ecx, DWORD PTR _iTotalValueToMe$222734[esp+52]
 	push	ecx
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?getActivePlayer@CvGame@@QBE?AW4PlayerTypes@@XZ ; CvGame::getActivePlayer
@@ -19454,7 +19454,7 @@ $LN9@DoEqualize@2:
 ; 613  : 
 ; 614  : 		if (iTotalValueToMe < 0 && bDontChangeTheirExistingItems)
 
-	cmp	DWORD PTR _iTotalValueToMe$222257[esp+32], 0
+	cmp	DWORD PTR _iTotalValueToMe$222734[esp+32], 0
 	mov	ebx, DWORD PTR _bDontChangeTheirExistingItems$[esp+32]
 	mov	BYTE PTR _bMakeOffer$[esp+32], al
 	jge	SHORT $LN7@DoEqualize@2
@@ -19527,16 +19527,16 @@ $LN6@DoEqualize@2:
 ; 639  : 
 ; 640  : 			DoAddVoteCommitmentToThem(pDeal, eOtherPlayer, bDontChangeTheirExistingItems, iTotalValueToMe, iValueImOffering, iValueTheyreOffering, iAmountOverWeWillRequest, bUseEvenValue);
 
-	mov	ecx, DWORD PTR _iAmountOverWeWillRequest$222260[esp+36]
+	mov	ecx, DWORD PTR _iAmountOverWeWillRequest$222737[esp+36]
 	mov	eax, DWORD PTR _bDealGoodToBeginWith$[esp+32]
 	push	0
 	push	ecx
-	lea	edx, DWORD PTR _iValueTheyreOffering$222259[esp+44]
+	lea	edx, DWORD PTR _iValueTheyreOffering$222736[esp+44]
 	push	edx
 	mov	BYTE PTR [eax], 0
-	lea	eax, DWORD PTR _iValueImOffering$222258[esp+48]
+	lea	eax, DWORD PTR _iValueImOffering$222735[esp+48]
 	push	eax
-	lea	ecx, DWORD PTR _iTotalValueToMe$222257[esp+48]
+	lea	ecx, DWORD PTR _iTotalValueToMe$222734[esp+48]
 	push	ecx
 	push	ebx
 	push	ebp
@@ -19546,15 +19546,15 @@ $LN6@DoEqualize@2:
 
 ; 641  : 			DoAddVoteCommitmentToUs(pDeal, eOtherPlayer, bDontChangeMyExistingItems, iTotalValueToMe, iValueImOffering, iValueTheyreOffering, iAmountUnderWeWillOffer, bUseEvenValue);
 
-	mov	edx, DWORD PTR _iAmountUnderWeWillOffer$222261[esp+36]
+	mov	edx, DWORD PTR _iAmountUnderWeWillOffer$222738[esp+36]
 	push	0
 	push	edx
-	lea	eax, DWORD PTR _iValueTheyreOffering$222259[esp+44]
+	lea	eax, DWORD PTR _iValueTheyreOffering$222736[esp+44]
 	push	eax
 	mov	eax, DWORD PTR _bDontChangeMyExistingItems$[esp+44]
-	lea	ecx, DWORD PTR _iValueImOffering$222258[esp+48]
+	lea	ecx, DWORD PTR _iValueImOffering$222735[esp+48]
 	push	ecx
-	lea	edx, DWORD PTR _iTotalValueToMe$222257[esp+48]
+	lea	edx, DWORD PTR _iTotalValueToMe$222734[esp+48]
 	push	edx
 	push	eax
 	push	ebp
@@ -19565,14 +19565,14 @@ $LN6@DoEqualize@2:
 ; 642  : 
 ; 643  : 			DoAddEmbassyToThem(pDeal, eOtherPlayer, bDontChangeTheirExistingItems, iTotalValueToMe, iValueImOffering, iValueTheyreOffering, iAmountOverWeWillRequest, bUseEvenValue);
 
-	mov	ecx, DWORD PTR _iAmountOverWeWillRequest$222260[esp+36]
+	mov	ecx, DWORD PTR _iAmountOverWeWillRequest$222737[esp+36]
 	push	0
 	push	ecx
-	lea	edx, DWORD PTR _iValueTheyreOffering$222259[esp+44]
+	lea	edx, DWORD PTR _iValueTheyreOffering$222736[esp+44]
 	push	edx
-	lea	eax, DWORD PTR _iValueImOffering$222258[esp+48]
+	lea	eax, DWORD PTR _iValueImOffering$222735[esp+48]
 	push	eax
-	lea	ecx, DWORD PTR _iTotalValueToMe$222257[esp+48]
+	lea	ecx, DWORD PTR _iTotalValueToMe$222734[esp+48]
 	push	ecx
 	push	ebx
 	push	ebp
@@ -19582,15 +19582,15 @@ $LN6@DoEqualize@2:
 
 ; 644  : 			DoAddEmbassyToUs(pDeal, eOtherPlayer, bDontChangeMyExistingItems, iTotalValueToMe, iValueImOffering, iValueTheyreOffering, iAmountUnderWeWillOffer, bUseEvenValue);
 
-	mov	edx, DWORD PTR _iAmountUnderWeWillOffer$222261[esp+36]
+	mov	edx, DWORD PTR _iAmountUnderWeWillOffer$222738[esp+36]
 	push	0
 	push	edx
-	lea	eax, DWORD PTR _iValueTheyreOffering$222259[esp+44]
+	lea	eax, DWORD PTR _iValueTheyreOffering$222736[esp+44]
 	push	eax
 	mov	eax, DWORD PTR _bDontChangeMyExistingItems$[esp+44]
-	lea	ecx, DWORD PTR _iValueImOffering$222258[esp+48]
+	lea	ecx, DWORD PTR _iValueImOffering$222735[esp+48]
 	push	ecx
-	lea	edx, DWORD PTR _iTotalValueToMe$222257[esp+48]
+	lea	edx, DWORD PTR _iTotalValueToMe$222734[esp+48]
 	push	edx
 	push	eax
 	push	ebp
@@ -19602,15 +19602,15 @@ $LN6@DoEqualize@2:
 ; 646  : 			DoAddResourceToThem(pDeal, eOtherPlayer, bDontChangeTheirExistingItems, iTotalValueToMe, iValueImOffering, iValueTheyreOffering, iAmountOverWeWillRequest, iDealDuration, bUseEvenValue);
 
 	mov	ecx, DWORD PTR _iDealDuration$[esp+36]
-	mov	edx, DWORD PTR _iAmountOverWeWillRequest$222260[esp+36]
+	mov	edx, DWORD PTR _iAmountOverWeWillRequest$222737[esp+36]
 	push	0
 	push	ecx
 	push	edx
-	lea	eax, DWORD PTR _iValueTheyreOffering$222259[esp+48]
+	lea	eax, DWORD PTR _iValueTheyreOffering$222736[esp+48]
 	push	eax
-	lea	ecx, DWORD PTR _iValueImOffering$222258[esp+52]
+	lea	ecx, DWORD PTR _iValueImOffering$222735[esp+52]
 	push	ecx
-	lea	edx, DWORD PTR _iTotalValueToMe$222257[esp+52]
+	lea	edx, DWORD PTR _iTotalValueToMe$222734[esp+52]
 	push	edx
 	push	ebx
 	push	ebp
@@ -19621,16 +19621,16 @@ $LN6@DoEqualize@2:
 ; 647  : 			DoAddResourceToUs(pDeal, eOtherPlayer, bDontChangeMyExistingItems, iTotalValueToMe, iValueImOffering, iValueTheyreOffering, iAmountUnderWeWillOffer, iDealDuration, bUseEvenValue);
 
 	mov	eax, DWORD PTR _iDealDuration$[esp+36]
-	mov	ecx, DWORD PTR _iAmountUnderWeWillOffer$222261[esp+36]
+	mov	ecx, DWORD PTR _iAmountUnderWeWillOffer$222738[esp+36]
 	push	0
 	push	eax
 	push	ecx
-	lea	edx, DWORD PTR _iValueTheyreOffering$222259[esp+48]
+	lea	edx, DWORD PTR _iValueTheyreOffering$222736[esp+48]
 	push	edx
 	mov	edx, DWORD PTR _bDontChangeMyExistingItems$[esp+48]
-	lea	eax, DWORD PTR _iValueImOffering$222258[esp+52]
+	lea	eax, DWORD PTR _iValueImOffering$222735[esp+52]
 	push	eax
-	lea	ecx, DWORD PTR _iTotalValueToMe$222257[esp+52]
+	lea	ecx, DWORD PTR _iTotalValueToMe$222734[esp+52]
 	push	ecx
 	push	edx
 	push	ebp
@@ -19642,15 +19642,15 @@ $LN6@DoEqualize@2:
 ; 649  : 			DoAddOpenBordersToThem(pDeal, eOtherPlayer, bDontChangeTheirExistingItems, iTotalValueToMe, iValueImOffering, iValueTheyreOffering, iAmountOverWeWillRequest, iDealDuration, bUseEvenValue);
 
 	mov	eax, DWORD PTR _iDealDuration$[esp+36]
-	mov	ecx, DWORD PTR _iAmountOverWeWillRequest$222260[esp+36]
+	mov	ecx, DWORD PTR _iAmountOverWeWillRequest$222737[esp+36]
 	push	0
 	push	eax
 	push	ecx
-	lea	edx, DWORD PTR _iValueTheyreOffering$222259[esp+48]
+	lea	edx, DWORD PTR _iValueTheyreOffering$222736[esp+48]
 	push	edx
-	lea	eax, DWORD PTR _iValueImOffering$222258[esp+52]
+	lea	eax, DWORD PTR _iValueImOffering$222735[esp+52]
 	push	eax
-	lea	ecx, DWORD PTR _iTotalValueToMe$222257[esp+52]
+	lea	ecx, DWORD PTR _iTotalValueToMe$222734[esp+52]
 	push	ecx
 	push	ebx
 	push	ebp
@@ -19661,16 +19661,16 @@ $LN6@DoEqualize@2:
 ; 650  : 			DoAddOpenBordersToUs(pDeal, eOtherPlayer, bDontChangeMyExistingItems, iTotalValueToMe, iValueImOffering, iValueTheyreOffering, iAmountUnderWeWillOffer, iDealDuration, bUseEvenValue);
 
 	mov	edx, DWORD PTR _iDealDuration$[esp+36]
-	mov	eax, DWORD PTR _iAmountUnderWeWillOffer$222261[esp+36]
+	mov	eax, DWORD PTR _iAmountUnderWeWillOffer$222738[esp+36]
 	push	0
 	push	edx
 	push	eax
-	lea	ecx, DWORD PTR _iValueTheyreOffering$222259[esp+48]
+	lea	ecx, DWORD PTR _iValueTheyreOffering$222736[esp+48]
 	push	ecx
 	mov	ecx, DWORD PTR _bDontChangeMyExistingItems$[esp+48]
-	lea	edx, DWORD PTR _iValueImOffering$222258[esp+52]
+	lea	edx, DWORD PTR _iValueImOffering$222735[esp+52]
 	push	edx
-	lea	eax, DWORD PTR _iTotalValueToMe$222257[esp+52]
+	lea	eax, DWORD PTR _iTotalValueToMe$222734[esp+52]
 	push	eax
 	push	ecx
 	push	ebp
@@ -19684,11 +19684,11 @@ $LN6@DoEqualize@2:
 	mov	edx, DWORD PTR _iDealDuration$[esp+36]
 	push	0
 	push	edx
-	lea	eax, DWORD PTR _iValueTheyreOffering$222259[esp+44]
+	lea	eax, DWORD PTR _iValueTheyreOffering$222736[esp+44]
 	push	eax
-	lea	ecx, DWORD PTR _iValueImOffering$222258[esp+48]
+	lea	ecx, DWORD PTR _iValueImOffering$222735[esp+48]
 	push	ecx
-	lea	edx, DWORD PTR _iTotalValueToMe$222257[esp+48]
+	lea	edx, DWORD PTR _iTotalValueToMe$222734[esp+48]
 	push	edx
 	push	ebx
 	push	ebp
@@ -19701,12 +19701,12 @@ $LN6@DoEqualize@2:
 	mov	eax, DWORD PTR _iDealDuration$[esp+36]
 	push	0
 	push	eax
-	lea	ecx, DWORD PTR _iValueTheyreOffering$222259[esp+44]
+	lea	ecx, DWORD PTR _iValueTheyreOffering$222736[esp+44]
 	push	ecx
 	mov	ecx, DWORD PTR _bDontChangeMyExistingItems$[esp+44]
-	lea	edx, DWORD PTR _iValueImOffering$222258[esp+48]
+	lea	edx, DWORD PTR _iValueImOffering$222735[esp+48]
 	push	edx
-	lea	eax, DWORD PTR _iTotalValueToMe$222257[esp+48]
+	lea	eax, DWORD PTR _iTotalValueToMe$222734[esp+48]
 	push	eax
 	push	ecx
 	push	ebp
@@ -19718,11 +19718,11 @@ $LN6@DoEqualize@2:
 ; 655  : 			DoAddGoldToThem(pDeal, eOtherPlayer, bDontChangeTheirExistingItems, iTotalValueToMe, iValueImOffering, iValueTheyreOffering, bUseEvenValue);
 
 	push	0
-	lea	edx, DWORD PTR _iValueTheyreOffering$222259[esp+40]
+	lea	edx, DWORD PTR _iValueTheyreOffering$222736[esp+40]
 	push	edx
-	lea	eax, DWORD PTR _iValueImOffering$222258[esp+44]
+	lea	eax, DWORD PTR _iValueImOffering$222735[esp+44]
 	push	eax
-	lea	ecx, DWORD PTR _iTotalValueToMe$222257[esp+44]
+	lea	ecx, DWORD PTR _iTotalValueToMe$222734[esp+44]
 	push	ecx
 	push	ebx
 	push	ebp
@@ -19733,12 +19733,12 @@ $LN6@DoEqualize@2:
 ; 656  : 			DoAddGoldToUs(pDeal, eOtherPlayer, bDontChangeMyExistingItems, iTotalValueToMe, iValueImOffering, iValueTheyreOffering, bUseEvenValue);
 
 	push	0
-	lea	edx, DWORD PTR _iValueTheyreOffering$222259[esp+40]
+	lea	edx, DWORD PTR _iValueTheyreOffering$222736[esp+40]
 	push	edx
 	mov	edx, DWORD PTR _bDontChangeMyExistingItems$[esp+40]
-	lea	eax, DWORD PTR _iValueImOffering$222258[esp+44]
+	lea	eax, DWORD PTR _iValueImOffering$222735[esp+44]
 	push	eax
-	lea	ecx, DWORD PTR _iTotalValueToMe$222257[esp+44]
+	lea	ecx, DWORD PTR _iTotalValueToMe$222734[esp+44]
 	push	ecx
 	push	edx
 	push	ebp
@@ -19758,11 +19758,11 @@ $LN6@DoEqualize@2:
 	mov	eax, DWORD PTR _iDealDuration$[esp+36]
 	push	0
 	push	eax
-	lea	ecx, DWORD PTR _iValueTheyreOffering$222259[esp+44]
+	lea	ecx, DWORD PTR _iValueTheyreOffering$222736[esp+44]
 	push	ecx
-	lea	edx, DWORD PTR _iValueImOffering$222258[esp+48]
+	lea	edx, DWORD PTR _iValueImOffering$222735[esp+48]
 	push	edx
-	lea	eax, DWORD PTR _iTotalValueToMe$222257[esp+48]
+	lea	eax, DWORD PTR _iTotalValueToMe$222734[esp+48]
 	push	eax
 	push	ebp
 	push	esi
@@ -19783,11 +19783,11 @@ $LN23@DoEqualize@2:
 	mov	ecx, DWORD PTR _iDealDuration$[esp+36]
 	push	0
 	push	ecx
-	lea	edx, DWORD PTR _iValueTheyreOffering$222259[esp+44]
+	lea	edx, DWORD PTR _iValueTheyreOffering$222736[esp+44]
 	push	edx
-	lea	eax, DWORD PTR _iValueImOffering$222258[esp+48]
+	lea	eax, DWORD PTR _iValueImOffering$222735[esp+48]
 	push	eax
-	lea	ecx, DWORD PTR _iTotalValueToMe$222257[esp+48]
+	lea	ecx, DWORD PTR _iTotalValueToMe$222734[esp+48]
 	push	ecx
 	push	ebp
 	push	esi
@@ -19800,11 +19800,11 @@ $LN2@DoEqualize@2:
 ; 667  : 			DoRemoveGoldFromUs(pDeal, eOtherPlayer, iTotalValueToMe, iValueImOffering, iValueTheyreOffering, bUseEvenValue);
 
 	push	0
-	lea	edx, DWORD PTR _iValueTheyreOffering$222259[esp+40]
+	lea	edx, DWORD PTR _iValueTheyreOffering$222736[esp+40]
 	push	edx
-	lea	eax, DWORD PTR _iValueImOffering$222258[esp+44]
+	lea	eax, DWORD PTR _iValueImOffering$222735[esp+44]
 	push	eax
-	lea	ecx, DWORD PTR _iTotalValueToMe$222257[esp+44]
+	lea	ecx, DWORD PTR _iTotalValueToMe$222734[esp+44]
 	push	ecx
 	push	ebp
 	push	esi
@@ -19814,11 +19814,11 @@ $LN2@DoEqualize@2:
 ; 668  : 			DoRemoveGoldFromThem(pDeal, eOtherPlayer, iTotalValueToMe, iValueImOffering, iValueTheyreOffering, bUseEvenValue);
 
 	push	0
-	lea	edx, DWORD PTR _iValueTheyreOffering$222259[esp+40]
+	lea	edx, DWORD PTR _iValueTheyreOffering$222736[esp+40]
 	push	edx
-	lea	eax, DWORD PTR _iValueImOffering$222258[esp+44]
+	lea	eax, DWORD PTR _iValueImOffering$222735[esp+44]
 	push	eax
-	lea	ecx, DWORD PTR _iTotalValueToMe$222257[esp+44]
+	lea	ecx, DWORD PTR _iTotalValueToMe$222734[esp+44]
 	push	ecx
 	push	ebp
 	push	esi
@@ -19828,14 +19828,14 @@ $LN2@DoEqualize@2:
 ; 669  : 
 ; 670  : 			DoAddCitiesToUs(pDeal, eOtherPlayer, bDontChangeMyExistingItems, iTotalValueToMe, iValueImOffering, iValueTheyreOffering, iAmountUnderWeWillOffer, bUseEvenValue);
 
-	mov	edx, DWORD PTR _iAmountUnderWeWillOffer$222261[esp+36]
+	mov	edx, DWORD PTR _iAmountUnderWeWillOffer$222738[esp+36]
 	push	0
 	push	edx
-	lea	eax, DWORD PTR _iValueTheyreOffering$222259[esp+44]
+	lea	eax, DWORD PTR _iValueTheyreOffering$222736[esp+44]
 	push	eax
-	lea	ecx, DWORD PTR _iValueImOffering$222258[esp+48]
+	lea	ecx, DWORD PTR _iValueImOffering$222735[esp+48]
 	push	ecx
-	lea	edx, DWORD PTR _iTotalValueToMe$222257[esp+48]
+	lea	edx, DWORD PTR _iTotalValueToMe$222734[esp+48]
 	push	edx
 	push	ebx
 	push	ebp
@@ -19855,16 +19855,16 @@ $LN2@DoEqualize@2:
 
 	mov	eax, DWORD PTR _bCantMatchOffer$[esp+32]
 	push	eax
-	lea	ecx, DWORD PTR _iAmountUnderWeWillOffer$222261[esp+40]
+	lea	ecx, DWORD PTR _iAmountUnderWeWillOffer$222738[esp+40]
 	push	ecx
-	lea	edx, DWORD PTR _iAmountOverWeWillRequest$222260[esp+44]
+	lea	edx, DWORD PTR _iAmountOverWeWillRequest$222737[esp+44]
 	push	edx
-	lea	eax, DWORD PTR _iValueTheyreOffering$222259[esp+48]
+	lea	eax, DWORD PTR _iValueTheyreOffering$222736[esp+48]
 	push	eax
-	lea	ecx, DWORD PTR _iValueImOffering$222258[esp+52]
+	lea	ecx, DWORD PTR _iValueImOffering$222735[esp+52]
 	push	ecx
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
-	lea	edx, DWORD PTR _iTotalValueToMe$222257[esp+52]
+	lea	edx, DWORD PTR _iTotalValueToMe$222734[esp+52]
 	push	edx
 	call	?getActivePlayer@CvGame@@QBE?AW4PlayerTypes@@XZ ; CvGame::getActivePlayer
 	push	eax
@@ -19896,9 +19896,9 @@ PUBLIC	?IsMakeOfferForLuxuryResource@CvDealAI@@QAE_NW4PlayerTypes@@PAVCvDeal@@@Z
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?IsMakeOfferForLuxuryResource@CvDealAI@@QAE_NW4PlayerTypes@@PAVCvDeal@@@Z
 _TEXT	SEGMENT
-_bCantMatchOffer$223729 = 8				; size = 1
+_bCantMatchOffer$224206 = 8				; size = 1
 _eOtherPlayer$ = 8					; size = 4
-_bUselessReferenceVariable$223728 = 12			; size = 1
+_bUselessReferenceVariable$224205 = 12			; size = 1
 _pDeal$ = 12						; size = 4
 ?IsMakeOfferForLuxuryResource@CvDealAI@@QAE_NW4PlayerTypes@@PAVCvDeal@@@Z PROC ; CvDealAI::IsMakeOfferForLuxuryResource, COMDAT
 ; _this$ = ecx
@@ -20140,9 +20140,9 @@ $LN2@IsMakeOffe:
 ; 3808 : 			bool bCantMatchOffer;
 ; 3809 : 			bDealAcceptable = DoEqualizeDealWithHuman(pDeal, eOtherPlayer, /*bDontChangeMyExistingItems*/ false, /*bDontChangeTheirExistingItems*/ true, bUselessReferenceVariable, bCantMatchOffer);	// Change the deal as necessary to make it work
 
-	lea	edx, DWORD PTR _bCantMatchOffer$223729[esp+12]
+	lea	edx, DWORD PTR _bCantMatchOffer$224206[esp+12]
 	push	edx
-	lea	eax, DWORD PTR _bUselessReferenceVariable$223728[esp+16]
+	lea	eax, DWORD PTR _bUselessReferenceVariable$224205[esp+16]
 	push	eax
 	push	1
 	push	0
@@ -20176,9 +20176,9 @@ EXTRN	?WantsEmbassyAtPlayer@CvDiplomacyAI@@QAE_NW4PlayerTypes@@@Z:PROC ; CvDiplo
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?MakeOfferForEmbassy@CvDealAI@@QAE_NW4PlayerTypes@@PAVCvDeal@@@Z
 _TEXT	SEGMENT
-_bCantMatchOffer$223744 = 8				; size = 1
+_bCantMatchOffer$224221 = 8				; size = 1
 _eOtherPlayer$ = 8					; size = 4
-_bUselessReferenceVariable$223743 = 12			; size = 1
+_bUselessReferenceVariable$224220 = 12			; size = 1
 _pDeal$ = 12						; size = 4
 ?MakeOfferForEmbassy@CvDealAI@@QAE_NW4PlayerTypes@@PAVCvDeal@@@Z PROC ; CvDealAI::MakeOfferForEmbassy, COMDAT
 ; _this$ = ecx
@@ -20297,9 +20297,9 @@ $LN2@MakeOfferF:
 ; 3854 : 			bool bCantMatchOffer;
 ; 3855 : 			bDealAcceptable = DoEqualizeDealWithHuman(pDeal, eOtherPlayer, false, true, bUselessReferenceVariable, bCantMatchOffer);	// Change the deal as necessary to make it work
 
-	lea	ecx, DWORD PTR _bCantMatchOffer$223744[esp+8]
+	lea	ecx, DWORD PTR _bCantMatchOffer$224221[esp+8]
 	push	ecx
-	lea	edx, DWORD PTR _bUselessReferenceVariable$223743[esp+12]
+	lea	edx, DWORD PTR _bUselessReferenceVariable$224220[esp+12]
 	push	edx
 	push	1
 	push	0
@@ -20350,9 +20350,9 @@ EXTRN	?IsWantsOpenBordersWithPlayer@CvDiplomacyAI@@QAE_NW4PlayerTypes@@@Z:PROC ;
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?IsMakeOfferForOpenBorders@CvDealAI@@QAE_NW4PlayerTypes@@PAVCvDeal@@@Z
 _TEXT	SEGMENT
-_bCantMatchOffer$223759 = 8				; size = 1
+_bCantMatchOffer$224236 = 8				; size = 1
 _eOtherPlayer$ = 8					; size = 4
-_bUselessReferenceVariable$223758 = 12			; size = 1
+_bUselessReferenceVariable$224235 = 12			; size = 1
 _pDeal$ = 12						; size = 4
 ?IsMakeOfferForOpenBorders@CvDealAI@@QAE_NW4PlayerTypes@@PAVCvDeal@@@Z PROC ; CvDealAI::IsMakeOfferForOpenBorders, COMDAT
 ; _this$ = ecx
@@ -20472,9 +20472,9 @@ $LN2@IsMakeOffe@2:
 ; 3900 : 			bool bCantMatchOffer;
 ; 3901 : 			bDealAcceptable = DoEqualizeDealWithHuman(pDeal, eOtherPlayer, false, true, bUselessReferenceVariable, bCantMatchOffer);	// Change the deal as necessary to make it work
 
-	lea	ecx, DWORD PTR _bCantMatchOffer$223759[esp+8]
+	lea	ecx, DWORD PTR _bCantMatchOffer$224236[esp+8]
 	push	ecx
-	lea	edx, DWORD PTR _bUselessReferenceVariable$223758[esp+12]
+	lea	edx, DWORD PTR _bUselessReferenceVariable$224235[esp+12]
 	push	edx
 	push	1
 	push	0
@@ -20525,9 +20525,9 @@ EXTRN	?AddResearchAgreement@CvDeal@@QAEXW4PlayerTypes@@H@Z:PROC ; CvDeal::AddRes
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?IsMakeOfferForResearchAgreement@CvDealAI@@QAE_NW4PlayerTypes@@PAVCvDeal@@@Z
 _TEXT	SEGMENT
-_bCantMatchOffer$223770 = 8				; size = 1
+_bCantMatchOffer$224247 = 8				; size = 1
 _eOtherPlayer$ = 8					; size = 4
-_bUselessReferenceVariable$223769 = 12			; size = 1
+_bUselessReferenceVariable$224246 = 12			; size = 1
 _pDeal$ = 12						; size = 4
 ?IsMakeOfferForResearchAgreement@CvDealAI@@QAE_NW4PlayerTypes@@PAVCvDeal@@@Z PROC ; CvDealAI::IsMakeOfferForResearchAgreement, COMDAT
 ; _this$ = ecx
@@ -20642,9 +20642,9 @@ $LN2@IsMakeOffe@3:
 ; 3938 : 		bool bCantMatchOffer;
 ; 3939 : 		bDealAcceptable = DoEqualizeDealWithHuman(pDeal, eOtherPlayer, true, false, bUselessReferenceVariable, bCantMatchOffer);	// Change the deal as necessary to make it work
 
-	lea	edx, DWORD PTR _bCantMatchOffer$223770[esp+8]
+	lea	edx, DWORD PTR _bCantMatchOffer$224247[esp+8]
 	push	edx
-	lea	eax, DWORD PTR _bUselessReferenceVariable$223769[esp+12]
+	lea	eax, DWORD PTR _bUselessReferenceVariable$224246[esp+12]
 	push	eax
 	push	0
 	push	1

@@ -10,78 +10,78 @@ INCLUDELIB MSVCRT
 INCLUDELIB OLDNAMES
 
 CONST	SEGMENT
-$SG217972 DB	'FLAVOR_CITY_DEFENSE', 00H
-$SG217976 DB	'FLAVOR_NAVAL_GROWTH', 00H
-$SG217980 DB	'FLAVOR_NAVAL_TILE_IMPROVEMENT', 00H
+$SG218449 DB	'FLAVOR_CITY_DEFENSE', 00H
+$SG218453 DB	'FLAVOR_NAVAL_GROWTH', 00H
+$SG218457 DB	'FLAVOR_NAVAL_TILE_IMPROVEMENT', 00H
 	ORG $+2
-$SG217984 DB	'FLAVOR_EXPANSION', 00H
+$SG218461 DB	'FLAVOR_EXPANSION', 00H
 	ORG $+3
-$SG217988 DB	'FLAVOR_GROWTH', 00H
+$SG218465 DB	'FLAVOR_GROWTH', 00H
 	ORG $+2
-$SG217992 DB	'FLAVOR_TILE_IMPROVEMENT', 00H
-$SG217996 DB	'FLAVOR_INFRASTRUCTURE', 00H
+$SG218469 DB	'FLAVOR_TILE_IMPROVEMENT', 00H
+$SG218473 DB	'FLAVOR_INFRASTRUCTURE', 00H
 	ORG $+2
-$SG218000 DB	'FLAVOR_PRODUCTION', 00H
+$SG218477 DB	'FLAVOR_PRODUCTION', 00H
 	ORG $+2
-$SG218004 DB	'FLAVOR_GOLD', 00H
-$SG218008 DB	'FLAVOR_CULTURE', 00H
+$SG218481 DB	'FLAVOR_GOLD', 00H
+$SG218485 DB	'FLAVOR_CULTURE', 00H
 	ORG $+1
-$SG218012 DB	'FLAVOR_HAPPINESS', 00H
+$SG218489 DB	'FLAVOR_HAPPINESS', 00H
 	ORG $+3
-$SG218016 DB	'FLAVOR_WONDER', 00H
+$SG218493 DB	'FLAVOR_WONDER', 00H
 	ORG $+2
-$SG218020 DB	'FLAVOR_WATER_CONNECTION', 00H
-$SG218024 DB	'FLAVOR_OFFENSE', 00H
+$SG218497 DB	'FLAVOR_WATER_CONNECTION', 00H
+$SG218501 DB	'FLAVOR_OFFENSE', 00H
 	ORG $+1
-$SG218028 DB	'FLAVOR_DEFENSE', 00H
+$SG218505 DB	'FLAVOR_DEFENSE', 00H
 	ORG $+1
-$SG218032 DB	'FLAVOR_CITY_DEFENSE', 00H
-$SG218036 DB	'FLAVOR_MILITARY_TRAINING', 00H
+$SG218509 DB	'FLAVOR_CITY_DEFENSE', 00H
+$SG218513 DB	'FLAVOR_MILITARY_TRAINING', 00H
 	ORG $+3
-$SG218040 DB	'FLAVOR_RECON', 00H
+$SG218517 DB	'FLAVOR_RECON', 00H
 	ORG $+3
-$SG218044 DB	'FLAVOR_RANGED', 00H
+$SG218521 DB	'FLAVOR_RANGED', 00H
 	ORG $+2
-$SG218048 DB	'FLAVOR_MOBILE', 00H
+$SG218525 DB	'FLAVOR_MOBILE', 00H
 	ORG $+2
-$SG218052 DB	'FLAVOR_NAVAL', 00H
+$SG218529 DB	'FLAVOR_NAVAL', 00H
 	ORG $+3
-$SG218056 DB	'FLAVOR_NAVAL_RECON', 00H
+$SG218533 DB	'FLAVOR_NAVAL_RECON', 00H
 	ORG $+1
-$SG218060 DB	'FLAVOR_AIR', 00H
+$SG218537 DB	'FLAVOR_AIR', 00H
 	ORG $+1
-$SG218064 DB	'FLAVOR_INFRASTRUCTURE', 00H
+$SG218541 DB	'FLAVOR_INFRASTRUCTURE', 00H
 	ORG $+2
-$SG218068 DB	'FLAVOR_PRODUCTION', 00H
+$SG218545 DB	'FLAVOR_PRODUCTION', 00H
 	ORG $+2
-$SG218072 DB	'FLAVOR_NUKE', 00H
-$SG218076 DB	'FLAVOR_CITY_DEFENSE', 00H
-$SG218080 DB	'FLAVOR_RECON', 00H
+$SG218549 DB	'FLAVOR_NUKE', 00H
+$SG218553 DB	'FLAVOR_CITY_DEFENSE', 00H
+$SG218557 DB	'FLAVOR_RECON', 00H
 	ORG $+3
-$SG218084 DB	'FLAVOR_NAVAL_RECON', 00H
+$SG218561 DB	'FLAVOR_NAVAL_RECON', 00H
 	ORG $+1
-$SG218088 DB	'FLAVOR_GREAT_PEOPLE', 00H
-$SG218092 DB	'FLAVOR_WONDER', 00H
+$SG218565 DB	'FLAVOR_GREAT_PEOPLE', 00H
+$SG218569 DB	'FLAVOR_WONDER', 00H
 	ORG $+2
-$SG218096 DB	'FLAVOR_RELIGION', 00H
-$SG218100 DB	'FLAVOR_DIPLOMACY', 00H
+$SG218573 DB	'FLAVOR_RELIGION', 00H
+$SG218577 DB	'FLAVOR_DIPLOMACY', 00H
 	ORG $+3
-$SG218104 DB	'FLAVOR_NUKE', 00H
-$SG218108 DB	'FLAVOR_CITY_DEFENSE', 00H
-$SG218112 DB	'FLAVOR_NAVAL_TILE_IMPROVEMENT', 00H
+$SG218581 DB	'FLAVOR_NUKE', 00H
+$SG218585 DB	'FLAVOR_CITY_DEFENSE', 00H
+$SG218589 DB	'FLAVOR_NAVAL_TILE_IMPROVEMENT', 00H
 	ORG $+2
-$SG218116 DB	'FLAVOR_TILE_IMPROVEMENT', 00H
-$SG218120 DB	'FLAVOR_RECON', 00H
+$SG218593 DB	'FLAVOR_TILE_IMPROVEMENT', 00H
+$SG218597 DB	'FLAVOR_RECON', 00H
 	ORG $+3
-$SG218124 DB	'FLAVOR_NAVAL_RECON', 00H
+$SG218601 DB	'FLAVOR_NAVAL_RECON', 00H
 	ORG $+1
-$SG218128 DB	'FLAVOR_AIR', 00H
+$SG218605 DB	'FLAVOR_AIR', 00H
 	ORG $+1
-$SG218132 DB	'FLAVOR_SCIENCE', 00H
+$SG218609 DB	'FLAVOR_SCIENCE', 00H
 	ORG $+1
-$SG218136 DB	'FLAVOR_SPACESHIP', 00H
+$SG218613 DB	'FLAVOR_SPACESHIP', 00H
 	ORG $+3
-$SG218140 DB	'FLAVOR_NUKE', 00H
+$SG218617 DB	'FLAVOR_NUKE', 00H
 CONST	ENDS
 PUBLIC	??_H@YGXPAXIHP6EPAX0@Z@Z			; `vector constructor iterator'
 ; Function compile flags: /Ogtpy
@@ -2843,7 +2843,7 @@ $LN86@AdvisorInt:
 
 	mov	esi, DWORD PTR __imp_??$?8DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PBD@Z
 	lea	eax, DWORD PTR _strFlavorName$[esp+44]
-	push	OFFSET $SG217972
+	push	OFFSET $SG218449
 	push	eax
 	call	esi
 	add	esp, 8
@@ -2871,7 +2871,7 @@ $LN85@AdvisorInt:
 ; 322  : 		}
 ; 323  : 		else if(strFlavorName == "FLAVOR_NAVAL_GROWTH")
 
-	push	OFFSET $SG217976
+	push	OFFSET $SG218453
 	push	ecx
 	call	esi
 	add	esp, 8
@@ -2886,7 +2886,7 @@ $LN85@AdvisorInt:
 ; 327  : 		else if(strFlavorName == "FLAVOR_NAVAL_TILE_IMPROVEMENT")
 
 	lea	edx, DWORD PTR _strFlavorName$[esp+44]
-	push	OFFSET $SG217980
+	push	OFFSET $SG218457
 	push	edx
 	call	esi
 	add	esp, 8
@@ -2901,7 +2901,7 @@ $LN85@AdvisorInt:
 ; 331  : 		else if(strFlavorName == "FLAVOR_EXPANSION")
 
 	lea	eax, DWORD PTR _strFlavorName$[esp+44]
-	push	OFFSET $SG217984
+	push	OFFSET $SG218461
 	push	eax
 	call	esi
 	add	esp, 8
@@ -2929,7 +2929,7 @@ $LN79@AdvisorInt:
 ; 334  : 		}
 ; 335  : 		else if(strFlavorName == "FLAVOR_GROWTH")
 
-	push	OFFSET $SG217988
+	push	OFFSET $SG218465
 	push	ecx
 	call	esi
 	add	esp, 8
@@ -2944,7 +2944,7 @@ $LN79@AdvisorInt:
 ; 339  : 		else if(strFlavorName == "FLAVOR_TILE_IMPROVEMENT")
 
 	lea	edx, DWORD PTR _strFlavorName$[esp+44]
-	push	OFFSET $SG217992
+	push	OFFSET $SG218469
 	push	edx
 	call	esi
 	add	esp, 8
@@ -2959,7 +2959,7 @@ $LN79@AdvisorInt:
 ; 343  : 		else if(strFlavorName == "FLAVOR_INFRASTRUCTURE")
 
 	lea	eax, DWORD PTR _strFlavorName$[esp+44]
-	push	OFFSET $SG217996
+	push	OFFSET $SG218473
 	push	eax
 	call	esi
 	add	esp, 8
@@ -2987,7 +2987,7 @@ $LN73@AdvisorInt:
 ; 346  : 		}
 ; 347  : 		else if(strFlavorName == "FLAVOR_PRODUCTION")
 
-	push	OFFSET $SG218000
+	push	OFFSET $SG218477
 	push	ecx
 	call	esi
 	add	esp, 8
@@ -3002,7 +3002,7 @@ $LN73@AdvisorInt:
 ; 351  : 		else if(strFlavorName == "FLAVOR_GOLD")
 
 	lea	edx, DWORD PTR _strFlavorName$[esp+44]
-	push	OFFSET $SG218004
+	push	OFFSET $SG218481
 	push	edx
 	call	esi
 	add	esp, 8
@@ -3017,7 +3017,7 @@ $LN73@AdvisorInt:
 ; 355  : 		else if(strFlavorName == "FLAVOR_CULTURE")
 
 	lea	eax, DWORD PTR _strFlavorName$[esp+44]
-	push	OFFSET $SG218008
+	push	OFFSET $SG218485
 	push	eax
 	call	esi
 	add	esp, 8
@@ -3032,7 +3032,7 @@ $LN73@AdvisorInt:
 ; 358  : 		}
 ; 359  : 		else if(strFlavorName == "FLAVOR_HAPPINESS")
 
-	push	OFFSET $SG218012
+	push	OFFSET $SG218489
 	push	ecx
 	call	esi
 	add	esp, 8
@@ -3047,7 +3047,7 @@ $LN73@AdvisorInt:
 ; 363  : 		else if(strFlavorName == "FLAVOR_WONDER")
 
 	lea	edx, DWORD PTR _strFlavorName$[esp+44]
-	push	OFFSET $SG218016
+	push	OFFSET $SG218493
 	push	edx
 	call	esi
 	add	esp, 8
@@ -3061,7 +3061,7 @@ $LN73@AdvisorInt:
 ; 366  : 		}
 ; 367  : 		else if(strFlavorName == "FLAVOR_WATER_CONNECTION")
 
-	push	OFFSET $SG218020
+	push	OFFSET $SG218497
 $LN235@AdvisorInt:
 	lea	eax, DWORD PTR _strFlavorName$[esp+48]
 	push	eax
@@ -3096,7 +3096,7 @@ $LN60@AdvisorInt:
 
 	mov	esi, DWORD PTR __imp_??$?8DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PBD@Z
 	lea	ecx, DWORD PTR _strFlavorName$[esp+44]
-	push	OFFSET $SG218024
+	push	OFFSET $SG218501
 	push	ecx
 	call	esi
 	add	esp, 8
@@ -3111,7 +3111,7 @@ $LN60@AdvisorInt:
 ; 378  : 		else if(strFlavorName == "FLAVOR_DEFENSE")
 
 	lea	edx, DWORD PTR _strFlavorName$[esp+44]
-	push	OFFSET $SG218028
+	push	OFFSET $SG218505
 	push	edx
 	call	esi
 	add	esp, 8
@@ -3126,7 +3126,7 @@ $LN60@AdvisorInt:
 ; 382  : 		else if(strFlavorName == "FLAVOR_CITY_DEFENSE")
 
 	lea	eax, DWORD PTR _strFlavorName$[esp+44]
-	push	OFFSET $SG218032
+	push	OFFSET $SG218509
 	push	eax
 	call	esi
 	add	esp, 8
@@ -3141,7 +3141,7 @@ $LN60@AdvisorInt:
 ; 385  : 		}
 ; 386  : 		else if(strFlavorName == "FLAVOR_MILITARY_TRAINING")
 
-	push	OFFSET $SG218036
+	push	OFFSET $SG218513
 	push	ecx
 	call	esi
 	add	esp, 8
@@ -3170,7 +3170,7 @@ $LN53@AdvisorInt:
 ; 390  : 		else if(strFlavorName == "FLAVOR_RECON")
 
 	lea	edx, DWORD PTR _strFlavorName$[esp+44]
-	push	OFFSET $SG218040
+	push	OFFSET $SG218517
 	push	edx
 	call	esi
 	add	esp, 8
@@ -3199,7 +3199,7 @@ $LN51@AdvisorInt:
 ; 394  : 		else if(strFlavorName == "FLAVOR_RANGED")
 
 	lea	eax, DWORD PTR _strFlavorName$[esp+44]
-	push	OFFSET $SG218044
+	push	OFFSET $SG218521
 	push	eax
 	call	esi
 	add	esp, 8
@@ -3214,7 +3214,7 @@ $LN51@AdvisorInt:
 ; 397  : 		}
 ; 398  : 		else if(strFlavorName == "FLAVOR_MOBILE")
 
-	push	OFFSET $SG218048
+	push	OFFSET $SG218525
 	push	ecx
 	call	esi
 	add	esp, 8
@@ -3229,7 +3229,7 @@ $LN51@AdvisorInt:
 ; 402  : 		else if(strFlavorName == "FLAVOR_NAVAL")
 
 	lea	edx, DWORD PTR _strFlavorName$[esp+44]
-	push	OFFSET $SG218052
+	push	OFFSET $SG218529
 	push	edx
 	call	esi
 	add	esp, 8
@@ -3244,7 +3244,7 @@ $LN51@AdvisorInt:
 ; 406  : 		else if(strFlavorName == "FLAVOR_NAVAL_RECON")
 
 	lea	eax, DWORD PTR _strFlavorName$[esp+44]
-	push	OFFSET $SG218056
+	push	OFFSET $SG218533
 	push	eax
 	call	esi
 	add	esp, 8
@@ -3271,7 +3271,7 @@ $LN43@AdvisorInt:
 ; 409  : 		}
 ; 410  : 		else if(strFlavorName == "FLAVOR_AIR")
 
-	push	OFFSET $SG218060
+	push	OFFSET $SG218537
 	push	ecx
 	call	esi
 	add	esp, 8
@@ -3286,7 +3286,7 @@ $LN43@AdvisorInt:
 ; 414  : 		else if(strFlavorName == "FLAVOR_INFRASTRUCTURE")
 
 	lea	edx, DWORD PTR _strFlavorName$[esp+44]
-	push	OFFSET $SG218064
+	push	OFFSET $SG218541
 	push	edx
 	call	esi
 	add	esp, 8
@@ -3315,7 +3315,7 @@ $LN39@AdvisorInt:
 ; 418  : 		else if(strFlavorName == "FLAVOR_PRODUCTION")
 
 	lea	eax, DWORD PTR _strFlavorName$[esp+44]
-	push	OFFSET $SG218068
+	push	OFFSET $SG218545
 	push	eax
 	call	esi
 	add	esp, 8
@@ -3330,7 +3330,7 @@ $LN39@AdvisorInt:
 ; 421  : 		}
 ; 422  : 		else if(strFlavorName == "FLAVOR_NUKE")
 
-	push	OFFSET $SG218072
+	push	OFFSET $SG218549
 	push	ecx
 	call	esi
 	add	esp, 8
@@ -3362,7 +3362,7 @@ $LN34@AdvisorInt:
 
 	mov	esi, DWORD PTR __imp_??$?8DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PBD@Z
 	lea	edx, DWORD PTR _strFlavorName$[esp+44]
-	push	OFFSET $SG218076
+	push	OFFSET $SG218553
 	push	edx
 	call	esi
 	add	esp, 8
@@ -3377,7 +3377,7 @@ $LN34@AdvisorInt:
 ; 432  : 		else if(strFlavorName == "FLAVOR_RECON")
 
 	lea	eax, DWORD PTR _strFlavorName$[esp+44]
-	push	OFFSET $SG218080
+	push	OFFSET $SG218557
 	push	eax
 	call	esi
 	add	esp, 8
@@ -3392,7 +3392,7 @@ $LN34@AdvisorInt:
 ; 435  : 		}
 ; 436  : 		else if(strFlavorName == "FLAVOR_NAVAL_RECON")
 
-	push	OFFSET $SG218084
+	push	OFFSET $SG218561
 	push	ecx
 	call	esi
 	add	esp, 8
@@ -3407,7 +3407,7 @@ $LN34@AdvisorInt:
 ; 440  : 		else if(strFlavorName == "FLAVOR_GREAT_PEOPLE")
 
 	lea	edx, DWORD PTR _strFlavorName$[esp+44]
-	push	OFFSET $SG218088
+	push	OFFSET $SG218565
 	push	edx
 	call	esi
 	add	esp, 8
@@ -3422,7 +3422,7 @@ $LN34@AdvisorInt:
 ; 444  : 		else if(strFlavorName == "FLAVOR_WONDER")
 
 	lea	eax, DWORD PTR _strFlavorName$[esp+44]
-	push	OFFSET $SG218092
+	push	OFFSET $SG218569
 	push	eax
 	call	esi
 	add	esp, 8
@@ -3437,7 +3437,7 @@ $LN34@AdvisorInt:
 ; 447  : 		}
 ; 448  : 		else if(strFlavorName == "FLAVOR_RELIGION")
 
-	push	OFFSET $SG218096
+	push	OFFSET $SG218573
 	push	ecx
 	call	esi
 	add	esp, 8
@@ -3452,7 +3452,7 @@ $LN34@AdvisorInt:
 ; 452  : 		else if(strFlavorName == "FLAVOR_DIPLOMACY")
 
 	lea	edx, DWORD PTR _strFlavorName$[esp+44]
-	push	OFFSET $SG218100
+	push	OFFSET $SG218577
 	push	edx
 	call	esi
 	add	esp, 8
@@ -3466,7 +3466,7 @@ $LN34@AdvisorInt:
 ; 455  : 		}
 ; 456  : 		else if(strFlavorName == "FLAVOR_NUKE")
 
-	push	OFFSET $SG218104
+	push	OFFSET $SG218581
 
 ; 457  : 		{
 ; 458  : 			return 5;
@@ -3481,7 +3481,7 @@ $LN18@AdvisorInt:
 
 	mov	esi, DWORD PTR __imp_??$?8DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PBD@Z
 	lea	ecx, DWORD PTR _strFlavorName$[esp+44]
-	push	OFFSET $SG218108
+	push	OFFSET $SG218585
 	push	ecx
 	call	esi
 	add	esp, 8
@@ -3496,7 +3496,7 @@ $LN18@AdvisorInt:
 ; 466  : 		else if(strFlavorName == "FLAVOR_NAVAL_TILE_IMPROVEMENT")
 
 	lea	edx, DWORD PTR _strFlavorName$[esp+44]
-	push	OFFSET $SG218112
+	push	OFFSET $SG218589
 	push	edx
 	call	esi
 	add	esp, 8
@@ -3511,7 +3511,7 @@ $LN18@AdvisorInt:
 ; 470  : 		else if(strFlavorName == "FLAVOR_TILE_IMPROVEMENT")
 
 	lea	eax, DWORD PTR _strFlavorName$[esp+44]
-	push	OFFSET $SG218116
+	push	OFFSET $SG218593
 	push	eax
 	call	esi
 	add	esp, 8
@@ -3526,7 +3526,7 @@ $LN18@AdvisorInt:
 ; 473  : 		}
 ; 474  : 		else if(strFlavorName == "FLAVOR_RECON")
 
-	push	OFFSET $SG218120
+	push	OFFSET $SG218597
 	push	ecx
 	call	esi
 	add	esp, 8
@@ -3541,7 +3541,7 @@ $LN18@AdvisorInt:
 ; 478  : 		else if(strFlavorName == "FLAVOR_NAVAL_RECON")
 
 	lea	edx, DWORD PTR _strFlavorName$[esp+44]
-	push	OFFSET $SG218124
+	push	OFFSET $SG218601
 	push	edx
 	call	esi
 	add	esp, 8
@@ -3556,7 +3556,7 @@ $LN18@AdvisorInt:
 ; 482  : 		else if(strFlavorName == "FLAVOR_AIR")
 
 	lea	eax, DWORD PTR _strFlavorName$[esp+44]
-	push	OFFSET $SG218128
+	push	OFFSET $SG218605
 	push	eax
 	call	esi
 	add	esp, 8
@@ -3571,7 +3571,7 @@ $LN18@AdvisorInt:
 ; 485  : 		}
 ; 486  : 		else if(strFlavorName == "FLAVOR_SCIENCE")
 
-	push	OFFSET $SG218132
+	push	OFFSET $SG218609
 	push	ecx
 	call	esi
 	add	esp, 8
@@ -3586,7 +3586,7 @@ $LN18@AdvisorInt:
 ; 490  : 		else if(strFlavorName == "FLAVOR_SPACESHIP")
 
 	lea	edx, DWORD PTR _strFlavorName$[esp+44]
-	push	OFFSET $SG218136
+	push	OFFSET $SG218613
 	push	edx
 	call	esi
 	add	esp, 8
@@ -3601,7 +3601,7 @@ $LN18@AdvisorInt:
 ; 494  : 		else if(strFlavorName == "FLAVOR_NUKE")
 
 	lea	eax, DWORD PTR _strFlavorName$[esp+44]
-	push	OFFSET $SG218140
+	push	OFFSET $SG218617
 	push	eax
 	call	esi
 	add	esp, 8
@@ -7906,7 +7906,7 @@ PUBLIC	??$_Insertion_sort1@PAUWeightedElement@?$CvWeightedVector@UCvCityBuildabl
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Insertion_sort1@PAUWeightedElement@?$CvWeightedVector@UCvCityBuildable@@$0DC@$00@@U12@@std@@YAXPAUWeightedElement@?$CvWeightedVector@UCvCityBuildable@@$0DC@$00@@00@Z
 _TEXT	SEGMENT
-__Val$219633 = -16					; size = 16
+__Val$220110 = -16					; size = 16
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 ___formal$ = 16						; size = 4
@@ -7945,8 +7945,8 @@ $LL7@Insertion_@3:
 	mov	ecx, DWORD PTR [edx+8]
 	mov	ebx, DWORD PTR [edx]
 	mov	eax, edx
-	mov	DWORD PTR __Val$219633[esp+36], ebp
-	mov	DWORD PTR __Val$219633[esp+40], ecx
+	mov	DWORD PTR __Val$220110[esp+36], ebp
+	mov	DWORD PTR __Val$220110[esp+40], ecx
 	jle	SHORT $LN5@Insertion_@3
 
 ; 2975 : 				{	// found new earliest element, move to front
@@ -7970,7 +7970,7 @@ $LN21@Insertion_@3:
 
 ; 2977 : 				*_First = _Val;
 
-	mov	eax, DWORD PTR __Val$219633[esp+40]
+	mov	eax, DWORD PTR __Val$220110[esp+40]
 	mov	DWORD PTR [edi], ebx
 	mov	DWORD PTR [edi+4], ebp
 	mov	DWORD PTR [edi+8], eax
@@ -8012,12 +8012,12 @@ $LL3@Insertion_@3:
 ; 2982 : 					_DEBUG_LT(_Val, *--_First1);
 ; 2983 : 					_Next1 = _First1)
 
-	mov	ebp, DWORD PTR __Val$219633[esp+36]
+	mov	ebp, DWORD PTR __Val$220110[esp+36]
 $LN1@Insertion_@3:
 
 ; 2985 : 				*_Next1 = _Val;	// insert element in hole
 
-	mov	ecx, DWORD PTR __Val$219633[esp+40]
+	mov	ecx, DWORD PTR __Val$220110[esp+40]
 	mov	DWORD PTR [eax], ebx
 	mov	DWORD PTR [eax+4], ebp
 	mov	DWORD PTR [eax+8], ecx
@@ -8225,7 +8225,7 @@ PUBLIC	??$_Insertion_sort1@PAUWeightedElement@?$CvWeightedVector@UCvCityBuildabl
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Insertion_sort1@PAUWeightedElement@?$CvWeightedVector@UCvCityBuildable@@$03$00@@U12@@std@@YAXPAUWeightedElement@?$CvWeightedVector@UCvCityBuildable@@$03$00@@00@Z
 _TEXT	SEGMENT
-__Val$219698 = -16					; size = 16
+__Val$220175 = -16					; size = 16
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 ___formal$ = 16						; size = 4
@@ -8264,8 +8264,8 @@ $LL7@Insertion_@4:
 	mov	ecx, DWORD PTR [edx+8]
 	mov	ebx, DWORD PTR [edx]
 	mov	eax, edx
-	mov	DWORD PTR __Val$219698[esp+36], ebp
-	mov	DWORD PTR __Val$219698[esp+40], ecx
+	mov	DWORD PTR __Val$220175[esp+36], ebp
+	mov	DWORD PTR __Val$220175[esp+40], ecx
 	jle	SHORT $LN5@Insertion_@4
 
 ; 2975 : 				{	// found new earliest element, move to front
@@ -8289,7 +8289,7 @@ $LN21@Insertion_@4:
 
 ; 2977 : 				*_First = _Val;
 
-	mov	eax, DWORD PTR __Val$219698[esp+40]
+	mov	eax, DWORD PTR __Val$220175[esp+40]
 	mov	DWORD PTR [edi], ebx
 	mov	DWORD PTR [edi+4], ebp
 	mov	DWORD PTR [edi+8], eax
@@ -8331,12 +8331,12 @@ $LL3@Insertion_@4:
 ; 2982 : 					_DEBUG_LT(_Val, *--_First1);
 ; 2983 : 					_Next1 = _First1)
 
-	mov	ebp, DWORD PTR __Val$219698[esp+36]
+	mov	ebp, DWORD PTR __Val$220175[esp+36]
 $LN1@Insertion_@4:
 
 ; 2985 : 				*_Next1 = _Val;	// insert element in hole
 
-	mov	ecx, DWORD PTR __Val$219698[esp+40]
+	mov	ecx, DWORD PTR __Val$220175[esp+40]
 	mov	DWORD PTR [eax], ebx
 	mov	DWORD PTR [eax+4], ebp
 	mov	DWORD PTR [eax+8], ecx
@@ -9042,9 +9042,9 @@ PUBLIC	??$_Unguarded_partition@PAUWeightedElement@?$CvWeightedVector@H$03$00@@@s
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\algorithm
 ;	COMDAT ??$_Unguarded_partition@PAUWeightedElement@?$CvWeightedVector@H$03$00@@@std@@YA?AU?$pair@PAUWeightedElement@?$CvWeightedVector@H$03$00@@PAU12@@0@PAUWeightedElement@?$CvWeightedVector@H$03$00@@0@Z
 _TEXT	SEGMENT
-__Tmp$223662 = -24					; size = 8
-__Tmp$223591 = -16					; size = 8
-__Tmp$223617 = -8					; size = 8
+__Tmp$224136 = -24					; size = 8
+__Tmp$224065 = -16					; size = 8
+__Tmp$224091 = -8					; size = 8
 ___$ReturnUdt$ = 8					; size = 4
 __First$ = 12						; size = 4
 __Last$ = 16						; size = 4
@@ -9171,12 +9171,12 @@ $LL21@Unguarded_:
 	je	SHORT $LN20@Unguarded_
 	mov	ebp, DWORD PTR [edx+4]
 	mov	edi, DWORD PTR [edx]
-	mov	DWORD PTR __Tmp$223591[esp+44], ebp
+	mov	DWORD PTR __Tmp$224065[esp+44], ebp
 	mov	ebp, DWORD PTR [eax]
 	mov	DWORD PTR [edx], ebp
 	mov	ebp, DWORD PTR [eax+4]
 	mov	DWORD PTR [edx+4], ebp
-	mov	edx, DWORD PTR __Tmp$223591[esp+44]
+	mov	edx, DWORD PTR __Tmp$224065[esp+44]
 	mov	DWORD PTR [eax], edi
 	mov	DWORD PTR [eax+4], edx
 $LN20@Unguarded_:
@@ -9213,13 +9213,13 @@ $LL14@Unguarded_:
 	je	SHORT $LN13@Unguarded_
 	mov	ebp, DWORD PTR [ecx+4]
 	mov	edi, DWORD PTR [ecx]
-	mov	DWORD PTR __Tmp$223617[esp+44], ebp
+	mov	DWORD PTR __Tmp$224091[esp+44], ebp
 	mov	ebp, DWORD PTR [edx]
 	mov	DWORD PTR [ecx], ebp
 	mov	ebp, DWORD PTR [edx+4]
 	mov	DWORD PTR [ecx+4], ebp
 	mov	DWORD PTR [edx], edi
-	mov	edi, DWORD PTR __Tmp$223617[esp+44]
+	mov	edi, DWORD PTR __Tmp$224091[esp+44]
 	mov	DWORD PTR [edx+4], edi
 $LN13@Unguarded_:
 	sub	ebx, 8
@@ -9269,16 +9269,16 @@ $LN64@Unguarded_:
 	cmp	edi, edx
 	je	$LL23@Unguarded_
 	mov	ebp, DWORD PTR [edi]
-	mov	DWORD PTR __Tmp$223662[esp+40], ebp
+	mov	DWORD PTR __Tmp$224136[esp+40], ebp
 	mov	ebp, DWORD PTR [edi+4]
-	mov	DWORD PTR __Tmp$223662[esp+44], ebp
+	mov	DWORD PTR __Tmp$224136[esp+44], ebp
 	mov	ebp, DWORD PTR [edx]
 	mov	DWORD PTR [edi], ebp
 	mov	ebp, DWORD PTR [edx+4]
 	mov	DWORD PTR [edi+4], ebp
-	mov	edi, DWORD PTR __Tmp$223662[esp+40]
+	mov	edi, DWORD PTR __Tmp$224136[esp+40]
 	mov	DWORD PTR [edx], edi
-	mov	edi, DWORD PTR __Tmp$223662[esp+44]
+	mov	edi, DWORD PTR __Tmp$224136[esp+44]
 	mov	DWORD PTR [edx+4], edi
 	jmp	$LL23@Unguarded_
 $LN6@Unguarded_:
@@ -9425,9 +9425,9 @@ PUBLIC	??$_Unguarded_partition@PAUWeightedElement@?$CvWeightedVector@H$0FA@$00@@
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Unguarded_partition@PAUWeightedElement@?$CvWeightedVector@H$0FA@$00@@@std@@YA?AU?$pair@PAUWeightedElement@?$CvWeightedVector@H$0FA@$00@@PAU12@@0@PAUWeightedElement@?$CvWeightedVector@H$0FA@$00@@0@Z
 _TEXT	SEGMENT
-__Tmp$223870 = -24					; size = 8
-__Tmp$223799 = -16					; size = 8
-__Tmp$223825 = -8					; size = 8
+__Tmp$224346 = -24					; size = 8
+__Tmp$224275 = -16					; size = 8
+__Tmp$224301 = -8					; size = 8
 ___$ReturnUdt$ = 8					; size = 4
 __First$ = 12						; size = 4
 __Last$ = 16						; size = 4
@@ -9554,12 +9554,12 @@ $LL21@Unguarded_@2:
 	je	SHORT $LN20@Unguarded_@2
 	mov	ebp, DWORD PTR [edx+4]
 	mov	edi, DWORD PTR [edx]
-	mov	DWORD PTR __Tmp$223799[esp+44], ebp
+	mov	DWORD PTR __Tmp$224275[esp+44], ebp
 	mov	ebp, DWORD PTR [eax]
 	mov	DWORD PTR [edx], ebp
 	mov	ebp, DWORD PTR [eax+4]
 	mov	DWORD PTR [edx+4], ebp
-	mov	edx, DWORD PTR __Tmp$223799[esp+44]
+	mov	edx, DWORD PTR __Tmp$224275[esp+44]
 	mov	DWORD PTR [eax], edi
 	mov	DWORD PTR [eax+4], edx
 $LN20@Unguarded_@2:
@@ -9596,13 +9596,13 @@ $LL14@Unguarded_@2:
 	je	SHORT $LN13@Unguarded_@2
 	mov	ebp, DWORD PTR [ecx+4]
 	mov	edi, DWORD PTR [ecx]
-	mov	DWORD PTR __Tmp$223825[esp+44], ebp
+	mov	DWORD PTR __Tmp$224301[esp+44], ebp
 	mov	ebp, DWORD PTR [edx]
 	mov	DWORD PTR [ecx], ebp
 	mov	ebp, DWORD PTR [edx+4]
 	mov	DWORD PTR [ecx+4], ebp
 	mov	DWORD PTR [edx], edi
-	mov	edi, DWORD PTR __Tmp$223825[esp+44]
+	mov	edi, DWORD PTR __Tmp$224301[esp+44]
 	mov	DWORD PTR [edx+4], edi
 $LN13@Unguarded_@2:
 	sub	ebx, 8
@@ -9652,16 +9652,16 @@ $LN64@Unguarded_@2:
 	cmp	edi, edx
 	je	$LL23@Unguarded_@2
 	mov	ebp, DWORD PTR [edi]
-	mov	DWORD PTR __Tmp$223870[esp+40], ebp
+	mov	DWORD PTR __Tmp$224346[esp+40], ebp
 	mov	ebp, DWORD PTR [edi+4]
-	mov	DWORD PTR __Tmp$223870[esp+44], ebp
+	mov	DWORD PTR __Tmp$224346[esp+44], ebp
 	mov	ebp, DWORD PTR [edx]
 	mov	DWORD PTR [edi], ebp
 	mov	ebp, DWORD PTR [edx+4]
 	mov	DWORD PTR [edi+4], ebp
-	mov	edi, DWORD PTR __Tmp$223870[esp+40]
+	mov	edi, DWORD PTR __Tmp$224346[esp+40]
 	mov	DWORD PTR [edx], edi
-	mov	edi, DWORD PTR __Tmp$223870[esp+44]
+	mov	edi, DWORD PTR __Tmp$224346[esp+44]
 	mov	DWORD PTR [edx+4], edi
 	jmp	$LL23@Unguarded_@2
 $LN6@Unguarded_@2:
@@ -9808,13 +9808,13 @@ PUBLIC	??$_Unguarded_partition@PAUWeightedElement@?$CvWeightedVector@UCvCityBuil
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Unguarded_partition@PAUWeightedElement@?$CvWeightedVector@UCvCityBuildable@@$0DC@$00@@@std@@YA?AU?$pair@PAUWeightedElement@?$CvWeightedVector@UCvCityBuildable@@$0DC@$00@@PAU12@@0@PAUWeightedElement@?$CvWeightedVector@UCvCityBuildable@@$0DC@$00@@0@Z
 _TEXT	SEGMENT
-__Tmp$224078 = -112					; size = 16
-__Tmp$224007 = -96					; size = 16
-__Tmp$224033 = -80					; size = 16
-__Tmp$224057 = -64					; size = 16
-__Tmp$224096 = -48					; size = 16
-__Tmp$224116 = -32					; size = 16
-__Tmp$224137 = -16					; size = 16
+__Tmp$224554 = -112					; size = 16
+__Tmp$224483 = -96					; size = 16
+__Tmp$224509 = -80					; size = 16
+__Tmp$224533 = -64					; size = 16
+__Tmp$224572 = -48					; size = 16
+__Tmp$224592 = -32					; size = 16
+__Tmp$224613 = -16					; size = 16
 ___$ReturnUdt$ = 8					; size = 4
 __First$ = 12						; size = 4
 __Last$ = 16						; size = 4
@@ -9944,11 +9944,11 @@ $LL21@Unguarded_@3:
 	je	SHORT $LN20@Unguarded_@3
 	mov	ebp, DWORD PTR [edx+4]
 	mov	ebx, DWORD PTR [edx]
-	mov	DWORD PTR __Tmp$224007[esp+132], ebp
+	mov	DWORD PTR __Tmp$224483[esp+132], ebp
 	mov	ebp, DWORD PTR [edx+8]
-	mov	DWORD PTR __Tmp$224007[esp+136], ebp
+	mov	DWORD PTR __Tmp$224483[esp+136], ebp
 	mov	ebp, DWORD PTR [edx+12]
-	mov	DWORD PTR __Tmp$224007[esp+140], ebp
+	mov	DWORD PTR __Tmp$224483[esp+140], ebp
 	mov	ebp, DWORD PTR [eax]
 	mov	DWORD PTR [edx], ebp
 	mov	ebp, DWORD PTR [eax+4]
@@ -9957,12 +9957,12 @@ $LL21@Unguarded_@3:
 	mov	DWORD PTR [edx+8], ebp
 	mov	ebp, DWORD PTR [eax+12]
 	mov	DWORD PTR [edx+12], ebp
-	mov	edx, DWORD PTR __Tmp$224007[esp+132]
+	mov	edx, DWORD PTR __Tmp$224483[esp+132]
 	mov	DWORD PTR [eax], ebx
 	mov	DWORD PTR [eax+4], edx
-	mov	edx, DWORD PTR __Tmp$224007[esp+136]
+	mov	edx, DWORD PTR __Tmp$224483[esp+136]
 	mov	DWORD PTR [eax+8], edx
-	mov	edx, DWORD PTR __Tmp$224007[esp+140]
+	mov	edx, DWORD PTR __Tmp$224483[esp+140]
 	mov	DWORD PTR [eax+12], edx
 $LN20@Unguarded_@3:
 	add	eax, 16					; 00000010H
@@ -9998,11 +9998,11 @@ $LL14@Unguarded_@3:
 	je	SHORT $LN13@Unguarded_@3
 	mov	ebp, DWORD PTR [ecx+4]
 	mov	ebx, DWORD PTR [ecx]
-	mov	DWORD PTR __Tmp$224033[esp+132], ebp
+	mov	DWORD PTR __Tmp$224509[esp+132], ebp
 	mov	ebp, DWORD PTR [ecx+8]
-	mov	DWORD PTR __Tmp$224033[esp+136], ebp
+	mov	DWORD PTR __Tmp$224509[esp+136], ebp
 	mov	ebp, DWORD PTR [ecx+12]
-	mov	DWORD PTR __Tmp$224033[esp+140], ebp
+	mov	DWORD PTR __Tmp$224509[esp+140], ebp
 	mov	ebp, DWORD PTR [edx]
 	mov	DWORD PTR [ecx], ebp
 	mov	ebp, DWORD PTR [edx+4]
@@ -10012,11 +10012,11 @@ $LL14@Unguarded_@3:
 	mov	ebp, DWORD PTR [edx+12]
 	mov	DWORD PTR [ecx+12], ebp
 	mov	DWORD PTR [edx], ebx
-	mov	ebx, DWORD PTR __Tmp$224033[esp+132]
+	mov	ebx, DWORD PTR __Tmp$224509[esp+132]
 	mov	DWORD PTR [edx+4], ebx
-	mov	ebx, DWORD PTR __Tmp$224033[esp+136]
+	mov	ebx, DWORD PTR __Tmp$224509[esp+136]
 	mov	DWORD PTR [edx+8], ebx
-	mov	ebx, DWORD PTR __Tmp$224033[esp+140]
+	mov	ebx, DWORD PTR __Tmp$224509[esp+140]
 	mov	DWORD PTR [edx+12], ebx
 $LN13@Unguarded_@3:
 	sub	edi, 16					; 00000010H
@@ -10048,9 +10048,9 @@ $LN115@Unguarded_@3:
 	mov	ebp, DWORD PTR [ecx+8]
 	mov	edx, DWORD PTR [ecx]
 	mov	ebx, DWORD PTR [ecx+4]
-	mov	DWORD PTR __Tmp$224057[esp+136], ebp
+	mov	DWORD PTR __Tmp$224533[esp+136], ebp
 	mov	ebp, DWORD PTR [ecx+12]
-	mov	DWORD PTR __Tmp$224057[esp+140], ebp
+	mov	DWORD PTR __Tmp$224533[esp+140], ebp
 	mov	ebp, DWORD PTR [esi]
 	mov	DWORD PTR [ecx], ebp
 	mov	ebp, DWORD PTR [esi+4]
@@ -10060,10 +10060,10 @@ $LN115@Unguarded_@3:
 	mov	ebp, DWORD PTR [esi+12]
 	mov	DWORD PTR [ecx+12], ebp
 	mov	DWORD PTR [esi], edx
-	mov	edx, DWORD PTR __Tmp$224057[esp+136]
+	mov	edx, DWORD PTR __Tmp$224533[esp+136]
 	mov	DWORD PTR [esi+4], ebx
 	mov	DWORD PTR [esi+8], edx
-	mov	edx, DWORD PTR __Tmp$224057[esp+140]
+	mov	edx, DWORD PTR __Tmp$224533[esp+140]
 	mov	DWORD PTR [esi+12], edx
 $LN64@Unguarded_@3:
 
@@ -10078,13 +10078,13 @@ $LN64@Unguarded_@3:
 	cmp	ebx, edx
 	je	$LL23@Unguarded_@3
 	mov	ebp, DWORD PTR [ebx]
-	mov	DWORD PTR __Tmp$224078[esp+128], ebp
+	mov	DWORD PTR __Tmp$224554[esp+128], ebp
 	mov	ebp, DWORD PTR [ebx+4]
-	mov	DWORD PTR __Tmp$224078[esp+132], ebp
+	mov	DWORD PTR __Tmp$224554[esp+132], ebp
 	mov	ebp, DWORD PTR [ebx+8]
-	mov	DWORD PTR __Tmp$224078[esp+136], ebp
+	mov	DWORD PTR __Tmp$224554[esp+136], ebp
 	mov	ebp, DWORD PTR [ebx+12]
-	mov	DWORD PTR __Tmp$224078[esp+140], ebp
+	mov	DWORD PTR __Tmp$224554[esp+140], ebp
 	mov	ebp, DWORD PTR [edx]
 	mov	DWORD PTR [ebx], ebp
 	mov	ebp, DWORD PTR [edx+4]
@@ -10093,13 +10093,13 @@ $LN64@Unguarded_@3:
 	mov	DWORD PTR [ebx+8], ebp
 	mov	ebp, DWORD PTR [edx+12]
 	mov	DWORD PTR [ebx+12], ebp
-	mov	ebx, DWORD PTR __Tmp$224078[esp+128]
+	mov	ebx, DWORD PTR __Tmp$224554[esp+128]
 	mov	DWORD PTR [edx], ebx
-	mov	ebx, DWORD PTR __Tmp$224078[esp+132]
+	mov	ebx, DWORD PTR __Tmp$224554[esp+132]
 	mov	DWORD PTR [edx+4], ebx
-	mov	ebx, DWORD PTR __Tmp$224078[esp+136]
+	mov	ebx, DWORD PTR __Tmp$224554[esp+136]
 	mov	DWORD PTR [edx+8], ebx
-	mov	ebx, DWORD PTR __Tmp$224078[esp+140]
+	mov	ebx, DWORD PTR __Tmp$224554[esp+140]
 	mov	DWORD PTR [edx+12], ebx
 	jmp	$LL23@Unguarded_@3
 $LN6@Unguarded_@3:
@@ -10121,9 +10121,9 @@ $LN6@Unguarded_@3:
 	mov	ebp, DWORD PTR [edi+8]
 	mov	edx, DWORD PTR [edi]
 	mov	ebx, DWORD PTR [edi+4]
-	mov	DWORD PTR __Tmp$224096[esp+136], ebp
+	mov	DWORD PTR __Tmp$224572[esp+136], ebp
 	mov	ebp, DWORD PTR [edi+12]
-	mov	DWORD PTR __Tmp$224096[esp+140], ebp
+	mov	DWORD PTR __Tmp$224572[esp+140], ebp
 	mov	ebp, DWORD PTR [ecx]
 	mov	DWORD PTR [edi], ebp
 	mov	ebp, DWORD PTR [ecx+4]
@@ -10133,10 +10133,10 @@ $LN6@Unguarded_@3:
 	mov	ebp, DWORD PTR [ecx+12]
 	mov	DWORD PTR [edi+12], ebp
 	mov	DWORD PTR [ecx], edx
-	mov	edx, DWORD PTR __Tmp$224096[esp+136]
+	mov	edx, DWORD PTR __Tmp$224572[esp+136]
 	mov	DWORD PTR [ecx+4], ebx
 	mov	DWORD PTR [ecx+8], edx
-	mov	edx, DWORD PTR __Tmp$224096[esp+140]
+	mov	edx, DWORD PTR __Tmp$224572[esp+140]
 	mov	DWORD PTR [ecx+12], edx
 $LN78@Unguarded_@3:
 
@@ -10148,9 +10148,9 @@ $LN78@Unguarded_@3:
 	mov	ebp, DWORD PTR [ecx+8]
 	mov	edx, DWORD PTR [ecx]
 	mov	ebx, DWORD PTR [ecx+4]
-	mov	DWORD PTR __Tmp$224116[esp+136], ebp
+	mov	DWORD PTR __Tmp$224592[esp+136], ebp
 	mov	ebp, DWORD PTR [ecx+12]
-	mov	DWORD PTR __Tmp$224116[esp+140], ebp
+	mov	DWORD PTR __Tmp$224592[esp+140], ebp
 	mov	ebp, DWORD PTR [esi]
 	mov	DWORD PTR [ecx], ebp
 	mov	ebp, DWORD PTR [esi+4]
@@ -10160,10 +10160,10 @@ $LN78@Unguarded_@3:
 	mov	ebp, DWORD PTR [esi+12]
 	mov	DWORD PTR [ecx+12], ebp
 	mov	DWORD PTR [esi], edx
-	mov	edx, DWORD PTR __Tmp$224116[esp+136]
+	mov	edx, DWORD PTR __Tmp$224592[esp+136]
 	mov	DWORD PTR [esi+4], ebx
 	mov	DWORD PTR [esi+8], edx
-	mov	edx, DWORD PTR __Tmp$224116[esp+140]
+	mov	edx, DWORD PTR __Tmp$224592[esp+140]
 	mov	DWORD PTR [esi+12], edx
 
 ; 3073 : 			}
@@ -10179,9 +10179,9 @@ $LN3@Unguarded_@3:
 	mov	ebp, DWORD PTR [eax+8]
 	mov	edx, DWORD PTR [eax]
 	mov	ebx, DWORD PTR [eax+4]
-	mov	DWORD PTR __Tmp$224137[esp+136], ebp
+	mov	DWORD PTR __Tmp$224613[esp+136], ebp
 	mov	ebp, DWORD PTR [eax+12]
-	mov	DWORD PTR __Tmp$224137[esp+140], ebp
+	mov	DWORD PTR __Tmp$224613[esp+140], ebp
 	mov	ebp, DWORD PTR [edi]
 	mov	DWORD PTR [eax], ebp
 	mov	ebp, DWORD PTR [edi+4]
@@ -10191,10 +10191,10 @@ $LN3@Unguarded_@3:
 	mov	ebp, DWORD PTR [edi+12]
 	mov	DWORD PTR [eax+12], ebp
 	mov	DWORD PTR [edi], edx
-	mov	edx, DWORD PTR __Tmp$224137[esp+136]
+	mov	edx, DWORD PTR __Tmp$224613[esp+136]
 	mov	DWORD PTR [edi+4], ebx
 	mov	DWORD PTR [edi+8], edx
-	mov	edx, DWORD PTR __Tmp$224137[esp+140]
+	mov	edx, DWORD PTR __Tmp$224613[esp+140]
 	mov	DWORD PTR [edi+12], edx
 $LN92@Unguarded_@3:
 	add	eax, 16					; 00000010H
@@ -10282,13 +10282,13 @@ PUBLIC	??$_Unguarded_partition@PAUWeightedElement@?$CvWeightedVector@UCvCityBuil
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Unguarded_partition@PAUWeightedElement@?$CvWeightedVector@UCvCityBuildable@@$03$00@@@std@@YA?AU?$pair@PAUWeightedElement@?$CvWeightedVector@UCvCityBuildable@@$03$00@@PAU12@@0@PAUWeightedElement@?$CvWeightedVector@UCvCityBuildable@@$03$00@@0@Z
 _TEXT	SEGMENT
-__Tmp$224285 = -112					; size = 16
-__Tmp$224212 = -96					; size = 16
-__Tmp$224238 = -80					; size = 16
-__Tmp$224264 = -64					; size = 16
-__Tmp$224306 = -48					; size = 16
-__Tmp$224326 = -32					; size = 16
-__Tmp$224347 = -16					; size = 16
+__Tmp$224759 = -112					; size = 16
+__Tmp$224688 = -96					; size = 16
+__Tmp$224714 = -80					; size = 16
+__Tmp$224738 = -64					; size = 16
+__Tmp$224780 = -48					; size = 16
+__Tmp$224800 = -32					; size = 16
+__Tmp$224821 = -16					; size = 16
 ___$ReturnUdt$ = 8					; size = 4
 __First$ = 12						; size = 4
 __Last$ = 16						; size = 4
@@ -10418,11 +10418,11 @@ $LL21@Unguarded_@4:
 	je	SHORT $LN20@Unguarded_@4
 	mov	ebp, DWORD PTR [edx+4]
 	mov	ebx, DWORD PTR [edx]
-	mov	DWORD PTR __Tmp$224212[esp+132], ebp
+	mov	DWORD PTR __Tmp$224688[esp+132], ebp
 	mov	ebp, DWORD PTR [edx+8]
-	mov	DWORD PTR __Tmp$224212[esp+136], ebp
+	mov	DWORD PTR __Tmp$224688[esp+136], ebp
 	mov	ebp, DWORD PTR [edx+12]
-	mov	DWORD PTR __Tmp$224212[esp+140], ebp
+	mov	DWORD PTR __Tmp$224688[esp+140], ebp
 	mov	ebp, DWORD PTR [eax]
 	mov	DWORD PTR [edx], ebp
 	mov	ebp, DWORD PTR [eax+4]
@@ -10431,12 +10431,12 @@ $LL21@Unguarded_@4:
 	mov	DWORD PTR [edx+8], ebp
 	mov	ebp, DWORD PTR [eax+12]
 	mov	DWORD PTR [edx+12], ebp
-	mov	edx, DWORD PTR __Tmp$224212[esp+132]
+	mov	edx, DWORD PTR __Tmp$224688[esp+132]
 	mov	DWORD PTR [eax], ebx
 	mov	DWORD PTR [eax+4], edx
-	mov	edx, DWORD PTR __Tmp$224212[esp+136]
+	mov	edx, DWORD PTR __Tmp$224688[esp+136]
 	mov	DWORD PTR [eax+8], edx
-	mov	edx, DWORD PTR __Tmp$224212[esp+140]
+	mov	edx, DWORD PTR __Tmp$224688[esp+140]
 	mov	DWORD PTR [eax+12], edx
 $LN20@Unguarded_@4:
 	add	eax, 16					; 00000010H
@@ -10472,11 +10472,11 @@ $LL14@Unguarded_@4:
 	je	SHORT $LN13@Unguarded_@4
 	mov	ebp, DWORD PTR [ecx+4]
 	mov	ebx, DWORD PTR [ecx]
-	mov	DWORD PTR __Tmp$224238[esp+132], ebp
+	mov	DWORD PTR __Tmp$224714[esp+132], ebp
 	mov	ebp, DWORD PTR [ecx+8]
-	mov	DWORD PTR __Tmp$224238[esp+136], ebp
+	mov	DWORD PTR __Tmp$224714[esp+136], ebp
 	mov	ebp, DWORD PTR [ecx+12]
-	mov	DWORD PTR __Tmp$224238[esp+140], ebp
+	mov	DWORD PTR __Tmp$224714[esp+140], ebp
 	mov	ebp, DWORD PTR [edx]
 	mov	DWORD PTR [ecx], ebp
 	mov	ebp, DWORD PTR [edx+4]
@@ -10486,11 +10486,11 @@ $LL14@Unguarded_@4:
 	mov	ebp, DWORD PTR [edx+12]
 	mov	DWORD PTR [ecx+12], ebp
 	mov	DWORD PTR [edx], ebx
-	mov	ebx, DWORD PTR __Tmp$224238[esp+132]
+	mov	ebx, DWORD PTR __Tmp$224714[esp+132]
 	mov	DWORD PTR [edx+4], ebx
-	mov	ebx, DWORD PTR __Tmp$224238[esp+136]
+	mov	ebx, DWORD PTR __Tmp$224714[esp+136]
 	mov	DWORD PTR [edx+8], ebx
-	mov	ebx, DWORD PTR __Tmp$224238[esp+140]
+	mov	ebx, DWORD PTR __Tmp$224714[esp+140]
 	mov	DWORD PTR [edx+12], ebx
 $LN13@Unguarded_@4:
 	sub	edi, 16					; 00000010H
@@ -10522,9 +10522,9 @@ $LN115@Unguarded_@4:
 	mov	ebp, DWORD PTR [ecx+8]
 	mov	edx, DWORD PTR [ecx]
 	mov	ebx, DWORD PTR [ecx+4]
-	mov	DWORD PTR __Tmp$224264[esp+136], ebp
+	mov	DWORD PTR __Tmp$224738[esp+136], ebp
 	mov	ebp, DWORD PTR [ecx+12]
-	mov	DWORD PTR __Tmp$224264[esp+140], ebp
+	mov	DWORD PTR __Tmp$224738[esp+140], ebp
 	mov	ebp, DWORD PTR [esi]
 	mov	DWORD PTR [ecx], ebp
 	mov	ebp, DWORD PTR [esi+4]
@@ -10534,10 +10534,10 @@ $LN115@Unguarded_@4:
 	mov	ebp, DWORD PTR [esi+12]
 	mov	DWORD PTR [ecx+12], ebp
 	mov	DWORD PTR [esi], edx
-	mov	edx, DWORD PTR __Tmp$224264[esp+136]
+	mov	edx, DWORD PTR __Tmp$224738[esp+136]
 	mov	DWORD PTR [esi+4], ebx
 	mov	DWORD PTR [esi+8], edx
-	mov	edx, DWORD PTR __Tmp$224264[esp+140]
+	mov	edx, DWORD PTR __Tmp$224738[esp+140]
 	mov	DWORD PTR [esi+12], edx
 $LN64@Unguarded_@4:
 
@@ -10552,13 +10552,13 @@ $LN64@Unguarded_@4:
 	cmp	ebx, edx
 	je	$LL23@Unguarded_@4
 	mov	ebp, DWORD PTR [ebx]
-	mov	DWORD PTR __Tmp$224285[esp+128], ebp
+	mov	DWORD PTR __Tmp$224759[esp+128], ebp
 	mov	ebp, DWORD PTR [ebx+4]
-	mov	DWORD PTR __Tmp$224285[esp+132], ebp
+	mov	DWORD PTR __Tmp$224759[esp+132], ebp
 	mov	ebp, DWORD PTR [ebx+8]
-	mov	DWORD PTR __Tmp$224285[esp+136], ebp
+	mov	DWORD PTR __Tmp$224759[esp+136], ebp
 	mov	ebp, DWORD PTR [ebx+12]
-	mov	DWORD PTR __Tmp$224285[esp+140], ebp
+	mov	DWORD PTR __Tmp$224759[esp+140], ebp
 	mov	ebp, DWORD PTR [edx]
 	mov	DWORD PTR [ebx], ebp
 	mov	ebp, DWORD PTR [edx+4]
@@ -10567,13 +10567,13 @@ $LN64@Unguarded_@4:
 	mov	DWORD PTR [ebx+8], ebp
 	mov	ebp, DWORD PTR [edx+12]
 	mov	DWORD PTR [ebx+12], ebp
-	mov	ebx, DWORD PTR __Tmp$224285[esp+128]
+	mov	ebx, DWORD PTR __Tmp$224759[esp+128]
 	mov	DWORD PTR [edx], ebx
-	mov	ebx, DWORD PTR __Tmp$224285[esp+132]
+	mov	ebx, DWORD PTR __Tmp$224759[esp+132]
 	mov	DWORD PTR [edx+4], ebx
-	mov	ebx, DWORD PTR __Tmp$224285[esp+136]
+	mov	ebx, DWORD PTR __Tmp$224759[esp+136]
 	mov	DWORD PTR [edx+8], ebx
-	mov	ebx, DWORD PTR __Tmp$224285[esp+140]
+	mov	ebx, DWORD PTR __Tmp$224759[esp+140]
 	mov	DWORD PTR [edx+12], ebx
 	jmp	$LL23@Unguarded_@4
 $LN6@Unguarded_@4:
@@ -10595,9 +10595,9 @@ $LN6@Unguarded_@4:
 	mov	ebp, DWORD PTR [edi+8]
 	mov	edx, DWORD PTR [edi]
 	mov	ebx, DWORD PTR [edi+4]
-	mov	DWORD PTR __Tmp$224306[esp+136], ebp
+	mov	DWORD PTR __Tmp$224780[esp+136], ebp
 	mov	ebp, DWORD PTR [edi+12]
-	mov	DWORD PTR __Tmp$224306[esp+140], ebp
+	mov	DWORD PTR __Tmp$224780[esp+140], ebp
 	mov	ebp, DWORD PTR [ecx]
 	mov	DWORD PTR [edi], ebp
 	mov	ebp, DWORD PTR [ecx+4]
@@ -10607,10 +10607,10 @@ $LN6@Unguarded_@4:
 	mov	ebp, DWORD PTR [ecx+12]
 	mov	DWORD PTR [edi+12], ebp
 	mov	DWORD PTR [ecx], edx
-	mov	edx, DWORD PTR __Tmp$224306[esp+136]
+	mov	edx, DWORD PTR __Tmp$224780[esp+136]
 	mov	DWORD PTR [ecx+4], ebx
 	mov	DWORD PTR [ecx+8], edx
-	mov	edx, DWORD PTR __Tmp$224306[esp+140]
+	mov	edx, DWORD PTR __Tmp$224780[esp+140]
 	mov	DWORD PTR [ecx+12], edx
 $LN78@Unguarded_@4:
 
@@ -10622,9 +10622,9 @@ $LN78@Unguarded_@4:
 	mov	ebp, DWORD PTR [ecx+8]
 	mov	edx, DWORD PTR [ecx]
 	mov	ebx, DWORD PTR [ecx+4]
-	mov	DWORD PTR __Tmp$224326[esp+136], ebp
+	mov	DWORD PTR __Tmp$224800[esp+136], ebp
 	mov	ebp, DWORD PTR [ecx+12]
-	mov	DWORD PTR __Tmp$224326[esp+140], ebp
+	mov	DWORD PTR __Tmp$224800[esp+140], ebp
 	mov	ebp, DWORD PTR [esi]
 	mov	DWORD PTR [ecx], ebp
 	mov	ebp, DWORD PTR [esi+4]
@@ -10634,10 +10634,10 @@ $LN78@Unguarded_@4:
 	mov	ebp, DWORD PTR [esi+12]
 	mov	DWORD PTR [ecx+12], ebp
 	mov	DWORD PTR [esi], edx
-	mov	edx, DWORD PTR __Tmp$224326[esp+136]
+	mov	edx, DWORD PTR __Tmp$224800[esp+136]
 	mov	DWORD PTR [esi+4], ebx
 	mov	DWORD PTR [esi+8], edx
-	mov	edx, DWORD PTR __Tmp$224326[esp+140]
+	mov	edx, DWORD PTR __Tmp$224800[esp+140]
 	mov	DWORD PTR [esi+12], edx
 
 ; 3073 : 			}
@@ -10653,9 +10653,9 @@ $LN3@Unguarded_@4:
 	mov	ebp, DWORD PTR [eax+8]
 	mov	edx, DWORD PTR [eax]
 	mov	ebx, DWORD PTR [eax+4]
-	mov	DWORD PTR __Tmp$224347[esp+136], ebp
+	mov	DWORD PTR __Tmp$224821[esp+136], ebp
 	mov	ebp, DWORD PTR [eax+12]
-	mov	DWORD PTR __Tmp$224347[esp+140], ebp
+	mov	DWORD PTR __Tmp$224821[esp+140], ebp
 	mov	ebp, DWORD PTR [edi]
 	mov	DWORD PTR [eax], ebp
 	mov	ebp, DWORD PTR [edi+4]
@@ -10665,10 +10665,10 @@ $LN3@Unguarded_@4:
 	mov	ebp, DWORD PTR [edi+12]
 	mov	DWORD PTR [eax+12], ebp
 	mov	DWORD PTR [edi], edx
-	mov	edx, DWORD PTR __Tmp$224347[esp+136]
+	mov	edx, DWORD PTR __Tmp$224821[esp+136]
 	mov	DWORD PTR [edi+4], ebx
 	mov	DWORD PTR [edi+8], edx
-	mov	edx, DWORD PTR __Tmp$224347[esp+140]
+	mov	edx, DWORD PTR __Tmp$224821[esp+140]
 	mov	DWORD PTR [edi+12], edx
 $LN92@Unguarded_@4:
 	add	eax, 16					; 00000010H
@@ -11421,7 +11421,7 @@ PUBLIC	??$_Sort_heap@PAUWeightedElement@?$CvWeightedVector@UCvCityBuildable@@$0D
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Sort_heap@PAUWeightedElement@?$CvWeightedVector@UCvCityBuildable@@$0DC@$00@@@std@@YAXPAUWeightedElement@?$CvWeightedVector@UCvCityBuildable@@$0DC@$00@@0@Z
 _TEXT	SEGMENT
-$T225211 = -16						; size = 16
+$T225688 = -16						; size = 16
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 ??$_Sort_heap@PAUWeightedElement@?$CvWeightedVector@UCvCityBuildable@@$0DC@$00@@@std@@YAXPAUWeightedElement@?$CvWeightedVector@UCvCityBuildable@@$0DC@$00@@0@Z PROC ; std::_Sort_heap<CvWeightedVector<CvCityBuildable,50,1>::WeightedElement *>, COMDAT
@@ -11458,7 +11458,7 @@ $LN24@Sort_heap@3:
 	mov	ecx, DWORD PTR [esi]
 	mov	edx, DWORD PTR [esi+4]
 	mov	ebp, DWORD PTR [esi+8]
-	mov	DWORD PTR $T225211[esp+44], eax
+	mov	DWORD PTR $T225688[esp+44], eax
 	mov	eax, DWORD PTR [edi]
 	mov	DWORD PTR [esi], eax
 	mov	eax, DWORD PTR [edi+4]
@@ -11470,7 +11470,7 @@ $LN24@Sort_heap@3:
 	sub	esp, 16					; 00000010H
 	mov	eax, esp
 	mov	DWORD PTR [eax], ecx
-	mov	ecx, DWORD PTR $T225211[esp+60]
+	mov	ecx, DWORD PTR $T225688[esp+60]
 	mov	DWORD PTR [eax+4], edx
 	lea	edx, DWORD PTR [ebx+esi-16]
 	sar	edx, 4
@@ -11503,7 +11503,7 @@ PUBLIC	??$_Sort_heap@PAUWeightedElement@?$CvWeightedVector@UCvCityBuildable@@$03
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Sort_heap@PAUWeightedElement@?$CvWeightedVector@UCvCityBuildable@@$03$00@@@std@@YAXPAUWeightedElement@?$CvWeightedVector@UCvCityBuildable@@$03$00@@0@Z
 _TEXT	SEGMENT
-$T225273 = -16						; size = 16
+$T225750 = -16						; size = 16
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 ??$_Sort_heap@PAUWeightedElement@?$CvWeightedVector@UCvCityBuildable@@$03$00@@@std@@YAXPAUWeightedElement@?$CvWeightedVector@UCvCityBuildable@@$03$00@@0@Z PROC ; std::_Sort_heap<CvWeightedVector<CvCityBuildable,4,1>::WeightedElement *>, COMDAT
@@ -11540,7 +11540,7 @@ $LN24@Sort_heap@4:
 	mov	ecx, DWORD PTR [esi]
 	mov	edx, DWORD PTR [esi+4]
 	mov	ebp, DWORD PTR [esi+8]
-	mov	DWORD PTR $T225273[esp+44], eax
+	mov	DWORD PTR $T225750[esp+44], eax
 	mov	eax, DWORD PTR [edi]
 	mov	DWORD PTR [esi], eax
 	mov	eax, DWORD PTR [edi+4]
@@ -11552,7 +11552,7 @@ $LN24@Sort_heap@4:
 	sub	esp, 16					; 00000010H
 	mov	eax, esp
 	mov	DWORD PTR [eax], ecx
-	mov	ecx, DWORD PTR $T225273[esp+60]
+	mov	ecx, DWORD PTR $T225750[esp+60]
 	mov	DWORD PTR [eax+4], edx
 	lea	edx, DWORD PTR [ebx+esi-16]
 	sar	edx, 4
@@ -11781,7 +11781,7 @@ PUBLIC	??$_Sort@PAUWeightedElement@?$CvWeightedVector@H$03$00@@H@std@@YAXPAUWeig
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\algorithm
 ;	COMDAT ??$_Sort@PAUWeightedElement@?$CvWeightedVector@H$03$00@@H@std@@YAXPAUWeightedElement@?$CvWeightedVector@H$03$00@@0H@Z
 _TEXT	SEGMENT
-__Mid$218769 = -8					; size = 8
+__Mid$219246 = -8					; size = 8
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Ideal$ = 16						; size = 4
@@ -11816,7 +11816,7 @@ $LL7@Sort:
 ; 3087 : 			std::_Unguarded_partition(_First, _Last);
 
 	push	edi
-	lea	eax, DWORD PTR __Mid$218769[esp+28]
+	lea	eax, DWORD PTR __Mid$219246[esp+28]
 	push	ebx
 	push	eax
 	call	??$_Unguarded_partition@PAUWeightedElement@?$CvWeightedVector@H$03$00@@@std@@YA?AU?$pair@PAUWeightedElement@?$CvWeightedVector@H$03$00@@PAU12@@0@PAUWeightedElement@?$CvWeightedVector@H$03$00@@0@Z ; std::_Unguarded_partition<CvWeightedVector<int,4,1>::WeightedElement *>
@@ -11825,7 +11825,7 @@ $LL7@Sort:
 ; 3089 : 
 ; 3090 : 		if (_Mid.first - _First < _Last - _Mid.second)
 
-	mov	ebp, DWORD PTR __Mid$218769[esp+40]
+	mov	ebp, DWORD PTR __Mid$219246[esp+40]
 	mov	eax, esi
 	cdq
 	sub	eax, edx
@@ -11835,7 +11835,7 @@ $LL7@Sort:
 	sub	eax, edx
 	sar	eax, 1
 	add	esi, eax
-	mov	eax, DWORD PTR __Mid$218769[esp+36]
+	mov	eax, DWORD PTR __Mid$219246[esp+36]
 	mov	ecx, edi
 	mov	edx, eax
 	sub	ecx, ebp
@@ -11873,7 +11873,7 @@ $LN5@Sort:
 
 ; 3098 : 			_Last = _Mid.first;
 
-	mov	edi, DWORD PTR __Mid$218769[esp+36]
+	mov	edi, DWORD PTR __Mid$219246[esp+36]
 $LN26@Sort:
 	mov	eax, edi
 	sub	eax, ebx
@@ -11953,7 +11953,7 @@ PUBLIC	??$_Sort@PAUWeightedElement@?$CvWeightedVector@H$0FA@$00@@H@std@@YAXPAUWe
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Sort@PAUWeightedElement@?$CvWeightedVector@H$0FA@$00@@H@std@@YAXPAUWeightedElement@?$CvWeightedVector@H$0FA@$00@@0H@Z
 _TEXT	SEGMENT
-__Mid$218840 = -8					; size = 8
+__Mid$219317 = -8					; size = 8
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Ideal$ = 16						; size = 4
@@ -11988,7 +11988,7 @@ $LL7@Sort@2:
 ; 3087 : 			std::_Unguarded_partition(_First, _Last);
 
 	push	edi
-	lea	eax, DWORD PTR __Mid$218840[esp+28]
+	lea	eax, DWORD PTR __Mid$219317[esp+28]
 	push	ebx
 	push	eax
 	call	??$_Unguarded_partition@PAUWeightedElement@?$CvWeightedVector@H$0FA@$00@@@std@@YA?AU?$pair@PAUWeightedElement@?$CvWeightedVector@H$0FA@$00@@PAU12@@0@PAUWeightedElement@?$CvWeightedVector@H$0FA@$00@@0@Z ; std::_Unguarded_partition<CvWeightedVector<int,80,1>::WeightedElement *>
@@ -11997,7 +11997,7 @@ $LL7@Sort@2:
 ; 3089 : 
 ; 3090 : 		if (_Mid.first - _First < _Last - _Mid.second)
 
-	mov	ebp, DWORD PTR __Mid$218840[esp+40]
+	mov	ebp, DWORD PTR __Mid$219317[esp+40]
 	mov	eax, esi
 	cdq
 	sub	eax, edx
@@ -12007,7 +12007,7 @@ $LL7@Sort@2:
 	sub	eax, edx
 	sar	eax, 1
 	add	esi, eax
-	mov	eax, DWORD PTR __Mid$218840[esp+36]
+	mov	eax, DWORD PTR __Mid$219317[esp+36]
 	mov	ecx, edi
 	mov	edx, eax
 	sub	ecx, ebp
@@ -12045,7 +12045,7 @@ $LN5@Sort@2:
 
 ; 3098 : 			_Last = _Mid.first;
 
-	mov	edi, DWORD PTR __Mid$218840[esp+36]
+	mov	edi, DWORD PTR __Mid$219317[esp+36]
 $LN26@Sort@2:
 	mov	eax, edi
 	sub	eax, ebx
@@ -12125,7 +12125,7 @@ PUBLIC	??$_Sort@PAUWeightedElement@?$CvWeightedVector@UCvCityBuildable@@$0DC@$00
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Sort@PAUWeightedElement@?$CvWeightedVector@UCvCityBuildable@@$0DC@$00@@H@std@@YAXPAUWeightedElement@?$CvWeightedVector@UCvCityBuildable@@$0DC@$00@@0H@Z
 _TEXT	SEGMENT
-__Mid$218911 = -8					; size = 8
+__Mid$219388 = -8					; size = 8
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Ideal$ = 16						; size = 4
@@ -12160,7 +12160,7 @@ $LL7@Sort@3:
 ; 3087 : 			std::_Unguarded_partition(_First, _Last);
 
 	push	edi
-	lea	eax, DWORD PTR __Mid$218911[esp+28]
+	lea	eax, DWORD PTR __Mid$219388[esp+28]
 	push	ebx
 	push	eax
 	call	??$_Unguarded_partition@PAUWeightedElement@?$CvWeightedVector@UCvCityBuildable@@$0DC@$00@@@std@@YA?AU?$pair@PAUWeightedElement@?$CvWeightedVector@UCvCityBuildable@@$0DC@$00@@PAU12@@0@PAUWeightedElement@?$CvWeightedVector@UCvCityBuildable@@$0DC@$00@@0@Z ; std::_Unguarded_partition<CvWeightedVector<CvCityBuildable,50,1>::WeightedElement *>
@@ -12169,7 +12169,7 @@ $LL7@Sort@3:
 ; 3089 : 
 ; 3090 : 		if (_Mid.first - _First < _Last - _Mid.second)
 
-	mov	ebp, DWORD PTR __Mid$218911[esp+40]
+	mov	ebp, DWORD PTR __Mid$219388[esp+40]
 	mov	eax, esi
 	cdq
 	sub	eax, edx
@@ -12179,7 +12179,7 @@ $LL7@Sort@3:
 	sub	eax, edx
 	sar	eax, 1
 	add	esi, eax
-	mov	eax, DWORD PTR __Mid$218911[esp+36]
+	mov	eax, DWORD PTR __Mid$219388[esp+36]
 	mov	ecx, edi
 	mov	edx, eax
 	sub	ecx, ebp
@@ -12217,7 +12217,7 @@ $LN5@Sort@3:
 
 ; 3098 : 			_Last = _Mid.first;
 
-	mov	edi, DWORD PTR __Mid$218911[esp+36]
+	mov	edi, DWORD PTR __Mid$219388[esp+36]
 $LN26@Sort@3:
 	mov	eax, edi
 	sub	eax, ebx
@@ -12297,7 +12297,7 @@ PUBLIC	??$_Sort@PAUWeightedElement@?$CvWeightedVector@UCvCityBuildable@@$03$00@@
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Sort@PAUWeightedElement@?$CvWeightedVector@UCvCityBuildable@@$03$00@@H@std@@YAXPAUWeightedElement@?$CvWeightedVector@UCvCityBuildable@@$03$00@@0H@Z
 _TEXT	SEGMENT
-__Mid$218982 = -8					; size = 8
+__Mid$219459 = -8					; size = 8
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Ideal$ = 16						; size = 4
@@ -12332,7 +12332,7 @@ $LL7@Sort@4:
 ; 3087 : 			std::_Unguarded_partition(_First, _Last);
 
 	push	edi
-	lea	eax, DWORD PTR __Mid$218982[esp+28]
+	lea	eax, DWORD PTR __Mid$219459[esp+28]
 	push	ebx
 	push	eax
 	call	??$_Unguarded_partition@PAUWeightedElement@?$CvWeightedVector@UCvCityBuildable@@$03$00@@@std@@YA?AU?$pair@PAUWeightedElement@?$CvWeightedVector@UCvCityBuildable@@$03$00@@PAU12@@0@PAUWeightedElement@?$CvWeightedVector@UCvCityBuildable@@$03$00@@0@Z ; std::_Unguarded_partition<CvWeightedVector<CvCityBuildable,4,1>::WeightedElement *>
@@ -12341,7 +12341,7 @@ $LL7@Sort@4:
 ; 3089 : 
 ; 3090 : 		if (_Mid.first - _First < _Last - _Mid.second)
 
-	mov	ebp, DWORD PTR __Mid$218982[esp+40]
+	mov	ebp, DWORD PTR __Mid$219459[esp+40]
 	mov	eax, esi
 	cdq
 	sub	eax, edx
@@ -12351,7 +12351,7 @@ $LL7@Sort@4:
 	sub	eax, edx
 	sar	eax, 1
 	add	esi, eax
-	mov	eax, DWORD PTR __Mid$218982[esp+36]
+	mov	eax, DWORD PTR __Mid$219459[esp+36]
 	mov	ecx, edi
 	mov	edx, eax
 	sub	ecx, ebp
@@ -12389,7 +12389,7 @@ $LN5@Sort@4:
 
 ; 3098 : 			_Last = _Mid.first;
 
-	mov	edi, DWORD PTR __Mid$218982[esp+36]
+	mov	edi, DWORD PTR __Mid$219459[esp+36]
 $LN26@Sort@4:
 	mov	eax, edi
 	sub	eax, ebx
@@ -12705,17 +12705,17 @@ EXTRN	?GetCityStrategyAI@CvCity@@QBEPAVCvCityStrategyAI@@XZ:PROC ; CvCity::GetCi
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredll_expansion2\cvadvisorrecommender.cpp
 ;	COMDAT ?UpdateCityRecommendations@CvAdvisorRecommender@@QAEXPAVCvCity@@@Z
 _TEXT	SEGMENT
-_i$217872 = -48						; size = 4
-_i$217867 = -48						; size = 4
+_i$218349 = -48						; size = 4
+_i$218344 = -48						; size = 4
 _pCityStrategy$ = -48					; size = 4
 _buildable$ = -44					; size = 12
-_elem$226767 = -32					; size = 16
-_weightedElem$226696 = -32				; size = 16
-_elem$226587 = -32					; size = 16
-_elem$226647 = -16					; size = 16
-_weightedElem$226539 = -16				; size = 16
-_weightedElem$226504 = -16				; size = 16
-_weightedElem$226453 = -16				; size = 16
+_elem$227244 = -32					; size = 16
+_weightedElem$227173 = -32				; size = 16
+_elem$227064 = -32					; size = 16
+_elem$227124 = -16					; size = 16
+_weightedElem$227016 = -16				; size = 16
+_weightedElem$226981 = -16				; size = 16
+_weightedElem$226930 = -16				; size = 16
 _pCity$ = 8						; size = 4
 ?UpdateCityRecommendations@CvAdvisorRecommender@@QAEXPAVCvCity@@@Z PROC ; CvAdvisorRecommender::UpdateCityRecommendations, COMDAT
 ; _this$ = ecx
@@ -12818,7 +12818,7 @@ $LL232@UpdateCity:
 	call	?GetBuildingProductionAI@CvCityStrategyAI@@QAEPAVCvBuildingProductionAI@@XZ ; CvCityStrategyAI::GetBuildingProductionAI
 	mov	ecx, eax
 	call	?GetWeight@CvBuildingProductionAI@@QAEHW4BuildingTypes@@@Z ; CvBuildingProductionAI::GetWeight
-	mov	DWORD PTR _weightedElem$226453[esp+76], eax
+	mov	DWORD PTR _weightedElem$226930[esp+76], eax
 	mov	eax, DWORD PTR [edi+8]
 	mov	BYTE PTR [edi+812], 0
 	cmp	DWORD PTR [edi+4], eax
@@ -12831,7 +12831,7 @@ $LN75@UpdateCity:
 	shl	eax, 4
 	add	eax, DWORD PTR [edi]
 	je	SHORT $LN78@UpdateCity
-	mov	edx, DWORD PTR _weightedElem$226453[esp+76]
+	mov	edx, DWORD PTR _weightedElem$226930[esp+76]
 	mov	ecx, 1
 	mov	DWORD PTR [eax], ecx
 	mov	ecx, DWORD PTR _buildable$[esp+72]
@@ -12922,7 +12922,7 @@ $LL233@UpdateCity:
 	call	?GetUnitProductionAI@CvCityStrategyAI@@QAEPAVCvUnitProductionAI@@XZ ; CvCityStrategyAI::GetUnitProductionAI
 	mov	ecx, eax
 	call	?GetWeight@CvUnitProductionAI@@QAEHW4UnitTypes@@@Z ; CvUnitProductionAI::GetWeight
-	mov	DWORD PTR _weightedElem$226504[esp+76], eax
+	mov	DWORD PTR _weightedElem$226981[esp+76], eax
 	mov	eax, DWORD PTR [edi+8]
 	mov	BYTE PTR [edi+812], 0
 	cmp	DWORD PTR [edi+4], eax
@@ -12935,7 +12935,7 @@ $LN91@UpdateCity:
 	shl	eax, 4
 	add	eax, DWORD PTR [edi]
 	je	SHORT $LN94@UpdateCity
-	mov	edx, DWORD PTR _weightedElem$226504[esp+76]
+	mov	edx, DWORD PTR _weightedElem$226981[esp+76]
 	mov	ecx, 2
 	mov	DWORD PTR [eax], ecx
 	mov	ecx, DWORD PTR _buildable$[esp+72]
@@ -13018,7 +13018,7 @@ $LL234@UpdateCity:
 	call	?GetProjectProductionAI@CvCityStrategyAI@@QAEPAVCvProjectProductionAI@@XZ ; CvCityStrategyAI::GetProjectProductionAI
 	mov	ecx, eax
 	call	?GetWeight@CvProjectProductionAI@@QAEHW4ProjectTypes@@@Z ; CvProjectProductionAI::GetWeight
-	mov	DWORD PTR _weightedElem$226539[esp+76], eax
+	mov	DWORD PTR _weightedElem$227016[esp+76], eax
 	mov	eax, DWORD PTR [edi+8]
 	mov	BYTE PTR [edi+812], 0
 	cmp	DWORD PTR [edi+4], eax
@@ -13031,7 +13031,7 @@ $LN107@UpdateCity:
 	shl	eax, 4
 	add	eax, DWORD PTR [edi]
 	je	SHORT $LN110@UpdateCity
-	mov	edx, DWORD PTR _weightedElem$226539[esp+76]
+	mov	edx, DWORD PTR _weightedElem$227016[esp+76]
 	mov	ecx, 3
 	mov	DWORD PTR [eax], ecx
 	mov	ecx, DWORD PTR _buildable$[esp+72]
@@ -13085,16 +13085,16 @@ $LL11@UpdateCity:
 ; 131  : 		int iNewWeight = CityStrategyAIHelpers::ReweightByTurnsLeft(m_aCityBuildables.GetWeight(iI), buildable.m_iTurnsToConstruct);
 
 	mov	edx, DWORD PTR [eax]
-	mov	DWORD PTR _elem$226587[esp+64], edx
+	mov	DWORD PTR _elem$227064[esp+64], edx
 	mov	edx, DWORD PTR [eax+4]
 	mov	DWORD PTR _buildable$[esp+64], ecx
 	mov	ecx, DWORD PTR [eax+8]
 	mov	eax, DWORD PTR [eax+12]
-	mov	DWORD PTR _elem$226587[esp+68], edx
+	mov	DWORD PTR _elem$227064[esp+68], edx
 	push	ecx
 	mov	edx, ecx
 	push	eax
-	mov	DWORD PTR _elem$226587[esp+80], edx
+	mov	DWORD PTR _elem$227064[esp+80], edx
 	call	?ReweightByTurnsLeft@CityStrategyAIHelpers@@YAHHH@Z ; CityStrategyAIHelpers::ReweightByTurnsLeft
 
 ; 132  : 		m_aCityBuildables.SetWeight(iI, iNewWeight);
@@ -13130,7 +13130,7 @@ $LN9@UpdateCity:
 ; 138  : 	for(int i = 0; i < NUM_ADVISOR_TYPES; i++)
 
 	xor	ebp, ebp
-	mov	DWORD PTR _i$217867[esp+64], ebp
+	mov	DWORD PTR _i$218344[esp+64], ebp
 	npad	7
 $LL231@UpdateCity:
 
@@ -13138,7 +13138,7 @@ $LL231@UpdateCity:
 ; 140  : 		// if index is out of bounds
 ; 141  : 		if(i >= m_aCityBuildables.size())
 
-	mov	eax, DWORD PTR _i$217867[esp+64]
+	mov	eax, DWORD PTR _i$218344[esp+64]
 	cmp	eax, DWORD PTR [esi+772]
 	jge	$LN216@UpdateCity
 
@@ -13153,18 +13153,18 @@ $LL231@UpdateCity:
 	mov	ebx, DWORD PTR [ecx+ebp+12]
 	lea	eax, DWORD PTR [ecx+ebp]
 	mov	ecx, DWORD PTR [eax+4]
-	mov	DWORD PTR _elem$226647[esp+64], edx
+	mov	DWORD PTR _elem$227124[esp+64], edx
 	mov	edx, DWORD PTR [eax+8]
-	mov	DWORD PTR _elem$226647[esp+68], ecx
+	mov	DWORD PTR _elem$227124[esp+68], ecx
 	mov	ecx, DWORD PTR [eax]
-	mov	DWORD PTR _elem$226647[esp+72], edx
+	mov	DWORD PTR _elem$227124[esp+72], edx
 	mov	edx, DWORD PTR [eax+4]
 	mov	eax, DWORD PTR [eax+8]
 	lea	edi, DWORD PTR [esi+1584]
-	mov	DWORD PTR _weightedElem$226696[esp+72], eax
+	mov	DWORD PTR _weightedElem$227173[esp+72], eax
 	mov	eax, DWORD PTR [edi+8]
-	mov	DWORD PTR _weightedElem$226696[esp+64], ecx
-	mov	DWORD PTR _weightedElem$226696[esp+68], edx
+	mov	DWORD PTR _weightedElem$227173[esp+64], ecx
+	mov	DWORD PTR _weightedElem$227173[esp+68], edx
 	mov	BYTE PTR [edi+76], 0
 	cmp	DWORD PTR [edi+4], eax
 	jne	SHORT $LN167@UpdateCity
@@ -13176,17 +13176,17 @@ $LN167@UpdateCity:
 	shl	eax, 4
 	add	eax, DWORD PTR [edi]
 	je	SHORT $LN170@UpdateCity
-	mov	ecx, DWORD PTR _weightedElem$226696[esp+64]
-	mov	edx, DWORD PTR _weightedElem$226696[esp+68]
+	mov	ecx, DWORD PTR _weightedElem$227173[esp+64]
+	mov	edx, DWORD PTR _weightedElem$227173[esp+68]
 	mov	DWORD PTR [eax], ecx
-	mov	ecx, DWORD PTR _weightedElem$226696[esp+72]
+	mov	ecx, DWORD PTR _weightedElem$227173[esp+72]
 	mov	DWORD PTR [eax+4], edx
 	mov	DWORD PTR [eax+8], ecx
 	mov	DWORD PTR [eax+12], ebx
 $LN170@UpdateCity:
 	mov	eax, 1
 	add	DWORD PTR [edi+4], eax
-	add	DWORD PTR _i$217867[esp+64], eax
+	add	DWORD PTR _i$218344[esp+64], eax
 	add	ebp, 16					; 00000010H
 	cmp	ebp, 64					; 00000040H
 	jl	$LL231@UpdateCity
@@ -13197,7 +13197,7 @@ $LN216@UpdateCity:
 ; 149  : 	for(int i = 0; i < m_aFinalRoundBuildables.size(); i++)
 
 	cmp	DWORD PTR [esi+1588], 0
-	mov	DWORD PTR _i$217872[esp+64], 0
+	mov	DWORD PTR _i$218349[esp+64], 0
 	jle	$LN2@UpdateCity
 	npad	2
 $LL4@UpdateCity:
@@ -13228,10 +13228,10 @@ $LL4@UpdateCity:
 ; 154  : 		int iScore = m_aFinalRoundBuildables.GetWeight(0);
 
 	mov	ecx, edi
-	mov	DWORD PTR _elem$226767[esp+76], ecx
+	mov	DWORD PTR _elem$227244[esp+76], ecx
 	mov	edx, ebp
 	mov	ecx, ebx
-	mov	DWORD PTR _elem$226767[esp+80], edx
+	mov	DWORD PTR _elem$227244[esp+80], edx
 	mov	edx, DWORD PTR [eax+12]
 
 ; 155  : 
@@ -13242,7 +13242,7 @@ $LL4@UpdateCity:
 
 	mov	eax, DWORD PTR _pCity$[esp+72]
 	mov	eax, DWORD PTR [eax+84]
-	mov	DWORD PTR _elem$226767[esp+84], ecx
+	mov	DWORD PTR _elem$227244[esp+84], ecx
 	add	esp, 12					; 0000000cH
 	lea	ecx, DWORD PTR _buildable$[esp+64]
 	push	ecx
@@ -13251,7 +13251,7 @@ $LL4@UpdateCity:
 	mov	DWORD PTR _buildable$[esp+72], edi
 	mov	DWORD PTR _buildable$[esp+76], ebp
 	mov	DWORD PTR _buildable$[esp+80], ebx
-	mov	DWORD PTR _elem$226767[esp+84], edx
+	mov	DWORD PTR _elem$227244[esp+84], edx
 	call	?FindUnassignedAdvisorForBuildable@CvAdvisorRecommender@@QAE?AW4AdvisorTypes@@W4PlayerTypes@@AAUCvCityBuildable@@@Z ; CvAdvisorRecommender::FindUnassignedAdvisorForBuildable
 
 ; 160  : #endif
@@ -13274,16 +13274,16 @@ $LN1@UpdateCity:
 ; 165  : 
 ; 166  : 		m_aFinalRoundBuildables.SetWeight(0, iScore / 2);
 
-	mov	eax, DWORD PTR _elem$226767[esp+76]
+	mov	eax, DWORD PTR _elem$227244[esp+76]
 	mov	ecx, DWORD PTR [esi+1584]
 	cdq
 	sub	eax, edx
 	sar	eax, 1
 	mov	DWORD PTR [ecx+12], eax
-	mov	eax, DWORD PTR _i$217872[esp+64]
+	mov	eax, DWORD PTR _i$218349[esp+64]
 	inc	eax
 	cmp	eax, DWORD PTR [esi+1588]
-	mov	DWORD PTR _i$217872[esp+64], eax
+	mov	DWORD PTR _i$218349[esp+64], eax
 	jl	$LL4@UpdateCity
 $LN2@UpdateCity:
 	pop	edi
@@ -13311,21 +13311,21 @@ EXTRN	__ftol2_sse_excpt:PROC
 ;	COMDAT ?UpdateTechRecommendations@CvAdvisorRecommender@@QAEXW4PlayerTypes@@@Z
 _TEXT	SEGMENT
 _pPlayerTechs$ = -36					; size = 4
-_i$217946 = -32						; size = 4
-$T226822 = -32						; size = 4
-_iTurnsLeft$217931 = -32				; size = 4
+_i$218423 = -32						; size = 4
+$T227299 = -32						; size = 4
+_iTurnsLeft$218408 = -32				; size = 4
 _pPlayerTechAI$ = -32					; size = 4
 tv693 = -28						; size = 4
-_weightedElem$227211 = -24				; size = 8
-$T226823 = -24						; size = 4
-_fWeightDivisor$217932 = -24				; size = 8
-_fTotalCostFactor$217934 = -24				; size = 8
-_fAdditionalTurnCostFactor$217933 = -24			; size = 8
-_elem$227169 = -16					; size = 8
-_elem$227094 = -16					; size = 8
-_weightedElem$227040 = -16				; size = 8
-_elem$227275 = -8					; size = 8
-_elem$227108 = -8					; size = 8
+_weightedElem$227702 = -24				; size = 8
+$T227300 = -24						; size = 4
+_fWeightDivisor$218409 = -24				; size = 8
+_fTotalCostFactor$218411 = -24				; size = 8
+_fAdditionalTurnCostFactor$218410 = -24			; size = 8
+_elem$227651 = -16					; size = 8
+_elem$227576 = -16					; size = 8
+_weightedElem$227531 = -16				; size = 8
+_elem$227757 = -8					; size = 8
+_elem$227590 = -8					; size = 8
 _ePlayer$ = 8						; size = 4
 ?UpdateTechRecommendations@CvAdvisorRecommender@@QAEXW4PlayerTypes@@@Z PROC ; CvAdvisorRecommender::UpdateTechRecommendations, COMDAT
 ; _this$ = ecx
@@ -13411,7 +13411,7 @@ $LL17@UpdateTech:
 	push	ebx
 	lea	edi, DWORD PTR [esi+64]
 	call	?GetWeight@CvTechAI@@QAEHW4TechTypes@@@Z ; CvTechAI::GetWeight
-	mov	DWORD PTR _weightedElem$227040[esp+68], eax
+	mov	DWORD PTR _weightedElem$227531[esp+68], eax
 	mov	eax, DWORD PTR [edi+8]
 	mov	BYTE PTR [edi+652], 0
 	cmp	DWORD PTR [edi+4], eax
@@ -13425,7 +13425,7 @@ $LN83@UpdateTech:
 	lea	eax, DWORD PTR [eax+edx*8]
 	test	eax, eax
 	je	SHORT $LN86@UpdateTech
-	mov	ecx, DWORD PTR _weightedElem$227040[esp+68]
+	mov	ecx, DWORD PTR _weightedElem$227531[esp+68]
 	mov	DWORD PTR [eax], ebx
 	mov	DWORD PTR [eax+4], ecx
 $LN86@UpdateTech:
@@ -13471,7 +13471,7 @@ $LN13@UpdateTech:
 	mov	ecx, edi
 	call	?GetResearchTurnsLeft@CvPlayerTechs@@QBEHW4TechTypes@@_N@Z ; CvPlayerTechs::GetResearchTurnsLeft
 	mov	edi, eax
-	mov	DWORD PTR _iTurnsLeft$217931[esp+64], edi
+	mov	DWORD PTR _iTurnsLeft$218408[esp+64], edi
 
 ; 252  : 
 ; 253  : 		double fWeightDivisor;
@@ -13479,7 +13479,7 @@ $LN13@UpdateTech:
 ; 255  : 		// 10 turns will add 0.02; 80 turns will add 0.16
 ; 256  : 		double fAdditionalTurnCostFactor = GC.getAI_RESEARCH_WEIGHT_MOD_PER_TURN_LEFT() * iTurnsLeft;	// 0.015
 
-	fild	DWORD PTR _iTurnsLeft$217931[esp+64]
+	fild	DWORD PTR _iTurnsLeft$218408[esp+64]
 
 ; 257  : 		double fTotalCostFactor = GC.getAI_RESEARCH_WEIGHT_BASE_MOD() + fAdditionalTurnCostFactor;	// 0.15
 ; 258  : 
@@ -13489,13 +13489,13 @@ $LN13@UpdateTech:
 	mov	eax, esp
 	fmul	DWORD PTR ?gGlobals@@3VCvGlobals@@A+8008
 	sub	esp, 8
-	fstp	QWORD PTR _fAdditionalTurnCostFactor$217933[esp+80]
+	fstp	QWORD PTR _fAdditionalTurnCostFactor$218410[esp+80]
 	fld	DWORD PTR ?gGlobals@@3VCvGlobals@@A+8012
-	fadd	QWORD PTR _fAdditionalTurnCostFactor$217933[esp+80]
-	fstp	QWORD PTR _fTotalCostFactor$217934[esp+80]
-	mov	ecx, DWORD PTR _fTotalCostFactor$217934[esp+80]
-	mov	edx, DWORD PTR _fTotalCostFactor$217934[esp+84]
-	fild	DWORD PTR _iTurnsLeft$217931[esp+80]
+	fadd	QWORD PTR _fAdditionalTurnCostFactor$218410[esp+80]
+	fstp	QWORD PTR _fTotalCostFactor$218411[esp+80]
+	mov	ecx, DWORD PTR _fTotalCostFactor$218411[esp+80]
+	mov	edx, DWORD PTR _fTotalCostFactor$218411[esp+84]
+	fild	DWORD PTR _iTurnsLeft$218408[esp+80]
 	mov	DWORD PTR [eax], ecx
 	mov	DWORD PTR [eax+4], edx
 	fstp	QWORD PTR [esp]
@@ -13507,7 +13507,7 @@ $LN13@UpdateTech:
 ; 263  : 		if(GET_PLAYER(ePlayer).GetNumFreeTechs() == 0)
 
 	mov	eax, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
-	fstp	QWORD PTR _fWeightDivisor$217932[esp+80]
+	fstp	QWORD PTR _fWeightDivisor$218409[esp+80]
 	mov	ecx, DWORD PTR tv693[esp+80]
 	add	esp, 16					; 00000010H
 	add	ecx, eax
@@ -13521,11 +13521,11 @@ $LN13@UpdateTech:
 
 	mov	ecx, DWORD PTR [edx+ebx*8+4]
 	lea	edi, DWORD PTR [edx+ebx*8]
-	mov	DWORD PTR _elem$227094[esp+68], ecx
-	fild	DWORD PTR _elem$227094[esp+68]
+	mov	DWORD PTR _elem$227576[esp+68], ecx
+	fild	DWORD PTR _elem$227576[esp+68]
 	mov	eax, DWORD PTR [edi]
-	mov	DWORD PTR _elem$227094[esp+64], eax
-	fdiv	QWORD PTR _fWeightDivisor$217932[esp+64]
+	mov	DWORD PTR _elem$227576[esp+64], eax
+	fdiv	QWORD PTR _fWeightDivisor$218409[esp+64]
 	call	__ftol2_sse_excpt
 
 ; 266  : 		}
@@ -13544,14 +13544,14 @@ $LN10@UpdateTech:
 	mov	ecx, DWORD PTR [edx+ebx*8]
 	lea	edi, DWORD PTR [edx+ebx*8]
 	sar	eax, 1
-	mov	DWORD PTR $T226823[esp+64], eax
-	mov	DWORD PTR _elem$227108[esp+64], ecx
+	mov	DWORD PTR $T227300[esp+64], eax
+	mov	DWORD PTR _elem$227590[esp+64], ecx
 	mov	ecx, DWORD PTR [edi+4]
 	cmp	eax, 1
-	mov	DWORD PTR $T226822[esp+64], 1
-	lea	eax, DWORD PTR $T226822[esp+64]
+	mov	DWORD PTR $T227299[esp+64], 1
+	lea	eax, DWORD PTR $T227299[esp+64]
 	jl	SHORT $LN122@UpdateTech
-	lea	eax, DWORD PTR $T226823[esp+64]
+	lea	eax, DWORD PTR $T227300[esp+64]
 $LN122@UpdateTech:
 	mov	eax, DWORD PTR [eax]
 	imul	eax, ecx
@@ -13610,10 +13610,10 @@ $LN8@UpdateTech:
 	lea	eax, DWORD PTR [eax+ebx*8]
 	lea	edi, DWORD PTR [esi+720]
 	mov	eax, ecx
-	mov	DWORD PTR _weightedElem$227211[esp+64], eax
+	mov	DWORD PTR _weightedElem$227702[esp+64], eax
 	mov	eax, DWORD PTR [edi+8]
-	mov	DWORD PTR _elem$227169[esp+64], ecx
-	mov	DWORD PTR _elem$227169[esp+68], edx
+	mov	DWORD PTR _elem$227651[esp+64], ecx
+	mov	DWORD PTR _elem$227651[esp+68], edx
 	mov	BYTE PTR [edi+44], 0
 	cmp	DWORD PTR [edi+4], eax
 	jne	SHORT $LN153@UpdateTech
@@ -13626,8 +13626,8 @@ $LN153@UpdateTech:
 	lea	eax, DWORD PTR [edx+ecx*8]
 	test	eax, eax
 	je	SHORT $LN156@UpdateTech
-	mov	ecx, DWORD PTR _weightedElem$227211[esp+64]
-	mov	edx, DWORD PTR _elem$227169[esp+68]
+	mov	ecx, DWORD PTR _weightedElem$227702[esp+64]
+	mov	edx, DWORD PTR _elem$227651[esp+68]
 	mov	DWORD PTR [eax], ecx
 	mov	DWORD PTR [eax+4], edx
 $LN156@UpdateTech:
@@ -13642,7 +13642,7 @@ $LN194@UpdateTech:
 ; 290  : 	for(int i = 0; i < m_aFinalRoundTechs.size(); i++)
 
 	cmp	DWORD PTR [esi+724], 0
-	mov	DWORD PTR _i$217946[esp+64], 0
+	mov	DWORD PTR _i$218423[esp+64], 0
 	jle	SHORT $LN2@UpdateTech
 $LL4@UpdateTech:
 
@@ -13675,7 +13675,7 @@ $LL4@UpdateTech:
 	add	esp, 12					; 0000000cH
 	mov	ecx, edi
 	push	edi
-	mov	DWORD PTR _elem$227275[esp+68], ecx
+	mov	DWORD PTR _elem$227757[esp+68], ecx
 	push	edx
 	mov	ecx, esi
 	call	?FindUnassignedAdvisorForTech@CvAdvisorRecommender@@QAE?AW4AdvisorTypes@@W4PlayerTypes@@W4TechTypes@@@Z ; CvAdvisorRecommender::FindUnassignedAdvisorForTech
@@ -13701,10 +13701,10 @@ $LN1@UpdateTech:
 	sub	eax, edx
 	sar	eax, 1
 	mov	DWORD PTR [ecx+4], eax
-	mov	eax, DWORD PTR _i$217946[esp+64]
+	mov	eax, DWORD PTR _i$218423[esp+64]
 	inc	eax
 	cmp	eax, DWORD PTR [esi+724]
-	mov	DWORD PTR _i$217946[esp+64], eax
+	mov	DWORD PTR _i$218423[esp+64], eax
 	jl	SHORT $LL4@UpdateTech
 $LN2@UpdateTech:
 

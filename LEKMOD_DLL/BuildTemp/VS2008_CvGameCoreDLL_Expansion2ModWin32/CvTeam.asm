@@ -16,146 +16,151 @@ _BSS	SEGMENT
 ?m_aTeams@CvTeam@@1PAV1@A DD 01H DUP (?)		; CvTeam::m_aTeams
 _BSS	ENDS
 CONST	SEGMENT
-$SG223027 DB	'TXT_KEY_MISC_PLAYER_PERMANENT_ALLIANCE', 00H
+$SG223504 DB	'TXT_KEY_MISC_PLAYER_PERMANENT_ALLIANCE', 00H
 	ORG $+1
-$SG223034 DB	'TXT_KEY_MISC_PLAYER_PERMANENT_ALLIANCE', 00H
+$SG223511 DB	'TXT_KEY_MISC_PLAYER_PERMANENT_ALLIANCE', 00H
 	ORG $+1
-$SG223379 DB	'GAMEOPTION_AI_TWEAKS', 00H
+$SG223856 DB	'GAMEOPTION_AI_TWEAKS', 00H
 	ORG $+3
-$SG223394 DB	'CanDeclareWar', 00H
+$SG223871 DB	'CanDeclareWar', 00H
 	ORG $+2
-$SG223436 DB	'DeclareWar', 00H
+$SG223913 DB	'DeclareWar', 00H
 	ORG $+1
-$SG223463 DB	'TXT_KEY_MISC_YOU_DECLARED_WAR_ON', 00H
+$SG223940 DB	'TXT_KEY_MISC_YOU_DECLARED_WAR_ON', 00H
 	ORG $+3
-$SG223474 DB	'TXT_KEY_MISC_DECLARED_WAR_ON_YOU', 00H
+$SG223951 DB	'TXT_KEY_MISC_DECLARED_WAR_ON_YOU', 00H
 	ORG $+3
-$SG223480 DB	'TXT_KEY_MISC_SOMEONE_DECLARED_WAR', 00H
+$SG223957 DB	'TXT_KEY_MISC_SOMEONE_DECLARED_WAR', 00H
 	ORG $+2
-$SG223486 DB	'TXT_KEY_MISC_SOMEONE_DECLARES_WAR', 00H
+$SG223963 DB	'TXT_KEY_MISC_SOMEONE_DECLARES_WAR', 00H
 	ORG $+2
-$SG223725 DB	'TXT_KEY_MISC_YOUR_MINOR_ALLIES_DECLARED_WAR_SUMMARY', 00H
-$SG223727 DB	'TXT_KEY_MISC_YOUR_MINOR_ALLIES_DECLARED_WAR', 00H
-$SG223733 DB	'TXT_KEY_MISC_MINOR_ALLIES_DECLARED_WAR_ON_YOU_SUMMARY', 00H
+$SG224202 DB	'TXT_KEY_MISC_YOUR_MINOR_ALLIES_DECLARED_WAR_SUMMARY', 00H
+$SG224204 DB	'TXT_KEY_MISC_YOUR_MINOR_ALLIES_DECLARED_WAR', 00H
+$SG224210 DB	'TXT_KEY_MISC_MINOR_ALLIES_DECLARED_WAR_ON_YOU_SUMMARY', 00H
 	ORG $+2
-$SG223735 DB	'TXT_KEY_MISC_MINOR_ALLIES_DECLARED_WAR_ON_YOU', 00H
+$SG224212 DB	'TXT_KEY_MISC_MINOR_ALLIES_DECLARED_WAR_ON_YOU', 00H
 	ORG $+2
-$SG223747 DB	'[NEWLINE]', 00H
+$SG224224 DB	'[NEWLINE]', 00H
 	ORG $+2
-$SG223750 DB	'[NEWLINE]', 00H
+$SG224227 DB	'[NEWLINE]', 00H
 	ORG $+2
-$SG223778 DB	'MakePeace', 00H
+$SG224255 DB	'MakePeace', 00H
 	ORG $+2
-$SG223823 DB	'TXT_KEY_MISC_YOUR_MINOR_ALLIES_MADE_PEACE', 00H
+$SG224300 DB	'TXT_KEY_MISC_YOUR_MINOR_ALLIES_MADE_PEACE', 00H
 	ORG $+2
-$SG223826 DB	'TXT_KEY_MISC_YOUR_MINOR_ALLIES_MADE_PEACE_SUMMARY', 00H
+$SG224303 DB	'TXT_KEY_MISC_YOUR_MINOR_ALLIES_MADE_PEACE_SUMMARY', 00H
 	ORG $+2
-$SG223839 DB	'[NEWLINE]', 00H
+$SG224316 DB	'[NEWLINE]', 00H
 	ORG $+2
-$SG223865 DB	'TXT_KEY_MISC_YOU_MADE_PEACE_WITH', 00H
+$SG224342 DB	'TXT_KEY_MISC_YOU_MADE_PEACE_WITH', 00H
 	ORG $+3
-$SG223872 DB	'TXT_KEY_MISC_YOU_MADE_PEACE_WITH', 00H
+$SG224349 DB	'TXT_KEY_MISC_YOU_MADE_PEACE_WITH', 00H
 	ORG $+3
-$SG223879 DB	'TXT_KEY_MISC_SOMEONE_MADE_PEACE', 00H
-$SG223889 DB	'TXT_KEY_MISC_SOMEONE_MADE_PEACE', 00H
-$SG223900 DB	'TeamMeet', 00H
+$SG224356 DB	'TXT_KEY_MISC_SOMEONE_MADE_PEACE', 00H
+$SG224366 DB	'TXT_KEY_MISC_SOMEONE_MADE_PEACE', 00H
+$SG224377 DB	'TeamMeet', 00H
 	ORG $+3
-$SG224359 DB	'Tie for most favored other team to vote for. Rolling to '
+$SG224836 DB	'Tie for most favored other team to vote for. Rolling to '
 	DB	'choose.', 00H
-$SG224736 DB	'/', 00H
+$SG225213 DB	'/', 00H
 	ORG $+2
-$SG224755 DB	'/', 00H
+$SG225232 DB	'/', 00H
 	ORG $+2
-$SG225278 DB	'TXT_KEY_NOTIFICATION_MET_MINOR_CIV', 00H
+$SG225755 DB	'TXT_KEY_NOTIFICATION_MET_MINOR_CIV', 00H
 	ORG $+1
-$SG225281 DB	'TXT_KEY_NOTIFICATION_SUMMARY_MET_MINOR_CIV', 00H
+$SG225758 DB	'TXT_KEY_NOTIFICATION_SUMMARY_MET_MINOR_CIV', 00H
 	ORG $+1
-$SG225490 DB	'TXT_KEY_NOTIFICATION_DIPLOMAT_EJECTED', 00H
+$SG225967 DB	'TXT_KEY_NOTIFICATION_DIPLOMAT_EJECTED', 00H
 	ORG $+2
-$SG225493 DB	'TXT_KEY_NOTIFICATION_DIPLOMAT_EJECTED_TT', 00H
+$SG225970 DB	'TXT_KEY_NOTIFICATION_DIPLOMAT_EJECTED_TT', 00H
 	ORG $+3
-$SG225529 DB	'TXT_KEY_MISC_PLAYERS_SIGN_DEFENSIVE_PACT', 00H
+$SG226002 DB	'TXT_KEY_NOTIFICATION_NON_AGGRESSION', 00H
+$SG226005 DB	'TXT_KEY_NOTIFICATION_NON_AGGRESSION_S', 00H
+	ORG $+2
+$SG226035 DB	'TXT_KEY_UNMET_PLAYER', 00H
 	ORG $+3
-$SG225559 DB	'TXT_KEY_NOTIFICATION_RESEARCH_AGREEMENT', 00H
-$SG225584 DB	'TXT_KEY_MISC_PLAYERS_SIGN_TRADE_AGREEMENT', 00H
-	ORG $+2
-$SG225762 DB	'TXT_KEY_MISC_COMPLETES_PROJECT', 00H
-	ORG $+1
-$SG225768 DB	'TXT_KEY_MISC_SOMEONE_HAS_COMPLETED', 00H
-	ORG $+1
-$SG225771 DB	'TXT_KEY_MISC_WONDER_COMPLETED_UNKNOWN', 00H
-	ORG $+2
-$SG225999 DB	'TXT_KEY_VICTORY_RESET', 00H
-	ORG $+2
-$SG226007 DB	'AS2D_MELTDOWN', 00H
-	ORG $+2
-$SG226134 DB	'TXT_KEY_MISC_PROGRESS_TOWARDS_TECH', 00H
-	ORG $+1
-$SG226135 DB	'TXT_KEY_MISC_YOU_DISCOVERED_TECH', 00H
+$SG226041 DB	'TXT_KEY_UNMET_PLAYER', 00H
 	ORG $+3
-$SG226157 DB	'TECH_SATELLITES', 00H
-$SG226158 DB	'CIVILIZATION_HUNS', 00H
+$SG226077 DB	'TXT_KEY_NOTIFICATION_RESEARCH_AGREEMENT', 00H
+$SG226102 DB	'TXT_KEY_MISC_PLAYERS_SIGN_TRADE_AGREEMENT', 00H
 	ORG $+2
-$SG226159 DB	'WORLDSIZE_HUGE', 00H
+$SG226280 DB	'TXT_KEY_MISC_COMPLETES_PROJECT', 00H
 	ORG $+1
-$SG226163 DB	'GAMEOPTION_TWEAKED_SCORING', 00H
+$SG226286 DB	'TXT_KEY_MISC_SOMEONE_HAS_COMPLETED', 00H
 	ORG $+1
-$SG226213 DB	'TXT_KEY_NOTIFICATION_FOUND_RESOURCE', 00H
-$SG226216 DB	'TXT_KEY_NOTIFICATION_SUMMARY_FOUND_RESOURCE', 00H
-$SG226253 DB	'RESOURCE_ARTIFACTS', 00H
-	ORG $+1
-$SG226258 DB	'RESOURCE_HIDDEN_ARTIFACTS', 00H
+$SG226289 DB	'TXT_KEY_MISC_WONDER_COMPLETED_UNKNOWN', 00H
 	ORG $+2
-$SG226279 DB	'TXT_KEY_NOTIFICATION_FOUND_ARTIFACTS', 00H
+$SG226517 DB	'TXT_KEY_VICTORY_RESET', 00H
+	ORG $+2
+$SG226525 DB	'AS2D_MELTDOWN', 00H
+	ORG $+2
+$SG226652 DB	'TXT_KEY_MISC_PROGRESS_TOWARDS_TECH', 00H
+	ORG $+1
+$SG226653 DB	'TXT_KEY_MISC_YOU_DISCOVERED_TECH', 00H
 	ORG $+3
-$SG226281 DB	'TXT_KEY_NOTIFICATION_SUMMARY_FOUND_RESOURCE', 00H
-$SG226285 DB	'TXT_KEY_NOTIFICATION_FOUND_HIDDEN_ARTIFACTS', 00H
-$SG226287 DB	'TXT_KEY_NOTIFICATION_SUMMARY_FOUND_RESOURCE', 00H
-$SG226348 DB	'TXT_KEY_MISC_FIRST_TECH_CHOOSE_FREE', 00H
-$SG226361 DB	'TXT_KEY_MISC_SOMEONE_FIRST_TO_TECH', 00H
-	ORG $+1
-$SG226364 DB	'TXT_KEY_MISC_UNKNOWN_FIRST_TO_TECH', 00H
-	ORG $+1
-$SG226368 DB	'TXT_KEY_MISC_SOMEONE_FIRST_TO_TECH', 00H
-	ORG $+1
-$SG226394 DB	'RESOURCE_ARTIFACTS', 00H
-	ORG $+1
-$SG226396 DB	'TXT_KEY_MISC_DISCOVERED_ARTIFACTS_NEAR', 00H
-	ORG $+1
-$SG226399 DB	'RESOURCE_HIDDEN_ARTIFACTS', 00H
+$SG226675 DB	'TECH_SATELLITES', 00H
+$SG226676 DB	'CIVILIZATION_HUNS', 00H
 	ORG $+2
-$SG226401 DB	'TXT_KEY_MISC_DISCOVERED_HIDDEN_ARTIFACTS_NEAR', 00H
+$SG226677 DB	'WORLDSIZE_HUGE', 00H
+	ORG $+1
+$SG226681 DB	'GAMEOPTION_TWEAKED_SCORING', 00H
+	ORG $+1
+$SG226731 DB	'TXT_KEY_NOTIFICATION_FOUND_RESOURCE', 00H
+$SG226734 DB	'TXT_KEY_NOTIFICATION_SUMMARY_FOUND_RESOURCE', 00H
+$SG226771 DB	'RESOURCE_ARTIFACTS', 00H
+	ORG $+1
+$SG226776 DB	'RESOURCE_HIDDEN_ARTIFACTS', 00H
 	ORG $+2
-$SG226406 DB	'TXT_KEY_MISC_YOU_DISCOVERED_RESOURCE', 00H
+$SG226797 DB	'TXT_KEY_NOTIFICATION_FOUND_ARTIFACTS', 00H
 	ORG $+3
-$SG226425 DB	'TXT_KEY_MISC_RESOURCE_DISCOVERED_CITY_DEMANDS', 00H
+$SG226799 DB	'TXT_KEY_NOTIFICATION_SUMMARY_FOUND_RESOURCE', 00H
+$SG226803 DB	'TXT_KEY_NOTIFICATION_FOUND_HIDDEN_ARTIFACTS', 00H
+$SG226805 DB	'TXT_KEY_NOTIFICATION_SUMMARY_FOUND_RESOURCE', 00H
+$SG226866 DB	'TXT_KEY_MISC_FIRST_TECH_CHOOSE_FREE', 00H
+$SG226879 DB	'TXT_KEY_MISC_SOMEONE_FIRST_TO_TECH', 00H
+	ORG $+1
+$SG226882 DB	'TXT_KEY_MISC_UNKNOWN_FIRST_TO_TECH', 00H
+	ORG $+1
+$SG226886 DB	'TXT_KEY_MISC_SOMEONE_FIRST_TO_TECH', 00H
+	ORG $+1
+$SG226912 DB	'RESOURCE_ARTIFACTS', 00H
+	ORG $+1
+$SG226914 DB	'TXT_KEY_MISC_DISCOVERED_ARTIFACTS_NEAR', 00H
+	ORG $+1
+$SG226917 DB	'RESOURCE_HIDDEN_ARTIFACTS', 00H
 	ORG $+2
-$SG226457 DB	'TXT_KEY_MISC_WHAT_TO_RESEARCH_NEXT', 00H
-	ORG $+1
-$SG226483 DB	'TXT_KEY_MISC_YOU_DISCOVERED_TECH', 00H
-	ORG $+3
-$SG226613 DB	'TXT_KEY_MISC_SOMEONE_CIRC_GLOBE', 00H
-$SG226621 DB	'TXT_KEY_MISC_YOU_CIRC_GLOBE', 00H
-$SG226626 DB	'TXT_KEY_MISC_SOMEONE_CIRC_GLOBE', 00H
-$SG226629 DB	'TXT_KEY_MISC_UNKNOWN_CIRC_GLOBE', 00H
-$SG226635 DB	'CircumnavigatedGlobe', 00H
-	ORG $+3
-$SG226638 DB	'TXT_KEY_MISC_SOMEONE_CIRC_GLOBE', 00H
-$SG226738 DB	'SPECIALUNIT_PEOPLE', 00H
-	ORG $+1
-$SG226742 DB	'TXT_KEY_NOTIFICATION_GREAT_PERSON_ACTIVE_PLAYER', 00H
-$SG226745 DB	'TXT_KEY_NOTIFICATION_SUMMARY_GREAT_PERSON', 00H
+$SG226919 DB	'TXT_KEY_MISC_DISCOVERED_HIDDEN_ARTIFACTS_NEAR', 00H
 	ORG $+2
-$SG226816 DB	'TeamTechResearched', 00H
-	ORG $+1
-$SG227095 DB	'TXT_KEY_NTFN_PLAYER_ERA', 00H
-$SG227107 DB	'TXT_KEY_UNMET_PLAYER', 00H
+$SG226924 DB	'TXT_KEY_MISC_YOU_DISCOVERED_RESOURCE', 00H
 	ORG $+3
-$SG227132 DB	'TXT_KEY_NTFN_MINOR_BONUSES_CHANGED', 00H
-	ORG $+1
-$SG227134 DB	'TXT_KEY_NTFN_MINOR_BONUSES_CHANGED_SM', 00H
+$SG226943 DB	'TXT_KEY_MISC_RESOURCE_DISCOVERED_CITY_DEMANDS', 00H
 	ORG $+2
-$SG227216 DB	'TeamSetEra', 00H
+$SG226975 DB	'TXT_KEY_MISC_WHAT_TO_RESEARCH_NEXT', 00H
+	ORG $+1
+$SG227001 DB	'TXT_KEY_MISC_YOU_DISCOVERED_TECH', 00H
+	ORG $+3
+$SG227131 DB	'TXT_KEY_MISC_SOMEONE_CIRC_GLOBE', 00H
+$SG227139 DB	'TXT_KEY_MISC_YOU_CIRC_GLOBE', 00H
+$SG227144 DB	'TXT_KEY_MISC_SOMEONE_CIRC_GLOBE', 00H
+$SG227147 DB	'TXT_KEY_MISC_UNKNOWN_CIRC_GLOBE', 00H
+$SG227153 DB	'CircumnavigatedGlobe', 00H
+	ORG $+3
+$SG227156 DB	'TXT_KEY_MISC_SOMEONE_CIRC_GLOBE', 00H
+$SG227256 DB	'SPECIALUNIT_PEOPLE', 00H
+	ORG $+1
+$SG227260 DB	'TXT_KEY_NOTIFICATION_GREAT_PERSON_ACTIVE_PLAYER', 00H
+$SG227263 DB	'TXT_KEY_NOTIFICATION_SUMMARY_GREAT_PERSON', 00H
+	ORG $+2
+$SG227334 DB	'TeamTechResearched', 00H
+	ORG $+1
+$SG227613 DB	'TXT_KEY_NTFN_PLAYER_ERA', 00H
+$SG227625 DB	'TXT_KEY_UNMET_PLAYER', 00H
+	ORG $+3
+$SG227650 DB	'TXT_KEY_NTFN_MINOR_BONUSES_CHANGED', 00H
+	ORG $+1
+$SG227652 DB	'TXT_KEY_NTFN_MINOR_BONUSES_CHANGED_SM', 00H
+	ORG $+2
+$SG227734 DB	'TeamSetEra', 00H
 CONST	ENDS
 ;	COMDAT ?NO_TURN@CvMinorCivQuest@@2HB
 CONST	SEGMENT
@@ -2353,15 +2358,15 @@ _eIndex$ = 8						; size = 4
 ?getRouteChange@CvTeam@@QBEHW4RouteTypes@@@Z PROC	; CvTeam::getRouteChange, COMDAT
 ; _this$ = ecx
 
-; 4370 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
-; 4371 : 	CvAssertMsg(eIndex < GC.getNumRouteInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
-; 4372 : 	return m_paiRouteChange[eIndex];
+; 4422 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
+; 4423 : 	CvAssertMsg(eIndex < GC.getNumRouteInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
+; 4424 : 	return m_paiRouteChange[eIndex];
 
 	mov	eax, DWORD PTR [ecx+2908]
 	mov	ecx, DWORD PTR _eIndex$[esp-4]
 	mov	eax, DWORD PTR [eax+ecx*4]
 
-; 4373 : }
+; 4425 : }
 
 	ret	4
 ?getRouteChange@CvTeam@@QBEHW4RouteTypes@@@Z ENDP	; CvTeam::getRouteChange
@@ -2375,9 +2380,9 @@ _iChange$ = 12						; size = 4
 ?changeRouteChange@CvTeam@@QAEXW4RouteTypes@@H@Z PROC	; CvTeam::changeRouteChange, COMDAT
 ; _this$ = ecx
 
-; 4378 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
-; 4379 : 	CvAssertMsg(eIndex < GC.getNumRouteInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
-; 4380 : 	m_paiRouteChange[eIndex] = (m_paiRouteChange[eIndex] + iChange);
+; 4430 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
+; 4431 : 	CvAssertMsg(eIndex < GC.getNumRouteInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
+; 4432 : 	m_paiRouteChange[eIndex] = (m_paiRouteChange[eIndex] + iChange);
 
 	mov	eax, DWORD PTR [ecx+2908]
 	mov	ecx, DWORD PTR _eIndex$[esp-4]
@@ -2385,7 +2390,7 @@ _iChange$ = 12						; size = 4
 	add	DWORD PTR [eax+ecx*4], edx
 	lea	eax, DWORD PTR [eax+ecx*4]
 
-; 4381 : }
+; 4433 : }
 
 	ret	8
 ?changeRouteChange@CvTeam@@QAEXW4RouteTypes@@H@Z ENDP	; CvTeam::changeRouteChange
@@ -2398,15 +2403,15 @@ _eIndex$ = 8						; size = 4
 ?getBuildTimeChange@CvTeam@@QBEHW4BuildTypes@@@Z PROC	; CvTeam::getBuildTimeChange, COMDAT
 ; _this$ = ecx
 
-; 4386 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
-; 4387 : 	CvAssertMsg(eIndex < GC.getNumBuildInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
-; 4388 : 	return m_paiBuildTimeChange[eIndex];
+; 4438 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
+; 4439 : 	CvAssertMsg(eIndex < GC.getNumBuildInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
+; 4440 : 	return m_paiBuildTimeChange[eIndex];
 
 	mov	eax, DWORD PTR [ecx+2912]
 	mov	ecx, DWORD PTR _eIndex$[esp-4]
 	mov	eax, DWORD PTR [eax+ecx*4]
 
-; 4389 : }
+; 4441 : }
 
 	ret	4
 ?getBuildTimeChange@CvTeam@@QBEHW4BuildTypes@@@Z ENDP	; CvTeam::getBuildTimeChange
@@ -2420,16 +2425,16 @@ _iChange$ = 12						; size = 4
 ?changeBuildTimeChange@CvTeam@@QAEXW4BuildTypes@@H@Z PROC ; CvTeam::changeBuildTimeChange, COMDAT
 ; _this$ = ecx
 
-; 4394 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
-; 4395 : 	CvAssertMsg(eIndex < GC.getNumBuildInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
-; 4396 : 	if (iChange != 0)
+; 4446 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
+; 4447 : 	CvAssertMsg(eIndex < GC.getNumBuildInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
+; 4448 : 	if (iChange != 0)
 
 	mov	edx, DWORD PTR _iChange$[esp-4]
 	test	edx, edx
 	je	SHORT $LN1@changeBuil
 
-; 4397 : 	{
-; 4398 : 		m_paiBuildTimeChange[eIndex] = (m_paiBuildTimeChange[eIndex] + iChange);
+; 4449 : 	{
+; 4450 : 		m_paiBuildTimeChange[eIndex] = (m_paiBuildTimeChange[eIndex] + iChange);
 
 	mov	eax, DWORD PTR [ecx+2912]
 	mov	ecx, DWORD PTR _eIndex$[esp-4]
@@ -2437,8 +2442,8 @@ _iChange$ = 12						; size = 4
 	lea	eax, DWORD PTR [eax+ecx*4]
 $LN1@changeBuil:
 
-; 4399 : 	}
-; 4400 : }
+; 4451 : 	}
+; 4452 : }
 
 	ret	8
 ?changeBuildTimeChange@CvTeam@@QAEXW4BuildTypes@@H@Z ENDP ; CvTeam::changeBuildTimeChange
@@ -2450,11 +2455,11 @@ _TEXT	SEGMENT
 ?GetBestPossibleRoute@CvTeam@@QAE?AW4RouteTypes@@XZ PROC ; CvTeam::GetBestPossibleRoute, COMDAT
 ; _this$ = ecx
 
-; 4406 : 	return (RouteTypes) m_iBestPossibleRoute;
+; 4458 : 	return (RouteTypes) m_iBestPossibleRoute;
 
 	mov	eax, DWORD PTR [ecx+120]
 
-; 4407 : }
+; 4459 : }
 
 	ret	0
 ?GetBestPossibleRoute@CvTeam@@QAE?AW4RouteTypes@@XZ ENDP ; CvTeam::GetBestPossibleRoute
@@ -2467,23 +2472,23 @@ _eRoute$ = 8						; size = 4
 ?SetBestPossibleRoute@CvTeam@@QAEXW4RouteTypes@@@Z PROC	; CvTeam::SetBestPossibleRoute, COMDAT
 ; _this$ = ecx
 
-; 4413 : 	CvAssertMsg(eRoute >= NO_ROUTE, "eIndex is expected to be non-negative (invalid Index)");
-; 4414 : 	CvAssertMsg(eRoute < GC.getNumRouteInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
-; 4415 : 
-; 4416 : 	if(GetBestPossibleRoute() != eRoute)
+; 4465 : 	CvAssertMsg(eRoute >= NO_ROUTE, "eIndex is expected to be non-negative (invalid Index)");
+; 4466 : 	CvAssertMsg(eRoute < GC.getNumRouteInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
+; 4467 : 
+; 4468 : 	if(GetBestPossibleRoute() != eRoute)
 
 	mov	eax, DWORD PTR _eRoute$[esp-4]
 	cmp	DWORD PTR [ecx+120], eax
 	je	SHORT $LN1@SetBestPos
 
-; 4417 : 	{
-; 4418 : 		m_iBestPossibleRoute = eRoute;
+; 4469 : 	{
+; 4470 : 		m_iBestPossibleRoute = eRoute;
 
 	mov	DWORD PTR [ecx+120], eax
 $LN1@SetBestPos:
 
-; 4419 : 	}
-; 4420 : }
+; 4471 : 	}
+; 4472 : }
 
 	ret	4
 ?SetBestPossibleRoute@CvTeam@@QAEXW4RouteTypes@@@Z ENDP	; CvTeam::SetBestPossibleRoute
@@ -2501,13 +2506,13 @@ EXTRN	?gGlobals@@3VCvGlobals@@A:BYTE			; gGlobals
 ;	COMDAT ?DoUpdateBestRoute@CvTeam@@QAEXXZ
 _TEXT	SEGMENT
 _iBestRouteValue$ = -16					; size = 4
-_iBuildLoop$225627 = -12				; size = 4
+_iBuildLoop$226145 = -12				; size = 4
 _eBestRoute$ = -8					; size = 4
 _this$ = -4						; size = 4
 ?DoUpdateBestRoute@CvTeam@@QAEXXZ PROC			; CvTeam::DoUpdateBestRoute, COMDAT
 ; _this$ = ecx
 
-; 4425 : {
+; 4477 : {
 
 	sub	esp, 16					; 00000010H
 	push	ebx
@@ -2515,69 +2520,69 @@ _this$ = -4						; size = 4
 	push	edi
 	mov	ebx, ecx
 
-; 4426 : 	RouteTypes eBestRoute = NO_ROUTE;
-; 4427 : 	int iBestRouteValue = 0;
+; 4478 : 	RouteTypes eBestRoute = NO_ROUTE;
+; 4479 : 	int iBestRouteValue = 0;
 
 	xor	edi, edi
 	or	esi, -1
 
-; 4428 : 
-; 4429 : 	// Loop through all builds to see if it allows us to build a Route
-; 4430 : #ifdef AUI_WARNING_FIXES
-; 4431 : 	for (uint iBuildLoop = 0; iBuildLoop < GC.getNumBuildInfos(); iBuildLoop++)
-; 4432 : #else
-; 4433 : 	for(int iBuildLoop = 0; iBuildLoop < GC.getNumBuildInfos(); iBuildLoop++)
+; 4480 : 
+; 4481 : 	// Loop through all builds to see if it allows us to build a Route
+; 4482 : #ifdef AUI_WARNING_FIXES
+; 4483 : 	for (uint iBuildLoop = 0; iBuildLoop < GC.getNumBuildInfos(); iBuildLoop++)
+; 4484 : #else
+; 4485 : 	for(int iBuildLoop = 0; iBuildLoop < GC.getNumBuildInfos(); iBuildLoop++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	DWORD PTR _this$[esp+28], ebx
 	mov	DWORD PTR _eBestRoute$[esp+28], esi
 	mov	DWORD PTR _iBestRouteValue$[esp+28], edi
-	mov	DWORD PTR _iBuildLoop$225627[esp+28], edi
+	mov	DWORD PTR _iBuildLoop$226145[esp+28], edi
 	call	?getNumBuildInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumBuildInfos
 	test	eax, eax
 	jle	$LN24@DoUpdateBe
 	push	ebp
 $LL30@DoUpdateBe:
 
-; 4434 : #endif
-; 4435 : 	{
-; 4436 : 		const BuildTypes eBuild = static_cast<BuildTypes>(iBuildLoop);
-; 4437 : 		CvBuildInfo* pkBuildInfo = GC.getBuildInfo(eBuild);
+; 4486 : #endif
+; 4487 : 	{
+; 4488 : 		const BuildTypes eBuild = static_cast<BuildTypes>(iBuildLoop);
+; 4489 : 		CvBuildInfo* pkBuildInfo = GC.getBuildInfo(eBuild);
 
 	push	edi
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getBuildInfo@CvGlobals@@QAEPAVCvBuildInfo@@W4BuildTypes@@@Z ; CvGlobals::getBuildInfo
 	mov	esi, eax
 
-; 4438 : 		if(pkBuildInfo)
+; 4490 : 		if(pkBuildInfo)
 
 	test	esi, esi
 	je	SHORT $LN9@DoUpdateBe
 
-; 4439 : 		{
-; 4440 : 			const RouteTypes eRoute = (RouteTypes) pkBuildInfo->getRoute();
+; 4491 : 		{
+; 4492 : 			const RouteTypes eRoute = (RouteTypes) pkBuildInfo->getRoute();
 
 	mov	ecx, esi
 	call	?getRoute@CvBuildInfo@@QBEHXZ		; CvBuildInfo::getRoute
 	mov	ebp, eax
 
-; 4441 : 			if(eRoute != NO_ROUTE)
+; 4493 : 			if(eRoute != NO_ROUTE)
 
 	cmp	ebp, -1
 	je	SHORT $LN9@DoUpdateBe
 
-; 4442 : 			{
-; 4443 : 				int iRouteValue = -1;
-; 4444 : 
-; 4445 : 				// If this route requires a tech, it's value is the cost of the tech
-; 4446 : 				const TechTypes eTech = (TechTypes) pkBuildInfo->getTechPrereq();
+; 4494 : 			{
+; 4495 : 				int iRouteValue = -1;
+; 4496 : 
+; 4497 : 				// If this route requires a tech, it's value is the cost of the tech
+; 4498 : 				const TechTypes eTech = (TechTypes) pkBuildInfo->getTechPrereq();
 
 	mov	ecx, esi
 	or	edi, -1
 	call	?getTechPrereq@CvBuildInfo@@QBEHXZ	; CvBuildInfo::getTechPrereq
 	mov	esi, eax
 
-; 4447 : 				CvTechEntry* pkTechInfo = (eTech != NO_TECH)? GC.getTechInfo(eTech) : NULL;
+; 4499 : 				CvTechEntry* pkTechInfo = (eTech != NO_TECH)? GC.getTechInfo(eTech) : NULL;
 
 	cmp	esi, edi
 	je	SHORT $LN25@DoUpdateBe
@@ -2586,13 +2591,13 @@ $LL30@DoUpdateBe:
 	call	?getTechInfo@CvGlobals@@QAEPAVCvTechEntry@@W4TechTypes@@@Z ; CvGlobals::getTechInfo
 	mov	ebx, eax
 
-; 4448 : 				if(pkTechInfo)
+; 4500 : 				if(pkTechInfo)
 
 	test	ebx, ebx
 	je	SHORT $LN25@DoUpdateBe
 
-; 4449 : 				{
-; 4450 : 					if(GetTeamTechs()->HasTech(eTech))
+; 4501 : 				{
+; 4502 : 					if(GetTeamTechs()->HasTech(eTech))
 
 	mov	eax, DWORD PTR _this$[esp+32]
 	mov	ecx, DWORD PTR [eax+2980]
@@ -2601,62 +2606,62 @@ $LL30@DoUpdateBe:
 	test	al, al
 	je	SHORT $LN26@DoUpdateBe
 
-; 4451 : 					{
-; 4452 : 						iRouteValue = pkTechInfo->GetResearchCost();
+; 4503 : 					{
+; 4504 : 						iRouteValue = pkTechInfo->GetResearchCost();
 
 	mov	ecx, ebx
 	call	?GetResearchCost@CvTechEntry@@QBEHXZ	; CvTechEntry::GetResearchCost
 	mov	edi, eax
 
-; 4453 : 					}
-; 4454 : 				}
-; 4455 : 				// Route requires no tech, so it's value is simply 1
-; 4456 : 				else
+; 4505 : 					}
+; 4506 : 				}
+; 4507 : 				// Route requires no tech, so it's value is simply 1
+; 4508 : 				else
 
 	jmp	SHORT $LN26@DoUpdateBe
 $LN25@DoUpdateBe:
 
-; 4457 : 				{
-; 4458 : 					iRouteValue = 1;
+; 4509 : 				{
+; 4510 : 					iRouteValue = 1;
 
 	mov	edi, 1
 $LN26@DoUpdateBe:
 
-; 4459 : 				}
-; 4460 : 
-; 4461 : 				// Most valuable route found so far? (note we use greater than OR equal to so that we'll pick up the LAST entry in Builds - this is most likely to be the most advanced if there are ties)
-; 4462 : 				if(iRouteValue >= iBestRouteValue)
+; 4511 : 				}
+; 4512 : 
+; 4513 : 				// Most valuable route found so far? (note we use greater than OR equal to so that we'll pick up the LAST entry in Builds - this is most likely to be the most advanced if there are ties)
+; 4514 : 				if(iRouteValue >= iBestRouteValue)
 
 	cmp	edi, DWORD PTR _iBestRouteValue$[esp+32]
 	jl	SHORT $LN9@DoUpdateBe
 
-; 4463 : 				{
-; 4464 : 					iBestRouteValue = iRouteValue;
+; 4515 : 				{
+; 4516 : 					iBestRouteValue = iRouteValue;
 
 	mov	DWORD PTR _iBestRouteValue$[esp+32], edi
 
-; 4465 : 					eBestRoute = eRoute;
+; 4517 : 					eBestRoute = eRoute;
 
 	mov	DWORD PTR _eBestRoute$[esp+32], ebp
 $LN9@DoUpdateBe:
-	mov	edi, DWORD PTR _iBuildLoop$225627[esp+32]
+	mov	edi, DWORD PTR _iBuildLoop$226145[esp+32]
 	inc	edi
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	mov	DWORD PTR _iBuildLoop$225627[esp+32], edi
+	mov	DWORD PTR _iBuildLoop$226145[esp+32], edi
 	call	?getNumBuildInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumBuildInfos
 	cmp	edi, eax
 	jl	$LL30@DoUpdateBe
 
-; 4466 : 				}
-; 4467 : 			}
-; 4468 : 		}
-; 4469 : 	}
-; 4470 : 
-; 4471 : #ifdef AUI_ASTAR_TWEAKED_OPTIMIZED_BUT_CAN_STILL_USE_ROADS
-; 4472 : 	CvRouteInfo* pRouteInfo = NULL;
-; 4473 : 	if (eBestRoute > NO_ROUTE)
-; 4474 : #else
-; 4475 : 	if(iBestRouteValue > -1)
+; 4518 : 				}
+; 4519 : 			}
+; 4520 : 		}
+; 4521 : 	}
+; 4522 : 
+; 4523 : #ifdef AUI_ASTAR_TWEAKED_OPTIMIZED_BUT_CAN_STILL_USE_ROADS
+; 4524 : 	CvRouteInfo* pRouteInfo = NULL;
+; 4525 : 	if (eBestRoute > NO_ROUTE)
+; 4526 : #else
+; 4527 : 	if(iBestRouteValue > -1)
 
 	cmp	DWORD PTR _iBestRouteValue$[esp+32], -1
 	pop	ebp
@@ -2665,9 +2670,9 @@ $LN9@DoUpdateBe:
 	mov	ebx, DWORD PTR _this$[esp+28]
 $LN24@DoUpdateBe:
 
-; 4476 : #endif
-; 4477 : 	{
-; 4478 : 		SetBestPossibleRoute(eBestRoute);
+; 4528 : #endif
+; 4529 : 	{
+; 4530 : 		SetBestPossibleRoute(eBestRoute);
 
 	cmp	DWORD PTR [ebx+120], esi
 	je	SHORT $LN17@DoUpdateBe
@@ -2677,26 +2682,26 @@ $LN17@DoUpdateBe:
 	pop	esi
 	pop	ebx
 
-; 4479 : #ifdef AUI_ASTAR_TWEAKED_OPTIMIZED_BUT_CAN_STILL_USE_ROADS
-; 4480 : 		pRouteInfo = GC.getRouteInfo(eBestRoute);
-; 4481 : #endif
-; 4482 : 	}
-; 4483 : #ifdef AUI_ASTAR_TWEAKED_OPTIMIZED_BUT_CAN_STILL_USE_ROADS
-; 4484 : 	if (pRouteInfo)
-; 4485 : 	{
-; 4486 : 		m_iBestRouteNormalCostMultiplier = GC.getMOVE_DENOMINATOR() / (pRouteInfo->getMovementCost() + getRouteChange(eBestRoute));
-; 4487 : 		m_iBestRouteFlatCostMultiplier = GC.getMOVE_DENOMINATOR() / pRouteInfo->getFlatMovementCost();
-; 4488 : 		// Extra pRouteInfo->getFlatMovementCost() - 1 is to make sure value is always rounded up
-; 4489 : 		m_iUseFlatCostIfBelowThis = (pRouteInfo->getMovementCost() + getRouteChange(eBestRoute) + pRouteInfo->getFlatMovementCost() - 1) / pRouteInfo->getFlatMovementCost();
-; 4490 : 	}
-; 4491 : 	else
-; 4492 : 	{
-; 4493 : 		m_iBestRouteFlatCostMultiplier = 0;
-; 4494 : 		m_iBestRouteNormalCostMultiplier = 1;
-; 4495 : 		m_iUseFlatCostIfBelowThis = -1;
-; 4496 : 	}
-; 4497 : #endif
-; 4498 : }
+; 4531 : #ifdef AUI_ASTAR_TWEAKED_OPTIMIZED_BUT_CAN_STILL_USE_ROADS
+; 4532 : 		pRouteInfo = GC.getRouteInfo(eBestRoute);
+; 4533 : #endif
+; 4534 : 	}
+; 4535 : #ifdef AUI_ASTAR_TWEAKED_OPTIMIZED_BUT_CAN_STILL_USE_ROADS
+; 4536 : 	if (pRouteInfo)
+; 4537 : 	{
+; 4538 : 		m_iBestRouteNormalCostMultiplier = GC.getMOVE_DENOMINATOR() / (pRouteInfo->getMovementCost() + getRouteChange(eBestRoute));
+; 4539 : 		m_iBestRouteFlatCostMultiplier = GC.getMOVE_DENOMINATOR() / pRouteInfo->getFlatMovementCost();
+; 4540 : 		// Extra pRouteInfo->getFlatMovementCost() - 1 is to make sure value is always rounded up
+; 4541 : 		m_iUseFlatCostIfBelowThis = (pRouteInfo->getMovementCost() + getRouteChange(eBestRoute) + pRouteInfo->getFlatMovementCost() - 1) / pRouteInfo->getFlatMovementCost();
+; 4542 : 	}
+; 4543 : 	else
+; 4544 : 	{
+; 4545 : 		m_iBestRouteFlatCostMultiplier = 0;
+; 4546 : 		m_iBestRouteNormalCostMultiplier = 1;
+; 4547 : 		m_iUseFlatCostIfBelowThis = -1;
+; 4548 : 	}
+; 4549 : #endif
+; 4550 : }
 
 	add	esp, 16					; 00000010H
 	ret	0
@@ -2710,15 +2715,15 @@ _eIndex$ = 8						; size = 4
 ?getProjectCount@CvTeam@@QBEHW4ProjectTypes@@@Z PROC	; CvTeam::getProjectCount, COMDAT
 ; _this$ = ecx
 
-; 4522 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
-; 4523 : 	CvAssertMsg(eIndex < GC.getNumProjectInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
-; 4524 : 	return m_paiProjectCount[eIndex];
+; 4574 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
+; 4575 : 	CvAssertMsg(eIndex < GC.getNumProjectInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
+; 4576 : 	return m_paiProjectCount[eIndex];
 
 	mov	eax, DWORD PTR [ecx+2916]
 	mov	ecx, DWORD PTR _eIndex$[esp-4]
 	mov	eax, DWORD PTR [eax+ecx*4]
 
-; 4525 : }
+; 4577 : }
 
 	ret	4
 ?getProjectCount@CvTeam@@QBEHW4ProjectTypes@@@Z ENDP	; CvTeam::getProjectCount
@@ -2731,15 +2736,15 @@ _eIndex$ = 8						; size = 4
 ?getProjectDefaultArtType@CvTeam@@QBEHW4ProjectTypes@@@Z PROC ; CvTeam::getProjectDefaultArtType, COMDAT
 ; _this$ = ecx
 
-; 4530 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
-; 4531 : 	CvAssertMsg(eIndex < GC.getNumProjectInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
-; 4532 : 	return m_paiProjectDefaultArtTypes[eIndex];
+; 4582 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
+; 4583 : 	CvAssertMsg(eIndex < GC.getNumProjectInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
+; 4584 : 	return m_paiProjectDefaultArtTypes[eIndex];
 
 	mov	eax, DWORD PTR [ecx+2920]
 	mov	ecx, DWORD PTR _eIndex$[esp-4]
 	mov	eax, DWORD PTR [eax+ecx*4]
 
-; 4533 : }
+; 4585 : }
 
 	ret	4
 ?getProjectDefaultArtType@CvTeam@@QBEHW4ProjectTypes@@@Z ENDP ; CvTeam::getProjectDefaultArtType
@@ -2753,16 +2758,16 @@ _value$ = 12						; size = 4
 ?setProjectDefaultArtType@CvTeam@@QAEXW4ProjectTypes@@H@Z PROC ; CvTeam::setProjectDefaultArtType, COMDAT
 ; _this$ = ecx
 
-; 4538 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
-; 4539 : 	CvAssertMsg(eIndex < GC.getNumProjectInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
-; 4540 : 	m_paiProjectDefaultArtTypes[eIndex] = value;
+; 4590 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
+; 4591 : 	CvAssertMsg(eIndex < GC.getNumProjectInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
+; 4592 : 	m_paiProjectDefaultArtTypes[eIndex] = value;
 
 	mov	eax, DWORD PTR [ecx+2920]
 	mov	ecx, DWORD PTR _value$[esp-4]
 	mov	edx, DWORD PTR _eIndex$[esp-4]
 	mov	DWORD PTR [eax+edx*4], ecx
 
-; 4541 : }
+; 4593 : }
 
 	ret	8
 ?setProjectDefaultArtType@CvTeam@@QAEXW4ProjectTypes@@H@Z ENDP ; CvTeam::setProjectDefaultArtType
@@ -2779,14 +2784,14 @@ _iExtra$ = 12						; size = 4
 ?isProjectMaxedOut@CvTeam@@QBE_NW4ProjectTypes@@H@Z PROC ; CvTeam::isProjectMaxedOut, COMDAT
 ; _this$ = ecx
 
-; 4565 : {
+; 4617 : {
 
 	push	esi
 
-; 4566 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
-; 4567 : 	CvAssertMsg(eIndex < GC.getNumProjectInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
-; 4568 : 
-; 4569 : 	if(!isTeamProject(eIndex))
+; 4618 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
+; 4619 : 	CvAssertMsg(eIndex < GC.getNumProjectInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
+; 4620 : 
+; 4621 : 	if(!isTeamProject(eIndex))
 
 	mov	esi, DWORD PTR _eIndex$[esp]
 	push	edi
@@ -2799,18 +2804,18 @@ _iExtra$ = 12						; size = 4
 	pop	edi
 	pop	esi
 
-; 4577 : }
+; 4629 : }
 
 	ret	8
 $LN1@isProjectM:
 
-; 4570 : 	{
-; 4571 : 		return false;
-; 4572 : 	}
-; 4573 : 
-; 4574 : 	CvAssertMsg(getProjectCount(eIndex) <= GC.getProjectInfo(eIndex)->GetMaxTeamInstances(), "Current Project count is expected to not exceed the maximum number of instances for this project");
-; 4575 : 
-; 4576 : 	return ((getProjectCount(eIndex) + iExtra) >= GC.getProjectInfo(eIndex)->GetMaxTeamInstances());
+; 4622 : 	{
+; 4623 : 		return false;
+; 4624 : 	}
+; 4625 : 
+; 4626 : 	CvAssertMsg(getProjectCount(eIndex) <= GC.getProjectInfo(eIndex)->GetMaxTeamInstances(), "Current Project count is expected to not exceed the maximum number of instances for this project");
+; 4627 : 
+; 4628 : 	return ((getProjectCount(eIndex) + iExtra) >= GC.getProjectInfo(eIndex)->GetMaxTeamInstances());
 
 	mov	eax, DWORD PTR [edi+2916]
 	mov	edi, DWORD PTR [eax+esi*4]
@@ -2828,7 +2833,7 @@ $LN1@isProjectM:
 	mov	al, dl
 	pop	esi
 
-; 4577 : }
+; 4629 : }
 
 	ret	8
 ?isProjectMaxedOut@CvTeam@@QBE_NW4ProjectTypes@@H@Z ENDP ; CvTeam::isProjectMaxedOut
@@ -2841,15 +2846,15 @@ _eIndex$ = 8						; size = 4
 ?getProjectMaking@CvTeam@@QBEHW4ProjectTypes@@@Z PROC	; CvTeam::getProjectMaking, COMDAT
 ; _this$ = ecx
 
-; 4801 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
-; 4802 : 	CvAssertMsg(eIndex < GC.getNumProjectInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
-; 4803 : 	return m_paiProjectMaking[eIndex];
+; 4853 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
+; 4854 : 	CvAssertMsg(eIndex < GC.getNumProjectInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
+; 4855 : 	return m_paiProjectMaking[eIndex];
 
 	mov	eax, DWORD PTR [ecx+2924]
 	mov	ecx, DWORD PTR _eIndex$[esp-4]
 	mov	eax, DWORD PTR [eax+ecx*4]
 
-; 4804 : }
+; 4856 : }
 
 	ret	4
 ?getProjectMaking@CvTeam@@QBEHW4ProjectTypes@@@Z ENDP	; CvTeam::getProjectMaking
@@ -2863,9 +2868,9 @@ _iChange$ = 12						; size = 4
 ?changeProjectMaking@CvTeam@@QAEXW4ProjectTypes@@H@Z PROC ; CvTeam::changeProjectMaking, COMDAT
 ; _this$ = ecx
 
-; 4810 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
-; 4811 : 	CvAssertMsg(eIndex < GC.getNumProjectInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
-; 4812 : 	m_paiProjectMaking[eIndex] = (m_paiProjectMaking[eIndex] + iChange);
+; 4862 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
+; 4863 : 	CvAssertMsg(eIndex < GC.getNumProjectInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
+; 4864 : 	m_paiProjectMaking[eIndex] = (m_paiProjectMaking[eIndex] + iChange);
 
 	mov	eax, DWORD PTR [ecx+2924]
 	mov	ecx, DWORD PTR _eIndex$[esp-4]
@@ -2873,8 +2878,8 @@ _iChange$ = 12						; size = 4
 	add	DWORD PTR [eax+ecx*4], edx
 	lea	eax, DWORD PTR [eax+ecx*4]
 
-; 4813 : 	CvAssert(getProjectMaking(eIndex) >= 0);
-; 4814 : }
+; 4865 : 	CvAssert(getProjectMaking(eIndex) >= 0);
+; 4866 : }
 
 	ret	8
 ?changeProjectMaking@CvTeam@@QAEXW4ProjectTypes@@H@Z ENDP ; CvTeam::changeProjectMaking
@@ -2887,15 +2892,15 @@ _eIndex$ = 8						; size = 4
 ?getUnitClassCount@CvTeam@@QBEHW4UnitClassTypes@@@Z PROC ; CvTeam::getUnitClassCount, COMDAT
 ; _this$ = ecx
 
-; 4820 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
-; 4821 : 	CvAssertMsg(eIndex < GC.getNumUnitClassInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
-; 4822 : 	return m_paiUnitClassCount[eIndex];
+; 4872 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
+; 4873 : 	CvAssertMsg(eIndex < GC.getNumUnitClassInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
+; 4874 : 	return m_paiUnitClassCount[eIndex];
 
 	mov	eax, DWORD PTR [ecx+2928]
 	mov	ecx, DWORD PTR _eIndex$[esp-4]
 	mov	eax, DWORD PTR [eax+ecx*4]
 
-; 4823 : }
+; 4875 : }
 
 	ret	4
 ?getUnitClassCount@CvTeam@@QBEHW4UnitClassTypes@@@Z ENDP ; CvTeam::getUnitClassCount
@@ -2912,16 +2917,16 @@ _iExtra$ = 12						; size = 4
 ?isUnitClassMaxedOut@CvTeam@@QBE_NW4UnitClassTypes@@H@Z PROC ; CvTeam::isUnitClassMaxedOut, COMDAT
 ; _this$ = ecx
 
-; 4828 : {
+; 4880 : {
 
 	push	ebx
 	push	esi
 	push	edi
 
-; 4829 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
-; 4830 : 	CvAssertMsg(eIndex < GC.getNumUnitClassInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
-; 4831 : 
-; 4832 : 	CvUnitClassInfo* pkUnitClassInfo = GC.getUnitClassInfo(eIndex);
+; 4881 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
+; 4882 : 	CvAssertMsg(eIndex < GC.getNumUnitClassInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
+; 4883 : 
+; 4884 : 	CvUnitClassInfo* pkUnitClassInfo = GC.getUnitClassInfo(eIndex);
 
 	mov	edi, DWORD PTR _eIndex$[esp+8]
 	mov	ebx, ecx
@@ -2930,7 +2935,7 @@ _iExtra$ = 12						; size = 4
 	call	?getUnitClassInfo@CvGlobals@@QAEPAVCvUnitClassInfo@@W4UnitClassTypes@@@Z ; CvGlobals::getUnitClassInfo
 	mov	esi, eax
 
-; 4833 : 	if(pkUnitClassInfo == NULL)
+; 4885 : 	if(pkUnitClassInfo == NULL)
 
 	test	esi, esi
 	jne	SHORT $LN2@isUnitClas
@@ -2938,36 +2943,36 @@ $LN7@isUnitClas:
 	pop	edi
 	pop	esi
 
-; 4834 : 	{
-; 4835 : 		return false;
+; 4886 : 	{
+; 4887 : 		return false;
 
 	xor	al, al
 	pop	ebx
 
-; 4846 : }
+; 4898 : }
 
 	ret	8
 $LN2@isUnitClas:
 
-; 4836 : 	}
-; 4837 : 
-; 4838 : 	if(!isTeamUnitClass(eIndex))
+; 4888 : 	}
+; 4889 : 
+; 4890 : 	if(!isTeamUnitClass(eIndex))
 
 	push	edi
 	call	?isTeamUnitClass@@YA_NW4UnitClassTypes@@@Z ; isTeamUnitClass
 	add	esp, 4
 	test	al, al
 
-; 4839 : 	{
-; 4840 : 		return false;
+; 4891 : 	{
+; 4892 : 		return false;
 
 	je	SHORT $LN7@isUnitClas
 
-; 4841 : 	}
-; 4842 : 
-; 4843 : 	CvAssertMsg(getUnitClassCount(eIndex) <= pkUnitClassInfo->getMaxTeamInstances(), "The current unit class count is expected not to exceed the maximum number of instances allowed for this team");
-; 4844 : 
-; 4845 : 	return ((getUnitClassCount(eIndex) + iExtra) >= pkUnitClassInfo->getMaxTeamInstances());
+; 4893 : 	}
+; 4894 : 
+; 4895 : 	CvAssertMsg(getUnitClassCount(eIndex) <= pkUnitClassInfo->getMaxTeamInstances(), "The current unit class count is expected not to exceed the maximum number of instances allowed for this team");
+; 4896 : 
+; 4897 : 	return ((getUnitClassCount(eIndex) + iExtra) >= pkUnitClassInfo->getMaxTeamInstances());
 
 	mov	eax, DWORD PTR [ebx+2928]
 	mov	edi, DWORD PTR [eax+edi*4]
@@ -2983,7 +2988,7 @@ $LN2@isUnitClas:
 	mov	al, dl
 	pop	ebx
 
-; 4846 : }
+; 4898 : }
 
 	ret	8
 ?isUnitClassMaxedOut@CvTeam@@QBE_NW4UnitClassTypes@@H@Z ENDP ; CvTeam::isUnitClassMaxedOut
@@ -2997,9 +3002,9 @@ _iChange$ = 12						; size = 4
 ?changeUnitClassCount@CvTeam@@QAEXW4UnitClassTypes@@H@Z PROC ; CvTeam::changeUnitClassCount, COMDAT
 ; _this$ = ecx
 
-; 4852 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
-; 4853 : 	CvAssertMsg(eIndex < GC.getNumUnitClassInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
-; 4854 : 	m_paiUnitClassCount[eIndex] = (m_paiUnitClassCount[eIndex] + iChange);
+; 4904 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
+; 4905 : 	CvAssertMsg(eIndex < GC.getNumUnitClassInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
+; 4906 : 	m_paiUnitClassCount[eIndex] = (m_paiUnitClassCount[eIndex] + iChange);
 
 	mov	eax, DWORD PTR [ecx+2928]
 	mov	ecx, DWORD PTR _eIndex$[esp-4]
@@ -3007,8 +3012,8 @@ _iChange$ = 12						; size = 4
 	add	DWORD PTR [eax+ecx*4], edx
 	lea	eax, DWORD PTR [eax+ecx*4]
 
-; 4855 : 	CvAssert(getUnitClassCount(eIndex) >= 0);
-; 4856 : }
+; 4907 : 	CvAssert(getUnitClassCount(eIndex) >= 0);
+; 4908 : }
 
 	ret	8
 ?changeUnitClassCount@CvTeam@@QAEXW4UnitClassTypes@@H@Z ENDP ; CvTeam::changeUnitClassCount
@@ -3021,15 +3026,15 @@ _eIndex$ = 8						; size = 4
 ?getBuildingClassCount@CvTeam@@QBEHW4BuildingClassTypes@@@Z PROC ; CvTeam::getBuildingClassCount, COMDAT
 ; _this$ = ecx
 
-; 4862 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
-; 4863 : 	CvAssertMsg(eIndex < GC.getNumBuildingClassInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
-; 4864 : 	return m_paiBuildingClassCount[eIndex];
+; 4914 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
+; 4915 : 	CvAssertMsg(eIndex < GC.getNumBuildingClassInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
+; 4916 : 	return m_paiBuildingClassCount[eIndex];
 
 	mov	eax, DWORD PTR [ecx+2932]
 	mov	ecx, DWORD PTR _eIndex$[esp-4]
 	mov	eax, DWORD PTR [eax+ecx*4]
 
-; 4865 : }
+; 4917 : }
 
 	ret	4
 ?getBuildingClassCount@CvTeam@@QBEHW4BuildingClassTypes@@@Z ENDP ; CvTeam::getBuildingClassCount
@@ -3046,14 +3051,14 @@ _iExtra$ = 12						; size = 4
 ?isBuildingClassMaxedOut@CvTeam@@QBE_NW4BuildingClassTypes@@H@Z PROC ; CvTeam::isBuildingClassMaxedOut, COMDAT
 ; _this$ = ecx
 
-; 4870 : {
+; 4922 : {
 
 	push	ebx
 
-; 4871 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
-; 4872 : 	CvAssertMsg(eIndex < GC.getNumBuildingClassInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
-; 4873 : 
-; 4874 : 	CvBuildingClassInfo* pkBuildingClassInfo = GC.getBuildingClassInfo(eIndex);
+; 4923 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
+; 4924 : 	CvAssertMsg(eIndex < GC.getNumBuildingClassInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
+; 4925 : 
+; 4926 : 	CvBuildingClassInfo* pkBuildingClassInfo = GC.getBuildingClassInfo(eIndex);
 
 	mov	ebx, DWORD PTR _eIndex$[esp]
 	push	esi
@@ -3064,7 +3069,7 @@ _iExtra$ = 12						; size = 4
 	call	?getBuildingClassInfo@CvGlobals@@QAEPAVCvBuildingClassInfo@@W4BuildingClassTypes@@@Z ; CvGlobals::getBuildingClassInfo
 	mov	esi, eax
 
-; 4875 : 	if(pkBuildingClassInfo == NULL)
+; 4927 : 	if(pkBuildingClassInfo == NULL)
 
 	test	esi, esi
 	jne	SHORT $LN2@isBuilding
@@ -3072,37 +3077,37 @@ $LN7@isBuilding:
 	pop	edi
 	pop	esi
 
-; 4876 : 	{
-; 4877 : 		CvAssertMsg(false, "Could not find BuildingClassInfo for BuildingClassType.");
-; 4878 : 		return false;
+; 4928 : 	{
+; 4929 : 		CvAssertMsg(false, "Could not find BuildingClassInfo for BuildingClassType.");
+; 4930 : 		return false;
 
 	xor	al, al
 	pop	ebx
 
-; 4889 : }
+; 4941 : }
 
 	ret	8
 $LN2@isBuilding:
 
-; 4879 : 	}
-; 4880 : 
-; 4881 : 	if(!isTeamWonderClass(*pkBuildingClassInfo))
+; 4931 : 	}
+; 4932 : 
+; 4933 : 	if(!isTeamWonderClass(*pkBuildingClassInfo))
 
 	push	esi
 	call	?isTeamWonderClass@@YA_NABVCvBuildingClassInfo@@@Z ; isTeamWonderClass
 	add	esp, 4
 	test	al, al
 
-; 4882 : 	{
-; 4883 : 		return false;
+; 4934 : 	{
+; 4935 : 		return false;
 
 	je	SHORT $LN7@isBuilding
 
-; 4884 : 	}
-; 4885 : 
-; 4886 : 	CvAssertMsg(getBuildingClassCount(eIndex) <= pkBuildingClassInfo->getMaxTeamInstances(), "The current building class count is expected not to exceed the maximum number of instances allowed for this team");
-; 4887 : 
-; 4888 : 	return ((getBuildingClassCount(eIndex) + iExtra) >= pkBuildingClassInfo->getMaxTeamInstances());
+; 4936 : 	}
+; 4937 : 
+; 4938 : 	CvAssertMsg(getBuildingClassCount(eIndex) <= pkBuildingClassInfo->getMaxTeamInstances(), "The current building class count is expected not to exceed the maximum number of instances allowed for this team");
+; 4939 : 
+; 4940 : 	return ((getBuildingClassCount(eIndex) + iExtra) >= pkBuildingClassInfo->getMaxTeamInstances());
 
 	mov	eax, DWORD PTR [edi+2932]
 	mov	edi, DWORD PTR [eax+ebx*4]
@@ -3118,7 +3123,7 @@ $LN2@isBuilding:
 	mov	al, dl
 	pop	ebx
 
-; 4889 : }
+; 4941 : }
 
 	ret	8
 ?isBuildingClassMaxedOut@CvTeam@@QBE_NW4BuildingClassTypes@@H@Z ENDP ; CvTeam::isBuildingClassMaxedOut
@@ -3132,9 +3137,9 @@ _iChange$ = 12						; size = 4
 ?changeBuildingClassCount@CvTeam@@QAEXW4BuildingClassTypes@@H@Z PROC ; CvTeam::changeBuildingClassCount, COMDAT
 ; _this$ = ecx
 
-; 4895 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
-; 4896 : 	CvAssertMsg(eIndex < GC.getNumBuildingClassInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
-; 4897 : 	m_paiBuildingClassCount[eIndex] = (m_paiBuildingClassCount[eIndex] + iChange);
+; 4947 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
+; 4948 : 	CvAssertMsg(eIndex < GC.getNumBuildingClassInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
+; 4949 : 	m_paiBuildingClassCount[eIndex] = (m_paiBuildingClassCount[eIndex] + iChange);
 
 	mov	eax, DWORD PTR [ecx+2932]
 	mov	ecx, DWORD PTR _eIndex$[esp-4]
@@ -3142,8 +3147,8 @@ _iChange$ = 12						; size = 4
 	add	DWORD PTR [eax+ecx*4], edx
 	lea	eax, DWORD PTR [eax+ecx*4]
 
-; 4898 : 	CvAssert(getBuildingClassCount(eIndex) >= 0);
-; 4899 : }
+; 4950 : 	CvAssert(getBuildingClassCount(eIndex) >= 0);
+; 4951 : }
 
 	ret	8
 ?changeBuildingClassCount@CvTeam@@QAEXW4BuildingClassTypes@@H@Z ENDP ; CvTeam::changeBuildingClassCount
@@ -3156,15 +3161,15 @@ _eIndex$ = 8						; size = 4
 ?getObsoleteBuildingCount@CvTeam@@QBEHW4BuildingTypes@@@Z PROC ; CvTeam::getObsoleteBuildingCount, COMDAT
 ; _this$ = ecx
 
-; 4905 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
-; 4906 : 	CvAssertMsg(eIndex < GC.getNumBuildingInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
-; 4907 : 	return m_paiObsoleteBuildingCount[eIndex];
+; 4957 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
+; 4958 : 	CvAssertMsg(eIndex < GC.getNumBuildingInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
+; 4959 : 	return m_paiObsoleteBuildingCount[eIndex];
 
 	mov	eax, DWORD PTR [ecx+2936]
 	mov	ecx, DWORD PTR _eIndex$[esp-4]
 	mov	eax, DWORD PTR [eax+ecx*4]
 
-; 4908 : }
+; 4960 : }
 
 	ret	4
 ?getObsoleteBuildingCount@CvTeam@@QBEHW4BuildingTypes@@@Z ENDP ; CvTeam::getObsoleteBuildingCount
@@ -3177,7 +3182,7 @@ _eIndex$ = 8						; size = 4
 ?isObsoleteBuilding@CvTeam@@QBE_NW4BuildingTypes@@@Z PROC ; CvTeam::isObsoleteBuilding, COMDAT
 ; _this$ = ecx
 
-; 4914 : 	return (getObsoleteBuildingCount(eIndex) > 0);
+; 4966 : 	return (getObsoleteBuildingCount(eIndex) > 0);
 
 	mov	eax, DWORD PTR [ecx+2936]
 	mov	edx, DWORD PTR _eIndex$[esp-4]
@@ -3186,7 +3191,7 @@ _eIndex$ = 8						; size = 4
 	setg	cl
 	mov	al, cl
 
-; 4915 : }
+; 4967 : }
 
 	ret	4
 ?isObsoleteBuilding@CvTeam@@QBE_NW4BuildingTypes@@@Z ENDP ; CvTeam::isObsoleteBuilding
@@ -3199,15 +3204,15 @@ _eIndex$ = 8						; size = 4
 ?getTerrainTradeCount@CvTeam@@QBEHW4TerrainTypes@@@Z PROC ; CvTeam::getTerrainTradeCount, COMDAT
 ; _this$ = ecx
 
-; 5013 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
-; 5014 : 	CvAssertMsg(eIndex < GC.getNumTerrainInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
-; 5015 : 	return m_paiTerrainTradeCount[eIndex];
+; 5065 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
+; 5066 : 	CvAssertMsg(eIndex < GC.getNumTerrainInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
+; 5067 : 	return m_paiTerrainTradeCount[eIndex];
 
 	mov	eax, DWORD PTR [ecx+2940]
 	mov	ecx, DWORD PTR _eIndex$[esp-4]
 	mov	eax, DWORD PTR [eax+ecx*4]
 
-; 5016 : }
+; 5068 : }
 
 	ret	4
 ?getTerrainTradeCount@CvTeam@@QBEHW4TerrainTypes@@@Z ENDP ; CvTeam::getTerrainTradeCount
@@ -3220,7 +3225,7 @@ _eIndex$ = 8						; size = 4
 ?isTerrainTrade@CvTeam@@QBE_NW4TerrainTypes@@@Z PROC	; CvTeam::isTerrainTrade, COMDAT
 ; _this$ = ecx
 
-; 5022 : 	return (getTerrainTradeCount(eIndex) > 0);
+; 5074 : 	return (getTerrainTradeCount(eIndex) > 0);
 
 	mov	eax, DWORD PTR [ecx+2940]
 	mov	edx, DWORD PTR _eIndex$[esp-4]
@@ -3229,7 +3234,7 @@ _eIndex$ = 8						; size = 4
 	setg	cl
 	mov	al, cl
 
-; 5023 : }
+; 5075 : }
 
 	ret	4
 ?isTerrainTrade@CvTeam@@QBE_NW4TerrainTypes@@@Z ENDP	; CvTeam::isTerrainTrade
@@ -3243,17 +3248,17 @@ _iChange$ = 12						; size = 4
 ?changeTerrainTradeCount@CvTeam@@QAEXW4TerrainTypes@@H@Z PROC ; CvTeam::changeTerrainTradeCount, COMDAT
 ; _this$ = ecx
 
-; 5029 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
-; 5030 : 	CvAssertMsg(eIndex < GC.getNumTerrainInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
-; 5031 : 
-; 5032 : 	if(iChange != 0)
+; 5081 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
+; 5082 : 	CvAssertMsg(eIndex < GC.getNumTerrainInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
+; 5083 : 
+; 5084 : 	if(iChange != 0)
 
 	mov	edx, DWORD PTR _iChange$[esp-4]
 	test	edx, edx
 	je	SHORT $LN1@changeTerr
 
-; 5033 : 	{
-; 5034 : 		m_paiTerrainTradeCount[eIndex] = (m_paiTerrainTradeCount[eIndex] + iChange);
+; 5085 : 	{
+; 5086 : 		m_paiTerrainTradeCount[eIndex] = (m_paiTerrainTradeCount[eIndex] + iChange);
 
 	mov	eax, DWORD PTR [ecx+2940]
 	mov	ecx, DWORD PTR _eIndex$[esp-4]
@@ -3261,9 +3266,9 @@ _iChange$ = 12						; size = 4
 	lea	eax, DWORD PTR [eax+ecx*4]
 $LN1@changeTerr:
 
-; 5035 : 		CvAssert(getTerrainTradeCount(eIndex) >= 0);
-; 5036 : 	}
-; 5037 : }
+; 5087 : 		CvAssert(getTerrainTradeCount(eIndex) >= 0);
+; 5088 : 	}
+; 5089 : }
 
 	ret	8
 ?changeTerrainTradeCount@CvTeam@@QAEXW4TerrainTypes@@H@Z ENDP ; CvTeam::changeTerrainTradeCount
@@ -3275,11 +3280,11 @@ _TEXT	SEGMENT
 ?IsHomeOfUnitedNations@CvTeam@@QBE_NXZ PROC		; CvTeam::IsHomeOfUnitedNations, COMDAT
 ; _this$ = ecx
 
-; 5043 : 	return m_bHomeOfUnitedNations;
+; 5095 : 	return m_bHomeOfUnitedNations;
 
 	mov	al, BYTE PTR [ecx+130]
 
-; 5044 : }
+; 5096 : }
 
 	ret	0
 ?IsHomeOfUnitedNations@CvTeam@@QBE_NXZ ENDP		; CvTeam::IsHomeOfUnitedNations
@@ -3292,20 +3297,20 @@ _bValue$ = 8						; size = 1
 ?SetHomeOfUnitedNations@CvTeam@@QAEX_N@Z PROC		; CvTeam::SetHomeOfUnitedNations, COMDAT
 ; _this$ = ecx
 
-; 5050 : 	if(bValue != IsHomeOfUnitedNations())
+; 5102 : 	if(bValue != IsHomeOfUnitedNations())
 
 	mov	al, BYTE PTR _bValue$[esp-4]
 	cmp	al, BYTE PTR [ecx+130]
 	je	SHORT $LN1@SetHomeOfU
 
-; 5051 : 	{
-; 5052 : 		m_bHomeOfUnitedNations = bValue;
+; 5103 : 	{
+; 5104 : 		m_bHomeOfUnitedNations = bValue;
 
 	mov	BYTE PTR [ecx+130], al
 $LN1@SetHomeOfU:
 
-; 5053 : 	}
-; 5054 : }
+; 5105 : 	}
+; 5106 : }
 
 	ret	4
 ?SetHomeOfUnitedNations@CvTeam@@QAEX_N@Z ENDP		; CvTeam::SetHomeOfUnitedNations
@@ -3318,15 +3323,15 @@ _eIndex$ = 8						; size = 4
 ?getVictoryCountdown@CvTeam@@QBEHW4VictoryTypes@@@Z PROC ; CvTeam::getVictoryCountdown, COMDAT
 ; _this$ = ecx
 
-; 5059 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
-; 5060 : 	CvAssertMsg(eIndex < GC.getNumVictoryInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
-; 5061 : 	return m_aiVictoryCountdown[eIndex];
+; 5111 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
+; 5112 : 	CvAssertMsg(eIndex < GC.getNumVictoryInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
+; 5113 : 	return m_aiVictoryCountdown[eIndex];
 
 	mov	eax, DWORD PTR [ecx+2944]
 	mov	ecx, DWORD PTR _eIndex$[esp-4]
 	mov	eax, DWORD PTR [eax+ecx*4]
 
-; 5062 : }
+; 5114 : }
 
 	ret	4
 ?getVictoryCountdown@CvTeam@@QBEHW4VictoryTypes@@@Z ENDP ; CvTeam::getVictoryCountdown
@@ -3340,16 +3345,16 @@ _iTurnsLeft$ = 12					; size = 4
 ?setVictoryCountdown@CvTeam@@QAEXW4VictoryTypes@@H@Z PROC ; CvTeam::setVictoryCountdown, COMDAT
 ; _this$ = ecx
 
-; 5067 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
-; 5068 : 	CvAssertMsg(eIndex < GC.getNumVictoryInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
-; 5069 : 	m_aiVictoryCountdown[eIndex] = iTurnsLeft;
+; 5119 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
+; 5120 : 	CvAssertMsg(eIndex < GC.getNumVictoryInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
+; 5121 : 	m_aiVictoryCountdown[eIndex] = iTurnsLeft;
 
 	mov	eax, DWORD PTR [ecx+2944]
 	mov	ecx, DWORD PTR _iTurnsLeft$[esp-4]
 	mov	edx, DWORD PTR _eIndex$[esp-4]
 	mov	DWORD PTR [eax+edx*4], ecx
 
-; 5070 : }
+; 5122 : }
 
 	ret	8
 ?setVictoryCountdown@CvTeam@@QAEXW4VictoryTypes@@H@Z ENDP ; CvTeam::setVictoryCountdown
@@ -3363,17 +3368,17 @@ _iChange$ = 12						; size = 4
 ?changeVictoryCountdown@CvTeam@@QAEXW4VictoryTypes@@H@Z PROC ; CvTeam::changeVictoryCountdown, COMDAT
 ; _this$ = ecx
 
-; 5076 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
-; 5077 : 	CvAssertMsg(eIndex < GC.getNumVictoryInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
-; 5078 : 
-; 5079 : 	if(iChange != 0)
+; 5128 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
+; 5129 : 	CvAssertMsg(eIndex < GC.getNumVictoryInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
+; 5130 : 
+; 5131 : 	if(iChange != 0)
 
 	mov	edx, DWORD PTR _iChange$[esp-4]
 	test	edx, edx
 	je	SHORT $LN1@changeVict
 
-; 5080 : 	{
-; 5081 : 		m_aiVictoryCountdown[eIndex] += iChange;
+; 5132 : 	{
+; 5133 : 		m_aiVictoryCountdown[eIndex] += iChange;
 
 	mov	eax, DWORD PTR [ecx+2944]
 	mov	ecx, DWORD PTR _eIndex$[esp-4]
@@ -3381,9 +3386,9 @@ _iChange$ = 12						; size = 4
 	lea	eax, DWORD PTR [eax+ecx*4]
 $LN1@changeVict:
 
-; 5082 : 		CvAssert(m_aiVictoryCountdown[eIndex] >= 0);
-; 5083 : 	}
-; 5084 : }
+; 5134 : 		CvAssert(m_aiVictoryCountdown[eIndex] >= 0);
+; 5135 : 	}
+; 5136 : }
 
 	ret	8
 ?changeVictoryCountdown@CvTeam@@QAEXW4VictoryTypes@@H@Z ENDP ; CvTeam::changeVictoryCountdown
@@ -3397,14 +3402,14 @@ _bCan$ = 12						; size = 1
 ?setCanLaunch@CvTeam@@QAEXW4VictoryTypes@@_N@Z PROC	; CvTeam::setCanLaunch, COMDAT
 ; _this$ = ecx
 
-; 5117 : 	m_abCanLaunch[eVictory] = bCan;
+; 5169 : 	m_abCanLaunch[eVictory] = bCan;
 
 	mov	eax, DWORD PTR [ecx+2896]
 	mov	cl, BYTE PTR _bCan$[esp-4]
 	mov	edx, DWORD PTR _eVictory$[esp-4]
 	mov	BYTE PTR [edx+eax], cl
 
-; 5118 : }
+; 5170 : }
 
 	ret	8
 ?setCanLaunch@CvTeam@@QAEXW4VictoryTypes@@_N@Z ENDP	; CvTeam::setCanLaunch
@@ -3417,13 +3422,13 @@ _eVictory$ = 8						; size = 4
 ?canLaunch@CvTeam@@QBE_NW4VictoryTypes@@@Z PROC		; CvTeam::canLaunch, COMDAT
 ; _this$ = ecx
 
-; 5123 : 	return m_abCanLaunch[eVictory];
+; 5175 : 	return m_abCanLaunch[eVictory];
 
 	mov	eax, DWORD PTR [ecx+2896]
 	mov	ecx, DWORD PTR _eVictory$[esp-4]
 	mov	al, BYTE PTR [ecx+eax]
 
-; 5124 : }
+; 5176 : }
 
 	ret	4
 ?canLaunch@CvTeam@@QBE_NW4VictoryTypes@@@Z ENDP		; CvTeam::canLaunch
@@ -3436,13 +3441,13 @@ _eVictory$ = 8						; size = 4
 ?isVictoryAchieved@CvTeam@@QBE_NW4VictoryTypes@@@Z PROC	; CvTeam::isVictoryAchieved, COMDAT
 ; _this$ = ecx
 
-; 5180 : 	return m_abVictoryAchieved[eVictory];
+; 5232 : 	return m_abVictoryAchieved[eVictory];
 
 	mov	eax, DWORD PTR [ecx+2900]
 	mov	ecx, DWORD PTR _eVictory$[esp-4]
 	mov	al, BYTE PTR [ecx+eax]
 
-; 5181 : }
+; 5233 : }
 
 	ret	4
 ?isVictoryAchieved@CvTeam@@QBE_NW4VictoryTypes@@@Z ENDP	; CvTeam::isVictoryAchieved
@@ -3456,7 +3461,7 @@ _bValue$ = 12						; size = 1
 ?setVictoryAchieved@CvTeam@@QAEXW4VictoryTypes@@_N@Z PROC ; CvTeam::setVictoryAchieved, COMDAT
 ; _this$ = ecx
 
-; 5186 : 	if(m_abVictoryAchieved[eVictory] != bValue)
+; 5238 : 	if(m_abVictoryAchieved[eVictory] != bValue)
 
 	mov	eax, DWORD PTR [ecx+2900]
 	mov	ecx, DWORD PTR _eVictory$[esp-4]
@@ -3465,14 +3470,14 @@ _bValue$ = 12						; size = 1
 	cmp	BYTE PTR [eax], cl
 	je	SHORT $LN1@setVictory
 
-; 5187 : 	{
-; 5188 : 		m_abVictoryAchieved[eVictory] = bValue;
+; 5239 : 	{
+; 5240 : 		m_abVictoryAchieved[eVictory] = bValue;
 
 	mov	BYTE PTR [eax], cl
 $LN1@setVictory:
 
-; 5189 : 	}
-; 5190 : }
+; 5241 : 	}
+; 5242 : }
 
 	ret	8
 ?setVictoryAchieved@CvTeam@@QAEXW4VictoryTypes@@_N@Z ENDP ; CvTeam::setVictoryAchieved
@@ -3484,11 +3489,11 @@ _TEXT	SEGMENT
 ?getVictoryPoints@CvTeam@@QBEHXZ PROC			; CvTeam::getVictoryPoints, COMDAT
 ; _this$ = ecx
 
-; 5195 : 	return m_iVictoryPoints;
+; 5247 : 	return m_iVictoryPoints;
 
 	mov	eax, DWORD PTR [ecx+92]
 
-; 5196 : }
+; 5248 : }
 
 	ret	0
 ?getVictoryPoints@CvTeam@@QBEHXZ ENDP			; CvTeam::getVictoryPoints
@@ -3501,23 +3506,23 @@ _iChange$ = 8						; size = 4
 ?changeVictoryPoints@CvTeam@@QAEXH@Z PROC		; CvTeam::changeVictoryPoints, COMDAT
 ; _this$ = ecx
 
-; 5221 : 	if(iChange != 0)
+; 5273 : 	if(iChange != 0)
 
 	mov	eax, DWORD PTR _iChange$[esp-4]
 	test	eax, eax
 	je	SHORT $LN1@changeVict@2
 
-; 5222 : 	{
-; 5223 : 		m_iVictoryPoints += iChange;
+; 5274 : 	{
+; 5275 : 		m_iVictoryPoints += iChange;
 
 	add	DWORD PTR [ecx+92], eax
 $LN1@changeVict@2:
 
-; 5224 : 	}
-; 5225 : 
-; 5226 : 	// Right now there's no reason VPs should ever be negative
-; 5227 : 	CvAssert(m_iVictoryPoints >= 0);
-; 5228 : }
+; 5276 : 	}
+; 5277 : 
+; 5278 : 	// Right now there's no reason VPs should ever be negative
+; 5279 : 	CvAssert(m_iVictoryPoints >= 0);
+; 5280 : }
 
 	ret	4
 ?changeVictoryPoints@CvTeam@@QAEXH@Z ENDP		; CvTeam::changeVictoryPoints
@@ -3530,16 +3535,16 @@ _eAward$ = 8						; size = 4
 ?IsSmallAwardAchieved@CvTeam@@QBE_NW4SmallAwardTypes@@@Z PROC ; CvTeam::IsSmallAwardAchieved, COMDAT
 ; _this$ = ecx
 
-; 5370 : 	FAssert(eAward >= 0);
-; 5371 : 	FAssert(eAward < GC.getNumSmallAwardInfos());
-; 5372 : 
-; 5373 : 	return m_abSmallAwardAchieved[eAward];
+; 5422 : 	FAssert(eAward >= 0);
+; 5423 : 	FAssert(eAward < GC.getNumSmallAwardInfos());
+; 5424 : 
+; 5425 : 	return m_abSmallAwardAchieved[eAward];
 
 	mov	eax, DWORD PTR [ecx+2904]
 	mov	ecx, DWORD PTR _eAward$[esp-4]
 	mov	al, BYTE PTR [ecx+eax]
 
-; 5374 : }
+; 5426 : }
 
 	ret	4
 ?IsSmallAwardAchieved@CvTeam@@QBE_NW4SmallAwardTypes@@@Z ENDP ; CvTeam::IsSmallAwardAchieved
@@ -3553,17 +3558,17 @@ _bValue$ = 12						; size = 1
 ?SetSmallAwardAchieved@CvTeam@@QAEXW4SmallAwardTypes@@_N@Z PROC ; CvTeam::SetSmallAwardAchieved, COMDAT
 ; _this$ = ecx
 
-; 5380 : 	FAssert(eAward >= 0);
-; 5381 : 	FAssert(eAward < GC.getNumSmallAwardInfos());
-; 5382 : 
-; 5383 : 	m_abSmallAwardAchieved[eAward] = bValue;
+; 5432 : 	FAssert(eAward >= 0);
+; 5433 : 	FAssert(eAward < GC.getNumSmallAwardInfos());
+; 5434 : 
+; 5435 : 	m_abSmallAwardAchieved[eAward] = bValue;
 
 	mov	eax, DWORD PTR [ecx+2904]
 	mov	cl, BYTE PTR _bValue$[esp-4]
 	mov	edx, DWORD PTR _eAward$[esp-4]
 	mov	BYTE PTR [edx+eax], cl
 
-; 5384 : }
+; 5436 : }
 
 	ret	8
 ?SetSmallAwardAchieved@CvTeam@@QAEXW4SmallAwardTypes@@_N@Z ENDP ; CvTeam::SetSmallAwardAchieved
@@ -3577,11 +3582,11 @@ _eIndex2$ = 12						; size = 4
 ?getImprovementYieldChange@CvTeam@@QBEHW4ImprovementTypes@@W4YieldTypes@@@Z PROC ; CvTeam::getImprovementYieldChange, COMDAT
 ; _this$ = ecx
 
-; 6123 : 	CvAssertMsg(eIndex1 >= 0, "eIndex1 is expected to be non-negative (invalid Index)");
-; 6124 : 	CvAssertMsg(eIndex1 < GC.getNumImprovementInfos(), "eIndex1 is expected to be within maximum bounds (invalid Index)");
-; 6125 : 	CvAssertMsg(eIndex2 >= 0, "eIndex2 is expected to be non-negative (invalid Index)");
-; 6126 : 	CvAssertMsg(eIndex2 < NUM_YIELD_TYPES, "eIndex2 is expected to be within maximum bounds (invalid Index)");
-; 6127 : 	return m_ppaaiImprovementYieldChange[eIndex1][eIndex2];
+; 6175 : 	CvAssertMsg(eIndex1 >= 0, "eIndex1 is expected to be non-negative (invalid Index)");
+; 6176 : 	CvAssertMsg(eIndex1 < GC.getNumImprovementInfos(), "eIndex1 is expected to be within maximum bounds (invalid Index)");
+; 6177 : 	CvAssertMsg(eIndex2 >= 0, "eIndex2 is expected to be non-negative (invalid Index)");
+; 6178 : 	CvAssertMsg(eIndex2 < NUM_YIELD_TYPES, "eIndex2 is expected to be within maximum bounds (invalid Index)");
+; 6179 : 	return m_ppaaiImprovementYieldChange[eIndex1][eIndex2];
 
 	mov	eax, DWORD PTR [ecx+2948]
 	mov	ecx, DWORD PTR _eIndex1$[esp-4]
@@ -3589,7 +3594,7 @@ _eIndex2$ = 12						; size = 4
 	mov	eax, DWORD PTR _eIndex2$[esp-4]
 	mov	eax, DWORD PTR [edx+eax*4]
 
-; 6128 : }
+; 6180 : }
 
 	ret	8
 ?getImprovementYieldChange@CvTeam@@QBEHW4ImprovementTypes@@W4YieldTypes@@@Z ENDP ; CvTeam::getImprovementYieldChange
@@ -3603,11 +3608,11 @@ _eIndex2$ = 12						; size = 4
 ?getImprovementNoFreshWaterYieldChange@CvTeam@@QBEHW4ImprovementTypes@@W4YieldTypes@@@Z PROC ; CvTeam::getImprovementNoFreshWaterYieldChange, COMDAT
 ; _this$ = ecx
 
-; 6152 : 	CvAssertMsg(eIndex1 >= 0, "eIndex1 is expected to be non-negative (invalid Index)");
-; 6153 : 	CvAssertMsg(eIndex1 < GC.getNumImprovementInfos(), "eIndex1 is expected to be within maximum bounds (invalid Index)");
-; 6154 : 	CvAssertMsg(eIndex2 >= 0, "eIndex2 is expected to be non-negative (invalid Index)");
-; 6155 : 	CvAssertMsg(eIndex2 < NUM_YIELD_TYPES, "eIndex2 is expected to be within maximum bounds (invalid Index)");
-; 6156 : 	return m_ppaaiImprovementNoFreshWaterYieldChange[eIndex1][eIndex2];
+; 6204 : 	CvAssertMsg(eIndex1 >= 0, "eIndex1 is expected to be non-negative (invalid Index)");
+; 6205 : 	CvAssertMsg(eIndex1 < GC.getNumImprovementInfos(), "eIndex1 is expected to be within maximum bounds (invalid Index)");
+; 6206 : 	CvAssertMsg(eIndex2 >= 0, "eIndex2 is expected to be non-negative (invalid Index)");
+; 6207 : 	CvAssertMsg(eIndex2 < NUM_YIELD_TYPES, "eIndex2 is expected to be within maximum bounds (invalid Index)");
+; 6208 : 	return m_ppaaiImprovementNoFreshWaterYieldChange[eIndex1][eIndex2];
 
 	mov	eax, DWORD PTR [ecx+2952]
 	mov	ecx, DWORD PTR _eIndex1$[esp-4]
@@ -3615,7 +3620,7 @@ _eIndex2$ = 12						; size = 4
 	mov	eax, DWORD PTR _eIndex2$[esp-4]
 	mov	eax, DWORD PTR [edx+eax*4]
 
-; 6157 : }
+; 6209 : }
 
 	ret	8
 ?getImprovementNoFreshWaterYieldChange@CvTeam@@QBEHW4ImprovementTypes@@W4YieldTypes@@@Z ENDP ; CvTeam::getImprovementNoFreshWaterYieldChange
@@ -3629,11 +3634,11 @@ _eIndex2$ = 12						; size = 4
 ?getImprovementFreshWaterYieldChange@CvTeam@@QBEHW4ImprovementTypes@@W4YieldTypes@@@Z PROC ; CvTeam::getImprovementFreshWaterYieldChange, COMDAT
 ; _this$ = ecx
 
-; 6181 : 	CvAssertMsg(eIndex1 >= 0, "eIndex1 is expected to be non-negative (invalid Index)");
-; 6182 : 	CvAssertMsg(eIndex1 < GC.getNumImprovementInfos(), "eIndex1 is expected to be within maximum bounds (invalid Index)");
-; 6183 : 	CvAssertMsg(eIndex2 >= 0, "eIndex2 is expected to be non-negative (invalid Index)");
-; 6184 : 	CvAssertMsg(eIndex2 < NUM_YIELD_TYPES, "eIndex2 is expected to be within maximum bounds (invalid Index)");
-; 6185 : 	return m_ppaaiImprovementFreshWaterYieldChange[eIndex1][eIndex2];
+; 6233 : 	CvAssertMsg(eIndex1 >= 0, "eIndex1 is expected to be non-negative (invalid Index)");
+; 6234 : 	CvAssertMsg(eIndex1 < GC.getNumImprovementInfos(), "eIndex1 is expected to be within maximum bounds (invalid Index)");
+; 6235 : 	CvAssertMsg(eIndex2 >= 0, "eIndex2 is expected to be non-negative (invalid Index)");
+; 6236 : 	CvAssertMsg(eIndex2 < NUM_YIELD_TYPES, "eIndex2 is expected to be within maximum bounds (invalid Index)");
+; 6237 : 	return m_ppaaiImprovementFreshWaterYieldChange[eIndex1][eIndex2];
 
 	mov	eax, DWORD PTR [ecx+2956]
 	mov	ecx, DWORD PTR _eIndex1$[esp-4]
@@ -3641,7 +3646,7 @@ _eIndex2$ = 12						; size = 4
 	mov	eax, DWORD PTR _eIndex2$[esp-4]
 	mov	eax, DWORD PTR [edx+eax*4]
 
-; 6186 : }
+; 6238 : }
 
 	ret	8
 ?getImprovementFreshWaterYieldChange@CvTeam@@QBEHW4ImprovementTypes@@W4YieldTypes@@@Z ENDP ; CvTeam::getImprovementFreshWaterYieldChange
@@ -3654,40 +3659,40 @@ _eTeam$ = 8						; size = 4
 ?isFriendlyTerritory@CvTeam@@QBE_NW4TeamTypes@@@Z PROC	; CvTeam::isFriendlyTerritory, COMDAT
 ; _this$ = ecx
 
-; 6845 : 	if(eTeam == NO_TEAM)
+; 6897 : 	if(eTeam == NO_TEAM)
 
 	mov	eax, DWORD PTR _eTeam$[esp-4]
 	cmp	eax, -1
 	jne	SHORT $LN2@isFriendly
 
-; 6846 : 	{
-; 6847 : 		return false;
+; 6898 : 	{
+; 6899 : 		return false;
 
 	xor	al, al
 
-; 6851 : 	{
-; 6852 : 		return true;
-; 6853 : 	}
-; 6854 : 
-; 6855 : 	return false;
-; 6856 : }
+; 6903 : 	{
+; 6904 : 		return true;
+; 6905 : 	}
+; 6906 : 
+; 6907 : 	return false;
+; 6908 : }
 
 	ret	4
 $LN2@isFriendly:
 
-; 6848 : 	}
-; 6849 : 
-; 6850 : 	if(eTeam == GetID())
+; 6900 : 	}
+; 6901 : 
+; 6902 : 	if(eTeam == GetID())
 
 	cmp	eax, DWORD PTR [ecx+4]
 	sete	al
 
-; 6851 : 	{
-; 6852 : 		return true;
-; 6853 : 	}
-; 6854 : 
-; 6855 : 	return false;
-; 6856 : }
+; 6903 : 	{
+; 6904 : 		return true;
+; 6905 : 	}
+; 6906 : 
+; 6907 : 	return false;
+; 6908 : }
 
 	ret	4
 ?isFriendlyTerritory@CvTeam@@QBE_NW4TeamTypes@@@Z ENDP	; CvTeam::isFriendlyTerritory
@@ -3699,11 +3704,11 @@ _TEXT	SEGMENT
 ?HasTechForWorldCongress@CvTeam@@QBE_NXZ PROC		; CvTeam::HasTechForWorldCongress, COMDAT
 ; _this$ = ecx
 
-; 6978 : 	return m_bHasTechForWorldCongress;
+; 7030 : 	return m_bHasTechForWorldCongress;
 
 	mov	al, BYTE PTR [ecx+131]
 
-; 6979 : }
+; 7031 : }
 
 	ret	0
 ?HasTechForWorldCongress@CvTeam@@QBE_NXZ ENDP		; CvTeam::HasTechForWorldCongress
@@ -3716,12 +3721,12 @@ _bValue$ = 8						; size = 1
 ?SetHasTechForWorldCongress@CvTeam@@QAEX_N@Z PROC	; CvTeam::SetHasTechForWorldCongress, COMDAT
 ; _this$ = ecx
 
-; 6984 : 	m_bHasTechForWorldCongress = bValue;
+; 7036 : 	m_bHasTechForWorldCongress = bValue;
 
 	mov	al, BYTE PTR _bValue$[esp-4]
 	mov	BYTE PTR [ecx+131], al
 
-; 6985 : }
+; 7037 : }
 
 	ret	4
 ?SetHasTechForWorldCongress@CvTeam@@QAEX_N@Z ENDP	; CvTeam::SetHasTechForWorldCongress
@@ -3733,11 +3738,11 @@ _TEXT	SEGMENT
 ?GetCurrentEra@CvTeam@@QBE?AW4EraTypes@@XZ PROC		; CvTeam::GetCurrentEra, COMDAT
 ; _this$ = ecx
 
-; 6991 : 	return m_eCurrentEra;
+; 7043 : 	return m_eCurrentEra;
 
 	mov	eax, DWORD PTR [ecx+136]
 
-; 6992 : }
+; 7044 : }
 
 	ret	0
 ?GetCurrentEra@CvTeam@@QBE?AW4EraTypes@@XZ ENDP		; CvTeam::GetCurrentEra
@@ -4360,6 +4365,30 @@ $LN4@CvString:
 	ret	4
 ??0CvString@@QAE@PBD@Z ENDP				; CvString::CvString
 _TEXT	ENDS
+PUBLIC	??1CvString@@QAE@XZ				; CvString::~CvString
+; Function compile flags: /Ogtpy
+;	COMDAT ??1CvString@@QAE@XZ
+_TEXT	SEGMENT
+??1CvString@@QAE@XZ PROC				; CvString::~CvString, COMDAT
+; _this$ = ecx
+
+; 28   : 	~CvString() {}
+
+	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
+??1CvString@@QAE@XZ ENDP				; CvString::~CvString
+_TEXT	ENDS
+PUBLIC	??BCvString@@QBEPBDXZ				; CvString::operator char const *
+; Function compile flags: /Ogtpy
+;	COMDAT ??BCvString@@QBEPBDXZ
+_TEXT	SEGMENT
+??BCvString@@QBEPBDXZ PROC				; CvString::operator char const *, COMDAT
+; _this$ = ecx
+
+; 31   : 	operator const char*() const 	{ return c_str(); }												
+
+	jmp	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
+??BCvString@@QBEPBDXZ ENDP				; CvString::operator char const *
+_TEXT	ENDS
 PUBLIC	??1?$_Container_base_aux_alloc_empty@V?$allocator@W4ResourceTypes@@@std@@@std@@IAE@XZ ; std::_Container_base_aux_alloc_empty<std::allocator<enum ResourceTypes> >::~_Container_base_aux_alloc_empty<std::allocator<enum ResourceTypes> >
 ; Function compile flags: /Ogtpy
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xutility
@@ -4391,34 +4420,10 @@ _TEXT	SEGMENT
 	ret	0
 ??0?$allocator@W4ResourceTypes@@@std@@QAE@XZ ENDP	; std::allocator<enum ResourceTypes>::allocator<enum ResourceTypes>
 _TEXT	ENDS
-PUBLIC	??1CvString@@QAE@XZ				; CvString::~CvString
-; Function compile flags: /Ogtpy
-; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredllutil\include\cvstring.h
-;	COMDAT ??1CvString@@QAE@XZ
-_TEXT	SEGMENT
-??1CvString@@QAE@XZ PROC				; CvString::~CvString, COMDAT
-; _this$ = ecx
-
-; 28   : 	~CvString() {}
-
-	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-??1CvString@@QAE@XZ ENDP				; CvString::~CvString
-_TEXT	ENDS
-PUBLIC	??BCvString@@QBEPBDXZ				; CvString::operator char const *
-; Function compile flags: /Ogtpy
-;	COMDAT ??BCvString@@QBEPBDXZ
-_TEXT	SEGMENT
-??BCvString@@QBEPBDXZ PROC				; CvString::operator char const *, COMDAT
-; _this$ = ecx
-
-; 31   : 	operator const char*() const 	{ return c_str(); }												
-
-	jmp	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
-??BCvString@@QBEPBDXZ ENDP				; CvString::operator char const *
-_TEXT	ENDS
 PUBLIC	??4CvString@@QAEAAV0@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z ; CvString::operator=
 EXTRN	__imp_?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBD@Z:PROC
 ; Function compile flags: /Ogtpy
+; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredllutil\include\cvstring.h
 ;	COMDAT ??4CvString@@QAEAAV0@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
 _TEXT	SEGMENT
 _s$ = 8							; size = 4
@@ -4438,6 +4443,18 @@ _s$ = 8							; size = 4
 	pop	esi
 	ret	4
 ??4CvString@@QAEAAV0@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z ENDP ; CvString::operator=
+_TEXT	ENDS
+PUBLIC	?GetCString@CvString@@QBEPBDXZ			; CvString::GetCString
+; Function compile flags: /Ogtpy
+;	COMDAT ?GetCString@CvString@@QBEPBDXZ
+_TEXT	SEGMENT
+?GetCString@CvString@@QBEPBDXZ PROC			; CvString::GetCString, COMDAT
+; _this$ = ecx
+
+; 42   : 	const char* GetCString() const 	{ return c_str(); }
+
+	jmp	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
+?GetCString@CvString@@QBEPBDXZ ENDP			; CvString::GetCString
 _TEXT	ENDS
 PUBLIC	??_C@_0GH@ECFAPJEJ@c?3?2users?2enormousapplepie?2docume@ ; `string'
 PUBLIC	?Alloc@?$FStaticVector@W4PlayerTypes@@$0DP@$00$0BCJ@$0A@@@IAEPAW4PlayerTypes@@I@Z ; FStaticVector<enum PlayerTypes,63,1,297,0>::Alloc
@@ -4510,22 +4527,8 @@ $LN2@Alloc:
 	ret	4
 ?Alloc@?$FStaticVector@W4PlayerTypes@@$0DP@$00$0BCJ@$0A@@@IAEPAW4PlayerTypes@@I@Z ENDP ; FStaticVector<enum PlayerTypes,63,1,297,0>::Alloc
 _TEXT	ENDS
-PUBLIC	?GetCString@CvString@@QBEPBDXZ			; CvString::GetCString
-; Function compile flags: /Ogtpy
-; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredllutil\include\cvstring.h
-;	COMDAT ?GetCString@CvString@@QBEPBDXZ
-_TEXT	SEGMENT
-?GetCString@CvString@@QBEPBDXZ PROC			; CvString::GetCString, COMDAT
-; _this$ = ecx
-
-; 42   : 	const char* GetCString() const 	{ return c_str(); }
-
-	jmp	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
-?GetCString@CvString@@QBEPBDXZ ENDP			; CvString::GetCString
-_TEXT	ENDS
 PUBLIC	??1?$BaseVector@W4PlayerTypes@@$00@@QAE@XZ	; BaseVector<enum PlayerTypes,1>::~BaseVector<enum PlayerTypes,1>
 ; Function compile flags: /Ogtpy
-; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\fireplace\include\fireworks\ffastvector.h
 ;	COMDAT ??1?$BaseVector@W4PlayerTypes@@$00@@QAE@XZ
 _TEXT	SEGMENT
 ??1?$BaseVector@W4PlayerTypes@@$00@@QAE@XZ PROC		; BaseVector<enum PlayerTypes,1>::~BaseVector<enum PlayerTypes,1>, COMDAT
@@ -4794,8 +4797,8 @@ __ehfuncinfo$?_Xlen@?$vector@W4ResourceTypes@@V?$allocator@W4ResourceTypes@@@std
 xdata$x	ENDS
 ;	COMDAT ?_Xlen@?$vector@W4ResourceTypes@@V?$allocator@W4ResourceTypes@@@std@@@std@@KAXXZ
 _TEXT	SEGMENT
-$T231103 = -80						; size = 28
-$T231102 = -52						; size = 40
+$T231622 = -80						; size = 28
+$T231621 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ?_Xlen@?$vector@W4ResourceTypes@@V?$allocator@W4ResourceTypes@@@std@@@std@@KAXXZ PROC ; std::vector<enum ResourceTypes,std::allocator<enum ResourceTypes> >::_Xlen, COMDAT
 
@@ -4811,22 +4814,22 @@ __$EHRec$ = -12						; size = 12
 ; 1260 : 		_THROW(length_error, "vector<T> too long");
 
 	push	OFFSET ??_C@_0BD@OLBABOEK@vector?$DMT?$DO?5too?5long?$AA@
-	lea	ecx, DWORD PTR $T231103[esp+84]
+	lea	ecx, DWORD PTR $T231622[esp+84]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T231102[esp+80]
+	lea	ecx, DWORD PTR $T231621[esp+80]
 	mov	DWORD PTR __$EHRec$[esp+88], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T231103[esp+80]
+	lea	eax, DWORD PTR $T231622[esp+80]
 	push	eax
-	lea	ecx, DWORD PTR $T231102[esp+96]
+	lea	ecx, DWORD PTR $T231621[esp+96]
 	mov	BYTE PTR __$EHRec$[esp+92], 1
-	mov	DWORD PTR $T231102[esp+84], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T231621[esp+84], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVlength_error@std@@
-	lea	ecx, DWORD PTR $T231102[esp+84]
+	lea	ecx, DWORD PTR $T231621[esp+84]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+96], 0
-	mov	DWORD PTR $T231102[esp+88], OFFSET ??_7length_error@std@@6B@
+	mov	DWORD PTR $T231621[esp+88], OFFSET ??_7length_error@std@@6B@
 	call	__CxxThrowException@8
 $LN13@Xlen:
 $LN12@Xlen:
@@ -4835,10 +4838,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Xlen@?$vector@W4ResourceTypes@@V?$allocator@W4ResourceTypes@@@std@@@std@@KAXXZ$0:
-	lea	ecx, DWORD PTR $T231103[ebp]
+	lea	ecx, DWORD PTR $T231622[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Xlen@?$vector@W4ResourceTypes@@V?$allocator@W4ResourceTypes@@@std@@@std@@KAXXZ$2:
-	lea	ecx, DWORD PTR $T231102[ebp]
+	lea	ecx, DWORD PTR $T231621[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Xlen@?$vector@W4ResourceTypes@@V?$allocator@W4ResourceTypes@@@std@@@std@@KAXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?_Xlen@?$vector@W4ResourceTypes@@V?$allocator@W4ResourceTypes@@@std@@@std@@KAXXZ
@@ -4978,8 +4981,52 @@ _uiNumElements$ = 12					; size = 4
 	ret	8
 ?Destroy@?$BaseVector@W4PlayerTypes@@$00@@IAEXPAW4PlayerTypes@@I@Z ENDP ; BaseVector<enum PlayerTypes,1>::Destroy
 _TEXT	ENDS
+PUBLIC	??0CvPopupInfo@@QAE@W4ButtonPopupTypes@@HHHH_N1@Z ; CvPopupInfo::CvPopupInfo
+; Function compile flags: /Ogtpy
+; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredllutil\include\cvstructs.h
+;	COMDAT ??0CvPopupInfo@@QAE@W4ButtonPopupTypes@@HHHH_N1@Z
+_TEXT	SEGMENT
+_buttonPopupType$ = 8					; size = 4
+_data1$ = 12						; size = 4
+_data2$ = 16						; size = 4
+_data3$ = 20						; size = 4
+_flags$ = 24						; size = 4
+_option1$ = 28						; size = 1
+_option2$ = 32						; size = 1
+??0CvPopupInfo@@QAE@W4ButtonPopupTypes@@HHHH_N1@Z PROC	; CvPopupInfo::CvPopupInfo, COMDAT
+; _this$ = ecx
+
+; 119  : 	{
+
+	mov	edx, DWORD PTR _data2$[esp-4]
+	mov	eax, ecx
+	mov	ecx, DWORD PTR _data1$[esp-4]
+	mov	DWORD PTR [eax], ecx
+	mov	ecx, DWORD PTR _data3$[esp-4]
+	mov	DWORD PTR [eax+4], edx
+	mov	edx, DWORD PTR _flags$[esp-4]
+	mov	DWORD PTR [eax+8], ecx
+	mov	cl, BYTE PTR _option1$[esp-4]
+	mov	DWORD PTR [eax+12], edx
+	mov	dl, BYTE PTR _option2$[esp-4]
+	mov	BYTE PTR [eax+16], cl
+	mov	ecx, DWORD PTR _buttonPopupType$[esp-4]
+	mov	BYTE PTR [eax+17], dl
+	mov	DWORD PTR [eax+20], ecx
+
+; 120  : 		//Nothing
+; 121  : 		szText[0] = 0;
+
+	mov	BYTE PTR [eax+24], 0
+
+; 122  : 	}
+
+	ret	28					; 0000001cH
+??0CvPopupInfo@@QAE@W4ButtonPopupTypes@@HHHH_N1@Z ENDP	; CvPopupInfo::CvPopupInfo
+_TEXT	ENDS
 PUBLIC	?Alloc@?$FStaticVector@UWeightedElement@?$CvWeightedVector@W4TeamTypes@@$0DP@$00@@$0DP@$00$0A@$0A@@@IAEPAUWeightedElement@?$CvWeightedVector@W4TeamTypes@@$0DP@$00@@I@Z ; FStaticVector<CvWeightedVector<enum TeamTypes,63,1>::WeightedElement,63,1,0,0>::Alloc
 ; Function compile flags: /Ogtpy
+; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\fireplace\include\fireworks\ffastvector.h
 ;	COMDAT ?Alloc@?$FStaticVector@UWeightedElement@?$CvWeightedVector@W4TeamTypes@@$0DP@$00@@$0DP@$00$0A@$0A@@@IAEPAUWeightedElement@?$CvWeightedVector@W4TeamTypes@@$0DP@$00@@I@Z
 _TEXT	SEGMENT
 _uiSize$ = 8						; size = 4
@@ -5040,52 +5087,8 @@ $LN2@Alloc@2:
 	ret	4
 ?Alloc@?$FStaticVector@UWeightedElement@?$CvWeightedVector@W4TeamTypes@@$0DP@$00@@$0DP@$00$0A@$0A@@@IAEPAUWeightedElement@?$CvWeightedVector@W4TeamTypes@@$0DP@$00@@I@Z ENDP ; FStaticVector<CvWeightedVector<enum TeamTypes,63,1>::WeightedElement,63,1,0,0>::Alloc
 _TEXT	ENDS
-PUBLIC	??0CvPopupInfo@@QAE@W4ButtonPopupTypes@@HHHH_N1@Z ; CvPopupInfo::CvPopupInfo
-; Function compile flags: /Ogtpy
-; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredllutil\include\cvstructs.h
-;	COMDAT ??0CvPopupInfo@@QAE@W4ButtonPopupTypes@@HHHH_N1@Z
-_TEXT	SEGMENT
-_buttonPopupType$ = 8					; size = 4
-_data1$ = 12						; size = 4
-_data2$ = 16						; size = 4
-_data3$ = 20						; size = 4
-_flags$ = 24						; size = 4
-_option1$ = 28						; size = 1
-_option2$ = 32						; size = 1
-??0CvPopupInfo@@QAE@W4ButtonPopupTypes@@HHHH_N1@Z PROC	; CvPopupInfo::CvPopupInfo, COMDAT
-; _this$ = ecx
-
-; 119  : 	{
-
-	mov	edx, DWORD PTR _data2$[esp-4]
-	mov	eax, ecx
-	mov	ecx, DWORD PTR _data1$[esp-4]
-	mov	DWORD PTR [eax], ecx
-	mov	ecx, DWORD PTR _data3$[esp-4]
-	mov	DWORD PTR [eax+4], edx
-	mov	edx, DWORD PTR _flags$[esp-4]
-	mov	DWORD PTR [eax+8], ecx
-	mov	cl, BYTE PTR _option1$[esp-4]
-	mov	DWORD PTR [eax+12], edx
-	mov	dl, BYTE PTR _option2$[esp-4]
-	mov	BYTE PTR [eax+16], cl
-	mov	ecx, DWORD PTR _buttonPopupType$[esp-4]
-	mov	BYTE PTR [eax+17], dl
-	mov	DWORD PTR [eax+20], ecx
-
-; 120  : 		//Nothing
-; 121  : 		szText[0] = 0;
-
-	mov	BYTE PTR [eax+24], 0
-
-; 122  : 	}
-
-	ret	28					; 0000001cH
-??0CvPopupInfo@@QAE@W4ButtonPopupTypes@@HHHH_N1@Z ENDP	; CvPopupInfo::CvPopupInfo
-_TEXT	ENDS
 PUBLIC	??1?$BaseVector@UWeightedElement@?$CvWeightedVector@W4TeamTypes@@$0DP@$00@@$00@@QAE@XZ ; BaseVector<CvWeightedVector<enum TeamTypes,63,1>::WeightedElement,1>::~BaseVector<CvWeightedVector<enum TeamTypes,63,1>::WeightedElement,1>
 ; Function compile flags: /Ogtpy
-; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\fireplace\include\fireworks\ffastvector.h
 ;	COMDAT ??1?$BaseVector@UWeightedElement@?$CvWeightedVector@W4TeamTypes@@$0DP@$00@@$00@@QAE@XZ
 _TEXT	SEGMENT
 ??1?$BaseVector@UWeightedElement@?$CvWeightedVector@W4TeamTypes@@$0DP@$00@@$00@@QAE@XZ PROC ; BaseVector<CvWeightedVector<enum TeamTypes,63,1>::WeightedElement,1>::~BaseVector<CvWeightedVector<enum TeamTypes,63,1>::WeightedElement,1>, COMDAT
@@ -5429,8 +5432,8 @@ __TI2?AVbad_alloc@std@@ DD 00H
 xdata$x	ENDS
 ;	COMDAT ??$_Allocate@W4ResourceTypes@@@std@@YAPAW4ResourceTypes@@IPAW41@@Z
 _TEXT	SEGMENT
-$T231207 = -12						; size = 12
-$T231211 = 8						; size = 4
+$T231726 = -12						; size = 12
+$T231730 = 8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ??$_Allocate@W4ResourceTypes@@@std@@YAPAW4ResourceTypes@@IPAW41@@Z PROC ; std::_Allocate<enum ResourceTypes>, COMDAT
@@ -5472,15 +5475,15 @@ $LN3@Allocate:
 
 ; 40   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T231211[esp+8]
+	lea	eax, DWORD PTR $T231730[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T231207[esp+16]
-	mov	DWORD PTR $T231211[esp+12], 0
+	lea	ecx, DWORD PTR $T231726[esp+16]
+	mov	DWORD PTR $T231730[esp+12], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T231207[esp+16]
+	lea	ecx, DWORD PTR $T231726[esp+16]
 	push	ecx
-	mov	DWORD PTR $T231207[esp+20], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T231726[esp+20], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN9@Allocate:
 $LN8@Allocate:
@@ -7264,8 +7267,8 @@ __ehfuncinfo$?_Xlen@?$vector@HV?$allocator@H@std@@@std@@KAXXZ DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?_Xlen@?$vector@HV?$allocator@H@std@@@std@@KAXXZ
 _TEXT	SEGMENT
-$T231501 = -80						; size = 28
-$T231500 = -52						; size = 40
+$T232020 = -80						; size = 28
+$T232019 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ?_Xlen@?$vector@HV?$allocator@H@std@@@std@@KAXXZ PROC	; std::vector<int,std::allocator<int> >::_Xlen, COMDAT
 
@@ -7281,22 +7284,22 @@ __$EHRec$ = -12						; size = 12
 ; 1260 : 		_THROW(length_error, "vector<T> too long");
 
 	push	OFFSET ??_C@_0BD@OLBABOEK@vector?$DMT?$DO?5too?5long?$AA@
-	lea	ecx, DWORD PTR $T231501[esp+84]
+	lea	ecx, DWORD PTR $T232020[esp+84]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T231500[esp+80]
+	lea	ecx, DWORD PTR $T232019[esp+80]
 	mov	DWORD PTR __$EHRec$[esp+88], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T231501[esp+80]
+	lea	eax, DWORD PTR $T232020[esp+80]
 	push	eax
-	lea	ecx, DWORD PTR $T231500[esp+96]
+	lea	ecx, DWORD PTR $T232019[esp+96]
 	mov	BYTE PTR __$EHRec$[esp+92], 1
-	mov	DWORD PTR $T231500[esp+84], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T232019[esp+84], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVlength_error@std@@
-	lea	ecx, DWORD PTR $T231500[esp+84]
+	lea	ecx, DWORD PTR $T232019[esp+84]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+96], 0
-	mov	DWORD PTR $T231500[esp+88], OFFSET ??_7length_error@std@@6B@
+	mov	DWORD PTR $T232019[esp+88], OFFSET ??_7length_error@std@@6B@
 	call	__CxxThrowException@8
 $LN13@Xlen@2:
 $LN12@Xlen@2:
@@ -7305,10 +7308,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Xlen@?$vector@HV?$allocator@H@std@@@std@@KAXXZ$0:
-	lea	ecx, DWORD PTR $T231501[ebp]
+	lea	ecx, DWORD PTR $T232020[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Xlen@?$vector@HV?$allocator@H@std@@@std@@KAXXZ$2:
-	lea	ecx, DWORD PTR $T231500[ebp]
+	lea	ecx, DWORD PTR $T232019[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Xlen@?$vector@HV?$allocator@H@std@@@std@@KAXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?_Xlen@?$vector@HV?$allocator@H@std@@@std@@KAXXZ
@@ -7609,8 +7612,8 @@ PUBLIC	??$_Allocate@H@std@@YAPAHIPAH@Z			; std::_Allocate<int>
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xmemory
 ;	COMDAT ??$_Allocate@H@std@@YAPAHIPAH@Z
 _TEXT	SEGMENT
-$T231568 = -12						; size = 12
-$T231572 = 8						; size = 4
+$T232087 = -12						; size = 12
+$T232091 = 8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ??$_Allocate@H@std@@YAPAHIPAH@Z PROC			; std::_Allocate<int>, COMDAT
@@ -7652,15 +7655,15 @@ $LN3@Allocate@2:
 
 ; 40   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T231572[esp+8]
+	lea	eax, DWORD PTR $T232091[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T231568[esp+16]
-	mov	DWORD PTR $T231572[esp+12], 0
+	lea	ecx, DWORD PTR $T232087[esp+16]
+	mov	DWORD PTR $T232091[esp+12], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T231568[esp+16]
+	lea	ecx, DWORD PTR $T232087[esp+16]
 	push	ecx
-	mov	DWORD PTR $T231568[esp+20], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T232087[esp+20], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN9@Allocate@2:
 $LN8@Allocate@2:
@@ -8250,7 +8253,7 @@ xdata$x	ENDS
 ;	COMDAT ?GetLocalizedText@@YA?AVCvString@@PBD@Z
 _TEXT	SEGMENT
 _bytes$ = -100						; size = 4
-$T231643 = -96						; size = 4
+$T232162 = -96						; size = 4
 _text$ = -92						; size = 80
 __$EHRec$ = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
@@ -8277,7 +8280,7 @@ _szString$ = 12						; size = 4
 	xor	ebx, ebx
 	push	ecx
 	mov	DWORD PTR __$EHRec$[esp+128], ebx
-	mov	DWORD PTR $T231643[esp+120], ebx
+	mov	DWORD PTR $T232162[esp+120], ebx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
 
@@ -8307,7 +8310,7 @@ _szString$ = 12						; size = 4
 	push	eax
 	push	edi
 	mov	ecx, esi
-	mov	DWORD PTR $T231643[esp+120], 1
+	mov	DWORD PTR $T232162[esp+120], 1
 	call	DWORD PTR __imp_?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBDI@Z
 	lea	ecx, DWORD PTR _text$[esp+112]
 	mov	BYTE PTR __$EHRec$[esp+120], bl
@@ -8330,10 +8333,10 @@ __unwindfunclet$?GetLocalizedText@@YA?AVCvString@@PBD@Z$0:
 	lea	ecx, DWORD PTR _text$[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?GetLocalizedText@@YA?AVCvString@@PBD@Z$1:
-	mov	eax, DWORD PTR $T231643[ebp]
+	mov	eax, DWORD PTR $T232162[ebp]
 	and	eax, 1
 	je	$LN5@GetLocaliz
-	and	DWORD PTR $T231643[ebp], -2		; fffffffeH
+	and	DWORD PTR $T232162[ebp], -2		; fffffffeH
 	mov	ecx, DWORD PTR ___$ReturnUdt$[ebp-4]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 $LN5@GetLocaliz:
@@ -9360,14 +9363,14 @@ _eIndex$ = 8						; size = 4
 ?IsHasResearchAgreement@CvTeam@@QBE_NW4TeamTypes@@@Z PROC ; CvTeam::IsHasResearchAgreement, COMDAT
 ; _this$ = ecx
 
-; 4276 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
-; 4277 : 	CvAssertMsg(eIndex < MAX_TEAMS, "eIndex is expected to be within maximum bounds (invalid Index)");
-; 4278 : 	return m_abResearchAgreement[eIndex];
+; 4328 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
+; 4329 : 	CvAssertMsg(eIndex < MAX_TEAMS, "eIndex is expected to be within maximum bounds (invalid Index)");
+; 4330 : 	return m_abResearchAgreement[eIndex];
 
 	mov	eax, DWORD PTR _eIndex$[esp-4]
 	mov	al, BYTE PTR [eax+ecx+2328]
 
-; 4279 : }
+; 4331 : }
 
 	ret	4
 ?IsHasResearchAgreement@CvTeam@@QBE_NW4TeamTypes@@@Z ENDP ; CvTeam::IsHasResearchAgreement
@@ -9380,14 +9383,14 @@ _eIndex$ = 8						; size = 4
 ?IsHasTradeAgreement@CvTeam@@QBE_NW4TeamTypes@@@Z PROC	; CvTeam::IsHasTradeAgreement, COMDAT
 ; _this$ = ecx
 
-; 4312 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
-; 4313 : 	CvAssertMsg(eIndex < MAX_TEAMS, "eIndex is expected to be within maximum bounds (invalid Index)");
-; 4314 : 	return m_abTradeAgreement[eIndex];
+; 4364 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
+; 4365 : 	CvAssertMsg(eIndex < MAX_TEAMS, "eIndex is expected to be within maximum bounds (invalid Index)");
+; 4366 : 	return m_abTradeAgreement[eIndex];
 
 	mov	eax, DWORD PTR _eIndex$[esp-4]
 	mov	al, BYTE PTR [eax+ecx+2408]
 
-; 4315 : }
+; 4367 : }
 
 	ret	4
 ?IsHasTradeAgreement@CvTeam@@QBE_NW4TeamTypes@@@Z ENDP	; CvTeam::IsHasTradeAgreement
@@ -9400,20 +9403,20 @@ _eIndex$ = 8						; size = 4
 ?CancelResearchAgreement@CvTeam@@QAEXW4TeamTypes@@@Z PROC ; CvTeam::CancelResearchAgreement, COMDAT
 ; _this$ = ecx
 
-; 4320 : 	if (IsHasResearchAgreement(eIndex))
+; 4372 : 	if (IsHasResearchAgreement(eIndex))
 
 	mov	eax, DWORD PTR _eIndex$[esp-4]
 	cmp	BYTE PTR [eax+ecx+2328], 0
 	je	SHORT $LN1@CancelRese
 
-; 4321 : 	{
-; 4322 : 		m_abResearchAgreement[eIndex] = false;
+; 4373 : 	{
+; 4374 : 		m_abResearchAgreement[eIndex] = false;
 
 	mov	BYTE PTR [eax+ecx+2328], 0
 $LN1@CancelRese:
 
-; 4323 : 	}
-; 4324 : }
+; 4375 : 	}
+; 4376 : }
 
 	ret	4
 ?CancelResearchAgreement@CvTeam@@QAEXW4TeamTypes@@@Z ENDP ; CvTeam::CancelResearchAgreement
@@ -9426,14 +9429,14 @@ _eIndex$ = 8						; size = 4
 ?isForcePeace@CvTeam@@QBE_NW4TeamTypes@@@Z PROC		; CvTeam::isForcePeace, COMDAT
 ; _this$ = ecx
 
-; 4352 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
-; 4353 : 	CvAssertMsg(eIndex < MAX_TEAMS, "eIndex is expected to be within maximum bounds (invalid Index)");
-; 4354 : 	return m_abForcePeace[eIndex];
+; 4404 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
+; 4405 : 	CvAssertMsg(eIndex < MAX_TEAMS, "eIndex is expected to be within maximum bounds (invalid Index)");
+; 4406 : 	return m_abForcePeace[eIndex];
 
 	mov	eax, DWORD PTR _eIndex$[esp-4]
 	mov	al, BYTE PTR [eax+ecx+2488]
 
-; 4355 : }
+; 4407 : }
 
 	ret	4
 ?isForcePeace@CvTeam@@QBE_NW4TeamTypes@@@Z ENDP		; CvTeam::isForcePeace
@@ -9447,15 +9450,15 @@ _bNewValue$ = 12					; size = 1
 ?setForcePeace@CvTeam@@QAEXW4TeamTypes@@_N@Z PROC	; CvTeam::setForcePeace, COMDAT
 ; _this$ = ecx
 
-; 4361 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
-; 4362 : 	CvAssertMsg(eIndex < MAX_TEAMS, "eIndex is expected to be within maximum bounds (invalid Index)");
-; 4363 : 	m_abForcePeace[eIndex] = bNewValue;
+; 4413 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
+; 4414 : 	CvAssertMsg(eIndex < MAX_TEAMS, "eIndex is expected to be within maximum bounds (invalid Index)");
+; 4415 : 	m_abForcePeace[eIndex] = bNewValue;
 
 	mov	al, BYTE PTR _bNewValue$[esp-4]
 	mov	edx, DWORD PTR _eIndex$[esp-4]
 	mov	BYTE PTR [edx+ecx+2488], al
 
-; 4364 : }
+; 4416 : }
 
 	ret	8
 ?setForcePeace@CvTeam@@QAEXW4TeamTypes@@_N@Z ENDP	; CvTeam::setForcePeace
@@ -9469,11 +9472,11 @@ _number$ = 12						; size = 4
 ?getProjectArtType@CvTeam@@QBEHW4ProjectTypes@@H@Z PROC	; CvTeam::getProjectArtType, COMDAT
 ; _this$ = ecx
 
-; 4546 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
-; 4547 : 	CvAssertMsg(eIndex < GC.getNumProjectInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
-; 4548 : 	CvAssertMsg(number >= 0, "number is expected to be non-negative (invalid Index)");
-; 4549 : 	CvAssertMsg(number < getProjectCount(eIndex), "number is expected to be within maximum bounds (invalid Index)");
-; 4550 : 	return m_pavProjectArtTypes[eIndex][number];
+; 4598 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
+; 4599 : 	CvAssertMsg(eIndex < GC.getNumProjectInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
+; 4600 : 	CvAssertMsg(number >= 0, "number is expected to be non-negative (invalid Index)");
+; 4601 : 	CvAssertMsg(number < getProjectCount(eIndex), "number is expected to be within maximum bounds (invalid Index)");
+; 4602 : 	return m_pavProjectArtTypes[eIndex][number];
 
 	mov	eax, DWORD PTR _eIndex$[esp-4]
 	mov	ecx, DWORD PTR [ecx+2960]
@@ -9482,7 +9485,7 @@ _number$ = 12						; size = 4
 	mov	eax, DWORD PTR _number$[esp-4]
 	mov	eax, DWORD PTR [edx+eax*4]
 
-; 4551 : }
+; 4603 : }
 
 	ret	8
 ?getProjectArtType@CvTeam@@QBEHW4ProjectTypes@@H@Z ENDP	; CvTeam::getProjectArtType
@@ -9497,11 +9500,11 @@ _value$ = 16						; size = 4
 ?setProjectArtType@CvTeam@@QAEXW4ProjectTypes@@HH@Z PROC ; CvTeam::setProjectArtType, COMDAT
 ; _this$ = ecx
 
-; 4556 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
-; 4557 : 	CvAssertMsg(eIndex < GC.getNumProjectInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
-; 4558 : 	CvAssertMsg(number >= 0, "number is expected to be non-negative (invalid Index)");
-; 4559 : 	CvAssertMsg(number < getProjectCount(eIndex), "number is expected to be within maximum bounds (invalid Index)");
-; 4560 : 	m_pavProjectArtTypes[eIndex][number] = value;
+; 4608 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
+; 4609 : 	CvAssertMsg(eIndex < GC.getNumProjectInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
+; 4610 : 	CvAssertMsg(number >= 0, "number is expected to be non-negative (invalid Index)");
+; 4611 : 	CvAssertMsg(number < getProjectCount(eIndex), "number is expected to be within maximum bounds (invalid Index)");
+; 4612 : 	m_pavProjectArtTypes[eIndex][number] = value;
 
 	mov	eax, DWORD PTR _eIndex$[esp-4]
 	mov	ecx, DWORD PTR [ecx+2960]
@@ -9511,7 +9514,7 @@ _value$ = 16						; size = 4
 	mov	ecx, DWORD PTR _number$[esp-4]
 	mov	DWORD PTR [edx+ecx*4], eax
 
-; 4561 : }
+; 4613 : }
 
 	ret	12					; 0000000cH
 ?setProjectArtType@CvTeam@@QAEXW4ProjectTypes@@HH@Z ENDP ; CvTeam::setProjectArtType
@@ -9524,15 +9527,15 @@ _eIndex$ = 8						; size = 4
 ?isProjectAndArtMaxedOut@CvTeam@@QBE_NW4ProjectTypes@@@Z PROC ; CvTeam::isProjectAndArtMaxedOut, COMDAT
 ; _this$ = ecx
 
-; 4581 : {
+; 4633 : {
 
 	push	ebx
 	push	esi
 
-; 4582 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
-; 4583 : 	CvAssertMsg(eIndex < GC.getNumProjectInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
-; 4584 : 
-; 4585 : 	if(getProjectCount(eIndex) >= GC.getProjectInfo(eIndex)->GetMaxTeamInstances())
+; 4634 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
+; 4635 : 	CvAssertMsg(eIndex < GC.getNumProjectInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
+; 4636 : 
+; 4637 : 	if(getProjectCount(eIndex) >= GC.getProjectInfo(eIndex)->GetMaxTeamInstances())
 
 	mov	esi, DWORD PTR _eIndex$[esp+4]
 	push	edi
@@ -9547,13 +9550,13 @@ _eIndex$ = 8						; size = 4
 	cmp	ebx, eax
 	jl	SHORT $LN6@isProjectA
 
-; 4586 : 	{
-; 4587 : 		int count = getProjectCount(eIndex);
+; 4638 : 	{
+; 4639 : 		int count = getProjectCount(eIndex);
 
 	mov	ecx, DWORD PTR [edi+2916]
 	mov	ecx, DWORD PTR [ecx+esi*4]
 
-; 4588 : 		for(int i=0; i<count; i++)
+; 4640 : 		for(int i=0; i<count; i++)
 
 	xor	eax, eax
 	test	ecx, ecx
@@ -9563,8 +9566,8 @@ _eIndex$ = 8						; size = 4
 	mov	esi, DWORD PTR [edx+esi+4]
 $LL5@isProjectA:
 
-; 4589 : 		{
-; 4590 : 			if(getProjectArtType(eIndex, i) == -1) //undefined
+; 4641 : 		{
+; 4642 : 			if(getProjectArtType(eIndex, i) == -1) //undefined
 
 	cmp	DWORD PTR [esi], -1
 	je	SHORT $LN6@isProjectA
@@ -9576,32 +9579,32 @@ $LN3@isProjectA:
 	pop	edi
 	pop	esi
 
-; 4591 : 				return false;
-; 4592 : 		}
-; 4593 : 
-; 4594 : 		return true;
+; 4643 : 				return false;
+; 4644 : 		}
+; 4645 : 
+; 4646 : 		return true;
 
 	mov	al, 1
 	pop	ebx
 
-; 4599 : 	}
-; 4600 : }
+; 4651 : 	}
+; 4652 : }
 
 	ret	4
 $LN6@isProjectA:
 	pop	edi
 	pop	esi
 
-; 4595 : 	}
-; 4596 : 	else
-; 4597 : 	{
-; 4598 : 		return false;
+; 4647 : 	}
+; 4648 : 	else
+; 4649 : 	{
+; 4650 : 		return false;
 
 	xor	al, al
 	pop	ebx
 
-; 4599 : 	}
-; 4600 : }
+; 4651 : 	}
+; 4652 : }
 
 	ret	4
 ?isProjectAndArtMaxedOut@CvTeam@@QBE_NW4ProjectTypes@@@Z ENDP ; CvTeam::isProjectAndArtMaxedOut
@@ -9614,17 +9617,17 @@ _TEXT	SEGMENT
 ?finalizeProjectArtTypes@CvTeam@@QAEXXZ PROC		; CvTeam::finalizeProjectArtTypes, COMDAT
 ; _this$ = ecx
 
-; 4604 : {
+; 4656 : {
 
 	push	esi
 	mov	esi, ecx
 	push	edi
 
-; 4605 : 	//loop through each project and fill in default art values
-; 4606 : #ifdef AUI_WARNING_FIXES
-; 4607 : 	for (uint i = 0; i<GC.getNumProjectInfos(); i++)
-; 4608 : #else
-; 4609 : 	for(int i=0; i<GC.getNumProjectInfos(); i++)
+; 4657 : 	//loop through each project and fill in default art values
+; 4658 : #ifdef AUI_WARNING_FIXES
+; 4659 : 	for (uint i = 0; i<GC.getNumProjectInfos(); i++)
+; 4660 : #else
+; 4661 : 	for(int i=0; i<GC.getNumProjectInfos(); i++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	xor	edi, edi
@@ -9636,15 +9639,15 @@ _TEXT	SEGMENT
 	npad	10
 $LL26@finalizePr:
 
-; 4610 : #endif
-; 4611 : 	{
-; 4612 : 		ProjectTypes projectType = (ProjectTypes) i;
-; 4613 : 		int projectCount = getProjectCount(projectType);
+; 4662 : #endif
+; 4663 : 	{
+; 4664 : 		ProjectTypes projectType = (ProjectTypes) i;
+; 4665 : 		int projectCount = getProjectCount(projectType);
 
 	mov	eax, DWORD PTR [esi+2916]
 	mov	ebx, DWORD PTR [eax+edi*4]
 
-; 4614 : 		for(int j=0; j<projectCount; j++)
+; 4666 : 		for(int j=0; j<projectCount; j++)
 
 	xor	ecx, ecx
 	test	ebx, ebx
@@ -9656,17 +9659,17 @@ $LL4@finalizePr:
 	mov	eax, DWORD PTR [esi+2960]
 	mov	eax, DWORD PTR [eax+edx+4]
 
-; 4615 : 		{
-; 4616 : 			int projectArtType = getProjectArtType(projectType, j);
-; 4617 : 			if(projectArtType == -1) //undefined
+; 4667 : 		{
+; 4668 : 			int projectArtType = getProjectArtType(projectType, j);
+; 4669 : 			if(projectArtType == -1) //undefined
 
 	cmp	DWORD PTR [eax+ecx*4], -1
 	lea	eax, DWORD PTR [eax+ecx*4]
 	jne	SHORT $LN3@finalizePr
 
-; 4618 : 			{
-; 4619 : 				int defaultArtType = getProjectDefaultArtType(projectType);
-; 4620 : 				setProjectArtType(projectType, j, defaultArtType);
+; 4670 : 			{
+; 4671 : 				int defaultArtType = getProjectDefaultArtType(projectType);
+; 4672 : 				setProjectArtType(projectType, j, defaultArtType);
 
 	mov	ebp, DWORD PTR [esi+2920]
 	mov	ebp, DWORD PTR [ebp+edi*4]
@@ -9677,11 +9680,11 @@ $LN3@finalizePr:
 	jl	SHORT $LL4@finalizePr
 $LN6@finalizePr:
 
-; 4605 : 	//loop through each project and fill in default art values
-; 4606 : #ifdef AUI_WARNING_FIXES
-; 4607 : 	for (uint i = 0; i<GC.getNumProjectInfos(); i++)
-; 4608 : #else
-; 4609 : 	for(int i=0; i<GC.getNumProjectInfos(); i++)
+; 4657 : 	//loop through each project and fill in default art values
+; 4658 : #ifdef AUI_WARNING_FIXES
+; 4659 : 	for (uint i = 0; i<GC.getNumProjectInfos(); i++)
+; 4660 : #else
+; 4661 : 	for(int i=0; i<GC.getNumProjectInfos(); i++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	inc	edi
@@ -9694,10 +9697,10 @@ $LN5@finalizePr:
 	pop	edi
 	pop	esi
 
-; 4621 : 			}
-; 4622 : 		}
-; 4623 : 	}
-; 4624 : }
+; 4673 : 			}
+; 4674 : 		}
+; 4675 : 	}
+; 4676 : }
 
 	ret	0
 ?finalizeProjectArtTypes@CvTeam@@QAEXXZ ENDP		; CvTeam::finalizeProjectArtTypes
@@ -9711,13 +9714,13 @@ EXTRN	?GetVictoryMinThreshold@CvProjectEntry@@QBEHH@Z:PROC ; CvProjectEntry::Get
 ;	COMDAT ?getVictoryDelay@CvTeam@@QBEHW4VictoryTypes@@@Z
 _TEXT	SEGMENT
 _iExtraDelayPercent$ = -12				; size = 4
-_iProject$225953 = -8					; size = 4
+_iProject$226471 = -8					; size = 4
 _this$ = -4						; size = 4
 _eVictory$ = 8						; size = 4
 ?getVictoryDelay@CvTeam@@QBEHW4VictoryTypes@@@Z PROC	; CvTeam::getVictoryDelay, COMDAT
 ; _this$ = ecx
 
-; 5088 : {
+; 5140 : {
 
 	sub	esp, 12					; 0000000cH
 	push	ebx
@@ -9725,19 +9728,19 @@ _eVictory$ = 8						; size = 4
 	push	esi
 	mov	DWORD PTR _this$[esp+24], ecx
 
-; 5089 : 	int iExtraDelayPercent = 0;
+; 5141 : 	int iExtraDelayPercent = 0;
 
 	xor	ebp, ebp
 	push	edi
 
-; 5090 : #ifdef AUI_WARNING_FIXES
-; 5091 : 	for (uint iProject = 0; iProject < GC.getNumProjectInfos(); ++iProject)
-; 5092 : #else
-; 5093 : 	for(int iProject = 0; iProject < GC.getNumProjectInfos(); ++iProject)
+; 5142 : #ifdef AUI_WARNING_FIXES
+; 5143 : 	for (uint iProject = 0; iProject < GC.getNumProjectInfos(); ++iProject)
+; 5144 : #else
+; 5145 : 	for(int iProject = 0; iProject < GC.getNumProjectInfos(); ++iProject)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	DWORD PTR _iExtraDelayPercent$[esp+28], ebp
-	mov	DWORD PTR _iProject$225953[esp+28], ebp
+	mov	DWORD PTR _iProject$226471[esp+28], ebp
 	call	?getNumProjectInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumProjectInfos
 	mov	ebx, DWORD PTR _eVictory$[esp+24]
 	test	eax, eax
@@ -9745,23 +9748,23 @@ _eVictory$ = 8						; size = 4
 	npad	5
 $LL15@getVictory:
 
-; 5094 : #endif
-; 5095 : 	{
-; 5096 : 		CvProjectEntry* pkProject = GC.getProjectInfo((ProjectTypes)iProject);
+; 5146 : #endif
+; 5147 : 	{
+; 5148 : 		CvProjectEntry* pkProject = GC.getProjectInfo((ProjectTypes)iProject);
 
 	push	ebp
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getProjectInfo@CvGlobals@@QAEPAVCvProjectEntry@@W4ProjectTypes@@@Z ; CvGlobals::getProjectInfo
 	mov	esi, eax
 
-; 5097 : 		int iCount = getProjectCount((ProjectTypes)iProject);
+; 5149 : 		int iCount = getProjectCount((ProjectTypes)iProject);
 
 	mov	eax, DWORD PTR _this$[esp+28]
 	mov	ecx, DWORD PTR [eax+2916]
 	mov	edi, DWORD PTR [ecx+ebp*4]
 
-; 5098 : 
-; 5099 : 		if(iCount < pkProject->GetVictoryMinThreshold(eVictory))
+; 5150 : 
+; 5151 : 		if(iCount < pkProject->GetVictoryMinThreshold(eVictory))
 
 	push	ebx
 	mov	ecx, esi
@@ -9769,9 +9772,9 @@ $LL15@getVictory:
 	cmp	edi, eax
 	jl	$LN13@getVictory
 
-; 5103 : 		}
-; 5104 : 
-; 5105 : 		if(iCount < pkProject->GetVictoryThreshold(eVictory))
+; 5155 : 		}
+; 5156 : 
+; 5157 : 		if(iCount < pkProject->GetVictoryThreshold(eVictory))
 
 	push	ebx
 	mov	ecx, esi
@@ -9779,8 +9782,8 @@ $LL15@getVictory:
 	cmp	edi, eax
 	jge	SHORT $LN4@getVictory
 
-; 5106 : 		{
-; 5107 : 			iExtraDelayPercent += ((pkProject->GetVictoryThreshold(eVictory)  - iCount) * pkProject->GetVictoryDelayPercent()) / pkProject->GetVictoryThreshold(eVictory);
+; 5158 : 		{
+; 5159 : 			iExtraDelayPercent += ((pkProject->GetVictoryThreshold(eVictory)  - iCount) * pkProject->GetVictoryDelayPercent()) / pkProject->GetVictoryThreshold(eVictory);
 
 	push	ebx
 	mov	ecx, esi
@@ -9798,21 +9801,21 @@ $LL15@getVictory:
 	mov	eax, edi
 	cdq
 	idiv	ecx
-	mov	ebp, DWORD PTR _iProject$225953[esp+28]
+	mov	ebp, DWORD PTR _iProject$226471[esp+28]
 	add	DWORD PTR _iExtraDelayPercent$[esp+28], eax
 $LN4@getVictory:
 	inc	ebp
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	mov	DWORD PTR _iProject$225953[esp+28], ebp
+	mov	DWORD PTR _iProject$226471[esp+28], ebp
 	call	?getNumProjectInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumProjectInfos
 	cmp	ebp, eax
 	jl	SHORT $LL15@getVictory
 $LN3@getVictory:
 
-; 5108 : 		}
-; 5109 : 	}
-; 5110 : 
-; 5111 : 	return (GC.getGame().victoryDelay(eVictory)  * (100 + iExtraDelayPercent)) / 100;
+; 5160 : 		}
+; 5161 : 	}
+; 5162 : 
+; 5163 : 	return (GC.getGame().victoryDelay(eVictory)  * (100 + iExtraDelayPercent)) / 100;
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	ebx
@@ -9832,7 +9835,7 @@ $LN3@getVictory:
 	add	eax, edx
 	pop	ebx
 
-; 5112 : }
+; 5164 : }
 
 	add	esp, 12					; 0000000cH
 	ret	4
@@ -9841,14 +9844,14 @@ $LN13@getVictory:
 	pop	esi
 	pop	ebp
 
-; 5100 : 		{
-; 5101 : 			CvAssert(false);
-; 5102 : 			return -1;
+; 5152 : 		{
+; 5153 : 			CvAssert(false);
+; 5154 : 			return -1;
 
 	or	eax, -1
 	pop	ebx
 
-; 5112 : }
+; 5164 : }
 
 	add	esp, 12					; 0000000cH
 	ret	4
@@ -9865,7 +9868,7 @@ _eResource$ = 8						; size = 4
 ?IsResourceObsolete@CvTeam@@QAE_NW4ResourceTypes@@@Z PROC ; CvTeam::IsResourceObsolete, COMDAT
 ; _this$ = ecx
 
-; 6952 : 	CvResourceInfo* pResource = GC.getResourceInfo(eResource);
+; 7004 : 	CvResourceInfo* pResource = GC.getResourceInfo(eResource);
 
 	mov	eax, DWORD PTR _eResource$[esp-4]
 	push	esi
@@ -9876,68 +9879,68 @@ _eResource$ = 8						; size = 4
 	call	?getResourceInfo@CvGlobals@@QAEPAVCvResourceInfo@@W4ResourceTypes@@@Z ; CvGlobals::getResourceInfo
 	mov	esi, eax
 
-; 6953 : 
-; 6954 : 	if(pResource == NULL)
+; 7005 : 
+; 7006 : 	if(pResource == NULL)
 
 	test	esi, esi
 	jne	SHORT $LN4@IsResource
 $LN9@IsResource:
 	pop	edi
 
-; 6955 : 		return false;
+; 7007 : 		return false;
 
 	xor	al, al
 	pop	esi
 
-; 6969 : 		return false;
-; 6970 : 
-; 6971 : 	return true;
-; 6972 : }
+; 7021 : 		return false;
+; 7022 : 
+; 7023 : 	return true;
+; 7024 : }
 
 	ret	4
 $LN4@IsResource:
 
-; 6956 : 
-; 6957 : 	// If this is a luxury or bonus resource it doesn't go obsolete
-; 6958 : 	if(pResource->getResourceUsage() != RESOURCEUSAGE_STRATEGIC)
+; 7008 : 
+; 7009 : 	// If this is a luxury or bonus resource it doesn't go obsolete
+; 7010 : 	if(pResource->getResourceUsage() != RESOURCEUSAGE_STRATEGIC)
 
 	mov	ecx, esi
 	call	?getResourceUsage@CvResourceInfo@@QBE?AW4ResourceUsageTypes@@XZ ; CvResourceInfo::getResourceUsage
 	cmp	eax, 1
 
-; 6959 : 		return false;
+; 7011 : 		return false;
 
 	jne	SHORT $LN9@IsResource
 
-; 6960 : 
-; 6961 : 	EraTypes eObsoleteEra = (EraTypes) pResource->getAIStopTradingEra();
+; 7012 : 
+; 7013 : 	EraTypes eObsoleteEra = (EraTypes) pResource->getAIStopTradingEra();
 
 	mov	ecx, esi
 	call	?getAIStopTradingEra@CvResourceInfo@@QBEHXZ ; CvResourceInfo::getAIStopTradingEra
 
-; 6962 : 
-; 6963 : 	// AI will always trade for this
-; 6964 : 	if(eObsoleteEra == NO_ERA)
+; 7014 : 
+; 7015 : 	// AI will always trade for this
+; 7016 : 	if(eObsoleteEra == NO_ERA)
 
 	cmp	eax, -1
 
-; 6965 : 		return false;
+; 7017 : 		return false;
 
 	je	SHORT $LN9@IsResource
 
-; 6966 : 
-; 6967 : 	// Not obsolete yet
-; 6968 : 	if(GetCurrentEra() < eObsoleteEra)
+; 7018 : 
+; 7019 : 	// Not obsolete yet
+; 7020 : 	if(GetCurrentEra() < eObsoleteEra)
 
 	cmp	DWORD PTR [edi+136], eax
 	pop	edi
 	setge	al
 	pop	esi
 
-; 6969 : 		return false;
-; 6970 : 
-; 6971 : 	return true;
-; 6972 : }
+; 7021 : 		return false;
+; 7022 : 
+; 7023 : 	return true;
+; 7024 : }
 
 	ret	4
 ?IsResourceObsolete@CvTeam@@QAE_NW4ResourceTypes@@@Z ENDP ; CvTeam::IsResourceObsolete
@@ -9950,23 +9953,23 @@ _eTeam$ = 8						; size = 4
 ?PushIgnoreWarning@CvTeam@@QAEXW4TeamTypes@@@Z PROC	; CvTeam::PushIgnoreWarning, COMDAT
 ; _this$ = ecx
 
-; 7312 : 	CvAssertMsg(eTeam != NO_TEAM, "PushIgnoreWarning got NO_TEAM passed to it");
-; 7313 : 	if (eTeam == NO_TEAM)
+; 7364 : 	CvAssertMsg(eTeam != NO_TEAM, "PushIgnoreWarning got NO_TEAM passed to it");
+; 7365 : 	if (eTeam == NO_TEAM)
 
 	mov	eax, DWORD PTR _eTeam$[esp-4]
 	cmp	eax, -1
 	je	SHORT $LN2@PushIgnore
 
-; 7314 : 	{
-; 7315 : 		return;
-; 7316 : 	}
-; 7317 : 
-; 7318 : 	m_aiIgnoreWarningCount[eTeam] += 1;
+; 7366 : 	{
+; 7367 : 		return;
+; 7368 : 	}
+; 7369 : 
+; 7370 : 	m_aiIgnoreWarningCount[eTeam] += 1;
 
 	inc	DWORD PTR [ecx+eax*4+1448]
 $LN2@PushIgnore:
 
-; 7319 : }
+; 7371 : }
 
 	ret	4
 ?PushIgnoreWarning@CvTeam@@QAEXW4TeamTypes@@@Z ENDP	; CvTeam::PushIgnoreWarning
@@ -9979,31 +9982,31 @@ _eTeam$ = 8						; size = 4
 ?PopIgnoreWarning@CvTeam@@QAEXW4TeamTypes@@@Z PROC	; CvTeam::PopIgnoreWarning, COMDAT
 ; _this$ = ecx
 
-; 7324 : 	CvAssertMsg(eTeam != NO_TEAM, "PopIgnoreWarning got NO_TEAM passed to it");
-; 7325 : 	if (eTeam == NO_TEAM)
+; 7376 : 	CvAssertMsg(eTeam != NO_TEAM, "PopIgnoreWarning got NO_TEAM passed to it");
+; 7377 : 	if (eTeam == NO_TEAM)
 
 	mov	eax, DWORD PTR _eTeam$[esp-4]
 	cmp	eax, -1
 	je	SHORT $LN1@PopIgnoreW
 
-; 7326 : 	{
-; 7327 : 		return;
-; 7328 : 	}
-; 7329 : 
-; 7330 : 	CvAssertMsg(m_aiIgnoreWarningCount[eTeam] > 0, "Trying to pop when there's nothing to be popped");
-; 7331 : 	if (m_aiIgnoreWarningCount[eTeam] > 0)
+; 7378 : 	{
+; 7379 : 		return;
+; 7380 : 	}
+; 7381 : 
+; 7382 : 	CvAssertMsg(m_aiIgnoreWarningCount[eTeam] > 0, "Trying to pop when there's nothing to be popped");
+; 7383 : 	if (m_aiIgnoreWarningCount[eTeam] > 0)
 
 	cmp	DWORD PTR [ecx+eax*4+1448], 0
 	jle	SHORT $LN1@PopIgnoreW
 
-; 7332 : 	{
-; 7333 : 		m_aiIgnoreWarningCount[eTeam] -= 1;
+; 7384 : 	{
+; 7385 : 		m_aiIgnoreWarningCount[eTeam] -= 1;
 
 	dec	DWORD PTR [ecx+eax*4+1448]
 $LN1@PopIgnoreW:
 
-; 7334 : 	}
-; 7335 : }
+; 7386 : 	}
+; 7387 : }
 
 	ret	4
 ?PopIgnoreWarning@CvTeam@@QAEXW4TeamTypes@@@Z ENDP	; CvTeam::PopIgnoreWarning
@@ -10016,30 +10019,30 @@ _eTeam$ = 8						; size = 4
 ?GetIgnoreWarningCount@CvTeam@@QAEHW4TeamTypes@@@Z PROC	; CvTeam::GetIgnoreWarningCount, COMDAT
 ; _this$ = ecx
 
-; 7340 : 	CvAssertMsg(eTeam != NO_TEAM, "GetIgnoreWarningCount got NO_TEAM passed to it");
-; 7341 : 	if (eTeam == NO_TEAM)
+; 7392 : 	CvAssertMsg(eTeam != NO_TEAM, "GetIgnoreWarningCount got NO_TEAM passed to it");
+; 7393 : 	if (eTeam == NO_TEAM)
 
 	mov	eax, DWORD PTR _eTeam$[esp-4]
 	cmp	eax, -1
 	jne	SHORT $LN1@GetIgnoreW
 
-; 7342 : 	{
-; 7343 : 		return -1;
+; 7394 : 	{
+; 7395 : 		return -1;
 
 	or	eax, eax
 
-; 7347 : }
+; 7399 : }
 
 	ret	4
 $LN1@GetIgnoreW:
 
-; 7344 : 	}
-; 7345 : 
-; 7346 : 	return m_aiIgnoreWarningCount[eTeam];
+; 7396 : 	}
+; 7397 : 
+; 7398 : 	return m_aiIgnoreWarningCount[eTeam];
 
 	mov	eax, DWORD PTR [ecx+eax*4+1448]
 
-; 7347 : }
+; 7399 : }
 
 	ret	4
 ?GetIgnoreWarningCount@CvTeam@@QAEHW4TeamTypes@@@Z ENDP	; CvTeam::GetIgnoreWarningCount
@@ -10677,7 +10680,7 @@ xdata$x	ENDS
 ;	COMDAT ??$GetLocalizedText@PBDPBD@@YA?AVCvString@@PBDABQBD1@Z
 _TEXT	SEGMENT
 _bytes$ = -100						; size = 4
-$T232409 = -96						; size = 4
+$T232928 = -96						; size = 4
 _text$ = -92						; size = 80
 __$EHRec$ = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
@@ -10706,7 +10709,7 @@ _arg2$ = 20						; size = 4
 	xor	ebx, ebx
 	push	ecx
 	mov	DWORD PTR __$EHRec$[esp+128], ebx
-	mov	DWORD PTR $T232409[esp+120], ebx
+	mov	DWORD PTR $T232928[esp+120], ebx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
 
@@ -10750,7 +10753,7 @@ _arg2$ = 20						; size = 4
 	push	ecx
 	push	edi
 	mov	ecx, esi
-	mov	DWORD PTR $T232409[esp+120], 1
+	mov	DWORD PTR $T232928[esp+120], 1
 	call	DWORD PTR __imp_?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBDI@Z
 	lea	ecx, DWORD PTR _text$[esp+112]
 	mov	BYTE PTR __$EHRec$[esp+120], bl
@@ -10773,10 +10776,10 @@ __unwindfunclet$??$GetLocalizedText@PBDPBD@@YA?AVCvString@@PBDABQBD1@Z$0:
 	lea	ecx, DWORD PTR _text$[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$??$GetLocalizedText@PBDPBD@@YA?AVCvString@@PBDABQBD1@Z$1:
-	mov	eax, DWORD PTR $T232409[ebp]
+	mov	eax, DWORD PTR $T232928[ebp]
 	and	eax, 1
 	je	$LN5@GetLocaliz@2
-	and	DWORD PTR $T232409[ebp], -2		; fffffffeH
+	and	DWORD PTR $T232928[ebp], -2		; fffffffeH
 	mov	ecx, DWORD PTR ___$ReturnUdt$[ebp-4]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 $LN5@GetLocaliz@2:
@@ -10807,7 +10810,7 @@ xdata$x	ENDS
 ;	COMDAT ??$GetLocalizedText@PBD@@YA?AVCvString@@PBD0@Z
 _TEXT	SEGMENT
 _bytes$ = -100						; size = 4
-$T232432 = -96						; size = 4
+$T232951 = -96						; size = 4
 _text$ = -92						; size = 80
 __$EHRec$ = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
@@ -10835,7 +10838,7 @@ _arg1$ = 16						; size = 4
 	xor	ebx, ebx
 	push	ecx
 	mov	DWORD PTR __$EHRec$[esp+128], ebx
-	mov	DWORD PTR $T232432[esp+120], ebx
+	mov	DWORD PTR $T232951[esp+120], ebx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
 
@@ -10872,7 +10875,7 @@ _arg1$ = 16						; size = 4
 	push	ecx
 	push	edi
 	mov	ecx, esi
-	mov	DWORD PTR $T232432[esp+120], 1
+	mov	DWORD PTR $T232951[esp+120], 1
 	call	DWORD PTR __imp_?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBDI@Z
 	lea	ecx, DWORD PTR _text$[esp+112]
 	mov	BYTE PTR __$EHRec$[esp+120], bl
@@ -10895,10 +10898,10 @@ __unwindfunclet$??$GetLocalizedText@PBD@@YA?AVCvString@@PBD0@Z$0:
 	lea	ecx, DWORD PTR _text$[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$??$GetLocalizedText@PBD@@YA?AVCvString@@PBD0@Z$1:
-	mov	eax, DWORD PTR $T232432[ebp]
+	mov	eax, DWORD PTR $T232951[ebp]
 	and	eax, 1
 	je	$LN5@GetLocaliz@3
-	and	DWORD PTR $T232432[ebp], -2		; fffffffeH
+	and	DWORD PTR $T232951[ebp], -2		; fffffffeH
 	mov	ecx, DWORD PTR ___$ReturnUdt$[ebp-4]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 $LN5@GetLocaliz@3:
@@ -10929,7 +10932,7 @@ xdata$x	ENDS
 ;	COMDAT ??$GetLocalizedText@HH@@YA?AVCvString@@PBDABH1@Z
 _TEXT	SEGMENT
 _bytes$ = -100						; size = 4
-$T232452 = -96						; size = 4
+$T232971 = -96						; size = 4
 _text$ = -92						; size = 80
 __$EHRec$ = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
@@ -10958,7 +10961,7 @@ _arg2$ = 20						; size = 4
 	xor	ebx, ebx
 	push	ecx
 	mov	DWORD PTR __$EHRec$[esp+128], ebx
-	mov	DWORD PTR $T232452[esp+120], ebx
+	mov	DWORD PTR $T232971[esp+120], ebx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
 
@@ -11002,7 +11005,7 @@ _arg2$ = 20						; size = 4
 	push	ecx
 	push	edi
 	mov	ecx, esi
-	mov	DWORD PTR $T232452[esp+120], 1
+	mov	DWORD PTR $T232971[esp+120], 1
 	call	DWORD PTR __imp_?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBDI@Z
 	lea	ecx, DWORD PTR _text$[esp+112]
 	mov	BYTE PTR __$EHRec$[esp+120], bl
@@ -11025,10 +11028,10 @@ __unwindfunclet$??$GetLocalizedText@HH@@YA?AVCvString@@PBDABH1@Z$0:
 	lea	ecx, DWORD PTR _text$[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$??$GetLocalizedText@HH@@YA?AVCvString@@PBDABH1@Z$1:
-	mov	eax, DWORD PTR $T232452[ebp]
+	mov	eax, DWORD PTR $T232971[ebp]
 	and	eax, 1
 	je	$LN5@GetLocaliz@4
-	and	DWORD PTR $T232452[ebp], -2		; fffffffeH
+	and	DWORD PTR $T232971[ebp], -2		; fffffffeH
 	mov	ecx, DWORD PTR ___$ReturnUdt$[ebp-4]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 $LN5@GetLocaliz@4:
@@ -11059,7 +11062,7 @@ xdata$x	ENDS
 ;	COMDAT ??$GetLocalizedText@H@@YA?AVCvString@@PBDH@Z
 _TEXT	SEGMENT
 _bytes$ = -100						; size = 4
-$T232475 = -96						; size = 4
+$T232994 = -96						; size = 4
 _text$ = -92						; size = 80
 __$EHRec$ = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
@@ -11087,7 +11090,7 @@ _arg1$ = 16						; size = 4
 	xor	ebx, ebx
 	push	ecx
 	mov	DWORD PTR __$EHRec$[esp+128], ebx
-	mov	DWORD PTR $T232475[esp+120], ebx
+	mov	DWORD PTR $T232994[esp+120], ebx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
 
@@ -11124,7 +11127,7 @@ _arg1$ = 16						; size = 4
 	push	ecx
 	push	edi
 	mov	ecx, esi
-	mov	DWORD PTR $T232475[esp+120], 1
+	mov	DWORD PTR $T232994[esp+120], 1
 	call	DWORD PTR __imp_?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBDI@Z
 	lea	ecx, DWORD PTR _text$[esp+112]
 	mov	BYTE PTR __$EHRec$[esp+120], bl
@@ -11147,10 +11150,10 @@ __unwindfunclet$??$GetLocalizedText@H@@YA?AVCvString@@PBDH@Z$0:
 	lea	ecx, DWORD PTR _text$[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$??$GetLocalizedText@H@@YA?AVCvString@@PBDH@Z$1:
-	mov	eax, DWORD PTR $T232475[ebp]
+	mov	eax, DWORD PTR $T232994[ebp]
 	and	eax, 1
 	je	$LN5@GetLocaliz@5
-	and	DWORD PTR $T232475[ebp], -2		; fffffffeH
+	and	DWORD PTR $T232994[ebp], -2		; fffffffeH
 	mov	ecx, DWORD PTR ___$ReturnUdt$[ebp-4]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 $LN5@GetLocaliz@5:
@@ -11230,10 +11233,10 @@ EXTRN	?ReadHashed@CvInfosSerializationHelper@@YAHAAVFDataStream@@PA_N@Z:PROC ; C
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredll_expansion2\cvinfosserializationhelper.h
 ;	COMDAT ??$ReadHashedDataArray@H@CvInfosSerializationHelper@@YAXAAVFDataStream@@PAHH@Z
 _TEXT	SEGMENT
-_bValid$228493 = -13					; size = 1
+_bValid$229011 = -13					; size = 1
 _uiNumEntries$ = -12					; size = 4
-_tValue$228496 = -8					; size = 4
-_tValue$228501 = -4					; size = 4
+_tValue$229014 = -8					; size = 4
+_tValue$229019 = -4					; size = 4
 _kStream$ = 8						; size = 4
 _paArray$ = 12						; size = 4
 _iArraySize$ = 16					; size = 4
@@ -11270,7 +11273,7 @@ $LL7@ReadHashed:
 ; 255  : 		bool bValid;
 ; 256  : 		int iType = ReadHashed(kStream, &bValid);
 
-	lea	ecx, DWORD PTR _bValid$228493[esp+32]
+	lea	ecx, DWORD PTR _bValid$229011[esp+32]
 	push	ecx
 	push	edi
 	call	?ReadHashed@CvInfosSerializationHelper@@YAHAAVFDataStream@@PA_N@Z ; CvInfosSerializationHelper::ReadHashed
@@ -11286,7 +11289,7 @@ $LL7@ReadHashed:
 ; 259  : 			TData tValue;
 ; 260  : 			kStream >> tValue;
 
-	lea	edx, DWORD PTR _tValue$228496[esp+32]
+	lea	edx, DWORD PTR _tValue$229014[esp+32]
 	push	edx
 	mov	ecx, edi
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
@@ -11298,7 +11301,7 @@ $LL7@ReadHashed:
 
 ; 262  : 				paArray[iType] = tValue;
 
-	mov	eax, DWORD PTR _tValue$228496[esp+32]
+	mov	eax, DWORD PTR _tValue$229014[esp+32]
 	mov	ecx, DWORD PTR _paArray$[esp+28]
 	mov	DWORD PTR [ecx+esi*4], eax
 
@@ -11309,14 +11312,14 @@ $LN4@ReadHashed:
 
 ; 264  : 		else if(!bValid)
 
-	cmp	BYTE PTR _bValid$228493[esp+32], 0
+	cmp	BYTE PTR _bValid$229011[esp+32], 0
 	jne	SHORT $LN6@ReadHashed
 
 ; 265  : 		{
 ; 266  : 			TData tValue;
 ; 267  : 			kStream >> tValue;
 
-	lea	edx, DWORD PTR _tValue$228501[esp+32]
+	lea	edx, DWORD PTR _tValue$229019[esp+32]
 	push	edx
 	mov	ecx, edi
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
@@ -11412,9 +11415,9 @@ PUBLIC	??$ReadHashedDataArray@_N@CvInfosSerializationHelper@@YAXAAVFDataStream@@
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredll_expansion2\cvinfosserializationhelper.h
 ;	COMDAT ??$ReadHashedDataArray@_N@CvInfosSerializationHelper@@YAXAAVFDataStream@@PA_NH@Z
 _TEXT	SEGMENT
-_tValue$228518 = -7					; size = 1
-_bValid$228515 = -6					; size = 1
-_tValue$228523 = -5					; size = 1
+_tValue$229036 = -7					; size = 1
+_bValid$229033 = -6					; size = 1
+_tValue$229041 = -5					; size = 1
 _uiNumEntries$ = -4					; size = 4
 _kStream$ = 8						; size = 4
 _paArray$ = 12						; size = 4
@@ -11452,7 +11455,7 @@ $LL7@ReadHashed@2:
 ; 255  : 		bool bValid;
 ; 256  : 		int iType = ReadHashed(kStream, &bValid);
 
-	lea	ecx, DWORD PTR _bValid$228515[esp+24]
+	lea	ecx, DWORD PTR _bValid$229033[esp+24]
 	push	ecx
 	push	edi
 	call	?ReadHashed@CvInfosSerializationHelper@@YAHAAVFDataStream@@PA_N@Z ; CvInfosSerializationHelper::ReadHashed
@@ -11468,7 +11471,7 @@ $LL7@ReadHashed@2:
 ; 259  : 			TData tValue;
 ; 260  : 			kStream >> tValue;
 
-	lea	edx, DWORD PTR _tValue$228518[esp+24]
+	lea	edx, DWORD PTR _tValue$229036[esp+24]
 	push	edx
 	mov	ecx, edi
 	call	?Read@FDataStream@@IAEXAA_N@Z		; FDataStream::Read
@@ -11480,7 +11483,7 @@ $LL7@ReadHashed@2:
 
 ; 262  : 				paArray[iType] = tValue;
 
-	mov	al, BYTE PTR _tValue$228518[esp+24]
+	mov	al, BYTE PTR _tValue$229036[esp+24]
 	mov	ecx, DWORD PTR _paArray$[esp+20]
 	mov	BYTE PTR [esi+ecx], al
 
@@ -11491,14 +11494,14 @@ $LN4@ReadHashed@2:
 
 ; 264  : 		else if(!bValid)
 
-	cmp	BYTE PTR _bValid$228515[esp+24], 0
+	cmp	BYTE PTR _bValid$229033[esp+24], 0
 	jne	SHORT $LN6@ReadHashed@2
 
 ; 265  : 		{
 ; 266  : 			TData tValue;
 ; 267  : 			kStream >> tValue;
 
-	lea	edx, DWORD PTR _tValue$228523[esp+24]
+	lea	edx, DWORD PTR _tValue$229041[esp+24]
 	push	edx
 	mov	ecx, edi
 	call	?Read@FDataStream@@IAEXAA_N@Z		; FDataStream::Read
@@ -12204,7 +12207,7 @@ EXTRN	?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4ResourceTyp
 ;	COMDAT ??$WriteHashedTypeArray@W4ResourceTypes@@@CvInfosSerializationHelper@@YAXAAVFDataStream@@ABV?$vector@W4ResourceTypes@@V?$allocator@W4ResourceTypes@@@std@@@std@@@Z
 _TEXT	SEGMENT
 _kStream$ = 8						; size = 4
-$T232669 = 12						; size = 4
+$T233188 = 12						; size = 4
 _aiArray$ = 12						; size = 4
 ??$WriteHashedTypeArray@W4ResourceTypes@@@CvInfosSerializationHelper@@YAXAAVFDataStream@@ABV?$vector@W4ResourceTypes@@V?$allocator@W4ResourceTypes@@@std@@@std@@@Z PROC ; CvInfosSerializationHelper::WriteHashedTypeArray<enum ResourceTypes>, COMDAT
 
@@ -12220,11 +12223,11 @@ _aiArray$ = 12						; size = 4
 	mov	eax, DWORD PTR [esi+8]
 	sub	eax, DWORD PTR [esi+4]
 	push	edi
-	lea	ecx, DWORD PTR $T232669[esp+8]
+	lea	ecx, DWORD PTR $T233188[esp+8]
 	sar	eax, 2
 	push	ecx
 	mov	ecx, ebx
-	mov	DWORD PTR $T232669[esp+12], eax
+	mov	DWORD PTR $T233188[esp+12], eax
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 
 ; 663  : 
@@ -14068,10 +14071,10 @@ xdata$x	ENDS
 ;	COMDAT ?meet@CvTeam@@QAEXW4TeamTypes@@_N@Z
 _TEXT	SEGMENT
 __$EHRec$ = -12						; size = 12
-_bResult$223899 = 8					; size = 1
+_bResult$224376 = 8					; size = 1
 _eTeam$ = 8						; size = 4
 _bSuppressMessages$ = 12				; size = 1
-_args$223898 = 12					; size = 4
+_args$224375 = 12					; size = 4
 ?meet@CvTeam@@QAEXW4TeamTypes@@_N@Z PROC		; CvTeam::meet, COMDAT
 ; _this$ = ecx
 
@@ -14130,12 +14133,12 @@ _args$223898 = 12					; size = 4
 ; 1887 : 			CvLuaArgsHandle args(2);
 
 	push	2
-	lea	ecx, DWORD PTR _args$223898[esp+24]
+	lea	ecx, DWORD PTR _args$224375[esp+24]
 	call	??0CvLuaArgsHandle@@QAE@I@Z		; CvLuaArgsHandle::CvLuaArgsHandle
 
 ; 1888 : 			args->Push(eTeam);
 
-	mov	ecx, DWORD PTR _args$223898[esp+20]
+	mov	ecx, DWORD PTR _args$224375[esp+20]
 	mov	eax, DWORD PTR [ecx]
 	mov	edx, DWORD PTR [eax+8]
 	push	edi
@@ -14144,7 +14147,7 @@ _args$223898 = 12					; size = 4
 
 ; 1889 : 			args->Push(GetID());
 
-	mov	ecx, DWORD PTR _args$223898[esp+20]
+	mov	ecx, DWORD PTR _args$224375[esp+20]
 	mov	esi, DWORD PTR [esi+4]
 	mov	eax, DWORD PTR [ecx]
 	mov	edx, DWORD PTR [eax+8]
@@ -14155,18 +14158,18 @@ _args$223898 = 12					; size = 4
 ; 1891 : 			bool bResult;
 ; 1892 : 			LuaSupport::CallHook(pkScriptSystem, "TeamMeet", args.get(), bResult);
 
-	mov	ecx, DWORD PTR _args$223898[esp+20]
-	lea	eax, DWORD PTR _bResult$223899[esp+20]
+	mov	ecx, DWORD PTR _args$224375[esp+20]
+	lea	eax, DWORD PTR _bResult$224376[esp+20]
 	push	eax
 	push	ecx
-	push	OFFSET $SG223900
+	push	OFFSET $SG224377
 	push	ebx
 	call	?CallHook@LuaSupport@@YA_NPAVICvEngineScriptSystem1@@PBDPAVICvEngineScriptSystemArgs1@@AA_N@Z ; LuaSupport::CallHook
 	add	esp, 16					; 00000010H
 
 ; 1893 : 		}
 
-	lea	ecx, DWORD PTR _args$223898[esp+20]
+	lea	ecx, DWORD PTR _args$224375[esp+20]
 	mov	DWORD PTR __$EHRec$[esp+32], -1
 	call	??1CvLuaArgsHandle@@QAE@XZ		; CvLuaArgsHandle::~CvLuaArgsHandle
 $LN1@meet:
@@ -14185,7 +14188,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?meet@CvTeam@@QAEXW4TeamTypes@@_N@Z$0:
-	lea	ecx, DWORD PTR _args$223898[ebp-4]
+	lea	ecx, DWORD PTR _args$224375[ebp-4]
 	jmp	??1CvLuaArgsHandle@@QAE@XZ		; CvLuaArgsHandle::~CvLuaArgsHandle
 __ehhandler$?meet@CvTeam@@QAEXW4TeamTypes@@_N@Z:
 	mov	eax, OFFSET __ehfuncinfo$?meet@CvTeam@@QAEXW4TeamTypes@@_N@Z
@@ -15841,7 +15844,7 @@ __ehfuncinfo$?getName@CvTeam@@QBE?AVCvString@@XZ DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?getName@CvTeam@@QBE?AVCvString@@XZ
 _TEXT	SEGMENT
-$T234306 = -20						; size = 4
+$T234825 = -20						; size = 4
 _eID$ = -16						; size = 4
 __$EHRec$ = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
@@ -15858,7 +15861,7 @@ ___$ReturnUdt$ = 8					; size = 4
 	sub	esp, 8
 	push	ebp
 	push	esi
-	mov	DWORD PTR $T234306[esp+28], 0
+	mov	DWORD PTR $T234825[esp+28], 0
 
 ; 2757 : 	CvString strBuffer;
 
@@ -15878,7 +15881,7 @@ ___$ReturnUdt$ = 8					; size = 4
 	mov	eax, DWORD PTR [esi+4]
 	mov	ecx, 1
 	mov	DWORD PTR __$EHRec$[esp+40], 0
-	mov	DWORD PTR $T234306[esp+32], ecx
+	mov	DWORD PTR $T234825[esp+32], ecx
 	mov	DWORD PTR _eID$[esp+32], eax
 	xor	edi, edi
 	npad	13
@@ -15927,7 +15930,7 @@ $LN30@getName:
 ; 2771 : 				{
 ; 2772 : 					strBuffer += "/";
 
-	push	OFFSET $SG224736
+	push	OFFSET $SG225213
 	mov	ecx, ebp
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 $LN1@getName:
@@ -15965,10 +15968,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?getName@CvTeam@@QBE?AVCvString@@XZ$0:
-	mov	eax, DWORD PTR $T234306[ebp]
+	mov	eax, DWORD PTR $T234825[ebp]
 	and	eax, 1
 	je	$LN11@getName
-	and	DWORD PTR $T234306[ebp], -2		; fffffffeH
+	and	DWORD PTR $T234825[ebp], -2		; fffffffeH
 	mov	ecx, DWORD PTR ___$ReturnUdt$[ebp-4]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 $LN11@getName:
@@ -15998,7 +16001,7 @@ xdata$x	ENDS
 ;	COMDAT ?getNameKey@CvTeam@@QBE?AVCvString@@XZ
 _TEXT	SEGMENT
 _bOneManTeam$ = -21					; size = 1
-$T234367 = -20						; size = 4
+$T234886 = -20						; size = 4
 _eID$ = -16						; size = 4
 __$EHRec$ = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
@@ -16015,7 +16018,7 @@ ___$ReturnUdt$ = 8					; size = 4
 	sub	esp, 12					; 0000000cH
 	push	ebp
 	push	esi
-	mov	DWORD PTR $T234367[esp+32], 0
+	mov	DWORD PTR $T234886[esp+32], 0
 
 ; 2788 : 	CvString strBuffer;
 
@@ -16037,7 +16040,7 @@ ___$ReturnUdt$ = 8					; size = 4
 	cmp	DWORD PTR [esi+8], ecx
 	mov	DWORD PTR __$EHRec$[esp+44], 0
 	sete	BYTE PTR _bOneManTeam$[esp+36]
-	mov	DWORD PTR $T234367[esp+36], ecx
+	mov	DWORD PTR $T234886[esp+36], ecx
 	mov	DWORD PTR _eID$[esp+36], eax
 	xor	edi, edi
 	npad	5
@@ -16083,7 +16086,7 @@ $LN31@getNameKey:
 ; 2804 : 				{
 ; 2805 : 					strBuffer += "/";
 
-	push	OFFSET $SG224755
+	push	OFFSET $SG225232
 	mov	ecx, ebp
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 $LN3@getNameKey:
@@ -16136,10 +16139,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?getNameKey@CvTeam@@QBE?AVCvString@@XZ$0:
-	mov	eax, DWORD PTR $T234367[ebp]
+	mov	eax, DWORD PTR $T234886[ebp]
 	and	eax, 1
 	je	$LN12@getNameKey
-	and	DWORD PTR $T234367[ebp], -2		; fffffffeH
+	and	DWORD PTR $T234886[ebp], -2		; fffffffeH
 	mov	ecx, DWORD PTR ___$ReturnUdt$[ebp-4]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 $LN12@getNameKey:
@@ -16394,7 +16397,7 @@ EXTRN	?firstUnit@CvPlayer@@QAEPAVCvUnit@@PAH_N@Z:PROC	; CvPlayer::firstUnit
 ;	COMDAT ?changeCanEmbarkCount@CvTeam@@QAEXH@Z
 _TEXT	SEGMENT
 _this$ = -4						; size = 4
-_iLoop$225040 = 8					; size = 4
+_iLoop$225517 = 8					; size = 4
 _iChange$ = 8						; size = 4
 ?changeCanEmbarkCount@CvTeam@@QAEXH@Z PROC		; CvTeam::changeCanEmbarkCount, COMDAT
 ; _this$ = ecx
@@ -16462,7 +16465,7 @@ $LN31@changeCanE:
 ; 3417 : 					for(pLoopUnit = GET_PLAYER((PlayerTypes)iI).firstUnit(&iLoop); pLoopUnit != NULL; pLoopUnit = GET_PLAYER((PlayerTypes)iI).nextUnit(&iLoop))
 
 	push	0
-	lea	eax, DWORD PTR _iLoop$225040[esp+20]
+	lea	eax, DWORD PTR _iLoop$225517[esp+20]
 	push	eax
 	call	?firstUnit@CvPlayer@@QAEPAVCvUnit@@PAH_N@Z ; CvPlayer::firstUnit
 	mov	esi, eax
@@ -16525,7 +16528,7 @@ $LN1@changeCanE:
 $LN6@changeCanE:
 	mov	edx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	push	0
-	lea	eax, DWORD PTR _iLoop$225040[esp+20]
+	lea	eax, DWORD PTR _iLoop$225517[esp+20]
 	lea	ecx, DWORD PTR [ebx+edx]
 	push	eax
 	call	?nextUnit@CvPlayer@@QAEPAVCvUnit@@PAH_N@Z ; CvPlayer::nextUnit
@@ -16578,7 +16581,7 @@ EXTRN	?isHasPromotion@CvUnit@@QBE_NW4PromotionTypes@@@Z:PROC ; CvUnit::isHasProm
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?changeDefensiveEmbarkCount@CvTeam@@QAEXH@Z
 _TEXT	SEGMENT
-_iLoop$225073 = 8					; size = 4
+_iLoop$225550 = 8					; size = 4
 _iChange$ = 8						; size = 4
 ?changeDefensiveEmbarkCount@CvTeam@@QAEXH@Z PROC	; CvTeam::changeDefensiveEmbarkCount, COMDAT
 ; _this$ = ecx
@@ -16647,7 +16650,7 @@ $LN30@changeDefe:
 
 	mov	eax, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	push	0
-	lea	edx, DWORD PTR _iLoop$225073[esp+16]
+	lea	edx, DWORD PTR _iLoop$225550[esp+16]
 	lea	ecx, DWORD PTR [ebx+eax]
 	push	edx
 	call	?firstUnit@CvPlayer@@QAEPAVCvUnit@@PAH_N@Z ; CvPlayer::firstUnit
@@ -16724,7 +16727,7 @@ $LN2@changeDefe:
 $LN5@changeDefe:
 	mov	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	push	0
-	lea	edx, DWORD PTR _iLoop$225073[esp+16]
+	lea	edx, DWORD PTR _iLoop$225550[esp+16]
 	add	ecx, ebx
 	push	edx
 	call	?nextUnit@CvPlayer@@QAEPAVCvUnit@@PAH_N@Z ; CvPlayer::nextUnit
@@ -16786,9 +16789,9 @@ xdata$x	ENDS
 ;	COMDAT ?UpdateEmbarkGraphics@CvTeam@@QAEXXZ
 _TEXT	SEGMENT
 _this$ = -24						; size = 4
-_iLoop$225106 = -20					; size = 4
-$T234723 = -16						; size = 4
-_pDllUnit$225164 = -16					; size = 4
+_iLoop$225583 = -20					; size = 4
+$T235242 = -16						; size = 4
+_pDllUnit$225641 = -16					; size = 4
 __$EHRec$ = -12						; size = 12
 ?UpdateEmbarkGraphics@CvTeam@@QAEXXZ PROC		; CvTeam::UpdateEmbarkGraphics, COMDAT
 ; _this$ = ecx
@@ -16843,7 +16846,7 @@ $LN27@UpdateEmba:
 ; 3515 : 			for(CvUnit* pLoopUnit = kPlayer.firstUnit(&iLoop); pLoopUnit != NULL; pLoopUnit = kPlayer.nextUnit(&iLoop))
 
 	push	ebx
-	lea	edx, DWORD PTR _iLoop$225106[esp+44]
+	lea	edx, DWORD PTR _iLoop$225583[esp+44]
 	push	edx
 	mov	ecx, edi
 	call	?firstUnit@CvPlayer@@QAEPAVCvUnit@@PAH_N@Z ; CvPlayer::firstUnit
@@ -16874,7 +16877,7 @@ $LL5@UpdateEmba:
 	push	12					; 0000000cH
 	call	??2CvDllUnit@@SAPAXI@Z			; CvDllUnit::operator new
 	add	esp, 4
-	mov	DWORD PTR $T234723[esp+40], eax
+	mov	DWORD PTR $T235242[esp+40], eax
 	mov	DWORD PTR __$EHRec$[esp+48], ebx
 	cmp	eax, ebx
 	je	SHORT $LN12@UpdateEmba
@@ -16886,7 +16889,7 @@ $LL5@UpdateEmba:
 $LN12@UpdateEmba:
 	xor	esi, esi
 $LN13@UpdateEmba:
-	mov	DWORD PTR _pDllUnit$225164[esp+40], esi
+	mov	DWORD PTR _pDllUnit$225641[esp+40], esi
 
 ; 3524 : 						gDLL->GameplayUnitEmbark(pDllUnit.get(), true);
 
@@ -16909,7 +16912,7 @@ $LN13@UpdateEmba:
 	call	ecx
 $LN4@UpdateEmba:
 	push	ebx
-	lea	edx, DWORD PTR _iLoop$225106[esp+44]
+	lea	edx, DWORD PTR _iLoop$225583[esp+44]
 	push	edx
 	mov	ecx, edi
 	call	?nextUnit@CvPlayer@@QAEPAVCvUnit@@PAH_N@Z ; CvPlayer::nextUnit
@@ -16942,13 +16945,13 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?UpdateEmbarkGraphics@CvTeam@@QAEXXZ$0:
-	mov	eax, DWORD PTR $T234723[ebp]
+	mov	eax, DWORD PTR $T235242[ebp]
 	push	eax
 	call	??3CvDllUnit@@SAXPAX@Z			; CvDllUnit::operator delete
 	pop	ecx
 	ret	0
 __unwindfunclet$?UpdateEmbarkGraphics@CvTeam@@QAEXXZ$1:
-	lea	ecx, DWORD PTR _pDllUnit$225164[ebp]
+	lea	ecx, DWORD PTR _pDllUnit$225641[ebp]
 	jmp	??1?$auto_ptr@VICvUnit1@@@std@@QAE@XZ	; std::auto_ptr<ICvUnit1>::~auto_ptr<ICvUnit1>
 __ehhandler$?UpdateEmbarkGraphics@CvTeam@@QAEXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?UpdateEmbarkGraphics@CvTeam@@QAEXXZ
@@ -17076,7 +17079,7 @@ EXTRN	?getCapitalCity@CvPlayer@@QAEPAVCvCity@@XZ:PROC	; CvPlayer::getCapitalCity
 ;	COMDAT ?SetHasEmbassyAtTeam@CvTeam@@QAEXW4TeamTypes@@_N@Z
 _TEXT	SEGMENT
 _this$ = -16						; size = 4
-_pPlot$225428 = -12					; size = 4
+_pPlot$225905 = -12					; size = 4
 tv595 = -8						; size = 4
 tv378 = -4						; size = 4
 _eIndex$ = 8						; size = 4
@@ -17153,7 +17156,7 @@ $LN43@SetHasEmba:
 	mov	ecx, eax
 	call	?plot@CvCity@@QBEPAVCvPlot@@XZ		; CvCity::plot
 	mov	edx, eax
-	mov	DWORD PTR _pPlot$225428[esp+32], edx
+	mov	DWORD PTR _pPlot$225905[esp+32], edx
 
 ; 4067 : 					CvAssertMsg(pPlot, "Capital city lacks plot? How'd that happen?");
 ; 4068 : 					if(pPlot)
@@ -17253,7 +17256,7 @@ $LN66@SetHasEmba:
 	mov	ecx, eax
 	call	?setRevealed@CvPlot@@QAE_NW4TeamTypes@@_N10@Z ; CvPlot::setRevealed
 $LN126@SetHasEmba:
-	mov	edx, DWORD PTR _pPlot$225428[esp+32]
+	mov	edx, DWORD PTR _pPlot$225905[esp+32]
 $LN16@SetHasEmba:
 
 ; 4083 : 						{
@@ -17479,14 +17482,14 @@ __ehfuncinfo$?EvacuateDiplomatsAtTeam@CvTeam@@QAEXW4TeamTypes@@@Z DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?EvacuateDiplomatsAtTeam@CvTeam@@QAEXW4TeamTypes@@@Z
 _TEXT	SEGMENT
-_iPlayer2$225472 = -196					; size = 4
+_iPlayer2$225949 = -196					; size = 4
 tv416 = -192						; size = 4
-_eSpyRank$225487 = -188					; size = 4
-_pNotifications$225483 = -184				; size = 4
+_eSpyRank$225964 = -188					; size = 4
+_pNotifications$225960 = -184				; size = 4
 _this$ = -180						; size = 4
-_pCapitalCity$225480 = -176				; size = 4
-_strNotification$225491 = -172				; size = 80
-_strSummary$225488 = -92				; size = 80
+_pCapitalCity$225957 = -176				; size = 4
+_strNotification$225968 = -172				; size = 80
+_strSummary$225965 = -92				; size = 80
 __$EHRec$ = -12						; size = 12
 _eIndex$ = 8						; size = 4
 ?EvacuateDiplomatsAtTeam@CvTeam@@QAEXW4TeamTypes@@@Z PROC ; CvTeam::EvacuateDiplomatsAtTeam, COMDAT
@@ -17535,7 +17538,7 @@ $LN23@EvacuateDi:
 ; 4149 : 			for (int iPlayer2 = 0; iPlayer2 < MAX_MAJOR_CIVS; iPlayer2++)
 
 	xor	esi, esi
-	mov	DWORD PTR _iPlayer2$225472[esp+212], 0
+	mov	DWORD PTR _iPlayer2$225949[esp+212], 0
 	mov	DWORD PTR tv416[esp+212], esi
 $LL68@EvacuateDi:
 
@@ -17562,7 +17565,7 @@ $LN34@EvacuateDi:
 ; 4156 : 
 ; 4157 : 				if (GET_PLAYER(ePlayer1).GetEspionage()->IsMyDiplomatVisitingThem(ePlayer2, true))
 
-	mov	eax, DWORD PTR _iPlayer2$225472[esp+212]
+	mov	eax, DWORD PTR _iPlayer2$225949[esp+212]
 	push	1
 	add	ecx, ebp
 	push	eax
@@ -17584,7 +17587,7 @@ $LN34@EvacuateDi:
 	mov	edx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	lea	ecx, DWORD PTR [edx+ebp]
 	push	eax
-	mov	DWORD PTR _pCapitalCity$225480[esp+216], eax
+	mov	DWORD PTR _pCapitalCity$225957[esp+216], eax
 	call	?GetEspionage@CvPlayer@@QBEPAVCvPlayerEspionage@@XZ ; CvPlayer::GetEspionage
 	mov	ecx, eax
 	call	?GetSpyIndexInCity@CvPlayerEspionage@@QAEHPAVCvCity@@@Z ; CvPlayerEspionage::GetSpyIndexInCity
@@ -17601,7 +17604,7 @@ $LN34@EvacuateDi:
 	mov	eax, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	lea	ecx, DWORD PTR [eax+ebp]
 	call	?GetNotifications@CvPlayer@@QBEPAVCvNotifications@@XZ ; CvPlayer::GetNotifications
-	mov	DWORD PTR _pNotifications$225483[esp+212], eax
+	mov	DWORD PTR _pNotifications$225960[esp+212], eax
 
 ; 4164 : 						if(pNotifications)
 
@@ -17630,16 +17633,16 @@ $LN34@EvacuateDi:
 
 ; 4169 : 							Localization::String strSummary = Localization::Lookup("TXT_KEY_NOTIFICATION_DIPLOMAT_EJECTED");
 
-	lea	edx, DWORD PTR _strSummary$225488[esp+212]
-	push	OFFSET $SG225490
+	lea	edx, DWORD PTR _strSummary$225965[esp+212]
+	push	OFFSET $SG225967
 	push	edx
-	mov	DWORD PTR _eSpyRank$225487[esp+220], ecx
+	mov	DWORD PTR _eSpyRank$225964[esp+220], ecx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 
 ; 4170 : 							Localization::String strNotification = Localization::Lookup("TXT_KEY_NOTIFICATION_DIPLOMAT_EJECTED_TT");
 
-	lea	eax, DWORD PTR _strNotification$225491[esp+220]
-	push	OFFSET $SG225493
+	lea	eax, DWORD PTR _strNotification$225968[esp+220]
+	push	OFFSET $SG225970
 	push	eax
 	mov	DWORD PTR __$EHRec$[esp+236], 0
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
@@ -17647,14 +17650,14 @@ $LN34@EvacuateDi:
 
 ; 4171 : 							strNotification << pEspionage->GetSpyRankName(eSpyRank);
 
-	mov	ecx, DWORD PTR _eSpyRank$225487[esp+212]
+	mov	ecx, DWORD PTR _eSpyRank$225964[esp+212]
 	push	ecx
 	mov	ecx, esi
 	mov	BYTE PTR __$EHRec$[esp+224], 1
 	call	?GetSpyRankName@CvPlayerEspionage@@QBEPBDH@Z ; CvPlayerEspionage::GetSpyRankName
 	mov	esi, DWORD PTR __imp_?PushArgument@String@Localization@@QAE_NPBD@Z
 	push	eax
-	lea	ecx, DWORD PTR _strNotification$225491[esp+216]
+	lea	ecx, DWORD PTR _strNotification$225968[esp+216]
 	call	esi
 
 ; 4172 : 							strNotification << GET_PLAYER(ePlayer1).getCivilizationInfo().getSpyNames(iSpyName);
@@ -17666,15 +17669,15 @@ $LN34@EvacuateDi:
 	mov	ecx, eax
 	call	?getSpyNames@CvCivilizationInfo@@QBEPBDH@Z ; CvCivilizationInfo::getSpyNames
 	push	eax
-	lea	ecx, DWORD PTR _strNotification$225491[esp+216]
+	lea	ecx, DWORD PTR _strNotification$225968[esp+216]
 	call	esi
 
 ; 4173 : 							strNotification << pCapitalCity->getNameKey();
 
-	mov	ecx, DWORD PTR _pCapitalCity$225480[esp+212]
+	mov	ecx, DWORD PTR _pCapitalCity$225957[esp+212]
 	call	?getNameKey@CvCity@@QBEPBDXZ		; CvCity::getNameKey
 	push	eax
-	lea	ecx, DWORD PTR _strNotification$225491[esp+216]
+	lea	ecx, DWORD PTR _strNotification$225968[esp+216]
 	call	esi
 
 ; 4174 : 							pNotifications->Add(NOTIFICATION_SPY_CANT_STEAL_TECH, strNotification.toUTF8(), strSummary.toUTF8(), -1, -1, -1);
@@ -17684,12 +17687,12 @@ $LN34@EvacuateDi:
 	push	-1
 	push	-1
 	push	-1
-	lea	ecx, DWORD PTR _strSummary$225488[esp+228]
+	lea	ecx, DWORD PTR _strSummary$225965[esp+228]
 	call	esi
 	push	eax
-	lea	ecx, DWORD PTR _strNotification$225491[esp+232]
+	lea	ecx, DWORD PTR _strNotification$225968[esp+232]
 	call	esi
-	mov	ecx, DWORD PTR _pNotifications$225483[esp+232]
+	mov	ecx, DWORD PTR _pNotifications$225960[esp+232]
 	push	eax
 	push	240697813				; 0e58c1d5H
 	call	?Add@CvNotifications@@QAEHW4NotificationTypes@@PBD1HHHH@Z ; CvNotifications::Add
@@ -17697,10 +17700,10 @@ $LN34@EvacuateDi:
 ; 4175 : 						}
 
 	mov	esi, DWORD PTR __imp_??1String@Localization@@UAE@XZ
-	lea	ecx, DWORD PTR _strNotification$225491[esp+212]
+	lea	ecx, DWORD PTR _strNotification$225968[esp+212]
 	mov	BYTE PTR __$EHRec$[esp+220], 0
 	call	esi
-	lea	ecx, DWORD PTR _strSummary$225488[esp+212]
+	lea	ecx, DWORD PTR _strSummary$225965[esp+212]
 	mov	DWORD PTR __$EHRec$[esp+220], -1
 	call	esi
 	mov	esi, DWORD PTR tv416[esp+212]
@@ -17723,7 +17726,7 @@ $LN6@EvacuateDi:
 ; 4148 : 		{
 ; 4149 : 			for (int iPlayer2 = 0; iPlayer2 < MAX_MAJOR_CIVS; iPlayer2++)
 
-	inc	DWORD PTR _iPlayer2$225472[esp+212]
+	inc	DWORD PTR _iPlayer2$225949[esp+212]
 	add	esi, 63236				; 0000f704H
 	cmp	esi, 1391192				; 00153a58H
 	mov	DWORD PTR tv416[esp+212], esi
@@ -17755,10 +17758,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?EvacuateDiplomatsAtTeam@CvTeam@@QAEXW4TeamTypes@@@Z$0:
-	lea	ecx, DWORD PTR _strSummary$225488[ebp]
+	lea	ecx, DWORD PTR _strSummary$225965[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?EvacuateDiplomatsAtTeam@CvTeam@@QAEXW4TeamTypes@@@Z$1:
-	lea	ecx, DWORD PTR _strNotification$225491[ebp]
+	lea	ecx, DWORD PTR _strNotification$225968[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __ehhandler$?EvacuateDiplomatsAtTeam@CvTeam@@QAEXW4TeamTypes@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?EvacuateDiplomatsAtTeam@CvTeam@@QAEXW4TeamTypes@@@Z
@@ -17766,51 +17769,58 @@ __ehhandler$?EvacuateDiplomatsAtTeam@CvTeam@@QAEXW4TeamTypes@@@Z:
 text$x	ENDS
 ?EvacuateDiplomatsAtTeam@CvTeam@@QAEXW4TeamTypes@@@Z ENDP ; CvTeam::EvacuateDiplomatsAtTeam
 PUBLIC	?SetHasDefensivePact@CvTeam@@QAEXW4TeamTypes@@_N@Z ; CvTeam::SetHasDefensivePact
-EXTRN	?addReplayMessage@CvGame@@QAEXW4ReplayMessageTypes@@W4PlayerTypes@@ABVCvString@@HH@Z:PROC ; CvGame::addReplayMessage
+EXTRN	__imp_??0String@Localization@@QAE@ABV01@@Z:PROC
+EXTRN	?getCivilizationShortDescriptionKey@CvPlayer@@QBEPBDXZ:PROC ; CvPlayer::getCivilizationShortDescriptionKey
 ;	COMDAT xdata$x
-; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredllutil\include\cvstring.h
+; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvlocalization\include\cvlocalization.h
 xdata$x	SEGMENT
-__ehfuncinfo$?SetHasDefensivePact@CvTeam@@QAEXW4TeamTypes@@_N@Z DD 019930522H
-	DD	05H
-	DD	FLAT:__unwindtable$?SetHasDefensivePact@CvTeam@@QAEXW4TeamTypes@@_N@Z
-	DD	2 DUP(00H)
-	DD	2 DUP(00H)
-	DD	00H
-	DD	01H
 __unwindtable$?SetHasDefensivePact@CvTeam@@QAEXW4TeamTypes@@_N@Z DD 0ffffffffH
 	DD	FLAT:__unwindfunclet$?SetHasDefensivePact@CvTeam@@QAEXW4TeamTypes@@_N@Z$0
 	DD	00H
 	DD	FLAT:__unwindfunclet$?SetHasDefensivePact@CvTeam@@QAEXW4TeamTypes@@_N@Z$1
 	DD	01H
 	DD	FLAT:__unwindfunclet$?SetHasDefensivePact@CvTeam@@QAEXW4TeamTypes@@_N@Z$2
+	DD	02H
+	DD	FLAT:__unwindfunclet$?SetHasDefensivePact@CvTeam@@QAEXW4TeamTypes@@_N@Z$3
+__ehfuncinfo$?SetHasDefensivePact@CvTeam@@QAEXW4TeamTypes@@_N@Z DD 019930522H
+	DD	04H
+	DD	FLAT:__unwindtable$?SetHasDefensivePact@CvTeam@@QAEXW4TeamTypes@@_N@Z
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
 	DD	00H
-	DD	FLAT:__unwindfunclet$?SetHasDefensivePact@CvTeam@@QAEXW4TeamTypes@@_N@Z$2
-	DD	0ffffffffH
-	DD	FLAT:__unwindfunclet$?SetHasDefensivePact@CvTeam@@QAEXW4TeamTypes@@_N@Z$2
+	DD	01H
 ; Function compile flags: /Ogtpy
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredll_expansion2\cvteam.cpp
 xdata$x	ENDS
 ;	COMDAT ?SetHasDefensivePact@CvTeam@@QAEXW4TeamTypes@@_N@Z
 _TEXT	SEGMENT
-_strBuffer$225523 = -96					; size = 28
-$T235202 = -68						; size = 28
-$T235200 = -40						; size = 28
+_bHasMetThisTeam$226030 = -365				; size = 1
+_jPlayer$226014 = -364					; size = 4
+_iPlayer$226010 = -360					; size = 4
+tv600 = -356						; size = 4
+_iCurPlayer$226006 = -352				; size = 4
+tv584 = -348						; size = 4
+tv562 = -344						; size = 4
+_pNotifications$226025 = -340				; size = 4
+_this$ = -336						; size = 4
+_tempInfoStr$226044 = -332				; size = 80
+_tempSummaryStr$226045 = -252				; size = 80
+_strSummary$226003 = -172				; size = 80
+_strText$226000 = -92					; size = 80
 __$EHRec$ = -12						; size = 12
-$T235201 = 8						; size = 4
 _eIndex$ = 8						; size = 4
-$T235199 = 12						; size = 4
 _bNewValue$ = 12					; size = 1
 ?SetHasDefensivePact@CvTeam@@QAEXW4TeamTypes@@_N@Z PROC	; CvTeam::SetHasDefensivePact, COMDAT
 ; _this$ = ecx
 
 ; 4230 : {
 
-	mov	eax, DWORD PTR fs:0
 	push	-1
 	push	__ehhandler$?SetHasDefensivePact@CvTeam@@QAEXW4TeamTypes@@_N@Z
+	mov	eax, DWORD PTR fs:0
 	push	eax
 	mov	DWORD PTR fs:0, esp
-	sub	esp, 84					; 00000054H
+	sub	esp, 356				; 00000164H
 	push	ebx
 
 ; 4231 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
@@ -17818,35 +17828,33 @@ _bNewValue$ = 12					; size = 1
 ; 4233 : 
 ; 4234 : 	if(IsHasDefensivePact(eIndex) != bNewValue)
 
-	mov	bl, BYTE PTR _bNewValue$[esp+96]
-	push	esi
+	mov	bl, BYTE PTR _bNewValue$[esp+368]
 	push	edi
-	mov	edi, DWORD PTR _eIndex$[esp+104]
-	mov	esi, ecx
-	mov	al, BYTE PTR [edi+esi+2248]
+	mov	edi, DWORD PTR _eIndex$[esp+372]
+	mov	al, BYTE PTR [edi+ecx+2248]
+	mov	DWORD PTR _this$[esp+376], ecx
 	cmp	al, bl
-	je	$LN1@SetHasDefe
+	je	$LN19@SetHasDefe
 
 ; 4235 : 	{
 ; 4236 : 		m_abDefensivePact[eIndex] = bNewValue;
 
-	mov	BYTE PTR [edi+esi+2248], bl
+	mov	BYTE PTR [edi+ecx+2248], bl
+	push	esi
 
 ; 4237 : 
 ; 4238 : 		if((GetID() == GC.getGame().getActiveTeam()) || (eIndex == GC.getGame().getActiveTeam()))
 
+	mov	esi, DWORD PTR [ecx+4]
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
-	push	ebp
-	mov	ebp, DWORD PTR [esi+4]
 	call	?getActiveTeam@CvGame@@QAE?AW4TeamTypes@@XZ ; CvGame::getActiveTeam
-	cmp	ebp, eax
-	pop	ebp
-	je	SHORT $LN2@SetHasDefe
+	cmp	esi, eax
+	je	SHORT $LN20@SetHasDefe
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?getActiveTeam@CvGame@@QAE?AW4TeamTypes@@XZ ; CvGame::getActiveTeam
 	cmp	edi, eax
-	jne	SHORT $LN3@SetHasDefe
-$LN2@SetHasDefe:
+	jne	SHORT $LN131@SetHasDefe
+$LN20@SetHasDefe:
 
 ; 4239 : 		{
 ; 4240 : 			DLLUI->setDirty(Score_DIRTY_BIT, true);
@@ -17857,97 +17865,380 @@ $LN2@SetHasDefe:
 	push	1
 	push	12					; 0000000cH
 	call	edx
-$LN3@SetHasDefe:
+$LN131@SetHasDefe:
 
 ; 4241 : 		}
-; 4242 : 
-; 4243 : 		if(bNewValue && !GET_TEAM(eIndex).IsHasDefensivePact(GetID()))
+; 4242 : #ifdef NEW_DEFENSIVE_PACT
+; 4243 : 	if(bNewValue)
 
 	test	bl, bl
-	je	$LN1@SetHasDefe
-	mov	ecx, DWORD PTR ?m_aTeams@CvTeam@@1PAV1@A ; CvTeam::m_aTeams
-	imul	edi, 2984				; 00000ba8H
-	mov	eax, DWORD PTR [esi+4]
-	add	ecx, edi
-	cmp	BYTE PTR [ecx+eax+2248], 0
-	jne	$LN1@SetHasDefe
+	je	$LN137@SetHasDefe
 
-; 4244 : 		{
-; 4245 : 			CvString strBuffer = GetLocalizedText("TXT_KEY_MISC_PLAYERS_SIGN_DEFENSIVE_PACT", getName().GetCString(), GET_TEAM(eIndex).getName().GetCString());
+; 4244 : 	{
+; 4245 : 		// Someone made a Non-Aggression Pact, send out notifications to everyone
+; 4246 : 		Localization::String strText = Localization::Lookup("TXT_KEY_NOTIFICATION_NON_AGGRESSION");
 
-	lea	edx, DWORD PTR $T235200[esp+108]
-	push	edx
-	call	?getName@CvTeam@@QBE?AVCvString@@XZ	; CvTeam::getName
-	mov	ecx, eax
-	mov	DWORD PTR __$EHRec$[esp+116], 0
-	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
-	mov	DWORD PTR $T235199[esp+104], eax
-	lea	eax, DWORD PTR $T235202[esp+108]
+	mov	esi, DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
+	push	ebp
+	lea	eax, DWORD PTR _strText$226000[esp+384]
+	push	OFFSET $SG226002
 	push	eax
-	mov	ecx, esi
-	call	?getName@CvTeam@@QBE?AVCvString@@XZ	; CvTeam::getName
-	mov	ecx, eax
-	mov	BYTE PTR __$EHRec$[esp+116], 1
-	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
-	lea	ecx, DWORD PTR $T235199[esp+104]
+	call	esi
+
+; 4247 : 		Localization::String strSummary = Localization::Lookup("TXT_KEY_NOTIFICATION_NON_AGGRESSION_S");
+
+	lea	ecx, DWORD PTR _strSummary$226003[esp+392]
+	push	OFFSET $SG226005
+	xor	ebx, ebx
 	push	ecx
-	lea	edx, DWORD PTR $T235201[esp+108]
-	push	edx
-	mov	DWORD PTR $T235201[esp+112], eax
-	lea	eax, DWORD PTR _strBuffer$225523[esp+116]
-	push	OFFSET $SG225529
-	push	eax
-	call	??$GetLocalizedText@PBDPBD@@YA?AVCvString@@PBDABQBD1@Z ; GetLocalizedText<char const *,char const *>
+	mov	DWORD PTR __$EHRec$[esp+408], ebx
+	call	esi
 	add	esp, 16					; 00000010H
-	lea	ecx, DWORD PTR $T235202[esp+108]
-	mov	BYTE PTR __$EHRec$[esp+116], 3
-	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T235200[esp+108]
-	mov	BYTE PTR __$EHRec$[esp+116], 4
-	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
+	mov	ebp, DWORD PTR __imp_?PushArgument@String@Localization@@QAE_NPBD@Z
+	mov	edx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 
-; 4246 : 			GC.getGame().addReplayMessage(REPLAY_MESSAGE_MAJOR_EVENT, getLeaderID(), strBuffer, -1, -1);
+; 4248 : 		for(int iCurPlayer = 0; iCurPlayer < MAX_MAJOR_CIVS; ++iCurPlayer)
+; 4249 : 		{
+; 4250 : 			for(int iPlayer = 0; iPlayer < MAX_MAJOR_CIVS; ++iPlayer)
 
-	push	-1
-	push	-1
-	lea	ecx, DWORD PTR _strBuffer$225523[esp+116]
-	push	ecx
+	xor	edi, edi
+	mov	BYTE PTR __$EHRec$[esp+392], 1
+	mov	DWORD PTR _iCurPlayer$226006[esp+384], ebx
+	mov	DWORD PTR tv600[esp+384], ebx
+	mov	DWORD PTR _iPlayer$226010[esp+384], ebx
+	mov	DWORD PTR tv584[esp+384], edi
+	jmp	SHORT $LN15@SetHasDefe
+	npad	4
+$LL133@SetHasDefe:
+
+; 4244 : 	{
+; 4245 : 		// Someone made a Non-Aggression Pact, send out notifications to everyone
+; 4246 : 		Localization::String strText = Localization::Lookup("TXT_KEY_NOTIFICATION_NON_AGGRESSION");
+
+	xor	ebx, ebx
+
+; 4248 : 		for(int iCurPlayer = 0; iCurPlayer < MAX_MAJOR_CIVS; ++iCurPlayer)
+; 4249 : 		{
+; 4250 : 			for(int iPlayer = 0; iPlayer < MAX_MAJOR_CIVS; ++iPlayer)
+
+	xor	edi, edi
+	mov	DWORD PTR _iPlayer$226010[esp+384], ebx
+	mov	DWORD PTR tv584[esp+384], edi
+	jmp	SHORT $LN15@SetHasDefe
+	npad	2
+$LL134@SetHasDefe:
+	xor	ebx, ebx
+$LN15@SetHasDefe:
+
+; 4251 : 			{
+; 4252 : 				for(int jPlayer = 0; jPlayer < MAX_MAJOR_CIVS; ++jPlayer)
+
+	mov	DWORD PTR _jPlayer$226014[esp+384], ebx
+	mov	DWORD PTR tv562[esp+384], ebx
+	npad	6
+$LL135@SetHasDefe:
+
+; 4253 : 				{
+; 4254 : 					if (GET_PLAYER((PlayerTypes) iPlayer).getTeam() != eIndex || GET_PLAYER((PlayerTypes) jPlayer).getTeam() != /*GetTeam()->*/GetID())
+
+	mov	eax, DWORD PTR [edi+edx+44]
+	cmp	eax, 63					; 0000003fH
+	ja	SHORT $LN49@SetHasDefe
+	mov	ecx, DWORD PTR ?sr_TeamTypes@CvPreGame@@3ABV?$vector@W4TeamTypes@@V?$allocator@W4TeamTypes@@@std@@@std@@B ; CvPreGame::sr_TeamTypes
+	mov	ecx, DWORD PTR [ecx+4]
+	mov	eax, DWORD PTR [ecx+eax*4]
+	jmp	SHORT $LN50@SetHasDefe
+$LN49@SetHasDefe:
+	or	eax, -1
+$LN50@SetHasDefe:
+	cmp	eax, DWORD PTR _eIndex$[esp+380]
+	jne	$LN11@SetHasDefe
+	mov	eax, DWORD PTR [ebx+edx+44]
+	cmp	eax, 63					; 0000003fH
+	ja	SHORT $LN60@SetHasDefe
+	mov	ecx, DWORD PTR ?sr_TeamTypes@CvPreGame@@3ABV?$vector@W4TeamTypes@@V?$allocator@W4TeamTypes@@@std@@@std@@B ; CvPreGame::sr_TeamTypes
+	mov	ecx, DWORD PTR [ecx+4]
+	mov	eax, DWORD PTR [ecx+eax*4]
+	jmp	SHORT $LN61@SetHasDefe
+$LN60@SetHasDefe:
+	or	eax, -1
+$LN61@SetHasDefe:
+	mov	ecx, DWORD PTR _this$[esp+384]
+	cmp	eax, DWORD PTR [ecx+4]
+	jne	$LN11@SetHasDefe
+
+; 4255 : 						continue;
+; 4256 : 
+; 4257 : 					PlayerTypes eCurPlayer = (PlayerTypes) iCurPlayer;
+; 4258 : 					CvPlayerAI& kCurPlayer = GET_PLAYER(eCurPlayer);
+
+	mov	eax, DWORD PTR tv600[esp+384]
+	lea	esi, DWORD PTR [eax+edx]
+
+; 4259 : 					CvNotifications* pNotifications = GET_PLAYER(eCurPlayer).GetNotifications();
+
 	mov	ecx, esi
-	call	?getLeaderID@CvTeam@@QBE?AW4PlayerTypes@@XZ ; CvTeam::getLeaderID
-	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
-	push	eax
-	push	0
-	call	?addReplayMessage@CvGame@@QAEXW4ReplayMessageTypes@@W4PlayerTypes@@ABVCvString@@HH@Z ; CvGame::addReplayMessage
+	call	?GetNotifications@CvPlayer@@QBEPAVCvNotifications@@XZ ; CvPlayer::GetNotifications
 
-; 4247 : 		}
+; 4260 : 					if(iCurPlayer != iPlayer && iCurPlayer != jPlayer /*GetPlayer()->GetID() */&& pNotifications)
 
-	lea	ecx, DWORD PTR _strBuffer$225523[esp+108]
-	mov	DWORD PTR __$EHRec$[esp+116], -1
-	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
+	mov	ecx, DWORD PTR _iCurPlayer$226006[esp+384]
+	mov	DWORD PTR _pNotifications$226025[esp+384], eax
+	cmp	ecx, DWORD PTR _iPlayer$226010[esp+384]
+	je	$LN130@SetHasDefe
+	cmp	ecx, DWORD PTR _jPlayer$226014[esp+384]
+	je	$LN130@SetHasDefe
+	test	eax, eax
+	je	$LN130@SetHasDefe
+
+; 4261 : 					{
+; 4262 : 						const char* strThisPlayerName;
+; 4263 : 						const char* strOtherPlayerName;
+; 4264 : 
+; 4265 : 						CvTeam* pCurTeam = &GET_TEAM(kCurPlayer.getTeam());
+
+	mov	esi, DWORD PTR [esi+44]
+	cmp	esi, 63					; 0000003fH
+	ja	SHORT $LN75@SetHasDefe
+	mov	ecx, DWORD PTR ?sr_TeamTypes@CvPreGame@@3ABV?$vector@W4TeamTypes@@V?$allocator@W4TeamTypes@@@std@@@std@@B ; CvPreGame::sr_TeamTypes
+	mov	edx, DWORD PTR [ecx+4]
+	mov	eax, DWORD PTR [edx+esi*4]
+	jmp	SHORT $LN76@SetHasDefe
+$LN75@SetHasDefe:
+	or	eax, -1
+$LN76@SetHasDefe:
+
+; 4266 : 
+; 4267 : 						// Have we met these guys yet?
+; 4268 : 						bool bHasMetThisTeam = pCurTeam->isHasMet(GET_PLAYER((PlayerTypes) iPlayer).getTeam());
+
+	mov	edx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
+	imul	eax, 2984				; 00000ba8H
+	add	eax, DWORD PTR ?m_aTeams@CvTeam@@1PAV1@A ; CvTeam::m_aTeams
+	mov	esi, eax
+	mov	eax, DWORD PTR [edi+edx+44]
+	cmp	eax, 63					; 0000003fH
+	ja	SHORT $LN88@SetHasDefe
+	mov	ecx, DWORD PTR ?sr_TeamTypes@CvPreGame@@3ABV?$vector@W4TeamTypes@@V?$allocator@W4TeamTypes@@@std@@@std@@B ; CvPreGame::sr_TeamTypes
+	mov	ecx, DWORD PTR [ecx+4]
+	mov	eax, DWORD PTR [ecx+eax*4]
+	jmp	SHORT $LN89@SetHasDefe
+$LN88@SetHasDefe:
+	or	eax, -1
+$LN89@SetHasDefe:
+	mov	al, BYTE PTR [eax+esi+1848]
+	mov	BYTE PTR _bHasMetThisTeam$226030[esp+384], al
+
+; 4269 : 						if(bHasMetThisTeam)
+
+	test	al, al
+	je	SHORT $LN6@SetHasDefe
+
+; 4270 : 							strThisPlayerName = GET_PLAYER((PlayerTypes) iPlayer).getCivilizationShortDescriptionKey();
+
+	lea	ecx, DWORD PTR [edi+edx]
+	call	?getCivilizationShortDescriptionKey@CvPlayer@@QBEPBDXZ ; CvPlayer::getCivilizationShortDescriptionKey
+
+; 4271 : 						else
+
+	mov	edx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
+	mov	edi, eax
+	jmp	SHORT $LN5@SetHasDefe
+$LN6@SetHasDefe:
+
+; 4272 : 							strThisPlayerName = "TXT_KEY_UNMET_PLAYER";
+
+	mov	edi, OFFSET $SG226035
+$LN5@SetHasDefe:
+
+; 4273 : 
+; 4274 : 						bool bHasMetOtherTeam = pCurTeam->isHasMet(GET_PLAYER((PlayerTypes) jPlayer).getTeam());
+
+	mov	eax, DWORD PTR [ebx+edx+44]
+	lea	ecx, DWORD PTR [ebx+edx]
+	cmp	eax, 63					; 0000003fH
+	ja	SHORT $LN105@SetHasDefe
+	mov	ebx, DWORD PTR ?sr_TeamTypes@CvPreGame@@3ABV?$vector@W4TeamTypes@@V?$allocator@W4TeamTypes@@@std@@@std@@B ; CvPreGame::sr_TeamTypes
+	mov	ebx, DWORD PTR [ebx+4]
+	mov	eax, DWORD PTR [ebx+eax*4]
+	jmp	SHORT $LN106@SetHasDefe
+$LN105@SetHasDefe:
+	or	eax, -1
+$LN106@SetHasDefe:
+	mov	bl, BYTE PTR [eax+esi+1848]
+
+; 4275 : 						if(bHasMetOtherTeam)
+
+	test	bl, bl
+	je	SHORT $LN4@SetHasDefe
+
+; 4276 : 							strOtherPlayerName = GET_PLAYER((PlayerTypes) jPlayer).getCivilizationShortDescriptionKey();
+
+	call	?getCivilizationShortDescriptionKey@CvPlayer@@QBEPBDXZ ; CvPlayer::getCivilizationShortDescriptionKey
+
+; 4277 : 						else
+
+	mov	edx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
+	mov	esi, eax
+	jmp	SHORT $LN3@SetHasDefe
+$LN4@SetHasDefe:
+
+; 4278 : 							strOtherPlayerName = "TXT_KEY_UNMET_PLAYER";
+
+	mov	esi, OFFSET $SG226041
+$LN3@SetHasDefe:
+
+; 4279 : 
+; 4280 : 						//Only display notification if we've met one of the players.
+; 4281 : 						if(bHasMetThisTeam || bHasMetOtherTeam)
+
+	cmp	BYTE PTR _bHasMetThisTeam$226030[esp+384], 0
+	jne	SHORT $LN1@SetHasDefe
+	test	bl, bl
+	je	$LN132@SetHasDefe
 $LN1@SetHasDefe:
 
-; 4248 : 	}
-; 4249 : }
+; 4282 : 						{
+; 4283 : 							Localization::String tempInfoStr = strText;
 
-	mov	ecx, DWORD PTR __$EHRec$[esp+108]
-	pop	edi
+	mov	ebx, DWORD PTR __imp_??0String@Localization@@QAE@ABV01@@Z
+	lea	edx, DWORD PTR _strText$226000[esp+384]
+	push	edx
+	lea	ecx, DWORD PTR _tempInfoStr$226044[esp+388]
+	call	ebx
+
+; 4284 : 							tempInfoStr << strThisPlayerName << strOtherPlayerName;
+
+	push	edi
+	lea	ecx, DWORD PTR _tempInfoStr$226044[esp+388]
+	mov	BYTE PTR __$EHRec$[esp+396], 2
+	call	ebp
+	push	esi
+	lea	ecx, DWORD PTR _tempInfoStr$226044[esp+388]
+	call	ebp
+
+; 4285 : 							Localization::String tempSummaryStr = strSummary;
+
+	lea	eax, DWORD PTR _strSummary$226003[esp+384]
+	push	eax
+	lea	ecx, DWORD PTR _tempSummaryStr$226045[esp+388]
+	call	ebx
+
+; 4286 : 							tempSummaryStr << strThisPlayerName << strOtherPlayerName;
+
+	push	edi
+	lea	ecx, DWORD PTR _tempSummaryStr$226045[esp+388]
+	mov	BYTE PTR __$EHRec$[esp+396], 3
+	call	ebp
+	push	esi
+	lea	ecx, DWORD PTR _tempSummaryStr$226045[esp+388]
+	call	ebp
+
+; 4287 : 							pNotifications->Add(NOTIFICATION_DIPLOMACY_DECLARATION, tempInfoStr.toUTF8(), tempSummaryStr.toUTF8(), -1, -1, (PlayerTypes) iPlayer, (PlayerTypes) jPlayer);
+
+	mov	ecx, DWORD PTR _jPlayer$226014[esp+384]
+	mov	edx, DWORD PTR _iPlayer$226010[esp+384]
+	mov	esi, DWORD PTR __imp_?toUTF8@String@Localization@@QAEPBDXZ
+	push	ecx
+	push	edx
+	push	-1
+	push	-1
+	lea	ecx, DWORD PTR _tempSummaryStr$226045[esp+400]
+	call	esi
+	push	eax
+	lea	ecx, DWORD PTR _tempInfoStr$226044[esp+404]
+	call	esi
+	mov	ecx, DWORD PTR _pNotifications$226025[esp+404]
+	push	eax
+	push	1319111517				; 4ea00b5dH
+	call	?Add@CvNotifications@@QAEHW4NotificationTypes@@PBD1HHHH@Z ; CvNotifications::Add
+
+; 4288 : 						}
+
+	mov	esi, DWORD PTR __imp_??1String@Localization@@UAE@XZ
+	lea	ecx, DWORD PTR _tempSummaryStr$226045[esp+384]
+	mov	BYTE PTR __$EHRec$[esp+392], 2
+	call	esi
+	lea	ecx, DWORD PTR _tempInfoStr$226044[esp+384]
+	mov	BYTE PTR __$EHRec$[esp+392], 1
+	call	esi
+	mov	edx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
+$LN132@SetHasDefe:
+	mov	edi, DWORD PTR tv584[esp+384]
+	mov	ebx, DWORD PTR tv562[esp+384]
+$LN11@SetHasDefe:
+	inc	DWORD PTR _jPlayer$226014[esp+384]
+	add	ebx, 63236				; 0000f704H
+	cmp	ebx, 1391192				; 00153a58H
+	mov	DWORD PTR tv562[esp+384], ebx
+	jl	$LL135@SetHasDefe
+	inc	DWORD PTR _iPlayer$226010[esp+384]
+	add	edi, 63236				; 0000f704H
+	cmp	edi, 1391192				; 00153a58H
+	mov	DWORD PTR tv584[esp+384], edi
+	jl	$LL134@SetHasDefe
+	mov	eax, DWORD PTR tv600[esp+384]
+	inc	DWORD PTR _iCurPlayer$226006[esp+384]
+	add	eax, 63236				; 0000f704H
+	cmp	eax, 1391192				; 00153a58H
+	mov	DWORD PTR tv600[esp+384], eax
+	jl	$LL133@SetHasDefe
+
+; 4289 : 					}
+; 4290 : 				}
+; 4291 : 			}
+; 4292 : 		}
+; 4293 : 	}
+
+	mov	esi, DWORD PTR __imp_??1String@Localization@@UAE@XZ
+	lea	ecx, DWORD PTR _strSummary$226003[esp+384]
+	mov	BYTE PTR __$EHRec$[esp+392], 0
+	call	esi
+	lea	ecx, DWORD PTR _strText$226000[esp+384]
+	mov	DWORD PTR __$EHRec$[esp+392], -1
+	call	esi
+	pop	ebp
+$LN137@SetHasDefe:
 	pop	esi
+$LN19@SetHasDefe:
+
+; 4294 : #else
+; 4295 : 		if(bNewValue && !GET_TEAM(eIndex).IsHasDefensivePact(GetID()))
+; 4296 : 		{
+; 4297 : 			CvString strBuffer = GetLocalizedText("TXT_KEY_MISC_PLAYERS_SIGN_DEFENSIVE_PACT", getName().GetCString(), GET_TEAM(eIndex).getName().GetCString());
+; 4298 : 			GC.getGame().addReplayMessage(REPLAY_MESSAGE_MAJOR_EVENT, getLeaderID(), strBuffer, -1, -1);
+; 4299 : 		}
+; 4300 : #endif
+; 4301 : 	}
+; 4302 : }
+
+	mov	ecx, DWORD PTR __$EHRec$[esp+376]
+	pop	edi
 	pop	ebx
 	mov	DWORD PTR fs:0, ecx
-	add	esp, 96					; 00000060H
+	add	esp, 368				; 00000170H
 	ret	8
+$LN130@SetHasDefe:
+
+; 4288 : 						}
+
+	mov	edx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
+	jmp	$LN11@SetHasDefe
 _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?SetHasDefensivePact@CvTeam@@QAEXW4TeamTypes@@_N@Z$0:
-	lea	ecx, DWORD PTR $T235200[ebp]
-	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
+	lea	ecx, DWORD PTR _strText$226000[ebp]
+	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?SetHasDefensivePact@CvTeam@@QAEXW4TeamTypes@@_N@Z$1:
-	lea	ecx, DWORD PTR $T235202[ebp]
-	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
+	lea	ecx, DWORD PTR _strSummary$226003[ebp]
+	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?SetHasDefensivePact@CvTeam@@QAEXW4TeamTypes@@_N@Z$2:
-	lea	ecx, DWORD PTR _strBuffer$225523[ebp]
-	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
+	lea	ecx, DWORD PTR _tempInfoStr$226044[ebp]
+	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
+__unwindfunclet$?SetHasDefensivePact@CvTeam@@QAEXW4TeamTypes@@_N@Z$3:
+	lea	ecx, DWORD PTR _tempSummaryStr$226045[ebp]
+	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __ehhandler$?SetHasDefensivePact@CvTeam@@QAEXW4TeamTypes@@_N@Z:
 	mov	eax, OFFSET __ehfuncinfo$?SetHasDefensivePact@CvTeam@@QAEXW4TeamTypes@@_N@Z
 	jmp	___CxxFrameHandler3
@@ -17960,79 +18251,79 @@ _TEXT	SEGMENT
 ?GetTotalNumResearchAgreements@CvTeam@@QBEHXZ PROC	; CvTeam::GetTotalNumResearchAgreements, COMDAT
 ; _this$ = ecx
 
-; 4253 : {
+; 4305 : {
 
 	push	esi
 
-; 4254 : 	int iCount = 0;
+; 4306 : 	int iCount = 0;
 
 	mov	esi, DWORD PTR ?m_aTeams@CvTeam@@1PAV1@A ; CvTeam::m_aTeams
 	xor	eax, eax
 
-; 4255 : 
-; 4256 : 	TeamTypes eLoopTeam;
-; 4257 : 	for(int iTeamLoop = 0; iTeamLoop < MAX_CIV_TEAMS; iTeamLoop++)
+; 4307 : 
+; 4308 : 	TeamTypes eLoopTeam;
+; 4309 : 	for(int iTeamLoop = 0; iTeamLoop < MAX_CIV_TEAMS; iTeamLoop++)
 
 	xor	edx, edx
 	add	esi, 5980				; 0000175cH
 $LL5@GetTotalNu:
 
-; 4258 : 	{
-; 4259 : 		eLoopTeam = (TeamTypes) iTeamLoop;
-; 4260 : 
-; 4261 : 		if(GET_TEAM(eLoopTeam).isAlive())
+; 4310 : 	{
+; 4311 : 		eLoopTeam = (TeamTypes) iTeamLoop;
+; 4312 : 
+; 4313 : 		if(GET_TEAM(eLoopTeam).isAlive())
 
 	cmp	DWORD PTR [esi-5968], 0
 	jle	SHORT $LN4@GetTotalNu
 
-; 4262 : 		{
-; 4263 : 			if(IsHasResearchAgreement(eLoopTeam))
+; 4314 : 		{
+; 4315 : 			if(IsHasResearchAgreement(eLoopTeam))
 
 	cmp	BYTE PTR [edx+ecx+2328], 0
 	je	SHORT $LN4@GetTotalNu
 
-; 4264 : 			{
-; 4265 : 				iCount++;
+; 4316 : 			{
+; 4317 : 				iCount++;
 
 	inc	eax
 $LN4@GetTotalNu:
 
-; 4258 : 	{
-; 4259 : 		eLoopTeam = (TeamTypes) iTeamLoop;
-; 4260 : 
-; 4261 : 		if(GET_TEAM(eLoopTeam).isAlive())
+; 4310 : 	{
+; 4311 : 		eLoopTeam = (TeamTypes) iTeamLoop;
+; 4312 : 
+; 4313 : 		if(GET_TEAM(eLoopTeam).isAlive())
 
 	cmp	DWORD PTR [esi-2984], 0
 	jle	SHORT $LN19@GetTotalNu
 
-; 4262 : 		{
-; 4263 : 			if(IsHasResearchAgreement(eLoopTeam))
+; 4314 : 		{
+; 4315 : 			if(IsHasResearchAgreement(eLoopTeam))
 
 	cmp	BYTE PTR [edx+ecx+2329], 0
 	je	SHORT $LN19@GetTotalNu
 
-; 4264 : 			{
-; 4265 : 				iCount++;
+; 4316 : 			{
+; 4317 : 				iCount++;
 
 	inc	eax
 $LN19@GetTotalNu:
 
-; 4258 : 	{
-; 4259 : 		eLoopTeam = (TeamTypes) iTeamLoop;
-; 4260 : 
-; 4261 : 		if(GET_TEAM(eLoopTeam).isAlive())
+; 4310 : 	{
+; 4311 : 		eLoopTeam = (TeamTypes) iTeamLoop;
+; 4312 : 
+; 4313 : 		if(GET_TEAM(eLoopTeam).isAlive())
 
 	cmp	DWORD PTR [esi], 0
 	jle	SHORT $LN20@GetTotalNu
 
-; 4262 : 		{
-; 4263 : 			if(IsHasResearchAgreement(eLoopTeam))
+; 4314 : 		{
+; 4315 : 			if(IsHasResearchAgreement(eLoopTeam))
 
 	cmp	BYTE PTR [edx+ecx+2330], 0
 	je	SHORT $LN20@GetTotalNu
 
-; 4264 : 			{
-; 4265 : 				iCount++;
+; 4316 : 			{
+; 4317 : 				iCount++;
 
 	inc	eax
 $LN20@GetTotalNu:
@@ -18042,18 +18333,18 @@ $LN20@GetTotalNu:
 	jl	SHORT $LL5@GetTotalNu
 	pop	esi
 
-; 4266 : 			}
-; 4267 : 		}
-; 4268 : 	}
-; 4269 : 
-; 4270 : 	return iCount;
-; 4271 : }
+; 4318 : 			}
+; 4319 : 		}
+; 4320 : 	}
+; 4321 : 
+; 4322 : 	return iCount;
+; 4323 : }
 
 	ret	0
 ?GetTotalNumResearchAgreements@CvTeam@@QBEHXZ ENDP	; CvTeam::GetTotalNumResearchAgreements
 _TEXT	ENDS
 PUBLIC	?SetHasResearchAgreement@CvTeam@@QAEXW4TeamTypes@@_N@Z ; CvTeam::SetHasResearchAgreement
-EXTRN	?getCivilizationShortDescriptionKey@CvPlayer@@QBEPBDXZ:PROC ; CvPlayer::getCivilizationShortDescriptionKey
+EXTRN	?addReplayMessage@CvGame@@QAEXW4ReplayMessageTypes@@W4PlayerTypes@@ABVCvString@@HH@Z:PROC ; CvGame::addReplayMessage
 ;	COMDAT xdata$x
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredllutil\include\cvstring.h
 xdata$x	SEGMENT
@@ -18071,16 +18362,16 @@ __ehfuncinfo$?SetHasResearchAgreement@CvTeam@@QAEXW4TeamTypes@@_N@Z DD 019930522
 xdata$x	ENDS
 ;	COMDAT ?SetHasResearchAgreement@CvTeam@@QAEXW4TeamTypes@@_N@Z
 _TEXT	SEGMENT
-_strBuffer$225557 = -40					; size = 28
+_strBuffer$226075 = -40					; size = 28
 __$EHRec$ = -12						; size = 12
-_strLeaderName$225555 = 8				; size = 4
+_strLeaderName$226073 = 8				; size = 4
 _eIndex$ = 8						; size = 4
-_strOtherLeaderName$225556 = 12				; size = 4
+_strOtherLeaderName$226074 = 12				; size = 4
 _bNewValue$ = 12					; size = 1
 ?SetHasResearchAgreement@CvTeam@@QAEXW4TeamTypes@@_N@Z PROC ; CvTeam::SetHasResearchAgreement, COMDAT
 ; _this$ = ecx
 
-; 4284 : {
+; 4336 : {
 
 	mov	eax, DWORD PTR fs:0
 	push	-1
@@ -18090,10 +18381,10 @@ _bNewValue$ = 12					; size = 1
 	sub	esp, 28					; 0000001cH
 	push	ebx
 
-; 4285 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
-; 4286 : 	CvAssertMsg(eIndex < MAX_TEAMS, "eIndex is expected to be within maximum bounds (invalid Index)");
-; 4287 : 
-; 4288 : 	if(IsHasResearchAgreement(eIndex) != bNewValue)
+; 4337 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
+; 4338 : 	CvAssertMsg(eIndex < MAX_TEAMS, "eIndex is expected to be within maximum bounds (invalid Index)");
+; 4339 : 
+; 4340 : 	if(IsHasResearchAgreement(eIndex) != bNewValue)
 
 	mov	bl, BYTE PTR _bNewValue$[esp+40]
 	push	esi
@@ -18104,13 +18395,13 @@ _bNewValue$ = 12					; size = 1
 	cmp	al, bl
 	je	$LN1@SetHasRese
 
-; 4289 : 	{
-; 4290 : 		m_abResearchAgreement[eIndex] = bNewValue;
+; 4341 : 	{
+; 4342 : 		m_abResearchAgreement[eIndex] = bNewValue;
 
 	mov	BYTE PTR [edi+esi+2328], bl
 
-; 4291 : 
-; 4292 : 		if((GetID() == GC.getGame().getActiveTeam()) || (eIndex == GC.getGame().getActiveTeam()))
+; 4343 : 
+; 4344 : 		if((GetID() == GC.getGame().getActiveTeam()) || (eIndex == GC.getGame().getActiveTeam()))
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	ebp
@@ -18125,8 +18416,8 @@ _bNewValue$ = 12					; size = 1
 	jne	SHORT $LN3@SetHasRese
 $LN2@SetHasRese:
 
-; 4293 : 		{
-; 4294 : 			DLLUI->setDirty(Score_DIRTY_BIT, true);
+; 4345 : 		{
+; 4346 : 			DLLUI->setDirty(Score_DIRTY_BIT, true);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
 	mov	eax, DWORD PTR [ecx]
@@ -18136,9 +18427,9 @@ $LN2@SetHasRese:
 	call	edx
 $LN3@SetHasRese:
 
-; 4295 : 		}
-; 4296 : 
-; 4297 : 		if(bNewValue && !GET_TEAM(eIndex).IsHasResearchAgreement(GetID()))
+; 4347 : 		}
+; 4348 : 
+; 4349 : 		if(bNewValue && !GET_TEAM(eIndex).IsHasResearchAgreement(GetID()))
 
 	test	bl, bl
 	je	$LN1@SetHasRese
@@ -18149,8 +18440,8 @@ $LN3@SetHasRese:
 	cmp	BYTE PTR [edx+eax+2328], 0
 	jne	$LN1@SetHasRese
 
-; 4298 : 		{
-; 4299 : 			const char* strLeaderName = GET_PLAYER(getLeaderID()).getCivilizationShortDescriptionKey();
+; 4350 : 		{
+; 4351 : 			const char* strLeaderName = GET_PLAYER(getLeaderID()).getCivilizationShortDescriptionKey();
 
 	mov	ecx, esi
 	call	?getLeaderID@CvTeam@@QBE?AW4PlayerTypes@@XZ ; CvTeam::getLeaderID
@@ -18158,9 +18449,9 @@ $LN3@SetHasRese:
 	add	eax, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	mov	ecx, eax
 	call	?getCivilizationShortDescriptionKey@CvPlayer@@QBEPBDXZ ; CvPlayer::getCivilizationShortDescriptionKey
-	mov	DWORD PTR _strLeaderName$225555[esp+48], eax
+	mov	DWORD PTR _strLeaderName$226073[esp+48], eax
 
-; 4300 : 			const char* strOtherLeaderName = GET_PLAYER(GET_TEAM(eIndex).getLeaderID()).getCivilizationShortDescriptionKey();
+; 4352 : 			const char* strOtherLeaderName = GET_PLAYER(GET_TEAM(eIndex).getLeaderID()).getCivilizationShortDescriptionKey();
 
 	mov	eax, DWORD PTR ?m_aTeams@CvTeam@@1PAV1@A ; CvTeam::m_aTeams
 	lea	ecx, DWORD PTR [edi+eax]
@@ -18170,25 +18461,25 @@ $LN3@SetHasRese:
 	mov	ecx, eax
 	call	?getCivilizationShortDescriptionKey@CvPlayer@@QBEPBDXZ ; CvPlayer::getCivilizationShortDescriptionKey
 
-; 4301 : 
-; 4302 : 			CvString strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_RESEARCH_AGREEMENT", strLeaderName, strOtherLeaderName);
+; 4353 : 
+; 4354 : 			CvString strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_RESEARCH_AGREEMENT", strLeaderName, strOtherLeaderName);
 
-	lea	ecx, DWORD PTR _strOtherLeaderName$225556[esp+48]
+	lea	ecx, DWORD PTR _strOtherLeaderName$226074[esp+48]
 	push	ecx
-	lea	edx, DWORD PTR _strLeaderName$225555[esp+52]
+	lea	edx, DWORD PTR _strLeaderName$226073[esp+52]
 	push	edx
-	mov	DWORD PTR _strOtherLeaderName$225556[esp+56], eax
-	lea	eax, DWORD PTR _strBuffer$225557[esp+60]
-	push	OFFSET $SG225559
+	mov	DWORD PTR _strOtherLeaderName$226074[esp+56], eax
+	lea	eax, DWORD PTR _strBuffer$226075[esp+60]
+	push	OFFSET $SG226077
 	push	eax
 	call	??$GetLocalizedText@PBDPBD@@YA?AVCvString@@PBDABQBD1@Z ; GetLocalizedText<char const *,char const *>
 	add	esp, 16					; 00000010H
 
-; 4303 : 			GC.getGame().addReplayMessage(REPLAY_MESSAGE_MAJOR_EVENT, getLeaderID(), strBuffer, -1, -1);
+; 4355 : 			GC.getGame().addReplayMessage(REPLAY_MESSAGE_MAJOR_EVENT, getLeaderID(), strBuffer, -1, -1);
 
 	push	-1
 	push	-1
-	lea	ecx, DWORD PTR _strBuffer$225557[esp+60]
+	lea	ecx, DWORD PTR _strBuffer$226075[esp+60]
 	push	ecx
 	mov	ecx, esi
 	mov	DWORD PTR __$EHRec$[esp+72], 0
@@ -18198,15 +18489,15 @@ $LN3@SetHasRese:
 	push	0
 	call	?addReplayMessage@CvGame@@QAEXW4ReplayMessageTypes@@W4PlayerTypes@@ABVCvString@@HH@Z ; CvGame::addReplayMessage
 
-; 4304 : 		}
+; 4356 : 		}
 
-	lea	ecx, DWORD PTR _strBuffer$225557[esp+52]
+	lea	ecx, DWORD PTR _strBuffer$226075[esp+52]
 	mov	DWORD PTR __$EHRec$[esp+60], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 $LN1@SetHasRese:
 
-; 4305 : 	}
-; 4306 : }
+; 4357 : 	}
+; 4358 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+52]
 	pop	edi
@@ -18219,7 +18510,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?SetHasResearchAgreement@CvTeam@@QAEXW4TeamTypes@@_N@Z$0:
-	lea	ecx, DWORD PTR _strBuffer$225557[ebp]
+	lea	ecx, DWORD PTR _strBuffer$226075[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?SetHasResearchAgreement@CvTeam@@QAEXW4TeamTypes@@_N@Z:
 	mov	eax, OFFSET __ehfuncinfo$?SetHasResearchAgreement@CvTeam@@QAEXW4TeamTypes@@_N@Z
@@ -18252,18 +18543,18 @@ __unwindtable$?SetHasTradeAgreement@CvTeam@@QAEXW4TeamTypes@@_N@Z DD 0ffffffffH
 xdata$x	ENDS
 ;	COMDAT ?SetHasTradeAgreement@CvTeam@@QAEXW4TeamTypes@@_N@Z
 _TEXT	SEGMENT
-_strBuffer$225578 = -96					; size = 28
-$T235387 = -68						; size = 28
-$T235385 = -40						; size = 28
+_strBuffer$226096 = -96					; size = 28
+$T236054 = -68						; size = 28
+$T236052 = -40						; size = 28
 __$EHRec$ = -12						; size = 12
-$T235386 = 8						; size = 4
+$T236053 = 8						; size = 4
 _eIndex$ = 8						; size = 4
-$T235384 = 12						; size = 4
+$T236051 = 12						; size = 4
 _bNewValue$ = 12					; size = 1
 ?SetHasTradeAgreement@CvTeam@@QAEXW4TeamTypes@@_N@Z PROC ; CvTeam::SetHasTradeAgreement, COMDAT
 ; _this$ = ecx
 
-; 4328 : {
+; 4380 : {
 
 	mov	eax, DWORD PTR fs:0
 	push	-1
@@ -18273,10 +18564,10 @@ _bNewValue$ = 12					; size = 1
 	sub	esp, 84					; 00000054H
 	push	ebx
 
-; 4329 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
-; 4330 : 	CvAssertMsg(eIndex < MAX_TEAMS, "eIndex is expected to be within maximum bounds (invalid Index)");
-; 4331 : 
-; 4332 : 	if(IsHasTradeAgreement(eIndex) != bNewValue)
+; 4381 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
+; 4382 : 	CvAssertMsg(eIndex < MAX_TEAMS, "eIndex is expected to be within maximum bounds (invalid Index)");
+; 4383 : 
+; 4384 : 	if(IsHasTradeAgreement(eIndex) != bNewValue)
 
 	mov	bl, BYTE PTR _bNewValue$[esp+96]
 	push	esi
@@ -18287,13 +18578,13 @@ _bNewValue$ = 12					; size = 1
 	cmp	al, bl
 	je	$LN1@SetHasTrad
 
-; 4333 : 	{
-; 4334 : 		m_abTradeAgreement[eIndex] = bNewValue;
+; 4385 : 	{
+; 4386 : 		m_abTradeAgreement[eIndex] = bNewValue;
 
 	mov	BYTE PTR [edi+esi+2408], bl
 
-; 4335 : 
-; 4336 : 		if((GetID() == GC.getGame().getActiveTeam()) || (eIndex == GC.getGame().getActiveTeam()))
+; 4387 : 
+; 4388 : 		if((GetID() == GC.getGame().getActiveTeam()) || (eIndex == GC.getGame().getActiveTeam()))
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	ebp
@@ -18308,8 +18599,8 @@ _bNewValue$ = 12					; size = 1
 	jne	SHORT $LN3@SetHasTrad
 $LN2@SetHasTrad:
 
-; 4337 : 		{
-; 4338 : 			DLLUI->setDirty(Score_DIRTY_BIT, true);
+; 4389 : 		{
+; 4390 : 			DLLUI->setDirty(Score_DIRTY_BIT, true);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
 	mov	eax, DWORD PTR [ecx]
@@ -18319,9 +18610,9 @@ $LN2@SetHasTrad:
 	call	edx
 $LN3@SetHasTrad:
 
-; 4339 : 		}
-; 4340 : 
-; 4341 : 		if(bNewValue && !GET_TEAM(eIndex).IsHasTradeAgreement(GetID()))
+; 4391 : 		}
+; 4392 : 
+; 4393 : 		if(bNewValue && !GET_TEAM(eIndex).IsHasTradeAgreement(GetID()))
 
 	test	bl, bl
 	je	$LN1@SetHasTrad
@@ -18332,45 +18623,45 @@ $LN3@SetHasTrad:
 	cmp	BYTE PTR [ecx+eax+2408], 0
 	jne	$LN1@SetHasTrad
 
-; 4342 : 		{
-; 4343 : 			CvString strBuffer = GetLocalizedText("TXT_KEY_MISC_PLAYERS_SIGN_TRADE_AGREEMENT", getName().GetCString(), GET_TEAM(eIndex).getName().GetCString());
+; 4394 : 		{
+; 4395 : 			CvString strBuffer = GetLocalizedText("TXT_KEY_MISC_PLAYERS_SIGN_TRADE_AGREEMENT", getName().GetCString(), GET_TEAM(eIndex).getName().GetCString());
 
-	lea	edx, DWORD PTR $T235385[esp+108]
+	lea	edx, DWORD PTR $T236052[esp+108]
 	push	edx
 	call	?getName@CvTeam@@QBE?AVCvString@@XZ	; CvTeam::getName
 	mov	ecx, eax
 	mov	DWORD PTR __$EHRec$[esp+116], 0
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
-	mov	DWORD PTR $T235384[esp+104], eax
-	lea	eax, DWORD PTR $T235387[esp+108]
+	mov	DWORD PTR $T236051[esp+104], eax
+	lea	eax, DWORD PTR $T236054[esp+108]
 	push	eax
 	mov	ecx, esi
 	call	?getName@CvTeam@@QBE?AVCvString@@XZ	; CvTeam::getName
 	mov	ecx, eax
 	mov	BYTE PTR __$EHRec$[esp+116], 1
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
-	lea	ecx, DWORD PTR $T235384[esp+104]
+	lea	ecx, DWORD PTR $T236051[esp+104]
 	push	ecx
-	lea	edx, DWORD PTR $T235386[esp+108]
+	lea	edx, DWORD PTR $T236053[esp+108]
 	push	edx
-	mov	DWORD PTR $T235386[esp+112], eax
-	lea	eax, DWORD PTR _strBuffer$225578[esp+116]
-	push	OFFSET $SG225584
+	mov	DWORD PTR $T236053[esp+112], eax
+	lea	eax, DWORD PTR _strBuffer$226096[esp+116]
+	push	OFFSET $SG226102
 	push	eax
 	call	??$GetLocalizedText@PBDPBD@@YA?AVCvString@@PBDABQBD1@Z ; GetLocalizedText<char const *,char const *>
 	add	esp, 16					; 00000010H
-	lea	ecx, DWORD PTR $T235387[esp+108]
+	lea	ecx, DWORD PTR $T236054[esp+108]
 	mov	BYTE PTR __$EHRec$[esp+116], 3
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T235385[esp+108]
+	lea	ecx, DWORD PTR $T236052[esp+108]
 	mov	BYTE PTR __$EHRec$[esp+116], 4
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 4344 : 			GC.getGame().addReplayMessage(REPLAY_MESSAGE_MAJOR_EVENT, getLeaderID(), strBuffer, -1, -1);
+; 4396 : 			GC.getGame().addReplayMessage(REPLAY_MESSAGE_MAJOR_EVENT, getLeaderID(), strBuffer, -1, -1);
 
 	push	-1
 	push	-1
-	lea	ecx, DWORD PTR _strBuffer$225578[esp+116]
+	lea	ecx, DWORD PTR _strBuffer$226096[esp+116]
 	push	ecx
 	mov	ecx, esi
 	call	?getLeaderID@CvTeam@@QBE?AW4PlayerTypes@@XZ ; CvTeam::getLeaderID
@@ -18379,15 +18670,15 @@ $LN3@SetHasTrad:
 	push	0
 	call	?addReplayMessage@CvGame@@QAEXW4ReplayMessageTypes@@W4PlayerTypes@@ABVCvString@@HH@Z ; CvGame::addReplayMessage
 
-; 4345 : 		}
+; 4397 : 		}
 
-	lea	ecx, DWORD PTR _strBuffer$225578[esp+108]
+	lea	ecx, DWORD PTR _strBuffer$226096[esp+108]
 	mov	DWORD PTR __$EHRec$[esp+116], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 $LN1@SetHasTrad:
 
-; 4346 : 	}
-; 4347 : }
+; 4398 : 	}
+; 4399 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+108]
 	pop	edi
@@ -18400,13 +18691,13 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?SetHasTradeAgreement@CvTeam@@QAEXW4TeamTypes@@_N@Z$0:
-	lea	ecx, DWORD PTR $T235385[ebp]
+	lea	ecx, DWORD PTR $T236052[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?SetHasTradeAgreement@CvTeam@@QAEXW4TeamTypes@@_N@Z$1:
-	lea	ecx, DWORD PTR $T235387[ebp]
+	lea	ecx, DWORD PTR $T236054[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?SetHasTradeAgreement@CvTeam@@QAEXW4TeamTypes@@_N@Z$2:
-	lea	ecx, DWORD PTR _strBuffer$225578[ebp]
+	lea	ecx, DWORD PTR _strBuffer$226096[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?SetHasTradeAgreement@CvTeam@@QAEXW4TeamTypes@@_N@Z:
 	mov	eax, OFFSET __ehfuncinfo$?SetHasTradeAgreement@CvTeam@@QAEXW4TeamTypes@@_N@Z
@@ -18428,15 +18719,15 @@ _iChange$ = 12						; size = 4
 ?changeObsoleteBuildingCount@CvTeam@@QAEXW4BuildingTypes@@H@Z PROC ; CvTeam::changeObsoleteBuildingCount, COMDAT
 ; _this$ = ecx
 
-; 4921 : 	CvCity* pLoopCity;
-; 4922 : 	bool bOldObsoleteBuilding;
-; 4923 : 	int iLoop;
-; 4924 : 	int iI;
-; 4925 : 
-; 4926 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
-; 4927 : 	CvAssertMsg(eIndex < GC.getNumBuildingInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
-; 4928 : 
-; 4929 : 	if(iChange != 0)
+; 4973 : 	CvCity* pLoopCity;
+; 4974 : 	bool bOldObsoleteBuilding;
+; 4975 : 	int iLoop;
+; 4976 : 	int iI;
+; 4977 : 
+; 4978 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
+; 4979 : 	CvAssertMsg(eIndex < GC.getNumBuildingInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
+; 4980 : 
+; 4981 : 	if(iChange != 0)
 
 	mov	edx, DWORD PTR _iChange$[esp-4]
 	push	ebp
@@ -18444,22 +18735,22 @@ _iChange$ = 12						; size = 4
 	test	edx, edx
 	je	$LN7@changeObso
 
-; 4930 : 	{
-; 4931 : 		bOldObsoleteBuilding = isObsoleteBuilding(eIndex);
+; 4982 : 	{
+; 4983 : 		bOldObsoleteBuilding = isObsoleteBuilding(eIndex);
 
 	mov	eax, DWORD PTR [ebp+2936]
 	push	edi
 	mov	edi, DWORD PTR _eIndex$[esp+4]
 	mov	ecx, DWORD PTR [eax+edi*4]
 
-; 4932 : 
-; 4933 : 		m_paiObsoleteBuildingCount[eIndex] = (m_paiObsoleteBuildingCount[eIndex] + iChange);
+; 4984 : 
+; 4985 : 		m_paiObsoleteBuildingCount[eIndex] = (m_paiObsoleteBuildingCount[eIndex] + iChange);
 
 	add	DWORD PTR [eax+edi*4], edx
 
-; 4934 : 		CvAssert(getObsoleteBuildingCount(eIndex) >= 0);
-; 4935 : 
-; 4936 : 		if(bOldObsoleteBuilding != isObsoleteBuilding(eIndex))
+; 4986 : 		CvAssert(getObsoleteBuildingCount(eIndex) >= 0);
+; 4987 : 
+; 4988 : 		if(bOldObsoleteBuilding != isObsoleteBuilding(eIndex))
 
 	mov	edx, DWORD PTR [ebp+2936]
 	cmp	DWORD PTR [edx+edi*4], 0
@@ -18472,22 +18763,22 @@ _iChange$ = 12						; size = 4
 	push	ebx
 	push	esi
 
-; 4937 : 		{
-; 4938 : 			for(iI = 0; iI < MAX_PLAYERS; iI++)
+; 4989 : 		{
+; 4990 : 			for(iI = 0; iI < MAX_PLAYERS; iI++)
 
 	xor	ebx, ebx
 $LL56@changeObso:
 
-; 4939 : 			{
-; 4940 : 				if(GET_PLAYER((PlayerTypes)iI).isAlive())
+; 4991 : 			{
+; 4992 : 				if(GET_PLAYER((PlayerTypes)iI).isAlive())
 
 	mov	edx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	cmp	BYTE PTR [ebx+edx+2256], 0
 	lea	ecx, DWORD PTR [ebx+edx]
 	je	$LN8@changeObso
 
-; 4941 : 				{
-; 4942 : 					if(GET_PLAYER((PlayerTypes)iI).getTeam() == GetID())
+; 4993 : 				{
+; 4994 : 					if(GET_PLAYER((PlayerTypes)iI).getTeam() == GetID())
 
 	mov	eax, DWORD PTR [ecx+44]
 	cmp	eax, 63					; 0000003fH
@@ -18502,8 +18793,8 @@ $LN37@changeObso:
 	cmp	eax, DWORD PTR [ebp+4]
 	jne	$LN8@changeObso
 
-; 4943 : 					{
-; 4944 : 						for(pLoopCity = GET_PLAYER((PlayerTypes)iI).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER((PlayerTypes)iI).nextCity(&iLoop))
+; 4995 : 					{
+; 4996 : 						for(pLoopCity = GET_PLAYER((PlayerTypes)iI).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER((PlayerTypes)iI).nextCity(&iLoop))
 
 	push	0
 	lea	eax, DWORD PTR _iLoop$[esp+16]
@@ -18515,8 +18806,8 @@ $LN37@changeObso:
 	npad	4
 $LL4@changeObso:
 
-; 4945 : 						{
-; 4946 : 							if(pLoopCity->GetCityBuildings()->GetNumBuilding(eIndex) > 0)
+; 4997 : 						{
+; 4998 : 							if(pLoopCity->GetCityBuildings()->GetNumBuilding(eIndex) > 0)
 
 	push	edi
 	mov	ecx, esi
@@ -18526,8 +18817,8 @@ $LL4@changeObso:
 	test	eax, eax
 	jle	SHORT $LN3@changeObso
 
-; 4947 : 							{
-; 4948 : 								pLoopCity->processBuilding(eIndex, ((isObsoleteBuilding(eIndex)) ? -pLoopCity->GetCityBuildings()->GetNumBuilding(eIndex) : pLoopCity->GetCityBuildings()->GetNumBuilding(eIndex)), /*bFirst*/ false, /*bObsolete*/ true);
+; 4999 : 							{
+; 5000 : 								pLoopCity->processBuilding(eIndex, ((isObsoleteBuilding(eIndex)) ? -pLoopCity->GetCityBuildings()->GetNumBuilding(eIndex) : pLoopCity->GetCityBuildings()->GetNumBuilding(eIndex)), /*bFirst*/ false, /*bObsolete*/ true);
 
 	mov	ecx, DWORD PTR [ebp+2936]
 	cmp	DWORD PTR [ecx+edi*4], 0
@@ -18563,8 +18854,8 @@ $LN3@changeObso:
 	jne	SHORT $LL4@changeObso
 $LN8@changeObso:
 
-; 4937 : 		{
-; 4938 : 			for(iI = 0; iI < MAX_PLAYERS; iI++)
+; 4989 : 		{
+; 4990 : 			for(iI = 0; iI < MAX_PLAYERS; iI++)
 
 	add	ebx, 63236				; 0000f704H
 	cmp	ebx, 4047104				; 003dc100H
@@ -18576,14 +18867,14 @@ $LN57@changeObso:
 $LN7@changeObso:
 	pop	ebp
 
-; 4949 : 							}
-; 4950 : 						}
-; 4951 : 					}
-; 4952 : 				}
-; 4953 : 			}
-; 4954 : 		}
-; 4955 : 	}
-; 4956 : }
+; 5001 : 							}
+; 5002 : 						}
+; 5003 : 					}
+; 5004 : 				}
+; 5005 : 			}
+; 5006 : 		}
+; 5007 : 	}
+; 5008 : }
 
 	ret	8
 ?changeObsoleteBuildingCount@CvTeam@@QAEXW4BuildingTypes@@H@Z ENDP ; CvTeam::changeObsoleteBuildingCount
@@ -18598,7 +18889,7 @@ EXTRN	?getBuildingInfo@CvGlobals@@QAEPAVCvBuildingEntry@@W4BuildingTypes@@@Z:PRO
 ;	COMDAT ?enhanceBuilding@CvTeam@@QAEXW4BuildingTypes@@H@Z
 _TEXT	SEGMENT
 _this$ = -12						; size = 4
-_kPlayer$225892 = -8					; size = 4
+_kPlayer$226410 = -8					; size = 4
 _iLoop$ = -4						; size = 4
 _eIndex$ = 8						; size = 4
 tv258 = 12						; size = 4
@@ -18606,17 +18897,17 @@ _iChange$ = 12						; size = 4
 ?enhanceBuilding@CvTeam@@QAEXW4BuildingTypes@@H@Z PROC	; CvTeam::enhanceBuilding, COMDAT
 ; _this$ = ecx
 
-; 4961 : {
+; 5013 : {
 
 	sub	esp, 12					; 0000000cH
 
-; 4962 : 	CvCity* pLoopCity;
-; 4963 : 	int iLoop;
-; 4964 : 
-; 4965 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
-; 4966 : 	CvAssertMsg(eIndex < GC.getNumBuildingInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
-; 4967 : 
-; 4968 : 	CvBuildingEntry* thisBuildingEntry = GC.getBuildingInfo(eIndex);
+; 5014 : 	CvCity* pLoopCity;
+; 5015 : 	int iLoop;
+; 5016 : 
+; 5017 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
+; 5018 : 	CvAssertMsg(eIndex < GC.getNumBuildingInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
+; 5019 : 
+; 5020 : 	CvBuildingEntry* thisBuildingEntry = GC.getBuildingInfo(eIndex);
 
 	mov	eax, DWORD PTR _eIndex$[esp+8]
 	push	ebx
@@ -18626,23 +18917,23 @@ _iChange$ = 12						; size = 4
 	call	?getBuildingInfo@CvGlobals@@QAEPAVCvBuildingEntry@@W4BuildingTypes@@@Z ; CvGlobals::getBuildingInfo
 	mov	ebx, eax
 
-; 4969 : 	if(thisBuildingEntry == NULL)
+; 5021 : 	if(thisBuildingEntry == NULL)
 
 	test	ebx, ebx
 	je	$LN14@enhanceBui
 	push	ebp
 
-; 4970 : 		return;
-; 4971 : 
-; 4972 : 	if(iChange != 0)
+; 5022 : 		return;
+; 5023 : 
+; 5024 : 	if(iChange != 0)
 
 	mov	ebp, DWORD PTR _iChange$[esp+16]
 	test	ebp, ebp
 	je	$LN46@enhanceBui
 	push	esi
 
-; 4973 : 	{
-; 4974 : 		for(int i = 0; i < MAX_PLAYERS; i++)
+; 5025 : 	{
+; 5026 : 		for(int i = 0; i < MAX_PLAYERS; i++)
 
 	xor	esi, esi
 	push	edi
@@ -18650,21 +18941,21 @@ _iChange$ = 12						; size = 4
 	npad	10
 $LL45@enhanceBui:
 
-; 4975 : 		{
-; 4976 : 			CvPlayerAI& kPlayer = GET_PLAYER(static_cast<PlayerTypes>(i));
+; 5027 : 		{
+; 5028 : 			CvPlayerAI& kPlayer = GET_PLAYER(static_cast<PlayerTypes>(i));
 
 	mov	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	add	esi, ecx
 
-; 4977 : 
-; 4978 : 			if(kPlayer.isAlive())
+; 5029 : 
+; 5030 : 			if(kPlayer.isAlive())
 
 	cmp	BYTE PTR [esi+2256], 0
-	mov	DWORD PTR _kPlayer$225892[esp+28], esi
+	mov	DWORD PTR _kPlayer$226410[esp+28], esi
 	je	$LN15@enhanceBui
 
-; 4979 : 			{
-; 4980 : 				if(kPlayer.getTeam() == GetID())
+; 5031 : 			{
+; 5032 : 				if(kPlayer.getTeam() == GetID())
 
 	mov	eax, DWORD PTR [esi+44]
 	cmp	eax, 63					; 0000003fH
@@ -18680,8 +18971,8 @@ $LN32@enhanceBui:
 	cmp	eax, DWORD PTR [edx+4]
 	jne	$LN15@enhanceBui
 
-; 4981 : 				{
-; 4982 : 					for(pLoopCity = kPlayer.firstCity(&iLoop); pLoopCity != NULL; pLoopCity = kPlayer.nextCity(&iLoop))
+; 5033 : 				{
+; 5034 : 					for(pLoopCity = kPlayer.firstCity(&iLoop); pLoopCity != NULL; pLoopCity = kPlayer.nextCity(&iLoop))
 
 	push	0
 	lea	eax, DWORD PTR _iLoop$[esp+32]
@@ -18693,8 +18984,8 @@ $LN32@enhanceBui:
 	je	SHORT $LN15@enhanceBui
 $LL11@enhanceBui:
 
-; 4983 : 					{
-; 4984 : 						if(pLoopCity->GetCityBuildings()->GetNumBuilding(eIndex) > 0)
+; 5035 : 					{
+; 5036 : 						if(pLoopCity->GetCityBuildings()->GetNumBuilding(eIndex) > 0)
 
 	mov	ecx, DWORD PTR _eIndex$[esp+24]
 	push	ecx
@@ -18705,17 +18996,17 @@ $LL11@enhanceBui:
 	test	eax, eax
 	jle	SHORT $LN10@enhanceBui
 
-; 4985 : 						{
-; 4986 : 							for(int k = 0; k < NUM_YIELD_TYPES; k++)
+; 5037 : 						{
+; 5038 : 							for(int k = 0; k < NUM_YIELD_TYPES; k++)
 
 	xor	esi, esi
 	npad	4
 $LL7@enhanceBui:
 
-; 4987 : 							{
-; 4988 : 								if((YieldTypes)k == YIELD_CULTURE)
-; 4989 : 								{
-; 4990 : 									pLoopCity->ChangeJONSCulturePerTurnFromBuildings(thisBuildingEntry->GetTechEnhancedYieldChange(k) * iChange);
+; 5039 : 							{
+; 5040 : 								if((YieldTypes)k == YIELD_CULTURE)
+; 5041 : 								{
+; 5042 : 									pLoopCity->ChangeJONSCulturePerTurnFromBuildings(thisBuildingEntry->GetTechEnhancedYieldChange(k) * iChange);
 
 	mov	ecx, ebx
 	cmp	esi, 4
@@ -18729,14 +19020,14 @@ $LL7@enhanceBui:
 	jmp	SHORT $LN6@enhanceBui
 $LN4@enhanceBui:
 
-; 4991 : 								}
-; 4992 : 								else if((YieldTypes)k == YIELD_FAITH)
+; 5043 : 								}
+; 5044 : 								else if((YieldTypes)k == YIELD_FAITH)
 
 	cmp	esi, 5
 	jne	SHORT $LN2@enhanceBui
 
-; 4993 : 								{
-; 4994 : 									pLoopCity->ChangeFaithPerTurnFromBuildings(thisBuildingEntry->GetTechEnhancedYieldChange(k) * iChange);
+; 5045 : 								{
+; 5046 : 									pLoopCity->ChangeFaithPerTurnFromBuildings(thisBuildingEntry->GetTechEnhancedYieldChange(k) * iChange);
 
 	push	esi
 	call	?GetTechEnhancedYieldChange@CvBuildingEntry@@QBEHH@Z ; CvBuildingEntry::GetTechEnhancedYieldChange
@@ -18745,14 +19036,14 @@ $LN4@enhanceBui:
 	mov	ecx, edi
 	call	?ChangeFaithPerTurnFromBuildings@CvCity@@QAEXH@Z ; CvCity::ChangeFaithPerTurnFromBuildings
 
-; 4995 : 								}
-; 4996 : 								else
+; 5047 : 								}
+; 5048 : 								else
 
 	jmp	SHORT $LN6@enhanceBui
 $LN2@enhanceBui:
 
-; 4997 : 								{
-; 4998 : 									pLoopCity->ChangeBaseYieldRateFromBuildings(((YieldTypes)k), thisBuildingEntry->GetTechEnhancedYieldChange(k) * iChange);
+; 5049 : 								{
+; 5050 : 									pLoopCity->ChangeBaseYieldRateFromBuildings(((YieldTypes)k), thisBuildingEntry->GetTechEnhancedYieldChange(k) * iChange);
 
 	push	esi
 	call	?GetTechEnhancedYieldChange@CvBuildingEntry@@QBEHH@Z ; CvBuildingEntry::GetTechEnhancedYieldChange
@@ -18766,14 +19057,14 @@ $LN6@enhanceBui:
 	cmp	esi, 6
 	jl	SHORT $LL7@enhanceBui
 
-; 4985 : 						{
-; 4986 : 							for(int k = 0; k < NUM_YIELD_TYPES; k++)
+; 5037 : 						{
+; 5038 : 							for(int k = 0; k < NUM_YIELD_TYPES; k++)
 
-	mov	esi, DWORD PTR _kPlayer$225892[esp+28]
+	mov	esi, DWORD PTR _kPlayer$226410[esp+28]
 $LN10@enhanceBui:
 
-; 4981 : 				{
-; 4982 : 					for(pLoopCity = kPlayer.firstCity(&iLoop); pLoopCity != NULL; pLoopCity = kPlayer.nextCity(&iLoop))
+; 5033 : 				{
+; 5034 : 					for(pLoopCity = kPlayer.firstCity(&iLoop); pLoopCity != NULL; pLoopCity = kPlayer.nextCity(&iLoop))
 
 	push	0
 	lea	edx, DWORD PTR _iLoop$[esp+32]
@@ -18785,8 +19076,8 @@ $LN10@enhanceBui:
 	jne	SHORT $LL11@enhanceBui
 $LN15@enhanceBui:
 
-; 4973 : 	{
-; 4974 : 		for(int i = 0; i < MAX_PLAYERS; i++)
+; 5025 : 	{
+; 5026 : 		for(int i = 0; i < MAX_PLAYERS; i++)
 
 	mov	esi, DWORD PTR tv258[esp+24]
 	add	esi, 63236				; 0000f704H
@@ -18800,15 +19091,15 @@ $LN46@enhanceBui:
 $LN14@enhanceBui:
 	pop	ebx
 
-; 4999 : 								}
-; 5000 : 							}
-; 5001 : 						}
-; 5002 : 					}
-; 5003 : 				}
-; 5004 : 			}
-; 5005 : 		}
-; 5006 : 	}
-; 5007 : }
+; 5051 : 								}
+; 5052 : 							}
+; 5053 : 						}
+; 5054 : 					}
+; 5055 : 				}
+; 5056 : 			}
+; 5057 : 		}
+; 5058 : 	}
+; 5059 : }
 
 	add	esp, 12					; 0000000cH
 	ret	8
@@ -18822,13 +19113,13 @@ _TEXT	SEGMENT
 ?GetScore@CvTeam@@QBEHXZ PROC				; CvTeam::GetScore, COMDAT
 ; _this$ = ecx
 
-; 5200 : {
+; 5252 : {
 
 	push	ebx
 	push	esi
 	push	edi
 
-; 5201 : 	int iScore = 0;
+; 5253 : 	int iScore = 0;
 
 	xor	edi, edi
 	mov	ebx, ecx
@@ -18836,14 +19127,14 @@ _TEXT	SEGMENT
 	npad	7
 $LL4@GetScore:
 
-; 5202 : 
-; 5203 : 	// Sum up score for all players
-; 5204 : 	PlayerTypes ePlayer;
-; 5205 : 	for(int iPlayerLoop = 0; iPlayerLoop < MAX_MAJOR_CIVS; iPlayerLoop++)
-; 5206 : 	{
-; 5207 : 		ePlayer = (PlayerTypes) iPlayerLoop;
-; 5208 : 
-; 5209 : 		if(GET_PLAYER(ePlayer).getTeam() == GetID())
+; 5254 : 
+; 5255 : 	// Sum up score for all players
+; 5256 : 	PlayerTypes ePlayer;
+; 5257 : 	for(int iPlayerLoop = 0; iPlayerLoop < MAX_MAJOR_CIVS; iPlayerLoop++)
+; 5258 : 	{
+; 5259 : 		ePlayer = (PlayerTypes) iPlayerLoop;
+; 5260 : 
+; 5261 : 		if(GET_PLAYER(ePlayer).getTeam() == GetID())
 
 	mov	eax, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	lea	ecx, DWORD PTR [esi+eax]
@@ -18860,8 +19151,8 @@ $LN14@GetScore:
 	cmp	eax, DWORD PTR [ebx+4]
 	jne	SHORT $LN3@GetScore
 
-; 5210 : 		{
-; 5211 : 			iScore += GET_PLAYER(ePlayer).GetScore();
+; 5262 : 		{
+; 5263 : 			iScore += GET_PLAYER(ePlayer).GetScore();
 
 	push	0
 	push	0
@@ -18872,17 +19163,17 @@ $LN3@GetScore:
 	cmp	esi, 1391192				; 00153a58H
 	jl	SHORT $LL4@GetScore
 
-; 5212 : 		}
-; 5213 : 	}
-; 5214 : 
-; 5215 : 	return iScore;
+; 5264 : 		}
+; 5265 : 	}
+; 5266 : 
+; 5267 : 	return iScore;
 
 	mov	eax, edi
 	pop	edi
 	pop	esi
 	pop	ebx
 
-; 5216 : }
+; 5268 : }
 
 	ret	0
 ?GetScore@CvTeam@@QBEHXZ ENDP				; CvTeam::GetScore
@@ -18930,26 +19221,26 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 _bShouldShowNotification$ = -177			; size = 1
 _this$ = -176						; size = 4
-$T235660 = -172						; size = 4
-$T235656 = -172						; size = 4
-_iSmallAwardLoop$226051 = -172				; size = 4
+$T236327 = -172						; size = 4
+$T236323 = -172						; size = 4
+_iSmallAwardLoop$226569 = -172				; size = 4
 _iNotificationData$ = -168				; size = 4
 _iNotificationX$ = -164					; size = 4
 _iNotificationY$ = -160					; size = 4
 _iCityLoop$ = -156					; size = 4
-$T235662 = -152						; size = 28
-$T235659 = -152						; size = 28
-$T235657 = -152						; size = 28
-_strSummary$226080 = -124				; size = 28
-_strBuffer$226079 = -96					; size = 28
-$T235661 = -68						; size = 28
-$T235658 = -68						; size = 28
-$T235663 = -40						; size = 28
+$T236329 = -152						; size = 28
+$T236326 = -152						; size = 28
+$T236324 = -152						; size = 28
+_strSummary$226598 = -124				; size = 28
+_strBuffer$226597 = -96					; size = 28
+$T236328 = -68						; size = 28
+$T236325 = -68						; size = 28
+$T236330 = -40						; size = 28
 __$EHRec$ = -12						; size = 12
 ?DoTestSmallAwards@CvTeam@@QAEXXZ PROC			; CvTeam::DoTestSmallAwards, COMDAT
 ; _this$ = ecx
 
-; 5233 : {
+; 5285 : {
 
 	push	-1
 	push	__ehhandler$?DoTestSmallAwards@CvTeam@@QAEXXZ
@@ -18960,7 +19251,7 @@ __$EHRec$ = -12						; size = 12
 	push	esi
 	mov	esi, ecx
 
-; 5234 : 	if(!isAlive() || isMinorCiv())
+; 5286 : 	if(!isAlive() || isMinorCiv())
 
 	cmp	DWORD PTR [esi+12], 0
 	mov	DWORD PTR _this$[esp+184], esi
@@ -18970,30 +19261,30 @@ __$EHRec$ = -12						; size = 12
 	jne	$LN30@DoTestSmal
 	push	ebp
 
-; 5235 : 	{
-; 5236 : 		return;
-; 5237 : 	}
-; 5238 : 
-; 5239 : 	int iPlayerLoop;
-; 5240 : 	PlayerTypes ePlayer;
-; 5241 : 
-; 5242 : 	CvCity* pLoopCity;
-; 5243 : 	int iCityLoop;
-; 5244 : 
-; 5245 : 	int iAwardRequirement;
-; 5246 : 
-; 5247 : 	bool bShouldShowNotification;
-; 5248 : 	int iNotificationData;
-; 5249 : 	int iNotificationX, iNotificationY;
-; 5250 : 
-; 5251 : #ifdef AUI_WARNING_FIXES
-; 5252 : 	for (uint iSmallAwardLoop = 0; iSmallAwardLoop < GC.getNumSmallAwardInfos(); iSmallAwardLoop++)
-; 5253 : #else
-; 5254 : 	for(int iSmallAwardLoop = 0; iSmallAwardLoop < GC.getNumSmallAwardInfos(); iSmallAwardLoop++)
+; 5287 : 	{
+; 5288 : 		return;
+; 5289 : 	}
+; 5290 : 
+; 5291 : 	int iPlayerLoop;
+; 5292 : 	PlayerTypes ePlayer;
+; 5293 : 
+; 5294 : 	CvCity* pLoopCity;
+; 5295 : 	int iCityLoop;
+; 5296 : 
+; 5297 : 	int iAwardRequirement;
+; 5298 : 
+; 5299 : 	bool bShouldShowNotification;
+; 5300 : 	int iNotificationData;
+; 5301 : 	int iNotificationX, iNotificationY;
+; 5302 : 
+; 5303 : #ifdef AUI_WARNING_FIXES
+; 5304 : 	for (uint iSmallAwardLoop = 0; iSmallAwardLoop < GC.getNumSmallAwardInfos(); iSmallAwardLoop++)
+; 5305 : #else
+; 5306 : 	for(int iSmallAwardLoop = 0; iSmallAwardLoop < GC.getNumSmallAwardInfos(); iSmallAwardLoop++)
 
 	xor	ebp, ebp
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	mov	DWORD PTR _iSmallAwardLoop$226051[esp+188], ebp
+	mov	DWORD PTR _iSmallAwardLoop$226569[esp+188], ebp
 	call	?getNumSmallAwardInfos@CvGlobals@@QAEHXZ ; CvGlobals::getNumSmallAwardInfos
 	test	eax, eax
 	jle	$LN195@DoTestSmal
@@ -19004,46 +19295,46 @@ $LL193@DoTestSmal:
 	mov	esi, DWORD PTR _this$[esp+196]
 $LN29@DoTestSmal:
 
-; 5255 : #endif
-; 5256 : 	{
-; 5257 : 		SmallAwardTypes eAward = static_cast<SmallAwardTypes>(iSmallAwardLoop);
-; 5258 : 		CvSmallAwardInfo* pkSmallAwardInfo = GC.getSmallAwardInfo(eAward);
+; 5307 : #endif
+; 5308 : 	{
+; 5309 : 		SmallAwardTypes eAward = static_cast<SmallAwardTypes>(iSmallAwardLoop);
+; 5310 : 		CvSmallAwardInfo* pkSmallAwardInfo = GC.getSmallAwardInfo(eAward);
 
 	push	ebp
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getSmallAwardInfo@CvGlobals@@QAEPAVCvSmallAwardInfo@@W4SmallAwardTypes@@@Z ; CvGlobals::getSmallAwardInfo
 	mov	edi, eax
 
-; 5259 : 		if(pkSmallAwardInfo)
+; 5311 : 		if(pkSmallAwardInfo)
 
 	test	edi, edi
 	je	$LN28@DoTestSmal
 
-; 5260 : 		{
-; 5261 : 			bShouldShowNotification = false;
-; 5262 : 			iNotificationX = -1;
+; 5312 : 		{
+; 5313 : 			bShouldShowNotification = false;
+; 5314 : 			iNotificationX = -1;
 
 	or	eax, -1
 	mov	DWORD PTR _iNotificationX$[esp+196], eax
 
-; 5263 : 			iNotificationY = -1;
+; 5315 : 			iNotificationY = -1;
 
 	mov	DWORD PTR _iNotificationY$[esp+196], eax
 
-; 5264 : 
-; 5265 : 			if(!IsSmallAwardAchieved(eAward))
+; 5316 : 
+; 5317 : 			if(!IsSmallAwardAchieved(eAward))
 
 	mov	eax, DWORD PTR [esi+2904]
 	cmp	BYTE PTR [eax+ebp], 0
 	mov	BYTE PTR _bShouldShowNotification$[esp+196], 0
 	jne	$LN28@DoTestSmal
 
-; 5266 : 			{
-; 5267 : 				// Cities
-; 5268 : #ifdef AUI_WARNING_FIXES
-; 5269 : 				iAwardRequirement = pkSmallAwardInfo->GetNumCities();
-; 5270 : #else
-; 5271 : 				iAwardRequirement = GC.getSmallAwardInfo(eAward)->GetNumCities();
+; 5318 : 			{
+; 5319 : 				// Cities
+; 5320 : #ifdef AUI_WARNING_FIXES
+; 5321 : 				iAwardRequirement = pkSmallAwardInfo->GetNumCities();
+; 5322 : #else
+; 5323 : 				iAwardRequirement = GC.getSmallAwardInfo(eAward)->GetNumCities();
 
 	push	ebp
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
@@ -19052,23 +19343,23 @@ $LN29@DoTestSmal:
 	call	?GetNumCities@CvSmallAwardInfo@@QBEHXZ	; CvSmallAwardInfo::GetNumCities
 	mov	ebx, eax
 
-; 5272 : #endif
-; 5273 : 				if(iAwardRequirement > 0)
+; 5324 : #endif
+; 5325 : 				if(iAwardRequirement > 0)
 
 	test	ebx, ebx
 	jle	$LN190@DoTestSmal
 
-; 5274 : 				{
-; 5275 : 					for(iPlayerLoop = 0; iPlayerLoop < MAX_MAJOR_CIVS; iPlayerLoop++)
+; 5326 : 				{
+; 5327 : 					for(iPlayerLoop = 0; iPlayerLoop < MAX_MAJOR_CIVS; iPlayerLoop++)
 
 	xor	esi, esi
 	npad	3
 $LL23@DoTestSmal:
 
-; 5276 : 					{
-; 5277 : 						ePlayer = (PlayerTypes) iPlayerLoop;
-; 5278 : 
-; 5279 : 						if(GET_PLAYER(ePlayer).getTeam() == GetID())
+; 5328 : 					{
+; 5329 : 						ePlayer = (PlayerTypes) iPlayerLoop;
+; 5330 : 
+; 5331 : 						if(GET_PLAYER(ePlayer).getTeam() == GetID())
 
 	mov	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	mov	eax, DWORD PTR [ecx+esi+44]
@@ -19086,24 +19377,24 @@ $LN53@DoTestSmal:
 	cmp	eax, DWORD PTR [edx+4]
 	jne	$LN22@DoTestSmal
 
-; 5280 : 						{
-; 5281 : 							if(GET_PLAYER(ePlayer).getNumCities() >= iAwardRequirement)
+; 5332 : 						{
+; 5333 : 							if(GET_PLAYER(ePlayer).getNumCities() >= iAwardRequirement)
 
 	call	?getNumCities@CvPlayer@@QBEHXZ		; CvPlayer::getNumCities
 	cmp	eax, ebx
 	jl	SHORT $LN22@DoTestSmal
 
-; 5282 : 							{
-; 5283 : 								SetSmallAwardAchieved(eAward, true);
+; 5334 : 							{
+; 5335 : 								SetSmallAwardAchieved(eAward, true);
 
 	mov	eax, DWORD PTR _this$[esp+196]
 	mov	ecx, DWORD PTR [eax+2904]
 	mov	BYTE PTR [ecx+ebp], 1
 
-; 5284 : #ifdef AUI_WARNING_FIXES
-; 5285 : 								changeVictoryPoints(pkSmallAwardInfo->GetNumVictoryPoints());
-; 5286 : #else
-; 5287 : 								changeVictoryPoints(GC.getSmallAwardInfo(eAward)->GetNumVictoryPoints());
+; 5336 : #ifdef AUI_WARNING_FIXES
+; 5337 : 								changeVictoryPoints(pkSmallAwardInfo->GetNumVictoryPoints());
+; 5338 : #else
+; 5339 : 								changeVictoryPoints(GC.getSmallAwardInfo(eAward)->GetNumVictoryPoints());
 
 	push	ebp
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
@@ -19116,12 +19407,12 @@ $LN53@DoTestSmal:
 	add	DWORD PTR [ecx+92], eax
 $LN63@DoTestSmal:
 
-; 5288 : #endif
-; 5289 : 
-; 5290 : 								bShouldShowNotification = true;
-; 5291 : 								iNotificationData = iAwardRequirement;
-; 5292 : 
-; 5293 : 								if(GET_PLAYER(ePlayer).getCapitalCity() != NULL)
+; 5340 : #endif
+; 5341 : 
+; 5342 : 								bShouldShowNotification = true;
+; 5343 : 								iNotificationData = iAwardRequirement;
+; 5344 : 
+; 5345 : 								if(GET_PLAYER(ePlayer).getCapitalCity() != NULL)
 
 	mov	edx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	lea	ecx, DWORD PTR [esi+edx]
@@ -19131,15 +19422,15 @@ $LN63@DoTestSmal:
 	test	eax, eax
 	je	SHORT $LN22@DoTestSmal
 
-; 5294 : 								{
-; 5295 : 									iNotificationX = GET_PLAYER(ePlayer).getCapitalCity()->getX();
+; 5346 : 								{
+; 5347 : 									iNotificationX = GET_PLAYER(ePlayer).getCapitalCity()->getX();
 
 	mov	eax, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	lea	ecx, DWORD PTR [esi+eax]
 	call	?getCapitalCity@CvPlayer@@QAEPAVCvCity@@XZ ; CvPlayer::getCapitalCity
 	mov	ecx, DWORD PTR [eax+96]
 
-; 5296 : 									iNotificationY = GET_PLAYER(ePlayer).getCapitalCity()->getY();
+; 5348 : 									iNotificationY = GET_PLAYER(ePlayer).getCapitalCity()->getY();
 
 	mov	edx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	mov	DWORD PTR _iNotificationX$[esp+196], ecx
@@ -19153,35 +19444,35 @@ $LN22@DoTestSmal:
 	jl	$LL23@DoTestSmal
 $LN190@DoTestSmal:
 
-; 5297 : 								}
-; 5298 : 							}
-; 5299 : 						}
-; 5300 : 					}
-; 5301 : 				}
-; 5302 : 
-; 5303 : 				// Population
-; 5304 : 				iAwardRequirement = pkSmallAwardInfo->GetCityPopulation();
+; 5349 : 								}
+; 5350 : 							}
+; 5351 : 						}
+; 5352 : 					}
+; 5353 : 				}
+; 5354 : 
+; 5355 : 				// Population
+; 5356 : 				iAwardRequirement = pkSmallAwardInfo->GetCityPopulation();
 
 	mov	ecx, edi
 	call	?GetCityPopulation@CvSmallAwardInfo@@QBEHXZ ; CvSmallAwardInfo::GetCityPopulation
 	mov	ebx, eax
 
-; 5305 : 				if(iAwardRequirement > 0)
+; 5357 : 				if(iAwardRequirement > 0)
 
 	test	ebx, ebx
 	jle	$LN14@DoTestSmal
 
-; 5306 : 				{
-; 5307 : 					for(iPlayerLoop = 0; iPlayerLoop < MAX_MAJOR_CIVS; iPlayerLoop++)
+; 5358 : 				{
+; 5359 : 					for(iPlayerLoop = 0; iPlayerLoop < MAX_MAJOR_CIVS; iPlayerLoop++)
 
 	xor	ebp, ebp
 	npad	4
 $LL16@DoTestSmal:
 
-; 5308 : 					{
-; 5309 : 						ePlayer = (PlayerTypes) iPlayerLoop;
-; 5310 : 
-; 5311 : 						if(GET_PLAYER(ePlayer).getTeam() == GetID())
+; 5360 : 					{
+; 5361 : 						ePlayer = (PlayerTypes) iPlayerLoop;
+; 5362 : 
+; 5363 : 						if(GET_PLAYER(ePlayer).getTeam() == GetID())
 
 	mov	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	mov	eax, DWORD PTR [ecx+ebp+44]
@@ -19199,9 +19490,9 @@ $LN87@DoTestSmal:
 	cmp	eax, DWORD PTR [edx+4]
 	jne	SHORT $LN15@DoTestSmal
 
-; 5312 : 						{
-; 5313 : 							// Check all Cities
-; 5314 : 							for(pLoopCity = GET_PLAYER(ePlayer).firstCity(&iCityLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(ePlayer).nextCity(&iCityLoop))
+; 5364 : 						{
+; 5365 : 							// Check all Cities
+; 5366 : 							for(pLoopCity = GET_PLAYER(ePlayer).firstCity(&iCityLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(ePlayer).nextCity(&iCityLoop))
 
 	push	0
 	lea	eax, DWORD PTR _iCityLoop$[esp+200]
@@ -19213,22 +19504,22 @@ $LN87@DoTestSmal:
 	npad	3
 $LL12@DoTestSmal:
 
-; 5315 : 							{
-; 5316 : 								if(pLoopCity->getPopulation() >= iAwardRequirement)
+; 5367 : 							{
+; 5368 : 								if(pLoopCity->getPopulation() >= iAwardRequirement)
 
 	mov	ecx, esi
 	call	?getPopulation@CvCity@@QBEHXZ		; CvCity::getPopulation
 	cmp	eax, ebx
 	jl	SHORT $LN11@DoTestSmal
 
-; 5317 : 								{
-; 5318 : 									SetSmallAwardAchieved(eAward, true);
+; 5369 : 								{
+; 5370 : 									SetSmallAwardAchieved(eAward, true);
 
 	mov	ecx, DWORD PTR _this$[esp+196]
 	mov	edx, DWORD PTR [ecx+2904]
-	mov	eax, DWORD PTR _iSmallAwardLoop$226051[esp+196]
+	mov	eax, DWORD PTR _iSmallAwardLoop$226569[esp+196]
 
-; 5319 : 									changeVictoryPoints(pkSmallAwardInfo->GetNumVictoryPoints());
+; 5371 : 									changeVictoryPoints(pkSmallAwardInfo->GetNumVictoryPoints());
 
 	mov	ecx, edi
 	mov	BYTE PTR [eax+edx], 1
@@ -19239,14 +19530,14 @@ $LL12@DoTestSmal:
 	add	DWORD PTR [ecx+92], eax
 $LN99@DoTestSmal:
 
-; 5320 : 
-; 5321 : 									bShouldShowNotification = true;
-; 5322 : 									iNotificationData = iAwardRequirement;
-; 5323 : 									iNotificationX = pLoopCity->getX();
+; 5372 : 
+; 5373 : 									bShouldShowNotification = true;
+; 5374 : 									iNotificationData = iAwardRequirement;
+; 5375 : 									iNotificationX = pLoopCity->getX();
 
 	mov	ecx, DWORD PTR [esi+96]
 
-; 5324 : 									iNotificationY = pLoopCity->getY();
+; 5376 : 									iNotificationY = pLoopCity->getY();
 
 	mov	edx, DWORD PTR [esi+108]
 	mov	BYTE PTR _bShouldShowNotification$[esp+196], 1
@@ -19265,48 +19556,48 @@ $LN11@DoTestSmal:
 	jne	SHORT $LL12@DoTestSmal
 $LN15@DoTestSmal:
 
-; 5306 : 				{
-; 5307 : 					for(iPlayerLoop = 0; iPlayerLoop < MAX_MAJOR_CIVS; iPlayerLoop++)
+; 5358 : 				{
+; 5359 : 					for(iPlayerLoop = 0; iPlayerLoop < MAX_MAJOR_CIVS; iPlayerLoop++)
 
 	add	ebp, 63236				; 0000f704H
 	cmp	ebp, 1391192				; 00153a58H
 	jl	$LL16@DoTestSmal
-	mov	ebp, DWORD PTR _iSmallAwardLoop$226051[esp+196]
+	mov	ebp, DWORD PTR _iSmallAwardLoop$226569[esp+196]
 $LN14@DoTestSmal:
 
-; 5325 : 								}
-; 5326 : 							}
-; 5327 : 						}
-; 5328 : 					}
-; 5329 : 				}
-; 5330 : 
-; 5331 : 				// Give notification to all players on this team
-; 5332 : 				if(bShouldShowNotification)
+; 5377 : 								}
+; 5378 : 							}
+; 5379 : 						}
+; 5380 : 					}
+; 5381 : 				}
+; 5382 : 
+; 5383 : 				// Give notification to all players on this team
+; 5384 : 				if(bShouldShowNotification)
 
 	cmp	BYTE PTR _bShouldShowNotification$[esp+196], 0
 	je	$LN28@DoTestSmal
 
-; 5333 : 				{
-; 5334 : 					CvString strBuffer;
+; 5385 : 				{
+; 5386 : 					CvString strBuffer;
 
-	lea	ecx, DWORD PTR _strBuffer$226079[esp+196]
+	lea	ecx, DWORD PTR _strBuffer$226597[esp+196]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 	xor	ebx, ebx
 
-; 5335 : 					CvString strSummary;
+; 5387 : 					CvString strSummary;
 
-	lea	ecx, DWORD PTR _strSummary$226080[esp+196]
+	lea	ecx, DWORD PTR _strSummary$226598[esp+196]
 	mov	DWORD PTR __$EHRec$[esp+204], ebx
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 	mov	BYTE PTR __$EHRec$[esp+204], 1
 	npad	10
 $LL7@DoTestSmal:
 
-; 5336 : 					for(iPlayerLoop = 0; iPlayerLoop < MAX_MAJOR_CIVS; iPlayerLoop++)
-; 5337 : 					{
-; 5338 : 						ePlayer = (PlayerTypes) iPlayerLoop;
-; 5339 : 
-; 5340 : 						if(GET_PLAYER(ePlayer).getTeam() == GetID())
+; 5388 : 					for(iPlayerLoop = 0; iPlayerLoop < MAX_MAJOR_CIVS; iPlayerLoop++)
+; 5389 : 					{
+; 5390 : 						ePlayer = (PlayerTypes) iPlayerLoop;
+; 5391 : 
+; 5392 : 						if(GET_PLAYER(ePlayer).getTeam() == GetID())
 
 	mov	eax, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	lea	ecx, DWORD PTR [ebx+eax]
@@ -19324,133 +19615,133 @@ $LN123@DoTestSmal:
 	cmp	eax, DWORD PTR [edx+4]
 	jne	$LN6@DoTestSmal
 
-; 5341 : 						{
-; 5342 : 							CvNotifications* pNotifications = GET_PLAYER(ePlayer).GetNotifications();
+; 5393 : 						{
+; 5394 : 							CvNotifications* pNotifications = GET_PLAYER(ePlayer).GetNotifications();
 
 	call	?GetNotifications@CvPlayer@@QBEPAVCvNotifications@@XZ ; CvPlayer::GetNotifications
 	mov	esi, eax
 
-; 5343 : 							if(pNotifications)
+; 5395 : 							if(pNotifications)
 
 	test	esi, esi
 	je	$LN6@DoTestSmal
 
-; 5344 : 							{
-; 5345 : 								if(getNumMembers() == 1)
+; 5396 : 							{
+; 5397 : 								if(getNumMembers() == 1)
 
 	mov	eax, DWORD PTR _this$[esp+196]
 	cmp	DWORD PTR [eax+8], 1
 
-; 5346 : 								{
-; 5347 : 									strBuffer = GetLocalizedText(pkSmallAwardInfo->GetNotificationString(), iNotificationData, pkSmallAwardInfo->GetNumVictoryPoints());
+; 5398 : 								{
+; 5399 : 									strBuffer = GetLocalizedText(pkSmallAwardInfo->GetNotificationString(), iNotificationData, pkSmallAwardInfo->GetNumVictoryPoints());
 
 	mov	ecx, edi
 	jne	$LN2@DoTestSmal
 	call	?GetNumVictoryPoints@CvSmallAwardInfo@@QBEHXZ ; CvSmallAwardInfo::GetNumVictoryPoints
-	lea	ecx, DWORD PTR $T235657[esp+196]
+	lea	ecx, DWORD PTR $T236324[esp+196]
 	push	ecx
 	mov	ecx, edi
-	mov	DWORD PTR $T235656[esp+200], eax
+	mov	DWORD PTR $T236323[esp+200], eax
 	call	?GetNotificationString@CvSmallAwardInfo@@QBE?AVCvString@@XZ ; CvSmallAwardInfo::GetNotificationString
 	mov	ecx, eax
 	mov	BYTE PTR __$EHRec$[esp+204], 2
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
-	lea	edx, DWORD PTR $T235656[esp+196]
+	lea	edx, DWORD PTR $T236323[esp+196]
 	push	edx
 	lea	ecx, DWORD PTR _iNotificationData$[esp+200]
 	push	ecx
 	push	eax
-	lea	edx, DWORD PTR $T235658[esp+208]
+	lea	edx, DWORD PTR $T236325[esp+208]
 	push	edx
 	call	??$GetLocalizedText@HH@@YA?AVCvString@@PBDABH1@Z ; GetLocalizedText<int,int>
 	add	esp, 16					; 00000010H
 	push	eax
-	lea	ecx, DWORD PTR _strBuffer$226079[esp+200]
+	lea	ecx, DWORD PTR _strBuffer$226597[esp+200]
 	mov	BYTE PTR __$EHRec$[esp+208], 3
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T235658[esp+196]
+	lea	ecx, DWORD PTR $T236325[esp+196]
 	mov	BYTE PTR __$EHRec$[esp+204], 2
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T235657[esp+196]
+	lea	ecx, DWORD PTR $T236324[esp+196]
 	mov	BYTE PTR __$EHRec$[esp+204], 1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 5348 : 									strSummary = GetLocalizedText(pkSmallAwardInfo->GetDescription());
+; 5400 : 									strSummary = GetLocalizedText(pkSmallAwardInfo->GetDescription());
 
 	lea	ecx, DWORD PTR [edi+36]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
-	lea	eax, DWORD PTR $T235659[esp+200]
+	lea	eax, DWORD PTR $T236326[esp+200]
 	push	eax
 	call	?GetLocalizedText@@YA?AVCvString@@PBD@Z	; GetLocalizedText
 	add	esp, 8
 	push	eax
-	lea	ecx, DWORD PTR _strSummary$226080[esp+200]
+	lea	ecx, DWORD PTR _strSummary$226598[esp+200]
 	mov	BYTE PTR __$EHRec$[esp+208], 4
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T235659[esp+196]
+	lea	ecx, DWORD PTR $T236326[esp+196]
 
-; 5349 : 								}
-; 5350 : 								// Team game, different string
-; 5351 : 								else
+; 5401 : 								}
+; 5402 : 								// Team game, different string
+; 5403 : 								else
 
 	jmp	$LN197@DoTestSmal
 $LN2@DoTestSmal:
 
-; 5352 : 								{
-; 5353 : 									strBuffer = GetLocalizedText(pkSmallAwardInfo->GetTeamNotificationString(), iNotificationData, pkSmallAwardInfo->GetNumVictoryPoints());
+; 5404 : 								{
+; 5405 : 									strBuffer = GetLocalizedText(pkSmallAwardInfo->GetTeamNotificationString(), iNotificationData, pkSmallAwardInfo->GetNumVictoryPoints());
 
 	call	?GetNumVictoryPoints@CvSmallAwardInfo@@QBEHXZ ; CvSmallAwardInfo::GetNumVictoryPoints
-	lea	ecx, DWORD PTR $T235661[esp+196]
+	lea	ecx, DWORD PTR $T236328[esp+196]
 	push	ecx
 	mov	ecx, edi
-	mov	DWORD PTR $T235660[esp+200], eax
+	mov	DWORD PTR $T236327[esp+200], eax
 	call	?GetTeamNotificationString@CvSmallAwardInfo@@QBE?AVCvString@@XZ ; CvSmallAwardInfo::GetTeamNotificationString
 	mov	ecx, eax
 	mov	BYTE PTR __$EHRec$[esp+204], 5
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
-	lea	edx, DWORD PTR $T235660[esp+196]
+	lea	edx, DWORD PTR $T236327[esp+196]
 	push	edx
 	lea	ecx, DWORD PTR _iNotificationData$[esp+200]
 	push	ecx
 	push	eax
-	lea	edx, DWORD PTR $T235662[esp+208]
+	lea	edx, DWORD PTR $T236329[esp+208]
 	push	edx
 	call	??$GetLocalizedText@HH@@YA?AVCvString@@PBDABH1@Z ; GetLocalizedText<int,int>
 	add	esp, 16					; 00000010H
 	push	eax
-	lea	ecx, DWORD PTR _strBuffer$226079[esp+200]
+	lea	ecx, DWORD PTR _strBuffer$226597[esp+200]
 	mov	BYTE PTR __$EHRec$[esp+208], 6
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T235662[esp+196]
+	lea	ecx, DWORD PTR $T236329[esp+196]
 	mov	BYTE PTR __$EHRec$[esp+204], 5
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T235661[esp+196]
+	lea	ecx, DWORD PTR $T236328[esp+196]
 	mov	BYTE PTR __$EHRec$[esp+204], 1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 5354 : 									strSummary = GetLocalizedText(pkSmallAwardInfo->GetDescription());
+; 5406 : 									strSummary = GetLocalizedText(pkSmallAwardInfo->GetDescription());
 
 	lea	ecx, DWORD PTR [edi+36]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
-	lea	eax, DWORD PTR $T235663[esp+200]
+	lea	eax, DWORD PTR $T236330[esp+200]
 	push	eax
 	call	?GetLocalizedText@@YA?AVCvString@@PBD@Z	; GetLocalizedText
 	add	esp, 8
 	push	eax
-	lea	ecx, DWORD PTR _strSummary$226080[esp+200]
+	lea	ecx, DWORD PTR _strSummary$226598[esp+200]
 	mov	BYTE PTR __$EHRec$[esp+208], 7
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T235663[esp+196]
+	lea	ecx, DWORD PTR $T236330[esp+196]
 $LN197@DoTestSmal:
 	mov	BYTE PTR __$EHRec$[esp+204], 1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 5355 : 								}
-; 5356 : 								pNotifications->Add(NOTIFICATION_VICTORY, strBuffer, strSummary, iNotificationX, iNotificationY, -1);
+; 5407 : 								}
+; 5408 : 								pNotifications->Add(NOTIFICATION_VICTORY, strBuffer, strSummary, iNotificationX, iNotificationY, -1);
 
-	lea	ecx, DWORD PTR _strSummary$226080[esp+196]
+	lea	ecx, DWORD PTR _strSummary$226598[esp+196]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	mov	ecx, DWORD PTR _iNotificationY$[esp+196]
 	mov	edx, DWORD PTR _iNotificationX$[esp+196]
@@ -19459,7 +19750,7 @@ $LN197@DoTestSmal:
 	push	ecx
 	push	edx
 	push	eax
-	lea	ecx, DWORD PTR _strBuffer$226079[esp+216]
+	lea	ecx, DWORD PTR _strBuffer$226597[esp+216]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
 	push	1482916943				; 5863844fH
@@ -19470,21 +19761,21 @@ $LN6@DoTestSmal:
 	cmp	ebx, 1391192				; 00153a58H
 	jl	$LL7@DoTestSmal
 
-; 5357 : 							}
-; 5358 : 						}
-; 5359 : 					}
-; 5360 : 				}
+; 5409 : 							}
+; 5410 : 						}
+; 5411 : 					}
+; 5412 : 				}
 
-	lea	ecx, DWORD PTR _strSummary$226080[esp+196]
+	lea	ecx, DWORD PTR _strSummary$226598[esp+196]
 	mov	BYTE PTR __$EHRec$[esp+204], 0
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR _strBuffer$226079[esp+196]
+	lea	ecx, DWORD PTR _strBuffer$226597[esp+196]
 	mov	DWORD PTR __$EHRec$[esp+204], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 $LN28@DoTestSmal:
 	inc	ebp
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	mov	DWORD PTR _iSmallAwardLoop$226051[esp+196], ebp
+	mov	DWORD PTR _iSmallAwardLoop$226569[esp+196], ebp
 	call	?getNumSmallAwardInfos@CvGlobals@@QAEHXZ ; CvGlobals::getNumSmallAwardInfos
 	cmp	ebp, eax
 	jl	$LL193@DoTestSmal
@@ -19494,10 +19785,10 @@ $LN195@DoTestSmal:
 	pop	ebp
 $LN30@DoTestSmal:
 
-; 5361 : 			}
-; 5362 : 		}
-; 5363 : 	}
-; 5364 : }
+; 5413 : 			}
+; 5414 : 		}
+; 5415 : 	}
+; 5416 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+184]
 	pop	esi
@@ -19508,28 +19799,28 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?DoTestSmallAwards@CvTeam@@QAEXXZ$0:
-	lea	ecx, DWORD PTR _strBuffer$226079[ebp]
+	lea	ecx, DWORD PTR _strBuffer$226597[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?DoTestSmallAwards@CvTeam@@QAEXXZ$1:
-	lea	ecx, DWORD PTR _strSummary$226080[ebp]
+	lea	ecx, DWORD PTR _strSummary$226598[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?DoTestSmallAwards@CvTeam@@QAEXXZ$2:
-	lea	ecx, DWORD PTR $T235657[ebp]
+	lea	ecx, DWORD PTR $T236324[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?DoTestSmallAwards@CvTeam@@QAEXXZ$3:
-	lea	ecx, DWORD PTR $T235658[ebp]
+	lea	ecx, DWORD PTR $T236325[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?DoTestSmallAwards@CvTeam@@QAEXXZ$4:
-	lea	ecx, DWORD PTR $T235659[ebp]
+	lea	ecx, DWORD PTR $T236326[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?DoTestSmallAwards@CvTeam@@QAEXXZ$5:
-	lea	ecx, DWORD PTR $T235661[ebp]
+	lea	ecx, DWORD PTR $T236328[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?DoTestSmallAwards@CvTeam@@QAEXXZ$6:
-	lea	ecx, DWORD PTR $T235662[ebp]
+	lea	ecx, DWORD PTR $T236329[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?DoTestSmallAwards@CvTeam@@QAEXXZ$7:
-	lea	ecx, DWORD PTR $T235663[ebp]
+	lea	ecx, DWORD PTR $T236330[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?DoTestSmallAwards@CvTeam@@QAEXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?DoTestSmallAwards@CvTeam@@QAEXXZ
@@ -19559,7 +19850,7 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 _this$ = -48						; size = 4
 _szTechTextKey$ = -44					; size = 4
-_strBuffer$226132 = -40					; size = 28
+_strBuffer$226650 = -40					; size = 28
 __$EHRec$ = -12						; size = 12
 _bSound$ = 8						; size = 1
 _eIndex$ = 8						; size = 4
@@ -19567,7 +19858,7 @@ _bPartial$ = 12						; size = 1
 ?announceTechToPlayers@CvTeam@@IAEXW4TechTypes@@_N@Z PROC ; CvTeam::announceTechToPlayers, COMDAT
 ; _this$ = ecx
 
-; 5388 : {
+; 5440 : {
 
 	push	-1
 	push	__ehhandler$?announceTechToPlayers@CvTeam@@IAEXW4TechTypes@@_N@Z
@@ -19576,7 +19867,7 @@ _bPartial$ = 12						; size = 1
 	mov	DWORD PTR fs:0, esp
 	sub	esp, 36					; 00000024H
 
-; 5389 : 	CvTechEntry* pkTechInfo = GC.getTechInfo(eIndex);
+; 5441 : 	CvTechEntry* pkTechInfo = GC.getTechInfo(eIndex);
 
 	mov	eax, DWORD PTR _eIndex$[esp+44]
 	mov	DWORD PTR _this$[esp+48], ecx
@@ -19584,20 +19875,20 @@ _bPartial$ = 12						; size = 1
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getTechInfo@CvGlobals@@QAEPAVCvTechEntry@@W4TechTypes@@@Z ; CvGlobals::getTechInfo
 
-; 5390 : 	if(pkTechInfo == NULL)
+; 5442 : 	if(pkTechInfo == NULL)
 
 	test	eax, eax
 	je	$LN3@announceTe
 
-; 5391 : 		return;
-; 5392 : 
-; 5393 : 	const char* szTechTextKey = pkTechInfo->GetTextKey();
+; 5443 : 		return;
+; 5444 : 
+; 5445 : 	const char* szTechTextKey = pkTechInfo->GetTextKey();
 
 	mov	ecx, eax
 	call	?GetTextKey@CvBaseInfo@@QBEPBDXZ	; CvBaseInfo::GetTextKey
 
-; 5394 : 
-; 5395 : 	bool bSound = (GC.getGame().isNetworkMultiPlayer() && !bPartial);
+; 5446 : 
+; 5447 : 	bool bSound = (GC.getGame().isNetworkMultiPlayer() && !bPartial);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	mov	DWORD PTR _szTechTextKey$[esp+48], eax
@@ -19614,7 +19905,7 @@ $LN10@announceTe:
 	push	ebp
 	push	esi
 
-; 5396 : 	for(int iI = 0; iI < MAX_PLAYERS; iI++)
+; 5448 : 	for(int iI = 0; iI < MAX_PLAYERS; iI++)
 
 	xor	ebx, ebx
 	push	edi
@@ -19622,11 +19913,11 @@ $LN10@announceTe:
 	npad	11
 $LL49@announceTe:
 
-; 5397 : 	{
-; 5398 : 		const PlayerTypes ePlayer = static_cast<PlayerTypes>(iI);
-; 5399 : 		CvPlayerAI& kPlayer = GET_PLAYER(ePlayer);
-; 5400 : 
-; 5401 : 		if(kPlayer.isAlive() && kPlayer.getTeam() == GetID())
+; 5449 : 	{
+; 5450 : 		const PlayerTypes ePlayer = static_cast<PlayerTypes>(iI);
+; 5451 : 		CvPlayerAI& kPlayer = GET_PLAYER(ePlayer);
+; 5452 : 
+; 5453 : 		if(kPlayer.isAlive() && kPlayer.getTeam() == GetID())
 
 	mov	eax, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	cmp	BYTE PTR [eax+ebp+2256], 0
@@ -19645,31 +19936,31 @@ $LN29@announceTe:
 	cmp	eax, DWORD PTR [ecx+4]
 	jne	$LN4@announceTe
 
-; 5402 : 		{
-; 5403 : 			if(ePlayer == GC.getGame().getActivePlayer())
+; 5454 : 		{
+; 5455 : 			if(ePlayer == GC.getGame().getActivePlayer())
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?getActivePlayer@CvGame@@QBE?AW4PlayerTypes@@XZ ; CvGame::getActivePlayer
 	cmp	ebx, eax
 	jne	$LN4@announceTe
 
-; 5404 : 			{
-; 5405 : 				CvString strBuffer = GetLocalizedText((bPartial ? "TXT_KEY_MISC_PROGRESS_TOWARDS_TECH" : "TXT_KEY_MISC_YOU_DISCOVERED_TECH"), szTechTextKey);
+; 5456 : 			{
+; 5457 : 				CvString strBuffer = GetLocalizedText((bPartial ? "TXT_KEY_MISC_PROGRESS_TOWARDS_TECH" : "TXT_KEY_MISC_YOU_DISCOVERED_TECH"), szTechTextKey);
 
 	cmp	BYTE PTR _bPartial$[esp+60], 0
-	mov	eax, OFFSET $SG226134
+	mov	eax, OFFSET $SG226652
 	jne	SHORT $LN12@announceTe
-	mov	eax, OFFSET $SG226135
+	mov	eax, OFFSET $SG226653
 $LN12@announceTe:
 	mov	edx, DWORD PTR _szTechTextKey$[esp+64]
 	push	edx
 	push	eax
-	lea	eax, DWORD PTR _strBuffer$226132[esp+72]
+	lea	eax, DWORD PTR _strBuffer$226650[esp+72]
 	push	eax
 	call	??$GetLocalizedText@PBD@@YA?AVCvString@@PBD0@Z ; GetLocalizedText<char const *>
 	add	esp, 12					; 0000000cH
 
-; 5406 : 				DLLUI->AddMessage(0, ePlayer, false, (bSound ? GC.getEVENT_MESSAGE_TIME() : -1), strBuffer/*, (bSound ? GC.getTechInfo(eIndex)->GetSoundMP() : NULL), MESSAGE_TYPE_MAJOR_EVENT, NULL, (ColorTypes)GC.getInfoTypeForString("COLOR_TECH_TEXT")*/);
+; 5458 : 				DLLUI->AddMessage(0, ePlayer, false, (bSound ? GC.getEVENT_MESSAGE_TIME() : -1), strBuffer/*, (bSound ? GC.getTechInfo(eIndex)->GetSoundMP() : NULL), MESSAGE_TYPE_MAJOR_EVENT, NULL, (ColorTypes)GC.getInfoTypeForString("COLOR_TECH_TEXT")*/);
 
 	cmp	BYTE PTR _bSound$[esp+60], 0
 	mov	DWORD PTR __$EHRec$[esp+72], 0
@@ -19680,7 +19971,7 @@ $LN13@announceTe:
 	or	edi, -1
 $LN14@announceTe:
 	mov	esi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
-	lea	ecx, DWORD PTR _strBuffer$226132[esp+64]
+	lea	ecx, DWORD PTR _strBuffer$226650[esp+64]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	0
 	mov	edx, DWORD PTR [esi]
@@ -19700,9 +19991,9 @@ $LN14@announceTe:
 	mov	ecx, esi
 	call	eax
 
-; 5407 : 			}
+; 5459 : 			}
 
-	lea	ecx, DWORD PTR _strBuffer$226132[esp+64]
+	lea	ecx, DWORD PTR _strBuffer$226650[esp+64]
 	mov	DWORD PTR __$EHRec$[esp+72], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 $LN4@announceTe:
@@ -19716,9 +20007,9 @@ $LN4@announceTe:
 	pop	ebx
 $LN3@announceTe:
 
-; 5408 : 		}
-; 5409 : 	}
-; 5410 : }
+; 5460 : 		}
+; 5461 : 	}
+; 5462 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+48]
 	mov	DWORD PTR fs:0, ecx
@@ -19728,7 +20019,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?announceTechToPlayers@CvTeam@@IAEXW4TechTypes@@_N@Z$0:
-	lea	ecx, DWORD PTR _strBuffer$226132[ebp]
+	lea	ecx, DWORD PTR _strBuffer$226650[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?announceTechToPlayers@CvTeam@@IAEXW4TechTypes@@_N@Z:
 	mov	eax, OFFSET __ehfuncinfo$?announceTechToPlayers@CvTeam@@IAEXW4TechTypes@@_N@Z
@@ -19745,19 +20036,19 @@ _iChange$ = 16						; size = 4
 ?changeImprovementYieldChange@CvTeam@@QAEXW4ImprovementTypes@@W4YieldTypes@@H@Z PROC ; CvTeam::changeImprovementYieldChange, COMDAT
 ; _this$ = ecx
 
-; 6134 : 	CvAssertMsg(eIndex1 >= 0, "eIndex1 is expected to be non-negative (invalid Index)");
-; 6135 : 	CvAssertMsg(eIndex1 < GC.getNumImprovementInfos(), "eIndex1 is expected to be within maximum bounds (invalid Index)");
-; 6136 : 	CvAssertMsg(eIndex2 >= 0, "eIndex2 is expected to be non-negative (invalid Index)");
-; 6137 : 	CvAssertMsg(eIndex2 < NUM_YIELD_TYPES, "eIndex2 is expected to be within maximum bounds (invalid Index)");
-; 6138 : 
-; 6139 : 	if(iChange != 0)
+; 6186 : 	CvAssertMsg(eIndex1 >= 0, "eIndex1 is expected to be non-negative (invalid Index)");
+; 6187 : 	CvAssertMsg(eIndex1 < GC.getNumImprovementInfos(), "eIndex1 is expected to be within maximum bounds (invalid Index)");
+; 6188 : 	CvAssertMsg(eIndex2 >= 0, "eIndex2 is expected to be non-negative (invalid Index)");
+; 6189 : 	CvAssertMsg(eIndex2 < NUM_YIELD_TYPES, "eIndex2 is expected to be within maximum bounds (invalid Index)");
+; 6190 : 
+; 6191 : 	if(iChange != 0)
 
 	mov	edx, DWORD PTR _iChange$[esp-4]
 	test	edx, edx
 	je	SHORT $LN1@changeImpr
 
-; 6140 : 	{
-; 6141 : 		m_ppaaiImprovementYieldChange[eIndex1][eIndex2] = (m_ppaaiImprovementYieldChange[eIndex1][eIndex2] + iChange);
+; 6192 : 	{
+; 6193 : 		m_ppaaiImprovementYieldChange[eIndex1][eIndex2] = (m_ppaaiImprovementYieldChange[eIndex1][eIndex2] + iChange);
 
 	mov	eax, DWORD PTR [ecx+2948]
 	push	esi
@@ -19767,16 +20058,16 @@ _iChange$ = 16						; size = 4
 	add	DWORD PTR [eax+esi*4], edx
 	lea	eax, DWORD PTR [eax+esi*4]
 
-; 6142 : 		CvAssert(getImprovementYieldChange(eIndex1, eIndex2) >= 0);
-; 6143 : 
-; 6144 : 		updateYield();
+; 6194 : 		CvAssert(getImprovementYieldChange(eIndex1, eIndex2) >= 0);
+; 6195 : 
+; 6196 : 		updateYield();
 
 	call	?updateYield@CvTeam@@QAEXXZ		; CvTeam::updateYield
 	pop	esi
 $LN1@changeImpr:
 
-; 6145 : 	}
-; 6146 : }
+; 6197 : 	}
+; 6198 : }
 
 	ret	12					; 0000000cH
 ?changeImprovementYieldChange@CvTeam@@QAEXW4ImprovementTypes@@W4YieldTypes@@H@Z ENDP ; CvTeam::changeImprovementYieldChange
@@ -19791,19 +20082,19 @@ _iChange$ = 16						; size = 4
 ?changeImprovementNoFreshWaterYieldChange@CvTeam@@QAEXW4ImprovementTypes@@W4YieldTypes@@H@Z PROC ; CvTeam::changeImprovementNoFreshWaterYieldChange, COMDAT
 ; _this$ = ecx
 
-; 6163 : 	CvAssertMsg(eIndex1 >= 0, "eIndex1 is expected to be non-negative (invalid Index)");
-; 6164 : 	CvAssertMsg(eIndex1 < GC.getNumImprovementInfos(), "eIndex1 is expected to be within maximum bounds (invalid Index)");
-; 6165 : 	CvAssertMsg(eIndex2 >= 0, "eIndex2 is expected to be non-negative (invalid Index)");
-; 6166 : 	CvAssertMsg(eIndex2 < NUM_YIELD_TYPES, "eIndex2 is expected to be within maximum bounds (invalid Index)");
-; 6167 : 
-; 6168 : 	if(iChange != 0)
+; 6215 : 	CvAssertMsg(eIndex1 >= 0, "eIndex1 is expected to be non-negative (invalid Index)");
+; 6216 : 	CvAssertMsg(eIndex1 < GC.getNumImprovementInfos(), "eIndex1 is expected to be within maximum bounds (invalid Index)");
+; 6217 : 	CvAssertMsg(eIndex2 >= 0, "eIndex2 is expected to be non-negative (invalid Index)");
+; 6218 : 	CvAssertMsg(eIndex2 < NUM_YIELD_TYPES, "eIndex2 is expected to be within maximum bounds (invalid Index)");
+; 6219 : 
+; 6220 : 	if(iChange != 0)
 
 	mov	edx, DWORD PTR _iChange$[esp-4]
 	test	edx, edx
 	je	SHORT $LN1@changeImpr@2
 
-; 6169 : 	{
-; 6170 : 		m_ppaaiImprovementNoFreshWaterYieldChange[eIndex1][eIndex2] = (m_ppaaiImprovementNoFreshWaterYieldChange[eIndex1][eIndex2] + iChange);
+; 6221 : 	{
+; 6222 : 		m_ppaaiImprovementNoFreshWaterYieldChange[eIndex1][eIndex2] = (m_ppaaiImprovementNoFreshWaterYieldChange[eIndex1][eIndex2] + iChange);
 
 	mov	eax, DWORD PTR [ecx+2952]
 	push	esi
@@ -19813,16 +20104,16 @@ _iChange$ = 16						; size = 4
 	add	DWORD PTR [eax+esi*4], edx
 	lea	eax, DWORD PTR [eax+esi*4]
 
-; 6171 : 		CvAssert(getImprovementNoFreshWaterYieldChange(eIndex1, eIndex2) >= 0);
-; 6172 : 
-; 6173 : 		updateYield();
+; 6223 : 		CvAssert(getImprovementNoFreshWaterYieldChange(eIndex1, eIndex2) >= 0);
+; 6224 : 
+; 6225 : 		updateYield();
 
 	call	?updateYield@CvTeam@@QAEXXZ		; CvTeam::updateYield
 	pop	esi
 $LN1@changeImpr@2:
 
-; 6174 : 	}
-; 6175 : }
+; 6226 : 	}
+; 6227 : }
 
 	ret	12					; 0000000cH
 ?changeImprovementNoFreshWaterYieldChange@CvTeam@@QAEXW4ImprovementTypes@@W4YieldTypes@@H@Z ENDP ; CvTeam::changeImprovementNoFreshWaterYieldChange
@@ -19837,19 +20128,19 @@ _iChange$ = 16						; size = 4
 ?changeImprovementFreshWaterYieldChange@CvTeam@@QAEXW4ImprovementTypes@@W4YieldTypes@@H@Z PROC ; CvTeam::changeImprovementFreshWaterYieldChange, COMDAT
 ; _this$ = ecx
 
-; 6192 : 	CvAssertMsg(eIndex1 >= 0, "eIndex1 is expected to be non-negative (invalid Index)");
-; 6193 : 	CvAssertMsg(eIndex1 < GC.getNumImprovementInfos(), "eIndex1 is expected to be within maximum bounds (invalid Index)");
-; 6194 : 	CvAssertMsg(eIndex2 >= 0, "eIndex2 is expected to be non-negative (invalid Index)");
-; 6195 : 	CvAssertMsg(eIndex2 < NUM_YIELD_TYPES, "eIndex2 is expected to be within maximum bounds (invalid Index)");
-; 6196 : 
-; 6197 : 	if(iChange != 0)
+; 6244 : 	CvAssertMsg(eIndex1 >= 0, "eIndex1 is expected to be non-negative (invalid Index)");
+; 6245 : 	CvAssertMsg(eIndex1 < GC.getNumImprovementInfos(), "eIndex1 is expected to be within maximum bounds (invalid Index)");
+; 6246 : 	CvAssertMsg(eIndex2 >= 0, "eIndex2 is expected to be non-negative (invalid Index)");
+; 6247 : 	CvAssertMsg(eIndex2 < NUM_YIELD_TYPES, "eIndex2 is expected to be within maximum bounds (invalid Index)");
+; 6248 : 
+; 6249 : 	if(iChange != 0)
 
 	mov	edx, DWORD PTR _iChange$[esp-4]
 	test	edx, edx
 	je	SHORT $LN1@changeImpr@3
 
-; 6198 : 	{
-; 6199 : 		m_ppaaiImprovementFreshWaterYieldChange[eIndex1][eIndex2] = (m_ppaaiImprovementFreshWaterYieldChange[eIndex1][eIndex2] + iChange);
+; 6250 : 	{
+; 6251 : 		m_ppaaiImprovementFreshWaterYieldChange[eIndex1][eIndex2] = (m_ppaaiImprovementFreshWaterYieldChange[eIndex1][eIndex2] + iChange);
 
 	mov	eax, DWORD PTR [ecx+2956]
 	push	esi
@@ -19859,16 +20150,16 @@ _iChange$ = 16						; size = 4
 	add	DWORD PTR [eax+esi*4], edx
 	lea	eax, DWORD PTR [eax+esi*4]
 
-; 6200 : 		CvAssert(getImprovementFreshWaterYieldChange(eIndex1, eIndex2) >= 0);
-; 6201 : 
-; 6202 : 		updateYield();
+; 6252 : 		CvAssert(getImprovementFreshWaterYieldChange(eIndex1, eIndex2) >= 0);
+; 6253 : 
+; 6254 : 		updateYield();
 
 	call	?updateYield@CvTeam@@QAEXXZ		; CvTeam::updateYield
 	pop	esi
 $LN1@changeImpr@3:
 
-; 6203 : 	}
-; 6204 : }
+; 6255 : 	}
+; 6256 : }
 
 	ret	12					; 0000000cH
 ?changeImprovementFreshWaterYieldChange@CvTeam@@QAEXW4ImprovementTypes@@W4YieldTypes@@H@Z ENDP ; CvTeam::changeImprovementFreshWaterYieldChange
@@ -19912,30 +20203,30 @@ __unwindtable$?testCircumnavigated@CvTeam@@IAEXXZ DD 0ffffffffH
 xdata$x	ENDS
 ;	COMDAT ?testCircumnavigated@CvTeam@@IAEXXZ
 _TEXT	SEGMENT
-_bResult$226634 = -121					; size = 1
+_bResult$227152 = -121					; size = 1
 tv642 = -120						; size = 4
 tv651 = -116						; size = 4
-_args$226633 = -116					; size = 4
+_args$227151 = -116					; size = 4
 _kGame$ = -112						; size = 4
 tv656 = -108						; size = 4
 _iActivePlayerID$ = -108				; size = 4
 _iY$ = -108						; size = 4
 tv864 = -104						; size = 4
 _this$ = -104						; size = 4
-_iFreeMoves$226598 = -100				; size = 4
+_iFreeMoves$227116 = -100				; size = 4
 _strBuffer$ = -96					; size = 28
-$T236062 = -68						; size = 28
-$T236060 = -68						; size = 28
-$T236058 = -68						; size = 28
-$T236057 = -68						; size = 28
-$T236063 = -40						; size = 28
-$T236061 = -40						; size = 28
-$T236059 = -40						; size = 28
+$T236729 = -68						; size = 28
+$T236727 = -68						; size = 28
+$T236725 = -68						; size = 28
+$T236724 = -68						; size = 28
+$T236730 = -40						; size = 28
+$T236728 = -40						; size = 28
+$T236726 = -40						; size = 28
 __$EHRec$ = -12						; size = 12
 ?testCircumnavigated@CvTeam@@IAEXXZ PROC		; CvTeam::testCircumnavigated, COMDAT
 ; _this$ = ecx
 
-; 6282 : {
+; 6334 : {
 
 	push	-1
 	push	__ehhandler$?testCircumnavigated@CvTeam@@IAEXXZ
@@ -19946,32 +20237,32 @@ __$EHRec$ = -12						; size = 12
 	push	edi
 	mov	edi, ecx
 
-; 6283 : 	CvPlot* pPlot;
-; 6284 : 	CvString strBuffer;
+; 6335 : 	CvPlot* pPlot;
+; 6336 : 	CvString strBuffer;
 
 	lea	ecx, DWORD PTR _strBuffer$[esp+128]
 	mov	DWORD PTR _this$[esp+128], edi
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 6285 : 	bool bFoundVisible;
-; 6286 : 	int iX, iY;
-; 6287 : 
-; 6288 : 	if(isBarbarian())
+; 6337 : 	bool bFoundVisible;
+; 6338 : 	int iX, iY;
+; 6339 : 
+; 6340 : 	if(isBarbarian())
 
 	cmp	DWORD PTR [edi+4], 63			; 0000003fH
 	mov	DWORD PTR __$EHRec$[esp+136], 0
 	jne	SHORT $LN33@testCircum
 
-; 6289 : 	{
-; 6290 : 		return;
+; 6341 : 	{
+; 6342 : 		return;
 
 	lea	ecx, DWORD PTR _strBuffer$[esp+128]
 	mov	DWORD PTR __$EHRec$[esp+136], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 	pop	edi
 
-; 6410 : 	}
-; 6411 : }
+; 6462 : 	}
+; 6463 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+124]
 	mov	DWORD PTR fs:0, ecx
@@ -19980,13 +20271,13 @@ __$EHRec$ = -12						; size = 12
 $LN33@testCircum:
 	push	esi
 
-; 6291 : 	}
-; 6292 : 
-; 6293 : 	CvGame& kGame = GC.getGame();
+; 6343 : 	}
+; 6344 : 
+; 6345 : 	CvGame& kGame = GC.getGame();
 
 	mov	esi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 
-; 6294 : 	if(!kGame.circumnavigationAvailable())
+; 6346 : 	if(!kGame.circumnavigationAvailable())
 
 	mov	ecx, esi
 	mov	DWORD PTR _kGame$[esp+132], esi
@@ -19994,8 +20285,8 @@ $LN33@testCircum:
 	test	al, al
 	jne	SHORT $LN32@testCircum
 
-; 6295 : 	{
-; 6296 : 		return;
+; 6347 : 	{
+; 6348 : 		return;
 
 	lea	ecx, DWORD PTR _strBuffer$[esp+132]
 	mov	DWORD PTR __$EHRec$[esp+140], -1
@@ -20003,8 +20294,8 @@ $LN33@testCircum:
 	pop	esi
 	pop	edi
 
-; 6410 : 	}
-; 6411 : }
+; 6462 : 	}
+; 6463 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+124]
 	mov	DWORD PTR fs:0, ecx
@@ -20012,20 +20303,20 @@ $LN33@testCircum:
 	ret	0
 $LN32@testCircum:
 
-; 6297 : 	}
-; 6298 : 
-; 6299 : 	CvMap& kMap = GC.getMap();
-; 6300 : 
-; 6301 : 	// Test one of the wrapping axises.  This is brute force and not exactly "correct".
-; 6302 : 	// It does not test for continuity and is not able to test whether the plot was revealed by exploration or
-; 6303 : 	// some other method such as gifted "maps".
-; 6304 : 	TeamTypes eTeamID = GetID();
+; 6349 : 	}
+; 6350 : 
+; 6351 : 	CvMap& kMap = GC.getMap();
+; 6352 : 
+; 6353 : 	// Test one of the wrapping axises.  This is brute force and not exactly "correct".
+; 6354 : 	// It does not test for continuity and is not able to test whether the plot was revealed by exploration or
+; 6355 : 	// some other method such as gifted "maps".
+; 6356 : 	TeamTypes eTeamID = GetID();
 
 	mov	eax, DWORD PTR [edi+4]
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+52
 	mov	DWORD PTR tv642[esp+132], eax
 
-; 6305 : 	if(kMap.isWrapX())
+; 6357 : 	if(kMap.isWrapX())
 
 	mov	al, BYTE PTR [ecx+4056]
 	push	ebx
@@ -20033,16 +20324,16 @@ $LN32@testCircum:
 	test	al, al
 	je	$LN31@testCircum
 
-; 6306 : 	{
-; 6307 : 		for(iX = kMap.getGridWidth(); iX--;)
+; 6358 : 	{
+; 6359 : 		for(iX = kMap.getGridWidth(); iX--;)
 
 	mov	ebp, DWORD PTR [ecx+4020]
 	mov	DWORD PTR tv651[esp+140], ebp
 	test	ebp, ebp
 	je	SHORT $LN208@testCircum
 
-; 6361 : 
-; 6362 : 		for(int iI = 0; iI < MAX_PLAYERS; iI++)
+; 6413 : 
+; 6414 : 		for(int iI = 0; iI < MAX_PLAYERS; iI++)
 
 	mov	ecx, DWORD PTR [ecx+4024]
 	mov	DWORD PTR tv656[esp+140], ecx
@@ -20072,56 +20363,56 @@ $LL28@testCircum:
 	test	DWORD PTR [eax+esi*4+8], edi
 	jne	SHORT $LN201@testCircum
 
-; 6308 : 		{
-; 6309 : 			bFoundVisible = false;
-; 6310 : 
-; 6311 : 			for(iY = kMap.getGridHeight(); iY--;)
+; 6360 : 		{
+; 6361 : 			bFoundVisible = false;
+; 6362 : 
+; 6363 : 			for(iY = kMap.getGridHeight(); iY--;)
 
 	test	edx, edx
 	jne	SHORT $LL28@testCircum
 	jmp	$LN221@testCircum
 $LN201@testCircum:
 
-; 6306 : 	{
-; 6307 : 		for(iX = kMap.getGridWidth(); iX--;)
+; 6358 : 	{
+; 6359 : 		for(iX = kMap.getGridWidth(); iX--;)
 
 	test	ebp, ebp
 	jne	SHORT $LL30@testCircum
 $LN220@testCircum:
 
-; 6329 : 	{
-; 6330 : 		for(iY = kMap.getGridHeight(); iY--;)
+; 6381 : 	{
+; 6382 : 		for(iY = kMap.getGridHeight(); iY--;)
 
 	mov	esi, DWORD PTR _kGame$[esp+140]
 	mov	edi, DWORD PTR _this$[esp+140]
 $LN208@testCircum:
 
-; 6339 : 				{
-; 6340 : 					bFoundVisible = true;
-; 6341 : 					break;
-; 6342 : 				}
-; 6343 : 			}
-; 6344 : 
-; 6345 : 			if(!bFoundVisible)
-; 6346 : 			{
-; 6347 : 				return;
-; 6348 : 			}
-; 6349 : 		}
-; 6350 : 	}
-; 6351 : 
-; 6352 : 	kGame.makeCircumnavigated();
+; 6391 : 				{
+; 6392 : 					bFoundVisible = true;
+; 6393 : 					break;
+; 6394 : 				}
+; 6395 : 			}
+; 6396 : 
+; 6397 : 			if(!bFoundVisible)
+; 6398 : 			{
+; 6399 : 				return;
+; 6400 : 			}
+; 6401 : 		}
+; 6402 : 	}
+; 6403 : 
+; 6404 : 	kGame.makeCircumnavigated();
 
 	mov	ecx, esi
 	call	?makeCircumnavigated@CvGame@@QAEXXZ	; CvGame::makeCircumnavigated
 
-; 6353 : 
-; 6354 : 	int iActivePlayerID = GC.getGame().getActivePlayer();
+; 6405 : 
+; 6406 : 	int iActivePlayerID = GC.getGame().getActivePlayer();
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?getActivePlayer@CvGame@@QBE?AW4PlayerTypes@@XZ ; CvGame::getActivePlayer
 
-; 6355 : 
-; 6356 : 	if(kGame.getElapsedGameTurns() > 0)
+; 6407 : 
+; 6408 : 	if(kGame.getElapsedGameTurns() > 0)
 
 	mov	ecx, esi
 	mov	DWORD PTR _iActivePlayerID$[esp+140], eax
@@ -20129,44 +20420,44 @@ $LN208@testCircum:
 	test	eax, eax
 	jle	$LN221@testCircum
 
-; 6357 : 	{
-; 6358 : 		int iFreeMoves = GC.getCIRCUMNAVIGATE_FREE_MOVES();
+; 6409 : 	{
+; 6410 : 		int iFreeMoves = GC.getCIRCUMNAVIGATE_FREE_MOVES();
 
 	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+6744
 	mov	ecx, eax
-	mov	DWORD PTR _iFreeMoves$226598[esp+140], ecx
+	mov	DWORD PTR _iFreeMoves$227116[esp+140], ecx
 
-; 6359 : 		if(iFreeMoves != 0)
+; 6411 : 		if(iFreeMoves != 0)
 
 	test	ecx, ecx
 	je	SHORT $LN108@testCircum
 
-; 6360 : 			changeExtraMoves(DOMAIN_SEA, GC.getCIRCUMNAVIGATE_FREE_MOVES());
+; 6412 : 			changeExtraMoves(DOMAIN_SEA, GC.getCIRCUMNAVIGATE_FREE_MOVES());
 
 	add	DWORD PTR [edi+1108], eax
 $LN108@testCircum:
 
-; 6361 : 
-; 6362 : 		for(int iI = 0; iI < MAX_PLAYERS; iI++)
+; 6413 : 
+; 6414 : 		for(int iI = 0; iI < MAX_PLAYERS; iI++)
 
 	xor	ebx, ebx
 	xor	esi, esi
 	mov	DWORD PTR tv864[esp+140], esi
 $LL14@testCircum:
 
-; 6363 : 		{
-; 6364 : 			CvPlayer& kPlayer = GET_PLAYER((PlayerTypes)iI);
+; 6415 : 		{
+; 6416 : 			CvPlayer& kPlayer = GET_PLAYER((PlayerTypes)iI);
 
 	mov	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	add	esi, ecx
 
-; 6365 : 			if(kPlayer.isAlive())
+; 6417 : 			if(kPlayer.isAlive())
 
 	cmp	BYTE PTR [esi+2256], 0
 	je	$LN13@testCircum
 
-; 6366 : 			{
-; 6367 : 				if(eTeamID == kPlayer.getTeam())
+; 6418 : 			{
+; 6419 : 				if(eTeamID == kPlayer.getTeam())
 
 	mov	eax, DWORD PTR [esi+44]
 	cmp	eax, 63					; 0000003fH
@@ -20177,29 +20468,29 @@ $LL14@testCircum:
 	jmp	$LN125@testCircum
 $LN31@testCircum:
 
-; 6312 : 			{
-; 6313 : 				pPlot = kMap.plotUnchecked(iX, iY);
-; 6314 : 
-; 6315 : 				if(pPlot->isRevealed(eTeamID))
-; 6316 : 				{
-; 6317 : 					bFoundVisible = true;
-; 6318 : 					break;
-; 6319 : 				}
-; 6320 : 			}
-; 6321 : 
-; 6322 : 			if(!bFoundVisible)
-; 6323 : 			{
-; 6324 : 				return;
-; 6325 : 			}
-; 6326 : 		}
-; 6327 : 	}
-; 6328 : 	else if(kMap.isWrapY())
+; 6364 : 			{
+; 6365 : 				pPlot = kMap.plotUnchecked(iX, iY);
+; 6366 : 
+; 6367 : 				if(pPlot->isRevealed(eTeamID))
+; 6368 : 				{
+; 6369 : 					bFoundVisible = true;
+; 6370 : 					break;
+; 6371 : 				}
+; 6372 : 			}
+; 6373 : 
+; 6374 : 			if(!bFoundVisible)
+; 6375 : 			{
+; 6376 : 				return;
+; 6377 : 			}
+; 6378 : 		}
+; 6379 : 	}
+; 6380 : 	else if(kMap.isWrapY())
 
 	cmp	BYTE PTR [ecx+4057], 0
 	je	SHORT $LN208@testCircum
 
-; 6329 : 	{
-; 6330 : 		for(iY = kMap.getGridHeight(); iY--;)
+; 6381 : 	{
+; 6382 : 		for(iY = kMap.getGridHeight(); iY--;)
 
 	mov	eax, DWORD PTR [ecx+4024]
 	test	eax, eax
@@ -20209,20 +20500,20 @@ $LN31@testCircum:
 $LL22@testCircum:
 	dec	eax
 
-; 6331 : 		{
-; 6332 : 			bFoundVisible = false;
-; 6333 : 
-; 6334 : 			for(iX = kMap.getGridWidth(); iX--;)
+; 6383 : 		{
+; 6384 : 			bFoundVisible = false;
+; 6385 : 
+; 6386 : 			for(iX = kMap.getGridWidth(); iX--;)
 
 	mov	edi, esi
 	mov	DWORD PTR _iY$[esp+140], eax
 	test	edi, edi
 	je	$LN221@testCircum
 
-; 6335 : 			{
-; 6336 : 				pPlot = kMap.plotUnchecked(iX, iY);
-; 6337 : 
-; 6338 : 				if(pPlot->isRevealed(GetID()))
+; 6387 : 			{
+; 6388 : 				pPlot = kMap.plotUnchecked(iX, iY);
+; 6389 : 
+; 6390 : 				if(pPlot->isRevealed(GetID()))
 
 	mov	ecx, DWORD PTR tv642[esp+140]
 	imul	esi, eax
@@ -20244,18 +20535,18 @@ $LL20@testCircum:
 	test	DWORD PTR [eax+edx*4+8], ebp
 	jne	SHORT $LN203@testCircum
 
-; 6331 : 		{
-; 6332 : 			bFoundVisible = false;
-; 6333 : 
-; 6334 : 			for(iX = kMap.getGridWidth(); iX--;)
+; 6383 : 		{
+; 6384 : 			bFoundVisible = false;
+; 6385 : 
+; 6386 : 			for(iX = kMap.getGridWidth(); iX--;)
 
 	test	edi, edi
 	jne	SHORT $LL20@testCircum
 	jmp	$LN221@testCircum
 $LN203@testCircum:
 
-; 6329 : 	{
-; 6330 : 		for(iY = kMap.getGridHeight(); iY--;)
+; 6381 : 	{
+; 6382 : 		for(iY = kMap.getGridHeight(); iY--;)
 
 	cmp	DWORD PTR _iY$[esp+140], 0
 	je	$LN220@testCircum
@@ -20263,8 +20554,8 @@ $LN203@testCircum:
 	mov	eax, DWORD PTR _iY$[esp+140]
 	jmp	SHORT $LL22@testCircum
 
-; 6366 : 			{
-; 6367 : 				if(eTeamID == kPlayer.getTeam())
+; 6418 : 			{
+; 6419 : 				if(eTeamID == kPlayer.getTeam())
 
 $LN124@testCircum:
 	or	eax, -1
@@ -20273,8 +20564,8 @@ $LN125@testCircum:
 	cmp	ebp, eax
 	jne	SHORT $LN216@testCircum
 
-; 6368 : 				{
-; 6369 : 					if(!kGame.isGameMultiPlayer() && kPlayer.isHuman())
+; 6420 : 				{
+; 6421 : 					if(!kGame.isGameMultiPlayer() && kPlayer.isHuman())
 
 	mov	ecx, DWORD PTR _kGame$[esp+140]
 	call	?isGameMultiPlayer@CvGame@@QBE_NXZ	; CvGame::isGameMultiPlayer
@@ -20285,8 +20576,8 @@ $LN125@testCircum:
 	test	al, al
 	je	SHORT $LN216@testCircum
 
-; 6370 : 					{
-; 6371 : 						gDLL->UnlockAchievement(ACHIEVEMENT_ROUND_WORLD);
+; 6422 : 					{
+; 6423 : 						gDLL->UnlockAchievement(ACHIEVEMENT_ROUND_WORLD);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8564
 	mov	edx, DWORD PTR [ecx]
@@ -20295,16 +20586,16 @@ $LN125@testCircum:
 	call	eax
 $LN216@testCircum:
 
-; 6372 : 					}
-; 6373 : 				}
-; 6374 : 
-; 6375 : 				if(iActivePlayerID == iI)
+; 6424 : 					}
+; 6425 : 				}
+; 6426 : 
+; 6427 : 				if(iActivePlayerID == iI)
 
 	cmp	DWORD PTR _iActivePlayerID$[esp+140], ebx
 	jne	$LN13@testCircum
 
-; 6376 : 				{
-; 6377 : 					if(eTeamID == kPlayer.getTeam())
+; 6428 : 				{
+; 6429 : 					if(eTeamID == kPlayer.getTeam())
 
 	mov	eax, DWORD PTR [esi+44]
 	cmp	eax, 63					; 0000003fH
@@ -20319,21 +20610,21 @@ $LN136@testCircum:
 	cmp	ebp, eax
 	jne	SHORT $LN7@testCircum
 
-; 6378 : 					{
-; 6379 : 						if(iFreeMoves == 0)
+; 6430 : 					{
+; 6431 : 						if(iFreeMoves == 0)
 
-	mov	eax, DWORD PTR _iFreeMoves$226598[esp+140]
+	mov	eax, DWORD PTR _iFreeMoves$227116[esp+140]
 	test	eax, eax
 	jne	SHORT $LN6@testCircum
 
-; 6380 : 							// Not the most ideal solution, but if the free moves are 0, use the string designed for telling about another team circling the globe
-; 6381 : 							strBuffer = GetLocalizedText("TXT_KEY_MISC_SOMEONE_CIRC_GLOBE", kPlayer.getName());
+; 6432 : 							// Not the most ideal solution, but if the free moves are 0, use the string designed for telling about another team circling the globe
+; 6433 : 							strBuffer = GetLocalizedText("TXT_KEY_MISC_SOMEONE_CIRC_GLOBE", kPlayer.getName());
 
 	mov	ecx, esi
 	call	?getName@CvPlayer@@QBEPBDXZ		; CvPlayer::getName
 	push	eax
-	lea	eax, DWORD PTR $T236057[esp+144]
-	push	OFFSET $SG226613
+	lea	eax, DWORD PTR $T236724[esp+144]
+	push	OFFSET $SG227131
 	push	eax
 	call	??$GetLocalizedText@PBD@@YA?AVCvString@@PBD0@Z ; GetLocalizedText<char const *>
 	add	esp, 12					; 0000000cH
@@ -20341,18 +20632,18 @@ $LN136@testCircum:
 	lea	ecx, DWORD PTR _strBuffer$[esp+144]
 	mov	BYTE PTR __$EHRec$[esp+152], 1
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T236057[esp+140]
+	lea	ecx, DWORD PTR $T236724[esp+140]
 
-; 6382 : 						else
+; 6434 : 						else
 
 	jmp	$LN226@testCircum
 $LN6@testCircum:
 
-; 6383 : 							strBuffer = GetLocalizedText("TXT_KEY_MISC_YOU_CIRC_GLOBE", iFreeMoves);
+; 6435 : 							strBuffer = GetLocalizedText("TXT_KEY_MISC_YOU_CIRC_GLOBE", iFreeMoves);
 
 	push	eax
-	lea	ecx, DWORD PTR $T236058[esp+144]
-	push	OFFSET $SG226621
+	lea	ecx, DWORD PTR $T236725[esp+144]
+	push	OFFSET $SG227139
 	push	ecx
 	call	??$GetLocalizedText@H@@YA?AVCvString@@PBDH@Z ; GetLocalizedText<int>
 	add	esp, 12					; 0000000cH
@@ -20360,22 +20651,22 @@ $LN6@testCircum:
 	lea	ecx, DWORD PTR _strBuffer$[esp+144]
 	mov	BYTE PTR __$EHRec$[esp+152], 2
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T236058[esp+140]
+	lea	ecx, DWORD PTR $T236725[esp+140]
 	jmp	$LN226@testCircum
 $LN7@testCircum:
 
-; 6384 : 					}
-; 6385 : 					else if(isHasMet(kPlayer.getTeam()))
+; 6436 : 					}
+; 6437 : 					else if(isHasMet(kPlayer.getTeam()))
 
 	mov	ecx, esi
 	call	?getTeam@CvPlayer@@QBE?AW4TeamTypes@@XZ	; CvPlayer::getTeam
 	cmp	BYTE PTR [eax+edi+1848], 0
 	je	SHORT $LN3@testCircum
 
-; 6386 : 					{
-; 6387 : 						strBuffer = GetLocalizedText("TXT_KEY_MISC_SOMEONE_CIRC_GLOBE", getName().GetCString());
+; 6438 : 					{
+; 6439 : 						strBuffer = GetLocalizedText("TXT_KEY_MISC_SOMEONE_CIRC_GLOBE", getName().GetCString());
 
-	lea	edx, DWORD PTR $T236059[esp+140]
+	lea	edx, DWORD PTR $T236726[esp+140]
 	push	edx
 	mov	ecx, edi
 	call	?getName@CvTeam@@QBE?AVCvString@@XZ	; CvTeam::getName
@@ -20383,8 +20674,8 @@ $LN7@testCircum:
 	mov	BYTE PTR __$EHRec$[esp+148], 3
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
-	lea	eax, DWORD PTR $T236060[esp+144]
-	push	OFFSET $SG226626
+	lea	eax, DWORD PTR $T236727[esp+144]
+	push	OFFSET $SG227144
 	push	eax
 	call	??$GetLocalizedText@PBD@@YA?AVCvString@@PBD0@Z ; GetLocalizedText<char const *>
 	add	esp, 12					; 0000000cH
@@ -20392,21 +20683,21 @@ $LN7@testCircum:
 	lea	ecx, DWORD PTR _strBuffer$[esp+144]
 	mov	BYTE PTR __$EHRec$[esp+152], 4
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T236060[esp+140]
+	lea	ecx, DWORD PTR $T236727[esp+140]
 	mov	BYTE PTR __$EHRec$[esp+148], 3
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 6388 : 					}
-; 6389 : 					else
+; 6440 : 					}
+; 6441 : 					else
 
 	jmp	SHORT $LN227@testCircum
 $LN3@testCircum:
 
-; 6390 : 					{
-; 6391 : 						strBuffer = GetLocalizedText("TXT_KEY_MISC_UNKNOWN_CIRC_GLOBE");
+; 6442 : 					{
+; 6443 : 						strBuffer = GetLocalizedText("TXT_KEY_MISC_UNKNOWN_CIRC_GLOBE");
 
-	lea	ecx, DWORD PTR $T236061[esp+140]
-	push	OFFSET $SG226629
+	lea	ecx, DWORD PTR $T236728[esp+140]
+	push	OFFSET $SG227147
 	push	ecx
 	call	?GetLocalizedText@@YA?AVCvString@@PBD@Z	; GetLocalizedText
 	add	esp, 8
@@ -20415,13 +20706,13 @@ $LN3@testCircum:
 	mov	BYTE PTR __$EHRec$[esp+152], 5
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
 $LN227@testCircum:
-	lea	ecx, DWORD PTR $T236061[esp+140]
+	lea	ecx, DWORD PTR $T236728[esp+140]
 $LN226@testCircum:
 	mov	BYTE PTR __$EHRec$[esp+148], 0
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 6392 : 					}
-; 6393 : 					DLLUI->AddMessage(0, ((PlayerTypes)iI), false, GC.getEVENT_MESSAGE_TIME(), strBuffer);
+; 6444 : 					}
+; 6445 : 					DLLUI->AddMessage(0, ((PlayerTypes)iI), false, GC.getEVENT_MESSAGE_TIME(), strBuffer);
 
 	mov	esi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
 	lea	ecx, DWORD PTR _strBuffer$[esp+140]
@@ -20445,8 +20736,8 @@ $LN226@testCircum:
 	mov	ecx, esi
 	call	edx
 
-; 6394 : 
-; 6395 : 					ICvEngineScriptSystem1* pkScriptSystem = gDLL->GetScriptSystem();
+; 6446 : 
+; 6447 : 					ICvEngineScriptSystem1* pkScriptSystem = gDLL->GetScriptSystem();
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8564
 	mov	eax, DWORD PTR [ecx]
@@ -20454,43 +20745,43 @@ $LN226@testCircum:
 	call	edx
 	mov	esi, eax
 
-; 6396 : 					if (pkScriptSystem)
+; 6448 : 					if (pkScriptSystem)
 
 	test	esi, esi
 	je	SHORT $LN13@testCircum
 
-; 6397 : 					{
-; 6398 : 						CvLuaArgsHandle args;
+; 6449 : 					{
+; 6450 : 						CvLuaArgsHandle args;
 
-	lea	ecx, DWORD PTR _args$226633[esp+140]
+	lea	ecx, DWORD PTR _args$227151[esp+140]
 	call	??0CvLuaArgsHandle@@QAE@XZ		; CvLuaArgsHandle::CvLuaArgsHandle
 
-; 6399 : 						args->Push(eTeamID);
+; 6451 : 						args->Push(eTeamID);
 
-	mov	ecx, DWORD PTR _args$226633[esp+140]
+	mov	ecx, DWORD PTR _args$227151[esp+140]
 	mov	eax, DWORD PTR [ecx]
 	mov	edx, DWORD PTR [eax+8]
 	push	ebp
 	mov	BYTE PTR __$EHRec$[esp+152], 6
 	call	edx
 
-; 6400 : 
-; 6401 : 						bool bResult = false;
-; 6402 : 						LuaSupport::CallHook(pkScriptSystem, "CircumnavigatedGlobe", args.get(), bResult);
+; 6452 : 
+; 6453 : 						bool bResult = false;
+; 6454 : 						LuaSupport::CallHook(pkScriptSystem, "CircumnavigatedGlobe", args.get(), bResult);
 
-	mov	ecx, DWORD PTR _args$226633[esp+140]
-	lea	eax, DWORD PTR _bResult$226634[esp+140]
+	mov	ecx, DWORD PTR _args$227151[esp+140]
+	lea	eax, DWORD PTR _bResult$227152[esp+140]
 	push	eax
 	push	ecx
-	push	OFFSET $SG226635
+	push	OFFSET $SG227153
 	push	esi
-	mov	BYTE PTR _bResult$226634[esp+156], 0
+	mov	BYTE PTR _bResult$227152[esp+156], 0
 	call	?CallHook@LuaSupport@@YA_NPAVICvEngineScriptSystem1@@PBDPAVICvEngineScriptSystemArgs1@@AA_N@Z ; LuaSupport::CallHook
 	add	esp, 16					; 00000010H
 
-; 6403 : 					}
+; 6455 : 					}
 
-	lea	ecx, DWORD PTR _args$226633[esp+140]
+	lea	ecx, DWORD PTR _args$227151[esp+140]
 	mov	BYTE PTR __$EHRec$[esp+148], 0
 	call	??1CvLuaArgsHandle@@QAE@XZ		; CvLuaArgsHandle::~CvLuaArgsHandle
 $LN13@testCircum:
@@ -20501,13 +20792,13 @@ $LN13@testCircum:
 	mov	DWORD PTR tv864[esp+140], esi
 	jl	$LL14@testCircum
 
-; 6404 : 				}
-; 6405 : 			}
-; 6406 : 		}
-; 6407 : 
-; 6408 : 		strBuffer = GetLocalizedText("TXT_KEY_MISC_SOMEONE_CIRC_GLOBE", getName().GetCString());
+; 6456 : 				}
+; 6457 : 			}
+; 6458 : 		}
+; 6459 : 
+; 6460 : 		strBuffer = GetLocalizedText("TXT_KEY_MISC_SOMEONE_CIRC_GLOBE", getName().GetCString());
 
-	lea	edx, DWORD PTR $T236062[esp+140]
+	lea	edx, DWORD PTR $T236729[esp+140]
 	push	edx
 	mov	ecx, edi
 	call	?getName@CvTeam@@QBE?AVCvString@@XZ	; CvTeam::getName
@@ -20516,8 +20807,8 @@ $LN13@testCircum:
 	mov	BYTE PTR __$EHRec$[esp+148], bl
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
-	lea	eax, DWORD PTR $T236063[esp+144]
-	push	OFFSET $SG226638
+	lea	eax, DWORD PTR $T236730[esp+144]
+	push	OFFSET $SG227156
 	push	eax
 	call	??$GetLocalizedText@PBD@@YA?AVCvString@@PBD0@Z ; GetLocalizedText<char const *>
 	add	esp, 12					; 0000000cH
@@ -20525,14 +20816,14 @@ $LN13@testCircum:
 	lea	ecx, DWORD PTR _strBuffer$[esp+144]
 	mov	BYTE PTR __$EHRec$[esp+152], 8
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T236063[esp+140]
+	lea	ecx, DWORD PTR $T236730[esp+140]
 	mov	BYTE PTR __$EHRec$[esp+148], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T236062[esp+140]
+	lea	ecx, DWORD PTR $T236729[esp+140]
 	mov	BYTE PTR __$EHRec$[esp+148], 0
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 6409 : 		GC.getGame().addReplayMessage(REPLAY_MESSAGE_MAJOR_EVENT, getLeaderID(), strBuffer, -1, -1);
+; 6461 : 		GC.getGame().addReplayMessage(REPLAY_MESSAGE_MAJOR_EVENT, getLeaderID(), strBuffer, -1, -1);
 
 	push	-1
 	push	-1
@@ -20546,8 +20837,8 @@ $LN13@testCircum:
 	call	?addReplayMessage@CvGame@@QAEXW4ReplayMessageTypes@@W4PlayerTypes@@ABVCvString@@HH@Z ; CvGame::addReplayMessage
 $LN221@testCircum:
 
-; 6410 : 	}
-; 6411 : }
+; 6462 : 	}
+; 6463 : }
 
 	lea	ecx, DWORD PTR _strBuffer$[esp+140]
 	mov	DWORD PTR __$EHRec$[esp+148], -1
@@ -20567,28 +20858,28 @@ __unwindfunclet$?testCircumnavigated@CvTeam@@IAEXXZ$0:
 	lea	ecx, DWORD PTR _strBuffer$[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?testCircumnavigated@CvTeam@@IAEXXZ$1:
-	lea	ecx, DWORD PTR $T236057[ebp]
+	lea	ecx, DWORD PTR $T236724[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?testCircumnavigated@CvTeam@@IAEXXZ$2:
-	lea	ecx, DWORD PTR $T236058[ebp]
+	lea	ecx, DWORD PTR $T236725[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?testCircumnavigated@CvTeam@@IAEXXZ$3:
-	lea	ecx, DWORD PTR $T236059[ebp]
+	lea	ecx, DWORD PTR $T236726[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?testCircumnavigated@CvTeam@@IAEXXZ$4:
-	lea	ecx, DWORD PTR $T236060[ebp]
+	lea	ecx, DWORD PTR $T236727[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?testCircumnavigated@CvTeam@@IAEXXZ$5:
-	lea	ecx, DWORD PTR $T236061[ebp]
+	lea	ecx, DWORD PTR $T236728[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?testCircumnavigated@CvTeam@@IAEXXZ$6:
-	lea	ecx, DWORD PTR _args$226633[ebp]
+	lea	ecx, DWORD PTR _args$227151[ebp]
 	jmp	??1CvLuaArgsHandle@@QAE@XZ		; CvLuaArgsHandle::~CvLuaArgsHandle
 __unwindfunclet$?testCircumnavigated@CvTeam@@IAEXXZ$7:
-	lea	ecx, DWORD PTR $T236062[ebp]
+	lea	ecx, DWORD PTR $T236729[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?testCircumnavigated@CvTeam@@IAEXXZ$8:
-	lea	ecx, DWORD PTR $T236063[ebp]
+	lea	ecx, DWORD PTR $T236730[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?testCircumnavigated@CvTeam@@IAEXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?testCircumnavigated@CvTeam@@IAEXXZ
@@ -20705,21 +20996,21 @@ xdata$x	ENDS
 ;	COMDAT ?processTech@CvTeam@@IAEXW4TechTypes@@H@Z
 _TEXT	SEGMENT
 _iI$ = -200						; size = 4
-_args$226814 = -196					; size = 4
+_args$227332 = -196					; size = 4
 _this$ = -192						; size = 4
 _pTech$ = -188						; size = 4
-_bResult$226815 = -181					; size = 1
-_iLoop$226771 = -180					; size = 4
-_thisCiv$226752 = -176					; size = 4
-_strSummary$226743 = -172				; size = 80
-_strText$226740 = -92					; size = 80
+_bResult$227333 = -181					; size = 1
+_iLoop$227289 = -180					; size = 4
+_thisCiv$227270 = -176					; size = 4
+_strSummary$227261 = -172				; size = 80
+_strText$227258 = -92					; size = 80
 __$EHRec$ = -12						; size = 12
 _eTech$ = 8						; size = 4
 _iChange$ = 12						; size = 4
 ?processTech@CvTeam@@IAEXW4TechTypes@@H@Z PROC		; CvTeam::processTech, COMDAT
 ; _this$ = ecx
 
-; 6415 : {
+; 6467 : {
 
 	push	-1
 	push	__ehhandler$?processTech@CvTeam@@IAEXW4TechTypes@@H@Z
@@ -20732,17 +21023,17 @@ _iChange$ = 12						; size = 4
 	push	esi
 	push	edi
 
-; 6416 : 	CvCity* pCity;
-; 6417 : 	CvPlot* pLoopPlot;
-; 6418 : 	ResourceTypes eResource;
-; 6419 : #ifdef AUI_WARNING_FIXES
-; 6420 : 	uint iI;
-; 6421 : 	int iJ;
-; 6422 : #else
-; 6423 : 	int iI, iJ;
-; 6424 : #endif
-; 6425 : 
-; 6426 : 	CvTechEntry* pTech = GC.getTechInfo(eTech);
+; 6468 : 	CvCity* pCity;
+; 6469 : 	CvPlot* pLoopPlot;
+; 6470 : 	ResourceTypes eResource;
+; 6471 : #ifdef AUI_WARNING_FIXES
+; 6472 : 	uint iI;
+; 6473 : 	int iJ;
+; 6474 : #else
+; 6475 : 	int iI, iJ;
+; 6476 : #endif
+; 6477 : 
+; 6478 : 	CvTechEntry* pTech = GC.getTechInfo(eTech);
 
 	mov	edi, DWORD PTR _eTech$[esp+212]
 	mov	ebx, ecx
@@ -20752,8 +21043,8 @@ _iChange$ = 12						; size = 4
 	call	?getTechInfo@CvGlobals@@QAEPAVCvTechEntry@@W4TechTypes@@@Z ; CvGlobals::getTechInfo
 	mov	esi, eax
 
-; 6427 : 
-; 6428 : 	if (pTech->IsAllowsWorldCongress())
+; 6479 : 
+; 6480 : 	if (pTech->IsAllowsWorldCongress())
 
 	mov	ecx, esi
 	mov	DWORD PTR _pTech$[esp+216], esi
@@ -20761,32 +21052,32 @@ _iChange$ = 12						; size = 4
 	test	al, al
 	je	SHORT $LN108@processTec
 
-; 6429 : 	{
-; 6430 : 		SetHasTechForWorldCongress(true);
+; 6481 : 	{
+; 6482 : 		SetHasTechForWorldCongress(true);
 
 	mov	BYTE PTR [ebx+131], 1
 $LN108@processTec:
 
-; 6431 : 	}
-; 6432 : 
-; 6433 : 	if(pTech->IsTriggersArchaeologicalSites())
+; 6483 : 	}
+; 6484 : 
+; 6485 : 	if(pTech->IsTriggersArchaeologicalSites())
 
 	mov	ecx, esi
 	call	?IsTriggersArchaeologicalSites@CvTechEntry@@QBE_NXZ ; CvTechEntry::IsTriggersArchaeologicalSites
 	test	al, al
 	je	SHORT $LN101@processTec
 
-; 6434 : 	{
-; 6435 : 		GC.getGame().TriggerArchaeologySiteCreation(true /*bCheckInitialized*/);
+; 6486 : 	{
+; 6487 : 		GC.getGame().TriggerArchaeologySiteCreation(true /*bCheckInitialized*/);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	1
 	call	?TriggerArchaeologySiteCreation@CvGame@@QAEX_N@Z ; CvGame::TriggerArchaeologySiteCreation
 $LN101@processTec:
 
-; 6436 : 	}
-; 6437 : 
-; 6438 : 	if(pTech->IsExtraWaterSeeFrom())
+; 6488 : 	}
+; 6489 : 
+; 6490 : 	if(pTech->IsExtraWaterSeeFrom())
 
 	mov	ecx, esi
 	call	?IsExtraWaterSeeFrom@CvTechEntry@@QBE_NXZ ; CvTechEntry::IsExtraWaterSeeFrom
@@ -20794,8 +21085,8 @@ $LN101@processTec:
 	test	al, al
 	je	SHORT $LN112@processTec
 
-; 6439 : 	{
-; 6440 : 		changeExtraWaterSeeFromCount(iChange);
+; 6491 : 	{
+; 6492 : 		changeExtraWaterSeeFromCount(iChange);
 
 	test	ebp, ebp
 	je	SHORT $LN112@processTec
@@ -20808,261 +21099,261 @@ $LN101@processTec:
 	call	?updateSight@CvMap@@QAEX_N@Z		; CvMap::updateSight
 $LN112@processTec:
 
-; 6441 : 	}
-; 6442 : 
-; 6443 : 	if(pTech->IsMapCentering())
+; 6493 : 	}
+; 6494 : 
+; 6495 : 	if(pTech->IsMapCentering())
 
 	mov	ecx, esi
 	call	?IsMapCentering@CvTechEntry@@QBE_NXZ	; CvTechEntry::IsMapCentering
 	test	al, al
 	je	SHORT $LN98@processTec
 
-; 6444 : 	{
-; 6445 : 		if(iChange > 0)
+; 6496 : 	{
+; 6497 : 		if(iChange > 0)
 
 	test	ebp, ebp
 	jle	SHORT $LN98@processTec
 
-; 6446 : 		{
-; 6447 : 			setMapCentering(true);
+; 6498 : 		{
+; 6499 : 			setMapCentering(true);
 
 	push	1
 	mov	ecx, ebx
 	call	?setMapCentering@CvTeam@@QAEX_N@Z	; CvTeam::setMapCentering
 $LN98@processTec:
 
-; 6448 : 		}
-; 6449 : 	}
-; 6450 : 
-; 6451 : 	if(pTech->IsMapTrading())
+; 6500 : 		}
+; 6501 : 	}
+; 6502 : 
+; 6503 : 	if(pTech->IsMapTrading())
 
 	mov	ecx, esi
 	call	?IsMapTrading@CvTechEntry@@QBE_NXZ	; CvTechEntry::IsMapTrading
 	test	al, al
 	je	SHORT $LN119@processTec
 
-; 6452 : 	{
-; 6453 : 		changeMapTradingCount(iChange);
+; 6504 : 	{
+; 6505 : 		changeMapTradingCount(iChange);
 
 	add	DWORD PTR [ebx+40], ebp
 $LN119@processTec:
 
-; 6454 : 	}
-; 6455 : 
-; 6456 : 	if(pTech->IsTechTrading())
+; 6506 : 	}
+; 6507 : 
+; 6508 : 	if(pTech->IsTechTrading())
 
 	mov	ecx, esi
 	call	?IsTechTrading@CvTechEntry@@QBE_NXZ	; CvTechEntry::IsTechTrading
 	test	al, al
 	je	SHORT $LN121@processTec
 
-; 6457 : 	{
-; 6458 : 		changeTechTradingCount(iChange);
+; 6509 : 	{
+; 6510 : 		changeTechTradingCount(iChange);
 
 	add	DWORD PTR [ebx+44], ebp
 $LN121@processTec:
 
-; 6459 : 	}
-; 6460 : 
-; 6461 : 	if(pTech->IsGoldTrading())
+; 6511 : 	}
+; 6512 : 
+; 6513 : 	if(pTech->IsGoldTrading())
 
 	mov	ecx, esi
 	call	?IsGoldTrading@CvTechEntry@@QBE_NXZ	; CvTechEntry::IsGoldTrading
 	test	al, al
 	je	SHORT $LN123@processTec
 
-; 6462 : 	{
-; 6463 : 		changeGoldTradingCount(iChange);
+; 6514 : 	{
+; 6515 : 		changeGoldTradingCount(iChange);
 
 	add	DWORD PTR [ebx+48], ebp
 $LN123@processTec:
 
-; 6464 : 	}
-; 6465 : 
-; 6466 : 	if(pTech->IsAllowEmbassyTradingAllowed())
+; 6516 : 	}
+; 6517 : 
+; 6518 : 	if(pTech->IsAllowEmbassyTradingAllowed())
 
 	mov	ecx, esi
 	call	?IsAllowEmbassyTradingAllowed@CvTechEntry@@QBE_NXZ ; CvTechEntry::IsAllowEmbassyTradingAllowed
 	test	al, al
 	je	SHORT $LN125@processTec
 
-; 6467 : 	{
-; 6468 : 		changeAllowEmbassyTradingAllowedCount(iChange);
+; 6519 : 	{
+; 6520 : 		changeAllowEmbassyTradingAllowedCount(iChange);
 
 	add	DWORD PTR [ebx+52], ebp
 $LN125@processTec:
 
-; 6469 : 	}
-; 6470 : 
-; 6471 : 	if(pTech->IsOpenBordersTradingAllowed())
+; 6521 : 	}
+; 6522 : 
+; 6523 : 	if(pTech->IsOpenBordersTradingAllowed())
 
 	mov	ecx, esi
 	call	?IsOpenBordersTradingAllowed@CvTechEntry@@QBE_NXZ ; CvTechEntry::IsOpenBordersTradingAllowed
 	test	al, al
 	je	SHORT $LN127@processTec
 
-; 6472 : 	{
-; 6473 : 		changeOpenBordersTradingAllowedCount(iChange);
+; 6524 : 	{
+; 6525 : 		changeOpenBordersTradingAllowedCount(iChange);
 
 	add	DWORD PTR [ebx+56], ebp
 $LN127@processTec:
 
-; 6474 : 	}
-; 6475 : 
-; 6476 : 	if(pTech->IsDefensivePactTradingAllowed())
+; 6526 : 	}
+; 6527 : 
+; 6528 : 	if(pTech->IsDefensivePactTradingAllowed())
 
 	mov	ecx, esi
 	call	?IsDefensivePactTradingAllowed@CvTechEntry@@QBE_NXZ ; CvTechEntry::IsDefensivePactTradingAllowed
 	test	al, al
 	je	SHORT $LN129@processTec
 
-; 6477 : 	{
-; 6478 : 		changeDefensivePactTradingAllowedCount(iChange);
+; 6529 : 	{
+; 6530 : 		changeDefensivePactTradingAllowedCount(iChange);
 
 	add	DWORD PTR [ebx+60], ebp
 $LN129@processTec:
 
-; 6479 : 	}
-; 6480 : 
-; 6481 : 	if(pTech->IsResearchAgreementTradingAllowed())
+; 6531 : 	}
+; 6532 : 
+; 6533 : 	if(pTech->IsResearchAgreementTradingAllowed())
 
 	mov	ecx, esi
 	call	?IsResearchAgreementTradingAllowed@CvTechEntry@@QBE_NXZ ; CvTechEntry::IsResearchAgreementTradingAllowed
 	test	al, al
 	je	SHORT $LN131@processTec
 
-; 6482 : 	{
-; 6483 : 		ChangeResearchAgreementTradingAllowedCount(iChange);
+; 6534 : 	{
+; 6535 : 		ChangeResearchAgreementTradingAllowedCount(iChange);
 
 	add	DWORD PTR [ebx+64], ebp
 $LN131@processTec:
 
-; 6484 : 	}
-; 6485 : 
-; 6486 : 	if(pTech->IsTradeAgreementTradingAllowed())
+; 6536 : 	}
+; 6537 : 
+; 6538 : 	if(pTech->IsTradeAgreementTradingAllowed())
 
 	mov	ecx, esi
 	call	?IsTradeAgreementTradingAllowed@CvTechEntry@@QBE_NXZ ; CvTechEntry::IsTradeAgreementTradingAllowed
 	test	al, al
 	je	SHORT $LN133@processTec
 
-; 6487 : 	{
-; 6488 : 		ChangeTradeAgreementTradingAllowedCount(iChange);
+; 6539 : 	{
+; 6540 : 		ChangeTradeAgreementTradingAllowedCount(iChange);
 
 	add	DWORD PTR [ebx+68], ebp
 $LN133@processTec:
 
-; 6489 : 	}
-; 6490 : 
-; 6491 : 	if(pTech->IsPermanentAllianceTrading())
+; 6541 : 	}
+; 6542 : 
+; 6543 : 	if(pTech->IsPermanentAllianceTrading())
 
 	mov	ecx, esi
 	call	?IsPermanentAllianceTrading@CvTechEntry@@QBE_NXZ ; CvTechEntry::IsPermanentAllianceTrading
 	test	al, al
 	je	SHORT $LN135@processTec
 
-; 6492 : 	{
-; 6493 : 		changePermanentAllianceTradingCount(iChange);
+; 6544 : 	{
+; 6545 : 		changePermanentAllianceTradingCount(iChange);
 
 	add	DWORD PTR [ebx+72], ebp
 $LN135@processTec:
 
-; 6494 : 	}
-; 6495 : 
-; 6496 : 	if(pTech->IsBridgeBuilding())
+; 6546 : 	}
+; 6547 : 
+; 6548 : 	if(pTech->IsBridgeBuilding())
 
 	mov	ecx, esi
 	call	?IsBridgeBuilding@CvTechEntry@@QBE_NXZ	; CvTechEntry::IsBridgeBuilding
 	test	al, al
 	je	SHORT $LN88@processTec
 
-; 6497 : 	{
-; 6498 : 		changeBridgeBuildingCount(iChange);
+; 6549 : 	{
+; 6550 : 		changeBridgeBuildingCount(iChange);
 
 	push	ebp
 	mov	ecx, ebx
 	call	?changeBridgeBuildingCount@CvTeam@@QAEXH@Z ; CvTeam::changeBridgeBuildingCount
 $LN88@processTec:
 
-; 6499 : 	}
-; 6500 : 
-; 6501 : 	if(pTech->IsWaterWork())
+; 6551 : 	}
+; 6552 : 
+; 6553 : 	if(pTech->IsWaterWork())
 
 	mov	ecx, esi
 	call	?IsWaterWork@CvTechEntry@@QBE_NXZ	; CvTechEntry::IsWaterWork
 	test	al, al
 	je	SHORT $LN137@processTec
 
-; 6502 : 	{
-; 6503 : 		changeWaterWorkCount(iChange);
+; 6554 : 	{
+; 6555 : 		changeWaterWorkCount(iChange);
 
 	test	ebp, ebp
 	je	SHORT $LN137@processTec
 	add	DWORD PTR [ebx+80], ebp
 $LN137@processTec:
 
-; 6504 : 	}
-; 6505 : 
-; 6506 : 	if(pTech->IsAllowsEmbarking())
+; 6556 : 	}
+; 6557 : 
+; 6558 : 	if(pTech->IsAllowsEmbarking())
 
 	mov	ecx, esi
 	call	?IsAllowsEmbarking@CvTechEntry@@QBE_NXZ	; CvTechEntry::IsAllowsEmbarking
 	test	al, al
 	je	SHORT $LN86@processTec
 
-; 6507 : 	{
-; 6508 : 		changeCanEmbarkCount(iChange);
+; 6559 : 	{
+; 6560 : 		changeCanEmbarkCount(iChange);
 
 	push	ebp
 	mov	ecx, ebx
 	call	?changeCanEmbarkCount@CvTeam@@QAEXH@Z	; CvTeam::changeCanEmbarkCount
 $LN86@processTec:
 
-; 6509 : 	}
-; 6510 : 
-; 6511 : 	if(pTech->IsAllowsDefensiveEmbarking())
+; 6561 : 	}
+; 6562 : 
+; 6563 : 	if(pTech->IsAllowsDefensiveEmbarking())
 
 	mov	ecx, esi
 	call	?IsAllowsDefensiveEmbarking@CvTechEntry@@QBE_NXZ ; CvTechEntry::IsAllowsDefensiveEmbarking
 	test	al, al
 	je	SHORT $LN85@processTec
 
-; 6512 : 	{
-; 6513 : 		changeDefensiveEmbarkCount(iChange);
+; 6564 : 	{
+; 6565 : 		changeDefensiveEmbarkCount(iChange);
 
 	push	ebp
 	mov	ecx, ebx
 	call	?changeDefensiveEmbarkCount@CvTeam@@QAEXH@Z ; CvTeam::changeDefensiveEmbarkCount
 $LN85@processTec:
 
-; 6514 : 	}
-; 6515 : 
-; 6516 : 	if(pTech->IsEmbarkedAllWaterPassage())
+; 6566 : 	}
+; 6567 : 
+; 6568 : 	if(pTech->IsEmbarkedAllWaterPassage())
 
 	mov	ecx, esi
 	call	?IsEmbarkedAllWaterPassage@CvTechEntry@@QBE_NXZ ; CvTechEntry::IsEmbarkedAllWaterPassage
 	test	al, al
 	je	SHORT $LN140@processTec
 
-; 6517 : 	{
-; 6518 : 		changeEmbarkedAllWaterPassage(iChange);
+; 6569 : 	{
+; 6570 : 		changeEmbarkedAllWaterPassage(iChange);
 
 	test	ebp, ebp
 	je	SHORT $LN140@processTec
 	add	DWORD PTR [ebx+112], ebp
 $LN140@processTec:
 
-; 6519 : 	}
-; 6520 : 
-; 6521 : 	if(pTech->GetEmbarkedMoveChange() != 0)
+; 6571 : 	}
+; 6572 : 
+; 6573 : 	if(pTech->GetEmbarkedMoveChange() != 0)
 
 	mov	ecx, esi
 	call	?GetEmbarkedMoveChange@CvTechEntry@@QBEHXZ ; CvTechEntry::GetEmbarkedMoveChange
 	test	eax, eax
 	je	SHORT $LN143@processTec
 
-; 6522 : 	{
-; 6523 : 		changeEmbarkedExtraMoves(pTech->GetEmbarkedMoveChange() * iChange);
+; 6574 : 	{
+; 6575 : 		changeEmbarkedExtraMoves(pTech->GetEmbarkedMoveChange() * iChange);
 
 	mov	ecx, esi
 	call	?GetEmbarkedMoveChange@CvTechEntry@@QBEHXZ ; CvTechEntry::GetEmbarkedMoveChange
@@ -21070,19 +21361,19 @@ $LN140@processTec:
 	add	DWORD PTR [ebx+96], eax
 $LN143@processTec:
 
-; 6524 : 	}
-; 6525 : 
-; 6526 : 	//EAP: Add Embarked Visibility Extra on Techs
-; 6527 : 
-; 6528 : 	if(pTech->GetEmbarkedSightChange() != 0)
+; 6576 : 	}
+; 6577 : 
+; 6578 : 	//EAP: Add Embarked Visibility Extra on Techs
+; 6579 : 
+; 6580 : 	if(pTech->GetEmbarkedSightChange() != 0)
 
 	mov	ecx, esi
 	call	?GetEmbarkedSightChange@CvTechEntry@@QBEHXZ ; CvTechEntry::GetEmbarkedSightChange
 	test	eax, eax
 	je	SHORT $LN145@processTec
 
-; 6529 : 	{
-; 6530 : 		changeEmbarkedExtraSight(pTech->GetEmbarkedSightChange() * iChange);
+; 6581 : 	{
+; 6582 : 		changeEmbarkedExtraSight(pTech->GetEmbarkedSightChange() * iChange);
 
 	mov	ecx, esi
 	call	?GetEmbarkedSightChange@CvTechEntry@@QBEHXZ ; CvTechEntry::GetEmbarkedSightChange
@@ -21090,9 +21381,9 @@ $LN143@processTec:
 	add	DWORD PTR [ebx+100], eax
 $LN145@processTec:
 
-; 6531 : 	}
-; 6532 : 
-; 6533 : 	for(iI = 0; iI < GC.getNumRouteInfos(); iI++)
+; 6583 : 	}
+; 6584 : 
+; 6585 : 	for(iI = 0; iI < GC.getNumRouteInfos(); iI++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	xor	esi, esi
@@ -21102,8 +21393,8 @@ $LN145@processTec:
 	npad	3
 $LL81@processTec:
 
-; 6534 : 	{
-; 6535 : 		changeRouteChange(((RouteTypes)iI), (GC.getRouteInfo((RouteTypes) iI)->getTechMovementChange(eTech) * iChange));
+; 6586 : 	{
+; 6587 : 		changeRouteChange(((RouteTypes)iI), (GC.getRouteInfo((RouteTypes) iI)->getTechMovementChange(eTech) * iChange));
 
 	push	edi
 	push	esi
@@ -21122,12 +21413,12 @@ $LL81@processTec:
 	jl	SHORT $LL81@processTec
 $LN79@processTec:
 
-; 6536 : 	}
-; 6537 : 
-; 6538 : #ifdef AUI_WARNING_FIXES
-; 6539 : 	for (uint i = 0; i < GC.getNumBuildInfos(); i++)
-; 6540 : #else
-; 6541 : 	for (int i = 0; i < GC.getNumBuildInfos(); i++)
+; 6588 : 	}
+; 6589 : 
+; 6590 : #ifdef AUI_WARNING_FIXES
+; 6591 : 	for (uint i = 0; i < GC.getNumBuildInfos(); i++)
+; 6592 : #else
+; 6593 : 	for (int i = 0; i < GC.getNumBuildInfos(); i++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	xor	esi, esi
@@ -21136,20 +21427,20 @@ $LN79@processTec:
 	jle	SHORT $LN76@processTec
 $LL78@processTec:
 
-; 6542 : #endif
-; 6543 : 	{
-; 6544 : 		CvBuildInfo* pkBuildInfo = GC.getBuildInfo((BuildTypes)i);
+; 6594 : #endif
+; 6595 : 	{
+; 6596 : 		CvBuildInfo* pkBuildInfo = GC.getBuildInfo((BuildTypes)i);
 
 	push	esi
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getBuildInfo@CvGlobals@@QAEPAVCvBuildInfo@@W4BuildTypes@@@Z ; CvGlobals::getBuildInfo
 
-; 6545 : 		if (pkBuildInfo != NULL)
+; 6597 : 		if (pkBuildInfo != NULL)
 
 	test	eax, eax
 	je	SHORT $LN77@processTec
 
-; 6546 : 			changeBuildTimeChange(((BuildTypes)i), (pkBuildInfo->getTechTimeChange(eTech) * iChange));
+; 6598 : 			changeBuildTimeChange(((BuildTypes)i), (pkBuildInfo->getTechTimeChange(eTech) * iChange));
 
 	push	edi
 	mov	ecx, eax
@@ -21168,16 +21459,16 @@ $LN77@processTec:
 	jl	SHORT $LL78@processTec
 $LN76@processTec:
 
-; 6547 : 	}
-; 6548 : 
-; 6549 : 	for(iI = 0; iI < NUM_DOMAIN_TYPES; iI++)
+; 6599 : 	}
+; 6600 : 
+; 6601 : 	for(iI = 0; iI < NUM_DOMAIN_TYPES; iI++)
 
 	xor	esi, esi
 	lea	edi, DWORD PTR [ebx+1108]
 $LL74@processTec:
 
-; 6550 : 	{
-; 6551 : 		changeExtraMoves(((DomainTypes)iI), (pTech->GetDomainExtraMoves(iI) * iChange));
+; 6602 : 	{
+; 6603 : 		changeExtraMoves(((DomainTypes)iI), (pTech->GetDomainExtraMoves(iI) * iChange));
 
 	mov	ecx, DWORD PTR _pTech$[esp+216]
 	push	esi
@@ -21189,9 +21480,9 @@ $LL74@processTec:
 	cmp	esi, 5
 	jl	SHORT $LL74@processTec
 
-; 6552 : 	}
-; 6553 : 
-; 6554 : 	for(iI = 0; iI < GC.getNumBuildingInfos(); iI++)
+; 6604 : 	}
+; 6605 : 
+; 6606 : 	for(iI = 0; iI < GC.getNumBuildingInfos(); iI++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	xor	esi, esi
@@ -21201,29 +21492,29 @@ $LL74@processTec:
 	npad	6
 $LL71@processTec:
 
-; 6555 : 	{
-; 6556 : 		CvBuildingEntry* pBuildingEntry = GC.getBuildingInfo((BuildingTypes) iI);
+; 6607 : 	{
+; 6608 : 		CvBuildingEntry* pBuildingEntry = GC.getBuildingInfo((BuildingTypes) iI);
 
 	push	esi
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getBuildingInfo@CvGlobals@@QAEPAVCvBuildingEntry@@W4BuildingTypes@@@Z ; CvGlobals::getBuildingInfo
 	mov	edi, eax
 
-; 6557 : 		if(pBuildingEntry)
+; 6609 : 		if(pBuildingEntry)
 
 	test	edi, edi
 	je	SHORT $LN70@processTec
 
-; 6558 : 		{
-; 6559 : 			if(pBuildingEntry->GetObsoleteTech() == eTech)
+; 6610 : 		{
+; 6611 : 			if(pBuildingEntry->GetObsoleteTech() == eTech)
 
 	mov	ecx, edi
 	call	?GetObsoleteTech@CvBuildingEntry@@QBEHXZ ; CvBuildingEntry::GetObsoleteTech
 	cmp	eax, DWORD PTR _eTech$[esp+212]
 	jne	SHORT $LN67@processTec
 
-; 6560 : 			{
-; 6561 : 				changeObsoleteBuildingCount(((BuildingTypes)iI), iChange);
+; 6612 : 			{
+; 6613 : 				changeObsoleteBuildingCount(((BuildingTypes)iI), iChange);
 
 	push	ebp
 	push	esi
@@ -21231,16 +21522,16 @@ $LL71@processTec:
 	call	?changeObsoleteBuildingCount@CvTeam@@QAEXW4BuildingTypes@@H@Z ; CvTeam::changeObsoleteBuildingCount
 $LN67@processTec:
 
-; 6562 : 			}
-; 6563 : 			if(pBuildingEntry->GetEnhancedYieldTech() == eTech)
+; 6614 : 			}
+; 6615 : 			if(pBuildingEntry->GetEnhancedYieldTech() == eTech)
 
 	mov	ecx, edi
 	call	?GetEnhancedYieldTech@CvBuildingEntry@@QBEHXZ ; CvBuildingEntry::GetEnhancedYieldTech
 	cmp	eax, DWORD PTR _eTech$[esp+212]
 	jne	SHORT $LN70@processTec
 
-; 6564 : 			{
-; 6565 : 				enhanceBuilding(((BuildingTypes)iI), iChange);
+; 6616 : 			{
+; 6617 : 				enhanceBuilding(((BuildingTypes)iI), iChange);
 
 	push	ebp
 	push	esi
@@ -21254,11 +21545,11 @@ $LN70@processTec:
 	jl	SHORT $LL71@processTec
 $LN265@processTec:
 
-; 6566 : 			}
-; 6567 : 		}
-; 6568 : 	}
-; 6569 : 
-; 6570 : 	for(iI = 0; iI < GC.getNumImprovementInfos(); iI++)
+; 6618 : 			}
+; 6619 : 		}
+; 6620 : 	}
+; 6621 : 
+; 6622 : 	for(iI = 0; iI < GC.getNumImprovementInfos(); iI++)
 
 	xor	esi, esi
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
@@ -21269,27 +21560,27 @@ $LN265@processTec:
 	npad	6
 $LL65@processTec:
 
-; 6571 : 	{
-; 6572 : 		CvImprovementEntry* pImprovementEntry = GC.getImprovementInfo((ImprovementTypes)iI);
+; 6623 : 	{
+; 6624 : 		CvImprovementEntry* pImprovementEntry = GC.getImprovementInfo((ImprovementTypes)iI);
 
 	push	esi
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getImprovementInfo@CvGlobals@@QAEPAVCvImprovementEntry@@W4ImprovementTypes@@@Z ; CvGlobals::getImprovementInfo
 	mov	edi, eax
 
-; 6573 : 		if(pImprovementEntry)
+; 6625 : 		if(pImprovementEntry)
 
 	test	edi, edi
 	je	$LN64@processTec
 
-; 6574 : 		{
-; 6575 : 			for(iJ = 0; iJ < NUM_YIELD_TYPES; iJ++)
+; 6626 : 		{
+; 6627 : 			for(iJ = 0; iJ < NUM_YIELD_TYPES; iJ++)
 
 	xor	esi, esi
 $LL61@processTec:
 
-; 6576 : 			{
-; 6577 : 				changeImprovementYieldChange(((ImprovementTypes)iI), ((YieldTypes)iJ), (pImprovementEntry->GetTechYieldChanges(eTech, iJ) * iChange));
+; 6628 : 			{
+; 6629 : 				changeImprovementYieldChange(((ImprovementTypes)iI), ((YieldTypes)iJ), (pImprovementEntry->GetTechYieldChanges(eTech, iJ) * iChange));
 
 	mov	eax, DWORD PTR _eTech$[esp+212]
 	push	esi
@@ -21308,7 +21599,7 @@ $LL61@processTec:
 	call	?updateYield@CvTeam@@QAEXXZ		; CvTeam::updateYield
 $LN158@processTec:
 
-; 6578 : 				changeImprovementNoFreshWaterYieldChange(((ImprovementTypes)iI), ((YieldTypes)iJ), (pImprovementEntry->GetTechNoFreshWaterYieldChanges(eTech, iJ) * iChange));
+; 6630 : 				changeImprovementNoFreshWaterYieldChange(((ImprovementTypes)iI), ((YieldTypes)iJ), (pImprovementEntry->GetTechNoFreshWaterYieldChanges(eTech, iJ) * iChange));
 
 	mov	edx, DWORD PTR _eTech$[esp+212]
 	push	esi
@@ -21327,7 +21618,7 @@ $LN158@processTec:
 	call	?updateYield@CvTeam@@QAEXXZ		; CvTeam::updateYield
 $LN161@processTec:
 
-; 6579 : 				changeImprovementFreshWaterYieldChange(((ImprovementTypes)iI), ((YieldTypes)iJ), (pImprovementEntry->GetTechFreshWaterYieldChanges(eTech, iJ) * iChange));
+; 6631 : 				changeImprovementFreshWaterYieldChange(((ImprovementTypes)iI), ((YieldTypes)iJ), (pImprovementEntry->GetTechFreshWaterYieldChanges(eTech, iJ) * iChange));
 
 	mov	edx, DWORD PTR _eTech$[esp+212]
 	push	esi
@@ -21349,17 +21640,17 @@ $LN60@processTec:
 	cmp	esi, 6
 	jl	$LL61@processTec
 
-; 6574 : 		{
-; 6575 : 			for(iJ = 0; iJ < NUM_YIELD_TYPES; iJ++)
+; 6626 : 		{
+; 6627 : 			for(iJ = 0; iJ < NUM_YIELD_TYPES; iJ++)
 
 	mov	esi, DWORD PTR _iI$[esp+216]
 $LN64@processTec:
 
-; 6566 : 			}
-; 6567 : 		}
-; 6568 : 	}
-; 6569 : 
-; 6570 : 	for(iI = 0; iI < GC.getNumImprovementInfos(); iI++)
+; 6618 : 			}
+; 6619 : 		}
+; 6620 : 	}
+; 6621 : 
+; 6622 : 	for(iI = 0; iI < GC.getNumImprovementInfos(); iI++)
 
 	inc	esi
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
@@ -21369,25 +21660,25 @@ $LN64@processTec:
 	jl	$LL65@processTec
 $LN63@processTec:
 
-; 6580 : 			}
-; 6581 : 		}
-; 6582 : 	}
-; 6583 : 
-; 6584 : 	CvPlot* pNewUnitPlot;
-; 6585 : 	for(iI = 0; iI < MAX_PLAYERS; iI++)
+; 6632 : 			}
+; 6633 : 		}
+; 6634 : 	}
+; 6635 : 
+; 6636 : 	CvPlot* pNewUnitPlot;
+; 6637 : 	for(iI = 0; iI < MAX_PLAYERS; iI++)
 
 	mov	DWORD PTR _iI$[esp+216], 0
 	npad	9
 $LL58@processTec:
 
-; 6586 : 	{
-; 6587 : 		CvPlayer& kPlayer = GET_PLAYER((PlayerTypes)iI);
+; 6638 : 	{
+; 6639 : 		CvPlayer& kPlayer = GET_PLAYER((PlayerTypes)iI);
 
 	mov	esi, DWORD PTR _iI$[esp+216]
 	imul	esi, 63236				; 0000f704H
 	add	esi, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 
-; 6588 : 		if(kPlayer.getTeam() == GetID() && kPlayer.isEverAlive())
+; 6640 : 		if(kPlayer.getTeam() == GetID() && kPlayer.isEverAlive())
 
 	mov	eax, DWORD PTR [esi+44]
 	cmp	eax, 63					; 0000003fH
@@ -21405,8 +21696,8 @@ $LN174@processTec:
 	cmp	BYTE PTR [esi+2268], 0
 	je	$LN57@processTec
 
-; 6589 : 		{
-; 6590 : 			kPlayer.changeFeatureProductionModifier(pTech->GetFeatureProductionModifier() * iChange);
+; 6641 : 		{
+; 6642 : 			kPlayer.changeFeatureProductionModifier(pTech->GetFeatureProductionModifier() * iChange);
 
 	mov	ebp, DWORD PTR _pTech$[esp+216]
 	mov	ecx, ebp
@@ -21417,7 +21708,7 @@ $LN174@processTec:
 	mov	ecx, esi
 	call	?changeFeatureProductionModifier@CvPlayer@@QAEXH@Z ; CvPlayer::changeFeatureProductionModifier
 
-; 6591 : 			kPlayer.changeUnitFortificationModifier(pTech->GetUnitFortificationModifier() * iChange);
+; 6643 : 			kPlayer.changeUnitFortificationModifier(pTech->GetUnitFortificationModifier() * iChange);
 
 	mov	ecx, ebp
 	call	?GetUnitFortificationModifier@CvTechEntry@@QBEHXZ ; CvTechEntry::GetUnitFortificationModifier
@@ -21426,7 +21717,7 @@ $LN174@processTec:
 	mov	ecx, esi
 	call	?changeUnitFortificationModifier@CvPlayer@@QAEXH@Z ; CvPlayer::changeUnitFortificationModifier
 
-; 6592 : 			kPlayer.changeUnitBaseHealModifier(pTech->GetUnitBaseHealModifier() * iChange);
+; 6644 : 			kPlayer.changeUnitBaseHealModifier(pTech->GetUnitBaseHealModifier() * iChange);
 
 	mov	ecx, ebp
 	call	?GetUnitBaseHealModifier@CvTechEntry@@QBEHXZ ; CvTechEntry::GetUnitBaseHealModifier
@@ -21435,7 +21726,7 @@ $LN174@processTec:
 	mov	ecx, esi
 	call	?changeUnitBaseHealModifier@CvPlayer@@QAEXH@Z ; CvPlayer::changeUnitBaseHealModifier
 
-; 6593 : 			kPlayer.changeWorkerSpeedModifier(pTech->GetWorkerSpeedModifier() * iChange);
+; 6645 : 			kPlayer.changeWorkerSpeedModifier(pTech->GetWorkerSpeedModifier() * iChange);
 
 	mov	ecx, ebp
 	call	?GetWorkerSpeedModifier@CvTechEntry@@QBEHXZ ; CvTechEntry::GetWorkerSpeedModifier
@@ -21444,7 +21735,7 @@ $LN174@processTec:
 	mov	ecx, esi
 	call	?changeWorkerSpeedModifier@CvPlayer@@QAEXH@Z ; CvPlayer::changeWorkerSpeedModifier
 
-; 6594 : 			kPlayer.ChangeInfluenceSpreadModifier(pTech->GetInfluenceSpreadModifier() * iChange);
+; 6646 : 			kPlayer.ChangeInfluenceSpreadModifier(pTech->GetInfluenceSpreadModifier() * iChange);
 
 	mov	ecx, ebp
 	call	?GetInfluenceSpreadModifier@CvTechEntry@@QBEHXZ ; CvTechEntry::GetInfluenceSpreadModifier
@@ -21453,7 +21744,7 @@ $LN174@processTec:
 	mov	ecx, esi
 	call	?ChangeInfluenceSpreadModifier@CvPlayer@@QAEXH@Z ; CvPlayer::ChangeInfluenceSpreadModifier
 
-; 6595 : 			kPlayer.ChangeExtraVotesPerDiplomat(pTech->GetExtraVotesPerDiplomat() * iChange);
+; 6647 : 			kPlayer.ChangeExtraVotesPerDiplomat(pTech->GetExtraVotesPerDiplomat() * iChange);
 
 	mov	ecx, ebp
 	call	?GetExtraVotesPerDiplomat@CvTechEntry@@QBEHXZ ; CvTechEntry::GetExtraVotesPerDiplomat
@@ -21462,12 +21753,12 @@ $LN174@processTec:
 	mov	ecx, esi
 	call	?ChangeExtraVotesPerDiplomat@CvPlayer@@QAEXH@Z ; CvPlayer::ChangeExtraVotesPerDiplomat
 
-; 6596 : 
-; 6597 : 			// Free promotion from this tech?
-; 6598 : #ifdef AUI_WARNING_FIXES
-; 6599 : 			for (uint iPromotion = 0; iPromotion < GC.getNumPromotionInfos(); iPromotion++)
-; 6600 : #else
-; 6601 : 			for(int iPromotion = 0; iPromotion < GC.getNumPromotionInfos(); iPromotion++)
+; 6648 : 
+; 6649 : 			// Free promotion from this tech?
+; 6650 : #ifdef AUI_WARNING_FIXES
+; 6651 : 			for (uint iPromotion = 0; iPromotion < GC.getNumPromotionInfos(); iPromotion++)
+; 6652 : #else
+; 6653 : 			for(int iPromotion = 0; iPromotion < GC.getNumPromotionInfos(); iPromotion++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	xor	edi, edi
@@ -21477,10 +21768,10 @@ $LN174@processTec:
 	npad	6
 $LL54@processTec:
 
-; 6602 : #endif
-; 6603 : 			{
-; 6604 : 				PromotionTypes ePromotion = (PromotionTypes) iPromotion;
-; 6605 : 				if(pTech->IsFreePromotion(ePromotion))
+; 6654 : #endif
+; 6655 : 			{
+; 6656 : 				PromotionTypes ePromotion = (PromotionTypes) iPromotion;
+; 6657 : 				if(pTech->IsFreePromotion(ePromotion))
 
 	push	edi
 	mov	ecx, ebp
@@ -21488,7 +21779,7 @@ $LL54@processTec:
 	test	eax, eax
 	je	SHORT $LN53@processTec
 
-; 6606 : 					kPlayer.ChangeFreePromotionCount(ePromotion, iChange);
+; 6658 : 					kPlayer.ChangeFreePromotionCount(ePromotion, iChange);
 
 	push	ebx
 	push	edi
@@ -21502,33 +21793,33 @@ $LN53@processTec:
 	jl	SHORT $LL54@processTec
 $LN52@processTec:
 
-; 6607 : 			}
-; 6608 : 
-; 6609 : 			// Update our traits (some may have become obsolete)
-; 6610 : 			kPlayer.GetPlayerTraits()->Reset();
+; 6659 : 			}
+; 6660 : 
+; 6661 : 			// Update our traits (some may have become obsolete)
+; 6662 : 			kPlayer.GetPlayerTraits()->Reset();
 
 	mov	ecx, esi
 	call	?GetPlayerTraits@CvPlayer@@QBEPAVCvPlayerTraits@@XZ ; CvPlayer::GetPlayerTraits
 	mov	ecx, eax
 	call	?Reset@CvPlayerTraits@@QAEXXZ		; CvPlayerTraits::Reset
 
-; 6611 : 			kPlayer.GetPlayerTraits()->InitPlayerTraits();
+; 6663 : 			kPlayer.GetPlayerTraits()->InitPlayerTraits();
 
 	mov	ecx, esi
 	call	?GetPlayerTraits@CvPlayer@@QBEPAVCvPlayerTraits@@XZ ; CvPlayer::GetPlayerTraits
 	mov	ecx, eax
 	call	?InitPlayerTraits@CvPlayerTraits@@QAEXXZ ; CvPlayerTraits::InitPlayerTraits
 
-; 6612 : 			kPlayer.recomputePolicyCostModifier();
+; 6664 : 			kPlayer.recomputePolicyCostModifier();
 
 	mov	ecx, esi
 	call	?recomputePolicyCostModifier@CvPlayer@@QAEXXZ ; CvPlayer::recomputePolicyCostModifier
 
-; 6613 : 
-; 6614 : 			// Does our trait give us a new unit when we reach this tech?
-; 6615 : 			UnitTypes eLoopUnit;
-; 6616 : 			int iDefaultAI;
-; 6617 : 			int iUnitClass = kPlayer.GetPlayerTraits()->GetFirstFreeUnit(eTech);
+; 6665 : 
+; 6666 : 			// Does our trait give us a new unit when we reach this tech?
+; 6667 : 			UnitTypes eLoopUnit;
+; 6668 : 			int iDefaultAI;
+; 6669 : 			int iUnitClass = kPlayer.GetPlayerTraits()->GetFirstFreeUnit(eTech);
 
 	mov	eax, DWORD PTR _eTech$[esp+212]
 	push	eax
@@ -21538,26 +21829,26 @@ $LN52@processTec:
 	call	?GetFirstFreeUnit@CvPlayerTraits@@QAEHW4TechTypes@@@Z ; CvPlayerTraits::GetFirstFreeUnit
 	mov	edi, eax
 
-; 6618 : 			while(iUnitClass != NO_UNITCLASS)
+; 6670 : 			while(iUnitClass != NO_UNITCLASS)
 
 	cmp	edi, -1
 	je	$LN49@processTec
 $LL50@processTec:
 
-; 6619 : 			{
-; 6620 : 				CvCivilizationInfo& playerCivilization = kPlayer.getCivilizationInfo();
+; 6671 : 			{
+; 6672 : 				CvCivilizationInfo& playerCivilization = kPlayer.getCivilizationInfo();
 
 	mov	ecx, esi
 	call	?getCivilizationInfo@CvPlayer@@QBEAAVCvCivilizationInfo@@XZ ; CvPlayer::getCivilizationInfo
 
-; 6621 : 				eLoopUnit = (UnitTypes)playerCivilization.getCivilizationUnits(iUnitClass);
+; 6673 : 				eLoopUnit = (UnitTypes)playerCivilization.getCivilizationUnits(iUnitClass);
 
 	push	edi
 	mov	ecx, eax
 	call	?getCivilizationUnits@CvCivilizationInfo@@QBEHH@Z ; CvCivilizationInfo::getCivilizationUnits
 	mov	edi, eax
 
-; 6622 : 				iDefaultAI = GC.GetGameUnits()->GetEntry(eLoopUnit)->GetDefaultUnitAIType();
+; 6674 : 				iDefaultAI = GC.GetGameUnits()->GetEntry(eLoopUnit)->GetDefaultUnitAIType();
 
 	push	edi
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
@@ -21567,26 +21858,26 @@ $LL50@processTec:
 	mov	ecx, eax
 	call	?GetDefaultUnitAIType@CvUnitEntry@@QBEHXZ ; CvUnitEntry::GetDefaultUnitAIType
 
-; 6623 : 				pNewUnitPlot = kPlayer.addFreeUnit(eLoopUnit,(UnitAITypes)iDefaultAI);
+; 6675 : 				pNewUnitPlot = kPlayer.addFreeUnit(eLoopUnit,(UnitAITypes)iDefaultAI);
 
 	push	eax
 	push	edi
 	mov	ecx, esi
 	call	?addFreeUnit@CvPlayer@@QAEPAVCvPlot@@W4UnitTypes@@W4UnitAITypes@@@Z ; CvPlayer::addFreeUnit
 
-; 6624 : 
-; 6625 : 				// Notification below only tells user if their civ gets a Great Person from their trait.  But trait code allows ANY unit to be received from reaching a tech.
-; 6626 : 				// So in the future we should use a different notification ("you received a new unit from your trait since you reached this tech") instead.
-; 6627 : 				SpecialUnitTypes eSpecialUnitGreatPerson = (SpecialUnitTypes) GC.getInfoTypeForString("SPECIALUNIT_PEOPLE");
+; 6676 : 
+; 6677 : 				// Notification below only tells user if their civ gets a Great Person from their trait.  But trait code allows ANY unit to be received from reaching a tech.
+; 6678 : 				// So in the future we should use a different notification ("you received a new unit from your trait since you reached this tech") instead.
+; 6679 : 				SpecialUnitTypes eSpecialUnitGreatPerson = (SpecialUnitTypes) GC.getInfoTypeForString("SPECIALUNIT_PEOPLE");
 
 	push	0
-	push	OFFSET $SG226738
+	push	OFFSET $SG227256
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	ebp, eax
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	ebx, eax
 
-; 6628 : 				if(pNewUnitPlot && kPlayer.GetNotifications() && GC.GetGameUnits()->GetEntry(eLoopUnit)->GetSpecialUnitType() == eSpecialUnitGreatPerson)
+; 6680 : 				if(pNewUnitPlot && kPlayer.GetNotifications() && GC.GetGameUnits()->GetEntry(eLoopUnit)->GetSpecialUnitType() == eSpecialUnitGreatPerson)
 
 	test	ebp, ebp
 	je	$LN259@processTec
@@ -21604,25 +21895,25 @@ $LL50@processTec:
 	cmp	eax, ebx
 	jne	$LN259@processTec
 
-; 6629 : 				{
-; 6630 : 					Localization::String strText = Localization::Lookup("TXT_KEY_NOTIFICATION_GREAT_PERSON_ACTIVE_PLAYER");
+; 6681 : 				{
+; 6682 : 					Localization::String strText = Localization::Lookup("TXT_KEY_NOTIFICATION_GREAT_PERSON_ACTIVE_PLAYER");
 
 	mov	ebx, DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
-	lea	ecx, DWORD PTR _strText$226740[esp+216]
-	push	OFFSET $SG226742
+	lea	ecx, DWORD PTR _strText$227258[esp+216]
+	push	OFFSET $SG227260
 	push	ecx
 	call	ebx
 
-; 6631 : 					Localization::String strSummary = Localization::Lookup("TXT_KEY_NOTIFICATION_SUMMARY_GREAT_PERSON");
+; 6683 : 					Localization::String strSummary = Localization::Lookup("TXT_KEY_NOTIFICATION_SUMMARY_GREAT_PERSON");
 
-	lea	edx, DWORD PTR _strSummary$226743[esp+224]
-	push	OFFSET $SG226745
+	lea	edx, DWORD PTR _strSummary$227261[esp+224]
+	push	OFFSET $SG227263
 	push	edx
 	mov	DWORD PTR __$EHRec$[esp+240], 0
 	call	ebx
 	add	esp, 16					; 00000010H
 
-; 6632 : 					kPlayer.GetNotifications()->Add(NOTIFICATION_GREAT_PERSON_ACTIVE_PLAYER, strText.toUTF8(), strSummary.toUTF8(), pNewUnitPlot->getX(), pNewUnitPlot->getY(), eLoopUnit);
+; 6684 : 					kPlayer.GetNotifications()->Add(NOTIFICATION_GREAT_PERSON_ACTIVE_PLAYER, strText.toUTF8(), strSummary.toUTF8(), pNewUnitPlot->getX(), pNewUnitPlot->getY(), eLoopUnit);
 
 	movsx	eax, WORD PTR [ebp+2]
 	movsx	ecx, WORD PTR [ebp]
@@ -21631,11 +21922,11 @@ $LL50@processTec:
 	mov	edi, DWORD PTR __imp_?toUTF8@String@Localization@@QAEPBDXZ
 	push	eax
 	push	ecx
-	lea	ecx, DWORD PTR _strSummary$226743[esp+232]
+	lea	ecx, DWORD PTR _strSummary$227261[esp+232]
 	mov	BYTE PTR __$EHRec$[esp+240], 1
 	call	edi
 	push	eax
-	lea	ecx, DWORD PTR _strText$226740[esp+236]
+	lea	ecx, DWORD PTR _strText$227258[esp+236]
 	call	edi
 	push	eax
 	push	-2083717098				; 83cd0016H
@@ -21644,20 +21935,20 @@ $LL50@processTec:
 	mov	ecx, eax
 	call	?Add@CvNotifications@@QAEHW4NotificationTypes@@PBD1HHHH@Z ; CvNotifications::Add
 
-; 6633 : 				}
+; 6685 : 				}
 
 	mov	edi, DWORD PTR __imp_??1String@Localization@@UAE@XZ
-	lea	ecx, DWORD PTR _strSummary$226743[esp+216]
+	lea	ecx, DWORD PTR _strSummary$227261[esp+216]
 	mov	BYTE PTR __$EHRec$[esp+224], 0
 	call	edi
-	lea	ecx, DWORD PTR _strText$226740[esp+216]
+	lea	ecx, DWORD PTR _strText$227258[esp+216]
 	mov	DWORD PTR __$EHRec$[esp+224], -1
 	call	edi
 $LN259@processTec:
 
-; 6634 : 
-; 6635 : 				// Another?
-; 6636 : 				iUnitClass = kPlayer.GetPlayerTraits()->GetNextFreeUnit();
+; 6686 : 
+; 6687 : 				// Another?
+; 6688 : 				iUnitClass = kPlayer.GetPlayerTraits()->GetNextFreeUnit();
 
 	mov	ecx, esi
 	call	?GetPlayerTraits@CvPlayer@@QBEPAVCvPlayerTraits@@XZ ; CvPlayer::GetPlayerTraits
@@ -21668,25 +21959,25 @@ $LN259@processTec:
 	jne	$LL50@processTec
 $LN49@processTec:
 
-; 6637 : 			}
-; 6638 : 
-; 6639 : 
-; 6640 : 
-; 6641 : 
-; 6642 : 
-; 6643 : // -- From CMP DLL inserted table entried, very usefull ~EAP
-; 6644 : 
-; 6645 : 			if(kPlayer.getCapitalCity() != NULL) 
+; 6689 : 			}
+; 6690 : 
+; 6691 : 
+; 6692 : 
+; 6693 : 
+; 6694 : 
+; 6695 : // -- From CMP DLL inserted table entried, very usefull ~EAP
+; 6696 : 
+; 6697 : 			if(kPlayer.getCapitalCity() != NULL) 
 
 	mov	ecx, esi
 	call	?getCapitalCity@CvPlayer@@QAEPAVCvCity@@XZ ; CvPlayer::getCapitalCity
 	test	eax, eax
 	je	SHORT $LN261@processTec
 
-; 6646 : 			{
-; 6647 : 		
-; 6648 : 				//Free building in capital unlocked via tech?
-; 6649 : 				if(kPlayer.GetPlayerTraits()->GetCapitalFreeBuildingPrereqTech() == eTech)
+; 6698 : 			{
+; 6699 : 		
+; 6700 : 				//Free building in capital unlocked via tech?
+; 6701 : 				if(kPlayer.GetPlayerTraits()->GetCapitalFreeBuildingPrereqTech() == eTech)
 
 	mov	ecx, esi
 	call	?GetPlayerTraits@CvPlayer@@QBEPAVCvPlayerTraits@@XZ ; CvPlayer::GetPlayerTraits
@@ -21695,8 +21986,8 @@ $LN49@processTec:
 	cmp	eax, DWORD PTR _eTech$[esp+212]
 	jne	SHORT $LN261@processTec
 
-; 6650 : 				{
-; 6651 : 					BuildingTypes eFreeCapitalBuilding = kPlayer.GetPlayerTraits()->GetFreeCapitalBuilding();
+; 6702 : 				{
+; 6703 : 					BuildingTypes eFreeCapitalBuilding = kPlayer.GetPlayerTraits()->GetFreeCapitalBuilding();
 
 	mov	ecx, esi
 	call	?GetPlayerTraits@CvPlayer@@QBEPAVCvPlayerTraits@@XZ ; CvPlayer::GetPlayerTraits
@@ -21704,13 +21995,13 @@ $LN49@processTec:
 	call	?GetFreeCapitalBuilding@CvPlayerTraits@@QBE?AW4BuildingTypes@@XZ ; CvPlayerTraits::GetFreeCapitalBuilding
 	mov	edi, eax
 
-; 6652 : 					if(eFreeCapitalBuilding != NO_BUILDING)
+; 6704 : 					if(eFreeCapitalBuilding != NO_BUILDING)
 
 	cmp	edi, -1
 	je	SHORT $LN261@processTec
 
-; 6653 : 					{
-; 6654 : 						if(kPlayer.getCapitalCity()->GetCityBuildings()->GetNumRealBuilding(eFreeCapitalBuilding) > 0)
+; 6705 : 					{
+; 6706 : 						if(kPlayer.getCapitalCity()->GetCityBuildings()->GetNumRealBuilding(eFreeCapitalBuilding) > 0)
 
 	push	edi
 	mov	ecx, esi
@@ -21722,8 +22013,8 @@ $LN49@processTec:
 	test	eax, eax
 	jle	SHORT $LN260@processTec
 
-; 6655 : 						{
-; 6656 : 							kPlayer.getCapitalCity()->GetCityBuildings()->SetNumRealBuilding(eFreeCapitalBuilding, 0);
+; 6707 : 						{
+; 6708 : 							kPlayer.getCapitalCity()->GetCityBuildings()->SetNumRealBuilding(eFreeCapitalBuilding, 0);
 
 	push	0
 	push	edi
@@ -21735,8 +22026,8 @@ $LN49@processTec:
 	call	?SetNumRealBuilding@CvCityBuildings@@QAEXW4BuildingTypes@@H@Z ; CvCityBuildings::SetNumRealBuilding
 $LN260@processTec:
 
-; 6657 : 						}
-; 6658 : 						kPlayer.getCapitalCity()->GetCityBuildings()->SetNumFreeBuilding(eFreeCapitalBuilding, 1);
+; 6709 : 						}
+; 6710 : 						kPlayer.getCapitalCity()->GetCityBuildings()->SetNumFreeBuilding(eFreeCapitalBuilding, 1);
 
 	push	1
 	push	edi
@@ -21748,29 +22039,29 @@ $LN260@processTec:
 	call	?SetNumFreeBuilding@CvCityBuildings@@QAEXW4BuildingTypes@@H@Z ; CvCityBuildings::SetNumFreeBuilding
 $LN261@processTec:
 
-; 6659 : 					}
-; 6660 : 				}
-; 6661 : 			}
-; 6662 : 
-; 6663 : 			// Free buildings (once unlocked via tech) -- From CMP DLL inserted table entried, very usefull ~EAP
-; 6664 : 			CvCity* pLoopCity;
-; 6665 : 			const CvCivilizationInfo& thisCiv = kPlayer.getCivilizationInfo();
+; 6711 : 					}
+; 6712 : 				}
+; 6713 : 			}
+; 6714 : 
+; 6715 : 			// Free buildings (once unlocked via tech) -- From CMP DLL inserted table entried, very usefull ~EAP
+; 6716 : 			CvCity* pLoopCity;
+; 6717 : 			const CvCivilizationInfo& thisCiv = kPlayer.getCivilizationInfo();
 
 	mov	ecx, esi
 	call	?getCivilizationInfo@CvPlayer@@QBEAAVCvCivilizationInfo@@XZ ; CvPlayer::getCivilizationInfo
 
-; 6666 : 			if(kPlayer.GetPlayerTraits()->GetFreeBuildingPrereqTech() == eTech)
+; 6718 : 			if(kPlayer.GetPlayerTraits()->GetFreeBuildingPrereqTech() == eTech)
 
 	mov	ecx, esi
-	mov	DWORD PTR _thisCiv$226752[esp+216], eax
+	mov	DWORD PTR _thisCiv$227270[esp+216], eax
 	call	?GetPlayerTraits@CvPlayer@@QBEPAVCvPlayerTraits@@XZ ; CvPlayer::GetPlayerTraits
 	mov	ecx, eax
 	call	?GetFreeBuildingPrereqTech@CvPlayerTraits@@QBE?AW4TechTypes@@XZ ; CvPlayerTraits::GetFreeBuildingPrereqTech
 	cmp	eax, DWORD PTR _eTech$[esp+212]
 	jne	$LN57@processTec
 
-; 6667 : 			{
-; 6668 : 				for(iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
+; 6719 : 			{
+; 6720 : 				for(iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
 
 	xor	ebx, ebx
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
@@ -21780,23 +22071,23 @@ $LN261@processTec:
 	jle	$LN57@processTec
 $LL266@processTec:
 
-; 6669 : 				{
-; 6670 : 					CvBuildingClassInfo* pkBuildingClassInfo = GC.getBuildingClassInfo((BuildingClassTypes)iI);
+; 6721 : 				{
+; 6722 : 					CvBuildingClassInfo* pkBuildingClassInfo = GC.getBuildingClassInfo((BuildingClassTypes)iI);
 
 	push	ebx
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getBuildingClassInfo@CvGlobals@@QAEPAVCvBuildingClassInfo@@W4BuildingClassTypes@@@Z ; CvGlobals::getBuildingClassInfo
 
-; 6671 : 					if(!pkBuildingClassInfo)
+; 6723 : 					if(!pkBuildingClassInfo)
 
 	test	eax, eax
 	je	$LN41@processTec
 
-; 6672 : 					{
-; 6673 : 						continue;
-; 6674 : 					}
-; 6675 : 					
-; 6676 : 					if (kPlayer.GetNumCitiesFreeChosenBuilding((BuildingClassTypes)iI) > 0 || kPlayer.IsFreeChosenBuildingNewCity((BuildingClassTypes)iI) || kPlayer.IsFreeBuildingAllCity((BuildingClassTypes)iI))
+; 6724 : 					{
+; 6725 : 						continue;
+; 6726 : 					}
+; 6727 : 					
+; 6728 : 					if (kPlayer.GetNumCitiesFreeChosenBuilding((BuildingClassTypes)iI) > 0 || kPlayer.IsFreeChosenBuildingNewCity((BuildingClassTypes)iI) || kPlayer.IsFreeBuildingAllCity((BuildingClassTypes)iI))
 
 	push	ebx
 	mov	ecx, esi
@@ -21815,38 +22106,38 @@ $LL266@processTec:
 	je	$LN41@processTec
 $LN37@processTec:
 
-; 6677 : 					{
-; 6678 : 						BuildingTypes eBuilding = ((BuildingTypes)(thisCiv.getCivilizationBuildings((BuildingClassTypes)iI)));
+; 6729 : 					{
+; 6730 : 						BuildingTypes eBuilding = ((BuildingTypes)(thisCiv.getCivilizationBuildings((BuildingClassTypes)iI)));
 
-	mov	ecx, DWORD PTR _thisCiv$226752[esp+216]
+	mov	ecx, DWORD PTR _thisCiv$227270[esp+216]
 	push	ebx
 	call	?getCivilizationBuildings@CvCivilizationInfo@@QBEHH@Z ; CvCivilizationInfo::getCivilizationBuildings
 	mov	ebp, eax
 
-; 6679 : 
-; 6680 : 						if(eBuilding != NO_BUILDING)
+; 6731 : 
+; 6732 : 						if(eBuilding != NO_BUILDING)
 
 	cmp	ebp, -1
 	je	$LN41@processTec
 
-; 6681 : 						{
-; 6682 : 							CvBuildingEntry* pkBuildingInfo = GC.getBuildingInfo(eBuilding);
+; 6733 : 						{
+; 6734 : 							CvBuildingEntry* pkBuildingInfo = GC.getBuildingInfo(eBuilding);
 
 	push	ebp
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getBuildingInfo@CvGlobals@@QAEPAVCvBuildingEntry@@W4BuildingTypes@@@Z ; CvGlobals::getBuildingInfo
 
-; 6683 : 							if(pkBuildingInfo)
+; 6735 : 							if(pkBuildingInfo)
 
 	test	eax, eax
 	je	$LN41@processTec
 
-; 6684 : 							{
-; 6685 : 								int iLoop;
-; 6686 : 								for(pLoopCity = kPlayer.firstCity(&iLoop); pLoopCity != NULL; pLoopCity = kPlayer.nextCity(&iLoop))
+; 6736 : 							{
+; 6737 : 								int iLoop;
+; 6738 : 								for(pLoopCity = kPlayer.firstCity(&iLoop); pLoopCity != NULL; pLoopCity = kPlayer.nextCity(&iLoop))
 
 	push	0
-	lea	eax, DWORD PTR _iLoop$226771[esp+220]
+	lea	eax, DWORD PTR _iLoop$227289[esp+220]
 	push	eax
 	mov	ecx, esi
 	call	?firstCity@CvPlayer@@QAEPAVCvCity@@PAH_N@Z ; CvPlayer::firstCity
@@ -21856,11 +22147,11 @@ $LN37@processTec:
 	npad	5
 $LL34@processTec:
 
-; 6687 : 								{
-; 6688 : 									//bool bHasBuildingClass = pLoopCity->HasBuildingClass((BuildingClassTypes)iI);
-; 6689 : 									BuildingTypes eReplacedBuilding = eBuilding;
-; 6690 : 								
-; 6691 : 									if(pLoopCity->isValidBuildingLocation(eBuilding) || (eBuilding != eReplacedBuilding && pLoopCity->isValidBuildingLocation(eReplacedBuilding)))
+; 6739 : 								{
+; 6740 : 									//bool bHasBuildingClass = pLoopCity->HasBuildingClass((BuildingClassTypes)iI);
+; 6741 : 									BuildingTypes eReplacedBuilding = eBuilding;
+; 6742 : 								
+; 6743 : 									if(pLoopCity->isValidBuildingLocation(eBuilding) || (eBuilding != eReplacedBuilding && pLoopCity->isValidBuildingLocation(eReplacedBuilding)))
 
 	push	ebp
 	mov	ecx, edi
@@ -21868,8 +22159,8 @@ $LL34@processTec:
 	test	al, al
 	je	$LN33@processTec
 
-; 6692 : 									{
-; 6693 : 										if (kPlayer.GetNumCitiesFreeChosenBuilding((BuildingClassTypes)iI) > 0 || kPlayer.IsFreeChosenBuildingNewCity((BuildingClassTypes)iI) || kPlayer.IsFreeBuildingAllCity((BuildingClassTypes)iI))
+; 6744 : 									{
+; 6745 : 										if (kPlayer.GetNumCitiesFreeChosenBuilding((BuildingClassTypes)iI) > 0 || kPlayer.IsFreeChosenBuildingNewCity((BuildingClassTypes)iI) || kPlayer.IsFreeBuildingAllCity((BuildingClassTypes)iI))
 
 	push	ebx
 	mov	ecx, esi
@@ -21888,28 +22179,28 @@ $LL34@processTec:
 	je	$LN33@processTec
 $LN27@processTec:
 
-; 6694 : 										{
-; 6695 : 											if (eBuilding != eReplacedBuilding)
-; 6696 : 											{
-; 6697 : 												pLoopCity->GetCityBuildings()->SetNumRealBuilding(eReplacedBuilding, 0);
-; 6698 : 												if (pLoopCity->GetCityBuildings()->GetNumFreeBuilding(eReplacedBuilding) <= 0)
-; 6699 : 												{
-; 6700 : 													pLoopCity->GetCityBuildings()->SetNumFreeBuilding(eReplacedBuilding, 1);
-; 6701 : 												}
-; 6702 : 												if (pLoopCity->GetCityBuildings()->GetNumFreeBuilding(eReplacedBuilding) > 0)
-; 6703 : 												{
-; 6704 : 													kPlayer.ChangeNumCitiesFreeChosenBuilding((BuildingClassTypes)iI, -1);
-; 6705 : 												}
-; 6706 : 												if (pLoopCity->getFirstBuildingOrder(eReplacedBuilding) == 0)
-; 6707 : 												{
-; 6708 : 													pLoopCity->clearOrderQueue();
-; 6709 : 													pLoopCity->chooseProduction();
-; 6710 : 													// Send a notification to the user that what they were building was given to them, and they need to produce something else.
-; 6711 : 												}
-; 6712 : 											}
-; 6713 : 											else
-; 6714 : 											{
-; 6715 : 												if (pLoopCity->GetCityBuildings()->GetNumRealBuilding(eBuilding) > 0)
+; 6746 : 										{
+; 6747 : 											if (eBuilding != eReplacedBuilding)
+; 6748 : 											{
+; 6749 : 												pLoopCity->GetCityBuildings()->SetNumRealBuilding(eReplacedBuilding, 0);
+; 6750 : 												if (pLoopCity->GetCityBuildings()->GetNumFreeBuilding(eReplacedBuilding) <= 0)
+; 6751 : 												{
+; 6752 : 													pLoopCity->GetCityBuildings()->SetNumFreeBuilding(eReplacedBuilding, 1);
+; 6753 : 												}
+; 6754 : 												if (pLoopCity->GetCityBuildings()->GetNumFreeBuilding(eReplacedBuilding) > 0)
+; 6755 : 												{
+; 6756 : 													kPlayer.ChangeNumCitiesFreeChosenBuilding((BuildingClassTypes)iI, -1);
+; 6757 : 												}
+; 6758 : 												if (pLoopCity->getFirstBuildingOrder(eReplacedBuilding) == 0)
+; 6759 : 												{
+; 6760 : 													pLoopCity->clearOrderQueue();
+; 6761 : 													pLoopCity->chooseProduction();
+; 6762 : 													// Send a notification to the user that what they were building was given to them, and they need to produce something else.
+; 6763 : 												}
+; 6764 : 											}
+; 6765 : 											else
+; 6766 : 											{
+; 6767 : 												if (pLoopCity->GetCityBuildings()->GetNumRealBuilding(eBuilding) > 0)
 
 	push	ebp
 	mov	ecx, edi
@@ -21919,8 +22210,8 @@ $LN27@processTec:
 	test	eax, eax
 	jle	SHORT $LN22@processTec
 
-; 6716 : 												{
-; 6717 : 													pLoopCity->GetCityBuildings()->SetNumRealBuilding(eBuilding, 0);
+; 6768 : 												{
+; 6769 : 													pLoopCity->GetCityBuildings()->SetNumRealBuilding(eBuilding, 0);
 
 	push	0
 	push	ebp
@@ -21930,8 +22221,8 @@ $LN27@processTec:
 	call	?SetNumRealBuilding@CvCityBuildings@@QAEXW4BuildingTypes@@H@Z ; CvCityBuildings::SetNumRealBuilding
 $LN22@processTec:
 
-; 6718 : 												}
-; 6719 : 												if (pLoopCity->GetCityBuildings()->GetNumFreeBuilding(eBuilding) <= 0)
+; 6770 : 												}
+; 6771 : 												if (pLoopCity->GetCityBuildings()->GetNumFreeBuilding(eBuilding) <= 0)
 
 	push	ebp
 	mov	ecx, edi
@@ -21941,8 +22232,8 @@ $LN22@processTec:
 	test	eax, eax
 	jg	SHORT $LN21@processTec
 
-; 6720 : 												{
-; 6721 : 													pLoopCity->GetCityBuildings()->SetNumFreeBuilding(eBuilding, 1);
+; 6772 : 												{
+; 6773 : 													pLoopCity->GetCityBuildings()->SetNumFreeBuilding(eBuilding, 1);
 
 	push	1
 	push	ebp
@@ -21952,8 +22243,8 @@ $LN22@processTec:
 	call	?SetNumFreeBuilding@CvCityBuildings@@QAEXW4BuildingTypes@@H@Z ; CvCityBuildings::SetNumFreeBuilding
 $LN21@processTec:
 
-; 6722 : 												}
-; 6723 : 												if (pLoopCity->GetCityBuildings()->GetNumFreeBuilding(eBuilding) > 0)
+; 6774 : 												}
+; 6775 : 												if (pLoopCity->GetCityBuildings()->GetNumFreeBuilding(eBuilding) > 0)
 
 	push	ebp
 	mov	ecx, edi
@@ -21963,8 +22254,8 @@ $LN21@processTec:
 	test	eax, eax
 	jle	SHORT $LN20@processTec
 
-; 6724 : 												{
-; 6725 : 													kPlayer.ChangeNumCitiesFreeChosenBuilding((BuildingClassTypes)iI, -1);
+; 6776 : 												{
+; 6777 : 													kPlayer.ChangeNumCitiesFreeChosenBuilding((BuildingClassTypes)iI, -1);
 
 	push	-1
 	push	ebx
@@ -21972,8 +22263,8 @@ $LN21@processTec:
 	call	?ChangeNumCitiesFreeChosenBuilding@CvPlayer@@QAEXW4BuildingClassTypes@@H@Z ; CvPlayer::ChangeNumCitiesFreeChosenBuilding
 $LN20@processTec:
 
-; 6726 : 												}
-; 6727 : 												if (pLoopCity->getFirstBuildingOrder(eBuilding) == 0)
+; 6778 : 												}
+; 6779 : 												if (pLoopCity->getFirstBuildingOrder(eBuilding) == 0)
 
 	push	ebp
 	mov	ecx, edi
@@ -21981,13 +22272,13 @@ $LN20@processTec:
 	test	eax, eax
 	jne	SHORT $LN33@processTec
 
-; 6728 : 												{
-; 6729 : 													pLoopCity->clearOrderQueue();
+; 6780 : 												{
+; 6781 : 													pLoopCity->clearOrderQueue();
 
 	mov	ecx, edi
 	call	?clearOrderQueue@CvCity@@QAEXXZ		; CvCity::clearOrderQueue
 
-; 6730 : 													pLoopCity->chooseProduction();
+; 6782 : 													pLoopCity->chooseProduction();
 
 	push	0
 	push	0
@@ -21998,7 +22289,7 @@ $LN20@processTec:
 	call	?chooseProduction@CvCity@@QAEXW4UnitTypes@@W4BuildingTypes@@W4ProjectTypes@@_N3@Z ; CvCity::chooseProduction
 $LN33@processTec:
 	push	0
-	lea	ecx, DWORD PTR _iLoop$226771[esp+220]
+	lea	ecx, DWORD PTR _iLoop$227289[esp+220]
 	push	ecx
 	mov	ecx, esi
 	call	?nextCity@CvPlayer@@QAEPAVCvCity@@PAH_N@Z ; CvPlayer::nextCity
@@ -22007,8 +22298,8 @@ $LN33@processTec:
 	jne	$LL34@processTec
 $LN41@processTec:
 
-; 6667 : 			{
-; 6668 : 				for(iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
+; 6719 : 			{
+; 6720 : 				for(iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	inc	ebx
@@ -22018,12 +22309,12 @@ $LN41@processTec:
 	mov	DWORD PTR _iI$[esp+216], ebx
 $LN57@processTec:
 
-; 6580 : 			}
-; 6581 : 		}
-; 6582 : 	}
-; 6583 : 
-; 6584 : 	CvPlot* pNewUnitPlot;
-; 6585 : 	for(iI = 0; iI < MAX_PLAYERS; iI++)
+; 6632 : 			}
+; 6633 : 		}
+; 6634 : 	}
+; 6635 : 
+; 6636 : 	CvPlot* pNewUnitPlot;
+; 6637 : 	for(iI = 0; iI < MAX_PLAYERS; iI++)
 
 	mov	eax, DWORD PTR _iI$[esp+216]
 	inc	eax
@@ -22031,23 +22322,23 @@ $LN57@processTec:
 	mov	DWORD PTR _iI$[esp+216], eax
 	jl	$LL58@processTec
 
-; 6731 : 													// Send a notification to the user that what they were building was given to them, and they need to produce something else.
-; 6732 : 												}
-; 6733 : 											}
-; 6734 : 										}
-; 6735 : 									}
-; 6736 : 								}
-; 6737 : 							}
-; 6738 : 						}
-; 6739 : 					}
-; 6740 : 				}
-; 6741 : 			}
-; 6742 : 
-; 6743 : 
-; 6744 : 		}
-; 6745 : 	}
-; 6746 : 
-; 6747 : 	for(iI = 0; iI < GC.getMap().numPlots(); iI++)
+; 6783 : 													// Send a notification to the user that what they were building was given to them, and they need to produce something else.
+; 6784 : 												}
+; 6785 : 											}
+; 6786 : 										}
+; 6787 : 									}
+; 6788 : 								}
+; 6789 : 							}
+; 6790 : 						}
+; 6791 : 					}
+; 6792 : 				}
+; 6793 : 			}
+; 6794 : 
+; 6795 : 
+; 6796 : 		}
+; 6797 : 	}
+; 6798 : 
+; 6799 : 	for(iI = 0; iI < GC.getMap().numPlots(); iI++)
 
 	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+52
 	mov	ecx, DWORD PTR [eax+4028]
@@ -22059,27 +22350,27 @@ $LN57@processTec:
 	npad	7
 $LL18@processTec:
 
-; 6748 : 	{
-; 6749 : 		pLoopPlot = GC.getMap().plotByIndexUnchecked(iI);
+; 6800 : 	{
+; 6801 : 		pLoopPlot = GC.getMap().plotByIndexUnchecked(iI);
 
 	mov	esi, DWORD PTR [eax+4068]
 	add	esi, edi
 
-; 6750 : 
-; 6751 : 		eResource = pLoopPlot->getResourceType();
+; 6802 : 
+; 6803 : 		eResource = pLoopPlot->getResourceType();
 
 	push	-1
 	mov	ecx, esi
 	call	?getResourceType@CvPlot@@QBE?AW4ResourceTypes@@W4TeamTypes@@@Z ; CvPlot::getResourceType
 
-; 6752 : 
-; 6753 : 		if(eResource != NO_RESOURCE)
+; 6804 : 
+; 6805 : 		if(eResource != NO_RESOURCE)
 
 	cmp	eax, -1
 	je	SHORT $LN17@processTec
 
-; 6754 : 		{
-; 6755 : 			if(GC.getResourceInfo(eResource)->getTechReveal() == eTech)
+; 6806 : 		{
+; 6807 : 			if(GC.getResourceInfo(eResource)->getTechReveal() == eTech)
 
 	push	eax
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
@@ -22089,13 +22380,13 @@ $LL18@processTec:
 	cmp	eax, DWORD PTR _eTech$[esp+212]
 	jne	SHORT $LN17@processTec
 
-; 6756 : 			{
-; 6757 : 				pLoopPlot->updateYield();
+; 6808 : 			{
+; 6809 : 				pLoopPlot->updateYield();
 
 	mov	ecx, esi
 	call	?updateYield@CvPlot@@QAEXXZ		; CvPlot::updateYield
 
-; 6758 : 				if(pLoopPlot->isRevealed(m_eID))
+; 6810 : 				if(pLoopPlot->isRevealed(m_eID))
 
 	mov	ecx, DWORD PTR [ebp+4]
 	mov	eax, ecx
@@ -22108,8 +22399,8 @@ $LL18@processTec:
 	test	edx, DWORD PTR [esi+eax*4+8]
 	je	SHORT $LN17@processTec
 
-; 6759 : 				{
-; 6760 : 					pLoopPlot->setLayoutDirty(true);
+; 6811 : 				{
+; 6812 : 					pLoopPlot->setLayoutDirty(true);
 
 	push	1
 	mov	ecx, esi
@@ -22122,12 +22413,12 @@ $LN17@processTec:
 	jl	SHORT $LL18@processTec
 $LN264@processTec:
 
-; 6761 : 				}
-; 6762 : 			}
-; 6763 : 		}
-; 6764 : 	}
-; 6765 : 
-; 6766 : 	for(iI = 0; iI < GC.getNumBuildInfos(); iI++)
+; 6813 : 				}
+; 6814 : 			}
+; 6815 : 		}
+; 6816 : 	}
+; 6817 : 
+; 6818 : 	for(iI = 0; iI < GC.getNumBuildInfos(); iI++)
 
 	xor	edi, edi
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
@@ -22138,15 +22429,15 @@ $LN264@processTec:
 	npad	7
 $LL12@processTec:
 
-; 6767 : 	{
-; 6768 : 		CvBuildInfo* pBuildInfo = GC.getBuildInfo((BuildTypes) iI);
+; 6819 : 	{
+; 6820 : 		CvBuildInfo* pBuildInfo = GC.getBuildInfo((BuildTypes) iI);
 
 	push	edi
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getBuildInfo@CvGlobals@@QAEPAVCvBuildInfo@@W4BuildTypes@@@Z ; CvGlobals::getBuildInfo
 	mov	esi, eax
 
-; 6769 : 		if(pBuildInfo && pBuildInfo->getTechPrereq() == eTech)
+; 6821 : 		if(pBuildInfo && pBuildInfo->getTechPrereq() == eTech)
 
 	test	esi, esi
 	je	$LN11@processTec
@@ -22155,21 +22446,21 @@ $LL12@processTec:
 	cmp	eax, DWORD PTR _eTech$[esp+212]
 	jne	SHORT $LN11@processTec
 
-; 6770 : 		{
-; 6771 : 			if(pBuildInfo->getRoute() != NO_ROUTE)
+; 6822 : 		{
+; 6823 : 			if(pBuildInfo->getRoute() != NO_ROUTE)
 
 	mov	ecx, esi
 	call	?getRoute@CvBuildInfo@@QBEHXZ		; CvBuildInfo::getRoute
 	cmp	eax, -1
 	je	SHORT $LN11@processTec
 
-; 6772 : 			{
-; 6773 : #ifdef AUI_WARNING_FIXES
-; 6774 : 				for (uint iK = 0; iK < GC.getMap().numPlots(); iK++)
-; 6775 : 				{
-; 6776 : 					pLoopPlot = GC.getMap().plotByIndexUnchecked(iK);
-; 6777 : #else
-; 6778 : 				for(iJ = 0; iJ < GC.getMap().numPlots(); iJ++)
+; 6824 : 			{
+; 6825 : #ifdef AUI_WARNING_FIXES
+; 6826 : 				for (uint iK = 0; iK < GC.getMap().numPlots(); iK++)
+; 6827 : 				{
+; 6828 : 					pLoopPlot = GC.getMap().plotByIndexUnchecked(iK);
+; 6829 : #else
+; 6830 : 				for(iJ = 0; iJ < GC.getMap().numPlots(); iJ++)
 
 	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+52
 	xor	ebp, ebp
@@ -22178,14 +22469,14 @@ $LL12@processTec:
 	xor	ebx, ebx
 $LL7@processTec:
 
-; 6779 : 				{
-; 6780 : 					pLoopPlot = GC.getMap().plotByIndexUnchecked(iJ);
+; 6831 : 				{
+; 6832 : 					pLoopPlot = GC.getMap().plotByIndexUnchecked(iJ);
 
 	mov	esi, DWORD PTR [eax+4068]
 
-; 6781 : #endif
-; 6782 : 
-; 6783 : 					pCity = pLoopPlot->getPlotCity();
+; 6833 : #endif
+; 6834 : 
+; 6835 : 					pCity = pLoopPlot->getPlotCity();
 
 	mov	eax, DWORD PTR [esi+ebx+104]
 	add	esi, ebx
@@ -22200,14 +22491,14 @@ $LL7@processTec:
 	mov	ecx, eax
 	call	?getCity@CvPlayer@@QAEPAVCvCity@@H@Z	; CvPlayer::getCity
 
-; 6784 : 
-; 6785 : 					if(pCity != NULL)
+; 6836 : 
+; 6837 : 					if(pCity != NULL)
 
 	test	eax, eax
 	je	SHORT $LN6@processTec
 
-; 6786 : 					{
-; 6787 : 						if(pCity->getTeam() == GetID())
+; 6838 : 					{
+; 6839 : 						if(pCity->getTeam() == GetID())
 
 	mov	edx, DWORD PTR _this$[esp+216]
 	mov	edi, DWORD PTR [edx+4]
@@ -22216,8 +22507,8 @@ $LL7@processTec:
 	cmp	eax, edi
 	jne	SHORT $LN6@processTec
 
-; 6788 : 						{
-; 6789 : 							pLoopPlot->updateCityRoute();
+; 6840 : 						{
+; 6841 : 							pLoopPlot->updateCityRoute();
 
 	mov	ecx, esi
 	call	?updateCityRoute@CvPlot@@QAEXXZ		; CvPlot::updateCityRoute
@@ -22228,23 +22519,23 @@ $LN6@processTec:
 	cmp	ebp, DWORD PTR [eax+4028]
 	jl	SHORT $LL7@processTec
 
-; 6772 : 			{
-; 6773 : #ifdef AUI_WARNING_FIXES
-; 6774 : 				for (uint iK = 0; iK < GC.getMap().numPlots(); iK++)
-; 6775 : 				{
-; 6776 : 					pLoopPlot = GC.getMap().plotByIndexUnchecked(iK);
-; 6777 : #else
-; 6778 : 				for(iJ = 0; iJ < GC.getMap().numPlots(); iJ++)
+; 6824 : 			{
+; 6825 : #ifdef AUI_WARNING_FIXES
+; 6826 : 				for (uint iK = 0; iK < GC.getMap().numPlots(); iK++)
+; 6827 : 				{
+; 6828 : 					pLoopPlot = GC.getMap().plotByIndexUnchecked(iK);
+; 6829 : #else
+; 6830 : 				for(iJ = 0; iJ < GC.getMap().numPlots(); iJ++)
 
 	mov	edi, DWORD PTR _iI$[esp+216]
 $LN11@processTec:
 
-; 6761 : 				}
-; 6762 : 			}
-; 6763 : 		}
-; 6764 : 	}
-; 6765 : 
-; 6766 : 	for(iI = 0; iI < GC.getNumBuildInfos(); iI++)
+; 6813 : 				}
+; 6814 : 			}
+; 6815 : 		}
+; 6816 : 	}
+; 6817 : 
+; 6818 : 	for(iI = 0; iI < GC.getNumBuildInfos(); iI++)
 
 	inc	edi
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
@@ -22254,14 +22545,14 @@ $LN11@processTec:
 	jl	$LL12@processTec
 $LN10@processTec:
 
-; 6790 : 						}
-; 6791 : 					}
-; 6792 : 				}
-; 6793 : 			}
-; 6794 : 		}
-; 6795 : 	}
-; 6796 : 
-; 6797 : 	ICvEngineScriptSystem1* pkScriptSystem = gDLL->GetScriptSystem();
+; 6842 : 						}
+; 6843 : 					}
+; 6844 : 				}
+; 6845 : 			}
+; 6846 : 		}
+; 6847 : 	}
+; 6848 : 
+; 6849 : 	ICvEngineScriptSystem1* pkScriptSystem = gDLL->GetScriptSystem();
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8564
 	mov	eax, DWORD PTR [ecx]
@@ -22269,70 +22560,70 @@ $LN10@processTec:
 	call	edx
 	mov	esi, eax
 
-; 6798 : 	if(pkScriptSystem)
+; 6850 : 	if(pkScriptSystem)
 
 	test	esi, esi
 	je	SHORT $LN2@processTec
 
-; 6799 : 	{
-; 6800 : 		CvLuaArgsHandle args(3);
+; 6851 : 	{
+; 6852 : 		CvLuaArgsHandle args(3);
 
 	push	3
-	lea	ecx, DWORD PTR _args$226814[esp+220]
+	lea	ecx, DWORD PTR _args$227332[esp+220]
 	call	??0CvLuaArgsHandle@@QAE@I@Z		; CvLuaArgsHandle::CvLuaArgsHandle
 
-; 6801 : 		args->Push(GetID());
+; 6853 : 		args->Push(GetID());
 
 	mov	eax, DWORD PTR _this$[esp+216]
 	mov	eax, DWORD PTR [eax+4]
-	mov	ecx, DWORD PTR _args$226814[esp+216]
+	mov	ecx, DWORD PTR _args$227332[esp+216]
 	mov	edx, DWORD PTR [ecx]
 	push	eax
 	mov	eax, DWORD PTR [edx+8]
 	mov	DWORD PTR __$EHRec$[esp+228], 2
 	call	eax
 
-; 6802 : 		args->Push(eTech);
+; 6854 : 		args->Push(eTech);
 
-	mov	ecx, DWORD PTR _args$226814[esp+216]
+	mov	ecx, DWORD PTR _args$227332[esp+216]
 	mov	edx, DWORD PTR [ecx]
 	mov	eax, DWORD PTR _eTech$[esp+212]
 	mov	edx, DWORD PTR [edx+8]
 	push	eax
 	call	edx
 
-; 6803 : 		args->Push(iChange);
+; 6855 : 		args->Push(iChange);
 
-	mov	ecx, DWORD PTR _args$226814[esp+216]
+	mov	ecx, DWORD PTR _args$227332[esp+216]
 	mov	eax, DWORD PTR [ecx]
 	mov	edx, DWORD PTR _iChange$[esp+212]
 	mov	eax, DWORD PTR [eax+8]
 	push	edx
 	call	eax
 
-; 6804 : 
-; 6805 : 		bool bResult;
-; 6806 : 		LuaSupport::CallHook(pkScriptSystem, "TeamTechResearched", args.get(), bResult);
+; 6856 : 
+; 6857 : 		bool bResult;
+; 6858 : 		LuaSupport::CallHook(pkScriptSystem, "TeamTechResearched", args.get(), bResult);
 
-	mov	edx, DWORD PTR _args$226814[esp+216]
-	lea	ecx, DWORD PTR _bResult$226815[esp+216]
+	mov	edx, DWORD PTR _args$227332[esp+216]
+	lea	ecx, DWORD PTR _bResult$227333[esp+216]
 	push	ecx
 	push	edx
-	push	OFFSET $SG226816
+	push	OFFSET $SG227334
 	push	esi
 	call	?CallHook@LuaSupport@@YA_NPAVICvEngineScriptSystem1@@PBDPAVICvEngineScriptSystemArgs1@@AA_N@Z ; LuaSupport::CallHook
 	add	esp, 16					; 00000010H
 
-; 6807 : 	}
+; 6859 : 	}
 
-	lea	ecx, DWORD PTR _args$226814[esp+216]
+	lea	ecx, DWORD PTR _args$227332[esp+216]
 	mov	DWORD PTR __$EHRec$[esp+224], -1
 	call	??1CvLuaArgsHandle@@QAE@XZ		; CvLuaArgsHandle::~CvLuaArgsHandle
 $LN2@processTec:
 
-; 6808 : 
-; 6809 : 	// End game!
-; 6810 : 	if(pTech->IsEndsGame())
+; 6860 : 
+; 6861 : 	// End game!
+; 6862 : 	if(pTech->IsEndsGame())
 
 	mov	ecx, DWORD PTR _pTech$[esp+216]
 	call	?IsEndsGame@CvTechEntry@@QBE_NXZ	; CvTechEntry::IsEndsGame
@@ -22343,16 +22634,16 @@ $LN2@processTec:
 	test	al, al
 	je	SHORT $LN1@processTec
 
-; 6811 : 	{
-; 6812 : 		GC.getGame().SetEndGameTechResearched(true);
+; 6863 : 	{
+; 6864 : 		GC.getGame().SetEndGameTechResearched(true);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	1
 	call	?SetEndGameTechResearched@CvGame@@QAEX_N@Z ; CvGame::SetEndGameTechResearched
 $LN1@processTec:
 
-; 6813 : 	}
-; 6814 : }
+; 6865 : 	}
+; 6866 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+200]
 	mov	DWORD PTR fs:0, ecx
@@ -22362,13 +22653,13 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?processTech@CvTeam@@IAEXW4TechTypes@@H@Z$0:
-	lea	ecx, DWORD PTR _strText$226740[ebp]
+	lea	ecx, DWORD PTR _strText$227258[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?processTech@CvTeam@@IAEXW4TechTypes@@H@Z$1:
-	lea	ecx, DWORD PTR _strSummary$226743[ebp]
+	lea	ecx, DWORD PTR _strSummary$227261[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?processTech@CvTeam@@IAEXW4TechTypes@@H@Z$2:
-	lea	ecx, DWORD PTR _args$226814[ebp]
+	lea	ecx, DWORD PTR _args$227332[ebp]
 	jmp	??1CvLuaArgsHandle@@QAE@XZ		; CvLuaArgsHandle::~CvLuaArgsHandle
 __ehhandler$?processTech@CvTeam@@IAEXW4TechTypes@@H@Z:
 	mov	eax, OFFSET __ehfuncinfo$?processTech@CvTeam@@IAEXW4TechTypes@@H@Z
@@ -22379,117 +22670,82 @@ PUBLIC	?cancelDefensivePacts@CvTeam@@IAEXXZ		; CvTeam::cancelDefensivePacts
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?cancelDefensivePacts@CvTeam@@IAEXXZ
 _TEXT	SEGMENT
-tv463 = -4						; size = 4
 ?cancelDefensivePacts@CvTeam@@IAEXXZ PROC		; CvTeam::cancelDefensivePacts, COMDAT
 ; _this$ = ecx
 
-; 6819 : {
+; 6871 : {
 
-	push	ecx
 	push	ebx
 	push	ebp
 	push	esi
-
-; 6820 : 	int iI;
-; 6821 : 
-; 6822 : 	for(iI = 0; iI < MAX_TEAMS; iI++)
-
-	xor	ebx, ebx
-	xor	esi, esi
 	push	edi
-	mov	ebp, ecx
-	mov	DWORD PTR tv463[esp+20], esi
-	npad	1
-$LL121@cancelDefe:
 
-; 6823 : 	{
-; 6824 : 		TeamTypes eTeam = (TeamTypes)iI;
-; 6825 : 		CvTeam& kTeam = GET_TEAM(eTeam);
+; 6872 : 	int iI;
+; 6873 : 
+; 6874 : 	for(iI = 0; iI < MAX_TEAMS; iI++)
+
+	xor	esi, esi
+	mov	edi, ecx
+	xor	ebx, ebx
+	npad	6
+$LL23@cancelDefe:
+
+; 6875 : 	{
+; 6876 : 		TeamTypes eTeam = (TeamTypes)iI;
+; 6877 : 		CvTeam& kTeam = GET_TEAM(eTeam);
 
 	mov	eax, DWORD PTR ?m_aTeams@CvTeam@@1PAV1@A ; CvTeam::m_aTeams
-	add	esi, eax
+	lea	ebp, DWORD PTR [ebx+eax]
 
-; 6826 : 
-; 6827 : 		if(eTeam != GetID())
+; 6878 : 
+; 6879 : 		if(eTeam != GetID())
 
-	cmp	ebx, DWORD PTR [ebp+4]
-	je	$LN5@cancelDefe
-
-; 6828 : 		{
-; 6829 : 			if(kTeam.isAlive())
-
-	cmp	DWORD PTR [esi+12], 0
-	jle	$LN5@cancelDefe
-
-; 6830 : 			{
-; 6831 : 				if(IsHasDefensivePact(eTeam))
-
-	cmp	BYTE PTR [ebx+ebp+2248], 0
-	je	$LN5@cancelDefe
-
-; 6832 : 				{
-; 6833 : 					SetHasDefensivePact(eTeam, false);
-
-	mov	BYTE PTR [ebx+ebp+2248], 0
-	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
-	mov	edi, DWORD PTR [ebp+4]
-	call	?getActiveTeam@CvGame@@QAE?AW4TeamTypes@@XZ ; CvGame::getActiveTeam
-	cmp	edi, eax
-	je	SHORT $LN20@cancelDefe
-	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
-	call	?getActiveTeam@CvGame@@QAE?AW4TeamTypes@@XZ ; CvGame::getActiveTeam
-	cmp	ebx, eax
-	jne	SHORT $LN21@cancelDefe
-$LN20@cancelDefe:
-	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
-	mov	edx, DWORD PTR [ecx]
-	mov	eax, DWORD PTR [edx+260]
-	push	1
-	push	12					; 0000000cH
-	call	eax
-$LN21@cancelDefe:
-
-; 6834 : 					kTeam.SetHasDefensivePact(GetID(), false);
-
-	mov	edi, DWORD PTR [ebp+4]
-	cmp	BYTE PTR [edi+esi+2248], 0
+	cmp	esi, DWORD PTR [edi+4]
 	je	SHORT $LN5@cancelDefe
-	mov	BYTE PTR [edi+esi+2248], 0
-	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
-	mov	esi, DWORD PTR [esi+4]
-	call	?getActiveTeam@CvGame@@QAE?AW4TeamTypes@@XZ ; CvGame::getActiveTeam
-	cmp	esi, eax
-	je	SHORT $LN70@cancelDefe
-	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
-	call	?getActiveTeam@CvGame@@QAE?AW4TeamTypes@@XZ ; CvGame::getActiveTeam
-	cmp	edi, eax
-	jne	SHORT $LN5@cancelDefe
-$LN70@cancelDefe:
-	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
-	mov	edx, DWORD PTR [ecx]
-	mov	eax, DWORD PTR [edx+260]
-	push	1
-	push	12					; 0000000cH
-	call	eax
+
+; 6880 : 		{
+; 6881 : 			if(kTeam.isAlive())
+
+	cmp	DWORD PTR [ebp+12], 0
+	jle	SHORT $LN5@cancelDefe
+
+; 6882 : 			{
+; 6883 : 				if(IsHasDefensivePact(eTeam))
+
+	cmp	BYTE PTR [esi+edi+2248], 0
+	je	SHORT $LN5@cancelDefe
+
+; 6884 : 				{
+; 6885 : 					SetHasDefensivePact(eTeam, false);
+
+	push	0
+	push	esi
+	mov	ecx, edi
+	call	?SetHasDefensivePact@CvTeam@@QAEXW4TeamTypes@@_N@Z ; CvTeam::SetHasDefensivePact
+
+; 6886 : 					kTeam.SetHasDefensivePact(GetID(), false);
+
+	mov	ecx, DWORD PTR [edi+4]
+	push	0
+	push	ecx
+	mov	ecx, ebp
+	call	?SetHasDefensivePact@CvTeam@@QAEXW4TeamTypes@@_N@Z ; CvTeam::SetHasDefensivePact
 $LN5@cancelDefe:
-	mov	esi, DWORD PTR tv463[esp+20]
-	add	esi, 2984				; 00000ba8H
-	inc	ebx
-	cmp	esi, 190976				; 0002ea00H
-	mov	DWORD PTR tv463[esp+20], esi
-	jl	$LL121@cancelDefe
+	add	ebx, 2984				; 00000ba8H
+	inc	esi
+	cmp	ebx, 190976				; 0002ea00H
+	jl	SHORT $LL23@cancelDefe
 	pop	edi
 	pop	esi
 	pop	ebp
 	pop	ebx
 
-; 6835 : 				}
-; 6836 : 			}
-; 6837 : 		}
-; 6838 : 	}
-; 6839 : }
+; 6887 : 				}
+; 6888 : 			}
+; 6889 : 		}
+; 6890 : 	}
+; 6891 : }
 
-	pop	ecx
 	ret	0
 ?cancelDefensivePacts@CvTeam@@IAEXXZ ENDP		; CvTeam::cancelDefensivePacts
 _TEXT	ENDS
@@ -22500,13 +22756,13 @@ _TEXT	SEGMENT
 ?isAtWarWithHumans@CvTeam@@QBE_NXZ PROC			; CvTeam::isAtWarWithHumans, COMDAT
 ; _this$ = ecx
 
-; 6861 : {//are we currently fighting a war with a human controlled civ?
+; 6913 : {//are we currently fighting a war with a human controlled civ?
 
 	push	ebx
 	push	esi
 	push	edi
 
-; 6862 : 	for(int oppTeamIdx = 0; oppTeamIdx < MAX_TEAMS; ++oppTeamIdx)
+; 6914 : 	for(int oppTeamIdx = 0; oppTeamIdx < MAX_TEAMS; ++oppTeamIdx)
 
 	xor	edi, edi
 	mov	ebx, ecx
@@ -22514,12 +22770,12 @@ _TEXT	SEGMENT
 	npad	7
 $LL4@isAtWarWit:
 
-; 6863 : 	{
-; 6864 : 		CvTeam& oppTeam = GET_TEAM((TeamTypes)oppTeamIdx);
+; 6915 : 	{
+; 6916 : 		CvTeam& oppTeam = GET_TEAM((TeamTypes)oppTeamIdx);
 
 	mov	eax, DWORD PTR ?m_aTeams@CvTeam@@1PAV1@A ; CvTeam::m_aTeams
 
-; 6865 : 		if(oppTeam.isAlive() && isAtWar((TeamTypes)oppTeamIdx) && oppTeam.isHuman())
+; 6917 : 		if(oppTeam.isAlive() && isAtWar((TeamTypes)oppTeamIdx) && oppTeam.isHuman())
 
 	cmp	DWORD PTR [esi+eax+12], 0
 	lea	ecx, DWORD PTR [esi+eax]
@@ -22531,7 +22787,7 @@ $LL4@isAtWarWit:
 	jne	SHORT $LN16@isAtWarWit
 $LN3@isAtWarWit:
 
-; 6862 : 	for(int oppTeamIdx = 0; oppTeamIdx < MAX_TEAMS; ++oppTeamIdx)
+; 6914 : 	for(int oppTeamIdx = 0; oppTeamIdx < MAX_TEAMS; ++oppTeamIdx)
 
 	add	esi, 2984				; 00000ba8H
 	inc	edi
@@ -22540,27 +22796,27 @@ $LN3@isAtWarWit:
 	pop	edi
 	pop	esi
 
-; 6868 : 		}
-; 6869 : 	}
-; 6870 : 	return false;
+; 6920 : 		}
+; 6921 : 	}
+; 6922 : 	return false;
 
 	xor	al, al
 	pop	ebx
 
-; 6871 : }
+; 6923 : }
 
 	ret	0
 $LN16@isAtWarWit:
 	pop	edi
 	pop	esi
 
-; 6866 : 		{//we're at war with a human team
-; 6867 : 			return true;
+; 6918 : 		{//we're at war with a human team
+; 6919 : 			return true;
 
 	mov	al, 1
 	pop	ebx
 
-; 6871 : }
+; 6923 : }
 
 	ret	0
 ?isAtWarWithHumans@CvTeam@@QBE_NXZ ENDP			; CvTeam::isAtWarWithHumans
@@ -22573,7 +22829,7 @@ _TEXT	SEGMENT
 ?isSimultaneousTurns@CvTeam@@QBE_NXZ PROC		; CvTeam::isSimultaneousTurns, COMDAT
 ; _this$ = ecx
 
-; 6876 : 	for(int iPlayer = 0; iPlayer < MAX_PLAYERS; ++iPlayer)
+; 6928 : 	for(int iPlayer = 0; iPlayer < MAX_PLAYERS; ++iPlayer)
 
 	mov	eax, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	push	ebx
@@ -22587,9 +22843,9 @@ _TEXT	SEGMENT
 	npad	10
 $LL4@isSimultan:
 
-; 6877 : 	{
-; 6878 : 		CvPlayer& kPlayer = GET_PLAYER((PlayerTypes)iPlayer);
-; 6879 : 		if(kPlayer.isAlive() && kPlayer.getTeam() == GetID())
+; 6929 : 	{
+; 6930 : 		CvPlayer& kPlayer = GET_PLAYER((PlayerTypes)iPlayer);
+; 6931 : 		if(kPlayer.isAlive() && kPlayer.getTeam() == GetID())
 
 	cmp	BYTE PTR [eax+2212], 0
 	lea	ecx, DWORD PTR [eax-44]
@@ -22607,7 +22863,7 @@ $LN18@isSimultan:
 	je	SHORT $LN25@isSimultan
 $LN3@isSimultan:
 
-; 6876 : 	for(int iPlayer = 0; iPlayer < MAX_PLAYERS; ++iPlayer)
+; 6928 : 	for(int iPlayer = 0; iPlayer < MAX_PLAYERS; ++iPlayer)
 
 	inc	esi
 	add	eax, 63236				; 0000f704H
@@ -22617,15 +22873,15 @@ $LN3@isSimultan:
 	pop	esi
 	pop	ebp
 
-; 6883 : 		}
-; 6884 : 	}
-; 6885 : 
-; 6886 : 	return false;
+; 6935 : 		}
+; 6936 : 	}
+; 6937 : 
+; 6938 : 	return false;
 
 	xor	al, al
 	pop	ebx
 
-; 6887 : }
+; 6939 : }
 
 	ret	0
 $LN25@isSimultan:
@@ -22634,9 +22890,9 @@ $LN25@isSimultan:
 	pop	ebp
 	pop	ebx
 
-; 6880 : 		{
-; 6881 : 			//just use the status of the first player we find for this team.
-; 6882 : 			return kPlayer.isSimultaneousTurns();
+; 6932 : 		{
+; 6933 : 			//just use the status of the first player we find for this team.
+; 6934 : 			return kPlayer.isSimultaneousTurns();
 
 	jmp	?isSimultaneousTurns@CvPlayer@@QBE_NXZ	; CvPlayer::isSimultaneousTurns
 ?isSimultaneousTurns@CvTeam@@QBE_NXZ ENDP		; CvTeam::isSimultaneousTurns
@@ -22649,9 +22905,9 @@ _eResource$ = 8						; size = 4
 ?isForceRevealedResource@CvTeam@@QBE_NW4ResourceTypes@@@Z PROC ; CvTeam::isForceRevealedResource, COMDAT
 ; _this$ = ecx
 
-; 6935 : 	std::vector<ResourceTypes>::const_iterator it;
-; 6936 : 
-; 6937 : 	for(it = m_aeRevealedResources.begin(); it != m_aeRevealedResources.end(); ++it)
+; 6987 : 	std::vector<ResourceTypes>::const_iterator it;
+; 6988 : 
+; 6989 : 	for(it = m_aeRevealedResources.begin(); it != m_aeRevealedResources.end(); ++it)
 
 	mov	eax, DWORD PTR [ecx+2968]
 	mov	ecx, DWORD PTR [ecx+2972]
@@ -22660,8 +22916,8 @@ _eResource$ = 8						; size = 4
 	mov	edx, DWORD PTR _eResource$[esp-4]
 $LL13@isForceRev:
 
-; 6938 : 	{
-; 6939 : 		if(*it == eResource)
+; 6990 : 	{
+; 6991 : 		if(*it == eResource)
 
 	cmp	DWORD PTR [eax], edx
 	je	SHORT $LN26@isForceRev
@@ -22670,24 +22926,24 @@ $LL13@isForceRev:
 	jne	SHORT $LL13@isForceRev
 $LN2@isForceRev:
 
-; 6942 : 		}
-; 6943 : 	}
-; 6944 : 
-; 6945 : 	return false;
+; 6994 : 		}
+; 6995 : 	}
+; 6996 : 
+; 6997 : 	return false;
 
 	xor	al, al
 
-; 6946 : }
+; 6998 : }
 
 	ret	4
 $LN26@isForceRev:
 
-; 6940 : 		{
-; 6941 : 			return true;
+; 6992 : 		{
+; 6993 : 			return true;
 
 	mov	al, 1
 
-; 6946 : }
+; 6998 : }
 
 	ret	4
 ?isForceRevealedResource@CvTeam@@QBE_NW4ResourceTypes@@@Z ENDP ; CvTeam::isForceRevealedResource
@@ -22738,27 +22994,27 @@ __unwindtable$?SetCurrentEra@CvTeam@@QAEXW4EraTypes@@@Z DD 0ffffffffH
 xdata$x	ENDS
 ;	COMDAT ?SetCurrentEra@CvTeam@@QAEXW4EraTypes@@@Z
 _TEXT	SEGMENT
-_bResult$227215 = -801					; size = 1
-_bMinorBonusesChanged$227077 = -801			; size = 1
-_args$227214 = -800					; size = 4
+_bResult$227733 = -801					; size = 1
+_bMinorBonusesChanged$227595 = -801			; size = 1
+_args$227732 = -800					; size = 4
 _this$ = -800						; size = 4
 tv1642 = -796						; size = 4
-_pEraInfo$227135 = -796					; size = 4
-_iPlayerLoop$227116 = -796				; size = 4
-_pNotifications$227091 = -792				; size = 4
-_strMessage$227079 = -788				; size = 80
-$T237093 = -708						; size = 80
-$T237092 = -708						; size = 80
-_unmetPlayer$227105 = -708				; size = 80
-$T237089 = -708						; size = 80
-_strSummary$227080 = -628				; size = 80
-_kPopupInfo$227083 = -548				; size = 536
+_pEraInfo$227653 = -796					; size = 4
+_iPlayerLoop$227634 = -796				; size = 4
+_pNotifications$227609 = -792				; size = 4
+_strMessage$227597 = -788				; size = 80
+$T237502 = -708						; size = 80
+$T237501 = -708						; size = 80
+_unmetPlayer$227623 = -708				; size = 80
+$T237498 = -708						; size = 80
+_strSummary$227598 = -628				; size = 80
+_kPopupInfo$227601 = -548				; size = 536
 __$EHRec$ = -12						; size = 12
 _eNewValue$ = 8						; size = 4
 ?SetCurrentEra@CvTeam@@QAEXW4EraTypes@@@Z PROC		; CvTeam::SetCurrentEra, COMDAT
 ; _this$ = ecx
 
-; 6997 : {
+; 7049 : {
 
 	push	-1
 	push	__ehhandler$?SetCurrentEra@CvTeam@@QAEXW4EraTypes@@@Z
@@ -22768,14 +23024,14 @@ _eNewValue$ = 8						; size = 4
 	sub	esp, 792				; 00000318H
 	push	ebp
 
-; 6998 : 	CvPlot* pLoopPlot;
-; 6999 : #ifdef AUI_WARNING_FIXES
-; 7000 : 	uint iI;
-; 7001 : #else
-; 7002 : 	int iI;
-; 7003 : #endif
-; 7004 : 
-; 7005 : 	if(GetCurrentEra() != eNewValue)
+; 7050 : 	CvPlot* pLoopPlot;
+; 7051 : #ifdef AUI_WARNING_FIXES
+; 7052 : 	uint iI;
+; 7053 : #else
+; 7054 : 	int iI;
+; 7055 : #endif
+; 7056 : 
+; 7057 : 	if(GetCurrentEra() != eNewValue)
 
 	mov	ebp, DWORD PTR _eNewValue$[esp+804]
 	push	edi
@@ -22787,39 +23043,39 @@ _eNewValue$ = 8						; size = 4
 	push	ebx
 	push	esi
 
-; 7006 : 	{
-; 7007 : 		if(!isMinorCiv())
+; 7058 : 	{
+; 7059 : 		if(!isMinorCiv())
 
 	call	?isMinorCiv@CvTeam@@QBE_NXZ		; CvTeam::isMinorCiv
 	test	al, al
 	jne	$LN359@SetCurrent
 
-; 7008 : 		{
-; 7009 : 			if(GC.getGame().isFinalInitialized())
+; 7060 : 		{
+; 7061 : 			if(GC.getGame().isFinalInitialized())
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?isFinalInitialized@CvGame@@QBE_NXZ	; CvGame::isFinalInitialized
 	test	al, al
 	je	$LN74@SetCurrent
 
-; 7010 : 			{
-; 7011 : 				bool bMinorBonusesChanged;
-; 7012 : 				bool bTemp;
-; 7013 : 				Localization::String strMessage;
+; 7062 : 			{
+; 7063 : 				bool bMinorBonusesChanged;
+; 7064 : 				bool bTemp;
+; 7065 : 				Localization::String strMessage;
 
 	mov	esi, DWORD PTR __imp_??0String@Localization@@QAE@XZ
-	lea	ecx, DWORD PTR _strMessage$227079[esp+820]
+	lea	ecx, DWORD PTR _strMessage$227597[esp+820]
 	call	esi
 
-; 7014 : 				Localization::String strSummary;
+; 7066 : 				Localization::String strSummary;
 
-	lea	ecx, DWORD PTR _strSummary$227080[esp+820]
+	lea	ecx, DWORD PTR _strSummary$227598[esp+820]
 	mov	DWORD PTR __$EHRec$[esp+828], 0
 	call	esi
 
-; 7015 : 
-; 7016 : 				
-; 7017 : 				if(!isBarbarian() && (eNewValue != GC.getGame().getStartEra())){
+; 7067 : 
+; 7068 : 				
+; 7069 : 				if(!isBarbarian() && (eNewValue != GC.getGame().getStartEra())){
 
 	cmp	DWORD PTR [edi+4], 63			; 0000003fH
 	mov	ebx, DWORD PTR __imp_??1String@Localization@@UAE@XZ
@@ -22830,8 +23086,8 @@ _eNewValue$ = 8						; size = 4
 	cmp	ebp, eax
 	je	$LN352@SetCurrent
 
-; 7018 : 					//Era Popup
-; 7019 : 					if (!GC.getGame().isNetworkMultiPlayer() && isHuman() && GetID() == GC.getGame().getActiveTeam()){
+; 7070 : 					//Era Popup
+; 7071 : 					if (!GC.getGame().isNetworkMultiPlayer() && isHuman() && GetID() == GC.getGame().getActiveTeam()){
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?isNetworkMultiPlayer@CvGame@@QBE_NXZ	; CvGame::isNetworkMultiPlayer
@@ -22847,50 +23103,50 @@ _eNewValue$ = 8						; size = 4
 	cmp	esi, eax
 	jne	SHORT $LN72@SetCurrent
 
-; 7020 : 						CvPopupInfo kPopupInfo(BUTTONPOPUP_NEW_ERA, eNewValue);
-; 7021 : 						DLLUI->AddPopup(kPopupInfo);
+; 7072 : 						CvPopupInfo kPopupInfo(BUTTONPOPUP_NEW_ERA, eNewValue);
+; 7073 : 						DLLUI->AddPopup(kPopupInfo);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
 	or	eax, -1
-	mov	DWORD PTR _kPopupInfo$227083[esp+824], eax
-	mov	DWORD PTR _kPopupInfo$227083[esp+828], eax
-	mov	DWORD PTR _kPopupInfo$227083[esp+820], ebp
-	mov	DWORD PTR _kPopupInfo$227083[esp+832], 0
-	mov	BYTE PTR _kPopupInfo$227083[esp+836], 0
-	mov	BYTE PTR _kPopupInfo$227083[esp+837], 0
-	mov	DWORD PTR _kPopupInfo$227083[esp+840], 55 ; 00000037H
-	mov	BYTE PTR _kPopupInfo$227083[esp+844], 0
+	mov	DWORD PTR _kPopupInfo$227601[esp+824], eax
+	mov	DWORD PTR _kPopupInfo$227601[esp+828], eax
+	mov	DWORD PTR _kPopupInfo$227601[esp+820], ebp
+	mov	DWORD PTR _kPopupInfo$227601[esp+832], 0
+	mov	BYTE PTR _kPopupInfo$227601[esp+836], 0
+	mov	BYTE PTR _kPopupInfo$227601[esp+837], 0
+	mov	DWORD PTR _kPopupInfo$227601[esp+840], 55 ; 00000037H
+	mov	BYTE PTR _kPopupInfo$227601[esp+844], 0
 	mov	eax, DWORD PTR [ecx]
 	mov	eax, DWORD PTR [eax+180]
-	lea	edx, DWORD PTR _kPopupInfo$227083[esp+820]
+	lea	edx, DWORD PTR _kPopupInfo$227601[esp+820]
 	push	edx
 	call	eax
 $LN72@SetCurrent:
 
-; 7022 : 					}
-; 7023 : 
-; 7024 : 					//Notify Everyone
-; 7025 : 					for(int iNotifyLoop = 0; iNotifyLoop < MAX_MAJOR_CIVS; ++iNotifyLoop){
+; 7074 : 					}
+; 7075 : 
+; 7076 : 					//Notify Everyone
+; 7077 : 					for(int iNotifyLoop = 0; iNotifyLoop < MAX_MAJOR_CIVS; ++iNotifyLoop){
 
 	xor	esi, esi
 	mov	DWORD PTR tv1642[esp+820], esi
 $LL71@SetCurrent:
 
-; 7026 : 						PlayerTypes eNotifyPlayer = (PlayerTypes) iNotifyLoop;
-; 7027 : 						CvPlayerAI& kCurNotifyPlayer = GET_PLAYER(eNotifyPlayer);
+; 7078 : 						PlayerTypes eNotifyPlayer = (PlayerTypes) iNotifyLoop;
+; 7079 : 						CvPlayerAI& kCurNotifyPlayer = GET_PLAYER(eNotifyPlayer);
 
 	mov	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	lea	ebp, DWORD PTR [esi+ecx]
 
-; 7028 : 						CvNotifications* pNotifications = kCurNotifyPlayer.GetNotifications();
+; 7080 : 						CvNotifications* pNotifications = kCurNotifyPlayer.GetNotifications();
 
 	mov	ecx, ebp
 	call	?GetNotifications@CvPlayer@@QBEPAVCvNotifications@@XZ ; CvPlayer::GetNotifications
-	mov	DWORD PTR _pNotifications$227091[esp+820], eax
+	mov	DWORD PTR _pNotifications$227609[esp+820], eax
 
-; 7029 : 						if(pNotifications && 
-; 7030 : 							(kCurNotifyPlayer.getTeam() != GetID() || GC.getGame().isNetworkMultiPlayer()) &&
-; 7031 : 							kCurNotifyPlayer.isAlive()){
+; 7081 : 						if(pNotifications && 
+; 7082 : 							(kCurNotifyPlayer.getTeam() != GetID() || GC.getGame().isNetworkMultiPlayer()) &&
+; 7083 : 							kCurNotifyPlayer.isAlive()){
 
 	test	eax, eax
 	je	$LN70@SetCurrent
@@ -22914,37 +23170,37 @@ $LN67@SetCurrent:
 	cmp	BYTE PTR [ebp+2256], 0
 	je	$LN70@SetCurrent
 
-; 7032 : 							strMessage = Localization::Lookup("TXT_KEY_NTFN_PLAYER_ERA");
+; 7084 : 							strMessage = Localization::Lookup("TXT_KEY_NTFN_PLAYER_ERA");
 
-	lea	edx, DWORD PTR $T237089[esp+820]
-	push	OFFSET $SG227095
+	lea	edx, DWORD PTR $T237498[esp+820]
+	push	OFFSET $SG227613
 	push	edx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
 	push	eax
-	lea	ecx, DWORD PTR _strMessage$227079[esp+824]
+	lea	ecx, DWORD PTR _strMessage$227597[esp+824]
 	mov	BYTE PTR __$EHRec$[esp+832], 2
 	call	DWORD PTR __imp_??4String@Localization@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T237089[esp+820]
+	lea	ecx, DWORD PTR $T237498[esp+820]
 	mov	BYTE PTR __$EHRec$[esp+828], 1
 	call	ebx
 
-; 7033 : 
-; 7034 : 							CvEraInfo* pkEraInfo = GC.getEraInfo(eNewValue);
+; 7085 : 
+; 7086 : 							CvEraInfo* pkEraInfo = GC.getEraInfo(eNewValue);
 
 	mov	eax, DWORD PTR _eNewValue$[esp+816]
 	push	eax
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getEraInfo@CvGlobals@@QAEPAVCvEraInfo@@W4EraTypes@@@Z ; CvGlobals::getEraInfo
 
-; 7035 : 							const char* szEraTextKey = pkEraInfo->GetTextKey();
+; 7087 : 							const char* szEraTextKey = pkEraInfo->GetTextKey();
 
 	mov	ecx, eax
 	call	?GetTextKey@CvBaseInfo@@QBEPBDXZ	; CvBaseInfo::GetTextKey
 
-; 7036 : 
-; 7037 : 							// Notify player has met this team
-; 7038 : 							if(GET_TEAM(kCurNotifyPlayer.getTeam()).isHasMet(GetID()))
+; 7088 : 
+; 7089 : 							// Notify player has met this team
+; 7090 : 							if(GET_TEAM(kCurNotifyPlayer.getTeam()).isHasMet(GetID()))
 
 	mov	ecx, DWORD PTR _this$[esp+820]
 	mov	esi, DWORD PTR [ecx+4]
@@ -22956,13 +23212,13 @@ $LN67@SetCurrent:
 	cmp	BYTE PTR [esi+eax+1848], 0
 	je	SHORT $LN66@SetCurrent
 
-; 7039 : 							{
-; 7040 : 								CvPlayerAI& player = GET_PLAYER(getLeaderID());
+; 7091 : 							{
+; 7092 : 								CvPlayerAI& player = GET_PLAYER(getLeaderID());
 
 	mov	ecx, DWORD PTR _this$[esp+820]
 	call	?getLeaderID@CvTeam@@QBE?AW4PlayerTypes@@XZ ; CvTeam::getLeaderID
 
-; 7041 : 								if(GC.getGame().isGameMultiPlayer() && player.isHuman())
+; 7093 : 								if(GC.getGame().isGameMultiPlayer() && player.isHuman())
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	mov	esi, eax
@@ -22976,78 +23232,78 @@ $LN67@SetCurrent:
 	test	al, al
 	je	SHORT $LN65@SetCurrent
 
-; 7042 : 									strMessage << player.getNickName() << szEraTextKey;
+; 7094 : 									strMessage << player.getNickName() << szEraTextKey;
 
 	mov	ecx, esi
 	call	?getNickName@CvPlayer@@QBEQBDXZ		; CvPlayer::getNickName
 
-; 7043 : 								else
+; 7095 : 								else
 
 	jmp	SHORT $LN371@SetCurrent
 $LN65@SetCurrent:
 
-; 7044 : 									strMessage << player.getName() << szEraTextKey;
+; 7096 : 									strMessage << player.getName() << szEraTextKey;
 
 	mov	ecx, esi
 	call	?getName@CvPlayer@@QBEPBDXZ		; CvPlayer::getName
 $LN371@SetCurrent:
 	mov	esi, DWORD PTR __imp_?PushArgument@String@Localization@@QAE_NPBD@Z
 	push	eax
-	lea	ecx, DWORD PTR _strMessage$227079[esp+824]
+	lea	ecx, DWORD PTR _strMessage$227597[esp+824]
 	call	esi
 	push	edi
-	lea	ecx, DWORD PTR _strMessage$227079[esp+824]
+	lea	ecx, DWORD PTR _strMessage$227597[esp+824]
 	call	esi
 
-; 7045 : 							}
-; 7046 : 
-; 7047 : 							// Has not met this team
-; 7048 : 							else
+; 7097 : 							}
+; 7098 : 
+; 7099 : 							// Has not met this team
+; 7100 : 							else
 
 	jmp	SHORT $LN63@SetCurrent
 $LN66@SetCurrent:
 
-; 7049 : 							{
-; 7050 : 								Localization::String unmetPlayer = Localization::Lookup("TXT_KEY_UNMET_PLAYER");
+; 7101 : 							{
+; 7102 : 								Localization::String unmetPlayer = Localization::Lookup("TXT_KEY_UNMET_PLAYER");
 
-	lea	edx, DWORD PTR _unmetPlayer$227105[esp+820]
-	push	OFFSET $SG227107
+	lea	edx, DWORD PTR _unmetPlayer$227623[esp+820]
+	push	OFFSET $SG227625
 	push	edx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
 
-; 7051 : 								strMessage << unmetPlayer << szEraTextKey;
+; 7103 : 								strMessage << unmetPlayer << szEraTextKey;
 
-	lea	eax, DWORD PTR _unmetPlayer$227105[esp+820]
+	lea	eax, DWORD PTR _unmetPlayer$227623[esp+820]
 	push	eax
-	lea	ecx, DWORD PTR _strMessage$227079[esp+824]
+	lea	ecx, DWORD PTR _strMessage$227597[esp+824]
 	mov	BYTE PTR __$EHRec$[esp+832], 3
 	call	DWORD PTR __imp_?PushArgument@String@Localization@@QAE_NABV12@@Z
 	push	edi
-	lea	ecx, DWORD PTR _strMessage$227079[esp+824]
+	lea	ecx, DWORD PTR _strMessage$227597[esp+824]
 	call	DWORD PTR __imp_?PushArgument@String@Localization@@QAE_NPBD@Z
 
-; 7052 : 							}
+; 7104 : 							}
 
-	lea	ecx, DWORD PTR _unmetPlayer$227105[esp+820]
+	lea	ecx, DWORD PTR _unmetPlayer$227623[esp+820]
 	mov	BYTE PTR __$EHRec$[esp+828], 1
 	call	ebx
 $LN63@SetCurrent:
 
-; 7053 : 
-; 7054 : 							pNotifications->Add(NOTIFICATION_OTHER_PLAYER_NEW_ERA, strMessage.toUTF8(), strMessage.toUTF8(), -1, -1, -1);
+; 7105 : 
+; 7106 : 							pNotifications->Add(NOTIFICATION_OTHER_PLAYER_NEW_ERA, strMessage.toUTF8(), strMessage.toUTF8(), -1, -1, -1);
 
 	mov	esi, DWORD PTR __imp_?toUTF8@String@Localization@@QAEPBDXZ
 	push	-1
 	push	-1
 	push	-1
 	push	-1
-	lea	ecx, DWORD PTR _strMessage$227079[esp+836]
+	lea	ecx, DWORD PTR _strMessage$227597[esp+836]
 	call	esi
 	push	eax
-	lea	ecx, DWORD PTR _strMessage$227079[esp+840]
+	lea	ecx, DWORD PTR _strMessage$227597[esp+840]
 	call	esi
-	mov	ecx, DWORD PTR _pNotifications$227091[esp+840]
+	mov	ecx, DWORD PTR _pNotifications$227609[esp+840]
 	push	eax
 	push	-66586748				; fc07f784H
 	call	?Add@CvNotifications@@QAEHW4NotificationTypes@@PBD1HHHH@Z ; CvNotifications::Add
@@ -23060,27 +23316,27 @@ $LN70@SetCurrent:
 	jl	$LL71@SetCurrent
 $LN352@SetCurrent:
 
-; 7055 : 						}
-; 7056 : 					}
-; 7057 : 				}
-; 7058 : 
-; 7059 : 				// Apply Minor Civ changes BEFORE setting the new era
-; 7060 : 				PlayerTypes eLoopMinor;
-; 7061 : 				int iMinorLoop;
-; 7062 : 
-; 7063 : 				PlayerTypes eLoopPlayer;
-; 7064 : 				for(int iPlayerLoop = 0; iPlayerLoop < MAX_MAJOR_CIVS; iPlayerLoop++)
+; 7107 : 						}
+; 7108 : 					}
+; 7109 : 				}
+; 7110 : 
+; 7111 : 				// Apply Minor Civ changes BEFORE setting the new era
+; 7112 : 				PlayerTypes eLoopMinor;
+; 7113 : 				int iMinorLoop;
+; 7114 : 
+; 7115 : 				PlayerTypes eLoopPlayer;
+; 7116 : 				for(int iPlayerLoop = 0; iPlayerLoop < MAX_MAJOR_CIVS; iPlayerLoop++)
 
 	mov	ebp, DWORD PTR __imp_??4String@Localization@@QAEAAV01@ABV01@@Z
 	xor	edi, edi
-	mov	DWORD PTR _iPlayerLoop$227116[esp+820], edi
+	mov	DWORD PTR _iPlayerLoop$227634[esp+820], edi
 $LL62@SetCurrent:
 
-; 7065 : 				{
-; 7066 : 					eLoopPlayer = (PlayerTypes) iPlayerLoop;
-; 7067 : 
-; 7068 : 					// Must be on this team
-; 7069 : 					if(GET_PLAYER(eLoopPlayer).getTeam() != GetID())
+; 7117 : 				{
+; 7118 : 					eLoopPlayer = (PlayerTypes) iPlayerLoop;
+; 7119 : 
+; 7120 : 					// Must be on this team
+; 7121 : 					if(GET_PLAYER(eLoopPlayer).getTeam() != GetID())
 
 	mov	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	mov	eax, DWORD PTR [edi+ecx+44]
@@ -23097,19 +23353,19 @@ $LN154@SetCurrent:
 	cmp	eax, DWORD PTR [edx+4]
 	jne	$LN61@SetCurrent
 
-; 7070 : 						continue;
-; 7071 : 
-; 7072 : 					// Player not ever alive
-; 7073 : 					if(!GET_PLAYER(eLoopPlayer).isEverAlive())
+; 7122 : 						continue;
+; 7123 : 
+; 7124 : 					// Player not ever alive
+; 7125 : 					if(!GET_PLAYER(eLoopPlayer).isEverAlive())
 
 	cmp	BYTE PTR [edi+ecx+2268], 0
 	je	$LN61@SetCurrent
 
-; 7074 : 						continue;
-; 7075 : 
-; 7076 : 					bMinorBonusesChanged = false;
+; 7126 : 						continue;
+; 7127 : 
+; 7128 : 					bMinorBonusesChanged = false;
 
-	mov	BYTE PTR _bMinorBonusesChanged$227077[esp+820], 0
+	mov	BYTE PTR _bMinorBonusesChanged$227595[esp+820], 0
 	mov	esi, 1391192				; 00153a58H
 	jmp	SHORT $LN57@SetCurrent
 	npad	9
@@ -23117,55 +23373,55 @@ $LL365@SetCurrent:
 	mov	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 $LN57@SetCurrent:
 
-; 7079 : 					{
-; 7080 : 						eLoopMinor = (PlayerTypes) iMinorLoop;
-; 7081 : 
-; 7082 : 						// Minor not alive
-; 7083 : 						if(!GET_PLAYER(eLoopMinor).isAlive())
+; 7131 : 					{
+; 7132 : 						eLoopMinor = (PlayerTypes) iMinorLoop;
+; 7133 : 
+; 7134 : 						// Minor not alive
+; 7135 : 						if(!GET_PLAYER(eLoopMinor).isAlive())
 
 	add	ecx, esi
 	cmp	BYTE PTR [ecx+2256], 0
 	je	SHORT $LN56@SetCurrent
 
-; 7084 : 							continue;
-; 7085 : 
-; 7086 : 						bTemp = GET_PLAYER(eLoopMinor).GetMinorCivAI()->DoMajorCivEraChange(eLoopPlayer, eNewValue);
+; 7136 : 							continue;
+; 7137 : 
+; 7138 : 						bTemp = GET_PLAYER(eLoopMinor).GetMinorCivAI()->DoMajorCivEraChange(eLoopPlayer, eNewValue);
 
 	mov	eax, DWORD PTR _eNewValue$[esp+816]
-	mov	edx, DWORD PTR _iPlayerLoop$227116[esp+820]
+	mov	edx, DWORD PTR _iPlayerLoop$227634[esp+820]
 	push	eax
 	push	edx
 	call	?GetMinorCivAI@CvPlayer@@QBEPAVCvMinorCivAI@@XZ ; CvPlayer::GetMinorCivAI
 	mov	ecx, eax
 	call	?DoMajorCivEraChange@CvMinorCivAI@@QAE_NW4PlayerTypes@@W4EraTypes@@@Z ; CvMinorCivAI::DoMajorCivEraChange
 
-; 7087 : 
-; 7088 : 						if(bTemp)
+; 7139 : 
+; 7140 : 						if(bTemp)
 
 	test	al, al
 	je	SHORT $LN56@SetCurrent
 
-; 7089 : 							bMinorBonusesChanged = true;
+; 7141 : 							bMinorBonusesChanged = true;
 
-	mov	BYTE PTR _bMinorBonusesChanged$227077[esp+820], 1
+	mov	BYTE PTR _bMinorBonusesChanged$227595[esp+820], 1
 $LN56@SetCurrent:
 
-; 7077 : 
-; 7078 : 					for(iMinorLoop = MAX_MAJOR_CIVS; iMinorLoop < MAX_CIV_PLAYERS; iMinorLoop++)
+; 7129 : 
+; 7130 : 					for(iMinorLoop = MAX_MAJOR_CIVS; iMinorLoop < MAX_CIV_PLAYERS; iMinorLoop++)
 
 	add	esi, 63236				; 0000f704H
 	cmp	esi, 3983868				; 003cc9fcH
 	jl	SHORT $LL365@SetCurrent
 
-; 7090 : 					}
-; 7091 : 
-; 7092 : 					if(bMinorBonusesChanged)
+; 7142 : 					}
+; 7143 : 
+; 7144 : 					if(bMinorBonusesChanged)
 
-	cmp	BYTE PTR _bMinorBonusesChanged$227077[esp+820], 0
+	cmp	BYTE PTR _bMinorBonusesChanged$227595[esp+820], 0
 	je	$LN61@SetCurrent
 
-; 7093 : 					{
-; 7094 : 						if(GET_PLAYER(eLoopPlayer).GetNotifications())
+; 7145 : 					{
+; 7146 : 						if(GET_PLAYER(eLoopPlayer).GetNotifications())
 
 	mov	eax, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	lea	ecx, DWORD PTR [edi+eax]
@@ -23173,50 +23429,50 @@ $LN56@SetCurrent:
 	test	eax, eax
 	je	$LN61@SetCurrent
 
-; 7095 : 						{
-; 7096 : 							strMessage = Localization::Lookup("TXT_KEY_NTFN_MINOR_BONUSES_CHANGED");
+; 7147 : 						{
+; 7148 : 							strMessage = Localization::Lookup("TXT_KEY_NTFN_MINOR_BONUSES_CHANGED");
 
 	mov	esi, DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
-	lea	ecx, DWORD PTR $T237092[esp+820]
-	push	OFFSET $SG227132
+	lea	ecx, DWORD PTR $T237501[esp+820]
+	push	OFFSET $SG227650
 	push	ecx
 	call	esi
 	add	esp, 8
 	push	eax
-	lea	ecx, DWORD PTR _strMessage$227079[esp+824]
+	lea	ecx, DWORD PTR _strMessage$227597[esp+824]
 	mov	BYTE PTR __$EHRec$[esp+832], 4
 	call	ebp
-	lea	ecx, DWORD PTR $T237092[esp+820]
+	lea	ecx, DWORD PTR $T237501[esp+820]
 	mov	BYTE PTR __$EHRec$[esp+828], 1
 	call	ebx
 
-; 7097 : 							strSummary = Localization::Lookup("TXT_KEY_NTFN_MINOR_BONUSES_CHANGED_SM");
+; 7149 : 							strSummary = Localization::Lookup("TXT_KEY_NTFN_MINOR_BONUSES_CHANGED_SM");
 
-	lea	edx, DWORD PTR $T237093[esp+820]
-	push	OFFSET $SG227134
+	lea	edx, DWORD PTR $T237502[esp+820]
+	push	OFFSET $SG227652
 	push	edx
 	call	esi
 	add	esp, 8
 	push	eax
-	lea	ecx, DWORD PTR _strSummary$227080[esp+824]
+	lea	ecx, DWORD PTR _strSummary$227598[esp+824]
 	mov	BYTE PTR __$EHRec$[esp+832], 5
 	call	ebp
-	lea	ecx, DWORD PTR $T237093[esp+820]
+	lea	ecx, DWORD PTR $T237502[esp+820]
 	mov	BYTE PTR __$EHRec$[esp+828], 1
 	call	ebx
 
-; 7098 : 							GET_PLAYER(eLoopPlayer).GetNotifications()->Add(NOTIFICATION_MINOR, strMessage.toUTF8(), strSummary.toUTF8(), -1, -1, -1);
+; 7150 : 							GET_PLAYER(eLoopPlayer).GetNotifications()->Add(NOTIFICATION_MINOR, strMessage.toUTF8(), strSummary.toUTF8(), -1, -1, -1);
 
 	mov	eax, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	push	-1
 	push	-1
 	push	-1
 	push	-1
-	lea	ecx, DWORD PTR _strSummary$227080[esp+836]
+	lea	ecx, DWORD PTR _strSummary$227598[esp+836]
 	lea	esi, DWORD PTR [edi+eax]
 	call	DWORD PTR __imp_?toUTF8@String@Localization@@QAEPBDXZ
 	push	eax
-	lea	ecx, DWORD PTR _strMessage$227079[esp+840]
+	lea	ecx, DWORD PTR _strMessage$227597[esp+840]
 	call	DWORD PTR __imp_?toUTF8@String@Localization@@QAEPBDXZ
 	push	eax
 	push	-967190754				; c659d71eH
@@ -23225,57 +23481,57 @@ $LN56@SetCurrent:
 	mov	ecx, eax
 	call	?Add@CvNotifications@@QAEHW4NotificationTypes@@PBD1HHHH@Z ; CvNotifications::Add
 $LN61@SetCurrent:
-	inc	DWORD PTR _iPlayerLoop$227116[esp+820]
+	inc	DWORD PTR _iPlayerLoop$227634[esp+820]
 	add	edi, 63236				; 0000f704H
 	cmp	edi, 1391192				; 00153a58H
 	jl	$LL62@SetCurrent
 
-; 7099 : 						}
-; 7100 : 					}
-; 7101 : 				}
-; 7102 : 			}
+; 7151 : 						}
+; 7152 : 					}
+; 7153 : 				}
+; 7154 : 			}
 
-	lea	ecx, DWORD PTR _strSummary$227080[esp+820]
+	lea	ecx, DWORD PTR _strSummary$227598[esp+820]
 	mov	BYTE PTR __$EHRec$[esp+828], 0
 	call	ebx
-	lea	ecx, DWORD PTR _strMessage$227079[esp+820]
+	lea	ecx, DWORD PTR _strMessage$227597[esp+820]
 	mov	DWORD PTR __$EHRec$[esp+828], -1
 	call	ebx
 	mov	ebp, DWORD PTR _eNewValue$[esp+816]
 	mov	edi, DWORD PTR _this$[esp+820]
 $LN74@SetCurrent:
 
-; 7103 : 
-; 7104 : 			CvEraInfo* pEraInfo = GC.getEraInfo(eNewValue);
+; 7155 : 
+; 7156 : 			CvEraInfo* pEraInfo = GC.getEraInfo(eNewValue);
 
 	push	ebp
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getEraInfo@CvGlobals@@QAEPAVCvEraInfo@@W4EraTypes@@@Z ; CvGlobals::getEraInfo
 	mov	ebx, eax
 
-; 7105 : 			if(pEraInfo->getSpiesGrantedForPlayer() > 0)
+; 7157 : 			if(pEraInfo->getSpiesGrantedForPlayer() > 0)
 
 	mov	ecx, ebx
-	mov	DWORD PTR _pEraInfo$227135[esp+820], ebx
+	mov	DWORD PTR _pEraInfo$227653[esp+820], ebx
 	call	?getSpiesGrantedForPlayer@CvEraInfo@@QBEHXZ ; CvEraInfo::getSpiesGrantedForPlayer
 	test	eax, eax
 	jle	$LN47@SetCurrent
 
-; 7106 : 			{
-; 7107 : 				PlayerTypes ePlayer;
-; 7108 : 				for(int iPlayerLoop = 0; iPlayerLoop < MAX_CIV_PLAYERS; iPlayerLoop++)
+; 7158 : 			{
+; 7159 : 				PlayerTypes ePlayer;
+; 7160 : 				for(int iPlayerLoop = 0; iPlayerLoop < MAX_CIV_PLAYERS; iPlayerLoop++)
 
 	xor	ebp, ebp
 	npad	13
 $LL49@SetCurrent:
 
-; 7109 : 				{
-; 7110 : 					ePlayer = (PlayerTypes) iPlayerLoop;
-; 7111 : 					CvPlayerAI& kPlayer = GET_PLAYER(ePlayer);
+; 7161 : 				{
+; 7162 : 					ePlayer = (PlayerTypes) iPlayerLoop;
+; 7163 : 					CvPlayerAI& kPlayer = GET_PLAYER(ePlayer);
 
 	mov	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 
-; 7112 : 					if(kPlayer.isAlive() && kPlayer.getTeam() == GetID() && !kPlayer.isMinorCiv() && !kPlayer.isBarbarian())
+; 7164 : 					if(kPlayer.isAlive() && kPlayer.getTeam() == GetID() && !kPlayer.isMinorCiv() && !kPlayer.isBarbarian())
 
 	cmp	BYTE PTR [ecx+ebp+2256], 0
 	lea	esi, DWORD PTR [ecx+ebp]
@@ -23301,9 +23557,9 @@ $LN189@SetCurrent:
 	test	al, al
 	jne	SHORT $LN356@SetCurrent
 
-; 7113 : 					{
-; 7114 : 						// provide the player with the extra spies according to their trait when they get their first spy
-; 7115 : 						if (kPlayer.GetEspionage()->GetNumSpies() == 0)
+; 7165 : 					{
+; 7166 : 						// provide the player with the extra spies according to their trait when they get their first spy
+; 7167 : 						if (kPlayer.GetEspionage()->GetNumSpies() == 0)
 
 	mov	ecx, esi
 	call	?GetEspionage@CvPlayer@@QBEPAVCvPlayerEspionage@@XZ ; CvPlayer::GetEspionage
@@ -23312,26 +23568,26 @@ $LN189@SetCurrent:
 	test	eax, eax
 	jne	SHORT $LN42@SetCurrent
 
-; 7116 : 						{
-; 7117 : 							int iNumTraitSpies = kPlayer.GetPlayerTraits()->GetExtraSpies();
+; 7168 : 						{
+; 7169 : 							int iNumTraitSpies = kPlayer.GetPlayerTraits()->GetExtraSpies();
 
 	mov	ecx, esi
 	call	?GetPlayerTraits@CvPlayer@@QBEPAVCvPlayerTraits@@XZ ; CvPlayer::GetPlayerTraits
 	mov	eax, DWORD PTR [eax+272]
 
-; 7118 : 							for (int i = 0; i < iNumTraitSpies; i++)
+; 7170 : 							for (int i = 0; i < iNumTraitSpies; i++)
 
 	test	eax, eax
 	jle	SHORT $LN42@SetCurrent
 
-; 7116 : 						{
-; 7117 : 							int iNumTraitSpies = kPlayer.GetPlayerTraits()->GetExtraSpies();
+; 7168 : 						{
+; 7169 : 							int iNumTraitSpies = kPlayer.GetPlayerTraits()->GetExtraSpies();
 
 	mov	edi, eax
 $LL44@SetCurrent:
 
-; 7119 : 							{
-; 7120 : 								kPlayer.GetEspionage()->CreateSpy();
+; 7171 : 							{
+; 7172 : 								kPlayer.GetEspionage()->CreateSpy();
 
 	mov	ecx, esi
 	call	?GetEspionage@CvPlayer@@QBEPAVCvPlayerEspionage@@XZ ; CvPlayer::GetEspionage
@@ -23341,10 +23597,10 @@ $LL44@SetCurrent:
 	jne	SHORT $LL44@SetCurrent
 $LN42@SetCurrent:
 
-; 7121 : 							}
-; 7122 : 						}
-; 7123 : 
-; 7124 : 						for(int i = 0; i < pEraInfo->getSpiesGrantedForPlayer(); i++)
+; 7173 : 							}
+; 7174 : 						}
+; 7175 : 
+; 7176 : 						for(int i = 0; i < pEraInfo->getSpiesGrantedForPlayer(); i++)
 
 	mov	ecx, ebx
 	xor	edi, edi
@@ -23353,8 +23609,8 @@ $LN42@SetCurrent:
 	jle	SHORT $LN356@SetCurrent
 $LL41@SetCurrent:
 
-; 7125 : 						{
-; 7126 : 							kPlayer.GetEspionage()->CreateSpy();
+; 7177 : 						{
+; 7178 : 							kPlayer.GetEspionage()->CreateSpy();
 
 	mov	ecx, esi
 	call	?GetEspionage@CvPlayer@@QBEPAVCvPlayerEspionage@@XZ ; CvPlayer::GetEspionage
@@ -23367,52 +23623,52 @@ $LL41@SetCurrent:
 	jl	SHORT $LL41@SetCurrent
 $LN356@SetCurrent:
 
-; 7121 : 							}
-; 7122 : 						}
-; 7123 : 
-; 7124 : 						for(int i = 0; i < pEraInfo->getSpiesGrantedForPlayer(); i++)
+; 7173 : 							}
+; 7174 : 						}
+; 7175 : 
+; 7176 : 						for(int i = 0; i < pEraInfo->getSpiesGrantedForPlayer(); i++)
 
 	mov	edi, DWORD PTR _this$[esp+820]
 $LN48@SetCurrent:
 
-; 7106 : 			{
-; 7107 : 				PlayerTypes ePlayer;
-; 7108 : 				for(int iPlayerLoop = 0; iPlayerLoop < MAX_CIV_PLAYERS; iPlayerLoop++)
+; 7158 : 			{
+; 7159 : 				PlayerTypes ePlayer;
+; 7160 : 				for(int iPlayerLoop = 0; iPlayerLoop < MAX_CIV_PLAYERS; iPlayerLoop++)
 
 	add	ebp, 63236				; 0000f704H
 	cmp	ebp, 3983868				; 003cc9fcH
 	jl	$LL49@SetCurrent
 $LN47@SetCurrent:
 
-; 7127 : 						}
-; 7128 : 					}
-; 7129 : 				}
-; 7130 : 			}
-; 7131 : 
-; 7132 : 			if(pEraInfo->getSpiesGrantedForEveryone() > 0)
+; 7179 : 						}
+; 7180 : 					}
+; 7181 : 				}
+; 7182 : 			}
+; 7183 : 
+; 7184 : 			if(pEraInfo->getSpiesGrantedForEveryone() > 0)
 
 	mov	ecx, ebx
 	call	?getSpiesGrantedForEveryone@CvEraInfo@@QBEHXZ ; CvEraInfo::getSpiesGrantedForEveryone
 	test	eax, eax
 	jle	$LN359@SetCurrent
 
-; 7133 : 			{
-; 7134 : 				// check to see if anyone else has reached or surpassed this era yet
-; 7135 : 				bool bAlreadyProvided = false;
-; 7136 : 				PlayerTypes ePlayer;
-; 7137 : 				TeamTypes eTeam;
-; 7138 : 				for(int iPlayerLoop = 0; iPlayerLoop < MAX_CIV_PLAYERS; iPlayerLoop++)
+; 7185 : 			{
+; 7186 : 				// check to see if anyone else has reached or surpassed this era yet
+; 7187 : 				bool bAlreadyProvided = false;
+; 7188 : 				PlayerTypes ePlayer;
+; 7189 : 				TeamTypes eTeam;
+; 7190 : 				for(int iPlayerLoop = 0; iPlayerLoop < MAX_CIV_PLAYERS; iPlayerLoop++)
 
 	xor	edi, edi
 $LL37@SetCurrent:
 
-; 7139 : 				{
-; 7140 : 					ePlayer = (PlayerTypes) iPlayerLoop;
-; 7141 : 					CvPlayerAI& kPlayer = GET_PLAYER(ePlayer);
+; 7191 : 				{
+; 7192 : 					ePlayer = (PlayerTypes) iPlayerLoop;
+; 7193 : 					CvPlayerAI& kPlayer = GET_PLAYER(ePlayer);
 
 	mov	edx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 
-; 7142 : 					if (kPlayer.isEverAlive() && !kPlayer.isBarbarian() && !kPlayer.isMinorCiv())
+; 7194 : 					if (kPlayer.isEverAlive() && !kPlayer.isBarbarian() && !kPlayer.isMinorCiv())
 
 	cmp	BYTE PTR [edi+edx+2268], 0
 	lea	esi, DWORD PTR [edi+edx]
@@ -23426,8 +23682,8 @@ $LL37@SetCurrent:
 	test	al, al
 	jne	SHORT $LN36@SetCurrent
 
-; 7143 : 					{
-; 7144 : 						eTeam = kPlayer.getTeam();
+; 7195 : 					{
+; 7196 : 						eTeam = kPlayer.getTeam();
 
 	mov	esi, DWORD PTR [esi+44]
 	cmp	esi, 63					; 0000003fH
@@ -23440,8 +23696,8 @@ $LN207@SetCurrent:
 	or	eax, -1
 $LN208@SetCurrent:
 
-; 7145 : 
-; 7146 : 						if(GET_TEAM(eTeam).GetCurrentEra() >= eNewValue)
+; 7197 : 
+; 7198 : 						if(GET_TEAM(eTeam).GetCurrentEra() >= eNewValue)
 
 	mov	edx, DWORD PTR ?m_aTeams@CvTeam@@1PAV1@A ; CvTeam::m_aTeams
 	imul	eax, 2984				; 00000ba8H
@@ -23450,38 +23706,38 @@ $LN208@SetCurrent:
 	jge	$LN359@SetCurrent
 $LN36@SetCurrent:
 
-; 7133 : 			{
-; 7134 : 				// check to see if anyone else has reached or surpassed this era yet
-; 7135 : 				bool bAlreadyProvided = false;
-; 7136 : 				PlayerTypes ePlayer;
-; 7137 : 				TeamTypes eTeam;
-; 7138 : 				for(int iPlayerLoop = 0; iPlayerLoop < MAX_CIV_PLAYERS; iPlayerLoop++)
+; 7185 : 			{
+; 7186 : 				// check to see if anyone else has reached or surpassed this era yet
+; 7187 : 				bool bAlreadyProvided = false;
+; 7188 : 				PlayerTypes ePlayer;
+; 7189 : 				TeamTypes eTeam;
+; 7190 : 				for(int iPlayerLoop = 0; iPlayerLoop < MAX_CIV_PLAYERS; iPlayerLoop++)
 
 	add	edi, 63236				; 0000f704H
 	cmp	edi, 3983868				; 003cc9fcH
 	jl	SHORT $LL37@SetCurrent
 
-; 7147 : 						{
-; 7148 : 							bAlreadyProvided = true;
-; 7149 : 							break;
-; 7150 : 						}
-; 7151 : 					}
-; 7152 : 				}
-; 7153 : 
-; 7154 : 				if(!bAlreadyProvided)
-; 7155 : 				{
-; 7156 : 					for(int iPlayerLoop = 0; iPlayerLoop < MAX_CIV_PLAYERS; iPlayerLoop++)
+; 7199 : 						{
+; 7200 : 							bAlreadyProvided = true;
+; 7201 : 							break;
+; 7202 : 						}
+; 7203 : 					}
+; 7204 : 				}
+; 7205 : 
+; 7206 : 				if(!bAlreadyProvided)
+; 7207 : 				{
+; 7208 : 					for(int iPlayerLoop = 0; iPlayerLoop < MAX_CIV_PLAYERS; iPlayerLoop++)
 
 	xor	ebx, ebx
 $LL366@SetCurrent:
 
-; 7157 : 					{
-; 7158 : 						ePlayer = (PlayerTypes) iPlayerLoop;
-; 7159 : 						CvPlayerAI& kPlayer = GET_PLAYER(ePlayer);
+; 7209 : 					{
+; 7210 : 						ePlayer = (PlayerTypes) iPlayerLoop;
+; 7211 : 						CvPlayerAI& kPlayer = GET_PLAYER(ePlayer);
 
 	mov	edx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 
-; 7160 : 						if(!kPlayer.isAlive() || kPlayer.isBarbarian() || kPlayer.isMinorCiv())
+; 7212 : 						if(!kPlayer.isAlive() || kPlayer.isBarbarian() || kPlayer.isMinorCiv())
 
 	cmp	BYTE PTR [ebx+edx+2256], 0
 	lea	esi, DWORD PTR [ebx+edx]
@@ -23495,13 +23751,13 @@ $LL366@SetCurrent:
 	test	al, al
 	jne	SHORT $LN30@SetCurrent
 
-; 7161 : 						{
-; 7162 : 							continue;
-; 7163 : 						}
-; 7164 : 
-; 7165 : 						for(int i = 0; i < pEraInfo->getSpiesGrantedForEveryone(); i++)
+; 7213 : 						{
+; 7214 : 							continue;
+; 7215 : 						}
+; 7216 : 
+; 7217 : 						for(int i = 0; i < pEraInfo->getSpiesGrantedForEveryone(); i++)
 
-	mov	ecx, DWORD PTR _pEraInfo$227135[esp+820]
+	mov	ecx, DWORD PTR _pEraInfo$227653[esp+820]
 	xor	ebp, ebp
 	call	?getSpiesGrantedForEveryone@CvEraInfo@@QBEHXZ ; CvEraInfo::getSpiesGrantedForEveryone
 	test	eax, eax
@@ -23509,9 +23765,9 @@ $LL366@SetCurrent:
 	npad	2
 $LL26@SetCurrent:
 
-; 7166 : 						{
-; 7167 : 							// provide the player with the extra spies according to their trait when they get their first spy
-; 7168 : 							if (kPlayer.GetEspionage()->GetNumSpies() == 0)
+; 7218 : 						{
+; 7219 : 							// provide the player with the extra spies according to their trait when they get their first spy
+; 7220 : 							if (kPlayer.GetEspionage()->GetNumSpies() == 0)
 
 	mov	ecx, esi
 	call	?GetEspionage@CvPlayer@@QBEPAVCvPlayerEspionage@@XZ ; CvPlayer::GetEspionage
@@ -23520,26 +23776,26 @@ $LL26@SetCurrent:
 	test	eax, eax
 	jne	SHORT $LN20@SetCurrent
 
-; 7169 : 							{
-; 7170 : 								int iNumTraitSpies = kPlayer.GetPlayerTraits()->GetExtraSpies();
+; 7221 : 							{
+; 7222 : 								int iNumTraitSpies = kPlayer.GetPlayerTraits()->GetExtraSpies();
 
 	mov	ecx, esi
 	call	?GetPlayerTraits@CvPlayer@@QBEPAVCvPlayerTraits@@XZ ; CvPlayer::GetPlayerTraits
 	mov	eax, DWORD PTR [eax+272]
 
-; 7171 : 								for (int iIndex = 0; iIndex < iNumTraitSpies; iIndex++)
+; 7223 : 								for (int iIndex = 0; iIndex < iNumTraitSpies; iIndex++)
 
 	test	eax, eax
 	jle	SHORT $LN20@SetCurrent
 
-; 7169 : 							{
-; 7170 : 								int iNumTraitSpies = kPlayer.GetPlayerTraits()->GetExtraSpies();
+; 7221 : 							{
+; 7222 : 								int iNumTraitSpies = kPlayer.GetPlayerTraits()->GetExtraSpies();
 
 	mov	edi, eax
 $LL22@SetCurrent:
 
-; 7172 : 								{
-; 7173 : 									kPlayer.GetEspionage()->CreateSpy();
+; 7224 : 								{
+; 7225 : 									kPlayer.GetEspionage()->CreateSpy();
 
 	mov	ecx, esi
 	call	?GetEspionage@CvPlayer@@QBEPAVCvPlayerEspionage@@XZ ; CvPlayer::GetEspionage
@@ -23549,59 +23805,59 @@ $LL22@SetCurrent:
 	jne	SHORT $LL22@SetCurrent
 $LN20@SetCurrent:
 
-; 7174 : 								}
-; 7175 : 							}
-; 7176 : 							kPlayer.GetEspionage()->CreateSpy();
+; 7226 : 								}
+; 7227 : 							}
+; 7228 : 							kPlayer.GetEspionage()->CreateSpy();
 
 	mov	ecx, esi
 	call	?GetEspionage@CvPlayer@@QBEPAVCvPlayerEspionage@@XZ ; CvPlayer::GetEspionage
 	mov	ecx, eax
 	call	?CreateSpy@CvPlayerEspionage@@QAEXXZ	; CvPlayerEspionage::CreateSpy
-	mov	ecx, DWORD PTR _pEraInfo$227135[esp+820]
+	mov	ecx, DWORD PTR _pEraInfo$227653[esp+820]
 	inc	ebp
 	call	?getSpiesGrantedForEveryone@CvEraInfo@@QBEHXZ ; CvEraInfo::getSpiesGrantedForEveryone
 	cmp	ebp, eax
 	jl	SHORT $LL26@SetCurrent
 $LN30@SetCurrent:
 
-; 7147 : 						{
-; 7148 : 							bAlreadyProvided = true;
-; 7149 : 							break;
-; 7150 : 						}
-; 7151 : 					}
-; 7152 : 				}
-; 7153 : 
-; 7154 : 				if(!bAlreadyProvided)
-; 7155 : 				{
-; 7156 : 					for(int iPlayerLoop = 0; iPlayerLoop < MAX_CIV_PLAYERS; iPlayerLoop++)
+; 7199 : 						{
+; 7200 : 							bAlreadyProvided = true;
+; 7201 : 							break;
+; 7202 : 						}
+; 7203 : 					}
+; 7204 : 				}
+; 7205 : 
+; 7206 : 				if(!bAlreadyProvided)
+; 7207 : 				{
+; 7208 : 					for(int iPlayerLoop = 0; iPlayerLoop < MAX_CIV_PLAYERS; iPlayerLoop++)
 
 	add	ebx, 63236				; 0000f704H
 	cmp	ebx, 3983868				; 003cc9fcH
 	jl	$LL366@SetCurrent
 $LN359@SetCurrent:
 
-; 7177 : 						}
-; 7178 : 					}
-; 7179 : 				}
-; 7180 : 			}
-; 7181 : 		}
-; 7182 : 
-; 7183 : 		// Trait to provide free policies on era change?
-; 7184 : 		PlayerTypes ePlayer;
-; 7185 : 		for(int iPlayerLoop = 0; iPlayerLoop < MAX_CIV_PLAYERS; iPlayerLoop++)
+; 7229 : 						}
+; 7230 : 					}
+; 7231 : 				}
+; 7232 : 			}
+; 7233 : 		}
+; 7234 : 
+; 7235 : 		// Trait to provide free policies on era change?
+; 7236 : 		PlayerTypes ePlayer;
+; 7237 : 		for(int iPlayerLoop = 0; iPlayerLoop < MAX_CIV_PLAYERS; iPlayerLoop++)
 
 	mov	ebx, DWORD PTR _this$[esp+820]
 	xor	edi, edi
 	npad	4
 $LL19@SetCurrent:
 
-; 7186 : 		{
-; 7187 : 			ePlayer = (PlayerTypes) iPlayerLoop;
-; 7188 : 			CvPlayerAI& kPlayer = GET_PLAYER(ePlayer);
+; 7238 : 		{
+; 7239 : 			ePlayer = (PlayerTypes) iPlayerLoop;
+; 7240 : 			CvPlayerAI& kPlayer = GET_PLAYER(ePlayer);
 
 	mov	eax, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 
-; 7189 : 			if(kPlayer.isAlive() && kPlayer.getTeam() == GetID() && !kPlayer.isMinorCiv() && !kPlayer.isBarbarian())
+; 7241 : 			if(kPlayer.isAlive() && kPlayer.getTeam() == GetID() && !kPlayer.isMinorCiv() && !kPlayer.isBarbarian())
 
 	cmp	BYTE PTR [edi+eax+2256], 0
 	lea	esi, DWORD PTR [edi+eax]
@@ -23627,8 +23883,8 @@ $LN235@SetCurrent:
 	test	al, al
 	jne	SHORT $LN18@SetCurrent
 
-; 7190 : 			{
-; 7191 : 				int iNumFreePolicies = kPlayer.GetPlayerTraits()->GetFreeSocialPoliciesPerEra() > 0;
+; 7242 : 			{
+; 7243 : 				int iNumFreePolicies = kPlayer.GetPlayerTraits()->GetFreeSocialPoliciesPerEra() > 0;
 
 	mov	ecx, esi
 	call	?GetPlayerTraits@CvPlayer@@QBEPAVCvPlayerTraits@@XZ ; CvPlayer::GetPlayerTraits
@@ -23638,13 +23894,13 @@ $LN235@SetCurrent:
 	setg	cl
 	mov	eax, ecx
 
-; 7192 : 				if (iNumFreePolicies > 0)
+; 7244 : 				if (iNumFreePolicies > 0)
 
 	test	eax, eax
 	jle	SHORT $LN18@SetCurrent
 
-; 7193 : 				{
-; 7194 : 					kPlayer.ChangeNumFreePolicies(iNumFreePolicies);
+; 7245 : 				{
+; 7246 : 					kPlayer.ChangeNumFreePolicies(iNumFreePolicies);
 
 	push	eax
 	mov	ecx, esi
@@ -23654,25 +23910,25 @@ $LN18@SetCurrent:
 	cmp	edi, 3983868				; 003cc9fcH
 	jl	SHORT $LL19@SetCurrent
 
-; 7195 : 				}
-; 7196 : 			}
-; 7197 : 		}
-; 7198 : 
-; 7199 : 		m_eCurrentEra = eNewValue;
+; 7247 : 				}
+; 7248 : 			}
+; 7249 : 		}
+; 7250 : 
+; 7251 : 		m_eCurrentEra = eNewValue;
 
 	mov	edx, DWORD PTR _eNewValue$[esp+816]
 	mov	DWORD PTR [ebx+136], edx
 
-; 7200 : 
-; 7201 : 		if(GC.getGame().getActiveTeam() != NO_TEAM)
+; 7252 : 
+; 7253 : 		if(GC.getGame().getActiveTeam() != NO_TEAM)
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?getActiveTeam@CvGame@@QAE?AW4TeamTypes@@XZ ; CvGame::getActiveTeam
 	cmp	eax, -1
 	je	$LN11@SetCurrent
 
-; 7202 : 		{
-; 7203 : 			for(iI = 0; iI < GC.getMap().numPlots(); iI++)
+; 7254 : 		{
+; 7255 : 			for(iI = 0; iI < GC.getMap().numPlots(); iI++)
 
 	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+52
 	xor	ebx, ebx
@@ -23682,13 +23938,13 @@ $LN18@SetCurrent:
 	npad	4
 $LL13@SetCurrent:
 
-; 7204 : 			{
-; 7205 : 				pLoopPlot = GC.getMap().plotByIndexUnchecked(iI);
+; 7256 : 			{
+; 7257 : 				pLoopPlot = GC.getMap().plotByIndexUnchecked(iI);
 
 	mov	esi, DWORD PTR [eax+4068]
 
-; 7206 : 
-; 7207 : 				if(pLoopPlot->getRevealedImprovementType(GC.getGame().getActiveTeam(), true) != NO_IMPROVEMENT)
+; 7258 : 
+; 7259 : 				if(pLoopPlot->getRevealedImprovementType(GC.getGame().getActiveTeam(), true) != NO_IMPROVEMENT)
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	1
@@ -23700,9 +23956,9 @@ $LL13@SetCurrent:
 	cmp	eax, -1
 	je	SHORT $LN12@SetCurrent
 
-; 7208 : 				{
-; 7209 : 					if((pLoopPlot->getTeam() == GetID()) ||
-; 7210 : 					        (!pLoopPlot->isOwned() && GetID() == GC.getGame().getActiveTeam()))
+; 7260 : 				{
+; 7261 : 					if((pLoopPlot->getTeam() == GetID()) ||
+; 7262 : 					        (!pLoopPlot->isOwned() && GetID() == GC.getGame().getActiveTeam()))
 
 	movsx	eax, BYTE PTR [esi+4]
 	cmp	eax, -1
@@ -23731,8 +23987,8 @@ $LN255@SetCurrent:
 	jne	SHORT $LN12@SetCurrent
 $LN8@SetCurrent:
 
-; 7211 : 					{
-; 7212 : 						pLoopPlot->setLayoutDirty(true);
+; 7263 : 					{
+; 7264 : 						pLoopPlot->setLayoutDirty(true);
 
 	push	1
 	mov	ecx, esi
@@ -23745,13 +24001,13 @@ $LN12@SetCurrent:
 	jl	$LL13@SetCurrent
 $LN11@SetCurrent:
 
-; 7213 : 					}
-; 7214 : 				}
-; 7215 : 			}
-; 7216 : 		}
-; 7217 : 
-; 7218 : 		// need to map gameplay eras to the artwork eras
-; 7219 : 		for(int iPlayerLoop = 0; iPlayerLoop < MAX_CIV_PLAYERS; iPlayerLoop++)
+; 7265 : 					}
+; 7266 : 				}
+; 7267 : 			}
+; 7268 : 		}
+; 7269 : 
+; 7270 : 		// need to map gameplay eras to the artwork eras
+; 7271 : 		for(int iPlayerLoop = 0; iPlayerLoop < MAX_CIV_PLAYERS; iPlayerLoop++)
 
 	mov	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	mov	ebx, DWORD PTR _this$[esp+820]
@@ -23760,11 +24016,11 @@ $LN11@SetCurrent:
 	xor	esi, esi
 $LL7@SetCurrent:
 
-; 7220 : 		{
-; 7221 : 			ePlayer = (PlayerTypes) iPlayerLoop;
-; 7222 : 
-; 7223 : 			CvPlayerAI& kPlayer = GET_PLAYER(ePlayer);
-; 7224 : 			if(kPlayer.isAlive() && kPlayer.getTeam() == GetID())
+; 7272 : 		{
+; 7273 : 			ePlayer = (PlayerTypes) iPlayerLoop;
+; 7274 : 
+; 7275 : 			CvPlayerAI& kPlayer = GET_PLAYER(ePlayer);
+; 7276 : 			if(kPlayer.isAlive() && kPlayer.getTeam() == GetID())
 
 	cmp	BYTE PTR [esi+ecx+2256], 0
 	je	SHORT $LN6@SetCurrent
@@ -23781,8 +24037,8 @@ $LN285@SetCurrent:
 	cmp	eax, DWORD PTR [ebx+4]
 	jne	SHORT $LN6@SetCurrent
 
-; 7225 : 			{
-; 7226 : 				gDLL->GameplayEraChanged(ePlayer, eNewValue);
+; 7277 : 			{
+; 7278 : 				gDLL->GameplayEraChanged(ePlayer, eNewValue);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8564
 	mov	eax, DWORD PTR [ecx]
@@ -23797,10 +24053,10 @@ $LN6@SetCurrent:
 	cmp	esi, 3983868				; 003cc9fcH
 	jl	SHORT $LL7@SetCurrent
 
-; 7227 : 			}
-; 7228 : 		}
-; 7229 : 
-; 7230 : 		if(GC.getGame().getActiveTeam() == GetID() && isBridgeBuilding() && eNewValue >= GC.getLAST_BRIDGE_ART_ERA())
+; 7279 : 			}
+; 7280 : 		}
+; 7281 : 
+; 7282 : 		if(GC.getGame().getActiveTeam() == GetID() && isBridgeBuilding() && eNewValue >= GC.getLAST_BRIDGE_ART_ERA())
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	mov	esi, DWORD PTR [ebx+4]
@@ -23812,8 +24068,8 @@ $LN6@SetCurrent:
 	cmp	ebp, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8496
 	jl	SHORT $LN363@SetCurrent
 
-; 7231 : 		{
-; 7232 : 			gDLL->GameplayBridgeChanged(true, 1);
+; 7283 : 		{
+; 7284 : 			gDLL->GameplayBridgeChanged(true, 1);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8564
 	mov	eax, DWORD PTR [ecx]
@@ -23823,9 +24079,9 @@ $LN6@SetCurrent:
 	call	edx
 $LN363@SetCurrent:
 
-; 7233 : 		}
-; 7234 : 
-; 7235 : 		if(GetID() == GC.getGame().getActiveTeam())
+; 7285 : 		}
+; 7286 : 
+; 7287 : 		if(GetID() == GC.getGame().getActiveTeam())
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	mov	esi, DWORD PTR [ebx+4]
@@ -23833,8 +24089,8 @@ $LN363@SetCurrent:
 	cmp	esi, eax
 	jne	SHORT $LN2@SetCurrent
 
-; 7236 : 		{
-; 7237 : 			DLLUI->setDirty(Soundtrack_DIRTY_BIT, true);
+; 7288 : 		{
+; 7289 : 			DLLUI->setDirty(Soundtrack_DIRTY_BIT, true);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
 	mov	eax, DWORD PTR [ecx]
@@ -23844,9 +24100,9 @@ $LN363@SetCurrent:
 	call	edx
 $LN2@SetCurrent:
 
-; 7238 : 		}
-; 7239 : 
-; 7240 : 		ICvEngineScriptSystem1* pkScriptSystem = gDLL->GetScriptSystem();
+; 7290 : 		}
+; 7291 : 
+; 7292 : 		ICvEngineScriptSystem1* pkScriptSystem = gDLL->GetScriptSystem();
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8564
 	mov	eax, DWORD PTR [ecx]
@@ -23854,53 +24110,53 @@ $LN2@SetCurrent:
 	call	edx
 	mov	esi, eax
 
-; 7241 : 		if(pkScriptSystem)
+; 7293 : 		if(pkScriptSystem)
 
 	test	esi, esi
 	je	$LN369@SetCurrent
 
-; 7242 : 		{
-; 7243 : 			CvLuaArgsHandle args;
+; 7294 : 		{
+; 7295 : 			CvLuaArgsHandle args;
 
-	lea	ecx, DWORD PTR _args$227214[esp+820]
+	lea	ecx, DWORD PTR _args$227732[esp+820]
 	call	??0CvLuaArgsHandle@@QAE@XZ		; CvLuaArgsHandle::CvLuaArgsHandle
 
-; 7244 : 			args->Push(GetID());
+; 7296 : 			args->Push(GetID());
 
 	mov	eax, DWORD PTR [ebx+4]
-	mov	ecx, DWORD PTR _args$227214[esp+820]
+	mov	ecx, DWORD PTR _args$227732[esp+820]
 	mov	edx, DWORD PTR [ecx]
 	push	eax
 	mov	eax, DWORD PTR [edx+8]
 	mov	DWORD PTR __$EHRec$[esp+832], 6
 	call	eax
 
-; 7245 : 			args->Push(GetCurrentEra());
+; 7297 : 			args->Push(GetCurrentEra());
 
 	mov	eax, DWORD PTR [ebx+136]
-	mov	ecx, DWORD PTR _args$227214[esp+820]
+	mov	ecx, DWORD PTR _args$227732[esp+820]
 	mov	edx, DWORD PTR [ecx]
 	push	eax
 	mov	eax, DWORD PTR [edx+8]
 	call	eax
 
-; 7246 : 			
-; 7247 : 			bool bResult = false;
-; 7248 : 			LuaSupport::CallHook(pkScriptSystem, "TeamSetEra", args.get(), bResult);
+; 7298 : 			
+; 7299 : 			bool bResult = false;
+; 7300 : 			LuaSupport::CallHook(pkScriptSystem, "TeamSetEra", args.get(), bResult);
 
-	mov	edx, DWORD PTR _args$227214[esp+820]
-	lea	ecx, DWORD PTR _bResult$227215[esp+820]
+	mov	edx, DWORD PTR _args$227732[esp+820]
+	lea	ecx, DWORD PTR _bResult$227733[esp+820]
 	push	ecx
 	push	edx
-	push	OFFSET $SG227216
+	push	OFFSET $SG227734
 	push	esi
-	mov	BYTE PTR _bResult$227215[esp+836], 0
+	mov	BYTE PTR _bResult$227733[esp+836], 0
 	call	?CallHook@LuaSupport@@YA_NPAVICvEngineScriptSystem1@@PBDPAVICvEngineScriptSystemArgs1@@AA_N@Z ; LuaSupport::CallHook
 	add	esp, 16					; 00000010H
 
-; 7249 : 		}
+; 7301 : 		}
 
-	lea	ecx, DWORD PTR _args$227214[esp+820]
+	lea	ecx, DWORD PTR _args$227732[esp+820]
 	mov	DWORD PTR __$EHRec$[esp+828], -1
 	call	??1CvLuaArgsHandle@@QAE@XZ		; CvLuaArgsHandle::~CvLuaArgsHandle
 $LN369@SetCurrent:
@@ -23908,8 +24164,8 @@ $LN369@SetCurrent:
 	pop	ebx
 $LN1@SetCurrent:
 
-; 7250 : 	}
-; 7251 : }
+; 7302 : 	}
+; 7303 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+812]
 	pop	edi
@@ -23921,25 +24177,25 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?SetCurrentEra@CvTeam@@QAEXW4EraTypes@@@Z$0:
-	lea	ecx, DWORD PTR _strMessage$227079[ebp]
+	lea	ecx, DWORD PTR _strMessage$227597[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?SetCurrentEra@CvTeam@@QAEXW4EraTypes@@@Z$1:
-	lea	ecx, DWORD PTR _strSummary$227080[ebp]
+	lea	ecx, DWORD PTR _strSummary$227598[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?SetCurrentEra@CvTeam@@QAEXW4EraTypes@@@Z$2:
-	lea	ecx, DWORD PTR $T237089[ebp]
+	lea	ecx, DWORD PTR $T237498[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?SetCurrentEra@CvTeam@@QAEXW4EraTypes@@@Z$3:
-	lea	ecx, DWORD PTR _unmetPlayer$227105[ebp]
+	lea	ecx, DWORD PTR _unmetPlayer$227623[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?SetCurrentEra@CvTeam@@QAEXW4EraTypes@@@Z$4:
-	lea	ecx, DWORD PTR $T237092[ebp]
+	lea	ecx, DWORD PTR $T237501[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?SetCurrentEra@CvTeam@@QAEXW4EraTypes@@@Z$5:
-	lea	ecx, DWORD PTR $T237093[ebp]
+	lea	ecx, DWORD PTR $T237502[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?SetCurrentEra@CvTeam@@QAEXW4EraTypes@@@Z$6:
-	lea	ecx, DWORD PTR _args$227214[ebp]
+	lea	ecx, DWORD PTR _args$227732[ebp]
 	jmp	??1CvLuaArgsHandle@@QAE@XZ		; CvLuaArgsHandle::~CvLuaArgsHandle
 __ehhandler$?SetCurrentEra@CvTeam@@QAEXW4EraTypes@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?SetCurrentEra@CvTeam@@QAEXW4EraTypes@@@Z
@@ -23954,14 +24210,14 @@ _TEXT	SEGMENT
 ?countNumHumanGameTurnActive@CvTeam@@QBEHXZ PROC	; CvTeam::countNumHumanGameTurnActive, COMDAT
 ; _this$ = ecx
 
-; 7255 : {
+; 7307 : {
 
 	push	ebx
 	push	ebp
 	push	esi
 	push	edi
 
-; 7256 : 	int iCount = 0;
+; 7308 : 	int iCount = 0;
 
 	xor	ebx, ebx
 	mov	ebp, ecx
@@ -23969,14 +24225,14 @@ _TEXT	SEGMENT
 	npad	6
 $LL5@countNumHu:
 
-; 7259 : 	{
-; 7260 : 		CvPlayer& kLoopPlayer = GET_PLAYER((PlayerTypes)iI);
+; 7311 : 	{
+; 7312 : 		CvPlayer& kLoopPlayer = GET_PLAYER((PlayerTypes)iI);
 
 	mov	eax, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	lea	esi, DWORD PTR [edi+eax]
 
-; 7261 : 
-; 7262 : 		if(kLoopPlayer.isHuman() && kLoopPlayer.getTeam() == GetID())
+; 7313 : 
+; 7314 : 		if(kLoopPlayer.isHuman() && kLoopPlayer.getTeam() == GetID())
 
 	mov	ecx, esi
 	call	?isHuman@CvPlayer@@QBE_NXZ		; CvPlayer::isHuman
@@ -23995,22 +24251,22 @@ $LN15@countNumHu:
 	cmp	eax, DWORD PTR [ebp+4]
 	jne	SHORT $LN4@countNumHu
 
-; 7263 : 		{
-; 7264 : 			if(kLoopPlayer.isTurnActive())
+; 7315 : 		{
+; 7316 : 			if(kLoopPlayer.isTurnActive())
 
 	mov	ecx, esi
 	call	?isTurnActive@CvPlayer@@QBE_NXZ		; CvPlayer::isTurnActive
 	test	al, al
 	je	SHORT $LN4@countNumHu
 
-; 7265 : 			{
-; 7266 : 				++iCount;
+; 7317 : 			{
+; 7318 : 				++iCount;
 
 	inc	ebx
 $LN4@countNumHu:
 
-; 7257 : 
-; 7258 : 	for(int iI = 0; iI < MAX_CIV_PLAYERS; iI++)
+; 7309 : 
+; 7310 : 	for(int iI = 0; iI < MAX_CIV_PLAYERS; iI++)
 
 	add	edi, 63236				; 0000f704H
 	cmp	edi, 3983868				; 003cc9fcH
@@ -24019,16 +24275,16 @@ $LN4@countNumHu:
 	pop	esi
 	pop	ebp
 
-; 7267 : 			}
-; 7268 : 		}
-; 7269 : 	}
-; 7270 : 
-; 7271 : 	return iCount;
+; 7319 : 			}
+; 7320 : 		}
+; 7321 : 	}
+; 7322 : 
+; 7323 : 	return iCount;
 
 	mov	eax, ebx
 	pop	ebx
 
-; 7272 : }
+; 7324 : }
 
 	ret	0
 ?countNumHumanGameTurnActive@CvTeam@@QBEHXZ ENDP	; CvTeam::countNumHumanGameTurnActive
@@ -24043,13 +24299,13 @@ _bDoTurn$ = 12						; size = 1
 ?setTurnActive@CvTeam@@QAEX_N0@Z PROC			; CvTeam::setTurnActive, COMDAT
 ; _this$ = ecx
 
-; 7276 : {
+; 7328 : {
 
 	push	ebx
 
-; 7277 : 	CvAssert(GC.getGame().isSimultaneousTeamTurns());
-; 7278 : 
-; 7279 : 	for(int iPlayer = 0; iPlayer < MAX_PLAYERS; ++iPlayer)
+; 7329 : 	CvAssert(GC.getGame().isSimultaneousTeamTurns());
+; 7330 : 
+; 7331 : 	for(int iPlayer = 0; iPlayer < MAX_PLAYERS; ++iPlayer)
 
 	mov	ebx, DWORD PTR _bDoTurn$[esp]
 	push	ebp
@@ -24060,12 +24316,12 @@ _bDoTurn$ = 12						; size = 1
 	xor	esi, esi
 $LL4@setTurnAct:
 
-; 7280 : 	{
-; 7281 : 		CvPlayer& kPlayer = GET_PLAYER((PlayerTypes)iPlayer);
+; 7332 : 	{
+; 7333 : 		CvPlayer& kPlayer = GET_PLAYER((PlayerTypes)iPlayer);
 
 	mov	eax, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 
-; 7282 : 		if(kPlayer.isAlive() && kPlayer.getTeam() == GetID())
+; 7334 : 		if(kPlayer.isAlive() && kPlayer.getTeam() == GetID())
 
 	cmp	BYTE PTR [esi+eax+2256], 0
 	lea	ecx, DWORD PTR [esi+eax]
@@ -24083,8 +24339,8 @@ $LN18@setTurnAct:
 	cmp	eax, DWORD PTR [ebp+4]
 	jne	SHORT $LN3@setTurnAct
 
-; 7283 : 		{
-; 7284 : 			kPlayer.setTurnActive(bNewValue, bDoTurn);
+; 7335 : 		{
+; 7336 : 			kPlayer.setTurnActive(bNewValue, bDoTurn);
 
 	push	ebx
 	push	edi
@@ -24098,9 +24354,9 @@ $LN3@setTurnAct:
 	pop	ebp
 	pop	ebx
 
-; 7285 : 		}
-; 7286 : 	}
-; 7287 : }
+; 7337 : 		}
+; 7338 : 	}
+; 7339 : }
 
 	ret	8
 ?setTurnActive@CvTeam@@QAEX_N0@Z ENDP			; CvTeam::setTurnActive
@@ -24112,26 +24368,26 @@ _TEXT	SEGMENT
 ?isTurnActive@CvTeam@@QBE_NXZ PROC			; CvTeam::isTurnActive, COMDAT
 ; _this$ = ecx
 
-; 7291 : {
+; 7343 : {
 
 	push	esi
 	push	edi
 	mov	edi, ecx
 
-; 7292 : 	CvAssert(GC.getGame().isSimultaneousTeamTurns());
-; 7293 : 
-; 7294 : 	for(int iPlayer = 0; iPlayer < MAX_PLAYERS; ++iPlayer)
+; 7344 : 	CvAssert(GC.getGame().isSimultaneousTeamTurns());
+; 7345 : 
+; 7346 : 	for(int iPlayer = 0; iPlayer < MAX_PLAYERS; ++iPlayer)
 
 	xor	esi, esi
 	npad	10
 $LL5@isTurnActi:
 
-; 7295 : 	{
-; 7296 : 		CvPlayer& kPlayer = GET_PLAYER((PlayerTypes)iPlayer);
+; 7347 : 	{
+; 7348 : 		CvPlayer& kPlayer = GET_PLAYER((PlayerTypes)iPlayer);
 
 	mov	eax, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 
-; 7297 : 		if(kPlayer.isAlive() && kPlayer.getTeam() == GetID())
+; 7349 : 		if(kPlayer.isAlive() && kPlayer.getTeam() == GetID())
 
 	cmp	BYTE PTR [esi+eax+2256], 0
 	lea	ecx, DWORD PTR [esi+eax]
@@ -24149,45 +24405,45 @@ $LN19@isTurnActi:
 	cmp	eax, DWORD PTR [edi+4]
 	jne	SHORT $LN4@isTurnActi
 
-; 7298 : 		{
-; 7299 : 			if(kPlayer.isTurnActive())
+; 7350 : 		{
+; 7351 : 			if(kPlayer.isTurnActive())
 
 	call	?isTurnActive@CvPlayer@@QBE_NXZ		; CvPlayer::isTurnActive
 	test	al, al
 	jne	SHORT $LN26@isTurnActi
 $LN4@isTurnActi:
 
-; 7292 : 	CvAssert(GC.getGame().isSimultaneousTeamTurns());
-; 7293 : 
-; 7294 : 	for(int iPlayer = 0; iPlayer < MAX_PLAYERS; ++iPlayer)
+; 7344 : 	CvAssert(GC.getGame().isSimultaneousTeamTurns());
+; 7345 : 
+; 7346 : 	for(int iPlayer = 0; iPlayer < MAX_PLAYERS; ++iPlayer)
 
 	add	esi, 63236				; 0000f704H
 	cmp	esi, 4047104				; 003dc100H
 	jl	SHORT $LL5@isTurnActi
 	pop	edi
 
-; 7302 : 			}
-; 7303 : 		}
-; 7304 : 	}
-; 7305 : 
-; 7306 : 	return false;
+; 7354 : 			}
+; 7355 : 		}
+; 7356 : 	}
+; 7357 : 
+; 7358 : 	return false;
 
 	xor	al, al
 	pop	esi
 
-; 7307 : }
+; 7359 : }
 
 	ret	0
 $LN26@isTurnActi:
 	pop	edi
 
-; 7300 : 			{
-; 7301 : 				return true;
+; 7352 : 			{
+; 7353 : 				return true;
 
 	mov	al, 1
 	pop	esi
 
-; 7307 : }
+; 7359 : }
 
 	ret	0
 ?isTurnActive@CvTeam@@QBE_NXZ ENDP			; CvTeam::isTurnActive
@@ -24201,13 +24457,13 @@ _simultaneousTurns$ = 8					; size = 1
 ?setDynamicTurnsSimultMode@CvTeam@@QAEX_N@Z PROC	; CvTeam::setDynamicTurnsSimultMode, COMDAT
 ; _this$ = ecx
 
-; 7460 : {//set DynamicTurnsSimultMode for every player on this team.
+; 7512 : {//set DynamicTurnsSimultMode for every player on this team.
 
 	push	ebx
 	push	esi
 	push	edi
 
-; 7461 : 	for(int iPlayer = 0; iPlayer < MAX_PLAYERS; ++iPlayer)
+; 7513 : 	for(int iPlayer = 0; iPlayer < MAX_PLAYERS; ++iPlayer)
 
 	mov	edi, DWORD PTR _simultaneousTurns$[esp+8]
 	mov	ebx, ecx
@@ -24215,12 +24471,12 @@ _simultaneousTurns$ = 8					; size = 1
 	npad	5
 $LL4@setDynamic:
 
-; 7462 : 	{
-; 7463 : 		CvPlayer& kPlayer = GET_PLAYER((PlayerTypes)iPlayer);
+; 7514 : 	{
+; 7515 : 		CvPlayer& kPlayer = GET_PLAYER((PlayerTypes)iPlayer);
 
 	mov	eax, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 
-; 7464 : 		if(kPlayer.isAlive() && kPlayer.getTeam() == GetID())
+; 7516 : 		if(kPlayer.isAlive() && kPlayer.getTeam() == GetID())
 
 	cmp	BYTE PTR [esi+eax+2256], 0
 	lea	ecx, DWORD PTR [esi+eax]
@@ -24238,8 +24494,8 @@ $LN18@setDynamic:
 	cmp	eax, DWORD PTR [ebx+4]
 	jne	SHORT $LN3@setDynamic
 
-; 7465 : 		{
-; 7466 : 			kPlayer.setDynamicTurnsSimultMode(simultaneousTurns);
+; 7517 : 		{
+; 7518 : 			kPlayer.setDynamicTurnsSimultMode(simultaneousTurns);
 
 	push	edi
 	call	?setDynamicTurnsSimultMode@CvPlayer@@QAEX_N@Z ; CvPlayer::setDynamicTurnsSimultMode
@@ -24251,9 +24507,9 @@ $LN3@setDynamic:
 	pop	esi
 	pop	ebx
 
-; 7467 : 		}
-; 7468 : 	}
-; 7469 : }
+; 7519 : 		}
+; 7520 : 	}
+; 7521 : }
 
 	ret	4
 ?setDynamicTurnsSimultMode@CvTeam@@QAEX_N@Z ENDP	; CvTeam::setDynamicTurnsSimultMode
@@ -24275,33 +24531,33 @@ EXTRN	??6@YAAAVFDataStream@@AAV0@ABW4TeamTypes@@@Z:PROC ; operator<<
 ;	COMDAT ?Write@CvTeam@@UBEXAAVFDataStream@@@Z
 _TEXT	SEGMENT
 _uiVersion$ = -12					; size = 4
-$T237854 = -8						; size = 8
-$T237853 = -8						; size = 8
-$T237852 = -8						; size = 8
-$T237851 = -8						; size = 8
-$T237850 = -8						; size = 8
-$T237849 = -8						; size = 8
-$T237848 = -8						; size = 8
-$T237847 = -8						; size = 8
-$T237846 = -8						; size = 8
-$T237845 = -8						; size = 8
+$T238263 = -8						; size = 8
+$T238262 = -8						; size = 8
+$T238261 = -8						; size = 8
+$T238260 = -8						; size = 8
+$T238259 = -8						; size = 8
+$T238258 = -8						; size = 8
+$T238257 = -8						; size = 8
+$T238256 = -8						; size = 8
+$T238255 = -8						; size = 8
+$T238254 = -8						; size = 8
 tv761 = 8						; size = 4
 tv86 = 8						; size = 4
-$T237855 = 8						; size = 4
+$T238264 = 8						; size = 4
 _kStream$ = 8						; size = 4
 ?Write@CvTeam@@UBEXAAVFDataStream@@@Z PROC		; CvTeam::Write, COMDAT
 ; _this$ = ecx
 
-; 7660 : {
+; 7712 : {
 
 	sub	esp, 12					; 0000000cH
 	push	ebx
 	push	ebp
 	push	esi
 
-; 7661 : 	// Current version number
-; 7662 : 	uint uiVersion = 1;
-; 7663 : 	kStream << uiVersion;
+; 7713 : 	// Current version number
+; 7714 : 	uint uiVersion = 1;
+; 7715 : 	kStream << uiVersion;
 
 	mov	esi, DWORD PTR _kStream$[esp+20]
 	push	edi
@@ -24312,305 +24568,305 @@ _kStream$ = 8						; size = 4
 	mov	DWORD PTR _uiVersion$[esp+32], 1
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 
-; 7664 : 
-; 7665 : 	kStream << m_iNumMembers;
+; 7716 : 
+; 7717 : 	kStream << m_iNumMembers;
 
 	lea	ecx, DWORD PTR [edi+8]
 	push	ecx
 	mov	ecx, esi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
-; 7666 : 	kStream << m_iAliveCount;
+; 7718 : 	kStream << m_iAliveCount;
 
 	lea	edx, DWORD PTR [edi+12]
 	push	edx
 	mov	ecx, esi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
-; 7667 : 	kStream << m_iEverAliveCount;
+; 7719 : 	kStream << m_iEverAliveCount;
 
 	lea	eax, DWORD PTR [edi+16]
 	push	eax
 	mov	ecx, esi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
-; 7668 : 	kStream << m_iNumCities;
+; 7720 : 	kStream << m_iNumCities;
 
 	lea	ecx, DWORD PTR [edi+20]
 	push	ecx
 	mov	ecx, esi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
-; 7669 : 	kStream << m_iTotalPopulation;
+; 7721 : 	kStream << m_iTotalPopulation;
 
 	lea	edx, DWORD PTR [edi+24]
 	push	edx
 	mov	ecx, esi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
-; 7670 : 	kStream << m_iTotalLand;
+; 7722 : 	kStream << m_iTotalLand;
 
 	lea	eax, DWORD PTR [edi+28]
 	push	eax
 	mov	ecx, esi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
-; 7671 : 	kStream << m_iNukeInterception;
+; 7723 : 	kStream << m_iNukeInterception;
 
 	lea	ecx, DWORD PTR [edi+32]
 	push	ecx
 	mov	ecx, esi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
-; 7672 : 	kStream << m_iExtraWaterSeeFromCount;
+; 7724 : 	kStream << m_iExtraWaterSeeFromCount;
 
 	lea	edx, DWORD PTR [edi+36]
 	push	edx
 	mov	ecx, esi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
-; 7673 : 	kStream << m_iMapTradingCount;
+; 7725 : 	kStream << m_iMapTradingCount;
 
 	lea	eax, DWORD PTR [edi+40]
 	push	eax
 	mov	ecx, esi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
-; 7674 : 	kStream << m_iTechTradingCount;
+; 7726 : 	kStream << m_iTechTradingCount;
 
 	lea	ecx, DWORD PTR [edi+44]
 	push	ecx
 	mov	ecx, esi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
-; 7675 : 	kStream << m_iGoldTradingCount;
+; 7727 : 	kStream << m_iGoldTradingCount;
 
 	lea	edx, DWORD PTR [edi+48]
 	push	edx
 	mov	ecx, esi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
-; 7676 : 	kStream << m_iAllowEmbassyTradingAllowedCount;
+; 7728 : 	kStream << m_iAllowEmbassyTradingAllowedCount;
 
 	lea	eax, DWORD PTR [edi+52]
 	push	eax
 	mov	ecx, esi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
-; 7677 : 	kStream << m_iOpenBordersTradingAllowedCount;
+; 7729 : 	kStream << m_iOpenBordersTradingAllowedCount;
 
 	lea	ecx, DWORD PTR [edi+56]
 	push	ecx
 	mov	ecx, esi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
-; 7678 : 	kStream << m_iDefensivePactTradingAllowedCount;
+; 7730 : 	kStream << m_iDefensivePactTradingAllowedCount;
 
 	lea	edx, DWORD PTR [edi+60]
 	push	edx
 	mov	ecx, esi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
-; 7679 : 	kStream << m_iResearchAgreementTradingAllowedCount;
+; 7731 : 	kStream << m_iResearchAgreementTradingAllowedCount;
 
 	lea	eax, DWORD PTR [edi+64]
 	push	eax
 	mov	ecx, esi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
-; 7680 : 	kStream << m_iTradeAgreementTradingAllowedCount;
+; 7732 : 	kStream << m_iTradeAgreementTradingAllowedCount;
 
 	lea	ecx, DWORD PTR [edi+68]
 	push	ecx
 	mov	ecx, esi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
-; 7681 : 	kStream << m_iPermanentAllianceTradingCount;
+; 7733 : 	kStream << m_iPermanentAllianceTradingCount;
 
 	lea	edx, DWORD PTR [edi+72]
 	push	edx
 	mov	ecx, esi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
-; 7682 : 	kStream << m_iBridgeBuildingCount;
+; 7734 : 	kStream << m_iBridgeBuildingCount;
 
 	lea	eax, DWORD PTR [edi+76]
 	push	eax
 	mov	ecx, esi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
-; 7683 : 	kStream << m_iWaterWorkCount;
+; 7735 : 	kStream << m_iWaterWorkCount;
 
 	lea	ecx, DWORD PTR [edi+80]
 	push	ecx
 	mov	ecx, esi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
-; 7684 : 	kStream << m_iRiverTradeCount;
+; 7736 : 	kStream << m_iRiverTradeCount;
 
 	lea	edx, DWORD PTR [edi+84]
 	push	edx
 	mov	ecx, esi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
-; 7685 : 	kStream << m_iBorderObstacleCount;
+; 7737 : 	kStream << m_iBorderObstacleCount;
 
 	lea	eax, DWORD PTR [edi+88]
 	push	eax
 	mov	ecx, esi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
-; 7686 : 	kStream << m_iVictoryPoints;
+; 7738 : 	kStream << m_iVictoryPoints;
 
 	lea	ecx, DWORD PTR [edi+92]
 	push	ecx
 	mov	ecx, esi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
-; 7687 : 	kStream << m_iEmbarkedExtraMoves;
+; 7739 : 	kStream << m_iEmbarkedExtraMoves;
 
 	lea	edx, DWORD PTR [edi+96]
 	push	edx
 	mov	ecx, esi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
-; 7688 : 	//EAP: Extra embarked sight on tech
-; 7689 : 	kStream << m_iEmbarkedExtraSight;
+; 7740 : 	//EAP: Extra embarked sight on tech
+; 7741 : 	kStream << m_iEmbarkedExtraSight;
 
 	lea	eax, DWORD PTR [edi+100]
 	push	eax
 	mov	ecx, esi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
-; 7690 : 	kStream << m_iCanEmbarkCount;
+; 7742 : 	kStream << m_iCanEmbarkCount;
 
 	lea	ecx, DWORD PTR [edi+104]
 	push	ecx
 	mov	ecx, esi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
-; 7691 : 	kStream << m_iDefensiveEmbarkCount;
+; 7743 : 	kStream << m_iDefensiveEmbarkCount;
 
 	lea	edx, DWORD PTR [edi+108]
 	push	edx
 	mov	ecx, esi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
-; 7692 : 	kStream << m_iEmbarkedAllWaterPassageCount;
+; 7744 : 	kStream << m_iEmbarkedAllWaterPassageCount;
 
 	lea	eax, DWORD PTR [edi+112]
 	push	eax
 	mov	ecx, esi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
-; 7693 : 	kStream << m_iNumNaturalWondersDiscovered;
+; 7745 : 	kStream << m_iNumNaturalWondersDiscovered;
 
 	lea	ecx, DWORD PTR [edi+116]
 	push	ecx
 	mov	ecx, esi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
-; 7694 : 	kStream << m_iBestPossibleRoute;
+; 7746 : 	kStream << m_iBestPossibleRoute;
 
 	lea	edx, DWORD PTR [edi+120]
 	push	edx
 	mov	ecx, esi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
-; 7695 : 	kStream << m_iNumMinorCivsAttacked;
+; 7747 : 	kStream << m_iNumMinorCivsAttacked;
 
 	lea	eax, DWORD PTR [edi+124]
 	push	eax
 	mov	ecx, esi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
-; 7696 : #ifdef AUI_ASTAR_TWEAKED_OPTIMIZED_BUT_CAN_STILL_USE_ROADS
-; 7697 : 	kStream << m_iBestRouteFlatCostMultiplier;
-; 7698 : 	kStream << m_iBestRouteNormalCostMultiplier;
-; 7699 : 	kStream << m_iUseFlatCostIfBelowThis;
-; 7700 : #endif
-; 7701 : 
-; 7702 : 	kStream << m_bMapCentering;
+; 7748 : #ifdef AUI_ASTAR_TWEAKED_OPTIMIZED_BUT_CAN_STILL_USE_ROADS
+; 7749 : 	kStream << m_iBestRouteFlatCostMultiplier;
+; 7750 : 	kStream << m_iBestRouteNormalCostMultiplier;
+; 7751 : 	kStream << m_iUseFlatCostIfBelowThis;
+; 7752 : #endif
+; 7753 : 
+; 7754 : 	kStream << m_bMapCentering;
 
 	lea	ecx, DWORD PTR [edi+128]
 	push	ecx
 	mov	ecx, esi
 	call	?Write@FDataStream@@IAEXAB_N@Z		; FDataStream::Write
 
-; 7703 : 	kStream << m_bHasBrokenPeaceTreaty;
+; 7755 : 	kStream << m_bHasBrokenPeaceTreaty;
 
 	lea	edx, DWORD PTR [edi+129]
 	push	edx
 	mov	ecx, esi
 	call	?Write@FDataStream@@IAEXAB_N@Z		; FDataStream::Write
 
-; 7704 : 	kStream << m_bHomeOfUnitedNations;
+; 7756 : 	kStream << m_bHomeOfUnitedNations;
 
 	lea	eax, DWORD PTR [edi+130]
 	push	eax
 	mov	ecx, esi
 	call	?Write@FDataStream@@IAEXAB_N@Z		; FDataStream::Write
 
-; 7705 : 	kStream << m_bHasTechForWorldCongress;
+; 7757 : 	kStream << m_bHasTechForWorldCongress;
 
 	lea	ecx, DWORD PTR [edi+131]
 	push	ecx
 	mov	ecx, esi
 	call	?Write@FDataStream@@IAEXAB_N@Z		; FDataStream::Write
 
-; 7706 : 
-; 7707 : 	kStream << m_bBrokenMilitaryPromise;
+; 7758 : 
+; 7759 : 	kStream << m_bBrokenMilitaryPromise;
 
 	lea	edx, DWORD PTR [edi+132]
 	push	edx
 	mov	ecx, esi
 	call	?Write@FDataStream@@IAEXAB_N@Z		; FDataStream::Write
 
-; 7708 : 	kStream << m_bBrokenExpansionPromise;
+; 7760 : 	kStream << m_bBrokenExpansionPromise;
 
 	lea	eax, DWORD PTR [edi+133]
 	push	eax
 	mov	ecx, esi
 	call	?Write@FDataStream@@IAEXAB_N@Z		; FDataStream::Write
 
-; 7709 : 	kStream << m_bBrokenBorderPromise;
+; 7761 : 	kStream << m_bBrokenBorderPromise;
 
 	lea	ecx, DWORD PTR [edi+134]
 	push	ecx
 	mov	ecx, esi
 	call	?Write@FDataStream@@IAEXAB_N@Z		; FDataStream::Write
 
-; 7710 : 	kStream << m_bBrokenCityStatePromise;
+; 7762 : 	kStream << m_bBrokenCityStatePromise;
 
 	lea	edx, DWORD PTR [edi+135]
 	push	edx
 	mov	ecx, esi
 	call	?Write@FDataStream@@IAEXAB_N@Z		; FDataStream::Write
 
-; 7711 : 
-; 7712 : 	kStream << m_eID;
+; 7763 : 
+; 7764 : 	kStream << m_eID;
 
 	lea	eax, DWORD PTR [edi+4]
 	push	eax
 	push	esi
 	call	??6@YAAAVFDataStream@@AAV0@ABW4TeamTypes@@@Z ; operator<<
 
-; 7713 : 
-; 7714 : 	kStream << m_eCurrentEra;
+; 7765 : 
+; 7766 : 	kStream << m_eCurrentEra;
 
 	lea	ecx, DWORD PTR [edi+136]
 	push	ecx
 	push	esi
 	call	??6@YAAAVFDataStream@@AAV0@ABW4EraTypes@@@Z ; operator<<
 
-; 7715 : 	kStream << m_eLiberatedByTeam;
+; 7767 : 	kStream << m_eLiberatedByTeam;
 
 	lea	edx, DWORD PTR [edi+140]
 	push	edx
 	push	esi
 	call	??6@YAAAVFDataStream@@AAV0@ABW4TeamTypes@@@Z ; operator<<
 
-; 7716 : 	kStream << m_eKilledByTeam;
+; 7768 : 	kStream << m_eKilledByTeam;
 
 	lea	eax, DWORD PTR [edi+144]
 	push	eax
@@ -24618,8 +24874,8 @@ _kStream$ = 8						; size = 4
 	call	??6@YAAAVFDataStream@@AAV0@ABW4TeamTypes@@@Z ; operator<<
 	add	esp, 32					; 00000020H
 
-; 7717 : 
-; 7718 : 	kStream << ArrayWrapperConst<int>(MAX_TEAMS, &m_aiTechShareCount[0]);
+; 7769 : 
+; 7770 : 	kStream << ArrayWrapperConst<int>(MAX_TEAMS, &m_aiTechShareCount[0]);
 
 	lea	ebx, DWORD PTR [edi+148]
 	mov	ebp, 64					; 00000040H
@@ -24632,7 +24888,7 @@ $LL93@Write:
 	sub	ebp, 1
 	jne	SHORT $LL93@Write
 
-; 7719 : 	kStream << ArrayWrapperConst<int>(MAX_TEAMS, &m_aiNumTurnsAtWar[0]);
+; 7771 : 	kStream << ArrayWrapperConst<int>(MAX_TEAMS, &m_aiNumTurnsAtWar[0]);
 
 	lea	ebx, DWORD PTR [edi+468]
 	mov	ebp, 64					; 00000040H
@@ -24645,7 +24901,7 @@ $LL108@Write:
 	sub	ebp, 1
 	jne	SHORT $LL108@Write
 
-; 7720 : 	kStream << ArrayWrapperConst<int>(MAX_TEAMS, &m_aiNumTurnsLockedIntoWar[0]);
+; 7772 : 	kStream << ArrayWrapperConst<int>(MAX_TEAMS, &m_aiNumTurnsLockedIntoWar[0]);
 
 	lea	ebx, DWORD PTR [edi+788]
 	mov	ebp, 64					; 00000040H
@@ -24658,7 +24914,7 @@ $LL123@Write:
 	sub	ebp, 1
 	jne	SHORT $LL123@Write
 
-; 7721 : 	kStream << ArrayWrapperConst<int>(NUM_DOMAIN_TYPES, &m_aiExtraMoves[0]);
+; 7773 : 	kStream << ArrayWrapperConst<int>(NUM_DOMAIN_TYPES, &m_aiExtraMoves[0]);
 
 	lea	ebx, DWORD PTR [edi+1108]
 	mov	ebp, 5
@@ -24671,8 +24927,8 @@ $LL138@Write:
 	sub	ebp, 1
 	jne	SHORT $LL138@Write
 
-; 7722 : 
-; 7723 : 	CvInfosSerializationHelper::WriteHashedDataArray<VoteSourceTypes, int>(kStream, m_aiForceTeamVoteEligibilityCount, GC.getNumVoteSourceInfos());
+; 7774 : 
+; 7775 : 	CvInfosSerializationHelper::WriteHashedDataArray<VoteSourceTypes, int>(kStream, m_aiForceTeamVoteEligibilityCount, GC.getNumVoteSourceInfos());
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getNumVoteSourceInfos@CvGlobals@@QAEHXZ ; CvGlobals::getNumVoteSourceInfos
@@ -24683,8 +24939,8 @@ $LL138@Write:
 	call	??$WriteHashedDataArray@W4VoteSourceTypes@@H@CvInfosSerializationHelper@@YAXAAVFDataStream@@PAHI@Z ; CvInfosSerializationHelper::WriteHashedDataArray<enum VoteSourceTypes,int>
 	add	esp, 12					; 0000000cH
 
-; 7724 : 
-; 7725 : 	kStream << ArrayWrapperConst<int>(MAX_TEAMS, &m_paiTurnMadePeaceTreatyWithTeam[0]);
+; 7776 : 
+; 7777 : 	kStream << ArrayWrapperConst<int>(MAX_TEAMS, &m_paiTurnMadePeaceTreatyWithTeam[0]);
 
 	lea	ebx, DWORD PTR [edi+1128]
 	mov	ebp, 64					; 00000040H
@@ -24696,7 +24952,7 @@ $LL153@Write:
 	sub	ebp, 1
 	jne	SHORT $LL153@Write
 
-; 7726 : 	kStream << ArrayWrapperConst<int>(MAX_TEAMS, &m_aiIgnoreWarningCount[0]);
+; 7778 : 	kStream << ArrayWrapperConst<int>(MAX_TEAMS, &m_aiIgnoreWarningCount[0]);
 
 	mov	ebp, 64					; 00000040H
 	lea	ebx, DWORD PTR [edi+1448]
@@ -24709,111 +24965,111 @@ $LL168@Write:
 	sub	DWORD PTR tv86[esp+24], 1
 	jne	SHORT $LL168@Write
 
-; 7727 : 
-; 7728 : 	kStream << ArrayWrapperConst<bool>(MAX_TEAMS, &m_abHasMet[0]);
+; 7779 : 
+; 7780 : 	kStream << ArrayWrapperConst<bool>(MAX_TEAMS, &m_abHasMet[0]);
 
-	lea	eax, DWORD PTR $T237845[esp+28]
+	lea	eax, DWORD PTR $T238254[esp+28]
 	push	eax
 	lea	edx, DWORD PTR [edi+1848]
 	push	esi
-	mov	DWORD PTR $T237845[esp+36], edx
-	mov	DWORD PTR $T237845[esp+40], ebp
+	mov	DWORD PTR $T238254[esp+36], edx
+	mov	DWORD PTR $T238254[esp+40], ebp
 	call	??$?6_N@@YAAAVFDataStream@@AAV0@ABV?$ArrayWrapperConst@_N@@@Z ; operator<<<bool>
 
-; 7729 : 	kStream << ArrayWrapperConst<bool>(MAX_PLAYERS, &m_abHasFoundPlayersTerritory[0]);
+; 7781 : 	kStream << ArrayWrapperConst<bool>(MAX_PLAYERS, &m_abHasFoundPlayersTerritory[0]);
 
-	lea	edx, DWORD PTR $T237846[esp+36]
+	lea	edx, DWORD PTR $T238255[esp+36]
 	push	edx
 	lea	ecx, DWORD PTR [edi+1768]
 	push	esi
-	mov	DWORD PTR $T237846[esp+44], ecx
-	mov	DWORD PTR $T237846[esp+48], ebp
+	mov	DWORD PTR $T238255[esp+44], ecx
+	mov	DWORD PTR $T238255[esp+48], ebp
 	call	??$?6_N@@YAAAVFDataStream@@AAV0@ABV?$ArrayWrapperConst@_N@@@Z ; operator<<<bool>
 
-; 7730 : 	kStream << ArrayWrapperConst<bool>(MAX_TEAMS, &m_abAtWar[0]);
+; 7782 : 	kStream << ArrayWrapperConst<bool>(MAX_TEAMS, &m_abAtWar[0]);
 
-	lea	ecx, DWORD PTR $T237847[esp+44]
+	lea	ecx, DWORD PTR $T238256[esp+44]
 	push	ecx
 	lea	eax, DWORD PTR [edi+1928]
 	push	esi
-	mov	DWORD PTR $T237847[esp+52], eax
-	mov	DWORD PTR $T237847[esp+56], ebp
+	mov	DWORD PTR $T238256[esp+52], eax
+	mov	DWORD PTR $T238256[esp+56], ebp
 	call	??$?6_N@@YAAAVFDataStream@@AAV0@ABV?$ArrayWrapperConst@_N@@@Z ; operator<<<bool>
 
-; 7731 : 	kStream << ArrayWrapperConst<bool>(MAX_TEAMS, &m_abPermanentWarPeace[0]);
+; 7783 : 	kStream << ArrayWrapperConst<bool>(MAX_TEAMS, &m_abPermanentWarPeace[0]);
 
-	lea	eax, DWORD PTR $T237848[esp+52]
+	lea	eax, DWORD PTR $T238257[esp+52]
 	push	eax
 	lea	edx, DWORD PTR [edi+2008]
 	push	esi
-	mov	DWORD PTR $T237848[esp+60], edx
-	mov	DWORD PTR $T237848[esp+64], ebp
+	mov	DWORD PTR $T238257[esp+60], edx
+	mov	DWORD PTR $T238257[esp+64], ebp
 	call	??$?6_N@@YAAAVFDataStream@@AAV0@ABV?$ArrayWrapperConst@_N@@@Z ; operator<<<bool>
 
-; 7732 : 	kStream << ArrayWrapperConst<bool>(MAX_TEAMS, &m_abEmbassy[0]);
+; 7784 : 	kStream << ArrayWrapperConst<bool>(MAX_TEAMS, &m_abEmbassy[0]);
 
-	lea	edx, DWORD PTR $T237849[esp+60]
+	lea	edx, DWORD PTR $T238258[esp+60]
 	push	edx
 	lea	ecx, DWORD PTR [edi+2088]
 	push	esi
-	mov	DWORD PTR $T237849[esp+68], ecx
-	mov	DWORD PTR $T237849[esp+72], ebp
+	mov	DWORD PTR $T238258[esp+68], ecx
+	mov	DWORD PTR $T238258[esp+72], ebp
 	call	??$?6_N@@YAAAVFDataStream@@AAV0@ABV?$ArrayWrapperConst@_N@@@Z ; operator<<<bool>
 
-; 7733 : 	kStream << ArrayWrapperConst<bool>(MAX_TEAMS, &m_abOpenBorders[0]);
+; 7785 : 	kStream << ArrayWrapperConst<bool>(MAX_TEAMS, &m_abOpenBorders[0]);
 
-	lea	ecx, DWORD PTR $T237850[esp+68]
+	lea	ecx, DWORD PTR $T238259[esp+68]
 	push	ecx
 	lea	eax, DWORD PTR [edi+2168]
 	push	esi
-	mov	DWORD PTR $T237850[esp+76], eax
-	mov	DWORD PTR $T237850[esp+80], ebp
+	mov	DWORD PTR $T238259[esp+76], eax
+	mov	DWORD PTR $T238259[esp+80], ebp
 	call	??$?6_N@@YAAAVFDataStream@@AAV0@ABV?$ArrayWrapperConst@_N@@@Z ; operator<<<bool>
 
-; 7734 : 	kStream << ArrayWrapperConst<bool>(MAX_TEAMS, &m_abDefensivePact[0]);
+; 7786 : 	kStream << ArrayWrapperConst<bool>(MAX_TEAMS, &m_abDefensivePact[0]);
 
-	lea	eax, DWORD PTR $T237851[esp+76]
+	lea	eax, DWORD PTR $T238260[esp+76]
 	push	eax
 	lea	edx, DWORD PTR [edi+2248]
 	push	esi
-	mov	DWORD PTR $T237851[esp+84], edx
-	mov	DWORD PTR $T237851[esp+88], ebp
+	mov	DWORD PTR $T238260[esp+84], edx
+	mov	DWORD PTR $T238260[esp+88], ebp
 	call	??$?6_N@@YAAAVFDataStream@@AAV0@ABV?$ArrayWrapperConst@_N@@@Z ; operator<<<bool>
 
-; 7735 : 	kStream << ArrayWrapperConst<bool>(MAX_TEAMS, &m_abResearchAgreement[0]);
+; 7787 : 	kStream << ArrayWrapperConst<bool>(MAX_TEAMS, &m_abResearchAgreement[0]);
 
-	lea	edx, DWORD PTR $T237852[esp+84]
+	lea	edx, DWORD PTR $T238261[esp+84]
 	push	edx
 	lea	ecx, DWORD PTR [edi+2328]
 	push	esi
-	mov	DWORD PTR $T237852[esp+92], ecx
-	mov	DWORD PTR $T237852[esp+96], ebp
+	mov	DWORD PTR $T238261[esp+92], ecx
+	mov	DWORD PTR $T238261[esp+96], ebp
 	call	??$?6_N@@YAAAVFDataStream@@AAV0@ABV?$ArrayWrapperConst@_N@@@Z ; operator<<<bool>
 	add	esp, 64					; 00000040H
 
-; 7736 : 	kStream << ArrayWrapperConst<bool>(MAX_TEAMS, &m_abTradeAgreement[0]);
+; 7788 : 	kStream << ArrayWrapperConst<bool>(MAX_TEAMS, &m_abTradeAgreement[0]);
 
-	lea	ecx, DWORD PTR $T237853[esp+28]
+	lea	ecx, DWORD PTR $T238262[esp+28]
 	push	ecx
 	lea	eax, DWORD PTR [edi+2408]
 	push	esi
-	mov	DWORD PTR $T237853[esp+36], eax
-	mov	DWORD PTR $T237853[esp+40], ebp
+	mov	DWORD PTR $T238262[esp+36], eax
+	mov	DWORD PTR $T238262[esp+40], ebp
 	call	??$?6_N@@YAAAVFDataStream@@AAV0@ABV?$ArrayWrapperConst@_N@@@Z ; operator<<<bool>
 
-; 7737 : 	kStream << ArrayWrapperConst<bool>(MAX_TEAMS, &m_abForcePeace[0]);
+; 7789 : 	kStream << ArrayWrapperConst<bool>(MAX_TEAMS, &m_abForcePeace[0]);
 
-	lea	eax, DWORD PTR $T237854[esp+36]
+	lea	eax, DWORD PTR $T238263[esp+36]
 	push	eax
 	lea	edx, DWORD PTR [edi+2488]
 	push	esi
-	mov	DWORD PTR $T237854[esp+44], edx
-	mov	DWORD PTR $T237854[esp+48], ebp
+	mov	DWORD PTR $T238263[esp+44], edx
+	mov	DWORD PTR $T238263[esp+48], ebp
 	call	??$?6_N@@YAAAVFDataStream@@AAV0@ABV?$ArrayWrapperConst@_N@@@Z ; operator<<<bool>
 	add	esp, 16					; 00000010H
 
-; 7738 : 
-; 7739 : 	CvInfosSerializationHelper::WriteHashedDataArray<VictoryTypes, bool>(kStream, m_abCanLaunch, GC.getNumVictoryInfos());
+; 7790 : 
+; 7791 : 	CvInfosSerializationHelper::WriteHashedDataArray<VictoryTypes, bool>(kStream, m_abCanLaunch, GC.getNumVictoryInfos());
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getNumVictoryInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumVictoryInfos
@@ -24824,7 +25080,7 @@ $LL168@Write:
 	call	??$WriteHashedDataArray@W4VictoryTypes@@_N@CvInfosSerializationHelper@@YAXAAVFDataStream@@PA_NI@Z ; CvInfosSerializationHelper::WriteHashedDataArray<enum VictoryTypes,bool>
 	add	esp, 12					; 0000000cH
 
-; 7740 : 	CvInfosSerializationHelper::WriteHashedDataArray<VictoryTypes, bool>(kStream, m_abVictoryAchieved, GC.getNumVictoryInfos());
+; 7792 : 	CvInfosSerializationHelper::WriteHashedDataArray<VictoryTypes, bool>(kStream, m_abVictoryAchieved, GC.getNumVictoryInfos());
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getNumVictoryInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumVictoryInfos
@@ -24835,7 +25091,7 @@ $LL168@Write:
 	call	??$WriteHashedDataArray@W4VictoryTypes@@_N@CvInfosSerializationHelper@@YAXAAVFDataStream@@PA_NI@Z ; CvInfosSerializationHelper::WriteHashedDataArray<enum VictoryTypes,bool>
 	add	esp, 12					; 0000000cH
 
-; 7741 : 	CvInfosSerializationHelper::WriteHashedDataArray<SmallAwardTypes, bool>(kStream, m_abSmallAwardAchieved, GC.getNumSmallAwardInfos());
+; 7793 : 	CvInfosSerializationHelper::WriteHashedDataArray<SmallAwardTypes, bool>(kStream, m_abSmallAwardAchieved, GC.getNumSmallAwardInfos());
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getNumSmallAwardInfos@CvGlobals@@QAEHXZ ; CvGlobals::getNumSmallAwardInfos
@@ -24846,7 +25102,7 @@ $LL168@Write:
 	call	??$WriteHashedDataArray@W4SmallAwardTypes@@_N@CvInfosSerializationHelper@@YAXAAVFDataStream@@PA_NI@Z ; CvInfosSerializationHelper::WriteHashedDataArray<enum SmallAwardTypes,bool>
 	add	esp, 12					; 0000000cH
 
-; 7742 : 	CvInfosSerializationHelper::WriteHashedDataArray<RouteTypes, int>(kStream, m_paiRouteChange, GC.getNumRouteInfos());
+; 7794 : 	CvInfosSerializationHelper::WriteHashedDataArray<RouteTypes, int>(kStream, m_paiRouteChange, GC.getNumRouteInfos());
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getNumRouteInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumRouteInfos
@@ -24857,7 +25113,7 @@ $LL168@Write:
 	call	??$WriteHashedDataArray@W4RouteTypes@@H@CvInfosSerializationHelper@@YAXAAVFDataStream@@PAHI@Z ; CvInfosSerializationHelper::WriteHashedDataArray<enum RouteTypes,int>
 	add	esp, 12					; 0000000cH
 
-; 7743 : 	CvInfosSerializationHelper::WriteHashedDataArray<BuildTypes, int>(kStream, m_paiBuildTimeChange, GC.getNumBuildInfos());
+; 7795 : 	CvInfosSerializationHelper::WriteHashedDataArray<BuildTypes, int>(kStream, m_paiBuildTimeChange, GC.getNumBuildInfos());
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getNumBuildInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumBuildInfos
@@ -24868,7 +25124,7 @@ $LL168@Write:
 	call	??$WriteHashedDataArray@W4BuildTypes@@H@CvInfosSerializationHelper@@YAXAAVFDataStream@@PAHI@Z ; CvInfosSerializationHelper::WriteHashedDataArray<enum BuildTypes,int>
 	add	esp, 12					; 0000000cH
 
-; 7744 : 	CvInfosSerializationHelper::WriteHashedDataArray<ProjectTypes, int>(kStream, m_paiProjectCount, GC.getNumProjectInfos());
+; 7796 : 	CvInfosSerializationHelper::WriteHashedDataArray<ProjectTypes, int>(kStream, m_paiProjectCount, GC.getNumProjectInfos());
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getNumProjectInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumProjectInfos
@@ -24879,7 +25135,7 @@ $LL168@Write:
 	call	??$WriteHashedDataArray@W4ProjectTypes@@H@CvInfosSerializationHelper@@YAXAAVFDataStream@@PAHI@Z ; CvInfosSerializationHelper::WriteHashedDataArray<enum ProjectTypes,int>
 	add	esp, 12					; 0000000cH
 
-; 7745 : 	CvInfosSerializationHelper::WriteHashedDataArray<ProjectTypes, int>(kStream, m_paiProjectDefaultArtTypes, GC.getNumProjectInfos());
+; 7797 : 	CvInfosSerializationHelper::WriteHashedDataArray<ProjectTypes, int>(kStream, m_paiProjectDefaultArtTypes, GC.getNumProjectInfos());
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getNumProjectInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumProjectInfos
@@ -24890,23 +25146,23 @@ $LL168@Write:
 	call	??$WriteHashedDataArray@W4ProjectTypes@@H@CvInfosSerializationHelper@@YAXAAVFDataStream@@PAHI@Z ; CvInfosSerializationHelper::WriteHashedDataArray<enum ProjectTypes,int>
 	add	esp, 12					; 0000000cH
 
-; 7746 : 
-; 7747 : 	//project art types
-; 7748 : 	kStream << GC.getNumProjectInfos();
+; 7798 : 
+; 7799 : 	//project art types
+; 7800 : 	kStream << GC.getNumProjectInfos();
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getNumProjectInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumProjectInfos
-	lea	edx, DWORD PTR $T237855[esp+24]
+	lea	edx, DWORD PTR $T238264[esp+24]
 	push	edx
 	mov	ecx, esi
-	mov	DWORD PTR $T237855[esp+28], eax
+	mov	DWORD PTR $T238264[esp+28], eax
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
-; 7749 : 
-; 7750 : #ifdef AUI_WARNING_FIXES
-; 7751 : 	for (uint i = 0; i<GC.getNumProjectInfos(); i++)
-; 7752 : #else
-; 7753 : 	for(int i=0; i<GC.getNumProjectInfos(); i++)
+; 7801 : 
+; 7802 : #ifdef AUI_WARNING_FIXES
+; 7803 : 	for (uint i = 0; i<GC.getNumProjectInfos(); i++)
+; 7804 : #else
+; 7805 : 	for(int i=0; i<GC.getNumProjectInfos(); i++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	xor	ebp, ebp
@@ -24916,9 +25172,9 @@ $LL168@Write:
 	npad	2
 $LL256@Write:
 
-; 7754 : #endif
-; 7755 : 	{
-; 7756 : 		CvInfosSerializationHelper::WriteHashed(kStream, GC.getProjectInfo((ProjectTypes)i));
+; 7806 : #endif
+; 7807 : 	{
+; 7808 : 		CvInfosSerializationHelper::WriteHashed(kStream, GC.getProjectInfo((ProjectTypes)i));
 
 	push	ebp
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
@@ -24927,7 +25183,7 @@ $LL256@Write:
 	push	esi
 	call	?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@PBVCvBaseInfo@@@Z ; CvInfosSerializationHelper::WriteHashed
 
-; 7757 : 		for(int j=0; j<m_paiProjectCount[i]; j++)
+; 7809 : 		for(int j=0; j<m_paiProjectCount[i]; j++)
 
 	mov	eax, DWORD PTR [edi+2916]
 	xor	ebx, ebx
@@ -24941,23 +25197,23 @@ $LL256@Write:
 	npad	3
 $LL257@Write:
 
-; 7749 : 
-; 7750 : #ifdef AUI_WARNING_FIXES
-; 7751 : 	for (uint i = 0; i<GC.getNumProjectInfos(); i++)
-; 7752 : #else
-; 7753 : 	for(int i=0; i<GC.getNumProjectInfos(); i++)
+; 7801 : 
+; 7802 : #ifdef AUI_WARNING_FIXES
+; 7803 : 	for (uint i = 0; i<GC.getNumProjectInfos(); i++)
+; 7804 : #else
+; 7805 : 	for(int i=0; i<GC.getNumProjectInfos(); i++)
 
 	mov	eax, DWORD PTR tv761[esp+24]
 $LN3@Write:
 
-; 7757 : 		for(int j=0; j<m_paiProjectCount[i]; j++)
+; 7809 : 		for(int j=0; j<m_paiProjectCount[i]; j++)
 
 	mov	ecx, DWORD PTR [edi+2960]
 	mov	edx, DWORD PTR [eax+ecx+4]
 	lea	eax, DWORD PTR [edx+ebx*4]
 
-; 7758 : 		{
-; 7759 : 			kStream << m_pavProjectArtTypes[i][j];
+; 7810 : 		{
+; 7811 : 			kStream << m_pavProjectArtTypes[i][j];
 
 	push	eax
 	mov	ecx, esi
@@ -24968,11 +25224,11 @@ $LN3@Write:
 	jl	SHORT $LL257@Write
 $LN5@Write:
 
-; 7749 : 
-; 7750 : #ifdef AUI_WARNING_FIXES
-; 7751 : 	for (uint i = 0; i<GC.getNumProjectInfos(); i++)
-; 7752 : #else
-; 7753 : 	for(int i=0; i<GC.getNumProjectInfos(); i++)
+; 7801 : 
+; 7802 : #ifdef AUI_WARNING_FIXES
+; 7803 : 	for (uint i = 0; i<GC.getNumProjectInfos(); i++)
+; 7804 : #else
+; 7805 : 	for(int i=0; i<GC.getNumProjectInfos(); i++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	inc	ebp
@@ -24981,10 +25237,10 @@ $LN5@Write:
 	jl	SHORT $LL256@Write
 $LN4@Write:
 
-; 7760 : 		}
-; 7761 : 	}
-; 7762 : 
-; 7763 : 	CvInfosSerializationHelper::WriteHashedDataArray<ProjectTypes, int>(kStream, m_paiProjectMaking, GC.getNumProjectInfos());
+; 7812 : 		}
+; 7813 : 	}
+; 7814 : 
+; 7815 : 	CvInfosSerializationHelper::WriteHashedDataArray<ProjectTypes, int>(kStream, m_paiProjectMaking, GC.getNumProjectInfos());
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getNumProjectInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumProjectInfos
@@ -24995,8 +25251,8 @@ $LN4@Write:
 	call	??$WriteHashedDataArray@W4ProjectTypes@@H@CvInfosSerializationHelper@@YAXAAVFDataStream@@PAHI@Z ; CvInfosSerializationHelper::WriteHashedDataArray<enum ProjectTypes,int>
 	add	esp, 12					; 0000000cH
 
-; 7764 : 
-; 7765 : 	UnitClassArrayHelpers::Write(kStream, m_paiUnitClassCount, GC.getNumUnitClassInfos());
+; 7816 : 
+; 7817 : 	UnitClassArrayHelpers::Write(kStream, m_paiUnitClassCount, GC.getNumUnitClassInfos());
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getNumUnitClassInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumUnitClassInfos
@@ -25007,7 +25263,7 @@ $LN4@Write:
 	call	?Write@UnitClassArrayHelpers@@YAXAAVFDataStream@@PAHH@Z ; UnitClassArrayHelpers::Write
 	add	esp, 12					; 0000000cH
 
-; 7766 : 	BuildingClassArrayHelpers::Write(kStream, m_paiBuildingClassCount, GC.getNumBuildingClassInfos());
+; 7818 : 	BuildingClassArrayHelpers::Write(kStream, m_paiBuildingClassCount, GC.getNumBuildingClassInfos());
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getNumBuildingClassInfos@CvGlobals@@QAEHXZ ; CvGlobals::getNumBuildingClassInfos
@@ -25018,7 +25274,7 @@ $LN4@Write:
 	call	?Write@BuildingClassArrayHelpers@@YAXAAVFDataStream@@PAHH@Z ; BuildingClassArrayHelpers::Write
 	add	esp, 12					; 0000000cH
 
-; 7767 : 	BuildingArrayHelpers::Write(kStream, m_paiObsoleteBuildingCount, GC.getNumBuildingInfos());
+; 7819 : 	BuildingArrayHelpers::Write(kStream, m_paiObsoleteBuildingCount, GC.getNumBuildingInfos());
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getNumBuildingInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumBuildingInfos
@@ -25029,8 +25285,8 @@ $LN4@Write:
 	call	?Write@BuildingArrayHelpers@@YAXAAVFDataStream@@PAHH@Z ; BuildingArrayHelpers::Write
 	add	esp, 12					; 0000000cH
 
-; 7768 : 
-; 7769 : 	CvInfosSerializationHelper::WriteHashedDataArray<TerrainTypes, int>(kStream, m_paiTerrainTradeCount, GC.getNumTerrainInfos());
+; 7820 : 
+; 7821 : 	CvInfosSerializationHelper::WriteHashedDataArray<TerrainTypes, int>(kStream, m_paiTerrainTradeCount, GC.getNumTerrainInfos());
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getNumTerrainInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumTerrainInfos
@@ -25041,7 +25297,7 @@ $LN4@Write:
 	call	??$WriteHashedDataArray@W4TerrainTypes@@H@CvInfosSerializationHelper@@YAXAAVFDataStream@@PAHI@Z ; CvInfosSerializationHelper::WriteHashedDataArray<enum TerrainTypes,int>
 	add	esp, 12					; 0000000cH
 
-; 7770 : 	CvInfosSerializationHelper::WriteHashedDataArray<VictoryTypes, int>(kStream, m_aiVictoryCountdown, GC.getNumVictoryInfos());
+; 7822 : 	CvInfosSerializationHelper::WriteHashedDataArray<VictoryTypes, int>(kStream, m_aiVictoryCountdown, GC.getNumVictoryInfos());
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getNumVictoryInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumVictoryInfos
@@ -25052,7 +25308,7 @@ $LN4@Write:
 	call	??$WriteHashedDataArray@W4VictoryTypes@@H@CvInfosSerializationHelper@@YAXAAVFDataStream@@PAHI@Z ; CvInfosSerializationHelper::WriteHashedDataArray<enum VictoryTypes,int>
 	add	esp, 12					; 0000000cH
 
-; 7771 : 	kStream << ArrayWrapperConst<int>(MAX_CIV_TEAMS, &m_aiTurnTeamMet[0]);
+; 7823 : 	kStream << ArrayWrapperConst<int>(MAX_CIV_TEAMS, &m_aiTurnTeamMet[0]);
 
 	lea	ebx, DWORD PTR [edi+2568]
 	mov	ebp, 63					; 0000003fH
@@ -25064,20 +25320,20 @@ $LL229@Write:
 	sub	ebp, 1
 	jne	SHORT $LL229@Write
 
-; 7772 : 
-; 7773 : 	m_pTeamTechs->Write(kStream);
+; 7824 : 
+; 7825 : 	m_pTeamTechs->Write(kStream);
 
 	mov	ecx, DWORD PTR [edi+2980]
 	push	esi
 	call	?Write@CvTeamTechs@@QAEXAAVFDataStream@@@Z ; CvTeamTechs::Write
 
-; 7774 : 
-; 7775 : 	int iNumImprovements = GC.getNumImprovementInfos();
+; 7826 : 
+; 7827 : 	int iNumImprovements = GC.getNumImprovementInfos();
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getNumImprovementInfos@CvGlobals@@QAEHXZ ; CvGlobals::getNumImprovementInfos
 
-; 7776 : 	ImprovementArrayHelpers::WriteYieldArray(kStream, m_ppaaiImprovementYieldChange, iNumImprovements);
+; 7828 : 	ImprovementArrayHelpers::WriteYieldArray(kStream, m_ppaaiImprovementYieldChange, iNumImprovements);
 
 	mov	edx, DWORD PTR [edi+2948]
 	mov	ebx, eax
@@ -25086,7 +25342,7 @@ $LL229@Write:
 	push	esi
 	call	?WriteYieldArray@ImprovementArrayHelpers@@YAXAAVFDataStream@@PAPAHH@Z ; ImprovementArrayHelpers::WriteYieldArray
 
-; 7777 : 	ImprovementArrayHelpers::WriteYieldArray(kStream, m_ppaaiImprovementNoFreshWaterYieldChange, iNumImprovements);
+; 7829 : 	ImprovementArrayHelpers::WriteYieldArray(kStream, m_ppaaiImprovementNoFreshWaterYieldChange, iNumImprovements);
 
 	mov	eax, DWORD PTR [edi+2952]
 	push	ebx
@@ -25094,7 +25350,7 @@ $LL229@Write:
 	push	esi
 	call	?WriteYieldArray@ImprovementArrayHelpers@@YAXAAVFDataStream@@PAPAHH@Z ; ImprovementArrayHelpers::WriteYieldArray
 
-; 7778 : 	ImprovementArrayHelpers::WriteYieldArray(kStream, m_ppaaiImprovementFreshWaterYieldChange, iNumImprovements);
+; 7830 : 	ImprovementArrayHelpers::WriteYieldArray(kStream, m_ppaaiImprovementFreshWaterYieldChange, iNumImprovements);
 
 	mov	ecx, DWORD PTR [edi+2956]
 	push	ebx
@@ -25102,8 +25358,8 @@ $LL229@Write:
 	push	esi
 	call	?WriteYieldArray@ImprovementArrayHelpers@@YAXAAVFDataStream@@PAPAHH@Z ; ImprovementArrayHelpers::WriteYieldArray
 
-; 7779 : 
-; 7780 : 	CvInfosSerializationHelper::WriteHashedTypeArray(kStream, m_aeRevealedResources);
+; 7831 : 
+; 7832 : 	CvInfosSerializationHelper::WriteHashedTypeArray(kStream, m_aeRevealedResources);
 
 	add	edi, 2964				; 00000b94H
 	push	edi
@@ -25115,7 +25371,7 @@ $LL229@Write:
 	pop	ebp
 	pop	ebx
 
-; 7781 : }
+; 7833 : }
 
 	add	esp, 12					; 0000000cH
 	ret	4
@@ -25137,14 +25393,14 @@ _iExtraGameData$ = 32					; size = 4
 ?AddNotification@CvTeam@@QAEXW4NotificationTypes@@PBD1HHHH@Z PROC ; CvTeam::AddNotification, COMDAT
 ; _this$ = ecx
 
-; 7789 : {
+; 7841 : {
 
 	sub	esp, 8
 	push	ebx
 
-; 7790 : 	PlayerTypes eLoopPlayer;
-; 7791 : 
-; 7792 : 	for(int iI = 0; iI < MAX_MAJOR_CIVS; iI++)
+; 7842 : 	PlayerTypes eLoopPlayer;
+; 7843 : 
+; 7844 : 	for(int iI = 0; iI < MAX_MAJOR_CIVS; iI++)
 
 	mov	ebx, DWORD PTR _iGameDataIndex$[esp+8]
 	push	ebp
@@ -25158,22 +25414,22 @@ _iExtraGameData$ = 32					; size = 4
 	npad	3
 $LL29@AddNotific:
 
-; 7793 : 	{
-; 7794 : 		eLoopPlayer = (PlayerTypes) iI;
-; 7795 : 		CvPlayer& loopPlayer = GET_PLAYER(eLoopPlayer);
+; 7845 : 	{
+; 7846 : 		eLoopPlayer = (PlayerTypes) iI;
+; 7847 : 		CvPlayer& loopPlayer = GET_PLAYER(eLoopPlayer);
 
 	mov	eax, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	add	esi, eax
 
-; 7796 : 
-; 7797 : 		if(!loopPlayer.isAlive())
+; 7848 : 
+; 7849 : 		if(!loopPlayer.isAlive())
 
 	cmp	BYTE PTR [esi+2256], 0
 	je	SHORT $LN5@AddNotific
 
-; 7798 : 			continue;
-; 7799 : 
-; 7800 : 		if(loopPlayer.getTeam() != GetID())
+; 7850 : 			continue;
+; 7851 : 
+; 7852 : 		if(loopPlayer.getTeam() != GetID())
 
 	mov	eax, DWORD PTR [esi+44]
 	cmp	eax, 63					; 0000003fH
@@ -25189,18 +25445,18 @@ $LN20@AddNotific:
 	cmp	eax, DWORD PTR [ecx+4]
 	jne	SHORT $LN5@AddNotific
 
-; 7801 : 			continue;
-; 7802 : 
-; 7803 : 		if(!loopPlayer.GetNotifications())
+; 7853 : 			continue;
+; 7854 : 
+; 7855 : 		if(!loopPlayer.GetNotifications())
 
 	mov	ecx, esi
 	call	?GetNotifications@CvPlayer@@QBEPAVCvNotifications@@XZ ; CvPlayer::GetNotifications
 	test	eax, eax
 	je	SHORT $LN5@AddNotific
 
-; 7804 : 			continue;
-; 7805 : 
-; 7806 : 		loopPlayer.GetNotifications()->Add(eNotificationType, strMessage, strSummary, iX, iY, iGameDataIndex, iExtraGameData);
+; 7856 : 			continue;
+; 7857 : 
+; 7858 : 		loopPlayer.GetNotifications()->Add(eNotificationType, strMessage, strSummary, iX, iY, iGameDataIndex, iExtraGameData);
 
 	mov	edx, DWORD PTR _iX$[esp+20]
 	mov	eax, DWORD PTR _strSummary$[esp+20]
@@ -25228,8 +25484,8 @@ $LN5@AddNotific:
 	pop	ebp
 	pop	ebx
 
-; 7807 : 	}
-; 7808 : }
+; 7859 : 	}
+; 7860 : }
 
 	add	esp, 8
 	ret	28					; 0000001cH
@@ -26406,8 +26662,8 @@ PUBLIC	??$unchecked_uninitialized_copy@PAW4ResourceTypes@@PAW41@V?$allocator@W4R
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ??$unchecked_uninitialized_copy@PAW4ResourceTypes@@PAW41@V?$allocator@W4ResourceTypes@@@std@@@stdext@@YAPAW4ResourceTypes@@PAW41@00AAV?$allocator@W4ResourceTypes@@@std@@@Z
 _TEXT	SEGMENT
-$T238784 = -4						; size = 1
-__Cat$238789 = -4					; size = 1
+$T239193 = -4						; size = 1
+__Cat$239197 = -4					; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
@@ -26423,9 +26679,9 @@ __Al$ = 20						; size = 4
 ; 822  : 		_STD _Ptr_cat(_First, _Dest), _STD _Range_checked_iterator_tag()));
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T238784[esp+4], 0
-	mov	eax, DWORD PTR $T238784[esp+4]
-	mov	ecx, DWORD PTR __Cat$238789[esp+4]
+	mov	BYTE PTR $T239193[esp+4], 0
+	mov	eax, DWORD PTR $T239193[esp+4]
+	mov	ecx, DWORD PTR __Cat$239197[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -26796,9 +27052,9 @@ __ehfuncinfo$?canDeclareWar@CvTeam@@QBE_NW4TeamTypes@@@Z DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?canDeclareWar@CvTeam@@QBE_NW4TeamTypes@@@Z
 _TEXT	SEGMENT
-_args$223391 = -16					; size = 4
+_args$223868 = -16					; size = 4
 __$EHRec$ = -12						; size = 12
-_bResult$223392 = 8					; size = 1
+_bResult$223869 = 8					; size = 1
 _eTeam$ = 8						; size = 4
 ?canDeclareWar@CvTeam@@QBE_NW4TeamTypes@@@Z PROC	; CvTeam::canDeclareWar, COMDAT
 ; _this$ = ecx
@@ -26845,7 +27101,7 @@ $LN14@canDeclare:
 ; 1080 : 	if(GC.getGame().isOption("GAMEOPTION_AI_TWEAKS"))
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
-	push	OFFSET $SG223379
+	push	OFFSET $SG223856
 	call	?isOption@CvGame@@QBE_NPBD@Z		; CvGame::isOption
 	test	al, al
 	je	SHORT $LN12@canDeclare
@@ -26978,12 +27234,12 @@ $LN12@canDeclare:
 ; 1131 : 		CvLuaArgsHandle args(2);
 
 	push	2
-	lea	ecx, DWORD PTR _args$223391[esp+32]
+	lea	ecx, DWORD PTR _args$223868[esp+32]
 	call	??0CvLuaArgsHandle@@QAE@I@Z		; CvLuaArgsHandle::CvLuaArgsHandle
 
 ; 1132 : 		args->Push(GetID());
 
-	mov	ecx, DWORD PTR _args$223391[esp+28]
+	mov	ecx, DWORD PTR _args$223868[esp+28]
 	mov	esi, DWORD PTR [esi+4]
 	mov	edx, DWORD PTR [ecx]
 	mov	eax, DWORD PTR [edx+8]
@@ -26993,7 +27249,7 @@ $LN12@canDeclare:
 
 ; 1133 : 		args->Push(eTeam);
 
-	mov	ecx, DWORD PTR _args$223391[esp+28]
+	mov	ecx, DWORD PTR _args$223868[esp+28]
 	mov	edx, DWORD PTR [ecx]
 	mov	eax, DWORD PTR [edx+8]
 	push	edi
@@ -27005,13 +27261,13 @@ $LN12@canDeclare:
 ; 1137 : 		bool bResult = false;
 ; 1138 : 		if(LuaSupport::CallTestAll(pkScriptSystem, "CanDeclareWar", args.get(), bResult))
 
-	mov	edx, DWORD PTR _args$223391[esp+28]
-	lea	ecx, DWORD PTR _bResult$223392[esp+24]
+	mov	edx, DWORD PTR _args$223868[esp+28]
+	lea	ecx, DWORD PTR _bResult$223869[esp+24]
 	push	ecx
 	push	edx
-	push	OFFSET $SG223394
+	push	OFFSET $SG223871
 	push	ebp
-	mov	BYTE PTR _bResult$223392[esp+40], 0
+	mov	BYTE PTR _bResult$223869[esp+40], 0
 	call	?CallTestAll@LuaSupport@@YA_NPAVICvEngineScriptSystem1@@PBDPAVICvEngineScriptSystemArgs1@@AA_N@Z ; LuaSupport::CallTestAll
 	add	esp, 16					; 00000010H
 	test	al, al
@@ -27021,13 +27277,13 @@ $LN12@canDeclare:
 ; 1140 : 			// Check the result.
 ; 1141 : 			if(bResult == false)
 
-	cmp	BYTE PTR _bResult$223392[esp+24], 0
+	cmp	BYTE PTR _bResult$223869[esp+24], 0
 	jne	SHORT $LN1@canDeclare
 
 ; 1142 : 			{
 ; 1143 : 				return false;
 
-	lea	ecx, DWORD PTR _args$223391[esp+28]
+	lea	ecx, DWORD PTR _args$223868[esp+28]
 	mov	DWORD PTR __$EHRec$[esp+36], -1
 	call	??1CvLuaArgsHandle@@QAE@XZ		; CvLuaArgsHandle::~CvLuaArgsHandle
 $LN10@canDeclare:
@@ -27050,7 +27306,7 @@ $LN1@canDeclare:
 ; 1145 : 		}
 ; 1146 : 	}
 
-	lea	ecx, DWORD PTR _args$223391[esp+28]
+	lea	ecx, DWORD PTR _args$223868[esp+28]
 	mov	DWORD PTR __$EHRec$[esp+36], -1
 	call	??1CvLuaArgsHandle@@QAE@XZ		; CvLuaArgsHandle::~CvLuaArgsHandle
 $LN3@canDeclare:
@@ -27071,7 +27327,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?canDeclareWar@CvTeam@@QBE_NW4TeamTypes@@@Z$0:
-	lea	ecx, DWORD PTR _args$223391[ebp]
+	lea	ecx, DWORD PTR _args$223868[ebp]
 	jmp	??1CvLuaArgsHandle@@QAE@XZ		; CvLuaArgsHandle::~CvLuaArgsHandle
 __ehhandler$?canDeclareWar@CvTeam@@QBE_NW4TeamTypes@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?canDeclareWar@CvTeam@@QBE_NW4TeamTypes@@@Z
@@ -27589,7 +27845,6 @@ _eIndex$ = 8						; size = 4
 
 ; 4023 : {
 
-	push	ebp
 	push	esi
 	push	edi
 
@@ -27598,7 +27853,7 @@ _eIndex$ = 8						; size = 4
 ; 4026 : 
 ; 4027 : 	SetHasEmbassyAtTeam(eIndex, false);
 
-	mov	edi, DWORD PTR _eIndex$[esp+8]
+	mov	edi, DWORD PTR _eIndex$[esp+4]
 	push	0
 	push	edi
 	mov	esi, ecx
@@ -27614,58 +27869,23 @@ _eIndex$ = 8						; size = 4
 
 ; 4029 : 	SetHasDefensivePact(m_eID, false);
 
-	mov	ebp, DWORD PTR [esi+4]
-	cmp	BYTE PTR [esi+ebp+2248], 0
-	je	SHORT $LN101@CloseEmbas
-	mov	BYTE PTR [esi+ebp+2248], 0
-	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
-	push	ebx
-	mov	ebx, DWORD PTR [esi+4]
-	call	?getActiveTeam@CvGame@@QAE?AW4TeamTypes@@XZ ; CvGame::getActiveTeam
-	cmp	ebx, eax
-	pop	ebx
-	je	SHORT $LN4@CloseEmbas
-	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
-	call	?getActiveTeam@CvGame@@QAE?AW4TeamTypes@@XZ ; CvGame::getActiveTeam
-	cmp	ebp, eax
-	jne	SHORT $LN101@CloseEmbas
-$LN4@CloseEmbas:
-	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
-	mov	edx, DWORD PTR [ecx]
-	mov	eax, DWORD PTR [edx+260]
-	push	1
-	push	12					; 0000000cH
-	call	eax
-$LN101@CloseEmbas:
+	mov	ecx, DWORD PTR [esi+4]
+	push	0
+	push	ecx
+	mov	ecx, esi
+	call	?SetHasDefensivePact@CvTeam@@QAEXW4TeamTypes@@_N@Z ; CvTeam::SetHasDefensivePact
 
 ; 4030 : 	GET_TEAM(eIndex).SetHasDefensivePact(m_eID, false);
 
-	mov	esi, DWORD PTR [esi+4]
-	imul	edi, 2984				; 00000ba8H
-	add	edi, DWORD PTR ?m_aTeams@CvTeam@@1PAV1@A ; CvTeam::m_aTeams
-	cmp	BYTE PTR [esi+edi+2248], 0
-	je	SHORT $LN55@CloseEmbas
-	mov	BYTE PTR [esi+edi+2248], 0
-	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
-	mov	edi, DWORD PTR [edi+4]
-	call	?getActiveTeam@CvGame@@QAE?AW4TeamTypes@@XZ ; CvGame::getActiveTeam
-	cmp	edi, eax
-	je	SHORT $LN54@CloseEmbas
-	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
-	call	?getActiveTeam@CvGame@@QAE?AW4TeamTypes@@XZ ; CvGame::getActiveTeam
-	cmp	esi, eax
-	jne	SHORT $LN55@CloseEmbas
-$LN54@CloseEmbas:
-	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
-	mov	edx, DWORD PTR [ecx]
-	mov	eax, DWORD PTR [edx+260]
-	push	1
-	push	12					; 0000000cH
-	call	eax
-$LN55@CloseEmbas:
+	mov	edx, DWORD PTR [esi+4]
+	mov	ecx, edi
+	imul	ecx, 2984				; 00000ba8H
+	add	ecx, DWORD PTR ?m_aTeams@CvTeam@@1PAV1@A ; CvTeam::m_aTeams
+	push	0
+	push	edx
+	call	?SetHasDefensivePact@CvTeam@@QAEXW4TeamTypes@@_N@Z ; CvTeam::SetHasDefensivePact
 	pop	edi
 	pop	esi
-	pop	ebp
 
 ; 4031 : 
 ; 4032 : 	//SetHasResearchAgreement(m_eID, false);
@@ -27776,59 +27996,59 @@ xdata$x	ENDS
 ;	COMDAT ?setHasTech@CvTeam@@QAEXW4TechTypes@@_NW4PlayerTypes@@11@Z
 _TEXT	SEGMENT
 _this$ = -764						; size = 4
-_bTechRevealsHiddenArtifacts$226250 = -758		; size = 1
-_bIsActiveTeam$226190 = -758				; size = 1
-_bTechRevealsArtifacts$226249 = -757			; size = 1
-$T239573 = -756						; size = 4
-$T239571 = -756						; size = 4
-_pResourceInfo$226392 = -756				; size = 4
-$T239565 = -756						; size = 4
-$T239561 = -756						; size = 4
-_eArtifactResource$226251 = -756			; size = 4
+_bTechRevealsHiddenArtifacts$226768 = -758		; size = 1
+_bIsActiveTeam$226708 = -758				; size = 1
+_bTechRevealsArtifacts$226767 = -757			; size = 1
+$T239722 = -756						; size = 4
+$T239720 = -756						; size = 4
+_pResourceInfo$226910 = -756				; size = 4
+$T239714 = -756						; size = 4
+$T239710 = -756						; size = 4
+_eArtifactResource$226769 = -756			; size = 4
 tv3805 = -752						; size = 4
 tv2213 = -752						; size = 4
-_iI$226382 = -752					; size = 4
-_iLoop$226177 = -752					; size = 4
-$T239574 = -748						; size = 4
-$T239570 = -748						; size = 4
-$T239566 = -748						; size = 4
-$T239562 = -748						; size = 4
-_eActivePlayer$226262 = -748				; size = 4
-_eNotificationType$226276 = -744			; size = 4
-_eNotificationType$226189 = -744			; size = 4
-_eHiddenArtifactResource$226256 = -740			; size = 4
-_eResource$226197 = -740				; size = 4
+_iI$226900 = -752					; size = 4
+_iLoop$226695 = -752					; size = 4
+$T239723 = -748						; size = 4
+$T239719 = -748						; size = 4
+$T239715 = -748						; size = 4
+$T239711 = -748						; size = 4
+_eActivePlayer$226780 = -748				; size = 4
+_eNotificationType$226794 = -744			; size = 4
+_eNotificationType$226707 = -744			; size = 4
+_eHiddenArtifactResource$226774 = -740			; size = 4
+_eResource$226715 = -740				; size = 4
 tv2460 = -736						; size = 4
-_iLoop$226437 = -736					; size = 4
-_pArtifactResource$226254 = -736			; size = 4
-_iLoop$226408 = -732					; size = 4
-_pHiddenArtifactResource$226259 = -732			; size = 4
-_pResourceInfo$226199 = -732				; size = 4
+_iLoop$226955 = -736					; size = 4
+_pArtifactResource$226772 = -736			; size = 4
+_iLoop$226926 = -732					; size = 4
+_pHiddenArtifactResource$226777 = -732			; size = 4
+_pResourceInfo$226717 = -732				; size = 4
 tv3795 = -728						; size = 4
 tv3742 = -728						; size = 4
 tv3727 = -728						; size = 4
-$T239576 = -728						; size = 8
+$T239725 = -728						; size = 8
 _pkTechInfo$ = -720					; size = 4
 tv2663 = -716						; size = 4
-$T239577 = -712						; size = 28
-$T239575 = -712						; size = 28
-$T239572 = -712						; size = 28
-$T239569 = -712						; size = 28
-$T239568 = -712						; size = 28
-$T239567 = -712						; size = 28
-$T239564 = -712						; size = 28
-$T239563 = -712						; size = 28
-$T239560 = -712						; size = 28
-$T239559 = -712						; size = 28
-$T239558 = -712						; size = 28
-$T239557 = -712						; size = 28
-$T239556 = -712						; size = 28
-$T239555 = -712						; size = 28
+$T239726 = -712						; size = 28
+$T239724 = -712						; size = 28
+$T239721 = -712						; size = 28
+$T239718 = -712						; size = 28
+$T239717 = -712						; size = 28
+$T239716 = -712						; size = 28
+$T239713 = -712						; size = 28
+$T239712 = -712						; size = 28
+$T239709 = -712						; size = 28
+$T239708 = -712						; size = 28
+$T239707 = -712						; size = 28
+$T239706 = -712						; size = 28
+$T239705 = -712						; size = 28
+$T239704 = -712						; size = 28
 _strBuffer$ = -684					; size = 28
-_strSummary$226274 = -656				; size = 28
-_strSummary$226214 = -656				; size = 28
-_localizedText$226481 = -628				; size = 80
-_kPopup$226488 = -548					; size = 536
+_strSummary$226792 = -656				; size = 28
+_strSummary$226732 = -656				; size = 28
+_localizedText$226999 = -628				; size = 80
+_kPopup$227006 = -548					; size = 536
 __$EHRec$ = -12						; size = 12
 _eIndex$ = 8						; size = 4
 _bNewValue$ = 12					; size = 1
@@ -27838,7 +28058,7 @@ _bAnnounce$ = 24					; size = 1
 ?setHasTech@CvTeam@@QAEXW4TechTypes@@_NW4PlayerTypes@@11@Z PROC ; CvTeam::setHasTech, COMDAT
 ; _this$ = ecx
 
-; 5414 : {
+; 5466 : {
 
 	push	-1
 	push	__ehhandler$?setHasTech@CvTeam@@QAEXW4TechTypes@@_NW4PlayerTypes@@11@Z
@@ -27851,18 +28071,18 @@ _bAnnounce$ = 24					; size = 1
 	push	edi
 	mov	edi, ecx
 
-; 5415 : 	CvCity* pCapitalCity;
-; 5416 : 	CvCity* pCity;
-; 5417 : 	CvString strBuffer;
+; 5467 : 	CvCity* pCapitalCity;
+; 5468 : 	CvCity* pCity;
+; 5469 : 	CvString strBuffer;
 
 	lea	ecx, DWORD PTR _strBuffer$[esp+776]
 	mov	DWORD PTR _this$[esp+776], edi
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 5418 : 	UnitTypes eFreeUnit;
-; 5419 : 	bool bFirstResource;
-; 5420 : 	
-; 5421 : 	if(eIndex == NO_TECH)
+; 5470 : 	UnitTypes eFreeUnit;
+; 5471 : 	bool bFirstResource;
+; 5472 : 	
+; 5473 : 	if(eIndex == NO_TECH)
 
 	mov	esi, DWORD PTR _eIndex$[esp+772]
 	or	ebx, -1
@@ -27871,65 +28091,65 @@ _bAnnounce$ = 24					; size = 1
 	jne	SHORT $LN182@setHasTech
 $LN908@setHasTech:
 
-; 5422 : 	{
-; 5423 : 		return;
+; 5474 : 	{
+; 5475 : 		return;
 
 	mov	DWORD PTR __$EHRec$[esp+784], ebx
 	jmp	$LN902@setHasTech
 $LN182@setHasTech:
 
-; 5424 : 	}
-; 5425 : 
-; 5426 : 	CvTechEntry* pkTechInfo = GC.getTechInfo(eIndex);
+; 5476 : 	}
+; 5477 : 
+; 5478 : 	CvTechEntry* pkTechInfo = GC.getTechInfo(eIndex);
 
 	push	esi
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getTechInfo@CvGlobals@@QAEPAVCvTechEntry@@W4TechTypes@@@Z ; CvGlobals::getTechInfo
 	mov	DWORD PTR _pkTechInfo$[esp+776], eax
 
-; 5427 : 	if(pkTechInfo == NULL)
+; 5479 : 	if(pkTechInfo == NULL)
 
 	test	eax, eax
 
-; 5428 : 	{
-; 5429 : 		return;
+; 5480 : 	{
+; 5481 : 		return;
 
 	je	SHORT $LN908@setHasTech
 
-; 5430 : 	}
-; 5431 : 
-; 5432 : 	if(ePlayer == NO_PLAYER)
+; 5482 : 	}
+; 5483 : 
+; 5484 : 	if(ePlayer == NO_PLAYER)
 
 	cmp	DWORD PTR _ePlayer$[esp+772], ebx
 	jne	SHORT $LN179@setHasTech
 
-; 5433 : 	{
-; 5434 : 		ePlayer = getLeaderID();
+; 5485 : 	{
+; 5486 : 		ePlayer = getLeaderID();
 
 	mov	ecx, edi
 	call	?getLeaderID@CvTeam@@QBE?AW4PlayerTypes@@XZ ; CvTeam::getLeaderID
 	mov	DWORD PTR _ePlayer$[esp+772], eax
 
-; 5435 : 	}
-; 5436 : 
-; 5437 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
-; 5438 : 	CvAssertMsg(eIndex < GC.getNumTechInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
-; 5439 : 	CvAssertMsg(ePlayer >= 0, "eIndex is expected to be non-negative (invalid Index)");
-; 5440 : 	CvAssertMsg(ePlayer < MAX_PLAYERS, "ePlayer is expected to be within maximum bounds (invalid Index)");
-; 5441 : 
-; 5442 : 	if(ePlayer == NO_PLAYER)
+; 5487 : 	}
+; 5488 : 
+; 5489 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
+; 5490 : 	CvAssertMsg(eIndex < GC.getNumTechInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
+; 5491 : 	CvAssertMsg(ePlayer >= 0, "eIndex is expected to be non-negative (invalid Index)");
+; 5492 : 	CvAssertMsg(ePlayer < MAX_PLAYERS, "ePlayer is expected to be within maximum bounds (invalid Index)");
+; 5493 : 
+; 5494 : 	if(ePlayer == NO_PLAYER)
 
 	cmp	eax, ebx
 
-; 5443 : 	{
-; 5444 : 		return;
+; 5495 : 	{
+; 5496 : 		return;
 
 	je	SHORT $LN908@setHasTech
 $LN179@setHasTech:
 
-; 5445 : 	}
-; 5446 : 
-; 5447 : 	if(GetTeamTechs()->HasTech(eIndex) != bNewValue)
+; 5497 : 	}
+; 5498 : 
+; 5499 : 	if(GetTeamTechs()->HasTech(eIndex) != bNewValue)
 
 	mov	ecx, DWORD PTR [edi+2980]
 	push	esi
@@ -27938,8 +28158,8 @@ $LN179@setHasTech:
 	cmp	al, bl
 	je	$LN1@setHasTech
 
-; 5448 : 	{
-; 5449 : 		CvPlayerAI& kResearchingPlayer = GET_PLAYER(ePlayer);
+; 5500 : 	{
+; 5501 : 		CvPlayerAI& kResearchingPlayer = GET_PLAYER(ePlayer);
 
 	mov	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	push	ebp
@@ -27948,11 +28168,11 @@ $LN179@setHasTech:
 	imul	eax, 63236				; 0000f704H
 	lea	edi, DWORD PTR [eax+ecx]
 
-; 5450 : 
-; 5451 : 		if(	GC.getGame().getActivePlayer() == ePlayer &&
-; 5452 : 			strcmp(pkTechInfo->GetType(), "TECH_SATELLITES") == 0 &&
-; 5453 : 			strcmp(kResearchingPlayer.getCivilizationTypeKey(), "CIVILIZATION_HUNS") == 0 &&
-; 5454 : 			strcmp(GC.getMap().getWorldInfo().GetType(), "WORLDSIZE_HUGE") == 0)
+; 5502 : 
+; 5503 : 		if(	GC.getGame().getActivePlayer() == ePlayer &&
+; 5504 : 			strcmp(pkTechInfo->GetType(), "TECH_SATELLITES") == 0 &&
+; 5505 : 			strcmp(kResearchingPlayer.getCivilizationTypeKey(), "CIVILIZATION_HUNS") == 0 &&
+; 5506 : 			strcmp(GC.getMap().getWorldInfo().GetType(), "WORLDSIZE_HUGE") == 0)
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	mov	DWORD PTR tv2663[esp+780], eax
@@ -27961,7 +28181,7 @@ $LN179@setHasTech:
 	jne	$LN877@setHasTech
 	mov	ecx, DWORD PTR _pkTechInfo$[esp+780]
 	add	ecx, 176				; 000000b0H
-	mov	esi, OFFSET $SG226157
+	mov	esi, OFFSET $SG226675
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 $LL844@setHasTech:
 	mov	cl, BYTE PTR [eax]
@@ -27986,7 +28206,7 @@ $LN847@setHasTech:
 	test	eax, eax
 	jne	$LN877@setHasTech
 	mov	ecx, edi
-	mov	esi, OFFSET $SG226158
+	mov	esi, OFFSET $SG226676
 	call	?getCivilizationTypeKey@CvPlayer@@QBEPBDXZ ; CvPlayer::getCivilizationTypeKey
 	npad	6
 $LL848@setHasTech:
@@ -28014,7 +28234,7 @@ $LN851@setHasTech:
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+52
 	call	?getWorldInfo@CvMap@@QBEABVCvWorldInfo@@XZ ; CvMap::getWorldInfo
 	lea	ecx, DWORD PTR [eax+176]
-	mov	esi, OFFSET $SG226159
+	mov	esi, OFFSET $SG226677
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 $LL852@setHasTech:
 	mov	cl, BYTE PTR [eax]
@@ -28039,8 +28259,8 @@ $LN855@setHasTech:
 	test	eax, eax
 	jne	SHORT $LN877@setHasTech
 
-; 5455 : 		{
-; 5456 : 			gDLL->UnlockAchievement(ACHIEVEMENT_XP1_30);
+; 5507 : 		{
+; 5508 : 			gDLL->UnlockAchievement(ACHIEVEMENT_XP1_30);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8564
 	mov	edx, DWORD PTR [ecx]
@@ -28049,17 +28269,17 @@ $LN855@setHasTech:
 	call	eax
 $LN877@setHasTech:
 
-; 5457 : 		}
-; 5458 : 
-; 5459 : 		if(pkTechInfo->IsRepeat())
+; 5509 : 		}
+; 5510 : 
+; 5511 : 		if(pkTechInfo->IsRepeat())
 
 	mov	ecx, DWORD PTR _pkTechInfo$[esp+780]
 	call	?IsRepeat@CvTechEntry@@QBE_NXZ		; CvTechEntry::IsRepeat
 	test	al, al
 	je	$LN176@setHasTech
 
-; 5460 : 		{
-; 5461 : 			GetTeamTechs()->IncrementTechCount(eIndex);
+; 5512 : 		{
+; 5513 : 			GetTeamTechs()->IncrementTechCount(eIndex);
 
 	mov	edi, DWORD PTR _this$[esp+780]
 	mov	ebx, DWORD PTR _eIndex$[esp+776]
@@ -28067,8 +28287,8 @@ $LN877@setHasTech:
 	push	ebx
 	call	?IncrementTechCount@CvTeamTechs@@QAEXW4TechTypes@@@Z ; CvTeamTechs::IncrementTechCount
 
-; 5462 : 
-; 5463 : 			GetTeamTechs()->SetResearchProgress(eIndex, 0, ePlayer);
+; 5514 : 
+; 5515 : 			GetTeamTechs()->SetResearchProgress(eIndex, 0, ePlayer);
 
 	mov	ecx, DWORD PTR [edi+2980]
 	push	ebp
@@ -28076,39 +28296,39 @@ $LN877@setHasTech:
 	push	ebx
 	call	?SetResearchProgress@CvTeamTechs@@QAEXW4TechTypes@@HW4PlayerTypes@@@Z ; CvTeamTechs::SetResearchProgress
 
-; 5464 : 
-; 5465 : 			// Repeating techs are good for score!
-; 5466 : 			int iScoreChange = /*10*/ GC.getSCORE_FUTURE_TECH_MULTIPLIER();
-; 5467 : #ifdef NQM_OPTIONAL_SCORING_TWEAKS
-; 5468 : 			if (GC.getGame().isOption("GAMEOPTION_TWEAKED_SCORING"))
+; 5516 : 
+; 5517 : 			// Repeating techs are good for score!
+; 5518 : 			int iScoreChange = /*10*/ GC.getSCORE_FUTURE_TECH_MULTIPLIER();
+; 5519 : #ifdef NQM_OPTIONAL_SCORING_TWEAKS
+; 5520 : 			if (GC.getGame().isOption("GAMEOPTION_TWEAKED_SCORING"))
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	mov	ebp, DWORD PTR ?gGlobals@@3VCvGlobals@@A+7764
-	push	OFFSET $SG226163
+	push	OFFSET $SG226681
 	call	?isOption@CvGame@@QBE_NPBD@Z		; CvGame::isOption
 	test	al, al
 	je	SHORT $LN237@setHasTech
 
-; 5469 : 				iScoreChange = GC.getNEW_SCORE_FUTURE_TECH_MULTIPLIER();
+; 5521 : 				iScoreChange = GC.getNEW_SCORE_FUTURE_TECH_MULTIPLIER();
 
 	mov	ebp, DWORD PTR ?gGlobals@@3VCvGlobals@@A+1792
 $LN237@setHasTech:
 
-; 5470 : #endif
-; 5471 : 			for(int iI = 0; iI < MAX_PLAYERS; iI++)
+; 5522 : #endif
+; 5523 : 			for(int iI = 0; iI < MAX_PLAYERS; iI++)
 
 	xor	esi, esi
 	npad	4
 $LL174@setHasTech:
 
-; 5472 : 			{
-; 5473 : 				const PlayerTypes eLoopPlayer = static_cast<PlayerTypes>(iI);
-; 5474 : 				CvPlayerAI& kLoopPlayer = GET_PLAYER(eLoopPlayer);
+; 5524 : 			{
+; 5525 : 				const PlayerTypes eLoopPlayer = static_cast<PlayerTypes>(iI);
+; 5526 : 				CvPlayerAI& kLoopPlayer = GET_PLAYER(eLoopPlayer);
 
 	mov	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	add	ecx, esi
 
-; 5475 : 				if(kLoopPlayer.isAlive() && kLoopPlayer.getTeam() == GetID())
+; 5527 : 				if(kLoopPlayer.isAlive() && kLoopPlayer.getTeam() == GetID())
 
 	cmp	BYTE PTR [ecx+2256], 0
 	je	SHORT $LN173@setHasTech
@@ -28125,8 +28345,8 @@ $LN250@setHasTech:
 	cmp	eax, DWORD PTR [edi+4]
 	jne	SHORT $LN173@setHasTech
 
-; 5476 : 				{
-; 5477 : 					kLoopPlayer.ChangeScoreFromFutureTech(iScoreChange);
+; 5528 : 				{
+; 5529 : 					kLoopPlayer.ChangeScoreFromFutureTech(iScoreChange);
 
 	push	ebp
 	call	?ChangeScoreFromFutureTech@CvPlayer@@QAEXH@Z ; CvPlayer::ChangeScoreFromFutureTech
@@ -28135,13 +28355,13 @@ $LN173@setHasTech:
 	cmp	esi, 4047104				; 003dc100H
 	jl	SHORT $LL174@setHasTech
 
-; 5478 : 				}
-; 5479 : 			}
-; 5480 : 
-; 5481 : 			// report event to Python
-; 5482 : 			////gDLL->getEventReporterIFace()->techAcquired(eIndex, GetID(), ePlayer, bAnnounce && 1 == GetTeamTechs()->GetTechCount(eIndex));
-; 5483 : 
-; 5484 : 			if(1 == GetTeamTechs()->GetTechCount(eIndex))
+; 5530 : 				}
+; 5531 : 			}
+; 5532 : 
+; 5533 : 			// report event to Python
+; 5534 : 			////gDLL->getEventReporterIFace()->techAcquired(eIndex, GetID(), ePlayer, bAnnounce && 1 == GetTeamTechs()->GetTechCount(eIndex));
+; 5535 : 
+; 5536 : 			if(1 == GetTeamTechs()->GetTechCount(eIndex))
 
 	mov	ecx, DWORD PTR [edi+2980]
 	push	ebx
@@ -28149,22 +28369,22 @@ $LN173@setHasTech:
 	cmp	eax, 1
 	jne	$LN157@setHasTech
 
-; 5485 : 			{
-; 5486 : 				if(bAnnounce)
+; 5537 : 			{
+; 5538 : 				if(bAnnounce)
 
 	cmp	BYTE PTR _bAnnounce$[esp+776], 0
 	je	$LN157@setHasTech
 
-; 5487 : 				{
-; 5488 : 					if(GC.getGame().isFinalInitialized())
+; 5539 : 				{
+; 5540 : 					if(GC.getGame().isFinalInitialized())
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?isFinalInitialized@CvGame@@QBE_NXZ	; CvGame::isFinalInitialized
 	test	al, al
 	je	$LN157@setHasTech
 
-; 5489 : 					{
-; 5490 : 						announceTechToPlayers(eIndex);
+; 5541 : 					{
+; 5542 : 						announceTechToPlayers(eIndex);
 
 	push	0
 	mov	eax, ebx
@@ -28172,17 +28392,17 @@ $LN173@setHasTech:
 	mov	ecx, edi
 	call	?announceTechToPlayers@CvTeam@@IAEXW4TechTypes@@_N@Z ; CvTeam::announceTechToPlayers
 
-; 5491 : 					}
-; 5492 : 				}
-; 5493 : 			}
-; 5494 : 		}
-; 5495 : 		else
+; 5543 : 					}
+; 5544 : 				}
+; 5545 : 			}
+; 5546 : 		}
+; 5547 : 		else
 
 	jmp	$LN157@setHasTech
 $LN176@setHasTech:
 
-; 5496 : 		{
-; 5497 : 			GetTeamTechs()->SetHasTech(eIndex, bNewValue);
+; 5548 : 		{
+; 5549 : 			GetTeamTechs()->SetHasTech(eIndex, bNewValue);
 
 	mov	edx, DWORD PTR _eIndex$[esp+776]
 	mov	ebp, DWORD PTR _this$[esp+780]
@@ -28194,13 +28414,13 @@ $LN176@setHasTech:
 	npad	12
 $LL166@setHasTech:
 
-; 5504 : 			{
-; 5505 : 				const PlayerTypes eLoopPlayer = static_cast<PlayerTypes>(iI);
-; 5506 : 				CvPlayerAI& kLoopPlayer = GET_PLAYER(eLoopPlayer);
+; 5556 : 			{
+; 5557 : 				const PlayerTypes eLoopPlayer = static_cast<PlayerTypes>(iI);
+; 5558 : 				CvPlayerAI& kLoopPlayer = GET_PLAYER(eLoopPlayer);
 
 	mov	eax, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 
-; 5507 : 				if(kLoopPlayer.isAlive() && kLoopPlayer.getTeam() == GetID())
+; 5559 : 				if(kLoopPlayer.isAlive() && kLoopPlayer.getTeam() == GetID())
 
 	cmp	BYTE PTR [edi+eax+2256], 0
 	lea	esi, DWORD PTR [edi+eax]
@@ -28218,11 +28438,11 @@ $LN273@setHasTech:
 	cmp	eax, DWORD PTR [ebp+4]
 	jne	SHORT $LN165@setHasTech
 
-; 5508 : 				{
-; 5509 : 					for(pLoopCity = kLoopPlayer.firstCity(&iLoop); pLoopCity != NULL; pLoopCity = kLoopPlayer.nextCity(&iLoop))
+; 5560 : 				{
+; 5561 : 					for(pLoopCity = kLoopPlayer.firstCity(&iLoop); pLoopCity != NULL; pLoopCity = kLoopPlayer.nextCity(&iLoop))
 
 	push	0
-	lea	eax, DWORD PTR _iLoop$226177[esp+784]
+	lea	eax, DWORD PTR _iLoop$226695[esp+784]
 	push	eax
 	mov	ecx, esi
 	call	?firstCity@CvPlayer@@QAEPAVCvCity@@PAH_N@Z ; CvPlayer::firstCity
@@ -28230,13 +28450,13 @@ $LN273@setHasTech:
 	je	SHORT $LN165@setHasTech
 $LL162@setHasTech:
 
-; 5510 : 					{
-; 5511 : 						pLoopCity->updateStrengthValue();
+; 5562 : 					{
+; 5563 : 						pLoopCity->updateStrengthValue();
 
 	mov	ecx, eax
 	call	?updateStrengthValue@CvCity@@QAEXXZ	; CvCity::updateStrengthValue
 	push	0
-	lea	ecx, DWORD PTR _iLoop$226177[esp+784]
+	lea	ecx, DWORD PTR _iLoop$226695[esp+784]
 	push	ecx
 	mov	ecx, esi
 	call	?nextCity@CvPlayer@@QAEPAVCvCity@@PAH_N@Z ; CvPlayer::nextCity
@@ -28244,38 +28464,38 @@ $LL162@setHasTech:
 	jne	SHORT $LL162@setHasTech
 $LN165@setHasTech:
 
-; 5498 : 
-; 5499 : 			// Tech progress affects city strength, so update
-; 5500 : 			CvCity* pLoopCity;
-; 5501 : 			int iLoop;
-; 5502 : 
-; 5503 : 			for(int iI = 0; iI < MAX_PLAYERS; iI++)
+; 5550 : 
+; 5551 : 			// Tech progress affects city strength, so update
+; 5552 : 			CvCity* pLoopCity;
+; 5553 : 			int iLoop;
+; 5554 : 
+; 5555 : 			for(int iI = 0; iI < MAX_PLAYERS; iI++)
 
 	add	edi, 63236				; 0000f704H
 	cmp	edi, 4047104				; 003dc100H
 	jl	SHORT $LL166@setHasTech
 
-; 5512 : 					}
-; 5513 : 				}
-; 5514 : 			}
-; 5515 : 
-; 5516 : 			NotificationTypes eNotificationType = NO_NOTIFICATION_TYPE;
-; 5517 : 
-; 5518 : 			const bool bIsActiveTeam = (GetID() == GC.getGame().getActiveTeam());
+; 5564 : 					}
+; 5565 : 				}
+; 5566 : 			}
+; 5567 : 
+; 5568 : 			NotificationTypes eNotificationType = NO_NOTIFICATION_TYPE;
+; 5569 : 
+; 5570 : 			const bool bIsActiveTeam = (GetID() == GC.getGame().getActiveTeam());
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	mov	esi, DWORD PTR [ebp+4]
-	mov	DWORD PTR _eNotificationType$226189[esp+780], -1
+	mov	DWORD PTR _eNotificationType$226707[esp+780], -1
 	call	?getActiveTeam@CvGame@@QAE?AW4TeamTypes@@XZ ; CvGame::getActiveTeam
 
-; 5519 : 			const int iNumPlots = GC.getMap().numPlots();
+; 5571 : 			const int iNumPlots = GC.getMap().numPlots();
 
 	mov	edx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+52
 	cmp	esi, eax
 	mov	eax, DWORD PTR [edx+4028]
-	sete	BYTE PTR _bIsActiveTeam$226190[esp+780]
+	sete	BYTE PTR _bIsActiveTeam$226708[esp+780]
 
-; 5520 : 			for(int iPlotLoop = 0; iPlotLoop < iNumPlots; iPlotLoop++)
+; 5572 : 			for(int iPlotLoop = 0; iPlotLoop < iNumPlots; iPlotLoop++)
 
 	test	eax, eax
 	jle	$LN157@setHasTech
@@ -28284,58 +28504,58 @@ $LN165@setHasTech:
 	npad	10
 $LL865@setHasTech:
 
-; 5521 : 			{
-; 5522 : 				CvPlot* pLoopPlot = GC.getMap().plotByIndexUnchecked(iPlotLoop);
+; 5573 : 			{
+; 5574 : 				CvPlot* pLoopPlot = GC.getMap().plotByIndexUnchecked(iPlotLoop);
 
 	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+52
 	mov	esi, DWORD PTR [eax+4068]
 	add	esi, DWORD PTR tv3727[esp+780]
 
-; 5523 : 
-; 5524 : 				const ResourceTypes eResource = pLoopPlot->getResourceType();
+; 5575 : 
+; 5576 : 				const ResourceTypes eResource = pLoopPlot->getResourceType();
 
 	push	-1
 	mov	ecx, esi
 	call	?getResourceType@CvPlot@@QBE?AW4ResourceTypes@@W4TeamTypes@@@Z ; CvPlot::getResourceType
-	mov	DWORD PTR _eResource$226197[esp+780], eax
+	mov	DWORD PTR _eResource$226715[esp+780], eax
 
-; 5525 : 				if(eResource != NO_RESOURCE)
+; 5577 : 				if(eResource != NO_RESOURCE)
 
 	cmp	eax, -1
 	je	$LN158@setHasTech
 
-; 5526 : 				{
-; 5527 : 					CvResourceInfo* pResourceInfo = GC.getResourceInfo(eResource);
+; 5578 : 				{
+; 5579 : 					CvResourceInfo* pResourceInfo = GC.getResourceInfo(eResource);
 
 	mov	ecx, eax
 	push	ecx
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getResourceInfo@CvGlobals@@QAEPAVCvResourceInfo@@W4ResourceTypes@@@Z ; CvGlobals::getResourceInfo
 
-; 5528 : 					CvAssert(pResourceInfo);
-; 5529 : 
-; 5530 : 					if(bNewValue)
+; 5580 : 					CvAssert(pResourceInfo);
+; 5581 : 
+; 5582 : 					if(bNewValue)
 
 	cmp	BYTE PTR _bNewValue$[esp+776], 0
 	mov	ebp, eax
-	mov	DWORD PTR _pResourceInfo$226199[esp+780], ebp
+	mov	DWORD PTR _pResourceInfo$226717[esp+780], ebp
 	je	$LN885@setHasTech
 
-; 5531 : 					{
-; 5532 : 						const TechTypes eTechReveal = static_cast<TechTypes>(pResourceInfo->getTechReveal());
+; 5583 : 					{
+; 5584 : 						const TechTypes eTechReveal = static_cast<TechTypes>(pResourceInfo->getTechReveal());
 
 	mov	ecx, ebp
 	call	?getTechReveal@CvResourceInfo@@QBEHXZ	; CvResourceInfo::getTechReveal
 
-; 5533 : 						// Resource Reveal
-; 5534 : 						if(eTechReveal == eIndex)
+; 5585 : 						// Resource Reveal
+; 5586 : 						if(eTechReveal == eIndex)
 
 	cmp	eax, DWORD PTR _eIndex$[esp+776]
 	jne	$LN885@setHasTech
 
-; 5535 : 						{
-; 5536 : 							// update the resources
-; 5537 : 							if(pLoopPlot->isRevealed(m_eID))
+; 5587 : 						{
+; 5588 : 							// update the resources
+; 5589 : 							if(pLoopPlot->isRevealed(m_eID))
 
 	mov	ebx, DWORD PTR _this$[esp+780]
 	mov	edx, DWORD PTR [ebx+4]
@@ -28351,8 +28571,8 @@ $LL865@setHasTech:
 	test	edi, DWORD PTR [esi+eax*4+8]
 	je	$LN147@setHasTech
 
-; 5538 : 							{
-; 5539 : 								if(pLoopPlot->getResourceType(m_eID) != NO_RESOURCE)
+; 5590 : 							{
+; 5591 : 								if(pLoopPlot->getResourceType(m_eID) != NO_RESOURCE)
 
 	push	edx
 	mov	ecx, esi
@@ -28360,32 +28580,32 @@ $LL865@setHasTech:
 	cmp	eax, -1
 	je	$LN147@setHasTech
 
-; 5540 : 								{
-; 5541 : 									// Create resource link
-; 5542 : 									if(pLoopPlot->isOwned())
+; 5592 : 								{
+; 5593 : 									// Create resource link
+; 5594 : 									if(pLoopPlot->isOwned())
 
 	mov	ecx, esi
 	call	?isOwned@CvPlot@@QBE_NXZ		; CvPlot::isOwned
 	test	al, al
 	je	SHORT $LN883@setHasTech
 
-; 5543 : 										pLoopPlot->DoFindCityToLinkResourceTo();
+; 5595 : 										pLoopPlot->DoFindCityToLinkResourceTo();
 
 	push	0
 	mov	ecx, esi
 	call	?DoFindCityToLinkResourceTo@CvPlot@@QAEXPAVCvCity@@@Z ; CvPlot::DoFindCityToLinkResourceTo
 $LN883@setHasTech:
 
-; 5544 : 
-; 5545 : 									// Only update for active team
-; 5546 : 									if(bIsActiveTeam)
+; 5596 : 
+; 5597 : 									// Only update for active team
+; 5598 : 									if(bIsActiveTeam)
 
-	cmp	BYTE PTR _bIsActiveTeam$226190[esp+780], 0
+	cmp	BYTE PTR _bIsActiveTeam$226708[esp+780], 0
 	je	$LN147@setHasTech
 
-; 5547 : 									{
-; 5548 : 										// If we've force revealed the resource for this team, then don't send another event
-; 5549 : 										if(!pLoopPlot->IsResourceForceReveal(GetID()))
+; 5599 : 									{
+; 5600 : 										// If we've force revealed the resource for this team, then don't send another event
+; 5601 : 										if(!pLoopPlot->IsResourceForceReveal(GetID()))
 
 	mov	eax, DWORD PTR [ebx+4]
 	push	eax
@@ -28394,18 +28614,18 @@ $LN883@setHasTech:
 	test	al, al
 	jne	SHORT $LN149@setHasTech
 
-; 5550 : 										{
-; 5551 : 											pLoopPlot->setLayoutDirty(true);
+; 5602 : 										{
+; 5603 : 											pLoopPlot->setLayoutDirty(true);
 
 	push	1
 	mov	ecx, esi
 	call	?setLayoutDirty@CvPlot@@QAEX_N@Z	; CvPlot::setLayoutDirty
 $LN149@setHasTech:
 
-; 5552 : 										}
-; 5553 : 
-; 5554 : 										// Notify the player that owns this Plot
-; 5555 : 										if(pLoopPlot->getOwner() == GC.getGame().getActivePlayer() && pLoopPlot->getTeam() == GetID())
+; 5604 : 										}
+; 5605 : 
+; 5606 : 										// Notify the player that owns this Plot
+; 5607 : 										if(pLoopPlot->getOwner() == GC.getGame().getActivePlayer() && pLoopPlot->getTeam() == GetID())
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	movsx	edi, BYTE PTR [esi+4]
@@ -28418,8 +28638,8 @@ $LN149@setHasTech:
 	cmp	eax, edi
 	jne	$LN147@setHasTech
 
-; 5556 : 										{
-; 5557 : 											if(!CvPreGame::loadWBScenario() || GC.getGame().getGameTurn() > 0)
+; 5608 : 										{
+; 5609 : 											if(!CvPreGame::loadWBScenario() || GC.getGame().getGameTurn() > 0)
 
 	call	?loadWBScenario@CvPreGame@@YA_NXZ	; CvPreGame::loadWBScenario
 	test	al, al
@@ -28430,14 +28650,14 @@ $LN149@setHasTech:
 	jle	$LN147@setHasTech
 $LN146@setHasTech:
 
-; 5558 : 											{
-; 5559 : 												strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_FOUND_RESOURCE", pResourceInfo->GetTextKey());
+; 5610 : 											{
+; 5611 : 												strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_FOUND_RESOURCE", pResourceInfo->GetTextKey());
 
 	mov	ecx, ebp
 	call	?GetTextKey@CvBaseInfo@@QBEPBDXZ	; CvBaseInfo::GetTextKey
 	push	eax
-	lea	edx, DWORD PTR $T239555[esp+784]
-	push	OFFSET $SG226213
+	lea	edx, DWORD PTR $T239704[esp+784]
+	push	OFFSET $SG226731
 	push	edx
 	call	??$GetLocalizedText@PBD@@YA?AVCvString@@PBD0@Z ; GetLocalizedText<char const *>
 	add	esp, 12					; 0000000cH
@@ -28445,24 +28665,24 @@ $LN146@setHasTech:
 	lea	ecx, DWORD PTR _strBuffer$[esp+784]
 	mov	BYTE PTR __$EHRec$[esp+792], 1
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T239555[esp+780]
+	lea	ecx, DWORD PTR $T239704[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 0
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 5560 : 									
-; 5561 : 												CvString strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_FOUND_RESOURCE", pResourceInfo->GetTextKey());
+; 5612 : 									
+; 5613 : 												CvString strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_FOUND_RESOURCE", pResourceInfo->GetTextKey());
 
 	mov	ecx, ebp
 	call	?GetTextKey@CvBaseInfo@@QBEPBDXZ	; CvBaseInfo::GetTextKey
 	push	eax
-	lea	eax, DWORD PTR _strSummary$226214[esp+784]
-	push	OFFSET $SG226216
+	lea	eax, DWORD PTR _strSummary$226732[esp+784]
+	push	OFFSET $SG226734
 	push	eax
 	call	??$GetLocalizedText@PBD@@YA?AVCvString@@PBD0@Z ; GetLocalizedText<char const *>
 	add	esp, 12					; 0000000cH
 
-; 5562 : 
-; 5563 : 												switch(pResourceInfo->getResourceUsage())
+; 5614 : 
+; 5615 : 												switch(pResourceInfo->getResourceUsage())
 
 	mov	ecx, ebp
 	mov	BYTE PTR __$EHRec$[esp+788], 2
@@ -28474,37 +28694,37 @@ $LN146@setHasTech:
 	sub	eax, 1
 	jne	SHORT $LN144@setHasTech
 
-; 5564 : 												{
-; 5565 : 												case RESOURCEUSAGE_LUXURY:
-; 5566 : 													eNotificationType = NOTIFICATION_DISCOVERED_LUXURY_RESOURCE;
+; 5616 : 												{
+; 5617 : 												case RESOURCEUSAGE_LUXURY:
+; 5618 : 													eNotificationType = NOTIFICATION_DISCOVERED_LUXURY_RESOURCE;
 
-	mov	DWORD PTR _eNotificationType$226189[esp+780], -1226075946 ; b6eb90d6H
+	mov	DWORD PTR _eNotificationType$226707[esp+780], -1226075946 ; b6eb90d6H
 
-; 5567 : 													break;
+; 5619 : 													break;
 
 	jmp	SHORT $LN144@setHasTech
 $LN142@setHasTech:
 
-; 5568 : 												case RESOURCEUSAGE_STRATEGIC:
-; 5569 : 													eNotificationType = NOTIFICATION_DISCOVERED_STRATEGIC_RESOURCE;
+; 5620 : 												case RESOURCEUSAGE_STRATEGIC:
+; 5621 : 													eNotificationType = NOTIFICATION_DISCOVERED_STRATEGIC_RESOURCE;
 
-	mov	DWORD PTR _eNotificationType$226189[esp+780], 2094204588 ; 7cd306acH
+	mov	DWORD PTR _eNotificationType$226707[esp+780], 2094204588 ; 7cd306acH
 
-; 5570 : 													break;
+; 5622 : 													break;
 
 	jmp	SHORT $LN144@setHasTech
 $LN141@setHasTech:
 
-; 5571 : 												case RESOURCEUSAGE_BONUS:
-; 5572 : 													eNotificationType = NOTIFICATION_DISCOVERED_BONUS_RESOURCE;
+; 5623 : 												case RESOURCEUSAGE_BONUS:
+; 5624 : 													eNotificationType = NOTIFICATION_DISCOVERED_BONUS_RESOURCE;
 
-	mov	DWORD PTR _eNotificationType$226189[esp+780], 2117152609 ; 7e312f61H
+	mov	DWORD PTR _eNotificationType$226707[esp+780], 2117152609 ; 7e312f61H
 $LN144@setHasTech:
 
-; 5573 : 													break;
-; 5574 : 												}
-; 5575 : 
-; 5576 : 												CvNotifications* pNotifications = GET_PLAYER(pLoopPlot->getOwner()).GetNotifications();
+; 5625 : 													break;
+; 5626 : 												}
+; 5627 : 
+; 5628 : 												CvNotifications* pNotifications = GET_PLAYER(pLoopPlot->getOwner()).GetNotifications();
 
 	movsx	eax, BYTE PTR [esi+4]
 	imul	eax, 63236				; 0000f704H
@@ -28513,19 +28733,19 @@ $LN144@setHasTech:
 	call	?GetNotifications@CvPlayer@@QBEPAVCvNotifications@@XZ ; CvPlayer::GetNotifications
 	mov	edi, eax
 
-; 5577 : 												if(pNotifications)
+; 5629 : 												if(pNotifications)
 
 	test	edi, edi
 	je	SHORT $LN140@setHasTech
 
-; 5578 : 												{
-; 5579 : 													pNotifications->Add(eNotificationType, strBuffer, strSummary, pLoopPlot->getX(), pLoopPlot->getY(), eResource);
+; 5630 : 												{
+; 5631 : 													pNotifications->Add(eNotificationType, strBuffer, strSummary, pLoopPlot->getX(), pLoopPlot->getY(), eResource);
 
 	movsx	ebp, WORD PTR [esi+2]
 	movsx	ebx, WORD PTR [esi]
-	lea	ecx, DWORD PTR _strSummary$226214[esp+780]
+	lea	ecx, DWORD PTR _strSummary$226732[esp+780]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
-	mov	ecx, DWORD PTR _eResource$226197[esp+780]
+	mov	ecx, DWORD PTR _eResource$226715[esp+780]
 	push	-1
 	push	ecx
 	push	ebp
@@ -28533,19 +28753,19 @@ $LN144@setHasTech:
 	push	eax
 	lea	ecx, DWORD PTR _strBuffer$[esp+800]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
-	mov	edx, DWORD PTR _eNotificationType$226189[esp+800]
+	mov	edx, DWORD PTR _eNotificationType$226707[esp+800]
 	push	eax
 	push	edx
 	mov	ecx, edi
 	call	?Add@CvNotifications@@QAEHW4NotificationTypes@@PBD1HHHH@Z ; CvNotifications::Add
-	mov	ebp, DWORD PTR _pResourceInfo$226199[esp+780]
+	mov	ebp, DWORD PTR _pResourceInfo$226717[esp+780]
 	mov	ebx, DWORD PTR _this$[esp+780]
 $LN140@setHasTech:
 
-; 5580 : 												}
-; 5581 : 											}
+; 5632 : 												}
+; 5633 : 											}
 
-	lea	ecx, DWORD PTR _strSummary$226214[esp+780]
+	lea	ecx, DWORD PTR _strSummary$226732[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 0
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 	jmp	SHORT $LN147@setHasTech
@@ -28553,14 +28773,14 @@ $LN885@setHasTech:
 	mov	ebx, DWORD PTR _this$[esp+780]
 $LN147@setHasTech:
 
-; 5582 : 										}
-; 5583 : 									}
-; 5584 : 								}
-; 5585 : 							}
-; 5586 : 						}
-; 5587 : 					}
-; 5588 : 					// Resource Connection
-; 5589 : 					if(pLoopPlot->getTeam() == GetID())
+; 5634 : 										}
+; 5635 : 									}
+; 5636 : 								}
+; 5637 : 							}
+; 5638 : 						}
+; 5639 : 					}
+; 5640 : 					// Resource Connection
+; 5641 : 					if(pLoopPlot->getTeam() == GetID())
 
 	movsx	eax, BYTE PTR [esi+4]
 	cmp	eax, -1
@@ -28577,16 +28797,16 @@ $LN325@setHasTech:
 	cmp	eax, DWORD PTR [ebx+4]
 	jne	$LN158@setHasTech
 
-; 5590 : 					{
-; 5591 : 						if(pResourceInfo->getTechCityTrade() == eIndex)
+; 5642 : 					{
+; 5643 : 						if(pResourceInfo->getTechCityTrade() == eIndex)
 
 	mov	ecx, ebp
 	call	?getTechCityTrade@CvResourceInfo@@QBEHXZ ; CvResourceInfo::getTechCityTrade
 	cmp	eax, DWORD PTR _eIndex$[esp+776]
 	jne	$LN158@setHasTech
 
-; 5592 : 						{
-; 5593 : 							if(pLoopPlot->isCity() || pLoopPlot->getImprovementType() != NO_IMPROVEMENT)
+; 5644 : 						{
+; 5645 : 							if(pLoopPlot->isCity() || pLoopPlot->getImprovementType() != NO_IMPROVEMENT)
 
 	mov	ecx, esi
 	call	?isCity@CvPlot@@QBE_NXZ			; CvPlot::isCity
@@ -28598,15 +28818,15 @@ $LN325@setHasTech:
 	je	$LN158@setHasTech
 $LN136@setHasTech:
 
-; 5594 : 							{
-; 5595 : 								// Appropriate Improvement on this Plot?
-; 5596 : 								if(pLoopPlot->isCity() || GC.getImprovementInfo(pLoopPlot->getImprovementType())->IsImprovementResourceTrade(eResource))
+; 5646 : 							{
+; 5647 : 								// Appropriate Improvement on this Plot?
+; 5648 : 								if(pLoopPlot->isCity() || GC.getImprovementInfo(pLoopPlot->getImprovementType())->IsImprovementResourceTrade(eResource))
 
 	mov	ecx, esi
 	call	?isCity@CvPlot@@QBE_NXZ			; CvPlot::isCity
 	test	al, al
 	jne	SHORT $LN134@setHasTech
-	mov	eax, DWORD PTR _eResource$226197[esp+780]
+	mov	eax, DWORD PTR _eResource$226715[esp+780]
 	push	eax
 	mov	ecx, esi
 	call	?getImprovementType@CvPlot@@QBE?AW4ImprovementTypes@@XZ ; CvPlot::getImprovementType
@@ -28619,20 +28839,20 @@ $LN136@setHasTech:
 	je	$LN158@setHasTech
 $LN134@setHasTech:
 
-; 5597 : 								{
-; 5598 : 									for(int iI = 0; iI < MAX_PLAYERS; iI++)
+; 5649 : 								{
+; 5650 : 									for(int iI = 0; iI < MAX_PLAYERS; iI++)
 
 	xor	ebp, ebp
 	xor	ebx, ebx
 $LL133@setHasTech:
 
-; 5599 : 									{
-; 5600 : 										const PlayerTypes eLoopPlayer = static_cast<PlayerTypes>(iI);
-; 5601 : 										CvPlayerAI& kLoopPlayer = GET_PLAYER(eLoopPlayer);
+; 5651 : 									{
+; 5652 : 										const PlayerTypes eLoopPlayer = static_cast<PlayerTypes>(iI);
+; 5653 : 										CvPlayerAI& kLoopPlayer = GET_PLAYER(eLoopPlayer);
 
 	mov	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 
-; 5602 : 										if(kLoopPlayer.isAlive() && kLoopPlayer.getTeam() == GetID() && pLoopPlot->getOwner() == eLoopPlayer)
+; 5654 : 										if(kLoopPlayer.isAlive() && kLoopPlayer.getTeam() == GetID() && pLoopPlot->getOwner() == eLoopPlayer)
 
 	cmp	BYTE PTR [ebx+ecx+2256], 0
 	lea	edi, DWORD PTR [ebx+ecx]
@@ -28654,16 +28874,16 @@ $LN351@setHasTech:
 	cmp	eax, ebp
 	jne	$LN132@setHasTech
 
-; 5603 : 										{
-; 5604 : 											// We now have a new Tech
-; 5605 : 											if(bNewValue)
+; 5655 : 										{
+; 5656 : 											// We now have a new Tech
+; 5657 : 											if(bNewValue)
 
 	cmp	BYTE PTR _bNewValue$[esp+776], 0
 	je	SHORT $LN129@setHasTech
 
-; 5606 : 											{
-; 5607 : 												// slewis - added in so resources wouldn't be double counted when the minor civ researches the technology
-; 5608 : 												if (!(kLoopPlayer.isMinorCiv() && pLoopPlot->IsImprovedByGiftFromMajor()))
+; 5658 : 											{
+; 5659 : 												// slewis - added in so resources wouldn't be double counted when the minor civ researches the technology
+; 5660 : 												if (!(kLoopPlayer.isMinorCiv() && pLoopPlot->IsImprovedByGiftFromMajor()))
 
 	mov	ecx, edi
 	call	?isMinorCiv@CvPlayer@@QBE_NXZ		; CvPlayer::isMinorCiv
@@ -28675,81 +28895,81 @@ $LN351@setHasTech:
 	jne	SHORT $LN128@setHasTech
 $LN127@setHasTech:
 
-; 5609 : 												{
-; 5610 : 													kLoopPlayer.changeNumResourceTotal(eResource, pLoopPlot->getNumResourceForPlayer(eLoopPlayer));
+; 5661 : 												{
+; 5662 : 													kLoopPlayer.changeNumResourceTotal(eResource, pLoopPlot->getNumResourceForPlayer(eLoopPlayer));
 
 	push	0
 	push	ebp
 	mov	ecx, esi
 	call	?getNumResourceForPlayer@CvPlot@@QBEHW4PlayerTypes@@@Z ; CvPlot::getNumResourceForPlayer
-	mov	ecx, DWORD PTR _eResource$226197[esp+784]
+	mov	ecx, DWORD PTR _eResource$226715[esp+784]
 	push	eax
 	push	ecx
 	mov	ecx, edi
 	call	?changeNumResourceTotal@CvPlayer@@QAEXW4ResourceTypes@@H_N@Z ; CvPlayer::changeNumResourceTotal
 $LN128@setHasTech:
 
-; 5611 : 												}
-; 5612 : 
-; 5613 : 												// Reconnect resource link
-; 5614 : 												if(pLoopPlot->GetResourceLinkedCity() != NULL)
+; 5663 : 												}
+; 5664 : 
+; 5665 : 												// Reconnect resource link
+; 5666 : 												if(pLoopPlot->GetResourceLinkedCity() != NULL)
 
 	mov	ecx, esi
 	call	?GetResourceLinkedCity@CvPlot@@QBEPAVCvCity@@XZ ; CvPlot::GetResourceLinkedCity
 
-; 5615 : 												{
-; 5616 : 													pLoopPlot->SetResourceLinkedCityActive(true);
+; 5667 : 												{
+; 5668 : 													pLoopPlot->SetResourceLinkedCityActive(true);
 
 	mov	ecx, esi
 	test	eax, eax
 	je	SHORT $LN126@setHasTech
 	push	1
 
-; 5617 : 												}
-; 5618 : 												// Create resource link
-; 5619 : 												else
+; 5669 : 												}
+; 5670 : 												// Create resource link
+; 5671 : 												else
 
 	jmp	SHORT $LN903@setHasTech
 $LN126@setHasTech:
 
-; 5620 : 												{
-; 5621 : 													pLoopPlot->DoFindCityToLinkResourceTo();
+; 5672 : 												{
+; 5673 : 													pLoopPlot->DoFindCityToLinkResourceTo();
 
 	push	0
 	call	?DoFindCityToLinkResourceTo@CvPlot@@QAEXPAVCvCity@@@Z ; CvPlot::DoFindCityToLinkResourceTo
 
-; 5622 : 												}
-; 5623 : 											}
-; 5624 : 											// Removing Tech
-; 5625 : 											else
+; 5674 : 												}
+; 5675 : 											}
+; 5676 : 											// Removing Tech
+; 5677 : 											else
 
 	jmp	SHORT $LN132@setHasTech
 $LN129@setHasTech:
 
-; 5626 : 											{
-; 5627 : 												kLoopPlayer.changeNumResourceTotal(eResource, -pLoopPlot->getNumResourceForPlayer(eLoopPlayer));
+; 5678 : 											{
+; 5679 : 												kLoopPlayer.changeNumResourceTotal(eResource, -pLoopPlot->getNumResourceForPlayer(eLoopPlayer));
 
 	push	0
 	push	ebp
 	mov	ecx, esi
 	call	?getNumResourceForPlayer@CvPlot@@QBEHW4PlayerTypes@@@Z ; CvPlot::getNumResourceForPlayer
-	mov	edx, DWORD PTR _eResource$226197[esp+784]
+	mov	edx, DWORD PTR _eResource$226715[esp+784]
 	neg	eax
 	push	eax
 	push	edx
 	mov	ecx, edi
 	call	?changeNumResourceTotal@CvPlayer@@QAEXW4ResourceTypes@@H_N@Z ; CvPlayer::changeNumResourceTotal
 
-; 5628 : 
-; 5629 : 												// Disconnect resource link
-; 5630 : 												if(pLoopPlot->GetResourceLinkedCity() != NULL)
+; 5680 : 
+; 5681 : 												// Disconnect resource link
+; 5682 : 												if(pLoopPlot->GetResourceLinkedCity() != NULL)
 
 	mov	ecx, esi
 	call	?GetResourceLinkedCity@CvPlot@@QBEPAVCvCity@@XZ ; CvPlot::GetResourceLinkedCity
 	test	eax, eax
 	je	SHORT $LN132@setHasTech
 
-; 5631 : 													pLoopPlot->SetResourceLinkedCityActive(false);
+; 5683 : 													pLoopPlot->SetResourceLinkedCityActive(false);
 
 	push	0
 	mov	ecx, esi
@@ -28757,8 +28977,8 @@ $LN903@setHasTech:
 	call	?SetResourceLinkedCityActive@CvPlot@@QAEX_N@Z ; CvPlot::SetResourceLinkedCityActive
 $LN132@setHasTech:
 
-; 5597 : 								{
-; 5598 : 									for(int iI = 0; iI < MAX_PLAYERS; iI++)
+; 5649 : 								{
+; 5650 : 									for(int iI = 0; iI < MAX_PLAYERS; iI++)
 
 	add	ebx, 63236				; 0000f704H
 	inc	ebp
@@ -28766,25 +28986,25 @@ $LN132@setHasTech:
 	jl	$LL133@setHasTech
 $LN158@setHasTech:
 
-; 5520 : 			for(int iPlotLoop = 0; iPlotLoop < iNumPlots; iPlotLoop++)
+; 5572 : 			for(int iPlotLoop = 0; iPlotLoop < iNumPlots; iPlotLoop++)
 
 	add	DWORD PTR tv3727[esp+780], 484		; 000001e4H
 	sub	DWORD PTR tv2460[esp+780], 1
 	jne	$LL865@setHasTech
 $LN157@setHasTech:
 
-; 5632 : 											}
-; 5633 : 										}
-; 5634 : 									}
-; 5635 : 								}
-; 5636 : 							}
-; 5637 : 						}
-; 5638 : 					}
-; 5639 : 				}
-; 5640 : 			}
-; 5641 : 		}
-; 5642 : 
-; 5643 : 		processTech(eIndex, ((bNewValue) ? 1 : -1));
+; 5684 : 											}
+; 5685 : 										}
+; 5686 : 									}
+; 5687 : 								}
+; 5688 : 							}
+; 5689 : 						}
+; 5690 : 					}
+; 5691 : 				}
+; 5692 : 			}
+; 5693 : 		}
+; 5694 : 
+; 5695 : 		processTech(eIndex, ((bNewValue) ? 1 : -1));
 
 	mov	esi, DWORD PTR _eIndex$[esp+776]
 	mov	ecx, DWORD PTR _this$[esp+780]
@@ -28796,10 +29016,10 @@ $LN157@setHasTech:
 	push	esi
 	call	?processTech@CvTeam@@IAEXW4TechTypes@@H@Z ; CvTeam::processTech
 
-; 5644 : 
-; 5645 : 		//Antiquity site notifications.
-; 5646 : 		//Notifications for Artifacts and Hidden Artifacts have to come AFTER processTech because they may not have been spawned yet.
-; 5647 : 		if(!CvPreGame::loadWBScenario() || GC.getGame().getGameTurn() > 0)
+; 5696 : 
+; 5697 : 		//Antiquity site notifications.
+; 5698 : 		//Notifications for Artifacts and Hidden Artifacts have to come AFTER processTech because they may not have been spawned yet.
+; 5699 : 		if(!CvPreGame::loadWBScenario() || GC.getGame().getGameTurn() > 0)
 
 	call	?loadWBScenario@CvPreGame@@YA_NXZ	; CvPreGame::loadWBScenario
 	test	al, al
@@ -28810,108 +29030,108 @@ $LN157@setHasTech:
 	jle	$LN878@setHasTech
 $LN121@setHasTech:
 
-; 5648 : 		{
-; 5649 : 			bool bTechRevealsArtifacts = false;
-; 5650 : 			bool bTechRevealsHiddenArtifacts = false;
-; 5651 : 
-; 5652 : 			ResourceTypes eArtifactResource = (ResourceTypes)GC.getInfoTypeForString("RESOURCE_ARTIFACTS", true);
+; 5700 : 		{
+; 5701 : 			bool bTechRevealsArtifacts = false;
+; 5702 : 			bool bTechRevealsHiddenArtifacts = false;
+; 5703 : 
+; 5704 : 			ResourceTypes eArtifactResource = (ResourceTypes)GC.getInfoTypeForString("RESOURCE_ARTIFACTS", true);
 
 	push	1
 	xor	bl, bl
-	push	OFFSET $SG226253
+	push	OFFSET $SG226771
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	mov	BYTE PTR _bTechRevealsArtifacts$226249[esp+788], 0
-	mov	BYTE PTR _bTechRevealsHiddenArtifacts$226250[esp+788], bl
+	mov	BYTE PTR _bTechRevealsArtifacts$226767[esp+788], 0
+	mov	BYTE PTR _bTechRevealsHiddenArtifacts$226768[esp+788], bl
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	ebp, eax
-	mov	DWORD PTR _eArtifactResource$226251[esp+780], ebp
+	mov	DWORD PTR _eArtifactResource$226769[esp+780], ebp
 
-; 5653 : 			CvResourceInfo* pArtifactResource = NULL;
+; 5705 : 			CvResourceInfo* pArtifactResource = NULL;
 
-	mov	DWORD PTR _pArtifactResource$226254[esp+780], 0
+	mov	DWORD PTR _pArtifactResource$226772[esp+780], 0
 
-; 5654 : 			if(eArtifactResource != NO_RESOURCE)
+; 5706 : 			if(eArtifactResource != NO_RESOURCE)
 
 	cmp	ebp, -1
 	je	SHORT $LN120@setHasTech
 
-; 5655 : 			{
-; 5656 : 				pArtifactResource = GC.getResourceInfo(eArtifactResource);
+; 5707 : 			{
+; 5708 : 				pArtifactResource = GC.getResourceInfo(eArtifactResource);
 
 	push	ebp
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getResourceInfo@CvGlobals@@QAEPAVCvResourceInfo@@W4ResourceTypes@@@Z ; CvGlobals::getResourceInfo
 
-; 5657 : 				bTechRevealsArtifacts = pArtifactResource->getTechReveal() == eIndex;			
+; 5709 : 				bTechRevealsArtifacts = pArtifactResource->getTechReveal() == eIndex;			
 
 	mov	ecx, eax
-	mov	DWORD PTR _pArtifactResource$226254[esp+780], eax
+	mov	DWORD PTR _pArtifactResource$226772[esp+780], eax
 	call	?getTechReveal@CvResourceInfo@@QBEHXZ	; CvResourceInfo::getTechReveal
 	cmp	eax, esi
-	sete	BYTE PTR _bTechRevealsArtifacts$226249[esp+780]
+	sete	BYTE PTR _bTechRevealsArtifacts$226767[esp+780]
 $LN120@setHasTech:
 
-; 5658 : 			}
-; 5659 : 
-; 5660 : 			ResourceTypes eHiddenArtifactResource = (ResourceTypes)GC.getInfoTypeForString("RESOURCE_HIDDEN_ARTIFACTS", true);;
+; 5710 : 			}
+; 5711 : 
+; 5712 : 			ResourceTypes eHiddenArtifactResource = (ResourceTypes)GC.getInfoTypeForString("RESOURCE_HIDDEN_ARTIFACTS", true);;
 
 	push	1
-	push	OFFSET $SG226258
+	push	OFFSET $SG226776
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 
-; 5661 : 			CvResourceInfo* pHiddenArtifactResource = NULL;
+; 5713 : 			CvResourceInfo* pHiddenArtifactResource = NULL;
 
 	xor	edi, edi
-	mov	DWORD PTR _eHiddenArtifactResource$226256[esp+780], eax
-	mov	DWORD PTR _pHiddenArtifactResource$226259[esp+780], edi
+	mov	DWORD PTR _eHiddenArtifactResource$226774[esp+780], eax
+	mov	DWORD PTR _pHiddenArtifactResource$226777[esp+780], edi
 
-; 5662 : 			if(eHiddenArtifactResource != NO_RESOURCE)
+; 5714 : 			if(eHiddenArtifactResource != NO_RESOURCE)
 
 	cmp	eax, -1
 	je	SHORT $LN119@setHasTech
 
-; 5663 : 			{
-; 5664 : 				pHiddenArtifactResource = GC.getResourceInfo(eHiddenArtifactResource);
+; 5715 : 			{
+; 5716 : 				pHiddenArtifactResource = GC.getResourceInfo(eHiddenArtifactResource);
 
 	push	eax
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getResourceInfo@CvGlobals@@QAEPAVCvResourceInfo@@W4ResourceTypes@@@Z ; CvGlobals::getResourceInfo
 	mov	edi, eax
 
-; 5665 : 				bTechRevealsHiddenArtifacts = pHiddenArtifactResource->getTechReveal() == eIndex;
+; 5717 : 				bTechRevealsHiddenArtifacts = pHiddenArtifactResource->getTechReveal() == eIndex;
 
 	mov	ecx, edi
-	mov	DWORD PTR _pHiddenArtifactResource$226259[esp+780], edi
+	mov	DWORD PTR _pHiddenArtifactResource$226777[esp+780], edi
 	call	?getTechReveal@CvResourceInfo@@QBEHXZ	; CvResourceInfo::getTechReveal
 	cmp	eax, esi
 	sete	bl
-	mov	BYTE PTR _bTechRevealsHiddenArtifacts$226250[esp+780], bl
+	mov	BYTE PTR _bTechRevealsHiddenArtifacts$226768[esp+780], bl
 $LN119@setHasTech:
 
-; 5666 : 			}
-; 5667 : 
-; 5668 : 			if(bTechRevealsArtifacts | bTechRevealsHiddenArtifacts)
+; 5718 : 			}
+; 5719 : 
+; 5720 : 			if(bTechRevealsArtifacts | bTechRevealsHiddenArtifacts)
 
-	or	bl, BYTE PTR _bTechRevealsArtifacts$226249[esp+780]
+	or	bl, BYTE PTR _bTechRevealsArtifacts$226767[esp+780]
 	je	$LN878@setHasTech
 
-; 5669 : 			{
-; 5670 : 				const PlayerTypes eActivePlayer = GC.getGame().getActivePlayer();
+; 5721 : 			{
+; 5722 : 				const PlayerTypes eActivePlayer = GC.getGame().getActivePlayer();
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?getActivePlayer@CvGame@@QBE?AW4PlayerTypes@@XZ ; CvGame::getActivePlayer
 
-; 5671 : #ifdef AUI_WARNING_FIXES
-; 5672 : 				for (uint iPlotLoop = 0; iPlotLoop < GC.getMap().numPlots(); iPlotLoop++)
-; 5673 : #else
-; 5674 : 				const int iNumPlots = GC.getMap().numPlots();
+; 5723 : #ifdef AUI_WARNING_FIXES
+; 5724 : 				for (uint iPlotLoop = 0; iPlotLoop < GC.getMap().numPlots(); iPlotLoop++)
+; 5725 : #else
+; 5726 : 				const int iNumPlots = GC.getMap().numPlots();
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+52
-	mov	DWORD PTR _eActivePlayer$226262[esp+780], eax
+	mov	DWORD PTR _eActivePlayer$226780[esp+780], eax
 	mov	eax, DWORD PTR [ecx+4028]
 
-; 5675 : 				for(int iPlotLoop = 0; iPlotLoop < iNumPlots; iPlotLoop++)
+; 5727 : 				for(int iPlotLoop = 0; iPlotLoop < iNumPlots; iPlotLoop++)
 
 	test	eax, eax
 	jle	$LN878@setHasTech
@@ -28920,19 +29140,19 @@ $LN119@setHasTech:
 	npad	15
 $LL892@setHasTech:
 
-; 5676 : #endif
-; 5677 : 				{
-; 5678 : 					CvPlot* pLoopPlot = GC.getMap().plotByIndexUnchecked(iPlotLoop);
+; 5728 : #endif
+; 5729 : 				{
+; 5730 : 					CvPlot* pLoopPlot = GC.getMap().plotByIndexUnchecked(iPlotLoop);
 
 	mov	edx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+52
 	mov	esi, DWORD PTR [edx+4068]
 	add	esi, DWORD PTR tv3742[esp+780]
 
-; 5679 : 
-; 5680 : 					if(pLoopPlot->getOwner() == eActivePlayer && pLoopPlot->getTeam() == m_eID && pLoopPlot->isRevealed(m_eID))
+; 5731 : 
+; 5732 : 					if(pLoopPlot->getOwner() == eActivePlayer && pLoopPlot->getTeam() == m_eID && pLoopPlot->isRevealed(m_eID))
 
 	movsx	eax, BYTE PTR [esi+4]
-	cmp	eax, DWORD PTR _eActivePlayer$226262[esp+780]
+	cmp	eax, DWORD PTR _eActivePlayer$226780[esp+780]
 	jne	$LN116@setHasTech
 	cmp	eax, -1
 	je	SHORT $LN374@setHasTech
@@ -28961,55 +29181,55 @@ $LN373@setHasTech:
 	test	ebx, DWORD PTR [esi+eax*4+8]
 	je	$LN116@setHasTech
 
-; 5681 : 					{
-; 5682 : 						const ResourceTypes ePlotResource = pLoopPlot->getResourceType(m_eID);
+; 5733 : 					{
+; 5734 : 						const ResourceTypes ePlotResource = pLoopPlot->getResourceType(m_eID);
 
 	push	edx
 	mov	ecx, esi
 	call	?getResourceType@CvPlot@@QBE?AW4ResourceTypes@@W4TeamTypes@@@Z ; CvPlot::getResourceType
 
-; 5683 : 						if( (bTechRevealsArtifacts && ePlotResource == eArtifactResource) || 
-; 5684 : 							(bTechRevealsHiddenArtifacts && ePlotResource == eHiddenArtifactResource))
+; 5735 : 						if( (bTechRevealsArtifacts && ePlotResource == eArtifactResource) || 
+; 5736 : 							(bTechRevealsHiddenArtifacts && ePlotResource == eHiddenArtifactResource))
 
-	cmp	BYTE PTR _bTechRevealsArtifacts$226249[esp+780], 0
+	cmp	BYTE PTR _bTechRevealsArtifacts$226767[esp+780], 0
 	mov	ebx, eax
 	je	SHORT $LN111@setHasTech
 	cmp	ebx, ebp
 	je	SHORT $LN112@setHasTech
 $LN111@setHasTech:
-	cmp	BYTE PTR _bTechRevealsHiddenArtifacts$226250[esp+780], 0
+	cmp	BYTE PTR _bTechRevealsHiddenArtifacts$226768[esp+780], 0
 	je	$LN116@setHasTech
-	cmp	ebx, DWORD PTR _eHiddenArtifactResource$226256[esp+780]
+	cmp	ebx, DWORD PTR _eHiddenArtifactResource$226774[esp+780]
 	jne	$LN116@setHasTech
 $LN112@setHasTech:
 
-; 5685 : 						{
-; 5686 : 							CvString strSummary;
+; 5737 : 						{
+; 5738 : 							CvString strSummary;
 
-	lea	ecx, DWORD PTR _strSummary$226274[esp+780]
+	lea	ecx, DWORD PTR _strSummary$226792[esp+780]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 	mov	BYTE PTR __$EHRec$[esp+788], 3
 
-; 5687 : 					//		CvString strBuffer;
-; 5688 : 							ResourceUsageTypes eResourceUsage = RESOURCEUSAGE_LUXURY;
+; 5739 : 					//		CvString strBuffer;
+; 5740 : 							ResourceUsageTypes eResourceUsage = RESOURCEUSAGE_LUXURY;
 
 	mov	eax, 2
 
-; 5689 : 							NotificationTypes eNotificationType = NO_NOTIFICATION_TYPE;
+; 5741 : 							NotificationTypes eNotificationType = NO_NOTIFICATION_TYPE;
 
-	mov	DWORD PTR _eNotificationType$226276[esp+780], -1
+	mov	DWORD PTR _eNotificationType$226794[esp+780], -1
 
-; 5690 : 
-; 5691 : 							if(ePlotResource == eArtifactResource)
+; 5742 : 
+; 5743 : 							if(ePlotResource == eArtifactResource)
 
 	cmp	ebx, ebp
 	jne	SHORT $LN110@setHasTech
 
-; 5692 : 							{
-; 5693 : 								strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_FOUND_ARTIFACTS");
+; 5744 : 							{
+; 5745 : 								strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_FOUND_ARTIFACTS");
 
-	lea	edx, DWORD PTR $T239556[esp+780]
-	push	OFFSET $SG226279
+	lea	edx, DWORD PTR $T239705[esp+780]
+	push	OFFSET $SG226797
 	push	edx
 	call	?GetLocalizedText@@YA?AVCvString@@PBD@Z	; GetLocalizedText
 	add	esp, 8
@@ -29017,39 +29237,39 @@ $LN112@setHasTech:
 	lea	ecx, DWORD PTR _strBuffer$[esp+784]
 	mov	BYTE PTR __$EHRec$[esp+792], 4
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T239556[esp+780]
+	lea	ecx, DWORD PTR $T239705[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 3
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 5694 : 								strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_FOUND_RESOURCE", pArtifactResource->GetTextKey());
+; 5746 : 								strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_FOUND_RESOURCE", pArtifactResource->GetTextKey());
 
-	mov	edi, DWORD PTR _pArtifactResource$226254[esp+780]
+	mov	edi, DWORD PTR _pArtifactResource$226772[esp+780]
 	mov	ecx, edi
 	call	?GetTextKey@CvBaseInfo@@QBEPBDXZ	; CvBaseInfo::GetTextKey
 	push	eax
-	lea	eax, DWORD PTR $T239557[esp+784]
-	push	OFFSET $SG226281
+	lea	eax, DWORD PTR $T239706[esp+784]
+	push	OFFSET $SG226799
 	push	eax
 	call	??$GetLocalizedText@PBD@@YA?AVCvString@@PBD0@Z ; GetLocalizedText<char const *>
 	add	esp, 12					; 0000000cH
 	mov	BYTE PTR __$EHRec$[esp+788], 5
 
-; 5695 : 								eResourceUsage = pArtifactResource->getResourceUsage();
+; 5747 : 								eResourceUsage = pArtifactResource->getResourceUsage();
 
 	jmp	SHORT $LN904@setHasTech
 $LN110@setHasTech:
 
-; 5696 : 							}
-; 5697 : 							else if(ePlotResource == eHiddenArtifactResource)
+; 5748 : 							}
+; 5749 : 							else if(ePlotResource == eHiddenArtifactResource)
 
-	cmp	ebx, DWORD PTR _eHiddenArtifactResource$226256[esp+780]
+	cmp	ebx, DWORD PTR _eHiddenArtifactResource$226774[esp+780]
 	jne	$LN108@setHasTech
 
-; 5698 : 							{
-; 5699 : 								strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_FOUND_HIDDEN_ARTIFACTS");
+; 5750 : 							{
+; 5751 : 								strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_FOUND_HIDDEN_ARTIFACTS");
 
-	lea	ecx, DWORD PTR $T239558[esp+780]
-	push	OFFSET $SG226285
+	lea	ecx, DWORD PTR $T239707[esp+780]
+	push	OFFSET $SG226803
 	push	ecx
 	call	?GetLocalizedText@@YA?AVCvString@@PBD@Z	; GetLocalizedText
 	add	esp, 8
@@ -29057,38 +29277,38 @@ $LN110@setHasTech:
 	lea	ecx, DWORD PTR _strBuffer$[esp+784]
 	mov	BYTE PTR __$EHRec$[esp+792], 6
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T239558[esp+780]
+	lea	ecx, DWORD PTR $T239707[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 3
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 5700 : 								strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_FOUND_RESOURCE", pHiddenArtifactResource->GetTextKey());
+; 5752 : 								strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_FOUND_RESOURCE", pHiddenArtifactResource->GetTextKey());
 
 	mov	ecx, edi
 	call	?GetTextKey@CvBaseInfo@@QBEPBDXZ	; CvBaseInfo::GetTextKey
 	push	eax
-	lea	edx, DWORD PTR $T239559[esp+784]
-	push	OFFSET $SG226287
+	lea	edx, DWORD PTR $T239708[esp+784]
+	push	OFFSET $SG226805
 	push	edx
 	call	??$GetLocalizedText@PBD@@YA?AVCvString@@PBD0@Z ; GetLocalizedText<char const *>
 	add	esp, 12					; 0000000cH
 	mov	BYTE PTR __$EHRec$[esp+788], 7
 $LN904@setHasTech:
 	push	eax
-	lea	ecx, DWORD PTR _strSummary$226274[esp+784]
+	lea	ecx, DWORD PTR _strSummary$226792[esp+784]
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T239559[esp+780]
+	lea	ecx, DWORD PTR $T239708[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 3
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 5701 : 								eResourceUsage = pHiddenArtifactResource->getResourceUsage();
+; 5753 : 								eResourceUsage = pHiddenArtifactResource->getResourceUsage();
 
 	mov	ecx, edi
 	call	?getResourceUsage@CvResourceInfo@@QBE?AW4ResourceUsageTypes@@XZ ; CvResourceInfo::getResourceUsage
 $LN108@setHasTech:
 
-; 5702 : 							}
-; 5703 : 
-; 5704 : 							switch(eResourceUsage)
+; 5754 : 							}
+; 5755 : 
+; 5756 : 							switch(eResourceUsage)
 
 	sub	eax, 0
 	je	SHORT $LN103@setHasTech
@@ -29097,37 +29317,37 @@ $LN108@setHasTech:
 	sub	eax, 1
 	jne	SHORT $LN106@setHasTech
 
-; 5705 : 							{
-; 5706 : 							case RESOURCEUSAGE_LUXURY:
-; 5707 : 								eNotificationType = NOTIFICATION_DISCOVERED_LUXURY_RESOURCE;
+; 5757 : 							{
+; 5758 : 							case RESOURCEUSAGE_LUXURY:
+; 5759 : 								eNotificationType = NOTIFICATION_DISCOVERED_LUXURY_RESOURCE;
 
-	mov	DWORD PTR _eNotificationType$226276[esp+780], -1226075946 ; b6eb90d6H
+	mov	DWORD PTR _eNotificationType$226794[esp+780], -1226075946 ; b6eb90d6H
 
-; 5708 : 								break;
+; 5760 : 								break;
 
 	jmp	SHORT $LN106@setHasTech
 $LN104@setHasTech:
 
-; 5709 : 							case RESOURCEUSAGE_STRATEGIC:
-; 5710 : 								eNotificationType = NOTIFICATION_DISCOVERED_STRATEGIC_RESOURCE;
+; 5761 : 							case RESOURCEUSAGE_STRATEGIC:
+; 5762 : 								eNotificationType = NOTIFICATION_DISCOVERED_STRATEGIC_RESOURCE;
 
-	mov	DWORD PTR _eNotificationType$226276[esp+780], 2094204588 ; 7cd306acH
+	mov	DWORD PTR _eNotificationType$226794[esp+780], 2094204588 ; 7cd306acH
 
-; 5711 : 								break;
+; 5763 : 								break;
 
 	jmp	SHORT $LN106@setHasTech
 $LN103@setHasTech:
 
-; 5712 : 							case RESOURCEUSAGE_BONUS:
-; 5713 : 								eNotificationType = NOTIFICATION_DISCOVERED_BONUS_RESOURCE;
+; 5764 : 							case RESOURCEUSAGE_BONUS:
+; 5765 : 								eNotificationType = NOTIFICATION_DISCOVERED_BONUS_RESOURCE;
 
-	mov	DWORD PTR _eNotificationType$226276[esp+780], 2117152609 ; 7e312f61H
+	mov	DWORD PTR _eNotificationType$226794[esp+780], 2117152609 ; 7e312f61H
 $LN106@setHasTech:
 
-; 5714 : 								break;
-; 5715 : 							}
-; 5716 : 
-; 5717 : 							CvNotifications* pNotifications = GET_PLAYER(pLoopPlot->getOwner()).GetNotifications();
+; 5766 : 								break;
+; 5767 : 							}
+; 5768 : 
+; 5769 : 							CvNotifications* pNotifications = GET_PLAYER(pLoopPlot->getOwner()).GetNotifications();
 
 	movsx	eax, BYTE PTR [esi+4]
 	imul	eax, 63236				; 0000f704H
@@ -29136,17 +29356,17 @@ $LN106@setHasTech:
 	call	?GetNotifications@CvPlayer@@QBEPAVCvNotifications@@XZ ; CvPlayer::GetNotifications
 	mov	edi, eax
 
-; 5718 : 							if(pNotifications)
+; 5770 : 							if(pNotifications)
 
 	test	edi, edi
 	je	SHORT $LN102@setHasTech
 
-; 5719 : 							{
-; 5720 : 								pNotifications->Add(eNotificationType, strBuffer, strSummary, pLoopPlot->getX(), pLoopPlot->getY(), ePlotResource);
+; 5771 : 							{
+; 5772 : 								pNotifications->Add(eNotificationType, strBuffer, strSummary, pLoopPlot->getX(), pLoopPlot->getY(), ePlotResource);
 
 	movsx	ebp, WORD PTR [esi+2]
 	movsx	esi, WORD PTR [esi]
-	lea	ecx, DWORD PTR _strSummary$226274[esp+780]
+	lea	ecx, DWORD PTR _strSummary$226792[esp+780]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	-1
 	push	ebx
@@ -29156,37 +29376,37 @@ $LN106@setHasTech:
 	lea	ecx, DWORD PTR _strBuffer$[esp+800]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
-	mov	eax, DWORD PTR _eNotificationType$226276[esp+804]
+	mov	eax, DWORD PTR _eNotificationType$226794[esp+804]
 	push	eax
 	mov	ecx, edi
 	call	?Add@CvNotifications@@QAEHW4NotificationTypes@@PBD1HHHH@Z ; CvNotifications::Add
-	mov	ebp, DWORD PTR _eArtifactResource$226251[esp+780]
+	mov	ebp, DWORD PTR _eArtifactResource$226769[esp+780]
 $LN102@setHasTech:
 
-; 5721 : 							}
-; 5722 : 						}
+; 5773 : 							}
+; 5774 : 						}
 
-	lea	ecx, DWORD PTR _strSummary$226274[esp+780]
+	lea	ecx, DWORD PTR _strSummary$226792[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 0
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	mov	edi, DWORD PTR _pHiddenArtifactResource$226259[esp+780]
+	mov	edi, DWORD PTR _pHiddenArtifactResource$226777[esp+780]
 $LN116@setHasTech:
 	add	DWORD PTR tv3742[esp+780], 484		; 000001e4H
 	sub	DWORD PTR tv2213[esp+780], 1
 	jne	$LL892@setHasTech
 
-; 5675 : 				for(int iPlotLoop = 0; iPlotLoop < iNumPlots; iPlotLoop++)
+; 5727 : 				for(int iPlotLoop = 0; iPlotLoop < iNumPlots; iPlotLoop++)
 
 	mov	esi, DWORD PTR _eIndex$[esp+776]
 $LN878@setHasTech:
 
-; 5723 : 					}
-; 5724 : 				}
-; 5725 : 			}
-; 5726 : 
-; 5727 : 		}
-; 5728 : 
-; 5729 : 		if(GetTeamTechs()->HasTech(eIndex))
+; 5775 : 					}
+; 5776 : 				}
+; 5777 : 			}
+; 5778 : 
+; 5779 : 		}
+; 5780 : 
+; 5781 : 		if(GetTeamTechs()->HasTech(eIndex))
 
 	mov	ecx, DWORD PTR _this$[esp+780]
 	mov	ecx, DWORD PTR [ecx+2980]
@@ -29195,54 +29415,54 @@ $LN878@setHasTech:
 	test	al, al
 	je	$LN874@setHasTech
 
-; 5730 : 		{
-; 5731 : 			EraTypes eThisTechsEra = (EraTypes) pkTechInfo->GetEra();
+; 5782 : 		{
+; 5783 : 			EraTypes eThisTechsEra = (EraTypes) pkTechInfo->GetEra();
 
 	mov	ebp, DWORD PTR _pkTechInfo$[esp+780]
 	mov	ecx, ebp
 	call	?GetEra@CvTechEntry@@QBEHXZ		; CvTechEntry::GetEra
 
-; 5732 : 
-; 5733 : 			// Era change for this Team?
-; 5734 : 			if(GetCurrentEra() < eThisTechsEra)
+; 5784 : 
+; 5785 : 			// Era change for this Team?
+; 5786 : 			if(GetCurrentEra() < eThisTechsEra)
 
 	mov	ebx, DWORD PTR _this$[esp+780]
 	cmp	DWORD PTR [ebx+136], eax
 	jge	SHORT $LN100@setHasTech
 
-; 5735 : 			{
-; 5736 : 				EraTypes eNewEra = (EraTypes) pkTechInfo->GetEra();
+; 5787 : 			{
+; 5788 : 				EraTypes eNewEra = (EraTypes) pkTechInfo->GetEra();
 
 	mov	ecx, ebp
 	call	?GetEra@CvTechEntry@@QBEHXZ		; CvTechEntry::GetEra
 
-; 5737 : 				//int iEraChange = eNewEra - GetCurrentEra();
-; 5738 : 
-; 5739 : 				//int iVictoryPointChange = iEraChange * /*1*/ GC.getVICTORY_POINTS_PER_ERA();
-; 5740 : 				//changeVictoryPoints(iVictoryPointChange);
-; 5741 : 
-; 5742 : 				//strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_ERA_VICTORY_POINTS", iVictoryPointChange);
-; 5743 : 				//CvString strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_ERA_VICTORY_POINTS");
-; 5744 : 				//AddNotification(NOTIFICATION_VICTORY, strBuffer, strSummary);
-; 5745 : 
-; 5746 : 				SetCurrentEra(eNewEra);
+; 5789 : 				//int iEraChange = eNewEra - GetCurrentEra();
+; 5790 : 
+; 5791 : 				//int iVictoryPointChange = iEraChange * /*1*/ GC.getVICTORY_POINTS_PER_ERA();
+; 5792 : 				//changeVictoryPoints(iVictoryPointChange);
+; 5793 : 
+; 5794 : 				//strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_ERA_VICTORY_POINTS", iVictoryPointChange);
+; 5795 : 				//CvString strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_ERA_VICTORY_POINTS");
+; 5796 : 				//AddNotification(NOTIFICATION_VICTORY, strBuffer, strSummary);
+; 5797 : 
+; 5798 : 				SetCurrentEra(eNewEra);
 
 	push	eax
 
-; 5747 : 			}
-; 5748 : 			// DON'T enter a new era with this tech
-; 5749 : 			else
+; 5799 : 			}
+; 5800 : 			// DON'T enter a new era with this tech
+; 5801 : 			else
 
 	jmp	SHORT $LN905@setHasTech
 $LN100@setHasTech:
 
-; 5750 : 			{
-; 5751 : 				// If we have all the techs in the earlier eras, then we're in that era
-; 5752 : 				bool bHasAllEarlierTechs = true;
-; 5753 : #ifdef AUI_WARNING_FIXES
-; 5754 : 				for (uint iTechLoop = 0; iTechLoop < GC.getNumTechInfos(); iTechLoop++)
-; 5755 : #else
-; 5756 : 				for(int iTechLoop = 0; iTechLoop < GC.getNumTechInfos(); iTechLoop++)
+; 5802 : 			{
+; 5803 : 				// If we have all the techs in the earlier eras, then we're in that era
+; 5804 : 				bool bHasAllEarlierTechs = true;
+; 5805 : #ifdef AUI_WARNING_FIXES
+; 5806 : 				for (uint iTechLoop = 0; iTechLoop < GC.getNumTechInfos(); iTechLoop++)
+; 5807 : #else
+; 5808 : 				for(int iTechLoop = 0; iTechLoop < GC.getNumTechInfos(); iTechLoop++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	xor	esi, esi
@@ -29251,23 +29471,23 @@ $LN100@setHasTech:
 	jle	SHORT $LN886@setHasTech
 $LL895@setHasTech:
 
-; 5757 : #endif
-; 5758 : 				{
-; 5759 : 					const TechTypes eLoopTech = static_cast<TechTypes>(iTechLoop);
-; 5760 : 					CvTechEntry* pkLoopTech = GC.getTechInfo(eLoopTech);
+; 5809 : #endif
+; 5810 : 				{
+; 5811 : 					const TechTypes eLoopTech = static_cast<TechTypes>(iTechLoop);
+; 5812 : 					CvTechEntry* pkLoopTech = GC.getTechInfo(eLoopTech);
 
 	push	esi
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getTechInfo@CvGlobals@@QAEPAVCvTechEntry@@W4TechTypes@@@Z ; CvGlobals::getTechInfo
 
-; 5761 : 					if(pkLoopTech)
+; 5813 : 					if(pkLoopTech)
 
 	test	eax, eax
 	je	SHORT $LN97@setHasTech
 
-; 5762 : 					{
-; 5763 : 						// Only look at techs prior to our era - there's no need to go further
-; 5764 : 						if(pkLoopTech->GetEra() <= GetCurrentEra())
+; 5814 : 					{
+; 5815 : 						// Only look at techs prior to our era - there's no need to go further
+; 5816 : 						if(pkLoopTech->GetEra() <= GetCurrentEra())
 
 	mov	edi, DWORD PTR [ebx+136]
 	mov	ecx, eax
@@ -29275,8 +29495,8 @@ $LL895@setHasTech:
 	cmp	eax, edi
 	jg	SHORT $LN97@setHasTech
 
-; 5765 : 						{
-; 5766 : 							if(!GetTeamTechs()->HasTech(eLoopTech))
+; 5817 : 						{
+; 5818 : 							if(!GetTeamTechs()->HasTech(eLoopTech))
 
 	mov	ecx, DWORD PTR [ebx+2980]
 	push	esi
@@ -29285,13 +29505,13 @@ $LL895@setHasTech:
 	je	SHORT $LN888@setHasTech
 $LN97@setHasTech:
 
-; 5750 : 			{
-; 5751 : 				// If we have all the techs in the earlier eras, then we're in that era
-; 5752 : 				bool bHasAllEarlierTechs = true;
-; 5753 : #ifdef AUI_WARNING_FIXES
-; 5754 : 				for (uint iTechLoop = 0; iTechLoop < GC.getNumTechInfos(); iTechLoop++)
-; 5755 : #else
-; 5756 : 				for(int iTechLoop = 0; iTechLoop < GC.getNumTechInfos(); iTechLoop++)
+; 5802 : 			{
+; 5803 : 				// If we have all the techs in the earlier eras, then we're in that era
+; 5804 : 				bool bHasAllEarlierTechs = true;
+; 5805 : #ifdef AUI_WARNING_FIXES
+; 5806 : 				for (uint iTechLoop = 0; iTechLoop < GC.getNumTechInfos(); iTechLoop++)
+; 5807 : #else
+; 5808 : 				for(int iTechLoop = 0; iTechLoop < GC.getNumTechInfos(); iTechLoop++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	inc	esi
@@ -29300,26 +29520,26 @@ $LN97@setHasTech:
 	jl	SHORT $LL895@setHasTech
 $LN886@setHasTech:
 
-; 5767 : 							{
-; 5768 : 								bHasAllEarlierTechs = false;
-; 5769 : 								break;
-; 5770 : 							}
-; 5771 : 						}
-; 5772 : 					}
-; 5773 : 				}
-; 5774 : 
-; 5775 : 				if(bHasAllEarlierTechs)
-; 5776 : 				{
-; 5777 : #ifdef AUI_WARNING_FIXES
-; 5778 : 					const uint iNextEra = static_cast<uint>(GetCurrentEra()) + 1;
-; 5779 : #else
-; 5780 : 					const EraTypes currentEra = GetCurrentEra();
+; 5819 : 							{
+; 5820 : 								bHasAllEarlierTechs = false;
+; 5821 : 								break;
+; 5822 : 							}
+; 5823 : 						}
+; 5824 : 					}
+; 5825 : 				}
+; 5826 : 
+; 5827 : 				if(bHasAllEarlierTechs)
+; 5828 : 				{
+; 5829 : #ifdef AUI_WARNING_FIXES
+; 5830 : 					const uint iNextEra = static_cast<uint>(GetCurrentEra()) + 1;
+; 5831 : #else
+; 5832 : 					const EraTypes currentEra = GetCurrentEra();
 
 	mov	esi, DWORD PTR [ebx+136]
 
-; 5781 : 					const int iNextEra = static_cast<int>(currentEra) + 1;
-; 5782 : #endif
-; 5783 : 					if(iNextEra < GC.getNumEraInfos())
+; 5833 : 					const int iNextEra = static_cast<int>(currentEra) + 1;
+; 5834 : #endif
+; 5835 : 					if(iNextEra < GC.getNumEraInfos())
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	inc	esi
@@ -29327,21 +29547,21 @@ $LN886@setHasTech:
 	cmp	esi, eax
 	jge	SHORT $LN888@setHasTech
 
-; 5784 : 					{
-; 5785 : 						const EraTypes nextEra = static_cast<EraTypes>(iNextEra);
-; 5786 : 						const CvEraInfo* pkEraInfo = GC.getEraInfo(nextEra);
+; 5836 : 					{
+; 5837 : 						const EraTypes nextEra = static_cast<EraTypes>(iNextEra);
+; 5838 : 						const CvEraInfo* pkEraInfo = GC.getEraInfo(nextEra);
 
 	push	esi
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getEraInfo@CvGlobals@@QAEPAVCvEraInfo@@W4EraTypes@@@Z ; CvGlobals::getEraInfo
 
-; 5787 : 						if(pkEraInfo != NULL)
+; 5839 : 						if(pkEraInfo != NULL)
 
 	test	eax, eax
 	je	SHORT $LN888@setHasTech
 
-; 5788 : 						{
-; 5789 : 							SetCurrentEra(nextEra);
+; 5840 : 						{
+; 5841 : 							SetCurrentEra(nextEra);
 
 	push	esi
 $LN905@setHasTech:
@@ -29349,21 +29569,21 @@ $LN905@setHasTech:
 	call	?SetCurrentEra@CvTeam@@QAEXW4EraTypes@@@Z ; CvTeam::SetCurrentEra
 $LN888@setHasTech:
 
-; 5790 : 						}
-; 5791 : 					}
-; 5792 : 
-; 5793 : 				}
-; 5794 : 			}
-; 5795 : 
-; 5796 : 			if(pkTechInfo->IsMapVisible())
+; 5842 : 						}
+; 5843 : 					}
+; 5844 : 
+; 5845 : 				}
+; 5846 : 			}
+; 5847 : 
+; 5848 : 			if(pkTechInfo->IsMapVisible())
 
 	mov	ecx, ebp
 	call	?IsMapVisible@CvTechEntry@@QBE_NXZ	; CvTechEntry::IsMapVisible
 	test	al, al
 	je	SHORT $LN89@setHasTech
 
-; 5797 : 			{
-; 5798 : 				GC.getMap().setRevealedPlots(GetID(), true, true);
+; 5849 : 			{
+; 5850 : 				GC.getMap().setRevealedPlots(GetID(), true, true);
 
 	mov	eax, DWORD PTR [ebx+4]
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+52
@@ -29372,38 +29592,38 @@ $LN888@setHasTech:
 	push	eax
 	call	?setRevealedPlots@CvMap@@QAEXW4TeamTypes@@_N1@Z ; CvMap::setRevealedPlots
 
-; 5799 : 				GC.getMap().updateDeferredFog();
+; 5851 : 				GC.getMap().updateDeferredFog();
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+52
 	call	?updateDeferredFog@CvMap@@QAEXXZ	; CvMap::updateDeferredFog
 $LN89@setHasTech:
 
-; 5800 : 			}
-; 5801 : 
-; 5802 : 			DoUpdateBestRoute();
+; 5852 : 			}
+; 5853 : 
+; 5854 : 			DoUpdateBestRoute();
 
 	mov	ecx, ebx
 	call	?DoUpdateBestRoute@CvTeam@@QAEXXZ	; CvTeam::DoUpdateBestRoute
 
-; 5803 : 
-; 5804 : 			// report event to Python, along with some other key state
-; 5805 : 			//////gDLL->getEventReporterIFace()->techAcquired(eIndex, GetID(), ePlayer, bAnnounce);
-; 5806 : 
-; 5807 : 			bFirstResource = false;
+; 5855 : 
+; 5856 : 			// report event to Python, along with some other key state
+; 5857 : 			//////gDLL->getEventReporterIFace()->techAcquired(eIndex, GetID(), ePlayer, bAnnounce);
+; 5858 : 
+; 5859 : 			bFirstResource = false;
 
 	xor	bl, bl
 	xor	edi, edi
 $LL88@setHasTech:
 
-; 5808 : 
-; 5809 : 			for(int iI = 0; iI < MAX_PLAYERS; iI++)
-; 5810 : 			{
-; 5811 : 				const PlayerTypes eLoopPlayer = static_cast<PlayerTypes>(iI);
-; 5812 : 				CvPlayerAI& kPlayer = GET_PLAYER(eLoopPlayer);
+; 5860 : 
+; 5861 : 			for(int iI = 0; iI < MAX_PLAYERS; iI++)
+; 5862 : 			{
+; 5863 : 				const PlayerTypes eLoopPlayer = static_cast<PlayerTypes>(iI);
+; 5864 : 				CvPlayerAI& kPlayer = GET_PLAYER(eLoopPlayer);
 
 	mov	edx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 
-; 5813 : 				if(kPlayer.isAlive() && kPlayer.getTeam() == GetID())
+; 5865 : 				if(kPlayer.isAlive() && kPlayer.getTeam() == GetID())
 
 	cmp	BYTE PTR [edi+edx+2256], 0
 	lea	esi, DWORD PTR [edi+edx]
@@ -29422,8 +29642,8 @@ $LN455@setHasTech:
 	cmp	eax, DWORD PTR [ecx+4]
 	jne	SHORT $LN87@setHasTech
 
-; 5814 : 				{
-; 5815 : 					if(kPlayer.GetPlayerTechs()->IsResearchingTech(eIndex))
+; 5866 : 				{
+; 5867 : 					if(kPlayer.GetPlayerTechs()->IsResearchingTech(eIndex))
 
 	mov	edx, DWORD PTR _eIndex$[esp+776]
 	push	edx
@@ -29434,8 +29654,8 @@ $LN455@setHasTech:
 	test	al, al
 	je	SHORT $LN84@setHasTech
 
-; 5816 : 					{
-; 5817 : 						kPlayer.popResearch(eIndex);
+; 5868 : 					{
+; 5869 : 						kPlayer.popResearch(eIndex);
 
 	mov	eax, DWORD PTR _eIndex$[esp+776]
 	push	eax
@@ -29443,12 +29663,12 @@ $LN455@setHasTech:
 	call	?popResearch@CvPlayer@@QAEXW4TechTypes@@@Z ; CvPlayer::popResearch
 $LN84@setHasTech:
 
-; 5818 : 					}
-; 5819 : 
-; 5820 : 					// notify the player they now have the tech, if they want to make immediate changes
-; 5821 : 					//GET_PLAYER((PlayerTypes)iI).AI_nowHasTech(eIndex);
-; 5822 : 
-; 5823 : 					kPlayer.invalidateYieldRankCache();
+; 5870 : 					}
+; 5871 : 
+; 5872 : 					// notify the player they now have the tech, if they want to make immediate changes
+; 5873 : 					//GET_PLAYER((PlayerTypes)iI).AI_nowHasTech(eIndex);
+; 5874 : 
+; 5875 : 					kPlayer.invalidateYieldRankCache();
 
 	push	-1
 	mov	ecx, esi
@@ -29458,16 +29678,16 @@ $LN87@setHasTech:
 	cmp	edi, 4047104				; 003dc100H
 	jl	SHORT $LL88@setHasTech
 
-; 5824 : 				}
-; 5825 : 			}
-; 5826 : 
-; 5827 : 			if(bFirst)
+; 5876 : 				}
+; 5877 : 			}
+; 5878 : 
+; 5879 : 			if(bFirst)
 
 	cmp	BYTE PTR _bFirst$[esp+776], 0
 	je	$LN881@setHasTech
 
-; 5828 : 			{
-; 5829 : 				if(GC.getGame().countKnownTechNumTeams(eIndex) == 1)
+; 5880 : 			{
+; 5881 : 				if(GC.getGame().countKnownTechNumTeams(eIndex) == 1)
 
 	mov	ecx, DWORD PTR _eIndex$[esp+776]
 	push	ecx
@@ -29476,16 +29696,16 @@ $LN87@setHasTech:
 	cmp	eax, 1
 	jne	$LN881@setHasTech
 
-; 5830 : 				{
-; 5831 : 					if(pkTechInfo->GetFirstFreeUnitClass() != NO_UNITCLASS)
+; 5882 : 				{
+; 5883 : 					if(pkTechInfo->GetFirstFreeUnitClass() != NO_UNITCLASS)
 
 	mov	ecx, ebp
 	call	?GetFirstFreeUnitClass@CvTechEntry@@QBEHXZ ; CvTechEntry::GetFirstFreeUnitClass
 
-; 5832 : 					{
-; 5833 : 						bFirstResource = true;
-; 5834 : 
-; 5835 : 						eFreeUnit = ((UnitTypes)(GET_PLAYER(ePlayer).getCivilizationInfo().getCivilizationUnits(GC.getTechInfo(eIndex)->GetFirstFreeUnitClass())));
+; 5884 : 					{
+; 5885 : 						bFirstResource = true;
+; 5886 : 
+; 5887 : 						eFreeUnit = ((UnitTypes)(GET_PLAYER(ePlayer).getCivilizationInfo().getCivilizationUnits(GC.getTechInfo(eIndex)->GetFirstFreeUnitClass())));
 
 	mov	edi, DWORD PTR tv2663[esp+780]
 	cmp	eax, -1
@@ -29506,27 +29726,27 @@ $LN87@setHasTech:
 	call	?getCivilizationUnits@CvCivilizationInfo@@QBEHH@Z ; CvCivilizationInfo::getCivilizationUnits
 	mov	esi, eax
 
-; 5836 : 
-; 5837 : 						if(eFreeUnit != NULL)
+; 5888 : 
+; 5889 : 						if(eFreeUnit != NULL)
 
 	test	esi, esi
 	je	SHORT $LN79@setHasTech
 
-; 5838 : 						{
-; 5839 : 							pCapitalCity = GET_PLAYER(ePlayer).getCapitalCity();
+; 5890 : 						{
+; 5891 : 							pCapitalCity = GET_PLAYER(ePlayer).getCapitalCity();
 
 	mov	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	add	ecx, edi
 	call	?getCapitalCity@CvPlayer@@QAEPAVCvCity@@XZ ; CvPlayer::getCapitalCity
 
-; 5840 : 
-; 5841 : 							if(pCapitalCity != NULL)
+; 5892 : 
+; 5893 : 							if(pCapitalCity != NULL)
 
 	test	eax, eax
 	je	SHORT $LN79@setHasTech
 
-; 5842 : 							{
-; 5843 : 								pCapitalCity->GetCityCitizens()->DoSpawnGreatPerson(eFreeUnit, true, false);
+; 5894 : 							{
+; 5895 : 								pCapitalCity->GetCityCitizens()->DoSpawnGreatPerson(eFreeUnit, true, false);
 
 	push	0
 	push	1
@@ -29537,27 +29757,27 @@ $LN87@setHasTech:
 	call	?DoSpawnGreatPerson@CvCityCitizens@@QAEXW4UnitTypes@@_N1@Z ; CvCityCitizens::DoSpawnGreatPerson
 $LN79@setHasTech:
 
-; 5844 : 							}
-; 5845 : 						}
-; 5846 : 					}
-; 5847 : 
-; 5848 : 					if(pkTechInfo->GetFirstFreeTechs() > 0)
+; 5896 : 							}
+; 5897 : 						}
+; 5898 : 					}
+; 5899 : 
+; 5900 : 					if(pkTechInfo->GetFirstFreeTechs() > 0)
 
 	mov	ecx, ebp
 	call	?GetFirstFreeTechs@CvTechEntry@@QBEHXZ	; CvTechEntry::GetFirstFreeTechs
 	test	eax, eax
 	jle	$LN78@setHasTech
 
-; 5849 : 					{
-; 5850 : 						bFirstResource = true;
-; 5851 : 
-; 5852 : 						if(!isHuman())
+; 5901 : 					{
+; 5902 : 						bFirstResource = true;
+; 5903 : 
+; 5904 : 						if(!isHuman())
 
 	mov	ecx, DWORD PTR _this$[esp+780]
 	call	?isHuman@CvTeam@@QBE_NXZ		; CvTeam::isHuman
 
-; 5853 : 						{
-; 5854 : 							for(int iI = 0; iI < pkTechInfo->GetFirstFreeTechs(); iI++)
+; 5905 : 						{
+; 5906 : 							for(int iI = 0; iI < pkTechInfo->GetFirstFreeTechs(); iI++)
 
 	mov	ecx, ebp
 	test	al, al
@@ -29569,8 +29789,8 @@ $LN79@setHasTech:
 	npad	6
 $LL76@setHasTech:
 
-; 5855 : 							{
-; 5856 : 								GET_PLAYER(ePlayer).AI_chooseFreeTech();
+; 5907 : 							{
+; 5908 : 								GET_PLAYER(ePlayer).AI_chooseFreeTech();
 
 	mov	edx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	mov	eax, DWORD PTR [edi+edx]
@@ -29583,20 +29803,20 @@ $LL76@setHasTech:
 	cmp	esi, eax
 	jl	SHORT $LL76@setHasTech
 
-; 5857 : 							}
-; 5858 : 						}
-; 5859 : 						else
+; 5909 : 							}
+; 5910 : 						}
+; 5911 : 						else
 
 	jmp	SHORT $LN73@setHasTech
 $LN77@setHasTech:
 
-; 5860 : 						{
-; 5861 : 							strBuffer = GetLocalizedText("TXT_KEY_MISC_FIRST_TECH_CHOOSE_FREE", pkTechInfo->GetTextKey());
+; 5912 : 						{
+; 5913 : 							strBuffer = GetLocalizedText("TXT_KEY_MISC_FIRST_TECH_CHOOSE_FREE", pkTechInfo->GetTextKey());
 
 	call	?GetTextKey@CvBaseInfo@@QBEPBDXZ	; CvBaseInfo::GetTextKey
 	push	eax
-	lea	eax, DWORD PTR $T239560[esp+784]
-	push	OFFSET $SG226348
+	lea	eax, DWORD PTR $T239709[esp+784]
+	push	OFFSET $SG226866
 	push	eax
 	call	??$GetLocalizedText@PBD@@YA?AVCvString@@PBD0@Z ; GetLocalizedText<char const *>
 	add	esp, 12					; 0000000cH
@@ -29604,11 +29824,11 @@ $LN77@setHasTech:
 	lea	ecx, DWORD PTR _strBuffer$[esp+784]
 	mov	BYTE PTR __$EHRec$[esp+792], 8
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T239560[esp+780]
+	lea	ecx, DWORD PTR $T239709[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 0
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 5862 : 							GET_PLAYER(ePlayer).chooseTech(GC.getTechInfo(eIndex)->GetFirstFreeTechs(), strBuffer.GetCString());
+; 5914 : 							GET_PLAYER(ePlayer).chooseTech(GC.getTechInfo(eIndex)->GetFirstFreeTechs(), strBuffer.GetCString());
 
 	lea	ecx, DWORD PTR _strBuffer$[esp+780]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
@@ -29627,22 +29847,22 @@ $LN77@setHasTech:
 	call	?chooseTech@CvPlayer@@QAEXHPBDW4TechTypes@@@Z ; CvPlayer::chooseTech
 $LN73@setHasTech:
 
-; 5863 : 						}
-; 5864 : 
-; 5865 : 						for(int iI = 0; iI < MAX_PLAYERS; iI++)
+; 5915 : 						}
+; 5916 : 
+; 5917 : 						for(int iI = 0; iI < MAX_PLAYERS; iI++)
 
 	xor	ebp, ebp
 	xor	ebx, ebx
 	npad	9
 $LL72@setHasTech:
 
-; 5866 : 						{
-; 5867 : 							const PlayerTypes eLoopPlayer = static_cast<PlayerTypes>(iI);
-; 5868 : 							CvPlayerAI& kLoopPLayer = GET_PLAYER(eLoopPlayer);
+; 5918 : 						{
+; 5919 : 							const PlayerTypes eLoopPlayer = static_cast<PlayerTypes>(iI);
+; 5920 : 							CvPlayerAI& kLoopPLayer = GET_PLAYER(eLoopPlayer);
 
 	mov	eax, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 
-; 5869 : 							if(kLoopPLayer.isAlive() && GC.getGame().getActivePlayer())
+; 5921 : 							if(kLoopPLayer.isAlive() && GC.getGame().getActivePlayer())
 
 	cmp	BYTE PTR [ebx+eax+2256], 0
 	lea	esi, DWORD PTR [ebx+eax]
@@ -29652,8 +29872,8 @@ $LL72@setHasTech:
 	test	eax, eax
 	je	$LN71@setHasTech
 
-; 5870 : 							{
-; 5871 : 								if(isHasMet(kLoopPLayer.getTeam()))
+; 5922 : 							{
+; 5923 : 								if(isHasMet(kLoopPLayer.getTeam()))
 
 	mov	esi, DWORD PTR [esi+44]
 	cmp	esi, 63					; 0000003fH
@@ -29669,35 +29889,35 @@ $LN491@setHasTech:
 	cmp	BYTE PTR [eax+ecx+1848], 0
 	je	SHORT $LN68@setHasTech
 
-; 5872 : 								{
-; 5873 : 									strBuffer = GetLocalizedText("TXT_KEY_MISC_SOMEONE_FIRST_TO_TECH", GET_PLAYER(ePlayer).getNameKey(), pkTechInfo->GetTextKey());
+; 5924 : 								{
+; 5925 : 									strBuffer = GetLocalizedText("TXT_KEY_MISC_SOMEONE_FIRST_TO_TECH", GET_PLAYER(ePlayer).getNameKey(), pkTechInfo->GetTextKey());
 
 	mov	ecx, DWORD PTR _pkTechInfo$[esp+780]
 	call	?GetTextKey@CvBaseInfo@@QBEPBDXZ	; CvBaseInfo::GetTextKey
 	mov	edx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	lea	ecx, DWORD PTR [edi+edx]
-	mov	DWORD PTR $T239561[esp+780], eax
+	mov	DWORD PTR $T239710[esp+780], eax
 	call	?getNameKey@CvPlayer@@QBEPBDXZ		; CvPlayer::getNameKey
-	mov	DWORD PTR $T239562[esp+780], eax
-	lea	eax, DWORD PTR $T239561[esp+780]
+	mov	DWORD PTR $T239711[esp+780], eax
+	lea	eax, DWORD PTR $T239710[esp+780]
 	push	eax
-	lea	ecx, DWORD PTR $T239562[esp+784]
+	lea	ecx, DWORD PTR $T239711[esp+784]
 	push	ecx
-	lea	edx, DWORD PTR $T239563[esp+788]
-	push	OFFSET $SG226361
+	lea	edx, DWORD PTR $T239712[esp+788]
+	push	OFFSET $SG226879
 	push	edx
 	call	??$GetLocalizedText@PBDPBD@@YA?AVCvString@@PBDABQBD1@Z ; GetLocalizedText<char const *,char const *>
 	add	esp, 16					; 00000010H
 	mov	BYTE PTR __$EHRec$[esp+788], 9
 
-; 5874 : 								}
-; 5875 : 								else
+; 5926 : 								}
+; 5927 : 								else
 
 	jmp	SHORT $LN906@setHasTech
 $LN68@setHasTech:
 
-; 5876 : 								{
-; 5877 : 									strBuffer = GetLocalizedText("TXT_KEY_MISC_UNKNOWN_FIRST_TO_TECH", GC.getTechInfo(eIndex)->GetTextKey());
+; 5928 : 								{
+; 5929 : 									strBuffer = GetLocalizedText("TXT_KEY_MISC_UNKNOWN_FIRST_TO_TECH", GC.getTechInfo(eIndex)->GetTextKey());
 
 	mov	eax, DWORD PTR _eIndex$[esp+776]
 	push	eax
@@ -29706,8 +29926,8 @@ $LN68@setHasTech:
 	mov	ecx, eax
 	call	?GetTextKey@CvBaseInfo@@QBEPBDXZ	; CvBaseInfo::GetTextKey
 	push	eax
-	lea	ecx, DWORD PTR $T239564[esp+784]
-	push	OFFSET $SG226364
+	lea	ecx, DWORD PTR $T239713[esp+784]
+	push	OFFSET $SG226882
 	push	ecx
 	call	??$GetLocalizedText@PBD@@YA?AVCvString@@PBD0@Z ; GetLocalizedText<char const *>
 	add	esp, 12					; 0000000cH
@@ -29716,12 +29936,12 @@ $LN906@setHasTech:
 	push	eax
 	lea	ecx, DWORD PTR _strBuffer$[esp+784]
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T239564[esp+780]
+	lea	ecx, DWORD PTR $T239713[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 0
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 5878 : 								}
-; 5879 : 								DLLUI->AddMessage(0, eLoopPlayer, false, GC.getEVENT_MESSAGE_TIME(), strBuffer/*, "AS2D_FIRSTTOTECH", MESSAGE_TYPE_MAJOR_EVENT, NULL, (ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT")*/);
+; 5930 : 								}
+; 5931 : 								DLLUI->AddMessage(0, eLoopPlayer, false, GC.getEVENT_MESSAGE_TIME(), strBuffer/*, "AS2D_FIRSTTOTECH", MESSAGE_TYPE_MAJOR_EVENT, NULL, (ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT")*/);
 
 	mov	esi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
 	lea	ecx, DWORD PTR _strBuffer$[esp+780]
@@ -29750,10 +29970,10 @@ $LN71@setHasTech:
 	cmp	ebx, 4047104				; 003dc100H
 	jl	$LL72@setHasTech
 
-; 5880 : 							}
-; 5881 : 						}
-; 5882 : 
-; 5883 : 						strBuffer = GetLocalizedText("TXT_KEY_MISC_SOMEONE_FIRST_TO_TECH", GET_PLAYER(ePlayer).getName(), GC.getTechInfo(eIndex)->GetTextKey());
+; 5932 : 							}
+; 5933 : 						}
+; 5934 : 
+; 5935 : 						strBuffer = GetLocalizedText("TXT_KEY_MISC_SOMEONE_FIRST_TO_TECH", GET_PLAYER(ePlayer).getName(), GC.getTechInfo(eIndex)->GetTextKey());
 
 	mov	eax, DWORD PTR _eIndex$[esp+776]
 	push	eax
@@ -29763,15 +29983,15 @@ $LN71@setHasTech:
 	call	?GetTextKey@CvBaseInfo@@QBEPBDXZ	; CvBaseInfo::GetTextKey
 	mov	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	add	ecx, edi
-	mov	DWORD PTR $T239565[esp+780], eax
+	mov	DWORD PTR $T239714[esp+780], eax
 	call	?getName@CvPlayer@@QBEPBDXZ		; CvPlayer::getName
-	lea	edx, DWORD PTR $T239565[esp+780]
+	lea	edx, DWORD PTR $T239714[esp+780]
 	push	edx
-	mov	DWORD PTR $T239566[esp+784], eax
-	lea	eax, DWORD PTR $T239566[esp+784]
+	mov	DWORD PTR $T239715[esp+784], eax
+	lea	eax, DWORD PTR $T239715[esp+784]
 	push	eax
-	lea	ecx, DWORD PTR $T239567[esp+788]
-	push	OFFSET $SG226368
+	lea	ecx, DWORD PTR $T239716[esp+788]
+	push	OFFSET $SG226886
 	push	ecx
 	call	??$GetLocalizedText@PBDPBD@@YA?AVCvString@@PBDABQBD1@Z ; GetLocalizedText<char const *,char const *>
 	add	esp, 16					; 00000010H
@@ -29779,11 +29999,11 @@ $LN71@setHasTech:
 	lea	ecx, DWORD PTR _strBuffer$[esp+784]
 	mov	BYTE PTR __$EHRec$[esp+792], 11		; 0000000bH
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T239567[esp+780]
+	lea	ecx, DWORD PTR $T239716[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 0
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 5884 : 						GC.getGame().addReplayMessage(REPLAY_MESSAGE_MAJOR_EVENT, ePlayer, strBuffer, -1, -1);
+; 5936 : 						GC.getGame().addReplayMessage(REPLAY_MESSAGE_MAJOR_EVENT, ePlayer, strBuffer, -1, -1);
 
 	mov	eax, DWORD PTR _ePlayer$[esp+776]
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
@@ -29795,9 +30015,9 @@ $LN71@setHasTech:
 	push	0
 	call	?addReplayMessage@CvGame@@QAEXW4ReplayMessageTypes@@W4PlayerTypes@@ABVCvString@@HH@Z ; CvGame::addReplayMessage
 
-; 5885 : 					}
-; 5886 : 
-; 5887 : 					if(bFirstResource)
+; 5937 : 					}
+; 5938 : 
+; 5939 : 					if(bFirstResource)
 
 	jmp	SHORT $LN842@setHasTech
 $LN78@setHasTech:
@@ -29805,36 +30025,36 @@ $LN78@setHasTech:
 	je	SHORT $LN881@setHasTech
 $LN842@setHasTech:
 
-; 5888 : 					{
-; 5889 : 						for(int iI = 0; iI < MAX_PLAYERS; iI++)
+; 5940 : 					{
+; 5941 : 						for(int iI = 0; iI < MAX_PLAYERS; iI++)
 
 	mov	ebx, DWORD PTR _eIndex$[esp+776]
 	xor	edi, edi
 	npad	3
 $LL65@setHasTech:
 
-; 5890 : 						{
-; 5891 : 							const PlayerTypes eLoopPlayer = static_cast<PlayerTypes>(iI);
-; 5892 : 							CvPlayerAI& kPlayer = GET_PLAYER(eLoopPlayer);
+; 5942 : 						{
+; 5943 : 							const PlayerTypes eLoopPlayer = static_cast<PlayerTypes>(iI);
+; 5944 : 							CvPlayerAI& kPlayer = GET_PLAYER(eLoopPlayer);
 
 	mov	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 
-; 5893 : 							if(kPlayer.isAlive())
+; 5945 : 							if(kPlayer.isAlive())
 
 	cmp	BYTE PTR [edi+ecx+2256], 0
 	lea	esi, DWORD PTR [edi+ecx]
 	je	SHORT $LN64@setHasTech
 
-; 5894 : 							{
-; 5895 : 								if(!(kPlayer.isHuman()))
+; 5946 : 							{
+; 5947 : 								if(!(kPlayer.isHuman()))
 
 	mov	ecx, esi
 	call	?isHuman@CvPlayer@@QBE_NXZ		; CvPlayer::isHuman
 	test	al, al
 	jne	SHORT $LN64@setHasTech
 
-; 5896 : 								{
-; 5897 : 									if(kPlayer.GetPlayerTechs()->IsResearchingTech(eIndex))
+; 5948 : 								{
+; 5949 : 									if(kPlayer.GetPlayerTechs()->IsResearchingTech(eIndex))
 
 	push	ebx
 	mov	ecx, esi
@@ -29844,8 +30064,8 @@ $LL65@setHasTech:
 	test	al, al
 	je	SHORT $LN64@setHasTech
 
-; 5898 : 									{
-; 5899 : 										kPlayer.clearResearchQueue();
+; 5950 : 									{
+; 5951 : 										kPlayer.clearResearchQueue();
 
 	mov	ecx, esi
 	call	?clearResearchQueue@CvPlayer@@QAEXXZ	; CvPlayer::clearResearchQueue
@@ -29855,29 +30075,29 @@ $LN64@setHasTech:
 	jl	SHORT $LL65@setHasTech
 $LN881@setHasTech:
 
-; 5900 : 									}
-; 5901 : 								}
-; 5902 : 							}
-; 5903 : 						}
-; 5904 : 					}
-; 5905 : 				}
-; 5906 : 			}
-; 5907 : 
-; 5908 : 			if(bAnnounce)
+; 5952 : 									}
+; 5953 : 								}
+; 5954 : 							}
+; 5955 : 						}
+; 5956 : 					}
+; 5957 : 				}
+; 5958 : 			}
+; 5959 : 
+; 5960 : 			if(bAnnounce)
 
 	cmp	BYTE PTR _bAnnounce$[esp+776], 0
 	je	$LN44@setHasTech
 
-; 5909 : 			{
-; 5910 : 				if(GC.getGame().isFinalInitialized()/* && !(gDLL->GetWorldBuilderMode())*/)
+; 5961 : 			{
+; 5962 : 				if(GC.getGame().isFinalInitialized()/* && !(gDLL->GetWorldBuilderMode())*/)
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?isFinalInitialized@CvGame@@QBE_NXZ	; CvGame::isFinalInitialized
 	test	al, al
 	je	$LN44@setHasTech
 
-; 5911 : 				{
-; 5912 : 					announceTechToPlayers(eIndex);
+; 5963 : 				{
+; 5964 : 					announceTechToPlayers(eIndex);
 
 	mov	edx, DWORD PTR _eIndex$[esp+776]
 	mov	edi, DWORD PTR _this$[esp+780]
@@ -29887,34 +30107,34 @@ $LN881@setHasTech:
 	mov	ecx, edi
 	call	?announceTechToPlayers@CvTeam@@IAEXW4TechTypes@@_N@Z ; CvTeam::announceTechToPlayers
 
-; 5913 : 
-; 5914 : 					// Resources discovered in a player's territory
-; 5915 : #ifdef AUI_WARNING_FIXES
-; 5916 : 					for (uint iI = 0; iI < GC.getMap().numPlots(); iI++)
-; 5917 : #else
-; 5918 : 					for(int iI = 0; iI < GC.getMap().numPlots(); iI++)
+; 5965 : 
+; 5966 : 					// Resources discovered in a player's territory
+; 5967 : #ifdef AUI_WARNING_FIXES
+; 5968 : 					for (uint iI = 0; iI < GC.getMap().numPlots(); iI++)
+; 5969 : #else
+; 5970 : 					for(int iI = 0; iI < GC.getMap().numPlots(); iI++)
 
 	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+52
 	cmp	DWORD PTR [eax+4028], esi
-	mov	DWORD PTR _iI$226382[esp+780], esi
+	mov	DWORD PTR _iI$226900[esp+780], esi
 	jle	$LN871@setHasTech
 
-; 5911 : 				{
-; 5912 : 					announceTechToPlayers(eIndex);
+; 5963 : 				{
+; 5964 : 					announceTechToPlayers(eIndex);
 
 	mov	DWORD PTR tv3795[esp+780], esi
 	npad	10
 $LL893@setHasTech:
 
-; 5919 : #endif
-; 5920 : 					{
-; 5921 : 						CvPlot* pLoopPlot = GC.getMap().plotByIndexUnchecked(iI);
+; 5971 : #endif
+; 5972 : 					{
+; 5973 : 						CvPlot* pLoopPlot = GC.getMap().plotByIndexUnchecked(iI);
 
 	mov	ebp, DWORD PTR [eax+4068]
 	add	ebp, DWORD PTR tv3795[esp+780]
 
-; 5922 : 
-; 5923 : 						if(pLoopPlot->getTeam() == GetID() && pLoopPlot->getOwner() == GC.getGame().getActivePlayer())
+; 5974 : 
+; 5975 : 						if(pLoopPlot->getTeam() == GetID() && pLoopPlot->getOwner() == GC.getGame().getActivePlayer())
 
 	movsx	esi, BYTE PTR [ebp+4]
 	cmp	esi, -1
@@ -29935,22 +30155,22 @@ $LN542@setHasTech:
 	cmp	esi, eax
 	jne	$LN56@setHasTech
 
-; 5924 : 						{
-; 5925 : 							ResourceTypes eResource = pLoopPlot->getResourceType();
+; 5976 : 						{
+; 5977 : 							ResourceTypes eResource = pLoopPlot->getResourceType();
 
 	push	-1
 	mov	ecx, ebp
 	call	?getResourceType@CvPlot@@QBE?AW4ResourceTypes@@W4TeamTypes@@@Z ; CvPlot::getResourceType
 	mov	esi, eax
 
-; 5926 : 
-; 5927 : 							if(eResource != NO_RESOURCE)
+; 5978 : 
+; 5979 : 							if(eResource != NO_RESOURCE)
 
 	cmp	esi, -1
 	je	$LN56@setHasTech
 
-; 5928 : 							{
-; 5929 : 								if(GC.getResourceInfo(eResource)->getTechReveal() == eIndex && !isForceRevealedResource(eResource))
+; 5980 : 							{
+; 5981 : 								if(GC.getResourceInfo(eResource)->getTechReveal() == eIndex && !isForceRevealedResource(eResource))
 
 	push	esi
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
@@ -29971,8 +30191,8 @@ $LL573@setHasTech:
 	jne	SHORT $LL573@setHasTech
 $LN562@setHasTech:
 
-; 5930 : 								{
-; 5931 : 									pCity = GC.getMap().findCity(pLoopPlot->getX(), pLoopPlot->getY(), NO_PLAYER, GetID(), false);
+; 5982 : 								{
+; 5983 : 									pCity = GC.getMap().findCity(pLoopPlot->getX(), pLoopPlot->getY(), NO_PLAYER, GetID(), false);
 
 	mov	eax, DWORD PTR [edi+4]
 	movsx	ecx, WORD PTR [ebp+2]
@@ -29990,26 +30210,26 @@ $LN562@setHasTech:
 	call	?findCity@CvMap@@QAEPAVCvCity@@HHW4PlayerTypes@@W4TeamTypes@@_N21W4DirectionTypes@@PBV2@@Z ; CvMap::findCity
 	mov	ebx, eax
 
-; 5932 : 
-; 5933 : 									if(pCity != NULL)
+; 5984 : 
+; 5985 : 									if(pCity != NULL)
 
 	test	ebx, ebx
 	je	$LN56@setHasTech
 
-; 5934 : 									{
-; 5935 : 										CvResourceInfo* pResourceInfo = GC.getResourceInfo(eResource);
+; 5986 : 									{
+; 5987 : 										CvResourceInfo* pResourceInfo = GC.getResourceInfo(eResource);
 
 	push	esi
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getResourceInfo@CvGlobals@@QAEPAVCvResourceInfo@@W4ResourceTypes@@@Z ; CvGlobals::getResourceInfo
 
-; 5936 : 
-; 5937 : 										if(strcmp(pResourceInfo->GetType(), "RESOURCE_ARTIFACTS") == 0)
+; 5988 : 
+; 5989 : 										if(strcmp(pResourceInfo->GetType(), "RESOURCE_ARTIFACTS") == 0)
 
 	lea	edi, DWORD PTR [eax+176]
 	mov	ecx, edi
-	mov	DWORD PTR _pResourceInfo$226392[esp+780], eax
-	mov	esi, OFFSET $SG226394
+	mov	DWORD PTR _pResourceInfo$226910[esp+780], eax
+	mov	esi, OFFSET $SG226912
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 $LL856@setHasTech:
 	mov	cl, BYTE PTR [eax]
@@ -30034,14 +30254,14 @@ $LN859@setHasTech:
 	test	eax, eax
 	jne	SHORT $LN50@setHasTech
 
-; 5938 : 										{
-; 5939 : 											strBuffer = GetLocalizedText("TXT_KEY_MISC_DISCOVERED_ARTIFACTS_NEAR", pCity->getNameKey());
+; 5990 : 										{
+; 5991 : 											strBuffer = GetLocalizedText("TXT_KEY_MISC_DISCOVERED_ARTIFACTS_NEAR", pCity->getNameKey());
 
 	mov	ecx, ebx
 	call	?getNameKey@CvCity@@QBEPBDXZ		; CvCity::getNameKey
 	push	eax
-	lea	edx, DWORD PTR $T239568[esp+784]
-	push	OFFSET $SG226396
+	lea	edx, DWORD PTR $T239717[esp+784]
+	push	OFFSET $SG226914
 	push	edx
 	call	??$GetLocalizedText@PBD@@YA?AVCvString@@PBD0@Z ; GetLocalizedText<char const *>
 	add	esp, 12					; 0000000cH
@@ -30049,11 +30269,11 @@ $LN859@setHasTech:
 	jmp	$LN907@setHasTech
 $LN50@setHasTech:
 
-; 5940 : 										}
-; 5941 : 										else if(strcmp(pResourceInfo->GetType(), "RESOURCE_HIDDEN_ARTIFACTS") == 0)
+; 5992 : 										}
+; 5993 : 										else if(strcmp(pResourceInfo->GetType(), "RESOURCE_HIDDEN_ARTIFACTS") == 0)
 
 	mov	ecx, edi
-	mov	esi, OFFSET $SG226399
+	mov	esi, OFFSET $SG226917
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 $LL860@setHasTech:
 	mov	cl, BYTE PTR [eax]
@@ -30076,41 +30296,41 @@ $LN861@setHasTech:
 	sbb	eax, -1
 $LN863@setHasTech:
 
-; 5942 : 										{
-; 5943 : 											strBuffer = GetLocalizedText("TXT_KEY_MISC_DISCOVERED_HIDDEN_ARTIFACTS_NEAR", pCity->getNameKey());
+; 5994 : 										{
+; 5995 : 											strBuffer = GetLocalizedText("TXT_KEY_MISC_DISCOVERED_HIDDEN_ARTIFACTS_NEAR", pCity->getNameKey());
 
 	mov	ecx, ebx
 	test	eax, eax
 	jne	SHORT $LN48@setHasTech
 	call	?getNameKey@CvCity@@QBEPBDXZ		; CvCity::getNameKey
 	push	eax
-	lea	eax, DWORD PTR $T239569[esp+784]
-	push	OFFSET $SG226401
+	lea	eax, DWORD PTR $T239718[esp+784]
+	push	OFFSET $SG226919
 	push	eax
 	call	??$GetLocalizedText@PBD@@YA?AVCvString@@PBD0@Z ; GetLocalizedText<char const *>
 	add	esp, 12					; 0000000cH
 	mov	BYTE PTR __$EHRec$[esp+788], 13		; 0000000dH
 
-; 5944 : 										}
-; 5945 : 										else
+; 5996 : 										}
+; 5997 : 										else
 
 	jmp	SHORT $LN907@setHasTech
 $LN48@setHasTech:
 
-; 5946 : 										{
-; 5947 : 											strBuffer = GetLocalizedText("TXT_KEY_MISC_YOU_DISCOVERED_RESOURCE", pResourceInfo->GetTextKey(), pCity->getNameKey());
+; 5998 : 										{
+; 5999 : 											strBuffer = GetLocalizedText("TXT_KEY_MISC_YOU_DISCOVERED_RESOURCE", pResourceInfo->GetTextKey(), pCity->getNameKey());
 
 	call	?getNameKey@CvCity@@QBEPBDXZ		; CvCity::getNameKey
-	mov	ecx, DWORD PTR _pResourceInfo$226392[esp+780]
-	mov	DWORD PTR $T239570[esp+780], eax
+	mov	ecx, DWORD PTR _pResourceInfo$226910[esp+780]
+	mov	DWORD PTR $T239719[esp+780], eax
 	call	?GetTextKey@CvBaseInfo@@QBEPBDXZ	; CvBaseInfo::GetTextKey
-	lea	ecx, DWORD PTR $T239570[esp+780]
+	lea	ecx, DWORD PTR $T239719[esp+780]
 	push	ecx
-	lea	edx, DWORD PTR $T239571[esp+784]
+	lea	edx, DWORD PTR $T239720[esp+784]
 	push	edx
-	mov	DWORD PTR $T239571[esp+788], eax
-	lea	eax, DWORD PTR $T239572[esp+788]
-	push	OFFSET $SG226406
+	mov	DWORD PTR $T239720[esp+788], eax
+	lea	eax, DWORD PTR $T239721[esp+788]
+	push	OFFSET $SG226924
 	push	eax
 	call	??$GetLocalizedText@PBDPBD@@YA?AVCvString@@PBDABQBD1@Z ; GetLocalizedText<char const *,char const *>
 	add	esp, 16					; 00000010H
@@ -30119,13 +30339,13 @@ $LN907@setHasTech:
 	push	eax
 	lea	ecx, DWORD PTR _strBuffer$[esp+784]
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T239572[esp+780]
+	lea	ecx, DWORD PTR $T239721[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 0
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 5948 : 										}
-; 5949 : 
-; 5950 : 										DLLUI->AddPlotMessage(0, pLoopPlot->GetPlotIndex(), pLoopPlot->getOwner(), false, GC.getEVENT_MESSAGE_TIME(), strBuffer/*, "AS2D_DISCOVERRESOURCE", MESSAGE_TYPE_INFO, GC.getResourceInfo(eResource)->GetButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_WHITE"), pLoopPlot->getX(), pLoopPlot->getY(), true, true*/);
+; 6000 : 										}
+; 6001 : 
+; 6002 : 										DLLUI->AddPlotMessage(0, pLoopPlot->GetPlotIndex(), pLoopPlot->getOwner(), false, GC.getEVENT_MESSAGE_TIME(), strBuffer/*, "AS2D_DISCOVERRESOURCE", MESSAGE_TYPE_INFO, GC.getResourceInfo(eResource)->GetButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_WHITE"), pLoopPlot->getX(), pLoopPlot->getY(), true, true*/);
 
 	mov	edi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
 	lea	ecx, DWORD PTR _strBuffer$[esp+780]
@@ -30155,29 +30375,29 @@ $LN907@setHasTech:
 	call	eax
 	mov	edi, DWORD PTR _this$[esp+780]
 $LN56@setHasTech:
-	mov	ecx, DWORD PTR _iI$226382[esp+780]
+	mov	ecx, DWORD PTR _iI$226900[esp+780]
 	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+52
 	add	DWORD PTR tv3795[esp+780], 484		; 000001e4H
 	inc	ecx
 	cmp	ecx, DWORD PTR [eax+4028]
-	mov	DWORD PTR _iI$226382[esp+780], ecx
+	mov	DWORD PTR _iI$226900[esp+780], ecx
 	jl	$LL893@setHasTech
 $LN871@setHasTech:
 
-; 5951 : 									}
-; 5952 : 								}
-; 5953 : 							}
-; 5954 : 						}
-; 5955 : 					}
-; 5956 : 
-; 5957 : 					// Cities demand a Resource that's been newly revealed
-; 5958 : 					CvCity* pLoopCity;
-; 5959 : 					int iLoop;
-; 5960 : 					PlayerTypes eLoopPlayer;
-; 5961 : 					ResourceTypes eResourceDemanded;
-; 5962 : 
-; 5963 : 					// Check all players on this team
-; 5964 : 					for(int iPlayerLoop = 0; iPlayerLoop < MAX_MAJOR_CIVS; iPlayerLoop++)
+; 6003 : 									}
+; 6004 : 								}
+; 6005 : 							}
+; 6006 : 						}
+; 6007 : 					}
+; 6008 : 
+; 6009 : 					// Cities demand a Resource that's been newly revealed
+; 6010 : 					CvCity* pLoopCity;
+; 6011 : 					int iLoop;
+; 6012 : 					PlayerTypes eLoopPlayer;
+; 6013 : 					ResourceTypes eResourceDemanded;
+; 6014 : 
+; 6015 : 					// Check all players on this team
+; 6016 : 					for(int iPlayerLoop = 0; iPlayerLoop < MAX_MAJOR_CIVS; iPlayerLoop++)
 
 	xor	ebx, ebx
 	xor	ebp, ebp
@@ -30185,10 +30405,10 @@ $LN871@setHasTech:
 	npad	3
 $LL897@setHasTech:
 
-; 5965 : 					{
-; 5966 : 						eLoopPlayer = (PlayerTypes) iPlayerLoop;
-; 5967 : 
-; 5968 : 						if(GET_PLAYER(eLoopPlayer).getTeam() == GetID() && eLoopPlayer == GC.getGame().getActivePlayer())
+; 6017 : 					{
+; 6018 : 						eLoopPlayer = (PlayerTypes) iPlayerLoop;
+; 6019 : 
+; 6020 : 						if(GET_PLAYER(eLoopPlayer).getTeam() == GetID() && eLoopPlayer == GC.getGame().getActivePlayer())
 
 	mov	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	mov	eax, DWORD PTR [ecx+ebp+44]
@@ -30209,13 +30429,13 @@ $LN627@setHasTech:
 	cmp	ebx, eax
 	jne	$LN45@setHasTech
 
-; 5969 : 						{
-; 5970 : 							// Look at all Cities
-; 5971 : 							for(pLoopCity = GET_PLAYER(eLoopPlayer).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(eLoopPlayer).nextCity(&iLoop))
+; 6021 : 						{
+; 6022 : 							// Look at all Cities
+; 6023 : 							for(pLoopCity = GET_PLAYER(eLoopPlayer).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(eLoopPlayer).nextCity(&iLoop))
 
 	mov	eax, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	push	0
-	lea	edx, DWORD PTR _iLoop$226408[esp+784]
+	lea	edx, DWORD PTR _iLoop$226926[esp+784]
 	lea	ecx, DWORD PTR [eax+ebp]
 	push	edx
 	call	?firstCity@CvPlayer@@QAEPAVCvCity@@PAH_N@Z ; CvPlayer::firstCity
@@ -30225,23 +30445,23 @@ $LN627@setHasTech:
 	npad	2
 $LL42@setHasTech:
 
-; 5972 : 							{
-; 5973 : 								eResourceDemanded = pLoopCity->GetResourceDemanded();
+; 6024 : 							{
+; 6025 : 								eResourceDemanded = pLoopCity->GetResourceDemanded();
 
 	push	1
 	mov	ecx, edi
 	call	?GetResourceDemanded@CvCity@@QBE?AW4ResourceTypes@@_N@Z ; CvCity::GetResourceDemanded
 	mov	esi, eax
 
-; 5974 : 
-; 5975 : 								if(eResourceDemanded != NO_RESOURCE)
+; 6026 : 
+; 6027 : 								if(eResourceDemanded != NO_RESOURCE)
 
 	cmp	esi, -1
 	je	$LN41@setHasTech
 
-; 5976 : 								{
-; 5977 : 									// Resource being demanded is revealed by this Tech
-; 5978 : 									if(GC.getResourceInfo(eResourceDemanded)->getTechReveal() == eIndex)
+; 6028 : 								{
+; 6029 : 									// Resource being demanded is revealed by this Tech
+; 6030 : 									if(GC.getResourceInfo(eResourceDemanded)->getTechReveal() == eIndex)
 
 	push	esi
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
@@ -30251,24 +30471,24 @@ $LL42@setHasTech:
 	cmp	eax, DWORD PTR _eIndex$[esp+776]
 	jne	$LN41@setHasTech
 
-; 5979 : 									{
-; 5980 : 										strBuffer = GetLocalizedText("TXT_KEY_MISC_RESOURCE_DISCOVERED_CITY_DEMANDS", GC.getResourceInfo(eResourceDemanded)->GetTextKey(), pLoopCity->getNameKey());
+; 6031 : 									{
+; 6032 : 										strBuffer = GetLocalizedText("TXT_KEY_MISC_RESOURCE_DISCOVERED_CITY_DEMANDS", GC.getResourceInfo(eResourceDemanded)->GetTextKey(), pLoopCity->getNameKey());
 
 	mov	ecx, edi
 	call	?getNameKey@CvCity@@QBEPBDXZ		; CvCity::getNameKey
 	push	esi
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	mov	DWORD PTR $T239573[esp+784], eax
+	mov	DWORD PTR $T239722[esp+784], eax
 	call	?getResourceInfo@CvGlobals@@QAEPAVCvResourceInfo@@W4ResourceTypes@@@Z ; CvGlobals::getResourceInfo
 	mov	ecx, eax
 	call	?GetTextKey@CvBaseInfo@@QBEPBDXZ	; CvBaseInfo::GetTextKey
-	mov	DWORD PTR $T239574[esp+780], eax
-	lea	eax, DWORD PTR $T239573[esp+780]
+	mov	DWORD PTR $T239723[esp+780], eax
+	lea	eax, DWORD PTR $T239722[esp+780]
 	push	eax
-	lea	ecx, DWORD PTR $T239574[esp+784]
+	lea	ecx, DWORD PTR $T239723[esp+784]
 	push	ecx
-	lea	edx, DWORD PTR $T239575[esp+788]
-	push	OFFSET $SG226425
+	lea	edx, DWORD PTR $T239724[esp+788]
+	push	OFFSET $SG226943
 	push	edx
 	call	??$GetLocalizedText@PBDPBD@@YA?AVCvString@@PBDABQBD1@Z ; GetLocalizedText<char const *,char const *>
 	add	esp, 16					; 00000010H
@@ -30276,11 +30496,11 @@ $LL42@setHasTech:
 	lea	ecx, DWORD PTR _strBuffer$[esp+784]
 	mov	BYTE PTR __$EHRec$[esp+792], 15		; 0000000fH
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T239575[esp+780]
+	lea	ecx, DWORD PTR $T239724[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 0
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 5981 : 										DLLUI->AddCityMessage(0, pLoopCity->GetIDInfo(), eLoopPlayer, false, GC.getEVENT_MESSAGE_TIME(), strBuffer/*, "AS2D_DISCOVERRESOURCE", MESSAGE_TYPE_INFO, GC.getResourceInfo(eResourceDemanded)->GetButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_WHITE"), pLoopCity->getX(), pLoopCity->getY(), true, true*/);
+; 6033 : 										DLLUI->AddCityMessage(0, pLoopCity->GetIDInfo(), eLoopPlayer, false, GC.getEVENT_MESSAGE_TIME(), strBuffer/*, "AS2D_DISCOVERRESOURCE", MESSAGE_TYPE_INFO, GC.getResourceInfo(eResourceDemanded)->GetButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_WHITE"), pLoopCity->getX(), pLoopCity->getY(), true, true*/);
 
 	mov	ebp, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
 	lea	ecx, DWORD PTR _strBuffer$[esp+780]
@@ -30299,7 +30519,7 @@ $LL42@setHasTech:
 	push	eax
 	push	0
 	push	ebx
-	lea	ecx, DWORD PTR $T239576[esp+828]
+	lea	ecx, DWORD PTR $T239725[esp+828]
 	push	ecx
 	mov	ecx, edi
 	add	esi, 172				; 000000acH
@@ -30313,7 +30533,7 @@ $LL42@setHasTech:
 $LN41@setHasTech:
 	mov	eax, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	push	0
-	lea	edx, DWORD PTR _iLoop$226408[esp+784]
+	lea	edx, DWORD PTR _iLoop$226926[esp+784]
 	lea	ecx, DWORD PTR [eax+ebp]
 	push	edx
 	call	?nextCity@CvPlayer@@QAEPAVCvCity@@PAH_N@Z ; CvPlayer::nextCity
@@ -30322,20 +30542,20 @@ $LN41@setHasTech:
 	jne	$LL42@setHasTech
 $LN45@setHasTech:
 
-; 5951 : 									}
-; 5952 : 								}
-; 5953 : 							}
-; 5954 : 						}
-; 5955 : 					}
-; 5956 : 
-; 5957 : 					// Cities demand a Resource that's been newly revealed
-; 5958 : 					CvCity* pLoopCity;
-; 5959 : 					int iLoop;
-; 5960 : 					PlayerTypes eLoopPlayer;
-; 5961 : 					ResourceTypes eResourceDemanded;
-; 5962 : 
-; 5963 : 					// Check all players on this team
-; 5964 : 					for(int iPlayerLoop = 0; iPlayerLoop < MAX_MAJOR_CIVS; iPlayerLoop++)
+; 6003 : 									}
+; 6004 : 								}
+; 6005 : 							}
+; 6006 : 						}
+; 6007 : 					}
+; 6008 : 
+; 6009 : 					// Cities demand a Resource that's been newly revealed
+; 6010 : 					CvCity* pLoopCity;
+; 6011 : 					int iLoop;
+; 6012 : 					PlayerTypes eLoopPlayer;
+; 6013 : 					ResourceTypes eResourceDemanded;
+; 6014 : 
+; 6015 : 					// Check all players on this team
+; 6016 : 					for(int iPlayerLoop = 0; iPlayerLoop < MAX_MAJOR_CIVS; iPlayerLoop++)
 
 	add	ebp, 63236				; 0000f704H
 	inc	ebx
@@ -30344,15 +30564,15 @@ $LN45@setHasTech:
 	jl	$LL897@setHasTech
 $LN44@setHasTech:
 
-; 5982 : 									}
-; 5983 : 								}
-; 5984 : 							}
-; 5985 : 						}
-; 5986 : 					}
-; 5987 : 				}
-; 5988 : 			}
-; 5989 : 
-; 5990 : 			for(int iI = 0; iI < MAX_TEAMS; iI++)
+; 6034 : 									}
+; 6035 : 								}
+; 6036 : 							}
+; 6037 : 						}
+; 6038 : 					}
+; 6039 : 				}
+; 6040 : 			}
+; 6041 : 
+; 6042 : 			for(int iI = 0; iI < MAX_TEAMS; iI++)
 
 	mov	ebx, DWORD PTR _eIndex$[esp+776]
 	mov	ebp, DWORD PTR _this$[esp+780]
@@ -30361,26 +30581,26 @@ $LN44@setHasTech:
 	npad	11
 $LL898@setHasTech:
 
-; 5991 : 			{
-; 5992 : 				const TeamTypes eLoopTeam = static_cast<TeamTypes>(iI);
-; 5993 : 				CvTeam& kLoopTeam = GET_TEAM(eLoopTeam);
+; 6043 : 			{
+; 6044 : 				const TeamTypes eLoopTeam = static_cast<TeamTypes>(iI);
+; 6045 : 				CvTeam& kLoopTeam = GET_TEAM(eLoopTeam);
 
 	mov	eax, DWORD PTR ?m_aTeams@CvTeam@@1PAV1@A ; CvTeam::m_aTeams
 
-; 5994 : 				if(kLoopTeam.isAlive())
+; 6046 : 				if(kLoopTeam.isAlive())
 
 	cmp	DWORD PTR [esi+eax+12], 0
 	lea	ecx, DWORD PTR [esi+eax]
 	jle	SHORT $LN36@setHasTech
 
-; 5995 : 				{
-; 5996 : 					if(eLoopTeam != GetID())
+; 6047 : 				{
+; 6048 : 					if(eLoopTeam != GetID())
 
 	cmp	edi, DWORD PTR [ebp+4]
 	je	SHORT $LN36@setHasTech
 
-; 5997 : 					{
-; 5998 : 						kLoopTeam.updateTechShare(eIndex);
+; 6049 : 					{
+; 6050 : 						kLoopTeam.updateTechShare(eIndex);
 
 	push	ebx
 	call	?updateTechShare@CvTeam@@IAEXW4TechTypes@@@Z ; CvTeam::updateTechShare
@@ -30390,26 +30610,26 @@ $LN36@setHasTech:
 	cmp	esi, 190976				; 0002ea00H
 	jl	SHORT $LL898@setHasTech
 
-; 5999 : 					}
-; 6000 : 				}
-; 6001 : 			}
-; 6002 : 
-; 6003 : 			// Cities that are owed a culture building are granted a culture building
-; 6004 : 			CvCity* pLoopCity;
-; 6005 : 			int iLoop;
-; 6006 : 			PlayerTypes eLoopPlayer;
-; 6007 : 
-; 6008 : 			// Check all players on this team
-; 6009 : 			for(int iPlayerLoop = 0; iPlayerLoop < MAX_MAJOR_CIVS; iPlayerLoop++)
+; 6051 : 					}
+; 6052 : 				}
+; 6053 : 			}
+; 6054 : 
+; 6055 : 			// Cities that are owed a culture building are granted a culture building
+; 6056 : 			CvCity* pLoopCity;
+; 6057 : 			int iLoop;
+; 6058 : 			PlayerTypes eLoopPlayer;
+; 6059 : 
+; 6060 : 			// Check all players on this team
+; 6061 : 			for(int iPlayerLoop = 0; iPlayerLoop < MAX_MAJOR_CIVS; iPlayerLoop++)
 
 	xor	edi, edi
 	npad	5
 $LL899@setHasTech:
 
-; 6010 : 			{
-; 6011 : 				eLoopPlayer = (PlayerTypes) iPlayerLoop;
-; 6012 : 
-; 6013 : 				if(GET_PLAYER(eLoopPlayer).getTeam() == GetID())
+; 6062 : 			{
+; 6063 : 				eLoopPlayer = (PlayerTypes) iPlayerLoop;
+; 6064 : 
+; 6065 : 				if(GET_PLAYER(eLoopPlayer).getTeam() == GetID())
 
 	mov	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	mov	eax, DWORD PTR [ecx+edi+44]
@@ -30426,12 +30646,12 @@ $LN704@setHasTech:
 	cmp	eax, DWORD PTR [ebp+4]
 	jne	SHORT $LN31@setHasTech
 
-; 6014 : 				{
-; 6015 : 					// Look at all Cities
-; 6016 : 					for(pLoopCity = GET_PLAYER(eLoopPlayer).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(eLoopPlayer).nextCity(&iLoop))
+; 6066 : 				{
+; 6067 : 					// Look at all Cities
+; 6068 : 					for(pLoopCity = GET_PLAYER(eLoopPlayer).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(eLoopPlayer).nextCity(&iLoop))
 
 	push	0
-	lea	eax, DWORD PTR _iLoop$226437[esp+784]
+	lea	eax, DWORD PTR _iLoop$226955[esp+784]
 	push	eax
 	call	?firstCity@CvPlayer@@QAEPAVCvCity@@PAH_N@Z ; CvPlayer::firstCity
 	mov	esi, eax
@@ -30440,27 +30660,27 @@ $LN704@setHasTech:
 	npad	7
 $LL28@setHasTech:
 
-; 6017 : 					{
-; 6018 : 						if (pLoopCity->IsOwedCultureBuilding())
+; 6069 : 					{
+; 6070 : 						if (pLoopCity->IsOwedCultureBuilding())
 
 	mov	ecx, esi
 	call	?IsOwedCultureBuilding@CvCity@@QBE_NXZ	; CvCity::IsOwedCultureBuilding
 	test	al, al
 	je	SHORT $LN27@setHasTech
 
-; 6019 : 						{
-; 6020 : 							BuildingTypes eFreeCultureBuilding = pLoopCity->ChooseFreeCultureBuilding();
+; 6071 : 						{
+; 6072 : 							BuildingTypes eFreeCultureBuilding = pLoopCity->ChooseFreeCultureBuilding();
 
 	mov	ecx, esi
 	call	?ChooseFreeCultureBuilding@CvCity@@QBE?AW4BuildingTypes@@XZ ; CvCity::ChooseFreeCultureBuilding
 
-; 6021 : 							if (eFreeCultureBuilding != NO_BUILDING)
+; 6073 : 							if (eFreeCultureBuilding != NO_BUILDING)
 
 	cmp	eax, -1
 	je	SHORT $LN27@setHasTech
 
-; 6022 : 							{
-; 6023 : 								pLoopCity->GetCityBuildings()->SetNumFreeBuilding(eFreeCultureBuilding, 1);
+; 6074 : 							{
+; 6075 : 								pLoopCity->GetCityBuildings()->SetNumFreeBuilding(eFreeCultureBuilding, 1);
 
 	push	1
 	push	eax
@@ -30469,7 +30689,7 @@ $LL28@setHasTech:
 	mov	ecx, eax
 	call	?SetNumFreeBuilding@CvCityBuildings@@QAEXW4BuildingTypes@@H@Z ; CvCityBuildings::SetNumFreeBuilding
 
-; 6024 : 								pLoopCity->SetOwedCultureBuilding(false);
+; 6076 : 								pLoopCity->SetOwedCultureBuilding(false);
 
 	push	0
 	mov	ecx, esi
@@ -30477,7 +30697,7 @@ $LL28@setHasTech:
 $LN27@setHasTech:
 	mov	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	push	0
-	lea	edx, DWORD PTR _iLoop$226437[esp+784]
+	lea	edx, DWORD PTR _iLoop$226955[esp+784]
 	add	ecx, edi
 	push	edx
 	call	?nextCity@CvPlayer@@QAEPAVCvCity@@PAH_N@Z ; CvPlayer::nextCity
@@ -30486,53 +30706,53 @@ $LN27@setHasTech:
 	jne	SHORT $LL28@setHasTech
 $LN31@setHasTech:
 
-; 5999 : 					}
-; 6000 : 				}
-; 6001 : 			}
-; 6002 : 
-; 6003 : 			// Cities that are owed a culture building are granted a culture building
-; 6004 : 			CvCity* pLoopCity;
-; 6005 : 			int iLoop;
-; 6006 : 			PlayerTypes eLoopPlayer;
-; 6007 : 
-; 6008 : 			// Check all players on this team
-; 6009 : 			for(int iPlayerLoop = 0; iPlayerLoop < MAX_MAJOR_CIVS; iPlayerLoop++)
+; 6051 : 					}
+; 6052 : 				}
+; 6053 : 			}
+; 6054 : 
+; 6055 : 			// Cities that are owed a culture building are granted a culture building
+; 6056 : 			CvCity* pLoopCity;
+; 6057 : 			int iLoop;
+; 6058 : 			PlayerTypes eLoopPlayer;
+; 6059 : 
+; 6060 : 			// Check all players on this team
+; 6061 : 			for(int iPlayerLoop = 0; iPlayerLoop < MAX_MAJOR_CIVS; iPlayerLoop++)
 
 	add	edi, 63236				; 0000f704H
 	cmp	edi, 1391192				; 00153a58H
 	jl	$LL899@setHasTech
 $LN874@setHasTech:
 
-; 6025 : 							}
-; 6026 : 						}
-; 6027 : 					}
-; 6028 : 				}
-; 6029 : 			}
-; 6030 : 		}
-; 6031 : 
-; 6032 : 		if(bNewValue)
+; 6077 : 							}
+; 6078 : 						}
+; 6079 : 					}
+; 6080 : 				}
+; 6081 : 			}
+; 6082 : 		}
+; 6083 : 
+; 6084 : 		if(bNewValue)
 
 	cmp	BYTE PTR _bNewValue$[esp+776], 0
 	mov	esi, DWORD PTR tv2663[esp+780]
 	je	$LN889@setHasTech
 
-; 6033 : 		{
-; 6034 : 			if(bAnnounce)
+; 6085 : 		{
+; 6086 : 			if(bAnnounce)
 
 	cmp	BYTE PTR _bAnnounce$[esp+776], 0
 	je	$LN875@setHasTech
 
-; 6035 : 			{
-; 6036 : 				if(GC.getGame().isFinalInitialized())
+; 6087 : 			{
+; 6088 : 				if(GC.getGame().isFinalInitialized())
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?isFinalInitialized@CvGame@@QBE_NXZ	; CvGame::isFinalInitialized
 	test	al, al
 	je	$LN875@setHasTech
 
-; 6037 : 				{
-; 6038 : 					CvAssert(ePlayer != NO_PLAYER);
-; 6039 : 					if(GET_PLAYER(ePlayer).isHuman())
+; 6089 : 				{
+; 6090 : 					CvAssert(ePlayer != NO_PLAYER);
+; 6091 : 					if(GET_PLAYER(ePlayer).isHuman())
 
 	mov	eax, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	lea	ecx, DWORD PTR [esi+eax]
@@ -30540,8 +30760,8 @@ $LN874@setHasTech:
 	test	al, al
 	je	$LN875@setHasTech
 
-; 6040 : 					{
-; 6041 : 						if(GET_PLAYER(ePlayer).GetPlayerTechs()->IsResearch() && (GET_PLAYER(ePlayer).GetPlayerTechs()->GetCurrentResearch() == NO_TECH))
+; 6092 : 					{
+; 6093 : 						if(GET_PLAYER(ePlayer).GetPlayerTechs()->IsResearch() && (GET_PLAYER(ePlayer).GetPlayerTechs()->GetCurrentResearch() == NO_TECH))
 
 	mov	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	add	ecx, esi
@@ -30558,11 +30778,11 @@ $LN874@setHasTech:
 	cmp	eax, -1
 	jne	SHORT $LN875@setHasTech
 
-; 6042 : 						{
-; 6043 : 							strBuffer = GetLocalizedText("TXT_KEY_MISC_WHAT_TO_RESEARCH_NEXT");
+; 6094 : 						{
+; 6095 : 							strBuffer = GetLocalizedText("TXT_KEY_MISC_WHAT_TO_RESEARCH_NEXT");
 
-	lea	eax, DWORD PTR $T239577[esp+780]
-	push	OFFSET $SG226457
+	lea	eax, DWORD PTR $T239726[esp+780]
+	push	OFFSET $SG226975
 	push	eax
 	call	?GetLocalizedText@@YA?AVCvString@@PBD@Z	; GetLocalizedText
 	add	esp, 8
@@ -30570,11 +30790,11 @@ $LN874@setHasTech:
 	lea	ecx, DWORD PTR _strBuffer$[esp+784]
 	mov	BYTE PTR __$EHRec$[esp+792], 16		; 00000010H
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T239577[esp+780]
+	lea	ecx, DWORD PTR $T239726[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 0
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 6044 : 							GET_PLAYER(ePlayer).chooseTech(0, strBuffer, eIndex);
+; 6096 : 							GET_PLAYER(ePlayer).chooseTech(0, strBuffer, eIndex);
 
 	lea	ecx, DWORD PTR _strBuffer$[esp+780]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
@@ -30587,13 +30807,13 @@ $LN874@setHasTech:
 	call	?chooseTech@CvPlayer@@QAEXHPBDW4TechTypes@@@Z ; CvPlayer::chooseTech
 $LN875@setHasTech:
 
-; 6045 : 						}
-; 6046 : 					}
-; 6047 : 				}
-; 6048 : 			}
-; 6049 : 
-; 6050 : 			// espionage logic. Whenever someone gains a tech, reset the stealable techs for all other leaders
-; 6051 : 			if(!GET_PLAYER(ePlayer).isMinorCiv() && !GET_PLAYER(ePlayer).isBarbarian())
+; 6097 : 						}
+; 6098 : 					}
+; 6099 : 				}
+; 6100 : 			}
+; 6101 : 
+; 6102 : 			// espionage logic. Whenever someone gains a tech, reset the stealable techs for all other leaders
+; 6103 : 			if(!GET_PLAYER(ePlayer).isMinorCiv() && !GET_PLAYER(ePlayer).isBarbarian())
 
 	mov	eax, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	lea	ecx, DWORD PTR [esi+eax]
@@ -30606,44 +30826,44 @@ $LN875@setHasTech:
 	test	al, al
 	jne	SHORT $LN889@setHasTech
 
-; 6052 : 			{
-; 6053 : 				CvPlayerEspionage* pEspionage = GET_PLAYER(ePlayer).GetEspionage();
+; 6104 : 			{
+; 6105 : 				CvPlayerEspionage* pEspionage = GET_PLAYER(ePlayer).GetEspionage();
 
 	mov	edx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	lea	ecx, DWORD PTR [esi+edx]
 	call	?GetEspionage@CvPlayer@@QBEPAVCvPlayerEspionage@@XZ ; CvPlayer::GetEspionage
 	mov	edi, eax
 
-; 6054 : 				if(pEspionage)
+; 6106 : 				if(pEspionage)
 
 	test	edi, edi
 	je	SHORT $LN889@setHasTech
 
-; 6055 : 				{
-; 6056 : 					for(uint ui = 0; ui < MAX_MAJOR_CIVS; ui++)
+; 6107 : 				{
+; 6108 : 					for(uint ui = 0; ui < MAX_MAJOR_CIVS; ui++)
 
 	xor	ebp, ebp
 	xor	esi, esi
 	npad	1
 $LL16@setHasTech:
 
-; 6057 : 					{
-; 6058 : 						pEspionage->BuildStealableTechList((PlayerTypes)ui);
+; 6109 : 					{
+; 6110 : 						pEspionage->BuildStealableTechList((PlayerTypes)ui);
 
 	push	ebp
 	mov	ecx, edi
 	call	?BuildStealableTechList@CvPlayerEspionage@@QAEXW4PlayerTypes@@@Z ; CvPlayerEspionage::BuildStealableTechList
 
-; 6059 : 
-; 6060 : 						// if the player is out of techs to steal, set their number of stealable techs to zero
-; 6061 : 						if(pEspionage->m_aaPlayerStealableTechList[ui].size() == 0)
+; 6111 : 
+; 6112 : 						// if the player is out of techs to steal, set their number of stealable techs to zero
+; 6113 : 						if(pEspionage->m_aaPlayerStealableTechList[ui].size() == 0)
 
 	mov	eax, DWORD PTR [edi+264]
 	cmp	DWORD PTR [esi+eax+4], 0
 	jne	SHORT $LN15@setHasTech
 
-; 6062 : 						{
-; 6063 : 							pEspionage->m_aiNumTechsToStealList[ui] = 0;
+; 6114 : 						{
+; 6115 : 							pEspionage->m_aiNumTechsToStealList[ui] = 0;
 
 	mov	ecx, DWORD PTR [edi+720]
 	mov	DWORD PTR [ecx+ebp*4], 0
@@ -30654,14 +30874,14 @@ $LN15@setHasTech:
 	jb	SHORT $LL16@setHasTech
 $LN889@setHasTech:
 
-; 6064 : 						}
-; 6065 : 					}
-; 6066 : 				}
-; 6067 : 			}
-; 6068 : 		}
-; 6069 : 
-; 6070 : 		// Update Happiness for all players
-; 6071 : 		for(int iPlayerLoop = 0; iPlayerLoop < MAX_MAJOR_CIVS; iPlayerLoop++)
+; 6116 : 						}
+; 6117 : 					}
+; 6118 : 				}
+; 6119 : 			}
+; 6120 : 		}
+; 6121 : 
+; 6122 : 		// Update Happiness for all players
+; 6123 : 		for(int iPlayerLoop = 0; iPlayerLoop < MAX_MAJOR_CIVS; iPlayerLoop++)
 
 	mov	edi, DWORD PTR _this$[esp+780]
 	xor	ebx, ebx
@@ -30670,8 +30890,8 @@ $LN889@setHasTech:
 	npad	9
 $LL12@setHasTech:
 
-; 6072 : 		{
-; 6073 : 			if(GET_PLAYER((PlayerTypes)iPlayerLoop).isAlive() && GET_PLAYER((PlayerTypes) iPlayerLoop).getTeam() == GetID())
+; 6124 : 		{
+; 6125 : 			if(GET_PLAYER((PlayerTypes)iPlayerLoop).isAlive() && GET_PLAYER((PlayerTypes) iPlayerLoop).getTeam() == GetID())
 
 	mov	edx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	cmp	BYTE PTR [esi+edx+2256], 0
@@ -30690,40 +30910,40 @@ $LN756@setHasTech:
 	cmp	eax, DWORD PTR [edi+4]
 	jne	SHORT $LN11@setHasTech
 
-; 6074 : 			{
-; 6075 : 				GET_PLAYER((PlayerTypes) iPlayerLoop).DoUpdateHappiness();
+; 6126 : 			{
+; 6127 : 				GET_PLAYER((PlayerTypes) iPlayerLoop).DoUpdateHappiness();
 
 	call	?DoUpdateHappiness@CvPlayer@@QAEXXZ	; CvPlayer::DoUpdateHappiness
 $LN11@setHasTech:
 
-; 6064 : 						}
-; 6065 : 					}
-; 6066 : 				}
-; 6067 : 			}
-; 6068 : 		}
-; 6069 : 
-; 6070 : 		// Update Happiness for all players
-; 6071 : 		for(int iPlayerLoop = 0; iPlayerLoop < MAX_MAJOR_CIVS; iPlayerLoop++)
+; 6116 : 						}
+; 6117 : 					}
+; 6118 : 				}
+; 6119 : 			}
+; 6120 : 		}
+; 6121 : 
+; 6122 : 		// Update Happiness for all players
+; 6123 : 		for(int iPlayerLoop = 0; iPlayerLoop < MAX_MAJOR_CIVS; iPlayerLoop++)
 
 	add	esi, 63236				; 0000f704H
 	cmp	esi, 1391192				; 00153a58H
 	jl	SHORT $LL12@setHasTech
 
-; 6076 : #ifdef AUI_CITIZENS_MID_TURN_ASSIGN_RUNS_SELF_CONSISTENCY
-; 6077 : 				GET_PLAYER((PlayerTypes)iPlayerLoop).doSelfConsistencyCheckAllCities();
-; 6078 : #endif
-; 6079 : 			}
-; 6080 : 		}
-; 6081 : 
-; 6082 : 		if(GC.getGame().isFinalInitialized())
+; 6128 : #ifdef AUI_CITIZENS_MID_TURN_ASSIGN_RUNS_SELF_CONSISTENCY
+; 6129 : 				GET_PLAYER((PlayerTypes)iPlayerLoop).doSelfConsistencyCheckAllCities();
+; 6130 : #endif
+; 6131 : 			}
+; 6132 : 		}
+; 6133 : 
+; 6134 : 		if(GC.getGame().isFinalInitialized())
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?isFinalInitialized@CvGame@@QBE_NXZ	; CvGame::isFinalInitialized
 	test	al, al
 	je	$LN891@setHasTech
 
-; 6083 : 		{
-; 6084 : 			if(GetID() == GC.getGame().getActiveTeam())
+; 6135 : 		{
+; 6136 : 			if(GetID() == GC.getGame().getActiveTeam())
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	mov	esi, DWORD PTR [edi+4]
@@ -30731,8 +30951,8 @@ $LN11@setHasTech:
 	cmp	esi, eax
 	jne	SHORT $LN7@setHasTech
 
-; 6085 : 			{
-; 6086 : 				DLLUI->setDirty(MiscButtons_DIRTY_BIT, true);
+; 6137 : 			{
+; 6138 : 				DLLUI->setDirty(MiscButtons_DIRTY_BIT, true);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
 	mov	eax, DWORD PTR [ecx]
@@ -30741,7 +30961,7 @@ $LN11@setHasTech:
 	push	4
 	call	edx
 
-; 6087 : 				DLLUI->setDirty(SelectionButtons_DIRTY_BIT, true);
+; 6139 : 				DLLUI->setDirty(SelectionButtons_DIRTY_BIT, true);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
 	mov	eax, DWORD PTR [ecx]
@@ -30750,7 +30970,7 @@ $LN11@setHasTech:
 	push	6
 	call	edx
 
-; 6088 : 				DLLUI->setDirty(ResearchButtons_DIRTY_BIT, true);
+; 6140 : 				DLLUI->setDirty(ResearchButtons_DIRTY_BIT, true);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
 	mov	eax, DWORD PTR [ecx]
@@ -30760,24 +30980,24 @@ $LN11@setHasTech:
 	call	edx
 $LN7@setHasTech:
 
-; 6089 : 			}
-; 6090 : 
-; 6091 : 			if(eIndex != NO_TECH && bNewValue)
+; 6141 : 			}
+; 6142 : 
+; 6143 : 			if(eIndex != NO_TECH && bNewValue)
 
 	cmp	BYTE PTR _bNewValue$[esp+772], 0
 	je	$LN1@setHasTech
 
-; 6092 : 			{
-; 6093 : 				bool bDontShowRewardPopup = DLLUI->IsOptionNoRewardPopups();
+; 6144 : 			{
+; 6145 : 				bool bDontShowRewardPopup = DLLUI->IsOptionNoRewardPopups();
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
 	mov	eax, DWORD PTR [ecx]
 	mov	edx, DWORD PTR [eax+456]
 	call	edx
 
-; 6094 : 
-; 6095 : 				// Notification in MP games
-; 6096 : 				if(bDontShowRewardPopup || GC.getGame().isNetworkMultiPlayer())
+; 6146 : 
+; 6147 : 				// Notification in MP games
+; 6148 : 				if(bDontShowRewardPopup || GC.getGame().isNetworkMultiPlayer())
 
 	test	al, al
 	jne	$LN4@setHasTech
@@ -30786,8 +31006,8 @@ $LN7@setHasTech:
 	test	al, al
 	jne	$LN4@setHasTech
 
-; 6102 : 				// Popup in SP games
-; 6103 : 				else if(GetID() == GC.getGame().getActiveTeam())
+; 6154 : 				// Popup in SP games
+; 6155 : 				else if(GetID() == GC.getGame().getActiveTeam())
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	mov	esi, DWORD PTR [edi+4]
@@ -30795,52 +31015,52 @@ $LN7@setHasTech:
 	cmp	esi, eax
 	jne	$LN891@setHasTech
 
-; 6104 : 				{
-; 6105 : 					CvPopupInfo kPopup(BUTTONPOPUP_TECH_AWARD, GC.getGame().getActivePlayer(), 0, eIndex);
+; 6156 : 				{
+; 6157 : 					CvPopupInfo kPopup(BUTTONPOPUP_TECH_AWARD, GC.getGame().getActivePlayer(), 0, eIndex);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?getActivePlayer@CvGame@@QBE?AW4PlayerTypes@@XZ ; CvGame::getActivePlayer
 
-; 6106 : 					//kPopup.setText(localizedText.toUTF8());
-; 6107 : 					DLLUI->AddPopup(kPopup);
+; 6158 : 					//kPopup.setText(localizedText.toUTF8());
+; 6159 : 					DLLUI->AddPopup(kPopup);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
-	mov	DWORD PTR _kPopup$226488[esp+776], eax
+	mov	DWORD PTR _kPopup$227006[esp+776], eax
 	mov	eax, DWORD PTR _eIndex$[esp+772]
-	mov	DWORD PTR _kPopup$226488[esp+784], eax
-	mov	DWORD PTR _kPopup$226488[esp+780], ebx
-	mov	DWORD PTR _kPopup$226488[esp+788], ebx
-	mov	BYTE PTR _kPopup$226488[esp+792], 0
-	mov	BYTE PTR _kPopup$226488[esp+793], 0
-	mov	DWORD PTR _kPopup$226488[esp+796], 68	; 00000044H
-	mov	BYTE PTR _kPopup$226488[esp+800], 0
+	mov	DWORD PTR _kPopup$227006[esp+784], eax
+	mov	DWORD PTR _kPopup$227006[esp+780], ebx
+	mov	DWORD PTR _kPopup$227006[esp+788], ebx
+	mov	BYTE PTR _kPopup$227006[esp+792], 0
+	mov	BYTE PTR _kPopup$227006[esp+793], 0
+	mov	DWORD PTR _kPopup$227006[esp+796], 68	; 00000044H
+	mov	BYTE PTR _kPopup$227006[esp+800], 0
 	mov	edx, DWORD PTR [ecx]
 	mov	edx, DWORD PTR [edx+180]
-	lea	eax, DWORD PTR _kPopup$226488[esp+776]
+	lea	eax, DWORD PTR _kPopup$227006[esp+776]
 	push	eax
 	call	edx
 	jmp	$LN891@setHasTech
 $LN4@setHasTech:
 
-; 6097 : 				{
-; 6098 : 					Localization::String localizedText = Localization::Lookup("TXT_KEY_MISC_YOU_DISCOVERED_TECH");
+; 6149 : 				{
+; 6150 : 					Localization::String localizedText = Localization::Lookup("TXT_KEY_MISC_YOU_DISCOVERED_TECH");
 
-	lea	eax, DWORD PTR _localizedText$226481[esp+776]
-	push	OFFSET $SG226483
+	lea	eax, DWORD PTR _localizedText$226999[esp+776]
+	push	OFFSET $SG227001
 	push	eax
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
 
-; 6099 : 					localizedText << pkTechInfo->GetTextKey();
+; 6151 : 					localizedText << pkTechInfo->GetTextKey();
 
 	mov	ecx, DWORD PTR _pkTechInfo$[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 17		; 00000011H
 	call	?GetTextKey@CvBaseInfo@@QBEPBDXZ	; CvBaseInfo::GetTextKey
 	push	eax
-	lea	ecx, DWORD PTR _localizedText$226481[esp+780]
+	lea	ecx, DWORD PTR _localizedText$226999[esp+780]
 	call	DWORD PTR __imp_?PushArgument@String@Localization@@QAE_NPBD@Z
 
-; 6100 : 					AddNotification(NOTIFICATION_TECH_AWARD, localizedText.toUTF8(), localizedText.toUTF8(), -1, -1, 0, (int) eIndex);
+; 6152 : 					AddNotification(NOTIFICATION_TECH_AWARD, localizedText.toUTF8(), localizedText.toUTF8(), -1, -1, 0, (int) eIndex);
 
 	mov	ecx, DWORD PTR _eIndex$[esp+772]
 	mov	esi, DWORD PTR __imp_?toUTF8@String@Localization@@QAEPBDXZ
@@ -30848,34 +31068,34 @@ $LN4@setHasTech:
 	push	ebx
 	push	-1
 	push	-1
-	lea	ecx, DWORD PTR _localizedText$226481[esp+792]
+	lea	ecx, DWORD PTR _localizedText$226999[esp+792]
 	call	esi
 	push	eax
-	lea	ecx, DWORD PTR _localizedText$226481[esp+796]
+	lea	ecx, DWORD PTR _localizedText$226999[esp+796]
 	call	esi
 	push	eax
 	push	-33507383				; fe00b7c9H
 	mov	ecx, edi
 	call	?AddNotification@CvTeam@@QAEXW4NotificationTypes@@PBD1HHHH@Z ; CvTeam::AddNotification
 
-; 6101 : 				}
+; 6153 : 				}
 
-	lea	ecx, DWORD PTR _localizedText$226481[esp+776]
+	lea	ecx, DWORD PTR _localizedText$226999[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 $LN891@setHasTech:
 
-; 6108 : 				}
-; 6109 : 			}
-; 6110 : 		}
-; 6111 : 
-; 6112 : 		if(bNewValue)
+; 6160 : 				}
+; 6161 : 			}
+; 6162 : 		}
+; 6163 : 
+; 6164 : 		if(bNewValue)
 
 	cmp	BYTE PTR _bNewValue$[esp+772], 0
 	je	SHORT $LN1@setHasTech
 
-; 6113 : 		{
-; 6114 : 			gDLL->GameplayTechAcquired(GetID(), eIndex);
+; 6165 : 		{
+; 6166 : 			gDLL->GameplayTechAcquired(GetID(), eIndex);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8564
 	mov	eax, DWORD PTR [edi+4]
@@ -30887,9 +31107,9 @@ $LN891@setHasTech:
 	call	eax
 $LN1@setHasTech:
 
-; 6115 : 		}
-; 6116 : 	}
-; 6117 : }
+; 6167 : 		}
+; 6168 : 	}
+; 6169 : }
 
 	mov	DWORD PTR __$EHRec$[esp+784], -1
 $LN902@setHasTech:
@@ -30909,55 +31129,55 @@ __unwindfunclet$?setHasTech@CvTeam@@QAEXW4TechTypes@@_NW4PlayerTypes@@11@Z$0:
 	lea	ecx, DWORD PTR _strBuffer$[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?setHasTech@CvTeam@@QAEXW4TechTypes@@_NW4PlayerTypes@@11@Z$1:
-	lea	ecx, DWORD PTR $T239555[ebp]
+	lea	ecx, DWORD PTR $T239704[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?setHasTech@CvTeam@@QAEXW4TechTypes@@_NW4PlayerTypes@@11@Z$2:
-	lea	ecx, DWORD PTR _strSummary$226214[ebp]
+	lea	ecx, DWORD PTR _strSummary$226732[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?setHasTech@CvTeam@@QAEXW4TechTypes@@_NW4PlayerTypes@@11@Z$3:
-	lea	ecx, DWORD PTR _strSummary$226274[ebp]
+	lea	ecx, DWORD PTR _strSummary$226792[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?setHasTech@CvTeam@@QAEXW4TechTypes@@_NW4PlayerTypes@@11@Z$4:
-	lea	ecx, DWORD PTR $T239556[ebp]
+	lea	ecx, DWORD PTR $T239705[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?setHasTech@CvTeam@@QAEXW4TechTypes@@_NW4PlayerTypes@@11@Z$5:
-	lea	ecx, DWORD PTR $T239557[ebp]
+	lea	ecx, DWORD PTR $T239706[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?setHasTech@CvTeam@@QAEXW4TechTypes@@_NW4PlayerTypes@@11@Z$6:
-	lea	ecx, DWORD PTR $T239558[ebp]
+	lea	ecx, DWORD PTR $T239707[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?setHasTech@CvTeam@@QAEXW4TechTypes@@_NW4PlayerTypes@@11@Z$7:
-	lea	ecx, DWORD PTR $T239559[ebp]
+	lea	ecx, DWORD PTR $T239708[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?setHasTech@CvTeam@@QAEXW4TechTypes@@_NW4PlayerTypes@@11@Z$8:
-	lea	ecx, DWORD PTR $T239560[ebp]
+	lea	ecx, DWORD PTR $T239709[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?setHasTech@CvTeam@@QAEXW4TechTypes@@_NW4PlayerTypes@@11@Z$9:
-	lea	ecx, DWORD PTR $T239563[ebp]
+	lea	ecx, DWORD PTR $T239712[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?setHasTech@CvTeam@@QAEXW4TechTypes@@_NW4PlayerTypes@@11@Z$10:
-	lea	ecx, DWORD PTR $T239564[ebp]
+	lea	ecx, DWORD PTR $T239713[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?setHasTech@CvTeam@@QAEXW4TechTypes@@_NW4PlayerTypes@@11@Z$11:
-	lea	ecx, DWORD PTR $T239567[ebp]
+	lea	ecx, DWORD PTR $T239716[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?setHasTech@CvTeam@@QAEXW4TechTypes@@_NW4PlayerTypes@@11@Z$12:
-	lea	ecx, DWORD PTR $T239568[ebp]
+	lea	ecx, DWORD PTR $T239717[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?setHasTech@CvTeam@@QAEXW4TechTypes@@_NW4PlayerTypes@@11@Z$13:
-	lea	ecx, DWORD PTR $T239569[ebp]
+	lea	ecx, DWORD PTR $T239718[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?setHasTech@CvTeam@@QAEXW4TechTypes@@_NW4PlayerTypes@@11@Z$14:
-	lea	ecx, DWORD PTR $T239572[ebp]
+	lea	ecx, DWORD PTR $T239721[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?setHasTech@CvTeam@@QAEXW4TechTypes@@_NW4PlayerTypes@@11@Z$15:
-	lea	ecx, DWORD PTR $T239575[ebp]
+	lea	ecx, DWORD PTR $T239724[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?setHasTech@CvTeam@@QAEXW4TechTypes@@_NW4PlayerTypes@@11@Z$16:
-	lea	ecx, DWORD PTR $T239577[ebp]
+	lea	ecx, DWORD PTR $T239726[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?setHasTech@CvTeam@@QAEXW4TechTypes@@_NW4PlayerTypes@@11@Z$17:
-	lea	ecx, DWORD PTR _localizedText$226481[ebp]
+	lea	ecx, DWORD PTR _localizedText$226999[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __ehhandler$?setHasTech@CvTeam@@QAEXW4TechTypes@@_NW4PlayerTypes@@11@Z:
 	mov	eax, OFFSET __ehfuncinfo$?setHasTech@CvTeam@@QAEXW4TechTypes@@_NW4PlayerTypes@@11@Z
@@ -30969,21 +31189,21 @@ EXTRN	__imp_?max@?$numeric_limits@H@std@@SAHXZ:PROC
 ;	COMDAT ?updateTechShare@CvTeam@@IAEXW4TechTypes@@@Z
 _TEXT	SEGMENT
 _iBestShare$ = -12					; size = 4
-$T240918 = -8						; size = 4
+$T241067 = -8						; size = 4
 _this$ = -4						; size = 4
 _eTech$ = 8						; size = 4
 ?updateTechShare@CvTeam@@IAEXW4TechTypes@@@Z PROC	; CvTeam::updateTechShare, COMDAT
 ; _this$ = ecx
 
-; 6210 : {
+; 6262 : {
 
 	sub	esp, 12					; 0000000cH
 
-; 6211 : 	int iBestShare;
-; 6212 : 	int iCount;
-; 6213 : 	int iI;
-; 6214 : 
-; 6215 : 	if(GetTeamTechs()->HasTech(eTech))
+; 6263 : 	int iBestShare;
+; 6264 : 	int iCount;
+; 6265 : 	int iI;
+; 6266 : 
+; 6267 : 	if(GetTeamTechs()->HasTech(eTech))
 
 	mov	eax, DWORD PTR _eTech$[esp+8]
 	push	esi
@@ -30996,14 +31216,14 @@ _eTech$ = 8						; size = 4
 	jne	$LN1@updateTech
 	push	ebp
 
-; 6216 : 	{
-; 6217 : 		return;
-; 6218 : 	}
-; 6219 : 
-; 6220 : #ifdef AUI_FAST_COMP
-; 6221 : 	iBestShare = MAX_INT;
-; 6222 : #else
-; 6223 : 	iBestShare = numeric_limits<int>::max();
+; 6268 : 	{
+; 6269 : 		return;
+; 6270 : 	}
+; 6271 : 
+; 6272 : #ifdef AUI_FAST_COMP
+; 6273 : 	iBestShare = MAX_INT;
+; 6274 : #else
+; 6275 : 	iBestShare = numeric_limits<int>::max();
 
 	call	DWORD PTR __imp_?max@?$numeric_limits@H@std@@SAHXZ
 	mov	ebp, eax
@@ -31013,11 +31233,11 @@ _eTech$ = 8						; size = 4
 	npad	6
 $LL12@updateTech:
 
-; 6224 : #endif
-; 6225 : 
-; 6226 : 	for(iI = 0; iI < MAX_TEAMS; iI++)
-; 6227 : 	{
-; 6228 : 		if(isTechShare(iI))
+; 6276 : #endif
+; 6277 : 
+; 6278 : 	for(iI = 0; iI < MAX_TEAMS; iI++)
+; 6279 : 	{
+; 6280 : 		if(isTechShare(iI))
 
 	lea	ecx, DWORD PTR [eax-1]
 	cmp	ecx, 63					; 0000003fH
@@ -31025,15 +31245,15 @@ $LL12@updateTech:
 	cmp	DWORD PTR [edx-4], 0
 	jle	SHORT $LN11@updateTech
 
-; 6229 : 		{
-; 6230 : #ifdef AUI_FAST_COMP
-; 6231 : 			iBestShare = MIN(iBestShare, (iI + 1));
-; 6232 : #else
-; 6233 : 			iBestShare = std::min(iBestShare, (iI + 1));
+; 6281 : 		{
+; 6282 : #ifdef AUI_FAST_COMP
+; 6283 : 			iBestShare = MIN(iBestShare, (iI + 1));
+; 6284 : #else
+; 6285 : 			iBestShare = std::min(iBestShare, (iI + 1));
 
 	cmp	eax, ebp
-	mov	DWORD PTR $T240918[esp+20], eax
-	lea	ecx, DWORD PTR $T240918[esp+20]
+	mov	DWORD PTR $T241067[esp+20], eax
+	lea	ecx, DWORD PTR $T241067[esp+20]
 	jl	SHORT $LN29@updateTech
 	lea	ecx, DWORD PTR _iBestShare$[esp+20]
 $LN29@updateTech:
@@ -31041,11 +31261,11 @@ $LN29@updateTech:
 	mov	DWORD PTR _iBestShare$[esp+20], ebp
 $LN11@updateTech:
 
-; 6224 : #endif
-; 6225 : 
-; 6226 : 	for(iI = 0; iI < MAX_TEAMS; iI++)
-; 6227 : 	{
-; 6228 : 		if(isTechShare(iI))
+; 6276 : #endif
+; 6277 : 
+; 6278 : 	for(iI = 0; iI < MAX_TEAMS; iI++)
+; 6279 : 	{
+; 6280 : 		if(isTechShare(iI))
 
 	test	eax, eax
 	jl	SHORT $LN51@updateTech
@@ -31054,16 +31274,16 @@ $LN11@updateTech:
 	cmp	DWORD PTR [edx], 0
 	jle	SHORT $LN51@updateTech
 
-; 6229 : 		{
-; 6230 : #ifdef AUI_FAST_COMP
-; 6231 : 			iBestShare = MIN(iBestShare, (iI + 1));
-; 6232 : #else
-; 6233 : 			iBestShare = std::min(iBestShare, (iI + 1));
+; 6281 : 		{
+; 6282 : #ifdef AUI_FAST_COMP
+; 6283 : 			iBestShare = MIN(iBestShare, (iI + 1));
+; 6284 : #else
+; 6285 : 			iBestShare = std::min(iBestShare, (iI + 1));
 
 	lea	ecx, DWORD PTR [eax+1]
-	mov	DWORD PTR $T240918[esp+20], ecx
+	mov	DWORD PTR $T241067[esp+20], ecx
 	cmp	ecx, ebp
-	lea	ecx, DWORD PTR $T240918[esp+20]
+	lea	ecx, DWORD PTR $T241067[esp+20]
 	jl	SHORT $LN50@updateTech
 	lea	ecx, DWORD PTR _iBestShare$[esp+20]
 $LN50@updateTech:
@@ -31074,27 +31294,27 @@ $LN51@updateTech:
 	test	ecx, ecx
 	jl	SHORT $LN56@updateTech
 
-; 6224 : #endif
-; 6225 : 
-; 6226 : 	for(iI = 0; iI < MAX_TEAMS; iI++)
-; 6227 : 	{
-; 6228 : 		if(isTechShare(iI))
+; 6276 : #endif
+; 6277 : 
+; 6278 : 	for(iI = 0; iI < MAX_TEAMS; iI++)
+; 6279 : 	{
+; 6280 : 		if(isTechShare(iI))
 
 	cmp	ecx, 64					; 00000040H
 	jge	SHORT $LN56@updateTech
 	cmp	DWORD PTR [edx+4], 0
 	jle	SHORT $LN56@updateTech
 
-; 6229 : 		{
-; 6230 : #ifdef AUI_FAST_COMP
-; 6231 : 			iBestShare = MIN(iBestShare, (iI + 1));
-; 6232 : #else
-; 6233 : 			iBestShare = std::min(iBestShare, (iI + 1));
+; 6281 : 		{
+; 6282 : #ifdef AUI_FAST_COMP
+; 6283 : 			iBestShare = MIN(iBestShare, (iI + 1));
+; 6284 : #else
+; 6285 : 			iBestShare = std::min(iBestShare, (iI + 1));
 
 	lea	ecx, DWORD PTR [eax+2]
-	mov	DWORD PTR $T240918[esp+20], ecx
+	mov	DWORD PTR $T241067[esp+20], ecx
 	cmp	ecx, ebp
-	lea	ecx, DWORD PTR $T240918[esp+20]
+	lea	ecx, DWORD PTR $T241067[esp+20]
 	jl	SHORT $LN55@updateTech
 	lea	ecx, DWORD PTR _iBestShare$[esp+20]
 $LN55@updateTech:
@@ -31105,27 +31325,27 @@ $LN56@updateTech:
 	test	ecx, ecx
 	jl	SHORT $LN61@updateTech
 
-; 6224 : #endif
-; 6225 : 
-; 6226 : 	for(iI = 0; iI < MAX_TEAMS; iI++)
-; 6227 : 	{
-; 6228 : 		if(isTechShare(iI))
+; 6276 : #endif
+; 6277 : 
+; 6278 : 	for(iI = 0; iI < MAX_TEAMS; iI++)
+; 6279 : 	{
+; 6280 : 		if(isTechShare(iI))
 
 	cmp	ecx, 64					; 00000040H
 	jge	SHORT $LN61@updateTech
 	cmp	DWORD PTR [edx+8], 0
 	jle	SHORT $LN61@updateTech
 
-; 6229 : 		{
-; 6230 : #ifdef AUI_FAST_COMP
-; 6231 : 			iBestShare = MIN(iBestShare, (iI + 1));
-; 6232 : #else
-; 6233 : 			iBestShare = std::min(iBestShare, (iI + 1));
+; 6281 : 		{
+; 6282 : #ifdef AUI_FAST_COMP
+; 6283 : 			iBestShare = MIN(iBestShare, (iI + 1));
+; 6284 : #else
+; 6285 : 			iBestShare = std::min(iBestShare, (iI + 1));
 
 	lea	ecx, DWORD PTR [eax+3]
-	mov	DWORD PTR $T240918[esp+20], ecx
+	mov	DWORD PTR $T241067[esp+20], ecx
 	cmp	ecx, ebp
-	lea	ecx, DWORD PTR $T240918[esp+20]
+	lea	ecx, DWORD PTR $T241067[esp+20]
 	jl	SHORT $LN60@updateTech
 	lea	ecx, DWORD PTR _iBestShare$[esp+20]
 $LN60@updateTech:
@@ -31138,38 +31358,38 @@ $LN61@updateTech:
 	cmp	ecx, 64					; 00000040H
 	jl	$LL12@updateTech
 
-; 6234 : #endif
-; 6235 : 		}
-; 6236 : 	}
-; 6237 : 
-; 6238 : 	if(iBestShare != INT_MAX)
+; 6286 : #endif
+; 6287 : 		}
+; 6288 : 	}
+; 6289 : 
+; 6290 : 	if(iBestShare != INT_MAX)
 
 	cmp	ebp, 2147483647				; 7fffffffH
 	je	SHORT $LN66@updateTech
 	push	ebx
 	push	edi
 
-; 6239 : 	{
-; 6240 : 		iCount = 0;
+; 6291 : 	{
+; 6292 : 		iCount = 0;
 
 	xor	ebx, ebx
 
-; 6241 : 
-; 6242 : 		for(iI = 0; iI < MAX_CIV_TEAMS; iI++)
+; 6293 : 
+; 6294 : 		for(iI = 0; iI < MAX_CIV_TEAMS; iI++)
 
 	xor	edi, edi
 	xor	esi, esi
 $LL65@updateTech:
 
-; 6243 : 		{
-; 6244 : 			if(GET_TEAM((TeamTypes)iI).isAlive())
+; 6295 : 		{
+; 6296 : 			if(GET_TEAM((TeamTypes)iI).isAlive())
 
 	mov	eax, DWORD PTR ?m_aTeams@CvTeam@@1PAV1@A ; CvTeam::m_aTeams
 	cmp	DWORD PTR [esi+eax+12], 0
 	jle	SHORT $LN6@updateTech
 
-; 6245 : 			{
-; 6246 : 				if(GET_TEAM((TeamTypes)iI).GetTeamTechs()->HasTech(eTech))
+; 6297 : 			{
+; 6298 : 				if(GET_TEAM((TeamTypes)iI).GetTeamTechs()->HasTech(eTech))
 
 	mov	edx, DWORD PTR _eTech$[esp+24]
 	mov	ecx, DWORD PTR [esi+eax+2980]
@@ -31178,22 +31398,22 @@ $LL65@updateTech:
 	test	al, al
 	je	SHORT $LN6@updateTech
 
-; 6247 : 				{
-; 6248 : 					if(isHasMet((TeamTypes)iI))
+; 6299 : 				{
+; 6300 : 					if(isHasMet((TeamTypes)iI))
 
 	mov	eax, DWORD PTR _this$[esp+28]
 	cmp	BYTE PTR [edi+eax+1848], 0
 	je	SHORT $LN6@updateTech
 
-; 6249 : 					{
-; 6250 : 						CvAssertMsg(iI != GetID(), "iI is not expected to be equal with GetID()");
-; 6251 : 						iCount++;
+; 6301 : 					{
+; 6302 : 						CvAssertMsg(iI != GetID(), "iI is not expected to be equal with GetID()");
+; 6303 : 						iCount++;
 
 	inc	ebx
 $LN6@updateTech:
 
-; 6241 : 
-; 6242 : 		for(iI = 0; iI < MAX_CIV_TEAMS; iI++)
+; 6293 : 
+; 6294 : 		for(iI = 0; iI < MAX_CIV_TEAMS; iI++)
 
 	add	esi, 2984				; 00000ba8H
 	inc	edi
@@ -31201,19 +31421,19 @@ $LN6@updateTech:
 	jl	SHORT $LL65@updateTech
 	pop	edi
 
-; 6252 : 					}
-; 6253 : 				}
-; 6254 : 			}
-; 6255 : 		}
-; 6256 : 
-; 6257 : 		if(iCount >= iBestShare)
+; 6304 : 					}
+; 6305 : 				}
+; 6306 : 			}
+; 6307 : 		}
+; 6308 : 
+; 6309 : 		if(iCount >= iBestShare)
 
 	cmp	ebx, ebp
 	pop	ebx
 	jl	SHORT $LN66@updateTech
 
-; 6258 : 		{
-; 6259 : 			setHasTech(eTech, true, NO_PLAYER, true, true);
+; 6310 : 		{
+; 6311 : 			setHasTech(eTech, true, NO_PLAYER, true, true);
 
 	mov	ecx, DWORD PTR _eTech$[esp+16]
 	push	1
@@ -31228,9 +31448,9 @@ $LN66@updateTech:
 $LN1@updateTech:
 	pop	esi
 
-; 6260 : 		}
-; 6261 : 	}
-; 6262 : }
+; 6312 : 		}
+; 6313 : 	}
+; 6314 : }
 
 	add	esp, 12					; 0000000cH
 	ret	4
@@ -31243,19 +31463,19 @@ _TEXT	SEGMENT
 ?updateTechShare@CvTeam@@IAEXXZ PROC			; CvTeam::updateTechShare, COMDAT
 ; _this$ = ecx
 
-; 6267 : {
+; 6319 : {
 
 	push	esi
 	push	edi
 	mov	edi, ecx
 
-; 6268 : #ifdef AUI_WARNING_FIXES
-; 6269 : 	uint iI;
-; 6270 : #else
-; 6271 : 	int iI;
-; 6272 : #endif
-; 6273 : 
-; 6274 : 	for(iI = 0; iI < GC.getNumTechInfos(); iI++)
+; 6320 : #ifdef AUI_WARNING_FIXES
+; 6321 : 	uint iI;
+; 6322 : #else
+; 6323 : 	int iI;
+; 6324 : #endif
+; 6325 : 
+; 6326 : 	for(iI = 0; iI < GC.getNumTechInfos(); iI++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	xor	esi, esi
@@ -31264,8 +31484,8 @@ _TEXT	SEGMENT
 	jle	SHORT $LN1@updateTech@2
 $LL3@updateTech@2:
 
-; 6275 : 	{
-; 6276 : 		updateTechShare((TechTypes)iI);
+; 6327 : 	{
+; 6328 : 		updateTechShare((TechTypes)iI);
 
 	push	esi
 	mov	ecx, edi
@@ -31279,8 +31499,8 @@ $LN1@updateTech@2:
 	pop	edi
 	pop	esi
 
-; 6277 : 	}
-; 6278 : }
+; 6329 : 	}
+; 6330 : }
 
 	ret	0
 ?updateTechShare@CvTeam@@IAEXXZ ENDP			; CvTeam::updateTechShare
@@ -31662,8 +31882,8 @@ PUBLIC	??$unchecked_uninitialized_fill_n@PAW4ResourceTypes@@IW41@V?$allocator@W4
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ??$unchecked_uninitialized_fill_n@PAW4ResourceTypes@@IW41@V?$allocator@W4ResourceTypes@@@std@@@stdext@@YAXPAW4ResourceTypes@@IABW41@AAV?$allocator@W4ResourceTypes@@@std@@@Z
 _TEXT	SEGMENT
-$T241284 = -4						; size = 1
-__Cat$241288 = -4					; size = 1
+$T241433 = -4						; size = 1
+__Cat$241437 = -4					; size = 1
 __First$ = 8						; size = 4
 __Count$ = 12						; size = 4
 __Val$ = 16						; size = 4
@@ -31678,9 +31898,9 @@ __Al$ = 20						; size = 4
 ; 942  : 		_STD _Ptr_cat(_First, _First), _STD _Range_checked_iterator_tag());
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T241284[esp+4], 0
-	mov	eax, DWORD PTR $T241284[esp+4]
-	mov	ecx, DWORD PTR __Cat$241288[esp+4]
+	mov	BYTE PTR $T241433[esp+4], 0
+	mov	eax, DWORD PTR $T241433[esp+4]
+	mov	ecx, DWORD PTR __Cat$241437[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Val$[esp+4]
 	push	ecx
@@ -31703,9 +31923,9 @@ PUBLIC	??$_Unguarded_partition@PAUWeightedElement@?$CvWeightedVector@W4TeamTypes
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\algorithm
 ;	COMDAT ??$_Unguarded_partition@PAUWeightedElement@?$CvWeightedVector@W4TeamTypes@@$0DP@$00@@@std@@YA?AU?$pair@PAUWeightedElement@?$CvWeightedVector@W4TeamTypes@@$0DP@$00@@PAU12@@0@PAUWeightedElement@?$CvWeightedVector@W4TeamTypes@@$0DP@$00@@0@Z
 _TEXT	SEGMENT
-__Tmp$241399 = -24					; size = 8
-__Tmp$241328 = -16					; size = 8
-__Tmp$241354 = -8					; size = 8
+__Tmp$241546 = -24					; size = 8
+__Tmp$241475 = -16					; size = 8
+__Tmp$241501 = -8					; size = 8
 ___$ReturnUdt$ = 8					; size = 4
 __First$ = 12						; size = 4
 __Last$ = 16						; size = 4
@@ -31832,12 +32052,12 @@ $LL21@Unguarded_:
 	je	SHORT $LN20@Unguarded_
 	mov	ebp, DWORD PTR [edx+4]
 	mov	edi, DWORD PTR [edx]
-	mov	DWORD PTR __Tmp$241328[esp+44], ebp
+	mov	DWORD PTR __Tmp$241475[esp+44], ebp
 	mov	ebp, DWORD PTR [eax]
 	mov	DWORD PTR [edx], ebp
 	mov	ebp, DWORD PTR [eax+4]
 	mov	DWORD PTR [edx+4], ebp
-	mov	edx, DWORD PTR __Tmp$241328[esp+44]
+	mov	edx, DWORD PTR __Tmp$241475[esp+44]
 	mov	DWORD PTR [eax], edi
 	mov	DWORD PTR [eax+4], edx
 $LN20@Unguarded_:
@@ -31874,13 +32094,13 @@ $LL14@Unguarded_:
 	je	SHORT $LN13@Unguarded_
 	mov	ebp, DWORD PTR [ecx+4]
 	mov	edi, DWORD PTR [ecx]
-	mov	DWORD PTR __Tmp$241354[esp+44], ebp
+	mov	DWORD PTR __Tmp$241501[esp+44], ebp
 	mov	ebp, DWORD PTR [edx]
 	mov	DWORD PTR [ecx], ebp
 	mov	ebp, DWORD PTR [edx+4]
 	mov	DWORD PTR [ecx+4], ebp
 	mov	DWORD PTR [edx], edi
-	mov	edi, DWORD PTR __Tmp$241354[esp+44]
+	mov	edi, DWORD PTR __Tmp$241501[esp+44]
 	mov	DWORD PTR [edx+4], edi
 $LN13@Unguarded_:
 	sub	ebx, 8
@@ -31930,16 +32150,16 @@ $LN64@Unguarded_:
 	cmp	edi, edx
 	je	$LL23@Unguarded_
 	mov	ebp, DWORD PTR [edi]
-	mov	DWORD PTR __Tmp$241399[esp+40], ebp
+	mov	DWORD PTR __Tmp$241546[esp+40], ebp
 	mov	ebp, DWORD PTR [edi+4]
-	mov	DWORD PTR __Tmp$241399[esp+44], ebp
+	mov	DWORD PTR __Tmp$241546[esp+44], ebp
 	mov	ebp, DWORD PTR [edx]
 	mov	DWORD PTR [edi], ebp
 	mov	ebp, DWORD PTR [edx+4]
 	mov	DWORD PTR [edi+4], ebp
-	mov	edi, DWORD PTR __Tmp$241399[esp+40]
+	mov	edi, DWORD PTR __Tmp$241546[esp+40]
 	mov	DWORD PTR [edx], edi
-	mov	edi, DWORD PTR __Tmp$241399[esp+44]
+	mov	edi, DWORD PTR __Tmp$241546[esp+44]
 	mov	DWORD PTR [edx+4], edi
 	jmp	$LL23@Unguarded_
 $LN6@Unguarded_:
@@ -32087,10 +32307,10 @@ PUBLIC	??$_Uninit_move@PAW4ResourceTypes@@PAW41@V?$allocator@W4ResourceTypes@@@s
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ??$_Uninit_move@PAW4ResourceTypes@@PAW41@V?$allocator@W4ResourceTypes@@@std@@U_Undefined_move_tag@3@@std@@YAPAW4ResourceTypes@@PAW41@00AAV?$allocator@W4ResourceTypes@@@0@U_Undefined_move_tag@0@U_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
-$T241509 = -4						; size = 1
+$T241659 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$241512 = 16					; size = 1
+__Cat$241662 = 16					; size = 1
 __Dest$ = 16						; size = 4
 __Al$ = 20						; size = 4
 ___formal$ = 24						; size = 1
@@ -32103,10 +32323,10 @@ ___formal$ = 28						; size = 1
 
 ; 207  : 	return (_STDEXT unchecked_uninitialized_copy(_First, _Last, _Dest, _Al));
 
-	mov	ecx, DWORD PTR __Cat$241512[esp]
+	mov	ecx, DWORD PTR __Cat$241662[esp]
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T241509[esp+4], 0
-	mov	eax, DWORD PTR $T241509[esp+4]
+	mov	BYTE PTR $T241659[esp+4], 0
+	mov	eax, DWORD PTR $T241659[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -32349,8 +32569,8 @@ PUBLIC	?DoBarbarianTech@CvTeam@@QAEXXZ			; CvTeam::DoBarbarianTech
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredll_expansion2\cvteam.cpp
 ;	COMDAT ?DoBarbarianTech@CvTeam@@QAEXXZ
 _TEXT	SEGMENT
-$T241807 = -8						; size = 4
-$T241808 = -4						; size = 4
+$T241956 = -8						; size = 4
+$T241957 = -4						; size = 4
 _iTeamsNeeded$ = -4					; size = 4
 ?DoBarbarianTech@CvTeam@@QAEXXZ PROC			; CvTeam::DoBarbarianTech, COMDAT
 ; _this$ = ecx
@@ -32425,12 +32645,12 @@ $LN15@DoBarbaria:
 	mov	eax, edx
 	shr	eax, 31					; 0000001fH
 	add	eax, edx
-	mov	DWORD PTR $T241807[esp+20], eax
+	mov	DWORD PTR $T241956[esp+20], eax
 	cmp	eax, 1
-	mov	DWORD PTR $T241808[esp+20], 1
-	lea	eax, DWORD PTR $T241807[esp+20]
+	mov	DWORD PTR $T241957[esp+20], 1
+	lea	eax, DWORD PTR $T241956[esp+20]
 	jg	SHORT $LN30@DoBarbaria
-	lea	eax, DWORD PTR $T241808[esp+20]
+	lea	eax, DWORD PTR $T241957[esp+20]
 $LN30@DoBarbaria:
 	mov	ecx, DWORD PTR [eax]
 	mov	DWORD PTR _iTeamsNeeded$[esp+20], ecx
@@ -32559,8 +32779,8 @@ PUBLIC	?DoMinorCivTech@CvTeam@@QAEXXZ			; CvTeam::DoMinorCivTech
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?DoMinorCivTech@CvTeam@@QAEXXZ
 _TEXT	SEGMENT
-$T241867 = -8						; size = 4
-$T241868 = -4						; size = 4
+$T242016 = -8						; size = 4
+$T242017 = -4						; size = 4
 _iTeamsNeeded$ = -4					; size = 4
 ?DoMinorCivTech@CvTeam@@QAEXXZ PROC			; CvTeam::DoMinorCivTech, COMDAT
 ; _this$ = ecx
@@ -32635,12 +32855,12 @@ $LN15@DoMinorCiv:
 	mov	eax, edx
 	shr	eax, 31					; 0000001fH
 	add	eax, edx
-	mov	DWORD PTR $T241867[esp+20], eax
+	mov	DWORD PTR $T242016[esp+20], eax
 	cmp	eax, 1
-	mov	DWORD PTR $T241868[esp+20], 1
-	lea	eax, DWORD PTR $T241867[esp+20]
+	mov	DWORD PTR $T242017[esp+20], 1
+	lea	eax, DWORD PTR $T242016[esp+20]
 	jg	SHORT $LN30@DoMinorCiv
-	lea	eax, DWORD PTR $T241868[esp+20]
+	lea	eax, DWORD PTR $T242017[esp+20]
 $LN30@DoMinorCiv:
 	mov	ecx, DWORD PTR [eax]
 	mov	DWORD PTR _iTeamsNeeded$[esp+20], ecx
@@ -32822,26 +33042,26 @@ __unwindtable$?DoNowAtWarOrPeace@CvTeam@@IAEXW4TeamTypes@@_N@Z DD 0ffffffffH
 xdata$x	ENDS
 ;	COMDAT ?DoNowAtWarOrPeace@CvTeam@@IAEXW4TeamTypes@@_N@Z
 _TEXT	SEGMENT
-tv2395 = -756						; size = 4
-_iMinorCivLoop$223702 = -752				; size = 4
+tv2427 = -756						; size = 4
+_iMinorCivLoop$224179 = -752				; size = 4
 _this$ = -748						; size = 4
-_iPlayerCivLoop$223548 = -744				; size = 4
-$T241936 = -740						; size = 28
-$T241933 = -740						; size = 28
-$T241932 = -740						; size = 28
-$T241929 = -740						; size = 28
-_strTheirEnemiesMessage$223738 = -712			; size = 28
-_strOurAlliesMessage$223730 = -684			; size = 28
-$T241938 = -656						; size = 28
-$T241935 = -656						; size = 28
-_strTemp$223722 = -628					; size = 80
-$T241934 = -548						; size = 80
-$T241930 = -548						; size = 80
-$T241927 = -548						; size = 80
-_veMinorAllies$223701 = -468				; size = 268
-$T241937 = -200						; size = 28
-_strOurAlliesSummary$223723 = -172			; size = 80
-_strTheirEnemiesSummary$223731 = -92			; size = 80
+_iPlayerCivLoop$224025 = -744				; size = 4
+$T242085 = -740						; size = 28
+$T242082 = -740						; size = 28
+$T242081 = -740						; size = 28
+$T242078 = -740						; size = 28
+_strTheirEnemiesMessage$224215 = -712			; size = 28
+_strOurAlliesMessage$224207 = -684			; size = 28
+$T242087 = -656						; size = 28
+$T242084 = -656						; size = 28
+_strTemp$224199 = -628					; size = 80
+$T242083 = -548						; size = 80
+$T242079 = -548						; size = 80
+$T242076 = -548						; size = 80
+_veMinorAllies$224178 = -468				; size = 268
+$T242086 = -200						; size = 28
+_strOurAlliesSummary$224200 = -172			; size = 80
+_strTheirEnemiesSummary$224208 = -92			; size = 80
 __$EHRec$ = -12						; size = 12
 _eTeam$ = 8						; size = 4
 _bWar$ = 12						; size = 1
@@ -32868,7 +33088,7 @@ _bWar$ = 12						; size = 1
 	call	?isMinorCiv@CvTeam@@QBE_NXZ		; CvTeam::isMinorCiv
 	mov	bl, BYTE PTR _bWar$[esp+764]
 	test	al, al
-	je	SHORT $LN752@DoNowAtWar
+	je	SHORT $LN760@DoNowAtWar
 
 ; 1493 : 	{
 ; 1494 : 		PlayerTypes eMinor;
@@ -32934,7 +33154,7 @@ $LN34@DoNowAtWar:
 	add	esi, 63236				; 0000f704H
 	cmp	esi, 3983868				; 003cc9fcH
 	jl	SHORT $LL35@DoNowAtWar
-$LN752@DoNowAtWar:
+$LN760@DoNowAtWar:
 
 ; 1507 : 				}
 ; 1508 : 			}
@@ -32956,11 +33176,11 @@ $LN752@DoNowAtWar:
 	xor	ebx, ebx
 	xor	esi, esi
 	push	ebp
-	mov	DWORD PTR _iPlayerCivLoop$223548[esp+772], ebx
-	mov	DWORD PTR tv2395[esp+772], esi
+	mov	DWORD PTR _iPlayerCivLoop$224025[esp+772], ebx
+	mov	DWORD PTR tv2427[esp+772], esi
 	jmp	SHORT $LN27@DoNowAtWar
 	npad	14
-$LL764@DoNowAtWar:
+$LL772@DoNowAtWar:
 	xor	ebx, ebx
 $LN27@DoNowAtWar:
 
@@ -33013,17 +33233,17 @@ $LN91@DoNowAtWar:
 ; 1537 : 
 ; 1538 : 			FStaticVector<PlayerTypes, MAX_CIV_PLAYERS, true, c_eCiv5GameplayDLL, 0> veMinorAllies;
 
-	lea	ecx, DWORD PTR _veMinorAllies$223701[esp+784]
-	mov	DWORD PTR _veMinorAllies$223701[esp+776], ebx
-	mov	DWORD PTR _veMinorAllies$223701[esp+780], 63 ; 0000003fH
-	mov	DWORD PTR _veMinorAllies$223701[esp+772], ecx
+	lea	ecx, DWORD PTR _veMinorAllies$224178[esp+784]
+	mov	DWORD PTR _veMinorAllies$224178[esp+776], ebx
+	mov	DWORD PTR _veMinorAllies$224178[esp+780], 63 ; 0000003fH
+	mov	DWORD PTR _veMinorAllies$224178[esp+772], ecx
 	mov	DWORD PTR __$EHRec$[esp+780], ebx
 
 ; 1539 : 			for(int iMinorCivLoop = MAX_MAJOR_CIVS; iMinorCivLoop < MAX_CIV_PLAYERS; iMinorCivLoop++)
 
-	mov	DWORD PTR _iMinorCivLoop$223702[esp+772], 22 ; 00000016H
+	mov	DWORD PTR _iMinorCivLoop$224179[esp+772], 22 ; 00000016H
 	mov	ebp, 1391192				; 00153a58H
-$LL761@DoNowAtWar:
+$LL769@DoNowAtWar:
 
 ; 1540 : 			{
 ; 1541 : 				eMinor = (PlayerTypes) iMinorCivLoop;
@@ -33040,7 +33260,7 @@ $LL761@DoNowAtWar:
 ; 1546 : 
 ; 1547 : 				if(GET_PLAYER(eMinor).GetMinorCivAI()->IsAllies(ePlayer))
 
-	mov	eax, DWORD PTR _iPlayerCivLoop$223548[esp+772]
+	mov	eax, DWORD PTR _iPlayerCivLoop$224025[esp+772]
 	push	eax
 	call	?GetMinorCivAI@CvPlayer@@QBEPAVCvMinorCivAI@@XZ ; CvPlayer::GetMinorCivAI
 	mov	ecx, eax
@@ -33083,7 +33303,7 @@ $LN124@DoNowAtWar:
 	xor	esi, esi
 	xor	edi, edi
 	npad	13
-$LL762@DoNowAtWar:
+$LL770@DoNowAtWar:
 
 ; 1561 : 						{
 ; 1562 : 							eTargetPlayer = (PlayerTypes) iTargetTeamCivLoop;
@@ -33134,7 +33354,7 @@ $LN15@DoNowAtWar:
 	add	edi, 63236				; 0000f704H
 	inc	esi
 	cmp	edi, 1391192				; 00153a58H
-	jl	SHORT $LL762@DoNowAtWar
+	jl	SHORT $LL770@DoNowAtWar
 
 ; 1569 : 								}
 ; 1570 : 							}
@@ -33172,31 +33392,31 @@ $LN156@DoNowAtWar:
 ; 1578 : 							// Add to vector for notification sent out
 ; 1579 : 							veMinorAllies.push_back(eMinor);
 
-	mov	eax, DWORD PTR _veMinorAllies$223701[esp+780]
-	mov	BYTE PTR _veMinorAllies$223701[esp+1036], 0
-	cmp	DWORD PTR _veMinorAllies$223701[esp+776], eax
-	jne	SHORT $LN626@DoNowAtWar
+	mov	eax, DWORD PTR _veMinorAllies$224178[esp+780]
+	mov	BYTE PTR _veMinorAllies$224178[esp+1036], 0
+	cmp	DWORD PTR _veMinorAllies$224178[esp+776], eax
+	jne	SHORT $LN634@DoNowAtWar
 	push	eax
-	lea	ecx, DWORD PTR _veMinorAllies$223701[esp+776]
+	lea	ecx, DWORD PTR _veMinorAllies$224178[esp+776]
 	call	?GrowSize@?$FStaticVector@W4PlayerTypes@@$0DP@$00$0BCJ@$0A@@@IAEXI@Z ; FStaticVector<enum PlayerTypes,63,1,297,0>::GrowSize
-$LN626@DoNowAtWar:
-	mov	eax, DWORD PTR _veMinorAllies$223701[esp+776]
-	mov	ecx, DWORD PTR _veMinorAllies$223701[esp+772]
+$LN634@DoNowAtWar:
+	mov	eax, DWORD PTR _veMinorAllies$224178[esp+776]
+	mov	ecx, DWORD PTR _veMinorAllies$224178[esp+772]
 	lea	eax, DWORD PTR [ecx+eax*4]
 	test	eax, eax
-	je	SHORT $LN629@DoNowAtWar
-	mov	edx, DWORD PTR _iMinorCivLoop$223702[esp+772]
+	je	SHORT $LN637@DoNowAtWar
+	mov	edx, DWORD PTR _iMinorCivLoop$224179[esp+772]
 	mov	DWORD PTR [eax], edx
-$LN629@DoNowAtWar:
-	inc	DWORD PTR _veMinorAllies$223701[esp+776]
+$LN637@DoNowAtWar:
+	inc	DWORD PTR _veMinorAllies$224178[esp+776]
 $LN21@DoNowAtWar:
 
 ; 1539 : 			for(int iMinorCivLoop = MAX_MAJOR_CIVS; iMinorCivLoop < MAX_CIV_PLAYERS; iMinorCivLoop++)
 
-	inc	DWORD PTR _iMinorCivLoop$223702[esp+772]
+	inc	DWORD PTR _iMinorCivLoop$224179[esp+772]
 	add	ebp, 63236				; 0000f704H
 	cmp	ebp, 3983868				; 003cc9fcH
-	jl	$LL761@DoNowAtWar
+	jl	$LL769@DoNowAtWar
 
 ; 1580 : 						}
 ; 1581 : 					
@@ -33214,8 +33434,8 @@ $LN21@DoNowAtWar:
 ; 1593 : 			// Notifications about minor allies that join the war against a major civ
 ; 1594 : 			if(!veMinorAllies.empty())
 
-	cmp	DWORD PTR _veMinorAllies$223701[esp+776], 0
-	je	$LN756@DoNowAtWar
+	cmp	DWORD PTR _veMinorAllies$224178[esp+776], 0
+	je	$LN764@DoNowAtWar
 
 ; 1595 : 			{
 ; 1596 : 				if(!GET_TEAM(eTeam).isMinorCiv())
@@ -33226,12 +33446,12 @@ $LN21@DoNowAtWar:
 	lea	ecx, DWORD PTR [eax+ebp]
 	call	?isMinorCiv@CvTeam@@QBE_NXZ		; CvTeam::isMinorCiv
 	test	al, al
-	jne	$LN756@DoNowAtWar
+	jne	$LN764@DoNowAtWar
 
 ; 1597 : 				{
 ; 1598 : 					Localization::String strTemp;
 
-	lea	ecx, DWORD PTR _strTemp$223722[esp+772]
+	lea	ecx, DWORD PTR _strTemp$224199[esp+772]
 	call	DWORD PTR __imp_??0String@Localization@@QAE@XZ
 
 ; 1599 : 
@@ -33239,34 +33459,34 @@ $LN21@DoNowAtWar:
 ; 1601 : 					Localization::String strOurAlliesSummary = Localization::Lookup("TXT_KEY_MISC_YOUR_MINOR_ALLIES_DECLARED_WAR_SUMMARY");
 
 	mov	edi, DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
-	lea	ecx, DWORD PTR _strOurAlliesSummary$223723[esp+772]
-	push	OFFSET $SG223725
+	lea	ecx, DWORD PTR _strOurAlliesSummary$224200[esp+772]
+	push	OFFSET $SG224202
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+788], 1
 	call	edi
 
 ; 1602 : 					strTemp = Localization::Lookup("TXT_KEY_MISC_YOUR_MINOR_ALLIES_DECLARED_WAR");
 
-	lea	edx, DWORD PTR $T241927[esp+780]
-	push	OFFSET $SG223727
+	lea	edx, DWORD PTR $T242076[esp+780]
+	push	OFFSET $SG224204
 	push	edx
 	mov	BYTE PTR __$EHRec$[esp+796], 2
 	call	edi
 	add	esp, 16					; 00000010H
 	mov	ebx, DWORD PTR __imp_??4String@Localization@@QAEAAV01@ABV01@@Z
 	push	eax
-	lea	ecx, DWORD PTR _strTemp$223722[esp+776]
+	lea	ecx, DWORD PTR _strTemp$224199[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 3
 	call	ebx
 	mov	esi, DWORD PTR __imp_??1String@Localization@@UAE@XZ
-	lea	ecx, DWORD PTR $T241927[esp+772]
+	lea	ecx, DWORD PTR $T242076[esp+772]
 	mov	BYTE PTR __$EHRec$[esp+780], 2
 	call	esi
 
 ; 1603 : 					strTemp << GET_TEAM(eTeam).getName().GetCString();
 
 	mov	eax, DWORD PTR ?m_aTeams@CvTeam@@1PAV1@A ; CvTeam::m_aTeams
-	lea	edx, DWORD PTR $T241929[esp+772]
+	lea	edx, DWORD PTR $T242078[esp+772]
 	lea	ecx, DWORD PTR [eax+ebp]
 	push	edx
 	call	?getName@CvTeam@@QBE?AVCvString@@XZ	; CvTeam::getName
@@ -33274,77 +33494,77 @@ $LN21@DoNowAtWar:
 	mov	BYTE PTR __$EHRec$[esp+780], 4
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
-	lea	ecx, DWORD PTR _strTemp$223722[esp+776]
+	lea	ecx, DWORD PTR _strTemp$224199[esp+776]
 	call	DWORD PTR __imp_?PushArgument@String@Localization@@QAE_NPBD@Z
-	lea	ecx, DWORD PTR $T241929[esp+772]
+	lea	ecx, DWORD PTR $T242078[esp+772]
 	mov	BYTE PTR __$EHRec$[esp+780], 2
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
 ; 1604 : 					CvString strOurAlliesMessage = strTemp.toUTF8();
 
 	mov	ebp, DWORD PTR __imp_?toUTF8@String@Localization@@QAEPBDXZ
-	lea	ecx, DWORD PTR _strTemp$223722[esp+772]
+	lea	ecx, DWORD PTR _strTemp$224199[esp+772]
 	call	ebp
 	test	eax, eax
-	jne	SHORT $LN651@DoNowAtWar
+	jne	SHORT $LN659@DoNowAtWar
 	mov	eax, OFFSET ??_C@_00CNPNBAHC@?$AA@
-$LN651@DoNowAtWar:
+$LN659@DoNowAtWar:
 	push	eax
-	lea	ecx, DWORD PTR _strOurAlliesMessage$223730[esp+776]
+	lea	ecx, DWORD PTR _strOurAlliesMessage$224207[esp+776]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 
 ; 1605 : 
 ; 1606 : 					// Notification for players on the other team
 ; 1607 : 					Localization::String strTheirEnemiesSummary = Localization::Lookup("TXT_KEY_MISC_MINOR_ALLIES_DECLARED_WAR_ON_YOU_SUMMARY");
 
-	lea	eax, DWORD PTR _strTheirEnemiesSummary$223731[esp+772]
-	push	OFFSET $SG223733
+	lea	eax, DWORD PTR _strTheirEnemiesSummary$224208[esp+772]
+	push	OFFSET $SG224210
 	push	eax
 	mov	BYTE PTR __$EHRec$[esp+788], 5
 	call	edi
 
 ; 1608 : 					strTemp = Localization::Lookup("TXT_KEY_MISC_MINOR_ALLIES_DECLARED_WAR_ON_YOU");
 
-	lea	ecx, DWORD PTR $T241930[esp+780]
-	push	OFFSET $SG223735
+	lea	ecx, DWORD PTR $T242079[esp+780]
+	push	OFFSET $SG224212
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+796], 6
 	call	edi
 	add	esp, 16					; 00000010H
 	push	eax
-	lea	ecx, DWORD PTR _strTemp$223722[esp+776]
+	lea	ecx, DWORD PTR _strTemp$224199[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 7
 	call	ebx
-	lea	ecx, DWORD PTR $T241930[esp+772]
+	lea	ecx, DWORD PTR $T242079[esp+772]
 	mov	BYTE PTR __$EHRec$[esp+780], 6
 	call	esi
 
 ; 1609 : 					strTemp << getName().GetCString();
 
 	mov	ecx, DWORD PTR _this$[esp+772]
-	lea	edx, DWORD PTR $T241932[esp+772]
+	lea	edx, DWORD PTR $T242081[esp+772]
 	push	edx
 	call	?getName@CvTeam@@QBE?AVCvString@@XZ	; CvTeam::getName
 	mov	ecx, eax
 	mov	BYTE PTR __$EHRec$[esp+780], 8
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
-	lea	ecx, DWORD PTR _strTemp$223722[esp+776]
+	lea	ecx, DWORD PTR _strTemp$224199[esp+776]
 	call	DWORD PTR __imp_?PushArgument@String@Localization@@QAE_NPBD@Z
-	lea	ecx, DWORD PTR $T241932[esp+772]
+	lea	ecx, DWORD PTR $T242081[esp+772]
 	mov	BYTE PTR __$EHRec$[esp+780], 6
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
 ; 1610 : 					CvString strTheirEnemiesMessage = strTemp.toUTF8();
 
-	lea	ecx, DWORD PTR _strTemp$223722[esp+772]
+	lea	ecx, DWORD PTR _strTemp$224199[esp+772]
 	call	ebp
 	test	eax, eax
-	jne	SHORT $LN663@DoNowAtWar
+	jne	SHORT $LN671@DoNowAtWar
 	mov	eax, OFFSET ??_C@_00CNPNBAHC@?$AA@
-$LN663@DoNowAtWar:
+$LN671@DoNowAtWar:
 	push	eax
-	lea	ecx, DWORD PTR _strTheirEnemiesMessage$223738[esp+776]
+	lea	ecx, DWORD PTR _strTheirEnemiesMessage$224215[esp+776]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 
 ; 1611 : 
@@ -33352,11 +33572,11 @@ $LN663@DoNowAtWar:
 
 	xor	esi, esi
 	mov	BYTE PTR __$EHRec$[esp+780], 9
-	cmp	DWORD PTR _veMinorAllies$223701[esp+776], esi
+	cmp	DWORD PTR _veMinorAllies$224178[esp+776], esi
 	jbe	$LN6@DoNowAtWar
 	jmp	SHORT $LN8@DoNowAtWar
 	npad	6
-$LL758@DoNowAtWar:
+$LL766@DoNowAtWar:
 	mov	edi, DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	mov	ebx, DWORD PTR __imp_??4String@Localization@@QAEAAV01@ABV01@@Z
 $LN8@DoNowAtWar:
@@ -33364,7 +33584,7 @@ $LN8@DoNowAtWar:
 ; 1613 : 					{
 ; 1614 : 						eMinor = veMinorAllies[iMinorCivLoop];
 
-	mov	eax, DWORD PTR _veMinorAllies$223701[esp+772]
+	mov	eax, DWORD PTR _veMinorAllies$224178[esp+772]
 	mov	eax, DWORD PTR [eax+esi*4]
 
 ; 1615 : 						strTemp = Localization::Lookup(GET_TEAM(GET_PLAYER(eMinor).getTeam()).getName().GetCString());
@@ -33373,17 +33593,17 @@ $LN8@DoNowAtWar:
 	add	eax, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	mov	eax, DWORD PTR [eax+44]
 	cmp	eax, 63					; 0000003fH
-	ja	SHORT $LN675@DoNowAtWar
+	ja	SHORT $LN683@DoNowAtWar
 	mov	ecx, DWORD PTR ?sr_TeamTypes@CvPreGame@@3ABV?$vector@W4TeamTypes@@V?$allocator@W4TeamTypes@@@std@@@std@@B ; CvPreGame::sr_TeamTypes
 	mov	edx, DWORD PTR [ecx+4]
 	mov	eax, DWORD PTR [edx+eax*4]
-	jmp	SHORT $LN676@DoNowAtWar
-$LN675@DoNowAtWar:
+	jmp	SHORT $LN684@DoNowAtWar
+$LN683@DoNowAtWar:
 	or	eax, -1
-$LN676@DoNowAtWar:
+$LN684@DoNowAtWar:
 	imul	eax, 2984				; 00000ba8H
 	add	eax, DWORD PTR ?m_aTeams@CvTeam@@1PAV1@A ; CvTeam::m_aTeams
-	lea	ecx, DWORD PTR $T241933[esp+772]
+	lea	ecx, DWORD PTR $T242082[esp+772]
 	push	ecx
 	mov	ecx, eax
 	call	?getName@CvTeam@@QBE?AVCvString@@XZ	; CvTeam::getName
@@ -33391,37 +33611,37 @@ $LN676@DoNowAtWar:
 	mov	BYTE PTR __$EHRec$[esp+780], 10		; 0000000aH
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
-	lea	edx, DWORD PTR $T241934[esp+776]
+	lea	edx, DWORD PTR $T242083[esp+776]
 	push	edx
 	call	edi
 	add	esp, 8
 	push	eax
-	lea	ecx, DWORD PTR _strTemp$223722[esp+776]
+	lea	ecx, DWORD PTR _strTemp$224199[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 11		; 0000000bH
 	call	ebx
-	lea	ecx, DWORD PTR $T241934[esp+772]
+	lea	ecx, DWORD PTR $T242083[esp+772]
 	mov	BYTE PTR __$EHRec$[esp+780], 10		; 0000000aH
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
-	lea	ecx, DWORD PTR $T241933[esp+772]
+	lea	ecx, DWORD PTR $T242082[esp+772]
 	mov	BYTE PTR __$EHRec$[esp+780], 9
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
 ; 1616 : 						strOurAlliesMessage = strOurAlliesMessage + "[NEWLINE]" + strTemp.toUTF8();
 
 	mov	ebx, DWORD PTR __imp_??$?HDU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@ABV10@PBD@Z
-	push	OFFSET $SG223747
-	lea	eax, DWORD PTR _strOurAlliesMessage$223730[esp+776]
+	push	OFFSET $SG224224
+	lea	eax, DWORD PTR _strOurAlliesMessage$224207[esp+776]
 	push	eax
-	lea	ecx, DWORD PTR $T241935[esp+780]
+	lea	ecx, DWORD PTR $T242084[esp+780]
 	push	ecx
 	call	ebx
 	add	esp, 12					; 0000000cH
 	mov	edi, eax
-	lea	ecx, DWORD PTR _strTemp$223722[esp+772]
+	lea	ecx, DWORD PTR _strTemp$224199[esp+772]
 	mov	BYTE PTR __$EHRec$[esp+780], 12		; 0000000cH
 	call	ebp
 	push	eax
-	lea	edx, DWORD PTR $T241936[esp+776]
+	lea	edx, DWORD PTR $T242085[esp+776]
 	push	edi
 	push	edx
 	call	ebx
@@ -33430,30 +33650,30 @@ $LN676@DoNowAtWar:
 	mov	BYTE PTR __$EHRec$[esp+780], 13		; 0000000dH
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
-	lea	ecx, DWORD PTR _strOurAlliesMessage$223730[esp+776]
+	lea	ecx, DWORD PTR _strOurAlliesMessage$224207[esp+776]
 	call	DWORD PTR __imp_?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBD@Z
-	lea	ecx, DWORD PTR $T241936[esp+772]
+	lea	ecx, DWORD PTR $T242085[esp+772]
 	mov	BYTE PTR __$EHRec$[esp+780], 12		; 0000000cH
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T241935[esp+772]
+	lea	ecx, DWORD PTR $T242084[esp+772]
 	mov	BYTE PTR __$EHRec$[esp+780], 9
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
 ; 1617 : 						strTheirEnemiesMessage = strTheirEnemiesMessage + "[NEWLINE]" + strTemp.toUTF8();
 
-	push	OFFSET $SG223750
-	lea	eax, DWORD PTR _strTheirEnemiesMessage$223738[esp+776]
+	push	OFFSET $SG224227
+	lea	eax, DWORD PTR _strTheirEnemiesMessage$224215[esp+776]
 	push	eax
-	lea	ecx, DWORD PTR $T241937[esp+780]
+	lea	ecx, DWORD PTR $T242086[esp+780]
 	push	ecx
 	call	ebx
 	add	esp, 12					; 0000000cH
 	mov	edi, eax
-	lea	ecx, DWORD PTR _strTemp$223722[esp+772]
+	lea	ecx, DWORD PTR _strTemp$224199[esp+772]
 	mov	BYTE PTR __$EHRec$[esp+780], 14		; 0000000eH
 	call	ebp
 	push	eax
-	lea	edx, DWORD PTR $T241938[esp+776]
+	lea	edx, DWORD PTR $T242087[esp+776]
 	push	edi
 	push	edx
 	call	ebx
@@ -33462,27 +33682,27 @@ $LN676@DoNowAtWar:
 	mov	BYTE PTR __$EHRec$[esp+780], 15		; 0000000fH
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
-	lea	ecx, DWORD PTR _strTheirEnemiesMessage$223738[esp+776]
+	lea	ecx, DWORD PTR _strTheirEnemiesMessage$224215[esp+776]
 	call	DWORD PTR __imp_?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBD@Z
-	lea	ecx, DWORD PTR $T241938[esp+772]
+	lea	ecx, DWORD PTR $T242087[esp+772]
 	mov	BYTE PTR __$EHRec$[esp+780], 14		; 0000000eH
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T241937[esp+772]
+	lea	ecx, DWORD PTR $T242086[esp+772]
 	mov	BYTE PTR __$EHRec$[esp+780], 9
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 	inc	esi
-	cmp	esi, DWORD PTR _veMinorAllies$223701[esp+776]
-	jb	$LL758@DoNowAtWar
+	cmp	esi, DWORD PTR _veMinorAllies$224178[esp+776]
+	jb	$LL766@DoNowAtWar
 $LN6@DoNowAtWar:
 
 ; 1618 : 					}
 ; 1619 : 
 ; 1620 : 					GET_PLAYER(ePlayer).GetNotifications()->Add(NOTIFICATION_WAR, strOurAlliesMessage, strOurAlliesSummary.toUTF8(), -1, -1, veMinorAllies.front(), eTeam);
 
-	mov	esi, DWORD PTR _veMinorAllies$223701[esp+772]
-	lea	ecx, DWORD PTR _strOurAlliesMessage$223730[esp+772]
+	mov	esi, DWORD PTR _veMinorAllies$224178[esp+772]
+	lea	ecx, DWORD PTR _strOurAlliesMessage$224207[esp+772]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
-	mov	ecx, DWORD PTR tv2395[esp+772]
+	mov	ecx, DWORD PTR tv2427[esp+772]
 	mov	edx, DWORD PTR _eTeam$[esp+768]
 	mov	edi, eax
 	mov	eax, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
@@ -33492,7 +33712,7 @@ $LN6@DoNowAtWar:
 	push	eax
 	push	-1
 	push	-1
-	lea	ecx, DWORD PTR _strOurAlliesSummary$223723[esp+788]
+	lea	ecx, DWORD PTR _strOurAlliesSummary$224200[esp+788]
 	call	ebp
 	push	eax
 	push	edi
@@ -33522,14 +33742,14 @@ $LL5@DoNowAtWar:
 
 	mov	eax, DWORD PTR [esi+ecx+44]
 	cmp	eax, 63					; 0000003fH
-	ja	SHORT $LN709@DoNowAtWar
+	ja	SHORT $LN717@DoNowAtWar
 	mov	edx, DWORD PTR ?sr_TeamTypes@CvPreGame@@3ABV?$vector@W4TeamTypes@@V?$allocator@W4TeamTypes@@@std@@@std@@B ; CvPreGame::sr_TeamTypes
 	mov	edx, DWORD PTR [edx+4]
 	mov	eax, DWORD PTR [edx+eax*4]
-	jmp	SHORT $LN710@DoNowAtWar
-$LN709@DoNowAtWar:
+	jmp	SHORT $LN718@DoNowAtWar
+$LN717@DoNowAtWar:
 	or	eax, -1
-$LN710@DoNowAtWar:
+$LN718@DoNowAtWar:
 	cmp	eax, DWORD PTR _eTeam$[esp+768]
 	jne	SHORT $LN4@DoNowAtWar
 
@@ -33537,8 +33757,8 @@ $LN710@DoNowAtWar:
 ; 1631 : 
 ; 1632 : 						GET_PLAYER(eOtherPlayer).GetNotifications()->Add(NOTIFICATION_WAR_ACTIVE_PLAYER, strTheirEnemiesMessage, strTheirEnemiesSummary.toUTF8(), -1, -1, veMinorAllies.front());
 
-	mov	edi, DWORD PTR _veMinorAllies$223701[esp+772]
-	lea	ecx, DWORD PTR _strTheirEnemiesMessage$223738[esp+772]
+	mov	edi, DWORD PTR _veMinorAllies$224178[esp+772]
+	lea	ecx, DWORD PTR _strTheirEnemiesMessage$224215[esp+772]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	mov	ecx, DWORD PTR [edi]
 	push	-1
@@ -33547,7 +33767,7 @@ $LN710@DoNowAtWar:
 	mov	eax, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	push	-1
 	push	-1
-	lea	ecx, DWORD PTR _strTheirEnemiesSummary$223731[esp+788]
+	lea	ecx, DWORD PTR _strTheirEnemiesSummary$224208[esp+788]
 	lea	ebx, DWORD PTR [esi+eax]
 	call	DWORD PTR __imp_?toUTF8@String@Localization@@QAEPBDXZ
 	push	eax
@@ -33567,44 +33787,44 @@ $LN4@DoNowAtWar:
 ; 1634 : 
 ; 1635 : 				}
 
-	lea	ecx, DWORD PTR _strTheirEnemiesMessage$223738[esp+772]
+	lea	ecx, DWORD PTR _strTheirEnemiesMessage$224215[esp+772]
 	mov	BYTE PTR __$EHRec$[esp+780], 6
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 	mov	esi, DWORD PTR __imp_??1String@Localization@@UAE@XZ
-	lea	ecx, DWORD PTR _strTheirEnemiesSummary$223731[esp+772]
+	lea	ecx, DWORD PTR _strTheirEnemiesSummary$224208[esp+772]
 	mov	BYTE PTR __$EHRec$[esp+780], 5
 	call	esi
-	lea	ecx, DWORD PTR _strOurAlliesMessage$223730[esp+772]
+	lea	ecx, DWORD PTR _strOurAlliesMessage$224207[esp+772]
 	mov	BYTE PTR __$EHRec$[esp+780], 2
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR _strOurAlliesSummary$223723[esp+772]
+	lea	ecx, DWORD PTR _strOurAlliesSummary$224200[esp+772]
 	mov	BYTE PTR __$EHRec$[esp+780], 1
 	call	esi
-	lea	ecx, DWORD PTR _strTemp$223722[esp+772]
+	lea	ecx, DWORD PTR _strTemp$224199[esp+772]
 	mov	BYTE PTR __$EHRec$[esp+780], 0
 	call	esi
-$LN756@DoNowAtWar:
+$LN764@DoNowAtWar:
 
 ; 1636 : 			}
 ; 1637 : 		}
 
-	mov	eax, DWORD PTR _veMinorAllies$223701[esp+772]
-	lea	edx, DWORD PTR _veMinorAllies$223701[esp+784]
+	mov	eax, DWORD PTR _veMinorAllies$224178[esp+772]
+	lea	edx, DWORD PTR _veMinorAllies$224178[esp+784]
 	mov	DWORD PTR __$EHRec$[esp+780], -1
 	cmp	eax, edx
-	je	SHORT $LN763@DoNowAtWar
+	je	SHORT $LN771@DoNowAtWar
 	push	eax
 	call	?FireFreeAlignedNoTracking@@YAXPAX@Z	; FireFreeAlignedNoTracking
 	add	esp, 4
-$LN763@DoNowAtWar:
-	mov	esi, DWORD PTR tv2395[esp+772]
+$LN771@DoNowAtWar:
+	mov	esi, DWORD PTR tv2427[esp+772]
 	mov	edi, DWORD PTR _this$[esp+772]
 $LN26@DoNowAtWar:
-	inc	DWORD PTR _iPlayerCivLoop$223548[esp+772]
+	inc	DWORD PTR _iPlayerCivLoop$224025[esp+772]
 	add	esi, 63236				; 0000f704H
 	cmp	esi, 1391192				; 00153a58H
-	mov	DWORD PTR tv2395[esp+772], esi
-	jl	$LL764@DoNowAtWar
+	mov	DWORD PTR tv2427[esp+772], esi
+	jl	$LL772@DoNowAtWar
 	pop	ebp
 $LN25@DoNowAtWar:
 
@@ -33622,52 +33842,52 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?DoNowAtWarOrPeace@CvTeam@@IAEXW4TeamTypes@@_N@Z$0:
-	lea	ecx, DWORD PTR _veMinorAllies$223701[ebp]
+	lea	ecx, DWORD PTR _veMinorAllies$224178[ebp]
 	jmp	??1?$FStaticVector@W4PlayerTypes@@$0DP@$00$0BCJ@$0A@@@QAE@XZ ; FStaticVector<enum PlayerTypes,63,1,297,0>::~FStaticVector<enum PlayerTypes,63,1,297,0>
 __unwindfunclet$?DoNowAtWarOrPeace@CvTeam@@IAEXW4TeamTypes@@_N@Z$1:
-	lea	ecx, DWORD PTR _strTemp$223722[ebp]
+	lea	ecx, DWORD PTR _strTemp$224199[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?DoNowAtWarOrPeace@CvTeam@@IAEXW4TeamTypes@@_N@Z$2:
-	lea	ecx, DWORD PTR _strOurAlliesSummary$223723[ebp]
+	lea	ecx, DWORD PTR _strOurAlliesSummary$224200[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?DoNowAtWarOrPeace@CvTeam@@IAEXW4TeamTypes@@_N@Z$3:
-	lea	ecx, DWORD PTR $T241927[ebp]
+	lea	ecx, DWORD PTR $T242076[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?DoNowAtWarOrPeace@CvTeam@@IAEXW4TeamTypes@@_N@Z$4:
-	lea	ecx, DWORD PTR $T241929[ebp]
+	lea	ecx, DWORD PTR $T242078[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?DoNowAtWarOrPeace@CvTeam@@IAEXW4TeamTypes@@_N@Z$5:
-	lea	ecx, DWORD PTR _strOurAlliesMessage$223730[ebp]
+	lea	ecx, DWORD PTR _strOurAlliesMessage$224207[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?DoNowAtWarOrPeace@CvTeam@@IAEXW4TeamTypes@@_N@Z$6:
-	lea	ecx, DWORD PTR _strTheirEnemiesSummary$223731[ebp]
+	lea	ecx, DWORD PTR _strTheirEnemiesSummary$224208[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?DoNowAtWarOrPeace@CvTeam@@IAEXW4TeamTypes@@_N@Z$7:
-	lea	ecx, DWORD PTR $T241930[ebp]
+	lea	ecx, DWORD PTR $T242079[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?DoNowAtWarOrPeace@CvTeam@@IAEXW4TeamTypes@@_N@Z$8:
-	lea	ecx, DWORD PTR $T241932[ebp]
+	lea	ecx, DWORD PTR $T242081[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?DoNowAtWarOrPeace@CvTeam@@IAEXW4TeamTypes@@_N@Z$9:
-	lea	ecx, DWORD PTR _strTheirEnemiesMessage$223738[ebp]
+	lea	ecx, DWORD PTR _strTheirEnemiesMessage$224215[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?DoNowAtWarOrPeace@CvTeam@@IAEXW4TeamTypes@@_N@Z$10:
-	lea	ecx, DWORD PTR $T241933[ebp]
+	lea	ecx, DWORD PTR $T242082[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?DoNowAtWarOrPeace@CvTeam@@IAEXW4TeamTypes@@_N@Z$11:
-	lea	ecx, DWORD PTR $T241934[ebp]
+	lea	ecx, DWORD PTR $T242083[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?DoNowAtWarOrPeace@CvTeam@@IAEXW4TeamTypes@@_N@Z$12:
-	lea	ecx, DWORD PTR $T241935[ebp]
+	lea	ecx, DWORD PTR $T242084[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?DoNowAtWarOrPeace@CvTeam@@IAEXW4TeamTypes@@_N@Z$13:
-	lea	ecx, DWORD PTR $T241936[ebp]
+	lea	ecx, DWORD PTR $T242085[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?DoNowAtWarOrPeace@CvTeam@@IAEXW4TeamTypes@@_N@Z$14:
-	lea	ecx, DWORD PTR $T241937[ebp]
+	lea	ecx, DWORD PTR $T242086[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?DoNowAtWarOrPeace@CvTeam@@IAEXW4TeamTypes@@_N@Z$15:
-	lea	ecx, DWORD PTR $T241938[ebp]
+	lea	ecx, DWORD PTR $T242087[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __ehhandler$?DoNowAtWarOrPeace@CvTeam@@IAEXW4TeamTypes@@_N@Z:
 	mov	eax, OFFSET __ehfuncinfo$?DoNowAtWarOrPeace@CvTeam@@IAEXW4TeamTypes@@_N@Z
@@ -33739,38 +33959,38 @@ __unwindtable$?DoMakePeace@CvTeam@@IAEXW4TeamTypes@@_N1@Z DD 0ffffffffH
 xdata$x	ENDS
 ;	COMDAT ?DoMakePeace@CvTeam@@IAEXW4TeamTypes@@_N1@Z
 _TEXT	SEGMENT
-_bPeaceBlocked$223792 = -737				; size = 1
-_bResult$223777 = -737					; size = 1
+_bPeaceBlocked$224269 = -737				; size = 1
+_bResult$224254 = -737					; size = 1
 tv2260 = -736						; size = 4
-_args$223776 = -736					; size = 4
+_args$224253 = -736					; size = 4
 _this$ = -732						; size = 4
-$T243347 = -728						; size = 4
-_iPlayerLoop$223787 = -728				; size = 4
-$T243349 = -724						; size = 4
-_iMinorLoop$223785 = -724				; size = 4
+$T243514 = -728						; size = 4
+_iPlayerLoop$224264 = -728				; size = 4
+$T243516 = -724						; size = 4
+_iMinorLoop$224262 = -724				; size = 4
 tv1517 = -720						; size = 4
-_iThirdPartyLoop$223789 = -716				; size = 4
-$T243351 = -712						; size = 28
-$T243346 = -712						; size = 28
-$T243341 = -712						; size = 28
-$T243338 = -712						; size = 28
-$T243334 = -712						; size = 28
-$T243350 = -684						; size = 28
-$T243344 = -684						; size = 28
-$T243335 = -684						; size = 28
-$T243332 = -684						; size = 28
-$T243331 = -684						; size = 28
-$T243348 = -656						; size = 28
-_strMessage$223829 = -656				; size = 28
-_locString$223854 = -628				; size = 80
+_iThirdPartyLoop$224266 = -716				; size = 4
+$T243518 = -712						; size = 28
+$T243513 = -712						; size = 28
+$T243508 = -712						; size = 28
+$T243505 = -712						; size = 28
+$T243501 = -712						; size = 28
+$T243517 = -684						; size = 28
+$T243511 = -684						; size = 28
+$T243502 = -684						; size = 28
+$T243499 = -684						; size = 28
+$T243498 = -684						; size = 28
+$T243515 = -656						; size = 28
+_strMessage$224306 = -656				; size = 28
+_locString$224331 = -628				; size = 80
 _strBuffer$ = -548					; size = 28
-$T243342 = -520						; size = 80
-$T243339 = -520						; size = 80
-$T243336 = -520						; size = 80
-$T243333 = -520						; size = 80
-_strTemp$223821 = -440					; size = 80
-_veMinorAllies$223799 = -360				; size = 268
-_strSummary$223824 = -92				; size = 80
+$T243509 = -520						; size = 80
+$T243506 = -520						; size = 80
+$T243503 = -520						; size = 80
+$T243500 = -520						; size = 80
+_strTemp$224298 = -440					; size = 80
+_veMinorAllies$224276 = -360				; size = 268
+_strSummary$224301 = -92				; size = 80
 __$EHRec$ = -12						; size = 12
 _eTeam$ = 8						; size = 4
 _bBumpUnits$ = 12					; size = 1
@@ -33859,13 +34079,13 @@ _bSuppressNotification$ = 16				; size = 1
 ; 1664 : 		{
 ; 1665 : 			CvLuaArgsHandle args;
 
-	lea	ecx, DWORD PTR _args$223776[esp+756]
+	lea	ecx, DWORD PTR _args$224253[esp+756]
 	call	??0CvLuaArgsHandle@@QAE@XZ		; CvLuaArgsHandle::CvLuaArgsHandle
 
 ; 1666 : 			args->Push(GetID());
 
 	mov	eax, DWORD PTR [edi+4]
-	mov	ecx, DWORD PTR _args$223776[esp+756]
+	mov	ecx, DWORD PTR _args$224253[esp+756]
 	mov	edx, DWORD PTR [ecx]
 	push	eax
 	mov	eax, DWORD PTR [edx+8]
@@ -33874,7 +34094,7 @@ _bSuppressNotification$ = 16				; size = 1
 
 ; 1667 : 			args->Push(eTeam);
 
-	mov	ecx, DWORD PTR _args$223776[esp+756]
+	mov	ecx, DWORD PTR _args$224253[esp+756]
 	mov	edx, DWORD PTR [ecx]
 	mov	eax, DWORD PTR [edx+8]
 	push	ebp
@@ -33884,18 +34104,18 @@ _bSuppressNotification$ = 16				; size = 1
 ; 1669 : 			bool bResult;
 ; 1670 : 			LuaSupport::CallHook(pkScriptSystem, "MakePeace", args.get(), bResult);
 
-	mov	edx, DWORD PTR _args$223776[esp+756]
-	lea	ecx, DWORD PTR _bResult$223777[esp+756]
+	mov	edx, DWORD PTR _args$224253[esp+756]
+	lea	ecx, DWORD PTR _bResult$224254[esp+756]
 	push	ecx
 	push	edx
-	push	OFFSET $SG223778
+	push	OFFSET $SG224255
 	push	esi
 	call	?CallHook@LuaSupport@@YA_NPAVICvEngineScriptSystem1@@PBDPAVICvEngineScriptSystemArgs1@@AA_N@Z ; LuaSupport::CallHook
 	add	esp, 16					; 00000010H
 
 ; 1671 : 		}
 
-	lea	ecx, DWORD PTR _args$223776[esp+756]
+	lea	ecx, DWORD PTR _args$224253[esp+756]
 	mov	BYTE PTR __$EHRec$[esp+764], 0
 	call	??1CvLuaArgsHandle@@QAE@XZ		; CvLuaArgsHandle::~CvLuaArgsHandle
 $LN52@DoMakePeac:
@@ -33991,7 +34211,7 @@ $LN51@DoMakePeac:
 
 	mov	esi, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	xor	eax, eax
-	mov	DWORD PTR _iPlayerLoop$223787[esp+756], eax
+	mov	DWORD PTR _iPlayerLoop$224264[esp+756], eax
 	mov	DWORD PTR tv2260[esp+756], eax
 	npad	5
 $LL48@DoMakePeac:
@@ -34019,17 +34239,17 @@ $LN152@DoMakePeac:
 ; 1717 : 
 ; 1718 : 					FStaticVector<PlayerTypes, MAX_CIV_PLAYERS, true, c_eCiv5GameplayDLL, 0> veMinorAllies;
 
-	lea	eax, DWORD PTR _veMinorAllies$223799[esp+768]
-	mov	DWORD PTR _veMinorAllies$223799[esp+760], 0
-	mov	DWORD PTR _veMinorAllies$223799[esp+764], 63 ; 0000003fH
-	mov	DWORD PTR _veMinorAllies$223799[esp+756], eax
+	lea	eax, DWORD PTR _veMinorAllies$224276[esp+768]
+	mov	DWORD PTR _veMinorAllies$224276[esp+760], 0
+	mov	DWORD PTR _veMinorAllies$224276[esp+764], 63 ; 0000003fH
+	mov	DWORD PTR _veMinorAllies$224276[esp+756], eax
 	mov	BYTE PTR __$EHRec$[esp+764], 2
 
 ; 1719 : 
 ; 1720 : 					// Loop through minors to see if they're allied with us
 ; 1721 : 					for(iMinorLoop = MAX_MAJOR_CIVS; iMinorLoop < MAX_CIV_PLAYERS; iMinorLoop++)
 
-	mov	DWORD PTR _iMinorLoop$223785[esp+756], 22 ; 00000016H
+	mov	DWORD PTR _iMinorLoop$224262[esp+756], 22 ; 00000016H
 	mov	ebx, 1391192				; 00153a58H
 	npad	4
 $LL508@DoMakePeac:
@@ -34057,15 +34277,15 @@ $LL508@DoMakePeac:
 ; 1732 : 							bPeaceBlocked = false;
 
 	mov	esi, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
-	cmp	eax, DWORD PTR _iPlayerLoop$223787[esp+756]
+	cmp	eax, DWORD PTR _iPlayerLoop$224264[esp+756]
 	jne	$LN43@DoMakePeac
-	mov	BYTE PTR _bPeaceBlocked$223792[esp+756], 0
+	mov	BYTE PTR _bPeaceBlocked$224269[esp+756], 0
 
 ; 1733 : 
 ; 1734 : 							// Now... see if there's another major allied to the minor we just made peace with, which would block OUR allied minor from making peace with him
 ; 1735 : 							for(iThirdPartyLoop = 0; iThirdPartyLoop < MAX_MAJOR_CIVS; iThirdPartyLoop++)
 
-	mov	DWORD PTR _iThirdPartyLoop$223789[esp+756], 0
+	mov	DWORD PTR _iThirdPartyLoop$224266[esp+756], 0
 	mov	ebp, 44					; 0000002cH
 	npad	1
 $LL39@DoMakePeac:
@@ -34121,7 +34341,7 @@ $LN181@DoMakePeac:
 ; 1753 : 										if(GET_TEAM(GET_PLAYER(eThirdParty).getTeam()).isAtWar(GET_PLAYER(eOurMinor).getTeam()))
 
 	mov	esi, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
-	cmp	eax, DWORD PTR _iThirdPartyLoop$223789[esp+756]
+	cmp	eax, DWORD PTR _iThirdPartyLoop$224266[esp+756]
 	jne	SHORT $LN35@DoMakePeac
 	mov	eax, DWORD PTR [ebx+esi+44]
 	mov	edx, DWORD PTR ?sr_TeamTypes@CvPreGame@@3ABV?$vector@W4TeamTypes@@V?$allocator@W4TeamTypes@@@std@@@std@@B ; CvPreGame::sr_TeamTypes
@@ -34167,14 +34387,14 @@ $LN489@DoMakePeac:
 ; 1754 : 										{
 ; 1755 : 											bPeaceBlocked = true;
 
-	mov	BYTE PTR _bPeaceBlocked$223792[esp+756], 1
+	mov	BYTE PTR _bPeaceBlocked$224269[esp+756], 1
 $LN38@DoMakePeac:
 
 ; 1733 : 
 ; 1734 : 							// Now... see if there's another major allied to the minor we just made peace with, which would block OUR allied minor from making peace with him
 ; 1735 : 							for(iThirdPartyLoop = 0; iThirdPartyLoop < MAX_MAJOR_CIVS; iThirdPartyLoop++)
 
-	inc	DWORD PTR _iThirdPartyLoop$223789[esp+756]
+	inc	DWORD PTR _iThirdPartyLoop$224266[esp+756]
 	add	ebp, 63236				; 0000f704H
 	cmp	ebp, 1391236				; 00153a84H
 	jl	$LL39@DoMakePeac
@@ -34188,7 +34408,7 @@ $LN38@DoMakePeac:
 ; 1762 : 							// Not at permanent war with this team
 ; 1763 : 							if(!bPeaceBlocked)
 
-	cmp	BYTE PTR _bPeaceBlocked$223792[esp+756], 0
+	cmp	BYTE PTR _bPeaceBlocked$224269[esp+756], 0
 	jne	$LN43@DoMakePeac
 
 ; 1764 : 							{
@@ -34226,23 +34446,23 @@ $LN230@DoMakePeac:
 
 ; 1768 : 									veMinorAllies.push_back(eOurMinor);
 
-	mov	eax, DWORD PTR _veMinorAllies$223799[esp+764]
-	mov	BYTE PTR _veMinorAllies$223799[esp+1020], 0
-	cmp	DWORD PTR _veMinorAllies$223799[esp+760], eax
+	mov	eax, DWORD PTR _veMinorAllies$224276[esp+764]
+	mov	BYTE PTR _veMinorAllies$224276[esp+1020], 0
+	cmp	DWORD PTR _veMinorAllies$224276[esp+760], eax
 	jne	SHORT $LN236@DoMakePeac
 	push	eax
-	lea	ecx, DWORD PTR _veMinorAllies$223799[esp+760]
+	lea	ecx, DWORD PTR _veMinorAllies$224276[esp+760]
 	call	?GrowSize@?$FStaticVector@W4PlayerTypes@@$0DP@$00$0BCJ@$0A@@@IAEXI@Z ; FStaticVector<enum PlayerTypes,63,1,297,0>::GrowSize
 $LN236@DoMakePeac:
-	mov	eax, DWORD PTR _veMinorAllies$223799[esp+760]
-	mov	ecx, DWORD PTR _veMinorAllies$223799[esp+756]
+	mov	eax, DWORD PTR _veMinorAllies$224276[esp+760]
+	mov	ecx, DWORD PTR _veMinorAllies$224276[esp+756]
 	lea	eax, DWORD PTR [ecx+eax*4]
 	test	eax, eax
 	je	SHORT $LN239@DoMakePeac
-	mov	edx, DWORD PTR _iMinorLoop$223785[esp+756]
+	mov	edx, DWORD PTR _iMinorLoop$224262[esp+756]
 	mov	DWORD PTR [eax], edx
 $LN239@DoMakePeac:
-	inc	DWORD PTR _veMinorAllies$223799[esp+760]
+	inc	DWORD PTR _veMinorAllies$224276[esp+760]
 $LN498@DoMakePeac:
 	mov	esi, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 $LN43@DoMakePeac:
@@ -34251,7 +34471,7 @@ $LN43@DoMakePeac:
 ; 1720 : 					// Loop through minors to see if they're allied with us
 ; 1721 : 					for(iMinorLoop = MAX_MAJOR_CIVS; iMinorLoop < MAX_CIV_PLAYERS; iMinorLoop++)
 
-	inc	DWORD PTR _iMinorLoop$223785[esp+756]
+	inc	DWORD PTR _iMinorLoop$224262[esp+756]
 	add	ebx, 63236				; 0000f704H
 	cmp	ebx, 3983868				; 003cc9fcH
 	jl	$LL508@DoMakePeac
@@ -34264,22 +34484,22 @@ $LN43@DoMakePeac:
 ; 1774 : 					// Send out a notification to us telling which of our minor allies made peace
 ; 1775 : 					if(!veMinorAllies.empty())
 
-	cmp	DWORD PTR _veMinorAllies$223799[esp+760], 0
+	cmp	DWORD PTR _veMinorAllies$224276[esp+760], 0
 	je	$LN27@DoMakePeac
 
 ; 1776 : 					{
 ; 1777 : 						Localization::String strTemp = Localization::Lookup("TXT_KEY_MISC_YOUR_MINOR_ALLIES_MADE_PEACE");
 
 	mov	esi, DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
-	lea	eax, DWORD PTR _strTemp$223821[esp+756]
-	push	OFFSET $SG223823
+	lea	eax, DWORD PTR _strTemp$224298[esp+756]
+	push	OFFSET $SG224300
 	push	eax
 	call	esi
 
 ; 1778 : 						Localization::String strSummary = Localization::Lookup("TXT_KEY_MISC_YOUR_MINOR_ALLIES_MADE_PEACE_SUMMARY");
 
-	lea	ecx, DWORD PTR _strSummary$223824[esp+764]
-	push	OFFSET $SG223826
+	lea	ecx, DWORD PTR _strSummary$224301[esp+764]
+	push	OFFSET $SG224303
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+780], 3
 	call	esi
@@ -34290,7 +34510,7 @@ $LN43@DoMakePeac:
 	mov	edx, DWORD PTR ?m_aTeams@CvTeam@@1PAV1@A ; CvTeam::m_aTeams
 	mov	eax, DWORD PTR tv1517[esp+756]
 	lea	ecx, DWORD PTR [eax+edx]
-	lea	edx, DWORD PTR $T243331[esp+756]
+	lea	edx, DWORD PTR $T243498[esp+756]
 	push	edx
 	mov	BYTE PTR __$EHRec$[esp+768], 4
 	call	?getName@CvTeam@@QBE?AVCvString@@XZ	; CvTeam::getName
@@ -34298,22 +34518,22 @@ $LN43@DoMakePeac:
 	mov	BYTE PTR __$EHRec$[esp+764], 5
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
-	lea	ecx, DWORD PTR _strTemp$223821[esp+760]
+	lea	ecx, DWORD PTR _strTemp$224298[esp+760]
 	call	DWORD PTR __imp_?PushArgument@String@Localization@@QAE_NPBD@Z
-	lea	ecx, DWORD PTR $T243331[esp+756]
+	lea	ecx, DWORD PTR $T243498[esp+756]
 	mov	BYTE PTR __$EHRec$[esp+764], 4
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
 ; 1780 : 						CvString strMessage = strTemp.toUTF8();
 
-	lea	ecx, DWORD PTR _strTemp$223821[esp+756]
+	lea	ecx, DWORD PTR _strTemp$224298[esp+756]
 	call	DWORD PTR __imp_?toUTF8@String@Localization@@QAEPBDXZ
 	test	eax, eax
 	jne	SHORT $LN259@DoMakePeac
 	mov	eax, OFFSET ??_C@_00CNPNBAHC@?$AA@
 $LN259@DoMakePeac:
 	push	eax
-	lea	ecx, DWORD PTR _strMessage$223829[esp+760]
+	lea	ecx, DWORD PTR _strMessage$224306[esp+760]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 
 ; 1781 : 
@@ -34321,7 +34541,7 @@ $LN259@DoMakePeac:
 
 	xor	esi, esi
 	mov	BYTE PTR __$EHRec$[esp+764], 6
-	cmp	DWORD PTR _veMinorAllies$223799[esp+760], esi
+	cmp	DWORD PTR _veMinorAllies$224276[esp+760], esi
 	jbe	$LN24@DoMakePeac
 	npad	2
 $LL26@DoMakePeac:
@@ -34329,7 +34549,7 @@ $LL26@DoMakePeac:
 ; 1783 : 						{
 ; 1784 : 							PlayerTypes eMinor = veMinorAllies[iMinorCivLoop];
 
-	mov	eax, DWORD PTR _veMinorAllies$223799[esp+756]
+	mov	eax, DWORD PTR _veMinorAllies$224276[esp+756]
 	mov	eax, DWORD PTR [eax+esi*4]
 
 ; 1785 : 							strTemp = Localization::Lookup(GET_TEAM(GET_PLAYER(eMinor).getTeam()).getName().GetCString());
@@ -34348,7 +34568,7 @@ $LN271@DoMakePeac:
 $LN272@DoMakePeac:
 	imul	eax, 2984				; 00000ba8H
 	add	eax, DWORD PTR ?m_aTeams@CvTeam@@1PAV1@A ; CvTeam::m_aTeams
-	lea	ecx, DWORD PTR $T243332[esp+756]
+	lea	ecx, DWORD PTR $T243499[esp+756]
 	push	ecx
 	mov	ecx, eax
 	call	?getName@CvTeam@@QBE?AVCvString@@XZ	; CvTeam::getName
@@ -34356,37 +34576,37 @@ $LN272@DoMakePeac:
 	mov	BYTE PTR __$EHRec$[esp+764], 7
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
-	lea	edx, DWORD PTR $T243333[esp+760]
+	lea	edx, DWORD PTR $T243500[esp+760]
 	push	edx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
 	push	eax
-	lea	ecx, DWORD PTR _strTemp$223821[esp+760]
+	lea	ecx, DWORD PTR _strTemp$224298[esp+760]
 	mov	BYTE PTR __$EHRec$[esp+768], 8
 	call	DWORD PTR __imp_??4String@Localization@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T243333[esp+756]
+	lea	ecx, DWORD PTR $T243500[esp+756]
 	mov	BYTE PTR __$EHRec$[esp+764], 7
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
-	lea	ecx, DWORD PTR $T243332[esp+756]
+	lea	ecx, DWORD PTR $T243499[esp+756]
 	mov	BYTE PTR __$EHRec$[esp+764], 6
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
 ; 1786 : 							strMessage = strMessage + "[NEWLINE]" + strTemp.toUTF8();
 
 	mov	ebx, DWORD PTR __imp_??$?HDU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@ABV10@PBD@Z
-	push	OFFSET $SG223839
-	lea	eax, DWORD PTR _strMessage$223829[esp+760]
+	push	OFFSET $SG224316
+	lea	eax, DWORD PTR _strMessage$224306[esp+760]
 	push	eax
-	lea	ecx, DWORD PTR $T243334[esp+764]
+	lea	ecx, DWORD PTR $T243501[esp+764]
 	push	ecx
 	call	ebx
 	add	esp, 12					; 0000000cH
 	mov	edi, eax
-	lea	ecx, DWORD PTR _strTemp$223821[esp+756]
+	lea	ecx, DWORD PTR _strTemp$224298[esp+756]
 	mov	BYTE PTR __$EHRec$[esp+764], 9
 	call	DWORD PTR __imp_?toUTF8@String@Localization@@QAEPBDXZ
 	push	eax
-	lea	edx, DWORD PTR $T243335[esp+760]
+	lea	edx, DWORD PTR $T243502[esp+760]
 	push	edi
 	push	edx
 	call	ebx
@@ -34395,16 +34615,16 @@ $LN272@DoMakePeac:
 	mov	BYTE PTR __$EHRec$[esp+764], 10		; 0000000aH
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
-	lea	ecx, DWORD PTR _strMessage$223829[esp+760]
+	lea	ecx, DWORD PTR _strMessage$224306[esp+760]
 	call	DWORD PTR __imp_?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBD@Z
-	lea	ecx, DWORD PTR $T243335[esp+756]
+	lea	ecx, DWORD PTR $T243502[esp+756]
 	mov	BYTE PTR __$EHRec$[esp+764], 9
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T243334[esp+756]
+	lea	ecx, DWORD PTR $T243501[esp+756]
 	mov	BYTE PTR __$EHRec$[esp+764], 6
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 	inc	esi
-	cmp	esi, DWORD PTR _veMinorAllies$223799[esp+760]
+	cmp	esi, DWORD PTR _veMinorAllies$224276[esp+760]
 	jb	$LL26@DoMakePeac
 $LN24@DoMakePeac:
 
@@ -34421,8 +34641,8 @@ $LN24@DoMakePeac:
 
 ; 1790 : 							GET_PLAYER(eOurPlayer).GetNotifications()->Add(NOTIFICATION_PEACE, strMessage, strSummary.toUTF8(), -1, -1, veMinorAllies.front(), eTeam);
 
-	mov	esi, DWORD PTR _veMinorAllies$223799[esp+756]
-	lea	ecx, DWORD PTR _strMessage$223829[esp+756]
+	mov	esi, DWORD PTR _veMinorAllies$224276[esp+756]
+	lea	ecx, DWORD PTR _strMessage$224306[esp+756]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	mov	edx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	mov	ecx, DWORD PTR _eTeam$[esp+752]
@@ -34434,7 +34654,7 @@ $LN24@DoMakePeac:
 	push	edx
 	push	-1
 	push	-1
-	lea	ecx, DWORD PTR _strSummary$223824[esp+772]
+	lea	ecx, DWORD PTR _strSummary$224301[esp+772]
 	call	DWORD PTR __imp_?toUTF8@String@Localization@@QAEPBDXZ
 	push	eax
 	push	edi
@@ -34447,14 +34667,14 @@ $LN507@DoMakePeac:
 
 ; 1791 : 					}
 
-	lea	ecx, DWORD PTR _strMessage$223829[esp+756]
+	lea	ecx, DWORD PTR _strMessage$224306[esp+756]
 	mov	BYTE PTR __$EHRec$[esp+764], 4
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 	mov	esi, DWORD PTR __imp_??1String@Localization@@UAE@XZ
-	lea	ecx, DWORD PTR _strSummary$223824[esp+756]
+	lea	ecx, DWORD PTR _strSummary$224301[esp+756]
 	mov	BYTE PTR __$EHRec$[esp+764], 3
 	call	esi
-	lea	ecx, DWORD PTR _strTemp$223821[esp+756]
+	lea	ecx, DWORD PTR _strTemp$224298[esp+756]
 	mov	BYTE PTR __$EHRec$[esp+764], 2
 	call	esi
 	mov	esi, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
@@ -34462,8 +34682,8 @@ $LN27@DoMakePeac:
 
 ; 1792 : 				}
 
-	mov	eax, DWORD PTR _veMinorAllies$223799[esp+756]
-	lea	ecx, DWORD PTR _veMinorAllies$223799[esp+768]
+	mov	eax, DWORD PTR _veMinorAllies$224276[esp+756]
+	lea	ecx, DWORD PTR _veMinorAllies$224276[esp+768]
 	mov	BYTE PTR __$EHRec$[esp+764], 0
 	cmp	eax, ecx
 	je	SHORT $LN509@DoMakePeac
@@ -34476,7 +34696,7 @@ $LN509@DoMakePeac:
 	mov	edi, DWORD PTR _this$[esp+756]
 $LN47@DoMakePeac:
 	mov	eax, DWORD PTR tv2260[esp+756]
-	inc	DWORD PTR _iPlayerLoop$223787[esp+756]
+	inc	DWORD PTR _iPlayerLoop$224264[esp+756]
 	add	eax, 63236				; 0000f704H
 	cmp	eax, 1391192				; 00153a58H
 	mov	DWORD PTR tv2260[esp+756], eax
@@ -34624,7 +34844,7 @@ $LN19@DoMakePeac:
 ; 1827 : 
 ; 1828 : 		Localization::String locString;
 
-	lea	ecx, DWORD PTR _locString$223854[esp+756]
+	lea	ecx, DWORD PTR _locString$224331[esp+756]
 	call	DWORD PTR __imp_??0String@Localization@@QAE@XZ
 
 ; 1829 : 
@@ -34682,16 +34902,16 @@ $LN363@DoMakePeac:
 ; 1843 : 						{
 ; 1844 : 							locString = Localization::Lookup("TXT_KEY_MISC_YOU_MADE_PEACE_WITH");
 
-	lea	ecx, DWORD PTR $T243336[esp+756]
-	push	OFFSET $SG223865
+	lea	ecx, DWORD PTR $T243503[esp+756]
+	push	OFFSET $SG224342
 	push	ecx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
 	push	eax
-	lea	ecx, DWORD PTR _locString$223854[esp+760]
+	lea	ecx, DWORD PTR _locString$224331[esp+760]
 	mov	BYTE PTR __$EHRec$[esp+768], 12		; 0000000cH
 	call	DWORD PTR __imp_??4String@Localization@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T243336[esp+756]
+	lea	ecx, DWORD PTR $T243503[esp+756]
 	mov	BYTE PTR __$EHRec$[esp+764], bl
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 
@@ -34700,16 +34920,16 @@ $LN363@DoMakePeac:
 	mov	edx, DWORD PTR ?m_aTeams@CvTeam@@1PAV1@A ; CvTeam::m_aTeams
 	mov	eax, DWORD PTR tv1517[esp+756]
 	lea	ecx, DWORD PTR [eax+edx]
-	lea	edx, DWORD PTR $T243338[esp+756]
+	lea	edx, DWORD PTR $T243505[esp+756]
 	push	edx
 	call	?getName@CvTeam@@QBE?AVCvString@@XZ	; CvTeam::getName
 	mov	ecx, eax
 	mov	BYTE PTR __$EHRec$[esp+764], 13		; 0000000dH
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
-	lea	ecx, DWORD PTR _locString$223854[esp+760]
+	lea	ecx, DWORD PTR _locString$224331[esp+760]
 	call	DWORD PTR __imp_?PushArgument@String@Localization@@QAE_NPBD@Z
-	lea	ecx, DWORD PTR $T243338[esp+756]
+	lea	ecx, DWORD PTR $T243505[esp+756]
 	mov	BYTE PTR __$EHRec$[esp+764], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -34725,10 +34945,10 @@ $LN514@DoMakePeac:
 	push	eax
 	push	-1
 	push	-1
-	lea	ecx, DWORD PTR _locString$223854[esp+772]
+	lea	ecx, DWORD PTR _locString$224331[esp+772]
 	call	ebp
 	push	eax
-	lea	ecx, DWORD PTR _locString$223854[esp+776]
+	lea	ecx, DWORD PTR _locString$224331[esp+776]
 	call	ebp
 	push	eax
 	push	-2028078871				; 871df8e9H
@@ -34763,22 +34983,22 @@ $LN389@DoMakePeac:
 ; 1852 : 						{
 ; 1853 : 							locString = Localization::Lookup("TXT_KEY_MISC_YOU_MADE_PEACE_WITH");
 
-	lea	ecx, DWORD PTR $T243339[esp+756]
-	push	OFFSET $SG223872
+	lea	ecx, DWORD PTR $T243506[esp+756]
+	push	OFFSET $SG224349
 	push	ecx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
 	push	eax
-	lea	ecx, DWORD PTR _locString$223854[esp+760]
+	lea	ecx, DWORD PTR _locString$224331[esp+760]
 	mov	BYTE PTR __$EHRec$[esp+768], 14		; 0000000eH
 	call	DWORD PTR __imp_??4String@Localization@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T243339[esp+756]
+	lea	ecx, DWORD PTR $T243506[esp+756]
 	mov	BYTE PTR __$EHRec$[esp+764], bl
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 
 ; 1854 : 							locString << getName().GetCString();
 
-	lea	edx, DWORD PTR $T243341[esp+756]
+	lea	edx, DWORD PTR $T243508[esp+756]
 	push	edx
 	mov	ecx, ebp
 	call	?getName@CvTeam@@QBE?AVCvString@@XZ	; CvTeam::getName
@@ -34786,9 +35006,9 @@ $LN389@DoMakePeac:
 	mov	BYTE PTR __$EHRec$[esp+764], 15		; 0000000fH
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
-	lea	ecx, DWORD PTR _locString$223854[esp+760]
+	lea	ecx, DWORD PTR _locString$224331[esp+760]
 	call	DWORD PTR __imp_?PushArgument@String@Localization@@QAE_NPBD@Z
-	lea	ecx, DWORD PTR $T243341[esp+756]
+	lea	ecx, DWORD PTR $T243508[esp+756]
 	mov	BYTE PTR __$EHRec$[esp+764], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -34843,16 +35063,16 @@ $LN430@DoMakePeac:
 ; 1861 : 						{
 ; 1862 : 							locString = Localization::Lookup("TXT_KEY_MISC_SOMEONE_MADE_PEACE");
 
-	lea	ecx, DWORD PTR $T243342[esp+756]
-	push	OFFSET $SG223879
+	lea	ecx, DWORD PTR $T243509[esp+756]
+	push	OFFSET $SG224356
 	push	ecx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
 	push	eax
-	lea	ecx, DWORD PTR _locString$223854[esp+760]
+	lea	ecx, DWORD PTR _locString$224331[esp+760]
 	mov	BYTE PTR __$EHRec$[esp+768], 16		; 00000010H
 	call	DWORD PTR __imp_??4String@Localization@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T243342[esp+756]
+	lea	ecx, DWORD PTR $T243509[esp+756]
 	mov	BYTE PTR __$EHRec$[esp+764], bl
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 
@@ -34861,7 +35081,7 @@ $LN430@DoMakePeac:
 	mov	edx, DWORD PTR ?m_aTeams@CvTeam@@1PAV1@A ; CvTeam::m_aTeams
 	mov	eax, DWORD PTR tv1517[esp+756]
 	lea	ecx, DWORD PTR [eax+edx]
-	lea	edx, DWORD PTR $T243344[esp+756]
+	lea	edx, DWORD PTR $T243511[esp+756]
 	push	edx
 	call	?getName@CvTeam@@QBE?AVCvString@@XZ	; CvTeam::getName
 	mov	ecx, eax
@@ -34869,22 +35089,22 @@ $LN430@DoMakePeac:
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	mov	ecx, DWORD PTR _this$[esp+756]
 	mov	edi, eax
-	lea	eax, DWORD PTR $T243346[esp+756]
+	lea	eax, DWORD PTR $T243513[esp+756]
 	push	eax
 	call	?getName@CvTeam@@QBE?AVCvString@@XZ	; CvTeam::getName
 	mov	ecx, eax
 	mov	BYTE PTR __$EHRec$[esp+764], 18		; 00000012H
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
-	lea	ecx, DWORD PTR _locString$223854[esp+760]
+	lea	ecx, DWORD PTR _locString$224331[esp+760]
 	call	DWORD PTR __imp_?PushArgument@String@Localization@@QAE_NPBD@Z
 	push	edi
-	lea	ecx, DWORD PTR _locString$223854[esp+760]
+	lea	ecx, DWORD PTR _locString$224331[esp+760]
 	call	DWORD PTR __imp_?PushArgument@String@Localization@@QAE_NPBD@Z
-	lea	ecx, DWORD PTR $T243346[esp+756]
+	lea	ecx, DWORD PTR $T243513[esp+756]
 	mov	BYTE PTR __$EHRec$[esp+764], 17		; 00000011H
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T243344[esp+756]
+	lea	ecx, DWORD PTR $T243511[esp+756]
 	mov	BYTE PTR __$EHRec$[esp+764], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -34899,10 +35119,10 @@ $LN430@DoMakePeac:
 	push	eax
 	push	-1
 	push	-1
-	lea	ecx, DWORD PTR _locString$223854[esp+772]
+	lea	ecx, DWORD PTR _locString$224331[esp+772]
 	call	ebp
 	push	eax
-	lea	ecx, DWORD PTR _locString$223854[esp+776]
+	lea	ecx, DWORD PTR _locString$224331[esp+776]
 	call	ebp
 	push	eax
 	push	818263651				; 30c5b663H
@@ -34928,28 +35148,28 @@ $LN502@DoMakePeac:
 	mov	edx, DWORD PTR tv1517[esp+756]
 	mov	eax, DWORD PTR ?m_aTeams@CvTeam@@1PAV1@A ; CvTeam::m_aTeams
 	lea	ecx, DWORD PTR [edx+eax]
-	lea	edx, DWORD PTR $T243348[esp+756]
+	lea	edx, DWORD PTR $T243515[esp+756]
 	push	edx
 	call	?getName@CvTeam@@QBE?AVCvString@@XZ	; CvTeam::getName
 	mov	ecx, eax
 	mov	BYTE PTR __$EHRec$[esp+764], 19		; 00000013H
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	mov	esi, DWORD PTR _this$[esp+756]
-	mov	DWORD PTR $T243347[esp+756], eax
-	lea	eax, DWORD PTR $T243350[esp+756]
+	mov	DWORD PTR $T243514[esp+756], eax
+	lea	eax, DWORD PTR $T243517[esp+756]
 	push	eax
 	mov	ecx, esi
 	call	?getName@CvTeam@@QBE?AVCvString@@XZ	; CvTeam::getName
 	mov	ecx, eax
 	mov	BYTE PTR __$EHRec$[esp+764], 20		; 00000014H
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
-	lea	ecx, DWORD PTR $T243347[esp+756]
+	lea	ecx, DWORD PTR $T243514[esp+756]
 	push	ecx
-	lea	edx, DWORD PTR $T243349[esp+760]
+	lea	edx, DWORD PTR $T243516[esp+760]
 	push	edx
-	mov	DWORD PTR $T243349[esp+764], eax
-	lea	eax, DWORD PTR $T243351[esp+764]
-	push	OFFSET $SG223889
+	mov	DWORD PTR $T243516[esp+764], eax
+	lea	eax, DWORD PTR $T243518[esp+764]
+	push	OFFSET $SG224366
 	push	eax
 	call	??$GetLocalizedText@PBDPBD@@YA?AVCvString@@PBDABQBD1@Z ; GetLocalizedText<char const *,char const *>
 	add	esp, 16					; 00000010H
@@ -34957,13 +35177,13 @@ $LN502@DoMakePeac:
 	lea	ecx, DWORD PTR _strBuffer$[esp+760]
 	mov	BYTE PTR __$EHRec$[esp+768], 21		; 00000015H
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T243351[esp+756]
+	lea	ecx, DWORD PTR $T243518[esp+756]
 	mov	BYTE PTR __$EHRec$[esp+764], 20		; 00000014H
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T243350[esp+756]
+	lea	ecx, DWORD PTR $T243517[esp+756]
 	mov	BYTE PTR __$EHRec$[esp+764], 19		; 00000013H
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T243348[esp+756]
+	lea	ecx, DWORD PTR $T243515[esp+756]
 	mov	BYTE PTR __$EHRec$[esp+764], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -34982,7 +35202,7 @@ $LN502@DoMakePeac:
 
 ; 1873 : 	}
 
-	lea	ecx, DWORD PTR _locString$223854[esp+756]
+	lea	ecx, DWORD PTR _locString$224331[esp+756]
 	mov	BYTE PTR __$EHRec$[esp+764], 0
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 	pop	esi
@@ -35007,67 +35227,67 @@ __unwindfunclet$?DoMakePeace@CvTeam@@IAEXW4TeamTypes@@_N1@Z$0:
 	lea	ecx, DWORD PTR _strBuffer$[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?DoMakePeace@CvTeam@@IAEXW4TeamTypes@@_N1@Z$1:
-	lea	ecx, DWORD PTR _args$223776[ebp]
+	lea	ecx, DWORD PTR _args$224253[ebp]
 	jmp	??1CvLuaArgsHandle@@QAE@XZ		; CvLuaArgsHandle::~CvLuaArgsHandle
 __unwindfunclet$?DoMakePeace@CvTeam@@IAEXW4TeamTypes@@_N1@Z$2:
-	lea	ecx, DWORD PTR _veMinorAllies$223799[ebp]
+	lea	ecx, DWORD PTR _veMinorAllies$224276[ebp]
 	jmp	??1?$FStaticVector@W4PlayerTypes@@$0DP@$00$0BCJ@$0A@@@QAE@XZ ; FStaticVector<enum PlayerTypes,63,1,297,0>::~FStaticVector<enum PlayerTypes,63,1,297,0>
 __unwindfunclet$?DoMakePeace@CvTeam@@IAEXW4TeamTypes@@_N1@Z$3:
-	lea	ecx, DWORD PTR _strTemp$223821[ebp]
+	lea	ecx, DWORD PTR _strTemp$224298[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?DoMakePeace@CvTeam@@IAEXW4TeamTypes@@_N1@Z$4:
-	lea	ecx, DWORD PTR _strSummary$223824[ebp]
+	lea	ecx, DWORD PTR _strSummary$224301[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?DoMakePeace@CvTeam@@IAEXW4TeamTypes@@_N1@Z$5:
-	lea	ecx, DWORD PTR $T243331[ebp]
+	lea	ecx, DWORD PTR $T243498[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?DoMakePeace@CvTeam@@IAEXW4TeamTypes@@_N1@Z$6:
-	lea	ecx, DWORD PTR _strMessage$223829[ebp]
+	lea	ecx, DWORD PTR _strMessage$224306[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?DoMakePeace@CvTeam@@IAEXW4TeamTypes@@_N1@Z$7:
-	lea	ecx, DWORD PTR $T243332[ebp]
+	lea	ecx, DWORD PTR $T243499[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?DoMakePeace@CvTeam@@IAEXW4TeamTypes@@_N1@Z$8:
-	lea	ecx, DWORD PTR $T243333[ebp]
+	lea	ecx, DWORD PTR $T243500[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?DoMakePeace@CvTeam@@IAEXW4TeamTypes@@_N1@Z$9:
-	lea	ecx, DWORD PTR $T243334[ebp]
+	lea	ecx, DWORD PTR $T243501[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?DoMakePeace@CvTeam@@IAEXW4TeamTypes@@_N1@Z$10:
-	lea	ecx, DWORD PTR $T243335[ebp]
+	lea	ecx, DWORD PTR $T243502[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?DoMakePeace@CvTeam@@IAEXW4TeamTypes@@_N1@Z$11:
-	lea	ecx, DWORD PTR _locString$223854[ebp]
+	lea	ecx, DWORD PTR _locString$224331[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?DoMakePeace@CvTeam@@IAEXW4TeamTypes@@_N1@Z$12:
-	lea	ecx, DWORD PTR $T243336[ebp]
+	lea	ecx, DWORD PTR $T243503[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?DoMakePeace@CvTeam@@IAEXW4TeamTypes@@_N1@Z$13:
-	lea	ecx, DWORD PTR $T243338[ebp]
+	lea	ecx, DWORD PTR $T243505[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?DoMakePeace@CvTeam@@IAEXW4TeamTypes@@_N1@Z$14:
-	lea	ecx, DWORD PTR $T243339[ebp]
+	lea	ecx, DWORD PTR $T243506[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?DoMakePeace@CvTeam@@IAEXW4TeamTypes@@_N1@Z$15:
-	lea	ecx, DWORD PTR $T243341[ebp]
+	lea	ecx, DWORD PTR $T243508[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?DoMakePeace@CvTeam@@IAEXW4TeamTypes@@_N1@Z$16:
-	lea	ecx, DWORD PTR $T243342[ebp]
+	lea	ecx, DWORD PTR $T243509[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?DoMakePeace@CvTeam@@IAEXW4TeamTypes@@_N1@Z$17:
-	lea	ecx, DWORD PTR $T243344[ebp]
+	lea	ecx, DWORD PTR $T243511[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?DoMakePeace@CvTeam@@IAEXW4TeamTypes@@_N1@Z$18:
-	lea	ecx, DWORD PTR $T243346[ebp]
+	lea	ecx, DWORD PTR $T243513[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?DoMakePeace@CvTeam@@IAEXW4TeamTypes@@_N1@Z$19:
-	lea	ecx, DWORD PTR $T243348[ebp]
+	lea	ecx, DWORD PTR $T243515[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?DoMakePeace@CvTeam@@IAEXW4TeamTypes@@_N1@Z$20:
-	lea	ecx, DWORD PTR $T243350[ebp]
+	lea	ecx, DWORD PTR $T243517[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?DoMakePeace@CvTeam@@IAEXW4TeamTypes@@_N1@Z$21:
-	lea	ecx, DWORD PTR $T243351[ebp]
+	lea	ecx, DWORD PTR $T243518[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?DoMakePeace@CvTeam@@IAEXW4TeamTypes@@_N1@Z:
 	mov	eax, OFFSET __ehfuncinfo$?DoMakePeace@CvTeam@@IAEXW4TeamTypes@@_N1@Z
@@ -35244,10 +35464,10 @@ PUBLIC	?_Ufill@?$vector@W4ResourceTypes@@V?$allocator@W4ResourceTypes@@@std@@@st
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?_Ufill@?$vector@W4ResourceTypes@@V?$allocator@W4ResourceTypes@@@std@@@std@@IAEPAW4ResourceTypes@@PAW43@IABW43@@Z
 _TEXT	SEGMENT
-$T244337 = -4						; size = 1
+$T244503 = -4						; size = 1
 __Ptr$ = 8						; size = 4
 __Count$ = 12						; size = 4
-__Cat$244340 = 16					; size = 1
+__Cat$244506 = 16					; size = 1
 __Val$ = 16						; size = 4
 ?_Ufill@?$vector@W4ResourceTypes@@V?$allocator@W4ResourceTypes@@@std@@@std@@IAEPAW4ResourceTypes@@PAW43@IABW43@@Z PROC ; std::vector<enum ResourceTypes,std::allocator<enum ResourceTypes> >::_Ufill, COMDAT
 ; _this$ = ecx
@@ -35258,13 +35478,13 @@ __Val$ = 16						; size = 4
 
 ; 1254 : 		_STDEXT unchecked_uninitialized_fill_n(_Ptr, _Count, _Val, this->_Alval);
 
-	mov	edx, DWORD PTR __Cat$244340[esp]
+	mov	edx, DWORD PTR __Cat$244506[esp]
 	push	esi
 	mov	esi, DWORD PTR __Count$[esp+4]
 	push	edi
 	mov	edi, DWORD PTR __Ptr$[esp+8]
-	mov	BYTE PTR $T244337[esp+12], 0
-	mov	eax, DWORD PTR $T244337[esp+12]
+	mov	BYTE PTR $T244503[esp+12], 0
+	mov	eax, DWORD PTR $T244503[esp+12]
 	push	eax
 	mov	eax, DWORD PTR __Val$[esp+12]
 	push	edx
@@ -35370,10 +35590,10 @@ PUBLIC	??$_Unchecked_uninitialized_move@PAW4ResourceTypes@@PAW41@V?$allocator@W4
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ??$_Unchecked_uninitialized_move@PAW4ResourceTypes@@PAW41@V?$allocator@W4ResourceTypes@@@std@@@stdext@@YAPAW4ResourceTypes@@PAW41@00AAV?$allocator@W4ResourceTypes@@@std@@@Z
 _TEXT	SEGMENT
-$T244406 = -4						; size = 1
+$T244575 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$244409 = 16					; size = 1
+__Cat$244578 = 16					; size = 1
 __Dest$ = 16						; size = 4
 __Al$ = 20						; size = 4
 ??$_Unchecked_uninitialized_move@PAW4ResourceTypes@@PAW41@V?$allocator@W4ResourceTypes@@@std@@@stdext@@YAPAW4ResourceTypes@@PAW41@00AAV?$allocator@W4ResourceTypes@@@std@@@Z PROC ; stdext::_Unchecked_uninitialized_move<enum ResourceTypes *,enum ResourceTypes *,std::allocator<enum ResourceTypes> >, COMDAT
@@ -35386,10 +35606,10 @@ __Al$ = 20						; size = 4
 ; 863  : 		_CHECKED_BASE(_Last), _Dest, _Al,
 ; 864  : 		_STD _Move_cat(_Dest), _STD _Range_checked_iterator_tag()));
 
-	mov	ecx, DWORD PTR __Cat$244409[esp]
+	mov	ecx, DWORD PTR __Cat$244578[esp]
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T244406[esp+4], 0
-	mov	eax, DWORD PTR $T244406[esp+4]
+	mov	BYTE PTR $T244575[esp+4], 0
+	mov	eax, DWORD PTR $T244575[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -35674,7 +35894,7 @@ EXTRN	?IsDiplomaticVoting@CvBuildingEntry@@QBE_NXZ:PROC ; CvBuildingEntry::IsDip
 ;	COMDAT ?processBuilding@CvTeam@@QAEXW4BuildingTypes@@H_N@Z
 _TEXT	SEGMENT
 _this$ = -4						; size = 4
-_iLoop$223261 = 8					; size = 4
+_iLoop$223738 = 8					; size = 4
 _eBuilding$ = 8						; size = 4
 _iChange$ = 12						; size = 4
 tv310 = 16						; size = 4
@@ -35866,7 +36086,7 @@ $LN37@processBui:
 ; 808  : 			for(pLoopCity = kPlayer.firstCity(&iLoop); pLoopCity != NULL; pLoopCity = kPlayer.nextCity(&iLoop))
 
 	push	0
-	lea	edx, DWORD PTR _iLoop$223261[esp+20]
+	lea	edx, DWORD PTR _iLoop$223738[esp+20]
 	push	edx
 	mov	ecx, edi
 	call	?firstCity@CvPlayer@@QAEPAVCvCity@@PAH_N@Z ; CvPlayer::firstCity
@@ -35887,7 +36107,7 @@ $LL3@processBui:
 	mov	ecx, eax
 	call	?ChangeBuildingDefenseMod@CvCityBuildings@@QAEXH@Z ; CvCityBuildings::ChangeBuildingDefenseMod
 	push	0
-	lea	eax, DWORD PTR _iLoop$223261[esp+20]
+	lea	eax, DWORD PTR _iLoop$223738[esp+20]
 	push	eax
 	mov	ecx, edi
 	call	?nextCity@CvPlayer@@QAEPAVCvCity@@PAH_N@Z ; CvPlayer::nextCity
@@ -36286,26 +36506,26 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 tv2022 = -252						; size = 4
 _iI$ = -252						; size = 4
-_args$223434 = -252					; size = 4
+_args$223911 = -252					; size = 4
 _this$ = -248						; size = 4
 tv1938 = -244						; size = 4
 tv1345 = -244						; size = 4
 tv1396 = -240						; size = 4
-_bResult$223435 = -233					; size = 1
+_bResult$223912 = -233					; size = 1
 tv1351 = -232						; size = 4
-$T245398 = -232						; size = 4
-$T244950 = -228						; size = 28
-$T244947 = -228						; size = 28
-$T244944 = -228						; size = 28
-$T244939 = -228						; size = 28
-$T244936 = -228						; size = 28
+$T245565 = -232						; size = 4
+$T245117 = -228						; size = 28
+$T245114 = -228						; size = 28
+$T245111 = -228						; size = 28
+$T245106 = -228						; size = 28
+$T245103 = -228						; size = 28
 _locString$ = -200					; size = 80
-$T244949 = -120						; size = 28
-$T244942 = -120						; size = 28
-$T244945 = -92						; size = 80
-$T244940 = -92						; size = 80
-$T244937 = -92						; size = 80
-$T244934 = -92						; size = 80
+$T245116 = -120						; size = 28
+$T245109 = -120						; size = 28
+$T245112 = -92						; size = 80
+$T245107 = -92						; size = 80
+$T245104 = -92						; size = 80
+$T245101 = -92						; size = 80
 __$EHRec$ = -12						; size = 12
 _eTeam$ = 8						; size = 4
 _bDefensivePact$ = 12					; size = 1
@@ -36682,14 +36902,14 @@ $LN169@DoDeclareW:
 ; 1261 : 	{
 ; 1262 : 		CvLuaArgsHandle args;
 
-	lea	ecx, DWORD PTR _args$223434[esp+268]
+	lea	ecx, DWORD PTR _args$223911[esp+268]
 	call	??0CvLuaArgsHandle@@QAE@XZ		; CvLuaArgsHandle::CvLuaArgsHandle
 
 ; 1263 : 		args->Push(GetID());
 
 	mov	edi, DWORD PTR _this$[esp+268]
 	mov	eax, DWORD PTR [edi+4]
-	mov	ecx, DWORD PTR _args$223434[esp+268]
+	mov	ecx, DWORD PTR _args$223911[esp+268]
 	mov	edx, DWORD PTR [ecx]
 	push	eax
 	mov	eax, DWORD PTR [edx+8]
@@ -36698,7 +36918,7 @@ $LN169@DoDeclareW:
 
 ; 1264 : 		args->Push(eTeam);
 
-	mov	ecx, DWORD PTR _args$223434[esp+268]
+	mov	ecx, DWORD PTR _args$223911[esp+268]
 	mov	edx, DWORD PTR [ecx]
 	mov	ebx, DWORD PTR _eTeam$[esp+264]
 	mov	eax, DWORD PTR [edx+8]
@@ -36709,18 +36929,18 @@ $LN169@DoDeclareW:
 ; 1266 : 		bool bResult;
 ; 1267 : 		LuaSupport::CallHook(pkScriptSystem, "DeclareWar", args.get(), bResult);
 
-	mov	edx, DWORD PTR _args$223434[esp+268]
-	lea	ecx, DWORD PTR _bResult$223435[esp+268]
+	mov	edx, DWORD PTR _args$223911[esp+268]
+	lea	ecx, DWORD PTR _bResult$223912[esp+268]
 	push	ecx
 	push	edx
-	push	OFFSET $SG223436
+	push	OFFSET $SG223913
 	push	esi
 	call	?CallHook@LuaSupport@@YA_NPAVICvEngineScriptSystem1@@PBDPAVICvEngineScriptSystemArgs1@@AA_N@Z ; LuaSupport::CallHook
 	add	esp, 16					; 00000010H
 
 ; 1268 : 	}
 
-	lea	ecx, DWORD PTR _args$223434[esp+268]
+	lea	ecx, DWORD PTR _args$223911[esp+268]
 	mov	BYTE PTR __$EHRec$[esp+276], 0
 	call	??1CvLuaArgsHandle@@QAE@XZ		; CvLuaArgsHandle::~CvLuaArgsHandle
 	jmp	SHORT $LN45@DoDeclareW
@@ -36968,8 +37188,8 @@ $LN258@DoDeclareW:
 ; 1329 : 								{
 ; 1330 : 									locString = Localization::Lookup("TXT_KEY_MISC_YOU_DECLARED_WAR_ON");
 
-	lea	eax, DWORD PTR $T244934[esp+268]
-	push	OFFSET $SG223463
+	lea	eax, DWORD PTR $T245101[esp+268]
+	push	OFFSET $SG223940
 	push	eax
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
@@ -36977,7 +37197,7 @@ $LN258@DoDeclareW:
 	lea	ecx, DWORD PTR _locString$[esp+272]
 	mov	BYTE PTR __$EHRec$[esp+280], 2
 	call	DWORD PTR __imp_??4String@Localization@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T244934[esp+268]
+	lea	ecx, DWORD PTR $T245101[esp+268]
 	mov	BYTE PTR __$EHRec$[esp+276], 0
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 
@@ -36985,7 +37205,7 @@ $LN258@DoDeclareW:
 
 	mov	ecx, DWORD PTR ?m_aTeams@CvTeam@@1PAV1@A ; CvTeam::m_aTeams
 	mov	edx, DWORD PTR tv1396[esp+268]
-	lea	eax, DWORD PTR $T244936[esp+268]
+	lea	eax, DWORD PTR $T245103[esp+268]
 	add	ecx, edx
 	push	eax
 	call	?getName@CvTeam@@QBE?AVCvString@@XZ	; CvTeam::getName
@@ -36995,7 +37215,7 @@ $LN258@DoDeclareW:
 	push	eax
 	lea	ecx, DWORD PTR _locString$[esp+272]
 	call	ebp
-	lea	ecx, DWORD PTR $T244936[esp+268]
+	lea	ecx, DWORD PTR $T245103[esp+268]
 	mov	BYTE PTR __$EHRec$[esp+276], 0
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -37011,12 +37231,12 @@ $LN258@DoDeclareW:
 	push	-1
 	push	0
 	push	0
-	mov	DWORD PTR $T245398[esp+296], ecx
+	mov	DWORD PTR $T245565[esp+296], ecx
 	push	0
 	lea	ecx, DWORD PTR _locString$[esp+300]
 	add	edi, 160				; 000000a0H
 	call	esi
-	mov	edx, DWORD PTR $T245398[esp+300]
+	mov	edx, DWORD PTR $T245565[esp+300]
 	push	eax
 	mov	eax, DWORD PTR _iI$[esp+304]
 	push	edx
@@ -37052,8 +37272,8 @@ $LN286@DoDeclareW:
 ; 1337 : 							{
 ; 1338 : 								locString = Localization::Lookup("TXT_KEY_MISC_DECLARED_WAR_ON_YOU");
 
-	lea	eax, DWORD PTR $T244937[esp+268]
-	push	OFFSET $SG223474
+	lea	eax, DWORD PTR $T245104[esp+268]
+	push	OFFSET $SG223951
 	push	eax
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
@@ -37061,13 +37281,13 @@ $LN286@DoDeclareW:
 	lea	ecx, DWORD PTR _locString$[esp+272]
 	mov	BYTE PTR __$EHRec$[esp+280], 4
 	call	DWORD PTR __imp_??4String@Localization@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T244937[esp+268]
+	lea	ecx, DWORD PTR $T245104[esp+268]
 	mov	BYTE PTR __$EHRec$[esp+276], 0
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 
 ; 1339 : 								locString << getName().GetCString();
 
-	lea	ecx, DWORD PTR $T244939[esp+268]
+	lea	ecx, DWORD PTR $T245106[esp+268]
 	push	ecx
 	mov	ecx, DWORD PTR _this$[esp+272]
 	call	?getName@CvTeam@@QBE?AVCvString@@XZ	; CvTeam::getName
@@ -37077,7 +37297,7 @@ $LN286@DoDeclareW:
 	push	eax
 	lea	ecx, DWORD PTR _locString$[esp+272]
 	call	ebp
-	lea	ecx, DWORD PTR $T244939[esp+268]
+	lea	ecx, DWORD PTR $T245106[esp+268]
 	mov	BYTE PTR __$EHRec$[esp+276], 0
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -37129,8 +37349,8 @@ $LN308@DoDeclareW:
 ; 1344 : 							{
 ; 1345 : 								locString = Localization::Lookup("TXT_KEY_MISC_SOMEONE_DECLARED_WAR");
 
-	lea	edx, DWORD PTR $T244940[esp+268]
-	push	OFFSET $SG223480
+	lea	edx, DWORD PTR $T245107[esp+268]
+	push	OFFSET $SG223957
 	push	edx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
@@ -37138,7 +37358,7 @@ $LN308@DoDeclareW:
 	lea	ecx, DWORD PTR _locString$[esp+272]
 	mov	BYTE PTR __$EHRec$[esp+280], 6
 	call	DWORD PTR __imp_??4String@Localization@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T244940[esp+268]
+	lea	ecx, DWORD PTR $T245107[esp+268]
 	mov	BYTE PTR __$EHRec$[esp+276], 0
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 
@@ -37146,7 +37366,7 @@ $LN308@DoDeclareW:
 
 	mov	eax, DWORD PTR ?m_aTeams@CvTeam@@1PAV1@A ; CvTeam::m_aTeams
 	mov	ecx, DWORD PTR tv1396[esp+268]
-	lea	edx, DWORD PTR $T244942[esp+268]
+	lea	edx, DWORD PTR $T245109[esp+268]
 	add	ecx, eax
 	push	edx
 	call	?getName@CvTeam@@QBE?AVCvString@@XZ	; CvTeam::getName
@@ -37155,7 +37375,7 @@ $LN308@DoDeclareW:
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	mov	ecx, DWORD PTR _this$[esp+268]
 	mov	edi, eax
-	lea	eax, DWORD PTR $T244944[esp+268]
+	lea	eax, DWORD PTR $T245111[esp+268]
 	push	eax
 	call	?getName@CvTeam@@QBE?AVCvString@@XZ	; CvTeam::getName
 	mov	ecx, eax
@@ -37167,10 +37387,10 @@ $LN308@DoDeclareW:
 	push	edi
 	lea	ecx, DWORD PTR _locString$[esp+272]
 	call	ebp
-	lea	ecx, DWORD PTR $T244944[esp+268]
+	lea	ecx, DWORD PTR $T245111[esp+268]
 	mov	BYTE PTR __$EHRec$[esp+276], 7
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T244942[esp+268]
+	lea	ecx, DWORD PTR $T245109[esp+268]
 	mov	BYTE PTR __$EHRec$[esp+276], 0
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -37212,8 +37432,8 @@ $LN31@DoDeclareW:
 ; 1353 : 
 ; 1354 : 			locString = Localization::Lookup("TXT_KEY_MISC_SOMEONE_DECLARES_WAR");
 
-	lea	eax, DWORD PTR $T244945[esp+268]
-	push	OFFSET $SG223486
+	lea	eax, DWORD PTR $T245112[esp+268]
+	push	OFFSET $SG223963
 	push	eax
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
@@ -37221,7 +37441,7 @@ $LN31@DoDeclareW:
 	lea	ecx, DWORD PTR _locString$[esp+272]
 	mov	BYTE PTR __$EHRec$[esp+280], 9
 	call	DWORD PTR __imp_??4String@Localization@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T244945[esp+268]
+	lea	ecx, DWORD PTR $T245112[esp+268]
 	mov	BYTE PTR __$EHRec$[esp+276], 0
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 
@@ -37229,7 +37449,7 @@ $LN31@DoDeclareW:
 
 	mov	ecx, DWORD PTR ?m_aTeams@CvTeam@@1PAV1@A ; CvTeam::m_aTeams
 	mov	edx, DWORD PTR tv1396[esp+268]
-	lea	eax, DWORD PTR $T244947[esp+268]
+	lea	eax, DWORD PTR $T245114[esp+268]
 	add	ecx, edx
 	push	eax
 	call	?getName@CvTeam@@QBE?AVCvString@@XZ	; CvTeam::getName
@@ -37237,7 +37457,7 @@ $LN31@DoDeclareW:
 	mov	BYTE PTR __$EHRec$[esp+276], 10		; 0000000aH
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	mov	edi, DWORD PTR _this$[esp+268]
-	lea	ecx, DWORD PTR $T244949[esp+268]
+	lea	ecx, DWORD PTR $T245116[esp+268]
 	push	ecx
 	mov	ecx, edi
 	mov	ebx, eax
@@ -37251,10 +37471,10 @@ $LN31@DoDeclareW:
 	push	ebx
 	lea	ecx, DWORD PTR _locString$[esp+272]
 	call	ebp
-	lea	ecx, DWORD PTR $T244949[esp+268]
+	lea	ecx, DWORD PTR $T245116[esp+268]
 	mov	BYTE PTR __$EHRec$[esp+276], 10		; 0000000aH
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T244947[esp+268]
+	lea	ecx, DWORD PTR $T245114[esp+268]
 	mov	BYTE PTR __$EHRec$[esp+276], 0
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -37267,11 +37487,11 @@ $LN31@DoDeclareW:
 	mov	eax, OFFSET ??_C@_00CNPNBAHC@?$AA@
 $LN363@DoDeclareW:
 	push	eax
-	lea	ecx, DWORD PTR $T244950[esp+272]
+	lea	ecx, DWORD PTR $T245117[esp+272]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	push	-1
 	push	-1
-	lea	edx, DWORD PTR $T244950[esp+276]
+	lea	edx, DWORD PTR $T245117[esp+276]
 	push	edx
 	mov	ecx, edi
 	mov	BYTE PTR __$EHRec$[esp+288], 12		; 0000000cH
@@ -37280,7 +37500,7 @@ $LN363@DoDeclareW:
 	push	eax
 	push	0
 	call	?addReplayMessage@CvGame@@QAEXW4ReplayMessageTypes@@W4PlayerTypes@@ABVCvString@@HH@Z ; CvGame::addReplayMessage
-	lea	ecx, DWORD PTR $T244950[esp+268]
+	lea	ecx, DWORD PTR $T245117[esp+268]
 	mov	BYTE PTR __$EHRec$[esp+276], 0
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 	mov	edi, DWORD PTR _this$[esp+268]
@@ -37634,40 +37854,40 @@ __unwindfunclet$?DoDeclareWar@CvTeam@@IAEXW4TeamTypes@@_N1@Z$0:
 	lea	ecx, DWORD PTR _locString$[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?DoDeclareWar@CvTeam@@IAEXW4TeamTypes@@_N1@Z$1:
-	lea	ecx, DWORD PTR _args$223434[ebp]
+	lea	ecx, DWORD PTR _args$223911[ebp]
 	jmp	??1CvLuaArgsHandle@@QAE@XZ		; CvLuaArgsHandle::~CvLuaArgsHandle
 __unwindfunclet$?DoDeclareWar@CvTeam@@IAEXW4TeamTypes@@_N1@Z$2:
-	lea	ecx, DWORD PTR $T244934[ebp]
+	lea	ecx, DWORD PTR $T245101[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?DoDeclareWar@CvTeam@@IAEXW4TeamTypes@@_N1@Z$3:
-	lea	ecx, DWORD PTR $T244936[ebp]
+	lea	ecx, DWORD PTR $T245103[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?DoDeclareWar@CvTeam@@IAEXW4TeamTypes@@_N1@Z$4:
-	lea	ecx, DWORD PTR $T244937[ebp]
+	lea	ecx, DWORD PTR $T245104[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?DoDeclareWar@CvTeam@@IAEXW4TeamTypes@@_N1@Z$5:
-	lea	ecx, DWORD PTR $T244939[ebp]
+	lea	ecx, DWORD PTR $T245106[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?DoDeclareWar@CvTeam@@IAEXW4TeamTypes@@_N1@Z$6:
-	lea	ecx, DWORD PTR $T244940[ebp]
+	lea	ecx, DWORD PTR $T245107[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?DoDeclareWar@CvTeam@@IAEXW4TeamTypes@@_N1@Z$7:
-	lea	ecx, DWORD PTR $T244942[ebp]
+	lea	ecx, DWORD PTR $T245109[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?DoDeclareWar@CvTeam@@IAEXW4TeamTypes@@_N1@Z$8:
-	lea	ecx, DWORD PTR $T244944[ebp]
+	lea	ecx, DWORD PTR $T245111[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?DoDeclareWar@CvTeam@@IAEXW4TeamTypes@@_N1@Z$9:
-	lea	ecx, DWORD PTR $T244945[ebp]
+	lea	ecx, DWORD PTR $T245112[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?DoDeclareWar@CvTeam@@IAEXW4TeamTypes@@_N1@Z$10:
-	lea	ecx, DWORD PTR $T244947[ebp]
+	lea	ecx, DWORD PTR $T245114[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?DoDeclareWar@CvTeam@@IAEXW4TeamTypes@@_N1@Z$11:
-	lea	ecx, DWORD PTR $T244949[ebp]
+	lea	ecx, DWORD PTR $T245116[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?DoDeclareWar@CvTeam@@IAEXW4TeamTypes@@_N1@Z$12:
-	lea	ecx, DWORD PTR $T244950[ebp]
+	lea	ecx, DWORD PTR $T245117[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?DoDeclareWar@CvTeam@@IAEXW4TeamTypes@@_N1@Z:
 	mov	eax, OFFSET __ehfuncinfo$?DoDeclareWar@CvTeam@@IAEXW4TeamTypes@@_N1@Z
@@ -37939,10 +38159,10 @@ PUBLIC	??$_Umove@PAW4ResourceTypes@@@?$vector@W4ResourceTypes@@V?$allocator@W4Re
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\vector
 ;	COMDAT ??$_Umove@PAW4ResourceTypes@@@?$vector@W4ResourceTypes@@V?$allocator@W4ResourceTypes@@@std@@@std@@IAEPAW4ResourceTypes@@PAW42@00@Z
 _TEXT	SEGMENT
-$T246067 = -4						; size = 1
+$T246237 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$246071 = 16					; size = 1
+__Cat$246240 = 16					; size = 1
 __Ptr$ = 16						; size = 4
 ??$_Umove@PAW4ResourceTypes@@@?$vector@W4ResourceTypes@@V?$allocator@W4ResourceTypes@@@std@@@std@@IAEPAW4ResourceTypes@@PAW42@00@Z PROC ; std::vector<enum ResourceTypes,std::allocator<enum ResourceTypes> >::_Umove<enum ResourceTypes *>, COMDAT
 ; _this$ = ecx
@@ -37955,9 +38175,9 @@ __Ptr$ = 16						; size = 4
 ; 1147 : 		return (_STDEXT _Unchecked_uninitialized_move(_First, _Last,
 ; 1148 : 			_Ptr, this->_Alval));
 
-	mov	edx, DWORD PTR __Cat$246071[esp]
-	mov	BYTE PTR $T246067[esp+4], 0
-	mov	eax, DWORD PTR $T246067[esp+4]
+	mov	edx, DWORD PTR __Cat$246240[esp]
+	mov	BYTE PTR $T246237[esp+4], 0
+	mov	eax, DWORD PTR $T246237[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Ptr$[esp+4]
 	push	edx
@@ -38044,8 +38264,8 @@ _TEXT	SEGMENT
 __Capacity$ = -4					; size = 4
 __Where$ = 8						; size = 4
 __Count$ = 12						; size = 4
-__Tmp$214892 = 16					; size = 4
-__Tmp$214882 = 16					; size = 4
+__Tmp$215369 = 16					; size = 4
+__Tmp$215359 = 16					; size = 4
 __Val$ = 16						; size = 4
 ?_Insert_n@?$vector@HV?$allocator@H@std@@@std@@IAEXV?$_Vector_const_iterator@HV?$allocator@H@std@@@2@IABH@Z PROC ; std::vector<int,std::allocator<int> >::_Insert_n, COMDAT
 ; _this$ = ecx
@@ -38276,7 +38496,7 @@ $LN10@Insert_n:
 ; 1214 : 				_VEC_ITER_BASE(_Where) + _Count);	// copy suffix
 
 	lea	ebp, DWORD PTR [edi*4]
-	mov	DWORD PTR __Tmp$214882[esp+16], edx
+	mov	DWORD PTR __Tmp$215359[esp+16], edx
 	jae	SHORT $LN3@Insert_n
 	lea	ecx, DWORD PTR [eax+ebp]
 	push	ecx
@@ -38293,7 +38513,7 @@ $LN10@Insert_n:
 	mov	eax, DWORD PTR [esi+8]
 	mov	ecx, eax
 	sub	ecx, DWORD PTR __Where$[esp+16]
-	lea	edx, DWORD PTR __Tmp$214882[esp+16]
+	lea	edx, DWORD PTR __Tmp$215359[esp+16]
 	sar	ecx, 2
 	push	edx
 	sub	edi, ecx
@@ -38321,7 +38541,7 @@ $LN10@Insert_n:
 ; 1231 : 				_Tmp);	// insert up to old end
 
 	mov	eax, DWORD PTR __Where$[esp+16]
-	lea	edx, DWORD PTR __Tmp$214882[esp+16]
+	lea	edx, DWORD PTR __Tmp$215359[esp+16]
 	push	edx
 	sub	esi, ebp
 	push	esi
@@ -38376,7 +38596,7 @@ $LN3@Insert_n:
 ; 1248 : 				_Tmp);	// insert into hole
 
 	mov	eax, DWORD PTR __Where$[esp+28]
-	lea	ecx, DWORD PTR __Tmp$214892[esp+28]
+	lea	ecx, DWORD PTR __Tmp$215369[esp+28]
 	push	ecx
 	add	ebp, eax
 	push	ebp
@@ -38469,11 +38689,11 @@ xdata$x	ENDS
 ;	COMDAT ?makeHasMet@CvTeam@@QAEXW4TeamTypes@@_N@Z
 _TEXT	SEGMENT
 _this$ = -80						; size = 4
-_iMyPlayersLoop$225221 = -76				; size = 4
+_iMyPlayersLoop$225698 = -76				; size = 4
 tv906 = -72						; size = 4
-$T246597 = -72						; size = 1
-_strSummary$225279 = -68				; size = 28
-_strBuffer$225271 = -40					; size = 28
+$T246764 = -72						; size = 1
+_strSummary$225756 = -68				; size = 28
+_strBuffer$225748 = -40					; size = 28
 __$EHRec$ = -12						; size = 12
 _eIndex$ = 8						; size = 4
 _bSuppressMessages$ = 12				; size = 1
@@ -38591,7 +38811,7 @@ $LN209@makeHasMet:
 	push	edi
 	xor	edi, edi
 	xor	esi, esi
-	mov	DWORD PTR _iMyPlayersLoop$225221[esp+96], edi
+	mov	DWORD PTR _iMyPlayersLoop$225698[esp+96], edi
 	mov	DWORD PTR tv906[esp+96], esi
 	npad	6
 $LL32@makeHasMet:
@@ -38719,7 +38939,7 @@ $LL20@makeHasMet:
 ; 3700 : 											// Don't notify diplo AI if we're the one meeting or the one being met
 ; 3701 : 											if(eThirdPlayer != eMyPlayer && eThirdPlayer != eTheirPlayer)
 
-	mov	eax, DWORD PTR _iMyPlayersLoop$225221[esp+96]
+	mov	eax, DWORD PTR _iMyPlayersLoop$225698[esp+96]
 	cmp	edi, eax
 	je	SHORT $LN19@makeHasMet
 	cmp	edi, ebp
@@ -38740,7 +38960,7 @@ $LN19@makeHasMet:
 	cmp	esi, 3983868				; 003cc9fcH
 	jl	SHORT $LL20@makeHasMet
 	mov	esi, DWORD PTR tv906[esp+96]
-	mov	edi, DWORD PTR _iMyPlayersLoop$225221[esp+96]
+	mov	edi, DWORD PTR _iMyPlayersLoop$225698[esp+96]
 $LN26@makeHasMet:
 	add	ebx, 63236				; 0000f704H
 	inc	ebp
@@ -38752,7 +38972,7 @@ $LN31@makeHasMet:
 	add	esi, 63236				; 0000f704H
 	inc	edi
 	cmp	esi, 3983868				; 003cc9fcH
-	mov	DWORD PTR _iMyPlayersLoop$225221[esp+96], edi
+	mov	DWORD PTR _iMyPlayersLoop$225698[esp+96], edi
 	mov	DWORD PTR tv906[esp+96], esi
 	jl	$LL32@makeHasMet
 
@@ -38951,11 +39171,11 @@ $LN4@makeHasMet:
 	mov	eax, DWORD PTR _this$[esp+96]
 	mov	cl, BYTE PTR [edx+eax+1928]
 	mov	edx, DWORD PTR ?m_aTeams@CvTeam@@1PAV1@A ; CvTeam::m_aTeams
-	mov	BYTE PTR $T246597[esp+96], cl
+	mov	BYTE PTR $T246764[esp+96], cl
 	lea	ecx, DWORD PTR [esi+edx]
 	call	?getLeaderID@CvTeam@@QBE?AW4PlayerTypes@@XZ ; CvTeam::getLeaderID
 	imul	eax, 63236				; 0000f704H
-	mov	ecx, DWORD PTR $T246597[esp+96]
+	mov	ecx, DWORD PTR $T246764[esp+96]
 	mov	edx, DWORD PTR _this$[esp+96]
 	add	eax, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	push	ecx
@@ -38994,8 +39214,8 @@ $LN3@makeHasMet:
 	mov	ecx, eax
 	call	?getNameKey@CvPlayer@@QBEPBDXZ		; CvPlayer::getNameKey
 	push	eax
-	lea	eax, DWORD PTR _strBuffer$225271[esp+100]
-	push	OFFSET $SG225278
+	lea	eax, DWORD PTR _strBuffer$225748[esp+100]
+	push	OFFSET $SG225755
 	push	eax
 	call	??$GetLocalizedText@PBD@@YA?AVCvString@@PBD0@Z ; GetLocalizedText<char const *>
 	add	esp, 12					; 0000000cH
@@ -39011,8 +39231,8 @@ $LN3@makeHasMet:
 	mov	ecx, eax
 	call	?getNameKey@CvPlayer@@QBEPBDXZ		; CvPlayer::getNameKey
 	push	eax
-	lea	edx, DWORD PTR _strSummary$225279[esp+100]
-	push	OFFSET $SG225281
+	lea	edx, DWORD PTR _strSummary$225756[esp+100]
+	push	OFFSET $SG225758
 	push	edx
 	call	??$GetLocalizedText@PBD@@YA?AVCvString@@PBD0@Z ; GetLocalizedText<char const *>
 	add	esp, 12					; 0000000cH
@@ -39020,7 +39240,7 @@ $LN3@makeHasMet:
 ; 3772 : 
 ; 3773 : 					AddNotification(NOTIFICATION_MET_MINOR, strBuffer, strSummary, iCapitalX, iCapitalY, iCapitalID);
 
-	lea	ecx, DWORD PTR _strSummary$225279[esp+96]
+	lea	ecx, DWORD PTR _strSummary$225756[esp+96]
 	mov	BYTE PTR __$EHRec$[esp+104], 1
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	-1
@@ -39028,7 +39248,7 @@ $LN3@makeHasMet:
 	push	ebp
 	push	edi
 	push	eax
-	lea	ecx, DWORD PTR _strBuffer$225271[esp+116]
+	lea	ecx, DWORD PTR _strBuffer$225748[esp+116]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	mov	ecx, DWORD PTR _this$[esp+116]
 	push	eax
@@ -39037,10 +39257,10 @@ $LN3@makeHasMet:
 
 ; 3774 : 				}
 
-	lea	ecx, DWORD PTR _strSummary$225279[esp+96]
+	lea	ecx, DWORD PTR _strSummary$225756[esp+96]
 	mov	BYTE PTR __$EHRec$[esp+104], 0
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR _strBuffer$225271[esp+96]
+	lea	ecx, DWORD PTR _strBuffer$225748[esp+96]
 	mov	DWORD PTR __$EHRec$[esp+104], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 	mov	ebp, DWORD PTR _eIndex$[esp+92]
@@ -39081,10 +39301,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?makeHasMet@CvTeam@@QAEXW4TeamTypes@@_N@Z$0:
-	lea	ecx, DWORD PTR _strBuffer$225271[ebp]
+	lea	ecx, DWORD PTR _strBuffer$225748[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?makeHasMet@CvTeam@@QAEXW4TeamTypes@@_N@Z$1:
-	lea	ecx, DWORD PTR _strSummary$225279[ebp]
+	lea	ecx, DWORD PTR _strSummary$225756[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?makeHasMet@CvTeam@@QAEXW4TeamTypes@@_N@Z:
 	mov	eax, OFFSET __ehfuncinfo$?makeHasMet@CvTeam@@QAEXW4TeamTypes@@_N@Z
@@ -39173,16 +39393,16 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 __Capacity$ = -20					; size = 4
 __$EHRec$ = -16						; size = 16
-__Cat$247040 = 8					; size = 1
-__Cat$246968 = 8					; size = 1
+__Cat$247208 = 8					; size = 1
+__Cat$247135 = 8					; size = 1
 __Where$ = 8						; size = 4
-__Tmp$228046 = 12					; size = 4
-__Tmp$228036 = 12					; size = 4
-__Newvec$228021 = 12					; size = 4
+__Tmp$228564 = 12					; size = 4
+__Tmp$228554 = 12					; size = 4
+__Newvec$228539 = 12					; size = 4
 __Count$ = 12						; size = 4
 tv515 = 16						; size = 4
-$T247036 = 16						; size = 1
-$T246964 = 16						; size = 1
+$T247205 = 16						; size = 1
+$T247132 = 16						; size = 1
 __Val$ = 16						; size = 4
 ?_Insert_n@?$vector@W4ResourceTypes@@V?$allocator@W4ResourceTypes@@@std@@@std@@IAEXV?$_Vector_const_iterator@W4ResourceTypes@@V?$allocator@W4ResourceTypes@@@std@@@2@IABW4ResourceTypes@@@Z PROC ; std::vector<enum ResourceTypes,std::allocator<enum ResourceTypes> >::_Insert_n, COMDAT
 ; _this$ = ecx
@@ -39308,7 +39528,7 @@ $LN9@Insert_n@2:
 	lea	edx, DWORD PTR [eax+ebx*4]
 	push	edx
 	mov	ecx, esi
-	mov	DWORD PTR __Newvec$228021[ebp], eax
+	mov	DWORD PTR __Newvec$228539[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+12], 0
 	call	?_Ufill@?$vector@W4ResourceTypes@@V?$allocator@W4ResourceTypes@@@std@@@std@@IAEPAW4ResourceTypes@@PAW43@IABW43@@Z ; std::vector<enum ResourceTypes,std::allocator<enum ResourceTypes> >::_Ufill
 
@@ -39316,12 +39536,12 @@ $LN9@Insert_n@2:
 ; 1180 : 			_Umove(this->_Myfirst, _VEC_ITER_BASE(_Where),
 ; 1181 : 				_Newvec);	// move prefix
 
-	mov	edx, DWORD PTR __Cat$246968[ebp]
+	mov	edx, DWORD PTR __Cat$247135[ebp]
 	mov	eax, DWORD PTR [esi+4]
-	mov	BYTE PTR $T246964[ebp], 0
-	mov	ecx, DWORD PTR $T246964[ebp]
+	mov	BYTE PTR $T247132[ebp], 0
+	mov	ecx, DWORD PTR $T247132[ebp]
 	push	ecx
-	mov	ecx, DWORD PTR __Newvec$228021[ebp]
+	mov	ecx, DWORD PTR __Newvec$228539[ebp]
 	push	edx
 	mov	edx, DWORD PTR __Where$[ebp]
 	push	esi
@@ -39336,13 +39556,13 @@ $LN9@Insert_n@2:
 
 	mov	eax, DWORD PTR [esi+8]
 	add	esp, 24					; 00000018H
-	mov	BYTE PTR $T247036[ebp], 0
-	mov	edx, DWORD PTR $T247036[ebp]
+	mov	BYTE PTR $T247205[ebp], 0
+	mov	edx, DWORD PTR $T247205[ebp]
 	push	edx
-	mov	edx, DWORD PTR __Cat$247040[ebp]
+	mov	edx, DWORD PTR __Cat$247208[ebp]
 	push	edx
 	lea	ecx, DWORD PTR [ebx+edi]
-	mov	ebx, DWORD PTR __Newvec$228021[ebp]
+	mov	ebx, DWORD PTR __Newvec$228539[ebp]
 	push	esi
 	lea	ecx, DWORD PTR [ebx+ecx*4]
 	push	ecx
@@ -39417,7 +39637,7 @@ __catch$?_Insert_n@?$vector@W4ResourceTypes@@V?$allocator@W4ResourceTypes@@@std@
 ; 1189 : 				_Destroy(_Newvec + _Whereoff, _Newvec + _Whereoff + _Count);
 ; 1190 : 			this->_Alval.deallocate(_Newvec, _Capacity);
 
-	mov	edx, DWORD PTR __Newvec$228021[ebp]
+	mov	edx, DWORD PTR __Newvec$228539[ebp]
 	push	edx
 	call	??3@YAXPAX@Z				; operator delete
 	add	esp, 4
@@ -39446,7 +39666,7 @@ $LN10@Insert_n@2:
 
 	mov	edx, DWORD PTR __Val$[ebp]
 	mov	ecx, DWORD PTR [edx]
-	mov	DWORD PTR __Tmp$228036[ebp], ecx
+	mov	DWORD PTR __Tmp$228554[ebp], ecx
 
 ; 1212 : 
 ; 1213 : 			_Umove(_VEC_ITER_BASE(_Where), _Mylast,
@@ -39469,7 +39689,7 @@ $LN10@Insert_n@2:
 	mov	eax, DWORD PTR [esi+8]
 	mov	ecx, eax
 	sub	ecx, DWORD PTR __Where$[ebp]
-	lea	edx, DWORD PTR __Tmp$228036[ebp]
+	lea	edx, DWORD PTR __Tmp$228554[ebp]
 	sar	ecx, 2
 	push	edx
 	sub	edi, ecx
@@ -39498,7 +39718,7 @@ $LN10@Insert_n@2:
 ; 1230 : 			std::fill(_VEC_ITER_BASE(_Where), _Mylast - _Count,
 ; 1231 : 				_Tmp);	// insert up to old end
 
-	lea	edx, DWORD PTR __Tmp$228036[ebp]
+	lea	edx, DWORD PTR __Tmp$228554[ebp]
 	push	edx
 	sub	esi, eax
 	mov	eax, DWORD PTR __Where$[ebp]
@@ -39540,7 +39760,7 @@ $LN3@Insert_n@2:
 	push	ebx
 	push	edi
 	mov	ecx, esi
-	mov	DWORD PTR __Tmp$228046[ebp], edx
+	mov	DWORD PTR __Tmp$228564[ebp], edx
 	mov	DWORD PTR tv515[ebp], eax
 	call	??$_Umove@PAW4ResourceTypes@@@?$vector@W4ResourceTypes@@V?$allocator@W4ResourceTypes@@@std@@@std@@IAEPAW4ResourceTypes@@PAW42@00@Z ; std::vector<enum ResourceTypes,std::allocator<enum ResourceTypes> >::_Umove<enum ResourceTypes *>
 
@@ -39564,7 +39784,7 @@ $LN3@Insert_n@2:
 
 	mov	eax, DWORD PTR __Where$[ebp]
 	mov	edx, DWORD PTR tv515[ebp]
-	lea	ecx, DWORD PTR __Tmp$228046[ebp]
+	lea	ecx, DWORD PTR __Tmp$228564[ebp]
 	push	ecx
 	add	edx, eax
 	push	edx
@@ -39676,7 +39896,7 @@ PUBLIC	?resize@?$vector@W4ResourceTypes@@V?$allocator@W4ResourceTypes@@@std@@@st
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\vector
 ;	COMDAT ?resize@?$vector@W4ResourceTypes@@V?$allocator@W4ResourceTypes@@@std@@@std@@QAEXIW4ResourceTypes@@@Z
 _TEXT	SEGMENT
-$T247141 = 8						; size = 4
+$T247308 = 8						; size = 4
 __Newsize$ = 8						; size = 4
 __Val$ = 12						; size = 4
 ?resize@?$vector@W4ResourceTypes@@V?$allocator@W4ResourceTypes@@@std@@@std@@QAEXIW4ResourceTypes@@@Z PROC ; std::vector<enum ResourceTypes,std::allocator<enum ResourceTypes> >::resize, COMDAT
@@ -39720,7 +39940,7 @@ $LN36@resize:
 	lea	eax, DWORD PTR [edi+edx*4]
 	push	esi
 	push	eax
-	lea	eax, DWORD PTR $T247141[esp+12]
+	lea	eax, DWORD PTR $T247308[esp+12]
 	push	eax
 	call	?erase@?$vector@W4ResourceTypes@@V?$allocator@W4ResourceTypes@@@std@@@std@@QAE?AV?$_Vector_iterator@W4ResourceTypes@@V?$allocator@W4ResourceTypes@@@std@@@2@V?$_Vector_const_iterator@W4ResourceTypes@@V?$allocator@W4ResourceTypes@@@std@@@2@0@Z ; std::vector<enum ResourceTypes,std::allocator<enum ResourceTypes> >::erase
 $LN1@resize:
@@ -39737,7 +39957,7 @@ PUBLIC	??$_Sort@PAUWeightedElement@?$CvWeightedVector@W4TeamTypes@@$0DP@$00@@H@s
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\algorithm
 ;	COMDAT ??$_Sort@PAUWeightedElement@?$CvWeightedVector@W4TeamTypes@@$0DP@$00@@H@std@@YAXPAUWeightedElement@?$CvWeightedVector@W4TeamTypes@@$0DP@$00@@0H@Z
 _TEXT	SEGMENT
-__Mid$228942 = -8					; size = 8
+__Mid$229460 = -8					; size = 8
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Ideal$ = 16						; size = 4
@@ -39772,7 +39992,7 @@ $LL7@Sort:
 ; 3087 : 			std::_Unguarded_partition(_First, _Last);
 
 	push	edi
-	lea	eax, DWORD PTR __Mid$228942[esp+28]
+	lea	eax, DWORD PTR __Mid$229460[esp+28]
 	push	ebx
 	push	eax
 	call	??$_Unguarded_partition@PAUWeightedElement@?$CvWeightedVector@W4TeamTypes@@$0DP@$00@@@std@@YA?AU?$pair@PAUWeightedElement@?$CvWeightedVector@W4TeamTypes@@$0DP@$00@@PAU12@@0@PAUWeightedElement@?$CvWeightedVector@W4TeamTypes@@$0DP@$00@@0@Z ; std::_Unguarded_partition<CvWeightedVector<enum TeamTypes,63,1>::WeightedElement *>
@@ -39781,7 +40001,7 @@ $LL7@Sort:
 ; 3089 : 
 ; 3090 : 		if (_Mid.first - _First < _Last - _Mid.second)
 
-	mov	ebp, DWORD PTR __Mid$228942[esp+40]
+	mov	ebp, DWORD PTR __Mid$229460[esp+40]
 	mov	eax, esi
 	cdq
 	sub	eax, edx
@@ -39791,7 +40011,7 @@ $LL7@Sort:
 	sub	eax, edx
 	sar	eax, 1
 	add	esi, eax
-	mov	eax, DWORD PTR __Mid$228942[esp+36]
+	mov	eax, DWORD PTR __Mid$229460[esp+36]
 	mov	ecx, edi
 	mov	edx, eax
 	sub	ecx, ebp
@@ -39829,7 +40049,7 @@ $LN5@Sort:
 
 ; 3098 : 			_Last = _Mid.first;
 
-	mov	edi, DWORD PTR __Mid$228942[esp+36]
+	mov	edi, DWORD PTR __Mid$229460[esp+36]
 $LN26@Sort:
 	mov	eax, edi
 	sub	eax, ebx
@@ -40164,8 +40384,8 @@ PUBLIC	?resize@?$vector@W4ResourceTypes@@V?$allocator@W4ResourceTypes@@@std@@@st
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\vector
 ;	COMDAT ?resize@?$vector@W4ResourceTypes@@V?$allocator@W4ResourceTypes@@@std@@@std@@QAEXI@Z
 _TEXT	SEGMENT
-$T247656 = -4						; size = 4
-$T247624 = 8						; size = 4
+$T247823 = -4						; size = 4
+$T247791 = 8						; size = 4
 __Newsize$ = 8						; size = 4
 ?resize@?$vector@W4ResourceTypes@@V?$allocator@W4ResourceTypes@@@std@@@std@@QAEXI@Z PROC ; std::vector<enum ResourceTypes,std::allocator<enum ResourceTypes> >::resize, COMDAT
 ; _this$ = ecx
@@ -40184,10 +40404,10 @@ __Newsize$ = 8						; size = 4
 	mov	eax, esi
 	sub	eax, edi
 	sar	eax, 2
-	mov	DWORD PTR $T247656[esp+12], 0
+	mov	DWORD PTR $T247823[esp+12], 0
 	cmp	edx, eax
 	jbe	SHORT $LN38@resize@2
-	lea	edi, DWORD PTR $T247656[esp+12]
+	lea	edi, DWORD PTR $T247823[esp+12]
 	push	edi
 	sub	edx, eax
 	push	edx
@@ -40208,7 +40428,7 @@ $LN38@resize@2:
 	lea	eax, DWORD PTR [edi+edx*4]
 	push	esi
 	push	eax
-	lea	eax, DWORD PTR $T247624[esp+16]
+	lea	eax, DWORD PTR $T247791[esp+16]
 	push	eax
 	call	?erase@?$vector@W4ResourceTypes@@V?$allocator@W4ResourceTypes@@@std@@@std@@QAE?AV?$_Vector_iterator@W4ResourceTypes@@V?$allocator@W4ResourceTypes@@@std@@@2@V?$_Vector_const_iterator@W4ResourceTypes@@V?$allocator@W4ResourceTypes@@@std@@@2@0@Z ; std::vector<enum ResourceTypes,std::allocator<enum ResourceTypes> >::erase
 $LN3@resize@2:
@@ -40356,35 +40576,35 @@ _TEXT	SEGMENT
 tv1233 = -188						; size = 4
 tv1231 = -188						; size = 4
 tv935 = -188						; size = 4
-$T248569 = -188						; size = 4
-$T247999 = -188						; size = 4
-$T247996 = -188						; size = 4
+$T248736 = -188						; size = 4
+$T248166 = -188						; size = 4
+$T248163 = -188						; size = 4
 tv1303 = -184						; size = 4
 tv1277 = -184						; size = 4
 tv745 = -184						; size = 4
 tv721 = -184						; size = 4
 tv949 = -180						; size = 4
-_playerWhoLeadsTeam$225773 = -180			; size = 4
-$T248000 = -180						; size = 4
-$T247997 = -180						; size = 4
-_pkProject$225728 = -180				; size = 4
+_playerWhoLeadsTeam$226291 = -180			; size = 4
+$T248167 = -180						; size = 4
+$T248164 = -180						; size = 4
+_pkProject$226246 = -180				; size = 4
 _iI$ = -176						; size = 4
-_defaultType$225717 = -176				; size = 4
+_defaultType$226235 = -176				; size = 4
 _this$ = -172						; size = 4
-_strSomeoneCompletedProject$225763 = -168		; size = 28
-_strUnknownCompletesProject$225769 = -140		; size = 28
-$T248002 = -112						; size = 8
-$T248003 = -104						; size = 8
-_strSomeoneCompletesProject$225757 = -96		; size = 28
-$T247998 = -68						; size = 28
-$T248001 = -40						; size = 28
+_strSomeoneCompletedProject$226281 = -168		; size = 28
+_strUnknownCompletesProject$226287 = -140		; size = 28
+$T248169 = -112						; size = 8
+$T248170 = -104						; size = 8
+_strSomeoneCompletesProject$226275 = -96		; size = 28
+$T248165 = -68						; size = 28
+$T248168 = -40						; size = 28
 __$EHRec$ = -12						; size = 12
 _eIndex$ = 8						; size = 4
 _iChange$ = 12						; size = 4
 ?changeProjectCount@CvTeam@@QAEXW4ProjectTypes@@H@Z PROC ; CvTeam::changeProjectCount, COMDAT
 ; _this$ = ecx
 
-; 4629 : {
+; 4681 : {
 
 	push	-1
 	push	__ehhandler$?changeProjectCount@CvTeam@@QAEXW4ProjectTypes@@H@Z
@@ -40395,21 +40615,21 @@ _iChange$ = 12						; size = 4
 	push	ebx
 	push	ebp
 
-; 4630 : 	bool bChangeProduction;
-; 4631 : 	int iOldProjectCount;
-; 4632 : #ifdef AUI_WARNING_FIXES
-; 4633 : 	int iI;
-; 4634 : 	uint iJ;
-; 4635 : #else
-; 4636 : 	int iI, iJ;
-; 4637 : #endif
-; 4638 : 
-; 4639 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
-; 4640 : 	CvAssertMsg(eIndex < GC.getNumProjectInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
-; 4641 : 
-; 4642 : 	if(iChange != 0)
-; 4643 : 	{
-; 4644 : 		GC.getGame().incrementProjectCreatedCount(eIndex, iChange);
+; 4682 : 	bool bChangeProduction;
+; 4683 : 	int iOldProjectCount;
+; 4684 : #ifdef AUI_WARNING_FIXES
+; 4685 : 	int iI;
+; 4686 : 	uint iJ;
+; 4687 : #else
+; 4688 : 	int iI, iJ;
+; 4689 : #endif
+; 4690 : 
+; 4691 : 	CvAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
+; 4692 : 	CvAssertMsg(eIndex < GC.getNumProjectInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
+; 4693 : 
+; 4694 : 	if(iChange != 0)
+; 4695 : 	{
+; 4696 : 		GC.getGame().incrementProjectCreatedCount(eIndex, iChange);
 
 	mov	ebp, DWORD PTR _eIndex$[esp+192]
 	push	esi
@@ -40424,48 +40644,48 @@ _iChange$ = 12						; size = 4
 	push	ebp
 	call	?incrementProjectCreatedCount@CvGame@@QAEXW4ProjectTypes@@H@Z ; CvGame::incrementProjectCreatedCount
 
-; 4645 : 
-; 4646 : 		iOldProjectCount = getProjectCount(eIndex);
+; 4697 : 
+; 4698 : 		iOldProjectCount = getProjectCount(eIndex);
 
 	mov	eax, DWORD PTR [ebx+2916]
 	mov	ecx, DWORD PTR [eax+ebp*4]
 	lea	eax, DWORD PTR [eax+ebp*4]
 	mov	DWORD PTR tv935[esp+204], ecx
 
-; 4647 : 
-; 4648 : 		m_paiProjectCount[eIndex] = (m_paiProjectCount[eIndex] + iChange);
+; 4699 : 
+; 4700 : 		m_paiProjectCount[eIndex] = (m_paiProjectCount[eIndex] + iChange);
 
 	add	ecx, esi
 	mov	DWORD PTR [eax], ecx
 
-; 4649 : 		CvAssert(getProjectCount(eIndex) >= 0);
-; 4650 : 
-; 4651 : 		//adjust default art types
-; 4652 : 		if(iChange >= 0)
+; 4701 : 		CvAssert(getProjectCount(eIndex) >= 0);
+; 4702 : 
+; 4703 : 		//adjust default art types
+; 4704 : 		if(iChange >= 0)
 
 	test	esi, esi
 	jl	$LN45@changeProj
 
-; 4653 : 		{
-; 4654 : 			//multiplayer games default to first art type
-; 4655 : 			int defaultType = -1;
-; 4656 : 			if(GC.getGame().isNetworkMultiPlayer())
+; 4705 : 		{
+; 4706 : 			//multiplayer games default to first art type
+; 4707 : 			int defaultType = -1;
+; 4708 : 			if(GC.getGame().isNetworkMultiPlayer())
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
-	mov	DWORD PTR _defaultType$225717[esp+204], -1
+	mov	DWORD PTR _defaultType$226235[esp+204], -1
 	call	?isNetworkMultiPlayer@CvGame@@QBE_NXZ	; CvGame::isNetworkMultiPlayer
 	test	al, al
 	je	SHORT $LN44@changeProj
 
-; 4657 : 				defaultType = getProjectDefaultArtType(eIndex);
+; 4709 : 				defaultType = getProjectDefaultArtType(eIndex);
 
 	mov	ecx, DWORD PTR [ebx+2920]
 	mov	edx, DWORD PTR [ecx+ebp*4]
-	mov	DWORD PTR _defaultType$225717[esp+204], edx
+	mov	DWORD PTR _defaultType$226235[esp+204], edx
 $LN44@changeProj:
 
-; 4658 : 
-; 4659 : 			for(int i=0; i<iChange; i++)
+; 4710 : 
+; 4711 : 			for(int i=0; i<iChange; i++)
 
 	test	esi, esi
 	jle	$LN292@changeProj
@@ -40479,7 +40699,7 @@ $LL296@changeProj:
 	mov	eax, DWORD PTR tv949[esp+204]
 $LN43@changeProj:
 
-; 4660 : 				m_pavProjectArtTypes[eIndex].push_back(defaultType);
+; 4712 : 				m_pavProjectArtTypes[eIndex].push_back(defaultType);
 
 	mov	ecx, DWORD PTR [ebx+2960]
 	mov	esi, DWORD PTR [ecx+eax+4]
@@ -40499,34 +40719,34 @@ $LN71@changeProj:
 	sar	edi, 2
 	cmp	edi, eax
 	jae	SHORT $LN63@changeProj
-	mov	eax, DWORD PTR _defaultType$225717[esp+204]
+	mov	eax, DWORD PTR _defaultType$226235[esp+204]
 	mov	DWORD PTR [edx], eax
 	add	edx, 4
 	mov	DWORD PTR [ecx+8], edx
 	jmp	SHORT $LN42@changeProj
 $LN63@changeProj:
-	lea	eax, DWORD PTR _defaultType$225717[esp+204]
+	lea	eax, DWORD PTR _defaultType$226235[esp+204]
 	push	eax
 	push	1
 	push	edx
 	call	?_Insert_n@?$vector@HV?$allocator@H@std@@@std@@IAEXV?$_Vector_const_iterator@HV?$allocator@H@std@@@2@IABH@Z ; std::vector<int,std::allocator<int> >::_Insert_n
 $LN42@changeProj:
 
-; 4658 : 
-; 4659 : 			for(int i=0; i<iChange; i++)
+; 4710 : 
+; 4711 : 			for(int i=0; i<iChange; i++)
 
 	sub	DWORD PTR tv745[esp+204], 1
 	jne	SHORT $LL296@changeProj
 
-; 4661 : 		}
-; 4662 : 		else
+; 4713 : 		}
+; 4714 : 		else
 
 	mov	esi, DWORD PTR _iChange$[esp+200]
 	jmp	SHORT $LN292@changeProj
 $LN45@changeProj:
 
-; 4663 : 		{
-; 4664 : 			for(int i=0; i<-iChange; i++)
+; 4715 : 		{
+; 4716 : 			for(int i=0; i<-iChange; i++)
 
 	mov	eax, esi
 	neg	eax
@@ -40538,7 +40758,7 @@ $LN45@changeProj:
 	npad	6
 $LL39@changeProj:
 
-; 4665 : 				m_pavProjectArtTypes[eIndex].pop_back();
+; 4717 : 				m_pavProjectArtTypes[eIndex].pop_back();
 
 	mov	eax, DWORD PTR [ebx+2960]
 	mov	ecx, DWORD PTR [eax+edx+8]
@@ -40551,34 +40771,34 @@ $LL39@changeProj:
 	mov	DWORD PTR [eax+8], ecx
 $LN38@changeProj:
 
-; 4663 : 		{
-; 4664 : 			for(int i=0; i<-iChange; i++)
+; 4715 : 		{
+; 4716 : 			for(int i=0; i<-iChange; i++)
 
 	sub	DWORD PTR tv721[esp+204], 1
 	jne	SHORT $LL39@changeProj
 $LN292@changeProj:
 
-; 4666 : 		}
-; 4667 : 		CvAssertMsg(getProjectCount(eIndex) == (int)m_pavProjectArtTypes[eIndex].size(), "[Jason] Unbalanced project art types.");
-; 4668 : 
-; 4669 : 		CvProjectEntry* pkProject = GC.getProjectInfo(eIndex);
+; 4718 : 		}
+; 4719 : 		CvAssertMsg(getProjectCount(eIndex) == (int)m_pavProjectArtTypes[eIndex].size(), "[Jason] Unbalanced project art types.");
+; 4720 : 
+; 4721 : 		CvProjectEntry* pkProject = GC.getProjectInfo(eIndex);
 
 	push	ebp
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getProjectInfo@CvGlobals@@QAEPAVCvProjectEntry@@W4ProjectTypes@@@Z ; CvGlobals::getProjectInfo
 	mov	edi, eax
 
-; 4670 : 
-; 4671 : 		changeNukeInterception(pkProject->GetNukeInterception() * iChange);
+; 4722 : 
+; 4723 : 		changeNukeInterception(pkProject->GetNukeInterception() * iChange);
 
 	mov	ecx, edi
-	mov	DWORD PTR _pkProject$225728[esp+204], edi
+	mov	DWORD PTR _pkProject$226246[esp+204], edi
 	call	?GetNukeInterception@CvProjectEntry@@QBEHXZ ; CvProjectEntry::GetNukeInterception
 	imul	eax, esi
 	add	DWORD PTR [ebx+32], eax
 
-; 4672 : 
-; 4673 : 		if((pkProject->GetTechShare() > 0) && (pkProject->GetTechShare() <= MAX_TEAMS))
+; 4724 : 
+; 4725 : 		if((pkProject->GetTechShare() > 0) && (pkProject->GetTechShare() <= MAX_TEAMS))
 
 	mov	ecx, edi
 	call	?GetTechShare@CvProjectEntry@@QBEHXZ	; CvProjectEntry::GetTechShare
@@ -40589,8 +40809,8 @@ $LN292@changeProj:
 	cmp	eax, 64					; 00000040H
 	jg	SHORT $LN293@changeProj
 
-; 4674 : 		{
-; 4675 : 			changeTechShareCount((pkProject->GetTechShare() - 1), iChange);
+; 4726 : 		{
+; 4727 : 			changeTechShareCount((pkProject->GetTechShare() - 1), iChange);
 
 	mov	ecx, edi
 	call	?GetTechShare@CvProjectEntry@@QBEHXZ	; CvProjectEntry::GetTechShare
@@ -40607,12 +40827,12 @@ $LN292@changeProj:
 	call	?updateTechShare@CvTeam@@IAEXXZ		; CvTeam::updateTechShare
 $LN293@changeProj:
 
-; 4676 : 		}
-; 4677 : 
-; 4678 : #ifdef AUI_WARNING_FIXES
-; 4679 : 		for (uint iVictory = 0; iVictory < GC.getNumVictoryInfos(); ++iVictory)
-; 4680 : #else
-; 4681 : 		for(int iVictory = 0; iVictory < GC.getNumVictoryInfos(); ++iVictory)
+; 4728 : 		}
+; 4729 : 
+; 4730 : #ifdef AUI_WARNING_FIXES
+; 4731 : 		for (uint iVictory = 0; iVictory < GC.getNumVictoryInfos(); ++iVictory)
+; 4732 : #else
+; 4733 : 		for(int iVictory = 0; iVictory < GC.getNumVictoryInfos(); ++iVictory)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	xor	esi, esi
@@ -40621,9 +40841,9 @@ $LN293@changeProj:
 	jle	SHORT $LN33@changeProj
 $LL35@changeProj:
 
-; 4682 : #endif
-; 4683 : 		{
-; 4684 : 			if(pkProject->GetVictoryThreshold(iVictory) > 0)
+; 4734 : #endif
+; 4735 : 		{
+; 4736 : 			if(pkProject->GetVictoryThreshold(iVictory) > 0)
 
 	push	esi
 	mov	ecx, edi
@@ -40631,8 +40851,8 @@ $LL35@changeProj:
 	test	eax, eax
 	jle	SHORT $LN34@changeProj
 
-; 4685 : 			{
-; 4686 : 				m_abCanLaunch[iVictory] = GC.getGame().testVictory((VictoryTypes)iVictory, GetID());
+; 4737 : 			{
+; 4738 : 				m_abCanLaunch[iVictory] = GC.getGame().testVictory((VictoryTypes)iVictory, GetID());
 
 	mov	eax, DWORD PTR [ebx+4]
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
@@ -40643,7 +40863,7 @@ $LL35@changeProj:
 	mov	ecx, DWORD PTR [ebx+2896]
 	mov	BYTE PTR [esi+ecx], al
 
-; 4687 : 				GC.getGame().testVictory();
+; 4739 : 				GC.getGame().testVictory();
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?testVictory@CvGame@@QAEXXZ		; CvGame::testVictory
@@ -40655,24 +40875,24 @@ $LN34@changeProj:
 	jl	SHORT $LL35@changeProj
 $LN33@changeProj:
 
-; 4688 : 			}
-; 4689 : 		}
-; 4690 : 
-; 4691 : 		if(iChange > 0)
+; 4740 : 			}
+; 4741 : 		}
+; 4742 : 
+; 4743 : 		if(iChange > 0)
 
 	cmp	DWORD PTR _iChange$[esp+200], 0
 	jle	$LN295@changeProj
 
-; 4692 : 		{
-; 4693 : 			if(pkProject->GetEveryoneSpecialUnit() != NO_SPECIALUNIT)
+; 4744 : 		{
+; 4745 : 			if(pkProject->GetEveryoneSpecialUnit() != NO_SPECIALUNIT)
 
 	mov	ecx, edi
 	call	?GetEveryoneSpecialUnit@CvProjectEntry@@QBEHXZ ; CvProjectEntry::GetEveryoneSpecialUnit
 	cmp	eax, -1
 	je	SHORT $LN30@changeProj
 
-; 4694 : 			{
-; 4695 : 				GC.getGame().makeSpecialUnitValid((SpecialUnitTypes)(pkProject->GetEveryoneSpecialUnit()));
+; 4746 : 			{
+; 4747 : 				GC.getGame().makeSpecialUnitValid((SpecialUnitTypes)(pkProject->GetEveryoneSpecialUnit()));
 
 	mov	esi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	mov	ecx, edi
@@ -40682,41 +40902,41 @@ $LN33@changeProj:
 	call	?makeSpecialUnitValid@CvGame@@QAEXW4SpecialUnitTypes@@@Z ; CvGame::makeSpecialUnitValid
 $LN30@changeProj:
 
-; 4696 : 			}
-; 4697 : 
-; 4698 : 			if(pkProject->IsAllowsNukes())
+; 4748 : 			}
+; 4749 : 
+; 4750 : 			if(pkProject->IsAllowsNukes())
 
 	mov	ecx, edi
 	call	?IsAllowsNukes@CvProjectEntry@@QBE_NXZ	; CvProjectEntry::IsAllowsNukes
 	test	al, al
 	je	SHORT $LN29@changeProj
 
-; 4699 : 			{
-; 4700 : 				GC.getGame().makeNukesValid(true);
+; 4751 : 			{
+; 4752 : 				GC.getGame().makeNukesValid(true);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	1
 	call	?makeNukesValid@CvGame@@QAEX_N@Z	; CvGame::makeNukesValid
 $LN29@changeProj:
 
-; 4701 : 			}
-; 4702 : 
-; 4703 : 			for(iI = 0; iI < MAX_PLAYERS; iI++)
+; 4753 : 			}
+; 4754 : 
+; 4755 : 			for(iI = 0; iI < MAX_PLAYERS; iI++)
 
 	xor	edx, edx
 	mov	DWORD PTR tv1277[esp+204], edx
 $LL28@changeProj:
 
-; 4704 : 			{
-; 4705 : 				if(GET_PLAYER((PlayerTypes)iI).isAlive())
+; 4756 : 			{
+; 4757 : 				if(GET_PLAYER((PlayerTypes)iI).isAlive())
 
 	mov	eax, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	cmp	BYTE PTR [edx+eax+2256], 0
 	lea	ecx, DWORD PTR [edx+eax]
 	je	$LN27@changeProj
 
-; 4706 : 				{
-; 4707 : 					if(GET_PLAYER((PlayerTypes)iI).getTeam() == GetID())
+; 4758 : 				{
+; 4759 : 					if(GET_PLAYER((PlayerTypes)iI).getTeam() == GetID())
 
 	mov	eax, DWORD PTR [ecx+44]
 	cmp	eax, 63					; 0000003fH
@@ -40731,17 +40951,17 @@ $LN165@changeProj:
 	cmp	eax, DWORD PTR [ebx+4]
 	jne	$LN27@changeProj
 
-; 4708 : 					{
-; 4709 : 						if(!(GET_PLAYER((PlayerTypes)iI).isHuman()))
+; 4760 : 					{
+; 4761 : 						if(!(GET_PLAYER((PlayerTypes)iI).isHuman()))
 
 	call	?isHuman@CvPlayer@@QBE_NXZ		; CvPlayer::isHuman
 	test	al, al
 	jne	SHORT $LN298@changeProj
 
-; 4710 : 						{
-; 4711 : 							bChangeProduction = false;
-; 4712 : 
-; 4713 : 							for(iJ = 0; iJ < GC.getNumProjectInfos(); iJ++)
+; 4762 : 						{
+; 4763 : 							bChangeProduction = false;
+; 4764 : 
+; 4765 : 							for(iJ = 0; iJ < GC.getNumProjectInfos(); iJ++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	xor	esi, esi
@@ -40750,9 +40970,9 @@ $LN165@changeProj:
 	jle	SHORT $LN298@changeProj
 $LL22@changeProj:
 
-; 4714 : 							{
-; 4715 : 								if((getProjectCount(eIndex) >= GC.getProjectInfo((ProjectTypes)iJ)->GetProjectsNeeded(eIndex)) &&
-; 4716 : 								        (iOldProjectCount < GC.getProjectInfo((ProjectTypes)iJ)->GetProjectsNeeded(eIndex)))
+; 4766 : 							{
+; 4767 : 								if((getProjectCount(eIndex) >= GC.getProjectInfo((ProjectTypes)iJ)->GetProjectsNeeded(eIndex)) &&
+; 4768 : 								        (iOldProjectCount < GC.getProjectInfo((ProjectTypes)iJ)->GetProjectsNeeded(eIndex)))
 
 	mov	ecx, DWORD PTR [ebx+2916]
 	mov	edi, DWORD PTR [ecx+ebp*4]
@@ -40774,10 +40994,10 @@ $LL22@changeProj:
 	jl	SHORT $LN297@changeProj
 $LN21@changeProj:
 
-; 4710 : 						{
-; 4711 : 							bChangeProduction = false;
-; 4712 : 
-; 4713 : 							for(iJ = 0; iJ < GC.getNumProjectInfos(); iJ++)
+; 4762 : 						{
+; 4763 : 							bChangeProduction = false;
+; 4764 : 
+; 4765 : 							for(iJ = 0; iJ < GC.getNumProjectInfos(); iJ++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	inc	esi
@@ -40785,142 +41005,142 @@ $LN21@changeProj:
 	cmp	esi, eax
 	jl	SHORT $LL22@changeProj
 $LN297@changeProj:
-	mov	edi, DWORD PTR _pkProject$225728[esp+204]
+	mov	edi, DWORD PTR _pkProject$226246[esp+204]
 $LN298@changeProj:
 	mov	edx, DWORD PTR tv1277[esp+204]
 $LN27@changeProj:
 
-; 4701 : 			}
-; 4702 : 
-; 4703 : 			for(iI = 0; iI < MAX_PLAYERS; iI++)
+; 4753 : 			}
+; 4754 : 
+; 4755 : 			for(iI = 0; iI < MAX_PLAYERS; iI++)
 
 	add	edx, 63236				; 0000f704H
 	cmp	edx, 4047104				; 003dc100H
 	mov	DWORD PTR tv1277[esp+204], edx
 	jl	$LL28@changeProj
 
-; 4717 : 								{
-; 4718 : 									bChangeProduction = true;
-; 4719 : 									break;
-; 4720 : 								}
-; 4721 : 							}
-; 4722 : 
-; 4723 : 							if(bChangeProduction)
-; 4724 : 							{
-; 4725 : 								//GET_PLAYER((PlayerTypes)iI).AI_makeProductionDirty();
-; 4726 : 							}
-; 4727 : 						}
-; 4728 : 					}
-; 4729 : 				}
-; 4730 : 			}
-; 4731 : 
-; 4732 : 			if(GC.getGame().isFinalInitialized())
+; 4769 : 								{
+; 4770 : 									bChangeProduction = true;
+; 4771 : 									break;
+; 4772 : 								}
+; 4773 : 							}
+; 4774 : 
+; 4775 : 							if(bChangeProduction)
+; 4776 : 							{
+; 4777 : 								//GET_PLAYER((PlayerTypes)iI).AI_makeProductionDirty();
+; 4778 : 							}
+; 4779 : 						}
+; 4780 : 					}
+; 4781 : 				}
+; 4782 : 			}
+; 4783 : 
+; 4784 : 			if(GC.getGame().isFinalInitialized())
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?isFinalInitialized@CvGame@@QBE_NXZ	; CvGame::isFinalInitialized
 	test	al, al
 	je	$LN295@changeProj
 
-; 4733 : 			{
-; 4734 : 				CvString strSomeoneCompletesProject = GetLocalizedText("TXT_KEY_MISC_COMPLETES_PROJECT", getName().GetCString(), pkProject->GetTextKey());
+; 4785 : 			{
+; 4786 : 				CvString strSomeoneCompletesProject = GetLocalizedText("TXT_KEY_MISC_COMPLETES_PROJECT", getName().GetCString(), pkProject->GetTextKey());
 
 	mov	ecx, edi
 	call	?GetTextKey@CvBaseInfo@@QBEPBDXZ	; CvBaseInfo::GetTextKey
-	lea	edx, DWORD PTR $T247998[esp+204]
+	lea	edx, DWORD PTR $T248165[esp+204]
 	push	edx
 	mov	ecx, ebx
-	mov	DWORD PTR $T247996[esp+208], eax
+	mov	DWORD PTR $T248163[esp+208], eax
 	call	?getName@CvTeam@@QBE?AVCvString@@XZ	; CvTeam::getName
 	xor	ebp, ebp
 	mov	ecx, eax
 	mov	DWORD PTR __$EHRec$[esp+212], ebp
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
-	mov	DWORD PTR $T247997[esp+204], eax
-	lea	eax, DWORD PTR $T247996[esp+204]
+	mov	DWORD PTR $T248164[esp+204], eax
+	lea	eax, DWORD PTR $T248163[esp+204]
 	push	eax
-	lea	ecx, DWORD PTR $T247997[esp+208]
+	lea	ecx, DWORD PTR $T248164[esp+208]
 	push	ecx
-	lea	edx, DWORD PTR _strSomeoneCompletesProject$225757[esp+212]
-	push	OFFSET $SG225762
+	lea	edx, DWORD PTR _strSomeoneCompletesProject$226275[esp+212]
+	push	OFFSET $SG226280
 	push	edx
 	call	??$GetLocalizedText@PBDPBD@@YA?AVCvString@@PBDABQBD1@Z ; GetLocalizedText<char const *,char const *>
 	add	esp, 16					; 00000010H
-	lea	ecx, DWORD PTR $T247998[esp+204]
+	lea	ecx, DWORD PTR $T248165[esp+204]
 	mov	BYTE PTR __$EHRec$[esp+212], 2
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 4735 : 				CvString strSomeoneCompletedProject = GetLocalizedText("TXT_KEY_MISC_SOMEONE_HAS_COMPLETED", getName().GetCString(), pkProject->GetTextKey());
+; 4787 : 				CvString strSomeoneCompletedProject = GetLocalizedText("TXT_KEY_MISC_SOMEONE_HAS_COMPLETED", getName().GetCString(), pkProject->GetTextKey());
 
 	mov	ecx, edi
 	call	?GetTextKey@CvBaseInfo@@QBEPBDXZ	; CvBaseInfo::GetTextKey
-	mov	DWORD PTR $T247999[esp+204], eax
-	lea	eax, DWORD PTR $T248001[esp+204]
+	mov	DWORD PTR $T248166[esp+204], eax
+	lea	eax, DWORD PTR $T248168[esp+204]
 	push	eax
 	mov	ecx, ebx
 	call	?getName@CvTeam@@QBE?AVCvString@@XZ	; CvTeam::getName
 	mov	ecx, eax
 	mov	BYTE PTR __$EHRec$[esp+212], 3
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
-	lea	ecx, DWORD PTR $T247999[esp+204]
+	lea	ecx, DWORD PTR $T248166[esp+204]
 	push	ecx
-	lea	edx, DWORD PTR $T248000[esp+208]
+	lea	edx, DWORD PTR $T248167[esp+208]
 	push	edx
-	mov	DWORD PTR $T248000[esp+212], eax
-	lea	eax, DWORD PTR _strSomeoneCompletedProject$225763[esp+212]
-	push	OFFSET $SG225768
+	mov	DWORD PTR $T248167[esp+212], eax
+	lea	eax, DWORD PTR _strSomeoneCompletedProject$226281[esp+212]
+	push	OFFSET $SG226286
 	push	eax
 	call	??$GetLocalizedText@PBDPBD@@YA?AVCvString@@PBDABQBD1@Z ; GetLocalizedText<char const *,char const *>
 	add	esp, 16					; 00000010H
-	lea	ecx, DWORD PTR $T248001[esp+204]
+	lea	ecx, DWORD PTR $T248168[esp+204]
 	mov	BYTE PTR __$EHRec$[esp+212], 5
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 4736 : 				CvString strUnknownCompletesProject = GetLocalizedText("TXT_KEY_MISC_WONDER_COMPLETED_UNKNOWN", pkProject->GetTextKey());
+; 4788 : 				CvString strUnknownCompletesProject = GetLocalizedText("TXT_KEY_MISC_WONDER_COMPLETED_UNKNOWN", pkProject->GetTextKey());
 
 	mov	ecx, edi
 	call	?GetTextKey@CvBaseInfo@@QBEPBDXZ	; CvBaseInfo::GetTextKey
 	push	eax
-	lea	ecx, DWORD PTR _strUnknownCompletesProject$225769[esp+208]
-	push	OFFSET $SG225771
+	lea	ecx, DWORD PTR _strUnknownCompletesProject$226287[esp+208]
+	push	OFFSET $SG226289
 	push	ecx
 	call	??$GetLocalizedText@PBD@@YA?AVCvString@@PBD0@Z ; GetLocalizedText<char const *>
 	add	esp, 12					; 0000000cH
 
-; 4737 : 
-; 4738 : 				const PlayerTypes eTeamLeader = getLeaderID();
+; 4789 : 
+; 4790 : 				const PlayerTypes eTeamLeader = getLeaderID();
 
 	mov	ecx, ebx
 	mov	BYTE PTR __$EHRec$[esp+212], 6
 	call	?getLeaderID@CvTeam@@QBE?AW4PlayerTypes@@XZ ; CvTeam::getLeaderID
 
-; 4739 : 				GC.getGame().addReplayMessage(REPLAY_MESSAGE_MAJOR_EVENT, eTeamLeader, strSomeoneCompletesProject);
+; 4791 : 				GC.getGame().addReplayMessage(REPLAY_MESSAGE_MAJOR_EVENT, eTeamLeader, strSomeoneCompletesProject);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	-1
 	push	-1
-	lea	edx, DWORD PTR _strSomeoneCompletesProject$225757[esp+212]
+	lea	edx, DWORD PTR _strSomeoneCompletesProject$226275[esp+212]
 	push	edx
 	mov	esi, eax
 	push	esi
 	push	ebp
 	call	?addReplayMessage@CvGame@@QAEXW4ReplayMessageTypes@@W4PlayerTypes@@ABVCvString@@HH@Z ; CvGame::addReplayMessage
 
-; 4740 : 
-; 4741 : 				CvPlayerAI& playerWhoLeadsTeam = GET_PLAYER(eTeamLeader);
+; 4792 : 
+; 4793 : 				CvPlayerAI& playerWhoLeadsTeam = GET_PLAYER(eTeamLeader);
 
 	imul	esi, 63236				; 0000f704H
 	add	esi, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	mov	ecx, esi
-	mov	DWORD PTR _playerWhoLeadsTeam$225773[esp+204], ecx
+	mov	DWORD PTR _playerWhoLeadsTeam$226291[esp+204], ecx
 
-; 4742 : 				CvCity* pLeadersCapital = playerWhoLeadsTeam.getCapitalCity();
+; 4794 : 				CvCity* pLeadersCapital = playerWhoLeadsTeam.getCapitalCity();
 
 	call	?getCapitalCity@CvPlayer@@QAEPAVCvCity@@XZ ; CvPlayer::getCapitalCity
 	mov	edi, eax
 
-; 4743 : 
-; 4744 : 
-; 4745 : 				for(iI = 0; iI < MAX_MAJOR_CIVS; iI++)
+; 4795 : 
+; 4796 : 
+; 4797 : 				for(iI = 0; iI < MAX_MAJOR_CIVS; iI++)
 
 	mov	DWORD PTR _iI$[esp+204], ebp
 	xor	ebx, ebx
@@ -40928,21 +41148,21 @@ $LN27@changeProj:
 	npad	3
 $LL16@changeProj:
 
-; 4746 : 				{
-; 4747 : 					const PlayerTypes ePlayer = static_cast<PlayerTypes>(iI);
-; 4748 : 					CvPlayerAI& kPlayer = GET_PLAYER(ePlayer);
+; 4798 : 				{
+; 4799 : 					const PlayerTypes ePlayer = static_cast<PlayerTypes>(iI);
+; 4800 : 					CvPlayerAI& kPlayer = GET_PLAYER(ePlayer);
 
 	mov	eax, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	add	ebx, eax
 
-; 4749 : 
-; 4750 : 					if(kPlayer.isAlive())
+; 4801 : 
+; 4802 : 					if(kPlayer.isAlive())
 
 	cmp	BYTE PTR [ebx+2256], 0
 	je	$LN15@changeProj
 
-; 4751 : 					{
-; 4752 : 						if(isHasMet(kPlayer.getTeam()))
+; 4803 : 					{
+; 4804 : 						if(isHasMet(kPlayer.getTeam()))
 
 	mov	eax, DWORD PTR [ebx+44]
 	cmp	eax, 63					; 0000003fH
@@ -40957,8 +41177,8 @@ $LN202@changeProj:
 	mov	ecx, DWORD PTR _this$[esp+204]
 	cmp	BYTE PTR [eax+ecx+1848], 0
 
-; 4753 : 						{
-; 4754 : 							if(ePlayer == GC.getGame().getActivePlayer())
+; 4805 : 						{
+; 4806 : 							if(ePlayer == GC.getGame().getActivePlayer())
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	je	$LN12@changeProj
@@ -40966,11 +41186,11 @@ $LN202@changeProj:
 	cmp	ebp, eax
 	jne	SHORT $LN11@changeProj
 
-; 4755 : 							{
-; 4756 : 								DLLUI->AddCityMessage(0, pLeadersCapital->GetIDInfo(), ePlayer, false, GC.getEVENT_MESSAGE_TIME(), strSomeoneCompletedProject);
+; 4807 : 							{
+; 4808 : 								DLLUI->AddCityMessage(0, pLeadersCapital->GetIDInfo(), ePlayer, false, GC.getEVENT_MESSAGE_TIME(), strSomeoneCompletedProject);
 
 	mov	esi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
-	lea	ecx, DWORD PTR _strSomeoneCompletedProject$225763[esp+204]
+	lea	ecx, DWORD PTR _strSomeoneCompletedProject$226281[esp+204]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	mov	edx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+6176
 	mov	ecx, DWORD PTR [esi]
@@ -40986,7 +41206,7 @@ $LN202@changeProj:
 	push	edx
 	push	0
 	push	ebp
-	lea	eax, DWORD PTR $T248002[esp+252]
+	lea	eax, DWORD PTR $T248169[esp+252]
 	mov	DWORD PTR tv1233[esp+252], ecx
 	push	eax
 	mov	ecx, edi
@@ -40999,55 +41219,55 @@ $LN202@changeProj:
 	call	edx
 $LN11@changeProj:
 
-; 4757 : 							}
-; 4758 : 							CvNotifications* pNotifications = kPlayer.GetNotifications();
+; 4809 : 							}
+; 4810 : 							CvNotifications* pNotifications = kPlayer.GetNotifications();
 
 	mov	ecx, ebx
 	call	?GetNotifications@CvPlayer@@QBEPAVCvNotifications@@XZ ; CvPlayer::GetNotifications
 
-; 4759 : 							pNotifications->Add(NOTIFICATION_PROJECT_COMPLETED, strSomeoneCompletedProject, strSomeoneCompletedProject, pLeadersCapital->getX(), pLeadersCapital->getY(), eIndex, playerWhoLeadsTeam.GetID());
+; 4811 : 							pNotifications->Add(NOTIFICATION_PROJECT_COMPLETED, strSomeoneCompletedProject, strSomeoneCompletedProject, pLeadersCapital->getX(), pLeadersCapital->getY(), eIndex, playerWhoLeadsTeam.GetID());
 
 	mov	ecx, DWORD PTR [edi+96]
 	mov	ebx, DWORD PTR [edi+108]
 	mov	ebp, eax
-	mov	eax, DWORD PTR _playerWhoLeadsTeam$225773[esp+204]
+	mov	eax, DWORD PTR _playerWhoLeadsTeam$226291[esp+204]
 	mov	esi, DWORD PTR [eax+44]
-	mov	DWORD PTR $T248569[esp+204], ecx
-	lea	ecx, DWORD PTR _strSomeoneCompletedProject$225763[esp+204]
+	mov	DWORD PTR $T248736[esp+204], ecx
+	lea	ecx, DWORD PTR _strSomeoneCompletedProject$226281[esp+204]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	mov	edx, DWORD PTR _eIndex$[esp+200]
-	mov	ecx, DWORD PTR $T248569[esp+204]
+	mov	ecx, DWORD PTR $T248736[esp+204]
 	push	esi
 	push	edx
 	push	ebx
 	push	ecx
 	push	eax
-	lea	ecx, DWORD PTR _strSomeoneCompletedProject$225763[esp+224]
+	lea	ecx, DWORD PTR _strSomeoneCompletedProject$226281[esp+224]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
 	push	1595436701				; 5f186e9dH
 	mov	ecx, ebp
 	call	?Add@CvNotifications@@QAEHW4NotificationTypes@@PBD1HHHH@Z ; CvNotifications::Add
 
-; 4760 : 						}
-; 4761 : 						else
+; 4812 : 						}
+; 4813 : 						else
 
 	mov	ebp, DWORD PTR _iI$[esp+204]
 	jmp	$LN15@changeProj
 $LN12@changeProj:
 
-; 4762 : 						{
-; 4763 : 							if(ePlayer == GC.getGame().getActivePlayer())
+; 4814 : 						{
+; 4815 : 							if(ePlayer == GC.getGame().getActivePlayer())
 
 	call	?getActivePlayer@CvGame@@QBE?AW4PlayerTypes@@XZ ; CvGame::getActivePlayer
 	cmp	ebp, eax
 	jne	SHORT $LN9@changeProj
 
-; 4764 : 							{
-; 4765 : 								DLLUI->AddCityMessage(0, pLeadersCapital->GetIDInfo(), ePlayer, false, GC.getEVENT_MESSAGE_TIME(), strUnknownCompletesProject);
+; 4816 : 							{
+; 4817 : 								DLLUI->AddCityMessage(0, pLeadersCapital->GetIDInfo(), ePlayer, false, GC.getEVENT_MESSAGE_TIME(), strUnknownCompletesProject);
 
 	mov	esi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
-	lea	ecx, DWORD PTR _strUnknownCompletesProject$225769[esp+204]
+	lea	ecx, DWORD PTR _strUnknownCompletesProject$226287[esp+204]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	mov	edx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+6176
 	mov	ecx, DWORD PTR [esi]
@@ -41063,7 +41283,7 @@ $LN12@changeProj:
 	push	edx
 	push	0
 	push	ebp
-	lea	eax, DWORD PTR $T248003[esp+252]
+	lea	eax, DWORD PTR $T248170[esp+252]
 	mov	DWORD PTR tv1231[esp+252], ecx
 	push	eax
 	mov	ecx, edi
@@ -41077,15 +41297,15 @@ $LN12@changeProj:
 	mov	ebp, DWORD PTR _iI$[esp+204]
 $LN9@changeProj:
 
-; 4766 : 							}
-; 4767 : 							CvNotifications* pNotifications = kPlayer.GetNotifications();
+; 4818 : 							}
+; 4819 : 							CvNotifications* pNotifications = kPlayer.GetNotifications();
 
 	mov	ecx, ebx
 	call	?GetNotifications@CvPlayer@@QBEPAVCvNotifications@@XZ ; CvPlayer::GetNotifications
 
-; 4768 : 							pNotifications->Add(NOTIFICATION_PROJECT_COMPLETED, strUnknownCompletesProject, strUnknownCompletesProject, -1, -1, eIndex, NO_PLAYER);
+; 4820 : 							pNotifications->Add(NOTIFICATION_PROJECT_COMPLETED, strUnknownCompletesProject, strUnknownCompletesProject, -1, -1, eIndex, NO_PLAYER);
 
-	lea	ecx, DWORD PTR _strUnknownCompletesProject$225769[esp+204]
+	lea	ecx, DWORD PTR _strUnknownCompletesProject$226287[esp+204]
 	mov	esi, eax
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	mov	ecx, DWORD PTR _eIndex$[esp+200]
@@ -41094,7 +41314,7 @@ $LN9@changeProj:
 	push	-1
 	push	-1
 	push	eax
-	lea	ecx, DWORD PTR _strUnknownCompletesProject$225769[esp+224]
+	lea	ecx, DWORD PTR _strUnknownCompletesProject$226287[esp+224]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
 	push	1595436701				; 5f186e9dH
@@ -41109,32 +41329,32 @@ $LN15@changeProj:
 	mov	DWORD PTR tv1303[esp+204], ebx
 	jl	$LL16@changeProj
 
-; 4769 : 						}
-; 4770 : 					}
-; 4771 : 				}
-; 4772 : 			}
+; 4821 : 						}
+; 4822 : 					}
+; 4823 : 				}
+; 4824 : 			}
 
-	lea	ecx, DWORD PTR _strUnknownCompletesProject$225769[esp+204]
+	lea	ecx, DWORD PTR _strUnknownCompletesProject$226287[esp+204]
 	mov	BYTE PTR __$EHRec$[esp+212], 5
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR _strSomeoneCompletedProject$225763[esp+204]
+	lea	ecx, DWORD PTR _strSomeoneCompletedProject$226281[esp+204]
 	mov	BYTE PTR __$EHRec$[esp+212], 2
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR _strSomeoneCompletesProject$225757[esp+204]
+	lea	ecx, DWORD PTR _strSomeoneCompletesProject$226275[esp+204]
 	mov	DWORD PTR __$EHRec$[esp+212], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 	mov	ebx, DWORD PTR _this$[esp+204]
 	mov	ebp, DWORD PTR _eIndex$[esp+200]
 $LN295@changeProj:
 
-; 4773 : 		}
-; 4774 : 	}
-; 4775 : 
-; 4776 : 	// Update the amount of a Resource used up by this Project
-; 4777 : #ifdef AUI_WARNING_FIXES
-; 4778 : 	for (uint iResourceLoop = 0; iResourceLoop < GC.getNumResourceInfos(); iResourceLoop++)
-; 4779 : #else
-; 4780 : 	for(int iResourceLoop = 0; iResourceLoop < GC.getNumResourceInfos(); iResourceLoop++)
+; 4825 : 		}
+; 4826 : 	}
+; 4827 : 
+; 4828 : 	// Update the amount of a Resource used up by this Project
+; 4829 : #ifdef AUI_WARNING_FIXES
+; 4830 : 	for (uint iResourceLoop = 0; iResourceLoop < GC.getNumResourceInfos(); iResourceLoop++)
+; 4831 : #else
+; 4832 : 	for(int iResourceLoop = 0; iResourceLoop < GC.getNumResourceInfos(); iResourceLoop++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	xor	edi, edi
@@ -41143,9 +41363,9 @@ $LN295@changeProj:
 	jle	$LN6@changeProj
 $LL8@changeProj:
 
-; 4781 : #endif
-; 4782 : 	{
-; 4783 : 		if(GC.getProjectInfo(eIndex)->GetResourceQuantityRequirement(iResourceLoop) > 0)
+; 4833 : #endif
+; 4834 : 	{
+; 4835 : 		if(GC.getProjectInfo(eIndex)->GetResourceQuantityRequirement(iResourceLoop) > 0)
 
 	push	edi
 	push	ebp
@@ -41156,19 +41376,19 @@ $LL8@changeProj:
 	test	eax, eax
 	jle	$LN7@changeProj
 
-; 4784 : 		{
-; 4785 : 			for(int iPlayerLoop = 0; iPlayerLoop < MAX_CIV_PLAYERS; iPlayerLoop++)
+; 4836 : 		{
+; 4837 : 			for(int iPlayerLoop = 0; iPlayerLoop < MAX_CIV_PLAYERS; iPlayerLoop++)
 
 	xor	ebp, ebp
 	npad	2
 $LL4@changeProj:
 
-; 4786 : 			{
-; 4787 : 				CvPlayerAI& kPlayer = GET_PLAYER((PlayerTypes) iPlayerLoop);
+; 4838 : 			{
+; 4839 : 				CvPlayerAI& kPlayer = GET_PLAYER((PlayerTypes) iPlayerLoop);
 
 	mov	edx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 
-; 4788 : 				if(kPlayer.isAlive() && kPlayer.getTeam() == GetID())
+; 4840 : 				if(kPlayer.isAlive() && kPlayer.getTeam() == GetID())
 
 	cmp	BYTE PTR [edx+ebp+2256], 0
 	lea	esi, DWORD PTR [edx+ebp]
@@ -41186,8 +41406,8 @@ $LN266@changeProj:
 	cmp	eax, DWORD PTR [ebx+4]
 	jne	SHORT $LN3@changeProj
 
-; 4789 : 				{
-; 4790 : 					kPlayer.changeNumResourceUsed((ResourceTypes) iResourceLoop, iChange * GC.getProjectInfo(eIndex)->GetResourceQuantityRequirement(iResourceLoop));
+; 4841 : 				{
+; 4842 : 					kPlayer.changeNumResourceUsed((ResourceTypes) iResourceLoop, iChange * GC.getProjectInfo(eIndex)->GetResourceQuantityRequirement(iResourceLoop));
 
 	mov	eax, DWORD PTR _eIndex$[esp+200]
 	push	edi
@@ -41206,20 +41426,20 @@ $LN3@changeProj:
 	cmp	ebp, 3983868				; 003cc9fcH
 	jl	SHORT $LL4@changeProj
 
-; 4784 : 		{
-; 4785 : 			for(int iPlayerLoop = 0; iPlayerLoop < MAX_CIV_PLAYERS; iPlayerLoop++)
+; 4836 : 		{
+; 4837 : 			for(int iPlayerLoop = 0; iPlayerLoop < MAX_CIV_PLAYERS; iPlayerLoop++)
 
 	mov	ebp, DWORD PTR _eIndex$[esp+200]
 $LN7@changeProj:
 
-; 4773 : 		}
-; 4774 : 	}
-; 4775 : 
-; 4776 : 	// Update the amount of a Resource used up by this Project
-; 4777 : #ifdef AUI_WARNING_FIXES
-; 4778 : 	for (uint iResourceLoop = 0; iResourceLoop < GC.getNumResourceInfos(); iResourceLoop++)
-; 4779 : #else
-; 4780 : 	for(int iResourceLoop = 0; iResourceLoop < GC.getNumResourceInfos(); iResourceLoop++)
+; 4825 : 		}
+; 4826 : 	}
+; 4827 : 
+; 4828 : 	// Update the amount of a Resource used up by this Project
+; 4829 : #ifdef AUI_WARNING_FIXES
+; 4830 : 	for (uint iResourceLoop = 0; iResourceLoop < GC.getNumResourceInfos(); iResourceLoop++)
+; 4831 : #else
+; 4832 : 	for(int iResourceLoop = 0; iResourceLoop < GC.getNumResourceInfos(); iResourceLoop++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	inc	edi
@@ -41228,11 +41448,11 @@ $LN7@changeProj:
 	jl	$LL8@changeProj
 $LN6@changeProj:
 
-; 4791 : 				}
-; 4792 : 			}
-; 4793 : 		}
-; 4794 : 	}
-; 4795 : }
+; 4843 : 				}
+; 4844 : 			}
+; 4845 : 		}
+; 4846 : 	}
+; 4847 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+204]
 	pop	edi
@@ -41246,19 +41466,19 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?changeProjectCount@CvTeam@@QAEXW4ProjectTypes@@H@Z$0:
-	lea	ecx, DWORD PTR $T247998[ebp]
+	lea	ecx, DWORD PTR $T248165[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?changeProjectCount@CvTeam@@QAEXW4ProjectTypes@@H@Z$1:
-	lea	ecx, DWORD PTR _strSomeoneCompletesProject$225757[ebp]
+	lea	ecx, DWORD PTR _strSomeoneCompletesProject$226275[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?changeProjectCount@CvTeam@@QAEXW4ProjectTypes@@H@Z$2:
-	lea	ecx, DWORD PTR $T248001[ebp]
+	lea	ecx, DWORD PTR $T248168[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?changeProjectCount@CvTeam@@QAEXW4ProjectTypes@@H@Z$3:
-	lea	ecx, DWORD PTR _strSomeoneCompletedProject$225763[ebp]
+	lea	ecx, DWORD PTR _strSomeoneCompletedProject$226281[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?changeProjectCount@CvTeam@@QAEXW4ProjectTypes@@H@Z$4:
-	lea	ecx, DWORD PTR _strUnknownCompletesProject$225769[ebp]
+	lea	ecx, DWORD PTR _strUnknownCompletesProject$226287[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?changeProjectCount@CvTeam@@QAEXW4ProjectTypes@@H@Z:
 	mov	eax, OFFSET __ehfuncinfo$?changeProjectCount@CvTeam@@QAEXW4ProjectTypes@@H@Z
@@ -41289,16 +41509,16 @@ __ehfuncinfo$?resetVictoryProgress@CvTeam@@QAEXXZ DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?resetVictoryProgress@CvTeam@@QAEXXZ
 _TEXT	SEGMENT
-_iI$225975 = -80					; size = 4
-$T248688 = -76						; size = 4
-$T248689 = -72						; size = 4
-_strBuffer$225994 = -68					; size = 28
-$T248690 = -40						; size = 28
+_iI$226493 = -80					; size = 4
+$T248855 = -76						; size = 4
+$T248856 = -72						; size = 4
+_strBuffer$226512 = -68					; size = 28
+$T248857 = -40						; size = 28
 __$EHRec$ = -12						; size = 12
 ?resetVictoryProgress@CvTeam@@QAEXXZ PROC		; CvTeam::resetVictoryProgress, COMDAT
 ; _this$ = ecx
 
-; 5128 : {
+; 5180 : {
 
 	push	-1
 	push	__ehhandler$?resetVictoryProgress@CvTeam@@QAEXXZ
@@ -41310,14 +41530,14 @@ __$EHRec$ = -12						; size = 12
 	push	edi
 	mov	ebx, ecx
 
-; 5129 : #ifdef AUI_WARNING_FIXES
-; 5130 : 	for (uint iI = 0; iI < GC.getNumVictoryInfos(); ++iI)
-; 5131 : #else
-; 5132 : 	for(int iI = 0; iI < GC.getNumVictoryInfos(); ++iI)
+; 5181 : #ifdef AUI_WARNING_FIXES
+; 5182 : 	for (uint iI = 0; iI < GC.getNumVictoryInfos(); ++iI)
+; 5183 : #else
+; 5184 : 	for(int iI = 0; iI < GC.getNumVictoryInfos(); ++iI)
 
 	xor	edi, edi
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	mov	DWORD PTR _iI$225975[esp+88], edi
+	mov	DWORD PTR _iI$226493[esp+88], edi
 	call	?getNumVictoryInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumVictoryInfos
 	test	eax, eax
 	jle	$LN12@resetVicto
@@ -41326,23 +41546,23 @@ __$EHRec$ = -12						; size = 12
 	npad	10
 $LL55@resetVicto:
 
-; 5133 : #endif
-; 5134 : 	{
-; 5135 : 		VictoryTypes eVictory = static_cast<VictoryTypes>(iI);
-; 5136 : 		CvVictoryInfo* pkVictoryInfo = GC.getVictoryInfo((VictoryTypes)iI);
+; 5185 : #endif
+; 5186 : 	{
+; 5187 : 		VictoryTypes eVictory = static_cast<VictoryTypes>(iI);
+; 5188 : 		CvVictoryInfo* pkVictoryInfo = GC.getVictoryInfo((VictoryTypes)iI);
 
 	push	edi
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getVictoryInfo@CvGlobals@@QAEPAVCvVictoryInfo@@W4VictoryTypes@@@Z ; CvGlobals::getVictoryInfo
 	mov	ebp, eax
 
-; 5137 : 		if(pkVictoryInfo)
+; 5189 : 		if(pkVictoryInfo)
 
 	test	ebp, ebp
 	je	$LN13@resetVicto
 
-; 5138 : 		{
-; 5139 : 			if(getVictoryCountdown(eVictory) >= 0 && GC.getGame().getGameState() == GAMESTATE_ON)
+; 5190 : 		{
+; 5191 : 			if(getVictoryCountdown(eVictory) >= 0 && GC.getGame().getGameState() == GAMESTATE_ON)
 
 	mov	eax, DWORD PTR [ebx+2944]
 	cmp	DWORD PTR [eax+edi*4], 0
@@ -41352,17 +41572,17 @@ $LL55@resetVicto:
 	test	eax, eax
 	jne	$LN13@resetVicto
 
-; 5140 : 			{
-; 5141 : 				setVictoryCountdown(eVictory, -1);
+; 5192 : 			{
+; 5193 : 				setVictoryCountdown(eVictory, -1);
 
 	mov	ecx, DWORD PTR [ebx+2944]
 	mov	DWORD PTR [ecx+edi*4], -1
 
-; 5142 : 
-; 5143 : #ifdef AUI_WARNING_FIXES
-; 5144 : 				for (uint iK = 0; iK < GC.getNumProjectInfos(); iK++)
-; 5145 : #else
-; 5146 : 				for(int iK = 0; iK < GC.getNumProjectInfos(); iK++)
+; 5194 : 
+; 5195 : #ifdef AUI_WARNING_FIXES
+; 5196 : 				for (uint iK = 0; iK < GC.getNumProjectInfos(); iK++)
+; 5197 : #else
+; 5198 : 				for(int iK = 0; iK < GC.getNumProjectInfos(); iK++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	xor	esi, esi
@@ -41371,22 +41591,22 @@ $LL55@resetVicto:
 	jle	SHORT $LN7@resetVicto
 $LL9@resetVicto:
 
-; 5147 : #endif
-; 5148 : 				{
-; 5149 : 					ProjectTypes eProject = static_cast<ProjectTypes>(iK);
-; 5150 : 					CvProjectEntry* pkProjectInfo = GC.getProjectInfo(eProject);
+; 5199 : #endif
+; 5200 : 				{
+; 5201 : 					ProjectTypes eProject = static_cast<ProjectTypes>(iK);
+; 5202 : 					CvProjectEntry* pkProjectInfo = GC.getProjectInfo(eProject);
 
 	push	esi
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getProjectInfo@CvGlobals@@QAEPAVCvProjectEntry@@W4ProjectTypes@@@Z ; CvGlobals::getProjectInfo
 
-; 5151 : 					if(pkProjectInfo)
+; 5203 : 					if(pkProjectInfo)
 
 	test	eax, eax
 	je	SHORT $LN8@resetVicto
 
-; 5152 : 					{
-; 5153 : 						if(pkProjectInfo->GetVictoryMinThreshold(eVictory) > 0)
+; 5204 : 					{
+; 5205 : 						if(pkProjectInfo->GetVictoryMinThreshold(eVictory) > 0)
 
 	push	edi
 	mov	ecx, eax
@@ -41394,8 +41614,8 @@ $LL9@resetVicto:
 	test	eax, eax
 	jle	SHORT $LN8@resetVicto
 
-; 5154 : 						{
-; 5155 : 							changeProjectCount(eProject, -getProjectCount(eProject));
+; 5206 : 						{
+; 5207 : 							changeProjectCount(eProject, -getProjectCount(eProject));
 
 	mov	edx, DWORD PTR [ebx+2916]
 	mov	eax, DWORD PTR [edx+esi*4]
@@ -41412,16 +41632,16 @@ $LN8@resetVicto:
 	jl	SHORT $LL9@resetVicto
 $LN7@resetVicto:
 
-; 5156 : 						}
-; 5157 : 					}
-; 5158 : 				}
-; 5159 : 
-; 5160 : 				CvString strBuffer = GetLocalizedText("TXT_KEY_VICTORY_RESET", getName().GetCString(), pkVictoryInfo->GetTextKey());
+; 5208 : 						}
+; 5209 : 					}
+; 5210 : 				}
+; 5211 : 
+; 5212 : 				CvString strBuffer = GetLocalizedText("TXT_KEY_VICTORY_RESET", getName().GetCString(), pkVictoryInfo->GetTextKey());
 
 	mov	ecx, ebp
 	call	?GetTextKey@CvBaseInfo@@QBEPBDXZ	; CvBaseInfo::GetTextKey
-	mov	DWORD PTR $T248688[esp+96], eax
-	lea	eax, DWORD PTR $T248690[esp+96]
+	mov	DWORD PTR $T248855[esp+96], eax
+	lea	eax, DWORD PTR $T248857[esp+96]
 	push	eax
 	mov	ecx, ebx
 	call	?getName@CvTeam@@QBE?AVCvString@@XZ	; CvTeam::getName
@@ -41429,39 +41649,39 @@ $LN7@resetVicto:
 	mov	ecx, eax
 	mov	DWORD PTR __$EHRec$[esp+104], ebp
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
-	lea	ecx, DWORD PTR $T248688[esp+96]
+	lea	ecx, DWORD PTR $T248855[esp+96]
 	push	ecx
-	lea	edx, DWORD PTR $T248689[esp+100]
+	lea	edx, DWORD PTR $T248856[esp+100]
 	push	edx
-	mov	DWORD PTR $T248689[esp+104], eax
-	lea	eax, DWORD PTR _strBuffer$225994[esp+104]
-	push	OFFSET $SG225999
+	mov	DWORD PTR $T248856[esp+104], eax
+	lea	eax, DWORD PTR _strBuffer$226512[esp+104]
+	push	OFFSET $SG226517
 	push	eax
 	call	??$GetLocalizedText@PBDPBD@@YA?AVCvString@@PBDABQBD1@Z ; GetLocalizedText<char const *,char const *>
 	add	esp, 16					; 00000010H
-	lea	ecx, DWORD PTR $T248690[esp+96]
+	lea	ecx, DWORD PTR $T248857[esp+96]
 	mov	BYTE PTR __$EHRec$[esp+104], 2
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
-; 5161 : 
-; 5162 : 				for(int iJ = 0; iJ < MAX_PLAYERS; ++iJ)
+; 5213 : 
+; 5214 : 				for(int iJ = 0; iJ < MAX_PLAYERS; ++iJ)
 
 	xor	edi, edi
 	npad	7
 $LL4@resetVicto:
 
-; 5163 : 				{
-; 5164 : 					if(GET_PLAYER((PlayerTypes)iJ).isAlive())
+; 5215 : 				{
+; 5216 : 					if(GET_PLAYER((PlayerTypes)iJ).isAlive())
 
 	mov	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	cmp	BYTE PTR [ecx+ebp+2256], 0
 	je	SHORT $LN3@resetVicto
 
-; 5165 : 					{
-; 5166 : 						DLLUI->AddMessage(0, ((PlayerTypes)iJ), false, GC.getEVENT_MESSAGE_TIME(), strBuffer, "AS2D_MELTDOWN", MESSAGE_TYPE_MAJOR_EVENT);
+; 5217 : 					{
+; 5218 : 						DLLUI->AddMessage(0, ((PlayerTypes)iJ), false, GC.getEVENT_MESSAGE_TIME(), strBuffer, "AS2D_MELTDOWN", MESSAGE_TYPE_MAJOR_EVENT);
 
 	mov	esi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
-	lea	ecx, DWORD PTR _strBuffer$225994[esp+96]
+	lea	ecx, DWORD PTR _strBuffer$226512[esp+96]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	0
 	mov	edx, DWORD PTR [esi]
@@ -41472,7 +41692,7 @@ $LL4@resetVicto:
 	push	-1
 	push	0
 	push	2
-	push	OFFSET $SG226007
+	push	OFFSET $SG226525
 	push	eax
 	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+6176
 	push	eax
@@ -41487,14 +41707,14 @@ $LN3@resetVicto:
 	cmp	ebp, 4047104				; 003dc100H
 	jl	SHORT $LL4@resetVicto
 
-; 5167 : 					}
-; 5168 : 				}
-; 5169 : 
-; 5170 : 				GC.getGame().addReplayMessage(REPLAY_MESSAGE_MAJOR_EVENT, getLeaderID(), strBuffer, -1, -1);
+; 5219 : 					}
+; 5220 : 				}
+; 5221 : 
+; 5222 : 				GC.getGame().addReplayMessage(REPLAY_MESSAGE_MAJOR_EVENT, getLeaderID(), strBuffer, -1, -1);
 
 	push	-1
 	push	-1
-	lea	eax, DWORD PTR _strBuffer$225994[esp+104]
+	lea	eax, DWORD PTR _strBuffer$226512[esp+104]
 	push	eax
 	mov	ecx, ebx
 	call	?getLeaderID@CvTeam@@QBE?AW4PlayerTypes@@XZ ; CvTeam::getLeaderID
@@ -41503,16 +41723,16 @@ $LN3@resetVicto:
 	push	0
 	call	?addReplayMessage@CvGame@@QAEXW4ReplayMessageTypes@@W4PlayerTypes@@ABVCvString@@HH@Z ; CvGame::addReplayMessage
 
-; 5171 : 			}
+; 5223 : 			}
 
-	lea	ecx, DWORD PTR _strBuffer$225994[esp+96]
+	lea	ecx, DWORD PTR _strBuffer$226512[esp+96]
 	mov	DWORD PTR __$EHRec$[esp+104], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	mov	edi, DWORD PTR _iI$225975[esp+96]
+	mov	edi, DWORD PTR _iI$226493[esp+96]
 $LN13@resetVicto:
 	inc	edi
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	mov	DWORD PTR _iI$225975[esp+96], edi
+	mov	DWORD PTR _iI$226493[esp+96], edi
 	call	?getNumVictoryInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumVictoryInfos
 	cmp	edi, eax
 	jl	$LL55@resetVicto
@@ -41520,9 +41740,9 @@ $LN13@resetVicto:
 	pop	ebp
 $LN12@resetVicto:
 
-; 5172 : 		}
-; 5173 : 	}
-; 5174 : }
+; 5224 : 		}
+; 5225 : 	}
+; 5226 : }
 
 	mov	ecx, DWORD PTR __$EHRec$[esp+88]
 	pop	edi
@@ -41534,10 +41754,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?resetVictoryProgress@CvTeam@@QAEXXZ$0:
-	lea	ecx, DWORD PTR $T248690[ebp]
+	lea	ecx, DWORD PTR $T248857[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?resetVictoryProgress@CvTeam@@QAEXXZ$1:
-	lea	ecx, DWORD PTR _strBuffer$225994[ebp]
+	lea	ecx, DWORD PTR _strBuffer$226512[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?resetVictoryProgress@CvTeam@@QAEXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?resetVictoryProgress@CvTeam@@QAEXXZ
@@ -41549,8 +41769,8 @@ PUBLIC	?push_back@?$vector@W4ResourceTypes@@V?$allocator@W4ResourceTypes@@@std@@
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\vector
 ;	COMDAT ?push_back@?$vector@W4ResourceTypes@@V?$allocator@W4ResourceTypes@@@std@@@std@@QAEXABW4ResourceTypes@@@Z
 _TEXT	SEGMENT
-$T248797 = -4						; size = 1
-__Cat$248800 = 8					; size = 1
+$T248963 = -4						; size = 1
+__Cat$248966 = 8					; size = 1
 __Val$ = 8						; size = 4
 ?push_back@?$vector@W4ResourceTypes@@V?$allocator@W4ResourceTypes@@@std@@@std@@QAEXABW4ResourceTypes@@@Z PROC ; std::vector<enum ResourceTypes,std::allocator<enum ResourceTypes> >::push_back, COMDAT
 ; _this$ = ecx
@@ -41591,10 +41811,10 @@ $LN10@push_back@5:
 ; 818  :  #else /* _HAS_ITERATOR_DEBUGGING */
 ; 819  : 			_Mylast = _Ufill(_Mylast, 1, _Val);
 
-	mov	ecx, DWORD PTR __Cat$248800[esp+8]
+	mov	ecx, DWORD PTR __Cat$248966[esp+8]
 	mov	edx, DWORD PTR __Val$[esp+8]
-	mov	BYTE PTR $T248797[esp+12], 0
-	mov	eax, DWORD PTR $T248797[esp+12]
+	mov	BYTE PTR $T248963[esp+12], 0
+	mov	eax, DWORD PTR $T248963[esp+12]
 	push	eax
 	push	ecx
 	push	esi
@@ -41849,7 +42069,7 @@ EXTRN	?GetResearchProgress@CvTeamTechs@@QBEHW4TechTypes@@@Z:PROC ; CvTeamTechs::
 ;	COMDAT ?shareCounters@CvTeam@@QAEXW4TeamTypes@@@Z
 _TEXT	SEGMENT
 tv424 = 8						; size = 4
-$T249210 = 8						; size = 4
+$T249377 = 8						; size = 4
 _eTeam$ = 8						; size = 4
 ?shareCounters@CvTeam@@QAEXW4TeamTypes@@@Z PROC		; CvTeam::shareCounters, COMDAT
 ; _this$ = ecx
@@ -42056,13 +42276,13 @@ $LL5@shareCount:
 	mov	ebp, DWORD PTR [edi+ecx]
 	mov	edx, DWORD PTR [ebx+2980]
 	mov	ecx, ebx
-	mov	DWORD PTR $T249210[esp+12], edx
+	mov	DWORD PTR $T249377[esp+12], edx
 	call	?getLeaderID@CvTeam@@QBE?AW4PlayerTypes@@XZ ; CvTeam::getLeaderID
 	push	eax
 	push	esi
 	mov	ecx, ebp
 	call	?GetResearchProgress@CvTeamTechs@@QBEHW4TechTypes@@@Z ; CvTeamTechs::GetResearchProgress
-	mov	ecx, DWORD PTR $T249210[esp+16]
+	mov	ecx, DWORD PTR $T249377[esp+16]
 	push	eax
 	push	esi
 	call	?SetResearchProgress@CvTeamTechs@@QAEXW4TechTypes@@HW4PlayerTypes@@@Z ; CvTeamTechs::SetResearchProgress
@@ -42124,11 +42344,11 @@ xdata$x	ENDS
 ;	COMDAT ?GetTeamVotingForInDiplo@CvTeam@@QBE?AW4TeamTypes@@XZ
 _TEXT	SEGMENT
 _eVoteTeam$ = -552					; size = 4
-_elem$249390 = -548					; size = 8
-_randFn$224329 = -548					; size = 8
-_eTeamLoop$224184 = -548				; size = 4
-_elem$249413 = -540					; size = 8
-_veVoteCandidates$224179 = -532				; size = 520
+_elem$249562 = -548					; size = 8
+_randFn$224806 = -548					; size = 8
+_eTeamLoop$224661 = -548				; size = 4
+_elem$249585 = -540					; size = 8
+_veVoteCandidates$224656 = -532				; size = 520
 __$EHRec$ = -12						; size = 12
 ?GetTeamVotingForInDiplo@CvTeam@@QBE?AW4TeamTypes@@XZ PROC ; CvTeam::GetTeamVotingForInDiplo, COMDAT
 ; _this$ = ecx
@@ -42230,10 +42450,10 @@ $LN20@GetTeamVot:
 ; 2018 : 		CvWeightedVector<TeamTypes, MAX_CIV_TEAMS, true> veVoteCandidates;
 
 	xor	edi, edi
-	lea	edx, DWORD PTR _veVoteCandidates$224179[esp+580]
-	mov	DWORD PTR _veVoteCandidates$224179[esp+572], edi
-	mov	DWORD PTR _veVoteCandidates$224179[esp+576], esi
-	mov	DWORD PTR _veVoteCandidates$224179[esp+568], edx
+	lea	edx, DWORD PTR _veVoteCandidates$224656[esp+580]
+	mov	DWORD PTR _veVoteCandidates$224656[esp+572], edi
+	mov	DWORD PTR _veVoteCandidates$224656[esp+576], esi
+	mov	DWORD PTR _veVoteCandidates$224656[esp+568], edx
 	mov	DWORD PTR __$EHRec$[esp+576], edi
 	xor	ebp, ebp
 	jmp	SHORT $LN15@GetTeamVot
@@ -42246,7 +42466,7 @@ $LN15@GetTeamVot:
 ; 2020 : 		{
 ; 2021 : 			TeamTypes eTeamLoop = (TeamTypes) iTeamLoop;
 
-	mov	DWORD PTR _eTeamLoop$224184[esp+568], edi
+	mov	DWORD PTR _eTeamLoop$224661[esp+568], edi
 
 ; 2022 : 			if (GetID() != eTeamLoop && GET_TEAM(eTeamLoop).isAlive() && !GET_TEAM(eTeamLoop).isMinorCiv() && !GET_TEAM(eTeamLoop).isBarbarian() && isHasMet(eTeamLoop))
 
@@ -42329,9 +42549,9 @@ $LN9@GetTeamVot:
 ; 2041 : 					veVoteCandidates.push_back(eTeamLoop, iWeight);
 
 	push	ecx
-	lea	edx, DWORD PTR _eTeamLoop$224184[esp+572]
+	lea	edx, DWORD PTR _eTeamLoop$224661[esp+572]
 	push	edx
-	lea	ecx, DWORD PTR _veVoteCandidates$224179[esp+576]
+	lea	ecx, DWORD PTR _veVoteCandidates$224656[esp+576]
 	call	?push_back@?$CvWeightedVector@W4TeamTypes@@$0DP@$00@@QAEIABW4TeamTypes@@H@Z ; CvWeightedVector<enum TeamTypes,63,1>::push_back
 $LN14@GetTeamVot:
 	add	ebp, 2984				; 00000ba8H
@@ -42345,7 +42565,7 @@ $LN14@GetTeamVot:
 ; 2045 : 
 ; 2046 : 		if (veVoteCandidates.size() > 0)
 
-	mov	ecx, DWORD PTR _veVoteCandidates$224179[esp+572]
+	mov	ecx, DWORD PTR _veVoteCandidates$224656[esp+572]
 	test	ecx, ecx
 	jle	$LN157@GetTeamVot
 
@@ -42353,7 +42573,7 @@ $LN14@GetTeamVot:
 ; 2048 : 			// Our most favored other team ends up at the top after sorting
 ; 2049 : 			veVoteCandidates.SortItems();
 
-	mov	eax, DWORD PTR _veVoteCandidates$224179[esp+568]
+	mov	eax, DWORD PTR _veVoteCandidates$224656[esp+568]
 	lea	ecx, DWORD PTR [eax+ecx*8]
 	mov	edx, ecx
 	sub	edx, eax
@@ -42365,7 +42585,7 @@ $LN14@GetTeamVot:
 
 ; 2050 : 			int iTopWeight = veVoteCandidates.GetWeight(0);
 
-	mov	edi, DWORD PTR _veVoteCandidates$224179[esp+580]
+	mov	edi, DWORD PTR _veVoteCandidates$224656[esp+580]
 	mov	eax, DWORD PTR [edi]
 
 ; 2051 : 
@@ -42373,13 +42593,13 @@ $LN14@GetTeamVot:
 ; 2053 : 			int iNumAtTop = 0;
 ; 2054 : 			for (int iIndex = 0; iIndex < veVoteCandidates.size(); iIndex++)
 
-	mov	esi, DWORD PTR _veVoteCandidates$224179[esp+584]
+	mov	esi, DWORD PTR _veVoteCandidates$224656[esp+584]
 	mov	ecx, DWORD PTR [edi+4]
-	mov	DWORD PTR _elem$249390[esp+580], eax
+	mov	DWORD PTR _elem$249562[esp+580], eax
 	add	esp, 12					; 0000000cH
 	xor	edx, edx
 	xor	eax, eax
-	mov	DWORD PTR _elem$249390[esp+572], ecx
+	mov	DWORD PTR _elem$249562[esp+572], ecx
 	test	esi, esi
 	jle	SHORT $LN158@GetTeamVot
 
@@ -42395,12 +42615,12 @@ $LL7@GetTeamVot:
 ; 2056 : 				int iWeight = veVoteCandidates.GetWeight(iIndex);
 
 	mov	ebp, DWORD PTR [ecx]
-	mov	DWORD PTR _elem$249413[esp+568], ebp
+	mov	DWORD PTR _elem$249585[esp+568], ebp
 
 ; 2057 : 				CvAssertMsg(iWeight <= iTopWeight, "Vote opinion weight should not be higher than the top team's weight! Please send Anton your save file and version.");
 ; 2058 : 				if (iWeight >= iTopWeight)
 
-	mov	ebp, DWORD PTR _elem$249390[esp+572]
+	mov	ebp, DWORD PTR _elem$249562[esp+572]
 	cmp	DWORD PTR [ecx+4], ebp
 	jl	SHORT $LN4@GetTeamVot
 	inc	eax
@@ -42436,24 +42656,24 @@ $LN4@GetTeamVot:
 
 ; 2072 : 				eVoteTeam = veVoteCandidates.ChooseFromTopChoices(iNumAtTop, &randFn, "Tie for most favored other team to vote for. Rolling to choose.");
 
-	push	OFFSET $SG224359
-	lea	ecx, DWORD PTR _randFn$224329[esp+572]
+	push	OFFSET $SG224836
+	lea	ecx, DWORD PTR _randFn$224806[esp+572]
 	push	ecx
 	push	edx
-	lea	ecx, DWORD PTR _veVoteCandidates$224179[esp+580]
-	mov	DWORD PTR _randFn$224329[esp+584], OFFSET ?getJonRandNum@CvGame@@QAEHHPBD@Z ; CvGame::getJonRandNum
-	mov	DWORD PTR _randFn$224329[esp+580], eax
+	lea	ecx, DWORD PTR _veVoteCandidates$224656[esp+580]
+	mov	DWORD PTR _randFn$224806[esp+584], OFFSET ?getJonRandNum@CvGame@@QAEHHPBD@Z ; CvGame::getJonRandNum
+	mov	DWORD PTR _randFn$224806[esp+580], eax
 	call	?ChooseFromTopChoices@?$CvWeightedVector@W4TeamTypes@@$0DP@$00@@QAE?AW4TeamTypes@@HPAV?$FastDelegate2@HPBDH@fastdelegate@@PBD@Z ; CvWeightedVector<enum TeamTypes,63,1>::ChooseFromTopChoices
 	mov	DWORD PTR _eVoteTeam$[esp+568], eax
 $LN157@GetTeamVot:
-	mov	edi, DWORD PTR _veVoteCandidates$224179[esp+568]
+	mov	edi, DWORD PTR _veVoteCandidates$224656[esp+568]
 $LN158@GetTeamVot:
 
 ; 2073 : 			}
 ; 2074 : 		}
 ; 2075 : 	}
 
-	lea	edx, DWORD PTR _veVoteCandidates$224179[esp+580]
+	lea	edx, DWORD PTR _veVoteCandidates$224656[esp+580]
 	mov	DWORD PTR __$EHRec$[esp+576], -1
 	cmp	edi, edx
 	je	SHORT $LN164@GetTeamVot
@@ -42495,7 +42715,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetTeamVotingForInDiplo@CvTeam@@QBE?AW4TeamTypes@@XZ$0:
-	lea	ecx, DWORD PTR _veVoteCandidates$224179[ebp]
+	lea	ecx, DWORD PTR _veVoteCandidates$224656[ebp]
 	jmp	??1?$CvWeightedVector@W4TeamTypes@@$0DP@$00@@QAE@XZ ; CvWeightedVector<enum TeamTypes,63,1>::~CvWeightedVector<enum TeamTypes,63,1>
 __ehhandler$?GetTeamVotingForInDiplo@CvTeam@@QBE?AW4TeamTypes@@XZ:
 	mov	eax, OFFSET __ehfuncinfo$?GetTeamVotingForInDiplo@CvTeam@@QBE?AW4TeamTypes@@XZ
@@ -42828,11 +43048,11 @@ _bRevealed$ = 12					; size = 1
 ?setForceRevealedResource@CvTeam@@QAEXW4ResourceTypes@@_N@Z PROC ; CvTeam::setForceRevealedResource, COMDAT
 ; _this$ = ecx
 
-; 6892 : {
+; 6944 : {
 
 	push	ebp
 
-; 6893 : 	if(isForceRevealedResource(eResource) == bRevealed)
+; 6945 : 	if(isForceRevealedResource(eResource) == bRevealed)
 
 	mov	ebp, DWORD PTR _eResource$[esp]
 	push	esi
@@ -42856,39 +43076,39 @@ $LN18@setForceRe@2:
 	cmp	al, dl
 	je	$LN2@setForceRe@2
 
-; 6894 : 	{
-; 6895 : 		return;
-; 6896 : 	}
-; 6897 : 
-; 6898 : 	if(bRevealed)
+; 6946 : 	{
+; 6947 : 		return;
+; 6948 : 	}
+; 6949 : 
+; 6950 : 	if(bRevealed)
 
 	test	dl, dl
 	je	SHORT $LN10@setForceRe@2
 
-; 6899 : 	{
-; 6900 : 		m_aeRevealedResources.push_back(eResource);
+; 6951 : 	{
+; 6952 : 		m_aeRevealedResources.push_back(eResource);
 
 	lea	eax, DWORD PTR _eResource$[esp+8]
 	push	eax
 	add	ecx, 2964				; 00000b94H
 	call	?push_back@?$vector@W4ResourceTypes@@V?$allocator@W4ResourceTypes@@@std@@@std@@QAEXABW4ResourceTypes@@@Z ; std::vector<enum ResourceTypes,std::allocator<enum ResourceTypes> >::push_back
 
-; 6901 : 	}
-; 6902 : 	else
+; 6953 : 	}
+; 6954 : 	else
 
 	jmp	SHORT $LN6@setForceRe@2
 $LN97@setForceRe@2:
 
-; 6893 : 	if(isForceRevealedResource(eResource) == bRevealed)
+; 6945 : 	if(isForceRevealedResource(eResource) == bRevealed)
 
 	mov	al, 1
 	jmp	SHORT $LN18@setForceRe@2
 $LN10@setForceRe@2:
 
-; 6903 : 	{
-; 6904 : 		std::vector<ResourceTypes>::iterator it;
-; 6905 : 
-; 6906 : 		for(it = m_aeRevealedResources.begin(); it != m_aeRevealedResources.end(); ++it)
+; 6955 : 	{
+; 6956 : 		std::vector<ResourceTypes>::iterator it;
+; 6957 : 
+; 6958 : 		for(it = m_aeRevealedResources.begin(); it != m_aeRevealedResources.end(); ++it)
 
 	mov	edx, edi
 	cmp	edx, esi
@@ -42896,8 +43116,8 @@ $LN10@setForceRe@2:
 	npad	7
 $LL50@setForceRe@2:
 
-; 6907 : 		{
-; 6908 : 			if(*it == eResource)
+; 6959 : 		{
+; 6960 : 			if(*it == eResource)
 
 	cmp	DWORD PTR [edx], ebp
 	je	SHORT $LN98@setForceRe@2
@@ -42907,8 +43127,8 @@ $LL50@setForceRe@2:
 	jmp	SHORT $LN6@setForceRe@2
 $LN98@setForceRe@2:
 
-; 6909 : 			{
-; 6910 : 				m_aeRevealedResources.erase(it);
+; 6961 : 			{
+; 6962 : 				m_aeRevealedResources.erase(it);
 
 	lea	eax, DWORD PTR [edx+4]
 	cmp	eax, esi
@@ -42924,15 +43144,15 @@ $LN74@setForceRe@2:
 	add	DWORD PTR [ecx+2972], -4		; fffffffcH
 $LN6@setForceRe@2:
 
-; 6911 : 				break;
-; 6912 : 			}
-; 6913 : 		}
-; 6914 : 	}
-; 6915 : 
-; 6916 : #ifdef AUI_WARNING_FIXES
-; 6917 : 	for (uint iI = 0; iI < GC.getMap().numPlots(); ++iI)
-; 6918 : #else
-; 6919 : 	for(int iI = 0; iI < GC.getMap().numPlots(); ++iI)
+; 6963 : 				break;
+; 6964 : 			}
+; 6965 : 		}
+; 6966 : 	}
+; 6967 : 
+; 6968 : #ifdef AUI_WARNING_FIXES
+; 6969 : 	for (uint iI = 0; iI < GC.getMap().numPlots(); ++iI)
+; 6970 : #else
+; 6971 : 	for(int iI = 0; iI < GC.getMap().numPlots(); ++iI)
 
 	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+52
 	push	ebx
@@ -42943,15 +43163,15 @@ $LN6@setForceRe@2:
 	npad	5
 $LL4@setForceRe@2:
 
-; 6920 : #endif
-; 6921 : 	{
-; 6922 : 		CvPlot* pLoopPlot = GC.getMap().plotByIndexUnchecked(iI);
+; 6972 : #endif
+; 6973 : 	{
+; 6974 : 		CvPlot* pLoopPlot = GC.getMap().plotByIndexUnchecked(iI);
 
 	mov	esi, DWORD PTR [eax+4068]
 	add	esi, edi
 
-; 6923 : 
-; 6924 : 		if(pLoopPlot->getResourceType() == eResource)
+; 6975 : 
+; 6976 : 		if(pLoopPlot->getResourceType() == eResource)
 
 	push	-1
 	mov	ecx, esi
@@ -42959,13 +43179,13 @@ $LL4@setForceRe@2:
 	cmp	eax, ebp
 	jne	SHORT $LN3@setForceRe@2
 
-; 6925 : 		{
-; 6926 : 			pLoopPlot->updateYield();
+; 6977 : 		{
+; 6978 : 			pLoopPlot->updateYield();
 
 	mov	ecx, esi
 	call	?updateYield@CvPlot@@QAEXXZ		; CvPlot::updateYield
 
-; 6927 : 			pLoopPlot->setLayoutDirty(true);
+; 6979 : 			pLoopPlot->setLayoutDirty(true);
 
 	push	1
 	mov	ecx, esi
@@ -42983,9 +43203,9 @@ $LN2@setForceRe@2:
 	pop	esi
 	pop	ebp
 
-; 6928 : 		}
-; 6929 : 	}
-; 6930 : }
+; 6980 : 		}
+; 6981 : 	}
+; 6982 : }
 
 	ret	8
 ?setForceRevealedResource@CvTeam@@QAEXW4ResourceTypes@@_N@Z ENDP ; CvTeam::setForceRevealedResource
@@ -43115,7 +43335,7 @@ EXTRN	?IsTeamShare@CvBuildingEntry@@QBE_NXZ:PROC	; CvBuildingEntry::IsTeamShare
 _TEXT	SEGMENT
 _this$ = -16						; size = 4
 tv524 = -12						; size = 4
-_kPlayer$223173 = -8					; size = 4
+_kPlayer$223650 = -8					; size = 4
 _iLoop$ = -4						; size = 4
 _eTeam$ = 8						; size = 4
 ?shareItems@CvTeam@@QAEXW4TeamTypes@@@Z PROC		; CvTeam::shareItems, COMDAT
@@ -43250,7 +43470,7 @@ $LL114@shareItems:
 
 	cmp	BYTE PTR [esi+eax+2256], 0
 	lea	edi, DWORD PTR [esi+eax]
-	mov	DWORD PTR _kPlayer$223173[esp+32], edi
+	mov	DWORD PTR _kPlayer$223650[esp+32], edi
 	je	$LN18@shareItems
 
 ; 663  : 		{
@@ -43417,7 +43637,7 @@ $LN10@shareItems:
 ; 667  : 				{
 ; 668  : 					for(iJ = 0; iJ < GC.getNumBuildingInfos(); iJ++)
 
-	mov	edi, DWORD PTR _kPlayer$223173[esp+32]
+	mov	edi, DWORD PTR _kPlayer$223650[esp+32]
 $LN13@shareItems:
 
 ; 665  : 			{
@@ -43599,19 +43819,19 @@ _TEXT	SEGMENT
 tv1431 = -136						; size = 4
 tv1113 = -136						; size = 4
 _iI$ = -136						; size = 4
-_uiOffset$251345 = -132					; size = 4
-$T250653 = -132						; size = 4
-$T250646 = -132						; size = 4
+_uiOffset$251512 = -132					; size = 4
+$T250820 = -132						; size = 4
+$T250813 = -132						; size = 4
 tv1256 = -128						; size = 4
-$T250651 = -128						; size = 4
-$T250648 = -128						; size = 4
+$T250818 = -128						; size = 4
+$T250815 = -128						; size = 4
 _strBuffer$ = -124					; size = 28
-$T250652 = -96						; size = 28
-$T250650 = -96						; size = 28
-$T250654 = -68						; size = 28
-$T250649 = -68						; size = 28
-$T250655 = -40						; size = 28
-$T250647 = -40						; size = 28
+$T250819 = -96						; size = 28
+$T250817 = -96						; size = 28
+$T250821 = -68						; size = 28
+$T250816 = -68						; size = 28
+$T250822 = -40						; size = 28
+$T250814 = -40						; size = 28
 __$EHRec$ = -12						; size = 12
 _eTeam$ = 8						; size = 4
 ?addTeam@CvTeam@@QAEXW4TeamTypes@@@Z PROC		; CvTeam::addTeam, COMDAT
@@ -43721,27 +43941,27 @@ $LN143@addTeam:
 	mov	ecx, ebp
 	imul	ecx, 2984				; 00000ba8H
 	add	ecx, DWORD PTR ?m_aTeams@CvTeam@@1PAV1@A ; CvTeam::m_aTeams
-	lea	eax, DWORD PTR $T250647[esp+152]
+	lea	eax, DWORD PTR $T250814[esp+152]
 	push	eax
 	call	?getName@CvTeam@@QBE?AVCvString@@XZ	; CvTeam::getName
 	mov	ecx, eax
 	mov	BYTE PTR __$EHRec$[esp+160], 1
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
-	lea	ecx, DWORD PTR $T250649[esp+152]
+	lea	ecx, DWORD PTR $T250816[esp+152]
 	push	ecx
 	mov	ecx, edi
-	mov	DWORD PTR $T250646[esp+156], eax
+	mov	DWORD PTR $T250813[esp+156], eax
 	call	?getName@CvTeam@@QBE?AVCvString@@XZ	; CvTeam::getName
 	mov	ecx, eax
 	mov	BYTE PTR __$EHRec$[esp+160], 2
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
-	lea	edx, DWORD PTR $T250646[esp+152]
+	lea	edx, DWORD PTR $T250813[esp+152]
 	push	edx
-	mov	DWORD PTR $T250648[esp+156], eax
-	lea	eax, DWORD PTR $T250648[esp+156]
+	mov	DWORD PTR $T250815[esp+156], eax
+	lea	eax, DWORD PTR $T250815[esp+156]
 	push	eax
-	lea	ecx, DWORD PTR $T250650[esp+160]
-	push	OFFSET $SG223027
+	lea	ecx, DWORD PTR $T250817[esp+160]
+	push	OFFSET $SG223504
 	push	ecx
 	call	??$GetLocalizedText@PBDPBD@@YA?AVCvString@@PBDABQBD1@Z ; GetLocalizedText<char const *,char const *>
 	add	esp, 16					; 00000010H
@@ -43749,13 +43969,13 @@ $LN143@addTeam:
 	lea	ecx, DWORD PTR _strBuffer$[esp+156]
 	mov	BYTE PTR __$EHRec$[esp+164], 3
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T250650[esp+152]
+	lea	ecx, DWORD PTR $T250817[esp+152]
 	mov	BYTE PTR __$EHRec$[esp+160], 2
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T250649[esp+152]
+	lea	ecx, DWORD PTR $T250816[esp+152]
 	mov	BYTE PTR __$EHRec$[esp+160], 1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T250647[esp+152]
+	lea	ecx, DWORD PTR $T250814[esp+152]
 	mov	BYTE PTR __$EHRec$[esp+160], 0
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -43817,7 +44037,7 @@ $LN73@addTeam:
 	mov	eax, DWORD PTR ?m_aTeams@CvTeam@@1PAV1@A ; CvTeam::m_aTeams
 	mov	esi, ebp
 	imul	esi, 2984				; 00000ba8H
-	lea	edx, DWORD PTR $T250652[esp+152]
+	lea	edx, DWORD PTR $T250819[esp+152]
 	lea	ecx, DWORD PTR [esi+eax]
 	push	edx
 	mov	DWORD PTR tv1113[esp+156], esi
@@ -43825,8 +44045,8 @@ $LN73@addTeam:
 	mov	ecx, eax
 	mov	BYTE PTR __$EHRec$[esp+160], 4
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
-	mov	DWORD PTR $T250651[esp+152], eax
-	lea	eax, DWORD PTR $T250654[esp+152]
+	mov	DWORD PTR $T250818[esp+152], eax
+	lea	eax, DWORD PTR $T250821[esp+152]
 	push	eax
 	mov	ecx, edi
 	call	?getName@CvTeam@@QBE?AVCvString@@XZ	; CvTeam::getName
@@ -43834,13 +44054,13 @@ $LN73@addTeam:
 	mov	ecx, eax
 	mov	BYTE PTR __$EHRec$[esp+160], bl
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
-	lea	ecx, DWORD PTR $T250651[esp+152]
+	lea	ecx, DWORD PTR $T250818[esp+152]
 	push	ecx
-	lea	edx, DWORD PTR $T250653[esp+156]
+	lea	edx, DWORD PTR $T250820[esp+156]
 	push	edx
-	mov	DWORD PTR $T250653[esp+160], eax
-	lea	eax, DWORD PTR $T250655[esp+160]
-	push	OFFSET $SG223034
+	mov	DWORD PTR $T250820[esp+160], eax
+	lea	eax, DWORD PTR $T250822[esp+160]
+	push	OFFSET $SG223511
 	push	eax
 	call	??$GetLocalizedText@PBDPBD@@YA?AVCvString@@PBDABQBD1@Z ; GetLocalizedText<char const *,char const *>
 	add	esp, 16					; 00000010H
@@ -43848,13 +44068,13 @@ $LN73@addTeam:
 	lea	ecx, DWORD PTR _strBuffer$[esp+156]
 	mov	BYTE PTR __$EHRec$[esp+164], 6
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T250655[esp+152]
+	lea	ecx, DWORD PTR $T250822[esp+152]
 	mov	BYTE PTR __$EHRec$[esp+160], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T250654[esp+152]
+	lea	ecx, DWORD PTR $T250821[esp+152]
 	mov	BYTE PTR __$EHRec$[esp+160], 4
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T250652[esp+152]
+	lea	ecx, DWORD PTR $T250819[esp+152]
 	mov	BYTE PTR __$EHRec$[esp+160], 0
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -44464,7 +44684,7 @@ $LN10@addTeam:
 	mov	ecx, ebp
 	mov	edx, ecx
 	shr	edx, 5
-	mov	DWORD PTR _uiOffset$251345[esp+152], edx
+	mov	DWORD PTR _uiOffset$251512[esp+152], edx
 
 ; 599  : 	{
 ; 600  : 		pLoopPlot = GC.getMap().plotByIndexUnchecked(iI);
@@ -44518,7 +44738,7 @@ $LL7@addTeam:
 	mov	ecx, esi
 	call	?changeInvisibleVisibilityCount@CvPlot@@QAEXW4TeamTypes@@W4InvisibleTypes@@H@Z ; CvPlot::changeInvisibleVisibilityCount
 	mov	eax, DWORD PTR tv1256[esp+152]
-	mov	ecx, DWORD PTR _uiOffset$251345[esp+152]
+	mov	ecx, DWORD PTR _uiOffset$251512[esp+152]
 	test	DWORD PTR [esi+ecx*4+8], eax
 	je	SHORT $LN6@addTeam
 
@@ -44572,22 +44792,22 @@ __unwindfunclet$?addTeam@CvTeam@@QAEXW4TeamTypes@@@Z$0:
 	lea	ecx, DWORD PTR _strBuffer$[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?addTeam@CvTeam@@QAEXW4TeamTypes@@@Z$1:
-	lea	ecx, DWORD PTR $T250647[ebp]
+	lea	ecx, DWORD PTR $T250814[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?addTeam@CvTeam@@QAEXW4TeamTypes@@@Z$2:
-	lea	ecx, DWORD PTR $T250649[ebp]
+	lea	ecx, DWORD PTR $T250816[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?addTeam@CvTeam@@QAEXW4TeamTypes@@@Z$3:
-	lea	ecx, DWORD PTR $T250650[ebp]
+	lea	ecx, DWORD PTR $T250817[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?addTeam@CvTeam@@QAEXW4TeamTypes@@@Z$4:
-	lea	ecx, DWORD PTR $T250652[ebp]
+	lea	ecx, DWORD PTR $T250819[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?addTeam@CvTeam@@QAEXW4TeamTypes@@@Z$5:
-	lea	ecx, DWORD PTR $T250654[ebp]
+	lea	ecx, DWORD PTR $T250821[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?addTeam@CvTeam@@QAEXW4TeamTypes@@@Z$6:
-	lea	ecx, DWORD PTR $T250655[ebp]
+	lea	ecx, DWORD PTR $T250822[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?addTeam@CvTeam@@QAEXW4TeamTypes@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?addTeam@CvTeam@@QAEXW4TeamTypes@@@Z
@@ -45862,17 +46082,17 @@ __ehfuncinfo$?reset@CvTeam@@QAEXW4TeamTypes@@_N@Z DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?reset@CvTeam@@QAEXW4TeamTypes@@_N@Z
 _TEXT	SEGMENT
-_numUnitClassInfos$222919 = -252			; size = 4
-_numBuildingClassInfos$222920 = -248			; size = 4
-_numSmallAwardInfos$222915 = -244			; size = 4
-_numBuildingInfos$222921 = -240				; size = 4
-_numBuildInfos$222917 = -236				; size = 4
-_numTerrainInfos$222922 = -232				; size = 4
-_numRouteInfos$222916 = -228				; size = 4
-$T254192 = -224						; size = 4
-_numImprovementInfos$222923 = -224			; size = 4
-_numVoteSourceInfos$222913 = -220			; size = 4
-_aData$222924 = -216					; size = 204
+_numUnitClassInfos$223396 = -252			; size = 4
+_numBuildingClassInfos$223397 = -248			; size = 4
+_numSmallAwardInfos$223392 = -244			; size = 4
+_numBuildingInfos$223398 = -240				; size = 4
+_numBuildInfos$223394 = -236				; size = 4
+_numTerrainInfos$223399 = -232				; size = 4
+_numRouteInfos$223393 = -228				; size = 4
+$T254359 = -224						; size = 4
+_numImprovementInfos$223400 = -224			; size = 4
+_numVoteSourceInfos$223390 = -220			; size = 4
+_aData$223401 = -216					; size = 204
 __$EHRec$ = -12						; size = 12
 _eID$ = 8						; size = 4
 _bConstructorCall$ = 12					; size = 1
@@ -45935,7 +46155,7 @@ _bConstructorCall$ = 12					; size = 1
 ; 254  : 		int numVictoryInfos = GC.getNumVictoryInfos();
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	mov	DWORD PTR _numVoteSourceInfos$222913[esp+268], eax
+	mov	DWORD PTR _numVoteSourceInfos$223390[esp+268], eax
 	call	?getNumVictoryInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumVictoryInfos
 
 ; 255  : 		int numSmallAwardInfos = GC.getNumSmallAwardInfos();
@@ -45947,19 +46167,19 @@ _bConstructorCall$ = 12					; size = 1
 ; 256  : 		int numRouteInfos = GC.getNumRouteInfos();
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	mov	DWORD PTR _numSmallAwardInfos$222915[esp+268], eax
+	mov	DWORD PTR _numSmallAwardInfos$223392[esp+268], eax
 	call	?getNumRouteInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumRouteInfos
 
 ; 257  : 		int numBuildInfos = GC.getNumBuildInfos();
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	mov	DWORD PTR _numRouteInfos$222916[esp+268], eax
+	mov	DWORD PTR _numRouteInfos$223393[esp+268], eax
 	call	?getNumBuildInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumBuildInfos
 
 ; 258  : 		int numProjectInfos = GC.getNumProjectInfos();
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	mov	DWORD PTR _numBuildInfos$222917[esp+268], eax
+	mov	DWORD PTR _numBuildInfos$223394[esp+268], eax
 	call	?getNumProjectInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumProjectInfos
 
 ; 259  : 		int numUnitClassInfos = GC.getNumUnitClassInfos();
@@ -45971,25 +46191,25 @@ _bConstructorCall$ = 12					; size = 1
 ; 260  : 		int numBuildingClassInfos = GC.getNumBuildingClassInfos();
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	mov	DWORD PTR _numUnitClassInfos$222919[esp+268], eax
+	mov	DWORD PTR _numUnitClassInfos$223396[esp+268], eax
 	call	?getNumBuildingClassInfos@CvGlobals@@QAEHXZ ; CvGlobals::getNumBuildingClassInfos
 
 ; 261  : 		int numBuildingInfos = GC.getNumBuildingInfos();
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	mov	DWORD PTR _numBuildingClassInfos$222920[esp+268], eax
+	mov	DWORD PTR _numBuildingClassInfos$223397[esp+268], eax
 	call	?getNumBuildingInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumBuildingInfos
 
 ; 262  : 		int numTerrainInfos = GC.getNumTerrainInfos();
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	mov	DWORD PTR _numBuildingInfos$222921[esp+268], eax
+	mov	DWORD PTR _numBuildingInfos$223398[esp+268], eax
 	call	?getNumTerrainInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumTerrainInfos
 
 ; 263  : 		int numImprovementInfos = GC.getNumImprovementInfos();
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	mov	DWORD PTR _numTerrainInfos$222922[esp+268], eax
+	mov	DWORD PTR _numTerrainInfos$223399[esp+268], eax
 	call	?getNumImprovementInfos@CvGlobals@@QAEHXZ ; CvGlobals::getNumImprovementInfos
 
 ; 264  : #endif
@@ -46000,140 +46220,140 @@ _bConstructorCall$ = 12					; size = 1
 ; 269  : 			{&m_aiForceTeamVoteEligibilityCount,	numVoteSourceInfos, 0},
 
 	lea	ecx, DWORD PTR [esi+2892]
-	mov	DWORD PTR _aData$222924[esp+268], ecx
-	mov	ecx, DWORD PTR _numVoteSourceInfos$222913[esp+268]
-	mov	DWORD PTR _aData$222924[esp+272], ecx
+	mov	DWORD PTR _aData$223401[esp+268], ecx
+	mov	ecx, DWORD PTR _numVoteSourceInfos$223390[esp+268]
+	mov	DWORD PTR _aData$223401[esp+272], ecx
 
 ; 270  : 
 ; 271  : 			{&m_abCanLaunch,						numVictoryInfos, 0},
 ; 272  : 			{&m_abVictoryAchieved,					numVictoryInfos, 0},
 ; 273  : 			{&m_abSmallAwardAchieved,				numSmallAwardInfos, 0},
 
-	mov	edx, DWORD PTR _numSmallAwardInfos$222915[esp+268]
+	mov	edx, DWORD PTR _numSmallAwardInfos$223392[esp+268]
 	lea	ecx, DWORD PTR [esi+2896]
-	mov	DWORD PTR _aData$222924[esp+280], ecx
+	mov	DWORD PTR _aData$223401[esp+280], ecx
 	lea	ecx, DWORD PTR [esi+2900]
-	mov	DWORD PTR _aData$222924[esp+292], ecx
+	mov	DWORD PTR _aData$223401[esp+292], ecx
 	lea	ecx, DWORD PTR [esi+2904]
-	mov	DWORD PTR _aData$222924[esp+304], ecx
+	mov	DWORD PTR _aData$223401[esp+304], ecx
 
 ; 274  : 
 ; 275  : 			{&m_paiRouteChange,						numRouteInfos, 0},
 
 	lea	ecx, DWORD PTR [esi+2908]
-	mov	DWORD PTR _aData$222924[esp+316], ecx
-	mov	ecx, DWORD PTR _numRouteInfos$222916[esp+268]
-	mov	DWORD PTR _aData$222924[esp+320], ecx
+	mov	DWORD PTR _aData$223401[esp+316], ecx
+	mov	ecx, DWORD PTR _numRouteInfos$223393[esp+268]
+	mov	DWORD PTR _aData$223401[esp+320], ecx
 
 ; 276  : 			{&m_paiBuildTimeChange,					numBuildInfos, 0},
 
 	lea	ecx, DWORD PTR [esi+2912]
-	mov	DWORD PTR _aData$222924[esp+328], ecx
+	mov	DWORD PTR _aData$223401[esp+328], ecx
 
 ; 277  : 
 ; 278  : 			{&m_paiProjectCount,					numProjectInfos, 0},
 
 	lea	ecx, DWORD PTR [esi+2916]
-	mov	DWORD PTR _aData$222924[esp+340], ecx
+	mov	DWORD PTR _aData$223401[esp+340], ecx
 
 ; 279  : 			{&m_paiProjectDefaultArtTypes,			numProjectInfos, 0},
 
 	lea	ecx, DWORD PTR [esi+2920]
-	mov	DWORD PTR _aData$222924[esp+352], ecx
+	mov	DWORD PTR _aData$223401[esp+352], ecx
 
 ; 280  : 			{&m_paiProjectMaking,					numProjectInfos, 0},
 
 	lea	ecx, DWORD PTR [esi+2924]
-	mov	DWORD PTR _aData$222924[esp+364], ecx
+	mov	DWORD PTR _aData$223401[esp+364], ecx
 
 ; 281  : 
 ; 282  : 			{&m_paiUnitClassCount,					numUnitClassInfos, 0},
 
 	lea	ecx, DWORD PTR [esi+2928]
-	mov	DWORD PTR _aData$222924[esp+376], ecx
-	mov	ecx, DWORD PTR _numUnitClassInfos$222919[esp+268]
-	mov	DWORD PTR _aData$222924[esp+308], edx
-	mov	edx, DWORD PTR _numBuildInfos$222917[esp+268]
-	mov	DWORD PTR _aData$222924[esp+380], ecx
-	mov	DWORD PTR _numImprovementInfos$222923[esp+268], eax
-	mov	DWORD PTR _aData$222924[esp+276], ebx
-	mov	DWORD PTR _aData$222924[esp+284], edi
-	mov	DWORD PTR _aData$222924[esp+288], ebx
-	mov	DWORD PTR _aData$222924[esp+296], edi
-	mov	DWORD PTR _aData$222924[esp+300], ebx
-	mov	DWORD PTR _aData$222924[esp+312], ebx
-	mov	DWORD PTR _aData$222924[esp+324], ebx
-	mov	DWORD PTR _aData$222924[esp+332], edx
-	mov	DWORD PTR _aData$222924[esp+336], ebx
-	mov	DWORD PTR _aData$222924[esp+344], ebp
-	mov	DWORD PTR _aData$222924[esp+348], ebx
-	mov	DWORD PTR _aData$222924[esp+356], ebp
-	mov	DWORD PTR _aData$222924[esp+360], ebx
-	mov	DWORD PTR _aData$222924[esp+368], ebp
-	mov	DWORD PTR _aData$222924[esp+372], ebx
-	mov	DWORD PTR _aData$222924[esp+384], ebx
+	mov	DWORD PTR _aData$223401[esp+376], ecx
+	mov	ecx, DWORD PTR _numUnitClassInfos$223396[esp+268]
+	mov	DWORD PTR _aData$223401[esp+308], edx
+	mov	edx, DWORD PTR _numBuildInfos$223394[esp+268]
+	mov	DWORD PTR _aData$223401[esp+380], ecx
+	mov	DWORD PTR _numImprovementInfos$223400[esp+268], eax
+	mov	DWORD PTR _aData$223401[esp+276], ebx
+	mov	DWORD PTR _aData$223401[esp+284], edi
+	mov	DWORD PTR _aData$223401[esp+288], ebx
+	mov	DWORD PTR _aData$223401[esp+296], edi
+	mov	DWORD PTR _aData$223401[esp+300], ebx
+	mov	DWORD PTR _aData$223401[esp+312], ebx
+	mov	DWORD PTR _aData$223401[esp+324], ebx
+	mov	DWORD PTR _aData$223401[esp+332], edx
+	mov	DWORD PTR _aData$223401[esp+336], ebx
+	mov	DWORD PTR _aData$223401[esp+344], ebp
+	mov	DWORD PTR _aData$223401[esp+348], ebx
+	mov	DWORD PTR _aData$223401[esp+356], ebp
+	mov	DWORD PTR _aData$223401[esp+360], ebx
+	mov	DWORD PTR _aData$223401[esp+368], ebp
+	mov	DWORD PTR _aData$223401[esp+372], ebx
+	mov	DWORD PTR _aData$223401[esp+384], ebx
 
 ; 283  : 			{&m_paiBuildingClassCount,				numBuildingClassInfos, 0},
 
 	lea	ecx, DWORD PTR [esi+2932]
-	mov	edx, DWORD PTR _numBuildingClassInfos$222920[esp+268]
-	mov	DWORD PTR _aData$222924[esp+388], ecx
+	mov	edx, DWORD PTR _numBuildingClassInfos$223397[esp+268]
+	mov	DWORD PTR _aData$223401[esp+388], ecx
 
 ; 284  : 			{&m_paiObsoleteBuildingCount,			numBuildingInfos, 0},
 
 	lea	ecx, DWORD PTR [esi+2936]
-	mov	DWORD PTR _aData$222924[esp+400], ecx
-	mov	ecx, DWORD PTR _numBuildingInfos$222921[esp+268]
-	mov	DWORD PTR _aData$222924[esp+404], ecx
+	mov	DWORD PTR _aData$223401[esp+400], ecx
+	mov	ecx, DWORD PTR _numBuildingInfos$223398[esp+268]
+	mov	DWORD PTR _aData$223401[esp+404], ecx
 
 ; 285  : 			{&m_paiTerrainTradeCount,				numTerrainInfos, 0},
 
 	lea	ecx, DWORD PTR [esi+2940]
-	mov	DWORD PTR _aData$222924[esp+412], ecx
+	mov	DWORD PTR _aData$223401[esp+412], ecx
 
 ; 286  : 			{&m_aiVictoryCountdown,					numVictoryInfos, 0},
 
 	lea	ecx, DWORD PTR [esi+2944]
-	mov	DWORD PTR _aData$222924[esp+424], ecx
+	mov	DWORD PTR _aData$223401[esp+424], ecx
 
 ; 287  : 
 ; 288  : 			{&m_ppaaiImprovementYieldChange,		numImprovementInfos, NUM_YIELD_TYPES},
 
 	lea	ecx, DWORD PTR [esi+2948]
-	mov	DWORD PTR _aData$222924[esp+436], ecx
-	mov	DWORD PTR _aData$222924[esp+392], edx
-	mov	edx, DWORD PTR _numTerrainInfos$222922[esp+268]
+	mov	DWORD PTR _aData$223401[esp+436], ecx
+	mov	DWORD PTR _aData$223401[esp+392], edx
+	mov	edx, DWORD PTR _numTerrainInfos$223399[esp+268]
 
 ; 289  : 			{&m_ppaaiImprovementNoFreshWaterYieldChange,numImprovementInfos, NUM_YIELD_TYPES},
 
 	lea	ecx, DWORD PTR [esi+2952]
-	mov	DWORD PTR _aData$222924[esp+440], eax
-	mov	DWORD PTR _aData$222924[esp+448], ecx
-	mov	DWORD PTR _aData$222924[esp+452], eax
+	mov	DWORD PTR _aData$223401[esp+440], eax
+	mov	DWORD PTR _aData$223401[esp+448], ecx
+	mov	DWORD PTR _aData$223401[esp+452], eax
 
 ; 290  : 			{&m_ppaaiImprovementFreshWaterYieldChange,numImprovementInfos, NUM_YIELD_TYPES}
 
-	mov	DWORD PTR _aData$222924[esp+464], eax
+	mov	DWORD PTR _aData$223401[esp+464], eax
 
 ; 291  : 		};
 ; 292  : 		m_BatchData.Alloc(aData);
 
-	lea	eax, DWORD PTR _aData$222924[esp+268]
+	lea	eax, DWORD PTR _aData$223401[esp+268]
 	lea	ecx, DWORD PTR [esi+2956]
-	mov	DWORD PTR _aData$222924[esp+416], edx
+	mov	DWORD PTR _aData$223401[esp+416], edx
 	mov	edx, 6
 	push	eax
-	mov	DWORD PTR _aData$222924[esp+464], ecx
+	mov	DWORD PTR _aData$223401[esp+464], ecx
 	push	ebx
 	lea	ecx, DWORD PTR [esi+2888]
-	mov	DWORD PTR _aData$222924[esp+404], ebx
-	mov	DWORD PTR _aData$222924[esp+416], ebx
-	mov	DWORD PTR _aData$222924[esp+428], ebx
-	mov	DWORD PTR _aData$222924[esp+436], edi
-	mov	DWORD PTR _aData$222924[esp+440], ebx
-	mov	DWORD PTR _aData$222924[esp+452], edx
-	mov	DWORD PTR _aData$222924[esp+464], edx
-	mov	DWORD PTR _aData$222924[esp+476], edx
+	mov	DWORD PTR _aData$223401[esp+404], ebx
+	mov	DWORD PTR _aData$223401[esp+416], ebx
+	mov	DWORD PTR _aData$223401[esp+428], ebx
+	mov	DWORD PTR _aData$223401[esp+436], edi
+	mov	DWORD PTR _aData$223401[esp+440], ebx
+	mov	DWORD PTR _aData$223401[esp+452], edx
+	mov	DWORD PTR _aData$223401[esp+464], edx
+	mov	DWORD PTR _aData$223401[esp+476], edx
 	call	?Alloc@?$FAllocArrayType@HU?$FAllocArrayType@_NU?$FAllocArrayType@_NU?$FAllocArrayType@_NU?$FAllocArrayType@HU?$FAllocArrayType@HU?$FAllocArrayType@HU?$FAllocArrayType@HU?$FAllocArrayType@HU?$FAllocArrayType@HU?$FAllocArrayType@HU?$FAllocArrayType@HU?$FAllocArrayType@HU?$FAllocArrayType@HU?$FAllocArray2DType@HU?$FAllocArray2DType@HU?$FAllocArray2DType@HU?$FAllocBase@$0A@$0A@$0A@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@QAEPAXIPAUAllocData@@@Z ; FAllocArrayType<int,FAllocArrayType<bool,FAllocArrayType<bool,FAllocArrayType<bool,FAllocArrayType<int,FAllocArrayType<int,FAllocArrayType<int,FAllocArrayType<int,FAllocArrayType<int,FAllocArrayType<int,FAllocArrayType<int,FAllocArrayType<int,FAllocArrayType<int,FAllocArrayType<int,FAllocArray2DType<int,FAllocArray2DType<int,FAllocArray2DType<int,FAllocBase<0,0,0> > > > > > > > > > > > > > > > > >::Alloc
 
 ; 293  : 
@@ -46143,7 +46363,7 @@ _bConstructorCall$ = 12					; size = 1
 ; 297  : #else
 ; 298  : 		for(int i = 0; i < numVoteSourceInfos; i++)
 
-	mov	ecx, DWORD PTR _numVoteSourceInfos$222913[esp+268]
+	mov	ecx, DWORD PTR _numVoteSourceInfos$223390[esp+268]
 	xor	eax, eax
 	cmp	ecx, ebx
 	jle	SHORT $LN37@reset
@@ -46201,7 +46421,7 @@ $LN34@reset:
 ; 315  : #else
 ; 316  : 		for(int i = 0; i < numSmallAwardInfos; i++)
 
-	mov	ecx, DWORD PTR _numSmallAwardInfos$222915[esp+268]
+	mov	ecx, DWORD PTR _numSmallAwardInfos$223392[esp+268]
 	xor	eax, eax
 	cmp	ecx, ebx
 	jle	SHORT $LN31@reset
@@ -46225,7 +46445,7 @@ $LN31@reset:
 ; 323  : #else
 ; 324  : 		for(int i = 0; i < numRouteInfos; i++)
 
-	mov	ecx, DWORD PTR _numRouteInfos$222916[esp+268]
+	mov	ecx, DWORD PTR _numRouteInfos$223393[esp+268]
 	xor	eax, eax
 	cmp	ecx, ebx
 	jle	SHORT $LN28@reset
@@ -46249,7 +46469,7 @@ $LN28@reset:
 ; 331  : #else
 ; 332  : 		for (int i = 0; i < numBuildInfos; i++)
 
-	mov	ecx, DWORD PTR _numBuildInfos$222917[esp+268]
+	mov	ecx, DWORD PTR _numBuildInfos$223394[esp+268]
 	xor	eax, eax
 	cmp	ecx, ebx
 	jle	SHORT $LN25@reset
@@ -46306,7 +46526,7 @@ $LN22@reset:
 ; 349  : #else
 ; 350  : 		for(int i = 0; i < numUnitClassInfos; i++)
 
-	mov	ecx, DWORD PTR _numUnitClassInfos$222919[esp+268]
+	mov	ecx, DWORD PTR _numUnitClassInfos$223396[esp+268]
 	xor	eax, eax
 	cmp	ecx, ebx
 	jle	SHORT $LN19@reset
@@ -46330,7 +46550,7 @@ $LN19@reset:
 ; 357  : #else
 ; 358  : 		for(int i = 0; i < numBuildingClassInfos; i++)
 
-	mov	ecx, DWORD PTR _numBuildingClassInfos$222920[esp+268]
+	mov	ecx, DWORD PTR _numBuildingClassInfos$223397[esp+268]
 	xor	eax, eax
 	cmp	ecx, ebx
 	jle	SHORT $LN16@reset
@@ -46354,7 +46574,7 @@ $LN16@reset:
 ; 365  : #else
 ; 366  : 		for(int i = 0; i < numBuildingInfos; i++)
 
-	mov	ecx, DWORD PTR _numBuildingInfos$222921[esp+268]
+	mov	ecx, DWORD PTR _numBuildingInfos$223398[esp+268]
 	xor	eax, eax
 	cmp	ecx, ebx
 	jle	SHORT $LN13@reset
@@ -46378,7 +46598,7 @@ $LN13@reset:
 ; 373  : #else
 ; 374  : 		for(int i = 0; i < numTerrainInfos; i++)
 
-	mov	ecx, DWORD PTR _numTerrainInfos$222922[esp+268]
+	mov	ecx, DWORD PTR _numTerrainInfos$223399[esp+268]
 	xor	eax, eax
 	cmp	ecx, ebx
 	jle	SHORT $LN10@reset
@@ -46428,7 +46648,7 @@ $LL9@reset:
 ; 389  : #else
 ; 390  : 		for(int i = 0; i < numImprovementInfos; i++)
 
-	mov	ecx, DWORD PTR _numImprovementInfos$222923[esp+268]
+	mov	ecx, DWORD PTR _numImprovementInfos$223400[esp+268]
 	xor	eax, eax
 	cmp	ecx, ebx
 	jle	$LN4@reset
@@ -46536,7 +46756,7 @@ $LN4@reset:
 	push	eax
 	call	??_U@YAPAXI@Z				; operator new[]
 	add	esp, 4
-	mov	DWORD PTR $T254192[esp+268], eax
+	mov	DWORD PTR $T254359[esp+268], eax
 	mov	DWORD PTR __$EHRec$[esp+276], ebx
 	cmp	eax, ebx
 	je	SHORT $LN43@reset
@@ -46588,7 +46808,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?reset@CvTeam@@QAEXW4TeamTypes@@_N@Z$0:
-	mov	eax, DWORD PTR $T254192[ebp]
+	mov	eax, DWORD PTR $T254359[ebp]
 	push	eax
 	call	??_V@YAXPAX@Z				; operator delete[]
 	pop	ecx
@@ -46608,13 +46828,13 @@ EXTRN	??5@YAAAVFDataStream@@AAV0@AAW4TeamTypes@@@Z:PROC ; operator>>
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?Read@CvTeam@@UAEXAAVFDataStream@@@Z
 _TEXT	SEGMENT
-_j$227402 = -32						; size = 4
-_i$227396 = -28						; size = 4
+_j$227920 = -32						; size = 4
+_i$227914 = -28						; size = 4
 _iNumProjects$ = -24					; size = 4
 tv858 = -20						; size = 4
-_iType$227400 = -16					; size = 4
+_iType$227918 = -16					; size = 4
 _uiVersion$ = -12					; size = 4
-_temp$227412 = -8					; size = 4
+_temp$227930 = -8					; size = 4
 _kForcePeaceWrapper$ = -8				; size = 8
 _kTradeAgreementWrapper$ = -8				; size = 8
 _kResearchAgreementWrapper$ = -8			; size = 8
@@ -46626,12 +46846,12 @@ _kAtWarWrapper$ = -8					; size = 8
 _kHasFoundPlayerWrapper$ = -8				; size = 8
 _kHasMetWrapper$ = -8					; size = 8
 tv532 = 8						; size = 4
-_temp$227406 = 8					; size = 4
+_temp$227924 = 8					; size = 4
 _kStream$ = 8						; size = 4
 ?Read@CvTeam@@UAEXAAVFDataStream@@@Z PROC		; CvTeam::Read, COMDAT
 ; _this$ = ecx
 
-; 7475 : {
+; 7527 : {
 
 	sub	esp, 32					; 00000020H
 	push	ebx
@@ -46639,18 +46859,18 @@ _kStream$ = 8						; size = 4
 	push	esi
 	push	edi
 
-; 7476 : 	// Init data before load
-; 7477 : 	reset();
+; 7528 : 	// Init data before load
+; 7529 : 	reset();
 
 	push	0
 	push	0
 	mov	edi, ecx
 	call	?reset@CvTeam@@QAEXW4TeamTypes@@_N@Z	; CvTeam::reset
 
-; 7478 : 
-; 7479 : 	// Version number to maintain backwards compatibility
-; 7480 : 	uint uiVersion;
-; 7481 : 	kStream >> uiVersion;
+; 7530 : 
+; 7531 : 	// Version number to maintain backwards compatibility
+; 7532 : 	uint uiVersion;
+; 7533 : 	kStream >> uiVersion;
 
 	mov	esi, DWORD PTR _kStream$[esp+44]
 	lea	eax, DWORD PTR _uiVersion$[esp+48]
@@ -46658,305 +46878,305 @@ _kStream$ = 8						; size = 4
 	mov	ecx, esi
 	call	?Read@FDataStream@@IAEXAAI@Z		; FDataStream::Read
 
-; 7482 : 
-; 7483 : 	kStream >> m_iNumMembers;
+; 7534 : 
+; 7535 : 	kStream >> m_iNumMembers;
 
 	lea	ecx, DWORD PTR [edi+8]
 	push	ecx
 	mov	ecx, esi
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
 
-; 7484 : 	kStream >> m_iAliveCount;
+; 7536 : 	kStream >> m_iAliveCount;
 
 	lea	edx, DWORD PTR [edi+12]
 	push	edx
 	mov	ecx, esi
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
 
-; 7485 : 	kStream >> m_iEverAliveCount;
+; 7537 : 	kStream >> m_iEverAliveCount;
 
 	lea	eax, DWORD PTR [edi+16]
 	push	eax
 	mov	ecx, esi
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
 
-; 7486 : 	kStream >> m_iNumCities;
+; 7538 : 	kStream >> m_iNumCities;
 
 	lea	ecx, DWORD PTR [edi+20]
 	push	ecx
 	mov	ecx, esi
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
 
-; 7487 : 	kStream >> m_iTotalPopulation;
+; 7539 : 	kStream >> m_iTotalPopulation;
 
 	lea	edx, DWORD PTR [edi+24]
 	push	edx
 	mov	ecx, esi
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
 
-; 7488 : 	kStream >> m_iTotalLand;
+; 7540 : 	kStream >> m_iTotalLand;
 
 	lea	eax, DWORD PTR [edi+28]
 	push	eax
 	mov	ecx, esi
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
 
-; 7489 : 	kStream >> m_iNukeInterception;
+; 7541 : 	kStream >> m_iNukeInterception;
 
 	lea	ecx, DWORD PTR [edi+32]
 	push	ecx
 	mov	ecx, esi
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
 
-; 7490 : 	kStream >> m_iExtraWaterSeeFromCount;
+; 7542 : 	kStream >> m_iExtraWaterSeeFromCount;
 
 	lea	edx, DWORD PTR [edi+36]
 	push	edx
 	mov	ecx, esi
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
 
-; 7491 : 	kStream >> m_iMapTradingCount;
+; 7543 : 	kStream >> m_iMapTradingCount;
 
 	lea	eax, DWORD PTR [edi+40]
 	push	eax
 	mov	ecx, esi
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
 
-; 7492 : 	kStream >> m_iTechTradingCount;
+; 7544 : 	kStream >> m_iTechTradingCount;
 
 	lea	ecx, DWORD PTR [edi+44]
 	push	ecx
 	mov	ecx, esi
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
 
-; 7493 : 	kStream >> m_iGoldTradingCount;
+; 7545 : 	kStream >> m_iGoldTradingCount;
 
 	lea	edx, DWORD PTR [edi+48]
 	push	edx
 	mov	ecx, esi
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
 
-; 7494 : 	kStream >> m_iAllowEmbassyTradingAllowedCount;
+; 7546 : 	kStream >> m_iAllowEmbassyTradingAllowedCount;
 
 	lea	eax, DWORD PTR [edi+52]
 	push	eax
 	mov	ecx, esi
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
 
-; 7495 : 	kStream >> m_iOpenBordersTradingAllowedCount;
+; 7547 : 	kStream >> m_iOpenBordersTradingAllowedCount;
 
 	lea	ecx, DWORD PTR [edi+56]
 	push	ecx
 	mov	ecx, esi
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
 
-; 7496 : 	kStream >> m_iDefensivePactTradingAllowedCount;
+; 7548 : 	kStream >> m_iDefensivePactTradingAllowedCount;
 
 	lea	edx, DWORD PTR [edi+60]
 	push	edx
 	mov	ecx, esi
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
 
-; 7497 : 	kStream >> m_iResearchAgreementTradingAllowedCount;
+; 7549 : 	kStream >> m_iResearchAgreementTradingAllowedCount;
 
 	lea	eax, DWORD PTR [edi+64]
 	push	eax
 	mov	ecx, esi
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
 
-; 7498 : 	kStream >> m_iTradeAgreementTradingAllowedCount;
+; 7550 : 	kStream >> m_iTradeAgreementTradingAllowedCount;
 
 	lea	ecx, DWORD PTR [edi+68]
 	push	ecx
 	mov	ecx, esi
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
 
-; 7499 : 	kStream >> m_iPermanentAllianceTradingCount;
+; 7551 : 	kStream >> m_iPermanentAllianceTradingCount;
 
 	lea	edx, DWORD PTR [edi+72]
 	push	edx
 	mov	ecx, esi
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
 
-; 7500 : 	kStream >> m_iBridgeBuildingCount;
+; 7552 : 	kStream >> m_iBridgeBuildingCount;
 
 	lea	eax, DWORD PTR [edi+76]
 	push	eax
 	mov	ecx, esi
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
 
-; 7501 : 	kStream >> m_iWaterWorkCount;
+; 7553 : 	kStream >> m_iWaterWorkCount;
 
 	lea	ecx, DWORD PTR [edi+80]
 	push	ecx
 	mov	ecx, esi
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
 
-; 7502 : 	kStream >> m_iRiverTradeCount;
+; 7554 : 	kStream >> m_iRiverTradeCount;
 
 	lea	edx, DWORD PTR [edi+84]
 	push	edx
 	mov	ecx, esi
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
 
-; 7503 : 	kStream >> m_iBorderObstacleCount;
+; 7555 : 	kStream >> m_iBorderObstacleCount;
 
 	lea	eax, DWORD PTR [edi+88]
 	push	eax
 	mov	ecx, esi
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
 
-; 7504 : 	kStream >> m_iVictoryPoints;
+; 7556 : 	kStream >> m_iVictoryPoints;
 
 	lea	ecx, DWORD PTR [edi+92]
 	push	ecx
 	mov	ecx, esi
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
 
-; 7505 : 	kStream >> m_iEmbarkedExtraMoves;
+; 7557 : 	kStream >> m_iEmbarkedExtraMoves;
 
 	lea	edx, DWORD PTR [edi+96]
 	push	edx
 	mov	ecx, esi
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
 
-; 7506 : 	//EAP: Extra embarked visiblity on tech
-; 7507 : 	kStream >> m_iEmbarkedExtraSight;
+; 7558 : 	//EAP: Extra embarked visiblity on tech
+; 7559 : 	kStream >> m_iEmbarkedExtraSight;
 
 	lea	eax, DWORD PTR [edi+100]
 	push	eax
 	mov	ecx, esi
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
 
-; 7508 : 	kStream >> m_iCanEmbarkCount;
+; 7560 : 	kStream >> m_iCanEmbarkCount;
 
 	lea	ecx, DWORD PTR [edi+104]
 	push	ecx
 	mov	ecx, esi
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
 
-; 7509 : 	kStream >> m_iDefensiveEmbarkCount;
+; 7561 : 	kStream >> m_iDefensiveEmbarkCount;
 
 	lea	edx, DWORD PTR [edi+108]
 	push	edx
 	mov	ecx, esi
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
 
-; 7510 : 	kStream >> m_iEmbarkedAllWaterPassageCount;
+; 7562 : 	kStream >> m_iEmbarkedAllWaterPassageCount;
 
 	lea	eax, DWORD PTR [edi+112]
 	push	eax
 	mov	ecx, esi
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
 
-; 7511 : 	kStream >> m_iNumNaturalWondersDiscovered;
+; 7563 : 	kStream >> m_iNumNaturalWondersDiscovered;
 
 	lea	ecx, DWORD PTR [edi+116]
 	push	ecx
 	mov	ecx, esi
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
 
-; 7512 : 	kStream >> m_iBestPossibleRoute;
+; 7564 : 	kStream >> m_iBestPossibleRoute;
 
 	lea	edx, DWORD PTR [edi+120]
 	push	edx
 	mov	ecx, esi
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
 
-; 7513 : 	kStream >> m_iNumMinorCivsAttacked;
+; 7565 : 	kStream >> m_iNumMinorCivsAttacked;
 
 	lea	eax, DWORD PTR [edi+124]
 	push	eax
 	mov	ecx, esi
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
 
-; 7514 : #ifdef AUI_ASTAR_TWEAKED_OPTIMIZED_BUT_CAN_STILL_USE_ROADS
-; 7515 : 	kStream >> m_iBestRouteFlatCostMultiplier;
-; 7516 : 	kStream >> m_iBestRouteNormalCostMultiplier;
-; 7517 : 	kStream >> m_iUseFlatCostIfBelowThis;
-; 7518 : #endif
-; 7519 : 
-; 7520 : 	kStream >> m_bMapCentering;
+; 7566 : #ifdef AUI_ASTAR_TWEAKED_OPTIMIZED_BUT_CAN_STILL_USE_ROADS
+; 7567 : 	kStream >> m_iBestRouteFlatCostMultiplier;
+; 7568 : 	kStream >> m_iBestRouteNormalCostMultiplier;
+; 7569 : 	kStream >> m_iUseFlatCostIfBelowThis;
+; 7570 : #endif
+; 7571 : 
+; 7572 : 	kStream >> m_bMapCentering;
 
 	lea	ecx, DWORD PTR [edi+128]
 	push	ecx
 	mov	ecx, esi
 	call	?Read@FDataStream@@IAEXAA_N@Z		; FDataStream::Read
 
-; 7521 : 	kStream >> m_bHasBrokenPeaceTreaty;
+; 7573 : 	kStream >> m_bHasBrokenPeaceTreaty;
 
 	lea	edx, DWORD PTR [edi+129]
 	push	edx
 	mov	ecx, esi
 	call	?Read@FDataStream@@IAEXAA_N@Z		; FDataStream::Read
 
-; 7522 : 	kStream >> m_bHomeOfUnitedNations;
+; 7574 : 	kStream >> m_bHomeOfUnitedNations;
 
 	lea	eax, DWORD PTR [edi+130]
 	push	eax
 	mov	ecx, esi
 	call	?Read@FDataStream@@IAEXAA_N@Z		; FDataStream::Read
 
-; 7523 : 	kStream >> m_bHasTechForWorldCongress;
+; 7575 : 	kStream >> m_bHasTechForWorldCongress;
 
 	lea	ecx, DWORD PTR [edi+131]
 	push	ecx
 	mov	ecx, esi
 	call	?Read@FDataStream@@IAEXAA_N@Z		; FDataStream::Read
 
-; 7524 : 
-; 7525 : 	kStream >> m_bBrokenMilitaryPromise;
+; 7576 : 
+; 7577 : 	kStream >> m_bBrokenMilitaryPromise;
 
 	lea	edx, DWORD PTR [edi+132]
 	push	edx
 	mov	ecx, esi
 	call	?Read@FDataStream@@IAEXAA_N@Z		; FDataStream::Read
 
-; 7526 : 	kStream >> m_bBrokenExpansionPromise;
+; 7578 : 	kStream >> m_bBrokenExpansionPromise;
 
 	lea	eax, DWORD PTR [edi+133]
 	push	eax
 	mov	ecx, esi
 	call	?Read@FDataStream@@IAEXAA_N@Z		; FDataStream::Read
 
-; 7527 : 	kStream >> m_bBrokenBorderPromise;
+; 7579 : 	kStream >> m_bBrokenBorderPromise;
 
 	lea	ecx, DWORD PTR [edi+134]
 	push	ecx
 	mov	ecx, esi
 	call	?Read@FDataStream@@IAEXAA_N@Z		; FDataStream::Read
 
-; 7528 : 	kStream >> m_bBrokenCityStatePromise;
+; 7580 : 	kStream >> m_bBrokenCityStatePromise;
 
 	lea	edx, DWORD PTR [edi+135]
 	push	edx
 	mov	ecx, esi
 	call	?Read@FDataStream@@IAEXAA_N@Z		; FDataStream::Read
 
-; 7529 : 
-; 7530 : 	kStream >> m_eID;
+; 7581 : 
+; 7582 : 	kStream >> m_eID;
 
 	lea	eax, DWORD PTR [edi+4]
 	push	eax
 	push	esi
 	call	??5@YAAAVFDataStream@@AAV0@AAW4TeamTypes@@@Z ; operator>>
 
-; 7531 : 
-; 7532 : 	kStream >> m_eCurrentEra;
+; 7583 : 
+; 7584 : 	kStream >> m_eCurrentEra;
 
 	lea	eax, DWORD PTR [edi+136]
 	push	eax
 	push	esi
 	call	??5@YAAAVFDataStream@@AAV0@AAW4EraTypes@@@Z ; operator>>
 
-; 7533 : 	kStream >> m_eLiberatedByTeam;
+; 7585 : 	kStream >> m_eLiberatedByTeam;
 
 	lea	ecx, DWORD PTR [edi+140]
 	push	ecx
 	push	esi
 	call	??5@YAAAVFDataStream@@AAV0@AAW4TeamTypes@@@Z ; operator>>
 
-; 7534 : 	kStream >> m_eKilledByTeam;
+; 7586 : 	kStream >> m_eKilledByTeam;
 
 	lea	edx, DWORD PTR [edi+144]
 	push	edx
@@ -46964,14 +47184,14 @@ _kStream$ = 8						; size = 4
 	call	??5@YAAAVFDataStream@@AAV0@AAW4TeamTypes@@@Z ; operator>>
 	add	esp, 32					; 00000020H
 
-; 7535 : 
-; 7536 : 	ArrayWrapper<int> kTechShareCountWrapper(MAX_TEAMS, &m_aiTechShareCount[0]);
+; 7587 : 
+; 7588 : 	ArrayWrapper<int> kTechShareCountWrapper(MAX_TEAMS, &m_aiTechShareCount[0]);
 
 	lea	ebx, DWORD PTR [edi+148]
 	mov	ebp, 64					; 00000040H
 	npad	5
 
-; 7537 : 	kStream >> kTechShareCountWrapper;
+; 7589 : 	kStream >> kTechShareCountWrapper;
 
 $LL99@Read:
 	push	ebx
@@ -46981,14 +47201,14 @@ $LL99@Read:
 	sub	ebp, 1
 	jne	SHORT $LL99@Read
 
-; 7538 : 
-; 7539 : 	ArrayWrapper<int> kNumTurnsAtWarWrapper(MAX_TEAMS, &m_aiNumTurnsAtWar[0]);
+; 7590 : 
+; 7591 : 	ArrayWrapper<int> kNumTurnsAtWarWrapper(MAX_TEAMS, &m_aiNumTurnsAtWar[0]);
 
 	lea	ebx, DWORD PTR [edi+468]
 	mov	ebp, 64					; 00000040H
 	npad	5
 
-; 7540 : 	kStream >> kNumTurnsAtWarWrapper;
+; 7592 : 	kStream >> kNumTurnsAtWarWrapper;
 
 $LL114@Read:
 	push	ebx
@@ -46998,14 +47218,14 @@ $LL114@Read:
 	sub	ebp, 1
 	jne	SHORT $LL114@Read
 
-; 7541 : 
-; 7542 : 	ArrayWrapper<int> kNumTurnsLockedIntoWarWrapper(MAX_TEAMS, &m_aiNumTurnsLockedIntoWar[0]);
+; 7593 : 
+; 7594 : 	ArrayWrapper<int> kNumTurnsLockedIntoWarWrapper(MAX_TEAMS, &m_aiNumTurnsLockedIntoWar[0]);
 
 	lea	ebx, DWORD PTR [edi+788]
 	mov	ebp, 64					; 00000040H
 	npad	5
 
-; 7543 : 	kStream >> kNumTurnsLockedIntoWarWrapper;
+; 7595 : 	kStream >> kNumTurnsLockedIntoWarWrapper;
 
 $LL129@Read:
 	push	ebx
@@ -47015,14 +47235,14 @@ $LL129@Read:
 	sub	ebp, 1
 	jne	SHORT $LL129@Read
 
-; 7544 : 
-; 7545 : 	ArrayWrapper<int> kExtraMovesWrapper(NUM_DOMAIN_TYPES, &m_aiExtraMoves[0]);
+; 7596 : 
+; 7597 : 	ArrayWrapper<int> kExtraMovesWrapper(NUM_DOMAIN_TYPES, &m_aiExtraMoves[0]);
 
 	lea	ebx, DWORD PTR [edi+1108]
 	mov	ebp, 5
 	npad	5
 
-; 7546 : 	kStream >> kExtraMovesWrapper;
+; 7598 : 	kStream >> kExtraMovesWrapper;
 
 $LL144@Read:
 	push	ebx
@@ -47032,8 +47252,8 @@ $LL144@Read:
 	sub	ebp, 1
 	jne	SHORT $LL144@Read
 
-; 7547 : 
-; 7548 : 	CvInfosSerializationHelper::ReadHashedDataArray(kStream, m_aiForceTeamVoteEligibilityCount, GC.getNumVoteSourceInfos());
+; 7599 : 
+; 7600 : 	CvInfosSerializationHelper::ReadHashedDataArray(kStream, m_aiForceTeamVoteEligibilityCount, GC.getNumVoteSourceInfos());
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getNumVoteSourceInfos@CvGlobals@@QAEHXZ ; CvGlobals::getNumVoteSourceInfos
@@ -47044,13 +47264,13 @@ $LL144@Read:
 	call	??$ReadHashedDataArray@H@CvInfosSerializationHelper@@YAXAAVFDataStream@@PAHH@Z ; CvInfosSerializationHelper::ReadHashedDataArray<int>
 	add	esp, 12					; 0000000cH
 
-; 7549 : 
-; 7550 : 	ArrayWrapper<int> kTurnMadePeaceWrapper(MAX_TEAMS, &m_paiTurnMadePeaceTreatyWithTeam[0]);
+; 7601 : 
+; 7602 : 	ArrayWrapper<int> kTurnMadePeaceWrapper(MAX_TEAMS, &m_paiTurnMadePeaceTreatyWithTeam[0]);
 
 	lea	ebx, DWORD PTR [edi+1128]
 	mov	ebp, 64					; 00000040H
 
-; 7551 : 	kStream >> kTurnMadePeaceWrapper;
+; 7603 : 	kStream >> kTurnMadePeaceWrapper;
 
 $LL159@Read:
 	push	ebx
@@ -47060,14 +47280,14 @@ $LL159@Read:
 	sub	ebp, 1
 	jne	SHORT $LL159@Read
 
-; 7552 : 
-; 7553 : 	ArrayWrapper<int> kIgnoreWarningWrapper(MAX_TEAMS, &m_aiIgnoreWarningCount[0]);
+; 7604 : 
+; 7605 : 	ArrayWrapper<int> kIgnoreWarningWrapper(MAX_TEAMS, &m_aiIgnoreWarningCount[0]);
 
 	mov	ebp, 64					; 00000040H
 	lea	ebx, DWORD PTR [edi+1448]
 	mov	DWORD PTR tv532[esp+44], ebp
 
-; 7554 : 	kStream >> kIgnoreWarningWrapper;
+; 7606 : 	kStream >> kIgnoreWarningWrapper;
 
 $LL174@Read:
 	push	ebx
@@ -47077,9 +47297,9 @@ $LL174@Read:
 	sub	DWORD PTR tv532[esp+44], 1
 	jne	SHORT $LL174@Read
 
-; 7555 : 
-; 7556 : 	ArrayWrapper<bool> kHasMetWrapper(MAX_TEAMS, &m_abHasMet[0]);
-; 7557 : 	kStream >> kHasMetWrapper;
+; 7607 : 
+; 7608 : 	ArrayWrapper<bool> kHasMetWrapper(MAX_TEAMS, &m_abHasMet[0]);
+; 7609 : 	kStream >> kHasMetWrapper;
 
 	lea	edx, DWORD PTR _kHasMetWrapper$[esp+48]
 	push	edx
@@ -47089,9 +47309,9 @@ $LL174@Read:
 	mov	DWORD PTR _kHasMetWrapper$[esp+60], ebp
 	call	??$?5_N@@YAAAVFDataStream@@AAV0@AAV?$ArrayWrapper@_N@@@Z ; operator>><bool>
 
-; 7558 : 
-; 7559 : 	ArrayWrapper<bool> kHasFoundPlayerWrapper(MAX_PLAYERS, &m_abHasFoundPlayersTerritory[0]);
-; 7560 : 	kStream >> kHasFoundPlayerWrapper;
+; 7610 : 
+; 7611 : 	ArrayWrapper<bool> kHasFoundPlayerWrapper(MAX_PLAYERS, &m_abHasFoundPlayersTerritory[0]);
+; 7612 : 	kStream >> kHasFoundPlayerWrapper;
 
 	lea	ecx, DWORD PTR _kHasFoundPlayerWrapper$[esp+56]
 	push	ecx
@@ -47101,9 +47321,9 @@ $LL174@Read:
 	mov	DWORD PTR _kHasFoundPlayerWrapper$[esp+68], ebp
 	call	??$?5_N@@YAAAVFDataStream@@AAV0@AAV?$ArrayWrapper@_N@@@Z ; operator>><bool>
 
-; 7561 : 
-; 7562 : 	ArrayWrapper<bool> kAtWarWrapper(MAX_TEAMS, &m_abAtWar[0]);
-; 7563 : 	kStream >> kAtWarWrapper;
+; 7613 : 
+; 7614 : 	ArrayWrapper<bool> kAtWarWrapper(MAX_TEAMS, &m_abAtWar[0]);
+; 7615 : 	kStream >> kAtWarWrapper;
 
 	lea	eax, DWORD PTR _kAtWarWrapper$[esp+64]
 	push	eax
@@ -47113,9 +47333,9 @@ $LL174@Read:
 	mov	DWORD PTR _kAtWarWrapper$[esp+76], ebp
 	call	??$?5_N@@YAAAVFDataStream@@AAV0@AAV?$ArrayWrapper@_N@@@Z ; operator>><bool>
 
-; 7564 : 
-; 7565 : 	ArrayWrapper<bool> kPermanentWarWrapper(MAX_TEAMS, &m_abPermanentWarPeace[0]);
-; 7566 : 	kStream >> kPermanentWarWrapper;
+; 7616 : 
+; 7617 : 	ArrayWrapper<bool> kPermanentWarWrapper(MAX_TEAMS, &m_abPermanentWarPeace[0]);
+; 7618 : 	kStream >> kPermanentWarWrapper;
 
 	lea	edx, DWORD PTR _kPermanentWarWrapper$[esp+72]
 	push	edx
@@ -47125,9 +47345,9 @@ $LL174@Read:
 	mov	DWORD PTR _kPermanentWarWrapper$[esp+84], ebp
 	call	??$?5_N@@YAAAVFDataStream@@AAV0@AAV?$ArrayWrapper@_N@@@Z ; operator>><bool>
 
-; 7567 : 
-; 7568 : 	ArrayWrapper<bool> kEmbassyWrapper(MAX_TEAMS, &m_abEmbassy[0]);
-; 7569 : 	kStream >> kEmbassyWrapper;
+; 7619 : 
+; 7620 : 	ArrayWrapper<bool> kEmbassyWrapper(MAX_TEAMS, &m_abEmbassy[0]);
+; 7621 : 	kStream >> kEmbassyWrapper;
 
 	lea	ecx, DWORD PTR _kEmbassyWrapper$[esp+80]
 	push	ecx
@@ -47137,9 +47357,9 @@ $LL174@Read:
 	mov	DWORD PTR _kEmbassyWrapper$[esp+92], ebp
 	call	??$?5_N@@YAAAVFDataStream@@AAV0@AAV?$ArrayWrapper@_N@@@Z ; operator>><bool>
 
-; 7570 : 
-; 7571 : 	ArrayWrapper<bool> kOpenBordersWrapper(MAX_TEAMS, &m_abOpenBorders[0]);
-; 7572 : 	kStream >> kOpenBordersWrapper;
+; 7622 : 
+; 7623 : 	ArrayWrapper<bool> kOpenBordersWrapper(MAX_TEAMS, &m_abOpenBorders[0]);
+; 7624 : 	kStream >> kOpenBordersWrapper;
 
 	lea	eax, DWORD PTR _kOpenBordersWrapper$[esp+88]
 	push	eax
@@ -47149,9 +47369,9 @@ $LL174@Read:
 	mov	DWORD PTR _kOpenBordersWrapper$[esp+100], ebp
 	call	??$?5_N@@YAAAVFDataStream@@AAV0@AAV?$ArrayWrapper@_N@@@Z ; operator>><bool>
 
-; 7573 : 
-; 7574 : 	ArrayWrapper<bool> kDefensivePactWrapper(MAX_TEAMS, &m_abDefensivePact[0]);
-; 7575 : 	kStream >> kDefensivePactWrapper;
+; 7625 : 
+; 7626 : 	ArrayWrapper<bool> kDefensivePactWrapper(MAX_TEAMS, &m_abDefensivePact[0]);
+; 7627 : 	kStream >> kDefensivePactWrapper;
 
 	lea	edx, DWORD PTR _kDefensivePactWrapper$[esp+96]
 	push	edx
@@ -47161,9 +47381,9 @@ $LL174@Read:
 	mov	DWORD PTR _kDefensivePactWrapper$[esp+108], ebp
 	call	??$?5_N@@YAAAVFDataStream@@AAV0@AAV?$ArrayWrapper@_N@@@Z ; operator>><bool>
 
-; 7576 : 
-; 7577 : 	ArrayWrapper<bool> kResearchAgreementWrapper(MAX_TEAMS, &m_abResearchAgreement[0]);
-; 7578 : 	kStream >> kResearchAgreementWrapper;
+; 7628 : 
+; 7629 : 	ArrayWrapper<bool> kResearchAgreementWrapper(MAX_TEAMS, &m_abResearchAgreement[0]);
+; 7630 : 	kStream >> kResearchAgreementWrapper;
 
 	lea	ecx, DWORD PTR _kResearchAgreementWrapper$[esp+104]
 	push	ecx
@@ -47174,9 +47394,9 @@ $LL174@Read:
 	call	??$?5_N@@YAAAVFDataStream@@AAV0@AAV?$ArrayWrapper@_N@@@Z ; operator>><bool>
 	add	esp, 64					; 00000040H
 
-; 7579 : 
-; 7580 : 	ArrayWrapper<bool> kTradeAgreementWrapper(MAX_TEAMS, &m_abTradeAgreement[0]);
-; 7581 : 	kStream >> kTradeAgreementWrapper;
+; 7631 : 
+; 7632 : 	ArrayWrapper<bool> kTradeAgreementWrapper(MAX_TEAMS, &m_abTradeAgreement[0]);
+; 7633 : 	kStream >> kTradeAgreementWrapper;
 
 	lea	eax, DWORD PTR _kTradeAgreementWrapper$[esp+48]
 	push	eax
@@ -47186,9 +47406,9 @@ $LL174@Read:
 	mov	DWORD PTR _kTradeAgreementWrapper$[esp+60], ebp
 	call	??$?5_N@@YAAAVFDataStream@@AAV0@AAV?$ArrayWrapper@_N@@@Z ; operator>><bool>
 
-; 7582 : 
-; 7583 : 	ArrayWrapper<bool> kForcePeaceWrapper(MAX_TEAMS, &m_abForcePeace[0]);
-; 7584 : 	kStream >> kForcePeaceWrapper;
+; 7634 : 
+; 7635 : 	ArrayWrapper<bool> kForcePeaceWrapper(MAX_TEAMS, &m_abForcePeace[0]);
+; 7636 : 	kStream >> kForcePeaceWrapper;
 
 	lea	edx, DWORD PTR _kForcePeaceWrapper$[esp+56]
 	push	edx
@@ -47199,8 +47419,8 @@ $LL174@Read:
 	call	??$?5_N@@YAAAVFDataStream@@AAV0@AAV?$ArrayWrapper@_N@@@Z ; operator>><bool>
 	add	esp, 16					; 00000010H
 
-; 7585 : 
-; 7586 : 	CvInfosSerializationHelper::ReadHashedDataArray(kStream, m_abCanLaunch, GC.getNumVictoryInfos());
+; 7637 : 
+; 7638 : 	CvInfosSerializationHelper::ReadHashedDataArray(kStream, m_abCanLaunch, GC.getNumVictoryInfos());
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getNumVictoryInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumVictoryInfos
@@ -47211,7 +47431,7 @@ $LL174@Read:
 	call	??$ReadHashedDataArray@_N@CvInfosSerializationHelper@@YAXAAVFDataStream@@PA_NH@Z ; CvInfosSerializationHelper::ReadHashedDataArray<bool>
 	add	esp, 12					; 0000000cH
 
-; 7587 : 	CvInfosSerializationHelper::ReadHashedDataArray(kStream, m_abVictoryAchieved, GC.getNumVictoryInfos());
+; 7639 : 	CvInfosSerializationHelper::ReadHashedDataArray(kStream, m_abVictoryAchieved, GC.getNumVictoryInfos());
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getNumVictoryInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumVictoryInfos
@@ -47222,7 +47442,7 @@ $LL174@Read:
 	call	??$ReadHashedDataArray@_N@CvInfosSerializationHelper@@YAXAAVFDataStream@@PA_NH@Z ; CvInfosSerializationHelper::ReadHashedDataArray<bool>
 	add	esp, 12					; 0000000cH
 
-; 7588 : 	CvInfosSerializationHelper::ReadHashedDataArray(kStream, m_abSmallAwardAchieved, GC.getNumSmallAwardInfos());
+; 7640 : 	CvInfosSerializationHelper::ReadHashedDataArray(kStream, m_abSmallAwardAchieved, GC.getNumSmallAwardInfos());
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getNumSmallAwardInfos@CvGlobals@@QAEHXZ ; CvGlobals::getNumSmallAwardInfos
@@ -47233,8 +47453,8 @@ $LL174@Read:
 	call	??$ReadHashedDataArray@_N@CvInfosSerializationHelper@@YAXAAVFDataStream@@PA_NH@Z ; CvInfosSerializationHelper::ReadHashedDataArray<bool>
 	add	esp, 12					; 0000000cH
 
-; 7589 : 
-; 7590 : 	CvInfosSerializationHelper::ReadHashedDataArray(kStream, m_paiRouteChange, GC.getNumRouteInfos());
+; 7641 : 
+; 7642 : 	CvInfosSerializationHelper::ReadHashedDataArray(kStream, m_paiRouteChange, GC.getNumRouteInfos());
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getNumRouteInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumRouteInfos
@@ -47245,7 +47465,7 @@ $LL174@Read:
 	call	??$ReadHashedDataArray@H@CvInfosSerializationHelper@@YAXAAVFDataStream@@PAHH@Z ; CvInfosSerializationHelper::ReadHashedDataArray<int>
 	add	esp, 12					; 0000000cH
 
-; 7591 : 	CvInfosSerializationHelper::ReadHashedDataArray(kStream, m_paiBuildTimeChange, GC.getNumBuildInfos());
+; 7643 : 	CvInfosSerializationHelper::ReadHashedDataArray(kStream, m_paiBuildTimeChange, GC.getNumBuildInfos());
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getNumBuildInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumBuildInfos
@@ -47256,7 +47476,7 @@ $LL174@Read:
 	call	??$ReadHashedDataArray@H@CvInfosSerializationHelper@@YAXAAVFDataStream@@PAHH@Z ; CvInfosSerializationHelper::ReadHashedDataArray<int>
 	add	esp, 12					; 0000000cH
 
-; 7592 : 	CvInfosSerializationHelper::ReadHashedDataArray(kStream, m_paiProjectCount, GC.getNumProjectInfos());
+; 7644 : 	CvInfosSerializationHelper::ReadHashedDataArray(kStream, m_paiProjectCount, GC.getNumProjectInfos());
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getNumProjectInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumProjectInfos
@@ -47267,7 +47487,7 @@ $LL174@Read:
 	call	??$ReadHashedDataArray@H@CvInfosSerializationHelper@@YAXAAVFDataStream@@PAHH@Z ; CvInfosSerializationHelper::ReadHashedDataArray<int>
 	add	esp, 12					; 0000000cH
 
-; 7593 : 	CvInfosSerializationHelper::ReadHashedDataArray(kStream, m_paiProjectDefaultArtTypes, GC.getNumProjectInfos());
+; 7645 : 	CvInfosSerializationHelper::ReadHashedDataArray(kStream, m_paiProjectDefaultArtTypes, GC.getNumProjectInfos());
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getNumProjectInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumProjectInfos
@@ -47278,54 +47498,54 @@ $LL174@Read:
 	call	??$ReadHashedDataArray@H@CvInfosSerializationHelper@@YAXAAVFDataStream@@PAHH@Z ; CvInfosSerializationHelper::ReadHashedDataArray<int>
 	add	esp, 12					; 0000000cH
 
-; 7594 : 
-; 7595 : 	//project art types
-; 7596 : 
-; 7597 : #ifdef AUI_WARNING_FIXES
-; 7598 : 	uint iNumProjects;
-; 7599 : 	kStream >> iNumProjects;
-; 7600 : 	for (uint i = 0; i<iNumProjects; i++)
-; 7601 : #else
-; 7602 : 	int iNumProjects;
-; 7603 : 	kStream >> iNumProjects;
+; 7646 : 
+; 7647 : 	//project art types
+; 7648 : 
+; 7649 : #ifdef AUI_WARNING_FIXES
+; 7650 : 	uint iNumProjects;
+; 7651 : 	kStream >> iNumProjects;
+; 7652 : 	for (uint i = 0; i<iNumProjects; i++)
+; 7653 : #else
+; 7654 : 	int iNumProjects;
+; 7655 : 	kStream >> iNumProjects;
 
 	lea	ecx, DWORD PTR _iNumProjects$[esp+48]
 	push	ecx
 	mov	ecx, esi
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
 
-; 7604 : 	for(int i=0; i<iNumProjects; i++)
+; 7656 : 	for(int i=0; i<iNumProjects; i++)
 
 	xor	ebp, ebp
 	cmp	DWORD PTR _iNumProjects$[esp+48], ebp
-	mov	DWORD PTR _i$227396[esp+48], ebp
+	mov	DWORD PTR _i$227914[esp+48], ebp
 	jle	$LN10@Read
 	jmp	SHORT $LN12@Read
 $LL333@Read:
 	xor	ebp, ebp
 $LN12@Read:
 
-; 7605 : #endif
-; 7606 : 	{
-; 7607 : 		int iType = CvInfosSerializationHelper::ReadHashed(kStream);
+; 7657 : #endif
+; 7658 : 	{
+; 7659 : 		int iType = CvInfosSerializationHelper::ReadHashed(kStream);
 
 	push	ebp
 	push	esi
 	call	?ReadHashed@CvInfosSerializationHelper@@YAHAAVFDataStream@@PA_N@Z ; CvInfosSerializationHelper::ReadHashed
 	add	esp, 8
-	mov	DWORD PTR _iType$227400[esp+48], eax
+	mov	DWORD PTR _iType$227918[esp+48], eax
 
-; 7608 : 		if (iType != -1)
+; 7660 : 		if (iType != -1)
 
 	cmp	eax, -1
 	je	$LN9@Read
 
-; 7609 : 		{
-; 7610 : 			for(int j=0; j<m_paiProjectCount[iType]; j++)
+; 7661 : 		{
+; 7662 : 			for(int j=0; j<m_paiProjectCount[iType]; j++)
 
 	mov	edx, DWORD PTR [edi+2916]
 	cmp	DWORD PTR [edx+eax*4], ebp
-	mov	DWORD PTR _j$227402[esp+48], ebp
+	mov	DWORD PTR _j$227920[esp+48], ebp
 	jle	$LN11@Read
 	mov	ebx, eax
 	shl	ebx, 4
@@ -47336,16 +47556,16 @@ $LL331@Read:
 	mov	ebx, DWORD PTR tv858[esp+48]
 $LN8@Read:
 
-; 7611 : 			{
-; 7612 : 				int temp;
-; 7613 : 				kStream >> temp;
+; 7663 : 			{
+; 7664 : 				int temp;
+; 7665 : 				kStream >> temp;
 
-	lea	eax, DWORD PTR _temp$227406[esp+44]
+	lea	eax, DWORD PTR _temp$227924[esp+44]
 	push	eax
 	mov	ecx, esi
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
 
-; 7614 : 				m_pavProjectArtTypes[iType].push_back(temp);
+; 7666 : 				m_pavProjectArtTypes[iType].push_back(temp);
 
 	mov	ecx, DWORD PTR [edi+2960]
 	mov	edx, DWORD PTR [ecx+ebx+4]
@@ -47365,35 +47585,35 @@ $LN236@Read:
 	sar	ebx, 2
 	cmp	ebx, eax
 	jae	SHORT $LN228@Read
-	mov	edx, DWORD PTR _temp$227406[esp+44]
+	mov	edx, DWORD PTR _temp$227924[esp+44]
 	mov	DWORD PTR [ebp], edx
 	add	ebp, 4
 	mov	DWORD PTR [ecx+8], ebp
 	jmp	SHORT $LN7@Read
 $LN228@Read:
-	lea	eax, DWORD PTR _temp$227406[esp+44]
+	lea	eax, DWORD PTR _temp$227924[esp+44]
 	push	eax
 	push	1
 	push	ebp
 	call	?_Insert_n@?$vector@HV?$allocator@H@std@@@std@@IAEXV?$_Vector_const_iterator@HV?$allocator@H@std@@@2@IABH@Z ; std::vector<int,std::allocator<int> >::_Insert_n
 $LN7@Read:
-	mov	eax, DWORD PTR _j$227402[esp+48]
+	mov	eax, DWORD PTR _j$227920[esp+48]
 	mov	ecx, DWORD PTR [edi+2916]
-	mov	edx, DWORD PTR _iType$227400[esp+48]
+	mov	edx, DWORD PTR _iType$227918[esp+48]
 	inc	eax
 	cmp	eax, DWORD PTR [ecx+edx*4]
-	mov	DWORD PTR _j$227402[esp+48], eax
+	mov	DWORD PTR _j$227920[esp+48], eax
 	jl	SHORT $LL331@Read
 
-; 7615 : 			}
-; 7616 : 		}
-; 7617 : 		else
+; 7667 : 			}
+; 7668 : 		}
+; 7669 : 		else
 
 	jmp	SHORT $LN11@Read
 $LN9@Read:
 
-; 7618 : 		{
-; 7619 : 			for(int j=0; j<m_paiProjectCount[iType]; j++)
+; 7670 : 		{
+; 7671 : 			for(int j=0; j<m_paiProjectCount[iType]; j++)
 
 	mov	eax, DWORD PTR [edi+2916]
 	xor	ebx, ebx
@@ -47402,11 +47622,11 @@ $LN9@Read:
 	npad	3
 $LL4@Read:
 
-; 7620 : 			{
-; 7621 : 				int temp;
-; 7622 : 				kStream >> temp;
+; 7672 : 			{
+; 7673 : 				int temp;
+; 7674 : 				kStream >> temp;
 
-	lea	ecx, DWORD PTR _temp$227412[esp+48]
+	lea	ecx, DWORD PTR _temp$227930[esp+48]
 	push	ecx
 	mov	ecx, esi
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
@@ -47416,23 +47636,23 @@ $LL4@Read:
 	jl	SHORT $LL4@Read
 $LN2@Read:
 
-; 7623 : 			}
-; 7624 : 			m_paiProjectCount[iType] = 0;
+; 7675 : 			}
+; 7676 : 			m_paiProjectCount[iType] = 0;
 
 	mov	eax, DWORD PTR [edi+2916]
 	mov	DWORD PTR [eax-4], ebp
 $LN11@Read:
-	mov	eax, DWORD PTR _i$227396[esp+48]
+	mov	eax, DWORD PTR _i$227914[esp+48]
 	inc	eax
 	cmp	eax, DWORD PTR _iNumProjects$[esp+48]
-	mov	DWORD PTR _i$227396[esp+48], eax
+	mov	DWORD PTR _i$227914[esp+48], eax
 	jl	$LL333@Read
 $LN10@Read:
 
-; 7625 : 		}
-; 7626 : 	}
-; 7627 : 
-; 7628 : 	CvInfosSerializationHelper::ReadHashedDataArray(kStream, m_paiProjectMaking, GC.getNumProjectInfos());
+; 7677 : 		}
+; 7678 : 	}
+; 7679 : 
+; 7680 : 	CvInfosSerializationHelper::ReadHashedDataArray(kStream, m_paiProjectMaking, GC.getNumProjectInfos());
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getNumProjectInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumProjectInfos
@@ -47442,23 +47662,23 @@ $LN10@Read:
 	push	esi
 	call	??$ReadHashedDataArray@H@CvInfosSerializationHelper@@YAXAAVFDataStream@@PAHH@Z ; CvInfosSerializationHelper::ReadHashedDataArray<int>
 
-; 7629 : 
-; 7630 : 	UnitClassArrayHelpers::Read(kStream, m_paiUnitClassCount);
+; 7681 : 
+; 7682 : 	UnitClassArrayHelpers::Read(kStream, m_paiUnitClassCount);
 
 	mov	edx, DWORD PTR [edi+2928]
 	push	edx
 	push	esi
 	call	?Read@UnitClassArrayHelpers@@YAXAAVFDataStream@@PAH@Z ; UnitClassArrayHelpers::Read
 
-; 7631 : 
-; 7632 : 	BuildingClassArrayHelpers::Read(kStream, m_paiBuildingClassCount);
+; 7683 : 
+; 7684 : 	BuildingClassArrayHelpers::Read(kStream, m_paiBuildingClassCount);
 
 	mov	eax, DWORD PTR [edi+2932]
 	push	eax
 	push	esi
 	call	?Read@BuildingClassArrayHelpers@@YAXAAVFDataStream@@PAH@Z ; BuildingClassArrayHelpers::Read
 
-; 7633 : 	BuildingArrayHelpers::Read(kStream, m_paiObsoleteBuildingCount);
+; 7685 : 	BuildingArrayHelpers::Read(kStream, m_paiObsoleteBuildingCount);
 
 	mov	ecx, DWORD PTR [edi+2936]
 	push	ecx
@@ -47466,8 +47686,8 @@ $LN10@Read:
 	call	?Read@BuildingArrayHelpers@@YAXAAVFDataStream@@PAH@Z ; BuildingArrayHelpers::Read
 	add	esp, 36					; 00000024H
 
-; 7634 : 
-; 7635 : 	CvInfosSerializationHelper::ReadHashedDataArray(kStream, m_paiTerrainTradeCount, GC.getNumTerrainInfos());
+; 7686 : 
+; 7687 : 	CvInfosSerializationHelper::ReadHashedDataArray(kStream, m_paiTerrainTradeCount, GC.getNumTerrainInfos());
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getNumTerrainInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumTerrainInfos
@@ -47478,7 +47698,7 @@ $LN10@Read:
 	call	??$ReadHashedDataArray@H@CvInfosSerializationHelper@@YAXAAVFDataStream@@PAHH@Z ; CvInfosSerializationHelper::ReadHashedDataArray<int>
 	add	esp, 12					; 0000000cH
 
-; 7636 : 	CvInfosSerializationHelper::ReadHashedDataArray(kStream, m_aiVictoryCountdown, GC.getNumVictoryInfos());
+; 7688 : 	CvInfosSerializationHelper::ReadHashedDataArray(kStream, m_aiVictoryCountdown, GC.getNumVictoryInfos());
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getNumVictoryInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumVictoryInfos
@@ -47489,13 +47709,13 @@ $LN10@Read:
 	call	??$ReadHashedDataArray@H@CvInfosSerializationHelper@@YAXAAVFDataStream@@PAHH@Z ; CvInfosSerializationHelper::ReadHashedDataArray<int>
 	add	esp, 12					; 0000000cH
 
-; 7637 : 
-; 7638 : 	ArrayWrapper<int> kTurnTeamMetWrapper(MAX_CIV_TEAMS, &m_aiTurnTeamMet[0]);
+; 7689 : 
+; 7690 : 	ArrayWrapper<int> kTurnTeamMetWrapper(MAX_CIV_TEAMS, &m_aiTurnTeamMet[0]);
 
 	lea	ebx, DWORD PTR [edi+2568]
 	mov	ebp, 63					; 0000003fH
 
-; 7639 : 	kStream >> kTurnTeamMetWrapper;
+; 7691 : 	kStream >> kTurnTeamMetWrapper;
 
 $LL296@Read:
 	push	ebx
@@ -47505,15 +47725,15 @@ $LL296@Read:
 	sub	ebp, 1
 	jne	SHORT $LL296@Read
 
-; 7640 : 
-; 7641 : 	m_pTeamTechs->Read(kStream);
+; 7692 : 
+; 7693 : 	m_pTeamTechs->Read(kStream);
 
 	mov	ecx, DWORD PTR [edi+2980]
 	push	esi
 	call	?Read@CvTeamTechs@@QAEXAAVFDataStream@@@Z ; CvTeamTechs::Read
 
-; 7642 : 
-; 7643 : 	ImprovementArrayHelpers::ReadYieldArray(kStream, m_ppaaiImprovementYieldChange, NUM_YIELD_TYPES);
+; 7694 : 
+; 7695 : 	ImprovementArrayHelpers::ReadYieldArray(kStream, m_ppaaiImprovementYieldChange, NUM_YIELD_TYPES);
 
 	mov	ecx, DWORD PTR [edi+2948]
 	push	6
@@ -47521,7 +47741,7 @@ $LL296@Read:
 	push	esi
 	call	?ReadYieldArray@ImprovementArrayHelpers@@YAXAAVFDataStream@@PAPAHH@Z ; ImprovementArrayHelpers::ReadYieldArray
 
-; 7644 : 	ImprovementArrayHelpers::ReadYieldArray(kStream, m_ppaaiImprovementNoFreshWaterYieldChange, NUM_YIELD_TYPES);
+; 7696 : 	ImprovementArrayHelpers::ReadYieldArray(kStream, m_ppaaiImprovementNoFreshWaterYieldChange, NUM_YIELD_TYPES);
 
 	mov	edx, DWORD PTR [edi+2952]
 	push	6
@@ -47529,7 +47749,7 @@ $LL296@Read:
 	push	esi
 	call	?ReadYieldArray@ImprovementArrayHelpers@@YAXAAVFDataStream@@PAPAHH@Z ; ImprovementArrayHelpers::ReadYieldArray
 
-; 7645 : 	ImprovementArrayHelpers::ReadYieldArray(kStream, m_ppaaiImprovementFreshWaterYieldChange, NUM_YIELD_TYPES);
+; 7697 : 	ImprovementArrayHelpers::ReadYieldArray(kStream, m_ppaaiImprovementFreshWaterYieldChange, NUM_YIELD_TYPES);
 
 	mov	eax, DWORD PTR [edi+2956]
 	push	6
@@ -47537,17 +47757,17 @@ $LL296@Read:
 	push	esi
 	call	?ReadYieldArray@ImprovementArrayHelpers@@YAXAAVFDataStream@@PAPAHH@Z ; ImprovementArrayHelpers::ReadYieldArray
 
-; 7646 : 
-; 7647 : 	CvInfosSerializationHelper::ReadHashedTypeArray(kStream, m_aeRevealedResources);
+; 7698 : 
+; 7699 : 	CvInfosSerializationHelper::ReadHashedTypeArray(kStream, m_aeRevealedResources);
 
 	lea	ecx, DWORD PTR [edi+2964]
 	push	ecx
 	push	esi
 	call	??$ReadHashedTypeArray@W4ResourceTypes@@@CvInfosSerializationHelper@@YAXAAVFDataStream@@AAV?$vector@W4ResourceTypes@@V?$allocator@W4ResourceTypes@@@std@@@std@@@Z ; CvInfosSerializationHelper::ReadHashedTypeArray<enum ResourceTypes>
 
-; 7648 : 
-; 7649 : 	// Fix bad 'at war' flags where we are at war with ourselves.  Not a good thing.
-; 7650 : 	if(m_eID >= 0 && m_eID < MAX_TEAMS)
+; 7700 : 
+; 7701 : 	// Fix bad 'at war' flags where we are at war with ourselves.  Not a good thing.
+; 7702 : 	if(m_eID >= 0 && m_eID < MAX_TEAMS)
 
 	mov	eax, DWORD PTR [edi+4]
 	add	esp, 44					; 0000002cH
@@ -47556,12 +47776,12 @@ $LL296@Read:
 	cmp	eax, 64					; 00000040H
 	jge	SHORT $LN1@Read
 
-; 7651 : 	{
-; 7652 : 		m_abAtWar[m_eID] = false;
+; 7703 : 	{
+; 7704 : 		m_abAtWar[m_eID] = false;
 
 	mov	BYTE PTR [eax+edi+1928], 0
 
-; 7653 : 		m_aiNumTurnsAtWar[m_eID] = 0;
+; 7705 : 		m_aiNumTurnsAtWar[m_eID] = 0;
 
 	mov	edx, DWORD PTR [edi+4]
 	mov	DWORD PTR [edi+edx*4+468], ebp
@@ -47571,8 +47791,8 @@ $LN1@Read:
 	pop	ebp
 	pop	ebx
 
-; 7654 : 	}
-; 7655 : }
+; 7706 : 	}
+; 7707 : }
 
 	add	esp, 32					; 00000020H
 	ret	4
@@ -47602,7 +47822,7 @@ xdata$x	ENDS
 ;	COMDAT ??0CvTeam@@QAE@XZ
 _TEXT	SEGMENT
 _this$ = -20						; size = 4
-$T255218 = -16						; size = 4
+$T255385 = -16						; size = 4
 __$EHRec$ = -12						; size = 12
 ??0CvTeam@@QAE@XZ PROC					; CvTeam::CvTeam, COMDAT
 ; _this$ = ecx
@@ -47664,7 +47884,7 @@ __$EHRec$ = -12						; size = 12
 	mov	DWORD PTR [esi+2892], ebx
 	call	??2@YAPAXI@Z				; operator new
 	add	esp, 4
-	mov	DWORD PTR $T255218[esp+28], eax
+	mov	DWORD PTR $T255385[esp+28], eax
 	mov	BYTE PTR __$EHRec$[esp+36], 1
 	cmp	eax, ebx
 	je	SHORT $LN3@CvTeam@2
@@ -47708,7 +47928,7 @@ __unwindfunclet$??0CvTeam@@QAE@XZ$0:
 	add	ecx, 2964				; 00000b94H
 	jmp	??1?$vector@W4ResourceTypes@@V?$allocator@W4ResourceTypes@@@std@@@std@@QAE@XZ ; std::vector<enum ResourceTypes,std::allocator<enum ResourceTypes> >::~vector<enum ResourceTypes,std::allocator<enum ResourceTypes> >
 __unwindfunclet$??0CvTeam@@QAE@XZ$1:
-	mov	eax, DWORD PTR $T255218[ebp]
+	mov	eax, DWORD PTR $T255385[ebp]
 	push	eax
 	call	??3@YAXPAX@Z				; operator delete
 	pop	ecx
@@ -47762,7 +47982,7 @@ __ehfuncinfo$?initStatics@CvTeam@@SAXXZ DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?initStatics@CvTeam@@SAXXZ
 _TEXT	SEGMENT
-$T256134 = -16						; size = 4
+$T256301 = -16						; size = 4
 __$EHRec$ = -12						; size = 12
 ?initStatics@CvTeam@@SAXXZ PROC				; CvTeam::initStatics, COMDAT
 
@@ -47781,7 +48001,7 @@ __$EHRec$ = -12						; size = 12
 	push	238724					; 0003a484H
 	call	??_U@YAPAXI@Z				; operator new[]
 	add	esp, 4
-	mov	DWORD PTR $T256134[esp+20], eax
+	mov	DWORD PTR $T256301[esp+20], eax
 	mov	DWORD PTR __$EHRec$[esp+28], 0
 	test	eax, eax
 	je	SHORT $LN6@initStatic
@@ -47829,7 +48049,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?initStatics@CvTeam@@SAXXZ$0:
-	mov	eax, DWORD PTR $T256134[ebp]
+	mov	eax, DWORD PTR $T256301[ebp]
 	push	eax
 	call	??_V@YAXPAX@Z				; operator delete[]
 	pop	ecx

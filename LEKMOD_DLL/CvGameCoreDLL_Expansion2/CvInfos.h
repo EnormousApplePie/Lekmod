@@ -1109,12 +1109,14 @@ public:
 	bool isKill() const;
 	bool isRepair() const;
 	bool IsRemoveRoute() const;
+#ifdef LEKMOD_BUILD_CIV_REQ
 	//EAP Civ req builds
 	bool IsSpecificCivRequired() const;
 
 	CivilizationTypes GetRequiredCivilization() const;
 
 	//
+#endif
 
 	bool IsWater() const;
 	bool IsCanBeEmbarked() const;

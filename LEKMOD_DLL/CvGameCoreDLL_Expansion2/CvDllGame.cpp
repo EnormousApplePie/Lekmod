@@ -314,6 +314,13 @@ void CvDllGame::InitTacticalAnalysisMap(int iNumPlots)
 {
 	m_pGame->GetTacticalAnalysisMap()->Init(iNumPlots);
 }
+#ifdef MP_PLAYERS_VOTING_SYSTEM
+//	--------------------------------------------------------------------------------
+void CvDllGame::InitMPVotingSystem()
+{
+	m_pGame->GetMPVotingSystem()->Init();
+}
+#endif
 //------------------------------------------------------------------------------
 bool CvDllGame::IsCityScreenBlocked()
 {

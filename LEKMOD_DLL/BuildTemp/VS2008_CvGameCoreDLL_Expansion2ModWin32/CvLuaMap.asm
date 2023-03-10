@@ -10,86 +10,86 @@ INCLUDELIB MSVCRT
 INCLUDELIB OLDNAMES
 
 CONST	SEGMENT
-$SG218971 DB	'Map', 00H
-$SG218979 DB	'Areas', 00H
+$SG219448 DB	'Map', 00H
+$SG219456 DB	'Areas', 00H
 	ORG $+2
-$SG218980 DB	'FindBiggestArea', 00H
-$SG218981 DB	'FindWater', 00H
+$SG219457 DB	'FindBiggestArea', 00H
+$SG219458 DB	'FindWater', 00H
 	ORG $+2
-$SG218982 DB	'GetClimate', 00H
+$SG219459 DB	'GetClimate', 00H
 	ORG $+1
-$SG218983 DB	'GetFractalFlags', 00H
-$SG218984 DB	'GetGridSize', 00H
-$SG218985 DB	'GetNumPlots', 00H
-$SG218986 DB	'GetNumResources', 00H
-$SG218987 DB	'GetNumResourcesOnLand', 00H
+$SG219460 DB	'GetFractalFlags', 00H
+$SG219461 DB	'GetGridSize', 00H
+$SG219462 DB	'GetNumPlots', 00H
+$SG219463 DB	'GetNumResources', 00H
+$SG219464 DB	'GetNumResourcesOnLand', 00H
 	ORG $+2
-$SG218988 DB	'GetPlot', 00H
-$SG218989 DB	'GetPlotByIndex', 00H
+$SG219465 DB	'GetPlot', 00H
+$SG219466 DB	'GetPlotByIndex', 00H
 	ORG $+1
-$SG218990 DB	'GetPlotXY', 00H
+$SG219467 DB	'GetPlotXY', 00H
 	ORG $+2
-$SG218991 DB	'GetArea', 00H
-$SG218992 DB	'GetIndexAfterLastArea', 00H
+$SG219468 DB	'GetArea', 00H
+$SG219469 DB	'GetIndexAfterLastArea', 00H
 	ORG $+2
-$SG218993 DB	'GetLandPlots', 00H
+$SG219470 DB	'GetLandPlots', 00H
 	ORG $+3
-$SG218994 DB	'GetNumAreas', 00H
-$SG218995 DB	'GetNumLandAreas', 00H
-$SG218996 DB	'GetRandomResourceQuantity', 00H
+$SG219471 DB	'GetNumAreas', 00H
+$SG219472 DB	'GetNumLandAreas', 00H
+$SG219473 DB	'GetRandomResourceQuantity', 00H
 	ORG $+2
-$SG218997 DB	'GetSeaLevel', 00H
-$SG218998 DB	'GetWorldSize', 00H
+$SG219474 DB	'GetSeaLevel', 00H
+$SG219475 DB	'GetWorldSize', 00H
 	ORG $+3
-$SG218999 DB	'IsPlot', 00H
+$SG219476 DB	'IsPlot', 00H
 	ORG $+1
-$SG219000 DB	'IsWrapX', 00H
-$SG219001 DB	'IsWrapY', 00H
-$SG219002 DB	'MaxPlotDistance', 00H
-$SG219003 DB	'Rand', 00H
+$SG219477 DB	'IsWrapX', 00H
+$SG219478 DB	'IsWrapY', 00H
+$SG219479 DB	'MaxPlotDistance', 00H
+$SG219480 DB	'Rand', 00H
 	ORG $+3
-$SG219004 DB	'CalculateAreas', 00H
+$SG219481 DB	'CalculateAreas', 00H
 	ORG $+1
-$SG219005 DB	'RecalculateAreas', 00H
+$SG219482 DB	'RecalculateAreas', 00H
 	ORG $+3
-$SG219006 DB	'PlotDistance', 00H
+$SG219483 DB	'PlotDistance', 00H
 	ORG $+3
-$SG219007 DB	'PlotXYWithRangeCheck', 00H
+$SG219484 DB	'PlotXYWithRangeCheck', 00H
 	ORG $+3
-$SG219008 DB	'PlotDirection', 00H
+$SG219485 DB	'PlotDirection', 00H
 	ORG $+2
-$SG219009 DB	'DefaultContinentStamper', 00H
-$SG219010 DB	'DoPlaceNaturalWonders', 00H
+$SG219486 DB	'DefaultContinentStamper', 00H
+$SG219487 DB	'DoPlaceNaturalWonders', 00H
 	ORG $+2
-$SG219011 DB	'GetCustomOption', 00H
-$SG219012 DB	'UpdateDeferredFog', 00H
+$SG219488 DB	'GetCustomOption', 00H
+$SG219489 DB	'UpdateDeferredFog', 00H
 	ORG $+2
-$SG219013 DB	'ChangeAIMapHint', 00H
-$SG219014 DB	'GetAIMapHint', 00H
+$SG219490 DB	'ChangeAIMapHint', 00H
+$SG219491 DB	'GetAIMapHint', 00H
 	ORG $+3
-$SG219082 DB	'FRAC_WRAP_X', 00H
-$SG219084 DB	'FRAC_WRAP_Y', 00H
-$SG219282 DB	'__instances', 00H
-$SG219283 DB	'__mode', 00H
+$SG219559 DB	'FRAC_WRAP_X', 00H
+$SG219561 DB	'FRAC_WRAP_Y', 00H
+$SG219759 DB	'__instances', 00H
+$SG219760 DB	'__mode', 00H
 	ORG $+1
-$SG219284 DB	'v', 00H
+$SG219761 DB	'v', 00H
 	ORG $+2
-$SG219286 DB	'__instances', 00H
-$SG219289 DB	'__instance', 00H
+$SG219763 DB	'__instances', 00H
+$SG219766 DB	'__instance', 00H
 	ORG $+1
-$SG219290 DB	'__index', 00H
-$SG219311 DB	'__instances', 00H
-$SG219312 DB	'__mode', 00H
+$SG219767 DB	'__index', 00H
+$SG219788 DB	'__instances', 00H
+$SG219789 DB	'__mode', 00H
 	ORG $+1
-$SG219313 DB	'v', 00H
+$SG219790 DB	'v', 00H
 	ORG $+2
-$SG219315 DB	'__instances', 00H
-$SG219318 DB	'__instance', 00H
+$SG219792 DB	'__instances', 00H
+$SG219795 DB	'__instance', 00H
 	ORG $+1
-$SG219319 DB	'__index', 00H
-$SG219334 DB	'__instance', 00H
+$SG219796 DB	'__index', 00H
+$SG219811 DB	'__instance', 00H
 	ORG $+1
-$SG219340 DB	'Not a valid instance.  Either the instance is NULL or yo'
+$SG219817 DB	'Not a valid instance.  Either the instance is NULL or yo'
 	DB	'u used ''.'' instead of '':''.', 00H
 CONST	ENDS
 PUBLIC	?wrapCoordDifference@@YAHHI_N@Z			; wrapCoordDifference
@@ -225,7 +225,7 @@ _TEXT	SEGMENT
 
 ; 30   : 	return "Map";
 
-	mov	eax, OFFSET $SG218971
+	mov	eax, OFFSET $SG219448
 
 ; 31   : }
 
@@ -389,7 +389,7 @@ _pkType$ = 12						; size = 4
 ; 61   : 			//Create weak __instances table.
 ; 62   : 			lua_pushstring(L, "__instances");
 
-	push	OFFSET $SG219282
+	push	OFFSET $SG219759
 	push	esi
 	call	_lua_pushstring
 
@@ -411,13 +411,13 @@ _pkType$ = 12						; size = 4
 
 ; 67   : 			lua_pushstring(L, "__mode");
 
-	push	OFFSET $SG219283
+	push	OFFSET $SG219760
 	push	esi
 	call	_lua_pushstring
 
 ; 68   : 			lua_pushstring(L, "v");
 
-	push	OFFSET $SG219284
+	push	OFFSET $SG219761
 	push	esi
 	call	_lua_pushstring
 	add	esp, 68					; 00000044H
@@ -477,7 +477,7 @@ $LN7@Push:
 ; 81   : 
 ; 82   : 		lua_pushstring(L, "__instances");
 
-	push	OFFSET $SG219286
+	push	OFFSET $SG219763
 	push	esi
 	mov	ebx, eax
 	call	_lua_pushstring
@@ -543,7 +543,7 @@ $LN7@Push:
 
 ; 98   : 			lua_setfield(L, -2, "__instance");
 
-	push	OFFSET $SG219289
+	push	OFFSET $SG219766
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -558,7 +558,7 @@ $LN7@Push:
 
 ; 101  : 			lua_pushstring(L, "__index");
 
-	push	OFFSET $SG219290
+	push	OFFSET $SG219767
 	push	esi
 	call	_lua_pushstring
 
@@ -759,7 +759,7 @@ _pkType$ = 12						; size = 4
 ; 61   : 			//Create weak __instances table.
 ; 62   : 			lua_pushstring(L, "__instances");
 
-	push	OFFSET $SG219311
+	push	OFFSET $SG219788
 	push	esi
 	call	_lua_pushstring
 
@@ -781,13 +781,13 @@ _pkType$ = 12						; size = 4
 
 ; 67   : 			lua_pushstring(L, "__mode");
 
-	push	OFFSET $SG219312
+	push	OFFSET $SG219789
 	push	esi
 	call	_lua_pushstring
 
 ; 68   : 			lua_pushstring(L, "v");
 
-	push	OFFSET $SG219313
+	push	OFFSET $SG219790
 	push	esi
 	call	_lua_pushstring
 	add	esp, 68					; 00000044H
@@ -847,7 +847,7 @@ $LN7@Push@2:
 ; 81   : 
 ; 82   : 		lua_pushstring(L, "__instances");
 
-	push	OFFSET $SG219315
+	push	OFFSET $SG219792
 	push	esi
 	mov	ebx, eax
 	call	_lua_pushstring
@@ -913,7 +913,7 @@ $LN7@Push@2:
 
 ; 98   : 			lua_setfield(L, -2, "__instance");
 
-	push	OFFSET $SG219318
+	push	OFFSET $SG219795
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -928,7 +928,7 @@ $LN7@Push@2:
 
 ; 101  : 			lua_pushstring(L, "__index");
 
-	push	OFFSET $SG219319
+	push	OFFSET $SG219796
 	push	esi
 	call	_lua_pushstring
 
@@ -1064,7 +1064,7 @@ _bErrorOnFail$ = 16					; size = 1
 ; 134  : 		lua_getfield(L, idx, "__instance");
 
 	mov	ecx, DWORD PTR _idx$[esp+12]
-	push	OFFSET $SG219334
+	push	OFFSET $SG219811
 	push	ecx
 	push	esi
 	call	_lua_getfield
@@ -1125,7 +1125,7 @@ $LN3@GetInstanc:
 
 ; 150  : 			luaL_error(L, "Not a valid instance.  Either the instance is NULL or you used '.' instead of ':'.");
 
-	push	OFFSET $SG219340
+	push	OFFSET $SG219817
 	push	esi
 	call	_luaL_error
 	add	esp, 8
@@ -1916,7 +1916,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lFindWater
-	push	OFFSET $SG219334
+	push	OFFSET $SG219811
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -1941,7 +1941,7 @@ $LN5@lFindWater:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN4@lFindWater
-	push	OFFSET $SG219340
+	push	OFFSET $SG219817
 	push	esi
 	call	_luaL_error
 	push	esi
@@ -2064,7 +2064,7 @@ _L$ = 8							; size = 4
 
 ; 147  : 		lua_setfield(L, -2, "FRAC_WRAP_X");
 
-	push	OFFSET $SG219082
+	push	OFFSET $SG219559
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -2087,7 +2087,7 @@ $LN8@lGetFracta:
 
 ; 153  : 		lua_setfield(L, -2, "FRAC_WRAP_Y");
 
-	push	OFFSET $SG219084
+	push	OFFSET $SG219561
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4160,7 +4160,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lAreas@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lAreas
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218979
+	push	OFFSET $SG219456
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4171,7 +4171,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lFindBiggestArea@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lFindBiggestArea
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218980
+	push	OFFSET $SG219457
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4182,7 +4182,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lFindWater@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lFindWater
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218981
+	push	OFFSET $SG219458
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4194,7 +4194,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetClimate@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lGetClimate
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218982
+	push	OFFSET $SG219459
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4205,7 +4205,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetFractalFlags@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lGetFractalFlags
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218983
+	push	OFFSET $SG219460
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4216,7 +4216,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetGridSize@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lGetGridSize
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218984
+	push	OFFSET $SG219461
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4228,7 +4228,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetNumPlots@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lGetNumPlots
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218985
+	push	OFFSET $SG219462
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4239,7 +4239,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetNumResources@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lGetNumResources
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218986
+	push	OFFSET $SG219463
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4250,7 +4250,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetNumResourcesOnLand@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lGetNumResourcesOnLand
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218987
+	push	OFFSET $SG219464
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4262,7 +4262,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetPlot@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lGetPlot
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218988
+	push	OFFSET $SG219465
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4273,7 +4273,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetPlotByIndex@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lGetPlotByIndex
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218989
+	push	OFFSET $SG219466
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4284,7 +4284,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetPlotXY@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lGetPlotXY
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218990
+	push	OFFSET $SG219467
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4296,7 +4296,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetArea@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lGetArea
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218991
+	push	OFFSET $SG219468
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4307,7 +4307,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetIndexAfterLastArea@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lGetIndexAfterLastArea
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218992
+	push	OFFSET $SG219469
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4318,7 +4318,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetLandPlots@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lGetLandPlots
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218993
+	push	OFFSET $SG219470
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4330,7 +4330,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetNumAreas@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lGetNumAreas
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218994
+	push	OFFSET $SG219471
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4341,7 +4341,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetNumLandAreas@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lGetNumLandAreas
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218995
+	push	OFFSET $SG219472
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4352,7 +4352,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetRandomResourceQuantity@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lGetRandomResourceQuantity
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218996
+	push	OFFSET $SG219473
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4364,7 +4364,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetSeaLevel@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lGetSeaLevel
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218997
+	push	OFFSET $SG219474
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4375,7 +4375,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetWorldSize@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lGetWorldSize
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218998
+	push	OFFSET $SG219475
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4386,7 +4386,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsPlot@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lIsPlot
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218999
+	push	OFFSET $SG219476
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4398,7 +4398,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsWrapX@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lIsWrapX
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219000
+	push	OFFSET $SG219477
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4409,7 +4409,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsWrapY@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lIsWrapY
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219001
+	push	OFFSET $SG219478
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4420,7 +4420,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lMaxPlotDistance@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lMaxPlotDistance
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219002
+	push	OFFSET $SG219479
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4432,7 +4432,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lRand@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lRand
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219003
+	push	OFFSET $SG219480
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4443,7 +4443,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lCalculateAreas@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lCalculateAreas
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219004
+	push	OFFSET $SG219481
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4454,7 +4454,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lRecalculateAreas@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lRecalculateAreas
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219005
+	push	OFFSET $SG219482
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4466,7 +4466,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lPlotDistance@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lPlotDistance
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219006
+	push	OFFSET $SG219483
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4477,7 +4477,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lPlotXYWithRangeCheck@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lPlotXYWithRangeCheck
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219007
+	push	OFFSET $SG219484
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4488,7 +4488,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lPlotDirection@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lPlotDirection
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219008
+	push	OFFSET $SG219485
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4500,7 +4500,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lDefaultContinentStamper@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lDefaultContinentStamper
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219009
+	push	OFFSET $SG219486
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4511,7 +4511,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lDoPlaceNaturalWonders@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lDoPlaceNaturalWonders
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219010
+	push	OFFSET $SG219487
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4522,7 +4522,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetCustomOption@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lGetCustomOption
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219011
+	push	OFFSET $SG219488
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4534,7 +4534,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lUpdateDeferredFog@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lUpdateDeferredFog
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219012
+	push	OFFSET $SG219489
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4545,7 +4545,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lChangeAIMapHint@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lChangeAIMapHint
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219013
+	push	OFFSET $SG219490
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4556,7 +4556,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetAIMapHint@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lGetAIMapHint
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219014
+	push	OFFSET $SG219491
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield

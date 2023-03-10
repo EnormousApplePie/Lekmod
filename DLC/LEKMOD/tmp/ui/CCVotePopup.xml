@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Anton Strenger (Firaxis Games) -->
+<!-- edit: MP voting system for EUI & vanilla UI -->
+<Context Font="TwCenMT14" FontStyle="Base" Color0="Beige">
+	<Instance Name="DiploVoteButton">
+		<GridButton Anchor="L,C" Style="BaseButton" ID="Button" Size="400,42" Offset="0,15">
+			<Box Anchor="L,C" Color="0.200.0.0" Offset="30,0">
+				<Image ID="CivIconBG" Size="45.45" Anchor="C,C" Offset="0,0" TextureOffset="77,0" Texture="CivIconBGSizes.dds"/>
+				<Image ID="CivIconShadow" Size="32.32" Anchor="C,C" Offset="1,1" Texture="CivSymbolAtlas48.dds" Color="Black.128"/>
+				<Image ID="CivIcon" Anchor="C,C" Size="32,32" Offset="0,0" Texture="CivSymbolsColor512.dds"/>
+			</Box>
+			<Label ID="ButtonText" Anchor="L,C" Offset="60,0" ColorSet="Beige_Black" Font="TwCenMT20" FontStyle="Shadow"/>
+		</GridButton>
+	</Instance>
+	<Box Style="BGBlock_ClearTopBar"/>
+	<Grid Size="500,440" Anchor="C,C" Offset="0,0" Padding="0,20" Style="Grid9DetailFive140" Hidden="0">
+		<Label Anchor="C,T" Offset="0,20" String="TXT_KEY_CC_VOTE_POPUP_TITLE" Font="TwCenMT20" ColorSet="Beige_Black" FontStyle="Shadow"/>
+		<Label ID="InfoLabel" Anchor="C,T" Offset="0,50" String="TXT_KEY_POP_UNITED_NATIONS_VOTE_NOT_SELF_ALT" Font="TwCenMT20" ColorSet="Beige_Black" FontStyle="Shadow"/>
+		<ScrollPanel Anchor="C,T" Offset="0,70" Size="410,325" ID="ScrollPanel" Vertical="1" AutoScrollBar="1">
+			<Stack Anchor="C,T" Size="256,32" StackGrowth="B" Padding="8" ID="ButtonStack"/>
+			<ScrollBar Offset="-3.0" Style="VertSlider" Anchor="R,C" AnchorSide="O,I" Length="300"/>
+			<UpButton Offset="-3.0" Style="ScrollBarUp" Anchor="R,T" AnchorSide="O,I"/>
+			<DownButton Offset="-3.0" Style="ScrollBarDown" Anchor="R,B" AnchorSide="O,I"/>
+		</ScrollPanel>
+		<TextButton Offset="0,22" Anchor="C,B" Font="TwCenMT14" ColorSet="Beige_Black_Alpha" String="TXT_KEY_CLOSE" ToolTip="TXT_KEY_CLOSE" FontStyle="Shadow" MouseOverStyle="SoftShadow" ConsumeMouse="1" ID="CloseButton" Hidden="0"/>
+	</Grid>
+</Context>

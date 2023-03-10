@@ -1435,3 +1435,114 @@ private:
 };
 
 #endif //CIV5_VOTING_CLASSES_H
+
+#ifdef MP_PLAYERS_VOTING_SYSTEM
+enum MPVotingSystemProposalTypes
+{
+	NO_PROPOSAL = -1,
+
+	PROPOSAL_IRR,
+	PROPOSAL_CC,
+	PROPOSAL_SCRAP,
+
+	NUM_PROPOSAL_TYPES
+};
+
+enum MPVotingSystemProposalStatus
+{
+	STATUS_INVALID = -1,
+
+	STATUS_ACTIVE,
+	STATUS_PASSED,
+	STATUS_FAILED,
+
+	NUM_STATUS_TYPES
+};
+
+
+
+class CvMPVotingSystem
+{
+public:
+	CvMPVotingSystem(void);
+	~CvMPVotingSystem(void);
+	void Init();
+
+	typedef FStaticVector<bool, MAX_MAJOR_CIVS, true, c_eCiv5GameplayDLL> VotesList;
+	typedef FStaticVector<bool, MAX_MAJOR_CIVS, true, c_eCiv5GameplayDLL> HasVotedList;
+	typedef FStaticVector<bool, MAX_MAJOR_CIVS, true, c_eCiv5GameplayDLL> EligibilityList;
+	struct Proposal
+	{
+		Proposal(void);
+		~Proposal(void);
+
+		int iID;
+		int iUIid;
+		int iExpirationCounter;
+		MPVotingSystemProposalTypes eType;
+		MPVotingSystemProposalStatus eStatus;
+		PlayerTypes eProposalOwner;
+		PlayerTypes eProposalSubject;
+		bool bComplete;
+		EligibilityList vIsEligible;
+		HasVotedList vHasVoted;
+		VotesList vVotes;
+	};
+	typedef FStaticVector<Proposal, 100, false, c_eCiv5GameplayDLL> ProposalList;  // hope 100 is enough
+	ProposalList m_vProposals;
+	int m_iLastProposalID;
+
+	int GetLastProposalID();
+	Proposal* GetProposalByID(int iProposalID);
+	int GetProposalUIid(int iProposalID);
+	int GetProposalIDbyUIid(int iProposalUIid);
+	int GetProposalExpirationCounter(int iProposalID);
+	MPVotingSystemProposalTypes GetProposalType(int iProposalID);
+	MPVotingSystemProposalStatus GetProposalStatus(int iProposalID);
+	PlayerTypes GetProposalOwner(int iProposalID);
+	PlayerTypes GetProposalSubject(int iProposalID);
+	bool GetProposalCompletion(int iProposalID);
+	bool GetVoterEligibility(int iProposalID, PlayerTypes ePlayerID);
+	bool GetVoterHasVoted(int iProposalID, PlayerTypes ePlayerID);
+	bool GetVoterVote(int iProposalID, PlayerTypes ePlayerID);
+	int GetYesVotes(int iProposalID);
+	int GetNoVotes(int iProposalID);
+	int GetMaxVotes(int iProposalID);
+	bool IsPlayerHasActiveProposal(PlayerTypes ePlayerID);
+	bool IsAnyActiveProposalType(MPVotingSystemProposalTypes eType);
+
+	void DoTurn();
+	void AddProposal(MPVotingSystemProposalTypes eProposalType, PlayerTypes eProposalOwner, PlayerTypes eProposalSubject);
+	void DoVote(int iProposalID, PlayerTypes ePlayerID, bool bVote);
+	void ResendActiveProposals();
+	void SetProposalUIid(int iProposalID, int iId);
+	void SetProposalType(int iProposalID, MPVotingSystemProposalTypes eType);
+	void SetProposalExpirationCounter(int iProposalID, int iValue);
+	void SetProposalStatus(int iProposalID, MPVotingSystemProposalStatus eStatus);
+	void SetProposalOwner(int iProposalID, PlayerTypes eOwner);
+	void SetProposalSubject(int iProposalID, PlayerTypes eSubject);
+	void SetProposalCompletion(int iProposalID, bool bValue);
+	void SetVoterEligibility(int iProposalID, PlayerTypes ePlayerID, bool bValue);
+	void SetVoterHasVoted(int iProposalID, PlayerTypes ePlayerID, bool bValue);
+	void SetVoterVote(int iProposalID, PlayerTypes ePlayerID, bool bValue);
+private:
+	const static int IRR_THRESHOLD_TIMES_100 = 100;  // EDIT EAP: 100% of the voters needed to pass IRR, change this number if desired
+	const static int MAX_ACTIVE_RESOLUTIONS = MAX_MAJOR_CIVS + 2;  // 1 irr x players, 1 cc and 1 scrap
+
+	void DoCheckVoters(int iProposalID);
+	void DoUpdateProposalStatus(int iProposalID);
+};
+
+
+FDataStream& operator>>(FDataStream&, MPVotingSystemProposalTypes&);
+FDataStream& operator<<(FDataStream&, const MPVotingSystemProposalTypes&);
+
+FDataStream& operator>>(FDataStream&, MPVotingSystemProposalStatus&);
+FDataStream& operator<<(FDataStream&, const MPVotingSystemProposalStatus&);
+
+FDataStream& operator>>(FDataStream&, CvMPVotingSystem::Proposal&);
+FDataStream& operator<<(FDataStream&, const CvMPVotingSystem::Proposal&);
+
+FDataStream& operator>>(FDataStream&, CvMPVotingSystem&);
+FDataStream& operator<<(FDataStream&, const CvMPVotingSystem&);
+#endif

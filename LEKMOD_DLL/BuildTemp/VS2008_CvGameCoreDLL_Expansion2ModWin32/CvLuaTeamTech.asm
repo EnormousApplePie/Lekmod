@@ -10,41 +10,41 @@ INCLUDELIB MSVCRT
 INCLUDELIB OLDNAMES
 
 CONST	SEGMENT
-$SG217662 DB	'SetHasTech', 00H
+$SG218139 DB	'SetHasTech', 00H
 	ORG $+1
-$SG217663 DB	'HasTech', 00H
-$SG217664 DB	'GetNumTechsKnown', 00H
+$SG218140 DB	'HasTech', 00H
+$SG218141 DB	'GetNumTechsKnown', 00H
 	ORG $+3
-$SG217665 DB	'HasResearchedAllTechs', 00H
+$SG218142 DB	'HasResearchedAllTechs', 00H
 	ORG $+2
-$SG217666 DB	'GetLastTechAcquired', 00H
-$SG217667 DB	'SetNoTradeTech', 00H
+$SG218143 DB	'GetLastTechAcquired', 00H
+$SG218144 DB	'SetNoTradeTech', 00H
 	ORG $+1
-$SG217668 DB	'IsNoTradeTech', 00H
+$SG218145 DB	'IsNoTradeTech', 00H
 	ORG $+2
-$SG217669 DB	'IncrementTechCount', 00H
+$SG218146 DB	'IncrementTechCount', 00H
 	ORG $+1
-$SG217670 DB	'GetTechCount', 00H
+$SG218147 DB	'GetTechCount', 00H
 	ORG $+3
-$SG217671 DB	'SetResearchProgress', 00H
-$SG217672 DB	'SetResearchProgressTimes100', 00H
-$SG217673 DB	'GetResearchProgress', 00H
-$SG217674 DB	'GetResearchProgressTimes100', 00H
-$SG217675 DB	'ChangeResearchProgress', 00H
+$SG218148 DB	'SetResearchProgress', 00H
+$SG218149 DB	'SetResearchProgressTimes100', 00H
+$SG218150 DB	'GetResearchProgress', 00H
+$SG218151 DB	'GetResearchProgressTimes100', 00H
+$SG218152 DB	'ChangeResearchProgress', 00H
 	ORG $+1
-$SG217676 DB	'ChangeResearchProgressTimes100', 00H
+$SG218153 DB	'ChangeResearchProgressTimes100', 00H
 	ORG $+1
-$SG217677 DB	'ChangeResearchProgressPercent', 00H
+$SG218154 DB	'ChangeResearchProgressPercent', 00H
 	ORG $+2
-$SG217678 DB	'GetResearchCost', 00H
-$SG217679 DB	'GetResearchLeft', 00H
-$SG217682 DB	'TeamTech', 00H
+$SG218155 DB	'GetResearchCost', 00H
+$SG218156 DB	'GetResearchLeft', 00H
+$SG218159 DB	'TeamTech', 00H
 	ORG $+3
-$SG217998 DB	'Instance does not exist.', 00H
+$SG218475 DB	'Instance does not exist.', 00H
 	ORG $+3
-$SG218068 DB	'__instance', 00H
+$SG218545 DB	'__instance', 00H
 	ORG $+5
-$SG218074 DB	'Not a valid instance.  Either the instance is NULL or yo'
+$SG218551 DB	'Not a valid instance.  Either the instance is NULL or yo'
 	DB	'u used ''.'' instead of '':''.', 00H
 CONST	ENDS
 EXTRN	_lua_tointeger:PROC
@@ -141,7 +141,7 @@ _TEXT	SEGMENT
 
 ; 57   : 	return "TeamTech";
 
-	mov	eax, OFFSET $SG217682
+	mov	eax, OFFSET $SG218159
 
 ; 58   : }
 
@@ -160,7 +160,7 @@ _L$ = 8							; size = 4
 ; 165  : 	luaL_error(L, "Instance does not exist.");
 
 	mov	eax, DWORD PTR _L$[esp-4]
-	push	OFFSET $SG217998
+	push	OFFSET $SG218475
 	push	eax
 	call	_luaL_error
 	add	esp, 8
@@ -260,7 +260,7 @@ _L$ = 8							; size = 4
 ; 27   : 	DefaultHandleMissingInstance(L);
 
 	mov	eax, DWORD PTR _L$[esp-4]
-	push	OFFSET $SG217998
+	push	OFFSET $SG218475
 	push	eax
 	call	_luaL_error
 	add	esp, 8
@@ -318,7 +318,7 @@ _bErrorOnFail$ = 16					; size = 1
 ; 134  : 		lua_getfield(L, idx, "__instance");
 
 	mov	ecx, DWORD PTR _idx$[esp+12]
-	push	OFFSET $SG218068
+	push	OFFSET $SG218545
 	push	ecx
 	push	esi
 	call	_lua_getfield
@@ -379,7 +379,7 @@ $LN3@GetInstanc:
 
 ; 150  : 			luaL_error(L, "Not a valid instance.  Either the instance is NULL or you used '.' instead of ':'.");
 
-	push	OFFSET $SG218074
+	push	OFFSET $SG218551
 	push	esi
 	call	_luaL_error
 	add	esp, 8
@@ -387,7 +387,7 @@ $LN1@GetInstanc:
 
 ; 151  : 		Derived::HandleMissingInstance(L);
 
-	push	OFFSET $SG217998
+	push	OFFSET $SG218475
 	push	esi
 	call	_luaL_error
 	add	esp, 8
@@ -412,7 +412,7 @@ PUBLIC	??$BasicLuaMethod@W4TechTypes@@_N@?$CvLuaMethodWrapper@VCvLuaTeamTech@@VC
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredllutil\include\cvluamethodwrapper.h
 ;	COMDAT ??$BasicLuaMethod@W4TechTypes@@_N@?$CvLuaMethodWrapper@VCvLuaTeamTech@@VCvTeamTechs@@@@KAHPAUlua_State@@P8CvTeamTechs@@AEXW4TechTypes@@_N@Z@Z
 _TEXT	SEGMENT
-$T218212 = -4						; size = 1
+$T218689 = -4						; size = 1
 _L$ = 8							; size = 4
 _func$ = 12						; size = 4
 ??$BasicLuaMethod@W4TechTypes@@_N@?$CvLuaMethodWrapper@VCvLuaTeamTech@@VCvTeamTechs@@@@KAHPAUlua_State@@P8CvTeamTechs@@AEXW4TechTypes@@_N@Z@Z PROC ; CvLuaMethodWrapper<CvLuaTeamTech,CvTeamTechs>::BasicLuaMethod<enum TechTypes,bool>, COMDAT
@@ -440,7 +440,7 @@ _func$ = 12						; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN7@BasicLuaMe
-	push	OFFSET $SG218068
+	push	OFFSET $SG218545
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -465,10 +465,10 @@ $LN7@BasicLuaMe:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN14@BasicLuaMe
-	push	OFFSET $SG218074
+	push	OFFSET $SG218551
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG217998
+	push	OFFSET $SG218475
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -482,8 +482,8 @@ $LN14@BasicLuaMe:
 	add	esp, 8
 	test	eax, eax
 	setne	al
-	mov	BYTE PTR $T218212[esp+20], al
-	mov	ecx, DWORD PTR $T218212[esp+20]
+	mov	BYTE PTR $T218689[esp+20], al
+	mov	ecx, DWORD PTR $T218689[esp+20]
 	push	ecx
 	push	2
 	push	esi
@@ -537,7 +537,7 @@ _func$ = 12						; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN7@BasicLuaMe@2
-	push	OFFSET $SG218068
+	push	OFFSET $SG218545
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -562,10 +562,10 @@ $LN7@BasicLuaMe@2:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN14@BasicLuaMe@2
-	push	OFFSET $SG218074
+	push	OFFSET $SG218551
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG217998
+	push	OFFSET $SG218475
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -629,7 +629,7 @@ _func$ = 12						; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@BasicLuaMe@3
-	push	OFFSET $SG218068
+	push	OFFSET $SG218545
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -654,10 +654,10 @@ $LN5@BasicLuaMe@3:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@BasicLuaMe@3
-	push	OFFSET $SG218074
+	push	OFFSET $SG218551
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG217998
+	push	OFFSET $SG218475
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -715,7 +715,7 @@ _func$ = 12						; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@BasicLuaMe@4
-	push	OFFSET $SG218068
+	push	OFFSET $SG218545
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -740,10 +740,10 @@ $LN5@BasicLuaMe@4:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@BasicLuaMe@4
-	push	OFFSET $SG218074
+	push	OFFSET $SG218551
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG217998
+	push	OFFSET $SG218475
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -802,7 +802,7 @@ _func$ = 12						; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@BasicLuaMe@5
-	push	OFFSET $SG218068
+	push	OFFSET $SG218545
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -827,10 +827,10 @@ $LN5@BasicLuaMe@5:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@BasicLuaMe@5
-	push	OFFSET $SG218074
+	push	OFFSET $SG218551
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG217998
+	push	OFFSET $SG218475
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -889,7 +889,7 @@ _func$ = 12						; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN7@BasicLuaMe@6
-	push	OFFSET $SG218068
+	push	OFFSET $SG218545
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -914,10 +914,10 @@ $LN7@BasicLuaMe@6:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN14@BasicLuaMe@6
-	push	OFFSET $SG218074
+	push	OFFSET $SG218551
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG217998
+	push	OFFSET $SG218475
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -976,7 +976,7 @@ _func$ = 12						; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN7@BasicLuaMe@7
-	push	OFFSET $SG218068
+	push	OFFSET $SG218545
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -1001,10 +1001,10 @@ $LN7@BasicLuaMe@7:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN14@BasicLuaMe@7
-	push	OFFSET $SG218074
+	push	OFFSET $SG218551
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG217998
+	push	OFFSET $SG218475
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -1068,7 +1068,7 @@ _func$ = 12						; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN7@BasicLuaMe@8
-	push	OFFSET $SG218068
+	push	OFFSET $SG218545
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -1093,10 +1093,10 @@ $LN7@BasicLuaMe@8:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN14@BasicLuaMe@8
-	push	OFFSET $SG218074
+	push	OFFSET $SG218551
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG217998
+	push	OFFSET $SG218475
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -1165,7 +1165,7 @@ _func$ = 12						; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN7@BasicLuaMe@9
-	push	OFFSET $SG218068
+	push	OFFSET $SG218545
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -1190,10 +1190,10 @@ $LN7@BasicLuaMe@9:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN14@BasicLuaMe@9
-	push	OFFSET $SG218074
+	push	OFFSET $SG218551
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG217998
+	push	OFFSET $SG218475
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -1639,7 +1639,7 @@ _t$ = 12						; size = 4
 	push	esi
 	call	_lua_pushcclosure
 	mov	edi, DWORD PTR _t$[esp+16]
-	push	OFFSET $SG217662
+	push	OFFSET $SG218139
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -1650,7 +1650,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lHasTech@CvLuaTeamTech@@KAHPAUlua_State@@@Z ; CvLuaTeamTech::lHasTech
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG217663
+	push	OFFSET $SG218140
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -1662,7 +1662,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetNumTechsKnown@CvLuaTeamTech@@KAHPAUlua_State@@@Z ; CvLuaTeamTech::lGetNumTechsKnown
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG217664
+	push	OFFSET $SG218141
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -1674,7 +1674,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lHasResearchedAllTechs@CvLuaTeamTech@@KAHPAUlua_State@@@Z ; CvLuaTeamTech::lHasResearchedAllTechs
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG217665
+	push	OFFSET $SG218142
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -1686,7 +1686,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetLastTechAcquired@CvLuaTeamTech@@KAHPAUlua_State@@@Z ; CvLuaTeamTech::lGetLastTechAcquired
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG217666
+	push	OFFSET $SG218143
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -1698,7 +1698,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lSetNoTradeTech@CvLuaTeamTech@@KAHPAUlua_State@@@Z ; CvLuaTeamTech::lSetNoTradeTech
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG217667
+	push	OFFSET $SG218144
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -1710,7 +1710,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsNoTradeTech@CvLuaTeamTech@@KAHPAUlua_State@@@Z ; CvLuaTeamTech::lIsNoTradeTech
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG217668
+	push	OFFSET $SG218145
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -1721,7 +1721,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIncrementTechCount@CvLuaTeamTech@@KAHPAUlua_State@@@Z ; CvLuaTeamTech::lIncrementTechCount
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG217669
+	push	OFFSET $SG218146
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -1732,7 +1732,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetTechCount@CvLuaTeamTech@@KAHPAUlua_State@@@Z ; CvLuaTeamTech::lGetTechCount
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG217670
+	push	OFFSET $SG218147
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -1744,7 +1744,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lSetResearchProgress@CvLuaTeamTech@@KAHPAUlua_State@@@Z ; CvLuaTeamTech::lSetResearchProgress
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG217671
+	push	OFFSET $SG218148
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -1755,7 +1755,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lSetResearchProgressTimes100@CvLuaTeamTech@@KAHPAUlua_State@@@Z ; CvLuaTeamTech::lSetResearchProgressTimes100
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG217672
+	push	OFFSET $SG218149
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -1766,7 +1766,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetResearchProgress@CvLuaTeamTech@@KAHPAUlua_State@@@Z ; CvLuaTeamTech::lGetResearchProgress
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG217673
+	push	OFFSET $SG218150
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -1778,7 +1778,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetResearchProgressTimes100@CvLuaTeamTech@@KAHPAUlua_State@@@Z ; CvLuaTeamTech::lGetResearchProgressTimes100
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG217674
+	push	OFFSET $SG218151
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -1789,7 +1789,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lChangeResearchProgress@CvLuaTeamTech@@KAHPAUlua_State@@@Z ; CvLuaTeamTech::lChangeResearchProgress
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG217675
+	push	OFFSET $SG218152
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -1800,7 +1800,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lChangeResearchProgressTimes100@CvLuaTeamTech@@KAHPAUlua_State@@@Z ; CvLuaTeamTech::lChangeResearchProgressTimes100
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG217676
+	push	OFFSET $SG218153
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -1812,7 +1812,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lChangeResearchProgressPercent@CvLuaTeamTech@@KAHPAUlua_State@@@Z ; CvLuaTeamTech::lChangeResearchProgressPercent
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG217677
+	push	OFFSET $SG218154
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -1823,7 +1823,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetResearchCost@CvLuaTeamTech@@KAHPAUlua_State@@@Z ; CvLuaTeamTech::lGetResearchCost
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG217678
+	push	OFFSET $SG218155
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -1834,7 +1834,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetResearchLeft@CvLuaTeamTech@@KAHPAUlua_State@@@Z ; CvLuaTeamTech::lGetResearchLeft
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG217679
+	push	OFFSET $SG218156
 	push	edi
 	push	esi
 	call	_lua_setfield

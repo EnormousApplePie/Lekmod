@@ -10,10 +10,10 @@ INCLUDELIB MSVCRT
 INCLUDELIB OLDNAMES
 
 _DATA	SEGMENT
-_CIV5_XP2_DLL_VERSION DD FLAT:$SG217209
+_CIV5_XP2_DLL_VERSION DD FLAT:$SG217686
 _DATA	ENDS
 CONST	SEGMENT
-$SG217209 DB	'1.0.0', 00H
+$SG217686 DB	'1.0.0', 00H
 	ORG $+2
 _guidICvUnknown DD 0d89ba82fH
 	DW	09fa3H
@@ -316,7 +316,7 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 __$EHRec$ = -12						; size = 12
 _this$ = 8						; size = 4
-$T218853 = 12						; size = 4
+$T219330 = 12						; size = 4
 _unitType$ = 12						; size = 4
 ?GetUnit@CvDllCombatInfo@@UBGPAVICvUnit1@@W4BattleUnitTypes@@@Z PROC ; CvDllCombatInfo::GetUnit, COMDAT
 
@@ -349,7 +349,7 @@ _unitType$ = 12						; size = 4
 	push	12					; 0000000cH
 	call	??2CvDllUnit@@SAPAXI@Z			; CvDllUnit::operator new
 	add	esp, 4
-	mov	DWORD PTR $T218853[esp+12], eax
+	mov	DWORD PTR $T219330[esp+12], eax
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	eax, eax
 	je	SHORT $LN2@GetUnit
@@ -380,7 +380,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetUnit@CvDllCombatInfo@@UBGPAVICvUnit1@@W4BattleUnitTypes@@@Z$0:
-	mov	eax, DWORD PTR $T218853[ebp-4]
+	mov	eax, DWORD PTR $T219330[ebp-4]
 	push	eax
 	call	??3CvDllUnit@@SAXPAX@Z			; CvDllUnit::operator delete
 	pop	ecx
@@ -411,7 +411,7 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 __$EHRec$ = -12						; size = 12
 _this$ = 8						; size = 4
-$T218870 = 12						; size = 4
+$T219347 = 12						; size = 4
 _unitType$ = 12						; size = 4
 ?GetCity@CvDllCombatInfo@@UBGPAVICvCity1@@W4BattleUnitTypes@@@Z PROC ; CvDllCombatInfo::GetCity, COMDAT
 
@@ -440,7 +440,7 @@ _unitType$ = 12						; size = 4
 	push	12					; 0000000cH
 	call	??2CvDllCity@@SAPAXI@Z			; CvDllCity::operator new
 	add	esp, 4
-	mov	DWORD PTR $T218870[esp+12], eax
+	mov	DWORD PTR $T219347[esp+12], eax
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	eax, eax
 	je	SHORT $LN5@GetCity
@@ -466,7 +466,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetCity@CvDllCombatInfo@@UBGPAVICvCity1@@W4BattleUnitTypes@@@Z$0:
-	mov	eax, DWORD PTR $T218870[ebp-4]
+	mov	eax, DWORD PTR $T219347[ebp-4]
 	push	eax
 	call	??3CvDllCity@@SAXPAX@Z			; CvDllCity::operator delete
 	pop	ecx
@@ -496,7 +496,7 @@ xdata$x	ENDS
 ;	COMDAT ?GetPlot@CvDllCombatInfo@@UBGPAVICvPlot1@@XZ
 _TEXT	SEGMENT
 __$EHRec$ = -12						; size = 12
-$T218886 = 8						; size = 4
+$T219363 = 8						; size = 4
 _this$ = 8						; size = 4
 ?GetPlot@CvDllCombatInfo@@UBGPAVICvPlot1@@XZ PROC	; CvDllCombatInfo::GetPlot, COMDAT
 
@@ -523,7 +523,7 @@ _this$ = 8						; size = 4
 	push	12					; 0000000cH
 	call	??2CvDllPlot@@SAPAXI@Z			; CvDllPlot::operator new
 	add	esp, 4
-	mov	DWORD PTR $T218886[esp+12], eax
+	mov	DWORD PTR $T219363[esp+12], eax
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	eax, eax
 	je	SHORT $LN5@GetPlot
@@ -549,7 +549,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetPlot@CvDllCombatInfo@@UBGPAVICvPlot1@@XZ$0:
-	mov	eax, DWORD PTR $T218886[ebp-4]
+	mov	eax, DWORD PTR $T219363[ebp-4]
 	push	eax
 	call	??3CvDllPlot@@SAXPAX@Z			; CvDllPlot::operator delete
 	pop	ecx
@@ -933,12 +933,12 @@ PUBLIC	?GetInterfaceId@ICvUnknown@@SG?AU_GUID@@XZ	; ICvUnknown::GetInterfaceId
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredllutil\include\cvdllinterfaces.h
 ;	COMDAT ?GetInterfaceId@ICvUnknown@@SG?AU_GUID@@XZ
 _TEXT	SEGMENT
-$T218961 = 8						; size = 4
+$T219438 = 8						; size = 4
 ?GetInterfaceId@ICvUnknown@@SG?AU_GUID@@XZ PROC		; ICvUnknown::GetInterfaceId, COMDAT
 
 ; 306  : 	static GUID DLLCALL GetInterfaceId(){ return guidICvUnknown; }
 
-	mov	eax, DWORD PTR $T218961[esp-4]
+	mov	eax, DWORD PTR $T219438[esp-4]
 	mov	ecx, DWORD PTR _guidICvUnknown
 	mov	edx, DWORD PTR _guidICvUnknown+4
 	mov	DWORD PTR [eax], ecx
@@ -954,12 +954,12 @@ PUBLIC	?GetInterfaceId@ICvCombatInfo1@@SG?AU_GUID@@XZ	; ICvCombatInfo1::GetInter
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?GetInterfaceId@ICvCombatInfo1@@SG?AU_GUID@@XZ
 _TEXT	SEGMENT
-$T218965 = 8						; size = 4
+$T219442 = 8						; size = 4
 ?GetInterfaceId@ICvCombatInfo1@@SG?AU_GUID@@XZ PROC	; ICvCombatInfo1::GetInterfaceId, COMDAT
 
 ; 900  : 	static GUID DLLCALL GetInterfaceId() { return guidICvCombatInfo1; }
 
-	mov	eax, DWORD PTR $T218965[esp-4]
+	mov	eax, DWORD PTR $T219442[esp-4]
 	mov	ecx, DWORD PTR _guidICvCombatInfo1
 	mov	edx, DWORD PTR _guidICvCombatInfo1+4
 	mov	DWORD PTR [eax], ecx
@@ -1019,8 +1019,8 @@ _TEXT	SEGMENT
 _TEXT	ENDS
 ;	COMDAT ?QueryInterface@CvDllCombatInfo@@UAGPAXU_GUID@@@Z
 _TEXT	SEGMENT
-$T218977 = -16						; size = 16
-$T218975 = -16						; size = 16
+$T219454 = -16						; size = 16
+$T219452 = -16						; size = 16
 _this$ = 8						; size = 4
 _guidInterface$ = 12					; size = 16
 ?QueryInterface@CvDllCombatInfo@@UAGPAXU_GUID@@@Z PROC	; CvDllCombatInfo::QueryInterface, COMDAT
@@ -1035,15 +1035,15 @@ _guidInterface$ = 12					; size = 16
 	mov	ecx, DWORD PTR _guidICvUnknown+4
 	mov	edx, DWORD PTR _guidICvUnknown+8
 	mov	eax, DWORD PTR _guidICvUnknown
-	mov	DWORD PTR $T218975[esp+20], ecx
-	lea	ecx, DWORD PTR $T218975[esp+16]
-	mov	DWORD PTR $T218975[esp+24], edx
-	mov	DWORD PTR $T218975[esp+16], eax
+	mov	DWORD PTR $T219452[esp+20], ecx
+	lea	ecx, DWORD PTR $T219452[esp+16]
+	mov	DWORD PTR $T219452[esp+24], edx
+	mov	DWORD PTR $T219452[esp+16], eax
 	mov	eax, DWORD PTR _guidICvUnknown+12
 	push	ecx
 	lea	edx, DWORD PTR _guidInterface$[esp+16]
 	push	edx
-	mov	DWORD PTR $T218975[esp+36], eax
+	mov	DWORD PTR $T219452[esp+36], eax
 	call	_IsEqualGUID
 	add	esp, 8
 	test	eax, eax
@@ -1051,15 +1051,15 @@ _guidInterface$ = 12					; size = 16
 	mov	ecx, DWORD PTR _guidICvCombatInfo1+4
 	mov	edx, DWORD PTR _guidICvCombatInfo1+8
 	mov	eax, DWORD PTR _guidICvCombatInfo1
-	mov	DWORD PTR $T218977[esp+20], ecx
-	lea	ecx, DWORD PTR $T218977[esp+16]
-	mov	DWORD PTR $T218977[esp+24], edx
-	mov	DWORD PTR $T218977[esp+16], eax
+	mov	DWORD PTR $T219454[esp+20], ecx
+	lea	ecx, DWORD PTR $T219454[esp+16]
+	mov	DWORD PTR $T219454[esp+24], edx
+	mov	DWORD PTR $T219454[esp+16], eax
 	mov	eax, DWORD PTR _guidICvCombatInfo1+12
 	push	ecx
 	lea	edx, DWORD PTR _guidInterface$[esp+16]
 	push	edx
-	mov	DWORD PTR $T218977[esp+36], eax
+	mov	DWORD PTR $T219454[esp+36], eax
 	call	_IsEqualGUID
 	add	esp, 8
 	test	eax, eax

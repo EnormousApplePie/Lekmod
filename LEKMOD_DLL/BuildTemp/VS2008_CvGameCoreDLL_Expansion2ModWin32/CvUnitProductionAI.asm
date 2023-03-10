@@ -10,18 +10,18 @@ INCLUDELIB MSVCRT
 INCLUDELIB OLDNAMES
 
 CONST	SEGMENT
-$SG218036 DB	'LOAD ERROR: Unit Type not found', 00H
-$SG218120 DB	'%03d, ', 00H
+$SG218513 DB	'LOAD ERROR: Unit Type not found', 00H
+$SG218597 DB	'%03d, ', 00H
 	ORG $+1
-$SG218124 DB	', ', 00H
+$SG218601 DB	', ', 00H
 	ORG $+1
-$SG218125 DB	', ', 00H
+$SG218602 DB	', ', 00H
 	ORG $+1
-$SG218133 DB	'Unknown Unit', 00H
+$SG218610 DB	'Unknown Unit', 00H
 	ORG $+3
-$SG218136 DB	'Unit, %s, %d', 00H
+$SG218613 DB	'Unit, %s, %d', 00H
 	ORG $+3
-$SG218140 DB	'Special request for unit of type: %s, %s, %d', 00H
+$SG218617 DB	'Special request for unit of type: %s, %s, %d', 00H
 CONST	ENDS
 PUBLIC	??A?$BaseVector@UWeightedElement@?$CvWeightedVector@H$0FK@$00@@$00@@QAEAAUWeightedElement@?$CvWeightedVector@H$0FK@$00@@I@Z ; BaseVector<CvWeightedVector<int,90,1>::WeightedElement,1>::operator[]
 ; Function compile flags: /Ogtpy
@@ -1953,7 +1953,7 @@ PUBLIC	?GetWeight@CvUnitProductionAI@@QAEHW4UnitTypes@@@Z ; CvUnitProductionAI::
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?GetWeight@CvUnitProductionAI@@QAEHW4UnitTypes@@@Z
 _TEXT	SEGMENT
-_elem$219368 = -8					; size = 8
+_elem$219845 = -8					; size = 8
 _eUnit$ = 8						; size = 4
 ?GetWeight@CvUnitProductionAI@@QAEHW4UnitTypes@@@Z PROC	; CvUnitProductionAI::GetWeight, COMDAT
 ; _this$ = ecx
@@ -1968,7 +1968,7 @@ _eUnit$ = 8						; size = 4
 	mov	ecx, DWORD PTR _eUnit$[esp+4]
 	mov	edx, DWORD PTR [eax+ecx*8]
 	mov	eax, DWORD PTR [eax+ecx*8+4]
-	mov	DWORD PTR _elem$219368[esp+8], edx
+	mov	DWORD PTR _elem$219845[esp+8], edx
 
 ; 182  : }
 
@@ -2030,21 +2030,21 @@ __unwindtable$?LogPossibleBuilds@CvUnitProductionAI@@QAEXW4UnitAITypes@@@Z DD 0f
 xdata$x	ENDS
 ;	COMDAT ?LogPossibleBuilds@CvUnitProductionAI@@QAEXW4UnitAITypes@@@Z
 _TEXT	SEGMENT
-_pLog$218117 = -276					; size = 4
-_elem$219510 = -272					; size = 8
-_elem$219480 = -272					; size = 8
-_strTemp$218139 = -264					; size = 28
-$T219378 = -264						; size = 28
-_strTempString$218138 = -236				; size = 28
-$T219379 = -236						; size = 28
-_strDesc$218132 = -208					; size = 28
-$T219380 = -208						; size = 28
-_strOutBuf$218130 = -180				; size = 28
-_strBaseString$218119 = -152				; size = 28
-_strTemp$218135 = -124					; size = 28
-_playerName$218114 = -96				; size = 28
-_cityName$218115 = -68					; size = 28
-$T219377 = -40						; size = 28
+_pLog$218594 = -276					; size = 4
+_elem$219987 = -272					; size = 8
+_elem$219957 = -272					; size = 8
+_strTemp$218616 = -264					; size = 28
+$T219855 = -264						; size = 28
+_strTempString$218615 = -236				; size = 28
+$T219856 = -236						; size = 28
+_strDesc$218609 = -208					; size = 28
+$T219857 = -208						; size = 28
+_strOutBuf$218607 = -180				; size = 28
+_strBaseString$218596 = -152				; size = 28
+_strTemp$218612 = -124					; size = 28
+_playerName$218591 = -96				; size = 28
+_cityName$218592 = -68					; size = 28
+$T219854 = -40						; size = 28
 __$EHRec$ = -12						; size = 12
 _eUnitAIType$ = 8					; size = 4
 ?LogPossibleBuilds@CvUnitProductionAI@@QAEXW4UnitAITypes@@@Z PROC ; CvUnitProductionAI::LogPossibleBuilds, COMDAT
@@ -2091,12 +2091,12 @@ _eUnitAIType$ = 8					; size = 4
 	mov	eax, OFFSET ??_C@_00CNPNBAHC@?$AA@
 $LN32@LogPossibl:
 	push	eax
-	lea	ecx, DWORD PTR _playerName$218114[esp+296]
+	lea	ecx, DWORD PTR _playerName$218591[esp+296]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 
 ; 248  : 		CvString cityName = m_pCity->getName();
 
-	lea	ecx, DWORD PTR _cityName$218115[esp+292]
+	lea	ecx, DWORD PTR _cityName$218592[esp+292]
 	push	ecx
 	mov	ecx, DWORD PTR [esi]
 	mov	DWORD PTR __$EHRec$[esp+304], ebp
@@ -2108,12 +2108,12 @@ $LN32@LogPossibl:
 ; 251  : 		FILogFile* pLog = LOGFILEMGR.GetLog(m_pCity->GetCityStrategyAI()->GetLogFileName(playerName, cityName), FILogFile::kDontTimeStamp);
 
 	call	?GetInstance@FILogFileMgr@@SAAAV1@XZ	; FILogFileMgr::GetInstance
-	lea	edx, DWORD PTR _cityName$218115[esp+292]
+	lea	edx, DWORD PTR _cityName$218592[esp+292]
 	mov	edi, eax
 	push	edx
-	lea	eax, DWORD PTR _playerName$218114[esp+296]
+	lea	eax, DWORD PTR _playerName$218591[esp+296]
 	push	eax
-	lea	ecx, DWORD PTR $T219377[esp+300]
+	lea	ecx, DWORD PTR $T219854[esp+300]
 	push	ecx
 	mov	ecx, DWORD PTR [esi]
 	call	?GetCityStrategyAI@CvCity@@QBEPAVCvCityStrategyAI@@XZ ; CvCity::GetCityStrategyAI
@@ -2129,8 +2129,8 @@ $LN32@LogPossibl:
 	mov	eax, DWORD PTR [edx+12]
 	mov	ecx, edi
 	call	eax
-	lea	ecx, DWORD PTR $T219377[esp+292]
-	mov	DWORD PTR _pLog$218117[esp+292], eax
+	lea	ecx, DWORD PTR $T219854[esp+292]
+	mov	DWORD PTR _pLog$218594[esp+292], eax
 	mov	BYTE PTR __$EHRec$[esp+300], 1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -2138,7 +2138,7 @@ $LN32@LogPossibl:
 ; 253  : 		// Get the leading info for this line
 ; 254  : 		CvString strBaseString;
 
-	lea	ecx, DWORD PTR _strBaseString$218119[esp+292]
+	lea	ecx, DWORD PTR _strBaseString$218596[esp+292]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
 ; 255  : 		strBaseString.Format("%03d, ", GC.getGame().getElapsedGameTurns());
@@ -2147,46 +2147,46 @@ $LN32@LogPossibl:
 	mov	BYTE PTR __$EHRec$[esp+300], 3
 	call	?getElapsedGameTurns@CvGame@@QBEHXZ	; CvGame::getElapsedGameTurns
 	push	eax
-	lea	ecx, DWORD PTR _strBaseString$218119[esp+296]
-	push	OFFSET $SG218120
+	lea	ecx, DWORD PTR _strBaseString$218596[esp+296]
+	push	OFFSET $SG218597
 	push	ecx
 	call	?Format@CvString@@QAAXPBDZZ		; CvString::Format
 
 ; 256  : 		strBaseString += playerName + ", " + cityName + ", ";
 
 	mov	edi, DWORD PTR __imp_??$?HDU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@ABV10@PBD@Z
-	push	OFFSET $SG218125
-	lea	edx, DWORD PTR _playerName$218114[esp+308]
+	push	OFFSET $SG218602
+	lea	edx, DWORD PTR _playerName$218591[esp+308]
 	push	edx
-	lea	eax, DWORD PTR $T219378[esp+312]
+	lea	eax, DWORD PTR $T219855[esp+312]
 	push	eax
 	call	edi
-	lea	ecx, DWORD PTR _cityName$218115[esp+316]
+	lea	ecx, DWORD PTR _cityName$218592[esp+316]
 	push	ecx
 	push	eax
-	lea	edx, DWORD PTR $T219379[esp+324]
+	lea	edx, DWORD PTR $T219856[esp+324]
 	push	edx
 	mov	BYTE PTR __$EHRec$[esp+336], 4
 	call	DWORD PTR __imp_??$?HDU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@ABV10@0@Z
-	push	OFFSET $SG218124
+	push	OFFSET $SG218601
 	push	eax
-	lea	eax, DWORD PTR $T219380[esp+336]
+	lea	eax, DWORD PTR $T219857[esp+336]
 	mov	bl, 5
 	push	eax
 	mov	BYTE PTR __$EHRec$[esp+348], bl
 	call	edi
 	add	esp, 48					; 00000030H
 	push	eax
-	lea	ecx, DWORD PTR _strBaseString$218119[esp+296]
+	lea	ecx, DWORD PTR _strBaseString$218596[esp+296]
 	mov	BYTE PTR __$EHRec$[esp+304], 6
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T219380[esp+292]
+	lea	ecx, DWORD PTR $T219857[esp+292]
 	mov	BYTE PTR __$EHRec$[esp+300], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T219379[esp+292]
+	lea	ecx, DWORD PTR $T219856[esp+292]
 	mov	BYTE PTR __$EHRec$[esp+300], 4
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T219378[esp+292]
+	lea	ecx, DWORD PTR $T219855[esp+292]
 	mov	BYTE PTR __$EHRec$[esp+300], 3
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -2205,9 +2205,9 @@ $LL5@LogPossibl:
 ; 261  : 		{
 ; 262  : 			CvString strOutBuf = strBaseString;
 
-	lea	ecx, DWORD PTR _strBaseString$218119[esp+292]
+	lea	ecx, DWORD PTR _strBaseString$218596[esp+292]
 	push	ecx
-	lea	ecx, DWORD PTR _strOutBuf$218130[esp+296]
+	lea	ecx, DWORD PTR _strOutBuf$218607[esp+296]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	eax, DWORD PTR [esi+744]
 	lea	edi, DWORD PTR [ebp*8]
@@ -2236,7 +2236,7 @@ $LL5@LogPossibl:
 	mov	eax, OFFSET ??_C@_00CNPNBAHC@?$AA@
 $LN60@LogPossibl:
 	push	eax
-	lea	ecx, DWORD PTR _strDesc$218132[esp+296]
+	lea	ecx, DWORD PTR _strDesc$218609[esp+296]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	mov	BYTE PTR __$EHRec$[esp+300], 8
 
@@ -2248,7 +2248,7 @@ $LN60@LogPossibl:
 ; 268  : 			{
 ; 269  : 				CvString strTemp;
 
-	lea	ecx, DWORD PTR _strTemp$218135[esp+292]
+	lea	ecx, DWORD PTR _strTemp$218612[esp+292]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
 ; 270  : 				strTemp.Format("Unit, %s, %d", strDesc.GetCString(), m_Buildables.GetWeight(iI));
@@ -2256,28 +2256,28 @@ $LN60@LogPossibl:
 	mov	eax, DWORD PTR [esi+744]
 	mov	ecx, DWORD PTR [eax+edi]
 	mov	eax, DWORD PTR [eax+edi+4]
-	mov	DWORD PTR _elem$219480[esp+292], ecx
+	mov	DWORD PTR _elem$219957[esp+292], ecx
 	push	eax
-	lea	ecx, DWORD PTR _strDesc$218132[esp+296]
+	lea	ecx, DWORD PTR _strDesc$218609[esp+296]
 	mov	BYTE PTR __$EHRec$[esp+304], 9
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
-	lea	edx, DWORD PTR _strTemp$218135[esp+300]
-	push	OFFSET $SG218136
+	lea	edx, DWORD PTR _strTemp$218612[esp+300]
+	push	OFFSET $SG218613
 	push	edx
 	call	?Format@CvString@@QAAXPBDZZ		; CvString::Format
 	add	esp, 16					; 00000010H
 
 ; 271  : 				strOutBuf += strTemp;
 
-	lea	eax, DWORD PTR _strTemp$218135[esp+292]
+	lea	eax, DWORD PTR _strTemp$218612[esp+292]
 	push	eax
-	lea	ecx, DWORD PTR _strOutBuf$218130[esp+296]
+	lea	ecx, DWORD PTR _strOutBuf$218607[esp+296]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
 
 ; 272  : 			}
 
-	lea	ecx, DWORD PTR _strTemp$218135[esp+292]
+	lea	ecx, DWORD PTR _strTemp$218612[esp+292]
 
 ; 273  : 			else
 
@@ -2287,19 +2287,19 @@ $LN9@LogPossibl:
 ; 265  : 
 ; 266  : 			CvString strDesc = (pUnitEntry != NULL)? pUnitEntry->GetDescription() : "Unknown Unit";
 
-	mov	eax, OFFSET $SG218133
+	mov	eax, OFFSET $SG218610
 	jmp	$LN60@LogPossibl
 $LN2@LogPossibl:
 
 ; 274  : 			{
 ; 275  : 				CvString strTempString;
 
-	lea	ecx, DWORD PTR _strTempString$218138[esp+292]
+	lea	ecx, DWORD PTR _strTempString$218615[esp+292]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
 ; 276  : 				getUnitAIString(strTempString, eUnitAIType);
 
-	lea	ecx, DWORD PTR _strTempString$218138[esp+292]
+	lea	ecx, DWORD PTR _strTempString$218615[esp+292]
 	push	ebx
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+308], 10		; 0000000aH
@@ -2309,7 +2309,7 @@ $LN2@LogPossibl:
 ; 277  : 
 ; 278  : 				CvString strTemp;
 
-	lea	ecx, DWORD PTR _strTemp$218139[esp+292]
+	lea	ecx, DWORD PTR _strTemp$218616[esp+292]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
 ; 279  : 				strTemp.Format("Special request for unit of type: %s, %s, %d", strTempString.GetCString(), strDesc.GetCString(), m_Buildables.GetWeight(iI));
@@ -2317,34 +2317,34 @@ $LN2@LogPossibl:
 	mov	eax, DWORD PTR [esi+744]
 	mov	edx, DWORD PTR [eax+edi]
 	mov	edi, DWORD PTR [eax+edi+4]
-	lea	ecx, DWORD PTR _strDesc$218132[esp+292]
+	lea	ecx, DWORD PTR _strDesc$218609[esp+292]
 	mov	BYTE PTR __$EHRec$[esp+300], 11		; 0000000bH
-	mov	DWORD PTR _elem$219510[esp+292], edx
+	mov	DWORD PTR _elem$219987[esp+292], edx
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	edi
 	push	eax
-	lea	ecx, DWORD PTR _strTempString$218138[esp+300]
+	lea	ecx, DWORD PTR _strTempString$218615[esp+300]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
-	lea	eax, DWORD PTR _strTemp$218139[esp+304]
-	push	OFFSET $SG218140
+	lea	eax, DWORD PTR _strTemp$218616[esp+304]
+	push	OFFSET $SG218617
 	push	eax
 	call	?Format@CvString@@QAAXPBDZZ		; CvString::Format
 	add	esp, 20					; 00000014H
 
 ; 280  : 				strOutBuf += strTemp;
 
-	lea	ecx, DWORD PTR _strTemp$218139[esp+292]
+	lea	ecx, DWORD PTR _strTemp$218616[esp+292]
 	push	ecx
-	lea	ecx, DWORD PTR _strOutBuf$218130[esp+296]
+	lea	ecx, DWORD PTR _strOutBuf$218607[esp+296]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
 
 ; 281  : 			}
 
-	lea	ecx, DWORD PTR _strTemp$218139[esp+292]
+	lea	ecx, DWORD PTR _strTemp$218616[esp+292]
 	mov	BYTE PTR __$EHRec$[esp+300], 10		; 0000000aH
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR _strTempString$218138[esp+292]
+	lea	ecx, DWORD PTR _strTempString$218615[esp+292]
 $LN119@LogPossibl:
 	mov	BYTE PTR __$EHRec$[esp+300], 8
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
@@ -2352,9 +2352,9 @@ $LN119@LogPossibl:
 ; 282  : 
 ; 283  : 			pLog->Msg(strOutBuf);
 
-	lea	ecx, DWORD PTR _strOutBuf$218130[esp+292]
+	lea	ecx, DWORD PTR _strOutBuf$218607[esp+292]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
-	mov	ecx, DWORD PTR _pLog$218117[esp+292]
+	mov	ecx, DWORD PTR _pLog$218594[esp+292]
 	mov	edx, DWORD PTR [ecx]
 	push	eax
 	mov	eax, DWORD PTR [edx]
@@ -2364,10 +2364,10 @@ $LN119@LogPossibl:
 
 ; 284  : 		}
 
-	lea	ecx, DWORD PTR _strDesc$218132[esp+292]
+	lea	ecx, DWORD PTR _strDesc$218609[esp+292]
 	mov	BYTE PTR __$EHRec$[esp+300], 7
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR _strOutBuf$218130[esp+292]
+	lea	ecx, DWORD PTR _strOutBuf$218607[esp+292]
 	mov	BYTE PTR __$EHRec$[esp+300], 3
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 	inc	ebp
@@ -2377,13 +2377,13 @@ $LN3@LogPossibl:
 
 ; 285  : 	}
 
-	lea	ecx, DWORD PTR _strBaseString$218119[esp+292]
+	lea	ecx, DWORD PTR _strBaseString$218596[esp+292]
 	mov	BYTE PTR __$EHRec$[esp+300], 1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR _cityName$218115[esp+292]
+	lea	ecx, DWORD PTR _cityName$218592[esp+292]
 	mov	BYTE PTR __$EHRec$[esp+300], 0
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR _playerName$218114[esp+292]
+	lea	ecx, DWORD PTR _playerName$218591[esp+292]
 	mov	DWORD PTR __$EHRec$[esp+300], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 	pop	edi
@@ -2402,40 +2402,40 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?LogPossibleBuilds@CvUnitProductionAI@@QAEXW4UnitAITypes@@@Z$0:
-	lea	ecx, DWORD PTR _playerName$218114[ebp]
+	lea	ecx, DWORD PTR _playerName$218591[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?LogPossibleBuilds@CvUnitProductionAI@@QAEXW4UnitAITypes@@@Z$1:
-	lea	ecx, DWORD PTR _cityName$218115[ebp]
+	lea	ecx, DWORD PTR _cityName$218592[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?LogPossibleBuilds@CvUnitProductionAI@@QAEXW4UnitAITypes@@@Z$2:
-	lea	ecx, DWORD PTR $T219377[ebp]
+	lea	ecx, DWORD PTR $T219854[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?LogPossibleBuilds@CvUnitProductionAI@@QAEXW4UnitAITypes@@@Z$3:
-	lea	ecx, DWORD PTR _strBaseString$218119[ebp]
+	lea	ecx, DWORD PTR _strBaseString$218596[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?LogPossibleBuilds@CvUnitProductionAI@@QAEXW4UnitAITypes@@@Z$4:
-	lea	ecx, DWORD PTR $T219378[ebp]
+	lea	ecx, DWORD PTR $T219855[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?LogPossibleBuilds@CvUnitProductionAI@@QAEXW4UnitAITypes@@@Z$5:
-	lea	ecx, DWORD PTR $T219379[ebp]
+	lea	ecx, DWORD PTR $T219856[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?LogPossibleBuilds@CvUnitProductionAI@@QAEXW4UnitAITypes@@@Z$6:
-	lea	ecx, DWORD PTR $T219380[ebp]
+	lea	ecx, DWORD PTR $T219857[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?LogPossibleBuilds@CvUnitProductionAI@@QAEXW4UnitAITypes@@@Z$7:
-	lea	ecx, DWORD PTR _strOutBuf$218130[ebp]
+	lea	ecx, DWORD PTR _strOutBuf$218607[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?LogPossibleBuilds@CvUnitProductionAI@@QAEXW4UnitAITypes@@@Z$8:
-	lea	ecx, DWORD PTR _strDesc$218132[ebp]
+	lea	ecx, DWORD PTR _strDesc$218609[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?LogPossibleBuilds@CvUnitProductionAI@@QAEXW4UnitAITypes@@@Z$9:
-	lea	ecx, DWORD PTR _strTemp$218135[ebp]
+	lea	ecx, DWORD PTR _strTemp$218612[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?LogPossibleBuilds@CvUnitProductionAI@@QAEXW4UnitAITypes@@@Z$10:
-	lea	ecx, DWORD PTR _strTempString$218138[ebp]
+	lea	ecx, DWORD PTR _strTempString$218615[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?LogPossibleBuilds@CvUnitProductionAI@@QAEXW4UnitAITypes@@@Z$11:
-	lea	ecx, DWORD PTR _strTemp$218139[ebp]
+	lea	ecx, DWORD PTR _strTemp$218616[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?LogPossibleBuilds@CvUnitProductionAI@@QAEXW4UnitAITypes@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?LogPossibleBuilds@CvUnitProductionAI@@QAEXW4UnitAITypes@@@Z
@@ -3075,12 +3075,12 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 _sTemp$ = -112						; size = 4
 _uiVersion$ = -108					; size = 4
-$T219853 = -104						; size = 4
-$T219854 = -100						; size = 4
-_elem$219886 = -96					; size = 8
+$T220330 = -104						; size = 4
+$T220331 = -100						; size = 4
+_elem$220368 = -96					; size = 8
 _FStringFixedBuffer_sTemp$ = -88			; size = 76
 __$EHRec$ = -12						; size = 12
-_iNumUnits$218059 = 8					; size = 4
+_iNumUnits$218536 = 8					; size = 4
 _kStream$ = 8						; size = 4
 ?Write@CvUnitProductionAI@@QBEXAAVFDataStream@@@Z PROC	; CvUnitProductionAI::Write, COMDAT
 ; _this$ = ecx
@@ -3142,10 +3142,10 @@ _kStream$ = 8						; size = 4
 
 ; 134  : 		kStream << iNumUnits;
 
-	lea	edx, DWORD PTR _iNumUnits$218059[esp+120]
+	lea	edx, DWORD PTR _iNumUnits$218536[esp+120]
 	push	edx
 	mov	ecx, edi
-	mov	DWORD PTR _iNumUnits$218059[esp+124], eax
+	mov	DWORD PTR _iNumUnits$218536[esp+124], eax
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
 ; 135  : 
@@ -3153,7 +3153,7 @@ _kStream$ = 8						; size = 4
 ; 137  : 		for(int iI = 0; iI < iNumUnits; iI++)
 
 	xor	esi, esi
-	cmp	DWORD PTR _iNumUnits$218059[esp+120], esi
+	cmp	DWORD PTR _iNumUnits$218536[esp+120], esi
 	jle	SHORT $LN4@Write
 	npad	9
 $LL6@Write:
@@ -3185,9 +3185,9 @@ $LL6@Write:
 	mov	ecx, DWORD PTR [eax+esi*8]
 	mov	eax, DWORD PTR [eax+esi*8+4]
 	add	esp, 8
-	lea	edx, DWORD PTR $T219853[esp+124]
-	mov	DWORD PTR _elem$219886[esp+124], ecx
-	mov	DWORD PTR $T219853[esp+124], eax
+	lea	edx, DWORD PTR $T220330[esp+124]
+	mov	DWORD PTR _elem$220368[esp+124], ecx
+	mov	DWORD PTR $T220330[esp+124], eax
 	push	edx
 
 ; 146  : 			}
@@ -3199,14 +3199,14 @@ $LN3@Write:
 ; 148  : 			{
 ; 149  : 				kStream << (int)0;
 
-	lea	eax, DWORD PTR $T219854[esp+124]
-	mov	DWORD PTR $T219854[esp+124], 0
+	lea	eax, DWORD PTR $T220331[esp+124]
+	mov	DWORD PTR $T220331[esp+124], 0
 	push	eax
 $LN47@Write:
 	mov	ecx, edi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 	inc	esi
-	cmp	esi, DWORD PTR _iNumUnits$218059[esp+120]
+	cmp	esi, DWORD PTR _iNumUnits$218536[esp+120]
 	jl	SHORT $LL6@Write
 $LN4@Write:
 
@@ -3352,9 +3352,9 @@ PUBLIC	??$_Unguarded_partition@PAUWeightedElement@?$CvWeightedVector@H$0FK@$00@@
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\algorithm
 ;	COMDAT ??$_Unguarded_partition@PAUWeightedElement@?$CvWeightedVector@H$0FK@$00@@@std@@YA?AU?$pair@PAUWeightedElement@?$CvWeightedVector@H$0FK@$00@@PAU12@@0@PAUWeightedElement@?$CvWeightedVector@H$0FK@$00@@0@Z
 _TEXT	SEGMENT
-__Tmp$220144 = -24					; size = 8
-__Tmp$220073 = -16					; size = 8
-__Tmp$220099 = -8					; size = 8
+__Tmp$220623 = -24					; size = 8
+__Tmp$220552 = -16					; size = 8
+__Tmp$220578 = -8					; size = 8
 ___$ReturnUdt$ = 8					; size = 4
 __First$ = 12						; size = 4
 __Last$ = 16						; size = 4
@@ -3481,12 +3481,12 @@ $LL21@Unguarded_:
 	je	SHORT $LN20@Unguarded_
 	mov	ebp, DWORD PTR [edx+4]
 	mov	edi, DWORD PTR [edx]
-	mov	DWORD PTR __Tmp$220073[esp+44], ebp
+	mov	DWORD PTR __Tmp$220552[esp+44], ebp
 	mov	ebp, DWORD PTR [eax]
 	mov	DWORD PTR [edx], ebp
 	mov	ebp, DWORD PTR [eax+4]
 	mov	DWORD PTR [edx+4], ebp
-	mov	edx, DWORD PTR __Tmp$220073[esp+44]
+	mov	edx, DWORD PTR __Tmp$220552[esp+44]
 	mov	DWORD PTR [eax], edi
 	mov	DWORD PTR [eax+4], edx
 $LN20@Unguarded_:
@@ -3523,13 +3523,13 @@ $LL14@Unguarded_:
 	je	SHORT $LN13@Unguarded_
 	mov	ebp, DWORD PTR [ecx+4]
 	mov	edi, DWORD PTR [ecx]
-	mov	DWORD PTR __Tmp$220099[esp+44], ebp
+	mov	DWORD PTR __Tmp$220578[esp+44], ebp
 	mov	ebp, DWORD PTR [edx]
 	mov	DWORD PTR [ecx], ebp
 	mov	ebp, DWORD PTR [edx+4]
 	mov	DWORD PTR [ecx+4], ebp
 	mov	DWORD PTR [edx], edi
-	mov	edi, DWORD PTR __Tmp$220099[esp+44]
+	mov	edi, DWORD PTR __Tmp$220578[esp+44]
 	mov	DWORD PTR [edx+4], edi
 $LN13@Unguarded_:
 	sub	ebx, 8
@@ -3579,16 +3579,16 @@ $LN64@Unguarded_:
 	cmp	edi, edx
 	je	$LL23@Unguarded_
 	mov	ebp, DWORD PTR [edi]
-	mov	DWORD PTR __Tmp$220144[esp+40], ebp
+	mov	DWORD PTR __Tmp$220623[esp+40], ebp
 	mov	ebp, DWORD PTR [edi+4]
-	mov	DWORD PTR __Tmp$220144[esp+44], ebp
+	mov	DWORD PTR __Tmp$220623[esp+44], ebp
 	mov	ebp, DWORD PTR [edx]
 	mov	DWORD PTR [edi], ebp
 	mov	ebp, DWORD PTR [edx+4]
 	mov	DWORD PTR [edi+4], ebp
-	mov	edi, DWORD PTR __Tmp$220144[esp+40]
+	mov	edi, DWORD PTR __Tmp$220623[esp+40]
 	mov	DWORD PTR [edx], edi
-	mov	edi, DWORD PTR __Tmp$220144[esp+44]
+	mov	edi, DWORD PTR __Tmp$220623[esp+44]
 	mov	DWORD PTR [edx+4], edi
 	jmp	$LL23@Unguarded_
 $LN6@Unguarded_:
@@ -4143,11 +4143,11 @@ __ehfuncinfo$?Read@CvUnitProductionAI@@QAEXAAVFDataStream@@@Z DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?Read@CvUnitProductionAI@@QAEXAAVFDataStream@@@Z
 _TEXT	SEGMENT
-_bValid$218030 = -53					; size = 1
-_iNumEntries$218024 = -52				; size = 4
+_bValid$218507 = -53					; size = 1
+_iNumEntries$218501 = -52				; size = 4
 _iWeight$ = -48						; size = 4
 _uiVersion$ = -44					; size = 4
-_szError$218035 = -40					; size = 28
+_szError$218512 = -40					; size = 28
 __$EHRec$ = -12						; size = 12
 _kStream$ = 8						; size = 4
 ?Read@CvUnitProductionAI@@QAEXAAVFDataStream@@@Z PROC	; CvUnitProductionAI::Read, COMDAT
@@ -4251,14 +4251,14 @@ $LN9@Read:
 ; 85   : 		kStream >> iNumEntries;
 
 	mov	ecx, DWORD PTR _kStream$[esp+68]
-	lea	eax, DWORD PTR _iNumEntries$218024[esp+72]
+	lea	eax, DWORD PTR _iNumEntries$218501[esp+72]
 	push	eax
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
 
 ; 86   : 
 ; 87   : 		for(int iI = 0; iI < iNumEntries; iI++)
 
-	cmp	DWORD PTR _iNumEntries$218024[esp+72], ebx
+	cmp	DWORD PTR _iNumEntries$218501[esp+72], ebx
 	jle	$LN63@Read
 	or	ebp, -1
 $LL8@Read:
@@ -4269,10 +4269,10 @@ $LL8@Read:
 ; 91   : 			iType = CvInfosSerializationHelper::ReadHashed(kStream, &bValid);
 
 	mov	edx, DWORD PTR _kStream$[esp+68]
-	lea	ecx, DWORD PTR _bValid$218030[esp+72]
+	lea	ecx, DWORD PTR _bValid$218507[esp+72]
 	push	ecx
 	push	edx
-	mov	BYTE PTR _bValid$218030[esp+80], 1
+	mov	BYTE PTR _bValid$218507[esp+80], 1
 	call	?ReadHashed@CvInfosSerializationHelper@@YAHAAVFDataStream@@PA_N@Z ; CvInfosSerializationHelper::ReadHashed
 	mov	edi, eax
 	add	esp, 8
@@ -4281,7 +4281,7 @@ $LL8@Read:
 
 	cmp	edi, ebp
 	jne	SHORT $LN4@Read
-	cmp	BYTE PTR _bValid$218030[esp+72], 0
+	cmp	BYTE PTR _bValid$218507[esp+72], 0
 	jne	SHORT $LN7@Read
 $LN4@Read:
 
@@ -4315,13 +4315,13 @@ $LN3@Read:
 ; 100  : 				{
 ; 101  : 					CvString szError;
 
-	lea	ecx, DWORD PTR _szError$218035[esp+72]
+	lea	ecx, DWORD PTR _szError$218512[esp+72]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
 ; 102  : 					szError.Format("LOAD ERROR: Unit Type not found");
 
-	lea	eax, DWORD PTR _szError$218035[esp+72]
-	push	OFFSET $SG218036
+	lea	eax, DWORD PTR _szError$218512[esp+72]
+	push	OFFSET $SG218513
 	push	eax
 	mov	DWORD PTR __$EHRec$[esp+88], 0
 	call	?Format@CvString@@QAAXPBDZZ		; CvString::Format
@@ -4329,7 +4329,7 @@ $LN3@Read:
 
 ; 103  : 					GC.LogMessage(szError.GetCString());
 
-	lea	ecx, DWORD PTR _szError$218035[esp+72]
+	lea	ecx, DWORD PTR _szError$218512[esp+72]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
@@ -4338,12 +4338,12 @@ $LN3@Read:
 ; 104  : 					CvAssertMsg(false, szError);
 ; 105  : 				}
 
-	lea	ecx, DWORD PTR _szError$218035[esp+72]
+	lea	ecx, DWORD PTR _szError$218512[esp+72]
 	mov	DWORD PTR __$EHRec$[esp+80], ebp
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 $LN7@Read:
 	inc	ebx
-	cmp	ebx, DWORD PTR _iNumEntries$218024[esp+72]
+	cmp	ebx, DWORD PTR _iNumEntries$218501[esp+72]
 	jl	$LL8@Read
 $LN63@Read:
 	pop	edi
@@ -4369,7 +4369,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?Read@CvUnitProductionAI@@QAEXAAVFDataStream@@@Z$0:
-	lea	ecx, DWORD PTR _szError$218035[ebp]
+	lea	ecx, DWORD PTR _szError$218512[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?Read@CvUnitProductionAI@@QAEXAAVFDataStream@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?Read@CvUnitProductionAI@@QAEXAAVFDataStream@@@Z
@@ -4395,7 +4395,7 @@ PUBLIC	??$_Sort@PAUWeightedElement@?$CvWeightedVector@H$0FK@$00@@H@std@@YAXPAUWe
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Sort@PAUWeightedElement@?$CvWeightedVector@H$0FK@$00@@H@std@@YAXPAUWeightedElement@?$CvWeightedVector@H$0FK@$00@@0H@Z
 _TEXT	SEGMENT
-__Mid$218298 = -8					; size = 8
+__Mid$218775 = -8					; size = 8
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Ideal$ = 16						; size = 4
@@ -4430,7 +4430,7 @@ $LL7@Sort:
 ; 3087 : 			std::_Unguarded_partition(_First, _Last);
 
 	push	edi
-	lea	eax, DWORD PTR __Mid$218298[esp+28]
+	lea	eax, DWORD PTR __Mid$218775[esp+28]
 	push	ebx
 	push	eax
 	call	??$_Unguarded_partition@PAUWeightedElement@?$CvWeightedVector@H$0FK@$00@@@std@@YA?AU?$pair@PAUWeightedElement@?$CvWeightedVector@H$0FK@$00@@PAU12@@0@PAUWeightedElement@?$CvWeightedVector@H$0FK@$00@@0@Z ; std::_Unguarded_partition<CvWeightedVector<int,90,1>::WeightedElement *>
@@ -4439,7 +4439,7 @@ $LL7@Sort:
 ; 3089 : 
 ; 3090 : 		if (_Mid.first - _First < _Last - _Mid.second)
 
-	mov	ebp, DWORD PTR __Mid$218298[esp+40]
+	mov	ebp, DWORD PTR __Mid$218775[esp+40]
 	mov	eax, esi
 	cdq
 	sub	eax, edx
@@ -4449,7 +4449,7 @@ $LL7@Sort:
 	sub	eax, edx
 	sar	eax, 1
 	add	esi, eax
-	mov	eax, DWORD PTR __Mid$218298[esp+36]
+	mov	eax, DWORD PTR __Mid$218775[esp+36]
 	mov	ecx, edi
 	mov	edx, eax
 	sub	ecx, ebp
@@ -4487,7 +4487,7 @@ $LN5@Sort:
 
 ; 3098 : 			_Last = _Mid.first;
 
-	mov	edi, DWORD PTR __Mid$218298[esp+36]
+	mov	edi, DWORD PTR __Mid$218775[esp+36]
 $LN26@Sort:
 	mov	eax, edi
 	sub	eax, ebx
@@ -4626,7 +4626,7 @@ EXTRN	?canTrain@CvCity@@QBE_NW4UnitTypes@@_N111PAVCvString@@@Z:PROC ; CvCity::ca
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredll_expansion2\cvunitproductionai.cpp
 ;	COMDAT ?RecommendUnit@CvUnitProductionAI@@QAE?AW4UnitTypes@@W4UnitAITypes@@@Z
 _TEXT	SEGMENT
-_elem$220884 = -8					; size = 8
+_elem$221366 = -8					; size = 8
 _eUnitAIType$ = 8					; size = 4
 ?RecommendUnit@CvUnitProductionAI@@QAE?AW4UnitTypes@@W4UnitAITypes@@@Z PROC ; CvUnitProductionAI::RecommendUnit, COMDAT
 ; _this$ = ecx
@@ -4734,7 +4734,7 @@ $LL62@RecommendU:
 	mov	ecx, DWORD PTR [ecx+edi*8+4]
 	push	eax
 	push	ecx
-	mov	DWORD PTR _elem$220884[esp+32], edx
+	mov	DWORD PTR _elem$221366[esp+32], edx
 
 ; 219  : 					m_Buildables.push_back(iUnitLoop, iWeight);
 

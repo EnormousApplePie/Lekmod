@@ -13,279 +13,279 @@ PUBLIC	?ms_V0ResourceTags@CvInfosSerializationHelper@@3PAPBDA ; CvInfosSerializa
 PUBLIC	?ms_V0PolicyTags@CvInfosSerializationHelper@@3PAPBDA ; CvInfosSerializationHelper::ms_V0PolicyTags
 PUBLIC	?ms_V0PolicyBranchTags@CvInfosSerializationHelper@@3PAPBDA ; CvInfosSerializationHelper::ms_V0PolicyBranchTags
 _DATA	SEGMENT
-?ms_V0ResourceTags@CvInfosSerializationHelper@@3PAPBDA DD FLAT:$SG217995 ; CvInfosSerializationHelper::ms_V0ResourceTags
-	DD	FLAT:$SG217996
-	DD	FLAT:$SG217997
-	DD	FLAT:$SG217998
-	DD	FLAT:$SG217999
-	DD	FLAT:$SG218000
-	DD	FLAT:$SG218001
-	DD	FLAT:$SG218002
-	DD	FLAT:$SG218003
-	DD	FLAT:$SG218004
-	DD	FLAT:$SG218005
-	DD	FLAT:$SG218006
-	DD	FLAT:$SG218007
-	DD	FLAT:$SG218008
-	DD	FLAT:$SG218009
-	DD	FLAT:$SG218010
-	DD	FLAT:$SG218011
-	DD	FLAT:$SG218012
-	DD	FLAT:$SG218013
-	DD	FLAT:$SG218014
-	DD	FLAT:$SG218015
-	DD	FLAT:$SG218016
-	DD	FLAT:$SG218017
-	DD	FLAT:$SG218018
-	DD	FLAT:$SG218019
-	DD	FLAT:$SG218020
-	DD	FLAT:$SG218021
+?ms_V0ResourceTags@CvInfosSerializationHelper@@3PAPBDA DD FLAT:$SG218472 ; CvInfosSerializationHelper::ms_V0ResourceTags
+	DD	FLAT:$SG218473
+	DD	FLAT:$SG218474
+	DD	FLAT:$SG218475
+	DD	FLAT:$SG218476
+	DD	FLAT:$SG218477
+	DD	FLAT:$SG218478
+	DD	FLAT:$SG218479
+	DD	FLAT:$SG218480
+	DD	FLAT:$SG218481
+	DD	FLAT:$SG218482
+	DD	FLAT:$SG218483
+	DD	FLAT:$SG218484
+	DD	FLAT:$SG218485
+	DD	FLAT:$SG218486
+	DD	FLAT:$SG218487
+	DD	FLAT:$SG218488
+	DD	FLAT:$SG218489
+	DD	FLAT:$SG218490
+	DD	FLAT:$SG218491
+	DD	FLAT:$SG218492
+	DD	FLAT:$SG218493
+	DD	FLAT:$SG218494
+	DD	FLAT:$SG218495
+	DD	FLAT:$SG218496
+	DD	FLAT:$SG218497
+	DD	FLAT:$SG218498
 	ORG $+4
-?ms_V0PolicyTags@CvInfosSerializationHelper@@3PAPBDA DD FLAT:$SG218022 ; CvInfosSerializationHelper::ms_V0PolicyTags
-	DD	FLAT:$SG218023
-	DD	FLAT:$SG218024
-	DD	FLAT:$SG218025
-	DD	FLAT:$SG218026
-	DD	FLAT:$SG218027
-	DD	FLAT:$SG218028
-	DD	FLAT:$SG218029
-	DD	FLAT:$SG218030
-	DD	FLAT:$SG218031
-	DD	FLAT:$SG218032
-	DD	FLAT:$SG218033
-	DD	FLAT:$SG218034
-	DD	FLAT:$SG218035
-	DD	FLAT:$SG218036
-	DD	FLAT:$SG218037
-	DD	FLAT:$SG218038
-	DD	FLAT:$SG218039
-	DD	FLAT:$SG218040
-	DD	FLAT:$SG218041
-	DD	FLAT:$SG218042
-	DD	FLAT:$SG218043
-	DD	FLAT:$SG218044
-	DD	FLAT:$SG218045
-	DD	FLAT:$SG218046
-	DD	FLAT:$SG218047
-	DD	FLAT:$SG218048
-	DD	FLAT:$SG218049
-	DD	FLAT:$SG218050
-	DD	FLAT:$SG218051
-	DD	FLAT:$SG218052
-	DD	FLAT:$SG218053
-	DD	FLAT:$SG218054
-	DD	FLAT:$SG218055
-	DD	FLAT:$SG218056
-	DD	FLAT:$SG218057
-	DD	FLAT:$SG218058
-	DD	FLAT:$SG218059
-	DD	FLAT:$SG218060
-	DD	FLAT:$SG218061
-	DD	FLAT:$SG218062
-	DD	FLAT:$SG218063
-	DD	FLAT:$SG218064
-	DD	FLAT:$SG218065
-	DD	FLAT:$SG218066
-	DD	FLAT:$SG218067
-	DD	FLAT:$SG218068
-	DD	FLAT:$SG218069
-	DD	FLAT:$SG218070
-	DD	FLAT:$SG218071
-	DD	FLAT:$SG218072
-	DD	FLAT:$SG218073
-	DD	FLAT:$SG218074
-	DD	FLAT:$SG218075
-	DD	FLAT:$SG218076
-	DD	FLAT:$SG218077
-	DD	FLAT:$SG218078
-	DD	FLAT:$SG218079
-	DD	FLAT:$SG218080
-	DD	FLAT:$SG218081
-?ms_V0PolicyBranchTags@CvInfosSerializationHelper@@3PAPBDA DD FLAT:$SG218082 ; CvInfosSerializationHelper::ms_V0PolicyBranchTags
-	DD	FLAT:$SG218083
-	DD	FLAT:$SG218084
-	DD	FLAT:$SG218085
-	DD	FLAT:$SG218086
-	DD	FLAT:$SG218087
-	DD	FLAT:$SG218088
-	DD	FLAT:$SG218089
-	DD	FLAT:$SG218090
-	DD	FLAT:$SG218091
+?ms_V0PolicyTags@CvInfosSerializationHelper@@3PAPBDA DD FLAT:$SG218499 ; CvInfosSerializationHelper::ms_V0PolicyTags
+	DD	FLAT:$SG218500
+	DD	FLAT:$SG218501
+	DD	FLAT:$SG218502
+	DD	FLAT:$SG218503
+	DD	FLAT:$SG218504
+	DD	FLAT:$SG218505
+	DD	FLAT:$SG218506
+	DD	FLAT:$SG218507
+	DD	FLAT:$SG218508
+	DD	FLAT:$SG218509
+	DD	FLAT:$SG218510
+	DD	FLAT:$SG218511
+	DD	FLAT:$SG218512
+	DD	FLAT:$SG218513
+	DD	FLAT:$SG218514
+	DD	FLAT:$SG218515
+	DD	FLAT:$SG218516
+	DD	FLAT:$SG218517
+	DD	FLAT:$SG218518
+	DD	FLAT:$SG218519
+	DD	FLAT:$SG218520
+	DD	FLAT:$SG218521
+	DD	FLAT:$SG218522
+	DD	FLAT:$SG218523
+	DD	FLAT:$SG218524
+	DD	FLAT:$SG218525
+	DD	FLAT:$SG218526
+	DD	FLAT:$SG218527
+	DD	FLAT:$SG218528
+	DD	FLAT:$SG218529
+	DD	FLAT:$SG218530
+	DD	FLAT:$SG218531
+	DD	FLAT:$SG218532
+	DD	FLAT:$SG218533
+	DD	FLAT:$SG218534
+	DD	FLAT:$SG218535
+	DD	FLAT:$SG218536
+	DD	FLAT:$SG218537
+	DD	FLAT:$SG218538
+	DD	FLAT:$SG218539
+	DD	FLAT:$SG218540
+	DD	FLAT:$SG218541
+	DD	FLAT:$SG218542
+	DD	FLAT:$SG218543
+	DD	FLAT:$SG218544
+	DD	FLAT:$SG218545
+	DD	FLAT:$SG218546
+	DD	FLAT:$SG218547
+	DD	FLAT:$SG218548
+	DD	FLAT:$SG218549
+	DD	FLAT:$SG218550
+	DD	FLAT:$SG218551
+	DD	FLAT:$SG218552
+	DD	FLAT:$SG218553
+	DD	FLAT:$SG218554
+	DD	FLAT:$SG218555
+	DD	FLAT:$SG218556
+	DD	FLAT:$SG218557
+	DD	FLAT:$SG218558
+?ms_V0PolicyBranchTags@CvInfosSerializationHelper@@3PAPBDA DD FLAT:$SG218559 ; CvInfosSerializationHelper::ms_V0PolicyBranchTags
+	DD	FLAT:$SG218560
+	DD	FLAT:$SG218561
+	DD	FLAT:$SG218562
+	DD	FLAT:$SG218563
+	DD	FLAT:$SG218564
+	DD	FLAT:$SG218565
+	DD	FLAT:$SG218566
+	DD	FLAT:$SG218567
+	DD	FLAT:$SG218568
 _DATA	ENDS
 CONST	SEGMENT
-$SG217995 DB	'RESOURCE_IRON', 00H
+$SG218472 DB	'RESOURCE_IRON', 00H
 	ORG $+2
-$SG217996 DB	'RESOURCE_HORSE', 00H
+$SG218473 DB	'RESOURCE_HORSE', 00H
 	ORG $+1
-$SG217997 DB	'RESOURCE_COAL', 00H
+$SG218474 DB	'RESOURCE_COAL', 00H
 	ORG $+2
-$SG217998 DB	'RESOURCE_OIL', 00H
+$SG218475 DB	'RESOURCE_OIL', 00H
 	ORG $+3
-$SG217999 DB	'RESOURCE_ALUMINUM', 00H
+$SG218476 DB	'RESOURCE_ALUMINUM', 00H
 	ORG $+2
-$SG218000 DB	'RESOURCE_URANIUM', 00H
+$SG218477 DB	'RESOURCE_URANIUM', 00H
 	ORG $+3
-$SG218001 DB	'RESOURCE_WHEAT', 00H
+$SG218478 DB	'RESOURCE_WHEAT', 00H
 	ORG $+1
-$SG218002 DB	'RESOURCE_COW', 00H
+$SG218479 DB	'RESOURCE_COW', 00H
 	ORG $+3
-$SG218003 DB	'RESOURCE_SHEEP', 00H
+$SG218480 DB	'RESOURCE_SHEEP', 00H
 	ORG $+1
-$SG218004 DB	'RESOURCE_DEER', 00H
+$SG218481 DB	'RESOURCE_DEER', 00H
 	ORG $+2
-$SG218005 DB	'RESOURCE_BANANA', 00H
-$SG218006 DB	'RESOURCE_FISH', 00H
+$SG218482 DB	'RESOURCE_BANANA', 00H
+$SG218483 DB	'RESOURCE_FISH', 00H
 	ORG $+2
-$SG218007 DB	'RESOURCE_WHALE', 00H
+$SG218484 DB	'RESOURCE_WHALE', 00H
 	ORG $+1
-$SG218008 DB	'RESOURCE_PEARLS', 00H
-$SG218009 DB	'RESOURCE_GOLD', 00H
+$SG218485 DB	'RESOURCE_PEARLS', 00H
+$SG218486 DB	'RESOURCE_GOLD', 00H
 	ORG $+2
-$SG218010 DB	'RESOURCE_SILVER', 00H
-$SG218011 DB	'RESOURCE_GEMS', 00H
+$SG218487 DB	'RESOURCE_SILVER', 00H
+$SG218488 DB	'RESOURCE_GEMS', 00H
 	ORG $+2
-$SG218012 DB	'RESOURCE_MARBLE', 00H
-$SG218013 DB	'RESOURCE_IVORY', 00H
+$SG218489 DB	'RESOURCE_MARBLE', 00H
+$SG218490 DB	'RESOURCE_IVORY', 00H
 	ORG $+1
-$SG218014 DB	'RESOURCE_FUR', 00H
+$SG218491 DB	'RESOURCE_FUR', 00H
 	ORG $+3
-$SG218015 DB	'RESOURCE_DYE', 00H
+$SG218492 DB	'RESOURCE_DYE', 00H
 	ORG $+3
-$SG218016 DB	'RESOURCE_SPICES', 00H
-$SG218017 DB	'RESOURCE_SILK', 00H
+$SG218493 DB	'RESOURCE_SPICES', 00H
+$SG218494 DB	'RESOURCE_SILK', 00H
 	ORG $+2
-$SG218018 DB	'RESOURCE_SUGAR', 00H
+$SG218495 DB	'RESOURCE_SUGAR', 00H
 	ORG $+1
-$SG218019 DB	'RESOURCE_COTTON', 00H
-$SG218020 DB	'RESOURCE_WINE', 00H
+$SG218496 DB	'RESOURCE_COTTON', 00H
+$SG218497 DB	'RESOURCE_WINE', 00H
 	ORG $+2
-$SG218021 DB	'RESOURCE_INCENSE', 00H
+$SG218498 DB	'RESOURCE_INCENSE', 00H
 	ORG $+3
-$SG218022 DB	'POLICY_LIBERTY', 00H
+$SG218499 DB	'POLICY_LIBERTY', 00H
 	ORG $+1
-$SG218023 DB	'POLICY_COLLECTIVE_RULE', 00H
+$SG218500 DB	'POLICY_COLLECTIVE_RULE', 00H
 	ORG $+1
-$SG218024 DB	'POLICY_CITIZENSHIP', 00H
+$SG218501 DB	'POLICY_CITIZENSHIP', 00H
 	ORG $+1
-$SG218025 DB	'POLICY_REPUBLIC', 00H
-$SG218026 DB	'POLICY_REPRESENTATION', 00H
+$SG218502 DB	'POLICY_REPUBLIC', 00H
+$SG218503 DB	'POLICY_REPRESENTATION', 00H
 	ORG $+2
-$SG218027 DB	'POLICY_MERITOCRACY', 00H
+$SG218504 DB	'POLICY_MERITOCRACY', 00H
 	ORG $+1
-$SG218028 DB	'POLICY_TRADITION', 00H
+$SG218505 DB	'POLICY_TRADITION', 00H
 	ORG $+3
-$SG218029 DB	'POLICY_ARISTOCRACY', 00H
+$SG218506 DB	'POLICY_ARISTOCRACY', 00H
 	ORG $+1
-$SG218030 DB	'POLICY_OLIGARCHY', 00H
+$SG218507 DB	'POLICY_OLIGARCHY', 00H
 	ORG $+3
-$SG218031 DB	'POLICY_LEGALISM', 00H
-$SG218032 DB	'POLICY_LANDED_ELITE', 00H
-$SG218033 DB	'POLICY_MONARCHY', 00H
-$SG218034 DB	'POLICY_HONOR', 00H
+$SG218508 DB	'POLICY_LEGALISM', 00H
+$SG218509 DB	'POLICY_LANDED_ELITE', 00H
+$SG218510 DB	'POLICY_MONARCHY', 00H
+$SG218511 DB	'POLICY_HONOR', 00H
 	ORG $+3
-$SG218035 DB	'POLICY_WARRIOR_CODE', 00H
-$SG218036 DB	'POLICY_DISCIPLINE', 00H
+$SG218512 DB	'POLICY_WARRIOR_CODE', 00H
+$SG218513 DB	'POLICY_DISCIPLINE', 00H
 	ORG $+2
-$SG218037 DB	'POLICY_MILITARY_TRADITION', 00H
+$SG218514 DB	'POLICY_MILITARY_TRADITION', 00H
 	ORG $+2
-$SG218038 DB	'POLICY_MILITARY_CASTE', 00H
+$SG218515 DB	'POLICY_MILITARY_CASTE', 00H
 	ORG $+2
-$SG218039 DB	'POLICY_PROFESSIONAL_ARMY', 00H
+$SG218516 DB	'POLICY_PROFESSIONAL_ARMY', 00H
 	ORG $+3
-$SG218040 DB	'POLICY_PIETY', 00H
+$SG218517 DB	'POLICY_PIETY', 00H
 	ORG $+3
-$SG218041 DB	'POLICY_ORGANIZED_RELIGION', 00H
+$SG218518 DB	'POLICY_ORGANIZED_RELIGION', 00H
 	ORG $+2
-$SG218042 DB	'POLICY_MANDATE_OF_HEAVEN', 00H
+$SG218519 DB	'POLICY_MANDATE_OF_HEAVEN', 00H
 	ORG $+3
-$SG218043 DB	'POLICY_THEOCRACY', 00H
+$SG218520 DB	'POLICY_THEOCRACY', 00H
 	ORG $+3
-$SG218044 DB	'POLICY_REFORMATION', 00H
+$SG218521 DB	'POLICY_REFORMATION', 00H
 	ORG $+1
-$SG218045 DB	'POLICY_FREE_RELIGION', 00H
+$SG218522 DB	'POLICY_FREE_RELIGION', 00H
 	ORG $+3
-$SG218046 DB	'POLICY_PATRONAGE', 00H
+$SG218523 DB	'POLICY_PATRONAGE', 00H
 	ORG $+3
-$SG218047 DB	'POLICY_PHILANTHROPY', 00H
-$SG218048 DB	'POLICY_AESTHETICS', 00H
+$SG218524 DB	'POLICY_PHILANTHROPY', 00H
+$SG218525 DB	'POLICY_AESTHETICS', 00H
 	ORG $+2
-$SG218049 DB	'POLICY_SCHOLASTICISM', 00H
+$SG218526 DB	'POLICY_SCHOLASTICISM', 00H
 	ORG $+3
-$SG218050 DB	'POLICY_CULTURAL_DIPLOMACY', 00H
+$SG218527 DB	'POLICY_CULTURAL_DIPLOMACY', 00H
 	ORG $+2
-$SG218051 DB	'POLICY_EDUCATED_ELITE', 00H
+$SG218528 DB	'POLICY_EDUCATED_ELITE', 00H
 	ORG $+2
-$SG218052 DB	'POLICY_COMMERCE', 00H
-$SG218053 DB	'POLICY_TRADE_UNIONS', 00H
-$SG218054 DB	'POLICY_NAVAL_TRADITION', 00H
+$SG218529 DB	'POLICY_COMMERCE', 00H
+$SG218530 DB	'POLICY_TRADE_UNIONS', 00H
+$SG218531 DB	'POLICY_NAVAL_TRADITION', 00H
 	ORG $+1
-$SG218055 DB	'POLICY_MERCANTILISM', 00H
-$SG218056 DB	'POLICY_MERCHANT_NAVY', 00H
+$SG218532 DB	'POLICY_MERCANTILISM', 00H
+$SG218533 DB	'POLICY_MERCHANT_NAVY', 00H
 	ORG $+3
-$SG218057 DB	'POLICY_PROTECTIONISM', 00H
+$SG218534 DB	'POLICY_PROTECTIONISM', 00H
 	ORG $+3
-$SG218058 DB	'POLICY_RATIONALISM', 00H
+$SG218535 DB	'POLICY_RATIONALISM', 00H
 	ORG $+1
-$SG218059 DB	'POLICY_SECULARISM', 00H
+$SG218536 DB	'POLICY_SECULARISM', 00H
 	ORG $+2
-$SG218060 DB	'POLICY_HUMANISM', 00H
-$SG218061 DB	'POLICY_FREE_THOUGHT', 00H
-$SG218062 DB	'POLICY_SOVEREIGNTY', 00H
+$SG218537 DB	'POLICY_HUMANISM', 00H
+$SG218538 DB	'POLICY_FREE_THOUGHT', 00H
+$SG218539 DB	'POLICY_SOVEREIGNTY', 00H
 	ORG $+1
-$SG218063 DB	'POLICY_SCIENTIFIC_REVOLUTION', 00H
+$SG218540 DB	'POLICY_SCIENTIFIC_REVOLUTION', 00H
 	ORG $+3
-$SG218064 DB	'POLICY_FREEDOM', 00H
+$SG218541 DB	'POLICY_FREEDOM', 00H
 	ORG $+1
-$SG218065 DB	'POLICY_CONSTITUTION', 00H
-$SG218066 DB	'POLICY_UNIVERSAL_SUFFRAGE', 00H
+$SG218542 DB	'POLICY_CONSTITUTION', 00H
+$SG218543 DB	'POLICY_UNIVERSAL_SUFFRAGE', 00H
 	ORG $+2
-$SG218067 DB	'POLICY_CIVIL_SOCIETY', 00H
+$SG218544 DB	'POLICY_CIVIL_SOCIETY', 00H
 	ORG $+3
-$SG218068 DB	'POLICY_FREE_SPEECH', 00H
+$SG218545 DB	'POLICY_FREE_SPEECH', 00H
 	ORG $+1
-$SG218069 DB	'POLICY_DEMOCRACY', 00H
+$SG218546 DB	'POLICY_DEMOCRACY', 00H
 	ORG $+3
-$SG218070 DB	'POLICY_ORDER', 00H
+$SG218547 DB	'POLICY_ORDER', 00H
 	ORG $+3
-$SG218071 DB	'POLICY_UNITED_FRONT', 00H
-$SG218072 DB	'POLICY_SOCIALISM', 00H
+$SG218548 DB	'POLICY_UNITED_FRONT', 00H
+$SG218549 DB	'POLICY_SOCIALISM', 00H
 	ORG $+3
-$SG218073 DB	'POLICY_NATIONALISM', 00H
+$SG218550 DB	'POLICY_NATIONALISM', 00H
 	ORG $+1
-$SG218074 DB	'POLICY_PLANNED_ECONOMY', 00H
+$SG218551 DB	'POLICY_PLANNED_ECONOMY', 00H
 	ORG $+1
-$SG218075 DB	'POLICY_COMMUNISM', 00H
+$SG218552 DB	'POLICY_COMMUNISM', 00H
 	ORG $+3
-$SG218076 DB	'POLICY_AUTOCRACY', 00H
+$SG218553 DB	'POLICY_AUTOCRACY', 00H
 	ORG $+3
-$SG218077 DB	'POLICY_POPULISM', 00H
-$SG218078 DB	'POLICY_MILITARISM', 00H
+$SG218554 DB	'POLICY_POPULISM', 00H
+$SG218555 DB	'POLICY_MILITARISM', 00H
 	ORG $+2
-$SG218079 DB	'POLICY_FASCISM', 00H
+$SG218556 DB	'POLICY_FASCISM', 00H
 	ORG $+1
-$SG218080 DB	'POLICY_POLICE_STATE', 00H
-$SG218081 DB	'POLICY_TOTAL_WAR', 00H
+$SG218557 DB	'POLICY_POLICE_STATE', 00H
+$SG218558 DB	'POLICY_TOTAL_WAR', 00H
 	ORG $+3
-$SG218082 DB	'POLICY_BRANCH_TRADITION', 00H
-$SG218083 DB	'POLICY_BRANCH_LIBERTY', 00H
+$SG218559 DB	'POLICY_BRANCH_TRADITION', 00H
+$SG218560 DB	'POLICY_BRANCH_LIBERTY', 00H
 	ORG $+2
-$SG218084 DB	'POLICY_BRANCH_HONOR', 00H
-$SG218085 DB	'POLICY_BRANCH_PIETY', 00H
-$SG218086 DB	'POLICY_BRANCH_PATRONAGE', 00H
-$SG218087 DB	'POLICY_BRANCH_COMMERCE', 00H
+$SG218561 DB	'POLICY_BRANCH_HONOR', 00H
+$SG218562 DB	'POLICY_BRANCH_PIETY', 00H
+$SG218563 DB	'POLICY_BRANCH_PATRONAGE', 00H
+$SG218564 DB	'POLICY_BRANCH_COMMERCE', 00H
 	ORG $+1
-$SG218088 DB	'POLICY_BRANCH_RATIONALISM', 00H
+$SG218565 DB	'POLICY_BRANCH_RATIONALISM', 00H
 	ORG $+2
-$SG218089 DB	'POLICY_BRANCH_FREEDOM', 00H
+$SG218566 DB	'POLICY_BRANCH_FREEDOM', 00H
 	ORG $+2
-$SG218090 DB	'POLICY_BRANCH_ORDER', 00H
-$SG218091 DB	'POLICY_BRANCH_AUTOCRACY', 00H
-$SG218116 DB	'NO_TYPE', 00H
-$SG218123 DB	'LOAD ERROR: Type not found: %s', 00H
+$SG218567 DB	'POLICY_BRANCH_ORDER', 00H
+$SG218568 DB	'POLICY_BRANCH_AUTOCRACY', 00H
+$SG218593 DB	'NO_TYPE', 00H
+$SG218600 DB	'LOAD ERROR: Type not found: %s', 00H
 	ORG $+1
-$SG218136 DB	'LOAD ERROR: Type not found for hash: %u', 00H
-$SG218147 DB	'NO_TYPE', 00H
-$SG218152 DB	'SELECT ID from %s where Type = ? LIMIT 1', 00H
+$SG218613 DB	'LOAD ERROR: Type not found for hash: %u', 00H
+$SG218624 DB	'NO_TYPE', 00H
+$SG218629 DB	'SELECT ID from %s where Type = ? LIMIT 1', 00H
 CONST	ENDS
 PUBLIC	??$?5VFStringA@@@FDataStream@@QAEAAV0@AAVFStringA@@@Z ; FDataStream::operator>><FStringA>
 EXTRN	?Read@FDataStream@@IAEXAAVFStringA@@@Z:PROC	; FDataStream::Read
@@ -1063,7 +1063,7 @@ __ehfuncinfo$?ReadHashed@CvInfosSerializationHelper@@YAHAAVFDataStream@@PA_N@Z D
 xdata$x	ENDS
 ;	COMDAT ?ReadHashed@CvInfosSerializationHelper@@YAHAAVFDataStream@@PA_N@Z
 _TEXT	SEGMENT
-_szError$218135 = -40					; size = 28
+_szError$218612 = -40					; size = 28
 __$EHRec$ = -12						; size = 12
 _kStream$ = 8						; size = 4
 _uiHash$ = 12						; size = 4
@@ -1124,15 +1124,15 @@ $LN5@ReadHashed:
 ; 181  : 		{
 ; 182  : 			CvString szError;
 
-	lea	ecx, DWORD PTR _szError$218135[esp+44]
+	lea	ecx, DWORD PTR _szError$218612[esp+44]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
 ; 183  : 			szError.Format("LOAD ERROR: Type not found for hash: %u", uiHash);
 
 	mov	ecx, DWORD PTR _uiHash$[esp+40]
 	push	ecx
-	lea	edx, DWORD PTR _szError$218135[esp+48]
-	push	OFFSET $SG218136
+	lea	edx, DWORD PTR _szError$218612[esp+48]
+	push	OFFSET $SG218613
 	push	edx
 	mov	DWORD PTR __$EHRec$[esp+64], 0
 	call	?Format@CvString@@QAAXPBDZZ		; CvString::Format
@@ -1140,7 +1140,7 @@ $LN5@ReadHashed:
 
 ; 184  : 			GC.LogMessage(szError.GetCString());
 
-	lea	ecx, DWORD PTR _szError$218135[esp+44]
+	lea	ecx, DWORD PTR _szError$218612[esp+44]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
@@ -1156,7 +1156,7 @@ $LN1@ReadHashed:
 
 ; 187  : 		}
 
-	lea	ecx, DWORD PTR _szError$218135[esp+44]
+	lea	ecx, DWORD PTR _szError$218612[esp+44]
 	mov	DWORD PTR __$EHRec$[esp+52], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 $LN2@ReadHashed:
@@ -1179,7 +1179,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?ReadHashed@CvInfosSerializationHelper@@YAHAAVFDataStream@@PA_N@Z$0:
-	lea	ecx, DWORD PTR _szError$218135[ebp]
+	lea	ecx, DWORD PTR _szError$218612[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?ReadHashed@CvInfosSerializationHelper@@YAHAAVFDataStream@@PA_N@Z:
 	mov	eax, OFFSET __ehfuncinfo$?ReadHashed@CvInfosSerializationHelper@@YAHAAVFDataStream@@PA_N@Z
@@ -1505,7 +1505,7 @@ PUBLIC	?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@PBVCvBaseInf
 _TEXT	SEGMENT
 _uiHash$ = -4						; size = 4
 _kStream$ = 8						; size = 4
-_uiHash$218600 = 12					; size = 4
+_uiHash$219077 = 12					; size = 4
 _pkInfo$ = 12						; size = 4
 ?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@PBVCvBaseInfo@@@Z PROC ; CvInfosSerializationHelper::WriteHashed, COMDAT
 
@@ -1540,9 +1540,9 @@ _pkInfo$ = 12						; size = 4
 ; 291  : 		kStream << uiHash;
 
 	mov	ecx, DWORD PTR _kStream$[esp+8]
-	mov	DWORD PTR _uiHash$218600[esp+8], eax
+	mov	DWORD PTR _uiHash$219077[esp+8], eax
 	add	esp, 4
-	lea	eax, DWORD PTR _uiHash$218600[esp+4]
+	lea	eax, DWORD PTR _uiHash$219077[esp+4]
 	push	eax
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 
@@ -1699,7 +1699,7 @@ xdata$x	ENDS
 ;	COMDAT ?Read@CvInfosSerializationHelper@@YAHAAVFDataStream@@PA_N@Z
 _TEXT	SEGMENT
 _sTemp$ = -312						; size = 4
-_szError$218122 = -308					; size = 28
+_szError$218599 = -308					; size = 28
 _FStringFixedBuffer_sTemp$ = -280			; size = 268
 __$EHRec$ = -12						; size = 12
 _kStream$ = 8						; size = 4
@@ -1749,7 +1749,7 @@ $LN5@Read:
 	mov	eax, DWORD PTR [esi-8]
 	test	eax, eax
 	jle	$LN2@Read
-	mov	ecx, OFFSET $SG218116
+	mov	ecx, OFFSET $SG218593
 	mov	eax, esi
 $LL51@Read:
 	mov	dl, BYTE PTR [eax]
@@ -1818,7 +1818,7 @@ $LN1@Read:
 
 ; 153  : 			CvString szError;
 
-	lea	ecx, DWORD PTR _szError$218122[esp+320]
+	lea	ecx, DWORD PTR _szError$218599[esp+320]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
 ; 154  : #ifdef AUI_WARNING_FIXES
@@ -1828,8 +1828,8 @@ $LN1@Read:
 
 	mov	edx, DWORD PTR _sTemp$[esp+320]
 	push	edx
-	lea	eax, DWORD PTR _szError$218122[esp+324]
-	push	OFFSET $SG218123
+	lea	eax, DWORD PTR _szError$218599[esp+324]
+	push	OFFSET $SG218600
 	push	eax
 	mov	BYTE PTR __$EHRec$[esp+340], 1
 	call	?Format@CvString@@QAAXPBDZZ		; CvString::Format
@@ -1838,7 +1838,7 @@ $LN1@Read:
 ; 158  : #endif
 ; 159  : 			GC.LogMessage(szError.GetCString());
 
-	lea	ecx, DWORD PTR _szError$218122[esp+320]
+	lea	ecx, DWORD PTR _szError$218599[esp+320]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
@@ -1847,7 +1847,7 @@ $LN1@Read:
 ; 160  : 			CvAssertMsg(false, szError);
 ; 161  : 		}
 
-	lea	ecx, DWORD PTR _szError$218122[esp+320]
+	lea	ecx, DWORD PTR _szError$218599[esp+320]
 	mov	BYTE PTR __$EHRec$[esp+328], 0
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 	mov	esi, DWORD PTR _sTemp$[esp+320]
@@ -1888,7 +1888,7 @@ __unwindfunclet$?Read@CvInfosSerializationHelper@@YAHAAVFDataStream@@PA_N@Z$0:
 	lea	ecx, DWORD PTR _sTemp$[ebp]
 	jmp	??1FStringA@@QAE@XZ			; FStringA::~FStringA
 __unwindfunclet$?Read@CvInfosSerializationHelper@@YAHAAVFDataStream@@PA_N@Z$1:
-	lea	ecx, DWORD PTR _szError$218122[ebp]
+	lea	ecx, DWORD PTR _szError$218599[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?Read@CvInfosSerializationHelper@@YAHAAVFDataStream@@PA_N@Z:
 	mov	eax, OFFSET __ehfuncinfo$?Read@CvInfosSerializationHelper@@YAHAAVFDataStream@@PA_N@Z
@@ -1924,8 +1924,8 @@ xdata$x	ENDS
 ;	COMDAT ?ReadDBLookup@CvInfosSerializationHelper@@YAHAAVFDataStream@@PBDPA_N@Z
 _TEXT	SEGMENT
 _sTemp$ = -376						; size = 4
-_szCommand$218151 = -372				; size = 28
-_kResults$218150 = -344					; size = 64
+_szCommand$218628 = -372				; size = 28
+_kResults$218627 = -344					; size = 64
 _FStringFixedBuffer_sTemp$ = -280			; size = 268
 __$EHRec$ = -12						; size = 12
 _kStream$ = 8						; size = 4
@@ -1979,7 +1979,7 @@ $LN9@ReadDBLook:
 	mov	eax, DWORD PTR [edi-8]
 	cmp	eax, ebx
 	jle	$LN63@ReadDBLook
-	mov	ecx, OFFSET $SG218147
+	mov	ecx, OFFSET $SG218624
 	mov	eax, edi
 $LL59@ReadDBLook:
 	mov	dl, BYTE PTR [eax]
@@ -2018,12 +2018,12 @@ $LN62@ReadDBLook:
 ; 205  : 			Database::Results kResults;
 
 	push	ebx
-	lea	ecx, DWORD PTR _kResults$218150[esp+396]
+	lea	ecx, DWORD PTR _kResults$218627[esp+396]
 	call	DWORD PTR __imp_??0Results@Database@@QAE@PBD@Z
 
 ; 206  : 			CvString szCommand;
 
-	lea	ecx, DWORD PTR _szCommand$218151[esp+392]
+	lea	ecx, DWORD PTR _szCommand$218628[esp+392]
 	mov	BYTE PTR __$EHRec$[esp+400], 1
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -2031,8 +2031,8 @@ $LN62@ReadDBLook:
 
 	mov	edx, DWORD PTR _szTable$[esp+388]
 	push	edx
-	lea	eax, DWORD PTR _szCommand$218151[esp+396]
-	push	OFFSET $SG218152
+	lea	eax, DWORD PTR _szCommand$218628[esp+396]
+	push	OFFSET $SG218629
 	push	eax
 	mov	BYTE PTR __$EHRec$[esp+412], 2
 	call	?Format@CvString@@QAAXPBDZZ		; CvString::Format
@@ -2041,10 +2041,10 @@ $LN62@ReadDBLook:
 ; 208  : 			if(pDB->Execute(kResults, szCommand.c_str()))
 
 	push	-1
-	lea	ecx, DWORD PTR _szCommand$218151[esp+396]
+	lea	ecx, DWORD PTR _szCommand$218628[esp+396]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
-	lea	ecx, DWORD PTR _kResults$218150[esp+400]
+	lea	ecx, DWORD PTR _kResults$218627[esp+400]
 	push	ecx
 	mov	ecx, esi
 	call	DWORD PTR __imp_?Execute@Connection@Database@@QBE_NAAVResults@2@PBDH@Z
@@ -2058,12 +2058,12 @@ $LN62@ReadDBLook:
 	push	1
 	push	edx
 	push	1
-	lea	ecx, DWORD PTR _kResults$218150[esp+404]
+	lea	ecx, DWORD PTR _kResults$218627[esp+404]
 	call	DWORD PTR __imp_?Bind@Results@Database@@QAE_NHPBD_N@Z
 
 ; 211  : 				if(kResults.Step())
 
-	lea	ecx, DWORD PTR _kResults$218150[esp+392]
+	lea	ecx, DWORD PTR _kResults$218627[esp+392]
 	call	DWORD PTR __imp_?Step@Results@Database@@QAE_NXZ
 	test	al, al
 	je	SHORT $LN5@ReadDBLook
@@ -2072,13 +2072,13 @@ $LN62@ReadDBLook:
 ; 213  : 					return kResults.GetInt(0);
 
 	push	ebx
-	lea	ecx, DWORD PTR _kResults$218150[esp+396]
+	lea	ecx, DWORD PTR _kResults$218627[esp+396]
 	call	DWORD PTR __imp_?GetInt@Results@Database@@QAEHH@Z
-	lea	ecx, DWORD PTR _szCommand$218151[esp+392]
+	lea	ecx, DWORD PTR _szCommand$218628[esp+392]
 	mov	esi, eax
 	mov	BYTE PTR __$EHRec$[esp+400], 1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR _kResults$218150[esp+392]
+	lea	ecx, DWORD PTR _kResults$218627[esp+392]
 	mov	BYTE PTR __$EHRec$[esp+400], bl
 	call	DWORD PTR __imp_??1Results@Database@@UAE@XZ
 	lea	ecx, DWORD PTR _sTemp$[esp+392]
@@ -2100,10 +2100,10 @@ $LN3@ReadDBLook:
 ; 217  : 			}
 ; 218  : 		}
 
-	lea	ecx, DWORD PTR _szCommand$218151[esp+392]
+	lea	ecx, DWORD PTR _szCommand$218628[esp+392]
 	mov	BYTE PTR __$EHRec$[esp+400], 1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR _kResults$218150[esp+392]
+	lea	ecx, DWORD PTR _kResults$218627[esp+392]
 	mov	BYTE PTR __$EHRec$[esp+400], bl
 	call	DWORD PTR __imp_??1Results@Database@@UAE@XZ
 
@@ -2159,10 +2159,10 @@ __unwindfunclet$?ReadDBLookup@CvInfosSerializationHelper@@YAHAAVFDataStream@@PBD
 	lea	ecx, DWORD PTR _sTemp$[ebp]
 	jmp	??1FStringA@@QAE@XZ			; FStringA::~FStringA
 __unwindfunclet$?ReadDBLookup@CvInfosSerializationHelper@@YAHAAVFDataStream@@PBDPA_N@Z$1:
-	lea	ecx, DWORD PTR _kResults$218150[ebp]
+	lea	ecx, DWORD PTR _kResults$218627[ebp]
 	jmp	DWORD PTR __imp_??1Results@Database@@UAE@XZ
 __unwindfunclet$?ReadDBLookup@CvInfosSerializationHelper@@YAHAAVFDataStream@@PBDPA_N@Z$2:
-	lea	ecx, DWORD PTR _szCommand$218151[ebp]
+	lea	ecx, DWORD PTR _szCommand$218628[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?ReadDBLookup@CvInfosSerializationHelper@@YAHAAVFDataStream@@PBDPA_N@Z:
 	mov	eax, OFFSET __ehfuncinfo$?ReadDBLookup@CvInfosSerializationHelper@@YAHAAVFDataStream@@PBDPA_N@Z
@@ -2175,7 +2175,7 @@ EXTRN	?getResourceInfo@CvGlobals@@QAEPAVCvResourceInfo@@W4ResourceTypes@@@Z:PROC
 ;	COMDAT ?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4ResourceTypes@@@Z
 _TEXT	SEGMENT
 _kStream$ = 8						; size = 4
-_uiHash$219477 = 12					; size = 4
+_uiHash$219954 = 12					; size = 4
 _eType$ = 12						; size = 4
 ?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4ResourceTypes@@@Z PROC ; CvInfosSerializationHelper::WriteHashed, COMDAT
 
@@ -2190,10 +2190,10 @@ _eType$ = 12						; size = 4
 	mov	DWORD PTR _eType$[esp-4], eax
 	jmp	?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@PBVCvBaseInfo@@@Z ; CvInfosSerializationHelper::WriteHashed
 $LN2@WriteHashe@2:
-	lea	ecx, DWORD PTR _uiHash$219477[esp-4]
+	lea	ecx, DWORD PTR _uiHash$219954[esp-4]
 	push	ecx
 	mov	ecx, DWORD PTR _kStream$[esp]
-	mov	DWORD PTR _uiHash$219477[esp], 0
+	mov	DWORD PTR _uiHash$219954[esp], 0
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 	xor	al, al
 	ret	0
@@ -2205,7 +2205,7 @@ EXTRN	?getPolicyInfo@CvGlobals@@QAEPAVCvPolicyEntry@@W4PolicyTypes@@@Z:PROC ; Cv
 ;	COMDAT ?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4PolicyTypes@@@Z
 _TEXT	SEGMENT
 _kStream$ = 8						; size = 4
-_uiHash$219515 = 12					; size = 4
+_uiHash$219992 = 12					; size = 4
 _eType$ = 12						; size = 4
 ?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4PolicyTypes@@@Z PROC ; CvInfosSerializationHelper::WriteHashed, COMDAT
 
@@ -2220,10 +2220,10 @@ _eType$ = 12						; size = 4
 	mov	DWORD PTR _eType$[esp-4], eax
 	jmp	?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@PBVCvBaseInfo@@@Z ; CvInfosSerializationHelper::WriteHashed
 $LN2@WriteHashe@3:
-	lea	ecx, DWORD PTR _uiHash$219515[esp-4]
+	lea	ecx, DWORD PTR _uiHash$219992[esp-4]
 	push	ecx
 	mov	ecx, DWORD PTR _kStream$[esp]
-	mov	DWORD PTR _uiHash$219515[esp], 0
+	mov	DWORD PTR _uiHash$219992[esp], 0
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 	xor	al, al
 	ret	0
@@ -2235,7 +2235,7 @@ EXTRN	?getPolicyBranchInfo@CvGlobals@@QAEPAVCvPolicyBranchEntry@@W4PolicyBranchT
 ;	COMDAT ?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4PolicyBranchTypes@@@Z
 _TEXT	SEGMENT
 _kStream$ = 8						; size = 4
-_uiHash$219553 = 12					; size = 4
+_uiHash$220030 = 12					; size = 4
 _eType$ = 12						; size = 4
 ?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4PolicyBranchTypes@@@Z PROC ; CvInfosSerializationHelper::WriteHashed, COMDAT
 
@@ -2250,10 +2250,10 @@ _eType$ = 12						; size = 4
 	mov	DWORD PTR _eType$[esp-4], eax
 	jmp	?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@PBVCvBaseInfo@@@Z ; CvInfosSerializationHelper::WriteHashed
 $LN2@WriteHashe@4:
-	lea	ecx, DWORD PTR _uiHash$219553[esp-4]
+	lea	ecx, DWORD PTR _uiHash$220030[esp-4]
 	push	ecx
 	mov	ecx, DWORD PTR _kStream$[esp]
-	mov	DWORD PTR _uiHash$219553[esp], 0
+	mov	DWORD PTR _uiHash$220030[esp], 0
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 	xor	al, al
 	ret	0
@@ -2265,7 +2265,7 @@ EXTRN	?getTechInfo@CvGlobals@@QAEPAVCvTechEntry@@W4TechTypes@@@Z:PROC ; CvGlobal
 ;	COMDAT ?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4TechTypes@@@Z
 _TEXT	SEGMENT
 _kStream$ = 8						; size = 4
-_uiHash$219591 = 12					; size = 4
+_uiHash$220068 = 12					; size = 4
 _eType$ = 12						; size = 4
 ?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4TechTypes@@@Z PROC ; CvInfosSerializationHelper::WriteHashed, COMDAT
 
@@ -2280,10 +2280,10 @@ _eType$ = 12						; size = 4
 	mov	DWORD PTR _eType$[esp-4], eax
 	jmp	?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@PBVCvBaseInfo@@@Z ; CvInfosSerializationHelper::WriteHashed
 $LN2@WriteHashe@5:
-	lea	ecx, DWORD PTR _uiHash$219591[esp-4]
+	lea	ecx, DWORD PTR _uiHash$220068[esp-4]
 	push	ecx
 	mov	ecx, DWORD PTR _kStream$[esp]
-	mov	DWORD PTR _uiHash$219591[esp], 0
+	mov	DWORD PTR _uiHash$220068[esp], 0
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 	xor	al, al
 	ret	0
@@ -2295,7 +2295,7 @@ EXTRN	?getBeliefInfo@CvGlobals@@QAEPAVCvBeliefEntry@@W4BeliefTypes@@@Z:PROC ; Cv
 ;	COMDAT ?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4BeliefTypes@@@Z
 _TEXT	SEGMENT
 _kStream$ = 8						; size = 4
-_uiHash$219629 = 12					; size = 4
+_uiHash$220106 = 12					; size = 4
 _eType$ = 12						; size = 4
 ?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4BeliefTypes@@@Z PROC ; CvInfosSerializationHelper::WriteHashed, COMDAT
 
@@ -2310,10 +2310,10 @@ _eType$ = 12						; size = 4
 	mov	DWORD PTR _eType$[esp-4], eax
 	jmp	?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@PBVCvBaseInfo@@@Z ; CvInfosSerializationHelper::WriteHashed
 $LN2@WriteHashe@6:
-	lea	ecx, DWORD PTR _uiHash$219629[esp-4]
+	lea	ecx, DWORD PTR _uiHash$220106[esp-4]
 	push	ecx
 	mov	ecx, DWORD PTR _kStream$[esp]
-	mov	DWORD PTR _uiHash$219629[esp], 0
+	mov	DWORD PTR _uiHash$220106[esp], 0
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 	xor	al, al
 	ret	0
@@ -2325,7 +2325,7 @@ EXTRN	?getReligionInfo@CvGlobals@@QAEPAVCvReligionEntry@@W4ReligionTypes@@@Z:PRO
 ;	COMDAT ?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4ReligionTypes@@@Z
 _TEXT	SEGMENT
 _kStream$ = 8						; size = 4
-_uiHash$219656 = 12					; size = 4
+_uiHash$220133 = 12					; size = 4
 _eType$ = 12						; size = 4
 ?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4ReligionTypes@@@Z PROC ; CvInfosSerializationHelper::WriteHashed, COMDAT
 
@@ -2340,10 +2340,10 @@ _eType$ = 12						; size = 4
 	mov	DWORD PTR _eType$[esp-4], eax
 	jmp	?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@PBVCvBaseInfo@@@Z ; CvInfosSerializationHelper::WriteHashed
 $LN2@WriteHashe@7:
-	lea	ecx, DWORD PTR _uiHash$219656[esp-4]
+	lea	ecx, DWORD PTR _uiHash$220133[esp-4]
 	push	ecx
 	mov	ecx, DWORD PTR _kStream$[esp]
-	mov	DWORD PTR _uiHash$219656[esp], 0
+	mov	DWORD PTR _uiHash$220133[esp], 0
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 	xor	al, al
 	ret	0
@@ -2355,7 +2355,7 @@ EXTRN	?GetPlayerColorInfo@CvGlobals@@QAEPAVCvPlayerColorInfo@@W4PlayerColorTypes
 ;	COMDAT ?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4PlayerColorTypes@@@Z
 _TEXT	SEGMENT
 _kStream$ = 8						; size = 4
-_uiHash$219694 = 12					; size = 4
+_uiHash$220176 = 12					; size = 4
 _eType$ = 12						; size = 4
 ?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4PlayerColorTypes@@@Z PROC ; CvInfosSerializationHelper::WriteHashed, COMDAT
 
@@ -2370,10 +2370,10 @@ _eType$ = 12						; size = 4
 	mov	DWORD PTR _eType$[esp-4], eax
 	jmp	?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@PBVCvBaseInfo@@@Z ; CvInfosSerializationHelper::WriteHashed
 $LN2@WriteHashe@8:
-	lea	ecx, DWORD PTR _uiHash$219694[esp-4]
+	lea	ecx, DWORD PTR _uiHash$220176[esp-4]
 	push	ecx
 	mov	ecx, DWORD PTR _kStream$[esp]
-	mov	DWORD PTR _uiHash$219694[esp], 0
+	mov	DWORD PTR _uiHash$220176[esp], 0
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 	xor	al, al
 	ret	0
@@ -2385,7 +2385,7 @@ EXTRN	?getMinorCivInfo@CvGlobals@@QAEPAVCvMinorCivInfo@@W4MinorCivTypes@@@Z:PROC
 ;	COMDAT ?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4MinorCivTypes@@@Z
 _TEXT	SEGMENT
 _kStream$ = 8						; size = 4
-_uiHash$219732 = 12					; size = 4
+_uiHash$220220 = 12					; size = 4
 _eType$ = 12						; size = 4
 ?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4MinorCivTypes@@@Z PROC ; CvInfosSerializationHelper::WriteHashed, COMDAT
 
@@ -2400,10 +2400,10 @@ _eType$ = 12						; size = 4
 	mov	DWORD PTR _eType$[esp-4], eax
 	jmp	?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@PBVCvBaseInfo@@@Z ; CvInfosSerializationHelper::WriteHashed
 $LN2@WriteHashe@9:
-	lea	ecx, DWORD PTR _uiHash$219732[esp-4]
+	lea	ecx, DWORD PTR _uiHash$220220[esp-4]
 	push	ecx
 	mov	ecx, DWORD PTR _kStream$[esp]
-	mov	DWORD PTR _uiHash$219732[esp], 0
+	mov	DWORD PTR _uiHash$220220[esp], 0
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 	xor	al, al
 	ret	0
@@ -2415,7 +2415,7 @@ EXTRN	?getSpecialistInfo@CvGlobals@@QAEPAVCvSpecialistInfo@@W4SpecialistTypes@@@
 ;	COMDAT ?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4SpecialistTypes@@@Z
 _TEXT	SEGMENT
 _kStream$ = 8						; size = 4
-_uiHash$219770 = 12					; size = 4
+_uiHash$220258 = 12					; size = 4
 _eType$ = 12						; size = 4
 ?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4SpecialistTypes@@@Z PROC ; CvInfosSerializationHelper::WriteHashed, COMDAT
 
@@ -2430,10 +2430,10 @@ _eType$ = 12						; size = 4
 	mov	DWORD PTR _eType$[esp-4], eax
 	jmp	?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@PBVCvBaseInfo@@@Z ; CvInfosSerializationHelper::WriteHashed
 $LN2@WriteHashe@10:
-	lea	ecx, DWORD PTR _uiHash$219770[esp-4]
+	lea	ecx, DWORD PTR _uiHash$220258[esp-4]
 	push	ecx
 	mov	ecx, DWORD PTR _kStream$[esp]
-	mov	DWORD PTR _uiHash$219770[esp], 0
+	mov	DWORD PTR _uiHash$220258[esp], 0
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 	xor	al, al
 	ret	0
@@ -2445,7 +2445,7 @@ EXTRN	?getEmphasisInfo@CvGlobals@@QAEPAVCvEmphasisEntry@@W4EmphasizeTypes@@@Z:PR
 ;	COMDAT ?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4EmphasizeTypes@@@Z
 _TEXT	SEGMENT
 _kStream$ = 8						; size = 4
-_uiHash$219808 = 12					; size = 4
+_uiHash$220296 = 12					; size = 4
 _eType$ = 12						; size = 4
 ?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4EmphasizeTypes@@@Z PROC ; CvInfosSerializationHelper::WriteHashed, COMDAT
 
@@ -2460,10 +2460,10 @@ _eType$ = 12						; size = 4
 	mov	DWORD PTR _eType$[esp-4], eax
 	jmp	?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@PBVCvBaseInfo@@@Z ; CvInfosSerializationHelper::WriteHashed
 $LN2@WriteHashe@11:
-	lea	ecx, DWORD PTR _uiHash$219808[esp-4]
+	lea	ecx, DWORD PTR _uiHash$220296[esp-4]
 	push	ecx
 	mov	ecx, DWORD PTR _kStream$[esp]
-	mov	DWORD PTR _uiHash$219808[esp], 0
+	mov	DWORD PTR _uiHash$220296[esp], 0
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 	xor	al, al
 	ret	0
@@ -2475,7 +2475,7 @@ EXTRN	?getProjectInfo@CvGlobals@@QAEPAVCvProjectEntry@@W4ProjectTypes@@@Z:PROC ;
 ;	COMDAT ?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4ProjectTypes@@@Z
 _TEXT	SEGMENT
 _kStream$ = 8						; size = 4
-_uiHash$219846 = 12					; size = 4
+_uiHash$220334 = 12					; size = 4
 _eType$ = 12						; size = 4
 ?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4ProjectTypes@@@Z PROC ; CvInfosSerializationHelper::WriteHashed, COMDAT
 
@@ -2490,10 +2490,10 @@ _eType$ = 12						; size = 4
 	mov	DWORD PTR _eType$[esp-4], eax
 	jmp	?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@PBVCvBaseInfo@@@Z ; CvInfosSerializationHelper::WriteHashed
 $LN2@WriteHashe@12:
-	lea	ecx, DWORD PTR _uiHash$219846[esp-4]
+	lea	ecx, DWORD PTR _uiHash$220334[esp-4]
 	push	ecx
 	mov	ecx, DWORD PTR _kStream$[esp]
-	mov	DWORD PTR _uiHash$219846[esp], 0
+	mov	DWORD PTR _uiHash$220334[esp], 0
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 	xor	al, al
 	ret	0
@@ -2505,7 +2505,7 @@ EXTRN	?getVoteInfo@CvGlobals@@QAEPAVCvVoteInfo@@W4VoteTypes@@@Z:PROC ; CvGlobals
 ;	COMDAT ?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4VoteTypes@@@Z
 _TEXT	SEGMENT
 _kStream$ = 8						; size = 4
-_uiHash$219884 = 12					; size = 4
+_uiHash$220372 = 12					; size = 4
 _eType$ = 12						; size = 4
 ?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4VoteTypes@@@Z PROC ; CvInfosSerializationHelper::WriteHashed, COMDAT
 
@@ -2520,10 +2520,10 @@ _eType$ = 12						; size = 4
 	mov	DWORD PTR _eType$[esp-4], eax
 	jmp	?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@PBVCvBaseInfo@@@Z ; CvInfosSerializationHelper::WriteHashed
 $LN2@WriteHashe@13:
-	lea	ecx, DWORD PTR _uiHash$219884[esp-4]
+	lea	ecx, DWORD PTR _uiHash$220372[esp-4]
 	push	ecx
 	mov	ecx, DWORD PTR _kStream$[esp]
-	mov	DWORD PTR _uiHash$219884[esp], 0
+	mov	DWORD PTR _uiHash$220372[esp], 0
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 	xor	al, al
 	ret	0
@@ -2535,7 +2535,7 @@ EXTRN	?getVoteSourceInfo@CvGlobals@@QAEPAVCvVoteSourceInfo@@W4VoteSourceTypes@@@
 ;	COMDAT ?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4VoteSourceTypes@@@Z
 _TEXT	SEGMENT
 _kStream$ = 8						; size = 4
-_uiHash$219922 = 12					; size = 4
+_uiHash$220410 = 12					; size = 4
 _eType$ = 12						; size = 4
 ?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4VoteSourceTypes@@@Z PROC ; CvInfosSerializationHelper::WriteHashed, COMDAT
 
@@ -2550,10 +2550,10 @@ _eType$ = 12						; size = 4
 	mov	DWORD PTR _eType$[esp-4], eax
 	jmp	?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@PBVCvBaseInfo@@@Z ; CvInfosSerializationHelper::WriteHashed
 $LN2@WriteHashe@14:
-	lea	ecx, DWORD PTR _uiHash$219922[esp-4]
+	lea	ecx, DWORD PTR _uiHash$220410[esp-4]
 	push	ecx
 	mov	ecx, DWORD PTR _kStream$[esp]
-	mov	DWORD PTR _uiHash$219922[esp], 0
+	mov	DWORD PTR _uiHash$220410[esp], 0
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 	xor	al, al
 	ret	0
@@ -2565,7 +2565,7 @@ EXTRN	?getSpecialUnitInfo@CvGlobals@@QAEPAVCvSpecialUnitInfo@@W4SpecialUnitTypes
 ;	COMDAT ?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4SpecialUnitTypes@@@Z
 _TEXT	SEGMENT
 _kStream$ = 8						; size = 4
-_uiHash$219960 = 12					; size = 4
+_uiHash$220448 = 12					; size = 4
 _eType$ = 12						; size = 4
 ?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4SpecialUnitTypes@@@Z PROC ; CvInfosSerializationHelper::WriteHashed, COMDAT
 
@@ -2580,10 +2580,10 @@ _eType$ = 12						; size = 4
 	mov	DWORD PTR _eType$[esp-4], eax
 	jmp	?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@PBVCvBaseInfo@@@Z ; CvInfosSerializationHelper::WriteHashed
 $LN2@WriteHashe@15:
-	lea	ecx, DWORD PTR _uiHash$219960[esp-4]
+	lea	ecx, DWORD PTR _uiHash$220448[esp-4]
 	push	ecx
 	mov	ecx, DWORD PTR _kStream$[esp]
-	mov	DWORD PTR _uiHash$219960[esp], 0
+	mov	DWORD PTR _uiHash$220448[esp], 0
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 	xor	al, al
 	ret	0
@@ -2595,7 +2595,7 @@ EXTRN	?getVictoryInfo@CvGlobals@@QAEPAVCvVictoryInfo@@W4VictoryTypes@@@Z:PROC ; 
 ;	COMDAT ?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4VictoryTypes@@@Z
 _TEXT	SEGMENT
 _kStream$ = 8						; size = 4
-_uiHash$219998 = 12					; size = 4
+_uiHash$220486 = 12					; size = 4
 _eType$ = 12						; size = 4
 ?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4VictoryTypes@@@Z PROC ; CvInfosSerializationHelper::WriteHashed, COMDAT
 
@@ -2610,10 +2610,10 @@ _eType$ = 12						; size = 4
 	mov	DWORD PTR _eType$[esp-4], eax
 	jmp	?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@PBVCvBaseInfo@@@Z ; CvInfosSerializationHelper::WriteHashed
 $LN2@WriteHashe@16:
-	lea	ecx, DWORD PTR _uiHash$219998[esp-4]
+	lea	ecx, DWORD PTR _uiHash$220486[esp-4]
 	push	ecx
 	mov	ecx, DWORD PTR _kStream$[esp]
-	mov	DWORD PTR _uiHash$219998[esp], 0
+	mov	DWORD PTR _uiHash$220486[esp], 0
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 	xor	al, al
 	ret	0
@@ -2625,7 +2625,7 @@ EXTRN	?getBuildingInfo@CvGlobals@@QAEPAVCvBuildingEntry@@W4BuildingTypes@@@Z:PRO
 ;	COMDAT ?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4BuildingTypes@@@Z
 _TEXT	SEGMENT
 _kStream$ = 8						; size = 4
-_uiHash$220036 = 12					; size = 4
+_uiHash$220524 = 12					; size = 4
 _eType$ = 12						; size = 4
 ?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4BuildingTypes@@@Z PROC ; CvInfosSerializationHelper::WriteHashed, COMDAT
 
@@ -2640,10 +2640,10 @@ _eType$ = 12						; size = 4
 	mov	DWORD PTR _eType$[esp-4], eax
 	jmp	?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@PBVCvBaseInfo@@@Z ; CvInfosSerializationHelper::WriteHashed
 $LN2@WriteHashe@17:
-	lea	ecx, DWORD PTR _uiHash$220036[esp-4]
+	lea	ecx, DWORD PTR _uiHash$220524[esp-4]
 	push	ecx
 	mov	ecx, DWORD PTR _kStream$[esp]
-	mov	DWORD PTR _uiHash$220036[esp], 0
+	mov	DWORD PTR _uiHash$220524[esp], 0
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 	xor	al, al
 	ret	0
@@ -2655,7 +2655,7 @@ EXTRN	?getPromotionInfo@CvGlobals@@QAEPAVCvPromotionEntry@@W4PromotionTypes@@@Z:
 ;	COMDAT ?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4PromotionTypes@@@Z
 _TEXT	SEGMENT
 _kStream$ = 8						; size = 4
-_uiHash$220074 = 12					; size = 4
+_uiHash$220562 = 12					; size = 4
 _eType$ = 12						; size = 4
 ?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4PromotionTypes@@@Z PROC ; CvInfosSerializationHelper::WriteHashed, COMDAT
 
@@ -2670,10 +2670,10 @@ _eType$ = 12						; size = 4
 	mov	DWORD PTR _eType$[esp-4], eax
 	jmp	?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@PBVCvBaseInfo@@@Z ; CvInfosSerializationHelper::WriteHashed
 $LN2@WriteHashe@18:
-	lea	ecx, DWORD PTR _uiHash$220074[esp-4]
+	lea	ecx, DWORD PTR _uiHash$220562[esp-4]
 	push	ecx
 	mov	ecx, DWORD PTR _kStream$[esp]
-	mov	DWORD PTR _uiHash$220074[esp], 0
+	mov	DWORD PTR _uiHash$220562[esp], 0
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 	xor	al, al
 	ret	0
@@ -2685,7 +2685,7 @@ EXTRN	?getUnitInfo@CvGlobals@@QAEPAVCvUnitEntry@@W4UnitTypes@@@Z:PROC ; CvGlobal
 ;	COMDAT ?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4UnitTypes@@@Z
 _TEXT	SEGMENT
 _kStream$ = 8						; size = 4
-_uiHash$220112 = 12					; size = 4
+_uiHash$220600 = 12					; size = 4
 _eType$ = 12						; size = 4
 ?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4UnitTypes@@@Z PROC ; CvInfosSerializationHelper::WriteHashed, COMDAT
 
@@ -2700,10 +2700,10 @@ _eType$ = 12						; size = 4
 	mov	DWORD PTR _eType$[esp-4], eax
 	jmp	?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@PBVCvBaseInfo@@@Z ; CvInfosSerializationHelper::WriteHashed
 $LN2@WriteHashe@19:
-	lea	ecx, DWORD PTR _uiHash$220112[esp-4]
+	lea	ecx, DWORD PTR _uiHash$220600[esp-4]
 	push	ecx
 	mov	ecx, DWORD PTR _kStream$[esp]
-	mov	DWORD PTR _uiHash$220112[esp], 0
+	mov	DWORD PTR _uiHash$220600[esp], 0
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 	xor	al, al
 	ret	0
@@ -2715,7 +2715,7 @@ EXTRN	?getFeatureInfo@CvGlobals@@QAEPAVCvFeatureInfo@@W4FeatureTypes@@@Z:PROC ; 
 ;	COMDAT ?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4FeatureTypes@@@Z
 _TEXT	SEGMENT
 _kStream$ = 8						; size = 4
-_uiHash$220150 = 12					; size = 4
+_uiHash$220638 = 12					; size = 4
 _eType$ = 12						; size = 4
 ?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4FeatureTypes@@@Z PROC ; CvInfosSerializationHelper::WriteHashed, COMDAT
 
@@ -2730,10 +2730,10 @@ _eType$ = 12						; size = 4
 	mov	DWORD PTR _eType$[esp-4], eax
 	jmp	?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@PBVCvBaseInfo@@@Z ; CvInfosSerializationHelper::WriteHashed
 $LN2@WriteHashe@20:
-	lea	ecx, DWORD PTR _uiHash$220150[esp-4]
+	lea	ecx, DWORD PTR _uiHash$220638[esp-4]
 	push	ecx
 	mov	ecx, DWORD PTR _kStream$[esp]
-	mov	DWORD PTR _uiHash$220150[esp], 0
+	mov	DWORD PTR _uiHash$220638[esp], 0
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 	xor	al, al
 	ret	0
@@ -2745,7 +2745,7 @@ EXTRN	?getTerrainInfo@CvGlobals@@QAEPAVCvTerrainInfo@@W4TerrainTypes@@@Z:PROC ; 
 ;	COMDAT ?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4TerrainTypes@@@Z
 _TEXT	SEGMENT
 _kStream$ = 8						; size = 4
-_uiHash$220199 = 12					; size = 4
+_uiHash$220676 = 12					; size = 4
 _eType$ = 12						; size = 4
 ?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4TerrainTypes@@@Z PROC ; CvInfosSerializationHelper::WriteHashed, COMDAT
 
@@ -2760,10 +2760,10 @@ _eType$ = 12						; size = 4
 	mov	DWORD PTR _eType$[esp-4], eax
 	jmp	?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@PBVCvBaseInfo@@@Z ; CvInfosSerializationHelper::WriteHashed
 $LN2@WriteHashe@21:
-	lea	ecx, DWORD PTR _uiHash$220199[esp-4]
+	lea	ecx, DWORD PTR _uiHash$220676[esp-4]
 	push	ecx
 	mov	ecx, DWORD PTR _kStream$[esp]
-	mov	DWORD PTR _uiHash$220199[esp], 0
+	mov	DWORD PTR _uiHash$220676[esp], 0
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 	xor	al, al
 	ret	0
@@ -2775,7 +2775,7 @@ EXTRN	?getAICityStrategyInfo@CvGlobals@@QAEPAVCvAICityStrategyEntry@@W4AICityStr
 ;	COMDAT ?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4AICityStrategyTypes@@@Z
 _TEXT	SEGMENT
 _kStream$ = 8						; size = 4
-_uiHash$220237 = 12					; size = 4
+_uiHash$220714 = 12					; size = 4
 _eType$ = 12						; size = 4
 ?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4AICityStrategyTypes@@@Z PROC ; CvInfosSerializationHelper::WriteHashed, COMDAT
 
@@ -2790,10 +2790,10 @@ _eType$ = 12						; size = 4
 	mov	DWORD PTR _eType$[esp-4], eax
 	jmp	?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@PBVCvBaseInfo@@@Z ; CvInfosSerializationHelper::WriteHashed
 $LN2@WriteHashe@22:
-	lea	ecx, DWORD PTR _uiHash$220237[esp-4]
+	lea	ecx, DWORD PTR _uiHash$220714[esp-4]
 	push	ecx
 	mov	ecx, DWORD PTR _kStream$[esp]
-	mov	DWORD PTR _uiHash$220237[esp], 0
+	mov	DWORD PTR _uiHash$220714[esp], 0
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 	xor	al, al
 	ret	0
@@ -2805,7 +2805,7 @@ EXTRN	?getSmallAwardInfo@CvGlobals@@QAEPAVCvSmallAwardInfo@@W4SmallAwardTypes@@@
 ;	COMDAT ?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4SmallAwardTypes@@@Z
 _TEXT	SEGMENT
 _kStream$ = 8						; size = 4
-_uiHash$220275 = 12					; size = 4
+_uiHash$220752 = 12					; size = 4
 _eType$ = 12						; size = 4
 ?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4SmallAwardTypes@@@Z PROC ; CvInfosSerializationHelper::WriteHashed, COMDAT
 
@@ -2820,10 +2820,10 @@ _eType$ = 12						; size = 4
 	mov	DWORD PTR _eType$[esp-4], eax
 	jmp	?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@PBVCvBaseInfo@@@Z ; CvInfosSerializationHelper::WriteHashed
 $LN2@WriteHashe@23:
-	lea	ecx, DWORD PTR _uiHash$220275[esp-4]
+	lea	ecx, DWORD PTR _uiHash$220752[esp-4]
 	push	ecx
 	mov	ecx, DWORD PTR _kStream$[esp]
-	mov	DWORD PTR _uiHash$220275[esp], 0
+	mov	DWORD PTR _uiHash$220752[esp], 0
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 	xor	al, al
 	ret	0
@@ -2835,7 +2835,7 @@ EXTRN	?getRouteInfo@CvGlobals@@QAEPAVCvRouteInfo@@W4RouteTypes@@@Z:PROC ; CvGlob
 ;	COMDAT ?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4RouteTypes@@@Z
 _TEXT	SEGMENT
 _kStream$ = 8						; size = 4
-_uiHash$220313 = 12					; size = 4
+_uiHash$220790 = 12					; size = 4
 _eType$ = 12						; size = 4
 ?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4RouteTypes@@@Z PROC ; CvInfosSerializationHelper::WriteHashed, COMDAT
 
@@ -2850,10 +2850,10 @@ _eType$ = 12						; size = 4
 	mov	DWORD PTR _eType$[esp-4], eax
 	jmp	?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@PBVCvBaseInfo@@@Z ; CvInfosSerializationHelper::WriteHashed
 $LN2@WriteHashe@24:
-	lea	ecx, DWORD PTR _uiHash$220313[esp-4]
+	lea	ecx, DWORD PTR _uiHash$220790[esp-4]
 	push	ecx
 	mov	ecx, DWORD PTR _kStream$[esp]
-	mov	DWORD PTR _uiHash$220313[esp], 0
+	mov	DWORD PTR _uiHash$220790[esp], 0
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 	xor	al, al
 	ret	0
@@ -2865,7 +2865,7 @@ EXTRN	?getBuildInfo@CvGlobals@@QAEPAVCvBuildInfo@@W4BuildTypes@@@Z:PROC ; CvGlob
 ;	COMDAT ?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4BuildTypes@@@Z
 _TEXT	SEGMENT
 _kStream$ = 8						; size = 4
-_uiHash$220351 = 12					; size = 4
+_uiHash$220828 = 12					; size = 4
 _eType$ = 12						; size = 4
 ?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4BuildTypes@@@Z PROC ; CvInfosSerializationHelper::WriteHashed, COMDAT
 
@@ -2880,10 +2880,10 @@ _eType$ = 12						; size = 4
 	mov	DWORD PTR _eType$[esp-4], eax
 	jmp	?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@PBVCvBaseInfo@@@Z ; CvInfosSerializationHelper::WriteHashed
 $LN2@WriteHashe@25:
-	lea	ecx, DWORD PTR _uiHash$220351[esp-4]
+	lea	ecx, DWORD PTR _uiHash$220828[esp-4]
 	push	ecx
 	mov	ecx, DWORD PTR _kStream$[esp]
-	mov	DWORD PTR _uiHash$220351[esp], 0
+	mov	DWORD PTR _uiHash$220828[esp], 0
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 	xor	al, al
 	ret	0
@@ -2895,7 +2895,7 @@ EXTRN	?getProcessInfo@CvGlobals@@QAEPAVCvProcessInfo@@W4ProcessTypes@@@Z:PROC ; 
 ;	COMDAT ?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4ProcessTypes@@@Z
 _TEXT	SEGMENT
 _kStream$ = 8						; size = 4
-_uiHash$220389 = 12					; size = 4
+_uiHash$220866 = 12					; size = 4
 _eType$ = 12						; size = 4
 ?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4ProcessTypes@@@Z PROC ; CvInfosSerializationHelper::WriteHashed, COMDAT
 
@@ -2910,10 +2910,10 @@ _eType$ = 12						; size = 4
 	mov	DWORD PTR _eType$[esp-4], eax
 	jmp	?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@PBVCvBaseInfo@@@Z ; CvInfosSerializationHelper::WriteHashed
 $LN2@WriteHashe@26:
-	lea	ecx, DWORD PTR _uiHash$220389[esp-4]
+	lea	ecx, DWORD PTR _uiHash$220866[esp-4]
 	push	ecx
 	mov	ecx, DWORD PTR _kStream$[esp]
-	mov	DWORD PTR _uiHash$220389[esp], 0
+	mov	DWORD PTR _uiHash$220866[esp], 0
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 	xor	al, al
 	ret	0
@@ -2925,7 +2925,7 @@ EXTRN	?getImprovementInfo@CvGlobals@@QAEPAVCvImprovementEntry@@W4ImprovementType
 ;	COMDAT ?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4ImprovementTypes@@@Z
 _TEXT	SEGMENT
 _kStream$ = 8						; size = 4
-_uiHash$220427 = 12					; size = 4
+_uiHash$220904 = 12					; size = 4
 _eType$ = 12						; size = 4
 ?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4ImprovementTypes@@@Z PROC ; CvInfosSerializationHelper::WriteHashed, COMDAT
 
@@ -2940,10 +2940,10 @@ _eType$ = 12						; size = 4
 	mov	DWORD PTR _eType$[esp-4], eax
 	jmp	?WriteHashed@CvInfosSerializationHelper@@YA_NAAVFDataStream@@PBVCvBaseInfo@@@Z ; CvInfosSerializationHelper::WriteHashed
 $LN2@WriteHashe@27:
-	lea	ecx, DWORD PTR _uiHash$220427[esp-4]
+	lea	ecx, DWORD PTR _uiHash$220904[esp-4]
 	push	ecx
 	mov	ecx, DWORD PTR _kStream$[esp]
-	mov	DWORD PTR _uiHash$220427[esp], 0
+	mov	DWORD PTR _uiHash$220904[esp], 0
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 	xor	al, al
 	ret	0
@@ -2967,9 +2967,9 @@ __ehfuncinfo$?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@PBVCvBaseInf
 xdata$x	ENDS
 ;	COMDAT ?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@PBVCvBaseInfo@@@Z
 _TEXT	SEGMENT
-_sTemp$218582 = -288					; size = 4
-_iLen$218594 = -284					; size = 4
-_FStringFixedBuffer_sTemp$218583 = -280			; size = 268
+_sTemp$219059 = -288					; size = 4
+_iLen$219071 = -284					; size = 4
+_FStringFixedBuffer_sTemp$219060 = -280			; size = 268
 __$EHRec$ = -12						; size = 12
 _kStream$ = 8						; size = 4
 _pkInfo$ = 12						; size = 4
@@ -2996,10 +2996,10 @@ _pkInfo$ = 12						; size = 4
 
 	call	?FStringA_GetStringInitData@@YAPAUFStringAData@FStringA@@XZ ; FStringA_GetStringInitData
 	add	eax, 12					; 0000000cH
-	mov	DWORD PTR _sTemp$218582[esp+292], eax
-	lea	eax, DWORD PTR _sTemp$218582[esp+292]
+	mov	DWORD PTR _sTemp$219059[esp+292], eax
+	lea	eax, DWORD PTR _sTemp$219059[esp+292]
 	push	eax
-	lea	ecx, DWORD PTR _FStringFixedBuffer_sTemp$218583[esp+296]
+	lea	ecx, DWORD PTR _FStringFixedBuffer_sTemp$219060[esp+296]
 	mov	DWORD PTR __$EHRec$[esp+304], 0
 	call	??0?$FStringAFixedBuffer@$0BAA@@FStringA@@QAE@AAV1@@Z ; FStringA::FStringAFixedBuffer<256>::FStringAFixedBuffer<256>
 
@@ -3024,19 +3024,19 @@ $LN19@Write:
 	push	0
 	push	eax
 	push	ecx
-	lea	ecx, DWORD PTR _sTemp$218582[esp+304]
+	lea	ecx, DWORD PTR _sTemp$219059[esp+304]
 	call	?Copy@FStringA@@QAEXHPBDH@Z		; FStringA::Copy
 
 ; 272  : 		kStream << sTemp;
 
-	lea	ecx, DWORD PTR _sTemp$218582[esp+292]
+	lea	ecx, DWORD PTR _sTemp$219059[esp+292]
 	push	ecx
 	mov	ecx, DWORD PTR _kStream$[esp+292]
 	call	?Write@FDataStream@@IAEXABVFStringA@@@Z	; FDataStream::Write
 
 ; 273  : 		return true;
 
-	mov	esi, DWORD PTR _sTemp$218582[esp+292]
+	mov	esi, DWORD PTR _sTemp$219059[esp+292]
 	add	esi, -12				; fffffff4H
 	mov	DWORD PTR __$EHRec$[esp+300], -1
 	je	SHORT $LN28@Write
@@ -3049,7 +3049,7 @@ $LN19@Write:
 	call	??_V@YAXPAX@Z				; operator delete[]
 	add	esp, 4
 $LN28@Write:
-	mov	DWORD PTR _sTemp$218582[esp+292], 0
+	mov	DWORD PTR _sTemp$219059[esp+292], 0
 	call	?FStringA_GetStringInitData@@YAPAUFStringAData@FStringA@@XZ ; FStringA_GetStringInitData
 	mov	al, 1
 	pop	esi
@@ -3073,9 +3073,9 @@ $LN2@Write:
 ; 279  : 		kStream << iLen;
 
 	mov	ecx, DWORD PTR _kStream$[esp+288]
-	lea	edx, DWORD PTR _iLen$218594[esp+292]
+	lea	edx, DWORD PTR _iLen$219071[esp+292]
 	push	edx
-	mov	DWORD PTR _iLen$218594[esp+296], 0
+	mov	DWORD PTR _iLen$219071[esp+296], 0
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
 ; 280  : 	}
@@ -3093,7 +3093,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@PBVCvBaseInfo@@@Z$0:
-	lea	ecx, DWORD PTR _sTemp$218582[ebp]
+	lea	ecx, DWORD PTR _sTemp$219059[ebp]
 	jmp	??1FStringA@@QAE@XZ			; FStringA::~FStringA
 __ehhandler$?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@PBVCvBaseInfo@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@PBVCvBaseInfo@@@Z
@@ -3105,7 +3105,7 @@ PUBLIC	?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4ResourceTypes@@@
 ;	COMDAT ?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4ResourceTypes@@@Z
 _TEXT	SEGMENT
 _kStream$ = 8						; size = 4
-_iLen$220661 = 12					; size = 4
+_iLen$221138 = 12					; size = 4
 _eType$ = 12						; size = 4
 ?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4ResourceTypes@@@Z PROC ; CvInfosSerializationHelper::Write, COMDAT
 
@@ -3124,10 +3124,10 @@ _eType$ = 12						; size = 4
 	add	esp, 8
 	ret	0
 $LN2@Write@2:
-	lea	ecx, DWORD PTR _iLen$220661[esp-4]
+	lea	ecx, DWORD PTR _iLen$221138[esp-4]
 	push	ecx
 	mov	ecx, DWORD PTR _kStream$[esp]
-	mov	DWORD PTR _iLen$220661[esp], 0
+	mov	DWORD PTR _iLen$221138[esp], 0
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 	xor	al, al
 	ret	0
@@ -3138,7 +3138,7 @@ PUBLIC	?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4PolicyTypes@@@Z 
 ;	COMDAT ?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4PolicyTypes@@@Z
 _TEXT	SEGMENT
 _kStream$ = 8						; size = 4
-_iLen$220763 = 12					; size = 4
+_iLen$221257 = 12					; size = 4
 _eType$ = 12						; size = 4
 ?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4PolicyTypes@@@Z PROC ; CvInfosSerializationHelper::Write, COMDAT
 
@@ -3157,10 +3157,10 @@ _eType$ = 12						; size = 4
 	add	esp, 8
 	ret	0
 $LN2@Write@3:
-	lea	ecx, DWORD PTR _iLen$220763[esp-4]
+	lea	ecx, DWORD PTR _iLen$221257[esp-4]
 	push	ecx
 	mov	ecx, DWORD PTR _kStream$[esp]
-	mov	DWORD PTR _iLen$220763[esp], 0
+	mov	DWORD PTR _iLen$221257[esp], 0
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 	xor	al, al
 	ret	0
@@ -3171,7 +3171,7 @@ PUBLIC	?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4PolicyBranchType
 ;	COMDAT ?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4PolicyBranchTypes@@@Z
 _TEXT	SEGMENT
 _kStream$ = 8						; size = 4
-_iLen$220899 = 12					; size = 4
+_iLen$221410 = 12					; size = 4
 _eType$ = 12						; size = 4
 ?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4PolicyBranchTypes@@@Z PROC ; CvInfosSerializationHelper::Write, COMDAT
 
@@ -3190,10 +3190,10 @@ _eType$ = 12						; size = 4
 	add	esp, 8
 	ret	0
 $LN2@Write@4:
-	lea	ecx, DWORD PTR _iLen$220899[esp-4]
+	lea	ecx, DWORD PTR _iLen$221410[esp-4]
 	push	ecx
 	mov	ecx, DWORD PTR _kStream$[esp]
-	mov	DWORD PTR _iLen$220899[esp], 0
+	mov	DWORD PTR _iLen$221410[esp], 0
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 	xor	al, al
 	ret	0
@@ -3204,7 +3204,7 @@ PUBLIC	?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4TechTypes@@@Z ; 
 ;	COMDAT ?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4TechTypes@@@Z
 _TEXT	SEGMENT
 _kStream$ = 8						; size = 4
-_iLen$221035 = 12					; size = 4
+_iLen$221546 = 12					; size = 4
 _eType$ = 12						; size = 4
 ?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4TechTypes@@@Z PROC ; CvInfosSerializationHelper::Write, COMDAT
 
@@ -3223,10 +3223,10 @@ _eType$ = 12						; size = 4
 	add	esp, 8
 	ret	0
 $LN2@Write@5:
-	lea	ecx, DWORD PTR _iLen$221035[esp-4]
+	lea	ecx, DWORD PTR _iLen$221546[esp-4]
 	push	ecx
 	mov	ecx, DWORD PTR _kStream$[esp]
-	mov	DWORD PTR _iLen$221035[esp], 0
+	mov	DWORD PTR _iLen$221546[esp], 0
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 	xor	al, al
 	ret	0
@@ -3237,7 +3237,7 @@ PUBLIC	?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4BeliefTypes@@@Z 
 ;	COMDAT ?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4BeliefTypes@@@Z
 _TEXT	SEGMENT
 _kStream$ = 8						; size = 4
-_iLen$221171 = 12					; size = 4
+_iLen$221682 = 12					; size = 4
 _eType$ = 12						; size = 4
 ?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4BeliefTypes@@@Z PROC ; CvInfosSerializationHelper::Write, COMDAT
 
@@ -3256,10 +3256,10 @@ _eType$ = 12						; size = 4
 	add	esp, 8
 	ret	0
 $LN2@Write@6:
-	lea	ecx, DWORD PTR _iLen$221171[esp-4]
+	lea	ecx, DWORD PTR _iLen$221682[esp-4]
 	push	ecx
 	mov	ecx, DWORD PTR _kStream$[esp]
-	mov	DWORD PTR _iLen$221171[esp], 0
+	mov	DWORD PTR _iLen$221682[esp], 0
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 	xor	al, al
 	ret	0
@@ -3270,7 +3270,7 @@ PUBLIC	?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4ReligionTypes@@@
 ;	COMDAT ?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4ReligionTypes@@@Z
 _TEXT	SEGMENT
 _kStream$ = 8						; size = 4
-_iLen$221341 = 12					; size = 4
+_iLen$221818 = 12					; size = 4
 _eType$ = 12						; size = 4
 ?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4ReligionTypes@@@Z PROC ; CvInfosSerializationHelper::Write, COMDAT
 
@@ -3289,10 +3289,10 @@ _eType$ = 12						; size = 4
 	add	esp, 8
 	ret	0
 $LN2@Write@7:
-	lea	ecx, DWORD PTR _iLen$221341[esp-4]
+	lea	ecx, DWORD PTR _iLen$221818[esp-4]
 	push	ecx
 	mov	ecx, DWORD PTR _kStream$[esp]
-	mov	DWORD PTR _iLen$221341[esp], 0
+	mov	DWORD PTR _iLen$221818[esp], 0
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 	xor	al, al
 	ret	0
@@ -3303,7 +3303,7 @@ PUBLIC	?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4PlayerColorTypes
 ;	COMDAT ?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4PlayerColorTypes@@@Z
 _TEXT	SEGMENT
 _kStream$ = 8						; size = 4
-_iLen$221477 = 12					; size = 4
+_iLen$221954 = 12					; size = 4
 _eType$ = 12						; size = 4
 ?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4PlayerColorTypes@@@Z PROC ; CvInfosSerializationHelper::Write, COMDAT
 
@@ -3322,10 +3322,10 @@ _eType$ = 12						; size = 4
 	add	esp, 8
 	ret	0
 $LN2@Write@8:
-	lea	ecx, DWORD PTR _iLen$221477[esp-4]
+	lea	ecx, DWORD PTR _iLen$221954[esp-4]
 	push	ecx
 	mov	ecx, DWORD PTR _kStream$[esp]
-	mov	DWORD PTR _iLen$221477[esp], 0
+	mov	DWORD PTR _iLen$221954[esp], 0
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 	xor	al, al
 	ret	0
@@ -3336,7 +3336,7 @@ PUBLIC	?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4MinorCivTypes@@@
 ;	COMDAT ?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4MinorCivTypes@@@Z
 _TEXT	SEGMENT
 _kStream$ = 8						; size = 4
-_iLen$221613 = 12					; size = 4
+_iLen$222090 = 12					; size = 4
 _eType$ = 12						; size = 4
 ?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4MinorCivTypes@@@Z PROC ; CvInfosSerializationHelper::Write, COMDAT
 
@@ -3355,10 +3355,10 @@ _eType$ = 12						; size = 4
 	add	esp, 8
 	ret	0
 $LN2@Write@9:
-	lea	ecx, DWORD PTR _iLen$221613[esp-4]
+	lea	ecx, DWORD PTR _iLen$222090[esp-4]
 	push	ecx
 	mov	ecx, DWORD PTR _kStream$[esp]
-	mov	DWORD PTR _iLen$221613[esp], 0
+	mov	DWORD PTR _iLen$222090[esp], 0
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 	xor	al, al
 	ret	0
@@ -3369,7 +3369,7 @@ PUBLIC	?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4SpecialistTypes@
 ;	COMDAT ?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4SpecialistTypes@@@Z
 _TEXT	SEGMENT
 _kStream$ = 8						; size = 4
-_iLen$221733 = 12					; size = 4
+_iLen$222210 = 12					; size = 4
 _eType$ = 12						; size = 4
 ?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4SpecialistTypes@@@Z PROC ; CvInfosSerializationHelper::Write, COMDAT
 
@@ -3388,10 +3388,10 @@ _eType$ = 12						; size = 4
 	add	esp, 8
 	ret	0
 $LN2@Write@10:
-	lea	ecx, DWORD PTR _iLen$221733[esp-4]
+	lea	ecx, DWORD PTR _iLen$222210[esp-4]
 	push	ecx
 	mov	ecx, DWORD PTR _kStream$[esp]
-	mov	DWORD PTR _iLen$221733[esp], 0
+	mov	DWORD PTR _iLen$222210[esp], 0
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 	xor	al, al
 	ret	0
@@ -3402,7 +3402,7 @@ PUBLIC	?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4EmphasizeTypes@@
 ;	COMDAT ?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4EmphasizeTypes@@@Z
 _TEXT	SEGMENT
 _kStream$ = 8						; size = 4
-_iLen$221851 = 12					; size = 4
+_iLen$222362 = 12					; size = 4
 _eType$ = 12						; size = 4
 ?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4EmphasizeTypes@@@Z PROC ; CvInfosSerializationHelper::Write, COMDAT
 
@@ -3421,10 +3421,10 @@ _eType$ = 12						; size = 4
 	add	esp, 8
 	ret	0
 $LN2@Write@11:
-	lea	ecx, DWORD PTR _iLen$221851[esp-4]
+	lea	ecx, DWORD PTR _iLen$222362[esp-4]
 	push	ecx
 	mov	ecx, DWORD PTR _kStream$[esp]
-	mov	DWORD PTR _iLen$221851[esp], 0
+	mov	DWORD PTR _iLen$222362[esp], 0
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 	xor	al, al
 	ret	0
@@ -3435,7 +3435,7 @@ PUBLIC	?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4ProjectTypes@@@Z
 ;	COMDAT ?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4ProjectTypes@@@Z
 _TEXT	SEGMENT
 _kStream$ = 8						; size = 4
-_iLen$221987 = 12					; size = 4
+_iLen$222498 = 12					; size = 4
 _eType$ = 12						; size = 4
 ?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4ProjectTypes@@@Z PROC ; CvInfosSerializationHelper::Write, COMDAT
 
@@ -3454,10 +3454,10 @@ _eType$ = 12						; size = 4
 	add	esp, 8
 	ret	0
 $LN2@Write@12:
-	lea	ecx, DWORD PTR _iLen$221987[esp-4]
+	lea	ecx, DWORD PTR _iLen$222498[esp-4]
 	push	ecx
 	mov	ecx, DWORD PTR _kStream$[esp]
-	mov	DWORD PTR _iLen$221987[esp], 0
+	mov	DWORD PTR _iLen$222498[esp], 0
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 	xor	al, al
 	ret	0
@@ -3468,7 +3468,7 @@ PUBLIC	?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4VoteTypes@@@Z ; 
 ;	COMDAT ?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4VoteTypes@@@Z
 _TEXT	SEGMENT
 _kStream$ = 8						; size = 4
-_iLen$222123 = 12					; size = 4
+_iLen$222634 = 12					; size = 4
 _eType$ = 12						; size = 4
 ?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4VoteTypes@@@Z PROC ; CvInfosSerializationHelper::Write, COMDAT
 
@@ -3487,10 +3487,10 @@ _eType$ = 12						; size = 4
 	add	esp, 8
 	ret	0
 $LN2@Write@13:
-	lea	ecx, DWORD PTR _iLen$222123[esp-4]
+	lea	ecx, DWORD PTR _iLen$222634[esp-4]
 	push	ecx
 	mov	ecx, DWORD PTR _kStream$[esp]
-	mov	DWORD PTR _iLen$222123[esp], 0
+	mov	DWORD PTR _iLen$222634[esp], 0
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 	xor	al, al
 	ret	0
@@ -3501,7 +3501,7 @@ PUBLIC	?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4VoteSourceTypes@
 ;	COMDAT ?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4VoteSourceTypes@@@Z
 _TEXT	SEGMENT
 _kStream$ = 8						; size = 4
-_iLen$222275 = 12					; size = 4
+_iLen$222770 = 12					; size = 4
 _eType$ = 12						; size = 4
 ?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4VoteSourceTypes@@@Z PROC ; CvInfosSerializationHelper::Write, COMDAT
 
@@ -3520,10 +3520,10 @@ _eType$ = 12						; size = 4
 	add	esp, 8
 	ret	0
 $LN2@Write@14:
-	lea	ecx, DWORD PTR _iLen$222275[esp-4]
+	lea	ecx, DWORD PTR _iLen$222770[esp-4]
 	push	ecx
 	mov	ecx, DWORD PTR _kStream$[esp]
-	mov	DWORD PTR _iLen$222275[esp], 0
+	mov	DWORD PTR _iLen$222770[esp], 0
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 	xor	al, al
 	ret	0
@@ -3534,7 +3534,7 @@ PUBLIC	?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4SpecialUnitTypes
 ;	COMDAT ?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4SpecialUnitTypes@@@Z
 _TEXT	SEGMENT
 _kStream$ = 8						; size = 4
-_iLen$222429 = 12					; size = 4
+_iLen$222906 = 12					; size = 4
 _eType$ = 12						; size = 4
 ?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4SpecialUnitTypes@@@Z PROC ; CvInfosSerializationHelper::Write, COMDAT
 
@@ -3553,10 +3553,10 @@ _eType$ = 12						; size = 4
 	add	esp, 8
 	ret	0
 $LN2@Write@15:
-	lea	ecx, DWORD PTR _iLen$222429[esp-4]
+	lea	ecx, DWORD PTR _iLen$222906[esp-4]
 	push	ecx
 	mov	ecx, DWORD PTR _kStream$[esp]
-	mov	DWORD PTR _iLen$222429[esp], 0
+	mov	DWORD PTR _iLen$222906[esp], 0
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 	xor	al, al
 	ret	0
@@ -3567,7 +3567,7 @@ PUBLIC	?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4VictoryTypes@@@Z
 ;	COMDAT ?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4VictoryTypes@@@Z
 _TEXT	SEGMENT
 _kStream$ = 8						; size = 4
-_iLen$222565 = 12					; size = 4
+_iLen$223042 = 12					; size = 4
 _eType$ = 12						; size = 4
 ?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4VictoryTypes@@@Z PROC ; CvInfosSerializationHelper::Write, COMDAT
 
@@ -3586,10 +3586,10 @@ _eType$ = 12						; size = 4
 	add	esp, 8
 	ret	0
 $LN2@Write@16:
-	lea	ecx, DWORD PTR _iLen$222565[esp-4]
+	lea	ecx, DWORD PTR _iLen$223042[esp-4]
 	push	ecx
 	mov	ecx, DWORD PTR _kStream$[esp]
-	mov	DWORD PTR _iLen$222565[esp], 0
+	mov	DWORD PTR _iLen$223042[esp], 0
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 	xor	al, al
 	ret	0
@@ -3600,7 +3600,7 @@ PUBLIC	?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4BuildingTypes@@@
 ;	COMDAT ?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4BuildingTypes@@@Z
 _TEXT	SEGMENT
 _kStream$ = 8						; size = 4
-_iLen$222701 = 12					; size = 4
+_iLen$223178 = 12					; size = 4
 _eType$ = 12						; size = 4
 ?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4BuildingTypes@@@Z PROC ; CvInfosSerializationHelper::Write, COMDAT
 
@@ -3619,10 +3619,10 @@ _eType$ = 12						; size = 4
 	add	esp, 8
 	ret	0
 $LN2@Write@17:
-	lea	ecx, DWORD PTR _iLen$222701[esp-4]
+	lea	ecx, DWORD PTR _iLen$223178[esp-4]
 	push	ecx
 	mov	ecx, DWORD PTR _kStream$[esp]
-	mov	DWORD PTR _iLen$222701[esp], 0
+	mov	DWORD PTR _iLen$223178[esp], 0
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 	xor	al, al
 	ret	0
@@ -3633,7 +3633,7 @@ PUBLIC	?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4PromotionTypes@@
 ;	COMDAT ?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4PromotionTypes@@@Z
 _TEXT	SEGMENT
 _kStream$ = 8						; size = 4
-_iLen$222803 = 12					; size = 4
+_iLen$223296 = 12					; size = 4
 _eType$ = 12						; size = 4
 ?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4PromotionTypes@@@Z PROC ; CvInfosSerializationHelper::Write, COMDAT
 
@@ -3652,10 +3652,10 @@ _eType$ = 12						; size = 4
 	add	esp, 8
 	ret	0
 $LN2@Write@18:
-	lea	ecx, DWORD PTR _iLen$222803[esp-4]
+	lea	ecx, DWORD PTR _iLen$223296[esp-4]
 	push	ecx
 	mov	ecx, DWORD PTR _kStream$[esp]
-	mov	DWORD PTR _iLen$222803[esp], 0
+	mov	DWORD PTR _iLen$223296[esp], 0
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 	xor	al, al
 	ret	0
@@ -3666,7 +3666,7 @@ PUBLIC	?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4UnitTypes@@@Z ; 
 ;	COMDAT ?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4UnitTypes@@@Z
 _TEXT	SEGMENT
 _kStream$ = 8						; size = 4
-_iLen$222939 = 12					; size = 4
+_iLen$223450 = 12					; size = 4
 _eType$ = 12						; size = 4
 ?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4UnitTypes@@@Z PROC ; CvInfosSerializationHelper::Write, COMDAT
 
@@ -3685,10 +3685,10 @@ _eType$ = 12						; size = 4
 	add	esp, 8
 	ret	0
 $LN2@Write@19:
-	lea	ecx, DWORD PTR _iLen$222939[esp-4]
+	lea	ecx, DWORD PTR _iLen$223450[esp-4]
 	push	ecx
 	mov	ecx, DWORD PTR _kStream$[esp]
-	mov	DWORD PTR _iLen$222939[esp], 0
+	mov	DWORD PTR _iLen$223450[esp], 0
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 	xor	al, al
 	ret	0
@@ -3699,7 +3699,7 @@ PUBLIC	?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4FeatureTypes@@@Z
 ;	COMDAT ?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4FeatureTypes@@@Z
 _TEXT	SEGMENT
 _kStream$ = 8						; size = 4
-_iLen$223075 = 12					; size = 4
+_iLen$223586 = 12					; size = 4
 _eType$ = 12						; size = 4
 ?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4FeatureTypes@@@Z PROC ; CvInfosSerializationHelper::Write, COMDAT
 
@@ -3718,10 +3718,10 @@ _eType$ = 12						; size = 4
 	add	esp, 8
 	ret	0
 $LN2@Write@20:
-	lea	ecx, DWORD PTR _iLen$223075[esp-4]
+	lea	ecx, DWORD PTR _iLen$223586[esp-4]
 	push	ecx
 	mov	ecx, DWORD PTR _kStream$[esp]
-	mov	DWORD PTR _iLen$223075[esp], 0
+	mov	DWORD PTR _iLen$223586[esp], 0
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 	xor	al, al
 	ret	0
@@ -3732,7 +3732,7 @@ PUBLIC	?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4TerrainTypes@@@Z
 ;	COMDAT ?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4TerrainTypes@@@Z
 _TEXT	SEGMENT
 _kStream$ = 8						; size = 4
-_iLen$223211 = 12					; size = 4
+_iLen$223722 = 12					; size = 4
 _eType$ = 12						; size = 4
 ?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4TerrainTypes@@@Z PROC ; CvInfosSerializationHelper::Write, COMDAT
 
@@ -3751,10 +3751,10 @@ _eType$ = 12						; size = 4
 	add	esp, 8
 	ret	0
 $LN2@Write@21:
-	lea	ecx, DWORD PTR _iLen$223211[esp-4]
+	lea	ecx, DWORD PTR _iLen$223722[esp-4]
 	push	ecx
 	mov	ecx, DWORD PTR _kStream$[esp]
-	mov	DWORD PTR _iLen$223211[esp], 0
+	mov	DWORD PTR _iLen$223722[esp], 0
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 	xor	al, al
 	ret	0
@@ -3765,7 +3765,7 @@ PUBLIC	?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4AICityStrategyTy
 ;	COMDAT ?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4AICityStrategyTypes@@@Z
 _TEXT	SEGMENT
 _kStream$ = 8						; size = 4
-_iLen$223381 = 12					; size = 4
+_iLen$223858 = 12					; size = 4
 _eType$ = 12						; size = 4
 ?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4AICityStrategyTypes@@@Z PROC ; CvInfosSerializationHelper::Write, COMDAT
 
@@ -3784,10 +3784,10 @@ _eType$ = 12						; size = 4
 	add	esp, 8
 	ret	0
 $LN2@Write@22:
-	lea	ecx, DWORD PTR _iLen$223381[esp-4]
+	lea	ecx, DWORD PTR _iLen$223858[esp-4]
 	push	ecx
 	mov	ecx, DWORD PTR _kStream$[esp]
-	mov	DWORD PTR _iLen$223381[esp], 0
+	mov	DWORD PTR _iLen$223858[esp], 0
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 	xor	al, al
 	ret	0
@@ -3798,7 +3798,7 @@ PUBLIC	?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4SmallAwardTypes@
 ;	COMDAT ?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4SmallAwardTypes@@@Z
 _TEXT	SEGMENT
 _kStream$ = 8						; size = 4
-_iLen$223517 = 12					; size = 4
+_iLen$223994 = 12					; size = 4
 _eType$ = 12						; size = 4
 ?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4SmallAwardTypes@@@Z PROC ; CvInfosSerializationHelper::Write, COMDAT
 
@@ -3817,10 +3817,10 @@ _eType$ = 12						; size = 4
 	add	esp, 8
 	ret	0
 $LN2@Write@23:
-	lea	ecx, DWORD PTR _iLen$223517[esp-4]
+	lea	ecx, DWORD PTR _iLen$223994[esp-4]
 	push	ecx
 	mov	ecx, DWORD PTR _kStream$[esp]
-	mov	DWORD PTR _iLen$223517[esp], 0
+	mov	DWORD PTR _iLen$223994[esp], 0
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 	xor	al, al
 	ret	0
@@ -3831,7 +3831,7 @@ PUBLIC	?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4RouteTypes@@@Z ;
 ;	COMDAT ?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4RouteTypes@@@Z
 _TEXT	SEGMENT
 _kStream$ = 8						; size = 4
-_iLen$223653 = 12					; size = 4
+_iLen$224130 = 12					; size = 4
 _eType$ = 12						; size = 4
 ?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4RouteTypes@@@Z PROC ; CvInfosSerializationHelper::Write, COMDAT
 
@@ -3850,10 +3850,10 @@ _eType$ = 12						; size = 4
 	add	esp, 8
 	ret	0
 $LN2@Write@24:
-	lea	ecx, DWORD PTR _iLen$223653[esp-4]
+	lea	ecx, DWORD PTR _iLen$224130[esp-4]
 	push	ecx
 	mov	ecx, DWORD PTR _kStream$[esp]
-	mov	DWORD PTR _iLen$223653[esp], 0
+	mov	DWORD PTR _iLen$224130[esp], 0
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 	xor	al, al
 	ret	0
@@ -3864,7 +3864,7 @@ PUBLIC	?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4BuildTypes@@@Z ;
 ;	COMDAT ?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4BuildTypes@@@Z
 _TEXT	SEGMENT
 _kStream$ = 8						; size = 4
-_iLen$223773 = 12					; size = 4
+_iLen$224250 = 12					; size = 4
 _eType$ = 12						; size = 4
 ?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4BuildTypes@@@Z PROC ; CvInfosSerializationHelper::Write, COMDAT
 
@@ -3883,10 +3883,10 @@ _eType$ = 12						; size = 4
 	add	esp, 8
 	ret	0
 $LN2@Write@25:
-	lea	ecx, DWORD PTR _iLen$223773[esp-4]
+	lea	ecx, DWORD PTR _iLen$224250[esp-4]
 	push	ecx
 	mov	ecx, DWORD PTR _kStream$[esp]
-	mov	DWORD PTR _iLen$223773[esp], 0
+	mov	DWORD PTR _iLen$224250[esp], 0
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 	xor	al, al
 	ret	0
@@ -3897,7 +3897,7 @@ PUBLIC	?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4ProcessTypes@@@Z
 ;	COMDAT ?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4ProcessTypes@@@Z
 _TEXT	SEGMENT
 _kStream$ = 8						; size = 4
-_iLen$223891 = 12					; size = 4
+_iLen$224402 = 12					; size = 4
 _eType$ = 12						; size = 4
 ?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4ProcessTypes@@@Z PROC ; CvInfosSerializationHelper::Write, COMDAT
 
@@ -3916,10 +3916,10 @@ _eType$ = 12						; size = 4
 	add	esp, 8
 	ret	0
 $LN2@Write@26:
-	lea	ecx, DWORD PTR _iLen$223891[esp-4]
+	lea	ecx, DWORD PTR _iLen$224402[esp-4]
 	push	ecx
 	mov	ecx, DWORD PTR _kStream$[esp]
-	mov	DWORD PTR _iLen$223891[esp], 0
+	mov	DWORD PTR _iLen$224402[esp], 0
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 	xor	al, al
 	ret	0
@@ -3930,7 +3930,7 @@ PUBLIC	?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4ImprovementTypes
 ;	COMDAT ?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4ImprovementTypes@@@Z
 _TEXT	SEGMENT
 _kStream$ = 8						; size = 4
-_iLen$224027 = 12					; size = 4
+_iLen$224538 = 12					; size = 4
 _eType$ = 12						; size = 4
 ?Write@CvInfosSerializationHelper@@YA_NAAVFDataStream@@W4ImprovementTypes@@@Z PROC ; CvInfosSerializationHelper::Write, COMDAT
 
@@ -3949,10 +3949,10 @@ _eType$ = 12						; size = 4
 	add	esp, 8
 	ret	0
 $LN2@Write@27:
-	lea	ecx, DWORD PTR _iLen$224027[esp-4]
+	lea	ecx, DWORD PTR _iLen$224538[esp-4]
 	push	ecx
 	mov	ecx, DWORD PTR _kStream$[esp]
-	mov	DWORD PTR _iLen$224027[esp], 0
+	mov	DWORD PTR _iLen$224538[esp], 0
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 	xor	al, al
 	ret	0

@@ -4239,15 +4239,67 @@ void CvTeam::SetHasDefensivePact(TeamTypes eIndex, bool bNewValue)
 		{
 			DLLUI->setDirty(Score_DIRTY_BIT, true);
 		}
+#ifdef NEW_DEFENSIVE_PACT
+	if(bNewValue)
+	{
+		// Someone made a Non-Aggression Pact, send out notifications to everyone
+		Localization::String strText = Localization::Lookup("TXT_KEY_NOTIFICATION_NON_AGGRESSION");
+		Localization::String strSummary = Localization::Lookup("TXT_KEY_NOTIFICATION_NON_AGGRESSION_S");
+		for(int iCurPlayer = 0; iCurPlayer < MAX_MAJOR_CIVS; ++iCurPlayer)
+		{
+			for(int iPlayer = 0; iPlayer < MAX_MAJOR_CIVS; ++iPlayer)
+			{
+				for(int jPlayer = 0; jPlayer < MAX_MAJOR_CIVS; ++jPlayer)
+				{
+					if (GET_PLAYER((PlayerTypes) iPlayer).getTeam() != eIndex || GET_PLAYER((PlayerTypes) jPlayer).getTeam() != /*GetTeam()->*/GetID())
+						continue;
 
+					PlayerTypes eCurPlayer = (PlayerTypes) iCurPlayer;
+					CvPlayerAI& kCurPlayer = GET_PLAYER(eCurPlayer);
+					CvNotifications* pNotifications = GET_PLAYER(eCurPlayer).GetNotifications();
+					if(iCurPlayer != iPlayer && iCurPlayer != jPlayer /*GetPlayer()->GetID() */&& pNotifications)
+					{
+						const char* strThisPlayerName;
+						const char* strOtherPlayerName;
+
+						CvTeam* pCurTeam = &GET_TEAM(kCurPlayer.getTeam());
+
+						// Have we met these guys yet?
+						bool bHasMetThisTeam = pCurTeam->isHasMet(GET_PLAYER((PlayerTypes) iPlayer).getTeam());
+						if(bHasMetThisTeam)
+							strThisPlayerName = GET_PLAYER((PlayerTypes) iPlayer).getCivilizationShortDescriptionKey();
+						else
+							strThisPlayerName = "TXT_KEY_UNMET_PLAYER";
+
+						bool bHasMetOtherTeam = pCurTeam->isHasMet(GET_PLAYER((PlayerTypes) jPlayer).getTeam());
+						if(bHasMetOtherTeam)
+							strOtherPlayerName = GET_PLAYER((PlayerTypes) jPlayer).getCivilizationShortDescriptionKey();
+						else
+							strOtherPlayerName = "TXT_KEY_UNMET_PLAYER";
+
+						//Only display notification if we've met one of the players.
+						if(bHasMetThisTeam || bHasMetOtherTeam)
+						{
+							Localization::String tempInfoStr = strText;
+							tempInfoStr << strThisPlayerName << strOtherPlayerName;
+							Localization::String tempSummaryStr = strSummary;
+							tempSummaryStr << strThisPlayerName << strOtherPlayerName;
+							pNotifications->Add(NOTIFICATION_DIPLOMACY_DECLARATION, tempInfoStr.toUTF8(), tempSummaryStr.toUTF8(), -1, -1, (PlayerTypes) iPlayer, (PlayerTypes) jPlayer);
+						}
+					}
+				}
+			}
+		}
+	}
+#else
 		if(bNewValue && !GET_TEAM(eIndex).IsHasDefensivePact(GetID()))
 		{
 			CvString strBuffer = GetLocalizedText("TXT_KEY_MISC_PLAYERS_SIGN_DEFENSIVE_PACT", getName().GetCString(), GET_TEAM(eIndex).getName().GetCString());
 			GC.getGame().addReplayMessage(REPLAY_MESSAGE_MAJOR_EVENT, getLeaderID(), strBuffer, -1, -1);
 		}
+#endif
 	}
 }
-
 //	--------------------------------------------------------------------------------
 int CvTeam::GetTotalNumResearchAgreements() const
 {
