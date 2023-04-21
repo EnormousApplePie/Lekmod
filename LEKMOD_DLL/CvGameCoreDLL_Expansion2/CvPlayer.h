@@ -796,6 +796,10 @@ public:
 	void changeFreeExperienceFromMinors(int ichange);
 	void recomputeFreeExperience();
 
+#ifdef LEKMOD_REFORMATION_NOTIFICATION_MID_TURN
+	void DoReformationNotification();
+#endif
+
 	void doUpdateBarbarianCampVisibility();
 
 	int getFeatureProductionModifier() const;

@@ -73,11 +73,11 @@ _TEXT	SEGMENT
 ?isAlive@CvPlayer@@QBE_NXZ PROC				; CvPlayer::isAlive, COMDAT
 ; _this$ = ecx
 
-; 1092 : 		return m_bAlive;
+; 1096 : 		return m_bAlive;
 
 	mov	al, BYTE PTR [ecx+2256]
 
-; 1093 : 	}
+; 1097 : 	}
 
 	ret	0
 ?isAlive@CvPlayer@@QBE_NXZ ENDP				; CvPlayer::isAlive

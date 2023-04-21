@@ -10,10 +10,10 @@ INCLUDELIB MSVCRT
 INCLUDELIB OLDNAMES
 
 _DATA	SEGMENT
-_CIV5_XP2_DLL_VERSION DD FLAT:$SG220692
+_CIV5_XP2_DLL_VERSION DD FLAT:$SG220730
 _DATA	ENDS
 CONST	SEGMENT
-$SG220692 DB	'1.0.0', 00H
+$SG220730 DB	'1.0.0', 00H
 CONST	ENDS
 PUBLIC	_DllGetGameContext
 EXTRN	?GetSingleton@CvDllGameContext@@SAPAV1@XZ:PROC	; CvDllGameContext::GetSingleton
@@ -37,12 +37,12 @@ _pDll$ = 8						; size = 4
 ?setDLLIFace@CvGlobals@@QAEXPAVICvEngineUtility4@@@Z PROC ; CvGlobals::setDLLIFace, COMDAT
 ; _this$ = ecx
 
-; 7698 : 		m_pDLL = pDll;
+; 7733 : 		m_pDLL = pDll;
 
 	mov	eax, DWORD PTR _pDll$[esp-4]
-	mov	DWORD PTR [ecx+8564], eax
+	mov	DWORD PTR [ecx+8596], eax
 
-; 7699 : 	}
+; 7734 : 	}
 
 	ret	4
 ?setDLLIFace@CvGlobals@@QAEXPAVICvEngineUtility4@@@Z ENDP ; CvGlobals::setDLLIFace
@@ -134,7 +134,7 @@ $LN1@DllMain:
 
 ; 55   : 		GC.setDLLIFace(NULL);
 
-	mov	DWORD PTR ?gGlobals@@3VCvGlobals@@A+8564, 0
+	mov	DWORD PTR ?gGlobals@@3VCvGlobals@@A+8596, 0
 $LN11@DllMain:
 
 ; 56   : 		break;

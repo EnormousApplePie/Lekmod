@@ -262,6 +262,19 @@ __Where$ = 12						; size = 4
 	ret	0
 ??2@YAPAXIPAX@Z ENDP					; operator new
 _TEXT	ENDS
+PUBLIC	??3@YAXPAX0@Z					; operator delete
+; Function compile flags: /Ogtpy
+;	COMDAT ??3@YAXPAX0@Z
+_TEXT	SEGMENT
+___formal$ = 8						; size = 4
+___formal$ = 12						; size = 4
+??3@YAXPAX0@Z PROC					; operator delete, COMDAT
+
+; 64   : 	}
+
+	ret	0
+??3@YAXPAX0@Z ENDP					; operator delete
+_TEXT	ENDS
 PUBLIC	?size@?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@QBEIXZ ; std::vector<CvCity *,std::allocator<CvCity *> >::size
 ; Function compile flags: /Ogtpy
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\vector
@@ -280,55 +293,6 @@ _TEXT	SEGMENT
 
 	ret	0
 ?size@?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@QBEIXZ ENDP ; std::vector<CvCity *,std::allocator<CvCity *> >::size
-_TEXT	ENDS
-PUBLIC	??3@YAXPAX0@Z					; operator delete
-; Function compile flags: /Ogtpy
-; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\new
-;	COMDAT ??3@YAXPAX0@Z
-_TEXT	SEGMENT
-___formal$ = 8						; size = 4
-___formal$ = 12						; size = 4
-??3@YAXPAX0@Z PROC					; operator delete, COMDAT
-
-; 64   : 	}
-
-	ret	0
-??3@YAXPAX0@Z ENDP					; operator delete
-_TEXT	ENDS
-PUBLIC	?_Color@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@KAAADPAU_Node@?$_Tree_nod@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@2@@Z ; std::_Tree<std::_Tmap_traits<CvCity *,std::vector<CvCity *,std::allocator<CvCity *> >,std::less<CvCity *>,std::allocator<std::pair<CvCity * const,std::vector<CvCity *,std::allocator<CvCity *> > > >,0> >::_Color
-; Function compile flags: /Ogtpy
-; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xtree
-;	COMDAT ?_Color@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@KAAADPAU_Node@?$_Tree_nod@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@2@@Z
-_TEXT	SEGMENT
-__Pnode$ = 8						; size = 4
-?_Color@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@KAAADPAU_Node@?$_Tree_nod@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@2@@Z PROC ; std::_Tree<std::_Tmap_traits<CvCity *,std::vector<CvCity *,std::allocator<CvCity *> >,std::less<CvCity *>,std::allocator<std::pair<CvCity * const,std::vector<CvCity *,std::allocator<CvCity *> > > >,0> >::_Color, COMDAT
-
-; 152  : 		return ((_Charref)(*_Pnode)._Color);
-
-	mov	eax, DWORD PTR __Pnode$[esp-4]
-	add	eax, 32					; 00000020H
-
-; 153  : 		}
-
-	ret	0
-?_Color@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@KAAADPAU_Node@?$_Tree_nod@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@2@@Z ENDP ; std::_Tree<std::_Tmap_traits<CvCity *,std::vector<CvCity *,std::allocator<CvCity *> >,std::less<CvCity *>,std::allocator<std::pair<CvCity * const,std::vector<CvCity *,std::allocator<CvCity *> > > >,0> >::_Color
-_TEXT	ENDS
-PUBLIC	?_Isnil@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@KAAADPAU_Node@?$_Tree_nod@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@2@@Z ; std::_Tree<std::_Tmap_traits<CvCity *,std::vector<CvCity *,std::allocator<CvCity *> >,std::less<CvCity *>,std::allocator<std::pair<CvCity * const,std::vector<CvCity *,std::allocator<CvCity *> > > >,0> >::_Isnil
-; Function compile flags: /Ogtpy
-;	COMDAT ?_Isnil@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@KAAADPAU_Node@?$_Tree_nod@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@2@@Z
-_TEXT	SEGMENT
-__Pnode$ = 8						; size = 4
-?_Isnil@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@KAAADPAU_Node@?$_Tree_nod@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@2@@Z PROC ; std::_Tree<std::_Tmap_traits<CvCity *,std::vector<CvCity *,std::allocator<CvCity *> >,std::less<CvCity *>,std::allocator<std::pair<CvCity * const,std::vector<CvCity *,std::allocator<CvCity *> > > >,0> >::_Isnil, COMDAT
-
-; 157  : 		return ((_Charref)(*_Pnode)._Isnil);
-
-	mov	eax, DWORD PTR __Pnode$[esp-4]
-	add	eax, 33					; 00000021H
-
-; 158  : 		}
-
-	ret	0
-?_Isnil@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@KAAADPAU_Node@?$_Tree_nod@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@2@@Z ENDP ; std::_Tree<std::_Tmap_traits<CvCity *,std::vector<CvCity *,std::allocator<CvCity *> >,std::less<CvCity *>,std::allocator<std::pair<CvCity * const,std::vector<CvCity *,std::allocator<CvCity *> > > >,0> >::_Isnil
 _TEXT	ENDS
 PUBLIC	??_7logic_error@std@@6B@			; std::logic_error::`vftable'
 PUBLIC	??0logic_error@std@@QAE@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@1@@Z ; std::logic_error::logic_error
@@ -444,44 +408,9 @@ __ehhandler$??0logic_error@std@@QAE@ABV?$basic_string@DU?$char_traits@D@std@@V?$
 	jmp	___CxxFrameHandler3
 text$x	ENDS
 ??0logic_error@std@@QAE@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@1@@Z ENDP ; std::logic_error::logic_error
-PUBLIC	?_Left@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@KAAAPAU_Node@?$_Tree_nod@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@2@PAU342@@Z ; std::_Tree<std::_Tmap_traits<CvCity *,std::vector<CvCity *,std::allocator<CvCity *> >,std::less<CvCity *>,std::allocator<std::pair<CvCity * const,std::vector<CvCity *,std::allocator<CvCity *> > > >,0> >::_Left
-; Function compile flags: /Ogtpy
-; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xtree
-;	COMDAT ?_Left@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@KAAAPAU_Node@?$_Tree_nod@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@2@PAU342@@Z
-_TEXT	SEGMENT
-__Pnode$ = 8						; size = 4
-?_Left@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@KAAAPAU_Node@?$_Tree_nod@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@2@PAU342@@Z PROC ; std::_Tree<std::_Tmap_traits<CvCity *,std::vector<CvCity *,std::allocator<CvCity *> >,std::less<CvCity *>,std::allocator<std::pair<CvCity * const,std::vector<CvCity *,std::allocator<CvCity *> > > >,0> >::_Left, COMDAT
-
-; 167  : 		return ((_Nodepref)(*_Pnode)._Left);
-
-	mov	eax, DWORD PTR __Pnode$[esp-4]
-
-; 168  : 		}
-
-	ret	0
-?_Left@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@KAAAPAU_Node@?$_Tree_nod@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@2@PAU342@@Z ENDP ; std::_Tree<std::_Tmap_traits<CvCity *,std::vector<CvCity *,std::allocator<CvCity *> >,std::less<CvCity *>,std::allocator<std::pair<CvCity * const,std::vector<CvCity *,std::allocator<CvCity *> > > >,0> >::_Left
-_TEXT	ENDS
-PUBLIC	?_Parent@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@KAAAPAU_Node@?$_Tree_nod@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@2@PAU342@@Z ; std::_Tree<std::_Tmap_traits<CvCity *,std::vector<CvCity *,std::allocator<CvCity *> >,std::less<CvCity *>,std::allocator<std::pair<CvCity * const,std::vector<CvCity *,std::allocator<CvCity *> > > >,0> >::_Parent
-; Function compile flags: /Ogtpy
-;	COMDAT ?_Parent@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@KAAAPAU_Node@?$_Tree_nod@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@2@PAU342@@Z
-_TEXT	SEGMENT
-__Pnode$ = 8						; size = 4
-?_Parent@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@KAAAPAU_Node@?$_Tree_nod@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@2@PAU342@@Z PROC ; std::_Tree<std::_Tmap_traits<CvCity *,std::vector<CvCity *,std::allocator<CvCity *> >,std::less<CvCity *>,std::allocator<std::pair<CvCity * const,std::vector<CvCity *,std::allocator<CvCity *> > > >,0> >::_Parent, COMDAT
-
-; 172  : 		return ((_Nodepref)(*_Pnode)._Parent);
-
-	mov	eax, DWORD PTR __Pnode$[esp-4]
-	add	eax, 4
-
-; 173  : 		}
-
-	ret	0
-?_Parent@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@KAAAPAU_Node@?$_Tree_nod@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@2@PAU342@@Z ENDP ; std::_Tree<std::_Tmap_traits<CvCity *,std::vector<CvCity *,std::allocator<CvCity *> >,std::less<CvCity *>,std::allocator<std::pair<CvCity * const,std::vector<CvCity *,std::allocator<CvCity *> > > >,0> >::_Parent
-_TEXT	ENDS
 PUBLIC	??1logic_error@std@@UAE@XZ			; std::logic_error::~logic_error
 EXTRN	__imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ:PROC
 ; Function compile flags: /Ogtpy
-; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\stdexcept
 ;	COMDAT ??1logic_error@std@@UAE@XZ
 _TEXT	SEGMENT
 ??1logic_error@std@@UAE@XZ PROC				; std::logic_error::~logic_error, COMDAT
@@ -502,44 +431,8 @@ _TEXT	SEGMENT
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 ??1logic_error@std@@UAE@XZ ENDP				; std::logic_error::~logic_error
 _TEXT	ENDS
-PUBLIC	?_Right@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@KAAAPAU_Node@?$_Tree_nod@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@2@PAU342@@Z ; std::_Tree<std::_Tmap_traits<CvCity *,std::vector<CvCity *,std::allocator<CvCity *> >,std::less<CvCity *>,std::allocator<std::pair<CvCity * const,std::vector<CvCity *,std::allocator<CvCity *> > > >,0> >::_Right
-; Function compile flags: /Ogtpy
-; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xtree
-;	COMDAT ?_Right@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@KAAAPAU_Node@?$_Tree_nod@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@2@PAU342@@Z
-_TEXT	SEGMENT
-__Pnode$ = 8						; size = 4
-?_Right@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@KAAAPAU_Node@?$_Tree_nod@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@2@PAU342@@Z PROC ; std::_Tree<std::_Tmap_traits<CvCity *,std::vector<CvCity *,std::allocator<CvCity *> >,std::less<CvCity *>,std::allocator<std::pair<CvCity * const,std::vector<CvCity *,std::allocator<CvCity *> > > >,0> >::_Right, COMDAT
-
-; 177  : 		return ((_Nodepref)(*_Pnode)._Right);
-
-	mov	eax, DWORD PTR __Pnode$[esp-4]
-	add	eax, 8
-
-; 178  : 		}
-
-	ret	0
-?_Right@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@KAAAPAU_Node@?$_Tree_nod@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@2@PAU342@@Z ENDP ; std::_Tree<std::_Tmap_traits<CvCity *,std::vector<CvCity *,std::allocator<CvCity *> >,std::less<CvCity *>,std::allocator<std::pair<CvCity * const,std::vector<CvCity *,std::allocator<CvCity *> > > >,0> >::_Right
-_TEXT	ENDS
-PUBLIC	?_Myval@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@KAAAU?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@2@PAU_Node@?$_Tree_nod@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@2@@Z ; std::_Tree<std::_Tmap_traits<CvCity *,std::vector<CvCity *,std::allocator<CvCity *> >,std::less<CvCity *>,std::allocator<std::pair<CvCity * const,std::vector<CvCity *,std::allocator<CvCity *> > > >,0> >::_Myval
-; Function compile flags: /Ogtpy
-;	COMDAT ?_Myval@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@KAAAU?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@2@PAU_Node@?$_Tree_nod@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@2@@Z
-_TEXT	SEGMENT
-__Pnode$ = 8						; size = 4
-?_Myval@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@KAAAU?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@2@PAU_Node@?$_Tree_nod@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@2@@Z PROC ; std::_Tree<std::_Tmap_traits<CvCity *,std::vector<CvCity *,std::allocator<CvCity *> >,std::less<CvCity *>,std::allocator<std::pair<CvCity * const,std::vector<CvCity *,std::allocator<CvCity *> > > >,0> >::_Myval, COMDAT
-
-; 182  : 		return ((_Vref)(*_Pnode)._Myval);
-
-	mov	eax, DWORD PTR __Pnode$[esp-4]
-	add	eax, 12					; 0000000cH
-
-; 183  : 		}
-
-	ret	0
-?_Myval@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@KAAAU?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@2@PAU_Node@?$_Tree_nod@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@2@@Z ENDP ; std::_Tree<std::_Tmap_traits<CvCity *,std::vector<CvCity *,std::allocator<CvCity *> >,std::less<CvCity *>,std::allocator<std::pair<CvCity * const,std::vector<CvCity *,std::allocator<CvCity *> > > >,0> >::_Myval
-_TEXT	ENDS
 EXTRN	__imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ:PROC
 ; Function compile flags: /Ogtpy
-; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\stdexcept
 ;	COMDAT ?what@logic_error@std@@UBEPBDXZ
 _TEXT	SEGMENT
 ?what@logic_error@std@@UBEPBDXZ PROC			; std::logic_error::what, COMDAT
@@ -575,6 +468,108 @@ $LN6@scalar@2:
 	ret	4
 ??_Glogic_error@std@@UAEPAXI@Z ENDP			; std::logic_error::`scalar deleting destructor'
 _TEXT	ENDS
+PUBLIC	?_Color@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@KAAADPAU_Node@?$_Tree_nod@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@2@@Z ; std::_Tree<std::_Tmap_traits<CvCity *,std::vector<CvCity *,std::allocator<CvCity *> >,std::less<CvCity *>,std::allocator<std::pair<CvCity * const,std::vector<CvCity *,std::allocator<CvCity *> > > >,0> >::_Color
+; Function compile flags: /Ogtpy
+; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xtree
+;	COMDAT ?_Color@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@KAAADPAU_Node@?$_Tree_nod@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@2@@Z
+_TEXT	SEGMENT
+__Pnode$ = 8						; size = 4
+?_Color@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@KAAADPAU_Node@?$_Tree_nod@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@2@@Z PROC ; std::_Tree<std::_Tmap_traits<CvCity *,std::vector<CvCity *,std::allocator<CvCity *> >,std::less<CvCity *>,std::allocator<std::pair<CvCity * const,std::vector<CvCity *,std::allocator<CvCity *> > > >,0> >::_Color, COMDAT
+
+; 152  : 		return ((_Charref)(*_Pnode)._Color);
+
+	mov	eax, DWORD PTR __Pnode$[esp-4]
+	add	eax, 32					; 00000020H
+
+; 153  : 		}
+
+	ret	0
+?_Color@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@KAAADPAU_Node@?$_Tree_nod@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@2@@Z ENDP ; std::_Tree<std::_Tmap_traits<CvCity *,std::vector<CvCity *,std::allocator<CvCity *> >,std::less<CvCity *>,std::allocator<std::pair<CvCity * const,std::vector<CvCity *,std::allocator<CvCity *> > > >,0> >::_Color
+_TEXT	ENDS
+PUBLIC	?_Isnil@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@KAAADPAU_Node@?$_Tree_nod@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@2@@Z ; std::_Tree<std::_Tmap_traits<CvCity *,std::vector<CvCity *,std::allocator<CvCity *> >,std::less<CvCity *>,std::allocator<std::pair<CvCity * const,std::vector<CvCity *,std::allocator<CvCity *> > > >,0> >::_Isnil
+; Function compile flags: /Ogtpy
+;	COMDAT ?_Isnil@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@KAAADPAU_Node@?$_Tree_nod@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@2@@Z
+_TEXT	SEGMENT
+__Pnode$ = 8						; size = 4
+?_Isnil@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@KAAADPAU_Node@?$_Tree_nod@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@2@@Z PROC ; std::_Tree<std::_Tmap_traits<CvCity *,std::vector<CvCity *,std::allocator<CvCity *> >,std::less<CvCity *>,std::allocator<std::pair<CvCity * const,std::vector<CvCity *,std::allocator<CvCity *> > > >,0> >::_Isnil, COMDAT
+
+; 157  : 		return ((_Charref)(*_Pnode)._Isnil);
+
+	mov	eax, DWORD PTR __Pnode$[esp-4]
+	add	eax, 33					; 00000021H
+
+; 158  : 		}
+
+	ret	0
+?_Isnil@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@KAAADPAU_Node@?$_Tree_nod@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@2@@Z ENDP ; std::_Tree<std::_Tmap_traits<CvCity *,std::vector<CvCity *,std::allocator<CvCity *> >,std::less<CvCity *>,std::allocator<std::pair<CvCity * const,std::vector<CvCity *,std::allocator<CvCity *> > > >,0> >::_Isnil
+_TEXT	ENDS
+PUBLIC	?_Left@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@KAAAPAU_Node@?$_Tree_nod@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@2@PAU342@@Z ; std::_Tree<std::_Tmap_traits<CvCity *,std::vector<CvCity *,std::allocator<CvCity *> >,std::less<CvCity *>,std::allocator<std::pair<CvCity * const,std::vector<CvCity *,std::allocator<CvCity *> > > >,0> >::_Left
+; Function compile flags: /Ogtpy
+;	COMDAT ?_Left@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@KAAAPAU_Node@?$_Tree_nod@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@2@PAU342@@Z
+_TEXT	SEGMENT
+__Pnode$ = 8						; size = 4
+?_Left@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@KAAAPAU_Node@?$_Tree_nod@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@2@PAU342@@Z PROC ; std::_Tree<std::_Tmap_traits<CvCity *,std::vector<CvCity *,std::allocator<CvCity *> >,std::less<CvCity *>,std::allocator<std::pair<CvCity * const,std::vector<CvCity *,std::allocator<CvCity *> > > >,0> >::_Left, COMDAT
+
+; 167  : 		return ((_Nodepref)(*_Pnode)._Left);
+
+	mov	eax, DWORD PTR __Pnode$[esp-4]
+
+; 168  : 		}
+
+	ret	0
+?_Left@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@KAAAPAU_Node@?$_Tree_nod@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@2@PAU342@@Z ENDP ; std::_Tree<std::_Tmap_traits<CvCity *,std::vector<CvCity *,std::allocator<CvCity *> >,std::less<CvCity *>,std::allocator<std::pair<CvCity * const,std::vector<CvCity *,std::allocator<CvCity *> > > >,0> >::_Left
+_TEXT	ENDS
+PUBLIC	?_Parent@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@KAAAPAU_Node@?$_Tree_nod@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@2@PAU342@@Z ; std::_Tree<std::_Tmap_traits<CvCity *,std::vector<CvCity *,std::allocator<CvCity *> >,std::less<CvCity *>,std::allocator<std::pair<CvCity * const,std::vector<CvCity *,std::allocator<CvCity *> > > >,0> >::_Parent
+; Function compile flags: /Ogtpy
+;	COMDAT ?_Parent@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@KAAAPAU_Node@?$_Tree_nod@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@2@PAU342@@Z
+_TEXT	SEGMENT
+__Pnode$ = 8						; size = 4
+?_Parent@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@KAAAPAU_Node@?$_Tree_nod@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@2@PAU342@@Z PROC ; std::_Tree<std::_Tmap_traits<CvCity *,std::vector<CvCity *,std::allocator<CvCity *> >,std::less<CvCity *>,std::allocator<std::pair<CvCity * const,std::vector<CvCity *,std::allocator<CvCity *> > > >,0> >::_Parent, COMDAT
+
+; 172  : 		return ((_Nodepref)(*_Pnode)._Parent);
+
+	mov	eax, DWORD PTR __Pnode$[esp-4]
+	add	eax, 4
+
+; 173  : 		}
+
+	ret	0
+?_Parent@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@KAAAPAU_Node@?$_Tree_nod@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@2@PAU342@@Z ENDP ; std::_Tree<std::_Tmap_traits<CvCity *,std::vector<CvCity *,std::allocator<CvCity *> >,std::less<CvCity *>,std::allocator<std::pair<CvCity * const,std::vector<CvCity *,std::allocator<CvCity *> > > >,0> >::_Parent
+_TEXT	ENDS
+PUBLIC	?_Right@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@KAAAPAU_Node@?$_Tree_nod@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@2@PAU342@@Z ; std::_Tree<std::_Tmap_traits<CvCity *,std::vector<CvCity *,std::allocator<CvCity *> >,std::less<CvCity *>,std::allocator<std::pair<CvCity * const,std::vector<CvCity *,std::allocator<CvCity *> > > >,0> >::_Right
+; Function compile flags: /Ogtpy
+;	COMDAT ?_Right@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@KAAAPAU_Node@?$_Tree_nod@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@2@PAU342@@Z
+_TEXT	SEGMENT
+__Pnode$ = 8						; size = 4
+?_Right@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@KAAAPAU_Node@?$_Tree_nod@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@2@PAU342@@Z PROC ; std::_Tree<std::_Tmap_traits<CvCity *,std::vector<CvCity *,std::allocator<CvCity *> >,std::less<CvCity *>,std::allocator<std::pair<CvCity * const,std::vector<CvCity *,std::allocator<CvCity *> > > >,0> >::_Right, COMDAT
+
+; 177  : 		return ((_Nodepref)(*_Pnode)._Right);
+
+	mov	eax, DWORD PTR __Pnode$[esp-4]
+	add	eax, 8
+
+; 178  : 		}
+
+	ret	0
+?_Right@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@KAAAPAU_Node@?$_Tree_nod@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@2@PAU342@@Z ENDP ; std::_Tree<std::_Tmap_traits<CvCity *,std::vector<CvCity *,std::allocator<CvCity *> >,std::less<CvCity *>,std::allocator<std::pair<CvCity * const,std::vector<CvCity *,std::allocator<CvCity *> > > >,0> >::_Right
+_TEXT	ENDS
+PUBLIC	?_Myval@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@KAAAU?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@2@PAU_Node@?$_Tree_nod@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@2@@Z ; std::_Tree<std::_Tmap_traits<CvCity *,std::vector<CvCity *,std::allocator<CvCity *> >,std::less<CvCity *>,std::allocator<std::pair<CvCity * const,std::vector<CvCity *,std::allocator<CvCity *> > > >,0> >::_Myval
+; Function compile flags: /Ogtpy
+;	COMDAT ?_Myval@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@KAAAU?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@2@PAU_Node@?$_Tree_nod@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@2@@Z
+_TEXT	SEGMENT
+__Pnode$ = 8						; size = 4
+?_Myval@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@KAAAU?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@2@PAU_Node@?$_Tree_nod@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@2@@Z PROC ; std::_Tree<std::_Tmap_traits<CvCity *,std::vector<CvCity *,std::allocator<CvCity *> >,std::less<CvCity *>,std::allocator<std::pair<CvCity * const,std::vector<CvCity *,std::allocator<CvCity *> > > >,0> >::_Myval, COMDAT
+
+; 182  : 		return ((_Vref)(*_Pnode)._Myval);
+
+	mov	eax, DWORD PTR __Pnode$[esp-4]
+	add	eax, 12					; 0000000cH
+
+; 183  : 		}
+
+	ret	0
+?_Myval@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@KAAAU?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@2@PAU_Node@?$_Tree_nod@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@2@@Z ENDP ; std::_Tree<std::_Tmap_traits<CvCity *,std::vector<CvCity *,std::allocator<CvCity *> >,std::less<CvCity *>,std::allocator<std::pair<CvCity * const,std::vector<CvCity *,std::allocator<CvCity *> > > >,0> >::_Myval
+_TEXT	ENDS
 PUBLIC	??_7length_error@std@@6B@			; std::length_error::`vftable'
 PUBLIC	??0length_error@std@@QAE@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@1@@Z ; std::length_error::length_error
 PUBLIC	??_R4length_error@std@@6B@			; std::length_error::`RTTI Complete Object Locator'
@@ -584,6 +579,7 @@ PUBLIC	??_R2length_error@std@@8			; std::length_error::`RTTI Base Class Array'
 PUBLIC	??_R1A@?0A@EA@length_error@std@@8		; std::length_error::`RTTI Base Class Descriptor at (0,-1,0,64)'
 EXTRN	??_Elength_error@std@@UAEPAXI@Z:PROC		; std::length_error::`vector deleting destructor'
 ;	COMDAT ??_R1A@?0A@EA@length_error@std@@8
+; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\stdexcept
 rdata$r	SEGMENT
 ??_R1A@?0A@EA@length_error@std@@8 DD FLAT:??_R0?AVlength_error@std@@@8 ; std::length_error::`RTTI Base Class Descriptor at (0,-1,0,64)'
 	DD	02H
@@ -1274,8 +1270,8 @@ __ehfuncinfo$?_Xlen@?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@KAXX
 xdata$x	ENDS
 ;	COMDAT ?_Xlen@?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@KAXXZ
 _TEXT	SEGMENT
-$T221370 = -80						; size = 28
-$T221369 = -52						; size = 40
+$T221412 = -80						; size = 28
+$T221411 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ?_Xlen@?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@KAXXZ PROC ; std::vector<CvCity *,std::allocator<CvCity *> >::_Xlen, COMDAT
 
@@ -1291,22 +1287,22 @@ __$EHRec$ = -12						; size = 12
 ; 1260 : 		_THROW(length_error, "vector<T> too long");
 
 	push	OFFSET ??_C@_0BD@OLBABOEK@vector?$DMT?$DO?5too?5long?$AA@
-	lea	ecx, DWORD PTR $T221370[esp+84]
+	lea	ecx, DWORD PTR $T221412[esp+84]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T221369[esp+80]
+	lea	ecx, DWORD PTR $T221411[esp+80]
 	mov	DWORD PTR __$EHRec$[esp+88], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T221370[esp+80]
+	lea	eax, DWORD PTR $T221412[esp+80]
 	push	eax
-	lea	ecx, DWORD PTR $T221369[esp+96]
+	lea	ecx, DWORD PTR $T221411[esp+96]
 	mov	BYTE PTR __$EHRec$[esp+92], 1
-	mov	DWORD PTR $T221369[esp+84], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T221411[esp+84], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVlength_error@std@@
-	lea	ecx, DWORD PTR $T221369[esp+84]
+	lea	ecx, DWORD PTR $T221411[esp+84]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+96], 0
-	mov	DWORD PTR $T221369[esp+88], OFFSET ??_7length_error@std@@6B@
+	mov	DWORD PTR $T221411[esp+88], OFFSET ??_7length_error@std@@6B@
 	call	__CxxThrowException@8
 $LN13@Xlen:
 $LN12@Xlen:
@@ -1315,10 +1311,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Xlen@?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@KAXXZ$0:
-	lea	ecx, DWORD PTR $T221370[ebp]
+	lea	ecx, DWORD PTR $T221412[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Xlen@?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@KAXXZ$2:
-	lea	ecx, DWORD PTR $T221369[ebp]
+	lea	ecx, DWORD PTR $T221411[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Xlen@?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@KAXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?_Xlen@?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@KAXXZ
@@ -1997,8 +1993,8 @@ __TI2?AVbad_alloc@std@@ DD 00H
 xdata$x	ENDS
 ;	COMDAT ??$_Allocate@PAVCvCity@@@std@@YAPAPAVCvCity@@IPAPAV1@@Z
 _TEXT	SEGMENT
-$T221566 = -12						; size = 12
-$T221570 = 8						; size = 4
+$T221608 = -12						; size = 12
+$T221612 = 8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ??$_Allocate@PAVCvCity@@@std@@YAPAPAVCvCity@@IPAPAV1@@Z PROC ; std::_Allocate<CvCity *>, COMDAT
@@ -2040,15 +2036,15 @@ $LN3@Allocate:
 
 ; 40   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T221570[esp+8]
+	lea	eax, DWORD PTR $T221612[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T221566[esp+16]
-	mov	DWORD PTR $T221570[esp+12], 0
+	lea	ecx, DWORD PTR $T221608[esp+16]
+	mov	DWORD PTR $T221612[esp+12], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T221566[esp+16]
+	lea	ecx, DWORD PTR $T221608[esp+16]
 	push	ecx
-	mov	DWORD PTR $T221566[esp+20], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T221608[esp+20], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN9@Allocate:
 $LN8@Allocate:
@@ -2090,8 +2086,8 @@ PUBLIC	??$_Allocate@U_Node@?$_Tree_nod@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVC
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Allocate@U_Node@?$_Tree_nod@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@@std@@YAPAU_Node@?$_Tree_nod@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@0@IPAU120@@Z
 _TEXT	SEGMENT
-$T221582 = -12						; size = 12
-$T221586 = 8						; size = 4
+$T221624 = -12						; size = 12
+$T221628 = 8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ??$_Allocate@U_Node@?$_Tree_nod@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@@std@@YAPAU_Node@?$_Tree_nod@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@0@IPAU120@@Z PROC ; std::_Allocate<std::_Tree_nod<std::_Tmap_traits<CvCity *,std::vector<CvCity *,std::allocator<CvCity *> >,std::less<CvCity *>,std::allocator<std::pair<CvCity * const,std::vector<CvCity *,std::allocator<CvCity *> > > >,0> >::_Node>, COMDAT
@@ -2135,15 +2131,15 @@ $LN3@Allocate@2:
 
 ; 40   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T221586[esp+8]
+	lea	eax, DWORD PTR $T221628[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T221582[esp+16]
-	mov	DWORD PTR $T221586[esp+12], 0
+	lea	ecx, DWORD PTR $T221624[esp+16]
+	mov	DWORD PTR $T221628[esp+12], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T221582[esp+16]
+	lea	ecx, DWORD PTR $T221624[esp+16]
 	push	ecx
-	mov	DWORD PTR $T221582[esp+20], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T221624[esp+20], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN9@Allocate@2:
 $LN8@Allocate@2:
@@ -2953,182 +2949,352 @@ PUBLIC	?plotDistance@@YAHHHHH@Z			; plotDistance
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?plotDistance@@YAHHHHH@Z
 _TEXT	SEGMENT
-_iDX$ = 8						; size = 4
+_iDY$ = -12						; size = 4
+tv320 = -8						; size = 4
+tv357 = -4						; size = 4
 _iX1$ = 8						; size = 4
+_iDX$ = 12						; size = 4
 _iY1$ = 12						; size = 4
-_iDY$ = 16						; size = 4
+$T221842 = 16						; size = 4
 _iX2$ = 16						; size = 4
 _iY2$ = 20						; size = 4
 ?plotDistance@@YAHHHHH@Z PROC				; plotDistance, COMDAT
 
+; 144  : {
+
+	sub	esp, 12					; 0000000cH
+
 ; 145  : 	int iDX;
 ; 146  : 	int iWrappedDX = dxWrap(iX2 - iX1);
 
-	mov	eax, DWORD PTR _iX2$[esp-4]
-	sub	eax, DWORD PTR _iX1$[esp-4]
+	mov	ecx, DWORD PTR _iX2$[esp+8]
+	sub	ecx, DWORD PTR _iX1$[esp+8]
 	push	ebx
-	mov	ebx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+52
-	cmp	BYTE PTR [ebx+4056], 0
-	mov	edx, DWORD PTR [ebx+4020]
 	push	ebp
 	push	esi
-	je	SHORT $LN13@plotDistan
-	mov	ecx, edx
-	shr	ecx, 1
-	cmp	eax, ecx
-	jle	SHORT $LN15@plotDistan
-	sub	eax, edx
-	jmp	SHORT $LN13@plotDistan
-$LN15@plotDistan:
-	neg	ecx
-	cmp	eax, ecx
-	lea	ecx, DWORD PTR [edx+eax]
-	jl	SHORT $LN17@plotDistan
-$LN13@plotDistan:
-	mov	ecx, eax
-$LN17@plotDistan:
+	push	edi
+	mov	edi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+52
+	cmp	BYTE PTR [edi+4056], 0
+	mov	edx, DWORD PTR [edi+4020]
+	mov	DWORD PTR tv320[esp+28], ecx
+	je	SHORT $LN18@plotDistan
+	mov	eax, edx
+	shr	eax, 1
+	cmp	ecx, eax
+	jle	SHORT $LN20@plotDistan
+	sub	ecx, edx
+	jmp	SHORT $LN18@plotDistan
+$LN20@plotDistan:
+	neg	eax
+	cmp	ecx, eax
+	jge	SHORT $LN18@plotDistan
+	add	ecx, edx
+$LN18@plotDistan:
 
 ; 147  : 	int iWrappedDY = dyWrap(iY2 - iY1);
 
-	mov	eax, DWORD PTR _iY2$[esp+8]
-	mov	esi, DWORD PTR [ebx+4024]
-	push	edi
-	mov	edi, DWORD PTR _iY1$[esp+12]
-	sub	eax, edi
-	cmp	BYTE PTR [ebx+4057], 0
-	je	SHORT $LN27@plotDistan
-	mov	edx, esi
+	mov	ebp, DWORD PTR _iY2$[esp+24]
+	sub	ebp, DWORD PTR _iY1$[esp+24]
+	cmp	BYTE PTR [edi+4057], 0
+	mov	eax, DWORD PTR [edi+4024]
+	je	SHORT $LN32@plotDistan
+	mov	edx, eax
 	shr	edx, 1
-	cmp	eax, edx
-	jle	SHORT $LN29@plotDistan
-	sub	eax, esi
-	jmp	SHORT $LN27@plotDistan
-$LN29@plotDistan:
+	cmp	ebp, edx
+	jle	SHORT $LN34@plotDistan
+	mov	ebx, ebp
+	sub	ebx, eax
+	mov	DWORD PTR $T221842[esp+24], ebx
+	jmp	SHORT $LN36@plotDistan
+$LN34@plotDistan:
 	neg	edx
-	cmp	eax, edx
-	lea	ebp, DWORD PTR [esi+eax]
-	jl	SHORT $LN31@plotDistan
-$LN27@plotDistan:
-	mov	ebp, eax
-$LN31@plotDistan:
+	cmp	ebp, edx
+	jge	SHORT $LN32@plotDistan
+	lea	ebx, DWORD PTR [eax+ebp]
+	mov	DWORD PTR $T221842[esp+24], ebx
+	jmp	SHORT $LN36@plotDistan
+$LN32@plotDistan:
+	mov	ebx, ebp
+	mov	DWORD PTR $T221842[esp+24], ebp
+$LN36@plotDistan:
 
 ; 148  : 	int iDY = abs(iWrappedDY);
 
+	mov	eax, ebx
+	cdq
+	mov	esi, eax
+	xor	esi, edx
+	sub	esi, edx
+
+; 149  : 
+; 150  : #ifdef GAMECOREUTILS_FIX_PLOT_DISTANCE
+; 151  : 	const CvMap& kMap = GC.getMap();
+; 152  : 	// equidistant column joint fix (on X-wrapped maps):
+; 153  : 	if ((kMap.isWrapX()) && (abs(iWrappedDX * 2) == kMap.getGridWidth()) && (iDY % 2 != 0) && ((iY1 % 2 == 0) == (iWrappedDX > (kMap.getGridWidth() >> 2))))
+
+	cmp	BYTE PTR [edi+4056], 0
+	mov	DWORD PTR _iDY$[esp+28], esi
+	je	$LN77@plotDistan
+	lea	eax, DWORD PTR [ecx+ecx]
+	cdq
+	mov	ebx, eax
+	mov	eax, DWORD PTR [edi+4020]
+	xor	ebx, edx
+	sub	ebx, edx
+	cmp	ebx, eax
+	jne	SHORT $LN73@plotDistan
+	mov	edx, esi
+	and	edx, -2147483647			; 80000001H
+	jns	SHORT $LN79@plotDistan
+	dec	edx
+	or	edx, -2					; fffffffeH
+	inc	edx
+$LN79@plotDistan:
+	je	SHORT $LN73@plotDistan
+	sar	eax, 2
+	xor	edx, edx
+	cmp	ecx, eax
+	mov	eax, DWORD PTR _iY1$[esp+24]
+	setg	dl
+	and	eax, -2147483647			; 80000001H
+	jns	SHORT $LN80@plotDistan
+	dec	eax
+	or	eax, -2					; fffffffeH
+	inc	eax
+$LN80@plotDistan:
+
+; 154  : 	{
+; 155  : 		iWrappedDX *= -1;  // change polarity
+
+	mov	ebx, DWORD PTR $T221842[esp+24]
+	neg	eax
+	sbb	eax, eax
+	inc	eax
+	cmp	eax, edx
+	jne	SHORT $LN5@plotDistan
+	neg	ecx
+	jmp	SHORT $LN5@plotDistan
+$LN73@plotDistan:
+	mov	ebx, DWORD PTR $T221842[esp+24]
+$LN5@plotDistan:
+
+; 156  : 	}
+; 157  : 	if ((kMap.isWrapX()) && (abs(iWrappedDX * 2) == kMap.getGridWidth()) && (abs(iWrappedDY) < abs(iY2 - iY1)) && (iDY % 2 == 0) && (iX2 - iX1 < 0))
+
+	cmp	BYTE PTR [edi+4056], 0
+	je	$LN77@plotDistan
+	lea	eax, DWORD PTR [ecx+ecx]
+	cdq
+	xor	eax, edx
+	sub	eax, edx
+	cmp	eax, DWORD PTR [edi+4020]
+	jne	SHORT $LN75@plotDistan
 	mov	eax, ebp
 	cdq
 	xor	eax, edx
 	sub	eax, edx
-	mov	DWORD PTR _iDY$[esp+12], eax
+	cmp	esi, eax
+	jge	SHORT $LN75@plotDistan
+	mov	edx, DWORD PTR _iDY$[esp+28]
+	and	edx, -2147483647			; 80000001H
+	jns	SHORT $LN81@plotDistan
+	dec	edx
+	or	edx, -2					; fffffffeH
+	inc	edx
+$LN81@plotDistan:
+	jne	SHORT $LN75@plotDistan
+	cmp	DWORD PTR tv320[esp+28], 0
+	jge	SHORT $LN75@plotDistan
 
-; 149  : 
-; 150  : 	// convert to hex-space coordinates - the coordinate system axes are E and NE (not orthogonal)
-; 151  : 	int iHX1 = xToHexspaceX(iX1, iY1);
+; 158  : 	{
+; 159  : 		iWrappedDX *= -1;  // change polarity
 
-	test	edi, edi
-	jl	SHORT $LN35@plotDistan
-	mov	eax, edi
-	jmp	SHORT $LN59@plotDistan
-$LN35@plotDistan:
-	lea	eax, DWORD PTR [edi-1]
+	neg	ecx
+$LN75@plotDistan:
+
+; 160  : 	}
+; 161  : 	// special case when map is toroidal AND map height is odd
+; 162  : 	// TODO works but ugly
+; 163  : 	if ((kMap.isWrapX()) && (kMap.getGridHeight() % 2 != 0) && (iY1 % 2 == kMap.getGridWidth() % 2) && (iY2 % 2 == 0) &&
+; 164  : 		(abs(iWrappedDY) < abs(iY2 - iY1)) && (abs(iX2 - iX1) == kMap.getGridWidth() / 2 + ((kMap.getGridWidth() % 2 == 1) && (iX2 - iX1 > 0)) ? 1 : 0))
+
+	cmp	BYTE PTR [edi+4056], 0
+	je	$LN77@plotDistan
+	mov	eax, DWORD PTR [edi+4024]
+	and	eax, -2147483647			; 80000001H
+	jns	SHORT $LN82@plotDistan
+	dec	eax
+	or	eax, -2					; fffffffeH
+	inc	eax
+$LN82@plotDistan:
+	je	$LN77@plotDistan
+	mov	edi, DWORD PTR [edi+4020]
+	mov	DWORD PTR tv357[esp+28], edi
+	and	edi, -2147483647			; 80000001H
+	jns	SHORT $LN83@plotDistan
+	dec	edi
+	or	edi, -2					; fffffffeH
+	inc	edi
+$LN83@plotDistan:
+	mov	edx, DWORD PTR _iY1$[esp+24]
+	and	edx, -2147483647			; 80000001H
+	jns	SHORT $LN84@plotDistan
+	dec	edx
+	or	edx, -2					; fffffffeH
+	inc	edx
+$LN84@plotDistan:
+	cmp	edx, edi
+	jne	SHORT $LN77@plotDistan
+	mov	eax, DWORD PTR _iY2$[esp+24]
+	and	eax, -2147483647			; 80000001H
+	jns	SHORT $LN85@plotDistan
+	dec	eax
+	or	eax, -2					; fffffffeH
+	inc	eax
+$LN85@plotDistan:
+	jne	SHORT $LN77@plotDistan
+	mov	eax, ebp
+	cdq
+	xor	eax, edx
+	sub	eax, edx
+	cmp	esi, eax
+	jge	SHORT $LN77@plotDistan
+	cmp	edi, 1
+	jne	SHORT $LN76@plotDistan
+	cmp	DWORD PTR tv320[esp+28], 0
+	jle	SHORT $LN76@plotDistan
+	mov	esi, edi
+	jmp	SHORT $LN9@plotDistan
+$LN76@plotDistan:
+	xor	esi, esi
+$LN9@plotDistan:
+	mov	eax, DWORD PTR tv320[esp+28]
+	cdq
+	mov	edi, eax
+	mov	eax, DWORD PTR tv357[esp+28]
+	xor	edi, edx
+	sub	edi, edx
 	cdq
 	sub	eax, edx
-$LN59@plotDistan:
-	mov	esi, DWORD PTR _iX1$[esp+12]
 	sar	eax, 1
-	sub	esi, eax
+	add	eax, esi
+	cmp	edi, eax
+	jne	SHORT $LN77@plotDistan
 
-; 152  : 	int iHX2 = xToHexspaceX(iX1 + iWrappedDX, iY1 + iWrappedDY);
+; 165  : 	{
+; 166  : 		iWrappedDX -= (iWrappedDX > 0) - (iWrappedDX < 0);  // decrease regardless of polarity
 
-	lea	eax, DWORD PTR [edi+ebp]
-	pop	edi
+	xor	edx, edx
+	test	ecx, ecx
+	setl	dl
+	xor	eax, eax
+	test	ecx, ecx
+	setg	al
+	sub	edx, eax
+	add	ecx, edx
+$LN77@plotDistan:
+
+; 167  : 	}
+; 168  : #endif
+; 169  : 
+; 170  : 	// convert to hex-space coordinates - the coordinate system axes are E and NE (not orthogonal)
+; 171  : 	int iHX1 = xToHexspaceX(iX1, iY1);
+
+	mov	eax, DWORD PTR _iY1$[esp+24]
 	test	eax, eax
-	jge	SHORT $LN60@plotDistan
+	jge	SHORT $LN88@plotDistan
 	dec	eax
 	cdq
 	sub	eax, edx
-$LN60@plotDistan:
+$LN88@plotDistan:
+	mov	edi, DWORD PTR _iX1$[esp+24]
 
-; 153  : 
-; 154  : 	iDX = abs(dxWrap(iHX2 - iHX1));
+; 172  : 	int iHX2 = xToHexspaceX(iX1 + iWrappedDX, iY1 + iWrappedDY);
 
-	mov	edx, DWORD PTR [ebx+4020]
+	mov	edx, DWORD PTR _iY1$[esp+24]
+	sar	eax, 1
+	mov	esi, edi
+	sub	esi, eax
+	lea	eax, DWORD PTR [ebx+edx]
+	test	eax, eax
+	jge	SHORT $LN89@plotDistan
+	dec	eax
+	cdq
+	sub	eax, edx
+$LN89@plotDistan:
 	sar	eax, 1
 	sub	ecx, eax
-	add	ecx, DWORD PTR _iX1$[esp+8]
+	add	ecx, edi
+
+; 173  : 
+; 174  : #ifdef GAMECOREUTILS_FIX_PLOT_DISTANCE
+; 175  : 	// obvious bug
+; 176  : 	iDX = abs(iHX2 - iHX1);
+
 	sub	ecx, esi
-	cmp	BYTE PTR [ebx+4056], 0
-	je	SHORT $LN49@plotDistan
-	mov	eax, edx
-	shr	eax, 1
-	cmp	ecx, eax
-	jle	SHORT $LN51@plotDistan
 	mov	eax, ecx
-	sub	eax, edx
-	jmp	SHORT $LN53@plotDistan
-$LN51@plotDistan:
-	neg	eax
-	cmp	ecx, eax
-	lea	eax, DWORD PTR [edx+ecx]
-	jl	SHORT $LN53@plotDistan
-$LN49@plotDistan:
-	mov	eax, ecx
-$LN53@plotDistan:
 	cdq
 	xor	eax, edx
 	sub	eax, edx
 
-; 155  : 
-; 156  : #ifdef NQM_GAME_CORE_UTILS_OPTIMIZATIONS
-; 157  : 	if (((iHX2 - iHX1) ^ (iWrappedDY)) >= 0)  // the signs match
-; 158  : #else
-; 159  : 	if((iHX2 - iHX1 >= 0) == (iWrappedDY >= 0))  // the signs match
+; 177  : #else
+; 178  : 	iDX = abs(dxWrap(iHX2 - iHX1));
+; 179  : #endif
+; 180  : 
+; 181  : #ifdef NQM_GAME_CORE_UTILS_OPTIMIZATIONS
+; 182  : 	if (((iHX2 - iHX1) ^ (iWrappedDY)) >= 0)  // the signs match
+; 183  : #else
+; 184  : 	if((iHX2 - iHX1 >= 0) == (iWrappedDY >= 0))  // the signs match
 
 	xor	edx, edx
 	test	ecx, ecx
 	setge	dl
 	xor	ecx, ecx
-	test	ebp, ebp
+	test	ebx, ebx
 	setge	cl
+	pop	edi
 	pop	esi
 	pop	ebp
-	mov	DWORD PTR _iDX$[esp], eax
+	mov	DWORD PTR _iDX$[esp+12], eax
 	pop	ebx
 	cmp	edx, ecx
 	jne	SHORT $LN2@plotDistan
 
-; 160  : #endif
-; 161  : 	{
-; 162  : 		return iDX + iDY;
+; 185  : #endif
+; 186  : 	{
+; 187  : 		return iDX + iDY;
 
-	mov	edx, DWORD PTR _iDY$[esp-4]
+	mov	edx, DWORD PTR _iDY$[esp+12]
 	add	eax, edx
 
-; 170  : #endif
-; 171  : 	}
-; 172  : }
+; 195  : #endif
+; 196  : 	}
+; 197  : }
 
+	add	esp, 12					; 0000000cH
 	ret	0
 $LN2@plotDistan:
 
-; 163  : 	}
-; 164  : 	else
-; 165  : 	{
-; 166  : #ifdef NQM_FAST_COMP
-; 167  : 		return (MAX(iDX, iDY));
-; 168  : #else
-; 169  : 		return (std::max(iDX, iDY));
+; 188  : 	}
+; 189  : 	else
+; 190  : 	{
+; 191  : #ifdef NQM_FAST_COMP
+; 192  : 		return (MAX(iDX, iDY));
+; 193  : #else
+; 194  : 		return (std::max(iDX, iDY));
 
-	cmp	eax, DWORD PTR _iDY$[esp-4]
-	lea	eax, DWORD PTR _iDY$[esp-4]
-	jl	SHORT $LN58@plotDistan
-	lea	eax, DWORD PTR _iDX$[esp-4]
-$LN58@plotDistan:
+	cmp	eax, DWORD PTR _iDY$[esp+12]
+	lea	eax, DWORD PTR _iDY$[esp+12]
+	jl	SHORT $LN71@plotDistan
+	lea	eax, DWORD PTR _iDX$[esp+8]
+$LN71@plotDistan:
 	mov	eax, DWORD PTR [eax]
 
-; 170  : #endif
-; 171  : 	}
-; 172  : }
+; 195  : #endif
+; 196  : 	}
+; 197  : }
 
+	add	esp, 12					; 0000000cH
 	ret	0
 ?plotDistance@@YAHHHHH@Z ENDP				; plotDistance
 _TEXT	ENDS
@@ -4795,8 +4961,8 @@ PUBLIC	??$unchecked_uninitialized_copy@V?$_Vector_iterator@PAVCvCity@@V?$allocat
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ??$unchecked_uninitialized_copy@V?$_Vector_iterator@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@PAPAVCvCity@@V?$allocator@PAVCvCity@@@2@@stdext@@YAPAPAVCvCity@@V?$_Vector_iterator@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@0PAPAV1@AAV?$allocator@PAVCvCity@@@3@@Z
 _TEXT	SEGMENT
-$T223035 = -4						; size = 1
-__Cat$223039 = -4					; size = 1
+$T223102 = -4						; size = 1
+__Cat$223106 = -4					; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
@@ -4812,9 +4978,9 @@ __Al$ = 20						; size = 4
 ; 822  : 		_STD _Ptr_cat(_First, _Dest), _STD _Range_checked_iterator_tag()));
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T223035[esp+4], 0
-	mov	eax, DWORD PTR $T223035[esp+4]
-	mov	ecx, DWORD PTR __Cat$223039[esp+4]
+	mov	BYTE PTR $T223102[esp+4], 0
+	mov	eax, DWORD PTR $T223102[esp+4]
+	mov	ecx, DWORD PTR __Cat$223106[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -4837,7 +5003,7 @@ PUBLIC	?find@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocato
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xtree
 ;	COMDAT ?find@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@QAE?AViterator@12@ABQAVCvCity@@@Z
 _TEXT	SEGMENT
-$T223047 = -4						; size = 4
+$T223114 = -4						; size = 4
 ___$ReturnUdt$ = 8					; size = 4
 __Where$ = 12						; size = 4
 __Keyval$ = 12						; size = 4
@@ -4901,8 +5067,8 @@ $LN3@find:
 ; 981  : 				_Keyval, _Key(_Where._Mynode()))
 ; 982  : 					? end() : _Where);
 
-	mov	DWORD PTR $T223047[esp+8], eax
-	lea	eax, DWORD PTR $T223047[esp+8]
+	mov	DWORD PTR $T223114[esp+8], eax
+	lea	eax, DWORD PTR $T223114[esp+8]
 	mov	edx, DWORD PTR [eax]
 	mov	eax, DWORD PTR ___$ReturnUdt$[esp+4]
 	mov	DWORD PTR [eax], edx
@@ -5068,8 +5234,8 @@ PUBLIC	??$unchecked_uninitialized_copy@V?$_Vector_const_iterator@PAVCvCity@@V?$a
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ??$unchecked_uninitialized_copy@V?$_Vector_const_iterator@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@PAPAVCvCity@@V?$allocator@PAVCvCity@@@2@@stdext@@YAPAPAVCvCity@@V?$_Vector_const_iterator@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@0PAPAV1@AAV?$allocator@PAVCvCity@@@3@@Z
 _TEXT	SEGMENT
-$T223368 = -4						; size = 1
-__Cat$223373 = -4					; size = 1
+$T223435 = -4						; size = 1
+__Cat$223440 = -4					; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
@@ -5085,9 +5251,9 @@ __Al$ = 20						; size = 4
 ; 822  : 		_STD _Ptr_cat(_First, _Dest), _STD _Range_checked_iterator_tag()));
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T223368[esp+4], 0
-	mov	eax, DWORD PTR $T223368[esp+4]
-	mov	ecx, DWORD PTR __Cat$223373[esp+4]
+	mov	BYTE PTR $T223435[esp+4], 0
+	mov	eax, DWORD PTR $T223435[esp+4]
+	mov	ecx, DWORD PTR __Cat$223440[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -5185,10 +5351,10 @@ PUBLIC	??$_Uninit_move@V?$_Vector_iterator@PAVCvCity@@V?$allocator@PAVCvCity@@@s
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Uninit_move@V?$_Vector_iterator@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@PAPAVCvCity@@V?$allocator@PAVCvCity@@@2@U_Undefined_move_tag@2@@std@@YAPAPAVCvCity@@V?$_Vector_iterator@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@0@0PAPAV1@AAV?$allocator@PAVCvCity@@@0@U_Undefined_move_tag@0@U_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
-$T223492 = -4						; size = 1
+$T223559 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$223496 = 16					; size = 1
+__Cat$223563 = 16					; size = 1
 __Dest$ = 16						; size = 4
 __Al$ = 20						; size = 4
 ___formal$ = 24						; size = 1
@@ -5201,10 +5367,10 @@ ___formal$ = 28						; size = 1
 
 ; 207  : 	return (_STDEXT unchecked_uninitialized_copy(_First, _Last, _Dest, _Al));
 
-	mov	ecx, DWORD PTR __Cat$223496[esp]
+	mov	ecx, DWORD PTR __Cat$223563[esp]
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T223492[esp+4], 0
-	mov	eax, DWORD PTR $T223492[esp+4]
+	mov	BYTE PTR $T223559[esp+4], 0
+	mov	eax, DWORD PTR $T223559[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -5249,7 +5415,7 @@ PUBLIC	?GetNearbyCities@CvCityManager@@SAABV?$vector@PAVCvCity@@V?$allocator@PAV
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredll_expansion2\cvcitymanager.cpp
 ;	COMDAT ?GetNearbyCities@CvCityManager@@SAABV?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@PAVCvCity@@@Z
 _TEXT	SEGMENT
-$T223527 = -4						; size = 4
+$T223594 = -4						; size = 4
 _pkCity$ = 8						; size = 4
 ?GetNearbyCities@CvCityManager@@SAABV?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@PAVCvCity@@@Z PROC ; CvCityManager::GetNearbyCities, COMDAT
 
@@ -5268,7 +5434,7 @@ _pkCity$ = 8						; size = 4
 
 	lea	eax, DWORD PTR _pkCity$[esp]
 	push	eax
-	lea	ecx, DWORD PTR $T223527[esp+8]
+	lea	ecx, DWORD PTR $T223594[esp+8]
 	push	ecx
 	mov	ecx, OFFSET _ms_kCityMap
 	call	?find@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@QAE?AViterator@12@ABQAVCvCity@@@Z ; std::_Tree<std::_Tmap_traits<CvCity *,std::vector<CvCity *,std::allocator<CvCity *> >,std::less<CvCity *>,std::allocator<std::pair<CvCity * const,std::vector<CvCity *,std::allocator<CvCity *> > > >,0> >::find
@@ -5339,10 +5505,10 @@ PUBLIC	??$_Ucopy@V?$_Vector_const_iterator@PAVCvCity@@V?$allocator@PAVCvCity@@@s
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\vector
 ;	COMDAT ??$_Ucopy@V?$_Vector_const_iterator@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@IAEPAPAVCvCity@@V?$_Vector_const_iterator@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@1@0PAPAV2@@Z
 _TEXT	SEGMENT
-$T223660 = -4						; size = 1
+$T223727 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$223663 = 16					; size = 1
+__Cat$223730 = 16					; size = 1
 __Ptr$ = 16						; size = 4
 ??$_Ucopy@V?$_Vector_const_iterator@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@IAEPAPAVCvCity@@V?$_Vector_const_iterator@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@1@0PAPAV2@@Z PROC ; std::vector<CvCity *,std::allocator<CvCity *> >::_Ucopy<std::_Vector_const_iterator<CvCity *,std::allocator<CvCity *> > >, COMDAT
 ; _this$ = ecx
@@ -5355,9 +5521,9 @@ __Ptr$ = 16						; size = 4
 ; 1140 : 		return (_STDEXT unchecked_uninitialized_copy(_First, _Last,
 ; 1141 : 			_Ptr, this->_Alval));
 
-	mov	edx, DWORD PTR __Cat$223663[esp]
-	mov	BYTE PTR $T223660[esp+4], 0
-	mov	eax, DWORD PTR $T223660[esp+4]
+	mov	edx, DWORD PTR __Cat$223730[esp]
+	mov	BYTE PTR $T223727[esp+4], 0
+	mov	eax, DWORD PTR $T223727[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Ptr$[esp+4]
 	push	edx
@@ -5477,10 +5643,10 @@ PUBLIC	??$_Unchecked_uninitialized_move@V?$_Vector_iterator@PAVCvCity@@V?$alloca
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Unchecked_uninitialized_move@V?$_Vector_iterator@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@PAPAVCvCity@@V?$allocator@PAVCvCity@@@2@@stdext@@YAPAPAVCvCity@@V?$_Vector_iterator@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@0PAPAV1@AAV?$allocator@PAVCvCity@@@3@@Z
 _TEXT	SEGMENT
-$T223887 = -4						; size = 1
+$T223954 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$223890 = 16					; size = 1
+__Cat$223957 = 16					; size = 1
 __Dest$ = 16						; size = 4
 __Al$ = 20						; size = 4
 ??$_Unchecked_uninitialized_move@V?$_Vector_iterator@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@PAPAVCvCity@@V?$allocator@PAVCvCity@@@2@@stdext@@YAPAPAVCvCity@@V?$_Vector_iterator@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@0PAPAV1@AAV?$allocator@PAVCvCity@@@3@@Z PROC ; stdext::_Unchecked_uninitialized_move<std::_Vector_iterator<CvCity *,std::allocator<CvCity *> >,CvCity * *,std::allocator<CvCity *> >, COMDAT
@@ -5493,10 +5659,10 @@ __Al$ = 20						; size = 4
 ; 863  : 		_CHECKED_BASE(_Last), _Dest, _Al,
 ; 864  : 		_STD _Move_cat(_Dest), _STD _Range_checked_iterator_tag()));
 
-	mov	ecx, DWORD PTR __Cat$223890[esp]
+	mov	ecx, DWORD PTR __Cat$223957[esp]
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T223887[esp+4], 0
-	mov	eax, DWORD PTR $T223887[esp+4]
+	mov	BYTE PTR $T223954[esp+4], 0
+	mov	eax, DWORD PTR $T223954[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -5581,8 +5747,8 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 _this$ = -20						; size = 4
 __$EHRec$ = -16						; size = 16
-$T224175 = 8						; size = 1
-__Cat$224178 = 8					; size = 1
+$T224242 = 8						; size = 1
+__Cat$224245 = 8					; size = 1
 __Right$ = 8						; size = 4
 ??0?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@QAE@ABV01@@Z PROC ; std::vector<CvCity *,std::allocator<CvCity *> >::vector<CvCity *,std::allocator<CvCity *> >, COMDAT
 ; _this$ = ecx
@@ -5628,10 +5794,10 @@ $LN22@vector@2:
 ; 502  : 			_TRY_BEGIN
 ; 503  : 			_Mylast = _Ucopy(_Right.begin(), _Right.end(), _Myfirst);
 
-	mov	BYTE PTR $T224175[ebp], 0
-	mov	edx, DWORD PTR $T224175[ebp]
+	mov	BYTE PTR $T224242[ebp], 0
+	mov	edx, DWORD PTR $T224242[ebp]
 	push	edx
-	mov	edx, DWORD PTR __Cat$224178[ebp]
+	mov	edx, DWORD PTR __Cat$224245[ebp]
 	push	edx
 	lea	ecx, DWORD PTR [eax+edi*4]
 	push	esi
@@ -5756,10 +5922,10 @@ PUBLIC	??$_Umove@V?$_Vector_iterator@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@s
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Umove@V?$_Vector_iterator@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@IAEPAPAVCvCity@@V?$_Vector_iterator@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@1@0PAPAV2@@Z
 _TEXT	SEGMENT
-$T224348 = -4						; size = 1
+$T224415 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$224352 = 16					; size = 1
+__Cat$224419 = 16					; size = 1
 __Ptr$ = 16						; size = 4
 ??$_Umove@V?$_Vector_iterator@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@IAEPAPAVCvCity@@V?$_Vector_iterator@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@1@0PAPAV2@@Z PROC ; std::vector<CvCity *,std::allocator<CvCity *> >::_Umove<std::_Vector_iterator<CvCity *,std::allocator<CvCity *> > >, COMDAT
 ; _this$ = ecx
@@ -5772,9 +5938,9 @@ __Ptr$ = 16						; size = 4
 ; 1147 : 		return (_STDEXT _Unchecked_uninitialized_move(_First, _Last,
 ; 1148 : 			_Ptr, this->_Alval));
 
-	mov	edx, DWORD PTR __Cat$224352[esp]
-	mov	BYTE PTR $T224348[esp+4], 0
-	mov	eax, DWORD PTR $T224348[esp+4]
+	mov	edx, DWORD PTR __Cat$224419[esp]
+	mov	BYTE PTR $T224415[esp+4], 0
+	mov	eax, DWORD PTR $T224415[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Ptr$[esp+4]
 	push	edx
@@ -5852,10 +6018,10 @@ __ehfuncinfo$?reserve@?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@QA
 xdata$x	ENDS
 ;	COMDAT ?reserve@?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@QAEXI@Z
 _TEXT	SEGMENT
-__Ptr$219564 = -24					; size = 4
-$T224533 = -20						; size = 1
+__Ptr$219606 = -24					; size = 4
+$T224600 = -20						; size = 1
 __$EHRec$ = -16						; size = 16
-__Cat$224537 = 8					; size = 1
+__Cat$224604 = 8					; size = 1
 __Count$ = 8						; size = 4
 ?reserve@?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@QAEXI@Z PROC ; std::vector<CvCity *,std::allocator<CvCity *> >::reserve, COMDAT
 ; _this$ = ecx
@@ -5915,10 +6081,10 @@ $LN21@reserve:
 ; 610  : 			_Umove(begin(), end(), _Ptr);
 
 	mov	ecx, DWORD PTR [esi+4]
-	mov	BYTE PTR $T224533[ebp], 0
-	mov	edx, DWORD PTR $T224533[ebp]
+	mov	BYTE PTR $T224600[ebp], 0
+	mov	edx, DWORD PTR $T224600[ebp]
 	push	edx
-	mov	edx, DWORD PTR __Cat$224537[ebp]
+	mov	edx, DWORD PTR __Cat$224604[ebp]
 	push	edx
 	mov	ebx, eax
 	mov	eax, DWORD PTR [esi+8]
@@ -5926,7 +6092,7 @@ $LN21@reserve:
 	push	ebx
 	push	eax
 	push	ecx
-	mov	DWORD PTR __Ptr$219564[ebp], ebx
+	mov	DWORD PTR __Ptr$219606[ebp], ebx
 	mov	DWORD PTR __$EHRec$[ebp+12], 0
 	call	??$_Uninit_copy@V?$_Vector_iterator@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@PAPAVCvCity@@V?$allocator@PAVCvCity@@@2@@std@@YAPAPAVCvCity@@V?$_Vector_iterator@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@0@0PAPAV1@AAV?$allocator@PAVCvCity@@@0@U_Nonscalar_ptr_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z ; std::_Uninit_copy<std::_Vector_iterator<CvCity *,std::allocator<CvCity *> >,CvCity * *,std::allocator<CvCity *> >
 
@@ -5992,7 +6158,7 @@ __catch$?reserve@?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@QAEXI@Z
 ; 611  : 			_CATCH_ALL
 ; 612  : 			this->_Alval.deallocate(_Ptr, _Count);
 
-	mov	eax, DWORD PTR __Ptr$219564[ebp]
+	mov	eax, DWORD PTR __Ptr$219606[ebp]
 	push	eax
 	call	??3@YAXPAX@Z				; operator delete
 	add	esp, 4
@@ -6050,8 +6216,8 @@ _TEXT	SEGMENT
 __Capacity$ = -4					; size = 4
 __Where$ = 8						; size = 4
 __Count$ = 12						; size = 4
-__Tmp$219860 = 16					; size = 4
-__Tmp$219850 = 16					; size = 4
+__Tmp$219902 = 16					; size = 4
+__Tmp$219892 = 16					; size = 4
 __Val$ = 16						; size = 4
 ?_Insert_n@?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@IAEXV?$_Vector_const_iterator@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@2@IABQAVCvCity@@@Z PROC ; std::vector<CvCity *,std::allocator<CvCity *> >::_Insert_n, COMDAT
 ; _this$ = ecx
@@ -6282,7 +6448,7 @@ $LN10@Insert_n:
 ; 1214 : 				_VEC_ITER_BASE(_Where) + _Count);	// copy suffix
 
 	lea	ebp, DWORD PTR [edi*4]
-	mov	DWORD PTR __Tmp$219850[esp+16], edx
+	mov	DWORD PTR __Tmp$219892[esp+16], edx
 	jae	SHORT $LN3@Insert_n
 	lea	ecx, DWORD PTR [eax+ebp]
 	push	ecx
@@ -6299,7 +6465,7 @@ $LN10@Insert_n:
 	mov	eax, DWORD PTR [esi+8]
 	mov	ecx, eax
 	sub	ecx, DWORD PTR __Where$[esp+16]
-	lea	edx, DWORD PTR __Tmp$219850[esp+16]
+	lea	edx, DWORD PTR __Tmp$219892[esp+16]
 	sar	ecx, 2
 	push	edx
 	sub	edi, ecx
@@ -6327,7 +6493,7 @@ $LN10@Insert_n:
 ; 1231 : 				_Tmp);	// insert up to old end
 
 	mov	eax, DWORD PTR __Where$[esp+16]
-	lea	edx, DWORD PTR __Tmp$219850[esp+16]
+	lea	edx, DWORD PTR __Tmp$219892[esp+16]
 	push	edx
 	sub	esi, ebp
 	push	esi
@@ -6382,7 +6548,7 @@ $LN3@Insert_n:
 ; 1248 : 				_Tmp);	// insert into hole
 
 	mov	eax, DWORD PTR __Where$[esp+28]
-	lea	ecx, DWORD PTR __Tmp$219860[esp+28]
+	lea	ecx, DWORD PTR __Tmp$219902[esp+28]
 	push	ecx
 	add	ebp, eax
 	push	ebp
@@ -6596,7 +6762,7 @@ __ehfuncinfo$?_Buynode@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V
 xdata$x	ENDS
 ;	COMDAT ?_Buynode@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@IAEPAU_Node@?$_Tree_nod@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@2@PAU342@00ABU?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@2@D@Z
 _TEXT	SEGMENT
-$T224866 = -24						; size = 4
+$T224933 = -24						; size = 4
 __Wherenode$ = -20					; size = 4
 __$EHRec$ = -16						; size = 16
 __Larg$ = 8						; size = 4
@@ -6636,7 +6802,7 @@ __Carg$ = 24						; size = 1
 
 ; 1411 : 		new (_Wherenode) _Node(_Larg, _Parg, _Rarg, _Val, _Carg);
 
-	mov	DWORD PTR $T224866[ebp], esi
+	mov	DWORD PTR $T224933[ebp], esi
 	mov	BYTE PTR __$EHRec$[ebp+12], 1
 	test	esi, esi
 	je	SHORT $LN4@Buynode@2
@@ -6695,7 +6861,7 @@ text$x	SEGMENT
 __unwindfunclet$?_Buynode@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@IAEPAU_Node@?$_Tree_nod@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@2@PAU342@00ABU?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@2@D@Z$2:
 	mov	eax, DWORD PTR __Wherenode$[ebp]
 	push	eax
-	mov	ecx, DWORD PTR $T224866[ebp]
+	mov	ecx, DWORD PTR $T224933[ebp]
 	push	ecx
 	call	??3@YAXPAX0@Z				; operator delete
 	add	esp, 8
@@ -6758,8 +6924,8 @@ xdata$x	ENDS
 ;	COMDAT ?erase@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@@Z
 _TEXT	SEGMENT
 _this$ = -84						; size = 4
-$T224934 = -80						; size = 28
-$T224933 = -52						; size = 40
+$T225001 = -80						; size = 28
+$T225000 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
 __Where$ = 12						; size = 4
@@ -6796,22 +6962,22 @@ __Where$ = 12						; size = 4
 ; 775  : 			_THROW(out_of_range, "invalid map/set<T> iterator");
 
 	push	OFFSET ??_C@_0BM@PAPJHAGI@invalid?5map?1set?$DMT?$DO?5iterator?$AA@
-	lea	ecx, DWORD PTR $T224934[esp+92]
+	lea	ecx, DWORD PTR $T225001[esp+92]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T224933[esp+88]
+	lea	ecx, DWORD PTR $T225000[esp+88]
 	mov	DWORD PTR __$EHRec$[esp+96], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T224934[esp+88]
+	lea	eax, DWORD PTR $T225001[esp+88]
 	push	eax
-	lea	ecx, DWORD PTR $T224933[esp+104]
+	lea	ecx, DWORD PTR $T225000[esp+104]
 	mov	BYTE PTR __$EHRec$[esp+100], 1
-	mov	DWORD PTR $T224933[esp+92], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T225000[esp+92], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVout_of_range@std@@
-	lea	ecx, DWORD PTR $T224933[esp+92]
+	lea	ecx, DWORD PTR $T225000[esp+92]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+104], 0
-	mov	DWORD PTR $T224933[esp+96], OFFSET ??_7out_of_range@std@@6B@
+	mov	DWORD PTR $T225000[esp+96], OFFSET ??_7out_of_range@std@@6B@
 	call	__CxxThrowException@8
 $LN311@erase@2:
 $LN40@erase@2:
@@ -7412,10 +7578,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?erase@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@@Z$0:
-	lea	ecx, DWORD PTR $T224934[ebp]
+	lea	ecx, DWORD PTR $T225001[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?erase@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@@Z$2:
-	lea	ecx, DWORD PTR $T224933[ebp]
+	lea	ecx, DWORD PTR $T225000[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?erase@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?erase@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@@Z
@@ -7603,8 +7769,8 @@ __ehfuncinfo$?_Insert@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?
 xdata$x	ENDS
 ;	COMDAT ?_Insert@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@IAE?AViterator@12@_NPAU_Node@?$_Tree_nod@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@2@ABU?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@2@@Z
 _TEXT	SEGMENT
-$T225804 = -80						; size = 28
-$T225803 = -52						; size = 40
+$T225871 = -80						; size = 28
+$T225870 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
 __Addleft$ = 12						; size = 1
@@ -7632,22 +7798,22 @@ __Val$ = 20						; size = 4
 ; 1189 : 			_THROW(length_error, "map/set<T> too long");
 
 	push	OFFSET ??_C@_0BE@JONHPENG@map?1set?$DMT?$DO?5too?5long?$AA@
-	lea	ecx, DWORD PTR $T225804[esp+88]
+	lea	ecx, DWORD PTR $T225871[esp+88]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T225803[esp+84]
+	lea	ecx, DWORD PTR $T225870[esp+84]
 	mov	DWORD PTR __$EHRec$[esp+92], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T225804[esp+84]
+	lea	eax, DWORD PTR $T225871[esp+84]
 	push	eax
-	lea	ecx, DWORD PTR $T225803[esp+100]
+	lea	ecx, DWORD PTR $T225870[esp+100]
 	mov	BYTE PTR __$EHRec$[esp+96], 1
-	mov	DWORD PTR $T225803[esp+88], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T225870[esp+88], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVlength_error@std@@
-	lea	ecx, DWORD PTR $T225803[esp+88]
+	lea	ecx, DWORD PTR $T225870[esp+88]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+100], 0
-	mov	DWORD PTR $T225803[esp+92], OFFSET ??_7length_error@std@@6B@
+	mov	DWORD PTR $T225870[esp+92], OFFSET ??_7length_error@std@@6B@
 	call	__CxxThrowException@8
 $LN228@Insert:
 $LN17@Insert:
@@ -7966,10 +8132,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Insert@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@IAE?AViterator@12@_NPAU_Node@?$_Tree_nod@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@2@ABU?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@2@@Z$0:
-	lea	ecx, DWORD PTR $T225804[ebp]
+	lea	ecx, DWORD PTR $T225871[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Insert@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@IAE?AViterator@12@_NPAU_Node@?$_Tree_nod@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@2@ABU?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@2@@Z$2:
-	lea	ecx, DWORD PTR $T225803[ebp]
+	lea	ecx, DWORD PTR $T225870[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Insert@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@IAE?AViterator@12@_NPAU_Node@?$_Tree_nod@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@2@ABU?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@2@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?_Insert@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@IAE?AViterator@12@_NPAU_Node@?$_Tree_nod@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@2@ABU?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@2@@Z
@@ -7981,7 +8147,7 @@ text$x	ENDS
 ;	COMDAT ?AddToSortedList@@YAXAAV?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@HHPAVCvCity@@@Z
 _TEXT	SEGMENT
 tv514 = -8						; size = 4
-_iAddDistance$219060 = -4				; size = 4
+_iAddDistance$219102 = -4				; size = 4
 _iFromX$ = 8						; size = 4
 _iFromY$ = 12						; size = 4
 _pkAddCity$ = 16					; size = 4
@@ -8074,7 +8240,7 @@ $LN7@AddToSorte:
 	mov	ecx, DWORD PTR [ebx+8]
 	mov	esi, ebp
 	add	esp, 16					; 00000010H
-	mov	DWORD PTR _iAddDistance$219060[esp+20], eax
+	mov	DWORD PTR _iAddDistance$219102[esp+20], eax
 	cmp	esi, ecx
 	je	SHORT $LN207@AddToSorte
 	npad	3
@@ -8100,7 +8266,7 @@ $LL89@AddToSorte:
 
 ; 48   : 			if (iAddDistance <= iDistance)
 
-	cmp	DWORD PTR _iAddDistance$219060[esp+20], eax
+	cmp	DWORD PTR _iAddDistance$219102[esp+20], eax
 	jle	SHORT $LN203@AddToSorte
 	add	esi, 4
 	cmp	esi, DWORD PTR [ebx+8]
@@ -8209,7 +8375,7 @@ PUBLIC	?OnCityDestroyed@CvCityManager@@SAXPAVCvCity@@@Z ; CvCityManager::OnCityD
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?OnCityDestroyed@CvCityManager@@SAXPAVCvCity@@@Z
 _TEXT	SEGMENT
-$T227050 = -4						; size = 4
+$T227117 = -4						; size = 4
 _itr$ = -4						; size = 4
 _pkCity$ = 8						; size = 4
 ?OnCityDestroyed@CvCityManager@@SAXPAVCvCity@@@Z PROC	; CvCityManager::OnCityDestroyed, COMDAT
@@ -8350,7 +8516,7 @@ $LN7@OnCityDest:
 ; 120  : 		ms_kCityMap.erase(itr);
 
 	push	eax
-	lea	edx, DWORD PTR $T227050[esp+8]
+	lea	edx, DWORD PTR $T227117[esp+8]
 	push	edx
 	mov	ecx, OFFSET _ms_kCityMap
 	call	?erase@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@@Z ; std::_Tree<std::_Tmap_traits<CvCity *,std::vector<CvCity *,std::allocator<CvCity *> >,std::less<CvCity *>,std::allocator<std::pair<CvCity * const,std::vector<CvCity *,std::allocator<CvCity *> > > >,0> >::erase
@@ -8370,9 +8536,9 @@ PUBLIC	?insert@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$alloca
 _TEXT	SEGMENT
 __Addleft$ = -4						; size = 1
 ___$ReturnUdt$ = 8					; size = 4
-$T227465 = 12						; size = 4
-$T227463 = 12						; size = 4
-__Where$219469 = 12					; size = 4
+$T227532 = 12						; size = 4
+$T227530 = 12						; size = 4
+__Where$219511 = 12					; size = 4
 __Val$ = 12						; size = 4
 ?insert@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@QAE?AU?$pair@Viterator@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@_N@2@ABU?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@2@@Z PROC ; std::_Tree<std::_Tmap_traits<CvCity *,std::vector<CvCity *,std::allocator<CvCity *> >,std::less<CvCity *>,std::allocator<std::pair<CvCity * const,std::vector<CvCity *,std::allocator<CvCity *> > > >,0> >::insert, COMDAT
 ; _this$ = ecx
@@ -8439,7 +8605,7 @@ $LN9@insert@2:
 ; 646  : 			iterator _Where = _TREE_ITERATOR(_Wherenode);
 
 	mov	edx, esi
-	mov	DWORD PTR __Where$219469[esp+12], edx
+	mov	DWORD PTR __Where$219511[esp+12], edx
 
 ; 647  : 			if (!_Addleft)
 
@@ -8453,7 +8619,7 @@ $LN9@insert@2:
 
 ; 650  : 				return (_Pairib(_Insert(true, _Wherenode, _Val), true));
 
-	lea	ecx, DWORD PTR $T227463[esp+12]
+	lea	ecx, DWORD PTR $T227530[esp+12]
 	cmp	esi, DWORD PTR [eax]
 	jne	SHORT $LN4@insert@2
 	push	ebp
@@ -8485,7 +8651,7 @@ $LN4@insert@2:
 ; 652  : 				--_Where;	// need to test if insert before is okay
 
 	call	?_Dec@const_iterator@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@QAEXXZ ; std::_Tree<std::_Tmap_traits<CvCity *,std::vector<CvCity *,std::allocator<CvCity *> >,std::less<CvCity *>,std::allocator<std::pair<CvCity * const,std::vector<CvCity *,std::allocator<CvCity *> > > >,0> >::const_iterator::_Dec
-	mov	edx, DWORD PTR __Where$219469[esp+12]
+	mov	edx, DWORD PTR __Where$219511[esp+12]
 $LN57@insert@2:
 
 ; 653  : 
@@ -8502,7 +8668,7 @@ $LN57@insert@2:
 	push	ebp
 	push	esi
 	push	ecx
-	lea	edx, DWORD PTR $T227465[esp+24]
+	lea	edx, DWORD PTR $T227532[esp+24]
 	push	edx
 	mov	ecx, edi
 	call	?_Insert@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@IAE?AViterator@12@_NPAU_Node@?$_Tree_nod@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@2@ABU?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@2@@Z ; std::_Tree<std::_Tmap_traits<CvCity *,std::vector<CvCity *,std::allocator<CvCity *> >,std::less<CvCity *>,std::allocator<std::pair<CvCity * const,std::vector<CvCity *,std::allocator<CvCity *> > > >,0> >::_Insert
@@ -8586,7 +8752,7 @@ PUBLIC	?erase@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocat
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?erase@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@0@Z
 _TEXT	SEGMENT
-$T227633 = -4						; size = 4
+$T227700 = -4						; size = 4
 ___$ReturnUdt$ = 8					; size = 4
 __First$ = 12						; size = 4
 __Last$ = 16						; size = 4
@@ -8687,7 +8853,7 @@ $LN63@erase@3:
 	mov	DWORD PTR __First$[esp+4], eax
 $LN65@erase@3:
 	push	edx
-	lea	eax, DWORD PTR $T227633[esp+12]
+	lea	eax, DWORD PTR $T227700[esp+12]
 	push	eax
 	mov	ecx, esi
 	call	?erase@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@@Z ; std::_Tree<std::_Tmap_traits<CvCity *,std::vector<CvCity *,std::allocator<CvCity *> >,std::less<CvCity *>,std::allocator<std::pair<CvCity * const,std::vector<CvCity *,std::allocator<CvCity *> > > >,0> >::erase
@@ -8781,7 +8947,7 @@ xdata$x	ENDS
 ;	COMDAT ?OnCityCreated@CvCityManager@@SAXPAVCvCity@@@Z
 _TEXT	SEGMENT
 _kResult$ = -40						; size = 8
-$T228063 = -32						; size = 20
+$T228130 = -32						; size = 20
 __$EHRec$ = -12						; size = 12
 _pkAddCity$ = 8						; size = 4
 ?OnCityCreated@CvCityManager@@SAXPAVCvCity@@@Z PROC	; CvCityManager::OnCityCreated, COMDAT
@@ -8883,17 +9049,17 @@ $LN6@OnCityCrea:
 ; 77   : 	std::pair<CityMap::iterator, bool> kResult = ms_kCityMap.insert(CityMap::value_type(pkAddCity, ms_kEmptyList));
 
 	push	OFFSET _ms_kEmptyList
-	lea	ecx, DWORD PTR $T228063[esp+64]
-	mov	DWORD PTR $T228063[esp+60], ebp
+	lea	ecx, DWORD PTR $T228130[esp+64]
+	mov	DWORD PTR $T228130[esp+60], ebp
 	call	??0?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@QAE@ABV01@@Z ; std::vector<CvCity *,std::allocator<CvCity *> >::vector<CvCity *,std::allocator<CvCity *> >
-	lea	eax, DWORD PTR $T228063[esp+56]
+	lea	eax, DWORD PTR $T228130[esp+56]
 	push	eax
 	lea	ecx, DWORD PTR _kResult$[esp+60]
 	push	ecx
 	mov	ecx, OFFSET _ms_kCityMap
 	mov	DWORD PTR __$EHRec$[esp+72], 0
 	call	?insert@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@QAE?AU?$pair@Viterator@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@_N@2@ABU?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@2@@Z ; std::_Tree<std::_Tmap_traits<CvCity *,std::vector<CvCity *,std::allocator<CvCity *> >,std::less<CvCity *>,std::allocator<std::pair<CvCity * const,std::vector<CvCity *,std::allocator<CvCity *> > > >,0> >::insert
-	mov	eax, DWORD PTR $T228063[esp+64]
+	mov	eax, DWORD PTR $T228130[esp+64]
 	mov	DWORD PTR __$EHRec$[esp+64], -1
 	test	eax, eax
 	je	SHORT $LN104@OnCityCrea
@@ -9005,7 +9171,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?OnCityCreated@CvCityManager@@SAXPAVCvCity@@@Z$0:
-	lea	ecx, DWORD PTR $T228063[ebp]
+	lea	ecx, DWORD PTR $T228130[ebp]
 	jmp	??1?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@QAE@XZ
 __ehhandler$?OnCityCreated@CvCityManager@@SAXPAVCvCity@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?OnCityCreated@CvCityManager@@SAXPAVCvCity@@@Z
@@ -9017,7 +9183,7 @@ PUBLIC	?_Tidy@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocat
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xtree
 ;	COMDAT ?_Tidy@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@IAEXXZ
 _TEXT	SEGMENT
-$T228656 = -4						; size = 4
+$T228723 = -4						; size = 4
 ?_Tidy@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@IAEXXZ PROC ; std::_Tree<std::_Tmap_traits<CvCity *,std::vector<CvCity *,std::allocator<CvCity *> >,std::less<CvCity *>,std::allocator<std::pair<CvCity * const,std::vector<CvCity *,std::allocator<CvCity *> > > >,0> >::_Tidy, COMDAT
 ; _this$ = ecx
 
@@ -9033,7 +9199,7 @@ $T228656 = -4						; size = 4
 	mov	ecx, DWORD PTR [eax]
 	push	eax
 	push	ecx
-	lea	eax, DWORD PTR $T228656[esp+16]
+	lea	eax, DWORD PTR $T228723[esp+16]
 	push	eax
 	mov	ecx, esi
 	call	?erase@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@0@Z ; std::_Tree<std::_Tmap_traits<CvCity *,std::vector<CvCity *,std::allocator<CvCity *> >,std::less<CvCity *>,std::allocator<std::pair<CvCity * const,std::vector<CvCity *,std::allocator<CvCity *> > > >,0> >::erase
@@ -9065,7 +9231,7 @@ PUBLIC	??1?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@P
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??1?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@QAE@XZ
 _TEXT	SEGMENT
-$T228789 = -4						; size = 4
+$T228856 = -4						; size = 4
 ??1?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@QAE@XZ PROC ; std::_Tree<std::_Tmap_traits<CvCity *,std::vector<CvCity *,std::allocator<CvCity *> >,std::less<CvCity *>,std::allocator<std::pair<CvCity * const,std::vector<CvCity *,std::allocator<CvCity *> > > >,0> >::~_Tree<std::_Tmap_traits<CvCity *,std::vector<CvCity *,std::allocator<CvCity *> >,std::less<CvCity *>,std::allocator<std::pair<CvCity * const,std::vector<CvCity *,std::allocator<CvCity *> > > >,0> >, COMDAT
 ; _this$ = ecx
 
@@ -9081,7 +9247,7 @@ $T228789 = -4						; size = 4
 	mov	ecx, DWORD PTR [eax]
 	push	eax
 	push	ecx
-	lea	eax, DWORD PTR $T228789[esp+16]
+	lea	eax, DWORD PTR $T228856[esp+16]
 	push	eax
 	mov	ecx, esi
 	call	?erase@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@0@Z ; std::_Tree<std::_Tmap_traits<CvCity *,std::vector<CvCity *,std::allocator<CvCity *> >,std::less<CvCity *>,std::allocator<std::pair<CvCity * const,std::vector<CvCity *,std::allocator<CvCity *> > > >,0> >::erase
@@ -9104,7 +9270,7 @@ PUBLIC	??1?$map@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@s
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??1?$map@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@@std@@QAE@XZ
 _TEXT	SEGMENT
-$T228923 = -4						; size = 4
+$T228990 = -4						; size = 4
 ??1?$map@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@@std@@QAE@XZ PROC ; std::map<CvCity *,std::vector<CvCity *,std::allocator<CvCity *> >,std::less<CvCity *>,std::allocator<std::pair<CvCity * const,std::vector<CvCity *,std::allocator<CvCity *> > > > >::~map<CvCity *,std::vector<CvCity *,std::allocator<CvCity *> >,std::less<CvCity *>,std::allocator<std::pair<CvCity * const,std::vector<CvCity *,std::allocator<CvCity *> > > > >, COMDAT
 ; _this$ = ecx
 	push	ecx
@@ -9114,7 +9280,7 @@ $T228923 = -4						; size = 4
 	mov	ecx, DWORD PTR [eax]
 	push	eax
 	push	ecx
-	lea	eax, DWORD PTR $T228923[esp+16]
+	lea	eax, DWORD PTR $T228990[esp+16]
 	push	eax
 	mov	ecx, esi
 	call	?erase@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@0@Z ; std::_Tree<std::_Tmap_traits<CvCity *,std::vector<CvCity *,std::allocator<CvCity *> >,std::less<CvCity *>,std::allocator<std::pair<CvCity * const,std::vector<CvCity *,std::allocator<CvCity *> > > >,0> >::erase
@@ -9219,14 +9385,14 @@ $LN8@dynamic:
 text$yd	ENDS
 ;	COMDAT ??__Fms_kCityMap@@YAXXZ
 text$yd	SEGMENT
-$T229751 = -4						; size = 4
+$T229819 = -4						; size = 4
 ??__Fms_kCityMap@@YAXXZ PROC				; `dynamic atexit destructor for 'ms_kCityMap'', COMDAT
 	push	ecx
 	mov	eax, DWORD PTR _ms_kCityMap+4
 	mov	ecx, DWORD PTR [eax]
 	push	eax
 	push	ecx
-	lea	eax, DWORD PTR $T229751[esp+12]
+	lea	eax, DWORD PTR $T229819[esp+12]
 	push	eax
 	mov	ecx, OFFSET _ms_kCityMap
 	call	?erase@?$_Tree@V?$_Tmap_traits@PAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@U?$less@PAVCvCity@@@3@V?$allocator@U?$pair@QAVCvCity@@V?$vector@PAVCvCity@@V?$allocator@PAVCvCity@@@std@@@std@@@std@@@3@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@0@Z ; std::_Tree<std::_Tmap_traits<CvCity *,std::vector<CvCity *,std::allocator<CvCity *> >,std::less<CvCity *>,std::allocator<std::pair<CvCity * const,std::vector<CvCity *,std::allocator<CvCity *> > > >,0> >::erase

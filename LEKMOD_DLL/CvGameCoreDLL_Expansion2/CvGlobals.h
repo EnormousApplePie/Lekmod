@@ -7691,6 +7691,41 @@ public:
 		return m_fLEAGUE_PROJECT_REWARD_TIER_2_THRESHOLD;
 	}
 
+#ifdef NQ_SPOILS_OF_WAR
+	inline int getSPOILS_OF_WAR_ANCIENT()
+	{
+		return m_iSPOILS_OF_WAR_PERCENT_ANCIENT;
+	}
+	inline int getSPOILS_OF_WAR_CLASSICAL()
+	{
+		return m_iSPOILS_OF_WAR_PERCENT_CLASSICAL;
+	}
+	inline int getSPOILS_OF_WAR_MEDIEVAL()
+	{
+		return m_iSPOILS_OF_WAR_PERCENT_MEDIEVAL;
+	}
+	inline int getSPOILS_OF_WAR_RENAISSANCE()
+	{
+		return m_iSPOILS_OF_WAR_PERCENT_RENAISSANCE;
+	}
+	inline int getSPOILS_OF_WAR_INDUSTRIAL()
+	{
+		return m_iSPOILS_OF_WAR_PERCENT_INDUSTRIAL;
+	}
+	inline int getSPOILS_OF_WAR_MODERN()
+	{
+		return m_iSPOILS_OF_WAR_PERCENT_MODERN;
+	}
+	inline int getSPOILS_OF_WAR_ATOMIC()
+	{
+		return m_iSPOILS_OF_WAR_PERCENT_ATOMIC;
+	}
+	inline int getSPOILS_OF_WAR_FUTURE()
+	{
+		return m_iSPOILS_OF_WAR_PERCENT_FUTURE;
+	}
+#endif
+
 	////////////// END DEFINES //////////////////
 
 	void setDLLIFace(ICvEngineUtility4* pDll)
@@ -9712,6 +9747,18 @@ protected:
 	int m_iWALLS_BUILDINGCLASS;
 	int m_iPROMOTION_ONLY_DEFENSIVE;
 	int m_iPROMOTION_UNWELCOME_EVANGELIST;
+
+#ifdef NQ_SPOILS_OF_WAR
+
+	int	m_iSPOILS_OF_WAR_PERCENT_ANCIENT;
+	int	m_iSPOILS_OF_WAR_PERCENT_CLASSICAL;
+	int	m_iSPOILS_OF_WAR_PERCENT_MEDIEVAL;
+	int	m_iSPOILS_OF_WAR_PERCENT_RENAISSANCE;
+	int m_iSPOILS_OF_WAR_PERCENT_INDUSTRIAL;
+	int m_iSPOILS_OF_WAR_PERCENT_MODERN;
+	int m_iSPOILS_OF_WAR_PERCENT_ATOMIC;
+	int m_iSPOILS_OF_WAR_PERCENT_FUTURE;
+#endif
 
 	// DLL interface
 	ICvEngineUtility4* m_pDLL;

@@ -173,38 +173,6 @@ _TEXT	SEGMENT
 	ret	0
 ?getGameSpeed@CvReplayInfo@@QBE?AW4GameSpeedTypes@@XZ ENDP ; CvReplayInfo::getGameSpeed
 _TEXT	ENDS
-PUBLIC	?getVictoryType@CvReplayInfo@@QBE?AW4VictoryTypes@@XZ ; CvReplayInfo::getVictoryType
-; Function compile flags: /Ogtpy
-;	COMDAT ?getVictoryType@CvReplayInfo@@QBE?AW4VictoryTypes@@XZ
-_TEXT	SEGMENT
-?getVictoryType@CvReplayInfo@@QBE?AW4VictoryTypes@@XZ PROC ; CvReplayInfo::getVictoryType, COMDAT
-; _this$ = ecx
-
-; 405  : 	return m_eVictoryType;
-
-	mov	eax, DWORD PTR [ecx+88]
-
-; 406  : }
-
-	ret	0
-?getVictoryType@CvReplayInfo@@QBE?AW4VictoryTypes@@XZ ENDP ; CvReplayInfo::getVictoryType
-_TEXT	ENDS
-PUBLIC	?getGameType@CvReplayInfo@@QBE?AW4GameTypes@@XZ	; CvReplayInfo::getGameType
-; Function compile flags: /Ogtpy
-;	COMDAT ?getGameType@CvReplayInfo@@QBE?AW4GameTypes@@XZ
-_TEXT	SEGMENT
-?getGameType@CvReplayInfo@@QBE?AW4GameTypes@@XZ PROC	; CvReplayInfo::getGameType, COMDAT
-; _this$ = ecx
-
-; 410  : 	return m_eGameType;
-
-	mov	eax, DWORD PTR [ecx+92]
-
-; 411  : }
-
-	ret	0
-?getGameType@CvReplayInfo@@QBE?AW4GameTypes@@XZ ENDP	; CvReplayInfo::getGameType
-_TEXT	ENDS
 PUBLIC	??_7bad_alloc@std@@6B@				; std::bad_alloc::`vftable'
 PUBLIC	??0bad_alloc@std@@QAE@PBD@Z			; std::bad_alloc::bad_alloc
 PUBLIC	??_R4bad_alloc@std@@6B@				; std::bad_alloc::`RTTI Complete Object Locator'
@@ -313,6 +281,110 @@ __Message$ = 8						; size = 4
 	ret	4
 ??0bad_alloc@std@@QAE@PBD@Z ENDP			; std::bad_alloc::bad_alloc
 _TEXT	ENDS
+PUBLIC	?getVictoryType@CvReplayInfo@@QBE?AW4VictoryTypes@@XZ ; CvReplayInfo::getVictoryType
+; Function compile flags: /Ogtpy
+; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredll_expansion2\cvreplayinfo.cpp
+;	COMDAT ?getVictoryType@CvReplayInfo@@QBE?AW4VictoryTypes@@XZ
+_TEXT	SEGMENT
+?getVictoryType@CvReplayInfo@@QBE?AW4VictoryTypes@@XZ PROC ; CvReplayInfo::getVictoryType, COMDAT
+; _this$ = ecx
+
+; 405  : 	return m_eVictoryType;
+
+	mov	eax, DWORD PTR [ecx+88]
+
+; 406  : }
+
+	ret	0
+?getVictoryType@CvReplayInfo@@QBE?AW4VictoryTypes@@XZ ENDP ; CvReplayInfo::getVictoryType
+_TEXT	ENDS
+PUBLIC	?getGameType@CvReplayInfo@@QBE?AW4GameTypes@@XZ	; CvReplayInfo::getGameType
+; Function compile flags: /Ogtpy
+;	COMDAT ?getGameType@CvReplayInfo@@QBE?AW4GameTypes@@XZ
+_TEXT	SEGMENT
+?getGameType@CvReplayInfo@@QBE?AW4GameTypes@@XZ PROC	; CvReplayInfo::getGameType, COMDAT
+; _this$ = ecx
+
+; 410  : 	return m_eGameType;
+
+	mov	eax, DWORD PTR [ecx+92]
+
+; 411  : }
+
+	ret	0
+?getGameType@CvReplayInfo@@QBE?AW4GameTypes@@XZ ENDP	; CvReplayInfo::getGameType
+_TEXT	ENDS
+PUBLIC	??1bad_alloc@std@@UAE@XZ			; std::bad_alloc::~bad_alloc
+EXTRN	__imp_??1exception@std@@UAE@XZ:PROC
+; Function compile flags: /Ogtpy
+; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\exception
+;	COMDAT ??1bad_alloc@std@@UAE@XZ
+_TEXT	SEGMENT
+??1bad_alloc@std@@UAE@XZ PROC				; std::bad_alloc::~bad_alloc, COMDAT
+; _this$ = ecx
+
+; 380  : 		{	// destroy the object
+
+	mov	DWORD PTR [ecx], OFFSET ??_7bad_alloc@std@@6B@
+
+; 381  : 		}
+
+	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
+??1bad_alloc@std@@UAE@XZ ENDP				; std::bad_alloc::~bad_alloc
+_TEXT	ENDS
+EXTRN	??3@YAXPAX@Z:PROC				; operator delete
+; Function compile flags: /Ogtpy
+;	COMDAT ??_Gbad_alloc@std@@UAEPAXI@Z
+_TEXT	SEGMENT
+___flags$ = 8						; size = 4
+??_Gbad_alloc@std@@UAEPAXI@Z PROC			; std::bad_alloc::`scalar deleting destructor', COMDAT
+; _this$ = ecx
+	push	esi
+	mov	esi, ecx
+	mov	DWORD PTR [esi], OFFSET ??_7bad_alloc@std@@6B@
+	call	DWORD PTR __imp_??1exception@std@@UAE@XZ
+	test	BYTE PTR ___flags$[esp], 1
+	je	SHORT $LN6@scalar
+	push	esi
+	call	??3@YAXPAX@Z				; operator delete
+	add	esp, 4
+$LN6@scalar:
+	mov	eax, esi
+	pop	esi
+	ret	4
+??_Gbad_alloc@std@@UAEPAXI@Z ENDP			; std::bad_alloc::`scalar deleting destructor'
+_TEXT	ENDS
+PUBLIC	??2@YAPAXIPAX@Z					; operator new
+; Function compile flags: /Ogtpy
+; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\new
+;	COMDAT ??2@YAPAXIPAX@Z
+_TEXT	SEGMENT
+___formal$ = 8						; size = 4
+__Where$ = 12						; size = 4
+??2@YAPAXIPAX@Z PROC					; operator new, COMDAT
+
+; 59   : 	return (_Where);
+
+	mov	eax, DWORD PTR __Where$[esp-4]
+
+; 60   : 	}
+
+	ret	0
+??2@YAPAXIPAX@Z ENDP					; operator new
+_TEXT	ENDS
+PUBLIC	??3@YAXPAX0@Z					; operator delete
+; Function compile flags: /Ogtpy
+;	COMDAT ??3@YAXPAX0@Z
+_TEXT	SEGMENT
+___formal$ = 8						; size = 4
+___formal$ = 12						; size = 4
+??3@YAXPAX0@Z PROC					; operator delete, COMDAT
+
+; 64   : 	}
+
+	ret	0
+??3@YAXPAX0@Z ENDP					; operator delete
+_TEXT	ENDS
 PUBLIC	?getInitialTurn@CvReplayInfo@@QBEHXZ		; CvReplayInfo::getInitialTurn
 ; Function compile flags: /Ogtpy
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredll_expansion2\cvreplayinfo.cpp
@@ -362,49 +434,8 @@ _TEXT	SEGMENT
 	ret	0
 ?getFinalTurn@CvReplayInfo@@QBEHXZ ENDP			; CvReplayInfo::getFinalTurn
 _TEXT	ENDS
-PUBLIC	??1bad_alloc@std@@UAE@XZ			; std::bad_alloc::~bad_alloc
-EXTRN	__imp_??1exception@std@@UAE@XZ:PROC
-; Function compile flags: /Ogtpy
-; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\exception
-;	COMDAT ??1bad_alloc@std@@UAE@XZ
-_TEXT	SEGMENT
-??1bad_alloc@std@@UAE@XZ PROC				; std::bad_alloc::~bad_alloc, COMDAT
-; _this$ = ecx
-
-; 380  : 		{	// destroy the object
-
-	mov	DWORD PTR [ecx], OFFSET ??_7bad_alloc@std@@6B@
-
-; 381  : 		}
-
-	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
-??1bad_alloc@std@@UAE@XZ ENDP				; std::bad_alloc::~bad_alloc
-_TEXT	ENDS
-EXTRN	??3@YAXPAX@Z:PROC				; operator delete
-; Function compile flags: /Ogtpy
-;	COMDAT ??_Gbad_alloc@std@@UAEPAXI@Z
-_TEXT	SEGMENT
-___flags$ = 8						; size = 4
-??_Gbad_alloc@std@@UAEPAXI@Z PROC			; std::bad_alloc::`scalar deleting destructor', COMDAT
-; _this$ = ecx
-	push	esi
-	mov	esi, ecx
-	mov	DWORD PTR [esi], OFFSET ??_7bad_alloc@std@@6B@
-	call	DWORD PTR __imp_??1exception@std@@UAE@XZ
-	test	BYTE PTR ___flags$[esp], 1
-	je	SHORT $LN6@scalar
-	push	esi
-	call	??3@YAXPAX@Z				; operator delete
-	add	esp, 4
-$LN6@scalar:
-	mov	eax, esi
-	pop	esi
-	ret	4
-??_Gbad_alloc@std@@UAEPAXI@Z ENDP			; std::bad_alloc::`scalar deleting destructor'
-_TEXT	ENDS
 PUBLIC	?getCalendar@CvReplayInfo@@QBE?AW4CalendarTypes@@XZ ; CvReplayInfo::getCalendar
 ; Function compile flags: /Ogtpy
-; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredll_expansion2\cvreplayinfo.cpp
 ;	COMDAT ?getCalendar@CvReplayInfo@@QBE?AW4CalendarTypes@@XZ
 _TEXT	SEGMENT
 ?getCalendar@CvReplayInfo@@QBE?AW4CalendarTypes@@XZ PROC ; CvReplayInfo::getCalendar, COMDAT
@@ -419,40 +450,8 @@ _TEXT	SEGMENT
 	ret	0
 ?getCalendar@CvReplayInfo@@QBE?AW4CalendarTypes@@XZ ENDP ; CvReplayInfo::getCalendar
 _TEXT	ENDS
-PUBLIC	??2@YAPAXIPAX@Z					; operator new
-; Function compile flags: /Ogtpy
-; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\new
-;	COMDAT ??2@YAPAXIPAX@Z
-_TEXT	SEGMENT
-___formal$ = 8						; size = 4
-__Where$ = 12						; size = 4
-??2@YAPAXIPAX@Z PROC					; operator new, COMDAT
-
-; 59   : 	return (_Where);
-
-	mov	eax, DWORD PTR __Where$[esp-4]
-
-; 60   : 	}
-
-	ret	0
-??2@YAPAXIPAX@Z ENDP					; operator new
-_TEXT	ENDS
-PUBLIC	??3@YAXPAX0@Z					; operator delete
-; Function compile flags: /Ogtpy
-;	COMDAT ??3@YAXPAX0@Z
-_TEXT	SEGMENT
-___formal$ = 8						; size = 4
-___formal$ = 12						; size = 4
-??3@YAXPAX0@Z PROC					; operator delete, COMDAT
-
-; 64   : 	}
-
-	ret	0
-??3@YAXPAX0@Z ENDP					; operator delete
-_TEXT	ENDS
 PUBLIC	?getNormalizedScore@CvReplayInfo@@QBEHXZ	; CvReplayInfo::getNormalizedScore
 ; Function compile flags: /Ogtpy
-; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredll_expansion2\cvreplayinfo.cpp
 ;	COMDAT ?getNormalizedScore@CvReplayInfo@@QBEHXZ
 _TEXT	SEGMENT
 ?getNormalizedScore@CvReplayInfo@@QBEHXZ PROC		; CvReplayInfo::getNormalizedScore, COMDAT
@@ -1681,8 +1680,8 @@ __ehfuncinfo$?_Xlen@?$vector@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@s
 xdata$x	ENDS
 ;	COMDAT ?_Xlen@?$vector@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@std@@KAXXZ
 _TEXT	SEGMENT
-$T233188 = -80						; size = 28
-$T233187 = -52						; size = 40
+$T233230 = -80						; size = 28
+$T233229 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ?_Xlen@?$vector@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@std@@KAXXZ PROC ; std::vector<CvReplayMessage,std::allocator<CvReplayMessage> >::_Xlen, COMDAT
 
@@ -1698,22 +1697,22 @@ __$EHRec$ = -12						; size = 12
 ; 1260 : 		_THROW(length_error, "vector<T> too long");
 
 	push	OFFSET ??_C@_0BD@OLBABOEK@vector?$DMT?$DO?5too?5long?$AA@
-	lea	ecx, DWORD PTR $T233188[esp+84]
+	lea	ecx, DWORD PTR $T233230[esp+84]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T233187[esp+80]
+	lea	ecx, DWORD PTR $T233229[esp+80]
 	mov	DWORD PTR __$EHRec$[esp+88], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T233188[esp+80]
+	lea	eax, DWORD PTR $T233230[esp+80]
 	push	eax
-	lea	ecx, DWORD PTR $T233187[esp+96]
+	lea	ecx, DWORD PTR $T233229[esp+96]
 	mov	BYTE PTR __$EHRec$[esp+92], 1
-	mov	DWORD PTR $T233187[esp+84], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T233229[esp+84], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVlength_error@std@@
-	lea	ecx, DWORD PTR $T233187[esp+84]
+	lea	ecx, DWORD PTR $T233229[esp+84]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+96], 0
-	mov	DWORD PTR $T233187[esp+88], OFFSET ??_7length_error@std@@6B@
+	mov	DWORD PTR $T233229[esp+88], OFFSET ??_7length_error@std@@6B@
 	call	__CxxThrowException@8
 $LN13@Xlen:
 $LN12@Xlen:
@@ -1722,10 +1721,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Xlen@?$vector@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@std@@KAXXZ$0:
-	lea	ecx, DWORD PTR $T233188[ebp]
+	lea	ecx, DWORD PTR $T233230[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Xlen@?$vector@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@std@@KAXXZ$2:
-	lea	ecx, DWORD PTR $T233187[ebp]
+	lea	ecx, DWORD PTR $T233229[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Xlen@?$vector@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@std@@KAXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?_Xlen@?$vector@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@std@@KAXXZ
@@ -2225,8 +2224,8 @@ __ehfuncinfo$?_Xlen@?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$
 xdata$x	ENDS
 ;	COMDAT ?_Xlen@?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@std@@KAXXZ
 _TEXT	SEGMENT
-$T233295 = -80						; size = 28
-$T233294 = -52						; size = 40
+$T233337 = -80						; size = 28
+$T233336 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ?_Xlen@?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@std@@KAXXZ PROC ; std::vector<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > >,std::allocator<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > > > >::_Xlen, COMDAT
 
@@ -2242,22 +2241,22 @@ __$EHRec$ = -12						; size = 12
 ; 1260 : 		_THROW(length_error, "vector<T> too long");
 
 	push	OFFSET ??_C@_0BD@OLBABOEK@vector?$DMT?$DO?5too?5long?$AA@
-	lea	ecx, DWORD PTR $T233295[esp+84]
+	lea	ecx, DWORD PTR $T233337[esp+84]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T233294[esp+80]
+	lea	ecx, DWORD PTR $T233336[esp+80]
 	mov	DWORD PTR __$EHRec$[esp+88], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T233295[esp+80]
+	lea	eax, DWORD PTR $T233337[esp+80]
 	push	eax
-	lea	ecx, DWORD PTR $T233294[esp+96]
+	lea	ecx, DWORD PTR $T233336[esp+96]
 	mov	BYTE PTR __$EHRec$[esp+92], 1
-	mov	DWORD PTR $T233294[esp+84], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T233336[esp+84], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVlength_error@std@@
-	lea	ecx, DWORD PTR $T233294[esp+84]
+	lea	ecx, DWORD PTR $T233336[esp+84]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+96], 0
-	mov	DWORD PTR $T233294[esp+88], OFFSET ??_7length_error@std@@6B@
+	mov	DWORD PTR $T233336[esp+88], OFFSET ??_7length_error@std@@6B@
 	call	__CxxThrowException@8
 $LN13@Xlen@2:
 $LN12@Xlen@2:
@@ -2266,10 +2265,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Xlen@?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@std@@KAXXZ$0:
-	lea	ecx, DWORD PTR $T233295[ebp]
+	lea	ecx, DWORD PTR $T233337[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Xlen@?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@std@@KAXXZ$2:
-	lea	ecx, DWORD PTR $T233294[ebp]
+	lea	ecx, DWORD PTR $T233336[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Xlen@?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@std@@KAXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?_Xlen@?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@std@@KAXXZ
@@ -3044,8 +3043,8 @@ __ehfuncinfo$?_Xlen@?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator
 xdata$x	ENDS
 ;	COMDAT ?_Xlen@?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@KAXXZ
 _TEXT	SEGMENT
-$T233458 = -80						; size = 28
-$T233457 = -52						; size = 40
+$T233500 = -80						; size = 28
+$T233499 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ?_Xlen@?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@KAXXZ PROC ; std::vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >::_Xlen, COMDAT
 
@@ -3061,22 +3060,22 @@ __$EHRec$ = -12						; size = 12
 ; 1260 : 		_THROW(length_error, "vector<T> too long");
 
 	push	OFFSET ??_C@_0BD@OLBABOEK@vector?$DMT?$DO?5too?5long?$AA@
-	lea	ecx, DWORD PTR $T233458[esp+84]
+	lea	ecx, DWORD PTR $T233500[esp+84]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T233457[esp+80]
+	lea	ecx, DWORD PTR $T233499[esp+80]
 	mov	DWORD PTR __$EHRec$[esp+88], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T233458[esp+80]
+	lea	eax, DWORD PTR $T233500[esp+80]
 	push	eax
-	lea	ecx, DWORD PTR $T233457[esp+96]
+	lea	ecx, DWORD PTR $T233499[esp+96]
 	mov	BYTE PTR __$EHRec$[esp+92], 1
-	mov	DWORD PTR $T233457[esp+84], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T233499[esp+84], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVlength_error@std@@
-	lea	ecx, DWORD PTR $T233457[esp+84]
+	lea	ecx, DWORD PTR $T233499[esp+84]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+96], 0
-	mov	DWORD PTR $T233457[esp+88], OFFSET ??_7length_error@std@@6B@
+	mov	DWORD PTR $T233499[esp+88], OFFSET ??_7length_error@std@@6B@
 	call	__CxxThrowException@8
 $LN13@Xlen@3:
 $LN12@Xlen@3:
@@ -3085,10 +3084,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Xlen@?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@KAXXZ$0:
-	lea	ecx, DWORD PTR $T233458[ebp]
+	lea	ecx, DWORD PTR $T233500[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Xlen@?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@KAXXZ$2:
-	lea	ecx, DWORD PTR $T233457[ebp]
+	lea	ecx, DWORD PTR $T233499[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Xlen@?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@KAXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?_Xlen@?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@KAXXZ
@@ -3239,8 +3238,8 @@ __ehfuncinfo$?_Xlen@?$vector@W4GameOptionTypes@@V?$allocator@W4GameOptionTypes@@
 xdata$x	ENDS
 ;	COMDAT ?_Xlen@?$vector@W4GameOptionTypes@@V?$allocator@W4GameOptionTypes@@@std@@@std@@KAXXZ
 _TEXT	SEGMENT
-$T233506 = -80						; size = 28
-$T233505 = -52						; size = 40
+$T233548 = -80						; size = 28
+$T233547 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ?_Xlen@?$vector@W4GameOptionTypes@@V?$allocator@W4GameOptionTypes@@@std@@@std@@KAXXZ PROC ; std::vector<enum GameOptionTypes,std::allocator<enum GameOptionTypes> >::_Xlen, COMDAT
 
@@ -3256,22 +3255,22 @@ __$EHRec$ = -12						; size = 12
 ; 1260 : 		_THROW(length_error, "vector<T> too long");
 
 	push	OFFSET ??_C@_0BD@OLBABOEK@vector?$DMT?$DO?5too?5long?$AA@
-	lea	ecx, DWORD PTR $T233506[esp+84]
+	lea	ecx, DWORD PTR $T233548[esp+84]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T233505[esp+80]
+	lea	ecx, DWORD PTR $T233547[esp+80]
 	mov	DWORD PTR __$EHRec$[esp+88], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T233506[esp+80]
+	lea	eax, DWORD PTR $T233548[esp+80]
 	push	eax
-	lea	ecx, DWORD PTR $T233505[esp+96]
+	lea	ecx, DWORD PTR $T233547[esp+96]
 	mov	BYTE PTR __$EHRec$[esp+92], 1
-	mov	DWORD PTR $T233505[esp+84], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T233547[esp+84], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVlength_error@std@@
-	lea	ecx, DWORD PTR $T233505[esp+84]
+	lea	ecx, DWORD PTR $T233547[esp+84]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+96], 0
-	mov	DWORD PTR $T233505[esp+88], OFFSET ??_7length_error@std@@6B@
+	mov	DWORD PTR $T233547[esp+88], OFFSET ??_7length_error@std@@6B@
 	call	__CxxThrowException@8
 $LN13@Xlen@4:
 $LN12@Xlen@4:
@@ -3280,10 +3279,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Xlen@?$vector@W4GameOptionTypes@@V?$allocator@W4GameOptionTypes@@@std@@@std@@KAXXZ$0:
-	lea	ecx, DWORD PTR $T233506[ebp]
+	lea	ecx, DWORD PTR $T233548[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Xlen@?$vector@W4GameOptionTypes@@V?$allocator@W4GameOptionTypes@@@std@@@std@@KAXXZ$2:
-	lea	ecx, DWORD PTR $T233505[ebp]
+	lea	ecx, DWORD PTR $T233547[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Xlen@?$vector@W4GameOptionTypes@@V?$allocator@W4GameOptionTypes@@@std@@@std@@KAXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?_Xlen@?$vector@W4GameOptionTypes@@V?$allocator@W4GameOptionTypes@@@std@@@std@@KAXXZ
@@ -3365,8 +3364,8 @@ __ehfuncinfo$?_Xlen@?$vector@W4VictoryTypes@@V?$allocator@W4VictoryTypes@@@std@@
 xdata$x	ENDS
 ;	COMDAT ?_Xlen@?$vector@W4VictoryTypes@@V?$allocator@W4VictoryTypes@@@std@@@std@@KAXXZ
 _TEXT	SEGMENT
-$T233540 = -80						; size = 28
-$T233539 = -52						; size = 40
+$T233582 = -80						; size = 28
+$T233581 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ?_Xlen@?$vector@W4VictoryTypes@@V?$allocator@W4VictoryTypes@@@std@@@std@@KAXXZ PROC ; std::vector<enum VictoryTypes,std::allocator<enum VictoryTypes> >::_Xlen, COMDAT
 
@@ -3382,22 +3381,22 @@ __$EHRec$ = -12						; size = 12
 ; 1260 : 		_THROW(length_error, "vector<T> too long");
 
 	push	OFFSET ??_C@_0BD@OLBABOEK@vector?$DMT?$DO?5too?5long?$AA@
-	lea	ecx, DWORD PTR $T233540[esp+84]
+	lea	ecx, DWORD PTR $T233582[esp+84]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T233539[esp+80]
+	lea	ecx, DWORD PTR $T233581[esp+80]
 	mov	DWORD PTR __$EHRec$[esp+88], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T233540[esp+80]
+	lea	eax, DWORD PTR $T233582[esp+80]
 	push	eax
-	lea	ecx, DWORD PTR $T233539[esp+96]
+	lea	ecx, DWORD PTR $T233581[esp+96]
 	mov	BYTE PTR __$EHRec$[esp+92], 1
-	mov	DWORD PTR $T233539[esp+84], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T233581[esp+84], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVlength_error@std@@
-	lea	ecx, DWORD PTR $T233539[esp+84]
+	lea	ecx, DWORD PTR $T233581[esp+84]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+96], 0
-	mov	DWORD PTR $T233539[esp+88], OFFSET ??_7length_error@std@@6B@
+	mov	DWORD PTR $T233581[esp+88], OFFSET ??_7length_error@std@@6B@
 	call	__CxxThrowException@8
 $LN13@Xlen@5:
 $LN12@Xlen@5:
@@ -3406,10 +3405,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Xlen@?$vector@W4VictoryTypes@@V?$allocator@W4VictoryTypes@@@std@@@std@@KAXXZ$0:
-	lea	ecx, DWORD PTR $T233540[ebp]
+	lea	ecx, DWORD PTR $T233582[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Xlen@?$vector@W4VictoryTypes@@V?$allocator@W4VictoryTypes@@@std@@@std@@KAXXZ$2:
-	lea	ecx, DWORD PTR $T233539[ebp]
+	lea	ecx, DWORD PTR $T233581[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Xlen@?$vector@W4VictoryTypes@@V?$allocator@W4VictoryTypes@@@std@@@std@@KAXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?_Xlen@?$vector@W4VictoryTypes@@V?$allocator@W4VictoryTypes@@@std@@@std@@KAXXZ
@@ -3491,8 +3490,8 @@ __ehfuncinfo$?_Xlen@?$vector@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@
 xdata$x	ENDS
 ;	COMDAT ?_Xlen@?$vector@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@std@@KAXXZ
 _TEXT	SEGMENT
-$T233574 = -80						; size = 28
-$T233573 = -52						; size = 40
+$T233616 = -80						; size = 28
+$T233615 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ?_Xlen@?$vector@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@std@@KAXXZ PROC ; std::vector<CvReplayInfo::PlayerInfo,std::allocator<CvReplayInfo::PlayerInfo> >::_Xlen, COMDAT
 
@@ -3508,22 +3507,22 @@ __$EHRec$ = -12						; size = 12
 ; 1260 : 		_THROW(length_error, "vector<T> too long");
 
 	push	OFFSET ??_C@_0BD@OLBABOEK@vector?$DMT?$DO?5too?5long?$AA@
-	lea	ecx, DWORD PTR $T233574[esp+84]
+	lea	ecx, DWORD PTR $T233616[esp+84]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T233573[esp+80]
+	lea	ecx, DWORD PTR $T233615[esp+80]
 	mov	DWORD PTR __$EHRec$[esp+88], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T233574[esp+80]
+	lea	eax, DWORD PTR $T233616[esp+80]
 	push	eax
-	lea	ecx, DWORD PTR $T233573[esp+96]
+	lea	ecx, DWORD PTR $T233615[esp+96]
 	mov	BYTE PTR __$EHRec$[esp+92], 1
-	mov	DWORD PTR $T233573[esp+84], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T233615[esp+84], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVlength_error@std@@
-	lea	ecx, DWORD PTR $T233573[esp+84]
+	lea	ecx, DWORD PTR $T233615[esp+84]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+96], 0
-	mov	DWORD PTR $T233573[esp+88], OFFSET ??_7length_error@std@@6B@
+	mov	DWORD PTR $T233615[esp+88], OFFSET ??_7length_error@std@@6B@
 	call	__CxxThrowException@8
 $LN13@Xlen@6:
 $LN12@Xlen@6:
@@ -3532,10 +3531,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Xlen@?$vector@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@std@@KAXXZ$0:
-	lea	ecx, DWORD PTR $T233574[ebp]
+	lea	ecx, DWORD PTR $T233616[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Xlen@?$vector@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@std@@KAXXZ$2:
-	lea	ecx, DWORD PTR $T233573[ebp]
+	lea	ecx, DWORD PTR $T233615[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Xlen@?$vector@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@std@@KAXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?_Xlen@?$vector@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@std@@KAXXZ
@@ -3617,8 +3616,8 @@ __ehfuncinfo$?_Xlen@?$vector@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$p
 xdata$x	ENDS
 ;	COMDAT ?_Xlen@?$vector@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@2@@std@@KAXXZ
 _TEXT	SEGMENT
-$T233608 = -80						; size = 28
-$T233607 = -52						; size = 40
+$T233650 = -80						; size = 28
+$T233649 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ?_Xlen@?$vector@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@2@@std@@KAXXZ PROC ; std::vector<std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > >,std::allocator<std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > > > >::_Xlen, COMDAT
 
@@ -3634,22 +3633,22 @@ __$EHRec$ = -12						; size = 12
 ; 1260 : 		_THROW(length_error, "vector<T> too long");
 
 	push	OFFSET ??_C@_0BD@OLBABOEK@vector?$DMT?$DO?5too?5long?$AA@
-	lea	ecx, DWORD PTR $T233608[esp+84]
+	lea	ecx, DWORD PTR $T233650[esp+84]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T233607[esp+80]
+	lea	ecx, DWORD PTR $T233649[esp+80]
 	mov	DWORD PTR __$EHRec$[esp+88], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T233608[esp+80]
+	lea	eax, DWORD PTR $T233650[esp+80]
 	push	eax
-	lea	ecx, DWORD PTR $T233607[esp+96]
+	lea	ecx, DWORD PTR $T233649[esp+96]
 	mov	BYTE PTR __$EHRec$[esp+92], 1
-	mov	DWORD PTR $T233607[esp+84], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T233649[esp+84], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVlength_error@std@@
-	lea	ecx, DWORD PTR $T233607[esp+84]
+	lea	ecx, DWORD PTR $T233649[esp+84]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+96], 0
-	mov	DWORD PTR $T233607[esp+88], OFFSET ??_7length_error@std@@6B@
+	mov	DWORD PTR $T233649[esp+88], OFFSET ??_7length_error@std@@6B@
 	call	__CxxThrowException@8
 $LN13@Xlen@7:
 $LN12@Xlen@7:
@@ -3658,10 +3657,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Xlen@?$vector@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@2@@std@@KAXXZ$0:
-	lea	ecx, DWORD PTR $T233608[ebp]
+	lea	ecx, DWORD PTR $T233650[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Xlen@?$vector@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@2@@std@@KAXXZ$2:
-	lea	ecx, DWORD PTR $T233607[ebp]
+	lea	ecx, DWORD PTR $T233649[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Xlen@?$vector@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@2@@std@@KAXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?_Xlen@?$vector@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@2@@std@@KAXXZ
@@ -3794,8 +3793,8 @@ __ehfuncinfo$?_Xlen@?$vector@U?$pair@FF@std@@V?$allocator@U?$pair@FF@std@@@2@@st
 xdata$x	ENDS
 ;	COMDAT ?_Xlen@?$vector@U?$pair@FF@std@@V?$allocator@U?$pair@FF@std@@@2@@std@@KAXXZ
 _TEXT	SEGMENT
-$T233653 = -80						; size = 28
-$T233652 = -52						; size = 40
+$T233695 = -80						; size = 28
+$T233694 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ?_Xlen@?$vector@U?$pair@FF@std@@V?$allocator@U?$pair@FF@std@@@2@@std@@KAXXZ PROC ; std::vector<std::pair<short,short>,std::allocator<std::pair<short,short> > >::_Xlen, COMDAT
 
@@ -3811,22 +3810,22 @@ __$EHRec$ = -12						; size = 12
 ; 1260 : 		_THROW(length_error, "vector<T> too long");
 
 	push	OFFSET ??_C@_0BD@OLBABOEK@vector?$DMT?$DO?5too?5long?$AA@
-	lea	ecx, DWORD PTR $T233653[esp+84]
+	lea	ecx, DWORD PTR $T233695[esp+84]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T233652[esp+80]
+	lea	ecx, DWORD PTR $T233694[esp+80]
 	mov	DWORD PTR __$EHRec$[esp+88], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T233653[esp+80]
+	lea	eax, DWORD PTR $T233695[esp+80]
 	push	eax
-	lea	ecx, DWORD PTR $T233652[esp+96]
+	lea	ecx, DWORD PTR $T233694[esp+96]
 	mov	BYTE PTR __$EHRec$[esp+92], 1
-	mov	DWORD PTR $T233652[esp+84], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T233694[esp+84], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVlength_error@std@@
-	lea	ecx, DWORD PTR $T233652[esp+84]
+	lea	ecx, DWORD PTR $T233694[esp+84]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+96], 0
-	mov	DWORD PTR $T233652[esp+88], OFFSET ??_7length_error@std@@6B@
+	mov	DWORD PTR $T233694[esp+88], OFFSET ??_7length_error@std@@6B@
 	call	__CxxThrowException@8
 $LN13@Xlen@8:
 $LN12@Xlen@8:
@@ -3835,10 +3834,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Xlen@?$vector@U?$pair@FF@std@@V?$allocator@U?$pair@FF@std@@@2@@std@@KAXXZ$0:
-	lea	ecx, DWORD PTR $T233653[ebp]
+	lea	ecx, DWORD PTR $T233695[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Xlen@?$vector@U?$pair@FF@std@@V?$allocator@U?$pair@FF@std@@@2@@std@@KAXXZ$2:
-	lea	ecx, DWORD PTR $T233652[ebp]
+	lea	ecx, DWORD PTR $T233694[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Xlen@?$vector@U?$pair@FF@std@@V?$allocator@U?$pair@FF@std@@@2@@std@@KAXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?_Xlen@?$vector@U?$pair@FF@std@@V?$allocator@U?$pair@FF@std@@@2@@std@@KAXXZ
@@ -4722,6 +4721,64 @@ $LN2@Lrotate:
 	ret	4
 ?_Lrotate@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@IAEXPAU_Node@?$_Tree_nod@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@2@@Z ENDP ; std::_Tree<std::_Tmap_traits<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> >,0> >::_Lrotate
 _TEXT	ENDS
+EXTRN	__imp_??0exception@std@@QAE@ABV01@@Z:PROC
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__unwindtable$??0logic_error@std@@QAE@ABV01@@Z DD 0ffffffffH
+	DD	FLAT:__unwindfunclet$??0logic_error@std@@QAE@ABV01@@Z$0
+__ehfuncinfo$??0logic_error@std@@QAE@ABV01@@Z DD 019930522H
+	DD	01H
+	DD	FLAT:__unwindtable$??0logic_error@std@@QAE@ABV01@@Z
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	01H
+; Function compile flags: /Ogtpy
+xdata$x	ENDS
+;	COMDAT ??0logic_error@std@@QAE@ABV01@@Z
+_TEXT	SEGMENT
+_this$ = -16						; size = 4
+__$EHRec$ = -12						; size = 12
+___that$ = 8						; size = 4
+??0logic_error@std@@QAE@ABV01@@Z PROC			; std::logic_error::logic_error, COMDAT
+; _this$ = ecx
+	push	-1
+	push	__ehhandler$??0logic_error@std@@QAE@ABV01@@Z
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	mov	DWORD PTR fs:0, esp
+	push	ecx
+	push	esi
+	push	edi
+	mov	edi, DWORD PTR ___that$[esp+20]
+	mov	esi, ecx
+	push	edi
+	mov	DWORD PTR _this$[esp+28], esi
+	call	DWORD PTR __imp_??0exception@std@@QAE@ABV01@@Z
+	add	edi, 12					; 0000000cH
+	push	edi
+	lea	ecx, DWORD PTR [esi+12]
+	mov	DWORD PTR __$EHRec$[esp+36], 0
+	mov	DWORD PTR [esi], OFFSET ??_7logic_error@std@@6B@
+	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
+	mov	ecx, DWORD PTR __$EHRec$[esp+24]
+	pop	edi
+	mov	eax, esi
+	pop	esi
+	mov	DWORD PTR fs:0, ecx
+	add	esp, 16					; 00000010H
+	ret	4
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__unwindfunclet$??0logic_error@std@@QAE@ABV01@@Z$0:
+	mov	ecx, DWORD PTR _this$[ebp]
+	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
+__ehhandler$??0logic_error@std@@QAE@ABV01@@Z:
+	mov	eax, OFFSET __ehfuncinfo$??0logic_error@std@@QAE@ABV01@@Z
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+??0logic_error@std@@QAE@ABV01@@Z ENDP			; std::logic_error::logic_error
 PUBLIC	?_Rrotate@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@IAEXPAU_Node@?$_Tree_nod@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@2@@Z ; std::_Tree<std::_Tmap_traits<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> >,0> >::_Rrotate
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?_Rrotate@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@IAEXPAU_Node@?$_Tree_nod@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@2@@Z
@@ -4827,64 +4884,6 @@ $LN2@Rrotate:
 	ret	4
 ?_Rrotate@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@IAEXPAU_Node@?$_Tree_nod@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@2@@Z ENDP ; std::_Tree<std::_Tmap_traits<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> >,0> >::_Rrotate
 _TEXT	ENDS
-EXTRN	__imp_??0exception@std@@QAE@ABV01@@Z:PROC
-;	COMDAT xdata$x
-xdata$x	SEGMENT
-__unwindtable$??0logic_error@std@@QAE@ABV01@@Z DD 0ffffffffH
-	DD	FLAT:__unwindfunclet$??0logic_error@std@@QAE@ABV01@@Z$0
-__ehfuncinfo$??0logic_error@std@@QAE@ABV01@@Z DD 019930522H
-	DD	01H
-	DD	FLAT:__unwindtable$??0logic_error@std@@QAE@ABV01@@Z
-	DD	2 DUP(00H)
-	DD	2 DUP(00H)
-	DD	00H
-	DD	01H
-; Function compile flags: /Ogtpy
-xdata$x	ENDS
-;	COMDAT ??0logic_error@std@@QAE@ABV01@@Z
-_TEXT	SEGMENT
-_this$ = -16						; size = 4
-__$EHRec$ = -12						; size = 12
-___that$ = 8						; size = 4
-??0logic_error@std@@QAE@ABV01@@Z PROC			; std::logic_error::logic_error, COMDAT
-; _this$ = ecx
-	push	-1
-	push	__ehhandler$??0logic_error@std@@QAE@ABV01@@Z
-	mov	eax, DWORD PTR fs:0
-	push	eax
-	mov	DWORD PTR fs:0, esp
-	push	ecx
-	push	esi
-	push	edi
-	mov	edi, DWORD PTR ___that$[esp+20]
-	mov	esi, ecx
-	push	edi
-	mov	DWORD PTR _this$[esp+28], esi
-	call	DWORD PTR __imp_??0exception@std@@QAE@ABV01@@Z
-	add	edi, 12					; 0000000cH
-	push	edi
-	lea	ecx, DWORD PTR [esi+12]
-	mov	DWORD PTR __$EHRec$[esp+36], 0
-	mov	DWORD PTR [esi], OFFSET ??_7logic_error@std@@6B@
-	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
-	mov	ecx, DWORD PTR __$EHRec$[esp+24]
-	pop	edi
-	mov	eax, esi
-	pop	esi
-	mov	DWORD PTR fs:0, ecx
-	add	esp, 16					; 00000010H
-	ret	4
-_TEXT	ENDS
-;	COMDAT text$x
-text$x	SEGMENT
-__unwindfunclet$??0logic_error@std@@QAE@ABV01@@Z$0:
-	mov	ecx, DWORD PTR _this$[ebp]
-	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
-__ehhandler$??0logic_error@std@@QAE@ABV01@@Z:
-	mov	eax, OFFSET __ehfuncinfo$??0logic_error@std@@QAE@ABV01@@Z
-	jmp	___CxxFrameHandler3
-text$x	ENDS
-??0logic_error@std@@QAE@ABV01@@Z ENDP			; std::logic_error::logic_error
 PUBLIC	?_Xlen@?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@KAXXZ ; std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > >::_Xlen
 ;	COMDAT xdata$x
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\stdexcept
@@ -4905,8 +4904,8 @@ __ehfuncinfo$?_Xlen@?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH
 xdata$x	ENDS
 ;	COMDAT ?_Xlen@?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@KAXXZ
 _TEXT	SEGMENT
-$T233962 = -80						; size = 28
-$T233961 = -52						; size = 40
+$T234004 = -80						; size = 28
+$T234003 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ?_Xlen@?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@KAXXZ PROC ; std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > >::_Xlen, COMDAT
 
@@ -4922,22 +4921,22 @@ __$EHRec$ = -12						; size = 12
 ; 1260 : 		_THROW(length_error, "vector<T> too long");
 
 	push	OFFSET ??_C@_0BD@OLBABOEK@vector?$DMT?$DO?5too?5long?$AA@
-	lea	ecx, DWORD PTR $T233962[esp+84]
+	lea	ecx, DWORD PTR $T234004[esp+84]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T233961[esp+80]
+	lea	ecx, DWORD PTR $T234003[esp+80]
 	mov	DWORD PTR __$EHRec$[esp+88], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T233962[esp+80]
+	lea	eax, DWORD PTR $T234004[esp+80]
 	push	eax
-	lea	ecx, DWORD PTR $T233961[esp+96]
+	lea	ecx, DWORD PTR $T234003[esp+96]
 	mov	BYTE PTR __$EHRec$[esp+92], 1
-	mov	DWORD PTR $T233961[esp+84], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T234003[esp+84], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVlength_error@std@@
-	lea	ecx, DWORD PTR $T233961[esp+84]
+	lea	ecx, DWORD PTR $T234003[esp+84]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+96], 0
-	mov	DWORD PTR $T233961[esp+88], OFFSET ??_7length_error@std@@6B@
+	mov	DWORD PTR $T234003[esp+88], OFFSET ??_7length_error@std@@6B@
 	call	__CxxThrowException@8
 $LN13@Xlen@9:
 $LN12@Xlen@9:
@@ -4946,10 +4945,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Xlen@?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@KAXXZ$0:
-	lea	ecx, DWORD PTR $T233962[ebp]
+	lea	ecx, DWORD PTR $T234004[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Xlen@?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@KAXXZ$2:
-	lea	ecx, DWORD PTR $T233961[ebp]
+	lea	ecx, DWORD PTR $T234003[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Xlen@?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@KAXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?_Xlen@?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@KAXXZ
@@ -6660,6 +6659,35 @@ _TEXT	SEGMENT
 	jmp	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 ??BCvString@@QBEPBDXZ ENDP				; CvString::operator char const *
 _TEXT	ENDS
+PUBLIC	??4CvString@@QAEAAV0@PBD@Z			; CvString::operator=
+EXTRN	__imp_?clear@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEXXZ:PROC
+EXTRN	__imp_?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBD@Z:PROC
+; Function compile flags: /Ogtpy
+;	COMDAT ??4CvString@@QAEAAV0@PBD@Z
+_TEXT	SEGMENT
+_s$ = 8							; size = 4
+??4CvString@@QAEAAV0@PBD@Z PROC				; CvString::operator=, COMDAT
+; _this$ = ecx
+
+; 37   : 	CvString& operator=( const char* s) { if (s) assign(s); else clear();	return *this; }	
+
+	mov	eax, DWORD PTR _s$[esp-4]
+	push	esi
+	mov	esi, ecx
+	test	eax, eax
+	je	SHORT $LN2@operator
+	push	eax
+	call	DWORD PTR __imp_?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBD@Z
+	mov	eax, esi
+	pop	esi
+	ret	4
+$LN2@operator:
+	call	DWORD PTR __imp_?clear@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEXXZ
+	mov	eax, esi
+	pop	esi
+	ret	4
+??4CvString@@QAEAAV0@PBD@Z ENDP				; CvString::operator=
+_TEXT	ENDS
 PUBLIC	??0?$_Container_base_aux_alloc_empty@V?$allocator@U?$pair@$$CBIH@std@@@std@@@std@@IAE@V?$allocator@U?$pair@$$CBIH@std@@@1@@Z ; std::_Container_base_aux_alloc_empty<std::allocator<std::pair<unsigned int const ,int> > >::_Container_base_aux_alloc_empty<std::allocator<std::pair<unsigned int const ,int> > >
 ; Function compile flags: /Ogtpy
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xutility
@@ -6702,36 +6730,6 @@ ___formal$ = 8						; size = 1
 	mov	eax, ecx
 	ret	4
 ??0?$_Container_base_aux_alloc_empty@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@std@@@std@@IAE@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@1@@Z ENDP ; std::_Container_base_aux_alloc_empty<std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > >::_Container_base_aux_alloc_empty<std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > >
-_TEXT	ENDS
-PUBLIC	??4CvString@@QAEAAV0@PBD@Z			; CvString::operator=
-EXTRN	__imp_?clear@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEXXZ:PROC
-EXTRN	__imp_?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBD@Z:PROC
-; Function compile flags: /Ogtpy
-; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredllutil\include\cvstring.h
-;	COMDAT ??4CvString@@QAEAAV0@PBD@Z
-_TEXT	SEGMENT
-_s$ = 8							; size = 4
-??4CvString@@QAEAAV0@PBD@Z PROC				; CvString::operator=, COMDAT
-; _this$ = ecx
-
-; 37   : 	CvString& operator=( const char* s) { if (s) assign(s); else clear();	return *this; }	
-
-	mov	eax, DWORD PTR _s$[esp-4]
-	push	esi
-	mov	esi, ecx
-	test	eax, eax
-	je	SHORT $LN2@operator
-	push	eax
-	call	DWORD PTR __imp_?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBD@Z
-	mov	eax, esi
-	pop	esi
-	ret	4
-$LN2@operator:
-	call	DWORD PTR __imp_?clear@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEXXZ
-	mov	eax, esi
-	pop	esi
-	ret	4
-??4CvString@@QAEAAV0@PBD@Z ENDP				; CvString::operator=
 _TEXT	ENDS
 PUBLIC	??$?6E@FDataStream@@QAEAAV0@ABE@Z		; FDataStream::operator<<<unsigned char>
 EXTRN	?Write@FDataStream@@IAEXABE@Z:PROC		; FDataStream::Write
@@ -6836,8 +6834,8 @@ __TI2?AVbad_alloc@std@@ DD 00H
 xdata$x	ENDS
 ;	COMDAT ??$_Allocate@VCvReplayMessage@@@std@@YAPAVCvReplayMessage@@IPAV1@@Z
 _TEXT	SEGMENT
-$T234493 = -12						; size = 12
-$T234497 = 8						; size = 4
+$T234535 = -12						; size = 12
+$T234539 = 8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ??$_Allocate@VCvReplayMessage@@@std@@YAPAVCvReplayMessage@@IPAV1@@Z PROC ; std::_Allocate<CvReplayMessage>, COMDAT
@@ -6883,15 +6881,15 @@ $LN3@Allocate:
 
 ; 40   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T234497[esp+8]
+	lea	eax, DWORD PTR $T234539[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T234493[esp+16]
-	mov	DWORD PTR $T234497[esp+12], 0
+	lea	ecx, DWORD PTR $T234535[esp+16]
+	mov	DWORD PTR $T234539[esp+12], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T234493[esp+16]
+	lea	ecx, DWORD PTR $T234535[esp+16]
 	push	ecx
-	mov	DWORD PTR $T234493[esp+20], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T234535[esp+20], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN9@Allocate:
 $LN8@Allocate:
@@ -6902,8 +6900,8 @@ PUBLIC	??$_Allocate@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Allocate@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@std@@YAPAV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@0@IPAV10@@Z
 _TEXT	SEGMENT
-$T234503 = -12						; size = 12
-$T234507 = 8						; size = 4
+$T234545 = -12						; size = 12
+$T234549 = 8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ??$_Allocate@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@std@@YAPAV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@0@IPAV10@@Z PROC ; std::_Allocate<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > > >, COMDAT
@@ -6947,15 +6945,15 @@ $LN3@Allocate@2:
 
 ; 40   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T234507[esp+8]
+	lea	eax, DWORD PTR $T234549[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T234503[esp+16]
-	mov	DWORD PTR $T234507[esp+12], 0
+	lea	ecx, DWORD PTR $T234545[esp+16]
+	mov	DWORD PTR $T234549[esp+12], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T234503[esp+16]
+	lea	ecx, DWORD PTR $T234545[esp+16]
 	push	ecx
-	mov	DWORD PTR $T234503[esp+20], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T234545[esp+20], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN9@Allocate@2:
 $LN8@Allocate@2:
@@ -6966,8 +6964,8 @@ PUBLIC	??$_Allocate@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Allocate@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@YAPAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@IPAV10@@Z
 _TEXT	SEGMENT
-$T234513 = -12						; size = 12
-$T234517 = 8						; size = 4
+$T234555 = -12						; size = 12
+$T234559 = 8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ??$_Allocate@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@YAPAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@IPAV10@@Z PROC ; std::_Allocate<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >, COMDAT
@@ -7012,15 +7010,15 @@ $LN3@Allocate@3:
 
 ; 40   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T234517[esp+8]
+	lea	eax, DWORD PTR $T234559[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T234513[esp+16]
-	mov	DWORD PTR $T234517[esp+12], 0
+	lea	ecx, DWORD PTR $T234555[esp+16]
+	mov	DWORD PTR $T234559[esp+12], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T234513[esp+16]
+	lea	ecx, DWORD PTR $T234555[esp+16]
 	push	ecx
-	mov	DWORD PTR $T234513[esp+20], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T234555[esp+20], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN9@Allocate@3:
 $LN8@Allocate@3:
@@ -7044,8 +7042,8 @@ PUBLIC	??$_Allocate@W4GameOptionTypes@@@std@@YAPAW4GameOptionTypes@@IPAW41@@Z ; 
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Allocate@W4GameOptionTypes@@@std@@YAPAW4GameOptionTypes@@IPAW41@@Z
 _TEXT	SEGMENT
-$T234526 = -12						; size = 12
-$T234530 = 8						; size = 4
+$T234568 = -12						; size = 12
+$T234572 = 8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ??$_Allocate@W4GameOptionTypes@@@std@@YAPAW4GameOptionTypes@@IPAW41@@Z PROC ; std::_Allocate<enum GameOptionTypes>, COMDAT
@@ -7087,15 +7085,15 @@ $LN3@Allocate@4:
 
 ; 40   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T234530[esp+8]
+	lea	eax, DWORD PTR $T234572[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T234526[esp+16]
-	mov	DWORD PTR $T234530[esp+12], 0
+	lea	ecx, DWORD PTR $T234568[esp+16]
+	mov	DWORD PTR $T234572[esp+12], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T234526[esp+16]
+	lea	ecx, DWORD PTR $T234568[esp+16]
 	push	ecx
-	mov	DWORD PTR $T234526[esp+20], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T234568[esp+20], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN9@Allocate@4:
 $LN8@Allocate@4:
@@ -7106,8 +7104,8 @@ PUBLIC	??$_Allocate@W4VictoryTypes@@@std@@YAPAW4VictoryTypes@@IPAW41@@Z ; std::_
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Allocate@W4VictoryTypes@@@std@@YAPAW4VictoryTypes@@IPAW41@@Z
 _TEXT	SEGMENT
-$T234536 = -12						; size = 12
-$T234540 = 8						; size = 4
+$T234578 = -12						; size = 12
+$T234582 = 8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ??$_Allocate@W4VictoryTypes@@@std@@YAPAW4VictoryTypes@@IPAW41@@Z PROC ; std::_Allocate<enum VictoryTypes>, COMDAT
@@ -7149,15 +7147,15 @@ $LN3@Allocate@5:
 
 ; 40   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T234540[esp+8]
+	lea	eax, DWORD PTR $T234582[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T234536[esp+16]
-	mov	DWORD PTR $T234540[esp+12], 0
+	lea	ecx, DWORD PTR $T234578[esp+16]
+	mov	DWORD PTR $T234582[esp+12], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T234536[esp+16]
+	lea	ecx, DWORD PTR $T234578[esp+16]
 	push	ecx
-	mov	DWORD PTR $T234536[esp+20], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T234578[esp+20], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN9@Allocate@5:
 $LN8@Allocate@5:
@@ -7168,8 +7166,8 @@ PUBLIC	??$_Allocate@UPlayerInfo@CvReplayInfo@@@std@@YAPAUPlayerInfo@CvReplayInfo
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Allocate@UPlayerInfo@CvReplayInfo@@@std@@YAPAUPlayerInfo@CvReplayInfo@@IPAU12@@Z
 _TEXT	SEGMENT
-$T234546 = -12						; size = 12
-$T234550 = 8						; size = 4
+$T234588 = -12						; size = 12
+$T234592 = 8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ??$_Allocate@UPlayerInfo@CvReplayInfo@@@std@@YAPAUPlayerInfo@CvReplayInfo@@IPAU12@@Z PROC ; std::_Allocate<CvReplayInfo::PlayerInfo>, COMDAT
@@ -7211,15 +7209,15 @@ $LN3@Allocate@6:
 
 ; 40   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T234550[esp+8]
+	lea	eax, DWORD PTR $T234592[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T234546[esp+16]
-	mov	DWORD PTR $T234550[esp+12], 0
+	lea	ecx, DWORD PTR $T234588[esp+16]
+	mov	DWORD PTR $T234592[esp+12], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T234546[esp+16]
+	lea	ecx, DWORD PTR $T234588[esp+16]
 	push	ecx
-	mov	DWORD PTR $T234546[esp+20], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T234588[esp+20], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN9@Allocate@6:
 $LN8@Allocate@6:
@@ -7230,8 +7228,8 @@ PUBLIC	??$_Allocate@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBI
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Allocate@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@std@@YAPAV?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@0@IPAV10@@Z
 _TEXT	SEGMENT
-$T234556 = -12						; size = 12
-$T234560 = 8						; size = 4
+$T234598 = -12						; size = 12
+$T234602 = 8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ??$_Allocate@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@std@@YAPAV?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@0@IPAV10@@Z PROC ; std::_Allocate<std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > > >, COMDAT
@@ -7273,15 +7271,15 @@ $LN3@Allocate@7:
 
 ; 40   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T234560[esp+8]
+	lea	eax, DWORD PTR $T234602[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T234556[esp+16]
-	mov	DWORD PTR $T234560[esp+12], 0
+	lea	ecx, DWORD PTR $T234598[esp+16]
+	mov	DWORD PTR $T234602[esp+12], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T234556[esp+16]
+	lea	ecx, DWORD PTR $T234598[esp+16]
 	push	ecx
-	mov	DWORD PTR $T234556[esp+20], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T234598[esp+20], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN9@Allocate@7:
 $LN8@Allocate@7:
@@ -7292,8 +7290,8 @@ PUBLIC	??$_Allocate@U?$pair@FF@std@@@std@@YAPAU?$pair@FF@0@IPAU10@@Z ; std::_All
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Allocate@U?$pair@FF@std@@@std@@YAPAU?$pair@FF@0@IPAU10@@Z
 _TEXT	SEGMENT
-$T234566 = -12						; size = 12
-$T234570 = 8						; size = 4
+$T234608 = -12						; size = 12
+$T234612 = 8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ??$_Allocate@U?$pair@FF@std@@@std@@YAPAU?$pair@FF@0@IPAU10@@Z PROC ; std::_Allocate<std::pair<short,short> >, COMDAT
@@ -7335,15 +7333,15 @@ $LN3@Allocate@8:
 
 ; 40   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T234570[esp+8]
+	lea	eax, DWORD PTR $T234612[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T234566[esp+16]
-	mov	DWORD PTR $T234570[esp+12], 0
+	lea	ecx, DWORD PTR $T234608[esp+16]
+	mov	DWORD PTR $T234612[esp+12], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T234566[esp+16]
+	lea	ecx, DWORD PTR $T234608[esp+16]
 	push	ecx
-	mov	DWORD PTR $T234566[esp+20], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T234608[esp+20], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN9@Allocate@8:
 $LN8@Allocate@8:
@@ -7411,8 +7409,8 @@ PUBLIC	??$_Allocate@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Allocate@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@std@@YAPAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@0@IPAV10@@Z
 _TEXT	SEGMENT
-$T234588 = -12						; size = 12
-$T234592 = 8						; size = 4
+$T234630 = -12						; size = 12
+$T234634 = 8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ??$_Allocate@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@std@@YAPAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@0@IPAV10@@Z PROC ; std::_Allocate<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > >, COMDAT
@@ -7456,15 +7454,15 @@ $LN3@Allocate@9:
 
 ; 40   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T234592[esp+8]
+	lea	eax, DWORD PTR $T234634[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T234588[esp+16]
-	mov	DWORD PTR $T234592[esp+12], 0
+	lea	ecx, DWORD PTR $T234630[esp+16]
+	mov	DWORD PTR $T234634[esp+12], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T234588[esp+16]
+	lea	ecx, DWORD PTR $T234630[esp+16]
 	push	ecx
-	mov	DWORD PTR $T234588[esp+20], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T234630[esp+20], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN9@Allocate@9:
 $LN8@Allocate@9:
@@ -7529,8 +7527,8 @@ PUBLIC	??$_Allocate@U_Node@?$_Tree_nod@V?$_Tmap_traits@IHU?$less@I@std@@V?$alloc
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Allocate@U_Node@?$_Tree_nod@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@@std@@YAPAU_Node@?$_Tree_nod@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@0@IPAU120@@Z
 _TEXT	SEGMENT
-$T234607 = -12						; size = 12
-$T234611 = 8						; size = 4
+$T234649 = -12						; size = 12
+$T234653 = 8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ??$_Allocate@U_Node@?$_Tree_nod@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@@std@@YAPAU_Node@?$_Tree_nod@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@0@IPAU120@@Z PROC ; std::_Allocate<std::_Tree_nod<std::_Tmap_traits<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> >,0> >::_Node>, COMDAT
@@ -7575,15 +7573,15 @@ $LN3@Allocate@10:
 
 ; 40   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T234611[esp+8]
+	lea	eax, DWORD PTR $T234653[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T234607[esp+16]
-	mov	DWORD PTR $T234611[esp+12], 0
+	lea	ecx, DWORD PTR $T234649[esp+16]
+	mov	DWORD PTR $T234653[esp+12], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T234607[esp+16]
+	lea	ecx, DWORD PTR $T234649[esp+16]
 	push	ecx
-	mov	DWORD PTR $T234607[esp+20], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T234649[esp+20], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN9@Allocate@10:
 $LN8@Allocate@10:
@@ -7636,8 +7634,8 @@ PUBLIC	??$_Allocate@U_Node@?$_Tree_nod@V?$_Tmap_traits@HHU?$less@H@std@@V?$alloc
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Allocate@U_Node@?$_Tree_nod@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$0A@@std@@@std@@@std@@YAPAU_Node@?$_Tree_nod@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$0A@@std@@@0@IPAU120@@Z
 _TEXT	SEGMENT
-$T234629 = -12						; size = 12
-$T234633 = 8						; size = 4
+$T234671 = -12						; size = 12
+$T234675 = 8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ??$_Allocate@U_Node@?$_Tree_nod@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$0A@@std@@@std@@@std@@YAPAU_Node@?$_Tree_nod@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$0A@@std@@@0@IPAU120@@Z PROC ; std::_Allocate<std::_Tree_nod<std::_Tmap_traits<int,int,std::less<int>,std::allocator<std::pair<int const ,int> >,0> >::_Node>, COMDAT
@@ -7682,15 +7680,15 @@ $LN3@Allocate@11:
 
 ; 40   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T234633[esp+8]
+	lea	eax, DWORD PTR $T234675[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T234629[esp+16]
-	mov	DWORD PTR $T234633[esp+12], 0
+	lea	ecx, DWORD PTR $T234671[esp+16]
+	mov	DWORD PTR $T234675[esp+12], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T234629[esp+16]
+	lea	ecx, DWORD PTR $T234671[esp+16]
 	push	ecx
-	mov	DWORD PTR $T234629[esp+20], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T234671[esp+20], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN9@Allocate@11:
 $LN8@Allocate@11:
@@ -7756,8 +7754,8 @@ PUBLIC	??$_Allocate@U_Node@?$_Tree_nod@V?$_Tmap_traits@IUPlotState@CvReplayInfo@
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Allocate@U_Node@?$_Tree_nod@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@std@@@std@@YAPAU_Node@?$_Tree_nod@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@0@IPAU120@@Z
 _TEXT	SEGMENT
-$T234654 = -12						; size = 12
-$T234658 = 8						; size = 4
+$T234696 = -12						; size = 12
+$T234700 = 8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ??$_Allocate@U_Node@?$_Tree_nod@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@std@@@std@@YAPAU_Node@?$_Tree_nod@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@0@IPAU120@@Z PROC ; std::_Allocate<std::_Tree_nod<std::_Tmap_traits<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> >,0> >::_Node>, COMDAT
@@ -7801,15 +7799,15 @@ $LN3@Allocate@12:
 
 ; 40   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T234658[esp+8]
+	lea	eax, DWORD PTR $T234700[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T234654[esp+16]
-	mov	DWORD PTR $T234658[esp+12], 0
+	lea	ecx, DWORD PTR $T234696[esp+16]
+	mov	DWORD PTR $T234700[esp+12], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T234654[esp+16]
+	lea	ecx, DWORD PTR $T234696[esp+16]
 	push	ecx
-	mov	DWORD PTR $T234654[esp+20], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T234696[esp+20], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN9@Allocate@12:
 $LN8@Allocate@12:
@@ -9592,7 +9590,7 @@ __ehfuncinfo$??$_Construct@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D
 xdata$x	ENDS
 ;	COMDAT ??$_Construct@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@YAXPAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@ABV10@@Z
 _TEXT	SEGMENT
-$T234949 = -16						; size = 4
+$T234991 = -16						; size = 4
 __$EHRec$ = -12						; size = 12
 __Vptr$ = 8						; size = 4
 __Ptr$ = 8						; size = 4
@@ -9615,7 +9613,7 @@ __Val$ = 12						; size = 4
 
 ; 52   : 	::new (_Vptr) _T1(_Val);
 
-	mov	DWORD PTR $T234949[esp+16], ecx
+	mov	DWORD PTR $T234991[esp+16], ecx
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	ecx, ecx
 	je	SHORT $LN3@Construct@4
@@ -9636,7 +9634,7 @@ text$x	SEGMENT
 __unwindfunclet$??$_Construct@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@YAXPAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@ABV10@@Z$0:
 	mov	eax, DWORD PTR __Vptr$[ebp-4]
 	push	eax
-	mov	ecx, DWORD PTR $T234949[ebp]
+	mov	ecx, DWORD PTR $T234991[ebp]
 	push	ecx
 	call	??3@YAXPAX0@Z				; operator delete
 	add	esp, 8
@@ -9774,6 +9772,23 @@ $LN4@scalar@5:
 	ret	4
 ??_G?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEPAXI@Z ENDP ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::`scalar deleting destructor'
 _TEXT	ENDS
+PUBLIC	?getMap@CvGlobals@@QAEAAVCvMap@@XZ		; CvGlobals::getMap
+; Function compile flags: /Ogtpy
+; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredll_expansion2\cvglobals.h
+;	COMDAT ?getMap@CvGlobals@@QAEAAVCvMap@@XZ
+_TEXT	SEGMENT
+?getMap@CvGlobals@@QAEAAVCvMap@@XZ PROC			; CvGlobals::getMap, COMDAT
+; _this$ = ecx
+
+; 175  : 		return *m_map;    // inlined for perf reasons, do not use outside of dll
+
+	mov	eax, DWORD PTR [ecx+52]
+
+; 176  : 	}
+
+	ret	0
+?getMap@CvGlobals@@QAEAAVCvMap@@XZ ENDP			; CvGlobals::getMap
+_TEXT	ENDS
 PUBLIC	?begin@?$_Tree@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@std@@QBE?AVconst_iterator@12@XZ ; std::_Tree<std::_Tmap_traits<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> >,0> >::begin
 ; Function compile flags: /Ogtpy
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xtree
@@ -9794,6 +9809,23 @@ ___$ReturnUdt$ = 8					; size = 4
 
 	ret	4
 ?begin@?$_Tree@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@std@@QBE?AVconst_iterator@12@XZ ENDP ; std::_Tree<std::_Tmap_traits<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> >,0> >::begin
+_TEXT	ENDS
+PUBLIC	?getGame@CvGlobals@@QAEAAVCvGame@@XZ		; CvGlobals::getGame
+; Function compile flags: /Ogtpy
+; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredll_expansion2\cvglobals.h
+;	COMDAT ?getGame@CvGlobals@@QAEAAVCvGame@@XZ
+_TEXT	SEGMENT
+?getGame@CvGlobals@@QAEAAVCvGame@@XZ PROC		; CvGlobals::getGame, COMDAT
+; _this$ = ecx
+
+; 183  : 		return *m_game;    // inlined for perf reasons, do not use outside of dll
+
+	mov	eax, DWORD PTR [ecx+48]
+
+; 184  : 	}
+
+	ret	0
+?getGame@CvGlobals@@QAEAAVCvGame@@XZ ENDP		; CvGlobals::getGame
 _TEXT	ENDS
 PUBLIC	??D?$_Vector_const_iterator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@QBEABV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@1@XZ ; std::_Vector_const_iterator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > >::operator*
 ; Function compile flags: /Ogtpy
@@ -9893,26 +9925,8 @@ _TEXT	SEGMENT
 	ret	0
 ??E?$_Vector_iterator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@std@@QAEAAV01@XZ ENDP ; std::_Vector_iterator<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > >,std::allocator<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > > > >::operator++
 _TEXT	ENDS
-PUBLIC	?getMap@CvGlobals@@QAEAAVCvMap@@XZ		; CvGlobals::getMap
-; Function compile flags: /Ogtpy
-; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredll_expansion2\cvglobals.h
-;	COMDAT ?getMap@CvGlobals@@QAEAAVCvMap@@XZ
-_TEXT	SEGMENT
-?getMap@CvGlobals@@QAEAAVCvMap@@XZ PROC			; CvGlobals::getMap, COMDAT
-; _this$ = ecx
-
-; 175  : 		return *m_map;    // inlined for perf reasons, do not use outside of dll
-
-	mov	eax, DWORD PTR [ecx+52]
-
-; 176  : 	}
-
-	ret	0
-?getMap@CvGlobals@@QAEAAVCvMap@@XZ ENDP			; CvGlobals::getMap
-_TEXT	ENDS
 PUBLIC	??D?$_Vector_const_iterator@U?$pair@FF@std@@V?$allocator@U?$pair@FF@std@@@2@@std@@QBEABU?$pair@FF@1@XZ ; std::_Vector_const_iterator<std::pair<short,short>,std::allocator<std::pair<short,short> > >::operator*
 ; Function compile flags: /Ogtpy
-; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\vector
 ;	COMDAT ??D?$_Vector_const_iterator@U?$pair@FF@std@@V?$allocator@U?$pair@FF@std@@@2@@std@@QBEABU?$pair@FF@1@XZ
 _TEXT	SEGMENT
 ??D?$_Vector_const_iterator@U?$pair@FF@std@@V?$allocator@U?$pair@FF@std@@@2@@std@@QBEABU?$pair@FF@1@XZ PROC ; std::_Vector_const_iterator<std::pair<short,short>,std::allocator<std::pair<short,short> > >::operator*, COMDAT
@@ -9970,23 +9984,6 @@ _TEXT	SEGMENT
 
 	ret	0
 ??E?$_Vector_const_iterator@U?$pair@FF@std@@V?$allocator@U?$pair@FF@std@@@2@@std@@QAEAAV01@XZ ENDP ; std::_Vector_const_iterator<std::pair<short,short>,std::allocator<std::pair<short,short> > >::operator++
-_TEXT	ENDS
-PUBLIC	?getGame@CvGlobals@@QAEAAVCvGame@@XZ		; CvGlobals::getGame
-; Function compile flags: /Ogtpy
-; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredll_expansion2\cvglobals.h
-;	COMDAT ?getGame@CvGlobals@@QAEAAVCvGame@@XZ
-_TEXT	SEGMENT
-?getGame@CvGlobals@@QAEAAVCvGame@@XZ PROC		; CvGlobals::getGame, COMDAT
-; _this$ = ecx
-
-; 183  : 		return *m_game;    // inlined for perf reasons, do not use outside of dll
-
-	mov	eax, DWORD PTR [ecx+48]
-
-; 184  : 	}
-
-	ret	0
-?getGame@CvGlobals@@QAEAAVCvGame@@XZ ENDP		; CvGlobals::getGame
 _TEXT	ENDS
 PUBLIC	??$swap@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@YAXAAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@0@Z ; std::swap<char,std::char_traits<char>,std::allocator<char> >
 EXTRN	__imp_?swap@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEXAAV12@@Z:PROC
@@ -12022,8 +12019,8 @@ PUBLIC	??6@YAAAVFDataStream@@AAV0@ABUOldPlotState@CvReplayInfo@@@Z ; operator<<
 _TEXT	SEGMENT
 _uiRiverData$ = 8					; size = 1
 _saveTo$ = 8						; size = 4
-$T235466 = 12						; size = 1
-$T235465 = 12						; size = 1
+$T235508 = 12						; size = 1
+$T235507 = 12						; size = 1
 _readFrom$ = 12						; size = 4
 ??6@YAAAVFDataStream@@AAV0@ABUOldPlotState@CvReplayInfo@@@Z PROC ; operator<<, COMDAT
 
@@ -12037,19 +12034,19 @@ _readFrom$ = 12						; size = 4
 	mov	al, BYTE PTR [esi]
 	push	edi
 	mov	edi, DWORD PTR _saveTo$[esp+4]
-	lea	ecx, DWORD PTR $T235465[esp+4]
+	lea	ecx, DWORD PTR $T235507[esp+4]
 	push	ecx
 	mov	ecx, edi
-	mov	BYTE PTR $T235465[esp+8], al
+	mov	BYTE PTR $T235507[esp+8], al
 	call	?Write@FDataStream@@IAEXABE@Z		; FDataStream::Write
 
 ; 647  : 	saveTo << (unsigned char)readFrom.m_eFeature;
 
 	mov	dl, BYTE PTR [esi+4]
-	lea	eax, DWORD PTR $T235466[esp+4]
+	lea	eax, DWORD PTR $T235508[esp+4]
 	push	eax
 	mov	ecx, edi
-	mov	BYTE PTR $T235466[esp+8], dl
+	mov	BYTE PTR $T235508[esp+8], dl
 	call	?Write@FDataStream@@IAEXABE@Z		; FDataStream::Write
 
 ; 648  : 
@@ -12175,9 +12172,9 @@ PUBLIC	??6@YAAAVFDataStream@@AAV0@ABUPlotState@CvReplayInfo@@@Z ; operator<<
 _TEXT	SEGMENT
 _uiRiverData$ = 8					; size = 1
 _saveTo$ = 8						; size = 4
-$T235493 = 12						; size = 1
-$T235492 = 12						; size = 1
-$T235491 = 12						; size = 1
+$T235535 = 12						; size = 1
+$T235534 = 12						; size = 1
+$T235533 = 12						; size = 1
 _readFrom$ = 12						; size = 4
 ??6@YAAAVFDataStream@@AAV0@ABUPlotState@CvReplayInfo@@@Z PROC ; operator<<, COMDAT
 
@@ -12191,26 +12188,26 @@ _readFrom$ = 12						; size = 4
 	movzx	eax, BYTE PTR [esi]
 	push	edi
 	mov	edi, DWORD PTR _saveTo$[esp+4]
-	lea	ecx, DWORD PTR $T235491[esp+4]
+	lea	ecx, DWORD PTR $T235533[esp+4]
 	push	ecx
 	mov	ecx, edi
-	mov	BYTE PTR $T235491[esp+8], al
+	mov	BYTE PTR $T235533[esp+8], al
 	call	?Write@FDataStream@@IAEXABE@Z		; FDataStream::Write
 
 ; 679  : 	saveTo << (unsigned char)readFrom.m_eTerrain;
 
 	mov	dl, BYTE PTR [esi+4]
-	lea	eax, DWORD PTR $T235492[esp+4]
+	lea	eax, DWORD PTR $T235534[esp+4]
 	push	eax
 	mov	ecx, edi
-	mov	BYTE PTR $T235492[esp+8], dl
+	mov	BYTE PTR $T235534[esp+8], dl
 	call	?Write@FDataStream@@IAEXABE@Z		; FDataStream::Write
 
 ; 680  : 	saveTo << (unsigned char)readFrom.m_eFeature;
 
 	mov	cl, BYTE PTR [esi+8]
-	lea	edx, DWORD PTR $T235493[esp+4]
-	mov	BYTE PTR $T235493[esp+4], cl
+	lea	edx, DWORD PTR $T235535[esp+4]
+	mov	BYTE PTR $T235535[esp+4], cl
 	push	edx
 	mov	ecx, edi
 	call	?Write@FDataStream@@IAEXABE@Z		; FDataStream::Write
@@ -15598,7 +15595,7 @@ PUBLIC	??0?$SerializeFromSequenceContainer@$$CBW4GameOptionTypes@@$$CBV?$vector@
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\fireplace\include\fireworks\fstlcontainerserialization.h
 ;	COMDAT ??0?$SerializeFromSequenceContainer@$$CBW4GameOptionTypes@@$$CBV?$vector@W4GameOptionTypes@@V?$allocator@W4GameOptionTypes@@@std@@@std@@@@QAE@AAVFDataStream@@ABV?$vector@W4GameOptionTypes@@V?$allocator@W4GameOptionTypes@@@std@@@std@@@Z
 _TEXT	SEGMENT
-$T237071 = 8						; size = 4
+$T237113 = 8						; size = 4
 _saveTo$ = 8						; size = 4
 _container$ = 12					; size = 4
 ??0?$SerializeFromSequenceContainer@$$CBW4GameOptionTypes@@$$CBV?$vector@W4GameOptionTypes@@V?$allocator@W4GameOptionTypes@@@std@@@std@@@@QAE@AAVFDataStream@@ABV?$vector@W4GameOptionTypes@@V?$allocator@W4GameOptionTypes@@@std@@@std@@@Z PROC ; SerializeFromSequenceContainer<enum GameOptionTypes const ,std::vector<enum GameOptionTypes,std::allocator<enum GameOptionTypes> > const >::SerializeFromSequenceContainer<enum GameOptionTypes const ,std::vector<enum GameOptionTypes,std::allocator<enum GameOptionTypes> > const >, COMDAT
@@ -15617,10 +15614,10 @@ _container$ = 12					; size = 4
 
 	mov	edx, DWORD PTR [eax+8]
 	sub	edx, DWORD PTR [eax+4]
-	lea	eax, DWORD PTR $T237071[esp]
+	lea	eax, DWORD PTR $T237113[esp]
 	sar	edx, 2
 	push	eax
-	mov	DWORD PTR $T237071[esp+4], edx
+	mov	DWORD PTR $T237113[esp+4], edx
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 
 ; 71   : 	}
@@ -15634,7 +15631,7 @@ PUBLIC	??0?$SerializeFromSequenceContainer@$$CBW4VictoryTypes@@$$CBV?$vector@W4V
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??0?$SerializeFromSequenceContainer@$$CBW4VictoryTypes@@$$CBV?$vector@W4VictoryTypes@@V?$allocator@W4VictoryTypes@@@std@@@std@@@@QAE@AAVFDataStream@@ABV?$vector@W4VictoryTypes@@V?$allocator@W4VictoryTypes@@@std@@@std@@@Z
 _TEXT	SEGMENT
-$T237082 = 8						; size = 4
+$T237124 = 8						; size = 4
 _saveTo$ = 8						; size = 4
 _container$ = 12					; size = 4
 ??0?$SerializeFromSequenceContainer@$$CBW4VictoryTypes@@$$CBV?$vector@W4VictoryTypes@@V?$allocator@W4VictoryTypes@@@std@@@std@@@@QAE@AAVFDataStream@@ABV?$vector@W4VictoryTypes@@V?$allocator@W4VictoryTypes@@@std@@@std@@@Z PROC ; SerializeFromSequenceContainer<enum VictoryTypes const ,std::vector<enum VictoryTypes,std::allocator<enum VictoryTypes> > const >::SerializeFromSequenceContainer<enum VictoryTypes const ,std::vector<enum VictoryTypes,std::allocator<enum VictoryTypes> > const >, COMDAT
@@ -15653,10 +15650,10 @@ _container$ = 12					; size = 4
 
 	mov	edx, DWORD PTR [eax+8]
 	sub	edx, DWORD PTR [eax+4]
-	lea	eax, DWORD PTR $T237082[esp]
+	lea	eax, DWORD PTR $T237124[esp]
 	sar	edx, 2
 	push	eax
-	mov	DWORD PTR $T237082[esp+4], edx
+	mov	DWORD PTR $T237124[esp+4], edx
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 
 ; 71   : 	}
@@ -15670,7 +15667,7 @@ PUBLIC	??0?$SerializeFromSequenceContainer@$$CBUPlayerInfo@CvReplayInfo@@$$CBV?$
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??0?$SerializeFromSequenceContainer@$$CBUPlayerInfo@CvReplayInfo@@$$CBV?$vector@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@std@@@@QAE@AAVFDataStream@@ABV?$vector@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@std@@@Z
 _TEXT	SEGMENT
-$T237093 = 8						; size = 4
+$T237135 = 8						; size = 4
 _saveTo$ = 8						; size = 4
 _container$ = 12					; size = 4
 ??0?$SerializeFromSequenceContainer@$$CBUPlayerInfo@CvReplayInfo@@$$CBV?$vector@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@std@@@@QAE@AAVFDataStream@@ABV?$vector@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@std@@@Z PROC ; SerializeFromSequenceContainer<CvReplayInfo::PlayerInfo const ,std::vector<CvReplayInfo::PlayerInfo,std::allocator<CvReplayInfo::PlayerInfo> > const >::SerializeFromSequenceContainer<CvReplayInfo::PlayerInfo const ,std::vector<CvReplayInfo::PlayerInfo,std::allocator<CvReplayInfo::PlayerInfo> > const >, COMDAT
@@ -15689,10 +15686,10 @@ _container$ = 12					; size = 4
 
 	mov	edx, DWORD PTR [eax+8]
 	sub	edx, DWORD PTR [eax+4]
-	lea	eax, DWORD PTR $T237093[esp]
+	lea	eax, DWORD PTR $T237135[esp]
 	sar	edx, 7
 	push	eax
-	mov	DWORD PTR $T237093[esp+4], edx
+	mov	DWORD PTR $T237135[esp+4], edx
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 
 ; 71   : 	}
@@ -15706,7 +15703,7 @@ PUBLIC	??0?$SerializeFromSequenceContainer@$$CBV?$basic_string@DU?$char_traits@D
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??0?$SerializeFromSequenceContainer@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$CBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@2@@@QAE@AAVFDataStream@@ABV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
 _TEXT	SEGMENT
-$T237104 = 8						; size = 4
+$T237146 = 8						; size = 4
 _saveTo$ = 8						; size = 4
 _container$ = 12					; size = 4
 ??0?$SerializeFromSequenceContainer@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$CBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@2@@@QAE@AAVFDataStream@@ABV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z PROC ; SerializeFromSequenceContainer<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,std::vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > > const >::SerializeFromSequenceContainer<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,std::vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > > const >, COMDAT
@@ -15733,9 +15730,9 @@ _container$ = 12					; size = 4
 	mov	eax, edx
 	shr	eax, 31					; 0000001fH
 	add	eax, edx
-	lea	edx, DWORD PTR $T237104[esp+4]
+	lea	edx, DWORD PTR $T237146[esp+4]
 	push	edx
-	mov	DWORD PTR $T237104[esp+8], eax
+	mov	DWORD PTR $T237146[esp+8], eax
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 
 ; 71   : 	}
@@ -15750,7 +15747,7 @@ PUBLIC	??0?$SerializeFromSequenceContainer@$$CBV?$vector@V?$map@IHU?$less@I@std@
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??0?$SerializeFromSequenceContainer@$$CBV?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@$$CBV?$vector@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@2@@2@@@QAE@AAVFDataStream@@ABV?$vector@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@2@@std@@@Z
 _TEXT	SEGMENT
-$T237115 = 8						; size = 4
+$T237157 = 8						; size = 4
 _saveTo$ = 8						; size = 4
 _container$ = 12					; size = 4
 ??0?$SerializeFromSequenceContainer@$$CBV?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@$$CBV?$vector@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@2@@2@@@QAE@AAVFDataStream@@ABV?$vector@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@2@@std@@@Z PROC ; SerializeFromSequenceContainer<std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > > const ,std::vector<std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > >,std::allocator<std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > > > > const >::SerializeFromSequenceContainer<std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > > const ,std::vector<std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > >,std::allocator<std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > > > > const >, COMDAT
@@ -15769,10 +15766,10 @@ _container$ = 12					; size = 4
 
 	mov	edx, DWORD PTR [eax+8]
 	sub	edx, DWORD PTR [eax+4]
-	lea	eax, DWORD PTR $T237115[esp]
+	lea	eax, DWORD PTR $T237157[esp]
 	sar	edx, 4
 	push	eax
-	mov	DWORD PTR $T237115[esp+4], edx
+	mov	DWORD PTR $T237157[esp+4], edx
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 
 ; 71   : 	}
@@ -15786,7 +15783,7 @@ PUBLIC	??0?$SerializeFromSequenceContainer@$$CBV?$map@IUPlotState@CvReplayInfo@@
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??0?$SerializeFromSequenceContainer@$$CBV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@$$CBV?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@2@@@QAE@AAVFDataStream@@ABV?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@std@@@Z
 _TEXT	SEGMENT
-$T237126 = 8						; size = 4
+$T237168 = 8						; size = 4
 _saveTo$ = 8						; size = 4
 _container$ = 12					; size = 4
 ??0?$SerializeFromSequenceContainer@$$CBV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@$$CBV?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@2@@@QAE@AAVFDataStream@@ABV?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@std@@@Z PROC ; SerializeFromSequenceContainer<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > > const ,std::vector<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > >,std::allocator<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > > > > const >::SerializeFromSequenceContainer<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > > const ,std::vector<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > >,std::allocator<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > > > > const >, COMDAT
@@ -15811,9 +15808,9 @@ _container$ = 12					; size = 4
 	mov	eax, edx
 	shr	eax, 31					; 0000001fH
 	add	eax, edx
-	lea	edx, DWORD PTR $T237126[esp]
+	lea	edx, DWORD PTR $T237168[esp]
 	push	edx
-	mov	DWORD PTR $T237126[esp+4], eax
+	mov	DWORD PTR $T237168[esp+4], eax
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 
 ; 71   : 	}
@@ -16133,9 +16130,9 @@ __ehfuncinfo$?construct@?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$al
 xdata$x	ENDS
 ;	COMDAT ?construct@?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@QAEXPAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@ABV32@@Z
 _TEXT	SEGMENT
-$T237280 = -16						; size = 4
+$T237322 = -16						; size = 4
 __$EHRec$ = -12						; size = 12
-__Vptr$237277 = 8					; size = 4
+__Vptr$237319 = 8					; size = 4
 __Ptr$ = 8						; size = 4
 __Val$ = 12						; size = 4
 ?construct@?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@QAEXPAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@ABV32@@Z PROC ; std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >::construct, COMDAT
@@ -16153,8 +16150,8 @@ __Val$ = 12						; size = 4
 ; 155  : 		_Construct(_Ptr, _Val);
 
 	mov	ecx, DWORD PTR __Ptr$[esp+12]
-	mov	DWORD PTR __Vptr$237277[esp+12], ecx
-	mov	DWORD PTR $T237280[esp+16], ecx
+	mov	DWORD PTR __Vptr$237319[esp+12], ecx
+	mov	DWORD PTR $T237322[esp+16], ecx
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	ecx, ecx
 	je	SHORT $LN5@construct@4
@@ -16173,9 +16170,9 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?construct@?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@QAEXPAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@ABV32@@Z$0:
-	mov	eax, DWORD PTR __Vptr$237277[ebp-4]
+	mov	eax, DWORD PTR __Vptr$237319[ebp-4]
 	push	eax
-	mov	ecx, DWORD PTR $T237280[ebp]
+	mov	ecx, DWORD PTR $T237322[ebp]
 	push	ecx
 	call	??3@YAXPAX0@Z				; operator delete
 	add	esp, 8
@@ -16574,7 +16571,7 @@ __ehfuncinfo$??$_Construct@UPlayerInfo@CvReplayInfo@@U12@@std@@YAXPAUPlayerInfo@
 xdata$x	ENDS
 ;	COMDAT ??$_Construct@UPlayerInfo@CvReplayInfo@@U12@@std@@YAXPAUPlayerInfo@CvReplayInfo@@ABU12@@Z
 _TEXT	SEGMENT
-$T237462 = -16						; size = 4
+$T237504 = -16						; size = 4
 __$EHRec$ = -12						; size = 12
 __Vptr$ = 8						; size = 4
 __Ptr$ = 8						; size = 4
@@ -16597,7 +16594,7 @@ __Val$ = 12						; size = 4
 
 ; 52   : 	::new (_Vptr) _T1(_Val);
 
-	mov	DWORD PTR $T237462[esp+16], ecx
+	mov	DWORD PTR $T237504[esp+16], ecx
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	ecx, ecx
 	je	SHORT $LN3@Construct@8
@@ -16618,7 +16615,7 @@ text$x	SEGMENT
 __unwindfunclet$??$_Construct@UPlayerInfo@CvReplayInfo@@U12@@std@@YAXPAUPlayerInfo@CvReplayInfo@@ABU12@@Z$0:
 	mov	eax, DWORD PTR __Vptr$[ebp-4]
 	push	eax
-	mov	ecx, DWORD PTR $T237462[ebp]
+	mov	ecx, DWORD PTR $T237504[ebp]
 	push	ecx
 	call	??3@YAXPAX0@Z				; operator delete
 	add	esp, 8
@@ -16713,7 +16710,7 @@ PUBLIC	??0?$SerializeFromSequenceContainer@$$CBV?$map@IHU?$less@I@std@@V?$alloca
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\fireplace\include\fireworks\fstlcontainerserialization.h
 ;	COMDAT ??0?$SerializeFromSequenceContainer@$$CBV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@$$CBV?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@2@@@QAE@AAVFDataStream@@ABV?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@Z
 _TEXT	SEGMENT
-$T237527 = 8						; size = 4
+$T237569 = 8						; size = 4
 _saveTo$ = 8						; size = 4
 _container$ = 12					; size = 4
 ??0?$SerializeFromSequenceContainer@$$CBV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@$$CBV?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@2@@@QAE@AAVFDataStream@@ABV?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@Z PROC ; SerializeFromSequenceContainer<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > const ,std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > > const >::SerializeFromSequenceContainer<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > const ,std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > > const >, COMDAT
@@ -16738,9 +16735,9 @@ _container$ = 12					; size = 4
 	mov	eax, edx
 	shr	eax, 31					; 0000001fH
 	add	eax, edx
-	lea	edx, DWORD PTR $T237527[esp]
+	lea	edx, DWORD PTR $T237569[esp]
 	push	edx
-	mov	DWORD PTR $T237527[esp+4], eax
+	mov	DWORD PTR $T237569[esp+4], eax
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 
 ; 71   : 	}
@@ -17081,11 +17078,11 @@ _TEXT	SEGMENT
 ?isEverAlive@CvPlayer@@QBE_NXZ PROC			; CvPlayer::isEverAlive, COMDAT
 ; _this$ = ecx
 
-; 1097 : 		return m_bEverAlive;
+; 1101 : 		return m_bEverAlive;
 
 	mov	al, BYTE PTR [ecx+2268]
 
-; 1098 : 	}
+; 1102 : 	}
 
 	ret	0
 ?isEverAlive@CvPlayer@@QBE_NXZ ENDP			; CvPlayer::isEverAlive
@@ -17097,7 +17094,7 @@ _TEXT	SEGMENT
 ?getTeam@CvPlayer@@QBE?AW4TeamTypes@@XZ PROC		; CvPlayer::getTeam, COMDAT
 ; _this$ = ecx
 
-; 1178 : 		return CvPreGame::teamType(m_eID);
+; 1182 : 		return CvPreGame::teamType(m_eID);
 
 	mov	eax, DWORD PTR [ecx+44]
 	cmp	eax, 63					; 0000003fH
@@ -17106,16 +17103,16 @@ _TEXT	SEGMENT
 	mov	edx, DWORD PTR [ecx+4]
 	mov	eax, DWORD PTR [edx+eax*4]
 
-; 1179 : 	}
+; 1183 : 	}
 
 	ret	0
 
-; 1178 : 		return CvPreGame::teamType(m_eID);
+; 1182 : 		return CvPreGame::teamType(m_eID);
 
 $LN5@getTeam:
 	or	eax, -1
 
-; 1179 : 	}
+; 1183 : 	}
 
 	ret	0
 ?getTeam@CvPlayer@@QBE?AW4TeamTypes@@XZ ENDP		; CvPlayer::getTeam
@@ -18420,8 +18417,8 @@ xdata$x	ENDS
 ;	COMDAT ?erase@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@@Z
 _TEXT	SEGMENT
 __Erasednode$ = -84					; size = 4
-$T238509 = -80						; size = 28
-$T238508 = -52						; size = 40
+$T238551 = -80						; size = 28
+$T238550 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
 __Where$ = 12						; size = 4
@@ -18457,22 +18454,22 @@ __Where$ = 12						; size = 4
 ; 775  : 			_THROW(out_of_range, "invalid map/set<T> iterator");
 
 	push	OFFSET ??_C@_0BM@PAPJHAGI@invalid?5map?1set?$DMT?$DO?5iterator?$AA@
-	lea	ecx, DWORD PTR $T238509[esp+92]
+	lea	ecx, DWORD PTR $T238551[esp+92]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T238508[esp+88]
+	lea	ecx, DWORD PTR $T238550[esp+88]
 	mov	DWORD PTR __$EHRec$[esp+96], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T238509[esp+88]
+	lea	eax, DWORD PTR $T238551[esp+88]
 	push	eax
-	lea	ecx, DWORD PTR $T238508[esp+104]
+	lea	ecx, DWORD PTR $T238550[esp+104]
 	mov	BYTE PTR __$EHRec$[esp+100], 1
-	mov	DWORD PTR $T238508[esp+92], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T238550[esp+92], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVout_of_range@std@@
-	lea	ecx, DWORD PTR $T238508[esp+92]
+	lea	ecx, DWORD PTR $T238550[esp+92]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+104], 0
-	mov	DWORD PTR $T238508[esp+96], OFFSET ??_7out_of_range@std@@6B@
+	mov	DWORD PTR $T238550[esp+96], OFFSET ??_7out_of_range@std@@6B@
 	call	__CxxThrowException@8
 $LN293@erase:
 $LN40@erase:
@@ -19066,10 +19063,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?erase@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@@Z$0:
-	lea	ecx, DWORD PTR $T238509[ebp]
+	lea	ecx, DWORD PTR $T238551[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?erase@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@@Z$2:
-	lea	ecx, DWORD PTR $T238508[ebp]
+	lea	ecx, DWORD PTR $T238550[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?erase@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?erase@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@@Z
@@ -19847,8 +19844,8 @@ xdata$x	ENDS
 ;	COMDAT ?erase@?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@@Z
 _TEXT	SEGMENT
 __Erasednode$ = -84					; size = 4
-$T239371 = -80						; size = 28
-$T239370 = -52						; size = 40
+$T239413 = -80						; size = 28
+$T239412 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
 __Where$ = 12						; size = 4
@@ -19884,22 +19881,22 @@ __Where$ = 12						; size = 4
 ; 775  : 			_THROW(out_of_range, "invalid map/set<T> iterator");
 
 	push	OFFSET ??_C@_0BM@PAPJHAGI@invalid?5map?1set?$DMT?$DO?5iterator?$AA@
-	lea	ecx, DWORD PTR $T239371[esp+92]
+	lea	ecx, DWORD PTR $T239413[esp+92]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T239370[esp+88]
+	lea	ecx, DWORD PTR $T239412[esp+88]
 	mov	DWORD PTR __$EHRec$[esp+96], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T239371[esp+88]
+	lea	eax, DWORD PTR $T239413[esp+88]
 	push	eax
-	lea	ecx, DWORD PTR $T239370[esp+104]
+	lea	ecx, DWORD PTR $T239412[esp+104]
 	mov	BYTE PTR __$EHRec$[esp+100], 1
-	mov	DWORD PTR $T239370[esp+92], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T239412[esp+92], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVout_of_range@std@@
-	lea	ecx, DWORD PTR $T239370[esp+92]
+	lea	ecx, DWORD PTR $T239412[esp+92]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+104], 0
-	mov	DWORD PTR $T239370[esp+96], OFFSET ??_7out_of_range@std@@6B@
+	mov	DWORD PTR $T239412[esp+96], OFFSET ??_7out_of_range@std@@6B@
 	call	__CxxThrowException@8
 $LN293@erase@2:
 $LN40@erase@2:
@@ -20493,10 +20490,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?erase@?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@@Z$0:
-	lea	ecx, DWORD PTR $T239371[ebp]
+	lea	ecx, DWORD PTR $T239413[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?erase@?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@@Z$2:
-	lea	ecx, DWORD PTR $T239370[ebp]
+	lea	ecx, DWORD PTR $T239412[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?erase@?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?erase@?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@@Z
@@ -20634,8 +20631,8 @@ xdata$x	ENDS
 ;	COMDAT ?erase@?$_Tree@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@@Z
 _TEXT	SEGMENT
 __Erasednode$ = -84					; size = 4
-$T239983 = -80						; size = 28
-$T239982 = -52						; size = 40
+$T240025 = -80						; size = 28
+$T240024 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
 __Where$ = 12						; size = 4
@@ -20671,22 +20668,22 @@ __Where$ = 12						; size = 4
 ; 775  : 			_THROW(out_of_range, "invalid map/set<T> iterator");
 
 	push	OFFSET ??_C@_0BM@PAPJHAGI@invalid?5map?1set?$DMT?$DO?5iterator?$AA@
-	lea	ecx, DWORD PTR $T239983[esp+92]
+	lea	ecx, DWORD PTR $T240025[esp+92]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T239982[esp+88]
+	lea	ecx, DWORD PTR $T240024[esp+88]
 	mov	DWORD PTR __$EHRec$[esp+96], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T239983[esp+88]
+	lea	eax, DWORD PTR $T240025[esp+88]
 	push	eax
-	lea	ecx, DWORD PTR $T239982[esp+104]
+	lea	ecx, DWORD PTR $T240024[esp+104]
 	mov	BYTE PTR __$EHRec$[esp+100], 1
-	mov	DWORD PTR $T239982[esp+92], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T240024[esp+92], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVout_of_range@std@@
-	lea	ecx, DWORD PTR $T239982[esp+92]
+	lea	ecx, DWORD PTR $T240024[esp+92]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+104], 0
-	mov	DWORD PTR $T239982[esp+96], OFFSET ??_7out_of_range@std@@6B@
+	mov	DWORD PTR $T240024[esp+96], OFFSET ??_7out_of_range@std@@6B@
 	call	__CxxThrowException@8
 $LN293@erase@3:
 $LN40@erase@3:
@@ -21280,10 +21277,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?erase@?$_Tree@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@@Z$0:
-	lea	ecx, DWORD PTR $T239983[ebp]
+	lea	ecx, DWORD PTR $T240025[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?erase@?$_Tree@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@@Z$2:
-	lea	ecx, DWORD PTR $T239982[ebp]
+	lea	ecx, DWORD PTR $T240024[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?erase@?$_Tree@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?erase@?$_Tree@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@@Z
@@ -21843,7 +21840,7 @@ PUBLIC	??$?6W4GameOptionTypes@@@@YAAAVFDataStream@@AAV0@ABV?$vector@W4GameOption
 ;	COMDAT ??$?6W4GameOptionTypes@@@@YAAAVFDataStream@@AAV0@ABV?$vector@W4GameOptionTypes@@V?$allocator@W4GameOptionTypes@@@std@@@std@@@Z
 _TEXT	SEGMENT
 _saveTo$ = 8						; size = 4
-$T240794 = 12						; size = 4
+$T240836 = 12						; size = 4
 _readFrom$ = 12						; size = 4
 ??$?6W4GameOptionTypes@@@@YAAAVFDataStream@@AAV0@ABV?$vector@W4GameOptionTypes@@V?$allocator@W4GameOptionTypes@@@std@@@std@@@Z PROC ; operator<<<enum GameOptionTypes>, COMDAT
 
@@ -21859,11 +21856,11 @@ _readFrom$ = 12						; size = 4
 	mov	eax, DWORD PTR [esi+8]
 	sub	eax, DWORD PTR [esi+4]
 	push	edi
-	lea	ecx, DWORD PTR $T240794[esp+8]
+	lea	ecx, DWORD PTR $T240836[esp+8]
 	sar	eax, 2
 	push	ecx
 	mov	ecx, ebx
-	mov	DWORD PTR $T240794[esp+12], eax
+	mov	DWORD PTR $T240836[esp+12], eax
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 	mov	edi, DWORD PTR [esi+8]
 	mov	esi, DWORD PTR [esi+4]
@@ -21897,7 +21894,7 @@ PUBLIC	??$?6W4VictoryTypes@@@@YAAAVFDataStream@@AAV0@ABV?$vector@W4VictoryTypes@
 ;	COMDAT ??$?6W4VictoryTypes@@@@YAAAVFDataStream@@AAV0@ABV?$vector@W4VictoryTypes@@V?$allocator@W4VictoryTypes@@@std@@@std@@@Z
 _TEXT	SEGMENT
 _saveTo$ = 8						; size = 4
-$T240877 = 12						; size = 4
+$T240919 = 12						; size = 4
 _readFrom$ = 12						; size = 4
 ??$?6W4VictoryTypes@@@@YAAAVFDataStream@@AAV0@ABV?$vector@W4VictoryTypes@@V?$allocator@W4VictoryTypes@@@std@@@std@@@Z PROC ; operator<<<enum VictoryTypes>, COMDAT
 
@@ -21913,11 +21910,11 @@ _readFrom$ = 12						; size = 4
 	mov	eax, DWORD PTR [esi+8]
 	sub	eax, DWORD PTR [esi+4]
 	push	edi
-	lea	ecx, DWORD PTR $T240877[esp+8]
+	lea	ecx, DWORD PTR $T240919[esp+8]
 	sar	eax, 2
 	push	ecx
 	mov	ecx, ebx
-	mov	DWORD PTR $T240877[esp+12], eax
+	mov	DWORD PTR $T240919[esp+12], eax
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 	mov	edi, DWORD PTR [esi+8]
 	mov	esi, DWORD PTR [esi+4]
@@ -21951,7 +21948,7 @@ PUBLIC	??$?6V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@@YAAA
 ;	COMDAT ??$?6V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@@YAAAVFDataStream@@AAV0@ABV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
 _TEXT	SEGMENT
 _saveTo$ = 8						; size = 4
-$T240960 = 12						; size = 4
+$T241002 = 12						; size = 4
 _readFrom$ = 12						; size = 4
 ??$?6V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@@YAAAVFDataStream@@AAV0@ABV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z PROC ; operator<<<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >, COMDAT
 
@@ -21973,11 +21970,11 @@ _readFrom$ = 12						; size = 4
 	mov	eax, edx
 	push	edi
 	shr	eax, 31					; 0000001fH
-	lea	ecx, DWORD PTR $T240960[esp+8]
+	lea	ecx, DWORD PTR $T241002[esp+8]
 	add	eax, edx
 	push	ecx
 	mov	ecx, ebx
-	mov	DWORD PTR $T240960[esp+12], eax
+	mov	DWORD PTR $T241002[esp+12], eax
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 	mov	edi, DWORD PTR [esi+8]
 	mov	esi, DWORD PTR [esi+4]
@@ -22561,8 +22558,8 @@ PUBLIC	??$_Move_backward_opt@PAUPlayerInfo@CvReplayInfo@@PAU12@Urandom_access_it
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Move_backward_opt@PAUPlayerInfo@CvReplayInfo@@PAU12@Urandom_access_iterator_tag@std@@U_Undefined_move_tag@4@@std@@YAPAUPlayerInfo@CvReplayInfo@@PAU12@00Urandom_access_iterator_tag@0@U_Undefined_move_tag@0@U_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
-$T241360 = -4						; size = 1
-__Cat$241364 = -4					; size = 1
+$T241402 = -4						; size = 1
+__Cat$241406 = -4					; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
@@ -22579,9 +22576,9 @@ ___formal$ = 28						; size = 1
 ; 2754 : 		_First_dest_cat, _Ptr_cat(_First, _Dest), _Range_checked_iterator_tag());
 
 	mov	edx, DWORD PTR __First_dest_cat$[esp]
-	mov	BYTE PTR $T241360[esp+4], 0
-	mov	eax, DWORD PTR $T241360[esp+4]
-	mov	ecx, DWORD PTR __Cat$241364[esp+4]
+	mov	BYTE PTR $T241402[esp+4], 0
+	mov	eax, DWORD PTR $T241402[esp+4]
+	mov	ecx, DWORD PTR __Cat$241406[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -22677,9 +22674,9 @@ __ehfuncinfo$?construct@?$allocator@UPlayerInfo@CvReplayInfo@@@std@@QAEXPAUPlaye
 xdata$x	ENDS
 ;	COMDAT ?construct@?$allocator@UPlayerInfo@CvReplayInfo@@@std@@QAEXPAUPlayerInfo@CvReplayInfo@@ABU34@@Z
 _TEXT	SEGMENT
-$T241502 = -16						; size = 4
+$T241544 = -16						; size = 4
 __$EHRec$ = -12						; size = 12
-__Vptr$241499 = 8					; size = 4
+__Vptr$241541 = 8					; size = 4
 __Ptr$ = 8						; size = 4
 __Val$ = 12						; size = 4
 ?construct@?$allocator@UPlayerInfo@CvReplayInfo@@@std@@QAEXPAUPlayerInfo@CvReplayInfo@@ABU34@@Z PROC ; std::allocator<CvReplayInfo::PlayerInfo>::construct, COMDAT
@@ -22697,8 +22694,8 @@ __Val$ = 12						; size = 4
 ; 155  : 		_Construct(_Ptr, _Val);
 
 	mov	ecx, DWORD PTR __Ptr$[esp+12]
-	mov	DWORD PTR __Vptr$241499[esp+12], ecx
-	mov	DWORD PTR $T241502[esp+16], ecx
+	mov	DWORD PTR __Vptr$241541[esp+12], ecx
+	mov	DWORD PTR $T241544[esp+16], ecx
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	ecx, ecx
 	je	SHORT $LN5@construct@8
@@ -22717,9 +22714,9 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?construct@?$allocator@UPlayerInfo@CvReplayInfo@@@std@@QAEXPAUPlayerInfo@CvReplayInfo@@ABU34@@Z$0:
-	mov	eax, DWORD PTR __Vptr$241499[ebp-4]
+	mov	eax, DWORD PTR __Vptr$241541[ebp-4]
 	push	eax
-	mov	ecx, DWORD PTR $T241502[ebp]
+	mov	ecx, DWORD PTR $T241544[ebp]
 	push	ecx
 	call	??3@YAXPAX0@Z				; operator delete
 	add	esp, 8
@@ -22820,9 +22817,9 @@ _TEXT	SEGMENT
 __Val$ = -48						; size = 28
 __Next$ = -20						; size = 4
 __$EHRec$ = -16						; size = 16
-$T241601 = 8						; size = 4
+$T241643 = 8						; size = 4
 __First$ = 8						; size = 4
-__Vptr$241598 = 12					; size = 4
+__Vptr$241640 = 12					; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
 __Al$ = 20						; size = 4
@@ -22875,8 +22872,8 @@ $LL6@Uninit_mov:
 ; 223  : 		{
 ; 224  : 		_Al.construct(_Dest, _Val);
 
-	mov	DWORD PTR __Vptr$241598[ebp], esi
-	mov	DWORD PTR $T241601[ebp], esi
+	mov	DWORD PTR __Vptr$241640[ebp], esi
+	mov	DWORD PTR $T241643[ebp], esi
 	mov	BYTE PTR __$EHRec$[ebp+12], 2
 	test	esi, esi
 	je	SHORT $LN19@Uninit_mov
@@ -22951,9 +22948,9 @@ __unwindfunclet$??$_Uninit_move@PAV?$basic_string@DU?$char_traits@D@std@@V?$allo
 	lea	ecx, DWORD PTR __Val$[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$??$_Uninit_move@PAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAV12@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@YAPAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAV10@00AAV?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@0@U_Swap_move_tag@0@U_Range_checked_iterator_tag@0@@Z$3:
-	mov	eax, DWORD PTR __Vptr$241598[ebp]
+	mov	eax, DWORD PTR __Vptr$241640[ebp]
 	push	eax
-	mov	ecx, DWORD PTR $T241601[ebp]
+	mov	ecx, DWORD PTR $T241643[ebp]
 	push	ecx
 	call	??3@YAXPAX0@Z				; operator delete
 	add	esp, 8
@@ -22982,8 +22979,8 @@ PUBLIC	??$unchecked_uninitialized_copy@PAW4GameOptionTypes@@PAW41@V?$allocator@W
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ??$unchecked_uninitialized_copy@PAW4GameOptionTypes@@PAW41@V?$allocator@W4GameOptionTypes@@@std@@@stdext@@YAPAW4GameOptionTypes@@PAW41@00AAV?$allocator@W4GameOptionTypes@@@std@@@Z
 _TEXT	SEGMENT
-$T241656 = -4						; size = 1
-__Cat$241660 = -4					; size = 1
+$T241698 = -4						; size = 1
+__Cat$241703 = -4					; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
@@ -22999,9 +22996,9 @@ __Al$ = 20						; size = 4
 ; 822  : 		_STD _Ptr_cat(_First, _Dest), _STD _Range_checked_iterator_tag()));
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T241656[esp+4], 0
-	mov	eax, DWORD PTR $T241656[esp+4]
-	mov	ecx, DWORD PTR __Cat$241660[esp+4]
+	mov	BYTE PTR $T241698[esp+4], 0
+	mov	eax, DWORD PTR $T241698[esp+4]
+	mov	ecx, DWORD PTR __Cat$241703[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -23023,8 +23020,8 @@ PUBLIC	??$unchecked_uninitialized_copy@PAW4VictoryTypes@@PAW41@V?$allocator@W4Vi
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$unchecked_uninitialized_copy@PAW4VictoryTypes@@PAW41@V?$allocator@W4VictoryTypes@@@std@@@stdext@@YAPAW4VictoryTypes@@PAW41@00AAV?$allocator@W4VictoryTypes@@@std@@@Z
 _TEXT	SEGMENT
-$T241665 = -4						; size = 1
-__Cat$241670 = -4					; size = 1
+$T241707 = -4						; size = 1
+__Cat$241712 = -4					; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
@@ -23040,9 +23037,9 @@ __Al$ = 20						; size = 4
 ; 822  : 		_STD _Ptr_cat(_First, _Dest), _STD _Range_checked_iterator_tag()));
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T241665[esp+4], 0
-	mov	eax, DWORD PTR $T241665[esp+4]
-	mov	ecx, DWORD PTR __Cat$241670[esp+4]
+	mov	BYTE PTR $T241707[esp+4], 0
+	mov	eax, DWORD PTR $T241707[esp+4]
+	mov	ecx, DWORD PTR __Cat$241712[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -23064,8 +23061,8 @@ PUBLIC	??$unchecked_uninitialized_copy@PAU?$pair@FF@std@@PAU12@V?$allocator@U?$p
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$unchecked_uninitialized_copy@PAU?$pair@FF@std@@PAU12@V?$allocator@U?$pair@FF@std@@@2@@stdext@@YAPAU?$pair@FF@std@@PAU12@00AAV?$allocator@U?$pair@FF@std@@@2@@Z
 _TEXT	SEGMENT
-$T241674 = -4						; size = 1
-__Cat$241679 = -4					; size = 1
+$T241716 = -4						; size = 1
+__Cat$241721 = -4					; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
@@ -23081,9 +23078,9 @@ __Al$ = 20						; size = 4
 ; 822  : 		_STD _Ptr_cat(_First, _Dest), _STD _Range_checked_iterator_tag()));
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T241674[esp+4], 0
-	mov	eax, DWORD PTR $T241674[esp+4]
-	mov	ecx, DWORD PTR __Cat$241679[esp+4]
+	mov	BYTE PTR $T241716[esp+4], 0
+	mov	eax, DWORD PTR $T241716[esp+4]
+	mov	ecx, DWORD PTR __Cat$241721[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -23242,7 +23239,7 @@ PUBLIC	?find@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBI
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xtree
 ;	COMDAT ?find@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@QBE?AVconst_iterator@12@ABI@Z
 _TEXT	SEGMENT
-$T241891 = -4						; size = 4
+$T241933 = -4						; size = 4
 ___$ReturnUdt$ = 8					; size = 4
 __Where$ = 12						; size = 4
 __Keyval$ = 12						; size = 4
@@ -23306,8 +23303,8 @@ $LN3@find:
 ; 990  : 				_Keyval, _Key(_Where._Mynode()))
 ; 991  : 					? end() : _Where);
 
-	mov	DWORD PTR $T241891[esp+8], eax
-	lea	eax, DWORD PTR $T241891[esp+8]
+	mov	DWORD PTR $T241933[esp+8], eax
+	lea	eax, DWORD PTR $T241933[esp+8]
 	mov	edx, DWORD PTR [eax]
 	mov	eax, DWORD PTR ___$ReturnUdt$[esp+4]
 	mov	DWORD PTR [eax], edx
@@ -23512,7 +23509,7 @@ PUBLIC	?find@?$_Tree@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?find@?$_Tree@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@std@@QBE?AVconst_iterator@12@ABI@Z
 _TEXT	SEGMENT
-$T242754 = -4						; size = 4
+$T242796 = -4						; size = 4
 ___$ReturnUdt$ = 8					; size = 4
 __Where$ = 12						; size = 4
 __Keyval$ = 12						; size = 4
@@ -23576,8 +23573,8 @@ $LN3@find@2:
 ; 990  : 				_Keyval, _Key(_Where._Mynode()))
 ; 991  : 					? end() : _Where);
 
-	mov	DWORD PTR $T242754[esp+8], eax
-	lea	eax, DWORD PTR $T242754[esp+8]
+	mov	DWORD PTR $T242796[esp+8], eax
+	lea	eax, DWORD PTR $T242796[esp+8]
 	mov	edx, DWORD PTR [eax]
 	mov	eax, DWORD PTR ___$ReturnUdt$[esp+4]
 	mov	DWORD PTR [eax], edx
@@ -23880,8 +23877,8 @@ __ehfuncinfo$?_Insert@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$p
 xdata$x	ENDS
 ;	COMDAT ?_Insert@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@IAE?AViterator@12@_NPAU_Node@?$_Tree_nod@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@2@ABU?$pair@$$CBIH@2@@Z
 _TEXT	SEGMENT
-$T243012 = -80						; size = 28
-$T243011 = -52						; size = 40
+$T243054 = -80						; size = 28
+$T243053 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
 __Addleft$ = 12						; size = 1
@@ -23909,22 +23906,22 @@ __Val$ = 20						; size = 4
 ; 1189 : 			_THROW(length_error, "map/set<T> too long");
 
 	push	OFFSET ??_C@_0BE@JONHPENG@map?1set?$DMT?$DO?5too?5long?$AA@
-	lea	ecx, DWORD PTR $T243012[esp+88]
+	lea	ecx, DWORD PTR $T243054[esp+88]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T243011[esp+84]
+	lea	ecx, DWORD PTR $T243053[esp+84]
 	mov	DWORD PTR __$EHRec$[esp+92], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T243012[esp+84]
+	lea	eax, DWORD PTR $T243054[esp+84]
 	push	eax
-	lea	ecx, DWORD PTR $T243011[esp+100]
+	lea	ecx, DWORD PTR $T243053[esp+100]
 	mov	BYTE PTR __$EHRec$[esp+96], 1
-	mov	DWORD PTR $T243011[esp+88], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T243053[esp+88], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVlength_error@std@@
-	lea	ecx, DWORD PTR $T243011[esp+88]
+	lea	ecx, DWORD PTR $T243053[esp+88]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+100], 0
-	mov	DWORD PTR $T243011[esp+92], OFFSET ??_7length_error@std@@6B@
+	mov	DWORD PTR $T243053[esp+92], OFFSET ??_7length_error@std@@6B@
 	call	__CxxThrowException@8
 $LN228@Insert:
 $LN17@Insert:
@@ -24243,10 +24240,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Insert@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@IAE?AViterator@12@_NPAU_Node@?$_Tree_nod@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@2@ABU?$pair@$$CBIH@2@@Z$0:
-	lea	ecx, DWORD PTR $T243012[ebp]
+	lea	ecx, DWORD PTR $T243054[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Insert@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@IAE?AViterator@12@_NPAU_Node@?$_Tree_nod@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@2@ABU?$pair@$$CBIH@2@@Z$2:
-	lea	ecx, DWORD PTR $T243011[ebp]
+	lea	ecx, DWORD PTR $T243053[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Insert@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@IAE?AViterator@12@_NPAU_Node@?$_Tree_nod@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@2@ABU?$pair@$$CBIH@2@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?_Insert@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@IAE?AViterator@12@_NPAU_Node@?$_Tree_nod@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@2@ABU?$pair@$$CBIH@2@@Z
@@ -24314,8 +24311,8 @@ __ehfuncinfo$?_Insert@?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$p
 xdata$x	ENDS
 ;	COMDAT ?_Insert@?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$0A@@std@@@std@@IAE?AViterator@12@_NPAU_Node@?$_Tree_nod@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$0A@@std@@@2@ABU?$pair@$$CBHH@2@@Z
 _TEXT	SEGMENT
-$T243443 = -80						; size = 28
-$T243442 = -52						; size = 40
+$T243485 = -80						; size = 28
+$T243484 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
 __Addleft$ = 12						; size = 1
@@ -24343,22 +24340,22 @@ __Val$ = 20						; size = 4
 ; 1189 : 			_THROW(length_error, "map/set<T> too long");
 
 	push	OFFSET ??_C@_0BE@JONHPENG@map?1set?$DMT?$DO?5too?5long?$AA@
-	lea	ecx, DWORD PTR $T243443[esp+88]
+	lea	ecx, DWORD PTR $T243485[esp+88]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T243442[esp+84]
+	lea	ecx, DWORD PTR $T243484[esp+84]
 	mov	DWORD PTR __$EHRec$[esp+92], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T243443[esp+84]
+	lea	eax, DWORD PTR $T243485[esp+84]
 	push	eax
-	lea	ecx, DWORD PTR $T243442[esp+100]
+	lea	ecx, DWORD PTR $T243484[esp+100]
 	mov	BYTE PTR __$EHRec$[esp+96], 1
-	mov	DWORD PTR $T243442[esp+88], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T243484[esp+88], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVlength_error@std@@
-	lea	ecx, DWORD PTR $T243442[esp+88]
+	lea	ecx, DWORD PTR $T243484[esp+88]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+100], 0
-	mov	DWORD PTR $T243442[esp+92], OFFSET ??_7length_error@std@@6B@
+	mov	DWORD PTR $T243484[esp+92], OFFSET ??_7length_error@std@@6B@
 	call	__CxxThrowException@8
 $LN228@Insert@2:
 $LN17@Insert@2:
@@ -24677,10 +24674,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Insert@?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$0A@@std@@@std@@IAE?AViterator@12@_NPAU_Node@?$_Tree_nod@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$0A@@std@@@2@ABU?$pair@$$CBHH@2@@Z$0:
-	lea	ecx, DWORD PTR $T243443[ebp]
+	lea	ecx, DWORD PTR $T243485[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Insert@?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$0A@@std@@@std@@IAE?AViterator@12@_NPAU_Node@?$_Tree_nod@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$0A@@std@@@2@ABU?$pair@$$CBHH@2@@Z$2:
-	lea	ecx, DWORD PTR $T243442[ebp]
+	lea	ecx, DWORD PTR $T243484[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Insert@?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$0A@@std@@@std@@IAE?AViterator@12@_NPAU_Node@?$_Tree_nod@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$0A@@std@@@2@ABU?$pair@$$CBHH@2@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?_Insert@?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$0A@@std@@@std@@IAE?AViterator@12@_NPAU_Node@?$_Tree_nod@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$0A@@std@@@2@ABU?$pair@$$CBHH@2@@Z
@@ -24748,8 +24745,8 @@ __ehfuncinfo$?_Insert@?$_Tree@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@
 xdata$x	ENDS
 ;	COMDAT ?_Insert@?$_Tree@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@std@@IAE?AViterator@12@_NPAU_Node@?$_Tree_nod@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@2@ABU?$pair@$$CBIUPlotState@CvReplayInfo@@@2@@Z
 _TEXT	SEGMENT
-$T243874 = -80						; size = 28
-$T243873 = -52						; size = 40
+$T243916 = -80						; size = 28
+$T243915 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
 __Addleft$ = 12						; size = 1
@@ -24777,22 +24774,22 @@ __Val$ = 20						; size = 4
 ; 1189 : 			_THROW(length_error, "map/set<T> too long");
 
 	push	OFFSET ??_C@_0BE@JONHPENG@map?1set?$DMT?$DO?5too?5long?$AA@
-	lea	ecx, DWORD PTR $T243874[esp+88]
+	lea	ecx, DWORD PTR $T243916[esp+88]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T243873[esp+84]
+	lea	ecx, DWORD PTR $T243915[esp+84]
 	mov	DWORD PTR __$EHRec$[esp+92], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T243874[esp+84]
+	lea	eax, DWORD PTR $T243916[esp+84]
 	push	eax
-	lea	ecx, DWORD PTR $T243873[esp+100]
+	lea	ecx, DWORD PTR $T243915[esp+100]
 	mov	BYTE PTR __$EHRec$[esp+96], 1
-	mov	DWORD PTR $T243873[esp+88], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T243915[esp+88], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVlength_error@std@@
-	lea	ecx, DWORD PTR $T243873[esp+88]
+	lea	ecx, DWORD PTR $T243915[esp+88]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+100], 0
-	mov	DWORD PTR $T243873[esp+92], OFFSET ??_7length_error@std@@6B@
+	mov	DWORD PTR $T243915[esp+92], OFFSET ??_7length_error@std@@6B@
 	call	__CxxThrowException@8
 $LN228@Insert@3:
 $LN17@Insert@3:
@@ -25111,10 +25108,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Insert@?$_Tree@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@std@@IAE?AViterator@12@_NPAU_Node@?$_Tree_nod@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@2@ABU?$pair@$$CBIUPlotState@CvReplayInfo@@@2@@Z$0:
-	lea	ecx, DWORD PTR $T243874[ebp]
+	lea	ecx, DWORD PTR $T243916[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Insert@?$_Tree@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@std@@IAE?AViterator@12@_NPAU_Node@?$_Tree_nod@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@2@ABU?$pair@$$CBIUPlotState@CvReplayInfo@@@2@@Z$2:
-	lea	ecx, DWORD PTR $T243873[ebp]
+	lea	ecx, DWORD PTR $T243915[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Insert@?$_Tree@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@std@@IAE?AViterator@12@_NPAU_Node@?$_Tree_nod@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@2@ABU?$pair@$$CBIUPlotState@CvReplayInfo@@@2@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?_Insert@?$_Tree@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@std@@IAE?AViterator@12@_NPAU_Node@?$_Tree_nod@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@2@ABU?$pair@$$CBIUPlotState@CvReplayInfo@@@2@@Z
@@ -25360,8 +25357,8 @@ PUBLIC	??$?6UPlayerInfo@CvReplayInfo@@@@YAAAVFDataStream@@AAV0@ABV?$vector@UPlay
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\fireplace\include\fireworks\fstlcontainerserialization.h
 ;	COMDAT ??$?6UPlayerInfo@CvReplayInfo@@@@YAAAVFDataStream@@AAV0@ABV?$vector@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@std@@@Z
 _TEXT	SEGMENT
-$T244639 = -8						; size = 8
-$T244651 = 8						; size = 4
+$T244681 = -8						; size = 8
+$T244693 = 8						; size = 4
 _saveTo$ = 8						; size = 4
 _readFrom$ = 12						; size = 4
 ??$?6UPlayerInfo@CvReplayInfo@@@@YAAAVFDataStream@@AAV0@ABV?$vector@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@std@@@Z PROC ; operator<<<CvReplayInfo::PlayerInfo>, COMDAT
@@ -25378,11 +25375,11 @@ _readFrom$ = 12						; size = 4
 	sub	eax, DWORD PTR [esi+4]
 	push	edi
 	mov	edi, DWORD PTR _saveTo$[esp+12]
-	lea	ecx, DWORD PTR $T244651[esp+12]
+	lea	ecx, DWORD PTR $T244693[esp+12]
 	sar	eax, 7
 	push	ecx
 	mov	ecx, edi
-	mov	DWORD PTR $T244651[esp+16], eax
+	mov	DWORD PTR $T244693[esp+16], eax
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 	mov	eax, DWORD PTR [esi+8]
 	mov	ecx, DWORD PTR [esi+4]
@@ -25390,7 +25387,7 @@ _readFrom$ = 12						; size = 4
 	push	edi
 	push	eax
 	push	ecx
-	lea	edx, DWORD PTR $T244639[esp+32]
+	lea	edx, DWORD PTR $T244681[esp+32]
 	push	edx
 	call	??$for_each@V?$_Vector_const_iterator@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@std@@U?$SerializeFromSequenceContainer@$$CBUPlayerInfo@CvReplayInfo@@$$CBV?$vector@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@std@@@@@std@@YA?AU?$SerializeFromSequenceContainer@$$CBUPlayerInfo@CvReplayInfo@@$$CBV?$vector@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@std@@@@V?$_Vector_const_iterator@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@0@0U1@@Z ; std::for_each<std::_Vector_const_iterator<CvReplayInfo::PlayerInfo,std::allocator<CvReplayInfo::PlayerInfo> >,SerializeFromSequenceContainer<CvReplayInfo::PlayerInfo const ,std::vector<CvReplayInfo::PlayerInfo,std::allocator<CvReplayInfo::PlayerInfo> > const > >
 	add	esp, 20					; 00000014H
@@ -25452,8 +25449,8 @@ PUBLIC	??$unchecked_uninitialized_fill_n@PAW4GameOptionTypes@@IW41@V?$allocator@
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ??$unchecked_uninitialized_fill_n@PAW4GameOptionTypes@@IW41@V?$allocator@W4GameOptionTypes@@@std@@@stdext@@YAXPAW4GameOptionTypes@@IABW41@AAV?$allocator@W4GameOptionTypes@@@std@@@Z
 _TEXT	SEGMENT
-$T244707 = -4						; size = 1
-__Cat$244711 = -4					; size = 1
+$T244749 = -4						; size = 1
+__Cat$244754 = -4					; size = 1
 __First$ = 8						; size = 4
 __Count$ = 12						; size = 4
 __Val$ = 16						; size = 4
@@ -25468,9 +25465,9 @@ __Al$ = 20						; size = 4
 ; 942  : 		_STD _Ptr_cat(_First, _First), _STD _Range_checked_iterator_tag());
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T244707[esp+4], 0
-	mov	eax, DWORD PTR $T244707[esp+4]
-	mov	ecx, DWORD PTR __Cat$244711[esp+4]
+	mov	BYTE PTR $T244749[esp+4], 0
+	mov	eax, DWORD PTR $T244749[esp+4]
+	mov	ecx, DWORD PTR __Cat$244754[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Val$[esp+4]
 	push	ecx
@@ -25492,8 +25489,8 @@ PUBLIC	??$unchecked_uninitialized_fill_n@PAW4VictoryTypes@@IW41@V?$allocator@W4V
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$unchecked_uninitialized_fill_n@PAW4VictoryTypes@@IW41@V?$allocator@W4VictoryTypes@@@std@@@stdext@@YAXPAW4VictoryTypes@@IABW41@AAV?$allocator@W4VictoryTypes@@@std@@@Z
 _TEXT	SEGMENT
-$T244716 = -4						; size = 1
-__Cat$244720 = -4					; size = 1
+$T244758 = -4						; size = 1
+__Cat$244763 = -4					; size = 1
 __First$ = 8						; size = 4
 __Count$ = 12						; size = 4
 __Val$ = 16						; size = 4
@@ -25508,9 +25505,9 @@ __Al$ = 20						; size = 4
 ; 942  : 		_STD _Ptr_cat(_First, _First), _STD _Range_checked_iterator_tag());
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T244716[esp+4], 0
-	mov	eax, DWORD PTR $T244716[esp+4]
-	mov	ecx, DWORD PTR __Cat$244720[esp+4]
+	mov	BYTE PTR $T244758[esp+4], 0
+	mov	eax, DWORD PTR $T244758[esp+4]
+	mov	ecx, DWORD PTR __Cat$244763[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Val$[esp+4]
 	push	ecx
@@ -25533,9 +25530,9 @@ PUBLIC	??$unchecked_copy@PAUPlayerInfo@CvReplayInfo@@PAU12@@stdext@@YAPAUPlayerI
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xutility
 ;	COMDAT ??$unchecked_copy@PAUPlayerInfo@CvReplayInfo@@PAU12@@stdext@@YAPAUPlayerInfo@CvReplayInfo@@PAU12@00@Z
 _TEXT	SEGMENT
-$T244725 = -4						; size = 1
-__Cat$244730 = -4					; size = 1
-$T244727 = -4						; size = 1
+$T244767 = -4						; size = 1
+__Cat$244773 = -4					; size = 1
+$T244769 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
@@ -25548,10 +25545,10 @@ __Dest$ = 16						; size = 4
 ; 3605 : 		return (_STD _Copy_opt(_CHECKED_BASE(_First), _CHECKED_BASE(_Last), _Dest,
 ; 3606 : 			_STD _Iter_random(_First, _Dest), _STD _Ptr_cat(_First, _Dest), _STD _Range_checked_iterator_tag()));
 
-	mov	BYTE PTR $T244725[esp+4], 0
-	mov	eax, DWORD PTR $T244725[esp+4]
-	mov	ecx, DWORD PTR __Cat$244730[esp+4]
-	mov	edx, DWORD PTR $T244727[esp+4]
+	mov	BYTE PTR $T244767[esp+4], 0
+	mov	eax, DWORD PTR $T244767[esp+4]
+	mov	ecx, DWORD PTR __Cat$244773[esp+4]
+	mov	edx, DWORD PTR $T244769[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -25661,11 +25658,11 @@ PUBLIC	??$_Unchecked_move_backward@PAUPlayerInfo@CvReplayInfo@@PAU12@@stdext@@YA
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Unchecked_move_backward@PAUPlayerInfo@CvReplayInfo@@PAU12@@stdext@@YAPAUPlayerInfo@CvReplayInfo@@PAU12@00@Z
 _TEXT	SEGMENT
-$T244817 = -4						; size = 1
+$T244859 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$244821 = 16					; size = 1
-$T244800 = 16						; size = 1
+__Cat$244863 = 16					; size = 1
+$T244842 = 16						; size = 1
 __Dest$ = 16						; size = 4
 ??$_Unchecked_move_backward@PAUPlayerInfo@CvReplayInfo@@PAU12@@stdext@@YAPAUPlayerInfo@CvReplayInfo@@PAU12@00@Z PROC ; stdext::_Unchecked_move_backward<CvReplayInfo::PlayerInfo *,CvReplayInfo::PlayerInfo *>, COMDAT
 
@@ -25676,10 +25673,10 @@ __Dest$ = 16						; size = 4
 ; 3695 : 		return (_STD _Move_backward_opt(_CHECKED_BASE(_First), _CHECKED_BASE(_Last), _Dest,
 ; 3696 : 			_STD _Iter_random(_First, _Dest), _STD _Move_cat(_Dest), _STD _Range_checked_iterator_tag()));
 
-	mov	ecx, DWORD PTR __Cat$244821[esp]
-	mov	edx, DWORD PTR $T244800[esp]
-	mov	BYTE PTR $T244817[esp+4], 0
-	mov	eax, DWORD PTR $T244817[esp+4]
+	mov	ecx, DWORD PTR __Cat$244863[esp]
+	mov	edx, DWORD PTR $T244842[esp]
+	mov	BYTE PTR $T244859[esp+4], 0
+	mov	eax, DWORD PTR $T244859[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -25718,8 +25715,8 @@ PUBLIC	??$unchecked_uninitialized_copy@V?$_Vector_const_iterator@U?$pair@FF@std@
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ??$unchecked_uninitialized_copy@V?$_Vector_const_iterator@U?$pair@FF@std@@V?$allocator@U?$pair@FF@std@@@2@@std@@PAU?$pair@FF@2@V?$allocator@U?$pair@FF@std@@@2@@stdext@@YAPAU?$pair@FF@std@@V?$_Vector_const_iterator@U?$pair@FF@std@@V?$allocator@U?$pair@FF@std@@@2@@2@0PAU12@AAV?$allocator@U?$pair@FF@std@@@2@@Z
 _TEXT	SEGMENT
-$T244838 = -4						; size = 1
-__Cat$244843 = -4					; size = 1
+$T244880 = -4						; size = 1
+__Cat$244885 = -4					; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
@@ -25735,9 +25732,9 @@ __Al$ = 20						; size = 4
 ; 822  : 		_STD _Ptr_cat(_First, _Dest), _STD _Range_checked_iterator_tag()));
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T244838[esp+4], 0
-	mov	eax, DWORD PTR $T244838[esp+4]
-	mov	ecx, DWORD PTR __Cat$244843[esp+4]
+	mov	BYTE PTR $T244880[esp+4], 0
+	mov	eax, DWORD PTR $T244880[esp+4]
+	mov	ecx, DWORD PTR __Cat$244885[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -25787,11 +25784,11 @@ __ehfuncinfo$??$_Uninit_fill_n@PAV?$basic_string@DU?$char_traits@D@std@@V?$alloc
 xdata$x	ENDS
 ;	COMDAT ??$_Uninit_fill_n@PAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@IV12@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@YAXPAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@IABV10@AAV?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@0@U_Nonscalar_ptr_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
-$T244873 = -24						; size = 4
+$T244915 = -24						; size = 4
 __Next$ = -20						; size = 4
 __$EHRec$ = -16						; size = 16
 __First$ = 8						; size = 4
-__Vptr$244879 = 12					; size = 4
+__Vptr$244921 = 12					; size = 4
 __Count$ = 12						; size = 4
 __Val$ = 16						; size = 4
 __Al$ = 20						; size = 4
@@ -25841,8 +25838,8 @@ $LL6@Uninit_fil@3:
 
 ; 404  : 		_Al.construct(_First, _Val);
 
-	mov	DWORD PTR __Vptr$244879[ebp], esi
-	mov	DWORD PTR $T244873[ebp], esi
+	mov	DWORD PTR __Vptr$244921[ebp], esi
+	mov	DWORD PTR $T244915[ebp], esi
 	mov	BYTE PTR __$EHRec$[ebp+12], 1
 	cmp	esi, ebx
 	je	SHORT $LN18@Uninit_fil@3
@@ -25901,9 +25898,9 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$??$_Uninit_fill_n@PAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@IV12@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@YAXPAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@IABV10@AAV?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@0@U_Nonscalar_ptr_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z$2:
-	mov	eax, DWORD PTR __Vptr$244879[ebp]
+	mov	eax, DWORD PTR __Vptr$244921[ebp]
 	push	eax
-	mov	ecx, DWORD PTR $T244873[ebp]
+	mov	ecx, DWORD PTR $T244915[ebp]
 	push	ecx
 	call	??3@YAXPAX0@Z				; operator delete
 	add	esp, 8
@@ -25959,8 +25956,8 @@ PUBLIC	??$_Unchecked_uninitialized_move@PAV?$basic_string@DU?$char_traits@D@std@
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ??$_Unchecked_uninitialized_move@PAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAV12@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@YAPAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAV12@00AAV?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@Z
 _TEXT	SEGMENT
-$T244938 = -4						; size = 1
-__Cat$244943 = -4					; size = 1
+$T244980 = -4						; size = 1
+__Cat$244985 = -4					; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
@@ -25976,9 +25973,9 @@ __Al$ = 20						; size = 4
 ; 864  : 		_STD _Move_cat(_Dest), _STD _Range_checked_iterator_tag()));
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T244938[esp+4], 0
-	mov	eax, DWORD PTR $T244938[esp+4]
-	mov	ecx, DWORD PTR __Cat$244943[esp+4]
+	mov	BYTE PTR $T244980[esp+4], 0
+	mov	eax, DWORD PTR $T244980[esp+4]
+	mov	ecx, DWORD PTR __Cat$244985[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -26020,10 +26017,10 @@ PUBLIC	??$_Uninit_move@PAW4GameOptionTypes@@PAW41@V?$allocator@W4GameOptionTypes
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ??$_Uninit_move@PAW4GameOptionTypes@@PAW41@V?$allocator@W4GameOptionTypes@@@std@@U_Undefined_move_tag@3@@std@@YAPAW4GameOptionTypes@@PAW41@00AAV?$allocator@W4GameOptionTypes@@@0@U_Undefined_move_tag@0@U_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
-$T244968 = -4						; size = 1
+$T245010 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$244971 = 16					; size = 1
+__Cat$245013 = 16					; size = 1
 __Dest$ = 16						; size = 4
 __Al$ = 20						; size = 4
 ___formal$ = 24						; size = 1
@@ -26036,10 +26033,10 @@ ___formal$ = 28						; size = 1
 
 ; 207  : 	return (_STDEXT unchecked_uninitialized_copy(_First, _Last, _Dest, _Al));
 
-	mov	ecx, DWORD PTR __Cat$244971[esp]
+	mov	ecx, DWORD PTR __Cat$245013[esp]
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T244968[esp+4], 0
-	mov	eax, DWORD PTR $T244968[esp+4]
+	mov	BYTE PTR $T245010[esp+4], 0
+	mov	eax, DWORD PTR $T245010[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -26061,10 +26058,10 @@ PUBLIC	??$_Uninit_move@PAW4VictoryTypes@@PAW41@V?$allocator@W4VictoryTypes@@@std
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Uninit_move@PAW4VictoryTypes@@PAW41@V?$allocator@W4VictoryTypes@@@std@@U_Undefined_move_tag@3@@std@@YAPAW4VictoryTypes@@PAW41@00AAV?$allocator@W4VictoryTypes@@@0@U_Undefined_move_tag@0@U_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
-$T244987 = -4						; size = 1
+$T245029 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$244990 = 16					; size = 1
+__Cat$245032 = 16					; size = 1
 __Dest$ = 16						; size = 4
 __Al$ = 20						; size = 4
 ___formal$ = 24						; size = 1
@@ -26077,10 +26074,10 @@ ___formal$ = 28						; size = 1
 
 ; 207  : 	return (_STDEXT unchecked_uninitialized_copy(_First, _Last, _Dest, _Al));
 
-	mov	ecx, DWORD PTR __Cat$244990[esp]
+	mov	ecx, DWORD PTR __Cat$245032[esp]
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T244987[esp+4], 0
-	mov	eax, DWORD PTR $T244987[esp+4]
+	mov	BYTE PTR $T245029[esp+4], 0
+	mov	eax, DWORD PTR $T245029[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -26103,10 +26100,10 @@ PUBLIC	??$_Ucopy@PAU?$pair@FF@std@@@?$vector@U?$pair@FF@std@@V?$allocator@U?$pai
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\vector
 ;	COMDAT ??$_Ucopy@PAU?$pair@FF@std@@@?$vector@U?$pair@FF@std@@V?$allocator@U?$pair@FF@std@@@2@@std@@IAEPAU?$pair@FF@1@PAU21@00@Z
 _TEXT	SEGMENT
-$T245006 = -4						; size = 1
+$T245049 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$245010 = 16					; size = 1
+__Cat$245053 = 16					; size = 1
 __Ptr$ = 16						; size = 4
 ??$_Ucopy@PAU?$pair@FF@std@@@?$vector@U?$pair@FF@std@@V?$allocator@U?$pair@FF@std@@@2@@std@@IAEPAU?$pair@FF@1@PAU21@00@Z PROC ; std::vector<std::pair<short,short>,std::allocator<std::pair<short,short> > >::_Ucopy<std::pair<short,short> *>, COMDAT
 ; _this$ = ecx
@@ -26119,9 +26116,9 @@ __Ptr$ = 16						; size = 4
 ; 1140 : 		return (_STDEXT unchecked_uninitialized_copy(_First, _Last,
 ; 1141 : 			_Ptr, this->_Alval));
 
-	mov	edx, DWORD PTR __Cat$245010[esp]
-	mov	BYTE PTR $T245006[esp+4], 0
-	mov	eax, DWORD PTR $T245006[esp+4]
+	mov	edx, DWORD PTR __Cat$245053[esp]
+	mov	BYTE PTR $T245049[esp+4], 0
+	mov	eax, DWORD PTR $T245049[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Ptr$[esp+4]
 	push	edx
@@ -26144,11 +26141,11 @@ PUBLIC	??$for_each@Vconst_iterator@?$_Tree@V?$_Tmap_traits@IUPlotState@CvReplayI
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\algorithm
 ;	COMDAT ??$for_each@Vconst_iterator@?$_Tree@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@std@@U?$SerializeFromAssociativeContainer@U?$pair@IUPlotState@CvReplayInfo@@@std@@$$CBV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@2@@@@std@@YA?AU?$SerializeFromAssociativeContainer@U?$pair@IUPlotState@CvReplayInfo@@@std@@$$CBV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@2@@@Vconst_iterator@?$_Tree@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@0@0U1@@Z
 _TEXT	SEGMENT
-$T245216 = -22						; size = 1
-$T245215 = -22						; size = 1
-$T245214 = -22						; size = 1
-_uiRiverData$245212 = -21				; size = 1
-$T245017 = -20						; size = 20
+$T245258 = -22						; size = 1
+$T245257 = -22						; size = 1
+$T245256 = -22						; size = 1
+_uiRiverData$245254 = -21				; size = 1
+$T245059 = -20						; size = 20
 ___$ReturnUdt$ = 8					; size = 4
 __First$ = 12						; size = 4
 __Last$ = 16						; size = 4
@@ -26180,45 +26177,45 @@ $LL10@for_each@5:
 	mov	ecx, DWORD PTR [esi+16]
 	mov	edx, DWORD PTR [esi+20]
 	mov	eax, DWORD PTR [esi+12]
-	mov	DWORD PTR $T245017[esp+40], ecx
+	mov	DWORD PTR $T245059[esp+40], ecx
 	mov	ecx, DWORD PTR [esi+28]
-	mov	DWORD PTR $T245017[esp+44], edx
-	mov	DWORD PTR $T245017[esp+36], eax
+	mov	DWORD PTR $T245059[esp+44], edx
+	mov	DWORD PTR $T245059[esp+36], eax
 	mov	eax, DWORD PTR [esi+24]
-	mov	DWORD PTR $T245017[esp+52], ecx
+	mov	DWORD PTR $T245059[esp+52], ecx
 	mov	ecx, DWORD PTR __Func$[esp+32]
-	lea	edx, DWORD PTR $T245017[esp+36]
+	lea	edx, DWORD PTR $T245059[esp+36]
 	push	edx
-	mov	DWORD PTR $T245017[esp+52], eax
+	mov	DWORD PTR $T245059[esp+52], eax
 	mov	edi, ecx
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
-	mov	al, BYTE PTR $T245017[esp+40]
-	lea	ecx, DWORD PTR $T245214[esp+36]
+	mov	al, BYTE PTR $T245059[esp+40]
+	lea	ecx, DWORD PTR $T245256[esp+36]
 	push	ecx
 	mov	ecx, edi
-	mov	BYTE PTR $T245214[esp+40], al
+	mov	BYTE PTR $T245256[esp+40], al
 	call	?Write@FDataStream@@IAEXABE@Z		; FDataStream::Write
-	mov	dl, BYTE PTR $T245017[esp+44]
-	lea	eax, DWORD PTR $T245215[esp+36]
+	mov	dl, BYTE PTR $T245059[esp+44]
+	lea	eax, DWORD PTR $T245257[esp+36]
 	push	eax
 	mov	ecx, edi
-	mov	BYTE PTR $T245215[esp+40], dl
+	mov	BYTE PTR $T245257[esp+40], dl
 	call	?Write@FDataStream@@IAEXABE@Z		; FDataStream::Write
-	mov	cl, BYTE PTR $T245017[esp+48]
-	lea	edx, DWORD PTR $T245216[esp+36]
-	mov	BYTE PTR $T245216[esp+36], cl
+	mov	cl, BYTE PTR $T245059[esp+48]
+	lea	edx, DWORD PTR $T245258[esp+36]
+	mov	BYTE PTR $T245258[esp+36], cl
 	push	edx
 	mov	ecx, edi
 	call	?Write@FDataStream@@IAEXABE@Z		; FDataStream::Write
-	mov	eax, DWORD PTR $T245017[esp+52]
+	mov	eax, DWORD PTR $T245059[esp+52]
 	mov	cl, al
 	add	cl, cl
 	or	cl, ah
 	add	cl, cl
-	or	cl, BYTE PTR $T245017[esp+54]
-	lea	edx, DWORD PTR _uiRiverData$245212[esp+36]
+	or	cl, BYTE PTR $T245059[esp+54]
+	lea	edx, DWORD PTR _uiRiverData$245254[esp+36]
 	add	cl, cl
-	mov	BYTE PTR _uiRiverData$245212[esp+36], cl
+	mov	BYTE PTR _uiRiverData$245254[esp+36], cl
 	push	edx
 	mov	ecx, edi
 	call	?Write@FDataStream@@IAEXABE@Z		; FDataStream::Write
@@ -26331,10 +26328,10 @@ __ehfuncinfo$??$_Uninit_copy@PAUPlayerInfo@CvReplayInfo@@PAU12@V?$allocator@UPla
 xdata$x	ENDS
 ;	COMDAT ??$_Uninit_copy@PAUPlayerInfo@CvReplayInfo@@PAU12@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@std@@YAPAUPlayerInfo@CvReplayInfo@@PAU12@00AAV?$allocator@UPlayerInfo@CvReplayInfo@@@0@U_Nonscalar_ptr_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
-$T245265 = -24						; size = 4
+$T245307 = -24						; size = 4
 __Next$ = -20						; size = 4
 __$EHRec$ = -16						; size = 16
-__Vptr$245262 = 8					; size = 4
+__Vptr$245304 = 8					; size = 4
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
@@ -26381,8 +26378,8 @@ $LL6@Uninit_cop@5:
 
 ; 131  : 		_Al.construct(_Dest, *_First);
 
-	mov	DWORD PTR __Vptr$245262[ebp], esi
-	mov	DWORD PTR $T245265[ebp], esi
+	mov	DWORD PTR __Vptr$245304[ebp], esi
+	mov	DWORD PTR $T245307[ebp], esi
 	mov	BYTE PTR __$EHRec$[ebp+12], 1
 	cmp	esi, ebx
 	je	SHORT $LN18@Uninit_cop@5
@@ -26442,9 +26439,9 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$??$_Uninit_copy@PAUPlayerInfo@CvReplayInfo@@PAU12@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@std@@YAPAUPlayerInfo@CvReplayInfo@@PAU12@00AAV?$allocator@UPlayerInfo@CvReplayInfo@@@0@U_Nonscalar_ptr_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z$2:
-	mov	eax, DWORD PTR __Vptr$245262[ebp]
+	mov	eax, DWORD PTR __Vptr$245304[ebp]
 	push	eax
-	mov	ecx, DWORD PTR $T245265[ebp]
+	mov	ecx, DWORD PTR $T245307[ebp]
 	push	ecx
 	call	??3@YAXPAX0@Z				; operator delete
 	add	esp, 8
@@ -26459,7 +26456,7 @@ PUBLIC	?getPlayerDataSetValue@CvReplayInfo@@QBE_NIIIAAH@Z ; CvReplayInfo::getPla
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredll_expansion2\cvreplayinfo.cpp
 ;	COMDAT ?getPlayerDataSetValue@CvReplayInfo@@QBE_NIIIAAH@Z
 _TEXT	SEGMENT
-_it$221651 = 8						; size = 4
+_it$221693 = 8						; size = 4
 _uiPlayer$ = 8						; size = 4
 _uiDataSet$ = 12					; size = 4
 _uiAdjustedTurn$ = 16					; size = 4
@@ -26508,14 +26505,14 @@ _outValue$ = 20						; size = 4
 
 	lea	ecx, DWORD PTR _uiAdjustedTurn$[esp+4]
 	push	ecx
-	lea	edx, DWORD PTR _it$221651[esp+8]
+	lea	edx, DWORD PTR _it$221693[esp+8]
 	push	edx
 	mov	ecx, esi
 	call	?find@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@QBE?AVconst_iterator@12@ABI@Z ; std::_Tree<std::_Tmap_traits<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> >,0> >::find
 
 ; 485  : 		if(it != data.end())
 
-	mov	eax, DWORD PTR _it$221651[esp+4]
+	mov	eax, DWORD PTR _it$221693[esp+4]
 	cmp	eax, DWORD PTR [esi+4]
 	je	SHORT $LN1@getPlayerD@3
 
@@ -26556,7 +26553,7 @@ PUBLIC	?getPlotState@CvReplayInfo@@QBE_NIIIAAUPlotState@1@@Z ; CvReplayInfo::get
 ;	COMDAT ?getPlotState@CvReplayInfo@@QBE_NIIIAAUPlotState@1@@Z
 _TEXT	SEGMENT
 _x$ = 8							; size = 4
-_match$221748 = 12					; size = 4
+_match$221790 = 12					; size = 4
 _y$ = 12						; size = 4
 _uiTurn$ = 16						; size = 4
 _plotState$ = 20					; size = 4
@@ -26592,14 +26589,14 @@ _plotState$ = 20					; size = 4
 
 	lea	ecx, DWORD PTR _uiTurn$[esp]
 	push	ecx
-	lea	edx, DWORD PTR _match$221748[esp+4]
+	lea	edx, DWORD PTR _match$221790[esp+4]
 	push	edx
 	mov	ecx, esi
 	call	?find@?$_Tree@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@std@@QBE?AVconst_iterator@12@ABI@Z ; std::_Tree<std::_Tmap_traits<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> >,0> >::find
 
 ; 517  : 		if(match != plotStatePerTurn.end())
 
-	mov	eax, DWORD PTR _match$221748[esp]
+	mov	eax, DWORD PTR _match$221790[esp]
 	cmp	eax, DWORD PTR [esi+4]
 	je	SHORT $LN1@getPlotSta
 
@@ -26671,7 +26668,7 @@ PUBLIC	?erase@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CB
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xtree
 ;	COMDAT ?erase@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@0@Z
 _TEXT	SEGMENT
-$T245396 = -4						; size = 4
+$T245438 = -4						; size = 4
 ___$ReturnUdt$ = 8					; size = 4
 __First$ = 12						; size = 4
 __Last$ = 16						; size = 4
@@ -26772,7 +26769,7 @@ $LN63@erase@4:
 	mov	DWORD PTR __First$[esp+4], eax
 $LN65@erase@4:
 	push	edx
-	lea	eax, DWORD PTR $T245396[esp+12]
+	lea	eax, DWORD PTR $T245438[esp+12]
 	push	eax
 	mov	ecx, esi
 	call	?erase@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@@Z ; std::_Tree<std::_Tmap_traits<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> >,0> >::erase
@@ -26890,7 +26887,7 @@ PUBLIC	?_Tidy@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CB
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?_Tidy@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@IAEXXZ
 _TEXT	SEGMENT
-$T245851 = -4						; size = 4
+$T245893 = -4						; size = 4
 ?_Tidy@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@IAEXXZ PROC ; std::_Tree<std::_Tmap_traits<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> >,0> >::_Tidy, COMDAT
 ; _this$ = ecx
 
@@ -26906,7 +26903,7 @@ $T245851 = -4						; size = 4
 	mov	ecx, DWORD PTR [eax]
 	push	eax
 	push	ecx
-	lea	eax, DWORD PTR $T245851[esp+16]
+	lea	eax, DWORD PTR $T245893[esp+16]
 	push	eax
 	mov	ecx, esi
 	call	?erase@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@0@Z ; std::_Tree<std::_Tmap_traits<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> >,0> >::erase
@@ -27043,10 +27040,10 @@ PUBLIC	?_Ufill@?$vector@W4GameOptionTypes@@V?$allocator@W4GameOptionTypes@@@std@
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?_Ufill@?$vector@W4GameOptionTypes@@V?$allocator@W4GameOptionTypes@@@std@@@std@@IAEPAW4GameOptionTypes@@PAW43@IABW43@@Z
 _TEXT	SEGMENT
-$T246043 = -4						; size = 1
+$T246085 = -4						; size = 1
 __Ptr$ = 8						; size = 4
 __Count$ = 12						; size = 4
-__Cat$246046 = 16					; size = 1
+__Cat$246088 = 16					; size = 1
 __Val$ = 16						; size = 4
 ?_Ufill@?$vector@W4GameOptionTypes@@V?$allocator@W4GameOptionTypes@@@std@@@std@@IAEPAW4GameOptionTypes@@PAW43@IABW43@@Z PROC ; std::vector<enum GameOptionTypes,std::allocator<enum GameOptionTypes> >::_Ufill, COMDAT
 ; _this$ = ecx
@@ -27057,13 +27054,13 @@ __Val$ = 16						; size = 4
 
 ; 1254 : 		_STDEXT unchecked_uninitialized_fill_n(_Ptr, _Count, _Val, this->_Alval);
 
-	mov	edx, DWORD PTR __Cat$246046[esp]
+	mov	edx, DWORD PTR __Cat$246088[esp]
 	push	esi
 	mov	esi, DWORD PTR __Count$[esp+4]
 	push	edi
 	mov	edi, DWORD PTR __Ptr$[esp+8]
-	mov	BYTE PTR $T246043[esp+12], 0
-	mov	eax, DWORD PTR $T246043[esp+12]
+	mov	BYTE PTR $T246085[esp+12], 0
+	mov	eax, DWORD PTR $T246085[esp+12]
 	push	eax
 	mov	eax, DWORD PTR __Val$[esp+12]
 	push	edx
@@ -27090,10 +27087,10 @@ PUBLIC	?_Ufill@?$vector@W4VictoryTypes@@V?$allocator@W4VictoryTypes@@@std@@@std@
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?_Ufill@?$vector@W4VictoryTypes@@V?$allocator@W4VictoryTypes@@@std@@@std@@IAEPAW4VictoryTypes@@PAW43@IABW43@@Z
 _TEXT	SEGMENT
-$T246061 = -4						; size = 1
+$T246103 = -4						; size = 1
 __Ptr$ = 8						; size = 4
 __Count$ = 12						; size = 4
-__Cat$246064 = 16					; size = 1
+__Cat$246106 = 16					; size = 1
 __Val$ = 16						; size = 4
 ?_Ufill@?$vector@W4VictoryTypes@@V?$allocator@W4VictoryTypes@@@std@@@std@@IAEPAW4VictoryTypes@@PAW43@IABW43@@Z PROC ; std::vector<enum VictoryTypes,std::allocator<enum VictoryTypes> >::_Ufill, COMDAT
 ; _this$ = ecx
@@ -27104,13 +27101,13 @@ __Val$ = 16						; size = 4
 
 ; 1254 : 		_STDEXT unchecked_uninitialized_fill_n(_Ptr, _Count, _Val, this->_Alval);
 
-	mov	edx, DWORD PTR __Cat$246064[esp]
+	mov	edx, DWORD PTR __Cat$246106[esp]
 	push	esi
 	mov	esi, DWORD PTR __Count$[esp+4]
 	push	edi
 	mov	edi, DWORD PTR __Ptr$[esp+8]
-	mov	BYTE PTR $T246061[esp+12], 0
-	mov	eax, DWORD PTR $T246061[esp+12]
+	mov	BYTE PTR $T246103[esp+12], 0
+	mov	eax, DWORD PTR $T246103[esp+12]
 	push	eax
 	mov	eax, DWORD PTR __Val$[esp+12]
 	push	edx
@@ -27140,9 +27137,9 @@ PUBLIC	?insert@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$C
 _TEXT	SEGMENT
 __Addleft$ = -4						; size = 1
 ___$ReturnUdt$ = 8					; size = 4
-$T246079 = 12						; size = 4
-$T246077 = 12						; size = 4
-__Where$225117 = 12					; size = 4
+$T246121 = 12						; size = 4
+$T246119 = 12						; size = 4
+__Where$225159 = 12					; size = 4
 __Val$ = 12						; size = 4
 ?insert@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@QAE?AU?$pair@Viterator@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@_N@2@ABU?$pair@$$CBIH@2@@Z PROC ; std::_Tree<std::_Tmap_traits<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> >,0> >::insert, COMDAT
 ; _this$ = ecx
@@ -27209,7 +27206,7 @@ $LN9@insert:
 ; 646  : 			iterator _Where = _TREE_ITERATOR(_Wherenode);
 
 	mov	edx, esi
-	mov	DWORD PTR __Where$225117[esp+12], edx
+	mov	DWORD PTR __Where$225159[esp+12], edx
 
 ; 647  : 			if (!_Addleft)
 
@@ -27223,7 +27220,7 @@ $LN9@insert:
 
 ; 650  : 				return (_Pairib(_Insert(true, _Wherenode, _Val), true));
 
-	lea	ecx, DWORD PTR $T246077[esp+12]
+	lea	ecx, DWORD PTR $T246119[esp+12]
 	cmp	esi, DWORD PTR [eax]
 	jne	SHORT $LN4@insert
 	push	ebp
@@ -27255,7 +27252,7 @@ $LN4@insert:
 ; 652  : 				--_Where;	// need to test if insert before is okay
 
 	call	?_Dec@const_iterator@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@QAEXXZ ; std::_Tree<std::_Tmap_traits<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> >,0> >::const_iterator::_Dec
-	mov	edx, DWORD PTR __Where$225117[esp+12]
+	mov	edx, DWORD PTR __Where$225159[esp+12]
 $LN57@insert:
 
 ; 653  : 
@@ -27272,7 +27269,7 @@ $LN57@insert:
 	push	ebp
 	push	esi
 	push	ecx
-	lea	edx, DWORD PTR $T246079[esp+24]
+	lea	edx, DWORD PTR $T246121[esp+24]
 	push	edx
 	mov	ecx, edi
 	call	?_Insert@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@IAE?AViterator@12@_NPAU_Node@?$_Tree_nod@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@2@ABU?$pair@$$CBIH@2@@Z ; std::_Tree<std::_Tmap_traits<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> >,0> >::_Insert
@@ -27379,9 +27376,9 @@ PUBLIC	?insert@?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$C
 _TEXT	SEGMENT
 __Addleft$ = -4						; size = 1
 ___$ReturnUdt$ = 8					; size = 4
-$T246309 = 12						; size = 4
-$T246307 = 12						; size = 4
-__Where$225880 = 12					; size = 4
+$T246351 = 12						; size = 4
+$T246349 = 12						; size = 4
+__Where$225922 = 12					; size = 4
 __Val$ = 12						; size = 4
 ?insert@?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$0A@@std@@@std@@QAE?AU?$pair@Viterator@?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$0A@@std@@@std@@_N@2@ABU?$pair@$$CBHH@2@@Z PROC ; std::_Tree<std::_Tmap_traits<int,int,std::less<int>,std::allocator<std::pair<int const ,int> >,0> >::insert, COMDAT
 ; _this$ = ecx
@@ -27448,7 +27445,7 @@ $LN9@insert@2:
 ; 646  : 			iterator _Where = _TREE_ITERATOR(_Wherenode);
 
 	mov	edx, esi
-	mov	DWORD PTR __Where$225880[esp+12], edx
+	mov	DWORD PTR __Where$225922[esp+12], edx
 
 ; 647  : 			if (!_Addleft)
 
@@ -27462,7 +27459,7 @@ $LN9@insert@2:
 
 ; 650  : 				return (_Pairib(_Insert(true, _Wherenode, _Val), true));
 
-	lea	ecx, DWORD PTR $T246307[esp+12]
+	lea	ecx, DWORD PTR $T246349[esp+12]
 	cmp	esi, DWORD PTR [eax]
 	jne	SHORT $LN4@insert@2
 	push	ebp
@@ -27494,7 +27491,7 @@ $LN4@insert@2:
 ; 652  : 				--_Where;	// need to test if insert before is okay
 
 	call	?_Dec@const_iterator@?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$0A@@std@@@std@@QAEXXZ ; std::_Tree<std::_Tmap_traits<int,int,std::less<int>,std::allocator<std::pair<int const ,int> >,0> >::const_iterator::_Dec
-	mov	edx, DWORD PTR __Where$225880[esp+12]
+	mov	edx, DWORD PTR __Where$225922[esp+12]
 $LN57@insert@2:
 
 ; 653  : 
@@ -27511,7 +27508,7 @@ $LN57@insert@2:
 	push	ebp
 	push	esi
 	push	ecx
-	lea	edx, DWORD PTR $T246309[esp+24]
+	lea	edx, DWORD PTR $T246351[esp+24]
 	push	edx
 	mov	ecx, edi
 	call	?_Insert@?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$0A@@std@@@std@@IAE?AViterator@12@_NPAU_Node@?$_Tree_nod@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$0A@@std@@@2@ABU?$pair@$$CBHH@2@@Z ; std::_Tree<std::_Tmap_traits<int,int,std::less<int>,std::allocator<std::pair<int const ,int> >,0> >::_Insert
@@ -27551,7 +27548,7 @@ PUBLIC	?erase@?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CB
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?erase@?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@0@Z
 _TEXT	SEGMENT
-$T246441 = -4						; size = 4
+$T246483 = -4						; size = 4
 ___$ReturnUdt$ = 8					; size = 4
 __First$ = 12						; size = 4
 __Last$ = 16						; size = 4
@@ -27652,7 +27649,7 @@ $LN63@erase@5:
 	mov	DWORD PTR __First$[esp+4], eax
 $LN65@erase@5:
 	push	edx
-	lea	eax, DWORD PTR $T246441[esp+12]
+	lea	eax, DWORD PTR $T246483[esp+12]
 	push	eax
 	mov	ecx, esi
 	call	?erase@?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@@Z ; std::_Tree<std::_Tmap_traits<int,int,std::less<int>,std::allocator<std::pair<int const ,int> >,0> >::erase
@@ -27698,9 +27695,9 @@ PUBLIC	?insert@?$_Tree@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@
 _TEXT	SEGMENT
 __Addleft$ = -4						; size = 1
 ___$ReturnUdt$ = 8					; size = 4
-$T246852 = 12						; size = 4
-$T246850 = 12						; size = 4
-__Where$226008 = 12					; size = 4
+$T246894 = 12						; size = 4
+$T246892 = 12						; size = 4
+__Where$226050 = 12					; size = 4
 __Val$ = 12						; size = 4
 ?insert@?$_Tree@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@std@@QAE?AU?$pair@Viterator@?$_Tree@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@std@@_N@2@ABU?$pair@$$CBIUPlotState@CvReplayInfo@@@2@@Z PROC ; std::_Tree<std::_Tmap_traits<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> >,0> >::insert, COMDAT
 ; _this$ = ecx
@@ -27767,7 +27764,7 @@ $LN9@insert@3:
 ; 646  : 			iterator _Where = _TREE_ITERATOR(_Wherenode);
 
 	mov	edx, esi
-	mov	DWORD PTR __Where$226008[esp+12], edx
+	mov	DWORD PTR __Where$226050[esp+12], edx
 
 ; 647  : 			if (!_Addleft)
 
@@ -27781,7 +27778,7 @@ $LN9@insert@3:
 
 ; 650  : 				return (_Pairib(_Insert(true, _Wherenode, _Val), true));
 
-	lea	ecx, DWORD PTR $T246850[esp+12]
+	lea	ecx, DWORD PTR $T246892[esp+12]
 	cmp	esi, DWORD PTR [eax]
 	jne	SHORT $LN4@insert@3
 	push	ebp
@@ -27813,7 +27810,7 @@ $LN4@insert@3:
 ; 652  : 				--_Where;	// need to test if insert before is okay
 
 	call	?_Dec@const_iterator@?$_Tree@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@std@@QAEXXZ ; std::_Tree<std::_Tmap_traits<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> >,0> >::const_iterator::_Dec
-	mov	edx, DWORD PTR __Where$226008[esp+12]
+	mov	edx, DWORD PTR __Where$226050[esp+12]
 $LN57@insert@3:
 
 ; 653  : 
@@ -27830,7 +27827,7 @@ $LN57@insert@3:
 	push	ebp
 	push	esi
 	push	ecx
-	lea	edx, DWORD PTR $T246852[esp+24]
+	lea	edx, DWORD PTR $T246894[esp+24]
 	push	edx
 	mov	ecx, edi
 	call	?_Insert@?$_Tree@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@std@@IAE?AViterator@12@_NPAU_Node@?$_Tree_nod@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@2@ABU?$pair@$$CBIUPlotState@CvReplayInfo@@@2@@Z ; std::_Tree<std::_Tmap_traits<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> >,0> >::_Insert
@@ -27870,7 +27867,7 @@ PUBLIC	?erase@?$_Tree@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?erase@?$_Tree@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@0@Z
 _TEXT	SEGMENT
-$T246984 = -4						; size = 4
+$T247026 = -4						; size = 4
 ___$ReturnUdt$ = 8					; size = 4
 __First$ = 12						; size = 4
 __Last$ = 16						; size = 4
@@ -27971,7 +27968,7 @@ $LN63@erase@6:
 	mov	DWORD PTR __First$[esp+4], eax
 $LN65@erase@6:
 	push	edx
-	lea	eax, DWORD PTR $T246984[esp+12]
+	lea	eax, DWORD PTR $T247026[esp+12]
 	push	eax
 	mov	ecx, esi
 	call	?erase@?$_Tree@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@@Z ; std::_Tree<std::_Tmap_traits<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> >,0> >::erase
@@ -28125,10 +28122,10 @@ PUBLIC	??$_Ucopy@V?$_Vector_const_iterator@U?$pair@FF@std@@V?$allocator@U?$pair@
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\vector
 ;	COMDAT ??$_Ucopy@V?$_Vector_const_iterator@U?$pair@FF@std@@V?$allocator@U?$pair@FF@std@@@2@@std@@@?$vector@U?$pair@FF@std@@V?$allocator@U?$pair@FF@std@@@2@@std@@IAEPAU?$pair@FF@1@V?$_Vector_const_iterator@U?$pair@FF@std@@V?$allocator@U?$pair@FF@std@@@2@@1@0PAU21@@Z
 _TEXT	SEGMENT
-$T247582 = -4						; size = 1
+$T247625 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$247585 = 16					; size = 1
+__Cat$247628 = 16					; size = 1
 __Ptr$ = 16						; size = 4
 ??$_Ucopy@V?$_Vector_const_iterator@U?$pair@FF@std@@V?$allocator@U?$pair@FF@std@@@2@@std@@@?$vector@U?$pair@FF@std@@V?$allocator@U?$pair@FF@std@@@2@@std@@IAEPAU?$pair@FF@1@V?$_Vector_const_iterator@U?$pair@FF@std@@V?$allocator@U?$pair@FF@std@@@2@@1@0PAU21@@Z PROC ; std::vector<std::pair<short,short>,std::allocator<std::pair<short,short> > >::_Ucopy<std::_Vector_const_iterator<std::pair<short,short>,std::allocator<std::pair<short,short> > > >, COMDAT
 ; _this$ = ecx
@@ -28141,9 +28138,9 @@ __Ptr$ = 16						; size = 4
 ; 1140 : 		return (_STDEXT unchecked_uninitialized_copy(_First, _Last,
 ; 1141 : 			_Ptr, this->_Alval));
 
-	mov	edx, DWORD PTR __Cat$247585[esp]
-	mov	BYTE PTR $T247582[esp+4], 0
-	mov	eax, DWORD PTR $T247582[esp+4]
+	mov	edx, DWORD PTR __Cat$247628[esp]
+	mov	BYTE PTR $T247625[esp+4], 0
+	mov	eax, DWORD PTR $T247625[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Ptr$[esp+4]
 	push	edx
@@ -28166,8 +28163,8 @@ PUBLIC	??$unchecked_uninitialized_fill_n@PAV?$basic_string@DU?$char_traits@D@std
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ??$unchecked_uninitialized_fill_n@PAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@IV12@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@YAXPAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@IABV12@AAV?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@Z
 _TEXT	SEGMENT
-$T247593 = -4						; size = 1
-__Cat$247597 = -4					; size = 1
+$T247635 = -4						; size = 1
+__Cat$247639 = -4					; size = 1
 __First$ = 8						; size = 4
 __Count$ = 12						; size = 4
 __Val$ = 16						; size = 4
@@ -28182,9 +28179,9 @@ __Al$ = 20						; size = 4
 ; 942  : 		_STD _Ptr_cat(_First, _First), _STD _Range_checked_iterator_tag());
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T247593[esp+4], 0
-	mov	eax, DWORD PTR $T247593[esp+4]
-	mov	ecx, DWORD PTR __Cat$247597[esp+4]
+	mov	BYTE PTR $T247635[esp+4], 0
+	mov	eax, DWORD PTR $T247635[esp+4]
+	mov	ecx, DWORD PTR __Cat$247639[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Val$[esp+4]
 	push	ecx
@@ -28244,10 +28241,10 @@ PUBLIC	??$_Umove@PAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\vector
 ;	COMDAT ??$_Umove@PAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@IAEPAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@1@PAV21@00@Z
 _TEXT	SEGMENT
-$T247654 = -4						; size = 1
+$T247696 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$247657 = 16					; size = 1
+__Cat$247699 = 16					; size = 1
 __Ptr$ = 16						; size = 4
 ??$_Umove@PAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@IAEPAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@1@PAV21@00@Z PROC ; std::vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >::_Umove<std::basic_string<char,std::char_traits<char>,std::allocator<char> > *>, COMDAT
 ; _this$ = ecx
@@ -28260,9 +28257,9 @@ __Ptr$ = 16						; size = 4
 ; 1147 : 		return (_STDEXT _Unchecked_uninitialized_move(_First, _Last,
 ; 1148 : 			_Ptr, this->_Alval));
 
-	mov	edx, DWORD PTR __Cat$247657[esp]
-	mov	BYTE PTR $T247654[esp+4], 0
-	mov	eax, DWORD PTR $T247654[esp+4]
+	mov	edx, DWORD PTR __Cat$247699[esp]
+	mov	BYTE PTR $T247696[esp+4], 0
+	mov	eax, DWORD PTR $T247696[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Ptr$[esp+4]
 	push	edx
@@ -28311,11 +28308,11 @@ __ehfuncinfo$??$_Uninit_fill_n@PAUPlayerInfo@CvReplayInfo@@IU12@V?$allocator@UPl
 xdata$x	ENDS
 ;	COMDAT ??$_Uninit_fill_n@PAUPlayerInfo@CvReplayInfo@@IU12@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@std@@YAXPAUPlayerInfo@CvReplayInfo@@IABU12@AAV?$allocator@UPlayerInfo@CvReplayInfo@@@0@U_Nonscalar_ptr_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
-$T247692 = -24						; size = 4
+$T247734 = -24						; size = 4
 __Next$ = -20						; size = 4
 __$EHRec$ = -16						; size = 16
 __First$ = 8						; size = 4
-__Vptr$247689 = 12					; size = 4
+__Vptr$247731 = 12					; size = 4
 __Count$ = 12						; size = 4
 __Val$ = 16						; size = 4
 __Al$ = 20						; size = 4
@@ -28365,8 +28362,8 @@ $LL6@Uninit_fil@4:
 
 ; 404  : 		_Al.construct(_First, _Val);
 
-	mov	DWORD PTR __Vptr$247689[ebp], esi
-	mov	DWORD PTR $T247692[ebp], esi
+	mov	DWORD PTR __Vptr$247731[ebp], esi
+	mov	DWORD PTR $T247734[ebp], esi
 	mov	BYTE PTR __$EHRec$[ebp+12], 1
 	cmp	esi, ebx
 	je	SHORT $LN18@Uninit_fil@4
@@ -28425,9 +28422,9 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$??$_Uninit_fill_n@PAUPlayerInfo@CvReplayInfo@@IU12@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@std@@YAXPAUPlayerInfo@CvReplayInfo@@IABU12@AAV?$allocator@UPlayerInfo@CvReplayInfo@@@0@U_Nonscalar_ptr_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z$2:
-	mov	eax, DWORD PTR __Vptr$247689[ebp]
+	mov	eax, DWORD PTR __Vptr$247731[ebp]
 	push	eax
-	mov	ecx, DWORD PTR $T247692[ebp]
+	mov	ecx, DWORD PTR $T247734[ebp]
 	push	ecx
 	call	??3@YAXPAX0@Z				; operator delete
 	add	esp, 8
@@ -28441,10 +28438,10 @@ PUBLIC	??$_Unchecked_uninitialized_move@PAW4GameOptionTypes@@PAW41@V?$allocator@
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Unchecked_uninitialized_move@PAW4GameOptionTypes@@PAW41@V?$allocator@W4GameOptionTypes@@@std@@@stdext@@YAPAW4GameOptionTypes@@PAW41@00AAV?$allocator@W4GameOptionTypes@@@std@@@Z
 _TEXT	SEGMENT
-$T247758 = -4						; size = 1
+$T247800 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$247761 = 16					; size = 1
+__Cat$247803 = 16					; size = 1
 __Dest$ = 16						; size = 4
 __Al$ = 20						; size = 4
 ??$_Unchecked_uninitialized_move@PAW4GameOptionTypes@@PAW41@V?$allocator@W4GameOptionTypes@@@std@@@stdext@@YAPAW4GameOptionTypes@@PAW41@00AAV?$allocator@W4GameOptionTypes@@@std@@@Z PROC ; stdext::_Unchecked_uninitialized_move<enum GameOptionTypes *,enum GameOptionTypes *,std::allocator<enum GameOptionTypes> >, COMDAT
@@ -28457,10 +28454,10 @@ __Al$ = 20						; size = 4
 ; 863  : 		_CHECKED_BASE(_Last), _Dest, _Al,
 ; 864  : 		_STD _Move_cat(_Dest), _STD _Range_checked_iterator_tag()));
 
-	mov	ecx, DWORD PTR __Cat$247761[esp]
+	mov	ecx, DWORD PTR __Cat$247803[esp]
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T247758[esp+4], 0
-	mov	eax, DWORD PTR $T247758[esp+4]
+	mov	BYTE PTR $T247800[esp+4], 0
+	mov	eax, DWORD PTR $T247800[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -28482,10 +28479,10 @@ PUBLIC	??$_Unchecked_uninitialized_move@PAW4VictoryTypes@@PAW41@V?$allocator@W4V
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Unchecked_uninitialized_move@PAW4VictoryTypes@@PAW41@V?$allocator@W4VictoryTypes@@@std@@@stdext@@YAPAW4VictoryTypes@@PAW41@00AAV?$allocator@W4VictoryTypes@@@std@@@Z
 _TEXT	SEGMENT
-$T247795 = -4						; size = 1
+$T247835 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$247798 = 16					; size = 1
+__Cat$247839 = 16					; size = 1
 __Dest$ = 16						; size = 4
 __Al$ = 20						; size = 4
 ??$_Unchecked_uninitialized_move@PAW4VictoryTypes@@PAW41@V?$allocator@W4VictoryTypes@@@std@@@stdext@@YAPAW4VictoryTypes@@PAW41@00AAV?$allocator@W4VictoryTypes@@@std@@@Z PROC ; stdext::_Unchecked_uninitialized_move<enum VictoryTypes *,enum VictoryTypes *,std::allocator<enum VictoryTypes> >, COMDAT
@@ -28498,10 +28495,10 @@ __Al$ = 20						; size = 4
 ; 863  : 		_CHECKED_BASE(_Last), _Dest, _Al,
 ; 864  : 		_STD _Move_cat(_Dest), _STD _Range_checked_iterator_tag()));
 
-	mov	ecx, DWORD PTR __Cat$247798[esp]
+	mov	ecx, DWORD PTR __Cat$247839[esp]
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T247795[esp+4], 0
-	mov	eax, DWORD PTR $T247795[esp+4]
+	mov	BYTE PTR $T247835[esp+4], 0
+	mov	eax, DWORD PTR $T247835[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -28565,7 +28562,7 @@ PUBLIC	??4?$_Tree@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$al
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xtree
 ;	COMDAT ??4?$_Tree@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@std@@QAEAAV01@ABV01@@Z
 _TEXT	SEGMENT
-$T247832 = 8						; size = 4
+$T247874 = 8						; size = 4
 __Right$ = 8						; size = 4
 ??4?$_Tree@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@std@@QAEAAV01@ABV01@@Z PROC ; std::_Tree<std::_Tmap_traits<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> >,0> >::operator=, COMDAT
 ; _this$ = ecx
@@ -28589,7 +28586,7 @@ __Right$ = 8						; size = 4
 	mov	ecx, DWORD PTR [eax]
 	push	eax
 	push	ecx
-	lea	eax, DWORD PTR $T247832[esp+12]
+	lea	eax, DWORD PTR $T247874[esp+12]
 	push	eax
 	mov	ecx, esi
 	call	?erase@?$_Tree@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@0@Z ; std::_Tree<std::_Tmap_traits<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> >,0> >::erase
@@ -28694,8 +28691,8 @@ PUBLIC	??$?6IUPlotState@CvReplayInfo@@@@YAAAVFDataStream@@AAV0@ABV?$map@IUPlotSt
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\fireplace\include\fireworks\fstlcontainerserialization.h
 ;	COMDAT ??$?6IUPlotState@CvReplayInfo@@@@YAAAVFDataStream@@AAV0@ABV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@Z
 _TEXT	SEGMENT
-$T247970 = -8						; size = 8
-_count$247986 = 8					; size = 4
+$T248012 = -8						; size = 8
+_count$248028 = 8					; size = 4
 _saveTo$ = 8						; size = 4
 _readFrom$ = 12						; size = 4
 ??$?6IUPlotState@CvReplayInfo@@@@YAAAVFDataStream@@AAV0@ABV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@Z PROC ; operator<<<unsigned int,CvReplayInfo::PlotState>, COMDAT
@@ -28711,10 +28708,10 @@ _readFrom$ = 12						; size = 4
 	push	edi
 	mov	edi, DWORD PTR _readFrom$[esp+12]
 	mov	eax, DWORD PTR [edi+8]
-	lea	ecx, DWORD PTR _count$247986[esp+12]
+	lea	ecx, DWORD PTR _count$248028[esp+12]
 	push	ecx
 	mov	ecx, esi
-	mov	DWORD PTR _count$247986[esp+16], eax
+	mov	DWORD PTR _count$248028[esp+16], eax
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 	mov	eax, DWORD PTR [edi+4]
 	mov	ecx, DWORD PTR [eax]
@@ -28722,7 +28719,7 @@ _readFrom$ = 12						; size = 4
 	push	esi
 	push	eax
 	push	ecx
-	lea	edx, DWORD PTR $T247970[esp+32]
+	lea	edx, DWORD PTR $T248012[esp+32]
 	push	edx
 	call	??$for_each@Vconst_iterator@?$_Tree@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@std@@U?$SerializeFromAssociativeContainer@U?$pair@IUPlotState@CvReplayInfo@@@std@@$$CBV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@2@@@@std@@YA?AU?$SerializeFromAssociativeContainer@U?$pair@IUPlotState@CvReplayInfo@@@std@@$$CBV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@2@@@Vconst_iterator@?$_Tree@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@0@0U1@@Z ; std::for_each<std::_Tree<std::_Tmap_traits<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> >,0> >::const_iterator,SerializeFromAssociativeContainer<std::pair<unsigned int,CvReplayInfo::PlotState>,std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > > const > >
 	add	esp, 20					; 00000014H
@@ -28743,9 +28740,9 @@ PUBLIC	??$SerializeToAssociativeContainer@U?$pair@IUPlotState@CvReplayInfo@@@std
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$SerializeToAssociativeContainer@U?$pair@IUPlotState@CvReplayInfo@@@std@@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@2@@@YAXAAVFDataStream@@AAV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@Z
 _TEXT	SEGMENT
-$T248022 = -48						; size = 8
-_e$231165 = -40						; size = 20
-$T248021 = -20						; size = 20
+$T248064 = -48						; size = 8
+_e$231207 = -40						; size = 20
+$T248063 = -20						; size = 20
 _loadFrom$ = 8						; size = 4
 _count$ = 12						; size = 4
 _container$ = 12					; size = 4
@@ -28799,41 +28796,41 @@ $LL3@SerializeT:
 ; 148  : 		ElementType e;
 
 	xor	eax, eax
-	mov	DWORD PTR _e$231165[esp+68], eax
-	mov	DWORD PTR _e$231165[esp+72], eax
-	mov	DWORD PTR _e$231165[esp+76], eax
-	mov	DWORD PTR _e$231165[esp+80], eax
+	mov	DWORD PTR _e$231207[esp+68], eax
+	mov	DWORD PTR _e$231207[esp+72], eax
+	mov	DWORD PTR _e$231207[esp+76], eax
+	mov	DWORD PTR _e$231207[esp+80], eax
 
 ; 149  : 		loadFrom >> e;
 
-	lea	eax, DWORD PTR _e$231165[esp+64]
+	lea	eax, DWORD PTR _e$231207[esp+64]
 	push	eax
 	mov	ecx, ebx
-	mov	DWORD PTR _e$231165[esp+68], ebp
+	mov	DWORD PTR _e$231207[esp+68], ebp
 	call	?Read@FDataStream@@IAEXAAI@Z		; FDataStream::Read
-	lea	ecx, DWORD PTR _e$231165[esp+68]
+	lea	ecx, DWORD PTR _e$231207[esp+68]
 	push	ecx
 	push	ebx
 	call	??5@YAAAVFDataStream@@AAV0@AAUPlotState@CvReplayInfo@@@Z ; operator>>
 
 ; 150  : 		container.insert(e);
 
-	mov	edx, DWORD PTR _e$231165[esp+72]
-	mov	ecx, DWORD PTR _e$231165[esp+80]
-	mov	eax, DWORD PTR _e$231165[esp+76]
-	mov	DWORD PTR $T248021[esp+72], edx
-	mov	edx, DWORD PTR _e$231165[esp+84]
-	mov	DWORD PTR $T248021[esp+80], ecx
+	mov	edx, DWORD PTR _e$231207[esp+72]
+	mov	ecx, DWORD PTR _e$231207[esp+80]
+	mov	eax, DWORD PTR _e$231207[esp+76]
+	mov	DWORD PTR $T248063[esp+72], edx
+	mov	edx, DWORD PTR _e$231207[esp+84]
+	mov	DWORD PTR $T248063[esp+80], ecx
 	add	esp, 8
-	lea	ecx, DWORD PTR $T248021[esp+64]
-	mov	DWORD PTR $T248021[esp+76], edx
+	lea	ecx, DWORD PTR $T248063[esp+64]
+	mov	DWORD PTR $T248063[esp+76], edx
 	push	ecx
-	mov	DWORD PTR $T248021[esp+72], eax
-	mov	eax, DWORD PTR _e$231165[esp+84]
-	lea	edx, DWORD PTR $T248022[esp+68]
+	mov	DWORD PTR $T248063[esp+72], eax
+	mov	eax, DWORD PTR _e$231207[esp+84]
+	lea	edx, DWORD PTR $T248064[esp+68]
 	push	edx
 	mov	ecx, esi
-	mov	DWORD PTR $T248021[esp+88], eax
+	mov	DWORD PTR $T248063[esp+88], eax
 	call	?insert@?$_Tree@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@std@@QAE?AU?$pair@Viterator@?$_Tree@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@std@@_N@2@ABU?$pair@$$CBIUPlotState@CvReplayInfo@@@2@@Z ; std::_Tree<std::_Tmap_traits<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> >,0> >::insert
 	inc	edi
 	cmp	edi, DWORD PTR _count$[esp+60]
@@ -28856,8 +28853,8 @@ PUBLIC	??$unchecked_uninitialized_copy@PAUPlayerInfo@CvReplayInfo@@PAU12@V?$allo
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ??$unchecked_uninitialized_copy@PAUPlayerInfo@CvReplayInfo@@PAU12@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@stdext@@YAPAUPlayerInfo@CvReplayInfo@@PAU12@00AAV?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@Z
 _TEXT	SEGMENT
-$T248099 = -4						; size = 1
-__Cat$248103 = -4					; size = 1
+$T248141 = -4						; size = 1
+__Cat$248145 = -4					; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
@@ -28873,9 +28870,9 @@ __Al$ = 20						; size = 4
 ; 822  : 		_STD _Ptr_cat(_First, _Dest), _STD _Range_checked_iterator_tag()));
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T248099[esp+4], 0
-	mov	eax, DWORD PTR $T248099[esp+4]
-	mov	ecx, DWORD PTR __Cat$248103[esp+4]
+	mov	BYTE PTR $T248141[esp+4], 0
+	mov	eax, DWORD PTR $T248141[esp+4]
+	mov	ecx, DWORD PTR __Cat$248145[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -28958,7 +28955,7 @@ PUBLIC	??1?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@s
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xtree
 ;	COMDAT ??1?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@QAE@XZ
 _TEXT	SEGMENT
-$T248201 = -4						; size = 4
+$T248243 = -4						; size = 4
 ??1?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@QAE@XZ PROC ; std::_Tree<std::_Tmap_traits<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> >,0> >::~_Tree<std::_Tmap_traits<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> >,0> >, COMDAT
 ; _this$ = ecx
 
@@ -28974,7 +28971,7 @@ $T248201 = -4						; size = 4
 	mov	ecx, DWORD PTR [eax]
 	push	eax
 	push	ecx
-	lea	eax, DWORD PTR $T248201[esp+16]
+	lea	eax, DWORD PTR $T248243[esp+16]
 	push	eax
 	mov	ecx, esi
 	call	?erase@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@0@Z ; std::_Tree<std::_Tmap_traits<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> >,0> >::erase
@@ -28997,7 +28994,7 @@ PUBLIC	??4?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@s
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??4?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@QAEAAV01@ABV01@@Z
 _TEXT	SEGMENT
-$T248234 = 8						; size = 4
+$T248276 = 8						; size = 4
 __Right$ = 8						; size = 4
 ??4?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@QAEAAV01@ABV01@@Z PROC ; std::_Tree<std::_Tmap_traits<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> >,0> >::operator=, COMDAT
 ; _this$ = ecx
@@ -29021,7 +29018,7 @@ __Right$ = 8						; size = 4
 	mov	ecx, DWORD PTR [eax]
 	push	eax
 	push	ecx
-	lea	eax, DWORD PTR $T248234[esp+12]
+	lea	eax, DWORD PTR $T248276[esp+12]
 	push	eax
 	mov	ecx, esi
 	call	?erase@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@0@Z ; std::_Tree<std::_Tmap_traits<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> >,0> >::erase
@@ -29098,7 +29095,7 @@ PUBLIC	?insert@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$C
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?insert@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@ABU?$pair@$$CBIH@2@@Z
 _TEXT	SEGMENT
-$T248458 = -8						; size = 8
+$T248500 = -8						; size = 8
 ___$ReturnUdt$ = 8					; size = 4
 __Where$ = 12						; size = 4
 __Next$ = 16						; size = 4
@@ -29395,7 +29392,7 @@ $LN1@insert@4:
 ; 748  : 		return (insert(_Val).first);	// try usual insert if all else fails
 
 	push	esi
-	lea	edx, DWORD PTR $T248458[esp+28]
+	lea	edx, DWORD PTR $T248500[esp+28]
 	push	edx
 	mov	ecx, edi
 	call	?insert@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@QAE?AU?$pair@Viterator@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@_N@2@ABU?$pair@$$CBIH@2@@Z ; std::_Tree<std::_Tmap_traits<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> >,0> >::insert
@@ -29418,10 +29415,10 @@ PUBLIC	?_Ufill@?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\vector
 ;	COMDAT ?_Ufill@?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@IAEPAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@PAV32@IABV32@@Z
 _TEXT	SEGMENT
-$T248988 = -4						; size = 1
+$T249031 = -4						; size = 1
 __Ptr$ = 8						; size = 4
 __Count$ = 12						; size = 4
-__Cat$248991 = 16					; size = 1
+__Cat$249034 = 16					; size = 1
 __Val$ = 16						; size = 4
 ?_Ufill@?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@IAEPAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@PAV32@IABV32@@Z PROC ; std::vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >::_Ufill, COMDAT
 ; _this$ = ecx
@@ -29432,13 +29429,13 @@ __Val$ = 16						; size = 4
 
 ; 1254 : 		_STDEXT unchecked_uninitialized_fill_n(_Ptr, _Count, _Val, this->_Alval);
 
-	mov	edx, DWORD PTR __Cat$248991[esp]
+	mov	edx, DWORD PTR __Cat$249034[esp]
 	push	esi
 	mov	esi, DWORD PTR __Count$[esp+4]
 	push	edi
 	mov	edi, DWORD PTR __Ptr$[esp+8]
-	mov	BYTE PTR $T248988[esp+12], 0
-	mov	eax, DWORD PTR $T248988[esp+12]
+	mov	BYTE PTR $T249031[esp+12], 0
+	mov	eax, DWORD PTR $T249031[esp+12]
 	push	eax
 	mov	eax, DWORD PTR __Val$[esp+12]
 	push	edx
@@ -29785,7 +29782,7 @@ PUBLIC	?insert@?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$C
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?insert@?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@ABU?$pair@$$CBHH@2@@Z
 _TEXT	SEGMENT
-$T249362 = -8						; size = 8
+$T249404 = -8						; size = 8
 ___$ReturnUdt$ = 8					; size = 4
 __Where$ = 12						; size = 4
 __Next$ = 16						; size = 4
@@ -30082,7 +30079,7 @@ $LN1@insert@5:
 ; 748  : 		return (insert(_Val).first);	// try usual insert if all else fails
 
 	push	esi
-	lea	edx, DWORD PTR $T249362[esp+28]
+	lea	edx, DWORD PTR $T249404[esp+28]
 	push	edx
 	mov	ecx, edi
 	call	?insert@?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$0A@@std@@@std@@QAE?AU?$pair@Viterator@?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$0A@@std@@@std@@_N@2@ABU?$pair@$$CBHH@2@@Z ; std::_Tree<std::_Tmap_traits<int,int,std::less<int>,std::allocator<std::pair<int const ,int> >,0> >::insert
@@ -30104,7 +30101,7 @@ PUBLIC	?_Tidy@?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CB
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?_Tidy@?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$0A@@std@@@std@@IAEXXZ
 _TEXT	SEGMENT
-$T249888 = -4						; size = 4
+$T249930 = -4						; size = 4
 ?_Tidy@?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$0A@@std@@@std@@IAEXXZ PROC ; std::_Tree<std::_Tmap_traits<int,int,std::less<int>,std::allocator<std::pair<int const ,int> >,0> >::_Tidy, COMDAT
 ; _this$ = ecx
 
@@ -30120,7 +30117,7 @@ $T249888 = -4						; size = 4
 	mov	ecx, DWORD PTR [eax]
 	push	eax
 	push	ecx
-	lea	eax, DWORD PTR $T249888[esp+16]
+	lea	eax, DWORD PTR $T249930[esp+16]
 	push	eax
 	mov	ecx, esi
 	call	?erase@?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@0@Z ; std::_Tree<std::_Tmap_traits<int,int,std::less<int>,std::allocator<std::pair<int const ,int> >,0> >::erase
@@ -30186,7 +30183,7 @@ PUBLIC	?insert@?$_Tree@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?insert@?$_Tree@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@ABU?$pair@$$CBIUPlotState@CvReplayInfo@@@2@@Z
 _TEXT	SEGMENT
-$T250121 = -8						; size = 8
+$T250163 = -8						; size = 8
 ___$ReturnUdt$ = 8					; size = 4
 __Where$ = 12						; size = 4
 __Next$ = 16						; size = 4
@@ -30483,7 +30480,7 @@ $LN1@insert@6:
 ; 748  : 		return (insert(_Val).first);	// try usual insert if all else fails
 
 	push	esi
-	lea	edx, DWORD PTR $T250121[esp+28]
+	lea	edx, DWORD PTR $T250163[esp+28]
 	push	edx
 	mov	ecx, edi
 	call	?insert@?$_Tree@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@std@@QAE?AU?$pair@Viterator@?$_Tree@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@std@@_N@2@ABU?$pair@$$CBIUPlotState@CvReplayInfo@@@2@@Z ; std::_Tree<std::_Tmap_traits<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> >,0> >::insert
@@ -30505,7 +30502,7 @@ PUBLIC	?_Tidy@?$_Tree@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?_Tidy@?$_Tree@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@std@@IAEXXZ
 _TEXT	SEGMENT
-$T250647 = -4						; size = 4
+$T250689 = -4						; size = 4
 ?_Tidy@?$_Tree@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@std@@IAEXXZ PROC ; std::_Tree<std::_Tmap_traits<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> >,0> >::_Tidy, COMDAT
 ; _this$ = ecx
 
@@ -30521,7 +30518,7 @@ $T250647 = -4						; size = 4
 	mov	ecx, DWORD PTR [eax]
 	push	eax
 	push	ecx
-	lea	eax, DWORD PTR $T250647[esp+16]
+	lea	eax, DWORD PTR $T250689[esp+16]
 	push	eax
 	mov	ecx, esi
 	call	?erase@?$_Tree@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@0@Z ; std::_Tree<std::_Tmap_traits<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> >,0> >::erase
@@ -30633,21 +30630,21 @@ __unwindtable$?_Insert_n@?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allo
 xdata$x	ENDS
 ;	COMDAT ?_Insert_n@?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@IAEXV?$_Vector_const_iterator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@2@IABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@@Z
 _TEXT	SEGMENT
-__Tmp$225307 = -92					; size = 28
-__Tmp$225297 = -64					; size = 28
-__Whereoff$225283 = -36					; size = 4
+__Tmp$225349 = -92					; size = 28
+__Tmp$225339 = -64					; size = 28
+__Whereoff$225325 = -36					; size = 4
 _this$ = -32						; size = 4
-__Ncopied$225284 = -28					; size = 4
-__Newvec$225282 = -24					; size = 4
+__Ncopied$225326 = -28					; size = 4
+__Newvec$225324 = -24					; size = 4
 __Capacity$ = -20					; size = 4
 __$EHRec$ = -16						; size = 16
-__Cat$250890 = 8					; size = 1
-__Cat$250863 = 8					; size = 1
+__Cat$250930 = 8					; size = 1
+__Cat$250904 = 8					; size = 1
 __Where$ = 8						; size = 4
 tv461 = 12						; size = 4
 __Count$ = 12						; size = 4
-$T250887 = 16						; size = 1
-$T250860 = 16						; size = 1
+$T250926 = 16						; size = 1
+$T250900 = 16						; size = 1
 __Val$ = 16						; size = 4
 ?_Insert_n@?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@IAEXV?$_Vector_const_iterator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@2@IABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@@Z PROC ; std::vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >::_Insert_n, COMDAT
 ; _this$ = ecx
@@ -30792,60 +30789,60 @@ $LN9@Insert_n:
 
 	mov	edx, DWORD PTR __Val$[ebp]
 	add	esp, 8
-	mov	DWORD PTR __Ncopied$225284[ebp], eax
+	mov	DWORD PTR __Ncopied$225326[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+12], eax
 	push	edx
 	lea	eax, DWORD PTR [ebx*8]
-	mov	DWORD PTR __Newvec$225282[ebp], ecx
+	mov	DWORD PTR __Newvec$225324[ebp], ecx
 	sub	eax, ebx
 	lea	ecx, DWORD PTR [ecx+eax*4]
 	push	edi
 	push	ecx
 	mov	ecx, esi
-	mov	DWORD PTR __Whereoff$225283[ebp], ebx
+	mov	DWORD PTR __Whereoff$225325[ebp], ebx
 	call	?_Ufill@?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@IAEPAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@PAV32@IABV32@@Z ; std::vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >::_Ufill
 
 ; 1179 : 			++_Ncopied;
 ; 1180 : 			_Umove(this->_Myfirst, _VEC_ITER_BASE(_Where),
 ; 1181 : 				_Newvec);	// move prefix
 
-	mov	ecx, DWORD PTR __Cat$250863[ebp]
+	mov	ecx, DWORD PTR __Cat$250904[ebp]
 	mov	eax, DWORD PTR [esi+4]
-	mov	BYTE PTR $T250860[ebp], 0
-	mov	edx, DWORD PTR $T250860[ebp]
+	mov	BYTE PTR $T250900[ebp], 0
+	mov	edx, DWORD PTR $T250900[ebp]
 	push	edx
-	mov	edx, DWORD PTR __Newvec$225282[ebp]
+	mov	edx, DWORD PTR __Newvec$225324[ebp]
 	push	ecx
 	mov	ecx, DWORD PTR __Where$[ebp]
 	push	esi
 	push	edx
 	push	ecx
 	push	eax
-	mov	DWORD PTR __Ncopied$225284[ebp], 1
+	mov	DWORD PTR __Ncopied$225326[ebp], 1
 	call	??$_Uninit_move@PAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAV12@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@YAPAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAV10@00AAV?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@0@U_Swap_move_tag@0@U_Range_checked_iterator_tag@0@@Z ; std::_Uninit_move<std::basic_string<char,std::char_traits<char>,std::allocator<char> > *,std::basic_string<char,std::char_traits<char>,std::allocator<char> > *,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >
 
 ; 1182 : 			++_Ncopied;
 ; 1183 : 			_Umove(_VEC_ITER_BASE(_Where), this->_Mylast,
 ; 1184 : 				_Newvec + (_Whereoff + _Count));	// move suffix
 
-	mov	ecx, DWORD PTR __Newvec$225282[ebp]
+	mov	ecx, DWORD PTR __Newvec$225324[ebp]
 	mov	eax, DWORD PTR [esi+8]
 	add	ebx, edi
 	add	esp, 24					; 00000018H
 	lea	edx, DWORD PTR [ebx*8]
 	sub	edx, ebx
 	lea	ecx, DWORD PTR [ecx+edx*4]
-	mov	BYTE PTR $T250887[ebp], 0
-	mov	edx, DWORD PTR $T250887[ebp]
+	mov	BYTE PTR $T250926[ebp], 0
+	mov	edx, DWORD PTR $T250926[ebp]
 	push	edx
-	mov	edx, DWORD PTR __Cat$250890[ebp]
+	mov	edx, DWORD PTR __Cat$250930[ebp]
 	push	edx
 	push	esi
 	push	ecx
 	push	eax
 	mov	eax, DWORD PTR __Where$[ebp]
 	push	eax
-	mov	DWORD PTR __Ncopied$225284[ebp], 2
+	mov	DWORD PTR __Ncopied$225326[ebp], 2
 	call	??$_Uninit_move@PAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAV12@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@YAPAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAV10@00AAV?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@0@U_Swap_move_tag@0@U_Range_checked_iterator_tag@0@@Z ; std::_Uninit_move<std::basic_string<char,std::char_traits<char>,std::allocator<char> > *,std::basic_string<char,std::char_traits<char>,std::allocator<char> > *,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >
 
 ; 1192 : 			_CATCH_END
@@ -30899,7 +30896,7 @@ $LN71@Insert_n:
 	mov	eax, DWORD PTR __Capacity$[ebp]
 	lea	ecx, DWORD PTR [eax*8]
 	sub	ecx, eax
-	mov	eax, DWORD PTR __Newvec$225282[ebp]
+	mov	eax, DWORD PTR __Newvec$225324[ebp]
 	lea	edx, DWORD PTR [eax+ecx*4]
 
 ; 1206 : 			_Mylast = _Newvec + _Count;
@@ -30929,13 +30926,13 @@ __catch$?_Insert_n@?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@
 ; 1185 : 			_CATCH_ALL
 ; 1186 : 			if (1 < _Ncopied)
 
-	mov	ebx, DWORD PTR __Ncopied$225284[ebp]
+	mov	ebx, DWORD PTR __Ncopied$225326[ebp]
 	cmp	ebx, 1
 
 ; 1187 : 				_Destroy(_Newvec, _Newvec + _Whereoff);
 
-	mov	esi, DWORD PTR __Whereoff$225283[ebp]
-	mov	edi, DWORD PTR __Newvec$225282[ebp]
+	mov	esi, DWORD PTR __Whereoff$225325[ebp]
+	mov	edi, DWORD PTR __Newvec$225324[ebp]
 	jle	SHORT $LN7@Insert_n
 	lea	eax, DWORD PTR [esi*8]
 	sub	eax, esi
@@ -31000,7 +30997,7 @@ $LN10@Insert_n:
 
 	mov	ecx, DWORD PTR __Val$[ebp]
 	push	ecx
-	lea	ecx, DWORD PTR __Tmp$225297[ebp]
+	lea	ecx, DWORD PTR __Tmp$225339[ebp]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 
 ; 1212 : 
@@ -31028,7 +31025,7 @@ $LN10@Insert_n:
 
 	mov	ecx, DWORD PTR [esi+8]
 	sub	ecx, DWORD PTR __Where$[ebp]
-	lea	edx, DWORD PTR __Tmp$225297[ebp]
+	lea	edx, DWORD PTR __Tmp$225339[ebp]
 	push	edx
 	mov	eax, -1840700269			; 92492493H
 	imul	ecx
@@ -31061,7 +31058,7 @@ $LN10@Insert_n:
 ; 1231 : 				_Tmp);	// insert up to old end
 
 	mov	edx, DWORD PTR __Where$[ebp]
-	lea	ecx, DWORD PTR __Tmp$225297[ebp]
+	lea	ecx, DWORD PTR __Tmp$225339[ebp]
 	push	ecx
 	sub	esi, ebx
 	push	esi
@@ -31072,7 +31069,7 @@ $LN10@Insert_n:
 
 ; 1232 : 			}
 
-	lea	ecx, DWORD PTR __Tmp$225297[ebp]
+	lea	ecx, DWORD PTR __Tmp$225339[ebp]
 
 ; 1233 : 		else
 
@@ -31109,7 +31106,7 @@ $LN3@Insert_n:
 
 	mov	eax, DWORD PTR __Val$[ebp]
 	push	eax
-	lea	ecx, DWORD PTR __Tmp$225307[ebp]
+	lea	ecx, DWORD PTR __Tmp$225349[ebp]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 
 ; 1236 : 
@@ -31153,7 +31150,7 @@ $LN3@Insert_n:
 ; 1247 : 			std::fill(_VEC_ITER_BASE(_Where), _VEC_ITER_BASE(_Where) + _Count,
 ; 1248 : 				_Tmp);	// insert into hole
 
-	lea	eax, DWORD PTR __Tmp$225307[ebp]
+	lea	eax, DWORD PTR __Tmp$225349[ebp]
 	push	eax
 	mov	eax, DWORD PTR __Where$[ebp]
 	add	ebx, eax
@@ -31164,7 +31161,7 @@ $LN3@Insert_n:
 
 ; 1249 : 			}
 
-	lea	ecx, DWORD PTR __Tmp$225307[ebp]
+	lea	ecx, DWORD PTR __Tmp$225349[ebp]
 $LN78@Insert_n:
 	mov	DWORD PTR __$EHRec$[ebp+12], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
@@ -31185,10 +31182,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Insert_n@?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@IAEXV?$_Vector_const_iterator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@2@IABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@@Z$4:
-	lea	ecx, DWORD PTR __Tmp$225297[ebp]
+	lea	ecx, DWORD PTR __Tmp$225339[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Insert_n@?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@IAEXV?$_Vector_const_iterator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@2@IABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@@Z$5:
-	lea	ecx, DWORD PTR __Tmp$225307[ebp]
+	lea	ecx, DWORD PTR __Tmp$225349[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __ehhandler$?_Insert_n@?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@IAEXV?$_Vector_const_iterator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@2@IABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?_Insert_n@?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@IAEXV?$_Vector_const_iterator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@2@IABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@@Z
@@ -31327,8 +31324,8 @@ PUBLIC	??$unchecked_uninitialized_fill_n@PAUPlayerInfo@CvReplayInfo@@IU12@V?$all
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ??$unchecked_uninitialized_fill_n@PAUPlayerInfo@CvReplayInfo@@IU12@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@stdext@@YAXPAUPlayerInfo@CvReplayInfo@@IABU12@AAV?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@Z
 _TEXT	SEGMENT
-$T251113 = -4						; size = 1
-__Cat$251117 = -4					; size = 1
+$T251155 = -4						; size = 1
+__Cat$251159 = -4					; size = 1
 __First$ = 8						; size = 4
 __Count$ = 12						; size = 4
 __Val$ = 16						; size = 4
@@ -31343,9 +31340,9 @@ __Al$ = 20						; size = 4
 ; 942  : 		_STD _Ptr_cat(_First, _First), _STD _Range_checked_iterator_tag());
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T251113[esp+4], 0
-	mov	eax, DWORD PTR $T251113[esp+4]
-	mov	ecx, DWORD PTR __Cat$251117[esp+4]
+	mov	BYTE PTR $T251155[esp+4], 0
+	mov	eax, DWORD PTR $T251155[esp+4]
+	mov	ecx, DWORD PTR __Cat$251159[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Val$[esp+4]
 	push	ecx
@@ -31368,10 +31365,10 @@ PUBLIC	??$_Umove@PAW4GameOptionTypes@@@?$vector@W4GameOptionTypes@@V?$allocator@
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\vector
 ;	COMDAT ??$_Umove@PAW4GameOptionTypes@@@?$vector@W4GameOptionTypes@@V?$allocator@W4GameOptionTypes@@@std@@@std@@IAEPAW4GameOptionTypes@@PAW42@00@Z
 _TEXT	SEGMENT
-$T251165 = -4						; size = 1
+$T251207 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$251168 = 16					; size = 1
+__Cat$251210 = 16					; size = 1
 __Ptr$ = 16						; size = 4
 ??$_Umove@PAW4GameOptionTypes@@@?$vector@W4GameOptionTypes@@V?$allocator@W4GameOptionTypes@@@std@@@std@@IAEPAW4GameOptionTypes@@PAW42@00@Z PROC ; std::vector<enum GameOptionTypes,std::allocator<enum GameOptionTypes> >::_Umove<enum GameOptionTypes *>, COMDAT
 ; _this$ = ecx
@@ -31384,9 +31381,9 @@ __Ptr$ = 16						; size = 4
 ; 1147 : 		return (_STDEXT _Unchecked_uninitialized_move(_First, _Last,
 ; 1148 : 			_Ptr, this->_Alval));
 
-	mov	edx, DWORD PTR __Cat$251168[esp]
-	mov	BYTE PTR $T251165[esp+4], 0
-	mov	eax, DWORD PTR $T251165[esp+4]
+	mov	edx, DWORD PTR __Cat$251210[esp]
+	mov	BYTE PTR $T251207[esp+4], 0
+	mov	eax, DWORD PTR $T251207[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Ptr$[esp+4]
 	push	edx
@@ -31408,10 +31405,10 @@ PUBLIC	??$_Umove@PAW4VictoryTypes@@@?$vector@W4VictoryTypes@@V?$allocator@W4Vict
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Umove@PAW4VictoryTypes@@@?$vector@W4VictoryTypes@@V?$allocator@W4VictoryTypes@@@std@@@std@@IAEPAW4VictoryTypes@@PAW42@00@Z
 _TEXT	SEGMENT
-$T251220 = -4						; size = 1
+$T251262 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$251223 = 16					; size = 1
+__Cat$251265 = 16					; size = 1
 __Ptr$ = 16						; size = 4
 ??$_Umove@PAW4VictoryTypes@@@?$vector@W4VictoryTypes@@V?$allocator@W4VictoryTypes@@@std@@@std@@IAEPAW4VictoryTypes@@PAW42@00@Z PROC ; std::vector<enum VictoryTypes,std::allocator<enum VictoryTypes> >::_Umove<enum VictoryTypes *>, COMDAT
 ; _this$ = ecx
@@ -31424,9 +31421,9 @@ __Ptr$ = 16						; size = 4
 ; 1147 : 		return (_STDEXT _Unchecked_uninitialized_move(_First, _Last,
 ; 1148 : 			_Ptr, this->_Alval));
 
-	mov	edx, DWORD PTR __Cat$251223[esp]
-	mov	BYTE PTR $T251220[esp+4], 0
-	mov	eax, DWORD PTR $T251220[esp+4]
+	mov	edx, DWORD PTR __Cat$251265[esp]
+	mov	BYTE PTR $T251262[esp+4], 0
+	mov	eax, DWORD PTR $T251262[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Ptr$[esp+4]
 	push	edx
@@ -31485,7 +31482,7 @@ PUBLIC	??4?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??4?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@QAEAAV01@ABV01@@Z
 _TEXT	SEGMENT
-$T251331 = 8						; size = 4
+$T251373 = 8						; size = 4
 ___that$ = 8						; size = 4
 ??4?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@QAEAAV01@ABV01@@Z PROC ; std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > >::operator=, COMDAT
 ; _this$ = ecx
@@ -31499,7 +31496,7 @@ ___that$ = 8						; size = 4
 	mov	ecx, DWORD PTR [eax]
 	push	eax
 	push	ecx
-	lea	eax, DWORD PTR $T251331[esp+12]
+	lea	eax, DWORD PTR $T251373[esp+12]
 	push	eax
 	mov	ecx, esi
 	call	?erase@?$_Tree@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@0@Z ; std::_Tree<std::_Tmap_traits<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> >,0> >::erase
@@ -31518,8 +31515,8 @@ PUBLIC	??R?$SerializeFromSequenceContainer@$$CBV?$map@IUPlotState@CvReplayInfo@@
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\fireplace\include\fireworks\fstlcontainerserialization.h
 ;	COMDAT ??R?$SerializeFromSequenceContainer@$$CBV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@$$CBV?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@2@@@QAEXABV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@Z
 _TEXT	SEGMENT
-$T251410 = -8						; size = 8
-_count$251417 = 8					; size = 4
+$T251452 = -8						; size = 8
+_count$251459 = 8					; size = 4
 _i$ = 8							; size = 4
 ??R?$SerializeFromSequenceContainer@$$CBV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@$$CBV?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@2@@@QAEXABV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@Z PROC ; SerializeFromSequenceContainer<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > > const ,std::vector<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > >,std::allocator<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > > > > const >::operator(), COMDAT
 ; _this$ = ecx
@@ -31535,10 +31532,10 @@ _i$ = 8							; size = 4
 	push	edi
 	mov	edi, DWORD PTR _i$[esp+12]
 	mov	eax, DWORD PTR [edi+8]
-	lea	ecx, DWORD PTR _count$251417[esp+12]
+	lea	ecx, DWORD PTR _count$251459[esp+12]
 	push	ecx
 	mov	ecx, esi
-	mov	DWORD PTR _count$251417[esp+16], eax
+	mov	DWORD PTR _count$251459[esp+16], eax
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 	mov	eax, DWORD PTR [edi+4]
 	mov	ecx, DWORD PTR [eax]
@@ -31546,7 +31543,7 @@ _i$ = 8							; size = 4
 	push	esi
 	push	eax
 	push	ecx
-	lea	edx, DWORD PTR $T251410[esp+32]
+	lea	edx, DWORD PTR $T251452[esp+32]
 	push	edx
 	call	??$for_each@Vconst_iterator@?$_Tree@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@std@@U?$SerializeFromAssociativeContainer@U?$pair@IUPlotState@CvReplayInfo@@@std@@$$CBV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@2@@@@std@@YA?AU?$SerializeFromAssociativeContainer@U?$pair@IUPlotState@CvReplayInfo@@@std@@$$CBV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@2@@@Vconst_iterator@?$_Tree@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@0@0U1@@Z ; std::for_each<std::_Tree<std::_Tmap_traits<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> >,0> >::const_iterator,SerializeFromAssociativeContainer<std::pair<unsigned int,CvReplayInfo::PlotState>,std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > > const > >
 	add	esp, 20					; 00000014H
@@ -31630,10 +31627,10 @@ PUBLIC	??$_Uninit_move@PAUPlayerInfo@CvReplayInfo@@PAU12@V?$allocator@UPlayerInf
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ??$_Uninit_move@PAUPlayerInfo@CvReplayInfo@@PAU12@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@U_Undefined_move_tag@4@@std@@YAPAUPlayerInfo@CvReplayInfo@@PAU12@00AAV?$allocator@UPlayerInfo@CvReplayInfo@@@0@U_Undefined_move_tag@0@U_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
-$T251606 = -4						; size = 1
+$T251648 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$251609 = 16					; size = 1
+__Cat$251651 = 16					; size = 1
 __Dest$ = 16						; size = 4
 __Al$ = 20						; size = 4
 ___formal$ = 24						; size = 1
@@ -31646,10 +31643,10 @@ ___formal$ = 28						; size = 1
 
 ; 207  : 	return (_STDEXT unchecked_uninitialized_copy(_First, _Last, _Dest, _Al));
 
-	mov	ecx, DWORD PTR __Cat$251609[esp]
+	mov	ecx, DWORD PTR __Cat$251651[esp]
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T251606[esp+4], 0
-	mov	eax, DWORD PTR $T251606[esp+4]
+	mov	BYTE PTR $T251648[esp+4], 0
+	mov	eax, DWORD PTR $T251648[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -31685,7 +31682,7 @@ __ehfuncinfo$??$_Construct@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@s
 xdata$x	ENDS
 ;	COMDAT ??$_Construct@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V12@@std@@YAXPAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@0@ABV10@@Z
 _TEXT	SEGMENT
-$T251618 = -16						; size = 4
+$T251660 = -16						; size = 4
 __$EHRec$ = -12						; size = 12
 __Vptr$ = 8						; size = 4
 __Ptr$ = 8						; size = 4
@@ -31708,7 +31705,7 @@ __Val$ = 12						; size = 4
 
 ; 52   : 	::new (_Vptr) _T1(_Val);
 
-	mov	DWORD PTR $T251618[esp+16], ecx
+	mov	DWORD PTR $T251660[esp+16], ecx
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	ecx, ecx
 	je	SHORT $LN3@Construct@9
@@ -31729,7 +31726,7 @@ text$x	SEGMENT
 __unwindfunclet$??$_Construct@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V12@@std@@YAXPAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@0@ABV10@@Z$0:
 	mov	eax, DWORD PTR __Vptr$[ebp-4]
 	push	eax
-	mov	ecx, DWORD PTR $T251618[ebp]
+	mov	ecx, DWORD PTR $T251660[ebp]
 	push	ecx
 	call	??3@YAXPAX0@Z				; operator delete
 	add	esp, 8
@@ -31745,7 +31742,7 @@ PUBLIC	??$?6V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@@
 ;	COMDAT ??$?6V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@@YAAAVFDataStream@@AAV0@ABV?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@Z
 _TEXT	SEGMENT
 _saveTo$ = 8						; size = 4
-$T251653 = 12						; size = 4
+$T251695 = 12						; size = 4
 _readFrom$ = 12						; size = 4
 ??$?6V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@@YAAAVFDataStream@@AAV0@ABV?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@Z PROC ; operator<<<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > >, COMDAT
 
@@ -31766,11 +31763,11 @@ _readFrom$ = 12						; size = 4
 	mov	eax, edx
 	push	edi
 	shr	eax, 31					; 0000001fH
-	lea	ecx, DWORD PTR $T251653[esp+8]
+	lea	ecx, DWORD PTR $T251695[esp+8]
 	add	eax, edx
 	push	ecx
 	mov	ecx, ebx
-	mov	DWORD PTR $T251653[esp+12], eax
+	mov	DWORD PTR $T251695[esp+12], eax
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 	mov	edi, DWORD PTR [esi+8]
 	mov	esi, DWORD PTR [esi+4]
@@ -31905,7 +31902,7 @@ PUBLIC	??1?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@QAE@X
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??1?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@QAE@XZ
 _TEXT	SEGMENT
-$T252157 = -4						; size = 4
+$T252199 = -4						; size = 4
 ??1?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@QAE@XZ PROC ; std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >::~map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >, COMDAT
 ; _this$ = ecx
 	push	ecx
@@ -31915,7 +31912,7 @@ $T252157 = -4						; size = 4
 	mov	ecx, DWORD PTR [eax]
 	push	eax
 	push	ecx
-	lea	eax, DWORD PTR $T252157[esp+16]
+	lea	eax, DWORD PTR $T252199[esp+16]
 	push	eax
 	mov	ecx, esi
 	call	?erase@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@0@Z ; std::_Tree<std::_Tmap_traits<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> >,0> >::erase
@@ -31935,7 +31932,7 @@ PUBLIC	??4?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@QAEAA
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??4?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@QAEAAV01@ABV01@@Z
 _TEXT	SEGMENT
-$T252244 = 8						; size = 4
+$T252286 = 8						; size = 4
 ___that$ = 8						; size = 4
 ??4?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@QAEAAV01@ABV01@@Z PROC ; std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >::operator=, COMDAT
 ; _this$ = ecx
@@ -31949,7 +31946,7 @@ ___that$ = 8						; size = 4
 	mov	ecx, DWORD PTR [eax]
 	push	eax
 	push	ecx
-	lea	eax, DWORD PTR $T252244[esp+12]
+	lea	eax, DWORD PTR $T252286[esp+12]
 	push	eax
 	mov	ecx, esi
 	call	?erase@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@0@Z ; std::_Tree<std::_Tmap_traits<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> >,0> >::erase
@@ -31997,8 +31994,8 @@ PUBLIC	??A?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@QAEAA
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??A?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@QAEAAHABI@Z
 _TEXT	SEGMENT
-$T252486 = -8						; size = 8
-$T252489 = 8						; size = 4
+$T252528 = -8						; size = 8
+$T252531 = 8						; size = 4
 __Keyval$ = 8						; size = 4
 ??A?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@QAEAAHABI@Z PROC ; std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >::operator[], COMDAT
 ; _this$ = ecx
@@ -32042,13 +32039,13 @@ $LN1@operator@11:
 ; 173  : 				value_type(_Keyval, mapped_type()));
 
 	mov	eax, DWORD PTR [esi]
-	mov	DWORD PTR $T252486[esp+12], eax
-	lea	eax, DWORD PTR $T252486[esp+12]
+	mov	DWORD PTR $T252528[esp+12], eax
+	lea	eax, DWORD PTR $T252528[esp+12]
 	push	eax
 	push	edx
-	lea	edx, DWORD PTR $T252489[esp+16]
+	lea	edx, DWORD PTR $T252531[esp+16]
 	push	edx
-	mov	DWORD PTR $T252486[esp+28], 0
+	mov	DWORD PTR $T252528[esp+28], 0
 	call	?insert@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@ABU?$pair@$$CBIH@2@@Z ; std::_Tree<std::_Tmap_traits<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> >,0> >::insert
 	mov	eax, DWORD PTR [eax]
 
@@ -32241,8 +32238,8 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 _this$ = -20						; size = 4
 __$EHRec$ = -16						; size = 16
-$T253112 = 8						; size = 1
-__Cat$253116 = 8					; size = 1
+$T253155 = 8						; size = 1
+__Cat$253159 = 8					; size = 1
 __Right$ = 8						; size = 4
 ??0?$vector@U?$pair@FF@std@@V?$allocator@U?$pair@FF@std@@@2@@std@@QAE@ABV01@@Z PROC ; std::vector<std::pair<short,short>,std::allocator<std::pair<short,short> > >::vector<std::pair<short,short>,std::allocator<std::pair<short,short> > >, COMDAT
 ; _this$ = ecx
@@ -32288,10 +32285,10 @@ $LN22@vector@3:
 ; 502  : 			_TRY_BEGIN
 ; 503  : 			_Mylast = _Ucopy(_Right.begin(), _Right.end(), _Myfirst);
 
-	mov	BYTE PTR $T253112[ebp], 0
-	mov	edx, DWORD PTR $T253112[ebp]
+	mov	BYTE PTR $T253155[ebp], 0
+	mov	edx, DWORD PTR $T253155[ebp]
 	push	edx
-	mov	edx, DWORD PTR __Cat$253116[ebp]
+	mov	edx, DWORD PTR __Cat$253159[ebp]
 	push	edx
 	lea	ecx, DWORD PTR [eax+edi*4]
 	push	esi
@@ -32381,8 +32378,8 @@ PUBLIC	??A?$map@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@@std@@QAEAA
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\map
 ;	COMDAT ??A?$map@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@@std@@QAEAAHABH@Z
 _TEXT	SEGMENT
-$T253152 = -8						; size = 8
-$T253155 = 8						; size = 4
+$T253194 = -8						; size = 8
+$T253197 = 8						; size = 4
 __Keyval$ = 8						; size = 4
 ??A?$map@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@@std@@QAEAAHABH@Z PROC ; std::map<int,int,std::less<int>,std::allocator<std::pair<int const ,int> > >::operator[], COMDAT
 ; _this$ = ecx
@@ -32426,13 +32423,13 @@ $LN1@operator@12:
 ; 173  : 				value_type(_Keyval, mapped_type()));
 
 	mov	eax, DWORD PTR [esi]
-	mov	DWORD PTR $T253152[esp+12], eax
-	lea	eax, DWORD PTR $T253152[esp+12]
+	mov	DWORD PTR $T253194[esp+12], eax
+	lea	eax, DWORD PTR $T253194[esp+12]
 	push	eax
 	push	edx
-	lea	edx, DWORD PTR $T253155[esp+16]
+	lea	edx, DWORD PTR $T253197[esp+16]
 	push	edx
-	mov	DWORD PTR $T253152[esp+28], 0
+	mov	DWORD PTR $T253194[esp+28], 0
 	call	?insert@?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@ABU?$pair@$$CBHH@2@@Z ; std::_Tree<std::_Tmap_traits<int,int,std::less<int>,std::allocator<std::pair<int const ,int> >,0> >::insert
 	mov	eax, DWORD PTR [eax]
 
@@ -32463,7 +32460,7 @@ PUBLIC	??1?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@s
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xtree
 ;	COMDAT ??1?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$0A@@std@@@std@@QAE@XZ
 _TEXT	SEGMENT
-$T253388 = -4						; size = 4
+$T253430 = -4						; size = 4
 ??1?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$0A@@std@@@std@@QAE@XZ PROC ; std::_Tree<std::_Tmap_traits<int,int,std::less<int>,std::allocator<std::pair<int const ,int> >,0> >::~_Tree<std::_Tmap_traits<int,int,std::less<int>,std::allocator<std::pair<int const ,int> >,0> >, COMDAT
 ; _this$ = ecx
 
@@ -32479,7 +32476,7 @@ $T253388 = -4						; size = 4
 	mov	ecx, DWORD PTR [eax]
 	push	eax
 	push	ecx
-	lea	eax, DWORD PTR $T253388[esp+16]
+	lea	eax, DWORD PTR $T253430[esp+16]
 	push	eax
 	mov	ecx, esi
 	call	?erase@?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@0@Z ; std::_Tree<std::_Tmap_traits<int,int,std::less<int>,std::allocator<std::pair<int const ,int> >,0> >::erase
@@ -32503,8 +32500,8 @@ PUBLIC	??A?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\map
 ;	COMDAT ??A?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@QAEAAUPlotState@CvReplayInfo@@ABI@Z
 _TEXT	SEGMENT
-$T253418 = -20						; size = 20
-$T253421 = 8						; size = 4
+$T253460 = -20						; size = 20
+$T253463 = 8						; size = 4
 __Keyval$ = 8						; size = 4
 ??A?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@QAEAAUPlotState@CvReplayInfo@@ABI@Z PROC ; std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > >::operator[], COMDAT
 ; _this$ = ecx
@@ -32549,16 +32546,16 @@ $LN1@operator@13:
 
 	mov	esi, DWORD PTR [esi]
 	xor	eax, eax
-	mov	DWORD PTR $T253418[esp+28], eax
-	mov	DWORD PTR $T253418[esp+32], eax
-	mov	DWORD PTR $T253418[esp+36], eax
-	mov	DWORD PTR $T253418[esp+40], eax
-	lea	eax, DWORD PTR $T253418[esp+24]
+	mov	DWORD PTR $T253460[esp+28], eax
+	mov	DWORD PTR $T253460[esp+32], eax
+	mov	DWORD PTR $T253460[esp+36], eax
+	mov	DWORD PTR $T253460[esp+40], eax
+	lea	eax, DWORD PTR $T253460[esp+24]
 	push	eax
 	push	edx
-	lea	edx, DWORD PTR $T253421[esp+28]
+	lea	edx, DWORD PTR $T253463[esp+28]
 	push	edx
-	mov	DWORD PTR $T253418[esp+36], esi
+	mov	DWORD PTR $T253460[esp+36], esi
 	call	?insert@?$_Tree@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@ABU?$pair@$$CBIUPlotState@CvReplayInfo@@@2@@Z ; std::_Tree<std::_Tmap_traits<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> >,0> >::insert
 	mov	eax, DWORD PTR [eax]
 
@@ -32589,7 +32586,7 @@ PUBLIC	??1?$_Tree@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$al
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xtree
 ;	COMDAT ??1?$_Tree@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@std@@QAE@XZ
 _TEXT	SEGMENT
-$T253654 = -4						; size = 4
+$T253696 = -4						; size = 4
 ??1?$_Tree@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@std@@QAE@XZ PROC ; std::_Tree<std::_Tmap_traits<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> >,0> >::~_Tree<std::_Tmap_traits<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> >,0> >, COMDAT
 ; _this$ = ecx
 
@@ -32605,7 +32602,7 @@ $T253654 = -4						; size = 4
 	mov	ecx, DWORD PTR [eax]
 	push	eax
 	push	ecx
-	lea	eax, DWORD PTR $T253654[esp+16]
+	lea	eax, DWORD PTR $T253696[esp+16]
 	push	eax
 	mov	ecx, esi
 	call	?erase@?$_Tree@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@0@Z ; std::_Tree<std::_Tmap_traits<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> >,0> >::erase
@@ -32857,10 +32854,10 @@ PUBLIC	?_Ufill@?$vector@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@CvRep
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?_Ufill@?$vector@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@std@@IAEPAUPlayerInfo@CvReplayInfo@@PAU34@IABU34@@Z
 _TEXT	SEGMENT
-$T254012 = -4						; size = 1
+$T254054 = -4						; size = 1
 __Ptr$ = 8						; size = 4
 __Count$ = 12						; size = 4
-__Cat$254016 = 16					; size = 1
+__Cat$254058 = 16					; size = 1
 __Val$ = 16						; size = 4
 ?_Ufill@?$vector@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@std@@IAEPAUPlayerInfo@CvReplayInfo@@PAU34@IABU34@@Z PROC ; std::vector<CvReplayInfo::PlayerInfo,std::allocator<CvReplayInfo::PlayerInfo> >::_Ufill, COMDAT
 ; _this$ = ecx
@@ -32871,13 +32868,13 @@ __Val$ = 16						; size = 4
 
 ; 1254 : 		_STDEXT unchecked_uninitialized_fill_n(_Ptr, _Count, _Val, this->_Alval);
 
-	mov	edx, DWORD PTR __Cat$254016[esp]
+	mov	edx, DWORD PTR __Cat$254058[esp]
 	push	esi
 	mov	esi, DWORD PTR __Count$[esp+4]
 	push	edi
 	mov	edi, DWORD PTR __Ptr$[esp+8]
-	mov	BYTE PTR $T254012[esp+12], 0
-	mov	eax, DWORD PTR $T254012[esp+12]
+	mov	BYTE PTR $T254054[esp+12], 0
+	mov	eax, DWORD PTR $T254054[esp+12]
 	push	eax
 	mov	eax, DWORD PTR __Val$[esp+12]
 	push	edx
@@ -32947,16 +32944,16 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 __Capacity$ = -20					; size = 4
 __$EHRec$ = -16						; size = 16
-__Cat$254224 = 8					; size = 1
-__Cat$254151 = 8					; size = 1
+__Cat$254266 = 8					; size = 1
+__Cat$254193 = 8					; size = 1
 __Where$ = 8						; size = 4
-__Tmp$225493 = 12					; size = 4
-__Tmp$225483 = 12					; size = 4
-__Newvec$225468 = 12					; size = 4
+__Tmp$225535 = 12					; size = 4
+__Tmp$225525 = 12					; size = 4
+__Newvec$225510 = 12					; size = 4
 __Count$ = 12						; size = 4
 tv515 = 16						; size = 4
-$T254221 = 16						; size = 1
-$T254148 = 16						; size = 1
+$T254263 = 16						; size = 1
+$T254190 = 16						; size = 1
 __Val$ = 16						; size = 4
 ?_Insert_n@?$vector@W4GameOptionTypes@@V?$allocator@W4GameOptionTypes@@@std@@@std@@IAEXV?$_Vector_const_iterator@W4GameOptionTypes@@V?$allocator@W4GameOptionTypes@@@std@@@2@IABW4GameOptionTypes@@@Z PROC ; std::vector<enum GameOptionTypes,std::allocator<enum GameOptionTypes> >::_Insert_n, COMDAT
 ; _this$ = ecx
@@ -33082,7 +33079,7 @@ $LN9@Insert_n@2:
 	lea	edx, DWORD PTR [eax+ebx*4]
 	push	edx
 	mov	ecx, esi
-	mov	DWORD PTR __Newvec$225468[ebp], eax
+	mov	DWORD PTR __Newvec$225510[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+12], 0
 	call	?_Ufill@?$vector@W4GameOptionTypes@@V?$allocator@W4GameOptionTypes@@@std@@@std@@IAEPAW4GameOptionTypes@@PAW43@IABW43@@Z ; std::vector<enum GameOptionTypes,std::allocator<enum GameOptionTypes> >::_Ufill
 
@@ -33090,12 +33087,12 @@ $LN9@Insert_n@2:
 ; 1180 : 			_Umove(this->_Myfirst, _VEC_ITER_BASE(_Where),
 ; 1181 : 				_Newvec);	// move prefix
 
-	mov	edx, DWORD PTR __Cat$254151[ebp]
+	mov	edx, DWORD PTR __Cat$254193[ebp]
 	mov	eax, DWORD PTR [esi+4]
-	mov	BYTE PTR $T254148[ebp], 0
-	mov	ecx, DWORD PTR $T254148[ebp]
+	mov	BYTE PTR $T254190[ebp], 0
+	mov	ecx, DWORD PTR $T254190[ebp]
 	push	ecx
-	mov	ecx, DWORD PTR __Newvec$225468[ebp]
+	mov	ecx, DWORD PTR __Newvec$225510[ebp]
 	push	edx
 	mov	edx, DWORD PTR __Where$[ebp]
 	push	esi
@@ -33110,13 +33107,13 @@ $LN9@Insert_n@2:
 
 	mov	eax, DWORD PTR [esi+8]
 	add	esp, 24					; 00000018H
-	mov	BYTE PTR $T254221[ebp], 0
-	mov	edx, DWORD PTR $T254221[ebp]
+	mov	BYTE PTR $T254263[ebp], 0
+	mov	edx, DWORD PTR $T254263[ebp]
 	push	edx
-	mov	edx, DWORD PTR __Cat$254224[ebp]
+	mov	edx, DWORD PTR __Cat$254266[ebp]
 	push	edx
 	lea	ecx, DWORD PTR [ebx+edi]
-	mov	ebx, DWORD PTR __Newvec$225468[ebp]
+	mov	ebx, DWORD PTR __Newvec$225510[ebp]
 	push	esi
 	lea	ecx, DWORD PTR [ebx+ecx*4]
 	push	ecx
@@ -33191,7 +33188,7 @@ __catch$?_Insert_n@?$vector@W4GameOptionTypes@@V?$allocator@W4GameOptionTypes@@@
 ; 1189 : 				_Destroy(_Newvec + _Whereoff, _Newvec + _Whereoff + _Count);
 ; 1190 : 			this->_Alval.deallocate(_Newvec, _Capacity);
 
-	mov	edx, DWORD PTR __Newvec$225468[ebp]
+	mov	edx, DWORD PTR __Newvec$225510[ebp]
 	push	edx
 	call	??3@YAXPAX@Z				; operator delete
 	add	esp, 4
@@ -33220,7 +33217,7 @@ $LN10@Insert_n@2:
 
 	mov	edx, DWORD PTR __Val$[ebp]
 	mov	ecx, DWORD PTR [edx]
-	mov	DWORD PTR __Tmp$225483[ebp], ecx
+	mov	DWORD PTR __Tmp$225525[ebp], ecx
 
 ; 1212 : 
 ; 1213 : 			_Umove(_VEC_ITER_BASE(_Where), _Mylast,
@@ -33243,7 +33240,7 @@ $LN10@Insert_n@2:
 	mov	eax, DWORD PTR [esi+8]
 	mov	ecx, eax
 	sub	ecx, DWORD PTR __Where$[ebp]
-	lea	edx, DWORD PTR __Tmp$225483[ebp]
+	lea	edx, DWORD PTR __Tmp$225525[ebp]
 	sar	ecx, 2
 	push	edx
 	sub	edi, ecx
@@ -33272,7 +33269,7 @@ $LN10@Insert_n@2:
 ; 1230 : 			std::fill(_VEC_ITER_BASE(_Where), _Mylast - _Count,
 ; 1231 : 				_Tmp);	// insert up to old end
 
-	lea	edx, DWORD PTR __Tmp$225483[ebp]
+	lea	edx, DWORD PTR __Tmp$225525[ebp]
 	push	edx
 	sub	esi, eax
 	mov	eax, DWORD PTR __Where$[ebp]
@@ -33314,7 +33311,7 @@ $LN3@Insert_n@2:
 	push	ebx
 	push	edi
 	mov	ecx, esi
-	mov	DWORD PTR __Tmp$225493[ebp], edx
+	mov	DWORD PTR __Tmp$225535[ebp], edx
 	mov	DWORD PTR tv515[ebp], eax
 	call	??$_Umove@PAW4GameOptionTypes@@@?$vector@W4GameOptionTypes@@V?$allocator@W4GameOptionTypes@@@std@@@std@@IAEPAW4GameOptionTypes@@PAW42@00@Z ; std::vector<enum GameOptionTypes,std::allocator<enum GameOptionTypes> >::_Umove<enum GameOptionTypes *>
 
@@ -33338,7 +33335,7 @@ $LN3@Insert_n@2:
 
 	mov	eax, DWORD PTR __Where$[ebp]
 	mov	edx, DWORD PTR tv515[ebp]
-	lea	ecx, DWORD PTR __Tmp$225493[ebp]
+	lea	ecx, DWORD PTR __Tmp$225535[ebp]
 	push	ecx
 	add	edx, eax
 	push	edx
@@ -33412,16 +33409,16 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 __Capacity$ = -20					; size = 4
 __$EHRec$ = -16						; size = 16
-__Cat$254460 = 8					; size = 1
-__Cat$254388 = 8					; size = 1
+__Cat$254502 = 8					; size = 1
+__Cat$254430 = 8					; size = 1
 __Where$ = 8						; size = 4
-__Tmp$225568 = 12					; size = 4
-__Tmp$225558 = 12					; size = 4
-__Newvec$225543 = 12					; size = 4
+__Tmp$225610 = 12					; size = 4
+__Tmp$225600 = 12					; size = 4
+__Newvec$225585 = 12					; size = 4
 __Count$ = 12						; size = 4
 tv515 = 16						; size = 4
-$T254457 = 16						; size = 1
-$T254385 = 16						; size = 1
+$T254499 = 16						; size = 1
+$T254427 = 16						; size = 1
 __Val$ = 16						; size = 4
 ?_Insert_n@?$vector@W4VictoryTypes@@V?$allocator@W4VictoryTypes@@@std@@@std@@IAEXV?$_Vector_const_iterator@W4VictoryTypes@@V?$allocator@W4VictoryTypes@@@std@@@2@IABW4VictoryTypes@@@Z PROC ; std::vector<enum VictoryTypes,std::allocator<enum VictoryTypes> >::_Insert_n, COMDAT
 ; _this$ = ecx
@@ -33547,7 +33544,7 @@ $LN9@Insert_n@3:
 	lea	edx, DWORD PTR [eax+ebx*4]
 	push	edx
 	mov	ecx, esi
-	mov	DWORD PTR __Newvec$225543[ebp], eax
+	mov	DWORD PTR __Newvec$225585[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+12], 0
 	call	?_Ufill@?$vector@W4VictoryTypes@@V?$allocator@W4VictoryTypes@@@std@@@std@@IAEPAW4VictoryTypes@@PAW43@IABW43@@Z ; std::vector<enum VictoryTypes,std::allocator<enum VictoryTypes> >::_Ufill
 
@@ -33555,12 +33552,12 @@ $LN9@Insert_n@3:
 ; 1180 : 			_Umove(this->_Myfirst, _VEC_ITER_BASE(_Where),
 ; 1181 : 				_Newvec);	// move prefix
 
-	mov	edx, DWORD PTR __Cat$254388[ebp]
+	mov	edx, DWORD PTR __Cat$254430[ebp]
 	mov	eax, DWORD PTR [esi+4]
-	mov	BYTE PTR $T254385[ebp], 0
-	mov	ecx, DWORD PTR $T254385[ebp]
+	mov	BYTE PTR $T254427[ebp], 0
+	mov	ecx, DWORD PTR $T254427[ebp]
 	push	ecx
-	mov	ecx, DWORD PTR __Newvec$225543[ebp]
+	mov	ecx, DWORD PTR __Newvec$225585[ebp]
 	push	edx
 	mov	edx, DWORD PTR __Where$[ebp]
 	push	esi
@@ -33575,13 +33572,13 @@ $LN9@Insert_n@3:
 
 	mov	eax, DWORD PTR [esi+8]
 	add	esp, 24					; 00000018H
-	mov	BYTE PTR $T254457[ebp], 0
-	mov	edx, DWORD PTR $T254457[ebp]
+	mov	BYTE PTR $T254499[ebp], 0
+	mov	edx, DWORD PTR $T254499[ebp]
 	push	edx
-	mov	edx, DWORD PTR __Cat$254460[ebp]
+	mov	edx, DWORD PTR __Cat$254502[ebp]
 	push	edx
 	lea	ecx, DWORD PTR [ebx+edi]
-	mov	ebx, DWORD PTR __Newvec$225543[ebp]
+	mov	ebx, DWORD PTR __Newvec$225585[ebp]
 	push	esi
 	lea	ecx, DWORD PTR [ebx+ecx*4]
 	push	ecx
@@ -33656,7 +33653,7 @@ __catch$?_Insert_n@?$vector@W4VictoryTypes@@V?$allocator@W4VictoryTypes@@@std@@@
 ; 1189 : 				_Destroy(_Newvec + _Whereoff, _Newvec + _Whereoff + _Count);
 ; 1190 : 			this->_Alval.deallocate(_Newvec, _Capacity);
 
-	mov	edx, DWORD PTR __Newvec$225543[ebp]
+	mov	edx, DWORD PTR __Newvec$225585[ebp]
 	push	edx
 	call	??3@YAXPAX@Z				; operator delete
 	add	esp, 4
@@ -33685,7 +33682,7 @@ $LN10@Insert_n@3:
 
 	mov	edx, DWORD PTR __Val$[ebp]
 	mov	ecx, DWORD PTR [edx]
-	mov	DWORD PTR __Tmp$225558[ebp], ecx
+	mov	DWORD PTR __Tmp$225600[ebp], ecx
 
 ; 1212 : 
 ; 1213 : 			_Umove(_VEC_ITER_BASE(_Where), _Mylast,
@@ -33708,7 +33705,7 @@ $LN10@Insert_n@3:
 	mov	eax, DWORD PTR [esi+8]
 	mov	ecx, eax
 	sub	ecx, DWORD PTR __Where$[ebp]
-	lea	edx, DWORD PTR __Tmp$225558[ebp]
+	lea	edx, DWORD PTR __Tmp$225600[ebp]
 	sar	ecx, 2
 	push	edx
 	sub	edi, ecx
@@ -33737,7 +33734,7 @@ $LN10@Insert_n@3:
 ; 1230 : 			std::fill(_VEC_ITER_BASE(_Where), _Mylast - _Count,
 ; 1231 : 				_Tmp);	// insert up to old end
 
-	lea	edx, DWORD PTR __Tmp$225558[ebp]
+	lea	edx, DWORD PTR __Tmp$225600[ebp]
 	push	edx
 	sub	esi, eax
 	mov	eax, DWORD PTR __Where$[ebp]
@@ -33779,7 +33776,7 @@ $LN3@Insert_n@3:
 	push	ebx
 	push	edi
 	mov	ecx, esi
-	mov	DWORD PTR __Tmp$225568[ebp], edx
+	mov	DWORD PTR __Tmp$225610[ebp], edx
 	mov	DWORD PTR tv515[ebp], eax
 	call	??$_Umove@PAW4VictoryTypes@@@?$vector@W4VictoryTypes@@V?$allocator@W4VictoryTypes@@@std@@@std@@IAEPAW4VictoryTypes@@PAW42@00@Z ; std::vector<enum VictoryTypes,std::allocator<enum VictoryTypes> >::_Umove<enum VictoryTypes *>
 
@@ -33803,7 +33800,7 @@ $LN3@Insert_n@3:
 
 	mov	eax, DWORD PTR __Where$[ebp]
 	mov	edx, DWORD PTR tv515[ebp]
-	lea	ecx, DWORD PTR __Tmp$225568[ebp]
+	lea	ecx, DWORD PTR __Tmp$225610[ebp]
 	push	ecx
 	add	edx, eax
 	push	edx
@@ -33890,8 +33887,8 @@ PUBLIC	??$for_each@V?$_Vector_const_iterator@V?$map@IUPlotState@CvReplayInfo@@U?
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\algorithm
 ;	COMDAT ??$for_each@V?$_Vector_const_iterator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@std@@U?$SerializeFromSequenceContainer@$$CBV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@$$CBV?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@2@@@@std@@YA?AU?$SerializeFromSequenceContainer@$$CBV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@$$CBV?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@2@@@V?$_Vector_const_iterator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@0@0U1@@Z
 _TEXT	SEGMENT
-_count$254667 = -12					; size = 4
-$T254660 = -8						; size = 8
+_count$254709 = -12					; size = 4
+$T254702 = -8						; size = 8
 ___$ReturnUdt$ = 8					; size = 4
 __First$ = 12						; size = 4
 __Last$ = 16						; size = 4
@@ -33921,11 +33918,11 @@ $LL6@for_each@7:
 
 	mov	ecx, DWORD PTR __Func$[esp+24]
 	mov	eax, DWORD PTR [esi+4]
-	lea	edx, DWORD PTR _count$254667[esp+28]
+	lea	edx, DWORD PTR _count$254709[esp+28]
 	push	edx
 	mov	edi, ecx
 	lea	ebx, DWORD PTR [esi-4]
-	mov	DWORD PTR _count$254667[esp+32], eax
+	mov	DWORD PTR _count$254709[esp+32], eax
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 	mov	eax, DWORD PTR [esi]
 	mov	ecx, DWORD PTR [eax]
@@ -33933,7 +33930,7 @@ $LL6@for_each@7:
 	push	edi
 	push	eax
 	push	ecx
-	lea	eax, DWORD PTR $T254660[esp+44]
+	lea	eax, DWORD PTR $T254702[esp+44]
 	push	eax
 	call	??$for_each@Vconst_iterator@?$_Tree@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@std@@U?$SerializeFromAssociativeContainer@U?$pair@IUPlotState@CvReplayInfo@@@std@@$$CBV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@2@@@@std@@YA?AU?$SerializeFromAssociativeContainer@U?$pair@IUPlotState@CvReplayInfo@@@std@@$$CBV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@2@@@Vconst_iterator@?$_Tree@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@0@0U1@@Z ; std::for_each<std::_Tree<std::_Tmap_traits<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> >,0> >::const_iterator,SerializeFromAssociativeContainer<std::pair<unsigned int,CvReplayInfo::PlotState>,std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > > const > >
 	add	esi, 12					; 0000000cH
@@ -33968,7 +33965,7 @@ PUBLIC	??$_Copy_opt@PAV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocat
 _TEXT	SEGMENT
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-$T254769 = 16						; size = 4
+$T254811 = 16						; size = 4
 __Dest$ = 16						; size = 4
 ___formal$ = 20						; size = 1
 ___formal$ = 24						; size = 1
@@ -33999,7 +33996,7 @@ $LL3@Copy_opt@6:
 	mov	ecx, DWORD PTR [eax]
 	push	eax
 	push	ecx
-	lea	eax, DWORD PTR $T254769[esp+16]
+	lea	eax, DWORD PTR $T254811[esp+16]
 	push	eax
 	mov	ecx, esi
 	call	?erase@?$_Tree@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@0@Z ; std::_Tree<std::_Tmap_traits<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> >,0> >::erase
@@ -34039,7 +34036,7 @@ PUBLIC	??$_Fill@PAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@s
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Fill@PAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V12@@std@@YAXPAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@0@0ABV10@@Z
 _TEXT	SEGMENT
-$T254879 = 8						; size = 4
+$T254921 = 8						; size = 4
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Val$ = 16						; size = 4
@@ -34069,7 +34066,7 @@ $LL3@Fill@5:
 	mov	ecx, DWORD PTR [eax]
 	push	eax
 	push	ecx
-	lea	eax, DWORD PTR $T254879[esp+16]
+	lea	eax, DWORD PTR $T254921[esp+16]
 	push	eax
 	mov	ecx, esi
 	call	?erase@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@0@Z ; std::_Tree<std::_Tmap_traits<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> >,0> >::erase
@@ -34095,10 +34092,10 @@ PUBLIC	??$_Unchecked_uninitialized_move@PAUPlayerInfo@CvReplayInfo@@PAU12@V?$all
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ??$_Unchecked_uninitialized_move@PAUPlayerInfo@CvReplayInfo@@PAU12@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@stdext@@YAPAUPlayerInfo@CvReplayInfo@@PAU12@00AAV?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@Z
 _TEXT	SEGMENT
-$T254928 = -4						; size = 1
+$T254970 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$254931 = 16					; size = 1
+__Cat$254973 = 16					; size = 1
 __Dest$ = 16						; size = 4
 __Al$ = 20						; size = 4
 ??$_Unchecked_uninitialized_move@PAUPlayerInfo@CvReplayInfo@@PAU12@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@stdext@@YAPAUPlayerInfo@CvReplayInfo@@PAU12@00AAV?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@Z PROC ; stdext::_Unchecked_uninitialized_move<CvReplayInfo::PlayerInfo *,CvReplayInfo::PlayerInfo *,std::allocator<CvReplayInfo::PlayerInfo> >, COMDAT
@@ -34111,10 +34108,10 @@ __Al$ = 20						; size = 4
 ; 863  : 		_CHECKED_BASE(_Last), _Dest, _Al,
 ; 864  : 		_STD _Move_cat(_Dest), _STD _Range_checked_iterator_tag()));
 
-	mov	ecx, DWORD PTR __Cat$254931[esp]
+	mov	ecx, DWORD PTR __Cat$254973[esp]
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T254928[esp+4], 0
-	mov	eax, DWORD PTR $T254928[esp+4]
+	mov	BYTE PTR $T254970[esp+4], 0
+	mov	eax, DWORD PTR $T254970[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -34137,7 +34134,7 @@ PUBLIC	??$_Fill@PAV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xutility
 ;	COMDAT ??$_Fill@PAV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V12@@std@@YAXPAV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@0@0ABV10@@Z
 _TEXT	SEGMENT
-$T255031 = 8						; size = 4
+$T255062 = 8						; size = 4
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Val$ = 16						; size = 4
@@ -34167,7 +34164,7 @@ $LL3@Fill@6:
 	mov	ecx, DWORD PTR [eax]
 	push	eax
 	push	ecx
-	lea	eax, DWORD PTR $T255031[esp+16]
+	lea	eax, DWORD PTR $T255062[esp+16]
 	push	eax
 	mov	ecx, esi
 	call	?erase@?$_Tree@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@0@Z ; std::_Tree<std::_Tmap_traits<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> >,0> >::erase
@@ -34205,9 +34202,9 @@ __ehfuncinfo$?construct@?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair
 xdata$x	ENDS
 ;	COMDAT ?construct@?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@std@@QAEXPAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@2@ABV32@@Z
 _TEXT	SEGMENT
-$T255060 = -16						; size = 4
+$T255102 = -16						; size = 4
 __$EHRec$ = -12						; size = 12
-__Vptr$255068 = 8					; size = 4
+__Vptr$255110 = 8					; size = 4
 __Ptr$ = 8						; size = 4
 __Val$ = 12						; size = 4
 ?construct@?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@std@@QAEXPAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@2@ABV32@@Z PROC ; std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > >::construct, COMDAT
@@ -34225,8 +34222,8 @@ __Val$ = 12						; size = 4
 ; 155  : 		_Construct(_Ptr, _Val);
 
 	mov	ecx, DWORD PTR __Ptr$[esp+12]
-	mov	DWORD PTR __Vptr$255068[esp+12], ecx
-	mov	DWORD PTR $T255060[esp+16], ecx
+	mov	DWORD PTR __Vptr$255110[esp+12], ecx
+	mov	DWORD PTR $T255102[esp+16], ecx
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	ecx, ecx
 	je	SHORT $LN5@construct@9
@@ -34245,9 +34242,9 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?construct@?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@std@@QAEXPAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@2@ABV32@@Z$0:
-	mov	eax, DWORD PTR __Vptr$255068[ebp-4]
+	mov	eax, DWORD PTR __Vptr$255110[ebp-4]
 	push	eax
-	mov	ecx, DWORD PTR $T255060[ebp]
+	mov	ecx, DWORD PTR $T255102[ebp]
 	push	ecx
 	call	??3@YAXPAX0@Z				; operator delete
 	add	esp, 8
@@ -34534,7 +34531,7 @@ __ehfuncinfo$??$_Construct@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$al
 xdata$x	ENDS
 ;	COMDAT ??$_Construct@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V12@@std@@YAXPAV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@0@ABV10@@Z
 _TEXT	SEGMENT
-$T255339 = -16						; size = 4
+$T255381 = -16						; size = 4
 __$EHRec$ = -12						; size = 12
 __Vptr$ = 8						; size = 4
 __Ptr$ = 8						; size = 4
@@ -34557,7 +34554,7 @@ __Val$ = 12						; size = 4
 
 ; 52   : 	::new (_Vptr) _T1(_Val);
 
-	mov	DWORD PTR $T255339[esp+16], ecx
+	mov	DWORD PTR $T255381[esp+16], ecx
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	ecx, ecx
 	je	SHORT $LN3@Construct@10
@@ -34578,7 +34575,7 @@ text$x	SEGMENT
 __unwindfunclet$??$_Construct@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V12@@std@@YAXPAV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@0@ABV10@@Z$0:
 	mov	eax, DWORD PTR __Vptr$[ebp-4]
 	push	eax
-	mov	ecx, DWORD PTR $T255339[ebp]
+	mov	ecx, DWORD PTR $T255381[ebp]
 	push	ecx
 	call	??3@YAXPAX0@Z				; operator delete
 	add	esp, 8
@@ -34592,7 +34589,7 @@ PUBLIC	??_G?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@QAEP
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??_G?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@QAEPAXI@Z
 _TEXT	SEGMENT
-$T255500 = -4						; size = 4
+$T255542 = -4						; size = 4
 ___flags$ = 8						; size = 4
 ??_G?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@QAEPAXI@Z PROC ; std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >::`scalar deleting destructor', COMDAT
 ; _this$ = ecx
@@ -34603,7 +34600,7 @@ ___flags$ = 8						; size = 4
 	mov	ecx, DWORD PTR [eax]
 	push	eax
 	push	ecx
-	lea	eax, DWORD PTR $T255500[esp+16]
+	lea	eax, DWORD PTR $T255542[esp+16]
 	push	eax
 	mov	ecx, esi
 	call	?erase@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@0@Z ; std::_Tree<std::_Tmap_traits<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> >,0> >::erase
@@ -34654,7 +34651,7 @@ PUBLIC	??$_Copy_opt@PAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@
 _TEXT	SEGMENT
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-$T255618 = 16						; size = 4
+$T255660 = 16						; size = 4
 __Dest$ = 16						; size = 4
 ___formal$ = 20						; size = 1
 ___formal$ = 24						; size = 1
@@ -34685,7 +34682,7 @@ $LL3@Copy_opt@7:
 	mov	ecx, DWORD PTR [eax]
 	push	eax
 	push	ecx
-	lea	eax, DWORD PTR $T255618[esp+16]
+	lea	eax, DWORD PTR $T255660[esp+16]
 	push	eax
 	mov	ecx, esi
 	call	?erase@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@0@Z ; std::_Tree<std::_Tmap_traits<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> >,0> >::erase
@@ -34827,7 +34824,7 @@ PUBLIC	??1?$map@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@@std@@QAE@X
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??1?$map@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@@std@@QAE@XZ
 _TEXT	SEGMENT
-$T256094 = -4						; size = 4
+$T256118 = -4						; size = 4
 ??1?$map@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@@std@@QAE@XZ PROC ; std::map<int,int,std::less<int>,std::allocator<std::pair<int const ,int> > >::~map<int,int,std::less<int>,std::allocator<std::pair<int const ,int> > >, COMDAT
 ; _this$ = ecx
 	push	ecx
@@ -34837,7 +34834,7 @@ $T256094 = -4						; size = 4
 	mov	ecx, DWORD PTR [eax]
 	push	eax
 	push	ecx
-	lea	eax, DWORD PTR $T256094[esp+16]
+	lea	eax, DWORD PTR $T256118[esp+16]
 	push	eax
 	mov	ecx, esi
 	call	?erase@?$_Tree@V?$_Tmap_traits@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@0@Z ; std::_Tree<std::_Tmap_traits<int,int,std::less<int>,std::allocator<std::pair<int const ,int> >,0> >::erase
@@ -34992,7 +34989,7 @@ PUBLIC	??1?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??1?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@QAE@XZ
 _TEXT	SEGMENT
-$T256230 = -4						; size = 4
+$T256272 = -4						; size = 4
 ??1?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@QAE@XZ PROC ; std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > >::~map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > >, COMDAT
 ; _this$ = ecx
 	push	ecx
@@ -35002,7 +34999,7 @@ $T256230 = -4						; size = 4
 	mov	ecx, DWORD PTR [eax]
 	push	eax
 	push	ecx
-	lea	eax, DWORD PTR $T256230[esp+16]
+	lea	eax, DWORD PTR $T256272[esp+16]
 	push	eax
 	mov	ecx, esi
 	call	?erase@?$_Tree@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@0@Z ; std::_Tree<std::_Tmap_traits<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> >,0> >::erase
@@ -35118,9 +35115,9 @@ PUBLIC	?push_back@?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?push_back@?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@QAEXABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@@Z
 _TEXT	SEGMENT
-$T256310 = -4						; size = 1
-__Cat$256313 = 8					; size = 1
-$T256281 = 8						; size = 4
+$T256354 = -4						; size = 1
+__Cat$256357 = 8					; size = 1
+$T256323 = 8						; size = 4
 __Val$ = 8						; size = 4
 ?push_back@?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@QAEXABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@@Z PROC ; std::vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >::push_back, COMDAT
 ; _this$ = ecx
@@ -35175,10 +35172,10 @@ $LN10@push_back:
 ; 818  :  #else /* _HAS_ITERATOR_DEBUGGING */
 ; 819  : 			_Mylast = _Ufill(_Mylast, 1, _Val);
 
-	mov	edx, DWORD PTR __Cat$256313[esp+16]
+	mov	edx, DWORD PTR __Cat$256357[esp+16]
 	mov	eax, DWORD PTR __Val$[esp+16]
-	mov	BYTE PTR $T256310[esp+20], 0
-	mov	ecx, DWORD PTR $T256310[esp+20]
+	mov	BYTE PTR $T256354[esp+20], 0
+	mov	ecx, DWORD PTR $T256354[esp+20]
 	push	ecx
 	push	edx
 	push	edi
@@ -35208,7 +35205,7 @@ $LN2@push_back:
 	mov	ecx, DWORD PTR __Val$[esp+16]
 	push	ecx
 	push	ebx
-	lea	edx, DWORD PTR $T256281[esp+24]
+	lea	edx, DWORD PTR $T256323[esp+24]
 	push	edx
 	mov	ecx, edi
 	call	?insert@?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@QAE?AV?$_Vector_iterator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@2@V?$_Vector_const_iterator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@2@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@@Z ; std::vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >::insert
@@ -35227,7 +35224,7 @@ PUBLIC	?clear@?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?clear@?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@QAEXXZ
 _TEXT	SEGMENT
-$T256341 = -4						; size = 4
+$T256383 = -4						; size = 4
 ?clear@?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@QAEXXZ PROC ; std::vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >::clear, COMDAT
 ; _this$ = ecx
 
@@ -35241,7 +35238,7 @@ $T256341 = -4						; size = 4
 	mov	edx, DWORD PTR [ecx+4]
 	push	eax
 	push	edx
-	lea	eax, DWORD PTR $T256341[esp+12]
+	lea	eax, DWORD PTR $T256383[esp+12]
 	push	eax
 	call	?erase@?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@QAE?AV?$_Vector_iterator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@2@V?$_Vector_const_iterator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@2@0@Z ; std::vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >::erase
 
@@ -35425,9 +35422,9 @@ PUBLIC	?erase@?$vector@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@CvRepl
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?erase@?$vector@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@std@@QAE?AV?$_Vector_iterator@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@2@V?$_Vector_const_iterator@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@2@0@Z
 _TEXT	SEGMENT
-$T256991 = -4						; size = 1
-__Cat$256995 = 8					; size = 1
-$T256993 = 8						; size = 1
+$T257039 = -4						; size = 1
+__Cat$257032 = 8					; size = 1
+$T257041 = 8						; size = 1
 ___$ReturnUdt$ = 8					; size = 4
 __First_arg$ = 12					; size = 4
 __Last_arg$ = 16					; size = 4
@@ -35470,12 +35467,12 @@ __Last_arg$ = 16					; size = 4
 	push	ebx
 	push	esi
 	push	edi
-	mov	BYTE PTR $T256991[esp+20], 0
-	mov	esi, DWORD PTR $T256991[esp+20]
+	mov	BYTE PTR $T257039[esp+20], 0
+	mov	esi, DWORD PTR $T257039[esp+20]
 	push	esi
-	mov	esi, DWORD PTR __Cat$256995[esp+20]
+	mov	esi, DWORD PTR __Cat$257032[esp+20]
 	push	esi
-	mov	esi, DWORD PTR $T256993[esp+24]
+	mov	esi, DWORD PTR $T257041[esp+24]
 	push	esi
 	push	ecx
 	push	eax
@@ -35589,8 +35586,8 @@ PUBLIC	??$?6V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\fireplace\include\fireworks\fstlcontainerserialization.h
 ;	COMDAT ??$?6V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@@YAAAVFDataStream@@AAV0@ABV?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@std@@@Z
 _TEXT	SEGMENT
-$T257185 = -8						; size = 8
-$T257196 = 8						; size = 4
+$T257227 = -8						; size = 8
+$T257238 = 8						; size = 4
 _saveTo$ = 8						; size = 4
 _readFrom$ = 12						; size = 4
 ??$?6V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@@YAAAVFDataStream@@AAV0@ABV?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@std@@@Z PROC ; operator<<<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > > >, COMDAT
@@ -35612,11 +35609,11 @@ _readFrom$ = 12						; size = 4
 	push	edi
 	mov	edi, DWORD PTR _saveTo$[esp+12]
 	shr	eax, 31					; 0000001fH
-	lea	ecx, DWORD PTR $T257196[esp+12]
+	lea	ecx, DWORD PTR $T257238[esp+12]
 	add	eax, edx
 	push	ecx
 	mov	ecx, edi
-	mov	DWORD PTR $T257196[esp+16], eax
+	mov	DWORD PTR $T257238[esp+16], eax
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 	mov	eax, DWORD PTR [esi+8]
 	mov	ecx, DWORD PTR [esi+4]
@@ -35624,7 +35621,7 @@ _readFrom$ = 12						; size = 4
 	push	edi
 	push	eax
 	push	ecx
-	lea	edx, DWORD PTR $T257185[esp+32]
+	lea	edx, DWORD PTR $T257227[esp+32]
 	push	edx
 	call	??$for_each@V?$_Vector_const_iterator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@std@@U?$SerializeFromSequenceContainer@$$CBV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@$$CBV?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@2@@@@std@@YA?AU?$SerializeFromSequenceContainer@$$CBV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@$$CBV?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@2@@@V?$_Vector_const_iterator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@0@0U1@@Z ; std::for_each<std::_Vector_const_iterator<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > >,std::allocator<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > > > >,SerializeFromSequenceContainer<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > > const ,std::vector<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > >,std::allocator<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > > > > const > >
 	add	esp, 20					; 00000014H
@@ -35646,9 +35643,9 @@ PUBLIC	??$unchecked_copy@PAV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$al
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xutility
 ;	COMDAT ??$unchecked_copy@PAV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@PAV12@@stdext@@YAPAV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@PAV12@00@Z
 _TEXT	SEGMENT
-$T257223 = -4						; size = 1
-__Cat$257229 = -4					; size = 1
-$T257225 = -4						; size = 1
+$T257265 = -4						; size = 1
+__Cat$257271 = -4					; size = 1
+$T257267 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
@@ -35661,10 +35658,10 @@ __Dest$ = 16						; size = 4
 ; 3605 : 		return (_STD _Copy_opt(_CHECKED_BASE(_First), _CHECKED_BASE(_Last), _Dest,
 ; 3606 : 			_STD _Iter_random(_First, _Dest), _STD _Ptr_cat(_First, _Dest), _STD _Range_checked_iterator_tag()));
 
-	mov	BYTE PTR $T257223[esp+4], 0
-	mov	eax, DWORD PTR $T257223[esp+4]
-	mov	ecx, DWORD PTR __Cat$257229[esp+4]
-	mov	edx, DWORD PTR $T257225[esp+4]
+	mov	BYTE PTR $T257265[esp+4], 0
+	mov	eax, DWORD PTR $T257265[esp+4]
+	mov	ecx, DWORD PTR __Cat$257271[esp+4]
+	mov	edx, DWORD PTR $T257267[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -35701,10 +35698,10 @@ PUBLIC	??$_Umove@PAUPlayerInfo@CvReplayInfo@@@?$vector@UPlayerInfo@CvReplayInfo@
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\vector
 ;	COMDAT ??$_Umove@PAUPlayerInfo@CvReplayInfo@@@?$vector@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@std@@IAEPAUPlayerInfo@CvReplayInfo@@PAU23@00@Z
 _TEXT	SEGMENT
-$T257284 = -4						; size = 1
+$T257326 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$257287 = 16					; size = 1
+__Cat$257329 = 16					; size = 1
 __Ptr$ = 16						; size = 4
 ??$_Umove@PAUPlayerInfo@CvReplayInfo@@@?$vector@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@std@@IAEPAUPlayerInfo@CvReplayInfo@@PAU23@00@Z PROC ; std::vector<CvReplayInfo::PlayerInfo,std::allocator<CvReplayInfo::PlayerInfo> >::_Umove<CvReplayInfo::PlayerInfo *>, COMDAT
 ; _this$ = ecx
@@ -35717,9 +35714,9 @@ __Ptr$ = 16						; size = 4
 ; 1147 : 		return (_STDEXT _Unchecked_uninitialized_move(_First, _Last,
 ; 1148 : 			_Ptr, this->_Alval));
 
-	mov	edx, DWORD PTR __Cat$257287[esp]
-	mov	BYTE PTR $T257284[esp+4], 0
-	mov	eax, DWORD PTR $T257284[esp+4]
+	mov	edx, DWORD PTR __Cat$257329[esp]
+	mov	BYTE PTR $T257326[esp+4], 0
+	mov	eax, DWORD PTR $T257326[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Ptr$[esp+4]
 	push	edx
@@ -35771,8 +35768,8 @@ __ehfuncinfo$??$SerializeToSequenceContainer@V?$basic_string@DU?$char_traits@D@s
 xdata$x	ENDS
 ;	COMDAT ??$SerializeToSequenceContainer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@2@@@YAXAAVFDataStream@@AAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
 _TEXT	SEGMENT
-$T257344 = -44						; size = 4
-_v$229209 = -40						; size = 28
+$T257386 = -44						; size = 4
+_v$229251 = -40						; size = 28
 __$EHRec$ = -12						; size = 12
 _loadFrom$ = 8						; size = 4
 _count$ = 12						; size = 4
@@ -35798,7 +35795,7 @@ _container$ = 12					; size = 4
 	mov	ecx, DWORD PTR [edi+4]
 	push	eax
 	push	ecx
-	lea	eax, DWORD PTR $T257344[esp+64]
+	lea	eax, DWORD PTR $T257386[esp+64]
 	push	eax
 	mov	ecx, edi
 	call	?erase@?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@QAE?AV?$_Vector_iterator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@2@V?$_Vector_const_iterator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@2@0@Z ; std::vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >::erase
@@ -35824,12 +35821,12 @@ $LL3@SerializeT@2:
 ; 89   : 	{
 ; 90   : 		ElementType v;
 
-	lea	ecx, DWORD PTR _v$229209[esp+56]
+	lea	ecx, DWORD PTR _v$229251[esp+56]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
 ; 91   : 		loadFrom >> v;
 
-	lea	edx, DWORD PTR _v$229209[esp+56]
+	lea	edx, DWORD PTR _v$229251[esp+56]
 	push	edx
 	push	ebx
 	mov	DWORD PTR __$EHRec$[esp+72], 0
@@ -35838,14 +35835,14 @@ $LL3@SerializeT@2:
 
 ; 92   : 		container.push_back(v);
 
-	lea	eax, DWORD PTR _v$229209[esp+56]
+	lea	eax, DWORD PTR _v$229251[esp+56]
 	push	eax
 	mov	ecx, edi
 	call	?push_back@?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@QAEXABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@@Z ; std::vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >::push_back
 
 ; 93   : 	}
 
-	lea	ecx, DWORD PTR _v$229209[esp+56]
+	lea	ecx, DWORD PTR _v$229251[esp+56]
 	mov	DWORD PTR __$EHRec$[esp+64], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 	inc	esi
@@ -35866,7 +35863,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$??$SerializeToSequenceContainer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@2@@@YAXAAVFDataStream@@AAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z$0:
-	lea	ecx, DWORD PTR _v$229209[ebp]
+	lea	ecx, DWORD PTR _v$229251[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __ehhandler$??$SerializeToSequenceContainer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@2@@@YAXAAVFDataStream@@AAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$??$SerializeToSequenceContainer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@2@@@YAXAAVFDataStream@@AAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
@@ -35982,9 +35979,9 @@ __ehfuncinfo$?construct@?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@s
 xdata$x	ENDS
 ;	COMDAT ?construct@?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@std@@QAEXPAV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@2@ABV32@@Z
 _TEXT	SEGMENT
-$T257417 = -16						; size = 4
+$T257459 = -16						; size = 4
 __$EHRec$ = -12						; size = 12
-__Vptr$257425 = 8					; size = 4
+__Vptr$257467 = 8					; size = 4
 __Ptr$ = 8						; size = 4
 __Val$ = 12						; size = 4
 ?construct@?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@std@@QAEXPAV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@2@ABV32@@Z PROC ; std::allocator<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > > >::construct, COMDAT
@@ -36002,8 +35999,8 @@ __Val$ = 12						; size = 4
 ; 155  : 		_Construct(_Ptr, _Val);
 
 	mov	ecx, DWORD PTR __Ptr$[esp+12]
-	mov	DWORD PTR __Vptr$257425[esp+12], ecx
-	mov	DWORD PTR $T257417[esp+16], ecx
+	mov	DWORD PTR __Vptr$257467[esp+12], ecx
+	mov	DWORD PTR $T257459[esp+16], ecx
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	ecx, ecx
 	je	SHORT $LN5@construct@10
@@ -36022,9 +36019,9 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?construct@?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@std@@QAEXPAV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@2@ABV32@@Z$0:
-	mov	eax, DWORD PTR __Vptr$257425[ebp-4]
+	mov	eax, DWORD PTR __Vptr$257467[ebp-4]
 	push	eax
-	mov	ecx, DWORD PTR $T257417[ebp]
+	mov	ecx, DWORD PTR $T257459[ebp]
 	push	ecx
 	call	??3@YAXPAX0@Z				; operator delete
 	add	esp, 8
@@ -36146,7 +36143,7 @@ __ehfuncinfo$??$_Construct@VCvReplayMessage@@V1@@std@@YAXPAVCvReplayMessage@@ABV
 xdata$x	ENDS
 ;	COMDAT ??$_Construct@VCvReplayMessage@@V1@@std@@YAXPAVCvReplayMessage@@ABV1@@Z
 _TEXT	SEGMENT
-$T257457 = -16						; size = 4
+$T257499 = -16						; size = 4
 __$EHRec$ = -12						; size = 12
 __Vptr$ = 8						; size = 4
 __Ptr$ = 8						; size = 4
@@ -36169,7 +36166,7 @@ __Val$ = 12						; size = 4
 
 ; 52   : 	::new (_Vptr) _T1(_Val);
 
-	mov	DWORD PTR $T257457[esp+16], ecx
+	mov	DWORD PTR $T257499[esp+16], ecx
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	ecx, ecx
 	je	SHORT $LN3@Construct@11
@@ -36190,7 +36187,7 @@ text$x	SEGMENT
 __unwindfunclet$??$_Construct@VCvReplayMessage@@V1@@std@@YAXPAVCvReplayMessage@@ABV1@@Z$0:
 	mov	eax, DWORD PTR __Vptr$[ebp-4]
 	push	eax
-	mov	ecx, DWORD PTR $T257457[ebp]
+	mov	ecx, DWORD PTR $T257499[ebp]
 	push	ecx
 	call	??3@YAXPAX0@Z				; operator delete
 	add	esp, 8
@@ -36205,9 +36202,9 @@ PUBLIC	??$unchecked_copy@PAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@s
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xutility
 ;	COMDAT ??$unchecked_copy@PAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@PAV12@@stdext@@YAPAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@PAV12@00@Z
 _TEXT	SEGMENT
-$T257473 = -4						; size = 1
-__Cat$257478 = -4					; size = 1
-$T257475 = -4						; size = 1
+$T257515 = -4						; size = 1
+__Cat$257520 = -4					; size = 1
+$T257517 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
@@ -36220,10 +36217,10 @@ __Dest$ = 16						; size = 4
 ; 3605 : 		return (_STD _Copy_opt(_CHECKED_BASE(_First), _CHECKED_BASE(_Last), _Dest,
 ; 3606 : 			_STD _Iter_random(_First, _Dest), _STD _Ptr_cat(_First, _Dest), _STD _Range_checked_iterator_tag()));
 
-	mov	BYTE PTR $T257473[esp+4], 0
-	mov	eax, DWORD PTR $T257473[esp+4]
-	mov	ecx, DWORD PTR __Cat$257478[esp+4]
-	mov	edx, DWORD PTR $T257475[esp+4]
+	mov	BYTE PTR $T257515[esp+4], 0
+	mov	eax, DWORD PTR $T257515[esp+4]
+	mov	ecx, DWORD PTR __Cat$257520[esp+4]
+	mov	edx, DWORD PTR $T257517[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -36246,7 +36243,7 @@ PUBLIC	??$_Destroy@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xmemory
 ;	COMDAT ??$_Destroy@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@std@@YAXPAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@0@@Z
 _TEXT	SEGMENT
-$T257665 = 8						; size = 4
+$T257707 = 8						; size = 4
 __Ptr$ = 8						; size = 4
 ??$_Destroy@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@std@@YAXPAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@0@@Z PROC ; std::_Destroy<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > >, COMDAT
 
@@ -36261,7 +36258,7 @@ __Ptr$ = 8						; size = 4
 	mov	ecx, DWORD PTR [eax]
 	push	eax
 	push	ecx
-	lea	eax, DWORD PTR $T257665[esp+8]
+	lea	eax, DWORD PTR $T257707[esp+8]
 	push	eax
 	mov	ecx, esi
 	call	?erase@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@0@Z ; std::_Tree<std::_Tmap_traits<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> >,0> >::erase
@@ -36283,7 +36280,7 @@ PUBLIC	??_G?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??_G?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@QAEPAXI@Z
 _TEXT	SEGMENT
-$T257836 = -4						; size = 4
+$T257878 = -4						; size = 4
 ___flags$ = 8						; size = 4
 ??_G?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@QAEPAXI@Z PROC ; std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > >::`scalar deleting destructor', COMDAT
 ; _this$ = ecx
@@ -36294,7 +36291,7 @@ ___flags$ = 8						; size = 4
 	mov	ecx, DWORD PTR [eax]
 	push	eax
 	push	ecx
-	lea	eax, DWORD PTR $T257836[esp+16]
+	lea	eax, DWORD PTR $T257878[esp+16]
 	push	eax
 	mov	ecx, esi
 	call	?erase@?$_Tree@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@0@Z ; std::_Tree<std::_Tmap_traits<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> >,0> >::erase
@@ -36343,8 +36340,8 @@ PUBLIC	?push_back@?$vector@W4GameOptionTypes@@V?$allocator@W4GameOptionTypes@@@s
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\vector
 ;	COMDAT ?push_back@?$vector@W4GameOptionTypes@@V?$allocator@W4GameOptionTypes@@@std@@@std@@QAEXABW4GameOptionTypes@@@Z
 _TEXT	SEGMENT
-$T257903 = -4						; size = 1
-__Cat$257906 = 8					; size = 1
+$T257945 = -4						; size = 1
+__Cat$257948 = 8					; size = 1
 __Val$ = 8						; size = 4
 ?push_back@?$vector@W4GameOptionTypes@@V?$allocator@W4GameOptionTypes@@@std@@@std@@QAEXABW4GameOptionTypes@@@Z PROC ; std::vector<enum GameOptionTypes,std::allocator<enum GameOptionTypes> >::push_back, COMDAT
 ; _this$ = ecx
@@ -36385,10 +36382,10 @@ $LN10@push_back@2:
 ; 818  :  #else /* _HAS_ITERATOR_DEBUGGING */
 ; 819  : 			_Mylast = _Ufill(_Mylast, 1, _Val);
 
-	mov	ecx, DWORD PTR __Cat$257906[esp+8]
+	mov	ecx, DWORD PTR __Cat$257948[esp+8]
 	mov	edx, DWORD PTR __Val$[esp+8]
-	mov	BYTE PTR $T257903[esp+12], 0
-	mov	eax, DWORD PTR $T257903[esp+12]
+	mov	BYTE PTR $T257945[esp+12], 0
+	mov	eax, DWORD PTR $T257945[esp+12]
 	push	eax
 	push	ecx
 	push	esi
@@ -36432,8 +36429,8 @@ PUBLIC	?push_back@?$vector@W4VictoryTypes@@V?$allocator@W4VictoryTypes@@@std@@@s
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?push_back@?$vector@W4VictoryTypes@@V?$allocator@W4VictoryTypes@@@std@@@std@@QAEXABW4VictoryTypes@@@Z
 _TEXT	SEGMENT
-$T258051 = -4						; size = 1
-__Cat$258054 = 8					; size = 1
+$T258091 = -4						; size = 1
+__Cat$258095 = 8					; size = 1
 __Val$ = 8						; size = 4
 ?push_back@?$vector@W4VictoryTypes@@V?$allocator@W4VictoryTypes@@@std@@@std@@QAEXABW4VictoryTypes@@@Z PROC ; std::vector<enum VictoryTypes,std::allocator<enum VictoryTypes> >::push_back, COMDAT
 ; _this$ = ecx
@@ -36474,10 +36471,10 @@ $LN10@push_back@3:
 ; 818  :  #else /* _HAS_ITERATOR_DEBUGGING */
 ; 819  : 			_Mylast = _Ufill(_Mylast, 1, _Val);
 
-	mov	ecx, DWORD PTR __Cat$258054[esp+8]
+	mov	ecx, DWORD PTR __Cat$258095[esp+8]
 	mov	edx, DWORD PTR __Val$[esp+8]
-	mov	BYTE PTR $T258051[esp+12], 0
-	mov	eax, DWORD PTR $T258051[esp+12]
+	mov	BYTE PTR $T258091[esp+12], 0
+	mov	eax, DWORD PTR $T258091[esp+12]
 	push	eax
 	push	ecx
 	push	esi
@@ -36533,7 +36530,7 @@ PUBLIC	?clear@?$vector@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@CvRepl
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?clear@?$vector@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@std@@QAEXXZ
 _TEXT	SEGMENT
-$T258174 = -4						; size = 4
+$T258216 = -4						; size = 4
 ?clear@?$vector@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@std@@QAEXXZ PROC ; std::vector<CvReplayInfo::PlayerInfo,std::allocator<CvReplayInfo::PlayerInfo> >::clear, COMDAT
 ; _this$ = ecx
 
@@ -36547,7 +36544,7 @@ $T258174 = -4						; size = 4
 	mov	edx, DWORD PTR [ecx+4]
 	push	eax
 	push	edx
-	lea	eax, DWORD PTR $T258174[esp+12]
+	lea	eax, DWORD PTR $T258216[esp+12]
 	push	eax
 	call	?erase@?$vector@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@std@@QAE?AV?$_Vector_iterator@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@2@V?$_Vector_const_iterator@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@2@0@Z ; std::vector<CvReplayInfo::PlayerInfo,std::allocator<CvReplayInfo::PlayerInfo> >::erase
 
@@ -36604,20 +36601,20 @@ __unwindtable$?_Insert_n@?$vector@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayer
 xdata$x	ENDS
 ;	COMDAT ?_Insert_n@?$vector@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@std@@IAEXV?$_Vector_const_iterator@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@2@IABUPlayerInfo@CvReplayInfo@@@Z
 _TEXT	SEGMENT
-__Tmp$225643 = -288					; size = 128
-__Tmp$225633 = -160					; size = 128
-__Ncopied$225620 = -32					; size = 4
+__Tmp$225685 = -288					; size = 128
+__Tmp$225675 = -160					; size = 128
+__Ncopied$225662 = -32					; size = 4
 _this$ = -28						; size = 4
-__Whereoff$225619 = -24					; size = 4
-__Newvec$225618 = -20					; size = 4
+__Whereoff$225661 = -24					; size = 4
+__Newvec$225660 = -20					; size = 4
 __$EHRec$ = -16						; size = 16
-__Cat$258413 = 8					; size = 1
-__Cat$258341 = 8					; size = 1
+__Cat$258455 = 8					; size = 1
+__Cat$258383 = 8					; size = 1
 __Where$ = 8						; size = 4
 tv516 = 12						; size = 4
 __Count$ = 12						; size = 4
-$T258410 = 16						; size = 1
-$T258338 = 16						; size = 1
+$T258452 = 16						; size = 1
+$T258380 = 16						; size = 1
 __Val$ = 16						; size = 4
 ?_Insert_n@?$vector@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@std@@IAEXV?$_Vector_const_iterator@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@2@IABUPlayerInfo@CvReplayInfo@@@Z PROC ; std::vector<CvReplayInfo::PlayerInfo,std::allocator<CvReplayInfo::PlayerInfo> >::_Insert_n, COMDAT
 ; _this$ = ecx
@@ -36732,8 +36729,8 @@ $LN9@Insert_n@4:
 	xor	edx, edx
 	sar	ecx, 7
 	add	esp, 8
-	mov	DWORD PTR __Whereoff$225619[ebp], ecx
-	mov	DWORD PTR __Ncopied$225620[ebp], edx
+	mov	DWORD PTR __Whereoff$225661[ebp], ecx
+	mov	DWORD PTR __Ncopied$225662[ebp], edx
 
 ; 1176 : 
 ; 1177 : 			_TRY_BEGIN
@@ -36749,49 +36746,49 @@ $LN9@Insert_n@4:
 	push	edi
 	push	ecx
 	mov	ecx, esi
-	mov	DWORD PTR __Newvec$225618[ebp], eax
+	mov	DWORD PTR __Newvec$225660[ebp], eax
 	call	?_Ufill@?$vector@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@std@@IAEPAUPlayerInfo@CvReplayInfo@@PAU34@IABU34@@Z ; std::vector<CvReplayInfo::PlayerInfo,std::allocator<CvReplayInfo::PlayerInfo> >::_Ufill
 
 ; 1179 : 			++_Ncopied;
 ; 1180 : 			_Umove(this->_Myfirst, _VEC_ITER_BASE(_Where),
 ; 1181 : 				_Newvec);	// move prefix
 
-	mov	edx, DWORD PTR __Cat$258341[ebp]
+	mov	edx, DWORD PTR __Cat$258383[ebp]
 	mov	eax, DWORD PTR [esi+4]
-	mov	BYTE PTR $T258338[ebp], 0
-	mov	ecx, DWORD PTR $T258338[ebp]
+	mov	BYTE PTR $T258380[ebp], 0
+	mov	ecx, DWORD PTR $T258380[ebp]
 	push	ecx
-	mov	ecx, DWORD PTR __Newvec$225618[ebp]
+	mov	ecx, DWORD PTR __Newvec$225660[ebp]
 	push	edx
 	mov	edx, DWORD PTR __Where$[ebp]
 	push	esi
 	push	ecx
 	push	edx
 	push	eax
-	mov	DWORD PTR __Ncopied$225620[ebp], 1
+	mov	DWORD PTR __Ncopied$225662[ebp], 1
 	call	??$_Uninit_copy@PAUPlayerInfo@CvReplayInfo@@PAU12@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@std@@YAPAUPlayerInfo@CvReplayInfo@@PAU12@00AAV?$allocator@UPlayerInfo@CvReplayInfo@@@0@U_Nonscalar_ptr_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z ; std::_Uninit_copy<CvReplayInfo::PlayerInfo *,CvReplayInfo::PlayerInfo *,std::allocator<CvReplayInfo::PlayerInfo> >
 
 ; 1182 : 			++_Ncopied;
 ; 1183 : 			_Umove(_VEC_ITER_BASE(_Where), this->_Mylast,
 ; 1184 : 				_Newvec + (_Whereoff + _Count));	// move suffix
 
-	mov	eax, DWORD PTR __Whereoff$225619[ebp]
+	mov	eax, DWORD PTR __Whereoff$225661[ebp]
 	mov	ecx, DWORD PTR [esi+8]
 	add	esp, 24					; 00000018H
 	add	eax, edi
-	mov	BYTE PTR $T258410[ebp], 0
-	mov	edx, DWORD PTR $T258410[ebp]
+	mov	BYTE PTR $T258452[ebp], 0
+	mov	edx, DWORD PTR $T258452[ebp]
 	push	edx
-	mov	edx, DWORD PTR __Cat$258413[ebp]
+	mov	edx, DWORD PTR __Cat$258455[ebp]
 	push	edx
 	shl	eax, 7
-	add	eax, DWORD PTR __Newvec$225618[ebp]
+	add	eax, DWORD PTR __Newvec$225660[ebp]
 	push	esi
 	push	eax
 	mov	eax, DWORD PTR __Where$[ebp]
 	push	ecx
 	push	eax
-	mov	DWORD PTR __Ncopied$225620[ebp], 2
+	mov	DWORD PTR __Ncopied$225662[ebp], 2
 	call	??$_Uninit_copy@PAUPlayerInfo@CvReplayInfo@@PAU12@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@std@@YAPAUPlayerInfo@CvReplayInfo@@PAU12@00AAV?$allocator@UPlayerInfo@CvReplayInfo@@@0@U_Nonscalar_ptr_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z ; std::_Uninit_copy<CvReplayInfo::PlayerInfo *,CvReplayInfo::PlayerInfo *,std::allocator<CvReplayInfo::PlayerInfo> >
 
 ; 1192 : 			_CATCH_END
@@ -36836,7 +36833,7 @@ $LN83@Insert_n@4:
 ; 1204 : 
 ; 1205 : 			_Myend = _Newvec + _Capacity;
 
-	mov	eax, DWORD PTR __Newvec$225618[ebp]
+	mov	eax, DWORD PTR __Newvec$225660[ebp]
 	shl	ebx, 7
 	add	ebx, eax
 
@@ -36866,13 +36863,13 @@ __catch$?_Insert_n@?$vector@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@C
 ; 1185 : 			_CATCH_ALL
 ; 1186 : 			if (1 < _Ncopied)
 
-	mov	ebx, DWORD PTR __Ncopied$225620[ebp]
+	mov	ebx, DWORD PTR __Ncopied$225662[ebp]
 	cmp	ebx, 1
 
 ; 1187 : 				_Destroy(_Newvec, _Newvec + _Whereoff);
 
-	mov	esi, DWORD PTR __Whereoff$225619[ebp]
-	mov	edi, DWORD PTR __Newvec$225618[ebp]
+	mov	esi, DWORD PTR __Whereoff$225661[ebp]
+	mov	edi, DWORD PTR __Newvec$225660[ebp]
 	jle	SHORT $LN7@Insert_n@4
 	mov	ecx, esi
 	shl	ecx, 7
@@ -36929,7 +36926,7 @@ $LN10@Insert_n@4:
 
 	mov	ecx, DWORD PTR __Val$[ebp]
 	push	ecx
-	lea	ecx, DWORD PTR __Tmp$225633[ebp]
+	lea	ecx, DWORD PTR __Tmp$225675[ebp]
 	call	??0PlayerInfo@CvReplayInfo@@QAE@ABU01@@Z
 
 ; 1212 : 
@@ -36956,7 +36953,7 @@ $LN10@Insert_n@4:
 	mov	eax, DWORD PTR [esi+8]
 	mov	ecx, eax
 	sub	ecx, DWORD PTR __Where$[ebp]
-	lea	edx, DWORD PTR __Tmp$225633[ebp]
+	lea	edx, DWORD PTR __Tmp$225675[ebp]
 	sar	ecx, 7
 	push	edx
 	sub	edi, ecx
@@ -36982,7 +36979,7 @@ $LN10@Insert_n@4:
 ; 1231 : 				_Tmp);	// insert up to old end
 
 	mov	eax, DWORD PTR __Where$[ebp]
-	lea	edx, DWORD PTR __Tmp$225633[ebp]
+	lea	edx, DWORD PTR __Tmp$225675[ebp]
 	push	edx
 	sub	esi, ebx
 	push	esi
@@ -36993,7 +36990,7 @@ $LN10@Insert_n@4:
 
 ; 1232 : 			}
 
-	lea	ecx, DWORD PTR __Tmp$225633[ebp]
+	lea	ecx, DWORD PTR __Tmp$225675[ebp]
 
 ; 1233 : 		else
 
@@ -37027,7 +37024,7 @@ $LN3@Insert_n@4:
 
 	mov	eax, DWORD PTR __Val$[ebp]
 	push	eax
-	lea	ecx, DWORD PTR __Tmp$225643[ebp]
+	lea	ecx, DWORD PTR __Tmp$225685[ebp]
 	call	??0PlayerInfo@CvReplayInfo@@QAE@ABU01@@Z
 
 ; 1236 : 
@@ -37070,7 +37067,7 @@ $LN3@Insert_n@4:
 
 	mov	eax, DWORD PTR __Where$[ebp]
 	mov	ecx, DWORD PTR tv516[ebp]
-	lea	edx, DWORD PTR __Tmp$225643[ebp]
+	lea	edx, DWORD PTR __Tmp$225685[ebp]
 	push	edx
 	add	ecx, eax
 	push	ecx
@@ -37080,7 +37077,7 @@ $LN3@Insert_n@4:
 
 ; 1249 : 			}
 
-	lea	ecx, DWORD PTR __Tmp$225643[ebp]
+	lea	ecx, DWORD PTR __Tmp$225685[ebp]
 $LN94@Insert_n@4:
 	mov	DWORD PTR __$EHRec$[ebp+12], -1
 	call	??1PlayerInfo@CvReplayInfo@@QAE@XZ
@@ -37101,10 +37098,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Insert_n@?$vector@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@std@@IAEXV?$_Vector_const_iterator@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@2@IABUPlayerInfo@CvReplayInfo@@@Z$4:
-	lea	ecx, DWORD PTR __Tmp$225633[ebp]
+	lea	ecx, DWORD PTR __Tmp$225675[ebp]
 	jmp	??1PlayerInfo@CvReplayInfo@@QAE@XZ
 __unwindfunclet$?_Insert_n@?$vector@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@std@@IAEXV?$_Vector_const_iterator@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@2@IABUPlayerInfo@CvReplayInfo@@@Z$5:
-	lea	ecx, DWORD PTR __Tmp$225643[ebp]
+	lea	ecx, DWORD PTR __Tmp$225685[ebp]
 	jmp	??1PlayerInfo@CvReplayInfo@@QAE@XZ
 __ehhandler$?_Insert_n@?$vector@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@std@@IAEXV?$_Vector_const_iterator@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@2@IABUPlayerInfo@CvReplayInfo@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?_Insert_n@?$vector@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@std@@IAEXV?$_Vector_const_iterator@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@2@IABUPlayerInfo@CvReplayInfo@@@Z
@@ -37150,7 +37147,7 @@ PUBLIC	??$?6V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@
 ;	COMDAT ??$?6V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@@YAAAVFDataStream@@AAV0@ABV?$vector@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@2@@std@@@Z
 _TEXT	SEGMENT
 _saveTo$ = 8						; size = 4
-$T258474 = 12						; size = 4
+$T258516 = 12						; size = 4
 _readFrom$ = 12						; size = 4
 ??$?6V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@@YAAAVFDataStream@@AAV0@ABV?$vector@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@2@@std@@@Z PROC ; operator<<<std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > > >, COMDAT
 
@@ -37166,11 +37163,11 @@ _readFrom$ = 12						; size = 4
 	mov	eax, DWORD PTR [esi+8]
 	sub	eax, DWORD PTR [esi+4]
 	push	edi
-	lea	ecx, DWORD PTR $T258474[esp+8]
+	lea	ecx, DWORD PTR $T258516[esp+8]
 	sar	eax, 4
 	push	ecx
 	mov	ecx, ebx
-	mov	DWORD PTR $T258474[esp+12], eax
+	mov	DWORD PTR $T258516[esp+12], eax
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 	mov	edi, DWORD PTR [esi+8]
 	mov	esi, DWORD PTR [esi+4]
@@ -37204,11 +37201,11 @@ EXTRN	??5@YAAAVFDataStream@@AAV0@AAW4GameOptionTypes@@@Z:PROC ; operator>>
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$SerializeToSequenceContainer@W4GameOptionTypes@@V?$vector@W4GameOptionTypes@@V?$allocator@W4GameOptionTypes@@@std@@@std@@@@YAXAAVFDataStream@@AAV?$vector@W4GameOptionTypes@@V?$allocator@W4GameOptionTypes@@@std@@@std@@@Z
 _TEXT	SEGMENT
-_v$229182 = -12						; size = 4
+_v$229224 = -12						; size = 4
 _i$ = -8						; size = 4
-$T258922 = -4						; size = 1
+$T258964 = -4						; size = 1
 _loadFrom$ = 8						; size = 4
-__Cat$258925 = 12					; size = 1
+__Cat$258967 = 12					; size = 1
 _count$ = 12						; size = 4
 _container$ = 12					; size = 4
 ??$SerializeToSequenceContainer@W4GameOptionTypes@@V?$vector@W4GameOptionTypes@@V?$allocator@W4GameOptionTypes@@@std@@@std@@@@YAXAAVFDataStream@@AAV?$vector@W4GameOptionTypes@@V?$allocator@W4GameOptionTypes@@@std@@@std@@@Z PROC ; SerializeToSequenceContainer<enum GameOptionTypes,std::vector<enum GameOptionTypes,std::allocator<enum GameOptionTypes> > >, COMDAT
@@ -37259,7 +37256,7 @@ $LN20@SerializeT@3:
 	cmp	DWORD PTR _count$[esp+20], ebx
 	jbe	SHORT $LN1@SerializeT@3
 	push	ebp
-	mov	ebp, DWORD PTR __Cat$258925[esp+24]
+	mov	ebp, DWORD PTR __Cat$258967[esp+24]
 $LL104@SerializeT@3:
 
 ; 89   : 	{
@@ -37267,7 +37264,7 @@ $LL104@SerializeT@3:
 ; 91   : 		loadFrom >> v;
 
 	mov	edx, DWORD PTR _loadFrom$[esp+24]
-	lea	ecx, DWORD PTR _v$229182[esp+28]
+	lea	ecx, DWORD PTR _v$229224[esp+28]
 	push	ecx
 	push	edx
 	call	??5@YAAAVFDataStream@@AAV0@AAW4GameOptionTypes@@@Z ; operator>>
@@ -37291,12 +37288,12 @@ $LN61@SerializeT@3:
 	sar	edx, 2
 	cmp	edx, eax
 	jae	SHORT $LN53@SerializeT@3
-	mov	BYTE PTR $T258922[esp+28], bl
-	mov	eax, DWORD PTR $T258922[esp+28]
+	mov	BYTE PTR $T258964[esp+28], bl
+	mov	eax, DWORD PTR $T258964[esp+28]
 	push	eax
 	push	ebp
 	push	esi
-	lea	ecx, DWORD PTR _v$229182[esp+40]
+	lea	ecx, DWORD PTR _v$229224[esp+40]
 	push	ecx
 	push	1
 	push	edi
@@ -37306,7 +37303,7 @@ $LN61@SerializeT@3:
 	mov	DWORD PTR [esi+8], edi
 	jmp	SHORT $LN2@SerializeT@3
 $LN53@SerializeT@3:
-	lea	edx, DWORD PTR _v$229182[esp+28]
+	lea	edx, DWORD PTR _v$229224[esp+28]
 	push	edx
 	push	1
 	push	edi
@@ -37336,11 +37333,11 @@ EXTRN	??5@YAAAVFDataStream@@AAV0@AAW4VictoryTypes@@@Z:PROC ; operator>>
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$SerializeToSequenceContainer@W4VictoryTypes@@V?$vector@W4VictoryTypes@@V?$allocator@W4VictoryTypes@@@std@@@std@@@@YAXAAVFDataStream@@AAV?$vector@W4VictoryTypes@@V?$allocator@W4VictoryTypes@@@std@@@std@@@Z
 _TEXT	SEGMENT
-_v$229192 = -12						; size = 4
+_v$229234 = -12						; size = 4
 _i$ = -8						; size = 4
-$T259345 = -4						; size = 1
+$T259387 = -4						; size = 1
 _loadFrom$ = 8						; size = 4
-__Cat$259349 = 12					; size = 1
+__Cat$259391 = 12					; size = 1
 _count$ = 12						; size = 4
 _container$ = 12					; size = 4
 ??$SerializeToSequenceContainer@W4VictoryTypes@@V?$vector@W4VictoryTypes@@V?$allocator@W4VictoryTypes@@@std@@@std@@@@YAXAAVFDataStream@@AAV?$vector@W4VictoryTypes@@V?$allocator@W4VictoryTypes@@@std@@@std@@@Z PROC ; SerializeToSequenceContainer<enum VictoryTypes,std::vector<enum VictoryTypes,std::allocator<enum VictoryTypes> > >, COMDAT
@@ -37391,7 +37388,7 @@ $LN20@SerializeT@4:
 	cmp	DWORD PTR _count$[esp+20], ebx
 	jbe	SHORT $LN1@SerializeT@4
 	push	ebp
-	mov	ebp, DWORD PTR __Cat$259349[esp+24]
+	mov	ebp, DWORD PTR __Cat$259391[esp+24]
 $LL104@SerializeT@4:
 
 ; 89   : 	{
@@ -37399,7 +37396,7 @@ $LL104@SerializeT@4:
 ; 91   : 		loadFrom >> v;
 
 	mov	edx, DWORD PTR _loadFrom$[esp+24]
-	lea	ecx, DWORD PTR _v$229192[esp+28]
+	lea	ecx, DWORD PTR _v$229234[esp+28]
 	push	ecx
 	push	edx
 	call	??5@YAAAVFDataStream@@AAV0@AAW4VictoryTypes@@@Z ; operator>>
@@ -37423,12 +37420,12 @@ $LN61@SerializeT@4:
 	sar	edx, 2
 	cmp	edx, eax
 	jae	SHORT $LN53@SerializeT@4
-	mov	BYTE PTR $T259345[esp+28], bl
-	mov	eax, DWORD PTR $T259345[esp+28]
+	mov	BYTE PTR $T259387[esp+28], bl
+	mov	eax, DWORD PTR $T259387[esp+28]
 	push	eax
 	push	ebp
 	push	esi
-	lea	ecx, DWORD PTR _v$229192[esp+40]
+	lea	ecx, DWORD PTR _v$229234[esp+40]
 	push	ecx
 	push	1
 	push	edi
@@ -37438,7 +37435,7 @@ $LN61@SerializeT@4:
 	mov	DWORD PTR [esi+8], edi
 	jmp	SHORT $LN2@SerializeT@4
 $LN53@SerializeT@4:
-	lea	edx, DWORD PTR _v$229192[esp+28]
+	lea	edx, DWORD PTR _v$229234[esp+28]
 	push	edx
 	push	1
 	push	edi
@@ -37596,8 +37593,8 @@ PUBLIC	??$_Move_backward_opt@PAVCvReplayMessage@@PAV1@Urandom_access_iterator_ta
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Move_backward_opt@PAVCvReplayMessage@@PAV1@Urandom_access_iterator_tag@std@@U_Undefined_move_tag@3@@std@@YAPAVCvReplayMessage@@PAV1@00Urandom_access_iterator_tag@0@U_Undefined_move_tag@0@U_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
-$T259428 = -4						; size = 1
-__Cat$259432 = -4					; size = 1
+$T259470 = -4						; size = 1
+__Cat$259474 = -4					; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
@@ -37614,9 +37611,9 @@ ___formal$ = 28						; size = 1
 ; 2754 : 		_First_dest_cat, _Ptr_cat(_First, _Dest), _Range_checked_iterator_tag());
 
 	mov	edx, DWORD PTR __First_dest_cat$[esp]
-	mov	BYTE PTR $T259428[esp+4], 0
-	mov	eax, DWORD PTR $T259428[esp+4]
-	mov	ecx, DWORD PTR __Cat$259432[esp+4]
+	mov	BYTE PTR $T259470[esp+4], 0
+	mov	eax, DWORD PTR $T259470[esp+4]
+	mov	ecx, DWORD PTR __Cat$259474[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -37755,9 +37752,9 @@ __ehfuncinfo$?construct@?$allocator@VCvReplayMessage@@@std@@QAEXPAVCvReplayMessa
 xdata$x	ENDS
 ;	COMDAT ?construct@?$allocator@VCvReplayMessage@@@std@@QAEXPAVCvReplayMessage@@ABV3@@Z
 _TEXT	SEGMENT
-$T260128 = -16						; size = 4
+$T260170 = -16						; size = 4
 __$EHRec$ = -12						; size = 12
-__Vptr$260134 = 8					; size = 4
+__Vptr$260176 = 8					; size = 4
 __Ptr$ = 8						; size = 4
 __Val$ = 12						; size = 4
 ?construct@?$allocator@VCvReplayMessage@@@std@@QAEXPAVCvReplayMessage@@ABV3@@Z PROC ; std::allocator<CvReplayMessage>::construct, COMDAT
@@ -37775,8 +37772,8 @@ __Val$ = 12						; size = 4
 ; 155  : 		_Construct(_Ptr, _Val);
 
 	mov	ecx, DWORD PTR __Ptr$[esp+12]
-	mov	DWORD PTR __Vptr$260134[esp+12], ecx
-	mov	DWORD PTR $T260128[esp+16], ecx
+	mov	DWORD PTR __Vptr$260176[esp+12], ecx
+	mov	DWORD PTR $T260170[esp+16], ecx
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	ecx, ecx
 	je	SHORT $LN5@construct@11
@@ -37795,9 +37792,9 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?construct@?$allocator@VCvReplayMessage@@@std@@QAEXPAVCvReplayMessage@@ABV3@@Z$0:
-	mov	eax, DWORD PTR __Vptr$260134[ebp-4]
+	mov	eax, DWORD PTR __Vptr$260176[ebp-4]
 	push	eax
-	mov	ecx, DWORD PTR $T260128[ebp]
+	mov	ecx, DWORD PTR $T260170[ebp]
 	push	ecx
 	call	??3@YAXPAX0@Z				; operator delete
 	add	esp, 8
@@ -37811,7 +37808,7 @@ PUBLIC	?destroy@?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?destroy@?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@std@@QAEXPAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@2@@Z
 _TEXT	SEGMENT
-$T260361 = 8						; size = 4
+$T260403 = 8						; size = 4
 __Ptr$ = 8						; size = 4
 ?destroy@?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@std@@QAEXPAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@2@@Z PROC ; std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > >::destroy, COMDAT
 ; _this$ = ecx
@@ -37827,7 +37824,7 @@ __Ptr$ = 8						; size = 4
 	mov	ecx, DWORD PTR [eax]
 	push	eax
 	push	ecx
-	lea	eax, DWORD PTR $T260361[esp+8]
+	lea	eax, DWORD PTR $T260403[esp+8]
 	push	eax
 	mov	ecx, esi
 	call	?erase@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@0@Z ; std::_Tree<std::_Tmap_traits<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> >,0> >::erase
@@ -37881,13 +37878,13 @@ xdata$x	ENDS
 ;	COMDAT ??$_Uninit_move@PAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@PAV12@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@YAPAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@0@PAV10@00AAV?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@0@U_Swap_move_tag@0@U_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
 __Val$ = -36						; size = 12
-$T260703 = -24						; size = 4
+$T260745 = -24						; size = 4
 __Next$ = -20						; size = 4
 __$EHRec$ = -16						; size = 16
-__Vptr$260700 = 8					; size = 4
+__Vptr$260742 = 8					; size = 4
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-$T261519 = 16						; size = 4
+$T261561 = 16						; size = 4
 __Dest$ = 16						; size = 4
 __Al$ = 20						; size = 4
 ___formal$ = 24						; size = 1
@@ -37947,8 +37944,8 @@ $LL6@Uninit_mov@2:
 ; 223  : 		{
 ; 224  : 		_Al.construct(_Dest, _Val);
 
-	mov	DWORD PTR __Vptr$260700[ebp], esi
-	mov	DWORD PTR $T260703[ebp], esi
+	mov	DWORD PTR __Vptr$260742[ebp], esi
+	mov	DWORD PTR $T260745[ebp], esi
 	mov	BYTE PTR __$EHRec$[ebp+12], 2
 	test	esi, esi
 	je	SHORT $LN68@Uninit_mov@2
@@ -38022,7 +38019,7 @@ $LN4@Uninit_mov@2:
 	mov	ecx, DWORD PTR [eax]
 	push	eax
 	push	ecx
-	lea	ecx, DWORD PTR $T261519[ebp]
+	lea	ecx, DWORD PTR $T261561[ebp]
 	push	ecx
 	lea	ecx, DWORD PTR __Val$[ebp]
 	mov	DWORD PTR __$EHRec$[ebp+12], -1
@@ -38051,9 +38048,9 @@ __unwindfunclet$??$_Uninit_move@PAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$
 	lea	ecx, DWORD PTR __Val$[ebp]
 	jmp	??1?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@QAE@XZ
 __unwindfunclet$??$_Uninit_move@PAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@PAV12@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@YAPAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@0@PAV10@00AAV?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@0@U_Swap_move_tag@0@U_Range_checked_iterator_tag@0@@Z$4:
-	mov	eax, DWORD PTR __Vptr$260700[ebp]
+	mov	eax, DWORD PTR __Vptr$260742[ebp]
 	push	eax
-	mov	ecx, DWORD PTR $T260703[ebp]
+	mov	ecx, DWORD PTR $T260745[ebp]
 	push	ecx
 	call	??3@YAXPAX0@Z				; operator delete
 	add	esp, 8
@@ -38116,8 +38113,8 @@ __ehfuncinfo$??$_Uninit_copy@V?$_Vector_const_iterator@V?$map@IHU?$less@I@std@@V
 xdata$x	ENDS
 ;	COMDAT ??$_Uninit_copy@V?$_Vector_const_iterator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@PAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@2@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@YAPAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@0@V?$_Vector_const_iterator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@0@0PAV10@AAV?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@0@U_Nonscalar_ptr_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
-$T261613 = -28						; size = 4
-__Vptr$261619 = -24					; size = 4
+$T261655 = -28						; size = 4
+__Vptr$261661 = -24					; size = 4
 __Next$ = -20						; size = 4
 __$EHRec$ = -16						; size = 16
 __First$ = 8						; size = 4
@@ -38164,8 +38161,8 @@ $LL14@Uninit_cop@6:
 
 ; 131  : 		_Al.construct(_Dest, *_First);
 
-	mov	DWORD PTR __Vptr$261619[ebp], esi
-	mov	DWORD PTR $T261613[ebp], esi
+	mov	DWORD PTR __Vptr$261661[ebp], esi
+	mov	DWORD PTR $T261655[ebp], esi
 	mov	BYTE PTR __$EHRec$[ebp+12], 1
 	cmp	esi, ebx
 	je	SHORT $LN26@Uninit_cop@6
@@ -38230,9 +38227,9 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$??$_Uninit_copy@V?$_Vector_const_iterator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@PAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@2@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@YAPAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@0@V?$_Vector_const_iterator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@0@0PAV10@AAV?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@0@U_Nonscalar_ptr_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z$2:
-	mov	eax, DWORD PTR __Vptr$261619[ebp]
+	mov	eax, DWORD PTR __Vptr$261661[ebp]
 	push	eax
-	mov	ecx, DWORD PTR $T261613[ebp]
+	mov	ecx, DWORD PTR $T261655[ebp]
 	push	ecx
 	call	??3@YAXPAX0@Z				; operator delete
 	add	esp, 8
@@ -38247,7 +38244,7 @@ PUBLIC	??$_Destroy@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xmemory
 ;	COMDAT ??$_Destroy@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@std@@YAXPAV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@0@@Z
 _TEXT	SEGMENT
-$T261817 = 8						; size = 4
+$T261859 = 8						; size = 4
 __Ptr$ = 8						; size = 4
 ??$_Destroy@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@std@@YAXPAV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@0@@Z PROC ; std::_Destroy<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > > >, COMDAT
 
@@ -38262,7 +38259,7 @@ __Ptr$ = 8						; size = 4
 	mov	ecx, DWORD PTR [eax]
 	push	eax
 	push	ecx
-	lea	eax, DWORD PTR $T261817[esp+8]
+	lea	eax, DWORD PTR $T261859[esp+8]
 	push	eax
 	mov	ecx, esi
 	call	?erase@?$_Tree@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@0@Z ; std::_Tree<std::_Tmap_traits<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> >,0> >::erase
@@ -38311,8 +38308,8 @@ __ehfuncinfo$??$_Uninit_copy@V?$_Vector_iterator@VCvReplayMessage@@V?$allocator@
 xdata$x	ENDS
 ;	COMDAT ??$_Uninit_copy@V?$_Vector_iterator@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@std@@PAVCvReplayMessage@@V?$allocator@VCvReplayMessage@@@2@@std@@YAPAVCvReplayMessage@@V?$_Vector_iterator@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@0@0PAV1@AAV?$allocator@VCvReplayMessage@@@0@U_Nonscalar_ptr_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
-$T261901 = -28						; size = 4
-__Vptr$261898 = -24					; size = 4
+$T261943 = -28						; size = 4
+__Vptr$261940 = -24					; size = 4
 __Next$ = -20						; size = 4
 __$EHRec$ = -16						; size = 16
 __First$ = 8						; size = 4
@@ -38358,8 +38355,8 @@ $LL16@Uninit_cop@7:
 
 ; 131  : 		_Al.construct(_Dest, *_First);
 
-	mov	DWORD PTR __Vptr$261898[ebp], esi
-	mov	DWORD PTR $T261901[ebp], esi
+	mov	DWORD PTR __Vptr$261940[ebp], esi
+	mov	DWORD PTR $T261943[ebp], esi
 	mov	BYTE PTR __$EHRec$[ebp+12], bl
 	test	esi, esi
 	je	SHORT $LN30@Uninit_cop@7
@@ -38424,9 +38421,9 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$??$_Uninit_copy@V?$_Vector_iterator@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@std@@PAVCvReplayMessage@@V?$allocator@VCvReplayMessage@@@2@@std@@YAPAVCvReplayMessage@@V?$_Vector_iterator@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@0@0PAV1@AAV?$allocator@VCvReplayMessage@@@0@U_Nonscalar_ptr_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z$2:
-	mov	eax, DWORD PTR __Vptr$261898[ebp]
+	mov	eax, DWORD PTR __Vptr$261940[ebp]
 	push	eax
-	mov	ecx, DWORD PTR $T261901[ebp]
+	mov	ecx, DWORD PTR $T261943[ebp]
 	push	ecx
 	call	??3@YAXPAX0@Z				; operator delete
 	add	esp, 8
@@ -38470,9 +38467,9 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 __Next$ = -20						; size = 4
 __$EHRec$ = -16						; size = 16
-$T261962 = 8						; size = 4
+$T262004 = 8						; size = 4
 __First$ = 8						; size = 4
-__Vptr$261959 = 12					; size = 4
+__Vptr$262001 = 12					; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
 __Al$ = 20						; size = 4
@@ -38515,8 +38512,8 @@ $LL6@Uninit_cop@8:
 
 ; 131  : 		_Al.construct(_Dest, *_First);
 
-	mov	DWORD PTR __Vptr$261959[ebp], esi
-	mov	DWORD PTR $T261962[ebp], esi
+	mov	DWORD PTR __Vptr$262001[ebp], esi
+	mov	DWORD PTR $T262004[ebp], esi
 	mov	BYTE PTR __$EHRec$[ebp+12], 1
 	test	esi, esi
 	je	SHORT $LN18@Uninit_cop@8
@@ -38578,9 +38575,9 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$??$_Uninit_copy@PAVCvReplayMessage@@PAV1@V?$allocator@VCvReplayMessage@@@std@@@std@@YAPAVCvReplayMessage@@PAV1@00AAV?$allocator@VCvReplayMessage@@@0@U_Nonscalar_ptr_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z$2:
-	mov	eax, DWORD PTR __Vptr$261959[ebp]
+	mov	eax, DWORD PTR __Vptr$262001[ebp]
 	push	eax
-	mov	ecx, DWORD PTR $T261962[ebp]
+	mov	ecx, DWORD PTR $T262004[ebp]
 	push	ecx
 	call	??3@YAXPAX0@Z				; operator delete
 	add	esp, 8
@@ -38622,10 +38619,10 @@ __ehfuncinfo$??$_Uninit_copy@PAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CB
 xdata$x	ENDS
 ;	COMDAT ??$_Uninit_copy@PAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@PAV12@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@YAPAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@0@PAV10@00AAV?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@0@U_Nonscalar_ptr_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
-$T262027 = -24						; size = 4
+$T262069 = -24						; size = 4
 __Next$ = -20						; size = 4
 __$EHRec$ = -16						; size = 16
-__Vptr$262024 = 8					; size = 4
+__Vptr$262066 = 8					; size = 4
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
@@ -38672,8 +38669,8 @@ $LL6@Uninit_cop@9:
 
 ; 131  : 		_Al.construct(_Dest, *_First);
 
-	mov	DWORD PTR __Vptr$262024[ebp], esi
-	mov	DWORD PTR $T262027[ebp], esi
+	mov	DWORD PTR __Vptr$262066[ebp], esi
+	mov	DWORD PTR $T262069[ebp], esi
 	mov	BYTE PTR __$EHRec$[ebp+12], 1
 	cmp	esi, ebx
 	je	SHORT $LN18@Uninit_cop@9
@@ -38735,9 +38732,9 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$??$_Uninit_copy@PAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@PAV12@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@YAPAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@0@PAV10@00AAV?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@0@U_Nonscalar_ptr_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z$2:
-	mov	eax, DWORD PTR __Vptr$262024[ebp]
+	mov	eax, DWORD PTR __Vptr$262066[ebp]
 	push	eax
-	mov	ecx, DWORD PTR $T262027[ebp]
+	mov	ecx, DWORD PTR $T262069[ebp]
 	push	ecx
 	call	??3@YAXPAX0@Z				; operator delete
 	add	esp, 8
@@ -38761,12 +38758,12 @@ EXTRN	??6@YAAAVFDataStream@@AAV0@ABW4WorldSizeTypes@@@Z:PROC ; operator<<
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredll_expansion2\cvreplayinfo.cpp
 ;	COMDAT ?write@CvReplayInfo@@QBEXAAVFDataStream@@@Z
 _TEXT	SEGMENT
-$T262229 = -8						; size = 8
-$T262121 = -8						; size = 8
-$T262231 = 8						; size = 4
-$T262124 = 8						; size = 4
-$T262051 = 8						; size = 4
-$T262050 = 8						; size = 4
+$T262271 = -8						; size = 8
+$T262171 = -8						; size = 8
+$T262273 = 8						; size = 4
+$T262174 = 8						; size = 4
+$T262093 = 8						; size = 4
+$T262092 = 8						; size = 4
 _kStream$ = 8						; size = 4
 ?write@CvReplayInfo@@QBEXAAVFDataStream@@@Z PROC	; CvReplayInfo::write, COMDAT
 ; _this$ = ecx
@@ -38914,11 +38911,11 @@ _kStream$ = 8						; size = 4
 	mov	edx, DWORD PTR [esi+152]
 	lea	ebx, DWORD PTR [esi+144]
 	sub	edx, DWORD PTR [ebx+4]
-	lea	eax, DWORD PTR $T262124[esp+16]
+	lea	eax, DWORD PTR $T262174[esp+16]
 	sar	edx, 7
 	push	eax
 	mov	ecx, edi
-	mov	DWORD PTR $T262124[esp+20], edx
+	mov	DWORD PTR $T262174[esp+20], edx
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 	mov	eax, DWORD PTR [ebx+8]
 	mov	ecx, DWORD PTR [ebx+4]
@@ -38926,7 +38923,7 @@ _kStream$ = 8						; size = 4
 	push	edi
 	push	eax
 	push	ecx
-	lea	ecx, DWORD PTR $T262121[esp+36]
+	lea	ecx, DWORD PTR $T262171[esp+36]
 	push	ecx
 	call	??$for_each@V?$_Vector_const_iterator@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@std@@U?$SerializeFromSequenceContainer@$$CBUPlayerInfo@CvReplayInfo@@$$CBV?$vector@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@std@@@@@std@@YA?AU?$SerializeFromSequenceContainer@$$CBUPlayerInfo@CvReplayInfo@@$$CBV?$vector@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@std@@@@V?$_Vector_const_iterator@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@0@0U1@@Z ; std::for_each<std::_Vector_const_iterator<CvReplayInfo::PlayerInfo,std::allocator<CvReplayInfo::PlayerInfo> >,SerializeFromSequenceContainer<CvReplayInfo::PlayerInfo const ,std::vector<CvReplayInfo::PlayerInfo,std::allocator<CvReplayInfo::PlayerInfo> > const > >
 
@@ -38949,10 +38946,10 @@ _kStream$ = 8						; size = 4
 ; 604  : 	kStream << CvReplayMessage::Version();
 
 	call	?Version@CvReplayMessage@@SAIXZ		; CvReplayMessage::Version
-	lea	ecx, DWORD PTR $T262050[esp+16]
+	lea	ecx, DWORD PTR $T262092[esp+16]
 	push	ecx
 	mov	ecx, edi
-	mov	DWORD PTR $T262050[esp+20], eax
+	mov	DWORD PTR $T262092[esp+20], eax
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 
 ; 605  : 	kStream << m_listReplayMessages.size();
@@ -38965,11 +38962,11 @@ _kStream$ = 8						; size = 4
 	sar	edx, 5
 	mov	eax, edx
 	shr	eax, 31					; 0000001fH
-	lea	ecx, DWORD PTR $T262051[esp+16]
+	lea	ecx, DWORD PTR $T262093[esp+16]
 	add	eax, edx
 	push	ecx
 	mov	ecx, edi
-	mov	DWORD PTR $T262051[esp+20], eax
+	mov	DWORD PTR $T262093[esp+20], eax
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 
 ; 606  : 	for(ReplayMessageList::const_iterator it = m_listReplayMessages.begin(); it != m_listReplayMessages.end(); ++it)
@@ -39018,8 +39015,8 @@ $LN1@write:
 	mov	ecx, edx
 	shr	ecx, 31					; 0000001fH
 	add	ecx, edx
-	lea	edx, DWORD PTR $T262231[esp+16]
-	mov	DWORD PTR $T262231[esp+16], ecx
+	lea	edx, DWORD PTR $T262273[esp+16]
+	mov	DWORD PTR $T262273[esp+16], ecx
 	push	edx
 	mov	ecx, edi
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
@@ -39029,7 +39026,7 @@ $LN1@write:
 	push	edi
 	push	eax
 	push	ecx
-	lea	eax, DWORD PTR $T262229[esp+36]
+	lea	eax, DWORD PTR $T262271[esp+36]
 	push	eax
 	call	??$for_each@V?$_Vector_const_iterator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@std@@U?$SerializeFromSequenceContainer@$$CBV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@$$CBV?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@2@@@@std@@YA?AU?$SerializeFromSequenceContainer@$$CBV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@$$CBV?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@2@@@V?$_Vector_const_iterator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@0@0U1@@Z ; std::for_each<std::_Vector_const_iterator<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > >,std::allocator<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > > > >,SerializeFromSequenceContainer<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > > const ,std::vector<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > >,std::allocator<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > > > > const > >
 	add	esp, 20					; 00000014H
@@ -39171,9 +39168,9 @@ PUBLIC	??$unchecked_copy@PAVCvReplayMessage@@PAV1@@stdext@@YAPAVCvReplayMessage@
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xutility
 ;	COMDAT ??$unchecked_copy@PAVCvReplayMessage@@PAV1@@stdext@@YAPAVCvReplayMessage@@PAV1@00@Z
 _TEXT	SEGMENT
-$T262319 = -4						; size = 1
-__Cat$262324 = -4					; size = 1
-$T262321 = -4						; size = 1
+$T262361 = -4						; size = 1
+__Cat$262366 = -4					; size = 1
+$T262363 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
@@ -39186,10 +39183,10 @@ __Dest$ = 16						; size = 4
 ; 3605 : 		return (_STD _Copy_opt(_CHECKED_BASE(_First), _CHECKED_BASE(_Last), _Dest,
 ; 3606 : 			_STD _Iter_random(_First, _Dest), _STD _Ptr_cat(_First, _Dest), _STD _Range_checked_iterator_tag()));
 
-	mov	BYTE PTR $T262319[esp+4], 0
-	mov	eax, DWORD PTR $T262319[esp+4]
-	mov	ecx, DWORD PTR __Cat$262324[esp+4]
-	mov	edx, DWORD PTR $T262321[esp+4]
+	mov	BYTE PTR $T262361[esp+4], 0
+	mov	eax, DWORD PTR $T262361[esp+4]
+	mov	ecx, DWORD PTR __Cat$262366[esp+4]
+	mov	edx, DWORD PTR $T262363[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -39225,11 +39222,11 @@ PUBLIC	??$_Unchecked_move_backward@PAVCvReplayMessage@@PAV1@@stdext@@YAPAVCvRepl
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Unchecked_move_backward@PAVCvReplayMessage@@PAV1@@stdext@@YAPAVCvReplayMessage@@PAV1@00@Z
 _TEXT	SEGMENT
-$T262356 = -4						; size = 1
+$T262398 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$262359 = 16					; size = 1
-$T262339 = 16						; size = 1
+__Cat$262401 = 16					; size = 1
+$T262381 = 16						; size = 1
 __Dest$ = 16						; size = 4
 ??$_Unchecked_move_backward@PAVCvReplayMessage@@PAV1@@stdext@@YAPAVCvReplayMessage@@PAV1@00@Z PROC ; stdext::_Unchecked_move_backward<CvReplayMessage *,CvReplayMessage *>, COMDAT
 
@@ -39240,10 +39237,10 @@ __Dest$ = 16						; size = 4
 ; 3695 : 		return (_STD _Move_backward_opt(_CHECKED_BASE(_First), _CHECKED_BASE(_Last), _Dest,
 ; 3696 : 			_STD _Iter_random(_First, _Dest), _STD _Move_cat(_Dest), _STD _Range_checked_iterator_tag()));
 
-	mov	ecx, DWORD PTR __Cat$262359[esp]
-	mov	edx, DWORD PTR $T262339[esp]
-	mov	BYTE PTR $T262356[esp+4], 0
-	mov	eax, DWORD PTR $T262356[esp+4]
+	mov	ecx, DWORD PTR __Cat$262401[esp]
+	mov	edx, DWORD PTR $T262381[esp]
+	mov	BYTE PTR $T262398[esp+4], 0
+	mov	eax, DWORD PTR $T262398[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -39265,9 +39262,9 @@ PUBLIC	??$_Unchecked_move_backward@PAV?$map@IHU?$less@I@std@@V?$allocator@U?$pai
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Unchecked_move_backward@PAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@PAV12@@stdext@@YAPAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@PAV12@00@Z
 _TEXT	SEGMENT
-$T262369 = -4						; size = 1
-__Cat$262375 = -4					; size = 1
-$T262371 = -4						; size = 1
+$T262411 = -4						; size = 1
+__Cat$262417 = -4					; size = 1
+$T262413 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
@@ -39280,10 +39277,10 @@ __Dest$ = 16						; size = 4
 ; 3695 : 		return (_STD _Move_backward_opt(_CHECKED_BASE(_First), _CHECKED_BASE(_Last), _Dest,
 ; 3696 : 			_STD _Iter_random(_First, _Dest), _STD _Move_cat(_Dest), _STD _Range_checked_iterator_tag()));
 
-	mov	BYTE PTR $T262369[esp+4], 0
-	mov	eax, DWORD PTR $T262369[esp+4]
-	mov	ecx, DWORD PTR __Cat$262375[esp+4]
-	mov	edx, DWORD PTR $T262371[esp+4]
+	mov	BYTE PTR $T262411[esp+4], 0
+	mov	eax, DWORD PTR $T262411[esp+4]
+	mov	ecx, DWORD PTR __Cat$262417[esp+4]
+	mov	edx, DWORD PTR $T262413[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -39333,11 +39330,11 @@ __ehfuncinfo$??$_Uninit_fill_n@PAVCvReplayMessage@@IV1@V?$allocator@VCvReplayMes
 xdata$x	ENDS
 ;	COMDAT ??$_Uninit_fill_n@PAVCvReplayMessage@@IV1@V?$allocator@VCvReplayMessage@@@std@@@std@@YAXPAVCvReplayMessage@@IABV1@AAV?$allocator@VCvReplayMessage@@@0@U_Nonscalar_ptr_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
-$T262409 = -24						; size = 4
+$T262451 = -24						; size = 4
 __Next$ = -20						; size = 4
 __$EHRec$ = -16						; size = 16
 __First$ = 8						; size = 4
-__Vptr$262415 = 12					; size = 4
+__Vptr$262457 = 12					; size = 4
 __Count$ = 12						; size = 4
 __Val$ = 16						; size = 4
 __Al$ = 20						; size = 4
@@ -39386,8 +39383,8 @@ $LL6@Uninit_fil@5:
 
 ; 404  : 		_Al.construct(_First, _Val);
 
-	mov	DWORD PTR __Vptr$262415[ebp], esi
-	mov	DWORD PTR $T262409[ebp], esi
+	mov	DWORD PTR __Vptr$262457[ebp], esi
+	mov	DWORD PTR $T262451[ebp], esi
 	mov	BYTE PTR __$EHRec$[ebp+12], bl
 	test	esi, esi
 	je	SHORT $LN18@Uninit_fil@5
@@ -39449,9 +39446,9 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$??$_Uninit_fill_n@PAVCvReplayMessage@@IV1@V?$allocator@VCvReplayMessage@@@std@@@std@@YAXPAVCvReplayMessage@@IABV1@AAV?$allocator@VCvReplayMessage@@@0@U_Nonscalar_ptr_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z$2:
-	mov	eax, DWORD PTR __Vptr$262415[ebp]
+	mov	eax, DWORD PTR __Vptr$262457[ebp]
 	push	eax
-	mov	ecx, DWORD PTR $T262409[ebp]
+	mov	ecx, DWORD PTR $T262451[ebp]
 	push	ecx
 	call	??3@YAXPAX0@Z				; operator delete
 	add	esp, 8
@@ -39493,11 +39490,11 @@ __ehfuncinfo$??$_Uninit_fill_n@PAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$
 xdata$x	ENDS
 ;	COMDAT ??$_Uninit_fill_n@PAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@IV12@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@YAXPAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@0@IABV10@AAV?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@0@U_Nonscalar_ptr_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
-$T262474 = -24						; size = 4
+$T262516 = -24						; size = 4
 __Next$ = -20						; size = 4
 __$EHRec$ = -16						; size = 16
 __First$ = 8						; size = 4
-__Vptr$262482 = 12					; size = 4
+__Vptr$262524 = 12					; size = 4
 __Count$ = 12						; size = 4
 __Val$ = 16						; size = 4
 __Al$ = 20						; size = 4
@@ -39547,8 +39544,8 @@ $LL6@Uninit_fil@6:
 
 ; 404  : 		_Al.construct(_First, _Val);
 
-	mov	DWORD PTR __Vptr$262482[ebp], esi
-	mov	DWORD PTR $T262474[ebp], esi
+	mov	DWORD PTR __Vptr$262524[ebp], esi
+	mov	DWORD PTR $T262516[ebp], esi
 	mov	BYTE PTR __$EHRec$[ebp+12], 1
 	cmp	esi, ebx
 	je	SHORT $LN18@Uninit_fil@6
@@ -39609,9 +39606,9 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$??$_Uninit_fill_n@PAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@IV12@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@YAXPAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@0@IABV10@AAV?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@0@U_Nonscalar_ptr_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z$2:
-	mov	eax, DWORD PTR __Vptr$262482[ebp]
+	mov	eax, DWORD PTR __Vptr$262524[ebp]
 	push	eax
-	mov	ecx, DWORD PTR $T262474[ebp]
+	mov	ecx, DWORD PTR $T262516[ebp]
 	push	ecx
 	call	??3@YAXPAX0@Z				; operator delete
 	add	esp, 8
@@ -39626,7 +39623,7 @@ PUBLIC	??$_Destroy_range@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pa
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xmemory
 ;	COMDAT ??$_Destroy_range@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@std@@@std@@YAXPAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@0@0AAV?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@0@U_Nonscalar_ptr_iterator_tag@0@@Z
 _TEXT	SEGMENT
-$T262761 = 8						; size = 4
+$T262803 = 8						; size = 4
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Al$ = 16						; size = 4
@@ -39654,7 +39651,7 @@ $LL3@Destroy_ra@7:
 	mov	ecx, DWORD PTR [eax]
 	push	eax
 	push	ecx
-	lea	eax, DWORD PTR $T262761[esp+16]
+	lea	eax, DWORD PTR $T262803[esp+16]
 	push	eax
 	mov	ecx, esi
 	call	?erase@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@0@Z ; std::_Tree<std::_Tmap_traits<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> >,0> >::erase
@@ -39682,8 +39679,8 @@ PUBLIC	??$_Unchecked_uninitialized_move@PAV?$map@IHU?$less@I@std@@V?$allocator@U
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ??$_Unchecked_uninitialized_move@PAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@PAV12@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@stdext@@YAPAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@PAV12@00AAV?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@Z
 _TEXT	SEGMENT
-$T262795 = -4						; size = 1
-__Cat$262799 = -4					; size = 1
+$T262837 = -4						; size = 1
+__Cat$262841 = -4					; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
@@ -39699,9 +39696,9 @@ __Al$ = 20						; size = 4
 ; 864  : 		_STD _Move_cat(_Dest), _STD _Range_checked_iterator_tag()));
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T262795[esp+4], 0
-	mov	eax, DWORD PTR $T262795[esp+4]
-	mov	ecx, DWORD PTR __Cat$262799[esp+4]
+	mov	BYTE PTR $T262837[esp+4], 0
+	mov	eax, DWORD PTR $T262837[esp+4]
+	mov	ecx, DWORD PTR __Cat$262841[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -39827,8 +39824,8 @@ PUBLIC	??$unchecked_uninitialized_copy@V?$_Vector_const_iterator@V?$map@IHU?$les
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ??$unchecked_uninitialized_copy@V?$_Vector_const_iterator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@PAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@2@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@stdext@@YAPAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$_Vector_const_iterator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@2@0PAV12@AAV?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@Z
 _TEXT	SEGMENT
-$T263484 = -4						; size = 1
-__Cat$263489 = -4					; size = 1
+$T263526 = -4						; size = 1
+__Cat$263531 = -4					; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
@@ -39844,9 +39841,9 @@ __Al$ = 20						; size = 4
 ; 822  : 		_STD _Ptr_cat(_First, _Dest), _STD _Range_checked_iterator_tag()));
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T263484[esp+4], 0
-	mov	eax, DWORD PTR $T263484[esp+4]
-	mov	ecx, DWORD PTR __Cat$263489[esp+4]
+	mov	BYTE PTR $T263526[esp+4], 0
+	mov	eax, DWORD PTR $T263526[esp+4]
+	mov	ecx, DWORD PTR __Cat$263531[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -39869,7 +39866,7 @@ PUBLIC	?destroy@?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$a
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xmemory
 ;	COMDAT ?destroy@?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@std@@QAEXPAV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@2@@Z
 _TEXT	SEGMENT
-$T263710 = 8						; size = 4
+$T263752 = 8						; size = 4
 __Ptr$ = 8						; size = 4
 ?destroy@?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@std@@QAEXPAV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@2@@Z PROC ; std::allocator<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > > >::destroy, COMDAT
 ; _this$ = ecx
@@ -39885,7 +39882,7 @@ __Ptr$ = 8						; size = 4
 	mov	ecx, DWORD PTR [eax]
 	push	eax
 	push	ecx
-	lea	eax, DWORD PTR $T263710[esp+8]
+	lea	eax, DWORD PTR $T263752[esp+8]
 	push	eax
 	mov	ecx, esi
 	call	?erase@?$_Tree@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@0@Z ; std::_Tree<std::_Tmap_traits<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> >,0> >::erase
@@ -39939,13 +39936,13 @@ xdata$x	ENDS
 ;	COMDAT ??$_Uninit_move@V?$_Vector_iterator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@std@@PAV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@2@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@std@@YAPAV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@0@V?$_Vector_iterator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@0@0PAV10@AAV?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@0@U_Swap_move_tag@0@U_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
 __Val$ = -40						; size = 12
-$T264068 = -28						; size = 4
-__Vptr$264065 = -24					; size = 4
+$T264110 = -28						; size = 4
+__Vptr$264107 = -24					; size = 4
 __Next$ = -20						; size = 4
 __$EHRec$ = -16						; size = 16
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-$T264892 = 16						; size = 4
+$T264934 = 16						; size = 4
 __Dest$ = 16						; size = 4
 __Al$ = 20						; size = 4
 ___formal$ = 24						; size = 1
@@ -40005,8 +40002,8 @@ $LL66@Uninit_mov@3:
 ; 223  : 		{
 ; 224  : 		_Al.construct(_Dest, _Val);
 
-	mov	DWORD PTR __Vptr$264065[ebp], esi
-	mov	DWORD PTR $T264068[ebp], esi
+	mov	DWORD PTR __Vptr$264107[ebp], esi
+	mov	DWORD PTR $T264110[ebp], esi
 	mov	BYTE PTR __$EHRec$[ebp+12], 2
 	test	esi, esi
 	je	SHORT $LN76@Uninit_mov@3
@@ -40085,7 +40082,7 @@ $LN4@Uninit_mov@3:
 	mov	ecx, DWORD PTR [eax]
 	push	eax
 	push	ecx
-	lea	ecx, DWORD PTR $T264892[ebp]
+	lea	ecx, DWORD PTR $T264934[ebp]
 	push	ecx
 	lea	ecx, DWORD PTR __Val$[ebp]
 	mov	DWORD PTR __$EHRec$[ebp+12], -1
@@ -40114,9 +40111,9 @@ __unwindfunclet$??$_Uninit_move@V?$_Vector_iterator@V?$map@IUPlotState@CvReplayI
 	lea	ecx, DWORD PTR __Val$[ebp]
 	jmp	??1?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@QAE@XZ
 __unwindfunclet$??$_Uninit_move@V?$_Vector_iterator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@std@@PAV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@2@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@std@@YAPAV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@0@V?$_Vector_iterator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@0@0PAV10@AAV?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@0@U_Swap_move_tag@0@U_Range_checked_iterator_tag@0@@Z$4:
-	mov	eax, DWORD PTR __Vptr$264065[ebp]
+	mov	eax, DWORD PTR __Vptr$264107[ebp]
 	push	eax
-	mov	ecx, DWORD PTR $T264068[ebp]
+	mov	ecx, DWORD PTR $T264110[ebp]
 	push	ecx
 	call	??3@YAXPAX0@Z				; operator delete
 	add	esp, 8
@@ -40163,13 +40160,13 @@ xdata$x	ENDS
 ;	COMDAT ??$_Uninit_move@PAV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@PAV12@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@std@@YAPAV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@0@PAV10@00AAV?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@0@U_Swap_move_tag@0@U_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
 __Val$ = -36						; size = 12
-$T265242 = -24						; size = 4
+$T265285 = -24						; size = 4
 __Next$ = -20						; size = 4
 __$EHRec$ = -16						; size = 16
-__Vptr$265250 = 8					; size = 4
+__Vptr$265293 = 8					; size = 4
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-$T266061 = 16						; size = 4
+$T266103 = 16						; size = 4
 __Dest$ = 16						; size = 4
 __Al$ = 20						; size = 4
 ___formal$ = 24						; size = 1
@@ -40229,8 +40226,8 @@ $LL6@Uninit_mov@4:
 ; 223  : 		{
 ; 224  : 		_Al.construct(_Dest, _Val);
 
-	mov	DWORD PTR __Vptr$265250[ebp], esi
-	mov	DWORD PTR $T265242[ebp], esi
+	mov	DWORD PTR __Vptr$265293[ebp], esi
+	mov	DWORD PTR $T265285[ebp], esi
 	mov	BYTE PTR __$EHRec$[ebp+12], 2
 	test	esi, esi
 	je	SHORT $LN68@Uninit_mov@4
@@ -40304,7 +40301,7 @@ $LN4@Uninit_mov@4:
 	mov	ecx, DWORD PTR [eax]
 	push	eax
 	push	ecx
-	lea	ecx, DWORD PTR $T266061[ebp]
+	lea	ecx, DWORD PTR $T266103[ebp]
 	push	ecx
 	lea	ecx, DWORD PTR __Val$[ebp]
 	mov	DWORD PTR __$EHRec$[ebp+12], -1
@@ -40333,9 +40330,9 @@ __unwindfunclet$??$_Uninit_move@PAV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std
 	lea	ecx, DWORD PTR __Val$[ebp]
 	jmp	??1?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@QAE@XZ
 __unwindfunclet$??$_Uninit_move@PAV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@PAV12@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@std@@YAPAV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@0@PAV10@00AAV?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@0@U_Swap_move_tag@0@U_Range_checked_iterator_tag@0@@Z$4:
-	mov	eax, DWORD PTR __Vptr$265250[ebp]
+	mov	eax, DWORD PTR __Vptr$265293[ebp]
 	push	eax
-	mov	ecx, DWORD PTR $T265242[ebp]
+	mov	ecx, DWORD PTR $T265285[ebp]
 	push	ecx
 	call	??3@YAXPAX0@Z				; operator delete
 	add	esp, 8
@@ -40349,8 +40346,8 @@ PUBLIC	??$unchecked_uninitialized_copy@V?$_Vector_iterator@VCvReplayMessage@@V?$
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$unchecked_uninitialized_copy@V?$_Vector_iterator@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@std@@PAVCvReplayMessage@@V?$allocator@VCvReplayMessage@@@2@@stdext@@YAPAVCvReplayMessage@@V?$_Vector_iterator@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@std@@0PAV1@AAV?$allocator@VCvReplayMessage@@@3@@Z
 _TEXT	SEGMENT
-$T266103 = -4						; size = 1
-__Cat$266107 = -4					; size = 1
+$T266145 = -4						; size = 1
+__Cat$266149 = -4					; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
@@ -40366,9 +40363,9 @@ __Al$ = 20						; size = 4
 ; 822  : 		_STD _Ptr_cat(_First, _Dest), _STD _Range_checked_iterator_tag()));
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T266103[esp+4], 0
-	mov	eax, DWORD PTR $T266103[esp+4]
-	mov	ecx, DWORD PTR __Cat$266107[esp+4]
+	mov	BYTE PTR $T266145[esp+4], 0
+	mov	eax, DWORD PTR $T266145[esp+4]
+	mov	ecx, DWORD PTR __Cat$266149[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -40390,8 +40387,8 @@ PUBLIC	??$unchecked_uninitialized_copy@PAVCvReplayMessage@@PAV1@V?$allocator@VCv
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$unchecked_uninitialized_copy@PAVCvReplayMessage@@PAV1@V?$allocator@VCvReplayMessage@@@std@@@stdext@@YAPAVCvReplayMessage@@PAV1@00AAV?$allocator@VCvReplayMessage@@@std@@@Z
 _TEXT	SEGMENT
-$T266112 = -4						; size = 1
-__Cat$266116 = -4					; size = 1
+$T266154 = -4						; size = 1
+__Cat$266158 = -4					; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
@@ -40407,9 +40404,9 @@ __Al$ = 20						; size = 4
 ; 822  : 		_STD _Ptr_cat(_First, _Dest), _STD _Range_checked_iterator_tag()));
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T266112[esp+4], 0
-	mov	eax, DWORD PTR $T266112[esp+4]
-	mov	ecx, DWORD PTR __Cat$266116[esp+4]
+	mov	BYTE PTR $T266154[esp+4], 0
+	mov	eax, DWORD PTR $T266154[esp+4]
+	mov	ecx, DWORD PTR __Cat$266158[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -40431,8 +40428,8 @@ PUBLIC	??$unchecked_uninitialized_copy@PAV?$map@IHU?$less@I@std@@V?$allocator@U?
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$unchecked_uninitialized_copy@PAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@PAV12@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@stdext@@YAPAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@PAV12@00AAV?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@Z
 _TEXT	SEGMENT
-$T266121 = -4						; size = 1
-__Cat$266125 = -4					; size = 1
+$T266163 = -4						; size = 1
+__Cat$266167 = -4					; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
@@ -40448,9 +40445,9 @@ __Al$ = 20						; size = 4
 ; 822  : 		_STD _Ptr_cat(_First, _Dest), _STD _Range_checked_iterator_tag()));
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T266121[esp+4], 0
-	mov	eax, DWORD PTR $T266121[esp+4]
-	mov	ecx, DWORD PTR __Cat$266125[esp+4]
+	mov	BYTE PTR $T266163[esp+4], 0
+	mov	eax, DWORD PTR $T266163[esp+4]
+	mov	ecx, DWORD PTR __Cat$266167[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -40473,8 +40470,8 @@ PUBLIC	?push_back@?$vector@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@Cv
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\vector
 ;	COMDAT ?push_back@?$vector@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@std@@QAEXABUPlayerInfo@CvReplayInfo@@@Z
 _TEXT	SEGMENT
-$T266163 = -4						; size = 1
-__Cat$266166 = 8					; size = 1
+$T266205 = -4						; size = 1
+__Cat$266208 = 8					; size = 1
 __Val$ = 8						; size = 4
 ?push_back@?$vector@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@std@@QAEXABUPlayerInfo@CvReplayInfo@@@Z PROC ; std::vector<CvReplayInfo::PlayerInfo,std::allocator<CvReplayInfo::PlayerInfo> >::push_back, COMDAT
 ; _this$ = ecx
@@ -40515,10 +40512,10 @@ $LN10@push_back@4:
 ; 818  :  #else /* _HAS_ITERATOR_DEBUGGING */
 ; 819  : 			_Mylast = _Ufill(_Mylast, 1, _Val);
 
-	mov	ecx, DWORD PTR __Cat$266166[esp+8]
+	mov	ecx, DWORD PTR __Cat$266208[esp+8]
 	mov	edx, DWORD PTR __Val$[esp+8]
-	mov	BYTE PTR $T266163[esp+12], 0
-	mov	eax, DWORD PTR $T266163[esp+12]
+	mov	BYTE PTR $T266205[esp+12], 0
+	mov	eax, DWORD PTR $T266205[esp+12]
 	push	eax
 	push	ecx
 	push	esi
@@ -40562,9 +40559,9 @@ PUBLIC	?erase@?$vector@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@s
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?erase@?$vector@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@std@@QAE?AV?$_Vector_iterator@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@2@V?$_Vector_const_iterator@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@2@0@Z
 _TEXT	SEGMENT
-$T266330 = -4						; size = 1
-__Cat$266335 = 8					; size = 1
-$T266332 = 8						; size = 1
+$T266372 = -4						; size = 1
+__Cat$266377 = 8					; size = 1
+$T266374 = 8						; size = 1
 ___$ReturnUdt$ = 8					; size = 4
 __First_arg$ = 12					; size = 4
 __Last_arg$ = 16					; size = 4
@@ -40607,12 +40604,12 @@ __Last_arg$ = 16					; size = 4
 	push	ebx
 	push	esi
 	push	edi
-	mov	BYTE PTR $T266330[esp+20], 0
-	mov	esi, DWORD PTR $T266330[esp+20]
+	mov	BYTE PTR $T266372[esp+20], 0
+	mov	esi, DWORD PTR $T266372[esp+20]
 	push	esi
-	mov	esi, DWORD PTR __Cat$266335[esp+20]
+	mov	esi, DWORD PTR __Cat$266377[esp+20]
 	push	esi
-	mov	esi, DWORD PTR $T266332[esp+24]
+	mov	esi, DWORD PTR $T266374[esp+24]
 	push	esi
 	push	ecx
 	push	eax
@@ -40667,8 +40664,8 @@ PUBLIC	??$unchecked_uninitialized_fill_n@PAVCvReplayMessage@@IV1@V?$allocator@VC
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ??$unchecked_uninitialized_fill_n@PAVCvReplayMessage@@IV1@V?$allocator@VCvReplayMessage@@@std@@@stdext@@YAXPAVCvReplayMessage@@IABV1@AAV?$allocator@VCvReplayMessage@@@std@@@Z
 _TEXT	SEGMENT
-$T266410 = -4						; size = 1
-__Cat$266414 = -4					; size = 1
+$T266452 = -4						; size = 1
+__Cat$266456 = -4					; size = 1
 __First$ = 8						; size = 4
 __Count$ = 12						; size = 4
 __Val$ = 16						; size = 4
@@ -40683,9 +40680,9 @@ __Al$ = 20						; size = 4
 ; 942  : 		_STD _Ptr_cat(_First, _First), _STD _Range_checked_iterator_tag());
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T266410[esp+4], 0
-	mov	eax, DWORD PTR $T266410[esp+4]
-	mov	ecx, DWORD PTR __Cat$266414[esp+4]
+	mov	BYTE PTR $T266452[esp+4], 0
+	mov	eax, DWORD PTR $T266452[esp+4]
+	mov	ecx, DWORD PTR __Cat$266456[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Val$[esp+4]
 	push	ecx
@@ -40707,8 +40704,8 @@ PUBLIC	??$unchecked_uninitialized_fill_n@PAV?$map@IHU?$less@I@std@@V?$allocator@
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$unchecked_uninitialized_fill_n@PAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@IV12@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@stdext@@YAXPAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@IABV12@AAV?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@Z
 _TEXT	SEGMENT
-$T266419 = -4						; size = 1
-__Cat$266423 = -4					; size = 1
+$T266461 = -4						; size = 1
+__Cat$266465 = -4					; size = 1
 __First$ = 8						; size = 4
 __Count$ = 12						; size = 4
 __Val$ = 16						; size = 4
@@ -40723,9 +40720,9 @@ __Al$ = 20						; size = 4
 ; 942  : 		_STD _Ptr_cat(_First, _First), _STD _Range_checked_iterator_tag());
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T266419[esp+4], 0
-	mov	eax, DWORD PTR $T266419[esp+4]
-	mov	ecx, DWORD PTR __Cat$266423[esp+4]
+	mov	BYTE PTR $T266461[esp+4], 0
+	mov	eax, DWORD PTR $T266461[esp+4]
+	mov	ecx, DWORD PTR __Cat$266465[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Val$[esp+4]
 	push	ecx
@@ -40748,7 +40745,7 @@ PUBLIC	??$_Destroy_range@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pa
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xmemory
 ;	COMDAT ??$_Destroy_range@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@std@@@std@@YAXPAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@0@0AAV?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@0@@Z
 _TEXT	SEGMENT
-__Cat$266431 = -4					; size = 1
+__Cat$266473 = -4					; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Al$ = 16						; size = 4
@@ -40760,7 +40757,7 @@ __Al$ = 16						; size = 4
 
 ; 225  : 	_Destroy_range(_First, _Last, _Al, _Ptr_cat(_First, _Last));
 
-	mov	eax, DWORD PTR __Cat$266431[esp+4]
+	mov	eax, DWORD PTR __Cat$266473[esp+4]
 	mov	ecx, DWORD PTR __Al$[esp]
 	mov	edx, DWORD PTR __Last$[esp]
 	push	eax
@@ -40781,10 +40778,10 @@ PUBLIC	??$_Umove@PAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\vector
 ;	COMDAT ??$_Umove@PAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@IAEPAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@1@PAV21@00@Z
 _TEXT	SEGMENT
-$T266444 = -4						; size = 1
+$T266486 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$266448 = 16					; size = 1
+__Cat$266490 = 16					; size = 1
 __Ptr$ = 16						; size = 4
 ??$_Umove@PAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@IAEPAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@1@PAV21@00@Z PROC ; std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > >::_Umove<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > *>, COMDAT
 ; _this$ = ecx
@@ -40797,9 +40794,9 @@ __Ptr$ = 16						; size = 4
 ; 1147 : 		return (_STDEXT _Unchecked_uninitialized_move(_First, _Last,
 ; 1148 : 			_Ptr, this->_Alval));
 
-	mov	edx, DWORD PTR __Cat$266448[esp]
-	mov	BYTE PTR $T266444[esp+4], 0
-	mov	eax, DWORD PTR $T266444[esp+4]
+	mov	edx, DWORD PTR __Cat$266490[esp]
+	mov	BYTE PTR $T266486[esp+4], 0
+	mov	eax, DWORD PTR $T266486[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Ptr$[esp+4]
 	push	edx
@@ -40822,9 +40819,9 @@ PUBLIC	??$_Unchecked_move_backward@PAV?$map@IUPlotState@CvReplayInfo@@U?$less@I@
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xutility
 ;	COMDAT ??$_Unchecked_move_backward@PAV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@PAV12@@stdext@@YAPAV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@PAV12@00@Z
 _TEXT	SEGMENT
-$T266454 = -4						; size = 1
-__Cat$266460 = -4					; size = 1
-$T266456 = -4						; size = 1
+$T266496 = -4						; size = 1
+__Cat$266502 = -4					; size = 1
+$T266498 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
@@ -40837,10 +40834,10 @@ __Dest$ = 16						; size = 4
 ; 3695 : 		return (_STD _Move_backward_opt(_CHECKED_BASE(_First), _CHECKED_BASE(_Last), _Dest,
 ; 3696 : 			_STD _Iter_random(_First, _Dest), _STD _Move_cat(_Dest), _STD _Range_checked_iterator_tag()));
 
-	mov	BYTE PTR $T266454[esp+4], 0
-	mov	eax, DWORD PTR $T266454[esp+4]
-	mov	ecx, DWORD PTR __Cat$266460[esp+4]
-	mov	edx, DWORD PTR $T266456[esp+4]
+	mov	BYTE PTR $T266496[esp+4], 0
+	mov	eax, DWORD PTR $T266496[esp+4]
+	mov	ecx, DWORD PTR __Cat$266502[esp+4]
+	mov	edx, DWORD PTR $T266498[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -40863,10 +40860,10 @@ PUBLIC	??$_Ucopy@V?$_Vector_const_iterator@V?$map@IHU?$less@I@std@@V?$allocator@
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\vector
 ;	COMDAT ??$_Ucopy@V?$_Vector_const_iterator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@IAEPAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@1@V?$_Vector_const_iterator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@1@0PAV21@@Z
 _TEXT	SEGMENT
-$T266476 = -4						; size = 1
+$T266518 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$266480 = 16					; size = 1
+__Cat$266522 = 16					; size = 1
 __Ptr$ = 16						; size = 4
 ??$_Ucopy@V?$_Vector_const_iterator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@IAEPAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@1@V?$_Vector_const_iterator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@1@0PAV21@@Z PROC ; std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > >::_Ucopy<std::_Vector_const_iterator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > > >, COMDAT
 ; _this$ = ecx
@@ -40879,9 +40876,9 @@ __Ptr$ = 16						; size = 4
 ; 1140 : 		return (_STDEXT unchecked_uninitialized_copy(_First, _Last,
 ; 1141 : 			_Ptr, this->_Alval));
 
-	mov	edx, DWORD PTR __Cat$266480[esp]
-	mov	BYTE PTR $T266476[esp+4], 0
-	mov	eax, DWORD PTR $T266476[esp+4]
+	mov	edx, DWORD PTR __Cat$266522[esp]
+	mov	BYTE PTR $T266518[esp+4], 0
+	mov	eax, DWORD PTR $T266518[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Ptr$[esp+4]
 	push	edx
@@ -40922,12 +40919,12 @@ __ehfuncinfo$??$SerializeToSequenceContainer@UPlayerInfo@CvReplayInfo@@V?$vector
 xdata$x	ENDS
 ;	COMDAT ??$SerializeToSequenceContainer@UPlayerInfo@CvReplayInfo@@V?$vector@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@std@@@@YAXAAVFDataStream@@AAV?$vector@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@std@@@Z
 _TEXT	SEGMENT
-$T266765 = -152						; size = 1
-__Cat$266768 = -152					; size = 1
-$T266532 = -152						; size = 4
+$T266807 = -152						; size = 1
+__Cat$266810 = -152					; size = 1
+$T266574 = -152						; size = 4
 _count$ = -148						; size = 4
 _i$ = -144						; size = 4
-_v$229199 = -140					; size = 128
+_v$229241 = -140					; size = 128
 __$EHRec$ = -12						; size = 12
 _loadFrom$ = 8						; size = 4
 _container$ = 12					; size = 4
@@ -40952,7 +40949,7 @@ _container$ = 12					; size = 4
 	mov	ecx, DWORD PTR [edi+4]
 	push	eax
 	push	ecx
-	lea	eax, DWORD PTR $T266532[esp+172]
+	lea	eax, DWORD PTR $T266574[esp+172]
 	push	eax
 	mov	ecx, edi
 	call	?erase@?$vector@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@std@@QAE?AV?$_Vector_iterator@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@2@V?$_Vector_const_iterator@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@2@0@Z ; std::vector<CvReplayInfo::PlayerInfo,std::allocator<CvReplayInfo::PlayerInfo> >::erase
@@ -40980,51 +40977,51 @@ $LL3@SerializeT@5:
 ; 89   : 	{
 ; 90   : 		ElementType v;
 
-	lea	ecx, DWORD PTR _v$229199[esp+184]
+	lea	ecx, DWORD PTR _v$229241[esp+184]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR _v$229199[esp+212]
+	lea	ecx, DWORD PTR _v$229241[esp+212]
 	mov	DWORD PTR __$EHRec$[esp+176], ebx
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR _v$229199[esp+240]
+	lea	ecx, DWORD PTR _v$229241[esp+240]
 	mov	BYTE PTR __$EHRec$[esp+176], 1
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR _v$229199[esp+268]
+	lea	ecx, DWORD PTR _v$229241[esp+268]
 	mov	BYTE PTR __$EHRec$[esp+176], 2
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
 ; 91   : 		loadFrom >> v;
 
-	lea	edx, DWORD PTR _v$229199[esp+168]
+	lea	edx, DWORD PTR _v$229241[esp+168]
 	push	edx
 	push	esi
 	mov	DWORD PTR __$EHRec$[esp+184], 3
 	call	??5@YAAAVFDataStream@@AAV0@AAW4CivilizationTypes@@@Z ; operator>>
-	lea	eax, DWORD PTR _v$229199[esp+180]
+	lea	eax, DWORD PTR _v$229241[esp+180]
 	push	eax
 	push	esi
 	call	??5@YAAAVFDataStream@@AAV0@AAW4LeaderHeadTypes@@@Z ; operator>>
-	lea	ecx, DWORD PTR _v$229199[esp+192]
+	lea	ecx, DWORD PTR _v$229241[esp+192]
 	push	ecx
 	push	esi
 	call	??5@YAAAVFDataStream@@AAV0@AAW4PlayerColorTypes@@@Z ; operator>>
-	lea	edx, DWORD PTR _v$229199[esp+204]
+	lea	edx, DWORD PTR _v$229241[esp+204]
 	push	edx
 	push	esi
 	call	??5@YAAAVFDataStream@@AAV0@AAW4HandicapTypes@@@Z ; operator>>
 	add	esp, 32					; 00000020H
-	lea	eax, DWORD PTR _v$229199[esp+184]
+	lea	eax, DWORD PTR _v$229241[esp+184]
 	push	eax
 	mov	ecx, esi
 	call	?Read@FDataStream@@IAEXAAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z ; FDataStream::Read
-	lea	ecx, DWORD PTR _v$229199[esp+212]
+	lea	ecx, DWORD PTR _v$229241[esp+212]
 	push	ecx
 	mov	ecx, esi
 	call	?Read@FDataStream@@IAEXAAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z ; FDataStream::Read
-	lea	edx, DWORD PTR _v$229199[esp+240]
+	lea	edx, DWORD PTR _v$229241[esp+240]
 	push	edx
 	mov	ecx, esi
 	call	?Read@FDataStream@@IAEXAAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z ; FDataStream::Read
-	lea	eax, DWORD PTR _v$229199[esp+268]
+	lea	eax, DWORD PTR _v$229241[esp+268]
 	push	eax
 	mov	ecx, esi
 	call	?Read@FDataStream@@IAEXAAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z ; FDataStream::Read
@@ -41047,13 +41044,13 @@ $LN60@SerializeT@5:
 	sar	edx, 7
 	cmp	edx, ecx
 	jae	SHORT $LN52@SerializeT@5
-	mov	BYTE PTR $T266765[esp+168], bl
-	mov	eax, DWORD PTR $T266765[esp+168]
-	mov	ecx, DWORD PTR __Cat$266768[esp+168]
+	mov	BYTE PTR $T266807[esp+168], bl
+	mov	eax, DWORD PTR $T266807[esp+168]
+	mov	ecx, DWORD PTR __Cat$266810[esp+168]
 	push	eax
 	push	ecx
 	push	edi
-	lea	edx, DWORD PTR _v$229199[esp+180]
+	lea	edx, DWORD PTR _v$229241[esp+180]
 	push	edx
 	push	1
 	push	ebp
@@ -41063,7 +41060,7 @@ $LN60@SerializeT@5:
 	mov	DWORD PTR [edi+8], ebp
 	jmp	SHORT $LN93@SerializeT@5
 $LN52@SerializeT@5:
-	lea	eax, DWORD PTR _v$229199[esp+168]
+	lea	eax, DWORD PTR _v$229241[esp+168]
 	push	eax
 	push	1
 	push	ebp
@@ -41073,7 +41070,7 @@ $LN93@SerializeT@5:
 
 ; 93   : 	}
 
-	lea	ecx, DWORD PTR _v$229199[esp+168]
+	lea	ecx, DWORD PTR _v$229241[esp+168]
 	mov	DWORD PTR __$EHRec$[esp+176], -1
 	call	??1PlayerInfo@CvReplayInfo@@QAE@XZ
 	mov	eax, DWORD PTR _i$[esp+168]
@@ -41097,16 +41094,16 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$??$SerializeToSequenceContainer@UPlayerInfo@CvReplayInfo@@V?$vector@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@std@@@@YAXAAVFDataStream@@AAV?$vector@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@std@@@Z$1:
-	lea	ecx, DWORD PTR _v$229199[ebp+16]
+	lea	ecx, DWORD PTR _v$229241[ebp+16]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$??$SerializeToSequenceContainer@UPlayerInfo@CvReplayInfo@@V?$vector@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@std@@@@YAXAAVFDataStream@@AAV?$vector@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@std@@@Z$2:
-	lea	ecx, DWORD PTR _v$229199[ebp+44]
+	lea	ecx, DWORD PTR _v$229241[ebp+44]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$??$SerializeToSequenceContainer@UPlayerInfo@CvReplayInfo@@V?$vector@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@std@@@@YAXAAVFDataStream@@AAV?$vector@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@std@@@Z$3:
-	lea	ecx, DWORD PTR _v$229199[ebp+72]
+	lea	ecx, DWORD PTR _v$229241[ebp+72]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$??$SerializeToSequenceContainer@UPlayerInfo@CvReplayInfo@@V?$vector@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@std@@@@YAXAAVFDataStream@@AAV?$vector@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@std@@@Z$0:
-	lea	ecx, DWORD PTR _v$229199[ebp]
+	lea	ecx, DWORD PTR _v$229241[ebp]
 	jmp	??1PlayerInfo@CvReplayInfo@@QAE@XZ
 __ehhandler$??$SerializeToSequenceContainer@UPlayerInfo@CvReplayInfo@@V?$vector@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@std@@@@YAXAAVFDataStream@@AAV?$vector@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@std@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$??$SerializeToSequenceContainer@UPlayerInfo@CvReplayInfo@@V?$vector@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@std@@@@YAXAAVFDataStream@@AAV?$vector@UPlayerInfo@CvReplayInfo@@V?$allocator@UPlayerInfo@CvReplayInfo@@@std@@@std@@@Z
@@ -41118,8 +41115,8 @@ PUBLIC	??$_Unchecked_uninitialized_move@V?$_Vector_iterator@V?$map@IUPlotState@C
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ??$_Unchecked_uninitialized_move@V?$_Vector_iterator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@std@@PAV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@2@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@stdext@@YAPAV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$_Vector_iterator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@2@0PAV12@AAV?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@Z
 _TEXT	SEGMENT
-$T266821 = -4						; size = 1
-__Cat$266826 = -4					; size = 1
+$T266863 = -4						; size = 1
+__Cat$266868 = -4					; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
@@ -41135,9 +41132,9 @@ __Al$ = 20						; size = 4
 ; 864  : 		_STD _Move_cat(_Dest), _STD _Range_checked_iterator_tag()));
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T266821[esp+4], 0
-	mov	eax, DWORD PTR $T266821[esp+4]
-	mov	ecx, DWORD PTR __Cat$266826[esp+4]
+	mov	BYTE PTR $T266863[esp+4], 0
+	mov	eax, DWORD PTR $T266863[esp+4]
+	mov	ecx, DWORD PTR __Cat$266868[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -41160,7 +41157,7 @@ PUBLIC	??$_Destroy_range@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xmemory
 ;	COMDAT ??$_Destroy_range@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@std@@@std@@YAXPAV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@0@0AAV?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@0@U_Nonscalar_ptr_iterator_tag@0@@Z
 _TEXT	SEGMENT
-$T267092 = 8						; size = 4
+$T267134 = 8						; size = 4
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Al$ = 16						; size = 4
@@ -41188,7 +41185,7 @@ $LL3@Destroy_ra@8:
 	mov	ecx, DWORD PTR [eax]
 	push	eax
 	push	ecx
-	lea	eax, DWORD PTR $T267092[esp+16]
+	lea	eax, DWORD PTR $T267134[esp+16]
 	push	eax
 	mov	ecx, esi
 	call	?erase@?$_Tree@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@0@Z ; std::_Tree<std::_Tmap_traits<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> >,0> >::erase
@@ -41243,11 +41240,11 @@ __ehfuncinfo$??$_Uninit_fill_n@PAV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@
 xdata$x	ENDS
 ;	COMDAT ??$_Uninit_fill_n@PAV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@IV12@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@std@@YAXPAV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@0@IABV10@AAV?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@0@U_Nonscalar_ptr_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
-$T267159 = -24						; size = 4
+$T267201 = -24						; size = 4
 __Next$ = -20						; size = 4
 __$EHRec$ = -16						; size = 16
 __First$ = 8						; size = 4
-__Vptr$267156 = 12					; size = 4
+__Vptr$267198 = 12					; size = 4
 __Count$ = 12						; size = 4
 __Val$ = 16						; size = 4
 __Al$ = 20						; size = 4
@@ -41297,8 +41294,8 @@ $LL6@Uninit_fil@7:
 
 ; 404  : 		_Al.construct(_First, _Val);
 
-	mov	DWORD PTR __Vptr$267156[ebp], esi
-	mov	DWORD PTR $T267159[ebp], esi
+	mov	DWORD PTR __Vptr$267198[ebp], esi
+	mov	DWORD PTR $T267201[ebp], esi
 	mov	BYTE PTR __$EHRec$[ebp+12], 1
 	cmp	esi, ebx
 	je	SHORT $LN18@Uninit_fil@7
@@ -41359,9 +41356,9 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$??$_Uninit_fill_n@PAV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@IV12@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@std@@YAXPAV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@0@IABV10@AAV?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@0@U_Nonscalar_ptr_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z$2:
-	mov	eax, DWORD PTR __Vptr$267156[ebp]
+	mov	eax, DWORD PTR __Vptr$267198[ebp]
 	push	eax
-	mov	ecx, DWORD PTR $T267159[ebp]
+	mov	ecx, DWORD PTR $T267201[ebp]
 	push	ecx
 	call	??3@YAXPAX0@Z				; operator delete
 	add	esp, 8
@@ -41375,8 +41372,8 @@ PUBLIC	??$_Unchecked_uninitialized_move@PAV?$map@IUPlotState@CvReplayInfo@@U?$le
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Unchecked_uninitialized_move@PAV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@PAV12@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@stdext@@YAPAV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@PAV12@00AAV?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@Z
 _TEXT	SEGMENT
-$T267183 = -4						; size = 1
-__Cat$267187 = -4					; size = 1
+$T267225 = -4						; size = 1
+__Cat$267229 = -4					; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
@@ -41392,9 +41389,9 @@ __Al$ = 20						; size = 4
 ; 864  : 		_STD _Move_cat(_Dest), _STD _Range_checked_iterator_tag()));
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T267183[esp+4], 0
-	mov	eax, DWORD PTR $T267183[esp+4]
-	mov	ecx, DWORD PTR __Cat$267187[esp+4]
+	mov	BYTE PTR $T267225[esp+4], 0
+	mov	eax, DWORD PTR $T267225[esp+4]
+	mov	ecx, DWORD PTR __Cat$267229[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -41416,10 +41413,10 @@ PUBLIC	??$_Uninit_move@V?$_Vector_iterator@VCvReplayMessage@@V?$allocator@VCvRep
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Uninit_move@V?$_Vector_iterator@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@std@@PAVCvReplayMessage@@V?$allocator@VCvReplayMessage@@@2@U_Undefined_move_tag@2@@std@@YAPAVCvReplayMessage@@V?$_Vector_iterator@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@0@0PAV1@AAV?$allocator@VCvReplayMessage@@@0@U_Undefined_move_tag@0@U_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
-$T267201 = -4						; size = 1
+$T267243 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$267204 = 16					; size = 1
+__Cat$267246 = 16					; size = 1
 __Dest$ = 16						; size = 4
 __Al$ = 20						; size = 4
 ___formal$ = 24						; size = 1
@@ -41432,10 +41429,10 @@ ___formal$ = 28						; size = 1
 
 ; 207  : 	return (_STDEXT unchecked_uninitialized_copy(_First, _Last, _Dest, _Al));
 
-	mov	ecx, DWORD PTR __Cat$267204[esp]
+	mov	ecx, DWORD PTR __Cat$267246[esp]
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T267201[esp+4], 0
-	mov	eax, DWORD PTR $T267201[esp+4]
+	mov	BYTE PTR $T267243[esp+4], 0
+	mov	eax, DWORD PTR $T267243[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -41457,10 +41454,10 @@ PUBLIC	??$_Uninit_move@PAVCvReplayMessage@@PAV1@V?$allocator@VCvReplayMessage@@@
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Uninit_move@PAVCvReplayMessage@@PAV1@V?$allocator@VCvReplayMessage@@@std@@U_Undefined_move_tag@3@@std@@YAPAVCvReplayMessage@@PAV1@00AAV?$allocator@VCvReplayMessage@@@0@U_Undefined_move_tag@0@U_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
-$T267220 = -4						; size = 1
+$T267262 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$267223 = 16					; size = 1
+__Cat$267265 = 16					; size = 1
 __Dest$ = 16						; size = 4
 __Al$ = 20						; size = 4
 ___formal$ = 24						; size = 1
@@ -41473,10 +41470,10 @@ ___formal$ = 28						; size = 1
 
 ; 207  : 	return (_STDEXT unchecked_uninitialized_copy(_First, _Last, _Dest, _Al));
 
-	mov	ecx, DWORD PTR __Cat$267223[esp]
+	mov	ecx, DWORD PTR __Cat$267265[esp]
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T267220[esp+4], 0
-	mov	eax, DWORD PTR $T267220[esp+4]
+	mov	BYTE PTR $T267262[esp+4], 0
+	mov	eax, DWORD PTR $T267262[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -41499,10 +41496,10 @@ PUBLIC	??$_Ucopy@PAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\vector
 ;	COMDAT ??$_Ucopy@PAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@IAEPAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@1@PAV21@00@Z
 _TEXT	SEGMENT
-$T267239 = -4						; size = 1
+$T267280 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$267242 = 16					; size = 1
+__Cat$267284 = 16					; size = 1
 __Ptr$ = 16						; size = 4
 ??$_Ucopy@PAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@IAEPAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@1@PAV21@00@Z PROC ; std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > >::_Ucopy<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > *>, COMDAT
 ; _this$ = ecx
@@ -41515,9 +41512,9 @@ __Ptr$ = 16						; size = 4
 ; 1140 : 		return (_STDEXT unchecked_uninitialized_copy(_First, _Last,
 ; 1141 : 			_Ptr, this->_Alval));
 
-	mov	edx, DWORD PTR __Cat$267242[esp]
-	mov	BYTE PTR $T267239[esp+4], 0
-	mov	eax, DWORD PTR $T267239[esp+4]
+	mov	edx, DWORD PTR __Cat$267284[esp]
+	mov	BYTE PTR $T267280[esp+4], 0
+	mov	eax, DWORD PTR $T267280[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Ptr$[esp+4]
 	push	edx
@@ -41539,7 +41536,7 @@ PUBLIC	?clear@?$vector@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@s
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?clear@?$vector@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@std@@QAEXXZ
 _TEXT	SEGMENT
-$T267253 = -4						; size = 4
+$T267295 = -4						; size = 4
 ?clear@?$vector@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@std@@QAEXXZ PROC ; std::vector<CvReplayMessage,std::allocator<CvReplayMessage> >::clear, COMDAT
 ; _this$ = ecx
 
@@ -41553,7 +41550,7 @@ $T267253 = -4						; size = 4
 	mov	edx, DWORD PTR [ecx+4]
 	push	eax
 	push	edx
-	lea	eax, DWORD PTR $T267253[esp+12]
+	lea	eax, DWORD PTR $T267295[esp+12]
 	push	eax
 	call	?erase@?$vector@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@std@@QAE?AV?$_Vector_iterator@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@2@V?$_Vector_const_iterator@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@2@0@Z ; std::vector<CvReplayMessage,std::allocator<CvReplayMessage> >::erase
 
@@ -41567,10 +41564,10 @@ PUBLIC	?_Ufill@?$vector@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?_Ufill@?$vector@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@std@@IAEPAVCvReplayMessage@@PAV3@IABV3@@Z
 _TEXT	SEGMENT
-$T267297 = -4						; size = 1
+$T267339 = -4						; size = 1
 __Ptr$ = 8						; size = 4
 __Count$ = 12						; size = 4
-__Cat$267301 = 16					; size = 1
+__Cat$267343 = 16					; size = 1
 __Val$ = 16						; size = 4
 ?_Ufill@?$vector@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@std@@IAEPAVCvReplayMessage@@PAV3@IABV3@@Z PROC ; std::vector<CvReplayMessage,std::allocator<CvReplayMessage> >::_Ufill, COMDAT
 ; _this$ = ecx
@@ -41581,13 +41578,13 @@ __Val$ = 16						; size = 4
 
 ; 1254 : 		_STDEXT unchecked_uninitialized_fill_n(_Ptr, _Count, _Val, this->_Alval);
 
-	mov	edx, DWORD PTR __Cat$267301[esp]
+	mov	edx, DWORD PTR __Cat$267343[esp]
 	push	esi
 	mov	esi, DWORD PTR __Count$[esp+4]
 	push	edi
 	mov	edi, DWORD PTR __Ptr$[esp+8]
-	mov	BYTE PTR $T267297[esp+12], 0
-	mov	eax, DWORD PTR $T267297[esp+12]
+	mov	BYTE PTR $T267339[esp+12], 0
+	mov	eax, DWORD PTR $T267339[esp+12]
 	push	eax
 	mov	eax, DWORD PTR __Val$[esp+12]
 	push	edx
@@ -41617,10 +41614,10 @@ PUBLIC	?_Ufill@?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?_Ufill@?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@IAEPAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@2@PAV32@IABV32@@Z
 _TEXT	SEGMENT
-$T267315 = -4						; size = 1
+$T267357 = -4						; size = 1
 __Ptr$ = 8						; size = 4
 __Count$ = 12						; size = 4
-__Cat$267319 = 16					; size = 1
+__Cat$267361 = 16					; size = 1
 __Val$ = 16						; size = 4
 ?_Ufill@?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@IAEPAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@2@PAV32@IABV32@@Z PROC ; std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > >::_Ufill, COMDAT
 ; _this$ = ecx
@@ -41631,13 +41628,13 @@ __Val$ = 16						; size = 4
 
 ; 1254 : 		_STDEXT unchecked_uninitialized_fill_n(_Ptr, _Count, _Val, this->_Alval);
 
-	mov	edx, DWORD PTR __Cat$267319[esp]
+	mov	edx, DWORD PTR __Cat$267361[esp]
 	push	esi
 	mov	esi, DWORD PTR __Count$[esp+4]
 	push	edi
 	mov	edi, DWORD PTR __Ptr$[esp+8]
-	mov	BYTE PTR $T267315[esp+12], 0
-	mov	eax, DWORD PTR $T267315[esp+12]
+	mov	BYTE PTR $T267357[esp+12], 0
+	mov	eax, DWORD PTR $T267357[esp+12]
 	push	eax
 	mov	eax, DWORD PTR __Val$[esp+12]
 	push	edx
@@ -41666,14 +41663,14 @@ PUBLIC	?_Destroy@?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@st
 ;	COMDAT ?_Destroy@?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@IAEXPAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@2@0@Z
 _TEXT	SEGMENT
 __First$ = 8						; size = 4
-__Cat$267335 = 12					; size = 1
+__Cat$267377 = 12					; size = 1
 __Last$ = 12						; size = 4
 ?_Destroy@?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@IAEXPAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@2@0@Z PROC ; std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > >::_Destroy, COMDAT
 ; _this$ = ecx
 
 ; 1119 : 		_Destroy_range(_First, _Last, this->_Alval);
 
-	mov	eax, DWORD PTR __Cat$267335[esp-4]
+	mov	eax, DWORD PTR __Cat$267377[esp-4]
 	mov	edx, DWORD PTR __First$[esp-4]
 	push	eax
 	push	ecx
@@ -41735,22 +41732,22 @@ __unwindtable$?_Insert_n@?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$
 xdata$x	ENDS
 ;	COMDAT ?_Insert_n@?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@IAEXV?$_Vector_const_iterator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@2@IABV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@2@@Z
 _TEXT	SEGMENT
-__Tmp$225428 = -60					; size = 12
-__Tmp$225418 = -48					; size = 12
-__Whereoff$225404 = -36					; size = 4
+__Tmp$225470 = -60					; size = 12
+__Tmp$225460 = -48					; size = 12
+__Whereoff$225446 = -36					; size = 4
 _this$ = -32						; size = 4
-__Ncopied$225405 = -28					; size = 4
-__Newvec$225403 = -24					; size = 4
+__Ncopied$225447 = -28					; size = 4
+__Newvec$225445 = -24					; size = 4
 __Capacity$ = -20					; size = 4
 __$EHRec$ = -16						; size = 16
-__Cat$267487 = 8					; size = 1
-__Cat$267457 = 8					; size = 1
-__Cat$267431 = 8					; size = 1
+__Cat$267529 = 8					; size = 1
+__Cat$267499 = 8					; size = 1
+__Cat$267473 = 8					; size = 1
 __Where$ = 8						; size = 4
 tv559 = 12						; size = 4
 __Count$ = 12						; size = 4
-$T267453 = 16						; size = 1
-$T267427 = 16						; size = 1
+$T267495 = 16						; size = 1
+$T267469 = 16						; size = 1
 __Val$ = 16						; size = 4
 ?_Insert_n@?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@IAEXV?$_Vector_const_iterator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@2@IABV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@2@@Z PROC ; std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > >::_Insert_n, COMDAT
 ; _this$ = ecx
@@ -41892,58 +41889,58 @@ $LN9@Insert_n@5:
 ; 1178 : 			_Ufill(_Newvec + _Whereoff, _Count, _Val);	// add new stuff
 
 	mov	edx, DWORD PTR __Val$[ebp]
-	mov	DWORD PTR __Ncopied$225405[ebp], eax
+	mov	DWORD PTR __Ncopied$225447[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+12], eax
 	push	edx
-	mov	DWORD PTR __Newvec$225403[ebp], ecx
+	mov	DWORD PTR __Newvec$225445[ebp], ecx
 	lea	eax, DWORD PTR [ebx+ebx*2]
 	lea	ecx, DWORD PTR [ecx+eax*4]
 	push	edi
 	push	ecx
 	mov	ecx, esi
-	mov	DWORD PTR __Whereoff$225404[ebp], ebx
+	mov	DWORD PTR __Whereoff$225446[ebp], ebx
 	call	?_Ufill@?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@IAEPAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@2@PAV32@IABV32@@Z ; std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > >::_Ufill
 
 ; 1179 : 			++_Ncopied;
 ; 1180 : 			_Umove(this->_Myfirst, _VEC_ITER_BASE(_Where),
 ; 1181 : 				_Newvec);	// move prefix
 
-	mov	ecx, DWORD PTR __Cat$267431[ebp]
+	mov	ecx, DWORD PTR __Cat$267473[ebp]
 	mov	eax, DWORD PTR [esi+4]
-	mov	BYTE PTR $T267427[ebp], 0
-	mov	edx, DWORD PTR $T267427[ebp]
+	mov	BYTE PTR $T267469[ebp], 0
+	mov	edx, DWORD PTR $T267469[ebp]
 	push	edx
-	mov	edx, DWORD PTR __Newvec$225403[ebp]
+	mov	edx, DWORD PTR __Newvec$225445[ebp]
 	push	ecx
 	mov	ecx, DWORD PTR __Where$[ebp]
 	push	esi
 	push	edx
 	push	ecx
 	push	eax
-	mov	DWORD PTR __Ncopied$225405[ebp], 1
+	mov	DWORD PTR __Ncopied$225447[ebp], 1
 	call	??$_Uninit_move@PAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@PAV12@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@YAPAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@0@PAV10@00AAV?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@0@U_Swap_move_tag@0@U_Range_checked_iterator_tag@0@@Z ; std::_Uninit_move<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > *,std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > *,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > >
 
 ; 1182 : 			++_Ncopied;
 ; 1183 : 			_Umove(_VEC_ITER_BASE(_Where), this->_Mylast,
 ; 1184 : 				_Newvec + (_Whereoff + _Count));	// move suffix
 
-	mov	ecx, DWORD PTR __Newvec$225403[ebp]
+	mov	ecx, DWORD PTR __Newvec$225445[ebp]
 	mov	eax, DWORD PTR [esi+8]
 	add	esp, 24					; 00000018H
 	add	ebx, edi
 	lea	edx, DWORD PTR [ebx+ebx*2]
 	lea	ecx, DWORD PTR [ecx+edx*4]
-	mov	BYTE PTR $T267453[ebp], 0
-	mov	edx, DWORD PTR $T267453[ebp]
+	mov	BYTE PTR $T267495[ebp], 0
+	mov	edx, DWORD PTR $T267495[ebp]
 	push	edx
-	mov	edx, DWORD PTR __Cat$267457[ebp]
+	mov	edx, DWORD PTR __Cat$267499[ebp]
 	push	edx
 	push	esi
 	push	ecx
 	push	eax
 	mov	eax, DWORD PTR __Where$[ebp]
 	push	eax
-	mov	DWORD PTR __Ncopied$225405[ebp], 2
+	mov	DWORD PTR __Ncopied$225447[ebp], 2
 	call	??$_Uninit_move@PAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@PAV12@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@YAPAV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@0@PAV10@00AAV?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@0@U_Swap_move_tag@0@U_Range_checked_iterator_tag@0@@Z ; std::_Uninit_move<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > *,std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > *,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > >
 
 ; 1192 : 			_CATCH_END
@@ -41971,7 +41968,7 @@ $LN9@Insert_n@5:
 ; 1196 : 				{	// destroy and deallocate old array
 ; 1197 : 				_Destroy(_Myfirst, _Mylast);
 
-	mov	edx, DWORD PTR __Cat$267487[ebp]
+	mov	edx, DWORD PTR __Cat$267529[ebp]
 	mov	eax, DWORD PTR [esi+8]
 	push	edx
 	push	esi
@@ -41997,7 +41994,7 @@ $LN77@Insert_n@5:
 
 	mov	eax, DWORD PTR __Capacity$[ebp]
 	lea	edx, DWORD PTR [eax+eax*2]
-	mov	eax, DWORD PTR __Newvec$225403[ebp]
+	mov	eax, DWORD PTR __Newvec$225445[ebp]
 	lea	ecx, DWORD PTR [eax+edx*4]
 
 ; 1206 : 			_Mylast = _Newvec + _Count;
@@ -42026,13 +42023,13 @@ __catch$?_Insert_n@?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@
 ; 1185 : 			_CATCH_ALL
 ; 1186 : 			if (1 < _Ncopied)
 
-	mov	ebx, DWORD PTR __Ncopied$225405[ebp]
+	mov	ebx, DWORD PTR __Ncopied$225447[ebp]
 	cmp	ebx, 1
 
 ; 1187 : 				_Destroy(_Newvec, _Newvec + _Whereoff);
 
-	mov	esi, DWORD PTR __Whereoff$225404[ebp]
-	mov	edi, DWORD PTR __Newvec$225403[ebp]
+	mov	esi, DWORD PTR __Whereoff$225446[ebp]
+	mov	edi, DWORD PTR __Newvec$225445[ebp]
 	jle	SHORT $LN7@Insert_n@5
 	mov	ecx, DWORD PTR _this$[ebp]
 	lea	edx, DWORD PTR [esi+esi*2]
@@ -42093,7 +42090,7 @@ $LN10@Insert_n@5:
 
 	mov	ecx, DWORD PTR __Val$[ebp]
 	push	ecx
-	lea	ecx, DWORD PTR __Tmp$225418[ebp]
+	lea	ecx, DWORD PTR __Tmp$225460[ebp]
 	call	??0?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@QAE@ABV01@@Z ; std::_Tree<std::_Tmap_traits<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> >,0> >::_Tree<std::_Tmap_traits<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> >,0> >
 
 ; 1212 : 
@@ -42119,7 +42116,7 @@ $LN10@Insert_n@5:
 ; 1218 : 				_Tmp);	// insert new stuff off end
 
 	mov	ecx, DWORD PTR [esi+8]
-	lea	edx, DWORD PTR __Tmp$225418[ebp]
+	lea	edx, DWORD PTR __Tmp$225460[ebp]
 	push	edx
 	mov	edx, ecx
 	sub	edx, DWORD PTR __Where$[ebp]
@@ -42152,7 +42149,7 @@ $LN10@Insert_n@5:
 ; 1231 : 				_Tmp);	// insert up to old end
 
 	mov	edx, DWORD PTR __Where$[ebp]
-	lea	ecx, DWORD PTR __Tmp$225418[ebp]
+	lea	ecx, DWORD PTR __Tmp$225460[ebp]
 	push	ecx
 	sub	esi, ebx
 	push	esi
@@ -42163,7 +42160,7 @@ $LN10@Insert_n@5:
 
 ; 1232 : 			}
 
-	lea	ecx, DWORD PTR __Tmp$225418[ebp]
+	lea	ecx, DWORD PTR __Tmp$225460[ebp]
 
 ; 1233 : 		else
 
@@ -42199,7 +42196,7 @@ $LN3@Insert_n@5:
 
 	mov	eax, DWORD PTR __Val$[ebp]
 	push	eax
-	lea	ecx, DWORD PTR __Tmp$225428[ebp]
+	lea	ecx, DWORD PTR __Tmp$225470[ebp]
 	call	??0?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@QAE@ABV01@@Z ; std::_Tree<std::_Tmap_traits<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> >,0> >::_Tree<std::_Tmap_traits<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> >,0> >
 
 ; 1236 : 
@@ -42242,7 +42239,7 @@ $LN3@Insert_n@5:
 ; 1247 : 			std::fill(_VEC_ITER_BASE(_Where), _VEC_ITER_BASE(_Where) + _Count,
 ; 1248 : 				_Tmp);	// insert into hole
 
-	lea	eax, DWORD PTR __Tmp$225428[ebp]
+	lea	eax, DWORD PTR __Tmp$225470[ebp]
 	push	eax
 	mov	eax, DWORD PTR __Where$[ebp]
 	add	edi, eax
@@ -42253,7 +42250,7 @@ $LN3@Insert_n@5:
 
 ; 1249 : 			}
 
-	lea	ecx, DWORD PTR __Tmp$225428[ebp]
+	lea	ecx, DWORD PTR __Tmp$225470[ebp]
 $LN94@Insert_n@5:
 	mov	DWORD PTR __$EHRec$[ebp+12], -1
 	call	??1?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@QAE@XZ
@@ -42274,10 +42271,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Insert_n@?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@IAEXV?$_Vector_const_iterator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@2@IABV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@2@@Z$4:
-	lea	ecx, DWORD PTR __Tmp$225418[ebp]
+	lea	ecx, DWORD PTR __Tmp$225460[ebp]
 	jmp	??1?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@QAE@XZ
 __unwindfunclet$?_Insert_n@?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@IAEXV?$_Vector_const_iterator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@2@IABV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@2@@Z$5:
-	lea	ecx, DWORD PTR __Tmp$225428[ebp]
+	lea	ecx, DWORD PTR __Tmp$225470[ebp]
 	jmp	??1?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@QAE@XZ
 __ehhandler$?_Insert_n@?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@IAEXV?$_Vector_const_iterator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@2@IABV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@2@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?_Insert_n@?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@IAEXV?$_Vector_const_iterator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@2@IABV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@2@@Z
@@ -42323,10 +42320,10 @@ PUBLIC	??$_Umove@V?$_Vector_iterator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\vector
 ;	COMDAT ??$_Umove@V?$_Vector_iterator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@std@@@?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@std@@IAEPAV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@1@V?$_Vector_iterator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@1@0PAV21@@Z
 _TEXT	SEGMENT
-$T267541 = -4						; size = 1
+$T267583 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$267545 = 16					; size = 1
+__Cat$267587 = 16					; size = 1
 __Ptr$ = 16						; size = 4
 ??$_Umove@V?$_Vector_iterator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@std@@@?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@std@@IAEPAV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@1@V?$_Vector_iterator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@1@0PAV21@@Z PROC ; std::vector<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > >,std::allocator<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > > > >::_Umove<std::_Vector_iterator<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > >,std::allocator<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > > > > >, COMDAT
 ; _this$ = ecx
@@ -42339,9 +42336,9 @@ __Ptr$ = 16						; size = 4
 ; 1147 : 		return (_STDEXT _Unchecked_uninitialized_move(_First, _Last,
 ; 1148 : 			_Ptr, this->_Alval));
 
-	mov	edx, DWORD PTR __Cat$267545[esp]
-	mov	BYTE PTR $T267541[esp+4], 0
-	mov	eax, DWORD PTR $T267541[esp+4]
+	mov	edx, DWORD PTR __Cat$267587[esp]
+	mov	BYTE PTR $T267583[esp+4], 0
+	mov	eax, DWORD PTR $T267583[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Ptr$[esp+4]
 	push	edx
@@ -42364,7 +42361,7 @@ PUBLIC	??$_Destroy_range@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xmemory
 ;	COMDAT ??$_Destroy_range@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@std@@@std@@YAXPAV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@0@0AAV?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@0@@Z
 _TEXT	SEGMENT
-__Cat$267554 = -4					; size = 1
+__Cat$267596 = -4					; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Al$ = 16						; size = 4
@@ -42376,7 +42373,7 @@ __Al$ = 16						; size = 4
 
 ; 225  : 	_Destroy_range(_First, _Last, _Al, _Ptr_cat(_First, _Last));
 
-	mov	eax, DWORD PTR __Cat$267554[esp+4]
+	mov	eax, DWORD PTR __Cat$267596[esp+4]
 	mov	ecx, DWORD PTR __Al$[esp]
 	mov	edx, DWORD PTR __Last$[esp]
 	push	eax
@@ -42397,8 +42394,8 @@ PUBLIC	??$unchecked_uninitialized_fill_n@PAV?$map@IUPlotState@CvReplayInfo@@U?$l
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ??$unchecked_uninitialized_fill_n@PAV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@IV12@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@stdext@@YAXPAV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@IABV12@AAV?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@Z
 _TEXT	SEGMENT
-$T267559 = -4						; size = 1
-__Cat$267563 = -4					; size = 1
+$T267601 = -4						; size = 1
+__Cat$267605 = -4					; size = 1
 __First$ = 8						; size = 4
 __Count$ = 12						; size = 4
 __Val$ = 16						; size = 4
@@ -42413,9 +42410,9 @@ __Al$ = 20						; size = 4
 ; 942  : 		_STD _Ptr_cat(_First, _First), _STD _Range_checked_iterator_tag());
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T267559[esp+4], 0
-	mov	eax, DWORD PTR $T267559[esp+4]
-	mov	ecx, DWORD PTR __Cat$267563[esp+4]
+	mov	BYTE PTR $T267601[esp+4], 0
+	mov	eax, DWORD PTR $T267601[esp+4]
+	mov	ecx, DWORD PTR __Cat$267605[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Val$[esp+4]
 	push	ecx
@@ -42438,10 +42435,10 @@ PUBLIC	??$_Umove@PAV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\vector
 ;	COMDAT ??$_Umove@PAV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@std@@IAEPAV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@1@PAV21@00@Z
 _TEXT	SEGMENT
-$T267576 = -4						; size = 1
+$T267618 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$267580 = 16					; size = 1
+__Cat$267622 = 16					; size = 1
 __Ptr$ = 16						; size = 4
 ??$_Umove@PAV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@std@@IAEPAV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@1@PAV21@00@Z PROC ; std::vector<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > >,std::allocator<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > > > >::_Umove<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > > *>, COMDAT
 ; _this$ = ecx
@@ -42454,9 +42451,9 @@ __Ptr$ = 16						; size = 4
 ; 1147 : 		return (_STDEXT _Unchecked_uninitialized_move(_First, _Last,
 ; 1148 : 			_Ptr, this->_Alval));
 
-	mov	edx, DWORD PTR __Cat$267580[esp]
-	mov	BYTE PTR $T267576[esp+4], 0
-	mov	eax, DWORD PTR $T267576[esp+4]
+	mov	edx, DWORD PTR __Cat$267622[esp]
+	mov	BYTE PTR $T267618[esp+4], 0
+	mov	eax, DWORD PTR $T267618[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Ptr$[esp+4]
 	push	edx
@@ -42479,10 +42476,10 @@ PUBLIC	??$_Unchecked_uninitialized_move@V?$_Vector_iterator@VCvReplayMessage@@V?
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ??$_Unchecked_uninitialized_move@V?$_Vector_iterator@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@std@@PAVCvReplayMessage@@V?$allocator@VCvReplayMessage@@@2@@stdext@@YAPAVCvReplayMessage@@V?$_Vector_iterator@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@std@@0PAV1@AAV?$allocator@VCvReplayMessage@@@3@@Z
 _TEXT	SEGMENT
-$T267612 = -4						; size = 1
+$T267654 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$267615 = 16					; size = 1
+__Cat$267657 = 16					; size = 1
 __Dest$ = 16						; size = 4
 __Al$ = 20						; size = 4
 ??$_Unchecked_uninitialized_move@V?$_Vector_iterator@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@std@@PAVCvReplayMessage@@V?$allocator@VCvReplayMessage@@@2@@stdext@@YAPAVCvReplayMessage@@V?$_Vector_iterator@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@std@@0PAV1@AAV?$allocator@VCvReplayMessage@@@3@@Z PROC ; stdext::_Unchecked_uninitialized_move<std::_Vector_iterator<CvReplayMessage,std::allocator<CvReplayMessage> >,CvReplayMessage *,std::allocator<CvReplayMessage> >, COMDAT
@@ -42495,10 +42492,10 @@ __Al$ = 20						; size = 4
 ; 863  : 		_CHECKED_BASE(_Last), _Dest, _Al,
 ; 864  : 		_STD _Move_cat(_Dest), _STD _Range_checked_iterator_tag()));
 
-	mov	ecx, DWORD PTR __Cat$267615[esp]
+	mov	ecx, DWORD PTR __Cat$267657[esp]
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T267612[esp+4], 0
-	mov	eax, DWORD PTR $T267612[esp+4]
+	mov	BYTE PTR $T267654[esp+4], 0
+	mov	eax, DWORD PTR $T267654[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -42520,10 +42517,10 @@ PUBLIC	??$_Unchecked_uninitialized_move@PAVCvReplayMessage@@PAV1@V?$allocator@VC
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Unchecked_uninitialized_move@PAVCvReplayMessage@@PAV1@V?$allocator@VCvReplayMessage@@@std@@@stdext@@YAPAVCvReplayMessage@@PAV1@00AAV?$allocator@VCvReplayMessage@@@std@@@Z
 _TEXT	SEGMENT
-$T267649 = -4						; size = 1
+$T267691 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$267652 = 16					; size = 1
+__Cat$267694 = 16					; size = 1
 __Dest$ = 16						; size = 4
 __Al$ = 20						; size = 4
 ??$_Unchecked_uninitialized_move@PAVCvReplayMessage@@PAV1@V?$allocator@VCvReplayMessage@@@std@@@stdext@@YAPAVCvReplayMessage@@PAV1@00AAV?$allocator@VCvReplayMessage@@@std@@@Z PROC ; stdext::_Unchecked_uninitialized_move<CvReplayMessage *,CvReplayMessage *,std::allocator<CvReplayMessage> >, COMDAT
@@ -42536,10 +42533,10 @@ __Al$ = 20						; size = 4
 ; 863  : 		_CHECKED_BASE(_Last), _Dest, _Al,
 ; 864  : 		_STD _Move_cat(_Dest), _STD _Range_checked_iterator_tag()));
 
-	mov	ecx, DWORD PTR __Cat$267652[esp]
+	mov	ecx, DWORD PTR __Cat$267694[esp]
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T267649[esp+4], 0
-	mov	eax, DWORD PTR $T267649[esp+4]
+	mov	BYTE PTR $T267691[esp+4], 0
+	mov	eax, DWORD PTR $T267691[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -42562,11 +42559,11 @@ PUBLIC	?erase@?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\vector
 ;	COMDAT ?erase@?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@QAE?AV?$_Vector_iterator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@2@V?$_Vector_const_iterator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@2@0@Z
 _TEXT	SEGMENT
-$T267711 = 8						; size = 1
+$T267753 = 8						; size = 1
 ___$ReturnUdt$ = 8					; size = 4
-__Cat$267745 = 12					; size = 1
-__Cat$267716 = 12					; size = 1
-$T267713 = 12						; size = 1
+__Cat$267787 = 12					; size = 1
+__Cat$267758 = 12					; size = 1
+$T267755 = 12						; size = 1
 __First_arg$ = 12					; size = 4
 __Last_arg$ = 16					; size = 4
 ?erase@?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@QAE?AV?$_Vector_iterator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@2@V?$_Vector_const_iterator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@2@0@Z PROC ; std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > >::erase, COMDAT
@@ -42605,12 +42602,12 @@ __Last_arg$ = 16					; size = 4
 
 	mov	ecx, DWORD PTR [esi+8]
 	push	edi
-	mov	BYTE PTR $T267711[esp+8], 0
-	mov	edi, DWORD PTR $T267711[esp+8]
+	mov	BYTE PTR $T267753[esp+8], 0
+	mov	edi, DWORD PTR $T267753[esp+8]
 	push	edi
-	mov	edi, DWORD PTR __Cat$267716[esp+12]
+	mov	edi, DWORD PTR __Cat$267758[esp+12]
 	push	edi
-	mov	edi, DWORD PTR $T267713[esp+16]
+	mov	edi, DWORD PTR $T267755[esp+16]
 	push	edi
 	push	eax
 	push	ecx
@@ -42623,7 +42620,7 @@ __Last_arg$ = 16					; size = 4
 
 	mov	ecx, DWORD PTR [esi+8]
 	mov	edi, eax
-	mov	eax, DWORD PTR __Cat$267745[esp+32]
+	mov	eax, DWORD PTR __Cat$267787[esp+32]
 	push	eax
 	push	esi
 	push	ecx
@@ -42658,7 +42655,7 @@ PUBLIC	?clearReplayMessageMap@CvReplayInfo@@QAEXXZ	; CvReplayInfo::clearReplayMe
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredll_expansion2\cvreplayinfo.cpp
 ;	COMDAT ?clearReplayMessageMap@CvReplayInfo@@QAEXXZ
 _TEXT	SEGMENT
-$T267796 = -4						; size = 4
+$T267838 = -4						; size = 4
 ?clearReplayMessageMap@CvReplayInfo@@QAEXXZ PROC	; CvReplayInfo::clearReplayMessageMap, COMDAT
 ; _this$ = ecx
 
@@ -42673,7 +42670,7 @@ $T267796 = -4						; size = 4
 	add	ecx, 160				; 000000a0H
 	push	eax
 	push	edx
-	lea	eax, DWORD PTR $T267796[esp+12]
+	lea	eax, DWORD PTR $T267838[esp+12]
 	push	eax
 	call	?erase@?$vector@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@std@@QAE?AV?$_Vector_iterator@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@2@V?$_Vector_const_iterator@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@2@0@Z ; std::vector<CvReplayMessage,std::allocator<CvReplayMessage> >::erase
 
@@ -42756,7 +42753,7 @@ PUBLIC	?_Tidy@?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?_Tidy@?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@IAEXXZ
 _TEXT	SEGMENT
-__Cat$267895 = -4					; size = 1
+__Cat$267937 = -4					; size = 1
 ?_Tidy@?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@IAEXXZ PROC ; std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > >::_Tidy, COMDAT
 ; _this$ = ecx
 
@@ -42780,7 +42777,7 @@ __Cat$267895 = -4					; size = 1
 ; 1130 : 
 ; 1131 : 			_Destroy(_Myfirst, _Mylast);
 
-	mov	ecx, DWORD PTR __Cat$267895[esp+8]
+	mov	ecx, DWORD PTR __Cat$267937[esp+8]
 	mov	edx, DWORD PTR [esi+8]
 	push	ecx
 	push	esi
@@ -42815,14 +42812,14 @@ PUBLIC	?_Destroy@?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$all
 ;	COMDAT ?_Destroy@?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@std@@IAEXPAV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@2@0@Z
 _TEXT	SEGMENT
 __First$ = 8						; size = 4
-__Cat$267916 = 12					; size = 1
+__Cat$267958 = 12					; size = 1
 __Last$ = 12						; size = 4
 ?_Destroy@?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@std@@IAEXPAV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@2@0@Z PROC ; std::vector<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > >,std::allocator<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > > > >::_Destroy, COMDAT
 ; _this$ = ecx
 
 ; 1119 : 		_Destroy_range(_First, _Last, this->_Alval);
 
-	mov	eax, DWORD PTR __Cat$267916[esp-4]
+	mov	eax, DWORD PTR __Cat$267958[esp-4]
 	mov	edx, DWORD PTR __First$[esp-4]
 	push	eax
 	push	ecx
@@ -42841,7 +42838,7 @@ PUBLIC	?_Tidy@?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$alloca
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?_Tidy@?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@std@@IAEXXZ
 _TEXT	SEGMENT
-__Cat$267944 = -4					; size = 1
+__Cat$267986 = -4					; size = 1
 ?_Tidy@?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@std@@IAEXXZ PROC ; std::vector<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > >,std::allocator<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > > > >::_Tidy, COMDAT
 ; _this$ = ecx
 
@@ -42865,7 +42862,7 @@ __Cat$267944 = -4					; size = 1
 ; 1130 : 
 ; 1131 : 			_Destroy(_Myfirst, _Mylast);
 
-	mov	ecx, DWORD PTR __Cat$267944[esp+8]
+	mov	ecx, DWORD PTR __Cat$267986[esp+8]
 	mov	edx, DWORD PTR [esi+8]
 	push	ecx
 	push	esi
@@ -42899,10 +42896,10 @@ PUBLIC	?_Ufill@?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$alloc
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?_Ufill@?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@std@@IAEPAV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@2@PAV32@IABV32@@Z
 _TEXT	SEGMENT
-$T267965 = -4						; size = 1
+$T268007 = -4						; size = 1
 __Ptr$ = 8						; size = 4
 __Count$ = 12						; size = 4
-__Cat$267968 = 16					; size = 1
+__Cat$268010 = 16					; size = 1
 __Val$ = 16						; size = 4
 ?_Ufill@?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@std@@IAEPAV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@2@PAV32@IABV32@@Z PROC ; std::vector<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > >,std::allocator<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > > > >::_Ufill, COMDAT
 ; _this$ = ecx
@@ -42913,13 +42910,13 @@ __Val$ = 16						; size = 4
 
 ; 1254 : 		_STDEXT unchecked_uninitialized_fill_n(_Ptr, _Count, _Val, this->_Alval);
 
-	mov	edx, DWORD PTR __Cat$267968[esp]
+	mov	edx, DWORD PTR __Cat$268010[esp]
 	push	esi
 	mov	esi, DWORD PTR __Count$[esp+4]
 	push	edi
 	mov	edi, DWORD PTR __Ptr$[esp+8]
-	mov	BYTE PTR $T267965[esp+12], 0
-	mov	eax, DWORD PTR $T267965[esp+12]
+	mov	BYTE PTR $T268007[esp+12], 0
+	mov	eax, DWORD PTR $T268007[esp+12]
 	push	eax
 	mov	eax, DWORD PTR __Val$[esp+12]
 	push	edx
@@ -42990,22 +42987,22 @@ __unwindtable$?_Insert_n@?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std
 xdata$x	ENDS
 ;	COMDAT ?_Insert_n@?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@std@@IAEXV?$_Vector_const_iterator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@2@IABV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@2@@Z
 _TEXT	SEGMENT
-__Tmp$225783 = -60					; size = 12
-__Tmp$225773 = -48					; size = 12
-__Whereoff$225759 = -36					; size = 4
+__Tmp$225825 = -60					; size = 12
+__Tmp$225815 = -48					; size = 12
+__Whereoff$225801 = -36					; size = 4
 _this$ = -32						; size = 4
-__Ncopied$225760 = -28					; size = 4
-__Newvec$225758 = -24					; size = 4
+__Ncopied$225802 = -28					; size = 4
+__Newvec$225800 = -24					; size = 4
 __Capacity$ = -20					; size = 4
 __$EHRec$ = -16						; size = 16
-__Cat$268119 = 8					; size = 1
-__Cat$268090 = 8					; size = 1
-__Cat$268064 = 8					; size = 1
+__Cat$268161 = 8					; size = 1
+__Cat$268132 = 8					; size = 1
+__Cat$268106 = 8					; size = 1
 __Where$ = 8						; size = 4
 tv559 = 12						; size = 4
 __Count$ = 12						; size = 4
-$T268087 = 16						; size = 1
-$T268061 = 16						; size = 1
+$T268129 = 16						; size = 1
+$T268103 = 16						; size = 1
 __Val$ = 16						; size = 4
 ?_Insert_n@?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@std@@IAEXV?$_Vector_const_iterator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@2@IABV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@2@@Z PROC ; std::vector<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > >,std::allocator<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > > > >::_Insert_n, COMDAT
 ; _this$ = ecx
@@ -43147,58 +43144,58 @@ $LN9@Insert_n@6:
 ; 1178 : 			_Ufill(_Newvec + _Whereoff, _Count, _Val);	// add new stuff
 
 	mov	edx, DWORD PTR __Val$[ebp]
-	mov	DWORD PTR __Ncopied$225760[ebp], eax
+	mov	DWORD PTR __Ncopied$225802[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+12], eax
 	push	edx
-	mov	DWORD PTR __Newvec$225758[ebp], ecx
+	mov	DWORD PTR __Newvec$225800[ebp], ecx
 	lea	eax, DWORD PTR [ebx+ebx*2]
 	lea	ecx, DWORD PTR [ecx+eax*4]
 	push	edi
 	push	ecx
 	mov	ecx, esi
-	mov	DWORD PTR __Whereoff$225759[ebp], ebx
+	mov	DWORD PTR __Whereoff$225801[ebp], ebx
 	call	?_Ufill@?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@std@@IAEPAV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@2@PAV32@IABV32@@Z ; std::vector<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > >,std::allocator<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > > > >::_Ufill
 
 ; 1179 : 			++_Ncopied;
 ; 1180 : 			_Umove(this->_Myfirst, _VEC_ITER_BASE(_Where),
 ; 1181 : 				_Newvec);	// move prefix
 
-	mov	ecx, DWORD PTR __Cat$268064[ebp]
+	mov	ecx, DWORD PTR __Cat$268106[ebp]
 	mov	eax, DWORD PTR [esi+4]
-	mov	BYTE PTR $T268061[ebp], 0
-	mov	edx, DWORD PTR $T268061[ebp]
+	mov	BYTE PTR $T268103[ebp], 0
+	mov	edx, DWORD PTR $T268103[ebp]
 	push	edx
-	mov	edx, DWORD PTR __Newvec$225758[ebp]
+	mov	edx, DWORD PTR __Newvec$225800[ebp]
 	push	ecx
 	mov	ecx, DWORD PTR __Where$[ebp]
 	push	esi
 	push	edx
 	push	ecx
 	push	eax
-	mov	DWORD PTR __Ncopied$225760[ebp], 1
+	mov	DWORD PTR __Ncopied$225802[ebp], 1
 	call	??$_Uninit_move@PAV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@PAV12@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@std@@YAPAV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@0@PAV10@00AAV?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@0@U_Swap_move_tag@0@U_Range_checked_iterator_tag@0@@Z ; std::_Uninit_move<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > > *,std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > > *,std::allocator<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > > > >
 
 ; 1182 : 			++_Ncopied;
 ; 1183 : 			_Umove(_VEC_ITER_BASE(_Where), this->_Mylast,
 ; 1184 : 				_Newvec + (_Whereoff + _Count));	// move suffix
 
-	mov	ecx, DWORD PTR __Newvec$225758[ebp]
+	mov	ecx, DWORD PTR __Newvec$225800[ebp]
 	mov	eax, DWORD PTR [esi+8]
 	add	esp, 24					; 00000018H
 	add	ebx, edi
 	lea	edx, DWORD PTR [ebx+ebx*2]
 	lea	ecx, DWORD PTR [ecx+edx*4]
-	mov	BYTE PTR $T268087[ebp], 0
-	mov	edx, DWORD PTR $T268087[ebp]
+	mov	BYTE PTR $T268129[ebp], 0
+	mov	edx, DWORD PTR $T268129[ebp]
 	push	edx
-	mov	edx, DWORD PTR __Cat$268090[ebp]
+	mov	edx, DWORD PTR __Cat$268132[ebp]
 	push	edx
 	push	esi
 	push	ecx
 	push	eax
 	mov	eax, DWORD PTR __Where$[ebp]
 	push	eax
-	mov	DWORD PTR __Ncopied$225760[ebp], 2
+	mov	DWORD PTR __Ncopied$225802[ebp], 2
 	call	??$_Uninit_move@PAV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@PAV12@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@std@@YAPAV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@0@PAV10@00AAV?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@0@U_Swap_move_tag@0@U_Range_checked_iterator_tag@0@@Z ; std::_Uninit_move<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > > *,std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > > *,std::allocator<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > > > >
 
 ; 1192 : 			_CATCH_END
@@ -43226,7 +43223,7 @@ $LN9@Insert_n@6:
 ; 1196 : 				{	// destroy and deallocate old array
 ; 1197 : 				_Destroy(_Myfirst, _Mylast);
 
-	mov	edx, DWORD PTR __Cat$268119[ebp]
+	mov	edx, DWORD PTR __Cat$268161[ebp]
 	mov	eax, DWORD PTR [esi+8]
 	push	edx
 	push	esi
@@ -43252,7 +43249,7 @@ $LN77@Insert_n@6:
 
 	mov	eax, DWORD PTR __Capacity$[ebp]
 	lea	edx, DWORD PTR [eax+eax*2]
-	mov	eax, DWORD PTR __Newvec$225758[ebp]
+	mov	eax, DWORD PTR __Newvec$225800[ebp]
 	lea	ecx, DWORD PTR [eax+edx*4]
 
 ; 1206 : 			_Mylast = _Newvec + _Count;
@@ -43281,13 +43278,13 @@ __catch$?_Insert_n@?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$a
 ; 1185 : 			_CATCH_ALL
 ; 1186 : 			if (1 < _Ncopied)
 
-	mov	ebx, DWORD PTR __Ncopied$225760[ebp]
+	mov	ebx, DWORD PTR __Ncopied$225802[ebp]
 	cmp	ebx, 1
 
 ; 1187 : 				_Destroy(_Newvec, _Newvec + _Whereoff);
 
-	mov	esi, DWORD PTR __Whereoff$225759[ebp]
-	mov	edi, DWORD PTR __Newvec$225758[ebp]
+	mov	esi, DWORD PTR __Whereoff$225801[ebp]
+	mov	edi, DWORD PTR __Newvec$225800[ebp]
 	jle	SHORT $LN7@Insert_n@6
 	mov	ecx, DWORD PTR _this$[ebp]
 	lea	edx, DWORD PTR [esi+esi*2]
@@ -43348,7 +43345,7 @@ $LN10@Insert_n@6:
 
 	mov	ecx, DWORD PTR __Val$[ebp]
 	push	ecx
-	lea	ecx, DWORD PTR __Tmp$225773[ebp]
+	lea	ecx, DWORD PTR __Tmp$225815[ebp]
 	call	??0?$_Tree@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@std@@QAE@ABV01@@Z ; std::_Tree<std::_Tmap_traits<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> >,0> >::_Tree<std::_Tmap_traits<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> >,0> >
 
 ; 1212 : 
@@ -43374,7 +43371,7 @@ $LN10@Insert_n@6:
 ; 1218 : 				_Tmp);	// insert new stuff off end
 
 	mov	ecx, DWORD PTR [esi+8]
-	lea	edx, DWORD PTR __Tmp$225773[ebp]
+	lea	edx, DWORD PTR __Tmp$225815[ebp]
 	push	edx
 	mov	edx, ecx
 	sub	edx, DWORD PTR __Where$[ebp]
@@ -43407,7 +43404,7 @@ $LN10@Insert_n@6:
 ; 1231 : 				_Tmp);	// insert up to old end
 
 	mov	edx, DWORD PTR __Where$[ebp]
-	lea	ecx, DWORD PTR __Tmp$225773[ebp]
+	lea	ecx, DWORD PTR __Tmp$225815[ebp]
 	push	ecx
 	sub	esi, ebx
 	push	esi
@@ -43418,7 +43415,7 @@ $LN10@Insert_n@6:
 
 ; 1232 : 			}
 
-	lea	ecx, DWORD PTR __Tmp$225773[ebp]
+	lea	ecx, DWORD PTR __Tmp$225815[ebp]
 
 ; 1233 : 		else
 
@@ -43454,7 +43451,7 @@ $LN3@Insert_n@6:
 
 	mov	eax, DWORD PTR __Val$[ebp]
 	push	eax
-	lea	ecx, DWORD PTR __Tmp$225783[ebp]
+	lea	ecx, DWORD PTR __Tmp$225825[ebp]
 	call	??0?$_Tree@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@std@@QAE@ABV01@@Z ; std::_Tree<std::_Tmap_traits<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> >,0> >::_Tree<std::_Tmap_traits<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> >,0> >
 
 ; 1236 : 
@@ -43497,7 +43494,7 @@ $LN3@Insert_n@6:
 ; 1247 : 			std::fill(_VEC_ITER_BASE(_Where), _VEC_ITER_BASE(_Where) + _Count,
 ; 1248 : 				_Tmp);	// insert into hole
 
-	lea	eax, DWORD PTR __Tmp$225783[ebp]
+	lea	eax, DWORD PTR __Tmp$225825[ebp]
 	push	eax
 	mov	eax, DWORD PTR __Where$[ebp]
 	add	edi, eax
@@ -43508,7 +43505,7 @@ $LN3@Insert_n@6:
 
 ; 1249 : 			}
 
-	lea	ecx, DWORD PTR __Tmp$225783[ebp]
+	lea	ecx, DWORD PTR __Tmp$225825[ebp]
 $LN94@Insert_n@6:
 	mov	DWORD PTR __$EHRec$[ebp+12], -1
 	call	??1?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@QAE@XZ
@@ -43529,10 +43526,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Insert_n@?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@std@@IAEXV?$_Vector_const_iterator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@2@IABV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@2@@Z$4:
-	lea	ecx, DWORD PTR __Tmp$225773[ebp]
+	lea	ecx, DWORD PTR __Tmp$225815[ebp]
 	jmp	??1?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@QAE@XZ
 __unwindfunclet$?_Insert_n@?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@std@@IAEXV?$_Vector_const_iterator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@2@IABV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@2@@Z$5:
-	lea	ecx, DWORD PTR __Tmp$225783[ebp]
+	lea	ecx, DWORD PTR __Tmp$225825[ebp]
 	jmp	??1?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@QAE@XZ
 __ehhandler$?_Insert_n@?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@std@@IAEXV?$_Vector_const_iterator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@2@IABV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@2@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?_Insert_n@?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@std@@IAEXV?$_Vector_const_iterator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@2@IABV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@2@@Z
@@ -43571,8 +43568,8 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 _this$ = -20						; size = 4
 __$EHRec$ = -16						; size = 16
-$T268277 = 8						; size = 1
-__Cat$268280 = 8					; size = 1
+$T268317 = 8						; size = 1
+__Cat$268321 = 8					; size = 1
 __Right$ = 8						; size = 4
 ??0?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@QAE@ABV01@@Z PROC ; std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > >::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > >, COMDAT
 ; _this$ = ecx
@@ -43625,10 +43622,10 @@ $LN22@vector@5:
 ; 502  : 			_TRY_BEGIN
 ; 503  : 			_Mylast = _Ucopy(_Right.begin(), _Right.end(), _Myfirst);
 
-	mov	BYTE PTR $T268277[ebp], 0
-	mov	edx, DWORD PTR $T268277[ebp]
+	mov	BYTE PTR $T268317[ebp], 0
+	mov	edx, DWORD PTR $T268317[ebp]
 	push	edx
-	mov	edx, DWORD PTR __Cat$268280[ebp]
+	mov	edx, DWORD PTR __Cat$268321[ebp]
 	push	edx
 	push	esi
 	mov	DWORD PTR [esi+4], eax
@@ -43684,10 +43681,10 @@ PUBLIC	??$_Umove@V?$_Vector_iterator@VCvReplayMessage@@V?$allocator@VCvReplayMes
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Umove@V?$_Vector_iterator@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@std@@@?$vector@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@std@@IAEPAVCvReplayMessage@@V?$_Vector_iterator@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@1@0PAV2@@Z
 _TEXT	SEGMENT
-$T268343 = -4						; size = 1
+$T268385 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$268347 = 16					; size = 1
+__Cat$268389 = 16					; size = 1
 __Ptr$ = 16						; size = 4
 ??$_Umove@V?$_Vector_iterator@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@std@@@?$vector@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@std@@IAEPAVCvReplayMessage@@V?$_Vector_iterator@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@1@0PAV2@@Z PROC ; std::vector<CvReplayMessage,std::allocator<CvReplayMessage> >::_Umove<std::_Vector_iterator<CvReplayMessage,std::allocator<CvReplayMessage> > >, COMDAT
 ; _this$ = ecx
@@ -43700,9 +43697,9 @@ __Ptr$ = 16						; size = 4
 ; 1147 : 		return (_STDEXT _Unchecked_uninitialized_move(_First, _Last,
 ; 1148 : 			_Ptr, this->_Alval));
 
-	mov	edx, DWORD PTR __Cat$268347[esp]
-	mov	BYTE PTR $T268343[esp+4], 0
-	mov	eax, DWORD PTR $T268343[esp+4]
+	mov	edx, DWORD PTR __Cat$268389[esp]
+	mov	BYTE PTR $T268385[esp+4], 0
+	mov	eax, DWORD PTR $T268385[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Ptr$[esp+4]
 	push	edx
@@ -43724,10 +43721,10 @@ PUBLIC	??$_Umove@PAVCvReplayMessage@@@?$vector@VCvReplayMessage@@V?$allocator@VC
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Umove@PAVCvReplayMessage@@@?$vector@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@std@@IAEPAVCvReplayMessage@@PAV2@00@Z
 _TEXT	SEGMENT
-$T268398 = -4						; size = 1
+$T268440 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$268402 = 16					; size = 1
+__Cat$268444 = 16					; size = 1
 __Ptr$ = 16						; size = 4
 ??$_Umove@PAVCvReplayMessage@@@?$vector@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@std@@IAEPAVCvReplayMessage@@PAV2@00@Z PROC ; std::vector<CvReplayMessage,std::allocator<CvReplayMessage> >::_Umove<CvReplayMessage *>, COMDAT
 ; _this$ = ecx
@@ -43740,9 +43737,9 @@ __Ptr$ = 16						; size = 4
 ; 1147 : 		return (_STDEXT _Unchecked_uninitialized_move(_First, _Last,
 ; 1148 : 			_Ptr, this->_Alval));
 
-	mov	edx, DWORD PTR __Cat$268402[esp]
-	mov	BYTE PTR $T268398[esp+4], 0
-	mov	eax, DWORD PTR $T268398[esp+4]
+	mov	edx, DWORD PTR __Cat$268444[esp]
+	mov	BYTE PTR $T268440[esp+4], 0
+	mov	eax, DWORD PTR $T268440[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Ptr$[esp+4]
 	push	edx
@@ -43764,7 +43761,7 @@ PUBLIC	?clear@?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?clear@?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@QAEXXZ
 _TEXT	SEGMENT
-$T268414 = -4						; size = 4
+$T268456 = -4						; size = 4
 ?clear@?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@QAEXXZ PROC ; std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > >::clear, COMDAT
 ; _this$ = ecx
 
@@ -43778,7 +43775,7 @@ $T268414 = -4						; size = 4
 	mov	edx, DWORD PTR [ecx+4]
 	push	eax
 	push	edx
-	lea	eax, DWORD PTR $T268414[esp+12]
+	lea	eax, DWORD PTR $T268456[esp+12]
 	push	eax
 	call	?erase@?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@QAE?AV?$_Vector_iterator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@2@V?$_Vector_const_iterator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@2@0@Z ; std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > >::erase
 
@@ -43806,7 +43803,7 @@ __ehfuncinfo$??$_Construct@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pai
 xdata$x	ENDS
 ;	COMDAT ??$_Construct@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@V12@@std@@YAXPAV?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@0@ABV10@@Z
 _TEXT	SEGMENT
-$T268451 = -16						; size = 4
+$T268493 = -16						; size = 4
 __$EHRec$ = -12						; size = 12
 __Vptr$ = 8						; size = 4
 __Ptr$ = 8						; size = 4
@@ -43829,7 +43826,7 @@ __Val$ = 12						; size = 4
 
 ; 52   : 	::new (_Vptr) _T1(_Val);
 
-	mov	DWORD PTR $T268451[esp+16], ecx
+	mov	DWORD PTR $T268493[esp+16], ecx
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	ecx, ecx
 	je	SHORT $LN3@Construct@12
@@ -43850,7 +43847,7 @@ text$x	SEGMENT
 __unwindfunclet$??$_Construct@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@V12@@std@@YAXPAV?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@0@ABV10@@Z$0:
 	mov	eax, DWORD PTR __Vptr$[ebp-4]
 	push	eax
-	mov	ecx, DWORD PTR $T268451[ebp]
+	mov	ecx, DWORD PTR $T268493[ebp]
 	push	ecx
 	call	??3@YAXPAX0@Z				; operator delete
 	add	esp, 8
@@ -43889,10 +43886,10 @@ __ehfuncinfo$?reserve@?$vector@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@
 xdata$x	ENDS
 ;	COMDAT ?reserve@?$vector@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@std@@QAEXI@Z
 _TEXT	SEGMENT
-$T268594 = -24						; size = 1
-__Ptr$222523 = -20					; size = 4
+$T268636 = -24						; size = 1
+__Ptr$222565 = -20					; size = 4
 __$EHRec$ = -16						; size = 16
-__Cat$268597 = 8					; size = 1
+__Cat$268639 = 8					; size = 1
 __Count$ = 8						; size = 4
 ?reserve@?$vector@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@std@@QAEXI@Z PROC ; std::vector<CvReplayMessage,std::allocator<CvReplayMessage> >::reserve, COMDAT
 ; _this$ = ecx
@@ -43957,16 +43954,16 @@ $LN21@reserve:
 
 	mov	ecx, DWORD PTR [esi+8]
 	mov	edx, DWORD PTR [esi+4]
-	mov	BYTE PTR $T268594[ebp], 0
-	mov	edi, DWORD PTR $T268594[ebp]
+	mov	BYTE PTR $T268636[ebp], 0
+	mov	edi, DWORD PTR $T268636[ebp]
 	push	edi
-	mov	edi, DWORD PTR __Cat$268597[ebp]
+	mov	edi, DWORD PTR __Cat$268639[ebp]
 	push	edi
 	push	esi
 	push	eax
 	push	ecx
 	push	edx
-	mov	DWORD PTR __Ptr$222523[ebp], eax
+	mov	DWORD PTR __Ptr$222565[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+12], 0
 	call	??$_Uninit_copy@V?$_Vector_iterator@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@std@@PAVCvReplayMessage@@V?$allocator@VCvReplayMessage@@@2@@std@@YAPAVCvReplayMessage@@V?$_Vector_iterator@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@0@0PAV1@AAV?$allocator@VCvReplayMessage@@@0@U_Nonscalar_ptr_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z ; std::_Uninit_copy<std::_Vector_iterator<CvReplayMessage,std::allocator<CvReplayMessage> >,CvReplayMessage *,std::allocator<CvReplayMessage> >
 
@@ -44021,7 +44018,7 @@ $LN52@reserve:
 	mov	ecx, eax
 	shl	ecx, 4
 	sub	ecx, eax
-	mov	eax, DWORD PTR __Ptr$222523[ebp]
+	mov	eax, DWORD PTR __Ptr$222565[ebp]
 	lea	edx, DWORD PTR [eax+ecx*4]
 
 ; 628  : 			_Mylast = _Ptr + _Size;
@@ -44054,7 +44051,7 @@ __catch$?reserve@?$vector@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@
 ; 611  : 			_CATCH_ALL
 ; 612  : 			this->_Alval.deallocate(_Ptr, _Count);
 
-	mov	eax, DWORD PTR __Ptr$222523[ebp]
+	mov	eax, DWORD PTR __Ptr$222565[ebp]
 	push	eax
 	call	??3@YAXPAX@Z				; operator delete
 	add	esp, 4
@@ -44079,7 +44076,7 @@ PUBLIC	??1?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??1?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@QAE@XZ
 _TEXT	SEGMENT
-__Cat$268669 = -4					; size = 1
+__Cat$268711 = -4					; size = 1
 ??1?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@QAE@XZ PROC ; std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > >::~vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > >, COMDAT
 ; _this$ = ecx
 
@@ -44094,7 +44091,7 @@ __Cat$268669 = -4					; size = 1
 	mov	eax, DWORD PTR [esi+4]
 	test	eax, eax
 	je	SHORT $LN12@vector@6
-	mov	ecx, DWORD PTR __Cat$268669[esp+8]
+	mov	ecx, DWORD PTR __Cat$268711[esp+8]
 	mov	edx, DWORD PTR [esi+8]
 	push	ecx
 	push	esi
@@ -44121,9 +44118,9 @@ PUBLIC	?push_back@?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@s
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?push_back@?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@QAEXABV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@2@@Z
 _TEXT	SEGMENT
-$T268709 = -4						; size = 1
-__Cat$268712 = 8					; size = 1
-$T268678 = 8						; size = 4
+$T268751 = -4						; size = 1
+__Cat$268754 = 8					; size = 1
+$T268720 = 8						; size = 4
 __Val$ = 8						; size = 4
 ?push_back@?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@QAEXABV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@2@@Z PROC ; std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > >::push_back, COMDAT
 ; _this$ = ecx
@@ -44175,10 +44172,10 @@ $LN10@push_back@5:
 ; 818  :  #else /* _HAS_ITERATOR_DEBUGGING */
 ; 819  : 			_Mylast = _Ufill(_Mylast, 1, _Val);
 
-	mov	edx, DWORD PTR __Cat$268712[esp+12]
+	mov	edx, DWORD PTR __Cat$268754[esp+12]
 	mov	eax, DWORD PTR __Val$[esp+12]
-	mov	BYTE PTR $T268709[esp+16], 0
-	mov	ecx, DWORD PTR $T268709[esp+16]
+	mov	BYTE PTR $T268751[esp+16], 0
+	mov	ecx, DWORD PTR $T268751[esp+16]
 	push	ecx
 	push	edx
 	push	esi
@@ -44207,7 +44204,7 @@ $LN2@push_back@5:
 	mov	ecx, DWORD PTR __Val$[esp+12]
 	push	ecx
 	push	edi
-	lea	edx, DWORD PTR $T268678[esp+20]
+	lea	edx, DWORD PTR $T268720[esp+20]
 	push	edx
 	mov	ecx, esi
 	call	?insert@?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@QAE?AV?$_Vector_iterator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@2@V?$_Vector_const_iterator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@2@ABV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@2@@Z ; std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > >::insert
@@ -44225,7 +44222,7 @@ PUBLIC	??1?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??1?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@std@@QAE@XZ
 _TEXT	SEGMENT
-__Cat$268773 = -4					; size = 1
+__Cat$268815 = -4					; size = 1
 ??1?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@std@@QAE@XZ PROC ; std::vector<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > >,std::allocator<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > > > >::~vector<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > >,std::allocator<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > > > >, COMDAT
 ; _this$ = ecx
 
@@ -44240,7 +44237,7 @@ __Cat$268773 = -4					; size = 1
 	mov	eax, DWORD PTR [esi+4]
 	test	eax, eax
 	je	SHORT $LN12@vector@7
-	mov	ecx, DWORD PTR __Cat$268773[esp+8]
+	mov	ecx, DWORD PTR __Cat$268815[esp+8]
 	mov	edx, DWORD PTR [esi+8]
 	push	ecx
 	push	esi
@@ -44293,11 +44290,11 @@ __ehfuncinfo$?reserve@?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V
 xdata$x	ENDS
 ;	COMDAT ?reserve@?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@std@@QAEXI@Z
 _TEXT	SEGMENT
-$T268863 = -24						; size = 1
-__Ptr$223497 = -20					; size = 4
+$T268905 = -24						; size = 1
+__Ptr$223539 = -20					; size = 4
 __$EHRec$ = -16						; size = 16
-__Cat$268898 = 8					; size = 1
-__Cat$268867 = 8					; size = 1
+__Cat$268940 = 8					; size = 1
+__Cat$268909 = 8					; size = 1
 __Count$ = 8						; size = 4
 ?reserve@?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@std@@QAEXI@Z PROC ; std::vector<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > >,std::allocator<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > > > >::reserve, COMDAT
 ; _this$ = ecx
@@ -44361,16 +44358,16 @@ $LN21@reserve@2:
 
 	mov	ecx, DWORD PTR [esi+8]
 	mov	edx, DWORD PTR [esi+4]
-	mov	BYTE PTR $T268863[ebp], 0
-	mov	edi, DWORD PTR $T268863[ebp]
+	mov	BYTE PTR $T268905[ebp], 0
+	mov	edi, DWORD PTR $T268905[ebp]
 	push	edi
-	mov	edi, DWORD PTR __Cat$268867[ebp]
+	mov	edi, DWORD PTR __Cat$268909[ebp]
 	push	edi
 	push	esi
 	push	eax
 	push	ecx
 	push	edx
-	mov	DWORD PTR __Ptr$223497[ebp], eax
+	mov	DWORD PTR __Ptr$223539[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+12], 0
 	call	??$_Uninit_move@V?$_Vector_iterator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@std@@PAV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@2@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@std@@YAPAV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@0@V?$_Vector_iterator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@0@0PAV10@AAV?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@0@U_Swap_move_tag@0@U_Range_checked_iterator_tag@0@@Z ; std::_Uninit_move<std::_Vector_iterator<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > >,std::allocator<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > > > >,std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > > *,std::allocator<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > > > >
 
@@ -44398,7 +44395,7 @@ $LN21@reserve@2:
 ; 618  : 				{	// destroy and deallocate old array
 ; 619  : 				_Destroy(_Myfirst, _Mylast);
 
-	mov	eax, DWORD PTR __Cat$268898[ebp]
+	mov	eax, DWORD PTR __Cat$268940[ebp]
 	push	eax
 	mov	eax, DWORD PTR [esi+8]
 	push	esi
@@ -44424,7 +44421,7 @@ $LN52@reserve@2:
 
 	mov	eax, DWORD PTR __Count$[ebp]
 	lea	edx, DWORD PTR [eax+eax*2]
-	mov	eax, DWORD PTR __Ptr$223497[ebp]
+	mov	eax, DWORD PTR __Ptr$223539[ebp]
 	lea	ecx, DWORD PTR [eax+edx*4]
 
 ; 628  : 			_Mylast = _Ptr + _Size;
@@ -44455,7 +44452,7 @@ __catch$?reserve@?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$all
 ; 611  : 			_CATCH_ALL
 ; 612  : 			this->_Alval.deallocate(_Ptr, _Count);
 
-	mov	edx, DWORD PTR __Ptr$223497[ebp]
+	mov	edx, DWORD PTR __Ptr$223539[ebp]
 	push	edx
 	call	??3@YAXPAX@Z				; operator delete
 	add	esp, 4
@@ -44509,8 +44506,8 @@ _TEXT	SEGMENT
 _this$ = -24						; size = 4
 tv202 = -20						; size = 4
 __$EHRec$ = -16						; size = 16
-$T268983 = 8						; size = 1
-__Cat$268986 = 8					; size = 1
+$T269025 = 8						; size = 1
+__Cat$269028 = 8					; size = 1
 __Count$ = 8						; size = 4
 __Val$ = 12						; size = 4
 ?_Construct_n@?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@QAEXIABV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@2@@Z PROC ; std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > >::_Construct_n, COMDAT
@@ -44563,9 +44560,9 @@ $LN10@Construct_:
 	mov	DWORD PTR tv202[ebp], eax
 	add	eax, edi
 	mov	DWORD PTR [esi+12], eax
-	mov	BYTE PTR $T268983[ebp], 0
-	mov	eax, DWORD PTR $T268983[ebp]
-	mov	ecx, DWORD PTR __Cat$268986[ebp]
+	mov	BYTE PTR $T269025[ebp], 0
+	mov	eax, DWORD PTR $T269025[ebp]
+	mov	ecx, DWORD PTR __Cat$269028[ebp]
 	push	eax
 	push	ecx
 	push	esi
@@ -44690,11 +44687,11 @@ PUBLIC	?erase@?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$alloca
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?erase@?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@std@@QAE?AV?$_Vector_iterator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@2@V?$_Vector_const_iterator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@2@0@Z
 _TEXT	SEGMENT
-$T269117 = 8						; size = 1
+$T269159 = 8						; size = 1
 ___$ReturnUdt$ = 8					; size = 4
-__Cat$269149 = 12					; size = 1
-__Cat$269121 = 12					; size = 1
-$T269119 = 12						; size = 1
+__Cat$269191 = 12					; size = 1
+__Cat$269163 = 12					; size = 1
+$T269161 = 12						; size = 1
 __First_arg$ = 12					; size = 4
 __Last_arg$ = 16					; size = 4
 ?erase@?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@std@@QAE?AV?$_Vector_iterator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@2@V?$_Vector_const_iterator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@2@0@Z PROC ; std::vector<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > >,std::allocator<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > > > >::erase, COMDAT
@@ -44733,12 +44730,12 @@ __Last_arg$ = 16					; size = 4
 
 	mov	ecx, DWORD PTR [esi+8]
 	push	edi
-	mov	BYTE PTR $T269117[esp+8], 0
-	mov	edi, DWORD PTR $T269117[esp+8]
+	mov	BYTE PTR $T269159[esp+8], 0
+	mov	edi, DWORD PTR $T269159[esp+8]
 	push	edi
-	mov	edi, DWORD PTR __Cat$269121[esp+12]
+	mov	edi, DWORD PTR __Cat$269163[esp+12]
 	push	edi
-	mov	edi, DWORD PTR $T269119[esp+16]
+	mov	edi, DWORD PTR $T269161[esp+16]
 	push	edi
 	push	eax
 	push	ecx
@@ -44751,7 +44748,7 @@ __Last_arg$ = 16					; size = 4
 
 	mov	ecx, DWORD PTR [esi+8]
 	mov	edi, eax
-	mov	eax, DWORD PTR __Cat$269149[esp+32]
+	mov	eax, DWORD PTR __Cat$269191[esp+32]
 	push	eax
 	push	esi
 	push	ecx
@@ -44828,21 +44825,21 @@ __unwindtable$?_Insert_n@?$vector@VCvReplayMessage@@V?$allocator@VCvReplayMessag
 xdata$x	ENDS
 ;	COMDAT ?_Insert_n@?$vector@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@std@@IAEXV?$_Vector_const_iterator@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@2@IABVCvReplayMessage@@@Z
 _TEXT	SEGMENT
-__Tmp$225358 = -76					; size = 60
+__Tmp$225400 = -76					; size = 60
 __$EHRec$ = -16						; size = 16
-__Tmp$225348 = 0					; size = 60
-__Whereoff$225334 = 60					; size = 4
-__Ncopied$225335 = 64					; size = 4
+__Tmp$225390 = 0					; size = 60
+__Whereoff$225376 = 60					; size = 4
+__Ncopied$225377 = 64					; size = 4
 _this$ = 68						; size = 4
-__Newvec$225333 = 72					; size = 4
+__Newvec$225375 = 72					; size = 4
 __Capacity$ = 76					; size = 4
-__Cat$269353 = 88					; size = 1
-__Cat$269292 = 88					; size = 1
+__Cat$269404 = 88					; size = 1
+__Cat$269321 = 88					; size = 1
 __Where$ = 88						; size = 4
 tv493 = 92						; size = 4
 __Count$ = 92						; size = 4
-$T269350 = 96						; size = 1
-$T269289 = 96						; size = 1
+$T269400 = 96						; size = 1
+$T269318 = 96						; size = 1
 __Val$ = 96						; size = 4
 ?_Insert_n@?$vector@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@std@@IAEXV?$_Vector_const_iterator@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@2@IABVCvReplayMessage@@@Z PROC ; std::vector<CvReplayMessage,std::allocator<CvReplayMessage> >::_Insert_n, COMDAT
 ; _this$ = ecx
@@ -44987,45 +44984,45 @@ $LN9@Insert_n@7:
 ; 1178 : 			_Ufill(_Newvec + _Whereoff, _Count, _Val);	// add new stuff
 
 	mov	edx, DWORD PTR __Val$[ebp]
-	mov	DWORD PTR __Ncopied$225335[ebp], eax
+	mov	DWORD PTR __Ncopied$225377[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+12], eax
 	add	esp, 8
 	mov	eax, ebx
 	shl	eax, 4
 	push	edx
-	mov	DWORD PTR __Newvec$225333[ebp], ecx
+	mov	DWORD PTR __Newvec$225375[ebp], ecx
 	sub	eax, ebx
 	lea	ecx, DWORD PTR [ecx+eax*4]
 	push	edi
 	push	ecx
 	mov	ecx, esi
-	mov	DWORD PTR __Whereoff$225334[ebp], ebx
+	mov	DWORD PTR __Whereoff$225376[ebp], ebx
 	call	?_Ufill@?$vector@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@std@@IAEPAVCvReplayMessage@@PAV3@IABV3@@Z ; std::vector<CvReplayMessage,std::allocator<CvReplayMessage> >::_Ufill
 
 ; 1179 : 			++_Ncopied;
 ; 1180 : 			_Umove(this->_Myfirst, _VEC_ITER_BASE(_Where),
 ; 1181 : 				_Newvec);	// move prefix
 
-	mov	ecx, DWORD PTR __Cat$269292[ebp]
+	mov	ecx, DWORD PTR __Cat$269321[ebp]
 	mov	eax, DWORD PTR [esi+4]
-	mov	BYTE PTR $T269289[ebp], 0
-	mov	edx, DWORD PTR $T269289[ebp]
+	mov	BYTE PTR $T269318[ebp], 0
+	mov	edx, DWORD PTR $T269318[ebp]
 	push	edx
-	mov	edx, DWORD PTR __Newvec$225333[ebp]
+	mov	edx, DWORD PTR __Newvec$225375[ebp]
 	push	ecx
 	mov	ecx, DWORD PTR __Where$[ebp]
 	push	esi
 	push	edx
 	push	ecx
 	push	eax
-	mov	DWORD PTR __Ncopied$225335[ebp], 1
+	mov	DWORD PTR __Ncopied$225377[ebp], 1
 	call	??$_Uninit_copy@PAVCvReplayMessage@@PAV1@V?$allocator@VCvReplayMessage@@@std@@@std@@YAPAVCvReplayMessage@@PAV1@00AAV?$allocator@VCvReplayMessage@@@0@U_Nonscalar_ptr_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z ; std::_Uninit_copy<CvReplayMessage *,CvReplayMessage *,std::allocator<CvReplayMessage> >
 
 ; 1182 : 			++_Ncopied;
 ; 1183 : 			_Umove(_VEC_ITER_BASE(_Where), this->_Mylast,
 ; 1184 : 				_Newvec + (_Whereoff + _Count));	// move suffix
 
-	mov	ecx, DWORD PTR __Newvec$225333[ebp]
+	mov	ecx, DWORD PTR __Newvec$225375[ebp]
 	mov	eax, DWORD PTR [esi+8]
 	add	ebx, edi
 	mov	edx, ebx
@@ -45033,17 +45030,17 @@ $LN9@Insert_n@7:
 	sub	edx, ebx
 	add	esp, 24					; 00000018H
 	lea	ecx, DWORD PTR [ecx+edx*4]
-	mov	BYTE PTR $T269350[ebp], 0
-	mov	edx, DWORD PTR $T269350[ebp]
+	mov	BYTE PTR $T269400[ebp], 0
+	mov	edx, DWORD PTR $T269400[ebp]
 	push	edx
-	mov	edx, DWORD PTR __Cat$269353[ebp]
+	mov	edx, DWORD PTR __Cat$269404[ebp]
 	push	edx
 	push	esi
 	push	ecx
 	push	eax
 	mov	eax, DWORD PTR __Where$[ebp]
 	push	eax
-	mov	DWORD PTR __Ncopied$225335[ebp], 2
+	mov	DWORD PTR __Ncopied$225377[ebp], 2
 	call	??$_Uninit_copy@PAVCvReplayMessage@@PAV1@V?$allocator@VCvReplayMessage@@@std@@@std@@YAPAVCvReplayMessage@@PAV1@00AAV?$allocator@VCvReplayMessage@@@0@U_Nonscalar_ptr_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z ; std::_Uninit_copy<CvReplayMessage *,CvReplayMessage *,std::allocator<CvReplayMessage> >
 
 ; 1192 : 			_CATCH_END
@@ -45098,7 +45095,7 @@ $LN83@Insert_n@7:
 	mov	ecx, eax
 	shl	ecx, 4
 	sub	ecx, eax
-	mov	eax, DWORD PTR __Newvec$225333[ebp]
+	mov	eax, DWORD PTR __Newvec$225375[ebp]
 	lea	edx, DWORD PTR [eax+ecx*4]
 
 ; 1206 : 			_Mylast = _Newvec + _Count;
@@ -45119,13 +45116,13 @@ __catch$?_Insert_n@?$vector@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@st
 ; 1185 : 			_CATCH_ALL
 ; 1186 : 			if (1 < _Ncopied)
 
-	mov	ebx, DWORD PTR __Ncopied$225335[ebp]
+	mov	ebx, DWORD PTR __Ncopied$225377[ebp]
 	cmp	ebx, 1
 
 ; 1187 : 				_Destroy(_Newvec, _Newvec + _Whereoff);
 
-	mov	esi, DWORD PTR __Whereoff$225334[ebp]
-	mov	edi, DWORD PTR __Newvec$225333[ebp]
+	mov	esi, DWORD PTR __Whereoff$225376[ebp]
+	mov	edi, DWORD PTR __Newvec$225375[ebp]
 	jle	SHORT $LN7@Insert_n@7
 	mov	eax, esi
 	shl	eax, 4
@@ -45193,7 +45190,7 @@ $LN10@Insert_n@7:
 
 	mov	ecx, DWORD PTR __Val$[ebp]
 	push	ecx
-	lea	ecx, DWORD PTR __Tmp$225348[ebp]
+	lea	ecx, DWORD PTR __Tmp$225390[ebp]
 	call	??0CvReplayMessage@@QAE@ABV0@@Z
 
 ; 1212 : 
@@ -45222,7 +45219,7 @@ $LN10@Insert_n@7:
 
 	mov	ecx, DWORD PTR [esi+8]
 	sub	ecx, DWORD PTR __Where$[ebp]
-	lea	edx, DWORD PTR __Tmp$225348[ebp]
+	lea	edx, DWORD PTR __Tmp$225390[ebp]
 	push	edx
 	mov	eax, -2004318071			; 88888889H
 	imul	ecx
@@ -45255,7 +45252,7 @@ $LN10@Insert_n@7:
 ; 1231 : 				_Tmp);	// insert up to old end
 
 	mov	edx, DWORD PTR __Where$[ebp]
-	lea	ecx, DWORD PTR __Tmp$225348[ebp]
+	lea	ecx, DWORD PTR __Tmp$225390[ebp]
 	push	ecx
 	sub	esi, ebx
 	push	esi
@@ -45266,7 +45263,7 @@ $LN10@Insert_n@7:
 
 ; 1232 : 			}
 
-	lea	ecx, DWORD PTR __Tmp$225348[ebp]
+	lea	ecx, DWORD PTR __Tmp$225390[ebp]
 
 ; 1233 : 		else
 
@@ -45304,7 +45301,7 @@ $LN3@Insert_n@7:
 
 	mov	eax, DWORD PTR __Val$[ebp]
 	push	eax
-	lea	ecx, DWORD PTR __Tmp$225358[ebp]
+	lea	ecx, DWORD PTR __Tmp$225400[ebp]
 	call	??0CvReplayMessage@@QAE@ABV0@@Z
 
 ; 1236 : 
@@ -45349,7 +45346,7 @@ $LN3@Insert_n@7:
 ; 1247 : 			std::fill(_VEC_ITER_BASE(_Where), _VEC_ITER_BASE(_Where) + _Count,
 ; 1248 : 				_Tmp);	// insert into hole
 
-	lea	eax, DWORD PTR __Tmp$225358[ebp]
+	lea	eax, DWORD PTR __Tmp$225400[ebp]
 	push	eax
 	mov	eax, DWORD PTR __Where$[ebp]
 	add	ebx, eax
@@ -45360,7 +45357,7 @@ $LN3@Insert_n@7:
 
 ; 1249 : 			}
 
-	lea	ecx, DWORD PTR __Tmp$225358[ebp]
+	lea	ecx, DWORD PTR __Tmp$225400[ebp]
 $LN94@Insert_n@7:
 	mov	DWORD PTR __$EHRec$[ebp+12], -1
 	call	??1CvReplayMessage@@UAE@XZ		; CvReplayMessage::~CvReplayMessage
@@ -45382,10 +45379,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Insert_n@?$vector@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@std@@IAEXV?$_Vector_const_iterator@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@2@IABVCvReplayMessage@@@Z$4:
-	lea	ecx, DWORD PTR __Tmp$225348[ebp]
+	lea	ecx, DWORD PTR __Tmp$225390[ebp]
 	jmp	??1CvReplayMessage@@UAE@XZ		; CvReplayMessage::~CvReplayMessage
 __unwindfunclet$?_Insert_n@?$vector@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@std@@IAEXV?$_Vector_const_iterator@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@2@IABVCvReplayMessage@@@Z$5:
-	lea	ecx, DWORD PTR __Tmp$225358[ebp]
+	lea	ecx, DWORD PTR __Tmp$225400[ebp]
 	jmp	??1CvReplayMessage@@UAE@XZ		; CvReplayMessage::~CvReplayMessage
 __ehhandler$?_Insert_n@?$vector@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@std@@IAEXV?$_Vector_const_iterator@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@2@IABVCvReplayMessage@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?_Insert_n@?$vector@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@std@@IAEXV?$_Vector_const_iterator@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@2@IABVCvReplayMessage@@@Z
@@ -45396,11 +45393,11 @@ PUBLIC	??4?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??4?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@QAEAAV01@ABV01@@Z
 _TEXT	SEGMENT
-__Cat$269518 = 8					; size = 1
-$T269484 = 8						; size = 1
-__Cat$269488 = 8					; size = 1
-$T269486 = 8						; size = 1
-$T269452 = 8						; size = 4
+__Cat$269560 = 8					; size = 1
+$T269526 = 8						; size = 1
+__Cat$269530 = 8					; size = 1
+$T269528 = 8						; size = 1
+$T269494 = 8						; size = 4
 __Right$ = 8						; size = 4
 ??4?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@QAEAAV01@ABV01@@Z PROC ; std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > >::operator=, COMDAT
 ; _this$ = ecx
@@ -45443,7 +45440,7 @@ __Right$ = 8						; size = 4
 	mov	ecx, DWORD PTR [esi+4]
 	push	eax
 	push	ecx
-	lea	eax, DWORD PTR $T269452[esp+16]
+	lea	eax, DWORD PTR $T269494[esp+16]
 	push	eax
 	mov	ecx, esi
 	call	?erase@?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@QAE?AV?$_Vector_iterator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@2@V?$_Vector_const_iterator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@2@0@Z ; std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > >::erase
@@ -45481,10 +45478,10 @@ $LN8@operator@17:
 ; 575  : 				pointer _Ptr = _STDEXT unchecked_copy(_Right._Myfirst, _Right._Mylast,
 ; 576  : 					_Myfirst);	// copy new
 
-	mov	BYTE PTR $T269484[esp+12], 0
-	mov	ecx, DWORD PTR $T269484[esp+12]
-	mov	edx, DWORD PTR __Cat$269488[esp+12]
-	mov	eax, DWORD PTR $T269486[esp+12]
+	mov	BYTE PTR $T269526[esp+12], 0
+	mov	ecx, DWORD PTR $T269526[esp+12]
+	mov	edx, DWORD PTR __Cat$269530[esp+12]
+	mov	eax, DWORD PTR $T269528[esp+12]
 	push	ecx
 	push	edx
 	push	eax
@@ -45497,7 +45494,7 @@ $LN8@operator@17:
 
 ; 577  : 				_Destroy(_Ptr, _Mylast);	// destroy old
 
-	mov	ecx, DWORD PTR __Cat$269518[esp+36]
+	mov	ecx, DWORD PTR __Cat$269560[esp+36]
 	mov	edx, DWORD PTR [esi+8]
 	push	ecx
 	push	esi
@@ -45687,9 +45684,9 @@ __ehfuncinfo$?construct@?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocat
 xdata$x	ENDS
 ;	COMDAT ?construct@?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@std@@QAEXPAV?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@2@ABV32@@Z
 _TEXT	SEGMENT
-$T269566 = -16						; size = 4
+$T269608 = -16						; size = 4
 __$EHRec$ = -12						; size = 12
-__Vptr$269572 = 8					; size = 4
+__Vptr$269614 = 8					; size = 4
 __Ptr$ = 8						; size = 4
 __Val$ = 12						; size = 4
 ?construct@?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@std@@QAEXPAV?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@2@ABV32@@Z PROC ; std::allocator<std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > > >::construct, COMDAT
@@ -45707,8 +45704,8 @@ __Val$ = 12						; size = 4
 ; 155  : 		_Construct(_Ptr, _Val);
 
 	mov	ecx, DWORD PTR __Ptr$[esp+12]
-	mov	DWORD PTR __Vptr$269572[esp+12], ecx
-	mov	DWORD PTR $T269566[esp+16], ecx
+	mov	DWORD PTR __Vptr$269614[esp+12], ecx
+	mov	DWORD PTR $T269608[esp+16], ecx
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	ecx, ecx
 	je	SHORT $LN5@construct@12
@@ -45727,9 +45724,9 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?construct@?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@std@@QAEXPAV?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@2@ABV32@@Z$0:
-	mov	eax, DWORD PTR __Vptr$269572[ebp-4]
+	mov	eax, DWORD PTR __Vptr$269614[ebp-4]
 	push	eax
-	mov	ecx, DWORD PTR $T269566[ebp]
+	mov	ecx, DWORD PTR $T269608[ebp]
 	push	ecx
 	call	??3@YAXPAX0@Z				; operator delete
 	add	esp, 8
@@ -45743,7 +45740,7 @@ PUBLIC	??_G?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??_G?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@QAEPAXI@Z
 _TEXT	SEGMENT
-__Cat$269637 = 8					; size = 1
+__Cat$269679 = 8					; size = 1
 ___flags$ = 8						; size = 4
 ??_G?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@QAEPAXI@Z PROC ; std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > >::`scalar deleting destructor', COMDAT
 ; _this$ = ecx
@@ -45752,7 +45749,7 @@ ___flags$ = 8						; size = 4
 	mov	eax, DWORD PTR [esi+4]
 	test	eax, eax
 	je	SHORT $LN15@scalar@10
-	mov	ecx, DWORD PTR __Cat$269637[esp]
+	mov	ecx, DWORD PTR __Cat$269679[esp]
 	mov	edx, DWORD PTR [esi+8]
 	push	ecx
 	push	esi
@@ -45795,9 +45792,9 @@ __ehfuncinfo$??$SerializeToSequenceContainer@V?$map@IHU?$less@I@std@@V?$allocato
 xdata$x	ENDS
 ;	COMDAT ??$SerializeToSequenceContainer@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@2@@@YAXAAVFDataStream@@AAV?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@Z
 _TEXT	SEGMENT
-$T270121 = -28						; size = 4
-$T269691 = -28						; size = 4
-_v$231110 = -24						; size = 12
+$T270163 = -28						; size = 4
+$T269733 = -28						; size = 4
+_v$231152 = -24						; size = 12
 __$EHRec$ = -12						; size = 12
 _loadFrom$ = 8						; size = 4
 _count$ = 12						; size = 4
@@ -45824,7 +45821,7 @@ _container$ = 12					; size = 4
 	push	edi
 	push	eax
 	push	ecx
-	lea	eax, DWORD PTR $T269691[esp+52]
+	lea	eax, DWORD PTR $T269733[esp+52]
 	push	eax
 	mov	ecx, ebp
 	call	?erase@?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@QAE?AV?$_Vector_iterator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@2@V?$_Vector_const_iterator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@2@0@Z ; std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > >::erase
@@ -45851,21 +45848,21 @@ $LL3@SerializeT@6:
 ; 89   : 	{
 ; 90   : 		ElementType v;
 
-	lea	ecx, DWORD PTR _v$231110[esp+44]
+	lea	ecx, DWORD PTR _v$231152[esp+44]
 	call	?_Buynode@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@IAEPAU_Node@?$_Tree_nod@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@2@XZ ; std::_Tree<std::_Tmap_traits<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> >,0> >::_Buynode
-	mov	DWORD PTR _v$231110[esp+48], eax
+	mov	DWORD PTR _v$231152[esp+48], eax
 	mov	BYTE PTR [eax+21], 1
-	mov	eax, DWORD PTR _v$231110[esp+48]
+	mov	eax, DWORD PTR _v$231152[esp+48]
 	mov	DWORD PTR [eax+4], eax
-	mov	eax, DWORD PTR _v$231110[esp+48]
+	mov	eax, DWORD PTR _v$231152[esp+48]
 	mov	DWORD PTR [eax], eax
-	mov	eax, DWORD PTR _v$231110[esp+48]
+	mov	eax, DWORD PTR _v$231152[esp+48]
 	mov	DWORD PTR [eax+8], eax
-	mov	DWORD PTR _v$231110[esp+52], edi
+	mov	DWORD PTR _v$231152[esp+52], edi
 
 ; 91   : 		loadFrom >> v;
 
-	lea	edx, DWORD PTR _v$231110[esp+44]
+	lea	edx, DWORD PTR _v$231152[esp+44]
 	push	edx
 	push	ebx
 	mov	DWORD PTR __$EHRec$[esp+60], edi
@@ -45874,29 +45871,29 @@ $LL3@SerializeT@6:
 
 ; 92   : 		container.push_back(v);
 
-	lea	eax, DWORD PTR _v$231110[esp+44]
+	lea	eax, DWORD PTR _v$231152[esp+44]
 	push	eax
 	mov	ecx, ebp
 	call	?push_back@?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@QAEXABV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@2@@Z ; std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > >::push_back
 
 ; 93   : 	}
 
-	mov	eax, DWORD PTR _v$231110[esp+48]
+	mov	eax, DWORD PTR _v$231152[esp+48]
 	mov	ecx, DWORD PTR [eax]
 	push	eax
 	push	ecx
-	lea	ecx, DWORD PTR $T270121[esp+52]
+	lea	ecx, DWORD PTR $T270163[esp+52]
 	push	ecx
-	lea	ecx, DWORD PTR _v$231110[esp+56]
+	lea	ecx, DWORD PTR _v$231152[esp+56]
 	mov	DWORD PTR __$EHRec$[esp+64], -1
 	call	?erase@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@0@Z ; std::_Tree<std::_Tmap_traits<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> >,0> >::erase
-	mov	edx, DWORD PTR _v$231110[esp+48]
+	mov	edx, DWORD PTR _v$231152[esp+48]
 	push	edx
 	call	??3@YAXPAX@Z				; operator delete
 	inc	esi
 	add	esp, 4
-	mov	DWORD PTR _v$231110[esp+48], edi
-	mov	DWORD PTR _v$231110[esp+52], edi
+	mov	DWORD PTR _v$231152[esp+48], edi
+	mov	DWORD PTR _v$231152[esp+52], edi
 	cmp	esi, DWORD PTR _count$[esp+40]
 	jb	$LL3@SerializeT@6
 $LN1@SerializeT@6:
@@ -45915,7 +45912,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$??$SerializeToSequenceContainer@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@2@@@YAXAAVFDataStream@@AAV?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@Z$0:
-	lea	ecx, DWORD PTR _v$231110[ebp]
+	lea	ecx, DWORD PTR _v$231152[ebp]
 	jmp	??1?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@QAE@XZ
 __ehhandler$??$SerializeToSequenceContainer@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@2@@@YAXAAVFDataStream@@AAV?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$??$SerializeToSequenceContainer@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@2@@@YAXAAVFDataStream@@AAV?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@Z
@@ -46025,9 +46022,9 @@ __ehfuncinfo$??0?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std
 xdata$x	ENDS
 ;	COMDAT ??0?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@QAE@I@Z
 _TEXT	SEGMENT
-$T270195 = -24						; size = 12
+$T270237 = -24						; size = 12
 __$EHRec$ = -12						; size = 12
-$T270637 = 8						; size = 4
+$T270679 = 8						; size = 4
 __Count$ = 8						; size = 4
 ??0?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@QAE@I@Z PROC ; std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > >::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > >, COMDAT
 ; _this$ = ecx
@@ -46045,35 +46042,35 @@ __Count$ = 8						; size = 4
 
 ; 483  : 		_Construct_n(_Count, _Ty());
 
-	lea	ecx, DWORD PTR $T270195[esp+28]
+	lea	ecx, DWORD PTR $T270237[esp+28]
 	call	?_Buynode@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@IAEPAU_Node@?$_Tree_nod@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@2@XZ ; std::_Tree<std::_Tmap_traits<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> >,0> >::_Buynode
-	mov	DWORD PTR $T270195[esp+32], eax
+	mov	DWORD PTR $T270237[esp+32], eax
 	mov	BYTE PTR [eax+21], 1
-	mov	eax, DWORD PTR $T270195[esp+32]
+	mov	eax, DWORD PTR $T270237[esp+32]
 	mov	DWORD PTR [eax+4], eax
-	mov	eax, DWORD PTR $T270195[esp+32]
+	mov	eax, DWORD PTR $T270237[esp+32]
 	mov	DWORD PTR [eax], eax
-	mov	eax, DWORD PTR $T270195[esp+32]
+	mov	eax, DWORD PTR $T270237[esp+32]
 	mov	DWORD PTR [eax+8], eax
 	xor	eax, eax
-	mov	DWORD PTR $T270195[esp+36], eax
+	mov	DWORD PTR $T270237[esp+36], eax
 	mov	ecx, DWORD PTR __Count$[esp+24]
 	mov	DWORD PTR __$EHRec$[esp+36], eax
-	lea	eax, DWORD PTR $T270195[esp+28]
+	lea	eax, DWORD PTR $T270237[esp+28]
 	push	eax
 	push	ecx
 	mov	ecx, esi
 	call	?_Construct_n@?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@QAEXIABV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@2@@Z ; std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > >::_Construct_n
-	mov	eax, DWORD PTR $T270195[esp+32]
+	mov	eax, DWORD PTR $T270237[esp+32]
 	mov	ecx, DWORD PTR [eax]
 	push	eax
 	push	ecx
-	lea	edx, DWORD PTR $T270637[esp+32]
+	lea	edx, DWORD PTR $T270679[esp+32]
 	push	edx
-	lea	ecx, DWORD PTR $T270195[esp+40]
+	lea	ecx, DWORD PTR $T270237[esp+40]
 	mov	DWORD PTR __$EHRec$[esp+48], -1
 	call	?erase@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@0@Z ; std::_Tree<std::_Tmap_traits<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> >,0> >::erase
-	mov	eax, DWORD PTR $T270195[esp+32]
+	mov	eax, DWORD PTR $T270237[esp+32]
 	push	eax
 	call	??3@YAXPAX@Z				; operator delete
 
@@ -46090,7 +46087,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$??0?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@QAE@I@Z$0:
-	lea	ecx, DWORD PTR $T270195[ebp]
+	lea	ecx, DWORD PTR $T270237[ebp]
 	jmp	??1?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@QAE@XZ
 __ehhandler$??0?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@QAE@I@Z:
 	mov	eax, OFFSET __ehfuncinfo$??0?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@QAE@I@Z
@@ -46101,9 +46098,9 @@ PUBLIC	?push_back@?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$al
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?push_back@?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@std@@QAEXABV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@2@@Z
 _TEXT	SEGMENT
-$T270704 = -4						; size = 1
-__Cat$270707 = 8					; size = 1
-$T270675 = 8						; size = 4
+$T270746 = -4						; size = 1
+__Cat$270749 = 8					; size = 1
+$T270717 = 8						; size = 4
 __Val$ = 8						; size = 4
 ?push_back@?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@std@@QAEXABV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@2@@Z PROC ; std::vector<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > >,std::allocator<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > > > >::push_back, COMDAT
 ; _this$ = ecx
@@ -46155,10 +46152,10 @@ $LN10@push_back@6:
 ; 818  :  #else /* _HAS_ITERATOR_DEBUGGING */
 ; 819  : 			_Mylast = _Ufill(_Mylast, 1, _Val);
 
-	mov	edx, DWORD PTR __Cat$270707[esp+12]
+	mov	edx, DWORD PTR __Cat$270749[esp+12]
 	mov	eax, DWORD PTR __Val$[esp+12]
-	mov	BYTE PTR $T270704[esp+16], 0
-	mov	ecx, DWORD PTR $T270704[esp+16]
+	mov	BYTE PTR $T270746[esp+16], 0
+	mov	ecx, DWORD PTR $T270746[esp+16]
 	push	ecx
 	push	edx
 	push	esi
@@ -46187,7 +46184,7 @@ $LN2@push_back@6:
 	mov	ecx, DWORD PTR __Val$[esp+12]
 	push	ecx
 	push	edi
-	lea	edx, DWORD PTR $T270675[esp+20]
+	lea	edx, DWORD PTR $T270717[esp+20]
 	push	edx
 	mov	ecx, esi
 	call	?insert@?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@std@@QAE?AV?$_Vector_iterator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@2@V?$_Vector_const_iterator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@2@ABV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@2@@Z ; std::vector<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > >,std::allocator<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > > > >::insert
@@ -46205,7 +46202,7 @@ PUBLIC	?clear@?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$alloca
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?clear@?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@std@@QAEXXZ
 _TEXT	SEGMENT
-$T270735 = -4						; size = 4
+$T270777 = -4						; size = 4
 ?clear@?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@std@@QAEXXZ PROC ; std::vector<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > >,std::allocator<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > > > >::clear, COMDAT
 ; _this$ = ecx
 
@@ -46219,7 +46216,7 @@ $T270735 = -4						; size = 4
 	mov	edx, DWORD PTR [ecx+4]
 	push	eax
 	push	edx
-	lea	eax, DWORD PTR $T270735[esp+12]
+	lea	eax, DWORD PTR $T270777[esp+12]
 	push	eax
 	call	?erase@?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@std@@QAE?AV?$_Vector_iterator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@2@V?$_Vector_const_iterator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@2@0@Z ; std::vector<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > >,std::allocator<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > > > >::erase
 
@@ -46319,9 +46316,9 @@ __ehfuncinfo$??$SerializeToSequenceContainer@V?$map@IUPlotState@CvReplayInfo@@U?
 xdata$x	ENDS
 ;	COMDAT ??$SerializeToSequenceContainer@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@2@@@YAXAAVFDataStream@@AAV?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@std@@@Z
 _TEXT	SEGMENT
-$T271311 = -28						; size = 4
-$T270877 = -28						; size = 4
-_v$229238 = -24						; size = 12
+$T271353 = -28						; size = 4
+$T270919 = -28						; size = 4
+_v$229280 = -24						; size = 12
 __$EHRec$ = -12						; size = 12
 _loadFrom$ = 8						; size = 4
 _count$ = 12						; size = 4
@@ -46348,7 +46345,7 @@ _container$ = 12					; size = 4
 	push	edi
 	push	eax
 	push	ecx
-	lea	eax, DWORD PTR $T270877[esp+52]
+	lea	eax, DWORD PTR $T270919[esp+52]
 	push	eax
 	mov	ecx, ebp
 	call	?erase@?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@std@@QAE?AV?$_Vector_iterator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@2@V?$_Vector_const_iterator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@2@0@Z ; std::vector<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > >,std::allocator<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > > > >::erase
@@ -46375,21 +46372,21 @@ $LL3@SerializeT@7:
 ; 89   : 	{
 ; 90   : 		ElementType v;
 
-	lea	ecx, DWORD PTR _v$229238[esp+44]
+	lea	ecx, DWORD PTR _v$229280[esp+44]
 	call	?_Buynode@?$_Tree@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@std@@IAEPAU_Node@?$_Tree_nod@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@2@XZ ; std::_Tree<std::_Tmap_traits<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> >,0> >::_Buynode
-	mov	DWORD PTR _v$229238[esp+48], eax
+	mov	DWORD PTR _v$229280[esp+48], eax
 	mov	BYTE PTR [eax+33], 1
-	mov	eax, DWORD PTR _v$229238[esp+48]
+	mov	eax, DWORD PTR _v$229280[esp+48]
 	mov	DWORD PTR [eax+4], eax
-	mov	eax, DWORD PTR _v$229238[esp+48]
+	mov	eax, DWORD PTR _v$229280[esp+48]
 	mov	DWORD PTR [eax], eax
-	mov	eax, DWORD PTR _v$229238[esp+48]
+	mov	eax, DWORD PTR _v$229280[esp+48]
 	mov	DWORD PTR [eax+8], eax
-	mov	DWORD PTR _v$229238[esp+52], edi
+	mov	DWORD PTR _v$229280[esp+52], edi
 
 ; 91   : 		loadFrom >> v;
 
-	lea	edx, DWORD PTR _v$229238[esp+44]
+	lea	edx, DWORD PTR _v$229280[esp+44]
 	push	edx
 	push	ebx
 	mov	DWORD PTR __$EHRec$[esp+60], edi
@@ -46398,29 +46395,29 @@ $LL3@SerializeT@7:
 
 ; 92   : 		container.push_back(v);
 
-	lea	eax, DWORD PTR _v$229238[esp+44]
+	lea	eax, DWORD PTR _v$229280[esp+44]
 	push	eax
 	mov	ecx, ebp
 	call	?push_back@?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@std@@QAEXABV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@2@@Z ; std::vector<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > >,std::allocator<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > > > >::push_back
 
 ; 93   : 	}
 
-	mov	eax, DWORD PTR _v$229238[esp+48]
+	mov	eax, DWORD PTR _v$229280[esp+48]
 	mov	ecx, DWORD PTR [eax]
 	push	eax
 	push	ecx
-	lea	ecx, DWORD PTR $T271311[esp+52]
+	lea	ecx, DWORD PTR $T271353[esp+52]
 	push	ecx
-	lea	ecx, DWORD PTR _v$229238[esp+56]
+	lea	ecx, DWORD PTR _v$229280[esp+56]
 	mov	DWORD PTR __$EHRec$[esp+64], -1
 	call	?erase@?$_Tree@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@0@Z ; std::_Tree<std::_Tmap_traits<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> >,0> >::erase
-	mov	edx, DWORD PTR _v$229238[esp+48]
+	mov	edx, DWORD PTR _v$229280[esp+48]
 	push	edx
 	call	??3@YAXPAX@Z				; operator delete
 	inc	esi
 	add	esp, 4
-	mov	DWORD PTR _v$229238[esp+48], edi
-	mov	DWORD PTR _v$229238[esp+52], edi
+	mov	DWORD PTR _v$229280[esp+48], edi
+	mov	DWORD PTR _v$229280[esp+52], edi
 	cmp	esi, DWORD PTR _count$[esp+40]
 	jb	$LL3@SerializeT@7
 $LN1@SerializeT@7:
@@ -46439,7 +46436,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$??$SerializeToSequenceContainer@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@2@@@YAXAAVFDataStream@@AAV?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@std@@@Z$0:
-	lea	ecx, DWORD PTR _v$229238[ebp]
+	lea	ecx, DWORD PTR _v$229280[ebp]
 	jmp	??1?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@QAE@XZ
 __ehhandler$??$SerializeToSequenceContainer@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@2@@@YAXAAVFDataStream@@AAV?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@std@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$??$SerializeToSequenceContainer@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@2@@@YAXAAVFDataStream@@AAV?$vector@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@2@@std@@@Z
@@ -46590,7 +46587,7 @@ PUBLIC	??$_Destroy@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xmemory
 ;	COMDAT ??$_Destroy@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@std@@YAXPAV?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@0@@Z
 _TEXT	SEGMENT
-__Cat$271430 = 8					; size = 1
+__Cat$271472 = 8					; size = 1
 __Ptr$ = 8						; size = 4
 ??$_Destroy@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@std@@YAXPAV?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@0@@Z PROC ; std::_Destroy<std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > > >, COMDAT
 
@@ -46604,7 +46601,7 @@ __Ptr$ = 8						; size = 4
 	mov	eax, DWORD PTR [esi+4]
 	test	eax, eax
 	je	SHORT $LN17@Destroy@4
-	mov	ecx, DWORD PTR __Cat$271430[esp]
+	mov	ecx, DWORD PTR __Cat$271472[esp]
 	mov	edx, DWORD PTR [esi+8]
 	push	ecx
 	push	esi
@@ -46684,9 +46681,9 @@ PUBLIC	?push_back@?$vector@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?push_back@?$vector@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@std@@QAEXABVCvReplayMessage@@@Z
 _TEXT	SEGMENT
-$T271538 = -4						; size = 1
-__Cat$271541 = 8					; size = 1
-$T271507 = 8						; size = 4
+$T271580 = -4						; size = 1
+__Cat$271583 = 8					; size = 1
+$T271549 = 8						; size = 4
 __Val$ = 8						; size = 4
 ?push_back@?$vector@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@std@@QAEXABVCvReplayMessage@@@Z PROC ; std::vector<CvReplayMessage,std::allocator<CvReplayMessage> >::push_back, COMDAT
 ; _this$ = ecx
@@ -46741,10 +46738,10 @@ $LN10@push_back@7:
 ; 818  :  #else /* _HAS_ITERATOR_DEBUGGING */
 ; 819  : 			_Mylast = _Ufill(_Mylast, 1, _Val);
 
-	mov	edx, DWORD PTR __Cat$271541[esp+16]
+	mov	edx, DWORD PTR __Cat$271583[esp+16]
 	mov	eax, DWORD PTR __Val$[esp+16]
-	mov	BYTE PTR $T271538[esp+20], 0
-	mov	ecx, DWORD PTR $T271538[esp+20]
+	mov	BYTE PTR $T271580[esp+20], 0
+	mov	ecx, DWORD PTR $T271580[esp+20]
 	push	ecx
 	push	edx
 	push	edi
@@ -46774,7 +46771,7 @@ $LN2@push_back@7:
 	mov	ecx, DWORD PTR __Val$[esp+16]
 	push	ecx
 	push	ebx
-	lea	edx, DWORD PTR $T271507[esp+24]
+	lea	edx, DWORD PTR $T271549[esp+24]
 	push	edx
 	mov	ecx, edi
 	call	?insert@?$vector@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@std@@QAE?AV?$_Vector_iterator@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@2@V?$_Vector_const_iterator@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@2@ABVCvReplayMessage@@@Z ; std::vector<CvReplayMessage,std::allocator<CvReplayMessage> >::insert
@@ -46910,7 +46907,7 @@ PUBLIC	?destroy@?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pa
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xmemory
 ;	COMDAT ?destroy@?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@std@@QAEXPAV?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@2@@Z
 _TEXT	SEGMENT
-__Cat$271697 = 8					; size = 1
+__Cat$271739 = 8					; size = 1
 __Ptr$ = 8						; size = 4
 ?destroy@?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@std@@QAEXPAV?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@2@@Z PROC ; std::allocator<std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > > >::destroy, COMDAT
 ; _this$ = ecx
@@ -46925,7 +46922,7 @@ __Ptr$ = 8						; size = 4
 	mov	eax, DWORD PTR [esi+4]
 	test	eax, eax
 	je	SHORT $LN19@destroy
-	mov	ecx, DWORD PTR __Cat$271697[esp]
+	mov	ecx, DWORD PTR __Cat$271739[esp]
 	mov	edx, DWORD PTR [esi+8]
 	push	ecx
 	push	esi
@@ -47048,11 +47045,11 @@ __ehfuncinfo$??$_Uninit_fill_n@PAV?$vector@V?$map@IHU?$less@I@std@@V?$allocator@
 xdata$x	ENDS
 ;	COMDAT ??$_Uninit_fill_n@PAV?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@IV12@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@2@@std@@YAXPAV?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@0@IABV10@AAV?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@0@U_Nonscalar_ptr_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
-$T271828 = -24						; size = 4
+$T271870 = -24						; size = 4
 __Next$ = -20						; size = 4
 __$EHRec$ = -16						; size = 16
 __First$ = 8						; size = 4
-__Vptr$271834 = 12					; size = 4
+__Vptr$271876 = 12					; size = 4
 __Count$ = 12						; size = 4
 __Val$ = 16						; size = 4
 __Al$ = 20						; size = 4
@@ -47102,8 +47099,8 @@ $LL6@Uninit_fil@8:
 
 ; 404  : 		_Al.construct(_First, _Val);
 
-	mov	DWORD PTR __Vptr$271834[ebp], esi
-	mov	DWORD PTR $T271828[ebp], esi
+	mov	DWORD PTR __Vptr$271876[ebp], esi
+	mov	DWORD PTR $T271870[ebp], esi
 	mov	BYTE PTR __$EHRec$[ebp+12], 1
 	cmp	esi, ebx
 	je	SHORT $LN18@Uninit_fil@8
@@ -47164,9 +47161,9 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$??$_Uninit_fill_n@PAV?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@IV12@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@2@@std@@YAXPAV?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@0@IABV10@AAV?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@0@U_Nonscalar_ptr_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z$2:
-	mov	eax, DWORD PTR __Vptr$271834[ebp]
+	mov	eax, DWORD PTR __Vptr$271876[ebp]
 	push	eax
-	mov	ecx, DWORD PTR $T271828[ebp]
+	mov	ecx, DWORD PTR $T271870[ebp]
 	push	ecx
 	call	??3@YAXPAX0@Z				; operator delete
 	add	esp, 8
@@ -47181,7 +47178,7 @@ PUBLIC	??$_Destroy_range@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$alloc
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xmemory
 ;	COMDAT ??$_Destroy_range@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@std@@@std@@YAXPAV?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@0@0AAV?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@0@U_Nonscalar_ptr_iterator_tag@0@@Z
 _TEXT	SEGMENT
-__Cat$271968 = 8					; size = 1
+__Cat$272010 = 8					; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Al$ = 16						; size = 4
@@ -47200,7 +47197,7 @@ ___formal$ = 20						; size = 1
 	cmp	esi, ebx
 	je	SHORT $LN1@Destroy_ra@9
 	push	ebp
-	mov	ebp, DWORD PTR __Cat$271968[esp+8]
+	mov	ebp, DWORD PTR __Cat$272010[esp+8]
 	push	edi
 	xor	edi, edi
 $LL3@Destroy_ra@9:
@@ -47387,13 +47384,13 @@ xdata$x	ENDS
 ;	COMDAT ??$_Uninit_move@PAV?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@PAV12@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@2@@std@@YAPAV?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@0@PAV10@00AAV?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@0@U_Swap_move_tag@0@U_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
 __Val$ = -40						; size = 16
-$T272381 = -24						; size = 4
+$T272420 = -24						; size = 4
 __Next$ = -20						; size = 4
 __$EHRec$ = -16						; size = 16
-__Vptr$272378 = 8					; size = 4
+__Vptr$272426 = 8					; size = 4
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$272661 = 16					; size = 1
+__Cat$272703 = 16					; size = 1
 __Dest$ = 16						; size = 4
 __Al$ = 20						; size = 4
 ___formal$ = 24						; size = 1
@@ -47446,8 +47443,8 @@ $LL6@Uninit_mov@5:
 ; 223  : 		{
 ; 224  : 		_Al.construct(_Dest, _Val);
 
-	mov	DWORD PTR __Vptr$272378[ebp], esi
-	mov	DWORD PTR $T272381[ebp], esi
+	mov	DWORD PTR __Vptr$272426[ebp], esi
+	mov	DWORD PTR $T272420[ebp], esi
 	mov	BYTE PTR __$EHRec$[ebp+12], 2
 	test	esi, esi
 	je	SHORT $LN56@Uninit_mov@5
@@ -47530,7 +47527,7 @@ $LN4@Uninit_mov@5:
 	mov	DWORD PTR __$EHRec$[ebp+12], -1
 	test	ebx, ebx
 	je	SHORT $LN111@Uninit_mov@5
-	mov	ecx, DWORD PTR __Cat$272661[ebp]
+	mov	ecx, DWORD PTR __Cat$272703[ebp]
 	mov	eax, DWORD PTR __Val$[ebp+8]
 	push	ecx
 	lea	edx, DWORD PTR __Val$[ebp]
@@ -47562,9 +47559,9 @@ __unwindfunclet$??$_Uninit_move@PAV?$vector@V?$map@IHU?$less@I@std@@V?$allocator
 	lea	ecx, DWORD PTR __Val$[ebp]
 	jmp	??1?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@QAE@XZ ; std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > >::~vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > >
 __unwindfunclet$??$_Uninit_move@PAV?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@PAV12@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@2@@std@@YAPAV?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@0@PAV10@00AAV?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@0@U_Swap_move_tag@0@U_Range_checked_iterator_tag@0@@Z$3:
-	mov	eax, DWORD PTR __Vptr$272378[ebp]
+	mov	eax, DWORD PTR __Vptr$272426[ebp]
 	push	eax
-	mov	ecx, DWORD PTR $T272381[ebp]
+	mov	ecx, DWORD PTR $T272420[ebp]
 	push	ecx
 	call	??3@YAXPAX0@Z				; operator delete
 	add	esp, 8
@@ -47578,8 +47575,8 @@ PUBLIC	??$unchecked_uninitialized_fill_n@PAV?$vector@V?$map@IHU?$less@I@std@@V?$
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$unchecked_uninitialized_fill_n@PAV?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@IV12@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@2@@stdext@@YAXPAV?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@IABV12@AAV?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@2@@Z
 _TEXT	SEGMENT
-$T272682 = -4						; size = 1
-__Cat$272686 = -4					; size = 1
+$T272724 = -4						; size = 1
+__Cat$272728 = -4					; size = 1
 __First$ = 8						; size = 4
 __Count$ = 12						; size = 4
 __Val$ = 16						; size = 4
@@ -47594,9 +47591,9 @@ __Al$ = 20						; size = 4
 ; 942  : 		_STD _Ptr_cat(_First, _First), _STD _Range_checked_iterator_tag());
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T272682[esp+4], 0
-	mov	eax, DWORD PTR $T272682[esp+4]
-	mov	ecx, DWORD PTR __Cat$272686[esp+4]
+	mov	BYTE PTR $T272724[esp+4], 0
+	mov	eax, DWORD PTR $T272724[esp+4]
+	mov	ecx, DWORD PTR __Cat$272728[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Val$[esp+4]
 	push	ecx
@@ -47619,7 +47616,7 @@ PUBLIC	??$_Destroy_range@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$alloc
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xmemory
 ;	COMDAT ??$_Destroy_range@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@std@@@std@@YAXPAV?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@0@0AAV?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@0@@Z
 _TEXT	SEGMENT
-__Cat$272694 = -4					; size = 1
+__Cat$272736 = -4					; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Al$ = 16						; size = 4
@@ -47631,7 +47628,7 @@ __Al$ = 16						; size = 4
 
 ; 225  : 	_Destroy_range(_First, _Last, _Al, _Ptr_cat(_First, _Last));
 
-	mov	eax, DWORD PTR __Cat$272694[esp+4]
+	mov	eax, DWORD PTR __Cat$272736[esp+4]
 	mov	ecx, DWORD PTR __Al$[esp]
 	mov	edx, DWORD PTR __Last$[esp]
 	push	eax
@@ -47652,9 +47649,9 @@ PUBLIC	??$_Unchecked_move_backward@PAV?$vector@V?$map@IHU?$less@I@std@@V?$alloca
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xutility
 ;	COMDAT ??$_Unchecked_move_backward@PAV?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@PAV12@@stdext@@YAPAV?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@PAV12@00@Z
 _TEXT	SEGMENT
-$T272699 = -4						; size = 1
-__Cat$272705 = -4					; size = 1
-$T272701 = -4						; size = 1
+$T272741 = -4						; size = 1
+__Cat$272747 = -4					; size = 1
+$T272743 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
@@ -47667,10 +47664,10 @@ __Dest$ = 16						; size = 4
 ; 3695 : 		return (_STD _Move_backward_opt(_CHECKED_BASE(_First), _CHECKED_BASE(_Last), _Dest,
 ; 3696 : 			_STD _Iter_random(_First, _Dest), _STD _Move_cat(_Dest), _STD _Range_checked_iterator_tag()));
 
-	mov	BYTE PTR $T272699[esp+4], 0
-	mov	eax, DWORD PTR $T272699[esp+4]
-	mov	ecx, DWORD PTR __Cat$272705[esp+4]
-	mov	edx, DWORD PTR $T272701[esp+4]
+	mov	BYTE PTR $T272741[esp+4], 0
+	mov	eax, DWORD PTR $T272741[esp+4]
+	mov	ecx, DWORD PTR __Cat$272747[esp+4]
+	mov	edx, DWORD PTR $T272743[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -47693,8 +47690,8 @@ PUBLIC	??$_Unchecked_uninitialized_move@PAV?$vector@V?$map@IHU?$less@I@std@@V?$a
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ??$_Unchecked_uninitialized_move@PAV?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@PAV12@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@2@@stdext@@YAPAV?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@PAV12@00AAV?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@2@@Z
 _TEXT	SEGMENT
-$T272713 = -4						; size = 1
-__Cat$272718 = -4					; size = 1
+$T272755 = -4						; size = 1
+__Cat$272760 = -4					; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
@@ -47710,9 +47707,9 @@ __Al$ = 20						; size = 4
 ; 864  : 		_STD _Move_cat(_Dest), _STD _Range_checked_iterator_tag()));
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T272713[esp+4], 0
-	mov	eax, DWORD PTR $T272713[esp+4]
-	mov	ecx, DWORD PTR __Cat$272718[esp+4]
+	mov	BYTE PTR $T272755[esp+4], 0
+	mov	eax, DWORD PTR $T272755[esp+4]
+	mov	ecx, DWORD PTR __Cat$272760[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -47735,10 +47732,10 @@ PUBLIC	?_Ufill@?$vector@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\vector
 ;	COMDAT ?_Ufill@?$vector@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@2@@std@@IAEPAV?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@2@PAV32@IABV32@@Z
 _TEXT	SEGMENT
-$T272730 = -4						; size = 1
+$T272772 = -4						; size = 1
 __Ptr$ = 8						; size = 4
 __Count$ = 12						; size = 4
-__Cat$272733 = 16					; size = 1
+__Cat$272775 = 16					; size = 1
 __Val$ = 16						; size = 4
 ?_Ufill@?$vector@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@2@@std@@IAEPAV?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@2@PAV32@IABV32@@Z PROC ; std::vector<std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > >,std::allocator<std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > > > >::_Ufill, COMDAT
 ; _this$ = ecx
@@ -47749,13 +47746,13 @@ __Val$ = 16						; size = 4
 
 ; 1254 : 		_STDEXT unchecked_uninitialized_fill_n(_Ptr, _Count, _Val, this->_Alval);
 
-	mov	edx, DWORD PTR __Cat$272733[esp]
+	mov	edx, DWORD PTR __Cat$272775[esp]
 	push	esi
 	mov	esi, DWORD PTR __Count$[esp+4]
 	push	edi
 	mov	edi, DWORD PTR __Ptr$[esp+8]
-	mov	BYTE PTR $T272730[esp+12], 0
-	mov	eax, DWORD PTR $T272730[esp+12]
+	mov	BYTE PTR $T272772[esp+12], 0
+	mov	eax, DWORD PTR $T272772[esp+12]
 	push	eax
 	mov	eax, DWORD PTR __Val$[esp+12]
 	push	edx
@@ -47785,14 +47782,14 @@ PUBLIC	?_Destroy@?$vector@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair
 ;	COMDAT ?_Destroy@?$vector@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@2@@std@@IAEXPAV?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@2@0@Z
 _TEXT	SEGMENT
 __First$ = 8						; size = 4
-__Cat$272749 = 12					; size = 1
+__Cat$272791 = 12					; size = 1
 __Last$ = 12						; size = 4
 ?_Destroy@?$vector@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@2@@std@@IAEXPAV?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@2@0@Z PROC ; std::vector<std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > >,std::allocator<std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > > > >::_Destroy, COMDAT
 ; _this$ = ecx
 
 ; 1119 : 		_Destroy_range(_First, _Last, this->_Alval);
 
-	mov	eax, DWORD PTR __Cat$272749[esp-4]
+	mov	eax, DWORD PTR __Cat$272791[esp-4]
 	mov	edx, DWORD PTR __First$[esp-4]
 	push	eax
 	push	ecx
@@ -47811,10 +47808,10 @@ PUBLIC	??$_Umove@PAV?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Umove@PAV?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@?$vector@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@2@@std@@IAEPAV?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@1@PAV21@00@Z
 _TEXT	SEGMENT
-$T272765 = -4						; size = 1
+$T272807 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$272769 = 16					; size = 1
+__Cat$272811 = 16					; size = 1
 __Ptr$ = 16						; size = 4
 ??$_Umove@PAV?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@?$vector@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@2@@std@@IAEPAV?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@1@PAV21@00@Z PROC ; std::vector<std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > >,std::allocator<std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > > > >::_Umove<std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > > *>, COMDAT
 ; _this$ = ecx
@@ -47827,9 +47824,9 @@ __Ptr$ = 16						; size = 4
 ; 1147 : 		return (_STDEXT _Unchecked_uninitialized_move(_First, _Last,
 ; 1148 : 			_Ptr, this->_Alval));
 
-	mov	edx, DWORD PTR __Cat$272769[esp]
-	mov	BYTE PTR $T272765[esp+4], 0
-	mov	eax, DWORD PTR $T272765[esp+4]
+	mov	edx, DWORD PTR __Cat$272811[esp]
+	mov	BYTE PTR $T272807[esp+4], 0
+	mov	eax, DWORD PTR $T272807[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Ptr$[esp+4]
 	push	edx
@@ -47851,7 +47848,7 @@ PUBLIC	?erase@?$vector@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?erase@?$vector@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@2@@std@@QAE?AV?$_Vector_iterator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@2@@2@V?$_Vector_const_iterator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@2@@2@0@Z
 _TEXT	SEGMENT
-__Cat$272875 = 8					; size = 1
+__Cat$272917 = 8					; size = 1
 ___$ReturnUdt$ = 8					; size = 4
 __First_arg$ = 12					; size = 4
 __Last_arg$ = 16					; size = 4
@@ -47909,7 +47906,7 @@ $LN26@erase@15:
 ; 1047 : 
 ; 1048 : 			_Destroy(_Ptr, _Mylast);
 
-	mov	eax, DWORD PTR __Cat$272875[esp+12]
+	mov	eax, DWORD PTR __Cat$272917[esp+12]
 	mov	ecx, DWORD PTR [ebp+8]
 	push	eax
 	push	ebp
@@ -47943,7 +47940,7 @@ PUBLIC	?_Tidy@?$vector@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?_Tidy@?$vector@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@2@@std@@IAEXXZ
 _TEXT	SEGMENT
-__Cat$272905 = -4					; size = 1
+__Cat$272947 = -4					; size = 1
 ?_Tidy@?$vector@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@2@@std@@IAEXXZ PROC ; std::vector<std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > >,std::allocator<std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > > > >::_Tidy, COMDAT
 ; _this$ = ecx
 
@@ -47967,7 +47964,7 @@ __Cat$272905 = -4					; size = 1
 ; 1130 : 
 ; 1131 : 			_Destroy(_Myfirst, _Mylast);
 
-	mov	ecx, DWORD PTR __Cat$272905[esp+8]
+	mov	ecx, DWORD PTR __Cat$272947[esp+8]
 	mov	edx, DWORD PTR [esi+8]
 	push	ecx
 	push	esi
@@ -48044,21 +48041,21 @@ __unwindtable$?_Insert_n@?$vector@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator
 xdata$x	ENDS
 ;	COMDAT ?_Insert_n@?$vector@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@2@@std@@IAEXV?$_Vector_const_iterator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@2@@2@IABV?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@2@@Z
 _TEXT	SEGMENT
-__Tmp$225718 = -48					; size = 16
-__Tmp$225708 = -48					; size = 16
+__Tmp$225760 = -48					; size = 16
+__Tmp$225750 = -48					; size = 16
 _this$ = -32						; size = 4
-__Whereoff$225694 = -28					; size = 4
-__Ncopied$225695 = -24					; size = 4
-__Newvec$225693 = -20					; size = 4
+__Whereoff$225736 = -28					; size = 4
+__Ncopied$225737 = -24					; size = 4
+__Newvec$225735 = -20					; size = 4
 __$EHRec$ = -16						; size = 16
-__Cat$273062 = 8					; size = 1
-__Cat$273033 = 8					; size = 1
-__Cat$273007 = 8					; size = 1
+__Cat$273104 = 8					; size = 1
+__Cat$273075 = 8					; size = 1
+__Cat$273049 = 8					; size = 1
 __Where$ = 8						; size = 4
 tv516 = 12						; size = 4
 __Count$ = 12						; size = 4
-$T273029 = 16						; size = 1
-$T273002 = 16						; size = 1
+$T273071 = 16						; size = 1
+$T273044 = 16						; size = 1
 __Val$ = 16						; size = 4
 ?_Insert_n@?$vector@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@2@@std@@IAEXV?$_Vector_const_iterator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@2@@2@IABV?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@2@@Z PROC ; std::vector<std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > >,std::allocator<std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > > > >::_Insert_n, COMDAT
 ; _this$ = ecx
@@ -48173,8 +48170,8 @@ $LN9@Insert_n@8:
 	xor	edx, edx
 	sar	ecx, 4
 	add	esp, 8
-	mov	DWORD PTR __Whereoff$225694[ebp], ecx
-	mov	DWORD PTR __Ncopied$225695[ebp], edx
+	mov	DWORD PTR __Whereoff$225736[ebp], ecx
+	mov	DWORD PTR __Ncopied$225737[ebp], edx
 
 ; 1176 : 
 ; 1177 : 			_TRY_BEGIN
@@ -48190,49 +48187,49 @@ $LN9@Insert_n@8:
 	push	edi
 	push	ecx
 	mov	ecx, esi
-	mov	DWORD PTR __Newvec$225693[ebp], eax
+	mov	DWORD PTR __Newvec$225735[ebp], eax
 	call	?_Ufill@?$vector@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@2@@std@@IAEPAV?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@2@PAV32@IABV32@@Z ; std::vector<std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > >,std::allocator<std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > > > >::_Ufill
 
 ; 1179 : 			++_Ncopied;
 ; 1180 : 			_Umove(this->_Myfirst, _VEC_ITER_BASE(_Where),
 ; 1181 : 				_Newvec);	// move prefix
 
-	mov	edx, DWORD PTR __Cat$273007[ebp]
+	mov	edx, DWORD PTR __Cat$273049[ebp]
 	mov	eax, DWORD PTR [esi+4]
-	mov	BYTE PTR $T273002[ebp], 0
-	mov	ecx, DWORD PTR $T273002[ebp]
+	mov	BYTE PTR $T273044[ebp], 0
+	mov	ecx, DWORD PTR $T273044[ebp]
 	push	ecx
-	mov	ecx, DWORD PTR __Newvec$225693[ebp]
+	mov	ecx, DWORD PTR __Newvec$225735[ebp]
 	push	edx
 	mov	edx, DWORD PTR __Where$[ebp]
 	push	esi
 	push	ecx
 	push	edx
 	push	eax
-	mov	DWORD PTR __Ncopied$225695[ebp], 1
+	mov	DWORD PTR __Ncopied$225737[ebp], 1
 	call	??$_Uninit_move@PAV?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@PAV12@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@2@@std@@YAPAV?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@0@PAV10@00AAV?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@0@U_Swap_move_tag@0@U_Range_checked_iterator_tag@0@@Z ; std::_Uninit_move<std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > > *,std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > > *,std::allocator<std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > > > >
 
 ; 1182 : 			++_Ncopied;
 ; 1183 : 			_Umove(_VEC_ITER_BASE(_Where), this->_Mylast,
 ; 1184 : 				_Newvec + (_Whereoff + _Count));	// move suffix
 
-	mov	eax, DWORD PTR __Whereoff$225694[ebp]
+	mov	eax, DWORD PTR __Whereoff$225736[ebp]
 	mov	ecx, DWORD PTR [esi+8]
 	add	esp, 24					; 00000018H
 	add	eax, edi
-	mov	BYTE PTR $T273029[ebp], 0
-	mov	edx, DWORD PTR $T273029[ebp]
+	mov	BYTE PTR $T273071[ebp], 0
+	mov	edx, DWORD PTR $T273071[ebp]
 	push	edx
-	mov	edx, DWORD PTR __Cat$273033[ebp]
+	mov	edx, DWORD PTR __Cat$273075[ebp]
 	push	edx
 	shl	eax, 4
-	add	eax, DWORD PTR __Newvec$225693[ebp]
+	add	eax, DWORD PTR __Newvec$225735[ebp]
 	push	esi
 	push	eax
 	mov	eax, DWORD PTR __Where$[ebp]
 	push	ecx
 	push	eax
-	mov	DWORD PTR __Ncopied$225695[ebp], 2
+	mov	DWORD PTR __Ncopied$225737[ebp], 2
 	call	??$_Uninit_move@PAV?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@PAV12@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@2@@std@@YAPAV?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@0@PAV10@00AAV?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@0@U_Swap_move_tag@0@U_Range_checked_iterator_tag@0@@Z ; std::_Uninit_move<std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > > *,std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > > *,std::allocator<std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > > > >
 
 ; 1192 : 			_CATCH_END
@@ -48255,7 +48252,7 @@ $LN9@Insert_n@8:
 ; 1196 : 				{	// destroy and deallocate old array
 ; 1197 : 				_Destroy(_Myfirst, _Mylast);
 
-	mov	edx, DWORD PTR __Cat$273062[ebp]
+	mov	edx, DWORD PTR __Cat$273104[ebp]
 	mov	ecx, DWORD PTR [esi+8]
 	push	edx
 	push	esi
@@ -48279,7 +48276,7 @@ $LN77@Insert_n@8:
 ; 1204 : 
 ; 1205 : 			_Myend = _Newvec + _Capacity;
 
-	mov	eax, DWORD PTR __Newvec$225693[ebp]
+	mov	eax, DWORD PTR __Newvec$225735[ebp]
 	shl	ebx, 4
 	add	ebx, eax
 
@@ -48309,13 +48306,13 @@ __catch$?_Insert_n@?$vector@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pa
 ; 1185 : 			_CATCH_ALL
 ; 1186 : 			if (1 < _Ncopied)
 
-	mov	ebx, DWORD PTR __Ncopied$225695[ebp]
+	mov	ebx, DWORD PTR __Ncopied$225737[ebp]
 	cmp	ebx, 1
 
 ; 1187 : 				_Destroy(_Newvec, _Newvec + _Whereoff);
 
-	mov	esi, DWORD PTR __Whereoff$225694[ebp]
-	mov	edi, DWORD PTR __Newvec$225693[ebp]
+	mov	esi, DWORD PTR __Whereoff$225736[ebp]
+	mov	edi, DWORD PTR __Newvec$225735[ebp]
 	jle	SHORT $LN7@Insert_n@8
 	mov	ecx, DWORD PTR _this$[ebp]
 	mov	eax, esi
@@ -48371,7 +48368,7 @@ $LN10@Insert_n@8:
 	sar	ecx, 4
 	cmp	ecx, edi
 	push	eax
-	lea	ecx, DWORD PTR __Tmp$225708[ebp]
+	lea	ecx, DWORD PTR __Tmp$225750[ebp]
 	jae	$LN3@Insert_n@8
 	call	??0?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@QAE@ABV01@@Z ; std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > >::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > >
 
@@ -48399,7 +48396,7 @@ $LN10@Insert_n@8:
 	mov	eax, DWORD PTR [esi+8]
 	mov	edx, eax
 	sub	edx, DWORD PTR __Where$[ebp]
-	lea	ecx, DWORD PTR __Tmp$225708[ebp]
+	lea	ecx, DWORD PTR __Tmp$225750[ebp]
 	push	ecx
 	sar	edx, 4
 	sub	edi, edx
@@ -48425,7 +48422,7 @@ $LN10@Insert_n@8:
 ; 1231 : 				_Tmp);	// insert up to old end
 
 	mov	ecx, DWORD PTR __Where$[ebp]
-	lea	eax, DWORD PTR __Tmp$225708[ebp]
+	lea	eax, DWORD PTR __Tmp$225750[ebp]
 	push	eax
 	sub	esi, ebx
 	push	esi
@@ -48507,7 +48504,7 @@ $LN3@Insert_n@8:
 
 	mov	eax, DWORD PTR __Where$[ebp]
 	mov	ecx, DWORD PTR tv516[ebp]
-	lea	edx, DWORD PTR __Tmp$225718[ebp]
+	lea	edx, DWORD PTR __Tmp$225760[ebp]
 	push	edx
 	add	ecx, eax
 	push	ecx
@@ -48518,7 +48515,7 @@ $LN84@Insert_n@8:
 
 ; 1249 : 			}
 
-	lea	ecx, DWORD PTR __Tmp$225718[ebp]
+	lea	ecx, DWORD PTR __Tmp$225760[ebp]
 	mov	DWORD PTR __$EHRec$[ebp+12], -1
 	call	??1?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@QAE@XZ ; std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > >::~vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > >
 $LN1@Insert_n@8:
@@ -48538,10 +48535,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Insert_n@?$vector@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@2@@std@@IAEXV?$_Vector_const_iterator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@2@@2@IABV?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@2@@Z$4:
-	lea	ecx, DWORD PTR __Tmp$225708[ebp]
+	lea	ecx, DWORD PTR __Tmp$225750[ebp]
 	jmp	??1?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@QAE@XZ ; std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > >::~vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > >
 __unwindfunclet$?_Insert_n@?$vector@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@2@@std@@IAEXV?$_Vector_const_iterator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@2@@2@IABV?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@2@@Z$5:
-	lea	ecx, DWORD PTR __Tmp$225718[ebp]
+	lea	ecx, DWORD PTR __Tmp$225760[ebp]
 	jmp	??1?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@QAE@XZ ; std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > >::~vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > >
 __ehhandler$?_Insert_n@?$vector@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@2@@std@@IAEXV?$_Vector_const_iterator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@2@@2@IABV?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@2@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?_Insert_n@?$vector@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@2@@std@@IAEXV?$_Vector_const_iterator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@2@@2@IABV?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@2@@Z
@@ -48552,7 +48549,7 @@ PUBLIC	??1?$vector@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??1?$vector@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@2@@std@@QAE@XZ
 _TEXT	SEGMENT
-__Cat$273130 = -4					; size = 1
+__Cat$273172 = -4					; size = 1
 ??1?$vector@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@2@@std@@QAE@XZ PROC ; std::vector<std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > >,std::allocator<std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > > > >::~vector<std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > >,std::allocator<std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > > > >, COMDAT
 ; _this$ = ecx
 
@@ -48567,7 +48564,7 @@ __Cat$273130 = -4					; size = 1
 	mov	eax, DWORD PTR [esi+4]
 	test	eax, eax
 	je	SHORT $LN12@vector@8
-	mov	ecx, DWORD PTR __Cat$273130[esp+8]
+	mov	ecx, DWORD PTR __Cat$273172[esp+8]
 	mov	edx, DWORD PTR [esi+8]
 	push	ecx
 	push	esi
@@ -48594,7 +48591,7 @@ PUBLIC	?clear@?$vector@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?clear@?$vector@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@2@@std@@QAEXXZ
 _TEXT	SEGMENT
-$T273141 = -4						; size = 4
+$T273183 = -4						; size = 4
 ?clear@?$vector@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@2@@std@@QAEXXZ PROC ; std::vector<std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > >,std::allocator<std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > > > >::clear, COMDAT
 ; _this$ = ecx
 
@@ -48608,7 +48605,7 @@ $T273141 = -4						; size = 4
 	mov	edx, DWORD PTR [ecx+4]
 	push	eax
 	push	edx
-	lea	eax, DWORD PTR $T273141[esp+12]
+	lea	eax, DWORD PTR $T273183[esp+12]
 	push	eax
 	call	?erase@?$vector@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@2@@std@@QAE?AV?$_Vector_iterator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@2@@2@V?$_Vector_const_iterator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@2@@2@0@Z ; std::vector<std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > >,std::allocator<std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > > > >::erase
 
@@ -48894,8 +48891,8 @@ __unwindtable$??1CvReplayInfo@@UAE@XZ DD 0ffffffffH
 xdata$x	ENDS
 ;	COMDAT ??1CvReplayInfo@@UAE@XZ
 _TEXT	SEGMENT
-__Cat$274359 = -16					; size = 1
-__Cat$274297 = -16					; size = 1
+__Cat$274401 = -16					; size = 1
+__Cat$274339 = -16					; size = 1
 _this$ = -16						; size = 4
 __$EHRec$ = -12						; size = 12
 ??1CvReplayInfo@@UAE@XZ PROC				; CvReplayInfo::~CvReplayInfo, COMDAT
@@ -48924,7 +48921,7 @@ __$EHRec$ = -12						; size = 12
 	mov	DWORD PTR __$EHRec$[esp+36], 7
 	cmp	eax, ebx
 	je	SHORT $LN23@CvReplayIn
-	mov	edx, DWORD PTR __Cat$274297[esp+28]
+	mov	edx, DWORD PTR __Cat$274339[esp+28]
 	mov	ecx, DWORD PTR [edi+8]
 	push	edx
 	push	edi
@@ -48944,7 +48941,7 @@ $LN23@CvReplayIn:
 	mov	BYTE PTR __$EHRec$[esp+36], 6
 	cmp	eax, ebx
 	je	SHORT $LN36@CvReplayIn
-	mov	edx, DWORD PTR __Cat$274359[esp+28]
+	mov	edx, DWORD PTR __Cat$274401[esp+28]
 	mov	ecx, DWORD PTR [edi+8]
 	push	edx
 	push	edi
@@ -49046,8 +49043,8 @@ PUBLIC	?push_back@?$vector@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pai
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\vector
 ;	COMDAT ?push_back@?$vector@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@2@@std@@QAEXABV?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@2@@Z
 _TEXT	SEGMENT
-$T274466 = -4						; size = 1
-__Cat$274470 = 8					; size = 1
+$T274508 = -4						; size = 1
+__Cat$274512 = 8					; size = 1
 __Val$ = 8						; size = 4
 ?push_back@?$vector@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@2@@std@@QAEXABV?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@2@@Z PROC ; std::vector<std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > >,std::allocator<std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > > > >::push_back, COMDAT
 ; _this$ = ecx
@@ -49088,10 +49085,10 @@ $LN10@push_back@8:
 ; 818  :  #else /* _HAS_ITERATOR_DEBUGGING */
 ; 819  : 			_Mylast = _Ufill(_Mylast, 1, _Val);
 
-	mov	ecx, DWORD PTR __Cat$274470[esp+8]
+	mov	ecx, DWORD PTR __Cat$274512[esp+8]
 	mov	edx, DWORD PTR __Val$[esp+8]
-	mov	BYTE PTR $T274466[esp+12], 0
-	mov	eax, DWORD PTR $T274466[esp+12]
+	mov	BYTE PTR $T274508[esp+12], 0
+	mov	eax, DWORD PTR $T274508[esp+12]
 	push	eax
 	push	ecx
 	push	esi
@@ -49149,13 +49146,13 @@ __ehfuncinfo$??$SerializeToSequenceContainer@V?$vector@V?$map@IHU?$less@I@std@@V
 xdata$x	ENDS
 ;	COMDAT ??$SerializeToSequenceContainer@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@V?$vector@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@2@@2@@@YAXAAVFDataStream@@AAV?$vector@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@2@@std@@@Z
 _TEXT	SEGMENT
-$T274947 = -32						; size = 1
-$T274627 = -32						; size = 4
-_v$229219 = -28						; size = 16
+$T274989 = -32						; size = 1
+$T274669 = -32						; size = 4
+_v$229261 = -28						; size = 16
 __$EHRec$ = -12						; size = 12
 _loadFrom$ = 8						; size = 4
-__Cat$275045 = 12					; size = 1
-__Cat$274950 = 12					; size = 1
+__Cat$275087 = 12					; size = 1
+__Cat$274992 = 12					; size = 1
 _count$ = 12						; size = 4
 _container$ = 12					; size = 4
 ??$SerializeToSequenceContainer@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@V?$vector@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@2@@2@@@YAXAAVFDataStream@@AAV?$vector@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@2@@std@@@Z PROC ; SerializeToSequenceContainer<std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > >,std::vector<std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > >,std::allocator<std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > > > > >, COMDAT
@@ -49179,7 +49176,7 @@ _container$ = 12					; size = 4
 	mov	ecx, DWORD PTR [esi+4]
 	push	eax
 	push	ecx
-	lea	eax, DWORD PTR $T274627[esp+52]
+	lea	eax, DWORD PTR $T274669[esp+52]
 	push	eax
 	mov	ecx, esi
 	call	?erase@?$vector@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@2@@std@@QAE?AV?$_Vector_iterator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@2@@2@V?$_Vector_const_iterator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@2@@2@0@Z ; std::vector<std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > >,std::allocator<std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > > > >::erase
@@ -49206,14 +49203,14 @@ $LL125@SerializeT@8:
 ; 89   : 	{
 ; 90   : 		ElementType v;
 
-	mov	DWORD PTR _v$229219[esp+52], ebx
-	mov	DWORD PTR _v$229219[esp+56], ebx
-	mov	DWORD PTR _v$229219[esp+60], ebx
+	mov	DWORD PTR _v$229261[esp+52], ebx
+	mov	DWORD PTR _v$229261[esp+56], ebx
+	mov	DWORD PTR _v$229261[esp+60], ebx
 
 ; 91   : 		loadFrom >> v;
 
 	mov	eax, DWORD PTR _loadFrom$[esp+44]
-	lea	edx, DWORD PTR _v$229219[esp+48]
+	lea	edx, DWORD PTR _v$229261[esp+48]
 	push	edx
 	push	eax
 	mov	DWORD PTR __$EHRec$[esp+64], ebx
@@ -49238,13 +49235,13 @@ $LN71@SerializeT@8:
 	sar	edx, 4
 	cmp	edx, eax
 	jae	SHORT $LN63@SerializeT@8
-	mov	ecx, DWORD PTR __Cat$274950[esp+44]
-	mov	BYTE PTR $T274947[esp+48], bl
-	mov	eax, DWORD PTR $T274947[esp+48]
+	mov	ecx, DWORD PTR __Cat$274992[esp+44]
+	mov	BYTE PTR $T274989[esp+48], bl
+	mov	eax, DWORD PTR $T274989[esp+48]
 	push	eax
 	push	ecx
 	push	esi
-	lea	edx, DWORD PTR _v$229219[esp+60]
+	lea	edx, DWORD PTR _v$229261[esp+60]
 	push	edx
 	push	1
 	push	edi
@@ -49254,7 +49251,7 @@ $LN71@SerializeT@8:
 	mov	DWORD PTR [esi+8], edi
 	jmp	SHORT $LN104@SerializeT@8
 $LN63@SerializeT@8:
-	lea	eax, DWORD PTR _v$229219[esp+48]
+	lea	eax, DWORD PTR _v$229261[esp+48]
 	push	eax
 	push	1
 	push	edi
@@ -49264,14 +49261,14 @@ $LN104@SerializeT@8:
 
 ; 93   : 	}
 
-	mov	edi, DWORD PTR _v$229219[esp+52]
+	mov	edi, DWORD PTR _v$229261[esp+52]
 	mov	DWORD PTR __$EHRec$[esp+56], -1
 	cmp	edi, ebx
 	je	SHORT $LN121@SerializeT@8
-	mov	ecx, DWORD PTR __Cat$275045[esp+44]
-	mov	eax, DWORD PTR _v$229219[esp+56]
+	mov	ecx, DWORD PTR __Cat$275087[esp+44]
+	mov	eax, DWORD PTR _v$229261[esp+56]
 	push	ecx
-	lea	edx, DWORD PTR _v$229219[esp+52]
+	lea	edx, DWORD PTR _v$229261[esp+52]
 	push	edx
 	push	eax
 	push	edi
@@ -49281,9 +49278,9 @@ $LN104@SerializeT@8:
 	add	esp, 20					; 00000014H
 $LN121@SerializeT@8:
 	inc	ebp
-	mov	DWORD PTR _v$229219[esp+52], ebx
-	mov	DWORD PTR _v$229219[esp+56], ebx
-	mov	DWORD PTR _v$229219[esp+60], ebx
+	mov	DWORD PTR _v$229261[esp+52], ebx
+	mov	DWORD PTR _v$229261[esp+56], ebx
+	mov	DWORD PTR _v$229261[esp+60], ebx
 	cmp	ebp, DWORD PTR _count$[esp+44]
 	jb	$LL125@SerializeT@8
 	pop	edi
@@ -49302,7 +49299,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$??$SerializeToSequenceContainer@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@V?$vector@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@2@@2@@@YAXAAVFDataStream@@AAV?$vector@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@2@@std@@@Z$0:
-	lea	ecx, DWORD PTR _v$229219[ebp]
+	lea	ecx, DWORD PTR _v$229261[ebp]
 	jmp	??1?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@QAE@XZ ; std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > >::~vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > >
 __ehhandler$??$SerializeToSequenceContainer@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@V?$vector@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@2@@2@@@YAXAAVFDataStream@@AAV?$vector@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@2@@std@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$??$SerializeToSequenceContainer@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@V?$vector@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@2@@2@@@YAXAAVFDataStream@@AAV?$vector@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@2@@std@@@Z
@@ -49424,70 +49421,70 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 tv3561 = -352						; size = 4
 tv3544 = -352						; size = 4
-$T276578 = -352						; size = 4
-$T276202 = -352						; size = 4
-$T275867 = -352						; size = 4
-_i$220875 = -352					; size = 4
-_uiPlayerDataSet$220732 = -352				; size = 4
-_i$220211 = -352					; size = 4
-$T276991 = -348						; size = 1
-$T276758 = -348						; size = 1
-$T275674 = -348						; size = 1
+$T276620 = -352						; size = 4
+$T276244 = -352						; size = 4
+$T275909 = -352						; size = 4
+_i$220917 = -352					; size = 4
+_uiPlayerDataSet$220774 = -352				; size = 4
+_i$220253 = -352					; size = 4
+$T277033 = -348						; size = 1
+$T276747 = -348						; size = 1
+$T275716 = -348						; size = 1
 tv1436 = -348						; size = 4
-__Ptr$277005 = -348					; size = 4
-$T276577 = -348						; size = 4
-$T275929 = -348						; size = 4
-_player$220725 = -348					; size = 4
-$T275065 = -348						; size = 4
-_eOption$220208 = -348					; size = 4
-$T276203 = -344						; size = 4
-$T275868 = -344						; size = 4
-_iPlayer$220721 = -344					; size = 4
+__Ptr$277047 = -348					; size = 4
+$T276619 = -348						; size = 4
+$T275971 = -348						; size = 4
+_player$220767 = -348					; size = 4
+$T275107 = -348						; size = 4
+_eOption$220250 = -348					; size = 4
+$T276245 = -344						; size = 4
+$T275910 = -344						; size = 4
+_iPlayer$220763 = -344					; size = 4
 _eActivePlayer$ = -344					; size = 4
-$T280088 = -340						; size = 1
-$T279126 = -340						; size = 1
-__Cat$277010 = -340					; size = 1
-__Cat$276995 = -340					; size = 1
-$T276993 = -340						; size = 1
-__Cat$276762 = -340					; size = 1
-$T276760 = -340						; size = 1
-__Cat$276358 = -340					; size = 1
-__Cat$275678 = -340					; size = 1
-$T275070 = -340						; size = 4
-$T275069 = -340						; size = 4
-__Ptr$276738 = -336					; size = 4
+$T280130 = -340						; size = 1
+$T279168 = -340						; size = 1
+__Cat$277052 = -340					; size = 1
+__Cat$277037 = -340					; size = 1
+$T277035 = -340						; size = 1
+__Cat$276752 = -340					; size = 1
+$T276749 = -340						; size = 1
+__Cat$276400 = -340					; size = 1
+__Cat$275720 = -340					; size = 1
+$T275112 = -340						; size = 4
+$T275111 = -340						; size = 4
+__Ptr$276791 = -336					; size = 4
 _iPlayerIndex$ = -336					; size = 4
-_eVictory$220215 = -336					; size = 4
-_plotStatePerTurn$221475 = -332				; size = 12
-_turnData$220748 = -332					; size = 12
+_eVictory$220257 = -336					; size = 4
+_plotStatePerTurn$221517 = -332				; size = 12
+_turnData$220790 = -332					; size = 12
 _game$ = -320						; size = 4
-__Cat$280104 = -316					; size = 1
-__Cat$280093 = -316					; size = 1
-$T280091 = -316						; size = 1
-$T280728 = -316						; size = 4
-$T280541 = -316						; size = 4
-$T279749 = -316						; size = 4
-$T279838 = -316						; size = 4
-$T278923 = -312						; size = 1
+__Cat$280146 = -316					; size = 1
+__Cat$280135 = -316					; size = 1
+$T280133 = -316						; size = 1
+$T280747 = -316						; size = 4
+$T280583 = -316						; size = 4
+$T279776 = -316						; size = 4
+$T279880 = -316						; size = 4
+$T278965 = -312						; size = 1
 _kMap$ = -312						; size = 4
 _nMessages$ = -312					; size = 4
-_plotState$220890 = -308				; size = 16
-_dataSet$220730 = -308					; size = 16
+_plotState$220932 = -308				; size = 16
+_dataSet$220772 = -308					; size = 16
 _this$ = -292						; size = 4
 _mapPlayers$ = -288					; size = 12
-$T275066 = -276						; size = 12
-__Cat$279129 = -264					; size = 1
-__Cat$278926 = -264					; size = 1
-$T278735 = -264						; size = 4
-_playerData$220746 = -260				; size = 12
-_uiNumDataSets$220731 = -248				; size = 4
-$T275068 = -244						; size = 4
-$T278410 = -240						; size = 4
-$T277784 = -236						; size = 4
-$T278566 = -232						; size = 4
-_playerInfo$220729 = -228				; size = 128
-_modifiedMessage$220881 = -100				; size = 60
-_playerDataSetName$220736 = -40				; size = 28
+$T275108 = -276						; size = 12
+__Cat$279171 = -264					; size = 1
+__Cat$278968 = -264					; size = 1
+$T278777 = -264						; size = 4
+_playerData$220788 = -260				; size = 12
+_uiNumDataSets$220773 = -248				; size = 4
+$T275110 = -244						; size = 4
+$T278452 = -240						; size = 4
+$T277826 = -236						; size = 4
+$T278613 = -232						; size = 4
+_playerInfo$220771 = -228				; size = 128
+_modifiedMessage$220923 = -100				; size = 60
+_playerDataSetName$220778 = -40				; size = 28
 __$EHRec$ = -12						; size = 12
 ?createInfo@CvReplayInfo@@QAEXXZ PROC			; CvReplayInfo::createInfo, COMDAT
 ; _this$ = ecx
@@ -49586,7 +49583,7 @@ $LL33@createInfo:
 
 	push	esi
 	mov	ecx, edi
-	mov	DWORD PTR _eOption$220208[esp+372], esi
+	mov	DWORD PTR _eOption$220250[esp+372], esi
 	call	?isOption@CvGame@@QBE_NW4GameOptionTypes@@@Z ; CvGame::isOption
 	test	al, al
 	je	SHORT $LN32@createInfo
@@ -49594,7 +49591,7 @@ $LL33@createInfo:
 ; 81   : 		{
 ; 82   : 			m_listGameOptions.push_back(eOption);
 
-	lea	eax, DWORD PTR _eOption$220208[esp+368]
+	lea	eax, DWORD PTR _eOption$220250[esp+368]
 	push	eax
 	lea	ecx, DWORD PTR [ebp+56]
 	call	?push_back@?$vector@W4GameOptionTypes@@V?$allocator@W4GameOptionTypes@@@std@@@std@@QAEXABW4GameOptionTypes@@@Z ; std::vector<enum GameOptionTypes,std::allocator<enum GameOptionTypes> >::push_back
@@ -49635,7 +49632,7 @@ $LN107@createInfo:
 
 	xor	edi, edi
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	mov	DWORD PTR _i$220211[esp+368], edi
+	mov	DWORD PTR _i$220253[esp+368], edi
 	call	?getNumVictoryInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumVictoryInfos
 	test	eax, eax
 	jle	$LN27@createInfo
@@ -49649,7 +49646,7 @@ $LL29@createInfo:
 
 	mov	ecx, DWORD PTR _game$[esp+368]
 	push	edi
-	mov	DWORD PTR _eVictory$220215[esp+372], edi
+	mov	DWORD PTR _eVictory$220257[esp+372], edi
 	call	?isVictoryValid@CvGame@@QBE_NW4VictoryTypes@@@Z ; CvGame::isVictoryValid
 	test	al, al
 	je	SHORT $LN28@createInfo
@@ -49673,13 +49670,13 @@ $LN146@createInfo:
 	sar	edx, 2
 	cmp	edx, eax
 	jae	SHORT $LN138@createInfo
-	mov	ecx, DWORD PTR __Cat$275678[esp+368]
-	mov	BYTE PTR $T275674[esp+368], bl
-	mov	eax, DWORD PTR $T275674[esp+368]
+	mov	ecx, DWORD PTR __Cat$275720[esp+368]
+	mov	BYTE PTR $T275716[esp+368], bl
+	mov	eax, DWORD PTR $T275716[esp+368]
 	push	eax
 	push	ecx
 	push	esi
-	lea	edx, DWORD PTR _eVictory$220215[esp+380]
+	lea	edx, DWORD PTR _eVictory$220257[esp+380]
 	push	edx
 	push	1
 	push	edi
@@ -49689,14 +49686,14 @@ $LN146@createInfo:
 	mov	DWORD PTR [esi+8], edi
 	jmp	SHORT $LN1219@createInfo
 $LN138@createInfo:
-	lea	eax, DWORD PTR _eVictory$220215[esp+368]
+	lea	eax, DWORD PTR _eVictory$220257[esp+368]
 	push	eax
 	push	1
 	push	edi
 	mov	ecx, esi
 	call	?_Insert_n@?$vector@W4VictoryTypes@@V?$allocator@W4VictoryTypes@@@std@@@std@@IAEXV?$_Vector_const_iterator@W4VictoryTypes@@V?$allocator@W4VictoryTypes@@@std@@@2@IABW4VictoryTypes@@@Z ; std::vector<enum VictoryTypes,std::allocator<enum VictoryTypes> >::_Insert_n
 $LN1219@createInfo:
-	mov	edi, DWORD PTR _i$220211[esp+368]
+	mov	edi, DWORD PTR _i$220253[esp+368]
 $LN28@createInfo:
 
 ; 87   : #ifdef AUI_WARNING_FIXES
@@ -49706,7 +49703,7 @@ $LN28@createInfo:
 
 	inc	edi
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	mov	DWORD PTR _i$220211[esp+368], edi
+	mov	DWORD PTR _i$220253[esp+368], edi
 	call	?getNumVictoryInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumVictoryInfos
 	cmp	edi, eax
 	jl	SHORT $LL29@createInfo
@@ -49838,35 +49835,35 @@ $LN25@createInfo:
 	mov	eax, DWORD PTR [edi+4]
 	cmp	eax, esi
 	je	SHORT $LN219@createInfo
-	mov	DWORD PTR $T275868[esp+368], eax
-	mov	DWORD PTR $T275867[esp+368], esi
+	mov	DWORD PTR $T275910[esp+368], eax
+	mov	DWORD PTR $T275909[esp+368], esi
 	cmp	esi, esi
 	je	SHORT $LN244@createInfo
 	npad	3
 $LL246@createInfo:
-	mov	ecx, DWORD PTR $T275867[esp+368]
+	mov	ecx, DWORD PTR $T275909[esp+368]
 	push	ecx
-	mov	ecx, DWORD PTR $T275868[esp+372]
+	mov	ecx, DWORD PTR $T275910[esp+372]
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	mov	eax, DWORD PTR $T275867[esp+368]
-	add	DWORD PTR $T275868[esp+368], 28		; 0000001cH
+	mov	eax, DWORD PTR $T275909[esp+368]
+	add	DWORD PTR $T275910[esp+368], 28		; 0000001cH
 	add	eax, 28					; 0000001cH
-	mov	DWORD PTR $T275867[esp+368], eax
+	mov	DWORD PTR $T275909[esp+368], eax
 	cmp	eax, esi
 	jne	SHORT $LL246@createInfo
 $LN244@createInfo:
 	mov	eax, DWORD PTR [edi+8]
-	mov	esi, DWORD PTR $T275868[esp+368]
-	mov	DWORD PTR $T275929[esp+368], eax
+	mov	esi, DWORD PTR $T275910[esp+368]
+	mov	DWORD PTR $T275971[esp+368], eax
 	cmp	esi, eax
 	je	SHORT $LN255@createInfo
 $LL257@createInfo:
 	mov	ecx, esi
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 	add	esi, 28					; 0000001cH
-	cmp	esi, DWORD PTR $T275929[esp+368]
+	cmp	esi, DWORD PTR $T275971[esp+368]
 	jne	SHORT $LL257@createInfo
-	mov	esi, DWORD PTR $T275868[esp+368]
+	mov	esi, DWORD PTR $T275910[esp+368]
 $LN255@createInfo:
 	mov	DWORD PTR [edi+8], esi
 $LN219@createInfo:
@@ -49877,32 +49874,32 @@ $LN219@createInfo:
 	mov	eax, DWORD PTR [ebp+196]
 	cmp	eax, esi
 	je	SHORT $LN281@createInfo
-	mov	DWORD PTR $T276203[esp+368], eax
-	mov	DWORD PTR $T276202[esp+368], esi
+	mov	DWORD PTR $T276245[esp+368], eax
+	mov	DWORD PTR $T276244[esp+368], esi
 	cmp	esi, esi
 	je	SHORT $LN306@createInfo
 $LL308@createInfo:
-	mov	edx, DWORD PTR $T276202[esp+368]
-	mov	ecx, DWORD PTR $T276203[esp+368]
+	mov	edx, DWORD PTR $T276244[esp+368]
+	mov	ecx, DWORD PTR $T276245[esp+368]
 	push	edx
 	call	??4?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@QAEAAV01@ABV01@@Z ; std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > >::operator=
-	mov	eax, DWORD PTR $T276202[esp+368]
-	add	DWORD PTR $T276203[esp+368], 16		; 00000010H
+	mov	eax, DWORD PTR $T276244[esp+368]
+	add	DWORD PTR $T276245[esp+368], 16		; 00000010H
 	add	eax, 16					; 00000010H
-	mov	DWORD PTR $T276202[esp+368], eax
+	mov	DWORD PTR $T276244[esp+368], eax
 	cmp	eax, esi
 	jne	SHORT $LL308@createInfo
 $LN306@createInfo:
-	mov	ecx, DWORD PTR __Cat$276358[esp+368]
+	mov	ecx, DWORD PTR __Cat$276400[esp+368]
 	mov	eax, DWORD PTR [ebp+200]
-	mov	edx, DWORD PTR $T276203[esp+368]
+	mov	edx, DWORD PTR $T276245[esp+368]
 	push	ecx
 	lea	esi, DWORD PTR [ebp+192]
 	push	esi
 	push	eax
 	push	edx
 	call	??$_Destroy_range@V?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@std@@@std@@YAXPAV?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@0@0AAV?$allocator@V?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@@0@U_Nonscalar_ptr_iterator_tag@0@@Z ; std::_Destroy_range<std::allocator<std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > > > >
-	mov	eax, DWORD PTR $T276203[esp+384]
+	mov	eax, DWORD PTR $T276245[esp+384]
 	add	esp, 16					; 00000010H
 	mov	DWORD PTR [esi+8], eax
 $LN281@createInfo:
@@ -49913,12 +49910,12 @@ $LN281@createInfo:
 	mov	ecx, DWORD PTR [ebp+148]
 	cmp	ecx, eax
 	je	$LN331@createInfo
-	mov	BYTE PTR $T276758[esp+368], bl
-	mov	edx, DWORD PTR $T276758[esp+368]
+	mov	BYTE PTR $T276747[esp+368], bl
+	mov	edx, DWORD PTR $T276747[esp+368]
 	push	edx
-	mov	edx, DWORD PTR __Cat$276762[esp+372]
+	mov	edx, DWORD PTR __Cat$276752[esp+372]
 	push	edx
-	mov	edx, DWORD PTR $T276760[esp+376]
+	mov	edx, DWORD PTR $T276749[esp+376]
 	push	edx
 	push	ecx
 	push	eax
@@ -49927,9 +49924,9 @@ $LN281@createInfo:
 	mov	ecx, DWORD PTR [ebp+152]
 	add	esp, 24					; 00000018H
 	mov	esi, eax
-	mov	DWORD PTR __Ptr$276738[esp+368], eax
-	mov	DWORD PTR $T276578[esp+368], ecx
-	mov	DWORD PTR $T276577[esp+368], esi
+	mov	DWORD PTR __Ptr$276791[esp+368], eax
+	mov	DWORD PTR $T276620[esp+368], ecx
+	mov	DWORD PTR $T276619[esp+368], esi
 	cmp	eax, ecx
 	je	SHORT $LN362@createInfo
 	npad	7
@@ -49947,11 +49944,11 @@ $LL364@createInfo:
 	mov	DWORD PTR __$EHRec$[esp+376], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 	sub	esi, -128				; ffffff80H
-	mov	DWORD PTR $T276577[esp+368], esi
-	cmp	esi, DWORD PTR $T276578[esp+368]
+	mov	DWORD PTR $T276619[esp+368], esi
+	cmp	esi, DWORD PTR $T276620[esp+368]
 	jne	SHORT $LL364@createInfo
 $LN362@createInfo:
-	mov	eax, DWORD PTR __Ptr$276738[esp+368]
+	mov	eax, DWORD PTR __Ptr$276791[esp+368]
 	mov	DWORD PTR [ebp+152], eax
 $LN331@createInfo:
 
@@ -49963,26 +49960,26 @@ $LN331@createInfo:
 	lea	esi, DWORD PTR [ebp+216]
 	cmp	ecx, eax
 	je	SHORT $LN406@createInfo
-	mov	BYTE PTR $T276991[esp+368], bl
-	mov	edx, DWORD PTR $T276991[esp+368]
+	mov	BYTE PTR $T277033[esp+368], bl
+	mov	edx, DWORD PTR $T277033[esp+368]
 	push	edx
-	mov	edx, DWORD PTR __Cat$276995[esp+372]
+	mov	edx, DWORD PTR __Cat$277037[esp+372]
 	push	edx
-	mov	edx, DWORD PTR $T276993[esp+376]
+	mov	edx, DWORD PTR $T277035[esp+376]
 	push	edx
 	push	ecx
 	push	eax
 	push	eax
 	call	??$_Copy_opt@PAV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@PAV12@Urandom_access_iterator_tag@2@@std@@YAPAV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@0@PAV10@00Urandom_access_iterator_tag@0@U_Nonscalar_ptr_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z ; std::_Copy_opt<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > > *,std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > > *,std::random_access_iterator_tag>
-	mov	edx, DWORD PTR __Cat$277010[esp+392]
+	mov	edx, DWORD PTR __Cat$277052[esp+392]
 	mov	ecx, DWORD PTR [esi+8]
 	push	edx
 	push	esi
 	push	ecx
 	push	eax
-	mov	DWORD PTR __Ptr$277005[esp+408], eax
+	mov	DWORD PTR __Ptr$277047[esp+408], eax
 	call	??$_Destroy_range@V?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@std@@@std@@YAXPAV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@0@0AAV?$allocator@V?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@@0@U_Nonscalar_ptr_iterator_tag@0@@Z ; std::_Destroy_range<std::allocator<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > > > >
-	mov	eax, DWORD PTR __Ptr$277005[esp+408]
+	mov	eax, DWORD PTR __Ptr$277047[esp+408]
 	add	esp, 40					; 00000028H
 	mov	DWORD PTR [esi+8], eax
 $LN406@createInfo:
@@ -50005,12 +50002,12 @@ $LN406@createInfo:
 
 ; 130  : 	mapPlayers[-1] = -1;	//account for NO_PLAYER.
 
-	lea	ecx, DWORD PTR $T275065[esp+368]
+	lea	ecx, DWORD PTR $T275107[esp+368]
 	or	esi, -1
 	push	ecx
 	lea	ecx, DWORD PTR _mapPlayers$[esp+372]
 	mov	DWORD PTR __$EHRec$[esp+380], 3
-	mov	DWORD PTR $T275065[esp+372], esi
+	mov	DWORD PTR $T275107[esp+372], esi
 	call	??A?$map@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@@std@@QAEAAHABH@Z ; std::map<int,int,std::less<int>,std::allocator<std::pair<int const ,int> > >::operator[]
 	mov	DWORD PTR [eax], esi
 
@@ -50025,7 +50022,7 @@ $LN406@createInfo:
 
 ; 134  : 	for(int iPlayer = 0; iPlayer < MAX_CIV_PLAYERS; iPlayer++)
 
-	mov	DWORD PTR _iPlayer$220721[esp+368], ebx
+	mov	DWORD PTR _iPlayer$220763[esp+368], ebx
 	mov	eax, ebx
 	npad	9
 $LL23@createInfo:
@@ -50036,7 +50033,7 @@ $LL23@createInfo:
 	mov	esi, eax
 	imul	esi, 63236				; 0000f704H
 	add	esi, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
-	mov	DWORD PTR _player$220725[esp+368], esi
+	mov	DWORD PTR _player$220767[esp+368], esi
 
 ; 137  : 		if(player.isEverAlive())
 
@@ -50055,7 +50052,7 @@ $LL23@createInfo:
 ; 141  : 
 ; 142  : 			mapPlayers[iPlayer] = iPlayerIndex;
 
-	lea	eax, DWORD PTR _iPlayer$220721[esp+368]
+	lea	eax, DWORD PTR _iPlayer$220763[esp+368]
 	push	eax
 	lea	ecx, DWORD PTR _mapPlayers$[esp+372]
 	call	??A?$map@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@@std@@QAEAAHABH@Z ; std::map<int,int,std::less<int>,std::allocator<std::pair<int const ,int> > >::operator[]
@@ -50066,7 +50063,7 @@ $LL23@createInfo:
 
 	mov	ecx, DWORD PTR _game$[esp+368]
 	call	?getActivePlayer@CvGame@@QBE?AW4PlayerTypes@@XZ ; CvGame::getActivePlayer
-	cmp	DWORD PTR _iPlayer$220721[esp+368], eax
+	cmp	DWORD PTR _iPlayer$220763[esp+368], eax
 	jne	SHORT $LN19@createInfo
 
 ; 144  : 			{
@@ -50084,15 +50081,15 @@ $LN19@createInfo:
 ; 148  : 
 ; 149  : 			PlayerInfo playerInfo;
 
-	lea	ecx, DWORD PTR _playerInfo$220729[esp+384]
+	lea	ecx, DWORD PTR _playerInfo$220771[esp+384]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR _playerInfo$220729[esp+412]
+	lea	ecx, DWORD PTR _playerInfo$220771[esp+412]
 	mov	BYTE PTR __$EHRec$[esp+376], 4
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR _playerInfo$220729[esp+440]
+	lea	ecx, DWORD PTR _playerInfo$220771[esp+440]
 	mov	BYTE PTR __$EHRec$[esp+376], 5
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR _playerInfo$220729[esp+468]
+	lea	ecx, DWORD PTR _playerInfo$220771[esp+468]
 	mov	BYTE PTR __$EHRec$[esp+376], 6
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -50105,22 +50102,22 @@ $LN19@createInfo:
 ; 151  : 			playerInfo.m_eCivilization = player.getCivilizationType();
 
 	mov	ecx, esi
-	mov	DWORD PTR _playerInfo$220729[esp+372], eax
+	mov	DWORD PTR _playerInfo$220771[esp+372], eax
 	call	?getCivilizationType@CvPlayer@@QBE?AW4CivilizationTypes@@XZ ; CvPlayer::getCivilizationType
 
 ; 152  : 
 ; 153  : 			playerInfo.m_eDifficulty = player.getHandicapType();
 
 	mov	ecx, esi
-	mov	DWORD PTR _playerInfo$220729[esp+368], eax
+	mov	DWORD PTR _playerInfo$220771[esp+368], eax
 	call	?getHandicapType@CvPlayer@@QBE?AW4HandicapTypes@@XZ ; CvPlayer::getHandicapType
 
 ; 154  : 			playerInfo.m_strCustomLeaderName = player.getName();
 
 	mov	ecx, esi
-	mov	DWORD PTR _playerInfo$220729[esp+380], eax
+	mov	DWORD PTR _playerInfo$220771[esp+380], eax
 	call	?getName@CvPlayer@@QBEPBDXZ		; CvPlayer::getName
-	lea	ecx, DWORD PTR _playerInfo$220729[esp+384]
+	lea	ecx, DWORD PTR _playerInfo$220771[esp+384]
 	cmp	eax, ebx
 	je	SHORT $LN511@createInfo
 	push	eax
@@ -50134,7 +50131,7 @@ $LN510@createInfo:
 
 	mov	ecx, esi
 	call	?getCivilizationDescription@CvPlayer@@QBEPBDXZ ; CvPlayer::getCivilizationDescription
-	lea	ecx, DWORD PTR _playerInfo$220729[esp+412]
+	lea	ecx, DWORD PTR _playerInfo$220771[esp+412]
 	cmp	eax, ebx
 	je	SHORT $LN515@createInfo
 	push	eax
@@ -50148,7 +50145,7 @@ $LN514@createInfo:
 
 	mov	ecx, esi
 	call	?getCivilizationShortDescription@CvPlayer@@QBEPBDXZ ; CvPlayer::getCivilizationShortDescription
-	lea	ecx, DWORD PTR _playerInfo$220729[esp+440]
+	lea	ecx, DWORD PTR _playerInfo$220771[esp+440]
 	cmp	eax, ebx
 	je	SHORT $LN519@createInfo
 	push	eax
@@ -50162,7 +50159,7 @@ $LN518@createInfo:
 
 	mov	ecx, esi
 	call	?getCivilizationAdjective@CvPlayer@@QBEPBDXZ ; CvPlayer::getCivilizationAdjective
-	lea	ecx, DWORD PTR _playerInfo$220729[esp+468]
+	lea	ecx, DWORD PTR _playerInfo$220771[esp+468]
 	cmp	eax, ebx
 	je	SHORT $LN523@createInfo
 	push	eax
@@ -50183,7 +50180,7 @@ $LN522@createInfo:
 
 	mov	ecx, DWORD PTR [edi+8]
 	sub	ecx, DWORD PTR [edi+4]
-	mov	DWORD PTR _playerInfo$220729[esp+376], eax
+	mov	DWORD PTR _playerInfo$220771[esp+376], eax
 	mov	eax, -1840700269			; 92492493H
 	imul	ecx
 	add	edx, ecx
@@ -50192,7 +50189,7 @@ $LN522@createInfo:
 	shr	eax, 31					; 0000001fH
 	add	eax, edx
 	push	eax
-	lea	ecx, DWORD PTR _dataSet$220730[esp+372]
+	lea	ecx, DWORD PTR _dataSet$220772[esp+372]
 	call	??0?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@QAE@I@Z ; std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > >::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > >
 
 ; 162  : 
@@ -50201,11 +50198,11 @@ $LN522@createInfo:
 	mov	ecx, esi
 	mov	BYTE PTR __$EHRec$[esp+376], 8
 	call	?getNumReplayDataSets@CvPlayer@@QBEIXZ	; CvPlayer::getNumReplayDataSets
-	mov	DWORD PTR _uiNumDataSets$220731[esp+368], eax
+	mov	DWORD PTR _uiNumDataSets$220773[esp+368], eax
 
 ; 164  : 			for(unsigned int uiPlayerDataSet = 0; uiPlayerDataSet < uiNumDataSets; ++uiPlayerDataSet)
 
-	mov	DWORD PTR _uiPlayerDataSet$220732[esp+368], ebx
+	mov	DWORD PTR _uiPlayerDataSet$220774[esp+368], ebx
 	cmp	eax, ebx
 	jbe	$LN1217@createInfo
 	npad	7
@@ -50215,12 +50212,12 @@ $LL18@createInfo:
 ; 166  : 				// First, Locate the index of the dataset
 ; 167  : 				std::string playerDataSetName = player.getReplayDataSetName(uiPlayerDataSet);
 
-	mov	eax, DWORD PTR _uiPlayerDataSet$220732[esp+368]
-	mov	ecx, DWORD PTR _player$220725[esp+368]
+	mov	eax, DWORD PTR _uiPlayerDataSet$220774[esp+368]
+	mov	ecx, DWORD PTR _player$220767[esp+368]
 	push	eax
 	call	?getReplayDataSetName@CvPlayer@@QBEPBDI@Z ; CvPlayer::getReplayDataSetName
 	push	eax
-	lea	ecx, DWORD PTR _playerDataSetName$220736[esp+372]
+	lea	ecx, DWORD PTR _playerDataSetName$220778[esp+372]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 
 ; 168  : 				unsigned int uiDataSet = 0;
@@ -50255,7 +50252,7 @@ $LL15@createInfo:
 
 ; 173  : 					if(dataSetName == playerDataSetName)
 
-	lea	ecx, DWORD PTR _playerDataSetName$220736[esp+368]
+	lea	ecx, DWORD PTR _playerDataSetName$220778[esp+368]
 	add	eax, esi
 	push	ecx
 	push	eax
@@ -50289,39 +50286,39 @@ $LN1216@createInfo:
 ; 182  : 				{
 ; 183  : 					m_dataSetMap.push_back(playerDataSetName);
 
-	lea	ecx, DWORD PTR _playerDataSetName$220736[esp+368]
+	lea	ecx, DWORD PTR _playerDataSetName$220778[esp+368]
 	push	ecx
 	mov	ecx, edi
 	call	?push_back@?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@QAEXABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@@Z ; std::vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >::push_back
 
 ; 184  : 					dataSet.push_back(TurnData());
 
-	lea	ecx, DWORD PTR $T275066[esp+368]
+	lea	ecx, DWORD PTR $T275108[esp+368]
 	call	?_Buynode@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@IAEPAU_Node@?$_Tree_nod@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@2@XZ ; std::_Tree<std::_Tmap_traits<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> >,0> >::_Buynode
-	mov	DWORD PTR $T275066[esp+372], eax
+	mov	DWORD PTR $T275108[esp+372], eax
 	mov	BYTE PTR [eax+21], 1
-	mov	eax, DWORD PTR $T275066[esp+372]
+	mov	eax, DWORD PTR $T275108[esp+372]
 	mov	DWORD PTR [eax+4], eax
-	mov	eax, DWORD PTR $T275066[esp+372]
+	mov	eax, DWORD PTR $T275108[esp+372]
 	mov	DWORD PTR [eax], eax
-	mov	eax, DWORD PTR $T275066[esp+372]
+	mov	eax, DWORD PTR $T275108[esp+372]
 	mov	DWORD PTR [eax+8], eax
-	mov	DWORD PTR $T275066[esp+376], ebx
-	lea	edx, DWORD PTR $T275066[esp+368]
+	mov	DWORD PTR $T275108[esp+376], ebx
+	lea	edx, DWORD PTR $T275108[esp+368]
 	push	edx
-	lea	ecx, DWORD PTR _dataSet$220730[esp+372]
+	lea	ecx, DWORD PTR _dataSet$220772[esp+372]
 	mov	BYTE PTR __$EHRec$[esp+380], 10		; 0000000aH
 	call	?push_back@?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@QAEXABV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@2@@Z ; std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > >::push_back
-	mov	eax, DWORD PTR $T275066[esp+372]
+	mov	eax, DWORD PTR $T275108[esp+372]
 	mov	ecx, DWORD PTR [eax]
 	push	eax
 	push	ecx
-	lea	eax, DWORD PTR $T277784[esp+376]
+	lea	eax, DWORD PTR $T277826[esp+376]
 	push	eax
-	lea	ecx, DWORD PTR $T275066[esp+380]
+	lea	ecx, DWORD PTR $T275108[esp+380]
 	mov	BYTE PTR __$EHRec$[esp+388], 9
 	call	?erase@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@0@Z ; std::_Tree<std::_Tmap_traits<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> >,0> >::erase
-	mov	ecx, DWORD PTR $T275066[esp+372]
+	mov	ecx, DWORD PTR $T275108[esp+372]
 	push	ecx
 	call	??3@YAXPAX@Z				; operator delete
 
@@ -50336,8 +50333,8 @@ $LN1216@createInfo:
 	mov	eax, edx
 	add	esp, 4
 	shr	eax, 31					; 0000001fH
-	mov	DWORD PTR $T275066[esp+372], ebx
-	mov	DWORD PTR $T275066[esp+376], ebx
+	mov	DWORD PTR $T275108[esp+372], ebx
+	mov	DWORD PTR $T275108[esp+376], ebx
 	lea	ebp, DWORD PTR [edx+eax-1]
 $LN11@createInfo:
 
@@ -50345,32 +50342,32 @@ $LN11@createInfo:
 ; 187  : 
 ; 188  : 				CvPlayer::TurnData playerData = player.getReplayDataHistory(uiPlayerDataSet);
 
-	mov	ecx, DWORD PTR _uiPlayerDataSet$220732[esp+368]
+	mov	ecx, DWORD PTR _uiPlayerDataSet$220774[esp+368]
 	push	ecx
-	mov	ecx, DWORD PTR _player$220725[esp+372]
-	lea	edx, DWORD PTR _playerData$220746[esp+372]
+	mov	ecx, DWORD PTR _player$220767[esp+372]
+	lea	edx, DWORD PTR _playerData$220788[esp+372]
 	push	edx
 	call	?getReplayDataHistory@CvPlayer@@QBE?AV?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@I@Z ; CvPlayer::getReplayDataHistory
 
 ; 189  : 				TurnData turnData;
 
-	lea	ecx, DWORD PTR _turnData$220748[esp+368]
+	lea	ecx, DWORD PTR _turnData$220790[esp+368]
 	mov	BYTE PTR __$EHRec$[esp+376], 11		; 0000000bH
 	call	?_Buynode@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@IAEPAU_Node@?$_Tree_nod@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@2@XZ ; std::_Tree<std::_Tmap_traits<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> >,0> >::_Buynode
-	mov	DWORD PTR _turnData$220748[esp+372], eax
+	mov	DWORD PTR _turnData$220790[esp+372], eax
 	mov	BYTE PTR [eax+21], 1
-	mov	eax, DWORD PTR _turnData$220748[esp+372]
+	mov	eax, DWORD PTR _turnData$220790[esp+372]
 	mov	DWORD PTR [eax+4], eax
-	mov	eax, DWORD PTR _turnData$220748[esp+372]
+	mov	eax, DWORD PTR _turnData$220790[esp+372]
 	mov	DWORD PTR [eax], eax
-	mov	eax, DWORD PTR _turnData$220748[esp+372]
+	mov	eax, DWORD PTR _turnData$220790[esp+372]
 	mov	DWORD PTR [eax+8], eax
-	mov	DWORD PTR _turnData$220748[esp+376], ebx
+	mov	DWORD PTR _turnData$220790[esp+376], ebx
 
 ; 190  : 
 ; 191  : 				for(CvPlayer::TurnData::iterator it = playerData.begin(); it != playerData.end(); ++it)
 
-	mov	eax, DWORD PTR _playerData$220746[esp+372]
+	mov	eax, DWORD PTR _playerData$220788[esp+372]
 	mov	esi, DWORD PTR [eax]
 	mov	BYTE PTR __$EHRec$[esp+376], 12		; 0000000cH
 	cmp	esi, eax
@@ -50384,10 +50381,10 @@ $LL679@createInfo:
 	mov	eax, DWORD PTR [esi+12]
 	mov	ecx, DWORD PTR _this$[esp+368]
 	sub	eax, DWORD PTR [ecx+96]
-	lea	edx, DWORD PTR $T275068[esp+368]
+	lea	edx, DWORD PTR $T275110[esp+368]
 	push	edx
-	lea	ecx, DWORD PTR _turnData$220748[esp+372]
-	mov	DWORD PTR $T275068[esp+372], eax
+	lea	ecx, DWORD PTR _turnData$220790[esp+372]
+	mov	DWORD PTR $T275110[esp+372], eax
 	call	??A?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@QAEAAHABI@Z ; std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >::operator[]
 	mov	ecx, DWORD PTR [esi+16]
 	mov	DWORD PTR [eax], ecx
@@ -50425,7 +50422,7 @@ $LL678@createInfo:
 $LN677@createInfo:
 	mov	esi, eax
 $LN1210@createInfo:
-	cmp	esi, DWORD PTR _playerData$220746[esp+372]
+	cmp	esi, DWORD PTR _playerData$220788[esp+372]
 	jne	SHORT $LL679@createInfo
 $LN8@createInfo:
 
@@ -50433,21 +50430,21 @@ $LN8@createInfo:
 ; 195  : 
 ; 196  : 				dataSet[uiDataSet] = turnData;
 
-	mov	eax, DWORD PTR _dataSet$220730[esp+372]
+	mov	eax, DWORD PTR _dataSet$220772[esp+372]
 	lea	edx, DWORD PTR [ebp+ebp*2]
 	lea	esi, DWORD PTR [eax+edx*4]
-	lea	ecx, DWORD PTR _turnData$220748[esp+368]
+	lea	ecx, DWORD PTR _turnData$220790[esp+368]
 	cmp	esi, ecx
 	je	SHORT $LN735@createInfo
 	mov	eax, DWORD PTR [esi+4]
 	mov	ecx, DWORD PTR [eax]
 	push	eax
 	push	ecx
-	lea	edx, DWORD PTR $T278410[esp+376]
+	lea	edx, DWORD PTR $T278452[esp+376]
 	push	edx
 	mov	ecx, esi
 	call	?erase@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@0@Z ; std::_Tree<std::_Tmap_traits<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> >,0> >::erase
-	lea	eax, DWORD PTR _turnData$220748[esp+368]
+	lea	eax, DWORD PTR _turnData$220790[esp+368]
 	push	eax
 	mov	ecx, esi
 	call	?_Copy@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@IAEXABV12@@Z ; std::_Tree<std::_Tmap_traits<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> >,0> >::_Copy
@@ -50455,43 +50452,43 @@ $LN735@createInfo:
 
 ; 197  : 			}
 
-	mov	eax, DWORD PTR _turnData$220748[esp+372]
+	mov	eax, DWORD PTR _turnData$220790[esp+372]
 	mov	ecx, DWORD PTR [eax]
 	push	eax
 	push	ecx
-	lea	ecx, DWORD PTR $T278566[esp+376]
+	lea	ecx, DWORD PTR $T278613[esp+376]
 	push	ecx
-	lea	ecx, DWORD PTR _turnData$220748[esp+380]
+	lea	ecx, DWORD PTR _turnData$220790[esp+380]
 	mov	BYTE PTR __$EHRec$[esp+388], 11		; 0000000bH
 	call	?erase@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@0@Z ; std::_Tree<std::_Tmap_traits<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> >,0> >::erase
-	mov	edx, DWORD PTR _turnData$220748[esp+372]
+	mov	edx, DWORD PTR _turnData$220790[esp+372]
 	push	edx
 	call	??3@YAXPAX@Z				; operator delete
-	mov	eax, DWORD PTR _playerData$220746[esp+376]
+	mov	eax, DWORD PTR _playerData$220788[esp+376]
 	add	esp, 4
 	push	eax
-	mov	DWORD PTR _turnData$220748[esp+376], ebx
-	mov	DWORD PTR _turnData$220748[esp+380], ebx
+	mov	DWORD PTR _turnData$220790[esp+376], ebx
+	mov	DWORD PTR _turnData$220790[esp+380], ebx
 	mov	ecx, DWORD PTR [eax]
 	push	ecx
-	lea	eax, DWORD PTR $T278735[esp+376]
+	lea	eax, DWORD PTR $T278777[esp+376]
 	push	eax
-	lea	ecx, DWORD PTR _playerData$220746[esp+380]
+	lea	ecx, DWORD PTR _playerData$220788[esp+380]
 	mov	BYTE PTR __$EHRec$[esp+388], 9
 	call	?erase@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@0@Z ; std::_Tree<std::_Tmap_traits<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> >,0> >::erase
-	mov	ecx, DWORD PTR _playerData$220746[esp+372]
+	mov	ecx, DWORD PTR _playerData$220788[esp+372]
 	push	ecx
 	call	??3@YAXPAX@Z				; operator delete
 	add	esp, 4
-	lea	ecx, DWORD PTR _playerDataSetName$220736[esp+368]
-	mov	DWORD PTR _playerData$220746[esp+372], ebx
-	mov	DWORD PTR _playerData$220746[esp+376], ebx
+	lea	ecx, DWORD PTR _playerDataSetName$220778[esp+368]
+	mov	DWORD PTR _playerData$220788[esp+372], ebx
+	mov	DWORD PTR _playerData$220788[esp+376], ebx
 	mov	BYTE PTR __$EHRec$[esp+376], 8
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	mov	eax, DWORD PTR _uiPlayerDataSet$220732[esp+368]
+	mov	eax, DWORD PTR _uiPlayerDataSet$220774[esp+368]
 	inc	eax
-	mov	DWORD PTR _uiPlayerDataSet$220732[esp+368], eax
-	cmp	eax, DWORD PTR _uiNumDataSets$220731[esp+368]
+	mov	DWORD PTR _uiPlayerDataSet$220774[esp+368], eax
+	cmp	eax, DWORD PTR _uiNumDataSets$220773[esp+368]
 	jb	$LL18@createInfo
 
 ; 164  : 			for(unsigned int uiPlayerDataSet = 0; uiPlayerDataSet < uiNumDataSets; ++uiPlayerDataSet)
@@ -50517,12 +50514,12 @@ $LN825@createInfo:
 	mov	DWORD PTR tv3544[esp+368], edx
 	sub	edx, ecx
 	sar	edx, 4
-	lea	ecx, DWORD PTR _dataSet$220730[esp+368]
+	lea	ecx, DWORD PTR _dataSet$220772[esp+368]
 	cmp	edx, eax
 	jae	SHORT $LN817@createInfo
-	mov	eax, DWORD PTR __Cat$278926[esp+368]
-	mov	BYTE PTR $T278923[esp+368], bl
-	mov	edx, DWORD PTR $T278923[esp+368]
+	mov	eax, DWORD PTR __Cat$278968[esp+368]
+	mov	BYTE PTR $T278965[esp+368], bl
+	mov	edx, DWORD PTR $T278965[esp+368]
 	push	edx
 	mov	edx, DWORD PTR tv3544[esp+372]
 	push	eax
@@ -50563,11 +50560,11 @@ $LN873@createInfo:
 	sub	edx, ecx
 	sar	edx, 7
 	cmp	edx, eax
-	lea	edx, DWORD PTR _playerInfo$220729[esp+368]
+	lea	edx, DWORD PTR _playerInfo$220771[esp+368]
 	jae	SHORT $LN865@createInfo
-	mov	ecx, DWORD PTR __Cat$279129[esp+368]
-	mov	BYTE PTR $T279126[esp+368], bl
-	mov	eax, DWORD PTR $T279126[esp+368]
+	mov	ecx, DWORD PTR __Cat$279171[esp+368]
+	mov	BYTE PTR $T279168[esp+368], bl
+	mov	eax, DWORD PTR $T279168[esp+368]
 	push	eax
 	mov	eax, DWORD PTR tv3561[esp+372]
 	push	ecx
@@ -50593,10 +50590,10 @@ $LN906@createInfo:
 ; 201  : 		}
 
 	mov	BYTE PTR __$EHRec$[esp+376], 7
-	cmp	DWORD PTR _dataSet$220730[esp+372], ebx
+	cmp	DWORD PTR _dataSet$220772[esp+372], ebx
 	je	SHORT $LN966@createInfo
-	mov	ecx, DWORD PTR _dataSet$220730[esp+372]
-	cmp	ecx, DWORD PTR _dataSet$220730[esp+376]
+	mov	ecx, DWORD PTR _dataSet$220772[esp+372]
+	cmp	ecx, DWORD PTR _dataSet$220772[esp+376]
 	je	SHORT $LN923@createInfo
 	mov	esi, ecx
 	add	esi, 4
@@ -50605,7 +50602,7 @@ $LL925@createInfo:
 	mov	ecx, DWORD PTR [eax]
 	push	eax
 	push	ecx
-	lea	edx, DWORD PTR $T279749[esp+376]
+	lea	edx, DWORD PTR $T279776[esp+376]
 	push	edx
 	lea	ecx, DWORD PTR [esi-4]
 	call	?erase@?$_Tree@V?$_Tmap_traits@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@0@Z ; std::_Tree<std::_Tmap_traits<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> >,0> >::erase
@@ -50617,34 +50614,34 @@ $LL925@createInfo:
 	add	esi, 12					; 0000000cH
 	lea	eax, DWORD PTR [esi-4]
 	add	esp, 4
-	cmp	eax, DWORD PTR _dataSet$220730[esp+376]
+	cmp	eax, DWORD PTR _dataSet$220772[esp+376]
 	jne	SHORT $LL925@createInfo
 $LN923@createInfo:
-	mov	ecx, DWORD PTR _dataSet$220730[esp+372]
+	mov	ecx, DWORD PTR _dataSet$220772[esp+372]
 	push	ecx
 	call	??3@YAXPAX@Z				; operator delete
 	add	esp, 4
 $LN966@createInfo:
-	mov	DWORD PTR _dataSet$220730[esp+372], ebx
-	mov	DWORD PTR _dataSet$220730[esp+376], ebx
-	mov	DWORD PTR _dataSet$220730[esp+380], ebx
-	lea	ecx, DWORD PTR _playerInfo$220729[esp+468]
+	mov	DWORD PTR _dataSet$220772[esp+372], ebx
+	mov	DWORD PTR _dataSet$220772[esp+376], ebx
+	mov	DWORD PTR _dataSet$220772[esp+380], ebx
+	lea	ecx, DWORD PTR _playerInfo$220771[esp+468]
 	mov	BYTE PTR __$EHRec$[esp+376], 15		; 0000000fH
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR _playerInfo$220729[esp+440]
+	lea	ecx, DWORD PTR _playerInfo$220771[esp+440]
 	mov	BYTE PTR __$EHRec$[esp+376], 14		; 0000000eH
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR _playerInfo$220729[esp+412]
+	lea	ecx, DWORD PTR _playerInfo$220771[esp+412]
 	mov	BYTE PTR __$EHRec$[esp+376], 13		; 0000000dH
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR _playerInfo$220729[esp+384]
+	lea	ecx, DWORD PTR _playerInfo$220771[esp+384]
 	mov	BYTE PTR __$EHRec$[esp+376], 3
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	mov	eax, DWORD PTR _iPlayer$220721[esp+368]
+	mov	eax, DWORD PTR _iPlayer$220763[esp+368]
 $LN22@createInfo:
 	inc	eax
 	cmp	eax, 63					; 0000003fH
-	mov	DWORD PTR _iPlayer$220721[esp+368], eax
+	mov	DWORD PTR _iPlayer$220763[esp+368], eax
 	jl	$LL23@createInfo
 
 ; 202  : 	}
@@ -50656,7 +50653,7 @@ $LN22@createInfo:
 	lea	edi, DWORD PTR [ebp+160]
 	push	eax
 	push	ecx
-	lea	edx, DWORD PTR $T279838[esp+376]
+	lea	edx, DWORD PTR $T279880[esp+376]
 	push	edx
 	mov	ecx, edi
 	call	?erase@?$vector@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@std@@QAE?AV?$_Vector_iterator@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@2@V?$_Vector_const_iterator@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@2@0@Z ; std::vector<CvReplayMessage,std::allocator<CvReplayMessage> >::erase
@@ -50677,7 +50674,7 @@ $LN22@createInfo:
 ; 207  : 
 ; 208  : 	for(uint i = 0; i < nMessages; ++i)
 
-	mov	DWORD PTR _i$220875[esp+368], ebx
+	mov	DWORD PTR _i$220917[esp+368], ebx
 	cmp	esi, ebx
 	jbe	$LN5@createInfo
 	npad	7
@@ -50686,7 +50683,7 @@ $LL7@createInfo:
 ; 209  : 	{
 ; 210  : 		const CvReplayMessage* pMessage = game.getReplayMessage(i);
 
-	mov	eax, DWORD PTR _i$220875[esp+368]
+	mov	eax, DWORD PTR _i$220917[esp+368]
 	mov	ecx, DWORD PTR _game$[esp+368]
 	push	eax
 	call	?getReplayMessage@CvGame@@QBEPBVCvReplayMessage@@I@Z ; CvGame::getReplayMessage
@@ -50703,52 +50700,52 @@ $LL7@createInfo:
 	mov	ecx, DWORD PTR [esi+4]
 	mov	edx, DWORD PTR [esi+8]
 	lea	eax, DWORD PTR [esi+12]
-	mov	DWORD PTR _modifiedMessage$220881[esp+372], ecx
+	mov	DWORD PTR _modifiedMessage$220923[esp+372], ecx
 	push	eax
-	lea	ecx, DWORD PTR _modifiedMessage$220881[esp+384]
-	mov	DWORD PTR _modifiedMessage$220881[esp+372], OFFSET ??_7CvReplayMessage@@6B@
-	mov	DWORD PTR _modifiedMessage$220881[esp+380], edx
+	lea	ecx, DWORD PTR _modifiedMessage$220923[esp+384]
+	mov	DWORD PTR _modifiedMessage$220923[esp+372], OFFSET ??_7CvReplayMessage@@6B@
+	mov	DWORD PTR _modifiedMessage$220923[esp+380], edx
 	call	??0?$vector@U?$pair@FF@std@@V?$allocator@U?$pair@FF@std@@@2@@std@@QAE@ABV01@@Z ; std::vector<std::pair<short,short>,std::allocator<std::pair<short,short> > >::vector<std::pair<short,short>,std::allocator<std::pair<short,short> > >
 	mov	ecx, DWORD PTR [esi+28]
-	mov	DWORD PTR _modifiedMessage$220881[esp+396], ecx
+	mov	DWORD PTR _modifiedMessage$220923[esp+396], ecx
 	add	esi, 32					; 00000020H
 	push	esi
-	lea	ecx, DWORD PTR _modifiedMessage$220881[esp+404]
+	lea	ecx, DWORD PTR _modifiedMessage$220923[esp+404]
 	mov	BYTE PTR __$EHRec$[esp+380], 16		; 00000010H
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 
 ; 214  : 			modifiedMessage.setPlayer((PlayerTypes)mapPlayers[modifiedMessage.getPlayer()]);
 
-	lea	ecx, DWORD PTR _modifiedMessage$220881[esp+368]
+	lea	ecx, DWORD PTR _modifiedMessage$220923[esp+368]
 	mov	BYTE PTR __$EHRec$[esp+376], 17		; 00000011H
 	call	?getPlayer@CvReplayMessage@@QBE?AW4PlayerTypes@@XZ ; CvReplayMessage::getPlayer
-	lea	edx, DWORD PTR $T275069[esp+368]
+	lea	edx, DWORD PTR $T275111[esp+368]
 	push	edx
 	lea	ecx, DWORD PTR _mapPlayers$[esp+372]
-	mov	DWORD PTR $T275069[esp+372], eax
+	mov	DWORD PTR $T275111[esp+372], eax
 	call	??A?$map@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@@std@@QAEAAHABH@Z ; std::map<int,int,std::less<int>,std::allocator<std::pair<int const ,int> > >::operator[]
 	mov	eax, DWORD PTR [eax]
 	push	eax
-	lea	ecx, DWORD PTR _modifiedMessage$220881[esp+372]
+	lea	ecx, DWORD PTR _modifiedMessage$220923[esp+372]
 	call	?setPlayer@CvReplayMessage@@QAEXW4PlayerTypes@@@Z ; CvReplayMessage::setPlayer
 
 ; 215  : 
 ; 216  : 			m_listReplayMessages.push_back(modifiedMessage);
 
-	lea	ecx, DWORD PTR _modifiedMessage$220881[esp+368]
+	lea	ecx, DWORD PTR _modifiedMessage$220923[esp+368]
 	push	ecx
 	mov	ecx, edi
 	call	?push_back@?$vector@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@std@@QAEXABVCvReplayMessage@@@Z ; std::vector<CvReplayMessage,std::allocator<CvReplayMessage> >::push_back
 
 ; 217  : 		}
 
-	lea	ecx, DWORD PTR _modifiedMessage$220881[esp+368]
+	lea	ecx, DWORD PTR _modifiedMessage$220923[esp+368]
 	mov	BYTE PTR __$EHRec$[esp+376], 3
 	call	??1CvReplayMessage@@UAE@XZ		; CvReplayMessage::~CvReplayMessage
 $LN6@createInfo:
-	mov	eax, DWORD PTR _i$220875[esp+368]
+	mov	eax, DWORD PTR _i$220917[esp+368]
 	inc	eax
-	mov	DWORD PTR _i$220875[esp+368], eax
+	mov	DWORD PTR _i$220917[esp+368], eax
 	cmp	eax, DWORD PTR _nMessages$[esp+368]
 	jb	$LL7@createInfo
 $LN5@createInfo:
@@ -50783,18 +50780,18 @@ $LN5@createInfo:
 	mov	eax, DWORD PTR [edi+8]
 	cmp	ecx, eax
 	je	SHORT $LN1029@createInfo
-	mov	BYTE PTR $T280088[esp+368], bl
-	mov	edx, DWORD PTR $T280088[esp+368]
+	mov	BYTE PTR $T280130[esp+368], bl
+	mov	edx, DWORD PTR $T280130[esp+368]
 	push	edx
-	mov	edx, DWORD PTR __Cat$280093[esp+372]
+	mov	edx, DWORD PTR __Cat$280135[esp+372]
 	push	edx
-	mov	edx, DWORD PTR $T280091[esp+376]
+	mov	edx, DWORD PTR $T280133[esp+376]
 	push	edx
 	push	ecx
 	push	eax
 	push	eax
 	call	??$_Copy_opt@PAV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@PAV12@Urandom_access_iterator_tag@2@@std@@YAPAV?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@0@PAV10@00Urandom_access_iterator_tag@0@U_Nonscalar_ptr_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z ; std::_Copy_opt<std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > > *,std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > > *,std::random_access_iterator_tag>
-	mov	ecx, DWORD PTR __Cat$280104[esp+392]
+	mov	ecx, DWORD PTR __Cat$280146[esp+392]
 	push	ecx
 	mov	ebp, eax
 	mov	eax, DWORD PTR [edi+8]
@@ -50838,63 +50835,63 @@ $LL3@createInfo:
 	movsx	eax, BYTE PTR [esi+edi+6]
 	movsx	ebp, BYTE PTR [esi+edi+5]
 	add	esi, edi
-	mov	DWORD PTR _plotState$220890[esp+376], ecx
+	mov	DWORD PTR _plotState$220932[esp+376], ecx
 
 ; 237  : 		plotState.m_bNEOfRiver = pkPlot->isNEOfRiver();
 
 	mov	ecx, esi
-	mov	DWORD PTR _plotState$220890[esp+372], eax
+	mov	DWORD PTR _plotState$220932[esp+372], eax
 	call	?isNEOfRiver@CvPlot@@QBE_NXZ		; CvPlot::isNEOfRiver
 
 ; 238  : 		plotState.m_bWOfRiver = pkPlot->isWOfRiver();
 
 	mov	ecx, esi
-	mov	BYTE PTR _plotState$220890[esp+380], al
+	mov	BYTE PTR _plotState$220932[esp+380], al
 	call	?isWOfRiver@CvPlot@@QBE_NXZ		; CvPlot::isWOfRiver
 
 ; 239  : 		plotState.m_bNWOfRiver = pkPlot->isNWOfRiver();
 
 	mov	ecx, esi
-	mov	BYTE PTR _plotState$220890[esp+381], al
+	mov	BYTE PTR _plotState$220932[esp+381], al
 	call	?isNWOfRiver@CvPlot@@QBE_NXZ		; CvPlot::isNWOfRiver
 
 ; 240  : 
 ; 241  : 		PlotStatePerTurn plotStatePerTurn;
 
-	lea	ecx, DWORD PTR _plotStatePerTurn$221475[esp+368]
-	mov	BYTE PTR _plotState$220890[esp+382], al
+	lea	ecx, DWORD PTR _plotStatePerTurn$221517[esp+368]
+	mov	BYTE PTR _plotState$220932[esp+382], al
 	call	?_Buynode@?$_Tree@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@std@@IAEPAU_Node@?$_Tree_nod@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@2@XZ ; std::_Tree<std::_Tmap_traits<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> >,0> >::_Buynode
-	mov	DWORD PTR _plotStatePerTurn$221475[esp+372], eax
+	mov	DWORD PTR _plotStatePerTurn$221517[esp+372], eax
 	mov	BYTE PTR [eax+33], 1
-	mov	eax, DWORD PTR _plotStatePerTurn$221475[esp+372]
+	mov	eax, DWORD PTR _plotStatePerTurn$221517[esp+372]
 	mov	DWORD PTR [eax+4], eax
-	mov	eax, DWORD PTR _plotStatePerTurn$221475[esp+372]
+	mov	eax, DWORD PTR _plotStatePerTurn$221517[esp+372]
 	mov	DWORD PTR [eax], eax
-	mov	eax, DWORD PTR _plotStatePerTurn$221475[esp+372]
+	mov	eax, DWORD PTR _plotStatePerTurn$221517[esp+372]
 	mov	DWORD PTR [eax+8], eax
-	mov	DWORD PTR _plotStatePerTurn$221475[esp+376], ebx
+	mov	DWORD PTR _plotStatePerTurn$221517[esp+376], ebx
 
 ; 242  : 		plotStatePerTurn[m_iFinalTurn] = plotState;
 
 	mov	esi, DWORD PTR _this$[esp+368]
 	mov	edx, DWORD PTR [esi+100]
-	lea	eax, DWORD PTR $T275070[esp+368]
+	lea	eax, DWORD PTR $T275112[esp+368]
 	push	eax
-	lea	ecx, DWORD PTR _plotStatePerTurn$221475[esp+372]
+	lea	ecx, DWORD PTR _plotStatePerTurn$221517[esp+372]
 	mov	BYTE PTR __$EHRec$[esp+380], 18		; 00000012H
-	mov	DWORD PTR $T275070[esp+372], edx
+	mov	DWORD PTR $T275112[esp+372], edx
 	call	??A?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@QAEAAUPlotState@CvReplayInfo@@ABI@Z ; std::map<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> > >::operator[]
-	mov	ecx, DWORD PTR _plotState$220890[esp+372]
-	mov	edx, DWORD PTR _plotState$220890[esp+376]
+	mov	ecx, DWORD PTR _plotState$220932[esp+372]
+	mov	edx, DWORD PTR _plotState$220932[esp+376]
 	mov	DWORD PTR [eax], ebp
 	mov	DWORD PTR [eax+4], ecx
-	mov	ecx, DWORD PTR _plotState$220890[esp+380]
+	mov	ecx, DWORD PTR _plotState$220932[esp+380]
 	mov	DWORD PTR [eax+8], edx
 
 ; 243  : 
 ; 244  : 		m_listPlots.push_back(plotStatePerTurn);
 
-	lea	edx, DWORD PTR _plotStatePerTurn$221475[esp+368]
+	lea	edx, DWORD PTR _plotStatePerTurn$221517[esp+368]
 	mov	DWORD PTR [eax+12], ecx
 	push	edx
 	lea	ecx, DWORD PTR [esi+216]
@@ -50902,23 +50899,23 @@ $LL3@createInfo:
 
 ; 245  : 	}
 
-	mov	eax, DWORD PTR _plotStatePerTurn$221475[esp+372]
+	mov	eax, DWORD PTR _plotStatePerTurn$221517[esp+372]
 	mov	ecx, DWORD PTR [eax]
 	push	eax
 	push	ecx
-	lea	eax, DWORD PTR $T280541[esp+376]
+	lea	eax, DWORD PTR $T280583[esp+376]
 	push	eax
-	lea	ecx, DWORD PTR _plotStatePerTurn$221475[esp+380]
+	lea	ecx, DWORD PTR _plotStatePerTurn$221517[esp+380]
 	mov	BYTE PTR __$EHRec$[esp+388], 3
 	call	?erase@?$_Tree@V?$_Tmap_traits@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@0@Z ; std::_Tree<std::_Tmap_traits<unsigned int,CvReplayInfo::PlotState,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,CvReplayInfo::PlotState> >,0> >::erase
-	mov	ecx, DWORD PTR _plotStatePerTurn$221475[esp+372]
+	mov	ecx, DWORD PTR _plotStatePerTurn$221517[esp+372]
 	push	ecx
 	call	??3@YAXPAX@Z				; operator delete
 	add	esp, 4
 	add	edi, 484				; 000001e4H
 	sub	DWORD PTR tv1436[esp+368], 1
-	mov	DWORD PTR _plotStatePerTurn$221475[esp+372], ebx
-	mov	DWORD PTR _plotStatePerTurn$221475[esp+376], ebx
+	mov	DWORD PTR _plotStatePerTurn$221517[esp+372], ebx
+	mov	DWORD PTR _plotStatePerTurn$221517[esp+376], ebx
 	jne	$LL3@createInfo
 $LN1@createInfo:
 
@@ -50928,7 +50925,7 @@ $LN1@createInfo:
 	mov	ecx, DWORD PTR [eax]
 	push	eax
 	push	ecx
-	lea	edx, DWORD PTR $T280728[esp+376]
+	lea	edx, DWORD PTR $T280747[esp+376]
 	push	edx
 	lea	ecx, DWORD PTR _mapPlayers$[esp+380]
 	mov	DWORD PTR __$EHRec$[esp+388], -1
@@ -50949,64 +50946,64 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?createInfo@CvReplayInfo@@QAEXXZ$9:
-	mov	ecx, DWORD PTR $T276577[ebp]
+	mov	ecx, DWORD PTR $T276619[ebp]
 	add	ecx, 16					; 00000010H
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?createInfo@CvReplayInfo@@QAEXXZ$10:
-	mov	ecx, DWORD PTR $T276577[ebp]
+	mov	ecx, DWORD PTR $T276619[ebp]
 	add	ecx, 44					; 0000002cH
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?createInfo@CvReplayInfo@@QAEXXZ$11:
-	mov	ecx, DWORD PTR $T276577[ebp]
+	mov	ecx, DWORD PTR $T276619[ebp]
 	add	ecx, 72					; 00000048H
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?createInfo@CvReplayInfo@@QAEXXZ$0:
 	lea	ecx, DWORD PTR _mapPlayers$[ebp]
 	jmp	??1?$map@HHU?$less@H@std@@V?$allocator@U?$pair@$$CBHH@std@@@2@@std@@QAE@XZ
 __unwindfunclet$?createInfo@CvReplayInfo@@QAEXXZ$18:
-	lea	ecx, DWORD PTR _playerInfo$220729[ebp+16]
+	lea	ecx, DWORD PTR _playerInfo$220771[ebp+16]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?createInfo@CvReplayInfo@@QAEXXZ$19:
-	lea	ecx, DWORD PTR _playerInfo$220729[ebp+44]
+	lea	ecx, DWORD PTR _playerInfo$220771[ebp+44]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?createInfo@CvReplayInfo@@QAEXXZ$20:
-	lea	ecx, DWORD PTR _playerInfo$220729[ebp+72]
+	lea	ecx, DWORD PTR _playerInfo$220771[ebp+72]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?createInfo@CvReplayInfo@@QAEXXZ$1:
-	lea	ecx, DWORD PTR _playerInfo$220729[ebp]
+	lea	ecx, DWORD PTR _playerInfo$220771[ebp]
 	jmp	??1PlayerInfo@CvReplayInfo@@QAE@XZ
 __unwindfunclet$?createInfo@CvReplayInfo@@QAEXXZ$2:
-	lea	ecx, DWORD PTR _dataSet$220730[ebp]
+	lea	ecx, DWORD PTR _dataSet$220772[ebp]
 	jmp	??1?$vector@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@V?$allocator@V?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@@2@@std@@QAE@XZ ; std::vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > >::~vector<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > >,std::allocator<std::map<unsigned int,int,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,int> > > > >
 __unwindfunclet$?createInfo@CvReplayInfo@@QAEXXZ$3:
-	lea	ecx, DWORD PTR _playerDataSetName$220736[ebp]
+	lea	ecx, DWORD PTR _playerDataSetName$220778[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?createInfo@CvReplayInfo@@QAEXXZ$4:
-	lea	ecx, DWORD PTR $T275066[ebp]
+	lea	ecx, DWORD PTR $T275108[ebp]
 	jmp	??1?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@QAE@XZ
 __unwindfunclet$?createInfo@CvReplayInfo@@QAEXXZ$5:
-	lea	ecx, DWORD PTR _playerData$220746[ebp]
+	lea	ecx, DWORD PTR _playerData$220788[ebp]
 	jmp	??1?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@QAE@XZ
 __unwindfunclet$?createInfo@CvReplayInfo@@QAEXXZ$6:
-	lea	ecx, DWORD PTR _turnData$220748[ebp]
+	lea	ecx, DWORD PTR _turnData$220790[ebp]
 	jmp	??1?$map@IHU?$less@I@std@@V?$allocator@U?$pair@$$CBIH@std@@@2@@std@@QAE@XZ
 __unwindfunclet$?createInfo@CvReplayInfo@@QAEXXZ$32:
-	lea	ecx, DWORD PTR _playerInfo$220729[ebp+16]
+	lea	ecx, DWORD PTR _playerInfo$220771[ebp+16]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?createInfo@CvReplayInfo@@QAEXXZ$33:
-	lea	ecx, DWORD PTR _playerInfo$220729[ebp+44]
+	lea	ecx, DWORD PTR _playerInfo$220771[ebp+44]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?createInfo@CvReplayInfo@@QAEXXZ$34:
-	lea	ecx, DWORD PTR _playerInfo$220729[ebp+72]
+	lea	ecx, DWORD PTR _playerInfo$220771[ebp+72]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?createInfo@CvReplayInfo@@QAEXXZ$40:
-	lea	ecx, DWORD PTR _modifiedMessage$220881[ebp+12]
+	lea	ecx, DWORD PTR _modifiedMessage$220923[ebp+12]
 	jmp	??1?$vector@U?$pair@FF@std@@V?$allocator@U?$pair@FF@std@@@2@@std@@QAE@XZ ; std::vector<std::pair<short,short>,std::allocator<std::pair<short,short> > >::~vector<std::pair<short,short>,std::allocator<std::pair<short,short> > >
 __unwindfunclet$?createInfo@CvReplayInfo@@QAEXXZ$7:
-	lea	ecx, DWORD PTR _modifiedMessage$220881[ebp]
+	lea	ecx, DWORD PTR _modifiedMessage$220923[ebp]
 	jmp	??1CvReplayMessage@@UAE@XZ		; CvReplayMessage::~CvReplayMessage
 __unwindfunclet$?createInfo@CvReplayInfo@@QAEXXZ$8:
-	lea	ecx, DWORD PTR _plotStatePerTurn$221475[ebp]
+	lea	ecx, DWORD PTR _plotStatePerTurn$221517[ebp]
 	jmp	??1?$map@IUPlotState@CvReplayInfo@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUPlotState@CvReplayInfo@@@std@@@4@@std@@QAE@XZ
 __ehhandler$?createInfo@CvReplayInfo@@QAEXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?createInfo@CvReplayInfo@@QAEXXZ
@@ -51075,8 +51072,8 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 _uiReplayMessageVersion$ = -84				; size = 4
 _iVersion$ = -80					; size = 4
-$T280872 = -76						; size = 4
-_message$221872 = -72					; size = 60
+$T280914 = -76						; size = 4
+_message$221914 = -72					; size = 60
 __$EHRec$ = -12						; size = 12
 _uiReplayMessageCount$ = 8				; size = 4
 _kStream$ = 8						; size = 4
@@ -51284,7 +51281,7 @@ _kStream$ = 8						; size = 4
 	lea	ebx, DWORD PTR [edi+160]
 	push	eax
 	push	ecx
-	lea	edx, DWORD PTR $T280872[esp+108]
+	lea	edx, DWORD PTR $T280914[esp+108]
 	push	edx
 	mov	ecx, ebx
 	call	?erase@?$vector@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@std@@QAE?AV?$_Vector_iterator@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@2@V?$_Vector_const_iterator@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@2@0@Z ; std::vector<CvReplayMessage,std::allocator<CvReplayMessage> >::erase
@@ -51305,7 +51302,7 @@ $LL3@read:
 ; 566  : 	{
 ; 567  : 		CvReplayMessage message;
 
-	lea	ecx, DWORD PTR _message$221872[esp+100]
+	lea	ecx, DWORD PTR _message$221914[esp+100]
 	call	??0CvReplayMessage@@QAE@XZ		; CvReplayMessage::CvReplayMessage
 
 ; 568  : 		message.read(kStream, uiReplayMessageVersion);
@@ -51313,20 +51310,20 @@ $LL3@read:
 	mov	ecx, DWORD PTR _uiReplayMessageVersion$[esp+100]
 	push	ecx
 	push	esi
-	lea	ecx, DWORD PTR _message$221872[esp+108]
+	lea	ecx, DWORD PTR _message$221914[esp+108]
 	mov	DWORD PTR __$EHRec$[esp+116], 0
 	call	?read@CvReplayMessage@@QAEXAAVFDataStream@@I@Z ; CvReplayMessage::read
 
 ; 569  : 		m_listReplayMessages.push_back(message);
 
-	lea	edx, DWORD PTR _message$221872[esp+100]
+	lea	edx, DWORD PTR _message$221914[esp+100]
 	push	edx
 	mov	ecx, ebx
 	call	?push_back@?$vector@VCvReplayMessage@@V?$allocator@VCvReplayMessage@@@std@@@std@@QAEXABVCvReplayMessage@@@Z ; std::vector<CvReplayMessage,std::allocator<CvReplayMessage> >::push_back
 
 ; 570  : 	}
 
-	lea	ecx, DWORD PTR _message$221872[esp+100]
+	lea	ecx, DWORD PTR _message$221914[esp+100]
 	mov	DWORD PTR __$EHRec$[esp+108], -1
 	call	??1CvReplayMessage@@UAE@XZ		; CvReplayMessage::~CvReplayMessage
 	inc	ebp
@@ -51374,7 +51371,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?read@CvReplayInfo@@QAE_NAAVFDataStream@@@Z$0:
-	lea	ecx, DWORD PTR _message$221872[ebp]
+	lea	ecx, DWORD PTR _message$221914[ebp]
 	jmp	??1CvReplayMessage@@UAE@XZ		; CvReplayMessage::~CvReplayMessage
 __ehhandler$?read@CvReplayInfo@@QAE_NAAVFDataStream@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?read@CvReplayInfo@@QAE_NAAVFDataStream@@@Z

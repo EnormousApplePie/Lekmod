@@ -873,7 +873,12 @@
 #define NQ_AI_GIMP_NO_MINOR_SPREAD
 
 
-/////////////////////LEKMOD, from EAP:
+// -------------------------------------------------------------------------------
+
+/// LEKMOD - EAP
+
+//--------------------------------------------------------------------------------
+
 
 // Fixed an issue with unique faith units not working correctly
 #define LEK_UNIQUE_FAITH_UNIT_FIX
@@ -889,6 +894,11 @@
 #define LEKMOD_WATER_IMPROVEMENT_FIX
 //added a civ requirement tag to the builds table
 #define LEKMOD_BUILD_CIV_REQ
+//Added a notification step mid-turn when you found a religion after having the reformation policy
+#define LEKMOD_REFORMATION_NOTIFICATION_MID_TURN
+
+
+
 
 ////////////////////////
 //Benched or not working
@@ -913,7 +923,15 @@
 #define MAX_CITY_RADIUS										(5)
 
 
-/////////////////////from ImmoS - Not all things implemented as is, some changed have been made compared to the original code.
+
+
+//--------------------------------------------------------------------------------------------------
+
+// LEKMOD: From IMMOS - Russian Community
+
+//--------------------------------------------------------------------------------------------------
+
+// Note: Not all of these defines are exact copies of the Immos defines, some have been modified.
 
 /// Fast hand - Intercept and Paradrops can no longer be set when the turn timer is > 50% full
 #define CAN_PARADROP_HALF_TIMER
@@ -940,7 +958,29 @@
 #define CANT_STEAL_CLASSICAL_ERA_TECHS
 // Turn timer roll keybind
 #define TURN_TIMER_RESET_BUTTON
+// Turn timer pause
+#define TURN_TIMER_PAUSE_BUTTON
+// Remove paradop animation
+#define REMOVE_PARADROP_ANIMATION
+// Remove various other animations
+#define REMOVE_GAMEPLAY_UNIT_ACTIVATE_ANIMATION
+// Refresh policy notification if you have the culture to get a new one
+#define UPDATE_CULTURE_NOTIFICATION_DURING_TURN
+// Fixes incorrect plot distance calculation for wrapped maps
+#define FIX_AIR_STRIKE_WHEN_DECLARING_WAR
+// Fixes an issue with some situations where you could get strategic resources from sources without the tech requirement
+#define FIX_SET_IMPROVEMENT_TYPE
+// Fixes a bug with calculating plot distance for wrapped maps (eg. portugal nau)
+#define GAMECOREUTILS_FIX_PLOT_DISTANCE
+//Can no longer attack invisible units
+#define FIX_DO_ATTACK_SUBMARINES_IN_SHADOW_OF_WAR
+//Fixes a bug where nuclear missiles could be seen on nuclear subs
+#define INVISIBILITY_OF_NUCLEAR_MISSILESS_ON_SUBMARINES
+//Water tiles are now considered for scoring
+//#define INCLUDE_WATER_IN_LAND_SCORE
+
 //Firstmove fix, still allowing 1 move on turn load. Immos version of LEKMOD_FIRSTMOVE_FIX
+
 //#define GAME_ALLOW_ONLY_ONE_UNIT_MOVE_ON_TURN_LOADING
 
 //Multiplayer voting system, putting the irr,scrap and cc votes into the game with UI.

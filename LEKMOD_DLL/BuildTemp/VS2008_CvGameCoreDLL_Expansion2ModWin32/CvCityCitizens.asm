@@ -12,46 +12,46 @@ INCLUDELIB OLDNAMES
 PUBLIC	?NO_QUEST_DATA@CvMinorCivQuest@@2HB		; CvMinorCivQuest::NO_QUEST_DATA
 PUBLIC	?NO_TURN@CvMinorCivQuest@@2HB			; CvMinorCivQuest::NO_TURN
 CONST	SEGMENT
-$SG225396 DB	'ECONOMICAISTRATEGY_LOSING_MONEY', 00H
-$SG225405 DB	'AIGRANDSTRATEGY_CULTURE', 00H
-$SG226081 DB	'UNITCLASS_SCIENTIST', 00H
-$SG226085 DB	'UNITCLASS_WRITER', 00H
+$SG225438 DB	'ECONOMICAISTRATEGY_LOSING_MONEY', 00H
+$SG225447 DB	'AIGRANDSTRATEGY_CULTURE', 00H
+$SG226123 DB	'UNITCLASS_SCIENTIST', 00H
+$SG226127 DB	'UNITCLASS_WRITER', 00H
 	ORG $+3
-$SG226090 DB	'UNITCLASS_ARTIST', 00H
+$SG226132 DB	'UNITCLASS_ARTIST', 00H
 	ORG $+3
-$SG226095 DB	'UNITCLASS_MUSICIAN', 00H
+$SG226137 DB	'UNITCLASS_MUSICIAN', 00H
 	ORG $+1
-$SG226102 DB	'UNITCLASS_MERCHANT', 00H
+$SG226144 DB	'UNITCLASS_MERCHANT', 00H
 	ORG $+1
-$SG226106 DB	'UNITCLASS_ENGINEER', 00H
+$SG226148 DB	'UNITCLASS_ENGINEER', 00H
 	ORG $+1
-$SG226349 DB	'UNITCLASS_WRITER', 00H
+$SG226391 DB	'UNITCLASS_WRITER', 00H
 	ORG $+3
-$SG226352 DB	'UNITCLASS_ARTIST', 00H
+$SG226394 DB	'UNITCLASS_ARTIST', 00H
 	ORG $+3
-$SG226355 DB	'UNITCLASS_MUSICIAN', 00H
+$SG226397 DB	'UNITCLASS_MUSICIAN', 00H
 	ORG $+1
-$SG226358 DB	'UNITCLASS_SCIENTIST', 00H
-$SG226361 DB	'UNITCLASS_ENGINEER', 00H
+$SG226400 DB	'UNITCLASS_SCIENTIST', 00H
+$SG226403 DB	'UNITCLASS_ENGINEER', 00H
 	ORG $+1
-$SG226364 DB	'UNITCLASS_MERCHANT', 00H
+$SG226406 DB	'UNITCLASS_MERCHANT', 00H
 	ORG $+1
-$SG226386 DB	'UNITCLASS_WRITER', 00H
+$SG226428 DB	'UNITCLASS_WRITER', 00H
 	ORG $+3
-$SG226389 DB	'UNITCLASS_ARTIST', 00H
+$SG226431 DB	'UNITCLASS_ARTIST', 00H
 	ORG $+3
-$SG226392 DB	'UNITCLASS_MUSICIAN', 00H
+$SG226434 DB	'UNITCLASS_MUSICIAN', 00H
 	ORG $+1
-$SG226395 DB	'UNITCLASS_SCIENTIST', 00H
-$SG226398 DB	'UNITCLASS_ENGINEER', 00H
+$SG226437 DB	'UNITCLASS_SCIENTIST', 00H
+$SG226440 DB	'UNITCLASS_ENGINEER', 00H
 	ORG $+1
-$SG226401 DB	'UNITCLASS_MERCHANT', 00H
+$SG226443 DB	'UNITCLASS_MERCHANT', 00H
 	ORG $+1
-$SG226404 DB	'UNITCLASS_PROPHET', 00H
+$SG226446 DB	'UNITCLASS_PROPHET', 00H
 	ORG $+2
-$SG226416 DB	'UNIT_ARTIST', 00H
-$SG226420 DB	'TXT_KEY_NOTIFICATION_GREAT_PERSON_ACTIVE_PLAYER', 00H
-$SG226423 DB	'TXT_KEY_NOTIFICATION_SUMMARY_GREAT_PERSON', 00H
+$SG226458 DB	'UNIT_ARTIST', 00H
+$SG226462 DB	'TXT_KEY_NOTIFICATION_GREAT_PERSON_ACTIVE_PLAYER', 00H
+$SG226465 DB	'TXT_KEY_NOTIFICATION_SUMMARY_GREAT_PERSON', 00H
 CONST	ENDS
 ;	COMDAT ?NO_TURN@CvMinorCivQuest@@2HB
 CONST	SEGMENT
@@ -1531,11 +1531,11 @@ _TEXT	SEGMENT
 ?GetEngineUserInterface@CvGlobals@@QAEPAVICvUserInterface2@@XZ PROC ; CvGlobals::GetEngineUserInterface, COMDAT
 ; _this$ = ecx
 
-; 7713 : 		return m_pEngineUI;
+; 7748 : 		return m_pEngineUI;
 
-	mov	eax, DWORD PTR [ecx+8568]
+	mov	eax, DWORD PTR [ecx+8600]
 
-; 7714 : 	}
+; 7749 : 	}
 
 	ret	0
 ?GetEngineUserInterface@CvGlobals@@QAEPAVICvUserInterface2@@XZ ENDP ; CvGlobals::GetEngineUserInterface
@@ -2239,182 +2239,352 @@ PUBLIC	?plotDistance@@YAHHHHH@Z			; plotDistance
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?plotDistance@@YAHHHHH@Z
 _TEXT	SEGMENT
-_iDX$ = 8						; size = 4
+_iDY$ = -12						; size = 4
+tv320 = -8						; size = 4
+tv357 = -4						; size = 4
 _iX1$ = 8						; size = 4
+_iDX$ = 12						; size = 4
 _iY1$ = 12						; size = 4
-_iDY$ = 16						; size = 4
+$T227149 = 16						; size = 4
 _iX2$ = 16						; size = 4
 _iY2$ = 20						; size = 4
 ?plotDistance@@YAHHHHH@Z PROC				; plotDistance, COMDAT
 
+; 144  : {
+
+	sub	esp, 12					; 0000000cH
+
 ; 145  : 	int iDX;
 ; 146  : 	int iWrappedDX = dxWrap(iX2 - iX1);
 
-	mov	eax, DWORD PTR _iX2$[esp-4]
-	sub	eax, DWORD PTR _iX1$[esp-4]
+	mov	ecx, DWORD PTR _iX2$[esp+8]
+	sub	ecx, DWORD PTR _iX1$[esp+8]
 	push	ebx
-	mov	ebx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+52
-	cmp	BYTE PTR [ebx+4056], 0
-	mov	edx, DWORD PTR [ebx+4020]
 	push	ebp
 	push	esi
-	je	SHORT $LN13@plotDistan
-	mov	ecx, edx
-	shr	ecx, 1
-	cmp	eax, ecx
-	jle	SHORT $LN15@plotDistan
-	sub	eax, edx
-	jmp	SHORT $LN13@plotDistan
-$LN15@plotDistan:
-	neg	ecx
-	cmp	eax, ecx
-	lea	ecx, DWORD PTR [edx+eax]
-	jl	SHORT $LN17@plotDistan
-$LN13@plotDistan:
-	mov	ecx, eax
-$LN17@plotDistan:
+	push	edi
+	mov	edi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+52
+	cmp	BYTE PTR [edi+4056], 0
+	mov	edx, DWORD PTR [edi+4020]
+	mov	DWORD PTR tv320[esp+28], ecx
+	je	SHORT $LN18@plotDistan
+	mov	eax, edx
+	shr	eax, 1
+	cmp	ecx, eax
+	jle	SHORT $LN20@plotDistan
+	sub	ecx, edx
+	jmp	SHORT $LN18@plotDistan
+$LN20@plotDistan:
+	neg	eax
+	cmp	ecx, eax
+	jge	SHORT $LN18@plotDistan
+	add	ecx, edx
+$LN18@plotDistan:
 
 ; 147  : 	int iWrappedDY = dyWrap(iY2 - iY1);
 
-	mov	eax, DWORD PTR _iY2$[esp+8]
-	mov	esi, DWORD PTR [ebx+4024]
-	push	edi
-	mov	edi, DWORD PTR _iY1$[esp+12]
-	sub	eax, edi
-	cmp	BYTE PTR [ebx+4057], 0
-	je	SHORT $LN27@plotDistan
-	mov	edx, esi
+	mov	ebp, DWORD PTR _iY2$[esp+24]
+	sub	ebp, DWORD PTR _iY1$[esp+24]
+	cmp	BYTE PTR [edi+4057], 0
+	mov	eax, DWORD PTR [edi+4024]
+	je	SHORT $LN32@plotDistan
+	mov	edx, eax
 	shr	edx, 1
-	cmp	eax, edx
-	jle	SHORT $LN29@plotDistan
-	sub	eax, esi
-	jmp	SHORT $LN27@plotDistan
-$LN29@plotDistan:
+	cmp	ebp, edx
+	jle	SHORT $LN34@plotDistan
+	mov	ebx, ebp
+	sub	ebx, eax
+	mov	DWORD PTR $T227149[esp+24], ebx
+	jmp	SHORT $LN36@plotDistan
+$LN34@plotDistan:
 	neg	edx
-	cmp	eax, edx
-	lea	ebp, DWORD PTR [esi+eax]
-	jl	SHORT $LN31@plotDistan
-$LN27@plotDistan:
-	mov	ebp, eax
-$LN31@plotDistan:
+	cmp	ebp, edx
+	jge	SHORT $LN32@plotDistan
+	lea	ebx, DWORD PTR [eax+ebp]
+	mov	DWORD PTR $T227149[esp+24], ebx
+	jmp	SHORT $LN36@plotDistan
+$LN32@plotDistan:
+	mov	ebx, ebp
+	mov	DWORD PTR $T227149[esp+24], ebp
+$LN36@plotDistan:
 
 ; 148  : 	int iDY = abs(iWrappedDY);
 
+	mov	eax, ebx
+	cdq
+	mov	esi, eax
+	xor	esi, edx
+	sub	esi, edx
+
+; 149  : 
+; 150  : #ifdef GAMECOREUTILS_FIX_PLOT_DISTANCE
+; 151  : 	const CvMap& kMap = GC.getMap();
+; 152  : 	// equidistant column joint fix (on X-wrapped maps):
+; 153  : 	if ((kMap.isWrapX()) && (abs(iWrappedDX * 2) == kMap.getGridWidth()) && (iDY % 2 != 0) && ((iY1 % 2 == 0) == (iWrappedDX > (kMap.getGridWidth() >> 2))))
+
+	cmp	BYTE PTR [edi+4056], 0
+	mov	DWORD PTR _iDY$[esp+28], esi
+	je	$LN77@plotDistan
+	lea	eax, DWORD PTR [ecx+ecx]
+	cdq
+	mov	ebx, eax
+	mov	eax, DWORD PTR [edi+4020]
+	xor	ebx, edx
+	sub	ebx, edx
+	cmp	ebx, eax
+	jne	SHORT $LN73@plotDistan
+	mov	edx, esi
+	and	edx, -2147483647			; 80000001H
+	jns	SHORT $LN79@plotDistan
+	dec	edx
+	or	edx, -2					; fffffffeH
+	inc	edx
+$LN79@plotDistan:
+	je	SHORT $LN73@plotDistan
+	sar	eax, 2
+	xor	edx, edx
+	cmp	ecx, eax
+	mov	eax, DWORD PTR _iY1$[esp+24]
+	setg	dl
+	and	eax, -2147483647			; 80000001H
+	jns	SHORT $LN80@plotDistan
+	dec	eax
+	or	eax, -2					; fffffffeH
+	inc	eax
+$LN80@plotDistan:
+
+; 154  : 	{
+; 155  : 		iWrappedDX *= -1;  // change polarity
+
+	mov	ebx, DWORD PTR $T227149[esp+24]
+	neg	eax
+	sbb	eax, eax
+	inc	eax
+	cmp	eax, edx
+	jne	SHORT $LN5@plotDistan
+	neg	ecx
+	jmp	SHORT $LN5@plotDistan
+$LN73@plotDistan:
+	mov	ebx, DWORD PTR $T227149[esp+24]
+$LN5@plotDistan:
+
+; 156  : 	}
+; 157  : 	if ((kMap.isWrapX()) && (abs(iWrappedDX * 2) == kMap.getGridWidth()) && (abs(iWrappedDY) < abs(iY2 - iY1)) && (iDY % 2 == 0) && (iX2 - iX1 < 0))
+
+	cmp	BYTE PTR [edi+4056], 0
+	je	$LN77@plotDistan
+	lea	eax, DWORD PTR [ecx+ecx]
+	cdq
+	xor	eax, edx
+	sub	eax, edx
+	cmp	eax, DWORD PTR [edi+4020]
+	jne	SHORT $LN75@plotDistan
 	mov	eax, ebp
 	cdq
 	xor	eax, edx
 	sub	eax, edx
-	mov	DWORD PTR _iDY$[esp+12], eax
+	cmp	esi, eax
+	jge	SHORT $LN75@plotDistan
+	mov	edx, DWORD PTR _iDY$[esp+28]
+	and	edx, -2147483647			; 80000001H
+	jns	SHORT $LN81@plotDistan
+	dec	edx
+	or	edx, -2					; fffffffeH
+	inc	edx
+$LN81@plotDistan:
+	jne	SHORT $LN75@plotDistan
+	cmp	DWORD PTR tv320[esp+28], 0
+	jge	SHORT $LN75@plotDistan
 
-; 149  : 
-; 150  : 	// convert to hex-space coordinates - the coordinate system axes are E and NE (not orthogonal)
-; 151  : 	int iHX1 = xToHexspaceX(iX1, iY1);
+; 158  : 	{
+; 159  : 		iWrappedDX *= -1;  // change polarity
 
-	test	edi, edi
-	jl	SHORT $LN35@plotDistan
-	mov	eax, edi
-	jmp	SHORT $LN59@plotDistan
-$LN35@plotDistan:
-	lea	eax, DWORD PTR [edi-1]
+	neg	ecx
+$LN75@plotDistan:
+
+; 160  : 	}
+; 161  : 	// special case when map is toroidal AND map height is odd
+; 162  : 	// TODO works but ugly
+; 163  : 	if ((kMap.isWrapX()) && (kMap.getGridHeight() % 2 != 0) && (iY1 % 2 == kMap.getGridWidth() % 2) && (iY2 % 2 == 0) &&
+; 164  : 		(abs(iWrappedDY) < abs(iY2 - iY1)) && (abs(iX2 - iX1) == kMap.getGridWidth() / 2 + ((kMap.getGridWidth() % 2 == 1) && (iX2 - iX1 > 0)) ? 1 : 0))
+
+	cmp	BYTE PTR [edi+4056], 0
+	je	$LN77@plotDistan
+	mov	eax, DWORD PTR [edi+4024]
+	and	eax, -2147483647			; 80000001H
+	jns	SHORT $LN82@plotDistan
+	dec	eax
+	or	eax, -2					; fffffffeH
+	inc	eax
+$LN82@plotDistan:
+	je	$LN77@plotDistan
+	mov	edi, DWORD PTR [edi+4020]
+	mov	DWORD PTR tv357[esp+28], edi
+	and	edi, -2147483647			; 80000001H
+	jns	SHORT $LN83@plotDistan
+	dec	edi
+	or	edi, -2					; fffffffeH
+	inc	edi
+$LN83@plotDistan:
+	mov	edx, DWORD PTR _iY1$[esp+24]
+	and	edx, -2147483647			; 80000001H
+	jns	SHORT $LN84@plotDistan
+	dec	edx
+	or	edx, -2					; fffffffeH
+	inc	edx
+$LN84@plotDistan:
+	cmp	edx, edi
+	jne	SHORT $LN77@plotDistan
+	mov	eax, DWORD PTR _iY2$[esp+24]
+	and	eax, -2147483647			; 80000001H
+	jns	SHORT $LN85@plotDistan
+	dec	eax
+	or	eax, -2					; fffffffeH
+	inc	eax
+$LN85@plotDistan:
+	jne	SHORT $LN77@plotDistan
+	mov	eax, ebp
+	cdq
+	xor	eax, edx
+	sub	eax, edx
+	cmp	esi, eax
+	jge	SHORT $LN77@plotDistan
+	cmp	edi, 1
+	jne	SHORT $LN76@plotDistan
+	cmp	DWORD PTR tv320[esp+28], 0
+	jle	SHORT $LN76@plotDistan
+	mov	esi, edi
+	jmp	SHORT $LN9@plotDistan
+$LN76@plotDistan:
+	xor	esi, esi
+$LN9@plotDistan:
+	mov	eax, DWORD PTR tv320[esp+28]
+	cdq
+	mov	edi, eax
+	mov	eax, DWORD PTR tv357[esp+28]
+	xor	edi, edx
+	sub	edi, edx
 	cdq
 	sub	eax, edx
-$LN59@plotDistan:
-	mov	esi, DWORD PTR _iX1$[esp+12]
 	sar	eax, 1
-	sub	esi, eax
+	add	eax, esi
+	cmp	edi, eax
+	jne	SHORT $LN77@plotDistan
 
-; 152  : 	int iHX2 = xToHexspaceX(iX1 + iWrappedDX, iY1 + iWrappedDY);
+; 165  : 	{
+; 166  : 		iWrappedDX -= (iWrappedDX > 0) - (iWrappedDX < 0);  // decrease regardless of polarity
 
-	lea	eax, DWORD PTR [edi+ebp]
-	pop	edi
+	xor	edx, edx
+	test	ecx, ecx
+	setl	dl
+	xor	eax, eax
+	test	ecx, ecx
+	setg	al
+	sub	edx, eax
+	add	ecx, edx
+$LN77@plotDistan:
+
+; 167  : 	}
+; 168  : #endif
+; 169  : 
+; 170  : 	// convert to hex-space coordinates - the coordinate system axes are E and NE (not orthogonal)
+; 171  : 	int iHX1 = xToHexspaceX(iX1, iY1);
+
+	mov	eax, DWORD PTR _iY1$[esp+24]
 	test	eax, eax
-	jge	SHORT $LN60@plotDistan
+	jge	SHORT $LN88@plotDistan
 	dec	eax
 	cdq
 	sub	eax, edx
-$LN60@plotDistan:
+$LN88@plotDistan:
+	mov	edi, DWORD PTR _iX1$[esp+24]
 
-; 153  : 
-; 154  : 	iDX = abs(dxWrap(iHX2 - iHX1));
+; 172  : 	int iHX2 = xToHexspaceX(iX1 + iWrappedDX, iY1 + iWrappedDY);
 
-	mov	edx, DWORD PTR [ebx+4020]
+	mov	edx, DWORD PTR _iY1$[esp+24]
+	sar	eax, 1
+	mov	esi, edi
+	sub	esi, eax
+	lea	eax, DWORD PTR [ebx+edx]
+	test	eax, eax
+	jge	SHORT $LN89@plotDistan
+	dec	eax
+	cdq
+	sub	eax, edx
+$LN89@plotDistan:
 	sar	eax, 1
 	sub	ecx, eax
-	add	ecx, DWORD PTR _iX1$[esp+8]
+	add	ecx, edi
+
+; 173  : 
+; 174  : #ifdef GAMECOREUTILS_FIX_PLOT_DISTANCE
+; 175  : 	// obvious bug
+; 176  : 	iDX = abs(iHX2 - iHX1);
+
 	sub	ecx, esi
-	cmp	BYTE PTR [ebx+4056], 0
-	je	SHORT $LN49@plotDistan
-	mov	eax, edx
-	shr	eax, 1
-	cmp	ecx, eax
-	jle	SHORT $LN51@plotDistan
 	mov	eax, ecx
-	sub	eax, edx
-	jmp	SHORT $LN53@plotDistan
-$LN51@plotDistan:
-	neg	eax
-	cmp	ecx, eax
-	lea	eax, DWORD PTR [edx+ecx]
-	jl	SHORT $LN53@plotDistan
-$LN49@plotDistan:
-	mov	eax, ecx
-$LN53@plotDistan:
 	cdq
 	xor	eax, edx
 	sub	eax, edx
 
-; 155  : 
-; 156  : #ifdef NQM_GAME_CORE_UTILS_OPTIMIZATIONS
-; 157  : 	if (((iHX2 - iHX1) ^ (iWrappedDY)) >= 0)  // the signs match
-; 158  : #else
-; 159  : 	if((iHX2 - iHX1 >= 0) == (iWrappedDY >= 0))  // the signs match
+; 177  : #else
+; 178  : 	iDX = abs(dxWrap(iHX2 - iHX1));
+; 179  : #endif
+; 180  : 
+; 181  : #ifdef NQM_GAME_CORE_UTILS_OPTIMIZATIONS
+; 182  : 	if (((iHX2 - iHX1) ^ (iWrappedDY)) >= 0)  // the signs match
+; 183  : #else
+; 184  : 	if((iHX2 - iHX1 >= 0) == (iWrappedDY >= 0))  // the signs match
 
 	xor	edx, edx
 	test	ecx, ecx
 	setge	dl
 	xor	ecx, ecx
-	test	ebp, ebp
+	test	ebx, ebx
 	setge	cl
+	pop	edi
 	pop	esi
 	pop	ebp
-	mov	DWORD PTR _iDX$[esp], eax
+	mov	DWORD PTR _iDX$[esp+12], eax
 	pop	ebx
 	cmp	edx, ecx
 	jne	SHORT $LN2@plotDistan
 
-; 160  : #endif
-; 161  : 	{
-; 162  : 		return iDX + iDY;
+; 185  : #endif
+; 186  : 	{
+; 187  : 		return iDX + iDY;
 
-	mov	edx, DWORD PTR _iDY$[esp-4]
+	mov	edx, DWORD PTR _iDY$[esp+12]
 	add	eax, edx
 
-; 170  : #endif
-; 171  : 	}
-; 172  : }
+; 195  : #endif
+; 196  : 	}
+; 197  : }
 
+	add	esp, 12					; 0000000cH
 	ret	0
 $LN2@plotDistan:
 
-; 163  : 	}
-; 164  : 	else
-; 165  : 	{
-; 166  : #ifdef NQM_FAST_COMP
-; 167  : 		return (MAX(iDX, iDY));
-; 168  : #else
-; 169  : 		return (std::max(iDX, iDY));
+; 188  : 	}
+; 189  : 	else
+; 190  : 	{
+; 191  : #ifdef NQM_FAST_COMP
+; 192  : 		return (MAX(iDX, iDY));
+; 193  : #else
+; 194  : 		return (std::max(iDX, iDY));
 
-	cmp	eax, DWORD PTR _iDY$[esp-4]
-	lea	eax, DWORD PTR _iDY$[esp-4]
-	jl	SHORT $LN58@plotDistan
-	lea	eax, DWORD PTR _iDX$[esp-4]
-$LN58@plotDistan:
+	cmp	eax, DWORD PTR _iDY$[esp+12]
+	lea	eax, DWORD PTR _iDY$[esp+12]
+	jl	SHORT $LN71@plotDistan
+	lea	eax, DWORD PTR _iDX$[esp+8]
+$LN71@plotDistan:
 	mov	eax, DWORD PTR [eax]
 
-; 170  : #endif
-; 171  : 	}
-; 172  : }
+; 195  : #endif
+; 196  : 	}
+; 197  : }
 
+	add	esp, 12					; 0000000cH
 	ret	0
 ?plotDistance@@YAHHHHH@Z ENDP				; plotDistance
 _TEXT	ENDS
@@ -3019,7 +3189,7 @@ $LN2@SetWorking:
 ; 2404 : 		{
 ; 2405 : 			GC.GetEngineUserInterface()->setDirty(CityInfo_DIRTY_BIT, true);
 
-	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8600
 	mov	edx, DWORD PTR [ecx]
 	mov	eax, DWORD PTR [edx+260]
 	push	1
@@ -3029,7 +3199,7 @@ $LN2@SetWorking:
 ; 2406 : 			//GC.GetEngineUserInterface()->setDirty(InfoPane_DIRTY_BIT, true );
 ; 2407 : 			GC.GetEngineUserInterface()->setDirty(CityScreen_DIRTY_BIT, true);
 
-	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8600
 	mov	edx, DWORD PTR [ecx]
 	mov	eax, DWORD PTR [edx+260]
 	push	1
@@ -3038,7 +3208,7 @@ $LN2@SetWorking:
 
 ; 2408 : 			GC.GetEngineUserInterface()->setDirty(ColoredPlots_DIRTY_BIT, true);
 
-	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8600
 	mov	edx, DWORD PTR [ecx]
 	mov	eax, DWORD PTR [edx+260]
 	push	1
@@ -3050,7 +3220,7 @@ $LN53@SetWorking:
 ; 2410 : 
 ; 2411 : 		GC.GetEngineUserInterface()->setDirty(CityInfo_DIRTY_BIT, true);
 
-	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8600
 	mov	edx, DWORD PTR [ecx]
 	mov	eax, DWORD PTR [edx+260]
 	push	1
@@ -3415,10 +3585,10 @@ EXTRN	?ReadHashed@CvInfosSerializationHelper@@YAHAAVFDataStream@@PA_N@Z:PROC ; C
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredll_expansion2\cvinfosserializationhelper.h
 ;	COMDAT ??$ReadHashedDataArray@H@CvInfosSerializationHelper@@YAXAAVFDataStream@@PAHH@Z
 _TEXT	SEGMENT
-_bValid$226448 = -13					; size = 1
+_bValid$226490 = -13					; size = 1
 _uiNumEntries$ = -12					; size = 4
-_tValue$226451 = -8					; size = 4
-_tValue$226456 = -4					; size = 4
+_tValue$226493 = -8					; size = 4
+_tValue$226498 = -4					; size = 4
 _kStream$ = 8						; size = 4
 _paArray$ = 12						; size = 4
 _iArraySize$ = 16					; size = 4
@@ -3455,7 +3625,7 @@ $LL7@ReadHashed:
 ; 255  : 		bool bValid;
 ; 256  : 		int iType = ReadHashed(kStream, &bValid);
 
-	lea	ecx, DWORD PTR _bValid$226448[esp+32]
+	lea	ecx, DWORD PTR _bValid$226490[esp+32]
 	push	ecx
 	push	edi
 	call	?ReadHashed@CvInfosSerializationHelper@@YAHAAVFDataStream@@PA_N@Z ; CvInfosSerializationHelper::ReadHashed
@@ -3471,7 +3641,7 @@ $LL7@ReadHashed:
 ; 259  : 			TData tValue;
 ; 260  : 			kStream >> tValue;
 
-	lea	edx, DWORD PTR _tValue$226451[esp+32]
+	lea	edx, DWORD PTR _tValue$226493[esp+32]
 	push	edx
 	mov	ecx, edi
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
@@ -3483,7 +3653,7 @@ $LL7@ReadHashed:
 
 ; 262  : 				paArray[iType] = tValue;
 
-	mov	eax, DWORD PTR _tValue$226451[esp+32]
+	mov	eax, DWORD PTR _tValue$226493[esp+32]
 	mov	ecx, DWORD PTR _paArray$[esp+28]
 	mov	DWORD PTR [ecx+esi*4], eax
 
@@ -3494,14 +3664,14 @@ $LN4@ReadHashed:
 
 ; 264  : 		else if(!bValid)
 
-	cmp	BYTE PTR _bValid$226448[esp+32], 0
+	cmp	BYTE PTR _bValid$226490[esp+32], 0
 	jne	SHORT $LN6@ReadHashed
 
 ; 265  : 		{
 ; 266  : 			TData tValue;
 ; 267  : 			kStream >> tValue;
 
-	lea	edx, DWORD PTR _tValue$226456[esp+32]
+	lea	edx, DWORD PTR _tValue$226498[esp+32]
 	push	edx
 	mov	ecx, edi
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
@@ -3928,8 +4098,8 @@ _iDX$ = 16						; size = 4
 _iDY$ = 20						; size = 4
 ?plotXY@@YAPAVCvPlot@@HHHH@Z PROC			; plotXY, COMDAT
 
-; 214  : 	// convert the start coord to hex-space coordinates
-; 215  : 	int iStartHexX = xToHexspaceX(iX, iY);
+; 239  : 	// convert the start coord to hex-space coordinates
+; 240  : 	int iStartHexX = xToHexspaceX(iX, iY);
 
 	mov	ecx, DWORD PTR _iY$[esp-4]
 	test	ecx, ecx
@@ -3943,23 +4113,23 @@ $LN5@plotXY:
 $LN55@plotXY:
 	push	esi
 
-; 216  : 
-; 217  : 	int iPlotHexX = iStartHexX + iDX;
+; 241  : 
+; 242  : 	int iPlotHexX = iStartHexX + iDX;
 
 	mov	esi, DWORD PTR _iX$[esp]
 	sar	eax, 1
 	sub	esi, eax
 
-; 218  : 	int iPlotY = iY + iDY; // Y is the same in both coordinate systems
+; 243  : 	int iPlotY = iY + iDY; // Y is the same in both coordinate systems
 
 	mov	eax, DWORD PTR _iDY$[esp]
 	add	esi, DWORD PTR _iDX$[esp]
 	push	edi
 	lea	edi, DWORD PTR [ecx+eax]
 
-; 219  : 
-; 220  : 	// convert from hex-space coordinates to the storage array
-; 221  : 	iPlotHexX = hexspaceXToX(iPlotHexX, iPlotY);
+; 244  : 
+; 245  : 	// convert from hex-space coordinates to the storage array
+; 246  : 	iPlotHexX = hexspaceXToX(iPlotHexX, iPlotY);
 
 	test	edi, edi
 	jl	SHORT $LN9@plotXY
@@ -3973,8 +4143,8 @@ $LN56@plotXY:
 	sar	eax, 1
 	add	esi, eax
 
-; 222  : 
-; 223  : 	return GC.getMap().plot(iPlotHexX , iPlotY);
+; 247  : 
+; 248  : 	return GC.getMap().plot(iPlotHexX , iPlotY);
 
 	cmp	esi, -2147483647			; 80000001H
 	je	$LN13@plotXY
@@ -4040,12 +4210,12 @@ $LN37@plotXY:
 	mov	eax, ecx
 	pop	esi
 
-; 224  : }
+; 249  : }
 
 	ret	0
 
-; 222  : 
-; 223  : 	return GC.getMap().plot(iPlotHexX , iPlotY);
+; 247  : 
+; 248  : 	return GC.getMap().plot(iPlotHexX , iPlotY);
 
 $LN17@plotXY:
 	pop	ebx
@@ -4054,19 +4224,19 @@ $LN17@plotXY:
 	xor	eax, eax
 	pop	esi
 
-; 224  : }
+; 249  : }
 
 	ret	0
 
-; 222  : 
-; 223  : 	return GC.getMap().plot(iPlotHexX , iPlotY);
+; 247  : 
+; 248  : 	return GC.getMap().plot(iPlotHexX , iPlotY);
 
 $LN13@plotXY:
 	pop	edi
 	xor	eax, eax
 	pop	esi
 
-; 224  : }
+; 249  : }
 
 	ret	0
 ?plotXY@@YAPAVCvPlot@@HHHH@Z ENDP			; plotXY
@@ -4780,9 +4950,9 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 __$EHRec$ = -12						; size = 12
 _eBuilding$ = 8						; size = 4
-$T227882 = 12						; size = 4
+$T227949 = 12						; size = 4
 _bForced$ = 12						; size = 1
-_pCity$226227 = 16					; size = 4
+_pCity$226269 = 16					; size = 4
 _bEliminatePopulation$ = 16				; size = 1
 ?DoRemoveSpecialistFromBuilding@CvCityCitizens@@QAEXW4BuildingTypes@@_N1@Z PROC ; CvCityCitizens::DoRemoveSpecialistFromBuilding, COMDAT
 ; _this$ = ecx
@@ -4925,7 +5095,7 @@ $LN20@DoRemoveSp:
 ; 3304 : #else
 ; 3305 : 		GC.GetEngineUserInterface()->setDirty(GameData_DIRTY_BIT, true);
 
-	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8600
 	mov	eax, DWORD PTR [ecx]
 	mov	edx, DWORD PTR [eax+260]
 	push	1
@@ -4934,7 +5104,7 @@ $LN20@DoRemoveSp:
 
 ; 3306 : 		GC.GetEngineUserInterface()->setDirty(CityInfo_DIRTY_BIT, true);
 
-	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8600
 	mov	eax, DWORD PTR [ecx]
 	mov	edx, DWORD PTR [eax+260]
 	push	1
@@ -4944,7 +5114,7 @@ $LN20@DoRemoveSp:
 ; 3307 : 		//GC.GetEngineUserInterface()->setDirty(InfoPane_DIRTY_BIT, true );
 ; 3308 : 		GC.GetEngineUserInterface()->setDirty(CityScreen_DIRTY_BIT, true);
 
-	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8600
 	mov	eax, DWORD PTR [ecx]
 	mov	edx, DWORD PTR [eax+260]
 	push	1
@@ -4953,7 +5123,7 @@ $LN20@DoRemoveSp:
 
 ; 3309 : 		GC.GetEngineUserInterface()->setDirty(ColoredPlots_DIRTY_BIT, true);
 
-	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8600
 	mov	eax, DWORD PTR [ecx]
 	mov	edx, DWORD PTR [eax+260]
 	push	1
@@ -4965,14 +5135,14 @@ $LN20@DoRemoveSp:
 
 	mov	esi, DWORD PTR [esi]
 	push	esi
-	lea	eax, DWORD PTR $T227882[esp+20]
+	lea	eax, DWORD PTR $T227949[esp+20]
 	push	eax
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?WrapCityPointer@CvGlobals@@QAE?AV?$auto_ptr@VICvCity1@@@std@@PAVCvCity@@@Z ; CvGlobals::WrapCityPointer
 	mov	esi, DWORD PTR [eax]
 	mov	DWORD PTR [eax], 0
-	mov	DWORD PTR _pCity$226227[esp+16], esi
-	mov	eax, DWORD PTR $T227882[esp+16]
+	mov	DWORD PTR _pCity$226269[esp+16], esi
+	mov	eax, DWORD PTR $T227949[esp+16]
 	mov	DWORD PTR __$EHRec$[esp+28], 0
 	test	eax, eax
 	je	SHORT $LN40@DoRemoveSp
@@ -4985,7 +5155,7 @@ $LN40@DoRemoveSp:
 ; 3312 : 
 ; 3313 : 		GC.GetEngineUserInterface()->SetSpecificCityInfoDirty(pCity.get(), CITY_UPDATE_TYPE_SPECIALISTS);
 
-	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8600
 	mov	eax, DWORD PTR [ecx]
 	mov	edx, DWORD PTR [eax+440]
 	push	1
@@ -5016,7 +5186,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?DoRemoveSpecialistFromBuilding@CvCityCitizens@@QAEXW4BuildingTypes@@_N1@Z$1:
-	lea	ecx, DWORD PTR _pCity$226227[ebp-4]
+	lea	ecx, DWORD PTR _pCity$226269[ebp-4]
 	jmp	??1?$auto_ptr@VICvCity1@@@std@@QAE@XZ	; std::auto_ptr<ICvCity1>::~auto_ptr<ICvCity1>
 __ehhandler$?DoRemoveSpecialistFromBuilding@CvCityCitizens@@QAEXW4BuildingTypes@@_N1@Z:
 	mov	eax, OFFSET __ehfuncinfo$?DoRemoveSpecialistFromBuilding@CvCityCitizens@@QAEXW4BuildingTypes@@_N1@Z
@@ -5042,8 +5212,8 @@ xdata$x	ENDS
 ;	COMDAT ?DoRemoveAllSpecialistsFromBuilding@CvCityCitizens@@QAEXW4BuildingTypes@@_N@Z
 _TEXT	SEGMENT
 tv160 = -24						; size = 4
-$T227991 = -20						; size = 4
-_pCity$226247 = -16					; size = 4
+$T228058 = -20						; size = 4
+_pCity$226289 = -16					; size = 4
 __$EHRec$ = -12						; size = 12
 _eBuilding$ = 8						; size = 4
 _bEliminatePopulation$ = 12				; size = 1
@@ -5179,7 +5349,7 @@ $LN17@DoRemoveAl:
 ; 3365 : #else
 ; 3366 : 		GC.GetEngineUserInterface()->setDirty(CityInfo_DIRTY_BIT, true);
 
-	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8600
 	mov	edx, DWORD PTR [ecx]
 	mov	eax, DWORD PTR [edx+260]
 	push	1
@@ -5189,7 +5359,7 @@ $LN17@DoRemoveAl:
 ; 3367 : 		//GC.GetEngineUserInterface()->setDirty(InfoPane_DIRTY_BIT, true );
 ; 3368 : 		GC.GetEngineUserInterface()->setDirty(CityScreen_DIRTY_BIT, true);
 
-	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8600
 	mov	edx, DWORD PTR [ecx]
 	mov	eax, DWORD PTR [edx+260]
 	push	1
@@ -5198,7 +5368,7 @@ $LN17@DoRemoveAl:
 
 ; 3369 : 		GC.GetEngineUserInterface()->setDirty(ColoredPlots_DIRTY_BIT, true);
 
-	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8600
 	mov	edx, DWORD PTR [ecx]
 	mov	eax, DWORD PTR [edx+260]
 	push	1
@@ -5210,14 +5380,14 @@ $LN17@DoRemoveAl:
 
 	mov	eax, DWORD PTR [esi]
 	push	eax
-	lea	ecx, DWORD PTR $T227991[esp+40]
+	lea	ecx, DWORD PTR $T228058[esp+40]
 	push	ecx
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?WrapCityPointer@CvGlobals@@QAE?AV?$auto_ptr@VICvCity1@@@std@@PAVCvCity@@@Z ; CvGlobals::WrapCityPointer
 	mov	edi, DWORD PTR [eax]
 	mov	DWORD PTR [eax], 0
-	mov	DWORD PTR _pCity$226247[esp+36], edi
-	mov	eax, DWORD PTR $T227991[esp+36]
+	mov	DWORD PTR _pCity$226289[esp+36], edi
+	mov	eax, DWORD PTR $T228058[esp+36]
 	mov	DWORD PTR __$EHRec$[esp+44], 0
 	test	eax, eax
 	je	SHORT $LN35@DoRemoveAl
@@ -5229,7 +5399,7 @@ $LN35@DoRemoveAl:
 
 ; 3372 : 		GC.GetEngineUserInterface()->SetSpecificCityInfoDirty(pCity.get(), CITY_UPDATE_TYPE_SPECIALISTS);
 
-	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8600
 	mov	edx, DWORD PTR [ecx]
 	mov	eax, DWORD PTR [edx+440]
 	push	1
@@ -5270,7 +5440,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?DoRemoveAllSpecialistsFromBuilding@CvCityCitizens@@QAEXW4BuildingTypes@@_N@Z$1:
-	lea	ecx, DWORD PTR _pCity$226247[ebp]
+	lea	ecx, DWORD PTR _pCity$226289[ebp]
 	jmp	??1?$auto_ptr@VICvCity1@@@std@@QAE@XZ	; std::auto_ptr<ICvCity1>::~auto_ptr<ICvCity1>
 __ehhandler$?DoRemoveAllSpecialistsFromBuilding@CvCityCitizens@@QAEXW4BuildingTypes@@_N@Z:
 	mov	eax, OFFSET __ehfuncinfo$?DoRemoveAllSpecialistsFromBuilding@CvCityCitizens@@QAEXW4BuildingTypes@@_N@Z
@@ -5475,7 +5645,7 @@ _eUnitClass$ = 8					; size = 4
 
 	push	1
 	mov	edi, ecx
-	push	OFFSET $SG226349
+	push	OFFSET $SG226391
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	esi, DWORD PTR _eUnitClass$[esp+8]
@@ -5497,7 +5667,7 @@ $LN12@GetSpecial:
 ; 3614 : 	else if (eUnitClass == GC.getInfoTypeForString("UNITCLASS_ARTIST", true))
 
 	push	1
-	push	OFFSET $SG226352
+	push	OFFSET $SG226394
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	cmp	esi, eax
@@ -5518,7 +5688,7 @@ $LN10@GetSpecial:
 ; 3618 : 	else if (eUnitClass == GC.getInfoTypeForString("UNITCLASS_MUSICIAN", true))
 
 	push	1
-	push	OFFSET $SG226355
+	push	OFFSET $SG226397
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	cmp	esi, eax
@@ -5540,7 +5710,7 @@ $LN8@GetSpecial:
 ; 3623 : 	else if (eUnitClass == GC.getInfoTypeForString("UNITCLASS_SCIENTIST", true))
 
 	push	1
-	push	OFFSET $SG226358
+	push	OFFSET $SG226400
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	cmp	esi, eax
@@ -5561,7 +5731,7 @@ $LN6@GetSpecial:
 ; 3627 : 	else if (eUnitClass == GC.getInfoTypeForString("UNITCLASS_ENGINEER", true))
 
 	push	1
-	push	OFFSET $SG226361
+	push	OFFSET $SG226403
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	cmp	esi, eax
@@ -5582,7 +5752,7 @@ $LN4@GetSpecial:
 ; 3631 : 	else if (eUnitClass == GC.getInfoTypeForString("UNITCLASS_MERCHANT", true))
 
 	push	1
-	push	OFFSET $SG226364
+	push	OFFSET $SG226406
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	cmp	esi, eax
@@ -5734,9 +5904,9 @@ xdata$x	ENDS
 ;	COMDAT ?DoSpawnGreatPerson@CvCityCitizens@@QAEXW4UnitTypes@@_N1@Z
 _TEXT	SEGMENT
 _this$ = -712						; size = 4
-_strSummary$226421 = -708				; size = 80
-_strText$226418 = -628					; size = 80
-_kPopupInfo$226375 = -548				; size = 536
+_strSummary$226463 = -708				; size = 80
+_strText$226460 = -628					; size = 80
+_kPopupInfo$226417 = -548				; size = 536
 __$EHRec$ = -12						; size = 12
 _eUnit$ = 8						; size = 4
 _bIncrementCount$ = 12					; size = 1
@@ -5795,18 +5965,18 @@ _bCountAsProphet$ = 16					; size = 1
 
 ; 3670 : 			GC.GetEngineUserInterface()->AddPopup(kPopupInfo);
 
-	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
-	mov	DWORD PTR _kPopupInfo$226375[esp+728], eax
-	mov	DWORD PTR _kPopupInfo$226375[esp+724], ebx
-	mov	DWORD PTR _kPopupInfo$226375[esp+732], -1
-	mov	DWORD PTR _kPopupInfo$226375[esp+736], 0
-	mov	BYTE PTR _kPopupInfo$226375[esp+740], 0
-	mov	BYTE PTR _kPopupInfo$226375[esp+741], 0
-	mov	DWORD PTR _kPopupInfo$226375[esp+744], 60 ; 0000003cH
-	mov	BYTE PTR _kPopupInfo$226375[esp+748], 0
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8600
+	mov	DWORD PTR _kPopupInfo$226417[esp+728], eax
+	mov	DWORD PTR _kPopupInfo$226417[esp+724], ebx
+	mov	DWORD PTR _kPopupInfo$226417[esp+732], -1
+	mov	DWORD PTR _kPopupInfo$226417[esp+736], 0
+	mov	BYTE PTR _kPopupInfo$226417[esp+740], 0
+	mov	BYTE PTR _kPopupInfo$226417[esp+741], 0
+	mov	DWORD PTR _kPopupInfo$226417[esp+744], 60 ; 0000003cH
+	mov	BYTE PTR _kPopupInfo$226417[esp+748], 0
 	mov	eax, DWORD PTR [ecx]
 	mov	eax, DWORD PTR [eax+180]
-	lea	edx, DWORD PTR _kPopupInfo$226375[esp+724]
+	lea	edx, DWORD PTR _kPopupInfo$226417[esp+724]
 	push	edx
 	call	eax
 $LN122@DoSpawnGre:
@@ -5925,7 +6095,7 @@ $LN24@DoSpawnGre:
 	mov	ecx, eax
 	call	?GetUnitClassType@CvUnitEntry@@QBEHXZ	; CvUnitEntry::GetUnitClassType
 	push	0
-	push	OFFSET $SG226386
+	push	OFFSET $SG226428
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	ebx, eax
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
@@ -5948,7 +6118,7 @@ $LN21@DoSpawnGre:
 	mov	ecx, eax
 	call	?GetUnitClassType@CvUnitEntry@@QBEHXZ	; CvUnitEntry::GetUnitClassType
 	push	0
-	push	OFFSET $SG226389
+	push	OFFSET $SG226431
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	ebx, eax
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
@@ -5971,7 +6141,7 @@ $LN19@DoSpawnGre:
 	mov	ecx, eax
 	call	?GetUnitClassType@CvUnitEntry@@QBEHXZ	; CvUnitEntry::GetUnitClassType
 	push	0
-	push	OFFSET $SG226392
+	push	OFFSET $SG226434
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	ebx, eax
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
@@ -5995,7 +6165,7 @@ $LN17@DoSpawnGre:
 	mov	ecx, eax
 	call	?GetUnitClassType@CvUnitEntry@@QBEHXZ	; CvUnitEntry::GetUnitClassType
 	push	0
-	push	OFFSET $SG226395
+	push	OFFSET $SG226437
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	ebx, eax
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
@@ -6018,7 +6188,7 @@ $LN15@DoSpawnGre:
 	mov	ecx, eax
 	call	?GetUnitClassType@CvUnitEntry@@QBEHXZ	; CvUnitEntry::GetUnitClassType
 	push	0
-	push	OFFSET $SG226398
+	push	OFFSET $SG226440
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	ebx, eax
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
@@ -6041,7 +6211,7 @@ $LN13@DoSpawnGre:
 	mov	ecx, eax
 	call	?GetUnitClassType@CvUnitEntry@@QBEHXZ	; CvUnitEntry::GetUnitClassType
 	push	0
-	push	OFFSET $SG226401
+	push	OFFSET $SG226443
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	ebx, eax
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
@@ -6064,7 +6234,7 @@ $LN11@DoSpawnGre:
 	mov	ecx, eax
 	call	?GetUnitClassType@CvUnitEntry@@QBEHXZ	; CvUnitEntry::GetUnitClassType
 	push	0
-	push	OFFSET $SG226404
+	push	OFFSET $SG226446
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	ebx, eax
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
@@ -6252,7 +6422,7 @@ $LN3@DoSpawnGre:
 
 	push	-1
 	push	0
-	push	OFFSET $SG226416
+	push	OFFSET $SG226458
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	push	eax
@@ -6279,15 +6449,15 @@ $LN126@DoSpawnGre:
 ; 3774 : 		Localization::String strText = Localization::Lookup("TXT_KEY_NOTIFICATION_GREAT_PERSON_ACTIVE_PLAYER");
 
 	mov	esi, DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
-	lea	ecx, DWORD PTR _strText$226418[esp+728]
-	push	OFFSET $SG226420
+	lea	ecx, DWORD PTR _strText$226460[esp+728]
+	push	OFFSET $SG226462
 	push	ecx
 	call	esi
 
 ; 3775 : 		Localization::String strSummary = Localization::Lookup("TXT_KEY_NOTIFICATION_SUMMARY_GREAT_PERSON");
 
-	lea	edx, DWORD PTR _strSummary$226421[esp+736]
-	push	OFFSET $SG226423
+	lea	edx, DWORD PTR _strSummary$226463[esp+736]
+	push	OFFSET $SG226465
 	push	edx
 	mov	DWORD PTR __$EHRec$[esp+752], 0
 	call	esi
@@ -6308,11 +6478,11 @@ $LN126@DoSpawnGre:
 	push	eax
 	push	ecx
 	push	edx
-	lea	ecx, DWORD PTR _strSummary$226421[esp+744]
+	lea	ecx, DWORD PTR _strSummary$226463[esp+744]
 	mov	BYTE PTR __$EHRec$[esp+752], 1
 	call	edi
 	push	eax
-	lea	ecx, DWORD PTR _strText$226418[esp+748]
+	lea	ecx, DWORD PTR _strText$226460[esp+748]
 	call	edi
 	push	eax
 	push	-2083717098				; 83cd0016H
@@ -6324,10 +6494,10 @@ $LN126@DoSpawnGre:
 ; 3777 : 	}
 
 	mov	esi, DWORD PTR __imp_??1String@Localization@@UAE@XZ
-	lea	ecx, DWORD PTR _strSummary$226421[esp+728]
+	lea	ecx, DWORD PTR _strSummary$226463[esp+728]
 	mov	BYTE PTR __$EHRec$[esp+736], 0
 	call	esi
-	lea	ecx, DWORD PTR _strText$226418[esp+728]
+	lea	ecx, DWORD PTR _strText$226460[esp+728]
 	mov	DWORD PTR __$EHRec$[esp+736], -1
 	call	esi
 $LN129@DoSpawnGre:
@@ -6347,10 +6517,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?DoSpawnGreatPerson@CvCityCitizens@@QAEXW4UnitTypes@@_N1@Z$0:
-	lea	ecx, DWORD PTR _strText$226418[ebp]
+	lea	ecx, DWORD PTR _strText$226460[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?DoSpawnGreatPerson@CvCityCitizens@@QAEXW4UnitTypes@@_N1@Z$1:
-	lea	ecx, DWORD PTR _strSummary$226421[ebp]
+	lea	ecx, DWORD PTR _strSummary$226463[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __ehhandler$?DoSpawnGreatPerson@CvCityCitizens@@QAEXW4UnitTypes@@_N1@Z:
 	mov	eax, OFFSET __ehfuncinfo$?DoSpawnGreatPerson@CvCityCitizens@@QAEXW4UnitTypes@@_N1@Z
@@ -7750,14 +7920,14 @@ _iGPPYieldValue$ = -16					; size = 4
 _pSpecialistInfo$ = -16					; size = 4
 _iCultureYieldValue$ = -12				; size = 4
 _iScienceYieldValue$ = -8				; size = 4
-$T228815 = -4						; size = 4
+$T228882 = -4						; size = 4
 _iExcessFoodTimes100$ = -4				; size = 4
 tv498 = 8						; size = 4
-$T228835 = 8						; size = 4
-$T228831 = 8						; size = 4
-$T228827 = 8						; size = 4
-$T228823 = 8						; size = 4
-$T228819 = 8						; size = 4
+$T228902 = 8						; size = 4
+$T228898 = 8						; size = 4
+$T228894 = 8						; size = 4
+$T228890 = 8						; size = 4
+$T228886 = 8						; size = 4
 _bAvoidGrowth$ = 8					; size = 1
 _iFoodConsumptionBonus$ = 8				; size = 4
 _eSpecialist$ = 8					; size = 4
@@ -7846,7 +8016,7 @@ $LN30@GetSpecial@2:
 	setne	cl
 	push	0
 	push	edi
-	mov	DWORD PTR $T228815[esp+48], edx
+	mov	DWORD PTR $T228882[esp+48], edx
 	mov	DWORD PTR _iFoodConsumptionBonus$[esp+44], ecx
 	mov	ecx, esi
 	call	?specialistYield@CvPlayer@@QBEHW4SpecialistTypes@@W4YieldTypes@@@Z ; CvPlayer::specialistYield
@@ -7857,13 +8027,13 @@ $LN30@GetSpecial@2:
 ; 1344 : 	int iProductionYieldValue = (GC.getAI_CITIZEN_VALUE_PRODUCTION() * pPlayer->specialistYield(eSpecialist, YIELD_PRODUCTION));
 
 	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+2380
-	imul	ebx, DWORD PTR $T228815[esp+40]
+	imul	ebx, DWORD PTR $T228882[esp+40]
 	push	1
 	push	edi
 	mov	ecx, esi
-	mov	DWORD PTR $T228819[esp+44], eax
+	mov	DWORD PTR $T228886[esp+44], eax
 	call	?specialistYield@CvPlayer@@QBEHW4SpecialistTypes@@W4YieldTypes@@@Z ; CvPlayer::specialistYield
-	imul	eax, DWORD PTR $T228819[esp+36]
+	imul	eax, DWORD PTR $T228886[esp+36]
 
 ; 1345 : #ifdef AUI_CITIZENS_GOLD_YIELD_COUNTS_AS_SCIENCE_WHEN_IN_DEFICIT
 ; 1346 : 	int iGoldYieldValue = (pPlayer->specialistYield(eSpecialist, YIELD_GOLD));
@@ -7873,12 +8043,12 @@ $LN30@GetSpecial@2:
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+2384
 	push	2
-	mov	DWORD PTR $T228823[esp+40], ecx
+	mov	DWORD PTR $T228890[esp+40], ecx
 	push	edi
 	mov	ecx, esi
 	mov	DWORD PTR _iProductionYieldValue$[esp+48], eax
 	call	?specialistYield@CvPlayer@@QBEHW4SpecialistTypes@@W4YieldTypes@@@Z ; CvPlayer::specialistYield
-	imul	eax, DWORD PTR $T228823[esp+36]
+	imul	eax, DWORD PTR $T228890[esp+36]
 
 ; 1350 : 	int iScienceYieldValue = (GC.getAI_CITIZEN_VALUE_SCIENCE() * pPlayer->specialistYield(eSpecialist, YIELD_SCIENCE));
 
@@ -7887,9 +8057,9 @@ $LN30@GetSpecial@2:
 	push	edi
 	mov	ecx, esi
 	mov	DWORD PTR _iGoldYieldValue$[esp+48], eax
-	mov	DWORD PTR $T228827[esp+44], edx
+	mov	DWORD PTR $T228894[esp+44], edx
 	call	?specialistYield@CvPlayer@@QBEHW4SpecialistTypes@@W4YieldTypes@@@Z ; CvPlayer::specialistYield
-	imul	eax, DWORD PTR $T228827[esp+36]
+	imul	eax, DWORD PTR $T228894[esp+36]
 
 ; 1351 : #endif
 ; 1352 : 	int iCultureYieldValue = (GC.getAI_CITIZEN_VALUE_CULTURE() * m_pCity->GetCultureFromSpecialist(eSpecialist)); 
@@ -7898,15 +8068,15 @@ $LN30@GetSpecial@2:
 	mov	DWORD PTR _iScienceYieldValue$[esp+40], eax
 	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+2392
 	push	edi
-	mov	DWORD PTR $T228831[esp+40], eax
+	mov	DWORD PTR $T228898[esp+40], eax
 	call	?GetCultureFromSpecialist@CvCity@@QBEHW4SpecialistTypes@@@Z ; CvCity::GetCultureFromSpecialist
-	imul	eax, DWORD PTR $T228831[esp+36]
+	imul	eax, DWORD PTR $T228898[esp+36]
 
 ; 1353 : 	int iFaithYieldValue = (GC.getAI_CITIZEN_VALUE_FAITH() * pPlayer->specialistYield(eSpecialist, YIELD_FAITH));
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+2396
 	push	5
-	mov	DWORD PTR $T228835[esp+40], ecx
+	mov	DWORD PTR $T228902[esp+40], ecx
 	push	edi
 	mov	ecx, esi
 	mov	DWORD PTR _iCultureYieldValue$[esp+48], eax
@@ -7944,7 +8114,7 @@ $LN30@GetSpecial@2:
 
 	mov	ecx, DWORD PTR _pSpecialistInfo$[esp+40]
 	mov	edi, eax
-	imul	edi, DWORD PTR $T228835[esp+36]
+	imul	edi, DWORD PTR $T228902[esp+36]
 	call	?getGreatPeopleRateChange@CvSpecialistInfo@@QBEHXZ ; CvSpecialistInfo::getGreatPeopleRateChange
 
 ; 1383 : #ifdef AUI_CITIZENS_UNHARDCODE_SPECIALIST_VALUE_HAPPINESS
@@ -8870,9 +9040,9 @@ EXTRN	?getGreatPeopleUnitClass@CvSpecialistInfo@@QBEHXZ:PROC ; CvSpecialistInfo:
 ;	COMDAT ?DoSpecialists@CvCityCitizens@@QAEXXZ
 _TEXT	SEGMENT
 tv701 = -12						; size = 4
-_iSpecialistLoop$226067 = -12				; size = 4
+_iSpecialistLoop$226109 = -12				; size = 4
 _iGPPChange$ = -8					; size = 4
-_iGPThreshold$226075 = -4				; size = 4
+_iGPThreshold$226117 = -4				; size = 4
 ?DoSpecialists@CvCityCitizens@@QAEXXZ PROC		; CvCityCitizens::DoSpecialists, COMDAT
 ; _this$ = ecx
 
@@ -8895,7 +9065,7 @@ _iGPThreshold$226075 = -4				; size = 4
 
 	xor	ebp, ebp
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	mov	DWORD PTR _iSpecialistLoop$226067[esp+20], ebp
+	mov	DWORD PTR _iSpecialistLoop$226109[esp+20], ebp
 	call	?getNumSpecialistInfos@CvGlobals@@QAEHXZ ; CvGlobals::getNumSpecialistInfos
 	test	eax, eax
 	jle	$LN22@DoSpeciali
@@ -8940,7 +9110,7 @@ $LL215@DoSpeciali:
 ; 3046 : 			if(pkSpecialistInfo->getGreatPeopleUnitClass() != NO_UNITCLASS)
 
 	mov	ecx, ebx
-	mov	DWORD PTR _iGPThreshold$226075[esp+28], eax
+	mov	DWORD PTR _iGPThreshold$226117[esp+28], eax
 	call	?getGreatPeopleUnitClass@CvSpecialistInfo@@QBEHXZ ; CvSpecialistInfo::getGreatPeopleUnitClass
 	cmp	eax, -1
 	je	$LN23@DoSpeciali
@@ -9001,7 +9171,7 @@ $LL215@DoSpeciali:
 ; 3067 : 					if((UnitClassTypes)pkSpecialistInfo->getGreatPeopleUnitClass() == GC.getInfoTypeForString("UNITCLASS_SCIENTIST"))
 
 	push	0
-	push	OFFSET $SG226081
+	push	OFFSET $SG226123
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	add	edi, eax
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
@@ -9026,7 +9196,7 @@ $LN18@DoSpeciali:
 ; 3071 : 					else if((UnitClassTypes)pkSpecialistInfo->getGreatPeopleUnitClass() == GC.getInfoTypeForString("UNITCLASS_WRITER"))
 
 	push	0
-	push	OFFSET $SG226085
+	push	OFFSET $SG226127
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	ecx, ebx
@@ -9072,7 +9242,7 @@ $LN16@DoSpeciali:
 ; 3079 : 					else if((UnitClassTypes)pkSpecialistInfo->getGreatPeopleUnitClass() == GC.getInfoTypeForString("UNITCLASS_ARTIST"))
 
 	push	0
-	push	OFFSET $SG226090
+	push	OFFSET $SG226132
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	ecx, ebx
@@ -9118,7 +9288,7 @@ $LN13@DoSpeciali:
 ; 3087 : 					else if((UnitClassTypes)pkSpecialistInfo->getGreatPeopleUnitClass() == GC.getInfoTypeForString("UNITCLASS_MUSICIAN"))
 
 	push	0
-	push	OFFSET $SG226095
+	push	OFFSET $SG226137
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	ecx, ebx
@@ -9204,7 +9374,7 @@ $LN10@DoSpeciali:
 ; 3102 : 					else if((UnitClassTypes)pkSpecialistInfo->getGreatPeopleUnitClass() == GC.getInfoTypeForString("UNITCLASS_MERCHANT"))
 
 	push	0
-	push	OFFSET $SG226102
+	push	OFFSET $SG226144
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	ecx, ebx
@@ -9228,7 +9398,7 @@ $LN6@DoSpeciali:
 ; 3106 : 					else if((UnitClassTypes)pkSpecialistInfo->getGreatPeopleUnitClass() == GC.getInfoTypeForString("UNITCLASS_ENGINEER"))
 
 	push	0
-	push	OFFSET $SG226106
+	push	OFFSET $SG226148
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 	mov	ecx, ebx
@@ -9260,7 +9430,7 @@ $LN210@DoSpeciali:
 ; 3028 : 	for(int iSpecialistLoop = 0; iSpecialistLoop < GC.getNumSpecialistInfos(); iSpecialistLoop++)
 
 	mov	ecx, DWORD PTR [esi+112]
-	mov	ebp, DWORD PTR _iSpecialistLoop$226067[esp+28]
+	mov	ebp, DWORD PTR _iSpecialistLoop$226109[esp+28]
 	lea	edx, DWORD PTR [ecx+ebp*4]
 
 ; 3109 : 					}
@@ -9302,7 +9472,7 @@ $LN211@DoSpeciali:
 	mov	eax, edx
 	shr	eax, 31					; 0000001fH
 	add	eax, edx
-	cmp	eax, DWORD PTR _iGPThreshold$226075[esp+28]
+	cmp	eax, DWORD PTR _iGPThreshold$226117[esp+28]
 	jl	SHORT $LN23@DoSpeciali
 
 ; 3121 : 				{
@@ -9366,7 +9536,7 @@ $LN211@DoSpeciali:
 $LN23@DoSpeciali:
 	inc	ebp
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	mov	DWORD PTR _iSpecialistLoop$226067[esp+28], ebp
+	mov	DWORD PTR _iSpecialistLoop$226109[esp+28], ebp
 	call	?getNumSpecialistInfos@CvGlobals@@QAEHXZ ; CvGlobals::getNumSpecialistInfos
 	cmp	ebp, eax
 	jl	$LL215@DoSpeciali
@@ -9392,7 +9562,7 @@ PUBLIC	?DoFoundCity@CvCityCitizens@@QAEXXZ		; CvCityCitizens::DoFoundCity
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?DoFoundCity@CvCityCitizens@@QAEXXZ
 _TEXT	SEGMENT
-_bWorkPlot$225368 = -4					; size = 1
+_bWorkPlot$225410 = -4					; size = 1
 ?DoFoundCity@CvCityCitizens@@QAEXXZ PROC		; CvCityCitizens::DoFoundCity, COMDAT
 ; _this$ = ecx
 
@@ -9427,11 +9597,11 @@ _bWorkPlot$225368 = -4					; size = 1
 	push	edi
 	mov	ecx, esi
 	call	?IsCanWork@CvCityCitizens@@QBE_NPAVCvPlot@@@Z ; CvCityCitizens::IsCanWork
-	mov	BYTE PTR _bWorkPlot$225368[esp+12], al
+	mov	BYTE PTR _bWorkPlot$225410[esp+12], al
 
 ; 275  : 		SetWorkingPlot(pHomePlot, bWorkPlot, /*bUseUnassignedPool*/ false);
 
-	mov	eax, DWORD PTR _bWorkPlot$225368[esp+12]
+	mov	eax, DWORD PTR _bWorkPlot$225410[esp+12]
 	push	0
 	push	eax
 	push	edi
@@ -11172,9 +11342,9 @@ xdata$x	ENDS
 ;	COMDAT ?DoAddSpecialistToBuilding@CvCityCitizens@@QAEXW4BuildingTypes@@_N@Z
 _TEXT	SEGMENT
 __$EHRec$ = -12						; size = 12
-_pCity$226191 = 8					; size = 4
+_pCity$226233 = 8					; size = 4
 _eBuilding$ = 8						; size = 4
-$T230006 = 12						; size = 4
+$T230073 = 12						; size = 4
 _bForced$ = 12						; size = 1
 ?DoAddSpecialistToBuilding@CvCityCitizens@@QAEXW4BuildingTypes@@_N@Z PROC ; CvCityCitizens::DoAddSpecialistToBuilding, COMDAT
 ; _this$ = ecx
@@ -11354,7 +11524,7 @@ $LN1@DoAddSpeci:
 ; 3237 : 
 ; 3238 : 		ICvUserInterface2* pkIFace = GC.GetEngineUserInterface();
 
-	mov	esi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
+	mov	esi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8600
 
 ; 3239 : 		pkIFace->setDirty(GameData_DIRTY_BIT, true);
 
@@ -11401,14 +11571,14 @@ $LN1@DoAddSpeci:
 ; 3246 : 		auto_ptr<ICvCity1> pCity = GC.WrapCityPointer(pkCity);
 
 	push	edi
-	lea	ecx, DWORD PTR $T230006[esp+28]
+	lea	ecx, DWORD PTR $T230073[esp+28]
 	push	ecx
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?WrapCityPointer@CvGlobals@@QAE?AV?$auto_ptr@VICvCity1@@@std@@PAVCvCity@@@Z ; CvGlobals::WrapCityPointer
 	mov	edi, DWORD PTR [eax]
 	mov	DWORD PTR [eax], 0
-	mov	DWORD PTR _pCity$226191[esp+24], edi
-	mov	eax, DWORD PTR $T230006[esp+24]
+	mov	DWORD PTR _pCity$226233[esp+24], edi
+	mov	eax, DWORD PTR $T230073[esp+24]
 	mov	DWORD PTR __$EHRec$[esp+36], 0
 	test	eax, eax
 	je	SHORT $LN50@DoAddSpeci
@@ -11453,7 +11623,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?DoAddSpecialistToBuilding@CvCityCitizens@@QAEXW4BuildingTypes@@_N@Z$1:
-	lea	ecx, DWORD PTR _pCity$226191[ebp-4]
+	lea	ecx, DWORD PTR _pCity$226233[ebp-4]
 	jmp	??1?$auto_ptr@VICvCity1@@@std@@QAE@XZ	; std::auto_ptr<ICvCity1>::~auto_ptr<ICvCity1>
 __ehhandler$?DoAddSpecialistToBuilding@CvCityCitizens@@QAEXW4BuildingTypes@@_N@Z:
 	mov	eax, OFFSET __ehfuncinfo$?DoAddSpecialistToBuilding@CvCityCitizens@@QAEXW4BuildingTypes@@_N@Z
@@ -13173,7 +13343,7 @@ $LN21@DoTurn:
 ; 364  : 			EconomicAIStrategyTypes eStrategyLosingMoney = (EconomicAIStrategyTypes) GC.getInfoTypeForString("ECONOMICAISTRATEGY_LOSING_MONEY", true);
 
 	push	1
-	push	OFFSET $SG225396
+	push	OFFSET $SG225438
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 
@@ -13281,7 +13451,7 @@ $LN18@DoTurn:
 	mov	ecx, eax
 	call	?GetActiveGrandStrategy@CvGrandStrategyAI@@QBE?AW4AIGrandStrategyTypes@@XZ ; CvGrandStrategyAI::GetActiveGrandStrategy
 	push	0
-	push	OFFSET $SG225405
+	push	OFFSET $SG225447
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	ebp, eax
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString

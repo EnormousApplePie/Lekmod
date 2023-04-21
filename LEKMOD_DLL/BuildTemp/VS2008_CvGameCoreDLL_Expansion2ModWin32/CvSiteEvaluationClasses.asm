@@ -12,36 +12,36 @@ INCLUDELIB OLDNAMES
 PUBLIC	?NO_QUEST_DATA@CvMinorCivQuest@@2HB		; CvMinorCivQuest::NO_QUEST_DATA
 PUBLIC	?NO_TURN@CvMinorCivQuest@@2HB			; CvMinorCivQuest::NO_TURN
 CONST	SEGMENT
-$SG223423 DB	'FLAVOR_GROWTH', 00H
+$SG223465 DB	'FLAVOR_GROWTH', 00H
 	ORG $+2
-$SG223424 DB	'FLAVOR_EXPANSION', 00H
+$SG223466 DB	'FLAVOR_EXPANSION', 00H
 	ORG $+3
-$SG223425 DB	'FLAVOR_NAVAL', 00H
+$SG223467 DB	'FLAVOR_NAVAL', 00H
 	ORG $+3
-$SG223444 DB	'GAMEOPTION_AI_TWEAKS', 00H
+$SG223486 DB	'GAMEOPTION_AI_TWEAKS', 00H
 	ORG $+3
-$SG223445 DB	'GAMEOPTION_AI_GIMP_NO_BUILDING_SETTLERS', 00H
-$SG223496 DB	'FLAVOR_GROWTH', 00H
+$SG223487 DB	'GAMEOPTION_AI_GIMP_NO_BUILDING_SETTLERS', 00H
+$SG223538 DB	'FLAVOR_GROWTH', 00H
 	ORG $+2
-$SG223497 DB	'FLAVOR_EXPANSION', 00H
+$SG223539 DB	'FLAVOR_EXPANSION', 00H
 	ORG $+3
-$SG223502 DB	'FLAVOR_GOLD', 00H
-$SG223503 DB	'FLAVOR_TILE_IMPROVEMENT', 00H
-$SG223508 DB	'FLAVOR_PRODUCTION', 00H
+$SG223544 DB	'FLAVOR_GOLD', 00H
+$SG223545 DB	'FLAVOR_TILE_IMPROVEMENT', 00H
+$SG223550 DB	'FLAVOR_PRODUCTION', 00H
 	ORG $+2
-$SG223509 DB	'FLAVOR_WONDER', 00H
+$SG223551 DB	'FLAVOR_WONDER', 00H
 	ORG $+2
-$SG223513 DB	'FLAVOR_SCIENCE', 00H
+$SG223555 DB	'FLAVOR_SCIENCE', 00H
 	ORG $+1
-$SG223517 DB	'FLAVOR_HAPPINESS', 00H
+$SG223559 DB	'FLAVOR_HAPPINESS', 00H
 	ORG $+3
-$SG223521 DB	'FLAVOR_RELIGION', 00H
-$SG223568 DB	'IMPROVEMENT_TERRACE_FARM', 00H
+$SG223563 DB	'FLAVOR_RELIGION', 00H
+$SG223610 DB	'IMPROVEMENT_TERRACE_FARM', 00H
 	ORG $+3
-$SG223645 DB	'IMPROVEMENT_BRAZILWOOD_CAMP', 00H
-$SG223653 DB	'IMPROVEMENT_KASBAH', 00H
+$SG223687 DB	'IMPROVEMENT_BRAZILWOOD_CAMP', 00H
+$SG223695 DB	'IMPROVEMENT_KASBAH', 00H
 	ORG $+1
-$SG223661 DB	'IMPROVEMENT_POLDER', 00H
+$SG223703 DB	'IMPROVEMENT_POLDER', 00H
 CONST	ENDS
 ;	COMDAT ?NO_TURN@CvMinorCivQuest@@2HB
 CONST	SEGMENT
@@ -1810,182 +1810,352 @@ PUBLIC	?plotDistance@@YAHHHHH@Z			; plotDistance
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?plotDistance@@YAHHHHH@Z
 _TEXT	SEGMENT
-_iDX$ = 8						; size = 4
+_iDY$ = -12						; size = 4
+tv320 = -8						; size = 4
+tv357 = -4						; size = 4
 _iX1$ = 8						; size = 4
+_iDX$ = 12						; size = 4
 _iY1$ = 12						; size = 4
-_iDY$ = 16						; size = 4
+$T224574 = 16						; size = 4
 _iX2$ = 16						; size = 4
 _iY2$ = 20						; size = 4
 ?plotDistance@@YAHHHHH@Z PROC				; plotDistance, COMDAT
 
+; 144  : {
+
+	sub	esp, 12					; 0000000cH
+
 ; 145  : 	int iDX;
 ; 146  : 	int iWrappedDX = dxWrap(iX2 - iX1);
 
-	mov	eax, DWORD PTR _iX2$[esp-4]
-	sub	eax, DWORD PTR _iX1$[esp-4]
+	mov	ecx, DWORD PTR _iX2$[esp+8]
+	sub	ecx, DWORD PTR _iX1$[esp+8]
 	push	ebx
-	mov	ebx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+52
-	cmp	BYTE PTR [ebx+4056], 0
-	mov	edx, DWORD PTR [ebx+4020]
 	push	ebp
 	push	esi
-	je	SHORT $LN13@plotDistan
-	mov	ecx, edx
-	shr	ecx, 1
-	cmp	eax, ecx
-	jle	SHORT $LN15@plotDistan
-	sub	eax, edx
-	jmp	SHORT $LN13@plotDistan
-$LN15@plotDistan:
-	neg	ecx
-	cmp	eax, ecx
-	lea	ecx, DWORD PTR [edx+eax]
-	jl	SHORT $LN17@plotDistan
-$LN13@plotDistan:
-	mov	ecx, eax
-$LN17@plotDistan:
+	push	edi
+	mov	edi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+52
+	cmp	BYTE PTR [edi+4056], 0
+	mov	edx, DWORD PTR [edi+4020]
+	mov	DWORD PTR tv320[esp+28], ecx
+	je	SHORT $LN18@plotDistan
+	mov	eax, edx
+	shr	eax, 1
+	cmp	ecx, eax
+	jle	SHORT $LN20@plotDistan
+	sub	ecx, edx
+	jmp	SHORT $LN18@plotDistan
+$LN20@plotDistan:
+	neg	eax
+	cmp	ecx, eax
+	jge	SHORT $LN18@plotDistan
+	add	ecx, edx
+$LN18@plotDistan:
 
 ; 147  : 	int iWrappedDY = dyWrap(iY2 - iY1);
 
-	mov	eax, DWORD PTR _iY2$[esp+8]
-	mov	esi, DWORD PTR [ebx+4024]
-	push	edi
-	mov	edi, DWORD PTR _iY1$[esp+12]
-	sub	eax, edi
-	cmp	BYTE PTR [ebx+4057], 0
-	je	SHORT $LN27@plotDistan
-	mov	edx, esi
+	mov	ebp, DWORD PTR _iY2$[esp+24]
+	sub	ebp, DWORD PTR _iY1$[esp+24]
+	cmp	BYTE PTR [edi+4057], 0
+	mov	eax, DWORD PTR [edi+4024]
+	je	SHORT $LN32@plotDistan
+	mov	edx, eax
 	shr	edx, 1
-	cmp	eax, edx
-	jle	SHORT $LN29@plotDistan
-	sub	eax, esi
-	jmp	SHORT $LN27@plotDistan
-$LN29@plotDistan:
+	cmp	ebp, edx
+	jle	SHORT $LN34@plotDistan
+	mov	ebx, ebp
+	sub	ebx, eax
+	mov	DWORD PTR $T224574[esp+24], ebx
+	jmp	SHORT $LN36@plotDistan
+$LN34@plotDistan:
 	neg	edx
-	cmp	eax, edx
-	lea	ebp, DWORD PTR [esi+eax]
-	jl	SHORT $LN31@plotDistan
-$LN27@plotDistan:
-	mov	ebp, eax
-$LN31@plotDistan:
+	cmp	ebp, edx
+	jge	SHORT $LN32@plotDistan
+	lea	ebx, DWORD PTR [eax+ebp]
+	mov	DWORD PTR $T224574[esp+24], ebx
+	jmp	SHORT $LN36@plotDistan
+$LN32@plotDistan:
+	mov	ebx, ebp
+	mov	DWORD PTR $T224574[esp+24], ebp
+$LN36@plotDistan:
 
 ; 148  : 	int iDY = abs(iWrappedDY);
 
+	mov	eax, ebx
+	cdq
+	mov	esi, eax
+	xor	esi, edx
+	sub	esi, edx
+
+; 149  : 
+; 150  : #ifdef GAMECOREUTILS_FIX_PLOT_DISTANCE
+; 151  : 	const CvMap& kMap = GC.getMap();
+; 152  : 	// equidistant column joint fix (on X-wrapped maps):
+; 153  : 	if ((kMap.isWrapX()) && (abs(iWrappedDX * 2) == kMap.getGridWidth()) && (iDY % 2 != 0) && ((iY1 % 2 == 0) == (iWrappedDX > (kMap.getGridWidth() >> 2))))
+
+	cmp	BYTE PTR [edi+4056], 0
+	mov	DWORD PTR _iDY$[esp+28], esi
+	je	$LN77@plotDistan
+	lea	eax, DWORD PTR [ecx+ecx]
+	cdq
+	mov	ebx, eax
+	mov	eax, DWORD PTR [edi+4020]
+	xor	ebx, edx
+	sub	ebx, edx
+	cmp	ebx, eax
+	jne	SHORT $LN73@plotDistan
+	mov	edx, esi
+	and	edx, -2147483647			; 80000001H
+	jns	SHORT $LN79@plotDistan
+	dec	edx
+	or	edx, -2					; fffffffeH
+	inc	edx
+$LN79@plotDistan:
+	je	SHORT $LN73@plotDistan
+	sar	eax, 2
+	xor	edx, edx
+	cmp	ecx, eax
+	mov	eax, DWORD PTR _iY1$[esp+24]
+	setg	dl
+	and	eax, -2147483647			; 80000001H
+	jns	SHORT $LN80@plotDistan
+	dec	eax
+	or	eax, -2					; fffffffeH
+	inc	eax
+$LN80@plotDistan:
+
+; 154  : 	{
+; 155  : 		iWrappedDX *= -1;  // change polarity
+
+	mov	ebx, DWORD PTR $T224574[esp+24]
+	neg	eax
+	sbb	eax, eax
+	inc	eax
+	cmp	eax, edx
+	jne	SHORT $LN5@plotDistan
+	neg	ecx
+	jmp	SHORT $LN5@plotDistan
+$LN73@plotDistan:
+	mov	ebx, DWORD PTR $T224574[esp+24]
+$LN5@plotDistan:
+
+; 156  : 	}
+; 157  : 	if ((kMap.isWrapX()) && (abs(iWrappedDX * 2) == kMap.getGridWidth()) && (abs(iWrappedDY) < abs(iY2 - iY1)) && (iDY % 2 == 0) && (iX2 - iX1 < 0))
+
+	cmp	BYTE PTR [edi+4056], 0
+	je	$LN77@plotDistan
+	lea	eax, DWORD PTR [ecx+ecx]
+	cdq
+	xor	eax, edx
+	sub	eax, edx
+	cmp	eax, DWORD PTR [edi+4020]
+	jne	SHORT $LN75@plotDistan
 	mov	eax, ebp
 	cdq
 	xor	eax, edx
 	sub	eax, edx
-	mov	DWORD PTR _iDY$[esp+12], eax
+	cmp	esi, eax
+	jge	SHORT $LN75@plotDistan
+	mov	edx, DWORD PTR _iDY$[esp+28]
+	and	edx, -2147483647			; 80000001H
+	jns	SHORT $LN81@plotDistan
+	dec	edx
+	or	edx, -2					; fffffffeH
+	inc	edx
+$LN81@plotDistan:
+	jne	SHORT $LN75@plotDistan
+	cmp	DWORD PTR tv320[esp+28], 0
+	jge	SHORT $LN75@plotDistan
 
-; 149  : 
-; 150  : 	// convert to hex-space coordinates - the coordinate system axes are E and NE (not orthogonal)
-; 151  : 	int iHX1 = xToHexspaceX(iX1, iY1);
+; 158  : 	{
+; 159  : 		iWrappedDX *= -1;  // change polarity
 
-	test	edi, edi
-	jl	SHORT $LN35@plotDistan
-	mov	eax, edi
-	jmp	SHORT $LN59@plotDistan
-$LN35@plotDistan:
-	lea	eax, DWORD PTR [edi-1]
+	neg	ecx
+$LN75@plotDistan:
+
+; 160  : 	}
+; 161  : 	// special case when map is toroidal AND map height is odd
+; 162  : 	// TODO works but ugly
+; 163  : 	if ((kMap.isWrapX()) && (kMap.getGridHeight() % 2 != 0) && (iY1 % 2 == kMap.getGridWidth() % 2) && (iY2 % 2 == 0) &&
+; 164  : 		(abs(iWrappedDY) < abs(iY2 - iY1)) && (abs(iX2 - iX1) == kMap.getGridWidth() / 2 + ((kMap.getGridWidth() % 2 == 1) && (iX2 - iX1 > 0)) ? 1 : 0))
+
+	cmp	BYTE PTR [edi+4056], 0
+	je	$LN77@plotDistan
+	mov	eax, DWORD PTR [edi+4024]
+	and	eax, -2147483647			; 80000001H
+	jns	SHORT $LN82@plotDistan
+	dec	eax
+	or	eax, -2					; fffffffeH
+	inc	eax
+$LN82@plotDistan:
+	je	$LN77@plotDistan
+	mov	edi, DWORD PTR [edi+4020]
+	mov	DWORD PTR tv357[esp+28], edi
+	and	edi, -2147483647			; 80000001H
+	jns	SHORT $LN83@plotDistan
+	dec	edi
+	or	edi, -2					; fffffffeH
+	inc	edi
+$LN83@plotDistan:
+	mov	edx, DWORD PTR _iY1$[esp+24]
+	and	edx, -2147483647			; 80000001H
+	jns	SHORT $LN84@plotDistan
+	dec	edx
+	or	edx, -2					; fffffffeH
+	inc	edx
+$LN84@plotDistan:
+	cmp	edx, edi
+	jne	SHORT $LN77@plotDistan
+	mov	eax, DWORD PTR _iY2$[esp+24]
+	and	eax, -2147483647			; 80000001H
+	jns	SHORT $LN85@plotDistan
+	dec	eax
+	or	eax, -2					; fffffffeH
+	inc	eax
+$LN85@plotDistan:
+	jne	SHORT $LN77@plotDistan
+	mov	eax, ebp
+	cdq
+	xor	eax, edx
+	sub	eax, edx
+	cmp	esi, eax
+	jge	SHORT $LN77@plotDistan
+	cmp	edi, 1
+	jne	SHORT $LN76@plotDistan
+	cmp	DWORD PTR tv320[esp+28], 0
+	jle	SHORT $LN76@plotDistan
+	mov	esi, edi
+	jmp	SHORT $LN9@plotDistan
+$LN76@plotDistan:
+	xor	esi, esi
+$LN9@plotDistan:
+	mov	eax, DWORD PTR tv320[esp+28]
+	cdq
+	mov	edi, eax
+	mov	eax, DWORD PTR tv357[esp+28]
+	xor	edi, edx
+	sub	edi, edx
 	cdq
 	sub	eax, edx
-$LN59@plotDistan:
-	mov	esi, DWORD PTR _iX1$[esp+12]
 	sar	eax, 1
-	sub	esi, eax
+	add	eax, esi
+	cmp	edi, eax
+	jne	SHORT $LN77@plotDistan
 
-; 152  : 	int iHX2 = xToHexspaceX(iX1 + iWrappedDX, iY1 + iWrappedDY);
+; 165  : 	{
+; 166  : 		iWrappedDX -= (iWrappedDX > 0) - (iWrappedDX < 0);  // decrease regardless of polarity
 
-	lea	eax, DWORD PTR [edi+ebp]
-	pop	edi
+	xor	edx, edx
+	test	ecx, ecx
+	setl	dl
+	xor	eax, eax
+	test	ecx, ecx
+	setg	al
+	sub	edx, eax
+	add	ecx, edx
+$LN77@plotDistan:
+
+; 167  : 	}
+; 168  : #endif
+; 169  : 
+; 170  : 	// convert to hex-space coordinates - the coordinate system axes are E and NE (not orthogonal)
+; 171  : 	int iHX1 = xToHexspaceX(iX1, iY1);
+
+	mov	eax, DWORD PTR _iY1$[esp+24]
 	test	eax, eax
-	jge	SHORT $LN60@plotDistan
+	jge	SHORT $LN88@plotDistan
 	dec	eax
 	cdq
 	sub	eax, edx
-$LN60@plotDistan:
+$LN88@plotDistan:
+	mov	edi, DWORD PTR _iX1$[esp+24]
 
-; 153  : 
-; 154  : 	iDX = abs(dxWrap(iHX2 - iHX1));
+; 172  : 	int iHX2 = xToHexspaceX(iX1 + iWrappedDX, iY1 + iWrappedDY);
 
-	mov	edx, DWORD PTR [ebx+4020]
+	mov	edx, DWORD PTR _iY1$[esp+24]
+	sar	eax, 1
+	mov	esi, edi
+	sub	esi, eax
+	lea	eax, DWORD PTR [ebx+edx]
+	test	eax, eax
+	jge	SHORT $LN89@plotDistan
+	dec	eax
+	cdq
+	sub	eax, edx
+$LN89@plotDistan:
 	sar	eax, 1
 	sub	ecx, eax
-	add	ecx, DWORD PTR _iX1$[esp+8]
+	add	ecx, edi
+
+; 173  : 
+; 174  : #ifdef GAMECOREUTILS_FIX_PLOT_DISTANCE
+; 175  : 	// obvious bug
+; 176  : 	iDX = abs(iHX2 - iHX1);
+
 	sub	ecx, esi
-	cmp	BYTE PTR [ebx+4056], 0
-	je	SHORT $LN49@plotDistan
-	mov	eax, edx
-	shr	eax, 1
-	cmp	ecx, eax
-	jle	SHORT $LN51@plotDistan
 	mov	eax, ecx
-	sub	eax, edx
-	jmp	SHORT $LN53@plotDistan
-$LN51@plotDistan:
-	neg	eax
-	cmp	ecx, eax
-	lea	eax, DWORD PTR [edx+ecx]
-	jl	SHORT $LN53@plotDistan
-$LN49@plotDistan:
-	mov	eax, ecx
-$LN53@plotDistan:
 	cdq
 	xor	eax, edx
 	sub	eax, edx
 
-; 155  : 
-; 156  : #ifdef NQM_GAME_CORE_UTILS_OPTIMIZATIONS
-; 157  : 	if (((iHX2 - iHX1) ^ (iWrappedDY)) >= 0)  // the signs match
-; 158  : #else
-; 159  : 	if((iHX2 - iHX1 >= 0) == (iWrappedDY >= 0))  // the signs match
+; 177  : #else
+; 178  : 	iDX = abs(dxWrap(iHX2 - iHX1));
+; 179  : #endif
+; 180  : 
+; 181  : #ifdef NQM_GAME_CORE_UTILS_OPTIMIZATIONS
+; 182  : 	if (((iHX2 - iHX1) ^ (iWrappedDY)) >= 0)  // the signs match
+; 183  : #else
+; 184  : 	if((iHX2 - iHX1 >= 0) == (iWrappedDY >= 0))  // the signs match
 
 	xor	edx, edx
 	test	ecx, ecx
 	setge	dl
 	xor	ecx, ecx
-	test	ebp, ebp
+	test	ebx, ebx
 	setge	cl
+	pop	edi
 	pop	esi
 	pop	ebp
-	mov	DWORD PTR _iDX$[esp], eax
+	mov	DWORD PTR _iDX$[esp+12], eax
 	pop	ebx
 	cmp	edx, ecx
 	jne	SHORT $LN2@plotDistan
 
-; 160  : #endif
-; 161  : 	{
-; 162  : 		return iDX + iDY;
+; 185  : #endif
+; 186  : 	{
+; 187  : 		return iDX + iDY;
 
-	mov	edx, DWORD PTR _iDY$[esp-4]
+	mov	edx, DWORD PTR _iDY$[esp+12]
 	add	eax, edx
 
-; 170  : #endif
-; 171  : 	}
-; 172  : }
+; 195  : #endif
+; 196  : 	}
+; 197  : }
 
+	add	esp, 12					; 0000000cH
 	ret	0
 $LN2@plotDistan:
 
-; 163  : 	}
-; 164  : 	else
-; 165  : 	{
-; 166  : #ifdef NQM_FAST_COMP
-; 167  : 		return (MAX(iDX, iDY));
-; 168  : #else
-; 169  : 		return (std::max(iDX, iDY));
+; 188  : 	}
+; 189  : 	else
+; 190  : 	{
+; 191  : #ifdef NQM_FAST_COMP
+; 192  : 		return (MAX(iDX, iDY));
+; 193  : #else
+; 194  : 		return (std::max(iDX, iDY));
 
-	cmp	eax, DWORD PTR _iDY$[esp-4]
-	lea	eax, DWORD PTR _iDY$[esp-4]
-	jl	SHORT $LN58@plotDistan
-	lea	eax, DWORD PTR _iDX$[esp-4]
-$LN58@plotDistan:
+	cmp	eax, DWORD PTR _iDY$[esp+12]
+	lea	eax, DWORD PTR _iDY$[esp+12]
+	jl	SHORT $LN71@plotDistan
+	lea	eax, DWORD PTR _iDX$[esp+8]
+$LN71@plotDistan:
 	mov	eax, DWORD PTR [eax]
 
-; 170  : #endif
-; 171  : 	}
-; 172  : }
+; 195  : #endif
+; 196  : 	}
+; 197  : }
 
+	add	esp, 12					; 0000000cH
 	ret	0
 ?plotDistance@@YAHHHHH@Z ENDP				; plotDistance
 _TEXT	ENDS
@@ -2038,7 +2208,7 @@ _TEXT	SEGMENT
 
 	push	0
 	mov	DWORD PTR [esi+60], ecx
-	push	OFFSET $SG223423
+	push	OFFSET $SG223465
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	DWORD PTR [esi+64], 0
 	mov	DWORD PTR [esi+68], 0
@@ -2047,7 +2217,7 @@ _TEXT	SEGMENT
 ; 48   : 	m_iExpansionIndex = GC.getInfoTypeForString("FLAVOR_EXPANSION");
 
 	push	0
-	push	OFFSET $SG223424
+	push	OFFSET $SG223466
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	DWORD PTR [esi+76], eax
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
@@ -2055,7 +2225,7 @@ _TEXT	SEGMENT
 ; 49   : 	m_iNavalIndex = GC.getInfoTypeForString("FLAVOR_NAVAL");
 
 	push	0
-	push	OFFSET $SG223425
+	push	OFFSET $SG223467
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	DWORD PTR [esi+72], eax
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
@@ -2173,13 +2343,13 @@ $LL64@ComputeFla:
 ; 215  : 		if(strFlavor == "FLAVOR_GROWTH" ||
 ; 216  : 		        strFlavor == "FLAVOR_EXPANSION")
 
-	push	OFFSET $SG223496
+	push	OFFSET $SG223538
 	push	ebx
 	call	DWORD PTR __imp_??$?8DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PBD@Z
 	add	esp, 8
 	test	al, al
 	jne	$LN23@ComputeFla
-	push	OFFSET $SG223497
+	push	OFFSET $SG223539
 	push	ebx
 	call	DWORD PTR __imp_??$?8DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PBD@Z
 	add	esp, 8
@@ -2191,13 +2361,13 @@ $LL64@ComputeFla:
 ; 224  : 		else if(strFlavor == "FLAVOR_GOLD" ||
 ; 225  : 		        strFlavor == "FLAVOR_TILE_IMPROVEMENT")
 
-	push	OFFSET $SG223502
+	push	OFFSET $SG223544
 	push	ebx
 	call	DWORD PTR __imp_??$?8DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PBD@Z
 	add	esp, 8
 	test	al, al
 	jne	$LN19@ComputeFla
-	push	OFFSET $SG223503
+	push	OFFSET $SG223545
 	push	ebx
 	call	DWORD PTR __imp_??$?8DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PBD@Z
 	add	esp, 8
@@ -2206,13 +2376,13 @@ $LL64@ComputeFla:
 
 ; 234  : 		        strFlavor == "FLAVOR_WONDER")
 
-	push	OFFSET $SG223508
+	push	OFFSET $SG223550
 	push	ebx
 	call	DWORD PTR __imp_??$?8DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PBD@Z
 	add	esp, 8
 	test	al, al
 	jne	$LN15@ComputeFla
-	push	OFFSET $SG223509
+	push	OFFSET $SG223551
 	push	ebx
 	call	DWORD PTR __imp_??$?8DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PBD@Z
 	add	esp, 8
@@ -2221,7 +2391,7 @@ $LL64@ComputeFla:
 
 ; 242  : 		else if(strFlavor == "FLAVOR_SCIENCE")
 
-	push	OFFSET $SG223513
+	push	OFFSET $SG223555
 	push	ebx
 	call	DWORD PTR __imp_??$?8DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PBD@Z
 	add	esp, 8
@@ -2262,7 +2432,7 @@ $LN12@ComputeFla:
 
 ; 251  : 		else if(strFlavor == "FLAVOR_HAPPINESS")
 
-	push	OFFSET $SG223517
+	push	OFFSET $SG223559
 	push	ebx
 	call	DWORD PTR __imp_??$?8DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PBD@Z
 	add	esp, 8
@@ -2303,7 +2473,7 @@ $LN9@ComputeFla:
 
 ; 260  : 		else if(strFlavor == "FLAVOR_RELIGION")
 
-	push	OFFSET $SG223521
+	push	OFFSET $SG223563
 	push	ebx
 	call	DWORD PTR __imp_??$?8DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PBD@Z
 	add	esp, 8
@@ -2707,11 +2877,11 @@ _TEXT	SEGMENT
 ?GetID@CvPlayer@@QBE?AW4PlayerTypes@@XZ PROC		; CvPlayer::GetID, COMDAT
 ; _this$ = ecx
 
-; 1168 : 		return m_eID;
+; 1172 : 		return m_eID;
 
 	mov	eax, DWORD PTR [ecx+44]
 
-; 1169 : 	}
+; 1173 : 	}
 
 	ret	0
 ?GetID@CvPlayer@@QBE?AW4PlayerTypes@@XZ ENDP		; CvPlayer::GetID
@@ -2723,7 +2893,7 @@ _TEXT	SEGMENT
 ?getTeam@CvPlayer@@QBE?AW4TeamTypes@@XZ PROC		; CvPlayer::getTeam, COMDAT
 ; _this$ = ecx
 
-; 1178 : 		return CvPreGame::teamType(m_eID);
+; 1182 : 		return CvPreGame::teamType(m_eID);
 
 	mov	eax, DWORD PTR [ecx+44]
 	cmp	eax, 63					; 0000003fH
@@ -2732,16 +2902,16 @@ _TEXT	SEGMENT
 	mov	edx, DWORD PTR [ecx+4]
 	mov	eax, DWORD PTR [edx+eax*4]
 
-; 1179 : 	}
+; 1183 : 	}
 
 	ret	0
 
-; 1178 : 		return CvPreGame::teamType(m_eID);
+; 1182 : 		return CvPreGame::teamType(m_eID);
 
 $LN5@getTeam:
 	or	eax, -1
 
-; 1179 : 	}
+; 1183 : 	}
 
 	ret	0
 ?getTeam@CvPlayer@@QBE?AW4TeamTypes@@XZ ENDP		; CvPlayer::getTeam
@@ -2964,8 +3134,8 @@ _iDX$ = 16						; size = 4
 _iDY$ = 20						; size = 4
 ?plotXY@@YAPAVCvPlot@@HHHH@Z PROC			; plotXY, COMDAT
 
-; 214  : 	// convert the start coord to hex-space coordinates
-; 215  : 	int iStartHexX = xToHexspaceX(iX, iY);
+; 239  : 	// convert the start coord to hex-space coordinates
+; 240  : 	int iStartHexX = xToHexspaceX(iX, iY);
 
 	mov	ecx, DWORD PTR _iY$[esp-4]
 	test	ecx, ecx
@@ -2979,23 +3149,23 @@ $LN5@plotXY:
 $LN55@plotXY:
 	push	esi
 
-; 216  : 
-; 217  : 	int iPlotHexX = iStartHexX + iDX;
+; 241  : 
+; 242  : 	int iPlotHexX = iStartHexX + iDX;
 
 	mov	esi, DWORD PTR _iX$[esp]
 	sar	eax, 1
 	sub	esi, eax
 
-; 218  : 	int iPlotY = iY + iDY; // Y is the same in both coordinate systems
+; 243  : 	int iPlotY = iY + iDY; // Y is the same in both coordinate systems
 
 	mov	eax, DWORD PTR _iDY$[esp]
 	add	esi, DWORD PTR _iDX$[esp]
 	push	edi
 	lea	edi, DWORD PTR [ecx+eax]
 
-; 219  : 
-; 220  : 	// convert from hex-space coordinates to the storage array
-; 221  : 	iPlotHexX = hexspaceXToX(iPlotHexX, iPlotY);
+; 244  : 
+; 245  : 	// convert from hex-space coordinates to the storage array
+; 246  : 	iPlotHexX = hexspaceXToX(iPlotHexX, iPlotY);
 
 	test	edi, edi
 	jl	SHORT $LN9@plotXY
@@ -3009,8 +3179,8 @@ $LN56@plotXY:
 	sar	eax, 1
 	add	esi, eax
 
-; 222  : 
-; 223  : 	return GC.getMap().plot(iPlotHexX , iPlotY);
+; 247  : 
+; 248  : 	return GC.getMap().plot(iPlotHexX , iPlotY);
 
 	cmp	esi, -2147483647			; 80000001H
 	je	$LN13@plotXY
@@ -3076,12 +3246,12 @@ $LN37@plotXY:
 	mov	eax, ecx
 	pop	esi
 
-; 224  : }
+; 249  : }
 
 	ret	0
 
-; 222  : 
-; 223  : 	return GC.getMap().plot(iPlotHexX , iPlotY);
+; 247  : 
+; 248  : 	return GC.getMap().plot(iPlotHexX , iPlotY);
 
 $LN17@plotXY:
 	pop	ebx
@@ -3090,19 +3260,19 @@ $LN17@plotXY:
 	xor	eax, eax
 	pop	esi
 
-; 224  : }
+; 249  : }
 
 	ret	0
 
-; 222  : 
-; 223  : 	return GC.getMap().plot(iPlotHexX , iPlotY);
+; 247  : 
+; 248  : 	return GC.getMap().plot(iPlotHexX , iPlotY);
 
 $LN13@plotXY:
 	pop	edi
 	xor	eax, eax
 	pop	esi
 
-; 224  : }
+; 249  : }
 
 	ret	0
 ?plotXY@@YAPAVCvPlot@@HHHH@Z ENDP			; plotXY
@@ -3118,14 +3288,14 @@ _iDY$ = 20						; size = 4
 _iRange$ = 24						; size = 4
 ?plotXYWithRangeCheck@@YAPAVCvPlot@@HHHHH@Z PROC	; plotXYWithRangeCheck, COMDAT
 
-; 234  : #ifdef NQM_GAME_CORE_UTILS_OPTIMIZATIONS
-; 235  : 	// I'm assuming iDX and iDY are in hex-space
-; 236  : 	if (hexDistance(iDX, iDY) > iRange)
-; 237  : #else
-; 238  : 	int hexRange;
-; 239  : 
-; 240  : 	// I'm assuming iDX and iDY are in hex-space
-; 241  : 	if((iDX >= 0) == (iDY >= 0))  // the signs match
+; 259  : #ifdef NQM_GAME_CORE_UTILS_OPTIMIZATIONS
+; 260  : 	// I'm assuming iDX and iDY are in hex-space
+; 261  : 	if (hexDistance(iDX, iDY) > iRange)
+; 262  : #else
+; 263  : 	int hexRange;
+; 264  : 
+; 265  : 	// I'm assuming iDX and iDY are in hex-space
+; 266  : 	if((iDX >= 0) == (iDY >= 0))  // the signs match
 
 	mov	edx, DWORD PTR _iDX$[esp-4]
 	xor	eax, eax
@@ -3138,8 +3308,8 @@ _iRange$ = 24						; size = 4
 	setge	cl
 	cmp	eax, ecx
 
-; 242  : 	{
-; 243  : 		int iAbsDX = iDX >= 0 ? iDX : -iDX;
+; 267  : 	{
+; 268  : 		int iAbsDX = iDX >= 0 ? iDX : -iDX;
 
 	mov	ecx, edx
 	jne	SHORT $LN3@plotXYWith
@@ -3148,7 +3318,7 @@ _iRange$ = 24						; size = 4
 	neg	ecx
 $LN7@plotXYWith:
 
-; 244  : 		int iAbsDY = iDY >= 0 ? iDY : -iDY;
+; 269  : 		int iAbsDY = iDY >= 0 ? iDY : -iDY;
 
 	mov	eax, esi
 	test	esi, esi
@@ -3156,25 +3326,25 @@ $LN7@plotXYWith:
 	neg	eax
 $LN9@plotXYWith:
 
-; 245  : 		hexRange = iAbsDX + iAbsDY;
+; 270  : 		hexRange = iAbsDX + iAbsDY;
 
 	add	eax, ecx
 
-; 246  : 	}
-; 247  : 	else
+; 271  : 	}
+; 272  : 	else
 
 	jmp	SHORT $LN14@plotXYWith
 $LN3@plotXYWith:
 
-; 248  : 	{
-; 249  : 		int iAbsDX = iDX >= 0 ? iDX : -iDX;
+; 273  : 	{
+; 274  : 		int iAbsDX = iDX >= 0 ? iDX : -iDX;
 
 	test	edx, edx
 	jge	SHORT $LN11@plotXYWith
 	neg	ecx
 $LN11@plotXYWith:
 
-; 250  : 		int iAbsDY = iDY >= 0 ? iDY : -iDY;
+; 275  : 		int iAbsDY = iDY >= 0 ? iDY : -iDY;
 
 	mov	eax, esi
 	test	esi, esi
@@ -3182,35 +3352,35 @@ $LN11@plotXYWith:
 	neg	eax
 $LN13@plotXYWith:
 
-; 251  : 		hexRange = iAbsDX >= iAbsDY ? iAbsDX : iAbsDY;
+; 276  : 		hexRange = iAbsDX >= iAbsDY ? iAbsDX : iAbsDY;
 
 	cmp	ecx, eax
 	jl	SHORT $LN14@plotXYWith
 	mov	eax, ecx
 $LN14@plotXYWith:
 
-; 252  : 	}
-; 253  : 
-; 254  : 	if(hexRange > iRange)
+; 277  : 	}
+; 278  : 
+; 279  : 	if(hexRange > iRange)
 
 	cmp	eax, DWORD PTR _iRange$[esp]
 	jle	SHORT $LN1@plotXYWith
 
-; 255  : #endif
-; 256  : 	{
-; 257  : 		return NULL;
+; 280  : #endif
+; 281  : 	{
+; 282  : 		return NULL;
 
 	xor	eax, eax
 	pop	esi
 
-; 261  : }
+; 286  : }
 
 	ret	0
 $LN1@plotXYWith:
 
-; 258  : 	}
-; 259  : 
-; 260  : 	return plotXY(iX, iY, iDX, iDY);
+; 283  : 	}
+; 284  : 
+; 285  : 	return plotXY(iX, iY, iDX, iDY);
 
 	mov	eax, DWORD PTR _iX$[esp]
 	push	esi
@@ -3222,7 +3392,7 @@ $LN1@plotXYWith:
 	add	esp, 16					; 00000010H
 	pop	esi
 
-; 261  : }
+; 286  : }
 
 	ret	0
 ?plotXYWithRangeCheck@@YAPAVCvPlot@@HHHHH@Z ENDP	; plotXYWithRangeCheck
@@ -3313,12 +3483,12 @@ $LN31@CanFound:
 	test	al, al
 	jne	SHORT $LN29@CanFound
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
-	push	OFFSET $SG223444
+	push	OFFSET $SG223486
 	call	?isOption@CvGame@@QBE_NPBD@Z		; CvGame::isOption
 	test	al, al
 	jne	SHORT $LN30@CanFound
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
-	push	OFFSET $SG223445
+	push	OFFSET $SG223487
 	call	?isOption@CvGame@@QBE_NPBD@Z		; CvGame::isOption
 	test	al, al
 	je	SHORT $LN29@CanFound
@@ -3693,39 +3863,39 @@ EXTRN	?getCapitalCity@CvPlayer@@QAEPAVCvCity@@XZ:PROC	; CvPlayer::getCapitalCity
 ;	COMDAT ?PlotFoundValue@CvCitySiteEvaluator@@UAEHPAVCvPlot@@PAVCvPlayer@@W4YieldTypes@@_N@Z
 _TEXT	SEGMENT
 _bIsInca$ = -85						; size = 1
-_iDistance$223584 = -84					; size = 4
+_iDistance$223626 = -84					; size = 4
 _rtnValue$ = -80					; size = 4
 _iClosestEnemyCity$ = -76				; size = 4
 _iClosestCityOfMine$ = -72				; size = 4
-_iDX$223574 = -68					; size = 4
+_iDX$223616 = -68					; size = 4
 _iCelticForestCount$ = -64				; size = 4
 _iIroquoisForestCount$ = -60				; size = 4
 _iNaturalWonderCount$ = -56				; size = 4
 _iBrazilJungleCount$ = -52				; size = 4
 _iDesertCount$ = -48					; size = 4
 _iWetlandsCount$ = -44					; size = 4
-$T225110 = -40						; size = 4
+$T225177 = -40						; size = 4
 _iFaithValue$ = -40					; size = 4
-$T225106 = -36						; size = 4
+$T225173 = -36						; size = 4
 _iScienceValue$ = -36					; size = 4
-$T225102 = -32						; size = 4
+$T225169 = -32						; size = 4
 _iGoldValue$ = -32					; size = 4
-$T225098 = -28						; size = 4
+$T225165 = -28						; size = 4
 _iProductionValue$ = -28				; size = 4
 _iHappinessValue$ = -24					; size = 4
-$T225094 = -20						; size = 4
+$T225161 = -20						; size = 4
 _iFoodValue$ = -20					; size = 4
 _iStrategicValue$ = -16					; size = 4
-_iDY$223578 = -12					; size = 4
+_iDY$223620 = -12					; size = 4
 _iCapitalArea$ = -8					; size = 4
-$T225125 = -4						; size = 4
-$T225121 = -4						; size = 4
-_ePlotResource$223611 = -4				; size = 4
+$T225192 = -4						; size = 4
+$T225188 = -4						; size = 4
+_ePlotResource$223653 = -4				; size = 4
 _pPlot$ = 8						; size = 4
-_iSweetSpot$223686 = 12					; size = 4
+_iSweetSpot$223728 = 12					; size = 4
 _pPlayer$ = 12						; size = 4
-$T225046 = 16						; size = 4
-$T225045 = 16						; size = 4
+$T225113 = 16						; size = 4
+$T225112 = 16						; size = 4
 _eYield$ = 16						; size = 4
 ___formal$ = 20						; size = 1
 ?PlotFoundValue@CvCitySiteEvaluator@@UAEHPAVCvPlot@@PAVCvPlayer@@W4YieldTypes@@_N@Z PROC ; CvCitySiteEvaluator::PlotFoundValue, COMDAT
@@ -3871,7 +4041,7 @@ $LN98@PlotFoundV:
 ; 341  : 	ImprovementTypes eIncaImprovement = (ImprovementTypes)GC.getInfoTypeForString("IMPROVEMENT_TERRACE_FARM", true);  
 
 	push	1
-	push	OFFSET $SG223568
+	push	OFFSET $SG223610
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 
@@ -3921,8 +4091,8 @@ $LN95@PlotFoundV:
 ; 364  : 		for (int iDY = -7; iDY <= 7; iDY++)
 
 	mov	eax, -7					; fffffff9H
-	mov	DWORD PTR _iDX$223574[esp+104], -7	; fffffff9H
-	mov	DWORD PTR _iDY$223578[esp+104], eax
+	mov	DWORD PTR _iDX$223616[esp+104], -7	; fffffff9H
+	mov	DWORD PTR _iDY$223620[esp+104], eax
 	jmp	SHORT $LN91@PlotFoundV
 	npad	1
 $LL210@PlotFoundV:
@@ -3946,7 +4116,7 @@ $LL210@PlotFoundV:
 ; 364  : 		for (int iDY = -7; iDY <= 7; iDY++)
 
 	mov	eax, -7					; fffffff9H
-	mov	DWORD PTR _iDY$223578[esp+104], eax
+	mov	DWORD PTR _iDY$223620[esp+104], eax
 	jmp	SHORT $LN91@PlotFoundV
 	npad	1
 $LL211@PlotFoundV:
@@ -3960,7 +4130,7 @@ $LN91@PlotFoundV:
 	movsx	edi, WORD PTR [esi+2]
 	movsx	ebp, WORD PTR [esi]
 	push	eax
-	mov	eax, DWORD PTR _iDX$223574[esp+108]
+	mov	eax, DWORD PTR _iDX$223616[esp+108]
 	push	eax
 	push	edi
 	push	ebp
@@ -3995,7 +4165,7 @@ $LN91@PlotFoundV:
 ; 377  : 				if (iDistance <= 7)
 
 	cmp	edi, 7
-	mov	DWORD PTR _iDistance$223584[esp+104], edi
+	mov	DWORD PTR _iDistance$223626[esp+104], edi
 	jg	$LN90@PlotFoundV
 
 ; 378  : #endif
@@ -4097,7 +4267,7 @@ $LN83@PlotFoundV:
 ; 393  : 						{
 ; 394  : 							int iRingModifier = m_iRingModifier[iDistance];
 
-	mov	eax, DWORD PTR _iDistance$223584[esp+104]
+	mov	eax, DWORD PTR _iDistance$223626[esp+104]
 	mov	ebp, DWORD PTR [ebx+eax*4+40]
 
 ; 395  : 
@@ -4141,12 +4311,12 @@ $LN79@PlotFoundV:
 	mov	ecx, DWORD PTR _pPlayer$[esp+100]
 	mov	eax, DWORD PTR [ebx]
 	push	ecx
-	mov	DWORD PTR $T225094[esp+108], edx
+	mov	DWORD PTR $T225161[esp+108], edx
 	mov	edx, DWORD PTR [eax+24]
 	push	esi
 	mov	ecx, ebx
 	call	edx
-	imul	eax, DWORD PTR $T225094[esp+104]
+	imul	eax, DWORD PTR $T225161[esp+104]
 	imul	eax, ebp
 	mov	DWORD PTR _iFoodValue$[esp+104], eax
 	mov	eax, DWORD PTR _eYield$[esp+100]
@@ -4167,13 +4337,13 @@ $LN77@PlotFoundV:
 	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+7204
 	mov	edx, DWORD PTR [ebx]
 	mov	edx, DWORD PTR [edx+32]
-	mov	DWORD PTR $T225098[esp+104], eax
+	mov	DWORD PTR $T225165[esp+104], eax
 	mov	eax, DWORD PTR _pPlayer$[esp+100]
 	push	eax
 	push	esi
 	mov	ecx, ebx
 	call	edx
-	imul	eax, DWORD PTR $T225098[esp+104]
+	imul	eax, DWORD PTR $T225165[esp+104]
 	imul	eax, ebp
 	mov	DWORD PTR _iProductionValue$[esp+104], eax
 	mov	eax, DWORD PTR _eYield$[esp+100]
@@ -4194,13 +4364,13 @@ $LN75@PlotFoundV:
 	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+7208
 	mov	edx, DWORD PTR [ebx]
 	mov	edx, DWORD PTR [edx+36]
-	mov	DWORD PTR $T225102[esp+104], eax
+	mov	DWORD PTR $T225169[esp+104], eax
 	mov	eax, DWORD PTR _pPlayer$[esp+100]
 	push	eax
 	push	esi
 	mov	ecx, ebx
 	call	edx
-	imul	eax, DWORD PTR $T225102[esp+104]
+	imul	eax, DWORD PTR $T225169[esp+104]
 	imul	eax, ebp
 	mov	DWORD PTR _iGoldValue$[esp+104], eax
 	mov	eax, DWORD PTR _eYield$[esp+100]
@@ -4221,13 +4391,13 @@ $LN73@PlotFoundV:
 	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+7212
 	mov	edx, DWORD PTR [ebx]
 	mov	edx, DWORD PTR [edx+40]
-	mov	DWORD PTR $T225106[esp+104], eax
+	mov	DWORD PTR $T225173[esp+104], eax
 	mov	eax, DWORD PTR _pPlayer$[esp+100]
 	push	eax
 	push	esi
 	mov	ecx, ebx
 	call	edx
-	imul	eax, DWORD PTR $T225106[esp+104]
+	imul	eax, DWORD PTR $T225173[esp+104]
 	imul	eax, ebp
 	mov	DWORD PTR _iScienceValue$[esp+104], eax
 	mov	eax, DWORD PTR _eYield$[esp+100]
@@ -4248,13 +4418,13 @@ $LN71@PlotFoundV:
 	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+7216
 	mov	edx, DWORD PTR [ebx]
 	mov	edx, DWORD PTR [edx+44]
-	mov	DWORD PTR $T225110[esp+104], eax
+	mov	DWORD PTR $T225177[esp+104], eax
 	mov	eax, DWORD PTR _pPlayer$[esp+100]
 	push	eax
 	push	esi
 	mov	ecx, ebx
 	call	edx
-	imul	eax, DWORD PTR $T225110[esp+104]
+	imul	eax, DWORD PTR $T225177[esp+104]
 	imul	eax, ebp
 	mov	DWORD PTR _iFaithValue$[esp+104], eax
 $LN72@PlotFoundV:
@@ -4288,19 +4458,19 @@ $LN72@PlotFoundV:
 	mov	edx, DWORD PTR [edx+48]
 	mov	DWORD PTR _iHappinessValue$[esp+104], eax
 	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+7220
-	mov	DWORD PTR $T225121[esp+104], eax
+	mov	DWORD PTR $T225188[esp+104], eax
 	mov	eax, DWORD PTR _pPlayer$[esp+100]
 	push	eax
 	push	esi
 	mov	ecx, ebx
 	call	edx
 	mov	edi, eax
-	imul	edi, DWORD PTR $T225121[esp+104]
+	imul	edi, DWORD PTR $T225188[esp+104]
 	imul	edi, ebp
 
 ; 433  : 								if (iDistance)
 
-	cmp	DWORD PTR _iDistance$223584[esp+104], 0
+	cmp	DWORD PTR _iDistance$223626[esp+104], 0
 	je	SHORT $LN69@PlotFoundV
 
 ; 434  : 									iStrategicValue = ComputeStrategicValue(pLoopPlot, pPlayer, iDistance) * /*1*/ GC.getSETTLER_STRATEGIC_MULTIPLIER();  // the ring is included in the computation
@@ -4309,14 +4479,14 @@ $LN72@PlotFoundV:
 	mov	ecx, DWORD PTR _pPlayer$[esp+100]
 	mov	edx, DWORD PTR [ebx]
 	mov	edx, DWORD PTR [edx+52]
-	mov	DWORD PTR $T225125[esp+104], eax
-	mov	eax, DWORD PTR _iDistance$223584[esp+104]
+	mov	DWORD PTR $T225192[esp+104], eax
+	mov	eax, DWORD PTR _iDistance$223626[esp+104]
 	push	eax
 	push	ecx
 	push	esi
 	mov	ecx, ebx
 	call	edx
-	imul	eax, DWORD PTR $T225125[esp+104]
+	imul	eax, DWORD PTR $T225192[esp+104]
 	mov	DWORD PTR _iStrategicValue$[esp+104], eax
 $LN69@PlotFoundV:
 
@@ -4369,7 +4539,7 @@ $LN68@PlotFoundV:
 	call	?IsNaturalWonder@CvPlot@@QBE_NXZ	; CvPlot::IsNaturalWonder
 	test	al, al
 	je	SHORT $LN212@PlotFoundV
-	mov	eax, DWORD PTR _iDistance$223584[esp+104]
+	mov	eax, DWORD PTR _iDistance$223626[esp+104]
 	dec	eax
 	cmp	eax, 2
 	ja	SHORT $LN212@PlotFoundV
@@ -4427,7 +4597,7 @@ $LN213@PlotFoundV:
 	mov	ecx, esi
 	mov	ebp, eax
 	call	?getResourceType@CvPlot@@QBE?AW4ResourceTypes@@W4TeamTypes@@@Z ; CvPlot::getResourceType
-	mov	DWORD PTR _ePlotResource$223611[esp+104], eax
+	mov	DWORD PTR _ePlotResource$223653[esp+104], eax
 
 ; 474  : 
 ; 475  : 							if (ePlotFeature == FEATURE_FOREST)
@@ -4443,7 +4613,7 @@ $LN213@PlotFoundV:
 
 ; 480  : 									if (iDistance == 1)
 
-	cmp	DWORD PTR _iDistance$223584[esp+104], eax
+	cmp	DWORD PTR _iDistance$223626[esp+104], eax
 	jne	SHORT $LN55@PlotFoundV
 
 ; 481  : 									{
@@ -4473,7 +4643,7 @@ $LN65@PlotFoundV:
 ; 490  : 							{
 ; 491  : 								if (iDistance <= NUM_CITY_RINGS)
 
-	cmp	DWORD PTR _iDistance$223584[esp+104], 3
+	cmp	DWORD PTR _iDistance$223626[esp+104], 3
 	jg	SHORT $LN55@PlotFoundV
 
 ; 492  : 								{
@@ -4498,7 +4668,7 @@ $LN56@PlotFoundV:
 ; 497  : 							{
 ; 498  : 								if (iDistance <= NUM_CITY_RINGS)
 
-	cmp	DWORD PTR _iDistance$223584[esp+104], 3
+	cmp	DWORD PTR _iDistance$223626[esp+104], 3
 	jg	SHORT $LN55@PlotFoundV
 
 ; 499  : 								{
@@ -4521,7 +4691,7 @@ $LN55@PlotFoundV:
 
 	mov	eax, 1
 	je	SHORT $LN53@PlotFoundV
-	cmp	DWORD PTR _iDistance$223584[esp+104], eax
+	cmp	DWORD PTR _iDistance$223626[esp+104], eax
 	jg	SHORT $LN53@PlotFoundV
 
 ; 507  : 								{
@@ -4541,13 +4711,13 @@ $LN53@PlotFoundV:
 ; 513  : 							{
 ; 514  : 								if (iDistance <= NUM_CITY_RINGS)
 
-	cmp	DWORD PTR _iDistance$223584[esp+104], 3
+	cmp	DWORD PTR _iDistance$223626[esp+104], 3
 	jg	SHORT $LN50@PlotFoundV
 
 ; 515  : 								{
 ; 516  : 									if (ePlotResource == NO_RESOURCE)
 
-	cmp	DWORD PTR _ePlotResource$223611[esp+104], -1
+	cmp	DWORD PTR _ePlotResource$223653[esp+104], -1
 	jne	SHORT $LN50@PlotFoundV
 
 ; 517  : 									{
@@ -4574,7 +4744,7 @@ $LN50@PlotFoundV:
 ; 526  : 								{
 ; 527  : 									if (iDistance <= NUM_CITY_RINGS)
 
-	cmp	DWORD PTR _iDistance$223584[esp+104], 3
+	cmp	DWORD PTR _iDistance$223626[esp+104], 3
 	jg	SHORT $LN90@PlotFoundV
 
 ; 528  : 									{
@@ -4597,15 +4767,15 @@ $LN50@PlotFoundV:
 	imul	eax, DWORD PTR [ebx+100]
 	add	DWORD PTR _rtnValue$[esp+104], eax
 $LN90@PlotFoundV:
-	mov	eax, DWORD PTR _iDY$223578[esp+104]
+	mov	eax, DWORD PTR _iDY$223620[esp+104]
 	inc	eax
 	cmp	eax, 7
-	mov	DWORD PTR _iDY$223578[esp+104], eax
+	mov	DWORD PTR _iDY$223620[esp+104], eax
 	jle	$LL211@PlotFoundV
-	mov	eax, DWORD PTR _iDX$223574[esp+104]
+	mov	eax, DWORD PTR _iDX$223616[esp+104]
 	inc	eax
 	cmp	eax, 7
-	mov	DWORD PTR _iDX$223574[esp+104], eax
+	mov	DWORD PTR _iDX$223616[esp+104], eax
 	jle	$LL210@PlotFoundV
 
 ; 549  : 							}
@@ -4700,7 +4870,7 @@ $LN35@PlotFoundV:
 ; 578  : 	ImprovementTypes eBrazilImprovement = (ImprovementTypes)GC.getInfoTypeForString("IMPROVEMENT_BRAZILWOOD_CAMP", true);  
 
 	push	1
-	push	OFFSET $SG223645
+	push	OFFSET $SG223687
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 
@@ -4756,7 +4926,7 @@ $LN217@PlotFoundV:
 ; 593  : 	ImprovementTypes eMoroccoImprovement = (ImprovementTypes)GC.getInfoTypeForString("IMPROVEMENT_KASBAH", true);  
 
 	push	1
-	push	OFFSET $SG223653
+	push	OFFSET $SG223695
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 
@@ -4812,7 +4982,7 @@ $LN218@PlotFoundV:
 ; 608  : 	ImprovementTypes ePolderImprovement = (ImprovementTypes)GC.getInfoTypeForString("IMPROVEMENT_POLDER", true);  
 
 	push	1
-	push	OFFSET $SG223661
+	push	OFFSET $SG223703
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 
@@ -5080,7 +5250,7 @@ $LN19@PlotFoundV:
 
 ; 678  : 		iSweetSpot = max(4,iSweetSpot);
 
-	mov	DWORD PTR $T225045[esp+100], 4
+	mov	DWORD PTR $T225112[esp+100], 4
 	dec	ecx
 	cmp	eax, 4
 	setl	dl
@@ -5094,22 +5264,22 @@ $LN19@PlotFoundV:
 	setge	dl
 	dec	edx
 	lea	eax, DWORD PTR [ecx+edx+5]
-	mov	DWORD PTR _iSweetSpot$223686[esp+100], eax
+	mov	DWORD PTR _iSweetSpot$223728[esp+100], eax
 	cmp	eax, 4
-	lea	eax, DWORD PTR _iSweetSpot$223686[esp+100]
+	lea	eax, DWORD PTR _iSweetSpot$223728[esp+100]
 	jg	SHORT $LN199@PlotFoundV
-	lea	eax, DWORD PTR $T225045[esp+100]
+	lea	eax, DWORD PTR $T225112[esp+100]
 $LN199@PlotFoundV:
 	mov	eax, DWORD PTR [eax]
-	mov	DWORD PTR _iSweetSpot$223686[esp+100], eax
+	mov	DWORD PTR _iSweetSpot$223728[esp+100], eax
 
 ; 679  : 		iSweetSpot = min(6,iSweetSpot);
 
 	cmp	eax, 6
-	mov	DWORD PTR $T225046[esp+100], 6
-	lea	eax, DWORD PTR _iSweetSpot$223686[esp+100]
+	mov	DWORD PTR $T225113[esp+100], 6
+	lea	eax, DWORD PTR _iSweetSpot$223728[esp+100]
 	jl	SHORT $LN203@PlotFoundV
-	lea	eax, DWORD PTR $T225046[esp+100]
+	lea	eax, DWORD PTR $T225113[esp+100]
 $LN203@PlotFoundV:
 	mov	eax, DWORD PTR [eax]
 
@@ -6778,15 +6948,15 @@ EXTRN	?isGoody@CvPlot@@QBE_NW4TeamTypes@@@Z:PROC	; CvPlot::isGoody
 _TEXT	SEGMENT
 _iI$ = -16						; size = 4
 _iCelticForestCount$ = -12				; size = 4
-_iDistance$223901 = -8					; size = 4
-$T225721 = -4						; size = 4
-$T225717 = -4						; size = 4
-$T225713 = -4						; size = 4
-$T225709 = -4						; size = 4
-$T225705 = -4						; size = 4
-$T225701 = -4						; size = 4
-$T225697 = -4						; size = 4
-$T225693 = -4						; size = 4
+_iDistance$223943 = -8					; size = 4
+$T225788 = -4						; size = 4
+$T225784 = -4						; size = 4
+$T225780 = -4						; size = 4
+$T225776 = -4						; size = 4
+$T225772 = -4						; size = 4
+$T225768 = -4						; size = 4
+$T225764 = -4						; size = 4
+$T225760 = -4						; size = 4
 _pPlot$ = 8						; size = 4
 _pPlayer$ = 12						; size = 4
 ___formal$ = 16						; size = 4
@@ -6912,7 +7082,7 @@ $LL71@PlotFoundV@3:
 ; 1209 : 			if(iDistance > NUM_CITY_RINGS) continue;
 
 	cmp	eax, 3
-	mov	DWORD PTR _iDistance$223901[esp+32], eax
+	mov	DWORD PTR _iDistance$223943[esp+32], eax
 	jg	$LN16@PlotFoundV@3
 
 ; 1210 : 			int iRingModifier = m_iRingModifier[iDistance];
@@ -6934,11 +7104,11 @@ $LL71@PlotFoundV@3:
 	mov	edx, DWORD PTR [esi]
 	mov	edx, DWORD PTR [edx+24]
 	push	eax
-	mov	DWORD PTR $T225693[esp+36], ecx
+	mov	DWORD PTR $T225760[esp+36], ecx
 	push	edi
 	mov	ecx, esi
 	call	edx
-	imul	eax, DWORD PTR $T225693[esp+32]
+	imul	eax, DWORD PTR $T225760[esp+32]
 
 ; 1216 : 				rtnValue += iRingModifier * ComputeHappinessValue(pLoopPlot, pPlayer) * /*12*/ GC.getSTART_AREA_HAPPINESS_MULTIPLIER();
 
@@ -6947,13 +7117,13 @@ $LL71@PlotFoundV@3:
 	mov	edx, DWORD PTR [edx+28]
 	add	ebx, eax
 	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+7164
-	mov	DWORD PTR $T225697[esp+32], eax
+	mov	DWORD PTR $T225764[esp+32], eax
 	mov	eax, DWORD PTR _pPlayer$[esp+28]
 	push	eax
 	push	edi
 	mov	ecx, esi
 	call	edx
-	imul	eax, DWORD PTR $T225697[esp+32]
+	imul	eax, DWORD PTR $T225764[esp+32]
 
 ; 1217 : 				rtnValue += iRingModifier * ComputeProductionValue(pLoopPlot, pPlayer) * /*8*/ GC.getSTART_AREA_PRODUCTION_MULTIPLIER();
 
@@ -6962,13 +7132,13 @@ $LL71@PlotFoundV@3:
 	mov	edx, DWORD PTR [edx+32]
 	add	ebx, eax
 	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+7168
-	mov	DWORD PTR $T225701[esp+32], eax
+	mov	DWORD PTR $T225768[esp+32], eax
 	mov	eax, DWORD PTR _pPlayer$[esp+28]
 	push	eax
 	push	edi
 	mov	ecx, esi
 	call	edx
-	imul	eax, DWORD PTR $T225701[esp+32]
+	imul	eax, DWORD PTR $T225768[esp+32]
 
 ; 1218 : 				rtnValue += iRingModifier * ComputeGoldValue(pLoopPlot, pPlayer) * /*2*/ GC.getSTART_AREA_GOLD_MULTIPLIER();
 
@@ -6977,13 +7147,13 @@ $LL71@PlotFoundV@3:
 	mov	edx, DWORD PTR [edx+36]
 	add	ebx, eax
 	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+7172
-	mov	DWORD PTR $T225705[esp+32], eax
+	mov	DWORD PTR $T225772[esp+32], eax
 	mov	eax, DWORD PTR _pPlayer$[esp+28]
 	push	eax
 	push	edi
 	mov	ecx, esi
 	call	edx
-	imul	eax, DWORD PTR $T225705[esp+32]
+	imul	eax, DWORD PTR $T225772[esp+32]
 
 ; 1219 : 				rtnValue += iRingModifier * ComputeScienceValue(pLoopPlot, pPlayer) * /*1*/ GC.getSTART_AREA_SCIENCE_MULTIPLIER();
 
@@ -6992,13 +7162,13 @@ $LL71@PlotFoundV@3:
 	mov	edx, DWORD PTR [edx+40]
 	add	ebx, eax
 	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+7176
-	mov	DWORD PTR $T225709[esp+32], eax
+	mov	DWORD PTR $T225776[esp+32], eax
 	mov	eax, DWORD PTR _pPlayer$[esp+28]
 	push	eax
 	push	edi
 	mov	ecx, esi
 	call	edx
-	imul	eax, DWORD PTR $T225709[esp+32]
+	imul	eax, DWORD PTR $T225776[esp+32]
 
 ; 1220 : 				rtnValue += iRingModifier * ComputeFaithValue(pLoopPlot, pPlayer) * /*1*/ GC.getSTART_AREA_FAITH_MULTIPLIER();
 
@@ -7007,13 +7177,13 @@ $LL71@PlotFoundV@3:
 	mov	edx, DWORD PTR [edx+44]
 	add	ebx, eax
 	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+7180
-	mov	DWORD PTR $T225713[esp+32], eax
+	mov	DWORD PTR $T225780[esp+32], eax
 	mov	eax, DWORD PTR _pPlayer$[esp+28]
 	push	eax
 	push	edi
 	mov	ecx, esi
 	call	edx
-	imul	eax, DWORD PTR $T225713[esp+32]
+	imul	eax, DWORD PTR $T225780[esp+32]
 
 ; 1221 : 				rtnValue += iRingModifier * ComputeTradeableResourceValue(pLoopPlot, pPlayer) * /*1*/ GC.getSTART_AREA_RESOURCE_MULTIPLIER();
 
@@ -7022,13 +7192,13 @@ $LL71@PlotFoundV@3:
 	mov	edx, DWORD PTR [edx+48]
 	add	ebx, eax
 	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+7184
-	mov	DWORD PTR $T225717[esp+32], eax
+	mov	DWORD PTR $T225784[esp+32], eax
 	mov	eax, DWORD PTR _pPlayer$[esp+28]
 	push	eax
 	push	edi
 	mov	ecx, esi
 	call	edx
-	imul	eax, DWORD PTR $T225717[esp+32]
+	imul	eax, DWORD PTR $T225784[esp+32]
 
 ; 1222 : 				rtnValue += iRingModifier * ComputeStrategicValue(pLoopPlot, pPlayer, iDistance) * /*1*/ GC.getSTART_AREA_STRATEGIC_MULTIPLIER();
 
@@ -7038,17 +7208,17 @@ $LL71@PlotFoundV@3:
 	mov	edx, DWORD PTR [edx+52]
 	add	ebx, eax
 	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+7188
-	mov	DWORD PTR $T225721[esp+32], eax
-	mov	eax, DWORD PTR _iDistance$223901[esp+32]
+	mov	DWORD PTR $T225788[esp+32], eax
+	mov	eax, DWORD PTR _iDistance$223943[esp+32]
 	push	eax
 	push	ecx
 	push	edi
 	mov	ecx, esi
 	call	edx
-	imul	eax, DWORD PTR $T225721[esp+32]
+	imul	eax, DWORD PTR $T225788[esp+32]
 	imul	eax, ebp
 	add	ebx, eax
-	mov	eax, DWORD PTR _iDistance$223901[esp+32]
+	mov	eax, DWORD PTR _iDistance$223943[esp+32]
 $LN11@PlotFoundV@3:
 
 ; 1223 : 			}

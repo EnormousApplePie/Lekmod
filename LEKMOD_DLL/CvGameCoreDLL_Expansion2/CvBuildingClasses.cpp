@@ -3174,7 +3174,11 @@ void CvCityBuildings::SetNumFreeBuilding(BuildingTypes eIndex, int iNewValue)
 
 		if (iOldNumBuilding > 0 && iNewValue > 0)
 		{
+#ifndef AQUEDUCT_FIX
 			DoSellBuilding(eIndex);
+#else
+			SetNumRealBuilding(eIndex, 0);
+#endif
 			m_paiNumFreeBuilding[eIndex] = iNewValue;
 			m_pCity->processBuilding(eIndex, iNewValue, true);			
 		}

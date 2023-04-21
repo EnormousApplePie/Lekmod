@@ -10,124 +10,124 @@ INCLUDELIB MSVCRT
 INCLUDELIB OLDNAMES
 
 CONST	SEGMENT
-$SG218207 DB	'Instance no longer exists.', 00H
+$SG218245 DB	'Instance no longer exists.', 00H
 	ORG $+1
-$SG218212 DB	'IsNone', 00H
+$SG218250 DB	'IsNone', 00H
 	ORG $+1
-$SG218213 DB	'GetID', 00H
+$SG218251 DB	'GetID', 00H
 	ORG $+2
-$SG218214 DB	'GetName', 00H
-$SG218215 DB	'CanChangeCustomName', 00H
-$SG218216 DB	'IsInSession', 00H
-$SG218217 DB	'IsInSpecialSession', 00H
+$SG218252 DB	'GetName', 00H
+$SG218253 DB	'CanChangeCustomName', 00H
+$SG218254 DB	'IsInSession', 00H
+$SG218255 DB	'IsInSpecialSession', 00H
 	ORG $+1
-$SG218218 DB	'GetTurnsUntilSession', 00H
+$SG218256 DB	'GetTurnsUntilSession', 00H
 	ORG $+3
-$SG218219 DB	'GetTurnsUntilVictorySession', 00H
-$SG218220 DB	'CanProposeEnactAnyChoice', 00H
+$SG218257 DB	'GetTurnsUntilVictorySession', 00H
+$SG218258 DB	'CanProposeEnactAnyChoice', 00H
 	ORG $+3
-$SG218221 DB	'CanProposeEnact', 00H
-$SG218222 DB	'CanProposeRepeal', 00H
+$SG218259 DB	'CanProposeEnact', 00H
+$SG218260 DB	'CanProposeRepeal', 00H
 	ORG $+3
-$SG218223 DB	'IsProposed', 00H
+$SG218261 DB	'IsProposed', 00H
 	ORG $+1
-$SG218224 DB	'GetChoicesForDecision', 00H
+$SG218262 DB	'GetChoicesForDecision', 00H
 	ORG $+2
-$SG218225 DB	'GetTextForChoice', 00H
+$SG218263 DB	'GetTextForChoice', 00H
 	ORG $+3
-$SG218226 DB	'GetInactiveResolutions', 00H
+$SG218264 DB	'GetInactiveResolutions', 00H
 	ORG $+1
-$SG218227 DB	'GetEnactProposals', 00H
+$SG218265 DB	'GetEnactProposals', 00H
 	ORG $+2
-$SG218228 DB	'GetEnactProposalsOnHold', 00H
-$SG218229 DB	'GetRepealProposals', 00H
+$SG218266 DB	'GetEnactProposalsOnHold', 00H
+$SG218267 DB	'GetRepealProposals', 00H
 	ORG $+1
-$SG218230 DB	'GetRepealProposalsOnHold', 00H
+$SG218268 DB	'GetRepealProposalsOnHold', 00H
 	ORG $+3
-$SG218231 DB	'GetActiveResolutions', 00H
+$SG218269 DB	'GetActiveResolutions', 00H
 	ORG $+3
-$SG218232 DB	'IsMember', 00H
+$SG218270 DB	'IsMember', 00H
 	ORG $+3
-$SG218233 DB	'CanVote', 00H
-$SG218234 DB	'GetRemainingVotesForMember', 00H
+$SG218271 DB	'CanVote', 00H
+$SG218272 DB	'GetRemainingVotesForMember', 00H
 	ORG $+1
-$SG218235 DB	'GetSpentVotesForMember', 00H
+$SG218273 DB	'GetSpentVotesForMember', 00H
 	ORG $+1
-$SG218236 DB	'GetCoreVotesForMember', 00H
+$SG218274 DB	'GetCoreVotesForMember', 00H
 	ORG $+2
-$SG218237 DB	'CalculateStartingVotesForMember', 00H
-$SG218238 DB	'CanPropose', 00H
+$SG218275 DB	'CalculateStartingVotesForMember', 00H
+$SG218276 DB	'CanPropose', 00H
 	ORG $+1
-$SG218239 DB	'GetRemainingProposalsForMember', 00H
+$SG218277 DB	'GetRemainingProposalsForMember', 00H
 	ORG $+1
-$SG218240 DB	'IsHostMember', 00H
+$SG218278 DB	'IsHostMember', 00H
 	ORG $+3
-$SG218241 DB	'GetHostMember', 00H
+$SG218279 DB	'GetHostMember', 00H
 	ORG $+2
-$SG218242 DB	'IsUnitedNations', 00H
-$SG218243 DB	'IsProjectActive', 00H
-$SG218244 DB	'IsProjectComplete', 00H
+$SG218280 DB	'IsUnitedNations', 00H
+$SG218281 DB	'IsProjectActive', 00H
+$SG218282 DB	'IsProjectComplete', 00H
 	ORG $+2
-$SG218245 DB	'GetProjectCostPerPlayer', 00H
-$SG218246 DB	'GetProjectBuildingCostPerPlayer', 00H
-$SG218247 DB	'GetProjectCost', 00H
+$SG218283 DB	'GetProjectCostPerPlayer', 00H
+$SG218284 DB	'GetProjectBuildingCostPerPlayer', 00H
+$SG218285 DB	'GetProjectCost', 00H
 	ORG $+1
-$SG218248 DB	'GetMemberContribution', 00H
+$SG218286 DB	'GetMemberContribution', 00H
 	ORG $+2
-$SG218249 DB	'GetMemberContributionTier', 00H
+$SG218287 DB	'GetMemberContributionTier', 00H
 	ORG $+2
-$SG218250 DB	'GetContributionTierThreshold', 00H
+$SG218288 DB	'GetContributionTierThreshold', 00H
 	ORG $+3
-$SG218251 DB	'GetArtsyGreatPersonRateModifier', 00H
-$SG218252 DB	'GetScienceyGreatPersonRateModifier', 00H
+$SG218289 DB	'GetArtsyGreatPersonRateModifier', 00H
+$SG218290 DB	'GetScienceyGreatPersonRateModifier', 00H
 	ORG $+1
-$SG218253 DB	'GetResolutionName', 00H
+$SG218291 DB	'GetResolutionName', 00H
 	ORG $+2
-$SG218254 DB	'GetResolutionDetails', 00H
+$SG218292 DB	'GetResolutionDetails', 00H
 	ORG $+3
-$SG218255 DB	'GetMemberDetails', 00H
+$SG218293 DB	'GetMemberDetails', 00H
 	ORG $+3
-$SG218256 DB	'GetProjectDetails', 00H
+$SG218294 DB	'GetProjectDetails', 00H
 	ORG $+2
-$SG218257 DB	'GetProjectRewardTierDetails', 00H
-$SG218258 DB	'GetCurrentEffectsSummary', 00H
+$SG218295 DB	'GetProjectRewardTierDetails', 00H
+$SG218296 DB	'GetCurrentEffectsSummary', 00H
 	ORG $+3
-$SG218259 DB	'GetLeagueSplashTitle', 00H
+$SG218297 DB	'GetLeagueSplashTitle', 00H
 	ORG $+3
-$SG218260 DB	'GetLeagueSplashDescription', 00H
+$SG218298 DB	'GetLeagueSplashDescription', 00H
 	ORG $+1
-$SG218261 DB	'GetLeagueSplashThisEraDetails', 00H
+$SG218299 DB	'GetLeagueSplashThisEraDetails', 00H
 	ORG $+2
-$SG218262 DB	'GetLeagueSplashNextEraDetails', 00H
+$SG218300 DB	'GetLeagueSplashNextEraDetails', 00H
 	ORG $+2
-$SG218263 DB	'GetGreatPersonRateModifierDetails', 00H
+$SG218301 DB	'GetGreatPersonRateModifierDetails', 00H
 	ORG $+2
-$SG218266 DB	'League', 00H
+$SG218304 DB	'League', 00H
 	ORG $+1
-$SG218850 DB	'Type', 00H
+$SG218888 DB	'Type', 00H
 	ORG $+3
-$SG218890 DB	'TargetResolutionID', 00H
+$SG218928 DB	'TargetResolutionID', 00H
 	ORG $+1
-$SG218891 DB	'RepealDecision', 00H
+$SG218929 DB	'RepealDecision', 00H
 	ORG $+1
-$SG218905 DB	'TargetResolutionID', 00H
+$SG218943 DB	'TargetResolutionID', 00H
 	ORG $+1
-$SG218906 DB	'RepealDecision', 00H
+$SG218944 DB	'RepealDecision', 00H
 	ORG $+1
-$SG218920 DB	'TurnEnacted', 00H
-$SG219205 DB	'ID', 00H
+$SG218958 DB	'TurnEnacted', 00H
+$SG219243 DB	'ID', 00H
 	ORG $+1
-$SG219206 DB	'Type', 00H
+$SG219244 DB	'Type', 00H
 	ORG $+3
-$SG219207 DB	'VoterDecision', 00H
+$SG219245 DB	'VoterDecision', 00H
 	ORG $+2
-$SG219208 DB	'ProposerDecision', 00H
+$SG219246 DB	'ProposerDecision', 00H
 	ORG $+3
-$SG219214 DB	'ProposalPlayer', 00H
+$SG219252 DB	'ProposalPlayer', 00H
 	ORG $+1
-$SG219383 DB	'__instance', 00H
+$SG219421 DB	'__instance', 00H
 	ORG $+5
-$SG219389 DB	'Not a valid instance.  Either the instance is NULL or yo'
+$SG219427 DB	'Not a valid instance.  Either the instance is NULL or yo'
 	DB	'u used ''.'' instead of '':''.', 00H
 CONST	ENDS
 PUBLIC	?HandleMissingInstance@CvLuaLeague@@SAXPAUlua_State@@@Z ; CvLuaLeague::HandleMissingInstance
@@ -142,7 +142,7 @@ _L$ = 8							; size = 4
 ; 25   : 	luaL_error(L, "Instance no longer exists.");
 
 	mov	eax, DWORD PTR _L$[esp-4]
-	push	OFFSET $SG218207
+	push	OFFSET $SG218245
 	push	eax
 	call	_luaL_error
 	add	esp, 8
@@ -160,7 +160,7 @@ _TEXT	SEGMENT
 
 ; 94   : 	return "League";
 
-	mov	eax, OFFSET $SG218266
+	mov	eax, OFFSET $SG218304
 
 ; 95   : }
 
@@ -201,7 +201,7 @@ _resolution$ = 16					; size = 4
 ; 831  : 	lua_setfield(L, iTop, "ID");
 
 	mov	ebx, DWORD PTR _iTop$[esp+16]
-	push	OFFSET $SG219205
+	push	OFFSET $SG219243
 	push	ebx
 	push	esi
 	call	_lua_setfield
@@ -218,7 +218,7 @@ _resolution$ = 16					; size = 4
 
 ; 834  : 	lua_setfield(L, iTop, "Type");
 
-	push	OFFSET $SG219206
+	push	OFFSET $SG219244
 	push	ebx
 	push	esi
 	call	_lua_setfield
@@ -239,7 +239,7 @@ _resolution$ = 16					; size = 4
 
 ; 837  : 	lua_setfield(L, iTop, "VoterDecision");
 
-	push	OFFSET $SG219207
+	push	OFFSET $SG219245
 	push	ebx
 	push	esi
 	call	_lua_setfield
@@ -260,7 +260,7 @@ _resolution$ = 16					; size = 4
 
 ; 840  : 	lua_setfield(L, iTop, "ProposerDecision");
 
-	push	OFFSET $SG219208
+	push	OFFSET $SG219246
 	push	ebx
 	push	esi
 	call	_lua_setfield
@@ -317,7 +317,7 @@ _proposal$ = 16						; size = 4
 
 ; 854  : 	lua_setfield(L, iTop, "ProposalPlayer");
 
-	push	OFFSET $SG219214
+	push	OFFSET $SG219252
 	push	ebx
 	push	esi
 	call	_lua_setfield
@@ -835,7 +835,7 @@ _bErrorOnFail$ = 16					; size = 1
 ; 134  : 		lua_getfield(L, idx, "__instance");
 
 	mov	ecx, DWORD PTR _idx$[esp+12]
-	push	OFFSET $SG219383
+	push	OFFSET $SG219421
 	push	ecx
 	push	esi
 	call	_lua_getfield
@@ -896,7 +896,7 @@ $LN3@GetInstanc:
 
 ; 150  : 			luaL_error(L, "Not a valid instance.  Either the instance is NULL or you used '.' instead of ':'.");
 
-	push	OFFSET $SG219389
+	push	OFFSET $SG219427
 	push	esi
 	call	_luaL_error
 	add	esp, 8
@@ -904,7 +904,7 @@ $LN1@GetInstanc:
 
 ; 151  : 		Derived::HandleMissingInstance(L);
 
-	push	OFFSET $SG218207
+	push	OFFSET $SG218245
 	push	esi
 	call	_luaL_error
 	add	esp, 8
@@ -1286,7 +1286,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lIsNone
-	push	OFFSET $SG219383
+	push	OFFSET $SG219421
 	push	edi
 	push	esi
 	call	_lua_getfield
@@ -1311,7 +1311,7 @@ $LN5@lIsNone:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN10@lIsNone
-	push	OFFSET $SG218207
+	push	OFFSET $SG218245
 	push	esi
 	call	_luaL_error
 	add	esp, 8
@@ -1370,7 +1370,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lGetID
-	push	OFFSET $SG219383
+	push	OFFSET $SG219421
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -1395,10 +1395,10 @@ $LN5@lGetID:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN10@lGetID
-	push	OFFSET $SG219389
+	push	OFFSET $SG219427
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG218207
+	push	OFFSET $SG218245
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -1488,7 +1488,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN7@lGetName
-	push	OFFSET $SG219383
+	push	OFFSET $SG219421
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -1513,10 +1513,10 @@ $LN7@lGetName:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lGetName
-	push	OFFSET $SG219389
+	push	OFFSET $SG219427
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG218207
+	push	OFFSET $SG218245
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -1617,7 +1617,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lCanChange
-	push	OFFSET $SG219383
+	push	OFFSET $SG219421
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -1642,10 +1642,10 @@ $LN5@lCanChange:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN10@lCanChange
-	push	OFFSET $SG219389
+	push	OFFSET $SG219427
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG218207
+	push	OFFSET $SG218245
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -1715,7 +1715,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lIsInSessi
-	push	OFFSET $SG219383
+	push	OFFSET $SG219421
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -1740,10 +1740,10 @@ $LN5@lIsInSessi:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN10@lIsInSessi
-	push	OFFSET $SG219389
+	push	OFFSET $SG219427
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG218207
+	push	OFFSET $SG218245
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -1805,7 +1805,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lIsInSpeci
-	push	OFFSET $SG219383
+	push	OFFSET $SG219421
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -1830,10 +1830,10 @@ $LN5@lIsInSpeci:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN10@lIsInSpeci
-	push	OFFSET $SG219389
+	push	OFFSET $SG219427
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG218207
+	push	OFFSET $SG218245
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -1895,7 +1895,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lGetTurnsU
-	push	OFFSET $SG219383
+	push	OFFSET $SG219421
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -1920,10 +1920,10 @@ $LN5@lGetTurnsU:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN10@lGetTurnsU
-	push	OFFSET $SG219389
+	push	OFFSET $SG219427
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG218207
+	push	OFFSET $SG218245
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -1984,7 +1984,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lGetTurnsU@2
-	push	OFFSET $SG219383
+	push	OFFSET $SG219421
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -2009,10 +2009,10 @@ $LN5@lGetTurnsU@2:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN10@lGetTurnsU@2
-	push	OFFSET $SG219389
+	push	OFFSET $SG219427
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG218207
+	push	OFFSET $SG218245
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -2073,7 +2073,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lCanPropos
-	push	OFFSET $SG219383
+	push	OFFSET $SG219421
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -2098,10 +2098,10 @@ $LN5@lCanPropos:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN10@lCanPropos
-	push	OFFSET $SG219389
+	push	OFFSET $SG219427
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG218207
+	push	OFFSET $SG218245
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -2179,7 +2179,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lCanPropos@2
-	push	OFFSET $SG219383
+	push	OFFSET $SG219421
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -2204,10 +2204,10 @@ $LN5@lCanPropos@2:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN10@lCanPropos@2
-	push	OFFSET $SG219389
+	push	OFFSET $SG219427
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG218207
+	push	OFFSET $SG218245
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -2294,7 +2294,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lCanPropos@3
-	push	OFFSET $SG219383
+	push	OFFSET $SG219421
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -2319,10 +2319,10 @@ $LN5@lCanPropos@3:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN10@lCanPropos@3
-	push	OFFSET $SG219389
+	push	OFFSET $SG219427
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG218207
+	push	OFFSET $SG218245
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -2404,7 +2404,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lIsPropose
-	push	OFFSET $SG219383
+	push	OFFSET $SG219421
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -2429,10 +2429,10 @@ $LN5@lIsPropose:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN10@lIsPropose
-	push	OFFSET $SG219389
+	push	OFFSET $SG219427
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG218207
+	push	OFFSET $SG218245
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -2538,7 +2538,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN6@lGetTextFo
-	push	OFFSET $SG219383
+	push	OFFSET $SG219421
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -2563,10 +2563,10 @@ $LN6@lGetTextFo:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN11@lGetTextFo
-	push	OFFSET $SG219389
+	push	OFFSET $SG219427
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG218207
+	push	OFFSET $SG218245
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -2663,7 +2663,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lIsMember
-	push	OFFSET $SG219383
+	push	OFFSET $SG219421
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -2688,10 +2688,10 @@ $LN5@lIsMember:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN10@lIsMember
-	push	OFFSET $SG219389
+	push	OFFSET $SG219427
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG218207
+	push	OFFSET $SG218245
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -2761,7 +2761,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lCanVote
-	push	OFFSET $SG219383
+	push	OFFSET $SG219421
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -2786,10 +2786,10 @@ $LN5@lCanVote:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN10@lCanVote
-	push	OFFSET $SG219389
+	push	OFFSET $SG219427
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG218207
+	push	OFFSET $SG218245
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -2859,7 +2859,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lGetRemain
-	push	OFFSET $SG219383
+	push	OFFSET $SG219421
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -2884,10 +2884,10 @@ $LN5@lGetRemain:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN10@lGetRemain
-	push	OFFSET $SG219389
+	push	OFFSET $SG219427
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG218207
+	push	OFFSET $SG218245
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -2956,7 +2956,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lGetSpentV
-	push	OFFSET $SG219383
+	push	OFFSET $SG219421
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -2981,10 +2981,10 @@ $LN5@lGetSpentV:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN10@lGetSpentV
-	push	OFFSET $SG219389
+	push	OFFSET $SG219427
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG218207
+	push	OFFSET $SG218245
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -3053,7 +3053,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lGetCoreVo
-	push	OFFSET $SG219383
+	push	OFFSET $SG219421
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -3078,10 +3078,10 @@ $LN5@lGetCoreVo:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN10@lGetCoreVo
-	push	OFFSET $SG219389
+	push	OFFSET $SG219427
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG218207
+	push	OFFSET $SG218245
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -3150,7 +3150,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lCalculate
-	push	OFFSET $SG219383
+	push	OFFSET $SG219421
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -3175,10 +3175,10 @@ $LN5@lCalculate:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN10@lCalculate
-	push	OFFSET $SG219389
+	push	OFFSET $SG219427
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG218207
+	push	OFFSET $SG218245
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -3248,7 +3248,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lCanPropos@4
-	push	OFFSET $SG219383
+	push	OFFSET $SG219421
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -3273,10 +3273,10 @@ $LN5@lCanPropos@4:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN10@lCanPropos@4
-	push	OFFSET $SG219389
+	push	OFFSET $SG219427
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG218207
+	push	OFFSET $SG218245
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -3346,7 +3346,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lGetRemain@2
-	push	OFFSET $SG219383
+	push	OFFSET $SG219421
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -3371,10 +3371,10 @@ $LN5@lGetRemain@2:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN10@lGetRemain@2
-	push	OFFSET $SG219389
+	push	OFFSET $SG219427
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG218207
+	push	OFFSET $SG218245
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -3443,7 +3443,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lIsHostMem
-	push	OFFSET $SG219383
+	push	OFFSET $SG219421
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -3468,10 +3468,10 @@ $LN5@lIsHostMem:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN10@lIsHostMem
-	push	OFFSET $SG219389
+	push	OFFSET $SG219427
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG218207
+	push	OFFSET $SG218245
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -3541,7 +3541,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lGetHostMe
-	push	OFFSET $SG219383
+	push	OFFSET $SG219421
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -3566,10 +3566,10 @@ $LN5@lGetHostMe:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN10@lGetHostMe
-	push	OFFSET $SG219389
+	push	OFFSET $SG219427
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG218207
+	push	OFFSET $SG218245
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -3630,7 +3630,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lIsUnitedN
-	push	OFFSET $SG219383
+	push	OFFSET $SG219421
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -3655,10 +3655,10 @@ $LN5@lIsUnitedN:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN10@lIsUnitedN
-	push	OFFSET $SG219389
+	push	OFFSET $SG219427
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG218207
+	push	OFFSET $SG218245
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -3720,7 +3720,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lIsProject
-	push	OFFSET $SG219383
+	push	OFFSET $SG219421
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -3745,10 +3745,10 @@ $LN5@lIsProject:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN10@lIsProject
-	push	OFFSET $SG219389
+	push	OFFSET $SG219427
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG218207
+	push	OFFSET $SG218245
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -3818,7 +3818,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lIsProject@2
-	push	OFFSET $SG219383
+	push	OFFSET $SG219421
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -3843,10 +3843,10 @@ $LN5@lIsProject@2:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN10@lIsProject@2
-	push	OFFSET $SG219389
+	push	OFFSET $SG219427
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG218207
+	push	OFFSET $SG218245
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -3916,7 +3916,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lGetProjec
-	push	OFFSET $SG219383
+	push	OFFSET $SG219421
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -3941,10 +3941,10 @@ $LN5@lGetProjec:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN10@lGetProjec
-	push	OFFSET $SG219389
+	push	OFFSET $SG219427
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG218207
+	push	OFFSET $SG218245
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -4013,7 +4013,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lGetProjec@2
-	push	OFFSET $SG219383
+	push	OFFSET $SG219421
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -4038,10 +4038,10 @@ $LN5@lGetProjec@2:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN10@lGetProjec@2
-	push	OFFSET $SG219389
+	push	OFFSET $SG219427
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG218207
+	push	OFFSET $SG218245
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -4110,7 +4110,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lGetProjec@3
-	push	OFFSET $SG219383
+	push	OFFSET $SG219421
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -4135,10 +4135,10 @@ $LN5@lGetProjec@3:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN10@lGetProjec@3
-	push	OFFSET $SG219389
+	push	OFFSET $SG219427
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG218207
+	push	OFFSET $SG218245
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -4207,7 +4207,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lGetMember
-	push	OFFSET $SG219383
+	push	OFFSET $SG219421
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -4232,10 +4232,10 @@ $LN5@lGetMember:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN10@lGetMember
-	push	OFFSET $SG219389
+	push	OFFSET $SG219427
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG218207
+	push	OFFSET $SG218245
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -4312,7 +4312,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lGetMember@2
-	push	OFFSET $SG219383
+	push	OFFSET $SG219421
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -4337,10 +4337,10 @@ $LN5@lGetMember@2:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN10@lGetMember@2
-	push	OFFSET $SG219389
+	push	OFFSET $SG219427
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG218207
+	push	OFFSET $SG218245
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -4421,7 +4421,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lGetContri
-	push	OFFSET $SG219383
+	push	OFFSET $SG219421
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -4446,10 +4446,10 @@ $LN5@lGetContri:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN10@lGetContri
-	push	OFFSET $SG219389
+	push	OFFSET $SG219427
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG218207
+	push	OFFSET $SG218245
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -4531,7 +4531,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lGetArtsyG
-	push	OFFSET $SG219383
+	push	OFFSET $SG219421
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -4556,10 +4556,10 @@ $LN5@lGetArtsyG:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN10@lGetArtsyG
-	push	OFFSET $SG219389
+	push	OFFSET $SG219427
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG218207
+	push	OFFSET $SG218245
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -4620,7 +4620,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lGetScienc
-	push	OFFSET $SG219383
+	push	OFFSET $SG219421
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -4645,10 +4645,10 @@ $LN5@lGetScienc:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN10@lGetScienc
-	push	OFFSET $SG219389
+	push	OFFSET $SG219427
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG218207
+	push	OFFSET $SG218245
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -4733,7 +4733,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN6@lGetResolu
-	push	OFFSET $SG219383
+	push	OFFSET $SG219421
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -4758,10 +4758,10 @@ $LN6@lGetResolu:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN11@lGetResolu
-	push	OFFSET $SG219389
+	push	OFFSET $SG219427
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG218207
+	push	OFFSET $SG218245
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -4902,7 +4902,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN6@lGetResolu@2
-	push	OFFSET $SG219383
+	push	OFFSET $SG219421
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -4927,10 +4927,10 @@ $LN6@lGetResolu@2:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN11@lGetResolu@2
-	push	OFFSET $SG219389
+	push	OFFSET $SG219427
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG218207
+	push	OFFSET $SG218245
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -5066,7 +5066,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN6@lGetMember@3
-	push	OFFSET $SG219383
+	push	OFFSET $SG219421
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -5091,10 +5091,10 @@ $LN6@lGetMember@3:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN11@lGetMember@3
-	push	OFFSET $SG219389
+	push	OFFSET $SG219427
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG218207
+	push	OFFSET $SG218245
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -5214,7 +5214,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN6@lGetProjec@4
-	push	OFFSET $SG219383
+	push	OFFSET $SG219421
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -5239,10 +5239,10 @@ $LN6@lGetProjec@4:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN11@lGetProjec@4
-	push	OFFSET $SG219389
+	push	OFFSET $SG219427
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG218207
+	push	OFFSET $SG218245
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -5362,7 +5362,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN6@lGetProjec@5
-	push	OFFSET $SG219383
+	push	OFFSET $SG219421
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -5387,10 +5387,10 @@ $LN6@lGetProjec@5:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN11@lGetProjec@5
-	push	OFFSET $SG219389
+	push	OFFSET $SG219427
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG218207
+	push	OFFSET $SG218245
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -5519,7 +5519,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN6@lGetLeague
-	push	OFFSET $SG219383
+	push	OFFSET $SG219421
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -5544,10 +5544,10 @@ $LN6@lGetLeague:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN11@lGetLeague
-	push	OFFSET $SG219389
+	push	OFFSET $SG219427
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG218207
+	push	OFFSET $SG218245
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -5671,7 +5671,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN6@lGetLeague@2
-	push	OFFSET $SG219383
+	push	OFFSET $SG219421
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -5696,10 +5696,10 @@ $LN6@lGetLeague@2:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN11@lGetLeague@2
-	push	OFFSET $SG219389
+	push	OFFSET $SG219427
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG218207
+	push	OFFSET $SG218245
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -5823,7 +5823,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN6@lGetLeague@3
-	push	OFFSET $SG219383
+	push	OFFSET $SG219421
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -5848,10 +5848,10 @@ $LN6@lGetLeague@3:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN11@lGetLeague@3
-	push	OFFSET $SG219389
+	push	OFFSET $SG219427
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG218207
+	push	OFFSET $SG218245
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -5975,7 +5975,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN6@lGetLeague@4
-	push	OFFSET $SG219383
+	push	OFFSET $SG219421
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -6000,10 +6000,10 @@ $LN6@lGetLeague@4:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN11@lGetLeague@4
-	push	OFFSET $SG219389
+	push	OFFSET $SG219427
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG218207
+	push	OFFSET $SG218245
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -6126,7 +6126,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN6@lGetGreatP
-	push	OFFSET $SG219383
+	push	OFFSET $SG219421
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -6151,10 +6151,10 @@ $LN6@lGetGreatP:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN11@lGetGreatP
-	push	OFFSET $SG219389
+	push	OFFSET $SG219427
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG218207
+	push	OFFSET $SG218245
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -7084,7 +7084,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN44@lGetEnactP
-	push	OFFSET $SG219383
+	push	OFFSET $SG219421
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -7109,10 +7109,10 @@ $LN44@lGetEnactP:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN14@lGetEnactP
-	push	OFFSET $SG219389
+	push	OFFSET $SG219427
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG218207
+	push	OFFSET $SG218245
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -7183,7 +7183,7 @@ $LL45@lGetEnactP:
 	push	eax
 	push	esi
 	call	_lua_pushinteger
-	push	OFFSET $SG219214
+	push	OFFSET $SG219252
 	push	ebx
 	push	esi
 	call	_lua_setfield
@@ -7304,7 +7304,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN44@lGetEnactP@2
-	push	OFFSET $SG219383
+	push	OFFSET $SG219421
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -7329,10 +7329,10 @@ $LN44@lGetEnactP@2:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN14@lGetEnactP@2
-	push	OFFSET $SG219389
+	push	OFFSET $SG219427
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG218207
+	push	OFFSET $SG218245
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -7403,7 +7403,7 @@ $LL45@lGetEnactP@2:
 	push	eax
 	push	esi
 	call	_lua_pushinteger
-	push	OFFSET $SG219214
+	push	OFFSET $SG219252
 	push	ebx
 	push	esi
 	call	_lua_setfield
@@ -7526,7 +7526,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN44@lGetRepeal
-	push	OFFSET $SG219383
+	push	OFFSET $SG219421
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -7551,10 +7551,10 @@ $LN44@lGetRepeal:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN14@lGetRepeal
-	push	OFFSET $SG219389
+	push	OFFSET $SG219427
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG218207
+	push	OFFSET $SG218245
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -7625,7 +7625,7 @@ $LL45@lGetRepeal:
 	push	eax
 	push	esi
 	call	_lua_pushinteger
-	push	OFFSET $SG219214
+	push	OFFSET $SG219252
 	push	ebx
 	push	esi
 	call	_lua_setfield
@@ -7642,7 +7642,7 @@ $LL45@lGetRepeal:
 
 ; 372  : 		lua_setfield(L, t, "TargetResolutionID");
 
-	push	OFFSET $SG218890
+	push	OFFSET $SG218928
 	push	ebx
 	push	esi
 	call	_lua_setfield
@@ -7663,7 +7663,7 @@ $LL45@lGetRepeal:
 
 ; 375  : 		lua_setfield(L, t, "RepealDecision");
 
-	push	OFFSET $SG218891
+	push	OFFSET $SG218929
 	push	ebx
 	push	esi
 	call	_lua_setfield
@@ -7785,7 +7785,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN44@lGetRepeal@2
-	push	OFFSET $SG219383
+	push	OFFSET $SG219421
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -7810,10 +7810,10 @@ $LN44@lGetRepeal@2:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN14@lGetRepeal@2
-	push	OFFSET $SG219389
+	push	OFFSET $SG219427
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG218207
+	push	OFFSET $SG218245
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -7884,7 +7884,7 @@ $LL45@lGetRepeal@2:
 	push	eax
 	push	esi
 	call	_lua_pushinteger
-	push	OFFSET $SG219214
+	push	OFFSET $SG219252
 	push	ebx
 	push	esi
 	call	_lua_setfield
@@ -7901,7 +7901,7 @@ $LL45@lGetRepeal@2:
 
 ; 404  : 		lua_setfield(L, t, "TargetResolutionID");
 
-	push	OFFSET $SG218905
+	push	OFFSET $SG218943
 	push	ebx
 	push	esi
 	call	_lua_setfield
@@ -7922,7 +7922,7 @@ $LL45@lGetRepeal@2:
 
 ; 407  : 		lua_setfield(L, t, "RepealDecision");
 
-	push	OFFSET $SG218906
+	push	OFFSET $SG218944
 	push	ebx
 	push	esi
 	call	_lua_setfield
@@ -8047,7 +8047,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN42@lGetActive
-	push	OFFSET $SG219383
+	push	OFFSET $SG219421
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -8072,10 +8072,10 @@ $LN42@lGetActive:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN14@lGetActive
-	push	OFFSET $SG219389
+	push	OFFSET $SG219427
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG218207
+	push	OFFSET $SG218245
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -8153,7 +8153,7 @@ $LL43@lGetActive:
 
 ; 436  : 		lua_setfield(L, t, "TurnEnacted");
 
-	push	OFFSET $SG218920
+	push	OFFSET $SG218958
 	push	ebx
 	push	esi
 	call	_lua_setfield
@@ -8318,7 +8318,7 @@ EXTRN	?GetChoicesForDecision@CvLeague@@QAE?AV?$vector@HV?$allocator@H@std@@@std@
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredll_expansion2\lua\cvlualeague.cpp
 ;	COMDAT ?lGetChoicesForDecision@CvLuaLeague@@KAHPAUlua_State@@@Z
 _TEXT	SEGMENT
-_pkInstance$221822 = -24				; size = 4
+_pkInstance$221860 = -24				; size = 4
 _eDecider$ = -20					; size = 4
 _v$ = -16						; size = 16
 _L$ = 8							; size = 4
@@ -8341,12 +8341,12 @@ _L$ = 8							; size = 4
 	push	esi
 	mov	edi, eax
 	mov	bl, 1
-	mov	DWORD PTR _pkInstance$221822[esp+52], 0
+	mov	DWORD PTR _pkInstance$221860[esp+52], 0
 	call	_lua_type
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN9@lGetChoice
-	push	OFFSET $SG219383
+	push	OFFSET $SG219421
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -8360,7 +8360,7 @@ _L$ = 8							; size = 4
 	push	esi
 	call	_lua_touserdata
 	add	esp, 8
-	mov	DWORD PTR _pkInstance$221822[esp+40], eax
+	mov	DWORD PTR _pkInstance$221860[esp+40], eax
 	test	eax, eax
 	je	SHORT $LN9@lGetChoice
 	xor	bl, bl
@@ -8371,10 +8371,10 @@ $LN9@lGetChoice:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN14@lGetChoice
-	push	OFFSET $SG219389
+	push	OFFSET $SG219427
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG218207
+	push	OFFSET $SG218245
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -8418,7 +8418,7 @@ $LN14@lGetChoice:
 	push	edi
 	lea	ecx, DWORD PTR _v$[esp+48]
 	push	ecx
-	mov	ecx, DWORD PTR _pkInstance$221822[esp+52]
+	mov	ecx, DWORD PTR _pkInstance$221860[esp+52]
 	mov	ebx, 1
 	call	?GetChoicesForDecision@CvLeague@@QAE?AV?$vector@HV?$allocator@H@std@@@std@@W4ResolutionDecisionTypes@@W4PlayerTypes@@@Z ; CvLeague::GetChoicesForDecision
 
@@ -8666,7 +8666,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN9@lGetInacti
-	push	OFFSET $SG219383
+	push	OFFSET $SG219421
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -8691,10 +8691,10 @@ $LN9@lGetInacti:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN14@lGetInacti
-	push	OFFSET $SG219389
+	push	OFFSET $SG219427
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG218207
+	push	OFFSET $SG218245
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -8756,7 +8756,7 @@ $LL50@lGetInacti:
 
 ; 291  : 		lua_setfield(L, t, "Type");
 
-	push	OFFSET $SG218850
+	push	OFFSET $SG218888
 	push	ebp
 	push	esi
 	call	_lua_setfield
@@ -8898,7 +8898,7 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 _t$ = -60						; size = 4
 _vsEffects$ = -56					; size = 16
-_s$219149 = -40						; size = 28
+_s$219187 = -40						; size = 28
 __$EHRec$ = -12						; size = 12
 _L$ = 8							; size = 4
 ?lGetCurrentEffectsSummary@CvLuaLeague@@KAHPAUlua_State@@@Z PROC ; CvLuaLeague::lGetCurrentEffectsSummary, COMDAT
@@ -8930,7 +8930,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN62@lGetCurren
-	push	OFFSET $SG219383
+	push	OFFSET $SG219421
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -8955,10 +8955,10 @@ $LN62@lGetCurren:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN15@lGetCurren
-	push	OFFSET $SG219389
+	push	OFFSET $SG219427
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG218207
+	push	OFFSET $SG218245
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -9026,12 +9026,12 @@ $LL3@lGetCurren:
 
 	lea	eax, DWORD PTR [ebx+ebp]
 	push	eax
-	lea	ecx, DWORD PTR _s$219149[esp+80]
+	lea	ecx, DWORD PTR _s$219187[esp+80]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 
 ; 756  : 		lua_pushstring(L, s);
 
-	lea	ecx, DWORD PTR _s$219149[esp+76]
+	lea	ecx, DWORD PTR _s$219187[esp+76]
 	mov	BYTE PTR __$EHRec$[esp+84], 1
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
@@ -9050,7 +9050,7 @@ $LL3@lGetCurren:
 
 ; 758  : 	}
 
-	lea	ecx, DWORD PTR _s$219149[esp+76]
+	lea	ecx, DWORD PTR _s$219187[esp+76]
 	mov	BYTE PTR __$EHRec$[esp+84], 0
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 	mov	ecx, DWORD PTR _vsEffects$[esp+84]
@@ -9114,7 +9114,7 @@ __unwindfunclet$?lGetCurrentEffectsSummary@CvLuaLeague@@KAHPAUlua_State@@@Z$0:
 	lea	ecx, DWORD PTR _vsEffects$[ebp]
 	jmp	??1?$vector@VCvString@@V?$allocator@VCvString@@@std@@@std@@QAE@XZ ; std::vector<CvString,std::allocator<CvString> >::~vector<CvString,std::allocator<CvString> >
 __unwindfunclet$?lGetCurrentEffectsSummary@CvLuaLeague@@KAHPAUlua_State@@@Z$1:
-	lea	ecx, DWORD PTR _s$219149[ebp]
+	lea	ecx, DWORD PTR _s$219187[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?lGetCurrentEffectsSummary@CvLuaLeague@@KAHPAUlua_State@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?lGetCurrentEffectsSummary@CvLuaLeague@@KAHPAUlua_State@@@Z
@@ -9143,7 +9143,7 @@ _t$ = 12						; size = 4
 	push	esi
 	call	_lua_pushcclosure
 	mov	edi, DWORD PTR _t$[esp+16]
-	push	OFFSET $SG218212
+	push	OFFSET $SG218250
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -9155,7 +9155,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetID@CvLuaLeague@@KAHPAUlua_State@@@Z ; CvLuaLeague::lGetID
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218213
+	push	OFFSET $SG218251
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -9166,7 +9166,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetName@CvLuaLeague@@KAHPAUlua_State@@@Z ; CvLuaLeague::lGetName
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218214
+	push	OFFSET $SG218252
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -9178,7 +9178,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lCanChangeCustomName@CvLuaLeague@@KAHPAUlua_State@@@Z ; CvLuaLeague::lCanChangeCustomName
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218215
+	push	OFFSET $SG218253
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -9190,7 +9190,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsInSession@CvLuaLeague@@KAHPAUlua_State@@@Z ; CvLuaLeague::lIsInSession
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218216
+	push	OFFSET $SG218254
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -9201,7 +9201,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsInSpecialSession@CvLuaLeague@@KAHPAUlua_State@@@Z ; CvLuaLeague::lIsInSpecialSession
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218217
+	push	OFFSET $SG218255
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -9213,7 +9213,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetTurnsUntilSession@CvLuaLeague@@KAHPAUlua_State@@@Z ; CvLuaLeague::lGetTurnsUntilSession
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218218
+	push	OFFSET $SG218256
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -9224,7 +9224,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetTurnsUntilVictorySession@CvLuaLeague@@KAHPAUlua_State@@@Z ; CvLuaLeague::lGetTurnsUntilVictorySession
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218219
+	push	OFFSET $SG218257
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -9236,7 +9236,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lCanProposeEnactAnyChoice@CvLuaLeague@@KAHPAUlua_State@@@Z ; CvLuaLeague::lCanProposeEnactAnyChoice
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218220
+	push	OFFSET $SG218258
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -9248,7 +9248,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lCanProposeEnact@CvLuaLeague@@KAHPAUlua_State@@@Z ; CvLuaLeague::lCanProposeEnact
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218221
+	push	OFFSET $SG218259
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -9259,7 +9259,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lCanProposeRepeal@CvLuaLeague@@KAHPAUlua_State@@@Z ; CvLuaLeague::lCanProposeRepeal
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218222
+	push	OFFSET $SG218260
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -9270,7 +9270,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsProposed@CvLuaLeague@@KAHPAUlua_State@@@Z ; CvLuaLeague::lIsProposed
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218223
+	push	OFFSET $SG218261
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -9282,7 +9282,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetChoicesForDecision@CvLuaLeague@@KAHPAUlua_State@@@Z ; CvLuaLeague::lGetChoicesForDecision
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218224
+	push	OFFSET $SG218262
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -9293,7 +9293,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetTextForChoice@CvLuaLeague@@KAHPAUlua_State@@@Z ; CvLuaLeague::lGetTextForChoice
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218225
+	push	OFFSET $SG218263
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -9304,7 +9304,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetInactiveResolutions@CvLuaLeague@@KAHPAUlua_State@@@Z ; CvLuaLeague::lGetInactiveResolutions
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218226
+	push	OFFSET $SG218264
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -9316,7 +9316,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetEnactProposals@CvLuaLeague@@KAHPAUlua_State@@@Z ; CvLuaLeague::lGetEnactProposals
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218227
+	push	OFFSET $SG218265
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -9327,7 +9327,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetEnactProposalsOnHold@CvLuaLeague@@KAHPAUlua_State@@@Z ; CvLuaLeague::lGetEnactProposalsOnHold
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218228
+	push	OFFSET $SG218266
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -9338,7 +9338,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetRepealProposals@CvLuaLeague@@KAHPAUlua_State@@@Z ; CvLuaLeague::lGetRepealProposals
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218229
+	push	OFFSET $SG218267
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -9350,7 +9350,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetRepealProposalsOnHold@CvLuaLeague@@KAHPAUlua_State@@@Z ; CvLuaLeague::lGetRepealProposalsOnHold
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218230
+	push	OFFSET $SG218268
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -9361,7 +9361,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetActiveResolutions@CvLuaLeague@@KAHPAUlua_State@@@Z ; CvLuaLeague::lGetActiveResolutions
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218231
+	push	OFFSET $SG218269
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -9373,7 +9373,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsMember@CvLuaLeague@@KAHPAUlua_State@@@Z ; CvLuaLeague::lIsMember
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218232
+	push	OFFSET $SG218270
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -9385,7 +9385,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lCanVote@CvLuaLeague@@KAHPAUlua_State@@@Z ; CvLuaLeague::lCanVote
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218233
+	push	OFFSET $SG218271
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -9396,7 +9396,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetRemainingVotesForMember@CvLuaLeague@@KAHPAUlua_State@@@Z ; CvLuaLeague::lGetRemainingVotesForMember
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218234
+	push	OFFSET $SG218272
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -9407,7 +9407,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetSpentVotesForMember@CvLuaLeague@@KAHPAUlua_State@@@Z ; CvLuaLeague::lGetSpentVotesForMember
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218235
+	push	OFFSET $SG218273
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -9419,7 +9419,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetCoreVotesForMember@CvLuaLeague@@KAHPAUlua_State@@@Z ; CvLuaLeague::lGetCoreVotesForMember
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218236
+	push	OFFSET $SG218274
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -9430,7 +9430,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lCalculateStartingVotesForMember@CvLuaLeague@@KAHPAUlua_State@@@Z ; CvLuaLeague::lCalculateStartingVotesForMember
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218237
+	push	OFFSET $SG218275
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -9441,7 +9441,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lCanPropose@CvLuaLeague@@KAHPAUlua_State@@@Z ; CvLuaLeague::lCanPropose
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218238
+	push	OFFSET $SG218276
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -9453,7 +9453,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetRemainingProposalsForMember@CvLuaLeague@@KAHPAUlua_State@@@Z ; CvLuaLeague::lGetRemainingProposalsForMember
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218239
+	push	OFFSET $SG218277
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -9465,7 +9465,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsHostMember@CvLuaLeague@@KAHPAUlua_State@@@Z ; CvLuaLeague::lIsHostMember
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218240
+	push	OFFSET $SG218278
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -9476,7 +9476,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetHostMember@CvLuaLeague@@KAHPAUlua_State@@@Z ; CvLuaLeague::lGetHostMember
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218241
+	push	OFFSET $SG218279
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -9488,7 +9488,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsUnitedNations@CvLuaLeague@@KAHPAUlua_State@@@Z ; CvLuaLeague::lIsUnitedNations
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218242
+	push	OFFSET $SG218280
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -9500,7 +9500,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsProjectActive@CvLuaLeague@@KAHPAUlua_State@@@Z ; CvLuaLeague::lIsProjectActive
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218243
+	push	OFFSET $SG218281
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -9511,7 +9511,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsProjectComplete@CvLuaLeague@@KAHPAUlua_State@@@Z ; CvLuaLeague::lIsProjectComplete
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218244
+	push	OFFSET $SG218282
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -9523,7 +9523,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetProjectCostPerPlayer@CvLuaLeague@@KAHPAUlua_State@@@Z ; CvLuaLeague::lGetProjectCostPerPlayer
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218245
+	push	OFFSET $SG218283
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -9534,7 +9534,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetProjectBuildingCostPerPlayer@CvLuaLeague@@KAHPAUlua_State@@@Z ; CvLuaLeague::lGetProjectBuildingCostPerPlayer
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218246
+	push	OFFSET $SG218284
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -9545,7 +9545,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetProjectCost@CvLuaLeague@@KAHPAUlua_State@@@Z ; CvLuaLeague::lGetProjectCost
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218247
+	push	OFFSET $SG218285
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -9557,7 +9557,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetMemberContribution@CvLuaLeague@@KAHPAUlua_State@@@Z ; CvLuaLeague::lGetMemberContribution
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218248
+	push	OFFSET $SG218286
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -9568,7 +9568,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetMemberContributionTier@CvLuaLeague@@KAHPAUlua_State@@@Z ; CvLuaLeague::lGetMemberContributionTier
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218249
+	push	OFFSET $SG218287
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -9579,7 +9579,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetContributionTierThreshold@CvLuaLeague@@KAHPAUlua_State@@@Z ; CvLuaLeague::lGetContributionTierThreshold
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218250
+	push	OFFSET $SG218288
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -9592,7 +9592,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetArtsyGreatPersonRateModifier@CvLuaLeague@@KAHPAUlua_State@@@Z ; CvLuaLeague::lGetArtsyGreatPersonRateModifier
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218251
+	push	OFFSET $SG218289
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -9603,7 +9603,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetScienceyGreatPersonRateModifier@CvLuaLeague@@KAHPAUlua_State@@@Z ; CvLuaLeague::lGetScienceyGreatPersonRateModifier
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218252
+	push	OFFSET $SG218290
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -9615,7 +9615,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetResolutionName@CvLuaLeague@@KAHPAUlua_State@@@Z ; CvLuaLeague::lGetResolutionName
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218253
+	push	OFFSET $SG218291
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -9627,7 +9627,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetResolutionDetails@CvLuaLeague@@KAHPAUlua_State@@@Z ; CvLuaLeague::lGetResolutionDetails
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218254
+	push	OFFSET $SG218292
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -9638,7 +9638,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetMemberDetails@CvLuaLeague@@KAHPAUlua_State@@@Z ; CvLuaLeague::lGetMemberDetails
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218255
+	push	OFFSET $SG218293
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -9649,7 +9649,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetProjectDetails@CvLuaLeague@@KAHPAUlua_State@@@Z ; CvLuaLeague::lGetProjectDetails
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218256
+	push	OFFSET $SG218294
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -9661,7 +9661,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetProjectRewardTierDetails@CvLuaLeague@@KAHPAUlua_State@@@Z ; CvLuaLeague::lGetProjectRewardTierDetails
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218257
+	push	OFFSET $SG218295
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -9672,7 +9672,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetCurrentEffectsSummary@CvLuaLeague@@KAHPAUlua_State@@@Z ; CvLuaLeague::lGetCurrentEffectsSummary
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218258
+	push	OFFSET $SG218296
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -9683,7 +9683,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetLeagueSplashTitle@CvLuaLeague@@KAHPAUlua_State@@@Z ; CvLuaLeague::lGetLeagueSplashTitle
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218259
+	push	OFFSET $SG218297
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -9695,7 +9695,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetLeagueSplashDescription@CvLuaLeague@@KAHPAUlua_State@@@Z ; CvLuaLeague::lGetLeagueSplashDescription
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218260
+	push	OFFSET $SG218298
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -9706,7 +9706,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetLeagueSplashThisEraDetails@CvLuaLeague@@KAHPAUlua_State@@@Z ; CvLuaLeague::lGetLeagueSplashThisEraDetails
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218261
+	push	OFFSET $SG218299
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -9717,7 +9717,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetLeagueSplashNextEraDetails@CvLuaLeague@@KAHPAUlua_State@@@Z ; CvLuaLeague::lGetLeagueSplashNextEraDetails
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218262
+	push	OFFSET $SG218300
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -9729,7 +9729,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetGreatPersonRateModifierDetails@CvLuaLeague@@KAHPAUlua_State@@@Z ; CvLuaLeague::lGetGreatPersonRateModifierDetails
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG218263
+	push	OFFSET $SG218301
 	push	edi
 	push	esi
 	call	_lua_setfield

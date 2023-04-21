@@ -740,12 +740,38 @@ void CvDllNetMessageHandler::ResponseGiftUnit(PlayerTypes ePlayer, PlayerTypes e
 		DLLUI->AddMessage(0, CvPreGame::activePlayer(), true, GC.getEVENT_MESSAGE_TIME(), GetLocalizedText("TXT_KEY_MISC_TURN_TIMER_RESET", GET_PLAYER(ePlayer).getName()).GetCString());
 	}
 	else
-	{
 #endif
-	CvUnit* pkUnit = GET_PLAYER(ePlayer).getUnit(iUnitID);
-	GET_PLAYER(eMinor).DoDistanceGift(ePlayer, pkUnit);
-#ifdef TURN_TIMER_RESET_BUTTON
-	}
+#ifdef TURN_TIMER_PAUSE_BUTTON
+		if (iUnitID == -7) {
+			if (GC.getGame().isOption(GAMEOPTION_END_TURN_TIMER_ENABLED))
+			{
+				if (!GC.getGame().m_bIsPaused)
+				{
+					GC.getGame().m_fCurrentTurnTimerPauseDelta += GC.getGame().m_curTurnTimer.Stop();
+					GC.getGame().m_timeSinceGameTurnStart.Stop();
+					GC.getGame().m_bIsPaused = true;
+					DLLUI->AddMessage(0, CvPreGame::activePlayer(), true, GC.getEVENT_MESSAGE_TIME(), GetLocalizedText("TXT_KEY_MISC_TURN_TIMER_PAUSE", GET_PLAYER(ePlayer).getName()).GetCString());
+				}
+				else
+				{
+					GC.getGame().resetTurnTimer(true);
+					GC.getGame().m_timeSinceGameTurnStart.StartWithOffset(GC.getGame().getTimeElapsed());
+					GC.getGame().m_curTurnTimer.StartWithOffset(GC.getGame().getTimeElapsed());
+					GC.getGame().m_bIsPaused = false;
+					DLLUI->AddMessage(0, CvPreGame::activePlayer(), true, GC.getEVENT_MESSAGE_TIME(), GetLocalizedText("TXT_KEY_MISC_TURN_TIMER_UNPAUSE", GET_PLAYER(ePlayer).getName()).GetCString());
+				}
+			}
+		}
+		else
+#endif
+#if defined(TURN_TIMER_RESET_BUTTON) || defined(TURN_TIMER_PAUSE_BUTTON)
+		{
+#endif
+			CvUnit* pkUnit = GET_PLAYER(ePlayer).getUnit(iUnitID);
+			GET_PLAYER(eMinor).DoDistanceGift(ePlayer, pkUnit);
+
+#if defined(TURN_TIMER_RESET_BUTTON) || defined(TURN_TIMER_PAUSE_BUTTON)
+		}
 #endif
 }
 //------------------------------------------------------------------------------
@@ -908,7 +934,10 @@ void CvDllNetMessageHandler::ResponsePushMission(PlayerTypes ePlayer, int iUnitI
 
 	CvPlayerAI& kPlayer = GET_PLAYER(ePlayer);
 	CvUnit* pkUnit = kPlayer.getUnit(iUnitID);
-
+#ifdef REMOVE_PARADROP_ANIMATION
+	if (eMission == CvTypes::getMISSION_PARADROP())
+		eMission = (MissionTypes)-2;
+#endif
 	if(pkUnit != NULL)
 	{
 		pkUnit->PushMission(eMission, iData1, iData2, iFlags, bShift, true);

@@ -147,11 +147,36 @@ inline int plotDistance(int iX1, int iY1, int iX2, int iY2)
 	int iWrappedDY = dyWrap(iY2 - iY1);
 	int iDY = abs(iWrappedDY);
 
+#ifdef GAMECOREUTILS_FIX_PLOT_DISTANCE
+	const CvMap& kMap = GC.getMap();
+	// equidistant column joint fix (on X-wrapped maps):
+	if ((kMap.isWrapX()) && (abs(iWrappedDX * 2) == kMap.getGridWidth()) && (iDY % 2 != 0) && ((iY1 % 2 == 0) == (iWrappedDX > (kMap.getGridWidth() >> 2))))
+	{
+		iWrappedDX *= -1;  // change polarity
+	}
+	if ((kMap.isWrapX()) && (abs(iWrappedDX * 2) == kMap.getGridWidth()) && (abs(iWrappedDY) < abs(iY2 - iY1)) && (iDY % 2 == 0) && (iX2 - iX1 < 0))
+	{
+		iWrappedDX *= -1;  // change polarity
+	}
+	// special case when map is toroidal AND map height is odd
+	// TODO works but ugly
+	if ((kMap.isWrapX()) && (kMap.getGridHeight() % 2 != 0) && (iY1 % 2 == kMap.getGridWidth() % 2) && (iY2 % 2 == 0) &&
+		(abs(iWrappedDY) < abs(iY2 - iY1)) && (abs(iX2 - iX1) == kMap.getGridWidth() / 2 + ((kMap.getGridWidth() % 2 == 1) && (iX2 - iX1 > 0)) ? 1 : 0))
+	{
+		iWrappedDX -= (iWrappedDX > 0) - (iWrappedDX < 0);  // decrease regardless of polarity
+	}
+#endif
+
 	// convert to hex-space coordinates - the coordinate system axes are E and NE (not orthogonal)
 	int iHX1 = xToHexspaceX(iX1, iY1);
 	int iHX2 = xToHexspaceX(iX1 + iWrappedDX, iY1 + iWrappedDY);
 
+#ifdef GAMECOREUTILS_FIX_PLOT_DISTANCE
+	// obvious bug
+	iDX = abs(iHX2 - iHX1);
+#else
 	iDX = abs(dxWrap(iHX2 - iHX1));
+#endif
 
 #ifdef NQM_GAME_CORE_UTILS_OPTIMIZATIONS
 	if (((iHX2 - iHX1) ^ (iWrappedDY)) >= 0)  // the signs match

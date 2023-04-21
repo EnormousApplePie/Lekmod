@@ -10,10 +10,10 @@ INCLUDELIB MSVCRT
 INCLUDELIB OLDNAMES
 
 _DATA	SEGMENT
-_CIV5_XP2_DLL_VERSION DD FLAT:$SG217686
+_CIV5_XP2_DLL_VERSION DD FLAT:$SG217724
 _DATA	ENDS
 CONST	SEGMENT
-$SG217686 DB	'1.0.0', 00H
+$SG217724 DB	'1.0.0', 00H
 	ORG $+2
 _guidICvUnknown DD 0d89ba82fH
 	DW	09fa3H
@@ -309,7 +309,7 @@ xdata$x	ENDS
 ;	COMDAT ?GetPlayer@CvDllDealAI@@UAGPAVICvPlayer1@@XZ
 _TEXT	SEGMENT
 __$EHRec$ = -12						; size = 12
-$T219539 = 8						; size = 4
+$T219577 = 8						; size = 4
 _this$ = 8						; size = 4
 ?GetPlayer@CvDllDealAI@@UAGPAVICvPlayer1@@XZ PROC	; CvDllDealAI::GetPlayer, COMDAT
 
@@ -336,7 +336,7 @@ _this$ = 8						; size = 4
 	push	12					; 0000000cH
 	call	??2CvDllPlayer@@SAPAXI@Z		; CvDllPlayer::operator new
 	add	esp, 4
-	mov	DWORD PTR $T219539[esp+12], eax
+	mov	DWORD PTR $T219577[esp+12], eax
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	eax, eax
 	je	SHORT $LN5@GetPlayer
@@ -362,7 +362,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetPlayer@CvDllDealAI@@UAGPAVICvPlayer1@@XZ$0:
-	mov	eax, DWORD PTR $T219539[ebp-4]
+	mov	eax, DWORD PTR $T219577[ebp-4]
 	push	eax
 	call	??3CvDllPlayer@@SAXPAX@Z		; CvDllPlayer::operator delete
 	pop	ecx
@@ -672,12 +672,12 @@ PUBLIC	?GetInterfaceId@ICvUnknown@@SG?AU_GUID@@XZ	; ICvUnknown::GetInterfaceId
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredllutil\include\cvdllinterfaces.h
 ;	COMDAT ?GetInterfaceId@ICvUnknown@@SG?AU_GUID@@XZ
 _TEXT	SEGMENT
-$T219600 = 8						; size = 4
+$T219638 = 8						; size = 4
 ?GetInterfaceId@ICvUnknown@@SG?AU_GUID@@XZ PROC		; ICvUnknown::GetInterfaceId, COMDAT
 
 ; 306  : 	static GUID DLLCALL GetInterfaceId(){ return guidICvUnknown; }
 
-	mov	eax, DWORD PTR $T219600[esp-4]
+	mov	eax, DWORD PTR $T219638[esp-4]
 	mov	ecx, DWORD PTR _guidICvUnknown
 	mov	edx, DWORD PTR _guidICvUnknown+4
 	mov	DWORD PTR [eax], ecx
@@ -693,12 +693,12 @@ PUBLIC	?GetInterfaceId@ICvDealAI1@@SG?AU_GUID@@XZ	; ICvDealAI1::GetInterfaceId
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?GetInterfaceId@ICvDealAI1@@SG?AU_GUID@@XZ
 _TEXT	SEGMENT
-$T219604 = 8						; size = 4
+$T219642 = 8						; size = 4
 ?GetInterfaceId@ICvDealAI1@@SG?AU_GUID@@XZ PROC		; ICvDealAI1::GetInterfaceId, COMDAT
 
 ; 952  : 	static GUID DLLCALL GetInterfaceId() { return guidICvDealAI1; }
 
-	mov	eax, DWORD PTR $T219604[esp-4]
+	mov	eax, DWORD PTR $T219642[esp-4]
 	mov	ecx, DWORD PTR _guidICvDealAI1
 	mov	edx, DWORD PTR _guidICvDealAI1+4
 	mov	DWORD PTR [eax], ecx
@@ -747,8 +747,8 @@ _TEXT	SEGMENT
 _TEXT	ENDS
 ;	COMDAT ?QueryInterface@CvDllDealAI@@UAGPAXU_GUID@@@Z
 _TEXT	SEGMENT
-$T219616 = -16						; size = 16
-$T219614 = -16						; size = 16
+$T219654 = -16						; size = 16
+$T219652 = -16						; size = 16
 _this$ = 8						; size = 4
 _guidInterface$ = 12					; size = 16
 ?QueryInterface@CvDllDealAI@@UAGPAXU_GUID@@@Z PROC	; CvDllDealAI::QueryInterface, COMDAT
@@ -763,15 +763,15 @@ _guidInterface$ = 12					; size = 16
 	mov	ecx, DWORD PTR _guidICvUnknown+4
 	mov	edx, DWORD PTR _guidICvUnknown+8
 	mov	eax, DWORD PTR _guidICvUnknown
-	mov	DWORD PTR $T219614[esp+20], ecx
-	lea	ecx, DWORD PTR $T219614[esp+16]
-	mov	DWORD PTR $T219614[esp+24], edx
-	mov	DWORD PTR $T219614[esp+16], eax
+	mov	DWORD PTR $T219652[esp+20], ecx
+	lea	ecx, DWORD PTR $T219652[esp+16]
+	mov	DWORD PTR $T219652[esp+24], edx
+	mov	DWORD PTR $T219652[esp+16], eax
 	mov	eax, DWORD PTR _guidICvUnknown+12
 	push	ecx
 	lea	edx, DWORD PTR _guidInterface$[esp+16]
 	push	edx
-	mov	DWORD PTR $T219614[esp+36], eax
+	mov	DWORD PTR $T219652[esp+36], eax
 	call	_IsEqualGUID
 	add	esp, 8
 	test	eax, eax
@@ -779,15 +779,15 @@ _guidInterface$ = 12					; size = 16
 	mov	ecx, DWORD PTR _guidICvDealAI1+4
 	mov	edx, DWORD PTR _guidICvDealAI1+8
 	mov	eax, DWORD PTR _guidICvDealAI1
-	mov	DWORD PTR $T219616[esp+20], ecx
-	lea	ecx, DWORD PTR $T219616[esp+16]
-	mov	DWORD PTR $T219616[esp+24], edx
-	mov	DWORD PTR $T219616[esp+16], eax
+	mov	DWORD PTR $T219654[esp+20], ecx
+	lea	ecx, DWORD PTR $T219654[esp+16]
+	mov	DWORD PTR $T219654[esp+24], edx
+	mov	DWORD PTR $T219654[esp+16], eax
 	mov	eax, DWORD PTR _guidICvDealAI1+12
 	push	ecx
 	lea	edx, DWORD PTR _guidInterface$[esp+16]
 	push	edx
-	mov	DWORD PTR $T219616[esp+36], eax
+	mov	DWORD PTR $T219654[esp+36], eax
 	call	_IsEqualGUID
 	add	esp, 8
 	test	eax, eax

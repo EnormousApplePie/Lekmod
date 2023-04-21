@@ -251,7 +251,10 @@ public:
 
 	unsigned int getInitialTime();
 	void setInitialTime(unsigned int uiNewValue);
-
+#ifdef TURN_TIMER_PAUSE_BUTTON
+	float getTimeElapsed();
+	void setTimeElapsed(float fNewValue);
+#endif
 #ifdef GAME_ALLOW_ONLY_ONE_UNIT_MOVE_ON_TURN_LOADING
 	bool isMPOrderedMoveOnTurnLoading() const;
 	void setMPOrderedMoveOnTurnLoading(bool bNewValue);
@@ -615,7 +618,9 @@ public:
 	FTimer  m_timeSinceGameTurnStart;		//time since game turn started for human players
 	float	m_fCurrentTurnTimerPauseDelta;
 #endif
-
+#ifdef TURN_TIMER_PAUSE_BUTTON
+	bool m_bIsPaused;
+#endif
 	bool AnyoneHasBuildingClass(BuildingClassTypes iBuildingClassType) const;
 
 public:
@@ -666,6 +671,9 @@ protected:
 	int m_iMapScoreMod;
 
 	unsigned int m_uiInitialTime;
+#ifdef TURN_TIMER_PAUSE_BUTTON
+	float m_fTimeElapsed;
+#endif
 #ifdef GAME_ALLOW_ONLY_ONE_UNIT_MOVE_ON_TURN_LOADING
 	bool m_bMPOrderedMoveOnTurnLoading;
 #endif

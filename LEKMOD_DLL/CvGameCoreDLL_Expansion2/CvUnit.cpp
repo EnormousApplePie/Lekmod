@@ -4600,6 +4600,9 @@ void CvUnit::load()
 				if((iPass == 0) ? (pLoopUnit->getOwner() == getOwner()) : (pLoopUnit->getTeam() == getTeam()))
 				{
 					setTransportUnit(pLoopUnit);
+#ifdef INVISIBILITY_OF_NUCLEAR_MISSILESS_ON_SUBMARINES
+					setInvisibleType(pLoopUnit->getInvisibleType());
+#endif
 					break;
 				}
 			}
@@ -4643,6 +4646,9 @@ void CvUnit::unload()
 	}
 
 	setTransportUnit(NULL);
+#ifdef INVISIBILITY_OF_NUCLEAR_MISSILESS_ON_SUBMARINES
+	setInvisibleType(NO_INVISIBLE);
+#endif
 }
 
 
@@ -4799,7 +4805,9 @@ bool CvUnit::canAirPatrol(const CvPlot* pPlot) const
 #endif
 	{
 		float fGameTurnEnd = static_cast<float>(kGame.getMaxTurnLen());
-
+#ifdef TURN_TIMER_PAUSE_BUTTON
+		float fTimeElapsed = kGame.getTimeElapsed();
+#else
 		//NOTE:  These times exclude the time used for AI processing.
 		//Time since the current player's turn started.  Used for measuring time for players in sequential turn mode.
 		float fTimeSinceCurrentTurnStart = kGame.m_curTurnTimer.Peek() + kGame.m_fCurrentTurnTimerPauseDelta;
@@ -4808,6 +4816,7 @@ bool CvUnit::canAirPatrol(const CvPlot* pPlot) const
 		float fTimeSinceGameTurnStart = kGame.m_timeSinceGameTurnStart.Peek() + kGame.m_fCurrentTurnTimerPauseDelta;
 
 		float fTimeElapsed = (GET_PLAYER(kGame.getActivePlayer()).isSimultaneousTurns() ? fTimeSinceGameTurnStart : fTimeSinceCurrentTurnStart);
+#endif
 
 		if (fTimeElapsed * 2 > fGameTurnEnd)
 		{
@@ -6490,6 +6499,9 @@ bool CvUnit::canParadropAt(const CvPlot* pPlot, int iX, int iY) const
 	{
 		float fGameTurnEnd = static_cast<float>(kGame.getMaxTurnLen());
 
+#ifdef TURN_TIMER_PAUSE_BUTTON
+		float fTimeElapsed = kGame.getTimeElapsed();
+#else
 		//NOTE:  These times exclude the time used for AI processing.
 		//Time since the current player's turn started.  Used for measuring time for players in sequential turn mode.
 		float fTimeSinceCurrentTurnStart = kGame.m_curTurnTimer.Peek() + kGame.m_fCurrentTurnTimerPauseDelta;
@@ -6498,6 +6510,7 @@ bool CvUnit::canParadropAt(const CvPlot* pPlot, int iX, int iY) const
 		float fTimeSinceGameTurnStart = kGame.m_timeSinceGameTurnStart.Peek() + kGame.m_fCurrentTurnTimerPauseDelta;
 
 		float fTimeElapsed = (GET_PLAYER(kGame.getActivePlayer()).isSimultaneousTurns() ? fTimeSinceGameTurnStart : fTimeSinceCurrentTurnStart);
+#endif
 
 		if (fTimeElapsed * 2 > fGameTurnEnd && !pTargetPlot->IsFriendlyTerritory(getOwner()))
 		{
@@ -6534,13 +6547,31 @@ bool CvUnit::paradrop(int iX, int iY)
 	CvPlot* fromPlot = plot();
 	//JON: CHECK FOR INTERCEPTION HERE
 
+#ifdef REMOVE_PARADROP_ANIMATION
+	if (CvPreGame::quickMovement())
+	{
+		setXY(pPlot->getX(), pPlot->getY());
+	}
+	else
+	{
+		//play paradrop animation
+		if (pPlot->isActiveVisible(false))
+		{
+			auto_ptr<ICvUnit1> pDllUnit(new CvDllUnit(this));
+			gDLL->GameplayUnitParadrop(pDllUnit.get());
+		}
+		setXY(pPlot->getX(), pPlot->getY(), true, true, false);
+	}
+#else
 	//play paradrop animation
-	if(pPlot->isActiveVisible(false))
+	if (pPlot->isActiveVisible(false))
 	{
 		auto_ptr<ICvUnit1> pDllUnit(new CvDllUnit(this));
 		gDLL->GameplayUnitParadrop(pDllUnit.get());
 	}
+
 	setXY(pPlot->getX(), pPlot->getY(), true, true, false);
+#endif
 
 	ICvEngineScriptSystem1* pkScriptSystem = gDLL->GetScriptSystem();
 	if (pkScriptSystem)
@@ -7084,8 +7115,10 @@ bool CvUnit::createGreatWork()
 
 		if(pPlot->isActiveVisible(false))
 		{
+#ifndef REMOVE_GAMEPLAY_UNIT_ACTIVATE_ANIMATION
 			auto_ptr<ICvUnit1> pDllUnit(new CvDllUnit(this));
 			gDLL->GameplayUnitActivate(pDllUnit.get());
+#endif
 		}
 
 		if(IsGreatPerson())
@@ -7773,8 +7806,10 @@ bool CvUnit::found()
 
 	if(pPlot->isActiveVisible(false))
 	{
+#ifndef REMOVE_GAMEPLAY_UNIT_ACTIVATE_ANIMATION
 		auto_ptr<ICvUnit1> pDllUnit(new CvDllUnit(this));
 		gDLL->GameplayUnitActivate(pDllUnit.get());
+#endif
 
 		//Achievement
 		if(eActivePlayer == getOwner() && kActivePlayer.getNumCities() >= 2 && kActivePlayer.isHuman() && !GC.getGame().isGameMultiPlayer())
@@ -7873,8 +7908,10 @@ bool CvUnit::construct(BuildingTypes eBuilding)
 
 	if(plot()->isActiveVisible(false))
 	{
+#ifndef REMOVE_GAMEPLAY_UNIT_ACTIVATE_ANIMATION
 		auto_ptr<ICvUnit1> pDllUnit(new CvDllUnit(this));
 		gDLL->GameplayUnitActivate(pDllUnit.get());
+#endif
 	}
 
 	kill(true);
@@ -8320,8 +8357,10 @@ bool CvUnit::DoSpreadReligion()
 			bool bShow = plot()->isActiveVisible(false);
 			if(bShow)
 			{
+#ifndef REMOVE_GAMEPLAY_UNIT_ACTIVATE_ANIMATION
 				auto_ptr<ICvUnit1> pDllUnit(new CvDllUnit(this));
 				gDLL->GameplayUnitActivate(pDllUnit.get());
+#endif
 			}
 
 			if(GetReligionData()->GetSpreadsLeft() <= 0)
@@ -8416,8 +8455,10 @@ bool CvUnit::DoRemoveHeresy()
 			bool bShow = plot()->isActiveVisible(false);
 			if(bShow)
 			{
+#ifndef REMOVE_GAMEPLAY_UNIT_ACTIVATE_ANIMATION
 				auto_ptr<ICvUnit1> pDllUnit(new CvDllUnit(this));
 				gDLL->GameplayUnitActivate(pDllUnit.get());
+#endif
 			}
 
 			pCity->GetCityReligions()->RemoveOtherReligions(GetReligionData()->GetReligion(), getOwner());
@@ -8635,8 +8676,10 @@ bool CvUnit::discover()
 
 	if(pPlot->isActiveVisible(false))
 	{
+#ifndef REMOVE_GAMEPLAY_UNIT_ACTIVATE_ANIMATION
 		auto_ptr<ICvUnit1> pDllUnit(new CvDllUnit(this));
 		gDLL->GameplayUnitActivate(pDllUnit.get());
+#endif
 	}
 
 	if(IsGreatPerson())
@@ -8709,8 +8752,10 @@ bool CvUnit::DoRushBuilding()
 
 	if(plot()->isActiveVisible(false))
 	{
+#ifndef REMOVE_GAMEPLAY_UNIT_ACTIVATE_ANIMATION
 		auto_ptr<ICvUnit1> pDllUnit(new CvDllUnit(this));
 		gDLL->GameplayUnitActivate(pDllUnit.get());
+#endif
 	}
 
 	kill(true);
@@ -8994,8 +9039,10 @@ bool CvUnit::trade()
 
 	if(pPlot->isActiveVisible(false))
 	{
+#ifndef REMOVE_GAMEPLAY_UNIT_ACTIVATE_ANIMATION
 		auto_ptr<ICvUnit1> pDllUnit(new CvDllUnit(this));
 		gDLL->GameplayUnitActivate(pDllUnit.get());
+#endif
 	}
 
 	if(IsGreatPerson())
@@ -9110,8 +9157,10 @@ bool CvUnit::buyCityState()
 
 	if (pPlot->isActiveVisible(false))
 	{
+#ifndef REMOVE_GAMEPLAY_UNIT_ACTIVATE_ANIMATION
 		auto_ptr<ICvUnit1> pDllUnit(new CvDllUnit(this));
 		gDLL->GameplayUnitActivate(pDllUnit.get());
+#endif
 	}
 
 	if (IsGreatPerson())
@@ -9190,8 +9239,10 @@ bool CvUnit::repairFleet()
 
 	if(pPlot->isActiveVisible(false))
 	{
+#ifndef REMOVE_GAMEPLAY_UNIT_ACTIVATE_ANIMATION
 		auto_ptr<ICvUnit1> pDllUnit(new CvDllUnit(this));
 		gDLL->GameplayUnitActivate(pDllUnit.get());
+#endif
 	}
 
 	if(IsGreatPerson())
@@ -9352,8 +9403,10 @@ bool CvUnit::DoCultureBomb()
 
 		if(pThisPlot->isActiveVisible(false))
 		{
+#ifndef REMOVE_GAMEPLAY_UNIT_ACTIVATE_ANIMATION
 			auto_ptr<ICvUnit1> pDllUnit(new CvDllUnit(this));
 			gDLL->GameplayUnitActivate(pDllUnit.get());
+#endif
 		}
 
 		if(IsGreatPerson())
@@ -9781,8 +9834,10 @@ bool CvUnit::goldenAge()
 
 	if(pPlot->isActiveVisible(false))
 	{
+#ifndef REMOVE_GAMEPLAY_UNIT_ACTIVATE_ANIMATION
 		auto_ptr<ICvUnit1> pDllUnit(new CvDllUnit(this));
 		gDLL->GameplayUnitActivate(pDllUnit.get());
+#endif
 	}
 
 	if(IsGreatPerson())
@@ -9895,6 +9950,31 @@ bool CvUnit::givePolicies()
 	{
 		kPlayer.changeJONSCulture(iCultureBonus);
 		// Refresh - we might get to pick a policy this turn
+#ifdef UPDATE_CULTURE_NOTIFICATION_DURING_TURN
+		// if this is the human player, have the popup come up so that he can choose a new policy
+		if (kPlayer.isAlive() && kPlayer.isHuman() && kPlayer.getNumCities() > 0)
+		{
+			if (!GC.GetEngineUserInterface()->IsPolicyNotificationSeen())
+			{
+				if (kPlayer.getNextPolicyCost() <= kPlayer.getJONSCulture() && kPlayer.GetPlayerPolicies()->GetNumPoliciesCanBeAdopted() > 0)
+				{
+					CvNotifications* pNotifications = kPlayer.GetNotifications();
+					if (pNotifications)
+					{
+						CvString strBuffer;
+
+						if (GC.getGame().isOption(GAMEOPTION_POLICY_SAVING))
+							strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_ENOUGH_CULTURE_FOR_POLICY_DISMISS");
+						else
+							strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_ENOUGH_CULTURE_FOR_POLICY");
+
+						CvString strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_ENOUGH_CULTURE_FOR_POLICY");
+						pNotifications->Add(NOTIFICATION_POLICY, strBuffer, strSummary, -1, -1, -1);
+					}
+				}
+			}
+		}
+#endif
 	}
 
 	// Free policies
@@ -9906,8 +9986,10 @@ bool CvUnit::givePolicies()
 
 	if(pPlot->isActiveVisible(false))
 	{
+#ifndef REMOVE_GAMEPLAY_UNIT_ACTIVATE_ANIMATION
 		auto_ptr<ICvUnit1> pDllUnit(new CvDllUnit(this));
 		gDLL->GameplayUnitActivate(pDllUnit.get());
+#endif
 	}
 
 	if(IsGreatPerson())
@@ -10008,8 +10090,10 @@ bool CvUnit::blastTourism()
 
 	if(pPlot->isActiveVisible(false))
 	{
+#ifndef REMOVE_GAMEPLAY_UNIT_ACTIVATE_ANIMATION
 		auto_ptr<ICvUnit1> pDllUnit(new CvDllUnit(this));
 		gDLL->GameplayUnitActivate(pDllUnit.get());
+#endif
 	}
 
 	if(IsGreatPerson())
@@ -10279,8 +10363,10 @@ bool CvUnit::build(BuildTypes eBuild)
 			{
 				if (pPlot->isActiveVisible(false))
 				{
+#ifndef REMOVE_GAMEPLAY_UNIT_ACTIVATE_ANIMATION
 					auto_ptr<ICvUnit1> pDllUnit(new CvDllUnit(this));
 					gDLL->GameplayUnitActivate(pDllUnit.get());
+#endif
 				}
 
 				if(IsGreatPerson())
@@ -21460,7 +21546,12 @@ bool CvUnit::UpdatePathCache(CvPlot* pDestPlot, int iFlags)
 		// In this case, we can't be sure about the state of the map, so do a full recalculate.
 		bGenerated = GeneratePath(pDestPlot, iFlags);
 	}
-
+#ifdef FIX_DO_ATTACK_SUBMARINES_IN_SHADOW_OF_WAR
+	if (plot()->getNumFriendlyUnitsOfType(this) <= GC.getPLOT_UNIT_LIMIT() && (this)->plot()->isAdjacent(pDestPlot))
+	{
+		bGenerated = GeneratePath(pDestPlot, iFlags);
+	}
+#endif
 	return bGenerated;
 }
 //	---------------------------------------------------------------------------

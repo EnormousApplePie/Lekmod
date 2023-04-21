@@ -10,11 +10,11 @@ INCLUDELIB MSVCRT
 INCLUDELIB OLDNAMES
 
 CONST	SEGMENT
-$SG218059 DB	'AvoidGrowth', 00H
-$SG218060 DB	'GreatPeople', 00H
-$SG218062 DB	'EmphasizeType', 00H
+$SG218097 DB	'AvoidGrowth', 00H
+$SG218098 DB	'GreatPeople', 00H
+$SG218100 DB	'EmphasizeType', 00H
 	ORG $+2
-$SG218063 DB	'EmphasizeInfo_Yields', 00H
+$SG218101 DB	'EmphasizeInfo_Yields', 00H
 CONST	ENDS
 PUBLIC	?IsAvoidGrowth@CvEmphasisEntry@@QBE_NXZ		; CvEmphasisEntry::IsAvoidGrowth
 ; Function compile flags: /Ogtpy
@@ -1215,11 +1215,11 @@ _TEXT	SEGMENT
 ?GetEngineUserInterface@CvGlobals@@QAEPAVICvUserInterface2@@XZ PROC ; CvGlobals::GetEngineUserInterface, COMDAT
 ; _this$ = ecx
 
-; 7713 : 		return m_pEngineUI;
+; 7748 : 		return m_pEngineUI;
 
-	mov	eax, DWORD PTR [ecx+8568]
+	mov	eax, DWORD PTR [ecx+8600]
 
-; 7714 : 	}
+; 7749 : 	}
 
 	ret	0
 ?GetEngineUserInterface@CvGlobals@@QAEPAVICvUserInterface2@@XZ ENDP ; CvGlobals::GetEngineUserInterface
@@ -1719,13 +1719,13 @@ $LN1@CacheResul:
 ; 36   : 	m_bAvoidGrowth = kResults.GetBool("AvoidGrowth");
 
 	mov	ebx, DWORD PTR __imp_?GetBool@Results@Database@@QAE_NPBD@Z
-	push	OFFSET $SG218059
+	push	OFFSET $SG218097
 	mov	ecx, edi
 	call	ebx
 
 ; 37   : 	m_bGreatPeople = kResults.GetBool("GreatPeople");
 
-	push	OFFSET $SG218060
+	push	OFFSET $SG218098
 	mov	ecx, edi
 	mov	BYTE PTR [esi+260], al
 	call	ebx
@@ -1740,8 +1740,8 @@ $LN1@CacheResul:
 ; 40   : 	kUtility.SetYields(m_piYieldModifiers, "EmphasizeInfo_Yields", "EmphasizeType", szEmphasizeType);
 
 	push	eax
-	push	OFFSET $SG218062
-	push	OFFSET $SG218063
+	push	OFFSET $SG218100
+	push	OFFSET $SG218101
 	add	esi, 264				; 00000108H
 	push	esi
 	mov	ecx, ebp
@@ -2140,8 +2140,8 @@ __ehfuncinfo$?_Xlen@?$vector@PAVCvEmphasisEntry@@V?$allocator@PAVCvEmphasisEntry
 xdata$x	ENDS
 ;	COMDAT ?_Xlen@?$vector@PAVCvEmphasisEntry@@V?$allocator@PAVCvEmphasisEntry@@@std@@@std@@KAXXZ
 _TEXT	SEGMENT
-$T219278 = -80						; size = 28
-$T219277 = -52						; size = 40
+$T219316 = -80						; size = 28
+$T219315 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ?_Xlen@?$vector@PAVCvEmphasisEntry@@V?$allocator@PAVCvEmphasisEntry@@@std@@@std@@KAXXZ PROC ; std::vector<CvEmphasisEntry *,std::allocator<CvEmphasisEntry *> >::_Xlen, COMDAT
 
@@ -2157,22 +2157,22 @@ __$EHRec$ = -12						; size = 12
 ; 1260 : 		_THROW(length_error, "vector<T> too long");
 
 	push	OFFSET ??_C@_0BD@OLBABOEK@vector?$DMT?$DO?5too?5long?$AA@
-	lea	ecx, DWORD PTR $T219278[esp+84]
+	lea	ecx, DWORD PTR $T219316[esp+84]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T219277[esp+80]
+	lea	ecx, DWORD PTR $T219315[esp+80]
 	mov	DWORD PTR __$EHRec$[esp+88], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T219278[esp+80]
+	lea	eax, DWORD PTR $T219316[esp+80]
 	push	eax
-	lea	ecx, DWORD PTR $T219277[esp+96]
+	lea	ecx, DWORD PTR $T219315[esp+96]
 	mov	BYTE PTR __$EHRec$[esp+92], 1
-	mov	DWORD PTR $T219277[esp+84], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T219315[esp+84], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVlength_error@std@@
-	lea	ecx, DWORD PTR $T219277[esp+84]
+	lea	ecx, DWORD PTR $T219315[esp+84]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+96], 0
-	mov	DWORD PTR $T219277[esp+88], OFFSET ??_7length_error@std@@6B@
+	mov	DWORD PTR $T219315[esp+88], OFFSET ??_7length_error@std@@6B@
 	call	__CxxThrowException@8
 $LN13@Xlen:
 $LN12@Xlen:
@@ -2181,10 +2181,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Xlen@?$vector@PAVCvEmphasisEntry@@V?$allocator@PAVCvEmphasisEntry@@@std@@@std@@KAXXZ$0:
-	lea	ecx, DWORD PTR $T219278[ebp]
+	lea	ecx, DWORD PTR $T219316[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Xlen@?$vector@PAVCvEmphasisEntry@@V?$allocator@PAVCvEmphasisEntry@@@std@@@std@@KAXXZ$2:
-	lea	ecx, DWORD PTR $T219277[ebp]
+	lea	ecx, DWORD PTR $T219315[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Xlen@?$vector@PAVCvEmphasisEntry@@V?$allocator@PAVCvEmphasisEntry@@@std@@@std@@KAXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?_Xlen@?$vector@PAVCvEmphasisEntry@@V?$allocator@PAVCvEmphasisEntry@@@std@@@std@@KAXXZ
@@ -2318,9 +2318,9 @@ EXTRN	?ReadHashed@CvInfosSerializationHelper@@YAHAAVFDataStream@@PA_N@Z:PROC ; C
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredll_expansion2\cvinfosserializationhelper.h
 ;	COMDAT ??$ReadHashedDataArray@_N@CvInfosSerializationHelper@@YAXAAVFDataStream@@PA_NH@Z
 _TEXT	SEGMENT
-_tValue$218518 = -7					; size = 1
-_bValid$218515 = -6					; size = 1
-_tValue$218523 = -5					; size = 1
+_tValue$218556 = -7					; size = 1
+_bValid$218553 = -6					; size = 1
+_tValue$218561 = -5					; size = 1
 _uiNumEntries$ = -4					; size = 4
 _kStream$ = 8						; size = 4
 _paArray$ = 12						; size = 4
@@ -2358,7 +2358,7 @@ $LL7@ReadHashed:
 ; 255  : 		bool bValid;
 ; 256  : 		int iType = ReadHashed(kStream, &bValid);
 
-	lea	ecx, DWORD PTR _bValid$218515[esp+24]
+	lea	ecx, DWORD PTR _bValid$218553[esp+24]
 	push	ecx
 	push	edi
 	call	?ReadHashed@CvInfosSerializationHelper@@YAHAAVFDataStream@@PA_N@Z ; CvInfosSerializationHelper::ReadHashed
@@ -2374,7 +2374,7 @@ $LL7@ReadHashed:
 ; 259  : 			TData tValue;
 ; 260  : 			kStream >> tValue;
 
-	lea	edx, DWORD PTR _tValue$218518[esp+24]
+	lea	edx, DWORD PTR _tValue$218556[esp+24]
 	push	edx
 	mov	ecx, edi
 	call	?Read@FDataStream@@IAEXAA_N@Z		; FDataStream::Read
@@ -2386,7 +2386,7 @@ $LL7@ReadHashed:
 
 ; 262  : 				paArray[iType] = tValue;
 
-	mov	al, BYTE PTR _tValue$218518[esp+24]
+	mov	al, BYTE PTR _tValue$218556[esp+24]
 	mov	ecx, DWORD PTR _paArray$[esp+20]
 	mov	BYTE PTR [esi+ecx], al
 
@@ -2397,14 +2397,14 @@ $LN4@ReadHashed:
 
 ; 264  : 		else if(!bValid)
 
-	cmp	BYTE PTR _bValid$218515[esp+24], 0
+	cmp	BYTE PTR _bValid$218553[esp+24], 0
 	jne	SHORT $LN6@ReadHashed
 
 ; 265  : 		{
 ; 266  : 			TData tValue;
 ; 267  : 			kStream >> tValue;
 
-	lea	edx, DWORD PTR _tValue$218523[esp+24]
+	lea	edx, DWORD PTR _tValue$218561[esp+24]
 	push	edx
 	mov	ecx, edi
 	call	?Read@FDataStream@@IAEXAA_N@Z		; FDataStream::Read
@@ -2631,8 +2631,8 @@ __TI2?AVbad_alloc@std@@ DD 00H
 xdata$x	ENDS
 ;	COMDAT ??$_Allocate@PAVCvEmphasisEntry@@@std@@YAPAPAVCvEmphasisEntry@@IPAPAV1@@Z
 _TEXT	SEGMENT
-$T219395 = -12						; size = 12
-$T219399 = 8						; size = 4
+$T219433 = -12						; size = 12
+$T219437 = 8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ??$_Allocate@PAVCvEmphasisEntry@@@std@@YAPAPAVCvEmphasisEntry@@IPAPAV1@@Z PROC ; std::_Allocate<CvEmphasisEntry *>, COMDAT
@@ -2674,15 +2674,15 @@ $LN3@Allocate:
 
 ; 40   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T219399[esp+8]
+	lea	eax, DWORD PTR $T219437[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T219395[esp+16]
-	mov	DWORD PTR $T219399[esp+12], 0
+	lea	ecx, DWORD PTR $T219433[esp+16]
+	mov	DWORD PTR $T219437[esp+12], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T219395[esp+16]
+	lea	ecx, DWORD PTR $T219433[esp+16]
 	push	ecx
-	mov	DWORD PTR $T219395[esp+20], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T219433[esp+20], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN9@Allocate:
 $LN8@Allocate:
@@ -2817,7 +2817,7 @@ EXTRN	?getEmphasisInfo@CvGlobals@@QAEPAVCvEmphasisEntry@@W4EmphasizeTypes@@@Z:PR
 _TEXT	SEGMENT
 _eIndex$ = 8						; size = 4
 _bNewValue$ = 12					; size = 1
-_pkEmphasis$218318 = 12					; size = 4
+_pkEmphasis$218356 = 12					; size = 4
 ?SetEmphasize@CvCityEmphases@@QAEXW4EmphasizeTypes@@_N@Z PROC ; CvCityEmphases::SetEmphasize, COMDAT
 ; _this$ = ecx
 
@@ -2867,7 +2867,7 @@ $LN12@SetEmphasi:
 ; 240  : 		if(pkEmphasis->IsAvoidGrowth())
 
 	cmp	BYTE PTR [ecx+260], 0
-	mov	DWORD PTR _pkEmphasis$218318[esp+4], ecx
+	mov	DWORD PTR _pkEmphasis$218356[esp+4], ecx
 	je	SHORT $LN7@SetEmphasi
 
 ; 241  : 		{
@@ -2926,7 +2926,7 @@ $LN6@SetEmphasi:
 	mov	ebp, 6
 	jmp	SHORT $LN5@SetEmphasi
 $LL39@SetEmphasi:
-	mov	ecx, DWORD PTR _pkEmphasis$218318[esp+12]
+	mov	ecx, DWORD PTR _pkEmphasis$218356[esp+12]
 $LN5@SetEmphasi:
 
 ; 252  : 		{
@@ -2978,7 +2978,7 @@ $LN4@SetEmphasi:
 ; 261  : 		{
 ; 262  : 			GC.GetEngineUserInterface()->setDirty(SelectionButtons_DIRTY_BIT, true);
 
-	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8568
+	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8600
 	mov	eax, DWORD PTR [ecx]
 	pop	esi
 	pop	ebx

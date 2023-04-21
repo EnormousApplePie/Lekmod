@@ -10,86 +10,86 @@ INCLUDELIB MSVCRT
 INCLUDELIB OLDNAMES
 
 CONST	SEGMENT
-$SG219448 DB	'Map', 00H
-$SG219456 DB	'Areas', 00H
+$SG219490 DB	'Map', 00H
+$SG219498 DB	'Areas', 00H
 	ORG $+2
-$SG219457 DB	'FindBiggestArea', 00H
-$SG219458 DB	'FindWater', 00H
+$SG219499 DB	'FindBiggestArea', 00H
+$SG219500 DB	'FindWater', 00H
 	ORG $+2
-$SG219459 DB	'GetClimate', 00H
+$SG219501 DB	'GetClimate', 00H
 	ORG $+1
-$SG219460 DB	'GetFractalFlags', 00H
-$SG219461 DB	'GetGridSize', 00H
-$SG219462 DB	'GetNumPlots', 00H
-$SG219463 DB	'GetNumResources', 00H
-$SG219464 DB	'GetNumResourcesOnLand', 00H
+$SG219502 DB	'GetFractalFlags', 00H
+$SG219503 DB	'GetGridSize', 00H
+$SG219504 DB	'GetNumPlots', 00H
+$SG219505 DB	'GetNumResources', 00H
+$SG219506 DB	'GetNumResourcesOnLand', 00H
 	ORG $+2
-$SG219465 DB	'GetPlot', 00H
-$SG219466 DB	'GetPlotByIndex', 00H
+$SG219507 DB	'GetPlot', 00H
+$SG219508 DB	'GetPlotByIndex', 00H
 	ORG $+1
-$SG219467 DB	'GetPlotXY', 00H
+$SG219509 DB	'GetPlotXY', 00H
 	ORG $+2
-$SG219468 DB	'GetArea', 00H
-$SG219469 DB	'GetIndexAfterLastArea', 00H
+$SG219510 DB	'GetArea', 00H
+$SG219511 DB	'GetIndexAfterLastArea', 00H
 	ORG $+2
-$SG219470 DB	'GetLandPlots', 00H
+$SG219512 DB	'GetLandPlots', 00H
 	ORG $+3
-$SG219471 DB	'GetNumAreas', 00H
-$SG219472 DB	'GetNumLandAreas', 00H
-$SG219473 DB	'GetRandomResourceQuantity', 00H
+$SG219513 DB	'GetNumAreas', 00H
+$SG219514 DB	'GetNumLandAreas', 00H
+$SG219515 DB	'GetRandomResourceQuantity', 00H
 	ORG $+2
-$SG219474 DB	'GetSeaLevel', 00H
-$SG219475 DB	'GetWorldSize', 00H
+$SG219516 DB	'GetSeaLevel', 00H
+$SG219517 DB	'GetWorldSize', 00H
 	ORG $+3
-$SG219476 DB	'IsPlot', 00H
+$SG219518 DB	'IsPlot', 00H
 	ORG $+1
-$SG219477 DB	'IsWrapX', 00H
-$SG219478 DB	'IsWrapY', 00H
-$SG219479 DB	'MaxPlotDistance', 00H
-$SG219480 DB	'Rand', 00H
+$SG219519 DB	'IsWrapX', 00H
+$SG219520 DB	'IsWrapY', 00H
+$SG219521 DB	'MaxPlotDistance', 00H
+$SG219522 DB	'Rand', 00H
 	ORG $+3
-$SG219481 DB	'CalculateAreas', 00H
+$SG219523 DB	'CalculateAreas', 00H
 	ORG $+1
-$SG219482 DB	'RecalculateAreas', 00H
+$SG219524 DB	'RecalculateAreas', 00H
 	ORG $+3
-$SG219483 DB	'PlotDistance', 00H
+$SG219525 DB	'PlotDistance', 00H
 	ORG $+3
-$SG219484 DB	'PlotXYWithRangeCheck', 00H
+$SG219526 DB	'PlotXYWithRangeCheck', 00H
 	ORG $+3
-$SG219485 DB	'PlotDirection', 00H
+$SG219527 DB	'PlotDirection', 00H
 	ORG $+2
-$SG219486 DB	'DefaultContinentStamper', 00H
-$SG219487 DB	'DoPlaceNaturalWonders', 00H
+$SG219528 DB	'DefaultContinentStamper', 00H
+$SG219529 DB	'DoPlaceNaturalWonders', 00H
 	ORG $+2
-$SG219488 DB	'GetCustomOption', 00H
-$SG219489 DB	'UpdateDeferredFog', 00H
+$SG219530 DB	'GetCustomOption', 00H
+$SG219531 DB	'UpdateDeferredFog', 00H
 	ORG $+2
-$SG219490 DB	'ChangeAIMapHint', 00H
-$SG219491 DB	'GetAIMapHint', 00H
+$SG219532 DB	'ChangeAIMapHint', 00H
+$SG219533 DB	'GetAIMapHint', 00H
 	ORG $+3
-$SG219559 DB	'FRAC_WRAP_X', 00H
-$SG219561 DB	'FRAC_WRAP_Y', 00H
-$SG219759 DB	'__instances', 00H
-$SG219760 DB	'__mode', 00H
+$SG219601 DB	'FRAC_WRAP_X', 00H
+$SG219603 DB	'FRAC_WRAP_Y', 00H
+$SG219801 DB	'__instances', 00H
+$SG219802 DB	'__mode', 00H
 	ORG $+1
-$SG219761 DB	'v', 00H
+$SG219803 DB	'v', 00H
 	ORG $+2
-$SG219763 DB	'__instances', 00H
-$SG219766 DB	'__instance', 00H
+$SG219805 DB	'__instances', 00H
+$SG219808 DB	'__instance', 00H
 	ORG $+1
-$SG219767 DB	'__index', 00H
-$SG219788 DB	'__instances', 00H
-$SG219789 DB	'__mode', 00H
+$SG219809 DB	'__index', 00H
+$SG219830 DB	'__instances', 00H
+$SG219831 DB	'__mode', 00H
 	ORG $+1
-$SG219790 DB	'v', 00H
+$SG219832 DB	'v', 00H
 	ORG $+2
-$SG219792 DB	'__instances', 00H
-$SG219795 DB	'__instance', 00H
+$SG219834 DB	'__instances', 00H
+$SG219837 DB	'__instance', 00H
 	ORG $+1
-$SG219796 DB	'__index', 00H
-$SG219811 DB	'__instance', 00H
+$SG219838 DB	'__index', 00H
+$SG219853 DB	'__instance', 00H
 	ORG $+1
-$SG219817 DB	'Not a valid instance.  Either the instance is NULL or yo'
+$SG219859 DB	'Not a valid instance.  Either the instance is NULL or yo'
 	DB	'u used ''.'' instead of '':''.', 00H
 CONST	ENDS
 PUBLIC	?wrapCoordDifference@@YAHHI_N@Z			; wrapCoordDifference
@@ -225,7 +225,7 @@ _TEXT	SEGMENT
 
 ; 30   : 	return "Map";
 
-	mov	eax, OFFSET $SG219448
+	mov	eax, OFFSET $SG219490
 
 ; 31   : }
 
@@ -389,7 +389,7 @@ _pkType$ = 12						; size = 4
 ; 61   : 			//Create weak __instances table.
 ; 62   : 			lua_pushstring(L, "__instances");
 
-	push	OFFSET $SG219759
+	push	OFFSET $SG219801
 	push	esi
 	call	_lua_pushstring
 
@@ -411,13 +411,13 @@ _pkType$ = 12						; size = 4
 
 ; 67   : 			lua_pushstring(L, "__mode");
 
-	push	OFFSET $SG219760
+	push	OFFSET $SG219802
 	push	esi
 	call	_lua_pushstring
 
 ; 68   : 			lua_pushstring(L, "v");
 
-	push	OFFSET $SG219761
+	push	OFFSET $SG219803
 	push	esi
 	call	_lua_pushstring
 	add	esp, 68					; 00000044H
@@ -477,7 +477,7 @@ $LN7@Push:
 ; 81   : 
 ; 82   : 		lua_pushstring(L, "__instances");
 
-	push	OFFSET $SG219763
+	push	OFFSET $SG219805
 	push	esi
 	mov	ebx, eax
 	call	_lua_pushstring
@@ -543,7 +543,7 @@ $LN7@Push:
 
 ; 98   : 			lua_setfield(L, -2, "__instance");
 
-	push	OFFSET $SG219766
+	push	OFFSET $SG219808
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -558,7 +558,7 @@ $LN7@Push:
 
 ; 101  : 			lua_pushstring(L, "__index");
 
-	push	OFFSET $SG219767
+	push	OFFSET $SG219809
 	push	esi
 	call	_lua_pushstring
 
@@ -759,7 +759,7 @@ _pkType$ = 12						; size = 4
 ; 61   : 			//Create weak __instances table.
 ; 62   : 			lua_pushstring(L, "__instances");
 
-	push	OFFSET $SG219788
+	push	OFFSET $SG219830
 	push	esi
 	call	_lua_pushstring
 
@@ -781,13 +781,13 @@ _pkType$ = 12						; size = 4
 
 ; 67   : 			lua_pushstring(L, "__mode");
 
-	push	OFFSET $SG219789
+	push	OFFSET $SG219831
 	push	esi
 	call	_lua_pushstring
 
 ; 68   : 			lua_pushstring(L, "v");
 
-	push	OFFSET $SG219790
+	push	OFFSET $SG219832
 	push	esi
 	call	_lua_pushstring
 	add	esp, 68					; 00000044H
@@ -847,7 +847,7 @@ $LN7@Push@2:
 ; 81   : 
 ; 82   : 		lua_pushstring(L, "__instances");
 
-	push	OFFSET $SG219792
+	push	OFFSET $SG219834
 	push	esi
 	mov	ebx, eax
 	call	_lua_pushstring
@@ -913,7 +913,7 @@ $LN7@Push@2:
 
 ; 98   : 			lua_setfield(L, -2, "__instance");
 
-	push	OFFSET $SG219795
+	push	OFFSET $SG219837
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -928,7 +928,7 @@ $LN7@Push@2:
 
 ; 101  : 			lua_pushstring(L, "__index");
 
-	push	OFFSET $SG219796
+	push	OFFSET $SG219838
 	push	esi
 	call	_lua_pushstring
 
@@ -1064,7 +1064,7 @@ _bErrorOnFail$ = 16					; size = 1
 ; 134  : 		lua_getfield(L, idx, "__instance");
 
 	mov	ecx, DWORD PTR _idx$[esp+12]
-	push	OFFSET $SG219811
+	push	OFFSET $SG219853
 	push	ecx
 	push	esi
 	call	_lua_getfield
@@ -1125,7 +1125,7 @@ $LN3@GetInstanc:
 
 ; 150  : 			luaL_error(L, "Not a valid instance.  Either the instance is NULL or you used '.' instead of ':'.");
 
-	push	OFFSET $SG219817
+	push	OFFSET $SG219859
 	push	esi
 	call	_luaL_error
 	add	esp, 8
@@ -1502,182 +1502,352 @@ PUBLIC	?plotDistance@@YAHHHHH@Z			; plotDistance
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?plotDistance@@YAHHHHH@Z
 _TEXT	SEGMENT
-_iDX$ = 8						; size = 4
+_iDY$ = -12						; size = 4
+tv320 = -8						; size = 4
+tv357 = -4						; size = 4
 _iX1$ = 8						; size = 4
+_iDX$ = 12						; size = 4
 _iY1$ = 12						; size = 4
-_iDY$ = 16						; size = 4
+$T220217 = 16						; size = 4
 _iX2$ = 16						; size = 4
 _iY2$ = 20						; size = 4
 ?plotDistance@@YAHHHHH@Z PROC				; plotDistance, COMDAT
 
+; 144  : {
+
+	sub	esp, 12					; 0000000cH
+
 ; 145  : 	int iDX;
 ; 146  : 	int iWrappedDX = dxWrap(iX2 - iX1);
 
-	mov	eax, DWORD PTR _iX2$[esp-4]
-	sub	eax, DWORD PTR _iX1$[esp-4]
+	mov	ecx, DWORD PTR _iX2$[esp+8]
+	sub	ecx, DWORD PTR _iX1$[esp+8]
 	push	ebx
-	mov	ebx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+52
-	cmp	BYTE PTR [ebx+4056], 0
-	mov	edx, DWORD PTR [ebx+4020]
 	push	ebp
 	push	esi
-	je	SHORT $LN13@plotDistan
-	mov	ecx, edx
-	shr	ecx, 1
-	cmp	eax, ecx
-	jle	SHORT $LN15@plotDistan
-	sub	eax, edx
-	jmp	SHORT $LN13@plotDistan
-$LN15@plotDistan:
-	neg	ecx
-	cmp	eax, ecx
-	lea	ecx, DWORD PTR [edx+eax]
-	jl	SHORT $LN17@plotDistan
-$LN13@plotDistan:
-	mov	ecx, eax
-$LN17@plotDistan:
+	push	edi
+	mov	edi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+52
+	cmp	BYTE PTR [edi+4056], 0
+	mov	edx, DWORD PTR [edi+4020]
+	mov	DWORD PTR tv320[esp+28], ecx
+	je	SHORT $LN18@plotDistan
+	mov	eax, edx
+	shr	eax, 1
+	cmp	ecx, eax
+	jle	SHORT $LN20@plotDistan
+	sub	ecx, edx
+	jmp	SHORT $LN18@plotDistan
+$LN20@plotDistan:
+	neg	eax
+	cmp	ecx, eax
+	jge	SHORT $LN18@plotDistan
+	add	ecx, edx
+$LN18@plotDistan:
 
 ; 147  : 	int iWrappedDY = dyWrap(iY2 - iY1);
 
-	mov	eax, DWORD PTR _iY2$[esp+8]
-	mov	esi, DWORD PTR [ebx+4024]
-	push	edi
-	mov	edi, DWORD PTR _iY1$[esp+12]
-	sub	eax, edi
-	cmp	BYTE PTR [ebx+4057], 0
-	je	SHORT $LN27@plotDistan
-	mov	edx, esi
+	mov	ebp, DWORD PTR _iY2$[esp+24]
+	sub	ebp, DWORD PTR _iY1$[esp+24]
+	cmp	BYTE PTR [edi+4057], 0
+	mov	eax, DWORD PTR [edi+4024]
+	je	SHORT $LN32@plotDistan
+	mov	edx, eax
 	shr	edx, 1
-	cmp	eax, edx
-	jle	SHORT $LN29@plotDistan
-	sub	eax, esi
-	jmp	SHORT $LN27@plotDistan
-$LN29@plotDistan:
+	cmp	ebp, edx
+	jle	SHORT $LN34@plotDistan
+	mov	ebx, ebp
+	sub	ebx, eax
+	mov	DWORD PTR $T220217[esp+24], ebx
+	jmp	SHORT $LN36@plotDistan
+$LN34@plotDistan:
 	neg	edx
-	cmp	eax, edx
-	lea	ebp, DWORD PTR [esi+eax]
-	jl	SHORT $LN31@plotDistan
-$LN27@plotDistan:
-	mov	ebp, eax
-$LN31@plotDistan:
+	cmp	ebp, edx
+	jge	SHORT $LN32@plotDistan
+	lea	ebx, DWORD PTR [eax+ebp]
+	mov	DWORD PTR $T220217[esp+24], ebx
+	jmp	SHORT $LN36@plotDistan
+$LN32@plotDistan:
+	mov	ebx, ebp
+	mov	DWORD PTR $T220217[esp+24], ebp
+$LN36@plotDistan:
 
 ; 148  : 	int iDY = abs(iWrappedDY);
 
+	mov	eax, ebx
+	cdq
+	mov	esi, eax
+	xor	esi, edx
+	sub	esi, edx
+
+; 149  : 
+; 150  : #ifdef GAMECOREUTILS_FIX_PLOT_DISTANCE
+; 151  : 	const CvMap& kMap = GC.getMap();
+; 152  : 	// equidistant column joint fix (on X-wrapped maps):
+; 153  : 	if ((kMap.isWrapX()) && (abs(iWrappedDX * 2) == kMap.getGridWidth()) && (iDY % 2 != 0) && ((iY1 % 2 == 0) == (iWrappedDX > (kMap.getGridWidth() >> 2))))
+
+	cmp	BYTE PTR [edi+4056], 0
+	mov	DWORD PTR _iDY$[esp+28], esi
+	je	$LN77@plotDistan
+	lea	eax, DWORD PTR [ecx+ecx]
+	cdq
+	mov	ebx, eax
+	mov	eax, DWORD PTR [edi+4020]
+	xor	ebx, edx
+	sub	ebx, edx
+	cmp	ebx, eax
+	jne	SHORT $LN73@plotDistan
+	mov	edx, esi
+	and	edx, -2147483647			; 80000001H
+	jns	SHORT $LN79@plotDistan
+	dec	edx
+	or	edx, -2					; fffffffeH
+	inc	edx
+$LN79@plotDistan:
+	je	SHORT $LN73@plotDistan
+	sar	eax, 2
+	xor	edx, edx
+	cmp	ecx, eax
+	mov	eax, DWORD PTR _iY1$[esp+24]
+	setg	dl
+	and	eax, -2147483647			; 80000001H
+	jns	SHORT $LN80@plotDistan
+	dec	eax
+	or	eax, -2					; fffffffeH
+	inc	eax
+$LN80@plotDistan:
+
+; 154  : 	{
+; 155  : 		iWrappedDX *= -1;  // change polarity
+
+	mov	ebx, DWORD PTR $T220217[esp+24]
+	neg	eax
+	sbb	eax, eax
+	inc	eax
+	cmp	eax, edx
+	jne	SHORT $LN5@plotDistan
+	neg	ecx
+	jmp	SHORT $LN5@plotDistan
+$LN73@plotDistan:
+	mov	ebx, DWORD PTR $T220217[esp+24]
+$LN5@plotDistan:
+
+; 156  : 	}
+; 157  : 	if ((kMap.isWrapX()) && (abs(iWrappedDX * 2) == kMap.getGridWidth()) && (abs(iWrappedDY) < abs(iY2 - iY1)) && (iDY % 2 == 0) && (iX2 - iX1 < 0))
+
+	cmp	BYTE PTR [edi+4056], 0
+	je	$LN77@plotDistan
+	lea	eax, DWORD PTR [ecx+ecx]
+	cdq
+	xor	eax, edx
+	sub	eax, edx
+	cmp	eax, DWORD PTR [edi+4020]
+	jne	SHORT $LN75@plotDistan
 	mov	eax, ebp
 	cdq
 	xor	eax, edx
 	sub	eax, edx
-	mov	DWORD PTR _iDY$[esp+12], eax
+	cmp	esi, eax
+	jge	SHORT $LN75@plotDistan
+	mov	edx, DWORD PTR _iDY$[esp+28]
+	and	edx, -2147483647			; 80000001H
+	jns	SHORT $LN81@plotDistan
+	dec	edx
+	or	edx, -2					; fffffffeH
+	inc	edx
+$LN81@plotDistan:
+	jne	SHORT $LN75@plotDistan
+	cmp	DWORD PTR tv320[esp+28], 0
+	jge	SHORT $LN75@plotDistan
 
-; 149  : 
-; 150  : 	// convert to hex-space coordinates - the coordinate system axes are E and NE (not orthogonal)
-; 151  : 	int iHX1 = xToHexspaceX(iX1, iY1);
+; 158  : 	{
+; 159  : 		iWrappedDX *= -1;  // change polarity
 
-	test	edi, edi
-	jl	SHORT $LN35@plotDistan
-	mov	eax, edi
-	jmp	SHORT $LN59@plotDistan
-$LN35@plotDistan:
-	lea	eax, DWORD PTR [edi-1]
+	neg	ecx
+$LN75@plotDistan:
+
+; 160  : 	}
+; 161  : 	// special case when map is toroidal AND map height is odd
+; 162  : 	// TODO works but ugly
+; 163  : 	if ((kMap.isWrapX()) && (kMap.getGridHeight() % 2 != 0) && (iY1 % 2 == kMap.getGridWidth() % 2) && (iY2 % 2 == 0) &&
+; 164  : 		(abs(iWrappedDY) < abs(iY2 - iY1)) && (abs(iX2 - iX1) == kMap.getGridWidth() / 2 + ((kMap.getGridWidth() % 2 == 1) && (iX2 - iX1 > 0)) ? 1 : 0))
+
+	cmp	BYTE PTR [edi+4056], 0
+	je	$LN77@plotDistan
+	mov	eax, DWORD PTR [edi+4024]
+	and	eax, -2147483647			; 80000001H
+	jns	SHORT $LN82@plotDistan
+	dec	eax
+	or	eax, -2					; fffffffeH
+	inc	eax
+$LN82@plotDistan:
+	je	$LN77@plotDistan
+	mov	edi, DWORD PTR [edi+4020]
+	mov	DWORD PTR tv357[esp+28], edi
+	and	edi, -2147483647			; 80000001H
+	jns	SHORT $LN83@plotDistan
+	dec	edi
+	or	edi, -2					; fffffffeH
+	inc	edi
+$LN83@plotDistan:
+	mov	edx, DWORD PTR _iY1$[esp+24]
+	and	edx, -2147483647			; 80000001H
+	jns	SHORT $LN84@plotDistan
+	dec	edx
+	or	edx, -2					; fffffffeH
+	inc	edx
+$LN84@plotDistan:
+	cmp	edx, edi
+	jne	SHORT $LN77@plotDistan
+	mov	eax, DWORD PTR _iY2$[esp+24]
+	and	eax, -2147483647			; 80000001H
+	jns	SHORT $LN85@plotDistan
+	dec	eax
+	or	eax, -2					; fffffffeH
+	inc	eax
+$LN85@plotDistan:
+	jne	SHORT $LN77@plotDistan
+	mov	eax, ebp
+	cdq
+	xor	eax, edx
+	sub	eax, edx
+	cmp	esi, eax
+	jge	SHORT $LN77@plotDistan
+	cmp	edi, 1
+	jne	SHORT $LN76@plotDistan
+	cmp	DWORD PTR tv320[esp+28], 0
+	jle	SHORT $LN76@plotDistan
+	mov	esi, edi
+	jmp	SHORT $LN9@plotDistan
+$LN76@plotDistan:
+	xor	esi, esi
+$LN9@plotDistan:
+	mov	eax, DWORD PTR tv320[esp+28]
+	cdq
+	mov	edi, eax
+	mov	eax, DWORD PTR tv357[esp+28]
+	xor	edi, edx
+	sub	edi, edx
 	cdq
 	sub	eax, edx
-$LN59@plotDistan:
-	mov	esi, DWORD PTR _iX1$[esp+12]
 	sar	eax, 1
-	sub	esi, eax
+	add	eax, esi
+	cmp	edi, eax
+	jne	SHORT $LN77@plotDistan
 
-; 152  : 	int iHX2 = xToHexspaceX(iX1 + iWrappedDX, iY1 + iWrappedDY);
+; 165  : 	{
+; 166  : 		iWrappedDX -= (iWrappedDX > 0) - (iWrappedDX < 0);  // decrease regardless of polarity
 
-	lea	eax, DWORD PTR [edi+ebp]
-	pop	edi
+	xor	edx, edx
+	test	ecx, ecx
+	setl	dl
+	xor	eax, eax
+	test	ecx, ecx
+	setg	al
+	sub	edx, eax
+	add	ecx, edx
+$LN77@plotDistan:
+
+; 167  : 	}
+; 168  : #endif
+; 169  : 
+; 170  : 	// convert to hex-space coordinates - the coordinate system axes are E and NE (not orthogonal)
+; 171  : 	int iHX1 = xToHexspaceX(iX1, iY1);
+
+	mov	eax, DWORD PTR _iY1$[esp+24]
 	test	eax, eax
-	jge	SHORT $LN60@plotDistan
+	jge	SHORT $LN88@plotDistan
 	dec	eax
 	cdq
 	sub	eax, edx
-$LN60@plotDistan:
+$LN88@plotDistan:
+	mov	edi, DWORD PTR _iX1$[esp+24]
 
-; 153  : 
-; 154  : 	iDX = abs(dxWrap(iHX2 - iHX1));
+; 172  : 	int iHX2 = xToHexspaceX(iX1 + iWrappedDX, iY1 + iWrappedDY);
 
-	mov	edx, DWORD PTR [ebx+4020]
+	mov	edx, DWORD PTR _iY1$[esp+24]
+	sar	eax, 1
+	mov	esi, edi
+	sub	esi, eax
+	lea	eax, DWORD PTR [ebx+edx]
+	test	eax, eax
+	jge	SHORT $LN89@plotDistan
+	dec	eax
+	cdq
+	sub	eax, edx
+$LN89@plotDistan:
 	sar	eax, 1
 	sub	ecx, eax
-	add	ecx, DWORD PTR _iX1$[esp+8]
+	add	ecx, edi
+
+; 173  : 
+; 174  : #ifdef GAMECOREUTILS_FIX_PLOT_DISTANCE
+; 175  : 	// obvious bug
+; 176  : 	iDX = abs(iHX2 - iHX1);
+
 	sub	ecx, esi
-	cmp	BYTE PTR [ebx+4056], 0
-	je	SHORT $LN49@plotDistan
-	mov	eax, edx
-	shr	eax, 1
-	cmp	ecx, eax
-	jle	SHORT $LN51@plotDistan
 	mov	eax, ecx
-	sub	eax, edx
-	jmp	SHORT $LN53@plotDistan
-$LN51@plotDistan:
-	neg	eax
-	cmp	ecx, eax
-	lea	eax, DWORD PTR [edx+ecx]
-	jl	SHORT $LN53@plotDistan
-$LN49@plotDistan:
-	mov	eax, ecx
-$LN53@plotDistan:
 	cdq
 	xor	eax, edx
 	sub	eax, edx
 
-; 155  : 
-; 156  : #ifdef NQM_GAME_CORE_UTILS_OPTIMIZATIONS
-; 157  : 	if (((iHX2 - iHX1) ^ (iWrappedDY)) >= 0)  // the signs match
-; 158  : #else
-; 159  : 	if((iHX2 - iHX1 >= 0) == (iWrappedDY >= 0))  // the signs match
+; 177  : #else
+; 178  : 	iDX = abs(dxWrap(iHX2 - iHX1));
+; 179  : #endif
+; 180  : 
+; 181  : #ifdef NQM_GAME_CORE_UTILS_OPTIMIZATIONS
+; 182  : 	if (((iHX2 - iHX1) ^ (iWrappedDY)) >= 0)  // the signs match
+; 183  : #else
+; 184  : 	if((iHX2 - iHX1 >= 0) == (iWrappedDY >= 0))  // the signs match
 
 	xor	edx, edx
 	test	ecx, ecx
 	setge	dl
 	xor	ecx, ecx
-	test	ebp, ebp
+	test	ebx, ebx
 	setge	cl
+	pop	edi
 	pop	esi
 	pop	ebp
-	mov	DWORD PTR _iDX$[esp], eax
+	mov	DWORD PTR _iDX$[esp+12], eax
 	pop	ebx
 	cmp	edx, ecx
 	jne	SHORT $LN2@plotDistan
 
-; 160  : #endif
-; 161  : 	{
-; 162  : 		return iDX + iDY;
+; 185  : #endif
+; 186  : 	{
+; 187  : 		return iDX + iDY;
 
-	mov	edx, DWORD PTR _iDY$[esp-4]
+	mov	edx, DWORD PTR _iDY$[esp+12]
 	add	eax, edx
 
-; 170  : #endif
-; 171  : 	}
-; 172  : }
+; 195  : #endif
+; 196  : 	}
+; 197  : }
 
+	add	esp, 12					; 0000000cH
 	ret	0
 $LN2@plotDistan:
 
-; 163  : 	}
-; 164  : 	else
-; 165  : 	{
-; 166  : #ifdef NQM_FAST_COMP
-; 167  : 		return (MAX(iDX, iDY));
-; 168  : #else
-; 169  : 		return (std::max(iDX, iDY));
+; 188  : 	}
+; 189  : 	else
+; 190  : 	{
+; 191  : #ifdef NQM_FAST_COMP
+; 192  : 		return (MAX(iDX, iDY));
+; 193  : #else
+; 194  : 		return (std::max(iDX, iDY));
 
-	cmp	eax, DWORD PTR _iDY$[esp-4]
-	lea	eax, DWORD PTR _iDY$[esp-4]
-	jl	SHORT $LN58@plotDistan
-	lea	eax, DWORD PTR _iDX$[esp-4]
-$LN58@plotDistan:
+	cmp	eax, DWORD PTR _iDY$[esp+12]
+	lea	eax, DWORD PTR _iDY$[esp+12]
+	jl	SHORT $LN71@plotDistan
+	lea	eax, DWORD PTR _iDX$[esp+8]
+$LN71@plotDistan:
 	mov	eax, DWORD PTR [eax]
 
-; 170  : #endif
-; 171  : 	}
-; 172  : }
+; 195  : #endif
+; 196  : 	}
+; 197  : }
 
+	add	esp, 12					; 0000000cH
 	ret	0
 ?plotDistance@@YAHHHHH@Z ENDP				; plotDistance
 _TEXT	ENDS
@@ -1916,7 +2086,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lFindWater
-	push	OFFSET $SG219811
+	push	OFFSET $SG219853
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -1941,7 +2111,7 @@ $LN5@lFindWater:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN4@lFindWater
-	push	OFFSET $SG219817
+	push	OFFSET $SG219859
 	push	esi
 	call	_luaL_error
 	push	esi
@@ -2064,7 +2234,7 @@ _L$ = 8							; size = 4
 
 ; 147  : 		lua_setfield(L, -2, "FRAC_WRAP_X");
 
-	push	OFFSET $SG219559
+	push	OFFSET $SG219601
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -2087,7 +2257,7 @@ $LN8@lGetFracta:
 
 ; 153  : 		lua_setfield(L, -2, "FRAC_WRAP_Y");
 
-	push	OFFSET $SG219561
+	push	OFFSET $SG219603
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -3178,7 +3348,7 @@ _iY$ = 12						; size = 4
 _eDirection$ = 16					; size = 4
 ?plotDirection@@YAPAVCvPlot@@HHW4DirectionTypes@@@Z PROC ; plotDirection, COMDAT
 
-; 194  : 	if(eDirection == NO_DIRECTION)
+; 219  : 	if(eDirection == NO_DIRECTION)
 
 	mov	ecx, DWORD PTR _eDirection$[esp-4]
 	push	ebx
@@ -3188,8 +3358,8 @@ _eDirection$ = 16					; size = 4
 	cmp	ecx, -1
 	jne	$LN2@plotDirect
 
-; 195  : 	{
-; 196  : 		return GC.getMap().plot(iX, iY);
+; 220  : 	{
+; 221  : 		return GC.getMap().plot(iX, iY);
 
 	mov	eax, DWORD PTR _iX$[esp+12]
 	cmp	eax, -2147483647			; 80000001H
@@ -3256,17 +3426,17 @@ $LN31@plotDirect:
 	mov	eax, ecx
 	pop	ebx
 
-; 209  : 	}
-; 210  : }
+; 234  : 	}
+; 235  : }
 
 	ret	0
 $LN2@plotDirect:
 
-; 197  : 	}
-; 198  : 	else
-; 199  : 	{
-; 200  : 		// convert to hex-space coordinates - the coordinate system axes are E and NE (not orthogonal)
-; 201  : 		iX = xToHexspaceX(iX , iY);
+; 222  : 	}
+; 223  : 	else
+; 224  : 	{
+; 225  : 		// convert to hex-space coordinates - the coordinate system axes are E and NE (not orthogonal)
+; 226  : 		iX = xToHexspaceX(iX , iY);
 
 	mov	esi, DWORD PTR _iY$[esp+12]
 	test	esi, esi
@@ -3279,7 +3449,7 @@ $LN47@plotDirect:
 	sub	eax, edx
 $LN103@plotDirect:
 
-; 202  : 		iX += GC.getPlotDirectionX()[eDirection];
+; 227  : 		iX += GC.getPlotDirectionX()[eDirection];
 
 	mov	edx, DWORD PTR ?gGlobals@@3VCvGlobals@@A[ecx*4+112]
 	mov	edi, DWORD PTR _iX$[esp+12]
@@ -3287,13 +3457,13 @@ $LN103@plotDirect:
 	sub	edx, eax
 	add	edi, edx
 
-; 203  : 		iY += GC.getPlotDirectionY()[eDirection];
+; 228  : 		iY += GC.getPlotDirectionY()[eDirection];
 
 	add	esi, DWORD PTR ?gGlobals@@3VCvGlobals@@A[ecx*4+136]
 
-; 204  : 
-; 205  : 		// convert from hex-space coordinates to the storage array
-; 206  : 		iX = hexspaceXToX(iX, iY);
+; 229  : 
+; 230  : 		// convert from hex-space coordinates to the storage array
+; 231  : 		iX = hexspaceXToX(iX, iY);
 
 	js	SHORT $LN55@plotDirect
 	mov	eax, esi
@@ -3306,8 +3476,8 @@ $LN104@plotDirect:
 	sar	eax, 1
 	add	edi, eax
 
-; 207  : 
-; 208  : 		return GC.getMap().plot(iX, iY);
+; 232  : 
+; 233  : 		return GC.getMap().plot(iX, iY);
 
 	cmp	edi, -2147483647			; 80000001H
 	je	$LN59@plotDirect
@@ -3371,13 +3541,13 @@ $LN83@plotDirect:
 	mov	eax, ecx
 	pop	ebx
 
-; 209  : 	}
-; 210  : }
+; 234  : 	}
+; 235  : }
 
 	ret	0
 
-; 207  : 
-; 208  : 		return GC.getMap().plot(iX, iY);
+; 232  : 
+; 233  : 		return GC.getMap().plot(iX, iY);
 
 $LN59@plotDirect:
 	pop	edi
@@ -3386,8 +3556,8 @@ $LN59@plotDirect:
 	xor	eax, eax
 	pop	ebx
 
-; 209  : 	}
-; 210  : }
+; 234  : 	}
+; 235  : }
 
 	ret	0
 ?plotDirection@@YAPAVCvPlot@@HHW4DirectionTypes@@@Z ENDP ; plotDirection
@@ -3402,8 +3572,8 @@ _iDX$ = 16						; size = 4
 _iDY$ = 20						; size = 4
 ?plotXY@@YAPAVCvPlot@@HHHH@Z PROC			; plotXY, COMDAT
 
-; 214  : 	// convert the start coord to hex-space coordinates
-; 215  : 	int iStartHexX = xToHexspaceX(iX, iY);
+; 239  : 	// convert the start coord to hex-space coordinates
+; 240  : 	int iStartHexX = xToHexspaceX(iX, iY);
 
 	mov	ecx, DWORD PTR _iY$[esp-4]
 	test	ecx, ecx
@@ -3417,23 +3587,23 @@ $LN5@plotXY:
 $LN55@plotXY:
 	push	esi
 
-; 216  : 
-; 217  : 	int iPlotHexX = iStartHexX + iDX;
+; 241  : 
+; 242  : 	int iPlotHexX = iStartHexX + iDX;
 
 	mov	esi, DWORD PTR _iX$[esp]
 	sar	eax, 1
 	sub	esi, eax
 
-; 218  : 	int iPlotY = iY + iDY; // Y is the same in both coordinate systems
+; 243  : 	int iPlotY = iY + iDY; // Y is the same in both coordinate systems
 
 	mov	eax, DWORD PTR _iDY$[esp]
 	add	esi, DWORD PTR _iDX$[esp]
 	push	edi
 	lea	edi, DWORD PTR [ecx+eax]
 
-; 219  : 
-; 220  : 	// convert from hex-space coordinates to the storage array
-; 221  : 	iPlotHexX = hexspaceXToX(iPlotHexX, iPlotY);
+; 244  : 
+; 245  : 	// convert from hex-space coordinates to the storage array
+; 246  : 	iPlotHexX = hexspaceXToX(iPlotHexX, iPlotY);
 
 	test	edi, edi
 	jl	SHORT $LN9@plotXY
@@ -3447,8 +3617,8 @@ $LN56@plotXY:
 	sar	eax, 1
 	add	esi, eax
 
-; 222  : 
-; 223  : 	return GC.getMap().plot(iPlotHexX , iPlotY);
+; 247  : 
+; 248  : 	return GC.getMap().plot(iPlotHexX , iPlotY);
 
 	cmp	esi, -2147483647			; 80000001H
 	je	$LN13@plotXY
@@ -3514,12 +3684,12 @@ $LN37@plotXY:
 	mov	eax, ecx
 	pop	esi
 
-; 224  : }
+; 249  : }
 
 	ret	0
 
-; 222  : 
-; 223  : 	return GC.getMap().plot(iPlotHexX , iPlotY);
+; 247  : 
+; 248  : 	return GC.getMap().plot(iPlotHexX , iPlotY);
 
 $LN17@plotXY:
 	pop	ebx
@@ -3528,19 +3698,19 @@ $LN17@plotXY:
 	xor	eax, eax
 	pop	esi
 
-; 224  : }
+; 249  : }
 
 	ret	0
 
-; 222  : 
-; 223  : 	return GC.getMap().plot(iPlotHexX , iPlotY);
+; 247  : 
+; 248  : 	return GC.getMap().plot(iPlotHexX , iPlotY);
 
 $LN13@plotXY:
 	pop	edi
 	xor	eax, eax
 	pop	esi
 
-; 224  : }
+; 249  : }
 
 	ret	0
 ?plotXY@@YAPAVCvPlot@@HHHH@Z ENDP			; plotXY
@@ -3556,14 +3726,14 @@ _iDY$ = 20						; size = 4
 _iRange$ = 24						; size = 4
 ?plotXYWithRangeCheck@@YAPAVCvPlot@@HHHHH@Z PROC	; plotXYWithRangeCheck, COMDAT
 
-; 234  : #ifdef NQM_GAME_CORE_UTILS_OPTIMIZATIONS
-; 235  : 	// I'm assuming iDX and iDY are in hex-space
-; 236  : 	if (hexDistance(iDX, iDY) > iRange)
-; 237  : #else
-; 238  : 	int hexRange;
-; 239  : 
-; 240  : 	// I'm assuming iDX and iDY are in hex-space
-; 241  : 	if((iDX >= 0) == (iDY >= 0))  // the signs match
+; 259  : #ifdef NQM_GAME_CORE_UTILS_OPTIMIZATIONS
+; 260  : 	// I'm assuming iDX and iDY are in hex-space
+; 261  : 	if (hexDistance(iDX, iDY) > iRange)
+; 262  : #else
+; 263  : 	int hexRange;
+; 264  : 
+; 265  : 	// I'm assuming iDX and iDY are in hex-space
+; 266  : 	if((iDX >= 0) == (iDY >= 0))  // the signs match
 
 	mov	edx, DWORD PTR _iDX$[esp-4]
 	xor	eax, eax
@@ -3576,8 +3746,8 @@ _iRange$ = 24						; size = 4
 	setge	cl
 	cmp	eax, ecx
 
-; 242  : 	{
-; 243  : 		int iAbsDX = iDX >= 0 ? iDX : -iDX;
+; 267  : 	{
+; 268  : 		int iAbsDX = iDX >= 0 ? iDX : -iDX;
 
 	mov	ecx, edx
 	jne	SHORT $LN3@plotXYWith
@@ -3586,7 +3756,7 @@ _iRange$ = 24						; size = 4
 	neg	ecx
 $LN7@plotXYWith:
 
-; 244  : 		int iAbsDY = iDY >= 0 ? iDY : -iDY;
+; 269  : 		int iAbsDY = iDY >= 0 ? iDY : -iDY;
 
 	mov	eax, esi
 	test	esi, esi
@@ -3594,25 +3764,25 @@ $LN7@plotXYWith:
 	neg	eax
 $LN9@plotXYWith:
 
-; 245  : 		hexRange = iAbsDX + iAbsDY;
+; 270  : 		hexRange = iAbsDX + iAbsDY;
 
 	add	eax, ecx
 
-; 246  : 	}
-; 247  : 	else
+; 271  : 	}
+; 272  : 	else
 
 	jmp	SHORT $LN14@plotXYWith
 $LN3@plotXYWith:
 
-; 248  : 	{
-; 249  : 		int iAbsDX = iDX >= 0 ? iDX : -iDX;
+; 273  : 	{
+; 274  : 		int iAbsDX = iDX >= 0 ? iDX : -iDX;
 
 	test	edx, edx
 	jge	SHORT $LN11@plotXYWith
 	neg	ecx
 $LN11@plotXYWith:
 
-; 250  : 		int iAbsDY = iDY >= 0 ? iDY : -iDY;
+; 275  : 		int iAbsDY = iDY >= 0 ? iDY : -iDY;
 
 	mov	eax, esi
 	test	esi, esi
@@ -3620,35 +3790,35 @@ $LN11@plotXYWith:
 	neg	eax
 $LN13@plotXYWith:
 
-; 251  : 		hexRange = iAbsDX >= iAbsDY ? iAbsDX : iAbsDY;
+; 276  : 		hexRange = iAbsDX >= iAbsDY ? iAbsDX : iAbsDY;
 
 	cmp	ecx, eax
 	jl	SHORT $LN14@plotXYWith
 	mov	eax, ecx
 $LN14@plotXYWith:
 
-; 252  : 	}
-; 253  : 
-; 254  : 	if(hexRange > iRange)
+; 277  : 	}
+; 278  : 
+; 279  : 	if(hexRange > iRange)
 
 	cmp	eax, DWORD PTR _iRange$[esp]
 	jle	SHORT $LN1@plotXYWith
 
-; 255  : #endif
-; 256  : 	{
-; 257  : 		return NULL;
+; 280  : #endif
+; 281  : 	{
+; 282  : 		return NULL;
 
 	xor	eax, eax
 	pop	esi
 
-; 261  : }
+; 286  : }
 
 	ret	0
 $LN1@plotXYWith:
 
-; 258  : 	}
-; 259  : 
-; 260  : 	return plotXY(iX, iY, iDX, iDY);
+; 283  : 	}
+; 284  : 
+; 285  : 	return plotXY(iX, iY, iDX, iDY);
 
 	mov	eax, DWORD PTR _iX$[esp]
 	push	esi
@@ -3660,7 +3830,7 @@ $LN1@plotXYWith:
 	add	esp, 16					; 00000010H
 	pop	esi
 
-; 261  : }
+; 286  : }
 
 	ret	0
 ?plotXYWithRangeCheck@@YAPAVCvPlot@@HHHHH@Z ENDP	; plotXYWithRangeCheck
@@ -4160,7 +4330,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lAreas@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lAreas
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219456
+	push	OFFSET $SG219498
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4171,7 +4341,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lFindBiggestArea@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lFindBiggestArea
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219457
+	push	OFFSET $SG219499
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4182,7 +4352,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lFindWater@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lFindWater
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219458
+	push	OFFSET $SG219500
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4194,7 +4364,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetClimate@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lGetClimate
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219459
+	push	OFFSET $SG219501
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4205,7 +4375,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetFractalFlags@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lGetFractalFlags
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219460
+	push	OFFSET $SG219502
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4216,7 +4386,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetGridSize@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lGetGridSize
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219461
+	push	OFFSET $SG219503
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4228,7 +4398,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetNumPlots@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lGetNumPlots
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219462
+	push	OFFSET $SG219504
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4239,7 +4409,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetNumResources@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lGetNumResources
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219463
+	push	OFFSET $SG219505
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4250,7 +4420,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetNumResourcesOnLand@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lGetNumResourcesOnLand
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219464
+	push	OFFSET $SG219506
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4262,7 +4432,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetPlot@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lGetPlot
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219465
+	push	OFFSET $SG219507
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4273,7 +4443,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetPlotByIndex@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lGetPlotByIndex
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219466
+	push	OFFSET $SG219508
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4284,7 +4454,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetPlotXY@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lGetPlotXY
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219467
+	push	OFFSET $SG219509
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4296,7 +4466,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetArea@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lGetArea
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219468
+	push	OFFSET $SG219510
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4307,7 +4477,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetIndexAfterLastArea@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lGetIndexAfterLastArea
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219469
+	push	OFFSET $SG219511
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4318,7 +4488,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetLandPlots@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lGetLandPlots
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219470
+	push	OFFSET $SG219512
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4330,7 +4500,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetNumAreas@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lGetNumAreas
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219471
+	push	OFFSET $SG219513
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4341,7 +4511,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetNumLandAreas@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lGetNumLandAreas
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219472
+	push	OFFSET $SG219514
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4352,7 +4522,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetRandomResourceQuantity@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lGetRandomResourceQuantity
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219473
+	push	OFFSET $SG219515
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4364,7 +4534,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetSeaLevel@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lGetSeaLevel
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219474
+	push	OFFSET $SG219516
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4375,7 +4545,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetWorldSize@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lGetWorldSize
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219475
+	push	OFFSET $SG219517
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4386,7 +4556,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsPlot@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lIsPlot
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219476
+	push	OFFSET $SG219518
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4398,7 +4568,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsWrapX@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lIsWrapX
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219477
+	push	OFFSET $SG219519
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4409,7 +4579,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lIsWrapY@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lIsWrapY
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219478
+	push	OFFSET $SG219520
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4420,7 +4590,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lMaxPlotDistance@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lMaxPlotDistance
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219479
+	push	OFFSET $SG219521
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4432,7 +4602,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lRand@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lRand
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219480
+	push	OFFSET $SG219522
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4443,7 +4613,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lCalculateAreas@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lCalculateAreas
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219481
+	push	OFFSET $SG219523
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4454,7 +4624,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lRecalculateAreas@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lRecalculateAreas
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219482
+	push	OFFSET $SG219524
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4466,7 +4636,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lPlotDistance@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lPlotDistance
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219483
+	push	OFFSET $SG219525
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4477,7 +4647,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lPlotXYWithRangeCheck@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lPlotXYWithRangeCheck
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219484
+	push	OFFSET $SG219526
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4488,7 +4658,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lPlotDirection@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lPlotDirection
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219485
+	push	OFFSET $SG219527
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4500,7 +4670,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lDefaultContinentStamper@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lDefaultContinentStamper
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219486
+	push	OFFSET $SG219528
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4511,7 +4681,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lDoPlaceNaturalWonders@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lDoPlaceNaturalWonders
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219487
+	push	OFFSET $SG219529
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4522,7 +4692,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetCustomOption@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lGetCustomOption
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219488
+	push	OFFSET $SG219530
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4534,7 +4704,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lUpdateDeferredFog@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lUpdateDeferredFog
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219489
+	push	OFFSET $SG219531
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4545,7 +4715,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lChangeAIMapHint@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lChangeAIMapHint
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219490
+	push	OFFSET $SG219532
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4556,7 +4726,7 @@ _L$ = 8							; size = 4
 	push	OFFSET ?lGetAIMapHint@CvLuaMap@@KAHPAUlua_State@@@Z ; CvLuaMap::lGetAIMapHint
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219491
+	push	OFFSET $SG219533
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield

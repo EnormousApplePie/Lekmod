@@ -34,7 +34,7 @@
       </Image>
       <Stack Anchor="L.T" Offset="36,30" Padding="-6" StackGrowth="Right">
         <Image Anchor="C,C" Offset="0,0" Size="80,80" Texture="assets\UI\Art\Notification\NotificationFrameBase.dds">
-          <Image ID="ApolloIcon" Anchor="C,C" Offset="0,0" Size="80,80" TextureOffset="80.320" Texture="assets\UI\Art\Notification\WonderAtlas640.dds" Color="White.255"/>
+          <Image ID="ApolloIcon" Anchor="C,C" Offset="0,0" Size="80,80" TextureOffset="80.320" Texture="assets\UI\Art\Notification\WonderAtlas640.dds" Color="White.64"/>
         </Image>
         <Image Anchor="C,C" Offset="0,0" Size="80,80" Texture="assets\UI\Art\Notification\NotificationFrameBase.dds">
           <Image ID="Booster1" Anchor="C,C" Offset="0,0" Size="80,80" TextureOffset="240.320" Texture="assets\UI\Art\Notification\WonderAtlas640.dds" Color="White.64"/>

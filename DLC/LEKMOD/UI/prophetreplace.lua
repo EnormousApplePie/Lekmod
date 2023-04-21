@@ -487,7 +487,7 @@ if bIsActive then
 Events.UnitSelectionChanged.Add(ZabonahRouteHighlight)
 GameEvents.PlayerDoTurn.Add(ZabonahRouteGold)
 GameEvents.CityConstructed.Add(UAEWonderBuilt)
-GameEvents.CanSaveUnit.Add(DetectPlunder)
+GameEvents.UnitSetXY.Add(DetectPlunder)
 end
 
 --- Oman UA
@@ -2035,243 +2035,41 @@ function EconomicUnionTradeRoute_OnAdopt(playerID, policyID)
 end
 GameEvents.PlayerAdoptPolicy.Add(EconomicUnionTradeRoute_OnAdopt)
 
-
-
-
-
-
-
-
-
--- Notes, do realize that this is coded keeping policy requirements/paths in mind, so if you change any of the policy paths in the future, if anyone besides me is doing policies stuff, DONT FORGET TO CHECK THIS! thnx! ~EAP
-
+--================
 -- Italy ua
-
+--================
 local iCiv = GameInfoTypes["CIVILIZATION_ITALY"]
 local bIsActive = JFD_IsCivilisationActive(iCiv)
 function Italy_OnPolicyAdopted(playerID, policyID)
 
 	local player = Players[playerID]
-	local goldenAgePointBonus = 250
-	-- Piety finished
-	if player:GetCivilizationType() == GameInfoTypes["CIVILIZATION_ITALY"] then
 
-		if	(policyID == GameInfo.Policies["POLICY_THEOCRACY"].ID 
-			and player:HasPolicy(GameInfo.Policies["POLICY_MANDATE_OF_HEAVEN"].ID)
-			and player:HasPolicy(GameInfo.Policies["POLICY_FREE_RELIGION"].ID)
-			and player:HasPolicy(GameInfo.Policies["POLICY_REFORMATION"].ID)) or
-			(policyID == GameInfo.Policies["POLICY_MANDATE_OF_HEAVEN"].ID 
-			and player:HasPolicy(GameInfo.Policies["POLICY_THEOCRACY"].ID)
-			and player:HasPolicy(GameInfo.Policies["POLICY_FREE_RELIGION"].ID)
-			and player:HasPolicy(GameInfo.Policies["POLICY_REFORMATION"].ID)) or
-			(policyID == GameInfo.Policies["POLICY_FREE_RELIGION"].ID 
-			and player:HasPolicy(GameInfo.Policies["POLICY_MANDATE_OF_HEAVEN"].ID)
-			and player:HasPolicy(GameInfo.Policies["POLICY_THEOCRACY"].ID)
-			and player:HasPolicy(GameInfo.Policies["POLICY_REFORMATION"].ID)) or
-			(policyID == GameInfo.Policies["POLICY_REFORMATION"].ID 
-			and player:HasPolicy(GameInfo.Policies["POLICY_MANDATE_OF_HEAVEN"].ID)
-			and player:HasPolicy(GameInfo.Policies["POLICY_FREE_RELIGION"].ID)
-			and player:HasPolicy(GameInfo.Policies["POLICY_THEOCRACY"].ID)) then
-
-			player:ChangeGoldenAgeProgressMeter(goldenAgePointBonus)
+	if (player:GetCivilizationType() == GameInfoTypes["CIVILIZATION_ITALY"]) and (player:IsEverAlive()) then
+		if policyID == GameInfo.Policies["POLICY_HONOR_FINISHER"].ID or GameInfo.Policies["POLICY_PIETY_FINISHER"].ID
+		or GameInfo.Policies["POLICY_PATRONAGE_FINISHER"].ID or GameInfo.Policies["POLICY_COMMERCE_FINISHER"].ID or
+		GameInfo.Policies["POLICY_RATIONALISM_FINISHER"].ID or GameInfo.Policies["POLICY_EXPLORATION_FINISHER"].ID or
+		GameInfo.Policies["POLICY_AESTHETICS_FINISHER"].ID or GameInfo.Policies["POLICY_TRADITION_FINISHER"].ID or
+		GameInfo.Policies["POLICY_LIBERTY_FINISHER"].ID then
+			
+			local iGoldenageturns = 6 * GameInfo.GameSpeeds[Game.GetGameSpeedType()].GoldenAgePercent / 100;
+			--iGoldenagepoints should be 375, but adjusted for game speed
+			local iGoldenagepoints = 375 * GameInfo.GameSpeeds[Game.GetGameSpeedType()].GoldenAgePercent / 100
+			if player:IsGoldenAge() then
+				player:ChangeGoldenAgeTurns(iGoldenageturns)
+				if iGoldenageturns == 1 then
+					Events.GameplayAlertMessage("Your people become inspired by your political prowess! " .. iGoldenageturns .. " turn has been added to your [ICON_GOLDEN_AGE] Golden Age!")
+				else
+					Events.GameplayAlertMessage("Your people become inspired by your political prowess! " .. iGoldenageturns .. " turns have been added to your [ICON_GOLDEN_AGE] Golden Age!")
+				end
+			else
+				player:ChangeGoldenAgeProgressMeter(iGoldenagepoints)
+				Events.GameplayAlertMessage("Your people become inspired by your political prowess! " .. iGoldenagepoints .. " [ICON_GOLDEN_AGE] Golden Age points have been added to your [ICON_GOLDEN_AGE] Golden Age progress!")
+			end
 		end
-	end 
-end
-
-if bIsActive then
-GameEvents.PlayerAdoptPolicy.Add(Italy_OnPolicyAdopted);
-end
-function Italy_OnPolicyAdopted(playerID, policyID)
-
-	local player = Players[playerID]
-
-	-- Tradition Finished
-	if player:GetCivilizationType() == GameInfoTypes["CIVILIZATION_ITALY"] then
-
-		if	(policyID == GameInfo.Policies["POLICY_ARISTOCRACY"].ID 
-			and player:HasPolicy(GameInfo.Policies["POLICY_LANDED_ELITE"].ID)
-			and player:HasPolicy(GameInfo.Policies["POLICY_MONARCHY"].ID)
-			and player:HasPolicy(GameInfo.Policies["POLICY_OLIGARCHY"].ID)) or
-			(policyID == GameInfo.Policies["POLICY_LANDED_ELITE"].ID 
-			and player:HasPolicy(GameInfo.Policies["POLICY_ARISTOCRACY"].ID)
-			and player:HasPolicy(GameInfo.Policies["POLICY_MONARCHY"].ID)
-			and player:HasPolicy(GameInfo.Policies["POLICY_OLIGARCHY"].ID)) or
-			(policyID == GameInfo.Policies["POLICY_MONARCHY"].ID 
-			and player:HasPolicy(GameInfo.Policies["POLICY_LANDED_ELITE"].ID)
-			and player:HasPolicy(GameInfo.Policies["POLICY_ARISTOCRACY"].ID)
-			and player:HasPolicy(GameInfo.Policies["POLICY_OLIGARCHY"].ID)) or
-			(policyID == GameInfo.Policies["POLICY_OLIGARCHY"].ID 
-			and player:HasPolicy(GameInfo.Policies["POLICY_LANDED_ELITE"].ID)
-			and player:HasPolicy(GameInfo.Policies["POLICY_MONARCHY"].ID)
-			and player:HasPolicy(GameInfo.Policies["POLICY_ARISTOCRACY"].ID)) then
-
-			player:ChangeGoldenAgeProgressMeter(goldenAgePointBonus)
-		end
-	end 
-end
-
-if bIsActive then
-GameEvents.PlayerAdoptPolicy.Add(Italy_OnPolicyAdopted);
-end
-function Italy_OnPolicyAdopted(playerID, policyID)
-
-	local player = Players[playerID]
-
-	-- Liberty Finished
-	if player:GetCivilizationType() == GameInfoTypes["CIVILIZATION_ITALY"] then
-
-		if	(policyID == GameInfo.Policies["POLICY_COLLECTIVE_RULE"].ID 
-			and player:HasPolicy(GameInfo.Policies["POLICY_REPRESENTATION"].ID)
-			and player:HasPolicy(GameInfo.Policies["POLICY_MERITOCRACY"].ID)) or
-			(policyID == GameInfo.Policies["POLICY_REPRESENTATION"].ID 
-			and player:HasPolicy(GameInfo.Policies["POLICY_COLLECTIVE_RULE"].ID)
-			and player:HasPolicy(GameInfo.Policies["POLICY_MERITOCRACY"].ID)) or
-			(policyID == GameInfo.Policies["POLICY_MERITOCRACY"].ID 
-			and player:HasPolicy(GameInfo.Policies["POLICY_COLLECTIVE_RULE"].ID)
-			and player:HasPolicy(GameInfo.Policies["POLICY_REPRESENTATION"].ID)) then
-
-			player:ChangeGoldenAgeProgressMeter(goldenAgePointBonus)
-		end
-	end 
+	end
 end
 if bIsActive then
-GameEvents.PlayerAdoptPolicy.Add(Italy_OnPolicyAdopted);
-end
-
-function Italy_OnPolicyAdopted(playerID, policyID)
-
-	local player = Players[playerID]
-
-	-- Honor Finished
-	if player:GetCivilizationType() == GameInfoTypes["CIVILIZATION_ITALY"] then
-
-		if	(policyID == GameInfo.Policies["POLICY_MILITARY_CASTE"].ID 
-			and player:HasPolicy(GameInfo.Policies["POLICY_MILITARY_TRADITION"].ID)
-			and player:HasPolicy(GameInfo.Policies["POLICY_DISCIPLINE"].ID)) or
-			(policyID == GameInfo.Policies["POLICY_MILITARY_TRADITION"].ID 
-			and player:HasPolicy(GameInfo.Policies["POLICY_MILITARY_CASTE"].ID)
-			and player:HasPolicy(GameInfo.Policies["POLICY_DISCIPLINE"].ID)) or
-			(policyID == GameInfo.Policies["POLICY_DISCIPLINE"].ID 
-			and player:HasPolicy(GameInfo.Policies["POLICY_MILITARY_CASTE"].ID)
-			and player:HasPolicy(GameInfo.Policies["POLICY_MILITARY_TRADITION"].ID)) then
-
-			player:ChangeGoldenAgeProgressMeter(goldenAgePointBonus)
-		end
-	end 
-end
-if bIsActive then
-GameEvents.PlayerAdoptPolicy.Add(Italy_OnPolicyAdopted);
-end
-
-function Italy_OnPolicyAdopted(playerID, policyID)
-
-	local player = Players[playerID]
-
-	-- Patronage Finished
-	if player:GetCivilizationType() == GameInfoTypes["CIVILIZATION_ITALY"] then
-
-		if	(policyID == GameInfo.Policies["POLICY_CONSULATES"].ID 
-			and player:HasPolicy(GameInfo.Policies["POLICY_SCHOLASTICISM"].ID)
-			and player:HasPolicy(GameInfo.Policies["POLICY_PHILANTHROPY"].ID)) or
-			(policyID == GameInfo.Policies["POLICY_SCHOLASTICISM"].ID 
-			and player:HasPolicy(GameInfo.Policies["POLICY_CONSULATES"].ID)
-			and player:HasPolicy(GameInfo.Policies["POLICY_PHILANTHROPY"].ID)) or
-			(policyID == GameInfo.Policies["POLICY_PHILANTHROPY"].ID 
-			and player:HasPolicy(GameInfo.Policies["POLICY_CONSULATES"].ID)
-			and player:HasPolicy(GameInfo.Policies["POLICY_SCHOLASTICISM"].ID)) then
-
-			player:ChangeGoldenAgeProgressMeter(goldenAgePointBonus)
-		end
-	end 
-end
-if bIsActive then
-GameEvents.PlayerAdoptPolicy.Add(Italy_OnPolicyAdopted);
-end
-
-function Italy_OnPolicyAdopted(playerID, policyID)
-
-	local player = Players[playerID]
-
-	-- Aesthetics Finished
-	if player:GetCivilizationType() == GameInfoTypes["CIVILIZATION_ITALY"] then
-
-		if	(policyID == GameInfo.Policies["POLICY_FINE_ARTS"].ID 
-			and player:HasPolicy(GameInfo.Policies["POLICY_FLOURISHING_OF_ARTS"].ID)) or
-			(policyID == GameInfo.Policies["POLICY_FLOURISHING_OF_ARTS"].ID 
-			and player:HasPolicy(GameInfo.Policies["POLICY_FINE_ARTS"].ID)) then
-
-			player:ChangeGoldenAgeProgressMeter(goldenAgePointBonus)
-		end
-	end 
-end
-
-if bIsActive then
-GameEvents.PlayerAdoptPolicy.Add(Italy_OnPolicyAdopted);
-end
-function Italy_OnPolicyAdopted(playerID, policyID)
-
-	local player = Players[playerID]
-
-	-- Exploration Finished
-	if player:GetCivilizationType() == GameInfoTypes["CIVILIZATION_ITALY"] then
-
-		if	(policyID == GameInfo.Policies["POLICY_TREASURE_FLEETS"].ID 
-			and player:HasPolicy(GameInfo.Policies["POLICY_MERCHANT_NAVY"].ID)) or
-			(policyID == GameInfo.Policies["POLICY_MERCHANT_NAVY"].ID 
-			and player:HasPolicy(GameInfo.Policies["POLICY_TREASURE_FLEETS"].ID)) then
-
-			player:ChangeGoldenAgeProgressMeter(goldenAgePointBonus)
-		end
-	end 
-end
-if bIsActive then
-GameEvents.PlayerAdoptPolicy.Add(Italy_OnPolicyAdopted);
-end
-
-function Italy_OnPolicyAdopted(playerID, policyID)
-
-	local player = Players[playerID]
-
-	-- Rationalism Finished
-	if player:GetCivilizationType() == GameInfoTypes["CIVILIZATION_ITALY"] then
-
-		if	(policyID == GameInfo.Policies["POLICY_SECULARISM"].ID 
-			and player:HasPolicy(GameInfo.Policies["POLICY_HUMANISM"].ID)) or
-			(policyID == GameInfo.Policies["POLICY_HUMANISM"].ID 
-			and player:HasPolicy(GameInfo.Policies["POLICY_SECULARISM"].ID)) then
-
-			player:ChangeGoldenAgeProgressMeter(goldenAgePointBonus)
-		end
-	end 
-end
-if bIsActive then
-GameEvents.PlayerAdoptPolicy.Add(Italy_OnPolicyAdopted);
-end
-
-function Italy_OnPolicyAdopted(playerID, policyID)
-
-	local player = Players[playerID]
-
-	-- Commerce Finished
-	if player:GetCivilizationType() == GameInfoTypes["CIVILIZATION_ITALY"] then
-
-		if	(policyID == GameInfo.Policies["POLICY_ENTREPRENEURSHIP"].ID 
-			and player:HasPolicy(GameInfo.Policies["POLICY_PROTECTIONISM"].ID)
-			and player:HasPolicy(GameInfo.Policies["POLICY_TRADE_UNIONS"].ID)) or
-			(policyID == GameInfo.Policies["POLICY_PROTECTIONISM"].ID 
-			and player:HasPolicy(GameInfo.Policies["POLICY_ENTREPRENEURSHIP"].ID)
-			and player:HasPolicy(GameInfo.Policies["POLICY_TRADE_UNIONS"].ID)) or
-			(policyID == GameInfo.Policies["POLICY_TRADE_UNIONS"].ID 
-			and player:HasPolicy(GameInfo.Policies["POLICY_ENTREPRENEURSHIP"].ID)
-			and player:HasPolicy(GameInfo.Policies["POLICY_PROTECTIONISM"].ID)) then
-
-			player:ChangeGoldenAgeProgressMeter(goldenAgePointBonus)
-		end
-	end 
-end
-
-if bIsActive then
-GameEvents.PlayerAdoptPolicy.Add(Italy_OnPolicyAdopted);
+	GameEvents.PlayerAdoptPolicy.Add(Italy_OnPolicyAdopted);
 end
 
 -- HonorChanges
@@ -2649,7 +2447,7 @@ function YugoslaviaUA(playerID)
 			if player:HasPolicy(yugoFreedom) or player:HasPolicy(policyA) then
 				player:SetHasPolicy(yugoFreedom, false);
 				player:SetHasPolicy(policyA, false);
-				player:SetHasPolicy(yugoB, false);
+				player:SetHasPolicy(policyB, false);
 			
 				player:SetHasPolicy(yugoOrder, true);
 				player:SetHasPolicy(yugoAuto, true);
@@ -2717,14 +2515,13 @@ if (bIsActive and iCiv) then
 		local pPlot = Map.GetPlot(iX, iY)
 		local pCity = pPlot:GetPlotCity()
 		local goldenAgePointBonus = 100
-		if (player:IsEverAlive() and player:GetCivilizationType() == iCiv) then
+		if (player:IsEverAlive() and player:GetCivilizationType() == GameInfoTypes["CIVILIZATION_COLOMBIA"]) then
 			player:ChangeGoldenAgeProgressMeter(goldenAgePointBonus)
 			if player:IsHuman() then
 				Events.AddPopupTextEvent(HexToWorld(ToHexFromGrid(Vector2(iX, iY))), Locale.ConvertTextKey("[COLOR_WHITE]+{1_Num}[ENDCOLOR] [ICON_GOLDEN_AGE]", goldenAgePointBonus), true)
 			end
 		end
 	end
-	GameEvents.CityCaptureComplete.Add(NQMP_Exploration_TreasureFleets_OnCityCaptureComplete)
     function ColombiaTrait(iPlayer)
         local player = Players[iPlayer];
 		local pCity = player:GetCapitalCity();
@@ -2762,4 +2559,24 @@ function PhoeniciaUACityBonus(playerID, iX, iY)
 end
 if bIsActive then
 	GameEvents.PlayerCityFounded.Add(PhoeniciaUACityBonus)
+end
+
+-- =======================================================================================================================
+-- Polynesia UA Bug fix : Remove ocean impassable promotion from upgraded units (galley -> galleas)
+-- =======================================================================================================================
+local iCiv = GameInfoTypes["CIVILIZATION_POLYNESIA"]
+local bIsActive = JFD_IsCivilisationActive(iCiv)
+function PolynesiaUABugFix(playerID)
+	local pPlayer = Players[playerID]
+	if pPlayer:GetCivilizationType() == iCiv then
+		print("Polynesia UA Bug Fix")
+		for pUnit in pPlayer:Units() do
+			if pUnit:IsHasPromotion(GameInfoTypes["PROMOTION_OCEAN_IMPASSABLE"]) then
+				pUnit:SetHasPromotion(GameInfoTypes["PROMOTION_OCEAN_IMPASSABLE"], false)
+			end
+		end
+	end
+end
+if bIsActive then
+	GameEvents.PlayerDoTurn.Add(PolynesiaUABugFix)
 end

@@ -2121,6 +2121,31 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bGift)
 		{
 			changeJONSCulture(iCaptureCulture);
 #endif
+#ifdef UPDATE_CULTURE_NOTIFICATION_DURING_TURN
+			// if this is the human player, have the popup come up so that he can choose a new policy
+			if (isAlive() && isHuman() && getNumCities() > 0)
+			{
+				if (!GC.GetEngineUserInterface()->IsPolicyNotificationSeen())
+				{
+					if (getNextPolicyCost() <= getJONSCulture() && GetPlayerPolicies()->GetNumPoliciesCanBeAdopted() > 0)
+					{
+						CvNotifications* pNotifications = GetNotifications();
+						if (pNotifications)
+						{
+							CvString strBuffer;
+
+							if (GC.getGame().isOption(GAMEOPTION_POLICY_SAVING))
+								strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_ENOUGH_CULTURE_FOR_POLICY_DISMISS");
+							else
+								strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_ENOUGH_CULTURE_FOR_POLICY");
+
+							CvString strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_ENOUGH_CULTURE_FOR_POLICY");
+							pNotifications->Add(NOTIFICATION_POLICY, strBuffer, strSummary, -1, -1, -1);
+						}
+					}
+				}
+			}
+#endif
 		}
 #ifndef AUI_WARNING_FIXES
 	}
@@ -2132,10 +2157,19 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bGift)
 			// Will this be the first time we have owned this city? And was it not a city state?
 	//if(GC.getGame().isOption("GAMEOPTION_SPOILS_OF_WAR")) // Here we check for the Spoils of War Game option to be enabled
 	//{
-		if (!pOldCity->isEverOwned(GetID()) && !GET_PLAYER(pOldCity->getOriginalOwner()).isMinorCiv())
+		// make sure we don't get techs from puppeted cities or cities we've already owned or city-states
+		
+		if (!pOldCity->isEverOwned(GetID()) && !GET_PLAYER(pOldCity->getOriginalOwner()).isMinorCiv() && !pOldCity->IsPuppet())
 		{
 			DoTechFromCityConquer(pOldCity);
 		}
+		
+
+
+
+
+
+		
 	//}
 #endif
 		if (GetPlayerTraits()->IsTechFromCityConquer())
@@ -6595,6 +6629,9 @@ bool CvPlayer::canReceiveGoody(CvPlot* pPlot, GoodyTypes eGoody, CvUnit* pUnit) 
 //	--------------------------------------------------------------------------------
 void CvPlayer::receiveGoody(CvPlot* pPlot, GoodyTypes eGoody, CvUnit* pUnit)
 {
+#ifdef UPDATE_CULTURE_NOTIFICATION_DURING_TURN
+	CvGame& kGame = GC.getGame();
+#endif
 	CvPlot* pLoopPlot;
 	CvPlot* pBestPlot = NULL;
 	CvString strBuffer;
@@ -6689,6 +6726,32 @@ void CvPlayer::receiveGoody(CvPlot* pPlot, GoodyTypes eGoody, CvUnit* pUnit)
 		iCulture /= 100;
 
 		changeJONSCulture(iCulture);
+
+#ifdef UPDATE_CULTURE_NOTIFICATION_DURING_TURN
+		// if this is the human player, have the popup come up so that he can choose a new policy
+		if (isAlive() && isHuman() && getNumCities() > 0)
+		{
+			if (!GC.GetEngineUserInterface()->IsPolicyNotificationSeen())
+			{
+				if (getNextPolicyCost() <= getJONSCulture() && GetPlayerPolicies()->GetNumPoliciesCanBeAdopted() > 0)
+				{
+					CvNotifications* pNotifications = GetNotifications();
+					if (pNotifications)
+					{
+						CvString strBuffer;
+
+						if (kGame.isOption(GAMEOPTION_POLICY_SAVING))
+							strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_ENOUGH_CULTURE_FOR_POLICY_DISMISS");
+						else
+							strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_ENOUGH_CULTURE_FOR_POLICY");
+
+						CvString strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_ENOUGH_CULTURE_FOR_POLICY");
+						pNotifications->Add(NOTIFICATION_POLICY, strBuffer, strSummary, -1, -1, -1);
+					}
+				}
+			}
+		}
+#endif
 #ifdef AUI_PLAYER_FIX_RECEIVE_GOODY_MESSAGE
 		strBuffer = GetLocalizedText(kGoodyInfo.GetDescriptionKey(), iCulture);
 #endif
@@ -11237,6 +11300,9 @@ void CvPlayer::DoYieldsFromKill(UnitTypes eAttackingUnitType, UnitTypes eKilledU
 /// If a bonus is applied, iNumBonuses must be incremented to stagger the UI text with other bonuses
 void CvPlayer::DoYieldBonusFromKill(YieldTypes eYield, UnitTypes eAttackingUnitType, UnitTypes eKilledUnitType, int iX, int iY, bool bWasBarbarian, int &iNumBonuses)
 {
+#ifdef UPDATE_CULTURE_NOTIFICATION_DURING_TURN
+	CvGame& kGame = GC.getGame();
+#endif
 	CvAssertMsg(eKilledUnitType != NO_UNIT, "Killed unit's type is NO_TYPE. Please send Anton your save file and version.");
 	if (eKilledUnitType == NO_UNIT) return;
 
@@ -11313,6 +11379,32 @@ void CvPlayer::DoYieldBonusFromKill(YieldTypes eYield, UnitTypes eAttackingUnitT
 					break;
 				case YIELD_CULTURE:
 					changeJONSCulture(iTotalValue);
+
+#ifdef UPDATE_CULTURE_NOTIFICATION_DURING_TURN
+					// if this is the human player, have the popup come up so that he can choose a new policy
+					if (isAlive() && isHuman() && getNumCities() > 0)
+					{
+						if (!GC.GetEngineUserInterface()->IsPolicyNotificationSeen())
+						{
+							if (getNextPolicyCost() <= getJONSCulture() && GetPlayerPolicies()->GetNumPoliciesCanBeAdopted() > 0)
+							{
+								CvNotifications* pNotifications = GetNotifications();
+								if (pNotifications)
+								{
+									CvString strBuffer;
+
+									if (kGame.isOption(GAMEOPTION_POLICY_SAVING))
+										strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_ENOUGH_CULTURE_FOR_POLICY_DISMISS");
+									else
+										strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_ENOUGH_CULTURE_FOR_POLICY");
+
+									CvString strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_ENOUGH_CULTURE_FOR_POLICY");
+									pNotifications->Add(NOTIFICATION_POLICY, strBuffer, strSummary, -1, -1, -1);
+								}
+							}
+						}
+					}
+#endif
 					break;
 				case YIELD_FAITH:
 					ChangeFaith(iTotalValue);
@@ -11449,12 +11541,15 @@ void CvPlayer::DoReligionOneShots(ReligionTypes eReligion)
 	{
 		m_bHasUsedReligiousSettlements = true;
 
-		// add free settlers from Religious Settlements belief - I know this is super ugly, sorry :(
+		// add free *EDIT: SIKE: Now Prophets, because I cannot be bothered to make a new thing for this. Maybe later --- from Religious Settlements belief - I know this is super ugly, sorry :(
 		// real solution is to make a Belief_FreeUnitClasses table and figure out how to check for each belief being triggered only once... :(
 		// also should be regular settlers, not uniques (like American Pioneer for example)
 		for (int iFreeSettlerLoop = 0; iFreeSettlerLoop < pReligion->m_Beliefs.GetNumFreeSettlers(); iFreeSettlerLoop++)
 		{
-			addFreeUnit((UnitTypes)GC.getInfoTypeForString("UNIT_SETTLER"));
+			//give a prophet to the player
+			addFreeUnit((UnitTypes)getCivilizationInfo().getCivilizationUnits((UnitClassTypes)GC.getInfoTypeForString("UNITCLASS_PROPHET")));
+
+			
 		}
 	}
 #endif
@@ -11752,8 +11847,85 @@ void CvPlayer::DoTechFromCityConquer(CvCity* pConqueredCity)
 		CvAssert(eFreeTech != NO_TECH)
 		if (eFreeTech != NO_TECH)
 		{
+#ifdef NQ_SPOILS_OF_WAR
+			//check if we have a game option enabled
+			if (GC.getGame().isOption("GAMEOPTION_SPOILS_OF_WAR"))
+			{
+				// Lekmod Edit: Spoils of War. Awards only a % of the cost of the tech depending on ERA, editable in the XML global defines.
+				int iCost = GetPlayerTechs()->GetResearchCost(eFreeTech) * 100;
+				int iPercentage = 0;
+				//fetch the era the tech is in
+				CvTechEntry* pInfo = GC.getTechInfo(eFreeTech);
+				EraTypes eEra = (EraTypes)pInfo->GetEra();
+				switch (eEra)
+				{
+				case 0:
+					iPercentage = 100; //GC.getSPOILS_OF_WAR_ANCIENT();
+					break;
+				case 1:
+					iPercentage = 100; //GC.getSPOILS_OF_WAR_CLASSICAL();
+					break;
+				case 2:
+					iPercentage = 100; // GC.getSPOILS_OF_WAR_MEDIEVAL();
+					break;
+				case 3:
+					iPercentage = 100; // GC.getSPOILS_OF_WAR_RENAISSANCE();
+					break;
+				case 4:
+					iPercentage = 100; // GC.getSPOILS_OF_WAR_INDUSTRIAL();
+					break;
+				case 5:
+					iPercentage = 75; // GC.getSPOILS_OF_WAR_MODERN();
+					break;
+				case 6:
+					iPercentage = 50; // GC.getSPOILS_OF_WAR_ATOMIC();
+					break;
+				case 7:
+					iPercentage = 25; // GC.getSPOILS_OF_WAR_FUTURE();
+					break;
+				}
+				if (iPercentage > 0 && iPercentage <= 100)
+				{
+					iCost = (iCost / 100 * iPercentage) / 100;
+				}
+				//other percentages are either nothing or not allowed, so set the cost to 0.
+				else
+				{
+					iCost = 0;
+				}
+
+				if (iPercentage == 100) //if the percentage is 100, then act like a normal steal.
+				{
+					GET_TEAM(getTeam()).setHasTech(eFreeTech, true, GetID(), true, true);
+					GET_TEAM(getTeam()).GetTeamTechs()->SetNoTradeTech(eFreeTech, true);
+				}
+				else if (iCost != 0)
+				{
+					//if the research progress is greater than the cost, give the tech and set the progress to 0.
+					if (GET_TEAM(getTeam()).GetTeamTechs()->GetResearchProgress(eFreeTech) >= iCost)
+					{
+						//GET_TEAM(getTeam()).GetTeamTechs()->SetResearchProgress(eFreeTech, 0, GetID());
+						GET_TEAM(getTeam()).setHasTech(eFreeTech, true, GetID(), true, true);
+						GET_TEAM(getTeam()).GetTeamTechs()->SetNoTradeTech(eFreeTech, true);
+					}
+					else
+					{
+						GET_TEAM(getTeam()).GetTeamTechs()->ChangeResearchProgress(eFreeTech, iCost, GetID());
+						GET_TEAM(getTeam()).GetTeamTechs()->SetNoTradeTech(eFreeTech, true);
+					}
+				}
+			}
+			else
+			{
+				GET_TEAM(getTeam()).setHasTech(eFreeTech, true, GetID(), true, true);
+				GET_TEAM(getTeam()).GetTeamTechs()->SetNoTradeTech(eFreeTech, true);
+			}
+#else
 			GET_TEAM(getTeam()).setHasTech(eFreeTech, true, GetID(), true, true);
 			GET_TEAM(getTeam()).GetTeamTechs()->SetNoTradeTech(eFreeTech, true);
+			
+#endif
+			
 		}
 	}
 }
@@ -23928,9 +24100,16 @@ void CvPlayer::processPolicies(PolicyTypes ePolicy, int iChange)
 
 		if(iNumCitiesFreeFoodBuilding > 0)
 		{
+#ifndef AQUEDUCT_FIX
 			BuildingTypes eFoodBuilding = pLoopCity->ChooseFreeFoodBuilding();
+#else
+			BuildingTypes eFoodBuilding = (BuildingTypes)GC.getInfoTypeForString("BUILDING_AQUEDUCT", true);
+#endif
 			if(eFoodBuilding != NO_BUILDING)
 			{
+#ifdef AQUEDUCT_FIX
+				pLoopCity->GetCityBuildings()->SetNumFreeBuilding(eFoodBuilding, 0);
+#endif
 				pLoopCity->GetCityBuildings()->SetNumFreeBuilding(eFoodBuilding, 1);
 
 				if(pLoopCity->getFirstBuildingOrder(eFoodBuilding) == 0)
@@ -24308,6 +24487,13 @@ void CvPlayer::processPolicies(PolicyTypes ePolicy, int iChange)
 	}
 
 	// Add a Reformation belief if eligible
+#ifdef LEKMOD_REFORMATION_NOTIFICATION_MID_TURN
+	if (isHuman() && pPolicy->IsAddReformationBelief() && GetReligions()->HasCreatedReligion() && !GetReligions()->HasAddedReformationBelief())
+	{
+		DoReformationNotification();
+	}
+	
+#else
 	if (isHuman() && pPolicy->IsAddReformationBelief() && GetReligions()->HasCreatedReligion() && !GetReligions()->HasAddedReformationBelief())
 	{
 		pNotifications = GetNotifications();
@@ -24318,7 +24504,7 @@ void CvPlayer::processPolicies(PolicyTypes ePolicy, int iChange)
 			pNotifications->Add(NOTIFICATION_ADD_REFORMATION_BELIEF, strBuffer, strSummary, -1, -1, -1);
 		}
 	}
-
+#endif
 	// if the steal tech faster amount is modified, then update the progress of all spies
 	if (pPolicy->GetStealTechFasterModifier() != 0)
 	{
@@ -24358,6 +24544,23 @@ void CvPlayer::processPolicies(PolicyTypes ePolicy, int iChange)
 	GC.GetEngineUserInterface()->setDirty(CityInfo_DIRTY_BIT, true);
 	GC.GetEngineUserInterface()->setDirty(GameData_DIRTY_BIT, true);
 }
+
+#ifdef LEKMOD_REFORMATION_NOTIFICATION_MID_TURN
+//  -------------------------------------------------------------------------------
+//Check Reformation notification in a function - to add it to other places
+void CvPlayer::DoReformationNotification()
+{	
+	CvNotifications* pNotifications;
+	pNotifications = GetNotifications();
+	if (pNotifications)
+	{
+		CvString strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_ADD_REFORMATION_BELIEF");
+		CvString strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_ADD_REFORMATION_BELIEF");
+		pNotifications->Add(NOTIFICATION_ADD_REFORMATION_BELIEF, strBuffer, strSummary, -1, -1, -1);
+	}
+}
+#endif
+
 
 //	--------------------------------------------------------------------------------
 /// If we should see where the locations of all current Barb Camps are, do it

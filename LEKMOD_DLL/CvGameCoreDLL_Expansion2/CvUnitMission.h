@@ -36,6 +36,7 @@ public:
 	/// Have a unit wait for another units missions to complete
 	static void WaitFor(UnitHandle hUnit, UnitHandle hWaitForUnit);
 	static bool HasCompletedMoveMission(UnitHandle hUnit);
+
 private:
 	static void						InsertAtEndMissionQueue(UnitHandle hUnit, MissionData mission, bool bStart = true);
 	static MissionQueueNode*		DeleteMissionQueueNode(UnitHandle hUnit, MissionData* pNode);

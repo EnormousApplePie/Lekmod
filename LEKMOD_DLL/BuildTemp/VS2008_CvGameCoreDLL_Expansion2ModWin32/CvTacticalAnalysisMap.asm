@@ -12,24 +12,24 @@ INCLUDELIB OLDNAMES
 PUBLIC	?NO_QUEST_DATA@CvMinorCivQuest@@2HB		; CvMinorCivQuest::NO_QUEST_DATA
 PUBLIC	?NO_TURN@CvMinorCivQuest@@2HB			; CvMinorCivQuest::NO_TURN
 CONST	SEGMENT
-$SG222782 DB	'Zone ID: %d, Area ID: %d, Value: %d, FRIENDLY Str: %d (%'
+$SG222824 DB	'Zone ID: %d, Area ID: %d, Value: %d, FRIENDLY Str: %d (%'
 	DB	'd), Ranged: %d (%d), ENEMY Str: %d (%d), Ranged: %d (%d), Clo'
 	DB	'sest Enemy: %d', 00H
-$SG222784 DB	', Friendly', 00H
+$SG222826 DB	', Friendly', 00H
 	ORG $+1
-$SG222787 DB	', Enemy', 00H
-$SG222790 DB	', Even', 00H
+$SG222829 DB	', Enemy', 00H
+$SG222832 DB	', Even', 00H
 	ORG $+1
-$SG222793 DB	', No Units Visible', 00H
+$SG222835 DB	', No Units Visible', 00H
 	ORG $+1
-$SG222795 DB	', Water', 00H
-$SG222797 DB	', Land', 00H
+$SG222837 DB	', Water', 00H
+$SG222839 DB	', Land', 00H
 	ORG $+1
-$SG222799 DB	', Temporary Zone', 00H
+$SG222841 DB	', Temporary Zone', 00H
 	ORG $+3
-$SG222804 DB	', ', 00H
+$SG222846 DB	', ', 00H
 	ORG $+1
-$SG222806 DB	' (Temp)', 00H
+$SG222848 DB	' (Temp)', 00H
 CONST	ENDS
 ;	COMDAT ?NO_TURN@CvMinorCivQuest@@2HB
 CONST	SEGMENT
@@ -1079,6 +1079,29 @@ __Count$ = 8						; size = 4
 	ret	4
 ??0?$_Temp_iterator@VCvTacticalDominanceZone@@@std@@QAE@H@Z ENDP ; std::_Temp_iterator<CvTacticalDominanceZone>::_Temp_iterator<CvTacticalDominanceZone>
 _TEXT	ENDS
+PUBLIC	_sqrtf
+EXTRN	_sqrt:PROC
+EXTRN	__fltused:DWORD
+; Function compile flags: /Ogtpy
+; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\math.h
+;	COMDAT _sqrtf
+_TEXT	SEGMENT
+tv71 = 8						; size = 4
+__X$ = 8						; size = 4
+_sqrtf	PROC						; COMDAT
+
+; 423  :         {return ((float)sqrt((double)_X)); }
+
+	fld	DWORD PTR __X$[esp-4]
+	sub	esp, 8
+	fstp	QWORD PTR [esp]
+	call	_sqrt
+	fstp	DWORD PTR tv71[esp+4]
+	add	esp, 8
+	fld	DWORD PTR tv71[esp-4]
+	ret	0
+_sqrtf	ENDP
+_TEXT	ENDS
 PUBLIC	??$_Destroy@VCvTacticalDominanceZone@@@std@@YAXPAVCvTacticalDominanceZone@@@Z ; std::_Destroy<CvTacticalDominanceZone>
 ; Function compile flags: /Ogtpy
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xmemory
@@ -1105,29 +1128,6 @@ __Pbuf$ = 8						; size = 4
 
 	jmp	??3@YAXPAX@Z				; operator delete
 ??$return_temporary_buffer@VCvTacticalDominanceZone@@@std@@YAXPAVCvTacticalDominanceZone@@@Z ENDP ; std::return_temporary_buffer<CvTacticalDominanceZone>
-_TEXT	ENDS
-PUBLIC	_sqrtf
-EXTRN	_sqrt:PROC
-EXTRN	__fltused:DWORD
-; Function compile flags: /Ogtpy
-; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\math.h
-;	COMDAT _sqrtf
-_TEXT	SEGMENT
-tv71 = 8						; size = 4
-__X$ = 8						; size = 4
-_sqrtf	PROC						; COMDAT
-
-; 423  :         {return ((float)sqrt((double)_X)); }
-
-	fld	DWORD PTR __X$[esp-4]
-	sub	esp, 8
-	fstp	QWORD PTR [esp]
-	call	_sqrt
-	fstp	DWORD PTR tv71[esp+4]
-	add	esp, 8
-	fld	DWORD PTR tv71[esp-4]
-	ret	0
-_sqrtf	ENDP
 _TEXT	ENDS
 PUBLIC	??$_Iter_cat@PAVCvTacticalDominanceZone@@@std@@YA?AUrandom_access_iterator_tag@0@ABQAVCvTacticalDominanceZone@@@Z ; std::_Iter_cat<CvTacticalDominanceZone *>
 ; Function compile flags: /Ogtpy
@@ -1191,7 +1191,7 @@ PUBLIC	?sqrt@@YAMM@Z					; sqrt
 ;	COMDAT ?sqrt@@YAMM@Z
 _TEXT	SEGMENT
 tv73 = 8						; size = 4
-$T224660 = 8						; size = 4
+$T224702 = 8						; size = 4
 __X$ = 8						; size = 4
 ?sqrt@@YAMM@Z PROC					; sqrt, COMDAT
 
@@ -1204,8 +1204,8 @@ __X$ = 8						; size = 4
 	fstp	DWORD PTR tv73[esp+4]
 	add	esp, 8
 	fld	DWORD PTR tv73[esp-4]
-	fstp	DWORD PTR $T224660[esp-4]
-	fld	DWORD PTR $T224660[esp-4]
+	fstp	DWORD PTR $T224702[esp-4]
+	fld	DWORD PTR $T224702[esp-4]
 	ret	0
 ?sqrt@@YAMM@Z ENDP					; sqrt
 _TEXT	ENDS
@@ -1344,7 +1344,7 @@ PUBLIC	??$swap@VCvTacticalDominanceZone@@@std@@YAXAAVCvTacticalDominanceZone@@0@
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\utility
 ;	COMDAT ??$swap@VCvTacticalDominanceZone@@@std@@YAXAAVCvTacticalDominanceZone@@0@Z
 _TEXT	SEGMENT
-__Tmp$223876 = -76					; size = 76
+__Tmp$223918 = -76					; size = 76
 __Left$ = 8						; size = 4
 __Right$ = 12						; size = 4
 ??$swap@VCvTacticalDominanceZone@@@std@@YAXAAVCvTacticalDominanceZone@@0@Z PROC ; std::swap<CvTacticalDominanceZone>, COMDAT
@@ -1364,7 +1364,7 @@ __Right$ = 12						; size = 4
 
 	mov	ecx, 19					; 00000013H
 	mov	esi, eax
-	lea	edi, DWORD PTR __Tmp$223876[esp+84]
+	lea	edi, DWORD PTR __Tmp$223918[esp+84]
 	rep movsd
 
 ; 21   : 
@@ -1378,7 +1378,7 @@ __Right$ = 12						; size = 4
 ; 23   : 		_Right = _Tmp;
 
 	mov	ecx, 19					; 00000013H
-	lea	esi, DWORD PTR __Tmp$223876[esp+84]
+	lea	esi, DWORD PTR __Tmp$223918[esp+84]
 	mov	edi, edx
 	rep movsd
 	pop	edi
@@ -1697,8 +1697,8 @@ PUBLIC	??$_Rotate@PAVCvTacticalDominanceZone@@HV1@@std@@YAXPAVCvTacticalDominanc
 _TEXT	SEGMENT
 tv257 = -88						; size = 4
 tv172 = -84						; size = 4
-__Next$224112 = -80					; size = 4
-__Holeval$224113 = -76					; size = 76
+__Next$224154 = -80					; size = 4
+__Holeval$224155 = -76					; size = 76
 __First$ = 8						; size = 4
 __Count$ = 12						; size = 4
 __Mid$ = 12						; size = 4
@@ -1796,7 +1796,7 @@ $LN5@Rotate:
 
 	mov	ecx, 19					; 00000013H
 	mov	esi, edx
-	lea	edi, DWORD PTR __Holeval$224113[esp+104]
+	lea	edi, DWORD PTR __Holeval$224155[esp+104]
 	rep movsd
 
 ; 1697 : 			_RanIt _Next1 = _Next + _Shift == _Last ? _First : _Next + _Shift;
@@ -1836,7 +1836,7 @@ $LL2@Rotate:
 	shr	eax, 31					; 0000001fH
 	add	eax, edx
 	cmp	ebp, eax
-	mov	DWORD PTR __Next$224112[esp+104], ebx
+	mov	DWORD PTR __Next$224154[esp+104], ebx
 	jge	SHORT $LN13@Rotate
 	add	ebx, DWORD PTR tv172[esp+104]
 	jmp	SHORT $LN14@Rotate
@@ -1846,7 +1846,7 @@ $LN13@Rotate:
 	imul	ebx, 76					; 0000004cH
 	add	ebx, DWORD PTR __First$[esp+100]
 $LN14@Rotate:
-	mov	eax, DWORD PTR __Next$224112[esp+104]
+	mov	eax, DWORD PTR __Next$224154[esp+104]
 	cmp	ebx, DWORD PTR tv257[esp+104]
 	jne	SHORT $LL2@Rotate
 
@@ -1863,7 +1863,7 @@ $LN1@Rotate:
 	dec	eax
 	sub	edx, 76					; 0000004cH
 	mov	ecx, 19					; 00000013H
-	lea	esi, DWORD PTR __Holeval$224113[esp+104]
+	lea	esi, DWORD PTR __Holeval$224155[esp+104]
 	rep movsd
 	mov	DWORD PTR __Count$[esp+100], eax
 	mov	DWORD PTR tv257[esp+104], edx
@@ -4751,182 +4751,352 @@ PUBLIC	?plotDistance@@YAHHHHH@Z			; plotDistance
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?plotDistance@@YAHHHHH@Z
 _TEXT	SEGMENT
-_iDX$ = 8						; size = 4
+_iDY$ = -12						; size = 4
+tv320 = -8						; size = 4
+tv357 = -4						; size = 4
 _iX1$ = 8						; size = 4
+_iDX$ = 12						; size = 4
 _iY1$ = 12						; size = 4
-_iDY$ = 16						; size = 4
+$T225441 = 16						; size = 4
 _iX2$ = 16						; size = 4
 _iY2$ = 20						; size = 4
 ?plotDistance@@YAHHHHH@Z PROC				; plotDistance, COMDAT
 
+; 144  : {
+
+	sub	esp, 12					; 0000000cH
+
 ; 145  : 	int iDX;
 ; 146  : 	int iWrappedDX = dxWrap(iX2 - iX1);
 
-	mov	eax, DWORD PTR _iX2$[esp-4]
-	sub	eax, DWORD PTR _iX1$[esp-4]
+	mov	ecx, DWORD PTR _iX2$[esp+8]
+	sub	ecx, DWORD PTR _iX1$[esp+8]
 	push	ebx
-	mov	ebx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+52
-	cmp	BYTE PTR [ebx+4056], 0
-	mov	edx, DWORD PTR [ebx+4020]
 	push	ebp
 	push	esi
-	je	SHORT $LN13@plotDistan
-	mov	ecx, edx
-	shr	ecx, 1
-	cmp	eax, ecx
-	jle	SHORT $LN15@plotDistan
-	sub	eax, edx
-	jmp	SHORT $LN13@plotDistan
-$LN15@plotDistan:
-	neg	ecx
-	cmp	eax, ecx
-	lea	ecx, DWORD PTR [edx+eax]
-	jl	SHORT $LN17@plotDistan
-$LN13@plotDistan:
-	mov	ecx, eax
-$LN17@plotDistan:
+	push	edi
+	mov	edi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+52
+	cmp	BYTE PTR [edi+4056], 0
+	mov	edx, DWORD PTR [edi+4020]
+	mov	DWORD PTR tv320[esp+28], ecx
+	je	SHORT $LN18@plotDistan
+	mov	eax, edx
+	shr	eax, 1
+	cmp	ecx, eax
+	jle	SHORT $LN20@plotDistan
+	sub	ecx, edx
+	jmp	SHORT $LN18@plotDistan
+$LN20@plotDistan:
+	neg	eax
+	cmp	ecx, eax
+	jge	SHORT $LN18@plotDistan
+	add	ecx, edx
+$LN18@plotDistan:
 
 ; 147  : 	int iWrappedDY = dyWrap(iY2 - iY1);
 
-	mov	eax, DWORD PTR _iY2$[esp+8]
-	mov	esi, DWORD PTR [ebx+4024]
-	push	edi
-	mov	edi, DWORD PTR _iY1$[esp+12]
-	sub	eax, edi
-	cmp	BYTE PTR [ebx+4057], 0
-	je	SHORT $LN27@plotDistan
-	mov	edx, esi
+	mov	ebp, DWORD PTR _iY2$[esp+24]
+	sub	ebp, DWORD PTR _iY1$[esp+24]
+	cmp	BYTE PTR [edi+4057], 0
+	mov	eax, DWORD PTR [edi+4024]
+	je	SHORT $LN32@plotDistan
+	mov	edx, eax
 	shr	edx, 1
-	cmp	eax, edx
-	jle	SHORT $LN29@plotDistan
-	sub	eax, esi
-	jmp	SHORT $LN27@plotDistan
-$LN29@plotDistan:
+	cmp	ebp, edx
+	jle	SHORT $LN34@plotDistan
+	mov	ebx, ebp
+	sub	ebx, eax
+	mov	DWORD PTR $T225441[esp+24], ebx
+	jmp	SHORT $LN36@plotDistan
+$LN34@plotDistan:
 	neg	edx
-	cmp	eax, edx
-	lea	ebp, DWORD PTR [esi+eax]
-	jl	SHORT $LN31@plotDistan
-$LN27@plotDistan:
-	mov	ebp, eax
-$LN31@plotDistan:
+	cmp	ebp, edx
+	jge	SHORT $LN32@plotDistan
+	lea	ebx, DWORD PTR [eax+ebp]
+	mov	DWORD PTR $T225441[esp+24], ebx
+	jmp	SHORT $LN36@plotDistan
+$LN32@plotDistan:
+	mov	ebx, ebp
+	mov	DWORD PTR $T225441[esp+24], ebp
+$LN36@plotDistan:
 
 ; 148  : 	int iDY = abs(iWrappedDY);
 
+	mov	eax, ebx
+	cdq
+	mov	esi, eax
+	xor	esi, edx
+	sub	esi, edx
+
+; 149  : 
+; 150  : #ifdef GAMECOREUTILS_FIX_PLOT_DISTANCE
+; 151  : 	const CvMap& kMap = GC.getMap();
+; 152  : 	// equidistant column joint fix (on X-wrapped maps):
+; 153  : 	if ((kMap.isWrapX()) && (abs(iWrappedDX * 2) == kMap.getGridWidth()) && (iDY % 2 != 0) && ((iY1 % 2 == 0) == (iWrappedDX > (kMap.getGridWidth() >> 2))))
+
+	cmp	BYTE PTR [edi+4056], 0
+	mov	DWORD PTR _iDY$[esp+28], esi
+	je	$LN77@plotDistan
+	lea	eax, DWORD PTR [ecx+ecx]
+	cdq
+	mov	ebx, eax
+	mov	eax, DWORD PTR [edi+4020]
+	xor	ebx, edx
+	sub	ebx, edx
+	cmp	ebx, eax
+	jne	SHORT $LN73@plotDistan
+	mov	edx, esi
+	and	edx, -2147483647			; 80000001H
+	jns	SHORT $LN79@plotDistan
+	dec	edx
+	or	edx, -2					; fffffffeH
+	inc	edx
+$LN79@plotDistan:
+	je	SHORT $LN73@plotDistan
+	sar	eax, 2
+	xor	edx, edx
+	cmp	ecx, eax
+	mov	eax, DWORD PTR _iY1$[esp+24]
+	setg	dl
+	and	eax, -2147483647			; 80000001H
+	jns	SHORT $LN80@plotDistan
+	dec	eax
+	or	eax, -2					; fffffffeH
+	inc	eax
+$LN80@plotDistan:
+
+; 154  : 	{
+; 155  : 		iWrappedDX *= -1;  // change polarity
+
+	mov	ebx, DWORD PTR $T225441[esp+24]
+	neg	eax
+	sbb	eax, eax
+	inc	eax
+	cmp	eax, edx
+	jne	SHORT $LN5@plotDistan
+	neg	ecx
+	jmp	SHORT $LN5@plotDistan
+$LN73@plotDistan:
+	mov	ebx, DWORD PTR $T225441[esp+24]
+$LN5@plotDistan:
+
+; 156  : 	}
+; 157  : 	if ((kMap.isWrapX()) && (abs(iWrappedDX * 2) == kMap.getGridWidth()) && (abs(iWrappedDY) < abs(iY2 - iY1)) && (iDY % 2 == 0) && (iX2 - iX1 < 0))
+
+	cmp	BYTE PTR [edi+4056], 0
+	je	$LN77@plotDistan
+	lea	eax, DWORD PTR [ecx+ecx]
+	cdq
+	xor	eax, edx
+	sub	eax, edx
+	cmp	eax, DWORD PTR [edi+4020]
+	jne	SHORT $LN75@plotDistan
 	mov	eax, ebp
 	cdq
 	xor	eax, edx
 	sub	eax, edx
-	mov	DWORD PTR _iDY$[esp+12], eax
+	cmp	esi, eax
+	jge	SHORT $LN75@plotDistan
+	mov	edx, DWORD PTR _iDY$[esp+28]
+	and	edx, -2147483647			; 80000001H
+	jns	SHORT $LN81@plotDistan
+	dec	edx
+	or	edx, -2					; fffffffeH
+	inc	edx
+$LN81@plotDistan:
+	jne	SHORT $LN75@plotDistan
+	cmp	DWORD PTR tv320[esp+28], 0
+	jge	SHORT $LN75@plotDistan
 
-; 149  : 
-; 150  : 	// convert to hex-space coordinates - the coordinate system axes are E and NE (not orthogonal)
-; 151  : 	int iHX1 = xToHexspaceX(iX1, iY1);
+; 158  : 	{
+; 159  : 		iWrappedDX *= -1;  // change polarity
 
-	test	edi, edi
-	jl	SHORT $LN35@plotDistan
-	mov	eax, edi
-	jmp	SHORT $LN59@plotDistan
-$LN35@plotDistan:
-	lea	eax, DWORD PTR [edi-1]
+	neg	ecx
+$LN75@plotDistan:
+
+; 160  : 	}
+; 161  : 	// special case when map is toroidal AND map height is odd
+; 162  : 	// TODO works but ugly
+; 163  : 	if ((kMap.isWrapX()) && (kMap.getGridHeight() % 2 != 0) && (iY1 % 2 == kMap.getGridWidth() % 2) && (iY2 % 2 == 0) &&
+; 164  : 		(abs(iWrappedDY) < abs(iY2 - iY1)) && (abs(iX2 - iX1) == kMap.getGridWidth() / 2 + ((kMap.getGridWidth() % 2 == 1) && (iX2 - iX1 > 0)) ? 1 : 0))
+
+	cmp	BYTE PTR [edi+4056], 0
+	je	$LN77@plotDistan
+	mov	eax, DWORD PTR [edi+4024]
+	and	eax, -2147483647			; 80000001H
+	jns	SHORT $LN82@plotDistan
+	dec	eax
+	or	eax, -2					; fffffffeH
+	inc	eax
+$LN82@plotDistan:
+	je	$LN77@plotDistan
+	mov	edi, DWORD PTR [edi+4020]
+	mov	DWORD PTR tv357[esp+28], edi
+	and	edi, -2147483647			; 80000001H
+	jns	SHORT $LN83@plotDistan
+	dec	edi
+	or	edi, -2					; fffffffeH
+	inc	edi
+$LN83@plotDistan:
+	mov	edx, DWORD PTR _iY1$[esp+24]
+	and	edx, -2147483647			; 80000001H
+	jns	SHORT $LN84@plotDistan
+	dec	edx
+	or	edx, -2					; fffffffeH
+	inc	edx
+$LN84@plotDistan:
+	cmp	edx, edi
+	jne	SHORT $LN77@plotDistan
+	mov	eax, DWORD PTR _iY2$[esp+24]
+	and	eax, -2147483647			; 80000001H
+	jns	SHORT $LN85@plotDistan
+	dec	eax
+	or	eax, -2					; fffffffeH
+	inc	eax
+$LN85@plotDistan:
+	jne	SHORT $LN77@plotDistan
+	mov	eax, ebp
+	cdq
+	xor	eax, edx
+	sub	eax, edx
+	cmp	esi, eax
+	jge	SHORT $LN77@plotDistan
+	cmp	edi, 1
+	jne	SHORT $LN76@plotDistan
+	cmp	DWORD PTR tv320[esp+28], 0
+	jle	SHORT $LN76@plotDistan
+	mov	esi, edi
+	jmp	SHORT $LN9@plotDistan
+$LN76@plotDistan:
+	xor	esi, esi
+$LN9@plotDistan:
+	mov	eax, DWORD PTR tv320[esp+28]
+	cdq
+	mov	edi, eax
+	mov	eax, DWORD PTR tv357[esp+28]
+	xor	edi, edx
+	sub	edi, edx
 	cdq
 	sub	eax, edx
-$LN59@plotDistan:
-	mov	esi, DWORD PTR _iX1$[esp+12]
 	sar	eax, 1
-	sub	esi, eax
+	add	eax, esi
+	cmp	edi, eax
+	jne	SHORT $LN77@plotDistan
 
-; 152  : 	int iHX2 = xToHexspaceX(iX1 + iWrappedDX, iY1 + iWrappedDY);
+; 165  : 	{
+; 166  : 		iWrappedDX -= (iWrappedDX > 0) - (iWrappedDX < 0);  // decrease regardless of polarity
 
-	lea	eax, DWORD PTR [edi+ebp]
-	pop	edi
+	xor	edx, edx
+	test	ecx, ecx
+	setl	dl
+	xor	eax, eax
+	test	ecx, ecx
+	setg	al
+	sub	edx, eax
+	add	ecx, edx
+$LN77@plotDistan:
+
+; 167  : 	}
+; 168  : #endif
+; 169  : 
+; 170  : 	// convert to hex-space coordinates - the coordinate system axes are E and NE (not orthogonal)
+; 171  : 	int iHX1 = xToHexspaceX(iX1, iY1);
+
+	mov	eax, DWORD PTR _iY1$[esp+24]
 	test	eax, eax
-	jge	SHORT $LN60@plotDistan
+	jge	SHORT $LN88@plotDistan
 	dec	eax
 	cdq
 	sub	eax, edx
-$LN60@plotDistan:
+$LN88@plotDistan:
+	mov	edi, DWORD PTR _iX1$[esp+24]
 
-; 153  : 
-; 154  : 	iDX = abs(dxWrap(iHX2 - iHX1));
+; 172  : 	int iHX2 = xToHexspaceX(iX1 + iWrappedDX, iY1 + iWrappedDY);
 
-	mov	edx, DWORD PTR [ebx+4020]
+	mov	edx, DWORD PTR _iY1$[esp+24]
+	sar	eax, 1
+	mov	esi, edi
+	sub	esi, eax
+	lea	eax, DWORD PTR [ebx+edx]
+	test	eax, eax
+	jge	SHORT $LN89@plotDistan
+	dec	eax
+	cdq
+	sub	eax, edx
+$LN89@plotDistan:
 	sar	eax, 1
 	sub	ecx, eax
-	add	ecx, DWORD PTR _iX1$[esp+8]
+	add	ecx, edi
+
+; 173  : 
+; 174  : #ifdef GAMECOREUTILS_FIX_PLOT_DISTANCE
+; 175  : 	// obvious bug
+; 176  : 	iDX = abs(iHX2 - iHX1);
+
 	sub	ecx, esi
-	cmp	BYTE PTR [ebx+4056], 0
-	je	SHORT $LN49@plotDistan
-	mov	eax, edx
-	shr	eax, 1
-	cmp	ecx, eax
-	jle	SHORT $LN51@plotDistan
 	mov	eax, ecx
-	sub	eax, edx
-	jmp	SHORT $LN53@plotDistan
-$LN51@plotDistan:
-	neg	eax
-	cmp	ecx, eax
-	lea	eax, DWORD PTR [edx+ecx]
-	jl	SHORT $LN53@plotDistan
-$LN49@plotDistan:
-	mov	eax, ecx
-$LN53@plotDistan:
 	cdq
 	xor	eax, edx
 	sub	eax, edx
 
-; 155  : 
-; 156  : #ifdef NQM_GAME_CORE_UTILS_OPTIMIZATIONS
-; 157  : 	if (((iHX2 - iHX1) ^ (iWrappedDY)) >= 0)  // the signs match
-; 158  : #else
-; 159  : 	if((iHX2 - iHX1 >= 0) == (iWrappedDY >= 0))  // the signs match
+; 177  : #else
+; 178  : 	iDX = abs(dxWrap(iHX2 - iHX1));
+; 179  : #endif
+; 180  : 
+; 181  : #ifdef NQM_GAME_CORE_UTILS_OPTIMIZATIONS
+; 182  : 	if (((iHX2 - iHX1) ^ (iWrappedDY)) >= 0)  // the signs match
+; 183  : #else
+; 184  : 	if((iHX2 - iHX1 >= 0) == (iWrappedDY >= 0))  // the signs match
 
 	xor	edx, edx
 	test	ecx, ecx
 	setge	dl
 	xor	ecx, ecx
-	test	ebp, ebp
+	test	ebx, ebx
 	setge	cl
+	pop	edi
 	pop	esi
 	pop	ebp
-	mov	DWORD PTR _iDX$[esp], eax
+	mov	DWORD PTR _iDX$[esp+12], eax
 	pop	ebx
 	cmp	edx, ecx
 	jne	SHORT $LN2@plotDistan
 
-; 160  : #endif
-; 161  : 	{
-; 162  : 		return iDX + iDY;
+; 185  : #endif
+; 186  : 	{
+; 187  : 		return iDX + iDY;
 
-	mov	edx, DWORD PTR _iDY$[esp-4]
+	mov	edx, DWORD PTR _iDY$[esp+12]
 	add	eax, edx
 
-; 170  : #endif
-; 171  : 	}
-; 172  : }
+; 195  : #endif
+; 196  : 	}
+; 197  : }
 
+	add	esp, 12					; 0000000cH
 	ret	0
 $LN2@plotDistan:
 
-; 163  : 	}
-; 164  : 	else
-; 165  : 	{
-; 166  : #ifdef NQM_FAST_COMP
-; 167  : 		return (MAX(iDX, iDY));
-; 168  : #else
-; 169  : 		return (std::max(iDX, iDY));
+; 188  : 	}
+; 189  : 	else
+; 190  : 	{
+; 191  : #ifdef NQM_FAST_COMP
+; 192  : 		return (MAX(iDX, iDY));
+; 193  : #else
+; 194  : 		return (std::max(iDX, iDY));
 
-	cmp	eax, DWORD PTR _iDY$[esp-4]
-	lea	eax, DWORD PTR _iDY$[esp-4]
-	jl	SHORT $LN58@plotDistan
-	lea	eax, DWORD PTR _iDX$[esp-4]
-$LN58@plotDistan:
+	cmp	eax, DWORD PTR _iDY$[esp+12]
+	lea	eax, DWORD PTR _iDY$[esp+12]
+	jl	SHORT $LN71@plotDistan
+	lea	eax, DWORD PTR _iDX$[esp+8]
+$LN71@plotDistan:
 	mov	eax, DWORD PTR [eax]
 
-; 170  : #endif
-; 171  : 	}
-; 172  : }
+; 195  : #endif
+; 196  : 	}
+; 197  : }
 
+	add	esp, 12					; 0000000cH
 	ret	0
 ?plotDistance@@YAHHHHH@Z ENDP				; plotDistance
 _TEXT	ENDS
@@ -5238,17 +5408,17 @@ xdata$x	ENDS
 ;	COMDAT ?LogZones@CvTacticalAnalysisMap@@IAEXXZ
 _TEXT	SEGMENT
 _this$ = -132						; size = 4
-_iI$222778 = -128					; size = 4
+_iI$222820 = -128					; size = 4
 tv514 = -124						; size = 4
-$T225705 = -120						; size = 4
-$T225709 = -116						; size = 4
-$T225713 = -112						; size = 4
-$T225717 = -108						; size = 4
-$T225721 = -104						; size = 4
-$T225725 = -100						; size = 4
-_szLogMsg$222776 = -96					; size = 28
-$T225667 = -68						; size = 28
-$T225666 = -40						; size = 28
+$T225772 = -120						; size = 4
+$T225776 = -116						; size = 4
+$T225780 = -112						; size = 4
+$T225784 = -108						; size = 4
+$T225788 = -104						; size = 4
+$T225792 = -100						; size = 4
+_szLogMsg$222818 = -96					; size = 28
+$T225734 = -68						; size = 28
+$T225733 = -40						; size = 28
 __$EHRec$ = -12						; size = 12
 ?LogZones@CvTacticalAnalysisMap@@IAEXXZ PROC		; CvTacticalAnalysisMap::LogZones, COMDAT
 ; _this$ = ecx
@@ -5279,7 +5449,7 @@ __$EHRec$ = -12						; size = 12
 ; 1072 : 	{
 ; 1073 : 		CvString szLogMsg;
 
-	lea	ecx, DWORD PTR _szLogMsg$222776[esp+136]
+	lea	ecx, DWORD PTR _szLogMsg$222818[esp+136]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
 ; 1074 : 		CvTacticalDominanceZone* pZone;
@@ -5289,7 +5459,7 @@ __$EHRec$ = -12						; size = 12
 	mov	eax, DWORD PTR [esi+116]
 	xor	ecx, ecx
 	mov	DWORD PTR __$EHRec$[esp+144], ecx
-	mov	DWORD PTR _iI$222778[esp+136], ecx
+	mov	DWORD PTR _iI$222820[esp+136], ecx
 	cmp	eax, ecx
 	jbe	$LN14@LogZones
 	push	ebx
@@ -5320,35 +5490,35 @@ $LL16@LogZones:
 	push	eax
 	push	ecx
 	push	edx
-	mov	DWORD PTR $T225705[esp+160], ebx
+	mov	DWORD PTR $T225772[esp+160], ebx
 	mov	ebx, DWORD PTR [esi+32]
-	mov	eax, DWORD PTR $T225705[esp+160]
+	mov	eax, DWORD PTR $T225772[esp+160]
 	push	edi
-	mov	DWORD PTR $T225709[esp+164], ebx
+	mov	DWORD PTR $T225776[esp+164], ebx
 	mov	ebx, DWORD PTR [esi+40]
-	mov	ecx, DWORD PTR $T225709[esp+164]
+	mov	ecx, DWORD PTR $T225776[esp+164]
 	push	ebp
 	push	eax
-	mov	DWORD PTR $T225713[esp+172], ebx
+	mov	DWORD PTR $T225780[esp+172], ebx
 	mov	ebx, DWORD PTR [esi+24]
-	mov	edx, DWORD PTR $T225713[esp+172]
+	mov	edx, DWORD PTR $T225780[esp+172]
 	push	ecx
-	mov	DWORD PTR $T225717[esp+176], ebx
+	mov	DWORD PTR $T225784[esp+176], ebx
 	mov	ebx, DWORD PTR [esi+60]
-	mov	eax, DWORD PTR $T225717[esp+176]
+	mov	eax, DWORD PTR $T225784[esp+176]
 	push	edx
 	push	eax
-	mov	DWORD PTR $T225721[esp+184], ebx
+	mov	DWORD PTR $T225788[esp+184], ebx
 	mov	ebx, DWORD PTR [esi+20]
-	mov	ecx, DWORD PTR $T225721[esp+184]
+	mov	ecx, DWORD PTR $T225788[esp+184]
 	push	ecx
-	mov	DWORD PTR $T225725[esp+188], ebx
-	mov	edx, DWORD PTR $T225725[esp+188]
+	mov	DWORD PTR $T225792[esp+188], ebx
+	mov	edx, DWORD PTR $T225792[esp+188]
 	mov	ebx, DWORD PTR [esi]
 	push	edx
 	push	ebx
-	lea	eax, DWORD PTR _szLogMsg$222776[esp+196]
-	push	OFFSET $SG222782
+	lea	eax, DWORD PTR _szLogMsg$222818[esp+196]
+	push	OFFSET $SG222824
 	push	eax
 	call	?Format@CvString@@QAAXPBDZZ		; CvString::Format
 
@@ -5363,7 +5533,7 @@ $LL16@LogZones:
 ; 1085 : 			{
 ; 1086 : 				szLogMsg += ", Friendly";
 
-	push	OFFSET $SG222784
+	push	OFFSET $SG222826
 	jmp	SHORT $LN91@LogZones
 $LN13@LogZones:
 
@@ -5376,7 +5546,7 @@ $LN13@LogZones:
 ; 1089 : 			{
 ; 1090 : 				szLogMsg += ", Enemy";
 
-	push	OFFSET $SG222787
+	push	OFFSET $SG222829
 	jmp	SHORT $LN91@LogZones
 $LN11@LogZones:
 
@@ -5389,7 +5559,7 @@ $LN11@LogZones:
 ; 1093 : 			{
 ; 1094 : 				szLogMsg += ", Even";
 
-	push	OFFSET $SG222790
+	push	OFFSET $SG222832
 	jmp	SHORT $LN91@LogZones
 $LN9@LogZones:
 
@@ -5402,9 +5572,9 @@ $LN9@LogZones:
 ; 1097 : 			{
 ; 1098 : 				szLogMsg += ", No Units Visible";
 
-	push	OFFSET $SG222793
+	push	OFFSET $SG222835
 $LN91@LogZones:
-	lea	ecx, DWORD PTR _szLogMsg$222776[esp+152]
+	lea	ecx, DWORD PTR _szLogMsg$222818[esp+152]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 $LN7@LogZones:
 
@@ -5417,9 +5587,9 @@ $LN7@LogZones:
 ; 1102 : 			{
 ; 1103 : 				szLogMsg += ", Water";
 
-	lea	ecx, DWORD PTR _szLogMsg$222776[esp+148]
+	lea	ecx, DWORD PTR _szLogMsg$222818[esp+148]
 	je	SHORT $LN6@LogZones
-	push	OFFSET $SG222795
+	push	OFFSET $SG222837
 
 ; 1104 : 			}
 ; 1105 : 			else
@@ -5430,7 +5600,7 @@ $LN6@LogZones:
 ; 1106 : 			{
 ; 1107 : 				szLogMsg += ", Land";
 
-	push	OFFSET $SG222797
+	push	OFFSET $SG222839
 $LN92@LogZones:
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 
@@ -5444,8 +5614,8 @@ $LN92@LogZones:
 ; 1111 : 			{
 ; 1112 : 				szLogMsg += ", Temporary Zone";
 
-	push	OFFSET $SG222799
-	lea	ecx, DWORD PTR _szLogMsg$222776[esp+152]
+	push	OFFSET $SG222841
+	lea	ecx, DWORD PTR _szLogMsg$222818[esp+152]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 $LN89@LogZones:
 
@@ -5462,16 +5632,16 @@ $LN1@LogZones:
 
 	mov	ecx, DWORD PTR [esi+20]
 	push	ebx
-	lea	edx, DWORD PTR _szLogMsg$222776[esp+152]
+	lea	edx, DWORD PTR _szLogMsg$222818[esp+152]
 	push	edx
 	call	?GetTacticalAI@CvPlayer@@QBEPAVCvTacticalAI@@XZ ; CvPlayer::GetTacticalAI
 	mov	ecx, eax
 	call	?LogTacticalMessage@CvTacticalAI@@QAEXAAVCvString@@_N@Z ; CvTacticalAI::LogTacticalMessage
-	mov	eax, DWORD PTR _iI$222778[esp+148]
+	mov	eax, DWORD PTR _iI$222820[esp+148]
 	mov	ecx, DWORD PTR tv514[esp+148]
 	add	eax, ebx
 	add	ecx, 76					; 0000004cH
-	mov	DWORD PTR _iI$222778[esp+148], eax
+	mov	DWORD PTR _iI$222820[esp+148], eax
 	mov	DWORD PTR tv514[esp+148], ecx
 	cmp	eax, DWORD PTR [esi+116]
 	jb	$LL16@LogZones
@@ -5483,7 +5653,7 @@ $LN14@LogZones:
 ; 1124 : 		}
 ; 1125 : 	}
 
-	lea	ecx, DWORD PTR _szLogMsg$222776[esp+136]
+	lea	ecx, DWORD PTR _szLogMsg$222818[esp+136]
 	mov	DWORD PTR __$EHRec$[esp+144], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 $LN17@LogZones:
@@ -5528,25 +5698,25 @@ $LN4@LogZones:
 $LN71@LogZones:
 	xor	eax, eax
 $LN72@LogZones:
-	lea	ecx, DWORD PTR $T225666[esp+148]
+	lea	ecx, DWORD PTR $T225733[esp+148]
 	push	ecx
 	mov	ecx, eax
 	call	?getName@CvCity@@QBE?BVCvString@@XZ	; CvCity::getName
 	push	eax
-	lea	edx, DWORD PTR $T225667[esp+152]
-	push	OFFSET $SG222804
+	lea	edx, DWORD PTR $T225734[esp+152]
+	push	OFFSET $SG222846
 	push	edx
 	mov	BYTE PTR __$EHRec$[esp+168], bl
 	call	DWORD PTR __imp_??$?HDU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PBDABV10@@Z
 	add	esp, 12					; 0000000cH
 	push	eax
-	lea	ecx, DWORD PTR _szLogMsg$222776[esp+152]
+	lea	ecx, DWORD PTR _szLogMsg$222818[esp+152]
 	mov	BYTE PTR __$EHRec$[esp+160], 2
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T225667[esp+148]
+	lea	ecx, DWORD PTR $T225734[esp+148]
 	mov	BYTE PTR __$EHRec$[esp+156], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T225666[esp+148]
+	lea	ecx, DWORD PTR $T225733[esp+148]
 	mov	BYTE PTR __$EHRec$[esp+156], 0
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -5577,21 +5747,21 @@ $LN80@LogZones:
 ; 1118 : 				{
 ; 1119 : 					szLogMsg += " (Temp)";
 
-	push	OFFSET $SG222806
-	lea	ecx, DWORD PTR _szLogMsg$222776[esp+152]
+	push	OFFSET $SG222848
+	lea	ecx, DWORD PTR _szLogMsg$222818[esp+152]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z
 	jmp	$LN1@LogZones
 _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?LogZones@CvTacticalAnalysisMap@@IAEXXZ$0:
-	lea	ecx, DWORD PTR _szLogMsg$222776[ebp]
+	lea	ecx, DWORD PTR _szLogMsg$222818[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?LogZones@CvTacticalAnalysisMap@@IAEXXZ$1:
-	lea	ecx, DWORD PTR $T225666[ebp]
+	lea	ecx, DWORD PTR $T225733[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?LogZones@CvTacticalAnalysisMap@@IAEXXZ$2:
-	lea	ecx, DWORD PTR $T225667[ebp]
+	lea	ecx, DWORD PTR $T225734[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __ehhandler$?LogZones@CvTacticalAnalysisMap@@IAEXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?LogZones@CvTacticalAnalysisMap@@IAEXXZ
@@ -5602,7 +5772,7 @@ PUBLIC	?FindExistingZone@CvTacticalAnalysisMap@@IAEPAVCvTacticalDominanceZone@@P
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?FindExistingZone@CvTacticalAnalysisMap@@IAEPAVCvTacticalDominanceZone@@PAVCvPlot@@@Z
 _TEXT	SEGMENT
-_iI$222812 = -4						; size = 4
+_iI$222854 = -4						; size = 4
 _pPlot$ = 8						; size = 4
 ?FindExistingZone@CvTacticalAnalysisMap@@IAEPAVCvTacticalDominanceZone@@PAVCvPlot@@@Z PROC ; CvTacticalAnalysisMap::FindExistingZone, COMDAT
 ; _this$ = ecx
@@ -5621,7 +5791,7 @@ _pPlot$ = 8						; size = 4
 	xor	ebp, ebp
 	mov	esi, ecx
 	push	edi
-	mov	DWORD PTR _iI$222812[esp+20], ebp
+	mov	DWORD PTR _iI$222854[esp+20], ebp
 	cmp	DWORD PTR [esi+116], ebp
 	jbe	$LN8@FindExisti
 $LL10@FindExisti:
@@ -5742,10 +5912,10 @@ $LN9@FindExisti:
 ; 1132 : 
 ; 1133 : 	for(unsigned int iI = 0; iI < m_DominanceZones.size(); iI++)
 
-	mov	eax, DWORD PTR _iI$222812[esp+20]
+	mov	eax, DWORD PTR _iI$222854[esp+20]
 	inc	eax
 	add	ebp, 76					; 0000004cH
-	mov	DWORD PTR _iI$222812[esp+20], eax
+	mov	DWORD PTR _iI$222854[esp+20], eax
 	cmp	eax, DWORD PTR [esi+116]
 	jb	$LL10@FindExisti
 $LN8@FindExisti:
@@ -6303,9 +6473,9 @@ __TI2?AVbad_alloc@std@@ DD 00H
 xdata$x	ENDS
 ;	COMDAT ??$get_temporary_buffer@VCvTacticalDominanceZone@@@std@@YA?AU?$pair@PAVCvTacticalDominanceZone@@H@0@H@Z
 _TEXT	SEGMENT
-$T226108 = -12						; size = 12
+$T226175 = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
-$T226113 = 12						; size = 4
+$T226180 = 12						; size = 4
 __Count$ = 12						; size = 4
 ??$get_temporary_buffer@VCvTacticalDominanceZone@@@std@@YA?AU?$pair@PAVCvTacticalDominanceZone@@H@0@H@Z PROC ; std::get_temporary_buffer<CvTacticalDominanceZone>, COMDAT
 
@@ -6381,15 +6551,15 @@ $LN7@get_tempor:
 
 ; 25   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T226113[esp+12]
+	lea	eax, DWORD PTR $T226180[esp+12]
 	push	eax
-	lea	ecx, DWORD PTR $T226108[esp+20]
-	mov	DWORD PTR $T226113[esp+16], 0
+	lea	ecx, DWORD PTR $T226175[esp+20]
+	mov	DWORD PTR $T226180[esp+16], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T226108[esp+20]
+	lea	ecx, DWORD PTR $T226175[esp+20]
 	push	ecx
-	mov	DWORD PTR $T226108[esp+24], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T226175[esp+24], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN18@get_tempor:
 $LN17@get_tempor:
@@ -6460,7 +6630,7 @@ PUBLIC	??$iter_swap@PAVCvTacticalDominanceZone@@PAV1@@std@@YAXPAVCvTacticalDomin
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\algorithm
 ;	COMDAT ??$iter_swap@PAVCvTacticalDominanceZone@@PAV1@@std@@YAXPAVCvTacticalDominanceZone@@0@Z
 _TEXT	SEGMENT
-__Tmp$226138 = -76					; size = 76
+__Tmp$226205 = -76					; size = 76
 __Left$ = 8						; size = 4
 __Right$ = 12						; size = 4
 ??$iter_swap@PAVCvTacticalDominanceZone@@PAV1@@std@@YAXPAVCvTacticalDominanceZone@@0@Z PROC ; std::iter_swap<CvTacticalDominanceZone *,CvTacticalDominanceZone *>, COMDAT
@@ -6476,14 +6646,14 @@ __Right$ = 12						; size = 4
 	push	edi
 	mov	ecx, 19					; 00000013H
 	mov	esi, eax
-	lea	edi, DWORD PTR __Tmp$226138[esp+84]
+	lea	edi, DWORD PTR __Tmp$226205[esp+84]
 	rep movsd
 	mov	ecx, 19					; 00000013H
 	mov	esi, edx
 	mov	edi, eax
 	rep movsd
 	mov	ecx, 19					; 00000013H
-	lea	esi, DWORD PTR __Tmp$226138[esp+84]
+	lea	esi, DWORD PTR __Tmp$226205[esp+84]
 	mov	edi, edx
 	rep movsd
 	pop	edi
@@ -7153,11 +7323,11 @@ _TEXT	SEGMENT
 ?isAlive@CvPlayer@@QBE_NXZ PROC				; CvPlayer::isAlive, COMDAT
 ; _this$ = ecx
 
-; 1092 : 		return m_bAlive;
+; 1096 : 		return m_bAlive;
 
 	mov	al, BYTE PTR [ecx+2256]
 
-; 1093 : 	}
+; 1097 : 	}
 
 	ret	0
 ?isAlive@CvPlayer@@QBE_NXZ ENDP				; CvPlayer::isAlive
@@ -7169,11 +7339,11 @@ _TEXT	SEGMENT
 ?GetID@CvPlayer@@QBE?AW4PlayerTypes@@XZ PROC		; CvPlayer::GetID, COMDAT
 ; _this$ = ecx
 
-; 1168 : 		return m_eID;
+; 1172 : 		return m_eID;
 
 	mov	eax, DWORD PTR [ecx+44]
 
-; 1169 : 	}
+; 1173 : 	}
 
 	ret	0
 ?GetID@CvPlayer@@QBE?AW4PlayerTypes@@XZ ENDP		; CvPlayer::GetID
@@ -7185,7 +7355,7 @@ _TEXT	SEGMENT
 _ePlayerID$ = 8						; size = 4
 ?getTeam@CvPlayer@@SA?AW4TeamTypes@@W4PlayerTypes@@@Z PROC ; CvPlayer::getTeam, COMDAT
 
-; 1173 : 		return CvPreGame::teamType(ePlayerID);
+; 1177 : 		return CvPreGame::teamType(ePlayerID);
 
 	mov	eax, DWORD PTR _ePlayerID$[esp-4]
 	cmp	eax, 63					; 0000003fH
@@ -7194,16 +7364,16 @@ _ePlayerID$ = 8						; size = 4
 	mov	edx, DWORD PTR [ecx+4]
 	mov	eax, DWORD PTR [edx+eax*4]
 
-; 1174 : 	}
+; 1178 : 	}
 
 	ret	0
 
-; 1173 : 		return CvPreGame::teamType(ePlayerID);
+; 1177 : 		return CvPreGame::teamType(ePlayerID);
 
 $LN3@getTeam:
 	or	eax, -1
 
-; 1174 : 	}
+; 1178 : 	}
 
 	ret	0
 ?getTeam@CvPlayer@@SA?AW4TeamTypes@@W4PlayerTypes@@@Z ENDP ; CvPlayer::getTeam
@@ -7215,7 +7385,7 @@ _TEXT	SEGMENT
 ?getTeam@CvPlayer@@QBE?AW4TeamTypes@@XZ PROC		; CvPlayer::getTeam, COMDAT
 ; _this$ = ecx
 
-; 1178 : 		return CvPreGame::teamType(m_eID);
+; 1182 : 		return CvPreGame::teamType(m_eID);
 
 	mov	eax, DWORD PTR [ecx+44]
 	cmp	eax, 63					; 0000003fH
@@ -7224,16 +7394,16 @@ _TEXT	SEGMENT
 	mov	edx, DWORD PTR [ecx+4]
 	mov	eax, DWORD PTR [edx+eax*4]
 
-; 1179 : 	}
+; 1183 : 	}
 
 	ret	0
 
-; 1178 : 		return CvPreGame::teamType(m_eID);
+; 1182 : 		return CvPreGame::teamType(m_eID);
 
 $LN5@getTeam@2:
 	or	eax, -1
 
-; 1179 : 	}
+; 1183 : 	}
 
 	ret	0
 ?getTeam@CvPlayer@@QBE?AW4TeamTypes@@XZ ENDP		; CvPlayer::getTeam
@@ -7566,7 +7736,7 @@ _iY$ = 12						; size = 4
 _eDirection$ = 16					; size = 4
 ?plotDirection@@YAPAVCvPlot@@HHW4DirectionTypes@@@Z PROC ; plotDirection, COMDAT
 
-; 194  : 	if(eDirection == NO_DIRECTION)
+; 219  : 	if(eDirection == NO_DIRECTION)
 
 	mov	ecx, DWORD PTR _eDirection$[esp-4]
 	push	ebx
@@ -7576,8 +7746,8 @@ _eDirection$ = 16					; size = 4
 	cmp	ecx, -1
 	jne	$LN2@plotDirect
 
-; 195  : 	{
-; 196  : 		return GC.getMap().plot(iX, iY);
+; 220  : 	{
+; 221  : 		return GC.getMap().plot(iX, iY);
 
 	mov	eax, DWORD PTR _iX$[esp+12]
 	cmp	eax, -2147483647			; 80000001H
@@ -7644,17 +7814,17 @@ $LN31@plotDirect:
 	mov	eax, ecx
 	pop	ebx
 
-; 209  : 	}
-; 210  : }
+; 234  : 	}
+; 235  : }
 
 	ret	0
 $LN2@plotDirect:
 
-; 197  : 	}
-; 198  : 	else
-; 199  : 	{
-; 200  : 		// convert to hex-space coordinates - the coordinate system axes are E and NE (not orthogonal)
-; 201  : 		iX = xToHexspaceX(iX , iY);
+; 222  : 	}
+; 223  : 	else
+; 224  : 	{
+; 225  : 		// convert to hex-space coordinates - the coordinate system axes are E and NE (not orthogonal)
+; 226  : 		iX = xToHexspaceX(iX , iY);
 
 	mov	esi, DWORD PTR _iY$[esp+12]
 	test	esi, esi
@@ -7667,7 +7837,7 @@ $LN47@plotDirect:
 	sub	eax, edx
 $LN103@plotDirect:
 
-; 202  : 		iX += GC.getPlotDirectionX()[eDirection];
+; 227  : 		iX += GC.getPlotDirectionX()[eDirection];
 
 	mov	edx, DWORD PTR ?gGlobals@@3VCvGlobals@@A[ecx*4+112]
 	mov	edi, DWORD PTR _iX$[esp+12]
@@ -7675,13 +7845,13 @@ $LN103@plotDirect:
 	sub	edx, eax
 	add	edi, edx
 
-; 203  : 		iY += GC.getPlotDirectionY()[eDirection];
+; 228  : 		iY += GC.getPlotDirectionY()[eDirection];
 
 	add	esi, DWORD PTR ?gGlobals@@3VCvGlobals@@A[ecx*4+136]
 
-; 204  : 
-; 205  : 		// convert from hex-space coordinates to the storage array
-; 206  : 		iX = hexspaceXToX(iX, iY);
+; 229  : 
+; 230  : 		// convert from hex-space coordinates to the storage array
+; 231  : 		iX = hexspaceXToX(iX, iY);
 
 	js	SHORT $LN55@plotDirect
 	mov	eax, esi
@@ -7694,8 +7864,8 @@ $LN104@plotDirect:
 	sar	eax, 1
 	add	edi, eax
 
-; 207  : 
-; 208  : 		return GC.getMap().plot(iX, iY);
+; 232  : 
+; 233  : 		return GC.getMap().plot(iX, iY);
 
 	cmp	edi, -2147483647			; 80000001H
 	je	$LN59@plotDirect
@@ -7759,13 +7929,13 @@ $LN83@plotDirect:
 	mov	eax, ecx
 	pop	ebx
 
-; 209  : 	}
-; 210  : }
+; 234  : 	}
+; 235  : }
 
 	ret	0
 
-; 207  : 
-; 208  : 		return GC.getMap().plot(iX, iY);
+; 232  : 
+; 233  : 		return GC.getMap().plot(iX, iY);
 
 $LN59@plotDirect:
 	pop	edi
@@ -7774,8 +7944,8 @@ $LN59@plotDirect:
 	xor	eax, eax
 	pop	ebx
 
-; 209  : 	}
-; 210  : }
+; 234  : 	}
+; 235  : }
 
 	ret	0
 ?plotDirection@@YAPAVCvPlot@@HHW4DirectionTypes@@@Z ENDP ; plotDirection
@@ -7790,8 +7960,8 @@ _iDX$ = 16						; size = 4
 _iDY$ = 20						; size = 4
 ?plotXY@@YAPAVCvPlot@@HHHH@Z PROC			; plotXY, COMDAT
 
-; 214  : 	// convert the start coord to hex-space coordinates
-; 215  : 	int iStartHexX = xToHexspaceX(iX, iY);
+; 239  : 	// convert the start coord to hex-space coordinates
+; 240  : 	int iStartHexX = xToHexspaceX(iX, iY);
 
 	mov	ecx, DWORD PTR _iY$[esp-4]
 	test	ecx, ecx
@@ -7805,23 +7975,23 @@ $LN5@plotXY:
 $LN55@plotXY:
 	push	esi
 
-; 216  : 
-; 217  : 	int iPlotHexX = iStartHexX + iDX;
+; 241  : 
+; 242  : 	int iPlotHexX = iStartHexX + iDX;
 
 	mov	esi, DWORD PTR _iX$[esp]
 	sar	eax, 1
 	sub	esi, eax
 
-; 218  : 	int iPlotY = iY + iDY; // Y is the same in both coordinate systems
+; 243  : 	int iPlotY = iY + iDY; // Y is the same in both coordinate systems
 
 	mov	eax, DWORD PTR _iDY$[esp]
 	add	esi, DWORD PTR _iDX$[esp]
 	push	edi
 	lea	edi, DWORD PTR [ecx+eax]
 
-; 219  : 
-; 220  : 	// convert from hex-space coordinates to the storage array
-; 221  : 	iPlotHexX = hexspaceXToX(iPlotHexX, iPlotY);
+; 244  : 
+; 245  : 	// convert from hex-space coordinates to the storage array
+; 246  : 	iPlotHexX = hexspaceXToX(iPlotHexX, iPlotY);
 
 	test	edi, edi
 	jl	SHORT $LN9@plotXY
@@ -7835,8 +8005,8 @@ $LN56@plotXY:
 	sar	eax, 1
 	add	esi, eax
 
-; 222  : 
-; 223  : 	return GC.getMap().plot(iPlotHexX , iPlotY);
+; 247  : 
+; 248  : 	return GC.getMap().plot(iPlotHexX , iPlotY);
 
 	cmp	esi, -2147483647			; 80000001H
 	je	$LN13@plotXY
@@ -7902,12 +8072,12 @@ $LN37@plotXY:
 	mov	eax, ecx
 	pop	esi
 
-; 224  : }
+; 249  : }
 
 	ret	0
 
-; 222  : 
-; 223  : 	return GC.getMap().plot(iPlotHexX , iPlotY);
+; 247  : 
+; 248  : 	return GC.getMap().plot(iPlotHexX , iPlotY);
 
 $LN17@plotXY:
 	pop	ebx
@@ -7916,19 +8086,19 @@ $LN17@plotXY:
 	xor	eax, eax
 	pop	esi
 
-; 224  : }
+; 249  : }
 
 	ret	0
 
-; 222  : 
-; 223  : 	return GC.getMap().plot(iPlotHexX , iPlotY);
+; 247  : 
+; 248  : 	return GC.getMap().plot(iPlotHexX , iPlotY);
 
 $LN13@plotXY:
 	pop	edi
 	xor	eax, eax
 	pop	esi
 
-; 224  : }
+; 249  : }
 
 	ret	0
 ?plotXY@@YAPAVCvPlot@@HHHH@Z ENDP			; plotXY
@@ -8023,7 +8193,7 @@ xdata$x	ENDS
 ;	COMDAT ?Init@CvTacticalAnalysisMap@@QAEXH@Z
 _TEXT	SEGMENT
 __$EHRec$ = -12						; size = 12
-$T227026 = 8						; size = 4
+$T227093 = 8						; size = 4
 _iNumPlots$ = 8						; size = 4
 ?Init@CvTacticalAnalysisMap@@QAEXH@Z PROC		; CvTacticalAnalysisMap::Init, COMDAT
 ; _this$ = ecx
@@ -8073,7 +8243,7 @@ $LN7@Init:
 	call	??_U@YAPAXI@Z				; operator new[]
 	mov	esi, eax
 	add	esp, 4
-	mov	DWORD PTR $T227026[esp+20], esi
+	mov	DWORD PTR $T227093[esp+20], esi
 	mov	DWORD PTR __$EHRec$[esp+32], 0
 	test	esi, esi
 	je	SHORT $LN4@Init
@@ -8107,7 +8277,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?Init@CvTacticalAnalysisMap@@QAEXH@Z$0:
-	mov	eax, DWORD PTR $T227026[ebp-4]
+	mov	eax, DWORD PTR $T227093[ebp-4]
 	push	eax
 	call	??_V@YAXPAX@Z				; operator delete[]
 	pop	ecx
@@ -8129,12 +8299,12 @@ EXTRN	?isVisibleToEnemyTeam@CvPlot@@QBE_NW4TeamTypes@@@Z:PROC ; CvPlot::isVisibl
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?MarkCellsNearEnemy@CvTacticalAnalysisMap@@IAEXXZ
 _TEXT	SEGMENT
-_bMarkedIt$222480 = -21					; size = 1
+_bMarkedIt$222522 = -21					; size = 1
 tv716 = -20						; size = 4
-_iUnitIndex$222486 = -16				; size = 4
+_iUnitIndex$222528 = -16				; size = 4
 tv718 = -12						; size = 4
-_iI$222476 = -8						; size = 4
-$T227049 = -4						; size = 4
+_iI$222518 = -8						; size = 4
+$T227116 = -4						; size = 4
 ?MarkCellsNearEnemy@CvTacticalAnalysisMap@@IAEXXZ PROC	; CvTacticalAnalysisMap::MarkCellsNearEnemy, COMDAT
 ; _this$ = ecx
 
@@ -8158,7 +8328,7 @@ $T227049 = -4						; size = 4
 	push	esi
 	push	edi
 	mov	edi, ecx
-	mov	DWORD PTR _iI$222476[esp+40], ebp
+	mov	DWORD PTR _iI$222518[esp+40], ebp
 	jle	$LN21@MarkCellsN
 	xor	esi, esi
 	mov	DWORD PTR tv716[esp+40], esi
@@ -8183,7 +8353,7 @@ $LN23@MarkCellsN:
 	add	ebx, DWORD PTR tv718[esp+40]
 	add	eax, esi
 	test	BYTE PTR [eax], 1
-	mov	BYTE PTR _bMarkedIt$222480[esp+40], 0
+	mov	BYTE PTR _bMarkedIt$222522[esp+40], 0
 	je	$LN22@MarkCellsN
 	mov	eax, DWORD PTR [eax]
 	mov	ecx, eax
@@ -8239,18 +8409,18 @@ $LN18@MarkCellsN:
 ; 335  : 				{
 ; 336  : 					for(unsigned int iUnitIndex = 0;  iUnitIndex < m_EnemyUnits.size() && !bMarkedIt; iUnitIndex++)
 
-	mov	DWORD PTR _iUnitIndex$222486[esp+40], ebp
+	mov	DWORD PTR _iUnitIndex$222528[esp+40], ebp
 	cmp	DWORD PTR [edi+8492], ebp
 	jbe	$LN14@MarkCellsN
 $LN16@MarkCellsN:
-	cmp	BYTE PTR _bMarkedIt$222480[esp+40], 0
+	cmp	BYTE PTR _bMarkedIt$222522[esp+40], 0
 	jne	$LN14@MarkCellsN
 
 ; 337  : 					{
 ; 338  : 						CvUnit* pUnit = m_EnemyUnits[iUnitIndex];
 
 	mov	eax, DWORD PTR [edi+8488]
-	mov	ecx, DWORD PTR _iUnitIndex$222486[esp+40]
+	mov	ecx, DWORD PTR _iUnitIndex$222528[esp+40]
 	mov	esi, DWORD PTR [eax+ecx*4]
 
 ; 339  : 						if(pUnit->getArea() == pPlot->getArea())
@@ -8321,7 +8491,7 @@ $LN12@MarkCellsN:
 	push	ebx
 	sub	esp, 8
 	mov	ecx, esp
-	mov	DWORD PTR $T227049[esp+64], esp
+	mov	DWORD PTR $T227116[esp+64], esp
 	push	esi
 	call	??0?$FObjectHandle@VCvUnit@@@@QAE@PAVCvUnit@@@Z ; FObjectHandle<CvUnit>::FObjectHandle<CvUnit>
 	call	?TurnsToReachTarget@@YAHV?$FObjectHandle@VCvUnit@@@@PAVCvPlot@@_N22@Z ; TurnsToReachTarget
@@ -8356,11 +8526,11 @@ $LN157@MarkCellsN:
 
 ; 362  : 									bMarkedIt = true;
 
-	mov	BYTE PTR _bMarkedIt$222480[esp+40], 1
+	mov	BYTE PTR _bMarkedIt$222522[esp+40], 1
 $LN15@MarkCellsN:
-	mov	eax, DWORD PTR _iUnitIndex$222486[esp+40]
+	mov	eax, DWORD PTR _iUnitIndex$222528[esp+40]
 	inc	eax
-	mov	DWORD PTR _iUnitIndex$222486[esp+40], eax
+	mov	DWORD PTR _iUnitIndex$222528[esp+40], eax
 	cmp	eax, DWORD PTR [edi+8492]
 	jb	$LN16@MarkCellsN
 $LN14@MarkCellsN:
@@ -8479,14 +8649,14 @@ $LN149@MarkCellsN:
 	add	eax, DWORD PTR tv716[esp+40]
 	or	DWORD PTR [eax], 32			; 00000020H
 $LN22@MarkCellsN:
-	mov	ecx, DWORD PTR _iI$222476[esp+40]
+	mov	ecx, DWORD PTR _iI$222518[esp+40]
 	mov	esi, DWORD PTR tv716[esp+40]
 	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+52
 	add	DWORD PTR tv718[esp+40], 484		; 000001e4H
 	inc	ecx
 	add	esi, 44					; 0000002cH
 	cmp	ecx, DWORD PTR [eax+4028]
-	mov	DWORD PTR _iI$222476[esp+40], ecx
+	mov	DWORD PTR _iI$222518[esp+40], ecx
 	mov	DWORD PTR tv716[esp+40], esi
 	jl	$LL156@MarkCellsN
 $LN21@MarkCellsN:
@@ -9455,15 +9625,15 @@ EXTRN	?GetMaxHitPoints@CvCity@@QBEHXZ:PROC		; CvCity::GetMaxHitPoints
 ;	COMDAT ?CalculateMilitaryStrengths@CvTacticalAnalysisMap@@IAEXXZ
 _TEXT	SEGMENT
 _this$ = -44						; size = 4
-$T228034 = -40						; size = 4
+$T228101 = -40						; size = 4
 _iLoop$ = -36						; size = 4
 tv859 = -32						; size = 4
 _iMultiplier$ = -28					; size = 4
 tv846 = -24						; size = 4
-_iI$222667 = -20					; size = 4
+_iI$222709 = -20					; size = 4
 _pClosestCity$ = -16					; size = 4
 _iDistance$ = -12					; size = 4
-_kPlayer$222695 = -8					; size = 4
+_kPlayer$222737 = -8					; size = 4
 tv822 = -4						; size = 4
 ?CalculateMilitaryStrengths@CvTacticalAnalysisMap@@IAEXXZ PROC ; CvTacticalAnalysisMap::CalculateMilitaryStrengths, COMDAT
 ; _this$ = ecx
@@ -9493,17 +9663,17 @@ tv822 = -4						; size = 4
 	mov	ecx, DWORD PTR ?sr_TeamTypes@CvPreGame@@3ABV?$vector@W4TeamTypes@@V?$allocator@W4TeamTypes@@@std@@@std@@B ; CvPreGame::sr_TeamTypes
 	mov	edx, DWORD PTR [ecx+4]
 	mov	eax, DWORD PTR [edx+eax*4]
-	mov	DWORD PTR $T228034[esp+48], eax
+	mov	DWORD PTR $T228101[esp+48], eax
 	jmp	SHORT $LN50@CalculateM
 $LN49@CalculateM:
-	mov	DWORD PTR $T228034[esp+48], -1
+	mov	DWORD PTR $T228101[esp+48], -1
 $LN50@CalculateM:
 
 ; 798  : 
 ; 799  : 	for(unsigned int iI = 0; iI < m_DominanceZones.size(); iI++)
 
 	xor	eax, eax
-	mov	DWORD PTR _iI$222667[esp+48], eax
+	mov	DWORD PTR _iI$222709[esp+48], eax
 	cmp	DWORD PTR [edi+116], eax
 	jbe	$LN40@CalculateM
 	push	ebx
@@ -9786,7 +9956,7 @@ $LN34@CalculateM:
 	test	edi, edi
 	jne	$LL199@CalculateM
 $LN33@CalculateM:
-	mov	ebx, DWORD PTR $T228034[esp+60]
+	mov	ebx, DWORD PTR $T228101[esp+60]
 	imul	ebx, 2984				; 00000ba8H
 
 ; 856  : 									}
@@ -9814,7 +9984,7 @@ $LL22@CalculateM:
 
 	mov	eax, DWORD PTR [ecx+ebp+44]
 	lea	edi, DWORD PTR [ecx+ebp]
-	mov	DWORD PTR _kPlayer$222695[esp+60], edi
+	mov	DWORD PTR _kPlayer$222737[esp+60], edi
 	cmp	eax, 63					; 0000003fH
 	ja	SHORT $LN127@CalculateM
 	mov	edx, DWORD PTR ?sr_TeamTypes@CvPreGame@@3ABV?$vector@W4TeamTypes@@V?$allocator@W4TeamTypes@@@std@@@std@@B ; CvPreGame::sr_TeamTypes
@@ -9921,7 +10091,7 @@ $LN13@CalculateM:
 
 ; 886  : 											if(!pPlot->isVisible(eTeam) && !pPlot->isAdjacentVisible(eTeam, false))
 
-	mov	ecx, DWORD PTR $T228034[esp+60]
+	mov	ecx, DWORD PTR $T228101[esp+60]
 	add	eax, 4
 	mov	DWORD PTR _iMultiplier$[esp+60], eax
 	cmp	ecx, -1
@@ -10081,7 +10251,7 @@ $LN17@CalculateM:
 ; 868  : 					{
 ; 869  : 						for(pLoopUnit = kPlayer.firstUnit(&iLoop); pLoopUnit != NULL; pLoopUnit = kPlayer.nextUnit(&iLoop))
 
-	mov	ecx, DWORD PTR _kPlayer$222695[esp+60]
+	mov	ecx, DWORD PTR _kPlayer$222737[esp+60]
 	push	0
 	lea	eax, DWORD PTR _iLoop$[esp+64]
 	push	eax
@@ -10113,10 +10283,10 @@ $LN41@CalculateM:
 ; 798  : 
 ; 799  : 	for(unsigned int iI = 0; iI < m_DominanceZones.size(); iI++)
 
-	mov	eax, DWORD PTR _iI$222667[esp+60]
+	mov	eax, DWORD PTR _iI$222709[esp+60]
 	add	DWORD PTR tv859[esp+60], 76		; 0000004cH
 	inc	eax
-	mov	DWORD PTR _iI$222667[esp+60], eax
+	mov	DWORD PTR _iI$222709[esp+60], eax
 	cmp	eax, DWORD PTR [edi+116]
 	jb	$LL203@CalculateM
 	pop	esi
@@ -10659,7 +10829,7 @@ PUBLIC	?_Maxlen@?$_Temp_iterator@VCvTacticalDominanceZone@@@std@@QAEHXZ ; std::_
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ?_Maxlen@?$_Temp_iterator@VCvTacticalDominanceZone@@@std@@QAEHXZ
 _TEXT	SEGMENT
-__Pair$223249 = -8					; size = 8
+__Pair$223291 = -8					; size = 8
 ?_Maxlen@?$_Temp_iterator@VCvTacticalDominanceZone@@@std@@QAEHXZ PROC ; std::_Temp_iterator<CvTacticalDominanceZone>::_Maxlen, COMDAT
 ; _this$ = ecx
 
@@ -10683,7 +10853,7 @@ __Pair$223249 = -8					; size = 8
 ; 611  : 				std::get_temporary_buffer<_Ty>(_Pbuf->_Size);
 
 	push	eax
-	lea	eax, DWORD PTR __Pair$223249[esp+16]
+	lea	eax, DWORD PTR __Pair$223291[esp+16]
 	push	eax
 	call	??$get_temporary_buffer@VCvTacticalDominanceZone@@@std@@YA?AU?$pair@PAVCvTacticalDominanceZone@@H@0@H@Z ; std::get_temporary_buffer<CvTacticalDominanceZone>
 
@@ -10691,7 +10861,7 @@ __Pair$223249 = -8					; size = 8
 ; 613  : 			_Pbuf->_Begin = _Pair.first;
 
 	mov	ecx, DWORD PTR [esi+16]
-	mov	eax, DWORD PTR __Pair$223249[esp+20]
+	mov	eax, DWORD PTR __Pair$223291[esp+20]
 	mov	DWORD PTR [ecx], eax
 
 ; 614  : 			_Pbuf->_Current = _Pair.first;
@@ -10707,7 +10877,7 @@ __Pair$223249 = -8					; size = 8
 ; 616  : 			_Pbuf->_Size = _Pair.second;
 
 	mov	edx, DWORD PTR [esi+16]
-	mov	eax, DWORD PTR __Pair$223249[esp+24]
+	mov	eax, DWORD PTR __Pair$223291[esp+24]
 	mov	DWORD PTR [edx+12], eax
 
 ; 617  : 			}
@@ -10755,7 +10925,7 @@ PUBLIC	??$_Insertion_sort1@PAVCvTacticalDominanceZone@@V1@@std@@YAXPAVCvTactical
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\algorithm
 ;	COMDAT ??$_Insertion_sort1@PAVCvTacticalDominanceZone@@V1@@std@@YAXPAVCvTacticalDominanceZone@@00@Z
 _TEXT	SEGMENT
-__Val$223459 = -80					; size = 76
+__Val$223501 = -80					; size = 76
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 ___formal$ = 16						; size = 4
@@ -10795,13 +10965,13 @@ $LN7@Insertion_:
 
 	mov	ecx, 19					; 00000013H
 	mov	esi, ebx
-	lea	edi, DWORD PTR __Val$223459[esp+96]
+	lea	edi, DWORD PTR __Val$223501[esp+96]
 	rep movsd
 
 ; 2973 : 
 ; 2974 : 			if (_DEBUG_LT(_Val, *_First))
 
-	mov	ecx, DWORD PTR __Val$223459[esp+156]
+	mov	ecx, DWORD PTR __Val$223501[esp+156]
 	cmp	ecx, DWORD PTR [eax+60]
 	mov	edx, ebx
 	jle	SHORT $LN5@Insertion_
@@ -10845,7 +11015,7 @@ $LL3@Insertion_:
 	mov	edi, edx
 	mov	ecx, 19					; 00000013H
 	rep movsd
-	mov	ecx, DWORD PTR __Val$223459[esp+156]
+	mov	ecx, DWORD PTR __Val$223501[esp+156]
 	mov	edx, eax
 	sub	eax, 76					; 0000004cH
 	cmp	ecx, DWORD PTR [eax+60]
@@ -10860,7 +11030,7 @@ $LN1@Insertion_:
 
 	mov	ecx, 19					; 00000013H
 	mov	edi, edx
-	lea	esi, DWORD PTR __Val$223459[esp+96]
+	lea	esi, DWORD PTR __Val$223501[esp+96]
 	rep movsd
 	cmp	ebx, DWORD PTR __Last$[ebp]
 	jne	SHORT $LL30@Insertion_
@@ -10882,7 +11052,7 @@ PUBLIC	??$_Unchecked_merge_backward@PAVCvTacticalDominanceZone@@PAV1@PAV1@@stdex
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Unchecked_merge_backward@PAVCvTacticalDominanceZone@@PAV1@PAV1@@stdext@@YAPAVCvTacticalDominanceZone@@PAV1@0000@Z
 _TEXT	SEGMENT
-$T228642 = -4						; size = 1
+$T228709 = -4						; size = 1
 __First1$ = 8						; size = 4
 __Last1$ = 12						; size = 4
 __First2$ = 16						; size = 4
@@ -10898,8 +11068,8 @@ __Dest$ = 24						; size = 4
 
 	mov	ecx, DWORD PTR __Dest$[esp]
 	mov	edx, DWORD PTR __Last2$[esp]
-	mov	BYTE PTR $T228642[esp+4], 0
-	mov	eax, DWORD PTR $T228642[esp+4]
+	mov	BYTE PTR $T228709[esp+4], 0
+	mov	eax, DWORD PTR $T228709[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __First2$[esp+4]
 	push	ecx
@@ -10978,7 +11148,7 @@ PUBLIC	??$_Copy_opt@PAVCvTacticalDominanceZone@@V?$_Temp_iterator@VCvTacticalDom
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xutility
 ;	COMDAT ??$_Copy_opt@PAVCvTacticalDominanceZone@@V?$_Temp_iterator@VCvTacticalDominanceZone@@@std@@Uforward_iterator_tag@3@@std@@YA?AV?$_Temp_iterator@VCvTacticalDominanceZone@@@0@PAVCvTacticalDominanceZone@@0V10@Uforward_iterator_tag@0@U_Nonscalar_ptr_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
-$T228660 = -4						; size = 4
+$T228727 = -4						; size = 4
 ___$ReturnUdt$ = 8					; size = 4
 __First$ = 12						; size = 4
 __Last$ = 16						; size = 4
@@ -11001,7 +11171,7 @@ ___formal$ = 48						; size = 1
 	push	ebp
 	xor	ebp, ebp
 	push	esi
-	mov	DWORD PTR $T228660[esp+16], ebp
+	mov	DWORD PTR $T228727[esp+16], ebp
 	cmp	eax, ebx
 	je	SHORT $LN1@Copy_opt@2
 	lea	edx, DWORD PTR [ebp+76]
@@ -11526,11 +11696,11 @@ PUBLIC	??$unchecked_copy@PAVCvTacticalDominanceZone@@V?$_Temp_iterator@VCvTactic
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xutility
 ;	COMDAT ??$unchecked_copy@PAVCvTacticalDominanceZone@@V?$_Temp_iterator@VCvTacticalDominanceZone@@@std@@@stdext@@YA?AV?$_Temp_iterator@VCvTacticalDominanceZone@@@std@@PAVCvTacticalDominanceZone@@0V12@@Z
 _TEXT	SEGMENT
-$T229053 = -4						; size = 1
-$T229060 = -4						; size = 4
-$T229056 = -4						; size = 4
-__Cat$229064 = 8					; size = 1
-$T229055 = 8						; size = 1
+$T229120 = -4						; size = 1
+$T229127 = -4						; size = 4
+$T229123 = -4						; size = 4
+__Cat$229131 = 8					; size = 1
+$T229122 = 8						; size = 1
 ___$ReturnUdt$ = 8					; size = 4
 __First$ = 12						; size = 4
 __Last$ = 16						; size = 4
@@ -11542,17 +11712,17 @@ __Dest$ = 20						; size = 20
 	push	ecx
 	push	ebx
 	xor	ebx, ebx
-	mov	DWORD PTR $T229060[esp+8], ebx
+	mov	DWORD PTR $T229127[esp+8], ebx
 
 ; 3605 : 		return (_STD _Copy_opt(_CHECKED_BASE(_First), _CHECKED_BASE(_Last), _Dest,
 ; 3606 : 			_STD _Iter_random(_First, _Dest), _STD _Ptr_cat(_First, _Dest), _STD _Range_checked_iterator_tag()));
 
-	mov	ecx, DWORD PTR __Cat$229064[esp+4]
-	mov	edx, DWORD PTR $T229055[esp+4]
+	mov	ecx, DWORD PTR __Cat$229131[esp+4]
+	mov	edx, DWORD PTR $T229122[esp+4]
 	push	esi
 	mov	esi, DWORD PTR ___$ReturnUdt$[esp+8]
-	mov	BYTE PTR $T229053[esp+12], bl
-	mov	eax, DWORD PTR $T229053[esp+12]
+	mov	BYTE PTR $T229120[esp+12], bl
+	mov	eax, DWORD PTR $T229120[esp+12]
 	push	eax
 	push	ecx
 	push	edx
@@ -11564,7 +11734,7 @@ __Dest$ = 20						; size = 20
 	mov	DWORD PTR [eax+8], ebx
 	mov	DWORD PTR [eax+12], ebx
 	mov	ecx, DWORD PTR __Dest$[esp+56]
-	mov	DWORD PTR $T229056[esp+44], esp
+	mov	DWORD PTR $T229123[esp+44], esp
 	mov	DWORD PTR [eax+16], ecx
 	mov	eax, DWORD PTR __First$[esp+40]
 	push	edx
@@ -11594,8 +11764,8 @@ PUBLIC	??$unchecked_merge@PAVCvTacticalDominanceZone@@PAV1@PAV1@@stdext@@YAPAVCv
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\algorithm
 ;	COMDAT ??$unchecked_merge@PAVCvTacticalDominanceZone@@PAV1@PAV1@@stdext@@YAPAVCvTacticalDominanceZone@@PAV1@0000@Z
 _TEXT	SEGMENT
-$T229104 = -4						; size = 1
-$T229105 = -4						; size = 1
+$T229171 = -4						; size = 1
+$T229172 = -4						; size = 1
 __First1$ = 8						; size = 4
 __Last1$ = 12						; size = 4
 __First2$ = 16						; size = 4
@@ -11611,9 +11781,9 @@ __Dest$ = 24						; size = 4
 ; 5116 : 			_STD _Iter_random(_First1, _First2, _Dest), _STD _Range_checked_iterator_tag());
 
 	mov	edx, DWORD PTR __Dest$[esp]
-	mov	BYTE PTR $T229104[esp+4], 0
-	mov	eax, DWORD PTR $T229104[esp+4]
-	mov	ecx, DWORD PTR $T229105[esp+4]
+	mov	BYTE PTR $T229171[esp+4], 0
+	mov	eax, DWORD PTR $T229171[esp+4]
+	mov	ecx, DWORD PTR $T229172[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Last2$[esp+4]
 	push	ecx
@@ -11637,13 +11807,13 @@ PUBLIC	??$_Buffered_rotate@PAVCvTacticalDominanceZone@@HV1@@std@@YAPAVCvTactical
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Buffered_rotate@PAVCvTacticalDominanceZone@@HV1@@std@@YAPAVCvTacticalDominanceZone@@PAV1@00HHAAV?$_Temp_iterator@VCvTacticalDominanceZone@@@0@@Z
 _TEXT	SEGMENT
-$T229116 = -20						; size = 20
-$T229114 = -20						; size = 20
+$T229183 = -20						; size = 20
+$T229181 = -20						; size = 20
 __First$ = 8						; size = 4
 __Mid$ = 12						; size = 4
 __Last$ = 16						; size = 4
-$T229115 = 20						; size = 4
-$T229113 = 20						; size = 4
+$T229182 = 20						; size = 4
+$T229180 = 20						; size = 4
 __Count1$ = 20						; size = 4
 __Count2$ = 24						; size = 4
 __Tempbuf$ = 28						; size = 4
@@ -11685,14 +11855,14 @@ __Tempbuf$ = 28						; size = 4
 	mov	DWORD PTR [eax+8], esi
 	mov	DWORD PTR [eax+12], esi
 	mov	edx, DWORD PTR [ebx+16]
-	mov	DWORD PTR $T229113[esp+52], esp
+	mov	DWORD PTR $T229180[esp+52], esp
 	push	edi
 	mov	DWORD PTR [eax+16], edx
-	lea	eax, DWORD PTR $T229114[esp+60]
+	lea	eax, DWORD PTR $T229181[esp+60]
 	push	ebp
 	push	eax
 	call	??$unchecked_copy@PAVCvTacticalDominanceZone@@V?$_Temp_iterator@VCvTacticalDominanceZone@@@std@@@stdext@@YA?AV?$_Temp_iterator@VCvTacticalDominanceZone@@@std@@PAVCvTacticalDominanceZone@@0V12@@Z ; stdext::unchecked_copy<CvTacticalDominanceZone *,std::_Temp_iterator<CvTacticalDominanceZone> >
-	mov	eax, DWORD PTR $T229114[esp+68]
+	mov	eax, DWORD PTR $T229181[esp+68]
 	add	esp, 32					; 00000020H
 	cmp	eax, esi
 	je	SHORT $LN25@Buffered_r
@@ -11757,14 +11927,14 @@ $LN4@Buffered_r:
 	mov	DWORD PTR [eax+8], esi
 	mov	DWORD PTR [eax+12], esi
 	mov	edx, DWORD PTR [ebx+16]
-	mov	DWORD PTR $T229115[esp+52], esp
+	mov	DWORD PTR $T229182[esp+52], esp
 	push	ebp
 	mov	DWORD PTR [eax+16], edx
-	lea	eax, DWORD PTR $T229116[esp+60]
+	lea	eax, DWORD PTR $T229183[esp+60]
 	push	edi
 	push	eax
 	call	??$unchecked_copy@PAVCvTacticalDominanceZone@@V?$_Temp_iterator@VCvTacticalDominanceZone@@@std@@@stdext@@YA?AV?$_Temp_iterator@VCvTacticalDominanceZone@@@std@@PAVCvTacticalDominanceZone@@0V12@@Z ; stdext::unchecked_copy<CvTacticalDominanceZone *,std::_Temp_iterator<CvTacticalDominanceZone> >
-	mov	eax, DWORD PTR $T229116[esp+68]
+	mov	eax, DWORD PTR $T229183[esp+68]
 	add	esp, 32					; 00000020H
 	cmp	eax, esi
 	je	SHORT $LN45@Buffered_r
@@ -11866,14 +12036,14 @@ PUBLIC	??$_Chunked_merge@PAVCvTacticalDominanceZone@@PAV1@H@std@@YAXPAVCvTactica
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Chunked_merge@PAVCvTacticalDominanceZone@@PAV1@H@std@@YAXPAVCvTacticalDominanceZone@@00HHU_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
-$T229382 = -4						; size = 1
+$T229450 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
 __Chunk$ = 20						; size = 4
-$T229459 = 24						; size = 1
-$T229460 = 24						; size = 1
-$T229383 = 24						; size = 1
+$T229526 = 24						; size = 1
+$T229527 = 24						; size = 1
+$T229451 = 24						; size = 1
 __Count$ = 24						; size = 4
 ___formal$ = 28						; size = 1
 ??$_Chunked_merge@PAVCvTacticalDominanceZone@@PAV1@H@std@@YAXPAVCvTacticalDominanceZone@@00HHU_Range_checked_iterator_tag@0@@Z PROC ; std::_Chunked_merge<CvTacticalDominanceZone *,CvTacticalDominanceZone *,int>, COMDAT
@@ -11906,10 +12076,10 @@ $LL50@Chunked_me:
 ; 3295 : 
 ; 3296 : 		_Dest = _STDEXT unchecked_merge(_First, _Mid1, _Mid1, _Mid2, _Dest);
 
-	mov	BYTE PTR $T229382[esp+20], 0
-	mov	ebx, DWORD PTR $T229382[esp+20]
+	mov	BYTE PTR $T229450[esp+20], 0
+	mov	ebx, DWORD PTR $T229450[esp+20]
 	push	ebx
-	mov	ebx, DWORD PTR $T229383[esp+20]
+	mov	ebx, DWORD PTR $T229451[esp+20]
 	push	ebx
 	lea	edx, DWORD PTR [ecx+ebp]
 	push	eax
@@ -11976,11 +12146,11 @@ $LN2@Chunked_me:
 ; 3306 : 
 ; 3307 : 		_STDEXT unchecked_merge(_First, _Mid, _Mid, _Last, _Dest);
 
-	mov	BYTE PTR $T229459[esp+16], 0
+	mov	BYTE PTR $T229526[esp+16], 0
 	imul	ebp, 76					; 0000004cH
-	mov	edx, DWORD PTR $T229459[esp+16]
+	mov	edx, DWORD PTR $T229526[esp+16]
 	push	edx
-	mov	edx, DWORD PTR $T229460[esp+20]
+	mov	edx, DWORD PTR $T229527[esp+20]
 	push	edx
 	push	eax
 	mov	eax, DWORD PTR __Last$[esp+28]
@@ -12008,12 +12178,12 @@ PUBLIC	??$_Merge@PAVCvTacticalDominanceZone@@PAV1@V?$_Temp_iterator@VCvTacticalD
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Merge@PAVCvTacticalDominanceZone@@PAV1@V?$_Temp_iterator@VCvTacticalDominanceZone@@@std@@Uforward_iterator_tag@3@@std@@YA?AV?$_Temp_iterator@VCvTacticalDominanceZone@@@0@PAVCvTacticalDominanceZone@@000V10@Uforward_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
-$T229486 = -24						; size = 4
-$T229479 = -20						; size = 20
+$T229553 = -24						; size = 4
+$T229546 = -20						; size = 20
 ___$ReturnUdt$ = 8					; size = 4
 __First1$ = 12						; size = 4
-$T229480 = 16						; size = 4
-$T229478 = 16						; size = 4
+$T229547 = 16						; size = 4
+$T229545 = 16						; size = 4
 __Last1$ = 16						; size = 4
 __First2$ = 20						; size = 4
 __Last2$ = 24						; size = 4
@@ -12039,7 +12209,7 @@ ___formal$ = 52						; size = 1
 	push	esi
 	push	edi
 	xor	edi, edi
-	mov	DWORD PTR $T229486[esp+40], edi
+	mov	DWORD PTR $T229553[esp+40], edi
 	cmp	edx, ecx
 	je	$LN3@Merge@2
 	lea	ebp, DWORD PTR [edi+76]
@@ -12133,7 +12303,7 @@ $LN3@Merge@2:
 
 	sub	esp, 20					; 00000014H
 	mov	eax, esp
-	mov	DWORD PTR $T229478[esp+56], esp
+	mov	DWORD PTR $T229545[esp+56], esp
 	push	ecx
 	push	edx
 	mov	DWORD PTR [eax], edi
@@ -12141,13 +12311,13 @@ $LN3@Merge@2:
 	mov	DWORD PTR [eax+8], edi
 	mov	DWORD PTR [eax+12], edi
 	mov	esi, DWORD PTR __Dest$[esp+80]
-	lea	edx, DWORD PTR $T229479[esp+68]
+	lea	edx, DWORD PTR $T229546[esp+68]
 	push	edx
 	mov	DWORD PTR [eax+16], esi
 	call	??$unchecked_copy@PAVCvTacticalDominanceZone@@V?$_Temp_iterator@VCvTacticalDominanceZone@@@std@@@stdext@@YA?AV?$_Temp_iterator@VCvTacticalDominanceZone@@@std@@PAVCvTacticalDominanceZone@@0V12@@Z ; stdext::unchecked_copy<CvTacticalDominanceZone *,std::_Temp_iterator<CvTacticalDominanceZone> >
 	mov	eax, DWORD PTR [eax+16]
 	mov	DWORD PTR __Dest$[esp+84], eax
-	mov	eax, DWORD PTR $T229479[esp+72]
+	mov	eax, DWORD PTR $T229546[esp+72]
 	add	esp, 32					; 00000020H
 	cmp	eax, edi
 	je	SHORT $LN56@Merge@2
@@ -12162,7 +12332,7 @@ $LN56@Merge@2:
 	mov	esi, DWORD PTR ___$ReturnUdt$[esp+36]
 	sub	esp, 20					; 00000014H
 	mov	eax, esp
-	mov	DWORD PTR $T229480[esp+56], esp
+	mov	DWORD PTR $T229547[esp+56], esp
 	push	edx
 	mov	DWORD PTR [eax], edi
 	mov	DWORD PTR [eax+4], edi
@@ -12200,7 +12370,7 @@ EXTRN	?IsCanAttack@CvUnit@@QBE_NXZ:PROC		; CvUnit::IsCanAttack
 ;	COMDAT ?BuildEnemyUnitList@CvTacticalAnalysisMap@@IAEXXZ
 _TEXT	SEGMENT
 tv324 = -8						; size = 4
-_iLoop$222466 = -4					; size = 4
+_iLoop$222508 = -4					; size = 4
 ?BuildEnemyUnitList@CvTacticalAnalysisMap@@IAEXXZ PROC	; CvTacticalAnalysisMap::BuildEnemyUnitList, COMDAT
 ; _this$ = ecx
 
@@ -12272,7 +12442,7 @@ $LN41@BuildEnemy:
 ; 298  : 			for(pLoopUnit = kPlayer.firstUnit(&iLoop); pLoopUnit != NULL; pLoopUnit = kPlayer.nextUnit(&iLoop))
 
 	push	0
-	lea	eax, DWORD PTR _iLoop$222466[esp+28]
+	lea	eax, DWORD PTR _iLoop$222508[esp+28]
 	push	eax
 	mov	ecx, ebp
 	call	?firstUnit@CvPlayer@@QAEPAVCvUnit@@PAH_N@Z ; CvPlayer::firstUnit
@@ -12319,7 +12489,7 @@ $LN3@BuildEnemy:
 ; 298  : 			for(pLoopUnit = kPlayer.firstUnit(&iLoop); pLoopUnit != NULL; pLoopUnit = kPlayer.nextUnit(&iLoop))
 
 	push	0
-	lea	eax, DWORD PTR _iLoop$222466[esp+28]
+	lea	eax, DWORD PTR _iLoop$222508[esp+28]
 	push	eax
 	mov	ecx, ebp
 	call	?nextUnit@CvPlayer@@QAEPAVCvUnit@@PAH_N@Z ; CvPlayer::nextUnit
@@ -12361,7 +12531,7 @@ _TEXT	SEGMENT
 _pZone$ = -88						; size = 4
 _pTacticalAI$ = -84					; size = 4
 _this$ = -80						; size = 4
-_newZone$222568 = -76					; size = 76
+_newZone$222610 = -76					; size = 76
 ?AddTemporaryZones@CvTacticalAnalysisMap@@IAEXXZ PROC	; CvTacticalAnalysisMap::AddTemporaryZones, COMDAT
 ; _this$ = ecx
 
@@ -12504,39 +12674,39 @@ $LN40@AddTempora:
 ; 523  : 					newZone.SetWater(pPlot->isWater());
 
 	cmp	BYTE PTR [ecx+5], 3
-	mov	DWORD PTR _newZone$222568[esp+120], eax
-	mov	DWORD PTR _newZone$222568[esp+116], eax
+	mov	DWORD PTR _newZone$222610[esp+120], eax
+	mov	DWORD PTR _newZone$222610[esp+116], eax
 	mov	eax, DWORD PTR [ecx+356]
-	mov	DWORD PTR _newZone$222568[esp+124], eax
+	mov	DWORD PTR _newZone$222610[esp+124], eax
 
 ; 524  : 					newZone.SetTempZoneCenter(pPlot);
 ; 525  : 					newZone.SetNavalInvasion(pZone->IsNavalInvasion());
 
 	mov	eax, DWORD PTR _pZone$[esp+104]
-	mov	DWORD PTR _newZone$222568[esp+104], edx
+	mov	DWORD PTR _newZone$222610[esp+104], edx
 	sete	dl
 
 ; 526  : 					m_DominanceZones.push_back(newZone);
 
 	add	ebp, 112				; 00000070H
-	mov	DWORD PTR _newZone$222568[esp+176], ecx
+	mov	DWORD PTR _newZone$222610[esp+176], ecx
 	mov	cl, BYTE PTR [eax+16]
 	mov	eax, DWORD PTR [ebp+8]
-	mov	DWORD PTR _newZone$222568[esp+112], ebx
-	mov	DWORD PTR _newZone$222568[esp+128], ebx
-	mov	DWORD PTR _newZone$222568[esp+132], ebx
-	mov	DWORD PTR _newZone$222568[esp+136], ebx
-	mov	DWORD PTR _newZone$222568[esp+140], ebx
-	mov	DWORD PTR _newZone$222568[esp+144], ebx
-	mov	DWORD PTR _newZone$222568[esp+148], ebx
-	mov	DWORD PTR _newZone$222568[esp+152], ebx
-	mov	DWORD PTR _newZone$222568[esp+156], ebx
-	mov	DWORD PTR _newZone$222568[esp+160], ebx
-	mov	DWORD PTR _newZone$222568[esp+164], ebx
-	mov	DWORD PTR _newZone$222568[esp+168], 2147483647 ; 7fffffffH
-	mov	DWORD PTR _newZone$222568[esp+108], 5
-	mov	BYTE PTR _newZone$222568[esp+172], dl
-	mov	BYTE PTR _newZone$222568[esp+173], cl
+	mov	DWORD PTR _newZone$222610[esp+112], ebx
+	mov	DWORD PTR _newZone$222610[esp+128], ebx
+	mov	DWORD PTR _newZone$222610[esp+132], ebx
+	mov	DWORD PTR _newZone$222610[esp+136], ebx
+	mov	DWORD PTR _newZone$222610[esp+140], ebx
+	mov	DWORD PTR _newZone$222610[esp+144], ebx
+	mov	DWORD PTR _newZone$222610[esp+148], ebx
+	mov	DWORD PTR _newZone$222610[esp+152], ebx
+	mov	DWORD PTR _newZone$222610[esp+156], ebx
+	mov	DWORD PTR _newZone$222610[esp+160], ebx
+	mov	DWORD PTR _newZone$222610[esp+164], ebx
+	mov	DWORD PTR _newZone$222610[esp+168], 2147483647 ; 7fffffffH
+	mov	DWORD PTR _newZone$222610[esp+108], 5
+	mov	BYTE PTR _newZone$222610[esp+172], dl
+	mov	BYTE PTR _newZone$222610[esp+173], cl
 	mov	BYTE PTR [ebp+8372], bl
 	cmp	DWORD PTR [ebp+4], eax
 	jne	SHORT $LN78@AddTempora
@@ -12549,7 +12719,7 @@ $LN78@AddTempora:
 	add	eax, DWORD PTR [ebp]
 	je	SHORT $LN81@AddTempora
 	mov	ecx, 19					; 00000013H
-	lea	esi, DWORD PTR _newZone$222568[esp+104]
+	lea	esi, DWORD PTR _newZone$222610[esp+104]
 	mov	edi, eax
 	rep movsd
 $LN81@AddTempora:
@@ -12588,8 +12758,8 @@ EXTRN	?firstCity@CvPlayer@@QAEPAVCvCity@@PAH_N@Z:PROC	; CvPlayer::firstCity
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?AddToDominanceZones@CvTacticalAnalysisMap@@IAEXHPAVCvTacticalAnalysisCell@@@Z
 _TEXT	SEGMENT
-_iLoop$222624 = -4					; size = 4
-_pBestCity$222626 = 8					; size = 4
+_iLoop$222666 = -4					; size = 4
+_pBestCity$222668 = 8					; size = 4
 _iIndex$ = 8						; size = 4
 _pCell$ = 12						; size = 4
 ?AddToDominanceZones@CvTacticalAnalysisMap@@IAEXHPAVCvTacticalAnalysisCell@@@Z PROC ; CvTacticalAnalysisMap::AddToDominanceZones, COMDAT
@@ -12772,10 +12942,10 @@ $LN24@AddToDomin:
 	imul	ecx, 63236				; 0000f704H
 	add	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	push	0
-	lea	edx, DWORD PTR _iLoop$222624[esp+24]
+	lea	edx, DWORD PTR _iLoop$222666[esp+24]
 	push	edx
 	mov	edi, 2147483647				; 7fffffffH
-	mov	DWORD PTR _pBestCity$222626[esp+24], 0
+	mov	DWORD PTR _pBestCity$222668[esp+24], 0
 	call	?firstCity@CvPlayer@@QAEPAVCvCity@@PAH_N@Z ; CvPlayer::firstCity
 	mov	esi, eax
 	test	esi, esi
@@ -12809,13 +12979,13 @@ $LL23@AddToDomin:
 
 ; 700  : 				pBestCity = pLoopCity;
 
-	mov	DWORD PTR _pBestCity$222626[esp+16], esi
+	mov	DWORD PTR _pBestCity$222668[esp+16], esi
 $LN22@AddToDomin:
 	mov	ecx, DWORD PTR [ebp+48]
 	imul	ecx, 63236				; 0000f704H
 	add	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	push	0
-	lea	edx, DWORD PTR _iLoop$222624[esp+24]
+	lea	edx, DWORD PTR _iLoop$222666[esp+24]
 	push	edx
 	call	?nextCity@CvPlayer@@QAEPAVCvCity@@PAH_N@Z ; CvPlayer::nextCity
 	mov	esi, eax
@@ -12827,7 +12997,7 @@ $LN22@AddToDomin:
 ; 703  : 
 ; 704  : 		if(pBestCity != NULL)
 
-	mov	eax, DWORD PTR _pBestCity$222626[esp+16]
+	mov	eax, DWORD PTR _pBestCity$222668[esp+16]
 	test	eax, eax
 	je	SHORT $LN227@AddToDomin
 
@@ -13163,19 +13333,19 @@ PUBLIC	??$_Buffered_merge@PAVCvTacticalDominanceZone@@HV1@@std@@YAXPAVCvTactical
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\algorithm
 ;	COMDAT ??$_Buffered_merge@PAVCvTacticalDominanceZone@@HV1@@std@@YAXPAVCvTacticalDominanceZone@@00HHAAV?$_Temp_iterator@VCvTacticalDominanceZone@@@0@@Z
 _TEXT	SEGMENT
-__Midn$223407 = -24					; size = 4
-$T230337 = -20						; size = 20
-$T230335 = -20						; size = 20
+__Midn$223449 = -24					; size = 4
+$T230404 = -20						; size = 20
+$T230402 = -20						; size = 20
 __First$ = 8						; size = 4
 __Mid$ = 12						; size = 4
 __Last$ = 16						; size = 4
 tv368 = 20						; size = 4
 __Count1$ = 20						; size = 4
-$T230443 = 24						; size = 1
-$T230393 = 24						; size = 1
-$T230394 = 24						; size = 1
-$T230336 = 24						; size = 4
-$T230334 = 24						; size = 4
+$T230510 = 24						; size = 1
+$T230459 = 24						; size = 1
+$T230460 = 24						; size = 1
+$T230403 = 24						; size = 4
+$T230401 = 24						; size = 4
 __Count2$ = 24						; size = 4
 __Tempbuf$ = 28						; size = 4
 ??$_Buffered_merge@PAVCvTacticalDominanceZone@@HV1@@std@@YAXPAVCvTacticalDominanceZone@@00HHAAV?$_Temp_iterator@VCvTacticalDominanceZone@@@0@@Z PROC ; std::_Buffered_merge<CvTacticalDominanceZone *,int,CvTacticalDominanceZone>, COMDAT
@@ -13338,7 +13508,7 @@ $LN94@Buffered_m:
 	push	eax
 	push	edi
 	push	edx
-	mov	DWORD PTR __Midn$223407[esp+88], eax
+	mov	DWORD PTR __Midn$223449[esp+88], eax
 	call	??$_Buffered_merge@PAVCvTacticalDominanceZone@@HV1@@std@@YAXPAVCvTacticalDominanceZone@@00HHAAV?$_Temp_iterator@VCvTacticalDominanceZone@@@0@@Z ; std::_Buffered_merge<CvTacticalDominanceZone *,int,CvTacticalDominanceZone>
 
 ; 2802 : 		_Buffered_merge(_Midn, _Lastn, _Last,
@@ -13346,7 +13516,7 @@ $LN94@Buffered_m:
 
 	mov	eax, DWORD PTR __Count2$[esp+84]
 	mov	ecx, DWORD PTR tv368[esp+84]
-	mov	edx, DWORD PTR __Midn$223407[esp+88]
+	mov	edx, DWORD PTR __Midn$223449[esp+88]
 	sub	eax, esi
 	mov	DWORD PTR __Count1$[esp+84], ecx
 	add	ecx, eax
@@ -13401,14 +13571,14 @@ $LN102@Buffered_m:
 	mov	DWORD PTR [eax+8], ebp
 	mov	DWORD PTR [eax+12], ebp
 	mov	edx, DWORD PTR [esi+16]
-	mov	DWORD PTR $T230334[esp+56], esp
+	mov	DWORD PTR $T230401[esp+56], esp
 	push	edi
 	mov	DWORD PTR [eax+16], edx
-	lea	eax, DWORD PTR $T230335[esp+64]
+	lea	eax, DWORD PTR $T230402[esp+64]
 	push	ebx
 	push	eax
 	call	??$unchecked_copy@PAVCvTacticalDominanceZone@@V?$_Temp_iterator@VCvTacticalDominanceZone@@@std@@@stdext@@YA?AV?$_Temp_iterator@VCvTacticalDominanceZone@@@std@@PAVCvTacticalDominanceZone@@0V12@@Z ; stdext::unchecked_copy<CvTacticalDominanceZone *,std::_Temp_iterator<CvTacticalDominanceZone> >
-	mov	eax, DWORD PTR $T230335[esp+72]
+	mov	eax, DWORD PTR $T230402[esp+72]
 	add	esp, 32					; 00000020H
 	cmp	eax, ebp
 	je	SHORT $LN32@Buffered_m
@@ -13421,9 +13591,9 @@ $LN32@Buffered_m:
 
 	mov	eax, DWORD PTR __Last$[esp+36]
 	mov	esi, DWORD PTR [esi+16]
-	mov	BYTE PTR $T230393[esp+36], 0
-	mov	ecx, DWORD PTR $T230393[esp+36]
-	mov	edx, DWORD PTR $T230394[esp+36]
+	mov	BYTE PTR $T230459[esp+36], 0
+	mov	ecx, DWORD PTR $T230459[esp+36]
+	mov	edx, DWORD PTR $T230460[esp+36]
 	push	ecx
 	mov	ecx, DWORD PTR [esi+4]
 	push	edx
@@ -13463,14 +13633,14 @@ $LN103@Buffered_m:
 	mov	DWORD PTR [eax+8], ebp
 	mov	DWORD PTR [eax+12], ebp
 	mov	edx, DWORD PTR [esi+16]
-	mov	DWORD PTR $T230336[esp+56], esp
+	mov	DWORD PTR $T230403[esp+56], esp
 	push	ebx
 	mov	DWORD PTR [eax+16], edx
-	lea	eax, DWORD PTR $T230337[esp+64]
+	lea	eax, DWORD PTR $T230404[esp+64]
 	push	edi
 	push	eax
 	call	??$unchecked_copy@PAVCvTacticalDominanceZone@@V?$_Temp_iterator@VCvTacticalDominanceZone@@@std@@@stdext@@YA?AV?$_Temp_iterator@VCvTacticalDominanceZone@@@std@@PAVCvTacticalDominanceZone@@0V12@@Z ; stdext::unchecked_copy<CvTacticalDominanceZone *,std::_Temp_iterator<CvTacticalDominanceZone> >
-	mov	eax, DWORD PTR $T230337[esp+72]
+	mov	eax, DWORD PTR $T230404[esp+72]
 	add	esp, 32					; 00000020H
 	cmp	eax, ebp
 	je	SHORT $LN56@Buffered_m
@@ -13485,8 +13655,8 @@ $LN56@Buffered_m:
 	mov	esi, DWORD PTR [esi+16]
 	mov	edx, DWORD PTR [esi+4]
 	mov	eax, DWORD PTR [esi]
-	mov	BYTE PTR $T230443[esp+36], 0
-	mov	ecx, DWORD PTR $T230443[esp+36]
+	mov	BYTE PTR $T230510[esp+36], 0
+	mov	ecx, DWORD PTR $T230510[esp+36]
 	push	ecx
 	mov	ecx, DWORD PTR __First$[esp+40]
 	push	ebx
@@ -13513,7 +13683,7 @@ PUBLIC	??$_Unchecked_chunked_merge@PAVCvTacticalDominanceZone@@PAV1@H@stdext@@YA
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Unchecked_chunked_merge@PAVCvTacticalDominanceZone@@PAV1@H@stdext@@YAXPAVCvTacticalDominanceZone@@00HH@Z
 _TEXT	SEGMENT
-$T230550 = -4						; size = 1
+$T230617 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
@@ -13529,8 +13699,8 @@ __Count$ = 24						; size = 4
 
 	mov	ecx, DWORD PTR __Count$[esp]
 	mov	edx, DWORD PTR __Chunk$[esp]
-	mov	BYTE PTR $T230550[esp+4], 0
-	mov	eax, DWORD PTR $T230550[esp+4]
+	mov	BYTE PTR $T230617[esp+4], 0
+	mov	eax, DWORD PTR $T230617[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -13552,10 +13722,10 @@ PUBLIC	??$unchecked_merge@PAVCvTacticalDominanceZone@@PAV1@V?$_Temp_iterator@VCv
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$unchecked_merge@PAVCvTacticalDominanceZone@@PAV1@V?$_Temp_iterator@VCvTacticalDominanceZone@@@std@@@stdext@@YA?AV?$_Temp_iterator@VCvTacticalDominanceZone@@@std@@PAVCvTacticalDominanceZone@@000V12@@Z
 _TEXT	SEGMENT
-$T230554 = -4						; size = 1
-$T230560 = -4						; size = 4
-$T230556 = -4						; size = 4
-$T230555 = 8						; size = 1
+$T230621 = -4						; size = 1
+$T230627 = -4						; size = 4
+$T230623 = -4						; size = 4
+$T230622 = 8						; size = 1
 ___$ReturnUdt$ = 8					; size = 4
 __First1$ = 12						; size = 4
 __Last1$ = 16						; size = 4
@@ -13569,16 +13739,16 @@ __Dest$ = 28						; size = 20
 	push	ecx
 	push	ebx
 	xor	ebx, ebx
-	mov	DWORD PTR $T230560[esp+8], ebx
+	mov	DWORD PTR $T230627[esp+8], ebx
 
 ; 5115 : 		return _STD _Merge(_CHECKED_BASE(_First1), _CHECKED_BASE(_Last1), _CHECKED_BASE(_First2), _CHECKED_BASE(_Last2), _Dest,
 ; 5116 : 			_STD _Iter_random(_First1, _First2, _Dest), _STD _Range_checked_iterator_tag());
 
-	mov	ecx, DWORD PTR $T230555[esp+4]
+	mov	ecx, DWORD PTR $T230622[esp+4]
 	push	esi
 	mov	esi, DWORD PTR ___$ReturnUdt$[esp+8]
-	mov	BYTE PTR $T230554[esp+12], bl
-	mov	eax, DWORD PTR $T230554[esp+12]
+	mov	BYTE PTR $T230621[esp+12], bl
+	mov	eax, DWORD PTR $T230621[esp+12]
 	push	eax
 	push	ecx
 	mov	ecx, DWORD PTR __First2$[esp+16]
@@ -13592,7 +13762,7 @@ __Dest$ = 28						; size = 20
 	mov	DWORD PTR [eax+16], edx
 	mov	eax, DWORD PTR __Last2$[esp+36]
 	mov	edx, DWORD PTR __Last1$[esp+36]
-	mov	DWORD PTR $T230556[esp+40], esp
+	mov	DWORD PTR $T230623[esp+40], esp
 	push	eax
 	mov	eax, DWORD PTR __First1$[esp+40]
 	push	ecx
@@ -13622,15 +13792,15 @@ PUBLIC	??$_Chunked_merge@PAVCvTacticalDominanceZone@@V?$_Temp_iterator@VCvTactic
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Chunked_merge@PAVCvTacticalDominanceZone@@V?$_Temp_iterator@VCvTacticalDominanceZone@@@std@@H@std@@YAXPAVCvTacticalDominanceZone@@0V?$_Temp_iterator@VCvTacticalDominanceZone@@@0@HHU_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
-$T230600 = -24						; size = 4
-$T230605 = -20						; size = 20
-$T230603 = -20						; size = 20
-$T230601 = -20						; size = 20
+$T230667 = -24						; size = 4
+$T230672 = -20						; size = 20
+$T230670 = -20						; size = 20
+$T230668 = -20						; size = 20
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 20
 __Chunk$ = 36						; size = 4
-$T230602 = 40						; size = 4
+$T230669 = 40						; size = 4
 __Count$ = 40						; size = 4
 ___formal$ = 44						; size = 1
 ??$_Chunked_merge@PAVCvTacticalDominanceZone@@V?$_Temp_iterator@VCvTacticalDominanceZone@@@std@@H@std@@YAXPAVCvTacticalDominanceZone@@0V?$_Temp_iterator@VCvTacticalDominanceZone@@@0@HHU_Range_checked_iterator_tag@0@@Z PROC ; std::_Chunked_merge<CvTacticalDominanceZone *,std::_Temp_iterator<CvTacticalDominanceZone>,int>, COMDAT
@@ -13664,7 +13834,7 @@ $LL5@Chunked_me@2:
 	sub	esp, 20					; 00000014H
 	mov	eax, esp
 	lea	ecx, DWORD PTR [edi+edx]
-	mov	DWORD PTR $T230600[esp+60], esp
+	mov	DWORD PTR $T230667[esp+60], esp
 	lea	esi, DWORD PTR [edi+ecx]
 	push	esi
 	push	ecx
@@ -13676,11 +13846,11 @@ $LL5@Chunked_me@2:
 	push	ecx
 	mov	DWORD PTR [eax+16], ebp
 	push	edx
-	lea	eax, DWORD PTR $T230601[esp+76]
+	lea	eax, DWORD PTR $T230668[esp+76]
 	push	eax
 	call	??$unchecked_merge@PAVCvTacticalDominanceZone@@PAV1@V?$_Temp_iterator@VCvTacticalDominanceZone@@@std@@@stdext@@YA?AV?$_Temp_iterator@VCvTacticalDominanceZone@@@std@@PAVCvTacticalDominanceZone@@000V12@@Z ; stdext::unchecked_merge<CvTacticalDominanceZone *,CvTacticalDominanceZone *,std::_Temp_iterator<CvTacticalDominanceZone> >
 	mov	ecx, DWORD PTR [eax+16]
-	mov	eax, DWORD PTR $T230601[esp+80]
+	mov	eax, DWORD PTR $T230668[esp+80]
 	add	esp, 40					; 00000028H
 	mov	DWORD PTR __Dest$[esp+52], ecx
 	cmp	eax, ebx
@@ -13709,7 +13879,7 @@ $LN3@Chunked_me@2:
 
 	sub	esp, 20					; 00000014H
 	cmp	esi, eax
-	mov	DWORD PTR $T230602[esp+56], esp
+	mov	DWORD PTR $T230669[esp+56], esp
 	jg	SHORT $LN2@Chunked_me@2
 	mov	eax, esp
 	mov	DWORD PTR [eax], ebx
@@ -13721,7 +13891,7 @@ $LN3@Chunked_me@2:
 	mov	eax, DWORD PTR __Last$[esp+56]
 	push	eax
 	push	edx
-	lea	ecx, DWORD PTR $T230603[esp+68]
+	lea	ecx, DWORD PTR $T230670[esp+68]
 	push	ecx
 	call	??$unchecked_copy@PAVCvTacticalDominanceZone@@V?$_Temp_iterator@VCvTacticalDominanceZone@@@std@@@stdext@@YA?AV?$_Temp_iterator@VCvTacticalDominanceZone@@@std@@PAVCvTacticalDominanceZone@@0V12@@Z ; stdext::unchecked_copy<CvTacticalDominanceZone *,std::_Temp_iterator<CvTacticalDominanceZone> >
 	add	esp, 32					; 00000020H
@@ -13754,12 +13924,12 @@ $LN2@Chunked_me@2:
 	push	ecx
 	push	ecx
 	push	edx
-	lea	ecx, DWORD PTR $T230605[esp+76]
+	lea	ecx, DWORD PTR $T230672[esp+76]
 	push	ecx
 	call	??$unchecked_merge@PAVCvTacticalDominanceZone@@PAV1@V?$_Temp_iterator@VCvTacticalDominanceZone@@@std@@@stdext@@YA?AV?$_Temp_iterator@VCvTacticalDominanceZone@@@std@@PAVCvTacticalDominanceZone@@000V12@@Z ; stdext::unchecked_merge<CvTacticalDominanceZone *,CvTacticalDominanceZone *,std::_Temp_iterator<CvTacticalDominanceZone> >
 	add	esp, 40					; 00000028H
 $LN99@Chunked_me@2:
-	mov	eax, DWORD PTR $T230605[esp+40]
+	mov	eax, DWORD PTR $T230672[esp+40]
 	cmp	eax, ebx
 	je	SHORT $LN75@Chunked_me@2
 	push	eax
@@ -13789,12 +13959,12 @@ PUBLIC	??$_Unchecked_chunked_merge@PAVCvTacticalDominanceZone@@V?$_Temp_iterator
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Unchecked_chunked_merge@PAVCvTacticalDominanceZone@@V?$_Temp_iterator@VCvTacticalDominanceZone@@@std@@H@stdext@@YAXPAVCvTacticalDominanceZone@@0V?$_Temp_iterator@VCvTacticalDominanceZone@@@std@@HH@Z
 _TEXT	SEGMENT
-$T230787 = -4						; size = 1
+$T230854 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 20
 __Chunk$ = 36						; size = 4
-$T230788 = 40						; size = 4
+$T230855 = 40						; size = 4
 __Count$ = 40						; size = 4
 ??$_Unchecked_chunked_merge@PAVCvTacticalDominanceZone@@V?$_Temp_iterator@VCvTacticalDominanceZone@@@std@@H@stdext@@YAXPAVCvTacticalDominanceZone@@0V?$_Temp_iterator@VCvTacticalDominanceZone@@@std@@HH@Z PROC ; stdext::_Unchecked_chunked_merge<CvTacticalDominanceZone *,std::_Temp_iterator<CvTacticalDominanceZone>,int>, COMDAT
 
@@ -13808,8 +13978,8 @@ __Count$ = 40						; size = 4
 	mov	edx, DWORD PTR __Chunk$[esp]
 	push	ebx
 	xor	ebx, ebx
-	mov	BYTE PTR $T230787[esp+8], bl
-	mov	eax, DWORD PTR $T230787[esp+8]
+	mov	BYTE PTR $T230854[esp+8], bl
+	mov	eax, DWORD PTR $T230854[esp+8]
 	push	eax
 	push	ecx
 	push	edx
@@ -13821,7 +13991,7 @@ __Count$ = 40						; size = 4
 	mov	DWORD PTR [eax+8], ebx
 	mov	DWORD PTR [eax+12], ebx
 	mov	ecx, DWORD PTR __Dest$[esp+52]
-	mov	DWORD PTR $T230788[esp+36], esp
+	mov	DWORD PTR $T230855[esp+36], esp
 	mov	DWORD PTR [eax+16], ecx
 	mov	eax, DWORD PTR __First$[esp+36]
 	push	edx
@@ -13847,11 +14017,11 @@ PUBLIC	??$_Buffered_merge_sort@PAVCvTacticalDominanceZone@@HV1@@std@@YAXPAVCvTac
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Buffered_merge_sort@PAVCvTacticalDominanceZone@@HV1@@std@@YAXPAVCvTacticalDominanceZone@@0HAAV?$_Temp_iterator@VCvTacticalDominanceZone@@@0@@Z
 _TEXT	SEGMENT
-$T230935 = -8						; size = 1
-$T230906 = -4						; size = 4
+$T231002 = -8						; size = 1
+$T230973 = -4						; size = 4
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-$T230905 = 16						; size = 1
+$T230972 = 16						; size = 1
 __Count$ = 16						; size = 4
 __Tempbuf$ = 20						; size = 4
 ??$_Buffered_merge_sort@PAVCvTacticalDominanceZone@@HV1@@std@@YAXPAVCvTacticalDominanceZone@@0HAAV?$_Temp_iterator@VCvTacticalDominanceZone@@@0@@Z PROC ; std::_Buffered_merge_sort<CvTacticalDominanceZone *,int,CvTacticalDominanceZone>, COMDAT
@@ -13926,8 +14096,8 @@ $LL3@Buffered_m@2:
 	mov	DWORD PTR [eax+4], edx
 	mov	ecx, DWORD PTR [ebp+16]
 	mov	edx, DWORD PTR __First$[esp+20]
-	mov	BYTE PTR $T230905[esp+20], bl
-	mov	eax, DWORD PTR $T230905[esp+20]
+	mov	BYTE PTR $T230972[esp+20], bl
+	mov	eax, DWORD PTR $T230972[esp+20]
 	push	eax
 	push	edi
 	push	esi
@@ -13935,7 +14105,7 @@ $LL3@Buffered_m@2:
 	mov	eax, esp
 	mov	DWORD PTR [eax+16], ecx
 	mov	ecx, DWORD PTR __Last$[esp+52]
-	mov	DWORD PTR $T230906[esp+56], esp
+	mov	DWORD PTR $T230973[esp+56], esp
 	push	ecx
 	push	edx
 	mov	DWORD PTR [eax], ebx
@@ -13949,8 +14119,8 @@ $LL3@Buffered_m@2:
 
 	mov	eax, DWORD PTR [ebp+16]
 	mov	edx, DWORD PTR __First$[esp+60]
-	mov	BYTE PTR $T230935[esp+64], bl
-	mov	ecx, DWORD PTR $T230935[esp+64]
+	mov	BYTE PTR $T231002[esp+64], bl
+	mov	ecx, DWORD PTR $T231002[esp+64]
 	push	ecx
 	mov	ecx, DWORD PTR [eax+4]
 	push	edi
@@ -14265,13 +14435,13 @@ EXTRN	__ftol2_sse_excpt:PROC
 _TEXT	SEGMENT
 _this$ = -24						; size = 4
 tv546 = -20						; size = 4
-_iI$222727 = -16					; size = 4
+_iI$222769 = -16					; size = 4
 tv503 = -12						; size = 4
 tv498 = -12						; size = 4
-$T231072 = -12						; size = 4
-$T231077 = -12						; size = 4
-$T231078 = -8						; size = 4
-_eDominance$222731 = -4					; size = 4
+$T231139 = -12						; size = 4
+$T231144 = -12						; size = 4
+$T231145 = -8						; size = 4
+_eDominance$222773 = -4					; size = 4
 ?PrioritizeZones@CvTacticalAnalysisMap@@IAEXXZ PROC	; CvTacticalAnalysisMap::PrioritizeZones, COMDAT
 ; _this$ = ecx
 
@@ -14297,7 +14467,7 @@ _eDominance$222731 = -4					; size = 4
 	push	esi
 	push	edi
 	mov	DWORD PTR _this$[esp+64], ebx
-	mov	DWORD PTR _iI$222727[esp+64], eax
+	mov	DWORD PTR _iI$222769[esp+64], eax
 	cmp	DWORD PTR [ebx+116], eax
 	jbe	$LN31@Prioritize
 	mov	DWORD PTR tv546[esp+64], eax
@@ -14324,7 +14494,7 @@ $LN33@Prioritize:
 ; 962  : 		if(pZone->GetTerritoryType() == TACTICAL_TERRITORY_TEMP_ZONE)
 
 	cmp	DWORD PTR [esi+4], 5
-	mov	DWORD PTR _eDominance$222731[esp+64], eax
+	mov	DWORD PTR _eDominance$222773[esp+64], eax
 	mov	ebp, 1
 	jne	SHORT $LN30@Prioritize
 
@@ -14380,17 +14550,17 @@ $LN48@Prioritize:
 	mov	DWORD PTR tv503[esp+64], eax
 	fild	DWORD PTR tv503[esp+64]
 	sub	esp, 8
-	fstp	DWORD PTR $T231077[esp+72]
-	fld	DWORD PTR $T231077[esp+72]
+	fstp	DWORD PTR $T231144[esp+72]
+	fld	DWORD PTR $T231144[esp+72]
 	fstp	QWORD PTR [esp]
 	call	_sqrt
 	fstp	DWORD PTR tv498[esp+72]
 	add	esp, 8
 	fld	DWORD PTR tv498[esp+64]
-	fstp	DWORD PTR $T231072[esp+64]
-	mov	eax, DWORD PTR $T231072[esp+64]
-	mov	DWORD PTR $T231078[esp+64], eax
-	fld	DWORD PTR $T231078[esp+64]
+	fstp	DWORD PTR $T231139[esp+64]
+	mov	eax, DWORD PTR $T231139[esp+64]
+	mov	DWORD PTR $T231145[esp+64], eax
+	fld	DWORD PTR $T231145[esp+64]
 	call	__ftol2_sse_excpt
 	mov	ebp, eax
 
@@ -14538,7 +14708,7 @@ $LN22@Prioritize:
 ; 1004 : 			iMultiplier = 1;
 ; 1005 : 			if(eDominance == TACTICAL_DOMINANCE_ENEMY)
 
-	mov	eax, DWORD PTR _eDominance$222731[esp+64]
+	mov	eax, DWORD PTR _eDominance$222773[esp+64]
 	mov	edi, 1
 	cmp	eax, 2
 	jne	SHORT $LN21@Prioritize
@@ -14694,7 +14864,7 @@ $LN2@Prioritize:
 ; 951  : 
 ; 952  : 	for(unsigned int iI = 0; iI < m_DominanceZones.size(); iI++)
 
-	mov	eax, DWORD PTR _iI$222727[esp+64]
+	mov	eax, DWORD PTR _iI$222769[esp+64]
 
 ; 1052 : 					}
 ; 1053 : 				}
@@ -14712,7 +14882,7 @@ $LN2@Prioritize:
 	add	DWORD PTR tv546[esp+64], 76		; 0000004cH
 	inc	eax
 	mov	DWORD PTR [esi+60], edi
-	mov	DWORD PTR _iI$222727[esp+64], eax
+	mov	DWORD PTR _iI$222769[esp+64], eax
 	cmp	eax, DWORD PTR [ebx+116]
 	jb	$LN33@Prioritize
 $LN31@Prioritize:

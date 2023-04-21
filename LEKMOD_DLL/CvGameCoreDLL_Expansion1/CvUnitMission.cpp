@@ -639,10 +639,32 @@ void CvUnitMission::ContinueMission(UnitHandle hUnit, int iSteps, int iETA)
 
 			else if(kMissionData.eMissionType == CvTypes::getMISSION_RANGE_ATTACK())
 			{
-				if(CvUnitCombat::AttackRanged(*hUnit, kMissionData.iData1, kMissionData.iData2, (kMissionData.iFlags &  MISSION_MODIFIER_NO_DEFENSIVE_SUPPORT)?CvUnitCombat::ATTACK_OPTION_NO_DEFENSIVE_SUPPORT:CvUnitCombat::ATTACK_OPTION_NONE) != CvUnitCombat::ATTACK_ABORTED)
+#ifdef FIX_AIR_STRIKE_WHEN_DECLARING_WAR
+				// Air mission
+				if (hUnit->getDomainType() == DOMAIN_AIR && hUnit->GetBaseCombatStrength() == 0)
+				{
+					if (hUnit->canRangeStrikeAt(kMissionData.iData1, kMissionData.iData2))
+					{
+						CvPlot* pTargetPlot = GC.getMap().plot(kMissionData.iData1, kMissionData.iData2);
+						if (CvUnitCombat::AttackAir(*hUnit, *pTargetPlot, (kMissionData.iFlags & MISSION_MODIFIER_NO_DEFENSIVE_SUPPORT) ? CvUnitCombat::ATTACK_OPTION_NO_DEFENSIVE_SUPPORT : CvUnitCombat::ATTACK_OPTION_NONE))
+						{
+							bDone = true;
+						}
+					}
+				}
+				else
+				{
+					if (CvUnitCombat::AttackRanged(*hUnit, kMissionData.iData1, kMissionData.iData2, (kMissionData.iFlags & MISSION_MODIFIER_NO_DEFENSIVE_SUPPORT) ? CvUnitCombat::ATTACK_OPTION_NO_DEFENSIVE_SUPPORT : CvUnitCombat::ATTACK_OPTION_NONE) != CvUnitCombat::ATTACK_ABORTED)
+					{
+						bDone = true;
+					}
+				}
+#else
+				if (CvUnitCombat::AttackRanged(*hUnit, kMissionData.iData1, kMissionData.iData2, (kMissionData.iFlags & MISSION_MODIFIER_NO_DEFENSIVE_SUPPORT) ? CvUnitCombat::ATTACK_OPTION_NO_DEFENSIVE_SUPPORT : CvUnitCombat::ATTACK_OPTION_NONE) != CvUnitCombat::ATTACK_ABORTED)
 				{
 					bDone = true;
 				}
+#endif
 			}
 
 			else if(kMissionData.eMissionType == CvTypes::getMISSION_NUKE())
@@ -1267,7 +1289,6 @@ void CvUnitMission::StartMission(UnitHandle hUnit)
 					bDelete = true;
 				}
 			}
-
 			else if(pkQueueData->eMissionType == CvTypes::getMISSION_PARADROP())
 			{
 				if(hUnit->paradrop(pkQueueData->iData1, pkQueueData->iData2))

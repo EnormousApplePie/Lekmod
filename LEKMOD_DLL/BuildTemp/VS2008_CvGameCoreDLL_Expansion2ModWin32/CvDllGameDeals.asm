@@ -10,10 +10,10 @@ INCLUDELIB MSVCRT
 INCLUDELIB OLDNAMES
 
 _DATA	SEGMENT
-_CIV5_XP2_DLL_VERSION DD FLAT:$SG217738
+_CIV5_XP2_DLL_VERSION DD FLAT:$SG217776
 _DATA	ENDS
 CONST	SEGMENT
-$SG217738 DB	'1.0.0', 00H
+$SG217776 DB	'1.0.0', 00H
 	ORG $+2
 _guidICvUnknown DD 0d89ba82fH
 	DW	09fa3H
@@ -311,7 +311,7 @@ EXTRN	?GetInstance@CvDllDeal@@QAEPAVCvDeal@@XZ:PROC	; CvDllDeal::GetInstance
 ;	COMDAT ?AddProposedDeal@CvDllGameDeals@@UAGXPAVICvDeal1@@@Z
 _TEXT	SEGMENT
 _this$ = 8						; size = 4
-$T219143 = 12						; size = 4
+$T219181 = 12						; size = 4
 _pDeal$ = 12						; size = 4
 ?AddProposedDeal@CvDllGameDeals@@UAGXPAVICvDeal1@@@Z PROC ; CvDllGameDeals::AddProposedDeal, COMDAT
 
@@ -332,7 +332,7 @@ _pDeal$ = 12						; size = 4
 
 	sub	esp, 76					; 0000004cH
 	mov	ecx, esp
-	mov	DWORD PTR $T219143[esp+72], esp
+	mov	DWORD PTR $T219181[esp+72], esp
 	push	eax
 	call	??0CvDeal@@QAE@ABV0@@Z			; CvDeal::CvDeal
 	mov	eax, DWORD PTR _this$[esp+72]
@@ -394,7 +394,7 @@ xdata$x	ENDS
 ;	COMDAT ?GetTempDeal@CvDllGameDeals@@UAGPAVICvDeal1@@XZ
 _TEXT	SEGMENT
 __$EHRec$ = -12						; size = 12
-$T219152 = 8						; size = 4
+$T219190 = 8						; size = 4
 _this$ = 8						; size = 4
 ?GetTempDeal@CvDllGameDeals@@UAGPAVICvDeal1@@XZ PROC	; CvDllGameDeals::GetTempDeal, COMDAT
 
@@ -421,7 +421,7 @@ _this$ = 8						; size = 4
 	push	12					; 0000000cH
 	call	??2CvDllDeal@@SAPAXI@Z			; CvDllDeal::operator new
 	add	esp, 4
-	mov	DWORD PTR $T219152[esp+12], eax
+	mov	DWORD PTR $T219190[esp+12], eax
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	eax, eax
 	je	SHORT $LN5@GetTempDea
@@ -447,7 +447,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetTempDeal@CvDllGameDeals@@UAGPAVICvDeal1@@XZ$0:
-	mov	eax, DWORD PTR $T219152[ebp-4]
+	mov	eax, DWORD PTR $T219190[ebp-4]
 	push	eax
 	call	??3CvDllDeal@@SAXPAX@Z			; CvDllDeal::operator delete
 	pop	ecx
@@ -564,7 +564,7 @@ _TEXT	SEGMENT
 __$EHRec$ = -12						; size = 12
 _this$ = 8						; size = 4
 _eFromPlayer$ = 12					; size = 4
-$T219182 = 16						; size = 4
+$T219220 = 16						; size = 4
 _eToPlayer$ = 16					; size = 4
 ?GetProposedDeal@CvDllGameDeals@@UAGPAVICvDeal1@@W4PlayerTypes@@0@Z PROC ; CvDllGameDeals::GetProposedDeal, COMDAT
 
@@ -595,7 +595,7 @@ _eToPlayer$ = 16					; size = 4
 	push	12					; 0000000cH
 	call	??2CvDllDeal@@SAPAXI@Z			; CvDllDeal::operator new
 	add	esp, 4
-	mov	DWORD PTR $T219182[esp+12], eax
+	mov	DWORD PTR $T219220[esp+12], eax
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	eax, eax
 	je	SHORT $LN5@GetPropose
@@ -621,7 +621,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetProposedDeal@CvDllGameDeals@@UAGPAVICvDeal1@@W4PlayerTypes@@0@Z$0:
-	mov	eax, DWORD PTR $T219182[ebp-4]
+	mov	eax, DWORD PTR $T219220[ebp-4]
 	push	eax
 	call	??3CvDllDeal@@SAXPAX@Z			; CvDllDeal::operator delete
 	pop	ecx
@@ -650,7 +650,7 @@ _TEXT	SEGMENT
 __$EHRec$ = -12						; size = 12
 _this$ = 8						; size = 4
 _ePlayer$ = 12						; size = 4
-$T219198 = 16						; size = 4
+$T219236 = 16						; size = 4
 _index$ = 16						; size = 4
 ?GetCurrentDeal@CvDllGameDeals@@UAGPAVICvDeal1@@W4PlayerTypes@@I@Z PROC ; CvDllGameDeals::GetCurrentDeal, COMDAT
 
@@ -681,7 +681,7 @@ _index$ = 16						; size = 4
 	push	12					; 0000000cH
 	call	??2CvDllDeal@@SAPAXI@Z			; CvDllDeal::operator new
 	add	esp, 4
-	mov	DWORD PTR $T219198[esp+12], eax
+	mov	DWORD PTR $T219236[esp+12], eax
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	eax, eax
 	je	SHORT $LN5@GetCurrent
@@ -707,7 +707,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetCurrentDeal@CvDllGameDeals@@UAGPAVICvDeal1@@W4PlayerTypes@@I@Z$0:
-	mov	eax, DWORD PTR $T219198[ebp-4]
+	mov	eax, DWORD PTR $T219236[ebp-4]
 	push	eax
 	call	??3CvDllDeal@@SAXPAX@Z			; CvDllDeal::operator delete
 	pop	ecx
@@ -736,7 +736,7 @@ _TEXT	SEGMENT
 __$EHRec$ = -12						; size = 12
 _this$ = 8						; size = 4
 _ePlayer$ = 12						; size = 4
-$T219214 = 16						; size = 4
+$T219252 = 16						; size = 4
 _indx$ = 16						; size = 4
 ?GetHistoricDeal@CvDllGameDeals@@UAGPAVICvDeal1@@W4PlayerTypes@@I@Z PROC ; CvDllGameDeals::GetHistoricDeal, COMDAT
 
@@ -767,7 +767,7 @@ _indx$ = 16						; size = 4
 	push	12					; 0000000cH
 	call	??2CvDllDeal@@SAPAXI@Z			; CvDllDeal::operator new
 	add	esp, 4
-	mov	DWORD PTR $T219214[esp+12], eax
+	mov	DWORD PTR $T219252[esp+12], eax
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	eax, eax
 	je	SHORT $LN5@GetHistori
@@ -793,7 +793,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetHistoricDeal@CvDllGameDeals@@UAGPAVICvDeal1@@W4PlayerTypes@@I@Z$0:
-	mov	eax, DWORD PTR $T219214[ebp-4]
+	mov	eax, DWORD PTR $T219252[ebp-4]
 	push	eax
 	call	??3CvDllDeal@@SAXPAX@Z			; CvDllDeal::operator delete
 	pop	ecx
@@ -963,7 +963,7 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 __$EHRec$ = -12						; size = 12
 _this$ = 8						; size = 4
-$T219257 = 12						; size = 4
+$T219295 = 12						; size = 4
 _index$ = 12						; size = 4
 ?GetDeal@CvDllGameDeals@@UAGPAVICvDeal1@@I@Z PROC	; CvDllGameDeals::GetDeal, COMDAT
 
@@ -992,7 +992,7 @@ _index$ = 12						; size = 4
 	push	12					; 0000000cH
 	call	??2CvDllDeal@@SAPAXI@Z			; CvDllDeal::operator new
 	add	esp, 4
-	mov	DWORD PTR $T219257[esp+12], eax
+	mov	DWORD PTR $T219295[esp+12], eax
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	eax, eax
 	je	SHORT $LN5@GetDeal
@@ -1018,7 +1018,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetDeal@CvDllGameDeals@@UAGPAVICvDeal1@@I@Z$0:
-	mov	eax, DWORD PTR $T219257[ebp-4]
+	mov	eax, DWORD PTR $T219295[ebp-4]
 	push	eax
 	call	??3CvDllDeal@@SAXPAX@Z			; CvDllDeal::operator delete
 	pop	ecx
@@ -1054,12 +1054,12 @@ PUBLIC	?GetInterfaceId@ICvUnknown@@SG?AU_GUID@@XZ	; ICvUnknown::GetInterfaceId
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredllutil\include\cvdllinterfaces.h
 ;	COMDAT ?GetInterfaceId@ICvUnknown@@SG?AU_GUID@@XZ
 _TEXT	SEGMENT
-$T219275 = 8						; size = 4
+$T219313 = 8						; size = 4
 ?GetInterfaceId@ICvUnknown@@SG?AU_GUID@@XZ PROC		; ICvUnknown::GetInterfaceId, COMDAT
 
 ; 306  : 	static GUID DLLCALL GetInterfaceId(){ return guidICvUnknown; }
 
-	mov	eax, DWORD PTR $T219275[esp-4]
+	mov	eax, DWORD PTR $T219313[esp-4]
 	mov	ecx, DWORD PTR _guidICvUnknown
 	mov	edx, DWORD PTR _guidICvUnknown+4
 	mov	DWORD PTR [eax], ecx
@@ -1075,12 +1075,12 @@ PUBLIC	?GetInterfaceId@ICvGameDeals1@@SG?AU_GUID@@XZ	; ICvGameDeals1::GetInterfa
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?GetInterfaceId@ICvGameDeals1@@SG?AU_GUID@@XZ
 _TEXT	SEGMENT
-$T219279 = 8						; size = 4
+$T219317 = 8						; size = 4
 ?GetInterfaceId@ICvGameDeals1@@SG?AU_GUID@@XZ PROC	; ICvGameDeals1::GetInterfaceId, COMDAT
 
 ; 423  : 	static GUID DLLCALL GetInterfaceId() { return guidICvGameDeals1; }
 
-	mov	eax, DWORD PTR $T219279[esp-4]
+	mov	eax, DWORD PTR $T219317[esp-4]
 	mov	ecx, DWORD PTR _guidICvGameDeals1
 	mov	edx, DWORD PTR _guidICvGameDeals1+4
 	mov	DWORD PTR [eax], ecx
@@ -1137,8 +1137,8 @@ _TEXT	SEGMENT
 _TEXT	ENDS
 ;	COMDAT ?QueryInterface@CvDllGameDeals@@UAGPAXU_GUID@@@Z
 _TEXT	SEGMENT
-$T219291 = -16						; size = 16
-$T219289 = -16						; size = 16
+$T219329 = -16						; size = 16
+$T219327 = -16						; size = 16
 _this$ = 8						; size = 4
 _guidInterface$ = 12					; size = 16
 ?QueryInterface@CvDllGameDeals@@UAGPAXU_GUID@@@Z PROC	; CvDllGameDeals::QueryInterface, COMDAT
@@ -1153,15 +1153,15 @@ _guidInterface$ = 12					; size = 16
 	mov	ecx, DWORD PTR _guidICvUnknown+4
 	mov	edx, DWORD PTR _guidICvUnknown+8
 	mov	eax, DWORD PTR _guidICvUnknown
-	mov	DWORD PTR $T219289[esp+20], ecx
-	lea	ecx, DWORD PTR $T219289[esp+16]
-	mov	DWORD PTR $T219289[esp+24], edx
-	mov	DWORD PTR $T219289[esp+16], eax
+	mov	DWORD PTR $T219327[esp+20], ecx
+	lea	ecx, DWORD PTR $T219327[esp+16]
+	mov	DWORD PTR $T219327[esp+24], edx
+	mov	DWORD PTR $T219327[esp+16], eax
 	mov	eax, DWORD PTR _guidICvUnknown+12
 	push	ecx
 	lea	edx, DWORD PTR _guidInterface$[esp+16]
 	push	edx
-	mov	DWORD PTR $T219289[esp+36], eax
+	mov	DWORD PTR $T219327[esp+36], eax
 	call	_IsEqualGUID
 	add	esp, 8
 	test	eax, eax
@@ -1169,15 +1169,15 @@ _guidInterface$ = 12					; size = 16
 	mov	ecx, DWORD PTR _guidICvGameDeals1+4
 	mov	edx, DWORD PTR _guidICvGameDeals1+8
 	mov	eax, DWORD PTR _guidICvGameDeals1
-	mov	DWORD PTR $T219291[esp+20], ecx
-	lea	ecx, DWORD PTR $T219291[esp+16]
-	mov	DWORD PTR $T219291[esp+24], edx
-	mov	DWORD PTR $T219291[esp+16], eax
+	mov	DWORD PTR $T219329[esp+20], ecx
+	lea	ecx, DWORD PTR $T219329[esp+16]
+	mov	DWORD PTR $T219329[esp+24], edx
+	mov	DWORD PTR $T219329[esp+16], eax
 	mov	eax, DWORD PTR _guidICvGameDeals1+12
 	push	ecx
 	lea	edx, DWORD PTR _guidInterface$[esp+16]
 	push	edx
-	mov	DWORD PTR $T219291[esp+36], eax
+	mov	DWORD PTR $T219329[esp+36], eax
 	call	_IsEqualGUID
 	add	esp, 8
 	test	eax, eax

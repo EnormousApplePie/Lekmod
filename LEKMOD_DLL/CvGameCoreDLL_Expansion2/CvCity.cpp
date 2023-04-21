@@ -10357,6 +10357,7 @@ BuildingTypes CvCity::ChooseFreeCultureBuilding() const
 /// Find the non-wonder building that provides the highest culture at the least cost
 BuildingTypes CvCity::ChooseFreeFoodBuilding() const
 {
+#ifndef AQUEDUCT_FIX
 	BuildingTypes eRtnValue = NO_BUILDING;
 #ifndef AUI_WARNING_FIXES
 	int iNumBuildingInfos = GC.getNumBuildingInfos();
@@ -10398,6 +10399,24 @@ BuildingTypes CvCity::ChooseFreeFoodBuilding() const
 	}
 
 	return eRtnValue;
+#else
+	CvString strGardenBuildingClass = "BUILDINGCLASS_AQUEDUCT";
+#ifdef AUI_WARNING_FIXES
+	for (uint iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
+#else
+	for (int iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
+#endif
+	{
+		const BuildingClassTypes eBuildingClass = static_cast<BuildingClassTypes>(iI);
+		CvBuildingClassInfo* pkBuildingClassInfo = GC.getBuildingClassInfo(eBuildingClass);
+		if (pkBuildingClassInfo && pkBuildingClassInfo->GetType() == strGardenBuildingClass)
+		{
+			return (BuildingTypes)getCivilizationInfo().getCivilizationBuildings(iI);
+		}
+	}
+
+	return NO_BUILDING;
+#endif
 }
 
 //	--------------------------------------------------------------------------------

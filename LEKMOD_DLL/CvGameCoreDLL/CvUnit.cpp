@@ -5468,8 +5468,10 @@ bool CvUnit::found()
 
 	if (pPlot->isActiveVisible(false))
 	{
+#ifndef REMOVE_GAMEPLAY_UNIT_ACTIVATE_ANIMATION
 		auto_ptr<ICvUnit1> pDllUnit(new CvDllUnit(this));
 		gDLL->GameplayUnitActivate(pDllUnit.get());
+#endif
 
 		//Achievement
 		if (eActivePlayer == getOwner() && kActivePlayer.getNumCities() >= 2 && kActivePlayer.isHuman() && !GC.getGame().isGameMultiPlayer())

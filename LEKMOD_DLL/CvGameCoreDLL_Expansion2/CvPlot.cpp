@@ -4238,7 +4238,14 @@ int CvPlot::getNumFriendlyUnitsOfType(const CvUnit* pUnit, bool bBreakOnUnitLimi
 					if(!pLoopUnit->isCargo())
 					{
 						// Unit is the same domain & combat type, not allowed more than the limit
+#ifdef FIX_DO_ATTACK_SUBMARINES_IN_SHADOW_OF_WAR
+						if (!pLoopUnit->isInvisible(pUnit->getTeam(), false))
+						{
+							iNumUnitsOfSameType++;
+						}
+#else
 						iNumUnitsOfSameType++;
+#endif
 					}
 				}
 
@@ -5225,8 +5232,11 @@ void CvPlot::setOwner(PlayerTypes eNewValue, int iAcquiringCityID, bool bCheckUn
 				}
 				GC.getMap().changeOwnedPlots(-1);
 
-				if(!isWater())
+#ifndef INCLUDE_WATER_IN_LAND_SCORE
+				if (!isWater())
+
 				{
+#endif
 					GET_PLAYER(getOwner()).changeTotalLand(-1);
 					GET_TEAM(getTeam()).changeTotalLand(-1);
 
@@ -5234,8 +5244,9 @@ void CvPlot::setOwner(PlayerTypes eNewValue, int iAcquiringCityID, bool bCheckUn
 					{
 						GET_PLAYER(getOwner()).changeTotalLandScored(-1);
 					}
+#ifndef INCLUDE_WATER_IN_LAND_SCORE
 				}
-
+#endif
 				// Improvement is here
 				if(getImprovementType() != NO_IMPROVEMENT)
 				{
@@ -5401,8 +5412,11 @@ void CvPlot::setOwner(PlayerTypes eNewValue, int iAcquiringCityID, bool bCheckUn
 				}
 				GC.getMap().changeOwnedPlots(1);
 
-				if(!isWater())
+#ifndef INCLUDE_WATER_IN_LAND_SCORE
+				if (!isWater())
+
 				{
+#endif
 					GET_PLAYER(getOwner()).changeTotalLand(1);
 					GET_TEAM(getTeam()).changeTotalLand(1);
 
@@ -5410,7 +5424,9 @@ void CvPlot::setOwner(PlayerTypes eNewValue, int iAcquiringCityID, bool bCheckUn
 					{
 						GET_PLAYER(getOwner()).changeTotalLandScored(1);
 					}
-				}
+#ifndef INCLUDE_WATER_IN_LAND_SCORE				
+			}
+#endif
 
 				// Improvement is here
 				if(getImprovementType() != NO_IMPROVEMENT)
@@ -5797,11 +5813,13 @@ void CvPlot::setPlotType(PlotTypes eNewValue, bool bRecalculate, bool bRebuildGr
 				GC.getMap().changeNumResourcesOnLand(getResourceType(), ((isWater()) ? -1 : 1));
 			}
 
-			if(isOwned())
+#ifndef INCLUDE_WATER_IN_LAND_SCORE
+			if (isOwned())
 			{
 				GET_PLAYER(getOwner()).changeTotalLand((isWater()) ? -1 : 1);
 				GET_TEAM(getTeam()).changeTotalLand((isWater()) ? -1 : 1);
 			}
+#endif
 
 			if(bRecalculate)
 			{
@@ -6531,7 +6549,16 @@ void CvPlot::setImprovementType(ImprovementTypes eNewValue, PlayerTypes eBuilder
 				// Add Resource Quantity to total
 				if(getResourceType() != NO_RESOURCE)
 				{
-					if(bIgnoreResourceTechPrereq || GET_TEAM(getTeam()).GetTeamTechs()->HasTech((TechTypes) GC.getResourceInfo(getResourceType())->getTechCityTrade()))
+#ifdef FIX_SET_IMPROVEMENT_TYPE
+					bool bBuilderHasTech = false;
+					if (eBuilder != NO_PLAYER)
+					{
+						bBuilderHasTech = GET_TEAM(GET_PLAYER(eBuilder).getTeam()).GetTeamTechs()->HasTech((TechTypes)GC.getResourceInfo(getResourceType())->getTechCityTrade());
+					}
+					if (bIgnoreResourceTechPrereq && bBuilderHasTech || GET_TEAM(getTeam()).GetTeamTechs()->HasTech((TechTypes)GC.getResourceInfo(getResourceType())->getTechCityTrade()))
+#else
+					if (bIgnoreResourceTechPrereq || GET_TEAM(getTeam()).GetTeamTechs()->HasTech((TechTypes)GC.getResourceInfo(getResourceType())->getTechCityTrade()))
+#endif
 					{
 						if(newImprovementEntry.IsImprovementResourceTrade(getResourceType()))
 						{
@@ -6573,8 +6600,17 @@ void CvPlot::setImprovementType(ImprovementTypes eNewValue, PlayerTypes eBuilder
 				// Remove Resource Quantity from total
 				if(getResourceType() != NO_RESOURCE)
 				{
-					if(IsImprovedByGiftFromMajor() || // If old improvement was a gift, it ignored our tech limits, so be sure to remove resources properly
-						GET_TEAM(getTeam()).GetTeamTechs()->HasTech((TechTypes) GC.getResourceInfo(getResourceType())->getTechCityTrade()))
+#ifdef FIX_SET_IMPROVEMENT_TYPE
+					bool bBuilderHasTech = false;
+					if (eBuilder != NO_PLAYER)
+					{
+						bBuilderHasTech = GET_TEAM(GET_PLAYER(eBuilder).getTeam()).GetTeamTechs()->HasTech((TechTypes)GC.getResourceInfo(getResourceType())->getTechCityTrade());
+					}
+					if (IsImprovedByGiftFromMajor() && bBuilderHasTech || GET_TEAM(getTeam()).GetTeamTechs()->HasTech((TechTypes)GC.getResourceInfo(getResourceType())->getTechCityTrade()))
+#else
+					if (IsImprovedByGiftFromMajor() || // If old improvement was a gift, it ignored our tech limits, so be sure to remove resources properly
+						GET_TEAM(getTeam()).GetTeamTechs()->HasTech((TechTypes)GC.getResourceInfo(getResourceType())->getTechCityTrade()))
+#endif
 					{
 						if(GC.getImprovementInfo(eOldImprovement)->IsImprovementResourceTrade(getResourceType()))
 						{
