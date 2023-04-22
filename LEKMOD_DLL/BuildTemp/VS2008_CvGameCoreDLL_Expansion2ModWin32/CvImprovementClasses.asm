@@ -10,207 +10,207 @@ INCLUDELIB MSVCRT
 INCLUDELIB OLDNAMES
 
 CONST	SEGMENT
-$SG218634 DB	'ArtDefineTag', 00H
+$SG218633 DB	'ArtDefineTag', 00H
 	ORG $+3
-$SG218635 DB	'GoldMaintenance', 00H
-$SG218636 DB	'CultureBombRadius', 00H
+$SG218634 DB	'GoldMaintenance', 00H
+$SG218635 DB	'CultureBombRadius', 00H
 	ORG $+2
-$SG218637 DB	'CultureBombRadiusNeutral', 00H
+$SG218636 DB	'CultureBombRadiusNeutral', 00H
 	ORG $+3
-$SG218638 DB	'RequiresXAdjacentLand', 00H
+$SG218637 DB	'RequiresXAdjacentLand', 00H
 	ORG $+2
-$SG218639 DB	'CultureAdjacentSameType', 00H
-$SG218640 DB	'HillsMakesValid', 00H
-$SG218641 DB	'WaterAdjacencyMakesValid', 00H
+$SG218638 DB	'CultureAdjacentSameType', 00H
+$SG218639 DB	'HillsMakesValid', 00H
+$SG218640 DB	'WaterAdjacencyMakesValid', 00H
 	ORG $+3
-$SG218642 DB	'FreshWaterMakesValid', 00H
+$SG218641 DB	'FreshWaterMakesValid', 00H
 	ORG $+3
-$SG218643 DB	'RiverSideMakesValid', 00H
-$SG218644 DB	'NoFreshWater', 00H
+$SG218642 DB	'RiverSideMakesValid', 00H
+$SG218643 DB	'NoFreshWater', 00H
 	ORG $+3
-$SG218645 DB	'RequiresFlatlands', 00H
+$SG218644 DB	'RequiresFlatlands', 00H
 	ORG $+2
-$SG218646 DB	'RequiresFlatlandsOrFreshWater', 00H
+$SG218645 DB	'RequiresFlatlandsOrFreshWater', 00H
 	ORG $+2
-$SG218647 DB	'RequiresFeature', 00H
-$SG218648 DB	'RequiresImprovement', 00H
-$SG218649 DB	'RemovesResource', 00H
-$SG218650 DB	'PromptWhenComplete', 00H
+$SG218646 DB	'RequiresFeature', 00H
+$SG218647 DB	'RequiresImprovement', 00H
+$SG218648 DB	'RemovesResource', 00H
+$SG218649 DB	'PromptWhenComplete', 00H
 	ORG $+1
-$SG218651 DB	'Water', 00H
+$SG218650 DB	'Water', 00H
 	ORG $+2
-$SG218652 DB	'Coastal', 00H
-$SG218653 DB	'DestroyedWhenPillaged', 00H
+$SG218651 DB	'Coastal', 00H
+$SG218652 DB	'DestroyedWhenPillaged', 00H
 	ORG $+2
-$SG218654 DB	'DisplacePillager', 00H
+$SG218653 DB	'DisplacePillager', 00H
 	ORG $+3
-$SG218655 DB	'BuildableOnResources', 00H
+$SG218654 DB	'BuildableOnResources', 00H
 	ORG $+3
-$SG218656 DB	'BarbarianCamp', 00H
+$SG218655 DB	'BarbarianCamp', 00H
 	ORG $+2
-$SG218657 DB	'Goody', 00H
+$SG218656 DB	'Goody', 00H
 	ORG $+2
-$SG218658 DB	'Permanent', 00H
+$SG218657 DB	'Permanent', 00H
 	ORG $+2
-$SG218659 DB	'TilesPerGoody', 00H
+$SG218658 DB	'TilesPerGoody', 00H
 	ORG $+2
-$SG218660 DB	'GoodyRange', 00H
+$SG218659 DB	'GoodyRange', 00H
 	ORG $+1
-$SG218661 DB	'FeatureGrowth', 00H
+$SG218660 DB	'FeatureGrowth', 00H
 	ORG $+2
-$SG218662 DB	'UpgradeTime', 00H
-$SG218663 DB	'RiverSideUpgradeMod', 00H
-$SG218664 DB	'CoastalLandUpgradeMod', 00H
+$SG218661 DB	'UpgradeTime', 00H
+$SG218662 DB	'RiverSideUpgradeMod', 00H
+$SG218663 DB	'CoastalLandUpgradeMod', 00H
 	ORG $+2
-$SG218665 DB	'HillsUpgradeMod', 00H
-$SG218666 DB	'FreshWaterUpgradeMod', 00H
+$SG218664 DB	'HillsUpgradeMod', 00H
+$SG218665 DB	'FreshWaterUpgradeMod', 00H
 	ORG $+3
-$SG218667 DB	'DefenseModifier', 00H
-$SG218668 DB	'DefenseModifierGlobal', 00H
+$SG218666 DB	'DefenseModifier', 00H
+$SG218667 DB	'DefenseModifierGlobal', 00H
 	ORG $+2
-$SG218669 DB	'NearbyEnemyDamage', 00H
+$SG218668 DB	'NearbyEnemyDamage', 00H
 	ORG $+2
-$SG218670 DB	'PillageGold', 00H
-$SG218671 DB	'OutsideBorders', 00H
+$SG218669 DB	'PillageGold', 00H
+$SG218670 DB	'OutsideBorders', 00H
 	ORG $+1
-$SG218672 DB	'InAdjacentFriendly', 00H
+$SG218671 DB	'InAdjacentFriendly', 00H
 	ORG $+1
-$SG218673 DB	'IgnoreOwnership', 00H
-$SG218674 DB	'OnlyCityStateTerritory', 00H
+$SG218672 DB	'IgnoreOwnership', 00H
+$SG218673 DB	'OnlyCityStateTerritory', 00H
 	ORG $+1
-$SG218675 DB	'NoTwoAdjacent', 00H
+$SG218674 DB	'NoTwoAdjacent', 00H
 	ORG $+2
-$SG218676 DB	'AdjacentLuxury', 00H
+$SG218675 DB	'AdjacentLuxury', 00H
 	ORG $+1
-$SG218677 DB	'AllowsWalkWater', 00H
-$SG218678 DB	'AllowsSailLand', 00H
+$SG218676 DB	'AllowsWalkWater', 00H
+$SG218677 DB	'AllowsSailLand', 00H
 	ORG $+1
-$SG218679 DB	'CreatedByGreatPerson', 00H
+$SG218678 DB	'CreatedByGreatPerson', 00H
 	ORG $+3
-$SG218680 DB	'SpecificCivRequired', 00H
-$SG218681 DB	'ResourceExtractionMod', 00H
+$SG218679 DB	'SpecificCivRequired', 00H
+$SG218680 DB	'ResourceExtractionMod', 00H
 	ORG $+2
-$SG218682 DB	'LuxuryCopiesSiphonedFromMinor', 00H
+$SG218681 DB	'LuxuryCopiesSiphonedFromMinor', 00H
 	ORG $+2
-$SG218684 DB	'CivilizationType', 00H
+$SG218683 DB	'CivilizationType', 00H
 	ORG $+3
-$SG218687 DB	'WorldSoundscapeAudioScript', 00H
+$SG218686 DB	'WorldSoundscapeAudioScript', 00H
 	ORG $+1
-$SG218690 DB	'Warning: Missing soundscape definition in XML for featur'
+$SG218689 DB	'Warning: Missing soundscape definition in XML for featur'
 	DB	'e: ''%s''', 00H
-$SG218692 DB	'ImprovementPillage', 00H
+$SG218691 DB	'ImprovementPillage', 00H
 	ORG $+1
-$SG218694 DB	'ImprovementUpgrade', 00H
+$SG218693 DB	'ImprovementUpgrade', 00H
 	ORG $+1
-$SG218697 DB	'ImprovementType', 00H
-$SG218698 DB	'TerrainType', 00H
-$SG218699 DB	'Improvement_ValidTerrains', 00H
+$SG218696 DB	'ImprovementType', 00H
+$SG218697 DB	'TerrainType', 00H
+$SG218698 DB	'Improvement_ValidTerrains', 00H
 	ORG $+2
-$SG218700 DB	'Terrains', 00H
+$SG218699 DB	'Terrains', 00H
 	ORG $+3
-$SG218701 DB	'ImprovementType', 00H
-$SG218702 DB	'FeatureType', 00H
-$SG218703 DB	'Improvement_ValidFeatures', 00H
+$SG218700 DB	'ImprovementType', 00H
+$SG218701 DB	'FeatureType', 00H
+$SG218702 DB	'Improvement_ValidFeatures', 00H
 	ORG $+2
-$SG218704 DB	'Features', 00H
+$SG218703 DB	'Features', 00H
 	ORG $+3
-$SG218705 DB	'ImprovementType', 00H
-$SG218706 DB	'PrereqImprovement', 00H
+$SG218704 DB	'ImprovementType', 00H
+$SG218705 DB	'PrereqImprovement', 00H
 	ORG $+2
-$SG218707 DB	'Improvement_ValidImprovements', 00H
+$SG218706 DB	'Improvement_ValidImprovements', 00H
 	ORG $+2
-$SG218708 DB	'Improvements', 00H
+$SG218707 DB	'Improvements', 00H
 	ORG $+3
-$SG218709 DB	'ImprovementType', 00H
-$SG218710 DB	'Improvement_Yields', 00H
+$SG218708 DB	'ImprovementType', 00H
+$SG218709 DB	'Improvement_Yields', 00H
 	ORG $+1
-$SG218711 DB	'ImprovementType', 00H
-$SG218712 DB	'Improvement_YieldPerEra', 00H
-$SG218713 DB	'ImprovementType', 00H
-$SG218714 DB	'Improvement_AdjacentCityYields', 00H
+$SG218710 DB	'ImprovementType', 00H
+$SG218711 DB	'Improvement_YieldPerEra', 00H
+$SG218712 DB	'ImprovementType', 00H
+$SG218713 DB	'Improvement_AdjacentCityYields', 00H
 	ORG $+1
-$SG218715 DB	'ImprovementType', 00H
-$SG218716 DB	'Improvement_AdjacentMountainYieldChanges', 00H
+$SG218714 DB	'ImprovementType', 00H
+$SG218715 DB	'Improvement_AdjacentMountainYieldChanges', 00H
 	ORG $+3
-$SG218717 DB	'ImprovementType', 00H
-$SG218718 DB	'Improvement_CoastalLandYields', 00H
+$SG218716 DB	'ImprovementType', 00H
+$SG218717 DB	'Improvement_CoastalLandYields', 00H
 	ORG $+2
-$SG218719 DB	'ImprovementType', 00H
-$SG218720 DB	'Improvement_FreshWaterYields', 00H
+$SG218718 DB	'ImprovementType', 00H
+$SG218719 DB	'Improvement_FreshWaterYields', 00H
 	ORG $+3
-$SG218721 DB	'ImprovementType', 00H
-$SG218722 DB	'Improvement_HillsYields', 00H
-$SG218723 DB	'ImprovementType', 00H
-$SG218724 DB	'Improvement_RiverSideYields', 00H
-$SG218725 DB	'ImprovementType', 00H
-$SG218726 DB	'Improvement_PrereqNatureYields', 00H
+$SG218720 DB	'ImprovementType', 00H
+$SG218721 DB	'Improvement_HillsYields', 00H
+$SG218722 DB	'ImprovementType', 00H
+$SG218723 DB	'Improvement_RiverSideYields', 00H
+$SG218724 DB	'ImprovementType', 00H
+$SG218725 DB	'Improvement_PrereqNatureYields', 00H
 	ORG $+1
-$SG218727 DB	'ImprovementType', 00H
-$SG218728 DB	'Improvement_Flavors', 00H
-$SG218730 DB	'Resources', 00H
+$SG218726 DB	'ImprovementType', 00H
+$SG218727 DB	'Improvement_Flavors', 00H
+$SG218729 DB	'Resources', 00H
 	ORG $+2
-$SG218744 DB	'Improvements - ResourceTypes', 00H
+$SG218743 DB	'Improvements - ResourceTypes', 00H
 	ORG $+3
-$SG218747 DB	'select Resources.ID, ResourceType, ResourceMakesValid, R'
+$SG218746 DB	'select Resources.ID, ResourceType, ResourceMakesValid, R'
 	DB	'esourceTrade, DiscoveryRand from Improvement_ResourceTypes in'
 	DB	'ner join Resources on ResourceType = Resources.Type where Imp'
 	DB	'rovementType = ?', 00H
 	ORG $+1
-$SG218749 DB	'Improvements - YieldResults', 00H
-$SG218752 DB	'select Yields.ID, Yield from Improvement_ResourceType_Yi'
+$SG218748 DB	'Improvements - YieldResults', 00H
+$SG218751 DB	'select Yields.ID, Yield from Improvement_ResourceType_Yi'
 	DB	'elds inner join Yields on YieldType = Yields.Type where Impro'
 	DB	'vementType = ? and ResourceType = ?', 00H
 	ORG $+3
-$SG218757 DB	'ID', 00H
+$SG218756 DB	'ID', 00H
 	ORG $+1
-$SG218760 DB	'ResourceType', 00H
+$SG218759 DB	'ResourceType', 00H
 	ORG $+3
-$SG218761 DB	'ResourceMakesValid', 00H
+$SG218760 DB	'ResourceMakesValid', 00H
 	ORG $+1
-$SG218762 DB	'ResourceTrade', 00H
+$SG218761 DB	'ResourceTrade', 00H
 	ORG $+2
-$SG218763 DB	'DiscoveryRand', 00H
+$SG218762 DB	'DiscoveryRand', 00H
 	ORG $+2
-$SG218764 DB	'QuantityRequirement', 00H
-$SG218766 DB	'Yields', 00H
+$SG218763 DB	'QuantityRequirement', 00H
+$SG218765 DB	'Yields', 00H
 	ORG $+1
-$SG218771 DB	'ID', 00H
+$SG218770 DB	'ID', 00H
 	ORG $+1
-$SG218773 DB	'Yield', 00H
+$SG218772 DB	'Yield', 00H
 	ORG $+2
-$SG218775 DB	'Yields', 00H
+$SG218774 DB	'Yields', 00H
 	ORG $+1
-$SG218778 DB	'Improvements - TechYieldChanges', 00H
-$SG218789 DB	'Improvements - TechNoFreshWaterYieldChanges', 00H
-$SG218781 DB	'select Yields.ID as YieldID, Technologies.ID as TechID, '
+$SG218777 DB	'Improvements - TechYieldChanges', 00H
+$SG218788 DB	'Improvements - TechNoFreshWaterYieldChanges', 00H
+$SG218780 DB	'select Yields.ID as YieldID, Technologies.ID as TechID, '
 	DB	'Yield from Improvement_TechYieldChanges inner join Yields on '
 	DB	'YieldType = Yields.Type inner join Technologies on TechType ='
 	DB	' Technologies.Type where ImprovementType = ?', 00H
 	ORG $+1
-$SG218792 DB	'select Yields.ID as YieldID, Technologies.ID as TechID, '
+$SG218791 DB	'select Yields.ID as YieldID, Technologies.ID as TechID, '
 	DB	'Yield from Improvement_TechNoFreshWaterYieldChanges inner joi'
 	DB	'n Yields on YieldType = Yields.Type inner join Technologies o'
 	DB	'n TechType = Technologies.Type where ImprovementType = ?', 00H
 	ORG $+1
-$SG218800 DB	'Improvements - TechFreshWaterYieldChanges', 00H
+$SG218799 DB	'Improvements - TechFreshWaterYieldChanges', 00H
 	ORG $+2
-$SG218803 DB	'select Yields.ID as YieldID, Technologies.ID as TechID, '
+$SG218802 DB	'select Yields.ID as YieldID, Technologies.ID as TechID, '
 	DB	'Yield from Improvement_TechFreshWaterYieldChanges inner join '
 	DB	'Yields on YieldType = Yields.Type inner join Technologies on '
 	DB	'TechType = Technologies.Type where ImprovementType = ?', 00H
 	ORG $+3
-$SG218811 DB	'Routes', 00H
+$SG218810 DB	'Routes', 00H
 	ORG $+1
-$SG218813 DB	'Improvements - RouteYieldChanges', 00H
+$SG218812 DB	'Improvements - RouteYieldChanges', 00H
 	ORG $+3
-$SG218816 DB	'select Yields.ID as YieldID, Routes.ID as RouteID, Yield'
+$SG218815 DB	'select Yields.ID as YieldID, Routes.ID as RouteID, Yield'
 	DB	' from Improvement_RouteYieldChanges inner join Yields on Yiel'
 	DB	'dType = Yields.Type inner join Routes on RouteType = Routes.T'
 	DB	'ype where ImprovementType = ?;', 00H
 	ORG $+3
-$SG219355 DB	'LOAD ERROR: Improvement Type not found', 00H
+$SG219354 DB	'LOAD ERROR: Improvement Type not found', 00H
 	ORG $+1
-$SG219394 DB	'LOAD ERROR: Improvement Type not found: %08x', 00H
+$SG219393 DB	'LOAD ERROR: Improvement Type not found: %08x', 00H
 CONST	ENDS
 PUBLIC	?Remark@@YA_NHPBDZZ				; Remark
 ; Function compile flags: /Ogtpy
@@ -2876,8 +2876,8 @@ __ehfuncinfo$?_Xlen@?$vector@PAVCvImprovementEntry@@V?$allocator@PAVCvImprovemen
 xdata$x	ENDS
 ;	COMDAT ?_Xlen@?$vector@PAVCvImprovementEntry@@V?$allocator@PAVCvImprovementEntry@@@std@@@std@@KAXXZ
 _TEXT	SEGMENT
-$T220461 = -80						; size = 28
-$T220460 = -52						; size = 40
+$T220460 = -80						; size = 28
+$T220459 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ?_Xlen@?$vector@PAVCvImprovementEntry@@V?$allocator@PAVCvImprovementEntry@@@std@@@std@@KAXXZ PROC ; std::vector<CvImprovementEntry *,std::allocator<CvImprovementEntry *> >::_Xlen, COMDAT
 
@@ -2893,22 +2893,22 @@ __$EHRec$ = -12						; size = 12
 ; 1260 : 		_THROW(length_error, "vector<T> too long");
 
 	push	OFFSET ??_C@_0BD@OLBABOEK@vector?$DMT?$DO?5too?5long?$AA@
-	lea	ecx, DWORD PTR $T220461[esp+84]
+	lea	ecx, DWORD PTR $T220460[esp+84]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T220460[esp+80]
+	lea	ecx, DWORD PTR $T220459[esp+80]
 	mov	DWORD PTR __$EHRec$[esp+88], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T220461[esp+80]
+	lea	eax, DWORD PTR $T220460[esp+80]
 	push	eax
-	lea	ecx, DWORD PTR $T220460[esp+96]
+	lea	ecx, DWORD PTR $T220459[esp+96]
 	mov	BYTE PTR __$EHRec$[esp+92], 1
-	mov	DWORD PTR $T220460[esp+84], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T220459[esp+84], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVlength_error@std@@
-	lea	ecx, DWORD PTR $T220460[esp+84]
+	lea	ecx, DWORD PTR $T220459[esp+84]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+96], 0
-	mov	DWORD PTR $T220460[esp+88], OFFSET ??_7length_error@std@@6B@
+	mov	DWORD PTR $T220459[esp+88], OFFSET ??_7length_error@std@@6B@
 	call	__CxxThrowException@8
 $LN13@Xlen:
 $LN12@Xlen:
@@ -2917,10 +2917,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Xlen@?$vector@PAVCvImprovementEntry@@V?$allocator@PAVCvImprovementEntry@@@std@@@std@@KAXXZ$0:
-	lea	ecx, DWORD PTR $T220461[ebp]
+	lea	ecx, DWORD PTR $T220460[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Xlen@?$vector@PAVCvImprovementEntry@@V?$allocator@PAVCvImprovementEntry@@@std@@@std@@KAXXZ$2:
-	lea	ecx, DWORD PTR $T220460[ebp]
+	lea	ecx, DWORD PTR $T220459[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Xlen@?$vector@PAVCvImprovementEntry@@V?$allocator@PAVCvImprovementEntry@@@std@@@std@@KAXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?_Xlen@?$vector@PAVCvImprovementEntry@@V?$allocator@PAVCvImprovementEntry@@@std@@@std@@KAXXZ
@@ -3118,8 +3118,8 @@ __TI2?AVbad_alloc@std@@ DD 00H
 xdata$x	ENDS
 ;	COMDAT ??$_Allocate@PAVCvImprovementEntry@@@std@@YAPAPAVCvImprovementEntry@@IPAPAV1@@Z
 _TEXT	SEGMENT
-$T220511 = -12						; size = 12
-$T220515 = 8						; size = 4
+$T220510 = -12						; size = 12
+$T220514 = 8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ??$_Allocate@PAVCvImprovementEntry@@@std@@YAPAPAVCvImprovementEntry@@IPAPAV1@@Z PROC ; std::_Allocate<CvImprovementEntry *>, COMDAT
@@ -3161,15 +3161,15 @@ $LN3@Allocate:
 
 ; 40   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T220515[esp+8]
+	lea	eax, DWORD PTR $T220514[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T220511[esp+16]
-	mov	DWORD PTR $T220515[esp+12], 0
+	lea	ecx, DWORD PTR $T220510[esp+16]
+	mov	DWORD PTR $T220514[esp+12], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T220511[esp+16]
+	lea	ecx, DWORD PTR $T220510[esp+16]
 	push	ecx
-	mov	DWORD PTR $T220511[esp+20], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T220510[esp+20], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN9@Allocate:
 $LN8@Allocate:
@@ -4312,10 +4312,10 @@ xdata$x	ENDS
 ;	COMDAT ?Read@ImprovementArrayHelpers@@YAXAAVFDataStream@@PAH@Z
 _TEXT	SEGMENT
 _iNumEntries$ = -56					; size = 4
-_uiHash$219348 = -52					; size = 4
+_uiHash$219347 = -52					; size = 4
 _iArraySize$ = -48					; size = 4
-_iDummy$219356 = -44					; size = 4
-_szError$219354 = -40					; size = 28
+_iDummy$219355 = -44					; size = 4
+_szError$219353 = -40					; size = 28
 __$EHRec$ = -12						; size = 12
 _kStream$ = 8						; size = 4
 _paiImprovementArray$ = 12				; size = 4
@@ -4360,14 +4360,14 @@ $LL6@Read:
 ; 1230 : 		uint uiHash;
 ; 1231 : 		kStream >> uiHash;
 
-	lea	ecx, DWORD PTR _uiHash$219348[esp+64]
+	lea	ecx, DWORD PTR _uiHash$219347[esp+64]
 	push	ecx
 	mov	ecx, esi
 	call	?Read@FDataStream@@IAEXAAI@Z		; FDataStream::Read
 
 ; 1232 : 		if (uiHash != 0 && uiHash != (uint)NO_IMPROVEMENT)
 
-	mov	eax, DWORD PTR _uiHash$219348[esp+64]
+	mov	eax, DWORD PTR _uiHash$219347[esp+64]
 	test	eax, eax
 	je	$LN5@Read
 	cmp	eax, -1
@@ -4406,13 +4406,13 @@ $LN2@Read:
 ; 1240 : 			{
 ; 1241 : 				CvString szError;
 
-	lea	ecx, DWORD PTR _szError$219354[esp+64]
+	lea	ecx, DWORD PTR _szError$219353[esp+64]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
 ; 1242 : 				szError.Format("LOAD ERROR: Improvement Type not found");
 
-	lea	ecx, DWORD PTR _szError$219354[esp+64]
-	push	OFFSET $SG219355
+	lea	ecx, DWORD PTR _szError$219353[esp+64]
+	push	OFFSET $SG219354
 	push	ecx
 	mov	DWORD PTR __$EHRec$[esp+80], 0
 	call	?Format@CvString@@QAAXPBDZZ		; CvString::Format
@@ -4420,7 +4420,7 @@ $LN2@Read:
 
 ; 1243 : 				GC.LogMessage(szError.GetCString());
 
-	lea	ecx, DWORD PTR _szError$219354[esp+64]
+	lea	ecx, DWORD PTR _szError$219353[esp+64]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
@@ -4431,14 +4431,14 @@ $LN2@Read:
 ; 1246 : 				int iDummy;
 ; 1247 : 				kStream >> iDummy;
 
-	lea	edx, DWORD PTR _iDummy$219356[esp+64]
+	lea	edx, DWORD PTR _iDummy$219355[esp+64]
 	push	edx
 	mov	ecx, esi
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
 
 ; 1248 : 			}
 
-	lea	ecx, DWORD PTR _szError$219354[esp+64]
+	lea	ecx, DWORD PTR _szError$219353[esp+64]
 	mov	DWORD PTR __$EHRec$[esp+72], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 $LN5@Read:
@@ -4461,7 +4461,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?Read@ImprovementArrayHelpers@@YAXAAVFDataStream@@PAH@Z$0:
-	lea	ecx, DWORD PTR _szError$219354[ebp]
+	lea	ecx, DWORD PTR _szError$219353[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?Read@ImprovementArrayHelpers@@YAXAAVFDataStream@@PAH@Z:
 	mov	eax, OFFSET __ehfuncinfo$?Read@ImprovementArrayHelpers@@YAXAAVFDataStream@@PAH@Z
@@ -4474,7 +4474,7 @@ EXTRN	?getImprovementInfo@CvGlobals@@QAEPAVCvImprovementEntry@@W4ImprovementType
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?Write@ImprovementArrayHelpers@@YAXAAVFDataStream@@PAHH@Z
 _TEXT	SEGMENT
-$T220800 = -4						; size = 4
+$T220799 = -4						; size = 4
 _kStream$ = 8						; size = 4
 _paiImprovementArray$ = 12				; size = 4
 _iArraySize$ = 16					; size = 4
@@ -4538,8 +4538,8 @@ $LN2@Write:
 ; 1268 : 		{
 ; 1269 : 			kStream << (int)NO_IMPROVEMENT;
 
-	lea	ecx, DWORD PTR $T220800[esp+16]
-	mov	DWORD PTR $T220800[esp+16], -1
+	lea	ecx, DWORD PTR $T220799[esp+16]
+	mov	DWORD PTR $T220799[esp+16], -1
 	push	ecx
 $LN16@Write:
 	mov	ecx, edi
@@ -4579,11 +4579,11 @@ __ehfuncinfo$?ReadYieldArray@ImprovementArrayHelpers@@YAXAAVFDataStream@@PAPAHH@
 xdata$x	ENDS
 ;	COMDAT ?ReadYieldArray@ImprovementArrayHelpers@@YAXAAVFDataStream@@PAPAHH@Z
 _TEXT	SEGMENT
-_iHash$219383 = -56					; size = 4
-_iI$219379 = -52					; size = 4
+_iHash$219382 = -56					; size = 4
+_iI$219378 = -52					; size = 4
 _iNumEntries$ = -48					; size = 4
-_iDummy$219399 = -44					; size = 4
-_szError$219393 = -40					; size = 28
+_iDummy$219398 = -44					; size = 4
+_szError$219392 = -40					; size = 28
 __$EHRec$ = -12						; size = 12
 _kStream$ = 8						; size = 4
 _ppaaiImprovementYieldArray$ = 12			; size = 4
@@ -4614,7 +4614,7 @@ _iNumYields$ = 16					; size = 4
 ; 1281 : 	for(int iI = 0; iI < iNumEntries; iI++)
 
 	cmp	DWORD PTR _iNumEntries$[esp+60], 0
-	mov	DWORD PTR _iI$219379[esp+60], 0
+	mov	DWORD PTR _iI$219378[esp+60], 0
 	jle	$LN10@ReadYieldA
 	push	ebx
 	mov	ebx, DWORD PTR _iNumYields$[esp+60]
@@ -4626,14 +4626,14 @@ $LL39@ReadYieldA:
 ; 1283 : 		int iHash;
 ; 1284 : 		kStream >> iHash;
 
-	lea	ecx, DWORD PTR _iHash$219383[esp+72]
+	lea	ecx, DWORD PTR _iHash$219382[esp+72]
 	push	ecx
 	mov	ecx, ebp
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
 
 ; 1285 : 		if(iHash != (int)0)
 
-	mov	eax, DWORD PTR _iHash$219383[esp+72]
+	mov	eax, DWORD PTR _iHash$219382[esp+72]
 	xor	esi, esi
 	cmp	eax, esi
 	je	$LN11@ReadYieldA
@@ -4682,15 +4682,15 @@ $LN8@ReadYieldA:
 ; 1296 : 			{
 ; 1297 : 				CvString szError;
 
-	lea	ecx, DWORD PTR _szError$219393[esp+72]
+	lea	ecx, DWORD PTR _szError$219392[esp+72]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
 ; 1298 : 				szError.Format("LOAD ERROR: Improvement Type not found: %08x", iHash);
 
-	mov	edx, DWORD PTR _iHash$219383[esp+72]
+	mov	edx, DWORD PTR _iHash$219382[esp+72]
 	push	edx
-	lea	eax, DWORD PTR _szError$219393[esp+76]
-	push	OFFSET $SG219394
+	lea	eax, DWORD PTR _szError$219392[esp+76]
+	push	OFFSET $SG219393
 	push	eax
 	mov	DWORD PTR __$EHRec$[esp+92], esi
 	call	?Format@CvString@@QAAXPBDZZ		; CvString::Format
@@ -4698,7 +4698,7 @@ $LN8@ReadYieldA:
 
 ; 1299 : 				GC.LogMessage(szError.GetCString());
 
-	lea	ecx, DWORD PTR _szError$219393[esp+72]
+	lea	ecx, DWORD PTR _szError$219392[esp+72]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
@@ -4721,7 +4721,7 @@ $LL3@ReadYieldA:
 ; 1304 : 					int iDummy;
 ; 1305 : 					kStream >> iDummy;
 
-	lea	ecx, DWORD PTR _iDummy$219399[esp+72]
+	lea	ecx, DWORD PTR _iDummy$219398[esp+72]
 	push	ecx
 	mov	ecx, ebp
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
@@ -4732,14 +4732,14 @@ $LN1@ReadYieldA:
 ; 1306 : 				}
 ; 1307 : 			}
 
-	lea	ecx, DWORD PTR _szError$219393[esp+72]
+	lea	ecx, DWORD PTR _szError$219392[esp+72]
 	mov	DWORD PTR __$EHRec$[esp+80], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 $LN11@ReadYieldA:
-	mov	eax, DWORD PTR _iI$219379[esp+72]
+	mov	eax, DWORD PTR _iI$219378[esp+72]
 	inc	eax
 	cmp	eax, DWORD PTR _iNumEntries$[esp+72]
-	mov	DWORD PTR _iI$219379[esp+72], eax
+	mov	DWORD PTR _iI$219378[esp+72], eax
 	jl	$LL39@ReadYieldA
 	pop	edi
 	pop	esi
@@ -4759,7 +4759,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?ReadYieldArray@ImprovementArrayHelpers@@YAXAAVFDataStream@@PAPAHH@Z$0:
-	lea	ecx, DWORD PTR _szError$219393[ebp]
+	lea	ecx, DWORD PTR _szError$219392[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?ReadYieldArray@ImprovementArrayHelpers@@YAXAAVFDataStream@@PAPAHH@Z:
 	mov	eax, OFFSET __ehfuncinfo$?ReadYieldArray@ImprovementArrayHelpers@@YAXAAVFDataStream@@PAPAHH@Z
@@ -4770,7 +4770,7 @@ PUBLIC	?WriteYieldArray@ImprovementArrayHelpers@@YAXAAVFDataStream@@PAPAHH@Z ; I
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?WriteYieldArray@ImprovementArrayHelpers@@YAXAAVFDataStream@@PAPAHH@Z
 _TEXT	SEGMENT
-$T220858 = -4						; size = 4
+$T220857 = -4						; size = 4
 _kStream$ = 8						; size = 4
 _ppaaiImprovementYieldArray$ = 12			; size = 4
 _iArraySize$ = 16					; size = 4
@@ -4848,10 +4848,10 @@ $LN5@WriteYield:
 ; 1330 : 		{
 ; 1331 : 			kStream << (int)0;
 
-	lea	edx, DWORD PTR $T220858[esp+20]
+	lea	edx, DWORD PTR $T220857[esp+20]
 	push	edx
 	mov	ecx, edi
-	mov	DWORD PTR $T220858[esp+24], esi
+	mov	DWORD PTR $T220857[esp+24], esi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 $LN7@WriteYield:
 	inc	ebp
@@ -5726,34 +5726,34 @@ __unwindtable$?CacheResults@CvImprovementEntry@@UAE_NAAVResults@Database@@AAVCvD
 xdata$x	ENDS
 ;	COMDAT ?CacheResults@CvImprovementEntry@@UAE_NAAVResults@Database@@AAVCvDatabaseUtility@@@Z
 _TEXT	SEGMENT
-_yield_idx$218796 = -116				; size = 4
-_yield_idx$218785 = -116				; size = 4
-_pYieldResults$218750 = -116				; size = 4
+_yield_idx$218795 = -116				; size = 4
+_yield_idx$218784 = -116				; size = 4
+_pYieldResults$218749 = -116				; size = 4
 _lenImprovementType$ = -112				; size = 4
-_yield_idx$218807 = -108				; size = 4
+_yield_idx$218806 = -108				; size = 4
 _iNumTechs$ = -108					; size = 4
-_pResourceInfo$218758 = -108				; size = 4
+_pResourceInfo$218757 = -108				; size = 4
 tv1093 = -104						; size = 4
-_count$221251 = -104					; size = 4
+_count$221250 = -104					; size = 4
 _iNumYields$ = -104					; size = 4
-_idx$218756 = -104					; size = 4
+_idx$218755 = -104					; size = 4
 tv1168 = -100						; size = 4
-_tech_idx$218808 = -100					; size = 4
-_tech_idx$218797 = -100					; size = 4
-_tech_idx$218786 = -100					; size = 4
-_yieldIdx$218770 = -100					; size = 4
-_szResourceType$218759 = -100				; size = 4
-$T221183 = -100						; size = 4
-_strYieldResultsKey$218748 = -96			; size = 28
-_strKey$218799 = -68					; size = 28
-_strKey$218788 = -68					; size = 28
-_strKey$218777 = -68					; size = 28
-_strResourceTypesKey$218743 = -68			; size = 28
-_strKey$218812 = -40					; size = 28
+_tech_idx$218807 = -100					; size = 4
+_tech_idx$218796 = -100					; size = 4
+_tech_idx$218785 = -100					; size = 4
+_yieldIdx$218769 = -100					; size = 4
+_szResourceType$218758 = -100				; size = 4
+$T221182 = -100						; size = 4
+_strYieldResultsKey$218747 = -96			; size = 28
+_strKey$218798 = -68					; size = 28
+_strKey$218787 = -68					; size = 28
+_strKey$218776 = -68					; size = 28
+_strResourceTypesKey$218742 = -68			; size = 28
+_strKey$218811 = -40					; size = 28
 __$EHRec$ = -12						; size = 12
 _szImprovementType$ = 8					; size = 4
 _kResults$ = 8						; size = 4
-_route_idx$218821 = 12					; size = 4
+_route_idx$218820 = 12					; size = 4
 _kUtility$ = 12						; size = 4
 ?CacheResults@CvImprovementEntry@@UAE_NAAVResults@Database@@AAVCvDatabaseUtility@@@Z PROC ; CvImprovementEntry::CacheResults, COMDAT
 ; _this$ = ecx
@@ -5797,7 +5797,7 @@ $LN21@CacheResul:
 ; 206  : 	//Basic properties
 ; 207  : 	const char* szArtDefineTag = kResults.GetText("ArtDefineTag");
 
-	push	OFFSET $SG218634
+	push	OFFSET $SG218633
 	mov	ecx, edi
 	call	DWORD PTR __imp_?GetText@Results@Database@@QAEPBDPBD@Z
 
@@ -5819,34 +5819,34 @@ $LN35@CacheResul:
 
 	mov	ebx, DWORD PTR __imp_?GetInt@Results@Database@@QAEHPBD@Z
 	push	ebp
-	push	OFFSET $SG218635
+	push	OFFSET $SG218634
 	mov	ecx, edi
 	call	ebx
 
 ; 211  : 	m_iCultureBombRadius = kResults.GetInt("CultureBombRadius");
 
-	push	OFFSET $SG218636
+	push	OFFSET $SG218635
 	mov	ecx, edi
 	mov	DWORD PTR [esi+260], eax
 	call	ebx
 
 ; 212  : 	m_iCultureBombRadiusNeutral = kResults.GetInt("CultureBombRadiusNeutral");
 
-	push	OFFSET $SG218637
+	push	OFFSET $SG218636
 	mov	ecx, edi
 	mov	DWORD PTR [esi+264], eax
 	call	ebx
 
 ; 213  : 	m_iRequiresXAdjacentLand = kResults.GetInt("RequiresXAdjacentLand");
 
-	push	OFFSET $SG218638
+	push	OFFSET $SG218637
 	mov	ecx, edi
 	mov	DWORD PTR [esi+268], eax
 	call	ebx
 
 ; 214  : 	m_iCultureAdjacentSameType = kResults.GetInt("CultureAdjacentSameType");
 
-	push	OFFSET $SG218639
+	push	OFFSET $SG218638
 	mov	ecx, edi
 	mov	DWORD PTR [esi+340], eax
 	call	ebx
@@ -5854,98 +5854,98 @@ $LN35@CacheResul:
 ; 215  : 	m_bHillsMakesValid = kResults.GetBool("HillsMakesValid");
 
 	mov	ebp, DWORD PTR __imp_?GetBool@Results@Database@@QAE_NPBD@Z
-	push	OFFSET $SG218640
+	push	OFFSET $SG218639
 	mov	ecx, edi
 	mov	DWORD PTR [esi+272], eax
 	call	ebp
 
 ; 216  : 	m_bWaterAdjacencyMakesValid = kResults.GetBool("WaterAdjacencyMakesValid");
 
-	push	OFFSET $SG218641
+	push	OFFSET $SG218640
 	mov	ecx, edi
 	mov	BYTE PTR [esi+344], al
 	call	ebp
 
 ; 217  : 	m_bFreshWaterMakesValid = kResults.GetBool("FreshWaterMakesValid");
 
-	push	OFFSET $SG218642
+	push	OFFSET $SG218641
 	mov	ecx, edi
 	mov	BYTE PTR [esi+345], al
 	call	ebp
 
 ; 218  : 	m_bRiverSideMakesValid = kResults.GetBool("RiverSideMakesValid");
 
-	push	OFFSET $SG218643
+	push	OFFSET $SG218642
 	mov	ecx, edi
 	mov	BYTE PTR [esi+346], al
 	call	ebp
 
 ; 219  : 	m_bNoFreshWater = kResults.GetBool("NoFreshWater");
 
-	push	OFFSET $SG218644
+	push	OFFSET $SG218643
 	mov	ecx, edi
 	mov	BYTE PTR [esi+347], al
 	call	ebp
 
 ; 220  : 	m_bRequiresFlatlands = kResults.GetBool("RequiresFlatlands");
 
-	push	OFFSET $SG218645
+	push	OFFSET $SG218644
 	mov	ecx, edi
 	mov	BYTE PTR [esi+348], al
 	call	ebp
 
 ; 221  : 	m_bRequiresFlatlandsOrFreshWater = kResults.GetBool("RequiresFlatlandsOrFreshWater");
 
-	push	OFFSET $SG218646
+	push	OFFSET $SG218645
 	mov	ecx, edi
 	mov	BYTE PTR [esi+349], al
 	call	ebp
 
 ; 222  : 	m_bRequiresFeature = kResults.GetBool("RequiresFeature");
 
-	push	OFFSET $SG218647
+	push	OFFSET $SG218646
 	mov	ecx, edi
 	mov	BYTE PTR [esi+350], al
 	call	ebp
 
 ; 223  : 	m_bRequiresImprovement = kResults.GetBool("RequiresImprovement");
 
-	push	OFFSET $SG218648
+	push	OFFSET $SG218647
 	mov	ecx, edi
 	mov	BYTE PTR [esi+351], al
 	call	ebp
 
 ; 224  : 	m_bRemovesResource = kResults.GetBool("RemovesResource");
 
-	push	OFFSET $SG218649
+	push	OFFSET $SG218648
 	mov	ecx, edi
 	mov	BYTE PTR [esi+352], al
 	call	ebp
 
 ; 225  : 	m_bPromptWhenComplete = kResults.GetBool("PromptWhenComplete");
 
-	push	OFFSET $SG218650
+	push	OFFSET $SG218649
 	mov	ecx, edi
 	mov	BYTE PTR [esi+353], al
 	call	ebp
 
 ; 226  : 	m_bWater = kResults.GetBool("Water");
 
-	push	OFFSET $SG218651
+	push	OFFSET $SG218650
 	mov	ecx, edi
 	mov	BYTE PTR [esi+354], al
 	call	ebp
 
 ; 227  : 	m_bCoastal = kResults.GetBool("Coastal");
 
-	push	OFFSET $SG218652
+	push	OFFSET $SG218651
 	mov	ecx, edi
 	mov	BYTE PTR [esi+355], al
 	call	ebp
 
 ; 228  : 	m_bDestroyedWhenPillaged = kResults.GetBool("DestroyedWhenPillaged");
 
-	push	OFFSET $SG218653
+	push	OFFSET $SG218652
 	mov	ecx, edi
 	mov	BYTE PTR [esi+356], al
 	call	ebp
@@ -5953,13 +5953,13 @@ $LN35@CacheResul:
 
 ; 229  : 	m_bDisplacePillager = kResults.GetBool("DisplacePillager");
 
-	push	OFFSET $SG218654
+	push	OFFSET $SG218653
 	mov	ecx, edi
 	call	ebp
 
 ; 230  : 	m_bBuildableOnResources = kResults.GetBool("BuildableOnResources");
 
-	push	OFFSET $SG218655
+	push	OFFSET $SG218654
 	mov	ecx, edi
 	mov	BYTE PTR [esi+358], al
 	call	ebp
@@ -5972,7 +5972,7 @@ $LN35@CacheResul:
 
 ; 232  : 	m_bBarbarianCamp = kResults.GetBool("BarbarianCamp");
 
-	push	OFFSET $SG218656
+	push	OFFSET $SG218655
 	mov	BYTE PTR [esi+359], al
 	mov	DWORD PTR [esi+404], ecx
 	mov	ecx, edi
@@ -5980,112 +5980,112 @@ $LN35@CacheResul:
 
 ; 233  : 	m_bGoody = kResults.GetBool("Goody");
 
-	push	OFFSET $SG218657
+	push	OFFSET $SG218656
 	mov	ecx, edi
 	mov	BYTE PTR [esi+360], al
 	call	ebp
 
 ; 234  : 	m_bPermanent = kResults.GetBool("Permanent");
 
-	push	OFFSET $SG218658
+	push	OFFSET $SG218657
 	mov	ecx, edi
 	mov	BYTE PTR [esi+361], al
 	call	ebp
 
 ; 235  : 	m_iTilesPerGoody = kResults.GetInt("TilesPerGoody");
 
-	push	OFFSET $SG218659
+	push	OFFSET $SG218658
 	mov	ecx, edi
 	mov	BYTE PTR [esi+362], al
 	call	ebx
 
 ; 236  : 	m_iGoodyUniqueRange = kResults.GetInt("GoodyRange");
 
-	push	OFFSET $SG218660
+	push	OFFSET $SG218659
 	mov	ecx, edi
 	mov	DWORD PTR [esi+276], eax
 	call	ebx
 
 ; 237  : 	m_iFeatureGrowthProbability = kResults.GetInt("FeatureGrowth");
 
-	push	OFFSET $SG218661
+	push	OFFSET $SG218660
 	mov	ecx, edi
 	mov	DWORD PTR [esi+280], eax
 	call	ebx
 
 ; 238  : 	m_iUpgradeTime = kResults.GetInt("UpgradeTime");
 
-	push	OFFSET $SG218662
+	push	OFFSET $SG218661
 	mov	ecx, edi
 	mov	DWORD PTR [esi+284], eax
 	call	ebx
 
 ; 239  : 	m_iRiverSideUpgradeMod = kResults.GetInt("RiverSideUpgradeMod");
 
-	push	OFFSET $SG218663
+	push	OFFSET $SG218662
 	mov	ecx, edi
 	mov	DWORD PTR [esi+288], eax
 	call	ebx
 
 ; 240  : 	m_iCoastalLandUpgradeMod = kResults.GetInt("CoastalLandUpgradeMod");
 
-	push	OFFSET $SG218664
+	push	OFFSET $SG218663
 	mov	ecx, edi
 	mov	DWORD PTR [esi+292], eax
 	call	ebx
 
 ; 241  : 	m_iHillsUpgradeMod = kResults.GetInt("HillsUpgradeMod");
 
-	push	OFFSET $SG218665
+	push	OFFSET $SG218664
 	mov	ecx, edi
 	mov	DWORD PTR [esi+296], eax
 	call	ebx
 
 ; 242  : 	m_iFreshWaterUpgradeMod = kResults.GetInt("FreshWaterUpgradeMod");
 
-	push	OFFSET $SG218666
+	push	OFFSET $SG218665
 	mov	ecx, edi
 	mov	DWORD PTR [esi+300], eax
 	call	ebx
 
 ; 243  : 	m_iDefenseModifier = kResults.GetInt("DefenseModifier");
 
-	push	OFFSET $SG218667
+	push	OFFSET $SG218666
 	mov	ecx, edi
 	mov	DWORD PTR [esi+304], eax
 	call	ebx
 
 ; 244  : 	m_iDefenseModifierGlobal = kResults.GetInt("DefenseModifierGlobal");
 
-	push	OFFSET $SG218668
+	push	OFFSET $SG218667
 	mov	ecx, edi
 	mov	DWORD PTR [esi+308], eax
 	call	ebx
 
 ; 245  : 	m_iNearbyEnemyDamage = kResults.GetInt("NearbyEnemyDamage");
 
-	push	OFFSET $SG218669
+	push	OFFSET $SG218668
 	mov	ecx, edi
 	mov	DWORD PTR [esi+312], eax
 	call	ebx
 
 ; 246  : 	m_iPillageGold = kResults.GetInt("PillageGold");
 
-	push	OFFSET $SG218670
+	push	OFFSET $SG218669
 	mov	ecx, edi
 	mov	DWORD PTR [esi+316], eax
 	call	ebx
 
 ; 247  : 	m_bOutsideBorders = kResults.GetBool("OutsideBorders");
 
-	push	OFFSET $SG218671
+	push	OFFSET $SG218670
 	mov	ecx, edi
 	mov	DWORD PTR [esi+320], eax
 	call	ebp
 
 ; 248  : 	m_bInAdjacentFriendly = kResults.GetBool("InAdjacentFriendly");
 
-	push	OFFSET $SG218672
+	push	OFFSET $SG218671
 	mov	ecx, edi
 	mov	BYTE PTR [esi+363], al
 	call	ebp
@@ -6093,69 +6093,69 @@ $LN35@CacheResul:
 
 ; 249  : 	m_bIgnoreOwnership = kResults.GetBool("IgnoreOwnership");
 
-	push	OFFSET $SG218673
+	push	OFFSET $SG218672
 	mov	ecx, edi
 	call	ebp
 
 ; 250  : 	m_bOnlyCityStateTerritory = kResults.GetBool("OnlyCityStateTerritory");
 
-	push	OFFSET $SG218674
+	push	OFFSET $SG218673
 	mov	ecx, edi
 	mov	BYTE PTR [esi+365], al
 	call	ebp
 
 ; 251  : 	m_bNoTwoAdjacent = kResults.GetBool("NoTwoAdjacent");
 
-	push	OFFSET $SG218675
+	push	OFFSET $SG218674
 	mov	ecx, edi
 	mov	BYTE PTR [esi+366], al
 	call	ebp
 
 ; 252  : 	m_bAdjacentLuxury = kResults.GetBool("AdjacentLuxury");
 
-	push	OFFSET $SG218676
+	push	OFFSET $SG218675
 	mov	ecx, edi
 	mov	BYTE PTR [esi+367], al
 	call	ebp
 
 ; 253  : 	m_bAllowsWalkWater = kResults.GetBool("AllowsWalkWater");
 
-	push	OFFSET $SG218677
+	push	OFFSET $SG218676
 	mov	ecx, edi
 	mov	BYTE PTR [esi+368], al
 	call	ebp
 
 ; 254  : 	m_bAllowsSailLand = kResults.GetBool("AllowsSailLand"); // from Izy
 
-	push	OFFSET $SG218678
+	push	OFFSET $SG218677
 	mov	ecx, edi
 	mov	BYTE PTR [esi+369], al
 	call	ebp
 
 ; 255  : 	m_bCreatedByGreatPerson = kResults.GetBool("CreatedByGreatPerson");
 
-	push	OFFSET $SG218679
+	push	OFFSET $SG218678
 	mov	ecx, edi
 	mov	BYTE PTR [esi+370], al
 	call	ebp
 
 ; 256  : 	m_bSpecificCivRequired = kResults.GetBool("SpecificCivRequired");
 
-	push	OFFSET $SG218680
+	push	OFFSET $SG218679
 	mov	ecx, edi
 	mov	BYTE PTR [esi+371], al
 	call	ebp
 
 ; 257  : 	m_iResourceExtractionMod = kResults.GetInt("ResourceExtractionMod");
 
-	push	OFFSET $SG218681
+	push	OFFSET $SG218680
 	mov	ecx, edi
 	mov	BYTE PTR [esi+372], al
 	call	ebx
 
 ; 258  : 	m_iLuxuryCopiesSiphonedFromMinor = kResults.GetInt("LuxuryCopiesSiphonedFromMinor");
 
-	push	OFFSET $SG218682
+	push	OFFSET $SG218681
 	mov	ecx, edi
 	mov	DWORD PTR [esi+324], eax
 	call	ebx
@@ -6163,7 +6163,7 @@ $LN35@CacheResul:
 ; 259  : 
 ; 260  : 	const char* szCivilizationType = kResults.GetText("CivilizationType");
 
-	push	OFFSET $SG218684
+	push	OFFSET $SG218683
 	mov	ecx, edi
 	mov	DWORD PTR [esi+328], eax
 	call	DWORD PTR __imp_?GetText@Results@Database@@QAEPBDPBD@Z
@@ -6179,7 +6179,7 @@ $LN35@CacheResul:
 ; 263  : 	//References
 ; 264  : 	const char* szWorldsoundscapeAudioScript = kResults.GetText("WorldSoundscapeAudioScript");
 
-	push	OFFSET $SG218687
+	push	OFFSET $SG218686
 	mov	ecx, edi
 	mov	DWORD PTR [esi+408], eax
 	call	DWORD PTR __imp_?GetText@Results@Database@@QAEPBDPBD@Z
@@ -6214,7 +6214,7 @@ $LN20@CacheResul:
 	mov	DWORD PTR [esi+412], -1
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
-	push	OFFSET $SG218690
+	push	OFFSET $SG218689
 	push	1
 	call	?Remark@@YA_NHPBDZZ			; Remark
 	add	esp, 12					; 0000000cH
@@ -6224,7 +6224,7 @@ $LN19@CacheResul:
 ; 274  : 
 ; 275  : 	const char* szImprovementPillage = kResults.GetText("ImprovementPillage");
 
-	push	OFFSET $SG218692
+	push	OFFSET $SG218691
 	mov	ecx, edi
 	call	DWORD PTR __imp_?GetText@Results@Database@@QAEPBDPBD@Z
 
@@ -6238,7 +6238,7 @@ $LN19@CacheResul:
 ; 277  : 
 ; 278  : 	const char* szImprovementUpgrade = kResults.GetText("ImprovementUpgrade");
 
-	push	OFFSET $SG218694
+	push	OFFSET $SG218693
 	mov	ecx, edi
 	mov	DWORD PTR [esi+332], eax
 	call	DWORD PTR __imp_?GetText@Results@Database@@QAEPBDPBD@Z
@@ -6280,12 +6280,12 @@ $LL74@CacheResul:
 
 	push	edi
 	mov	edi, DWORD PTR _kUtility$[esp+132]
+	push	OFFSET $SG218696
 	push	OFFSET $SG218697
-	push	OFFSET $SG218698
 	sub	ecx, eax
-	push	OFFSET $SG218699
+	push	OFFSET $SG218698
 	mov	DWORD PTR _lenImprovementType$[esp+148], ecx
-	push	OFFSET $SG218700
+	push	OFFSET $SG218699
 	lea	ecx, DWORD PTR [esi+460]
 	push	ecx
 	mov	ecx, edi
@@ -6301,10 +6301,10 @@ $LL74@CacheResul:
 
 	mov	edx, DWORD PTR _szImprovementType$[esp+128]
 	push	edx
+	push	OFFSET $SG218700
 	push	OFFSET $SG218701
 	push	OFFSET $SG218702
 	push	OFFSET $SG218703
-	push	OFFSET $SG218704
 	lea	eax, DWORD PTR [esi+464]
 	push	eax
 	mov	ecx, edi
@@ -6320,10 +6320,10 @@ $LL74@CacheResul:
 
 	mov	ecx, DWORD PTR _szImprovementType$[esp+128]
 	push	ecx
+	push	OFFSET $SG218704
 	push	OFFSET $SG218705
 	push	OFFSET $SG218706
 	push	OFFSET $SG218707
-	push	OFFSET $SG218708
 	lea	edx, DWORD PTR [esi+468]
 	push	edx
 	mov	ecx, edi
@@ -6334,8 +6334,8 @@ $LL74@CacheResul:
 
 	mov	eax, DWORD PTR _szImprovementType$[esp+128]
 	push	eax
+	push	OFFSET $SG218708
 	push	OFFSET $SG218709
-	push	OFFSET $SG218710
 	lea	ecx, DWORD PTR [esi+424]
 	push	ecx
 	mov	ecx, edi
@@ -6345,8 +6345,8 @@ $LL74@CacheResul:
 
 	mov	edx, DWORD PTR _szImprovementType$[esp+128]
 	push	edx
+	push	OFFSET $SG218710
 	push	OFFSET $SG218711
-	push	OFFSET $SG218712
 	lea	eax, DWORD PTR [esi+428]
 	push	eax
 	mov	ecx, edi
@@ -6356,8 +6356,8 @@ $LL74@CacheResul:
 
 	mov	ecx, DWORD PTR _szImprovementType$[esp+128]
 	push	ecx
+	push	OFFSET $SG218712
 	push	OFFSET $SG218713
-	push	OFFSET $SG218714
 	lea	edx, DWORD PTR [esi+448]
 	push	edx
 	mov	ecx, edi
@@ -6367,8 +6367,8 @@ $LL74@CacheResul:
 
 	mov	eax, DWORD PTR _szImprovementType$[esp+128]
 	push	eax
+	push	OFFSET $SG218714
 	push	OFFSET $SG218715
-	push	OFFSET $SG218716
 	lea	ecx, DWORD PTR [esi+452]
 	push	ecx
 	mov	ecx, edi
@@ -6378,8 +6378,8 @@ $LL74@CacheResul:
 
 	mov	edx, DWORD PTR _szImprovementType$[esp+128]
 	push	edx
+	push	OFFSET $SG218716
 	push	OFFSET $SG218717
-	push	OFFSET $SG218718
 	lea	eax, DWORD PTR [esi+436]
 	push	eax
 	mov	ecx, edi
@@ -6389,8 +6389,8 @@ $LL74@CacheResul:
 
 	mov	ecx, DWORD PTR _szImprovementType$[esp+128]
 	push	ecx
+	push	OFFSET $SG218718
 	push	OFFSET $SG218719
-	push	OFFSET $SG218720
 	lea	edx, DWORD PTR [esi+444]
 	push	edx
 	mov	ecx, edi
@@ -6400,8 +6400,8 @@ $LL74@CacheResul:
 
 	mov	eax, DWORD PTR _szImprovementType$[esp+128]
 	push	eax
+	push	OFFSET $SG218720
 	push	OFFSET $SG218721
-	push	OFFSET $SG218722
 	lea	ecx, DWORD PTR [esi+440]
 	push	ecx
 	mov	ecx, edi
@@ -6411,8 +6411,8 @@ $LL74@CacheResul:
 
 	mov	edx, DWORD PTR _szImprovementType$[esp+128]
 	push	edx
+	push	OFFSET $SG218722
 	push	OFFSET $SG218723
-	push	OFFSET $SG218724
 	lea	eax, DWORD PTR [esi+432]
 	push	eax
 	mov	ecx, edi
@@ -6422,8 +6422,8 @@ $LL74@CacheResul:
 
 	mov	ecx, DWORD PTR _szImprovementType$[esp+128]
 	push	ecx
+	push	OFFSET $SG218724
 	push	OFFSET $SG218725
-	push	OFFSET $SG218726
 	lea	edx, DWORD PTR [esi+420]
 	push	edx
 	mov	ecx, edi
@@ -6435,8 +6435,8 @@ $LL74@CacheResul:
 	mov	eax, DWORD PTR _szImprovementType$[esp+128]
 	push	0
 	push	eax
+	push	OFFSET $SG218726
 	push	OFFSET $SG218727
-	push	OFFSET $SG218728
 	lea	ecx, DWORD PTR [esi+456]
 	push	ecx
 	mov	ecx, edi
@@ -6447,7 +6447,7 @@ $LL74@CacheResul:
 ; 319  : 		//Initialize Improvement Resource Types to number of Resources
 ; 320  : 		const int iNumResources = kUtility.MaxRows("Resources");
 
-	push	OFFSET $SG218730
+	push	OFFSET $SG218729
 	mov	ecx, edi
 	call	?MaxRows@CvDatabaseUtility@@QAEHPBD@Z	; CvDatabaseUtility::MaxRows
 	mov	edi, eax
@@ -6468,7 +6468,7 @@ $LL74@CacheResul:
 	push	eax
 	call	??_U@YAPAXI@Z				; operator new[]
 	add	esp, 4
-	mov	DWORD PTR $T221183[esp+132], eax
+	mov	DWORD PTR $T221182[esp+132], eax
 	mov	DWORD PTR __$EHRec$[esp+140], 0
 	test	eax, eax
 	je	SHORT $LN24@CacheResul
@@ -6513,14 +6513,14 @@ $LN25@CacheResul:
 ; 325  : 
 ; 326  : 		std::string strResourceTypesKey = "Improvements - ResourceTypes";
 
-	push	OFFSET $SG218744
-	lea	ecx, DWORD PTR _strResourceTypesKey$218743[esp+136]
+	push	OFFSET $SG218743
+	lea	ecx, DWORD PTR _strResourceTypesKey$218742[esp+136]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 
 ; 327  : 		Database::Results* pResourceTypes = kUtility.GetResults(strResourceTypesKey);
 
 	mov	ecx, DWORD PTR _kUtility$[esp+128]
-	lea	edx, DWORD PTR _strResourceTypesKey$218743[esp+132]
+	lea	edx, DWORD PTR _strResourceTypesKey$218742[esp+132]
 	push	edx
 	mov	DWORD PTR __$EHRec$[esp+144], 1
 	call	?GetResults@CvDatabaseUtility@@QAEPAVResults@Database@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z ; CvDatabaseUtility::GetResults
@@ -6535,8 +6535,8 @@ $LN25@CacheResul:
 ; 330  : 			pResourceTypes = kUtility.PrepareResults(strResourceTypesKey, "select Resources.ID, ResourceType, ResourceMakesValid, ResourceTrade, DiscoveryRand from Improvement_ResourceTypes inner join Resources on ResourceType = Resources.Type where ImprovementType = ?");
 
 	mov	ecx, DWORD PTR _kUtility$[esp+128]
-	push	OFFSET $SG218747
-	lea	eax, DWORD PTR _strResourceTypesKey$218743[esp+136]
+	push	OFFSET $SG218746
+	lea	eax, DWORD PTR _strResourceTypesKey$218742[esp+136]
 	push	eax
 	call	?PrepareResults@CvDatabaseUtility@@QAEPAVResults@Database@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PBD@Z ; CvDatabaseUtility::PrepareResults
 	mov	edi, eax
@@ -6546,18 +6546,18 @@ $LN18@CacheResul:
 ; 332  : 
 ; 333  : 		std::string strYieldResultsKey = "Improvements - YieldResults";
 
-	push	OFFSET $SG218749
-	lea	ecx, DWORD PTR _strYieldResultsKey$218748[esp+136]
+	push	OFFSET $SG218748
+	lea	ecx, DWORD PTR _strYieldResultsKey$218747[esp+136]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 
 ; 334  : 		Database::Results* pYieldResults = kUtility.GetResults(strYieldResultsKey);
 
-	lea	ecx, DWORD PTR _strYieldResultsKey$218748[esp+132]
+	lea	ecx, DWORD PTR _strYieldResultsKey$218747[esp+132]
 	push	ecx
 	mov	ecx, DWORD PTR _kUtility$[esp+132]
 	mov	BYTE PTR __$EHRec$[esp+144], 2
 	call	?GetResults@CvDatabaseUtility@@QAEPAVResults@Database@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z ; CvDatabaseUtility::GetResults
-	mov	DWORD PTR _pYieldResults$218750[esp+132], eax
+	mov	DWORD PTR _pYieldResults$218749[esp+132], eax
 
 ; 335  : 		if(pYieldResults == NULL)
 
@@ -6568,11 +6568,11 @@ $LN18@CacheResul:
 ; 337  : 			pYieldResults = kUtility.PrepareResults(strYieldResultsKey, "select Yields.ID, Yield from Improvement_ResourceType_Yields inner join Yields on YieldType = Yields.Type where ImprovementType = ? and ResourceType = ?");
 
 	mov	ecx, DWORD PTR _kUtility$[esp+128]
-	push	OFFSET $SG218752
-	lea	edx, DWORD PTR _strYieldResultsKey$218748[esp+136]
+	push	OFFSET $SG218751
+	lea	edx, DWORD PTR _strYieldResultsKey$218747[esp+136]
 	push	edx
 	call	?PrepareResults@CvDatabaseUtility@@QAEPAVResults@Database@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PBD@Z ; CvDatabaseUtility::PrepareResults
-	mov	DWORD PTR _pYieldResults$218750[esp+132], eax
+	mov	DWORD PTR _pYieldResults$218749[esp+132], eax
 $LN17@CacheResul:
 
 ; 338  : 		}
@@ -6600,57 +6600,57 @@ $LL16@CacheResul:
 ; 343  : 		{
 ; 344  : 			const int idx = pResourceTypes->GetInt("ID");
 
-	push	OFFSET $SG218757
+	push	OFFSET $SG218756
 	mov	ecx, edi
 	call	ebx
 
 ; 345  : 			CvImprovementResourceInfo& pResourceInfo = m_paImprovementResource[idx];
 
 	lea	edx, DWORD PTR [eax+eax*2]
-	mov	DWORD PTR _idx$218756[esp+132], eax
+	mov	DWORD PTR _idx$218755[esp+132], eax
 	mov	eax, DWORD PTR [esi+488]
 	lea	ecx, DWORD PTR [eax+edx*4]
-	mov	DWORD PTR _pResourceInfo$218758[esp+132], ecx
+	mov	DWORD PTR _pResourceInfo$218757[esp+132], ecx
 
 ; 346  : 
 ; 347  : 			const char* szResourceType = pResourceTypes->GetText("ResourceType");
 
-	push	OFFSET $SG218760
+	push	OFFSET $SG218759
 	mov	ecx, edi
 	call	DWORD PTR __imp_?GetText@Results@Database@@QAEPBDPBD@Z
 
 ; 348  : 			pResourceInfo.m_bResourceMakesValid = pResourceTypes->GetBool("ResourceMakesValid");
 
-	push	OFFSET $SG218761
+	push	OFFSET $SG218760
 	mov	ecx, edi
-	mov	DWORD PTR _szResourceType$218759[esp+136], eax
+	mov	DWORD PTR _szResourceType$218758[esp+136], eax
 	call	ebp
-	mov	edx, DWORD PTR _pResourceInfo$218758[esp+132]
+	mov	edx, DWORD PTR _pResourceInfo$218757[esp+132]
 
 ; 349  : 			pResourceInfo.m_bResourceTrade = pResourceTypes->GetBool("ResourceTrade");
 
-	push	OFFSET $SG218762
+	push	OFFSET $SG218761
 	mov	ecx, edi
 	mov	BYTE PTR [edx+4], al
 	call	ebp
-	mov	ecx, DWORD PTR _pResourceInfo$218758[esp+132]
+	mov	ecx, DWORD PTR _pResourceInfo$218757[esp+132]
 	mov	BYTE PTR [ecx+5], al
 
 ; 350  : 			pResourceInfo.m_iDiscoverRand = pResourceTypes->GetInt("DiscoveryRand");
 
-	push	OFFSET $SG218763
+	push	OFFSET $SG218762
 	mov	ecx, edi
 	call	ebx
-	mov	edx, DWORD PTR _pResourceInfo$218758[esp+132]
+	mov	edx, DWORD PTR _pResourceInfo$218757[esp+132]
 
 ; 351  : 			m_piResourceQuantityRequirements[idx] = pResourceTypes->GetInt("QuantityRequirement");
 
-	push	OFFSET $SG218764
+	push	OFFSET $SG218763
 	mov	ecx, edi
 	mov	DWORD PTR [edx], eax
 	call	ebx
 	mov	ecx, DWORD PTR [esi+416]
-	mov	edx, DWORD PTR _idx$218756[esp+132]
+	mov	edx, DWORD PTR _idx$218755[esp+132]
 	mov	DWORD PTR [ecx+edx*4], eax
 
 ; 352  : 
@@ -6658,13 +6658,13 @@ $LL16@CacheResul:
 ; 354  : 			kUtility.InitializeArray(pResourceInfo.m_piYieldChange, "Yields");
 
 	mov	ecx, DWORD PTR _kUtility$[esp+128]
-	push	OFFSET $SG218766
+	push	OFFSET $SG218765
 	call	?MaxRows@CvDatabaseUtility@@QAEHPBD@Z	; CvDatabaseUtility::MaxRows
-	mov	DWORD PTR _count$221251[esp+132], eax
+	mov	DWORD PTR _count$221250[esp+132], eax
 	test	eax, eax
 	jne	SHORT $LN52@CacheResul
-	mov	DWORD PTR _count$221251[esp+132], 1
-	mov	eax, DWORD PTR _count$221251[esp+132]
+	mov	DWORD PTR _count$221250[esp+132], 1
+	mov	eax, DWORD PTR _count$221250[esp+132]
 $LN52@CacheResul:
 	xor	ecx, ecx
 	mov	edx, 4
@@ -6674,8 +6674,8 @@ $LN52@CacheResul:
 	or	ecx, eax
 	push	ecx
 	call	??_U@YAPAXI@Z				; operator new[]
-	mov	ecx, DWORD PTR _pResourceInfo$218758[esp+136]
-	mov	edx, DWORD PTR _count$221251[esp+136]
+	mov	ecx, DWORD PTR _pResourceInfo$218757[esp+136]
+	mov	edx, DWORD PTR _count$221250[esp+136]
 	mov	DWORD PTR [ecx+8], eax
 	lea	ecx, DWORD PTR [edx*4]
 	push	ecx
@@ -6688,7 +6688,7 @@ $LN52@CacheResul:
 
 	mov	edx, DWORD PTR _lenImprovementType$[esp+148]
 	mov	eax, DWORD PTR _szImprovementType$[esp+144]
-	mov	ecx, DWORD PTR _pYieldResults$218750[esp+148]
+	mov	ecx, DWORD PTR _pYieldResults$218749[esp+148]
 	add	esp, 16					; 00000010H
 	push	0
 	push	edx
@@ -6698,17 +6698,17 @@ $LN52@CacheResul:
 
 ; 357  : 			pYieldResults->Bind(2, szResourceType, -1, false);
 
-	mov	ecx, DWORD PTR _szResourceType$218759[esp+132]
+	mov	ecx, DWORD PTR _szResourceType$218758[esp+132]
 	push	0
 	push	-1
 	push	ecx
-	mov	ecx, DWORD PTR _pYieldResults$218750[esp+144]
+	mov	ecx, DWORD PTR _pYieldResults$218749[esp+144]
 	push	2
 	call	DWORD PTR __imp_?Bind@Results@Database@@QAE_NHPBDH_N@Z
 
 ; 358  : 			while(pYieldResults->Step())
 
-	mov	ecx, DWORD PTR _pYieldResults$218750[esp+132]
+	mov	ecx, DWORD PTR _pYieldResults$218749[esp+132]
 	call	DWORD PTR __imp_?Step@Results@Database@@QAE_NXZ
 	test	al, al
 	je	SHORT $LN13@CacheResul
@@ -6717,24 +6717,24 @@ $LL14@CacheResul:
 ; 359  : 			{
 ; 360  : 				const int yieldIdx = pYieldResults->GetInt("ID");
 
-	mov	ecx, DWORD PTR _pYieldResults$218750[esp+132]
-	push	OFFSET $SG218771
+	mov	ecx, DWORD PTR _pYieldResults$218749[esp+132]
+	push	OFFSET $SG218770
 	call	ebx
 
 ; 361  : 				const int yield = pYieldResults->GetInt("Yield");
 
-	mov	ecx, DWORD PTR _pYieldResults$218750[esp+132]
-	push	OFFSET $SG218773
-	mov	DWORD PTR _yieldIdx$218770[esp+136], eax
+	mov	ecx, DWORD PTR _pYieldResults$218749[esp+132]
+	push	OFFSET $SG218772
+	mov	DWORD PTR _yieldIdx$218769[esp+136], eax
 	call	ebx
 
 ; 362  : 				pResourceInfo.m_piYieldChange[yieldIdx] = yield;
 
-	mov	edx, DWORD PTR _pResourceInfo$218758[esp+132]
+	mov	edx, DWORD PTR _pResourceInfo$218757[esp+132]
 	mov	ecx, DWORD PTR [edx+8]
-	mov	edx, DWORD PTR _yieldIdx$218770[esp+132]
+	mov	edx, DWORD PTR _yieldIdx$218769[esp+132]
 	mov	DWORD PTR [ecx+edx*4], eax
-	mov	ecx, DWORD PTR _pYieldResults$218750[esp+132]
+	mov	ecx, DWORD PTR _pYieldResults$218749[esp+132]
 	call	DWORD PTR __imp_?Step@Results@Database@@QAE_NXZ
 	test	al, al
 	jne	SHORT $LL14@CacheResul
@@ -6744,7 +6744,7 @@ $LN13@CacheResul:
 ; 364  : 
 ; 365  : 			pYieldResults->Reset();
 
-	mov	ecx, DWORD PTR _pYieldResults$218750[esp+132]
+	mov	ecx, DWORD PTR _pYieldResults$218749[esp+132]
 	call	DWORD PTR __imp_?Reset@Results@Database@@QAE_NXZ
 	mov	ecx, edi
 	call	DWORD PTR __imp_?Step@Results@Database@@QAE_NXZ
@@ -6761,10 +6761,10 @@ $LN15@CacheResul:
 
 ; 369  : 	}
 
-	lea	ecx, DWORD PTR _strYieldResultsKey$218748[esp+132]
+	lea	ecx, DWORD PTR _strYieldResultsKey$218747[esp+132]
 	mov	BYTE PTR __$EHRec$[esp+140], 1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR _strResourceTypesKey$218743[esp+132]
+	lea	ecx, DWORD PTR _strResourceTypesKey$218742[esp+132]
 	mov	DWORD PTR __$EHRec$[esp+140], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -6773,7 +6773,7 @@ $LN15@CacheResul:
 ; 372  : 	const int iNumYields = kUtility.MaxRows("Yields");
 
 	mov	edi, DWORD PTR _kUtility$[esp+128]
-	push	OFFSET $SG218775
+	push	OFFSET $SG218774
 	mov	ecx, edi
 	call	?MaxRows@CvDatabaseUtility@@QAEHPBD@Z	; CvDatabaseUtility::MaxRows
 	mov	ebx, eax
@@ -6808,13 +6808,13 @@ $LN15@CacheResul:
 ; 385  : 
 ; 386  : 		std::string strKey = "Improvements - TechYieldChanges";
 
-	push	OFFSET $SG218778
-	lea	ecx, DWORD PTR _strKey$218777[esp+136]
+	push	OFFSET $SG218777
+	lea	ecx, DWORD PTR _strKey$218776[esp+136]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 
 ; 387  : 		Database::Results* pResults = kUtility.GetResults(strKey);
 
-	lea	eax, DWORD PTR _strKey$218777[esp+132]
+	lea	eax, DWORD PTR _strKey$218776[esp+132]
 	push	eax
 	mov	ecx, edi
 	mov	DWORD PTR __$EHRec$[esp+144], 3
@@ -6829,8 +6829,8 @@ $LN15@CacheResul:
 ; 389  : 		{
 ; 390  : 			pResults = kUtility.PrepareResults(strKey, "select Yields.ID as YieldID, Technologies.ID as TechID, Yield from Improvement_TechYieldChanges inner join Yields on YieldType = Yields.Type inner join Technologies on TechType = Technologies.Type where ImprovementType = ?");
 
-	push	OFFSET $SG218781
-	lea	ecx, DWORD PTR _strKey$218777[esp+136]
+	push	OFFSET $SG218780
+	lea	ecx, DWORD PTR _strKey$218776[esp+136]
 	push	ecx
 	mov	ecx, edi
 	call	?PrepareResults@CvDatabaseUtility@@QAEPAVResults@Database@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PBD@Z ; CvDatabaseUtility::PrepareResults
@@ -6874,7 +6874,7 @@ $LL11@CacheResul:
 
 	push	1
 	mov	ecx, ebx
-	mov	DWORD PTR _yield_idx$218785[esp+136], eax
+	mov	DWORD PTR _yield_idx$218784[esp+136], eax
 	call	edi
 
 ; 401  : 			CvAssert(tech_idx > -1);
@@ -6883,7 +6883,7 @@ $LL11@CacheResul:
 
 	push	2
 	mov	ecx, ebx
-	mov	DWORD PTR _tech_idx$218786[esp+136], eax
+	mov	DWORD PTR _tech_idx$218785[esp+136], eax
 	call	edi
 
 ; 404  : 
@@ -6893,9 +6893,9 @@ $LL11@CacheResul:
 ; 408  : 			m_ppiTechYieldChanges[tech_idx][yield_idx] = yield;
 
 	mov	ecx, DWORD PTR [esi+472]
-	mov	edx, DWORD PTR _tech_idx$218786[esp+132]
+	mov	edx, DWORD PTR _tech_idx$218785[esp+132]
 	mov	ecx, DWORD PTR [ecx+edx*4]
-	mov	edx, DWORD PTR _yield_idx$218785[esp+132]
+	mov	edx, DWORD PTR _yield_idx$218784[esp+132]
 	mov	DWORD PTR [ecx+edx*4], eax
 	mov	ecx, ebx
 	call	ebp
@@ -6907,7 +6907,7 @@ $LN10@CacheResul:
 ; 410  : 		}
 ; 411  : 	}
 
-	lea	ecx, DWORD PTR _strKey$218777[esp+132]
+	lea	ecx, DWORD PTR _strKey$218776[esp+132]
 	mov	DWORD PTR __$EHRec$[esp+140], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -6935,13 +6935,13 @@ $LN10@CacheResul:
 ; 421  : 
 ; 422  : 		std::string strKey = "Improvements - TechNoFreshWaterYieldChanges";
 
-	push	OFFSET $SG218789
-	lea	ecx, DWORD PTR _strKey$218788[esp+136]
+	push	OFFSET $SG218788
+	lea	ecx, DWORD PTR _strKey$218787[esp+136]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 
 ; 423  : 		Database::Results* pResults = kUtility.GetResults(strKey);
 
-	lea	eax, DWORD PTR _strKey$218788[esp+132]
+	lea	eax, DWORD PTR _strKey$218787[esp+132]
 	push	eax
 	mov	ecx, ebx
 	mov	DWORD PTR __$EHRec$[esp+144], 4
@@ -6956,8 +6956,8 @@ $LN10@CacheResul:
 ; 425  : 		{
 ; 426  : 			pResults = kUtility.PrepareResults(strKey, "select Yields.ID as YieldID, Technologies.ID as TechID, Yield from Improvement_TechNoFreshWaterYieldChanges inner join Yields on YieldType = Yields.Type inner join Technologies on TechType = Technologies.Type where ImprovementType = ?");
 
-	push	OFFSET $SG218792
-	lea	ecx, DWORD PTR _strKey$218788[esp+136]
+	push	OFFSET $SG218791
+	lea	ecx, DWORD PTR _strKey$218787[esp+136]
 	push	ecx
 	mov	ecx, DWORD PTR _kUtility$[esp+136]
 	call	?PrepareResults@CvDatabaseUtility@@QAEPAVResults@Database@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PBD@Z ; CvDatabaseUtility::PrepareResults
@@ -6999,7 +6999,7 @@ $LL8@CacheResul:
 
 	push	1
 	mov	ecx, ebx
-	mov	DWORD PTR _yield_idx$218796[esp+136], eax
+	mov	DWORD PTR _yield_idx$218795[esp+136], eax
 	call	edi
 
 ; 437  : 			CvAssert(tech_idx > -1);
@@ -7008,7 +7008,7 @@ $LL8@CacheResul:
 
 	push	2
 	mov	ecx, ebx
-	mov	DWORD PTR _tech_idx$218797[esp+136], eax
+	mov	DWORD PTR _tech_idx$218796[esp+136], eax
 	call	edi
 
 ; 440  : 
@@ -7018,9 +7018,9 @@ $LL8@CacheResul:
 ; 444  : 			m_ppiTechNoFreshWaterYieldChanges[tech_idx][yield_idx] = yield;
 
 	mov	ecx, DWORD PTR [esi+476]
-	mov	edx, DWORD PTR _tech_idx$218797[esp+132]
+	mov	edx, DWORD PTR _tech_idx$218796[esp+132]
 	mov	ecx, DWORD PTR [ecx+edx*4]
-	mov	edx, DWORD PTR _yield_idx$218796[esp+132]
+	mov	edx, DWORD PTR _yield_idx$218795[esp+132]
 	mov	DWORD PTR [ecx+edx*4], eax
 	mov	ecx, ebx
 	call	ebp
@@ -7039,7 +7039,7 @@ $LN7@CacheResul:
 ; 449  : 
 ; 450  : 	}
 
-	lea	ecx, DWORD PTR _strKey$218788[esp+132]
+	lea	ecx, DWORD PTR _strKey$218787[esp+132]
 	mov	DWORD PTR __$EHRec$[esp+140], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -7067,13 +7067,13 @@ $LN7@CacheResul:
 ; 460  : 
 ; 461  : 		std::string strKey = "Improvements - TechFreshWaterYieldChanges";
 
-	push	OFFSET $SG218800
-	lea	ecx, DWORD PTR _strKey$218799[esp+136]
+	push	OFFSET $SG218799
+	lea	ecx, DWORD PTR _strKey$218798[esp+136]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 
 ; 462  : 		Database::Results* pResults = kUtility.GetResults(strKey);
 
-	lea	eax, DWORD PTR _strKey$218799[esp+132]
+	lea	eax, DWORD PTR _strKey$218798[esp+132]
 	push	eax
 	mov	ecx, ebx
 	mov	DWORD PTR __$EHRec$[esp+144], 5
@@ -7088,8 +7088,8 @@ $LN7@CacheResul:
 ; 464  : 		{
 ; 465  : 			pResults = kUtility.PrepareResults(strKey, "select Yields.ID as YieldID, Technologies.ID as TechID, Yield from Improvement_TechFreshWaterYieldChanges inner join Yields on YieldType = Yields.Type inner join Technologies on TechType = Technologies.Type where ImprovementType = ?");
 
-	push	OFFSET $SG218803
-	lea	ecx, DWORD PTR _strKey$218799[esp+136]
+	push	OFFSET $SG218802
+	lea	ecx, DWORD PTR _strKey$218798[esp+136]
 	push	ecx
 	mov	ecx, DWORD PTR _kUtility$[esp+136]
 	call	?PrepareResults@CvDatabaseUtility@@QAEPAVResults@Database@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PBD@Z ; CvDatabaseUtility::PrepareResults
@@ -7132,7 +7132,7 @@ $LL5@CacheResul:
 
 	push	1
 	mov	ecx, ebx
-	mov	DWORD PTR _yield_idx$218807[esp+136], eax
+	mov	DWORD PTR _yield_idx$218806[esp+136], eax
 	call	edi
 
 ; 476  : 			CvAssert(tech_idx > -1);
@@ -7141,7 +7141,7 @@ $LL5@CacheResul:
 
 	push	2
 	mov	ecx, ebx
-	mov	DWORD PTR _tech_idx$218808[esp+136], eax
+	mov	DWORD PTR _tech_idx$218807[esp+136], eax
 	call	edi
 
 ; 479  : 
@@ -7151,9 +7151,9 @@ $LL5@CacheResul:
 ; 483  : 			m_ppiTechFreshWaterYieldChanges[tech_idx][yield_idx] = yield;
 
 	mov	ecx, DWORD PTR [esi+480]
-	mov	edx, DWORD PTR _tech_idx$218808[esp+132]
+	mov	edx, DWORD PTR _tech_idx$218807[esp+132]
 	mov	ecx, DWORD PTR [ecx+edx*4]
-	mov	edx, DWORD PTR _yield_idx$218807[esp+132]
+	mov	edx, DWORD PTR _yield_idx$218806[esp+132]
 	mov	DWORD PTR [ecx+edx*4], eax
 	mov	ecx, ebx
 	call	ebp
@@ -7172,7 +7172,7 @@ $LN4@CacheResul:
 ; 488  : 
 ; 489  : 	}
 
-	lea	ecx, DWORD PTR _strKey$218799[esp+132]
+	lea	ecx, DWORD PTR _strKey$218798[esp+132]
 	mov	DWORD PTR __$EHRec$[esp+140], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -7182,7 +7182,7 @@ $LN4@CacheResul:
 ; 493  : 		const int iNumRoutes = kUtility.MaxRows("Routes");
 
 	mov	ebx, DWORD PTR _kUtility$[esp+128]
-	push	OFFSET $SG218811
+	push	OFFSET $SG218810
 	mov	ecx, ebx
 	call	?MaxRows@CvDatabaseUtility@@QAEHPBD@Z	; CvDatabaseUtility::MaxRows
 
@@ -7206,13 +7206,13 @@ $LN4@CacheResul:
 ; 500  : 
 ; 501  : 		std::string strKey = "Improvements - RouteYieldChanges";
 
-	push	OFFSET $SG218813
-	lea	ecx, DWORD PTR _strKey$218812[esp+136]
+	push	OFFSET $SG218812
+	lea	ecx, DWORD PTR _strKey$218811[esp+136]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 
 ; 502  : 		Database::Results* pResults = kUtility.GetResults(strKey);
 
-	lea	edx, DWORD PTR _strKey$218812[esp+132]
+	lea	edx, DWORD PTR _strKey$218811[esp+132]
 	push	edx
 	mov	ecx, ebx
 	mov	DWORD PTR __$EHRec$[esp+144], 6
@@ -7228,8 +7228,8 @@ $LN4@CacheResul:
 ; 505  : 			pResults = kUtility.PrepareResults(strKey, "select Yields.ID as YieldID, Routes.ID as RouteID, Yield from Improvement_RouteYieldChanges inner join Yields on YieldType = Yields.Type inner join Routes on RouteType = Routes.Type where ImprovementType = ?;");
 
 	mov	ecx, DWORD PTR _kUtility$[esp+128]
-	push	OFFSET $SG218816
-	lea	eax, DWORD PTR _strKey$218812[esp+136]
+	push	OFFSET $SG218815
+	lea	eax, DWORD PTR _strKey$218811[esp+136]
 	push	eax
 	call	?PrepareResults@CvDatabaseUtility@@QAEPAVResults@Database@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PBD@Z ; CvDatabaseUtility::PrepareResults
 	mov	ebx, eax
@@ -7279,7 +7279,7 @@ $LL2@CacheResul:
 
 	push	2
 	mov	ecx, ebx
-	mov	DWORD PTR _route_idx$218821[esp+132], eax
+	mov	DWORD PTR _route_idx$218820[esp+132], eax
 	call	edi
 
 ; 519  : 
@@ -7290,7 +7290,7 @@ $LL2@CacheResul:
 
 	mov	ecx, DWORD PTR tv1168[esp+132]
 	mov	edx, DWORD PTR [ecx]
-	mov	ecx, DWORD PTR _route_idx$218821[esp+128]
+	mov	ecx, DWORD PTR _route_idx$218820[esp+128]
 	mov	edx, DWORD PTR [edx+ecx*4]
 	mov	ecx, ebx
 	mov	DWORD PTR [edx+esi*4], eax
@@ -7310,7 +7310,7 @@ $LN1@CacheResul:
 ; 528  : 
 ; 529  : 	}
 
-	lea	ecx, DWORD PTR _strKey$218812[esp+132]
+	lea	ecx, DWORD PTR _strKey$218811[esp+132]
 	mov	DWORD PTR __$EHRec$[esp+140], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -7331,28 +7331,28 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?CacheResults@CvImprovementEntry@@UAE_NAAVResults@Database@@AAVCvDatabaseUtility@@@Z$0:
-	mov	eax, DWORD PTR $T221183[ebp]
+	mov	eax, DWORD PTR $T221182[ebp]
 	push	eax
 	call	??_V@YAXPAX@Z				; operator delete[]
 	pop	ecx
 	ret	0
 __unwindfunclet$?CacheResults@CvImprovementEntry@@UAE_NAAVResults@Database@@AAVCvDatabaseUtility@@@Z$1:
-	lea	ecx, DWORD PTR _strResourceTypesKey$218743[ebp]
+	lea	ecx, DWORD PTR _strResourceTypesKey$218742[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?CacheResults@CvImprovementEntry@@UAE_NAAVResults@Database@@AAVCvDatabaseUtility@@@Z$2:
-	lea	ecx, DWORD PTR _strYieldResultsKey$218748[ebp]
+	lea	ecx, DWORD PTR _strYieldResultsKey$218747[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?CacheResults@CvImprovementEntry@@UAE_NAAVResults@Database@@AAVCvDatabaseUtility@@@Z$3:
-	lea	ecx, DWORD PTR _strKey$218777[ebp]
+	lea	ecx, DWORD PTR _strKey$218776[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?CacheResults@CvImprovementEntry@@UAE_NAAVResults@Database@@AAVCvDatabaseUtility@@@Z$4:
-	lea	ecx, DWORD PTR _strKey$218788[ebp]
+	lea	ecx, DWORD PTR _strKey$218787[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?CacheResults@CvImprovementEntry@@UAE_NAAVResults@Database@@AAVCvDatabaseUtility@@@Z$5:
-	lea	ecx, DWORD PTR _strKey$218799[ebp]
+	lea	ecx, DWORD PTR _strKey$218798[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?CacheResults@CvImprovementEntry@@UAE_NAAVResults@Database@@AAVCvDatabaseUtility@@@Z$6:
-	lea	ecx, DWORD PTR _strKey$218812[ebp]
+	lea	ecx, DWORD PTR _strKey$218811[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __ehhandler$?CacheResults@CvImprovementEntry@@UAE_NAAVResults@Database@@AAVCvDatabaseUtility@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?CacheResults@CvImprovementEntry@@UAE_NAAVResults@Database@@AAVCvDatabaseUtility@@@Z

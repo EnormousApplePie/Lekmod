@@ -10,10 +10,10 @@ INCLUDELIB MSVCRT
 INCLUDELIB OLDNAMES
 
 _DATA	SEGMENT
-_CIV5_XP2_DLL_VERSION DD FLAT:$SG217705
+_CIV5_XP2_DLL_VERSION DD FLAT:$SG217704
 _DATA	ENDS
 CONST	SEGMENT
-$SG217705 DB	'1.0.0', 00H
+$SG217704 DB	'1.0.0', 00H
 	ORG $+2
 _guidICvUnknown DD 0d89ba82fH
 	DW	09fa3H
@@ -366,12 +366,12 @@ PUBLIC	?GetInterfaceId@ICvUnknown@@SG?AU_GUID@@XZ	; ICvUnknown::GetInterfaceId
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredllutil\include\cvdllinterfaces.h
 ;	COMDAT ?GetInterfaceId@ICvUnknown@@SG?AU_GUID@@XZ
 _TEXT	SEGMENT
-$T219035 = 8						; size = 4
+$T219034 = 8						; size = 4
 ?GetInterfaceId@ICvUnknown@@SG?AU_GUID@@XZ PROC		; ICvUnknown::GetInterfaceId, COMDAT
 
 ; 306  : 	static GUID DLLCALL GetInterfaceId(){ return guidICvUnknown; }
 
-	mov	eax, DWORD PTR $T219035[esp-4]
+	mov	eax, DWORD PTR $T219034[esp-4]
 	mov	ecx, DWORD PTR _guidICvUnknown
 	mov	edx, DWORD PTR _guidICvUnknown+4
 	mov	DWORD PTR [eax], ecx
@@ -387,12 +387,12 @@ PUBLIC	?GetInterfaceId@ICvUnitCombatClassInfo1@@SG?AU_GUID@@XZ ; ICvUnitCombatCl
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?GetInterfaceId@ICvUnitCombatClassInfo1@@SG?AU_GUID@@XZ
 _TEXT	SEGMENT
-$T219039 = 8						; size = 4
+$T219038 = 8						; size = 4
 ?GetInterfaceId@ICvUnitCombatClassInfo1@@SG?AU_GUID@@XZ PROC ; ICvUnitCombatClassInfo1::GetInterfaceId, COMDAT
 
 ; 608  : 	static GUID DLLCALL GetInterfaceId() { return guidICvUnitCombatClassInfo1; }
 
-	mov	eax, DWORD PTR $T219039[esp-4]
+	mov	eax, DWORD PTR $T219038[esp-4]
 	mov	ecx, DWORD PTR _guidICvUnitCombatClassInfo1
 	mov	edx, DWORD PTR _guidICvUnitCombatClassInfo1+4
 	mov	DWORD PTR [eax], ecx
@@ -465,8 +465,8 @@ _TEXT	SEGMENT
 _TEXT	ENDS
 ;	COMDAT ?QueryInterface@CvDllUnitCombatClassInfo@@UAGPAXU_GUID@@@Z
 _TEXT	SEGMENT
-$T219059 = -16						; size = 16
-$T219057 = -16						; size = 16
+$T219058 = -16						; size = 16
+$T219056 = -16						; size = 16
 _this$ = 8						; size = 4
 _guidInterface$ = 12					; size = 16
 ?QueryInterface@CvDllUnitCombatClassInfo@@UAGPAXU_GUID@@@Z PROC ; CvDllUnitCombatClassInfo::QueryInterface, COMDAT
@@ -481,15 +481,15 @@ _guidInterface$ = 12					; size = 16
 	mov	ecx, DWORD PTR _guidICvUnknown+4
 	mov	edx, DWORD PTR _guidICvUnknown+8
 	mov	eax, DWORD PTR _guidICvUnknown
-	mov	DWORD PTR $T219057[esp+20], ecx
-	lea	ecx, DWORD PTR $T219057[esp+16]
-	mov	DWORD PTR $T219057[esp+24], edx
-	mov	DWORD PTR $T219057[esp+16], eax
+	mov	DWORD PTR $T219056[esp+20], ecx
+	lea	ecx, DWORD PTR $T219056[esp+16]
+	mov	DWORD PTR $T219056[esp+24], edx
+	mov	DWORD PTR $T219056[esp+16], eax
 	mov	eax, DWORD PTR _guidICvUnknown+12
 	push	ecx
 	lea	edx, DWORD PTR _guidInterface$[esp+16]
 	push	edx
-	mov	DWORD PTR $T219057[esp+36], eax
+	mov	DWORD PTR $T219056[esp+36], eax
 	call	_IsEqualGUID
 	add	esp, 8
 	test	eax, eax
@@ -497,15 +497,15 @@ _guidInterface$ = 12					; size = 16
 	mov	ecx, DWORD PTR _guidICvUnitCombatClassInfo1+4
 	mov	edx, DWORD PTR _guidICvUnitCombatClassInfo1+8
 	mov	eax, DWORD PTR _guidICvUnitCombatClassInfo1
-	mov	DWORD PTR $T219059[esp+20], ecx
-	lea	ecx, DWORD PTR $T219059[esp+16]
-	mov	DWORD PTR $T219059[esp+24], edx
-	mov	DWORD PTR $T219059[esp+16], eax
+	mov	DWORD PTR $T219058[esp+20], ecx
+	lea	ecx, DWORD PTR $T219058[esp+16]
+	mov	DWORD PTR $T219058[esp+24], edx
+	mov	DWORD PTR $T219058[esp+16], eax
 	mov	eax, DWORD PTR _guidICvUnitCombatClassInfo1+12
 	push	ecx
 	lea	edx, DWORD PTR _guidInterface$[esp+16]
 	push	edx
-	mov	DWORD PTR $T219059[esp+36], eax
+	mov	DWORD PTR $T219058[esp+36], eax
 	call	_IsEqualGUID
 	add	esp, 8
 	test	eax, eax

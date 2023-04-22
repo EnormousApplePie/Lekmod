@@ -10,140 +10,140 @@ INCLUDELIB MSVCRT
 INCLUDELIB OLDNAMES
 
 _DATA	SEGMENT
-_CIV5_XP2_DLL_VERSION DD FLAT:$SG217729
+_CIV5_XP2_DLL_VERSION DD FLAT:$SG217728
 _DATA	ENDS
 CONST	SEGMENT
-$SG217729 DB	'1.0.0', 00H
+$SG217728 DB	'1.0.0', 00H
 	ORG $+2
-$SG225544 DB	'MapScriptName', 00H
+$SG225543 DB	'MapScriptName', 00H
 	ORG $+2
-$SG225545 DB	'ActivePlayer', 00H
+$SG225544 DB	'ActivePlayer', 00H
 	ORG $+3
-$SG225546 DB	'WorldSize', 00H
+$SG225545 DB	'WorldSize', 00H
 	ORG $+2
-$SG225547 DB	'Climate', 00H
-$SG225548 DB	'SeaLevel', 00H
+$SG225546 DB	'Climate', 00H
+$SG225547 DB	'SeaLevel', 00H
 	ORG $+3
-$SG225549 DB	'Era', 00H
-$SG225550 DB	'GameSpeed', 00H
+$SG225548 DB	'Era', 00H
+$SG225549 DB	'GameSpeed', 00H
 	ORG $+2
-$SG225551 DB	'VictoryType', 00H
-$SG225552 DB	'GameType', 00H
+$SG225550 DB	'VictoryType', 00H
+$SG225551 DB	'GameType', 00H
 	ORG $+3
-$SG225553 DB	'InitialTurn', 00H
-$SG225554 DB	'FinalTurn', 00H
+$SG225552 DB	'InitialTurn', 00H
+$SG225553 DB	'FinalTurn', 00H
 	ORG $+2
-$SG225555 DB	'StartYear', 00H
+$SG225554 DB	'StartYear', 00H
 	ORG $+2
-$SG225556 DB	'FinalDate', 00H
+$SG225555 DB	'FinalDate', 00H
 	ORG $+2
-$SG225557 DB	'Calendar', 00H
+$SG225556 DB	'Calendar', 00H
 	ORG $+3
-$SG225558 DB	'NormalizedScore', 00H
-$SG225559 DB	'MapHeight', 00H
+$SG225557 DB	'NormalizedScore', 00H
+$SG225558 DB	'MapHeight', 00H
 	ORG $+2
-$SG225560 DB	'MapWidth', 00H
+$SG225559 DB	'MapWidth', 00H
 	ORG $+3
-$SG225568 DB	'Civilization', 00H
+$SG225567 DB	'Civilization', 00H
 	ORG $+3
-$SG225569 DB	'Leader', 00H
+$SG225568 DB	'Leader', 00H
 	ORG $+1
-$SG225570 DB	'PlayerColor', 00H
-$SG225571 DB	'Difficulty', 00H
+$SG225569 DB	'PlayerColor', 00H
+$SG225570 DB	'Difficulty', 00H
 	ORG $+1
-$SG225572 DB	'LeaderName', 00H
+$SG225571 DB	'LeaderName', 00H
 	ORG $+1
-$SG225573 DB	'CivDescription', 00H
+$SG225572 DB	'CivDescription', 00H
 	ORG $+1
-$SG225574 DB	'CivShortDescription', 00H
-$SG225575 DB	'CivAdjective', 00H
+$SG225573 DB	'CivShortDescription', 00H
+$SG225574 DB	'CivAdjective', 00H
 	ORG $+3
-$SG225587 DB	'Scores', 00H
+$SG225586 DB	'Scores', 00H
 	ORG $+1
-$SG225588 DB	'PlayerInfo', 00H
+$SG225587 DB	'PlayerInfo', 00H
 	ORG $+1
-$SG225595 DB	'Turn', 00H
+$SG225594 DB	'Turn', 00H
 	ORG $+3
-$SG225596 DB	'Type', 00H
+$SG225595 DB	'Type', 00H
 	ORG $+3
-$SG225598 DB	'Player', 00H
+$SG225597 DB	'Player', 00H
 	ORG $+1
-$SG225599 DB	'Text', 00H
+$SG225598 DB	'Text', 00H
 	ORG $+3
-$SG225607 DB	'X', 00H
+$SG225606 DB	'X', 00H
 	ORG $+2
-$SG225608 DB	'Y', 00H
+$SG225607 DB	'Y', 00H
 	ORG $+2
-$SG225609 DB	'Plots', 00H
+$SG225608 DB	'Plots', 00H
 	ORG $+2
-$SG225610 DB	'Messages', 00H
+$SG225609 DB	'Messages', 00H
 	ORG $+3
-$SG225628 DB	'PlotType', 00H
+$SG225627 DB	'PlotType', 00H
 	ORG $+3
-$SG225629 DB	'TerrainType', 00H
-$SG225630 DB	'FeatureType', 00H
-$SG225631 DB	'NEOfRiver', 00H
+$SG225628 DB	'TerrainType', 00H
+$SG225629 DB	'FeatureType', 00H
+$SG225630 DB	'NEOfRiver', 00H
 	ORG $+2
-$SG225632 DB	'WOfRiver', 00H
+$SG225631 DB	'WOfRiver', 00H
 	ORG $+3
-$SG225633 DB	'NWOfRiver', 00H
+$SG225632 DB	'NWOfRiver', 00H
 	ORG $+2
-$SG225634 DB	'Plots', 00H
+$SG225633 DB	'Plots', 00H
 	ORG $+2
-$SG225647 DB	'__instances', 00H
-$SG225648 DB	'__mode', 00H
+$SG225646 DB	'__instances', 00H
+$SG225647 DB	'__mode', 00H
 	ORG $+1
-$SG225649 DB	'v', 00H
+$SG225648 DB	'v', 00H
 	ORG $+2
-$SG225651 DB	'__instances', 00H
-$SG225654 DB	'__instance', 00H
+$SG225650 DB	'__instances', 00H
+$SG225653 DB	'__instance', 00H
 	ORG $+1
-$SG225655 DB	'__index', 00H
-$SG225670 DB	'__instance', 00H
+$SG225654 DB	'__index', 00H
+$SG225669 DB	'__instance', 00H
 	ORG $+1
-$SG225676 DB	'Not a valid instance.  Either the instance is NULL or yo'
+$SG225675 DB	'Not a valid instance.  Either the instance is NULL or yo'
 	DB	'u used ''.'' instead of '':''.', 00H
 	ORG $+1
-$SG225696 DB	'__instances', 00H
-$SG225697 DB	'__mode', 00H
+$SG225695 DB	'__instances', 00H
+$SG225696 DB	'__mode', 00H
 	ORG $+1
-$SG225698 DB	'v', 00H
+$SG225697 DB	'v', 00H
 	ORG $+2
-$SG225700 DB	'__instances', 00H
-$SG225703 DB	'__instance', 00H
+$SG225699 DB	'__instances', 00H
+$SG225702 DB	'__instance', 00H
 	ORG $+1
-$SG225704 DB	'__index', 00H
-$SG225719 DB	'__instance', 00H
+$SG225703 DB	'__index', 00H
+$SG225718 DB	'__instance', 00H
 	ORG $+1
-$SG225725 DB	'Not a valid instance.  Either the instance is NULL or yo'
+$SG225724 DB	'Not a valid instance.  Either the instance is NULL or yo'
 	DB	'u used ''.'' instead of '':''.', 00H
 	ORG $+1
-$SG225859 DB	'__instances', 00H
-$SG225860 DB	'__mode', 00H
+$SG225858 DB	'__instances', 00H
+$SG225859 DB	'__mode', 00H
 	ORG $+1
-$SG225861 DB	'v', 00H
+$SG225860 DB	'v', 00H
 	ORG $+2
-$SG225863 DB	'__instances', 00H
-$SG225866 DB	'__instance', 00H
+$SG225862 DB	'__instances', 00H
+$SG225865 DB	'__instance', 00H
 	ORG $+1
-$SG225867 DB	'__index', 00H
-$SG225882 DB	'__instance', 00H
+$SG225866 DB	'__index', 00H
+$SG225881 DB	'__instance', 00H
 	ORG $+1
-$SG225888 DB	'Not a valid instance.  Either the instance is NULL or yo'
+$SG225887 DB	'Not a valid instance.  Either the instance is NULL or yo'
 	DB	'u used ''.'' instead of '':''.', 00H
 	ORG $+1
-$SG225899 DB	'__instances', 00H
-$SG225900 DB	'__mode', 00H
+$SG225898 DB	'__instances', 00H
+$SG225899 DB	'__mode', 00H
 	ORG $+1
-$SG225901 DB	'v', 00H
+$SG225900 DB	'v', 00H
 	ORG $+2
-$SG225903 DB	'__instances', 00H
-$SG225906 DB	'__instance', 00H
+$SG225902 DB	'__instances', 00H
+$SG225905 DB	'__instance', 00H
 	ORG $+1
-$SG225907 DB	'__index', 00H
-$SG225922 DB	'__instance', 00H
+$SG225906 DB	'__index', 00H
+$SG225921 DB	'__instance', 00H
 	ORG $+1
-$SG225928 DB	'Not a valid instance.  Either the instance is NULL or yo'
+$SG225927 DB	'Not a valid instance.  Either the instance is NULL or yo'
 	DB	'u used ''.'' instead of '':''.', 00H
 	ORG $+1
 _guidICvUnknown DD 0d89ba82fH
@@ -576,7 +576,7 @@ _pkType$ = 12						; size = 4
 ; 61   : 			//Create weak __instances table.
 ; 62   : 			lua_pushstring(L, "__instances");
 
-	push	OFFSET $SG225647
+	push	OFFSET $SG225646
 	push	esi
 	call	_lua_pushstring
 
@@ -598,13 +598,13 @@ _pkType$ = 12						; size = 4
 
 ; 67   : 			lua_pushstring(L, "__mode");
 
-	push	OFFSET $SG225648
+	push	OFFSET $SG225647
 	push	esi
 	call	_lua_pushstring
 
 ; 68   : 			lua_pushstring(L, "v");
 
-	push	OFFSET $SG225649
+	push	OFFSET $SG225648
 	push	esi
 	call	_lua_pushstring
 	add	esp, 68					; 00000044H
@@ -664,7 +664,7 @@ $LN7@Push:
 ; 81   : 
 ; 82   : 		lua_pushstring(L, "__instances");
 
-	push	OFFSET $SG225651
+	push	OFFSET $SG225650
 	push	esi
 	mov	ebx, eax
 	call	_lua_pushstring
@@ -730,7 +730,7 @@ $LN7@Push:
 
 ; 98   : 			lua_setfield(L, -2, "__instance");
 
-	push	OFFSET $SG225654
+	push	OFFSET $SG225653
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -745,7 +745,7 @@ $LN7@Push:
 
 ; 101  : 			lua_pushstring(L, "__index");
 
-	push	OFFSET $SG225655
+	push	OFFSET $SG225654
 	push	esi
 	call	_lua_pushstring
 
@@ -881,7 +881,7 @@ _bErrorOnFail$ = 16					; size = 1
 ; 134  : 		lua_getfield(L, idx, "__instance");
 
 	mov	ecx, DWORD PTR _idx$[esp+12]
-	push	OFFSET $SG225670
+	push	OFFSET $SG225669
 	push	ecx
 	push	esi
 	call	_lua_getfield
@@ -942,7 +942,7 @@ $LN3@GetInstanc:
 
 ; 150  : 			luaL_error(L, "Not a valid instance.  Either the instance is NULL or you used '.' instead of ':'.");
 
-	push	OFFSET $SG225676
+	push	OFFSET $SG225675
 	push	esi
 	call	_luaL_error
 	add	esp, 8
@@ -1042,7 +1042,7 @@ _pkType$ = 12						; size = 4
 ; 61   : 			//Create weak __instances table.
 ; 62   : 			lua_pushstring(L, "__instances");
 
-	push	OFFSET $SG225696
+	push	OFFSET $SG225695
 	push	esi
 	call	_lua_pushstring
 
@@ -1064,13 +1064,13 @@ _pkType$ = 12						; size = 4
 
 ; 67   : 			lua_pushstring(L, "__mode");
 
-	push	OFFSET $SG225697
+	push	OFFSET $SG225696
 	push	esi
 	call	_lua_pushstring
 
 ; 68   : 			lua_pushstring(L, "v");
 
-	push	OFFSET $SG225698
+	push	OFFSET $SG225697
 	push	esi
 	call	_lua_pushstring
 	add	esp, 68					; 00000044H
@@ -1130,7 +1130,7 @@ $LN7@Push@2:
 ; 81   : 
 ; 82   : 		lua_pushstring(L, "__instances");
 
-	push	OFFSET $SG225700
+	push	OFFSET $SG225699
 	push	esi
 	mov	ebx, eax
 	call	_lua_pushstring
@@ -1196,7 +1196,7 @@ $LN7@Push@2:
 
 ; 98   : 			lua_setfield(L, -2, "__instance");
 
-	push	OFFSET $SG225703
+	push	OFFSET $SG225702
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -1211,7 +1211,7 @@ $LN7@Push@2:
 
 ; 101  : 			lua_pushstring(L, "__index");
 
-	push	OFFSET $SG225704
+	push	OFFSET $SG225703
 	push	esi
 	call	_lua_pushstring
 
@@ -1345,7 +1345,7 @@ _bErrorOnFail$ = 16					; size = 1
 ; 134  : 		lua_getfield(L, idx, "__instance");
 
 	mov	ecx, DWORD PTR _idx$[esp+12]
-	push	OFFSET $SG225719
+	push	OFFSET $SG225718
 	push	ecx
 	push	esi
 	call	_lua_getfield
@@ -1406,7 +1406,7 @@ $LN3@GetInstanc@2:
 
 ; 150  : 			luaL_error(L, "Not a valid instance.  Either the instance is NULL or you used '.' instead of ':'.");
 
-	push	OFFSET $SG225725
+	push	OFFSET $SG225724
 	push	esi
 	call	_luaL_error
 	add	esp, 8
@@ -1506,7 +1506,7 @@ _pkType$ = 12						; size = 4
 ; 61   : 			//Create weak __instances table.
 ; 62   : 			lua_pushstring(L, "__instances");
 
-	push	OFFSET $SG225859
+	push	OFFSET $SG225858
 	push	esi
 	call	_lua_pushstring
 
@@ -1528,13 +1528,13 @@ _pkType$ = 12						; size = 4
 
 ; 67   : 			lua_pushstring(L, "__mode");
 
-	push	OFFSET $SG225860
+	push	OFFSET $SG225859
 	push	esi
 	call	_lua_pushstring
 
 ; 68   : 			lua_pushstring(L, "v");
 
-	push	OFFSET $SG225861
+	push	OFFSET $SG225860
 	push	esi
 	call	_lua_pushstring
 	add	esp, 68					; 00000044H
@@ -1594,7 +1594,7 @@ $LN7@Push@3:
 ; 81   : 
 ; 82   : 		lua_pushstring(L, "__instances");
 
-	push	OFFSET $SG225863
+	push	OFFSET $SG225862
 	push	esi
 	mov	ebx, eax
 	call	_lua_pushstring
@@ -1660,7 +1660,7 @@ $LN7@Push@3:
 
 ; 98   : 			lua_setfield(L, -2, "__instance");
 
-	push	OFFSET $SG225866
+	push	OFFSET $SG225865
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -1675,7 +1675,7 @@ $LN7@Push@3:
 
 ; 101  : 			lua_pushstring(L, "__index");
 
-	push	OFFSET $SG225867
+	push	OFFSET $SG225866
 	push	esi
 	call	_lua_pushstring
 
@@ -1809,7 +1809,7 @@ _bErrorOnFail$ = 16					; size = 1
 ; 134  : 		lua_getfield(L, idx, "__instance");
 
 	mov	ecx, DWORD PTR _idx$[esp+12]
-	push	OFFSET $SG225882
+	push	OFFSET $SG225881
 	push	ecx
 	push	esi
 	call	_lua_getfield
@@ -1870,7 +1870,7 @@ $LN3@GetInstanc@3:
 
 ; 150  : 			luaL_error(L, "Not a valid instance.  Either the instance is NULL or you used '.' instead of ':'.");
 
-	push	OFFSET $SG225888
+	push	OFFSET $SG225887
 	push	esi
 	call	_luaL_error
 	add	esp, 8
@@ -1970,7 +1970,7 @@ _pkType$ = 12						; size = 4
 ; 61   : 			//Create weak __instances table.
 ; 62   : 			lua_pushstring(L, "__instances");
 
-	push	OFFSET $SG225899
+	push	OFFSET $SG225898
 	push	esi
 	call	_lua_pushstring
 
@@ -1992,13 +1992,13 @@ _pkType$ = 12						; size = 4
 
 ; 67   : 			lua_pushstring(L, "__mode");
 
-	push	OFFSET $SG225900
+	push	OFFSET $SG225899
 	push	esi
 	call	_lua_pushstring
 
 ; 68   : 			lua_pushstring(L, "v");
 
-	push	OFFSET $SG225901
+	push	OFFSET $SG225900
 	push	esi
 	call	_lua_pushstring
 	add	esp, 68					; 00000044H
@@ -2058,7 +2058,7 @@ $LN7@Push@4:
 ; 81   : 
 ; 82   : 		lua_pushstring(L, "__instances");
 
-	push	OFFSET $SG225903
+	push	OFFSET $SG225902
 	push	esi
 	mov	ebx, eax
 	call	_lua_pushstring
@@ -2124,7 +2124,7 @@ $LN7@Push@4:
 
 ; 98   : 			lua_setfield(L, -2, "__instance");
 
-	push	OFFSET $SG225906
+	push	OFFSET $SG225905
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -2139,7 +2139,7 @@ $LN7@Push@4:
 
 ; 101  : 			lua_pushstring(L, "__index");
 
-	push	OFFSET $SG225907
+	push	OFFSET $SG225906
 	push	esi
 	call	_lua_pushstring
 
@@ -2273,7 +2273,7 @@ _bErrorOnFail$ = 16					; size = 1
 ; 134  : 		lua_getfield(L, idx, "__instance");
 
 	mov	ecx, DWORD PTR _idx$[esp+12]
-	push	OFFSET $SG225922
+	push	OFFSET $SG225921
 	push	ecx
 	push	esi
 	call	_lua_getfield
@@ -2334,7 +2334,7 @@ $LN3@GetInstanc@4:
 
 ; 150  : 			luaL_error(L, "Not a valid instance.  Either the instance is NULL or you used '.' instead of ':'.");
 
-	push	OFFSET $SG225928
+	push	OFFSET $SG225927
 	push	esi
 	call	_luaL_error
 	add	esp, 8
@@ -2380,12 +2380,12 @@ PUBLIC	?GetInterfaceId@ICvUnknown@@SG?AU_GUID@@XZ	; ICvUnknown::GetInterfaceId
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredllutil\include\cvdllinterfaces.h
 ;	COMDAT ?GetInterfaceId@ICvUnknown@@SG?AU_GUID@@XZ
 _TEXT	SEGMENT
-$T226134 = 8						; size = 4
+$T226133 = 8						; size = 4
 ?GetInterfaceId@ICvUnknown@@SG?AU_GUID@@XZ PROC		; ICvUnknown::GetInterfaceId, COMDAT
 
 ; 306  : 	static GUID DLLCALL GetInterfaceId(){ return guidICvUnknown; }
 
-	mov	eax, DWORD PTR $T226134[esp-4]
+	mov	eax, DWORD PTR $T226133[esp-4]
 	mov	ecx, DWORD PTR _guidICvUnknown
 	mov	edx, DWORD PTR _guidICvUnknown+4
 	mov	DWORD PTR [eax], ecx
@@ -2401,12 +2401,12 @@ PUBLIC	?GetInterfaceId@ICvScriptSystemUtility1@@SG?AU_GUID@@XZ ; ICvScriptSystem
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?GetInterfaceId@ICvScriptSystemUtility1@@SG?AU_GUID@@XZ
 _TEXT	SEGMENT
-$T226138 = 8						; size = 4
+$T226137 = 8						; size = 4
 ?GetInterfaceId@ICvScriptSystemUtility1@@SG?AU_GUID@@XZ PROC ; ICvScriptSystemUtility1::GetInterfaceId, COMDAT
 
 ; 807  : 	static GUID DLLCALL GetInterfaceId() { return guidICvScriptSystemUtility1; }
 
-	mov	eax, DWORD PTR $T226138[esp-4]
+	mov	eax, DWORD PTR $T226137[esp-4]
 	mov	ecx, DWORD PTR _guidICvScriptSystemUtility1
 	mov	edx, DWORD PTR _guidICvScriptSystemUtility1+4
 	mov	DWORD PTR [eax], ecx
@@ -2459,8 +2459,8 @@ _TEXT	SEGMENT
 _TEXT	ENDS
 ;	COMDAT ?QueryInterface@CvDllScriptSystemUtility@@UAGPAXU_GUID@@@Z
 _TEXT	SEGMENT
-$T226150 = -16						; size = 16
-$T226148 = -16						; size = 16
+$T226149 = -16						; size = 16
+$T226147 = -16						; size = 16
 _this$ = 8						; size = 4
 _guidInterface$ = 12					; size = 16
 ?QueryInterface@CvDllScriptSystemUtility@@UAGPAXU_GUID@@@Z PROC ; CvDllScriptSystemUtility::QueryInterface, COMDAT
@@ -2475,15 +2475,15 @@ _guidInterface$ = 12					; size = 16
 	mov	ecx, DWORD PTR _guidICvUnknown+4
 	mov	edx, DWORD PTR _guidICvUnknown+8
 	mov	eax, DWORD PTR _guidICvUnknown
-	mov	DWORD PTR $T226148[esp+20], ecx
-	lea	ecx, DWORD PTR $T226148[esp+16]
-	mov	DWORD PTR $T226148[esp+24], edx
-	mov	DWORD PTR $T226148[esp+16], eax
+	mov	DWORD PTR $T226147[esp+20], ecx
+	lea	ecx, DWORD PTR $T226147[esp+16]
+	mov	DWORD PTR $T226147[esp+24], edx
+	mov	DWORD PTR $T226147[esp+16], eax
 	mov	eax, DWORD PTR _guidICvUnknown+12
 	push	ecx
 	lea	edx, DWORD PTR _guidInterface$[esp+16]
 	push	edx
-	mov	DWORD PTR $T226148[esp+36], eax
+	mov	DWORD PTR $T226147[esp+36], eax
 	call	_IsEqualGUID
 	add	esp, 8
 	test	eax, eax
@@ -2491,15 +2491,15 @@ _guidInterface$ = 12					; size = 16
 	mov	ecx, DWORD PTR _guidICvScriptSystemUtility1+4
 	mov	edx, DWORD PTR _guidICvScriptSystemUtility1+8
 	mov	eax, DWORD PTR _guidICvScriptSystemUtility1
-	mov	DWORD PTR $T226150[esp+20], ecx
-	lea	ecx, DWORD PTR $T226150[esp+16]
-	mov	DWORD PTR $T226150[esp+24], edx
-	mov	DWORD PTR $T226150[esp+16], eax
+	mov	DWORD PTR $T226149[esp+20], ecx
+	lea	ecx, DWORD PTR $T226149[esp+16]
+	mov	DWORD PTR $T226149[esp+24], edx
+	mov	DWORD PTR $T226149[esp+16], eax
 	mov	eax, DWORD PTR _guidICvScriptSystemUtility1+12
 	push	ecx
 	lea	edx, DWORD PTR _guidInterface$[esp+16]
 	push	edx
-	mov	DWORD PTR $T226150[esp+36], eax
+	mov	DWORD PTR $T226149[esp+36], eax
 	call	_IsEqualGUID
 	add	esp, 8
 	test	eax, eax
@@ -2607,7 +2607,7 @@ _this$ = 8						; size = 4
 _L$ = 12						; size = 4
 _index$ = 16						; size = 4
 _bErrorOnFail$ = 20					; size = 1
-$T226173 = 20						; size = 4
+$T226172 = 20						; size = 4
 ?GetCvCityInstance@CvDllScriptSystemUtility@@UAGPAVICvCity1@@PAUlua_State@@H_N@Z PROC ; CvDllScriptSystemUtility::GetCvCityInstance, COMDAT
 
 ; 80   : {
@@ -2638,7 +2638,7 @@ $T226173 = 20						; size = 4
 	push	12					; 0000000cH
 	call	??2CvDllCity@@SAPAXI@Z			; CvDllCity::operator new
 	add	esp, 4
-	mov	DWORD PTR $T226173[esp+12], eax
+	mov	DWORD PTR $T226172[esp+12], eax
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	eax, eax
 	je	SHORT $LN5@GetCvCityI
@@ -2664,7 +2664,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetCvCityInstance@CvDllScriptSystemUtility@@UAGPAVICvCity1@@PAUlua_State@@H_N@Z$0:
-	mov	eax, DWORD PTR $T226173[ebp-4]
+	mov	eax, DWORD PTR $T226172[ebp-4]
 	push	eax
 	call	??3CvDllCity@@SAXPAX@Z			; CvDllCity::operator delete
 	pop	ecx
@@ -2752,7 +2752,7 @@ _this$ = 8						; size = 4
 _L$ = 12						; size = 4
 _index$ = 16						; size = 4
 _bErrorOnFail$ = 20					; size = 1
-$T226195 = 20						; size = 4
+$T226194 = 20						; size = 4
 ?GetCvDealInstance@CvDllScriptSystemUtility@@UAGPAVICvDeal1@@PAUlua_State@@H_N@Z PROC ; CvDllScriptSystemUtility::GetCvDealInstance, COMDAT
 
 ; 99   : {
@@ -2783,7 +2783,7 @@ $T226195 = 20						; size = 4
 	push	12					; 0000000cH
 	call	??2CvDllDeal@@SAPAXI@Z			; CvDllDeal::operator new
 	add	esp, 4
-	mov	DWORD PTR $T226195[esp+12], eax
+	mov	DWORD PTR $T226194[esp+12], eax
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	eax, eax
 	je	SHORT $LN5@GetCvDealI
@@ -2809,7 +2809,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetCvDealInstance@CvDllScriptSystemUtility@@UAGPAVICvDeal1@@PAUlua_State@@H_N@Z$0:
-	mov	eax, DWORD PTR $T226195[ebp-4]
+	mov	eax, DWORD PTR $T226194[ebp-4]
 	push	eax
 	call	??3CvDllDeal@@SAXPAX@Z			; CvDllDeal::operator delete
 	pop	ecx
@@ -2897,7 +2897,7 @@ _this$ = 8						; size = 4
 _L$ = 12						; size = 4
 _index$ = 16						; size = 4
 _bErrorOnFail$ = 20					; size = 1
-$T226214 = 20						; size = 4
+$T226213 = 20						; size = 4
 ?GetCvPlotInstance@CvDllScriptSystemUtility@@UAGPAVICvPlot1@@PAUlua_State@@H_N@Z PROC ; CvDllScriptSystemUtility::GetCvPlotInstance, COMDAT
 
 ; 118  : {
@@ -2928,7 +2928,7 @@ $T226214 = 20						; size = 4
 	push	12					; 0000000cH
 	call	??2CvDllPlot@@SAPAXI@Z			; CvDllPlot::operator new
 	add	esp, 4
-	mov	DWORD PTR $T226214[esp+12], eax
+	mov	DWORD PTR $T226213[esp+12], eax
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	eax, eax
 	je	SHORT $LN5@GetCvPlotI
@@ -2954,7 +2954,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetCvPlotInstance@CvDllScriptSystemUtility@@UAGPAVICvPlot1@@PAUlua_State@@H_N@Z$0:
-	mov	eax, DWORD PTR $T226214[ebp-4]
+	mov	eax, DWORD PTR $T226213[ebp-4]
 	push	eax
 	call	??3CvDllPlot@@SAXPAX@Z			; CvDllPlot::operator delete
 	pop	ecx
@@ -3042,7 +3042,7 @@ _this$ = 8						; size = 4
 _L$ = 12						; size = 4
 _index$ = 16						; size = 4
 _bErrorOnFail$ = 20					; size = 1
-$T226233 = 20						; size = 4
+$T226232 = 20						; size = 4
 ?GetCvUnitInstance@CvDllScriptSystemUtility@@UAGPAVICvUnit1@@PAUlua_State@@H_N@Z PROC ; CvDllScriptSystemUtility::GetCvUnitInstance, COMDAT
 
 ; 137  : {
@@ -3073,7 +3073,7 @@ $T226233 = 20						; size = 4
 	push	12					; 0000000cH
 	call	??2CvDllUnit@@SAPAXI@Z			; CvDllUnit::operator new
 	add	esp, 4
-	mov	DWORD PTR $T226233[esp+12], eax
+	mov	DWORD PTR $T226232[esp+12], eax
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	eax, eax
 	je	SHORT $LN5@GetCvUnitI
@@ -3099,7 +3099,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetCvUnitInstance@CvDllScriptSystemUtility@@UAGPAVICvUnit1@@PAUlua_State@@H_N@Z$0:
-	mov	eax, DWORD PTR $T226233[ebp-4]
+	mov	eax, DWORD PTR $T226232[ebp-4]
 	push	eax
 	call	??3CvDllUnit@@SAXPAX@Z			; CvDllUnit::operator delete
 	pop	ecx
@@ -3170,28 +3170,28 @@ __ehfuncinfo$?PushReplayFromStream@CvDllScriptSystemUtility@@UAGXPAUlua_State@@A
 xdata$x	ENDS
 ;	COMDAT ?PushReplayFromStream@CvDllScriptSystemUtility@@UAGXPAUlua_State@@AAVFDataStream@@@Z
 _TEXT	SEGMENT
-_iValue$225585 = -48					; size = 4
-_numReplayMessages$225589 = -44				; size = 4
-_uiNumDataSets$225562 = -44				; size = 4
-_uiHeight$225611 = -40					; size = 4
-_numPlots$225600 = -40					; size = 4
-_iFinalTurn$225576 = -40				; size = 4
-_uiWidth$225612 = -36					; size = 4
-_iPlotY$225606 = -36					; size = 4
-_numPlayers$225561 = -36				; size = 4
-_idx$225613 = -32					; size = 4
-_t$225543 = -32						; size = 4
-$T226249 = -32						; size = 4
-_plotState$225626 = -28					; size = 16
+_iValue$225584 = -48					; size = 4
+_numReplayMessages$225588 = -44				; size = 4
+_uiNumDataSets$225561 = -44				; size = 4
+_uiHeight$225610 = -40					; size = 4
+_numPlots$225599 = -40					; size = 4
+_iFinalTurn$225575 = -40				; size = 4
+_uiWidth$225611 = -36					; size = 4
+_iPlotY$225605 = -36					; size = 4
+_numPlayers$225560 = -36				; size = 4
+_idx$225612 = -32					; size = 4
+_t$225542 = -32						; size = 4
+$T226248 = -32						; size = 4
+_plotState$225625 = -28					; size = 16
 __$EHRec$ = -12						; size = 12
 _this$ = 8						; size = 4
-_uiY$225614 = 12					; size = 4
-_iPlotX$225605 = 12					; size = 4
-_iTurn$225577 = 12					; size = 4
+_uiY$225613 = 12					; size = 4
+_iPlotX$225604 = 12					; size = 4
+_iTurn$225576 = 12					; size = 4
 _L$ = 12						; size = 4
-_uiX$225618 = 16					; size = 4
-_i$225590 = 16						; size = 4
-_uiDataSet$225581 = 16					; size = 4
+_uiX$225617 = 16					; size = 4
+_i$225589 = 16						; size = 4
+_uiDataSet$225580 = 16					; size = 4
 _stream$ = 16						; size = 4
 ?PushReplayFromStream@CvDllScriptSystemUtility@@UAGXPAUlua_State@@AAVFDataStream@@@Z PROC ; CvDllScriptSystemUtility::PushReplayFromStream, COMDAT
 
@@ -3211,7 +3211,7 @@ _stream$ = 16						; size = 4
 	push	232					; 000000e8H
 	call	??2@YAPAXI@Z				; operator new
 	add	esp, 4
-	mov	DWORD PTR $T226249[esp+56], eax
+	mov	DWORD PTR $T226248[esp+56], eax
 	xor	ebx, ebx
 	mov	DWORD PTR __$EHRec$[esp+64], ebx
 	cmp	eax, ebx
@@ -3289,7 +3289,7 @@ $LN28@PushReplay:
 ; 161  : 		lua_pushstring(L, pkReplay->getMapScriptName());
 
 	mov	ecx, edi
-	mov	DWORD PTR _t$225543[esp+64], ebp
+	mov	DWORD PTR _t$225542[esp+64], ebp
 	call	?getMapScriptName@CvReplayInfo@@QBEABVCvString@@XZ ; CvReplayInfo::getMapScriptName
 	mov	ecx, eax
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
@@ -3299,7 +3299,7 @@ $LN28@PushReplay:
 
 ; 162  : 		lua_setfield(L, t, "MapScriptName");
 
-	push	OFFSET $SG225544
+	push	OFFSET $SG225543
 	push	ebp
 	push	esi
 	call	_lua_setfield
@@ -3316,7 +3316,7 @@ $LN28@PushReplay:
 
 ; 165  : 		lua_setfield(L, t, "ActivePlayer");
 
-	push	OFFSET $SG225545
+	push	OFFSET $SG225544
 	push	ebp
 	push	esi
 	call	_lua_setfield
@@ -3333,7 +3333,7 @@ $LN28@PushReplay:
 
 ; 168  : 		lua_setfield(L, t, "WorldSize");
 
-	push	OFFSET $SG225546
+	push	OFFSET $SG225545
 	push	ebp
 	push	esi
 	call	_lua_setfield
@@ -3350,7 +3350,7 @@ $LN28@PushReplay:
 
 ; 171  : 		lua_setfield(L, t, "Climate");
 
-	push	OFFSET $SG225547
+	push	OFFSET $SG225546
 	push	ebp
 	push	esi
 	call	_lua_setfield
@@ -3367,7 +3367,7 @@ $LN28@PushReplay:
 
 ; 174  : 		lua_setfield(L, t, "SeaLevel");
 
-	push	OFFSET $SG225548
+	push	OFFSET $SG225547
 	push	ebp
 	push	esi
 	call	_lua_setfield
@@ -3384,7 +3384,7 @@ $LN28@PushReplay:
 
 ; 177  : 		lua_setfield(L, t, "Era");
 
-	push	OFFSET $SG225549
+	push	OFFSET $SG225548
 	push	ebp
 	push	esi
 	call	_lua_setfield
@@ -3401,7 +3401,7 @@ $LN28@PushReplay:
 
 ; 180  : 		lua_setfield(L, t, "GameSpeed");
 
-	push	OFFSET $SG225550
+	push	OFFSET $SG225549
 	push	ebp
 	push	esi
 	call	_lua_setfield
@@ -3418,7 +3418,7 @@ $LN28@PushReplay:
 
 ; 183  : 		lua_setfield(L, t, "VictoryType");
 
-	push	OFFSET $SG225551
+	push	OFFSET $SG225550
 	push	ebp
 	push	esi
 	call	_lua_setfield
@@ -3435,7 +3435,7 @@ $LN28@PushReplay:
 
 ; 186  : 		lua_setfield(L, t, "GameType");
 
-	push	OFFSET $SG225552
+	push	OFFSET $SG225551
 	push	ebp
 	push	esi
 	call	_lua_setfield
@@ -3452,7 +3452,7 @@ $LN28@PushReplay:
 
 ; 189  : 		lua_setfield(L, t, "InitialTurn");
 
-	push	OFFSET $SG225553
+	push	OFFSET $SG225552
 	push	ebp
 	push	esi
 	call	_lua_setfield
@@ -3469,7 +3469,7 @@ $LN28@PushReplay:
 
 ; 192  : 		lua_setfield(L, t, "FinalTurn");
 
-	push	OFFSET $SG225554
+	push	OFFSET $SG225553
 	push	ebp
 	push	esi
 	call	_lua_setfield
@@ -3486,7 +3486,7 @@ $LN28@PushReplay:
 
 ; 195  : 		lua_setfield(L, t, "StartYear");
 
-	push	OFFSET $SG225555
+	push	OFFSET $SG225554
 	push	ebp
 	push	esi
 	call	_lua_setfield
@@ -3503,7 +3503,7 @@ $LN28@PushReplay:
 
 ; 198  : 		lua_setfield(L, t, "FinalDate");
 
-	push	OFFSET $SG225556
+	push	OFFSET $SG225555
 	push	ebp
 	push	esi
 	call	_lua_setfield
@@ -3520,7 +3520,7 @@ $LN28@PushReplay:
 
 ; 201  : 		lua_setfield(L, t, "Calendar");
 
-	push	OFFSET $SG225557
+	push	OFFSET $SG225556
 	push	ebp
 	push	esi
 	call	_lua_setfield
@@ -3537,7 +3537,7 @@ $LN28@PushReplay:
 
 ; 204  : 		lua_setfield(L, t, "NormalizedScore");
 
-	push	OFFSET $SG225558
+	push	OFFSET $SG225557
 	push	ebp
 	push	esi
 	call	_lua_setfield
@@ -3554,7 +3554,7 @@ $LN28@PushReplay:
 
 ; 207  : 		lua_setfield(L, t, "MapHeight");
 
-	push	OFFSET $SG225559
+	push	OFFSET $SG225558
 	push	ebp
 	push	esi
 	call	_lua_setfield
@@ -3571,7 +3571,7 @@ $LN28@PushReplay:
 
 ; 210  : 		lua_setfield(L, t, "MapWidth");
 
-	push	OFFSET $SG225560
+	push	OFFSET $SG225559
 	push	ebp
 	push	esi
 	call	_lua_setfield
@@ -3588,7 +3588,7 @@ $LN28@PushReplay:
 	push	ebx
 	push	eax
 	push	esi
-	mov	DWORD PTR _numPlayers$225561[esp+76], eax
+	mov	DWORD PTR _numPlayers$225560[esp+76], eax
 	call	_lua_createtable
 	add	esp, 12					; 0000000cH
 
@@ -3601,8 +3601,8 @@ $LN28@PushReplay:
 ; 216  : 
 ; 217  : 		for(int iPlayer = 0; iPlayer < numPlayers; iPlayer++)
 
-	cmp	DWORD PTR _numPlayers$225561[esp+64], ebx
-	mov	DWORD PTR _uiNumDataSets$225562[esp+64], eax
+	cmp	DWORD PTR _numPlayers$225560[esp+64], ebx
+	mov	DWORD PTR _uiNumDataSets$225561[esp+64], eax
 	jle	$LN24@PushReplay
 	npad	4
 $LL61@PushReplay:
@@ -3634,7 +3634,7 @@ $LL61@PushReplay:
 
 ; 223  : 			lua_setfield(L, playerIdx, "Civilization");
 
-	push	OFFSET $SG225568
+	push	OFFSET $SG225567
 	push	ebp
 	push	esi
 	call	_lua_setfield
@@ -3652,7 +3652,7 @@ $LL61@PushReplay:
 
 ; 226  : 			lua_setfield(L, playerIdx, "Leader");
 
-	push	OFFSET $SG225569
+	push	OFFSET $SG225568
 	push	ebp
 	push	esi
 	call	_lua_setfield
@@ -3670,7 +3670,7 @@ $LL61@PushReplay:
 
 ; 229  : 			lua_setfield(L, playerIdx, "PlayerColor");
 
-	push	OFFSET $SG225570
+	push	OFFSET $SG225569
 	push	ebp
 	push	esi
 	call	_lua_setfield
@@ -3688,7 +3688,7 @@ $LL61@PushReplay:
 
 ; 232  : 			lua_setfield(L, playerIdx, "Difficulty");
 
-	push	OFFSET $SG225571
+	push	OFFSET $SG225570
 	push	ebp
 	push	esi
 	call	_lua_setfield
@@ -3706,7 +3706,7 @@ $LL61@PushReplay:
 
 ; 235  : 			lua_setfield(L, playerIdx, "LeaderName");
 
-	push	OFFSET $SG225572
+	push	OFFSET $SG225571
 	push	ebp
 	push	esi
 	call	_lua_setfield
@@ -3724,7 +3724,7 @@ $LL61@PushReplay:
 
 ; 238  : 			lua_setfield(L, playerIdx, "CivDescription");
 
-	push	OFFSET $SG225573
+	push	OFFSET $SG225572
 	push	ebp
 	push	esi
 	call	_lua_setfield
@@ -3742,7 +3742,7 @@ $LL61@PushReplay:
 
 ; 241  : 			lua_setfield(L, playerIdx, "CivShortDescription");
 
-	push	OFFSET $SG225574
+	push	OFFSET $SG225573
 	push	ebp
 	push	esi
 	call	_lua_setfield
@@ -3760,7 +3760,7 @@ $LL61@PushReplay:
 
 ; 244  : 			lua_setfield(L, playerIdx, "CivAdjective");
 
-	push	OFFSET $SG225575
+	push	OFFSET $SG225574
 	push	ebp
 	push	esi
 	call	_lua_setfield
@@ -3783,10 +3783,10 @@ $LL61@PushReplay:
 ; 249  : 			for(int iTurn = pkReplay->getInitialTurn(); iTurn <= iFinalTurn; ++iTurn)
 
 	mov	ecx, edi
-	mov	DWORD PTR _iFinalTurn$225576[esp+64], eax
+	mov	DWORD PTR _iFinalTurn$225575[esp+64], eax
 	call	?getInitialTurn@CvReplayInfo@@QBEHXZ	; CvReplayInfo::getInitialTurn
-	cmp	eax, DWORD PTR _iFinalTurn$225576[esp+64]
-	mov	DWORD PTR _iTurn$225577[esp+60], eax
+	cmp	eax, DWORD PTR _iFinalTurn$225575[esp+64]
+	mov	DWORD PTR _iTurn$225576[esp+60], eax
 	jg	$LN21@PushReplay
 	npad	1
 $LL23@PushReplay:
@@ -3803,8 +3803,8 @@ $LL23@PushReplay:
 ; 252  : 
 ; 253  : 				for(unsigned int uiDataSet = 0; uiDataSet < uiNumDataSets; ++uiDataSet)
 
-	cmp	DWORD PTR _uiNumDataSets$225562[esp+64], 0
-	mov	DWORD PTR _uiDataSet$225581[esp+60], 0
+	cmp	DWORD PTR _uiNumDataSets$225561[esp+64], 0
+	mov	DWORD PTR _uiDataSet$225580[esp+60], 0
 	jbe	SHORT $LN18@PushReplay
 	npad	4
 $LL62@PushReplay:
@@ -3813,15 +3813,15 @@ $LL62@PushReplay:
 ; 255  : 					int iValue = 0;
 ; 256  : 					if(pkReplay->getPlayerDataSetValue(iPlayer, uiDataSet, iTurn, iValue))
 
-	mov	edx, DWORD PTR _iTurn$225577[esp+60]
-	mov	eax, DWORD PTR _uiDataSet$225581[esp+60]
-	lea	ecx, DWORD PTR _iValue$225585[esp+64]
+	mov	edx, DWORD PTR _iTurn$225576[esp+60]
+	mov	eax, DWORD PTR _uiDataSet$225580[esp+60]
+	lea	ecx, DWORD PTR _iValue$225584[esp+64]
 	push	ecx
 	push	edx
 	push	eax
 	push	ebx
 	mov	ecx, edi
-	mov	DWORD PTR _iValue$225585[esp+80], 0
+	mov	DWORD PTR _iValue$225584[esp+80], 0
 	call	?getPlayerDataSetValue@CvReplayInfo@@QBE_NIIIAAH@Z ; CvReplayInfo::getPlayerDataSetValue
 	test	al, al
 	je	SHORT $LN19@PushReplay
@@ -3829,14 +3829,14 @@ $LL62@PushReplay:
 ; 257  : 					{
 ; 258  : 						lua_pushinteger(L, iValue);
 
-	mov	ecx, DWORD PTR _iValue$225585[esp+64]
+	mov	ecx, DWORD PTR _iValue$225584[esp+64]
 	push	ecx
 	push	esi
 	call	_lua_pushinteger
 
 ; 259  : 						lua_setfield(L, -2, pkReplay->getPlayerDataSetName(uiDataSet));
 
-	mov	edx, DWORD PTR _uiDataSet$225581[esp+68]
+	mov	edx, DWORD PTR _uiDataSet$225580[esp+68]
 	add	esp, 8
 	push	edx
 	mov	ecx, edi
@@ -3847,10 +3847,10 @@ $LL62@PushReplay:
 	call	_lua_setfield
 	add	esp, 12					; 0000000cH
 $LN19@PushReplay:
-	mov	eax, DWORD PTR _uiDataSet$225581[esp+60]
+	mov	eax, DWORD PTR _uiDataSet$225580[esp+60]
 	inc	eax
-	mov	DWORD PTR _uiDataSet$225581[esp+60], eax
-	cmp	eax, DWORD PTR _uiNumDataSets$225562[esp+64]
+	mov	DWORD PTR _uiDataSet$225580[esp+60], eax
+	cmp	eax, DWORD PTR _uiNumDataSets$225561[esp+64]
 	jb	SHORT $LL62@PushReplay
 $LN18@PushReplay:
 
@@ -3859,23 +3859,23 @@ $LN18@PushReplay:
 ; 262  : 
 ; 263  : 				lua_rawseti(L, -2, iTurn);
 
-	mov	eax, DWORD PTR _iTurn$225577[esp+60]
+	mov	eax, DWORD PTR _iTurn$225576[esp+60]
 	push	eax
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_rawseti
-	mov	eax, DWORD PTR _iTurn$225577[esp+72]
+	mov	eax, DWORD PTR _iTurn$225576[esp+72]
 	inc	eax
 	add	esp, 12					; 0000000cH
-	cmp	eax, DWORD PTR _iFinalTurn$225576[esp+64]
-	mov	DWORD PTR _iTurn$225577[esp+60], eax
+	cmp	eax, DWORD PTR _iFinalTurn$225575[esp+64]
+	mov	DWORD PTR _iTurn$225576[esp+60], eax
 	jle	$LL23@PushReplay
 $LN21@PushReplay:
 
 ; 264  : 			}
 ; 265  : 			lua_setfield(L, playerIdx, "Scores");
 
-	push	OFFSET $SG225587
+	push	OFFSET $SG225586
 	push	ebp
 	push	esi
 	call	_lua_setfield
@@ -3889,19 +3889,19 @@ $LN21@PushReplay:
 	push	esi
 	call	_lua_rawseti
 	add	esp, 24					; 00000018H
-	cmp	ebx, DWORD PTR _numPlayers$225561[esp+64]
+	cmp	ebx, DWORD PTR _numPlayers$225560[esp+64]
 	jl	$LL61@PushReplay
 
 ; 216  : 
 ; 217  : 		for(int iPlayer = 0; iPlayer < numPlayers; iPlayer++)
 
-	mov	ebp, DWORD PTR _t$225543[esp+64]
+	mov	ebp, DWORD PTR _t$225542[esp+64]
 $LN24@PushReplay:
 
 ; 268  : 		}
 ; 269  : 		lua_setfield(L, t, "PlayerInfo");
 
-	push	OFFSET $SG225588
+	push	OFFSET $SG225587
 	push	ebp
 	push	esi
 	call	_lua_setfield
@@ -3919,13 +3919,13 @@ $LN24@PushReplay:
 	push	0
 	push	ebx
 	push	esi
-	mov	DWORD PTR _numReplayMessages$225589[esp+76], ebx
+	mov	DWORD PTR _numReplayMessages$225588[esp+76], ebx
 	call	_lua_createtable
 	add	esp, 12					; 0000000cH
 
 ; 273  : 		for(int i = 0; i < numReplayMessages; i++)
 
-	mov	DWORD PTR _i$225590[esp+60], 0
+	mov	DWORD PTR _i$225589[esp+60], 0
 	test	ebx, ebx
 	jle	$LN63@PushReplay
 	npad	6
@@ -3934,7 +3934,7 @@ $LL64@PushReplay:
 ; 274  : 		{
 ; 275  : 			const CvReplayMessage* pkMessage = pkReplay->getReplayMessage(i);
 
-	mov	ecx, DWORD PTR _i$225590[esp+60]
+	mov	ecx, DWORD PTR _i$225589[esp+60]
 	push	ecx
 	mov	ecx, edi
 	call	?getReplayMessage@CvReplayInfo@@QBEPBVCvReplayMessage@@I@Z ; CvReplayInfo::getReplayMessage
@@ -3959,7 +3959,7 @@ $LL64@PushReplay:
 
 ; 279  : 			lua_setfield(L, -2, "Turn");
 
-	push	OFFSET $SG225595
+	push	OFFSET $SG225594
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -3976,7 +3976,7 @@ $LL64@PushReplay:
 
 ; 282  : 			lua_setfield(L, -2, "Type");
 
-	push	OFFSET $SG225596
+	push	OFFSET $SG225595
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4000,7 +4000,7 @@ $LN36@PushReplay:
 
 ; 286  : 			lua_setfield(L, -2, "Player");
 
-	push	OFFSET $SG225598
+	push	OFFSET $SG225597
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4019,7 +4019,7 @@ $LN36@PushReplay:
 
 ; 289  : 			lua_setfield(L, -2, "Text");
 
-	push	OFFSET $SG225599
+	push	OFFSET $SG225598
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4036,7 +4036,7 @@ $LN36@PushReplay:
 	push	0
 	push	eax
 	push	esi
-	mov	DWORD PTR _numPlots$225600[esp+76], eax
+	mov	DWORD PTR _numPlots$225599[esp+76], eax
 	call	_lua_createtable
 
 ; 293  : 			for(int iPlot = 0; iPlot < numPlots; ++iPlot)
@@ -4044,7 +4044,7 @@ $LN36@PushReplay:
 	xor	eax, eax
 	add	esp, 12					; 0000000cH
 	xor	ebx, ebx
-	cmp	DWORD PTR _numPlots$225600[esp+64], eax
+	cmp	DWORD PTR _numPlots$225599[esp+64], eax
 	jle	SHORT $LN11@PushReplay
 	jmp	SHORT $LN13@PushReplay
 $LL65@PushReplay:
@@ -4056,11 +4056,11 @@ $LN13@PushReplay:
 ; 296  : 				int iPlotY = 0;
 ; 297  : 				pkMessage->getPlot(iPlot, iPlotX, iPlotY);
 
-	lea	edx, DWORD PTR _iPlotY$225606[esp+64]
-	mov	DWORD PTR _iPlotX$225605[esp+60], eax
-	mov	DWORD PTR _iPlotY$225606[esp+64], eax
+	lea	edx, DWORD PTR _iPlotY$225605[esp+64]
+	mov	DWORD PTR _iPlotX$225604[esp+60], eax
+	mov	DWORD PTR _iPlotY$225605[esp+64], eax
 	push	edx
-	lea	eax, DWORD PTR _iPlotX$225605[esp+64]
+	lea	eax, DWORD PTR _iPlotX$225604[esp+64]
 	push	eax
 	push	ebx
 	mov	ecx, ebp
@@ -4076,14 +4076,14 @@ $LN13@PushReplay:
 
 ; 300  : 				lua_pushinteger(L, iPlotX);
 
-	mov	ecx, DWORD PTR _iPlotX$225605[esp+72]
+	mov	ecx, DWORD PTR _iPlotX$225604[esp+72]
 	push	ecx
 	push	esi
 	call	_lua_pushinteger
 
 ; 301  : 				lua_setfield(L, -2, "X");
 
-	push	OFFSET $SG225607
+	push	OFFSET $SG225606
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4091,14 +4091,14 @@ $LN13@PushReplay:
 ; 302  : 
 ; 303  : 				lua_pushinteger(L, iPlotY);
 
-	mov	edx, DWORD PTR _iPlotY$225606[esp+96]
+	mov	edx, DWORD PTR _iPlotY$225605[esp+96]
 	push	edx
 	push	esi
 	call	_lua_pushinteger
 
 ; 304  : 				lua_setfield(L, -2, "Y");
 
-	push	OFFSET $SG225608
+	push	OFFSET $SG225607
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4112,14 +4112,14 @@ $LN13@PushReplay:
 	push	esi
 	call	_lua_rawseti
 	add	esp, 64					; 00000040H
-	cmp	ebx, DWORD PTR _numPlots$225600[esp+64]
+	cmp	ebx, DWORD PTR _numPlots$225599[esp+64]
 	jl	SHORT $LL65@PushReplay
 $LN11@PushReplay:
 
 ; 307  : 			}
 ; 308  : 			lua_setfield(L, -2, "Plots");
 
-	push	OFFSET $SG225609
+	push	OFFSET $SG225608
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4127,26 +4127,26 @@ $LN11@PushReplay:
 ; 309  : 
 ; 310  : 			lua_rawseti(L, -2, i);
 
-	mov	ebx, DWORD PTR _i$225590[esp+72]
+	mov	ebx, DWORD PTR _i$225589[esp+72]
 	push	ebx
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_rawseti
 	inc	ebx
 	add	esp, 24					; 00000018H
-	cmp	ebx, DWORD PTR _numReplayMessages$225589[esp+64]
-	mov	DWORD PTR _i$225590[esp+60], ebx
+	cmp	ebx, DWORD PTR _numReplayMessages$225588[esp+64]
+	mov	DWORD PTR _i$225589[esp+60], ebx
 	jl	$LL64@PushReplay
 
 ; 273  : 		for(int i = 0; i < numReplayMessages; i++)
 
-	mov	ebp, DWORD PTR _t$225543[esp+64]
+	mov	ebp, DWORD PTR _t$225542[esp+64]
 $LN63@PushReplay:
 
 ; 311  : 		}
 ; 312  : 		lua_setfield(L, t, "Messages");
 
-	push	OFFSET $SG225610
+	push	OFFSET $SG225609
 	push	ebp
 	push	esi
 	call	_lua_setfield
@@ -4162,9 +4162,9 @@ $LN63@PushReplay:
 ; 315  : 		const int uiWidth = pkReplay->getMapWidth();
 
 	mov	ecx, edi
-	mov	DWORD PTR _uiHeight$225611[esp+64], ebx
+	mov	DWORD PTR _uiHeight$225610[esp+64], ebx
 	call	?getMapWidth@CvReplayInfo@@QBEHXZ	; CvReplayInfo::getMapWidth
-	mov	DWORD PTR _uiWidth$225612[esp+64], eax
+	mov	DWORD PTR _uiWidth$225611[esp+64], eax
 
 ; 316  : 
 ; 317  : 		lua_createtable(L, uiHeight * uiWidth, 0);
@@ -4178,11 +4178,11 @@ $LN63@PushReplay:
 
 ; 318  : 		int idx = 1;
 
-	mov	DWORD PTR _idx$225613[esp+64], 1
+	mov	DWORD PTR _idx$225612[esp+64], 1
 
 ; 319  : 		for(int uiY = 0; uiY < uiHeight; ++uiY)
 
-	mov	DWORD PTR _uiY$225614[esp+60], 0
+	mov	DWORD PTR _uiY$225613[esp+60], 0
 	test	ebx, ebx
 	jle	$LN8@PushReplay
 	npad	5
@@ -4191,8 +4191,8 @@ $LL67@PushReplay:
 ; 320  : 		{
 ; 321  : 			for(int uiX = 0; uiX < uiWidth; ++uiX)
 
-	cmp	DWORD PTR _uiWidth$225612[esp+64], 0
-	mov	DWORD PTR _uiX$225618[esp+60], 0
+	cmp	DWORD PTR _uiWidth$225611[esp+64], 0
+	mov	DWORD PTR _uiX$225617[esp+60], 0
 	jle	$LN9@PushReplay
 $LL66@PushReplay:
 
@@ -4221,9 +4221,9 @@ $LL4@PushReplay:
 ; 326  : 					CvReplayInfo::PlotState plotState;
 ; 327  : 					if(pkReplay->getPlotState(uiX, uiY, i, plotState))
 
-	mov	ecx, DWORD PTR _uiY$225614[esp+60]
-	mov	edx, DWORD PTR _uiX$225618[esp+60]
-	lea	eax, DWORD PTR _plotState$225626[esp+64]
+	mov	ecx, DWORD PTR _uiY$225613[esp+60]
+	mov	edx, DWORD PTR _uiX$225617[esp+60]
+	lea	eax, DWORD PTR _plotState$225625[esp+64]
 	push	eax
 	push	ebx
 	push	ecx
@@ -4244,14 +4244,14 @@ $LL4@PushReplay:
 ; 330  : 
 ; 331  : 						lua_pushinteger(L, plotState.m_ePlotType);
 
-	mov	eax, DWORD PTR _plotState$225626[esp+76]
+	mov	eax, DWORD PTR _plotState$225625[esp+76]
 	push	eax
 	push	esi
 	call	_lua_pushinteger
 
 ; 332  : 						lua_setfield(L, -2, "PlotType");
 
-	push	OFFSET $SG225628
+	push	OFFSET $SG225627
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4259,14 +4259,14 @@ $LL4@PushReplay:
 ; 333  : 
 ; 334  : 						lua_pushinteger(L, plotState.m_eTerrain);
 
-	mov	ecx, DWORD PTR _plotState$225626[esp+100]
+	mov	ecx, DWORD PTR _plotState$225625[esp+100]
 	push	ecx
 	push	esi
 	call	_lua_pushinteger
 
 ; 335  : 						lua_setfield(L, -2, "TerrainType");
 
-	push	OFFSET $SG225629
+	push	OFFSET $SG225628
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4274,14 +4274,14 @@ $LL4@PushReplay:
 ; 336  : 
 ; 337  : 						lua_pushinteger(L, plotState.m_eFeature);
 
-	mov	edx, DWORD PTR _plotState$225626[esp+124]
+	mov	edx, DWORD PTR _plotState$225625[esp+124]
 	push	edx
 	push	esi
 	call	_lua_pushinteger
 
 ; 338  : 						lua_setfield(L, -2, "FeatureType");
 
-	push	OFFSET $SG225630
+	push	OFFSET $SG225629
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4289,7 +4289,7 @@ $LL4@PushReplay:
 ; 339  : 
 ; 340  : 						lua_pushinteger(L, plotState.m_bNEOfRiver);
 
-	movzx	eax, BYTE PTR _plotState$225626[esp+148]
+	movzx	eax, BYTE PTR _plotState$225625[esp+148]
 	add	esp, 72					; 00000048H
 	push	eax
 	push	esi
@@ -4297,7 +4297,7 @@ $LL4@PushReplay:
 
 ; 341  : 						lua_setfield(L, -2, "NEOfRiver");
 
-	push	OFFSET $SG225631
+	push	OFFSET $SG225630
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4305,14 +4305,14 @@ $LL4@PushReplay:
 ; 342  : 
 ; 343  : 						lua_pushinteger(L, plotState.m_bWOfRiver);
 
-	movzx	ecx, BYTE PTR _plotState$225626[esp+97]
+	movzx	ecx, BYTE PTR _plotState$225625[esp+97]
 	push	ecx
 	push	esi
 	call	_lua_pushinteger
 
 ; 344  : 						lua_setfield(L, -2, "WOfRiver");
 
-	push	OFFSET $SG225632
+	push	OFFSET $SG225631
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4320,14 +4320,14 @@ $LL4@PushReplay:
 ; 345  : 
 ; 346  : 						lua_pushinteger(L, plotState.m_bNWOfRiver);
 
-	movzx	edx, BYTE PTR _plotState$225626[esp+118]
+	movzx	edx, BYTE PTR _plotState$225625[esp+118]
 	push	edx
 	push	esi
 	call	_lua_pushinteger
 
 ; 347  : 						lua_setfield(L, -2, "NWOfRiver");
 
-	push	OFFSET $SG225633
+	push	OFFSET $SG225632
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -4353,32 +4353,32 @@ $LN2@PushReplay:
 ; 352  : 
 ; 353  : 				lua_rawseti(L, -2, idx++);
 
-	mov	ebx, DWORD PTR _idx$225613[esp+64]
+	mov	ebx, DWORD PTR _idx$225612[esp+64]
 	push	ebx
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_rawseti
-	mov	eax, DWORD PTR _uiX$225618[esp+72]
+	mov	eax, DWORD PTR _uiX$225617[esp+72]
 	inc	eax
 	inc	ebx
 	add	esp, 12					; 0000000cH
-	cmp	eax, DWORD PTR _uiWidth$225612[esp+64]
-	mov	DWORD PTR _idx$225613[esp+64], ebx
-	mov	DWORD PTR _uiX$225618[esp+60], eax
+	cmp	eax, DWORD PTR _uiWidth$225611[esp+64]
+	mov	DWORD PTR _idx$225612[esp+64], ebx
+	mov	DWORD PTR _uiX$225617[esp+60], eax
 	jl	$LL66@PushReplay
 
 ; 320  : 		{
 ; 321  : 			for(int uiX = 0; uiX < uiWidth; ++uiX)
 
-	mov	ebx, DWORD PTR _uiHeight$225611[esp+64]
+	mov	ebx, DWORD PTR _uiHeight$225610[esp+64]
 $LN9@PushReplay:
 
 ; 319  : 		for(int uiY = 0; uiY < uiHeight; ++uiY)
 
-	mov	eax, DWORD PTR _uiY$225614[esp+60]
+	mov	eax, DWORD PTR _uiY$225613[esp+60]
 	inc	eax
 	cmp	eax, ebx
-	mov	DWORD PTR _uiY$225614[esp+60], eax
+	mov	DWORD PTR _uiY$225613[esp+60], eax
 	jl	$LL67@PushReplay
 $LN8@PushReplay:
 
@@ -4386,7 +4386,7 @@ $LN8@PushReplay:
 ; 355  : 		}
 ; 356  : 		lua_setfield(L, t, "Plots");
 
-	push	OFFSET $SG225634
+	push	OFFSET $SG225633
 	push	ebp
 	push	esi
 	call	_lua_setfield
@@ -4417,7 +4417,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?PushReplayFromStream@CvDllScriptSystemUtility@@UAGXPAUlua_State@@AAVFDataStream@@@Z$0:
-	mov	eax, DWORD PTR $T226249[ebp]
+	mov	eax, DWORD PTR $T226248[ebp]
 	push	eax
 	call	??3@YAXPAX@Z				; operator delete
 	pop	ecx

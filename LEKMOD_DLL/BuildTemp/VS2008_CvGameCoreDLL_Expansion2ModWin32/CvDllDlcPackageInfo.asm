@@ -10,10 +10,10 @@ INCLUDELIB MSVCRT
 INCLUDELIB OLDNAMES
 
 _DATA	SEGMENT
-_CIV5_XP2_DLL_VERSION DD FLAT:$SG218036
+_CIV5_XP2_DLL_VERSION DD FLAT:$SG218035
 _DATA	ENDS
 CONST	SEGMENT
-$SG218036 DB	'1.0.0', 00H
+$SG218035 DB	'1.0.0', 00H
 	ORG $+2
 _guidICvUnknown DD 0d89ba82fH
 	DW	09fa3H
@@ -1473,12 +1473,12 @@ PUBLIC	?GetInterfaceId@ICvUnknown@@SG?AU_GUID@@XZ	; ICvUnknown::GetInterfaceId
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredllutil\include\cvdllinterfaces.h
 ;	COMDAT ?GetInterfaceId@ICvUnknown@@SG?AU_GUID@@XZ
 _TEXT	SEGMENT
-$T221033 = 8						; size = 4
+$T221032 = 8						; size = 4
 ?GetInterfaceId@ICvUnknown@@SG?AU_GUID@@XZ PROC		; ICvUnknown::GetInterfaceId, COMDAT
 
 ; 306  : 	static GUID DLLCALL GetInterfaceId(){ return guidICvUnknown; }
 
-	mov	eax, DWORD PTR $T221033[esp-4]
+	mov	eax, DWORD PTR $T221032[esp-4]
 	mov	ecx, DWORD PTR _guidICvUnknown
 	mov	edx, DWORD PTR _guidICvUnknown+4
 	mov	DWORD PTR [eax], ecx
@@ -1494,12 +1494,12 @@ PUBLIC	?GetInterfaceId@ICvEnumerator@@SG?AU_GUID@@XZ	; ICvEnumerator::GetInterfa
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?GetInterfaceId@ICvEnumerator@@SG?AU_GUID@@XZ
 _TEXT	SEGMENT
-$T221037 = 8						; size = 4
+$T221036 = 8						; size = 4
 ?GetInterfaceId@ICvEnumerator@@SG?AU_GUID@@XZ PROC	; ICvEnumerator::GetInterfaceId, COMDAT
 
 ; 332  : 	static GUID DLLCALL GetInterfaceId(){ return guidICvEnumerator; }
 
-	mov	eax, DWORD PTR $T221037[esp-4]
+	mov	eax, DWORD PTR $T221036[esp-4]
 	mov	ecx, DWORD PTR _guidICvEnumerator
 	mov	edx, DWORD PTR _guidICvEnumerator+4
 	mov	DWORD PTR [eax], ecx
@@ -1515,12 +1515,12 @@ PUBLIC	?GetInterfaceId@ICvDlcPackageInfo1@@SG?AU_GUID@@XZ ; ICvDlcPackageInfo1::
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?GetInterfaceId@ICvDlcPackageInfo1@@SG?AU_GUID@@XZ
 _TEXT	SEGMENT
-$T221041 = 8						; size = 4
+$T221040 = 8						; size = 4
 ?GetInterfaceId@ICvDlcPackageInfo1@@SG?AU_GUID@@XZ PROC	; ICvDlcPackageInfo1::GetInterfaceId, COMDAT
 
 ; 384  : 	static GUID DLLCALL GetInterfaceId() { return guidICvDlcPackageInfo1; }
 
-	mov	eax, DWORD PTR $T221041[esp-4]
+	mov	eax, DWORD PTR $T221040[esp-4]
 	mov	ecx, DWORD PTR _guidICvDlcPackageInfo1
 	mov	edx, DWORD PTR _guidICvDlcPackageInfo1+4
 	mov	DWORD PTR [eax], ecx
@@ -1564,8 +1564,8 @@ _TEXT	SEGMENT
 _TEXT	ENDS
 ;	COMDAT ?QueryInterface@CvDllDlcPackageInfo@@UAGPAXU_GUID@@@Z
 _TEXT	SEGMENT
-$T221053 = -16						; size = 16
-$T221051 = -16						; size = 16
+$T221052 = -16						; size = 16
+$T221050 = -16						; size = 16
 _this$ = 8						; size = 4
 _guidInterface$ = 12					; size = 16
 ?QueryInterface@CvDllDlcPackageInfo@@UAGPAXU_GUID@@@Z PROC ; CvDllDlcPackageInfo::QueryInterface, COMDAT
@@ -1580,15 +1580,15 @@ _guidInterface$ = 12					; size = 16
 	mov	ecx, DWORD PTR _guidICvUnknown+4
 	mov	edx, DWORD PTR _guidICvUnknown+8
 	mov	eax, DWORD PTR _guidICvUnknown
-	mov	DWORD PTR $T221051[esp+20], ecx
-	lea	ecx, DWORD PTR $T221051[esp+16]
-	mov	DWORD PTR $T221051[esp+24], edx
-	mov	DWORD PTR $T221051[esp+16], eax
+	mov	DWORD PTR $T221050[esp+20], ecx
+	lea	ecx, DWORD PTR $T221050[esp+16]
+	mov	DWORD PTR $T221050[esp+24], edx
+	mov	DWORD PTR $T221050[esp+16], eax
 	mov	eax, DWORD PTR _guidICvUnknown+12
 	push	ecx
 	lea	edx, DWORD PTR _guidInterface$[esp+16]
 	push	edx
-	mov	DWORD PTR $T221051[esp+36], eax
+	mov	DWORD PTR $T221050[esp+36], eax
 	call	_IsEqualGUID
 	add	esp, 8
 	test	eax, eax
@@ -1596,15 +1596,15 @@ _guidInterface$ = 12					; size = 16
 	mov	ecx, DWORD PTR _guidICvDlcPackageInfo1+4
 	mov	edx, DWORD PTR _guidICvDlcPackageInfo1+8
 	mov	eax, DWORD PTR _guidICvDlcPackageInfo1
-	mov	DWORD PTR $T221053[esp+20], ecx
-	lea	ecx, DWORD PTR $T221053[esp+16]
-	mov	DWORD PTR $T221053[esp+24], edx
-	mov	DWORD PTR $T221053[esp+16], eax
+	mov	DWORD PTR $T221052[esp+20], ecx
+	lea	ecx, DWORD PTR $T221052[esp+16]
+	mov	DWORD PTR $T221052[esp+24], edx
+	mov	DWORD PTR $T221052[esp+16], eax
 	mov	eax, DWORD PTR _guidICvDlcPackageInfo1+12
 	push	ecx
 	lea	edx, DWORD PTR _guidInterface$[esp+16]
 	push	edx
-	mov	DWORD PTR $T221053[esp+36], eax
+	mov	DWORD PTR $T221052[esp+36], eax
 	call	_IsEqualGUID
 	add	esp, 8
 	test	eax, eax
@@ -1661,8 +1661,8 @@ PUBLIC	?QueryInterface@CvDllDlcPackageInfoList@@UAGPAXU_GUID@@@Z ; CvDllDlcPacka
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?QueryInterface@CvDllDlcPackageInfoList@@UAGPAXU_GUID@@@Z
 _TEXT	SEGMENT
-$T221087 = -16						; size = 16
-$T221085 = -16						; size = 16
+$T221086 = -16						; size = 16
+$T221084 = -16						; size = 16
 _this$ = 8						; size = 4
 _guidInterface$ = 12					; size = 16
 ?QueryInterface@CvDllDlcPackageInfoList@@UAGPAXU_GUID@@@Z PROC ; CvDllDlcPackageInfoList::QueryInterface, COMDAT
@@ -1677,15 +1677,15 @@ _guidInterface$ = 12					; size = 16
 	mov	ecx, DWORD PTR _guidICvUnknown+4
 	mov	edx, DWORD PTR _guidICvUnknown+8
 	mov	eax, DWORD PTR _guidICvUnknown
-	mov	DWORD PTR $T221085[esp+20], ecx
-	lea	ecx, DWORD PTR $T221085[esp+16]
-	mov	DWORD PTR $T221085[esp+24], edx
-	mov	DWORD PTR $T221085[esp+16], eax
+	mov	DWORD PTR $T221084[esp+20], ecx
+	lea	ecx, DWORD PTR $T221084[esp+16]
+	mov	DWORD PTR $T221084[esp+24], edx
+	mov	DWORD PTR $T221084[esp+16], eax
 	mov	eax, DWORD PTR _guidICvUnknown+12
 	push	ecx
 	lea	edx, DWORD PTR _guidInterface$[esp+16]
 	push	edx
-	mov	DWORD PTR $T221085[esp+36], eax
+	mov	DWORD PTR $T221084[esp+36], eax
 	call	_IsEqualGUID
 	add	esp, 8
 	test	eax, eax
@@ -1693,15 +1693,15 @@ _guidInterface$ = 12					; size = 16
 	mov	ecx, DWORD PTR _guidICvEnumerator+4
 	mov	edx, DWORD PTR _guidICvEnumerator+8
 	mov	eax, DWORD PTR _guidICvEnumerator
-	mov	DWORD PTR $T221087[esp+20], ecx
-	lea	ecx, DWORD PTR $T221087[esp+16]
-	mov	DWORD PTR $T221087[esp+24], edx
-	mov	DWORD PTR $T221087[esp+16], eax
+	mov	DWORD PTR $T221086[esp+20], ecx
+	lea	ecx, DWORD PTR $T221086[esp+16]
+	mov	DWORD PTR $T221086[esp+24], edx
+	mov	DWORD PTR $T221086[esp+16], eax
 	mov	eax, DWORD PTR _guidICvEnumerator+12
 	push	ecx
 	lea	edx, DWORD PTR _guidInterface$[esp+16]
 	push	edx
-	mov	DWORD PTR $T221087[esp+36], eax
+	mov	DWORD PTR $T221086[esp+36], eax
 	call	_IsEqualGUID
 	add	esp, 8
 	test	eax, eax
@@ -1991,8 +1991,8 @@ __ehfuncinfo$?_Xlen@?$vector@U_GUID@@V?$allocator@U_GUID@@@std@@@std@@KAXXZ DD 0
 xdata$x	ENDS
 ;	COMDAT ?_Xlen@?$vector@U_GUID@@V?$allocator@U_GUID@@@std@@@std@@KAXXZ
 _TEXT	SEGMENT
-$T221181 = -80						; size = 28
-$T221180 = -52						; size = 40
+$T221180 = -80						; size = 28
+$T221179 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ?_Xlen@?$vector@U_GUID@@V?$allocator@U_GUID@@@std@@@std@@KAXXZ PROC ; std::vector<_GUID,std::allocator<_GUID> >::_Xlen, COMDAT
 
@@ -2008,22 +2008,22 @@ __$EHRec$ = -12						; size = 12
 ; 1260 : 		_THROW(length_error, "vector<T> too long");
 
 	push	OFFSET ??_C@_0BD@OLBABOEK@vector?$DMT?$DO?5too?5long?$AA@
-	lea	ecx, DWORD PTR $T221181[esp+84]
+	lea	ecx, DWORD PTR $T221180[esp+84]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T221180[esp+80]
+	lea	ecx, DWORD PTR $T221179[esp+80]
 	mov	DWORD PTR __$EHRec$[esp+88], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T221181[esp+80]
+	lea	eax, DWORD PTR $T221180[esp+80]
 	push	eax
-	lea	ecx, DWORD PTR $T221180[esp+96]
+	lea	ecx, DWORD PTR $T221179[esp+96]
 	mov	BYTE PTR __$EHRec$[esp+92], 1
-	mov	DWORD PTR $T221180[esp+84], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T221179[esp+84], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVlength_error@std@@
-	lea	ecx, DWORD PTR $T221180[esp+84]
+	lea	ecx, DWORD PTR $T221179[esp+84]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+96], 0
-	mov	DWORD PTR $T221180[esp+88], OFFSET ??_7length_error@std@@6B@
+	mov	DWORD PTR $T221179[esp+88], OFFSET ??_7length_error@std@@6B@
 	call	__CxxThrowException@8
 $LN13@Xlen:
 $LN12@Xlen:
@@ -2032,10 +2032,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Xlen@?$vector@U_GUID@@V?$allocator@U_GUID@@@std@@@std@@KAXXZ$0:
-	lea	ecx, DWORD PTR $T221181[ebp]
+	lea	ecx, DWORD PTR $T221180[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Xlen@?$vector@U_GUID@@V?$allocator@U_GUID@@@std@@@std@@KAXXZ$2:
-	lea	ecx, DWORD PTR $T221180[ebp]
+	lea	ecx, DWORD PTR $T221179[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Xlen@?$vector@U_GUID@@V?$allocator@U_GUID@@@std@@@std@@KAXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?_Xlen@?$vector@U_GUID@@V?$allocator@U_GUID@@@std@@@std@@KAXXZ
@@ -2170,8 +2170,8 @@ __TI2?AVbad_alloc@std@@ DD 00H
 xdata$x	ENDS
 ;	COMDAT ??$_Allocate@U_GUID@@@std@@YAPAU_GUID@@IPAU1@@Z
 _TEXT	SEGMENT
-$T221227 = -12						; size = 12
-$T221231 = 8						; size = 4
+$T221226 = -12						; size = 12
+$T221230 = 8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ??$_Allocate@U_GUID@@@std@@YAPAU_GUID@@IPAU1@@Z PROC	; std::_Allocate<_GUID>, COMDAT
@@ -2213,15 +2213,15 @@ $LN3@Allocate:
 
 ; 40   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T221231[esp+8]
+	lea	eax, DWORD PTR $T221230[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T221227[esp+16]
-	mov	DWORD PTR $T221231[esp+12], 0
+	lea	ecx, DWORD PTR $T221226[esp+16]
+	mov	DWORD PTR $T221230[esp+12], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T221227[esp+16]
+	lea	ecx, DWORD PTR $T221226[esp+16]
 	push	ecx
-	mov	DWORD PTR $T221227[esp+20], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T221226[esp+20], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN9@Allocate:
 $LN8@Allocate:
@@ -2977,8 +2977,8 @@ PUBLIC	??$unchecked_uninitialized_copy@PAU_GUID@@PAU1@V?$allocator@U_GUID@@@std@
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$unchecked_uninitialized_copy@PAU_GUID@@PAU1@V?$allocator@U_GUID@@@std@@@stdext@@YAPAU_GUID@@PAU1@00AAV?$allocator@U_GUID@@@std@@@Z
 _TEXT	SEGMENT
-$T221632 = -4						; size = 1
-__Cat$221637 = -4					; size = 1
+$T221631 = -4						; size = 1
+__Cat$221636 = -4					; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
@@ -2994,9 +2994,9 @@ __Al$ = 20						; size = 4
 ; 822  : 		_STD _Ptr_cat(_First, _Dest), _STD _Range_checked_iterator_tag()));
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T221632[esp+4], 0
-	mov	eax, DWORD PTR $T221632[esp+4]
-	mov	ecx, DWORD PTR __Cat$221637[esp+4]
+	mov	BYTE PTR $T221631[esp+4], 0
+	mov	eax, DWORD PTR $T221631[esp+4]
+	mov	ecx, DWORD PTR __Cat$221636[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -3035,8 +3035,8 @@ PUBLIC	??$unchecked_uninitialized_copy@V?$_Const_iterator@$0A@@?$list@U_GUID@@V?
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ??$unchecked_uninitialized_copy@V?$_Const_iterator@$0A@@?$list@U_GUID@@V?$allocator@U_GUID@@@std@@@std@@PAU_GUID@@V?$allocator@U_GUID@@@3@@stdext@@YAPAU_GUID@@V?$_Const_iterator@$0A@@?$list@U_GUID@@V?$allocator@U_GUID@@@std@@@std@@0PAU1@AAV?$allocator@U_GUID@@@4@@Z
 _TEXT	SEGMENT
-$T221644 = -4						; size = 1
-__Cat$221648 = -4					; size = 1
+$T221643 = -4						; size = 1
+__Cat$221647 = -4					; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
@@ -3052,9 +3052,9 @@ __Al$ = 20						; size = 4
 ; 822  : 		_STD _Ptr_cat(_First, _Dest), _STD _Range_checked_iterator_tag()));
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T221644[esp+4], 0
-	mov	eax, DWORD PTR $T221644[esp+4]
-	mov	ecx, DWORD PTR __Cat$221648[esp+4]
+	mov	BYTE PTR $T221643[esp+4], 0
+	mov	eax, DWORD PTR $T221643[esp+4]
+	mov	ecx, DWORD PTR __Cat$221647[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -3076,10 +3076,10 @@ PUBLIC	??$_Uninit_move@PAU_GUID@@PAU1@V?$allocator@U_GUID@@@std@@U_Undefined_mov
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Uninit_move@PAU_GUID@@PAU1@V?$allocator@U_GUID@@@std@@U_Undefined_move_tag@3@@std@@YAPAU_GUID@@PAU1@00AAV?$allocator@U_GUID@@@0@U_Undefined_move_tag@0@U_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
-$T221662 = -4						; size = 1
+$T221661 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$221666 = 16					; size = 1
+__Cat$221665 = 16					; size = 1
 __Dest$ = 16						; size = 4
 __Al$ = 20						; size = 4
 ___formal$ = 24						; size = 1
@@ -3092,10 +3092,10 @@ ___formal$ = 28						; size = 1
 
 ; 207  : 	return (_STDEXT unchecked_uninitialized_copy(_First, _Last, _Dest, _Al));
 
-	mov	ecx, DWORD PTR __Cat$221666[esp]
+	mov	ecx, DWORD PTR __Cat$221665[esp]
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T221662[esp+4], 0
-	mov	eax, DWORD PTR $T221662[esp+4]
+	mov	BYTE PTR $T221661[esp+4], 0
+	mov	eax, DWORD PTR $T221661[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -3163,10 +3163,10 @@ PUBLIC	??$_Ucopy@V?$_Const_iterator@$0A@@?$list@U_GUID@@V?$allocator@U_GUID@@@st
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Ucopy@V?$_Const_iterator@$0A@@?$list@U_GUID@@V?$allocator@U_GUID@@@std@@@std@@@?$vector@U_GUID@@V?$allocator@U_GUID@@@std@@@std@@IAEPAU_GUID@@V?$_Const_iterator@$0A@@?$list@U_GUID@@V?$allocator@U_GUID@@@std@@@1@0PAU2@@Z
 _TEXT	SEGMENT
-$T221689 = -4						; size = 1
+$T221688 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$221692 = 16					; size = 1
+__Cat$221691 = 16					; size = 1
 __Ptr$ = 16						; size = 4
 ??$_Ucopy@V?$_Const_iterator@$0A@@?$list@U_GUID@@V?$allocator@U_GUID@@@std@@@std@@@?$vector@U_GUID@@V?$allocator@U_GUID@@@std@@@std@@IAEPAU_GUID@@V?$_Const_iterator@$0A@@?$list@U_GUID@@V?$allocator@U_GUID@@@std@@@1@0PAU2@@Z PROC ; std::vector<_GUID,std::allocator<_GUID> >::_Ucopy<std::list<_GUID,std::allocator<_GUID> >::_Const_iterator<0> >, COMDAT
 ; _this$ = ecx
@@ -3179,9 +3179,9 @@ __Ptr$ = 16						; size = 4
 ; 1140 : 		return (_STDEXT unchecked_uninitialized_copy(_First, _Last,
 ; 1141 : 			_Ptr, this->_Alval));
 
-	mov	edx, DWORD PTR __Cat$221692[esp]
-	mov	BYTE PTR $T221689[esp+4], 0
-	mov	eax, DWORD PTR $T221689[esp+4]
+	mov	edx, DWORD PTR __Cat$221691[esp]
+	mov	BYTE PTR $T221688[esp+4], 0
+	mov	eax, DWORD PTR $T221688[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Ptr$[esp+4]
 	push	edx
@@ -3204,10 +3204,10 @@ PUBLIC	??$_Unchecked_uninitialized_move@PAU_GUID@@PAU1@V?$allocator@U_GUID@@@std
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ??$_Unchecked_uninitialized_move@PAU_GUID@@PAU1@V?$allocator@U_GUID@@@std@@@stdext@@YAPAU_GUID@@PAU1@00AAV?$allocator@U_GUID@@@std@@@Z
 _TEXT	SEGMENT
-$T221726 = -4						; size = 1
+$T221725 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$221730 = 16					; size = 1
+__Cat$221729 = 16					; size = 1
 __Dest$ = 16						; size = 4
 __Al$ = 20						; size = 4
 ??$_Unchecked_uninitialized_move@PAU_GUID@@PAU1@V?$allocator@U_GUID@@@std@@@stdext@@YAPAU_GUID@@PAU1@00AAV?$allocator@U_GUID@@@std@@@Z PROC ; stdext::_Unchecked_uninitialized_move<_GUID *,_GUID *,std::allocator<_GUID> >, COMDAT
@@ -3220,10 +3220,10 @@ __Al$ = 20						; size = 4
 ; 863  : 		_CHECKED_BASE(_Last), _Dest, _Al,
 ; 864  : 		_STD _Move_cat(_Dest), _STD _Range_checked_iterator_tag()));
 
-	mov	ecx, DWORD PTR __Cat$221730[esp]
+	mov	ecx, DWORD PTR __Cat$221729[esp]
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T221726[esp+4], 0
-	mov	eax, DWORD PTR $T221726[esp+4]
+	mov	BYTE PTR $T221725[esp+4], 0
+	mov	eax, DWORD PTR $T221725[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -3277,10 +3277,10 @@ PUBLIC	??$_Umove@PAU_GUID@@@?$vector@U_GUID@@V?$allocator@U_GUID@@@std@@@std@@IA
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Umove@PAU_GUID@@@?$vector@U_GUID@@V?$allocator@U_GUID@@@std@@@std@@IAEPAU_GUID@@PAU2@00@Z
 _TEXT	SEGMENT
-$T221796 = -4						; size = 1
+$T221795 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$221800 = 16					; size = 1
+__Cat$221799 = 16					; size = 1
 __Ptr$ = 16						; size = 4
 ??$_Umove@PAU_GUID@@@?$vector@U_GUID@@V?$allocator@U_GUID@@@std@@@std@@IAEPAU_GUID@@PAU2@00@Z PROC ; std::vector<_GUID,std::allocator<_GUID> >::_Umove<_GUID *>, COMDAT
 ; _this$ = ecx
@@ -3293,9 +3293,9 @@ __Ptr$ = 16						; size = 4
 ; 1147 : 		return (_STDEXT _Unchecked_uninitialized_move(_First, _Last,
 ; 1148 : 			_Ptr, this->_Alval));
 
-	mov	edx, DWORD PTR __Cat$221800[esp]
-	mov	BYTE PTR $T221796[esp+4], 0
-	mov	eax, DWORD PTR $T221796[esp+4]
+	mov	edx, DWORD PTR __Cat$221799[esp]
+	mov	BYTE PTR $T221795[esp+4], 0
+	mov	eax, DWORD PTR $T221795[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Ptr$[esp+4]
 	push	edx
@@ -3458,16 +3458,16 @@ __ehfuncinfo$??$_Insert@V?$_Const_iterator@$0A@@?$list@U_GUID@@V?$allocator@U_GU
 xdata$x	ENDS
 ;	COMDAT ??$_Insert@V?$_Const_iterator@$0A@@?$list@U_GUID@@V?$allocator@U_GUID@@@std@@@std@@@?$vector@U_GUID@@V?$allocator@U_GUID@@@std@@@std@@QAEXV?$_Vector_const_iterator@U_GUID@@V?$allocator@U_GUID@@@std@@@1@V?$_Const_iterator@$0A@@?$list@U_GUID@@V?$allocator@U_GUID@@@std@@@1@1Uforward_iterator_tag@1@@Z
 _TEXT	SEGMENT
-$T222186 = -24						; size = 1
-$T222148 = -24						; size = 1
-$T222077 = -24						; size = 1
-$T222050 = -24						; size = 1
-__Newvec$220244 = -20					; size = 4
+$T222185 = -24						; size = 1
+$T222147 = -24						; size = 1
+$T222076 = -24						; size = 1
+$T222049 = -24						; size = 1
+__Newvec$220243 = -20					; size = 4
 __$EHRec$ = -16						; size = 16
-__Cat$222189 = 8					; size = 1
-__Cat$222152 = 8					; size = 1
-__Cat$222080 = 8					; size = 1
-__Cat$222054 = 8					; size = 1
+__Cat$222188 = 8					; size = 1
+__Cat$222151 = 8					; size = 1
+__Cat$222079 = 8					; size = 1
+__Cat$222053 = 8					; size = 1
 __Where$ = 8						; size = 4
 __First$ = 12						; size = 4
 __Last$ = 16						; size = 4
@@ -3599,14 +3599,14 @@ $LN4@Insert:
 ; 955  : 				_Newvec);	// copy prefix
 
 	mov	ecx, DWORD PTR [esi+4]
-	mov	BYTE PTR $T222050[ebp], 0
-	mov	edx, DWORD PTR $T222050[ebp]
+	mov	BYTE PTR $T222049[ebp], 0
+	mov	edx, DWORD PTR $T222049[ebp]
 	push	edx
-	mov	edx, DWORD PTR __Cat$222054[ebp]
+	mov	edx, DWORD PTR __Cat$222053[ebp]
 	push	edx
 	push	esi
 	push	eax
-	mov	DWORD PTR __Newvec$220244[ebp], eax
+	mov	DWORD PTR __Newvec$220243[ebp], eax
 	mov	eax, DWORD PTR __Where$[ebp]
 	push	eax
 	push	ecx
@@ -3615,10 +3615,10 @@ $LN4@Insert:
 
 ; 956  : 			_Ptr = _Ucopy(_First, _Last, _Ptr);	// add new stuff
 
-	mov	edx, DWORD PTR __Cat$222080[ebp]
+	mov	edx, DWORD PTR __Cat$222079[ebp]
 	add	esp, 32					; 00000020H
-	mov	BYTE PTR $T222077[ebp], 0
-	mov	ecx, DWORD PTR $T222077[ebp]
+	mov	BYTE PTR $T222076[ebp], 0
+	mov	ecx, DWORD PTR $T222076[ebp]
 	push	ecx
 	mov	ecx, DWORD PTR __First$[ebp]
 	push	edx
@@ -3633,10 +3633,10 @@ $LN4@Insert:
 
 	mov	ecx, DWORD PTR [esi+8]
 	add	esp, 24					; 00000018H
-	mov	BYTE PTR $T222148[ebp], 0
-	mov	edx, DWORD PTR $T222148[ebp]
+	mov	BYTE PTR $T222147[ebp], 0
+	mov	edx, DWORD PTR $T222147[ebp]
 	push	edx
-	mov	edx, DWORD PTR __Cat$222152[ebp]
+	mov	edx, DWORD PTR __Cat$222151[ebp]
 	push	edx
 	push	esi
 	push	eax
@@ -3678,7 +3678,7 @@ $LN95@Insert:
 ; 974  : 
 ; 975  : 			_Myend = _Newvec + _Capacity;
 
-	mov	eax, DWORD PTR __Newvec$220244[ebp]
+	mov	eax, DWORD PTR __Newvec$220243[ebp]
 	shl	ebx, 4
 	add	ebx, eax
 
@@ -3715,7 +3715,7 @@ __catch$??$_Insert@V?$_Const_iterator@$0A@@?$list@U_GUID@@V?$allocator@U_GUID@@@
 ; 959  : 			_Destroy(_Newvec, _Ptr);
 ; 960  : 			this->_Alval.deallocate(_Newvec, _Capacity);
 
-	mov	edx, DWORD PTR __Newvec$220244[ebp]
+	mov	edx, DWORD PTR __Newvec$220243[ebp]
 	push	edx
 	call	??3@YAXPAX@Z				; operator delete
 	add	esp, 4
@@ -3733,9 +3733,9 @@ $LN5@Insert:
 ; 980  : 			{	// new stuff fits, append and rotate into place
 ; 981  : 			_Ucopy(_First, _Last, _Mylast);
 
-	mov	edx, DWORD PTR __Cat$222189[ebp]
-	mov	BYTE PTR $T222186[ebp], 0
-	mov	eax, DWORD PTR $T222186[ebp]
+	mov	edx, DWORD PTR __Cat$222188[ebp]
+	mov	BYTE PTR $T222185[ebp], 0
+	mov	eax, DWORD PTR $T222185[ebp]
 	push	eax
 	mov	eax, DWORD PTR __Last$[ebp]
 	push	edx
@@ -3928,7 +3928,7 @@ PUBLIC	??$insert@V?$_Const_iterator@$0A@@?$list@U_GUID@@V?$allocator@U_GUID@@@st
 _TEXT	SEGMENT
 __Where$ = 8						; size = 4
 __First$ = 12						; size = 4
-$T222342 = 16						; size = 1
+$T222341 = 16						; size = 1
 __Last$ = 16						; size = 4
 ??$insert@V?$_Const_iterator@$0A@@?$list@U_GUID@@V?$allocator@U_GUID@@@std@@@std@@@?$vector@U_GUID@@V?$allocator@U_GUID@@@std@@@std@@QAEXV?$_Vector_const_iterator@U_GUID@@V?$allocator@U_GUID@@@std@@@1@V?$_Const_iterator@$0A@@?$list@U_GUID@@V?$allocator@U_GUID@@@std@@@1@1@Z PROC ; std::vector<_GUID,std::allocator<_GUID> >::insert<std::list<_GUID,std::allocator<_GUID> >::_Const_iterator<0> >, COMDAT
 ; _this$ = ecx
@@ -3936,7 +3936,7 @@ __Last$ = 16						; size = 4
 ; 888  : 		{	// insert [_First, _Last) at _Where
 ; 889  : 		_Insert(_Where, _First, _Last, _Iter_cat(_First));
 
-	mov	eax, DWORD PTR $T222342[esp-4]
+	mov	eax, DWORD PTR $T222341[esp-4]
 	mov	edx, DWORD PTR __Last$[esp-4]
 	push	eax
 	mov	eax, DWORD PTR __First$[esp]
@@ -3984,7 +3984,7 @@ _TEXT	SEGMENT
 _this$ = -20						; size = 4
 __$EHRec$ = -16						; size = 16
 __First$ = 8						; size = 4
-$T222453 = 12						; size = 1
+$T222452 = 12						; size = 1
 __Last$ = 12						; size = 4
 ___formal$ = 16						; size = 1
 ??$_Construct@V?$_Const_iterator@$0A@@?$list@U_GUID@@V?$allocator@U_GUID@@@std@@@std@@@?$vector@U_GUID@@V?$allocator@U_GUID@@@std@@@std@@QAEXV?$_Const_iterator@$0A@@?$list@U_GUID@@V?$allocator@U_GUID@@@std@@@1@0Uinput_iterator_tag@1@@Z PROC ; std::vector<_GUID,std::allocator<_GUID> >::_Construct<std::list<_GUID,std::allocator<_GUID> >::_Const_iterator<0> >, COMDAT
@@ -4007,7 +4007,7 @@ ___formal$ = 16						; size = 1
 ; 536  : 		_TRY_BEGIN
 ; 537  : 		insert(begin(), _First, _Last);
 
-	mov	edx, DWORD PTR $T222453[ebp]
+	mov	edx, DWORD PTR $T222452[ebp]
 	push	ebx
 	push	esi
 	push	edi
@@ -4067,14 +4067,14 @@ PUBLIC	??$?0V?$_Const_iterator@$0A@@?$list@U_GUID@@V?$allocator@U_GUID@@@std@@@s
 ;	COMDAT ??$?0V?$_Const_iterator@$0A@@?$list@U_GUID@@V?$allocator@U_GUID@@@std@@@std@@@?$vector@U_GUID@@V?$allocator@U_GUID@@@std@@@std@@QAE@V?$_Const_iterator@$0A@@?$list@U_GUID@@V?$allocator@U_GUID@@@std@@@1@0@Z
 _TEXT	SEGMENT
 __First$ = 8						; size = 4
-$T222473 = 12						; size = 1
+$T222472 = 12						; size = 1
 __Last$ = 12						; size = 4
 ??$?0V?$_Const_iterator@$0A@@?$list@U_GUID@@V?$allocator@U_GUID@@@std@@@std@@@?$vector@U_GUID@@V?$allocator@U_GUID@@@std@@@std@@QAE@V?$_Const_iterator@$0A@@?$list@U_GUID@@V?$allocator@U_GUID@@@std@@@1@0@Z PROC ; std::vector<_GUID,std::allocator<_GUID> >::vector<_GUID,std::allocator<_GUID> ><std::list<_GUID,std::allocator<_GUID> >::_Const_iterator<0> >, COMDAT
 ; _this$ = ecx
 
 ; 514  : 		_Construct(_First, _Last, _Iter_cat(_First));
 
-	mov	eax, DWORD PTR $T222473[esp-4]
+	mov	eax, DWORD PTR $T222472[esp-4]
 	mov	edx, DWORD PTR __First$[esp-4]
 	push	esi
 	mov	esi, ecx
@@ -4097,14 +4097,14 @@ PUBLIC	??0CvDllDlcPackageInfoList@@QAE@ABV?$list@U_GUID@@V?$allocator@U_GUID@@@s
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredll_expansion2\cvdlldlcpackageinfo.cpp
 ;	COMDAT ??0CvDllDlcPackageInfoList@@QAE@ABV?$list@U_GUID@@V?$allocator@U_GUID@@@std@@@std@@@Z
 _TEXT	SEGMENT
-$T222581 = 8						; size = 1
+$T222580 = 8						; size = 1
 _packageIDs$ = 8					; size = 4
 ??0CvDllDlcPackageInfoList@@QAE@ABV?$list@U_GUID@@V?$allocator@U_GUID@@@std@@@std@@@Z PROC ; CvDllDlcPackageInfoList::CvDllDlcPackageInfoList, COMDAT
 ; _this$ = ecx
 
 ; 84   : {
 
-	mov	edx, DWORD PTR $T222581[esp-4]
+	mov	edx, DWORD PTR $T222580[esp-4]
 	mov	eax, DWORD PTR _packageIDs$[esp-4]
 	push	esi
 	mov	esi, ecx

@@ -10,21 +10,21 @@ INCLUDELIB MSVCRT
 INCLUDELIB OLDNAMES
 
 CONST	SEGMENT
-$SG218317 DB	'Fractal Gen', 00H
-$SG218325 DB	'Fractal Gen 2', 00H
+$SG218316 DB	'Fractal Gen', 00H
+$SG218324 DB	'Fractal Gen 2', 00H
 	ORG $+2
-$SG218327 DB	'Fractal Gen 3', 00H
+$SG218326 DB	'Fractal Gen 3', 00H
 	ORG $+2
-$SG218330 DB	'Fractal Gen 4', 00H
+$SG218329 DB	'Fractal Gen 4', 00H
 	ORG $+2
-$SG218587 DB	'Ridge Gen 1', 00H
-$SG218588 DB	'Ridge Gen 2', 00H
-$SG218591 DB	'Ridge Gen 3', 00H
-$SG218592 DB	'Ridge Gen 4', 00H
-$SG218595 DB	'Ridge Gen 5', 00H
-$SG218606 DB	'Ridge Gen 6', 00H
-$SG218607 DB	'Ridge Gen 7', 00H
-$SG218626 DB	'Ridge Gen 8', 00H
+$SG218586 DB	'Ridge Gen 1', 00H
+$SG218587 DB	'Ridge Gen 2', 00H
+$SG218590 DB	'Ridge Gen 3', 00H
+$SG218591 DB	'Ridge Gen 4', 00H
+$SG218594 DB	'Ridge Gen 5', 00H
+$SG218605 DB	'Ridge Gen 6', 00H
+$SG218606 DB	'Ridge Gen 7', 00H
+$SG218625 DB	'Ridge Gen 8', 00H
 CONST	ENDS
 PUBLIC	?range@@YAHHHH@Z				; range
 ; Function compile flags: /Ogtpy
@@ -2267,7 +2267,7 @@ $LL21@fracInitIn:
 ; 220  : 						m_aaiFrac[iX << iPass][iY << iPass] = random.get(256, "Fractal Gen");
 
 	mov	ecx, DWORD PTR _random$[esp+28]
-	push	OFFSET $SG218317
+	push	OFFSET $SG218316
 	push	256					; 00000100H
 	call	?get@CvRandom@@QAEGGPBD@Z		; CvRandom::get
 	movzx	edx, ax
@@ -2378,7 +2378,7 @@ $LN18@fracInitIn:
 	mov	edx, 1
 	shl	edx, cl
 	mov	ecx, DWORD PTR _random$[esp+28]
-	push	OFFSET $SG218325
+	push	OFFSET $SG218324
 	sar	edi, 2
 	push	edx
 	call	?get@CvRandom@@QAEGGPBD@Z		; CvRandom::get
@@ -2456,7 +2456,7 @@ $LN13@fracInitIn:
 	mov	edx, 1
 	shl	edx, cl
 	mov	ecx, DWORD PTR _random$[esp+28]
-	push	OFFSET $SG218327
+	push	OFFSET $SG218326
 	sar	edi, 1
 	push	edx
 	call	?get@CvRandom@@QAEGGPBD@Z		; CvRandom::get
@@ -2535,7 +2535,7 @@ $LN14@fracInitIn:
 ; 269  : 							iSum >>= 1;
 ; 270  : 							iSum += random.get(1 << (8 - iSmooth + iPass), "Fractal Gen 4");
 
-	push	OFFSET $SG218330
+	push	OFFSET $SG218329
 	add	edx, edi
 	mov	ebx, DWORD PTR [esi+edx*4+40]
 	add	eax, edi
@@ -3145,25 +3145,25 @@ __ehfuncinfo$?ridgeBuilder@CvFractal@@QAEXAAVCvRandom@@HHHH@Z DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?ridgeBuilder@CvFractal@@QAEXAAVCvRandom@@HHHH@Z
 _TEXT	SEGMENT
-_iY$218612 = -5216					; size = 4
-_iThisVoronoiSeedIndex$218582 = -5216			; size = 4
+_iY$218611 = -5216					; size = 4
+_iThisVoronoiSeedIndex$218581 = -5216			; size = 4
 tv1184 = -5212						; size = 4
-$T219295 = -5212					; size = 4
-$T219293 = -5212					; size = 4
+$T219294 = -5212					; size = 4
 $T219292 = -5212					; size = 4
+$T219291 = -5212					; size = 4
 _this$ = -5208						; size = 4
-_iNextClosestSeed$218619 = -5204			; size = 4
+_iNextClosestSeed$218618 = -5204			; size = 4
 tv567 = -5200						; size = 4
-$T219296 = -5200					; size = 4
-$T219299 = -5196					; size = 4
-$T219294 = -5196					; size = 4
+$T219295 = -5200					; size = 4
+$T219298 = -5196					; size = 4
+$T219293 = -5196					; size = 4
 tv1217 = -5192						; size = 4
-_iX$218608 = -5188					; size = 4
-_iClosestSeed$218618 = -5184				; size = 4
-_iModifiedHexspaceDistance$218624 = -5180		; size = 4
-$T219297 = -5176					; size = 4
-_thisVoronoiSeed$218586 = -5172				; size = 20
-$T219298 = -5152					; size = 4
+_iX$218607 = -5188					; size = 4
+_iClosestSeed$218617 = -5184				; size = 4
+_iModifiedHexspaceDistance$218623 = -5180		; size = 4
+$T219296 = -5176					; size = 4
+_thisVoronoiSeed$218585 = -5172				; size = 20
+$T219297 = -5152					; size = 4
 _vVoronoiSeeds$ = -5148					; size = 5136
 __$EHRec$ = -12						; size = 12
 _random$ = 8						; size = 4
@@ -3193,9 +3193,9 @@ _iBlendFract$ = 24					; size = 4
 
 	mov	eax, 3
 	cmp	DWORD PTR _iNumVoronoiSeeds$[esp+5212], eax
-	mov	DWORD PTR $T219292[esp+5216], eax
+	mov	DWORD PTR $T219291[esp+5216], eax
 	mov	DWORD PTR _this$[esp+5216], ecx
-	lea	eax, DWORD PTR $T219292[esp+5216]
+	lea	eax, DWORD PTR $T219291[esp+5216]
 	jl	SHORT $LN33@ridgeBuild
 	lea	eax, DWORD PTR _iNumVoronoiSeeds$[esp+5212]
 $LN33@ridgeBuild:
@@ -3228,7 +3228,7 @@ $LN33@ridgeBuild:
 ; 471  : 	for(int iThisVoronoiSeedIndex = 0; iThisVoronoiSeedIndex < iNumVoronoiSeeds; iThisVoronoiSeedIndex++)
 
 	cmp	esi, edi
-	mov	DWORD PTR _iThisVoronoiSeedIndex$218582[esp+5232], edi
+	mov	DWORD PTR _iThisVoronoiSeedIndex$218581[esp+5232], edi
 	jle	$LN153@ridgeBuild
 
 ; 476  : #ifdef AUI_FRACTAL_RIDGE_USE_BINOM_RNG
@@ -3240,7 +3240,7 @@ $LN33@ridgeBuild:
 ; 482  : #else
 ; 483  : 		thisVoronoiSeed.m_iWeakness = std::max(0,random.get(7, "Ridge Gen 3")-3); // ??? do we want to parameterize this???
 
-	mov	DWORD PTR $T219294[esp+5232], edi
+	mov	DWORD PTR $T219293[esp+5232], edi
 
 ; 486  : #ifdef AUI_FRACTAL_RIDGE_USE_BINOM_RNG
 ; 487  : 		thisVoronoiSeed.m_iDirectionalBiasStrength = MAX(0, int(random.getBinom(8, "Ridge Gen 5")) - 4); // ??? do we want to parameterize this???
@@ -3251,18 +3251,18 @@ $LN33@ridgeBuild:
 ; 492  : #else
 ; 493  : 		thisVoronoiSeed.m_iDirectionalBiasStrength = std::max(0,random.get(8, "Ridge Gen 5") - 4); // ??? do we want to parameterize this???
 
-	mov	DWORD PTR $T219296[esp+5232], edi
+	mov	DWORD PTR $T219295[esp+5232], edi
 	npad	8
 $LL26@ridgeBuild:
 	mov	edi, DWORD PTR _this$[esp+5232]
 	movzx	ecx, WORD PTR [edi+20]
 	mov	esi, DWORD PTR _random$[esp+5228]
-	push	OFFSET $SG218587
+	push	OFFSET $SG218586
 	push	ecx
 	mov	ecx, esi
 	call	?get@CvRandom@@QAEGGPBD@Z		; CvRandom::get
 	movzx	edx, WORD PTR [edi+16]
-	push	OFFSET $SG218588
+	push	OFFSET $SG218587
 	push	edx
 	mov	ecx, esi
 	movzx	ebx, ax
@@ -3295,28 +3295,28 @@ $LN157@ridgeBuild:
 ; 482  : #else
 ; 483  : 		thisVoronoiSeed.m_iWeakness = std::max(0,random.get(7, "Ridge Gen 3")-3); // ??? do we want to parameterize this???
 
-	push	OFFSET $SG218591
-	mov	DWORD PTR _thisVoronoiSeed$218586[esp+5236], ecx
+	push	OFFSET $SG218590
+	mov	DWORD PTR _thisVoronoiSeed$218585[esp+5236], ecx
 	push	7
 	mov	ecx, esi
 	call	?get@CvRandom@@QAEGGPBD@Z		; CvRandom::get
 	movzx	eax, ax
 	sub	eax, 3
-	mov	DWORD PTR $T219293[esp+5232], eax
+	mov	DWORD PTR $T219292[esp+5232], eax
 	test	eax, eax
-	lea	eax, DWORD PTR $T219293[esp+5232]
+	lea	eax, DWORD PTR $T219292[esp+5232]
 	jg	SHORT $LN51@ridgeBuild
-	lea	eax, DWORD PTR $T219294[esp+5232]
+	lea	eax, DWORD PTR $T219293[esp+5232]
 $LN51@ridgeBuild:
 	mov	eax, DWORD PTR [eax]
 
 ; 484  : #endif
 ; 485  : 		thisVoronoiSeed.m_eBiasDirection = random.get(NUM_DIRECTION_TYPES, "Ridge Gen 4");
 
-	push	OFFSET $SG218592
+	push	OFFSET $SG218591
 	push	6
 	mov	ecx, esi
-	mov	DWORD PTR _thisVoronoiSeed$218586[esp+5248], eax
+	mov	DWORD PTR _thisVoronoiSeed$218585[esp+5248], eax
 	call	?get@CvRandom@@QAEGGPBD@Z		; CvRandom::get
 	movzx	ecx, ax
 
@@ -3329,21 +3329,21 @@ $LN51@ridgeBuild:
 ; 492  : #else
 ; 493  : 		thisVoronoiSeed.m_iDirectionalBiasStrength = std::max(0,random.get(8, "Ridge Gen 5") - 4); // ??? do we want to parameterize this???
 
-	push	OFFSET $SG218595
-	mov	DWORD PTR _thisVoronoiSeed$218586[esp+5248], ecx
+	push	OFFSET $SG218594
+	mov	DWORD PTR _thisVoronoiSeed$218585[esp+5248], ecx
 	push	8
 	mov	ecx, esi
 	call	?get@CvRandom@@QAEGGPBD@Z		; CvRandom::get
 	movzx	eax, ax
 	sub	eax, 4
-	mov	DWORD PTR $T219295[esp+5232], eax
+	mov	DWORD PTR $T219294[esp+5232], eax
 	test	eax, eax
-	lea	eax, DWORD PTR $T219295[esp+5232]
+	lea	eax, DWORD PTR $T219294[esp+5232]
 	jg	SHORT $LN55@ridgeBuild
-	lea	eax, DWORD PTR $T219296[esp+5232]
+	lea	eax, DWORD PTR $T219295[esp+5232]
 $LN55@ridgeBuild:
 	mov	edx, DWORD PTR [eax]
-	mov	DWORD PTR _thisVoronoiSeed$218586[esp+5248], edx
+	mov	DWORD PTR _thisVoronoiSeed$218585[esp+5248], edx
 $LL23@ridgeBuild:
 
 ; 494  : #endif
@@ -3356,7 +3356,7 @@ $LL23@ridgeBuild:
 ; 501  : 			for(int iThatVoronoiSeedIndex = 0; iThatVoronoiSeedIndex < iThisVoronoiSeedIndex; iThatVoronoiSeedIndex++)
 
 	xor	ebp, ebp
-	cmp	DWORD PTR _iThisVoronoiSeedIndex$218582[esp+5232], ebp
+	cmp	DWORD PTR _iThisVoronoiSeedIndex$218581[esp+5232], ebp
 	jle	SHORT $LN155@ridgeBuild
 	mov	edi, DWORD PTR _vVoronoiSeeds$[esp+5232]
 	npad	2
@@ -3365,7 +3365,7 @@ $LL20@ridgeBuild:
 ; 502  : 			{
 ; 503  : 				int iDistanceBetweenVoronoiSeeds = hexDistance(thisVoronoiSeed.m_iHexspaceX-vVoronoiSeeds[iThatVoronoiSeedIndex].m_iHexspaceX,thisVoronoiSeed.m_iHexspaceY-vVoronoiSeeds[iThatVoronoiSeedIndex].m_iHexspaceY);
 
-	mov	esi, DWORD PTR _thisVoronoiSeed$218586[esp+5232]
+	mov	esi, DWORD PTR _thisVoronoiSeed$218585[esp+5232]
 	mov	eax, ebx
 	sub	eax, DWORD PTR [edi+4]
 	sub	esi, DWORD PTR [edi]
@@ -3407,7 +3407,7 @@ $LN72@ridgeBuild:
 	jl	$LN145@ridgeBuild
 	inc	ebp
 	add	edi, 20					; 00000014H
-	cmp	ebp, DWORD PTR _iThisVoronoiSeedIndex$218582[esp+5232]
+	cmp	ebp, DWORD PTR _iThisVoronoiSeedIndex$218581[esp+5232]
 	jl	SHORT $LL20@ridgeBuild
 $LN155@ridgeBuild:
 
@@ -3428,21 +3428,21 @@ $LN74@ridgeBuild:
 	lea	eax, DWORD PTR [ecx+eax*4]
 	test	eax, eax
 	je	SHORT $LN77@ridgeBuild
-	mov	edx, DWORD PTR _thisVoronoiSeed$218586[esp+5232]
-	mov	ecx, DWORD PTR _thisVoronoiSeed$218586[esp+5240]
+	mov	edx, DWORD PTR _thisVoronoiSeed$218585[esp+5232]
+	mov	ecx, DWORD PTR _thisVoronoiSeed$218585[esp+5240]
 	mov	DWORD PTR [eax], edx
-	mov	edx, DWORD PTR _thisVoronoiSeed$218586[esp+5244]
+	mov	edx, DWORD PTR _thisVoronoiSeed$218585[esp+5244]
 	mov	DWORD PTR [eax+4], ebx
 	mov	DWORD PTR [eax+8], ecx
-	mov	ecx, DWORD PTR _thisVoronoiSeed$218586[esp+5248]
+	mov	ecx, DWORD PTR _thisVoronoiSeed$218585[esp+5248]
 	mov	DWORD PTR [eax+12], edx
 	mov	DWORD PTR [eax+16], ecx
 $LN77@ridgeBuild:
-	mov	eax, DWORD PTR _iThisVoronoiSeedIndex$218582[esp+5232]
+	mov	eax, DWORD PTR _iThisVoronoiSeedIndex$218581[esp+5232]
 	inc	DWORD PTR _vVoronoiSeeds$[esp+5236]
 	inc	eax
 	cmp	eax, DWORD PTR _iNumVoronoiSeeds$[esp+5228]
-	mov	DWORD PTR _iThisVoronoiSeedIndex$218582[esp+5232], eax
+	mov	DWORD PTR _iThisVoronoiSeedIndex$218581[esp+5232], eax
 	jl	$LL26@ridgeBuild
 
 ; 470  : 
@@ -3460,7 +3460,7 @@ $LN153@ridgeBuild:
 
 	mov	edx, DWORD PTR _this$[esp+5232]
 	cmp	DWORD PTR [edx+16], edi
-	mov	DWORD PTR _iX$218608[esp+5232], edi
+	mov	DWORD PTR _iX$218607[esp+5232], edi
 	jle	$LN14@ridgeBuild
 	mov	eax, edx
 	add	eax, 40					; 00000028H
@@ -3473,7 +3473,7 @@ $LL16@ridgeBuild:
 
 	mov	ecx, DWORD PTR _this$[esp+5232]
 	cmp	DWORD PTR [ecx+20], 0
-	mov	DWORD PTR _iY$218612[esp+5232], 0
+	mov	DWORD PTR _iY$218611[esp+5232], 0
 	jle	$LN15@ridgeBuild
 
 ; 578  : 
@@ -3493,25 +3493,25 @@ $LL16@ridgeBuild:
 ; 587  : }
 
 	add	edx, eax
-	mov	DWORD PTR $T219298[esp+5232], 1
-	mov	DWORD PTR $T219299[esp+5232], edx
+	mov	DWORD PTR $T219297[esp+5232], 1
+	mov	DWORD PTR $T219298[esp+5232], edx
 	mov	DWORD PTR tv1184[esp+5232], ecx
 	npad	6
 $LL13@ridgeBuild:
-	mov	eax, DWORD PTR _iY$218612[esp+5232]
+	mov	eax, DWORD PTR _iY$218611[esp+5232]
 	test	eax, eax
 	jge	SHORT $LN158@ridgeBuild
 	dec	eax
 	cdq
 	sub	eax, edx
 $LN158@ridgeBuild:
-	mov	ebx, DWORD PTR _iX$218608[esp+5232]
+	mov	ebx, DWORD PTR _iX$218607[esp+5232]
 	sar	eax, 1
 	sub	ebx, eax
 	cmp	DWORD PTR _iNumVoronoiSeeds$[esp+5228], 0
 	mov	eax, 2147483647				; 7fffffffH
-	mov	DWORD PTR _iClosestSeed$218618[esp+5232], eax
-	mov	DWORD PTR _iNextClosestSeed$218619[esp+5232], eax
+	mov	DWORD PTR _iClosestSeed$218617[esp+5232], eax
+	mov	DWORD PTR _iNextClosestSeed$218618[esp+5232], eax
 	jle	$LN8@ridgeBuild
 	mov	edx, DWORD PTR _iNumVoronoiSeeds$[esp+5228]
 	xor	edi, edi
@@ -3519,7 +3519,7 @@ $LN158@ridgeBuild:
 	npad	4
 $LL10@ridgeBuild:
 	mov	ecx, DWORD PTR _vVoronoiSeeds$[esp+5232]
-	mov	ebp, DWORD PTR _iY$218612[esp+5232]
+	mov	ebp, DWORD PTR _iY$218611[esp+5232]
 	sub	ebp, DWORD PTR [ecx+edi+4]
 	mov	eax, ebx
 	sub	eax, DWORD PTR [ecx+edi]
@@ -3553,7 +3553,7 @@ $LN145@ridgeBuild:
 	mov	edi, DWORD PTR _this$[esp+5232]
 	movzx	eax, WORD PTR [edi+16]
 	mov	esi, DWORD PTR _random$[esp+5228]
-	push	OFFSET $SG218606
+	push	OFFSET $SG218605
 	push	eax
 	mov	ecx, esi
 	call	?get@CvRandom@@QAEGGPBD@Z		; CvRandom::get
@@ -3562,8 +3562,8 @@ $LN145@ridgeBuild:
 
 	movzx	edx, WORD PTR [edi+20]
 	movzx	ecx, ax
-	push	OFFSET $SG218607
-	mov	DWORD PTR _thisVoronoiSeed$218586[esp+5236], ecx
+	push	OFFSET $SG218606
+	mov	DWORD PTR _thisVoronoiSeed$218585[esp+5236], ecx
 	push	edx
 	mov	ecx, esi
 	call	?get@CvRandom@@QAEGGPBD@Z		; CvRandom::get
@@ -3614,7 +3614,7 @@ $LN102@ridgeBuild:
 
 	mov	ecx, DWORD PTR _random$[esp+5228]
 	add	esi, DWORD PTR [eax+edi+8]
-	push	OFFSET $SG218626
+	push	OFFSET $SG218625
 	push	3
 	call	?get@CvRandom@@QAEGGPBD@Z		; CvRandom::get
 	movzx	ecx, ax
@@ -3624,13 +3624,13 @@ $LN102@ridgeBuild:
 
 	mov	eax, DWORD PTR _vVoronoiSeeds$[esp+5232]
 	mov	edx, DWORD PTR [eax+edi+4]
-	sub	edx, DWORD PTR _iY$218612[esp+5232]
+	sub	edx, DWORD PTR _iY$218611[esp+5232]
 	mov	eax, DWORD PTR [eax+edi]
 	push	edx
 	sub	eax, ebx
 	add	esi, ecx
 	push	eax
-	mov	DWORD PTR _iModifiedHexspaceDistance$218624[esp+5240], esi
+	mov	DWORD PTR _iModifiedHexspaceDistance$218623[esp+5240], esi
 	call	?estimateDirection@@YA?AW4DirectionTypes@@HH@Z ; estimateDirection
 
 ; 547  : 					if(eRelativeDirection == vVoronoiSeeds[iThisVoronoiSeedIndex].m_eBiasDirection)
@@ -3665,7 +3665,7 @@ $LN6@ridgeBuild:
 	mov	ecx, DWORD PTR _vVoronoiSeeds$[esp+5232]
 	add	esi, DWORD PTR [ecx+edi+16]
 $LN159@ridgeBuild:
-	mov	DWORD PTR _iModifiedHexspaceDistance$218624[esp+5232], esi
+	mov	DWORD PTR _iModifiedHexspaceDistance$218623[esp+5232], esi
 $LN4@ridgeBuild:
 
 ; 554  : 					}
@@ -3675,10 +3675,10 @@ $LN4@ridgeBuild:
 ; 558  : 					iModifiedHexspaceDistance = std::max(1,iModifiedHexspaceDistance);
 
 	cmp	esi, 1
-	mov	DWORD PTR $T219297[esp+5232], 1
-	lea	eax, DWORD PTR _iModifiedHexspaceDistance$218624[esp+5232]
+	mov	DWORD PTR $T219296[esp+5232], 1
+	lea	eax, DWORD PTR _iModifiedHexspaceDistance$218623[esp+5232]
 	jg	SHORT $LN120@ridgeBuild
-	lea	eax, DWORD PTR $T219297[esp+5232]
+	lea	eax, DWORD PTR $T219296[esp+5232]
 $LN120@ridgeBuild:
 	mov	esi, DWORD PTR [eax]
 $LN154@ridgeBuild:
@@ -3688,31 +3688,31 @@ $LN154@ridgeBuild:
 ; 561  : 				//vDistances.push_back(iModifiedHexspaceDistance);
 ; 562  : 				if(iModifiedHexspaceDistance < iClosestSeed)
 
-	mov	eax, DWORD PTR _iClosestSeed$218618[esp+5232]
+	mov	eax, DWORD PTR _iClosestSeed$218617[esp+5232]
 	cmp	esi, eax
 	jge	SHORT $LN3@ridgeBuild
 
 ; 563  : 				{
 ; 564  : 					iNextClosestSeed = iClosestSeed;
 
-	mov	DWORD PTR _iNextClosestSeed$218619[esp+5232], eax
+	mov	DWORD PTR _iNextClosestSeed$218618[esp+5232], eax
 
 ; 565  : 					iClosestSeed = iModifiedHexspaceDistance;
 
-	mov	DWORD PTR _iClosestSeed$218618[esp+5232], esi
+	mov	DWORD PTR _iClosestSeed$218617[esp+5232], esi
 	jmp	SHORT $LN9@ridgeBuild
 $LN3@ridgeBuild:
 
 ; 566  : 				}
 ; 567  : 				else if(iModifiedHexspaceDistance < iNextClosestSeed)
 
-	cmp	esi, DWORD PTR _iNextClosestSeed$218619[esp+5232]
+	cmp	esi, DWORD PTR _iNextClosestSeed$218618[esp+5232]
 	jge	SHORT $LN9@ridgeBuild
 
 ; 568  : 				{
 ; 569  : 					iNextClosestSeed = iModifiedHexspaceDistance;
 
-	mov	DWORD PTR _iNextClosestSeed$218619[esp+5232], esi
+	mov	DWORD PTR _iNextClosestSeed$218618[esp+5232], esi
 $LN9@ridgeBuild:
 
 ; 526  : 		{
@@ -3740,10 +3740,10 @@ $LN8@ridgeBuild:
 ; 576  : 
 ; 577  : 			int iRidgeHeight = (255 * iClosestSeed) / iNextClosestSeed;
 
-	mov	eax, DWORD PTR _iClosestSeed$218618[esp+5232]
+	mov	eax, DWORD PTR _iClosestSeed$218617[esp+5232]
 	imul	eax, 255				; 000000ffH
 	cdq
-	idiv	DWORD PTR _iNextClosestSeed$218619[esp+5232]
+	idiv	DWORD PTR _iNextClosestSeed$218618[esp+5232]
 
 ; 578  : 
 ; 579  : 			// blend the new ridge height with the previous fractal height
@@ -3752,10 +3752,10 @@ $LN8@ridgeBuild:
 ; 582  : #else
 ; 583  : 			m_aaiFrac[iX][iY] = (iRidgeHeight * iBlendRidge + m_aaiFrac[iX][iY] * iBlendFract) / std::max(iBlendRidge + iBlendFract, 1);
 
-	cmp	DWORD PTR $T219299[esp+5232], 1
-	lea	ecx, DWORD PTR $T219298[esp+5232]
+	cmp	DWORD PTR $T219298[esp+5232], 1
+	lea	ecx, DWORD PTR $T219297[esp+5232]
 	jl	SHORT $LN124@ridgeBuild
-	lea	ecx, DWORD PTR $T219299[esp+5232]
+	lea	ecx, DWORD PTR $T219298[esp+5232]
 $LN124@ridgeBuild:
 	mov	esi, DWORD PTR tv1184[esp+5232]
 	imul	eax, DWORD PTR _iBlendRidge$[esp+5228]
@@ -3768,10 +3768,10 @@ $LN124@ridgeBuild:
 	add	esi, 4
 	mov	DWORD PTR tv1184[esp+5232], esi
 	mov	DWORD PTR [esi-4], eax
-	mov	eax, DWORD PTR _iY$218612[esp+5232]
+	mov	eax, DWORD PTR _iY$218611[esp+5232]
 	inc	eax
 	cmp	eax, DWORD PTR [ecx+20]
-	mov	DWORD PTR _iY$218612[esp+5232], eax
+	mov	DWORD PTR _iY$218611[esp+5232], eax
 	jl	$LL13@ridgeBuild
 $LN15@ridgeBuild:
 
@@ -3782,12 +3782,12 @@ $LN15@ridgeBuild:
 ; 522  : 
 ; 523  : 	for(int iX = 0; iX < m_iFracX; iX++)
 
-	mov	eax, DWORD PTR _iX$218608[esp+5232]
+	mov	eax, DWORD PTR _iX$218607[esp+5232]
 	mov	edx, DWORD PTR _this$[esp+5232]
 	add	DWORD PTR tv1217[esp+5232], 1024	; 00000400H
 	inc	eax
 	cmp	eax, DWORD PTR [edx+16]
-	mov	DWORD PTR _iX$218608[esp+5232], eax
+	mov	DWORD PTR _iX$218607[esp+5232], eax
 	jl	$LL16@ridgeBuild
 $LN14@ridgeBuild:
 

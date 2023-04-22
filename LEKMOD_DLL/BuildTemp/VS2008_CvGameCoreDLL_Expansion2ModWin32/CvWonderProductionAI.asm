@@ -12,24 +12,24 @@ INCLUDELIB OLDNAMES
 PUBLIC	?NO_QUEST_DATA@CvMinorCivQuest@@2HB		; CvMinorCivQuest::NO_QUEST_DATA
 PUBLIC	?NO_TURN@CvMinorCivQuest@@2HB			; CvMinorCivQuest::NO_TURN
 CONST	SEGMENT
-$SG223787 DB	'LOAD ERROR: Building Type not found', 00H
-$SG224036 DB	'GAMEOPTION_AI_TWEAKS', 00H
+$SG223786 DB	'LOAD ERROR: Building Type not found', 00H
+$SG224035 DB	'GAMEOPTION_AI_TWEAKS', 00H
 	ORG $+3
-$SG224037 DB	'GAMEOPTION_AI_GIMP_NO_WORLD_WONDER', 00H
+$SG224036 DB	'GAMEOPTION_AI_GIMP_NO_WORLD_WONDER', 00H
 	ORG $+1
-$SG224080 DB	'Choosing wonder from Top Choices', 00H
+$SG224079 DB	'Choosing wonder from Top Choices', 00H
 	ORG $+3
-$SG224111 DB	'GAMEOPTION_AI_TWEAKS', 00H
+$SG224110 DB	'GAMEOPTION_AI_TWEAKS', 00H
 	ORG $+3
-$SG224112 DB	'GAMEOPTION_AI_GIMP_NO_WORLD_WONDER', 00H
+$SG224111 DB	'GAMEOPTION_AI_GIMP_NO_WORLD_WONDER', 00H
 	ORG $+1
-$SG224142 DB	'Choosing wonder from Top Choices', 00H
+$SG224141 DB	'Choosing wonder from Top Choices', 00H
 	ORG $+3
-$SG224161 DB	'%03d, ', 00H
+$SG224160 DB	'%03d, ', 00H
 	ORG $+1
-$SG224163 DB	', ', 00H
+$SG224162 DB	', ', 00H
 	ORG $+1
-$SG224173 DB	'Wonder, %s, %d', 00H
+$SG224172 DB	'Wonder, %s, %d', 00H
 CONST	ENDS
 ;	COMDAT ?NO_TURN@CvMinorCivQuest@@2HB
 CONST	SEGMENT
@@ -2804,11 +2804,11 @@ EXTRN	?gGlobals@@3VCvGlobals@@A:BYTE			; gGlobals
 ;	COMDAT ?Write@CvWonderProductionAI@@QBEXAAVFDataStream@@@Z
 _TEXT	SEGMENT
 _uiVersion$ = -16					; size = 4
-$T225821 = -12						; size = 4
-_elem$225881 = -8					; size = 8
-$T225822 = -8						; size = 4
-_iNumBuildings$223812 = 8				; size = 4
-$T225819 = 8						; size = 4
+$T225820 = -12						; size = 4
+_elem$225880 = -8					; size = 8
+$T225821 = -8						; size = 4
+_iNumBuildings$223811 = 8				; size = 4
+$T225818 = 8						; size = 4
 _kStream$ = 8						; size = 4
 ?Write@CvWonderProductionAI@@QBEXAAVFDataStream@@@Z PROC ; CvWonderProductionAI::Write, COMDAT
 ; _this$ = ecx
@@ -2836,8 +2836,8 @@ _kStream$ = 8						; size = 4
 ; 139  : 	kStream << GC.getNumFlavorTypes();
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+1764
-	lea	edx, DWORD PTR $T225819[esp+28]
-	mov	DWORD PTR $T225819[esp+28], ecx
+	lea	edx, DWORD PTR $T225818[esp+28]
+	mov	DWORD PTR $T225818[esp+28], ecx
 	push	edx
 	mov	ecx, esi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
@@ -2876,11 +2876,11 @@ $LN20@Write:
 ; 144  : 		int iNumBuildings = m_pBuildings->GetNumBuildings();
 
 	call	?GetNumBuildings@CvBuildingXMLEntries@@QAEHXZ ; CvBuildingXMLEntries::GetNumBuildings
-	mov	DWORD PTR _iNumBuildings$223812[esp+28], eax
+	mov	DWORD PTR _iNumBuildings$223811[esp+28], eax
 
 ; 145  : 		kStream << iNumBuildings;
 
-	lea	eax, DWORD PTR _iNumBuildings$223812[esp+28]
+	lea	eax, DWORD PTR _iNumBuildings$223811[esp+28]
 	push	eax
 	mov	ecx, esi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
@@ -2891,7 +2891,7 @@ $LN20@Write:
 
 	xor	ebx, ebx
 	xor	edi, edi
-	cmp	DWORD PTR _iNumBuildings$223812[esp+28], ebx
+	cmp	DWORD PTR _iNumBuildings$223811[esp+28], ebx
 	jle	SHORT $LN4@Write
 	npad	5
 $LL6@Write:
@@ -2922,9 +2922,9 @@ $LL6@Write:
 	mov	ecx, DWORD PTR [eax+edi*8]
 	mov	eax, DWORD PTR [eax+edi*8+4]
 	add	esp, 8
-	lea	edx, DWORD PTR $T225821[esp+32]
-	mov	DWORD PTR _elem$225881[esp+32], ecx
-	mov	DWORD PTR $T225821[esp+32], eax
+	lea	edx, DWORD PTR $T225820[esp+32]
+	mov	DWORD PTR _elem$225880[esp+32], ecx
+	mov	DWORD PTR $T225820[esp+32], eax
 	push	edx
 
 ; 156  : 			}
@@ -2936,14 +2936,14 @@ $LN3@Write:
 ; 158  : 			{
 ; 159  : 				kStream << (int)0;
 
-	lea	eax, DWORD PTR $T225822[esp+32]
-	mov	DWORD PTR $T225822[esp+32], ebx
+	lea	eax, DWORD PTR $T225821[esp+32]
+	mov	DWORD PTR $T225821[esp+32], ebx
 	push	eax
 $LN47@Write:
 	mov	ecx, esi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 	inc	edi
-	cmp	edi, DWORD PTR _iNumBuildings$223812[esp+28]
+	cmp	edi, DWORD PTR _iNumBuildings$223811[esp+28]
 	jl	SHORT $LL6@Write
 $LN4@Write:
 	pop	edi
@@ -3135,7 +3135,7 @@ PUBLIC	?GetWeight@CvWonderProductionAI@@QAEHW4BuildingTypes@@@Z ; CvWonderProduc
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?GetWeight@CvWonderProductionAI@@QAEHW4BuildingTypes@@@Z
 _TEXT	SEGMENT
-_elem$225933 = -8					; size = 8
+_elem$225932 = -8					; size = 8
 _eBldg$ = 8						; size = 4
 ?GetWeight@CvWonderProductionAI@@QAEHW4BuildingTypes@@@Z PROC ; CvWonderProductionAI::GetWeight, COMDAT
 ; _this$ = ecx
@@ -3209,7 +3209,7 @@ _eBldg$ = 8						; size = 4
 	mov	ecx, DWORD PTR _eBldg$[esp+4]
 	mov	edx, DWORD PTR [eax+ecx*8]
 	mov	eax, DWORD PTR [eax+ecx*8+4]
-	mov	DWORD PTR _elem$225933[esp+8], edx
+	mov	DWORD PTR _elem$225932[esp+8], edx
 
 ; 331  : #endif
 ; 332  : }
@@ -3258,14 +3258,14 @@ __unwindtable$?LogPossibleWonders@CvWonderProductionAI@@QAEXXZ DD 0ffffffffH
 xdata$x	ENDS
 ;	COMDAT ?LogPossibleWonders@CvWonderProductionAI@@QAEXXZ
 _TEXT	SEGMENT
-_strDesc$224171 = -188					; size = 28
-$T225938 = -188						; size = 28
-_strBaseString$224160 = -160				; size = 28
-_strOutBuf$224168 = -132				; size = 28
-_playerName$224157 = -104				; size = 28
-_strTemp$224172 = -76					; size = 28
-_elem$226023 = -48					; size = 8
-$T225937 = -40						; size = 28
+_strDesc$224170 = -188					; size = 28
+$T225937 = -188						; size = 28
+_strBaseString$224159 = -160				; size = 28
+_strOutBuf$224167 = -132				; size = 28
+_playerName$224156 = -104				; size = 28
+_strTemp$224171 = -76					; size = 28
+_elem$226022 = -48					; size = 8
+$T225936 = -40						; size = 28
 __$EHRec$ = -12						; size = 12
 ?LogPossibleWonders@CvWonderProductionAI@@QAEXXZ PROC	; CvWonderProductionAI::LogPossibleWonders, COMDAT
 ; _this$ = ecx
@@ -3307,7 +3307,7 @@ __$EHRec$ = -12						; size = 12
 	mov	eax, OFFSET ??_C@_00CNPNBAHC@?$AA@
 $LN18@LogPossibl:
 	push	eax
-	lea	ecx, DWORD PTR _playerName$224157[esp+208]
+	lea	ecx, DWORD PTR _playerName$224156[esp+208]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	mov	DWORD PTR __$EHRec$[esp+212], ebp
 
@@ -3317,9 +3317,9 @@ $LN18@LogPossibl:
 
 	call	?GetInstance@FILogFileMgr@@SAAAV1@XZ	; FILogFileMgr::GetInstance
 	mov	edi, eax
-	lea	eax, DWORD PTR _playerName$224157[esp+204]
+	lea	eax, DWORD PTR _playerName$224156[esp+204]
 	push	eax
-	lea	ecx, DWORD PTR $T225937[esp+208]
+	lea	ecx, DWORD PTR $T225936[esp+208]
 	push	ecx
 	mov	ecx, DWORD PTR [esi+12]
 	call	?GetCitySpecializationAI@CvPlayer@@QBEPAVCvCitySpecializationAI@@XZ ; CvPlayer::GetCitySpecializationAI
@@ -3335,7 +3335,7 @@ $LN18@LogPossibl:
 	mov	eax, DWORD PTR [edx+12]
 	mov	ecx, edi
 	call	eax
-	lea	ecx, DWORD PTR $T225937[esp+204]
+	lea	ecx, DWORD PTR $T225936[esp+204]
 	mov	ebx, eax
 	mov	BYTE PTR __$EHRec$[esp+212], 0
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
@@ -3344,7 +3344,7 @@ $LN18@LogPossibl:
 ; 669  : 		// Get the leading info for this line
 ; 670  : 		CvString strBaseString;
 
-	lea	ecx, DWORD PTR _strBaseString$224160[esp+204]
+	lea	ecx, DWORD PTR _strBaseString$224159[esp+204]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
 ; 671  : 		strBaseString.Format("%03d, ", GC.getGame().getElapsedGameTurns());
@@ -3353,25 +3353,25 @@ $LN18@LogPossibl:
 	mov	BYTE PTR __$EHRec$[esp+212], 2
 	call	?getElapsedGameTurns@CvGame@@QBEHXZ	; CvGame::getElapsedGameTurns
 	push	eax
-	lea	ecx, DWORD PTR _strBaseString$224160[esp+208]
-	push	OFFSET $SG224161
+	lea	ecx, DWORD PTR _strBaseString$224159[esp+208]
+	push	OFFSET $SG224160
 	push	ecx
 	call	?Format@CvString@@QAAXPBDZZ		; CvString::Format
 
 ; 672  : 		strBaseString += playerName + ", ";
 
-	push	OFFSET $SG224163
-	lea	edx, DWORD PTR _playerName$224157[esp+220]
+	push	OFFSET $SG224162
+	lea	edx, DWORD PTR _playerName$224156[esp+220]
 	push	edx
-	lea	eax, DWORD PTR $T225938[esp+224]
+	lea	eax, DWORD PTR $T225937[esp+224]
 	push	eax
 	call	DWORD PTR __imp_??$?HDU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@ABV10@PBD@Z
 	add	esp, 24					; 00000018H
 	push	eax
-	lea	ecx, DWORD PTR _strBaseString$224160[esp+208]
+	lea	ecx, DWORD PTR _strBaseString$224159[esp+208]
 	mov	BYTE PTR __$EHRec$[esp+216], 3
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T225938[esp+204]
+	lea	ecx, DWORD PTR $T225937[esp+204]
 	mov	BYTE PTR __$EHRec$[esp+212], 2
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -3389,9 +3389,9 @@ $LL4@LogPossibl:
 ; 678  : 		{
 ; 679  : 			CvString strOutBuf = strBaseString;
 
-	lea	ecx, DWORD PTR _strBaseString$224160[esp+204]
+	lea	ecx, DWORD PTR _strBaseString$224159[esp+204]
 	push	ecx
-	lea	ecx, DWORD PTR _strOutBuf$224168[esp+208]
+	lea	ecx, DWORD PTR _strOutBuf$224167[esp+208]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	eax, DWORD PTR [esi+1116]
 	lea	edi, DWORD PTR [ebp*8]
@@ -3423,12 +3423,12 @@ $LL4@LogPossibl:
 	mov	eax, OFFSET ??_C@_00CNPNBAHC@?$AA@
 $LN46@LogPossibl:
 	push	eax
-	lea	ecx, DWORD PTR _strDesc$224171[esp+208]
+	lea	ecx, DWORD PTR _strDesc$224170[esp+208]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 
 ; 685  : 				CvString strTemp;
 
-	lea	ecx, DWORD PTR _strTemp$224172[esp+204]
+	lea	ecx, DWORD PTR _strTemp$224171[esp+204]
 	mov	BYTE PTR __$EHRec$[esp+212], 5
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -3437,32 +3437,32 @@ $LN46@LogPossibl:
 	mov	eax, DWORD PTR [esi+1116]
 	mov	ecx, DWORD PTR [eax+edi]
 	mov	eax, DWORD PTR [eax+edi+4]
-	mov	DWORD PTR _elem$226023[esp+204], ecx
+	mov	DWORD PTR _elem$226022[esp+204], ecx
 	push	eax
-	lea	ecx, DWORD PTR _strDesc$224171[esp+208]
+	lea	ecx, DWORD PTR _strDesc$224170[esp+208]
 	mov	BYTE PTR __$EHRec$[esp+216], 6
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
-	lea	edx, DWORD PTR _strTemp$224172[esp+212]
-	push	OFFSET $SG224173
+	lea	edx, DWORD PTR _strTemp$224171[esp+212]
+	push	OFFSET $SG224172
 	push	edx
 	call	?Format@CvString@@QAAXPBDZZ		; CvString::Format
 	add	esp, 16					; 00000010H
 
 ; 687  : 				strOutBuf += strTemp;
 
-	lea	eax, DWORD PTR _strTemp$224172[esp+204]
+	lea	eax, DWORD PTR _strTemp$224171[esp+204]
 	push	eax
-	lea	ecx, DWORD PTR _strOutBuf$224168[esp+208]
+	lea	ecx, DWORD PTR _strOutBuf$224167[esp+208]
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
 
 ; 688  : 
 ; 689  : 			}
 
-	lea	ecx, DWORD PTR _strTemp$224172[esp+204]
+	lea	ecx, DWORD PTR _strTemp$224171[esp+204]
 	mov	BYTE PTR __$EHRec$[esp+212], 5
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR _strDesc$224171[esp+204]
+	lea	ecx, DWORD PTR _strDesc$224170[esp+204]
 	mov	BYTE PTR __$EHRec$[esp+212], 4
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 $LN1@LogPossibl:
@@ -3470,7 +3470,7 @@ $LN1@LogPossibl:
 ; 690  : 
 ; 691  : 			pLog->Msg(strOutBuf);
 
-	lea	ecx, DWORD PTR _strOutBuf$224168[esp+204]
+	lea	ecx, DWORD PTR _strOutBuf$224167[esp+204]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	mov	ecx, DWORD PTR [ebx]
 	mov	edx, DWORD PTR [ecx]
@@ -3481,7 +3481,7 @@ $LN1@LogPossibl:
 
 ; 692  : 		}
 
-	lea	ecx, DWORD PTR _strOutBuf$224168[esp+204]
+	lea	ecx, DWORD PTR _strOutBuf$224167[esp+204]
 	mov	BYTE PTR __$EHRec$[esp+212], 2
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 	inc	ebp
@@ -3491,10 +3491,10 @@ $LN2@LogPossibl:
 
 ; 693  : 	}
 
-	lea	ecx, DWORD PTR _strBaseString$224160[esp+204]
+	lea	ecx, DWORD PTR _strBaseString$224159[esp+204]
 	mov	BYTE PTR __$EHRec$[esp+212], 0
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR _playerName$224157[esp+204]
+	lea	ecx, DWORD PTR _playerName$224156[esp+204]
 	mov	DWORD PTR __$EHRec$[esp+212], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 	pop	edi
@@ -3513,25 +3513,25 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?LogPossibleWonders@CvWonderProductionAI@@QAEXXZ$0:
-	lea	ecx, DWORD PTR _playerName$224157[ebp]
+	lea	ecx, DWORD PTR _playerName$224156[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?LogPossibleWonders@CvWonderProductionAI@@QAEXXZ$1:
-	lea	ecx, DWORD PTR $T225937[ebp]
+	lea	ecx, DWORD PTR $T225936[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?LogPossibleWonders@CvWonderProductionAI@@QAEXXZ$2:
-	lea	ecx, DWORD PTR _strBaseString$224160[ebp]
+	lea	ecx, DWORD PTR _strBaseString$224159[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?LogPossibleWonders@CvWonderProductionAI@@QAEXXZ$3:
-	lea	ecx, DWORD PTR $T225938[ebp]
+	lea	ecx, DWORD PTR $T225937[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?LogPossibleWonders@CvWonderProductionAI@@QAEXXZ$4:
-	lea	ecx, DWORD PTR _strOutBuf$224168[ebp]
+	lea	ecx, DWORD PTR _strOutBuf$224167[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?LogPossibleWonders@CvWonderProductionAI@@QAEXXZ$5:
-	lea	ecx, DWORD PTR _strDesc$224171[ebp]
+	lea	ecx, DWORD PTR _strDesc$224170[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?LogPossibleWonders@CvWonderProductionAI@@QAEXXZ$6:
-	lea	ecx, DWORD PTR _strTemp$224172[ebp]
+	lea	ecx, DWORD PTR _strTemp$224171[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?LogPossibleWonders@CvWonderProductionAI@@QAEXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?LogPossibleWonders@CvWonderProductionAI@@QAEXXZ
@@ -4676,9 +4676,9 @@ PUBLIC	??$_Unguarded_partition@PAUWeightedElement@?$CvWeightedVector@H$0DC@$00@@
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\algorithm
 ;	COMDAT ??$_Unguarded_partition@PAUWeightedElement@?$CvWeightedVector@H$0DC@$00@@@std@@YA?AU?$pair@PAUWeightedElement@?$CvWeightedVector@H$0DC@$00@@PAU12@@0@PAUWeightedElement@?$CvWeightedVector@H$0DC@$00@@0@Z
 _TEXT	SEGMENT
-__Tmp$226761 = -24					; size = 8
-__Tmp$226689 = -16					; size = 8
-__Tmp$226715 = -8					; size = 8
+__Tmp$226760 = -24					; size = 8
+__Tmp$226688 = -16					; size = 8
+__Tmp$226714 = -8					; size = 8
 ___$ReturnUdt$ = 8					; size = 4
 __First$ = 12						; size = 4
 __Last$ = 16						; size = 4
@@ -4805,12 +4805,12 @@ $LL21@Unguarded_:
 	je	SHORT $LN20@Unguarded_
 	mov	ebp, DWORD PTR [edx+4]
 	mov	edi, DWORD PTR [edx]
-	mov	DWORD PTR __Tmp$226689[esp+44], ebp
+	mov	DWORD PTR __Tmp$226688[esp+44], ebp
 	mov	ebp, DWORD PTR [eax]
 	mov	DWORD PTR [edx], ebp
 	mov	ebp, DWORD PTR [eax+4]
 	mov	DWORD PTR [edx+4], ebp
-	mov	edx, DWORD PTR __Tmp$226689[esp+44]
+	mov	edx, DWORD PTR __Tmp$226688[esp+44]
 	mov	DWORD PTR [eax], edi
 	mov	DWORD PTR [eax+4], edx
 $LN20@Unguarded_:
@@ -4847,13 +4847,13 @@ $LL14@Unguarded_:
 	je	SHORT $LN13@Unguarded_
 	mov	ebp, DWORD PTR [ecx+4]
 	mov	edi, DWORD PTR [ecx]
-	mov	DWORD PTR __Tmp$226715[esp+44], ebp
+	mov	DWORD PTR __Tmp$226714[esp+44], ebp
 	mov	ebp, DWORD PTR [edx]
 	mov	DWORD PTR [ecx], ebp
 	mov	ebp, DWORD PTR [edx+4]
 	mov	DWORD PTR [ecx+4], ebp
 	mov	DWORD PTR [edx], edi
-	mov	edi, DWORD PTR __Tmp$226715[esp+44]
+	mov	edi, DWORD PTR __Tmp$226714[esp+44]
 	mov	DWORD PTR [edx+4], edi
 $LN13@Unguarded_:
 	sub	ebx, 8
@@ -4903,16 +4903,16 @@ $LN64@Unguarded_:
 	cmp	edi, edx
 	je	$LL23@Unguarded_
 	mov	ebp, DWORD PTR [edi]
-	mov	DWORD PTR __Tmp$226761[esp+40], ebp
+	mov	DWORD PTR __Tmp$226760[esp+40], ebp
 	mov	ebp, DWORD PTR [edi+4]
-	mov	DWORD PTR __Tmp$226761[esp+44], ebp
+	mov	DWORD PTR __Tmp$226760[esp+44], ebp
 	mov	ebp, DWORD PTR [edx]
 	mov	DWORD PTR [edi], ebp
 	mov	ebp, DWORD PTR [edx+4]
 	mov	DWORD PTR [edi+4], ebp
-	mov	edi, DWORD PTR __Tmp$226761[esp+40]
+	mov	edi, DWORD PTR __Tmp$226760[esp+40]
 	mov	DWORD PTR [edx], edi
-	mov	edi, DWORD PTR __Tmp$226761[esp+44]
+	mov	edi, DWORD PTR __Tmp$226760[esp+44]
 	mov	DWORD PTR [edx+4], edi
 	jmp	$LL23@Unguarded_
 $LN6@Unguarded_:
@@ -5624,14 +5624,14 @@ __ehfuncinfo$?Read@CvWonderProductionAI@@QAEXAAVFDataStream@@@Z DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?Read@CvWonderProductionAI@@QAEXAAVFDataStream@@@Z
 _TEXT	SEGMENT
-_iI$223777 = -60					; size = 4
-_iNumEntries$223775 = -56				; size = 4
+_iI$223776 = -60					; size = 4
+_iNumEntries$223774 = -56				; size = 4
 _iNumFlavors$ = -52					; size = 4
 _iWeight$ = -48						; size = 4
 _uiVersion$ = -44					; size = 4
-_szError$223786 = -40					; size = 28
+_szError$223785 = -40					; size = 28
 __$EHRec$ = -12						; size = 12
-_bValid$223781 = 8					; size = 1
+_bValid$223780 = 8					; size = 1
 _kStream$ = 8						; size = 4
 ?Read@CvWonderProductionAI@@QAEXAAVFDataStream@@@Z PROC	; CvWonderProductionAI::Read, COMDAT
 ; _this$ = ecx
@@ -5754,7 +5754,7 @@ $LN8@Read:
 ; 105  : 
 ; 106  : 		kStream >> iNumEntries;
 
-	lea	ecx, DWORD PTR _iNumEntries$223775[esp+76]
+	lea	ecx, DWORD PTR _iNumEntries$223774[esp+76]
 	push	ecx
 	mov	ecx, ebx
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
@@ -5762,8 +5762,8 @@ $LN8@Read:
 ; 107  : 
 ; 108  : 		for(int iI = 0; iI < iNumEntries; iI++)
 
-	cmp	DWORD PTR _iNumEntries$223775[esp+76], 0
-	mov	DWORD PTR _iI$223777[esp+76], 0
+	cmp	DWORD PTR _iNumEntries$223774[esp+76], 0
+	mov	DWORD PTR _iI$223776[esp+76], 0
 	jle	$LN5@Read
 	or	ebp, -1
 	npad	1
@@ -5773,10 +5773,10 @@ $LL7@Read:
 ; 110  : 			bool bValid = true;
 ; 111  : 			iType = CvInfosSerializationHelper::ReadHashed(kStream, &bValid);
 
-	lea	edx, DWORD PTR _bValid$223781[esp+72]
+	lea	edx, DWORD PTR _bValid$223780[esp+72]
 	push	edx
 	push	ebx
-	mov	BYTE PTR _bValid$223781[esp+80], 1
+	mov	BYTE PTR _bValid$223780[esp+80], 1
 	call	?ReadHashed@CvInfosSerializationHelper@@YAHAAVFDataStream@@PA_N@Z ; CvInfosSerializationHelper::ReadHashed
 	mov	edi, eax
 	add	esp, 8
@@ -5785,7 +5785,7 @@ $LL7@Read:
 
 	cmp	edi, ebp
 	jne	SHORT $LN3@Read
-	cmp	BYTE PTR _bValid$223781[esp+72], 0
+	cmp	BYTE PTR _bValid$223780[esp+72], 0
 	jne	SHORT $LN6@Read
 $LN3@Read:
 
@@ -5819,13 +5819,13 @@ $LN2@Read:
 ; 120  : 				{
 ; 121  : 					CvString szError;
 
-	lea	ecx, DWORD PTR _szError$223786[esp+76]
+	lea	ecx, DWORD PTR _szError$223785[esp+76]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
 ; 122  : 					szError.Format("LOAD ERROR: Building Type not found");
 
-	lea	eax, DWORD PTR _szError$223786[esp+76]
-	push	OFFSET $SG223787
+	lea	eax, DWORD PTR _szError$223785[esp+76]
+	push	OFFSET $SG223786
 	push	eax
 	mov	DWORD PTR __$EHRec$[esp+92], 0
 	call	?Format@CvString@@QAAXPBDZZ		; CvString::Format
@@ -5833,7 +5833,7 @@ $LN2@Read:
 
 ; 123  : 					GC.LogMessage(szError.GetCString());
 
-	lea	ecx, DWORD PTR _szError$223786[esp+76]
+	lea	ecx, DWORD PTR _szError$223785[esp+76]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
@@ -5842,14 +5842,14 @@ $LN2@Read:
 ; 124  : 					CvAssertMsg(false, szError);
 ; 125  : 				}
 
-	lea	ecx, DWORD PTR _szError$223786[esp+76]
+	lea	ecx, DWORD PTR _szError$223785[esp+76]
 	mov	DWORD PTR __$EHRec$[esp+84], ebp
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 $LN6@Read:
-	mov	eax, DWORD PTR _iI$223777[esp+76]
+	mov	eax, DWORD PTR _iI$223776[esp+76]
 	inc	eax
-	cmp	eax, DWORD PTR _iNumEntries$223775[esp+76]
-	mov	DWORD PTR _iI$223777[esp+76], eax
+	cmp	eax, DWORD PTR _iNumEntries$223774[esp+76]
+	mov	DWORD PTR _iI$223776[esp+76], eax
 	jl	$LL7@Read
 $LN5@Read:
 
@@ -5870,7 +5870,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?Read@CvWonderProductionAI@@QAEXAAVFDataStream@@@Z$0:
-	lea	ecx, DWORD PTR _szError$223786[ebp]
+	lea	ecx, DWORD PTR _szError$223785[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?Read@CvWonderProductionAI@@QAEXAAVFDataStream@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?Read@CvWonderProductionAI@@QAEXAAVFDataStream@@@Z
@@ -5945,7 +5945,7 @@ PUBLIC	??$_Sort@PAUWeightedElement@?$CvWeightedVector@H$0DC@$00@@H@std@@YAXPAUWe
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\algorithm
 ;	COMDAT ??$_Sort@PAUWeightedElement@?$CvWeightedVector@H$0DC@$00@@H@std@@YAXPAUWeightedElement@?$CvWeightedVector@H$0DC@$00@@0H@Z
 _TEXT	SEGMENT
-__Mid$224532 = -8					; size = 8
+__Mid$224531 = -8					; size = 8
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Ideal$ = 16						; size = 4
@@ -5980,7 +5980,7 @@ $LL7@Sort:
 ; 3087 : 			std::_Unguarded_partition(_First, _Last);
 
 	push	edi
-	lea	eax, DWORD PTR __Mid$224532[esp+28]
+	lea	eax, DWORD PTR __Mid$224531[esp+28]
 	push	ebx
 	push	eax
 	call	??$_Unguarded_partition@PAUWeightedElement@?$CvWeightedVector@H$0DC@$00@@@std@@YA?AU?$pair@PAUWeightedElement@?$CvWeightedVector@H$0DC@$00@@PAU12@@0@PAUWeightedElement@?$CvWeightedVector@H$0DC@$00@@0@Z ; std::_Unguarded_partition<CvWeightedVector<int,50,1>::WeightedElement *>
@@ -5989,7 +5989,7 @@ $LL7@Sort:
 ; 3089 : 
 ; 3090 : 		if (_Mid.first - _First < _Last - _Mid.second)
 
-	mov	ebp, DWORD PTR __Mid$224532[esp+40]
+	mov	ebp, DWORD PTR __Mid$224531[esp+40]
 	mov	eax, esi
 	cdq
 	sub	eax, edx
@@ -5999,7 +5999,7 @@ $LL7@Sort:
 	sub	eax, edx
 	sar	eax, 1
 	add	esi, eax
-	mov	eax, DWORD PTR __Mid$224532[esp+36]
+	mov	eax, DWORD PTR __Mid$224531[esp+36]
 	mov	ecx, edi
 	mov	edx, eax
 	sub	ecx, ebp
@@ -6037,7 +6037,7 @@ $LN5@Sort:
 
 ; 3098 : 			_Last = _Mid.first;
 
-	mov	edi, DWORD PTR __Mid$224532[esp+36]
+	mov	edi, DWORD PTR __Mid$224531[esp+36]
 $LN26@Sort:
 	mov	eax, edi
 	sub	eax, ebx
@@ -6195,21 +6195,21 @@ EXTRN	?getAsyncRandNum@CvGame@@QAEHHPBD@Z:PROC	; CvGame::getAsyncRandNum
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredll_expansion2\cvwonderproductionai.cpp
 ;	COMDAT ?ChooseWonder@CvWonderProductionAI@@QAE?AW4BuildingTypes@@_N0AAH@Z
 _TEXT	SEGMENT
-_iTempWeight$224043 = -52				; size = 4
-$T227529 = -52						; size = 4
+_iTempWeight$224042 = -52				; size = 4
+$T227528 = -52						; size = 4
 _this$ = -48						; size = 4
 _iEstimatedProductionPerTurn$ = -44			; size = 4
-$T227796 = -40						; size = 4
-$T227533 = -40						; size = 4
-$T227528 = -40						; size = 4
+$T227795 = -40						; size = 4
+$T227532 = -40						; size = 4
+$T227527 = -40						; size = 4
 _iBldgLoop$ = -36					; size = 4
-_elem$227776 = -32					; size = 8
-_elem$227761 = -32					; size = 8
-$T227532 = -32						; size = 4
-_iVotesNeededToWin$224045 = -32				; size = 4
+_elem$227775 = -32					; size = 8
+_elem$227760 = -32					; size = 8
+$T227531 = -32						; size = 4
+_iVotesNeededToWin$224044 = -32				; size = 4
 _iTurnsRequired$ = -24					; size = 4
-_kBuildingClassInfo$224033 = -20			; size = 4
-_pkBuildingInfo$224030 = -16				; size = 4
+_kBuildingClassInfo$224032 = -20			; size = 4
+_pkBuildingInfo$224029 = -16				; size = 4
 _iCityLoop$ = -12					; size = 4
 _fcn$ = -8						; size = 8
 _pWonderCity$ = 8					; size = 4
@@ -6364,7 +6364,7 @@ $LL210@ChooseWond:
 	push	ebp
 	call	?GetEntry@CvBuildingXMLEntries@@QAEPAVCvBuildingEntry@@H@Z ; CvBuildingXMLEntries::GetEntry
 	mov	edi, eax
-	mov	DWORD PTR _pkBuildingInfo$224030[esp+68], edi
+	mov	DWORD PTR _pkBuildingInfo$224029[esp+68], edi
 
 ; 384  : 		if(pkBuildingInfo)
 
@@ -6383,13 +6383,13 @@ $LL210@ChooseWond:
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	mov	esi, eax
-	push	OFFSET $SG224036
-	mov	DWORD PTR _kBuildingClassInfo$224033[esp+72], esi
+	push	OFFSET $SG224035
+	mov	DWORD PTR _kBuildingClassInfo$224032[esp+72], esi
 	call	?isOption@CvGame@@QBE_NPBD@Z		; CvGame::isOption
 	test	al, al
 	jne	SHORT $LN22@ChooseWond
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
-	push	OFFSET $SG224037
+	push	OFFSET $SG224036
 	call	?isOption@CvGame@@QBE_NPBD@Z		; CvGame::isOption
 	test	al, al
 	je	SHORT $LN23@ChooseWond
@@ -6441,12 +6441,12 @@ $LN105@ChooseWond:
 	call	?GetProductionCost@CvBuildingEntry@@QBEHXZ ; CvBuildingEntry::GetProductionCost
 	cdq
 	idiv	DWORD PTR _iEstimatedProductionPerTurn$[esp+68]
-	mov	DWORD PTR $T227529[esp+68], 1
-	mov	DWORD PTR $T227528[esp+68], eax
+	mov	DWORD PTR $T227528[esp+68], 1
+	mov	DWORD PTR $T227527[esp+68], eax
 	cmp	eax, 1
-	lea	eax, DWORD PTR $T227528[esp+68]
+	lea	eax, DWORD PTR $T227527[esp+68]
 	jg	SHORT $LN112@ChooseWond
-	lea	eax, DWORD PTR $T227529[esp+68]
+	lea	eax, DWORD PTR $T227528[esp+68]
 $LN112@ChooseWond:
 	mov	eax, DWORD PTR [eax]
 
@@ -6468,13 +6468,13 @@ $LN112@ChooseWond:
 	jle	SHORT $LN35@ChooseWond
 	mov	ecx, DWORD PTR [eax+ebp*8]
 	mov	eax, DWORD PTR [eax+ebp*8+4]
-	mov	DWORD PTR _elem$227761[esp+68], ecx
+	mov	DWORD PTR _elem$227760[esp+68], ecx
 	imul	eax, 25					; 00000019H
 	jmp	SHORT $LN213@ChooseWond
 $LN35@ChooseWond:
 	mov	edx, DWORD PTR [eax+ebp*8]
 	mov	eax, DWORD PTR [eax+ebp*8+4]
-	mov	DWORD PTR _elem$227776[esp+68], edx
+	mov	DWORD PTR _elem$227775[esp+68], edx
 $LN213@ChooseWond:
 
 ; 403  : 
@@ -6482,7 +6482,7 @@ $LN213@ChooseWond:
 ; 405  : 				if(pkBuildingInfo->IsDiplomaticVoting())
 
 	mov	ecx, edi
-	mov	DWORD PTR _iTempWeight$224043[esp+68], eax
+	mov	DWORD PTR _iTempWeight$224042[esp+68], eax
 	call	?IsDiplomaticVoting@CvBuildingEntry@@QBE_NXZ ; CvBuildingEntry::IsDiplomaticVoting
 	test	al, al
 	je	$LN206@ChooseWond
@@ -6499,16 +6499,16 @@ $LN213@ChooseWond:
 	mov	ecx, DWORD PTR [ebx+12]
 	mov	ebx, DWORD PTR [ecx+44]
 	xor	edi, edi
-	mov	DWORD PTR _iVotesNeededToWin$224045[esp+68], eax
+	mov	DWORD PTR _iVotesNeededToWin$224044[esp+68], eax
 	cmp	ebx, 63					; 0000003fH
 	ja	SHORT $LN131@ChooseWond
 	mov	edx, DWORD PTR ?sr_TeamTypes@CvPreGame@@3ABV?$vector@W4TeamTypes@@V?$allocator@W4TeamTypes@@@std@@@std@@B ; CvPreGame::sr_TeamTypes
 	mov	eax, DWORD PTR [edx+4]
 	mov	ecx, DWORD PTR [eax+ebx*4]
-	mov	DWORD PTR $T227796[esp+68], ecx
+	mov	DWORD PTR $T227795[esp+68], ecx
 	jmp	SHORT $LN132@ChooseWond
 $LN131@ChooseWond:
-	mov	DWORD PTR $T227796[esp+68], -1
+	mov	DWORD PTR $T227795[esp+68], -1
 $LN132@ChooseWond:
 
 ; 410  : 					PlayerTypes myPlayerID = m_pPlayer->GetID();
@@ -6548,7 +6548,7 @@ $LN153@ChooseWond:
 	add	eax, DWORD PTR ?m_aTeams@CvTeam@@1PAV1@A ; CvTeam::m_aTeams
 	mov	ecx, eax
 	call	?GetLiberatedByTeam@CvTeam@@QBE?AW4TeamTypes@@XZ ; CvTeam::GetLiberatedByTeam
-	cmp	eax, DWORD PTR $T227796[esp+68]
+	cmp	eax, DWORD PTR $T227795[esp+68]
 
 ; 425  : 							{
 ; 426  : 								iSecuredVotes++;
@@ -6602,14 +6602,14 @@ $LN18@ChooseWond:
 ; 440  : 
 ; 441  : 					int iNumberOfPlayersWeNeedToBuyOff = MAX(0, iVotesNeededToWin - iSecuredVotes);
 
-	mov	eax, DWORD PTR _iVotesNeededToWin$224045[esp+68]
+	mov	eax, DWORD PTR _iVotesNeededToWin$224044[esp+68]
 	sub	eax, edi
-	mov	DWORD PTR $T227532[esp+68], eax
-	mov	DWORD PTR $T227533[esp+68], 0
-	lea	esi, DWORD PTR $T227532[esp+68]
+	mov	DWORD PTR $T227531[esp+68], eax
+	mov	DWORD PTR $T227532[esp+68], 0
+	lea	esi, DWORD PTR $T227531[esp+68]
 	test	eax, eax
 	jg	SHORT $LN166@ChooseWond
-	lea	esi, DWORD PTR $T227533[esp+68]
+	lea	esi, DWORD PTR $T227532[esp+68]
 $LN166@ChooseWond:
 
 ; 442  : 
@@ -6639,7 +6639,7 @@ $LN10@ChooseWond:
 ; 444  : 					{
 ; 445  : 						iTempWeight = 0;
 
-	mov	DWORD PTR _iTempWeight$224043[esp+68], 0
+	mov	DWORD PTR _iTempWeight$224042[esp+68], 0
 $LN206@ChooseWond:
 
 ; 446  : 					}
@@ -6648,7 +6648,7 @@ $LN206@ChooseWond:
 ; 449  : 				iWeight = CityStrategyAIHelpers::ReweightByTurnsLeft(iTempWeight, iTurnsRequired);
 
 	mov	edx, DWORD PTR _iTurnsRequired$[esp+68]
-	mov	eax, DWORD PTR _iTempWeight$224043[esp+68]
+	mov	eax, DWORD PTR _iTempWeight$224042[esp+68]
 	push	edx
 	push	eax
 	call	?ReweightByTurnsLeft@CityStrategyAIHelpers@@YAHHH@Z ; CityStrategyAIHelpers::ReweightByTurnsLeft
@@ -6660,7 +6660,7 @@ $LN206@ChooseWond:
 	cmp	BYTE PTR _bAdjustForOtherPlayers$[esp+64], 0
 	mov	ebx, eax
 	je	SHORT $LN9@ChooseWond
-	mov	ecx, DWORD PTR _kBuildingClassInfo$224033[esp+68]
+	mov	ecx, DWORD PTR _kBuildingClassInfo$224032[esp+68]
 	push	ecx
 	call	?isWorldWonderClass@@YA_NABVCvBuildingClassInfo@@@Z ; isWorldWonderClass
 	add	esp, 4
@@ -6681,7 +6681,7 @@ $LL8@ChooseWond:
 ; 458  : 						if(GET_PLAYER(eLoopPlayer).getBuildingClassMaking((BuildingClassTypes)kBuilding.GetBuildingClassType()) > 0)
 
 	mov	edx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
-	mov	ecx, DWORD PTR _pkBuildingInfo$224030[esp+68]
+	mov	ecx, DWORD PTR _pkBuildingInfo$224029[esp+68]
 	lea	edi, DWORD PTR [esi+edx]
 	call	?GetBuildingClassType@CvBuildingEntry@@QBEHXZ ; CvBuildingEntry::GetBuildingClassType
 	push	eax
@@ -6798,7 +6798,7 @@ $LN25@ChooseWond:
 
 ; 480  : 			eSelection = (BuildingTypes)m_Buildables.ChooseFromTopChoices(iNumChoices, &fcn, "Choosing wonder from Top Choices");
 
-	push	OFFSET $SG224080
+	push	OFFSET $SG224079
 	lea	ecx, DWORD PTR _fcn$[esp+72]
 	push	ecx
 	push	eax
@@ -6859,16 +6859,16 @@ PUBLIC	?ChooseWonderForGreatEngineer@CvWonderProductionAI@@QAE?AW4BuildingTypes@
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?ChooseWonderForGreatEngineer@CvWonderProductionAI@@QAE?AW4BuildingTypes@@_NAAHAAPAVCvCity@@@Z
 _TEXT	SEGMENT
-$T228219 = -32						; size = 4
-$T227980 = -32						; size = 4
+$T228218 = -32						; size = 4
+$T227979 = -32						; size = 4
 _iWeight$ = -28						; size = 4
 _pWonderCity$ = -24					; size = 4
-_elem$228199 = -20					; size = 8
-$T227979 = -20						; size = 4
-_iVotesNeededToWin$224117 = -20				; size = 4
+_elem$228198 = -20					; size = 8
+$T227978 = -20						; size = 4
+_iVotesNeededToWin$224116 = -20				; size = 4
 _iCityLoop$ = -12					; size = 4
 _fcn$ = -8						; size = 8
-_iLoop$224146 = 8					; size = 4
+_iLoop$224145 = 8					; size = 4
 _iBldgLoop$ = 8						; size = 4
 _bUseAsyncRandom$ = 8					; size = 1
 _iWonderWeight$ = 12					; size = 4
@@ -7016,12 +7016,12 @@ $LL195@ChooseWond@2:
 ; 549  : 			if ((GC.getGame().isOption("GAMEOPTION_AI_TWEAKS") || GC.getGame().isOption("GAMEOPTION_AI_GIMP_NO_WORLD_WONDER")) && isWorldWonderClass(kBuilding.GetBuildingClassInfo()))
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
-	push	OFFSET $SG224111
+	push	OFFSET $SG224110
 	call	?isOption@CvGame@@QBE_NPBD@Z		; CvGame::isOption
 	test	al, al
 	jne	SHORT $LN23@ChooseWond@2
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
-	push	OFFSET $SG224112
+	push	OFFSET $SG224111
 	call	?isOption@CvGame@@QBE_NPBD@Z		; CvGame::isOption
 	test	al, al
 	je	SHORT $LN24@ChooseWond@2
@@ -7078,7 +7078,7 @@ $LN103@ChooseWond@2:
 ; 559  : 				if(pkBuildingInfo->IsDiplomaticVoting())
 
 	mov	ecx, esi
-	mov	DWORD PTR _elem$228199[esp+48], edx
+	mov	DWORD PTR _elem$228198[esp+48], edx
 	mov	DWORD PTR _iWeight$[esp+48], eax
 	call	?IsDiplomaticVoting@CvBuildingEntry@@QBE_NXZ ; CvBuildingEntry::IsDiplomaticVoting
 	test	al, al
@@ -7096,16 +7096,16 @@ $LN103@ChooseWond@2:
 	mov	ecx, DWORD PTR [ebx+12]
 	mov	ebp, DWORD PTR [ecx+44]
 	xor	edi, edi
-	mov	DWORD PTR _iVotesNeededToWin$224117[esp+48], eax
+	mov	DWORD PTR _iVotesNeededToWin$224116[esp+48], eax
 	cmp	ebp, 63					; 0000003fH
 	ja	SHORT $LN119@ChooseWond@2
 	mov	edx, DWORD PTR ?sr_TeamTypes@CvPreGame@@3ABV?$vector@W4TeamTypes@@V?$allocator@W4TeamTypes@@@std@@@std@@B ; CvPreGame::sr_TeamTypes
 	mov	eax, DWORD PTR [edx+4]
 	mov	ecx, DWORD PTR [eax+ebp*4]
-	mov	DWORD PTR $T228219[esp+48], ecx
+	mov	DWORD PTR $T228218[esp+48], ecx
 	jmp	SHORT $LN120@ChooseWond@2
 $LN119@ChooseWond@2:
-	mov	DWORD PTR $T228219[esp+48], -1
+	mov	DWORD PTR $T228218[esp+48], -1
 $LN120@ChooseWond@2:
 
 ; 564  : 					PlayerTypes myPlayerID = m_pPlayer->GetID();
@@ -7144,7 +7144,7 @@ $LN141@ChooseWond@2:
 	add	eax, DWORD PTR ?m_aTeams@CvTeam@@1PAV1@A ; CvTeam::m_aTeams
 	mov	ecx, eax
 	call	?GetLiberatedByTeam@CvTeam@@QBE?AW4TeamTypes@@XZ ; CvTeam::GetLiberatedByTeam
-	cmp	eax, DWORD PTR $T228219[esp+48]
+	cmp	eax, DWORD PTR $T228218[esp+48]
 
 ; 579  : 							{
 ; 580  : 								iSecuredVotes++;
@@ -7198,14 +7198,14 @@ $LN19@ChooseWond@2:
 ; 594  : 
 ; 595  : 					int iNumberOfPlayersWeNeedToBuyOff = MAX(0, iVotesNeededToWin - iSecuredVotes);
 
-	mov	eax, DWORD PTR _iVotesNeededToWin$224117[esp+48]
+	mov	eax, DWORD PTR _iVotesNeededToWin$224116[esp+48]
 	sub	eax, edi
-	mov	DWORD PTR $T227979[esp+48], eax
-	mov	DWORD PTR $T227980[esp+48], 0
-	lea	esi, DWORD PTR $T227979[esp+48]
+	mov	DWORD PTR $T227978[esp+48], eax
+	mov	DWORD PTR $T227979[esp+48], 0
+	lea	esi, DWORD PTR $T227978[esp+48]
 	test	eax, eax
 	jg	SHORT $LN154@ChooseWond@2
-	lea	esi, DWORD PTR $T227980[esp+48]
+	lea	esi, DWORD PTR $T227979[esp+48]
 $LN154@ChooseWond@2:
 
 ; 596  : 
@@ -7322,7 +7322,7 @@ $LN26@ChooseWond@2:
 ; 616  : 			int iNumChoices = 1;
 ; 617  : 			eSelection = (BuildingTypes)m_Buildables.ChooseFromTopChoices(iNumChoices, &fcn, "Choosing wonder from Top Choices");
 
-	push	OFFSET $SG224142
+	push	OFFSET $SG224141
 	lea	eax, DWORD PTR _fcn$[esp+52]
 	push	eax
 	push	1
@@ -7366,7 +7366,7 @@ $LN26@ChooseWond@2:
 
 	mov	ecx, DWORD PTR [ebx+12]
 	push	0
-	lea	eax, DWORD PTR _iLoop$224146[esp+48]
+	lea	eax, DWORD PTR _iLoop$224145[esp+48]
 	push	eax
 	call	?firstCity@CvPlayer@@QAEPAVCvCity@@PAH_N@Z ; CvPlayer::firstCity
 	mov	esi, eax
@@ -7388,7 +7388,7 @@ $LL6@ChooseWond@2:
 	test	al, al
 	jne	SHORT $LN184@ChooseWond@2
 	push	0
-	lea	ecx, DWORD PTR _iLoop$224146[esp+48]
+	lea	ecx, DWORD PTR _iLoop$224145[esp+48]
 	push	ecx
 	mov	ecx, DWORD PTR [ebx+12]
 	call	?nextCity@CvPlayer@@QAEPAVCvCity@@PAH_N@Z ; CvPlayer::nextCity

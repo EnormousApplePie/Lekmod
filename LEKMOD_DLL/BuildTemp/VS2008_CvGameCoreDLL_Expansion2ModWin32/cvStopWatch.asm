@@ -19,13 +19,13 @@ _BSS	SEGMENT
 _ms_nesting DD	01H DUP (?)
 _BSS	ENDS
 CONST	SEGMENT
-$SG217750 DB	'stopwatch.log', 00H
+$SG217749 DB	'stopwatch.log', 00H
 	ORG $+2
-$SG217753 DB	', %d, %s, %f', 00H
+$SG217752 DB	', %d, %s, %f', 00H
 	ORG $+3
-$SG217758 DB	', %d, %s,%s %f', 00H
+$SG217757 DB	', %d, %s,%s %f', 00H
 	ORG $+1
-$SG217760 DB	', %s, %f', 00H
+$SG217759 DB	', %s, %f', 00H
 CONST	ENDS
 PUBLIC	?InitPerfTest@cvStopWatch@@SAXXZ		; cvStopWatch::InitPerfTest
 EXTRN	__imp__QueryPerformanceFrequency@4:PROC
@@ -143,7 +143,7 @@ _dtSeconds$ = 12					; size = 8
 	mov	edi, DWORD PTR [esi+4]
 	test	edi, edi
 	jne	SHORT $LN8@PerfLog
-	mov	edi, OFFSET $SG217750
+	mov	edi, OFFSET $SG217749
 $LN8@PerfLog:
 
 ; 87   : 		if (m_bShowNesting)
@@ -181,7 +181,7 @@ $LN8@PerfLog:
 	push	ecx
 	mov	ecx, DWORD PTR [esi+20]
 	push	ecx
-	push	OFFSET $SG217753
+	push	OFFSET $SG217752
 	push	eax
 	call	edx
 	add	esp, 24					; 00000018H
@@ -232,7 +232,7 @@ $LN11@PerfLog:
 	push	ecx
 	mov	ecx, DWORD PTR [esi+20]
 	push	ecx
-	push	OFFSET $SG217758
+	push	OFFSET $SG217757
 	push	eax
 	call	edx
 	add	esp, 28					; 0000001cH
@@ -271,7 +271,7 @@ $LN4@PerfLog:
 	mov	DWORD PTR [ecx+4], edi
 	mov	ecx, DWORD PTR _szName$[esp+20]
 	push	ecx
-	push	OFFSET $SG217760
+	push	OFFSET $SG217759
 	push	eax
 	call	edx
 	add	esp, 20					; 00000014H

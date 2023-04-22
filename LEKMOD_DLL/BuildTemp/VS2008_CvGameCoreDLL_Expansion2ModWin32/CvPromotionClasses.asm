@@ -10,333 +10,333 @@ INCLUDELIB MSVCRT
 INCLUDELIB OLDNAMES
 
 CONST	SEGMENT
-$SG218135 DB	'Sound', 00H
+$SG218134 DB	'Sound', 00H
 	ORG $+2
-$SG218136 DB	'CannotBeChosen', 00H
+$SG218135 DB	'CannotBeChosen', 00H
 	ORG $+1
-$SG218137 DB	'LostWithUpgrade', 00H
-$SG218138 DB	'NotWithUpgrade', 00H
+$SG218136 DB	'LostWithUpgrade', 00H
+$SG218137 DB	'NotWithUpgrade', 00H
 	ORG $+1
-$SG218139 DB	'InstaHeal', 00H
+$SG218138 DB	'InstaHeal', 00H
 	ORG $+2
-$SG218140 DB	'Leader', 00H
+$SG218139 DB	'Leader', 00H
 	ORG $+1
-$SG218141 DB	'Blitz', 00H
+$SG218140 DB	'Blitz', 00H
 	ORG $+2
-$SG218142 DB	'Amphib', 00H
+$SG218141 DB	'Amphib', 00H
 	ORG $+1
-$SG218143 DB	'River', 00H
+$SG218142 DB	'River', 00H
 	ORG $+2
-$SG218144 DB	'EnemyRoute', 00H
+$SG218143 DB	'EnemyRoute', 00H
 	ORG $+1
-$SG218145 DB	'RivalTerritory', 00H
+$SG218144 DB	'RivalTerritory', 00H
 	ORG $+1
-$SG218146 DB	'MustSetUpToRangedAttack', 00H
-$SG218147 DB	'RangedSupportFire', 00H
+$SG218145 DB	'MustSetUpToRangedAttack', 00H
+$SG218146 DB	'RangedSupportFire', 00H
 	ORG $+2
-$SG218148 DB	'AlwaysHeal', 00H
+$SG218147 DB	'AlwaysHeal', 00H
 	ORG $+1
-$SG218149 DB	'HealOutsideFriendly', 00H
-$SG218150 DB	'HillsDoubleMove', 00H
-$SG218151 DB	'IgnoreTerrainCost', 00H
+$SG218148 DB	'HealOutsideFriendly', 00H
+$SG218149 DB	'HillsDoubleMove', 00H
+$SG218150 DB	'IgnoreTerrainCost', 00H
 	ORG $+2
-$SG218152 DB	'RoughTerrainEndsTurn', 00H
+$SG218151 DB	'RoughTerrainEndsTurn', 00H
 	ORG $+3
-$SG218153 DB	'HoveringUnit', 00H
+$SG218152 DB	'HoveringUnit', 00H
 	ORG $+3
-$SG218154 DB	'FlatMovementCost', 00H
+$SG218153 DB	'FlatMovementCost', 00H
 	ORG $+3
-$SG218155 DB	'CanMoveImpassable', 00H
+$SG218154 DB	'CanMoveImpassable', 00H
 	ORG $+2
-$SG218156 DB	'NoCapture', 00H
+$SG218155 DB	'NoCapture', 00H
 	ORG $+2
-$SG218157 DB	'OnlyDefensive', 00H
+$SG218156 DB	'OnlyDefensive', 00H
 	ORG $+2
-$SG218158 DB	'NoDefensiveBonus', 00H
+$SG218157 DB	'NoDefensiveBonus', 00H
 	ORG $+3
-$SG218159 DB	'NukeImmune', 00H
+$SG218158 DB	'NukeImmune', 00H
 	ORG $+1
-$SG218160 DB	'HiddenNationality', 00H
+$SG218159 DB	'HiddenNationality', 00H
 	ORG $+2
-$SG218161 DB	'AlwaysHostile', 00H
+$SG218160 DB	'AlwaysHostile', 00H
 	ORG $+2
-$SG218162 DB	'NoRevealMap', 00H
-$SG218163 DB	'Recon', 00H
+$SG218161 DB	'NoRevealMap', 00H
+$SG218162 DB	'Recon', 00H
 	ORG $+2
-$SG218164 DB	'CanMoveAllTerrain', 00H
+$SG218163 DB	'CanMoveAllTerrain', 00H
 	ORG $+2
-$SG218165 DB	'CanMoveAfterAttacking', 00H
+$SG218164 DB	'CanMoveAfterAttacking', 00H
 	ORG $+2
-$SG218166 DB	'AirSweepCapable', 00H
-$SG218167 DB	'AllowsEmbarkation', 00H
+$SG218165 DB	'AirSweepCapable', 00H
+$SG218166 DB	'AllowsEmbarkation', 00H
 	ORG $+2
-$SG218168 DB	'RangeAttackIgnoreLOS', 00H
+$SG218167 DB	'RangeAttackIgnoreLOS', 00H
 	ORG $+3
-$SG218169 DB	'FreePillageMoves', 00H
+$SG218168 DB	'FreePillageMoves', 00H
 	ORG $+3
-$SG218170 DB	'HealOnPillage', 00H
+$SG218169 DB	'HealOnPillage', 00H
 	ORG $+2
-$SG218171 DB	'HealIfDestroyExcludesBarbarians', 00H
-$SG218172 DB	'EmbarkedAllWater', 00H
+$SG218170 DB	'HealIfDestroyExcludesBarbarians', 00H
+$SG218171 DB	'EmbarkedAllWater', 00H
 	ORG $+3
-$SG218173 DB	'CityAttackOnly', 00H
+$SG218172 DB	'CityAttackOnly', 00H
 	ORG $+1
-$SG218174 DB	'CaptureDefeatedEnemy', 00H
+$SG218173 DB	'CaptureDefeatedEnemy', 00H
 	ORG $+3
-$SG218175 DB	'IgnoreGreatGeneralBenefit', 00H
+$SG218174 DB	'IgnoreGreatGeneralBenefit', 00H
 	ORG $+2
-$SG218176 DB	'IgnoreZOC', 00H
+$SG218175 DB	'IgnoreZOC', 00H
 	ORG $+2
-$SG218177 DB	'HasPostCombatPromotions', 00H
-$SG218178 DB	'PostCombatPromotionsExclusive', 00H
+$SG218176 DB	'HasPostCombatPromotions', 00H
+$SG218177 DB	'PostCombatPromotionsExclusive', 00H
 	ORG $+2
-$SG218179 DB	'Sapper', 00H
+$SG218178 DB	'Sapper', 00H
 	ORG $+1
-$SG218181 DB	'GiveDomain', 00H
+$SG218180 DB	'GiveDomain', 00H
 	ORG $+1
-$SG218184 DB	'ConvertDomainUnit', 00H
+$SG218183 DB	'ConvertDomainUnit', 00H
 	ORG $+2
-$SG218187 DB	'ConvertDomain', 00H
+$SG218186 DB	'ConvertDomain', 00H
 	ORG $+2
-$SG218189 DB	'HeavyCharge', 00H
-$SG218190 DB	'HeavyChargeDownhill', 00H
-$SG218191 DB	'VisibilityChange', 00H
+$SG218188 DB	'HeavyCharge', 00H
+$SG218189 DB	'HeavyChargeDownhill', 00H
+$SG218190 DB	'VisibilityChange', 00H
 	ORG $+3
-$SG218192 DB	'MovesChange', 00H
-$SG218193 DB	'MoveDiscountChange', 00H
+$SG218191 DB	'MovesChange', 00H
+$SG218192 DB	'MoveDiscountChange', 00H
 	ORG $+1
-$SG218194 DB	'RangeChange', 00H
-$SG218195 DB	'RangedAttackModifier', 00H
+$SG218193 DB	'RangeChange', 00H
+$SG218194 DB	'RangedAttackModifier', 00H
 	ORG $+3
-$SG218196 DB	'InterceptionCombatModifier', 00H
+$SG218195 DB	'InterceptionCombatModifier', 00H
 	ORG $+1
-$SG218197 DB	'InterceptionDefenseDamageModifier', 00H
+$SG218196 DB	'InterceptionDefenseDamageModifier', 00H
 	ORG $+2
-$SG218198 DB	'AirSweepCombatModifier', 00H
+$SG218197 DB	'AirSweepCombatModifier', 00H
 	ORG $+1
-$SG218199 DB	'InterceptChanceChange', 00H
+$SG218198 DB	'InterceptChanceChange', 00H
 	ORG $+2
-$SG218200 DB	'NumInterceptionChange', 00H
+$SG218199 DB	'NumInterceptionChange', 00H
 	ORG $+2
-$SG218201 DB	'EvasionChange', 00H
+$SG218200 DB	'EvasionChange', 00H
 	ORG $+2
-$SG218202 DB	'CargoChange', 00H
-$SG218203 DB	'EnemyHealChange', 00H
-$SG218204 DB	'NeutralHealChange', 00H
+$SG218201 DB	'CargoChange', 00H
+$SG218202 DB	'EnemyHealChange', 00H
+$SG218203 DB	'NeutralHealChange', 00H
 	ORG $+2
-$SG218205 DB	'FriendlyHealChange', 00H
+$SG218204 DB	'FriendlyHealChange', 00H
 	ORG $+1
-$SG218206 DB	'SameTileHealChange', 00H
+$SG218205 DB	'SameTileHealChange', 00H
 	ORG $+1
-$SG218207 DB	'AdjacentTileHealChange', 00H
+$SG218206 DB	'AdjacentTileHealChange', 00H
 	ORG $+1
-$SG218208 DB	'EnemyDamageChance', 00H
+$SG218207 DB	'EnemyDamageChance', 00H
 	ORG $+2
-$SG218209 DB	'NeutralDamageChance', 00H
-$SG218210 DB	'EnemyDamage', 00H
-$SG218211 DB	'NeutralDamage', 00H
+$SG218208 DB	'NeutralDamageChance', 00H
+$SG218209 DB	'EnemyDamage', 00H
+$SG218210 DB	'NeutralDamage', 00H
 	ORG $+2
-$SG218212 DB	'CombatPercent', 00H
+$SG218211 DB	'CombatPercent', 00H
 	ORG $+2
-$SG218213 DB	'CityAttack', 00H
+$SG218212 DB	'CityAttack', 00H
 	ORG $+1
-$SG218214 DB	'CityDefense', 00H
-$SG218215 DB	'RangedDefenseMod', 00H
+$SG218213 DB	'CityDefense', 00H
+$SG218214 DB	'RangedDefenseMod', 00H
 	ORG $+3
-$SG218216 DB	'HillsAttack', 00H
-$SG218217 DB	'HillsDefense', 00H
+$SG218215 DB	'HillsAttack', 00H
+$SG218216 DB	'HillsDefense', 00H
 	ORG $+3
-$SG218218 DB	'OpenAttack', 00H
+$SG218217 DB	'OpenAttack', 00H
 	ORG $+1
-$SG218219 DB	'OpenRangedAttackMod', 00H
-$SG218220 DB	'RoughAttack', 00H
-$SG218221 DB	'RoughRangedAttackMod', 00H
+$SG218218 DB	'OpenRangedAttackMod', 00H
+$SG218219 DB	'RoughAttack', 00H
+$SG218220 DB	'RoughRangedAttackMod', 00H
 	ORG $+3
-$SG218222 DB	'AttackFortifiedMod', 00H
+$SG218221 DB	'AttackFortifiedMod', 00H
 	ORG $+1
-$SG218223 DB	'AttackWoundedMod', 00H
+$SG218222 DB	'AttackWoundedMod', 00H
 	ORG $+3
-$SG218224 DB	'FlankAttackModifier', 00H
-$SG218225 DB	'NearbyEnemyCombatMod', 00H
+$SG218223 DB	'FlankAttackModifier', 00H
+$SG218224 DB	'NearbyEnemyCombatMod', 00H
 	ORG $+3
-$SG218226 DB	'NearbyEnemyCombatRange', 00H
+$SG218225 DB	'NearbyEnemyCombatRange', 00H
 	ORG $+1
-$SG218227 DB	'OpenDefense', 00H
-$SG218228 DB	'RoughDefense', 00H
+$SG218226 DB	'OpenDefense', 00H
+$SG218227 DB	'RoughDefense', 00H
 	ORG $+3
-$SG218229 DB	'ExtraAttacks', 00H
+$SG218228 DB	'ExtraAttacks', 00H
 	ORG $+3
-$SG218230 DB	'GreatGeneral', 00H
+$SG218229 DB	'GreatGeneral', 00H
 	ORG $+3
-$SG218231 DB	'GreatAdmiral', 00H
+$SG218230 DB	'GreatAdmiral', 00H
 	ORG $+3
-$SG218232 DB	'GreatGeneralModifier', 00H
+$SG218231 DB	'GreatGeneralModifier', 00H
 	ORG $+3
-$SG218233 DB	'GreatGeneralReceivesMovement', 00H
+$SG218232 DB	'GreatGeneralReceivesMovement', 00H
 	ORG $+3
-$SG218234 DB	'EmbarkedUnitReceivesMovement', 00H
+$SG218233 DB	'EmbarkedUnitReceivesMovement', 00H
 	ORG $+3
-$SG218235 DB	'GreatGeneralOnOrAdjacentConfersMovement', 00H
-$SG218236 DB	'GreatGeneralCombatModifier', 00H
+$SG218234 DB	'GreatGeneralOnOrAdjacentConfersMovement', 00H
+$SG218235 DB	'GreatGeneralCombatModifier', 00H
 	ORG $+1
-$SG218237 DB	'FriendlyLandsModifier', 00H
+$SG218236 DB	'FriendlyLandsModifier', 00H
 	ORG $+2
-$SG218238 DB	'FriendlyLandsAttackModifier', 00H
-$SG218239 DB	'OutsideFriendlyLandsModifier', 00H
+$SG218237 DB	'FriendlyLandsAttackModifier', 00H
+$SG218238 DB	'OutsideFriendlyLandsModifier', 00H
 	ORG $+3
-$SG218240 DB	'GoldenAgeForeignAttackBonus', 00H
-$SG218241 DB	'CombatStrengthNearFriendlyMinor', 00H
-$SG218242 DB	'UpgradeDiscount', 00H
-$SG218243 DB	'ExperiencePercent', 00H
+$SG218239 DB	'GoldenAgeForeignAttackBonus', 00H
+$SG218240 DB	'CombatStrengthNearFriendlyMinor', 00H
+$SG218241 DB	'UpgradeDiscount', 00H
+$SG218242 DB	'ExperiencePercent', 00H
 	ORG $+2
-$SG218244 DB	'AdjacentMod', 00H
-$SG218245 DB	'AttackMod', 00H
+$SG218243 DB	'AdjacentMod', 00H
+$SG218244 DB	'AttackMod', 00H
 	ORG $+2
-$SG218246 DB	'DefenseMod', 00H
+$SG218245 DB	'DefenseMod', 00H
 	ORG $+1
-$SG218247 DB	'DropRange', 00H
+$SG218246 DB	'DropRange', 00H
 	ORG $+2
-$SG218248 DB	'ExtraNavalMovement', 00H
+$SG218247 DB	'ExtraNavalMovement', 00H
 	ORG $+1
-$SG218249 DB	'HPHealedIfDestroyEnemy', 00H
+$SG218248 DB	'HPHealedIfDestroyEnemy', 00H
 	ORG $+1
-$SG218250 DB	'GoldenAgeValueFromKills', 00H
-$SG218251 DB	'ExtraWithdrawal', 00H
-$SG218252 DB	'EmbarkExtraVisibility', 00H
+$SG218249 DB	'GoldenAgeValueFromKills', 00H
+$SG218250 DB	'ExtraWithdrawal', 00H
+$SG218251 DB	'EmbarkExtraVisibility', 00H
 	ORG $+2
-$SG218253 DB	'EmbarkDefenseModifier', 00H
+$SG218252 DB	'EmbarkDefenseModifier', 00H
 	ORG $+2
-$SG218254 DB	'CapitalDefenseModifier', 00H
+$SG218253 DB	'CapitalDefenseModifier', 00H
 	ORG $+1
-$SG218255 DB	'CapitalDefenseFalloff', 00H
+$SG218254 DB	'CapitalDefenseFalloff', 00H
 	ORG $+2
-$SG218256 DB	'CityAttackPlunderModifier', 00H
+$SG218255 DB	'CityAttackPlunderModifier', 00H
 	ORG $+2
-$SG218257 DB	'ReligiousStrengthLossRivalTerritory', 00H
-$SG218258 DB	'TradeMissionInfluenceModifier', 00H
+$SG218256 DB	'ReligiousStrengthLossRivalTerritory', 00H
+$SG218257 DB	'TradeMissionInfluenceModifier', 00H
 	ORG $+2
-$SG218259 DB	'TradeMissionGoldModifier', 00H
+$SG218258 DB	'TradeMissionGoldModifier', 00H
 	ORG $+3
-$SG218261 DB	'LayerAnimationPath', 00H
+$SG218260 DB	'LayerAnimationPath', 00H
 	ORG $+1
-$SG218263 DB	'TechPrereq', 00H
+$SG218262 DB	'TechPrereq', 00H
 	ORG $+1
-$SG218265 DB	'Invisible', 00H
+$SG218264 DB	'Invisible', 00H
 	ORG $+2
-$SG218267 DB	'SeeInvisible', 00H
+$SG218266 DB	'SeeInvisible', 00H
 	ORG $+3
-$SG218269 DB	'PromotionPrereq', 00H
-$SG218271 DB	'PromotionPrereqOr1', 00H
+$SG218268 DB	'PromotionPrereq', 00H
+$SG218270 DB	'PromotionPrereqOr1', 00H
 	ORG $+1
-$SG218273 DB	'PromotionPrereqOr2', 00H
+$SG218272 DB	'PromotionPrereqOr2', 00H
 	ORG $+1
-$SG218275 DB	'PromotionPrereqOr3', 00H
+$SG218274 DB	'PromotionPrereqOr3', 00H
 	ORG $+1
-$SG218277 DB	'PromotionPrereqOr4', 00H
+$SG218276 DB	'PromotionPrereqOr4', 00H
 	ORG $+1
-$SG218279 DB	'PromotionPrereqOr5', 00H
+$SG218278 DB	'PromotionPrereqOr5', 00H
 	ORG $+1
-$SG218281 DB	'PromotionPrereqOr6', 00H
+$SG218280 DB	'PromotionPrereqOr6', 00H
 	ORG $+1
-$SG218283 DB	'PromotionPrereqOr7', 00H
+$SG218282 DB	'PromotionPrereqOr7', 00H
 	ORG $+1
-$SG218285 DB	'PromotionPrereqOr8', 00H
+$SG218284 DB	'PromotionPrereqOr8', 00H
 	ORG $+1
-$SG218287 DB	'PromotionPrereqOr9', 00H
+$SG218286 DB	'PromotionPrereqOr9', 00H
 	ORG $+1
-$SG218289 DB	'PromotionPrereqOr9', 00H
+$SG218288 DB	'PromotionPrereqOr9', 00H
 	ORG $+1
-$SG218291 DB	'UnitClasses', 00H
-$SG218295 DB	'Domains', 00H
-$SG218298 DB	'UnitCombatInfos', 00H
-$SG218300 DB	'Units', 00H
+$SG218290 DB	'UnitClasses', 00H
+$SG218294 DB	'Domains', 00H
+$SG218297 DB	'UnitCombatInfos', 00H
+$SG218299 DB	'Units', 00H
 	ORG $+2
-$SG218313 DB	'UnitPromotions_Terrains', 00H
+$SG218312 DB	'UnitPromotions_Terrains', 00H
 	ORG $+4
-$SG218317 DB	'select Terrains.ID as TerrainID, coalesce(Technologies.I'
+$SG218316 DB	'select Terrains.ID as TerrainID, coalesce(Technologies.I'
 	DB	'D, -1) as PassableTechID, UnitPromotions_Terrains.* from Unit'
 	DB	'Promotions_Terrains inner join Terrains on TerrainType = Terr'
 	DB	'ains.Type left join Technologies on PassableTech = Technologi'
 	DB	'es.Type where PromotionType = ?', 00H
 	ORG $+1
-$SG218324 DB	'TerrainID', 00H
+$SG218323 DB	'TerrainID', 00H
 	ORG $+2
-$SG218326 DB	'Attack', 00H
+$SG218325 DB	'Attack', 00H
 	ORG $+1
-$SG218328 DB	'Defense', 00H
-$SG218330 DB	'DoubleMove', 00H
+$SG218327 DB	'Defense', 00H
+$SG218329 DB	'DoubleMove', 00H
 	ORG $+1
-$SG218332 DB	'Impassable', 00H
+$SG218331 DB	'Impassable', 00H
 	ORG $+1
-$SG218334 DB	'PassableTechID', 00H
+$SG218333 DB	'PassableTechID', 00H
 	ORG $+1
-$SG218336 DB	'UnitPromotions_Features', 00H
+$SG218335 DB	'UnitPromotions_Features', 00H
 	ORG $+4
-$SG218340 DB	'select Features.ID as FeatureID, coalesce(Technologies.I'
+$SG218339 DB	'select Features.ID as FeatureID, coalesce(Technologies.I'
 	DB	'D, -1) as PassableTechID, UnitPromotions_Features.* from Unit'
 	DB	'Promotions_Features inner join Features on FeatureType = Feat'
 	DB	'ures.Type left join Technologies on PassableTech = Technologi'
 	DB	'es.Type where PromotionType = ?', 00H
 	ORG $+1
-$SG218347 DB	'FeatureID', 00H
+$SG218346 DB	'FeatureID', 00H
 	ORG $+2
-$SG218349 DB	'Attack', 00H
+$SG218348 DB	'Attack', 00H
 	ORG $+1
-$SG218351 DB	'Defense', 00H
-$SG218353 DB	'DoubleMove', 00H
+$SG218350 DB	'Defense', 00H
+$SG218352 DB	'DoubleMove', 00H
 	ORG $+1
-$SG218355 DB	'Impassable', 00H
+$SG218354 DB	'Impassable', 00H
 	ORG $+1
-$SG218357 DB	'PassableTechID', 00H
+$SG218356 DB	'PassableTechID', 00H
 	ORG $+1
-$SG218359 DB	'UnitPromotions_UnitClasses', 00H
+$SG218358 DB	'UnitPromotions_UnitClasses', 00H
 	ORG $+1
-$SG218363 DB	'select UnitClasses.ID, Modifier, Attack, Defense from Un'
+$SG218362 DB	'select UnitClasses.ID, Modifier, Attack, Defense from Un'
 	DB	'itPromotions_UnitClasses inner join UnitClasses on UnitClassT'
 	DB	'ype = UnitClasses.Type where PromotionType = ?', 00H
-$SG218371 DB	'Modifier', 00H
+$SG218370 DB	'Modifier', 00H
 	ORG $+3
-$SG218373 DB	'Attack', 00H
+$SG218372 DB	'Attack', 00H
 	ORG $+1
-$SG218375 DB	'Defense', 00H
-$SG218377 DB	'm_piDomainModifierPercent', 00H
+$SG218374 DB	'Defense', 00H
+$SG218376 DB	'm_piDomainModifierPercent', 00H
 	ORG $+6
-$SG218381 DB	'select Domains.ID, Modifier from UnitPromotions_Domains '
+$SG218380 DB	'select Domains.ID, Modifier from UnitPromotions_Domains '
 	DB	'inner join Domains on DomainType = Domains.Type where Promoti'
 	DB	'onType = ?;', 00H
 	ORG $+3
-$SG218391 DB	'm_piUnitCombatModifierPercent', 00H
+$SG218390 DB	'm_piUnitCombatModifierPercent', 00H
 	ORG $+6
-$SG218395 DB	'select UnitCombatInfos.ID, Modifier from UnitPromotions_'
+$SG218394 DB	'select UnitCombatInfos.ID, Modifier from UnitPromotions_'
 	DB	'UnitCombatMods inner join UnitCombatInfos on UnitCombatInfos.'
 	DB	'Type = UnitCombatType where PromotionType = ?;', 00H
-$SG218404 DB	'm_pbUnitCombat', 00H
+$SG218403 DB	'm_pbUnitCombat', 00H
 	ORG $+5
-$SG218408 DB	'select UnitCombatInfos.ID from UnitPromotions_UnitCombat'
+$SG218407 DB	'select UnitCombatInfos.ID from UnitPromotions_UnitCombat'
 	DB	's inner join UnitCombatInfos On UnitCombatInfos.Type = UnitCo'
 	DB	'mbatType where PromotionType = ?', 00H
 	ORG $+2
-$SG218416 DB	'm_pbCivilianUnitType', 00H
+$SG218415 DB	'm_pbCivilianUnitType', 00H
 	ORG $+3
-$SG218420 DB	'select Units.ID from UnitPromotions_CivilianUnitType inn'
+$SG218419 DB	'select Units.ID from UnitPromotions_CivilianUnitType inn'
 	DB	'er join Units On Units.Type = UnitType where PromotionType = '
 	DB	'?', 00H
 	ORG $+1
-$SG218428 DB	'PromotionType', 00H
+$SG218427 DB	'PromotionType', 00H
 	ORG $+2
-$SG218429 DB	'NewPromotion', 00H
+$SG218428 DB	'NewPromotion', 00H
 	ORG $+3
-$SG218430 DB	'UnitPromotions_PostCombatRandomPromotion', 00H
+$SG218429 DB	'UnitPromotions_PostCombatRandomPromotion', 00H
 	ORG $+3
-$SG218431 DB	'UnitPromotions', 00H
+$SG218430 DB	'UnitPromotions', 00H
 	ORG $+1
-$SG219295 DB	'Random Promotion Pick', 00H
+$SG219294 DB	'Random Promotion Pick', 00H
 	ORG $+2
-$SG219341 DB	'PROMOTION_OLIGARCHY', 00H
-$SG219348 DB	'LOAD ERROR: Promotion Type not found: %s', 00H
+$SG219340 DB	'PROMOTION_OLIGARCHY', 00H
+$SG219347 DB	'LOAD ERROR: Promotion Type not found: %s', 00H
 	ORG $+3
-$SG219358 DB	'PROMOTION_OLIGARCHY', 00H
-$SG219370 DB	'LOAD ERROR: Promotion Type not found for hash: %u', 00H
+$SG219357 DB	'PROMOTION_OLIGARCHY', 00H
+$SG219369 DB	'LOAD ERROR: Promotion Type not found for hash: %u', 00H
 CONST	ENDS
 PUBLIC	??_7bad_alloc@std@@6B@				; std::bad_alloc::`vftable'
 PUBLIC	??0bad_alloc@std@@QAE@PBD@Z			; std::bad_alloc::bad_alloc
@@ -4431,8 +4431,8 @@ __ehfuncinfo$?_Xlen@?$vector@PAVCvPromotionEntry@@V?$allocator@PAVCvPromotionEnt
 xdata$x	ENDS
 ;	COMDAT ?_Xlen@?$vector@PAVCvPromotionEntry@@V?$allocator@PAVCvPromotionEntry@@@std@@@std@@KAXXZ
 _TEXT	SEGMENT
-$T220782 = -80						; size = 28
-$T220781 = -52						; size = 40
+$T220781 = -80						; size = 28
+$T220780 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ?_Xlen@?$vector@PAVCvPromotionEntry@@V?$allocator@PAVCvPromotionEntry@@@std@@@std@@KAXXZ PROC ; std::vector<CvPromotionEntry *,std::allocator<CvPromotionEntry *> >::_Xlen, COMDAT
 
@@ -4448,22 +4448,22 @@ __$EHRec$ = -12						; size = 12
 ; 1260 : 		_THROW(length_error, "vector<T> too long");
 
 	push	OFFSET ??_C@_0BD@OLBABOEK@vector?$DMT?$DO?5too?5long?$AA@
-	lea	ecx, DWORD PTR $T220782[esp+84]
+	lea	ecx, DWORD PTR $T220781[esp+84]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T220781[esp+80]
+	lea	ecx, DWORD PTR $T220780[esp+80]
 	mov	DWORD PTR __$EHRec$[esp+88], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T220782[esp+80]
+	lea	eax, DWORD PTR $T220781[esp+80]
 	push	eax
-	lea	ecx, DWORD PTR $T220781[esp+96]
+	lea	ecx, DWORD PTR $T220780[esp+96]
 	mov	BYTE PTR __$EHRec$[esp+92], 1
-	mov	DWORD PTR $T220781[esp+84], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T220780[esp+84], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVlength_error@std@@
-	lea	ecx, DWORD PTR $T220781[esp+84]
+	lea	ecx, DWORD PTR $T220780[esp+84]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+96], 0
-	mov	DWORD PTR $T220781[esp+88], OFFSET ??_7length_error@std@@6B@
+	mov	DWORD PTR $T220780[esp+88], OFFSET ??_7length_error@std@@6B@
 	call	__CxxThrowException@8
 $LN13@Xlen:
 $LN12@Xlen:
@@ -4472,10 +4472,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Xlen@?$vector@PAVCvPromotionEntry@@V?$allocator@PAVCvPromotionEntry@@@std@@@std@@KAXXZ$0:
-	lea	ecx, DWORD PTR $T220782[ebp]
+	lea	ecx, DWORD PTR $T220781[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Xlen@?$vector@PAVCvPromotionEntry@@V?$allocator@PAVCvPromotionEntry@@@std@@@std@@KAXXZ$2:
-	lea	ecx, DWORD PTR $T220781[ebp]
+	lea	ecx, DWORD PTR $T220780[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Xlen@?$vector@PAVCvPromotionEntry@@V?$allocator@PAVCvPromotionEntry@@@std@@@std@@KAXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?_Xlen@?$vector@PAVCvPromotionEntry@@V?$allocator@PAVCvPromotionEntry@@@std@@@std@@KAXXZ
@@ -4708,8 +4708,8 @@ __TI2?AVbad_alloc@std@@ DD 00H
 xdata$x	ENDS
 ;	COMDAT ??$_Allocate@PAVCvPromotionEntry@@@std@@YAPAPAVCvPromotionEntry@@IPAPAV1@@Z
 _TEXT	SEGMENT
-$T220835 = -12						; size = 12
-$T220839 = 8						; size = 4
+$T220834 = -12						; size = 12
+$T220838 = 8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ??$_Allocate@PAVCvPromotionEntry@@@std@@YAPAPAVCvPromotionEntry@@IPAPAV1@@Z PROC ; std::_Allocate<CvPromotionEntry *>, COMDAT
@@ -4751,15 +4751,15 @@ $LN3@Allocate:
 
 ; 40   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T220839[esp+8]
+	lea	eax, DWORD PTR $T220838[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T220835[esp+16]
-	mov	DWORD PTR $T220839[esp+12], 0
+	lea	ecx, DWORD PTR $T220834[esp+16]
+	mov	DWORD PTR $T220838[esp+12], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T220835[esp+16]
+	lea	ecx, DWORD PTR $T220834[esp+16]
 	push	ecx
-	mov	DWORD PTR $T220835[esp+20], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T220834[esp+20], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN9@Allocate:
 $LN8@Allocate:
@@ -6088,8 +6088,8 @@ __ehfuncinfo$?_Xlen@?$vector@HV?$allocator@H@std@@@std@@KAXXZ DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?_Xlen@?$vector@HV?$allocator@H@std@@@std@@KAXXZ
 _TEXT	SEGMENT
-$T221014 = -80						; size = 28
-$T221013 = -52						; size = 40
+$T221013 = -80						; size = 28
+$T221012 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ?_Xlen@?$vector@HV?$allocator@H@std@@@std@@KAXXZ PROC	; std::vector<int,std::allocator<int> >::_Xlen, COMDAT
 
@@ -6105,22 +6105,22 @@ __$EHRec$ = -12						; size = 12
 ; 1260 : 		_THROW(length_error, "vector<T> too long");
 
 	push	OFFSET ??_C@_0BD@OLBABOEK@vector?$DMT?$DO?5too?5long?$AA@
-	lea	ecx, DWORD PTR $T221014[esp+84]
+	lea	ecx, DWORD PTR $T221013[esp+84]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T221013[esp+80]
+	lea	ecx, DWORD PTR $T221012[esp+80]
 	mov	DWORD PTR __$EHRec$[esp+88], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T221014[esp+80]
+	lea	eax, DWORD PTR $T221013[esp+80]
 	push	eax
-	lea	ecx, DWORD PTR $T221013[esp+96]
+	lea	ecx, DWORD PTR $T221012[esp+96]
 	mov	BYTE PTR __$EHRec$[esp+92], 1
-	mov	DWORD PTR $T221013[esp+84], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T221012[esp+84], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVlength_error@std@@
-	lea	ecx, DWORD PTR $T221013[esp+84]
+	lea	ecx, DWORD PTR $T221012[esp+84]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+96], 0
-	mov	DWORD PTR $T221013[esp+88], OFFSET ??_7length_error@std@@6B@
+	mov	DWORD PTR $T221012[esp+88], OFFSET ??_7length_error@std@@6B@
 	call	__CxxThrowException@8
 $LN13@Xlen@2:
 $LN12@Xlen@2:
@@ -6129,10 +6129,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Xlen@?$vector@HV?$allocator@H@std@@@std@@KAXXZ$0:
-	lea	ecx, DWORD PTR $T221014[ebp]
+	lea	ecx, DWORD PTR $T221013[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Xlen@?$vector@HV?$allocator@H@std@@@std@@KAXXZ$2:
-	lea	ecx, DWORD PTR $T221013[ebp]
+	lea	ecx, DWORD PTR $T221012[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Xlen@?$vector@HV?$allocator@H@std@@@std@@KAXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?_Xlen@?$vector@HV?$allocator@H@std@@@std@@KAXXZ
@@ -6302,8 +6302,8 @@ PUBLIC	??$_Allocate@H@std@@YAPAHIPAH@Z			; std::_Allocate<int>
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xmemory
 ;	COMDAT ??$_Allocate@H@std@@YAPAHIPAH@Z
 _TEXT	SEGMENT
-$T221061 = -12						; size = 12
-$T221065 = 8						; size = 4
+$T221060 = -12						; size = 12
+$T221064 = 8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ??$_Allocate@H@std@@YAPAHIPAH@Z PROC			; std::_Allocate<int>, COMDAT
@@ -6345,15 +6345,15 @@ $LN3@Allocate@2:
 
 ; 40   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T221065[esp+8]
+	lea	eax, DWORD PTR $T221064[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T221061[esp+16]
-	mov	DWORD PTR $T221065[esp+12], 0
+	lea	ecx, DWORD PTR $T221060[esp+16]
+	mov	DWORD PTR $T221064[esp+12], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T221061[esp+16]
+	lea	ecx, DWORD PTR $T221060[esp+16]
 	push	ecx
-	mov	DWORD PTR $T221061[esp+20], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T221060[esp+20], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN9@Allocate@2:
 $LN8@Allocate@2:
@@ -9201,24 +9201,24 @@ __unwindtable$?CacheResults@CvPromotionEntry@@UAE_NAAVResults@Database@@AAVCvDat
 xdata$x	ENDS
 ;	COMDAT ?CacheResults@CvPromotionEntry@@UAE_NAAVResults@Database@@AAVCvDatabaseUtility@@@Z
 _TEXT	SEGMENT
-_iFeatureID$218346 = -88				; size = 4
-_iTerrainID$218323 = -88				; size = 4
+_iFeatureID$218345 = -88				; size = 4
+_iTerrainID$218322 = -88				; size = 4
 _iNumUnitCombatClasses$ = -84				; size = 4
 _iNumFeatures$ = -80					; size = 4
 _iNumUnitClasses$ = -76					; size = 4
 _iNumUnitTypes$ = -72					; size = 4
-_sqlKey$218403 = -68					; size = 28
-_sqlKey$218390 = -68					; size = 28
-_sqlKey$218376 = -68					; size = 28
-_sqlKey$218358 = -68					; size = 28
-_sqlKey$218335 = -68					; size = 28
-_sqlKey$218312 = -68					; size = 28
-_sqlKey$218415 = -40					; size = 28
+_sqlKey$218402 = -68					; size = 28
+_sqlKey$218389 = -68					; size = 28
+_sqlKey$218375 = -68					; size = 28
+_sqlKey$218357 = -68					; size = 28
+_sqlKey$218334 = -68					; size = 28
+_sqlKey$218311 = -68					; size = 28
+_sqlKey$218414 = -40					; size = 28
 __$EHRec$ = -12						; size = 12
 _szPromotionType$ = 8					; size = 4
 _kResults$ = 8						; size = 4
-_iUnitCombatID$218401 = 12				; size = 4
-_iDomainID$218387 = 12					; size = 4
+_iUnitCombatID$218400 = 12				; size = 4
+_iDomainID$218386 = 12					; size = 4
 _kUtility$ = 12						; size = 4
 ?CacheResults@CvPromotionEntry@@UAE_NAAVResults@Database@@AAVCvDatabaseUtility@@@Z PROC ; CvPromotionEntry::CacheResults, COMDAT
 ; _this$ = ecx
@@ -9263,7 +9263,7 @@ $LN30@CacheResul:
 ; 213  : 	SetSound(kResults.GetText("Sound"));
 
 	mov	ebp, DWORD PTR __imp_?GetText@Results@Database@@QAEPBDPBD@Z
-	push	OFFSET $SG218135
+	push	OFFSET $SG218134
 	mov	ecx, edi
 	call	ebp
 	lea	ecx, DWORD PTR [esi+856]
@@ -9282,279 +9282,279 @@ $LN42@CacheResul:
 ; 216  : 	m_bCannotBeChosen = kResults.GetBool("CannotBeChosen");
 
 	mov	ebx, DWORD PTR __imp_?GetBool@Results@Database@@QAE_NPBD@Z
-	push	OFFSET $SG218136
+	push	OFFSET $SG218135
 	mov	ecx, edi
 	call	ebx
 
 ; 217  : 	m_bLostWithUpgrade = kResults.GetBool("LostWithUpgrade");
 
-	push	OFFSET $SG218137
+	push	OFFSET $SG218136
 	mov	ecx, edi
 	mov	BYTE PTR [esi+792], al
 	call	ebx
 
 ; 218  : 	m_bNotWithUpgrade = kResults.GetBool("NotWithUpgrade");
 
-	push	OFFSET $SG218138
+	push	OFFSET $SG218137
 	mov	ecx, edi
 	mov	BYTE PTR [esi+793], al
 	call	ebx
 
 ; 219  : 	m_bInstaHeal = kResults.GetBool("InstaHeal");
 
-	push	OFFSET $SG218139
+	push	OFFSET $SG218138
 	mov	ecx, edi
 	mov	BYTE PTR [esi+794], al
 	call	ebx
 
 ; 220  : 	m_bLeader = kResults.GetBool("Leader");
 
-	push	OFFSET $SG218140
+	push	OFFSET $SG218139
 	mov	ecx, edi
 	mov	BYTE PTR [esi+795], al
 	call	ebx
 
 ; 221  : 	m_bBlitz = kResults.GetBool("Blitz");
 
-	push	OFFSET $SG218141
+	push	OFFSET $SG218140
 	mov	ecx, edi
 	mov	BYTE PTR [esi+796], al
 	call	ebx
 
 ; 222  : 	m_bAmphib = kResults.GetBool("Amphib");
 
-	push	OFFSET $SG218142
+	push	OFFSET $SG218141
 	mov	ecx, edi
 	mov	BYTE PTR [esi+797], al
 	call	ebx
 
 ; 223  : 	m_bRiver = kResults.GetBool("River");
 
-	push	OFFSET $SG218143
+	push	OFFSET $SG218142
 	mov	ecx, edi
 	mov	BYTE PTR [esi+798], al
 	call	ebx
 
 ; 224  : 	m_bEnemyRoute = kResults.GetBool("EnemyRoute");
 
-	push	OFFSET $SG218144
+	push	OFFSET $SG218143
 	mov	ecx, edi
 	mov	BYTE PTR [esi+799], al
 	call	ebx
 
 ; 225  : 	m_bRivalTerritory = kResults.GetBool("RivalTerritory");
 
-	push	OFFSET $SG218145
+	push	OFFSET $SG218144
 	mov	ecx, edi
 	mov	BYTE PTR [esi+800], al
 	call	ebx
 
 ; 226  : 	m_bMustSetUpToRangedAttack = kResults.GetBool("MustSetUpToRangedAttack");
 
-	push	OFFSET $SG218146
+	push	OFFSET $SG218145
 	mov	ecx, edi
 	mov	BYTE PTR [esi+801], al
 	call	ebx
 
 ; 227  : 	m_bRangedSupportFire= kResults.GetBool("RangedSupportFire");
 
-	push	OFFSET $SG218147
+	push	OFFSET $SG218146
 	mov	ecx, edi
 	mov	BYTE PTR [esi+802], al
 	call	ebx
 
 ; 228  : 	m_bAlwaysHeal = kResults.GetBool("AlwaysHeal");
 
-	push	OFFSET $SG218148
+	push	OFFSET $SG218147
 	mov	ecx, edi
 	mov	BYTE PTR [esi+803], al
 	call	ebx
 
 ; 229  : 	m_bHealOutsideFriendly = kResults.GetBool("HealOutsideFriendly");
 
-	push	OFFSET $SG218149
+	push	OFFSET $SG218148
 	mov	ecx, edi
 	mov	BYTE PTR [esi+804], al
 	call	ebx
 
 ; 230  : 	m_bHillsDoubleMove = kResults.GetBool("HillsDoubleMove");
 
-	push	OFFSET $SG218150
+	push	OFFSET $SG218149
 	mov	ecx, edi
 	mov	BYTE PTR [esi+805], al
 	call	ebx
 
 ; 231  : 	m_bIgnoreTerrainCost = kResults.GetBool("IgnoreTerrainCost");
 
-	push	OFFSET $SG218151
+	push	OFFSET $SG218150
 	mov	ecx, edi
 	mov	BYTE PTR [esi+806], al
 	call	ebx
 
 ; 232  : 	m_bRoughTerrainEndsTurn = kResults.GetBool("RoughTerrainEndsTurn");
 
-	push	OFFSET $SG218152
+	push	OFFSET $SG218151
 	mov	ecx, edi
 	mov	BYTE PTR [esi+807], al
 	call	ebx
 
 ; 233  : 	m_bHoveringUnit = kResults.GetBool("HoveringUnit");
 
-	push	OFFSET $SG218153
+	push	OFFSET $SG218152
 	mov	ecx, edi
 	mov	BYTE PTR [esi+808], al
 	call	ebx
 
 ; 234  : 	m_bFlatMovementCost = kResults.GetBool("FlatMovementCost");
 
-	push	OFFSET $SG218154
+	push	OFFSET $SG218153
 	mov	ecx, edi
 	mov	BYTE PTR [esi+809], al
 	call	ebx
 
 ; 235  : 	m_bCanMoveImpassable = kResults.GetBool("CanMoveImpassable");
 
-	push	OFFSET $SG218155
+	push	OFFSET $SG218154
 	mov	ecx, edi
 	mov	BYTE PTR [esi+810], al
 	call	ebx
 
 ; 236  : 	m_bNoCapture = kResults.GetBool("NoCapture");
 
-	push	OFFSET $SG218156
+	push	OFFSET $SG218155
 	mov	ecx, edi
 	mov	BYTE PTR [esi+811], al
 	call	ebx
 
 ; 237  : 	m_bOnlyDefensive = kResults.GetBool("OnlyDefensive");
 
-	push	OFFSET $SG218157
+	push	OFFSET $SG218156
 	mov	ecx, edi
 	mov	BYTE PTR [esi+812], al
 	call	ebx
 
 ; 238  : 	m_bNoDefensiveBonus = kResults.GetBool("NoDefensiveBonus");
 
-	push	OFFSET $SG218158
+	push	OFFSET $SG218157
 	mov	ecx, edi
 	mov	BYTE PTR [esi+813], al
 	call	ebx
 
 ; 239  : 	m_bNukeImmune = kResults.GetBool("NukeImmune");
 
-	push	OFFSET $SG218159
+	push	OFFSET $SG218158
 	mov	ecx, edi
 	mov	BYTE PTR [esi+814], al
 	call	ebx
 
 ; 240  : 	m_bHiddenNationality = kResults.GetBool("HiddenNationality");
 
-	push	OFFSET $SG218160
+	push	OFFSET $SG218159
 	mov	ecx, edi
 	mov	BYTE PTR [esi+815], al
 	call	ebx
 
 ; 241  : 	m_bAlwaysHostile = kResults.GetBool("AlwaysHostile");
 
-	push	OFFSET $SG218161
+	push	OFFSET $SG218160
 	mov	ecx, edi
 	mov	BYTE PTR [esi+816], al
 	call	ebx
 
 ; 242  : 	m_bNoRevealMap = kResults.GetBool("NoRevealMap");
 
-	push	OFFSET $SG218162
+	push	OFFSET $SG218161
 	mov	ecx, edi
 	mov	BYTE PTR [esi+817], al
 	call	ebx
 
 ; 243  : 	m_bRecon = kResults.GetBool("Recon");
 
-	push	OFFSET $SG218163
+	push	OFFSET $SG218162
 	mov	ecx, edi
 	mov	BYTE PTR [esi+818], al
 	call	ebx
 
 ; 244  : 	m_bCanMoveAllTerrain = kResults.GetBool("CanMoveAllTerrain");
 
-	push	OFFSET $SG218164
+	push	OFFSET $SG218163
 	mov	ecx, edi
 	mov	BYTE PTR [esi+819], al
 	call	ebx
 
 ; 245  : 	m_bCanMoveAfterAttacking = kResults.GetBool("CanMoveAfterAttacking");
 
-	push	OFFSET $SG218165
+	push	OFFSET $SG218164
 	mov	ecx, edi
 	mov	BYTE PTR [esi+820], al
 	call	ebx
 
 ; 246  : 	m_bAirSweepCapable = kResults.GetBool("AirSweepCapable");
 
-	push	OFFSET $SG218166
+	push	OFFSET $SG218165
 	mov	ecx, edi
 	mov	BYTE PTR [esi+821], al
 	call	ebx
 
 ; 247  : 	m_bAllowsEmbarkation = kResults.GetBool("AllowsEmbarkation");
 
-	push	OFFSET $SG218167
+	push	OFFSET $SG218166
 	mov	ecx, edi
 	mov	BYTE PTR [esi+822], al
 	call	ebx
 
 ; 248  : 	m_bRangeAttackIgnoreLOS = kResults.GetBool("RangeAttackIgnoreLOS");
 
-	push	OFFSET $SG218168
+	push	OFFSET $SG218167
 	mov	ecx, edi
 	mov	BYTE PTR [esi+823], al
 	call	ebx
 
 ; 249  : 	m_bFreePillageMoves = kResults.GetBool("FreePillageMoves");
 
-	push	OFFSET $SG218169
+	push	OFFSET $SG218168
 	mov	ecx, edi
 	mov	BYTE PTR [esi+824], al
 	call	ebx
 
 ; 250  : 	m_bHealOnPillage = kResults.GetBool("HealOnPillage");
 
-	push	OFFSET $SG218170
+	push	OFFSET $SG218169
 	mov	ecx, edi
 	mov	BYTE PTR [esi+825], al
 	call	ebx
 
 ; 251  : 	m_bHealIfDefeatExcludesBarbarians = kResults.GetBool("HealIfDestroyExcludesBarbarians");
 
-	push	OFFSET $SG218171
+	push	OFFSET $SG218170
 	mov	ecx, edi
 	mov	BYTE PTR [esi+826], al
 	call	ebx
 
 ; 252  : 	m_bEmbarkedAllWater = kResults.GetBool("EmbarkedAllWater");
 
-	push	OFFSET $SG218172
+	push	OFFSET $SG218171
 	mov	ecx, edi
 	mov	BYTE PTR [esi+827], al
 	call	ebx
 
 ; 253  : 	m_bCityAttackOnly = kResults.GetBool("CityAttackOnly");
 
-	push	OFFSET $SG218173
+	push	OFFSET $SG218172
 	mov	ecx, edi
 	mov	BYTE PTR [esi+828], al
 	call	ebx
 
 ; 254  : 	m_bCaptureDefeatedEnemy = kResults.GetBool("CaptureDefeatedEnemy");
 
-	push	OFFSET $SG218174
+	push	OFFSET $SG218173
 	mov	ecx, edi
 	mov	BYTE PTR [esi+829], al
 	call	ebx
 
 ; 255  : 	m_bIgnoreGreatGeneralBenefit = kResults.GetBool("IgnoreGreatGeneralBenefit");
 
-	push	OFFSET $SG218175
+	push	OFFSET $SG218174
 	mov	ecx, edi
 	mov	BYTE PTR [esi+830], al
 	call	ebx
@@ -9562,27 +9562,27 @@ $LN42@CacheResul:
 
 ; 256  : 	m_bIgnoreZOC = kResults.GetBool("IgnoreZOC");
 
-	push	OFFSET $SG218176
+	push	OFFSET $SG218175
 	mov	ecx, edi
 	call	ebx
 
 ; 257  : 	m_bHasPostCombatPromotions = kResults.GetBool("HasPostCombatPromotions");
 
-	push	OFFSET $SG218177
+	push	OFFSET $SG218176
 	mov	ecx, edi
 	mov	BYTE PTR [esi+832], al
 	call	ebx
 
 ; 258  : 	m_bPostCombatPromotionsExclusive = kResults.GetBool("PostCombatPromotionsExclusive");
 
-	push	OFFSET $SG218178
+	push	OFFSET $SG218177
 	mov	ecx, edi
 	mov	BYTE PTR [esi+833], al
 	call	ebx
 
 ; 259  : 	m_bSapper = kResults.GetBool("Sapper");
 
-	push	OFFSET $SG218179
+	push	OFFSET $SG218178
 	mov	ecx, edi
 	mov	BYTE PTR [esi+834], al
 	call	ebx
@@ -9591,7 +9591,7 @@ $LN42@CacheResul:
 ; 261  : 	// CMP
 ; 262  : 	const char* szGiveDomain = kResults.GetText("GiveDomain");
 
-	push	OFFSET $SG218181
+	push	OFFSET $SG218180
 	mov	ecx, edi
 	mov	BYTE PTR [esi+835], al
 	call	ebp
@@ -9605,7 +9605,7 @@ $LN42@CacheResul:
 
 ; 264  : 	const char* szConvertDomainUnit = kResults.GetText("ConvertDomainUnit");
 
-	push	OFFSET $SG218184
+	push	OFFSET $SG218183
 	mov	ecx, edi
 	mov	DWORD PTR [esi+836], eax
 	call	ebp
@@ -9619,7 +9619,7 @@ $LN42@CacheResul:
 
 ; 266  : 	const char* szConvertDomain = kResults.GetText("ConvertDomain");
 
-	push	OFFSET $SG218187
+	push	OFFSET $SG218186
 	mov	ecx, edi
 	mov	DWORD PTR [esi+840], eax
 	call	ebp
@@ -9635,7 +9635,7 @@ $LN42@CacheResul:
 ; 269  : 
 ; 270  : 	m_bCanHeavyCharge = kResults.GetBool("HeavyCharge");
 
-	push	OFFSET $SG218189
+	push	OFFSET $SG218188
 	mov	ecx, edi
 	mov	DWORD PTR [esi+844], eax
 	call	ebx
@@ -9644,7 +9644,7 @@ $LN42@CacheResul:
 ; 272  : 	m_iHeavyChargeDownhill = kResults.GetInt("HeavyChargeDownhill");
 
 	mov	ebp, DWORD PTR __imp_?GetInt@Results@Database@@QAEHPBD@Z
-	push	OFFSET $SG218190
+	push	OFFSET $SG218189
 	mov	ecx, edi
 	mov	BYTE PTR [esi+848], al
 	call	ebp
@@ -9653,56 +9653,56 @@ $LN42@CacheResul:
 ; 274  : 
 ; 275  : 	m_iVisibilityChange = kResults.GetInt("VisibilityChange");
 
-	push	OFFSET $SG218191
+	push	OFFSET $SG218190
 	mov	ecx, edi
 	mov	DWORD PTR [esi+852], eax
 	call	ebp
 
 ; 276  : 	m_iMovesChange = kResults.GetInt("MovesChange");
 
-	push	OFFSET $SG218192
+	push	OFFSET $SG218191
 	mov	ecx, edi
 	mov	DWORD PTR [esi+520], eax
 	call	ebp
 
 ; 277  : 	m_iMoveDiscountChange = kResults.GetInt("MoveDiscountChange");
 
-	push	OFFSET $SG218193
+	push	OFFSET $SG218192
 	mov	ecx, edi
 	mov	DWORD PTR [esi+524], eax
 	call	ebp
 
 ; 278  : 	m_iRangeChange = kResults.GetInt("RangeChange");
 
-	push	OFFSET $SG218194
+	push	OFFSET $SG218193
 	mov	ecx, edi
 	mov	DWORD PTR [esi+528], eax
 	call	ebp
 
 ; 279  : 	m_iRangedAttackModifier = kResults.GetInt("RangedAttackModifier");
 
-	push	OFFSET $SG218195
+	push	OFFSET $SG218194
 	mov	ecx, edi
 	mov	DWORD PTR [esi+532], eax
 	call	ebp
 
 ; 280  : 	m_iInterceptionCombatModifier = kResults.GetInt("InterceptionCombatModifier");
 
-	push	OFFSET $SG218196
+	push	OFFSET $SG218195
 	mov	ecx, edi
 	mov	DWORD PTR [esi+536], eax
 	call	ebp
 
 ; 281  : 	m_iInterceptionDefenseDamageModifier = kResults.GetInt("InterceptionDefenseDamageModifier");
 
-	push	OFFSET $SG218197
+	push	OFFSET $SG218196
 	mov	ecx, edi
 	mov	DWORD PTR [esi+540], eax
 	call	ebp
 
 ; 282  : 	m_iAirSweepCombatModifier = kResults.GetInt("AirSweepCombatModifier");
 
-	push	OFFSET $SG218198
+	push	OFFSET $SG218197
 	mov	ecx, edi
 	mov	DWORD PTR [esi+544], eax
 	call	ebp
@@ -9710,139 +9710,139 @@ $LN42@CacheResul:
 
 ; 283  : 	m_iInterceptChanceChange = kResults.GetInt("InterceptChanceChange");
 
-	push	OFFSET $SG218199
+	push	OFFSET $SG218198
 	mov	ecx, edi
 	call	ebp
 
 ; 284  : 	m_iNumInterceptionChange = kResults.GetInt("NumInterceptionChange");
 
-	push	OFFSET $SG218200
+	push	OFFSET $SG218199
 	mov	ecx, edi
 	mov	DWORD PTR [esi+552], eax
 	call	ebp
 
 ; 285  : 	m_iEvasionChange = kResults.GetInt("EvasionChange");
 
-	push	OFFSET $SG218201
+	push	OFFSET $SG218200
 	mov	ecx, edi
 	mov	DWORD PTR [esi+556], eax
 	call	ebp
 
 ; 286  : 	m_iCargoChange = kResults.GetInt("CargoChange");
 
-	push	OFFSET $SG218202
+	push	OFFSET $SG218201
 	mov	ecx, edi
 	mov	DWORD PTR [esi+560], eax
 	call	ebp
 
 ; 287  : 	m_iEnemyHealChange = kResults.GetInt("EnemyHealChange");
 
-	push	OFFSET $SG218203
+	push	OFFSET $SG218202
 	mov	ecx, edi
 	mov	DWORD PTR [esi+564], eax
 	call	ebp
 
 ; 288  : 	m_iNeutralHealChange = kResults.GetInt("NeutralHealChange");
 
-	push	OFFSET $SG218204
+	push	OFFSET $SG218203
 	mov	ecx, edi
 	mov	DWORD PTR [esi+568], eax
 	call	ebp
 
 ; 289  : 	m_iFriendlyHealChange = kResults.GetInt("FriendlyHealChange");
 
-	push	OFFSET $SG218205
+	push	OFFSET $SG218204
 	mov	ecx, edi
 	mov	DWORD PTR [esi+572], eax
 	call	ebp
 
 ; 290  : 	m_iSameTileHealChange = kResults.GetInt("SameTileHealChange");
 
-	push	OFFSET $SG218206
+	push	OFFSET $SG218205
 	mov	ecx, edi
 	mov	DWORD PTR [esi+576], eax
 	call	ebp
 
 ; 291  : 	m_iAdjacentTileHealChange = kResults.GetInt("AdjacentTileHealChange");
 
-	push	OFFSET $SG218207
+	push	OFFSET $SG218206
 	mov	ecx, edi
 	mov	DWORD PTR [esi+580], eax
 	call	ebp
 
 ; 292  : 	m_iEnemyDamageChance = kResults.GetInt("EnemyDamageChance");
 
-	push	OFFSET $SG218208
+	push	OFFSET $SG218207
 	mov	ecx, edi
 	mov	DWORD PTR [esi+584], eax
 	call	ebp
 
 ; 293  : 	m_iNeutralDamageChance = kResults.GetInt("NeutralDamageChance");
 
-	push	OFFSET $SG218209
+	push	OFFSET $SG218208
 	mov	ecx, edi
 	mov	DWORD PTR [esi+588], eax
 	call	ebp
 
 ; 294  : 	m_iEnemyDamage = kResults.GetInt("EnemyDamage");
 
-	push	OFFSET $SG218210
+	push	OFFSET $SG218209
 	mov	ecx, edi
 	mov	DWORD PTR [esi+592], eax
 	call	ebp
 
 ; 295  : 	m_iNeutralDamage = kResults.GetInt("NeutralDamage");
 
-	push	OFFSET $SG218211
+	push	OFFSET $SG218210
 	mov	ecx, edi
 	mov	DWORD PTR [esi+596], eax
 	call	ebp
 
 ; 296  : 	m_iCombatPercent = kResults.GetInt("CombatPercent");
 
-	push	OFFSET $SG218212
+	push	OFFSET $SG218211
 	mov	ecx, edi
 	mov	DWORD PTR [esi+600], eax
 	call	ebp
 
 ; 297  : 	m_iCityAttackPercent = kResults.GetInt("CityAttack");
 
-	push	OFFSET $SG218213
+	push	OFFSET $SG218212
 	mov	ecx, edi
 	mov	DWORD PTR [esi+604], eax
 	call	ebp
 
 ; 298  : 	m_iCityDefensePercent = kResults.GetInt("CityDefense");
 
-	push	OFFSET $SG218214
+	push	OFFSET $SG218213
 	mov	ecx, edi
 	mov	DWORD PTR [esi+608], eax
 	call	ebp
 
 ; 299  : 	m_iRangedDefenseMod = kResults.GetInt("RangedDefenseMod");
 
-	push	OFFSET $SG218215
+	push	OFFSET $SG218214
 	mov	ecx, edi
 	mov	DWORD PTR [esi+612], eax
 	call	ebp
 
 ; 300  : 	m_iHillsAttackPercent = kResults.GetInt("HillsAttack");
 
-	push	OFFSET $SG218216
+	push	OFFSET $SG218215
 	mov	ecx, edi
 	mov	DWORD PTR [esi+616], eax
 	call	ebp
 
 ; 301  : 	m_iHillsDefensePercent = kResults.GetInt("HillsDefense");
 
-	push	OFFSET $SG218217
+	push	OFFSET $SG218216
 	mov	ecx, edi
 	mov	DWORD PTR [esi+620], eax
 	call	ebp
 
 ; 302  : 	m_iOpenAttackPercent = kResults.GetInt("OpenAttack");
 
-	push	OFFSET $SG218218
+	push	OFFSET $SG218217
 	mov	ecx, edi
 	mov	DWORD PTR [esi+624], eax
 	call	ebp
@@ -9850,111 +9850,111 @@ $LN42@CacheResul:
 
 ; 303  : 	m_iOpenRangedAttackMod = kResults.GetInt("OpenRangedAttackMod");
 
-	push	OFFSET $SG218219
+	push	OFFSET $SG218218
 	mov	ecx, edi
 	call	ebp
 
 ; 304  : 	m_iRoughAttackPercent = kResults.GetInt("RoughAttack");
 
-	push	OFFSET $SG218220
+	push	OFFSET $SG218219
 	mov	ecx, edi
 	mov	DWORD PTR [esi+632], eax
 	call	ebp
 
 ; 305  : 	m_iRoughRangedAttackMod = kResults.GetInt("RoughRangedAttackMod");
 
-	push	OFFSET $SG218221
+	push	OFFSET $SG218220
 	mov	ecx, edi
 	mov	DWORD PTR [esi+636], eax
 	call	ebp
 
 ; 306  : 	m_iAttackFortifiedMod = kResults.GetInt("AttackFortifiedMod");
 
-	push	OFFSET $SG218222
+	push	OFFSET $SG218221
 	mov	ecx, edi
 	mov	DWORD PTR [esi+640], eax
 	call	ebp
 
 ; 307  : 	m_iAttackWoundedMod = kResults.GetInt("AttackWoundedMod");
 
-	push	OFFSET $SG218223
+	push	OFFSET $SG218222
 	mov	ecx, edi
 	mov	DWORD PTR [esi+644], eax
 	call	ebp
 
 ; 308  : 	m_iFlankAttackModifier = kResults.GetInt("FlankAttackModifier");
 
-	push	OFFSET $SG218224
+	push	OFFSET $SG218223
 	mov	ecx, edi
 	mov	DWORD PTR [esi+648], eax
 	call	ebp
 
 ; 309  : 	m_iNearbyEnemyCombatMod = kResults.GetInt("NearbyEnemyCombatMod");
 
-	push	OFFSET $SG218225
+	push	OFFSET $SG218224
 	mov	ecx, edi
 	mov	DWORD PTR [esi+652], eax
 	call	ebp
 
 ; 310  : 	m_iNearbyEnemyCombatRange = kResults.GetInt("NearbyEnemyCombatRange");
 
-	push	OFFSET $SG218226
+	push	OFFSET $SG218225
 	mov	ecx, edi
 	mov	DWORD PTR [esi+656], eax
 	call	ebp
 
 ; 311  : 	m_iOpenDefensePercent = kResults.GetInt("OpenDefense");
 
-	push	OFFSET $SG218227
+	push	OFFSET $SG218226
 	mov	ecx, edi
 	mov	DWORD PTR [esi+660], eax
 	call	ebp
 
 ; 312  : 	m_iRoughDefensePercent = kResults.GetInt("RoughDefense");
 
-	push	OFFSET $SG218228
+	push	OFFSET $SG218227
 	mov	ecx, edi
 	mov	DWORD PTR [esi+664], eax
 	call	ebp
 
 ; 313  : 	m_iExtraAttacks = kResults.GetInt("ExtraAttacks");
 
-	push	OFFSET $SG218229
+	push	OFFSET $SG218228
 	mov	ecx, edi
 	mov	DWORD PTR [esi+668], eax
 	call	ebp
 
 ; 314  : 	m_bGreatGeneral = kResults.GetBool("GreatGeneral");
 
-	push	OFFSET $SG218230
+	push	OFFSET $SG218229
 	mov	ecx, edi
 	mov	DWORD PTR [esi+672], eax
 	call	ebx
 
 ; 315  : 	m_bGreatAdmiral = kResults.GetBool("GreatAdmiral");
 
-	push	OFFSET $SG218231
+	push	OFFSET $SG218230
 	mov	ecx, edi
 	mov	BYTE PTR [esi+676], al
 	call	ebx
 
 ; 316  : 	m_iGreatGeneralModifier = kResults.GetInt("GreatGeneralModifier");
 
-	push	OFFSET $SG218232
+	push	OFFSET $SG218231
 	mov	ecx, edi
 	mov	BYTE PTR [esi+677], al
 	call	ebp
 
 ; 317  : 	m_bGreatGeneralReceivesMovement = kResults.GetBool("GreatGeneralReceivesMovement");
 
-	push	OFFSET $SG218233
+	push	OFFSET $SG218232
 	mov	ecx, edi
 	mov	DWORD PTR [esi+680], eax
 	call	ebx
 
 ; 318  : 	m_bEmbarkedUnitReceivesMovement = kResults.GetBool("EmbarkedUnitReceivesMovement"); // NQMP GJS - Danish Longship
 
-	push	OFFSET $SG218234
+	push	OFFSET $SG218233
 	mov	ecx, edi
 	mov	BYTE PTR [esi+684], al
 	call	ebx
@@ -9962,7 +9962,7 @@ $LN42@CacheResul:
 ; 319  : #ifdef NQ_ART_OF_WAR_PROMOTION
 ; 320  : 	m_iGreatGeneralOnOrAdjacentConfersMovement = kResults.GetInt("GreatGeneralOnOrAdjacentConfersMovement");
 
-	push	OFFSET $SG218235
+	push	OFFSET $SG218234
 	mov	ecx, edi
 	mov	BYTE PTR [esi+685], al
 	call	ebp
@@ -9970,21 +9970,21 @@ $LN42@CacheResul:
 ; 321  : #endif
 ; 322  : 	m_iGreatGeneralCombatModifier = kResults.GetInt("GreatGeneralCombatModifier");
 
-	push	OFFSET $SG218236
+	push	OFFSET $SG218235
 	mov	ecx, edi
 	mov	DWORD PTR [esi+688], eax
 	call	ebp
 
 ; 323  : 	m_iFriendlyLandsModifier = kResults.GetInt("FriendlyLandsModifier");
 
-	push	OFFSET $SG218237
+	push	OFFSET $SG218236
 	mov	ecx, edi
 	mov	DWORD PTR [esi+692], eax
 	call	ebp
 
 ; 324  : 	m_iFriendlyLandsAttackModifier = kResults.GetInt("FriendlyLandsAttackModifier");
 
-	push	OFFSET $SG218238
+	push	OFFSET $SG218237
 	mov	ecx, edi
 	mov	DWORD PTR [esi+696], eax
 	call	ebp
@@ -9992,14 +9992,14 @@ $LN42@CacheResul:
 
 ; 325  : 	m_iOutsideFriendlyLandsModifier = kResults.GetInt("OutsideFriendlyLandsModifier");
 
-	push	OFFSET $SG218239
+	push	OFFSET $SG218238
 	mov	ecx, edi
 	call	ebp
 
 ; 326  : #ifdef NQ_GOLDEN_AGE_FOREIGN_ATTACK_BONUS
 ; 327  : 	m_iGoldenAgeForeignAttackBonus = kResults.GetInt("GoldenAgeForeignAttackBonus");
 
-	push	OFFSET $SG218240
+	push	OFFSET $SG218239
 	mov	ecx, edi
 	mov	DWORD PTR [esi+704], eax
 	call	ebp
@@ -10008,7 +10008,7 @@ $LN42@CacheResul:
 ; 329  : #ifdef NQ_COMBAT_STRENGTH_NEAR_FRIENDLY_MINOR
 ; 330  : 	m_iCombatStrengthNearFriendlyMinor = kResults.GetInt("CombatStrengthNearFriendlyMinor");
 
-	push	OFFSET $SG218241
+	push	OFFSET $SG218240
 	mov	ecx, edi
 	mov	DWORD PTR [esi+708], eax
 	call	ebp
@@ -10016,126 +10016,126 @@ $LN42@CacheResul:
 ; 331  : #endif
 ; 332  : 	m_iUpgradeDiscount = kResults.GetInt("UpgradeDiscount");
 
-	push	OFFSET $SG218242
+	push	OFFSET $SG218241
 	mov	ecx, edi
 	mov	DWORD PTR [esi+712], eax
 	call	ebp
 
 ; 333  : 	m_iExperiencePercent = kResults.GetInt("ExperiencePercent");
 
-	push	OFFSET $SG218243
+	push	OFFSET $SG218242
 	mov	ecx, edi
 	mov	DWORD PTR [esi+720], eax
 	call	ebp
 
 ; 334  : 	m_iAdjacentMod = kResults.GetInt("AdjacentMod");
 
-	push	OFFSET $SG218244
+	push	OFFSET $SG218243
 	mov	ecx, edi
 	mov	DWORD PTR [esi+724], eax
 	call	ebp
 
 ; 335  : 	m_iAttackMod = kResults.GetInt("AttackMod");
 
-	push	OFFSET $SG218245
+	push	OFFSET $SG218244
 	mov	ecx, edi
 	mov	DWORD PTR [esi+728], eax
 	call	ebp
 
 ; 336  : 	m_iDefenseMod = kResults.GetInt("DefenseMod");
 
-	push	OFFSET $SG218246
+	push	OFFSET $SG218245
 	mov	ecx, edi
 	mov	DWORD PTR [esi+732], eax
 	call	ebp
 
 ; 337  : 	m_iDropRange = kResults.GetInt("DropRange");
 
-	push	OFFSET $SG218247
+	push	OFFSET $SG218246
 	mov	ecx, edi
 	mov	DWORD PTR [esi+736], eax
 	call	ebp
 
 ; 338  : 	m_iExtraNavalMoves = kResults.GetInt("ExtraNavalMovement");
 
-	push	OFFSET $SG218248
+	push	OFFSET $SG218247
 	mov	ecx, edi
 	mov	DWORD PTR [esi+740], eax
 	call	ebp
 
 ; 339  : 	m_iHPHealedIfDefeatEnemy = kResults.GetInt("HPHealedIfDestroyEnemy");
 
-	push	OFFSET $SG218249
+	push	OFFSET $SG218248
 	mov	ecx, edi
 	mov	DWORD PTR [esi+744], eax
 	call	ebp
 
 ; 340  : 	m_iGoldenAgeValueFromKills = kResults.GetInt("GoldenAgeValueFromKills");
 
-	push	OFFSET $SG218250
+	push	OFFSET $SG218249
 	mov	ecx, edi
 	mov	DWORD PTR [esi+748], eax
 	call	ebp
 
 ; 341  : 	m_iExtraWithdrawal = kResults.GetInt("ExtraWithdrawal");
 
-	push	OFFSET $SG218251
+	push	OFFSET $SG218250
 	mov	ecx, edi
 	mov	DWORD PTR [esi+752], eax
 	call	ebp
 
 ; 342  : 	m_iEmbarkExtraVisibility = kResults.GetInt("EmbarkExtraVisibility");
 
-	push	OFFSET $SG218252
+	push	OFFSET $SG218251
 	mov	ecx, edi
 	mov	DWORD PTR [esi+756], eax
 	call	ebp
 
 ; 343  : 	m_iEmbarkDefenseModifier = kResults.GetInt("EmbarkDefenseModifier");
 
-	push	OFFSET $SG218253
+	push	OFFSET $SG218252
 	mov	ecx, edi
 	mov	DWORD PTR [esi+760], eax
 	call	ebp
 
 ; 344  : 	m_iCapitalDefenseModifier = kResults.GetInt("CapitalDefenseModifier");
 
-	push	OFFSET $SG218254
+	push	OFFSET $SG218253
 	mov	ecx, edi
 	mov	DWORD PTR [esi+764], eax
 	call	ebp
 
 ; 345  : 	m_iCapitalDefenseFalloff = kResults.GetInt("CapitalDefenseFalloff");
 
-	push	OFFSET $SG218255
+	push	OFFSET $SG218254
 	mov	ecx, edi
 	mov	DWORD PTR [esi+768], eax
 	call	ebp
 
 ; 346  : 	m_iCityAttackPlunderModifier = kResults.GetInt("CityAttackPlunderModifier");
 
-	push	OFFSET $SG218256
+	push	OFFSET $SG218255
 	mov	ecx, edi
 	mov	DWORD PTR [esi+772], eax
 	call	ebp
 
 ; 347  : 	m_iReligiousStrengthLossRivalTerritory = kResults.GetInt("ReligiousStrengthLossRivalTerritory");
 
-	push	OFFSET $SG218257
+	push	OFFSET $SG218256
 	mov	ecx, edi
 	mov	DWORD PTR [esi+776], eax
 	call	ebp
 
 ; 348  : 	m_iTradeMissionInfluenceModifier = kResults.GetInt("TradeMissionInfluenceModifier");
 
-	push	OFFSET $SG218258
+	push	OFFSET $SG218257
 	mov	ecx, edi
 	mov	DWORD PTR [esi+780], eax
 	call	ebp
 
 ; 349  : 	m_iTradeMissionGoldModifier = kResults.GetInt("TradeMissionGoldModifier");
 
-	push	OFFSET $SG218259
+	push	OFFSET $SG218258
 	mov	ecx, edi
 	mov	DWORD PTR [esi+784], eax
 	call	ebp
@@ -10144,7 +10144,7 @@ $LN42@CacheResul:
 ; 351  : 	//References
 ; 352  : 	const char* szLayerAnimationPath = kResults.GetText("LayerAnimationPath");
 
-	push	OFFSET $SG218261
+	push	OFFSET $SG218260
 	mov	ecx, edi
 	mov	DWORD PTR [esi+788], eax
 	call	DWORD PTR __imp_?GetText@Results@Database@@QAEPBDPBD@Z
@@ -10159,7 +10159,7 @@ $LN42@CacheResul:
 ; 354  : 
 ; 355  : 	const char* szTechPrereq = kResults.GetText("TechPrereq");
 
-	push	OFFSET $SG218263
+	push	OFFSET $SG218262
 	mov	ecx, edi
 	mov	DWORD PTR [esi+460], eax
 	call	DWORD PTR __imp_?GetText@Results@Database@@QAEPBDPBD@Z
@@ -10174,7 +10174,7 @@ $LN42@CacheResul:
 ; 357  : 
 ; 358  : 	const char* szInvisible = kResults.GetText("Invisible");
 
-	push	OFFSET $SG218265
+	push	OFFSET $SG218264
 	mov	ecx, edi
 	mov	DWORD PTR [esi+508], eax
 	call	DWORD PTR __imp_?GetText@Results@Database@@QAEPBDPBD@Z
@@ -10189,7 +10189,7 @@ $LN42@CacheResul:
 ; 360  : 
 ; 361  : 	const char* szSeeInvisible = kResults.GetText("SeeInvisible");
 
-	push	OFFSET $SG218267
+	push	OFFSET $SG218266
 	mov	ecx, edi
 	mov	DWORD PTR [esi+512], eax
 	call	DWORD PTR __imp_?GetText@Results@Database@@QAEPBDPBD@Z
@@ -10204,7 +10204,7 @@ $LN42@CacheResul:
 ; 363  : 
 ; 364  : 	const char* szPromotionPrereq = kResults.GetText("PromotionPrereq");
 
-	push	OFFSET $SG218269
+	push	OFFSET $SG218268
 	mov	ecx, edi
 	mov	DWORD PTR [esi+516], eax
 	call	DWORD PTR __imp_?GetText@Results@Database@@QAEPBDPBD@Z
@@ -10219,7 +10219,7 @@ $LN42@CacheResul:
 ; 366  : 
 ; 367  : 	const char* szPromotionPrereqOr1 = kResults.GetText("PromotionPrereqOr1");
 
-	push	OFFSET $SG218271
+	push	OFFSET $SG218270
 	mov	ecx, edi
 	mov	DWORD PTR [esi+464], eax
 	call	DWORD PTR __imp_?GetText@Results@Database@@QAEPBDPBD@Z
@@ -10234,7 +10234,7 @@ $LN42@CacheResul:
 ; 369  : 
 ; 370  : 	const char* szPromotionPrereqOr2 = kResults.GetText("PromotionPrereqOr2");
 
-	push	OFFSET $SG218273
+	push	OFFSET $SG218272
 	mov	ecx, edi
 	mov	DWORD PTR [esi+468], eax
 	call	DWORD PTR __imp_?GetText@Results@Database@@QAEPBDPBD@Z
@@ -10249,7 +10249,7 @@ $LN42@CacheResul:
 ; 372  : 
 ; 373  : 	const char* szPromotionPrereqOr3 = kResults.GetText("PromotionPrereqOr3");
 
-	push	OFFSET $SG218275
+	push	OFFSET $SG218274
 	mov	ecx, edi
 	mov	DWORD PTR [esi+472], eax
 	call	DWORD PTR __imp_?GetText@Results@Database@@QAEPBDPBD@Z
@@ -10264,7 +10264,7 @@ $LN42@CacheResul:
 ; 375  : 
 ; 376  : 	const char* szPromotionPrereqOr4 = kResults.GetText("PromotionPrereqOr4");
 
-	push	OFFSET $SG218277
+	push	OFFSET $SG218276
 	mov	ecx, edi
 	mov	DWORD PTR [esi+476], eax
 	call	DWORD PTR __imp_?GetText@Results@Database@@QAEPBDPBD@Z
@@ -10279,7 +10279,7 @@ $LN42@CacheResul:
 ; 378  : 
 ; 379  : 	const char* szPromotionPrereqOr5 = kResults.GetText("PromotionPrereqOr5");
 
-	push	OFFSET $SG218279
+	push	OFFSET $SG218278
 	mov	ecx, edi
 	mov	DWORD PTR [esi+480], eax
 	call	DWORD PTR __imp_?GetText@Results@Database@@QAEPBDPBD@Z
@@ -10295,7 +10295,7 @@ $LN42@CacheResul:
 ; 381  : 
 ; 382  : 	const char* szPromotionPrereqOr6 = kResults.GetText("PromotionPrereqOr6");
 
-	push	OFFSET $SG218281
+	push	OFFSET $SG218280
 	mov	ecx, edi
 	call	DWORD PTR __imp_?GetText@Results@Database@@QAEPBDPBD@Z
 
@@ -10309,7 +10309,7 @@ $LN42@CacheResul:
 ; 384  : 
 ; 385  : 	const char* szPromotionPrereqOr7 = kResults.GetText("PromotionPrereqOr7");
 
-	push	OFFSET $SG218283
+	push	OFFSET $SG218282
 	mov	ecx, edi
 	mov	DWORD PTR [esi+488], eax
 	call	DWORD PTR __imp_?GetText@Results@Database@@QAEPBDPBD@Z
@@ -10324,7 +10324,7 @@ $LN42@CacheResul:
 ; 387  : 
 ; 388  : 	const char* szPromotionPrereqOr8 = kResults.GetText("PromotionPrereqOr8");
 
-	push	OFFSET $SG218285
+	push	OFFSET $SG218284
 	mov	ecx, edi
 	mov	DWORD PTR [esi+492], eax
 	call	DWORD PTR __imp_?GetText@Results@Database@@QAEPBDPBD@Z
@@ -10339,7 +10339,7 @@ $LN42@CacheResul:
 ; 390  : 
 ; 391  : 	const char* szPromotionPrereqOr9 = kResults.GetText("PromotionPrereqOr9");
 
-	push	OFFSET $SG218287
+	push	OFFSET $SG218286
 	mov	ecx, edi
 	mov	DWORD PTR [esi+496], eax
 	call	DWORD PTR __imp_?GetText@Results@Database@@QAEPBDPBD@Z
@@ -10354,7 +10354,7 @@ $LN42@CacheResul:
 ; 393  : 
 ; 394  : 	const char* szPromotionPrereqOr10 = kResults.GetText("PromotionPrereqOr9");
 
-	push	OFFSET $SG218289
+	push	OFFSET $SG218288
 	mov	ecx, edi
 	mov	DWORD PTR [esi+500], eax
 	call	DWORD PTR __imp_?GetText@Results@Database@@QAEPBDPBD@Z
@@ -10371,7 +10371,7 @@ $LN42@CacheResul:
 ; 398  : 	const int iNumUnitClasses = kUtility.MaxRows("UnitClasses");
 
 	mov	ecx, DWORD PTR _kUtility$[esp+100]
-	push	OFFSET $SG218291
+	push	OFFSET $SG218290
 	mov	DWORD PTR [esi+504], eax
 	call	?MaxRows@CvDatabaseUtility@@QAEHPBD@Z	; CvDatabaseUtility::MaxRows
 
@@ -10390,7 +10390,7 @@ $LN42@CacheResul:
 ; 401  : 	const int iNumDomains = kUtility.MaxRows("Domains");
 
 	mov	ecx, DWORD PTR _kUtility$[esp+100]
-	push	OFFSET $SG218295
+	push	OFFSET $SG218294
 	mov	DWORD PTR _iNumFeatures$[esp+108], eax
 	call	?MaxRows@CvDatabaseUtility@@QAEHPBD@Z	; CvDatabaseUtility::MaxRows
 
@@ -10398,13 +10398,13 @@ $LN42@CacheResul:
 ; 403  : 	const int iNumUnitCombatClasses = kUtility.MaxRows("UnitCombatInfos");
 
 	mov	ecx, DWORD PTR _kUtility$[esp+100]
-	push	OFFSET $SG218298
+	push	OFFSET $SG218297
 	call	?MaxRows@CvDatabaseUtility@@QAEHPBD@Z	; CvDatabaseUtility::MaxRows
 
 ; 404  : 	const int iNumUnitTypes = kUtility.MaxRows("Units");
 
 	mov	ecx, DWORD PTR _kUtility$[esp+100]
-	push	OFFSET $SG218300
+	push	OFFSET $SG218299
 	mov	DWORD PTR _iNumUnitCombatClasses$[esp+108], eax
 	call	?MaxRows@CvDatabaseUtility@@QAEHPBD@Z	; CvDatabaseUtility::MaxRows
 
@@ -10502,13 +10502,13 @@ $LN62@CacheResul:
 ; 415  : 
 ; 416  : 		std::string sqlKey = "UnitPromotions_Terrains";
 
-	push	OFFSET $SG218313
-	lea	ecx, DWORD PTR _sqlKey$218312[esp+108]
+	push	OFFSET $SG218312
+	lea	ecx, DWORD PTR _sqlKey$218311[esp+108]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 
 ; 417  : 		Database::Results* pResults = kUtility.GetResults(sqlKey);
 
-	lea	edx, DWORD PTR _sqlKey$218312[esp+104]
+	lea	edx, DWORD PTR _sqlKey$218311[esp+104]
 	push	edx
 	mov	ecx, edi
 	mov	DWORD PTR __$EHRec$[esp+116], 0
@@ -10525,8 +10525,8 @@ $LN62@CacheResul:
 ; 421  : 			pResults = kUtility.PrepareResults(sqlKey, szSQL);
 
 	mov	ecx, DWORD PTR _kUtility$[esp+100]
-	push	OFFSET $SG218317
-	lea	eax, DWORD PTR _sqlKey$218312[esp+108]
+	push	OFFSET $SG218316
+	lea	eax, DWORD PTR _sqlKey$218311[esp+108]
 	push	eax
 	call	?PrepareResults@CvDatabaseUtility@@QAEPAVResults@Database@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PBD@Z ; CvDatabaseUtility::PrepareResults
 	mov	edi, eax
@@ -10562,7 +10562,7 @@ $LL27@CacheResul:
 ; 430  : 		{
 ; 431  : 			const int iTerrainID = pResults->GetInt("TerrainID");
 
-	push	OFFSET $SG218324
+	push	OFFSET $SG218323
 	mov	ecx, edi
 	call	ebp
 
@@ -10570,67 +10570,67 @@ $LL27@CacheResul:
 ; 433  : 
 ; 434  : 			const int iTerrainAttack = pResults->GetInt("Attack");
 
-	push	OFFSET $SG218326
+	push	OFFSET $SG218325
 	mov	ecx, edi
-	mov	DWORD PTR _iTerrainID$218323[esp+108], eax
+	mov	DWORD PTR _iTerrainID$218322[esp+108], eax
 	call	ebp
 
 ; 435  : 			m_piTerrainAttackPercent[iTerrainID] = iTerrainAttack;
 
 	mov	edx, DWORD PTR [esi+884]
-	mov	ecx, DWORD PTR _iTerrainID$218323[esp+104]
+	mov	ecx, DWORD PTR _iTerrainID$218322[esp+104]
 	mov	DWORD PTR [edx+ecx*4], eax
 
 ; 436  : 
 ; 437  : 			const int iTerrainDefense = pResults->GetInt("Defense");
 
-	push	OFFSET $SG218328
+	push	OFFSET $SG218327
 	mov	ecx, edi
 	call	ebp
 
 ; 438  : 			m_piTerrainDefensePercent[iTerrainID] = iTerrainDefense;
 
 	mov	edx, DWORD PTR [esi+888]
-	mov	ecx, DWORD PTR _iTerrainID$218323[esp+104]
+	mov	ecx, DWORD PTR _iTerrainID$218322[esp+104]
 	mov	DWORD PTR [edx+ecx*4], eax
 
 ; 439  : 
 ; 440  : 			const bool bDoubleMove = pResults->GetBool("DoubleMove");
 
-	push	OFFSET $SG218330
+	push	OFFSET $SG218329
 	mov	ecx, edi
 	call	ebx
 
 ; 441  : 			m_pbTerrainDoubleMove[iTerrainID] = bDoubleMove;
 
 	mov	edx, DWORD PTR [esi+928]
-	mov	ecx, DWORD PTR _iTerrainID$218323[esp+104]
+	mov	ecx, DWORD PTR _iTerrainID$218322[esp+104]
 	mov	BYTE PTR [ecx+edx], al
 
 ; 442  : 
 ; 443  : 			const bool bImpassable = pResults->GetBool("Impassable");
 
-	push	OFFSET $SG218332
+	push	OFFSET $SG218331
 	mov	ecx, edi
 	call	ebx
 
 ; 444  : 			m_pbTerrainImpassable[iTerrainID] = bImpassable;
 
 	mov	edx, DWORD PTR [esi+936]
-	mov	ecx, DWORD PTR _iTerrainID$218323[esp+104]
+	mov	ecx, DWORD PTR _iTerrainID$218322[esp+104]
 	mov	BYTE PTR [ecx+edx], al
 
 ; 445  : 
 ; 446  : 			const int iPassableTechID = pResults->GetInt("PassableTechID");
 
-	push	OFFSET $SG218334
+	push	OFFSET $SG218333
 	mov	ecx, edi
 	call	ebp
 
 ; 447  : 			m_piTerrainPassableTech[iTerrainID] = iPassableTechID;
 
 	mov	edx, DWORD PTR [esi+920]
-	mov	ecx, DWORD PTR _iTerrainID$218323[esp+104]
+	mov	ecx, DWORD PTR _iTerrainID$218322[esp+104]
 	mov	DWORD PTR [edx+ecx*4], eax
 	mov	ecx, edi
 	call	DWORD PTR __imp_?Step@Results@Database@@QAE_NXZ
@@ -10641,7 +10641,7 @@ $LN26@CacheResul:
 ; 448  : 		}
 ; 449  : 	}
 
-	lea	ecx, DWORD PTR _sqlKey$218312[esp+104]
+	lea	ecx, DWORD PTR _sqlKey$218311[esp+104]
 	mov	DWORD PTR __$EHRec$[esp+112], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -10732,13 +10732,13 @@ $LN83@CacheResul:
 ; 458  : 
 ; 459  : 		std::string sqlKey = "UnitPromotions_Features";
 
-	push	OFFSET $SG218336
-	lea	ecx, DWORD PTR _sqlKey$218335[esp+108]
+	push	OFFSET $SG218335
+	lea	ecx, DWORD PTR _sqlKey$218334[esp+108]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 
 ; 460  : 		Database::Results* pResults = kUtility.GetResults(sqlKey);
 
-	lea	edx, DWORD PTR _sqlKey$218335[esp+104]
+	lea	edx, DWORD PTR _sqlKey$218334[esp+104]
 	push	edx
 	mov	ecx, edi
 	mov	DWORD PTR __$EHRec$[esp+116], 1
@@ -10755,8 +10755,8 @@ $LN83@CacheResul:
 ; 464  : 			pResults = kUtility.PrepareResults(sqlKey, szSQL);
 
 	mov	ecx, DWORD PTR _kUtility$[esp+100]
-	push	OFFSET $SG218340
-	lea	eax, DWORD PTR _sqlKey$218335[esp+108]
+	push	OFFSET $SG218339
+	lea	eax, DWORD PTR _sqlKey$218334[esp+108]
 	push	eax
 	call	?PrepareResults@CvDatabaseUtility@@QAEPAVResults@Database@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PBD@Z ; CvDatabaseUtility::PrepareResults
 	mov	edi, eax
@@ -10792,7 +10792,7 @@ $LL23@CacheResul:
 ; 473  : 		{
 ; 474  : 			const int iFeatureID = pResults->GetInt("FeatureID");
 
-	push	OFFSET $SG218347
+	push	OFFSET $SG218346
 	mov	ecx, edi
 	call	ebp
 
@@ -10800,67 +10800,67 @@ $LL23@CacheResul:
 ; 476  : 
 ; 477  : 			const int iFeatureAttack = pResults->GetInt("Attack");
 
-	push	OFFSET $SG218349
+	push	OFFSET $SG218348
 	mov	ecx, edi
-	mov	DWORD PTR _iFeatureID$218346[esp+108], eax
+	mov	DWORD PTR _iFeatureID$218345[esp+108], eax
 	call	ebp
 
 ; 478  : 			m_piFeatureAttackPercent[iFeatureID] = iFeatureAttack;
 
 	mov	edx, DWORD PTR [esi+892]
-	mov	ecx, DWORD PTR _iFeatureID$218346[esp+104]
+	mov	ecx, DWORD PTR _iFeatureID$218345[esp+104]
 	mov	DWORD PTR [edx+ecx*4], eax
 
 ; 479  : 
 ; 480  : 			const int iFeatureDefense = pResults->GetInt("Defense");
 
-	push	OFFSET $SG218351
+	push	OFFSET $SG218350
 	mov	ecx, edi
 	call	ebp
 
 ; 481  : 			m_piFeatureDefensePercent[iFeatureID] = iFeatureDefense;
 
 	mov	edx, DWORD PTR [esi+896]
-	mov	ecx, DWORD PTR _iFeatureID$218346[esp+104]
+	mov	ecx, DWORD PTR _iFeatureID$218345[esp+104]
 	mov	DWORD PTR [edx+ecx*4], eax
 
 ; 482  : 
 ; 483  : 			const bool bDoubleMove = pResults->GetBool("DoubleMove");
 
-	push	OFFSET $SG218353
+	push	OFFSET $SG218352
 	mov	ecx, edi
 	call	ebx
 
 ; 484  : 			m_pbFeatureDoubleMove[iFeatureID] = bDoubleMove;
 
 	mov	edx, DWORD PTR [esi+932]
-	mov	ecx, DWORD PTR _iFeatureID$218346[esp+104]
+	mov	ecx, DWORD PTR _iFeatureID$218345[esp+104]
 	mov	BYTE PTR [ecx+edx], al
 
 ; 485  : 
 ; 486  : 			const bool bImpassable = pResults->GetBool("Impassable");
 
-	push	OFFSET $SG218355
+	push	OFFSET $SG218354
 	mov	ecx, edi
 	call	ebx
 
 ; 487  : 			m_pbFeatureImpassable[iFeatureID] = bImpassable;
 
 	mov	edx, DWORD PTR [esi+940]
-	mov	ecx, DWORD PTR _iFeatureID$218346[esp+104]
+	mov	ecx, DWORD PTR _iFeatureID$218345[esp+104]
 	mov	BYTE PTR [ecx+edx], al
 
 ; 488  : 
 ; 489  : 			const int iPassableTech = pResults->GetInt("PassableTechID");
 
-	push	OFFSET $SG218357
+	push	OFFSET $SG218356
 	mov	ecx, edi
 	call	ebp
 
 ; 490  : 			m_piFeaturePassableTech[iFeatureID] = iPassableTech;
 
 	mov	edx, DWORD PTR [esi+924]
-	mov	ecx, DWORD PTR _iFeatureID$218346[esp+104]
+	mov	ecx, DWORD PTR _iFeatureID$218345[esp+104]
 	mov	DWORD PTR [edx+ecx*4], eax
 	mov	ecx, edi
 	call	DWORD PTR __imp_?Step@Results@Database@@QAE_NXZ
@@ -10871,7 +10871,7 @@ $LN22@CacheResul:
 ; 491  : 		}
 ; 492  : 	}
 
-	lea	ecx, DWORD PTR _sqlKey$218335[esp+104]
+	lea	ecx, DWORD PTR _sqlKey$218334[esp+104]
 	mov	DWORD PTR __$EHRec$[esp+112], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -10935,14 +10935,14 @@ $LN22@CacheResul:
 ; 499  : 
 ; 500  : 		std::string sqlKey = "UnitPromotions_UnitClasses";
 
-	push	OFFSET $SG218359
-	lea	ecx, DWORD PTR _sqlKey$218358[esp+108]
+	push	OFFSET $SG218358
+	lea	ecx, DWORD PTR _sqlKey$218357[esp+108]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 
 ; 501  : 		Database::Results* pResults = kUtility.GetResults(sqlKey);
 
 	mov	ebx, DWORD PTR _kUtility$[esp+100]
-	lea	eax, DWORD PTR _sqlKey$218358[esp+104]
+	lea	eax, DWORD PTR _sqlKey$218357[esp+104]
 	push	eax
 	mov	ecx, ebx
 	mov	DWORD PTR __$EHRec$[esp+116], 2
@@ -10958,8 +10958,8 @@ $LN22@CacheResul:
 ; 504  : 			const char* szSQL = "select UnitClasses.ID, Modifier, Attack, Defense from UnitPromotions_UnitClasses inner join UnitClasses on UnitClassType = UnitClasses.Type where PromotionType = ?";
 ; 505  : 			pResults = kUtility.PrepareResults(sqlKey, szSQL);
 
-	push	OFFSET $SG218363
-	lea	ecx, DWORD PTR _sqlKey$218358[esp+108]
+	push	OFFSET $SG218362
+	lea	ecx, DWORD PTR _sqlKey$218357[esp+108]
 	push	ecx
 	mov	ecx, ebx
 	call	?PrepareResults@CvDatabaseUtility@@QAEPAVResults@Database@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PBD@Z ; CvDatabaseUtility::PrepareResults
@@ -11004,7 +11004,7 @@ $LL19@CacheResul:
 ; 517  : 
 ; 518  : 			const int iModifier = pResults->GetInt("Modifier");
 
-	push	OFFSET $SG218371
+	push	OFFSET $SG218370
 	mov	ecx, edi
 	mov	ebx, eax
 	call	ebp
@@ -11017,7 +11017,7 @@ $LL19@CacheResul:
 ; 520  : 
 ; 521  : 			const int iAttack = pResults->GetInt("Attack");
 
-	push	OFFSET $SG218373
+	push	OFFSET $SG218372
 	mov	ecx, edi
 	call	ebp
 
@@ -11028,7 +11028,7 @@ $LL19@CacheResul:
 ; 523  : 
 ; 524  : 			const int iDefense = pResults->GetInt("Defense");
 
-	push	OFFSET $SG218375
+	push	OFFSET $SG218374
 	mov	ecx, edi
 	mov	DWORD PTR [edx+ebx*4], eax
 	call	ebp
@@ -11057,7 +11057,7 @@ $LN18@CacheResul:
 
 ; 529  : 	}
 
-	lea	ecx, DWORD PTR _sqlKey$218358[esp+104]
+	lea	ecx, DWORD PTR _sqlKey$218357[esp+104]
 	mov	DWORD PTR __$EHRec$[esp+112], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -11087,13 +11087,13 @@ $LN18@CacheResul:
 ; 534  : 
 ; 535  : 		std::string sqlKey = "m_piDomainModifierPercent";
 
-	push	OFFSET $SG218377
-	lea	ecx, DWORD PTR _sqlKey$218376[esp+108]
+	push	OFFSET $SG218376
+	lea	ecx, DWORD PTR _sqlKey$218375[esp+108]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 
 ; 536  : 		Database::Results* pResults = kUtility.GetResults(sqlKey);
 
-	lea	eax, DWORD PTR _sqlKey$218376[esp+104]
+	lea	eax, DWORD PTR _sqlKey$218375[esp+104]
 	push	eax
 	mov	ecx, ebx
 	mov	DWORD PTR __$EHRec$[esp+116], 3
@@ -11109,8 +11109,8 @@ $LN18@CacheResul:
 ; 539  : 			const char* szSQL = "select Domains.ID, Modifier from UnitPromotions_Domains inner join Domains on DomainType = Domains.Type where PromotionType = ?;";
 ; 540  : 			pResults = kUtility.PrepareResults(sqlKey, szSQL);
 
-	push	OFFSET $SG218381
-	lea	ecx, DWORD PTR _sqlKey$218376[esp+108]
+	push	OFFSET $SG218380
+	lea	ecx, DWORD PTR _sqlKey$218375[esp+108]
 	push	ecx
 	mov	ecx, ebx
 	call	?PrepareResults@CvDatabaseUtility@@QAEPAVResults@Database@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PBD@Z ; CvDatabaseUtility::PrepareResults
@@ -11159,12 +11159,12 @@ $LL15@CacheResul:
 
 	push	1
 	mov	ecx, edi
-	mov	DWORD PTR _iDomainID$218387[esp+104], eax
+	mov	DWORD PTR _iDomainID$218386[esp+104], eax
 	call	ebp
 
 ; 554  : 			if (iDomainID > -1 && iDomainID < NUM_DOMAIN_TYPES)
 
-	mov	ecx, DWORD PTR _iDomainID$218387[esp+100]
+	mov	ecx, DWORD PTR _iDomainID$218386[esp+100]
 	cmp	ecx, 4
 	ja	SHORT $LN13@CacheResul
 
@@ -11195,7 +11195,7 @@ $LN14@CacheResul:
 
 ; 559  : 	}
 
-	lea	ecx, DWORD PTR _sqlKey$218376[esp+104]
+	lea	ecx, DWORD PTR _sqlKey$218375[esp+104]
 	mov	DWORD PTR __$EHRec$[esp+112], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -11215,13 +11215,13 @@ $LN14@CacheResul:
 ; 564  : 
 ; 565  : 		std::string sqlKey = "m_piUnitCombatModifierPercent";
 
-	push	OFFSET $SG218391
-	lea	ecx, DWORD PTR _sqlKey$218390[esp+108]
+	push	OFFSET $SG218390
+	lea	ecx, DWORD PTR _sqlKey$218389[esp+108]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 
 ; 566  : 		Database::Results* pResults = kUtility.GetResults(sqlKey);
 
-	lea	edx, DWORD PTR _sqlKey$218390[esp+104]
+	lea	edx, DWORD PTR _sqlKey$218389[esp+104]
 	push	edx
 	mov	ecx, ebx
 	mov	DWORD PTR __$EHRec$[esp+116], 4
@@ -11237,8 +11237,8 @@ $LN14@CacheResul:
 ; 569  : 			const char* szSQL = "select UnitCombatInfos.ID, Modifier from UnitPromotions_UnitCombatMods inner join UnitCombatInfos on UnitCombatInfos.Type = UnitCombatType where PromotionType = ?;";
 ; 570  : 			pResults = kUtility.PrepareResults(sqlKey, szSQL);
 
-	push	OFFSET $SG218395
-	lea	eax, DWORD PTR _sqlKey$218390[esp+108]
+	push	OFFSET $SG218394
+	lea	eax, DWORD PTR _sqlKey$218389[esp+108]
 	push	eax
 	mov	ecx, ebx
 	call	?PrepareResults@CvDatabaseUtility@@QAEPAVResults@Database@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PBD@Z ; CvDatabaseUtility::PrepareResults
@@ -11286,13 +11286,13 @@ $LL10@CacheResul:
 
 	push	1
 	mov	ecx, edi
-	mov	DWORD PTR _iUnitCombatID$218401[esp+104], eax
+	mov	DWORD PTR _iUnitCombatID$218400[esp+104], eax
 	call	ebp
 
 ; 584  : 			m_piUnitCombatModifierPercent[iUnitCombatID] = iUnitCombatMod;
 
 	mov	edx, DWORD PTR [esi+900]
-	mov	ecx, DWORD PTR _iUnitCombatID$218401[esp+100]
+	mov	ecx, DWORD PTR _iUnitCombatID$218400[esp+100]
 	mov	DWORD PTR [edx+ecx*4], eax
 	mov	ecx, edi
 	call	DWORD PTR __imp_?Step@Results@Database@@QAE_NXZ
@@ -11309,7 +11309,7 @@ $LN9@CacheResul:
 
 ; 588  : 	}
 
-	lea	ecx, DWORD PTR _sqlKey$218390[esp+104]
+	lea	ecx, DWORD PTR _sqlKey$218389[esp+104]
 	mov	DWORD PTR __$EHRec$[esp+112], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -11329,13 +11329,13 @@ $LN9@CacheResul:
 ; 593  : 
 ; 594  : 		std::string sqlKey = "m_pbUnitCombat";
 
-	push	OFFSET $SG218404
-	lea	ecx, DWORD PTR _sqlKey$218403[esp+108]
+	push	OFFSET $SG218403
+	lea	ecx, DWORD PTR _sqlKey$218402[esp+108]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 
 ; 595  : 		Database::Results* pResults = kUtility.GetResults(sqlKey);
 
-	lea	eax, DWORD PTR _sqlKey$218403[esp+104]
+	lea	eax, DWORD PTR _sqlKey$218402[esp+104]
 	push	eax
 	mov	ecx, ebx
 	mov	DWORD PTR __$EHRec$[esp+116], 5
@@ -11351,8 +11351,8 @@ $LN9@CacheResul:
 ; 598  : 			const char* szSQL = "select UnitCombatInfos.ID from UnitPromotions_UnitCombats inner join UnitCombatInfos On UnitCombatInfos.Type = UnitCombatType where PromotionType = ?";
 ; 599  : 			pResults = kUtility.PrepareResults(sqlKey, szSQL);
 
-	push	OFFSET $SG218408
-	lea	ecx, DWORD PTR _sqlKey$218403[esp+108]
+	push	OFFSET $SG218407
+	lea	ecx, DWORD PTR _sqlKey$218402[esp+108]
 	push	ecx
 	mov	ecx, ebx
 	call	?PrepareResults@CvDatabaseUtility@@QAEPAVResults@Database@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PBD@Z ; CvDatabaseUtility::PrepareResults
@@ -11366,7 +11366,7 @@ $LN9@CacheResul:
 	test	edi, edi
 	jne	SHORT $LN7@CacheResul
 $LN141@CacheResul:
-	lea	ecx, DWORD PTR _sqlKey$218403[esp+104]
+	lea	ecx, DWORD PTR _sqlKey$218402[esp+104]
 	mov	DWORD PTR __$EHRec$[esp+112], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 	pop	ebx
@@ -11433,7 +11433,7 @@ $LN5@CacheResul:
 
 ; 616  : 	}
 
-	lea	ecx, DWORD PTR _sqlKey$218403[esp+104]
+	lea	ecx, DWORD PTR _sqlKey$218402[esp+104]
 	mov	DWORD PTR __$EHRec$[esp+112], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -11453,13 +11453,13 @@ $LN5@CacheResul:
 ; 621  : 
 ; 622  : 		std::string sqlKey = "m_pbCivilianUnitType";
 
-	push	OFFSET $SG218416
-	lea	ecx, DWORD PTR _sqlKey$218415[esp+108]
+	push	OFFSET $SG218415
+	lea	ecx, DWORD PTR _sqlKey$218414[esp+108]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 
 ; 623  : 		Database::Results* pResults = kUtility.GetResults(sqlKey);
 
-	lea	eax, DWORD PTR _sqlKey$218415[esp+104]
+	lea	eax, DWORD PTR _sqlKey$218414[esp+104]
 	push	eax
 	mov	ecx, ebx
 	mov	DWORD PTR __$EHRec$[esp+116], 6
@@ -11475,8 +11475,8 @@ $LN5@CacheResul:
 ; 626  : 			const char* szSQL = "select Units.ID from UnitPromotions_CivilianUnitType inner join Units On Units.Type = UnitType where PromotionType = ?";
 ; 627  : 			pResults = kUtility.PrepareResults(sqlKey, szSQL);
 
-	push	OFFSET $SG218420
-	lea	ecx, DWORD PTR _sqlKey$218415[esp+108]
+	push	OFFSET $SG218419
+	lea	ecx, DWORD PTR _sqlKey$218414[esp+108]
 	push	ecx
 	mov	ecx, ebx
 	call	?PrepareResults@CvDatabaseUtility@@QAEPAVResults@Database@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PBD@Z ; CvDatabaseUtility::PrepareResults
@@ -11489,7 +11489,7 @@ $LN5@CacheResul:
 
 	test	edi, edi
 	jne	SHORT $LN3@CacheResul
-	lea	ecx, DWORD PTR _sqlKey$218415[esp+104]
+	lea	ecx, DWORD PTR _sqlKey$218414[esp+104]
 	mov	DWORD PTR __$EHRec$[esp+112], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 	pop	ebx
@@ -11555,7 +11555,7 @@ $LN1@CacheResul:
 
 ; 644  : 	}
 
-	lea	ecx, DWORD PTR _sqlKey$218415[esp+104]
+	lea	ecx, DWORD PTR _sqlKey$218414[esp+104]
 	mov	DWORD PTR __$EHRec$[esp+112], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -11569,10 +11569,10 @@ $LN1@CacheResul:
 
 	mov	edx, DWORD PTR _szPromotionType$[esp+100]
 	push	edx
+	push	OFFSET $SG218427
 	push	OFFSET $SG218428
 	push	OFFSET $SG218429
 	push	OFFSET $SG218430
-	push	OFFSET $SG218431
 	add	esi, 952				; 000003b8H
 	push	esi
 	mov	ecx, ebx
@@ -11595,25 +11595,25 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?CacheResults@CvPromotionEntry@@UAE_NAAVResults@Database@@AAVCvDatabaseUtility@@@Z$0:
-	lea	ecx, DWORD PTR _sqlKey$218312[ebp]
+	lea	ecx, DWORD PTR _sqlKey$218311[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?CacheResults@CvPromotionEntry@@UAE_NAAVResults@Database@@AAVCvDatabaseUtility@@@Z$1:
-	lea	ecx, DWORD PTR _sqlKey$218335[ebp]
+	lea	ecx, DWORD PTR _sqlKey$218334[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?CacheResults@CvPromotionEntry@@UAE_NAAVResults@Database@@AAVCvDatabaseUtility@@@Z$2:
-	lea	ecx, DWORD PTR _sqlKey$218358[ebp]
+	lea	ecx, DWORD PTR _sqlKey$218357[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?CacheResults@CvPromotionEntry@@UAE_NAAVResults@Database@@AAVCvDatabaseUtility@@@Z$3:
-	lea	ecx, DWORD PTR _sqlKey$218376[ebp]
+	lea	ecx, DWORD PTR _sqlKey$218375[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?CacheResults@CvPromotionEntry@@UAE_NAAVResults@Database@@AAVCvDatabaseUtility@@@Z$4:
-	lea	ecx, DWORD PTR _sqlKey$218390[ebp]
+	lea	ecx, DWORD PTR _sqlKey$218389[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?CacheResults@CvPromotionEntry@@UAE_NAAVResults@Database@@AAVCvDatabaseUtility@@@Z$5:
-	lea	ecx, DWORD PTR _sqlKey$218403[ebp]
+	lea	ecx, DWORD PTR _sqlKey$218402[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?CacheResults@CvPromotionEntry@@UAE_NAAVResults@Database@@AAVCvDatabaseUtility@@@Z$6:
-	lea	ecx, DWORD PTR _sqlKey$218415[ebp]
+	lea	ecx, DWORD PTR _sqlKey$218414[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __ehhandler$?CacheResults@CvPromotionEntry@@UAE_NAAVResults@Database@@AAVCvDatabaseUtility@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?CacheResults@CvPromotionEntry@@UAE_NAAVResults@Database@@AAVCvDatabaseUtility@@@Z
@@ -11768,13 +11768,13 @@ __ehfuncinfo$?Read@PromotionArrayHelpers@@YAXAAVFDataStream@@AAVCvBitfield@@@Z D
 xdata$x	ENDS
 ;	COMDAT ?Read@PromotionArrayHelpers@@YAXAAVFDataStream@@AAVCvBitfield@@@Z
 _TEXT	SEGMENT
-_bTemp$219364 = -58					; size = 1
-_bDummy$219371 = -57					; size = 1
+_bTemp$219363 = -58					; size = 1
+_bDummy$219370 = -57					; size = 1
 _iNumEntries$ = -56					; size = 4
 _uiHashTemp$ = -52					; size = 4
 _uiOligarchyHash$ = -48					; size = 4
-_bValue$219367 = -44					; size = 1
-_szError$219369 = -40					; size = 28
+_bValue$219366 = -44					; size = 1
+_szError$219368 = -40					; size = 28
 __$EHRec$ = -12						; size = 12
 _kStream$ = 8						; size = 4
 _kPromotions$ = 12					; size = 4
@@ -11818,7 +11818,7 @@ _kPromotions$ = 12					; size = 4
 
 	push	-1
 	push	19					; 00000013H
-	push	OFFSET $SG219358
+	push	OFFSET $SG219357
 	mov	ecx, OFFSET ?g_CRC32@@3VFCRC@@A		; g_CRC32
 	call	?Calc@FCRC@@QBEKPBXHK@Z			; FCRC::Calc
 
@@ -11850,7 +11850,7 @@ $LL37@Read:
 ; 2341 : 			bool bTemp;
 ; 2342 : 			kStream >> bTemp;
 
-	lea	eax, DWORD PTR _bTemp$219364[esp+76]
+	lea	eax, DWORD PTR _bTemp$219363[esp+76]
 	push	eax
 	mov	ecx, edi
 	call	?Read@FDataStream@@IAEXAA_N@Z		; FDataStream::Read
@@ -11879,14 +11879,14 @@ $LN4@Read:
 ; 2349 : 				bool bValue;
 ; 2350 : 				kStream >> bValue;
 
-	lea	ecx, DWORD PTR _bValue$219367[esp+76]
+	lea	ecx, DWORD PTR _bValue$219366[esp+76]
 	push	ecx
 	mov	ecx, edi
 	call	?Read@FDataStream@@IAEXAA_N@Z		; FDataStream::Read
 
 ; 2351 : 				kPromotions.SetBit(iType, bValue);
 
-	mov	edx, DWORD PTR _bValue$219367[esp+76]
+	mov	edx, DWORD PTR _bValue$219366[esp+76]
 	push	edx
 	push	esi
 	mov	ecx, ebp
@@ -11901,15 +11901,15 @@ $LN2@Read:
 ; 2354 : 			{
 ; 2355 : 				CvString szError;
 
-	lea	ecx, DWORD PTR _szError$219369[esp+76]
+	lea	ecx, DWORD PTR _szError$219368[esp+76]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
 ; 2356 : 				szError.Format("LOAD ERROR: Promotion Type not found for hash: %u", uiHashTemp);
 
 	mov	eax, DWORD PTR _uiHashTemp$[esp+76]
 	push	eax
-	lea	ecx, DWORD PTR _szError$219369[esp+80]
-	push	OFFSET $SG219370
+	lea	ecx, DWORD PTR _szError$219368[esp+80]
+	push	OFFSET $SG219369
 	push	ecx
 	mov	DWORD PTR __$EHRec$[esp+96], 0
 	call	?Format@CvString@@QAAXPBDZZ		; CvString::Format
@@ -11917,7 +11917,7 @@ $LN2@Read:
 
 ; 2357 : 				GC.LogMessage(szError.GetCString());
 
-	lea	ecx, DWORD PTR _szError$219369[esp+76]
+	lea	ecx, DWORD PTR _szError$219368[esp+76]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
@@ -11927,14 +11927,14 @@ $LN2@Read:
 ; 2359 : 				bool bDummy;
 ; 2360 : 				kStream >> bDummy;
 
-	lea	edx, DWORD PTR _bDummy$219371[esp+76]
+	lea	edx, DWORD PTR _bDummy$219370[esp+76]
 	push	edx
 	mov	ecx, edi
 	call	?Read@FDataStream@@IAEXAA_N@Z		; FDataStream::Read
 
 ; 2361 : 			}
 
-	lea	ecx, DWORD PTR _szError$219369[esp+76]
+	lea	ecx, DWORD PTR _szError$219368[esp+76]
 	mov	DWORD PTR __$EHRec$[esp+84], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 $LN6@Read:
@@ -11959,7 +11959,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?Read@PromotionArrayHelpers@@YAXAAVFDataStream@@AAVCvBitfield@@@Z$0:
-	lea	ecx, DWORD PTR _szError$219369[ebp]
+	lea	ecx, DWORD PTR _szError$219368[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?Read@PromotionArrayHelpers@@YAXAAVFDataStream@@AAVCvBitfield@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?Read@PromotionArrayHelpers@@YAXAAVFDataStream@@AAVCvBitfield@@@Z
@@ -11970,9 +11970,9 @@ PUBLIC	?Write@PromotionArrayHelpers@@YAXAAVFDataStream@@ABVCvBitfield@@H@Z ; Pro
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?Write@PromotionArrayHelpers@@YAXAAVFDataStream@@ABVCvBitfield@@H@Z
 _TEXT	SEGMENT
-_bValue$219391 = -9					; size = 1
+_bValue$219390 = -9					; size = 1
 _iCount$ = -8						; size = 4
-_uiHash$219395 = -4					; size = 4
+_uiHash$219394 = -4					; size = 4
 _kStream$ = 8						; size = 4
 _kPromotions$ = 12					; size = 4
 _iArraySize$ = 16					; size = 4
@@ -12071,7 +12071,7 @@ $LL38@Write:
 $LN17@Write:
 	xor	al, al
 $LN18@Write:
-	mov	BYTE PTR _bValue$219391[esp+28], al
+	mov	BYTE PTR _bValue$219390[esp+28], al
 
 ; 2385 : 		if (bValue)
 
@@ -12117,15 +12117,15 @@ $LN27@Write:
 
 ; 2391 : 				kStream << uiHash;
 
-	lea	edx, DWORD PTR _uiHash$219395[esp+28]
+	lea	edx, DWORD PTR _uiHash$219394[esp+28]
 	push	edx
 	mov	ecx, ebp
-	mov	DWORD PTR _uiHash$219395[esp+32], eax
+	mov	DWORD PTR _uiHash$219394[esp+32], eax
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 
 ; 2392 : 				kStream << bValue;
 
-	lea	eax, DWORD PTR _bValue$219391[esp+28]
+	lea	eax, DWORD PTR _bValue$219390[esp+28]
 	push	eax
 	mov	ecx, ebp
 	call	?Write@FDataStream@@IAEXAB_N@Z		; FDataStream::Write
@@ -13034,12 +13034,12 @@ __ehfuncinfo$?ReadV3@PromotionArrayHelpers@@YAXAAVFDataStream@@AAVCvBitfield@@@Z
 xdata$x	ENDS
 ;	COMDAT ?ReadV3@PromotionArrayHelpers@@YAXAAVFDataStream@@AAVCvBitfield@@@Z
 _TEXT	SEGMENT
-_bTemp$219342 = -130					; size = 1
-_bDummy$219349 = -129					; size = 1
+_bTemp$219341 = -130					; size = 1
+_bDummy$219348 = -129					; size = 1
 _sTemp$ = -128						; size = 4
 _iNumEntries$ = -124					; size = 4
-_bValue$219345 = -120					; size = 1
-_szError$219347 = -116					; size = 28
+_bValue$219344 = -120					; size = 1
+_szError$219346 = -116					; size = 28
 _FStringFixedBuffer_sTemp$ = -88			; size = 76
 __$EHRec$ = -12						; size = 12
 _kStream$ = 8						; size = 4
@@ -13110,7 +13110,7 @@ $LL7@ReadV3:
 ; 2293 : 		if(sTemp == "PROMOTION_OLIGARCHY")
 
 	mov	esi, DWORD PTR _sTemp$[esp+148]
-	mov	ecx, OFFSET $SG219341
+	mov	ecx, OFFSET $SG219340
 	mov	eax, esi
 $LL59@ReadV3:
 	mov	dl, BYTE PTR [eax]
@@ -13139,7 +13139,7 @@ $LN62@ReadV3:
 ; 2295 : 			bool bTemp;
 ; 2296 : 			kStream >> bTemp;
 
-	lea	ecx, DWORD PTR _bTemp$219342[esp+148]
+	lea	ecx, DWORD PTR _bTemp$219341[esp+148]
 	push	ecx
 	mov	ecx, edi
 	call	?Read@FDataStream@@IAEXAA_N@Z		; FDataStream::Read
@@ -13168,14 +13168,14 @@ $LN4@ReadV3:
 ; 2303 : 				bool bValue;
 ; 2304 : 				kStream >> bValue;
 
-	lea	edx, DWORD PTR _bValue$219345[esp+148]
+	lea	edx, DWORD PTR _bValue$219344[esp+148]
 	push	edx
 	mov	ecx, edi
 	call	?Read@FDataStream@@IAEXAA_N@Z		; FDataStream::Read
 
 ; 2305 : 				kPromotions.SetBit(iType, bValue);
 
-	mov	eax, DWORD PTR _bValue$219345[esp+148]
+	mov	eax, DWORD PTR _bValue$219344[esp+148]
 	mov	ecx, DWORD PTR _kPromotions$[esp+144]
 	push	eax
 	push	esi
@@ -13190,7 +13190,7 @@ $LN2@ReadV3:
 ; 2308 : 			{
 ; 2309 : 				CvString szError;
 
-	lea	ecx, DWORD PTR _szError$219347[esp+148]
+	lea	ecx, DWORD PTR _szError$219346[esp+148]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
 ; 2310 : #ifdef AUI_WARNING_FIXES
@@ -13200,8 +13200,8 @@ $LN2@ReadV3:
 
 	mov	ecx, DWORD PTR _sTemp$[esp+148]
 	push	ecx
-	lea	edx, DWORD PTR _szError$219347[esp+152]
-	push	OFFSET $SG219348
+	lea	edx, DWORD PTR _szError$219346[esp+152]
+	push	OFFSET $SG219347
 	push	edx
 	mov	BYTE PTR __$EHRec$[esp+168], 1
 	call	?Format@CvString@@QAAXPBDZZ		; CvString::Format
@@ -13210,7 +13210,7 @@ $LN2@ReadV3:
 ; 2314 : #endif
 ; 2315 : 				GC.LogMessage(szError.GetCString());
 
-	lea	ecx, DWORD PTR _szError$219347[esp+148]
+	lea	ecx, DWORD PTR _szError$219346[esp+148]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
@@ -13220,14 +13220,14 @@ $LN2@ReadV3:
 ; 2317 : 				bool bDummy;
 ; 2318 : 				kStream >> bDummy;
 
-	lea	eax, DWORD PTR _bDummy$219349[esp+148]
+	lea	eax, DWORD PTR _bDummy$219348[esp+148]
 	push	eax
 	mov	ecx, edi
 	call	?Read@FDataStream@@IAEXAA_N@Z		; FDataStream::Read
 
 ; 2319 : 			}
 
-	lea	ecx, DWORD PTR _szError$219347[esp+148]
+	lea	ecx, DWORD PTR _szError$219346[esp+148]
 	mov	BYTE PTR __$EHRec$[esp+156], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 $LN6@ReadV3:
@@ -13271,7 +13271,7 @@ __unwindfunclet$?ReadV3@PromotionArrayHelpers@@YAXAAVFDataStream@@AAVCvBitfield@
 	lea	ecx, DWORD PTR _sTemp$[ebp]
 	jmp	??1FStringA@@QAE@XZ			; FStringA::~FStringA
 __unwindfunclet$?ReadV3@PromotionArrayHelpers@@YAXAAVFDataStream@@AAVCvBitfield@@@Z$1:
-	lea	ecx, DWORD PTR _szError$219347[ebp]
+	lea	ecx, DWORD PTR _szError$219346[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?ReadV3@PromotionArrayHelpers@@YAXAAVFDataStream@@AAVCvBitfield@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?ReadV3@PromotionArrayHelpers@@YAXAAVFDataStream@@AAVCvBitfield@@@Z
@@ -13948,8 +13948,8 @@ _TEXT	SEGMENT
 __Capacity$ = -4					; size = 4
 __Where$ = 8						; size = 4
 __Count$ = 12						; size = 4
-__Tmp$215407 = 16					; size = 4
-__Tmp$215397 = 16					; size = 4
+__Tmp$215406 = 16					; size = 4
+__Tmp$215396 = 16					; size = 4
 __Val$ = 16						; size = 4
 ?_Insert_n@?$vector@HV?$allocator@H@std@@@std@@IAEXV?$_Vector_const_iterator@HV?$allocator@H@std@@@2@IABH@Z PROC ; std::vector<int,std::allocator<int> >::_Insert_n, COMDAT
 ; _this$ = ecx
@@ -14180,7 +14180,7 @@ $LN10@Insert_n:
 ; 1214 : 				_VEC_ITER_BASE(_Where) + _Count);	// copy suffix
 
 	lea	ebp, DWORD PTR [edi*4]
-	mov	DWORD PTR __Tmp$215397[esp+16], edx
+	mov	DWORD PTR __Tmp$215396[esp+16], edx
 	jae	SHORT $LN3@Insert_n
 	lea	ecx, DWORD PTR [eax+ebp]
 	push	ecx
@@ -14197,7 +14197,7 @@ $LN10@Insert_n:
 	mov	eax, DWORD PTR [esi+8]
 	mov	ecx, eax
 	sub	ecx, DWORD PTR __Where$[esp+16]
-	lea	edx, DWORD PTR __Tmp$215397[esp+16]
+	lea	edx, DWORD PTR __Tmp$215396[esp+16]
 	sar	ecx, 2
 	push	edx
 	sub	edi, ecx
@@ -14225,7 +14225,7 @@ $LN10@Insert_n:
 ; 1231 : 				_Tmp);	// insert up to old end
 
 	mov	eax, DWORD PTR __Where$[esp+16]
-	lea	edx, DWORD PTR __Tmp$215397[esp+16]
+	lea	edx, DWORD PTR __Tmp$215396[esp+16]
 	push	edx
 	sub	esi, ebp
 	push	esi
@@ -14280,7 +14280,7 @@ $LN3@Insert_n:
 ; 1248 : 				_Tmp);	// insert into hole
 
 	mov	eax, DWORD PTR __Where$[esp+28]
-	lea	ecx, DWORD PTR __Tmp$215407[esp+28]
+	lea	ecx, DWORD PTR __Tmp$215406[esp+28]
 	push	ecx
 	add	ebp, eax
 	push	ebp
@@ -14517,7 +14517,7 @@ __ehfuncinfo$?ChangePromotionAfterCombat@CvUnitPromotions@@QAE?AW4PromotionTypes
 xdata$x	ENDS
 ;	COMDAT ?ChangePromotionAfterCombat@CvUnitPromotions@@QAE?AW4PromotionTypes@@W42@@Z
 _TEXT	SEGMENT
-_iI$219283 = -32					; size = 4
+_iI$219282 = -32					; size = 4
 _aPossiblePromotions$ = -28				; size = 16
 __$EHRec$ = -12						; size = 12
 _eIndex$ = 8						; size = 4
@@ -14557,7 +14557,7 @@ _eIndex$ = 8						; size = 4
 	sub	ecx, DWORD PTR [eax+4]
 	xor	edi, edi
 	mov	DWORD PTR __$EHRec$[esp+56], esi
-	mov	DWORD PTR _iI$219283[esp+48], edi
+	mov	DWORD PTR _iI$219282[esp+48], edi
 	test	ecx, -4					; fffffffcH
 	jle	$LN5@ChangeProm
 	npad	3
@@ -14618,7 +14618,7 @@ $LN75@ChangeProm:
 	mov	DWORD PTR _aPossiblePromotions$[esp+56], esi
 	jmp	SHORT $LN6@ChangeProm
 $LN67@ChangeProm:
-	lea	eax, DWORD PTR _iI$219283[esp+48]
+	lea	eax, DWORD PTR _iI$219282[esp+48]
 	push	eax
 	push	1
 	push	esi
@@ -14633,7 +14633,7 @@ $LN6@ChangeProm:
 	inc	edi
 	sar	ecx, 2
 	cmp	edi, ecx
-	mov	DWORD PTR _iI$219283[esp+48], edi
+	mov	DWORD PTR _iI$219282[esp+48], edi
 	jl	$LL152@ChangeProm
 $LN5@ChangeProm:
 
@@ -14655,7 +14655,7 @@ $LN5@ChangeProm:
 ; 2251 : 		int iChoice = GC.getGame().getJonRandNum(iNumChoices, "Random Promotion Pick");
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
-	push	OFFSET $SG219295
+	push	OFFSET $SG219294
 	push	esi
 	call	?getJonRandNum@CvGame@@QAEHHPBD@Z	; CvGame::getJonRandNum
 

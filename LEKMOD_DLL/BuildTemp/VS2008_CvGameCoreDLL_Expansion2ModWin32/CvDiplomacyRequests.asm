@@ -12,7 +12,7 @@ INCLUDELIB OLDNAMES
 PUBLIC	?NO_QUEST_DATA@CvMinorCivQuest@@2HB		; CvMinorCivQuest::NO_QUEST_DATA
 PUBLIC	?NO_TURN@CvMinorCivQuest@@2HB			; CvMinorCivQuest::NO_TURN
 CONST	SEGMENT
-$SG221812 DB	00H
+$SG221811 DB	00H
 CONST	ENDS
 ;	COMDAT ?NO_TURN@CvMinorCivQuest@@2HB
 CONST	SEGMENT
@@ -687,8 +687,8 @@ __TI2?AVbad_alloc@std@@ DD 00H
 xdata$x	ENDS
 ;	COMDAT ??$_Allocate@U_Node@?$_List_nod@URequest@CvDiplomacyRequests@@V?$allocator@URequest@CvDiplomacyRequests@@@std@@@std@@@std@@YAPAU_Node@?$_List_nod@URequest@CvDiplomacyRequests@@V?$allocator@URequest@CvDiplomacyRequests@@@std@@@0@IPAU120@@Z
 _TEXT	SEGMENT
-$T222769 = -12						; size = 12
-$T222774 = 8						; size = 4
+$T222768 = -12						; size = 12
+$T222773 = 8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ??$_Allocate@U_Node@?$_List_nod@URequest@CvDiplomacyRequests@@V?$allocator@URequest@CvDiplomacyRequests@@@std@@@std@@@std@@YAPAU_Node@?$_List_nod@URequest@CvDiplomacyRequests@@V?$allocator@URequest@CvDiplomacyRequests@@@std@@@0@IPAU120@@Z PROC ; std::_Allocate<std::_List_nod<CvDiplomacyRequests::Request,std::allocator<CvDiplomacyRequests::Request> >::_Node>, COMDAT
@@ -734,15 +734,15 @@ $LN3@Allocate:
 
 ; 40   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T222774[esp+8]
+	lea	eax, DWORD PTR $T222773[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T222769[esp+16]
-	mov	DWORD PTR $T222774[esp+12], 0
+	lea	ecx, DWORD PTR $T222768[esp+16]
+	mov	DWORD PTR $T222773[esp+12], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T222769[esp+16]
+	lea	ecx, DWORD PTR $T222768[esp+16]
 	push	ecx
-	mov	DWORD PTR $T222769[esp+20], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T222768[esp+20], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN9@Allocate:
 $LN8@Allocate:
@@ -1777,7 +1777,7 @@ _TEXT	SEGMENT
 ; 52   : 	m_eFromPlayer = NO_PLAYER;
 ; 53   : 	m_strMessage = "";
 
-	push	OFFSET $SG221812
+	push	OFFSET $SG221811
 	lea	ecx, DWORD PTR [esi+8]
 	mov	DWORD PTR [esi], edi
 	mov	DWORD PTR [esi+36], edi
@@ -2378,7 +2378,7 @@ PUBLIC	?Write@CvDiplomacyRequests@@QBEXAAVFDataStream@@@Z ; CvDiplomacyRequests:
 ;	COMDAT ?Write@CvDiplomacyRequests@@QBEXAAVFDataStream@@@Z
 _TEXT	SEGMENT
 _uiVersion$ = -4					; size = 4
-$T223195 = 8						; size = 4
+$T223194 = 8						; size = 4
 _kStream$ = 8						; size = 4
 ?Write@CvDiplomacyRequests@@QBEXAAVFDataStream@@@Z PROC	; CvDiplomacyRequests::Write, COMDAT
 ; _this$ = ecx
@@ -2415,8 +2415,8 @@ _kStream$ = 8						; size = 4
 
 	mov	ecx, DWORD PTR [ebp+16]
 	add	esp, 8
-	lea	edx, DWORD PTR $T223195[esp+12]
-	mov	DWORD PTR $T223195[esp+12], ecx
+	lea	edx, DWORD PTR $T223194[esp+12]
+	mov	DWORD PTR $T223194[esp+12], ecx
 	push	edx
 	mov	ecx, esi
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
@@ -2490,7 +2490,7 @@ EXTRN	?GetDiplomacyRequests@CvPlayer@@QBEPAVCvDiplomacyRequests@@XZ:PROC ; CvPla
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?DoAIDiplomacy@CvDiplomacyRequests@@SAXW4PlayerTypes@@@Z
 _TEXT	SEGMENT
-_pkTargetRequests$222091 = 8				; size = 4
+_pkTargetRequests$222090 = 8				; size = 4
 _eTargetPlayer$ = 8					; size = 4
 ?DoAIDiplomacy@CvDiplomacyRequests@@SAXW4PlayerTypes@@@Z PROC ; CvDiplomacyRequests::DoAIDiplomacy, COMDAT
 
@@ -2546,7 +2546,7 @@ _eTargetPlayer$ = 8					; size = 4
 
 	call	?GetDiplomacyRequests@CvPlayer@@QBEPAVCvDiplomacyRequests@@XZ ; CvPlayer::GetDiplomacyRequests
 	mov	ecx, eax
-	mov	DWORD PTR _pkTargetRequests$222091[esp+4], ecx
+	mov	DWORD PTR _pkTargetRequests$222090[esp+4], ecx
 
 ; 270  : 			if(pkTargetRequests)
 
@@ -2620,7 +2620,7 @@ $LL4@DoAIDiplom:
 
 ; 285  : 								if(pkTargetRequests->HasPendingRequests())
 
-	mov	ecx, DWORD PTR _pkTargetRequests$222091[esp+12]
+	mov	ecx, DWORD PTR _pkTargetRequests$222090[esp+12]
 	call	?HasPendingRequests@CvDiplomacyRequests@@QBE_NXZ ; CvDiplomacyRequests::HasPendingRequests
 	test	al, al
 	jne	SHORT $LN29@DoAIDiplom
@@ -2641,7 +2641,7 @@ $LN32@DoAIDiplom:
 ; 294  : 
 ; 295  : 						pkTargetRequests->SetNextAIPlayer((((int)ePlayerLoop >= iMaxCivPlayers)?NO_PLAYER:ePlayerLoop));
 
-	mov	ecx, DWORD PTR _pkTargetRequests$222091[esp+12]
+	mov	ecx, DWORD PTR _pkTargetRequests$222090[esp+12]
 	pop	edi
 	or	esi, -1
 	pop	ebx
@@ -2674,7 +2674,7 @@ $LN29@DoAIDiplom:
 $LN31@DoAIDiplom:
 	or	esi, -1
 $LN12@DoAIDiplom:
-	mov	ecx, DWORD PTR _pkTargetRequests$222091[esp+12]
+	mov	ecx, DWORD PTR _pkTargetRequests$222090[esp+12]
 	pop	edi
 	mov	DWORD PTR [ecx+4], esi
 	pop	ebx
@@ -2891,8 +2891,8 @@ __ehfuncinfo$?_Incsize@?$list@URequest@CvDiplomacyRequests@@V?$allocator@UReques
 xdata$x	ENDS
 ;	COMDAT ?_Incsize@?$list@URequest@CvDiplomacyRequests@@V?$allocator@URequest@CvDiplomacyRequests@@@std@@@std@@IAEXI@Z
 _TEXT	SEGMENT
-$T223443 = -80						; size = 28
-$T223442 = -52						; size = 40
+$T223442 = -80						; size = 28
+$T223441 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 __Count$ = 8						; size = 4
 ?_Incsize@?$list@URequest@CvDiplomacyRequests@@V?$allocator@URequest@CvDiplomacyRequests@@@std@@@std@@IAEXI@Z PROC ; std::list<CvDiplomacyRequests::Request,std::allocator<CvDiplomacyRequests::Request> >::_Incsize, COMDAT
@@ -2921,22 +2921,22 @@ __Count$ = 8						; size = 4
 ; 1241 : 			_THROW(length_error, "list<T> too long");
 
 	push	OFFSET ??_C@_0BB@MOGOBHAF@list?$DMT?$DO?5too?5long?$AA@
-	lea	ecx, DWORD PTR $T223443[esp+84]
+	lea	ecx, DWORD PTR $T223442[esp+84]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T223442[esp+80]
+	lea	ecx, DWORD PTR $T223441[esp+80]
 	mov	DWORD PTR __$EHRec$[esp+88], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T223443[esp+80]
+	lea	eax, DWORD PTR $T223442[esp+80]
 	push	eax
-	lea	ecx, DWORD PTR $T223442[esp+96]
+	lea	ecx, DWORD PTR $T223441[esp+96]
 	mov	BYTE PTR __$EHRec$[esp+92], 1
-	mov	DWORD PTR $T223442[esp+84], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T223441[esp+84], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVlength_error@std@@
-	lea	ecx, DWORD PTR $T223442[esp+84]
+	lea	ecx, DWORD PTR $T223441[esp+84]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+96], 0
-	mov	DWORD PTR $T223442[esp+88], OFFSET ??_7length_error@std@@6B@
+	mov	DWORD PTR $T223441[esp+88], OFFSET ??_7length_error@std@@6B@
 	call	__CxxThrowException@8
 $LN20@Incsize:
 $LN1@Incsize:
@@ -2957,10 +2957,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Incsize@?$list@URequest@CvDiplomacyRequests@@V?$allocator@URequest@CvDiplomacyRequests@@@std@@@std@@IAEXI@Z$0:
-	lea	ecx, DWORD PTR $T223443[ebp]
+	lea	ecx, DWORD PTR $T223442[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Incsize@?$list@URequest@CvDiplomacyRequests@@V?$allocator@URequest@CvDiplomacyRequests@@@std@@@std@@IAEXI@Z$2:
-	lea	ecx, DWORD PTR $T223442[ebp]
+	lea	ecx, DWORD PTR $T223441[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Incsize@?$list@URequest@CvDiplomacyRequests@@V?$allocator@URequest@CvDiplomacyRequests@@@std@@@std@@IAEXI@Z:
 	mov	eax, OFFSET __ehfuncinfo$?_Incsize@?$list@URequest@CvDiplomacyRequests@@V?$allocator@URequest@CvDiplomacyRequests@@@std@@@std@@IAEXI@Z
@@ -3101,7 +3101,7 @@ __ehfuncinfo$??$_Construct@URequest@CvDiplomacyRequests@@U12@@std@@YAXPAURequest
 xdata$x	ENDS
 ;	COMDAT ??$_Construct@URequest@CvDiplomacyRequests@@U12@@std@@YAXPAURequest@CvDiplomacyRequests@@ABU12@@Z
 _TEXT	SEGMENT
-$T223551 = -16						; size = 4
+$T223550 = -16						; size = 4
 __$EHRec$ = -12						; size = 12
 __Vptr$ = 8						; size = 4
 __Ptr$ = 8						; size = 4
@@ -3125,7 +3125,7 @@ __Val$ = 12						; size = 4
 
 ; 52   : 	::new (_Vptr) _T1(_Val);
 
-	mov	DWORD PTR $T223551[esp+20], esi
+	mov	DWORD PTR $T223550[esp+20], esi
 	mov	DWORD PTR __$EHRec$[esp+28], 0
 	test	esi, esi
 	je	SHORT $LN3@Construct@2
@@ -3163,7 +3163,7 @@ text$x	SEGMENT
 __unwindfunclet$??$_Construct@URequest@CvDiplomacyRequests@@U12@@std@@YAXPAURequest@CvDiplomacyRequests@@ABU12@@Z$0:
 	mov	eax, DWORD PTR __Vptr$[ebp-4]
 	push	eax
-	mov	ecx, DWORD PTR $T223551[ebp]
+	mov	ecx, DWORD PTR $T223550[ebp]
 	push	ecx
 	call	??3@YAXPAX0@Z				; operator delete
 	add	esp, 8
@@ -4078,9 +4078,9 @@ _TEXT	SEGMENT
 _uiListSize$ = -76					; size = 4
 _this$ = -72						; size = 4
 _uiVersion$ = -68					; size = 4
-$T224742 = -64						; size = 52
+$T224741 = -64						; size = 52
 __$EHRec$ = -12						; size = 12
-_ui$221836 = 8						; size = 4
+_ui$221835 = 8						; size = 4
 _kStream$ = 8						; size = 4
 ?Read@CvDiplomacyRequests@@QAEXAAVFDataStream@@@Z PROC	; CvDiplomacyRequests::Read, COMDAT
 ; _this$ = ecx
@@ -4136,7 +4136,7 @@ _kStream$ = 8						; size = 4
 ; 102  : 	{
 ; 103  : 		for(uint ui = 0; ui < uiListSize; ui++)
 
-	mov	DWORD PTR _ui$221836[esp+84], 0
+	mov	DWORD PTR _ui$221835[esp+84], 0
 	add	ebp, 8
 	push	esi
 	npad	1
@@ -4145,11 +4145,11 @@ $LL76@Read:
 ; 104  : 		{
 ; 105  : 			m_aRequests.push_back(Request());
 
-	lea	ecx, DWORD PTR $T224742[esp+100]
+	lea	ecx, DWORD PTR $T224741[esp+100]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 	mov	esi, DWORD PTR [ebp+4]
 	mov	eax, DWORD PTR [esi+4]
-	lea	edx, DWORD PTR $T224742[esp+92]
+	lea	edx, DWORD PTR $T224741[esp+92]
 	push	edx
 	push	eax
 	push	esi
@@ -4162,7 +4162,7 @@ $LL76@Read:
 	call	?_Incsize@?$list@URequest@CvDiplomacyRequests@@V?$allocator@URequest@CvDiplomacyRequests@@@std@@@std@@IAEXI@Z ; std::list<CvDiplomacyRequests::Request,std::allocator<CvDiplomacyRequests::Request> >::_Incsize
 	mov	DWORD PTR [esi+4], ebx
 	mov	eax, DWORD PTR [ebx+4]
-	lea	ecx, DWORD PTR $T224742[esp+100]
+	lea	ecx, DWORD PTR $T224741[esp+100]
 	mov	DWORD PTR [eax], ebx
 	mov	DWORD PTR __$EHRec$[esp+100], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
@@ -4201,10 +4201,10 @@ $LL76@Read:
 	push	esi
 	push	edi
 	call	??5@YAAAVFDataStream@@AAV0@AAW4PlayerTypes@@@Z ; operator>>
-	mov	eax, DWORD PTR _ui$221836[esp+96]
+	mov	eax, DWORD PTR _ui$221835[esp+96]
 	inc	eax
 	add	esp, 8
-	mov	DWORD PTR _ui$221836[esp+88], eax
+	mov	DWORD PTR _ui$221835[esp+88], eax
 	cmp	eax, DWORD PTR _uiListSize$[esp+92]
 	jb	$LL76@Read
 	pop	esi
@@ -4225,7 +4225,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?Read@CvDiplomacyRequests@@QAEXAAVFDataStream@@@Z$0:
-	lea	ecx, DWORD PTR $T224742[ebp]
+	lea	ecx, DWORD PTR $T224741[ebp]
 	jmp	??1Request@CvDiplomacyRequests@@QAE@XZ
 __ehhandler$?Read@CvDiplomacyRequests@@QAEXAAVFDataStream@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?Read@CvDiplomacyRequests@@QAEXAAVFDataStream@@@Z
@@ -4338,7 +4338,7 @@ __ehfuncinfo$?Add@CvDiplomacyRequests@@QAE_NW4PlayerTypes@@W4DiploUIStateTypes@@
 xdata$x	ENDS
 ;	COMDAT ?Add@CvDiplomacyRequests@@QAE_NW4PlayerTypes@@W4DiploUIStateTypes@@PBDW4LeaderheadAnimationTypes@@H@Z
 _TEXT	SEGMENT
-$T225043 = -64						; size = 52
+$T225042 = -64						; size = 52
 __$EHRec$ = -12						; size = 12
 _eFromPlayer$ = 8					; size = 4
 _eDiploType$ = 12					; size = 4
@@ -4365,12 +4365,12 @@ _iExtraGameData$ = 24					; size = 4
 ; 166  : 	// Queue it up
 ; 167  : 	m_aRequests.push_back(Request());
 
-	lea	ecx, DWORD PTR $T225043[esp+88]
+	lea	ecx, DWORD PTR $T225042[esp+88]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 	mov	edi, DWORD PTR [ebp+12]
 	mov	ecx, DWORD PTR [edi+4]
 	lea	esi, DWORD PTR [ebp+8]
-	lea	eax, DWORD PTR $T225043[esp+80]
+	lea	eax, DWORD PTR $T225042[esp+80]
 	push	eax
 	push	ecx
 	push	edi
@@ -4384,7 +4384,7 @@ _iExtraGameData$ = 24					; size = 4
 	mov	DWORD PTR [edi+4], ebx
 	mov	eax, DWORD PTR [ebx+4]
 	or	edi, -1
-	lea	ecx, DWORD PTR $T225043[esp+88]
+	lea	ecx, DWORD PTR $T225042[esp+88]
 	mov	DWORD PTR [eax], ebx
 	mov	DWORD PTR __$EHRec$[esp+88], edi
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
@@ -4399,7 +4399,7 @@ _iExtraGameData$ = 24					; size = 4
 ; 170  : 	newRequest.Clear();
 
 	lea	ebx, DWORD PTR [esi+8]
-	push	OFFSET $SG221812
+	push	OFFSET $SG221811
 	mov	ecx, ebx
 	mov	DWORD PTR [esi], edi
 	mov	DWORD PTR [esi+36], edi
@@ -4464,7 +4464,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?Add@CvDiplomacyRequests@@QAE_NW4PlayerTypes@@W4DiploUIStateTypes@@PBDW4LeaderheadAnimationTypes@@H@Z$0:
-	lea	ecx, DWORD PTR $T225043[ebp]
+	lea	ecx, DWORD PTR $T225042[ebp]
 	jmp	??1Request@CvDiplomacyRequests@@QAE@XZ
 __ehhandler$?Add@CvDiplomacyRequests@@QAE_NW4PlayerTypes@@W4DiploUIStateTypes@@PBDW4LeaderheadAnimationTypes@@H@Z:
 	mov	eax, OFFSET __ehfuncinfo$?Add@CvDiplomacyRequests@@QAE_NW4PlayerTypes@@W4DiploUIStateTypes@@PBDW4LeaderheadAnimationTypes@@H@Z
@@ -4587,10 +4587,10 @@ __ehfuncinfo$?SendDealRequest@CvDiplomacyRequests@@SAXW4PlayerTypes@@0PAVCvDeal@
 xdata$x	ENDS
 ;	COMDAT ?SendDealRequest@CvDiplomacyRequests@@SAXW4PlayerTypes@@0PAVCvDeal@@W4DiploUIStateTypes@@PBDW4LeaderheadAnimationTypes@@@Z
 _TEXT	SEGMENT
-_pDeal$222063 = -16					; size = 4
+_pDeal$222062 = -16					; size = 4
 __$EHRec$ = -12						; size = 12
 _eFromPlayer$ = 8					; size = 4
-$T225255 = 12						; size = 4
+$T225254 = 12						; size = 4
 _eToPlayer$ = 12					; size = 4
 _pkDeal$ = 16						; size = 4
 _eDiploType$ = 20					; size = 4
@@ -4623,14 +4623,14 @@ _eAnimationType$ = 28					; size = 4
 	mov	eax, DWORD PTR _pkDeal$[esp+16]
 	push	esi
 	push	eax
-	lea	ecx, DWORD PTR $T225255[esp+24]
+	lea	ecx, DWORD PTR $T225254[esp+24]
 	push	ecx
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?WrapDealPointer@CvGlobals@@QAE?AV?$auto_ptr@VICvDeal1@@@std@@PAVCvDeal@@@Z ; CvGlobals::WrapDealPointer
 	mov	esi, DWORD PTR [eax]
 	mov	DWORD PTR [eax], 0
-	mov	DWORD PTR _pDeal$222063[esp+24], esi
-	mov	eax, DWORD PTR $T225255[esp+20]
+	mov	DWORD PTR _pDeal$222062[esp+24], esi
+	mov	eax, DWORD PTR $T225254[esp+20]
 	mov	DWORD PTR __$EHRec$[esp+32], 0
 	test	eax, eax
 	je	SHORT $LN16@SendDealRe
@@ -4687,7 +4687,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?SendDealRequest@CvDiplomacyRequests@@SAXW4PlayerTypes@@0PAVCvDeal@@W4DiploUIStateTypes@@PBDW4LeaderheadAnimationTypes@@@Z$1:
-	lea	ecx, DWORD PTR _pDeal$222063[ebp]
+	lea	ecx, DWORD PTR _pDeal$222062[ebp]
 	jmp	??1?$auto_ptr@VICvDeal1@@@std@@QAE@XZ	; std::auto_ptr<ICvDeal1>::~auto_ptr<ICvDeal1>
 __ehhandler$?SendDealRequest@CvDiplomacyRequests@@SAXW4PlayerTypes@@0PAVCvDeal@@W4DiploUIStateTypes@@PBDW4LeaderheadAnimationTypes@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?SendDealRequest@CvDiplomacyRequests@@SAXW4PlayerTypes@@0PAVCvDeal@@W4DiploUIStateTypes@@PBDW4LeaderheadAnimationTypes@@@Z

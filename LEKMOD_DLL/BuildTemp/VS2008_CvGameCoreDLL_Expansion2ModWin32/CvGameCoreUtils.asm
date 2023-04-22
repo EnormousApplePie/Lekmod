@@ -10,157 +10,157 @@ INCLUDELIB MSVCRT
 INCLUDELIB OLDNAMES
 
 CONST	SEGMENT
-$SG218580 DB	'NOPICK', 00H
-$SG218641 DB	00H
-$SG218602 DB	'Months', 00H
+$SG218579 DB	'NOPICK', 00H
+$SG218640 DB	00H
+$SG218601 DB	'Months', 00H
 	ORG $+1
-$SG218615 DB	'Months', 00H
+$SG218614 DB	'Months', 00H
 	ORG $+1
-$SG218632 DB	'Seasons', 00H
-$SG218646 DB	'1', 00H
+$SG218631 DB	'Seasons', 00H
+$SG218645 DB	'1', 00H
 	ORG $+2
-$SG218647 DB	'0', 00H
+$SG218646 DB	'0', 00H
 	ORG $+2
-$SG218669 DB	'NO_DIRECTION', 00H
+$SG218668 DB	'NO_DIRECTION', 00H
 	ORG $+3
-$SG218671 DB	'northeast', 00H
+$SG218670 DB	'northeast', 00H
 	ORG $+2
-$SG218673 DB	'east', 00H
+$SG218672 DB	'east', 00H
 	ORG $+3
-$SG218675 DB	'southeast', 00H
+$SG218674 DB	'southeast', 00H
 	ORG $+2
-$SG218677 DB	'southwest', 00H
+$SG218676 DB	'southwest', 00H
 	ORG $+2
-$SG218679 DB	'west', 00H
+$SG218678 DB	'west', 00H
 	ORG $+3
-$SG218681 DB	'northwest', 00H
+$SG218680 DB	'northwest', 00H
 	ORG $+2
-$SG218684 DB	'UNKNOWN_DIRECTION(%d)', 00H
+$SG218683 DB	'UNKNOWN_DIRECTION(%d)', 00H
 	ORG $+2
-$SG218694 DB	'NO_ACTIVITY', 00H
-$SG218696 DB	'ACTIVITY_AWAKE', 00H
+$SG218693 DB	'NO_ACTIVITY', 00H
+$SG218695 DB	'ACTIVITY_AWAKE', 00H
 	ORG $+1
-$SG218698 DB	'ACTIVITY_HOLD', 00H
+$SG218697 DB	'ACTIVITY_HOLD', 00H
 	ORG $+2
-$SG218700 DB	'ACTIVITY_SLEEP', 00H
+$SG218699 DB	'ACTIVITY_SLEEP', 00H
 	ORG $+1
-$SG218702 DB	'ACTIVITY_HEAL', 00H
+$SG218701 DB	'ACTIVITY_HEAL', 00H
 	ORG $+2
-$SG218704 DB	'ACTIVITY_SENTRY', 00H
-$SG218706 DB	'ACTIVITY_SENTRY', 00H
-$SG218708 DB	'ACTIVITY_MISSION', 00H
+$SG218703 DB	'ACTIVITY_SENTRY', 00H
+$SG218705 DB	'ACTIVITY_SENTRY', 00H
+$SG218707 DB	'ACTIVITY_MISSION', 00H
 	ORG $+3
-$SG218711 DB	'UNKNOWN_ACTIVITY(%d)', 00H
+$SG218710 DB	'UNKNOWN_ACTIVITY(%d)', 00H
 	ORG $+3
-$SG218721 DB	'NO_MISSIONAI', 00H
+$SG218720 DB	'NO_MISSIONAI', 00H
 	ORG $+3
-$SG218723 DB	'MISSIONAI_SHADOW', 00H
+$SG218722 DB	'MISSIONAI_SHADOW', 00H
 	ORG $+3
-$SG218725 DB	'MISSIONAI_GROUP', 00H
-$SG218727 DB	'MISSIONAI_LOAD_ASSAULT', 00H
+$SG218724 DB	'MISSIONAI_GROUP', 00H
+$SG218726 DB	'MISSIONAI_LOAD_ASSAULT', 00H
 	ORG $+1
-$SG218729 DB	'MISSIONAI_LOAD_SETTLER', 00H
+$SG218728 DB	'MISSIONAI_LOAD_SETTLER', 00H
 	ORG $+1
-$SG218731 DB	'MISSIONAI_LOAD_SPECIA', 00H
+$SG218730 DB	'MISSIONAI_LOAD_SPECIA', 00H
 	ORG $+2
-$SG218733 DB	'MISSIONAI_GUARD_CITY', 00H
+$SG218732 DB	'MISSIONAI_GUARD_CITY', 00H
 	ORG $+3
-$SG218735 DB	'MISSIONAI_GUARD_RESOURCE', 00H
+$SG218734 DB	'MISSIONAI_GUARD_RESOURCE', 00H
 	ORG $+3
-$SG218737 DB	'MISSIONAI_GUARD_SPY', 00H
-$SG218739 DB	'MISSIONAI_ATTACK_SPY', 00H
+$SG218736 DB	'MISSIONAI_GUARD_SPY', 00H
+$SG218738 DB	'MISSIONAI_ATTACK_SPY', 00H
 	ORG $+3
-$SG218741 DB	'MISSIONAI_SPREAD', 00H
+$SG218740 DB	'MISSIONAI_SPREAD', 00H
 	ORG $+3
-$SG218743 DB	'MISSIONAI_CONSTRUCT', 00H
-$SG218745 DB	'MISSIONAI_HURRY', 00H
-$SG218747 DB	'MISSIONAI_GREAT_WORK', 00H
+$SG218742 DB	'MISSIONAI_CONSTRUCT', 00H
+$SG218744 DB	'MISSIONAI_HURRY', 00H
+$SG218746 DB	'MISSIONAI_GREAT_WORK', 00H
 	ORG $+3
-$SG218749 DB	'MISSIONAI_EXPLORE', 00H
+$SG218748 DB	'MISSIONAI_EXPLORE', 00H
 	ORG $+2
-$SG218751 DB	'MISSIONAI_BLOCKADE', 00H
+$SG218750 DB	'MISSIONAI_BLOCKADE', 00H
 	ORG $+1
-$SG218753 DB	'MISSIONAI_PILLAGE', 00H
+$SG218752 DB	'MISSIONAI_PILLAGE', 00H
 	ORG $+2
-$SG218755 DB	'MISSIONAI_FOUND', 00H
-$SG218757 DB	'MISSIONAI_BUILD', 00H
-$SG218759 DB	'MISSIONAI_ASSAULT', 00H
+$SG218754 DB	'MISSIONAI_FOUND', 00H
+$SG218756 DB	'MISSIONAI_BUILD', 00H
+$SG218758 DB	'MISSIONAI_ASSAULT', 00H
 	ORG $+2
-$SG218761 DB	'MISSIONAI_CARRIER', 00H
+$SG218760 DB	'MISSIONAI_CARRIER', 00H
 	ORG $+2
-$SG218763 DB	'MISSIONAI_PICKUP', 00H
+$SG218762 DB	'MISSIONAI_PICKUP', 00H
 	ORG $+3
-$SG218766 DB	'UNKOWN_MISSION_AI(%d)', 00H
+$SG218765 DB	'UNKOWN_MISSION_AI(%d)', 00H
 	ORG $+2
-$SG218776 DB	'no unitAI', 00H
+$SG218775 DB	'no unitAI', 00H
 	ORG $+2
-$SG218778 DB	'unknown', 00H
-$SG218780 DB	'settle', 00H
+$SG218777 DB	'unknown', 00H
+$SG218779 DB	'settle', 00H
 	ORG $+1
-$SG218782 DB	'worker', 00H
+$SG218781 DB	'worker', 00H
 	ORG $+1
-$SG218784 DB	'attack', 00H
+$SG218783 DB	'attack', 00H
 	ORG $+1
-$SG218786 DB	'bombard city', 00H
+$SG218785 DB	'bombard city', 00H
 	ORG $+3
-$SG218788 DB	'fast attack', 00H
-$SG218790 DB	'defense', 00H
-$SG218792 DB	'counter', 00H
-$SG218794 DB	'ranged', 00H
+$SG218787 DB	'fast attack', 00H
+$SG218789 DB	'defense', 00H
+$SG218791 DB	'counter', 00H
+$SG218793 DB	'ranged', 00H
 	ORG $+1
-$SG218796 DB	'city special', 00H
+$SG218795 DB	'city special', 00H
 	ORG $+3
-$SG218798 DB	'explore', 00H
-$SG218800 DB	'artist', 00H
+$SG218797 DB	'explore', 00H
+$SG218799 DB	'artist', 00H
 	ORG $+1
-$SG218802 DB	'scientist', 00H
+$SG218801 DB	'scientist', 00H
 	ORG $+2
-$SG218804 DB	'general', 00H
-$SG218806 DB	'merchant', 00H
+$SG218803 DB	'general', 00H
+$SG218805 DB	'merchant', 00H
 	ORG $+3
-$SG218808 DB	'engineer', 00H
+$SG218807 DB	'engineer', 00H
 	ORG $+3
-$SG218810 DB	'icbm', 00H
+$SG218809 DB	'icbm', 00H
 	ORG $+3
-$SG218812 DB	'worker sea', 00H
+$SG218811 DB	'worker sea', 00H
 	ORG $+1
-$SG218814 DB	'attack sea', 00H
+$SG218813 DB	'attack sea', 00H
 	ORG $+1
-$SG218816 DB	'reserve sea', 00H
-$SG218818 DB	'escort sea', 00H
+$SG218815 DB	'reserve sea', 00H
+$SG218817 DB	'escort sea', 00H
 	ORG $+1
-$SG218820 DB	'explore sea', 00H
-$SG218822 DB	'assault sea', 00H
-$SG218824 DB	'settler sea', 00H
-$SG218826 DB	'carrier sea', 00H
-$SG218828 DB	'missile carrier', 00H
-$SG218830 DB	'pirate sea', 00H
+$SG218819 DB	'explore sea', 00H
+$SG218821 DB	'assault sea', 00H
+$SG218823 DB	'settler sea', 00H
+$SG218825 DB	'carrier sea', 00H
+$SG218827 DB	'missile carrier', 00H
+$SG218829 DB	'pirate sea', 00H
 	ORG $+1
-$SG218832 DB	'attack air', 00H
+$SG218831 DB	'attack air', 00H
 	ORG $+1
-$SG218834 DB	'defense air', 00H
-$SG218836 DB	'carrier air', 00H
-$SG218838 DB	'paradrop', 00H
+$SG218833 DB	'defense air', 00H
+$SG218835 DB	'carrier air', 00H
+$SG218837 DB	'paradrop', 00H
 	ORG $+3
-$SG218840 DB	'spaceship part', 00H
+$SG218839 DB	'spaceship part', 00H
 	ORG $+1
-$SG218842 DB	'treasure', 00H
+$SG218841 DB	'treasure', 00H
 	ORG $+3
-$SG218844 DB	'prophet', 00H
-$SG218846 DB	'missionary', 00H
+$SG218843 DB	'prophet', 00H
+$SG218845 DB	'missionary', 00H
 	ORG $+1
-$SG218848 DB	'inquisitor', 00H
+$SG218847 DB	'inquisitor', 00H
 	ORG $+1
-$SG218850 DB	'admiral', 00H
-$SG218852 DB	'trade unit', 00H
+$SG218849 DB	'admiral', 00H
+$SG218851 DB	'trade unit', 00H
 	ORG $+1
-$SG218854 DB	'archaeologist', 00H
+$SG218853 DB	'archaeologist', 00H
 	ORG $+2
-$SG218856 DB	'writer', 00H
+$SG218855 DB	'writer', 00H
 	ORG $+1
-$SG218858 DB	'musician', 00H
+$SG218857 DB	'musician', 00H
 	ORG $+3
-$SG218861 DB	'unknown(%d)', 00H
+$SG218860 DB	'unknown(%d)', 00H
 CONST	ENDS
 PUBLIC	?wrapCoordDifference@@YAHHI_N@Z			; wrapCoordDifference
 ; Function compile flags: /Ogtpy
@@ -568,7 +568,7 @@ _DATA	SEGMENT
 _DATA	ENDS
 ;	COMDAT ?estimateDirection@@YA?AW4DirectionTypes@@HH@Z
 _TEXT	SEGMENT
-_dotProduct$218181 = -16				; size = 8
+_dotProduct$218180 = -16				; size = 8
 _maximum$ = -8						; size = 8
 _iDX$ = 8						; size = 4
 _iDY$ = 12						; size = 4
@@ -599,12 +599,12 @@ _iDY$ = 12						; size = 4
 	fild	DWORD PTR _iDX$[ebp]
 	fmul	QWORD PTR ?displacements@?1??estimateDirection@@YA?AW4DirectionTypes@@HH@Z@4PAY01NA
 	faddp	ST(1), ST(0)
-	fstp	QWORD PTR _dotProduct$218181[esp+64]
+	fstp	QWORD PTR _dotProduct$218180[esp+64]
 
 ; 140  : 		if(dotProduct > maximum)
 
 	fldz
-	fcomp	QWORD PTR _dotProduct$218181[esp+64]
+	fcomp	QWORD PTR _dotProduct$218180[esp+64]
 	fnstsw	ax
 	test	ah, 5
 	jp	SHORT $LN3@estimateDi
@@ -612,8 +612,8 @@ _iDY$ = 12						; size = 4
 ; 141  : 		{
 ; 142  : 			maximum = dotProduct;
 
-	mov	ecx, DWORD PTR _dotProduct$218181[esp+68]
-	mov	eax, DWORD PTR _dotProduct$218181[esp+64]
+	mov	ecx, DWORD PTR _dotProduct$218180[esp+68]
+	mov	eax, DWORD PTR _dotProduct$218180[esp+64]
 	mov	DWORD PTR _maximum$[esp+68], ecx
 	mov	DWORD PTR _maximum$[esp+64], eax
 
@@ -626,14 +626,14 @@ $LN3@estimateDi:
 	fild	DWORD PTR _iDX$[ebp]
 	fmul	QWORD PTR ?displacements@?1??estimateDirection@@YA?AW4DirectionTypes@@HH@Z@4PAY01NA+16
 	faddp	ST(1), ST(0)
-	fstp	QWORD PTR _dotProduct$218181[esp+64]
+	fstp	QWORD PTR _dotProduct$218180[esp+64]
 	fld	QWORD PTR _maximum$[esp+64]
-	fcomp	QWORD PTR _dotProduct$218181[esp+64]
+	fcomp	QWORD PTR _dotProduct$218180[esp+64]
 	fnstsw	ax
 	test	ah, 5
 	jp	SHORT $LN11@estimateDi
-	mov	edx, DWORD PTR _dotProduct$218181[esp+64]
-	mov	eax, DWORD PTR _dotProduct$218181[esp+68]
+	mov	edx, DWORD PTR _dotProduct$218180[esp+64]
+	mov	eax, DWORD PTR _dotProduct$218180[esp+68]
 	mov	DWORD PTR _maximum$[esp+64], edx
 	mov	DWORD PTR _maximum$[esp+68], eax
 	mov	ecx, 1
@@ -643,14 +643,14 @@ $LN11@estimateDi:
 	fild	DWORD PTR _iDX$[ebp]
 	fmul	QWORD PTR ?displacements@?1??estimateDirection@@YA?AW4DirectionTypes@@HH@Z@4PAY01NA+32
 	faddp	ST(1), ST(0)
-	fstp	QWORD PTR _dotProduct$218181[esp+64]
+	fstp	QWORD PTR _dotProduct$218180[esp+64]
 	fld	QWORD PTR _maximum$[esp+64]
-	fcomp	QWORD PTR _dotProduct$218181[esp+64]
+	fcomp	QWORD PTR _dotProduct$218180[esp+64]
 	fnstsw	ax
 	test	ah, 5
 	jp	SHORT $LN13@estimateDi
-	mov	ecx, DWORD PTR _dotProduct$218181[esp+64]
-	mov	edx, DWORD PTR _dotProduct$218181[esp+68]
+	mov	ecx, DWORD PTR _dotProduct$218180[esp+64]
+	mov	edx, DWORD PTR _dotProduct$218180[esp+68]
 	mov	DWORD PTR _maximum$[esp+64], ecx
 	mov	DWORD PTR _maximum$[esp+68], edx
 	mov	ecx, 2
@@ -660,14 +660,14 @@ $LN13@estimateDi:
 	fild	DWORD PTR _iDX$[ebp]
 	fmul	QWORD PTR ?displacements@?1??estimateDirection@@YA?AW4DirectionTypes@@HH@Z@4PAY01NA+48
 	faddp	ST(1), ST(0)
-	fstp	QWORD PTR _dotProduct$218181[esp+64]
+	fstp	QWORD PTR _dotProduct$218180[esp+64]
 	fld	QWORD PTR _maximum$[esp+64]
-	fcomp	QWORD PTR _dotProduct$218181[esp+64]
+	fcomp	QWORD PTR _dotProduct$218180[esp+64]
 	fnstsw	ax
 	test	ah, 5
 	jp	SHORT $LN15@estimateDi
-	mov	ecx, DWORD PTR _dotProduct$218181[esp+68]
-	mov	eax, DWORD PTR _dotProduct$218181[esp+64]
+	mov	ecx, DWORD PTR _dotProduct$218180[esp+68]
+	mov	eax, DWORD PTR _dotProduct$218180[esp+64]
 	mov	DWORD PTR _maximum$[esp+68], ecx
 	mov	DWORD PTR _maximum$[esp+64], eax
 	mov	ecx, 3
@@ -677,14 +677,14 @@ $LN15@estimateDi:
 	fild	DWORD PTR _iDX$[ebp]
 	fmul	QWORD PTR ?displacements@?1??estimateDirection@@YA?AW4DirectionTypes@@HH@Z@4PAY01NA+64
 	faddp	ST(1), ST(0)
-	fstp	QWORD PTR _dotProduct$218181[esp+64]
+	fstp	QWORD PTR _dotProduct$218180[esp+64]
 	fld	QWORD PTR _maximum$[esp+64]
-	fcomp	QWORD PTR _dotProduct$218181[esp+64]
+	fcomp	QWORD PTR _dotProduct$218180[esp+64]
 	fnstsw	ax
 	test	ah, 5
 	jp	SHORT $LN17@estimateDi
-	mov	edx, DWORD PTR _dotProduct$218181[esp+64]
-	mov	eax, DWORD PTR _dotProduct$218181[esp+68]
+	mov	edx, DWORD PTR _dotProduct$218180[esp+64]
+	mov	eax, DWORD PTR _dotProduct$218180[esp+68]
 	mov	DWORD PTR _maximum$[esp+64], edx
 	mov	DWORD PTR _maximum$[esp+68], eax
 	mov	ecx, 4
@@ -694,9 +694,9 @@ $LN17@estimateDi:
 	fild	DWORD PTR _iDX$[ebp]
 	fmul	QWORD PTR ?displacements@?1??estimateDirection@@YA?AW4DirectionTypes@@HH@Z@4PAY01NA+80
 	faddp	ST(1), ST(0)
-	fstp	QWORD PTR _dotProduct$218181[esp+64]
+	fstp	QWORD PTR _dotProduct$218180[esp+64]
 	fld	QWORD PTR _maximum$[esp+64]
-	fcomp	QWORD PTR _dotProduct$218181[esp+64]
+	fcomp	QWORD PTR _dotProduct$218180[esp+64]
 	fnstsw	ax
 	test	ah, 5
 	mov	eax, 5
@@ -3945,7 +3945,7 @@ __ehfuncinfo$?format@CvString@@SA?AV1@PBDZZ DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?format@CvString@@SA?AV1@PBDZZ
 _TEXT	SEGMENT
-$T219746 = -44						; size = 4
+$T219745 = -44						; size = 4
 _result$ = -40						; size = 28
 __$EHRec$ = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
@@ -3965,7 +3965,7 @@ _fmt$ = 12						; size = 4
 ; 244  : 	std::string result;
 
 	lea	ecx, DWORD PTR _result$[esp+48]
-	mov	DWORD PTR $T219746[esp+48], 0
+	mov	DWORD PTR $T219745[esp+48], 0
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
 ; 245  : 	va_list args;
@@ -3991,7 +3991,7 @@ _fmt$ = 12						; size = 4
 	mov	ecx, esi
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	lea	ecx, DWORD PTR _result$[esp+48]
-	mov	DWORD PTR $T219746[esp+48], 1
+	mov	DWORD PTR $T219745[esp+48], 1
 	mov	BYTE PTR __$EHRec$[esp+56], 0
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -4010,10 +4010,10 @@ __unwindfunclet$?format@CvString@@SA?AV1@PBDZZ$0:
 	lea	ecx, DWORD PTR _result$[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?format@CvString@@SA?AV1@PBDZZ$1:
-	mov	eax, DWORD PTR $T219746[ebp]
+	mov	eax, DWORD PTR $T219745[ebp]
 	and	eax, 1
 	je	$LN5@format
-	and	DWORD PTR $T219746[ebp], -2		; fffffffeH
+	and	DWORD PTR $T219745[ebp], -2		; fffffffeH
 	mov	ecx, DWORD PTR ___$ReturnUdt$[ebp-4]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 $LN5@format:
@@ -4972,11 +4972,11 @@ EXTRN	?getNumTechInfos@CvGlobals@@QAEHXZ:PROC		; CvGlobals::getNumTechInfos
 ;	COMDAT ?getDiscoveryTech@@YA?AW4TechTypes@@W4UnitTypes@@W4PlayerTypes@@@Z
 _TEXT	SEGMENT
 _kPlayer$ = -16						; size = 4
-_iI$218419 = -12					; size = 4
+_iI$218418 = -12					; size = 4
 _eBestTech$ = -8					; size = 4
 _pkUnitInfo$ = -4					; size = 4
 _eUnit$ = 8						; size = 4
-_iBestValue$218418 = 12					; size = 4
+_iBestValue$218417 = 12					; size = 4
 _ePlayer$ = 12						; size = 4
 ?getDiscoveryTech@@YA?AW4TechTypes@@W4UnitTypes@@W4PlayerTypes@@@Z PROC ; getDiscoveryTech, COMDAT
 
@@ -5018,8 +5018,8 @@ _ePlayer$ = 12						; size = 4
 ; 667  : 		for(int iI = 0; iI < GC.getNumTechInfos(); iI++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	mov	DWORD PTR _iBestValue$218418[esp+24], ebp
-	mov	DWORD PTR _iI$218419[esp+28], ebp
+	mov	DWORD PTR _iBestValue$218417[esp+24], ebp
+	mov	DWORD PTR _iI$218418[esp+28], ebp
 	call	?getNumTechInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumTechInfos
 	test	eax, eax
 	jle	$LN22@getDiscove
@@ -5086,14 +5086,14 @@ $LL23@getDiscove:
 ; 677  : 
 ; 678  : 					for(int iJ = 0; iJ < GC.getNumFlavorTypes(); iJ++)
 
-	mov	ebp, DWORD PTR _iI$218419[esp+32]
+	mov	ebp, DWORD PTR _iI$218418[esp+32]
 $LN24@getDiscove:
 
 ; 681  : 					}
 ; 682  : 
 ; 683  : 					if(iValue > iBestValue)
 
-	cmp	edi, DWORD PTR _iBestValue$218418[esp+28]
+	cmp	edi, DWORD PTR _iBestValue$218417[esp+28]
 
 ; 684  : 					{
 ; 685  : 						iBestValue = iValue;
@@ -5101,12 +5101,12 @@ $LN24@getDiscove:
 
 	mov	esi, DWORD PTR _kPlayer$[esp+32]
 	jle	SHORT $LN8@getDiscove
-	mov	DWORD PTR _iBestValue$218418[esp+28], edi
+	mov	DWORD PTR _iBestValue$218417[esp+28], edi
 	mov	DWORD PTR _eBestTech$[esp+32], ebp
 $LN8@getDiscove:
 	inc	ebp
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	mov	DWORD PTR _iI$218419[esp+32], ebp
+	mov	DWORD PTR _iI$218418[esp+32], ebp
 	call	?getNumTechInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumTechInfos
 	cmp	ebp, eax
 	jl	SHORT $LL27@getDiscove
@@ -5210,7 +5210,7 @@ $LL7@isPickable:
 ; 888  : 		if(!_tcsicmp(&szName[iLen-6], "NOPICK"))
 
 	lea	eax, DWORD PTR [eax+edx-6]
-	push	OFFSET $SG218580
+	push	OFFSET $SG218579
 	push	eax
 	call	DWORD PTR __imp___mbsicmp
 	add	esp, 8
@@ -5248,7 +5248,7 @@ EXTRN	?getGameSpeedInfo@CvGlobals@@QAEPAVCvGameSpeedInfo@@W4GameSpeedTypes@@@Z:P
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?getTurnMonthForGame@@YAHHHW4CalendarTypes@@W4GameSpeedTypes@@@Z
 _TEXT	SEGMENT
-_iGameSpeedNumTurnIncrements$218621 = -8		; size = 4
+_iGameSpeedNumTurnIncrements$218620 = -8		; size = 4
 _pkGameSpeedInfo$ = -4					; size = 4
 _iGameTurn$ = 8						; size = 4
 _iStartYear$ = 12					; size = 4
@@ -5300,7 +5300,7 @@ $LN16@getTurnMon:
 	mov	ebp, DWORD PTR __imp_?Count@Connection@Database@@QAEHPBD_N@Z
 	push	esi
 	push	1
-	push	OFFSET $SG218615
+	push	OFFSET $SG218614
 	call	ebp
 	mov	esi, eax
 
@@ -5332,7 +5332,7 @@ $LN13@getTurnMon:
 
 	mov	esi, DWORD PTR _iGameTurn$[esp+20]
 	xor	edi, edi
-	mov	DWORD PTR _iGameSpeedNumTurnIncrements$218621[esp+24], eax
+	mov	DWORD PTR _iGameSpeedNumTurnIncrements$218620[esp+24], eax
 	test	eax, eax
 	jle	SHORT $LN10@getTurnMon
 	npad	2
@@ -5365,13 +5365,13 @@ $LL12@getTurnMon:
 ; 957  : 					iTurnCount += gameTurnInfo.iNumGameTurnsPerIncrement;
 
 	add	ebp, ecx
-	cmp	edi, DWORD PTR _iGameSpeedNumTurnIncrements$218621[esp+24]
+	cmp	edi, DWORD PTR _iGameSpeedNumTurnIncrements$218620[esp+24]
 	jl	SHORT $LL12@getTurnMon
 
 ; 949  : 
 ; 950  : 			for(iI = 0; iI < iGameSpeedNumTurnIncrements; iI++)
 
-	mov	eax, DWORD PTR _iGameSpeedNumTurnIncrements$218621[esp+24]
+	mov	eax, DWORD PTR _iGameSpeedNumTurnIncrements$218620[esp+24]
 $LN10@getTurnMon:
 
 ; 958  : 				}
@@ -5486,7 +5486,7 @@ $LN4@getTurnMon:
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+912
 	push	1
-	push	OFFSET $SG218632
+	push	OFFSET $SG218631
 	call	ebp
 	mov	ecx, eax
 	mov	eax, esi
@@ -5607,7 +5607,7 @@ _szOut$ = 16						; size = 4
 ; 1005 : 	*szOut = "";
 
 	mov	edi, DWORD PTR _szOut$[esp+8]
-	push	OFFSET $SG218641
+	push	OFFSET $SG218640
 	mov	ecx, edi
 	call	DWORD PTR __imp_?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBD@Z
 
@@ -5626,9 +5626,9 @@ $LL3@boolsToStr:
 ; 1009 : 		*szOut += pBools[i] ? "1" : "0";
 
 	cmp	BYTE PTR [esi+ebp], 0
-	mov	eax, OFFSET $SG218646
+	mov	eax, OFFSET $SG218645
 	jne	SHORT $LN7@boolsToStr
-	mov	eax, OFFSET $SG218647
+	mov	eax, OFFSET $SG218646
 $LN7@boolsToStr:
 	push	eax
 	mov	ecx, edi
@@ -5666,7 +5666,7 @@ __ehfuncinfo$?getDirectionTypeString@@YAXAAVCvString@@W4DirectionTypes@@@Z DD 01
 xdata$x	ENDS
 ;	COMDAT ?getDirectionTypeString@@YAXAAVCvString@@W4DirectionTypes@@@Z
 _TEXT	SEGMENT
-$T220001 = -40						; size = 28
+$T220000 = -40						; size = 28
 __$EHRec$ = -12						; size = 12
 _strString$ = 8						; size = 4
 _eDirectionType$ = 12					; size = 4
@@ -5695,7 +5695,7 @@ $LN8@getDirecti:
 ; 1038 : 		strString = "NO_DIRECTION";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218669
+	push	OFFSET $SG218668
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
 ; 1064 : 		break;
@@ -5715,7 +5715,7 @@ $LN7@getDirecti:
 ; 1043 : 		strString = "northeast";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218671
+	push	OFFSET $SG218670
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
 ; 1064 : 		break;
@@ -5733,7 +5733,7 @@ $LN6@getDirecti:
 ; 1046 : 		strString = "east";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218673
+	push	OFFSET $SG218672
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
 ; 1064 : 		break;
@@ -5751,7 +5751,7 @@ $LN5@getDirecti:
 ; 1049 : 		strString = "southeast";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218675
+	push	OFFSET $SG218674
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
 ; 1064 : 		break;
@@ -5770,7 +5770,7 @@ $LN4@getDirecti:
 ; 1053 : 		strString = "southwest";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218677
+	push	OFFSET $SG218676
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
 ; 1064 : 		break;
@@ -5788,7 +5788,7 @@ $LN3@getDirecti:
 ; 1056 : 		strString = "west";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218679
+	push	OFFSET $SG218678
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
 ; 1064 : 		break;
@@ -5806,7 +5806,7 @@ $LN2@getDirecti:
 ; 1059 : 		strString = "northwest";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218681
+	push	OFFSET $SG218680
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
 ; 1064 : 		break;
@@ -5825,8 +5825,8 @@ $LN1@getDirecti:
 ; 1063 : 		strString = CvString::format("UNKNOWN_DIRECTION(%d)", eDirectionType);
 
 	push	ecx
-	lea	eax, DWORD PTR $T220001[esp+44]
-	push	OFFSET $SG218684
+	lea	eax, DWORD PTR $T220000[esp+44]
+	push	OFFSET $SG218683
 	push	eax
 	call	?format@CvString@@SA?AV1@PBDZZ		; CvString::format
 	add	esp, 12					; 0000000cH
@@ -5834,7 +5834,7 @@ $LN1@getDirecti:
 	push	eax
 	mov	DWORD PTR __$EHRec$[esp+52], 0
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T220001[esp+40]
+	lea	ecx, DWORD PTR $T220000[esp+40]
 	mov	DWORD PTR __$EHRec$[esp+48], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -5858,7 +5858,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?getDirectionTypeString@@YAXAAVCvString@@W4DirectionTypes@@@Z$0:
-	lea	ecx, DWORD PTR $T220001[ebp]
+	lea	ecx, DWORD PTR $T220000[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?getDirectionTypeString@@YAXAAVCvString@@W4DirectionTypes@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?getDirectionTypeString@@YAXAAVCvString@@W4DirectionTypes@@@Z
@@ -5883,7 +5883,7 @@ __ehfuncinfo$?getActivityTypeString@@YAXAAVCvString@@W4ActivityTypes@@@Z DD 0199
 xdata$x	ENDS
 ;	COMDAT ?getActivityTypeString@@YAXAAVCvString@@W4ActivityTypes@@@Z
 _TEXT	SEGMENT
-$T220021 = -40						; size = 28
+$T220020 = -40						; size = 28
 __$EHRec$ = -12						; size = 12
 _strString$ = 8						; size = 4
 _eActivityType$ = 12					; size = 4
@@ -5912,7 +5912,7 @@ $LN9@getActivit:
 ; 1073 : 		strString			= "NO_ACTIVITY";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218694
+	push	OFFSET $SG218693
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
 ; 1099 : 		break;
@@ -5930,7 +5930,7 @@ $LN8@getActivit:
 ; 1076 : 		strString		= "ACTIVITY_AWAKE";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218696
+	push	OFFSET $SG218695
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
 ; 1099 : 		break;
@@ -5948,7 +5948,7 @@ $LN7@getActivit:
 ; 1079 : 		strString		= "ACTIVITY_HOLD";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218698
+	push	OFFSET $SG218697
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
 ; 1099 : 		break;
@@ -5966,7 +5966,7 @@ $LN6@getActivit:
 ; 1082 : 		strString		= "ACTIVITY_SLEEP";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218700
+	push	OFFSET $SG218699
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
 ; 1099 : 		break;
@@ -5984,7 +5984,7 @@ $LN5@getActivit:
 ; 1085 : 		strString		= "ACTIVITY_HEAL";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218702
+	push	OFFSET $SG218701
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
 ; 1099 : 		break;
@@ -6002,7 +6002,7 @@ $LN4@getActivit:
 ; 1088 : 		strString		= "ACTIVITY_SENTRY";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218704
+	push	OFFSET $SG218703
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
 ; 1099 : 		break;
@@ -6020,7 +6020,7 @@ $LN3@getActivit:
 ; 1091 : 		strString	= "ACTIVITY_SENTRY";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218706
+	push	OFFSET $SG218705
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
 ; 1099 : 		break;
@@ -6038,7 +6038,7 @@ $LN2@getActivit:
 ; 1094 : 		strString	= "ACTIVITY_MISSION";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218708
+	push	OFFSET $SG218707
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
 ; 1099 : 		break;
@@ -6057,8 +6057,8 @@ $LN1@getActivit:
 ; 1098 : 		strString = CvString::format("UNKNOWN_ACTIVITY(%d)", eActivityType);
 
 	push	ecx
-	lea	eax, DWORD PTR $T220021[esp+44]
-	push	OFFSET $SG218711
+	lea	eax, DWORD PTR $T220020[esp+44]
+	push	OFFSET $SG218710
 	push	eax
 	call	?format@CvString@@SA?AV1@PBDZZ		; CvString::format
 	add	esp, 12					; 0000000cH
@@ -6066,7 +6066,7 @@ $LN1@getActivit:
 	push	eax
 	mov	DWORD PTR __$EHRec$[esp+52], 0
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T220021[esp+40]
+	lea	ecx, DWORD PTR $T220020[esp+40]
 	mov	DWORD PTR __$EHRec$[esp+48], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -6092,7 +6092,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?getActivityTypeString@@YAXAAVCvString@@W4ActivityTypes@@@Z$0:
-	lea	ecx, DWORD PTR $T220021[ebp]
+	lea	ecx, DWORD PTR $T220020[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?getActivityTypeString@@YAXAAVCvString@@W4ActivityTypes@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?getActivityTypeString@@YAXAAVCvString@@W4ActivityTypes@@@Z
@@ -6117,7 +6117,7 @@ __ehfuncinfo$?getMissionAIString@@YAXAAVCvString@@W4MissionAITypes@@@Z DD 019930
 xdata$x	ENDS
 ;	COMDAT ?getMissionAIString@@YAXAAVCvString@@W4MissionAITypes@@@Z
 _TEXT	SEGMENT
-$T220041 = -40						; size = 28
+$T220040 = -40						; size = 28
 __$EHRec$ = -12						; size = 12
 _strString$ = 8						; size = 4
 _eMissionAI$ = 12					; size = 4
@@ -6146,7 +6146,7 @@ $LN23@getMission:
 ; 1108 : 		strString = "NO_MISSIONAI";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218721
+	push	OFFSET $SG218720
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
 ; 1177 : 		break;
@@ -6165,7 +6165,7 @@ $LN22@getMission:
 ; 1112 : 		strString = "MISSIONAI_SHADOW";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218723
+	push	OFFSET $SG218722
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
 ; 1177 : 		break;
@@ -6183,7 +6183,7 @@ $LN21@getMission:
 ; 1115 : 		strString = "MISSIONAI_GROUP";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218725
+	push	OFFSET $SG218724
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
 ; 1177 : 		break;
@@ -6201,7 +6201,7 @@ $LN20@getMission:
 ; 1118 : 		strString = "MISSIONAI_LOAD_ASSAULT";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218727
+	push	OFFSET $SG218726
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
 ; 1177 : 		break;
@@ -6219,7 +6219,7 @@ $LN19@getMission:
 ; 1121 : 		strString = "MISSIONAI_LOAD_SETTLER";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218729
+	push	OFFSET $SG218728
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
 ; 1177 : 		break;
@@ -6237,7 +6237,7 @@ $LN18@getMission:
 ; 1124 : 		strString = "MISSIONAI_LOAD_SPECIA";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218731
+	push	OFFSET $SG218730
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
 ; 1177 : 		break;
@@ -6255,7 +6255,7 @@ $LN17@getMission:
 ; 1127 : 		strString = "MISSIONAI_GUARD_CITY";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218733
+	push	OFFSET $SG218732
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
 ; 1177 : 		break;
@@ -6273,7 +6273,7 @@ $LN16@getMission:
 ; 1130 : 		strString = "MISSIONAI_GUARD_RESOURCE";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218735
+	push	OFFSET $SG218734
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
 ; 1177 : 		break;
@@ -6291,7 +6291,7 @@ $LN15@getMission:
 ; 1133 : 		strString = "MISSIONAI_GUARD_SPY";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218737
+	push	OFFSET $SG218736
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
 ; 1177 : 		break;
@@ -6309,7 +6309,7 @@ $LN14@getMission:
 ; 1136 : 		strString = "MISSIONAI_ATTACK_SPY";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218739
+	push	OFFSET $SG218738
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
 ; 1177 : 		break;
@@ -6327,7 +6327,7 @@ $LN13@getMission:
 ; 1139 : 		strString = "MISSIONAI_SPREAD";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218741
+	push	OFFSET $SG218740
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
 ; 1177 : 		break;
@@ -6345,7 +6345,7 @@ $LN12@getMission:
 ; 1142 : 		strString = "MISSIONAI_CONSTRUCT";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218743
+	push	OFFSET $SG218742
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
 ; 1177 : 		break;
@@ -6363,7 +6363,7 @@ $LN11@getMission:
 ; 1145 : 		strString = "MISSIONAI_HURRY";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218745
+	push	OFFSET $SG218744
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
 ; 1177 : 		break;
@@ -6381,7 +6381,7 @@ $LN10@getMission:
 ; 1148 : 		strString = "MISSIONAI_GREAT_WORK";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218747
+	push	OFFSET $SG218746
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
 ; 1177 : 		break;
@@ -6399,7 +6399,7 @@ $LN9@getMission:
 ; 1151 : 		strString = "MISSIONAI_EXPLORE";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218749
+	push	OFFSET $SG218748
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
 ; 1177 : 		break;
@@ -6417,7 +6417,7 @@ $LN8@getMission:
 ; 1154 : 		strString = "MISSIONAI_BLOCKADE";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218751
+	push	OFFSET $SG218750
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
 ; 1177 : 		break;
@@ -6435,7 +6435,7 @@ $LN7@getMission:
 ; 1157 : 		strString = "MISSIONAI_PILLAGE";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218753
+	push	OFFSET $SG218752
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
 ; 1177 : 		break;
@@ -6453,7 +6453,7 @@ $LN6@getMission:
 ; 1160 : 		strString = "MISSIONAI_FOUND";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218755
+	push	OFFSET $SG218754
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
 ; 1177 : 		break;
@@ -6471,7 +6471,7 @@ $LN5@getMission:
 ; 1163 : 		strString = "MISSIONAI_BUILD";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218757
+	push	OFFSET $SG218756
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
 ; 1177 : 		break;
@@ -6489,7 +6489,7 @@ $LN4@getMission:
 ; 1166 : 		strString = "MISSIONAI_ASSAULT";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218759
+	push	OFFSET $SG218758
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
 ; 1177 : 		break;
@@ -6507,7 +6507,7 @@ $LN3@getMission:
 ; 1169 : 		strString = "MISSIONAI_CARRIER";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218761
+	push	OFFSET $SG218760
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
 ; 1177 : 		break;
@@ -6525,7 +6525,7 @@ $LN2@getMission:
 ; 1172 : 		strString = "MISSIONAI_PICKUP";
 
 	mov	ecx, DWORD PTR _strString$[esp+36]
-	push	OFFSET $SG218763
+	push	OFFSET $SG218762
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 
 ; 1177 : 		break;
@@ -6544,8 +6544,8 @@ $LN1@getMission:
 ; 1176 : 		strString = CvString::format("UNKOWN_MISSION_AI(%d)", eMissionAI);
 
 	push	ecx
-	lea	eax, DWORD PTR $T220041[esp+44]
-	push	OFFSET $SG218766
+	lea	eax, DWORD PTR $T220040[esp+44]
+	push	OFFSET $SG218765
 	push	eax
 	call	?format@CvString@@SA?AV1@PBDZZ		; CvString::format
 	add	esp, 12					; 0000000cH
@@ -6553,7 +6553,7 @@ $LN1@getMission:
 	push	eax
 	mov	DWORD PTR __$EHRec$[esp+52], 0
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T220041[esp+40]
+	lea	ecx, DWORD PTR $T220040[esp+40]
 	mov	DWORD PTR __$EHRec$[esp+48], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -6594,7 +6594,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?getMissionAIString@@YAXAAVCvString@@W4MissionAITypes@@@Z$0:
-	lea	ecx, DWORD PTR $T220041[ebp]
+	lea	ecx, DWORD PTR $T220040[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?getMissionAIString@@YAXAAVCvString@@W4MissionAITypes@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?getMissionAIString@@YAXAAVCvString@@W4MissionAITypes@@@Z
@@ -6619,7 +6619,7 @@ __ehfuncinfo$?getUnitAIString@@YAXAAVCvString@@W4UnitAITypes@@@Z DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?getUnitAIString@@YAXAAVCvString@@W4UnitAITypes@@@Z
 _TEXT	SEGMENT
-$T220061 = -40						; size = 28
+$T220060 = -40						; size = 28
 __$EHRec$ = -12						; size = 12
 _strString$ = 8						; size = 4
 _eUnitAI$ = 12						; size = 4
@@ -6652,7 +6652,7 @@ $LN43@getUnitAIS:
 ; 1187 : 	case NO_UNITAI:
 ; 1188 : 		strString = "no unitAI";
 
-	push	OFFSET $SG218776
+	push	OFFSET $SG218775
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
@@ -6673,7 +6673,7 @@ $LN42@getUnitAIS:
 ; 1191 : 	case UNITAI_UNKNOWN:
 ; 1192 : 		strString = "unknown";
 
-	push	OFFSET $SG218778
+	push	OFFSET $SG218777
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
@@ -6693,7 +6693,7 @@ $LN41@getUnitAIS:
 ; 1194 : 	case UNITAI_SETTLE:
 ; 1195 : 		strString = "settle";
 
-	push	OFFSET $SG218780
+	push	OFFSET $SG218779
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
@@ -6713,7 +6713,7 @@ $LN40@getUnitAIS:
 ; 1197 : 	case UNITAI_WORKER:
 ; 1198 : 		strString = "worker";
 
-	push	OFFSET $SG218782
+	push	OFFSET $SG218781
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
@@ -6733,7 +6733,7 @@ $LN39@getUnitAIS:
 ; 1200 : 	case UNITAI_ATTACK:
 ; 1201 : 		strString = "attack";
 
-	push	OFFSET $SG218784
+	push	OFFSET $SG218783
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
@@ -6753,7 +6753,7 @@ $LN38@getUnitAIS:
 ; 1203 : 	case UNITAI_CITY_BOMBARD:
 ; 1204 : 		strString = "bombard city";
 
-	push	OFFSET $SG218786
+	push	OFFSET $SG218785
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
@@ -6773,7 +6773,7 @@ $LN37@getUnitAIS:
 ; 1206 : 	case UNITAI_FAST_ATTACK:
 ; 1207 : 		strString = "fast attack";
 
-	push	OFFSET $SG218788
+	push	OFFSET $SG218787
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
@@ -6793,7 +6793,7 @@ $LN36@getUnitAIS:
 ; 1209 : 	case UNITAI_DEFENSE:
 ; 1210 : 		strString = "defense";
 
-	push	OFFSET $SG218790
+	push	OFFSET $SG218789
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
@@ -6813,7 +6813,7 @@ $LN35@getUnitAIS:
 ; 1212 : 	case UNITAI_COUNTER:
 ; 1213 : 		strString = "counter";
 
-	push	OFFSET $SG218792
+	push	OFFSET $SG218791
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
@@ -6833,7 +6833,7 @@ $LN34@getUnitAIS:
 ; 1215 : 	case UNITAI_RANGED:
 ; 1216 : 		strString = "ranged";
 
-	push	OFFSET $SG218794
+	push	OFFSET $SG218793
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
@@ -6853,7 +6853,7 @@ $LN33@getUnitAIS:
 ; 1218 : 	case UNITAI_CITY_SPECIAL:
 ; 1219 : 		strString = "city special";
 
-	push	OFFSET $SG218796
+	push	OFFSET $SG218795
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
@@ -6873,7 +6873,7 @@ $LN32@getUnitAIS:
 ; 1221 : 	case UNITAI_EXPLORE:
 ; 1222 : 		strString = "explore";
 
-	push	OFFSET $SG218798
+	push	OFFSET $SG218797
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
@@ -6893,7 +6893,7 @@ $LN31@getUnitAIS:
 ; 1224 : 	case UNITAI_ARTIST:
 ; 1225 : 		strString = "artist";
 
-	push	OFFSET $SG218800
+	push	OFFSET $SG218799
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
@@ -6913,7 +6913,7 @@ $LN30@getUnitAIS:
 ; 1227 : 	case UNITAI_SCIENTIST:
 ; 1228 : 		strString = "scientist";
 
-	push	OFFSET $SG218802
+	push	OFFSET $SG218801
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
@@ -6933,7 +6933,7 @@ $LN29@getUnitAIS:
 ; 1230 : 	case UNITAI_GENERAL:
 ; 1231 : 		strString = "general";
 
-	push	OFFSET $SG218804
+	push	OFFSET $SG218803
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
@@ -6953,7 +6953,7 @@ $LN28@getUnitAIS:
 ; 1233 : 	case UNITAI_MERCHANT:
 ; 1234 : 		strString = "merchant";
 
-	push	OFFSET $SG218806
+	push	OFFSET $SG218805
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
@@ -6973,7 +6973,7 @@ $LN27@getUnitAIS:
 ; 1236 : 	case UNITAI_ENGINEER:
 ; 1237 : 		strString = "engineer";
 
-	push	OFFSET $SG218808
+	push	OFFSET $SG218807
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
@@ -6993,7 +6993,7 @@ $LN26@getUnitAIS:
 ; 1239 : 	case UNITAI_ICBM:
 ; 1240 : 		strString = "icbm";
 
-	push	OFFSET $SG218810
+	push	OFFSET $SG218809
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
@@ -7013,7 +7013,7 @@ $LN25@getUnitAIS:
 ; 1242 : 	case UNITAI_WORKER_SEA:
 ; 1243 : 		strString = "worker sea";
 
-	push	OFFSET $SG218812
+	push	OFFSET $SG218811
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
@@ -7033,7 +7033,7 @@ $LN24@getUnitAIS:
 ; 1245 : 	case UNITAI_ATTACK_SEA:
 ; 1246 : 		strString = "attack sea";
 
-	push	OFFSET $SG218814
+	push	OFFSET $SG218813
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
@@ -7053,7 +7053,7 @@ $LN23@getUnitAIS:
 ; 1248 : 	case UNITAI_RESERVE_SEA:
 ; 1249 : 		strString = "reserve sea";
 
-	push	OFFSET $SG218816
+	push	OFFSET $SG218815
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
@@ -7073,7 +7073,7 @@ $LN22@getUnitAIS:
 ; 1251 : 	case UNITAI_ESCORT_SEA:
 ; 1252 : 		strString = "escort sea";
 
-	push	OFFSET $SG218818
+	push	OFFSET $SG218817
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
@@ -7093,7 +7093,7 @@ $LN21@getUnitAIS:
 ; 1254 : 	case UNITAI_EXPLORE_SEA:
 ; 1255 : 		strString = "explore sea";
 
-	push	OFFSET $SG218820
+	push	OFFSET $SG218819
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
@@ -7113,7 +7113,7 @@ $LN20@getUnitAIS:
 ; 1257 : 	case UNITAI_ASSAULT_SEA:
 ; 1258 : 		strString = "assault sea";
 
-	push	OFFSET $SG218822
+	push	OFFSET $SG218821
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
@@ -7133,7 +7133,7 @@ $LN19@getUnitAIS:
 ; 1260 : 	case UNITAI_SETTLER_SEA:
 ; 1261 : 		strString = "settler sea";
 
-	push	OFFSET $SG218824
+	push	OFFSET $SG218823
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
@@ -7153,7 +7153,7 @@ $LN18@getUnitAIS:
 ; 1263 : 	case UNITAI_CARRIER_SEA:
 ; 1264 : 		strString = "carrier sea";
 
-	push	OFFSET $SG218826
+	push	OFFSET $SG218825
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
@@ -7173,7 +7173,7 @@ $LN17@getUnitAIS:
 ; 1266 : 	case UNITAI_MISSILE_CARRIER_SEA:
 ; 1267 : 		strString = "missile carrier";
 
-	push	OFFSET $SG218828
+	push	OFFSET $SG218827
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
@@ -7193,7 +7193,7 @@ $LN16@getUnitAIS:
 ; 1269 : 	case UNITAI_PIRATE_SEA:
 ; 1270 : 		strString = "pirate sea";
 
-	push	OFFSET $SG218830
+	push	OFFSET $SG218829
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
@@ -7213,7 +7213,7 @@ $LN15@getUnitAIS:
 ; 1272 : 	case UNITAI_ATTACK_AIR:
 ; 1273 : 		strString = "attack air";
 
-	push	OFFSET $SG218832
+	push	OFFSET $SG218831
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
@@ -7233,7 +7233,7 @@ $LN14@getUnitAIS:
 ; 1275 : 	case UNITAI_DEFENSE_AIR:
 ; 1276 : 		strString = "defense air";
 
-	push	OFFSET $SG218834
+	push	OFFSET $SG218833
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
@@ -7253,7 +7253,7 @@ $LN13@getUnitAIS:
 ; 1278 : 	case UNITAI_CARRIER_AIR:
 ; 1279 : 		strString = "carrier air";
 
-	push	OFFSET $SG218836
+	push	OFFSET $SG218835
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
@@ -7273,7 +7273,7 @@ $LN12@getUnitAIS:
 ; 1281 : 	case UNITAI_PARADROP:
 ; 1282 : 		strString = "paradrop";
 
-	push	OFFSET $SG218838
+	push	OFFSET $SG218837
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
@@ -7293,7 +7293,7 @@ $LN11@getUnitAIS:
 ; 1284 : 	case UNITAI_SPACESHIP_PART:
 ; 1285 : 		strString = "spaceship part";
 
-	push	OFFSET $SG218840
+	push	OFFSET $SG218839
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
@@ -7313,7 +7313,7 @@ $LN10@getUnitAIS:
 ; 1287 : 	case UNITAI_TREASURE:
 ; 1288 : 		strString = "treasure";
 
-	push	OFFSET $SG218842
+	push	OFFSET $SG218841
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
@@ -7333,7 +7333,7 @@ $LN9@getUnitAIS:
 ; 1290 : 	case UNITAI_PROPHET:
 ; 1291 : 		strString = "prophet";
 
-	push	OFFSET $SG218844
+	push	OFFSET $SG218843
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
@@ -7353,7 +7353,7 @@ $LN8@getUnitAIS:
 ; 1293 : 	case UNITAI_MISSIONARY:
 ; 1294 : 		strString = "missionary";
 
-	push	OFFSET $SG218846
+	push	OFFSET $SG218845
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
@@ -7373,7 +7373,7 @@ $LN7@getUnitAIS:
 ; 1296 : 	case UNITAI_INQUISITOR:
 ; 1297 : 		strString = "inquisitor";
 
-	push	OFFSET $SG218848
+	push	OFFSET $SG218847
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
@@ -7393,7 +7393,7 @@ $LN6@getUnitAIS:
 ; 1299 : 	case UNITAI_ADMIRAL:
 ; 1300 : 		strString = "admiral";
 
-	push	OFFSET $SG218850
+	push	OFFSET $SG218849
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
@@ -7413,7 +7413,7 @@ $LN5@getUnitAIS:
 ; 1302 : 	case UNITAI_TRADE_UNIT:
 ; 1303 : 		strString = "trade unit";
 
-	push	OFFSET $SG218852
+	push	OFFSET $SG218851
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
@@ -7433,7 +7433,7 @@ $LN4@getUnitAIS:
 ; 1305 : 	case UNITAI_ARCHAEOLOGIST:
 ; 1306 : 		strString = "archaeologist";
 
-	push	OFFSET $SG218854
+	push	OFFSET $SG218853
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
@@ -7453,7 +7453,7 @@ $LN3@getUnitAIS:
 ; 1308 : 	case UNITAI_WRITER:
 ; 1309 : 		strString = "writer";
 
-	push	OFFSET $SG218856
+	push	OFFSET $SG218855
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 	pop	edi
@@ -7473,7 +7473,7 @@ $LN2@getUnitAIS:
 ; 1311 : 	case UNITAI_MUSICIAN:
 ; 1312 : 		strString = "musician";
 
-	push	OFFSET $SG218858
+	push	OFFSET $SG218857
 	mov	ecx, edi
 	call	??4CvString@@QAEAAV0@PBD@Z		; CvString::operator=
 $LN1@getUnitAIS:
@@ -7483,8 +7483,8 @@ $LN1@getUnitAIS:
 ; 1315 : 		strString = CvString::format("unknown(%d)", eUnitAI);
 
 	push	esi
-	lea	eax, DWORD PTR $T220061[esp+52]
-	push	OFFSET $SG218861
+	lea	eax, DWORD PTR $T220060[esp+52]
+	push	OFFSET $SG218860
 	push	eax
 	call	?format@CvString@@SA?AV1@PBDZZ		; CvString::format
 	add	esp, 12					; 0000000cH
@@ -7492,7 +7492,7 @@ $LN1@getUnitAIS:
 	mov	ecx, edi
 	mov	DWORD PTR __$EHRec$[esp+60], 0
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T220061[esp+48]
+	lea	ecx, DWORD PTR $T220060[esp+48]
 	mov	DWORD PTR __$EHRec$[esp+56], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -7555,7 +7555,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?getUnitAIString@@YAXAAVCvString@@W4UnitAITypes@@@Z$0:
-	lea	ecx, DWORD PTR $T220061[ebp]
+	lea	ecx, DWORD PTR $T220060[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?getUnitAIString@@YAXAAVCvString@@W4UnitAITypes@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?getUnitAIString@@YAXAAVCvString@@W4UnitAITypes@@@Z
@@ -7566,7 +7566,7 @@ PUBLIC	?ExtractGUID@@YA_NPBDAAU_GUID@@PAI@Z		; ExtractGUID
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?ExtractGUID@@YA_NPBDAAU_GUID@@PAI@Z
 _TEXT	SEGMENT
-_uiIndex$218936 = 8					; size = 4
+_uiIndex$218935 = 8					; size = 4
 _pszGUID$ = 8						; size = 4
 _kGUID$ = 12						; size = 4
 _puiStartIndex$ = 16					; size = 4
@@ -7593,10 +7593,10 @@ _puiStartIndex$ = 16					; size = 4
 	cmp	ebp, esi
 	je	SHORT $LN12@ExtractGUI
 	mov	eax, DWORD PTR [ebp]
-	mov	DWORD PTR _uiIndex$218936[esp+12], eax
+	mov	DWORD PTR _uiIndex$218935[esp+12], eax
 	jmp	SHORT $LN13@ExtractGUI
 $LN12@ExtractGUI:
-	mov	DWORD PTR _uiIndex$218936[esp+12], esi
+	mov	DWORD PTR _uiIndex$218935[esp+12], esi
 $LN13@ExtractGUI:
 
 ; 1509 : 
@@ -7604,7 +7604,7 @@ $LN13@ExtractGUI:
 
 	mov	edi, DWORD PTR _kGUID$[esp+12]
 	push	edi
-	lea	ecx, DWORD PTR _uiIndex$218936[esp+16]
+	lea	ecx, DWORD PTR _uiIndex$218935[esp+16]
 	push	ecx
 	push	ebx
 	call	??$GetGUIDSegment@K@@YA_NPBDPAIAAK@Z	; GetGUIDSegment<unsigned long>
@@ -7617,7 +7617,7 @@ $LN13@ExtractGUI:
 
 	lea	edx, DWORD PTR [edi+4]
 	push	edx
-	lea	eax, DWORD PTR _uiIndex$218936[esp+16]
+	lea	eax, DWORD PTR _uiIndex$218935[esp+16]
 	push	eax
 	push	ebx
 	call	??$GetGUIDSegment@G@@YA_NPBDPAIAAG@Z	; GetGUIDSegment<unsigned short>
@@ -7630,7 +7630,7 @@ $LN13@ExtractGUI:
 
 	lea	ecx, DWORD PTR [edi+6]
 	push	ecx
-	lea	edx, DWORD PTR _uiIndex$218936[esp+16]
+	lea	edx, DWORD PTR _uiIndex$218935[esp+16]
 	push	edx
 	push	ebx
 	call	??$GetGUIDSegment@G@@YA_NPBDPAIAAG@Z	; GetGUIDSegment<unsigned short>
@@ -7649,7 +7649,7 @@ $LL5@ExtractGUI:
 ; 1518 : 						if(!GetGUIDSegment(pszGUID, &uiIndex, kGUID.Data4[iByte]))
 
 	push	eax
-	lea	ecx, DWORD PTR _uiIndex$218936[esp+16]
+	lea	ecx, DWORD PTR _uiIndex$218935[esp+16]
 	push	ecx
 	push	ebx
 	call	??$GetGUIDSegment@E@@YA_NPBDPAIAAE@Z	; GetGUIDSegment<unsigned char>
@@ -7672,7 +7672,7 @@ $LL5@ExtractGUI:
 
 ; 1525 : 						*puiStartIndex = uiIndex;
 
-	mov	edx, DWORD PTR _uiIndex$218936[esp+12]
+	mov	edx, DWORD PTR _uiIndex$218935[esp+12]
 	mov	DWORD PTR [ebp], edx
 $LN1@ExtractGUI:
 	pop	edi
@@ -8581,7 +8581,7 @@ EXTRN	?getXYCityPlot@CvGlobals@@QAEHHH@Z:PROC		; CvGlobals::getXYCityPlot
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?plotCityXY@@YAHPBVCvCity@@PBVCvPlot@@@Z
 _TEXT	SEGMENT
-$T220632 = 8						; size = 4
+$T220631 = 8						; size = 4
 _pCity$ = 8						; size = 4
 _pPlot$ = 12						; size = 4
 ?plotCityXY@@YAHPBVCvCity@@PBVCvPlot@@@Z PROC		; plotCityXY, COMDAT
@@ -8612,7 +8612,7 @@ _pPlot$ = 12						; size = 4
 	jle	SHORT $LN21@plotCityXY
 	sub	eax, esi
 $LN19@plotCityXY:
-	mov	DWORD PTR $T220632[esp+12], eax
+	mov	DWORD PTR $T220631[esp+12], eax
 $LN23@plotCityXY:
 
 ; 111  : 	int iWrappedDY = dyWrap(pPlot->getY() - pCity->getY());
@@ -8639,7 +8639,7 @@ $LN21@plotCityXY:
 	cmp	eax, edx
 	jge	SHORT $LN19@plotCityXY
 	add	esi, eax
-	mov	DWORD PTR $T220632[esp+12], esi
+	mov	DWORD PTR $T220631[esp+12], esi
 	jmp	SHORT $LN23@plotCityXY
 
 ; 111  : 	int iWrappedDY = dyWrap(pPlot->getY() - pCity->getY());
@@ -8688,7 +8688,7 @@ $LN99@plotCityXY:
 	sub	ecx, eax
 	mov	eax, DWORD PTR [edi+4020]
 	sub	ecx, esi
-	add	ecx, DWORD PTR $T220632[esp+12]
+	add	ecx, DWORD PTR $T220631[esp+12]
 	cmp	BYTE PTR [edi+4056], 0
 	je	SHORT $LN77@plotCityXY
 	mov	edx, eax
@@ -9035,7 +9035,7 @@ PUBLIC	?OnSameBodyOfWater@@YA_NPAVCvCity@@0@Z		; OnSameBodyOfWater
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?OnSameBodyOfWater@@YA_NPAVCvCity@@0@Z
 _TEXT	SEGMENT
-_iI$218395 = -12					; size = 4
+_iI$218394 = -12					; size = 4
 tv163 = -8						; size = 4
 tv166 = -4						; size = 4
 _pCity1$ = 8						; size = 4
@@ -9062,7 +9062,7 @@ _pCity2$ = 12						; size = 4
 	push	esi
 	xor	esi, esi
 	push	edi
-	mov	DWORD PTR _iI$218395[esp+28], esi
+	mov	DWORD PTR _iI$218394[esp+28], esi
 	mov	DWORD PTR tv163[esp+28], ecx
 	mov	DWORD PTR tv166[esp+28], edx
 	npad	1
@@ -9120,14 +9120,14 @@ $LN4@OnSameBody:
 	inc	esi
 	cmp	esi, 6
 	jl	SHORT $LL5@OnSameBody
-	mov	esi, DWORD PTR _iI$218395[esp+28]
+	mov	esi, DWORD PTR _iI$218394[esp+28]
 $LN8@OnSameBody:
 
 ; 633  : 	for(int iI = 0; iI < NUM_DIRECTION_TYPES; iI++)
 
 	inc	esi
 	cmp	esi, 6
-	mov	DWORD PTR _iI$218395[esp+28], esi
+	mov	DWORD PTR _iI$218394[esp+28], esi
 	jl	SHORT $LL41@OnSameBody
 	pop	edi
 	pop	esi
@@ -9922,7 +9922,7 @@ _eSpeed$ = 20						; size = 4
 	call	?getTurnMonthForGame@@YAHHHW4CalendarTypes@@W4GameSpeedTypes@@@Z ; getTurnMonthForGame
 	add	esp, 16					; 00000010H
 	push	1
-	push	OFFSET $SG218602
+	push	OFFSET $SG218601
 	mov	ecx, esi
 	mov	edi, eax
 	call	DWORD PTR __imp_?Count@Connection@Database@@QAEHPBD_N@Z

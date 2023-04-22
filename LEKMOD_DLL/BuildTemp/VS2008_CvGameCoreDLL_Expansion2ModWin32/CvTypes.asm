@@ -87,150 +87,150 @@ _BSS	SEGMENT
 ?s_uiNUM_MISSION_TYPES@@3IA DD 01H DUP (?)		; s_uiNUM_MISSION_TYPES
 _BSS	ENDS
 CONST	SEGMENT
-$SG219129 DB	'ARTIFACT_ANCIENT_RUIN', 00H
+$SG219128 DB	'ARTIFACT_ANCIENT_RUIN', 00H
 	ORG $+2
-$SG219135 DB	'ARTIFACT_BARBARIAN_CAMP', 00H
-$SG219141 DB	'ARTIFACT_BATTLE_RANGED', 00H
+$SG219134 DB	'ARTIFACT_BARBARIAN_CAMP', 00H
+$SG219140 DB	'ARTIFACT_BATTLE_RANGED', 00H
 	ORG $+1
-$SG219147 DB	'ARTIFACT_BATTLE_MELEE', 00H
+$SG219146 DB	'ARTIFACT_BATTLE_MELEE', 00H
 	ORG $+2
-$SG219153 DB	'ARTIFACT_RAZED_CITY', 00H
-$SG219159 DB	'ARTIFACT_WRITING', 00H
+$SG219152 DB	'ARTIFACT_RAZED_CITY', 00H
+$SG219158 DB	'ARTIFACT_WRITING', 00H
 	ORG $+3
-$SG219162 DB	'SELECT Type, ID from GreatWorkArtifactClasses', 00H
+$SG219161 DB	'SELECT Type, ID from GreatWorkArtifactClasses', 00H
 	ORG $+2
-$SG219185 DB	'ArtifactType - %s is used in the DLL but does not exist '
+$SG219184 DB	'ArtifactType - %s is used in the DLL but does not exist '
 	DB	'in the database.', 00H
 	ORG $+3
-$SG219187 DB	'Gamecore.log', 00H
+$SG219186 DB	'Gamecore.log', 00H
 	ORG $+3
-$SG220504 DB	'GREAT_WORK_SLOT_ART_ARTIFACT', 00H
+$SG220503 DB	'GREAT_WORK_SLOT_ART_ARTIFACT', 00H
 	ORG $+3
-$SG220510 DB	'GREAT_WORK_SLOT_LITERATURE', 00H
+$SG220509 DB	'GREAT_WORK_SLOT_LITERATURE', 00H
 	ORG $+1
-$SG220516 DB	'GREAT_WORK_SLOT_MUSIC', 00H
+$SG220515 DB	'GREAT_WORK_SLOT_MUSIC', 00H
 	ORG $+2
-$SG220519 DB	'SELECT Type, ID from GreatWorkSlots', 00H
+$SG220518 DB	'SELECT Type, ID from GreatWorkSlots', 00H
 	ORG $+4
-$SG220537 DB	'GreatWorkSlotType - %s is used in the DLL but does not e'
+$SG220536 DB	'GreatWorkSlotType - %s is used in the DLL but does not e'
 	DB	'xist in the database.', 00H
 	ORG $+2
-$SG220539 DB	'Gamecore.log', 00H
+$SG220538 DB	'Gamecore.log', 00H
 	ORG $+3
-$SG221856 DB	'MISSION_MOVE_TO', 00H
-$SG221862 DB	'MISSION_ROUTE_TO', 00H
+$SG221855 DB	'MISSION_MOVE_TO', 00H
+$SG221861 DB	'MISSION_ROUTE_TO', 00H
 	ORG $+3
-$SG221868 DB	'MISSION_MOVE_TO_UNIT', 00H
+$SG221867 DB	'MISSION_MOVE_TO_UNIT', 00H
 	ORG $+3
-$SG221874 DB	'MISSION_SWAP_UNITS', 00H
+$SG221873 DB	'MISSION_SWAP_UNITS', 00H
 	ORG $+1
-$SG221880 DB	'MISSION_SKIP', 00H
+$SG221879 DB	'MISSION_SKIP', 00H
 	ORG $+3
-$SG221886 DB	'MISSION_SLEEP', 00H
+$SG221885 DB	'MISSION_SLEEP', 00H
 	ORG $+2
-$SG221892 DB	'MISSION_ALERT', 00H
+$SG221891 DB	'MISSION_ALERT', 00H
 	ORG $+2
-$SG221898 DB	'MISSION_FORTIFY', 00H
-$SG221904 DB	'MISSION_GARRISON', 00H
+$SG221897 DB	'MISSION_FORTIFY', 00H
+$SG221903 DB	'MISSION_GARRISON', 00H
 	ORG $+3
-$SG221910 DB	'MISSION_SET_UP_FOR_RANGED_ATTACK', 00H
+$SG221909 DB	'MISSION_SET_UP_FOR_RANGED_ATTACK', 00H
 	ORG $+3
-$SG221916 DB	'MISSION_EMBARK', 00H
+$SG221915 DB	'MISSION_EMBARK', 00H
 	ORG $+1
-$SG221922 DB	'MISSION_DISEMBARK', 00H
+$SG221921 DB	'MISSION_DISEMBARK', 00H
 	ORG $+2
-$SG221928 DB	'MISSION_AIRPATROL', 00H
+$SG221927 DB	'MISSION_AIRPATROL', 00H
 	ORG $+2
-$SG221934 DB	'MISSION_HEAL', 00H
+$SG221933 DB	'MISSION_HEAL', 00H
 	ORG $+3
-$SG221940 DB	'MISSION_AIRLIFT', 00H
-$SG221946 DB	'MISSION_NUKE', 00H
+$SG221939 DB	'MISSION_AIRLIFT', 00H
+$SG221945 DB	'MISSION_NUKE', 00H
 	ORG $+3
-$SG221952 DB	'MISSION_PARADROP', 00H
+$SG221951 DB	'MISSION_PARADROP', 00H
 	ORG $+3
-$SG221958 DB	'MISSION_AIR_SWEEP', 00H
+$SG221957 DB	'MISSION_AIR_SWEEP', 00H
 	ORG $+2
-$SG221964 DB	'MISSION_REBASE', 00H
+$SG221963 DB	'MISSION_REBASE', 00H
 	ORG $+1
-$SG221970 DB	'MISSION_RANGE_ATTACK', 00H
+$SG221969 DB	'MISSION_RANGE_ATTACK', 00H
 	ORG $+3
-$SG221976 DB	'MISSION_PILLAGE', 00H
-$SG221982 DB	'MISSION_FOUND', 00H
+$SG221975 DB	'MISSION_PILLAGE', 00H
+$SG221981 DB	'MISSION_FOUND', 00H
 	ORG $+2
-$SG221988 DB	'MISSION_JOIN', 00H
+$SG221987 DB	'MISSION_JOIN', 00H
 	ORG $+3
-$SG221994 DB	'MISSION_CONSTRUCT', 00H
+$SG221993 DB	'MISSION_CONSTRUCT', 00H
 	ORG $+2
-$SG222000 DB	'MISSION_DISCOVER', 00H
+$SG221999 DB	'MISSION_DISCOVER', 00H
 	ORG $+3
-$SG222006 DB	'MISSION_HURRY', 00H
+$SG222005 DB	'MISSION_HURRY', 00H
 	ORG $+2
-$SG222012 DB	'MISSION_TRADE', 00H
+$SG222011 DB	'MISSION_TRADE', 00H
 	ORG $+2
-$SG222018 DB	'MISSION_BUY_CITY_STATE', 00H
+$SG222017 DB	'MISSION_BUY_CITY_STATE', 00H
 	ORG $+1
-$SG222024 DB	'MISSION_REPAIR_FLEET', 00H
+$SG222023 DB	'MISSION_REPAIR_FLEET', 00H
 	ORG $+3
-$SG222030 DB	'MISSION_SPACESHIP', 00H
+$SG222029 DB	'MISSION_SPACESHIP', 00H
 	ORG $+2
-$SG222036 DB	'MISSION_CULTURE_BOMB', 00H
+$SG222035 DB	'MISSION_CULTURE_BOMB', 00H
 	ORG $+3
-$SG222042 DB	'MISSION_FOUND_RELIGION', 00H
+$SG222041 DB	'MISSION_FOUND_RELIGION', 00H
 	ORG $+1
-$SG222048 DB	'MISSION_GOLDEN_AGE', 00H
+$SG222047 DB	'MISSION_GOLDEN_AGE', 00H
 	ORG $+1
-$SG222054 DB	'MISSION_BUILD', 00H
+$SG222053 DB	'MISSION_BUILD', 00H
 	ORG $+2
-$SG222060 DB	'MISSION_LEAD', 00H
+$SG222059 DB	'MISSION_LEAD', 00H
 	ORG $+3
-$SG222066 DB	'MISSION_DIE_ANIMATION', 00H
+$SG222065 DB	'MISSION_DIE_ANIMATION', 00H
 	ORG $+2
-$SG222072 DB	'MISSION_BEGIN_COMBAT', 00H
+$SG222071 DB	'MISSION_BEGIN_COMBAT', 00H
 	ORG $+3
-$SG222078 DB	'MISSION_END_COMBAT', 00H
+$SG222077 DB	'MISSION_END_COMBAT', 00H
 	ORG $+1
-$SG222084 DB	'MISSION_AIRSTRIKE', 00H
+$SG222083 DB	'MISSION_AIRSTRIKE', 00H
 	ORG $+2
-$SG222090 DB	'MISSION_SURRENDER', 00H
+$SG222089 DB	'MISSION_SURRENDER', 00H
 	ORG $+2
-$SG222096 DB	'MISSION_CAPTURED', 00H
+$SG222095 DB	'MISSION_CAPTURED', 00H
 	ORG $+3
-$SG222102 DB	'MISSION_IDLE', 00H
+$SG222101 DB	'MISSION_IDLE', 00H
 	ORG $+3
-$SG222108 DB	'MISSION_DIE', 00H
-$SG222114 DB	'MISSION_DAMAGE', 00H
+$SG222107 DB	'MISSION_DIE', 00H
+$SG222113 DB	'MISSION_DAMAGE', 00H
 	ORG $+1
-$SG222120 DB	'MISSION_MULTI_SELECT', 00H
+$SG222119 DB	'MISSION_MULTI_SELECT', 00H
 	ORG $+3
-$SG222126 DB	'MISSION_MULTI_DESELECT', 00H
+$SG222125 DB	'MISSION_MULTI_DESELECT', 00H
 	ORG $+1
-$SG222132 DB	'MISSION_WAIT_FOR', 00H
+$SG222131 DB	'MISSION_WAIT_FOR', 00H
 	ORG $+3
-$SG222138 DB	'MISSION_SPREAD_RELIGION', 00H
-$SG222144 DB	'MISSION_ENHANCE_RELIGION', 00H
+$SG222137 DB	'MISSION_SPREAD_RELIGION', 00H
+$SG222143 DB	'MISSION_ENHANCE_RELIGION', 00H
 	ORG $+3
-$SG222150 DB	'MISSION_REMOVE_HERESY', 00H
+$SG222149 DB	'MISSION_REMOVE_HERESY', 00H
 	ORG $+2
-$SG222156 DB	'MISSION_ESTABLISH_TRADE_ROUTE', 00H
+$SG222155 DB	'MISSION_ESTABLISH_TRADE_ROUTE', 00H
 	ORG $+2
-$SG222162 DB	'MISSION_PLUNDER_TRADE_ROUTE', 00H
-$SG222168 DB	'MISSION_CREATE_GREAT_WORK', 00H
+$SG222161 DB	'MISSION_PLUNDER_TRADE_ROUTE', 00H
+$SG222167 DB	'MISSION_CREATE_GREAT_WORK', 00H
 	ORG $+2
-$SG222174 DB	'MISSION_CHANGE_TRADE_UNIT_HOME_CITY', 00H
-$SG222180 DB	'MISSION_SELL_EXOTIC_GOODS', 00H
+$SG222173 DB	'MISSION_CHANGE_TRADE_UNIT_HOME_CITY', 00H
+$SG222179 DB	'MISSION_SELL_EXOTIC_GOODS', 00H
 	ORG $+2
-$SG222186 DB	'MISSION_GIVE_POLICIES', 00H
+$SG222185 DB	'MISSION_GIVE_POLICIES', 00H
 	ORG $+2
-$SG222192 DB	'MISSION_ONE_SHOT_TOURISM', 00H
+$SG222191 DB	'MISSION_ONE_SHOT_TOURISM', 00H
 	ORG $+3
-$SG222198 DB	'MISSION_CHANGE_ADMIRAL_PORT', 00H
-$SG222201 DB	'SELECT Type, ID from Missions', 00H
+$SG222197 DB	'MISSION_CHANGE_ADMIRAL_PORT', 00H
+$SG222200 DB	'SELECT Type, ID from Missions', 00H
 	ORG $+2
-$SG222212 DB	'Missions', 00H
+$SG222211 DB	'Missions', 00H
 	ORG $+3
-$SG222223 DB	'MissionType - %s is used in the DLL but does not exist i'
+$SG222222 DB	'MissionType - %s is used in the DLL but does not exist i'
 	DB	'n the database.', 00H
-$SG222225 DB	'Gamecore.log', 00H
+$SG222224 DB	'Gamecore.log', 00H
 CONST	ENDS
 _DATA	SEGMENT
 ?s_eGREAT_WORK_SLOT_ART_ARTIFACT@@3W4GreatWorkSlotType@@A DD 0ffffffffH ; s_eGREAT_WORK_SLOT_ART_ARTIFACT
@@ -3362,8 +3362,8 @@ __ehfuncinfo$?_Xlen@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_strin
 xdata$x	ENDS
 ;	COMDAT ?_Xlen@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@@3@@std@@KAXXZ
 _TEXT	SEGMENT
-$T227141 = -80						; size = 28
-$T227140 = -52						; size = 40
+$T227140 = -80						; size = 28
+$T227139 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ?_Xlen@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@@3@@std@@KAXXZ PROC ; std::vector<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *> > >::_Iterator<0>,std::allocator<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *> > >::_Iterator<0> > >::_Xlen, COMDAT
 
@@ -3379,22 +3379,22 @@ __$EHRec$ = -12						; size = 12
 ; 1260 : 		_THROW(length_error, "vector<T> too long");
 
 	push	OFFSET ??_C@_0BD@OLBABOEK@vector?$DMT?$DO?5too?5long?$AA@
-	lea	ecx, DWORD PTR $T227141[esp+84]
+	lea	ecx, DWORD PTR $T227140[esp+84]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T227140[esp+80]
+	lea	ecx, DWORD PTR $T227139[esp+80]
 	mov	DWORD PTR __$EHRec$[esp+88], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T227141[esp+80]
+	lea	eax, DWORD PTR $T227140[esp+80]
 	push	eax
-	lea	ecx, DWORD PTR $T227140[esp+96]
+	lea	ecx, DWORD PTR $T227139[esp+96]
 	mov	BYTE PTR __$EHRec$[esp+92], 1
-	mov	DWORD PTR $T227140[esp+84], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T227139[esp+84], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVlength_error@std@@
-	lea	ecx, DWORD PTR $T227140[esp+84]
+	lea	ecx, DWORD PTR $T227139[esp+84]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+96], 0
-	mov	DWORD PTR $T227140[esp+88], OFFSET ??_7length_error@std@@6B@
+	mov	DWORD PTR $T227139[esp+88], OFFSET ??_7length_error@std@@6B@
 	call	__CxxThrowException@8
 $LN13@Xlen:
 $LN12@Xlen:
@@ -3403,10 +3403,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Xlen@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@@3@@std@@KAXXZ$0:
-	lea	ecx, DWORD PTR $T227141[ebp]
+	lea	ecx, DWORD PTR $T227140[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Xlen@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@@3@@std@@KAXXZ$2:
-	lea	ecx, DWORD PTR $T227140[ebp]
+	lea	ecx, DWORD PTR $T227139[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Xlen@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@@3@@std@@KAXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?_Xlen@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@@3@@std@@KAXXZ
@@ -3465,8 +3465,8 @@ __ehfuncinfo$?_Xlen@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_strin
 xdata$x	ENDS
 ;	COMDAT ?_Xlen@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@@3@@std@@KAXXZ
 _TEXT	SEGMENT
-$T227173 = -80						; size = 28
-$T227172 = -52						; size = 40
+$T227172 = -80						; size = 28
+$T227171 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ?_Xlen@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@@3@@std@@KAXXZ PROC ; std::vector<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *> > >::_Iterator<0>,std::allocator<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *> > >::_Iterator<0> > >::_Xlen, COMDAT
 
@@ -3482,22 +3482,22 @@ __$EHRec$ = -12						; size = 12
 ; 1260 : 		_THROW(length_error, "vector<T> too long");
 
 	push	OFFSET ??_C@_0BD@OLBABOEK@vector?$DMT?$DO?5too?5long?$AA@
-	lea	ecx, DWORD PTR $T227173[esp+84]
+	lea	ecx, DWORD PTR $T227172[esp+84]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T227172[esp+80]
+	lea	ecx, DWORD PTR $T227171[esp+80]
 	mov	DWORD PTR __$EHRec$[esp+88], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T227173[esp+80]
+	lea	eax, DWORD PTR $T227172[esp+80]
 	push	eax
-	lea	ecx, DWORD PTR $T227172[esp+96]
+	lea	ecx, DWORD PTR $T227171[esp+96]
 	mov	BYTE PTR __$EHRec$[esp+92], 1
-	mov	DWORD PTR $T227172[esp+84], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T227171[esp+84], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVlength_error@std@@
-	lea	ecx, DWORD PTR $T227172[esp+84]
+	lea	ecx, DWORD PTR $T227171[esp+84]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+96], 0
-	mov	DWORD PTR $T227172[esp+88], OFFSET ??_7length_error@std@@6B@
+	mov	DWORD PTR $T227171[esp+88], OFFSET ??_7length_error@std@@6B@
 	call	__CxxThrowException@8
 $LN13@Xlen@2:
 $LN12@Xlen@2:
@@ -3506,10 +3506,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Xlen@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@@3@@std@@KAXXZ$0:
-	lea	ecx, DWORD PTR $T227173[ebp]
+	lea	ecx, DWORD PTR $T227172[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Xlen@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@@3@@std@@KAXXZ$2:
-	lea	ecx, DWORD PTR $T227172[ebp]
+	lea	ecx, DWORD PTR $T227171[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Xlen@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@@3@@std@@KAXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?_Xlen@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@@3@@std@@KAXXZ
@@ -3568,8 +3568,8 @@ __ehfuncinfo$?_Xlen@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_strin
 xdata$x	ENDS
 ;	COMDAT ?_Xlen@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@@3@@std@@KAXXZ
 _TEXT	SEGMENT
-$T227204 = -80						; size = 28
-$T227203 = -52						; size = 40
+$T227203 = -80						; size = 28
+$T227202 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ?_Xlen@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@@3@@std@@KAXXZ PROC ; std::vector<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> > >::_Iterator<0>,std::allocator<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> > >::_Iterator<0> > >::_Xlen, COMDAT
 
@@ -3585,22 +3585,22 @@ __$EHRec$ = -12						; size = 12
 ; 1260 : 		_THROW(length_error, "vector<T> too long");
 
 	push	OFFSET ??_C@_0BD@OLBABOEK@vector?$DMT?$DO?5too?5long?$AA@
-	lea	ecx, DWORD PTR $T227204[esp+84]
+	lea	ecx, DWORD PTR $T227203[esp+84]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T227203[esp+80]
+	lea	ecx, DWORD PTR $T227202[esp+80]
 	mov	DWORD PTR __$EHRec$[esp+88], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T227204[esp+80]
+	lea	eax, DWORD PTR $T227203[esp+80]
 	push	eax
-	lea	ecx, DWORD PTR $T227203[esp+96]
+	lea	ecx, DWORD PTR $T227202[esp+96]
 	mov	BYTE PTR __$EHRec$[esp+92], 1
-	mov	DWORD PTR $T227203[esp+84], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T227202[esp+84], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVlength_error@std@@
-	lea	ecx, DWORD PTR $T227203[esp+84]
+	lea	ecx, DWORD PTR $T227202[esp+84]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+96], 0
-	mov	DWORD PTR $T227203[esp+88], OFFSET ??_7length_error@std@@6B@
+	mov	DWORD PTR $T227202[esp+88], OFFSET ??_7length_error@std@@6B@
 	call	__CxxThrowException@8
 $LN13@Xlen@3:
 $LN12@Xlen@3:
@@ -3609,10 +3609,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Xlen@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@@3@@std@@KAXXZ$0:
-	lea	ecx, DWORD PTR $T227204[ebp]
+	lea	ecx, DWORD PTR $T227203[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Xlen@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@@3@@std@@KAXXZ$2:
-	lea	ecx, DWORD PTR $T227203[ebp]
+	lea	ecx, DWORD PTR $T227202[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Xlen@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@@3@@std@@KAXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?_Xlen@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@@3@@std@@KAXXZ
@@ -4338,8 +4338,8 @@ __TI2?AVbad_alloc@std@@ DD 00H
 xdata$x	ENDS
 ;	COMDAT ??$_Allocate@U_Node@?$_List_nod@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@@std@@YAPAU_Node@?$_List_nod@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@0@IPAU120@@Z
 _TEXT	SEGMENT
-$T227342 = -12						; size = 12
-$T227346 = 8						; size = 4
+$T227341 = -12						; size = 12
+$T227345 = 8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ??$_Allocate@U_Node@?$_List_nod@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@@std@@YAPAU_Node@?$_List_nod@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@0@IPAU120@@Z PROC ; std::_Allocate<std::_List_nod<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *> > >::_Node>, COMDAT
@@ -4384,15 +4384,15 @@ $LN3@Allocate:
 
 ; 40   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T227346[esp+8]
+	lea	eax, DWORD PTR $T227345[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T227342[esp+16]
-	mov	DWORD PTR $T227346[esp+12], 0
+	lea	ecx, DWORD PTR $T227341[esp+16]
+	mov	DWORD PTR $T227345[esp+12], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T227342[esp+16]
+	lea	ecx, DWORD PTR $T227341[esp+16]
 	push	ecx
-	mov	DWORD PTR $T227342[esp+20], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T227341[esp+20], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN9@Allocate:
 $LN8@Allocate:
@@ -4427,8 +4427,8 @@ PUBLIC	??$_Allocate@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$cha
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Allocate@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@@std@@YAPAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@0@IPAV120@@Z
 _TEXT	SEGMENT
-$T227361 = -12						; size = 12
-$T227365 = 8						; size = 4
+$T227360 = -12						; size = 12
+$T227364 = 8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ??$_Allocate@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@@std@@YAPAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@0@IPAV120@@Z PROC ; std::_Allocate<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *> > >::_Iterator<0> >, COMDAT
@@ -4470,15 +4470,15 @@ $LN3@Allocate@2:
 
 ; 40   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T227365[esp+8]
+	lea	eax, DWORD PTR $T227364[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T227361[esp+16]
-	mov	DWORD PTR $T227365[esp+12], 0
+	lea	ecx, DWORD PTR $T227360[esp+16]
+	mov	DWORD PTR $T227364[esp+12], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T227361[esp+16]
+	lea	ecx, DWORD PTR $T227360[esp+16]
 	push	ecx
-	mov	DWORD PTR $T227361[esp+20], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T227360[esp+20], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN9@Allocate@2:
 $LN8@Allocate@2:
@@ -4507,8 +4507,8 @@ PUBLIC	??$_Allocate@U_Node@?$_List_nod@U?$pair@$$CBV?$basic_string@DU?$char_trai
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Allocate@U_Node@?$_List_nod@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@@std@@YAPAU_Node@?$_List_nod@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@0@IPAU120@@Z
 _TEXT	SEGMENT
-$T227374 = -12						; size = 12
-$T227378 = 8						; size = 4
+$T227373 = -12						; size = 12
+$T227377 = 8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ??$_Allocate@U_Node@?$_List_nod@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@@std@@YAPAU_Node@?$_List_nod@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@0@IPAU120@@Z PROC ; std::_Allocate<std::_List_nod<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *> > >::_Node>, COMDAT
@@ -4553,15 +4553,15 @@ $LN3@Allocate@3:
 
 ; 40   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T227378[esp+8]
+	lea	eax, DWORD PTR $T227377[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T227374[esp+16]
-	mov	DWORD PTR $T227378[esp+12], 0
+	lea	ecx, DWORD PTR $T227373[esp+16]
+	mov	DWORD PTR $T227377[esp+12], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T227374[esp+16]
+	lea	ecx, DWORD PTR $T227373[esp+16]
 	push	ecx
-	mov	DWORD PTR $T227374[esp+20], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T227373[esp+20], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN9@Allocate@3:
 $LN8@Allocate@3:
@@ -4596,8 +4596,8 @@ PUBLIC	??$_Allocate@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$cha
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Allocate@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@@std@@YAPAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@0@IPAV120@@Z
 _TEXT	SEGMENT
-$T227393 = -12						; size = 12
-$T227397 = 8						; size = 4
+$T227392 = -12						; size = 12
+$T227396 = 8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ??$_Allocate@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@@std@@YAPAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@0@IPAV120@@Z PROC ; std::_Allocate<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *> > >::_Iterator<0> >, COMDAT
@@ -4639,15 +4639,15 @@ $LN3@Allocate@4:
 
 ; 40   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T227397[esp+8]
+	lea	eax, DWORD PTR $T227396[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T227393[esp+16]
-	mov	DWORD PTR $T227397[esp+12], 0
+	lea	ecx, DWORD PTR $T227392[esp+16]
+	mov	DWORD PTR $T227396[esp+12], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T227393[esp+16]
+	lea	ecx, DWORD PTR $T227392[esp+16]
 	push	ecx
-	mov	DWORD PTR $T227393[esp+20], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T227392[esp+20], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN9@Allocate@4:
 $LN8@Allocate@4:
@@ -4676,8 +4676,8 @@ PUBLIC	??$_Allocate@U_Node@?$_List_nod@U?$pair@$$CBV?$basic_string@DU?$char_trai
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Allocate@U_Node@?$_List_nod@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@@std@@YAPAU_Node@?$_List_nod@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@0@IPAU120@@Z
 _TEXT	SEGMENT
-$T227406 = -12						; size = 12
-$T227410 = 8						; size = 4
+$T227405 = -12						; size = 12
+$T227409 = 8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ??$_Allocate@U_Node@?$_List_nod@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@@std@@YAPAU_Node@?$_List_nod@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@0@IPAU120@@Z PROC ; std::_Allocate<std::_List_nod<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> > >::_Node>, COMDAT
@@ -4722,15 +4722,15 @@ $LN3@Allocate@5:
 
 ; 40   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T227410[esp+8]
+	lea	eax, DWORD PTR $T227409[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T227406[esp+16]
-	mov	DWORD PTR $T227410[esp+12], 0
+	lea	ecx, DWORD PTR $T227405[esp+16]
+	mov	DWORD PTR $T227409[esp+12], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T227406[esp+16]
+	lea	ecx, DWORD PTR $T227405[esp+16]
 	push	ecx
-	mov	DWORD PTR $T227406[esp+20], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T227405[esp+20], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN9@Allocate@5:
 $LN8@Allocate@5:
@@ -4765,8 +4765,8 @@ PUBLIC	??$_Allocate@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$cha
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Allocate@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@@std@@YAPAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@0@IPAV120@@Z
 _TEXT	SEGMENT
-$T227425 = -12						; size = 12
-$T227429 = 8						; size = 4
+$T227424 = -12						; size = 12
+$T227428 = 8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ??$_Allocate@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@@std@@YAPAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@0@IPAV120@@Z PROC ; std::_Allocate<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> > >::_Iterator<0> >, COMDAT
@@ -4808,15 +4808,15 @@ $LN3@Allocate@6:
 
 ; 40   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T227429[esp+8]
+	lea	eax, DWORD PTR $T227428[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T227425[esp+16]
-	mov	DWORD PTR $T227429[esp+12], 0
+	lea	ecx, DWORD PTR $T227424[esp+16]
+	mov	DWORD PTR $T227428[esp+12], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T227425[esp+16]
+	lea	ecx, DWORD PTR $T227424[esp+16]
 	push	ecx
-	mov	DWORD PTR $T227425[esp+20], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T227424[esp+20], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN9@Allocate@6:
 $LN8@Allocate@6:
@@ -7291,7 +7291,7 @@ __ehfuncinfo$??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@
 xdata$x	ENDS
 ;	COMDAT ??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4GreatWorkArtifactClass@@@Z
 _TEXT	SEGMENT
-$T228198 = -16						; size = 4
+$T228197 = -16						; size = 4
 __$EHRec$ = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
 __Val1$ = 12						; size = 28
@@ -7307,7 +7307,7 @@ __Val2$ = 40						; size = 4
 	mov	DWORD PTR fs:0, esp
 	push	ecx
 	push	esi
-	mov	DWORD PTR $T228198[esp+20], 0
+	mov	DWORD PTR $T228197[esp+20], 0
 
 ; 134  : 	return (pair<_Ty1, _Ty2>(_Val1, _Val2));
 
@@ -7320,7 +7320,7 @@ __Val2$ = 40						; size = 4
 	mov	ecx, DWORD PTR __Val2$[esp+16]
 	mov	DWORD PTR [esi+28], ecx
 	lea	ecx, DWORD PTR __Val1$[esp+16]
-	mov	DWORD PTR $T228198[esp+20], 1
+	mov	DWORD PTR $T228197[esp+20], 1
 	mov	BYTE PTR __$EHRec$[esp+28], 0
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -7339,10 +7339,10 @@ __unwindfunclet$??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator
 	lea	ecx, DWORD PTR __Val1$[ebp-4]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4GreatWorkArtifactClass@@@Z$1:
-	mov	eax, DWORD PTR $T228198[ebp]
+	mov	eax, DWORD PTR $T228197[ebp]
 	and	eax, 1
 	je	$LN5@make_pair
-	and	DWORD PTR $T228198[ebp], -2		; fffffffeH
+	and	DWORD PTR $T228197[ebp], -2		; fffffffeH
 	mov	ecx, DWORD PTR ___$ReturnUdt$[ebp-4]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@QAE@XZ
 $LN5@make_pair:
@@ -7370,7 +7370,7 @@ __ehfuncinfo$??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@
 xdata$x	ENDS
 ;	COMDAT ??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4GreatWorkSlotType@@@Z
 _TEXT	SEGMENT
-$T228215 = -16						; size = 4
+$T228214 = -16						; size = 4
 __$EHRec$ = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
 __Val1$ = 12						; size = 28
@@ -7386,7 +7386,7 @@ __Val2$ = 40						; size = 4
 	mov	DWORD PTR fs:0, esp
 	push	ecx
 	push	esi
-	mov	DWORD PTR $T228215[esp+20], 0
+	mov	DWORD PTR $T228214[esp+20], 0
 
 ; 134  : 	return (pair<_Ty1, _Ty2>(_Val1, _Val2));
 
@@ -7399,7 +7399,7 @@ __Val2$ = 40						; size = 4
 	mov	ecx, DWORD PTR __Val2$[esp+16]
 	mov	DWORD PTR [esi+28], ecx
 	lea	ecx, DWORD PTR __Val1$[esp+16]
-	mov	DWORD PTR $T228215[esp+20], 1
+	mov	DWORD PTR $T228214[esp+20], 1
 	mov	BYTE PTR __$EHRec$[esp+28], 0
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -7418,10 +7418,10 @@ __unwindfunclet$??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator
 	lea	ecx, DWORD PTR __Val1$[ebp-4]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4GreatWorkSlotType@@@Z$1:
-	mov	eax, DWORD PTR $T228215[ebp]
+	mov	eax, DWORD PTR $T228214[ebp]
 	and	eax, 1
 	je	$LN5@make_pair@2
-	and	DWORD PTR $T228215[ebp], -2		; fffffffeH
+	and	DWORD PTR $T228214[ebp], -2		; fffffffeH
 	mov	ecx, DWORD PTR ___$ReturnUdt$[ebp-4]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@QAE@XZ
 $LN5@make_pair@2:
@@ -7449,7 +7449,7 @@ __ehfuncinfo$??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@
 xdata$x	ENDS
 ;	COMDAT ??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4MissionTypes@@@Z
 _TEXT	SEGMENT
-$T228232 = -16						; size = 4
+$T228231 = -16						; size = 4
 __$EHRec$ = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
 __Val1$ = 12						; size = 28
@@ -7465,7 +7465,7 @@ __Val2$ = 40						; size = 4
 	mov	DWORD PTR fs:0, esp
 	push	ecx
 	push	esi
-	mov	DWORD PTR $T228232[esp+20], 0
+	mov	DWORD PTR $T228231[esp+20], 0
 
 ; 134  : 	return (pair<_Ty1, _Ty2>(_Val1, _Val2));
 
@@ -7478,7 +7478,7 @@ __Val2$ = 40						; size = 4
 	mov	ecx, DWORD PTR __Val2$[esp+16]
 	mov	DWORD PTR [esi+28], ecx
 	lea	ecx, DWORD PTR __Val1$[esp+16]
-	mov	DWORD PTR $T228232[esp+20], 1
+	mov	DWORD PTR $T228231[esp+20], 1
 	mov	BYTE PTR __$EHRec$[esp+28], 0
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -7497,10 +7497,10 @@ __unwindfunclet$??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator
 	lea	ecx, DWORD PTR __Val1$[ebp-4]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4MissionTypes@@@Z$1:
-	mov	eax, DWORD PTR $T228232[ebp]
+	mov	eax, DWORD PTR $T228231[ebp]
 	and	eax, 1
 	je	$LN5@make_pair@3
-	and	DWORD PTR $T228232[ebp], -2		; fffffffeH
+	and	DWORD PTR $T228231[ebp], -2		; fffffffeH
 	mov	ecx, DWORD PTR ___$ReturnUdt$[ebp-4]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 $LN5@make_pair@3:
@@ -7528,7 +7528,7 @@ __ehfuncinfo$??$_Construct@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?
 xdata$x	ENDS
 ;	COMDAT ??$_Construct@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@U12@@std@@YAXPAU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@0@ABU10@@Z
 _TEXT	SEGMENT
-$T228248 = -16						; size = 4
+$T228247 = -16						; size = 4
 __$EHRec$ = -12						; size = 12
 __Vptr$ = 8						; size = 4
 __Ptr$ = 8						; size = 4
@@ -7552,7 +7552,7 @@ __Val$ = 12						; size = 4
 
 ; 52   : 	::new (_Vptr) _T1(_Val);
 
-	mov	DWORD PTR $T228248[esp+20], esi
+	mov	DWORD PTR $T228247[esp+20], esi
 	mov	DWORD PTR __$EHRec$[esp+28], 0
 	test	esi, esi
 	je	SHORT $LN3@Construct@7
@@ -7579,7 +7579,7 @@ text$x	SEGMENT
 __unwindfunclet$??$_Construct@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@U12@@std@@YAXPAU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@0@ABU10@@Z$0:
 	mov	eax, DWORD PTR __Vptr$[ebp-4]
 	push	eax
-	mov	ecx, DWORD PTR $T228248[ebp]
+	mov	ecx, DWORD PTR $T228247[ebp]
 	push	ecx
 	call	??3@YAXPAX0@Z				; operator delete
 	add	esp, 8
@@ -7641,7 +7641,7 @@ __ehfuncinfo$??$_Construct@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?
 xdata$x	ENDS
 ;	COMDAT ??$_Construct@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@U12@@std@@YAXPAU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@0@ABU10@@Z
 _TEXT	SEGMENT
-$T228296 = -16						; size = 4
+$T228295 = -16						; size = 4
 __$EHRec$ = -12						; size = 12
 __Vptr$ = 8						; size = 4
 __Ptr$ = 8						; size = 4
@@ -7665,7 +7665,7 @@ __Val$ = 12						; size = 4
 
 ; 52   : 	::new (_Vptr) _T1(_Val);
 
-	mov	DWORD PTR $T228296[esp+20], esi
+	mov	DWORD PTR $T228295[esp+20], esi
 	mov	DWORD PTR __$EHRec$[esp+28], 0
 	test	esi, esi
 	je	SHORT $LN3@Construct@8
@@ -7692,7 +7692,7 @@ text$x	SEGMENT
 __unwindfunclet$??$_Construct@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@U12@@std@@YAXPAU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@0@ABU10@@Z$0:
 	mov	eax, DWORD PTR __Vptr$[ebp-4]
 	push	eax
-	mov	ecx, DWORD PTR $T228296[ebp]
+	mov	ecx, DWORD PTR $T228295[ebp]
 	push	ecx
 	call	??3@YAXPAX0@Z				; operator delete
 	add	esp, 8
@@ -7754,7 +7754,7 @@ __ehfuncinfo$??$_Construct@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?
 xdata$x	ENDS
 ;	COMDAT ??$_Construct@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@U12@@std@@YAXPAU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@0@ABU10@@Z
 _TEXT	SEGMENT
-$T228344 = -16						; size = 4
+$T228343 = -16						; size = 4
 __$EHRec$ = -12						; size = 12
 __Vptr$ = 8						; size = 4
 __Ptr$ = 8						; size = 4
@@ -7778,7 +7778,7 @@ __Val$ = 12						; size = 4
 
 ; 52   : 	::new (_Vptr) _T1(_Val);
 
-	mov	DWORD PTR $T228344[esp+20], esi
+	mov	DWORD PTR $T228343[esp+20], esi
 	mov	DWORD PTR __$EHRec$[esp+28], 0
 	test	esi, esi
 	je	SHORT $LN3@Construct@9
@@ -7805,7 +7805,7 @@ text$x	SEGMENT
 __unwindfunclet$??$_Construct@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@U12@@std@@YAXPAU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@0@ABU10@@Z$0:
 	mov	eax, DWORD PTR __Vptr$[ebp-4]
 	push	eax
-	mov	ecx, DWORD PTR $T228344[ebp]
+	mov	ecx, DWORD PTR $T228343[ebp]
 	push	ecx
 	call	??3@YAXPAX0@Z				; operator delete
 	add	esp, 8
@@ -9302,8 +9302,8 @@ __ehfuncinfo$?_Incsize@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@
 xdata$x	ENDS
 ;	COMDAT ?_Incsize@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@IAEXI@Z
 _TEXT	SEGMENT
-$T229363 = -80						; size = 28
-$T229362 = -52						; size = 40
+$T229362 = -80						; size = 28
+$T229361 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 __Count$ = 8						; size = 4
 ?_Incsize@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@IAEXI@Z PROC ; std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *> > >::_Incsize, COMDAT
@@ -9332,22 +9332,22 @@ __Count$ = 8						; size = 4
 ; 1241 : 			_THROW(length_error, "list<T> too long");
 
 	push	OFFSET ??_C@_0BB@MOGOBHAF@list?$DMT?$DO?5too?5long?$AA@
-	lea	ecx, DWORD PTR $T229363[esp+84]
+	lea	ecx, DWORD PTR $T229362[esp+84]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T229362[esp+80]
+	lea	ecx, DWORD PTR $T229361[esp+80]
 	mov	DWORD PTR __$EHRec$[esp+88], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T229363[esp+80]
+	lea	eax, DWORD PTR $T229362[esp+80]
 	push	eax
-	lea	ecx, DWORD PTR $T229362[esp+96]
+	lea	ecx, DWORD PTR $T229361[esp+96]
 	mov	BYTE PTR __$EHRec$[esp+92], 1
-	mov	DWORD PTR $T229362[esp+84], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T229361[esp+84], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVlength_error@std@@
-	lea	ecx, DWORD PTR $T229362[esp+84]
+	lea	ecx, DWORD PTR $T229361[esp+84]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+96], 0
-	mov	DWORD PTR $T229362[esp+88], OFFSET ??_7length_error@std@@6B@
+	mov	DWORD PTR $T229361[esp+88], OFFSET ??_7length_error@std@@6B@
 	call	__CxxThrowException@8
 $LN20@Incsize:
 $LN1@Incsize:
@@ -9368,10 +9368,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Incsize@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@IAEXI@Z$0:
-	lea	ecx, DWORD PTR $T229363[ebp]
+	lea	ecx, DWORD PTR $T229362[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Incsize@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@IAEXI@Z$2:
-	lea	ecx, DWORD PTR $T229362[ebp]
+	lea	ecx, DWORD PTR $T229361[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Incsize@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@IAEXI@Z:
 	mov	eax, OFFSET __ehfuncinfo$?_Incsize@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@IAEXI@Z
@@ -9415,8 +9415,8 @@ __ehfuncinfo$?_Incsize@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@
 xdata$x	ENDS
 ;	COMDAT ?_Incsize@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@IAEXI@Z
 _TEXT	SEGMENT
-$T229438 = -80						; size = 28
-$T229437 = -52						; size = 40
+$T229437 = -80						; size = 28
+$T229436 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 __Count$ = 8						; size = 4
 ?_Incsize@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@IAEXI@Z PROC ; std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *> > >::_Incsize, COMDAT
@@ -9445,22 +9445,22 @@ __Count$ = 8						; size = 4
 ; 1241 : 			_THROW(length_error, "list<T> too long");
 
 	push	OFFSET ??_C@_0BB@MOGOBHAF@list?$DMT?$DO?5too?5long?$AA@
-	lea	ecx, DWORD PTR $T229438[esp+84]
+	lea	ecx, DWORD PTR $T229437[esp+84]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T229437[esp+80]
+	lea	ecx, DWORD PTR $T229436[esp+80]
 	mov	DWORD PTR __$EHRec$[esp+88], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T229438[esp+80]
+	lea	eax, DWORD PTR $T229437[esp+80]
 	push	eax
-	lea	ecx, DWORD PTR $T229437[esp+96]
+	lea	ecx, DWORD PTR $T229436[esp+96]
 	mov	BYTE PTR __$EHRec$[esp+92], 1
-	mov	DWORD PTR $T229437[esp+84], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T229436[esp+84], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVlength_error@std@@
-	lea	ecx, DWORD PTR $T229437[esp+84]
+	lea	ecx, DWORD PTR $T229436[esp+84]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+96], 0
-	mov	DWORD PTR $T229437[esp+88], OFFSET ??_7length_error@std@@6B@
+	mov	DWORD PTR $T229436[esp+88], OFFSET ??_7length_error@std@@6B@
 	call	__CxxThrowException@8
 $LN20@Incsize@2:
 $LN1@Incsize@2:
@@ -9481,10 +9481,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Incsize@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@IAEXI@Z$0:
-	lea	ecx, DWORD PTR $T229438[ebp]
+	lea	ecx, DWORD PTR $T229437[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Incsize@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@IAEXI@Z$2:
-	lea	ecx, DWORD PTR $T229437[ebp]
+	lea	ecx, DWORD PTR $T229436[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Incsize@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@IAEXI@Z:
 	mov	eax, OFFSET __ehfuncinfo$?_Incsize@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@IAEXI@Z
@@ -9528,8 +9528,8 @@ __ehfuncinfo$?_Incsize@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@
 xdata$x	ENDS
 ;	COMDAT ?_Incsize@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@IAEXI@Z
 _TEXT	SEGMENT
-$T229513 = -80						; size = 28
-$T229512 = -52						; size = 40
+$T229512 = -80						; size = 28
+$T229511 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 __Count$ = 8						; size = 4
 ?_Incsize@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@IAEXI@Z PROC ; std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> > >::_Incsize, COMDAT
@@ -9558,22 +9558,22 @@ __Count$ = 8						; size = 4
 ; 1241 : 			_THROW(length_error, "list<T> too long");
 
 	push	OFFSET ??_C@_0BB@MOGOBHAF@list?$DMT?$DO?5too?5long?$AA@
-	lea	ecx, DWORD PTR $T229513[esp+84]
+	lea	ecx, DWORD PTR $T229512[esp+84]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T229512[esp+80]
+	lea	ecx, DWORD PTR $T229511[esp+80]
 	mov	DWORD PTR __$EHRec$[esp+88], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T229513[esp+80]
+	lea	eax, DWORD PTR $T229512[esp+80]
 	push	eax
-	lea	ecx, DWORD PTR $T229512[esp+96]
+	lea	ecx, DWORD PTR $T229511[esp+96]
 	mov	BYTE PTR __$EHRec$[esp+92], 1
-	mov	DWORD PTR $T229512[esp+84], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T229511[esp+84], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVlength_error@std@@
-	lea	ecx, DWORD PTR $T229512[esp+84]
+	lea	ecx, DWORD PTR $T229511[esp+84]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+96], 0
-	mov	DWORD PTR $T229512[esp+88], OFFSET ??_7length_error@std@@6B@
+	mov	DWORD PTR $T229511[esp+88], OFFSET ??_7length_error@std@@6B@
 	call	__CxxThrowException@8
 $LN20@Incsize@3:
 $LN1@Incsize@3:
@@ -9594,10 +9594,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Incsize@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@IAEXI@Z$0:
-	lea	ecx, DWORD PTR $T229513[ebp]
+	lea	ecx, DWORD PTR $T229512[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Incsize@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@IAEXI@Z$2:
-	lea	ecx, DWORD PTR $T229512[ebp]
+	lea	ecx, DWORD PTR $T229511[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Incsize@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@IAEXI@Z:
 	mov	eax, OFFSET __ehfuncinfo$?_Incsize@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@IAEXI@Z
@@ -10235,8 +10235,8 @@ PUBLIC	??$unchecked_uninitialized_copy@PAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$unchecked_uninitialized_copy@PAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@PAV123@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@@3@@stdext@@YAPAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@PAV123@00AAV?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@@3@@Z
 _TEXT	SEGMENT
-$T230040 = -4						; size = 1
-__Cat$230044 = -4					; size = 1
+$T230039 = -4						; size = 1
+__Cat$230043 = -4					; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
@@ -10252,9 +10252,9 @@ __Al$ = 20						; size = 4
 ; 822  : 		_STD _Ptr_cat(_First, _Dest), _STD _Range_checked_iterator_tag()));
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T230040[esp+4], 0
-	mov	eax, DWORD PTR $T230040[esp+4]
-	mov	ecx, DWORD PTR __Cat$230044[esp+4]
+	mov	BYTE PTR $T230039[esp+4], 0
+	mov	eax, DWORD PTR $T230039[esp+4]
+	mov	ecx, DWORD PTR __Cat$230043[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -10276,8 +10276,8 @@ PUBLIC	??$unchecked_uninitialized_copy@PAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$unchecked_uninitialized_copy@PAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@PAV123@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@@3@@stdext@@YAPAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@PAV123@00AAV?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@@3@@Z
 _TEXT	SEGMENT
-$T230049 = -4						; size = 1
-__Cat$230053 = -4					; size = 1
+$T230048 = -4						; size = 1
+__Cat$230052 = -4					; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
@@ -10293,9 +10293,9 @@ __Al$ = 20						; size = 4
 ; 822  : 		_STD _Ptr_cat(_First, _Dest), _STD _Range_checked_iterator_tag()));
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T230049[esp+4], 0
-	mov	eax, DWORD PTR $T230049[esp+4]
-	mov	ecx, DWORD PTR __Cat$230053[esp+4]
+	mov	BYTE PTR $T230048[esp+4], 0
+	mov	eax, DWORD PTR $T230048[esp+4]
+	mov	ecx, DWORD PTR __Cat$230052[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -10317,8 +10317,8 @@ PUBLIC	??$unchecked_uninitialized_copy@PAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$unchecked_uninitialized_copy@PAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@PAV123@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@@3@@stdext@@YAPAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@PAV123@00AAV?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@@3@@Z
 _TEXT	SEGMENT
-$T230058 = -4						; size = 1
-__Cat$230062 = -4					; size = 1
+$T230057 = -4						; size = 1
+__Cat$230061 = -4					; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
@@ -10334,9 +10334,9 @@ __Al$ = 20						; size = 4
 ; 822  : 		_STD _Ptr_cat(_First, _Dest), _STD _Range_checked_iterator_tag()));
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T230058[esp+4], 0
-	mov	eax, DWORD PTR $T230058[esp+4]
-	mov	ecx, DWORD PTR __Cat$230062[esp+4]
+	mov	BYTE PTR $T230057[esp+4], 0
+	mov	eax, DWORD PTR $T230057[esp+4]
+	mov	ecx, DWORD PTR __Cat$230061[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -10533,7 +10533,7 @@ PUBLIC	?lower_bound@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@st
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xhash
 ;	COMDAT ?lower_bound@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@$0A@@tr1@std@@@stdext@@QAE?AV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@5@@Z
 _TEXT	SEGMENT
-$T230255 = -4						; size = 4
+$T230254 = -4						; size = 4
 ___$ReturnUdt$ = 8					; size = 4
 __Where$ = 12						; size = 4
 __Keyval$ = 12						; size = 4
@@ -10629,9 +10629,9 @@ $LN75@lower_boun:
 	jne	SHORT $LN7@lower_boun
 	mov	ecx, DWORD PTR [ebx+8]
 	pop	edi
-	lea	eax, DWORD PTR $T230255[esp+16]
+	lea	eax, DWORD PTR $T230254[esp+16]
 	pop	esi
-	mov	DWORD PTR $T230255[esp+12], ecx
+	mov	DWORD PTR $T230254[esp+12], ecx
 	mov	edx, DWORD PTR [eax]
 	mov	eax, DWORD PTR ___$ReturnUdt$[esp+8]
 	pop	ebp
@@ -10666,7 +10666,7 @@ PUBLIC	?lower_bound@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@st
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?lower_bound@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@$0A@@tr1@std@@@stdext@@QAE?AV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@5@@Z
 _TEXT	SEGMENT
-$T230422 = -4						; size = 4
+$T230421 = -4						; size = 4
 ___$ReturnUdt$ = 8					; size = 4
 __Where$ = 12						; size = 4
 __Keyval$ = 12						; size = 4
@@ -10762,9 +10762,9 @@ $LN75@lower_boun@2:
 	jne	SHORT $LN7@lower_boun@2
 	mov	ecx, DWORD PTR [ebx+8]
 	pop	edi
-	lea	eax, DWORD PTR $T230422[esp+16]
+	lea	eax, DWORD PTR $T230421[esp+16]
 	pop	esi
-	mov	DWORD PTR $T230422[esp+12], ecx
+	mov	DWORD PTR $T230421[esp+12], ecx
 	mov	edx, DWORD PTR [eax]
 	mov	eax, DWORD PTR ___$ReturnUdt$[esp+8]
 	pop	ebp
@@ -10799,7 +10799,7 @@ PUBLIC	?lower_bound@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@st
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?lower_bound@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@QAE?AV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@5@@Z
 _TEXT	SEGMENT
-$T230589 = -4						; size = 4
+$T230588 = -4						; size = 4
 ___$ReturnUdt$ = 8					; size = 4
 __Where$ = 12						; size = 4
 __Keyval$ = 12						; size = 4
@@ -10895,9 +10895,9 @@ $LN75@lower_boun@3:
 	jne	SHORT $LN7@lower_boun@3
 	mov	ecx, DWORD PTR [ebx+8]
 	pop	edi
-	lea	eax, DWORD PTR $T230589[esp+16]
+	lea	eax, DWORD PTR $T230588[esp+16]
 	pop	esi
-	mov	DWORD PTR $T230589[esp+12], ecx
+	mov	DWORD PTR $T230588[esp+12], ecx
 	mov	edx, DWORD PTR [eax]
 	mov	eax, DWORD PTR ___$ReturnUdt$[esp+8]
 	pop	ebp
@@ -11606,8 +11606,8 @@ PUBLIC	??$unchecked_uninitialized_fill_n@PAV?$_Iterator@$0A@@?$list@U?$pair@$$CB
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ??$unchecked_uninitialized_fill_n@PAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@IV123@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@@3@@stdext@@YAXPAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@IABV123@AAV?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@@3@@Z
 _TEXT	SEGMENT
-$T231726 = -4						; size = 1
-__Cat$231730 = -4					; size = 1
+$T231725 = -4						; size = 1
+__Cat$231729 = -4					; size = 1
 __First$ = 8						; size = 4
 __Count$ = 12						; size = 4
 __Val$ = 16						; size = 4
@@ -11622,9 +11622,9 @@ __Al$ = 20						; size = 4
 ; 942  : 		_STD _Ptr_cat(_First, _First), _STD _Range_checked_iterator_tag());
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T231726[esp+4], 0
-	mov	eax, DWORD PTR $T231726[esp+4]
-	mov	ecx, DWORD PTR __Cat$231730[esp+4]
+	mov	BYTE PTR $T231725[esp+4], 0
+	mov	eax, DWORD PTR $T231725[esp+4]
+	mov	ecx, DWORD PTR __Cat$231729[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Val$[esp+4]
 	push	ecx
@@ -11646,8 +11646,8 @@ PUBLIC	??$unchecked_uninitialized_fill_n@PAV?$_Iterator@$0A@@?$list@U?$pair@$$CB
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$unchecked_uninitialized_fill_n@PAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@IV123@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@@3@@stdext@@YAXPAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@IABV123@AAV?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@@3@@Z
 _TEXT	SEGMENT
-$T231735 = -4						; size = 1
-__Cat$231739 = -4					; size = 1
+$T231734 = -4						; size = 1
+__Cat$231738 = -4					; size = 1
 __First$ = 8						; size = 4
 __Count$ = 12						; size = 4
 __Val$ = 16						; size = 4
@@ -11662,9 +11662,9 @@ __Al$ = 20						; size = 4
 ; 942  : 		_STD _Ptr_cat(_First, _First), _STD _Range_checked_iterator_tag());
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T231735[esp+4], 0
-	mov	eax, DWORD PTR $T231735[esp+4]
-	mov	ecx, DWORD PTR __Cat$231739[esp+4]
+	mov	BYTE PTR $T231734[esp+4], 0
+	mov	eax, DWORD PTR $T231734[esp+4]
+	mov	ecx, DWORD PTR __Cat$231738[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Val$[esp+4]
 	push	ecx
@@ -11686,8 +11686,8 @@ PUBLIC	??$unchecked_uninitialized_fill_n@PAV?$_Iterator@$0A@@?$list@U?$pair@$$CB
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$unchecked_uninitialized_fill_n@PAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@IV123@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@@3@@stdext@@YAXPAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@IABV123@AAV?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@@3@@Z
 _TEXT	SEGMENT
-$T231744 = -4						; size = 1
-__Cat$231748 = -4					; size = 1
+$T231743 = -4						; size = 1
+__Cat$231747 = -4					; size = 1
 __First$ = 8						; size = 4
 __Count$ = 12						; size = 4
 __Val$ = 16						; size = 4
@@ -11702,9 +11702,9 @@ __Al$ = 20						; size = 4
 ; 942  : 		_STD _Ptr_cat(_First, _First), _STD _Range_checked_iterator_tag());
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T231744[esp+4], 0
-	mov	eax, DWORD PTR $T231744[esp+4]
-	mov	ecx, DWORD PTR __Cat$231748[esp+4]
+	mov	BYTE PTR $T231743[esp+4], 0
+	mov	eax, DWORD PTR $T231743[esp+4]
+	mov	ecx, DWORD PTR __Cat$231747[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Val$[esp+4]
 	push	ecx
@@ -11726,10 +11726,10 @@ PUBLIC	??$_Uninit_move@PAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Uninit_move@PAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@PAV123@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@@3@U_Undefined_move_tag@3@@std@@YAPAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@0@PAV120@00AAV?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@@0@U_Undefined_move_tag@0@U_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
-$T231761 = -4						; size = 1
+$T231760 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$231764 = 16					; size = 1
+__Cat$231763 = 16					; size = 1
 __Dest$ = 16						; size = 4
 __Al$ = 20						; size = 4
 ___formal$ = 24						; size = 1
@@ -11742,10 +11742,10 @@ ___formal$ = 28						; size = 1
 
 ; 207  : 	return (_STDEXT unchecked_uninitialized_copy(_First, _Last, _Dest, _Al));
 
-	mov	ecx, DWORD PTR __Cat$231764[esp]
+	mov	ecx, DWORD PTR __Cat$231763[esp]
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T231761[esp+4], 0
-	mov	eax, DWORD PTR $T231761[esp+4]
+	mov	BYTE PTR $T231760[esp+4], 0
+	mov	eax, DWORD PTR $T231760[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -11767,10 +11767,10 @@ PUBLIC	??$_Uninit_move@PAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Uninit_move@PAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@PAV123@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@@3@U_Undefined_move_tag@3@@std@@YAPAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@0@PAV120@00AAV?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@@0@U_Undefined_move_tag@0@U_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
-$T231780 = -4						; size = 1
+$T231779 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$231783 = 16					; size = 1
+__Cat$231782 = 16					; size = 1
 __Dest$ = 16						; size = 4
 __Al$ = 20						; size = 4
 ___formal$ = 24						; size = 1
@@ -11783,10 +11783,10 @@ ___formal$ = 28						; size = 1
 
 ; 207  : 	return (_STDEXT unchecked_uninitialized_copy(_First, _Last, _Dest, _Al));
 
-	mov	ecx, DWORD PTR __Cat$231783[esp]
+	mov	ecx, DWORD PTR __Cat$231782[esp]
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T231780[esp+4], 0
-	mov	eax, DWORD PTR $T231780[esp+4]
+	mov	BYTE PTR $T231779[esp+4], 0
+	mov	eax, DWORD PTR $T231779[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -11808,10 +11808,10 @@ PUBLIC	??$_Uninit_move@PAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Uninit_move@PAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@PAV123@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@@3@U_Undefined_move_tag@3@@std@@YAPAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@0@PAV120@00AAV?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@@0@U_Undefined_move_tag@0@U_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
-$T231799 = -4						; size = 1
+$T231798 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$231802 = 16					; size = 1
+__Cat$231801 = 16					; size = 1
 __Dest$ = 16						; size = 4
 __Al$ = 20						; size = 4
 ___formal$ = 24						; size = 1
@@ -11824,10 +11824,10 @@ ___formal$ = 28						; size = 1
 
 ; 207  : 	return (_STDEXT unchecked_uninitialized_copy(_First, _Last, _Dest, _Al));
 
-	mov	ecx, DWORD PTR __Cat$231802[esp]
+	mov	ecx, DWORD PTR __Cat$231801[esp]
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T231799[esp+4], 0
-	mov	eax, DWORD PTR $T231799[esp+4]
+	mov	BYTE PTR $T231798[esp+4], 0
+	mov	eax, DWORD PTR $T231798[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -13187,10 +13187,10 @@ PUBLIC	?_Ufill@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?_Ufill@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@@3@@std@@IAEPAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@2@PAV342@IABV342@@Z
 _TEXT	SEGMENT
-$T233628 = -4						; size = 1
+$T233627 = -4						; size = 1
 __Ptr$ = 8						; size = 4
 __Count$ = 12						; size = 4
-__Cat$233632 = 16					; size = 1
+__Cat$233631 = 16					; size = 1
 __Val$ = 16						; size = 4
 ?_Ufill@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@@3@@std@@IAEPAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@2@PAV342@IABV342@@Z PROC ; std::vector<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *> > >::_Iterator<0>,std::allocator<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *> > >::_Iterator<0> > >::_Ufill, COMDAT
 ; _this$ = ecx
@@ -13201,13 +13201,13 @@ __Val$ = 16						; size = 4
 
 ; 1254 : 		_STDEXT unchecked_uninitialized_fill_n(_Ptr, _Count, _Val, this->_Alval);
 
-	mov	edx, DWORD PTR __Cat$233632[esp]
+	mov	edx, DWORD PTR __Cat$233631[esp]
 	push	esi
 	mov	esi, DWORD PTR __Count$[esp+4]
 	push	edi
 	mov	edi, DWORD PTR __Ptr$[esp+8]
-	mov	BYTE PTR $T233628[esp+12], 0
-	mov	eax, DWORD PTR $T233628[esp+12]
+	mov	BYTE PTR $T233627[esp+12], 0
+	mov	eax, DWORD PTR $T233627[esp+12]
 	push	eax
 	mov	eax, DWORD PTR __Val$[esp+12]
 	push	edx
@@ -13234,10 +13234,10 @@ PUBLIC	?_Ufill@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?_Ufill@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@@3@@std@@IAEPAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@2@PAV342@IABV342@@Z
 _TEXT	SEGMENT
-$T233646 = -4						; size = 1
+$T233645 = -4						; size = 1
 __Ptr$ = 8						; size = 4
 __Count$ = 12						; size = 4
-__Cat$233650 = 16					; size = 1
+__Cat$233649 = 16					; size = 1
 __Val$ = 16						; size = 4
 ?_Ufill@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@@3@@std@@IAEPAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@2@PAV342@IABV342@@Z PROC ; std::vector<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *> > >::_Iterator<0>,std::allocator<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *> > >::_Iterator<0> > >::_Ufill, COMDAT
 ; _this$ = ecx
@@ -13248,13 +13248,13 @@ __Val$ = 16						; size = 4
 
 ; 1254 : 		_STDEXT unchecked_uninitialized_fill_n(_Ptr, _Count, _Val, this->_Alval);
 
-	mov	edx, DWORD PTR __Cat$233650[esp]
+	mov	edx, DWORD PTR __Cat$233649[esp]
 	push	esi
 	mov	esi, DWORD PTR __Count$[esp+4]
 	push	edi
 	mov	edi, DWORD PTR __Ptr$[esp+8]
-	mov	BYTE PTR $T233646[esp+12], 0
-	mov	eax, DWORD PTR $T233646[esp+12]
+	mov	BYTE PTR $T233645[esp+12], 0
+	mov	eax, DWORD PTR $T233645[esp+12]
 	push	eax
 	mov	eax, DWORD PTR __Val$[esp+12]
 	push	edx
@@ -13281,10 +13281,10 @@ PUBLIC	?_Ufill@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?_Ufill@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@@3@@std@@IAEPAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@2@PAV342@IABV342@@Z
 _TEXT	SEGMENT
-$T233664 = -4						; size = 1
+$T233663 = -4						; size = 1
 __Ptr$ = 8						; size = 4
 __Count$ = 12						; size = 4
-__Cat$233668 = 16					; size = 1
+__Cat$233667 = 16					; size = 1
 __Val$ = 16						; size = 4
 ?_Ufill@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@@3@@std@@IAEPAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@2@PAV342@IABV342@@Z PROC ; std::vector<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> > >::_Iterator<0>,std::allocator<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> > >::_Iterator<0> > >::_Ufill, COMDAT
 ; _this$ = ecx
@@ -13295,13 +13295,13 @@ __Val$ = 16						; size = 4
 
 ; 1254 : 		_STDEXT unchecked_uninitialized_fill_n(_Ptr, _Count, _Val, this->_Alval);
 
-	mov	edx, DWORD PTR __Cat$233668[esp]
+	mov	edx, DWORD PTR __Cat$233667[esp]
 	push	esi
 	mov	esi, DWORD PTR __Count$[esp+4]
 	push	edi
 	mov	edi, DWORD PTR __Ptr$[esp+8]
-	mov	BYTE PTR $T233664[esp+12], 0
-	mov	eax, DWORD PTR $T233664[esp+12]
+	mov	BYTE PTR $T233663[esp+12], 0
+	mov	eax, DWORD PTR $T233663[esp+12]
 	push	eax
 	mov	eax, DWORD PTR __Val$[esp+12]
 	push	edx
@@ -13353,7 +13353,7 @@ __ehfuncinfo$??$_Insert@V?$_Const_iterator@$0A@@?$list@U?$pair@$$CBV?$basic_stri
 xdata$x	ENDS
 ;	COMDAT ??$_Insert@V?$_Const_iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@QAEXV?$_Const_iterator@$0A@@01@00Uforward_iterator_tag@1@@Z
 _TEXT	SEGMENT
-$T233673 = -24						; size = 4
+$T233672 = -24						; size = 4
 _this$ = -24						; size = 4
 __Next$ = -20						; size = 4
 __$EHRec$ = -16						; size = 16
@@ -13444,7 +13444,7 @@ $LL38@Insert:
 	mov	eax, DWORD PTR __Where$[ebp]
 	mov	eax, DWORD PTR [eax+4]
 	push	eax
-	lea	ecx, DWORD PTR $T233673[ebp]
+	lea	ecx, DWORD PTR $T233672[ebp]
 	push	ecx
 	mov	ecx, edi
 	call	?erase@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@QAE?AV?$_Iterator@$0A@@12@V?$_Const_iterator@$0A@@12@@Z ; std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *> > >::erase
@@ -13510,7 +13510,7 @@ __ehfuncinfo$??$_Insert@V?$_Const_iterator@$0A@@?$list@U?$pair@$$CBV?$basic_stri
 xdata$x	ENDS
 ;	COMDAT ??$_Insert@V?$_Const_iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@QAEXV?$_Const_iterator@$0A@@01@00Uforward_iterator_tag@1@@Z
 _TEXT	SEGMENT
-$T233775 = -24						; size = 4
+$T233774 = -24						; size = 4
 _this$ = -24						; size = 4
 __Next$ = -20						; size = 4
 __$EHRec$ = -16						; size = 16
@@ -13601,7 +13601,7 @@ $LL38@Insert@2:
 	mov	eax, DWORD PTR __Where$[ebp]
 	mov	eax, DWORD PTR [eax+4]
 	push	eax
-	lea	ecx, DWORD PTR $T233775[ebp]
+	lea	ecx, DWORD PTR $T233774[ebp]
 	push	ecx
 	mov	ecx, edi
 	call	?erase@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@QAE?AV?$_Iterator@$0A@@12@V?$_Const_iterator@$0A@@12@@Z ; std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *> > >::erase
@@ -13667,7 +13667,7 @@ __ehfuncinfo$??$_Insert@V?$_Const_iterator@$0A@@?$list@U?$pair@$$CBV?$basic_stri
 xdata$x	ENDS
 ;	COMDAT ??$_Insert@V?$_Const_iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@QAEXV?$_Const_iterator@$0A@@01@00Uforward_iterator_tag@1@@Z
 _TEXT	SEGMENT
-$T233877 = -24						; size = 4
+$T233876 = -24						; size = 4
 _this$ = -24						; size = 4
 __Next$ = -20						; size = 4
 __$EHRec$ = -16						; size = 16
@@ -13758,7 +13758,7 @@ $LL38@Insert@3:
 	mov	eax, DWORD PTR __Where$[ebp]
 	mov	eax, DWORD PTR [eax+4]
 	push	eax
-	lea	ecx, DWORD PTR $T233877[ebp]
+	lea	ecx, DWORD PTR $T233876[ebp]
 	push	ecx
 	mov	ecx, edi
 	call	?erase@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@QAE?AV?$_Iterator@$0A@@12@V?$_Const_iterator@$0A@@12@@Z ; std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> > >::erase
@@ -13801,10 +13801,10 @@ PUBLIC	??$_Unchecked_uninitialized_move@PAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ??$_Unchecked_uninitialized_move@PAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@PAV123@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@@3@@stdext@@YAPAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@PAV123@00AAV?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@@3@@Z
 _TEXT	SEGMENT
-$T234005 = -4						; size = 1
+$T234004 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$234008 = 16					; size = 1
+__Cat$234007 = 16					; size = 1
 __Dest$ = 16						; size = 4
 __Al$ = 20						; size = 4
 ??$_Unchecked_uninitialized_move@PAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@PAV123@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@@3@@stdext@@YAPAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@PAV123@00AAV?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@@3@@Z PROC ; stdext::_Unchecked_uninitialized_move<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *> > >::_Iterator<0> *,std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *> > >::_Iterator<0> *,std::allocator<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *> > >::_Iterator<0> > >, COMDAT
@@ -13817,10 +13817,10 @@ __Al$ = 20						; size = 4
 ; 863  : 		_CHECKED_BASE(_Last), _Dest, _Al,
 ; 864  : 		_STD _Move_cat(_Dest), _STD _Range_checked_iterator_tag()));
 
-	mov	ecx, DWORD PTR __Cat$234008[esp]
+	mov	ecx, DWORD PTR __Cat$234007[esp]
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T234005[esp+4], 0
-	mov	eax, DWORD PTR $T234005[esp+4]
+	mov	BYTE PTR $T234004[esp+4], 0
+	mov	eax, DWORD PTR $T234004[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -13842,10 +13842,10 @@ PUBLIC	??$_Unchecked_uninitialized_move@PAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Unchecked_uninitialized_move@PAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@PAV123@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@@3@@stdext@@YAPAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@PAV123@00AAV?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@@3@@Z
 _TEXT	SEGMENT
-$T234042 = -4						; size = 1
+$T234041 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$234045 = 16					; size = 1
+__Cat$234044 = 16					; size = 1
 __Dest$ = 16						; size = 4
 __Al$ = 20						; size = 4
 ??$_Unchecked_uninitialized_move@PAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@PAV123@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@@3@@stdext@@YAPAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@PAV123@00AAV?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@@3@@Z PROC ; stdext::_Unchecked_uninitialized_move<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *> > >::_Iterator<0> *,std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *> > >::_Iterator<0> *,std::allocator<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *> > >::_Iterator<0> > >, COMDAT
@@ -13858,10 +13858,10 @@ __Al$ = 20						; size = 4
 ; 863  : 		_CHECKED_BASE(_Last), _Dest, _Al,
 ; 864  : 		_STD _Move_cat(_Dest), _STD _Range_checked_iterator_tag()));
 
-	mov	ecx, DWORD PTR __Cat$234045[esp]
+	mov	ecx, DWORD PTR __Cat$234044[esp]
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T234042[esp+4], 0
-	mov	eax, DWORD PTR $T234042[esp+4]
+	mov	BYTE PTR $T234041[esp+4], 0
+	mov	eax, DWORD PTR $T234041[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -13883,10 +13883,10 @@ PUBLIC	??$_Unchecked_uninitialized_move@PAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Unchecked_uninitialized_move@PAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@PAV123@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@@3@@stdext@@YAPAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@PAV123@00AAV?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@@3@@Z
 _TEXT	SEGMENT
-$T234079 = -4						; size = 1
+$T234078 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$234082 = 16					; size = 1
+__Cat$234081 = 16					; size = 1
 __Dest$ = 16						; size = 4
 __Al$ = 20						; size = 4
 ??$_Unchecked_uninitialized_move@PAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@PAV123@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@@3@@stdext@@YAPAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@PAV123@00AAV?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@@3@@Z PROC ; stdext::_Unchecked_uninitialized_move<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> > >::_Iterator<0> *,std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> > >::_Iterator<0> *,std::allocator<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> > >::_Iterator<0> > >, COMDAT
@@ -13899,10 +13899,10 @@ __Al$ = 20						; size = 4
 ; 863  : 		_CHECKED_BASE(_Last), _Dest, _Al,
 ; 864  : 		_STD _Move_cat(_Dest), _STD _Range_checked_iterator_tag()));
 
-	mov	ecx, DWORD PTR __Cat$234082[esp]
+	mov	ecx, DWORD PTR __Cat$234081[esp]
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T234079[esp+4], 0
-	mov	eax, DWORD PTR $T234079[esp+4]
+	mov	BYTE PTR $T234078[esp+4], 0
+	mov	eax, DWORD PTR $T234078[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -14317,7 +14317,7 @@ PUBLIC	??$insert@V?$_Const_iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$
 _TEXT	SEGMENT
 __Where$ = 8						; size = 4
 __First$ = 12						; size = 4
-$T234334 = 16						; size = 1
+$T234333 = 16						; size = 1
 __Last$ = 16						; size = 4
 ??$insert@V?$_Const_iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@QAEXV?$_Const_iterator@$0A@@01@00@Z PROC ; std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *> > >::insert<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *> > >::_Const_iterator<0> >, COMDAT
 ; _this$ = ecx
@@ -14325,7 +14325,7 @@ __Last$ = 16						; size = 4
 ; 731  : 		{	// insert [_First, _Last) at _Where
 ; 732  : 		_Insert(_Where, _First, _Last, _Iter_cat(_First));
 
-	mov	eax, DWORD PTR $T234334[esp-4]
+	mov	eax, DWORD PTR $T234333[esp-4]
 	mov	edx, DWORD PTR __Last$[esp-4]
 	push	eax
 	mov	eax, DWORD PTR __First$[esp]
@@ -14346,7 +14346,7 @@ PUBLIC	??$insert@V?$_Const_iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$
 _TEXT	SEGMENT
 __Where$ = 8						; size = 4
 __First$ = 12						; size = 4
-$T234343 = 16						; size = 1
+$T234342 = 16						; size = 1
 __Last$ = 16						; size = 4
 ??$insert@V?$_Const_iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@QAEXV?$_Const_iterator@$0A@@01@00@Z PROC ; std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *> > >::insert<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *> > >::_Const_iterator<0> >, COMDAT
 ; _this$ = ecx
@@ -14354,7 +14354,7 @@ __Last$ = 16						; size = 4
 ; 731  : 		{	// insert [_First, _Last) at _Where
 ; 732  : 		_Insert(_Where, _First, _Last, _Iter_cat(_First));
 
-	mov	eax, DWORD PTR $T234343[esp-4]
+	mov	eax, DWORD PTR $T234342[esp-4]
 	mov	edx, DWORD PTR __Last$[esp-4]
 	push	eax
 	mov	eax, DWORD PTR __First$[esp]
@@ -14375,7 +14375,7 @@ PUBLIC	??$insert@V?$_Const_iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$
 _TEXT	SEGMENT
 __Where$ = 8						; size = 4
 __First$ = 12						; size = 4
-$T234352 = 16						; size = 1
+$T234351 = 16						; size = 1
 __Last$ = 16						; size = 4
 ??$insert@V?$_Const_iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@QAEXV?$_Const_iterator@$0A@@01@00@Z PROC ; std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> > >::insert<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> > >::_Const_iterator<0> >, COMDAT
 ; _this$ = ecx
@@ -14383,7 +14383,7 @@ __Last$ = 16						; size = 4
 ; 731  : 		{	// insert [_First, _Last) at _Where
 ; 732  : 		_Insert(_Where, _First, _Last, _Iter_cat(_First));
 
-	mov	eax, DWORD PTR $T234352[esp-4]
+	mov	eax, DWORD PTR $T234351[esp-4]
 	mov	edx, DWORD PTR __Last$[esp-4]
 	push	eax
 	mov	eax, DWORD PTR __First$[esp]
@@ -14403,10 +14403,10 @@ PUBLIC	??$_Umove@PAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\vector
 ;	COMDAT ??$_Umove@PAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@@3@@std@@IAEPAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@1@PAV231@00@Z
 _TEXT	SEGMENT
-$T234406 = -4						; size = 1
+$T234405 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$234409 = 16					; size = 1
+__Cat$234408 = 16					; size = 1
 __Ptr$ = 16						; size = 4
 ??$_Umove@PAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@@3@@std@@IAEPAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@1@PAV231@00@Z PROC ; std::vector<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *> > >::_Iterator<0>,std::allocator<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *> > >::_Iterator<0> > >::_Umove<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *> > >::_Iterator<0> *>, COMDAT
 ; _this$ = ecx
@@ -14419,9 +14419,9 @@ __Ptr$ = 16						; size = 4
 ; 1147 : 		return (_STDEXT _Unchecked_uninitialized_move(_First, _Last,
 ; 1148 : 			_Ptr, this->_Alval));
 
-	mov	edx, DWORD PTR __Cat$234409[esp]
-	mov	BYTE PTR $T234406[esp+4], 0
-	mov	eax, DWORD PTR $T234406[esp+4]
+	mov	edx, DWORD PTR __Cat$234408[esp]
+	mov	BYTE PTR $T234405[esp+4], 0
+	mov	eax, DWORD PTR $T234405[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Ptr$[esp+4]
 	push	edx
@@ -14443,10 +14443,10 @@ PUBLIC	??$_Umove@PAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Umove@PAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@@3@@std@@IAEPAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@1@PAV231@00@Z
 _TEXT	SEGMENT
-$T234461 = -4						; size = 1
+$T234460 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$234464 = 16					; size = 1
+__Cat$234463 = 16					; size = 1
 __Ptr$ = 16						; size = 4
 ??$_Umove@PAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@@3@@std@@IAEPAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@1@PAV231@00@Z PROC ; std::vector<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *> > >::_Iterator<0>,std::allocator<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *> > >::_Iterator<0> > >::_Umove<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *> > >::_Iterator<0> *>, COMDAT
 ; _this$ = ecx
@@ -14459,9 +14459,9 @@ __Ptr$ = 16						; size = 4
 ; 1147 : 		return (_STDEXT _Unchecked_uninitialized_move(_First, _Last,
 ; 1148 : 			_Ptr, this->_Alval));
 
-	mov	edx, DWORD PTR __Cat$234464[esp]
-	mov	BYTE PTR $T234461[esp+4], 0
-	mov	eax, DWORD PTR $T234461[esp+4]
+	mov	edx, DWORD PTR __Cat$234463[esp]
+	mov	BYTE PTR $T234460[esp+4], 0
+	mov	eax, DWORD PTR $T234460[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Ptr$[esp+4]
 	push	edx
@@ -14483,10 +14483,10 @@ PUBLIC	??$_Umove@PAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Umove@PAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@@3@@std@@IAEPAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@1@PAV231@00@Z
 _TEXT	SEGMENT
-$T234507 = -4						; size = 1
+$T234505 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$234510 = 16					; size = 1
+__Cat$234508 = 16					; size = 1
 __Ptr$ = 16						; size = 4
 ??$_Umove@PAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@@3@@std@@IAEPAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@1@PAV231@00@Z PROC ; std::vector<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> > >::_Iterator<0>,std::allocator<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> > >::_Iterator<0> > >::_Umove<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> > >::_Iterator<0> *>, COMDAT
 ; _this$ = ecx
@@ -14499,9 +14499,9 @@ __Ptr$ = 16						; size = 4
 ; 1147 : 		return (_STDEXT _Unchecked_uninitialized_move(_First, _Last,
 ; 1148 : 			_Ptr, this->_Alval));
 
-	mov	edx, DWORD PTR __Cat$234510[esp]
-	mov	BYTE PTR $T234507[esp+4], 0
-	mov	eax, DWORD PTR $T234507[esp+4]
+	mov	edx, DWORD PTR __Cat$234508[esp]
+	mov	BYTE PTR $T234505[esp+4], 0
+	mov	eax, DWORD PTR $T234505[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Ptr$[esp+4]
 	push	edx
@@ -15072,16 +15072,16 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 __Capacity$ = -20					; size = 4
 __$EHRec$ = -16						; size = 16
-__Cat$235137 = 8					; size = 1
-__Cat$235064 = 8					; size = 1
+__Cat$235136 = 8					; size = 1
+__Cat$235063 = 8					; size = 1
 __Where$ = 8						; size = 4
-__Tmp$224268 = 12					; size = 4
-__Tmp$224258 = 12					; size = 4
-__Newvec$224243 = 12					; size = 4
+__Tmp$224267 = 12					; size = 4
+__Tmp$224257 = 12					; size = 4
+__Newvec$224242 = 12					; size = 4
 __Count$ = 12						; size = 4
 tv515 = 16						; size = 4
-$T235134 = 16						; size = 1
-$T235061 = 16						; size = 1
+$T235133 = 16						; size = 1
+$T235060 = 16						; size = 1
 __Val$ = 16						; size = 4
 ?_Insert_n@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@@3@@std@@IAEXV?$_Vector_const_iterator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@@3@@2@IABV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@2@@Z PROC ; std::vector<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *> > >::_Iterator<0>,std::allocator<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *> > >::_Iterator<0> > >::_Insert_n, COMDAT
 ; _this$ = ecx
@@ -15207,7 +15207,7 @@ $LN9@Insert_n:
 	lea	edx, DWORD PTR [eax+ebx*4]
 	push	edx
 	mov	ecx, esi
-	mov	DWORD PTR __Newvec$224243[ebp], eax
+	mov	DWORD PTR __Newvec$224242[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+12], 0
 	call	?_Ufill@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@@3@@std@@IAEPAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@2@PAV342@IABV342@@Z ; std::vector<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *> > >::_Iterator<0>,std::allocator<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *> > >::_Iterator<0> > >::_Ufill
 
@@ -15215,12 +15215,12 @@ $LN9@Insert_n:
 ; 1180 : 			_Umove(this->_Myfirst, _VEC_ITER_BASE(_Where),
 ; 1181 : 				_Newvec);	// move prefix
 
-	mov	edx, DWORD PTR __Cat$235064[ebp]
+	mov	edx, DWORD PTR __Cat$235063[ebp]
 	mov	eax, DWORD PTR [esi+4]
-	mov	BYTE PTR $T235061[ebp], 0
-	mov	ecx, DWORD PTR $T235061[ebp]
+	mov	BYTE PTR $T235060[ebp], 0
+	mov	ecx, DWORD PTR $T235060[ebp]
 	push	ecx
-	mov	ecx, DWORD PTR __Newvec$224243[ebp]
+	mov	ecx, DWORD PTR __Newvec$224242[ebp]
 	push	edx
 	mov	edx, DWORD PTR __Where$[ebp]
 	push	esi
@@ -15235,13 +15235,13 @@ $LN9@Insert_n:
 
 	mov	eax, DWORD PTR [esi+8]
 	add	esp, 24					; 00000018H
-	mov	BYTE PTR $T235134[ebp], 0
-	mov	edx, DWORD PTR $T235134[ebp]
+	mov	BYTE PTR $T235133[ebp], 0
+	mov	edx, DWORD PTR $T235133[ebp]
 	push	edx
-	mov	edx, DWORD PTR __Cat$235137[ebp]
+	mov	edx, DWORD PTR __Cat$235136[ebp]
 	push	edx
 	lea	ecx, DWORD PTR [ebx+edi]
-	mov	ebx, DWORD PTR __Newvec$224243[ebp]
+	mov	ebx, DWORD PTR __Newvec$224242[ebp]
 	push	esi
 	lea	ecx, DWORD PTR [ebx+ecx*4]
 	push	ecx
@@ -15316,7 +15316,7 @@ __catch$?_Insert_n@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string
 ; 1189 : 				_Destroy(_Newvec + _Whereoff, _Newvec + _Whereoff + _Count);
 ; 1190 : 			this->_Alval.deallocate(_Newvec, _Capacity);
 
-	mov	edx, DWORD PTR __Newvec$224243[ebp]
+	mov	edx, DWORD PTR __Newvec$224242[ebp]
 	push	edx
 	call	??3@YAXPAX@Z				; operator delete
 	add	esp, 4
@@ -15345,7 +15345,7 @@ $LN10@Insert_n:
 
 	mov	edx, DWORD PTR __Val$[ebp]
 	mov	ecx, DWORD PTR [edx]
-	mov	DWORD PTR __Tmp$224258[ebp], ecx
+	mov	DWORD PTR __Tmp$224257[ebp], ecx
 
 ; 1212 : 
 ; 1213 : 			_Umove(_VEC_ITER_BASE(_Where), _Mylast,
@@ -15368,7 +15368,7 @@ $LN10@Insert_n:
 	mov	eax, DWORD PTR [esi+8]
 	mov	ecx, eax
 	sub	ecx, DWORD PTR __Where$[ebp]
-	lea	edx, DWORD PTR __Tmp$224258[ebp]
+	lea	edx, DWORD PTR __Tmp$224257[ebp]
 	sar	ecx, 2
 	push	edx
 	sub	edi, ecx
@@ -15397,7 +15397,7 @@ $LN10@Insert_n:
 ; 1230 : 			std::fill(_VEC_ITER_BASE(_Where), _Mylast - _Count,
 ; 1231 : 				_Tmp);	// insert up to old end
 
-	lea	edx, DWORD PTR __Tmp$224258[ebp]
+	lea	edx, DWORD PTR __Tmp$224257[ebp]
 	push	edx
 	sub	esi, eax
 	mov	eax, DWORD PTR __Where$[ebp]
@@ -15439,7 +15439,7 @@ $LN3@Insert_n:
 	push	ebx
 	push	edi
 	mov	ecx, esi
-	mov	DWORD PTR __Tmp$224268[ebp], edx
+	mov	DWORD PTR __Tmp$224267[ebp], edx
 	mov	DWORD PTR tv515[ebp], eax
 	call	??$_Umove@PAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@@3@@std@@IAEPAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@1@PAV231@00@Z ; std::vector<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *> > >::_Iterator<0>,std::allocator<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *> > >::_Iterator<0> > >::_Umove<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *> > >::_Iterator<0> *>
 
@@ -15463,7 +15463,7 @@ $LN3@Insert_n:
 
 	mov	eax, DWORD PTR __Where$[ebp]
 	mov	edx, DWORD PTR tv515[ebp]
-	lea	ecx, DWORD PTR __Tmp$224268[ebp]
+	lea	ecx, DWORD PTR __Tmp$224267[ebp]
 	push	ecx
 	add	edx, eax
 	push	edx
@@ -15537,16 +15537,16 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 __Capacity$ = -20					; size = 4
 __$EHRec$ = -16						; size = 16
-__Cat$235372 = 8					; size = 1
-__Cat$235300 = 8					; size = 1
+__Cat$235371 = 8					; size = 1
+__Cat$235299 = 8					; size = 1
 __Where$ = 8						; size = 4
-__Tmp$224322 = 12					; size = 4
-__Tmp$224312 = 12					; size = 4
-__Newvec$224297 = 12					; size = 4
+__Tmp$224321 = 12					; size = 4
+__Tmp$224311 = 12					; size = 4
+__Newvec$224296 = 12					; size = 4
 __Count$ = 12						; size = 4
 tv515 = 16						; size = 4
-$T235369 = 16						; size = 1
-$T235297 = 16						; size = 1
+$T235368 = 16						; size = 1
+$T235296 = 16						; size = 1
 __Val$ = 16						; size = 4
 ?_Insert_n@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@@3@@std@@IAEXV?$_Vector_const_iterator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@@3@@2@IABV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@2@@Z PROC ; std::vector<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *> > >::_Iterator<0>,std::allocator<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *> > >::_Iterator<0> > >::_Insert_n, COMDAT
 ; _this$ = ecx
@@ -15672,7 +15672,7 @@ $LN9@Insert_n@2:
 	lea	edx, DWORD PTR [eax+ebx*4]
 	push	edx
 	mov	ecx, esi
-	mov	DWORD PTR __Newvec$224297[ebp], eax
+	mov	DWORD PTR __Newvec$224296[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+12], 0
 	call	?_Ufill@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@@3@@std@@IAEPAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@2@PAV342@IABV342@@Z ; std::vector<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *> > >::_Iterator<0>,std::allocator<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *> > >::_Iterator<0> > >::_Ufill
 
@@ -15680,12 +15680,12 @@ $LN9@Insert_n@2:
 ; 1180 : 			_Umove(this->_Myfirst, _VEC_ITER_BASE(_Where),
 ; 1181 : 				_Newvec);	// move prefix
 
-	mov	edx, DWORD PTR __Cat$235300[ebp]
+	mov	edx, DWORD PTR __Cat$235299[ebp]
 	mov	eax, DWORD PTR [esi+4]
-	mov	BYTE PTR $T235297[ebp], 0
-	mov	ecx, DWORD PTR $T235297[ebp]
+	mov	BYTE PTR $T235296[ebp], 0
+	mov	ecx, DWORD PTR $T235296[ebp]
 	push	ecx
-	mov	ecx, DWORD PTR __Newvec$224297[ebp]
+	mov	ecx, DWORD PTR __Newvec$224296[ebp]
 	push	edx
 	mov	edx, DWORD PTR __Where$[ebp]
 	push	esi
@@ -15700,13 +15700,13 @@ $LN9@Insert_n@2:
 
 	mov	eax, DWORD PTR [esi+8]
 	add	esp, 24					; 00000018H
-	mov	BYTE PTR $T235369[ebp], 0
-	mov	edx, DWORD PTR $T235369[ebp]
+	mov	BYTE PTR $T235368[ebp], 0
+	mov	edx, DWORD PTR $T235368[ebp]
 	push	edx
-	mov	edx, DWORD PTR __Cat$235372[ebp]
+	mov	edx, DWORD PTR __Cat$235371[ebp]
 	push	edx
 	lea	ecx, DWORD PTR [ebx+edi]
-	mov	ebx, DWORD PTR __Newvec$224297[ebp]
+	mov	ebx, DWORD PTR __Newvec$224296[ebp]
 	push	esi
 	lea	ecx, DWORD PTR [ebx+ecx*4]
 	push	ecx
@@ -15781,7 +15781,7 @@ __catch$?_Insert_n@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string
 ; 1189 : 				_Destroy(_Newvec + _Whereoff, _Newvec + _Whereoff + _Count);
 ; 1190 : 			this->_Alval.deallocate(_Newvec, _Capacity);
 
-	mov	edx, DWORD PTR __Newvec$224297[ebp]
+	mov	edx, DWORD PTR __Newvec$224296[ebp]
 	push	edx
 	call	??3@YAXPAX@Z				; operator delete
 	add	esp, 4
@@ -15810,7 +15810,7 @@ $LN10@Insert_n@2:
 
 	mov	edx, DWORD PTR __Val$[ebp]
 	mov	ecx, DWORD PTR [edx]
-	mov	DWORD PTR __Tmp$224312[ebp], ecx
+	mov	DWORD PTR __Tmp$224311[ebp], ecx
 
 ; 1212 : 
 ; 1213 : 			_Umove(_VEC_ITER_BASE(_Where), _Mylast,
@@ -15833,7 +15833,7 @@ $LN10@Insert_n@2:
 	mov	eax, DWORD PTR [esi+8]
 	mov	ecx, eax
 	sub	ecx, DWORD PTR __Where$[ebp]
-	lea	edx, DWORD PTR __Tmp$224312[ebp]
+	lea	edx, DWORD PTR __Tmp$224311[ebp]
 	sar	ecx, 2
 	push	edx
 	sub	edi, ecx
@@ -15862,7 +15862,7 @@ $LN10@Insert_n@2:
 ; 1230 : 			std::fill(_VEC_ITER_BASE(_Where), _Mylast - _Count,
 ; 1231 : 				_Tmp);	// insert up to old end
 
-	lea	edx, DWORD PTR __Tmp$224312[ebp]
+	lea	edx, DWORD PTR __Tmp$224311[ebp]
 	push	edx
 	sub	esi, eax
 	mov	eax, DWORD PTR __Where$[ebp]
@@ -15904,7 +15904,7 @@ $LN3@Insert_n@2:
 	push	ebx
 	push	edi
 	mov	ecx, esi
-	mov	DWORD PTR __Tmp$224322[ebp], edx
+	mov	DWORD PTR __Tmp$224321[ebp], edx
 	mov	DWORD PTR tv515[ebp], eax
 	call	??$_Umove@PAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@@3@@std@@IAEPAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@1@PAV231@00@Z ; std::vector<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *> > >::_Iterator<0>,std::allocator<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *> > >::_Iterator<0> > >::_Umove<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *> > >::_Iterator<0> *>
 
@@ -15928,7 +15928,7 @@ $LN3@Insert_n@2:
 
 	mov	eax, DWORD PTR __Where$[ebp]
 	mov	edx, DWORD PTR tv515[ebp]
-	lea	ecx, DWORD PTR __Tmp$224322[ebp]
+	lea	ecx, DWORD PTR __Tmp$224321[ebp]
 	push	ecx
 	add	edx, eax
 	push	edx
@@ -16002,16 +16002,16 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 __Capacity$ = -20					; size = 4
 __$EHRec$ = -16						; size = 16
-__Cat$235605 = 8					; size = 1
-__Cat$235536 = 8					; size = 1
+__Cat$235604 = 8					; size = 1
+__Cat$235535 = 8					; size = 1
 __Where$ = 8						; size = 4
-__Tmp$224376 = 12					; size = 4
-__Tmp$224366 = 12					; size = 4
-__Newvec$224351 = 12					; size = 4
+__Tmp$224375 = 12					; size = 4
+__Tmp$224365 = 12					; size = 4
+__Newvec$224350 = 12					; size = 4
 __Count$ = 12						; size = 4
 tv515 = 16						; size = 4
-$T235601 = 16						; size = 1
-$T235533 = 16						; size = 1
+$T235600 = 16						; size = 1
+$T235532 = 16						; size = 1
 __Val$ = 16						; size = 4
 ?_Insert_n@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@@3@@std@@IAEXV?$_Vector_const_iterator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@@3@@2@IABV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@2@@Z PROC ; std::vector<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> > >::_Iterator<0>,std::allocator<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> > >::_Iterator<0> > >::_Insert_n, COMDAT
 ; _this$ = ecx
@@ -16137,7 +16137,7 @@ $LN9@Insert_n@3:
 	lea	edx, DWORD PTR [eax+ebx*4]
 	push	edx
 	mov	ecx, esi
-	mov	DWORD PTR __Newvec$224351[ebp], eax
+	mov	DWORD PTR __Newvec$224350[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+12], 0
 	call	?_Ufill@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@@3@@std@@IAEPAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@2@PAV342@IABV342@@Z ; std::vector<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> > >::_Iterator<0>,std::allocator<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> > >::_Iterator<0> > >::_Ufill
 
@@ -16145,12 +16145,12 @@ $LN9@Insert_n@3:
 ; 1180 : 			_Umove(this->_Myfirst, _VEC_ITER_BASE(_Where),
 ; 1181 : 				_Newvec);	// move prefix
 
-	mov	edx, DWORD PTR __Cat$235536[ebp]
+	mov	edx, DWORD PTR __Cat$235535[ebp]
 	mov	eax, DWORD PTR [esi+4]
-	mov	BYTE PTR $T235533[ebp], 0
-	mov	ecx, DWORD PTR $T235533[ebp]
+	mov	BYTE PTR $T235532[ebp], 0
+	mov	ecx, DWORD PTR $T235532[ebp]
 	push	ecx
-	mov	ecx, DWORD PTR __Newvec$224351[ebp]
+	mov	ecx, DWORD PTR __Newvec$224350[ebp]
 	push	edx
 	mov	edx, DWORD PTR __Where$[ebp]
 	push	esi
@@ -16165,13 +16165,13 @@ $LN9@Insert_n@3:
 
 	mov	eax, DWORD PTR [esi+8]
 	add	esp, 24					; 00000018H
-	mov	BYTE PTR $T235601[ebp], 0
-	mov	edx, DWORD PTR $T235601[ebp]
+	mov	BYTE PTR $T235600[ebp], 0
+	mov	edx, DWORD PTR $T235600[ebp]
 	push	edx
-	mov	edx, DWORD PTR __Cat$235605[ebp]
+	mov	edx, DWORD PTR __Cat$235604[ebp]
 	push	edx
 	lea	ecx, DWORD PTR [ebx+edi]
-	mov	ebx, DWORD PTR __Newvec$224351[ebp]
+	mov	ebx, DWORD PTR __Newvec$224350[ebp]
 	push	esi
 	lea	ecx, DWORD PTR [ebx+ecx*4]
 	push	ecx
@@ -16246,7 +16246,7 @@ __catch$?_Insert_n@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string
 ; 1189 : 				_Destroy(_Newvec + _Whereoff, _Newvec + _Whereoff + _Count);
 ; 1190 : 			this->_Alval.deallocate(_Newvec, _Capacity);
 
-	mov	edx, DWORD PTR __Newvec$224351[ebp]
+	mov	edx, DWORD PTR __Newvec$224350[ebp]
 	push	edx
 	call	??3@YAXPAX@Z				; operator delete
 	add	esp, 4
@@ -16275,7 +16275,7 @@ $LN10@Insert_n@3:
 
 	mov	edx, DWORD PTR __Val$[ebp]
 	mov	ecx, DWORD PTR [edx]
-	mov	DWORD PTR __Tmp$224366[ebp], ecx
+	mov	DWORD PTR __Tmp$224365[ebp], ecx
 
 ; 1212 : 
 ; 1213 : 			_Umove(_VEC_ITER_BASE(_Where), _Mylast,
@@ -16298,7 +16298,7 @@ $LN10@Insert_n@3:
 	mov	eax, DWORD PTR [esi+8]
 	mov	ecx, eax
 	sub	ecx, DWORD PTR __Where$[ebp]
-	lea	edx, DWORD PTR __Tmp$224366[ebp]
+	lea	edx, DWORD PTR __Tmp$224365[ebp]
 	sar	ecx, 2
 	push	edx
 	sub	edi, ecx
@@ -16327,7 +16327,7 @@ $LN10@Insert_n@3:
 ; 1230 : 			std::fill(_VEC_ITER_BASE(_Where), _Mylast - _Count,
 ; 1231 : 				_Tmp);	// insert up to old end
 
-	lea	edx, DWORD PTR __Tmp$224366[ebp]
+	lea	edx, DWORD PTR __Tmp$224365[ebp]
 	push	edx
 	sub	esi, eax
 	mov	eax, DWORD PTR __Where$[ebp]
@@ -16369,7 +16369,7 @@ $LN3@Insert_n@3:
 	push	ebx
 	push	edi
 	mov	ecx, esi
-	mov	DWORD PTR __Tmp$224376[ebp], edx
+	mov	DWORD PTR __Tmp$224375[ebp], edx
 	mov	DWORD PTR tv515[ebp], eax
 	call	??$_Umove@PAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@@3@@std@@IAEPAV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@1@PAV231@00@Z ; std::vector<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> > >::_Iterator<0>,std::allocator<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> > >::_Iterator<0> > >::_Umove<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> > >::_Iterator<0> *>
 
@@ -16393,7 +16393,7 @@ $LN3@Insert_n@3:
 
 	mov	eax, DWORD PTR __Where$[ebp]
 	mov	edx, DWORD PTR tv515[ebp]
-	lea	ecx, DWORD PTR __Tmp$224376[ebp]
+	lea	ecx, DWORD PTR __Tmp$224375[ebp]
 	push	ecx
 	add	edx, eax
 	push	edx
@@ -17129,7 +17129,7 @@ PUBLIC	?_Init@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xhash
 ;	COMDAT ?_Init@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@$0A@@tr1@std@@@stdext@@IAEXI@Z
 _TEXT	SEGMENT
-$T236766 = -4						; size = 4
+$T236765 = -4						; size = 4
 __Buckets$ = 8						; size = 4
 ?_Init@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@$0A@@tr1@std@@@stdext@@IAEXI@Z PROC ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum GreatWorkArtifactClass *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *> >,0> >::_Init, COMDAT
 ; _this$ = ecx
@@ -17145,12 +17145,12 @@ __Buckets$ = 8						; size = 4
 	mov	edi, DWORD PTR __Buckets$[esp+8]
 	mov	esi, ecx
 	mov	eax, DWORD PTR [esi+8]
-	lea	ecx, DWORD PTR $T236766[esp+12]
+	lea	ecx, DWORD PTR $T236765[esp+12]
 	push	ecx
 	lea	edx, DWORD PTR [edi+1]
 	push	edx
 	lea	ecx, DWORD PTR [esi+16]
-	mov	DWORD PTR $T236766[esp+20], eax
+	mov	DWORD PTR $T236765[esp+20], eax
 	call	?_Assign_n@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@@3@@std@@IAEXIABV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@2@@Z ; std::vector<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *> > >::_Iterator<0>,std::allocator<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *> > >::_Iterator<0> > >::_Assign_n
 
 ; 831  : 		_Mask = _Buckets - 1;
@@ -17174,7 +17174,7 @@ PUBLIC	?_Init@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?_Init@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@$0A@@tr1@std@@@stdext@@IAEXI@Z
 _TEXT	SEGMENT
-$T236798 = -4						; size = 4
+$T236797 = -4						; size = 4
 __Buckets$ = 8						; size = 4
 ?_Init@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@$0A@@tr1@std@@@stdext@@IAEXI@Z PROC ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum GreatWorkSlotType *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *> >,0> >::_Init, COMDAT
 ; _this$ = ecx
@@ -17190,12 +17190,12 @@ __Buckets$ = 8						; size = 4
 	mov	edi, DWORD PTR __Buckets$[esp+8]
 	mov	esi, ecx
 	mov	eax, DWORD PTR [esi+8]
-	lea	ecx, DWORD PTR $T236798[esp+12]
+	lea	ecx, DWORD PTR $T236797[esp+12]
 	push	ecx
 	lea	edx, DWORD PTR [edi+1]
 	push	edx
 	lea	ecx, DWORD PTR [esi+16]
-	mov	DWORD PTR $T236798[esp+20], eax
+	mov	DWORD PTR $T236797[esp+20], eax
 	call	?_Assign_n@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@@3@@std@@IAEXIABV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@2@@Z ; std::vector<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *> > >::_Iterator<0>,std::allocator<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *> > >::_Iterator<0> > >::_Assign_n
 
 ; 831  : 		_Mask = _Buckets - 1;
@@ -17219,7 +17219,7 @@ PUBLIC	?_Init@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?_Init@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@IAEXI@Z
 _TEXT	SEGMENT
-$T236830 = -4						; size = 4
+$T236829 = -4						; size = 4
 __Buckets$ = 8						; size = 4
 ?_Init@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@IAEXI@Z PROC ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >::_Init, COMDAT
 ; _this$ = ecx
@@ -17235,12 +17235,12 @@ __Buckets$ = 8						; size = 4
 	mov	edi, DWORD PTR __Buckets$[esp+8]
 	mov	esi, ecx
 	mov	eax, DWORD PTR [esi+8]
-	lea	ecx, DWORD PTR $T236830[esp+12]
+	lea	ecx, DWORD PTR $T236829[esp+12]
 	push	ecx
 	lea	edx, DWORD PTR [edi+1]
 	push	edx
 	lea	ecx, DWORD PTR [esi+16]
-	mov	DWORD PTR $T236830[esp+20], eax
+	mov	DWORD PTR $T236829[esp+20], eax
 	call	?_Assign_n@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@@3@@std@@IAEXIABV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@2@@Z ; std::vector<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> > >::_Iterator<0>,std::allocator<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> > >::_Iterator<0> > >::_Assign_n
 
 ; 831  : 		_Mask = _Buckets - 1;
@@ -17282,7 +17282,7 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 _this$ = -16						; size = 4
 __$EHRec$ = -12						; size = 12
-$T237158 = 8						; size = 4
+$T237157 = 8						; size = 4
 __Parg$ = 8						; size = 4
 __Al$ = 12						; size = 4
 ??0?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@$0A@@tr1@std@@@stdext@@QAE@ABV?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@1@ABV?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@std@@@Z PROC ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum GreatWorkArtifactClass *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *> >,0> >::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum GreatWorkArtifactClass *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *> >,0> >, COMDAT
@@ -17318,12 +17318,12 @@ __Al$ = 12						; size = 4
 ; 344  : 		_Init();
 
 	mov	edx, DWORD PTR [esi+8]
-	lea	eax, DWORD PTR $T237158[esp+20]
+	lea	eax, DWORD PTR $T237157[esp+20]
 	push	eax
 	push	9
 	mov	BYTE PTR __$EHRec$[esp+40], 1
 	mov	DWORD PTR [esi+40], 1082130432		; 40800000H
-	mov	DWORD PTR $T237158[esp+28], edx
+	mov	DWORD PTR $T237157[esp+28], edx
 	call	?_Assign_n@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@@3@@std@@IAEXIABV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@2@@Z ; std::vector<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *> > >::_Iterator<0>,std::allocator<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *> > >::_Iterator<0> > >::_Assign_n
 
 ; 345  : 		}
@@ -17360,13 +17360,13 @@ PUBLIC	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V
 _TEXT	SEGMENT
 tv988 = -4						; size = 4
 tv985 = -4						; size = 4
-$T237592 = -4						; size = 4
+$T237591 = -4						; size = 4
 __Bucket$ = -4						; size = 4
 ___$ReturnUdt$ = 8					; size = 4
 tv948 = 12						; size = 4
-__Tmp$238026 = 12					; size = 4
-$T237569 = 12						; size = 4
-$T237182 = 12						; size = 4
+__Tmp$238025 = 12					; size = 4
+$T237568 = 12						; size = 4
+$T237181 = 12						; size = 4
 __Val$ = 12						; size = 4
 __Where$ = 16						; size = 4
 ?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@4@@Z PROC ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum GreatWorkArtifactClass *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *> >,0> >::_Insert, COMDAT
@@ -17499,7 +17499,7 @@ $LN14@Insert@4:
 ; 852  : 					_List.erase(_Where);
 
 	push	eax
-	lea	eax, DWORD PTR $T237182[esp+20]
+	lea	eax, DWORD PTR $T237181[esp+20]
 	push	eax
 	lea	ecx, DWORD PTR [edi+4]
 	call	?erase@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@QAE?AV?$_Iterator@$0A@@12@V?$_Const_iterator@$0A@@12@@Z ; std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *> > >::erase
@@ -17585,7 +17585,7 @@ $LN290@Insert@4:
 	fild	DWORD PTR [edi+12]
 	mov	eax, DWORD PTR [edi+40]
 	mov	esi, DWORD PTR [edi+36]
-	mov	DWORD PTR $T237569[esp+16], eax
+	mov	DWORD PTR $T237568[esp+16], eax
 	test	ecx, ecx
 	jge	SHORT $LN291@Insert@4
 	fadd	DWORD PTR __real@4f800000
@@ -17598,9 +17598,9 @@ $LN291@Insert@4:
 	fadd	DWORD PTR __real@4f800000
 $LN292@Insert@4:
 	fdivp	ST(1), ST(0)
-	fstp	DWORD PTR $T237592[esp+20]
-	fld	DWORD PTR $T237569[esp+16]
-	fld	DWORD PTR $T237592[esp+20]
+	fstp	DWORD PTR $T237591[esp+20]
+	fld	DWORD PTR $T237568[esp+16]
+	fld	DWORD PTR $T237591[esp+20]
 	fcompp
 	fnstsw	ax
 	test	ah, 65					; 00000041H
@@ -17635,7 +17635,7 @@ $LN1@Insert@4:
 	mov	edx, DWORD PTR [edi+8]
 	mov	ebx, DWORD PTR [edi+20]
 	lea	ecx, DWORD PTR [edi+16]
-	mov	DWORD PTR __Tmp$238026[esp+16], edx
+	mov	DWORD PTR __Tmp$238025[esp+16], edx
 	mov	edx, DWORD PTR [ecx+8]
 	cmp	ebx, edx
 	je	SHORT $LN209@Insert@4
@@ -17654,7 +17654,7 @@ $LN234@Insert@4:
 	mov	DWORD PTR [ecx+8], ebx
 $LN209@Insert@4:
 	mov	eax, DWORD PTR [ecx+4]
-	lea	edx, DWORD PTR __Tmp$238026[esp+16]
+	lea	edx, DWORD PTR __Tmp$238025[esp+16]
 	push	edx
 	lea	edx, DWORD PTR [esi+1]
 	push	edx
@@ -17712,7 +17712,7 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 _this$ = -16						; size = 4
 __$EHRec$ = -12						; size = 12
-$T238418 = 8						; size = 4
+$T238417 = 8						; size = 4
 __Parg$ = 8						; size = 4
 __Al$ = 12						; size = 4
 ??0?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@$0A@@tr1@std@@@stdext@@QAE@ABV?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@1@ABV?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@std@@@Z PROC ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum GreatWorkSlotType *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *> >,0> >::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum GreatWorkSlotType *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *> >,0> >, COMDAT
@@ -17748,12 +17748,12 @@ __Al$ = 12						; size = 4
 ; 344  : 		_Init();
 
 	mov	edx, DWORD PTR [esi+8]
-	lea	eax, DWORD PTR $T238418[esp+20]
+	lea	eax, DWORD PTR $T238417[esp+20]
 	push	eax
 	push	9
 	mov	BYTE PTR __$EHRec$[esp+40], 1
 	mov	DWORD PTR [esi+40], 1082130432		; 40800000H
-	mov	DWORD PTR $T238418[esp+28], edx
+	mov	DWORD PTR $T238417[esp+28], edx
 	call	?_Assign_n@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@@3@@std@@IAEXIABV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@2@@Z ; std::vector<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *> > >::_Iterator<0>,std::allocator<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *> > >::_Iterator<0> > >::_Assign_n
 
 ; 345  : 		}
@@ -17790,13 +17790,13 @@ PUBLIC	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V
 _TEXT	SEGMENT
 tv988 = -4						; size = 4
 tv985 = -4						; size = 4
-$T238851 = -4						; size = 4
+$T238850 = -4						; size = 4
 __Bucket$ = -4						; size = 4
 ___$ReturnUdt$ = 8					; size = 4
 tv948 = 12						; size = 4
-__Tmp$239284 = 12					; size = 4
-$T238828 = 12						; size = 4
-$T238441 = 12						; size = 4
+__Tmp$239283 = 12					; size = 4
+$T238827 = 12						; size = 4
+$T238440 = 12						; size = 4
 __Val$ = 12						; size = 4
 __Where$ = 16						; size = 4
 ?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@4@@Z PROC ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum GreatWorkSlotType *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *> >,0> >::_Insert, COMDAT
@@ -17929,7 +17929,7 @@ $LN14@Insert@5:
 ; 852  : 					_List.erase(_Where);
 
 	push	eax
-	lea	eax, DWORD PTR $T238441[esp+20]
+	lea	eax, DWORD PTR $T238440[esp+20]
 	push	eax
 	lea	ecx, DWORD PTR [edi+4]
 	call	?erase@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@QAE?AV?$_Iterator@$0A@@12@V?$_Const_iterator@$0A@@12@@Z ; std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *> > >::erase
@@ -18015,7 +18015,7 @@ $LN290@Insert@5:
 	fild	DWORD PTR [edi+12]
 	mov	eax, DWORD PTR [edi+40]
 	mov	esi, DWORD PTR [edi+36]
-	mov	DWORD PTR $T238828[esp+16], eax
+	mov	DWORD PTR $T238827[esp+16], eax
 	test	ecx, ecx
 	jge	SHORT $LN291@Insert@5
 	fadd	DWORD PTR __real@4f800000
@@ -18028,9 +18028,9 @@ $LN291@Insert@5:
 	fadd	DWORD PTR __real@4f800000
 $LN292@Insert@5:
 	fdivp	ST(1), ST(0)
-	fstp	DWORD PTR $T238851[esp+20]
-	fld	DWORD PTR $T238828[esp+16]
-	fld	DWORD PTR $T238851[esp+20]
+	fstp	DWORD PTR $T238850[esp+20]
+	fld	DWORD PTR $T238827[esp+16]
+	fld	DWORD PTR $T238850[esp+20]
 	fcompp
 	fnstsw	ax
 	test	ah, 65					; 00000041H
@@ -18065,7 +18065,7 @@ $LN1@Insert@5:
 	mov	edx, DWORD PTR [edi+8]
 	mov	ebx, DWORD PTR [edi+20]
 	lea	ecx, DWORD PTR [edi+16]
-	mov	DWORD PTR __Tmp$239284[esp+16], edx
+	mov	DWORD PTR __Tmp$239283[esp+16], edx
 	mov	edx, DWORD PTR [ecx+8]
 	cmp	ebx, edx
 	je	SHORT $LN209@Insert@5
@@ -18084,7 +18084,7 @@ $LN234@Insert@5:
 	mov	DWORD PTR [ecx+8], ebx
 $LN209@Insert@5:
 	mov	eax, DWORD PTR [ecx+4]
-	lea	edx, DWORD PTR __Tmp$239284[esp+16]
+	lea	edx, DWORD PTR __Tmp$239283[esp+16]
 	push	edx
 	lea	edx, DWORD PTR [esi+1]
 	push	edx
@@ -18142,7 +18142,7 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 _this$ = -16						; size = 4
 __$EHRec$ = -12						; size = 12
-$T239676 = 8						; size = 4
+$T239675 = 8						; size = 4
 __Parg$ = 8						; size = 4
 __Al$ = 12						; size = 4
 ??0?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@QAE@ABV?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@1@ABV?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@std@@@Z PROC ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >, COMDAT
@@ -18178,12 +18178,12 @@ __Al$ = 12						; size = 4
 ; 344  : 		_Init();
 
 	mov	edx, DWORD PTR [esi+8]
-	lea	eax, DWORD PTR $T239676[esp+20]
+	lea	eax, DWORD PTR $T239675[esp+20]
 	push	eax
 	push	9
 	mov	BYTE PTR __$EHRec$[esp+40], 1
 	mov	DWORD PTR [esi+40], 1082130432		; 40800000H
-	mov	DWORD PTR $T239676[esp+28], edx
+	mov	DWORD PTR $T239675[esp+28], edx
 	call	?_Assign_n@?$vector@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@V?$allocator@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@@3@@std@@IAEXIABV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@2@@Z ; std::vector<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> > >::_Iterator<0>,std::allocator<std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> > >::_Iterator<0> > >::_Assign_n
 
 ; 345  : 		}
@@ -18220,13 +18220,13 @@ PUBLIC	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V
 _TEXT	SEGMENT
 tv988 = -4						; size = 4
 tv985 = -4						; size = 4
-$T240110 = -4						; size = 4
+$T240109 = -4						; size = 4
 __Bucket$ = -4						; size = 4
 ___$ReturnUdt$ = 8					; size = 4
 tv948 = 12						; size = 4
-__Tmp$240534 = 12					; size = 4
-$T240087 = 12						; size = 4
-$T239700 = 12						; size = 4
+__Tmp$240533 = 12					; size = 4
+$T240086 = 12						; size = 4
+$T239699 = 12						; size = 4
 __Val$ = 12						; size = 4
 __Where$ = 16						; size = 4
 ?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@4@@Z PROC ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >::_Insert, COMDAT
@@ -18359,7 +18359,7 @@ $LN14@Insert@6:
 ; 852  : 					_List.erase(_Where);
 
 	push	eax
-	lea	eax, DWORD PTR $T239700[esp+20]
+	lea	eax, DWORD PTR $T239699[esp+20]
 	push	eax
 	lea	ecx, DWORD PTR [edi+4]
 	call	?erase@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@QAE?AV?$_Iterator@$0A@@12@V?$_Const_iterator@$0A@@12@@Z ; std::list<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *>,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> > >::erase
@@ -18445,7 +18445,7 @@ $LN290@Insert@6:
 	fild	DWORD PTR [edi+12]
 	mov	eax, DWORD PTR [edi+40]
 	mov	esi, DWORD PTR [edi+36]
-	mov	DWORD PTR $T240087[esp+16], eax
+	mov	DWORD PTR $T240086[esp+16], eax
 	test	ecx, ecx
 	jge	SHORT $LN291@Insert@6
 	fadd	DWORD PTR __real@4f800000
@@ -18458,9 +18458,9 @@ $LN291@Insert@6:
 	fadd	DWORD PTR __real@4f800000
 $LN292@Insert@6:
 	fdivp	ST(1), ST(0)
-	fstp	DWORD PTR $T240110[esp+20]
-	fld	DWORD PTR $T240087[esp+16]
-	fld	DWORD PTR $T240110[esp+20]
+	fstp	DWORD PTR $T240109[esp+20]
+	fld	DWORD PTR $T240086[esp+16]
+	fld	DWORD PTR $T240109[esp+20]
 	fcompp
 	fnstsw	ax
 	test	ah, 65					; 00000041H
@@ -18495,7 +18495,7 @@ $LN1@Insert@6:
 	mov	edx, DWORD PTR [edi+8]
 	mov	ebx, DWORD PTR [edi+20]
 	lea	ecx, DWORD PTR [edi+16]
-	mov	DWORD PTR __Tmp$240534[esp+16], edx
+	mov	DWORD PTR __Tmp$240533[esp+16], edx
 	mov	edx, DWORD PTR [ecx+8]
 	cmp	ebx, edx
 	je	SHORT $LN209@Insert@6
@@ -18514,7 +18514,7 @@ $LN234@Insert@6:
 	mov	DWORD PTR [ecx+8], ebx
 $LN209@Insert@6:
 	mov	eax, DWORD PTR [ecx+4]
-	lea	edx, DWORD PTR __Tmp$240534[esp+16]
+	lea	edx, DWORD PTR __Tmp$240533[esp+16]
 	push	edx
 	lea	edx, DWORD PTR [esi+1]
 	push	edx
@@ -18553,7 +18553,7 @@ $LN4@Insert@6:
 _TEXT	ENDS
 ;	COMDAT ?_Reinsert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@$0A@@tr1@std@@@stdext@@IAEXXZ
 _TEXT	SEGMENT
-$T240641 = -8						; size = 8
+$T240640 = -8						; size = 8
 ?_Reinsert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@$0A@@tr1@std@@@stdext@@IAEXXZ PROC ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum GreatWorkArtifactClass *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *> >,0> >::_Reinsert, COMDAT
 ; _this$ = ecx
 
@@ -18578,7 +18578,7 @@ $LL2@Reinsert:
 	push	eax
 	add	eax, 8
 	push	eax
-	lea	edx, DWORD PTR $T240641[esp+20]
+	lea	edx, DWORD PTR $T240640[esp+20]
 	push	edx
 	mov	ecx, esi
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum GreatWorkArtifactClass *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *> >,0> >::_Insert
@@ -18599,7 +18599,7 @@ $LN1@Reinsert:
 _TEXT	ENDS
 ;	COMDAT ?_Reinsert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@$0A@@tr1@std@@@stdext@@IAEXXZ
 _TEXT	SEGMENT
-$T240709 = -8						; size = 8
+$T240708 = -8						; size = 8
 ?_Reinsert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@$0A@@tr1@std@@@stdext@@IAEXXZ PROC ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum GreatWorkSlotType *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *> >,0> >::_Reinsert, COMDAT
 ; _this$ = ecx
 
@@ -18624,7 +18624,7 @@ $LL2@Reinsert@2:
 	push	eax
 	add	eax, 8
 	push	eax
-	lea	edx, DWORD PTR $T240709[esp+20]
+	lea	edx, DWORD PTR $T240708[esp+20]
 	push	edx
 	mov	ecx, esi
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum GreatWorkSlotType *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *> >,0> >::_Insert
@@ -18645,7 +18645,7 @@ $LN1@Reinsert@2:
 _TEXT	ENDS
 ;	COMDAT ?_Reinsert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@IAEXXZ
 _TEXT	SEGMENT
-$T240777 = -8						; size = 8
+$T240776 = -8						; size = 8
 ?_Reinsert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@IAEXXZ PROC ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >::_Reinsert, COMDAT
 ; _this$ = ecx
 
@@ -18670,7 +18670,7 @@ $LL2@Reinsert@3:
 	push	eax
 	add	eax, 8
 	push	eax
-	lea	edx, DWORD PTR $T240777[esp+20]
+	lea	edx, DWORD PTR $T240776[esp+20]
 	push	edx
 	mov	ecx, esi
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >::_Insert
@@ -18693,8 +18693,8 @@ PUBLIC	??0?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\unordered_map
 ;	COMDAT ??0?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@tr1@std@@QAE@XZ
 _TEXT	SEGMENT
-$T240844 = -2						; size = 2
-$T240843 = -2						; size = 1
+$T240843 = -2						; size = 2
+$T240842 = -2						; size = 1
 ??0?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@tr1@std@@QAE@XZ PROC ; std::tr1::unordered_map<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum GreatWorkArtifactClass *,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *> > >::unordered_map<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum GreatWorkArtifactClass *,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *> > >, COMDAT
 ; _this$ = ecx
 
@@ -18703,9 +18703,9 @@ $T240843 = -2						; size = 1
 	push	ecx
 	push	esi
 	mov	esi, ecx
-	lea	eax, DWORD PTR $T240843[esp+8]
+	lea	eax, DWORD PTR $T240842[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T240844[esp+12]
+	lea	ecx, DWORD PTR $T240843[esp+12]
 	push	ecx
 	mov	ecx, esi
 	call	??0?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@$0A@@tr1@std@@@stdext@@QAE@ABV?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@1@ABV?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@std@@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum GreatWorkArtifactClass *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *> >,0> >::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum GreatWorkArtifactClass *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *> >,0> >
@@ -18751,8 +18751,8 @@ PUBLIC	??0?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\unordered_map
 ;	COMDAT ??0?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@tr1@std@@QAE@XZ
 _TEXT	SEGMENT
-$T240885 = -2						; size = 2
-$T240884 = -2						; size = 1
+$T240884 = -2						; size = 2
+$T240883 = -2						; size = 1
 ??0?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@tr1@std@@QAE@XZ PROC ; std::tr1::unordered_map<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum GreatWorkSlotType *,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *> > >::unordered_map<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum GreatWorkSlotType *,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *> > >, COMDAT
 ; _this$ = ecx
 
@@ -18761,9 +18761,9 @@ $T240884 = -2						; size = 1
 	push	ecx
 	push	esi
 	mov	esi, ecx
-	lea	eax, DWORD PTR $T240884[esp+8]
+	lea	eax, DWORD PTR $T240883[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T240885[esp+12]
+	lea	ecx, DWORD PTR $T240884[esp+12]
 	push	ecx
 	mov	ecx, esi
 	call	??0?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@$0A@@tr1@std@@@stdext@@QAE@ABV?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@1@ABV?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@std@@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum GreatWorkSlotType *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *> >,0> >::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum GreatWorkSlotType *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *> >,0> >
@@ -18809,8 +18809,8 @@ PUBLIC	??0?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\unordered_map
 ;	COMDAT ??0?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@tr1@std@@QAE@XZ
 _TEXT	SEGMENT
-$T240926 = -2						; size = 2
-$T240925 = -2						; size = 1
+$T240925 = -2						; size = 2
+$T240924 = -2						; size = 1
 ??0?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@tr1@std@@QAE@XZ PROC ; std::tr1::unordered_map<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> > >::unordered_map<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> > >, COMDAT
 ; _this$ = ecx
 
@@ -18819,9 +18819,9 @@ $T240925 = -2						; size = 1
 	push	ecx
 	push	esi
 	mov	esi, ecx
-	lea	eax, DWORD PTR $T240925[esp+8]
+	lea	eax, DWORD PTR $T240924[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T240926[esp+12]
+	lea	ecx, DWORD PTR $T240925[esp+12]
 	push	ecx
 	mov	ecx, esi
 	call	??0?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@QAE@ABV?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@1@ABV?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@std@@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >
@@ -19173,295 +19173,295 @@ __unwindtable$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z DD 0ffffffffH
 xdata$x	ENDS
 ;	COMDAT ?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z
 _TEXT	SEGMENT
-$T242931 = -556						; size = 2
-$T242930 = -556						; size = 1
-$T242274 = -556						; size = 2
-$T242273 = -556						; size = 1
-$T241463 = -556						; size = 2
-$T241462 = -556						; size = 1
-_it$222206 = -556					; size = 4
-$T241237 = -556						; size = 8
-$T241235 = -556						; size = 4
-$T241233 = -556						; size = 8
-$T241231 = -556						; size = 4
-$T241229 = -556						; size = 8
-$T241227 = -556						; size = 4
-$T241225 = -556						; size = 8
-$T241223 = -556						; size = 4
-$T241221 = -556						; size = 8
-$T241219 = -556						; size = 4
-$T241217 = -556						; size = 8
-$T241215 = -556						; size = 4
-$T241213 = -556						; size = 8
-$T241211 = -556						; size = 4
-$T241209 = -556						; size = 8
-$T241207 = -556						; size = 4
-$T241205 = -556						; size = 8
-$T241203 = -556						; size = 4
-$T241201 = -556						; size = 8
-$T241199 = -556						; size = 4
-$T241197 = -556						; size = 8
-$T241195 = -556						; size = 4
-$T241193 = -556						; size = 8
-$T241191 = -556						; size = 4
-$T241189 = -556						; size = 8
-$T241187 = -556						; size = 4
-$T241185 = -556						; size = 8
-$T241183 = -556						; size = 4
-$T241181 = -556						; size = 8
-$T241179 = -556						; size = 4
-$T241177 = -556						; size = 8
-$T241175 = -556						; size = 4
-$T241173 = -556						; size = 8
-$T241171 = -556						; size = 4
-$T241169 = -556						; size = 8
-$T241167 = -556						; size = 4
-$T241165 = -556						; size = 8
-$T241163 = -556						; size = 4
-$T241161 = -556						; size = 8
-$T241159 = -556						; size = 4
-$T241157 = -556						; size = 8
-$T241155 = -556						; size = 4
-$T241153 = -556						; size = 8
-$T241151 = -556						; size = 4
-$T241149 = -556						; size = 8
-$T241147 = -556						; size = 4
-$T241145 = -556						; size = 8
-$T241143 = -556						; size = 4
-$T241141 = -556						; size = 8
-$T241139 = -556						; size = 4
-$T241137 = -556						; size = 8
-$T241135 = -556						; size = 4
-$T241133 = -556						; size = 8
-$T241131 = -556						; size = 4
-$T241129 = -556						; size = 8
-$T241127 = -556						; size = 4
-$T241125 = -556						; size = 8
-$T241123 = -556						; size = 4
-$T241121 = -556						; size = 8
-$T241119 = -556						; size = 4
-$T241117 = -556						; size = 8
-$T241115 = -556						; size = 4
-$T241113 = -556						; size = 8
-$T241111 = -556						; size = 4
-$T241109 = -556						; size = 8
-$T241107 = -556						; size = 4
-$T241105 = -556						; size = 8
-$T241103 = -556						; size = 4
-$T241101 = -556						; size = 8
-$T241099 = -556						; size = 4
-$T241097 = -556						; size = 8
-$T241095 = -556						; size = 4
-$T241093 = -556						; size = 8
-$T241091 = -556						; size = 4
-$T241089 = -556						; size = 8
-$T241087 = -556						; size = 4
-$T241085 = -556						; size = 8
-$T241083 = -556						; size = 4
-$T241081 = -556						; size = 8
-$T241079 = -556						; size = 4
-$T241077 = -556						; size = 8
-$T241075 = -556						; size = 4
-$T241073 = -556						; size = 8
-$T241071 = -556						; size = 4
-$T241069 = -556						; size = 8
-$T241067 = -556						; size = 4
-$T241065 = -556						; size = 8
-$T241063 = -556						; size = 4
-$T241061 = -556						; size = 8
-$T241059 = -556						; size = 4
-$T241057 = -556						; size = 8
-$T241055 = -556						; size = 4
-$T241053 = -556						; size = 8
-$T241051 = -556						; size = 4
-$T241049 = -556						; size = 8
-$T241047 = -556						; size = 4
-$T241045 = -556						; size = 8
-$T241043 = -556						; size = 4
-$T241041 = -556						; size = 8
-$T241039 = -556						; size = 4
-$T241037 = -556						; size = 8
-$T241035 = -556						; size = 4
-$T241033 = -556						; size = 8
-$T241031 = -556						; size = 4
-$T241029 = -556						; size = 8
-$T241027 = -556						; size = 4
-$T241025 = -556						; size = 8
-$T241023 = -556						; size = 4
-$T241021 = -556						; size = 8
-$T241019 = -556						; size = 4
-$T241017 = -556						; size = 8
-$T241015 = -556						; size = 4
-$T241013 = -556						; size = 8
-$T241011 = -556						; size = 4
-$T241009 = -556						; size = 8
-$T241007 = -556						; size = 4
-_it$220524 = -556					; size = 4
-$T241003 = -556						; size = 8
-$T241001 = -556						; size = 4
-$T240999 = -556						; size = 8
-$T240997 = -556						; size = 4
-$T240995 = -556						; size = 8
-$T240993 = -556						; size = 4
-_it$219167 = -556					; size = 4
-$T240989 = -556						; size = 8
-$T240987 = -556						; size = 4
-$T240985 = -556						; size = 8
-$T240983 = -556						; size = 4
-$T240981 = -556						; size = 8
-$T240979 = -556						; size = 4
-$T240977 = -556						; size = 8
-$T240975 = -556						; size = 4
-$T240973 = -556						; size = 8
-$T240971 = -556						; size = 4
-$T240969 = -556						; size = 8
-$T240967 = -556						; size = 4
-_strMissionType$222205 = -548				; size = 28
-$T241234 = -548						; size = 32
-$T241230 = -548						; size = 32
-$T241226 = -548						; size = 32
-$T241222 = -548						; size = 32
-$T241218 = -548						; size = 32
-$T241214 = -548						; size = 32
-$T241210 = -548						; size = 32
-$T241206 = -548						; size = 32
-$T241202 = -548						; size = 32
-$T241198 = -548						; size = 32
-$T241194 = -548						; size = 32
-$T241190 = -548						; size = 32
-$T241186 = -548						; size = 32
-$T241182 = -548						; size = 32
-$T241178 = -548						; size = 32
-$T241174 = -548						; size = 32
-$T241170 = -548						; size = 32
-$T241166 = -548						; size = 32
-$T241162 = -548						; size = 32
-$T241158 = -548						; size = 32
-$T241154 = -548						; size = 32
-$T241150 = -548						; size = 32
-$T241146 = -548						; size = 32
-$T241142 = -548						; size = 32
-$T241138 = -548						; size = 32
-$T241134 = -548						; size = 32
-$T241130 = -548						; size = 32
-$T241126 = -548						; size = 32
-$T241122 = -548						; size = 32
-$T241118 = -548						; size = 32
-$T241114 = -548						; size = 32
-$T241110 = -548						; size = 32
-$T241106 = -548						; size = 32
-$T241102 = -548						; size = 32
-$T241098 = -548						; size = 32
-$T241094 = -548						; size = 32
-$T241090 = -548						; size = 32
-$T241086 = -548						; size = 32
-$T241082 = -548						; size = 32
-$T241078 = -548						; size = 32
-$T241074 = -548						; size = 32
-$T241070 = -548						; size = 32
-$T241066 = -548						; size = 32
-$T241062 = -548						; size = 32
-$T241058 = -548						; size = 32
-$T241054 = -548						; size = 32
-$T241050 = -548						; size = 32
-$T241046 = -548						; size = 32
-$T241042 = -548						; size = 32
-$T241038 = -548						; size = 32
-$T241034 = -548						; size = 32
-$T241030 = -548						; size = 32
-$T241026 = -548						; size = 32
-$T241022 = -548						; size = 32
-$T241018 = -548						; size = 32
-$T241014 = -548						; size = 32
-$T241010 = -548						; size = 32
-$T241006 = -548						; size = 32
-_strType$220523 = -548					; size = 28
-$T241000 = -548						; size = 32
-$T240996 = -548						; size = 32
-$T240992 = -548						; size = 32
-_strArtifactType$219166 = -548				; size = 28
-$T240986 = -548						; size = 32
-$T240982 = -548						; size = 32
-$T240978 = -548						; size = 32
-$T240974 = -548						; size = 32
-$T240970 = -548						; size = 32
-$T240966 = -548						; size = 32
-$T241236 = -516						; size = 32
-$T241232 = -516						; size = 32
-$T241228 = -516						; size = 32
-$T241224 = -516						; size = 32
-$T241220 = -516						; size = 32
-$T241216 = -516						; size = 32
-$T241212 = -516						; size = 32
-$T241208 = -516						; size = 32
-$T241204 = -516						; size = 32
-$T241200 = -516						; size = 32
-$T241196 = -516						; size = 32
-$T241192 = -516						; size = 32
-$T241188 = -516						; size = 32
-$T241184 = -516						; size = 32
-$T241180 = -516						; size = 32
-$T241176 = -516						; size = 32
-$T241172 = -516						; size = 32
-$T241168 = -516						; size = 32
-$T241164 = -516						; size = 32
-$T241160 = -516						; size = 32
-$T241156 = -516						; size = 32
-$T241152 = -516						; size = 32
-$T241148 = -516						; size = 32
-$T241144 = -516						; size = 32
-$T241140 = -516						; size = 32
-$T241136 = -516						; size = 32
-$T241132 = -516						; size = 32
-$T241128 = -516						; size = 32
-$T241124 = -516						; size = 32
-$T241120 = -516						; size = 32
-$T241116 = -516						; size = 32
-$T241112 = -516						; size = 32
-$T241108 = -516						; size = 32
-$T241104 = -516						; size = 32
-$T241100 = -516						; size = 32
-$T241096 = -516						; size = 32
-$T241092 = -516						; size = 32
-$T241088 = -516						; size = 32
-$T241084 = -516						; size = 32
-$T241080 = -516						; size = 32
-$T241076 = -516						; size = 32
-$T241072 = -516						; size = 32
-$T241068 = -516						; size = 32
-$T241064 = -516						; size = 32
-$T241060 = -516						; size = 32
-$T241056 = -516						; size = 32
-$T241052 = -516						; size = 32
-$T241048 = -516						; size = 32
-$T241044 = -516						; size = 32
-$T241040 = -516						; size = 32
-$T241036 = -516						; size = 32
-$T241032 = -516						; size = 32
-$T241028 = -516						; size = 32
-$T241024 = -516						; size = 32
-$T241020 = -516						; size = 32
-$T241016 = -516						; size = 32
-$T241012 = -516						; size = 32
-$T241008 = -516						; size = 32
-$T241002 = -516						; size = 32
-$T240998 = -516						; size = 32
-$T240994 = -516						; size = 32
-$T240988 = -516						; size = 32
-$T240984 = -516						; size = 32
-$T240980 = -516						; size = 32
-$T240976 = -516						; size = 32
-$T240972 = -516						; size = 32
-$T240968 = -516						; size = 32
-_kMissionTypesLookupTable$221649 = -484			; size = 44
-_kTypeLookupTable$220297 = -440				; size = 44
-_kArtifactTypeLookupTable$218922 = -440			; size = 44
-_kResults$220517 = -396					; size = 64
-_kResults$219160 = -396					; size = 64
-_kResults$222199 = -332					; size = 64
-_msg$222222 = -268					; size = 256
-_msg$220536 = -268					; size = 256
-_msg$219179 = -268					; size = 256
+$T242930 = -556						; size = 2
+$T242929 = -556						; size = 1
+$T242273 = -556						; size = 2
+$T242272 = -556						; size = 1
+$T241462 = -556						; size = 2
+$T241461 = -556						; size = 1
+_it$222205 = -556					; size = 4
+$T241236 = -556						; size = 8
+$T241234 = -556						; size = 4
+$T241232 = -556						; size = 8
+$T241230 = -556						; size = 4
+$T241228 = -556						; size = 8
+$T241226 = -556						; size = 4
+$T241224 = -556						; size = 8
+$T241222 = -556						; size = 4
+$T241220 = -556						; size = 8
+$T241218 = -556						; size = 4
+$T241216 = -556						; size = 8
+$T241214 = -556						; size = 4
+$T241212 = -556						; size = 8
+$T241210 = -556						; size = 4
+$T241208 = -556						; size = 8
+$T241206 = -556						; size = 4
+$T241204 = -556						; size = 8
+$T241202 = -556						; size = 4
+$T241200 = -556						; size = 8
+$T241198 = -556						; size = 4
+$T241196 = -556						; size = 8
+$T241194 = -556						; size = 4
+$T241192 = -556						; size = 8
+$T241190 = -556						; size = 4
+$T241188 = -556						; size = 8
+$T241186 = -556						; size = 4
+$T241184 = -556						; size = 8
+$T241182 = -556						; size = 4
+$T241180 = -556						; size = 8
+$T241178 = -556						; size = 4
+$T241176 = -556						; size = 8
+$T241174 = -556						; size = 4
+$T241172 = -556						; size = 8
+$T241170 = -556						; size = 4
+$T241168 = -556						; size = 8
+$T241166 = -556						; size = 4
+$T241164 = -556						; size = 8
+$T241162 = -556						; size = 4
+$T241160 = -556						; size = 8
+$T241158 = -556						; size = 4
+$T241156 = -556						; size = 8
+$T241154 = -556						; size = 4
+$T241152 = -556						; size = 8
+$T241150 = -556						; size = 4
+$T241148 = -556						; size = 8
+$T241146 = -556						; size = 4
+$T241144 = -556						; size = 8
+$T241142 = -556						; size = 4
+$T241140 = -556						; size = 8
+$T241138 = -556						; size = 4
+$T241136 = -556						; size = 8
+$T241134 = -556						; size = 4
+$T241132 = -556						; size = 8
+$T241130 = -556						; size = 4
+$T241128 = -556						; size = 8
+$T241126 = -556						; size = 4
+$T241124 = -556						; size = 8
+$T241122 = -556						; size = 4
+$T241120 = -556						; size = 8
+$T241118 = -556						; size = 4
+$T241116 = -556						; size = 8
+$T241114 = -556						; size = 4
+$T241112 = -556						; size = 8
+$T241110 = -556						; size = 4
+$T241108 = -556						; size = 8
+$T241106 = -556						; size = 4
+$T241104 = -556						; size = 8
+$T241102 = -556						; size = 4
+$T241100 = -556						; size = 8
+$T241098 = -556						; size = 4
+$T241096 = -556						; size = 8
+$T241094 = -556						; size = 4
+$T241092 = -556						; size = 8
+$T241090 = -556						; size = 4
+$T241088 = -556						; size = 8
+$T241086 = -556						; size = 4
+$T241084 = -556						; size = 8
+$T241082 = -556						; size = 4
+$T241080 = -556						; size = 8
+$T241078 = -556						; size = 4
+$T241076 = -556						; size = 8
+$T241074 = -556						; size = 4
+$T241072 = -556						; size = 8
+$T241070 = -556						; size = 4
+$T241068 = -556						; size = 8
+$T241066 = -556						; size = 4
+$T241064 = -556						; size = 8
+$T241062 = -556						; size = 4
+$T241060 = -556						; size = 8
+$T241058 = -556						; size = 4
+$T241056 = -556						; size = 8
+$T241054 = -556						; size = 4
+$T241052 = -556						; size = 8
+$T241050 = -556						; size = 4
+$T241048 = -556						; size = 8
+$T241046 = -556						; size = 4
+$T241044 = -556						; size = 8
+$T241042 = -556						; size = 4
+$T241040 = -556						; size = 8
+$T241038 = -556						; size = 4
+$T241036 = -556						; size = 8
+$T241034 = -556						; size = 4
+$T241032 = -556						; size = 8
+$T241030 = -556						; size = 4
+$T241028 = -556						; size = 8
+$T241026 = -556						; size = 4
+$T241024 = -556						; size = 8
+$T241022 = -556						; size = 4
+$T241020 = -556						; size = 8
+$T241018 = -556						; size = 4
+$T241016 = -556						; size = 8
+$T241014 = -556						; size = 4
+$T241012 = -556						; size = 8
+$T241010 = -556						; size = 4
+$T241008 = -556						; size = 8
+$T241006 = -556						; size = 4
+_it$220523 = -556					; size = 4
+$T241002 = -556						; size = 8
+$T241000 = -556						; size = 4
+$T240998 = -556						; size = 8
+$T240996 = -556						; size = 4
+$T240994 = -556						; size = 8
+$T240992 = -556						; size = 4
+_it$219166 = -556					; size = 4
+$T240988 = -556						; size = 8
+$T240986 = -556						; size = 4
+$T240984 = -556						; size = 8
+$T240982 = -556						; size = 4
+$T240980 = -556						; size = 8
+$T240978 = -556						; size = 4
+$T240976 = -556						; size = 8
+$T240974 = -556						; size = 4
+$T240972 = -556						; size = 8
+$T240970 = -556						; size = 4
+$T240968 = -556						; size = 8
+$T240966 = -556						; size = 4
+_strMissionType$222204 = -548				; size = 28
+$T241233 = -548						; size = 32
+$T241229 = -548						; size = 32
+$T241225 = -548						; size = 32
+$T241221 = -548						; size = 32
+$T241217 = -548						; size = 32
+$T241213 = -548						; size = 32
+$T241209 = -548						; size = 32
+$T241205 = -548						; size = 32
+$T241201 = -548						; size = 32
+$T241197 = -548						; size = 32
+$T241193 = -548						; size = 32
+$T241189 = -548						; size = 32
+$T241185 = -548						; size = 32
+$T241181 = -548						; size = 32
+$T241177 = -548						; size = 32
+$T241173 = -548						; size = 32
+$T241169 = -548						; size = 32
+$T241165 = -548						; size = 32
+$T241161 = -548						; size = 32
+$T241157 = -548						; size = 32
+$T241153 = -548						; size = 32
+$T241149 = -548						; size = 32
+$T241145 = -548						; size = 32
+$T241141 = -548						; size = 32
+$T241137 = -548						; size = 32
+$T241133 = -548						; size = 32
+$T241129 = -548						; size = 32
+$T241125 = -548						; size = 32
+$T241121 = -548						; size = 32
+$T241117 = -548						; size = 32
+$T241113 = -548						; size = 32
+$T241109 = -548						; size = 32
+$T241105 = -548						; size = 32
+$T241101 = -548						; size = 32
+$T241097 = -548						; size = 32
+$T241093 = -548						; size = 32
+$T241089 = -548						; size = 32
+$T241085 = -548						; size = 32
+$T241081 = -548						; size = 32
+$T241077 = -548						; size = 32
+$T241073 = -548						; size = 32
+$T241069 = -548						; size = 32
+$T241065 = -548						; size = 32
+$T241061 = -548						; size = 32
+$T241057 = -548						; size = 32
+$T241053 = -548						; size = 32
+$T241049 = -548						; size = 32
+$T241045 = -548						; size = 32
+$T241041 = -548						; size = 32
+$T241037 = -548						; size = 32
+$T241033 = -548						; size = 32
+$T241029 = -548						; size = 32
+$T241025 = -548						; size = 32
+$T241021 = -548						; size = 32
+$T241017 = -548						; size = 32
+$T241013 = -548						; size = 32
+$T241009 = -548						; size = 32
+$T241005 = -548						; size = 32
+_strType$220522 = -548					; size = 28
+$T240999 = -548						; size = 32
+$T240995 = -548						; size = 32
+$T240991 = -548						; size = 32
+_strArtifactType$219165 = -548				; size = 28
+$T240985 = -548						; size = 32
+$T240981 = -548						; size = 32
+$T240977 = -548						; size = 32
+$T240973 = -548						; size = 32
+$T240969 = -548						; size = 32
+$T240965 = -548						; size = 32
+$T241235 = -516						; size = 32
+$T241231 = -516						; size = 32
+$T241227 = -516						; size = 32
+$T241223 = -516						; size = 32
+$T241219 = -516						; size = 32
+$T241215 = -516						; size = 32
+$T241211 = -516						; size = 32
+$T241207 = -516						; size = 32
+$T241203 = -516						; size = 32
+$T241199 = -516						; size = 32
+$T241195 = -516						; size = 32
+$T241191 = -516						; size = 32
+$T241187 = -516						; size = 32
+$T241183 = -516						; size = 32
+$T241179 = -516						; size = 32
+$T241175 = -516						; size = 32
+$T241171 = -516						; size = 32
+$T241167 = -516						; size = 32
+$T241163 = -516						; size = 32
+$T241159 = -516						; size = 32
+$T241155 = -516						; size = 32
+$T241151 = -516						; size = 32
+$T241147 = -516						; size = 32
+$T241143 = -516						; size = 32
+$T241139 = -516						; size = 32
+$T241135 = -516						; size = 32
+$T241131 = -516						; size = 32
+$T241127 = -516						; size = 32
+$T241123 = -516						; size = 32
+$T241119 = -516						; size = 32
+$T241115 = -516						; size = 32
+$T241111 = -516						; size = 32
+$T241107 = -516						; size = 32
+$T241103 = -516						; size = 32
+$T241099 = -516						; size = 32
+$T241095 = -516						; size = 32
+$T241091 = -516						; size = 32
+$T241087 = -516						; size = 32
+$T241083 = -516						; size = 32
+$T241079 = -516						; size = 32
+$T241075 = -516						; size = 32
+$T241071 = -516						; size = 32
+$T241067 = -516						; size = 32
+$T241063 = -516						; size = 32
+$T241059 = -516						; size = 32
+$T241055 = -516						; size = 32
+$T241051 = -516						; size = 32
+$T241047 = -516						; size = 32
+$T241043 = -516						; size = 32
+$T241039 = -516						; size = 32
+$T241035 = -516						; size = 32
+$T241031 = -516						; size = 32
+$T241027 = -516						; size = 32
+$T241023 = -516						; size = 32
+$T241019 = -516						; size = 32
+$T241015 = -516						; size = 32
+$T241011 = -516						; size = 32
+$T241007 = -516						; size = 32
+$T241001 = -516						; size = 32
+$T240997 = -516						; size = 32
+$T240993 = -516						; size = 32
+$T240987 = -516						; size = 32
+$T240983 = -516						; size = 32
+$T240979 = -516						; size = 32
+$T240975 = -516						; size = 32
+$T240971 = -516						; size = 32
+$T240967 = -516						; size = 32
+_kMissionTypesLookupTable$221648 = -484			; size = 44
+_kTypeLookupTable$220296 = -440				; size = 44
+_kArtifactTypeLookupTable$218921 = -440			; size = 44
+_kResults$220516 = -396					; size = 64
+_kResults$219159 = -396					; size = 64
+_kResults$222198 = -332					; size = 64
+_msg$222221 = -268					; size = 256
+_msg$220535 = -268					; size = 256
+_msg$219178 = -268					; size = 256
 __$EHRec$ = -12						; size = 12
 _db$ = 8						; size = 4
 ?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z PROC ; CvTypes::AcquireTypes, COMDAT
@@ -19485,11 +19485,11 @@ _db$ = 8						; size = 4
 ; 92   : 		typedef std::tr1::unordered_map<std::string, GreatWorkArtifactClass*> LookupTable;
 ; 93   : 		LookupTable kArtifactTypeLookupTable;
 
-	lea	eax, DWORD PTR $T241462[esp+572]
+	lea	eax, DWORD PTR $T241461[esp+572]
 	push	eax
-	lea	ecx, DWORD PTR $T241463[esp+576]
+	lea	ecx, DWORD PTR $T241462[esp+576]
 	push	ecx
-	lea	ecx, DWORD PTR _kArtifactTypeLookupTable$218922[esp+580]
+	lea	ecx, DWORD PTR _kArtifactTypeLookupTable$218921[esp+580]
 	call	??0?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@$0A@@tr1@std@@@stdext@@QAE@ABV?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@1@ABV?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@std@@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum GreatWorkArtifactClass *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *> >,0> >::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum GreatWorkArtifactClass *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *> >,0> >
 
 ; 94   : 		kArtifactTypeLookupTable.insert(make_pair(std::string("ARTIFACT_ANCIENT_RUIN"), &s_eARTIFACT_ANCIENT_RUIN));
@@ -19497,34 +19497,34 @@ _db$ = 8						; size = 4
 	push	OFFSET ?s_eARTIFACT_ANCIENT_RUIN@@3W4GreatWorkArtifactClass@@A ; s_eARTIFACT_ANCIENT_RUIN
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
-	mov	DWORD PTR $T240967[esp+604], esp
-	push	OFFSET $SG219129
+	mov	DWORD PTR $T240966[esp+604], esp
+	push	OFFSET $SG219128
 	mov	DWORD PTR __$EHRec$[esp+616], 0
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	edx, DWORD PTR $T240968[esp+604]
+	lea	edx, DWORD PTR $T240967[esp+604]
 	push	edx
 	call	??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4GreatWorkArtifactClass@@@Z ; std::make_pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum GreatWorkArtifactClass *>
 	add	esp, 36					; 00000024H
 	mov	esi, eax
 	push	esi
-	lea	ecx, DWORD PTR $T240966[esp+576]
+	lea	ecx, DWORD PTR $T240965[esp+576]
 	mov	BYTE PTR __$EHRec$[esp+584], 1
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	eax, DWORD PTR [esi+28]
-	mov	DWORD PTR $T240966[esp+600], eax
-	mov	ecx, DWORD PTR _kArtifactTypeLookupTable$218922[esp+580]
+	mov	DWORD PTR $T240965[esp+600], eax
+	mov	ecx, DWORD PTR _kArtifactTypeLookupTable$218921[esp+580]
 	push	ecx
-	lea	edx, DWORD PTR $T240966[esp+576]
+	lea	edx, DWORD PTR $T240965[esp+576]
 	push	edx
-	lea	eax, DWORD PTR $T240969[esp+580]
+	lea	eax, DWORD PTR $T240968[esp+580]
 	push	eax
-	lea	ecx, DWORD PTR _kArtifactTypeLookupTable$218922[esp+584]
+	lea	ecx, DWORD PTR _kArtifactTypeLookupTable$218921[esp+584]
 	mov	BYTE PTR __$EHRec$[esp+592], 2
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum GreatWorkArtifactClass *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *> >,0> >::_Insert
-	lea	ecx, DWORD PTR $T240966[esp+572]
+	lea	ecx, DWORD PTR $T240965[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T240968[esp+572]
+	lea	ecx, DWORD PTR $T240967[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 0
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -19533,34 +19533,34 @@ _db$ = 8						; size = 4
 	push	OFFSET ?s_eARTIFACT_BARBARIAN_CAMP@@3W4GreatWorkArtifactClass@@A ; s_eARTIFACT_BARBARIAN_CAMP
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
-	mov	DWORD PTR $T240971[esp+604], esp
-	push	OFFSET $SG219135
+	mov	DWORD PTR $T240970[esp+604], esp
+	push	OFFSET $SG219134
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T240972[esp+604]
+	lea	ecx, DWORD PTR $T240971[esp+604]
 	push	ecx
 	call	??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4GreatWorkArtifactClass@@@Z ; std::make_pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum GreatWorkArtifactClass *>
 	add	esp, 36					; 00000024H
 	mov	esi, eax
 	mov	bl, 3
 	push	esi
-	lea	ecx, DWORD PTR $T240970[esp+576]
+	lea	ecx, DWORD PTR $T240969[esp+576]
 	mov	BYTE PTR __$EHRec$[esp+584], bl
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	edx, DWORD PTR [esi+28]
-	mov	DWORD PTR $T240970[esp+600], edx
-	mov	eax, DWORD PTR _kArtifactTypeLookupTable$218922[esp+580]
+	mov	DWORD PTR $T240969[esp+600], edx
+	mov	eax, DWORD PTR _kArtifactTypeLookupTable$218921[esp+580]
 	push	eax
-	lea	ecx, DWORD PTR $T240970[esp+576]
+	lea	ecx, DWORD PTR $T240969[esp+576]
 	push	ecx
-	lea	edx, DWORD PTR $T240973[esp+580]
+	lea	edx, DWORD PTR $T240972[esp+580]
 	push	edx
-	lea	ecx, DWORD PTR _kArtifactTypeLookupTable$218922[esp+584]
+	lea	ecx, DWORD PTR _kArtifactTypeLookupTable$218921[esp+584]
 	mov	BYTE PTR __$EHRec$[esp+592], 4
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum GreatWorkArtifactClass *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *> >,0> >::_Insert
-	lea	ecx, DWORD PTR $T240970[esp+572]
+	lea	ecx, DWORD PTR $T240969[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T240972[esp+572]
+	lea	ecx, DWORD PTR $T240971[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 0
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -19569,34 +19569,34 @@ _db$ = 8						; size = 4
 	push	OFFSET ?s_eARTIFACT_BATTLE_RANGED@@3W4GreatWorkArtifactClass@@A ; s_eARTIFACT_BATTLE_RANGED
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
-	mov	DWORD PTR $T240975[esp+604], esp
-	push	OFFSET $SG219141
+	mov	DWORD PTR $T240974[esp+604], esp
+	push	OFFSET $SG219140
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	eax, DWORD PTR $T240976[esp+604]
+	lea	eax, DWORD PTR $T240975[esp+604]
 	push	eax
 	call	??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4GreatWorkArtifactClass@@@Z ; std::make_pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum GreatWorkArtifactClass *>
 	add	esp, 36					; 00000024H
 	mov	esi, eax
 	mov	bl, 5
 	push	esi
-	lea	ecx, DWORD PTR $T240974[esp+576]
+	lea	ecx, DWORD PTR $T240973[esp+576]
 	mov	BYTE PTR __$EHRec$[esp+584], bl
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	ecx, DWORD PTR [esi+28]
-	mov	DWORD PTR $T240974[esp+600], ecx
-	mov	edx, DWORD PTR _kArtifactTypeLookupTable$218922[esp+580]
+	mov	DWORD PTR $T240973[esp+600], ecx
+	mov	edx, DWORD PTR _kArtifactTypeLookupTable$218921[esp+580]
 	push	edx
-	lea	eax, DWORD PTR $T240974[esp+576]
+	lea	eax, DWORD PTR $T240973[esp+576]
 	push	eax
-	lea	ecx, DWORD PTR $T240977[esp+580]
+	lea	ecx, DWORD PTR $T240976[esp+580]
 	push	ecx
-	lea	ecx, DWORD PTR _kArtifactTypeLookupTable$218922[esp+584]
+	lea	ecx, DWORD PTR _kArtifactTypeLookupTable$218921[esp+584]
 	mov	BYTE PTR __$EHRec$[esp+592], 6
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum GreatWorkArtifactClass *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *> >,0> >::_Insert
-	lea	ecx, DWORD PTR $T240974[esp+572]
+	lea	ecx, DWORD PTR $T240973[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T240976[esp+572]
+	lea	ecx, DWORD PTR $T240975[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 0
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -19605,34 +19605,34 @@ _db$ = 8						; size = 4
 	push	OFFSET ?s_eARTIFACT_BATTLE_MELEE@@3W4GreatWorkArtifactClass@@A ; s_eARTIFACT_BATTLE_MELEE
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
-	mov	DWORD PTR $T240979[esp+604], esp
-	push	OFFSET $SG219147
+	mov	DWORD PTR $T240978[esp+604], esp
+	push	OFFSET $SG219146
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	edx, DWORD PTR $T240980[esp+604]
+	lea	edx, DWORD PTR $T240979[esp+604]
 	push	edx
 	call	??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4GreatWorkArtifactClass@@@Z ; std::make_pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum GreatWorkArtifactClass *>
 	add	esp, 36					; 00000024H
 	mov	esi, eax
 	mov	bl, 7
 	push	esi
-	lea	ecx, DWORD PTR $T240978[esp+576]
+	lea	ecx, DWORD PTR $T240977[esp+576]
 	mov	BYTE PTR __$EHRec$[esp+584], bl
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	eax, DWORD PTR [esi+28]
-	mov	DWORD PTR $T240978[esp+600], eax
-	mov	ecx, DWORD PTR _kArtifactTypeLookupTable$218922[esp+580]
+	mov	DWORD PTR $T240977[esp+600], eax
+	mov	ecx, DWORD PTR _kArtifactTypeLookupTable$218921[esp+580]
 	push	ecx
-	lea	edx, DWORD PTR $T240978[esp+576]
+	lea	edx, DWORD PTR $T240977[esp+576]
 	push	edx
-	lea	eax, DWORD PTR $T240981[esp+580]
+	lea	eax, DWORD PTR $T240980[esp+580]
 	push	eax
-	lea	ecx, DWORD PTR _kArtifactTypeLookupTable$218922[esp+584]
+	lea	ecx, DWORD PTR _kArtifactTypeLookupTable$218921[esp+584]
 	mov	BYTE PTR __$EHRec$[esp+592], 8
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum GreatWorkArtifactClass *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *> >,0> >::_Insert
-	lea	ecx, DWORD PTR $T240978[esp+572]
+	lea	ecx, DWORD PTR $T240977[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T240980[esp+572]
+	lea	ecx, DWORD PTR $T240979[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 0
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -19641,34 +19641,34 @@ _db$ = 8						; size = 4
 	push	OFFSET ?s_eARTIFACT_RAZED_CITY@@3W4GreatWorkArtifactClass@@A ; s_eARTIFACT_RAZED_CITY
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
-	mov	DWORD PTR $T240983[esp+604], esp
-	push	OFFSET $SG219153
+	mov	DWORD PTR $T240982[esp+604], esp
+	push	OFFSET $SG219152
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T240984[esp+604]
+	lea	ecx, DWORD PTR $T240983[esp+604]
 	push	ecx
 	call	??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4GreatWorkArtifactClass@@@Z ; std::make_pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum GreatWorkArtifactClass *>
 	add	esp, 36					; 00000024H
 	mov	esi, eax
 	mov	bl, 9
 	push	esi
-	lea	ecx, DWORD PTR $T240982[esp+576]
+	lea	ecx, DWORD PTR $T240981[esp+576]
 	mov	BYTE PTR __$EHRec$[esp+584], bl
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	edx, DWORD PTR [esi+28]
-	mov	DWORD PTR $T240982[esp+600], edx
-	mov	eax, DWORD PTR _kArtifactTypeLookupTable$218922[esp+580]
+	mov	DWORD PTR $T240981[esp+600], edx
+	mov	eax, DWORD PTR _kArtifactTypeLookupTable$218921[esp+580]
 	push	eax
-	lea	ecx, DWORD PTR $T240982[esp+576]
+	lea	ecx, DWORD PTR $T240981[esp+576]
 	push	ecx
-	lea	edx, DWORD PTR $T240985[esp+580]
+	lea	edx, DWORD PTR $T240984[esp+580]
 	push	edx
-	lea	ecx, DWORD PTR _kArtifactTypeLookupTable$218922[esp+584]
+	lea	ecx, DWORD PTR _kArtifactTypeLookupTable$218921[esp+584]
 	mov	BYTE PTR __$EHRec$[esp+592], 10		; 0000000aH
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum GreatWorkArtifactClass *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *> >,0> >::_Insert
-	lea	ecx, DWORD PTR $T240982[esp+572]
+	lea	ecx, DWORD PTR $T240981[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T240984[esp+572]
+	lea	ecx, DWORD PTR $T240983[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 0
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -19677,34 +19677,34 @@ _db$ = 8						; size = 4
 	push	OFFSET ?s_eARTIFACT_WRITING@@3W4GreatWorkArtifactClass@@A ; s_eARTIFACT_WRITING
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
-	mov	DWORD PTR $T240987[esp+604], esp
-	push	OFFSET $SG219159
+	mov	DWORD PTR $T240986[esp+604], esp
+	push	OFFSET $SG219158
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	eax, DWORD PTR $T240988[esp+604]
+	lea	eax, DWORD PTR $T240987[esp+604]
 	push	eax
 	call	??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4GreatWorkArtifactClass@@@Z ; std::make_pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum GreatWorkArtifactClass *>
 	add	esp, 36					; 00000024H
 	mov	esi, eax
 	mov	bl, 11					; 0000000bH
 	push	esi
-	lea	ecx, DWORD PTR $T240986[esp+576]
+	lea	ecx, DWORD PTR $T240985[esp+576]
 	mov	BYTE PTR __$EHRec$[esp+584], bl
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	ecx, DWORD PTR [esi+28]
-	mov	DWORD PTR $T240986[esp+600], ecx
-	mov	edx, DWORD PTR _kArtifactTypeLookupTable$218922[esp+580]
+	mov	DWORD PTR $T240985[esp+600], ecx
+	mov	edx, DWORD PTR _kArtifactTypeLookupTable$218921[esp+580]
 	push	edx
-	lea	eax, DWORD PTR $T240986[esp+576]
+	lea	eax, DWORD PTR $T240985[esp+576]
 	push	eax
-	lea	ecx, DWORD PTR $T240989[esp+580]
+	lea	ecx, DWORD PTR $T240988[esp+580]
 	push	ecx
-	lea	ecx, DWORD PTR _kArtifactTypeLookupTable$218922[esp+584]
+	lea	ecx, DWORD PTR _kArtifactTypeLookupTable$218921[esp+584]
 	mov	BYTE PTR __$EHRec$[esp+592], 12		; 0000000cH
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum GreatWorkArtifactClass *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *> >,0> >::_Insert
-	lea	ecx, DWORD PTR $T240986[esp+572]
+	lea	ecx, DWORD PTR $T240985[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T240988[esp+572]
+	lea	ecx, DWORD PTR $T240987[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 0
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -19713,7 +19713,7 @@ _db$ = 8						; size = 4
 
 	mov	edi, DWORD PTR __imp_??0Results@Database@@QAE@PBD@Z
 	push	0
-	lea	ecx, DWORD PTR _kResults$219160[esp+576]
+	lea	ecx, DWORD PTR _kResults$219159[esp+576]
 	call	edi
 
 ; 102  : 		if(db.Execute(kResults, "SELECT Type, ID from GreatWorkArtifactClasses"))
@@ -19721,8 +19721,8 @@ _db$ = 8						; size = 4
 	mov	ecx, DWORD PTR _db$[esp+568]
 	mov	ebp, DWORD PTR __imp_?Execute@Connection@Database@@QBE_NAAVResults@2@PBDH@Z
 	push	-1
-	push	OFFSET $SG219162
-	lea	edx, DWORD PTR _kResults$219160[esp+580]
+	push	OFFSET $SG219161
+	lea	edx, DWORD PTR _kResults$219159[esp+580]
 	mov	bl, 13					; 0000000dH
 	push	edx
 	mov	BYTE PTR __$EHRec$[esp+592], bl
@@ -19733,7 +19733,7 @@ _db$ = 8						; size = 4
 ; 103  : 		{
 ; 104  : 			while(kResults.Step())
 
-	lea	ecx, DWORD PTR _kResults$219160[esp+572]
+	lea	ecx, DWORD PTR _kResults$219159[esp+572]
 	call	DWORD PTR __imp_?Step@Results@Database@@QAE_NXZ
 	test	al, al
 	je	$LN23@AcquireTyp
@@ -19744,33 +19744,33 @@ $LL24@AcquireTyp:
 ; 106  : 				std::string strArtifactType = kResults.GetText(0);
 
 	push	0
-	lea	ecx, DWORD PTR _kResults$219160[esp+576]
+	lea	ecx, DWORD PTR _kResults$219159[esp+576]
 	call	DWORD PTR __imp_?GetText@Results@Database@@QAEPBDH@Z
 	push	eax
-	lea	ecx, DWORD PTR _strArtifactType$219166[esp+576]
+	lea	ecx, DWORD PTR _strArtifactType$219165[esp+576]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 
 ; 107  : 				LookupTable::iterator it = kArtifactTypeLookupTable.find(strArtifactType);
 
-	lea	eax, DWORD PTR _strArtifactType$219166[esp+572]
+	lea	eax, DWORD PTR _strArtifactType$219165[esp+572]
 	push	eax
-	lea	ecx, DWORD PTR _it$219167[esp+576]
+	lea	ecx, DWORD PTR _it$219166[esp+576]
 	push	ecx
-	lea	ecx, DWORD PTR _kArtifactTypeLookupTable$218922[esp+580]
+	lea	ecx, DWORD PTR _kArtifactTypeLookupTable$218921[esp+580]
 	mov	BYTE PTR __$EHRec$[esp+588], 14		; 0000000eH
 	call	?lower_bound@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@$0A@@tr1@std@@@stdext@@QAE?AV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@std@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@5@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum GreatWorkArtifactClass *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkArtifactClass *> >,0> >::lower_bound
 
 ; 108  : 				if(it != kArtifactTypeLookupTable.end())
 
-	mov	esi, DWORD PTR _it$219167[esp+572]
-	cmp	esi, DWORD PTR _kArtifactTypeLookupTable$218922[esp+580]
+	mov	esi, DWORD PTR _it$219166[esp+572]
+	cmp	esi, DWORD PTR _kArtifactTypeLookupTable$218921[esp+580]
 	je	SHORT $LN22@AcquireTyp
 
 ; 109  : 				{
 ; 110  : 					(*it->second) = static_cast<GreatWorkArtifactClass>(kResults.GetInt(1));
 
 	push	1
-	lea	ecx, DWORD PTR _kResults$219160[esp+576]
+	lea	ecx, DWORD PTR _kResults$219159[esp+576]
 	call	DWORD PTR __imp_?GetInt@Results@Database@@QAEHH@Z
 	mov	edx, DWORD PTR [esi+36]
 	mov	DWORD PTR [edx], eax
@@ -19779,10 +19779,10 @@ $LN22@AcquireTyp:
 ; 111  : 				}
 ; 112  : 			}
 
-	lea	ecx, DWORD PTR _strArtifactType$219166[esp+572]
+	lea	ecx, DWORD PTR _strArtifactType$219165[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR _kResults$219160[esp+572]
+	lea	ecx, DWORD PTR _kResults$219159[esp+572]
 	call	DWORD PTR __imp_?Step@Results@Database@@QAE_NXZ
 	test	al, al
 	jne	SHORT $LL24@AcquireTyp
@@ -19792,7 +19792,7 @@ $LN23@AcquireTyp:
 ; 114  : 
 ; 115  : 		for(LookupTable::iterator it = kArtifactTypeLookupTable.begin(); it != kArtifactTypeLookupTable.end(); ++it)
 
-	mov	eax, DWORD PTR _kArtifactTypeLookupTable$218922[esp+580]
+	mov	eax, DWORD PTR _kArtifactTypeLookupTable$218921[esp+580]
 	mov	esi, DWORD PTR [eax]
 	cmp	esi, eax
 	je	$LN1906@AcquireTyp
@@ -19811,10 +19811,10 @@ $LL393@AcquireTyp:
 ; 119  : 				char msg[256] = {0};
 
 	push	255					; 000000ffH
-	lea	edx, DWORD PTR _msg$219179[esp+577]
+	lea	edx, DWORD PTR _msg$219178[esp+577]
 	push	ebx
 	push	edx
-	mov	BYTE PTR _msg$219179[esp+584], bl
+	mov	BYTE PTR _msg$219178[esp+584], bl
 	call	_memset
 	add	esp, 12					; 0000000cH
 
@@ -19823,8 +19823,8 @@ $LL393@AcquireTyp:
 	lea	ecx, DWORD PTR [esi+8]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
-	lea	eax, DWORD PTR _msg$219179[esp+576]
-	push	OFFSET $SG219185
+	lea	eax, DWORD PTR _msg$219178[esp+576]
+	push	OFFSET $SG219184
 	push	eax
 	call	??$sprintf_s@$0BAA@@@YAHAAY0BAA@DPBDZZ	; sprintf_s<256>
 	add	esp, 12					; 0000000cH
@@ -19837,18 +19837,18 @@ $LL393@AcquireTyp:
 	push	1
 	mov	ecx, eax
 	mov	eax, DWORD PTR [edx+12]
-	push	OFFSET $SG219187
+	push	OFFSET $SG219186
 	call	eax
 
 ; 122  : 				pLog->WarningMsg(msg);
 
 	mov	ecx, DWORD PTR [eax]
-	lea	edx, DWORD PTR _msg$219179[esp+572]
+	lea	edx, DWORD PTR _msg$219178[esp+572]
 	push	edx
 	push	eax
 	mov	eax, DWORD PTR [ecx+8]
 	call	eax
-	mov	eax, DWORD PTR _kArtifactTypeLookupTable$218922[esp+588]
+	mov	eax, DWORD PTR _kArtifactTypeLookupTable$218921[esp+588]
 	add	esp, 8
 $LN20@AcquireTyp:
 	mov	esi, DWORD PTR [esi]
@@ -19869,10 +19869,10 @@ $LN19@AcquireTyp:
 ; 125  : 		}
 ; 126  : 	}
 
-	lea	ecx, DWORD PTR _kResults$219160[esp+572]
+	lea	ecx, DWORD PTR _kResults$219159[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 0
 	call	DWORD PTR __imp_??1Results@Database@@UAE@XZ
-	mov	eax, DWORD PTR _kArtifactTypeLookupTable$218922[esp+592]
+	mov	eax, DWORD PTR _kArtifactTypeLookupTable$218921[esp+592]
 	mov	DWORD PTR __$EHRec$[esp+580], -1
 	cmp	eax, ebx
 	je	SHORT $LN437@AcquireTyp
@@ -19880,16 +19880,16 @@ $LN19@AcquireTyp:
 	call	??3@YAXPAX@Z				; operator delete
 	add	esp, 4
 $LN437@AcquireTyp:
-	mov	eax, DWORD PTR _kArtifactTypeLookupTable$218922[esp+580]
-	mov	DWORD PTR _kArtifactTypeLookupTable$218922[esp+592], ebx
-	mov	DWORD PTR _kArtifactTypeLookupTable$218922[esp+596], ebx
-	mov	DWORD PTR _kArtifactTypeLookupTable$218922[esp+600], ebx
+	mov	eax, DWORD PTR _kArtifactTypeLookupTable$218921[esp+580]
+	mov	DWORD PTR _kArtifactTypeLookupTable$218921[esp+592], ebx
+	mov	DWORD PTR _kArtifactTypeLookupTable$218921[esp+596], ebx
+	mov	DWORD PTR _kArtifactTypeLookupTable$218921[esp+600], ebx
 	mov	esi, DWORD PTR [eax]
 	mov	DWORD PTR [eax], eax
-	mov	eax, DWORD PTR _kArtifactTypeLookupTable$218922[esp+580]
+	mov	eax, DWORD PTR _kArtifactTypeLookupTable$218921[esp+580]
 	mov	DWORD PTR [eax+4], eax
-	mov	eax, DWORD PTR _kArtifactTypeLookupTable$218922[esp+580]
-	mov	DWORD PTR _kArtifactTypeLookupTable$218922[esp+584], ebx
+	mov	eax, DWORD PTR _kArtifactTypeLookupTable$218921[esp+580]
+	mov	DWORD PTR _kArtifactTypeLookupTable$218921[esp+584], ebx
 	cmp	esi, eax
 	je	SHORT $LN443@AcquireTyp
 	npad	1
@@ -19899,7 +19899,7 @@ $LL445@AcquireTyp:
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 	push	esi
 	call	??3@YAXPAX@Z				; operator delete
-	mov	eax, DWORD PTR _kArtifactTypeLookupTable$218922[esp+584]
+	mov	eax, DWORD PTR _kArtifactTypeLookupTable$218921[esp+584]
 	add	esp, 4
 	mov	esi, ebx
 	cmp	ebx, eax
@@ -19915,11 +19915,11 @@ $LN443@AcquireTyp:
 ; 130  : 		typedef std::tr1::unordered_map<std::string, GreatWorkSlotType*> LookupTable;
 ; 131  : 		LookupTable kTypeLookupTable;
 
-	lea	ecx, DWORD PTR $T242273[esp+572]
+	lea	ecx, DWORD PTR $T242272[esp+572]
 	push	ecx
-	lea	edx, DWORD PTR $T242274[esp+576]
+	lea	edx, DWORD PTR $T242273[esp+576]
 	push	edx
-	lea	ecx, DWORD PTR _kTypeLookupTable$220297[esp+580]
+	lea	ecx, DWORD PTR _kTypeLookupTable$220296[esp+580]
 	call	??0?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@$0A@@tr1@std@@@stdext@@QAE@ABV?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@1@ABV?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@std@@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum GreatWorkSlotType *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *> >,0> >::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum GreatWorkSlotType *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *> >,0> >
 
 ; 132  : 		kTypeLookupTable.insert(make_pair(std::string("GREAT_WORK_SLOT_ART_ARTIFACT"), &s_eGREAT_WORK_SLOT_ART_ARTIFACT));
@@ -19927,35 +19927,35 @@ $LN443@AcquireTyp:
 	push	OFFSET ?s_eGREAT_WORK_SLOT_ART_ARTIFACT@@3W4GreatWorkSlotType@@A ; s_eGREAT_WORK_SLOT_ART_ARTIFACT
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
-	mov	DWORD PTR $T240993[esp+604], esp
-	push	OFFSET $SG220504
+	mov	DWORD PTR $T240992[esp+604], esp
+	push	OFFSET $SG220503
 	mov	DWORD PTR __$EHRec$[esp+616], 15	; 0000000fH
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	eax, DWORD PTR $T240994[esp+604]
+	lea	eax, DWORD PTR $T240993[esp+604]
 	push	eax
 	call	??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4GreatWorkSlotType@@@Z ; std::make_pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum GreatWorkSlotType *>
 	add	esp, 36					; 00000024H
 	mov	esi, eax
 	mov	bl, 16					; 00000010H
 	push	esi
-	lea	ecx, DWORD PTR $T240992[esp+576]
+	lea	ecx, DWORD PTR $T240991[esp+576]
 	mov	BYTE PTR __$EHRec$[esp+584], bl
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	ecx, DWORD PTR [esi+28]
-	mov	DWORD PTR $T240992[esp+600], ecx
-	mov	edx, DWORD PTR _kTypeLookupTable$220297[esp+580]
+	mov	DWORD PTR $T240991[esp+600], ecx
+	mov	edx, DWORD PTR _kTypeLookupTable$220296[esp+580]
 	push	edx
-	lea	eax, DWORD PTR $T240992[esp+576]
+	lea	eax, DWORD PTR $T240991[esp+576]
 	push	eax
-	lea	ecx, DWORD PTR $T240995[esp+580]
+	lea	ecx, DWORD PTR $T240994[esp+580]
 	push	ecx
-	lea	ecx, DWORD PTR _kTypeLookupTable$220297[esp+584]
+	lea	ecx, DWORD PTR _kTypeLookupTable$220296[esp+584]
 	mov	BYTE PTR __$EHRec$[esp+592], 17		; 00000011H
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum GreatWorkSlotType *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *> >,0> >::_Insert
-	lea	ecx, DWORD PTR $T240992[esp+572]
+	lea	ecx, DWORD PTR $T240991[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T240994[esp+572]
+	lea	ecx, DWORD PTR $T240993[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 15		; 0000000fH
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -19964,34 +19964,34 @@ $LN443@AcquireTyp:
 	push	OFFSET ?s_eGREAT_WORK_SLOT_LITERATURE@@3W4GreatWorkSlotType@@A ; s_eGREAT_WORK_SLOT_LITERATURE
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
-	mov	DWORD PTR $T240997[esp+604], esp
-	push	OFFSET $SG220510
+	mov	DWORD PTR $T240996[esp+604], esp
+	push	OFFSET $SG220509
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	edx, DWORD PTR $T240998[esp+604]
+	lea	edx, DWORD PTR $T240997[esp+604]
 	push	edx
 	call	??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4GreatWorkSlotType@@@Z ; std::make_pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum GreatWorkSlotType *>
 	add	esp, 36					; 00000024H
 	mov	esi, eax
 	mov	bl, 18					; 00000012H
 	push	esi
-	lea	ecx, DWORD PTR $T240996[esp+576]
+	lea	ecx, DWORD PTR $T240995[esp+576]
 	mov	BYTE PTR __$EHRec$[esp+584], bl
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	eax, DWORD PTR [esi+28]
-	mov	DWORD PTR $T240996[esp+600], eax
-	mov	ecx, DWORD PTR _kTypeLookupTable$220297[esp+580]
+	mov	DWORD PTR $T240995[esp+600], eax
+	mov	ecx, DWORD PTR _kTypeLookupTable$220296[esp+580]
 	push	ecx
-	lea	edx, DWORD PTR $T240996[esp+576]
+	lea	edx, DWORD PTR $T240995[esp+576]
 	push	edx
-	lea	eax, DWORD PTR $T240999[esp+580]
+	lea	eax, DWORD PTR $T240998[esp+580]
 	push	eax
-	lea	ecx, DWORD PTR _kTypeLookupTable$220297[esp+584]
+	lea	ecx, DWORD PTR _kTypeLookupTable$220296[esp+584]
 	mov	BYTE PTR __$EHRec$[esp+592], 19		; 00000013H
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum GreatWorkSlotType *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *> >,0> >::_Insert
-	lea	ecx, DWORD PTR $T240996[esp+572]
+	lea	ecx, DWORD PTR $T240995[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T240998[esp+572]
+	lea	ecx, DWORD PTR $T240997[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 15		; 0000000fH
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -20000,34 +20000,34 @@ $LN443@AcquireTyp:
 	push	OFFSET ?s_eGREAT_WORK_SLOT_MUSIC@@3W4GreatWorkSlotType@@A ; s_eGREAT_WORK_SLOT_MUSIC
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
-	mov	DWORD PTR $T241001[esp+604], esp
-	push	OFFSET $SG220516
+	mov	DWORD PTR $T241000[esp+604], esp
+	push	OFFSET $SG220515
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T241002[esp+604]
+	lea	ecx, DWORD PTR $T241001[esp+604]
 	push	ecx
 	call	??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4GreatWorkSlotType@@@Z ; std::make_pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum GreatWorkSlotType *>
 	add	esp, 36					; 00000024H
 	mov	esi, eax
 	mov	bl, 20					; 00000014H
 	push	esi
-	lea	ecx, DWORD PTR $T241000[esp+576]
+	lea	ecx, DWORD PTR $T240999[esp+576]
 	mov	BYTE PTR __$EHRec$[esp+584], bl
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	edx, DWORD PTR [esi+28]
-	mov	DWORD PTR $T241000[esp+600], edx
-	mov	eax, DWORD PTR _kTypeLookupTable$220297[esp+580]
+	mov	DWORD PTR $T240999[esp+600], edx
+	mov	eax, DWORD PTR _kTypeLookupTable$220296[esp+580]
 	push	eax
-	lea	ecx, DWORD PTR $T241000[esp+576]
+	lea	ecx, DWORD PTR $T240999[esp+576]
 	push	ecx
-	lea	edx, DWORD PTR $T241003[esp+580]
+	lea	edx, DWORD PTR $T241002[esp+580]
 	push	edx
-	lea	ecx, DWORD PTR _kTypeLookupTable$220297[esp+584]
+	lea	ecx, DWORD PTR _kTypeLookupTable$220296[esp+584]
 	mov	BYTE PTR __$EHRec$[esp+592], 21		; 00000015H
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum GreatWorkSlotType *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *> >,0> >::_Insert
-	lea	ecx, DWORD PTR $T241000[esp+572]
+	lea	ecx, DWORD PTR $T240999[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T241002[esp+572]
+	lea	ecx, DWORD PTR $T241001[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 15		; 0000000fH
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -20035,15 +20035,15 @@ $LN443@AcquireTyp:
 ; 136  : 		Database::Results kResults;
 
 	push	0
-	lea	ecx, DWORD PTR _kResults$220517[esp+576]
+	lea	ecx, DWORD PTR _kResults$220516[esp+576]
 	call	edi
 
 ; 137  : 		if(db.Execute(kResults, "SELECT Type, ID from GreatWorkSlots"))
 
 	mov	ecx, DWORD PTR _db$[esp+568]
 	push	-1
-	push	OFFSET $SG220519
-	lea	eax, DWORD PTR _kResults$220517[esp+580]
+	push	OFFSET $SG220518
+	lea	eax, DWORD PTR _kResults$220516[esp+580]
 	mov	bl, 22					; 00000016H
 	push	eax
 	mov	BYTE PTR __$EHRec$[esp+592], bl
@@ -20054,7 +20054,7 @@ $LN443@AcquireTyp:
 ; 138  : 		{
 ; 139  : 			while(kResults.Step())
 
-	lea	ecx, DWORD PTR _kResults$220517[esp+572]
+	lea	ecx, DWORD PTR _kResults$220516[esp+572]
 	call	DWORD PTR __imp_?Step@Results@Database@@QAE_NXZ
 	test	al, al
 	je	$LN15@AcquireTyp
@@ -20064,33 +20064,33 @@ $LN16@AcquireTyp:
 ; 141  : 				std::string strType = kResults.GetText(0);
 
 	push	0
-	lea	ecx, DWORD PTR _kResults$220517[esp+576]
+	lea	ecx, DWORD PTR _kResults$220516[esp+576]
 	call	DWORD PTR __imp_?GetText@Results@Database@@QAEPBDH@Z
 	push	eax
-	lea	ecx, DWORD PTR _strType$220523[esp+576]
+	lea	ecx, DWORD PTR _strType$220522[esp+576]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 
 ; 142  : 				LookupTable::iterator it = kTypeLookupTable.find(strType);
 
-	lea	ecx, DWORD PTR _strType$220523[esp+572]
+	lea	ecx, DWORD PTR _strType$220522[esp+572]
 	push	ecx
-	lea	edx, DWORD PTR _it$220524[esp+576]
+	lea	edx, DWORD PTR _it$220523[esp+576]
 	push	edx
-	lea	ecx, DWORD PTR _kTypeLookupTable$220297[esp+580]
+	lea	ecx, DWORD PTR _kTypeLookupTable$220296[esp+580]
 	mov	BYTE PTR __$EHRec$[esp+588], 23		; 00000017H
 	call	?lower_bound@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@$0A@@tr1@std@@@stdext@@QAE?AV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@std@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@5@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum GreatWorkSlotType *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum GreatWorkSlotType *> >,0> >::lower_bound
 
 ; 143  : 				if(it != kTypeLookupTable.end())
 
-	mov	esi, DWORD PTR _it$220524[esp+572]
-	cmp	esi, DWORD PTR _kTypeLookupTable$220297[esp+580]
+	mov	esi, DWORD PTR _it$220523[esp+572]
+	cmp	esi, DWORD PTR _kTypeLookupTable$220296[esp+580]
 	je	SHORT $LN14@AcquireTyp
 
 ; 144  : 				{
 ; 145  : 					(*it->second) = static_cast<GreatWorkSlotType>(kResults.GetInt(1));
 
 	push	1
-	lea	ecx, DWORD PTR _kResults$220517[esp+576]
+	lea	ecx, DWORD PTR _kResults$220516[esp+576]
 	call	DWORD PTR __imp_?GetInt@Results@Database@@QAEHH@Z
 	mov	ecx, DWORD PTR [esi+36]
 	mov	DWORD PTR [ecx], eax
@@ -20099,10 +20099,10 @@ $LN14@AcquireTyp:
 ; 146  : 				}
 ; 147  : 			}
 
-	lea	ecx, DWORD PTR _strType$220523[esp+572]
+	lea	ecx, DWORD PTR _strType$220522[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR _kResults$220517[esp+572]
+	lea	ecx, DWORD PTR _kResults$220516[esp+572]
 	call	DWORD PTR __imp_?Step@Results@Database@@QAE_NXZ
 	test	al, al
 	jne	SHORT $LN16@AcquireTyp
@@ -20112,7 +20112,7 @@ $LN15@AcquireTyp:
 ; 149  : 
 ; 150  : 		for(LookupTable::iterator it = kTypeLookupTable.begin(); it != kTypeLookupTable.end(); ++it)
 
-	mov	eax, DWORD PTR _kTypeLookupTable$220297[esp+580]
+	mov	eax, DWORD PTR _kTypeLookupTable$220296[esp+580]
 	mov	esi, DWORD PTR [eax]
 	cmp	esi, eax
 	je	$LN11@AcquireTyp
@@ -20129,10 +20129,10 @@ $LL575@AcquireTyp:
 ; 154  : 				char msg[256] = {0};
 
 	push	255					; 000000ffH
-	lea	eax, DWORD PTR _msg$220536[esp+577]
+	lea	eax, DWORD PTR _msg$220535[esp+577]
 	push	0
 	push	eax
-	mov	BYTE PTR _msg$220536[esp+584], 0
+	mov	BYTE PTR _msg$220535[esp+584], 0
 	call	_memset
 	add	esp, 12					; 0000000cH
 
@@ -20141,8 +20141,8 @@ $LL575@AcquireTyp:
 	lea	ecx, DWORD PTR [esi+8]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
-	lea	ecx, DWORD PTR _msg$220536[esp+576]
-	push	OFFSET $SG220537
+	lea	ecx, DWORD PTR _msg$220535[esp+576]
+	push	OFFSET $SG220536
 	push	ecx
 	call	??$sprintf_s@$0BAA@@@YAHAAY0BAA@DPBDZZ	; sprintf_s<256>
 	add	esp, 12					; 0000000cH
@@ -20155,18 +20155,18 @@ $LL575@AcquireTyp:
 	push	1
 	mov	ecx, eax
 	mov	eax, DWORD PTR [edx+12]
-	push	OFFSET $SG220539
+	push	OFFSET $SG220538
 	call	eax
 
 ; 157  : 				pLog->WarningMsg(msg);
 
 	mov	ecx, DWORD PTR [eax]
-	lea	edx, DWORD PTR _msg$220536[esp+572]
+	lea	edx, DWORD PTR _msg$220535[esp+572]
 	push	edx
 	push	eax
 	mov	eax, DWORD PTR [ecx+8]
 	call	eax
-	mov	eax, DWORD PTR _kTypeLookupTable$220297[esp+588]
+	mov	eax, DWORD PTR _kTypeLookupTable$220296[esp+588]
 	add	esp, 8
 $LN12@AcquireTyp:
 	mov	esi, DWORD PTR [esi]
@@ -20179,10 +20179,10 @@ $LN11@AcquireTyp:
 ; 160  : 		}
 ; 161  : 	}
 
-	lea	ecx, DWORD PTR _kResults$220517[esp+572]
+	lea	ecx, DWORD PTR _kResults$220516[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 15		; 0000000fH
 	call	DWORD PTR __imp_??1Results@Database@@UAE@XZ
-	mov	eax, DWORD PTR _kTypeLookupTable$220297[esp+592]
+	mov	eax, DWORD PTR _kTypeLookupTable$220296[esp+592]
 	xor	ebx, ebx
 	mov	DWORD PTR __$EHRec$[esp+580], -1
 	cmp	eax, ebx
@@ -20191,16 +20191,16 @@ $LN11@AcquireTyp:
 	call	??3@YAXPAX@Z				; operator delete
 	add	esp, 4
 $LN619@AcquireTyp:
-	mov	eax, DWORD PTR _kTypeLookupTable$220297[esp+580]
-	mov	DWORD PTR _kTypeLookupTable$220297[esp+592], ebx
-	mov	DWORD PTR _kTypeLookupTable$220297[esp+596], ebx
-	mov	DWORD PTR _kTypeLookupTable$220297[esp+600], ebx
+	mov	eax, DWORD PTR _kTypeLookupTable$220296[esp+580]
+	mov	DWORD PTR _kTypeLookupTable$220296[esp+592], ebx
+	mov	DWORD PTR _kTypeLookupTable$220296[esp+596], ebx
+	mov	DWORD PTR _kTypeLookupTable$220296[esp+600], ebx
 	mov	esi, DWORD PTR [eax]
 	mov	DWORD PTR [eax], eax
-	mov	eax, DWORD PTR _kTypeLookupTable$220297[esp+580]
+	mov	eax, DWORD PTR _kTypeLookupTable$220296[esp+580]
 	mov	DWORD PTR [eax+4], eax
-	mov	eax, DWORD PTR _kTypeLookupTable$220297[esp+580]
-	mov	DWORD PTR _kTypeLookupTable$220297[esp+584], ebx
+	mov	eax, DWORD PTR _kTypeLookupTable$220296[esp+580]
+	mov	DWORD PTR _kTypeLookupTable$220296[esp+584], ebx
 	cmp	esi, eax
 	je	SHORT $LN625@AcquireTyp
 $LL627@AcquireTyp:
@@ -20209,7 +20209,7 @@ $LL627@AcquireTyp:
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 	push	esi
 	call	??3@YAXPAX@Z				; operator delete
-	mov	eax, DWORD PTR _kTypeLookupTable$220297[esp+584]
+	mov	eax, DWORD PTR _kTypeLookupTable$220296[esp+584]
 	add	esp, 4
 	mov	esi, ebx
 	cmp	ebx, eax
@@ -20225,11 +20225,11 @@ $LN625@AcquireTyp:
 ; 165  : 		typedef std::tr1::unordered_map<std::string, MissionTypes*> LookupTable;
 ; 166  : 		LookupTable kMissionTypesLookupTable;
 
-	lea	ecx, DWORD PTR $T242930[esp+572]
+	lea	ecx, DWORD PTR $T242929[esp+572]
 	push	ecx
-	lea	edx, DWORD PTR $T242931[esp+576]
+	lea	edx, DWORD PTR $T242930[esp+576]
 	push	edx
-	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+580]
+	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+580]
 	call	??0?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@QAE@ABV?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@1@ABV?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@std@@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >
 
 ; 167  : 		kMissionTypesLookupTable.insert(make_pair(std::string("MISSION_MOVE_TO"), &s_eMISSION_MOVE_TO));
@@ -20237,35 +20237,35 @@ $LN625@AcquireTyp:
 	push	OFFSET ?s_eMISSION_MOVE_TO@@3W4MissionTypes@@A ; s_eMISSION_MOVE_TO
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
-	mov	DWORD PTR $T241007[esp+604], esp
+	mov	DWORD PTR $T241006[esp+604], esp
 	mov	ebx, 24					; 00000018H
-	push	OFFSET $SG221856
+	push	OFFSET $SG221855
 	mov	DWORD PTR __$EHRec$[esp+616], ebx
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	eax, DWORD PTR $T241008[esp+604]
+	lea	eax, DWORD PTR $T241007[esp+604]
 	push	eax
 	call	??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4MissionTypes@@@Z ; std::make_pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *>
 	add	esp, 36					; 00000024H
 	mov	esi, eax
 	push	esi
-	lea	ecx, DWORD PTR $T241006[esp+576]
+	lea	ecx, DWORD PTR $T241005[esp+576]
 	mov	BYTE PTR __$EHRec$[esp+584], 25		; 00000019H
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	ecx, DWORD PTR [esi+28]
-	mov	DWORD PTR $T241006[esp+600], ecx
-	mov	edx, DWORD PTR _kMissionTypesLookupTable$221649[esp+580]
+	mov	DWORD PTR $T241005[esp+600], ecx
+	mov	edx, DWORD PTR _kMissionTypesLookupTable$221648[esp+580]
 	push	edx
-	lea	eax, DWORD PTR $T241006[esp+576]
+	lea	eax, DWORD PTR $T241005[esp+576]
 	push	eax
-	lea	ecx, DWORD PTR $T241009[esp+580]
+	lea	ecx, DWORD PTR $T241008[esp+580]
 	push	ecx
-	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+584]
+	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+584]
 	mov	BYTE PTR __$EHRec$[esp+592], 26		; 0000001aH
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >::_Insert
-	lea	ecx, DWORD PTR $T241006[esp+572]
+	lea	ecx, DWORD PTR $T241005[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 25		; 00000019H
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T241008[esp+572]
+	lea	ecx, DWORD PTR $T241007[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -20274,33 +20274,33 @@ $LN625@AcquireTyp:
 	push	OFFSET ?s_eMISSION_ROUTE_TO@@3W4MissionTypes@@A ; s_eMISSION_ROUTE_TO
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
-	mov	DWORD PTR $T241011[esp+604], esp
-	push	OFFSET $SG221862
+	mov	DWORD PTR $T241010[esp+604], esp
+	push	OFFSET $SG221861
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	edx, DWORD PTR $T241012[esp+604]
+	lea	edx, DWORD PTR $T241011[esp+604]
 	push	edx
 	call	??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4MissionTypes@@@Z ; std::make_pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *>
 	add	esp, 36					; 00000024H
 	mov	esi, eax
 	push	esi
-	lea	ecx, DWORD PTR $T241010[esp+576]
+	lea	ecx, DWORD PTR $T241009[esp+576]
 	mov	BYTE PTR __$EHRec$[esp+584], 27		; 0000001bH
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	eax, DWORD PTR [esi+28]
-	mov	DWORD PTR $T241010[esp+600], eax
-	mov	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+580]
+	mov	DWORD PTR $T241009[esp+600], eax
+	mov	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+580]
 	push	ecx
-	lea	edx, DWORD PTR $T241010[esp+576]
+	lea	edx, DWORD PTR $T241009[esp+576]
 	push	edx
-	lea	eax, DWORD PTR $T241013[esp+580]
+	lea	eax, DWORD PTR $T241012[esp+580]
 	push	eax
-	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+584]
+	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+584]
 	mov	BYTE PTR __$EHRec$[esp+592], 28		; 0000001cH
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >::_Insert
-	lea	ecx, DWORD PTR $T241010[esp+572]
+	lea	ecx, DWORD PTR $T241009[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 27		; 0000001bH
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T241012[esp+572]
+	lea	ecx, DWORD PTR $T241011[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -20309,33 +20309,33 @@ $LN625@AcquireTyp:
 	push	OFFSET ?s_eMISSION_MOVE_TO_UNIT@@3W4MissionTypes@@A ; s_eMISSION_MOVE_TO_UNIT
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
-	mov	DWORD PTR $T241015[esp+604], esp
-	push	OFFSET $SG221868
+	mov	DWORD PTR $T241014[esp+604], esp
+	push	OFFSET $SG221867
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T241016[esp+604]
+	lea	ecx, DWORD PTR $T241015[esp+604]
 	push	ecx
 	call	??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4MissionTypes@@@Z ; std::make_pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *>
 	add	esp, 36					; 00000024H
 	mov	esi, eax
 	push	esi
-	lea	ecx, DWORD PTR $T241014[esp+576]
+	lea	ecx, DWORD PTR $T241013[esp+576]
 	mov	BYTE PTR __$EHRec$[esp+584], 29		; 0000001dH
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	edx, DWORD PTR [esi+28]
-	mov	DWORD PTR $T241014[esp+600], edx
-	mov	eax, DWORD PTR _kMissionTypesLookupTable$221649[esp+580]
+	mov	DWORD PTR $T241013[esp+600], edx
+	mov	eax, DWORD PTR _kMissionTypesLookupTable$221648[esp+580]
 	push	eax
-	lea	ecx, DWORD PTR $T241014[esp+576]
+	lea	ecx, DWORD PTR $T241013[esp+576]
 	push	ecx
-	lea	edx, DWORD PTR $T241017[esp+580]
+	lea	edx, DWORD PTR $T241016[esp+580]
 	push	edx
-	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+584]
+	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+584]
 	mov	BYTE PTR __$EHRec$[esp+592], 30		; 0000001eH
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >::_Insert
-	lea	ecx, DWORD PTR $T241014[esp+572]
+	lea	ecx, DWORD PTR $T241013[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 29		; 0000001dH
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T241016[esp+572]
+	lea	ecx, DWORD PTR $T241015[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -20344,33 +20344,33 @@ $LN625@AcquireTyp:
 	push	OFFSET ?s_eMISSION_SWAP_UNITS@@3W4MissionTypes@@A ; s_eMISSION_SWAP_UNITS
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
-	mov	DWORD PTR $T241019[esp+604], esp
-	push	OFFSET $SG221874
+	mov	DWORD PTR $T241018[esp+604], esp
+	push	OFFSET $SG221873
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	eax, DWORD PTR $T241020[esp+604]
+	lea	eax, DWORD PTR $T241019[esp+604]
 	push	eax
 	call	??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4MissionTypes@@@Z ; std::make_pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *>
 	add	esp, 36					; 00000024H
 	mov	esi, eax
 	push	esi
-	lea	ecx, DWORD PTR $T241018[esp+576]
+	lea	ecx, DWORD PTR $T241017[esp+576]
 	mov	BYTE PTR __$EHRec$[esp+584], 31		; 0000001fH
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	ecx, DWORD PTR [esi+28]
-	mov	DWORD PTR $T241018[esp+600], ecx
-	mov	edx, DWORD PTR _kMissionTypesLookupTable$221649[esp+580]
+	mov	DWORD PTR $T241017[esp+600], ecx
+	mov	edx, DWORD PTR _kMissionTypesLookupTable$221648[esp+580]
 	push	edx
-	lea	eax, DWORD PTR $T241018[esp+576]
+	lea	eax, DWORD PTR $T241017[esp+576]
 	push	eax
-	lea	ecx, DWORD PTR $T241021[esp+580]
+	lea	ecx, DWORD PTR $T241020[esp+580]
 	push	ecx
-	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+584]
+	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+584]
 	mov	BYTE PTR __$EHRec$[esp+592], 32		; 00000020H
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >::_Insert
-	lea	ecx, DWORD PTR $T241018[esp+572]
+	lea	ecx, DWORD PTR $T241017[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 31		; 0000001fH
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T241020[esp+572]
+	lea	ecx, DWORD PTR $T241019[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -20379,33 +20379,33 @@ $LN625@AcquireTyp:
 	push	OFFSET ?s_eMISSION_SKIP@@3W4MissionTypes@@A ; s_eMISSION_SKIP
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
-	mov	DWORD PTR $T241023[esp+604], esp
-	push	OFFSET $SG221880
+	mov	DWORD PTR $T241022[esp+604], esp
+	push	OFFSET $SG221879
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	edx, DWORD PTR $T241024[esp+604]
+	lea	edx, DWORD PTR $T241023[esp+604]
 	push	edx
 	call	??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4MissionTypes@@@Z ; std::make_pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *>
 	add	esp, 36					; 00000024H
 	mov	esi, eax
 	mov	BYTE PTR __$EHRec$[esp+580], 33		; 00000021H
 	push	esi
-	lea	ecx, DWORD PTR $T241022[esp+576]
+	lea	ecx, DWORD PTR $T241021[esp+576]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	eax, DWORD PTR [esi+28]
-	mov	DWORD PTR $T241022[esp+600], eax
-	mov	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+580]
+	mov	DWORD PTR $T241021[esp+600], eax
+	mov	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+580]
 	push	ecx
-	lea	edx, DWORD PTR $T241022[esp+576]
+	lea	edx, DWORD PTR $T241021[esp+576]
 	push	edx
-	lea	eax, DWORD PTR $T241025[esp+580]
+	lea	eax, DWORD PTR $T241024[esp+580]
 	push	eax
-	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+584]
+	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+584]
 	mov	BYTE PTR __$EHRec$[esp+592], 34		; 00000022H
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >::_Insert
-	lea	ecx, DWORD PTR $T241022[esp+572]
+	lea	ecx, DWORD PTR $T241021[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 33		; 00000021H
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T241024[esp+572]
+	lea	ecx, DWORD PTR $T241023[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -20414,33 +20414,33 @@ $LN625@AcquireTyp:
 	push	OFFSET ?s_eMISSION_SLEEP@@3W4MissionTypes@@A ; s_eMISSION_SLEEP
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
-	mov	DWORD PTR $T241027[esp+604], esp
-	push	OFFSET $SG221886
+	mov	DWORD PTR $T241026[esp+604], esp
+	push	OFFSET $SG221885
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T241028[esp+604]
+	lea	ecx, DWORD PTR $T241027[esp+604]
 	push	ecx
 	call	??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4MissionTypes@@@Z ; std::make_pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *>
 	add	esp, 36					; 00000024H
 	mov	esi, eax
 	push	esi
-	lea	ecx, DWORD PTR $T241026[esp+576]
+	lea	ecx, DWORD PTR $T241025[esp+576]
 	mov	BYTE PTR __$EHRec$[esp+584], 35		; 00000023H
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	edx, DWORD PTR [esi+28]
-	mov	DWORD PTR $T241026[esp+600], edx
-	mov	eax, DWORD PTR _kMissionTypesLookupTable$221649[esp+580]
+	mov	DWORD PTR $T241025[esp+600], edx
+	mov	eax, DWORD PTR _kMissionTypesLookupTable$221648[esp+580]
 	push	eax
-	lea	ecx, DWORD PTR $T241026[esp+576]
+	lea	ecx, DWORD PTR $T241025[esp+576]
 	push	ecx
-	lea	edx, DWORD PTR $T241029[esp+580]
+	lea	edx, DWORD PTR $T241028[esp+580]
 	push	edx
-	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+584]
+	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+584]
 	mov	BYTE PTR __$EHRec$[esp+592], 36		; 00000024H
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >::_Insert
-	lea	ecx, DWORD PTR $T241026[esp+572]
+	lea	ecx, DWORD PTR $T241025[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 35		; 00000023H
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T241028[esp+572]
+	lea	ecx, DWORD PTR $T241027[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -20449,33 +20449,33 @@ $LN625@AcquireTyp:
 	push	OFFSET ?s_eMISSION_ALERT@@3W4MissionTypes@@A ; s_eMISSION_ALERT
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
-	mov	DWORD PTR $T241031[esp+604], esp
-	push	OFFSET $SG221892
+	mov	DWORD PTR $T241030[esp+604], esp
+	push	OFFSET $SG221891
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	eax, DWORD PTR $T241032[esp+604]
+	lea	eax, DWORD PTR $T241031[esp+604]
 	push	eax
 	call	??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4MissionTypes@@@Z ; std::make_pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *>
 	add	esp, 36					; 00000024H
 	mov	esi, eax
 	push	esi
-	lea	ecx, DWORD PTR $T241030[esp+576]
+	lea	ecx, DWORD PTR $T241029[esp+576]
 	mov	BYTE PTR __$EHRec$[esp+584], 37		; 00000025H
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	ecx, DWORD PTR [esi+28]
-	mov	DWORD PTR $T241030[esp+600], ecx
-	mov	edx, DWORD PTR _kMissionTypesLookupTable$221649[esp+580]
+	mov	DWORD PTR $T241029[esp+600], ecx
+	mov	edx, DWORD PTR _kMissionTypesLookupTable$221648[esp+580]
 	push	edx
-	lea	eax, DWORD PTR $T241030[esp+576]
-	lea	ecx, DWORD PTR $T241033[esp+576]
+	lea	eax, DWORD PTR $T241029[esp+576]
+	lea	ecx, DWORD PTR $T241032[esp+576]
 	push	eax
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+592], 38		; 00000026H
-	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+584]
+	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+584]
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >::_Insert
-	lea	ecx, DWORD PTR $T241030[esp+572]
+	lea	ecx, DWORD PTR $T241029[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 37		; 00000025H
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T241032[esp+572]
+	lea	ecx, DWORD PTR $T241031[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -20484,33 +20484,33 @@ $LN625@AcquireTyp:
 	push	OFFSET ?s_eMISSION_FORTIFY@@3W4MissionTypes@@A ; s_eMISSION_FORTIFY
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
-	mov	DWORD PTR $T241035[esp+604], esp
-	push	OFFSET $SG221898
+	mov	DWORD PTR $T241034[esp+604], esp
+	push	OFFSET $SG221897
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	edx, DWORD PTR $T241036[esp+604]
+	lea	edx, DWORD PTR $T241035[esp+604]
 	push	edx
 	call	??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4MissionTypes@@@Z ; std::make_pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *>
 	add	esp, 36					; 00000024H
 	mov	esi, eax
 	push	esi
-	lea	ecx, DWORD PTR $T241034[esp+576]
+	lea	ecx, DWORD PTR $T241033[esp+576]
 	mov	BYTE PTR __$EHRec$[esp+584], 39		; 00000027H
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	eax, DWORD PTR [esi+28]
-	mov	DWORD PTR $T241034[esp+600], eax
-	mov	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+580]
+	mov	DWORD PTR $T241033[esp+600], eax
+	mov	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+580]
 	push	ecx
-	lea	edx, DWORD PTR $T241034[esp+576]
+	lea	edx, DWORD PTR $T241033[esp+576]
 	push	edx
-	lea	eax, DWORD PTR $T241037[esp+580]
+	lea	eax, DWORD PTR $T241036[esp+580]
 	push	eax
-	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+584]
+	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+584]
 	mov	BYTE PTR __$EHRec$[esp+592], 40		; 00000028H
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >::_Insert
-	lea	ecx, DWORD PTR $T241034[esp+572]
+	lea	ecx, DWORD PTR $T241033[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 39		; 00000027H
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T241036[esp+572]
+	lea	ecx, DWORD PTR $T241035[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -20519,33 +20519,33 @@ $LN625@AcquireTyp:
 	push	OFFSET ?s_eMISSION_GARRISON@@3W4MissionTypes@@A ; s_eMISSION_GARRISON
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
-	mov	DWORD PTR $T241039[esp+604], esp
-	push	OFFSET $SG221904
+	mov	DWORD PTR $T241038[esp+604], esp
+	push	OFFSET $SG221903
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T241040[esp+604]
+	lea	ecx, DWORD PTR $T241039[esp+604]
 	push	ecx
 	call	??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4MissionTypes@@@Z ; std::make_pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *>
 	add	esp, 36					; 00000024H
 	mov	esi, eax
 	push	esi
-	lea	ecx, DWORD PTR $T241038[esp+576]
+	lea	ecx, DWORD PTR $T241037[esp+576]
 	mov	BYTE PTR __$EHRec$[esp+584], 41		; 00000029H
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	edx, DWORD PTR [esi+28]
-	mov	DWORD PTR $T241038[esp+600], edx
-	mov	eax, DWORD PTR _kMissionTypesLookupTable$221649[esp+580]
+	mov	DWORD PTR $T241037[esp+600], edx
+	mov	eax, DWORD PTR _kMissionTypesLookupTable$221648[esp+580]
 	push	eax
-	lea	ecx, DWORD PTR $T241038[esp+576]
+	lea	ecx, DWORD PTR $T241037[esp+576]
 	push	ecx
-	lea	edx, DWORD PTR $T241041[esp+580]
+	lea	edx, DWORD PTR $T241040[esp+580]
 	push	edx
-	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+584]
+	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+584]
 	mov	BYTE PTR __$EHRec$[esp+592], 42		; 0000002aH
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >::_Insert
-	lea	ecx, DWORD PTR $T241038[esp+572]
+	lea	ecx, DWORD PTR $T241037[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 41		; 00000029H
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T241040[esp+572]
+	lea	ecx, DWORD PTR $T241039[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -20554,33 +20554,33 @@ $LN625@AcquireTyp:
 	push	OFFSET ?s_eMISSION_SET_UP_FOR_RANGED_ATTACK@@3W4MissionTypes@@A ; s_eMISSION_SET_UP_FOR_RANGED_ATTACK
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
-	mov	DWORD PTR $T241043[esp+604], esp
-	push	OFFSET $SG221910
+	mov	DWORD PTR $T241042[esp+604], esp
+	push	OFFSET $SG221909
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	eax, DWORD PTR $T241044[esp+604]
+	lea	eax, DWORD PTR $T241043[esp+604]
 	push	eax
 	call	??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4MissionTypes@@@Z ; std::make_pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *>
 	add	esp, 36					; 00000024H
 	mov	esi, eax
 	push	esi
-	lea	ecx, DWORD PTR $T241042[esp+576]
+	lea	ecx, DWORD PTR $T241041[esp+576]
 	mov	BYTE PTR __$EHRec$[esp+584], 43		; 0000002bH
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	ecx, DWORD PTR [esi+28]
-	mov	DWORD PTR $T241042[esp+600], ecx
-	mov	edx, DWORD PTR _kMissionTypesLookupTable$221649[esp+580]
+	mov	DWORD PTR $T241041[esp+600], ecx
+	mov	edx, DWORD PTR _kMissionTypesLookupTable$221648[esp+580]
 	push	edx
-	lea	eax, DWORD PTR $T241042[esp+576]
+	lea	eax, DWORD PTR $T241041[esp+576]
 	push	eax
-	lea	ecx, DWORD PTR $T241045[esp+580]
+	lea	ecx, DWORD PTR $T241044[esp+580]
 	push	ecx
-	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+584]
+	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+584]
 	mov	BYTE PTR __$EHRec$[esp+592], 44		; 0000002cH
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >::_Insert
-	lea	ecx, DWORD PTR $T241042[esp+572]
+	lea	ecx, DWORD PTR $T241041[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 43		; 0000002bH
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T241044[esp+572]
+	lea	ecx, DWORD PTR $T241043[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -20589,33 +20589,33 @@ $LN625@AcquireTyp:
 	push	OFFSET ?s_eMISSION_EMBARK@@3W4MissionTypes@@A ; s_eMISSION_EMBARK
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
-	mov	DWORD PTR $T241047[esp+604], esp
-	push	OFFSET $SG221916
+	mov	DWORD PTR $T241046[esp+604], esp
+	push	OFFSET $SG221915
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	edx, DWORD PTR $T241048[esp+604]
+	lea	edx, DWORD PTR $T241047[esp+604]
 	push	edx
 	call	??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4MissionTypes@@@Z ; std::make_pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *>
 	add	esp, 36					; 00000024H
 	mov	esi, eax
 	push	esi
-	lea	ecx, DWORD PTR $T241046[esp+576]
+	lea	ecx, DWORD PTR $T241045[esp+576]
 	mov	BYTE PTR __$EHRec$[esp+584], 45		; 0000002dH
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	eax, DWORD PTR [esi+28]
-	mov	DWORD PTR $T241046[esp+600], eax
-	mov	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+580]
+	mov	DWORD PTR $T241045[esp+600], eax
+	mov	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+580]
 	push	ecx
-	lea	edx, DWORD PTR $T241046[esp+576]
+	lea	edx, DWORD PTR $T241045[esp+576]
 	push	edx
-	lea	eax, DWORD PTR $T241049[esp+580]
+	lea	eax, DWORD PTR $T241048[esp+580]
 	push	eax
-	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+584]
+	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+584]
 	mov	BYTE PTR __$EHRec$[esp+592], 46		; 0000002eH
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >::_Insert
-	lea	ecx, DWORD PTR $T241046[esp+572]
+	lea	ecx, DWORD PTR $T241045[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 45		; 0000002dH
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T241048[esp+572]
+	lea	ecx, DWORD PTR $T241047[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -20624,33 +20624,33 @@ $LN625@AcquireTyp:
 	push	OFFSET ?s_eMISSION_DISEMBARK@@3W4MissionTypes@@A ; s_eMISSION_DISEMBARK
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
-	mov	DWORD PTR $T241051[esp+604], esp
-	push	OFFSET $SG221922
+	mov	DWORD PTR $T241050[esp+604], esp
+	push	OFFSET $SG221921
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T241052[esp+604]
+	lea	ecx, DWORD PTR $T241051[esp+604]
 	push	ecx
 	call	??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4MissionTypes@@@Z ; std::make_pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *>
 	add	esp, 36					; 00000024H
 	mov	esi, eax
 	push	esi
-	lea	ecx, DWORD PTR $T241050[esp+576]
+	lea	ecx, DWORD PTR $T241049[esp+576]
 	mov	BYTE PTR __$EHRec$[esp+584], 47		; 0000002fH
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	edx, DWORD PTR [esi+28]
-	mov	DWORD PTR $T241050[esp+600], edx
-	mov	eax, DWORD PTR _kMissionTypesLookupTable$221649[esp+580]
+	mov	DWORD PTR $T241049[esp+600], edx
+	mov	eax, DWORD PTR _kMissionTypesLookupTable$221648[esp+580]
 	push	eax
-	lea	ecx, DWORD PTR $T241050[esp+576]
+	lea	ecx, DWORD PTR $T241049[esp+576]
 	push	ecx
-	lea	edx, DWORD PTR $T241053[esp+580]
+	lea	edx, DWORD PTR $T241052[esp+580]
 	push	edx
-	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+584]
+	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+584]
 	mov	BYTE PTR __$EHRec$[esp+592], 48		; 00000030H
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >::_Insert
-	lea	ecx, DWORD PTR $T241050[esp+572]
+	lea	ecx, DWORD PTR $T241049[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 47		; 0000002fH
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T241052[esp+572]
+	lea	ecx, DWORD PTR $T241051[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -20659,33 +20659,33 @@ $LN625@AcquireTyp:
 	push	OFFSET ?s_eMISSION_AIRPATROL@@3W4MissionTypes@@A ; s_eMISSION_AIRPATROL
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
-	mov	DWORD PTR $T241055[esp+604], esp
-	push	OFFSET $SG221928
+	mov	DWORD PTR $T241054[esp+604], esp
+	push	OFFSET $SG221927
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	eax, DWORD PTR $T241056[esp+604]
+	lea	eax, DWORD PTR $T241055[esp+604]
 	push	eax
 	call	??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4MissionTypes@@@Z ; std::make_pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *>
 	add	esp, 36					; 00000024H
 	mov	esi, eax
 	push	esi
-	lea	ecx, DWORD PTR $T241054[esp+576]
+	lea	ecx, DWORD PTR $T241053[esp+576]
 	mov	BYTE PTR __$EHRec$[esp+584], 49		; 00000031H
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	ecx, DWORD PTR [esi+28]
-	mov	DWORD PTR $T241054[esp+600], ecx
-	mov	edx, DWORD PTR _kMissionTypesLookupTable$221649[esp+580]
+	mov	DWORD PTR $T241053[esp+600], ecx
+	mov	edx, DWORD PTR _kMissionTypesLookupTable$221648[esp+580]
 	push	edx
-	lea	eax, DWORD PTR $T241054[esp+576]
+	lea	eax, DWORD PTR $T241053[esp+576]
 	push	eax
-	lea	ecx, DWORD PTR $T241057[esp+580]
+	lea	ecx, DWORD PTR $T241056[esp+580]
 	push	ecx
-	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+584]
+	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+584]
 	mov	BYTE PTR __$EHRec$[esp+592], 50		; 00000032H
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >::_Insert
-	lea	ecx, DWORD PTR $T241054[esp+572]
+	lea	ecx, DWORD PTR $T241053[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 49		; 00000031H
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T241056[esp+572]
+	lea	ecx, DWORD PTR $T241055[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -20694,34 +20694,34 @@ $LN625@AcquireTyp:
 	push	OFFSET ?s_eMISSION_HEAL@@3W4MissionTypes@@A ; s_eMISSION_HEAL
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
-	mov	DWORD PTR $T241059[esp+604], esp
-	push	OFFSET $SG221934
+	mov	DWORD PTR $T241058[esp+604], esp
+	push	OFFSET $SG221933
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	edx, DWORD PTR $T241060[esp+604]
+	lea	edx, DWORD PTR $T241059[esp+604]
 	push	edx
 	call	??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4MissionTypes@@@Z ; std::make_pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *>
 	add	esp, 36					; 00000024H
 	mov	esi, eax
 	push	esi
-	lea	ecx, DWORD PTR $T241058[esp+576]
+	lea	ecx, DWORD PTR $T241057[esp+576]
 	mov	BYTE PTR __$EHRec$[esp+584], 51		; 00000033H
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	eax, DWORD PTR [esi+28]
-	mov	DWORD PTR $T241058[esp+600], eax
-	mov	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+580]
+	mov	DWORD PTR $T241057[esp+600], eax
+	mov	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+580]
 	push	ecx
-	lea	edx, DWORD PTR $T241058[esp+576]
+	lea	edx, DWORD PTR $T241057[esp+576]
 	push	edx
-	lea	eax, DWORD PTR $T241061[esp+580]
+	lea	eax, DWORD PTR $T241060[esp+580]
 	push	eax
-	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+584]
+	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+584]
 	mov	BYTE PTR __$EHRec$[esp+592], 52		; 00000034H
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >::_Insert
-	lea	ecx, DWORD PTR $T241058[esp+572]
+	lea	ecx, DWORD PTR $T241057[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 51		; 00000033H
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 	mov	BYTE PTR __$EHRec$[esp+580], bl
-	lea	ecx, DWORD PTR $T241060[esp+572]
+	lea	ecx, DWORD PTR $T241059[esp+572]
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
 ; 181  : 		kMissionTypesLookupTable.insert(make_pair(std::string("MISSION_AIRLIFT"), &s_eMISSION_AIRLIFT));
@@ -20729,33 +20729,33 @@ $LN625@AcquireTyp:
 	push	OFFSET ?s_eMISSION_AIRLIFT@@3W4MissionTypes@@A ; s_eMISSION_AIRLIFT
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
-	mov	DWORD PTR $T241063[esp+604], esp
-	push	OFFSET $SG221940
+	mov	DWORD PTR $T241062[esp+604], esp
+	push	OFFSET $SG221939
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T241064[esp+604]
+	lea	ecx, DWORD PTR $T241063[esp+604]
 	push	ecx
 	call	??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4MissionTypes@@@Z ; std::make_pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *>
 	add	esp, 36					; 00000024H
 	mov	esi, eax
 	push	esi
-	lea	ecx, DWORD PTR $T241062[esp+576]
+	lea	ecx, DWORD PTR $T241061[esp+576]
 	mov	BYTE PTR __$EHRec$[esp+584], 53		; 00000035H
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	edx, DWORD PTR [esi+28]
-	mov	DWORD PTR $T241062[esp+600], edx
-	mov	eax, DWORD PTR _kMissionTypesLookupTable$221649[esp+580]
+	mov	DWORD PTR $T241061[esp+600], edx
+	mov	eax, DWORD PTR _kMissionTypesLookupTable$221648[esp+580]
 	push	eax
-	lea	ecx, DWORD PTR $T241062[esp+576]
+	lea	ecx, DWORD PTR $T241061[esp+576]
 	push	ecx
-	lea	edx, DWORD PTR $T241065[esp+580]
+	lea	edx, DWORD PTR $T241064[esp+580]
 	push	edx
-	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+584]
+	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+584]
 	mov	BYTE PTR __$EHRec$[esp+592], 54		; 00000036H
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >::_Insert
-	lea	ecx, DWORD PTR $T241062[esp+572]
+	lea	ecx, DWORD PTR $T241061[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 53		; 00000035H
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T241064[esp+572]
+	lea	ecx, DWORD PTR $T241063[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -20764,33 +20764,33 @@ $LN625@AcquireTyp:
 	push	OFFSET ?s_eMISSION_NUKE@@3W4MissionTypes@@A ; s_eMISSION_NUKE
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
-	mov	DWORD PTR $T241067[esp+604], esp
-	push	OFFSET $SG221946
+	mov	DWORD PTR $T241066[esp+604], esp
+	push	OFFSET $SG221945
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	eax, DWORD PTR $T241068[esp+604]
+	lea	eax, DWORD PTR $T241067[esp+604]
 	push	eax
 	call	??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4MissionTypes@@@Z ; std::make_pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *>
 	add	esp, 36					; 00000024H
 	mov	esi, eax
 	push	esi
-	lea	ecx, DWORD PTR $T241066[esp+576]
+	lea	ecx, DWORD PTR $T241065[esp+576]
 	mov	BYTE PTR __$EHRec$[esp+584], 55		; 00000037H
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	ecx, DWORD PTR [esi+28]
-	mov	DWORD PTR $T241066[esp+600], ecx
-	mov	edx, DWORD PTR _kMissionTypesLookupTable$221649[esp+580]
+	mov	DWORD PTR $T241065[esp+600], ecx
+	mov	edx, DWORD PTR _kMissionTypesLookupTable$221648[esp+580]
 	push	edx
-	lea	eax, DWORD PTR $T241066[esp+576]
+	lea	eax, DWORD PTR $T241065[esp+576]
 	push	eax
-	lea	ecx, DWORD PTR $T241069[esp+580]
+	lea	ecx, DWORD PTR $T241068[esp+580]
 	push	ecx
-	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+584]
+	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+584]
 	mov	BYTE PTR __$EHRec$[esp+592], 56		; 00000038H
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >::_Insert
-	lea	ecx, DWORD PTR $T241066[esp+572]
+	lea	ecx, DWORD PTR $T241065[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 55		; 00000037H
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T241068[esp+572]
+	lea	ecx, DWORD PTR $T241067[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -20799,33 +20799,33 @@ $LN625@AcquireTyp:
 	push	OFFSET ?s_eMISSION_PARADROP@@3W4MissionTypes@@A ; s_eMISSION_PARADROP
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
-	mov	DWORD PTR $T241071[esp+604], esp
-	push	OFFSET $SG221952
+	mov	DWORD PTR $T241070[esp+604], esp
+	push	OFFSET $SG221951
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	edx, DWORD PTR $T241072[esp+604]
+	lea	edx, DWORD PTR $T241071[esp+604]
 	push	edx
 	call	??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4MissionTypes@@@Z ; std::make_pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *>
 	add	esp, 36					; 00000024H
 	mov	esi, eax
 	push	esi
-	lea	ecx, DWORD PTR $T241070[esp+576]
+	lea	ecx, DWORD PTR $T241069[esp+576]
 	mov	BYTE PTR __$EHRec$[esp+584], 57		; 00000039H
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	eax, DWORD PTR [esi+28]
-	mov	DWORD PTR $T241070[esp+600], eax
-	mov	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+580]
+	mov	DWORD PTR $T241069[esp+600], eax
+	mov	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+580]
 	push	ecx
-	lea	edx, DWORD PTR $T241070[esp+576]
+	lea	edx, DWORD PTR $T241069[esp+576]
 	push	edx
-	lea	eax, DWORD PTR $T241073[esp+580]
+	lea	eax, DWORD PTR $T241072[esp+580]
 	push	eax
-	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+584]
+	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+584]
 	mov	BYTE PTR __$EHRec$[esp+592], 58		; 0000003aH
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >::_Insert
-	lea	ecx, DWORD PTR $T241070[esp+572]
+	lea	ecx, DWORD PTR $T241069[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 57		; 00000039H
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T241072[esp+572]
+	lea	ecx, DWORD PTR $T241071[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -20834,33 +20834,33 @@ $LN625@AcquireTyp:
 	push	OFFSET ?s_eMISSION_AIR_SWEEP@@3W4MissionTypes@@A ; s_eMISSION_AIR_SWEEP
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
-	mov	DWORD PTR $T241075[esp+604], esp
-	push	OFFSET $SG221958
+	mov	DWORD PTR $T241074[esp+604], esp
+	push	OFFSET $SG221957
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T241076[esp+604]
+	lea	ecx, DWORD PTR $T241075[esp+604]
 	push	ecx
 	call	??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4MissionTypes@@@Z ; std::make_pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *>
 	add	esp, 36					; 00000024H
 	mov	esi, eax
 	push	esi
-	lea	ecx, DWORD PTR $T241074[esp+576]
+	lea	ecx, DWORD PTR $T241073[esp+576]
 	mov	BYTE PTR __$EHRec$[esp+584], 59		; 0000003bH
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	edx, DWORD PTR [esi+28]
-	mov	DWORD PTR $T241074[esp+600], edx
-	mov	eax, DWORD PTR _kMissionTypesLookupTable$221649[esp+580]
+	mov	DWORD PTR $T241073[esp+600], edx
+	mov	eax, DWORD PTR _kMissionTypesLookupTable$221648[esp+580]
 	push	eax
-	lea	ecx, DWORD PTR $T241074[esp+576]
+	lea	ecx, DWORD PTR $T241073[esp+576]
 	push	ecx
-	lea	edx, DWORD PTR $T241077[esp+580]
+	lea	edx, DWORD PTR $T241076[esp+580]
 	push	edx
-	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+584]
+	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+584]
 	mov	BYTE PTR __$EHRec$[esp+592], 60		; 0000003cH
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >::_Insert
-	lea	ecx, DWORD PTR $T241074[esp+572]
+	lea	ecx, DWORD PTR $T241073[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 59		; 0000003bH
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T241076[esp+572]
+	lea	ecx, DWORD PTR $T241075[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -20869,33 +20869,33 @@ $LN625@AcquireTyp:
 	push	OFFSET ?s_eMISSION_REBASE@@3W4MissionTypes@@A ; s_eMISSION_REBASE
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
-	mov	DWORD PTR $T241079[esp+604], esp
-	push	OFFSET $SG221964
+	mov	DWORD PTR $T241078[esp+604], esp
+	push	OFFSET $SG221963
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	eax, DWORD PTR $T241080[esp+604]
+	lea	eax, DWORD PTR $T241079[esp+604]
 	push	eax
 	call	??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4MissionTypes@@@Z ; std::make_pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *>
 	add	esp, 36					; 00000024H
 	mov	esi, eax
 	push	esi
-	lea	ecx, DWORD PTR $T241078[esp+576]
+	lea	ecx, DWORD PTR $T241077[esp+576]
 	mov	BYTE PTR __$EHRec$[esp+584], 61		; 0000003dH
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	ecx, DWORD PTR [esi+28]
-	mov	DWORD PTR $T241078[esp+600], ecx
-	mov	edx, DWORD PTR _kMissionTypesLookupTable$221649[esp+580]
+	mov	DWORD PTR $T241077[esp+600], ecx
+	mov	edx, DWORD PTR _kMissionTypesLookupTable$221648[esp+580]
 	push	edx
-	lea	eax, DWORD PTR $T241078[esp+576]
+	lea	eax, DWORD PTR $T241077[esp+576]
 	mov	BYTE PTR __$EHRec$[esp+584], 62		; 0000003eH
 	push	eax
-	lea	ecx, DWORD PTR $T241081[esp+580]
+	lea	ecx, DWORD PTR $T241080[esp+580]
 	push	ecx
-	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+584]
+	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+584]
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >::_Insert
-	lea	ecx, DWORD PTR $T241078[esp+572]
+	lea	ecx, DWORD PTR $T241077[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 61		; 0000003dH
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T241080[esp+572]
+	lea	ecx, DWORD PTR $T241079[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -20904,33 +20904,33 @@ $LN625@AcquireTyp:
 	push	OFFSET ?s_eMISSION_RANGE_ATTACK@@3W4MissionTypes@@A ; s_eMISSION_RANGE_ATTACK
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
-	mov	DWORD PTR $T241083[esp+604], esp
-	push	OFFSET $SG221970
+	mov	DWORD PTR $T241082[esp+604], esp
+	push	OFFSET $SG221969
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	edx, DWORD PTR $T241084[esp+604]
+	lea	edx, DWORD PTR $T241083[esp+604]
 	push	edx
 	call	??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4MissionTypes@@@Z ; std::make_pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *>
 	add	esp, 36					; 00000024H
 	mov	esi, eax
 	push	esi
-	lea	ecx, DWORD PTR $T241082[esp+576]
+	lea	ecx, DWORD PTR $T241081[esp+576]
 	mov	BYTE PTR __$EHRec$[esp+584], 63		; 0000003fH
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	eax, DWORD PTR [esi+28]
-	mov	DWORD PTR $T241082[esp+600], eax
-	mov	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+580]
+	mov	DWORD PTR $T241081[esp+600], eax
+	mov	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+580]
 	push	ecx
-	lea	edx, DWORD PTR $T241082[esp+576]
+	lea	edx, DWORD PTR $T241081[esp+576]
 	push	edx
-	lea	eax, DWORD PTR $T241085[esp+580]
+	lea	eax, DWORD PTR $T241084[esp+580]
 	push	eax
-	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+584]
+	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+584]
 	mov	BYTE PTR __$EHRec$[esp+592], 64		; 00000040H
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >::_Insert
-	lea	ecx, DWORD PTR $T241082[esp+572]
+	lea	ecx, DWORD PTR $T241081[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 63		; 0000003fH
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T241084[esp+572]
+	lea	ecx, DWORD PTR $T241083[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -20939,33 +20939,33 @@ $LN625@AcquireTyp:
 	push	OFFSET ?s_eMISSION_PILLAGE@@3W4MissionTypes@@A ; s_eMISSION_PILLAGE
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
-	mov	DWORD PTR $T241087[esp+604], esp
-	push	OFFSET $SG221976
+	mov	DWORD PTR $T241086[esp+604], esp
+	push	OFFSET $SG221975
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T241088[esp+604]
+	lea	ecx, DWORD PTR $T241087[esp+604]
 	push	ecx
 	call	??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4MissionTypes@@@Z ; std::make_pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *>
 	add	esp, 36					; 00000024H
 	mov	esi, eax
 	push	esi
-	lea	ecx, DWORD PTR $T241086[esp+576]
+	lea	ecx, DWORD PTR $T241085[esp+576]
 	mov	BYTE PTR __$EHRec$[esp+584], 65		; 00000041H
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	edx, DWORD PTR [esi+28]
-	mov	DWORD PTR $T241086[esp+600], edx
-	mov	eax, DWORD PTR _kMissionTypesLookupTable$221649[esp+580]
+	mov	DWORD PTR $T241085[esp+600], edx
+	mov	eax, DWORD PTR _kMissionTypesLookupTable$221648[esp+580]
 	push	eax
-	lea	ecx, DWORD PTR $T241086[esp+576]
+	lea	ecx, DWORD PTR $T241085[esp+576]
 	push	ecx
-	lea	edx, DWORD PTR $T241089[esp+580]
+	lea	edx, DWORD PTR $T241088[esp+580]
 	push	edx
-	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+584]
+	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+584]
 	mov	BYTE PTR __$EHRec$[esp+592], 66		; 00000042H
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >::_Insert
-	lea	ecx, DWORD PTR $T241086[esp+572]
+	lea	ecx, DWORD PTR $T241085[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 65		; 00000041H
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T241088[esp+572]
+	lea	ecx, DWORD PTR $T241087[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -20974,33 +20974,33 @@ $LN625@AcquireTyp:
 	push	OFFSET ?s_eMISSION_FOUND@@3W4MissionTypes@@A ; s_eMISSION_FOUND
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
-	mov	DWORD PTR $T241091[esp+604], esp
-	push	OFFSET $SG221982
+	mov	DWORD PTR $T241090[esp+604], esp
+	push	OFFSET $SG221981
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	eax, DWORD PTR $T241092[esp+604]
+	lea	eax, DWORD PTR $T241091[esp+604]
 	push	eax
 	call	??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4MissionTypes@@@Z ; std::make_pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *>
 	add	esp, 36					; 00000024H
 	mov	esi, eax
 	push	esi
-	lea	ecx, DWORD PTR $T241090[esp+576]
+	lea	ecx, DWORD PTR $T241089[esp+576]
 	mov	BYTE PTR __$EHRec$[esp+584], 67		; 00000043H
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	ecx, DWORD PTR [esi+28]
-	mov	DWORD PTR $T241090[esp+600], ecx
-	mov	edx, DWORD PTR _kMissionTypesLookupTable$221649[esp+580]
+	mov	DWORD PTR $T241089[esp+600], ecx
+	mov	edx, DWORD PTR _kMissionTypesLookupTable$221648[esp+580]
 	push	edx
-	lea	eax, DWORD PTR $T241090[esp+576]
+	lea	eax, DWORD PTR $T241089[esp+576]
 	push	eax
-	lea	ecx, DWORD PTR $T241093[esp+580]
+	lea	ecx, DWORD PTR $T241092[esp+580]
 	push	ecx
-	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+584]
+	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+584]
 	mov	BYTE PTR __$EHRec$[esp+592], 68		; 00000044H
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >::_Insert
-	lea	ecx, DWORD PTR $T241090[esp+572]
+	lea	ecx, DWORD PTR $T241089[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 67		; 00000043H
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T241092[esp+572]
+	lea	ecx, DWORD PTR $T241091[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -21009,33 +21009,33 @@ $LN625@AcquireTyp:
 	push	OFFSET ?s_eMISSION_JOIN@@3W4MissionTypes@@A ; s_eMISSION_JOIN
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
-	mov	DWORD PTR $T241095[esp+604], esp
-	push	OFFSET $SG221988
+	mov	DWORD PTR $T241094[esp+604], esp
+	push	OFFSET $SG221987
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	edx, DWORD PTR $T241096[esp+604]
+	lea	edx, DWORD PTR $T241095[esp+604]
 	push	edx
 	call	??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4MissionTypes@@@Z ; std::make_pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *>
 	add	esp, 36					; 00000024H
 	mov	esi, eax
 	push	esi
-	lea	ecx, DWORD PTR $T241094[esp+576]
+	lea	ecx, DWORD PTR $T241093[esp+576]
 	mov	BYTE PTR __$EHRec$[esp+584], 69		; 00000045H
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	eax, DWORD PTR [esi+28]
-	mov	DWORD PTR $T241094[esp+600], eax
-	mov	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+580]
+	mov	DWORD PTR $T241093[esp+600], eax
+	mov	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+580]
 	push	ecx
-	lea	edx, DWORD PTR $T241094[esp+576]
+	lea	edx, DWORD PTR $T241093[esp+576]
 	push	edx
-	lea	eax, DWORD PTR $T241097[esp+580]
+	lea	eax, DWORD PTR $T241096[esp+580]
 	push	eax
-	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+584]
+	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+584]
 	mov	BYTE PTR __$EHRec$[esp+592], 70		; 00000046H
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >::_Insert
-	lea	ecx, DWORD PTR $T241094[esp+572]
+	lea	ecx, DWORD PTR $T241093[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 69		; 00000045H
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T241096[esp+572]
+	lea	ecx, DWORD PTR $T241095[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -21044,33 +21044,33 @@ $LN625@AcquireTyp:
 	push	OFFSET ?s_eMISSION_CONSTRUCT@@3W4MissionTypes@@A ; s_eMISSION_CONSTRUCT
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
-	mov	DWORD PTR $T241099[esp+604], esp
-	push	OFFSET $SG221994
+	mov	DWORD PTR $T241098[esp+604], esp
+	push	OFFSET $SG221993
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T241100[esp+604]
+	lea	ecx, DWORD PTR $T241099[esp+604]
 	push	ecx
 	call	??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4MissionTypes@@@Z ; std::make_pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *>
 	add	esp, 36					; 00000024H
 	mov	esi, eax
 	push	esi
-	lea	ecx, DWORD PTR $T241098[esp+576]
+	lea	ecx, DWORD PTR $T241097[esp+576]
 	mov	BYTE PTR __$EHRec$[esp+584], 71		; 00000047H
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	edx, DWORD PTR [esi+28]
-	mov	DWORD PTR $T241098[esp+600], edx
-	mov	eax, DWORD PTR _kMissionTypesLookupTable$221649[esp+580]
+	mov	DWORD PTR $T241097[esp+600], edx
+	mov	eax, DWORD PTR _kMissionTypesLookupTable$221648[esp+580]
 	push	eax
-	lea	ecx, DWORD PTR $T241098[esp+576]
+	lea	ecx, DWORD PTR $T241097[esp+576]
 	push	ecx
-	lea	edx, DWORD PTR $T241101[esp+580]
+	lea	edx, DWORD PTR $T241100[esp+580]
 	push	edx
-	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+584]
+	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+584]
 	mov	BYTE PTR __$EHRec$[esp+592], 72		; 00000048H
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >::_Insert
-	lea	ecx, DWORD PTR $T241098[esp+572]
+	lea	ecx, DWORD PTR $T241097[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 71		; 00000047H
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T241100[esp+572]
+	lea	ecx, DWORD PTR $T241099[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -21079,33 +21079,33 @@ $LN625@AcquireTyp:
 	push	OFFSET ?s_eMISSION_DISCOVER@@3W4MissionTypes@@A ; s_eMISSION_DISCOVER
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
-	mov	DWORD PTR $T241103[esp+604], esp
-	push	OFFSET $SG222000
+	mov	DWORD PTR $T241102[esp+604], esp
+	push	OFFSET $SG221999
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	eax, DWORD PTR $T241104[esp+604]
+	lea	eax, DWORD PTR $T241103[esp+604]
 	push	eax
 	call	??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4MissionTypes@@@Z ; std::make_pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *>
 	add	esp, 36					; 00000024H
 	mov	esi, eax
 	push	esi
-	lea	ecx, DWORD PTR $T241102[esp+576]
+	lea	ecx, DWORD PTR $T241101[esp+576]
 	mov	BYTE PTR __$EHRec$[esp+584], 73		; 00000049H
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	ecx, DWORD PTR [esi+28]
-	mov	DWORD PTR $T241102[esp+600], ecx
-	mov	edx, DWORD PTR _kMissionTypesLookupTable$221649[esp+580]
+	mov	DWORD PTR $T241101[esp+600], ecx
+	mov	edx, DWORD PTR _kMissionTypesLookupTable$221648[esp+580]
 	push	edx
-	lea	eax, DWORD PTR $T241102[esp+576]
+	lea	eax, DWORD PTR $T241101[esp+576]
 	push	eax
-	lea	ecx, DWORD PTR $T241105[esp+580]
+	lea	ecx, DWORD PTR $T241104[esp+580]
 	push	ecx
-	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+584]
+	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+584]
 	mov	BYTE PTR __$EHRec$[esp+592], 74		; 0000004aH
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >::_Insert
-	lea	ecx, DWORD PTR $T241102[esp+572]
+	lea	ecx, DWORD PTR $T241101[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 73		; 00000049H
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T241104[esp+572]
+	lea	ecx, DWORD PTR $T241103[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -21114,33 +21114,33 @@ $LN625@AcquireTyp:
 	push	OFFSET ?s_eMISSION_HURRY@@3W4MissionTypes@@A ; s_eMISSION_HURRY
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
-	mov	DWORD PTR $T241107[esp+604], esp
-	push	OFFSET $SG222006
+	mov	DWORD PTR $T241106[esp+604], esp
+	push	OFFSET $SG222005
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	edx, DWORD PTR $T241108[esp+604]
+	lea	edx, DWORD PTR $T241107[esp+604]
 	push	edx
 	call	??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4MissionTypes@@@Z ; std::make_pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *>
 	add	esp, 36					; 00000024H
 	mov	esi, eax
 	push	esi
-	lea	ecx, DWORD PTR $T241106[esp+576]
+	lea	ecx, DWORD PTR $T241105[esp+576]
 	mov	BYTE PTR __$EHRec$[esp+584], 75		; 0000004bH
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	eax, DWORD PTR [esi+28]
-	mov	DWORD PTR $T241106[esp+600], eax
-	mov	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+580]
+	mov	DWORD PTR $T241105[esp+600], eax
+	mov	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+580]
 	push	ecx
-	lea	edx, DWORD PTR $T241106[esp+576]
+	lea	edx, DWORD PTR $T241105[esp+576]
 	push	edx
-	lea	eax, DWORD PTR $T241109[esp+580]
+	lea	eax, DWORD PTR $T241108[esp+580]
 	push	eax
-	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+584]
+	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+584]
 	mov	BYTE PTR __$EHRec$[esp+592], 76		; 0000004cH
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >::_Insert
 	mov	BYTE PTR __$EHRec$[esp+580], 75		; 0000004bH
-	lea	ecx, DWORD PTR $T241106[esp+572]
+	lea	ecx, DWORD PTR $T241105[esp+572]
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T241108[esp+572]
+	lea	ecx, DWORD PTR $T241107[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -21149,33 +21149,33 @@ $LN625@AcquireTyp:
 	push	OFFSET ?s_eMISSION_TRADE@@3W4MissionTypes@@A ; s_eMISSION_TRADE
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
-	mov	DWORD PTR $T241111[esp+604], esp
-	push	OFFSET $SG222012
+	mov	DWORD PTR $T241110[esp+604], esp
+	push	OFFSET $SG222011
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T241112[esp+604]
+	lea	ecx, DWORD PTR $T241111[esp+604]
 	push	ecx
 	call	??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4MissionTypes@@@Z ; std::make_pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *>
 	add	esp, 36					; 00000024H
 	mov	esi, eax
 	push	esi
-	lea	ecx, DWORD PTR $T241110[esp+576]
+	lea	ecx, DWORD PTR $T241109[esp+576]
 	mov	BYTE PTR __$EHRec$[esp+584], 77		; 0000004dH
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	edx, DWORD PTR [esi+28]
-	mov	DWORD PTR $T241110[esp+600], edx
-	mov	eax, DWORD PTR _kMissionTypesLookupTable$221649[esp+580]
+	mov	DWORD PTR $T241109[esp+600], edx
+	mov	eax, DWORD PTR _kMissionTypesLookupTable$221648[esp+580]
 	push	eax
-	lea	ecx, DWORD PTR $T241110[esp+576]
+	lea	ecx, DWORD PTR $T241109[esp+576]
 	push	ecx
-	lea	edx, DWORD PTR $T241113[esp+580]
+	lea	edx, DWORD PTR $T241112[esp+580]
 	push	edx
-	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+584]
+	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+584]
 	mov	BYTE PTR __$EHRec$[esp+592], 78		; 0000004eH
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >::_Insert
-	lea	ecx, DWORD PTR $T241110[esp+572]
+	lea	ecx, DWORD PTR $T241109[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 77		; 0000004dH
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T241112[esp+572]
+	lea	ecx, DWORD PTR $T241111[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -21184,33 +21184,33 @@ $LN625@AcquireTyp:
 	push	OFFSET ?s_eMISSION_BUY_CITY_STATE@@3W4MissionTypes@@A ; s_eMISSION_BUY_CITY_STATE
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
-	mov	DWORD PTR $T241115[esp+604], esp
-	push	OFFSET $SG222018
+	mov	DWORD PTR $T241114[esp+604], esp
+	push	OFFSET $SG222017
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	eax, DWORD PTR $T241116[esp+604]
+	lea	eax, DWORD PTR $T241115[esp+604]
 	push	eax
 	call	??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4MissionTypes@@@Z ; std::make_pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *>
 	add	esp, 36					; 00000024H
 	mov	esi, eax
 	push	esi
-	lea	ecx, DWORD PTR $T241114[esp+576]
+	lea	ecx, DWORD PTR $T241113[esp+576]
 	mov	BYTE PTR __$EHRec$[esp+584], 79		; 0000004fH
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	ecx, DWORD PTR [esi+28]
-	mov	DWORD PTR $T241114[esp+600], ecx
-	mov	edx, DWORD PTR _kMissionTypesLookupTable$221649[esp+580]
+	mov	DWORD PTR $T241113[esp+600], ecx
+	mov	edx, DWORD PTR _kMissionTypesLookupTable$221648[esp+580]
 	push	edx
-	lea	eax, DWORD PTR $T241114[esp+576]
+	lea	eax, DWORD PTR $T241113[esp+576]
 	push	eax
-	lea	ecx, DWORD PTR $T241117[esp+580]
+	lea	ecx, DWORD PTR $T241116[esp+580]
 	push	ecx
-	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+584]
+	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+584]
 	mov	BYTE PTR __$EHRec$[esp+592], 80		; 00000050H
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >::_Insert
-	lea	ecx, DWORD PTR $T241114[esp+572]
+	lea	ecx, DWORD PTR $T241113[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 79		; 0000004fH
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T241116[esp+572]
+	lea	ecx, DWORD PTR $T241115[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -21219,33 +21219,33 @@ $LN625@AcquireTyp:
 	push	OFFSET ?s_eMISSION_REPAIR_FLEET@@3W4MissionTypes@@A ; s_eMISSION_REPAIR_FLEET
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
-	mov	DWORD PTR $T241119[esp+604], esp
-	push	OFFSET $SG222024
+	mov	DWORD PTR $T241118[esp+604], esp
+	push	OFFSET $SG222023
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	edx, DWORD PTR $T241120[esp+604]
+	lea	edx, DWORD PTR $T241119[esp+604]
 	push	edx
 	call	??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4MissionTypes@@@Z ; std::make_pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *>
 	add	esp, 36					; 00000024H
 	mov	esi, eax
 	push	esi
-	lea	ecx, DWORD PTR $T241118[esp+576]
+	lea	ecx, DWORD PTR $T241117[esp+576]
 	mov	BYTE PTR __$EHRec$[esp+584], 81		; 00000051H
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	eax, DWORD PTR [esi+28]
-	mov	DWORD PTR $T241118[esp+600], eax
-	mov	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+580]
+	mov	DWORD PTR $T241117[esp+600], eax
+	mov	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+580]
 	push	ecx
-	lea	edx, DWORD PTR $T241118[esp+576]
+	lea	edx, DWORD PTR $T241117[esp+576]
 	push	edx
-	lea	eax, DWORD PTR $T241121[esp+580]
+	lea	eax, DWORD PTR $T241120[esp+580]
 	push	eax
-	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+584]
+	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+584]
 	mov	BYTE PTR __$EHRec$[esp+592], 82		; 00000052H
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >::_Insert
-	lea	ecx, DWORD PTR $T241118[esp+572]
+	lea	ecx, DWORD PTR $T241117[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 81		; 00000051H
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T241120[esp+572]
+	lea	ecx, DWORD PTR $T241119[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -21254,33 +21254,33 @@ $LN625@AcquireTyp:
 	push	OFFSET ?s_eMISSION_SPACESHIP@@3W4MissionTypes@@A ; s_eMISSION_SPACESHIP
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
-	mov	DWORD PTR $T241123[esp+604], esp
-	push	OFFSET $SG222030
+	mov	DWORD PTR $T241122[esp+604], esp
+	push	OFFSET $SG222029
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T241124[esp+604]
+	lea	ecx, DWORD PTR $T241123[esp+604]
 	push	ecx
 	call	??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4MissionTypes@@@Z ; std::make_pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *>
 	add	esp, 36					; 00000024H
 	mov	esi, eax
 	push	esi
-	lea	ecx, DWORD PTR $T241122[esp+576]
+	lea	ecx, DWORD PTR $T241121[esp+576]
 	mov	BYTE PTR __$EHRec$[esp+584], 83		; 00000053H
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	edx, DWORD PTR [esi+28]
-	mov	DWORD PTR $T241122[esp+600], edx
-	mov	eax, DWORD PTR _kMissionTypesLookupTable$221649[esp+580]
+	mov	DWORD PTR $T241121[esp+600], edx
+	mov	eax, DWORD PTR _kMissionTypesLookupTable$221648[esp+580]
 	push	eax
-	lea	ecx, DWORD PTR $T241122[esp+576]
+	lea	ecx, DWORD PTR $T241121[esp+576]
 	push	ecx
-	lea	edx, DWORD PTR $T241125[esp+580]
+	lea	edx, DWORD PTR $T241124[esp+580]
 	push	edx
-	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+584]
+	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+584]
 	mov	BYTE PTR __$EHRec$[esp+592], 84		; 00000054H
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >::_Insert
-	lea	ecx, DWORD PTR $T241122[esp+572]
+	lea	ecx, DWORD PTR $T241121[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 83		; 00000053H
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T241124[esp+572]
+	lea	ecx, DWORD PTR $T241123[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -21289,33 +21289,33 @@ $LN625@AcquireTyp:
 	push	OFFSET ?s_eMISSION_CULTURE_BOMB@@3W4MissionTypes@@A ; s_eMISSION_CULTURE_BOMB
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
-	mov	DWORD PTR $T241127[esp+604], esp
-	push	OFFSET $SG222036
+	mov	DWORD PTR $T241126[esp+604], esp
+	push	OFFSET $SG222035
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	eax, DWORD PTR $T241128[esp+604]
+	lea	eax, DWORD PTR $T241127[esp+604]
 	push	eax
 	call	??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4MissionTypes@@@Z ; std::make_pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *>
 	add	esp, 36					; 00000024H
 	mov	esi, eax
 	push	esi
-	lea	ecx, DWORD PTR $T241126[esp+576]
+	lea	ecx, DWORD PTR $T241125[esp+576]
 	mov	BYTE PTR __$EHRec$[esp+584], 85		; 00000055H
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	ecx, DWORD PTR [esi+28]
-	mov	DWORD PTR $T241126[esp+600], ecx
-	mov	edx, DWORD PTR _kMissionTypesLookupTable$221649[esp+580]
+	mov	DWORD PTR $T241125[esp+600], ecx
+	mov	edx, DWORD PTR _kMissionTypesLookupTable$221648[esp+580]
 	mov	BYTE PTR __$EHRec$[esp+580], 86		; 00000056H
 	push	edx
-	lea	eax, DWORD PTR $T241126[esp+576]
+	lea	eax, DWORD PTR $T241125[esp+576]
 	push	eax
-	lea	ecx, DWORD PTR $T241129[esp+580]
+	lea	ecx, DWORD PTR $T241128[esp+580]
 	push	ecx
-	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+584]
+	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+584]
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >::_Insert
-	lea	ecx, DWORD PTR $T241126[esp+572]
+	lea	ecx, DWORD PTR $T241125[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 85		; 00000055H
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T241128[esp+572]
+	lea	ecx, DWORD PTR $T241127[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -21324,33 +21324,33 @@ $LN625@AcquireTyp:
 	push	OFFSET ?s_eMISSION_FOUND_RELIGION@@3W4MissionTypes@@A ; s_eMISSION_FOUND_RELIGION
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
-	mov	DWORD PTR $T241131[esp+604], esp
-	push	OFFSET $SG222042
+	mov	DWORD PTR $T241130[esp+604], esp
+	push	OFFSET $SG222041
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	edx, DWORD PTR $T241132[esp+604]
+	lea	edx, DWORD PTR $T241131[esp+604]
 	push	edx
 	call	??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4MissionTypes@@@Z ; std::make_pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *>
 	add	esp, 36					; 00000024H
 	mov	esi, eax
 	push	esi
-	lea	ecx, DWORD PTR $T241130[esp+576]
+	lea	ecx, DWORD PTR $T241129[esp+576]
 	mov	BYTE PTR __$EHRec$[esp+584], 87		; 00000057H
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	eax, DWORD PTR [esi+28]
-	mov	DWORD PTR $T241130[esp+600], eax
-	mov	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+580]
+	mov	DWORD PTR $T241129[esp+600], eax
+	mov	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+580]
 	push	ecx
-	lea	edx, DWORD PTR $T241130[esp+576]
+	lea	edx, DWORD PTR $T241129[esp+576]
 	push	edx
-	lea	eax, DWORD PTR $T241133[esp+580]
+	lea	eax, DWORD PTR $T241132[esp+580]
 	push	eax
-	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+584]
+	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+584]
 	mov	BYTE PTR __$EHRec$[esp+592], 88		; 00000058H
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >::_Insert
-	lea	ecx, DWORD PTR $T241130[esp+572]
+	lea	ecx, DWORD PTR $T241129[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 87		; 00000057H
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T241132[esp+572]
+	lea	ecx, DWORD PTR $T241131[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -21359,33 +21359,33 @@ $LN625@AcquireTyp:
 	push	OFFSET ?s_eMISSION_GOLDEN_AGE@@3W4MissionTypes@@A ; s_eMISSION_GOLDEN_AGE
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
-	mov	DWORD PTR $T241135[esp+604], esp
-	push	OFFSET $SG222048
+	mov	DWORD PTR $T241134[esp+604], esp
+	push	OFFSET $SG222047
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T241136[esp+604]
+	lea	ecx, DWORD PTR $T241135[esp+604]
 	push	ecx
 	call	??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4MissionTypes@@@Z ; std::make_pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *>
 	add	esp, 36					; 00000024H
 	mov	esi, eax
 	push	esi
-	lea	ecx, DWORD PTR $T241134[esp+576]
+	lea	ecx, DWORD PTR $T241133[esp+576]
 	mov	BYTE PTR __$EHRec$[esp+584], 89		; 00000059H
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	edx, DWORD PTR [esi+28]
-	mov	DWORD PTR $T241134[esp+600], edx
-	mov	eax, DWORD PTR _kMissionTypesLookupTable$221649[esp+580]
+	mov	DWORD PTR $T241133[esp+600], edx
+	mov	eax, DWORD PTR _kMissionTypesLookupTable$221648[esp+580]
 	push	eax
-	lea	ecx, DWORD PTR $T241134[esp+576]
+	lea	ecx, DWORD PTR $T241133[esp+576]
 	push	ecx
-	lea	edx, DWORD PTR $T241137[esp+580]
+	lea	edx, DWORD PTR $T241136[esp+580]
 	push	edx
-	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+584]
+	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+584]
 	mov	BYTE PTR __$EHRec$[esp+592], 90		; 0000005aH
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >::_Insert
-	lea	ecx, DWORD PTR $T241134[esp+572]
+	lea	ecx, DWORD PTR $T241133[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 89		; 00000059H
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T241136[esp+572]
+	lea	ecx, DWORD PTR $T241135[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -21394,33 +21394,33 @@ $LN625@AcquireTyp:
 	push	OFFSET ?s_eMISSION_BUILD@@3W4MissionTypes@@A ; s_eMISSION_BUILD
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
-	mov	DWORD PTR $T241139[esp+604], esp
-	push	OFFSET $SG222054
+	mov	DWORD PTR $T241138[esp+604], esp
+	push	OFFSET $SG222053
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	eax, DWORD PTR $T241140[esp+604]
+	lea	eax, DWORD PTR $T241139[esp+604]
 	push	eax
 	call	??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4MissionTypes@@@Z ; std::make_pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *>
 	add	esp, 36					; 00000024H
 	mov	esi, eax
 	push	esi
-	lea	ecx, DWORD PTR $T241138[esp+576]
+	lea	ecx, DWORD PTR $T241137[esp+576]
 	mov	BYTE PTR __$EHRec$[esp+584], 91		; 0000005bH
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	ecx, DWORD PTR [esi+28]
-	mov	DWORD PTR $T241138[esp+600], ecx
-	mov	edx, DWORD PTR _kMissionTypesLookupTable$221649[esp+580]
+	mov	DWORD PTR $T241137[esp+600], ecx
+	mov	edx, DWORD PTR _kMissionTypesLookupTable$221648[esp+580]
 	push	edx
-	lea	eax, DWORD PTR $T241138[esp+576]
+	lea	eax, DWORD PTR $T241137[esp+576]
 	push	eax
-	lea	ecx, DWORD PTR $T241141[esp+580]
+	lea	ecx, DWORD PTR $T241140[esp+580]
 	push	ecx
-	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+584]
+	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+584]
 	mov	BYTE PTR __$EHRec$[esp+592], 92		; 0000005cH
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >::_Insert
-	lea	ecx, DWORD PTR $T241138[esp+572]
+	lea	ecx, DWORD PTR $T241137[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 91		; 0000005bH
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T241140[esp+572]
+	lea	ecx, DWORD PTR $T241139[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -21429,33 +21429,33 @@ $LN625@AcquireTyp:
 	push	OFFSET ?s_eMISSION_LEAD@@3W4MissionTypes@@A ; s_eMISSION_LEAD
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
-	mov	DWORD PTR $T241143[esp+604], esp
-	push	OFFSET $SG222060
+	mov	DWORD PTR $T241142[esp+604], esp
+	push	OFFSET $SG222059
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	edx, DWORD PTR $T241144[esp+604]
+	lea	edx, DWORD PTR $T241143[esp+604]
 	push	edx
 	call	??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4MissionTypes@@@Z ; std::make_pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *>
 	add	esp, 36					; 00000024H
 	mov	esi, eax
 	push	esi
-	lea	ecx, DWORD PTR $T241142[esp+576]
+	lea	ecx, DWORD PTR $T241141[esp+576]
 	mov	BYTE PTR __$EHRec$[esp+584], 93		; 0000005dH
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	eax, DWORD PTR [esi+28]
-	mov	DWORD PTR $T241142[esp+600], eax
-	mov	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+580]
+	mov	DWORD PTR $T241141[esp+600], eax
+	mov	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+580]
 	push	ecx
-	lea	edx, DWORD PTR $T241142[esp+576]
+	lea	edx, DWORD PTR $T241141[esp+576]
 	push	edx
-	lea	eax, DWORD PTR $T241145[esp+580]
+	lea	eax, DWORD PTR $T241144[esp+580]
 	push	eax
-	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+584]
+	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+584]
 	mov	BYTE PTR __$EHRec$[esp+592], 94		; 0000005eH
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >::_Insert
-	lea	ecx, DWORD PTR $T241142[esp+572]
+	lea	ecx, DWORD PTR $T241141[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 93		; 0000005dH
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T241144[esp+572]
+	lea	ecx, DWORD PTR $T241143[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -21464,33 +21464,33 @@ $LN625@AcquireTyp:
 	push	OFFSET ?s_eMISSION_DIE_ANIMATION@@3W4MissionTypes@@A ; s_eMISSION_DIE_ANIMATION
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
-	mov	DWORD PTR $T241147[esp+604], esp
-	push	OFFSET $SG222066
+	mov	DWORD PTR $T241146[esp+604], esp
+	push	OFFSET $SG222065
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T241148[esp+604]
+	lea	ecx, DWORD PTR $T241147[esp+604]
 	push	ecx
 	call	??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4MissionTypes@@@Z ; std::make_pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *>
 	add	esp, 36					; 00000024H
 	mov	esi, eax
 	mov	BYTE PTR __$EHRec$[esp+580], 95		; 0000005fH
 	push	esi
-	lea	ecx, DWORD PTR $T241146[esp+576]
+	lea	ecx, DWORD PTR $T241145[esp+576]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	edx, DWORD PTR [esi+28]
-	mov	DWORD PTR $T241146[esp+600], edx
-	mov	eax, DWORD PTR _kMissionTypesLookupTable$221649[esp+580]
+	mov	DWORD PTR $T241145[esp+600], edx
+	mov	eax, DWORD PTR _kMissionTypesLookupTable$221648[esp+580]
 	push	eax
-	lea	ecx, DWORD PTR $T241146[esp+576]
+	lea	ecx, DWORD PTR $T241145[esp+576]
 	push	ecx
-	lea	edx, DWORD PTR $T241149[esp+580]
+	lea	edx, DWORD PTR $T241148[esp+580]
 	push	edx
-	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+584]
+	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+584]
 	mov	BYTE PTR __$EHRec$[esp+592], 96		; 00000060H
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >::_Insert
-	lea	ecx, DWORD PTR $T241146[esp+572]
+	lea	ecx, DWORD PTR $T241145[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 95		; 0000005fH
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T241148[esp+572]
+	lea	ecx, DWORD PTR $T241147[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -21499,33 +21499,33 @@ $LN625@AcquireTyp:
 	push	OFFSET ?s_eMISSION_BEGIN_COMBAT@@3W4MissionTypes@@A ; s_eMISSION_BEGIN_COMBAT
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
-	mov	DWORD PTR $T241151[esp+604], esp
-	push	OFFSET $SG222072
+	mov	DWORD PTR $T241150[esp+604], esp
+	push	OFFSET $SG222071
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	eax, DWORD PTR $T241152[esp+604]
+	lea	eax, DWORD PTR $T241151[esp+604]
 	push	eax
 	call	??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4MissionTypes@@@Z ; std::make_pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *>
 	add	esp, 36					; 00000024H
 	mov	esi, eax
 	push	esi
-	lea	ecx, DWORD PTR $T241150[esp+576]
+	lea	ecx, DWORD PTR $T241149[esp+576]
 	mov	BYTE PTR __$EHRec$[esp+584], 97		; 00000061H
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	ecx, DWORD PTR [esi+28]
-	mov	DWORD PTR $T241150[esp+600], ecx
-	mov	edx, DWORD PTR _kMissionTypesLookupTable$221649[esp+580]
+	mov	DWORD PTR $T241149[esp+600], ecx
+	mov	edx, DWORD PTR _kMissionTypesLookupTable$221648[esp+580]
 	push	edx
-	lea	eax, DWORD PTR $T241150[esp+576]
+	lea	eax, DWORD PTR $T241149[esp+576]
 	push	eax
-	lea	ecx, DWORD PTR $T241153[esp+580]
+	lea	ecx, DWORD PTR $T241152[esp+580]
 	push	ecx
-	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+584]
+	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+584]
 	mov	BYTE PTR __$EHRec$[esp+592], 98		; 00000062H
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >::_Insert
-	lea	ecx, DWORD PTR $T241150[esp+572]
+	lea	ecx, DWORD PTR $T241149[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 97		; 00000061H
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T241152[esp+572]
+	lea	ecx, DWORD PTR $T241151[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -21534,33 +21534,33 @@ $LN625@AcquireTyp:
 	push	OFFSET ?s_eMISSION_END_COMBAT@@3W4MissionTypes@@A ; s_eMISSION_END_COMBAT
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
-	mov	DWORD PTR $T241155[esp+604], esp
-	push	OFFSET $SG222078
+	mov	DWORD PTR $T241154[esp+604], esp
+	push	OFFSET $SG222077
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	edx, DWORD PTR $T241156[esp+604]
+	lea	edx, DWORD PTR $T241155[esp+604]
 	push	edx
 	call	??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4MissionTypes@@@Z ; std::make_pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *>
 	add	esp, 36					; 00000024H
 	mov	esi, eax
 	push	esi
-	lea	ecx, DWORD PTR $T241154[esp+576]
+	lea	ecx, DWORD PTR $T241153[esp+576]
 	mov	BYTE PTR __$EHRec$[esp+584], 99		; 00000063H
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	eax, DWORD PTR [esi+28]
-	mov	DWORD PTR $T241154[esp+600], eax
-	mov	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+580]
+	mov	DWORD PTR $T241153[esp+600], eax
+	mov	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+580]
 	push	ecx
-	lea	edx, DWORD PTR $T241154[esp+576]
+	lea	edx, DWORD PTR $T241153[esp+576]
 	push	edx
-	lea	eax, DWORD PTR $T241157[esp+580]
+	lea	eax, DWORD PTR $T241156[esp+580]
 	mov	BYTE PTR __$EHRec$[esp+588], 100	; 00000064H
 	push	eax
-	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+584]
+	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+584]
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >::_Insert
-	lea	ecx, DWORD PTR $T241154[esp+572]
+	lea	ecx, DWORD PTR $T241153[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 99		; 00000063H
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T241156[esp+572]
+	lea	ecx, DWORD PTR $T241155[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -21569,33 +21569,33 @@ $LN625@AcquireTyp:
 	push	OFFSET ?s_eMISSION_AIRSTRIKE@@3W4MissionTypes@@A ; s_eMISSION_AIRSTRIKE
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
-	mov	DWORD PTR $T241159[esp+604], esp
-	push	OFFSET $SG222084
+	mov	DWORD PTR $T241158[esp+604], esp
+	push	OFFSET $SG222083
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T241160[esp+604]
+	lea	ecx, DWORD PTR $T241159[esp+604]
 	push	ecx
 	call	??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4MissionTypes@@@Z ; std::make_pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *>
 	add	esp, 36					; 00000024H
 	mov	esi, eax
 	push	esi
-	lea	ecx, DWORD PTR $T241158[esp+576]
+	lea	ecx, DWORD PTR $T241157[esp+576]
 	mov	BYTE PTR __$EHRec$[esp+584], 101	; 00000065H
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	edx, DWORD PTR [esi+28]
-	mov	DWORD PTR $T241158[esp+600], edx
-	mov	eax, DWORD PTR _kMissionTypesLookupTable$221649[esp+580]
+	mov	DWORD PTR $T241157[esp+600], edx
+	mov	eax, DWORD PTR _kMissionTypesLookupTable$221648[esp+580]
 	push	eax
-	lea	ecx, DWORD PTR $T241158[esp+576]
+	lea	ecx, DWORD PTR $T241157[esp+576]
 	push	ecx
-	lea	edx, DWORD PTR $T241161[esp+580]
+	lea	edx, DWORD PTR $T241160[esp+580]
 	push	edx
-	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+584]
+	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+584]
 	mov	BYTE PTR __$EHRec$[esp+592], 102	; 00000066H
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >::_Insert
-	lea	ecx, DWORD PTR $T241158[esp+572]
+	lea	ecx, DWORD PTR $T241157[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 101	; 00000065H
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T241160[esp+572]
+	lea	ecx, DWORD PTR $T241159[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -21604,33 +21604,33 @@ $LN625@AcquireTyp:
 	push	OFFSET ?s_eMISSION_SURRENDER@@3W4MissionTypes@@A ; s_eMISSION_SURRENDER
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
-	mov	DWORD PTR $T241163[esp+604], esp
-	push	OFFSET $SG222090
+	mov	DWORD PTR $T241162[esp+604], esp
+	push	OFFSET $SG222089
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	eax, DWORD PTR $T241164[esp+604]
+	lea	eax, DWORD PTR $T241163[esp+604]
 	push	eax
 	call	??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4MissionTypes@@@Z ; std::make_pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *>
 	add	esp, 36					; 00000024H
 	mov	esi, eax
 	push	esi
-	lea	ecx, DWORD PTR $T241162[esp+576]
+	lea	ecx, DWORD PTR $T241161[esp+576]
 	mov	BYTE PTR __$EHRec$[esp+584], 103	; 00000067H
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	ecx, DWORD PTR [esi+28]
-	mov	DWORD PTR $T241162[esp+600], ecx
-	mov	edx, DWORD PTR _kMissionTypesLookupTable$221649[esp+580]
+	mov	DWORD PTR $T241161[esp+600], ecx
+	mov	edx, DWORD PTR _kMissionTypesLookupTable$221648[esp+580]
 	push	edx
-	lea	eax, DWORD PTR $T241162[esp+576]
+	lea	eax, DWORD PTR $T241161[esp+576]
 	push	eax
-	lea	ecx, DWORD PTR $T241165[esp+580]
+	lea	ecx, DWORD PTR $T241164[esp+580]
 	push	ecx
-	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+584]
+	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+584]
 	mov	BYTE PTR __$EHRec$[esp+592], 104	; 00000068H
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >::_Insert
-	lea	ecx, DWORD PTR $T241162[esp+572]
+	lea	ecx, DWORD PTR $T241161[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 103	; 00000067H
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T241164[esp+572]
+	lea	ecx, DWORD PTR $T241163[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -21639,33 +21639,33 @@ $LN625@AcquireTyp:
 	push	OFFSET ?s_eMISSION_CAPTURED@@3W4MissionTypes@@A ; s_eMISSION_CAPTURED
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
-	mov	DWORD PTR $T241167[esp+604], esp
-	push	OFFSET $SG222096
+	mov	DWORD PTR $T241166[esp+604], esp
+	push	OFFSET $SG222095
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	edx, DWORD PTR $T241168[esp+604]
+	lea	edx, DWORD PTR $T241167[esp+604]
 	push	edx
 	call	??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4MissionTypes@@@Z ; std::make_pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *>
 	add	esp, 36					; 00000024H
 	mov	esi, eax
 	push	esi
-	lea	ecx, DWORD PTR $T241166[esp+576]
+	lea	ecx, DWORD PTR $T241165[esp+576]
 	mov	BYTE PTR __$EHRec$[esp+584], 105	; 00000069H
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	eax, DWORD PTR [esi+28]
-	mov	DWORD PTR $T241166[esp+600], eax
-	mov	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+580]
+	mov	DWORD PTR $T241165[esp+600], eax
+	mov	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+580]
 	push	ecx
-	lea	edx, DWORD PTR $T241166[esp+576]
+	lea	edx, DWORD PTR $T241165[esp+576]
 	push	edx
-	lea	eax, DWORD PTR $T241169[esp+580]
+	lea	eax, DWORD PTR $T241168[esp+580]
 	push	eax
-	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+584]
+	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+584]
 	mov	BYTE PTR __$EHRec$[esp+592], 106	; 0000006aH
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >::_Insert
-	lea	ecx, DWORD PTR $T241166[esp+572]
+	lea	ecx, DWORD PTR $T241165[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 105	; 00000069H
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T241168[esp+572]
+	lea	ecx, DWORD PTR $T241167[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -21674,33 +21674,33 @@ $LN625@AcquireTyp:
 	push	OFFSET ?s_eMISSION_IDLE@@3W4MissionTypes@@A ; s_eMISSION_IDLE
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
-	mov	DWORD PTR $T241171[esp+604], esp
-	push	OFFSET $SG222102
+	mov	DWORD PTR $T241170[esp+604], esp
+	push	OFFSET $SG222101
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T241172[esp+604]
+	lea	ecx, DWORD PTR $T241171[esp+604]
 	push	ecx
 	call	??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4MissionTypes@@@Z ; std::make_pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *>
 	add	esp, 36					; 00000024H
 	mov	esi, eax
 	push	esi
-	lea	ecx, DWORD PTR $T241170[esp+576]
+	lea	ecx, DWORD PTR $T241169[esp+576]
 	mov	BYTE PTR __$EHRec$[esp+584], 107	; 0000006bH
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	edx, DWORD PTR [esi+28]
-	mov	DWORD PTR $T241170[esp+600], edx
-	mov	eax, DWORD PTR _kMissionTypesLookupTable$221649[esp+580]
+	mov	DWORD PTR $T241169[esp+600], edx
+	mov	eax, DWORD PTR _kMissionTypesLookupTable$221648[esp+580]
 	push	eax
-	lea	ecx, DWORD PTR $T241170[esp+576]
+	lea	ecx, DWORD PTR $T241169[esp+576]
 	push	ecx
-	lea	edx, DWORD PTR $T241173[esp+580]
+	lea	edx, DWORD PTR $T241172[esp+580]
 	push	edx
-	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+584]
+	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+584]
 	mov	BYTE PTR __$EHRec$[esp+592], 108	; 0000006cH
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >::_Insert
-	lea	ecx, DWORD PTR $T241170[esp+572]
+	lea	ecx, DWORD PTR $T241169[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 107	; 0000006bH
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T241172[esp+572]
+	lea	ecx, DWORD PTR $T241171[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -21709,33 +21709,33 @@ $LN625@AcquireTyp:
 	push	OFFSET ?s_eMISSION_DIE@@3W4MissionTypes@@A ; s_eMISSION_DIE
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
-	mov	DWORD PTR $T241175[esp+604], esp
-	push	OFFSET $SG222108
+	mov	DWORD PTR $T241174[esp+604], esp
+	push	OFFSET $SG222107
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	eax, DWORD PTR $T241176[esp+604]
+	lea	eax, DWORD PTR $T241175[esp+604]
 	push	eax
 	call	??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4MissionTypes@@@Z ; std::make_pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *>
 	add	esp, 36					; 00000024H
 	mov	esi, eax
 	push	esi
-	lea	ecx, DWORD PTR $T241174[esp+576]
+	lea	ecx, DWORD PTR $T241173[esp+576]
 	mov	BYTE PTR __$EHRec$[esp+584], 109	; 0000006dH
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	ecx, DWORD PTR [esi+28]
-	mov	DWORD PTR $T241174[esp+600], ecx
-	mov	edx, DWORD PTR _kMissionTypesLookupTable$221649[esp+580]
+	mov	DWORD PTR $T241173[esp+600], ecx
+	mov	edx, DWORD PTR _kMissionTypesLookupTable$221648[esp+580]
 	push	edx
-	lea	eax, DWORD PTR $T241174[esp+576]
+	lea	eax, DWORD PTR $T241173[esp+576]
 	push	eax
-	lea	ecx, DWORD PTR $T241177[esp+580]
+	lea	ecx, DWORD PTR $T241176[esp+580]
 	push	ecx
-	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+584]
+	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+584]
 	mov	BYTE PTR __$EHRec$[esp+592], 110	; 0000006eH
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >::_Insert
-	lea	ecx, DWORD PTR $T241174[esp+572]
+	lea	ecx, DWORD PTR $T241173[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 109	; 0000006dH
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T241176[esp+572]
+	lea	ecx, DWORD PTR $T241175[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -21744,33 +21744,33 @@ $LN625@AcquireTyp:
 	push	OFFSET ?s_eMISSION_DAMAGE@@3W4MissionTypes@@A ; s_eMISSION_DAMAGE
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
-	mov	DWORD PTR $T241179[esp+604], esp
-	push	OFFSET $SG222114
+	mov	DWORD PTR $T241178[esp+604], esp
+	push	OFFSET $SG222113
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	edx, DWORD PTR $T241180[esp+604]
+	lea	edx, DWORD PTR $T241179[esp+604]
 	push	edx
 	call	??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4MissionTypes@@@Z ; std::make_pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *>
 	add	esp, 36					; 00000024H
 	mov	esi, eax
 	push	esi
-	lea	ecx, DWORD PTR $T241178[esp+576]
+	lea	ecx, DWORD PTR $T241177[esp+576]
 	mov	BYTE PTR __$EHRec$[esp+584], 111	; 0000006fH
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	eax, DWORD PTR [esi+28]
-	mov	DWORD PTR $T241178[esp+600], eax
-	mov	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+580]
+	mov	DWORD PTR $T241177[esp+600], eax
+	mov	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+580]
 	push	ecx
-	lea	edx, DWORD PTR $T241178[esp+576]
+	lea	edx, DWORD PTR $T241177[esp+576]
 	push	edx
-	lea	eax, DWORD PTR $T241181[esp+580]
+	lea	eax, DWORD PTR $T241180[esp+580]
 	push	eax
-	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+584]
+	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+584]
 	mov	BYTE PTR __$EHRec$[esp+592], 112	; 00000070H
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >::_Insert
-	lea	ecx, DWORD PTR $T241178[esp+572]
+	lea	ecx, DWORD PTR $T241177[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 111	; 0000006fH
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T241180[esp+572]
+	lea	ecx, DWORD PTR $T241179[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -21779,33 +21779,33 @@ $LN625@AcquireTyp:
 	push	OFFSET ?s_eMISSION_MULTI_SELECT@@3W4MissionTypes@@A ; s_eMISSION_MULTI_SELECT
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
-	mov	DWORD PTR $T241183[esp+604], esp
-	push	OFFSET $SG222120
+	mov	DWORD PTR $T241182[esp+604], esp
+	push	OFFSET $SG222119
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T241184[esp+604]
+	lea	ecx, DWORD PTR $T241183[esp+604]
 	push	ecx
 	call	??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4MissionTypes@@@Z ; std::make_pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *>
 	add	esp, 36					; 00000024H
 	mov	esi, eax
 	push	esi
-	lea	ecx, DWORD PTR $T241182[esp+576]
+	lea	ecx, DWORD PTR $T241181[esp+576]
 	mov	BYTE PTR __$EHRec$[esp+584], 113	; 00000071H
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	edx, DWORD PTR [esi+28]
-	mov	DWORD PTR $T241182[esp+600], edx
-	mov	eax, DWORD PTR _kMissionTypesLookupTable$221649[esp+580]
+	mov	DWORD PTR $T241181[esp+600], edx
+	mov	eax, DWORD PTR _kMissionTypesLookupTable$221648[esp+580]
 	push	eax
-	lea	ecx, DWORD PTR $T241182[esp+576]
+	lea	ecx, DWORD PTR $T241181[esp+576]
 	push	ecx
-	lea	edx, DWORD PTR $T241185[esp+580]
+	lea	edx, DWORD PTR $T241184[esp+580]
 	push	edx
-	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+584]
+	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+584]
 	mov	BYTE PTR __$EHRec$[esp+592], 114	; 00000072H
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >::_Insert
-	lea	ecx, DWORD PTR $T241182[esp+572]
+	lea	ecx, DWORD PTR $T241181[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 113	; 00000071H
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T241184[esp+572]
+	lea	ecx, DWORD PTR $T241183[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -21814,33 +21814,33 @@ $LN625@AcquireTyp:
 	push	OFFSET ?s_eMISSION_MULTI_DESELECT@@3W4MissionTypes@@A ; s_eMISSION_MULTI_DESELECT
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
-	mov	DWORD PTR $T241187[esp+604], esp
-	push	OFFSET $SG222126
+	mov	DWORD PTR $T241186[esp+604], esp
+	push	OFFSET $SG222125
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	eax, DWORD PTR $T241188[esp+604]
+	lea	eax, DWORD PTR $T241187[esp+604]
 	push	eax
 	call	??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4MissionTypes@@@Z ; std::make_pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *>
 	add	esp, 36					; 00000024H
 	mov	esi, eax
 	push	esi
-	lea	ecx, DWORD PTR $T241186[esp+576]
+	lea	ecx, DWORD PTR $T241185[esp+576]
 	mov	BYTE PTR __$EHRec$[esp+584], 115	; 00000073H
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	ecx, DWORD PTR [esi+28]
-	mov	DWORD PTR $T241186[esp+600], ecx
-	mov	edx, DWORD PTR _kMissionTypesLookupTable$221649[esp+580]
+	mov	DWORD PTR $T241185[esp+600], ecx
+	mov	edx, DWORD PTR _kMissionTypesLookupTable$221648[esp+580]
 	push	edx
-	lea	eax, DWORD PTR $T241186[esp+576]
+	lea	eax, DWORD PTR $T241185[esp+576]
 	push	eax
-	lea	ecx, DWORD PTR $T241189[esp+580]
+	lea	ecx, DWORD PTR $T241188[esp+580]
 	push	ecx
-	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+584]
+	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+584]
 	mov	BYTE PTR __$EHRec$[esp+592], 116	; 00000074H
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >::_Insert
-	lea	ecx, DWORD PTR $T241186[esp+572]
+	lea	ecx, DWORD PTR $T241185[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 115	; 00000073H
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T241188[esp+572]
+	lea	ecx, DWORD PTR $T241187[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -21849,33 +21849,33 @@ $LN625@AcquireTyp:
 	push	OFFSET ?s_eMISSION_WAIT_FOR@@3W4MissionTypes@@A ; s_eMISSION_WAIT_FOR
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
-	mov	DWORD PTR $T241191[esp+604], esp
-	push	OFFSET $SG222132
+	mov	DWORD PTR $T241190[esp+604], esp
+	push	OFFSET $SG222131
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	edx, DWORD PTR $T241192[esp+604]
+	lea	edx, DWORD PTR $T241191[esp+604]
 	push	edx
 	call	??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4MissionTypes@@@Z ; std::make_pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *>
 	add	esp, 36					; 00000024H
 	mov	esi, eax
 	push	esi
-	lea	ecx, DWORD PTR $T241190[esp+576]
+	lea	ecx, DWORD PTR $T241189[esp+576]
 	mov	BYTE PTR __$EHRec$[esp+584], 117	; 00000075H
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	eax, DWORD PTR [esi+28]
-	mov	DWORD PTR $T241190[esp+600], eax
-	mov	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+580]
+	mov	DWORD PTR $T241189[esp+600], eax
+	mov	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+580]
 	push	ecx
-	lea	edx, DWORD PTR $T241190[esp+576]
+	lea	edx, DWORD PTR $T241189[esp+576]
 	push	edx
-	lea	eax, DWORD PTR $T241193[esp+580]
+	lea	eax, DWORD PTR $T241192[esp+580]
 	push	eax
-	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+584]
+	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+584]
 	mov	BYTE PTR __$EHRec$[esp+592], 118	; 00000076H
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >::_Insert
-	lea	ecx, DWORD PTR $T241190[esp+572]
+	lea	ecx, DWORD PTR $T241189[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 117	; 00000075H
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T241192[esp+572]
+	lea	ecx, DWORD PTR $T241191[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -21884,33 +21884,33 @@ $LN625@AcquireTyp:
 	push	OFFSET ?s_eMISSION_SPREAD_RELIGION@@3W4MissionTypes@@A ; s_eMISSION_SPREAD_RELIGION
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
-	mov	DWORD PTR $T241195[esp+604], esp
-	push	OFFSET $SG222138
+	mov	DWORD PTR $T241194[esp+604], esp
+	push	OFFSET $SG222137
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T241196[esp+604]
+	lea	ecx, DWORD PTR $T241195[esp+604]
 	push	ecx
 	call	??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4MissionTypes@@@Z ; std::make_pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *>
 	add	esp, 36					; 00000024H
 	mov	esi, eax
 	push	esi
-	lea	ecx, DWORD PTR $T241194[esp+576]
+	lea	ecx, DWORD PTR $T241193[esp+576]
 	mov	BYTE PTR __$EHRec$[esp+584], 119	; 00000077H
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	edx, DWORD PTR [esi+28]
-	mov	DWORD PTR $T241194[esp+600], edx
-	mov	eax, DWORD PTR _kMissionTypesLookupTable$221649[esp+580]
+	mov	DWORD PTR $T241193[esp+600], edx
+	mov	eax, DWORD PTR _kMissionTypesLookupTable$221648[esp+580]
 	push	eax
-	lea	ecx, DWORD PTR $T241194[esp+576]
+	lea	ecx, DWORD PTR $T241193[esp+576]
 	push	ecx
-	lea	edx, DWORD PTR $T241197[esp+580]
+	lea	edx, DWORD PTR $T241196[esp+580]
 	push	edx
-	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+584]
+	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+584]
 	mov	BYTE PTR __$EHRec$[esp+592], 120	; 00000078H
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >::_Insert
-	lea	ecx, DWORD PTR $T241194[esp+572]
+	lea	ecx, DWORD PTR $T241193[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 119	; 00000077H
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T241196[esp+572]
+	lea	ecx, DWORD PTR $T241195[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -21919,33 +21919,33 @@ $LN625@AcquireTyp:
 	push	OFFSET ?s_eMISSION_ENHANCE_RELIGION@@3W4MissionTypes@@A ; s_eMISSION_ENHANCE_RELIGION
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
-	mov	DWORD PTR $T241199[esp+604], esp
-	push	OFFSET $SG222144
+	mov	DWORD PTR $T241198[esp+604], esp
+	push	OFFSET $SG222143
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	eax, DWORD PTR $T241200[esp+604]
+	lea	eax, DWORD PTR $T241199[esp+604]
 	push	eax
 	call	??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4MissionTypes@@@Z ; std::make_pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *>
 	add	esp, 36					; 00000024H
 	mov	esi, eax
 	push	esi
-	lea	ecx, DWORD PTR $T241198[esp+576]
+	lea	ecx, DWORD PTR $T241197[esp+576]
 	mov	BYTE PTR __$EHRec$[esp+584], 121	; 00000079H
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	ecx, DWORD PTR [esi+28]
-	mov	DWORD PTR $T241198[esp+600], ecx
-	mov	edx, DWORD PTR _kMissionTypesLookupTable$221649[esp+580]
+	mov	DWORD PTR $T241197[esp+600], ecx
+	mov	edx, DWORD PTR _kMissionTypesLookupTable$221648[esp+580]
 	push	edx
-	lea	eax, DWORD PTR $T241198[esp+576]
+	lea	eax, DWORD PTR $T241197[esp+576]
 	push	eax
-	lea	ecx, DWORD PTR $T241201[esp+580]
+	lea	ecx, DWORD PTR $T241200[esp+580]
 	push	ecx
-	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+584]
+	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+584]
 	mov	BYTE PTR __$EHRec$[esp+592], 122	; 0000007aH
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >::_Insert
-	lea	ecx, DWORD PTR $T241198[esp+572]
+	lea	ecx, DWORD PTR $T241197[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 121	; 00000079H
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T241200[esp+572]
+	lea	ecx, DWORD PTR $T241199[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -21954,33 +21954,33 @@ $LN625@AcquireTyp:
 	push	OFFSET ?s_eMISSION_REMOVE_HERESY@@3W4MissionTypes@@A ; s_eMISSION_REMOVE_HERESY
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
-	mov	DWORD PTR $T241203[esp+604], esp
-	push	OFFSET $SG222150
+	mov	DWORD PTR $T241202[esp+604], esp
+	push	OFFSET $SG222149
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	edx, DWORD PTR $T241204[esp+604]
+	lea	edx, DWORD PTR $T241203[esp+604]
 	push	edx
 	call	??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4MissionTypes@@@Z ; std::make_pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *>
 	add	esp, 36					; 00000024H
 	mov	esi, eax
 	push	esi
-	lea	ecx, DWORD PTR $T241202[esp+576]
+	lea	ecx, DWORD PTR $T241201[esp+576]
 	mov	BYTE PTR __$EHRec$[esp+584], 123	; 0000007bH
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	eax, DWORD PTR [esi+28]
-	mov	DWORD PTR $T241202[esp+600], eax
-	mov	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+580]
+	mov	DWORD PTR $T241201[esp+600], eax
+	mov	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+580]
 	mov	BYTE PTR __$EHRec$[esp+580], 124	; 0000007cH
 	push	ecx
-	lea	edx, DWORD PTR $T241202[esp+576]
+	lea	edx, DWORD PTR $T241201[esp+576]
 	push	edx
-	lea	eax, DWORD PTR $T241205[esp+580]
+	lea	eax, DWORD PTR $T241204[esp+580]
 	push	eax
-	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+584]
+	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+584]
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >::_Insert
-	lea	ecx, DWORD PTR $T241202[esp+572]
+	lea	ecx, DWORD PTR $T241201[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 123	; 0000007bH
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T241204[esp+572]
+	lea	ecx, DWORD PTR $T241203[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -21989,33 +21989,33 @@ $LN625@AcquireTyp:
 	push	OFFSET ?s_eMISSION_ESTABLISH_TRADE_ROUTE@@3W4MissionTypes@@A ; s_eMISSION_ESTABLISH_TRADE_ROUTE
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
-	mov	DWORD PTR $T241207[esp+604], esp
-	push	OFFSET $SG222156
+	mov	DWORD PTR $T241206[esp+604], esp
+	push	OFFSET $SG222155
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T241208[esp+604]
+	lea	ecx, DWORD PTR $T241207[esp+604]
 	push	ecx
 	call	??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4MissionTypes@@@Z ; std::make_pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *>
 	add	esp, 36					; 00000024H
 	mov	esi, eax
 	push	esi
-	lea	ecx, DWORD PTR $T241206[esp+576]
+	lea	ecx, DWORD PTR $T241205[esp+576]
 	mov	BYTE PTR __$EHRec$[esp+584], 125	; 0000007dH
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	edx, DWORD PTR [esi+28]
-	mov	DWORD PTR $T241206[esp+600], edx
-	mov	eax, DWORD PTR _kMissionTypesLookupTable$221649[esp+580]
+	mov	DWORD PTR $T241205[esp+600], edx
+	mov	eax, DWORD PTR _kMissionTypesLookupTable$221648[esp+580]
 	push	eax
-	lea	ecx, DWORD PTR $T241206[esp+576]
+	lea	ecx, DWORD PTR $T241205[esp+576]
 	push	ecx
-	lea	edx, DWORD PTR $T241209[esp+580]
+	lea	edx, DWORD PTR $T241208[esp+580]
 	push	edx
-	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+584]
+	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+584]
 	mov	BYTE PTR __$EHRec$[esp+592], 126	; 0000007eH
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >::_Insert
-	lea	ecx, DWORD PTR $T241206[esp+572]
+	lea	ecx, DWORD PTR $T241205[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 125	; 0000007dH
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T241208[esp+572]
+	lea	ecx, DWORD PTR $T241207[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -22024,33 +22024,33 @@ $LN625@AcquireTyp:
 	push	OFFSET ?s_eMISSION_PLUNDER_TRADE_ROUTE@@3W4MissionTypes@@A ; s_eMISSION_PLUNDER_TRADE_ROUTE
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
-	mov	DWORD PTR $T241211[esp+604], esp
-	push	OFFSET $SG222162
+	mov	DWORD PTR $T241210[esp+604], esp
+	push	OFFSET $SG222161
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	eax, DWORD PTR $T241212[esp+604]
+	lea	eax, DWORD PTR $T241211[esp+604]
 	push	eax
 	call	??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4MissionTypes@@@Z ; std::make_pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *>
 	add	esp, 36					; 00000024H
 	mov	esi, eax
 	push	esi
-	lea	ecx, DWORD PTR $T241210[esp+576]
+	lea	ecx, DWORD PTR $T241209[esp+576]
 	mov	BYTE PTR __$EHRec$[esp+584], 127	; 0000007fH
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	ecx, DWORD PTR [esi+28]
-	mov	DWORD PTR $T241210[esp+600], ecx
-	mov	edx, DWORD PTR _kMissionTypesLookupTable$221649[esp+580]
+	mov	DWORD PTR $T241209[esp+600], ecx
+	mov	edx, DWORD PTR _kMissionTypesLookupTable$221648[esp+580]
 	push	edx
-	lea	eax, DWORD PTR $T241210[esp+576]
+	lea	eax, DWORD PTR $T241209[esp+576]
 	push	eax
-	lea	ecx, DWORD PTR $T241213[esp+580]
+	lea	ecx, DWORD PTR $T241212[esp+580]
 	push	ecx
-	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+584]
+	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+584]
 	mov	BYTE PTR __$EHRec$[esp+592], 128	; 00000080H
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >::_Insert
-	lea	ecx, DWORD PTR $T241210[esp+572]
+	lea	ecx, DWORD PTR $T241209[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 127	; 0000007fH
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T241212[esp+572]
+	lea	ecx, DWORD PTR $T241211[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -22059,33 +22059,33 @@ $LN625@AcquireTyp:
 	push	OFFSET ?s_eMISSION_GREAT_WORK@@3W4MissionTypes@@A ; s_eMISSION_GREAT_WORK
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
-	mov	DWORD PTR $T241215[esp+604], esp
-	push	OFFSET $SG222168
+	mov	DWORD PTR $T241214[esp+604], esp
+	push	OFFSET $SG222167
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	edx, DWORD PTR $T241216[esp+604]
+	lea	edx, DWORD PTR $T241215[esp+604]
 	push	edx
 	call	??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4MissionTypes@@@Z ; std::make_pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *>
 	add	esp, 36					; 00000024H
 	mov	esi, eax
 	push	esi
-	lea	ecx, DWORD PTR $T241214[esp+576]
+	lea	ecx, DWORD PTR $T241213[esp+576]
 	mov	BYTE PTR __$EHRec$[esp+584], 129	; 00000081H
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	eax, DWORD PTR [esi+28]
-	mov	DWORD PTR $T241214[esp+600], eax
-	mov	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+580]
+	mov	DWORD PTR $T241213[esp+600], eax
+	mov	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+580]
 	push	ecx
-	lea	edx, DWORD PTR $T241214[esp+576]
+	lea	edx, DWORD PTR $T241213[esp+576]
 	push	edx
-	lea	eax, DWORD PTR $T241217[esp+580]
+	lea	eax, DWORD PTR $T241216[esp+580]
 	push	eax
-	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+584]
+	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+584]
 	mov	BYTE PTR __$EHRec$[esp+592], 130	; 00000082H
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >::_Insert
-	lea	ecx, DWORD PTR $T241214[esp+572]
+	lea	ecx, DWORD PTR $T241213[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 129	; 00000081H
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T241216[esp+572]
+	lea	ecx, DWORD PTR $T241215[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -22094,33 +22094,33 @@ $LN625@AcquireTyp:
 	push	OFFSET ?s_eMISSION_CHANGE_TRADE_UNIT_HOME_CITY@@3W4MissionTypes@@A ; s_eMISSION_CHANGE_TRADE_UNIT_HOME_CITY
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
-	mov	DWORD PTR $T241219[esp+604], esp
-	push	OFFSET $SG222174
+	mov	DWORD PTR $T241218[esp+604], esp
+	push	OFFSET $SG222173
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T241220[esp+604]
+	lea	ecx, DWORD PTR $T241219[esp+604]
 	push	ecx
 	call	??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4MissionTypes@@@Z ; std::make_pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *>
 	add	esp, 36					; 00000024H
 	mov	esi, eax
 	push	esi
-	lea	ecx, DWORD PTR $T241218[esp+576]
+	lea	ecx, DWORD PTR $T241217[esp+576]
 	mov	BYTE PTR __$EHRec$[esp+584], 131	; 00000083H
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	edx, DWORD PTR [esi+28]
-	mov	DWORD PTR $T241218[esp+600], edx
-	mov	eax, DWORD PTR _kMissionTypesLookupTable$221649[esp+580]
+	mov	DWORD PTR $T241217[esp+600], edx
+	mov	eax, DWORD PTR _kMissionTypesLookupTable$221648[esp+580]
 	push	eax
-	lea	ecx, DWORD PTR $T241218[esp+576]
+	lea	ecx, DWORD PTR $T241217[esp+576]
 	push	ecx
-	lea	edx, DWORD PTR $T241221[esp+580]
+	lea	edx, DWORD PTR $T241220[esp+580]
 	push	edx
-	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+584]
+	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+584]
 	mov	BYTE PTR __$EHRec$[esp+592], 132	; 00000084H
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >::_Insert
-	lea	ecx, DWORD PTR $T241218[esp+572]
+	lea	ecx, DWORD PTR $T241217[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 131	; 00000083H
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T241220[esp+572]
+	lea	ecx, DWORD PTR $T241219[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -22129,33 +22129,33 @@ $LN625@AcquireTyp:
 	push	OFFSET ?s_eMISSION_SELL_EXOTIC_GOODS@@3W4MissionTypes@@A ; s_eMISSION_SELL_EXOTIC_GOODS
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
-	mov	DWORD PTR $T241223[esp+604], esp
-	push	OFFSET $SG222180
+	mov	DWORD PTR $T241222[esp+604], esp
+	push	OFFSET $SG222179
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	eax, DWORD PTR $T241224[esp+604]
+	lea	eax, DWORD PTR $T241223[esp+604]
 	push	eax
 	call	??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4MissionTypes@@@Z ; std::make_pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *>
 	add	esp, 36					; 00000024H
 	mov	esi, eax
 	mov	BYTE PTR __$EHRec$[esp+580], 133	; 00000085H
 	push	esi
-	lea	ecx, DWORD PTR $T241222[esp+576]
+	lea	ecx, DWORD PTR $T241221[esp+576]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	ecx, DWORD PTR [esi+28]
-	mov	DWORD PTR $T241222[esp+600], ecx
-	mov	edx, DWORD PTR _kMissionTypesLookupTable$221649[esp+580]
+	mov	DWORD PTR $T241221[esp+600], ecx
+	mov	edx, DWORD PTR _kMissionTypesLookupTable$221648[esp+580]
 	push	edx
-	lea	eax, DWORD PTR $T241222[esp+576]
+	lea	eax, DWORD PTR $T241221[esp+576]
 	push	eax
-	lea	ecx, DWORD PTR $T241225[esp+580]
+	lea	ecx, DWORD PTR $T241224[esp+580]
 	push	ecx
-	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+584]
+	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+584]
 	mov	BYTE PTR __$EHRec$[esp+592], 134	; 00000086H
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >::_Insert
-	lea	ecx, DWORD PTR $T241222[esp+572]
+	lea	ecx, DWORD PTR $T241221[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 133	; 00000085H
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T241224[esp+572]
+	lea	ecx, DWORD PTR $T241223[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -22164,33 +22164,33 @@ $LN625@AcquireTyp:
 	push	OFFSET ?s_eMISSION_GIVE_POLICIES@@3W4MissionTypes@@A ; s_eMISSION_GIVE_POLICIES
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
-	mov	DWORD PTR $T241227[esp+604], esp
-	push	OFFSET $SG222186
+	mov	DWORD PTR $T241226[esp+604], esp
+	push	OFFSET $SG222185
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	edx, DWORD PTR $T241228[esp+604]
+	lea	edx, DWORD PTR $T241227[esp+604]
 	push	edx
 	call	??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4MissionTypes@@@Z ; std::make_pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *>
 	add	esp, 36					; 00000024H
 	mov	esi, eax
 	push	esi
-	lea	ecx, DWORD PTR $T241226[esp+576]
+	lea	ecx, DWORD PTR $T241225[esp+576]
 	mov	BYTE PTR __$EHRec$[esp+584], 135	; 00000087H
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	eax, DWORD PTR [esi+28]
-	mov	DWORD PTR $T241226[esp+600], eax
-	mov	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+580]
+	mov	DWORD PTR $T241225[esp+600], eax
+	mov	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+580]
 	push	ecx
-	lea	edx, DWORD PTR $T241226[esp+576]
+	lea	edx, DWORD PTR $T241225[esp+576]
 	push	edx
-	lea	eax, DWORD PTR $T241229[esp+580]
+	lea	eax, DWORD PTR $T241228[esp+580]
 	push	eax
-	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+584]
+	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+584]
 	mov	BYTE PTR __$EHRec$[esp+592], 136	; 00000088H
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >::_Insert
-	lea	ecx, DWORD PTR $T241226[esp+572]
+	lea	ecx, DWORD PTR $T241225[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 135	; 00000087H
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T241228[esp+572]
+	lea	ecx, DWORD PTR $T241227[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -22199,33 +22199,33 @@ $LN625@AcquireTyp:
 	push	OFFSET ?s_eMISSION_ONE_SHOT_TOURISM@@3W4MissionTypes@@A ; s_eMISSION_ONE_SHOT_TOURISM
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
-	mov	DWORD PTR $T241231[esp+604], esp
-	push	OFFSET $SG222192
+	mov	DWORD PTR $T241230[esp+604], esp
+	push	OFFSET $SG222191
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T241232[esp+604]
+	lea	ecx, DWORD PTR $T241231[esp+604]
 	push	ecx
 	call	??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4MissionTypes@@@Z ; std::make_pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *>
 	add	esp, 36					; 00000024H
 	mov	esi, eax
 	push	esi
-	lea	ecx, DWORD PTR $T241230[esp+576]
+	lea	ecx, DWORD PTR $T241229[esp+576]
 	mov	BYTE PTR __$EHRec$[esp+584], 137	; 00000089H
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	edx, DWORD PTR [esi+28]
-	mov	DWORD PTR $T241230[esp+600], edx
-	mov	eax, DWORD PTR _kMissionTypesLookupTable$221649[esp+580]
+	mov	DWORD PTR $T241229[esp+600], edx
+	mov	eax, DWORD PTR _kMissionTypesLookupTable$221648[esp+580]
 	push	eax
-	lea	ecx, DWORD PTR $T241230[esp+576]
+	lea	ecx, DWORD PTR $T241229[esp+576]
 	push	ecx
-	lea	edx, DWORD PTR $T241233[esp+580]
+	lea	edx, DWORD PTR $T241232[esp+580]
 	push	edx
-	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+584]
+	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+584]
 	mov	BYTE PTR __$EHRec$[esp+592], 138	; 0000008aH
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >::_Insert
-	lea	ecx, DWORD PTR $T241230[esp+572]
+	lea	ecx, DWORD PTR $T241229[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 137	; 00000089H
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T241232[esp+572]
+	lea	ecx, DWORD PTR $T241231[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -22234,33 +22234,33 @@ $LN625@AcquireTyp:
 	push	OFFSET ?s_eMISSION_CHANGE_ADMIRAL_PORT@@3W4MissionTypes@@A ; s_eMISSION_CHANGE_ADMIRAL_PORT
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
-	mov	DWORD PTR $T241235[esp+604], esp
-	push	OFFSET $SG222198
+	mov	DWORD PTR $T241234[esp+604], esp
+	push	OFFSET $SG222197
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	eax, DWORD PTR $T241236[esp+604]
+	lea	eax, DWORD PTR $T241235[esp+604]
 	push	eax
 	call	??$make_pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PAW4MissionTypes@@@Z ; std::make_pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *>
 	add	esp, 36					; 00000024H
 	mov	esi, eax
 	push	esi
-	lea	ecx, DWORD PTR $T241234[esp+576]
+	lea	ecx, DWORD PTR $T241233[esp+576]
 	mov	BYTE PTR __$EHRec$[esp+584], 139	; 0000008bH
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	mov	ecx, DWORD PTR [esi+28]
-	mov	DWORD PTR $T241234[esp+600], ecx
-	mov	edx, DWORD PTR _kMissionTypesLookupTable$221649[esp+580]
+	mov	DWORD PTR $T241233[esp+600], ecx
+	mov	edx, DWORD PTR _kMissionTypesLookupTable$221648[esp+580]
 	push	edx
-	lea	eax, DWORD PTR $T241234[esp+576]
+	lea	eax, DWORD PTR $T241233[esp+576]
 	push	eax
-	lea	ecx, DWORD PTR $T241237[esp+580]
+	lea	ecx, DWORD PTR $T241236[esp+580]
 	push	ecx
-	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+584]
+	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+584]
 	mov	BYTE PTR __$EHRec$[esp+592], 140	; 0000008cH
 	call	?_Insert@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@IAE?AU?$pair@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@_N@std@@ABU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@4@V?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@4@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >::_Insert
-	lea	ecx, DWORD PTR $T241234[esp+572]
+	lea	ecx, DWORD PTR $T241233[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 139	; 0000008bH
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T241236[esp+572]
+	lea	ecx, DWORD PTR $T241235[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -22269,15 +22269,15 @@ $LN625@AcquireTyp:
 
 	xor	esi, esi
 	push	esi
-	lea	ecx, DWORD PTR _kResults$222199[esp+576]
+	lea	ecx, DWORD PTR _kResults$222198[esp+576]
 	call	edi
 
 ; 227  : 		if(db.Execute(kResults, "SELECT Type, ID from Missions"))
 
 	mov	edi, DWORD PTR _db$[esp+568]
 	push	-1
-	push	OFFSET $SG222201
-	lea	edx, DWORD PTR _kResults$222199[esp+580]
+	push	OFFSET $SG222200
+	lea	edx, DWORD PTR _kResults$222198[esp+580]
 	push	edx
 	mov	ecx, edi
 	mov	BYTE PTR __$EHRec$[esp+592], 141	; 0000008dH
@@ -22288,7 +22288,7 @@ $LN625@AcquireTyp:
 ; 228  : 		{
 ; 229  : 			while(kResults.Step())
 
-	lea	ecx, DWORD PTR _kResults$222199[esp+572]
+	lea	ecx, DWORD PTR _kResults$222198[esp+572]
 	call	DWORD PTR __imp_?Step@Results@Database@@QAE_NXZ
 	test	al, al
 	je	$LN7@AcquireTyp
@@ -22299,33 +22299,33 @@ $LL8@AcquireTyp:
 ; 231  : 				std::string strMissionType = kResults.GetText(0);
 
 	push	esi
-	lea	ecx, DWORD PTR _kResults$222199[esp+576]
+	lea	ecx, DWORD PTR _kResults$222198[esp+576]
 	call	DWORD PTR __imp_?GetText@Results@Database@@QAEPBDH@Z
 	push	eax
-	lea	ecx, DWORD PTR _strMissionType$222205[esp+576]
+	lea	ecx, DWORD PTR _strMissionType$222204[esp+576]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 
 ; 232  : 				LookupTable::iterator it = kMissionTypesLookupTable.find(strMissionType);
 
-	lea	eax, DWORD PTR _strMissionType$222205[esp+572]
+	lea	eax, DWORD PTR _strMissionType$222204[esp+572]
 	push	eax
-	lea	ecx, DWORD PTR _it$222206[esp+576]
+	lea	ecx, DWORD PTR _it$222205[esp+576]
 	push	ecx
-	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221649[esp+580]
+	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221648[esp+580]
 	mov	BYTE PTR __$EHRec$[esp+588], 142	; 0000008eH
 	call	?lower_bound@?$_Hash@V?$_Umap_traits@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$_Hash_compare@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@stdext@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@$0A@@tr1@std@@@stdext@@QAE?AV?$_Iterator@$0A@@?$list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@std@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@5@@Z ; stdext::_Hash<std::tr1::_Umap_traits<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,enum MissionTypes *,stdext::_Hash_compare<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::tr1::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,enum MissionTypes *> >,0> >::lower_bound
 
 ; 233  : 				if(it != kMissionTypesLookupTable.end())
 
-	mov	ebp, DWORD PTR _it$222206[esp+572]
-	cmp	ebp, DWORD PTR _kMissionTypesLookupTable$221649[esp+580]
+	mov	ebp, DWORD PTR _it$222205[esp+572]
+	cmp	ebp, DWORD PTR _kMissionTypesLookupTable$221648[esp+580]
 	je	SHORT $LN6@AcquireTyp
 
 ; 234  : 				{
 ; 235  : 					(*it->second) = static_cast<MissionTypes>(kResults.GetInt(1));
 
 	push	1
-	lea	ecx, DWORD PTR _kResults$222199[esp+576]
+	lea	ecx, DWORD PTR _kResults$222198[esp+576]
 	call	DWORD PTR __imp_?GetInt@Results@Database@@QAEHH@Z
 	mov	edx, DWORD PTR [ebp+36]
 	mov	DWORD PTR [edx], eax
@@ -22334,10 +22334,10 @@ $LN6@AcquireTyp:
 ; 236  : 				}
 ; 237  : 			}
 
-	lea	ecx, DWORD PTR _strMissionType$222205[esp+572]
+	lea	ecx, DWORD PTR _strMissionType$222204[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], 141	; 0000008dH
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR _kResults$222199[esp+572]
+	lea	ecx, DWORD PTR _kResults$222198[esp+572]
 	call	DWORD PTR __imp_?Step@Results@Database@@QAE_NXZ
 	test	al, al
 	jne	SHORT $LL8@AcquireTyp
@@ -22348,7 +22348,7 @@ $LN7@AcquireTyp:
 ; 240  : 		int iNumTypes = db.Count("Missions", false);
 
 	push	esi
-	push	OFFSET $SG222212
+	push	OFFSET $SG222211
 	mov	ecx, edi
 	call	DWORD PTR __imp_?Count@Connection@Database@@QAEHPBD_N@Z
 
@@ -22367,7 +22367,7 @@ $LN5@AcquireTyp:
 ; 245  : 
 ; 246  : 		for(LookupTable::iterator it = kMissionTypesLookupTable.begin(); it != kMissionTypesLookupTable.end(); ++it)
 
-	mov	eax, DWORD PTR _kMissionTypesLookupTable$221649[esp+580]
+	mov	eax, DWORD PTR _kMissionTypesLookupTable$221648[esp+580]
 	mov	edi, DWORD PTR [eax]
 	cmp	edi, eax
 	je	$LN2@AcquireTyp
@@ -22385,10 +22385,10 @@ $LL1802@AcquireTyp:
 ; 250  : 				char msg[256] = {0};
 
 	push	255					; 000000ffH
-	lea	edx, DWORD PTR _msg$222222[esp+577]
+	lea	edx, DWORD PTR _msg$222221[esp+577]
 	push	esi
 	push	edx
-	mov	BYTE PTR _msg$222222[esp+584], 0
+	mov	BYTE PTR _msg$222221[esp+584], 0
 	call	_memset
 	add	esp, 12					; 0000000cH
 
@@ -22397,8 +22397,8 @@ $LL1802@AcquireTyp:
 	lea	ecx, DWORD PTR [edi+8]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
-	lea	eax, DWORD PTR _msg$222222[esp+576]
-	push	OFFSET $SG222223
+	lea	eax, DWORD PTR _msg$222221[esp+576]
+	push	OFFSET $SG222222
 	push	eax
 	call	??$sprintf_s@$0BAA@@@YAHAAY0BAA@DPBDZZ	; sprintf_s<256>
 	add	esp, 12					; 0000000cH
@@ -22411,18 +22411,18 @@ $LL1802@AcquireTyp:
 	push	1
 	mov	ecx, eax
 	mov	eax, DWORD PTR [edx+12]
-	push	OFFSET $SG222225
+	push	OFFSET $SG222224
 	call	eax
 
 ; 253  : 				pLog->WarningMsg(msg);
 
 	mov	ecx, DWORD PTR [eax]
-	lea	edx, DWORD PTR _msg$222222[esp+572]
+	lea	edx, DWORD PTR _msg$222221[esp+572]
 	push	edx
 	push	eax
 	mov	eax, DWORD PTR [ecx+8]
 	call	eax
-	mov	eax, DWORD PTR _kMissionTypesLookupTable$221649[esp+588]
+	mov	eax, DWORD PTR _kMissionTypesLookupTable$221648[esp+588]
 	add	esp, 8
 $LN3@AcquireTyp:
 	mov	edi, DWORD PTR [edi]
@@ -22435,10 +22435,10 @@ $LN2@AcquireTyp:
 ; 256  : 		}
 ; 257  : 	}
 
-	lea	ecx, DWORD PTR _kResults$222199[esp+572]
+	lea	ecx, DWORD PTR _kResults$222198[esp+572]
 	mov	BYTE PTR __$EHRec$[esp+580], bl
 	call	DWORD PTR __imp_??1Results@Database@@UAE@XZ
-	mov	eax, DWORD PTR _kMissionTypesLookupTable$221649[esp+592]
+	mov	eax, DWORD PTR _kMissionTypesLookupTable$221648[esp+592]
 	mov	DWORD PTR __$EHRec$[esp+580], -1
 	cmp	eax, esi
 	je	SHORT $LN1846@AcquireTyp
@@ -22446,16 +22446,16 @@ $LN2@AcquireTyp:
 	call	??3@YAXPAX@Z				; operator delete
 	add	esp, 4
 $LN1846@AcquireTyp:
-	mov	eax, DWORD PTR _kMissionTypesLookupTable$221649[esp+580]
-	mov	DWORD PTR _kMissionTypesLookupTable$221649[esp+592], esi
-	mov	DWORD PTR _kMissionTypesLookupTable$221649[esp+596], esi
-	mov	DWORD PTR _kMissionTypesLookupTable$221649[esp+600], esi
+	mov	eax, DWORD PTR _kMissionTypesLookupTable$221648[esp+580]
+	mov	DWORD PTR _kMissionTypesLookupTable$221648[esp+592], esi
+	mov	DWORD PTR _kMissionTypesLookupTable$221648[esp+596], esi
+	mov	DWORD PTR _kMissionTypesLookupTable$221648[esp+600], esi
 	mov	edi, DWORD PTR [eax]
 	mov	DWORD PTR [eax], eax
-	mov	eax, DWORD PTR _kMissionTypesLookupTable$221649[esp+580]
+	mov	eax, DWORD PTR _kMissionTypesLookupTable$221648[esp+580]
 	mov	DWORD PTR [eax+4], eax
-	mov	eax, DWORD PTR _kMissionTypesLookupTable$221649[esp+580]
-	mov	DWORD PTR _kMissionTypesLookupTable$221649[esp+584], esi
+	mov	eax, DWORD PTR _kMissionTypesLookupTable$221648[esp+580]
+	mov	DWORD PTR _kMissionTypesLookupTable$221648[esp+584], esi
 	cmp	edi, eax
 	je	SHORT $LN1852@AcquireTyp
 	npad	1
@@ -22465,7 +22465,7 @@ $LL1854@AcquireTyp:
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 	push	edi
 	call	??3@YAXPAX@Z				; operator delete
-	mov	eax, DWORD PTR _kMissionTypesLookupTable$221649[esp+584]
+	mov	eax, DWORD PTR _kMissionTypesLookupTable$221648[esp+584]
 	add	esp, 4
 	mov	edi, esi
 	cmp	esi, eax
@@ -22489,433 +22489,433 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$0:
-	lea	ecx, DWORD PTR _kArtifactTypeLookupTable$218922[ebp]
+	lea	ecx, DWORD PTR _kArtifactTypeLookupTable$218921[ebp]
 	jmp	??1?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@@2@@tr1@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$2:
-	lea	ecx, DWORD PTR $T240968[ebp]
+	lea	ecx, DWORD PTR $T240967[ebp]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$3:
-	lea	ecx, DWORD PTR $T240966[ebp]
+	lea	ecx, DWORD PTR $T240965[ebp]
 	jmp	??1?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$5:
-	lea	ecx, DWORD PTR $T240972[ebp]
+	lea	ecx, DWORD PTR $T240971[ebp]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$6:
-	lea	ecx, DWORD PTR $T240970[ebp]
+	lea	ecx, DWORD PTR $T240969[ebp]
 	jmp	??1?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$8:
-	lea	ecx, DWORD PTR $T240976[ebp]
+	lea	ecx, DWORD PTR $T240975[ebp]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$9:
-	lea	ecx, DWORD PTR $T240974[ebp]
+	lea	ecx, DWORD PTR $T240973[ebp]
 	jmp	??1?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$11:
-	lea	ecx, DWORD PTR $T240980[ebp]
+	lea	ecx, DWORD PTR $T240979[ebp]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$12:
-	lea	ecx, DWORD PTR $T240978[ebp]
+	lea	ecx, DWORD PTR $T240977[ebp]
 	jmp	??1?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$14:
-	lea	ecx, DWORD PTR $T240984[ebp]
+	lea	ecx, DWORD PTR $T240983[ebp]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$15:
-	lea	ecx, DWORD PTR $T240982[ebp]
+	lea	ecx, DWORD PTR $T240981[ebp]
 	jmp	??1?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$17:
-	lea	ecx, DWORD PTR $T240988[ebp]
+	lea	ecx, DWORD PTR $T240987[ebp]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$18:
-	lea	ecx, DWORD PTR $T240986[ebp]
+	lea	ecx, DWORD PTR $T240985[ebp]
 	jmp	??1?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkArtifactClass@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$19:
-	lea	ecx, DWORD PTR _kResults$219160[ebp]
+	lea	ecx, DWORD PTR _kResults$219159[ebp]
 	jmp	DWORD PTR __imp_??1Results@Database@@UAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$20:
-	lea	ecx, DWORD PTR _strArtifactType$219166[ebp]
+	lea	ecx, DWORD PTR _strArtifactType$219165[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$21:
-	lea	ecx, DWORD PTR _kTypeLookupTable$220297[ebp]
+	lea	ecx, DWORD PTR _kTypeLookupTable$220296[ebp]
 	jmp	??1?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@@2@@tr1@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$23:
-	lea	ecx, DWORD PTR $T240994[ebp]
+	lea	ecx, DWORD PTR $T240993[ebp]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$24:
-	lea	ecx, DWORD PTR $T240992[ebp]
+	lea	ecx, DWORD PTR $T240991[ebp]
 	jmp	??1?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$26:
-	lea	ecx, DWORD PTR $T240998[ebp]
+	lea	ecx, DWORD PTR $T240997[ebp]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$27:
-	lea	ecx, DWORD PTR $T240996[ebp]
+	lea	ecx, DWORD PTR $T240995[ebp]
 	jmp	??1?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$29:
-	lea	ecx, DWORD PTR $T241002[ebp]
+	lea	ecx, DWORD PTR $T241001[ebp]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$30:
-	lea	ecx, DWORD PTR $T241000[ebp]
+	lea	ecx, DWORD PTR $T240999[ebp]
 	jmp	??1?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4GreatWorkSlotType@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$31:
-	lea	ecx, DWORD PTR _kResults$220517[ebp]
+	lea	ecx, DWORD PTR _kResults$220516[ebp]
 	jmp	DWORD PTR __imp_??1Results@Database@@UAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$32:
-	lea	ecx, DWORD PTR _strType$220523[ebp]
+	lea	ecx, DWORD PTR _strType$220522[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$33:
-	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221649[ebp]
+	lea	ecx, DWORD PTR _kMissionTypesLookupTable$221648[ebp]
 	jmp	??1?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@V?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@tr1@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@@2@@tr1@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$35:
-	lea	ecx, DWORD PTR $T241008[ebp]
+	lea	ecx, DWORD PTR $T241007[ebp]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$36:
-	lea	ecx, DWORD PTR $T241006[ebp]
+	lea	ecx, DWORD PTR $T241005[ebp]
 	jmp	??1?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$38:
-	lea	ecx, DWORD PTR $T241012[ebp]
+	lea	ecx, DWORD PTR $T241011[ebp]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$39:
-	lea	ecx, DWORD PTR $T241010[ebp]
+	lea	ecx, DWORD PTR $T241009[ebp]
 	jmp	??1?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$41:
-	lea	ecx, DWORD PTR $T241016[ebp]
+	lea	ecx, DWORD PTR $T241015[ebp]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$42:
-	lea	ecx, DWORD PTR $T241014[ebp]
+	lea	ecx, DWORD PTR $T241013[ebp]
 	jmp	??1?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$44:
-	lea	ecx, DWORD PTR $T241020[ebp]
+	lea	ecx, DWORD PTR $T241019[ebp]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$45:
-	lea	ecx, DWORD PTR $T241018[ebp]
+	lea	ecx, DWORD PTR $T241017[ebp]
 	jmp	??1?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$47:
-	lea	ecx, DWORD PTR $T241024[ebp]
+	lea	ecx, DWORD PTR $T241023[ebp]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$48:
-	lea	ecx, DWORD PTR $T241022[ebp]
+	lea	ecx, DWORD PTR $T241021[ebp]
 	jmp	??1?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$50:
-	lea	ecx, DWORD PTR $T241028[ebp]
+	lea	ecx, DWORD PTR $T241027[ebp]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$51:
-	lea	ecx, DWORD PTR $T241026[ebp]
+	lea	ecx, DWORD PTR $T241025[ebp]
 	jmp	??1?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$53:
-	lea	ecx, DWORD PTR $T241032[ebp]
+	lea	ecx, DWORD PTR $T241031[ebp]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$54:
-	lea	ecx, DWORD PTR $T241030[ebp]
+	lea	ecx, DWORD PTR $T241029[ebp]
 	jmp	??1?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$56:
-	lea	ecx, DWORD PTR $T241036[ebp]
+	lea	ecx, DWORD PTR $T241035[ebp]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$57:
-	lea	ecx, DWORD PTR $T241034[ebp]
+	lea	ecx, DWORD PTR $T241033[ebp]
 	jmp	??1?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$59:
-	lea	ecx, DWORD PTR $T241040[ebp]
+	lea	ecx, DWORD PTR $T241039[ebp]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$60:
-	lea	ecx, DWORD PTR $T241038[ebp]
+	lea	ecx, DWORD PTR $T241037[ebp]
 	jmp	??1?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$62:
-	lea	ecx, DWORD PTR $T241044[ebp]
+	lea	ecx, DWORD PTR $T241043[ebp]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$63:
-	lea	ecx, DWORD PTR $T241042[ebp]
+	lea	ecx, DWORD PTR $T241041[ebp]
 	jmp	??1?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$65:
-	lea	ecx, DWORD PTR $T241048[ebp]
+	lea	ecx, DWORD PTR $T241047[ebp]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$66:
-	lea	ecx, DWORD PTR $T241046[ebp]
+	lea	ecx, DWORD PTR $T241045[ebp]
 	jmp	??1?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$68:
-	lea	ecx, DWORD PTR $T241052[ebp]
+	lea	ecx, DWORD PTR $T241051[ebp]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$69:
-	lea	ecx, DWORD PTR $T241050[ebp]
+	lea	ecx, DWORD PTR $T241049[ebp]
 	jmp	??1?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$71:
-	lea	ecx, DWORD PTR $T241056[ebp]
+	lea	ecx, DWORD PTR $T241055[ebp]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$72:
-	lea	ecx, DWORD PTR $T241054[ebp]
+	lea	ecx, DWORD PTR $T241053[ebp]
 	jmp	??1?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$74:
-	lea	ecx, DWORD PTR $T241060[ebp]
+	lea	ecx, DWORD PTR $T241059[ebp]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$75:
-	lea	ecx, DWORD PTR $T241058[ebp]
+	lea	ecx, DWORD PTR $T241057[ebp]
 	jmp	??1?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$77:
-	lea	ecx, DWORD PTR $T241064[ebp]
+	lea	ecx, DWORD PTR $T241063[ebp]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$78:
-	lea	ecx, DWORD PTR $T241062[ebp]
+	lea	ecx, DWORD PTR $T241061[ebp]
 	jmp	??1?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$80:
-	lea	ecx, DWORD PTR $T241068[ebp]
+	lea	ecx, DWORD PTR $T241067[ebp]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$81:
-	lea	ecx, DWORD PTR $T241066[ebp]
+	lea	ecx, DWORD PTR $T241065[ebp]
 	jmp	??1?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$83:
-	lea	ecx, DWORD PTR $T241072[ebp]
+	lea	ecx, DWORD PTR $T241071[ebp]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$84:
-	lea	ecx, DWORD PTR $T241070[ebp]
+	lea	ecx, DWORD PTR $T241069[ebp]
 	jmp	??1?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$86:
-	lea	ecx, DWORD PTR $T241076[ebp]
+	lea	ecx, DWORD PTR $T241075[ebp]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$87:
-	lea	ecx, DWORD PTR $T241074[ebp]
+	lea	ecx, DWORD PTR $T241073[ebp]
 	jmp	??1?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$89:
-	lea	ecx, DWORD PTR $T241080[ebp]
+	lea	ecx, DWORD PTR $T241079[ebp]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$90:
-	lea	ecx, DWORD PTR $T241078[ebp]
+	lea	ecx, DWORD PTR $T241077[ebp]
 	jmp	??1?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$92:
-	lea	ecx, DWORD PTR $T241084[ebp]
+	lea	ecx, DWORD PTR $T241083[ebp]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$93:
-	lea	ecx, DWORD PTR $T241082[ebp]
+	lea	ecx, DWORD PTR $T241081[ebp]
 	jmp	??1?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$95:
-	lea	ecx, DWORD PTR $T241088[ebp]
+	lea	ecx, DWORD PTR $T241087[ebp]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$96:
-	lea	ecx, DWORD PTR $T241086[ebp]
+	lea	ecx, DWORD PTR $T241085[ebp]
 	jmp	??1?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$98:
-	lea	ecx, DWORD PTR $T241092[ebp]
+	lea	ecx, DWORD PTR $T241091[ebp]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$99:
-	lea	ecx, DWORD PTR $T241090[ebp]
+	lea	ecx, DWORD PTR $T241089[ebp]
 	jmp	??1?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$101:
-	lea	ecx, DWORD PTR $T241096[ebp]
+	lea	ecx, DWORD PTR $T241095[ebp]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$102:
-	lea	ecx, DWORD PTR $T241094[ebp]
+	lea	ecx, DWORD PTR $T241093[ebp]
 	jmp	??1?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$104:
-	lea	ecx, DWORD PTR $T241100[ebp]
+	lea	ecx, DWORD PTR $T241099[ebp]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$105:
-	lea	ecx, DWORD PTR $T241098[ebp]
+	lea	ecx, DWORD PTR $T241097[ebp]
 	jmp	??1?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$107:
-	lea	ecx, DWORD PTR $T241104[ebp]
+	lea	ecx, DWORD PTR $T241103[ebp]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$108:
-	lea	ecx, DWORD PTR $T241102[ebp]
+	lea	ecx, DWORD PTR $T241101[ebp]
 	jmp	??1?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$110:
-	lea	ecx, DWORD PTR $T241108[ebp]
+	lea	ecx, DWORD PTR $T241107[ebp]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$111:
-	lea	ecx, DWORD PTR $T241106[ebp]
+	lea	ecx, DWORD PTR $T241105[ebp]
 	jmp	??1?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$113:
-	lea	ecx, DWORD PTR $T241112[ebp]
+	lea	ecx, DWORD PTR $T241111[ebp]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$114:
-	lea	ecx, DWORD PTR $T241110[ebp]
+	lea	ecx, DWORD PTR $T241109[ebp]
 	jmp	??1?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$116:
-	lea	ecx, DWORD PTR $T241116[ebp]
+	lea	ecx, DWORD PTR $T241115[ebp]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$117:
-	lea	ecx, DWORD PTR $T241114[ebp]
+	lea	ecx, DWORD PTR $T241113[ebp]
 	jmp	??1?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$119:
-	lea	ecx, DWORD PTR $T241120[ebp]
+	lea	ecx, DWORD PTR $T241119[ebp]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$120:
-	lea	ecx, DWORD PTR $T241118[ebp]
+	lea	ecx, DWORD PTR $T241117[ebp]
 	jmp	??1?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$122:
-	lea	ecx, DWORD PTR $T241124[ebp]
+	lea	ecx, DWORD PTR $T241123[ebp]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$123:
-	lea	ecx, DWORD PTR $T241122[ebp]
+	lea	ecx, DWORD PTR $T241121[ebp]
 	jmp	??1?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$125:
-	lea	ecx, DWORD PTR $T241128[ebp]
+	lea	ecx, DWORD PTR $T241127[ebp]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$126:
-	lea	ecx, DWORD PTR $T241126[ebp]
+	lea	ecx, DWORD PTR $T241125[ebp]
 	jmp	??1?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$128:
-	lea	ecx, DWORD PTR $T241132[ebp]
+	lea	ecx, DWORD PTR $T241131[ebp]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$129:
-	lea	ecx, DWORD PTR $T241130[ebp]
+	lea	ecx, DWORD PTR $T241129[ebp]
 	jmp	??1?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$131:
-	lea	ecx, DWORD PTR $T241136[ebp]
+	lea	ecx, DWORD PTR $T241135[ebp]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$132:
-	lea	ecx, DWORD PTR $T241134[ebp]
+	lea	ecx, DWORD PTR $T241133[ebp]
 	jmp	??1?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$134:
-	lea	ecx, DWORD PTR $T241140[ebp]
+	lea	ecx, DWORD PTR $T241139[ebp]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$135:
-	lea	ecx, DWORD PTR $T241138[ebp]
+	lea	ecx, DWORD PTR $T241137[ebp]
 	jmp	??1?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$137:
-	lea	ecx, DWORD PTR $T241144[ebp]
+	lea	ecx, DWORD PTR $T241143[ebp]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$138:
-	lea	ecx, DWORD PTR $T241142[ebp]
+	lea	ecx, DWORD PTR $T241141[ebp]
 	jmp	??1?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$140:
-	lea	ecx, DWORD PTR $T241148[ebp]
+	lea	ecx, DWORD PTR $T241147[ebp]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$141:
-	lea	ecx, DWORD PTR $T241146[ebp]
+	lea	ecx, DWORD PTR $T241145[ebp]
 	jmp	??1?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$143:
-	lea	ecx, DWORD PTR $T241152[ebp]
+	lea	ecx, DWORD PTR $T241151[ebp]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$144:
-	lea	ecx, DWORD PTR $T241150[ebp]
+	lea	ecx, DWORD PTR $T241149[ebp]
 	jmp	??1?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$146:
-	lea	ecx, DWORD PTR $T241156[ebp]
+	lea	ecx, DWORD PTR $T241155[ebp]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$147:
-	lea	ecx, DWORD PTR $T241154[ebp]
+	lea	ecx, DWORD PTR $T241153[ebp]
 	jmp	??1?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$149:
-	lea	ecx, DWORD PTR $T241160[ebp]
+	lea	ecx, DWORD PTR $T241159[ebp]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$150:
-	lea	ecx, DWORD PTR $T241158[ebp]
+	lea	ecx, DWORD PTR $T241157[ebp]
 	jmp	??1?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$152:
-	lea	ecx, DWORD PTR $T241164[ebp]
+	lea	ecx, DWORD PTR $T241163[ebp]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$153:
-	lea	ecx, DWORD PTR $T241162[ebp]
+	lea	ecx, DWORD PTR $T241161[ebp]
 	jmp	??1?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$155:
-	lea	ecx, DWORD PTR $T241168[ebp]
+	lea	ecx, DWORD PTR $T241167[ebp]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$156:
-	lea	ecx, DWORD PTR $T241166[ebp]
+	lea	ecx, DWORD PTR $T241165[ebp]
 	jmp	??1?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$158:
-	lea	ecx, DWORD PTR $T241172[ebp]
+	lea	ecx, DWORD PTR $T241171[ebp]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$159:
-	lea	ecx, DWORD PTR $T241170[ebp]
+	lea	ecx, DWORD PTR $T241169[ebp]
 	jmp	??1?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$161:
-	lea	ecx, DWORD PTR $T241176[ebp]
+	lea	ecx, DWORD PTR $T241175[ebp]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$162:
-	lea	ecx, DWORD PTR $T241174[ebp]
+	lea	ecx, DWORD PTR $T241173[ebp]
 	jmp	??1?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$164:
-	lea	ecx, DWORD PTR $T241180[ebp]
+	lea	ecx, DWORD PTR $T241179[ebp]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$165:
-	lea	ecx, DWORD PTR $T241178[ebp]
+	lea	ecx, DWORD PTR $T241177[ebp]
 	jmp	??1?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$167:
-	lea	ecx, DWORD PTR $T241184[ebp]
+	lea	ecx, DWORD PTR $T241183[ebp]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$168:
-	lea	ecx, DWORD PTR $T241182[ebp]
+	lea	ecx, DWORD PTR $T241181[ebp]
 	jmp	??1?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$170:
-	lea	ecx, DWORD PTR $T241188[ebp]
+	lea	ecx, DWORD PTR $T241187[ebp]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$171:
-	lea	ecx, DWORD PTR $T241186[ebp]
+	lea	ecx, DWORD PTR $T241185[ebp]
 	jmp	??1?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$173:
-	lea	ecx, DWORD PTR $T241192[ebp]
+	lea	ecx, DWORD PTR $T241191[ebp]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$174:
-	lea	ecx, DWORD PTR $T241190[ebp]
+	lea	ecx, DWORD PTR $T241189[ebp]
 	jmp	??1?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$176:
-	lea	ecx, DWORD PTR $T241196[ebp]
+	lea	ecx, DWORD PTR $T241195[ebp]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$177:
-	lea	ecx, DWORD PTR $T241194[ebp]
+	lea	ecx, DWORD PTR $T241193[ebp]
 	jmp	??1?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$179:
-	lea	ecx, DWORD PTR $T241200[ebp]
+	lea	ecx, DWORD PTR $T241199[ebp]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$180:
-	lea	ecx, DWORD PTR $T241198[ebp]
+	lea	ecx, DWORD PTR $T241197[ebp]
 	jmp	??1?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$182:
-	lea	ecx, DWORD PTR $T241204[ebp]
+	lea	ecx, DWORD PTR $T241203[ebp]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$183:
-	lea	ecx, DWORD PTR $T241202[ebp]
+	lea	ecx, DWORD PTR $T241201[ebp]
 	jmp	??1?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$185:
-	lea	ecx, DWORD PTR $T241208[ebp]
+	lea	ecx, DWORD PTR $T241207[ebp]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$186:
-	lea	ecx, DWORD PTR $T241206[ebp]
+	lea	ecx, DWORD PTR $T241205[ebp]
 	jmp	??1?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$188:
-	lea	ecx, DWORD PTR $T241212[ebp]
+	lea	ecx, DWORD PTR $T241211[ebp]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$189:
-	lea	ecx, DWORD PTR $T241210[ebp]
+	lea	ecx, DWORD PTR $T241209[ebp]
 	jmp	??1?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$191:
-	lea	ecx, DWORD PTR $T241216[ebp]
+	lea	ecx, DWORD PTR $T241215[ebp]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$192:
-	lea	ecx, DWORD PTR $T241214[ebp]
+	lea	ecx, DWORD PTR $T241213[ebp]
 	jmp	??1?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$194:
-	lea	ecx, DWORD PTR $T241220[ebp]
+	lea	ecx, DWORD PTR $T241219[ebp]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$195:
-	lea	ecx, DWORD PTR $T241218[ebp]
+	lea	ecx, DWORD PTR $T241217[ebp]
 	jmp	??1?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$197:
-	lea	ecx, DWORD PTR $T241224[ebp]
+	lea	ecx, DWORD PTR $T241223[ebp]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$198:
-	lea	ecx, DWORD PTR $T241222[ebp]
+	lea	ecx, DWORD PTR $T241221[ebp]
 	jmp	??1?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$200:
-	lea	ecx, DWORD PTR $T241228[ebp]
+	lea	ecx, DWORD PTR $T241227[ebp]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$201:
-	lea	ecx, DWORD PTR $T241226[ebp]
+	lea	ecx, DWORD PTR $T241225[ebp]
 	jmp	??1?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$203:
-	lea	ecx, DWORD PTR $T241232[ebp]
+	lea	ecx, DWORD PTR $T241231[ebp]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$204:
-	lea	ecx, DWORD PTR $T241230[ebp]
+	lea	ecx, DWORD PTR $T241229[ebp]
 	jmp	??1?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$206:
-	lea	ecx, DWORD PTR $T241236[ebp]
+	lea	ecx, DWORD PTR $T241235[ebp]
 	jmp	??1?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$207:
-	lea	ecx, DWORD PTR $T241234[ebp]
+	lea	ecx, DWORD PTR $T241233[ebp]
 	jmp	??1?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAW4MissionTypes@@@std@@QAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$208:
-	lea	ecx, DWORD PTR _kResults$222199[ebp]
+	lea	ecx, DWORD PTR _kResults$222198[ebp]
 	jmp	DWORD PTR __imp_??1Results@Database@@UAE@XZ
 __unwindfunclet$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z$209:
-	lea	ecx, DWORD PTR _strMissionType$222205[ebp]
+	lea	ecx, DWORD PTR _strMissionType$222204[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __ehhandler$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?AcquireTypes@CvTypes@@YAXAAVConnection@Database@@@Z

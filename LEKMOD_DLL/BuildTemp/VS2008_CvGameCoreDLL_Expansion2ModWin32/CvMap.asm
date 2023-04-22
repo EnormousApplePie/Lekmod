@@ -13,30 +13,30 @@ _BSS	SEGMENT
 _sgCvMapInstanceCount DD 01H DUP (?)
 _BSS	ENDS
 CONST	SEGMENT
-$SG235862 DB	'CvMap::init begin - world size=%s, climate=%s, sealevel='
+$SG235861 DB	'CvMap::init begin - world size=%s, climate=%s, sealevel='
 	DB	'%s', 00H
 	ORG $+1
-$SG236070 DB	'Rand Plot Height', 00H
+$SG236069 DB	'Rand Plot Height', 00H
 	ORG $+3
-$SG236071 DB	'Rand Plot Width', 00H
-$SG236313 DB	'Picking from random Resource Quantity types', 00H
-$SG236632 DB	'FEATURE_EVEREST', 00H
-$SG236635 DB	'FEATURE_CRATER', 00H
+$SG236070 DB	'Rand Plot Width', 00H
+$SG236312 DB	'Picking from random Resource Quantity types', 00H
+$SG236631 DB	'FEATURE_EVEREST', 00H
+$SG236634 DB	'FEATURE_CRATER', 00H
 	ORG $+1
-$SG236638 DB	'FEATURE_TITICACA', 00H
+$SG236637 DB	'FEATURE_TITICACA', 00H
 	ORG $+3
-$SG236641 DB	'FEATURE_FUJI', 00H
+$SG236640 DB	'FEATURE_FUJI', 00H
 	ORG $+3
-$SG236644 DB	'FEATURE_MESA', 00H
+$SG236643 DB	'FEATURE_MESA', 00H
 	ORG $+3
-$SG236647 DB	'FEATURE_REEF', 00H
+$SG236646 DB	'FEATURE_REEF', 00H
 	ORG $+3
-$SG236650 DB	'FEATURE_VOLCANO', 00H
-$SG236678 DB	'Randomly Placing Natural Wonders', 00H
+$SG236649 DB	'FEATURE_VOLCANO', 00H
+$SG236677 DB	'Randomly Placing Natural Wonders', 00H
 	ORG $+3
-$SG236744 DB	'Natural Wonder', 00H
+$SG236743 DB	'Natural Wonder', 00H
 	ORG $+1
-$SG236757 DB	'Natural Wonder', 00H
+$SG236756 DB	'Natural Wonder', 00H
 CONST	ENDS
 PUBLIC	?wrapCoordDifference@@YAHHI_N@Z			; wrapCoordDifference
 ; Function compile flags: /Ogtpy
@@ -1361,7 +1361,7 @@ __ehfuncinfo$?Add@?$FFreeListTrashArray@VCvArea@@@@QAEPAVCvArea@@XZ DD 019930522
 xdata$x	ENDS
 ;	COMDAT ?Add@?$FFreeListTrashArray@VCvArea@@@@QAEPAVCvArea@@XZ
 _TEXT	SEGMENT
-$T238041 = -16						; size = 4
+$T238040 = -16						; size = 4
 __$EHRec$ = -12						; size = 12
 ?Add@?$FFreeListTrashArray@VCvArea@@@@QAEPAVCvArea@@XZ PROC ; FFreeListTrashArray<CvArea>::Add, COMDAT
 ; _this$ = ecx
@@ -1482,7 +1482,7 @@ $LN1@Add:
 	push	4232					; 00001088H
 	call	??2@YAPAXI@Z				; operator new
 	add	esp, 4
-	mov	DWORD PTR $T238041[esp+24], eax
+	mov	DWORD PTR $T238040[esp+24], eax
 	mov	DWORD PTR __$EHRec$[esp+32], 0
 	test	eax, eax
 	je	SHORT $LN8@Add
@@ -1531,7 +1531,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?Add@?$FFreeListTrashArray@VCvArea@@@@QAEPAVCvArea@@XZ$0:
-	mov	eax, DWORD PTR $T238041[ebp]
+	mov	eax, DWORD PTR $T238040[ebp]
 	push	eax
 	call	??3@YAXPAX@Z				; operator delete
 	pop	ecx
@@ -3481,7 +3481,7 @@ __ehfuncinfo$?format@CvString@@SA?AV1@PBDZZ DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?format@CvString@@SA?AV1@PBDZZ
 _TEXT	SEGMENT
-$T238322 = -44						; size = 4
+$T238321 = -44						; size = 4
 _result$ = -40						; size = 28
 __$EHRec$ = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
@@ -3501,7 +3501,7 @@ _fmt$ = 12						; size = 4
 ; 244  : 	std::string result;
 
 	lea	ecx, DWORD PTR _result$[esp+48]
-	mov	DWORD PTR $T238322[esp+48], 0
+	mov	DWORD PTR $T238321[esp+48], 0
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
 ; 245  : 	va_list args;
@@ -3527,7 +3527,7 @@ _fmt$ = 12						; size = 4
 	mov	ecx, esi
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	lea	ecx, DWORD PTR _result$[esp+48]
-	mov	DWORD PTR $T238322[esp+48], 1
+	mov	DWORD PTR $T238321[esp+48], 1
 	mov	BYTE PTR __$EHRec$[esp+56], 0
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -3546,10 +3546,10 @@ __unwindfunclet$?format@CvString@@SA?AV1@PBDZZ$0:
 	lea	ecx, DWORD PTR _result$[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?format@CvString@@SA?AV1@PBDZZ$1:
-	mov	eax, DWORD PTR $T238322[ebp]
+	mov	eax, DWORD PTR $T238321[ebp]
 	and	eax, 1
 	je	$LN5@format
-	and	DWORD PTR $T238322[ebp], -2		; fffffffeH
+	and	DWORD PTR $T238321[ebp], -2		; fffffffeH
 	mov	ecx, DWORD PTR ___$ReturnUdt$[ebp-4]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 $LN5@format:
@@ -4985,7 +4985,7 @@ tv357 = -4						; size = 4
 _iX1$ = 8						; size = 4
 _iDX$ = 12						; size = 4
 _iY1$ = 12						; size = 4
-$T238644 = 16						; size = 4
+$T238643 = 16						; size = 4
 _iX2$ = 16						; size = 4
 _iY2$ = 20						; size = 4
 ?plotDistance@@YAHHHHH@Z PROC				; plotDistance, COMDAT
@@ -5034,18 +5034,18 @@ $LN18@plotDistan:
 	jle	SHORT $LN34@plotDistan
 	mov	ebx, ebp
 	sub	ebx, eax
-	mov	DWORD PTR $T238644[esp+24], ebx
+	mov	DWORD PTR $T238643[esp+24], ebx
 	jmp	SHORT $LN36@plotDistan
 $LN34@plotDistan:
 	neg	edx
 	cmp	ebp, edx
 	jge	SHORT $LN32@plotDistan
 	lea	ebx, DWORD PTR [eax+ebp]
-	mov	DWORD PTR $T238644[esp+24], ebx
+	mov	DWORD PTR $T238643[esp+24], ebx
 	jmp	SHORT $LN36@plotDistan
 $LN32@plotDistan:
 	mov	ebx, ebp
-	mov	DWORD PTR $T238644[esp+24], ebp
+	mov	DWORD PTR $T238643[esp+24], ebp
 $LN36@plotDistan:
 
 ; 148  : 	int iDY = abs(iWrappedDY);
@@ -5096,7 +5096,7 @@ $LN80@plotDistan:
 ; 154  : 	{
 ; 155  : 		iWrappedDX *= -1;  // change polarity
 
-	mov	ebx, DWORD PTR $T238644[esp+24]
+	mov	ebx, DWORD PTR $T238643[esp+24]
 	neg	eax
 	sbb	eax, eax
 	inc	eax
@@ -5105,7 +5105,7 @@ $LN80@plotDistan:
 	neg	ecx
 	jmp	SHORT $LN5@plotDistan
 $LN73@plotDistan:
-	mov	ebx, DWORD PTR $T238644[esp+24]
+	mov	ebx, DWORD PTR $T238643[esp+24]
 $LN5@plotDistan:
 
 ; 156  : 	}
@@ -5567,7 +5567,7 @@ _pNoSettling$ = -24					; size = 4
 _pResourceForceReveal$ = -20				; size = 4
 tv410 = -16						; size = 4
 tv210 = -16						; size = 4
-$T238815 = -16						; size = 4
+$T238814 = -16						; size = 4
 __$EHRec$ = -12						; size = 12
 ?InitPlots@CvMap@@IAEXXZ PROC				; CvMap::InitPlots, COMDAT
 ; _this$ = ecx
@@ -5604,7 +5604,7 @@ __$EHRec$ = -12						; size = 12
 	push	eax
 	call	??_U@YAPAXI@Z				; operator new[]
 	add	esp, 4
-	mov	DWORD PTR $T238815[esp+56], eax
+	mov	DWORD PTR $T238814[esp+56], eax
 	mov	DWORD PTR __$EHRec$[esp+64], 0
 	test	eax, eax
 	je	SHORT $LN6@InitPlots
@@ -5998,7 +5998,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?InitPlots@CvMap@@IAEXXZ$0:
-	mov	eax, DWORD PTR $T238815[ebp]
+	mov	eax, DWORD PTR $T238814[ebp]
 	push	eax
 	call	??_V@YAXPAX@Z				; operator delete[]
 	pop	ecx
@@ -6225,30 +6225,30 @@ EXTRN	?UnitPathUninitialize@@YAXPBXPAVCvAStar@@@Z:PROC ; UnitPathUninitialize
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?setup@CvMap@@IAEXXZ
 _TEXT	SEGMENT
-$T239156 = -8						; size = 1
-$T239140 = -8						; size = 1
-$T239124 = -8						; size = 1
-$T239108 = -8						; size = 1
-$T239092 = -8						; size = 1
-$T239076 = -8						; size = 1
-$T239060 = -8						; size = 1
-$T239044 = -8						; size = 1
-$T239028 = -8						; size = 1
-$T239007 = -8						; size = 1
-$T238986 = -8						; size = 1
-$T238961 = -8						; size = 1
-$T239152 = -4						; size = 1
-$T239136 = -4						; size = 1
-$T239120 = -4						; size = 1
-$T239104 = -4						; size = 1
-$T239088 = -4						; size = 1
-$T239072 = -4						; size = 1
-$T239056 = -4						; size = 1
-$T239040 = -4						; size = 1
-$T239024 = -4						; size = 1
-$T239003 = -4						; size = 1
-$T238982 = -4						; size = 1
-$T238965 = -4						; size = 1
+$T239155 = -8						; size = 1
+$T239139 = -8						; size = 1
+$T239123 = -8						; size = 1
+$T239107 = -8						; size = 1
+$T239091 = -8						; size = 1
+$T239075 = -8						; size = 1
+$T239059 = -8						; size = 1
+$T239043 = -8						; size = 1
+$T239027 = -8						; size = 1
+$T239006 = -8						; size = 1
+$T238985 = -8						; size = 1
+$T238960 = -8						; size = 1
+$T239151 = -4						; size = 1
+$T239135 = -4						; size = 1
+$T239119 = -4						; size = 1
+$T239103 = -4						; size = 1
+$T239087 = -4						; size = 1
+$T239071 = -4						; size = 1
+$T239055 = -4						; size = 1
+$T239039 = -4						; size = 1
+$T239023 = -4						; size = 1
+$T239002 = -4						; size = 1
+$T238981 = -4						; size = 1
+$T238964 = -4						; size = 1
 ?setup@CvMap@@IAEXXZ PROC				; CvMap::setup, COMDAT
 ; _this$ = ecx
 
@@ -6272,14 +6272,14 @@ $T238965 = -4						; size = 1
 	push	OFFSET ?PathCost@@YAHPAVCvAStarNode@@0HPBXPAVCvAStar@@@Z ; PathCost
 	push	OFFSET ?PathHeuristic@@YAHHHHH@Z	; PathHeuristic
 	push	OFFSET ?PathDestValid@@YAHHHPBXPAVCvAStar@@@Z ; PathDestValid
-	mov	BYTE PTR $T238961[esp+52], al
-	mov	edx, DWORD PTR $T238961[esp+52]
+	mov	BYTE PTR $T238960[esp+52], al
+	mov	edx, DWORD PTR $T238960[esp+52]
 	mov	eax, DWORD PTR [esi+4024]
 	push	OFFSET ?PathDest@@YAHHHPBXPAVCvAStar@@@Z ; PathDest
-	mov	BYTE PTR $T238965[esp+56], cl
+	mov	BYTE PTR $T238964[esp+56], cl
 	mov	ecx, DWORD PTR [esi+4020]
 	push	edx
-	mov	edx, DWORD PTR $T238965[esp+60]
+	mov	edx, DWORD PTR $T238964[esp+60]
 	push	edx
 	push	eax
 	push	ecx
@@ -6308,14 +6308,14 @@ $T238965 = -4						; size = 1
 	movzx	eax, BYTE PTR [esi+4057]
 	movzx	ecx, BYTE PTR [esi+4056]
 	push	OFFSET ?PathDestValid@@YAHHHPBXPAVCvAStar@@@Z ; PathDestValid
-	mov	BYTE PTR $T238982[esp+52], al
-	mov	edx, DWORD PTR $T238982[esp+52]
+	mov	BYTE PTR $T238981[esp+52], al
+	mov	edx, DWORD PTR $T238981[esp+52]
 	mov	eax, DWORD PTR [esi+4024]
 	push	OFFSET ?PathDest@@YAHHHPBXPAVCvAStar@@@Z ; PathDest
-	mov	BYTE PTR $T238986[esp+56], cl
+	mov	BYTE PTR $T238985[esp+56], cl
 	mov	ecx, DWORD PTR [esi+4020]
 	push	edx
-	mov	edx, DWORD PTR $T238986[esp+60]
+	mov	edx, DWORD PTR $T238985[esp+60]
 	push	edx
 	push	eax
 	push	ecx
@@ -6344,15 +6344,15 @@ $T238965 = -4						; size = 1
 	movzx	ecx, BYTE PTR [esi+4056]
 	push	OFFSET ?IgnoreUnitsCost@@YAHPAVCvAStarNode@@0HPBXPAVCvAStar@@@Z ; IgnoreUnitsCost
 	push	OFFSET ?PathHeuristic@@YAHHHHH@Z	; PathHeuristic
-	mov	BYTE PTR $T239003[esp+56], al
+	mov	BYTE PTR $T239002[esp+56], al
 	mov	eax, DWORD PTR [esi+4024]
-	mov	edx, DWORD PTR $T239003[esp+56]
+	mov	edx, DWORD PTR $T239002[esp+56]
 	push	OFFSET ?IgnoreUnitsDestValid@@YAHHHPBXPAVCvAStar@@@Z ; IgnoreUnitsDestValid
-	mov	BYTE PTR $T239007[esp+60], cl
+	mov	BYTE PTR $T239006[esp+60], cl
 	mov	ecx, DWORD PTR [esi+4020]
 	push	OFFSET ?PathDest@@YAHHHPBXPAVCvAStar@@@Z ; PathDest
 	push	edx
-	mov	edx, DWORD PTR $T239007[esp+68]
+	mov	edx, DWORD PTR $T239006[esp+68]
 	push	edx
 	push	eax
 	push	ecx
@@ -6382,14 +6382,14 @@ $T238965 = -4						; size = 1
 	movzx	ecx, BYTE PTR [esi+4056]
 	push	OFFSET ?StepHeuristic@@YAHHHHH@Z	; StepHeuristic
 	push	OFFSET ?StepDestValid@@YAHHHPBXPAVCvAStar@@@Z ; StepDestValid
-	mov	BYTE PTR $T239024[esp+60], al
-	mov	edx, DWORD PTR $T239024[esp+60]
+	mov	BYTE PTR $T239023[esp+60], al
+	mov	edx, DWORD PTR $T239023[esp+60]
 	mov	eax, DWORD PTR [esi+4024]
 	push	OFFSET ?PathDest@@YAHHHPBXPAVCvAStar@@@Z ; PathDest
-	mov	BYTE PTR $T239028[esp+64], cl
+	mov	BYTE PTR $T239027[esp+64], cl
 	mov	ecx, DWORD PTR [esi+4020]
 	push	edx
-	mov	edx, DWORD PTR $T239028[esp+68]
+	mov	edx, DWORD PTR $T239027[esp+68]
 	push	edx
 	push	eax
 	push	ecx
@@ -6413,14 +6413,14 @@ $T238965 = -4						; size = 1
 	push	0
 	push	0
 	push	0
-	mov	BYTE PTR $T239040[esp+60], al
-	mov	edx, DWORD PTR $T239040[esp+60]
+	mov	BYTE PTR $T239039[esp+60], al
+	mov	edx, DWORD PTR $T239039[esp+60]
 	mov	eax, DWORD PTR [esi+4024]
 	push	OFFSET ?PathDest@@YAHHHPBXPAVCvAStar@@@Z ; PathDest
-	mov	BYTE PTR $T239044[esp+64], cl
+	mov	BYTE PTR $T239043[esp+64], cl
 	mov	ecx, DWORD PTR [esi+4020]
 	push	edx
-	mov	edx, DWORD PTR $T239044[esp+68]
+	mov	edx, DWORD PTR $T239043[esp+68]
 	push	edx
 	push	eax
 	push	ecx
@@ -6439,19 +6439,19 @@ $T238965 = -4						; size = 1
 	push	0
 	push	0
 	push	0
-	mov	BYTE PTR $T239056[esp+40], al
+	mov	BYTE PTR $T239055[esp+40], al
 	mov	eax, DWORD PTR [esi+4024]
-	mov	BYTE PTR $T239060[esp+40], cl
+	mov	BYTE PTR $T239059[esp+40], cl
 	mov	ecx, DWORD PTR [esi+4020]
 	push	0
-	mov	edx, DWORD PTR $T239056[esp+44]
+	mov	edx, DWORD PTR $T239055[esp+44]
 	push	OFFSET ?WaterRouteValid@@YAHPAVCvAStarNode@@0HPBXPAVCvAStar@@@Z ; WaterRouteValid
 	push	0
 	push	0
 	push	0
 	push	OFFSET ?PathDest@@YAHHHPBXPAVCvAStar@@@Z ; PathDest
 	push	edx
-	mov	edx, DWORD PTR $T239060[esp+68]
+	mov	edx, DWORD PTR $T239059[esp+68]
 	push	edx
 	push	eax
 	push	ecx
@@ -6475,14 +6475,14 @@ $T238965 = -4						; size = 1
 	push	0
 	push	0
 	push	0
-	mov	BYTE PTR $T239072[esp+60], al
-	mov	edx, DWORD PTR $T239072[esp+60]
+	mov	BYTE PTR $T239071[esp+60], al
+	mov	edx, DWORD PTR $T239071[esp+60]
 	mov	eax, DWORD PTR [esi+4024]
 	push	OFFSET ?PathDest@@YAHHHPBXPAVCvAStar@@@Z ; PathDest
-	mov	BYTE PTR $T239076[esp+64], cl
+	mov	BYTE PTR $T239075[esp+64], cl
 	mov	ecx, DWORD PTR [esi+4020]
 	push	edx
-	mov	edx, DWORD PTR $T239076[esp+68]
+	mov	edx, DWORD PTR $T239075[esp+68]
 	push	edx
 	push	eax
 	push	ecx
@@ -6506,14 +6506,14 @@ $T238965 = -4						; size = 1
 	push	OFFSET ?InfluenceCost@@YAHPAVCvAStarNode@@0HPBXPAVCvAStar@@@Z ; InfluenceCost
 	push	OFFSET ?InfluenceHeuristic@@YAHHHHH@Z	; InfluenceHeuristic
 	push	OFFSET ?InfluenceDestValid@@YAHHHPBXPAVCvAStar@@@Z ; InfluenceDestValid
-	mov	BYTE PTR $T239088[esp+60], al
-	mov	edx, DWORD PTR $T239088[esp+60]
+	mov	BYTE PTR $T239087[esp+60], al
+	mov	edx, DWORD PTR $T239087[esp+60]
 	mov	eax, DWORD PTR [esi+4024]
 	push	OFFSET ?PathDest@@YAHHHPBXPAVCvAStar@@@Z ; PathDest
-	mov	BYTE PTR $T239092[esp+64], cl
+	mov	BYTE PTR $T239091[esp+64], cl
 	mov	ecx, DWORD PTR [esi+4020]
 	push	edx
-	mov	edx, DWORD PTR $T239092[esp+68]
+	mov	edx, DWORD PTR $T239091[esp+68]
 	push	edx
 	push	eax
 	push	ecx
@@ -6529,12 +6529,12 @@ $T238965 = -4						; size = 1
 	push	0
 	push	0
 	push	0
-	mov	BYTE PTR $T239104[esp+28], al
+	mov	BYTE PTR $T239103[esp+28], al
 	mov	eax, DWORD PTR [esi+4024]
-	mov	BYTE PTR $T239108[esp+28], cl
+	mov	BYTE PTR $T239107[esp+28], cl
 	mov	ecx, DWORD PTR [esi+4020]
 	push	0
-	mov	edx, DWORD PTR $T239104[esp+32]
+	mov	edx, DWORD PTR $T239103[esp+32]
 	push	0
 	push	0
 	push	0
@@ -6544,7 +6544,7 @@ $T238965 = -4						; size = 1
 	push	0
 	push	OFFSET ?PathDest@@YAHHHPBXPAVCvAStar@@@Z ; PathDest
 	push	edx
-	mov	edx, DWORD PTR $T239108[esp+68]
+	mov	edx, DWORD PTR $T239107[esp+68]
 	push	edx
 	push	eax
 	push	ecx
@@ -6568,14 +6568,14 @@ $T238965 = -4						; size = 1
 	push	OFFSET ?TradeRouteLandPathCost@@YAHPAVCvAStarNode@@0HPBXPAVCvAStar@@@Z ; TradeRouteLandPathCost
 	push	OFFSET ?TradeRouteHeuristic@@YAHHHHH@Z	; TradeRouteHeuristic
 	push	0
-	mov	BYTE PTR $T239120[esp+60], al
-	mov	edx, DWORD PTR $T239120[esp+60]
+	mov	BYTE PTR $T239119[esp+60], al
+	mov	edx, DWORD PTR $T239119[esp+60]
 	mov	eax, DWORD PTR [esi+4024]
 	push	OFFSET ?PathDest@@YAHHHPBXPAVCvAStar@@@Z ; PathDest
-	mov	BYTE PTR $T239124[esp+64], cl
+	mov	BYTE PTR $T239123[esp+64], cl
 	mov	ecx, DWORD PTR [esi+4020]
 	push	edx
-	mov	edx, DWORD PTR $T239124[esp+68]
+	mov	edx, DWORD PTR $T239123[esp+68]
 	push	edx
 	push	eax
 	push	ecx
@@ -6599,14 +6599,14 @@ $T238965 = -4						; size = 1
 	push	OFFSET ?TradeRouteWaterPathCost@@YAHPAVCvAStarNode@@0HPBXPAVCvAStar@@@Z ; TradeRouteWaterPathCost
 	push	OFFSET ?TradeRouteHeuristic@@YAHHHHH@Z	; TradeRouteHeuristic
 	push	0
-	mov	BYTE PTR $T239136[esp+60], al
-	mov	edx, DWORD PTR $T239136[esp+60]
+	mov	BYTE PTR $T239135[esp+60], al
+	mov	edx, DWORD PTR $T239135[esp+60]
 	mov	eax, DWORD PTR [esi+4024]
 	push	OFFSET ?PathDest@@YAHHHPBXPAVCvAStar@@@Z ; PathDest
-	mov	BYTE PTR $T239140[esp+64], cl
+	mov	BYTE PTR $T239139[esp+64], cl
 	mov	ecx, DWORD PTR [esi+4020]
 	push	edx
-	mov	edx, DWORD PTR $T239140[esp+68]
+	mov	edx, DWORD PTR $T239139[esp+68]
 	push	edx
 	push	eax
 	push	ecx
@@ -6619,13 +6619,13 @@ $T238965 = -4						; size = 1
 
 	movzx	eax, BYTE PTR [esi+4057]
 	movzx	ecx, BYTE PTR [esi+4056]
-	mov	BYTE PTR $T239152[esp+16], al
+	mov	BYTE PTR $T239151[esp+16], al
 	mov	eax, DWORD PTR [esi+4024]
 	mov	esi, DWORD PTR [esi+4020]
-	mov	BYTE PTR $T239156[esp+16], cl
+	mov	BYTE PTR $T239155[esp+16], cl
 	push	0
-	mov	edx, DWORD PTR $T239152[esp+20]
-	mov	ecx, DWORD PTR $T239156[esp+20]
+	mov	edx, DWORD PTR $T239151[esp+20]
+	mov	ecx, DWORD PTR $T239155[esp+20]
 	push	OFFSET ?UnitPathUninitialize@@YAXPBXPAVCvAStar@@@Z ; UnitPathUninitialize
 	push	OFFSET ?UnitPathInitialize@@YAXPBXPAVCvAStar@@@Z ; UnitPathInitialize
 	push	OFFSET ?PathNodeAdd@@YAHPAVCvAStarNode@@0HPBXPAVCvAStar@@@Z ; PathNodeAdd
@@ -7463,8 +7463,8 @@ PUBLIC	?maxPlotDistance@CvMap@@QAEHXZ			; CvMap::maxPlotDistance
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?maxPlotDistance@CvMap@@QAEHXZ
 _TEXT	SEGMENT
-$T239348 = -8						; size = 4
-$T239353 = -4						; size = 4
+$T239347 = -8						; size = 4
+$T239352 = -4						; size = 4
 ?maxPlotDistance@CvMap@@QAEHXZ PROC			; CvMap::maxPlotDistance, COMDAT
 ; _this$ = ecx
 
@@ -7506,13 +7506,13 @@ $LN6@maxPlotDis:
 	push	0
 	call	?plotDistance@@YAHHHHH@Z		; plotDistance
 	add	esp, 16					; 00000010H
-	mov	DWORD PTR $T239348[esp+12], eax
+	mov	DWORD PTR $T239347[esp+12], eax
 	cmp	eax, 1
-	mov	DWORD PTR $T239353[esp+12], 1
+	mov	DWORD PTR $T239352[esp+12], 1
 	pop	esi
-	lea	eax, DWORD PTR $T239348[esp+8]
+	lea	eax, DWORD PTR $T239347[esp+8]
 	jg	SHORT $LN23@maxPlotDis
-	lea	eax, DWORD PTR $T239353[esp+8]
+	lea	eax, DWORD PTR $T239352[esp+8]
 $LN23@maxPlotDis:
 	mov	eax, DWORD PTR [eax]
 
@@ -7597,7 +7597,7 @@ $LN13@getRandomR:
 ; 1375 : 	int iRand = GC.getGame().getJonRandNum(iNumRands, "Picking from random Resource Quantity types");
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
-	push	OFFSET $SG236313
+	push	OFFSET $SG236312
 	push	edi
 	call	?getJonRandNum@CvGame@@QAEHHPBD@Z	; CvGame::getJonRandNum
 
@@ -7829,7 +7829,7 @@ EXTRN	?init@CvArea@@QAEXH_N@Z:PROC			; CvArea::init
 _TEXT	SEGMENT
 tv334 = -24						; size = 4
 _iI$ = -20						; size = 4
-_boundaries$236594 = -16				; size = 16
+_boundaries$236593 = -16				; size = 16
 ?calculateAreas@CvMap@@QAEXXZ PROC			; CvMap::calculateAreas, COMDAT
 ; _this$ = ecx
 
@@ -7968,7 +7968,7 @@ $LN9@calculateA:
 ; 1721 : 			int iX, iY;
 ; 1722 : 			CvAreaBoundaries boundaries = getArea(pLoopPlot->getArea())->getAreaBoundaries();
 
-	lea	edx, DWORD PTR _boundaries$236594[esp+40]
+	lea	edx, DWORD PTR _boundaries$236593[esp+40]
 	lea	edi, DWORD PTR [ebx+4112]
 	push	edx
 	mov	edx, DWORD PTR [edi]
@@ -7987,53 +7987,53 @@ $LN9@calculateA:
 ; 1725 : 
 ; 1726 : 			if(iX < boundaries.m_iWestEdge)
 
-	cmp	eax, DWORD PTR _boundaries$236594[esp+52]
+	cmp	eax, DWORD PTR _boundaries$236593[esp+52]
 	movsx	ecx, WORD PTR [esi+2]
 	jge	SHORT $LN7@calculateA
 
 ; 1727 : 			{
 ; 1728 : 				boundaries.m_iWestEdge = iX;
 
-	mov	DWORD PTR _boundaries$236594[esp+52], eax
+	mov	DWORD PTR _boundaries$236593[esp+52], eax
 	jmp	SHORT $LN1@calculateA
 $LN7@calculateA:
 
 ; 1729 : 			}
 ; 1730 : 			else if(iX > boundaries.m_iEastEdge)
 
-	cmp	eax, DWORD PTR _boundaries$236594[esp+48]
+	cmp	eax, DWORD PTR _boundaries$236593[esp+48]
 	jle	SHORT $LN5@calculateA
 
 ; 1731 : 			{
 ; 1732 : 				boundaries.m_iEastEdge = iX;
 
-	mov	DWORD PTR _boundaries$236594[esp+48], eax
+	mov	DWORD PTR _boundaries$236593[esp+48], eax
 	jmp	SHORT $LN1@calculateA
 $LN5@calculateA:
 
 ; 1733 : 			}
 ; 1734 : 			else if(iY < boundaries.m_iSouthEdge)
 
-	cmp	ecx, DWORD PTR _boundaries$236594[esp+44]
+	cmp	ecx, DWORD PTR _boundaries$236593[esp+44]
 	jge	SHORT $LN3@calculateA
 
 ; 1735 : 			{
 ; 1736 : 				boundaries.m_iSouthEdge = iY;
 
-	mov	DWORD PTR _boundaries$236594[esp+44], ecx
+	mov	DWORD PTR _boundaries$236593[esp+44], ecx
 	jmp	SHORT $LN1@calculateA
 $LN3@calculateA:
 
 ; 1737 : 			}
 ; 1738 : 			else if(iY > boundaries.m_iNorthEdge)
 
-	cmp	ecx, DWORD PTR _boundaries$236594[esp+40]
+	cmp	ecx, DWORD PTR _boundaries$236593[esp+40]
 	jle	SHORT $LN1@calculateA
 
 ; 1739 : 			{
 ; 1740 : 				boundaries.m_iNorthEdge = iY;
 
-	mov	DWORD PTR _boundaries$236594[esp+40], ecx
+	mov	DWORD PTR _boundaries$236593[esp+40], ecx
 $LN1@calculateA:
 
 ; 1741 : 			}
@@ -8045,15 +8045,15 @@ $LN1@calculateA:
 	push	esi
 	mov	ecx, edi
 	call	eax
-	mov	ecx, DWORD PTR _boundaries$236594[esp+40]
+	mov	ecx, DWORD PTR _boundaries$236593[esp+40]
 	sub	esp, 16					; 00000010H
 	mov	edx, esp
 	mov	DWORD PTR [edx], ecx
-	mov	ecx, DWORD PTR _boundaries$236594[esp+60]
+	mov	ecx, DWORD PTR _boundaries$236593[esp+60]
 	mov	DWORD PTR [edx+4], ecx
-	mov	ecx, DWORD PTR _boundaries$236594[esp+64]
+	mov	ecx, DWORD PTR _boundaries$236593[esp+64]
 	mov	DWORD PTR [edx+8], ecx
-	mov	ecx, DWORD PTR _boundaries$236594[esp+68]
+	mov	ecx, DWORD PTR _boundaries$236593[esp+68]
 	mov	DWORD PTR [edx+12], ecx
 	mov	ecx, eax
 $LN60@calculateA:
@@ -8194,7 +8194,7 @@ EXTRN	?LandmassValid@@YAHPAVCvAStarNode@@0HPBXPAVCvAStar@@@Z:PROC ; LandmassVali
 ;	COMDAT ?calculateLandmasses@CvMap@@QAEXXZ
 _TEXT	SEGMENT
 tv271 = -8						; size = 4
-_iI$236879 = -4						; size = 4
+_iI$236878 = -4						; size = 4
 ?calculateLandmasses@CvMap@@QAEXXZ PROC			; CvMap::calculateLandmasses, COMDAT
 ; _this$ = ecx
 
@@ -8231,7 +8231,7 @@ _iI$236879 = -4						; size = 4
 	mov	DWORD PTR [ebx+16], OFFSET ?LandmassValid@@YAHPAVCvAStarNode@@0HPBXPAVCvAStar@@@Z ; LandmassValid
 	mov	DWORD PTR [ebx+24], OFFSET ?JoinLandmass@@YAHPAVCvAStarNode@@0HPBXPAVCvAStar@@@Z ; JoinLandmass
 	cmp	DWORD PTR [edi+4028], ebp
-	mov	DWORD PTR _iI$236879[esp+24], ebp
+	mov	DWORD PTR _iI$236878[esp+24], ebp
 	jle	SHORT $LN2@calculateL
 
 ; 2376 : 	CvPlot* pLoopPlot;
@@ -8298,11 +8298,11 @@ $LL4@calculateL:
 	call	?GeneratePath@CvAStar@@QAE_NHHHHH_N@Z	; CvAStar::GeneratePath
 	xor	ebp, ebp
 $LN3@calculateL:
-	mov	eax, DWORD PTR _iI$236879[esp+24]
+	mov	eax, DWORD PTR _iI$236878[esp+24]
 	add	DWORD PTR tv271[esp+24], 484		; 000001e4H
 	inc	eax
 	cmp	eax, DWORD PTR [edi+4028]
-	mov	DWORD PTR _iI$236879[esp+24], eax
+	mov	DWORD PTR _iI$236878[esp+24], eax
 	jl	SHORT $LL4@calculateL
 $LN2@calculateL:
 
@@ -9871,10 +9871,10 @@ EXTRN	?ReadHashed@CvInfosSerializationHelper@@YAHAAVFDataStream@@PA_N@Z:PROC ; C
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredll_expansion2\cvinfosserializationhelper.h
 ;	COMDAT ??$ReadHashedDataArray@H@CvInfosSerializationHelper@@YAXAAVFDataStream@@PAHH@Z
 _TEXT	SEGMENT
-_bValid$237145 = -13					; size = 1
+_bValid$237144 = -13					; size = 1
 _uiNumEntries$ = -12					; size = 4
-_tValue$237148 = -8					; size = 4
-_tValue$237153 = -4					; size = 4
+_tValue$237147 = -8					; size = 4
+_tValue$237152 = -4					; size = 4
 _kStream$ = 8						; size = 4
 _paArray$ = 12						; size = 4
 _iArraySize$ = 16					; size = 4
@@ -9911,7 +9911,7 @@ $LL7@ReadHashed:
 ; 255  : 		bool bValid;
 ; 256  : 		int iType = ReadHashed(kStream, &bValid);
 
-	lea	ecx, DWORD PTR _bValid$237145[esp+32]
+	lea	ecx, DWORD PTR _bValid$237144[esp+32]
 	push	ecx
 	push	edi
 	call	?ReadHashed@CvInfosSerializationHelper@@YAHAAVFDataStream@@PA_N@Z ; CvInfosSerializationHelper::ReadHashed
@@ -9927,7 +9927,7 @@ $LL7@ReadHashed:
 ; 259  : 			TData tValue;
 ; 260  : 			kStream >> tValue;
 
-	lea	edx, DWORD PTR _tValue$237148[esp+32]
+	lea	edx, DWORD PTR _tValue$237147[esp+32]
 	push	edx
 	mov	ecx, edi
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
@@ -9939,7 +9939,7 @@ $LL7@ReadHashed:
 
 ; 262  : 				paArray[iType] = tValue;
 
-	mov	eax, DWORD PTR _tValue$237148[esp+32]
+	mov	eax, DWORD PTR _tValue$237147[esp+32]
 	mov	ecx, DWORD PTR _paArray$[esp+28]
 	mov	DWORD PTR [ecx+esi*4], eax
 
@@ -9950,14 +9950,14 @@ $LN4@ReadHashed:
 
 ; 264  : 		else if(!bValid)
 
-	cmp	BYTE PTR _bValid$237145[esp+32], 0
+	cmp	BYTE PTR _bValid$237144[esp+32], 0
 	jne	SHORT $LN6@ReadHashed
 
 ; 265  : 		{
 ; 266  : 			TData tValue;
 ; 267  : 			kStream >> tValue;
 
-	lea	edx, DWORD PTR _tValue$237153[esp+32]
+	lea	edx, DWORD PTR _tValue$237152[esp+32]
 	push	edx
 	mov	ecx, edi
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
@@ -10325,13 +10325,13 @@ EXTRN	??6@YAAAVFDataStream@@AAV0@ABVCvArea@@@Z:PROC	; operator<<
 ;	COMDAT ??$?6VCvArea@@@@YAAAVFDataStream@@AAV0@ABV?$FFreeListTrashArray@VCvArea@@@@@Z
 _TEXT	SEGMENT
 _writeTo$ = 8						; size = 4
-$T240003 = 12						; size = 4
 $T240002 = 12						; size = 4
 $T240001 = 12						; size = 4
 $T240000 = 12						; size = 4
 $T239999 = 12						; size = 4
 $T239998 = 12						; size = 4
 $T239997 = 12						; size = 4
+$T239996 = 12						; size = 4
 _readFrom$ = 12						; size = 4
 ??$?6VCvArea@@@@YAAAVFDataStream@@AAV0@ABV?$FFreeListTrashArray@VCvArea@@@@@Z PROC ; operator<<<CvArea>, COMDAT
 
@@ -10346,26 +10346,26 @@ _readFrom$ = 12						; size = 4
 	mov	eax, DWORD PTR [esi+16]
 	push	edi
 	mov	edi, DWORD PTR _writeTo$[esp+8]
-	lea	ecx, DWORD PTR $T239997[esp+8]
+	lea	ecx, DWORD PTR $T239996[esp+8]
 	push	ecx
 	mov	ecx, edi
-	mov	DWORD PTR $T239997[esp+12], eax
+	mov	DWORD PTR $T239996[esp+12], eax
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
 ; 575  : 	writeTo << readFrom.GetLastIndex();
 
 	mov	edx, DWORD PTR [esi+12]
-	lea	eax, DWORD PTR $T239998[esp+8]
+	lea	eax, DWORD PTR $T239997[esp+8]
 	push	eax
 	mov	ecx, edi
-	mov	DWORD PTR $T239998[esp+12], edx
+	mov	DWORD PTR $T239997[esp+12], edx
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
 ; 576  : 	writeTo << readFrom.GetFreeListHead();
 
 	mov	ecx, DWORD PTR [esi+4]
-	lea	edx, DWORD PTR $T239999[esp+8]
-	mov	DWORD PTR $T239999[esp+8], ecx
+	lea	edx, DWORD PTR $T239998[esp+8]
+	mov	DWORD PTR $T239998[esp+8], ecx
 	push	edx
 	mov	ecx, edi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
@@ -10373,19 +10373,19 @@ _readFrom$ = 12						; size = 4
 ; 577  : 	writeTo << readFrom.GetFreeListCount();
 
 	mov	eax, DWORD PTR [esi+8]
-	lea	ecx, DWORD PTR $T240000[esp+8]
+	lea	ecx, DWORD PTR $T239999[esp+8]
 	push	ecx
 	mov	ecx, edi
-	mov	DWORD PTR $T240000[esp+12], eax
+	mov	DWORD PTR $T239999[esp+12], eax
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
 ; 578  : 	writeTo << readFrom.GetCurrentID();
 
 	mov	edx, DWORD PTR [esi+20]
-	lea	eax, DWORD PTR $T240001[esp+8]
+	lea	eax, DWORD PTR $T240000[esp+8]
 	push	eax
 	mov	ecx, edi
-	mov	DWORD PTR $T240001[esp+12], edx
+	mov	DWORD PTR $T240000[esp+12], edx
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
 ; 579  : 
@@ -10412,10 +10412,10 @@ $LN56@operator@4:
 $LN32@operator@4:
 	or	eax, -1
 $LN34@operator@4:
-	lea	ecx, DWORD PTR $T240002[esp+8]
+	lea	ecx, DWORD PTR $T240001[esp+8]
 	push	ecx
 	mov	ecx, edi
-	mov	DWORD PTR $T240002[esp+12], eax
+	mov	DWORD PTR $T240001[esp+12], eax
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 	mov	eax, DWORD PTR [esi+16]
 	inc	ebx
@@ -10429,11 +10429,11 @@ $LN5@operator@4:
 
 	mov	edx, DWORD PTR [esi+12]
 	sub	edx, DWORD PTR [esi+8]
-	lea	eax, DWORD PTR $T240003[esp+8]
+	lea	eax, DWORD PTR $T240002[esp+8]
 	inc	edx
 	push	eax
 	mov	ecx, edi
-	mov	DWORD PTR $T240003[esp+12], edx
+	mov	DWORD PTR $T240002[esp+12], edx
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
 ; 588  : 
@@ -10500,13 +10500,13 @@ PUBLIC	??$?6VCvLandmass@@@@YAAAVFDataStream@@AAV0@ABV?$FFreeListTrashArray@VCvLa
 ;	COMDAT ??$?6VCvLandmass@@@@YAAAVFDataStream@@AAV0@ABV?$FFreeListTrashArray@VCvLandmass@@@@@Z
 _TEXT	SEGMENT
 _writeTo$ = 8						; size = 4
-$T240089 = 12						; size = 4
 $T240088 = 12						; size = 4
 $T240087 = 12						; size = 4
 $T240086 = 12						; size = 4
 $T240085 = 12						; size = 4
 $T240084 = 12						; size = 4
 $T240083 = 12						; size = 4
+$T240082 = 12						; size = 4
 _readFrom$ = 12						; size = 4
 ??$?6VCvLandmass@@@@YAAAVFDataStream@@AAV0@ABV?$FFreeListTrashArray@VCvLandmass@@@@@Z PROC ; operator<<<CvLandmass>, COMDAT
 
@@ -10521,26 +10521,26 @@ _readFrom$ = 12						; size = 4
 	mov	eax, DWORD PTR [esi+16]
 	push	edi
 	mov	edi, DWORD PTR _writeTo$[esp+8]
-	lea	ecx, DWORD PTR $T240083[esp+8]
+	lea	ecx, DWORD PTR $T240082[esp+8]
 	push	ecx
 	mov	ecx, edi
-	mov	DWORD PTR $T240083[esp+12], eax
+	mov	DWORD PTR $T240082[esp+12], eax
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
 ; 575  : 	writeTo << readFrom.GetLastIndex();
 
 	mov	edx, DWORD PTR [esi+12]
-	lea	eax, DWORD PTR $T240084[esp+8]
+	lea	eax, DWORD PTR $T240083[esp+8]
 	push	eax
 	mov	ecx, edi
-	mov	DWORD PTR $T240084[esp+12], edx
+	mov	DWORD PTR $T240083[esp+12], edx
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
 ; 576  : 	writeTo << readFrom.GetFreeListHead();
 
 	mov	ecx, DWORD PTR [esi+4]
-	lea	edx, DWORD PTR $T240085[esp+8]
-	mov	DWORD PTR $T240085[esp+8], ecx
+	lea	edx, DWORD PTR $T240084[esp+8]
+	mov	DWORD PTR $T240084[esp+8], ecx
 	push	edx
 	mov	ecx, edi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
@@ -10548,19 +10548,19 @@ _readFrom$ = 12						; size = 4
 ; 577  : 	writeTo << readFrom.GetFreeListCount();
 
 	mov	eax, DWORD PTR [esi+8]
-	lea	ecx, DWORD PTR $T240086[esp+8]
+	lea	ecx, DWORD PTR $T240085[esp+8]
 	push	ecx
 	mov	ecx, edi
-	mov	DWORD PTR $T240086[esp+12], eax
+	mov	DWORD PTR $T240085[esp+12], eax
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
 ; 578  : 	writeTo << readFrom.GetCurrentID();
 
 	mov	edx, DWORD PTR [esi+20]
-	lea	eax, DWORD PTR $T240087[esp+8]
+	lea	eax, DWORD PTR $T240086[esp+8]
 	push	eax
 	mov	ecx, edi
-	mov	DWORD PTR $T240087[esp+12], edx
+	mov	DWORD PTR $T240086[esp+12], edx
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
 ; 579  : 
@@ -10587,10 +10587,10 @@ $LN58@operator@5:
 $LN32@operator@5:
 	or	eax, -1
 $LN34@operator@5:
-	lea	ecx, DWORD PTR $T240088[esp+8]
+	lea	ecx, DWORD PTR $T240087[esp+8]
 	push	ecx
 	mov	ecx, edi
-	mov	DWORD PTR $T240088[esp+12], eax
+	mov	DWORD PTR $T240087[esp+12], eax
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 	mov	eax, DWORD PTR [esi+16]
 	inc	ebx
@@ -10604,11 +10604,11 @@ $LN5@operator@5:
 
 	mov	edx, DWORD PTR [esi+12]
 	sub	edx, DWORD PTR [esi+8]
-	lea	eax, DWORD PTR $T240089[esp+8]
+	lea	eax, DWORD PTR $T240088[esp+8]
 	inc	edx
 	push	eax
 	mov	ecx, edi
-	mov	DWORD PTR $T240089[esp+12], edx
+	mov	DWORD PTR $T240088[esp+12], edx
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
 ; 588  : 
@@ -11872,10 +11872,10 @@ EXTRN	?getGridWidth@CvWorldInfo@@QBEHXZ:PROC		; CvWorldInfo::getGridWidth
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?reset@CvMap@@QAEXPAUCvMapInitData@@@Z
 _TEXT	SEGMENT
-$T240806 = 8						; size = 4
 $T240805 = 8						; size = 4
 $T240804 = 8						; size = 4
 $T240803 = 8						; size = 4
+$T240802 = 8						; size = 4
 _pInitInfo$ = 8						; size = 4
 ?reset@CvMap@@QAEXPAUCvMapInitData@@@Z PROC		; CvMap::reset, COMDAT
 ; _this$ = ecx
@@ -11996,8 +11996,8 @@ $LN6@reset:
 	mov	edx, 90					; 0000005aH
 	cmp	DWORD PTR [esi+4040], edx
 	lea	eax, DWORD PTR [esi+4040]
-	mov	DWORD PTR $T240803[esp+8], edx
-	lea	ecx, DWORD PTR $T240803[esp+8]
+	mov	DWORD PTR $T240802[esp+8], edx
+	lea	ecx, DWORD PTR $T240802[esp+8]
 	jg	SHORT $LN21@reset
 	mov	ecx, eax
 $LN21@reset:
@@ -12007,8 +12007,8 @@ $LN21@reset:
 ; 472  : 	m_iTopLatitude = std::max(m_iTopLatitude, -90);
 
 	cmp	ecx, -90				; ffffffa6H
-	mov	DWORD PTR $T240804[esp+8], -90		; ffffffa6H
-	lea	ecx, DWORD PTR $T240804[esp+8]
+	mov	DWORD PTR $T240803[esp+8], -90		; ffffffa6H
+	lea	ecx, DWORD PTR $T240803[esp+8]
 	jl	SHORT $LN25@reset
 	mov	ecx, eax
 $LN25@reset:
@@ -12019,8 +12019,8 @@ $LN25@reset:
 
 	cmp	DWORD PTR [esi+4044], edx
 	lea	eax, DWORD PTR [esi+4044]
-	mov	DWORD PTR $T240805[esp+8], edx
-	lea	ecx, DWORD PTR $T240805[esp+8]
+	mov	DWORD PTR $T240804[esp+8], edx
+	lea	ecx, DWORD PTR $T240804[esp+8]
 	jg	SHORT $LN29@reset
 	mov	ecx, eax
 $LN29@reset:
@@ -12030,8 +12030,8 @@ $LN29@reset:
 
 	cmp	edx, -90				; ffffffa6H
 	mov	DWORD PTR [eax], edx
-	mov	DWORD PTR $T240806[esp+8], -90		; ffffffa6H
-	lea	ecx, DWORD PTR $T240806[esp+8]
+	mov	DWORD PTR $T240805[esp+8], -90		; ffffffa6H
+	lea	ecx, DWORD PTR $T240805[esp+8]
 	jl	SHORT $LN33@reset
 	mov	ecx, eax
 $LN33@reset:
@@ -12511,11 +12511,11 @@ $LL37@syncRandPl:
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	inc	DWORD PTR _iCount$[esp+40]
 	mov	esi, DWORD PTR [ebx+4020]
-	push	OFFSET $SG236070
+	push	OFFSET $SG236069
 	push	eax
 	mov	edi, ecx
 	call	?getJonRandNum@CvGame@@QAEHHPBD@Z	; CvGame::getJonRandNum
-	push	OFFSET $SG236071
+	push	OFFSET $SG236070
 	push	esi
 	mov	ecx, edi
 	mov	ebp, eax
@@ -13925,7 +13925,7 @@ EXTRN	?write@CvPlot@@QBEXAAVFDataStream@@@Z:PROC	; CvPlot::write
 ;	COMDAT ?Write@CvMap@@QBEXAAVFDataStream@@@Z
 _TEXT	SEGMENT
 _uiVersion$ = -12					; size = 4
-$T241507 = -8						; size = 8
+$T241506 = -8						; size = 8
 _kStream$ = 8						; size = 4
 ?Write@CvMap@@QBEXAAVFDataStream@@@Z PROC		; CvMap::Write, COMDAT
 ; _this$ = ecx
@@ -14037,12 +14037,12 @@ _kStream$ = 8						; size = 4
 
 ; 1631 : 	kStream << ArrayWrapper<const unsigned char>(8, m_guid.Data4);
 
-	lea	edx, DWORD PTR $T241507[esp+24]
+	lea	edx, DWORD PTR $T241506[esp+24]
 	push	edx
 	lea	ecx, DWORD PTR [esi+4176]
 	push	edi
-	mov	DWORD PTR $T241507[esp+32], ecx
-	mov	DWORD PTR $T241507[esp+36], 8
+	mov	DWORD PTR $T241506[esp+32], ecx
+	mov	DWORD PTR $T241506[esp+36], 8
 	call	??$?6$$CBE@@YAAAVFDataStream@@AAV0@ABV?$ArrayWrapper@$$CBE@@@Z ; operator<<<unsigned char const >
 	add	esp, 8
 
@@ -14164,7 +14164,7 @@ _TEXT	SEGMENT
 _iNumNaturalWondersToAdd$ = -56				; size = 4
 _featureReef$ = -52					; size = 4
 tv1254 = -48						; size = 4
-_iHillCount$236724 = -48				; size = 4
+_iHillCount$236723 = -48				; size = 4
 _featureLake$ = -44					; size = 4
 _featureEverest$ = -40					; size = 4
 _iCount$ = -36						; size = 4
@@ -14261,7 +14261,7 @@ $LL336@DoPlaceNat:
 	lea	ebx, DWORD PTR [esi+176]
 	mov	ecx, ebx
 	mov	DWORD PTR _eNWFeature$[esp+72], ebp
-	mov	esi, OFFSET $SG236632
+	mov	esi, OFFSET $SG236631
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	npad	5
 $LL303@DoPlaceNat:
@@ -14298,7 +14298,7 @@ $LN90@DoPlaceNat:
 ; 1798 : 			else if(strcmp(feature->GetType(), "FEATURE_CRATER") == 0)
 
 	mov	ecx, ebx
-	mov	esi, OFFSET $SG236635
+	mov	esi, OFFSET $SG236634
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	npad	1
 $LL307@DoPlaceNat:
@@ -14335,7 +14335,7 @@ $LN88@DoPlaceNat:
 ; 1802 : 			else if(strcmp(feature->GetType(), "FEATURE_TITICACA") == 0)
 
 	mov	ecx, ebx
-	mov	esi, OFFSET $SG236638
+	mov	esi, OFFSET $SG236637
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	npad	1
 $LL311@DoPlaceNat:
@@ -14372,7 +14372,7 @@ $LN86@DoPlaceNat:
 ; 1806 : 			else if(strcmp(feature->GetType(), "FEATURE_FUJI") == 0)
 
 	mov	ecx, ebx
-	mov	esi, OFFSET $SG236641
+	mov	esi, OFFSET $SG236640
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	npad	1
 $LL315@DoPlaceNat:
@@ -14409,7 +14409,7 @@ $LN84@DoPlaceNat:
 ; 1810 : 			else if(strcmp(feature->GetType(), "FEATURE_MESA") == 0)
 
 	mov	ecx, ebx
-	mov	esi, OFFSET $SG236644
+	mov	esi, OFFSET $SG236643
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	npad	1
 $LL319@DoPlaceNat:
@@ -14446,7 +14446,7 @@ $LN82@DoPlaceNat:
 ; 1814 : 			else if(strcmp(feature->GetType(), "FEATURE_REEF") == 0)
 
 	mov	ecx, ebx
-	mov	esi, OFFSET $SG236647
+	mov	esi, OFFSET $SG236646
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	npad	4
 $LL323@DoPlaceNat:
@@ -14483,7 +14483,7 @@ $LN80@DoPlaceNat:
 ; 1818 : 			else if(strcmp(feature->GetType(), "FEATURE_VOLCANO") == 0)
 
 	mov	ecx, ebx
-	mov	esi, OFFSET $SG236650
+	mov	esi, OFFSET $SG236649
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	npad	4
 $LL327@DoPlaceNat:
@@ -14735,7 +14735,7 @@ $LL331@DoPlaceNat:
 
 	mov	ecx, DWORD PTR _iNumMapPlots$[esp+72]
 	inc	DWORD PTR _iCount$[esp+72]
-	push	OFFSET $SG236678
+	push	OFFSET $SG236677
 	push	ecx
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?getJonRandNum@CvGame@@QAEHHPBD@Z	; CvGame::getJonRandNum
@@ -15210,7 +15210,7 @@ $LN34@DoPlaceNat:
 	movsx	ebx, WORD PTR [esi+2]
 	movsx	ebp, WORD PTR [esi]
 	xor	edi, edi
-	mov	DWORD PTR _iHillCount$236724[esp+72], edi
+	mov	DWORD PTR _iHillCount$236723[esp+72], edi
 $LL26@DoPlaceNat:
 
 ; 2077 : 				{
@@ -15236,7 +15236,7 @@ $LL26@DoPlaceNat:
 ; 2082 : 						{
 ; 2083 : 							iHillCount++;
 
-	inc	DWORD PTR _iHillCount$236724[esp+72]
+	inc	DWORD PTR _iHillCount$236723[esp+72]
 $LN25@DoPlaceNat:
 
 ; 2073 : 			{
@@ -15253,7 +15253,7 @@ $LN25@DoPlaceNat:
 ; 2086 : 				}
 ; 2087 : 				if(iHillCount > 2)
 
-	cmp	DWORD PTR _iHillCount$236724[esp+72], 2
+	cmp	DWORD PTR _iHillCount$236723[esp+72], 2
 	jle	SHORT $LN21@DoPlaceNat
 
 ; 2088 : 				{
@@ -15349,7 +15349,7 @@ $LN21@DoPlaceNat:
 	cmp	BYTE PTR [esi+5], 0
 	jne	$LN15@DoPlaceNat
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
-	push	OFFSET $SG236744
+	push	OFFSET $SG236743
 	push	100					; 00000064H
 	call	?getMapRandNum@CvGame@@QAEHHPBD@Z	; CvGame::getMapRandNum
 	cmp	eax, 75					; 0000004bH
@@ -15469,7 +15469,7 @@ $LN15@DoPlaceNat:
 ; 2144 : 		int iDice = GC.getGame().getMapRandNum(100, "Natural Wonder");
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
-	push	OFFSET $SG236757
+	push	OFFSET $SG236756
 	push	100					; 00000064H
 	call	?getMapRandNum@CvGame@@QAEHHPBD@Z	; CvGame::getMapRandNum
 
@@ -15739,7 +15739,7 @@ _TEXT	SEGMENT
 _this$ = -16						; size = 4
 tv520 = -12						; size = 4
 _pGameTrade$ = -8					; size = 4
-_ui$236889 = -4						; size = 4
+_ui$236888 = -4						; size = 4
 ?Validate@CvMap@@QAEHXZ PROC				; CvMap::Validate, COMDAT
 ; _this$ = ecx
 
@@ -15773,7 +15773,7 @@ _ui$236889 = -4						; size = 4
 ; 2425 : 	{
 ; 2426 : 		for (uint ui = 0; ui < pGameTrade->m_aTradeConnections.size(); ui++)
 
-	mov	DWORD PTR _ui$236889[esp+32], ecx
+	mov	DWORD PTR _ui$236888[esp+32], ecx
 	cmp	DWORD PTR [eax+4], ecx
 	jbe	$LN9@Validate
 	mov	DWORD PTR tv520[esp+32], ecx
@@ -15982,11 +15982,11 @@ $LN118@Validate:
 	push	esi
 	call	?ClearAllCityTradeRoutes@CvGameTrade@@QAEXPAVCvPlot@@@Z ; CvGameTrade::ClearAllCityTradeRoutes
 $LN10@Validate:
-	mov	ecx, DWORD PTR _ui$236889[esp+32]
+	mov	ecx, DWORD PTR _ui$236888[esp+32]
 	mov	eax, DWORD PTR _pGameTrade$[esp+32]
 	add	DWORD PTR tv520[esp+32], 444		; 000001bcH
 	inc	ecx
-	mov	DWORD PTR _ui$236889[esp+32], ecx
+	mov	DWORD PTR _ui$236888[esp+32], ecx
 	cmp	ecx, DWORD PTR [eax+4]
 	jb	$LL11@Validate
 
@@ -16078,7 +16078,7 @@ _iCount$ = -16						; size = 4
 __$EHRec$ = -12						; size = 12
 _iTemp$ = 8						; size = 4
 _readFrom$ = 8						; size = 4
-$T242290 = 12						; size = 4
+$T242289 = 12						; size = 4
 _writeTo$ = 12						; size = 4
 ??$?5VCvArea@@@@YAAAVFDataStream@@AAV0@AAV?$FFreeListTrashArray@VCvArea@@@@@Z PROC ; operator>><CvArea>, COMDAT
 
@@ -16219,7 +16219,7 @@ $LL53@operator@6:
 	push	4232					; 00001088H
 	call	??2@YAPAXI@Z				; operator new
 	add	esp, 4
-	mov	DWORD PTR $T242290[esp+28], eax
+	mov	DWORD PTR $T242289[esp+28], eax
 	xor	edi, edi
 	mov	DWORD PTR __$EHRec$[esp+40], edi
 	cmp	eax, edi
@@ -16270,7 +16270,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$??$?5VCvArea@@@@YAAAVFDataStream@@AAV0@AAV?$FFreeListTrashArray@VCvArea@@@@@Z$0:
-	mov	eax, DWORD PTR $T242290[ebp-4]
+	mov	eax, DWORD PTR $T242289[ebp-4]
 	push	eax
 	call	??3@YAXPAX@Z				; operator delete
 	pop	ecx
@@ -16828,7 +16828,7 @@ _pInitInfo$ = 8						; size = 4
 	push	ebx
 	push	eax
 	lea	eax, DWORD PTR _strMemState$[esp+68]
-	push	OFFSET $SG235862
+	push	OFFSET $SG235861
 	push	eax
 	call	?format@CvString@@SA?AV1@PBDZZ		; CvString::format
 	add	esp, 20					; 00000014H
@@ -17685,9 +17685,9 @@ _TEXT	SEGMENT
 _iLoop$ = -100						; size = 4
 _iNumLargeContinents$ = -96				; size = 4
 _this$ = -92						; size = 4
-_iY$236810 = -88					; size = 4
-_iX$236809 = -84					; size = 4
-_iNumTiles$236783 = -84					; size = 4
+_iY$236809 = -88					; size = 4
+_iX$236808 = -84					; size = 4
+_iNumTiles$236782 = -84					; size = 4
 _iLargeContinentsID$ = -80				; size = 16
 _iLargeContinentsSize$ = -64				; size = 16
 _iLargeContinentsArtStyle$ = -48			; size = 16
@@ -17783,7 +17783,7 @@ $LL34@DefaultCon:
 ; 2205 : 			int iNumTiles = pLoopMass->getNumTiles();
 
 	mov	ecx, DWORD PTR [eax+8]
-	mov	DWORD PTR _iNumTiles$236783[esp+116], ecx
+	mov	DWORD PTR _iNumTiles$236782[esp+116], ecx
 
 ; 2206 : 			for(iBestContinent=0; iBestContinent<iNumContinentTypes; iBestContinent++)
 
@@ -17838,7 +17838,7 @@ $LL26@DefaultCon:
 	sub	ecx, 4
 	sub	esi, 1
 	jne	SHORT $LL26@DefaultCon
-	mov	ecx, DWORD PTR _iNumTiles$236783[esp+116]
+	mov	ecx, DWORD PTR _iNumTiles$236782[esp+116]
 	xor	edi, edi
 	or	esi, -1
 $LN24@DefaultCon:
@@ -18038,7 +18038,7 @@ $LL13@DefaultCon:
 	mov	eax, DWORD PTR [ebx+16]
 	cdq
 	idiv	ecx
-	mov	DWORD PTR _iX$236809[esp+116], eax
+	mov	DWORD PTR _iX$236808[esp+116], eax
 	jmp	SHORT $LN128@DefaultCon
 $LN169@DefaultCon:
 
@@ -18054,7 +18054,7 @@ $LN169@DefaultCon:
 ; 2247 : 		int iX = pLoopMass->GetCentroidX();
 
 $LN127@DefaultCon:
-	mov	DWORD PTR _iX$236809[esp+116], -1
+	mov	DWORD PTR _iX$236808[esp+116], -1
 $LN128@DefaultCon:
 
 ; 2248 : 		int iY = pLoopMass->GetCentroidY();
@@ -18064,10 +18064,10 @@ $LN128@DefaultCon:
 	mov	eax, DWORD PTR [ebx+20]
 	cdq
 	idiv	ecx
-	mov	DWORD PTR _iY$236810[esp+116], eax
+	mov	DWORD PTR _iY$236809[esp+116], eax
 	jmp	SHORT $LN131@DefaultCon
 $LN130@DefaultCon:
-	mov	DWORD PTR _iY$236810[esp+116], -1
+	mov	DWORD PTR _iY$236809[esp+116], -1
 $LN131@DefaultCon:
 
 ; 2249 : 		// if water continent type = 0
@@ -18104,9 +18104,9 @@ $LL190@DefaultCon:
 
 	mov	edx, DWORD PTR _iLargeContinentsY$[esp+esi*4+116]
 	mov	eax, DWORD PTR _iLargeContinentsX$[esp+esi*4+116]
-	mov	ecx, DWORD PTR _iY$236810[esp+116]
+	mov	ecx, DWORD PTR _iY$236809[esp+116]
 	push	edx
-	mov	edx, DWORD PTR _iX$236809[esp+120]
+	mov	edx, DWORD PTR _iX$236808[esp+120]
 	push	eax
 	push	ecx
 	push	edx

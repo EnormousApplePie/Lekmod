@@ -12,75 +12,75 @@ INCLUDELIB OLDNAMES
 PUBLIC	?NO_QUEST_DATA@CvMinorCivQuest@@2HB		; CvMinorCivQuest::NO_QUEST_DATA
 PUBLIC	?NO_TURN@CvMinorCivQuest@@2HB			; CvMinorCivQuest::NO_TURN
 CONST	SEGMENT
-$SG222693 DB	'CvPlot::m_eFeatureType', 00H
-$SG225243 DB	00H
-$SG222974 DB	'Resource Discovery', 00H
-$SG227340 DB	00H
-$SG222980 DB	'RESOURCE_ARTIFACTS', 00H
+$SG222692 DB	'CvPlot::m_eFeatureType', 00H
+$SG225242 DB	00H
+$SG222973 DB	'Resource Discovery', 00H
+$SG227339 DB	00H
+$SG222979 DB	'RESOURCE_ARTIFACTS', 00H
 	ORG $+1
-$SG222987 DB	'TXT_KEY_MISC_DISCOVERED_ARTIFACTS_NEAR', 00H
+$SG222986 DB	'TXT_KEY_MISC_DISCOVERED_ARTIFACTS_NEAR', 00H
 	ORG $+1
-$SG222990 DB	'RESOURCE_HIDDEN_ARTIFACTS', 00H
+$SG222989 DB	'RESOURCE_HIDDEN_ARTIFACTS', 00H
 	ORG $+2
-$SG222992 DB	'TXT_KEY_MISC_DISCOVERED_HIDDEN_ARTIFACTS_NEAR', 00H
+$SG222991 DB	'TXT_KEY_MISC_DISCOVERED_HIDDEN_ARTIFACTS_NEAR', 00H
 	ORG $+2
-$SG223004 DB	'TXT_KEY_MISC_DISCOVERED_NEW_RESOURCE', 00H
+$SG223003 DB	'TXT_KEY_MISC_DISCOVERED_NEW_RESOURCE', 00H
 	ORG $+3
-$SG224229 DB	'FLAVOR_OFFENSE', 00H
+$SG224228 DB	'FLAVOR_OFFENSE', 00H
 	ORG $+1
-$SG224230 DB	'FLAVOR_DEFENSE', 00H
+$SG224229 DB	'FLAVOR_DEFENSE', 00H
 	ORG $+1
-$SG225796 DB	'IMPROVEMENT_MOTTE_BAILEY', 00H
+$SG225795 DB	'IMPROVEMENT_MOTTE_BAILEY', 00H
 	ORG $+3
-$SG225800 DB	'IMPROVEMENT_FEITORIA', 00H
+$SG225799 DB	'IMPROVEMENT_FEITORIA', 00H
 	ORG $+3
-$SG226665 DB	'NaturalWonderDiscovered', 00H
-$SG226668 DB	'TXT_KEY_NOTIFICATION_FOUND_NATURAL_WONDER', 00H
+$SG226664 DB	'NaturalWonderDiscovered', 00H
+$SG226667 DB	'TXT_KEY_NOTIFICATION_FOUND_NATURAL_WONDER', 00H
 	ORG $+2
-$SG226677 DB	'TXT_KEY_NOTIFICATION_SUMMARY_FOUND_NATURAL_WONDER', 00H
+$SG226676 DB	'TXT_KEY_NOTIFICATION_SUMMARY_FOUND_NATURAL_WONDER', 00H
 	ORG $+2
-$SG226730 DB	'HANDICAP_PRINCE', 00H
-$SG226753 DB	'[COLOR_YELLOW]+%d[ENDCOLOR][ICON_GOLD]', 00H
+$SG226729 DB	'HANDICAP_PRINCE', 00H
+$SG226752 DB	'[COLOR_YELLOW]+%d[ENDCOLOR][ICON_GOLD]', 00H
 	ORG $+1
-$SG226767 DB	'[COLOR_WHITE]+%d[ENDCOLOR][ICON_PEACE]', 00H
+$SG226766 DB	'[COLOR_WHITE]+%d[ENDCOLOR][ICON_PEACE]', 00H
 	ORG $+1
-$SG226779 DB	'FEATURE_FOUNTAIN_YOUTH', 00H
+$SG226778 DB	'FEATURE_FOUNTAIN_YOUTH', 00H
 	ORG $+1
-$SG226782 DB	'FEATURE_EL_DORADO', 00H
+$SG226781 DB	'FEATURE_EL_DORADO', 00H
 	ORG $+2
-$SG226797 DB	'TXT_KEY_NOTIFICATION_FOUND_GOODY_HUT', 00H
+$SG226796 DB	'TXT_KEY_NOTIFICATION_FOUND_GOODY_HUT', 00H
 	ORG $+3
-$SG226800 DB	'TXT_KEY_NOTIFICATION_SUMMARY_FOUND_GOODY_HUT', 00H
+$SG226799 DB	'TXT_KEY_NOTIFICATION_SUMMARY_FOUND_GOODY_HUT', 00H
 	ORG $+3
-$SG226894 DB	'TXT_KEY_NOTIFICATION_FOUND_BARB_CAMP', 00H
+$SG226893 DB	'TXT_KEY_NOTIFICATION_FOUND_BARB_CAMP', 00H
 	ORG $+3
-$SG226897 DB	'TXT_KEY_NOTIFICATION_SUMMARY_FOUND_BARB_CAMP', 00H
+$SG226896 DB	'TXT_KEY_NOTIFICATION_SUMMARY_FOUND_BARB_CAMP', 00H
 	ORG $+3
-$SG226979 DB	'TXT_KEY_NOTIFICATION_CHOOSE_ARCHAEOLOGY', 00H
-$SG226982 DB	'TXT_KEY_NOTIFICATION_SUMMARY_CHOOSE_ARCHAEOLOGY', 00H
-$SG226985 DB	'CIVILIZATION_AMERICA', 00H
+$SG226978 DB	'TXT_KEY_NOTIFICATION_CHOOSE_ARCHAEOLOGY', 00H
+$SG226981 DB	'TXT_KEY_NOTIFICATION_SUMMARY_CHOOSE_ARCHAEOLOGY', 00H
+$SG226984 DB	'CIVILIZATION_AMERICA', 00H
 	ORG $+3
-$SG226988 DB	'CIVILIZATION_EGYPT', 00H
+$SG226987 DB	'CIVILIZATION_EGYPT', 00H
 	ORG $+1
-$SG226997 DB	'CIVILIZATION_GERMANY', 00H
+$SG226996 DB	'CIVILIZATION_GERMANY', 00H
 	ORG $+3
-$SG227004 DB	'UNIT_ARCHAEOLOGIST', 00H
+$SG227003 DB	'UNIT_ARCHAEOLOGIST', 00H
 	ORG $+1
-$SG227031 DB	'TXT_KEY_MISC_CLEARING_FEATURE_RESOURCE', 00H
+$SG227030 DB	'TXT_KEY_MISC_CLEARING_FEATURE_RESOURCE', 00H
 	ORG $+1
-$SG227039 DB	'TXT_KEY_MISC_CLEARING_FEATURE_FOOD', 00H
+$SG227038 DB	'TXT_KEY_MISC_CLEARING_FEATURE_FOOD', 00H
 	ORG $+1
-$SG227050 DB	'BuildFinished', 00H
+$SG227049 DB	'BuildFinished', 00H
 	ORG $+2
-$SG227966 DB	'Game Turn : ', 00H
+$SG227965 DB	'Game Turn : ', 00H
 	ORG $+3
-$SG227974 DB	'%d', 00H, 00H
+$SG227973 DB	'%d', 00H, 00H
 $SG92482 DB	'daf6f887-3614-4169-a0e5-3ac9bd4ef82b', 00H
 	ORG $+3
 _CIV5_DLC_04_SCENARIO_MODID DD FLAT:$SG92482
-$SG208297 DB	0aH, 00H
+$SG208296 DB	0aH, 00H
 	ORG $+2
-$SG208298 DB	0aH, 00H
+$SG208297 DB	0aH, 00H
 CONST	ENDS
 ;	COMDAT ?NO_TURN@CvMinorCivQuest@@2HB
 CONST	SEGMENT
@@ -970,13 +970,13 @@ __real@400921fb54442d18 DQ 0400921fb54442d18r	; 3.14159
 CONST	ENDS
 ;	COMDAT ?shouldProcessDisplacementPlot@CvPlot@@QBE_NHHHW4DirectionTypes@@@Z
 _TEXT	SEGMENT
-_theta$223782 = -112					; size = 8
-_crossProduct$223780 = -112				; size = 8
-_directionX$223778 = -112				; size = 8
-_spread$223783 = -104					; size = 8
-_dotProduct$223781 = -104				; size = 8
-_directionY$223779 = -104				; size = 8
-_displacements$223777 = -96				; size = 96
+_theta$223781 = -112					; size = 8
+_crossProduct$223779 = -112				; size = 8
+_directionX$223777 = -112				; size = 8
+_spread$223782 = -104					; size = 8
+_dotProduct$223780 = -104				; size = 8
+_directionY$223778 = -104				; size = 8
+_displacements$223776 = -96				; size = 96
 _dx$ = 8						; size = 4
 _dy$ = 12						; size = 4
 ___formal$ = 16						; size = 4
@@ -1032,46 +1032,46 @@ $LN5@shouldProc:
 ; 1779 : 		double crossProduct = directionX * dy - directionY * dx; //cross product
 
 	fild	DWORD PTR _dy$[ebp]
-	mov	DWORD PTR _displacements$223777[esp+128], eax
-	mov	DWORD PTR _displacements$223777[esp+136], eax
-	mov	DWORD PTR _displacements$223777[esp+144], eax
-	mov	DWORD PTR _displacements$223777[esp+152], eax
-	mov	DWORD PTR _displacements$223777[esp+156], eax
-	mov	DWORD PTR _displacements$223777[esp+160], eax
-	mov	DWORD PTR _displacements$223777[esp+168], eax
-	mov	DWORD PTR _displacements$223777[esp+176], eax
-	mov	DWORD PTR _displacements$223777[esp+184], eax
-	mov	DWORD PTR _displacements$223777[esp+192], eax
-	mov	DWORD PTR _displacements$223777[esp+200], eax
-	mov	DWORD PTR _displacements$223777[esp+204], eax
-	mov	DWORD PTR _displacements$223777[esp+208], eax
-	mov	DWORD PTR _displacements$223777[esp+216], eax
+	mov	DWORD PTR _displacements$223776[esp+128], eax
+	mov	DWORD PTR _displacements$223776[esp+136], eax
+	mov	DWORD PTR _displacements$223776[esp+144], eax
+	mov	DWORD PTR _displacements$223776[esp+152], eax
+	mov	DWORD PTR _displacements$223776[esp+156], eax
+	mov	DWORD PTR _displacements$223776[esp+160], eax
+	mov	DWORD PTR _displacements$223776[esp+168], eax
+	mov	DWORD PTR _displacements$223776[esp+176], eax
+	mov	DWORD PTR _displacements$223776[esp+184], eax
+	mov	DWORD PTR _displacements$223776[esp+192], eax
+	mov	DWORD PTR _displacements$223776[esp+200], eax
+	mov	DWORD PTR _displacements$223776[esp+204], eax
+	mov	DWORD PTR _displacements$223776[esp+208], eax
+	mov	DWORD PTR _displacements$223776[esp+216], eax
 	shl	ecx, 4
 	mov	eax, ecx
 	mov	edx, 1071644672				; 3fe00000H
-	mov	DWORD PTR _displacements$223777[esp+132], edx
-	mov	DWORD PTR _displacements$223777[esp+164], edx
+	mov	DWORD PTR _displacements$223776[esp+132], edx
+	mov	DWORD PTR _displacements$223776[esp+164], edx
 	mov	edx, -1075071366			; bfebb67aH
-	mov	DWORD PTR _displacements$223777[esp+172], edx
-	mov	DWORD PTR _displacements$223777[esp+188], edx
-	mov	DWORD PTR _displacements$223777[esp+220], edx
-	mov	DWORD PTR _displacements$223777[esp+140], 1072412282 ; 3febb67aH
-	mov	DWORD PTR _displacements$223777[esp+148], 1072693248 ; 3ff00000H
-	mov	DWORD PTR _displacements$223777[esp+180], -1075838976 ; bfe00000H
-	mov	DWORD PTR _displacements$223777[esp+196], -1074790400 ; bff00000H
-	mov	DWORD PTR _displacements$223777[esp+212], -1075838976 ; bfe00000H
-	mov	ecx, DWORD PTR _displacements$223777[esp+eax+128]
-	mov	edx, DWORD PTR _displacements$223777[esp+eax+132]
-	mov	DWORD PTR _directionX$223778[esp+128], ecx
-	mov	ecx, DWORD PTR _displacements$223777[esp+eax+136]
-	mov	DWORD PTR _directionX$223778[esp+132], edx
-	mov	edx, DWORD PTR _displacements$223777[esp+eax+140]
-	fld	QWORD PTR _directionX$223778[esp+128]
+	mov	DWORD PTR _displacements$223776[esp+172], edx
+	mov	DWORD PTR _displacements$223776[esp+188], edx
+	mov	DWORD PTR _displacements$223776[esp+220], edx
+	mov	DWORD PTR _displacements$223776[esp+140], 1072412282 ; 3febb67aH
+	mov	DWORD PTR _displacements$223776[esp+148], 1072693248 ; 3ff00000H
+	mov	DWORD PTR _displacements$223776[esp+180], -1075838976 ; bfe00000H
+	mov	DWORD PTR _displacements$223776[esp+196], -1074790400 ; bff00000H
+	mov	DWORD PTR _displacements$223776[esp+212], -1075838976 ; bfe00000H
+	mov	ecx, DWORD PTR _displacements$223776[esp+eax+128]
+	mov	edx, DWORD PTR _displacements$223776[esp+eax+132]
+	mov	DWORD PTR _directionX$223777[esp+128], ecx
+	mov	ecx, DWORD PTR _displacements$223776[esp+eax+136]
+	mov	DWORD PTR _directionX$223777[esp+132], edx
+	mov	edx, DWORD PTR _displacements$223776[esp+eax+140]
+	fld	QWORD PTR _directionX$223777[esp+128]
 	fmul	ST(1), ST(0)
-	mov	DWORD PTR _directionY$223779[esp+128], ecx
+	mov	DWORD PTR _directionY$223778[esp+128], ecx
 	fild	DWORD PTR _dx$[ebp]
-	mov	DWORD PTR _directionY$223779[esp+132], edx
-	fld	QWORD PTR _directionY$223779[esp+128]
+	mov	DWORD PTR _directionY$223778[esp+132], edx
+	fld	QWORD PTR _directionY$223778[esp+128]
 
 ; 1780 : 		double dotProduct = directionX * dx + directionY * dy; //dot product
 ; 1781 : 
@@ -1098,23 +1098,23 @@ $LN5@shouldProc:
 	sub	esp, 8
 	fxch	ST(3)
 	fsubrp	ST(1), ST(0)
-	fstp	QWORD PTR _crossProduct$223780[esp+144]
+	fstp	QWORD PTR _crossProduct$223779[esp+144]
 	fild	DWORD PTR _dy$[ebp]
 	fmulp	ST(2), ST(0)
 	fimul	DWORD PTR _dx$[ebp]
 	faddp	ST(1), ST(0)
-	fstp	QWORD PTR _dotProduct$223781[esp+144]
-	mov	ecx, DWORD PTR _dotProduct$223781[esp+144]
-	mov	edx, DWORD PTR _dotProduct$223781[esp+148]
+	fstp	QWORD PTR _dotProduct$223780[esp+144]
+	mov	ecx, DWORD PTR _dotProduct$223780[esp+144]
+	mov	edx, DWORD PTR _dotProduct$223780[esp+148]
 	mov	DWORD PTR [eax], ecx
-	mov	ecx, DWORD PTR _crossProduct$223780[esp+144]
+	mov	ecx, DWORD PTR _crossProduct$223779[esp+144]
 	mov	DWORD PTR [eax+4], edx
-	mov	edx, DWORD PTR _crossProduct$223780[esp+148]
+	mov	edx, DWORD PTR _crossProduct$223779[esp+148]
 	mov	eax, esp
 	mov	DWORD PTR [eax], ecx
 	mov	DWORD PTR [eax+4], edx
 	call	_atan2
-	fstp	QWORD PTR _theta$223782[esp+144]
+	fstp	QWORD PTR _theta$223781[esp+144]
 
 ; 1798 : 		double spread = 75 * (double) M_PI / 180;
 
@@ -1133,7 +1133,7 @@ $LN5@shouldProc:
 	cmp	eax, 1
 	fdiv	ST(1), ST(0)
 	fxch	ST(1)
-	fstp	QWORD PTR _spread$223783[esp+128]
+	fstp	QWORD PTR _spread$223782[esp+128]
 	jg	SHORT $LN14@shouldProc
 	mov	eax, ebx
 	cdq
@@ -1148,7 +1148,7 @@ $LN5@shouldProc:
 	fxch	ST(1)
 	fmul	QWORD PTR __real@4056800000000000
 	fdivrp	ST(1), ST(0)
-	fstp	QWORD PTR _spread$223783[esp+128]
+	fstp	QWORD PTR _spread$223782[esp+128]
 	jmp	SHORT $LN3@shouldProc
 $LN14@shouldProc:
 
@@ -1162,10 +1162,10 @@ $LN3@shouldProc:
 ; 1803 : 
 ; 1804 : 		if((theta >= -spread / 2) && (theta <= spread / 2))
 
-	fld	QWORD PTR _spread$223783[esp+128]
+	fld	QWORD PTR _spread$223782[esp+128]
 	fld	QWORD PTR __real@c000000000000000
 	fdivr	ST(0), ST(1)
-	fld	QWORD PTR _theta$223782[esp+128]
+	fld	QWORD PTR _theta$223781[esp+128]
 	fcom	ST(1)
 	fnstsw	ax
 	fstp	ST(1)
@@ -1231,7 +1231,7 @@ EXTRN	_fabs:PROC
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\math.h
 ;	COMDAT ?abs@@YANN@Z
 _TEXT	SEGMENT
-$T230586 = -8						; size = 8
+$T230585 = -8						; size = 8
 __X$ = 8						; size = 8
 ?abs@@YANN@Z PROC					; abs, COMDAT
 
@@ -1245,8 +1245,8 @@ __X$ = 8						; size = 8
 	mov	DWORD PTR [eax], ecx
 	mov	DWORD PTR [eax+4], edx
 	call	_fabs
-	fstp	QWORD PTR $T230586[esp+16]
-	fld	QWORD PTR $T230586[esp+16]
+	fstp	QWORD PTR $T230585[esp+16]
+	fld	QWORD PTR $T230585[esp+16]
 	add	esp, 16					; 00000010H
 	ret	0
 ?abs@@YANN@Z ENDP					; abs
@@ -5502,8 +5502,8 @@ __ehfuncinfo$?_Xlen@?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$a
 xdata$x	ENDS
 ;	COMDAT ?_Xlen@?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@KAXXZ
 _TEXT	SEGMENT
-$T231353 = -80						; size = 28
-$T231352 = -52						; size = 40
+$T231352 = -80						; size = 28
+$T231351 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ?_Xlen@?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@KAXXZ PROC ; std::vector<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::basic_string<char,std::char_traits<char>,std::allocator<char> > > > >::_Xlen, COMDAT
 
@@ -5519,22 +5519,22 @@ __$EHRec$ = -12						; size = 12
 ; 1260 : 		_THROW(length_error, "vector<T> too long");
 
 	push	OFFSET ??_C@_0BD@OLBABOEK@vector?$DMT?$DO?5too?5long?$AA@
-	lea	ecx, DWORD PTR $T231353[esp+84]
+	lea	ecx, DWORD PTR $T231352[esp+84]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T231352[esp+80]
+	lea	ecx, DWORD PTR $T231351[esp+80]
 	mov	DWORD PTR __$EHRec$[esp+88], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T231353[esp+80]
+	lea	eax, DWORD PTR $T231352[esp+80]
 	push	eax
-	lea	ecx, DWORD PTR $T231352[esp+96]
+	lea	ecx, DWORD PTR $T231351[esp+96]
 	mov	BYTE PTR __$EHRec$[esp+92], 1
-	mov	DWORD PTR $T231352[esp+84], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T231351[esp+84], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVlength_error@std@@
-	lea	ecx, DWORD PTR $T231352[esp+84]
+	lea	ecx, DWORD PTR $T231351[esp+84]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+96], 0
-	mov	DWORD PTR $T231352[esp+88], OFFSET ??_7length_error@std@@6B@
+	mov	DWORD PTR $T231351[esp+88], OFFSET ??_7length_error@std@@6B@
 	call	__CxxThrowException@8
 $LN13@Xlen:
 $LN12@Xlen:
@@ -5543,10 +5543,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Xlen@?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@KAXXZ$0:
-	lea	ecx, DWORD PTR $T231353[ebp]
+	lea	ecx, DWORD PTR $T231352[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Xlen@?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@KAXXZ$2:
-	lea	ecx, DWORD PTR $T231352[ebp]
+	lea	ecx, DWORD PTR $T231351[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Xlen@?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@KAXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?_Xlen@?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@KAXXZ
@@ -6267,7 +6267,7 @@ EXTRN	?Write@FDataStream@@IAEXABH@Z:PROC		; FDataStream::Write
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\fireplace\include\fireworks\fdatastream.h
 ;	COMDAT ??$?6W4GreatWorkArtifactClass@@@FDataStream@@QAEAAV0@ABW4GreatWorkArtifactClass@@@Z
 _TEXT	SEGMENT
-$T231524 = 8						; size = 4
+$T231523 = 8						; size = 4
 _kData$ = 8						; size = 4
 ??$?6W4GreatWorkArtifactClass@@@FDataStream@@QAEAAV0@ABW4GreatWorkArtifactClass@@@Z PROC ; FDataStream::operator<<<enum GreatWorkArtifactClass>, COMDAT
 ; _this$ = ecx
@@ -6285,8 +6285,8 @@ _kData$ = 8						; size = 4
 	push	esi
 	mov	esi, ecx
 	mov	ecx, DWORD PTR [eax]
-	lea	edx, DWORD PTR $T231524[esp]
-	mov	DWORD PTR $T231524[esp], ecx
+	lea	edx, DWORD PTR $T231523[esp]
+	mov	DWORD PTR $T231523[esp], ecx
 	push	edx
 	mov	ecx, esi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
@@ -6305,7 +6305,7 @@ PUBLIC	??$?6W4GreatWorkType@@@FDataStream@@QAEAAV0@ABW4GreatWorkType@@@Z ; FData
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$?6W4GreatWorkType@@@FDataStream@@QAEAAV0@ABW4GreatWorkType@@@Z
 _TEXT	SEGMENT
-$T231528 = 8						; size = 4
+$T231527 = 8						; size = 4
 _kData$ = 8						; size = 4
 ??$?6W4GreatWorkType@@@FDataStream@@QAEAAV0@ABW4GreatWorkType@@@Z PROC ; FDataStream::operator<<<enum GreatWorkType>, COMDAT
 ; _this$ = ecx
@@ -6323,8 +6323,8 @@ _kData$ = 8						; size = 4
 	push	esi
 	mov	esi, ecx
 	mov	ecx, DWORD PTR [eax]
-	lea	edx, DWORD PTR $T231528[esp]
-	mov	DWORD PTR $T231528[esp], ecx
+	lea	edx, DWORD PTR $T231527[esp]
+	mov	DWORD PTR $T231527[esp], ecx
 	push	edx
 	mov	ecx, esi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
@@ -6744,8 +6744,8 @@ __TI2?AVbad_alloc@std@@ DD 00H
 xdata$x	ENDS
 ;	COMDAT ??$_Allocate@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@std@@YAPAU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@0@IPAU10@@Z
 _TEXT	SEGMENT
-$T231576 = -12						; size = 12
-$T231580 = 8						; size = 4
+$T231575 = -12						; size = 12
+$T231579 = 8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ??$_Allocate@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@std@@YAPAU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@0@IPAU10@@Z PROC ; std::_Allocate<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >, COMDAT
@@ -6791,15 +6791,15 @@ $LN3@Allocate:
 
 ; 40   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T231580[esp+8]
+	lea	eax, DWORD PTR $T231579[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T231576[esp+16]
-	mov	DWORD PTR $T231580[esp+12], 0
+	lea	ecx, DWORD PTR $T231575[esp+16]
+	mov	DWORD PTR $T231579[esp+12], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T231576[esp+16]
+	lea	ecx, DWORD PTR $T231575[esp+16]
 	push	ecx
-	mov	DWORD PTR $T231576[esp+20], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T231575[esp+20], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN9@Allocate:
 $LN8@Allocate:
@@ -6828,8 +6828,8 @@ PUBLIC	??$_Allocate@U_Node@?$_Tree_nod@V?$_Tset_traits@PAVCvPlot@@U?$less@PAVCvP
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Allocate@U_Node@?$_Tree_nod@V?$_Tset_traits@PAVCvPlot@@U?$less@PAVCvPlot@@@std@@V?$allocator@PAVCvPlot@@@3@$0A@@std@@@std@@@std@@YAPAU_Node@?$_Tree_nod@V?$_Tset_traits@PAVCvPlot@@U?$less@PAVCvPlot@@@std@@V?$allocator@PAVCvPlot@@@3@$0A@@std@@@0@IPAU120@@Z
 _TEXT	SEGMENT
-$T231589 = -12						; size = 12
-$T231593 = 8						; size = 4
+$T231588 = -12						; size = 12
+$T231592 = 8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ??$_Allocate@U_Node@?$_Tree_nod@V?$_Tset_traits@PAVCvPlot@@U?$less@PAVCvPlot@@@std@@V?$allocator@PAVCvPlot@@@3@$0A@@std@@@std@@@std@@YAPAU_Node@?$_Tree_nod@V?$_Tset_traits@PAVCvPlot@@U?$less@PAVCvPlot@@@std@@V?$allocator@PAVCvPlot@@@3@$0A@@std@@@0@IPAU120@@Z PROC ; std::_Allocate<std::_Tree_nod<std::_Tset_traits<CvPlot *,std::less<CvPlot *>,std::allocator<CvPlot *>,0> >::_Node>, COMDAT
@@ -6873,15 +6873,15 @@ $LN3@Allocate@2:
 
 ; 40   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T231593[esp+8]
+	lea	eax, DWORD PTR $T231592[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T231589[esp+16]
-	mov	DWORD PTR $T231593[esp+12], 0
+	lea	ecx, DWORD PTR $T231588[esp+16]
+	mov	DWORD PTR $T231592[esp+12], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T231589[esp+16]
+	lea	ecx, DWORD PTR $T231588[esp+16]
 	push	ecx
-	mov	DWORD PTR $T231589[esp+20], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T231588[esp+20], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN9@Allocate@2:
 $LN8@Allocate@2:
@@ -10180,12 +10180,12 @@ __unwindtable$?debugDump@?$FAutoVariable@DVCvPlot@@@@UBE?AV?$basic_string@DU?$ch
 xdata$x	ENDS
 ;	COMDAT ?debugDump@?$FAutoVariable@DVCvPlot@@@@UBE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABV?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@3@@Z
 _TEXT	SEGMENT
-$T232252 = -156						; size = 4
-$T232249 = -152						; size = 28
-$T232248 = -124						; size = 28
-$T232247 = -96						; size = 28
-$T232250 = -68						; size = 28
-$T232246 = -40						; size = 28
+$T232251 = -156						; size = 4
+$T232248 = -152						; size = 28
+$T232247 = -124						; size = 28
+$T232246 = -96						; size = 28
+$T232249 = -68						; size = 28
+$T232245 = -40						; size = 28
 __$EHRec$ = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
 _callStacks$ = 12					; size = 4
@@ -10209,7 +10209,7 @@ _callStacks$ = 12					; size = 4
 	push	esi
 	push	edi
 	xor	ebx, ebx
-	mov	DWORD PTR $T232252[esp+172], ebx
+	mov	DWORD PTR $T232251[esp+172], ebx
 	mov	edi, DWORD PTR ___$ReturnUdt$[esp+168]
 	push	eax
 	push	edi
@@ -10224,35 +10224,35 @@ _callStacks$ = 12					; size = 4
 ; 364  : #endif
 ; 365  : 	return result;
 
-	push	OFFSET $SG208297
-	lea	ecx, DWORD PTR $T232246[esp+176]
+	push	OFFSET $SG208296
+	lea	ecx, DWORD PTR $T232245[esp+176]
 	mov	DWORD PTR __$EHRec$[esp+184], ebx
-	mov	DWORD PTR $T232252[esp+176], 1
+	mov	DWORD PTR $T232251[esp+176], 1
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	mov	ebp, eax
 	mov	ecx, DWORD PTR [esi+8]
 	mov	edx, DWORD PTR [ecx]
 	mov	edx, DWORD PTR [edx+12]
 	push	esi
-	lea	eax, DWORD PTR $T232247[esp+176]
+	lea	eax, DWORD PTR $T232246[esp+176]
 	push	eax
 	mov	DWORD PTR __$EHRec$[esp+188], 1
 	call	edx
 	mov	esi, eax
-	push	OFFSET $SG208298
-	lea	ecx, DWORD PTR $T232248[esp+176]
+	push	OFFSET $SG208297
+	lea	ecx, DWORD PTR $T232247[esp+176]
 	mov	BYTE PTR __$EHRec$[esp+184], 2
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	push	esi
 	mov	esi, DWORD PTR __imp_??$?HDU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@ABV10@0@Z
 	push	eax
-	lea	eax, DWORD PTR $T232249[esp+180]
+	lea	eax, DWORD PTR $T232248[esp+180]
 	push	eax
 	mov	BYTE PTR __$EHRec$[esp+192], 3
 	call	esi
 	push	ebp
 	push	eax
-	lea	ecx, DWORD PTR $T232250[esp+192]
+	lea	ecx, DWORD PTR $T232249[esp+192]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+204], 4
 	call	esi
@@ -10261,19 +10261,19 @@ _callStacks$ = 12					; size = 4
 	mov	ecx, edi
 	mov	BYTE PTR __$EHRec$[esp+184], 5
 	call	DWORD PTR __imp_??Y?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T232250[esp+172]
+	lea	ecx, DWORD PTR $T232249[esp+172]
 	mov	BYTE PTR __$EHRec$[esp+180], 4
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T232249[esp+172]
+	lea	ecx, DWORD PTR $T232248[esp+172]
 	mov	BYTE PTR __$EHRec$[esp+180], 3
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T232248[esp+172]
+	lea	ecx, DWORD PTR $T232247[esp+172]
 	mov	BYTE PTR __$EHRec$[esp+180], 2
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T232247[esp+172]
+	lea	ecx, DWORD PTR $T232246[esp+172]
 	mov	BYTE PTR __$EHRec$[esp+180], 1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T232246[esp+172]
+	lea	ecx, DWORD PTR $T232245[esp+172]
 	mov	BYTE PTR __$EHRec$[esp+180], bl
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -10292,28 +10292,28 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?debugDump@?$FAutoVariable@DVCvPlot@@@@UBE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABV?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@3@@Z$0:
-	mov	eax, DWORD PTR $T232252[ebp]
+	mov	eax, DWORD PTR $T232251[ebp]
 	and	eax, 1
 	je	$LN4@debugDump
-	and	DWORD PTR $T232252[ebp], -2		; fffffffeH
+	and	DWORD PTR $T232251[ebp], -2		; fffffffeH
 	mov	ecx, DWORD PTR ___$ReturnUdt$[ebp-4]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 $LN4@debugDump:
 	ret	0
 __unwindfunclet$?debugDump@?$FAutoVariable@DVCvPlot@@@@UBE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABV?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@3@@Z$1:
-	lea	ecx, DWORD PTR $T232246[ebp]
+	lea	ecx, DWORD PTR $T232245[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?debugDump@?$FAutoVariable@DVCvPlot@@@@UBE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABV?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@3@@Z$2:
-	lea	ecx, DWORD PTR $T232247[ebp]
+	lea	ecx, DWORD PTR $T232246[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?debugDump@?$FAutoVariable@DVCvPlot@@@@UBE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABV?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@3@@Z$3:
-	lea	ecx, DWORD PTR $T232248[ebp]
+	lea	ecx, DWORD PTR $T232247[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?debugDump@?$FAutoVariable@DVCvPlot@@@@UBE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABV?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@3@@Z$4:
-	lea	ecx, DWORD PTR $T232249[ebp]
+	lea	ecx, DWORD PTR $T232248[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?debugDump@?$FAutoVariable@DVCvPlot@@@@UBE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABV?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@3@@Z$5:
-	lea	ecx, DWORD PTR $T232250[ebp]
+	lea	ecx, DWORD PTR $T232249[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __ehhandler$?debugDump@?$FAutoVariable@DVCvPlot@@@@UBE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABV?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@3@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?debugDump@?$FAutoVariable@DVCvPlot@@@@UBE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABV?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@3@@Z
@@ -10324,7 +10324,7 @@ EXTRN	?toString@FSerialization@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$al
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?toString@?$FAutoVariable@DVCvPlot@@@@UBE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
 _TEXT	SEGMENT
-$T232269 = -4						; size = 4
+$T232268 = -4						; size = 4
 ___$ReturnUdt$ = 8					; size = 4
 ?toString@?$FAutoVariable@DVCvPlot@@@@UBE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ PROC ; FAutoVariable<char,CvPlot>::toString, COMDAT
 ; _this$ = ecx
@@ -10340,7 +10340,7 @@ ___$ReturnUdt$ = 8					; size = 4
 	add	ecx, 4
 	push	ecx
 	push	esi
-	mov	DWORD PTR $T232269[esp+16], 0
+	mov	DWORD PTR $T232268[esp+16], 0
 	call	?toString@FSerialization@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABD@Z ; FSerialization::toString
 	add	esp, 8
 	mov	eax, esi
@@ -10371,8 +10371,8 @@ PUBLIC	??$_Allocate@U_Node@?$_Tree_nod@V?$_Tset_traits@PAVFAutoVariableBase@@U?$
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xmemory
 ;	COMDAT ??$_Allocate@U_Node@?$_Tree_nod@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@std@@@std@@YAPAU_Node@?$_Tree_nod@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@0@IPAU120@@Z
 _TEXT	SEGMENT
-$T232277 = -12						; size = 12
-$T232281 = 8						; size = 4
+$T232276 = -12						; size = 12
+$T232280 = 8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ??$_Allocate@U_Node@?$_Tree_nod@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@std@@@std@@YAPAU_Node@?$_Tree_nod@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@0@IPAU120@@Z PROC ; std::_Allocate<std::_Tree_nod<std::_Tset_traits<FAutoVariableBase *,std::less<FAutoVariableBase *>,std::allocator<FAutoVariableBase *>,0> >::_Node>, COMDAT
@@ -10416,15 +10416,15 @@ $LN3@Allocate@3:
 
 ; 40   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T232281[esp+8]
+	lea	eax, DWORD PTR $T232280[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T232277[esp+16]
-	mov	DWORD PTR $T232281[esp+12], 0
+	lea	ecx, DWORD PTR $T232276[esp+16]
+	mov	DWORD PTR $T232280[esp+12], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T232277[esp+16]
+	lea	ecx, DWORD PTR $T232276[esp+16]
 	push	ecx
-	mov	DWORD PTR $T232277[esp+20], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T232276[esp+20], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN9@Allocate@3:
 $LN8@Allocate@3:
@@ -10435,8 +10435,8 @@ PUBLIC	??$_Allocate@U_Node@?$_Tree_nod@V?$_Tmap_traits@IV?$basic_string@DU?$char
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Allocate@U_Node@?$_Tree_nod@V?$_Tmap_traits@IV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@I@2@V?$allocator@U?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@$0A@@std@@@std@@@std@@YAPAU_Node@?$_Tree_nod@V?$_Tmap_traits@IV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@I@2@V?$allocator@U?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@$0A@@std@@@0@IPAU120@@Z
 _TEXT	SEGMENT
-$T232287 = -12						; size = 12
-$T232291 = 8						; size = 4
+$T232286 = -12						; size = 12
+$T232290 = 8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ??$_Allocate@U_Node@?$_Tree_nod@V?$_Tmap_traits@IV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@I@2@V?$allocator@U?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@$0A@@std@@@std@@@std@@YAPAU_Node@?$_Tree_nod@V?$_Tmap_traits@IV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@I@2@V?$allocator@U?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@$0A@@std@@@0@IPAU120@@Z PROC ; std::_Allocate<std::_Tree_nod<std::_Tmap_traits<unsigned int,std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,0> >::_Node>, COMDAT
@@ -10479,15 +10479,15 @@ $LN3@Allocate@4:
 
 ; 40   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T232291[esp+8]
+	lea	eax, DWORD PTR $T232290[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T232287[esp+16]
-	mov	DWORD PTR $T232291[esp+12], 0
+	lea	ecx, DWORD PTR $T232286[esp+16]
+	mov	DWORD PTR $T232290[esp+12], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T232287[esp+16]
+	lea	ecx, DWORD PTR $T232286[esp+16]
 	push	ecx
-	mov	DWORD PTR $T232287[esp+20], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T232286[esp+20], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN9@Allocate@4:
 $LN8@Allocate@4:
@@ -11126,7 +11126,7 @@ tv357 = -4						; size = 4
 _iX1$ = 8						; size = 4
 _iDX$ = 12						; size = 4
 _iY1$ = 12						; size = 4
-$T232481 = 16						; size = 4
+$T232480 = 16						; size = 4
 _iX2$ = 16						; size = 4
 _iY2$ = 20						; size = 4
 ?plotDistance@@YAHHHHH@Z PROC				; plotDistance, COMDAT
@@ -11175,18 +11175,18 @@ $LN18@plotDistan:
 	jle	SHORT $LN34@plotDistan
 	mov	ebx, ebp
 	sub	ebx, eax
-	mov	DWORD PTR $T232481[esp+24], ebx
+	mov	DWORD PTR $T232480[esp+24], ebx
 	jmp	SHORT $LN36@plotDistan
 $LN34@plotDistan:
 	neg	edx
 	cmp	ebp, edx
 	jge	SHORT $LN32@plotDistan
 	lea	ebx, DWORD PTR [eax+ebp]
-	mov	DWORD PTR $T232481[esp+24], ebx
+	mov	DWORD PTR $T232480[esp+24], ebx
 	jmp	SHORT $LN36@plotDistan
 $LN32@plotDistan:
 	mov	ebx, ebp
-	mov	DWORD PTR $T232481[esp+24], ebp
+	mov	DWORD PTR $T232480[esp+24], ebp
 $LN36@plotDistan:
 
 ; 148  : 	int iDY = abs(iWrappedDY);
@@ -11237,7 +11237,7 @@ $LN80@plotDistan:
 ; 154  : 	{
 ; 155  : 		iWrappedDX *= -1;  // change polarity
 
-	mov	ebx, DWORD PTR $T232481[esp+24]
+	mov	ebx, DWORD PTR $T232480[esp+24]
 	neg	eax
 	sbb	eax, eax
 	inc	eax
@@ -11246,7 +11246,7 @@ $LN80@plotDistan:
 	neg	ecx
 	jmp	SHORT $LN5@plotDistan
 $LN73@plotDistan:
-	mov	ebx, DWORD PTR $T232481[esp+24]
+	mov	ebx, DWORD PTR $T232480[esp+24]
 $LN5@plotDistan:
 
 ; 156  : 	}
@@ -11823,7 +11823,7 @@ xdata$x	ENDS
 ;	COMDAT ?GetLocalizedText@@YA?AVCvString@@PBD@Z
 _TEXT	SEGMENT
 _bytes$ = -100						; size = 4
-$T232707 = -96						; size = 4
+$T232706 = -96						; size = 4
 _text$ = -92						; size = 80
 __$EHRec$ = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
@@ -11850,7 +11850,7 @@ _szString$ = 12						; size = 4
 	xor	ebx, ebx
 	push	ecx
 	mov	DWORD PTR __$EHRec$[esp+128], ebx
-	mov	DWORD PTR $T232707[esp+120], ebx
+	mov	DWORD PTR $T232706[esp+120], ebx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
 
@@ -11880,7 +11880,7 @@ _szString$ = 12						; size = 4
 	push	eax
 	push	edi
 	mov	ecx, esi
-	mov	DWORD PTR $T232707[esp+120], 1
+	mov	DWORD PTR $T232706[esp+120], 1
 	call	DWORD PTR __imp_?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBDI@Z
 	lea	ecx, DWORD PTR _text$[esp+112]
 	mov	BYTE PTR __$EHRec$[esp+120], bl
@@ -11903,10 +11903,10 @@ __unwindfunclet$?GetLocalizedText@@YA?AVCvString@@PBD@Z$0:
 	lea	ecx, DWORD PTR _text$[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?GetLocalizedText@@YA?AVCvString@@PBD@Z$1:
-	mov	eax, DWORD PTR $T232707[ebp]
+	mov	eax, DWORD PTR $T232706[ebp]
 	and	eax, 1
 	je	$LN5@GetLocaliz
-	and	DWORD PTR $T232707[ebp], -2		; fffffffeH
+	and	DWORD PTR $T232706[ebp], -2		; fffffffeH
 	mov	ecx, DWORD PTR ___$ReturnUdt$[ebp-4]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 $LN5@GetLocaliz:
@@ -12041,8 +12041,8 @@ EXTRN	??6@YAAAVFDataStream@@AAV0@ABW4EraTypes@@@Z:PROC ; operator<<
 ;	COMDAT ??6@YAAAVFDataStream@@AAV0@ABUCvArchaeologyData@@@Z
 _TEXT	SEGMENT
 _uiVersion$ = -4					; size = 4
-$T232746 = 8						; size = 4
-$T232741 = 8						; size = 4
+$T232745 = 8						; size = 4
+$T232740 = 8						; size = 4
 _saveTo$ = 8						; size = 4
 _readFrom$ = 12						; size = 4
 ??6@YAAAVFDataStream@@AAV0@ABUCvArchaeologyData@@@Z PROC ; operator<<, COMDAT
@@ -12068,8 +12068,8 @@ _readFrom$ = 12						; size = 4
 
 	mov	edi, DWORD PTR _readFrom$[esp+8]
 	mov	ecx, DWORD PTR [edi]
-	lea	edx, DWORD PTR $T232741[esp+8]
-	mov	DWORD PTR $T232741[esp+8], ecx
+	lea	edx, DWORD PTR $T232740[esp+8]
+	mov	DWORD PTR $T232740[esp+8], ecx
 	push	edx
 	mov	ecx, esi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
@@ -12099,10 +12099,10 @@ _readFrom$ = 12						; size = 4
 
 	mov	eax, DWORD PTR [edi+16]
 	add	esp, 24					; 00000018H
-	lea	ecx, DWORD PTR $T232746[esp+8]
+	lea	ecx, DWORD PTR $T232745[esp+8]
 	push	ecx
 	mov	ecx, esi
-	mov	DWORD PTR $T232746[esp+12], eax
+	mov	DWORD PTR $T232745[esp+12], eax
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 	pop	edi
 
@@ -12141,7 +12141,7 @@ __ehfuncinfo$?updateSymbols@CvPlot@@QAEXXZ DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?updateSymbols@CvPlot@@QAEXXZ
 _TEXT	SEGMENT
-$T232752 = -16						; size = 4
+$T232751 = -16						; size = 4
 _pDllPlot$ = -16					; size = 4
 __$EHRec$ = -12						; size = 12
 ?updateSymbols@CvPlot@@QAEXXZ PROC			; CvPlot::updateSymbols, COMDAT
@@ -12163,7 +12163,7 @@ __$EHRec$ = -12						; size = 12
 	mov	esi, ecx
 	call	??2CvDllPlot@@SAPAXI@Z			; CvDllPlot::operator new
 	add	esp, 4
-	mov	DWORD PTR $T232752[esp+20], eax
+	mov	DWORD PTR $T232751[esp+20], eax
 	mov	DWORD PTR __$EHRec$[esp+28], 0
 	test	eax, eax
 	je	SHORT $LN3@updateSymb
@@ -12205,7 +12205,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?updateSymbols@CvPlot@@QAEXXZ$0:
-	mov	eax, DWORD PTR $T232752[ebp]
+	mov	eax, DWORD PTR $T232751[ebp]
 	push	eax
 	call	??3CvDllPlot@@SAXPAX@Z			; CvDllPlot::operator delete
 	pop	ecx
@@ -12604,7 +12604,7 @@ EXTRN	?CanSeeDisplacementPlot@CvTargeting@@SA_NHHHHH@Z:PROC ; CvTargeting::CanSe
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?canSeePlot@CvPlot@@QBE_NPBV1@W4TeamTypes@@HW4DirectionTypes@@@Z
 _TEXT	SEGMENT
-_dy$223759 = -8						; size = 4
+_dy$223758 = -8						; size = 4
 _iDistance$ = -4					; size = 4
 _startX$ = 8						; size = 4
 _pPlot$ = 8						; size = 4
@@ -12706,7 +12706,7 @@ $LN5@canSeePlot:
 
 	mov	eax, esi
 	sub	eax, edi
-	mov	DWORD PTR _dy$223759[esp+24], eax
+	mov	DWORD PTR _dy$223758[esp+24], eax
 
 ; 1727 : 
 ; 1728 : 		int iX1 = xToHexspaceX(destX,  destY);
@@ -12750,7 +12750,7 @@ $LN28@canSeePlot:
 
 ; 1734 : 		dy = dyWrap(dy);
 
-	mov	eax, DWORD PTR _dy$223759[esp+28]
+	mov	eax, DWORD PTR _dy$223758[esp+28]
 	push	eax
 	call	?dyWrap@@YAHH@Z				; dyWrap
 
@@ -13788,7 +13788,7 @@ EXTRN	?getImprovementUpgradeTime@CvGame@@QBEHW4ImprovementTypes@@PBVCvPlot@@@Z:P
 _TEXT	SEGMENT
 _iTurnsLeft$ = 8					; size = 4
 _eImprovement$ = 8					; size = 4
-$T233332 = 12						; size = 4
+$T233331 = 12						; size = 4
 _ePlayer$ = 12						; size = 4
 ?getUpgradeTimeLeft@CvPlot@@QBEHW4ImprovementTypes@@W4PlayerTypes@@@Z PROC ; CvPlot::getUpgradeTimeLeft, COMDAT
 ; _this$ = ecx
@@ -13893,10 +13893,10 @@ $LN1@getUpgrade:
 ; 4795 : 	return std::max(1, iTurnsLeft);
 
 	cmp	eax, 1
-	mov	DWORD PTR $T233332[esp], 1
+	mov	DWORD PTR $T233331[esp], 1
 	lea	eax, DWORD PTR _iTurnsLeft$[esp]
 	jg	SHORT $LN19@getUpgrade
-	lea	eax, DWORD PTR $T233332[esp]
+	lea	eax, DWORD PTR $T233331[esp]
 $LN19@getUpgrade:
 	mov	eax, DWORD PTR [eax]
 $LN4@getUpgrade:
@@ -14804,7 +14804,7 @@ EXTRN	?GetNumLayers@CvPlotManager@@QBEHXZ:PROC	; CvPlotManager::GetNumLayers
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?getNumLayerUnits@CvPlot@@QBEHH@Z
 _TEXT	SEGMENT
-_iCount$227131 = 8					; size = 4
+_iCount$227130 = 8					; size = 4
 _iLayerID$ = 8						; size = 4
 ?getNumLayerUnits@CvPlot@@QBEHH@Z PROC			; CvPlot::getNumLayerUnits, COMDAT
 ; _this$ = ecx
@@ -14852,7 +14852,7 @@ $LN7@getNumLaye:
 ; 9750 : 			int iNumLayers = kManager.GetNumLayers();
 
 	mov	ecx, ebx
-	mov	DWORD PTR _iCount$227131[esp+12], eax
+	mov	DWORD PTR _iCount$227130[esp+12], eax
 	call	?GetNumLayers@CvPlotManager@@QBEHXZ	; CvPlotManager::GetNumLayers
 	mov	ebp, eax
 
@@ -14874,7 +14874,7 @@ $LL4@getNumLaye:
 	push	edx
 	mov	ecx, ebx
 	call	?GetNumUnitsByIndex@CvPlotManager@@QBEHHHH@Z ; CvPlotManager::GetNumUnitsByIndex
-	add	DWORD PTR _iCount$227131[esp+12], eax
+	add	DWORD PTR _iCount$227130[esp+12], eax
 	inc	esi
 	cmp	esi, ebp
 	jl	SHORT $LL4@getNumLaye
@@ -14883,7 +14883,7 @@ $LN2@getNumLaye:
 ; 9754 : 			}
 ; 9755 : 			return iCount;
 
-	mov	eax, DWORD PTR _iCount$227131[esp+12]
+	mov	eax, DWORD PTR _iCount$227130[esp+12]
 	pop	esi
 	pop	ebp
 	pop	ebx
@@ -15115,7 +15115,7 @@ PUBLIC	?getScriptData@CvPlot@@QBE?AVCvString@@XZ	; CvPlot::getScriptData
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?getScriptData@CvPlot@@QBE?AVCvString@@XZ
 _TEXT	SEGMENT
-$T233812 = -4						; size = 4
+$T233811 = -4						; size = 4
 ___$ReturnUdt$ = 8					; size = 4
 ?getScriptData@CvPlot@@QBE?AVCvString@@XZ PROC		; CvPlot::getScriptData, COMDAT
 ; _this$ = ecx
@@ -15127,10 +15127,10 @@ ___$ReturnUdt$ = 8					; size = 4
 ; 10046: 	CvString scriptData = (m_szScriptData != NULL)? m_szScriptData : "";
 
 	mov	eax, DWORD PTR [ecx+180]
-	mov	DWORD PTR $T233812[esp+4], 0
+	mov	DWORD PTR $T233811[esp+4], 0
 	test	eax, eax
 	jne	SHORT $LN4@getScriptD
-	mov	eax, OFFSET $SG227340
+	mov	eax, OFFSET $SG227339
 $LN4@getScriptD:
 	push	esi
 	mov	esi, DWORD PTR ___$ReturnUdt$[esp+4]
@@ -15482,7 +15482,7 @@ __ehfuncinfo$?debugDump@CvPlot@@QBE?AV?$basic_string@DU?$char_traits@D@std@@V?$a
 xdata$x	ENDS
 ;	COMDAT ?debugDump@CvPlot@@QBE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABVFAutoVariableBase@@@Z
 _TEXT	SEGMENT
-$T233968 = -24						; size = 4
+$T233967 = -24						; size = 4
 _gameTurnBuffer$ = -20					; size = 8
 __$EHRec$ = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
@@ -15501,12 +15501,12 @@ ___formal$ = 12						; size = 4
 	push	ebx
 	xor	ebx, ebx
 	push	esi
-	mov	DWORD PTR $T233968[esp+32], ebx
+	mov	DWORD PTR $T233967[esp+32], ebx
 
 ; 11344: 	std::string result = "Game Turn : ";
 
 	mov	esi, DWORD PTR ___$ReturnUdt$[esp+28]
-	push	OFFSET $SG227966
+	push	OFFSET $SG227965
 	mov	ecx, esi
 	mov	DWORD PTR __$EHRec$[esp+44], ebx
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
@@ -15520,7 +15520,7 @@ ___formal$ = 12						; size = 4
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	xor	eax, eax
 	mov	DWORD PTR __$EHRec$[esp+40], ebx
-	mov	DWORD PTR $T233968[esp+32], 1
+	mov	DWORD PTR $T233967[esp+32], 1
 	mov	BYTE PTR _gameTurnBuffer$[esp+32], bl
 	mov	DWORD PTR _gameTurnBuffer$[esp+33], eax
 	mov	WORD PTR _gameTurnBuffer$[esp+37], ax
@@ -15528,7 +15528,7 @@ ___formal$ = 12						; size = 4
 	call	?getGameTurn@CvGame@@QAEHXZ		; CvGame::getGameTurn
 	push	eax
 	lea	eax, DWORD PTR _gameTurnBuffer$[esp+36]
-	push	OFFSET $SG227974
+	push	OFFSET $SG227973
 	push	eax
 	call	??$sprintf_s@$07@@YAHAAY07DPBDZZ	; sprintf_s<8>
 	add	esp, 12					; 0000000cH
@@ -15550,10 +15550,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?debugDump@CvPlot@@QBE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABVFAutoVariableBase@@@Z$0:
-	mov	eax, DWORD PTR $T233968[ebp]
+	mov	eax, DWORD PTR $T233967[ebp]
 	and	eax, 1
 	je	$LN4@debugDump@2
-	and	DWORD PTR $T233968[ebp], -2		; fffffffeH
+	and	DWORD PTR $T233967[ebp], -2		; fffffffeH
 	mov	ecx, DWORD PTR ___$ReturnUdt$[ebp-4]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 $LN4@debugDump@2:
@@ -15567,7 +15567,7 @@ PUBLIC	?stackTraceRemark@CvPlot@@QBE?AV?$basic_string@DU?$char_traits@D@std@@V?$
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?stackTraceRemark@CvPlot@@QBE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABVFAutoVariableBase@@@Z
 _TEXT	SEGMENT
-$T233984 = -4						; size = 4
+$T233983 = -4						; size = 4
 ___$ReturnUdt$ = 8					; size = 4
 _var$ = 12						; size = 4
 ?stackTraceRemark@CvPlot@@QBE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABVFAutoVariableBase@@@Z PROC ; CvPlot::stackTraceRemark, COMDAT
@@ -15584,7 +15584,7 @@ _var$ = 12						; size = 4
 	mov	esi, DWORD PTR ___$ReturnUdt$[esp+4]
 	push	eax
 	push	esi
-	mov	DWORD PTR $T233984[esp+16], 0
+	mov	DWORD PTR $T233983[esp+16], 0
 	call	?debugDump@CvPlot@@QBE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABVFAutoVariableBase@@@Z ; CvPlot::debugDump
 	mov	eax, esi
 	pop	esi
@@ -17503,7 +17503,7 @@ xdata$x	ENDS
 ;	COMDAT ??$GetLocalizedText@PBD@@YA?AVCvString@@PBD0@Z
 _TEXT	SEGMENT
 _bytes$ = -100						; size = 4
-$T234808 = -96						; size = 4
+$T234807 = -96						; size = 4
 _text$ = -92						; size = 80
 __$EHRec$ = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
@@ -17531,7 +17531,7 @@ _arg1$ = 16						; size = 4
 	xor	ebx, ebx
 	push	ecx
 	mov	DWORD PTR __$EHRec$[esp+128], ebx
-	mov	DWORD PTR $T234808[esp+120], ebx
+	mov	DWORD PTR $T234807[esp+120], ebx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
 
@@ -17568,7 +17568,7 @@ _arg1$ = 16						; size = 4
 	push	ecx
 	push	edi
 	mov	ecx, esi
-	mov	DWORD PTR $T234808[esp+120], 1
+	mov	DWORD PTR $T234807[esp+120], 1
 	call	DWORD PTR __imp_?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBDI@Z
 	lea	ecx, DWORD PTR _text$[esp+112]
 	mov	BYTE PTR __$EHRec$[esp+120], bl
@@ -17591,10 +17591,10 @@ __unwindfunclet$??$GetLocalizedText@PBD@@YA?AVCvString@@PBD0@Z$0:
 	lea	ecx, DWORD PTR _text$[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$??$GetLocalizedText@PBD@@YA?AVCvString@@PBD0@Z$1:
-	mov	eax, DWORD PTR $T234808[ebp]
+	mov	eax, DWORD PTR $T234807[ebp]
 	and	eax, 1
 	je	$LN5@GetLocaliz@2
-	and	DWORD PTR $T234808[ebp], -2		; fffffffeH
+	and	DWORD PTR $T234807[ebp], -2		; fffffffeH
 	mov	ecx, DWORD PTR ___$ReturnUdt$[ebp-4]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 $LN5@GetLocaliz@2:
@@ -17625,7 +17625,7 @@ xdata$x	ENDS
 ;	COMDAT ??$GetLocalizedText@PBDPBD@@YA?AVCvString@@PBDABQBD1@Z
 _TEXT	SEGMENT
 _bytes$ = -100						; size = 4
-$T234828 = -96						; size = 4
+$T234827 = -96						; size = 4
 _text$ = -92						; size = 80
 __$EHRec$ = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
@@ -17654,7 +17654,7 @@ _arg2$ = 20						; size = 4
 	xor	ebx, ebx
 	push	ecx
 	mov	DWORD PTR __$EHRec$[esp+128], ebx
-	mov	DWORD PTR $T234828[esp+120], ebx
+	mov	DWORD PTR $T234827[esp+120], ebx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
 
@@ -17698,7 +17698,7 @@ _arg2$ = 20						; size = 4
 	push	ecx
 	push	edi
 	mov	ecx, esi
-	mov	DWORD PTR $T234828[esp+120], 1
+	mov	DWORD PTR $T234827[esp+120], 1
 	call	DWORD PTR __imp_?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBDI@Z
 	lea	ecx, DWORD PTR _text$[esp+112]
 	mov	BYTE PTR __$EHRec$[esp+120], bl
@@ -17721,10 +17721,10 @@ __unwindfunclet$??$GetLocalizedText@PBDPBD@@YA?AVCvString@@PBDABQBD1@Z$0:
 	lea	ecx, DWORD PTR _text$[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$??$GetLocalizedText@PBDPBD@@YA?AVCvString@@PBDABQBD1@Z$1:
-	mov	eax, DWORD PTR $T234828[ebp]
+	mov	eax, DWORD PTR $T234827[ebp]
 	and	eax, 1
 	je	$LN5@GetLocaliz@3
-	and	DWORD PTR $T234828[ebp], -2		; fffffffeH
+	and	DWORD PTR $T234827[ebp], -2		; fffffffeH
 	mov	ecx, DWORD PTR ___$ReturnUdt$[ebp-4]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 $LN5@GetLocaliz@3:
@@ -17782,7 +17782,7 @@ xdata$x	ENDS
 ;	COMDAT ??$GetLocalizedText@PBDHPBD@@YA?AVCvString@@PBDABQBDABH1@Z
 _TEXT	SEGMENT
 _bytes$ = -100						; size = 4
-$T234857 = -96						; size = 4
+$T234856 = -96						; size = 4
 _text$ = -92						; size = 80
 __$EHRec$ = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
@@ -17812,7 +17812,7 @@ _arg3$ = 24						; size = 4
 	xor	ebx, ebx
 	push	ecx
 	mov	DWORD PTR __$EHRec$[esp+128], ebx
-	mov	DWORD PTR $T234857[esp+120], ebx
+	mov	DWORD PTR $T234856[esp+120], ebx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
 
@@ -17861,7 +17861,7 @@ _arg3$ = 24						; size = 4
 	push	eax
 	push	edi
 	mov	ecx, esi
-	mov	DWORD PTR $T234857[esp+120], 1
+	mov	DWORD PTR $T234856[esp+120], 1
 	call	DWORD PTR __imp_?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBDI@Z
 	lea	ecx, DWORD PTR _text$[esp+112]
 	mov	BYTE PTR __$EHRec$[esp+120], bl
@@ -17884,10 +17884,10 @@ __unwindfunclet$??$GetLocalizedText@PBDHPBD@@YA?AVCvString@@PBDABQBDABH1@Z$0:
 	lea	ecx, DWORD PTR _text$[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$??$GetLocalizedText@PBDHPBD@@YA?AVCvString@@PBDABQBDABH1@Z$1:
-	mov	eax, DWORD PTR $T234857[ebp]
+	mov	eax, DWORD PTR $T234856[ebp]
 	and	eax, 1
 	je	$LN5@GetLocaliz@4
-	and	DWORD PTR $T234857[ebp], -2		; fffffffeH
+	and	DWORD PTR $T234856[ebp], -2		; fffffffeH
 	mov	ecx, DWORD PTR ___$ReturnUdt$[ebp-4]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 $LN5@GetLocaliz@4:
@@ -18746,9 +18746,9 @@ __ehfuncinfo$?debugDump@?$FAutoArchiveClassContainer@VCvPlot@@@@UBE?AV?$basic_st
 xdata$x	ENDS
 ;	COMDAT ?debugDump@?$FAutoArchiveClassContainer@VCvPlot@@@@UBE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABVFAutoVariableBase@@@Z
 _TEXT	SEGMENT
-$T235173 = -72						; size = 4
-$T235169 = -68						; size = 28
-$T235168 = -40						; size = 28
+$T235172 = -72						; size = 4
+$T235168 = -68						; size = 28
+$T235167 = -40						; size = 28
 __$EHRec$ = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
 _var$ = 12						; size = 4
@@ -18769,14 +18769,14 @@ _var$ = 12						; size = 4
 	mov	eax, DWORD PTR _var$[esp+68]
 	push	esi
 	push	eax
-	lea	edx, DWORD PTR $T235168[esp+80]
-	mov	DWORD PTR $T235173[esp+80], 0
+	lea	edx, DWORD PTR $T235167[esp+80]
+	mov	DWORD PTR $T235172[esp+80], 0
 	mov	ecx, DWORD PTR [ecx+32]
 	push	edx
 	call	?debugDump@CvPlot@@QBE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABVFAutoVariableBase@@@Z ; CvPlot::debugDump
 	mov	esi, eax
 	push	OFFSET ??_C@_01EEMJAFIK@?6?$AA@
-	lea	ecx, DWORD PTR $T235169[esp+80]
+	lea	ecx, DWORD PTR $T235168[esp+80]
 	mov	DWORD PTR __$EHRec$[esp+88], 1
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	push	esi
@@ -18786,11 +18786,11 @@ _var$ = 12						; size = 4
 	mov	BYTE PTR __$EHRec$[esp+96], 2
 	call	DWORD PTR __imp_??$?HDU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@ABV10@0@Z
 	add	esp, 12					; 0000000cH
-	lea	ecx, DWORD PTR $T235169[esp+76]
-	mov	DWORD PTR $T235173[esp+76], 1
+	lea	ecx, DWORD PTR $T235168[esp+76]
+	mov	DWORD PTR $T235172[esp+76], 1
 	mov	BYTE PTR __$EHRec$[esp+84], 1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T235168[esp+76]
+	lea	ecx, DWORD PTR $T235167[esp+76]
 	mov	BYTE PTR __$EHRec$[esp+84], 0
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -18806,16 +18806,16 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?debugDump@?$FAutoArchiveClassContainer@VCvPlot@@@@UBE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABVFAutoVariableBase@@@Z$0:
-	lea	ecx, DWORD PTR $T235168[ebp]
+	lea	ecx, DWORD PTR $T235167[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?debugDump@?$FAutoArchiveClassContainer@VCvPlot@@@@UBE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABVFAutoVariableBase@@@Z$1:
-	lea	ecx, DWORD PTR $T235169[ebp]
+	lea	ecx, DWORD PTR $T235168[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?debugDump@?$FAutoArchiveClassContainer@VCvPlot@@@@UBE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABVFAutoVariableBase@@@Z$2:
-	mov	eax, DWORD PTR $T235173[ebp]
+	mov	eax, DWORD PTR $T235172[ebp]
 	and	eax, 1
 	je	$LN6@debugDump@3
-	and	DWORD PTR $T235173[ebp], -2		; fffffffeH
+	and	DWORD PTR $T235172[ebp], -2		; fffffffeH
 	mov	ecx, DWORD PTR ___$ReturnUdt$[ebp-4]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 $LN6@debugDump@3:
@@ -18828,7 +18828,7 @@ text$x	ENDS
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?stackTraceRemark@?$FAutoArchiveClassContainer@VCvPlot@@@@UBE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABVFAutoVariableBase@@@Z
 _TEXT	SEGMENT
-$T235185 = -4						; size = 4
+$T235184 = -4						; size = 4
 ___$ReturnUdt$ = 8					; size = 4
 _var$ = 12						; size = 4
 ?stackTraceRemark@?$FAutoArchiveClassContainer@VCvPlot@@@@UBE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABVFAutoVariableBase@@@Z PROC ; FAutoArchiveClassContainer<CvPlot>::stackTraceRemark, COMDAT
@@ -18846,7 +18846,7 @@ _var$ = 12						; size = 4
 	mov	esi, DWORD PTR ___$ReturnUdt$[esp+4]
 	push	eax
 	push	esi
-	mov	DWORD PTR $T235185[esp+16], 0
+	mov	DWORD PTR $T235184[esp+16], 0
 	call	?stackTraceRemark@CvPlot@@QBE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABVFAutoVariableBase@@@Z ; CvPlot::stackTraceRemark
 	mov	eax, esi
 	pop	esi
@@ -22297,7 +22297,7 @@ PUBLIC	?getNearestLandPlotInternal@CvPlot@@QBEPAV1@H@Z	; CvPlot::getNearestLandP
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?getNearestLandPlotInternal@CvPlot@@QBEPAV1@H@Z
 _TEXT	SEGMENT
-_iDX$223569 = -16					; size = 4
+_iDX$223568 = -16					; size = 4
 tv243 = -12						; size = 4
 _this$ = -8						; size = 4
 tv194 = -4						; size = 4
@@ -22346,7 +22346,7 @@ $LN8@getNearest:
 ; 1293 : 	for(int iDX = -iDistance; iDX <= iDistance; iDX++)
 
 	cmp	edi, eax
-	mov	DWORD PTR _iDX$223569[esp+32], edi
+	mov	DWORD PTR _iDX$223568[esp+32], edi
 	jg	SHORT $LN5@getNearest
 $LL7@getNearest:
 
@@ -22363,7 +22363,7 @@ $LL43@getNearest:
 ; 1298 : 			// bkw - revisit this, it works but is inefficient
 ; 1299 : 			CvPlot* pPlot = plotXY(getX(), getY(), iDX, iDY);
 
-	mov	eax, DWORD PTR _iDX$223569[esp+32]
+	mov	eax, DWORD PTR _iDX$223568[esp+32]
 	push	edi
 	push	eax
 	push	ebp
@@ -22399,12 +22399,12 @@ $LN3@getNearest:
 	inc	edi
 	cmp	edi, DWORD PTR _iDistance$[esp+28]
 	jle	SHORT $LL43@getNearest
-	mov	eax, DWORD PTR _iDX$223569[esp+32]
+	mov	eax, DWORD PTR _iDX$223568[esp+32]
 	mov	ecx, DWORD PTR _this$[esp+32]
 	mov	edi, DWORD PTR tv243[esp+32]
 	inc	eax
 	cmp	eax, DWORD PTR _iDistance$[esp+28]
-	mov	DWORD PTR _iDX$223569[esp+32], eax
+	mov	DWORD PTR _iDX$223568[esp+32], eax
 	jle	SHORT $LL7@getNearest
 
 ; 1284 : 	}
@@ -22970,9 +22970,9 @@ EXTRN	?getTime@CvBuildInfo@@QBEHXZ:PROC		; CvBuildInfo::getTime
 ;	COMDAT ?getBuildTime@CvPlot@@QBEHW4BuildTypes@@W4PlayerTypes@@@Z
 _TEXT	SEGMENT
 _this$ = -4						; size = 4
-$T236948 = 8						; size = 4
+$T236947 = 8						; size = 4
 _eBuild$ = 8						; size = 4
-$T236949 = 12						; size = 4
+$T236948 = 12						; size = 4
 _ePlayer$ = 12						; size = 4
 ?getBuildTime@CvPlot@@QBEHW4BuildTypes@@W4PlayerTypes@@@Z PROC ; CvPlot::getBuildTime, COMDAT
 ; _this$ = ecx
@@ -23169,12 +23169,12 @@ $LN53@getBuildTi:
 	mov	ecx, eax
 	call	?getBuildModifier@CvTerrainInfo@@QBEHXZ	; CvTerrainInfo::getBuildModifier
 	add	eax, 100				; 00000064H
-	mov	DWORD PTR $T236948[esp+12], eax
-	mov	DWORD PTR $T236949[esp+12], 0
-	lea	edi, DWORD PTR $T236948[esp+12]
+	mov	DWORD PTR $T236947[esp+12], eax
+	mov	DWORD PTR $T236948[esp+12], 0
+	lea	edi, DWORD PTR $T236947[esp+12]
 	test	eax, eax
 	jg	SHORT $LN42@getBuildTi
-	lea	edi, DWORD PTR $T236949[esp+12]
+	lea	edi, DWORD PTR $T236948[esp+12]
 $LN42@getBuildTi:
 
 ; 2620 : 	iTime /= 100;
@@ -23258,7 +23258,7 @@ EXTRN	?getBuildType@CvUnit@@QBE?AW4BuildTypes@@XZ:PROC ; CvUnit::getBuildType
 ;	COMDAT ?getBuildTurnsLeft@CvPlot@@QBEHW4BuildTypes@@W4PlayerTypes@@HH@Z
 _TEXT	SEGMENT
 _iBuildLeft$ = -4					; size = 4
-$T237033 = 8						; size = 4
+$T237032 = 8						; size = 4
 _eBuild$ = 8						; size = 4
 _iNowBuildRate$ = 12					; size = 4
 _ePlayer$ = 12						; size = 4
@@ -23507,11 +23507,11 @@ $LN40@getBuildTu:
 ; 2713 : 
 ; 2714 : 	iBuildLeft = std::max(0, iBuildLeft);
 
-	mov	DWORD PTR $T237033[esp+12], 0
+	mov	DWORD PTR $T237032[esp+12], 0
 	lea	eax, DWORD PTR _iBuildLeft$[esp+16]
 	test	ecx, ecx
 	jg	SHORT $LN45@getBuildTu
-	lea	eax, DWORD PTR $T237033[esp+12]
+	lea	eax, DWORD PTR $T237032[esp+12]
 $LN45@getBuildTu:
 	mov	ecx, DWORD PTR [eax]
 
@@ -23559,8 +23559,8 @@ _TEXT	SEGMENT
 _iTurnsLeft$ = 8					; size = 4
 _iBuildLeft$ = 8					; size = 4
 _eBuild$ = 8						; size = 4
-$T237145 = 12						; size = 4
 $T237144 = 12						; size = 4
+$T237143 = 12						; size = 4
 _ePlayer$ = 12						; size = 4
 ?getBuildTurnsTotal@CvPlot@@QBEHW4BuildTypes@@W4PlayerTypes@@@Z PROC ; CvPlot::getBuildTurnsTotal, COMDAT
 ; _this$ = ecx
@@ -23754,10 +23754,10 @@ $LN1@getBuildTu@2:
 ; 2799 : 	iBuildLeft = std::max(0, iBuildLeft);
 
 	test	eax, eax
-	mov	DWORD PTR $T237144[esp+8], 0
+	mov	DWORD PTR $T237143[esp+8], 0
 	lea	eax, DWORD PTR _iBuildLeft$[esp+8]
 	jg	SHORT $LN40@getBuildTu@2
-	lea	eax, DWORD PTR $T237144[esp+8]
+	lea	eax, DWORD PTR $T237143[esp+8]
 $LN40@getBuildTu@2:
 
 ; 2800 : 
@@ -23772,13 +23772,13 @@ $LN40@getBuildTu@2:
 ; 2804 : 
 ; 2805 : 	return std::max(1, iTurnsLeft);
 
-	mov	DWORD PTR $T237145[esp+8], 1
+	mov	DWORD PTR $T237144[esp+8], 1
 	dec	eax
 	mov	DWORD PTR _iTurnsLeft$[esp+8], eax
 	cmp	eax, 1
 	lea	eax, DWORD PTR _iTurnsLeft$[esp+8]
 	jg	SHORT $LN44@getBuildTu@2
-	lea	eax, DWORD PTR $T237145[esp+8]
+	lea	eax, DWORD PTR $T237144[esp+8]
 $LN44@getBuildTu@2:
 	mov	eax, DWORD PTR [eax]
 	pop	esi
@@ -23800,14 +23800,14 @@ EXTRN	?findCity@CvMap@@QAEPAVCvCity@@HHW4PlayerTypes@@W4TeamTypes@@_N21W4Directi
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?getFeatureProduction@CvPlot@@QBEHW4BuildTypes@@W4PlayerTypes@@PAPAVCvCity@@@Z
 _TEXT	SEGMENT
-$T237263 = 8						; size = 4
-$T237261 = 8						; size = 4
+$T237262 = 8						; size = 4
+$T237260 = 8						; size = 4
 _eBuild$ = 8						; size = 4
-$T237282 = 12						; size = 4
-$T237264 = 12						; size = 4
+$T237281 = 12						; size = 4
+$T237263 = 12						; size = 4
 _ePlayer$ = 12						; size = 4
-$T237262 = 16						; size = 4
-$T237260 = 16						; size = 4
+$T237261 = 16						; size = 4
+$T237259 = 16						; size = 4
 _iProduction$ = 16					; size = 4
 _ppCity$ = 16						; size = 4
 ?getFeatureProduction@CvPlot@@QBEHW4BuildTypes@@W4PlayerTypes@@PAPAVCvCity@@@Z PROC ; CvPlot::getFeatureProduction, COMDAT
@@ -23829,10 +23829,10 @@ _ppCity$ = 16						; size = 4
 	mov	ecx, DWORD PTR ?sr_TeamTypes@CvPreGame@@3ABV?$vector@W4TeamTypes@@V?$allocator@W4TeamTypes@@@std@@@std@@B ; CvPreGame::sr_TeamTypes
 	mov	edx, DWORD PTR [ecx+4]
 	mov	eax, DWORD PTR [edx+eax*4]
-	mov	DWORD PTR $T237282[esp+4], eax
+	mov	DWORD PTR $T237281[esp+4], eax
 	jmp	SHORT $LN16@getFeature
 $LN15@getFeature:
-	mov	DWORD PTR $T237282[esp+4], -1
+	mov	DWORD PTR $T237281[esp+4], -1
 $LN16@getFeature:
 
 ; 2816 : 
@@ -23876,7 +23876,7 @@ $LN6@getFeature:
 ; 2825 : 	{
 ; 2826 : 		*ppCity = GC.getMap().findCity(getX(), getY(), NO_PLAYER, eTeam, false);
 
-	mov	edx, DWORD PTR $T237282[esp+8]
+	mov	edx, DWORD PTR $T237281[esp+8]
 	movsx	eax, WORD PTR [edi+2]
 	movsx	ecx, WORD PTR [edi]
 	push	0
@@ -23966,12 +23966,12 @@ $LN88@getFeature:
 	sub	eax, 2
 	xor	ebp, ebp
 	add	esp, 16					; 00000010H
-	mov	DWORD PTR $T237260[esp+12], eax
+	mov	DWORD PTR $T237259[esp+12], eax
 	cmp	eax, ebp
-	mov	DWORD PTR $T237261[esp+12], ebp
-	lea	eax, DWORD PTR $T237260[esp+12]
+	mov	DWORD PTR $T237260[esp+12], ebp
+	lea	eax, DWORD PTR $T237259[esp+12]
 	jg	SHORT $LN55@getFeature
-	lea	eax, DWORD PTR $T237261[esp+12]
+	lea	eax, DWORD PTR $T237260[esp+12]
 $LN55@getFeature:
 
 ; 2846 : 
@@ -23989,12 +23989,12 @@ $LN55@getFeature:
 	add	ebx, edx
 	call	?getFeatureProductionModifier@CvPlayer@@QBEHXZ ; CvPlayer::getFeatureProductionModifier
 	add	eax, 100				; 00000064H
-	mov	DWORD PTR $T237263[esp+12], ebp
+	mov	DWORD PTR $T237262[esp+12], ebp
 	cmp	eax, ebp
-	mov	DWORD PTR $T237262[esp+12], eax
-	lea	ebp, DWORD PTR $T237262[esp+12]
+	mov	DWORD PTR $T237261[esp+12], eax
+	lea	ebp, DWORD PTR $T237261[esp+12]
 	jg	SHORT $LN65@getFeature
-	lea	ebp, DWORD PTR $T237263[esp+12]
+	lea	ebp, DWORD PTR $T237262[esp+12]
 $LN65@getFeature:
 
 ; 2848 : 	iProduction /= 100;
@@ -24040,7 +24040,7 @@ $LN65@getFeature:
 $LN69@getFeature:
 	or	ecx, -1
 $LN68@getFeature:
-	cmp	ecx, DWORD PTR $T237282[esp+8]
+	cmp	ecx, DWORD PTR $T237281[esp+8]
 	je	SHORT $LN1@getFeature
 
 ; 2854 : 	{
@@ -24065,10 +24065,10 @@ $LN1@getFeature:
 ; 2859 : 	return std::max(0, iProduction);
 
 	test	eax, eax
-	mov	DWORD PTR $T237264[esp+8], 0
+	mov	DWORD PTR $T237263[esp+8], 0
 	lea	eax, DWORD PTR _iProduction$[esp+8]
 	jg	SHORT $LN86@getFeature
-	lea	eax, DWORD PTR $T237264[esp+8]
+	lea	eax, DWORD PTR $T237263[esp+8]
 $LN86@getFeature:
 	mov	eax, DWORD PTR [eax]
 	pop	ebp
@@ -24085,14 +24085,14 @@ EXTRN	?getFeatureFood@CvBuildInfo@@QBEHH@Z:PROC	; CvBuildInfo::getFeatureFood
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?getFeatureFood@CvPlot@@QBEHW4BuildTypes@@W4PlayerTypes@@PAPAVCvCity@@@Z
 _TEXT	SEGMENT
-$T237450 = 8						; size = 4
-$T237448 = 8						; size = 4
+$T237449 = 8						; size = 4
+$T237447 = 8						; size = 4
 _eBuild$ = 8						; size = 4
-$T237469 = 12						; size = 4
-$T237451 = 12						; size = 4
+$T237468 = 12						; size = 4
+$T237450 = 12						; size = 4
 _ePlayer$ = 12						; size = 4
-$T237449 = 16						; size = 4
-$T237447 = 16						; size = 4
+$T237448 = 16						; size = 4
+$T237446 = 16						; size = 4
 _iFood$ = 16						; size = 4
 _ppCity$ = 16						; size = 4
 ?getFeatureFood@CvPlot@@QBEHW4BuildTypes@@W4PlayerTypes@@PAPAVCvCity@@@Z PROC ; CvPlot::getFeatureFood, COMDAT
@@ -24113,10 +24113,10 @@ _ppCity$ = 16						; size = 4
 	mov	edx, DWORD PTR ?sr_TeamTypes@CvPreGame@@3ABV?$vector@W4TeamTypes@@V?$allocator@W4TeamTypes@@@std@@@std@@B ; CvPreGame::sr_TeamTypes
 	mov	ecx, DWORD PTR [edx+4]
 	mov	edx, DWORD PTR [ecx+eax*4]
-	mov	DWORD PTR $T237469[esp], edx
+	mov	DWORD PTR $T237468[esp], edx
 	jmp	SHORT $LN14@getFeature@2
 $LN13@getFeature@2:
-	mov	DWORD PTR $T237469[esp], -1
+	mov	DWORD PTR $T237468[esp], -1
 $LN14@getFeature@2:
 
 ; 2869 : 
@@ -24161,7 +24161,7 @@ $LN4@getFeature@2:
 ; 2878 : 	{
 ; 2879 : 		*ppCity = GC.getMap().findCity(getX(), getY(), NO_PLAYER, eTeam, false);
 
-	mov	edx, DWORD PTR $T237469[esp+8]
+	mov	edx, DWORD PTR $T237468[esp+8]
 	movsx	eax, WORD PTR [esi+2]
 	movsx	ecx, WORD PTR [esi]
 	push	ebp
@@ -24236,12 +24236,12 @@ $LN2@getFeature@2:
 	call	?plotDistance@@YAHHHHH@Z		; plotDistance
 	sub	eax, 2
 	add	esp, 16					; 00000010H
-	mov	DWORD PTR $T237447[esp+12], eax
+	mov	DWORD PTR $T237446[esp+12], eax
 	cmp	eax, ebp
-	mov	DWORD PTR $T237448[esp+12], ebp
-	lea	eax, DWORD PTR $T237447[esp+12]
+	mov	DWORD PTR $T237447[esp+12], ebp
+	lea	eax, DWORD PTR $T237446[esp+12]
 	jg	SHORT $LN49@getFeature@2
-	lea	eax, DWORD PTR $T237448[esp+12]
+	lea	eax, DWORD PTR $T237447[esp+12]
 $LN49@getFeature@2:
 	mov	eax, DWORD PTR [eax]
 	mov	ecx, eax
@@ -24259,12 +24259,12 @@ $LN49@getFeature@2:
 	add	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	call	?getFeatureProductionModifier@CvPlayer@@QBEHXZ ; CvPlayer::getFeatureProductionModifier
 	add	eax, 100				; 00000064H
-	mov	DWORD PTR $T237450[esp+12], ebp
+	mov	DWORD PTR $T237449[esp+12], ebp
 	cmp	eax, ebp
-	mov	DWORD PTR $T237449[esp+12], eax
-	lea	ebp, DWORD PTR $T237449[esp+12]
+	mov	DWORD PTR $T237448[esp+12], eax
+	lea	ebp, DWORD PTR $T237448[esp+12]
 	jg	SHORT $LN59@getFeature@2
-	lea	ebp, DWORD PTR $T237450[esp+12]
+	lea	ebp, DWORD PTR $T237449[esp+12]
 $LN59@getFeature@2:
 
 ; 2901 : 	iFood /= 100;
@@ -24310,7 +24310,7 @@ $LN59@getFeature@2:
 $LN63@getFeature@2:
 	or	ecx, -1
 $LN62@getFeature@2:
-	cmp	ecx, DWORD PTR $T237469[esp+8]
+	cmp	ecx, DWORD PTR $T237468[esp+8]
 	je	SHORT $LN1@getFeature@2
 
 ; 2907 : 	{
@@ -24335,10 +24335,10 @@ $LN1@getFeature@2:
 ; 2912 : 	return std::max(0, iFood);
 
 	test	eax, eax
-	mov	DWORD PTR $T237451[esp+8], 0
+	mov	DWORD PTR $T237450[esp+8], 0
 	lea	eax, DWORD PTR _iFood$[esp+8]
 	jg	SHORT $LN80@getFeature@2
-	lea	eax, DWORD PTR $T237451[esp+8]
+	lea	eax, DWORD PTR $T237450[esp+8]
 $LN80@getFeature@2:
 	mov	eax, DWORD PTR [eax]
 	pop	edi
@@ -24379,9 +24379,9 @@ __ehfuncinfo$?getBestDefender@CvPlot@@QBE?BV?$FObjectHandle@VCvUnit@@@@W4PlayerT
 xdata$x	ENDS
 ;	COMDAT ?getBestDefender@CvPlot@@QBE?BV?$FObjectHandle@VCvUnit@@@@W4PlayerTypes@@0PBVCvUnit@@_N222@Z
 _TEXT	SEGMENT
-$T237777 = -40						; size = 4
+$T237776 = -40						; size = 4
 tv713 = -36						; size = 4
-$T237629 = -32						; size = 4
+$T237628 = -32						; size = 4
 _pBestUnit$ = -28					; size = 8
 _pLoopUnit$ = -20					; size = 8
 __$EHRec$ = -12						; size = 12
@@ -24406,7 +24406,7 @@ _bNoncombatAllowed$ = 36				; size = 1
 	sub	esp, 28					; 0000001cH
 	push	ebx
 	xor	ebx, ebx
-	mov	DWORD PTR $T237629[esp+44], ebx
+	mov	DWORD PTR $T237628[esp+44], ebx
 	push	ebp
 	mov	ebp, ecx
 
@@ -24532,12 +24532,12 @@ $LN81@getBestDef:
 	cmp	ecx, DWORD PTR [ebp+28]
 	jae	SHORT $LN90@getBestDef
 	lea	eax, DWORD PTR [eax+ecx*8]
-	mov	DWORD PTR $T237777[esp+56], eax
+	mov	DWORD PTR $T237776[esp+56], eax
 	jmp	SHORT $LN89@getBestDef
 $LN90@getBestDef:
-	mov	DWORD PTR $T237777[esp+56], 0
+	mov	DWORD PTR $T237776[esp+56], 0
 $LN89@getBestDef:
-	mov	edi, DWORD PTR $T237777[esp+56]
+	mov	edi, DWORD PTR $T237776[esp+56]
 
 ; 2942 : 
 ; 2943 : 		if(pLoopUnit && (bNoncombatAllowed || pLoopUnit->IsCanDefend()) && pLoopUnit != pAttacker)	// Does the unit exist, and can it fight, or do we care if it can't fight?
@@ -24736,7 +24736,7 @@ $LN202@getBestDef:
 ; 2937 : 
 ; 2938 : 	while(pUnitNode != NULL)
 
-	cmp	DWORD PTR $T237777[esp+56], 0
+	cmp	DWORD PTR $T237776[esp+56], 0
 	jne	$LL17@getBestDef
 	mov	ebx, DWORD PTR _pBestUnit$[esp+56]
 $LN16@getBestDef:
@@ -24761,7 +24761,7 @@ $LN16@getBestDef:
 	mov	ecx, ebx
 	call	?getDestructionNotification@CvUnit@@QAEAAU?$DestructionNotification@V?$FObjectHandle@VCvUnit@@@@@@XZ ; CvUnit::getDestructionNotification
 $LN186@getBestDef:
-	mov	DWORD PTR $T237629[esp+56], 1
+	mov	DWORD PTR $T237628[esp+56], 1
 	mov	BYTE PTR __$EHRec$[esp+64], 1
 	test	ebx, ebx
 	je	SHORT $LN191@getBestDef
@@ -24796,10 +24796,10 @@ __unwindfunclet$?getBestDefender@CvPlot@@QBE?BV?$FObjectHandle@VCvUnit@@@@W4Play
 	lea	ecx, DWORD PTR _pBestUnit$[ebp]
 	jmp	??1?$FObjectHandle@VCvUnit@@@@QAE@XZ	; FObjectHandle<CvUnit>::~FObjectHandle<CvUnit>
 __unwindfunclet$?getBestDefender@CvPlot@@QBE?BV?$FObjectHandle@VCvUnit@@@@W4PlayerTypes@@0PBVCvUnit@@_N222@Z$2:
-	mov	eax, DWORD PTR $T237629[ebp]
+	mov	eax, DWORD PTR $T237628[ebp]
 	and	eax, 1
 	je	$LN24@getBestDef
-	and	DWORD PTR $T237629[ebp], -2		; fffffffeH
+	and	DWORD PTR $T237628[ebp], -2		; fffffffeH
 	mov	ecx, DWORD PTR ___$ReturnUdt$[ebp-4]
 	jmp	??1?$FObjectHandle@VCvUnit@@@@QAE@XZ	; FObjectHandle<CvUnit>::~FObjectHandle<CvUnit>
 $LN24@getBestDef:
@@ -24933,7 +24933,7 @@ EXTRN	__imp_??$?8DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA_NABV?$basic_st
 ;	COMDAT ?getUnitPower@CvPlot@@QBEHW4PlayerTypes@@@Z
 _TEXT	SEGMENT
 _iCount$ = -12						; size = 4
-$T238195 = -8						; size = 4
+$T238194 = -8						; size = 4
 _this$ = -4						; size = 4
 _eOwner$ = 8						; size = 4
 ?getUnitPower@CvPlot@@QBEHW4PlayerTypes@@@Z PROC	; CvPlot::getUnitPower, COMDAT
@@ -25012,7 +25012,7 @@ $LN24@getUnitPow:
 $LN35@getUnitPow:
 	xor	eax, eax
 $LN58@getUnitPow:
-	mov	DWORD PTR $T238195[esp+28], eax
+	mov	DWORD PTR $T238194[esp+28], eax
 	mov	ebx, eax
 
 ; 3017 : 
@@ -25047,7 +25047,7 @@ $LL5@getUnitPow:
 
 	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+1760
 	add	eax, esi
-	push	OFFSET $SG224229
+	push	OFFSET $SG224228
 	push	eax
 	call	DWORD PTR __imp_??$?8DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PBD@Z
 	add	esp, 8
@@ -25055,7 +25055,7 @@ $LL5@getUnitPow:
 	jne	SHORT $LN1@getUnitPow
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+1760
 	lea	eax, DWORD PTR [esi+ecx]
-	push	OFFSET $SG224230
+	push	OFFSET $SG224229
 	push	eax
 	call	DWORD PTR __imp_??$?8DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PBD@Z
 	add	esp, 8
@@ -25077,7 +25077,7 @@ $LN4@getUnitPow:
 	add	esi, 28					; 0000001cH
 	cmp	edi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+1764
 	jl	SHORT $LL5@getUnitPow
-	mov	eax, DWORD PTR $T238195[esp+28]
+	mov	eax, DWORD PTR $T238194[esp+28]
 	mov	esi, DWORD PTR _this$[esp+28]
 $LN57@getUnitPow:
 
@@ -27850,7 +27850,7 @@ EXTRN	?isAlwaysHostile@CvUnit@@QBE_NABVCvPlot@@@Z:PROC ; CvUnit::isAlwaysHostile
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?isVisibleEnemyDefender@CvPlot@@QBE_NPBVCvUnit@@@Z
 _TEXT	SEGMENT
-_bAlwaysHostile$224679 = 8				; size = 1
+_bAlwaysHostile$224678 = 8				; size = 1
 _pUnit$ = 8						; size = 4
 ?isVisibleEnemyDefender@CvPlot@@QBE_NPBVCvUnit@@@Z PROC	; CvPlot::isVisibleEnemyDefender, COMDAT
 ; _this$ = ecx
@@ -27903,7 +27903,7 @@ $LN28@isVisibleE:
 
 	push	ebp
 	call	?isAlwaysHostile@CvUnit@@QBE_NABVCvPlot@@@Z ; CvUnit::isAlwaysHostile
-	mov	BYTE PTR _bAlwaysHostile$224679[esp+12], al
+	mov	BYTE PTR _bAlwaysHostile$224678[esp+12], al
 	npad	6
 $LL5@isVisibleE:
 
@@ -27963,7 +27963,7 @@ $LN41@isVisibleE:
 	call	?IsCanDefend@CvUnit@@QBE_NPBVCvPlot@@@Z	; CvUnit::IsCanDefend
 	test	al, al
 	je	SHORT $LN4@isVisibleE
-	mov	eax, DWORD PTR _bAlwaysHostile$224679[esp+12]
+	mov	eax, DWORD PTR _bAlwaysHostile$224678[esp+12]
 	push	eax
 	call	?isEnemy@@YA_NPBVCvUnit@@W4TeamTypes@@_N@Z ; isEnemy
 	add	esp, 4
@@ -28319,8 +28319,8 @@ PUBLIC	?getNumVisibleEnemyDefenders@CvPlot@@QBEHPBVCvUnit@@@Z ; CvPlot::getNumVi
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?getNumVisibleEnemyDefenders@CvPlot@@QBEHPBVCvUnit@@@Z
 _TEXT	SEGMENT
-_bAlwaysHostile$224720 = -4				; size = 1
-_iCount$224721 = 8					; size = 4
+_bAlwaysHostile$224719 = -4				; size = 1
+_iCount$224720 = 8					; size = 4
 _pUnit$ = 8						; size = 4
 ?getNumVisibleEnemyDefenders@CvPlot@@QBEHPBVCvUnit@@@Z PROC ; CvPlot::getNumVisibleEnemyDefenders, COMDAT
 ; _this$ = ecx
@@ -28374,11 +28374,11 @@ $LN28@getNumVisi:
 
 	push	ebp
 	call	?isAlwaysHostile@CvUnit@@QBE_NABVCvPlot@@@Z ; CvUnit::isAlwaysHostile
-	mov	BYTE PTR _bAlwaysHostile$224720[esp+20], al
+	mov	BYTE PTR _bAlwaysHostile$224719[esp+20], al
 
 ; 3976 : 		int iCount = 0;
 
-	mov	DWORD PTR _iCount$224721[esp+16], 0
+	mov	DWORD PTR _iCount$224720[esp+16], 0
 $LL5@getNumVisi:
 
 ; 3977 : 
@@ -28444,7 +28444,7 @@ $LN41@getNumVisi:
 	call	?IsCanDefend@CvUnit@@QBE_NPBVCvPlot@@@Z	; CvUnit::IsCanDefend
 	test	al, al
 	je	SHORT $LN4@getNumVisi
-	mov	eax, DWORD PTR _bAlwaysHostile$224720[esp+20]
+	mov	eax, DWORD PTR _bAlwaysHostile$224719[esp+20]
 	push	eax
 	call	?isEnemy@@YA_NPBVCvUnit@@W4TeamTypes@@_N@Z ; isEnemy
 	add	esp, 4
@@ -28454,7 +28454,7 @@ $LN41@getNumVisi:
 ; 3990 : 				{
 ; 3991 : 					++iCount;
 
-	inc	DWORD PTR _iCount$224721[esp+16]
+	inc	DWORD PTR _iCount$224720[esp+16]
 $LN4@getNumVisi:
 
 ; 3992 : 				}
@@ -28467,7 +28467,7 @@ $LN4@getNumVisi:
 
 ; 3996 : 		return iCount;
 
-	mov	eax, DWORD PTR _iCount$224721[esp+16]
+	mov	eax, DWORD PTR _iCount$224720[esp+16]
 	pop	edi
 	pop	esi
 	pop	ebp
@@ -28496,8 +28496,8 @@ PUBLIC	?getNumVisiblePotentialEnemyDefenders@CvPlot@@QBEHPBVCvUnit@@@Z ; CvPlot:
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?getNumVisiblePotentialEnemyDefenders@CvPlot@@QBEHPBVCvUnit@@@Z
 _TEXT	SEGMENT
-_bAlwaysHostile$224736 = -4				; size = 1
-_iCount$224734 = 8					; size = 4
+_bAlwaysHostile$224735 = -4				; size = 1
+_iCount$224733 = 8					; size = 4
 _pUnit$ = 8						; size = 4
 ?getNumVisiblePotentialEnemyDefenders@CvPlot@@QBEHPBVCvUnit@@@Z PROC ; CvPlot::getNumVisiblePotentialEnemyDefenders, COMDAT
 ; _this$ = ecx
@@ -28538,7 +28538,7 @@ $LN9@getNumVisi@2:
 	mov	eax, DWORD PTR [eax+edx+44]
 	push	esi
 	push	edi
-	mov	DWORD PTR _iCount$224734[esp+16], 0
+	mov	DWORD PTR _iCount$224733[esp+16], 0
 	cmp	eax, 63					; 0000003fH
 	ja	SHORT $LN27@getNumVisi@2
 	mov	edx, DWORD PTR ?sr_TeamTypes@CvPreGame@@3ABV?$vector@W4TeamTypes@@V?$allocator@W4TeamTypes@@@std@@@std@@B ; CvPreGame::sr_TeamTypes
@@ -28553,7 +28553,7 @@ $LN28@getNumVisi@2:
 
 	push	ebp
 	call	?isAlwaysHostile@CvUnit@@QBE_NABVCvPlot@@@Z ; CvUnit::isAlwaysHostile
-	mov	BYTE PTR _bAlwaysHostile$224736[esp+20], al
+	mov	BYTE PTR _bAlwaysHostile$224735[esp+20], al
 $LL5@getNumVisi@2:
 
 ; 4011 : 
@@ -28619,7 +28619,7 @@ $LN41@getNumVisi@2:
 	call	?IsCanDefend@CvUnit@@QBE_NPBVCvPlot@@@Z	; CvUnit::IsCanDefend
 	test	al, al
 	je	SHORT $LN4@getNumVisi@2
-	mov	eax, DWORD PTR _bAlwaysHostile$224736[esp+20]
+	mov	eax, DWORD PTR _bAlwaysHostile$224735[esp+20]
 	push	eax
 	call	?isPotentialEnemy@@YA_NPBVCvUnit@@W4TeamTypes@@_N@Z ; isPotentialEnemy
 	add	esp, 4
@@ -28629,7 +28629,7 @@ $LN41@getNumVisi@2:
 ; 4024 : 				{
 ; 4025 : 					++iCount;
 
-	inc	DWORD PTR _iCount$224734[esp+16]
+	inc	DWORD PTR _iCount$224733[esp+16]
 $LN4@getNumVisi@2:
 
 ; 4026 : 				}
@@ -28642,7 +28642,7 @@ $LN4@getNumVisi@2:
 
 ; 4030 : 		return iCount;
 
-	mov	eax, DWORD PTR _iCount$224734[esp+16]
+	mov	eax, DWORD PTR _iCount$224733[esp+16]
 	pop	edi
 	pop	esi
 	pop	ebp
@@ -28844,7 +28844,7 @@ PUBLIC	?isVisibleEnemyUnit@CvPlot@@QBE_NPBVCvUnit@@@Z	; CvPlot::isVisibleEnemyUn
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?isVisibleEnemyUnit@CvPlot@@QBE_NPBVCvUnit@@@Z
 _TEXT	SEGMENT
-_bAlwaysHostile$224763 = 8				; size = 1
+_bAlwaysHostile$224762 = 8				; size = 1
 _pUnit$ = 8						; size = 4
 ?isVisibleEnemyUnit@CvPlot@@QBE_NPBVCvUnit@@@Z PROC	; CvPlot::isVisibleEnemyUnit, COMDAT
 ; _this$ = ecx
@@ -28897,7 +28897,7 @@ $LN28@isVisibleE@3:
 
 	push	ebp
 	call	?isAlwaysHostile@CvUnit@@QBE_NABVCvPlot@@@Z ; CvUnit::isAlwaysHostile
-	mov	BYTE PTR _bAlwaysHostile$224763[esp+12], al
+	mov	BYTE PTR _bAlwaysHostile$224762[esp+12], al
 	npad	6
 $LL5@isVisibleE@3:
 
@@ -28959,7 +28959,7 @@ $LN41@isVisibleE@3:
 ; 4088 : 			{
 ; 4089 : 				if(isEnemy(pLoopUnit, eTeam, bAlwaysHostile))
 
-	mov	eax, DWORD PTR _bAlwaysHostile$224763[esp+12]
+	mov	eax, DWORD PTR _bAlwaysHostile$224762[esp+12]
 	push	eax
 	call	?isEnemy@@YA_NPBVCvUnit@@W4TeamTypes@@_N@Z ; isEnemy
 	add	esp, 4
@@ -31157,7 +31157,7 @@ EXTRN	?GetIDInfo@CvCity@@QBE?AUIDInfo@@XZ:PROC	; CvCity::GetIDInfo
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?SetResourceLinkedCity@CvPlot@@QAEXPBVCvCity@@@Z
 _TEXT	SEGMENT
-$T241097 = -8						; size = 8
+$T241096 = -8						; size = 8
 _pCity$ = 8						; size = 4
 ?SetResourceLinkedCity@CvPlot@@QAEXPBVCvCity@@@Z PROC	; CvPlot::SetResourceLinkedCity, COMDAT
 ; _this$ = ecx
@@ -31190,7 +31190,7 @@ _pCity$ = 8						; size = 4
 ; 7074 : 			CvAssertMsg(pCity->getOwner() == getOwner(), "Argument city pNewValue's owner is expected to be the same as the current instance");
 ; 7075 : 			m_ResourceLinkedCity = pCity->GetIDInfo();
 
-	lea	edx, DWORD PTR $T241097[esp+12]
+	lea	edx, DWORD PTR $T241096[esp+12]
 	push	edx
 	call	?GetIDInfo@CvCity@@QBE?AUIDInfo@@XZ	; CvCity::GetIDInfo
 	mov	ecx, DWORD PTR [eax]
@@ -31534,14 +31534,14 @@ _TEXT	SEGMENT
 _eMajority$ = -24					; size = 4
 _eSecondaryPantheon$ = -20				; size = 4
 _pWorkingCity$ = -16					; size = 4
-_iReligionMod$226202 = -12				; size = 4
-_iReligionChange$226200 = -12				; size = 4
-_pFeatureInfo$226185 = -8				; size = 4
+_iReligionMod$226201 = -12				; size = 4
+_iReligionChange$226199 = -12				; size = 4
+_pFeatureInfo$226184 = -8				; size = 4
 tv770 = -4						; size = 4
 _iYield$ = 8						; size = 4
 _eYield$ = 8						; size = 4
 _eTeam$ = 12						; size = 4
-$T241481 = 16						; size = 4
+$T241480 = 16						; size = 4
 _bIgnoreFeature$ = 16					; size = 1
 ?calculateNatureYield@CvPlot@@QBEHW4YieldTypes@@W4TeamTypes@@_N@Z PROC ; CvPlot::calculateNatureYield, COMDAT
 ; _this$ = ecx
@@ -31787,7 +31787,7 @@ $LN181@calculateN:
 
 	push	esi
 	mov	ecx, eax
-	mov	DWORD PTR _pFeatureInfo$226185[esp+44], eax
+	mov	DWORD PTR _pFeatureInfo$226184[esp+44], eax
 	call	?getYieldChange@CvFeatureInfo@@QBEHH@Z	; CvFeatureInfo::getYieldChange
 	mov	ebp, eax
 
@@ -31919,7 +31919,7 @@ $LN20@calculateN:
 
 	cmp	BYTE PTR [edi+4], -1
 	je	$LN13@calculateN
-	mov	ecx, DWORD PTR _pFeatureInfo$226185[esp+40]
+	mov	ecx, DWORD PTR _pFeatureInfo$226184[esp+40]
 	call	?IsNaturalWonder@CvFeatureInfo@@QBE_NXZ	; CvFeatureInfo::IsNaturalWonder
 	test	al, al
 	je	$LN13@calculateN
@@ -31965,7 +31965,7 @@ $LN20@calculateN:
 ; 7539 : 						if (eSecondaryPantheon != NO_BELIEF)
 
 	mov	ebx, DWORD PTR _eSecondaryPantheon$[esp+40]
-	mov	DWORD PTR _iReligionChange$226200[esp+40], eax
+	mov	DWORD PTR _iReligionChange$226199[esp+40], eax
 	cmp	ebx, -1
 	je	SHORT $LN177@calculateN
 
@@ -31980,7 +31980,7 @@ $LN20@calculateN:
 	call	?GetEntry@CvBeliefXMLEntries@@QAEPAVCvBeliefEntry@@H@Z ; CvBeliefXMLEntries::GetEntry
 	mov	ecx, eax
 	call	?GetYieldChangeNaturalWonder@CvBeliefEntry@@QBEHH@Z ; CvBeliefEntry::GetYieldChangeNaturalWonder
-	add	DWORD PTR _iReligionChange$226200[esp+40], eax
+	add	DWORD PTR _iReligionChange$226199[esp+40], eax
 $LN177@calculateN:
 
 ; 7542 : 						}
@@ -31989,10 +31989,10 @@ $LN177@calculateN:
 ; 7545 : 						int iReligionMod = pReligion->m_Beliefs.GetYieldModifierNaturalWonder(eYield);
 
 	mov	ecx, DWORD PTR tv770[esp+40]
-	add	ebp, DWORD PTR _iReligionChange$226200[esp+40]
+	add	ebp, DWORD PTR _iReligionChange$226199[esp+40]
 	push	esi
 	call	?GetYieldModifierNaturalWonder@CvReligionBeliefs@@QBEHW4YieldTypes@@@Z ; CvReligionBeliefs::GetYieldModifierNaturalWonder
-	mov	DWORD PTR _iReligionMod$226202[esp+40], eax
+	mov	DWORD PTR _iReligionMod$226201[esp+40], eax
 
 ; 7546 : 						if (eSecondaryPantheon != NO_BELIEF)
 
@@ -32010,13 +32010,13 @@ $LN177@calculateN:
 	call	?GetEntry@CvBeliefXMLEntries@@QAEPAVCvBeliefEntry@@H@Z ; CvBeliefXMLEntries::GetEntry
 	mov	ecx, eax
 	call	?GetYieldModifierNaturalWonder@CvBeliefEntry@@QBEHH@Z ; CvBeliefEntry::GetYieldModifierNaturalWonder
-	add	DWORD PTR _iReligionMod$226202[esp+40], eax
+	add	DWORD PTR _iReligionMod$226201[esp+40], eax
 $LN14@calculateN:
 
 ; 7549 : 						}
 ; 7550 : 						iMod += iReligionMod;
 
-	mov	ebx, DWORD PTR _iReligionMod$226202[esp+40]
+	mov	ebx, DWORD PTR _iReligionMod$226201[esp+40]
 $LN16@calculateN:
 
 ; 7551 : 					}
@@ -32068,7 +32068,7 @@ $LN13@calculateN:
 ; 7563 : 			
 ; 7564 : 			if(pFeatureInfo->isYieldNotAdditive())
 
-	mov	ecx, DWORD PTR _pFeatureInfo$226185[esp+40]
+	mov	ecx, DWORD PTR _pFeatureInfo$226184[esp+40]
 	call	?isYieldNotAdditive@CvFeatureInfo@@QBE_NXZ ; CvFeatureInfo::isYieldNotAdditive
 	test	al, al
 	je	SHORT $LN12@calculateN
@@ -32334,11 +32334,11 @@ $LN187@calculateN:
 	cmp	DWORD PTR _iYield$[esp+36], 0
 	pop	esi
 	pop	ebp
-	mov	DWORD PTR $T241481[esp+28], 0
+	mov	DWORD PTR $T241480[esp+28], 0
 	pop	ebx
 	lea	eax, DWORD PTR _iYield$[esp+24]
 	jg	SHORT $LN175@calculateN
-	lea	eax, DWORD PTR $T241481[esp+24]
+	lea	eax, DWORD PTR $T241480[esp+24]
 $LN175@calculateN:
 	mov	eax, DWORD PTR [eax]
 	pop	edi
@@ -32365,9 +32365,9 @@ PUBLIC	?calculateBestNatureYield@CvPlot@@QBEHW4YieldTypes@@W4TeamTypes@@@Z ; CvP
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?calculateBestNatureYield@CvPlot@@QBEHW4YieldTypes@@W4TeamTypes@@@Z
 _TEXT	SEGMENT
-$T241780 = 8						; size = 4
+$T241779 = 8						; size = 4
 _eIndex$ = 8						; size = 4
-$T241779 = 12						; size = 4
+$T241778 = 12						; size = 4
 _eTeam$ = 12						; size = 4
 ?calculateBestNatureYield@CvPlot@@QBEHW4YieldTypes@@W4TeamTypes@@@Z PROC ; CvPlot::calculateBestNatureYield, COMDAT
 ; _this$ = ecx
@@ -32393,17 +32393,17 @@ _eTeam$ = 12						; size = 4
 	mov	ebp, eax
 	push	ebx
 	mov	ecx, esi
-	mov	DWORD PTR $T241779[esp+24], ebp
+	mov	DWORD PTR $T241778[esp+24], ebp
 	call	?calculateNatureYield@CvPlot@@QBEHW4YieldTypes@@W4TeamTypes@@_N@Z ; CvPlot::calculateNatureYield
 	pop	edi
 	pop	esi
 	cmp	eax, ebp
 	pop	ebp
-	mov	DWORD PTR $T241780[esp], eax
+	mov	DWORD PTR $T241779[esp], eax
 	pop	ebx
-	lea	eax, DWORD PTR $T241779[esp-4]
+	lea	eax, DWORD PTR $T241778[esp-4]
 	jl	SHORT $LN7@calculateB
-	lea	eax, DWORD PTR $T241780[esp-4]
+	lea	eax, DWORD PTR $T241779[esp-4]
 $LN7@calculateB:
 	mov	eax, DWORD PTR [eax]
 
@@ -32416,13 +32416,13 @@ PUBLIC	?calculateTotalBestNatureYield@CvPlot@@QBEHW4TeamTypes@@@Z ; CvPlot::calc
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?calculateTotalBestNatureYield@CvPlot@@QBEHW4TeamTypes@@@Z
 _TEXT	SEGMENT
-$T241852 = -8						; size = 4
-$T241830 = -8						; size = 4
-$T241808 = -8						; size = 4
-$T241815 = -4						; size = 4
-$T241851 = 8						; size = 4
-$T241829 = 8						; size = 4
-$T241807 = 8						; size = 4
+$T241851 = -8						; size = 4
+$T241829 = -8						; size = 4
+$T241807 = -8						; size = 4
+$T241814 = -4						; size = 4
+$T241850 = 8						; size = 4
+$T241828 = 8						; size = 4
+$T241806 = 8						; size = 4
 _eTeam$ = 8						; size = 4
 ?calculateTotalBestNatureYield@CvPlot@@QBEHW4TeamTypes@@@Z PROC ; CvPlot::calculateTotalBestNatureYield, COMDAT
 ; _this$ = ecx
@@ -32448,33 +32448,33 @@ _eTeam$ = 8						; size = 4
 	mov	ebx, eax
 	push	0
 	mov	ecx, esi
-	mov	DWORD PTR $T241807[esp+32], ebx
+	mov	DWORD PTR $T241806[esp+32], ebx
 	call	?calculateNatureYield@CvPlot@@QBEHW4YieldTypes@@W4TeamTypes@@_N@Z ; CvPlot::calculateNatureYield
-	mov	DWORD PTR $T241808[esp+24], eax
+	mov	DWORD PTR $T241807[esp+24], eax
 	cmp	eax, ebx
-	lea	eax, DWORD PTR $T241807[esp+20]
+	lea	eax, DWORD PTR $T241806[esp+20]
 	jl	SHORT $LN8@calculateT
-	lea	eax, DWORD PTR $T241808[esp+24]
+	lea	eax, DWORD PTR $T241807[esp+24]
 $LN8@calculateT:
 	mov	eax, DWORD PTR [eax]
 	push	1
 	push	edi
 	push	1
 	mov	ecx, esi
-	mov	DWORD PTR $T241815[esp+36], eax
+	mov	DWORD PTR $T241814[esp+36], eax
 	call	?calculateNatureYield@CvPlot@@QBEHW4YieldTypes@@W4TeamTypes@@_N@Z ; CvPlot::calculateNatureYield
 	push	0
 	push	edi
 	mov	ebx, eax
 	push	1
 	mov	ecx, esi
-	mov	DWORD PTR $T241829[esp+32], ebx
+	mov	DWORD PTR $T241828[esp+32], ebx
 	call	?calculateNatureYield@CvPlot@@QBEHW4YieldTypes@@W4TeamTypes@@_N@Z ; CvPlot::calculateNatureYield
-	mov	DWORD PTR $T241830[esp+24], eax
+	mov	DWORD PTR $T241829[esp+24], eax
 	cmp	eax, ebx
-	lea	eax, DWORD PTR $T241829[esp+20]
+	lea	eax, DWORD PTR $T241828[esp+20]
 	jl	SHORT $LN14@calculateT
-	lea	eax, DWORD PTR $T241830[esp+24]
+	lea	eax, DWORD PTR $T241829[esp+24]
 $LN14@calculateT:
 	mov	ebp, DWORD PTR [eax]
 	push	1
@@ -32487,16 +32487,16 @@ $LN14@calculateT:
 	mov	ebx, eax
 	push	2
 	mov	ecx, esi
-	mov	DWORD PTR $T241851[esp+32], ebx
+	mov	DWORD PTR $T241850[esp+32], ebx
 	call	?calculateNatureYield@CvPlot@@QBEHW4YieldTypes@@W4TeamTypes@@_N@Z ; CvPlot::calculateNatureYield
-	mov	DWORD PTR $T241852[esp+24], eax
+	mov	DWORD PTR $T241851[esp+24], eax
 	cmp	eax, ebx
-	lea	eax, DWORD PTR $T241851[esp+20]
+	lea	eax, DWORD PTR $T241850[esp+20]
 	jl	SHORT $LN20@calculateT
-	lea	eax, DWORD PTR $T241852[esp+24]
+	lea	eax, DWORD PTR $T241851[esp+24]
 $LN20@calculateT:
 	mov	eax, DWORD PTR [eax]
-	add	eax, DWORD PTR $T241815[esp+24]
+	add	eax, DWORD PTR $T241814[esp+24]
 	pop	edi
 	pop	esi
 	add	eax, ebp
@@ -32540,7 +32540,7 @@ EXTRN	?GetYieldChange@CvImprovementEntry@@QBEHH@Z:PROC ; CvImprovementEntry::Get
 _TEXT	SEGMENT
 _this$ = -28						; size = 4
 _pImprovement$ = -24					; size = 4
-$T241863 = -20						; size = 20
+$T241862 = -20						; size = 20
 _eImprovement$ = 8					; size = 4
 _bIsFreshWater$ = 12					; size = 1
 _iBestYield$ = 12					; size = 4
@@ -32549,7 +32549,7 @@ _iYieldChangePerEra$ = 12				; size = 4
 _eYield$ = 12						; size = 4
 _ePlayer$ = 16						; size = 4
 _bOptimal$ = 20						; size = 1
-$T241864 = 24						; size = 4
+$T241863 = 24						; size = 4
 _eAssumeThisRoute$ = 24					; size = 4
 ?calculateImprovementYieldChange@CvPlot@@QBEHW4ImprovementTypes@@W4YieldTypes@@W4PlayerTypes@@_NW4RouteTypes@@@Z PROC ; CvPlot::calculateImprovementYieldChange, COMDAT
 ; _this$ = ecx
@@ -32630,19 +32630,19 @@ $LN45@calculateI:
 	imul	ecx, 63236				; 0000f704H
 	mov	eax, DWORD PTR [edi+468]
 	add	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
-	mov	DWORD PTR $T241863[esp+44], edx
+	mov	DWORD PTR $T241862[esp+44], edx
 	mov	edx, DWORD PTR [edi+472]
-	mov	DWORD PTR $T241863[esp+48], eax
+	mov	DWORD PTR $T241862[esp+48], eax
 	mov	eax, DWORD PTR [edi+476]
-	mov	DWORD PTR $T241863[esp+52], edx
+	mov	DWORD PTR $T241862[esp+52], edx
 	mov	edx, DWORD PTR [edi+480]
-	mov	DWORD PTR $T241863[esp+56], eax
-	mov	DWORD PTR $T241863[esp+60], edx
+	mov	DWORD PTR $T241862[esp+56], eax
+	mov	DWORD PTR $T241862[esp+60], edx
 
 ; 7668 : 		int iNumEras = kPlayer.GetCurrentEra() - iPlotEra;
 
 	call	?GetCurrentEra@CvPlayer@@QBE?AW4EraTypes@@XZ ; CvPlayer::GetCurrentEra
-	mov	ecx, DWORD PTR $T241863[esp+48]
+	mov	ecx, DWORD PTR $T241862[esp+48]
 	sub	eax, ecx
 
 ; 7669 : 
@@ -32884,9 +32884,9 @@ $LL27@calculateI:
 	push	esi
 	push	edi
 	call	?GetRouteYieldChanges@CvImprovementEntry@@QBEHHH@Z ; CvImprovementEntry::GetRouteYieldChanges
-	mov	DWORD PTR $T241864[esp+40], eax
+	mov	DWORD PTR $T241863[esp+40], eax
 	cmp	ebp, eax
-	lea	eax, DWORD PTR $T241864[esp+40]
+	lea	eax, DWORD PTR $T241863[esp+40]
 	jl	SHORT $LN79@calculateI
 	lea	eax, DWORD PTR _iBestYield$[esp+40]
 $LN79@calculateI:
@@ -33362,24 +33362,24 @@ _iYield$ = -32						; size = 4
 _ePlayer$ = -28						; size = 4
 _kYield$ = -24						; size = 4
 tv1016 = -20						; size = 4
-_pImprovement$226335 = -20				; size = 4
-_pkResourceInfo$226381 = -16				; size = 4
+_pImprovement$226334 = -20				; size = 4
+_pkResourceInfo$226380 = -16				; size = 4
 _eImprovement$ = -16					; size = 4
-_eResource$226378 = -12					; size = 4
-_iCityYield$226353 = -12				; size = 4
+_eResource$226377 = -12					; size = 4
+_iCityYield$226352 = -12				; size = 4
 _eRoute$ = -12						; size = 4
 _pWorkingCity$ = -12					; size = 4
-$T242249 = -8						; size = 4
-$T242245 = -8						; size = 4
-_eTeam$226380 = -8					; size = 4
+$T242248 = -8						; size = 4
+$T242244 = -8						; size = 4
+_eTeam$226379 = -8					; size = 4
 _pCity$ = -4						; size = 4
 tv1115 = 8						; size = 4
-_iTemp$226395 = 8					; size = 4
-_iMinCityYield$226393 = 8				; size = 4
+_iTemp$226394 = 8					; size = 4
+_iMinCityYield$226392 = 8				; size = 4
 _bCity$ = 8						; size = 1
 _eYield$ = 8						; size = 4
 _bDisplay$ = 12						; size = 1
-$T242020 = 12						; size = 4
+$T242019 = 12						; size = 4
 ?calculateYield@CvPlot@@QAEHW4YieldTypes@@_N@Z PROC	; CvPlot::calculateYield, COMDAT
 ; _this$ = ecx
 
@@ -33602,7 +33602,7 @@ $LN68@calculateY:
 	push	ebx
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getImprovementInfo@CvGlobals@@QAEPAVCvImprovementEntry@@W4ImprovementTypes@@@Z ; CvGlobals::getImprovementInfo
-	mov	DWORD PTR _pImprovement$226335[esp+48], eax
+	mov	DWORD PTR _pImprovement$226334[esp+48], eax
 
 ; 7894 : 			if(pImprovement && pImprovement->GetYieldChange(YIELD_CULTURE) > 0)
 
@@ -33617,7 +33617,7 @@ $LN68@calculateY:
 ; 7895 : 			{
 ; 7896 : 				int iAdjacentCulture = pImprovement->GetCultureAdjacentSameType();
 
-	mov	ecx, DWORD PTR _pImprovement$226335[esp+48]
+	mov	ecx, DWORD PTR _pImprovement$226334[esp+48]
 	call	?GetCultureAdjacentSameType@CvImprovementEntry@@QBEHXZ ; CvImprovementEntry::GetCultureAdjacentSameType
 
 ; 7897 : 				if(iAdjacentCulture > 0)
@@ -33628,7 +33628,7 @@ $LN68@calculateY:
 ; 7898 : 				{
 ; 7899 : 					iYield += ComputeCultureFromAdjacentImprovement(*pImprovement, eImprovement);
 
-	mov	eax, DWORD PTR _pImprovement$226335[esp+48]
+	mov	eax, DWORD PTR _pImprovement$226334[esp+48]
 	push	ebx
 	push	eax
 	mov	ecx, edi
@@ -33849,7 +33849,7 @@ $LN42@calculateY:
 ; 7952 : 						if (isLake())
 
 	mov	ecx, edi
-	mov	DWORD PTR _iCityYield$226353[esp+48], 0
+	mov	DWORD PTR _iCityYield$226352[esp+48], 0
 	call	?isLake@CvPlot@@QBE_NXZ			; CvPlot::isLake
 
 ; 7953 : 						{
@@ -33882,13 +33882,13 @@ $LN41@calculateY:
 
 	call	?getSeaPlotYield@CvCity@@QBEHW4YieldTypes@@@Z ; CvCity::getSeaPlotYield
 $LN245@calculateY:
-	mov	DWORD PTR _iCityYield$226353[esp+48], eax
+	mov	DWORD PTR _iCityYield$226352[esp+48], eax
 $LN39@calculateY:
 
 ; 7962 : 						}
 ; 7963 : 						iYield += iCityYield;
 
-	add	esi, DWORD PTR _iCityYield$226353[esp+48]
+	add	esi, DWORD PTR _iCityYield$226352[esp+48]
 	mov	DWORD PTR _iYield$[esp+48], esi
 $LN43@calculateY:
 
@@ -34189,7 +34189,7 @@ $LN179@calculateY:
 	push	eax
 	mov	ecx, edi
 	call	?getResourceType@CvPlot@@QBE?AW4ResourceTypes@@W4TeamTypes@@@Z ; CvPlot::getResourceType
-	mov	DWORD PTR _eResource$226378[esp+48], eax
+	mov	DWORD PTR _eResource$226377[esp+48], eax
 
 ; 8051 : 		if(eResource != NO_RESOURCE)
 
@@ -34206,26 +34206,26 @@ $LN179@calculateY:
 
 ; 8054 : 			const CvResourceInfo* pkResourceInfo = GC.getResourceInfo(eResource);
 
-	mov	ecx, DWORD PTR _eResource$226378[esp+48]
+	mov	ecx, DWORD PTR _eResource$226377[esp+48]
 	push	ecx
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	mov	DWORD PTR _eTeam$226380[esp+52], eax
+	mov	DWORD PTR _eTeam$226379[esp+52], eax
 	call	?getResourceInfo@CvGlobals@@QAEPAVCvResourceInfo@@W4ResourceTypes@@@Z ; CvGlobals::getResourceInfo
-	mov	DWORD PTR _pkResourceInfo$226381[esp+48], eax
+	mov	DWORD PTR _pkResourceInfo$226380[esp+48], eax
 
 ; 8055 : 			if(pkResourceInfo != NULL && eTeam != NO_TEAM && GET_TEAM(eTeam).GetTeamTechs()->HasTech((TechTypes) pkResourceInfo->getTechReveal()))
 
 	test	eax, eax
 	je	$LN17@calculateY
-	cmp	DWORD PTR _eTeam$226380[esp+48], -1
+	cmp	DWORD PTR _eTeam$226379[esp+48], -1
 	je	$LN17@calculateY
-	mov	eax, DWORD PTR _eTeam$226380[esp+48]
-	mov	ecx, DWORD PTR _pkResourceInfo$226381[esp+48]
+	mov	eax, DWORD PTR _eTeam$226379[esp+48]
+	mov	ecx, DWORD PTR _pkResourceInfo$226380[esp+48]
 	imul	eax, 2984				; 00000ba8H
 	add	eax, DWORD PTR ?m_aTeams@CvTeam@@1PAV1@A ; CvTeam::m_aTeams
-	mov	DWORD PTR $T242245[esp+48], eax
+	mov	DWORD PTR $T242244[esp+48], eax
 	call	?getTechReveal@CvResourceInfo@@QBEHXZ	; CvResourceInfo::getTechReveal
-	mov	ecx, DWORD PTR $T242245[esp+48]
+	mov	ecx, DWORD PTR $T242244[esp+48]
 	push	eax
 	call	?GetTeamTechs@CvTeam@@QBEPAVCvTeamTechs@@XZ ; CvTeam::GetTeamTechs
 	mov	ecx, eax
@@ -34236,17 +34236,17 @@ $LN179@calculateY:
 ; 8056 : 			{
 ; 8057 : 				if (pkResourceInfo->getPolicyReveal() == NO_POLICY || GET_PLAYER(ePlayer).GetPlayerPolicies()->HasPolicy((PolicyTypes)pkResourceInfo->getPolicyReveal()))
 
-	mov	ecx, DWORD PTR _pkResourceInfo$226381[esp+48]
+	mov	ecx, DWORD PTR _pkResourceInfo$226380[esp+48]
 	call	?getPolicyReveal@CvResourceInfo@@QBEHXZ	; CvResourceInfo::getPolicyReveal
 	cmp	eax, -1
 	je	SHORT $LN15@calculateY
 	mov	edx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	mov	eax, DWORD PTR tv1016[esp+48]
-	mov	ecx, DWORD PTR _pkResourceInfo$226381[esp+48]
+	mov	ecx, DWORD PTR _pkResourceInfo$226380[esp+48]
 	add	eax, edx
-	mov	DWORD PTR $T242249[esp+48], eax
+	mov	DWORD PTR $T242248[esp+48], eax
 	call	?getPolicyReveal@CvResourceInfo@@QBEHXZ	; CvResourceInfo::getPolicyReveal
-	mov	ecx, DWORD PTR $T242249[esp+48]
+	mov	ecx, DWORD PTR $T242248[esp+48]
 	push	eax
 	call	?GetPlayerPolicies@CvPlayer@@QBEPAVCvPlayerPolicies@@XZ ; CvPlayer::GetPlayerPolicies
 	mov	ecx, eax
@@ -34264,7 +34264,7 @@ $LN15@calculateY:
 
 ; 8061 : 						iYield += pWorkingCity->GetResourceExtraYield(eResource, eYield);
 
-	mov	ecx, DWORD PTR _eResource$226378[esp+48]
+	mov	ecx, DWORD PTR _eResource$226377[esp+48]
 	push	ebp
 	push	ecx
 	mov	ecx, ebx
@@ -34276,7 +34276,7 @@ $LN14@calculateY:
 ; 8063 : 					// Extra yield from Trait
 ; 8064 : 					if(pkResourceInfo->getResourceUsage() == RESOURCEUSAGE_STRATEGIC)
 
-	mov	ebx, DWORD PTR _pkResourceInfo$226381[esp+48]
+	mov	ebx, DWORD PTR _pkResourceInfo$226380[esp+48]
 	mov	ecx, ebx
 	call	?getResourceUsage@CvResourceInfo@@QBE?AW4ResourceUsageTypes@@XZ ; CvResourceInfo::getResourceUsage
 	cmp	eax, 1
@@ -34321,7 +34321,7 @@ $LN242@calculateY:
 
 ; 8076 : 				iYield += kPlayer.getResourceYieldChange(eResource, eYield);
 
-	mov	edx, DWORD PTR _eResource$226378[esp+48]
+	mov	edx, DWORD PTR _eResource$226377[esp+48]
 	mov	ecx, DWORD PTR tv1016[esp+48]
 	push	ebp
 	add	ecx, eax
@@ -34351,7 +34351,7 @@ $LN17@calculateY:
 
 	cmp	BYTE PTR [edi+5], 1
 	mov	ebx, eax
-	mov	DWORD PTR _iMinCityYield$226393[esp+44], ebx
+	mov	DWORD PTR _iMinCityYield$226392[esp+44], ebx
 	jne	SHORT $LN9@calculateY
 
 ; 8086 : 		{
@@ -34360,14 +34360,14 @@ $LN17@calculateY:
 	mov	ecx, DWORD PTR _kYield$[esp+48]
 	call	?getMinCityOnHillsAdjust@CvYieldInfo@@QBEHXZ ; CvYieldInfo::getMinCityOnHillsAdjust
 	add	ebx, eax
-	mov	DWORD PTR _iMinCityYield$226393[esp+44], ebx
+	mov	DWORD PTR _iMinCityYield$226392[esp+44], ebx
 $LN9@calculateY:
 
 ; 8088 : 		}
 ; 8089 : 		iYield = MAX(iYield, iMinCityYield);
 
 	cmp	esi, ebx
-	lea	eax, DWORD PTR _iMinCityYield$226393[esp+44]
+	lea	eax, DWORD PTR _iMinCityYield$226392[esp+44]
 	jl	SHORT $LN204@calculateY
 	lea	eax, DWORD PTR _iYield$[esp+48]
 $LN204@calculateY:
@@ -34393,7 +34393,7 @@ $LN204@calculateY:
 	mov	ebx, DWORD PTR _pCity$[esp+48]
 	push	-1
 	mov	ecx, ebx
-	mov	DWORD PTR _iTemp$226395[esp+48], eax
+	mov	DWORD PTR _iTemp$226394[esp+48], eax
 	call	?isCoastal@CvCity@@QBE_NH@Z		; CvCity::isCoastal
 	test	al, al
 	je	SHORT $LN8@calculateY
@@ -34432,7 +34432,7 @@ $LN8@calculateY:
 ; 8108 : 			int iPerPopYield = pCity->getPopulation() * GET_PLAYER(getOwner()).GetCapitalYieldPerPopChange(eYield);
 
 	movsx	ecx, BYTE PTR [edi+4]
-	add	DWORD PTR _iTemp$226395[esp+44], eax
+	add	DWORD PTR _iTemp$226394[esp+44], eax
 	imul	ecx, 63236				; 0000f704H
 	add	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	push	ebp
@@ -34461,7 +34461,7 @@ $LN7@calculateY:
 ; 8113 : 		iYield += (iTemp / 100);
 
 	mov	eax, 1374389535				; 51eb851fH
-	imul	DWORD PTR _iTemp$226395[esp+44]
+	imul	DWORD PTR _iTemp$226394[esp+44]
 	sar	edx, 5
 	mov	ecx, edx
 	shr	ecx, 31					; 0000001fH
@@ -34581,11 +34581,11 @@ $LN1@calculateY:
 ; 8146 : 	return std::max(0, iYield);
 
 	test	esi, esi
-	mov	DWORD PTR $T242020[esp+44], 0
+	mov	DWORD PTR $T242019[esp+44], 0
 	pop	esi
 	lea	eax, DWORD PTR _iYield$[esp+44]
 	jg	SHORT $LN238@calculateY
-	lea	eax, DWORD PTR $T242020[esp+40]
+	lea	eax, DWORD PTR $T242019[esp+40]
 $LN238@calculateY:
 	mov	eax, DWORD PTR [eax]
 	pop	edi
@@ -35813,8 +35813,8 @@ __ehfuncinfo$?setRevealedImprovementType@CvPlot@@QAE_NW4TeamTypes@@W4Improvement
 xdata$x	ENDS
 ;	COMDAT ?setRevealedImprovementType@CvPlot@@QAE_NW4TeamTypes@@W4ImprovementTypes@@@Z
 _TEXT	SEGMENT
-_strSummary$226895 = -68				; size = 28
-_strBuffer$226892 = -40					; size = 28
+_strSummary$226894 = -68				; size = 28
+_strBuffer$226891 = -40					; size = 28
 __$EHRec$ = -12						; size = 12
 _eTeam$ = 8						; size = 4
 _eNewValue$ = 12					; size = 4
@@ -35891,15 +35891,15 @@ $LN13@setReveale@2:
 ; 9276 : 		{
 ; 9277 : 			CvString strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_FOUND_BARB_CAMP");
 
-	lea	ecx, DWORD PTR _strBuffer$226892[esp+84]
-	push	OFFSET $SG226894
+	lea	ecx, DWORD PTR _strBuffer$226891[esp+84]
+	push	OFFSET $SG226893
 	push	ecx
 	call	?GetLocalizedText@@YA?AVCvString@@PBD@Z	; GetLocalizedText
 
 ; 9278 : 			CvString strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_FOUND_BARB_CAMP");
 
-	lea	edx, DWORD PTR _strSummary$226895[esp+92]
-	push	OFFSET $SG226897
+	lea	edx, DWORD PTR _strSummary$226894[esp+92]
+	push	OFFSET $SG226896
 	push	edx
 	mov	DWORD PTR __$EHRec$[esp+108], 0
 	call	?GetLocalizedText@@YA?AVCvString@@PBD@Z	; GetLocalizedText
@@ -35909,10 +35909,10 @@ $LN13@setReveale@2:
 
 	movsx	edi, WORD PTR [esi+2]
 	movsx	esi, WORD PTR [esi]
-	lea	ecx, DWORD PTR _strSummary$226895[esp+84]
+	lea	ecx, DWORD PTR _strSummary$226894[esp+84]
 	mov	BYTE PTR __$EHRec$[esp+92], 1
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
-	lea	ecx, DWORD PTR _strBuffer$226892[esp+84]
+	lea	ecx, DWORD PTR _strBuffer$226891[esp+84]
 	mov	ebp, eax
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	-1
@@ -35929,10 +35929,10 @@ $LN13@setReveale@2:
 
 ; 9280 : 		}
 
-	lea	ecx, DWORD PTR _strSummary$226895[esp+84]
+	lea	ecx, DWORD PTR _strSummary$226894[esp+84]
 	mov	BYTE PTR __$EHRec$[esp+92], 0
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR _strBuffer$226892[esp+84]
+	lea	ecx, DWORD PTR _strBuffer$226891[esp+84]
 	mov	DWORD PTR __$EHRec$[esp+92], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 	pop	ebp
@@ -35967,10 +35967,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?setRevealedImprovementType@CvPlot@@QAE_NW4TeamTypes@@W4ImprovementTypes@@@Z$0:
-	lea	ecx, DWORD PTR _strBuffer$226892[ebp]
+	lea	ecx, DWORD PTR _strBuffer$226891[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?setRevealedImprovementType@CvPlot@@QAE_NW4TeamTypes@@W4ImprovementTypes@@@Z$1:
-	lea	ecx, DWORD PTR _strSummary$226895[ebp]
+	lea	ecx, DWORD PTR _strSummary$226894[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?setRevealedImprovementType@CvPlot@@QAE_NW4TeamTypes@@W4ImprovementTypes@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?setRevealedImprovementType@CvPlot@@QAE_NW4TeamTypes@@W4ImprovementTypes@@@Z
@@ -36062,7 +36062,7 @@ PUBLIC	?getCenterUnit@CvPlot@@QAE?AV?$FObjectHandle@VCvUnit@@@@XZ ; CvPlot::getC
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?getCenterUnit@CvPlot@@QAE?AV?$FObjectHandle@VCvUnit@@@@XZ
 _TEXT	SEGMENT
-$T242827 = -4						; size = 4
+$T242826 = -4						; size = 4
 ___$ReturnUdt$ = 8					; size = 4
 ?getCenterUnit@CvPlot@@QAE?AV?$FObjectHandle@VCvUnit@@@@XZ PROC ; CvPlot::getCenterUnit, COMDAT
 ; _this$ = ecx
@@ -36077,7 +36077,7 @@ ___$ReturnUdt$ = 8					; size = 4
 	mov	cl, BYTE PTR [ecx+192]
 	push	esi
 	mov	esi, DWORD PTR ___$ReturnUdt$[esp+4]
-	mov	DWORD PTR $T242827[esp+8], 0
+	mov	DWORD PTR $T242826[esp+8], 0
 	mov	DWORD PTR [esi], eax
 	mov	BYTE PTR [esi+4], cl
 	test	eax, eax
@@ -36098,7 +36098,7 @@ PUBLIC	?getCenterUnit@CvPlot@@QBE?BV?$FObjectHandle@VCvUnit@@@@XZ ; CvPlot::getC
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?getCenterUnit@CvPlot@@QBE?BV?$FObjectHandle@VCvUnit@@@@XZ
 _TEXT	SEGMENT
-$T242844 = -4						; size = 4
+$T242843 = -4						; size = 4
 ___$ReturnUdt$ = 8					; size = 4
 ?getCenterUnit@CvPlot@@QBE?BV?$FObjectHandle@VCvUnit@@@@XZ PROC ; CvPlot::getCenterUnit, COMDAT
 ; _this$ = ecx
@@ -36113,7 +36113,7 @@ ___$ReturnUdt$ = 8					; size = 4
 	mov	cl, BYTE PTR [ecx+192]
 	push	esi
 	mov	esi, DWORD PTR ___$ReturnUdt$[esp+4]
-	mov	DWORD PTR $T242844[esp+8], 0
+	mov	DWORD PTR $T242843[esp+8], 0
 	mov	DWORD PTR [esi], eax
 	mov	BYTE PTR [esi+4], cl
 	test	eax, eax
@@ -36134,7 +36134,7 @@ PUBLIC	?getDebugCenterUnit@CvPlot@@QBEPBVCvUnit@@XZ	; CvPlot::getDebugCenterUnit
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?getDebugCenterUnit@CvPlot@@QBEPBVCvUnit@@XZ
 _TEXT	SEGMENT
-$T242860 = -8						; size = 8
+$T242859 = -8						; size = 8
 ?getDebugCenterUnit@CvPlot@@QBEPBVCvUnit@@XZ PROC	; CvPlot::getDebugCenterUnit, COMDAT
 ; _this$ = ecx
 
@@ -36148,11 +36148,11 @@ $T242860 = -8						; size = 8
 ; 9625 : 
 ; 9626 : 	pCenterUnit = getCenterUnit().pointer();
 
-	lea	eax, DWORD PTR $T242860[esp+16]
+	lea	eax, DWORD PTR $T242859[esp+16]
 	push	eax
 	mov	esi, ecx
 	call	?getCenterUnit@CvPlot@@QBE?BV?$FObjectHandle@VCvUnit@@@@XZ ; CvPlot::getCenterUnit
-	mov	ecx, DWORD PTR $T242860[esp+16]
+	mov	ecx, DWORD PTR $T242859[esp+16]
 	mov	edi, DWORD PTR [eax]
 	test	ecx, ecx
 	je	SHORT $LN13@getDebugCe
@@ -36254,8 +36254,8 @@ xdata$x	ENDS
 ;	COMDAT ?setCenterUnit@CvPlot@@QAEXV?$FObjectHandle@VCvUnit@@@@@Z
 _TEXT	SEGMENT
 _pOldValue$ = -28					; size = 8
-_newCenterUnit$227077 = -20				; size = 8
-$T242915 = -20						; size = 8
+_newCenterUnit$227076 = -20				; size = 8
+$T242914 = -20						; size = 8
 __$EHRec$ = -12						; size = 12
 _pNewValue$ = 8						; size = 8
 ?setCenterUnit@CvPlot@@QAEXV?$FObjectHandle@VCvUnit@@@@@Z PROC ; CvPlot::setCenterUnit, COMDAT
@@ -36283,7 +36283,7 @@ _pNewValue$ = 8						; size = 8
 ; 9648 : 
 ; 9649 : 	pOldValue = getCenterUnit();
 
-	lea	eax, DWORD PTR $T242915[esp+36]
+	lea	eax, DWORD PTR $T242914[esp+36]
 	push	eax
 	mov	BYTE PTR __$EHRec$[esp+48], 1
 	call	?getCenterUnit@CvPlot@@QAE?AV?$FObjectHandle@VCvUnit@@@@XZ ; CvPlot::getCenterUnit
@@ -36298,7 +36298,7 @@ _pNewValue$ = 8						; size = 8
 	mov	ecx, ebp
 	call	?getDestructionNotification@CvUnit@@QAEAAU?$DestructionNotification@V?$FObjectHandle@VCvUnit@@@@@@XZ ; CvUnit::getDestructionNotification
 $LN18@setCenterU:
-	mov	ecx, DWORD PTR $T242915[esp+36]
+	mov	ecx, DWORD PTR $T242914[esp+36]
 	mov	BYTE PTR __$EHRec$[esp+44], 1
 	test	ecx, ecx
 	je	SHORT $LN23@setCenterU
@@ -36341,14 +36341,14 @@ $LN59@setCenterU:
 ; 9655 : 	{
 ; 9656 : 		UnitHandle newCenterUnit = getCenterUnit();
 
-	lea	edx, DWORD PTR _newCenterUnit$227077[esp+36]
+	lea	edx, DWORD PTR _newCenterUnit$227076[esp+36]
 	push	edx
 	mov	ecx, esi
 	call	?getCenterUnit@CvPlot@@QAE?AV?$FObjectHandle@VCvUnit@@@@XZ ; CvPlot::getCenterUnit
 
 ; 9657 : 		if(newCenterUnit)
 
-	mov	esi, DWORD PTR _newCenterUnit$227077[esp+36]
+	mov	esi, DWORD PTR _newCenterUnit$227076[esp+36]
 	mov	BYTE PTR __$EHRec$[esp+44], 3
 	test	esi, esi
 	je	SHORT $LN1@setCenterU
@@ -36401,10 +36401,10 @@ __unwindfunclet$?setCenterUnit@CvPlot@@QAEXV?$FObjectHandle@VCvUnit@@@@@Z$1:
 	lea	ecx, DWORD PTR _pOldValue$[ebp]
 	jmp	??1?$FObjectHandle@VCvUnit@@@@QAE@XZ	; FObjectHandle<CvUnit>::~FObjectHandle<CvUnit>
 __unwindfunclet$?setCenterUnit@CvPlot@@QAEXV?$FObjectHandle@VCvUnit@@@@@Z$2:
-	lea	ecx, DWORD PTR $T242915[ebp]
+	lea	ecx, DWORD PTR $T242914[ebp]
 	jmp	??1?$FObjectHandle@VCvUnit@@@@QAE@XZ	; FObjectHandle<CvUnit>::~FObjectHandle<CvUnit>
 __unwindfunclet$?setCenterUnit@CvPlot@@QAEXV?$FObjectHandle@VCvUnit@@@@@Z$3:
-	lea	ecx, DWORD PTR _newCenterUnit$227077[ebp]
+	lea	ecx, DWORD PTR _newCenterUnit$227076[ebp]
 	jmp	??1?$FObjectHandle@VCvUnit@@@@QAE@XZ	; FObjectHandle<CvUnit>::~FObjectHandle<CvUnit>
 __ehhandler$?setCenterUnit@CvPlot@@QAEXV?$FObjectHandle@VCvUnit@@@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?setCenterUnit@CvPlot@@QAEXV?$FObjectHandle@VCvUnit@@@@@Z
@@ -36471,7 +36471,7 @@ EXTRN	?GetIDInfo@CvUnit@@QBE?AUIDInfo@@XZ:PROC	; CvUnit::GetIDInfo
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?getUnitIndex@CvPlot@@QBEHPAVCvUnit@@@Z
 _TEXT	SEGMENT
-_kUnitInfo$227192 = -8					; size = 8
+_kUnitInfo$227191 = -8					; size = 8
 _pUnit$ = 8						; size = 4
 ?getUnitIndex@CvPlot@@QBEHPAVCvUnit@@@Z PROC		; CvPlot::getUnitIndex, COMDAT
 ; _this$ = ecx
@@ -36495,7 +36495,7 @@ _pUnit$ = 8						; size = 4
 ; 9877 : 	{
 ; 9878 : 		IDInfo kUnitInfo = pUnit->GetIDInfo();
 
-	lea	eax, DWORD PTR _kUnitInfo$227192[esp+20]
+	lea	eax, DWORD PTR _kUnitInfo$227191[esp+20]
 	push	eax
 	call	?GetIDInfo@CvUnit@@QBE?AUIDInfo@@XZ	; CvUnit::GetIDInfo
 
@@ -36515,8 +36515,8 @@ $LN9@getUnitInd:
 
 	test	eax, eax
 	je	SHORT $LN2@getUnitInd
-	mov	edx, DWORD PTR _kUnitInfo$227192[esp+24]
-	mov	ebx, DWORD PTR _kUnitInfo$227192[esp+20]
+	mov	edx, DWORD PTR _kUnitInfo$227191[esp+24]
+	mov	ebx, DWORD PTR _kUnitInfo$227191[esp+20]
 $LL3@getUnitInd:
 
 ; 9883 : 		{
@@ -36671,7 +36671,7 @@ EXTRN	?changeNumTiles@CvArea@@QAEXH@Z:PROC		; CvArea::changeNumTiles
 ;	COMDAT ?processArea@CvPlot@@IAEXPAVCvArea@@H@Z
 _TEXT	SEGMENT
 _iI$ = -8						; size = 4
-_pkBuildingInfo$227377 = -4				; size = 4
+_pkBuildingInfo$227376 = -4				; size = 4
 _pArea$ = 8						; size = 4
 _iChange$ = 12						; size = 4
 ?processArea@CvPlot@@IAEXPAVCvArea@@H@Z PROC		; CvPlot::processArea, COMDAT
@@ -36946,7 +36946,7 @@ $LL12@processAre:
 	push	ebp
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getBuildingInfo@CvGlobals@@QAEPAVCvBuildingEntry@@W4BuildingTypes@@@Z ; CvGlobals::getBuildingInfo
-	mov	DWORD PTR _pkBuildingInfo$227377[esp+24], eax
+	mov	DWORD PTR _pkBuildingInfo$227376[esp+24], eax
 
 ; 10130: 			if(pkBuildingInfo)
 
@@ -36979,7 +36979,7 @@ $LL111@processAre:
 	call	?GetCityBuildings@CvCity@@QBEPAVCvCityBuildings@@XZ ; CvCity::GetCityBuildings
 	mov	ecx, eax
 	call	?GetNumActiveBuilding@CvCityBuildings@@QBEHW4BuildingTypes@@@Z ; CvCityBuildings::GetNumActiveBuilding
-	mov	ecx, DWORD PTR _pkBuildingInfo$227377[esp+24]
+	mov	ecx, DWORD PTR _pkBuildingInfo$227376[esp+24]
 	push	esi
 	mov	ebp, eax
 	call	?GetAreaYieldModifier@CvBuildingEntry@@QBEHH@Z ; CvBuildingEntry::GetAreaYieldModifier
@@ -37078,7 +37078,6 @@ __ehfuncinfo$?write@CvPlot@@QBEXAAVFDataStream@@@Z DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?write@CvPlot@@QBEXAAVFDataStream@@@Z
 _TEXT	SEGMENT
-$T243416 = -61						; size = 1
 $T243415 = -61						; size = 1
 $T243414 = -61						; size = 1
 $T243413 = -61						; size = 1
@@ -37090,14 +37089,15 @@ $T243408 = -61						; size = 1
 $T243407 = -61						; size = 1
 $T243406 = -61						; size = 1
 $T243405 = -61						; size = 1
+$T243404 = -61						; size = 1
 _uLength$ = -60						; size = 4
 _uiVersion$ = -56					; size = 4
-$T243700 = -52						; size = 4
-$T243418 = -52						; size = 4
+$T243699 = -52						; size = 4
 $T243417 = -52						; size = 4
-_uiVersion$243694 = -48					; size = 4
-$T243703 = -44						; size = 4
-_scriptData$227605 = -40				; size = 28
+$T243416 = -52						; size = 4
+_uiVersion$243693 = -48					; size = 4
+$T243702 = -44						; size = 4
+_scriptData$227604 = -40				; size = 28
 __$EHRec$ = -12						; size = 12
 _hasScriptData$ = 8					; size = 1
 _kStream$ = 8						; size = 4
@@ -37269,8 +37269,8 @@ _kStream$ = 8						; size = 4
 	movzx	ecx, BYTE PTR [edi+461]
 	shr	cl, 2
 	and	cl, 1
-	lea	edx, DWORD PTR $T243405[esp+80]
-	mov	BYTE PTR $T243405[esp+80], cl
+	lea	edx, DWORD PTR $T243404[esp+80]
+	mov	BYTE PTR $T243404[esp+80], cl
 	push	edx
 	mov	ecx, esi
 	call	?Write@FDataStream@@IAEXAB_N@Z		; FDataStream::Write
@@ -37279,22 +37279,22 @@ _kStream$ = 8						; size = 4
 
 	movzx	eax, BYTE PTR [edi+461]
 	shr	al, 3
-	lea	ecx, DWORD PTR $T243406[esp+80]
+	lea	ecx, DWORD PTR $T243405[esp+80]
 	and	al, 1
 	push	ecx
 	mov	ecx, esi
-	mov	BYTE PTR $T243406[esp+84], al
+	mov	BYTE PTR $T243405[esp+84], al
 	call	?Write@FDataStream@@IAEXAB_N@Z		; FDataStream::Write
 
 ; 10415: 	kStream << m_bNEOfRiver;
 
 	movzx	edx, BYTE PTR [edi+461]
 	shr	dl, 4
-	lea	eax, DWORD PTR $T243407[esp+80]
+	lea	eax, DWORD PTR $T243406[esp+80]
 	and	dl, 1
 	push	eax
 	mov	ecx, esi
-	mov	BYTE PTR $T243407[esp+84], dl
+	mov	BYTE PTR $T243406[esp+84], dl
 	call	?Write@FDataStream@@IAEXAB_N@Z		; FDataStream::Write
 
 ; 10416: 	kStream << m_bWOfRiver;
@@ -37302,8 +37302,8 @@ _kStream$ = 8						; size = 4
 	movzx	ecx, BYTE PTR [edi+461]
 	shr	cl, 5
 	and	cl, 1
-	lea	edx, DWORD PTR $T243408[esp+80]
-	mov	BYTE PTR $T243408[esp+80], cl
+	lea	edx, DWORD PTR $T243407[esp+80]
+	mov	BYTE PTR $T243407[esp+80], cl
 	push	edx
 	mov	ecx, esi
 	call	?Write@FDataStream@@IAEXAB_N@Z		; FDataStream::Write
@@ -37312,29 +37312,29 @@ _kStream$ = 8						; size = 4
 
 	movzx	eax, BYTE PTR [edi+461]
 	shr	al, 6
-	lea	ecx, DWORD PTR $T243409[esp+80]
+	lea	ecx, DWORD PTR $T243408[esp+80]
 	and	al, 1
 	push	ecx
 	mov	ecx, esi
-	mov	BYTE PTR $T243409[esp+84], al
+	mov	BYTE PTR $T243408[esp+84], al
 	call	?Write@FDataStream@@IAEXAB_N@Z		; FDataStream::Write
 
 ; 10418: 	kStream << m_bPotentialCityWork;
 
 	movzx	edx, BYTE PTR [edi+461]
-	lea	eax, DWORD PTR $T243410[esp+80]
+	lea	eax, DWORD PTR $T243409[esp+80]
 	shr	dl, 7
 	push	eax
 	mov	ecx, esi
-	mov	BYTE PTR $T243410[esp+84], dl
+	mov	BYTE PTR $T243409[esp+84], dl
 	call	?Write@FDataStream@@IAEXAB_N@Z		; FDataStream::Write
 
 ; 10419: 	kStream << m_bImprovementPillaged;
 
 	movzx	ecx, BYTE PTR [edi+461]
 	and	cl, 1
-	lea	edx, DWORD PTR $T243411[esp+80]
-	mov	BYTE PTR $T243411[esp+80], cl
+	lea	edx, DWORD PTR $T243410[esp+80]
+	mov	BYTE PTR $T243410[esp+80], cl
 	push	edx
 	mov	ecx, esi
 	call	?Write@FDataStream@@IAEXAB_N@Z		; FDataStream::Write
@@ -37343,22 +37343,22 @@ _kStream$ = 8						; size = 4
 
 	movzx	eax, BYTE PTR [edi+461]
 	shr	al, 1
-	lea	ecx, DWORD PTR $T243412[esp+80]
+	lea	ecx, DWORD PTR $T243411[esp+80]
 	and	al, 1
 	push	ecx
 	mov	ecx, esi
-	mov	BYTE PTR $T243412[esp+84], al
+	mov	BYTE PTR $T243411[esp+84], al
 	call	?Write@FDataStream@@IAEXAB_N@Z		; FDataStream::Write
 
 ; 10421: 	kStream << m_bBarbCampNotConverting;
 
 	movzx	edx, BYTE PTR [edi+462]
 	shr	dl, 2
-	lea	eax, DWORD PTR $T243413[esp+80]
+	lea	eax, DWORD PTR $T243412[esp+80]
 	and	dl, 1
 	push	eax
 	mov	ecx, esi
-	mov	BYTE PTR $T243413[esp+84], dl
+	mov	BYTE PTR $T243412[esp+84], dl
 	call	?Write@FDataStream@@IAEXAB_N@Z		; FDataStream::Write
 
 ; 10422: 	kStream << m_bRoughFeature;
@@ -37366,8 +37366,8 @@ _kStream$ = 8						; size = 4
 	movzx	ecx, BYTE PTR [edi+462]
 	shr	cl, 3
 	and	cl, 1
-	mov	BYTE PTR $T243414[esp+80], cl
-	lea	edx, DWORD PTR $T243414[esp+80]
+	mov	BYTE PTR $T243413[esp+80], cl
+	lea	edx, DWORD PTR $T243413[esp+80]
 	push	edx
 	mov	ecx, esi
 	call	?Write@FDataStream@@IAEXAB_N@Z		; FDataStream::Write
@@ -37376,22 +37376,22 @@ _kStream$ = 8						; size = 4
 
 	movzx	eax, BYTE PTR [edi+462]
 	shr	al, 4
-	lea	ecx, DWORD PTR $T243415[esp+80]
+	lea	ecx, DWORD PTR $T243414[esp+80]
 	and	al, 1
 	push	ecx
 	mov	ecx, esi
-	mov	BYTE PTR $T243415[esp+84], al
+	mov	BYTE PTR $T243414[esp+84], al
 	call	?Write@FDataStream@@IAEXAB_N@Z		; FDataStream::Write
 
 ; 10424: 	kStream << m_bImprovedByGiftFromMajor;
 
 	movzx	edx, BYTE PTR [edi+462]
 	shr	dl, 5
-	lea	eax, DWORD PTR $T243416[esp+80]
+	lea	eax, DWORD PTR $T243415[esp+80]
 	and	dl, 1
 	push	eax
 	mov	ecx, esi
-	mov	BYTE PTR $T243416[esp+84], dl
+	mov	BYTE PTR $T243415[esp+84], dl
 	call	?Write@FDataStream@@IAEXAB_N@Z		; FDataStream::Write
 
 ; 10425: 	// m_bPlotLayoutDirty not saved
@@ -37807,12 +37807,12 @@ $LL9@write:
 
 	mov	eax, DWORD PTR [edi+180]
 	push	eax
-	lea	ecx, DWORD PTR _scriptData$227605[esp+84]
+	lea	ecx, DWORD PTR _scriptData$227604[esp+84]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 
 ; 10502: 		kStream << scriptData;
 
-	lea	ecx, DWORD PTR _scriptData$227605[esp+80]
+	lea	ecx, DWORD PTR _scriptData$227604[esp+80]
 	push	ecx
 	push	esi
 	mov	DWORD PTR __$EHRec$[esp+96], ebx
@@ -37821,7 +37821,7 @@ $LL9@write:
 
 ; 10503: 	}
 
-	lea	ecx, DWORD PTR _scriptData$227605[esp+80]
+	lea	ecx, DWORD PTR _scriptData$227604[esp+80]
 	mov	DWORD PTR __$EHRec$[esp+88], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 $LN6@write:
@@ -37835,10 +37835,10 @@ $LN6@write:
 ; 10506: 	{
 ; 10507: 		kStream << (int)0;
 
-	lea	edx, DWORD PTR $T243417[esp+80]
+	lea	edx, DWORD PTR $T243416[esp+80]
 	push	edx
 	mov	ecx, esi
-	mov	DWORD PTR $T243417[esp+84], ebx
+	mov	DWORD PTR $T243416[esp+84], ebx
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
 ; 10508: 	}
@@ -37852,8 +37852,8 @@ $LN5@write:
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getNumBuildInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumBuildInfos
-	mov	DWORD PTR $T243418[esp+80], eax
-	lea	eax, DWORD PTR $T243418[esp+80]
+	mov	DWORD PTR $T243417[esp+80], eax
+	lea	eax, DWORD PTR $T243417[esp+80]
 	push	eax
 	mov	ecx, esi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
@@ -37947,14 +37947,14 @@ $LN1@write:
 
 ; 10529: 	kStream << m_kArchaeologyData;
 
-	lea	eax, DWORD PTR _uiVersion$243694[esp+80]
+	lea	eax, DWORD PTR _uiVersion$243693[esp+80]
 	push	eax
 	mov	ecx, esi
-	mov	DWORD PTR _uiVersion$243694[esp+84], 2
+	mov	DWORD PTR _uiVersion$243693[esp+84], 2
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 	mov	ecx, DWORD PTR [edi+464]
-	lea	edx, DWORD PTR $T243700[esp+80]
-	mov	DWORD PTR $T243700[esp+80], ecx
+	lea	edx, DWORD PTR $T243699[esp+80]
+	mov	DWORD PTR $T243699[esp+80], ecx
 	push	edx
 	mov	ecx, esi
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
@@ -37972,10 +37972,10 @@ $LN1@write:
 	call	??6@YAAAVFDataStream@@AAV0@ABW4PlayerTypes@@@Z ; operator<<
 	mov	eax, DWORD PTR [edi+480]
 	add	esp, 24					; 00000018H
-	lea	ecx, DWORD PTR $T243703[esp+80]
+	lea	ecx, DWORD PTR $T243702[esp+80]
 	push	ecx
 	mov	ecx, esi
-	mov	DWORD PTR $T243703[esp+84], eax
+	mov	DWORD PTR $T243702[esp+84], eax
 	call	?Write@FDataStream@@IAEXABH@Z		; FDataStream::Write
 
 ; 10530: }
@@ -37992,7 +37992,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?write@CvPlot@@QBEXAAVFDataStream@@@Z$0:
-	lea	ecx, DWORD PTR _scriptData$227605[ebp]
+	lea	ecx, DWORD PTR _scriptData$227604[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __ehhandler$?write@CvPlot@@QBEXAAVFDataStream@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?write@CvPlot@@QBEXAAVFDataStream@@@Z
@@ -38025,7 +38025,7 @@ _eThisResource$ = -24					; size = 4
 _eActiveTeam$ = -20					; size = 4
 _eFOWMode$ = -16					; size = 4
 __$EHRec$ = -12						; size = 12
-$T243744 = 8						; size = 4
+$T243743 = 8						; size = 4
 _pDllPlot$ = 8						; size = 4
 _bDebug$ = 8						; size = 1
 ?updateLayout@CvPlot@@QAEX_N@Z PROC			; CvPlot::updateLayout, COMDAT
@@ -38479,7 +38479,7 @@ $LN120@updateLayo:
 	push	12					; 0000000cH
 	call	??2CvDllPlot@@SAPAXI@Z			; CvDllPlot::operator new
 	add	esp, 4
-	mov	DWORD PTR $T243744[esp+44], eax
+	mov	DWORD PTR $T243743[esp+44], eax
 	xor	esi, esi
 	mov	DWORD PTR __$EHRec$[esp+56], esi
 	cmp	eax, esi
@@ -38539,7 +38539,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?updateLayout@CvPlot@@QAEX_N@Z$0:
-	mov	eax, DWORD PTR $T243744[ebp-4]
+	mov	eax, DWORD PTR $T243743[ebp-4]
 	push	eax
 	call	??3CvDllPlot@@SAXPAX@Z			; CvDllPlot::operator delete
 	pop	ecx
@@ -38804,19 +38804,19 @@ _TEXT	SEGMENT
 _bCity$ = -25						; size = 1
 _iYield$ = -24						; size = 4
 tv928 = -20						; size = 4
-$T244302 = -16						; size = 4
-$T244298 = -16						; size = 4
-$T244075 = -16						; size = 4
+$T244301 = -16						; size = 4
+$T244297 = -16						; size = 4
+$T244074 = -16						; size = 4
 _bIgnoreFeature$ = -12					; size = 1
 _pCity$ = -12						; size = 4
 _eRoute$ = -12						; size = 4
 _kYield$ = -8						; size = 4
-_eResource$227840 = -4					; size = 4
+_eResource$227839 = -4					; size = 4
 _eBuild$ = 8						; size = 4
-$T244057 = 12						; size = 4
-_iTemp$227854 = 12					; size = 4
 $T244056 = 12						; size = 4
-_pkResourceInfo$227842 = 12				; size = 4
+_iTemp$227853 = 12					; size = 4
+$T244055 = 12						; size = 4
+_pkResourceInfo$227841 = 12				; size = 4
 _eYield$ = 12						; size = 4
 _bWithUpgrade$ = 16					; size = 1
 _ePlayer$ = 20						; size = 4
@@ -38852,10 +38852,10 @@ _ePlayer$ = 20						; size = 4
 	mov	edx, DWORD PTR ?sr_TeamTypes@CvPreGame@@3ABV?$vector@W4TeamTypes@@V?$allocator@W4TeamTypes@@@std@@@std@@B ; CvPreGame::sr_TeamTypes
 	mov	ecx, DWORD PTR [edx+4]
 	mov	edx, DWORD PTR [ecx+eax*4]
-	mov	DWORD PTR $T244075[esp+36], edx
+	mov	DWORD PTR $T244074[esp+36], edx
 	jmp	SHORT $LN76@getYieldWi
 $LN75@getYieldWi:
-	mov	DWORD PTR $T244075[esp+36], -1
+	mov	DWORD PTR $T244074[esp+36], -1
 $LN76@getYieldWi:
 
 ; 10788: 
@@ -39340,7 +39340,7 @@ $LN134@getYieldWi:
 ; 10933: 		{
 ; 10934: 			if(pCity->isRevealed(eTeam, false))
 
-	mov	edx, DWORD PTR $T244075[esp+44]
+	mov	edx, DWORD PTR $T244074[esp+44]
 	push	0
 	push	edx
 	mov	ecx, ebp
@@ -39437,7 +39437,7 @@ $LN242@getYieldWi:
 ; 10956: 				{
 ; 10957: 					if(pWorkingCity->isRevealed(eTeam, false))
 
-	mov	eax, DWORD PTR $T244075[esp+44]
+	mov	eax, DWORD PTR $T244074[esp+44]
 	push	0
 	push	eax
 	mov	ecx, ebp
@@ -39512,7 +39512,7 @@ $LN33@getYieldWi:
 ; 10976: 					{
 ; 10977: 						if(pWorkingCity->isRevealed(eTeam, false))
 
-	mov	eax, DWORD PTR $T244075[esp+44]
+	mov	eax, DWORD PTR $T244074[esp+44]
 	push	0
 	push	eax
 	mov	ecx, ebp
@@ -39561,7 +39561,7 @@ $LN247@getYieldWi:
 ; 10991: 				{
 ; 10992: 					if(pWorkingCity->isRevealed(eTeam, false))
 
-	mov	ecx, DWORD PTR $T244075[esp+44]
+	mov	ecx, DWORD PTR $T244074[esp+44]
 	push	0
 	push	ecx
 	mov	ecx, ebp
@@ -39690,7 +39690,7 @@ $LN181@getYieldWi:
 	push	eax
 	mov	ecx, edi
 	call	?getResourceType@CvPlot@@QBE?AW4ResourceTypes@@W4TeamTypes@@@Z ; CvPlot::getResourceType
-	mov	DWORD PTR _eResource$227840[esp+44], eax
+	mov	DWORD PTR _eResource$227839[esp+44], eax
 
 ; 11032: 		if(eResource != NO_RESOURCE)
 
@@ -39704,21 +39704,21 @@ $LN181@getYieldWi:
 	push	edx
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getResourceInfo@CvGlobals@@QAEPAVCvResourceInfo@@W4ResourceTypes@@@Z ; CvGlobals::getResourceInfo
-	mov	DWORD PTR _pkResourceInfo$227842[esp+40], eax
+	mov	DWORD PTR _pkResourceInfo$227841[esp+40], eax
 
 ; 11035: 			if(pkResourceInfo != NULL && eTeam != NO_TEAM && GET_TEAM(eTeam).GetTeamTechs()->HasTech((TechTypes) pkResourceInfo->getTechReveal()))
 
 	test	eax, eax
 	je	$LN245@getYieldWi
-	cmp	DWORD PTR $T244075[esp+44], -1
+	cmp	DWORD PTR $T244074[esp+44], -1
 	je	$LN245@getYieldWi
-	mov	eax, DWORD PTR $T244075[esp+44]
-	mov	ecx, DWORD PTR _pkResourceInfo$227842[esp+40]
+	mov	eax, DWORD PTR $T244074[esp+44]
+	mov	ecx, DWORD PTR _pkResourceInfo$227841[esp+40]
 	imul	eax, 2984				; 00000ba8H
 	add	eax, DWORD PTR ?m_aTeams@CvTeam@@1PAV1@A ; CvTeam::m_aTeams
-	mov	DWORD PTR $T244298[esp+44], eax
+	mov	DWORD PTR $T244297[esp+44], eax
 	call	?getTechReveal@CvResourceInfo@@QBEHXZ	; CvResourceInfo::getTechReveal
-	mov	ecx, DWORD PTR $T244298[esp+44]
+	mov	ecx, DWORD PTR $T244297[esp+44]
 	push	eax
 	call	?GetTeamTechs@CvTeam@@QBEPAVCvTeamTechs@@XZ ; CvTeam::GetTeamTechs
 	mov	ecx, eax
@@ -39729,17 +39729,17 @@ $LN181@getYieldWi:
 ; 11036: 			{
 ; 11037: 				if (pkResourceInfo->getPolicyReveal() == NO_POLICY || GET_PLAYER(ePlayer).GetPlayerPolicies()->HasPolicy((PolicyTypes)pkResourceInfo->getPolicyReveal()))
 
-	mov	ecx, DWORD PTR _pkResourceInfo$227842[esp+40]
+	mov	ecx, DWORD PTR _pkResourceInfo$227841[esp+40]
 	call	?getPolicyReveal@CvResourceInfo@@QBEHXZ	; CvResourceInfo::getPolicyReveal
 	cmp	eax, -1
 	je	SHORT $LN14@getYieldWi
 	mov	eax, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	mov	ecx, DWORD PTR tv928[esp+44]
 	add	ecx, eax
-	mov	DWORD PTR $T244302[esp+44], ecx
-	mov	ecx, DWORD PTR _pkResourceInfo$227842[esp+40]
+	mov	DWORD PTR $T244301[esp+44], ecx
+	mov	ecx, DWORD PTR _pkResourceInfo$227841[esp+40]
 	call	?getPolicyReveal@CvResourceInfo@@QBEHXZ	; CvResourceInfo::getPolicyReveal
-	mov	ecx, DWORD PTR $T244302[esp+44]
+	mov	ecx, DWORD PTR $T244301[esp+44]
 	push	eax
 	call	?GetPlayerPolicies@CvPlayer@@QBEPAVCvPlayerPolicies@@XZ ; CvPlayer::GetPlayerPolicies
 	mov	ecx, eax
@@ -39757,7 +39757,7 @@ $LN14@getYieldWi:
 
 ; 11041: 						iYield += pWorkingCity->GetResourceExtraYield(eResource, eYield);
 
-	mov	edx, DWORD PTR _eResource$227840[esp+44]
+	mov	edx, DWORD PTR _eResource$227839[esp+44]
 	push	ebx
 	push	edx
 	mov	ecx, ebp
@@ -39770,7 +39770,7 @@ $LN13@getYieldWi:
 ; 11043: 					// Extra yield from Resources with Trait
 ; 11044: 					if(pkResourceInfo->getResourceUsage() == RESOURCEUSAGE_STRATEGIC)
 
-	mov	ebp, DWORD PTR _pkResourceInfo$227842[esp+40]
+	mov	ebp, DWORD PTR _pkResourceInfo$227841[esp+40]
 	mov	ecx, ebp
 	call	?getResourceUsage@CvResourceInfo@@QBE?AW4ResourceUsageTypes@@XZ ; CvResourceInfo::getResourceUsage
 	cmp	eax, 1
@@ -39826,9 +39826,9 @@ $LN245@getYieldWi:
 
 	mov	ecx, DWORD PTR _kYield$[esp+44]
 	call	?getMinCity@CvYieldInfo@@QBEHXZ		; CvYieldInfo::getMinCity
-	mov	DWORD PTR $T244056[esp+40], eax
+	mov	DWORD PTR $T244055[esp+40], eax
 	cmp	esi, eax
-	lea	eax, DWORD PTR $T244056[esp+40]
+	lea	eax, DWORD PTR $T244055[esp+40]
 	jl	SHORT $LN200@getYieldWi
 	lea	eax, DWORD PTR _iYield$[esp+44]
 $LN200@getYieldWi:
@@ -39851,7 +39851,7 @@ $LN200@getYieldWi:
 	mov	ebp, DWORD PTR _pCity$[esp+44]
 	push	-1
 	mov	ecx, ebp
-	mov	DWORD PTR _iTemp$227854[esp+44], eax
+	mov	DWORD PTR _iTemp$227853[esp+44], eax
 	call	?isCoastal@CvCity@@QBE_NH@Z		; CvCity::isCoastal
 	test	al, al
 	je	SHORT $LN8@getYieldWi
@@ -39890,7 +39890,7 @@ $LN8@getYieldWi:
 ; 11078: 			int iPerPopYield = pCity->getPopulation() * GET_PLAYER(getOwner()).GetCapitalYieldPerPopChange(eYield);
 
 	movsx	ecx, BYTE PTR [edi+4]
-	add	DWORD PTR _iTemp$227854[esp+40], eax
+	add	DWORD PTR _iTemp$227853[esp+40], eax
 	imul	ecx, 63236				; 0000f704H
 	add	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	push	ebx
@@ -39919,7 +39919,7 @@ $LN7@getYieldWi:
 ; 11083: 		iYield += (iTemp / 100);
 
 	mov	eax, 1374389535				; 51eb851fH
-	imul	DWORD PTR _iTemp$227854[esp+40]
+	imul	DWORD PTR _iTemp$227853[esp+40]
 	sar	edx, 5
 	mov	eax, edx
 	shr	eax, 31					; 0000001fH
@@ -40045,12 +40045,12 @@ $LN1@getYieldWi:
 ; 11115: 
 ; 11116: 	return std::max(0, iYield);
 
-	mov	DWORD PTR $T244057[esp+36], 0
+	mov	DWORD PTR $T244056[esp+36], 0
 	pop	ebx
 	lea	eax, DWORD PTR _iYield$[esp+36]
 	test	esi, esi
 	jg	SHORT $LN234@getYieldWi
-	lea	eax, DWORD PTR $T244057[esp+32]
+	lea	eax, DWORD PTR $T244056[esp+32]
 $LN234@getYieldWi:
 	mov	eax, DWORD PTR [eax]
 	pop	edi
@@ -41380,8 +41380,8 @@ xdata$x	ENDS
 ;	COMDAT ?erase@?$_Tree@V?$_Tset_traits@PAVCvPlot@@U?$less@PAVCvPlot@@@std@@V?$allocator@PAVCvPlot@@@3@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@@Z
 _TEXT	SEGMENT
 __Erasednode$ = -84					; size = 4
-$T244844 = -80						; size = 28
-$T244843 = -52						; size = 40
+$T244843 = -80						; size = 28
+$T244842 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
 __Where$ = 12						; size = 4
@@ -41417,22 +41417,22 @@ __Where$ = 12						; size = 4
 ; 775  : 			_THROW(out_of_range, "invalid map/set<T> iterator");
 
 	push	OFFSET ??_C@_0BM@PAPJHAGI@invalid?5map?1set?$DMT?$DO?5iterator?$AA@
-	lea	ecx, DWORD PTR $T244844[esp+92]
+	lea	ecx, DWORD PTR $T244843[esp+92]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T244843[esp+88]
+	lea	ecx, DWORD PTR $T244842[esp+88]
 	mov	DWORD PTR __$EHRec$[esp+96], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T244844[esp+88]
+	lea	eax, DWORD PTR $T244843[esp+88]
 	push	eax
-	lea	ecx, DWORD PTR $T244843[esp+104]
+	lea	ecx, DWORD PTR $T244842[esp+104]
 	mov	BYTE PTR __$EHRec$[esp+100], 1
-	mov	DWORD PTR $T244843[esp+92], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T244842[esp+92], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVout_of_range@std@@
-	lea	ecx, DWORD PTR $T244843[esp+92]
+	lea	ecx, DWORD PTR $T244842[esp+92]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+104], 0
-	mov	DWORD PTR $T244843[esp+96], OFFSET ??_7out_of_range@std@@6B@
+	mov	DWORD PTR $T244842[esp+96], OFFSET ??_7out_of_range@std@@6B@
 	call	__CxxThrowException@8
 $LN293@erase:
 $LN40@erase:
@@ -42026,10 +42026,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?erase@?$_Tree@V?$_Tset_traits@PAVCvPlot@@U?$less@PAVCvPlot@@@std@@V?$allocator@PAVCvPlot@@@3@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@@Z$0:
-	lea	ecx, DWORD PTR $T244844[ebp]
+	lea	ecx, DWORD PTR $T244843[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?erase@?$_Tree@V?$_Tset_traits@PAVCvPlot@@U?$less@PAVCvPlot@@@std@@V?$allocator@PAVCvPlot@@@3@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@@Z$2:
-	lea	ecx, DWORD PTR $T244843[ebp]
+	lea	ecx, DWORD PTR $T244842[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?erase@?$_Tree@V?$_Tset_traits@PAVCvPlot@@U?$less@PAVCvPlot@@@std@@V?$allocator@PAVCvPlot@@@3@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?erase@?$_Tree@V?$_Tset_traits@PAVCvPlot@@U?$less@PAVCvPlot@@@std@@V?$allocator@PAVCvPlot@@@3@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@@Z
@@ -42737,7 +42737,7 @@ __ehfuncinfo$?_Buynode@?$_Tree@V?$_Tmap_traits@IV?$basic_string@DU?$char_traits@
 xdata$x	ENDS
 ;	COMDAT ?_Buynode@?$_Tree@V?$_Tmap_traits@IV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@I@2@V?$allocator@U?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@$0A@@std@@@std@@IAEPAU_Node@?$_Tree_nod@V?$_Tmap_traits@IV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@I@2@V?$allocator@U?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@$0A@@std@@@2@PAU342@00ABU?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@D@Z
 _TEXT	SEGMENT
-$T245909 = -24						; size = 4
+$T245908 = -24						; size = 4
 __Wherenode$ = -20					; size = 4
 __$EHRec$ = -16						; size = 16
 __Larg$ = 8						; size = 4
@@ -42777,7 +42777,7 @@ __Carg$ = 24						; size = 1
 
 ; 1411 : 		new (_Wherenode) _Node(_Larg, _Parg, _Rarg, _Val, _Carg);
 
-	mov	DWORD PTR $T245909[ebp], esi
+	mov	DWORD PTR $T245908[ebp], esi
 	mov	BYTE PTR __$EHRec$[ebp+12], 1
 	test	esi, esi
 	je	SHORT $LN4@Buynode@4
@@ -42836,7 +42836,7 @@ text$x	SEGMENT
 __unwindfunclet$?_Buynode@?$_Tree@V?$_Tmap_traits@IV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@I@2@V?$allocator@U?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@$0A@@std@@@std@@IAEPAU_Node@?$_Tree_nod@V?$_Tmap_traits@IV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@I@2@V?$allocator@U?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@$0A@@std@@@2@PAU342@00ABU?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@D@Z$2:
 	mov	eax, DWORD PTR __Wherenode$[ebp]
 	push	eax
-	mov	ecx, DWORD PTR $T245909[ebp]
+	mov	ecx, DWORD PTR $T245908[ebp]
 	push	ecx
 	call	??3@YAXPAX0@Z				; operator delete
 	add	esp, 8
@@ -43208,14 +43208,14 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 _this$ = -40						; size = 4
 _eActiveTeam$ = -36					; size = 4
-_kUnits$223122 = -32					; size = 4
-_iLayer$223118 = -28					; size = 4
-_kPlotManager$223116 = -24				; size = 4
-_iNumLayers$223117 = -20				; size = 4
-$T246512 = -20						; size = 4
-_pDllUnit$223106 = -20					; size = 4
-$T246518 = -16						; size = 4
-_pDllUnit$223136 = -16					; size = 4
+_kUnits$223121 = -32					; size = 4
+_iLayer$223117 = -28					; size = 4
+_kPlotManager$223115 = -24				; size = 4
+_iNumLayers$223116 = -20				; size = 4
+$T246511 = -20						; size = 4
+_pDllUnit$223105 = -20					; size = 4
+$T246517 = -16						; size = 4
+_pDllUnit$223135 = -16					; size = 4
 __$EHRec$ = -12						; size = 12
 ?updateVisibility@CvPlot@@QAEXXZ PROC			; CvPlot::updateVisibility, COMDAT
 ; _this$ = ecx
@@ -43350,7 +43350,7 @@ $LN57@updateVisi:
 	push	12					; 0000000cH
 	call	??2CvDllUnit@@SAPAXI@Z			; CvDllUnit::operator new
 	add	esp, 4
-	mov	DWORD PTR $T246512[esp+56], eax
+	mov	DWORD PTR $T246511[esp+56], eax
 	xor	edi, edi
 	mov	DWORD PTR __$EHRec$[esp+64], edi
 	cmp	eax, edi
@@ -43360,7 +43360,7 @@ $LN57@updateVisi:
 	call	??0CvDllUnit@@QAE@PAVCvUnit@@@Z		; CvDllUnit::CvDllUnit
 	mov	edi, eax
 $LN17@updateVisi:
-	mov	DWORD PTR _pDllUnit$223106[esp+56], edi
+	mov	DWORD PTR _pDllUnit$223105[esp+56], edi
 
 ; 605  : 					gDLL->GameplayUnitVisibility(pDllUnit.get(), (pLoopUnit->getTeam() == eActiveTeam)?true:isInvisibleVisible(eActiveTeam, eInvisibleType), true, 0.01f);
 
@@ -43428,20 +43428,20 @@ $LN11@updateVisi:
 ; 612  : 		int iNumLayers = kPlotManager.GetNumLayers();
 
 	mov	ecx, esi
-	mov	DWORD PTR _kPlotManager$223116[esp+56], esi
+	mov	DWORD PTR _kPlotManager$223115[esp+56], esi
 	call	?GetNumLayers@CvPlotManager@@QBEHXZ	; CvPlotManager::GetNumLayers
 
 ; 613  : 		for (int iLayer = 0; iLayer < iNumLayers; ++iLayer)
 
 	xor	ebp, ebp
-	mov	DWORD PTR _iNumLayers$223117[esp+56], eax
-	mov	DWORD PTR _iLayer$223118[esp+56], ebp
+	mov	DWORD PTR _iNumLayers$223116[esp+56], eax
+	mov	DWORD PTR _iLayer$223117[esp+56], ebp
 	test	eax, eax
 	jle	$LN122@updateVisi
 	jmp	SHORT $LN8@updateVisi
 	npad	3
 $LL119@updateVisi:
-	mov	esi, DWORD PTR _kPlotManager$223116[esp+56]
+	mov	esi, DWORD PTR _kPlotManager$223115[esp+56]
 $LN8@updateVisi:
 
 ; 614  : 		{	
@@ -43461,7 +43461,7 @@ $LN8@updateVisi:
 	mov	ebx, DWORD PTR [esi]
 	mov	edx, DWORD PTR [esi+4]
 	lea	eax, DWORD PTR [ebx+edx*8]
-	mov	DWORD PTR _kUnits$223122[esp+56], esi
+	mov	DWORD PTR _kUnits$223121[esp+56], esi
 	cmp	ebx, eax
 	je	$LN7@updateVisi
 	npad	5
@@ -43499,7 +43499,7 @@ $LL5@updateVisi:
 	push	12					; 0000000cH
 	call	??2CvDllUnit@@SAPAXI@Z			; CvDllUnit::operator new
 	add	esp, 4
-	mov	DWORD PTR $T246518[esp+56], eax
+	mov	DWORD PTR $T246517[esp+56], eax
 	mov	DWORD PTR __$EHRec$[esp+64], 2
 	test	eax, eax
 	je	SHORT $LN21@updateVisi
@@ -43511,7 +43511,7 @@ $LL5@updateVisi:
 $LN21@updateVisi:
 	xor	esi, esi
 $LN22@updateVisi:
-	mov	DWORD PTR _pDllUnit$223136[esp+56], esi
+	mov	DWORD PTR _pDllUnit$223135[esp+56], esi
 
 ; 626  : 						gDLL->GameplayUnitVisibility(pDllUnit.get(), (pLoopUnit->getTeam() == eActiveTeam)?true:isInvisibleVisible(eActiveTeam, eInvisibleType), true, 0.01f);
 
@@ -43558,7 +43558,7 @@ $LN24@updateVisi:
 	push	esi
 	call	edx
 $LN117@updateVisi:
-	mov	esi, DWORD PTR _kUnits$223122[esp+56]
+	mov	esi, DWORD PTR _kUnits$223121[esp+56]
 $LN4@updateVisi:
 
 ; 616  : 			for (CvIDInfoFixedVector::const_iterator itrUnit = kUnits.begin(); itrUnit != kUnits.end(); ++itrUnit)
@@ -43570,11 +43570,11 @@ $LN4@updateVisi:
 	cmp	ebx, edx
 	jne	$LL5@updateVisi
 	mov	edi, DWORD PTR _this$[esp+56]
-	mov	ebp, DWORD PTR _iLayer$223118[esp+56]
+	mov	ebp, DWORD PTR _iLayer$223117[esp+56]
 $LN7@updateVisi:
 	inc	ebp
-	cmp	ebp, DWORD PTR _iNumLayers$223117[esp+56]
-	mov	DWORD PTR _iLayer$223118[esp+56], ebp
+	cmp	ebp, DWORD PTR _iNumLayers$223116[esp+56]
+	mov	DWORD PTR _iLayer$223117[esp+56], ebp
 	jl	$LL119@updateVisi
 $LN122@updateVisi:
 	pop	ebp
@@ -43597,22 +43597,22 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?updateVisibility@CvPlot@@QAEXXZ$0:
-	mov	eax, DWORD PTR $T246512[ebp]
+	mov	eax, DWORD PTR $T246511[ebp]
 	push	eax
 	call	??3CvDllUnit@@SAXPAX@Z			; CvDllUnit::operator delete
 	pop	ecx
 	ret	0
 __unwindfunclet$?updateVisibility@CvPlot@@QAEXXZ$1:
-	lea	ecx, DWORD PTR _pDllUnit$223106[ebp]
+	lea	ecx, DWORD PTR _pDllUnit$223105[ebp]
 	jmp	??1?$auto_ptr@VICvUnit1@@@std@@QAE@XZ	; std::auto_ptr<ICvUnit1>::~auto_ptr<ICvUnit1>
 __unwindfunclet$?updateVisibility@CvPlot@@QAEXXZ$2:
-	mov	eax, DWORD PTR $T246518[ebp]
+	mov	eax, DWORD PTR $T246517[ebp]
 	push	eax
 	call	??3CvDllUnit@@SAXPAX@Z			; CvDllUnit::operator delete
 	pop	ecx
 	ret	0
 __unwindfunclet$?updateVisibility@CvPlot@@QAEXXZ$3:
-	lea	ecx, DWORD PTR _pDllUnit$223136[ebp]
+	lea	ecx, DWORD PTR _pDllUnit$223135[ebp]
 	jmp	??1?$auto_ptr@VICvUnit1@@@std@@QAE@XZ	; std::auto_ptr<ICvUnit1>::~auto_ptr<ICvUnit1>
 __ehhandler$?updateVisibility@CvPlot@@QAEXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?updateVisibility@CvPlot@@QAEXXZ
@@ -43675,11 +43675,11 @@ EXTRN	?IsWater@CvImprovementEntry@@QBE_NXZ:PROC	; CvImprovementEntry::IsWater
 ;	COMDAT ?canHaveImprovement@CvPlot@@QBE_NW4ImprovementTypes@@W4TeamTypes@@_N@Z
 _TEXT	SEGMENT
 _bValid$ = -10						; size = 1
-$T246779 = -9						; size = 1
+$T246778 = -9						; size = 1
 _bIsFreshWater$ = -9					; size = 1
 _iRequiredAdjacentLand$ = -8				; size = 4
 _pkImprovementInfo$ = -4				; size = 4
-_iAdjacentLand$223944 = 8				; size = 4
+_iAdjacentLand$223943 = 8				; size = 4
 _eImprovement$ = 8					; size = 4
 _eTeam$ = 12						; size = 4
 ___formal$ = 16						; size = 1
@@ -43774,9 +43774,9 @@ $LN47@canHaveImp:
 
 	cmp	al, 3
 	mov	ecx, ebx
-	sete	BYTE PTR $T246779[esp+20]
+	sete	BYTE PTR $T246778[esp+20]
 	call	?IsWater@CvImprovementEntry@@QBE_NXZ	; CvImprovementEntry::IsWater
-	cmp	al, BYTE PTR $T246779[esp+20]
+	cmp	al, BYTE PTR $T246778[esp+20]
 
 ; 2090 : 	{
 ; 2091 : 		return false;
@@ -44253,7 +44253,7 @@ $LN127@canHaveImp:
 	movsx	ebp, WORD PTR [esi+2]
 	movsx	ebx, WORD PTR [esi]
 	xor	edi, edi
-	mov	DWORD PTR _iAdjacentLand$223944[esp+24], edi
+	mov	DWORD PTR _iAdjacentLand$223943[esp+24], edi
 	npad	1
 $LL10@canHaveImp:
 
@@ -44281,7 +44281,7 @@ $LL10@canHaveImp:
 ; 2242 : 				{
 ; 2243 : 					iAdjacentLand++;
 
-	inc	DWORD PTR _iAdjacentLand$223944[esp+24]
+	inc	DWORD PTR _iAdjacentLand$223943[esp+24]
 $LN9@canHaveImp:
 
 ; 2232 : 	{
@@ -44300,7 +44300,7 @@ $LN9@canHaveImp:
 ; 2248 : 		if (iAdjacentLand < iRequiredAdjacentLand)
 
 	mov	eax, DWORD PTR _iRequiredAdjacentLand$[esp+28]
-	cmp	DWORD PTR _iAdjacentLand$223944[esp+24], eax
+	cmp	DWORD PTR _iAdjacentLand$223943[esp+24], eax
 
 ; 2249 : 		{
 ; 2250 : 			return false;
@@ -44378,15 +44378,15 @@ EXTRN	?IsRemoveRoute@CvBuildInfo@@QBE_NXZ:PROC	; CvBuildInfo::IsRemoveRoute
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?canBuild@CvPlot@@QBE_NW4BuildTypes@@W4PlayerTypes@@_N2@Z
 _TEXT	SEGMENT
-_bHasNoAdjacencyRequirement$223994 = -13		; size = 1
-$T246918 = -12						; size = 4
+_bHasNoAdjacencyRequirement$223993 = -13		; size = 1
+$T246917 = -12						; size = 4
 _thisBuildInfo$ = -8					; size = 4
 _eImprovement$ = -4					; size = 4
 _eBuild$ = 8						; size = 4
-_bHasLuxuryRequirement$223993 = 12			; size = 1
+_bHasLuxuryRequirement$223992 = 12			; size = 1
 _ePlayer$ = 12						; size = 4
 _bTestVisible$ = 16					; size = 1
-_bLuxuryRequirementMet$223997 = 16			; size = 1
+_bLuxuryRequirementMet$223996 = 16			; size = 1
 _bTestPlotOwner$ = 20					; size = 1
 ?canBuild@CvPlot@@QBE_NW4BuildTypes@@W4PlayerTypes@@_N2@Z PROC ; CvPlot::canBuild, COMDAT
 ; _this$ = ecx
@@ -44410,10 +44410,10 @@ _bTestPlotOwner$ = 20					; size = 1
 	mov	edx, DWORD PTR ?sr_TeamTypes@CvPreGame@@3ABV?$vector@W4TeamTypes@@V?$allocator@W4TeamTypes@@@std@@@std@@B ; CvPreGame::sr_TeamTypes
 	mov	ecx, DWORD PTR [edx+4]
 	mov	edx, DWORD PTR [ecx+eax*4]
-	mov	DWORD PTR $T246918[esp+24], edx
+	mov	DWORD PTR $T246917[esp+24], edx
 	jmp	SHORT $LN71@canBuild
 $LN70@canBuild:
-	mov	DWORD PTR $T246918[esp+24], -1
+	mov	DWORD PTR $T246917[esp+24], -1
 $LN71@canBuild:
 
 ; 2270 : 
@@ -44574,7 +44574,7 @@ $LN50@canBuild:
 ; 2327 : 		if(!canHaveImprovement(eImprovement, eTeam, bTestVisible))
 
 	mov	ebx, DWORD PTR _bTestVisible$[esp+28]
-	mov	ecx, DWORD PTR $T246918[esp+32]
+	mov	ecx, DWORD PTR $T246917[esp+32]
 	push	ebx
 	push	ecx
 	push	ebp
@@ -44701,9 +44701,9 @@ $LN160@canBuild:
 ; 2376 : 			bool bHasNoAdjacencyRequirement = pkImprovement->IsNoTwoAdjacent();
 
 	mov	ecx, esi
-	mov	BYTE PTR _bHasLuxuryRequirement$223993[esp+28], bl
+	mov	BYTE PTR _bHasLuxuryRequirement$223992[esp+28], bl
 	call	?IsNoTwoAdjacent@CvImprovementEntry@@QBE_NXZ ; CvImprovementEntry::IsNoTwoAdjacent
-	mov	BYTE PTR _bHasNoAdjacencyRequirement$223994[esp+32], al
+	mov	BYTE PTR _bHasNoAdjacencyRequirement$223993[esp+32], al
 
 ; 2377 : 			if (pkImprovement && (bHasLuxuryRequirement || bHasNoAdjacencyRequirement))
 
@@ -44719,8 +44719,8 @@ $LN39@canBuild:
 ; 2379 : 			{
 ; 2380 : 				bool bLuxuryRequirementMet = !bHasLuxuryRequirement;
 
-	cmp	BYTE PTR _bHasLuxuryRequirement$223993[esp+28], 0
-	sete	BYTE PTR _bLuxuryRequirementMet$223997[esp+28]
+	cmp	BYTE PTR _bHasLuxuryRequirement$223992[esp+28], 0
+	sete	BYTE PTR _bLuxuryRequirementMet$223996[esp+28]
 
 ; 2381 : 				for (int iI = 0; iI < NUM_DIRECTION_TYPES; ++iI)
 
@@ -44750,7 +44750,7 @@ $LL38@canBuild:
 ; 2388 : #else
 ; 2389 : 						if (bHasLuxuryRequirement)
 
-	cmp	BYTE PTR _bHasLuxuryRequirement$223993[esp+28], 0
+	cmp	BYTE PTR _bHasLuxuryRequirement$223992[esp+28], 0
 	je	SHORT $LN161@canBuild
 
 ; 2390 : #endif
@@ -44783,7 +44783,7 @@ $LL38@canBuild:
 ; 2397 : 								{
 ; 2398 : 									bLuxuryRequirementMet = true;
 
-	mov	BYTE PTR _bLuxuryRequirementMet$223997[esp+28], 1
+	mov	BYTE PTR _bLuxuryRequirementMet$223996[esp+28], 1
 $LN161@canBuild:
 
 ; 2399 : #ifdef AUI_WARNING_FIXES
@@ -44795,7 +44795,7 @@ $LN161@canBuild:
 ; 2405 : 						}
 ; 2406 : 						if (bHasNoAdjacencyRequirement)
 
-	cmp	BYTE PTR _bHasNoAdjacencyRequirement$223994[esp+32], 0
+	cmp	BYTE PTR _bHasNoAdjacencyRequirement$223993[esp+32], 0
 	je	SHORT $LN37@canBuild
 
 ; 2407 : 						{
@@ -44841,9 +44841,9 @@ $LN37@canBuild:
 ; 2420 : 				}
 ; 2421 : 				if (bHasLuxuryRequirement && !bLuxuryRequirementMet)
 
-	cmp	BYTE PTR _bHasLuxuryRequirement$223993[esp+28], 0
+	cmp	BYTE PTR _bHasLuxuryRequirement$223992[esp+28], 0
 	je	SHORT $LN158@canBuild
-	cmp	BYTE PTR _bLuxuryRequirementMet$223997[esp+28], 0
+	cmp	BYTE PTR _bLuxuryRequirementMet$223996[esp+28], 0
 
 ; 2422 : 				{
 ; 2423 : 					return false;
@@ -44899,7 +44899,7 @@ $LN158@canBuild:
 
 	mov	ecx, edi
 	call	?getTeam@CvPlot@@QBE?AW4TeamTypes@@XZ	; CvPlot::getTeam
-	cmp	eax, DWORD PTR $T246918[esp+32]
+	cmp	eax, DWORD PTR $T246917[esp+32]
 	je	$LN13@canBuild
 	mov	ecx, edi
 	call	?getTeam@CvPlot@@QBE?AW4TeamTypes@@XZ	; CvPlot::getTeam
@@ -44943,7 +44943,7 @@ $LN24@canBuild:
 
 	mov	ecx, edi
 	call	?getTeam@CvPlot@@QBE?AW4TeamTypes@@XZ	; CvPlot::getTeam
-	mov	ecx, DWORD PTR $T246918[esp+32]
+	mov	ecx, DWORD PTR $T246917[esp+32]
 	cmp	eax, ecx
 	je	SHORT $LN13@canBuild
 	push	0
@@ -45032,7 +45032,7 @@ $LN18@canBuild:
 
 	mov	ecx, edi
 	call	?getTeam@CvPlot@@QBE?AW4TeamTypes@@XZ	; CvPlot::getTeam
-	cmp	eax, DWORD PTR $T246918[esp+32]
+	cmp	eax, DWORD PTR $T246917[esp+32]
 
 ; 2487 : 					{//only buildable in own culture
 ; 2488 : 						return false;
@@ -45185,7 +45185,7 @@ $LN12@canBuild:
 	je	SHORT $LN1@canBuild
 	mov	ecx, edi
 	call	?getTeam@CvPlot@@QBE?AW4TeamTypes@@XZ	; CvPlot::getTeam
-	mov	esi, DWORD PTR $T246918[esp+32]
+	mov	esi, DWORD PTR $T246917[esp+32]
 	cmp	esi, eax
 	je	SHORT $LN1@canBuild
 	mov	ecx, edi
@@ -45269,7 +45269,7 @@ PUBLIC	?getBestDefender@CvPlot@@QAE?AV?$FObjectHandle@VCvUnit@@@@W4PlayerTypes@@
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?getBestDefender@CvPlot@@QAE?AV?$FObjectHandle@VCvUnit@@@@W4PlayerTypes@@0PBVCvUnit@@_N222@Z
 _TEXT	SEGMENT
-$T247097 = -4						; size = 4
+$T247096 = -4						; size = 4
 ___$ReturnUdt$ = 8					; size = 4
 _eOwner$ = 12						; size = 4
 _eAttackingPlayer$ = 16					; size = 4
@@ -45305,7 +45305,7 @@ _bNoncombatAllowed$ = 36				; size = 1
 	push	edx
 	push	eax
 	push	esi
-	mov	DWORD PTR $T247097[esp+40], 0
+	mov	DWORD PTR $T247096[esp+40], 0
 	call	?getBestDefender@CvPlot@@QBE?BV?$FObjectHandle@VCvUnit@@@@W4PlayerTypes@@0PBVCvUnit@@_N222@Z ; CvPlot::getBestDefender
 	mov	eax, esi
 	pop	esi
@@ -45792,7 +45792,7 @@ PUBLIC	?HasAlliedUnit@CvPlot@@QBE_NW4PlayerTypes@@_N@Z	; CvPlot::HasAlliedUnit
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?HasAlliedUnit@CvPlot@@QBE_NW4PlayerTypes@@_N@Z
 _TEXT	SEGMENT
-$T247454 = 8						; size = 4
+$T247453 = 8						; size = 4
 _ePlayer$ = 8						; size = 4
 _bCombatUnitsOnly$ = 12					; size = 1
 ?HasAlliedUnit@CvPlot@@QBE_NW4PlayerTypes@@_N@Z PROC	; CvPlot::HasAlliedUnit, COMDAT
@@ -45814,10 +45814,10 @@ _bCombatUnitsOnly$ = 12					; size = 1
 	mov	edx, DWORD PTR ?sr_TeamTypes@CvPreGame@@3ABV?$vector@W4TeamTypes@@V?$allocator@W4TeamTypes@@@std@@@std@@B ; CvPreGame::sr_TeamTypes
 	mov	ecx, DWORD PTR [edx+4]
 	mov	edx, DWORD PTR [ecx+eax*4]
-	mov	DWORD PTR $T247454[esp+12], edx
+	mov	DWORD PTR $T247453[esp+12], edx
 	jmp	SHORT $LN17@HasAlliedU
 $LN16@HasAlliedU:
-	mov	DWORD PTR $T247454[esp+12], -1
+	mov	DWORD PTR $T247453[esp+12], -1
 $LN17@HasAlliedU:
 
 ; 4166 : 
@@ -45866,7 +45866,7 @@ $LN54@HasAlliedU:
 
 	mov	ecx, esi
 	call	?getTeam@CvUnit@@QBE?AW4TeamTypes@@XZ	; CvUnit::getTeam
-	cmp	eax, DWORD PTR $T247454[esp+12]
+	cmp	eax, DWORD PTR $T247453[esp+12]
 	jne	SHORT $LN6@HasAlliedU
 
 ; 4177 : 			{
@@ -46604,7 +46604,7 @@ EXTRN	?getMapRand@CvGame@@QAEAAVCvRandom@@XZ:PROC	; CvGame::getMapRand
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?getInlandCorner@CvPlot@@QBEPAV1@XZ
 _TEXT	SEGMENT
-_iI$225180 = -20					; size = 4
+_iI$225179 = -20					; size = 4
 _aiShuffle$ = -16					; size = 16
 ?getInlandCorner@CvPlot@@QBEPAV1@XZ PROC		; CvPlot::getInlandCorner, COMDAT
 ; _this$ = ecx
@@ -46636,7 +46636,7 @@ _aiShuffle$ = -16					; size = 16
 ; 5060 : 	for(int iI = 0; iI < 4; ++iI)
 
 	xor	edi, edi
-	mov	DWORD PTR _iI$225180[esp+36], edi
+	mov	DWORD PTR _iI$225179[esp+36], edi
 	npad	6
 $LL11@getInlandC:
 
@@ -46741,7 +46741,7 @@ $LN43@getInlandC:
 	cmp	BYTE PTR [eax+5], 3
 	jne	SHORT $LN65@getInlandC
 $LN66@getInlandC:
-	mov	edi, DWORD PTR _iI$225180[esp+36]
+	mov	edi, DWORD PTR _iI$225179[esp+36]
 $LN2@getInlandC:
 
 ; 5059 : 
@@ -46758,7 +46758,7 @@ $LN2@getInlandC:
 
 	xor	eax, eax
 	cmp	edi, 4
-	mov	DWORD PTR _iI$225180[esp+36], edi
+	mov	DWORD PTR _iI$225179[esp+36], edi
 	jl	$LL11@getInlandC
 	pop	edi
 	pop	esi
@@ -47137,7 +47137,7 @@ _TEXT	SEGMENT
 _eResource$ = -16					; size = 4
 _this$ = -12						; size = 4
 _eImprovementNeeded$ = -8				; size = 4
-_pBuildInfo$225722 = -4					; size = 4
+_pBuildInfo$225721 = -4					; size = 4
 _ePlayer$ = 8						; size = 4
 _bTestPlotOwner$ = 12					; size = 1
 ?getImprovementTypeNeededToImproveResource@CvPlot@@QAE?AW4ImprovementTypes@@W4PlayerTypes@@_N@Z PROC ; CvPlot::getImprovementTypeNeededToImproveResource, COMDAT
@@ -47257,7 +47257,7 @@ $LL55@getImprove:
 	push	edi
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getBuildInfo@CvGlobals@@QAEPAVCvBuildInfo@@W4BuildTypes@@@Z ; CvGlobals::getBuildInfo
-	mov	DWORD PTR _pBuildInfo$225722[esp+32], eax
+	mov	DWORD PTR _pBuildInfo$225721[esp+32], eax
 
 ; 6313 : 		if(pBuildInfo == NULL)
 
@@ -47309,7 +47309,7 @@ $LN6@getImprove:
 ; 6326 : 
 ; 6327 : 		ImprovementTypes eImprovement = (ImprovementTypes) pBuildInfo->getImprovement();
 
-	mov	ecx, DWORD PTR _pBuildInfo$225722[esp+32]
+	mov	ecx, DWORD PTR _pBuildInfo$225721[esp+32]
 	call	?getImprovement@CvBuildInfo@@QBEHXZ	; CvBuildInfo::getImprovement
 	mov	ebp, eax
 
@@ -47624,8 +47624,8 @@ EXTRN	?GetGoldMaintenance@CvRouteInfo@@QBEHXZ:PROC	; CvRouteInfo::GetGoldMainten
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?setRouteType@CvPlot@@QAEXW4RouteTypes@@@Z
 _TEXT	SEGMENT
-_oldRouteInfo$225927 = -4				; size = 4
-_iNumResourceInfos$225947 = 8				; size = 4
+_oldRouteInfo$225926 = -4				; size = 4
+_iNumResourceInfos$225946 = 8				; size = 4
 _eNewValue$ = 8						; size = 4
 ?setRouteType@CvPlot@@QAEXW4RouteTypes@@@Z PROC		; CvPlot::setRouteType, COMDAT
 ; _this$ = ecx
@@ -47691,7 +47691,7 @@ $LN118@setRouteTy:
 	push	edi
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getRouteInfo@CvGlobals@@QAEPAVCvRouteInfo@@W4RouteTypes@@@Z ; CvGlobals::getRouteInfo
-	mov	DWORD PTR _oldRouteInfo$225927[esp+20], eax
+	mov	DWORD PTR _oldRouteInfo$225926[esp+20], eax
 
 ; 6841 : 				CvPlayer& owningPlayer = GET_PLAYER(getOwner());
 
@@ -47754,7 +47754,7 @@ $LL19@setRouteTy:
 ; 6856 : 				{
 ; 6857 : 					int iRequiredResources = oldRouteInfo.getResourceQuantityRequirement(iResourceLoop);
 
-	mov	ecx, DWORD PTR _oldRouteInfo$225927[esp+20]
+	mov	ecx, DWORD PTR _oldRouteInfo$225926[esp+20]
 	push	edi
 	call	?getResourceQuantityRequirement@CvRouteInfo@@QBEHH@Z ; CvRouteInfo::getResourceQuantityRequirement
 
@@ -47934,7 +47934,7 @@ $LN10@setRouteTy:
 ; 6901 : 				for(int iResourceLoop = 0; iResourceLoop < iNumResourceInfos; iResourceLoop++)
 
 	xor	edi, edi
-	mov	DWORD PTR _iNumResourceInfos$225947[esp+16], eax
+	mov	DWORD PTR _iNumResourceInfos$225946[esp+16], eax
 	test	eax, eax
 	jle	SHORT $LN122@setRouteTy
 $LL9@setRouteTy:
@@ -47960,7 +47960,7 @@ $LL9@setRouteTy:
 	call	?changeNumResourceUsed@CvPlayer@@QAEXW4ResourceTypes@@H@Z ; CvPlayer::changeNumResourceUsed
 $LN8@setRouteTy:
 	inc	edi
-	cmp	edi, DWORD PTR _iNumResourceInfos$225947[esp+16]
+	cmp	edi, DWORD PTR _iNumResourceInfos$225946[esp+16]
 	jl	SHORT $LL9@setRouteTy
 $LN122@setRouteTy:
 
@@ -48117,7 +48117,7 @@ PUBLIC	?setPlotCity@CvPlot@@QAEXPAVCvCity@@@Z		; CvPlot::setPlotCity
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?setPlotCity@CvPlot@@QAEXPAVCvCity@@@Z
 _TEXT	SEGMENT
-$T248677 = -8						; size = 8
+$T248676 = -8						; size = 8
 _pNewValue$ = 8						; size = 4
 ?setPlotCity@CvPlot@@QAEXPAVCvCity@@@Z PROC		; CvPlot::setPlotCity, COMDAT
 ; _this$ = ecx
@@ -48306,7 +48306,7 @@ $LN11@setPlotCit:
 ; 7212 : 		{
 ; 7213 : 			m_plotCity = pNewValue->GetIDInfo();
 
-	lea	edx, DWORD PTR $T248677[esp+24]
+	lea	edx, DWORD PTR $T248676[esp+24]
 	push	edx
 	mov	ecx, ebx
 	call	?GetIDInfo@CvCity@@QBE?AUIDInfo@@XZ	; CvCity::GetIDInfo
@@ -48503,7 +48503,7 @@ EXTRN	?getCityPlotPriority@CvGlobals@@QAEPAHXZ:PROC	; CvGlobals::getCityPlotPrio
 _TEXT	SEGMENT
 _pBestCity$ = -12					; size = 4
 tv385 = -8						; size = 4
-$T248901 = -8						; size = 8
+$T248900 = -8						; size = 8
 ?updateWorkingCity@CvPlot@@QAEXXZ PROC			; CvPlot::updateWorkingCity, COMDAT
 ; _this$ = ecx
 
@@ -48753,7 +48753,7 @@ $LN68@updateWork:
 ; 7328 : 			CvAssertMsg(!isBeingWorked(), "isBeingWorked did not return false as expected");
 ; 7329 : 			m_workingCity = pBestCity->GetIDInfo();
 
-	lea	edx, DWORD PTR $T248901[esp+24]
+	lea	edx, DWORD PTR $T248900[esp+24]
 	push	edx
 	mov	ecx, ebx
 	call	?GetIDInfo@CvCity@@QBE?AUIDInfo@@XZ	; CvCity::GetIDInfo
@@ -48828,7 +48828,7 @@ PUBLIC	?setWorkingCityOverride@CvPlot@@QAEXPBVCvCity@@@Z ; CvPlot::setWorkingCit
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?setWorkingCityOverride@CvPlot@@QAEXPBVCvCity@@@Z
 _TEXT	SEGMENT
-$T248997 = -8						; size = 8
+$T248996 = -8						; size = 8
 _pNewValue$ = 8						; size = 4
 ?setWorkingCityOverride@CvPlot@@QAEXPBVCvCity@@@Z PROC	; CvPlot::setWorkingCityOverride, COMDAT
 ; _this$ = ecx
@@ -48861,7 +48861,7 @@ _pNewValue$ = 8						; size = 4
 ; 7367 : 			CvAssertMsg(pNewValue->getOwner() == getOwner(), "Argument city pNewValue's owner is expected to be the same as the current instance");
 ; 7368 : 			m_workingCityOverride = pNewValue->GetIDInfo();
 
-	lea	edx, DWORD PTR $T248997[esp+12]
+	lea	edx, DWORD PTR $T248996[esp+12]
 	push	edx
 	call	?GetIDInfo@CvCity@@QBE?AUIDInfo@@XZ	; CvCity::GetIDInfo
 	mov	ecx, DWORD PTR [eax]
@@ -48914,9 +48914,9 @@ EXTRN	?GetUnits@CvPlotManager@@QBEABVCvIDInfoFixedVector@@HHI@Z:PROC ; CvPlotMan
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?getLayerUnit@CvPlot@@QBEPAVCvUnit@@HH@Z
 _TEXT	SEGMENT
-_kManager$227151 = 8					; size = 4
+_kManager$227150 = 8					; size = 4
 _iIndex$ = 8						; size = 4
-_iNumLayers$227152 = 12					; size = 4
+_iNumLayers$227151 = 12					; size = 4
 _iLayerID$ = 12						; size = 4
 ?getLayerUnit@CvPlot@@QBEPAVCvUnit@@HH@Z PROC		; CvPlot::getLayerUnit, COMDAT
 ; _this$ = ecx
@@ -48984,7 +48984,7 @@ $LN12@getLayerUn:
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+52
 	add	ecx, 4184				; 00001058H
-	mov	DWORD PTR _kManager$227151[esp+12], ecx
+	mov	DWORD PTR _kManager$227150[esp+12], ecx
 
 ; 9782 : 				int iNumLayers = kManager.GetNumLayers();
 
@@ -48993,7 +48993,7 @@ $LN12@getLayerUn:
 ; 9783 : 				for (int iLayerIndex = 0; iLayerIndex < iNumLayers; ++iLayerIndex)
 
 	xor	esi, esi
-	mov	DWORD PTR _iNumLayers$227152[esp+12], eax
+	mov	DWORD PTR _iNumLayers$227151[esp+12], eax
 	test	eax, eax
 	jle	SHORT $LN1@getLayerUn
 $LL7@getLayerUn:
@@ -49006,7 +49006,7 @@ $LL7@getLayerUn:
 	push	esi
 	push	eax
 	push	ecx
-	mov	ecx, DWORD PTR _kManager$227151[esp+24]
+	mov	ecx, DWORD PTR _kManager$227150[esp+24]
 	call	?GetUnitsByIndex@CvPlotManager@@QBEABVCvIDInfoFixedVector@@HHH@Z ; CvPlotManager::GetUnitsByIndex
 
 ; 9786 : 					if (iIndex < (iCount + (int)kUnits.size()))
@@ -49016,7 +49016,7 @@ $LL7@getLayerUn:
 	cmp	ebx, ecx
 	jl	SHORT $LN39@getLayerUn
 	inc	esi
-	cmp	esi, DWORD PTR _iNumLayers$227152[esp+12]
+	cmp	esi, DWORD PTR _iNumLayers$227151[esp+12]
 
 ; 9788 : 					else
 ; 9789 : 						iCount += kUnits.size();
@@ -49519,8 +49519,8 @@ __ehfuncinfo$?_Insert@?$_Tree@V?$_Tset_traits@PAVCvPlot@@U?$less@PAVCvPlot@@@std
 xdata$x	ENDS
 ;	COMDAT ?_Insert@?$_Tree@V?$_Tset_traits@PAVCvPlot@@U?$less@PAVCvPlot@@@std@@V?$allocator@PAVCvPlot@@@3@$0A@@std@@@std@@IAE?AViterator@12@_NPAU_Node@?$_Tree_nod@V?$_Tset_traits@PAVCvPlot@@U?$less@PAVCvPlot@@@std@@V?$allocator@PAVCvPlot@@@3@$0A@@std@@@2@ABQAVCvPlot@@@Z
 _TEXT	SEGMENT
-$T249326 = -80						; size = 28
-$T249325 = -52						; size = 40
+$T249325 = -80						; size = 28
+$T249324 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
 __Addleft$ = 12						; size = 1
@@ -49548,22 +49548,22 @@ __Val$ = 20						; size = 4
 ; 1189 : 			_THROW(length_error, "map/set<T> too long");
 
 	push	OFFSET ??_C@_0BE@JONHPENG@map?1set?$DMT?$DO?5too?5long?$AA@
-	lea	ecx, DWORD PTR $T249326[esp+88]
+	lea	ecx, DWORD PTR $T249325[esp+88]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T249325[esp+84]
+	lea	ecx, DWORD PTR $T249324[esp+84]
 	mov	DWORD PTR __$EHRec$[esp+92], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T249326[esp+84]
+	lea	eax, DWORD PTR $T249325[esp+84]
 	push	eax
-	lea	ecx, DWORD PTR $T249325[esp+100]
+	lea	ecx, DWORD PTR $T249324[esp+100]
 	mov	BYTE PTR __$EHRec$[esp+96], 1
-	mov	DWORD PTR $T249325[esp+88], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T249324[esp+88], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVlength_error@std@@
-	lea	ecx, DWORD PTR $T249325[esp+88]
+	lea	ecx, DWORD PTR $T249324[esp+88]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+100], 0
-	mov	DWORD PTR $T249325[esp+92], OFFSET ??_7length_error@std@@6B@
+	mov	DWORD PTR $T249324[esp+92], OFFSET ??_7length_error@std@@6B@
 	call	__CxxThrowException@8
 $LN228@Insert:
 $LN17@Insert:
@@ -49882,10 +49882,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Insert@?$_Tree@V?$_Tset_traits@PAVCvPlot@@U?$less@PAVCvPlot@@@std@@V?$allocator@PAVCvPlot@@@3@$0A@@std@@@std@@IAE?AViterator@12@_NPAU_Node@?$_Tree_nod@V?$_Tset_traits@PAVCvPlot@@U?$less@PAVCvPlot@@@std@@V?$allocator@PAVCvPlot@@@3@$0A@@std@@@2@ABQAVCvPlot@@@Z$0:
-	lea	ecx, DWORD PTR $T249326[ebp]
+	lea	ecx, DWORD PTR $T249325[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Insert@?$_Tree@V?$_Tset_traits@PAVCvPlot@@U?$less@PAVCvPlot@@@std@@V?$allocator@PAVCvPlot@@@3@$0A@@std@@@std@@IAE?AViterator@12@_NPAU_Node@?$_Tree_nod@V?$_Tset_traits@PAVCvPlot@@U?$less@PAVCvPlot@@@std@@V?$allocator@PAVCvPlot@@@3@$0A@@std@@@2@ABQAVCvPlot@@@Z$2:
-	lea	ecx, DWORD PTR $T249325[ebp]
+	lea	ecx, DWORD PTR $T249324[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Insert@?$_Tree@V?$_Tset_traits@PAVCvPlot@@U?$less@PAVCvPlot@@@std@@V?$allocator@PAVCvPlot@@@3@$0A@@std@@@std@@IAE?AViterator@12@_NPAU_Node@?$_Tree_nod@V?$_Tset_traits@PAVCvPlot@@U?$less@PAVCvPlot@@@std@@V?$allocator@PAVCvPlot@@@3@$0A@@std@@@2@ABQAVCvPlot@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?_Insert@?$_Tree@V?$_Tset_traits@PAVCvPlot@@U?$less@PAVCvPlot@@@std@@V?$allocator@PAVCvPlot@@@3@$0A@@std@@@std@@IAE?AViterator@12@_NPAU_Node@?$_Tree_nod@V?$_Tset_traits@PAVCvPlot@@U?$less@PAVCvPlot@@@std@@V?$allocator@PAVCvPlot@@@3@$0A@@std@@@2@ABQAVCvPlot@@@Z
@@ -50002,7 +50002,7 @@ PUBLIC	??$_Distance@Viterator@?$_Tree@V?$_Tset_traits@PAVCvPlot@@U?$less@PAVCvPl
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xutility
 ;	COMDAT ??$_Distance@Viterator@?$_Tree@V?$_Tset_traits@PAVCvPlot@@U?$less@PAVCvPlot@@@std@@V?$allocator@PAVCvPlot@@@3@$0A@@std@@@std@@I@std@@YAXViterator@?$_Tree@V?$_Tset_traits@PAVCvPlot@@U?$less@PAVCvPlot@@@std@@V?$allocator@PAVCvPlot@@@3@$0A@@std@@@0@0AAI@Z
 _TEXT	SEGMENT
-$T249845 = -4						; size = 1
+$T249844 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Off$ = 16						; size = 4
@@ -50014,7 +50014,7 @@ __Off$ = 16						; size = 4
 
 ; 1893 : 	_Distance2(_First, _Last, _Off, _Iter_cat(_First));
 
-	mov	eax, DWORD PTR $T249845[esp+4]
+	mov	eax, DWORD PTR $T249844[esp+4]
 	mov	ecx, DWORD PTR __Off$[esp]
 	mov	edx, DWORD PTR __Last$[esp]
 	push	eax
@@ -50122,8 +50122,8 @@ __ehfuncinfo$?_Insert@?$_Tree@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVF
 xdata$x	ENDS
 ;	COMDAT ?_Insert@?$_Tree@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@std@@IAE?AViterator@12@_NPAU_Node@?$_Tree_nod@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@2@ABQAVFAutoVariableBase@@@Z
 _TEXT	SEGMENT
-$T249876 = -80						; size = 28
-$T249875 = -52						; size = 40
+$T249875 = -80						; size = 28
+$T249874 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
 __Addleft$ = 12						; size = 1
@@ -50151,22 +50151,22 @@ __Val$ = 20						; size = 4
 ; 1189 : 			_THROW(length_error, "map/set<T> too long");
 
 	push	OFFSET ??_C@_0BE@JONHPENG@map?1set?$DMT?$DO?5too?5long?$AA@
-	lea	ecx, DWORD PTR $T249876[esp+88]
+	lea	ecx, DWORD PTR $T249875[esp+88]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T249875[esp+84]
+	lea	ecx, DWORD PTR $T249874[esp+84]
 	mov	DWORD PTR __$EHRec$[esp+92], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T249876[esp+84]
+	lea	eax, DWORD PTR $T249875[esp+84]
 	push	eax
-	lea	ecx, DWORD PTR $T249875[esp+100]
+	lea	ecx, DWORD PTR $T249874[esp+100]
 	mov	BYTE PTR __$EHRec$[esp+96], 1
-	mov	DWORD PTR $T249875[esp+88], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T249874[esp+88], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVlength_error@std@@
-	lea	ecx, DWORD PTR $T249875[esp+88]
+	lea	ecx, DWORD PTR $T249874[esp+88]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+100], 0
-	mov	DWORD PTR $T249875[esp+92], OFFSET ??_7length_error@std@@6B@
+	mov	DWORD PTR $T249874[esp+92], OFFSET ??_7length_error@std@@6B@
 	call	__CxxThrowException@8
 $LN228@Insert@2:
 $LN17@Insert@2:
@@ -50485,10 +50485,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Insert@?$_Tree@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@std@@IAE?AViterator@12@_NPAU_Node@?$_Tree_nod@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@2@ABQAVFAutoVariableBase@@@Z$0:
-	lea	ecx, DWORD PTR $T249876[ebp]
+	lea	ecx, DWORD PTR $T249875[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Insert@?$_Tree@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@std@@IAE?AViterator@12@_NPAU_Node@?$_Tree_nod@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@2@ABQAVFAutoVariableBase@@@Z$2:
-	lea	ecx, DWORD PTR $T249875[ebp]
+	lea	ecx, DWORD PTR $T249874[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Insert@?$_Tree@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@std@@IAE?AViterator@12@_NPAU_Node@?$_Tree_nod@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@2@ABQAVFAutoVariableBase@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?_Insert@?$_Tree@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@std@@IAE?AViterator@12@_NPAU_Node@?$_Tree_nod@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@2@ABQAVFAutoVariableBase@@@Z
@@ -50525,7 +50525,7 @@ PUBLIC	?find@?$_Tree@V?$_Tmap_traits@IV?$basic_string@DU?$char_traits@D@std@@V?$
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?find@?$_Tree@V?$_Tmap_traits@IV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@I@2@V?$allocator@U?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@$0A@@std@@@std@@QAE?AViterator@12@ABI@Z
 _TEXT	SEGMENT
-$T250284 = -4						; size = 4
+$T250283 = -4						; size = 4
 ___$ReturnUdt$ = 8					; size = 4
 __Where$ = 12						; size = 4
 __Keyval$ = 12						; size = 4
@@ -50589,8 +50589,8 @@ $LN3@find:
 ; 981  : 				_Keyval, _Key(_Where._Mynode()))
 ; 982  : 					? end() : _Where);
 
-	mov	DWORD PTR $T250284[esp+8], eax
-	lea	eax, DWORD PTR $T250284[esp+8]
+	mov	DWORD PTR $T250283[esp+8], eax
+	lea	eax, DWORD PTR $T250283[esp+8]
 	mov	edx, DWORD PTR [eax]
 	mov	eax, DWORD PTR ___$ReturnUdt$[esp+4]
 	mov	DWORD PTR [eax], edx
@@ -50620,8 +50620,8 @@ __ehfuncinfo$?_Insert@?$_Tree@V?$_Tmap_traits@IV?$basic_string@DU?$char_traits@D
 xdata$x	ENDS
 ;	COMDAT ?_Insert@?$_Tree@V?$_Tmap_traits@IV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@I@2@V?$allocator@U?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@$0A@@std@@@std@@IAE?AViterator@12@_NPAU_Node@?$_Tree_nod@V?$_Tmap_traits@IV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@I@2@V?$allocator@U?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@$0A@@std@@@2@ABU?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@Z
 _TEXT	SEGMENT
-$T250446 = -80						; size = 28
-$T250445 = -52						; size = 40
+$T250445 = -80						; size = 28
+$T250444 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
 __Addleft$ = 12						; size = 1
@@ -50649,22 +50649,22 @@ __Val$ = 20						; size = 4
 ; 1189 : 			_THROW(length_error, "map/set<T> too long");
 
 	push	OFFSET ??_C@_0BE@JONHPENG@map?1set?$DMT?$DO?5too?5long?$AA@
-	lea	ecx, DWORD PTR $T250446[esp+88]
+	lea	ecx, DWORD PTR $T250445[esp+88]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T250445[esp+84]
+	lea	ecx, DWORD PTR $T250444[esp+84]
 	mov	DWORD PTR __$EHRec$[esp+92], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T250446[esp+84]
+	lea	eax, DWORD PTR $T250445[esp+84]
 	push	eax
-	lea	ecx, DWORD PTR $T250445[esp+100]
+	lea	ecx, DWORD PTR $T250444[esp+100]
 	mov	BYTE PTR __$EHRec$[esp+96], 1
-	mov	DWORD PTR $T250445[esp+88], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T250444[esp+88], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVlength_error@std@@
-	lea	ecx, DWORD PTR $T250445[esp+88]
+	lea	ecx, DWORD PTR $T250444[esp+88]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+100], 0
-	mov	DWORD PTR $T250445[esp+92], OFFSET ??_7length_error@std@@6B@
+	mov	DWORD PTR $T250444[esp+92], OFFSET ??_7length_error@std@@6B@
 	call	__CxxThrowException@8
 $LN228@Insert@3:
 $LN17@Insert@3:
@@ -50983,10 +50983,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Insert@?$_Tree@V?$_Tmap_traits@IV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@I@2@V?$allocator@U?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@$0A@@std@@@std@@IAE?AViterator@12@_NPAU_Node@?$_Tree_nod@V?$_Tmap_traits@IV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@I@2@V?$allocator@U?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@$0A@@std@@@2@ABU?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@Z$0:
-	lea	ecx, DWORD PTR $T250446[ebp]
+	lea	ecx, DWORD PTR $T250445[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Insert@?$_Tree@V?$_Tmap_traits@IV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@I@2@V?$allocator@U?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@$0A@@std@@@std@@IAE?AViterator@12@_NPAU_Node@?$_Tree_nod@V?$_Tmap_traits@IV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@I@2@V?$allocator@U?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@$0A@@std@@@2@ABU?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@Z$2:
-	lea	ecx, DWORD PTR $T250445[ebp]
+	lea	ecx, DWORD PTR $T250444[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Insert@?$_Tree@V?$_Tmap_traits@IV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@I@2@V?$allocator@U?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@$0A@@std@@@std@@IAE?AViterator@12@_NPAU_Node@?$_Tree_nod@V?$_Tmap_traits@IV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@I@2@V?$allocator@U?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@$0A@@std@@@2@ABU?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?_Insert@?$_Tree@V?$_Tmap_traits@IV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@I@2@V?$allocator@U?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@$0A@@std@@@std@@IAE?AViterator@12@_NPAU_Node@?$_Tree_nod@V?$_Tmap_traits@IV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@I@2@V?$allocator@U?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@$0A@@std@@@2@ABU?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@Z
@@ -51309,17 +51309,17 @@ __ehfuncinfo$?updateCenterUnit@CvPlot@@QAEXXZ DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?updateCenterUnit@CvPlot@@QAEXXZ
 _TEXT	SEGMENT
-$T251053 = -28						; size = 4
+$T251052 = -28						; size = 4
 _this$ = -28						; size = 4
-$T251063 = -24						; size = 4
-_pDllUnit$223237 = -24					; size = 4
-$T251060 = -24						; size = 4
-$T251057 = -24						; size = 4
-$T251054 = -24						; size = 4
-$T251061 = -20						; size = 8
-$T251059 = -20						; size = 8
-_hBestDefender$223212 = -20				; size = 8
-$T251056 = -20						; size = 8
+$T251062 = -24						; size = 4
+_pDllUnit$223236 = -24					; size = 4
+$T251059 = -24						; size = 4
+$T251056 = -24						; size = 4
+$T251053 = -24						; size = 4
+$T251060 = -20						; size = 8
+$T251058 = -20						; size = 8
+_hBestDefender$223211 = -20				; size = 8
+$T251055 = -20						; size = 8
 __$EHRec$ = -12						; size = 12
 ?updateCenterUnit@CvPlot@@QAEXXZ PROC			; CvPlot::updateCenterUnit, COMDAT
 ; _this$ = ecx
@@ -51374,7 +51374,7 @@ $LN145@updateCent:
 	sub	esp, 8
 	mov	eax, esp
 	mov	ecx, edi
-	mov	DWORD PTR $T251053[esp+52], esp
+	mov	DWORD PTR $T251052[esp+52], esp
 	mov	DWORD PTR [eax], 0
 	mov	BYTE PTR [eax+4], 0
 	call	?setCenterUnit@CvPlot@@QAEXV?$FObjectHandle@VCvUnit@@@@@Z ; CvPlot::setCenterUnit
@@ -51401,7 +51401,7 @@ $LN146@updateCent:
 	call	?getSelectedUnit@CvPlot@@QBEPBVCvUnit@@XZ ; CvPlot::getSelectedUnit
 	sub	esp, 8
 	mov	ecx, esp
-	mov	DWORD PTR $T251054[esp+52], esp
+	mov	DWORD PTR $T251053[esp+52], esp
 	mov	DWORD PTR [ecx], eax
 	mov	BYTE PTR [ecx+4], 0
 	test	eax, eax
@@ -51421,13 +51421,13 @@ $LN50@updateCent:
 ; 659  : 
 ; 660  : 	if(!getCenterUnit())
 
-	lea	ecx, DWORD PTR $T251056[esp+44]
+	lea	ecx, DWORD PTR $T251055[esp+44]
 	push	ecx
 	mov	ecx, edi
 	mov	ebp, eax
 	call	?getCenterUnit@CvPlot@@QAE?AV?$FObjectHandle@VCvUnit@@@@XZ ; CvPlot::getCenterUnit
 	cmp	DWORD PTR [eax], 0
-	mov	ecx, DWORD PTR $T251056[esp+44]
+	mov	ecx, DWORD PTR $T251055[esp+44]
 	sete	bl
 	test	ecx, ecx
 	je	SHORT $LN59@updateCent
@@ -51448,21 +51448,21 @@ $LN59@updateCent:
 	call	?getActivePlayer@CvGame@@QBE?AW4PlayerTypes@@XZ ; CvGame::getActivePlayer
 	push	eax
 	push	-1
-	lea	edx, DWORD PTR _hBestDefender$223212[esp+72]
+	lea	edx, DWORD PTR _hBestDefender$223211[esp+72]
 	push	edx
 	mov	ecx, edi
 	call	?getBestDefender@CvPlot@@QAE?AV?$FObjectHandle@VCvUnit@@@@W4PlayerTypes@@0PBVCvUnit@@_N222@Z ; CvPlot::getBestDefender
 
 ; 663  : 		if(hBestDefender && hBestDefender->getDomainType() != DOMAIN_AIR && !hBestDefender->isInvisible(eActiveTeam,false))
 
-	mov	ecx, DWORD PTR _hBestDefender$223212[esp+44]
+	mov	ecx, DWORD PTR _hBestDefender$223211[esp+44]
 	mov	DWORD PTR __$EHRec$[esp+52], 0
 	test	ecx, ecx
 	je	SHORT $LN147@updateCent
 	call	?getDomainType@CvUnit@@QBE?AW4DomainTypes@@XZ ; CvUnit::getDomainType
 	cmp	eax, 1
 	je	SHORT $LN144@updateCent
-	mov	ecx, DWORD PTR _hBestDefender$223212[esp+44]
+	mov	ecx, DWORD PTR _hBestDefender$223211[esp+44]
 	push	1
 	push	0
 	push	ebp
@@ -51473,15 +51473,15 @@ $LN59@updateCent:
 ; 664  : 			setCenterUnit(hBestDefender);
 
 	sub	esp, 8
-	lea	eax, DWORD PTR _hBestDefender$223212[esp+52]
+	lea	eax, DWORD PTR _hBestDefender$223211[esp+52]
 	mov	ecx, esp
-	mov	DWORD PTR $T251057[esp+52], esp
+	mov	DWORD PTR $T251056[esp+52], esp
 	push	eax
 	call	??0?$FObjectHandle@VCvUnit@@@@QAE@ABV0@@Z ; FObjectHandle<CvUnit>::FObjectHandle<CvUnit>
 	mov	ecx, edi
 	call	?setCenterUnit@CvPlot@@QAEXV?$FObjectHandle@VCvUnit@@@@@Z ; CvPlot::setCenterUnit
 $LN144@updateCent:
-	mov	ecx, DWORD PTR _hBestDefender$223212[esp+44]
+	mov	ecx, DWORD PTR _hBestDefender$223211[esp+44]
 $LN147@updateCent:
 
 ; 665  : 	}
@@ -51496,12 +51496,12 @@ $LN148@updateCent:
 ; 667  : 	// okay, all of the other checks failed - if there is any unit here, make it the center unit
 ; 668  : 	if(!getCenterUnit())
 
-	lea	ecx, DWORD PTR $T251059[esp+44]
+	lea	ecx, DWORD PTR $T251058[esp+44]
 	push	ecx
 	mov	ecx, edi
 	call	?getCenterUnit@CvPlot@@QAE?AV?$FObjectHandle@VCvUnit@@@@XZ ; CvPlot::getCenterUnit
 	cmp	DWORD PTR [eax], 0
-	mov	ecx, DWORD PTR $T251059[esp+44]
+	mov	ecx, DWORD PTR $T251058[esp+44]
 	sete	bl
 	test	ecx, ecx
 	je	SHORT $LN79@updateCent
@@ -51559,7 +51559,7 @@ $LN79@updateCent:
 
 	sub	esp, 8
 	mov	ecx, esp
-	mov	DWORD PTR $T251060[esp+52], esp
+	mov	DWORD PTR $T251059[esp+52], esp
 	push	esi
 	call	??0?$FObjectHandle@VCvUnit@@@@QAE@PAVCvUnit@@@Z ; FObjectHandle<CvUnit>::FObjectHandle<CvUnit>
 	mov	ecx, edi
@@ -51574,11 +51574,11 @@ $LN151@updateCent:
 ; 686  : 	CvUnit* pLoopUnit;
 ; 687  : 	CvUnit* pCenterUnit = getCenterUnit().pointer();
 
-	lea	edx, DWORD PTR $T251061[esp+44]
+	lea	edx, DWORD PTR $T251060[esp+44]
 	push	edx
 	mov	ecx, edi
 	call	?getCenterUnit@CvPlot@@QAE?AV?$FObjectHandle@VCvUnit@@@@XZ ; CvPlot::getCenterUnit
-	mov	ecx, DWORD PTR $T251061[esp+44]
+	mov	ecx, DWORD PTR $T251060[esp+44]
 	mov	ebx, DWORD PTR [eax]
 	test	ecx, ecx
 	je	SHORT $LN96@updateCent
@@ -51649,7 +51649,7 @@ $LN119@updateCent:
 	push	12					; 0000000cH
 	call	??2CvDllUnit@@SAPAXI@Z			; CvDllUnit::operator new
 	add	esp, 4
-	mov	DWORD PTR $T251063[esp+44], eax
+	mov	DWORD PTR $T251062[esp+44], eax
 	mov	DWORD PTR __$EHRec$[esp+52], 1
 	test	eax, eax
 	je	SHORT $LN15@updateCent
@@ -51661,7 +51661,7 @@ $LN119@updateCent:
 $LN15@updateCent:
 	xor	edi, edi
 $LN16@updateCent:
-	mov	DWORD PTR _pDllUnit$223237[esp+44], edi
+	mov	DWORD PTR _pDllUnit$223236[esp+44], edi
 
 ; 697  : 
 ; 698  : 			if(pCenterUnit == pLoopUnit)
@@ -51728,16 +51728,16 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?updateCenterUnit@CvPlot@@QAEXXZ$3:
-	lea	ecx, DWORD PTR _hBestDefender$223212[ebp]
+	lea	ecx, DWORD PTR _hBestDefender$223211[ebp]
 	jmp	??1?$FObjectHandle@VCvUnit@@@@QAE@XZ	; FObjectHandle<CvUnit>::~FObjectHandle<CvUnit>
 __unwindfunclet$?updateCenterUnit@CvPlot@@QAEXXZ$8:
-	mov	eax, DWORD PTR $T251063[ebp]
+	mov	eax, DWORD PTR $T251062[ebp]
 	push	eax
 	call	??3CvDllUnit@@SAXPAX@Z			; CvDllUnit::operator delete
 	pop	ecx
 	ret	0
 __unwindfunclet$?updateCenterUnit@CvPlot@@QAEXXZ$9:
-	lea	ecx, DWORD PTR _pDllUnit$223237[ebp]
+	lea	ecx, DWORD PTR _pDllUnit$223236[ebp]
 	jmp	??1?$auto_ptr@VICvUnit1@@@std@@QAE@XZ	; std::auto_ptr<ICvUnit1>::~auto_ptr<ICvUnit1>
 __ehhandler$?updateCenterUnit@CvPlot@@QAEXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?updateCenterUnit@CvPlot@@QAEXXZ
@@ -51768,7 +51768,7 @@ __ehfuncinfo$?verifyUnitValidPlot@CvPlot@@QAEXXZ DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?verifyUnitValidPlot@CvPlot@@QAEXXZ
 _TEXT	SEGMENT
-_iVectorLoop$223321 = -436				; size = 4
+_iVectorLoop$223320 = -436				; size = 4
 _iUnitListSize$ = -432					; size = 4
 _oldUnitList$ = -428					; size = 416
 __$EHRec$ = -12						; size = 12
@@ -51882,7 +51882,7 @@ $LN29@verifyUnit:
 	xor	ebx, ebx
 	mov	eax, ecx
 	mov	DWORD PTR _iUnitListSize$[esp+452], eax
-	mov	DWORD PTR _iVectorLoop$223321[esp+452], ebx
+	mov	DWORD PTR _iVectorLoop$223320[esp+452], ebx
 	test	ecx, ecx
 	jle	$LN26@verifyUnit
 	npad	1
@@ -52053,7 +52053,7 @@ $LN14@verifyUnit:
 	mov	ecx, esi
 	call	?kill@CvUnit@@QAEX_NW4PlayerTypes@@@Z	; CvUnit::kill
 $LN139@verifyUnit:
-	mov	ebx, DWORD PTR _iVectorLoop$223321[esp+452]
+	mov	ebx, DWORD PTR _iVectorLoop$223320[esp+452]
 $LN27@verifyUnit:
 
 ; 727  : 	}
@@ -52065,7 +52065,7 @@ $LN27@verifyUnit:
 	mov	edx, DWORD PTR _oldUnitList$[esp+452]
 	inc	ebx
 	cmp	ebx, eax
-	mov	DWORD PTR _iVectorLoop$223321[esp+452], ebx
+	mov	DWORD PTR _iVectorLoop$223320[esp+452], ebx
 	jl	$LL28@verifyUnit
 $LN26@verifyUnit:
 
@@ -52278,11 +52278,11 @@ EXTRN	?changeImprovementCount@CvPlayer@@QAEXW4ImprovementTypes@@H@Z:PROC ; CvPla
 ;	COMDAT ?setImprovementType@CvPlot@@QAEXW4ImprovementTypes@@W4PlayerTypes@@@Z
 _TEXT	SEGMENT
 _bGiftFromMajor$ = -17					; size = 1
-_owningPlayerID$225747 = -16				; size = 4
-_newImprovementEntry$225784 = -12			; size = 4
-_owningPlayer$225794 = -8				; size = 4
-_oldImprovementEntry$225749 = -8			; size = 4
-_owningPlayer$225840 = -4				; size = 4
+_owningPlayerID$225746 = -16				; size = 4
+_newImprovementEntry$225783 = -12			; size = 4
+_owningPlayer$225793 = -8				; size = 4
+_oldImprovementEntry$225748 = -8			; size = 4
+_owningPlayer$225839 = -4				; size = 4
 _eOldImprovement$ = -4					; size = 4
 _eNewValue$ = 8						; size = 4
 _eBuilder$ = 12						; size = 4
@@ -52349,7 +52349,7 @@ $LN73@setImprove:
 ; 6371 : 		PlayerTypes owningPlayerID = getOwner();
 
 	movsx	ecx, BYTE PTR [esi+4]
-	mov	DWORD PTR _owningPlayerID$225747[esp+36], ecx
+	mov	DWORD PTR _owningPlayerID$225746[esp+36], ecx
 
 ; 6372 : 		if(eOldImprovement != NO_IMPROVEMENT)
 
@@ -52369,7 +52369,7 @@ $LN73@setImprove:
 ; 6377 : 			if(oldImprovementEntry.GetCultureAdjacentSameType() > 0)
 
 	mov	ecx, eax
-	mov	DWORD PTR _oldImprovementEntry$225749[esp+36], eax
+	mov	DWORD PTR _oldImprovementEntry$225748[esp+36], eax
 	call	?GetCultureAdjacentSameType@CvImprovementEntry@@QBEHXZ ; CvImprovementEntry::GetCultureAdjacentSameType
 	test	eax, eax
 	jle	SHORT $LN67@setImprove
@@ -52440,13 +52440,13 @@ $LN603@setImprove:
 ; 6393 : 			// Someone owns this plot
 ; 6394 : 			if(owningPlayerID != NO_PLAYER)
 
-	cmp	DWORD PTR _owningPlayerID$225747[esp+36], -1
+	cmp	DWORD PTR _owningPlayerID$225746[esp+36], -1
 	je	$LN58@setImprove
 
 ; 6395 : 			{
 ; 6396 : 				CvPlayer& owningPlayer = GET_PLAYER(owningPlayerID);
 
-	mov	edi, DWORD PTR _owningPlayerID$225747[esp+36]
+	mov	edi, DWORD PTR _owningPlayerID$225746[esp+36]
 	mov	edx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	imul	edi, 63236				; 0000f704H
 
@@ -52501,7 +52501,7 @@ $LN63@setImprove:
 ; 6410 : 				PlayerTypes eOldBuilder = GetPlayerThatBuiltImprovement();
 ; 6411 : 				if(oldImprovementEntry.GetLuxuryCopiesSiphonedFromMinor() > 0 && eOldBuilder != NO_PLAYER)
 
-	mov	ebp, DWORD PTR _oldImprovementEntry$225749[esp+36]
+	mov	ebp, DWORD PTR _oldImprovementEntry$225748[esp+36]
 	movsx	edi, BYTE PTR [esi+443]
 	mov	ecx, ebp
 	call	?GetLuxuryCopiesSiphonedFromMinor@CvImprovementEntry@@QBEHXZ ; CvImprovementEntry::GetLuxuryCopiesSiphonedFromMinor
@@ -52527,7 +52527,7 @@ $LN63@setImprove:
 	call	?GetLuxuryCopiesSiphonedFromMinor@CvImprovementEntry@@QBEHXZ ; CvImprovementEntry::GetLuxuryCopiesSiphonedFromMinor
 	neg	eax
 	push	eax
-	mov	eax, DWORD PTR _owningPlayerID$225747[esp+40]
+	mov	eax, DWORD PTR _owningPlayerID$225746[esp+40]
 	push	eax
 	mov	ecx, edi
 	call	?changeSiphonLuxuryCount@CvPlayer@@QAEXW4PlayerTypes@@H@Z ; CvPlayer::changeSiphonLuxuryCount
@@ -52554,7 +52554,7 @@ $LL60@setImprove:
 ; 6422 : 				{
 ; 6423 : 					if(oldImprovementEntry.GetResourceQuantityRequirement(iResourceLoop) > 0)
 
-	mov	ecx, DWORD PTR _oldImprovementEntry$225749[esp+36]
+	mov	ecx, DWORD PTR _oldImprovementEntry$225748[esp+36]
 	push	edi
 	call	?GetResourceQuantityRequirement@CvImprovementEntry@@QBEHH@Z ; CvImprovementEntry::GetResourceQuantityRequirement
 	test	eax, eax
@@ -52563,7 +52563,7 @@ $LL60@setImprove:
 ; 6424 : 					{
 ; 6425 : 						owningPlayer.changeNumResourceUsed((ResourceTypes) iResourceLoop, -oldImprovementEntry.GetResourceQuantityRequirement(iResourceLoop));
 
-	mov	ecx, DWORD PTR _oldImprovementEntry$225749[esp+36]
+	mov	ecx, DWORD PTR _oldImprovementEntry$225748[esp+36]
 	push	edi
 	call	?GetResourceQuantityRequirement@CvImprovementEntry@@QBEHH@Z ; CvImprovementEntry::GetResourceQuantityRequirement
 	neg	eax
@@ -52746,7 +52746,7 @@ $LN51@setImprove:
 ; 6487 : 			if(newImprovementEntry.GetCultureAdjacentSameType() > 0)
 
 	mov	ecx, eax
-	mov	DWORD PTR _newImprovementEntry$225784[esp+36], eax
+	mov	DWORD PTR _newImprovementEntry$225783[esp+36], eax
 	call	?GetCultureAdjacentSameType@CvImprovementEntry@@QBEHXZ ; CvImprovementEntry::GetCultureAdjacentSameType
 	test	eax, eax
 	jle	SHORT $LN43@setImprove
@@ -52822,7 +52822,7 @@ $LN41@setImprove:
 ; 6504 : 			{
 ; 6505 : 				CvPlayer& owningPlayer = GET_PLAYER(owningPlayerID);
 
-	mov	ebp, DWORD PTR _owningPlayerID$225747[esp+36]
+	mov	ebp, DWORD PTR _owningPlayerID$225746[esp+36]
 	mov	eax, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	mov	edi, ebp
 	imul	edi, 63236				; 0000f704H
@@ -52832,7 +52832,7 @@ $LN41@setImprove:
 	push	1
 	lea	ecx, DWORD PTR [edi+eax]
 	push	ebx
-	mov	DWORD PTR _owningPlayer$225794[esp+44], ecx
+	mov	DWORD PTR _owningPlayer$225793[esp+44], ecx
 	call	?changeImprovementCount@CvPlayer@@QAEXW4ImprovementTypes@@H@Z ; CvPlayer::changeImprovementCount
 
 ; 6507 : 
@@ -52844,11 +52844,11 @@ $LN41@setImprove:
 	mov	ebx, DWORD PTR __imp__strncmp
 	cmp	ebp, eax
 	jne	SHORT $LN38@setImprove
-	mov	ecx, DWORD PTR _newImprovementEntry$225784[esp+36]
+	mov	ecx, DWORD PTR _newImprovementEntry$225783[esp+36]
 	add	ecx, 176				; 000000b0H
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	64					; 00000040H
-	push	OFFSET $SG225796
+	push	OFFSET $SG225795
 	push	eax
 	call	ebx
 	add	esp, 12					; 0000000cH
@@ -52905,11 +52905,11 @@ $LN38@setImprove:
 	call	?isLocalPlayer@CvPlayer@@QBE_NXZ	; CvPlayer::isLocalPlayer
 	test	al, al
 	je	SHORT $LN34@setImprove
-	mov	ecx, DWORD PTR _newImprovementEntry$225784[esp+36]
+	mov	ecx, DWORD PTR _newImprovementEntry$225783[esp+36]
 	add	ecx, 176				; 000000b0H
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	64					; 00000040H
-	push	OFFSET $SG225800
+	push	OFFSET $SG225799
 	push	eax
 	call	ebx
 	add	esp, 12					; 0000000cH
@@ -52919,7 +52919,7 @@ $LN38@setImprove:
 ; 6522 : 					{
 ; 6523 : 						if (owningPlayer.isMinorCiv())
 
-	mov	ebx, DWORD PTR _owningPlayer$225794[esp+36]
+	mov	ebx, DWORD PTR _owningPlayer$225793[esp+36]
 	mov	ecx, ebx
 	call	?isMinorCiv@CvPlayer@@QBE_NXZ		; CvPlayer::isMinorCiv
 	test	al, al
@@ -52971,7 +52971,7 @@ $LN207@setImprove:
 ; 6537 : 					GET_PLAYER(owningPlayerID).GetTreasury()->ChangeBaseImprovementGoldMaintenance(newImprovementEntry.GetGoldMaintenance());
 
 	mov	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
-	mov	ebp, DWORD PTR _newImprovementEntry$225784[esp+36]
+	mov	ebp, DWORD PTR _newImprovementEntry$225783[esp+36]
 	add	edi, ecx
 	mov	ecx, ebp
 	call	?GetGoldMaintenance@CvImprovementEntry@@QBEHXZ ; CvImprovementEntry::GetGoldMaintenance
@@ -52982,7 +52982,7 @@ $LN207@setImprove:
 	call	?ChangeBaseImprovementGoldMaintenance@CvTreasury@@QAEXH@Z ; CvTreasury::ChangeBaseImprovementGoldMaintenance
 	jmp	SHORT $LN33@setImprove
 $LN607@setImprove:
-	mov	ebp, DWORD PTR _newImprovementEntry$225784[esp+36]
+	mov	ebp, DWORD PTR _newImprovementEntry$225783[esp+36]
 $LN33@setImprove:
 
 ; 6538 : 				}
@@ -53001,7 +53001,7 @@ $LN33@setImprove:
 ; 6542 : 				{
 ; 6543 : 					if (owningPlayer.isMinorCiv())
 
-	mov	ecx, DWORD PTR _owningPlayer$225794[esp+36]
+	mov	ecx, DWORD PTR _owningPlayer$225793[esp+36]
 	call	?isMinorCiv@CvPlayer@@QBE_NXZ		; CvPlayer::isMinorCiv
 	test	al, al
 	je	SHORT $LN610@setImprove
@@ -53014,7 +53014,7 @@ $LN33@setImprove:
 	add	edi, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	mov	ecx, ebp
 	call	?GetLuxuryCopiesSiphonedFromMinor@CvImprovementEntry@@QBEHXZ ; CvImprovementEntry::GetLuxuryCopiesSiphonedFromMinor
-	mov	edx, DWORD PTR _owningPlayerID$225747[esp+36]
+	mov	edx, DWORD PTR _owningPlayerID$225746[esp+36]
 	push	eax
 	push	edx
 	mov	ecx, edi
@@ -53127,13 +53127,13 @@ $LN27@setImprove:
 ; 6564 : 						{
 ; 6565 : 							owningPlayer.changeNumResourceTotal(getResourceType(), getNumResourceForPlayer(owningPlayerID));
 
-	mov	eax, DWORD PTR _owningPlayerID$225747[esp+36]
+	mov	eax, DWORD PTR _owningPlayerID$225746[esp+36]
 	movsx	edi, BYTE PTR [esi+440]
 	push	0
 	push	eax
 	mov	ecx, esi
 	call	?getNumResourceForPlayer@CvPlot@@QBEHW4PlayerTypes@@@Z ; CvPlot::getNumResourceForPlayer
-	mov	ecx, DWORD PTR _owningPlayer$225794[esp+40]
+	mov	ecx, DWORD PTR _owningPlayer$225793[esp+40]
 	push	eax
 	push	edi
 	call	?changeNumResourceTotal@CvPlayer@@QAEXW4ResourceTypes@@H_N@Z ; CvPlayer::changeNumResourceTotal
@@ -53214,7 +53214,7 @@ $LN385@setImprove:
 ; 6579 : 				{
 ; 6580 : 					if(newImprovementEntry.IsImprovementResourceTrade(eResource))
 
-	mov	ecx, DWORD PTR _newImprovementEntry$225784[esp+36]
+	mov	ecx, DWORD PTR _newImprovementEntry$225783[esp+36]
 	push	edi
 	call	?IsImprovementResourceTrade@CvImprovementEntry@@QBE_NH@Z ; CvImprovementEntry::IsImprovementResourceTrade
 	test	al, al
@@ -53234,7 +53234,7 @@ $LN385@setImprove:
 ; 6583 : 						{
 ; 6584 : 							owningPlayer.DoUpdateHappiness();
 
-	mov	ecx, DWORD PTR _owningPlayer$225794[esp+36]
+	mov	ecx, DWORD PTR _owningPlayer$225793[esp+36]
 	call	?DoUpdateHappiness@CvPlayer@@QAEXXZ	; CvPlayer::DoUpdateHappiness
 $LN605@setImprove:
 
@@ -53279,7 +53279,7 @@ $LN600@setImprove:
 ; 6598 : 			{
 ; 6599 : 				CvPlayer& owningPlayer = GET_PLAYER(owningPlayerID);
 
-	mov	ebx, DWORD PTR _owningPlayerID$225747[esp+36]
+	mov	ebx, DWORD PTR _owningPlayerID$225746[esp+36]
 	mov	edi, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	imul	ebx, 63236				; 0000f704H
 
@@ -53389,7 +53389,7 @@ $LN14@setImprove:
 ; 6616 : 						{
 ; 6617 : 							owningPlayer.changeNumResourceTotal(getResourceType(), -getNumResourceForPlayer(owningPlayerID));
 
-	mov	eax, DWORD PTR _owningPlayerID$225747[esp+36]
+	mov	eax, DWORD PTR _owningPlayerID$225746[esp+36]
 	movsx	edi, BYTE PTR [esi+440]
 	push	0
 	push	eax
@@ -53521,7 +53521,7 @@ $LN8@setImprove:
 ; 6648 : 		{
 ; 6649 : 			CvPlayer& owningPlayer = GET_PLAYER(owningPlayerID);
 
-	mov	eax, DWORD PTR _owningPlayerID$225747[esp+36]
+	mov	eax, DWORD PTR _owningPlayerID$225746[esp+36]
 
 ; 6650 : 			CvImprovementEntry& newImprovementEntry = *GC.getImprovementInfo(eNewValue);
 
@@ -53530,7 +53530,7 @@ $LN8@setImprove:
 	add	eax, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	push	edx
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	mov	DWORD PTR _owningPlayer$225840[esp+40], eax
+	mov	DWORD PTR _owningPlayer$225839[esp+40], eax
 	call	?getImprovementInfo@CvGlobals@@QAEPAVCvImprovementEntry@@W4ImprovementTypes@@@Z ; CvGlobals::getImprovementInfo
 
 ; 6651 : 			int iNumResourceInfos = GC.getNumResourceInfos();
@@ -53562,7 +53562,7 @@ $LL6@setImprove:
 	push	edi
 	mov	ecx, ebx
 	call	?GetResourceQuantityRequirement@CvImprovementEntry@@QBEHH@Z ; CvImprovementEntry::GetResourceQuantityRequirement
-	mov	ecx, DWORD PTR _owningPlayer$225840[esp+36]
+	mov	ecx, DWORD PTR _owningPlayer$225839[esp+36]
 	push	eax
 	push	edi
 	call	?changeNumResourceUsed@CvPlayer@@QAEXW4ResourceTypes@@H@Z ; CvPlayer::changeNumResourceUsed
@@ -53693,36 +53693,36 @@ __unwindtable$?setRevealed@CvPlot@@QAE_NW4TeamTypes@@_N10@Z DD 0ffffffffH
 xdata$x	ENDS
 ;	COMDAT ?setRevealed@CvPlot@@QAE_NW4TeamTypes@@_N10@Z
 _TEXT	SEGMENT
-_bImprovementVisibilityChanged$226816 = -1059		; size = 1
-_bEligibleForAchievement$226654 = -1059			; size = 1
-$T253660 = -1058					; size = 1
-_bFirstFinder$226693 = -1058				; size = 1
-_bResult$226664 = -1058					; size = 1
+_bImprovementVisibilityChanged$226815 = -1059		; size = 1
+_bEligibleForAchievement$226653 = -1059			; size = 1
+$T253659 = -1058					; size = 1
+_bFirstFinder$226692 = -1058				; size = 1
+_bResult$226663 = -1058					; size = 1
 _bVisbilityUpdated$ = -1057				; size = 1
-_iFinderFaith$226692 = -1056				; size = 4
-_args$226663 = -1056					; size = 4
+_iFinderFaith$226691 = -1056				; size = 4
+_args$226662 = -1056					; size = 4
 tv2696 = -1052						; size = 4
-_iFinderGold$226691 = -1052				; size = 4
+_iFinderGold$226690 = -1052				; size = 4
 _eActiveTeam$ = -1048					; size = 4
-_iFaithPerTeamMember$226755 = -1044			; size = 4
-_iGoldPerTeamMember$226736 = -1044			; size = 4
-$T252892 = -1040					; size = 4
-_pDllPlot$226788 = -1040				; size = 4
-_fDelay$226766 = -1040					; size = 4
-_fDelay$226747 = -1040					; size = 4
+_iFaithPerTeamMember$226754 = -1044			; size = 4
+_iGoldPerTeamMember$226735 = -1044			; size = 4
+$T252891 = -1040					; size = 4
+_pDllPlot$226787 = -1040				; size = 4
+_fDelay$226765 = -1040					; size = 4
+_fDelay$226746 = -1040					; size = 4
 tv1807 = -1036						; size = 4
-_kTeam$226694 = -1036					; size = 4
+_kTeam$226693 = -1036					; size = 4
 _pCity$ = -1032						; size = 4
 _pInterface$ = -1028					; size = 4
 tv1770 = -1024						; size = 4
-_strSummary$226798 = -1020				; size = 28
-_strFeatureType$226777 = -1020				; size = 28
-_strBuffer$226795 = -992				; size = 28
-_strText$226666 = -964					; size = 80
-_strSummary$226675 = -884				; size = 80
-_text$226765 = -804					; size = 256
-_text$226746 = -804					; size = 256
-_kPopupInfo$226771 = -548				; size = 536
+_strSummary$226797 = -1020				; size = 28
+_strFeatureType$226776 = -1020				; size = 28
+_strBuffer$226794 = -992				; size = 28
+_strText$226665 = -964					; size = 80
+_strSummary$226674 = -884				; size = 80
+_text$226764 = -804					; size = 256
+_text$226745 = -804					; size = 256
+_kPopupInfo$226770 = -548				; size = 536
 __$EHRec$ = -12						; size = 12
 _eTeam$ = 8						; size = 4
 _bNewValue$ = 12					; size = 1
@@ -53823,11 +53823,11 @@ $LN114@setReveale@4:
 	je	SHORT $LN101@setReveale@4
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?isGameMultiPlayer@CvGame@@QBE_NXZ	; CvGame::isGameMultiPlayer
-	mov	BYTE PTR _bEligibleForAchievement$226654[esp+1076], 1
+	mov	BYTE PTR _bEligibleForAchievement$226653[esp+1076], 1
 	test	al, al
 	je	SHORT $LN102@setReveale@4
 $LN101@setReveale@4:
-	mov	BYTE PTR _bEligibleForAchievement$226654[esp+1076], 0
+	mov	BYTE PTR _bEligibleForAchievement$226653[esp+1076], 0
 $LN102@setReveale@4:
 
 ; 8721 : 
@@ -53925,12 +53925,12 @@ $LN97@setReveale@4:
 ; 8740 : 					{
 ; 8741 : 						CvLuaArgsHandle args;
 
-	lea	ecx, DWORD PTR _args$226663[esp+1076]
+	lea	ecx, DWORD PTR _args$226662[esp+1076]
 	call	??0CvLuaArgsHandle@@QAE@XZ		; CvLuaArgsHandle::CvLuaArgsHandle
 
 ; 8742 : 						args->Push(eTeam);
 
-	mov	ecx, DWORD PTR _args$226663[esp+1076]
+	mov	ecx, DWORD PTR _args$226662[esp+1076]
 	mov	edx, DWORD PTR [ecx]
 	mov	eax, DWORD PTR [edx+8]
 	push	ebx
@@ -53940,7 +53940,7 @@ $LN97@setReveale@4:
 ; 8743 : 						args->Push(getFeatureType());
 
 	mov	al, BYTE PTR [esi+432]
-	mov	ecx, DWORD PTR _args$226663[esp+1076]
+	mov	ecx, DWORD PTR _args$226662[esp+1076]
 	mov	edx, DWORD PTR [ecx]
 	mov	edx, DWORD PTR [edx+8]
 	movsx	eax, al
@@ -53949,7 +53949,7 @@ $LN97@setReveale@4:
 
 ; 8744 : 						args->Push(getX());
 
-	mov	ecx, DWORD PTR _args$226663[esp+1076]
+	mov	ecx, DWORD PTR _args$226662[esp+1076]
 	movsx	edx, WORD PTR [esi]
 	mov	eax, DWORD PTR [ecx]
 	mov	eax, DWORD PTR [eax+8]
@@ -53958,7 +53958,7 @@ $LN97@setReveale@4:
 
 ; 8745 : 						args->Push(getY());
 
-	mov	ecx, DWORD PTR _args$226663[esp+1076]
+	mov	ecx, DWORD PTR _args$226662[esp+1076]
 	movsx	eax, WORD PTR [esi+2]
 	mov	edx, DWORD PTR [ecx]
 	mov	edx, DWORD PTR [edx+8]
@@ -53968,7 +53968,7 @@ $LN97@setReveale@4:
 ; 8746 : 						args->Push((getNumMajorCivsRevealed() == 0)); // bFirst
 
 	cmp	BYTE PTR [esi+454], 0
-	mov	ecx, DWORD PTR _args$226663[esp+1076]
+	mov	ecx, DWORD PTR _args$226662[esp+1076]
 	mov	eax, DWORD PTR [ecx]
 	mov	eax, DWORD PTR [eax+16]
 	sete	dl
@@ -53980,19 +53980,19 @@ $LN97@setReveale@4:
 ; 8748 : 						bool bResult = false;
 ; 8749 : 						LuaSupport::CallHook(pkScriptSystem, "NaturalWonderDiscovered", args.get(), bResult);
 
-	mov	edx, DWORD PTR _args$226663[esp+1076]
-	lea	ecx, DWORD PTR _bResult$226664[esp+1076]
+	mov	edx, DWORD PTR _args$226662[esp+1076]
+	lea	ecx, DWORD PTR _bResult$226663[esp+1076]
 	push	ecx
 	push	edx
-	push	OFFSET $SG226665
+	push	OFFSET $SG226664
 	push	ebp
-	mov	BYTE PTR _bResult$226664[esp+1092], 0
+	mov	BYTE PTR _bResult$226663[esp+1092], 0
 	call	?CallHook@LuaSupport@@YA_NPAVICvEngineScriptSystem1@@PBDPAVICvEngineScriptSystemArgs1@@AA_N@Z ; LuaSupport::CallHook
 	add	esp, 16					; 00000010H
 
 ; 8750 : 					}
 
-	lea	ecx, DWORD PTR _args$226663[esp+1076]
+	lea	ecx, DWORD PTR _args$226662[esp+1076]
 	mov	DWORD PTR __$EHRec$[esp+1084], -1
 	call	??1CvLuaArgsHandle@@QAE@XZ		; CvLuaArgsHandle::~CvLuaArgsHandle
 $LN93@setReveale@4:
@@ -54001,8 +54001,8 @@ $LN93@setReveale@4:
 ; 8752 : 					Localization::String strText = Localization::Lookup("TXT_KEY_NOTIFICATION_FOUND_NATURAL_WONDER");
 
 	mov	ebp, DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
-	lea	eax, DWORD PTR _strText$226666[esp+1076]
-	push	OFFSET $SG226668
+	lea	eax, DWORD PTR _strText$226665[esp+1076]
+	push	OFFSET $SG226667
 	push	eax
 	call	ebp
 	add	esp, 8
@@ -54010,7 +54010,7 @@ $LN93@setReveale@4:
 ; 8753 : 					strText << iNumNaturalWondersLeft;
 
 	push	edi
-	lea	ecx, DWORD PTR _strText$226666[esp+1080]
+	lea	ecx, DWORD PTR _strText$226665[esp+1080]
 	mov	DWORD PTR __$EHRec$[esp+1088], 1
 	call	DWORD PTR __imp_?PushArgument@String@Localization@@QAE_NH@Z
 
@@ -54023,13 +54023,13 @@ $LN93@setReveale@4:
 	mov	ecx, eax
 	call	?GetTextKey@CvBaseInfo@@QBEPBDXZ	; CvBaseInfo::GetTextKey
 	push	eax
-	lea	ecx, DWORD PTR _strText$226666[esp+1080]
+	lea	ecx, DWORD PTR _strText$226665[esp+1080]
 	call	DWORD PTR __imp_?PushArgument@String@Localization@@QAE_NPBD@Z
 
 ; 8755 : 					Localization::String strSummary = Localization::Lookup("TXT_KEY_NOTIFICATION_SUMMARY_FOUND_NATURAL_WONDER");
 
-	lea	edx, DWORD PTR _strSummary$226675[esp+1076]
-	push	OFFSET $SG226677
+	lea	edx, DWORD PTR _strSummary$226674[esp+1076]
+	push	OFFSET $SG226676
 	push	edx
 	call	ebp
 	add	esp, 8
@@ -54148,10 +54148,10 @@ $LN568@setReveale@4:
 	push	eax
 	push	ecx
 	push	edx
-	lea	ecx, DWORD PTR _strSummary$226675[esp+1092]
+	lea	ecx, DWORD PTR _strSummary$226674[esp+1092]
 	call	ebp
 	push	eax
-	lea	ecx, DWORD PTR _strText$226666[esp+1096]
+	lea	ecx, DWORD PTR _strText$226665[esp+1096]
 	call	ebp
 	push	eax
 	push	-1753116946				; 97818eeeH
@@ -54181,10 +54181,10 @@ $LN91@setReveale@4:
 ; 8798 : 					if(!kTeam.isMinorCiv() && !kTeam.isBarbarian() && !kTeam.isObserver())
 
 	mov	ecx, edi
-	mov	DWORD PTR _iFinderGold$226691[esp+1076], ebx
-	mov	DWORD PTR _iFinderFaith$226692[esp+1076], ebx
-	mov	BYTE PTR _bFirstFinder$226693[esp+1076], bl
-	mov	DWORD PTR _kTeam$226694[esp+1076], edi
+	mov	DWORD PTR _iFinderGold$226690[esp+1076], ebx
+	mov	DWORD PTR _iFinderFaith$226691[esp+1076], ebx
+	mov	BYTE PTR _bFirstFinder$226692[esp+1076], bl
+	mov	DWORD PTR _kTeam$226693[esp+1076], edi
 	call	?isMinorCiv@CvTeam@@QBE_NXZ		; CvTeam::isMinorCiv
 	test	al, al
 	jne	$LN45@setReveale@4
@@ -54214,7 +54214,7 @@ $LN91@setReveale@4:
 	push	eax
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	mov	BYTE PTR [esi+454], 1
-	mov	BYTE PTR _bFirstFinder$226693[esp+1080], 1
+	mov	BYTE PTR _bFirstFinder$226692[esp+1080], 1
 	call	?getFeatureInfo@CvGlobals@@QAEPAVCvFeatureInfo@@W4FeatureTypes@@@Z ; CvGlobals::getFeatureInfo
 	mov	ecx, eax
 	call	?getFirstFinderGold@CvFeatureInfo@@QBEHXZ ; CvFeatureInfo::getFirstFinderGold
@@ -54255,7 +54255,7 @@ $LN80@setReveale@4:
 	add	ebp, 63236				; 0000f704H
 	cmp	ebp, 1391192				; 00153a58H
 	jl	SHORT $LL81@setReveale@4
-	mov	DWORD PTR _iFinderGold$226691[esp+1076], ebx
+	mov	DWORD PTR _iFinderGold$226690[esp+1076], ebx
 
 ; 8817 : 									}
 ; 8818 : 								}
@@ -54301,7 +54301,7 @@ $LN258@setReveale@4:
 
 	call	?GetPlayerTraits@CvPlayer@@QBEPAVCvPlayerTraits@@XZ ; CvPlayer::GetPlayerTraits
 	mov	eax, DWORD PTR [eax+216]
-	add	DWORD PTR _iFinderFaith$226692[esp+1076], eax
+	add	DWORD PTR _iFinderFaith$226691[esp+1076], eax
 $LN75@setReveale@4:
 	add	edi, 63236				; 0000f704H
 	cmp	edi, 1391192				; 00153a58H
@@ -54355,7 +54355,7 @@ $LN69@setReveale@4:
 	add	ebp, 63236				; 0000f704H
 	cmp	ebp, 1391192				; 00153a58H
 	jl	SHORT $LL70@setReveale@4
-	mov	DWORD PTR _iFinderGold$226691[esp+1076], ebx
+	mov	DWORD PTR _iFinderGold$226690[esp+1076], ebx
 
 ; 8848 : 
 ; 8849 : 									}
@@ -54403,7 +54403,7 @@ $LN283@setReveale@4:
 
 	call	?GetPlayerTraits@CvPlayer@@QBEPAVCvPlayerTraits@@XZ ; CvPlayer::GetPlayerTraits
 	mov	eax, DWORD PTR [eax+220]
-	add	DWORD PTR _iFinderFaith$226692[esp+1076], eax
+	add	DWORD PTR _iFinderFaith$226691[esp+1076], eax
 $LN64@setReveale@4:
 	add	edi, 63236				; 0000f704H
 	cmp	edi, 1391192				; 00153a58H
@@ -54426,7 +54426,7 @@ $LN63@setReveale@4:
 ; 8873 : 							const int iStandardHandicap = GC.getInfoTypeForString("HANDICAP_PRINCE");
 
 	push	0
-	push	OFFSET $SG226730
+	push	OFFSET $SG226729
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getInfoTypeForString@CvGlobals@@QBEHPBD_N@Z ; CvGlobals::getInfoTypeForString
 
@@ -54466,7 +54466,7 @@ $LN63@setReveale@4:
 	cdq
 	idiv	ecx
 	mov	ebx, eax
-	mov	DWORD PTR _iFinderGold$226691[esp+1076], ebx
+	mov	DWORD PTR _iFinderGold$226690[esp+1076], ebx
 $LN58@setReveale@4:
 
 ; 8881 : 								}
@@ -54485,9 +54485,9 @@ $LN58@setReveale@4:
 ; 8890 : 
 ; 8891 : 							if(kTeam.getNumMembers() > 0)
 
-	mov	edi, DWORD PTR _kTeam$226694[esp+1076]
+	mov	edi, DWORD PTR _kTeam$226693[esp+1076]
 	mov	ecx, edi
-	mov	DWORD PTR _iGoldPerTeamMember$226736[esp+1076], ebx
+	mov	DWORD PTR _iGoldPerTeamMember$226735[esp+1076], ebx
 	call	?getNumMembers@CvTeam@@QBEHXZ		; CvTeam::getNumMembers
 	test	eax, eax
 	jle	SHORT $LN56@setReveale@4
@@ -54501,7 +54501,7 @@ $LN58@setReveale@4:
 	mov	eax, ebx
 	cdq
 	idiv	ecx
-	mov	DWORD PTR _iGoldPerTeamMember$226736[esp+1076], eax
+	mov	DWORD PTR _iGoldPerTeamMember$226735[esp+1076], eax
 $LN56@setReveale@4:
 
 ; 8894 : 							}
@@ -54543,7 +54543,7 @@ $LN302@setReveale@4:
 ; 8902 : 									{
 ; 8903 : 										playerI.GetTreasury()->ChangeGold(iGoldPerTeamMember);
 
-	mov	eax, DWORD PTR _iGoldPerTeamMember$226736[esp+1076]
+	mov	eax, DWORD PTR _iGoldPerTeamMember$226735[esp+1076]
 	push	eax
 	call	?GetTreasury@CvPlayer@@QBEPAVCvTreasury@@XZ ; CvPlayer::GetTreasury
 	mov	ecx, eax
@@ -54562,7 +54562,7 @@ $LN51@setReveale@4:
 ; 8909 : 									char text[256] = {0};
 
 	push	255					; 000000ffH
-	lea	ecx, DWORD PTR _text$226746[esp+1081]
+	lea	ecx, DWORD PTR _text$226745[esp+1081]
 	push	0
 	push	ecx
 	call	_memset
@@ -54576,22 +54576,22 @@ $LN51@setReveale@4:
 ; 8912 : 									sprintf_s(text, "[COLOR_YELLOW]+%d[ENDCOLOR][ICON_GOLD]", iFinderGold);
 
 	push	ebx
-	lea	edx, DWORD PTR _text$226746[esp+1092]
-	push	OFFSET $SG226753
+	lea	edx, DWORD PTR _text$226745[esp+1092]
+	push	OFFSET $SG226752
 	push	edx
-	fstp	DWORD PTR _fDelay$226747[esp+1100]
-	mov	BYTE PTR _text$226746[esp+1100], 0
+	fstp	DWORD PTR _fDelay$226746[esp+1100]
+	mov	BYTE PTR _text$226745[esp+1100], 0
 	call	??$sprintf_s@$0BAA@@@YAHAAY0BAA@DPBDZZ	; sprintf_s<256>
 
 ; 8913 : 									GC.GetEngineUserInterface()->AddPopupText(getX(), getY(), text, fDelay);
 
-	mov	edx, DWORD PTR _fDelay$226747[esp+1100]
+	mov	edx, DWORD PTR _fDelay$226746[esp+1100]
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8600
 	mov	eax, DWORD PTR [ecx]
 	mov	eax, DWORD PTR [eax+184]
 	add	esp, 20					; 00000014H
 	mov	DWORD PTR [esp], edx
-	lea	edx, DWORD PTR _text$226746[esp+1080]
+	lea	edx, DWORD PTR _text$226745[esp+1080]
 	push	edx
 	movsx	edx, WORD PTR [esi+2]
 	push	edx
@@ -54611,7 +54611,7 @@ $LN562@setReveale@4:
 ; 8918 : 						//EAP: Now do it for Faith too!
 ; 8919 : 						if(iFinderFaith > 0)
 
-	cmp	DWORD PTR _iFinderFaith$226692[esp+1076], 0
+	cmp	DWORD PTR _iFinderFaith$226691[esp+1076], 0
 	jle	$LN45@setReveale@4
 
 ; 8920 : 						{
@@ -54620,10 +54620,10 @@ $LN562@setReveale@4:
 ; 8923 : 
 ; 8924 : 							if(kTeam.getNumMembers() > 0)
 
-	mov	edi, DWORD PTR _kTeam$226694[esp+1076]
-	mov	ebx, DWORD PTR _iFinderFaith$226692[esp+1076]
+	mov	edi, DWORD PTR _kTeam$226693[esp+1076]
+	mov	ebx, DWORD PTR _iFinderFaith$226691[esp+1076]
 	mov	ecx, edi
-	mov	DWORD PTR _iFaithPerTeamMember$226755[esp+1076], ebx
+	mov	DWORD PTR _iFaithPerTeamMember$226754[esp+1076], ebx
 	call	?getNumMembers@CvTeam@@QBEHXZ		; CvTeam::getNumMembers
 	test	eax, eax
 	jle	SHORT $LN48@setReveale@4
@@ -54637,7 +54637,7 @@ $LN562@setReveale@4:
 	mov	eax, ebx
 	cdq
 	idiv	ecx
-	mov	DWORD PTR _iFaithPerTeamMember$226755[esp+1076], eax
+	mov	DWORD PTR _iFaithPerTeamMember$226754[esp+1076], eax
 $LN48@setReveale@4:
 
 ; 8927 : 							}
@@ -54678,7 +54678,7 @@ $LN325@setReveale@4:
 ; 8935 : 									{
 ; 8936 : 										playerI.ChangeFaith(iFaithPerTeamMember);
 
-	mov	eax, DWORD PTR _iFaithPerTeamMember$226755[esp+1076]
+	mov	eax, DWORD PTR _iFaithPerTeamMember$226754[esp+1076]
 	push	eax
 	call	?ChangeFaith@CvPlayer@@QAEXH@Z		; CvPlayer::ChangeFaith
 $LN43@setReveale@4:
@@ -54695,7 +54695,7 @@ $LN43@setReveale@4:
 ; 8942 : 									char text[256] = {0};
 
 	push	255					; 000000ffH
-	lea	ecx, DWORD PTR _text$226765[esp+1081]
+	lea	ecx, DWORD PTR _text$226764[esp+1081]
 	push	0
 	push	ecx
 	call	_memset
@@ -54709,22 +54709,22 @@ $LN43@setReveale@4:
 ; 8945 : 									sprintf_s(text, "[COLOR_WHITE]+%d[ENDCOLOR][ICON_PEACE]", iFinderFaith);
 
 	push	ebx
-	lea	edx, DWORD PTR _text$226765[esp+1092]
-	push	OFFSET $SG226767
+	lea	edx, DWORD PTR _text$226764[esp+1092]
+	push	OFFSET $SG226766
 	push	edx
-	fstp	DWORD PTR _fDelay$226766[esp+1100]
-	mov	BYTE PTR _text$226765[esp+1100], 0
+	fstp	DWORD PTR _fDelay$226765[esp+1100]
+	mov	BYTE PTR _text$226764[esp+1100], 0
 	call	??$sprintf_s@$0BAA@@@YAHAAY0BAA@DPBDZZ	; sprintf_s<256>
 
 ; 8946 : 									GC.GetEngineUserInterface()->AddPopupText(getX(), getY(), text, fDelay);
 
-	mov	edx, DWORD PTR _fDelay$226766[esp+1100]
+	mov	edx, DWORD PTR _fDelay$226765[esp+1100]
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8600
 	mov	eax, DWORD PTR [ecx]
 	mov	eax, DWORD PTR [eax+184]
 	add	esp, 20					; 00000014H
 	mov	DWORD PTR [esp], edx
-	lea	edx, DWORD PTR _text$226765[esp+1080]
+	lea	edx, DWORD PTR _text$226764[esp+1080]
 	push	edx
 	movsx	edx, WORD PTR [esi+2]
 	push	edx
@@ -54778,24 +54778,24 @@ $LN45@setReveale@4:
 
 	movsx	eax, WORD PTR [esi+2]
 	movsx	ecx, WORD PTR [esi]
-	mov	edx, DWORD PTR _iFinderGold$226691[esp+1076]
-	mov	DWORD PTR _kPopupInfo$226771[esp+1080], eax
-	mov	al, BYTE PTR _bFirstFinder$226693[esp+1076]
-	mov	DWORD PTR _kPopupInfo$226771[esp+1076], ecx
+	mov	edx, DWORD PTR _iFinderGold$226690[esp+1076]
+	mov	DWORD PTR _kPopupInfo$226770[esp+1080], eax
+	mov	al, BYTE PTR _bFirstFinder$226692[esp+1076]
+	mov	DWORD PTR _kPopupInfo$226770[esp+1076], ecx
 
 ; 8965 : 							pInterface->AddPopup(kPopupInfo);
 
 	mov	ecx, DWORD PTR _pInterface$[esp+1076]
-	mov	DWORD PTR _kPopupInfo$226771[esp+1084], edx
+	mov	DWORD PTR _kPopupInfo$226770[esp+1084], edx
 	mov	edx, DWORD PTR [ecx]
 	mov	edx, DWORD PTR [edx+180]
-	mov	BYTE PTR _kPopupInfo$226771[esp+1092], al
-	lea	eax, DWORD PTR _kPopupInfo$226771[esp+1076]
+	mov	BYTE PTR _kPopupInfo$226770[esp+1092], al
+	lea	eax, DWORD PTR _kPopupInfo$226770[esp+1076]
 	push	eax
-	mov	DWORD PTR _kPopupInfo$226771[esp+1092], 0
-	mov	BYTE PTR _kPopupInfo$226771[esp+1097], bl
-	mov	DWORD PTR _kPopupInfo$226771[esp+1100], 56 ; 00000038H
-	mov	BYTE PTR _kPopupInfo$226771[esp+1104], bl
+	mov	DWORD PTR _kPopupInfo$226770[esp+1092], 0
+	mov	BYTE PTR _kPopupInfo$226770[esp+1097], bl
+	mov	DWORD PTR _kPopupInfo$226770[esp+1100], 56 ; 00000038H
+	mov	BYTE PTR _kPopupInfo$226770[esp+1104], bl
 	call	edx
 
 ; 8966 : 							CvPlayer& kActivePlayer = GET_PLAYER(GC.getGame().getActivePlayer());
@@ -54832,7 +54832,7 @@ $LN39@setReveale@4:
 ; 8973 : 							//Add Stat and check for Achievement
 ; 8974 : 							if(bEligibleForAchievement && !GC.getGame().isGameMultiPlayer())
 
-	cmp	BYTE PTR _bEligibleForAchievement$226654[esp+1076], 0
+	cmp	BYTE PTR _bEligibleForAchievement$226653[esp+1076], 0
 	je	SHORT $LN559@setReveale@4
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?isGameMultiPlayer@CvGame@@QBE_NXZ	; CvGame::isGameMultiPlayer
@@ -54879,14 +54879,14 @@ $LN559@setReveale@4:
 	mov	eax, OFFSET ??_C@_00CNPNBAHC@?$AA@
 $LN373@setReveale@4:
 	push	eax
-	lea	ecx, DWORD PTR _strFeatureType$226777[esp+1080]
+	lea	ecx, DWORD PTR _strFeatureType$226776[esp+1080]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 
 ; 8987 : 								if(strFeatureType == "FEATURE_FOUNTAIN_YOUTH")
 
 	mov	edi, DWORD PTR __imp_??$?8DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PBD@Z
-	lea	ecx, DWORD PTR _strFeatureType$226777[esp+1076]
-	push	OFFSET $SG226779
+	lea	ecx, DWORD PTR _strFeatureType$226776[esp+1076]
+	push	OFFSET $SG226778
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+1092], 3
 	call	edi
@@ -54902,8 +54902,8 @@ $LN36@setReveale@4:
 
 ; 8989 : 								else if(strFeatureType == "FEATURE_EL_DORADO")
 
-	lea	ecx, DWORD PTR _strFeatureType$226777[esp+1076]
-	push	OFFSET $SG226782
+	lea	ecx, DWORD PTR _strFeatureType$226776[esp+1076]
+	push	OFFSET $SG226781
 	push	ecx
 	call	edi
 	add	esp, 8
@@ -54922,7 +54922,7 @@ $LN34@setReveale@4:
 
 ; 8991 : 							}
 
-	lea	ecx, DWORD PTR _strFeatureType$226777[esp+1076]
+	lea	ecx, DWORD PTR _strFeatureType$226776[esp+1076]
 	mov	BYTE PTR __$EHRec$[esp+1084], 2
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 $LN37@setReveale@4:
@@ -54934,7 +54934,7 @@ $LN37@setReveale@4:
 	push	12					; 0000000cH
 	call	??2CvDllPlot@@SAPAXI@Z			; CvDllPlot::operator new
 	add	esp, 4
-	mov	DWORD PTR $T252892[esp+1076], eax
+	mov	DWORD PTR $T252891[esp+1076], eax
 	mov	BYTE PTR __$EHRec$[esp+1084], 4
 	test	eax, eax
 	je	SHORT $LN103@setReveale@4
@@ -54946,7 +54946,7 @@ $LN37@setReveale@4:
 $LN103@setReveale@4:
 	xor	edi, edi
 $LN104@setReveale@4:
-	mov	DWORD PTR _pDllPlot$226788[esp+1076], edi
+	mov	DWORD PTR _pDllPlot$226787[esp+1076], edi
 
 ; 8995 : 						gDLL->GameplayNaturalWonderRevealed(pDllPlot.get());
 
@@ -54971,10 +54971,10 @@ $LN560@setReveale@4:
 ; 8997 : 				}
 
 	mov	edi, DWORD PTR __imp_??1String@Localization@@UAE@XZ
-	lea	ecx, DWORD PTR _strSummary$226675[esp+1076]
+	lea	ecx, DWORD PTR _strSummary$226674[esp+1076]
 	mov	BYTE PTR __$EHRec$[esp+1084], 1
 	call	edi
-	lea	ecx, DWORD PTR _strText$226666[esp+1076]
+	lea	ecx, DWORD PTR _strText$226665[esp+1076]
 	mov	DWORD PTR __$EHRec$[esp+1084], -1
 	call	edi
 	mov	edi, DWORD PTR tv1770[esp+1076]
@@ -55077,15 +55077,15 @@ $LN564@setReveale@4:
 ; 9025 : 					{
 ; 9026 : 						CvString strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_FOUND_GOODY_HUT");
 
-	lea	ecx, DWORD PTR _strBuffer$226795[esp+1076]
-	push	OFFSET $SG226797
+	lea	ecx, DWORD PTR _strBuffer$226794[esp+1076]
+	push	OFFSET $SG226796
 	push	ecx
 	call	?GetLocalizedText@@YA?AVCvString@@PBD@Z	; GetLocalizedText
 
 ; 9027 : 						CvString strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_FOUND_GOODY_HUT");
 
-	lea	edx, DWORD PTR _strSummary$226798[esp+1084]
-	push	OFFSET $SG226800
+	lea	edx, DWORD PTR _strSummary$226797[esp+1084]
+	push	OFFSET $SG226799
 	push	edx
 	mov	DWORD PTR __$EHRec$[esp+1100], 6
 	call	?GetLocalizedText@@YA?AVCvString@@PBD@Z	; GetLocalizedText
@@ -55093,7 +55093,7 @@ $LN564@setReveale@4:
 
 ; 9028 : 						if(bEligibleForAchievement)
 
-	cmp	BYTE PTR _bEligibleForAchievement$226654[esp+1076], 0
+	cmp	BYTE PTR _bEligibleForAchievement$226653[esp+1076], 0
 	mov	BYTE PTR __$EHRec$[esp+1084], 7
 	je	SHORT $LN27@setReveale@4
 
@@ -55159,14 +55159,14 @@ $LN421@setReveale@4:
 
 	movsx	edi, WORD PTR [esi+2]
 	movsx	ebp, WORD PTR [esi]
-	lea	ecx, DWORD PTR _strSummary$226798[esp+1076]
+	lea	ecx, DWORD PTR _strSummary$226797[esp+1076]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	-1
 	push	-1
 	push	edi
 	push	ebp
 	push	eax
-	lea	ecx, DWORD PTR _strBuffer$226795[esp+1096]
+	lea	ecx, DWORD PTR _strBuffer$226794[esp+1096]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
 	push	-597231081				; dc66fa17H
@@ -55185,10 +55185,10 @@ $LN25@setReveale@4:
 ; 9047 : 						}
 ; 9048 : 					}
 
-	lea	ecx, DWORD PTR _strSummary$226798[esp+1076]
+	lea	ecx, DWORD PTR _strSummary$226797[esp+1076]
 	mov	BYTE PTR __$EHRec$[esp+1084], 6
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR _strBuffer$226795[esp+1076]
+	lea	ecx, DWORD PTR _strBuffer$226794[esp+1076]
 	mov	DWORD PTR __$EHRec$[esp+1084], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 	mov	ebp, DWORD PTR _pInterface$[esp+1076]
@@ -55197,7 +55197,7 @@ $LN28@setReveale@4:
 ; 9049 : 				}
 ; 9050 : 				if(bEligibleForAchievement)
 
-	cmp	BYTE PTR _bEligibleForAchievement$226654[esp+1076], 0
+	cmp	BYTE PTR _bEligibleForAchievement$226653[esp+1076], 0
 	je	SHORT $LN565@setReveale@4
 
 ; 9051 : 				{
@@ -55268,7 +55268,7 @@ $LN18@setReveale@4:
 	mov	edx, 1
 	shl	edx, cl
 	xor	bl, bl
-	mov	BYTE PTR _bImprovementVisibilityChanged$226816[esp+1076], bl
+	mov	BYTE PTR _bImprovementVisibilityChanged$226815[esp+1076], bl
 	test	edx, DWORD PTR [esi+eax*4+8]
 	je	$LN16@setReveale@4
 
@@ -55320,10 +55320,10 @@ $LN15@setReveale@4:
 	push	eax
 	call	?SetHasFoundPlayersTerritory@CvTeam@@QAE_NW4PlayerTypes@@_N@Z ; CvTeam::SetHasFoundPlayersTerritory
 $LN453@setReveale@4:
-	mov	BYTE PTR $T253660[esp+1076], 1
+	mov	BYTE PTR $T253659[esp+1076], 1
 	jmp	SHORT $LN455@setReveale@4
 $LN454@setReveale@4:
-	mov	BYTE PTR $T253660[esp+1076], 0
+	mov	BYTE PTR $T253659[esp+1076], 0
 $LN455@setReveale@4:
 
 ; 9084 : 				bImprovementVisibilityChanged |= setRevealedImprovementType(eTeam, getImprovementType());
@@ -55333,7 +55333,7 @@ $LN455@setReveale@4:
 	push	edi
 	mov	ecx, esi
 	call	?setRevealedImprovementType@CvPlot@@QAE_NW4TeamTypes@@W4ImprovementTypes@@@Z ; CvPlot::setRevealedImprovementType
-	mov	BYTE PTR _bImprovementVisibilityChanged$226816[esp+1076], al
+	mov	BYTE PTR _bImprovementVisibilityChanged$226815[esp+1076], al
 
 ; 9085 : 				bVisibilityChanged |= setRevealedRouteType(eTeam, getRouteType());
 
@@ -55342,7 +55342,7 @@ $LN455@setReveale@4:
 	push	edi
 	mov	ecx, esi
 	call	?setRevealedRouteType@CvPlot@@QAE_NW4TeamTypes@@W4RouteTypes@@@Z ; CvPlot::setRevealedRouteType
-	or	al, BYTE PTR $T253660[esp+1076]
+	or	al, BYTE PTR $T253659[esp+1076]
 
 ; 9086 : 
 ; 9087 : 				if(pCity != NULL)
@@ -55414,7 +55414,7 @@ $LN11@setReveale@4:
 	push	edi
 	mov	ecx, esi
 	call	?setRevealedImprovementType@CvPlot@@QAE_NW4TeamTypes@@W4ImprovementTypes@@@Z ; CvPlot::setRevealedImprovementType
-	mov	BYTE PTR _bImprovementVisibilityChanged$226816[esp+1076], al
+	mov	BYTE PTR _bImprovementVisibilityChanged$226815[esp+1076], al
 $LN10@setReveale@4:
 
 ; 9102 : 				}
@@ -55497,7 +55497,7 @@ $LN505@setReveale@4:
 
 	mov	ecx, DWORD PTR [esi+168]
 	cmp	WORD PTR [ecx+edi*2], -1
-	mov	BYTE PTR _bImprovementVisibilityChanged$226816[esp+1076], al
+	mov	BYTE PTR _bImprovementVisibilityChanged$226815[esp+1076], al
 	je	SHORT $LN518@setReveale@4
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?getActiveTeam@CvGame@@QAE?AW4TeamTypes@@XZ ; CvGame::getActiveTeam
@@ -55548,7 +55548,7 @@ $LN558@setReveale@4:
 	jne	SHORT $LN4@setReveale@4
 	test	bl, bl
 	jne	SHORT $LN557@setReveale@4
-	cmp	BYTE PTR _bImprovementVisibilityChanged$226816[esp+1076], bl
+	cmp	BYTE PTR _bImprovementVisibilityChanged$226815[esp+1076], bl
 	je	SHORT $LN4@setReveale@4
 $LN557@setReveale@4:
 
@@ -55561,7 +55561,7 @@ $LN557@setReveale@4:
 ; 9133 : 			{
 ; 9134 : 				if (!bImprovementVisibilityChanged)	// Don't bother sending again if the improvement change already sent the message
 
-	cmp	BYTE PTR _bImprovementVisibilityChanged$226816[esp+1076], 0
+	cmp	BYTE PTR _bImprovementVisibilityChanged$226815[esp+1076], 0
 	jne	SHORT $LN1@setReveale@4
 
 ; 9135 : 					updateSymbols();
@@ -55613,31 +55613,31 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?setRevealed@CvPlot@@QAE_NW4TeamTypes@@_N10@Z$0:
-	lea	ecx, DWORD PTR _args$226663[ebp]
+	lea	ecx, DWORD PTR _args$226662[ebp]
 	jmp	??1CvLuaArgsHandle@@QAE@XZ		; CvLuaArgsHandle::~CvLuaArgsHandle
 __unwindfunclet$?setRevealed@CvPlot@@QAE_NW4TeamTypes@@_N10@Z$1:
-	lea	ecx, DWORD PTR _strText$226666[ebp]
+	lea	ecx, DWORD PTR _strText$226665[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?setRevealed@CvPlot@@QAE_NW4TeamTypes@@_N10@Z$2:
-	lea	ecx, DWORD PTR _strSummary$226675[ebp]
+	lea	ecx, DWORD PTR _strSummary$226674[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?setRevealed@CvPlot@@QAE_NW4TeamTypes@@_N10@Z$3:
-	lea	ecx, DWORD PTR _strFeatureType$226777[ebp]
+	lea	ecx, DWORD PTR _strFeatureType$226776[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?setRevealed@CvPlot@@QAE_NW4TeamTypes@@_N10@Z$4:
-	mov	eax, DWORD PTR $T252892[ebp]
+	mov	eax, DWORD PTR $T252891[ebp]
 	push	eax
 	call	??3CvDllPlot@@SAXPAX@Z			; CvDllPlot::operator delete
 	pop	ecx
 	ret	0
 __unwindfunclet$?setRevealed@CvPlot@@QAE_NW4TeamTypes@@_N10@Z$5:
-	lea	ecx, DWORD PTR _pDllPlot$226788[ebp]
+	lea	ecx, DWORD PTR _pDllPlot$226787[ebp]
 	jmp	??1?$auto_ptr@VICvPlot1@@@std@@QAE@XZ	; std::auto_ptr<ICvPlot1>::~auto_ptr<ICvPlot1>
 __unwindfunclet$?setRevealed@CvPlot@@QAE_NW4TeamTypes@@_N10@Z$6:
-	lea	ecx, DWORD PTR _strBuffer$226795[ebp]
+	lea	ecx, DWORD PTR _strBuffer$226794[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?setRevealed@CvPlot@@QAE_NW4TeamTypes@@_N10@Z$7:
-	lea	ecx, DWORD PTR _strSummary$226798[ebp]
+	lea	ecx, DWORD PTR _strSummary$226797[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?setRevealed@CvPlot@@QAE_NW4TeamTypes@@_N10@Z:
 	mov	eax, OFFSET __ehfuncinfo$?setRevealed@CvPlot@@QAE_NW4TeamTypes@@_N10@Z
@@ -55666,11 +55666,11 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 __$EHRec$ = -12						; size = 12
 _bNewInvisibleVisible$ = 8				; size = 1
-$T253871 = 8						; size = 4
-_pDllUnit$227123 = 8					; size = 4
+$T253870 = 8						; size = 4
+_pDllUnit$227122 = 8					; size = 4
 _eTeam$ = 8						; size = 4
 _eInvisible$ = 12					; size = 4
-_activeTeam$227110 = 16					; size = 4
+_activeTeam$227109 = 16					; size = 4
 _iChange$ = 16						; size = 4
 ?changeInvisibleVisibilityCount@CvPlot@@QAEXW4TeamTypes@@W4InvisibleTypes@@H@Z PROC ; CvPlot::changeInvisibleVisibilityCount, COMDAT
 ; _this$ = ecx
@@ -55754,7 +55754,7 @@ _iChange$ = 16						; size = 4
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	call	?getActiveTeam@CvGame@@QAE?AW4TeamTypes@@XZ ; CvGame::getActiveTeam
-	mov	DWORD PTR _activeTeam$227110[esp+24], eax
+	mov	DWORD PTR _activeTeam$227109[esp+24], eax
 
 ; 9712 : 			if(eTeam == activeTeam)
 
@@ -55806,7 +55806,7 @@ $LL3@changeInvi:
 	je	$LN41@changeInvi
 	mov	ecx, esi
 	call	?getTeam@CvUnit@@QBE?AW4TeamTypes@@XZ	; CvUnit::getTeam
-	cmp	eax, DWORD PTR _activeTeam$227110[esp+24]
+	cmp	eax, DWORD PTR _activeTeam$227109[esp+24]
 	je	SHORT $LN41@changeInvi
 	mov	ecx, esi
 	call	?getInvisibleType@CvUnit@@QBE?BW4InvisibleTypes@@XZ ; CvUnit::getInvisibleType
@@ -55819,7 +55819,7 @@ $LL3@changeInvi:
 	push	12					; 0000000cH
 	call	??2CvDllUnit@@SAPAXI@Z			; CvDllUnit::operator new
 	add	esp, 4
-	mov	DWORD PTR $T253871[esp+24], eax
+	mov	DWORD PTR $T253870[esp+24], eax
 	mov	DWORD PTR __$EHRec$[esp+36], 0
 	test	eax, eax
 	je	SHORT $LN13@changeInvi
@@ -55831,7 +55831,7 @@ $LL3@changeInvi:
 $LN13@changeInvi:
 	xor	esi, esi
 $LN14@changeInvi:
-	mov	DWORD PTR _pDllUnit$227123[esp+24], esi
+	mov	DWORD PTR _pDllUnit$227122[esp+24], esi
 
 ; 9727 : 						gDLL->GameplayUnitVisibility(pDllUnit.get(), bNewInvisibleVisible, true);
 
@@ -55889,13 +55889,13 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?changeInvisibleVisibilityCount@CvPlot@@QAEXW4TeamTypes@@W4InvisibleTypes@@H@Z$0:
-	mov	eax, DWORD PTR $T253871[ebp-4]
+	mov	eax, DWORD PTR $T253870[ebp-4]
 	push	eax
 	call	??3CvDllUnit@@SAXPAX@Z			; CvDllUnit::operator delete
 	pop	ecx
 	ret	0
 __unwindfunclet$?changeInvisibleVisibilityCount@CvPlot@@QAEXW4TeamTypes@@W4InvisibleTypes@@H@Z$1:
-	lea	ecx, DWORD PTR _pDllUnit$227123[ebp-4]
+	lea	ecx, DWORD PTR _pDllUnit$227122[ebp-4]
 	jmp	??1?$auto_ptr@VICvUnit1@@@std@@QAE@XZ	; std::auto_ptr<ICvUnit1>::~auto_ptr<ICvUnit1>
 __ehhandler$?changeInvisibleVisibilityCount@CvPlot@@QAEXW4TeamTypes@@W4InvisibleTypes@@H@Z:
 	mov	eax, OFFSET __ehfuncinfo$?changeInvisibleVisibilityCount@CvPlot@@QAEXW4TeamTypes@@W4InvisibleTypes@@H@Z
@@ -56280,9 +56280,9 @@ PUBLIC	?insert@?$_Tree@V?$_Tset_traits@PAVCvPlot@@U?$less@PAVCvPlot@@@std@@V?$al
 _TEXT	SEGMENT
 __Addleft$ = -4						; size = 1
 ___$ReturnUdt$ = 8					; size = 4
-$T254160 = 12						; size = 4
-$T254158 = 12						; size = 4
-__Where$228225 = 12					; size = 4
+$T254159 = 12						; size = 4
+$T254157 = 12						; size = 4
+__Where$228224 = 12					; size = 4
 __Val$ = 12						; size = 4
 ?insert@?$_Tree@V?$_Tset_traits@PAVCvPlot@@U?$less@PAVCvPlot@@@std@@V?$allocator@PAVCvPlot@@@3@$0A@@std@@@std@@QAE?AU?$pair@Viterator@?$_Tree@V?$_Tset_traits@PAVCvPlot@@U?$less@PAVCvPlot@@@std@@V?$allocator@PAVCvPlot@@@3@$0A@@std@@@std@@_N@2@ABQAVCvPlot@@@Z PROC ; std::_Tree<std::_Tset_traits<CvPlot *,std::less<CvPlot *>,std::allocator<CvPlot *>,0> >::insert, COMDAT
 ; _this$ = ecx
@@ -56349,7 +56349,7 @@ $LN9@insert:
 ; 646  : 			iterator _Where = _TREE_ITERATOR(_Wherenode);
 
 	mov	edx, esi
-	mov	DWORD PTR __Where$228225[esp+12], edx
+	mov	DWORD PTR __Where$228224[esp+12], edx
 
 ; 647  : 			if (!_Addleft)
 
@@ -56363,7 +56363,7 @@ $LN9@insert:
 
 ; 650  : 				return (_Pairib(_Insert(true, _Wherenode, _Val), true));
 
-	lea	ecx, DWORD PTR $T254158[esp+12]
+	lea	ecx, DWORD PTR $T254157[esp+12]
 	cmp	esi, DWORD PTR [eax]
 	jne	SHORT $LN4@insert
 	push	ebp
@@ -56395,7 +56395,7 @@ $LN4@insert:
 ; 652  : 				--_Where;	// need to test if insert before is okay
 
 	call	?_Dec@const_iterator@?$_Tree@V?$_Tset_traits@PAVCvPlot@@U?$less@PAVCvPlot@@@std@@V?$allocator@PAVCvPlot@@@3@$0A@@std@@@std@@QAEXXZ ; std::_Tree<std::_Tset_traits<CvPlot *,std::less<CvPlot *>,std::allocator<CvPlot *>,0> >::const_iterator::_Dec
-	mov	edx, DWORD PTR __Where$228225[esp+12]
+	mov	edx, DWORD PTR __Where$228224[esp+12]
 $LN57@insert:
 
 ; 653  : 
@@ -56412,7 +56412,7 @@ $LN57@insert:
 	push	ebp
 	push	esi
 	push	ecx
-	lea	edx, DWORD PTR $T254160[esp+24]
+	lea	edx, DWORD PTR $T254159[esp+24]
 	push	edx
 	mov	ecx, edi
 	call	?_Insert@?$_Tree@V?$_Tset_traits@PAVCvPlot@@U?$less@PAVCvPlot@@@std@@V?$allocator@PAVCvPlot@@@3@$0A@@std@@@std@@IAE?AViterator@12@_NPAU_Node@?$_Tree_nod@V?$_Tset_traits@PAVCvPlot@@U?$less@PAVCvPlot@@@std@@V?$allocator@PAVCvPlot@@@3@$0A@@std@@@2@ABQAVCvPlot@@@Z ; std::_Tree<std::_Tset_traits<CvPlot *,std::less<CvPlot *>,std::allocator<CvPlot *>,0> >::_Insert
@@ -56517,7 +56517,7 @@ PUBLIC	?erase@?$_Tree@V?$_Tset_traits@PAVCvPlot@@U?$less@PAVCvPlot@@@std@@V?$all
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xtree
 ;	COMDAT ?erase@?$_Tree@V?$_Tset_traits@PAVCvPlot@@U?$less@PAVCvPlot@@@std@@V?$allocator@PAVCvPlot@@@3@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@0@Z
 _TEXT	SEGMENT
-$T254335 = -4						; size = 4
+$T254334 = -4						; size = 4
 ___$ReturnUdt$ = 8					; size = 4
 __First$ = 12						; size = 4
 __Last$ = 16						; size = 4
@@ -56618,7 +56618,7 @@ $LN63@erase@2:
 	mov	DWORD PTR __First$[esp+4], eax
 $LN65@erase@2:
 	push	edx
-	lea	eax, DWORD PTR $T254335[esp+12]
+	lea	eax, DWORD PTR $T254334[esp+12]
 	push	eax
 	mov	ecx, esi
 	call	?erase@?$_Tree@V?$_Tset_traits@PAVCvPlot@@U?$less@PAVCvPlot@@@std@@V?$allocator@PAVCvPlot@@@3@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@@Z ; std::_Tree<std::_Tset_traits<CvPlot *,std::less<CvPlot *>,std::allocator<CvPlot *>,0> >::erase
@@ -56644,7 +56644,7 @@ PUBLIC	?_Tidy@?$_Tree@V?$_Tset_traits@PAVCvPlot@@U?$less@PAVCvPlot@@@std@@V?$all
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?_Tidy@?$_Tree@V?$_Tset_traits@PAVCvPlot@@U?$less@PAVCvPlot@@@std@@V?$allocator@PAVCvPlot@@@3@$0A@@std@@@std@@IAEXXZ
 _TEXT	SEGMENT
-$T254658 = -4						; size = 4
+$T254657 = -4						; size = 4
 ?_Tidy@?$_Tree@V?$_Tset_traits@PAVCvPlot@@U?$less@PAVCvPlot@@@std@@V?$allocator@PAVCvPlot@@@3@$0A@@std@@@std@@IAEXXZ PROC ; std::_Tree<std::_Tset_traits<CvPlot *,std::less<CvPlot *>,std::allocator<CvPlot *>,0> >::_Tidy, COMDAT
 ; _this$ = ecx
 
@@ -56660,7 +56660,7 @@ $T254658 = -4						; size = 4
 	mov	ecx, DWORD PTR [eax]
 	push	eax
 	push	ecx
-	lea	eax, DWORD PTR $T254658[esp+16]
+	lea	eax, DWORD PTR $T254657[esp+16]
 	push	eax
 	mov	ecx, esi
 	call	?erase@?$_Tree@V?$_Tset_traits@PAVCvPlot@@U?$less@PAVCvPlot@@@std@@V?$allocator@PAVCvPlot@@@3@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@0@Z ; std::_Tree<std::_Tset_traits<CvPlot *,std::less<CvPlot *>,std::allocator<CvPlot *>,0> >::erase
@@ -56788,9 +56788,9 @@ PUBLIC	?insert@?$_Tree@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVar
 _TEXT	SEGMENT
 __Addleft$ = -4						; size = 1
 ___$ReturnUdt$ = 8					; size = 4
-$T254853 = 12						; size = 4
-$T254851 = 12						; size = 4
-__Where$199291 = 12					; size = 4
+$T254852 = 12						; size = 4
+$T254850 = 12						; size = 4
+__Where$199290 = 12					; size = 4
 __Val$ = 12						; size = 4
 ?insert@?$_Tree@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@std@@QAE?AU?$pair@Viterator@?$_Tree@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@std@@_N@2@ABQAVFAutoVariableBase@@@Z PROC ; std::_Tree<std::_Tset_traits<FAutoVariableBase *,std::less<FAutoVariableBase *>,std::allocator<FAutoVariableBase *>,0> >::insert, COMDAT
 ; _this$ = ecx
@@ -56857,7 +56857,7 @@ $LN9@insert@2:
 ; 646  : 			iterator _Where = _TREE_ITERATOR(_Wherenode);
 
 	mov	edx, esi
-	mov	DWORD PTR __Where$199291[esp+12], edx
+	mov	DWORD PTR __Where$199290[esp+12], edx
 
 ; 647  : 			if (!_Addleft)
 
@@ -56871,7 +56871,7 @@ $LN9@insert@2:
 
 ; 650  : 				return (_Pairib(_Insert(true, _Wherenode, _Val), true));
 
-	lea	ecx, DWORD PTR $T254851[esp+12]
+	lea	ecx, DWORD PTR $T254850[esp+12]
 	cmp	esi, DWORD PTR [eax]
 	jne	SHORT $LN4@insert@2
 	push	ebp
@@ -56903,7 +56903,7 @@ $LN4@insert@2:
 ; 652  : 				--_Where;	// need to test if insert before is okay
 
 	call	?_Dec@const_iterator@?$_Tree@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@std@@QAEXXZ ; std::_Tree<std::_Tset_traits<FAutoVariableBase *,std::less<FAutoVariableBase *>,std::allocator<FAutoVariableBase *>,0> >::const_iterator::_Dec
-	mov	edx, DWORD PTR __Where$199291[esp+12]
+	mov	edx, DWORD PTR __Where$199290[esp+12]
 $LN57@insert@2:
 
 ; 653  : 
@@ -56920,7 +56920,7 @@ $LN57@insert@2:
 	push	ebp
 	push	esi
 	push	ecx
-	lea	edx, DWORD PTR $T254853[esp+24]
+	lea	edx, DWORD PTR $T254852[esp+24]
 	push	edx
 	mov	ecx, edi
 	call	?_Insert@?$_Tree@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@std@@IAE?AViterator@12@_NPAU_Node@?$_Tree_nod@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@2@ABQAVFAutoVariableBase@@@Z ; std::_Tree<std::_Tset_traits<FAutoVariableBase *,std::less<FAutoVariableBase *>,std::allocator<FAutoVariableBase *>,0> >::_Insert
@@ -56962,9 +56962,9 @@ PUBLIC	?insert@?$_Tree@V?$_Tmap_traits@IV?$basic_string@DU?$char_traits@D@std@@V
 _TEXT	SEGMENT
 __Addleft$ = -4						; size = 1
 ___$ReturnUdt$ = 8					; size = 4
-$T254990 = 12						; size = 4
-$T254988 = 12						; size = 4
-__Where$202900 = 12					; size = 4
+$T254989 = 12						; size = 4
+$T254987 = 12						; size = 4
+__Where$202899 = 12					; size = 4
 __Val$ = 12						; size = 4
 ?insert@?$_Tree@V?$_Tmap_traits@IV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@I@2@V?$allocator@U?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@$0A@@std@@@std@@QAE?AU?$pair@Viterator@?$_Tree@V?$_Tmap_traits@IV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@I@2@V?$allocator@U?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@$0A@@std@@@std@@_N@2@ABU?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@Z PROC ; std::_Tree<std::_Tmap_traits<unsigned int,std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,0> >::insert, COMDAT
 ; _this$ = ecx
@@ -57031,7 +57031,7 @@ $LN9@insert@3:
 ; 646  : 			iterator _Where = _TREE_ITERATOR(_Wherenode);
 
 	mov	edx, esi
-	mov	DWORD PTR __Where$202900[esp+12], edx
+	mov	DWORD PTR __Where$202899[esp+12], edx
 
 ; 647  : 			if (!_Addleft)
 
@@ -57045,7 +57045,7 @@ $LN9@insert@3:
 
 ; 650  : 				return (_Pairib(_Insert(true, _Wherenode, _Val), true));
 
-	lea	ecx, DWORD PTR $T254988[esp+12]
+	lea	ecx, DWORD PTR $T254987[esp+12]
 	cmp	esi, DWORD PTR [eax]
 	jne	SHORT $LN4@insert@3
 	push	ebp
@@ -57077,7 +57077,7 @@ $LN4@insert@3:
 ; 652  : 				--_Where;	// need to test if insert before is okay
 
 	call	?_Dec@const_iterator@?$_Tree@V?$_Tmap_traits@IV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@I@2@V?$allocator@U?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@$0A@@std@@@std@@QAEXXZ ; std::_Tree<std::_Tmap_traits<unsigned int,std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,0> >::const_iterator::_Dec
-	mov	edx, DWORD PTR __Where$202900[esp+12]
+	mov	edx, DWORD PTR __Where$202899[esp+12]
 $LN57@insert@3:
 
 ; 653  : 
@@ -57094,7 +57094,7 @@ $LN57@insert@3:
 	push	ebp
 	push	esi
 	push	ecx
-	lea	edx, DWORD PTR $T254990[esp+24]
+	lea	edx, DWORD PTR $T254989[esp+24]
 	push	edx
 	mov	ecx, edi
 	call	?_Insert@?$_Tree@V?$_Tmap_traits@IV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@I@2@V?$allocator@U?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@$0A@@std@@@std@@IAE?AViterator@12@_NPAU_Node@?$_Tree_nod@V?$_Tmap_traits@IV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@I@2@V?$allocator@U?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@$0A@@std@@@2@ABU?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@Z ; std::_Tree<std::_Tmap_traits<unsigned int,std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,0> >::_Insert
@@ -57176,8 +57176,8 @@ xdata$x	ENDS
 ;	COMDAT ?erase@?$_Tree@V?$_Tmap_traits@IV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@I@2@V?$allocator@U?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@@Z
 _TEXT	SEGMENT
 _this$ = -84						; size = 4
-$T255207 = -80						; size = 28
-$T255206 = -52						; size = 40
+$T255206 = -80						; size = 28
+$T255205 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
 __Where$ = 12						; size = 4
@@ -57214,22 +57214,22 @@ __Where$ = 12						; size = 4
 ; 775  : 			_THROW(out_of_range, "invalid map/set<T> iterator");
 
 	push	OFFSET ??_C@_0BM@PAPJHAGI@invalid?5map?1set?$DMT?$DO?5iterator?$AA@
-	lea	ecx, DWORD PTR $T255207[esp+92]
+	lea	ecx, DWORD PTR $T255206[esp+92]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T255206[esp+88]
+	lea	ecx, DWORD PTR $T255205[esp+88]
 	mov	DWORD PTR __$EHRec$[esp+96], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T255207[esp+88]
+	lea	eax, DWORD PTR $T255206[esp+88]
 	push	eax
-	lea	ecx, DWORD PTR $T255206[esp+104]
+	lea	ecx, DWORD PTR $T255205[esp+104]
 	mov	BYTE PTR __$EHRec$[esp+100], 1
-	mov	DWORD PTR $T255206[esp+92], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T255205[esp+92], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVout_of_range@std@@
-	lea	ecx, DWORD PTR $T255206[esp+92]
+	lea	ecx, DWORD PTR $T255205[esp+92]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+104], 0
-	mov	DWORD PTR $T255206[esp+96], OFFSET ??_7out_of_range@std@@6B@
+	mov	DWORD PTR $T255205[esp+96], OFFSET ??_7out_of_range@std@@6B@
 	call	__CxxThrowException@8
 $LN306@erase@3:
 $LN40@erase@3:
@@ -57821,10 +57821,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?erase@?$_Tree@V?$_Tmap_traits@IV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@I@2@V?$allocator@U?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@@Z$0:
-	lea	ecx, DWORD PTR $T255207[ebp]
+	lea	ecx, DWORD PTR $T255206[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?erase@?$_Tree@V?$_Tmap_traits@IV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@I@2@V?$allocator@U?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@@Z$2:
-	lea	ecx, DWORD PTR $T255206[ebp]
+	lea	ecx, DWORD PTR $T255205[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?erase@?$_Tree@V?$_Tmap_traits@IV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@I@2@V?$allocator@U?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?erase@?$_Tree@V?$_Tmap_traits@IV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@I@2@V?$allocator@U?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@@Z
@@ -58762,8 +58762,8 @@ EXTRN	?isBeforeUnitCycle@@YA_NPBVCvUnit@@0@Z:PROC	; isBeforeUnitCycle
 ;	COMDAT ?addUnit@CvPlot@@QAEXPAVCvUnit@@_N@Z
 _TEXT	SEGMENT
 _this$ = -12						; size = 4
-_unitIDInfo$227215 = -8					; size = 8
-_unitIDInfo$227212 = -8					; size = 8
+_unitIDInfo$227214 = -8					; size = 8
+_unitIDInfo$227211 = -8					; size = 8
 _pUnit$ = 8						; size = 4
 _bUpdate$ = 12						; size = 1
 ?addUnit@CvPlot@@QAEXPAVCvUnit@@_N@Z PROC		; CvPlot::addUnit, COMDAT
@@ -58865,7 +58865,7 @@ $LN3@addUnit:
 ; 9921 : 	{
 ; 9922 : 		IDInfo unitIDInfo = pUnit->GetIDInfo();
 
-	lea	edx, DWORD PTR _unitIDInfo$227215[esp+28]
+	lea	edx, DWORD PTR _unitIDInfo$227214[esp+28]
 	push	edx
 	mov	ecx, ebx
 	call	?GetIDInfo@CvUnit@@QBE?AUIDInfo@@XZ	; CvUnit::GetIDInfo
@@ -58885,9 +58885,9 @@ $LN59@addUnit:
 	lea	eax, DWORD PTR [ecx+eax*8]
 	test	eax, eax
 	je	SHORT $LN62@addUnit
-	mov	edx, DWORD PTR _unitIDInfo$227215[esp+28]
+	mov	edx, DWORD PTR _unitIDInfo$227214[esp+28]
 	mov	DWORD PTR [eax], edx
-	mov	ecx, DWORD PTR _unitIDInfo$227215[esp+32]
+	mov	ecx, DWORD PTR _unitIDInfo$227214[esp+32]
 	mov	DWORD PTR [eax+4], ecx
 $LN62@addUnit:
 	inc	DWORD PTR [edi+4]
@@ -58929,7 +58929,7 @@ $LN68@addUnit:
 ; 9916 : 	{
 ; 9917 : 		IDInfo unitIDInfo = pUnit->GetIDInfo();
 
-	lea	eax, DWORD PTR _unitIDInfo$227212[esp+28]
+	lea	eax, DWORD PTR _unitIDInfo$227211[esp+28]
 	push	eax
 	mov	ecx, ebx
 	call	?GetIDInfo@CvUnit@@QBE?AUIDInfo@@XZ	; CvUnit::GetIDInfo
@@ -58963,14 +58963,14 @@ $LL41@addUnit:
 	jg	SHORT $LL41@addUnit
 $LN39@addUnit:
 	mov	edi, DWORD PTR [edi]
-	mov	eax, DWORD PTR _unitIDInfo$227212[esp+28]
+	mov	eax, DWORD PTR _unitIDInfo$227211[esp+28]
 
 ; 9919 : 	}
 ; 9920 : 	else
 
 	mov	ebp, DWORD PTR _this$[esp+28]
 	mov	DWORD PTR [edi+esi*8], eax
-	mov	ecx, DWORD PTR _unitIDInfo$227212[esp+32]
+	mov	ecx, DWORD PTR _unitIDInfo$227211[esp+32]
 	mov	DWORD PTR [edi+esi*8+4], ecx
 	jmp	SHORT $LN60@addUnit
 ?addUnit@CvPlot@@QAEXPAVCvUnit@@_N@Z ENDP		; CvPlot::addUnit
@@ -58980,7 +58980,7 @@ EXTRN	?RemoveUnit@CvPlotManager@@QAEXABUIDInfo@@HHI@Z:PROC ; CvPlotManager::Remo
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?removeUnit@CvPlot@@QAEXPAVCvUnit@@_N@Z
 _TEXT	SEGMENT
-$T256363 = -8						; size = 8
+$T256362 = -8						; size = 8
 _pUnit$ = 8						; size = 4
 _bUpdate$ = 12						; size = 1
 ?removeUnit@CvPlot@@QAEXPAVCvUnit@@_N@Z PROC		; CvPlot::removeUnit, COMDAT
@@ -59121,7 +59121,7 @@ $LN4@removeUnit:
 	push	-1
 	push	ecx
 	push	edx
-	lea	eax, DWORD PTR $T256363[esp+36]
+	lea	eax, DWORD PTR $T256362[esp+36]
 	push	eax
 	mov	ecx, ebp
 	call	?GetIDInfo@CvUnit@@QBE?AUIDInfo@@XZ	; CvUnit::GetIDInfo
@@ -59160,7 +59160,7 @@ PUBLIC	?Validate@CvPlot@@QAEHAAVCvMap@@@Z		; CvPlot::Validate
 _TEXT	SEGMENT
 _iError$ = -12						; size = 4
 _this$ = -8						; size = 4
-_pkUnit$227990 = -4					; size = 4
+_pkUnit$227989 = -4					; size = 4
 _kParentMap$ = 8					; size = 4
 ?Validate@CvPlot@@QAEHAAVCvMap@@@Z PROC			; CvPlot::Validate, COMDAT
 ; _this$ = ecx
@@ -59216,7 +59216,7 @@ $LL10@Validate:
 	push	eax
 	call	edx
 	mov	ebx, eax
-	mov	DWORD PTR _pkUnit$227990[esp+28], ebx
+	mov	DWORD PTR _pkUnit$227989[esp+28], ebx
 
 ; 11371: 		if(pkUnit == NULL)
 
@@ -59412,7 +59412,7 @@ $LN116@Validate:
 ; 11387: 				{
 ; 11388: 					if(pkCorrectPlot->getUnitIndex(pkUnit) < 0)	// Already in there?
 
-	mov	ebx, DWORD PTR _pkUnit$227990[esp+28]
+	mov	ebx, DWORD PTR _pkUnit$227989[esp+28]
 	push	ebx
 	call	?getUnitIndex@CvPlot@@QBEHPAVCvUnit@@@Z	; CvPlot::getUnitIndex
 	test	eax, eax
@@ -59533,7 +59533,7 @@ PUBLIC	??1?$_Tree@V?$_Tset_traits@PAVCvPlot@@U?$less@PAVCvPlot@@@std@@V?$allocat
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xtree
 ;	COMDAT ??1?$_Tree@V?$_Tset_traits@PAVCvPlot@@U?$less@PAVCvPlot@@@std@@V?$allocator@PAVCvPlot@@@3@$0A@@std@@@std@@QAE@XZ
 _TEXT	SEGMENT
-$T256993 = -4						; size = 4
+$T256992 = -4						; size = 4
 ??1?$_Tree@V?$_Tset_traits@PAVCvPlot@@U?$less@PAVCvPlot@@@std@@V?$allocator@PAVCvPlot@@@3@$0A@@std@@@std@@QAE@XZ PROC ; std::_Tree<std::_Tset_traits<CvPlot *,std::less<CvPlot *>,std::allocator<CvPlot *>,0> >::~_Tree<std::_Tset_traits<CvPlot *,std::less<CvPlot *>,std::allocator<CvPlot *>,0> >, COMDAT
 ; _this$ = ecx
 
@@ -59549,7 +59549,7 @@ $T256993 = -4						; size = 4
 	mov	ecx, DWORD PTR [eax]
 	push	eax
 	push	ecx
-	lea	eax, DWORD PTR $T256993[esp+16]
+	lea	eax, DWORD PTR $T256992[esp+16]
 	push	eax
 	mov	ecx, esi
 	call	?erase@?$_Tree@V?$_Tset_traits@PAVCvPlot@@U?$less@PAVCvPlot@@@std@@V?$allocator@PAVCvPlot@@@3@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@0@Z ; std::_Tree<std::_Tset_traits<CvPlot *,std::less<CvPlot *>,std::allocator<CvPlot *>,0> >::erase
@@ -59572,9 +59572,9 @@ PUBLIC	?erase@?$_Tree@V?$_Tset_traits@PAVCvPlot@@U?$less@PAVCvPlot@@@std@@V?$all
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?erase@?$_Tree@V?$_Tset_traits@PAVCvPlot@@U?$less@PAVCvPlot@@@std@@V?$allocator@PAVCvPlot@@@3@$0A@@std@@@std@@QAEIABQAVCvPlot@@@Z
 _TEXT	SEGMENT
-$T257023 = -8						; size = 4
+$T257022 = -8						; size = 4
 __Where$ = -8						; size = 8
-$T257034 = 8						; size = 1
+$T257033 = 8						; size = 1
 __Num$ = 8						; size = 4
 __Keyval$ = 8						; size = 4
 ?erase@?$_Tree@V?$_Tset_traits@PAVCvPlot@@U?$less@PAVCvPlot@@@std@@V?$allocator@PAVCvPlot@@@3@$0A@@std@@@std@@QAEIABQAVCvPlot@@@Z PROC ; std::_Tree<std::_Tset_traits<CvPlot *,std::less<CvPlot *>,std::allocator<CvPlot *>,0> >::erase, COMDAT
@@ -59603,7 +59603,7 @@ __Keyval$ = 8						; size = 4
 	mov	edi, DWORD PTR __Where$[esp+24]
 	mov	ebx, DWORD PTR __Where$[esp+20]
 	mov	DWORD PTR __Num$[esp+16], 0
-	mov	edx, DWORD PTR $T257034[esp+16]
+	mov	edx, DWORD PTR $T257033[esp+16]
 	push	edx
 	lea	eax, DWORD PTR __Num$[esp+20]
 	push	eax
@@ -59616,7 +59616,7 @@ __Keyval$ = 8						; size = 4
 
 	push	edi
 	push	ebx
-	lea	ecx, DWORD PTR $T257023[esp+28]
+	lea	ecx, DWORD PTR $T257022[esp+28]
 	push	ecx
 	mov	ecx, esi
 	call	?erase@?$_Tree@V?$_Tset_traits@PAVCvPlot@@U?$less@PAVCvPlot@@@std@@V?$allocator@PAVCvPlot@@@3@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@0@Z ; std::_Tree<std::_Tset_traits<CvPlot *,std::less<CvPlot *>,std::allocator<CvPlot *>,0> >::erase
@@ -59639,8 +59639,8 @@ PUBLIC	?touch@FAutoArchive@@QAEXAAVFAutoVariableBase@@@Z ; FAutoArchive::touch
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\fireplace\include\fireworks\fautoarchive.h
 ;	COMDAT ?touch@FAutoArchive@@QAEXAAVFAutoVariableBase@@@Z
 _TEXT	SEGMENT
-$T257045 = -8						; size = 8
-$T257044 = 8						; size = 4
+$T257044 = -8						; size = 8
+$T257043 = 8						; size = 4
 _dirtyVariable$ = 8					; size = 4
 ?touch@FAutoArchive@@QAEXAAVFAutoVariableBase@@@Z PROC	; FAutoArchive::touch, COMDAT
 ; _this$ = ecx
@@ -59655,10 +59655,10 @@ _dirtyVariable$ = 8					; size = 4
 ; 59   : 		m_deltas.insert(&dirtyVariable);
 
 	mov	eax, DWORD PTR _dirtyVariable$[esp+4]
-	lea	edx, DWORD PTR $T257044[esp+4]
-	mov	DWORD PTR $T257044[esp+4], eax
+	lea	edx, DWORD PTR $T257043[esp+4]
+	mov	DWORD PTR $T257043[esp+4], eax
 	push	edx
-	lea	eax, DWORD PTR $T257045[esp+12]
+	lea	eax, DWORD PTR $T257044[esp+12]
 	push	eax
 	add	ecx, 20					; 00000014H
 	call	?insert@?$_Tree@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@std@@QAE?AU?$pair@Viterator@?$_Tree@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@std@@_N@2@ABQAVFAutoVariableBase@@@Z ; std::_Tree<std::_Tset_traits<FAutoVariableBase *,std::less<FAutoVariableBase *>,std::allocator<FAutoVariableBase *>,0> >::insert
@@ -59709,7 +59709,7 @@ PUBLIC	??$_Destroy_range@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xmemory
 ;	COMDAT ??$_Destroy_range@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@std@@@std@@YAXPAU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@0@0AAV?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@0@@Z
 _TEXT	SEGMENT
-__Cat$257217 = -4					; size = 1
+__Cat$257216 = -4					; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Al$ = 16						; size = 4
@@ -59721,7 +59721,7 @@ __Al$ = 16						; size = 4
 
 ; 225  : 	_Destroy_range(_First, _Last, _Al, _Ptr_cat(_First, _Last));
 
-	mov	eax, DWORD PTR __Cat$257217[esp+4]
+	mov	eax, DWORD PTR __Cat$257216[esp+4]
 	mov	ecx, DWORD PTR __Al$[esp]
 	mov	edx, DWORD PTR __Last$[esp]
 	push	eax
@@ -59742,8 +59742,8 @@ PUBLIC	?set@?$FAutoVariable@DVCvPlot@@@@QAEXABD@Z	; FAutoVariable<char,CvPlot>::
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\fireplace\include\fireworks\fautovariable.h
 ;	COMDAT ?set@?$FAutoVariable@DVCvPlot@@@@QAEXABD@Z
 _TEXT	SEGMENT
-$T257226 = -8						; size = 8
-$T257225 = 8						; size = 4
+$T257225 = -8						; size = 8
+$T257224 = 8						; size = 4
 _source$ = 8						; size = 4
 ?set@?$FAutoVariable@DVCvPlot@@@@QAEXABD@Z PROC		; FAutoVariable<char,CvPlot>::set, COMDAT
 ; _this$ = ecx
@@ -59765,13 +59765,13 @@ _source$ = 8						; size = 4
 ; 227  : 	{
 ; 228  : 		m_owner.touch(*this);
 
-	lea	ecx, DWORD PTR $T257225[esp+12]
+	lea	ecx, DWORD PTR $T257224[esp+12]
 	push	ecx
 	mov	ecx, DWORD PTR [esi+8]
-	lea	edx, DWORD PTR $T257226[esp+20]
+	lea	edx, DWORD PTR $T257225[esp+20]
 	push	edx
 	add	ecx, 20					; 00000014H
-	mov	DWORD PTR $T257225[esp+20], esi
+	mov	DWORD PTR $T257224[esp+20], esi
 	call	?insert@?$_Tree@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@std@@QAE?AU?$pair@Viterator@?$_Tree@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@std@@_N@2@ABQAVFAutoVariableBase@@@Z ; std::_Tree<std::_Tset_traits<FAutoVariableBase *,std::less<FAutoVariableBase *>,std::allocator<FAutoVariableBase *>,0> >::insert
 
 ; 229  : 		m_value = source;
@@ -59794,7 +59794,7 @@ PUBLIC	?insert@?$_Tree@V?$_Tmap_traits@IV?$basic_string@DU?$char_traits@D@std@@V
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xtree
 ;	COMDAT ?insert@?$_Tree@V?$_Tmap_traits@IV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@I@2@V?$allocator@U?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@ABU?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@Z
 _TEXT	SEGMENT
-$T257238 = -8						; size = 8
+$T257237 = -8						; size = 8
 ___$ReturnUdt$ = 8					; size = 4
 __Where$ = 12						; size = 4
 __Next$ = 16						; size = 4
@@ -60091,7 +60091,7 @@ $LN1@insert@4:
 ; 748  : 		return (insert(_Val).first);	// try usual insert if all else fails
 
 	push	esi
-	lea	edx, DWORD PTR $T257238[esp+28]
+	lea	edx, DWORD PTR $T257237[esp+28]
 	push	edx
 	mov	ecx, edi
 	call	?insert@?$_Tree@V?$_Tmap_traits@IV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@I@2@V?$allocator@U?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@$0A@@std@@@std@@QAE?AU?$pair@Viterator@?$_Tree@V?$_Tmap_traits@IV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@I@2@V?$allocator@U?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@$0A@@std@@@std@@_N@2@ABU?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@Z ; std::_Tree<std::_Tmap_traits<unsigned int,std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,0> >::insert
@@ -60191,7 +60191,7 @@ PUBLIC	??1?$set@PAVCvPlot@@U?$less@PAVCvPlot@@@std@@V?$allocator@PAVCvPlot@@@3@@
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??1?$set@PAVCvPlot@@U?$less@PAVCvPlot@@@std@@V?$allocator@PAVCvPlot@@@3@@std@@QAE@XZ
 _TEXT	SEGMENT
-$T258076 = -4						; size = 4
+$T258074 = -4						; size = 4
 ??1?$set@PAVCvPlot@@U?$less@PAVCvPlot@@@std@@V?$allocator@PAVCvPlot@@@3@@std@@QAE@XZ PROC ; std::set<CvPlot *,std::less<CvPlot *>,std::allocator<CvPlot *> >::~set<CvPlot *,std::less<CvPlot *>,std::allocator<CvPlot *> >, COMDAT
 ; _this$ = ecx
 	push	ecx
@@ -60201,7 +60201,7 @@ $T258076 = -4						; size = 4
 	mov	ecx, DWORD PTR [eax]
 	push	eax
 	push	ecx
-	lea	eax, DWORD PTR $T258076[esp+16]
+	lea	eax, DWORD PTR $T258074[esp+16]
 	push	eax
 	mov	ecx, esi
 	call	?erase@?$_Tree@V?$_Tset_traits@PAVCvPlot@@U?$less@PAVCvPlot@@@std@@V?$allocator@PAVCvPlot@@@3@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@0@Z ; std::_Tree<std::_Tset_traits<CvPlot *,std::less<CvPlot *>,std::allocator<CvPlot *>,0> >::erase
@@ -60241,7 +60241,7 @@ __ehfuncinfo$??1CvPlot@@QAE@XZ DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ??1CvPlot@@QAE@XZ
 _TEXT	SEGMENT
-$T258094 = -20						; size = 4
+$T258093 = -20						; size = 4
 _this$ = -16						; size = 4
 __$EHRec$ = -12						; size = 12
 ??1CvPlot@@QAE@XZ PROC					; CvPlot::~CvPlot, COMDAT
@@ -60262,11 +60262,11 @@ __$EHRec$ = -12						; size = 12
 
 ; 169  : 	FSerialization::plotsToCheck.erase(this);
 
-	lea	eax, DWORD PTR $T258094[esp+28]
+	lea	eax, DWORD PTR $T258093[esp+28]
 	push	eax
 	mov	ecx, OFFSET ?plotsToCheck@FSerialization@@3V?$set@PAVCvPlot@@U?$less@PAVCvPlot@@@std@@V?$allocator@PAVCvPlot@@@3@@std@@A ; FSerialization::plotsToCheck
 	mov	DWORD PTR __$EHRec$[esp+40], 3
-	mov	DWORD PTR $T258094[esp+32], esi
+	mov	DWORD PTR $T258093[esp+32], esi
 	call	?erase@?$_Tree@V?$_Tset_traits@PAVCvPlot@@U?$less@PAVCvPlot@@@std@@V?$allocator@PAVCvPlot@@@3@$0A@@std@@@std@@QAEIABQAVCvPlot@@@Z ; std::_Tree<std::_Tset_traits<CvPlot *,std::less<CvPlot *>,std::allocator<CvPlot *>,0> >::erase
 
 ; 170  : 	uninit();
@@ -60371,17 +60371,17 @@ __ehfuncinfo$?doImprovement@CvPlot@@QAEXXZ DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?doImprovement@CvPlot@@QAEXXZ
 _TEXT	SEGMENT
-_thisResourceInfo$222967 = -84				; size = 4
-$T258248 = -80						; size = 4
+_thisResourceInfo$222966 = -84				; size = 4
+$T258247 = -80						; size = 4
 _thisTeam$ = -80					; size = 4
-$T258250 = -76						; size = 8
-$T258247 = -76						; size = 4
-_iNumResourceInfos$222961 = -76				; size = 4
+$T258249 = -76						; size = 8
+$T258246 = -76						; size = 4
+_iNumResourceInfos$222960 = -76				; size = 4
 _iResourceNum$ = -76					; size = 4
 _strBuffer$ = -68					; size = 28
-$T258249 = -40						; size = 28
-$T258246 = -40						; size = 28
+$T258248 = -40						; size = 28
 $T258245 = -40						; size = 28
+$T258244 = -40						; size = 28
 __$EHRec$ = -12						; size = 12
 ?doImprovement@CvPlot@@QAEXXZ PROC			; CvPlot::doImprovement, COMDAT
 ; _this$ = ecx
@@ -60455,7 +60455,7 @@ $LN25@doImprovem@2:
 	movsx	eax, BYTE PTR [esi+441]
 	push	eax
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	mov	DWORD PTR _iNumResourceInfos$222961[esp+104], edi
+	mov	DWORD PTR _iNumResourceInfos$222960[esp+104], edi
 	call	?getImprovementInfo@CvGlobals@@QAEPAVCvImprovementEntry@@W4ImprovementTypes@@@Z ; CvGlobals::getImprovementInfo
 	mov	ebp, eax
 
@@ -60471,7 +60471,7 @@ $LL13@doImprovem@2:
 	push	ebx
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getResourceInfo@CvGlobals@@QAEPAVCvResourceInfo@@W4ResourceTypes@@@Z ; CvGlobals::getResourceInfo
-	mov	DWORD PTR _thisResourceInfo$222967[esp+100], eax
+	mov	DWORD PTR _thisResourceInfo$222966[esp+100], eax
 
 ; 464  : 				if (thisResourceInfo)
 
@@ -60504,7 +60504,7 @@ $LL13@doImprovem@2:
 ; 470  : 							if(GC.getGame().getJonRandNum(thisImprovementInfo->GetImprovementResourceDiscoverRand(iI), "Resource Discovery") == 0)
 
 	mov	edi, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
-	push	OFFSET $SG222974
+	push	OFFSET $SG222973
 	push	ebx
 	mov	ecx, ebp
 	call	?GetImprovementResourceDiscoverRand@CvImprovementEntry@@QBEHH@Z ; CvImprovementEntry::GetImprovementResourceDiscoverRand
@@ -60513,7 +60513,7 @@ $LL13@doImprovem@2:
 	call	?getJonRandNum@CvGame@@QAEHHPBD@Z	; CvGame::getJonRandNum
 	test	eax, eax
 	je	SHORT $LN144@doImprovem@2
-	mov	edi, DWORD PTR _iNumResourceInfos$222961[esp+100]
+	mov	edi, DWORD PTR _iNumResourceInfos$222960[esp+100]
 $LN12@doImprovem@2:
 
 ; 461  : 			for(iI = 0; iI < iNumResourceInfos; ++iI)
@@ -60668,10 +60668,10 @@ $LN159@doImprovem@2:
 ; 478  : 									{
 ; 479  : 										if(strcmp(thisResourceInfo->GetType(), "RESOURCE_ARTIFACTS") == 0)
 
-	mov	ebx, DWORD PTR _thisResourceInfo$222967[esp+100]
+	mov	ebx, DWORD PTR _thisResourceInfo$222966[esp+100]
 	add	ebx, 176				; 000000b0H
 	mov	ecx, ebx
-	mov	edi, OFFSET $SG222980
+	mov	edi, OFFSET $SG222979
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	npad	6
 $LL146@doImprovem@2:
@@ -60703,8 +60703,8 @@ $LN149@doImprovem@2:
 	mov	ecx, ebp
 	call	?getNameKey@CvCity@@QBEPBDXZ		; CvCity::getNameKey
 	push	eax
-	lea	ecx, DWORD PTR $T258245[esp+104]
-	push	OFFSET $SG222987
+	lea	ecx, DWORD PTR $T258244[esp+104]
+	push	OFFSET $SG222986
 	push	ecx
 	call	??$GetLocalizedText@PBD@@YA?AVCvString@@PBD0@Z ; GetLocalizedText<char const *>
 	add	esp, 12					; 0000000cH
@@ -60716,7 +60716,7 @@ $LN4@doImprovem@2:
 ; 483  : 										else if(strcmp(thisResourceInfo->GetType(), "RESOURCE_HIDDEN_ARTIFACTS") == 0)
 
 	mov	ecx, ebx
-	mov	edi, OFFSET $SG222990
+	mov	edi, OFFSET $SG222989
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	npad	6
 $LL150@doImprovem@2:
@@ -60748,8 +60748,8 @@ $LN153@doImprovem@2:
 	jne	SHORT $LN2@doImprovem@2
 	call	?getNameKey@CvCity@@QBEPBDXZ		; CvCity::getNameKey
 	push	eax
-	lea	edx, DWORD PTR $T258246[esp+104]
-	push	OFFSET $SG222992
+	lea	edx, DWORD PTR $T258245[esp+104]
+	push	OFFSET $SG222991
 	push	edx
 	call	??$GetLocalizedText@PBD@@YA?AVCvString@@PBD0@Z ; GetLocalizedText<char const *>
 	add	esp, 12					; 0000000cH
@@ -60765,16 +60765,16 @@ $LN2@doImprovem@2:
 ; 489  : 											strBuffer = GetLocalizedText("TXT_KEY_MISC_DISCOVERED_NEW_RESOURCE", thisResourceInfo->GetTextKey(), pCity->getNameKey());
 
 	call	?getNameKey@CvCity@@QBEPBDXZ		; CvCity::getNameKey
-	mov	ecx, DWORD PTR _thisResourceInfo$222967[esp+100]
-	mov	DWORD PTR $T258247[esp+100], eax
+	mov	ecx, DWORD PTR _thisResourceInfo$222966[esp+100]
+	mov	DWORD PTR $T258246[esp+100], eax
 	call	?GetTextKey@CvBaseInfo@@QBEPBDXZ	; CvBaseInfo::GetTextKey
-	mov	DWORD PTR $T258248[esp+100], eax
-	lea	eax, DWORD PTR $T258247[esp+100]
+	mov	DWORD PTR $T258247[esp+100], eax
+	lea	eax, DWORD PTR $T258246[esp+100]
 	push	eax
-	lea	ecx, DWORD PTR $T258248[esp+104]
+	lea	ecx, DWORD PTR $T258247[esp+104]
 	push	ecx
-	lea	edx, DWORD PTR $T258249[esp+108]
-	push	OFFSET $SG223004
+	lea	edx, DWORD PTR $T258248[esp+108]
+	push	OFFSET $SG223003
 	push	edx
 	call	??$GetLocalizedText@PBDPBD@@YA?AVCvString@@PBDABQBD1@Z ; GetLocalizedText<char const *,char const *>
 	add	esp, 16					; 00000010H
@@ -60783,7 +60783,7 @@ $LN165@doImprovem@2:
 	push	eax
 	lea	ecx, DWORD PTR _strBuffer$[esp+104]
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T258249[esp+100]
+	lea	ecx, DWORD PTR $T258248[esp+100]
 	mov	BYTE PTR __$EHRec$[esp+108], 0
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -60809,7 +60809,7 @@ $LN165@doImprovem@2:
 	push	eax
 	push	0
 	push	ecx
-	lea	ecx, DWORD PTR $T258250[esp+148]
+	lea	ecx, DWORD PTR $T258249[esp+148]
 	push	ecx
 	mov	ecx, ebp
 	add	edi, 172				; 000000acH
@@ -60859,13 +60859,13 @@ __unwindfunclet$?doImprovement@CvPlot@@QAEXXZ$0:
 	lea	ecx, DWORD PTR _strBuffer$[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?doImprovement@CvPlot@@QAEXXZ$1:
-	lea	ecx, DWORD PTR $T258245[ebp]
+	lea	ecx, DWORD PTR $T258244[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?doImprovement@CvPlot@@QAEXXZ$2:
-	lea	ecx, DWORD PTR $T258246[ebp]
+	lea	ecx, DWORD PTR $T258245[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?doImprovement@CvPlot@@QAEXXZ$3:
-	lea	ecx, DWORD PTR $T258249[ebp]
+	lea	ecx, DWORD PTR $T258248[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?doImprovement@CvPlot@@QAEXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?doImprovement@CvPlot@@QAEXXZ
@@ -61012,13 +61012,13 @@ __real@3fe0000000000000 DQ 03fe0000000000000r	; 0.5
 CONST	ENDS
 ;	COMDAT ?changeAdjacentSight@CvPlot@@QAEXW4TeamTypes@@H_NW4InvisibleTypes@@W4DirectionTypes@@1@Z
 _TEXT	SEGMENT
-_bFirstHalfBlocked$223654 = -94				; size = 1
-_bSecondHalfBlocked$223655 = -93			; size = 1
+_bFirstHalfBlocked$223653 = -94				; size = 1
+_bSecondHalfBlocked$223654 = -93			; size = 1
 _thisRing$ = -92					; size = 4
-_iFirstInwardLevel$223652 = -88				; size = 4
-_iThisPlotLevel$223672 = -84				; size = 4
+_iFirstInwardLevel$223651 = -88				; size = 4
+_iThisPlotLevel$223671 = -84				; size = 4
 _iCenterLevel$ = -80					; size = 4
-_iSecondInwardLevel$223653 = -76			; size = 4
+_iSecondInwardLevel$223652 = -76			; size = 4
 _eDirectionOfNextTileToCheck$ = -72			; size = 4
 _iDX$ = -68						; size = 4
 _iDY$ = -64						; size = 4
@@ -61033,19 +61033,19 @@ tv1290 = -48						; size = 4
 tv1289 = -48						; size = 4
 tv1200 = -48						; size = 4
 tv1199 = -48						; size = 4
-_fSecondDist$223698 = -48				; size = 8
-_fSecondInwardY$223695 = -48				; size = 8
-_fFirstDist$223692 = -40				; size = 8
-_fFirstInwardY$223689 = -40				; size = 8
-_fP0X$223674 = -40					; size = 8
-_fSecondInwardX$223693 = -32				; size = 8
-_fFirstInwardX$223687 = -32				; size = 8
-_fP1X$223678 = -32					; size = 8
-_b$223685 = -24						; size = 8
-_a$223684 = -16						; size = 8
-_fP0Y$223676 = -16					; size = 8
-_c$223686 = -8						; size = 8
-_fP1Y$223680 = -8					; size = 8
+_fSecondDist$223697 = -48				; size = 8
+_fSecondInwardY$223694 = -48				; size = 8
+_fFirstDist$223691 = -40				; size = 8
+_fFirstInwardY$223688 = -40				; size = 8
+_fP0X$223673 = -40					; size = 8
+_fSecondInwardX$223692 = -32				; size = 8
+_fFirstInwardX$223686 = -32				; size = 8
+_fP1X$223677 = -32					; size = 8
+_b$223684 = -24						; size = 8
+_a$223683 = -16						; size = 8
+_fP0Y$223675 = -16					; size = 8
+_c$223685 = -8						; size = 8
+_fP1Y$223679 = -8					; size = 8
 _eTeam$ = 8						; size = 4
 _iRange$ = 12						; size = 4
 _bIncrement$ = 16					; size = 1
@@ -61183,11 +61183,11 @@ $LN55@changeAdja:
 ; 1468 : 					int iFirstInwardLevel = INVALID_RING;
 
 	or	eax, -1
-	mov	DWORD PTR _iFirstInwardLevel$223652[esp+128], eax
+	mov	DWORD PTR _iFirstInwardLevel$223651[esp+128], eax
 
 ; 1469 : 					int iSecondInwardLevel = INVALID_RING;
 
-	mov	DWORD PTR _iSecondInwardLevel$223653[esp+128], eax
+	mov	DWORD PTR _iSecondInwardLevel$223652[esp+128], eax
 
 ; 1470 : 					bool bFirstHalfBlocked = false;
 ; 1471 : 					bool bSecondHalfBlocked = false;
@@ -61198,8 +61198,8 @@ $LN55@changeAdja:
 	mov	eax, DWORD PTR _eDirectionOfNextTileToCheck$[esp+128]
 	xor	ebx, ebx
 	xor	edi, edi
-	mov	BYTE PTR _bFirstHalfBlocked$223654[esp+128], 0
-	mov	BYTE PTR _bSecondHalfBlocked$223655[esp+128], 0
+	mov	BYTE PTR _bFirstHalfBlocked$223653[esp+128], 0
+	mov	BYTE PTR _bSecondHalfBlocked$223654[esp+128], 0
 	cmp	eax, 5
 	ja	$LN39@changeAdja
 	jmp	DWORD PTR $LN287@changeAdja[eax*4]
@@ -61351,18 +61351,18 @@ $LN272@changeAdja:
 ; 1507 : 							if(iFirstInwardLevel >= HALF_BLOCKED)
 
 	cmp	eax, 16777216				; 01000000H
-	mov	DWORD PTR _iFirstInwardLevel$223652[esp+128], eax
+	mov	DWORD PTR _iFirstInwardLevel$223651[esp+128], eax
 	jl	SHORT $LN42@changeAdja
 
 ; 1508 : 							{
 ; 1509 : 								iFirstInwardLevel -= HALF_BLOCKED;
 
 	sub	eax, 16777216				; 01000000H
-	mov	DWORD PTR _iFirstInwardLevel$223652[esp+128], eax
+	mov	DWORD PTR _iFirstInwardLevel$223651[esp+128], eax
 
 ; 1510 : 								bFirstHalfBlocked = true;
 
-	mov	BYTE PTR _bFirstHalfBlocked$223654[esp+128], 1
+	mov	BYTE PTR _bFirstHalfBlocked$223653[esp+128], 1
 $LN42@changeAdja:
 
 ; 1511 : 							}
@@ -61401,18 +61401,18 @@ $LN42@changeAdja:
 ; 1520 : 							if(iSecondInwardLevel >= HALF_BLOCKED)
 
 	cmp	eax, 16777216				; 01000000H
-	mov	DWORD PTR _iSecondInwardLevel$223653[esp+128], eax
+	mov	DWORD PTR _iSecondInwardLevel$223652[esp+128], eax
 	jl	SHORT $LN39@changeAdja
 
 ; 1521 : 							{
 ; 1522 : 								iSecondInwardLevel -= HALF_BLOCKED;
 
 	sub	eax, 16777216				; 01000000H
-	mov	DWORD PTR _iSecondInwardLevel$223653[esp+128], eax
+	mov	DWORD PTR _iSecondInwardLevel$223652[esp+128], eax
 
 ; 1523 : 								bSecondHalfBlocked = true;
 
-	mov	BYTE PTR _bSecondHalfBlocked$223655[esp+128], 1
+	mov	BYTE PTR _bSecondHalfBlocked$223654[esp+128], 1
 $LN39@changeAdja:
 
 ; 1524 : 							}
@@ -61431,18 +61431,18 @@ $LN39@changeAdja:
 
 ; 1528 : 					if(iFirstInwardLevel != INVALID_RING && iSecondInwardLevel != INVALID_RING && iFirstInwardLevel != iSecondInwardLevel && !bFirstHalfBlocked && !bSecondHalfBlocked)
 
-	mov	ecx, DWORD PTR _iFirstInwardLevel$223652[esp+128]
-	mov	DWORD PTR _iThisPlotLevel$223672[esp+128], eax
-	mov	eax, DWORD PTR _iSecondInwardLevel$223653[esp+128]
+	mov	ecx, DWORD PTR _iFirstInwardLevel$223651[esp+128]
+	mov	DWORD PTR _iThisPlotLevel$223671[esp+128], eax
+	mov	eax, DWORD PTR _iSecondInwardLevel$223652[esp+128]
 	cmp	ecx, -1
 	je	$LN20@changeAdja
 	cmp	eax, -1
 	je	$LN38@changeAdja
 	cmp	ecx, eax
 	je	$LN38@changeAdja
-	cmp	BYTE PTR _bFirstHalfBlocked$223654[esp+128], 0
+	cmp	BYTE PTR _bFirstHalfBlocked$223653[esp+128], 0
 	jne	$LN20@changeAdja
-	cmp	BYTE PTR _bSecondHalfBlocked$223655[esp+128], 0
+	cmp	BYTE PTR _bSecondHalfBlocked$223654[esp+128], 0
 	jne	$LN257@changeAdja
 
 ; 1529 : 					{
@@ -61461,7 +61461,7 @@ $LN39@changeAdja:
 	movsx	ecx, WORD PTR [esi]
 	fild	DWORD PTR tv1300[esp+128]
 	movsx	edx, ax
-	fstp	QWORD PTR _fP0X$223674[esp+128]
+	fstp	QWORD PTR _fP0X$223673[esp+128]
 	mov	DWORD PTR tv1299[esp+128], edx
 	fild	DWORD PTR tv1299[esp+128]
 	mov	DWORD PTR tv1298[esp+128], ecx
@@ -61470,12 +61470,12 @@ $LN39@changeAdja:
 
 	movzx	ecx, WORD PTR [esi+2]
 	movsx	edx, cx
-	fstp	QWORD PTR _fP0Y$223676[esp+128]
+	fstp	QWORD PTR _fP0Y$223675[esp+128]
 	fild	DWORD PTR tv1298[esp+128]
 	mov	DWORD PTR tv1297[esp+128], edx
-	fstp	QWORD PTR _fP1X$223678[esp+128]
+	fstp	QWORD PTR _fP1X$223677[esp+128]
 	fild	DWORD PTR tv1297[esp+128]
-	fstp	QWORD PTR _fP1Y$223680[esp+128]
+	fstp	QWORD PTR _fP1Y$223679[esp+128]
 
 ; 1534 : 						if(getY() & 1)
 
@@ -61485,9 +61485,9 @@ $LN39@changeAdja:
 ; 1535 : 						{
 ; 1536 : 							fP0X += 0.5;
 
-	fld	QWORD PTR _fP0X$223674[esp+128]
+	fld	QWORD PTR _fP0X$223673[esp+128]
 	fadd	QWORD PTR __real@3fe0000000000000
-	fstp	QWORD PTR _fP0X$223674[esp+128]
+	fstp	QWORD PTR _fP0X$223673[esp+128]
 $LN37@changeAdja:
 
 ; 1537 : 						}
@@ -61499,16 +61499,16 @@ $LN37@changeAdja:
 ; 1539 : 						{
 ; 1540 : 							fP1X += 0.5;
 
-	fld	QWORD PTR _fP1X$223678[esp+128]
+	fld	QWORD PTR _fP1X$223677[esp+128]
 	fadd	QWORD PTR __real@3fe0000000000000
-	fstp	QWORD PTR _fP1X$223678[esp+128]
+	fstp	QWORD PTR _fP1X$223677[esp+128]
 $LN36@changeAdja:
 
 ; 1541 : 						}
 ; 1542 : 
 ; 1543 : 						double a = fP1Y - fP0Y;
 
-	fld	QWORD PTR _fP1Y$223680[esp+128]
+	fld	QWORD PTR _fP1Y$223679[esp+128]
 
 ; 1544 : 						double b = fP0X - fP1X;
 ; 1545 : 						double c = fP0Y * fP1X - fP1Y * fP0X;
@@ -61518,7 +61518,7 @@ $LN36@changeAdja:
 	movsx	eax, WORD PTR [ebx]
 	fld	ST(0)
 	mov	DWORD PTR tv1290[esp+128], eax
-	fld	QWORD PTR _fP0Y$223676[esp+128]
+	fld	QWORD PTR _fP0Y$223675[esp+128]
 
 ; 1548 : 						double fFirstInwardY = (double) pFirstInwardPlot->getY();
 
@@ -61526,22 +61526,22 @@ $LN36@changeAdja:
 	fsub	ST(1), ST(0)
 	fxch	ST(1)
 	movsx	ecx, ax
-	fstp	QWORD PTR _a$223684[esp+128]
-	fld	QWORD PTR _fP0X$223674[esp+128]
+	fstp	QWORD PTR _a$223683[esp+128]
+	fld	QWORD PTR _fP0X$223673[esp+128]
 	fld	ST(0)
-	fld	QWORD PTR _fP1X$223678[esp+128]
+	fld	QWORD PTR _fP1X$223677[esp+128]
 	fsub	ST(1), ST(0)
 	fxch	ST(1)
-	fstp	QWORD PTR _b$223685[esp+128]
+	fstp	QWORD PTR _b$223684[esp+128]
 	fmulp	ST(2), ST(0)
 	fmulp	ST(2), ST(0)
 	fsubrp	ST(1), ST(0)
-	fstp	QWORD PTR _c$223686[esp+128]
+	fstp	QWORD PTR _c$223685[esp+128]
 	fild	DWORD PTR tv1290[esp+128]
 	mov	DWORD PTR tv1289[esp+128], ecx
-	fstp	QWORD PTR _fFirstInwardX$223687[esp+128]
+	fstp	QWORD PTR _fFirstInwardX$223686[esp+128]
 	fild	DWORD PTR tv1289[esp+128]
-	fstp	QWORD PTR _fFirstInwardY$223689[esp+128]
+	fstp	QWORD PTR _fFirstInwardY$223688[esp+128]
 
 ; 1549 : 						if(pFirstInwardPlot->getY() & 1)
 
@@ -61551,32 +61551,32 @@ $LN36@changeAdja:
 ; 1550 : 						{
 ; 1551 : 							fFirstInwardX += 0.5;
 
-	fld	QWORD PTR _fFirstInwardX$223687[esp+128]
+	fld	QWORD PTR _fFirstInwardX$223686[esp+128]
 	fadd	QWORD PTR __real@3fe0000000000000
-	fstp	QWORD PTR _fFirstInwardX$223687[esp+128]
+	fstp	QWORD PTR _fFirstInwardX$223686[esp+128]
 $LN35@changeAdja:
 
 ; 1552 : 						}
 ; 1553 : 						double fFirstDist = a * fFirstInwardX + b * fFirstInwardY + c;
 
-	fld	QWORD PTR _fFirstInwardY$223689[esp+128]
+	fld	QWORD PTR _fFirstInwardY$223688[esp+128]
 
 ; 1554 : 						fFirstDist = abs(fFirstDist);
 
 	sub	esp, 8
-	fmul	QWORD PTR _b$223685[esp+136]
+	fmul	QWORD PTR _b$223684[esp+136]
 	mov	eax, esp
-	fld	QWORD PTR _fFirstInwardX$223687[esp+136]
-	fmul	QWORD PTR _a$223684[esp+136]
+	fld	QWORD PTR _fFirstInwardX$223686[esp+136]
+	fmul	QWORD PTR _a$223683[esp+136]
 	faddp	ST(1), ST(0)
-	fadd	QWORD PTR _c$223686[esp+136]
-	fstp	QWORD PTR _fFirstDist$223692[esp+136]
-	mov	edx, DWORD PTR _fFirstDist$223692[esp+136]
-	mov	ecx, DWORD PTR _fFirstDist$223692[esp+140]
+	fadd	QWORD PTR _c$223685[esp+136]
+	fstp	QWORD PTR _fFirstDist$223691[esp+136]
+	mov	edx, DWORD PTR _fFirstDist$223691[esp+136]
+	mov	ecx, DWORD PTR _fFirstDist$223691[esp+140]
 	mov	DWORD PTR [eax], edx
 	mov	DWORD PTR [eax+4], ecx
 	call	?abs@@YANN@Z				; abs
-	fstp	QWORD PTR _fFirstDist$223692[esp+136]
+	fstp	QWORD PTR _fFirstDist$223691[esp+136]
 
 ; 1555 : 						// skip the extra distance since it is the same for both equations
 ; 1556 : 
@@ -61592,9 +61592,9 @@ $LN35@changeAdja:
 	fild	DWORD PTR tv1200[esp+136]
 	mov	DWORD PTR tv1199[esp+136], ecx
 	add	esp, 8
-	fstp	QWORD PTR _fSecondInwardX$223693[esp+128]
+	fstp	QWORD PTR _fSecondInwardX$223692[esp+128]
 	fild	DWORD PTR tv1199[esp+128]
-	fstp	QWORD PTR _fSecondInwardY$223695[esp+128]
+	fstp	QWORD PTR _fSecondInwardY$223694[esp+128]
 
 ; 1559 : 						if(pSecondInwardPlot->getY() & 1)
 
@@ -61604,41 +61604,41 @@ $LN35@changeAdja:
 ; 1560 : 						{
 ; 1561 : 							fSecondInwardX += 0.5;
 
-	fld	QWORD PTR _fSecondInwardX$223693[esp+128]
+	fld	QWORD PTR _fSecondInwardX$223692[esp+128]
 	fadd	QWORD PTR __real@3fe0000000000000
-	fstp	QWORD PTR _fSecondInwardX$223693[esp+128]
+	fstp	QWORD PTR _fSecondInwardX$223692[esp+128]
 $LN34@changeAdja:
 
 ; 1562 : 						}
 ; 1563 : 						double fSecondDist = a * fSecondInwardX + b * fSecondInwardY + c;
 
-	fld	QWORD PTR _fSecondInwardY$223695[esp+128]
+	fld	QWORD PTR _fSecondInwardY$223694[esp+128]
 
 ; 1564 : 						fSecondDist = abs(fSecondDist);
 
 	sub	esp, 8
-	fmul	QWORD PTR _b$223685[esp+136]
+	fmul	QWORD PTR _b$223684[esp+136]
 	mov	eax, esp
-	fld	QWORD PTR _fSecondInwardX$223693[esp+136]
-	fmul	QWORD PTR _a$223684[esp+136]
+	fld	QWORD PTR _fSecondInwardX$223692[esp+136]
+	fmul	QWORD PTR _a$223683[esp+136]
 	faddp	ST(1), ST(0)
-	fadd	QWORD PTR _c$223686[esp+136]
-	fstp	QWORD PTR _fSecondDist$223698[esp+136]
-	mov	edx, DWORD PTR _fSecondDist$223698[esp+136]
-	mov	ecx, DWORD PTR _fSecondDist$223698[esp+140]
+	fadd	QWORD PTR _c$223685[esp+136]
+	fstp	QWORD PTR _fSecondDist$223697[esp+136]
+	mov	edx, DWORD PTR _fSecondDist$223697[esp+136]
+	mov	ecx, DWORD PTR _fSecondDist$223697[esp+140]
 	mov	DWORD PTR [eax], edx
 	mov	DWORD PTR [eax+4], ecx
 	call	?abs@@YANN@Z				; abs
-	fstp	QWORD PTR _fSecondDist$223698[esp+136]
+	fstp	QWORD PTR _fSecondDist$223697[esp+136]
 
 ; 1565 : 						// skip the extra distance since it is the same for both equations
 ; 1566 : 
 ; 1567 : 						if(fFirstDist - fSecondDist > 0.05)  // we are closer to the second point
 
-	fld	QWORD PTR _fFirstDist$223692[esp+136]
+	fld	QWORD PTR _fFirstDist$223691[esp+136]
 	add	esp, 8
 	fld	ST(0)
-	fld	QWORD PTR _fSecondDist$223698[esp+128]
+	fld	QWORD PTR _fSecondDist$223697[esp+128]
 	fsub	ST(1), ST(0)
 	fld	QWORD PTR __real@3fa999999999999a
 	fcom	ST(2)
@@ -61650,9 +61650,9 @@ $LN34@changeAdja:
 ; 1568 : 						{
 ; 1569 : 							int iHighestLevel = (iSecondInwardLevel > iThisPlotLevel) ? iSecondInwardLevel : iThisPlotLevel;
 
-	mov	ecx, DWORD PTR _iSecondInwardLevel$223653[esp+128]
+	mov	ecx, DWORD PTR _iSecondInwardLevel$223652[esp+128]
 	fstp	ST(2)
-	mov	edx, DWORD PTR _iThisPlotLevel$223672[esp+128]
+	mov	edx, DWORD PTR _iThisPlotLevel$223671[esp+128]
 	fstp	ST(1)
 	fstp	ST(0)
 
@@ -61670,13 +61670,13 @@ $LN33@changeAdja:
 ; 1577 : 						{
 ; 1578 : 							int iHighestLevel = (iFirstInwardLevel > iThisPlotLevel) ? iFirstInwardLevel : iThisPlotLevel;
 
-	mov	ecx, DWORD PTR _iFirstInwardLevel$223652[esp+128]
+	mov	ecx, DWORD PTR _iFirstInwardLevel$223651[esp+128]
 	fsubrp	ST(2), ST(0)
 	fcompp
 	fnstsw	ax
 	test	ah, 5
 	jp	SHORT $LN29@changeAdja
-	mov	edx, DWORD PTR _iThisPlotLevel$223672[esp+128]
+	mov	edx, DWORD PTR _iThisPlotLevel$223671[esp+128]
 
 ; 1579 : 							pPlotToCheck->setScratchPad(iHighestLevel);
 ; 1580 : 							if(iFirstInwardLevel < iThisPlotLevel || ((iCenterLevel >= iFirstInwardLevel) && (thisRing < iRangeWithOneExtraRing)))
@@ -61692,7 +61692,7 @@ $LN29@changeAdja:
 ; 1586 : 						{
 ; 1587 : 							int iHighestInwardLevel = (iFirstInwardLevel > iSecondInwardLevel) ? iFirstInwardLevel : iSecondInwardLevel;
 
-	mov	eax, DWORD PTR _iSecondInwardLevel$223653[esp+128]
+	mov	eax, DWORD PTR _iSecondInwardLevel$223652[esp+128]
 	cmp	ecx, eax
 	mov	edi, ecx
 	jg	SHORT $LN275@changeAdja
@@ -61707,7 +61707,7 @@ $LN72@changeAdja:
 
 ; 1589 : 							int iHighestLevel = (iHighestInwardLevel > iThisPlotLevel) ? iHighestInwardLevel : iThisPlotLevel;
 
-	mov	eax, DWORD PTR _iThisPlotLevel$223672[esp+128]
+	mov	eax, DWORD PTR _iThisPlotLevel$223671[esp+128]
 	cmp	edi, eax
 	mov	ebx, edi
 	jg	SHORT $LN75@changeAdja
@@ -61767,14 +61767,14 @@ $LN38@changeAdja:
 ; 1604 : 					}
 ; 1605 : 					else if(iFirstInwardLevel != INVALID_RING && !bFirstHalfBlocked)
 
-	cmp	BYTE PTR _bFirstHalfBlocked$223654[esp+128], 0
+	cmp	BYTE PTR _bFirstHalfBlocked$223653[esp+128], 0
 	jne	SHORT $LN20@changeAdja
 $LN257@changeAdja:
 
 ; 1606 : 					{
 ; 1607 : 						int iHighestLevel = (iFirstInwardLevel > iThisPlotLevel) ? iFirstInwardLevel : iThisPlotLevel;
 
-	mov	edx, DWORD PTR _iThisPlotLevel$223672[esp+128]
+	mov	edx, DWORD PTR _iThisPlotLevel$223671[esp+128]
 
 ; 1608 : 						pPlotToCheck->setScratchPad(iHighestLevel);
 ; 1609 : 						if(iFirstInwardLevel < iThisPlotLevel || ((iCenterLevel >= iFirstInwardLevel) && (thisRing < iRangeWithOneExtraRing)))
@@ -61790,13 +61790,13 @@ $LN20@changeAdja:
 
 	cmp	eax, -1
 	je	SHORT $LN16@changeAdja
-	cmp	BYTE PTR _bSecondHalfBlocked$223655[esp+128], 0
+	cmp	BYTE PTR _bSecondHalfBlocked$223654[esp+128], 0
 	jne	SHORT $LN16@changeAdja
 
 ; 1615 : 					{
 ; 1616 : 						int iHighestLevel = (iSecondInwardLevel > iThisPlotLevel) ? iSecondInwardLevel : iThisPlotLevel;
 
-	mov	edx, DWORD PTR _iThisPlotLevel$223672[esp+128]
+	mov	edx, DWORD PTR _iThisPlotLevel$223671[esp+128]
 
 ; 1617 : 						pPlotToCheck->setScratchPad(iHighestLevel);
 ; 1618 : 						if(iSecondInwardLevel < iThisPlotLevel || ((iCenterLevel >= iSecondInwardLevel) && (thisRing < iRangeWithOneExtraRing)))
@@ -61812,7 +61812,7 @@ $LN16@changeAdja:
 ; 1624 : 					{
 ; 1625 : 						int iHighestLevel = (iFirstInwardLevel > iThisPlotLevel) ? iFirstInwardLevel : iThisPlotLevel;
 
-	mov	edx, DWORD PTR _iThisPlotLevel$223672[esp+128]
+	mov	edx, DWORD PTR _iThisPlotLevel$223671[esp+128]
 	cmp	ecx, -1
 	je	SHORT $LN12@changeAdja
 $LN284@changeAdja:
@@ -62574,8 +62574,8 @@ _TEXT	SEGMENT
 tv301 = -16						; size = 4
 _iRange$ = -16						; size = 4
 tv209 = -12						; size = 4
-$T259231 = -12						; size = 4
 $T259230 = -12						; size = 4
+$T259229 = -12						; size = 4
 _this$ = -8						; size = 4
 tv205 = -4						; size = 4
 _bIncrement$ = 8					; size = 1
@@ -62653,11 +62653,11 @@ $LN9@updateSeeF:
 
 	mov	eax, DWORD PTR ?gGlobals@@3VCvGlobals@@A+6192
 	inc	eax
-	mov	DWORD PTR $T259230[esp+28], eax
+	mov	DWORD PTR $T259229[esp+28], eax
 	cmp	eax, edi
 	lea	eax, DWORD PTR _iRange$[esp+28]
 	jl	SHORT $LN21@updateSeeF
-	lea	eax, DWORD PTR $T259230[esp+28]
+	lea	eax, DWORD PTR $T259229[esp+28]
 $LN21@updateSeeF:
 	mov	eax, DWORD PTR [eax]
 	mov	DWORD PTR _iRange$[esp+28], eax
@@ -62666,10 +62666,10 @@ $LN21@updateSeeF:
 ; 1918 : 	iRange = std::min(8, iRange); // I don't care, I'm not looking more than 8 out, deal
 
 	cmp	eax, 8
-	mov	DWORD PTR $T259231[esp+28], 8
+	mov	DWORD PTR $T259230[esp+28], 8
 	lea	eax, DWORD PTR _iRange$[esp+28]
 	jl	SHORT $LN25@updateSeeF
-	lea	eax, DWORD PTR $T259231[esp+28]
+	lea	eax, DWORD PTR $T259230[esp+28]
 $LN25@updateSeeF:
 	mov	ebp, DWORD PTR [eax]
 
@@ -62860,25 +62860,25 @@ __unwindtable$?setOwner@CvPlot@@QAEXW4PlayerTypes@@H_N1@Z DD 0ffffffffH
 xdata$x	ENDS
 ;	COMDAT ?setOwner@CvPlot@@QAEXW4PlayerTypes@@H_N1@Z
 _TEXT	SEGMENT
-_bestHighWaterMark$225319 = -88				; size = 4
-_newPlayer$225284 = -84					; size = 4
+_bestHighWaterMark$225318 = -88				; size = 4
+_newPlayer$225283 = -84					; size = 4
 tv3527 = -80						; size = 4
 tv3539 = -76						; size = 4
 _pOldCity$ = -76					; size = 4
 tv2830 = -72						; size = 4
-_pDllPlot$225403 = -72					; size = 4
-$T259307 = -68						; size = 28
+_pDllPlot$225402 = -72					; size = 4
+$T259306 = -68						; size = 28
 _strBuffer$ = -40					; size = 28
 __$EHRec$ = -12						; size = 12
-_pDllPlot$225435 = 8					; size = 4
-_pDllPlot$225431 = 8					; size = 4
-$T259318 = 8						; size = 4
+_pDllPlot$225434 = 8					; size = 4
+_pDllPlot$225430 = 8					; size = 4
+$T259317 = 8						; size = 4
 _eNewValue$ = 8						; size = 4
-_pHeadSelectedCity$225390 = 12				; size = 4
-_iMaxCityHighWaterMark$225317 = 12			; size = 4
+_pHeadSelectedCity$225389 = 12				; size = 4
+_iMaxCityHighWaterMark$225316 = 12			; size = 4
 _iAcquiringCityID$ = 12					; size = 4
-$T259322 = 16						; size = 4
-$T259320 = 16						; size = 4
+$T259321 = 16						; size = 4
+$T259319 = 16						; size = 4
 _bCheckUnits$ = 16					; size = 1
 ___formal$ = 20						; size = 1
 ?setOwner@CvPlot@@QAEXW4PlayerTypes@@H_N1@Z PROC	; CvPlot::setOwner, COMDAT
@@ -62920,8 +62920,8 @@ ___formal$ = 20						; size = 1
 ; 5193 : 
 ; 5194 : 		GC.getGame().addReplayMessage(REPLAY_MESSAGE_PLOT_OWNER_CHANGE, eNewValue, "", getX(), getY());
 
-	push	OFFSET $SG225243
-	lea	ecx, DWORD PTR $T259307[esp+108]
+	push	OFFSET $SG225242
+	lea	ecx, DWORD PTR $T259306[esp+108]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	movsx	eax, WORD PTR [esi+2]
 	movsx	ecx, WORD PTR [esi]
@@ -62929,13 +62929,13 @@ ___formal$ = 20						; size = 1
 	mov	eax, DWORD PTR _eNewValue$[esp+104]
 	push	ecx
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
-	lea	edx, DWORD PTR $T259307[esp+112]
+	lea	edx, DWORD PTR $T259306[esp+112]
 	push	edx
 	push	eax
 	push	2
 	mov	BYTE PTR __$EHRec$[esp+132], 1
 	call	?addReplayMessage@CvGame@@QAEXW4ReplayMessageTypes@@W4PlayerTypes@@ABVCvString@@HH@Z ; CvGame::addReplayMessage
-	lea	ecx, DWORD PTR $T259307[esp+104]
+	lea	ecx, DWORD PTR $T259306[esp+104]
 	mov	BYTE PTR __$EHRec$[esp+112], 0
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -63711,7 +63711,7 @@ $LN439@setOwner:
 ; 5373 : 				if(iAcquiringCityID >= 0)
 
 	mov	eax, DWORD PTR _iAcquiringCityID$[esp+100]
-	mov	DWORD PTR _newPlayer$225284[esp+104], edx
+	mov	DWORD PTR _newPlayer$225283[esp+104], edx
 	test	eax, eax
 	jl	SHORT $LN53@setOwner
 
@@ -64260,12 +64260,12 @@ $LN30@setOwner:
 
 ; 5500 : 				if(newPlayer.isHuman() && newPlayer.GetCityDistanceHighwaterMark() < iMaxCityHighWaterMark)
 
-	mov	ecx, DWORD PTR _newPlayer$225284[esp+104]
-	mov	DWORD PTR _iMaxCityHighWaterMark$225317[esp+100], ebp
+	mov	ecx, DWORD PTR _newPlayer$225283[esp+104]
+	mov	DWORD PTR _iMaxCityHighWaterMark$225316[esp+100], ebp
 	call	?isHuman@CvPlayer@@QBE_NXZ		; CvPlayer::isHuman
 	test	al, al
 	je	$LN735@setOwner
-	mov	ecx, DWORD PTR _newPlayer$225284[esp+104]
+	mov	ecx, DWORD PTR _newPlayer$225283[esp+104]
 	call	?GetCityDistanceHighwaterMark@CvPlayer@@QBEHXZ ; CvPlayer::GetCityDistanceHighwaterMark
 	cmp	eax, ebp
 	jge	$LN735@setOwner
@@ -64273,7 +64273,7 @@ $LN30@setOwner:
 ; 5501 : 				{
 ; 5502 : 					int bestHighWaterMark = newPlayer.GetCityDistanceHighwaterMark();
 
-	mov	ecx, DWORD PTR _newPlayer$225284[esp+104]
+	mov	ecx, DWORD PTR _newPlayer$225283[esp+104]
 	call	?GetCityDistanceHighwaterMark@CvPlayer@@QBEHXZ ; CvPlayer::GetCityDistanceHighwaterMark
 	mov	edi, eax
 
@@ -64283,7 +64283,7 @@ $LN30@setOwner:
 	neg	eax
 	mov	ebx, eax
 	cmp	ebx, ebp
-	mov	DWORD PTR _bestHighWaterMark$225319[esp+104], edi
+	mov	DWORD PTR _bestHighWaterMark$225318[esp+104], edi
 	mov	DWORD PTR tv2830[esp+104], eax
 	jg	$LN26@setOwner
 	mov	ecx, ebx
@@ -64297,7 +64297,7 @@ $LL868@setOwner:
 ; 5502 : 					int bestHighWaterMark = newPlayer.GetCityDistanceHighwaterMark();
 
 	mov	eax, DWORD PTR tv2830[esp+104]
-	mov	ebp, DWORD PTR _iMaxCityHighWaterMark$225317[esp+100]
+	mov	ebp, DWORD PTR _iMaxCityHighWaterMark$225316[esp+100]
 $LN28@setOwner:
 
 ; 5503 : 					for(int iDX = -iMaxCityHighWaterMark; iDX <= iMaxCityHighWaterMark && bestHighWaterMark < iMaxCityHighWaterMark; iDX++)
@@ -64314,8 +64314,8 @@ $LN28@setOwner:
 	neg	eax
 	mov	DWORD PTR tv3527[esp+104], eax
 $LL863@setOwner:
-	mov	edx, DWORD PTR _iMaxCityHighWaterMark$225317[esp+100]
-	cmp	DWORD PTR _bestHighWaterMark$225319[esp+104], edx
+	mov	edx, DWORD PTR _iMaxCityHighWaterMark$225316[esp+100]
+	cmp	DWORD PTR _bestHighWaterMark$225318[esp+104], edx
 	jge	$LN27@setOwner
 
 ; 5506 : 						{
@@ -64388,7 +64388,7 @@ $LN98@setOwner:
 ; 5522 : 
 ; 5523 : 							if(hexRange > bestHighWaterMark && hexRange <= iMaxCityHighWaterMark)
 
-	cmp	ebp, DWORD PTR _bestHighWaterMark$225319[esp+104]
+	cmp	ebp, DWORD PTR _bestHighWaterMark$225318[esp+104]
 	jle	SHORT $LN24@setOwner
 	cmp	ebp, edx
 	jg	SHORT $LN24@setOwner
@@ -64439,7 +64439,7 @@ $LN98@setOwner:
 ; 5532 : 										{
 ; 5533 : 											bestHighWaterMark = hexRange;
 
-	mov	DWORD PTR _bestHighWaterMark$225319[esp+104], ebp
+	mov	DWORD PTR _bestHighWaterMark$225318[esp+104], ebp
 $LN24@setOwner:
 
 ; 5504 : 					{
@@ -64447,16 +64447,16 @@ $LN24@setOwner:
 
 	dec	DWORD PTR tv3527[esp+104]
 	inc	edi
-	cmp	edi, DWORD PTR _iMaxCityHighWaterMark$225317[esp+100]
+	cmp	edi, DWORD PTR _iMaxCityHighWaterMark$225316[esp+100]
 	jle	$LL863@setOwner
 $LN27@setOwner:
 
 ; 5503 : 					for(int iDX = -iMaxCityHighWaterMark; iDX <= iMaxCityHighWaterMark && bestHighWaterMark < iMaxCityHighWaterMark; iDX++)
 
 	dec	DWORD PTR tv3539[esp+104]
-	mov	edi, DWORD PTR _bestHighWaterMark$225319[esp+104]
+	mov	edi, DWORD PTR _bestHighWaterMark$225318[esp+104]
 	inc	ebx
-	cmp	ebx, DWORD PTR _iMaxCityHighWaterMark$225317[esp+100]
+	cmp	ebx, DWORD PTR _iMaxCityHighWaterMark$225316[esp+100]
 	jle	$LL868@setOwner
 $LN26@setOwner:
 
@@ -64468,7 +64468,7 @@ $LN26@setOwner:
 ; 5539 : 					}
 ; 5540 : 					if(bestHighWaterMark > newPlayer.GetCityDistanceHighwaterMark())
 
-	mov	ecx, DWORD PTR _newPlayer$225284[esp+104]
+	mov	ecx, DWORD PTR _newPlayer$225283[esp+104]
 	call	?GetCityDistanceHighwaterMark@CvPlayer@@QBEHXZ ; CvPlayer::GetCityDistanceHighwaterMark
 	cmp	edi, eax
 	jle	$LN735@setOwner
@@ -64476,7 +64476,7 @@ $LN26@setOwner:
 ; 5541 : 					{
 ; 5542 : 						newPlayer.SetCityDistanceHighwaterMark(bestHighWaterMark);
 
-	mov	ecx, DWORD PTR _newPlayer$225284[esp+104]
+	mov	ecx, DWORD PTR _newPlayer$225283[esp+104]
 	push	edi
 	call	?SetCityDistanceHighwaterMark@CvPlayer@@QAEXH@Z ; CvPlayer::SetCityDistanceHighwaterMark
 
@@ -64497,7 +64497,7 @@ $LN26@setOwner:
 	mov	eax, DWORD PTR [edx+136]
 	call	eax
 	mov	ebp, eax
-	mov	DWORD PTR _pHeadSelectedCity$225390[esp+100], ebp
+	mov	DWORD PTR _pHeadSelectedCity$225389[esp+100], ebp
 	mov	BYTE PTR __$EHRec$[esp+112], 2
 
 ; 5546 : 							if(pHeadSelectedCity.get())
@@ -64517,14 +64517,14 @@ $LN26@setOwner:
 	mov	ecx, eax
 	call	?plot@CvCity@@QBEPAVCvPlot@@XZ		; CvCity::plot
 	push	eax
-	lea	ecx, DWORD PTR $T259318[esp+104]
+	lea	ecx, DWORD PTR $T259317[esp+104]
 	push	ecx
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?WrapPlotPointer@CvGlobals@@QAE?AV?$auto_ptr@VICvPlot1@@@std@@PAVCvPlot@@@Z ; CvGlobals::WrapPlotPointer
 	mov	edi, DWORD PTR [eax]
 	mov	DWORD PTR [eax], 0
-	mov	DWORD PTR _pDllPlot$225403[esp+104], edi
-	mov	eax, DWORD PTR $T259318[esp+100]
+	mov	DWORD PTR _pDllPlot$225402[esp+104], edi
+	mov	eax, DWORD PTR $T259317[esp+100]
 	mov	BYTE PTR __$EHRec$[esp+112], 3
 	test	eax, eax
 	je	SHORT $LN721@setOwner
@@ -64743,14 +64743,14 @@ $LN2@setOwner:
 ; 5613 : 				auto_ptr<ICvPlot1> pDllPlot = GC.WrapPlotPointer(this);
 
 	push	esi
-	lea	eax, DWORD PTR $T259320[esp+104]
+	lea	eax, DWORD PTR $T259319[esp+104]
 	push	eax
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?WrapPlotPointer@CvGlobals@@QAE?AV?$auto_ptr@VICvPlot1@@@std@@PAVCvPlot@@@Z ; CvGlobals::WrapPlotPointer
 	mov	edi, DWORD PTR [eax]
 	mov	DWORD PTR [eax], 0
-	mov	DWORD PTR _pDllPlot$225431[esp+100], edi
-	mov	eax, DWORD PTR $T259320[esp+100]
+	mov	DWORD PTR _pDllPlot$225430[esp+100], edi
+	mov	eax, DWORD PTR $T259319[esp+100]
 	mov	BYTE PTR __$EHRec$[esp+112], 4
 	test	eax, eax
 	je	SHORT $LN806@setOwner
@@ -64784,14 +64784,14 @@ $LN873@setOwner:
 ; 5618 : 		auto_ptr<ICvPlot1> pDllPlot = GC.WrapPlotPointer(this);
 
 	push	esi
-	lea	edx, DWORD PTR $T259322[esp+104]
+	lea	edx, DWORD PTR $T259321[esp+104]
 	push	edx
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?WrapPlotPointer@CvGlobals@@QAE?AV?$auto_ptr@VICvPlot1@@@std@@PAVCvPlot@@@Z ; CvGlobals::WrapPlotPointer
 	mov	edi, DWORD PTR [eax]
 	mov	DWORD PTR [eax], 0
-	mov	DWORD PTR _pDllPlot$225435[esp+100], edi
-	mov	eax, DWORD PTR $T259322[esp+100]
+	mov	DWORD PTR _pDllPlot$225434[esp+100], edi
+	mov	eax, DWORD PTR $T259321[esp+100]
 	mov	BYTE PTR __$EHRec$[esp+112], 5
 	test	eax, eax
 	je	SHORT $LN826@setOwner
@@ -64855,19 +64855,19 @@ __unwindfunclet$?setOwner@CvPlot@@QAEXW4PlayerTypes@@H_N1@Z$0:
 	lea	ecx, DWORD PTR _strBuffer$[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?setOwner@CvPlot@@QAEXW4PlayerTypes@@H_N1@Z$1:
-	lea	ecx, DWORD PTR $T259307[ebp]
+	lea	ecx, DWORD PTR $T259306[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?setOwner@CvPlot@@QAEXW4PlayerTypes@@H_N1@Z$2:
-	lea	ecx, DWORD PTR _pHeadSelectedCity$225390[ebp-4]
+	lea	ecx, DWORD PTR _pHeadSelectedCity$225389[ebp-4]
 	jmp	??1?$auto_ptr@VICvCity1@@@std@@QAE@XZ	; std::auto_ptr<ICvCity1>::~auto_ptr<ICvCity1>
 __unwindfunclet$?setOwner@CvPlot@@QAEXW4PlayerTypes@@H_N1@Z$4:
-	lea	ecx, DWORD PTR _pDllPlot$225403[ebp]
+	lea	ecx, DWORD PTR _pDllPlot$225402[ebp]
 	jmp	??1?$auto_ptr@VICvPlot1@@@std@@QAE@XZ	; std::auto_ptr<ICvPlot1>::~auto_ptr<ICvPlot1>
 __unwindfunclet$?setOwner@CvPlot@@QAEXW4PlayerTypes@@H_N1@Z$6:
-	lea	ecx, DWORD PTR _pDllPlot$225431[ebp-4]
+	lea	ecx, DWORD PTR _pDllPlot$225430[ebp-4]
 	jmp	??1?$auto_ptr@VICvPlot1@@@std@@QAE@XZ	; std::auto_ptr<ICvPlot1>::~auto_ptr<ICvPlot1>
 __unwindfunclet$?setOwner@CvPlot@@QAEXW4PlayerTypes@@H_N1@Z$8:
-	lea	ecx, DWORD PTR _pDllPlot$225435[ebp-4]
+	lea	ecx, DWORD PTR _pDllPlot$225434[ebp-4]
 	jmp	??1?$auto_ptr@VICvPlot1@@@std@@QAE@XZ	; std::auto_ptr<ICvPlot1>::~auto_ptr<ICvPlot1>
 __ehhandler$?setOwner@CvPlot@@QAEXW4PlayerTypes@@H_N1@Z:
 	mov	eax, OFFSET __ehfuncinfo$?setOwner@CvPlot@@QAEXW4PlayerTypes@@H_N1@Z
@@ -64910,14 +64910,14 @@ PUBLIC	?_Destroy@?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allo
 ;	COMDAT ?_Destroy@?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@IAEXPAU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@2@0@Z
 _TEXT	SEGMENT
 __First$ = 8						; size = 4
-__Cat$261279 = 12					; size = 1
+__Cat$261278 = 12					; size = 1
 __Last$ = 12						; size = 4
 ?_Destroy@?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@IAEXPAU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@2@0@Z PROC ; std::vector<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::basic_string<char,std::char_traits<char>,std::allocator<char> > > > >::_Destroy, COMDAT
 ; _this$ = ecx
 
 ; 1119 : 		_Destroy_range(_First, _Last, this->_Alval);
 
-	mov	eax, DWORD PTR __Cat$261279[esp-4]
+	mov	eax, DWORD PTR __Cat$261278[esp-4]
 	mov	edx, DWORD PTR __First$[esp-4]
 	push	eax
 	push	ecx
@@ -64937,8 +64937,8 @@ PUBLIC	??4?$FAutoVariable@DVCvPlot@@@@QAEAADABD@Z	; FAutoVariable<char,CvPlot>::
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\fireplace\include\fireworks\fautovariable.h
 ;	COMDAT ??4?$FAutoVariable@DVCvPlot@@@@QAEAADABD@Z
 _TEXT	SEGMENT
-$T261298 = -8						; size = 8
-$T261297 = 8						; size = 4
+$T261297 = -8						; size = 8
+$T261296 = 8						; size = 4
 _rhs$ = 8						; size = 4
 ??4?$FAutoVariable@DVCvPlot@@@@QAEAADABD@Z PROC		; FAutoVariable<char,CvPlot>::operator=, COMDAT
 ; _this$ = ecx
@@ -64960,11 +64960,11 @@ _rhs$ = 8						; size = 4
 ; 203  : 	{
 ; 204  : 		set(rhs);
 
-	mov	DWORD PTR $T261297[esp+12], ecx
+	mov	DWORD PTR $T261296[esp+12], ecx
 	mov	ecx, DWORD PTR [ecx+8]
-	lea	edx, DWORD PTR $T261297[esp+12]
+	lea	edx, DWORD PTR $T261296[esp+12]
 	push	edx
-	lea	eax, DWORD PTR $T261298[esp+20]
+	lea	eax, DWORD PTR $T261297[esp+20]
 	push	eax
 	add	ecx, 20					; 00000014H
 	call	?insert@?$_Tree@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@std@@QAE?AU?$pair@Viterator@?$_Tree@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@std@@_N@2@ABQAVFAutoVariableBase@@@Z ; std::_Tree<std::_Tset_traits<FAutoVariableBase *,std::less<FAutoVariableBase *>,std::allocator<FAutoVariableBase *>,0> >::insert
@@ -65005,10 +65005,10 @@ __ehfuncinfo$??A?$map@IV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@
 xdata$x	ENDS
 ;	COMDAT ??A?$map@IV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@I@2@V?$allocator@U?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@@std@@QAEAAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@1@ABI@Z
 _TEXT	SEGMENT
-$T261308 = -72						; size = 28
-$T261307 = -44						; size = 32
+$T261307 = -72						; size = 28
+$T261306 = -44						; size = 32
 __$EHRec$ = -12						; size = 12
-$T261310 = 8						; size = 4
+$T261309 = 8						; size = 4
 __Keyval$ = 8						; size = 4
 ??A?$map@IV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@I@2@V?$allocator@U?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@@std@@QAEAAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@1@ABI@Z PROC ; std::map<unsigned int,std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,std::basic_string<char,std::char_traits<char>,std::allocator<char> > > > >::operator[], COMDAT
 ; _this$ = ecx
@@ -65061,27 +65061,27 @@ $LN1@operator@10:
 ; 172  : 			_Where = this->insert(_Where,
 ; 173  : 				value_type(_Keyval, mapped_type()));
 
-	lea	ecx, DWORD PTR $T261308[esp+84]
+	lea	ecx, DWORD PTR $T261307[esp+84]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 	mov	ecx, DWORD PTR [ebp]
-	mov	DWORD PTR $T261307[esp+84], ecx
+	mov	DWORD PTR $T261306[esp+84], ecx
 	push	eax
-	lea	ecx, DWORD PTR $T261307[esp+92]
+	lea	ecx, DWORD PTR $T261306[esp+92]
 	mov	DWORD PTR __$EHRec$[esp+96], 0
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
-	lea	edx, DWORD PTR $T261307[esp+84]
+	lea	edx, DWORD PTR $T261306[esp+84]
 	push	edx
 	push	esi
-	lea	eax, DWORD PTR $T261310[esp+88]
+	lea	eax, DWORD PTR $T261309[esp+88]
 	push	eax
 	mov	ecx, edi
 	mov	BYTE PTR __$EHRec$[esp+104], 1
 	call	?insert@?$_Tree@V?$_Tmap_traits@IV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@I@2@V?$allocator@U?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@ABU?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@Z ; std::_Tree<std::_Tmap_traits<unsigned int,std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,0> >::insert
 	mov	esi, DWORD PTR [eax]
-	lea	ecx, DWORD PTR $T261307[esp+88]
+	lea	ecx, DWORD PTR $T261306[esp+88]
 	mov	BYTE PTR __$EHRec$[esp+92], 0
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
-	lea	ecx, DWORD PTR $T261308[esp+84]
+	lea	ecx, DWORD PTR $T261307[esp+84]
 	mov	DWORD PTR __$EHRec$[esp+92], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 $LN68@operator@10:
@@ -65101,10 +65101,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$??A?$map@IV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@I@2@V?$allocator@U?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@@std@@QAEAAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@1@ABI@Z$0:
-	lea	ecx, DWORD PTR $T261308[ebp]
+	lea	ecx, DWORD PTR $T261307[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$??A?$map@IV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@I@2@V?$allocator@U?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@@std@@QAEAAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@1@ABI@Z$1:
-	lea	ecx, DWORD PTR $T261307[ebp]
+	lea	ecx, DWORD PTR $T261306[ebp]
 	jmp	??1?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@QAE@XZ
 __ehhandler$??A?$map@IV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@I@2@V?$allocator@U?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@@std@@QAEAAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@1@ABI@Z:
 	mov	eax, OFFSET __ehfuncinfo$??A?$map@IV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@I@2@V?$allocator@U?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@@std@@QAEAAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@1@ABI@Z
@@ -65116,7 +65116,7 @@ PUBLIC	?erase@?$_Tree@V?$_Tmap_traits@IV?$basic_string@DU?$char_traits@D@std@@V?
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xtree
 ;	COMDAT ?erase@?$_Tree@V?$_Tmap_traits@IV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@I@2@V?$allocator@U?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@0@Z
 _TEXT	SEGMENT
-$T261490 = -4						; size = 4
+$T261489 = -4						; size = 4
 ___$ReturnUdt$ = 8					; size = 4
 __First$ = 12						; size = 4
 __Last$ = 16						; size = 4
@@ -65217,7 +65217,7 @@ $LN63@erase@4:
 	mov	DWORD PTR __First$[esp+4], eax
 $LN65@erase@4:
 	push	edx
-	lea	eax, DWORD PTR $T261490[esp+12]
+	lea	eax, DWORD PTR $T261489[esp+12]
 	push	eax
 	mov	ecx, esi
 	call	?erase@?$_Tree@V?$_Tmap_traits@IV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@I@2@V?$allocator@U?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@@Z ; std::_Tree<std::_Tmap_traits<unsigned int,std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,0> >::erase
@@ -65244,8 +65244,8 @@ PUBLIC	?reset@CvPlot@@QAEXHH_N@Z			; CvPlot::reset
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredll_expansion2\cvplot.cpp
 ;	COMDAT ?reset@CvPlot@@QAEXHH_N@Z
 _TEXT	SEGMENT
-$T261895 = -8						; size = 8
-$T261894 = 8						; size = 4
+$T261894 = -8						; size = 8
+$T261893 = 8						; size = 4
 _iX$ = 8						; size = 4
 _iY$ = 12						; size = 4
 _bConstructorCall$ = 16					; size = 1
@@ -65364,12 +65364,12 @@ $LN48@reset:
 	cmp	BYTE PTR [edi+4], bl
 	je	SHORT $LN62@reset
 	mov	ecx, DWORD PTR [edi+8]
-	lea	edx, DWORD PTR $T261894[esp+20]
+	lea	edx, DWORD PTR $T261893[esp+20]
 	push	edx
-	lea	eax, DWORD PTR $T261895[esp+28]
+	lea	eax, DWORD PTR $T261894[esp+28]
 	push	eax
 	add	ecx, 20					; 00000014H
-	mov	DWORD PTR $T261894[esp+28], edi
+	mov	DWORD PTR $T261893[esp+28], edi
 	call	?insert@?$_Tree@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@std@@QAE?AU?$pair@Viterator@?$_Tree@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@std@@_N@2@ABQAVFAutoVariableBase@@@Z ; std::_Tree<std::_Tset_traits<FAutoVariableBase *,std::less<FAutoVariableBase *>,std::allocator<FAutoVariableBase *>,0> >::insert
 	mov	BYTE PTR [edi+4], bl
 $LN62@reset:
@@ -65694,11 +65694,11 @@ __ehfuncinfo$?setFeatureType@CvPlot@@QAEXW4FeatureTypes@@H@Z DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?setFeatureType@CvPlot@@QAEXW4FeatureTypes@@H@Z
 _TEXT	SEGMENT
-$T261959 = -32						; size = 4
-$T262008 = -28						; size = 4
-$T261960 = -28						; size = 4
-_pDllPlot$225599 = -24					; size = 4
-$T262009 = -20						; size = 8
+$T261958 = -32						; size = 4
+$T262007 = -28						; size = 4
+$T261959 = -28						; size = 4
+_pDllPlot$225598 = -24					; size = 4
+$T262008 = -20						; size = 8
 __$EHRec$ = -12						; size = 12
 _bUpdateSight$ = 8					; size = 1
 _eNewValue$ = 8						; size = 4
@@ -65792,7 +65792,7 @@ $LN12@setFeature:
 	push	12					; 0000000cH
 	call	??2CvDllPlot@@SAPAXI@Z			; CvDllPlot::operator new
 	add	esp, 4
-	mov	DWORD PTR $T261960[esp+48], eax
+	mov	DWORD PTR $T261959[esp+48], eax
 	xor	ecx, ecx
 	mov	DWORD PTR __$EHRec$[esp+56], ecx
 	cmp	eax, ecx
@@ -65800,13 +65800,13 @@ $LN12@setFeature:
 	push	esi
 	mov	ecx, eax
 	call	??0CvDllPlot@@QAE@PAVCvPlot@@@Z		; CvDllPlot::CvDllPlot
-	mov	DWORD PTR $T261959[esp+48], eax
+	mov	DWORD PTR $T261958[esp+48], eax
 	jmp	SHORT $LN21@setFeature
 $LN20@setFeature:
-	mov	DWORD PTR $T261959[esp+48], ecx
+	mov	DWORD PTR $T261958[esp+48], ecx
 	mov	eax, ecx
 $LN21@setFeature:
-	mov	DWORD PTR _pDllPlot$225599[esp+48], eax
+	mov	DWORD PTR _pDllPlot$225598[esp+48], eax
 
 ; 6023 : 		gDLL->GameplayFeatureChanged(pDllPlot.get(), eNewValue);
 
@@ -65825,12 +65825,12 @@ $LN21@setFeature:
 	lea	edi, DWORD PTR [esi+428]
 	je	SHORT $LN37@setFeature
 	mov	eax, DWORD PTR [edi+8]
-	lea	ecx, DWORD PTR $T262008[esp+48]
+	lea	ecx, DWORD PTR $T262007[esp+48]
 	push	ecx
-	lea	edx, DWORD PTR $T262009[esp+52]
+	lea	edx, DWORD PTR $T262008[esp+52]
 	push	edx
 	lea	ecx, DWORD PTR [eax+20]
-	mov	DWORD PTR $T262008[esp+56], edi
+	mov	DWORD PTR $T262007[esp+56], edi
 	call	?insert@?$_Tree@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@std@@QAE?AU?$pair@Viterator@?$_Tree@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@std@@_N@2@ABQAVFAutoVariableBase@@@Z ; std::_Tree<std::_Tset_traits<FAutoVariableBase *,std::less<FAutoVariableBase *>,std::allocator<FAutoVariableBase *>,0> >::insert
 	mov	BYTE PTR [edi+4], bl
 $LN37@setFeature:
@@ -66036,7 +66036,7 @@ $LN1@setFeature:
 ; 6071 : 		}
 ; 6072 : 	}
 
-	mov	eax, DWORD PTR $T261959[esp+44]
+	mov	eax, DWORD PTR $T261958[esp+44]
 	mov	DWORD PTR __$EHRec$[esp+52], -1
 	test	eax, eax
 	je	SHORT $LN69@setFeature
@@ -66059,13 +66059,13 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?setFeatureType@CvPlot@@QAEXW4FeatureTypes@@H@Z$0:
-	mov	eax, DWORD PTR $T261960[ebp]
+	mov	eax, DWORD PTR $T261959[ebp]
 	push	eax
 	call	??3CvDllPlot@@SAXPAX@Z			; CvDllPlot::operator delete
 	pop	ecx
 	ret	0
 __unwindfunclet$?setFeatureType@CvPlot@@QAEXW4FeatureTypes@@H@Z$1:
-	lea	ecx, DWORD PTR _pDllPlot$225599[ebp]
+	lea	ecx, DWORD PTR _pDllPlot$225598[ebp]
 	jmp	??1?$auto_ptr@VICvPlot1@@@std@@QAE@XZ	; std::auto_ptr<ICvPlot1>::~auto_ptr<ICvPlot1>
 __ehhandler$?setFeatureType@CvPlot@@QAEXW4FeatureTypes@@H@Z:
 	mov	eax, OFFSET __ehfuncinfo$?setFeatureType@CvPlot@@QAEXW4FeatureTypes@@H@Z
@@ -66117,31 +66117,31 @@ __unwindtable$?changeBuildProgress@CvPlot@@QAE_NW4BuildTypes@@HW4PlayerTypes@@@Z
 xdata$x	ENDS
 ;	COMDAT ?changeBuildProgress@CvPlot@@QAE_NW4BuildTypes@@HW4PlayerTypes@@@Z
 _TEXT	SEGMENT
-_args$227048 = -292					; size = 4
+_args$227047 = -292					; size = 4
 _pCity$ = -292						; size = 4
 _kPlayer$ = -292					; size = 4
 _bFinished$ = -285					; size = 1
 tv1438 = -284						; size = 4
-$T262360 = -284						; size = 4
-$T262099 = -284						; size = 4
+$T262359 = -284						; size = 4
+$T262098 = -284						; size = 4
 _iProduction$ = -284					; size = 4
-_iFood$227033 = -280					; size = 4
-$T262094 = -280						; size = 4
-_iUnitLoop$226999 = -280				; size = 4
+_iFood$227032 = -280					; size = 4
+$T262093 = -280						; size = 4
+_iUnitLoop$226998 = -280				; size = 4
 _pkBuildInfo$ = -276					; size = 4
-_eImprovement$226961 = -272				; size = 4
-_bResult$227049 = -265					; size = 1
-$T262101 = -264						; size = 8
-$T262098 = -264						; size = 4
-$T262097 = -264						; size = 8
-$T262095 = -264						; size = 4
+_eImprovement$226960 = -272				; size = 4
+_bResult$227048 = -265					; size = 1
+$T262100 = -264						; size = 8
+$T262097 = -264						; size = 4
+$T262096 = -264						; size = 8
+$T262094 = -264						; size = 4
 _strBuffer$ = -256					; size = 28
-$T262100 = -228						; size = 28
-$T262096 = -228						; size = 28
-$T262093 = -228						; size = 28
-_strSummary$226980 = -200				; size = 28
-_locSummary$226976 = -172				; size = 80
-_locString$226975 = -92					; size = 80
+$T262099 = -228						; size = 28
+$T262095 = -228						; size = 28
+$T262092 = -228						; size = 28
+_strSummary$226979 = -200				; size = 28
+_locSummary$226975 = -172				; size = 80
+_locString$226974 = -92					; size = 80
 __$EHRec$ = -12						; size = 12
 _eBuild$ = 8						; size = 4
 _iChange$ = 12						; size = 4
@@ -66271,7 +66271,7 @@ $LN41@changeBuil:
 
 	mov	ecx, DWORD PTR _pkBuildInfo$[esp+308]
 	call	?getImprovement@CvBuildInfo@@QBEHXZ	; CvBuildInfo::getImprovement
-	mov	DWORD PTR _eImprovement$226961[esp+308], eax
+	mov	DWORD PTR _eImprovement$226960[esp+308], eax
 
 ; 9408 : 		if (eImprovement != NO_IMPROVEMENT)
 
@@ -66293,7 +66293,7 @@ $LN41@changeBuil:
 
 ; 9413 : 				m_eImprovementTypeUnderConstruction = eImprovement;
 
-	mov	al, BYTE PTR _eImprovement$226961[esp+308]
+	mov	al, BYTE PTR _eImprovement$226960[esp+308]
 	mov	BYTE PTR [edi+442], al
 $LN39@changeBuil:
 
@@ -66338,7 +66338,7 @@ $LN66@changeBuil:
 ; 9424 : 			// Constructed Improvement
 ; 9425 : 			if (eImprovement != NO_IMPROVEMENT)
 
-	mov	eax, DWORD PTR _eImprovement$226961[esp+308]
+	mov	eax, DWORD PTR _eImprovement$226960[esp+308]
 	cmp	eax, -1
 	je	$LN17@changeBuil
 
@@ -66369,7 +66369,7 @@ $LN66@changeBuil:
 ; 9433 : 					{
 ; 9434 : 						kPlayer.GetTreasury()->ChangeBaseImprovementGoldMaintenance(GC.getImprovementInfo(eImprovement)->GetGoldMaintenance());
 
-	mov	eax, DWORD PTR _eImprovement$226961[esp+308]
+	mov	eax, DWORD PTR _eImprovement$226960[esp+308]
 	push	eax
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getImprovementInfo@CvGlobals@@QAEPAVCvImprovementEntry@@W4ImprovementTypes@@@Z ; CvGlobals::getImprovementInfo
@@ -66395,7 +66395,7 @@ $LN70@changeBuil:
 ; 9438 : 
 ; 9439 : 				CvImprovementEntry& newImprovementEntry = *GC.getImprovementInfo(eImprovement);
 
-	mov	edx, DWORD PTR _eImprovement$226961[esp+308]
+	mov	edx, DWORD PTR _eImprovement$226960[esp+308]
 	push	edx
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getImprovementInfo@CvGlobals@@QAEPAVCvImprovementEntry@@W4ImprovementTypes@@@Z ; CvGlobals::getImprovementInfo
@@ -66515,12 +66515,12 @@ $LN314@changeBuil:
 ; 9461 : 						Localization::String locString;
 
 	mov	esi, DWORD PTR __imp_??0String@Localization@@QAE@XZ
-	lea	ecx, DWORD PTR _locString$226975[esp+308]
+	lea	ecx, DWORD PTR _locString$226974[esp+308]
 	call	esi
 
 ; 9462 : 						Localization::String locSummary;
 
-	lea	ecx, DWORD PTR _locSummary$226976[esp+308]
+	lea	ecx, DWORD PTR _locSummary$226975[esp+308]
 	mov	BYTE PTR __$EHRec$[esp+316], 1
 	call	esi
 
@@ -66539,8 +66539,8 @@ $LN314@changeBuil:
 ; 9465 : 						{
 ; 9466 : 							strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_CHOOSE_ARCHAEOLOGY");
 
-	lea	ecx, DWORD PTR $T262093[esp+308]
-	push	OFFSET $SG226979
+	lea	ecx, DWORD PTR $T262092[esp+308]
+	push	OFFSET $SG226978
 	push	ecx
 	call	?GetLocalizedText@@YA?AVCvString@@PBD@Z	; GetLocalizedText
 	add	esp, 8
@@ -66548,14 +66548,14 @@ $LN314@changeBuil:
 	lea	ecx, DWORD PTR _strBuffer$[esp+312]
 	mov	BYTE PTR __$EHRec$[esp+320], bl
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T262093[esp+308]
+	lea	ecx, DWORD PTR $T262092[esp+308]
 	mov	BYTE PTR __$EHRec$[esp+316], 2
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
 ; 9467 : 							CvString strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_CHOOSE_ARCHAEOLOGY");
 
-	lea	edx, DWORD PTR _strSummary$226980[esp+308]
-	push	OFFSET $SG226982
+	lea	edx, DWORD PTR _strSummary$226979[esp+308]
+	push	OFFSET $SG226981
 	push	edx
 	call	?GetLocalizedText@@YA?AVCvString@@PBD@Z	; GetLocalizedText
 	add	esp, 8
@@ -66566,11 +66566,11 @@ $LN314@changeBuil:
 	movsx	ebx, WORD PTR [edi+2]
 	mov	eax, ebp
 	mov	ebp, DWORD PTR [eax+44]
-	mov	DWORD PTR $T262360[esp+308], ecx
-	lea	ecx, DWORD PTR _strSummary$226980[esp+308]
+	mov	DWORD PTR $T262359[esp+308], ecx
+	lea	ecx, DWORD PTR _strSummary$226979[esp+308]
 	mov	BYTE PTR __$EHRec$[esp+316], 4
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
-	mov	edx, DWORD PTR $T262360[esp+308]
+	mov	edx, DWORD PTR $T262359[esp+308]
 	push	-1
 	push	ebp
 	push	ebx
@@ -66589,7 +66589,7 @@ $LN314@changeBuil:
 
 ; 9470 : 						}
 
-	lea	ecx, DWORD PTR _strSummary$226980[esp+308]
+	lea	ecx, DWORD PTR _strSummary$226979[esp+308]
 	mov	BYTE PTR __$EHRec$[esp+316], 2
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 	mov	ebp, DWORD PTR _kPlayer$[esp+308]
@@ -66611,7 +66611,7 @@ $LN30@changeBuil:
 	call	?isNetworkMultiPlayer@CvGame@@QBE_NXZ	; CvGame::isNetworkMultiPlayer
 	test	al, al
 	jne	$LN25@changeBuil
-	mov	ecx, OFFSET $SG226985
+	mov	ecx, OFFSET $SG226984
 	mov	eax, esi
 $LL297@changeBuil:
 	mov	dl, BYTE PTR [eax]
@@ -66649,7 +66649,7 @@ $LN300@changeBuil:
 
 ; 9478 : 							if(strcmp(szCivKey, "CIVILIZATION_EGYPT") == 0)
 
-	mov	ecx, OFFSET $SG226988
+	mov	ecx, OFFSET $SG226987
 	npad	7
 $LL301@changeBuil:
 	mov	dl, BYTE PTR [eax]
@@ -66702,7 +66702,7 @@ $LL323@changeBuil:
 
 ; 9486 : 										if (strcmp(szCivKey, "CIVILIZATION_GERMANY"))
 
-	mov	ecx, OFFSET $SG226997
+	mov	ecx, OFFSET $SG226996
 	npad	1
 $LL305@changeBuil:
 	mov	dl, BYTE PTR [eax]
@@ -66733,7 +66733,7 @@ $LN308@changeBuil:
 ; 9490 : 											for(pLoopUnit = kLoopPlayer.firstUnit(&iUnitLoop); pLoopUnit != NULL; pLoopUnit = kLoopPlayer.nextUnit(&iUnitLoop))
 
 	push	0
-	lea	ecx, DWORD PTR _iUnitLoop$226999[esp+312]
+	lea	ecx, DWORD PTR _iUnitLoop$226998[esp+312]
 	push	ecx
 	mov	ecx, ebx
 	call	?firstUnit@CvPlayer@@QAEPAVCvUnit@@PAH_N@Z ; CvPlayer::firstUnit
@@ -66748,7 +66748,7 @@ $LL22@changeBuil:
 	mov	ecx, ebp
 	call	?getUnitInfo@CvUnit@@QBEAAVCvUnitEntry@@XZ ; CvUnit::getUnitInfo
 	lea	ecx, DWORD PTR [eax+176]
-	mov	esi, OFFSET $SG227004
+	mov	esi, OFFSET $SG227003
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	npad	3
 $LL309@changeBuil:
@@ -66800,7 +66800,7 @@ $LN312@changeBuil:
 	call	edx
 $LN21@changeBuil:
 	push	0
-	lea	eax, DWORD PTR _iUnitLoop$226999[esp+312]
+	lea	eax, DWORD PTR _iUnitLoop$226998[esp+312]
 	push	eax
 	mov	ecx, ebx
 	call	?nextUnit@CvPlayer@@QAEPAVCvUnit@@PAH_N@Z ; CvPlayer::nextUnit
@@ -66836,10 +66836,10 @@ $LN25@changeBuil:
 ; 9505 : 					}
 
 	mov	esi, DWORD PTR __imp_??1String@Localization@@UAE@XZ
-	lea	ecx, DWORD PTR _locSummary$226976[esp+308]
+	lea	ecx, DWORD PTR _locSummary$226975[esp+308]
 	mov	BYTE PTR __$EHRec$[esp+316], 1
 	call	esi
-	lea	ecx, DWORD PTR _locString$226975[esp+308]
+	lea	ecx, DWORD PTR _locString$226974[esp+308]
 	mov	BYTE PTR __$EHRec$[esp+316], 0
 	call	esi
 
@@ -67011,19 +67011,19 @@ $LN317@changeBuil:
 	movsx	edx, BYTE PTR [edi+432]
 	push	edx
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	mov	DWORD PTR $T262094[esp+312], eax
+	mov	DWORD PTR $T262093[esp+312], eax
 	call	?getFeatureInfo@CvGlobals@@QAEPAVCvFeatureInfo@@W4FeatureTypes@@@Z ; CvGlobals::getFeatureInfo
 	mov	ecx, eax
 	call	?GetTextKey@CvBaseInfo@@QBEPBDXZ	; CvBaseInfo::GetTextKey
-	mov	DWORD PTR $T262095[esp+308], eax
-	lea	eax, DWORD PTR $T262094[esp+308]
+	mov	DWORD PTR $T262094[esp+308], eax
+	lea	eax, DWORD PTR $T262093[esp+308]
 	push	eax
 	lea	ecx, DWORD PTR _iProduction$[esp+312]
 	push	ecx
-	lea	edx, DWORD PTR $T262095[esp+316]
+	lea	edx, DWORD PTR $T262094[esp+316]
 	push	edx
-	lea	eax, DWORD PTR $T262096[esp+320]
-	push	OFFSET $SG227031
+	lea	eax, DWORD PTR $T262095[esp+320]
+	push	OFFSET $SG227030
 	push	eax
 	call	??$GetLocalizedText@PBDHPBD@@YA?AVCvString@@PBDABQBDABH1@Z ; GetLocalizedText<char const *,int,char const *>
 	add	esp, 20					; 00000014H
@@ -67031,7 +67031,7 @@ $LN317@changeBuil:
 	lea	ecx, DWORD PTR _strBuffer$[esp+312]
 	mov	BYTE PTR __$EHRec$[esp+320], 5
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T262096[esp+308]
+	lea	ecx, DWORD PTR $T262095[esp+308]
 	mov	BYTE PTR __$EHRec$[esp+316], 0
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -67055,7 +67055,7 @@ $LN317@changeBuil:
 	push	edx
 	push	0
 	push	ecx
-	lea	eax, DWORD PTR $T262097[esp+356]
+	lea	eax, DWORD PTR $T262096[esp+356]
 	push	eax
 	mov	ecx, ebp
 	add	esi, 172				; 000000acH
@@ -67080,7 +67080,7 @@ $LN319@changeBuil:
 	push	ecx
 	mov	ecx, edi
 	call	?getFeatureFood@CvPlot@@QBEHW4BuildTypes@@W4PlayerTypes@@PAPAVCvCity@@@Z ; CvPlot::getFeatureFood
-	mov	DWORD PTR _iFood$227033[esp+308], eax
+	mov	DWORD PTR _iFood$227032[esp+308], eax
 
 ; 9555 : 					if (iFood > 0)
 
@@ -67111,19 +67111,19 @@ $LN319@changeBuil:
 	movsx	edx, BYTE PTR [edi+432]
 	push	edx
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	mov	DWORD PTR $T262098[esp+312], eax
+	mov	DWORD PTR $T262097[esp+312], eax
 	call	?getFeatureInfo@CvGlobals@@QAEPAVCvFeatureInfo@@W4FeatureTypes@@@Z ; CvGlobals::getFeatureInfo
 	mov	ecx, eax
 	call	?GetTextKey@CvBaseInfo@@QBEPBDXZ	; CvBaseInfo::GetTextKey
-	mov	DWORD PTR $T262099[esp+308], eax
-	lea	eax, DWORD PTR $T262098[esp+308]
+	mov	DWORD PTR $T262098[esp+308], eax
+	lea	eax, DWORD PTR $T262097[esp+308]
 	push	eax
-	lea	ecx, DWORD PTR _iFood$227033[esp+312]
+	lea	ecx, DWORD PTR _iFood$227032[esp+312]
 	push	ecx
-	lea	edx, DWORD PTR $T262099[esp+316]
+	lea	edx, DWORD PTR $T262098[esp+316]
 	push	edx
-	lea	eax, DWORD PTR $T262100[esp+320]
-	push	OFFSET $SG227039
+	lea	eax, DWORD PTR $T262099[esp+320]
+	push	OFFSET $SG227038
 	push	eax
 	call	??$GetLocalizedText@PBDHPBD@@YA?AVCvString@@PBDABQBDABH1@Z ; GetLocalizedText<char const *,int,char const *>
 	add	esp, 20					; 00000014H
@@ -67131,7 +67131,7 @@ $LN319@changeBuil:
 	lea	ecx, DWORD PTR _strBuffer$[esp+312]
 	mov	BYTE PTR __$EHRec$[esp+320], 6
 	call	DWORD PTR __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T262100[esp+308]
+	lea	ecx, DWORD PTR $T262099[esp+308]
 	mov	BYTE PTR __$EHRec$[esp+316], 0
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -67155,7 +67155,7 @@ $LN319@changeBuil:
 	push	edx
 	push	0
 	push	ecx
-	lea	eax, DWORD PTR $T262101[esp+356]
+	lea	eax, DWORD PTR $T262100[esp+356]
 	push	eax
 	mov	ecx, ebp
 	add	esi, 172				; 000000acH
@@ -67260,12 +67260,12 @@ $LN2@changeBuil:
 ; 9591 : 			{
 ; 9592 : 				CvLuaArgsHandle args;
 
-	lea	ecx, DWORD PTR _args$227048[esp+308]
+	lea	ecx, DWORD PTR _args$227047[esp+308]
 	call	??0CvLuaArgsHandle@@QAE@XZ		; CvLuaArgsHandle::CvLuaArgsHandle
 
 ; 9593 : 				args->Push(ePlayer);
 
-	mov	ecx, DWORD PTR _args$227048[esp+308]
+	mov	ecx, DWORD PTR _args$227047[esp+308]
 	mov	eax, DWORD PTR [ecx]
 	mov	edx, DWORD PTR [eax+8]
 	push	ebx
@@ -67274,7 +67274,7 @@ $LN2@changeBuil:
 
 ; 9594 : 				args->Push(getX());
 
-	mov	ecx, DWORD PTR _args$227048[esp+308]
+	mov	ecx, DWORD PTR _args$227047[esp+308]
 	movsx	edx, WORD PTR [edi]
 	mov	eax, DWORD PTR [ecx]
 	mov	eax, DWORD PTR [eax+8]
@@ -67283,7 +67283,7 @@ $LN2@changeBuil:
 
 ; 9595 : 				args->Push(getY());
 
-	mov	ecx, DWORD PTR _args$227048[esp+308]
+	mov	ecx, DWORD PTR _args$227047[esp+308]
 	movsx	eax, WORD PTR [edi+2]
 	mov	edx, DWORD PTR [ecx]
 	mov	edx, DWORD PTR [edx+8]
@@ -67292,9 +67292,9 @@ $LN2@changeBuil:
 
 ; 9596 : 				args->Push(eImprovement);
 
-	mov	ecx, DWORD PTR _args$227048[esp+308]
+	mov	ecx, DWORD PTR _args$227047[esp+308]
 	mov	eax, DWORD PTR [ecx]
-	mov	edx, DWORD PTR _eImprovement$226961[esp+308]
+	mov	edx, DWORD PTR _eImprovement$226960[esp+308]
 	mov	eax, DWORD PTR [eax+8]
 	push	edx
 	call	eax
@@ -67303,18 +67303,18 @@ $LN2@changeBuil:
 ; 9598 : 				bool bResult;
 ; 9599 : 				LuaSupport::CallHook(pkScriptSystem, "BuildFinished", args.get(), bResult);
 
-	mov	edx, DWORD PTR _args$227048[esp+308]
-	lea	ecx, DWORD PTR _bResult$227049[esp+308]
+	mov	edx, DWORD PTR _args$227047[esp+308]
+	lea	ecx, DWORD PTR _bResult$227048[esp+308]
 	push	ecx
 	push	edx
-	push	OFFSET $SG227050
+	push	OFFSET $SG227049
 	push	esi
 	call	?CallHook@LuaSupport@@YA_NPAVICvEngineScriptSystem1@@PBDPAVICvEngineScriptSystemArgs1@@AA_N@Z ; LuaSupport::CallHook
 	add	esp, 16					; 00000010H
 
 ; 9600 : 			}
 
-	lea	ecx, DWORD PTR _args$227048[esp+308]
+	lea	ecx, DWORD PTR _args$227047[esp+308]
 	mov	BYTE PTR __$EHRec$[esp+316], 0
 	call	??1CvLuaArgsHandle@@QAE@XZ		; CvLuaArgsHandle::~CvLuaArgsHandle
 $LN326@changeBuil:
@@ -67348,25 +67348,25 @@ __unwindfunclet$?changeBuildProgress@CvPlot@@QAE_NW4BuildTypes@@HW4PlayerTypes@@
 	lea	ecx, DWORD PTR _strBuffer$[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?changeBuildProgress@CvPlot@@QAE_NW4BuildTypes@@HW4PlayerTypes@@@Z$1:
-	lea	ecx, DWORD PTR _locString$226975[ebp]
+	lea	ecx, DWORD PTR _locString$226974[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?changeBuildProgress@CvPlot@@QAE_NW4BuildTypes@@HW4PlayerTypes@@@Z$2:
-	lea	ecx, DWORD PTR _locSummary$226976[ebp]
+	lea	ecx, DWORD PTR _locSummary$226975[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?changeBuildProgress@CvPlot@@QAE_NW4BuildTypes@@HW4PlayerTypes@@@Z$3:
-	lea	ecx, DWORD PTR $T262093[ebp]
+	lea	ecx, DWORD PTR $T262092[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?changeBuildProgress@CvPlot@@QAE_NW4BuildTypes@@HW4PlayerTypes@@@Z$4:
-	lea	ecx, DWORD PTR _strSummary$226980[ebp]
+	lea	ecx, DWORD PTR _strSummary$226979[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?changeBuildProgress@CvPlot@@QAE_NW4BuildTypes@@HW4PlayerTypes@@@Z$5:
-	lea	ecx, DWORD PTR $T262096[ebp]
+	lea	ecx, DWORD PTR $T262095[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?changeBuildProgress@CvPlot@@QAE_NW4BuildTypes@@HW4PlayerTypes@@@Z$6:
-	lea	ecx, DWORD PTR $T262100[ebp]
+	lea	ecx, DWORD PTR $T262099[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?changeBuildProgress@CvPlot@@QAE_NW4BuildTypes@@HW4PlayerTypes@@@Z$7:
-	lea	ecx, DWORD PTR _args$227048[ebp]
+	lea	ecx, DWORD PTR _args$227047[ebp]
 	jmp	??1CvLuaArgsHandle@@QAE@XZ		; CvLuaArgsHandle::~CvLuaArgsHandle
 __ehhandler$?changeBuildProgress@CvPlot@@QAE_NW4BuildTypes@@HW4PlayerTypes@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?changeBuildProgress@CvPlot@@QAE_NW4BuildTypes@@HW4PlayerTypes@@@Z
@@ -67401,13 +67401,13 @@ _hasScriptData$ = -69					; size = 1
 _uiVersion$ = -68					; size = 4
 _uLength$ = -64						; size = 4
 _iCount$ = -60						; size = 4
-_Data$227513 = -56					; size = 8
-$T262812 = -48						; size = 8
-$T262777 = -48						; size = 8
-_scriptData$227490 = -40				; size = 28
+_Data$227512 = -56					; size = 8
+$T262811 = -48						; size = 8
+$T262776 = -48						; size = 8
+_scriptData$227489 = -40				; size = 28
 __$EHRec$ = -12						; size = 12
-$T262811 = 8						; size = 4
-$T262776 = 8						; size = 4
+$T262810 = 8						; size = 4
+$T262775 = 8						; size = 4
 _kStream$ = 8						; size = 4
 ?read@CvPlot@@QAEXAAVFDataStream@@@Z PROC		; CvPlot::read, COMDAT
 ; _this$ = ecx
@@ -67810,12 +67810,12 @@ _kStream$ = 8						; size = 4
 	cmp	bl, BYTE PTR [ebp+4]
 	je	SHORT $LN267@read
 	mov	eax, DWORD PTR [ebp+8]
-	lea	edx, DWORD PTR $T262776[esp+84]
+	lea	edx, DWORD PTR $T262775[esp+84]
 	push	edx
-	lea	ecx, DWORD PTR $T262777[esp+92]
+	lea	ecx, DWORD PTR $T262776[esp+92]
 	push	ecx
 	lea	ecx, DWORD PTR [eax+20]
-	mov	DWORD PTR $T262776[esp+92], ebp
+	mov	DWORD PTR $T262775[esp+92], ebp
 	call	?insert@?$_Tree@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@std@@QAE?AU?$pair@Viterator@?$_Tree@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@std@@_N@2@ABQAVFAutoVariableBase@@@Z ; std::_Tree<std::_Tset_traits<FAutoVariableBase *,std::less<FAutoVariableBase *>,std::allocator<FAutoVariableBase *>,0> >::insert
 	mov	BYTE PTR [ebp+4], bl
 
@@ -67851,12 +67851,12 @@ $LN54@read:
 	cmp	BYTE PTR [ebp+4], -1
 	je	SHORT $LN267@read
 	mov	eax, DWORD PTR [ebp+8]
-	lea	edx, DWORD PTR $T262811[esp+84]
+	lea	edx, DWORD PTR $T262810[esp+84]
 	push	edx
-	lea	ecx, DWORD PTR $T262812[esp+92]
+	lea	ecx, DWORD PTR $T262811[esp+92]
 	push	ecx
 	lea	ecx, DWORD PTR [eax+20]
-	mov	DWORD PTR $T262811[esp+92], ebp
+	mov	DWORD PTR $T262810[esp+92], ebp
 	call	?insert@?$_Tree@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@std@@QAE?AU?$pair@Viterator@?$_Tree@V?$_Tset_traits@PAVFAutoVariableBase@@U?$less@PAVFAutoVariableBase@@@std@@V?$allocator@PAVFAutoVariableBase@@@3@$0A@@std@@@std@@_N@2@ABQAVFAutoVariableBase@@@Z ; std::_Tree<std::_Tset_traits<FAutoVariableBase *,std::less<FAutoVariableBase *>,std::allocator<FAutoVariableBase *>,0> >::insert
 	mov	BYTE PTR [ebp+4], -1
 $LN267@read:
@@ -68384,12 +68384,12 @@ $LL8@read:
 ; 10340: 	{
 ; 10341: 		std::string scriptData;
 
-	lea	ecx, DWORD PTR _scriptData$227490[esp+88]
+	lea	ecx, DWORD PTR _scriptData$227489[esp+88]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
 ; 10342: 		kStream >> scriptData;
 
-	lea	ecx, DWORD PTR _scriptData$227490[esp+88]
+	lea	ecx, DWORD PTR _scriptData$227489[esp+88]
 	push	ecx
 	push	edi
 	mov	DWORD PTR __$EHRec$[esp+104], ebx
@@ -68398,7 +68398,7 @@ $LL8@read:
 
 ; 10343: 		setScriptData(scriptData.c_str());
 
-	lea	ecx, DWORD PTR _scriptData$227490[esp+88]
+	lea	ecx, DWORD PTR _scriptData$227489[esp+88]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	mov	ebp, eax
 	mov	eax, DWORD PTR [esi+180]
@@ -68411,7 +68411,7 @@ $LL8@read:
 
 ; 10344: 	}
 
-	lea	ecx, DWORD PTR _scriptData$227490[esp+88]
+	lea	ecx, DWORD PTR _scriptData$227489[esp+88]
 	mov	DWORD PTR [esi+180], eax
 	mov	DWORD PTR __$EHRec$[esp+96], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
@@ -68515,18 +68515,18 @@ $LL3@read:
 ; 10369: 
 ; 10370: 		kStream >> Data.eOwner;
 
-	lea	ecx, DWORD PTR _Data$227513[esp+88]
+	lea	ecx, DWORD PTR _Data$227512[esp+88]
 	or	eax, -1
 	push	ecx
 	push	edi
-	mov	DWORD PTR _Data$227513[esp+96], eax
-	mov	DWORD PTR _Data$227513[esp+100], eax
+	mov	DWORD PTR _Data$227512[esp+96], eax
+	mov	DWORD PTR _Data$227512[esp+100], eax
 	call	??5@YAAAVFDataStream@@AAV0@AAW4PlayerTypes@@@Z ; operator>>
 	add	esp, 8
 
 ; 10371: 		kStream >> Data.iID;
 
-	lea	edx, DWORD PTR _Data$227513[esp+92]
+	lea	edx, DWORD PTR _Data$227512[esp+92]
 	push	edx
 	mov	ecx, edi
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
@@ -68547,9 +68547,9 @@ $LN230@read:
 	lea	eax, DWORD PTR [ecx+eax*8]
 	test	eax, eax
 	je	SHORT $LN233@read
-	mov	edx, DWORD PTR _Data$227513[esp+88]
+	mov	edx, DWORD PTR _Data$227512[esp+88]
 	mov	DWORD PTR [eax], edx
-	mov	ecx, DWORD PTR _Data$227513[esp+92]
+	mov	ecx, DWORD PTR _Data$227512[esp+92]
 	mov	DWORD PTR [eax+4], ecx
 $LN233@read:
 	inc	DWORD PTR [ebp+4]
@@ -68595,7 +68595,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?read@CvPlot@@QAEXAAVFDataStream@@@Z$0:
-	lea	ecx, DWORD PTR _scriptData$227490[ebp]
+	lea	ecx, DWORD PTR _scriptData$227489[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __ehhandler$?read@CvPlot@@QAEXAAVFDataStream@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?read@CvPlot@@QAEXAAVFDataStream@@@Z
@@ -68607,7 +68607,7 @@ PUBLIC	?_Tidy@?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocat
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\vector
 ;	COMDAT ?_Tidy@?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@IAEXXZ
 _TEXT	SEGMENT
-__Cat$263060 = -4					; size = 1
+__Cat$263059 = -4					; size = 1
 ?_Tidy@?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@IAEXXZ PROC ; std::vector<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::basic_string<char,std::char_traits<char>,std::allocator<char> > > > >::_Tidy, COMDAT
 ; _this$ = ecx
 
@@ -68631,7 +68631,7 @@ __Cat$263060 = -4					; size = 1
 ; 1130 : 
 ; 1131 : 			_Destroy(_Myfirst, _Mylast);
 
-	mov	ecx, DWORD PTR __Cat$263060[esp+8]
+	mov	ecx, DWORD PTR __Cat$263059[esp+8]
 	mov	edx, DWORD PTR [esi+8]
 	push	ecx
 	push	esi
@@ -68666,7 +68666,7 @@ PUBLIC	?_Tidy@?$_Tree@V?$_Tmap_traits@IV?$basic_string@DU?$char_traits@D@std@@V?
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xtree
 ;	COMDAT ?_Tidy@?$_Tree@V?$_Tmap_traits@IV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@I@2@V?$allocator@U?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@$0A@@std@@@std@@IAEXXZ
 _TEXT	SEGMENT
-$T263075 = -4						; size = 4
+$T263074 = -4						; size = 4
 ?_Tidy@?$_Tree@V?$_Tmap_traits@IV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@I@2@V?$allocator@U?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@$0A@@std@@@std@@IAEXXZ PROC ; std::_Tree<std::_Tmap_traits<unsigned int,std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,0> >::_Tidy, COMDAT
 ; _this$ = ecx
 
@@ -68682,7 +68682,7 @@ $T263075 = -4						; size = 4
 	mov	ecx, DWORD PTR [eax]
 	push	eax
 	push	ecx
-	lea	eax, DWORD PTR $T263075[esp+16]
+	lea	eax, DWORD PTR $T263074[esp+16]
 	push	eax
 	mov	ecx, esi
 	call	?erase@?$_Tree@V?$_Tmap_traits@IV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@I@2@V?$allocator@U?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@0@Z ; std::_Tree<std::_Tmap_traits<unsigned int,std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,0> >::erase
@@ -68740,11 +68740,11 @@ __unwindtable$??0CvPlot@@QAE@XZ DD 0ffffffffH
 xdata$x	ENDS
 ;	COMDAT ??0CvPlot@@QAE@XZ
 _TEXT	SEGMENT
-$T263194 = -60						; size = 4
-$T263139 = -56						; size = 4
+$T263193 = -60						; size = 4
+$T263138 = -56						; size = 4
 _this$ = -52						; size = 4
-$T263140 = -48						; size = 8
-$T263138 = -40						; size = 28
+$T263139 = -48						; size = 8
+$T263137 = -40						; size = 28
 __$EHRec$ = -12						; size = 12
 ??0CvPlot@@QAE@XZ PROC					; CvPlot::CvPlot, COMDAT
 ; _this$ = ecx
@@ -68788,13 +68788,13 @@ __$EHRec$ = -12						; size = 12
 	call	??0FAutoArchive@@QAE@XZ			; FAutoArchive::FAutoArchive
 	mov	DWORD PTR [ebp], OFFSET ??_7?$FAutoArchiveClassContainer@VCvPlot@@@@6B@
 	mov	DWORD PTR [ebp+32], esi
-	push	OFFSET $SG222693
-	lea	ecx, DWORD PTR $T263138[esp+80]
+	push	OFFSET $SG222692
+	lea	ecx, DWORD PTR $T263137[esp+80]
 	mov	BYTE PTR __$EHRec$[esp+88], 3
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 	push	1
 	push	ebp
-	lea	eax, DWORD PTR $T263138[esp+84]
+	lea	eax, DWORD PTR $T263137[esp+84]
 	lea	ebx, DWORD PTR [esi+428]
 	push	eax
 	mov	ecx, ebx
@@ -68803,15 +68803,15 @@ __$EHRec$ = -12						; size = 12
 	mov	DWORD PTR [ebx], OFFSET ??_7?$FAutoVariable@DVCvPlot@@@@6B@
 	mov	BYTE PTR [ebx+4], 0
 	mov	DWORD PTR [ebx+8], ebp
-	lea	ecx, DWORD PTR $T263138[esp+76]
+	lea	ecx, DWORD PTR $T263137[esp+76]
 	mov	BYTE PTR __$EHRec$[esp+84], 6
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
 ; 154  : 	FSerialization::plotsToCheck.insert(this);
 
-	lea	ecx, DWORD PTR $T263139[esp+76]
+	lea	ecx, DWORD PTR $T263138[esp+76]
 	push	ecx
-	lea	edx, DWORD PTR $T263140[esp+80]
+	lea	edx, DWORD PTR $T263139[esp+80]
 	xor	ebx, ebx
 	push	edx
 	mov	ecx, OFFSET ?plotsToCheck@FSerialization@@3V?$set@PAVCvPlot@@U?$less@PAVCvPlot@@@std@@V?$allocator@PAVCvPlot@@@3@@std@@A ; FSerialization::plotsToCheck
@@ -68820,7 +68820,7 @@ __$EHRec$ = -12						; size = 12
 	mov	DWORD PTR [esi+472], edi
 	mov	DWORD PTR [esi+476], edi
 	mov	DWORD PTR [esi+480], edi
-	mov	DWORD PTR $T263139[esp+84], esi
+	mov	DWORD PTR $T263138[esp+84], esi
 	call	?insert@?$_Tree@V?$_Tset_traits@PAVCvPlot@@U?$less@PAVCvPlot@@@std@@V?$allocator@PAVCvPlot@@@3@$0A@@std@@@std@@QAE?AU?$pair@Viterator@?$_Tree@V?$_Tset_traits@PAVCvPlot@@U?$less@PAVCvPlot@@@std@@V?$allocator@PAVCvPlot@@@3@$0A@@std@@@std@@_N@2@ABQAVCvPlot@@@Z ; std::_Tree<std::_Tset_traits<CvPlot *,std::less<CvPlot *>,std::allocator<CvPlot *>,0> >::insert
 
 ; 155  : 	m_paiBuildProgress = NULL;
@@ -68857,7 +68857,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$??0CvPlot@@QAE@XZ$5:
-	mov	ecx, DWORD PTR $T263194[ebp]
+	mov	ecx, DWORD PTR $T263193[ebp]
 	jmp	??1?$FStaticVector@UIDInfo@@$07$00$0BCJ@$0A@@@QAE@XZ ; FStaticVector<IDInfo,8,1,297,0>::~FStaticVector<IDInfo,8,1,297,0>
 __unwindfunclet$??0CvPlot@@QAE@XZ$0:
 	mov	ecx, DWORD PTR _this$[ebp]
@@ -68872,7 +68872,7 @@ __unwindfunclet$??0CvPlot@@QAE@XZ$2:
 	add	ecx, 392				; 00000188H
 	jmp	??1?$FAutoArchiveClassContainer@VCvPlot@@@@UAE@XZ
 __unwindfunclet$??0CvPlot@@QAE@XZ$3:
-	lea	ecx, DWORD PTR $T263138[ebp]
+	lea	ecx, DWORD PTR $T263137[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$??0CvPlot@@QAE@XZ$4:
 	mov	ecx, DWORD PTR _this$[ebp]
@@ -70318,7 +70318,7 @@ PUBLIC	??1?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\vector
 ;	COMDAT ??1?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@QAE@XZ
 _TEXT	SEGMENT
-__Cat$264360 = -4					; size = 1
+__Cat$264359 = -4					; size = 1
 ??1?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@QAE@XZ PROC ; std::vector<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::basic_string<char,std::char_traits<char>,std::allocator<char> > > > >::~vector<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::basic_string<char,std::char_traits<char>,std::allocator<char> > > > >, COMDAT
 ; _this$ = ecx
 
@@ -70333,7 +70333,7 @@ __Cat$264360 = -4					; size = 1
 	mov	eax, DWORD PTR [esi+4]
 	test	eax, eax
 	je	SHORT $LN12@vector
-	mov	ecx, DWORD PTR __Cat$264360[esp+8]
+	mov	ecx, DWORD PTR __Cat$264359[esp+8]
 	mov	edx, DWORD PTR [esi+8]
 	push	ecx
 	push	esi
@@ -70361,7 +70361,7 @@ PUBLIC	??1?$_Tree@V?$_Tmap_traits@IV?$basic_string@DU?$char_traits@D@std@@V?$all
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xtree
 ;	COMDAT ??1?$_Tree@V?$_Tmap_traits@IV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@I@2@V?$allocator@U?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@$0A@@std@@@std@@QAE@XZ
 _TEXT	SEGMENT
-$T264440 = -4						; size = 4
+$T264439 = -4						; size = 4
 ??1?$_Tree@V?$_Tmap_traits@IV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@I@2@V?$allocator@U?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@$0A@@std@@@std@@QAE@XZ PROC ; std::_Tree<std::_Tmap_traits<unsigned int,std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,0> >::~_Tree<std::_Tmap_traits<unsigned int,std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,0> >, COMDAT
 ; _this$ = ecx
 
@@ -70377,7 +70377,7 @@ $T264440 = -4						; size = 4
 	mov	ecx, DWORD PTR [eax]
 	push	eax
 	push	ecx
-	lea	eax, DWORD PTR $T264440[esp+16]
+	lea	eax, DWORD PTR $T264439[esp+16]
 	push	eax
 	mov	ecx, esi
 	call	?erase@?$_Tree@V?$_Tmap_traits@IV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@I@2@V?$allocator@U?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@0@Z ; std::_Tree<std::_Tmap_traits<unsigned int,std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,0> >::erase
@@ -70420,10 +70420,10 @@ __ehfuncinfo$?SyncPlots@FSerialization@@YAXXZ DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?SyncPlots@FSerialization@@YAXXZ
 _TEXT	SEGMENT
-__Cat$264863 = -80					; size = 1
-_authoritativePlayer$222212 = -80			; size = 4
-_callStacks$222627 = -76				; size = 16
-_memoryStream$222325 = -60				; size = 48
+__Cat$264862 = -80					; size = 1
+_authoritativePlayer$222211 = -80			; size = 4
+_callStacks$222626 = -76				; size = 16
+_memoryStream$222324 = -60				; size = 48
 __$EHRec$ = -12						; size = 12
 ?SyncPlots@FSerialization@@YAXXZ PROC			; FSerialization::SyncPlots, COMDAT
 
@@ -70449,7 +70449,7 @@ __$EHRec$ = -12						; size = 12
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	edi
 	call	?getActivePlayer@CvGame@@QBE?AW4PlayerTypes@@XZ ; CvGame::getActivePlayer
-	mov	DWORD PTR _authoritativePlayer$222212[esp+84], eax
+	mov	DWORD PTR _authoritativePlayer$222211[esp+84], eax
 
 ; 64   : 		std::set<CvPlot*>::const_iterator i;
 ; 65   : 		for(i = plotsToCheck.begin(); i != plotsToCheck.end(); ++i)
@@ -70491,21 +70491,21 @@ $LL31@SyncPlots:
 ; 73   : 				{
 ; 74   : 					FMemoryStream memoryStream;
 
-	lea	ecx, DWORD PTR _memoryStream$222325[esp+96]
+	lea	ecx, DWORD PTR _memoryStream$222324[esp+96]
 	call	??0FMemoryStream@@QAE@XZ		; FMemoryStream::FMemoryStream
 	mov	DWORD PTR __$EHRec$[esp+104], ebx
 
 ; 75   : 					std::vector<std::pair<std::string, std::string> > callStacks;
 
-	mov	DWORD PTR _callStacks$222627[esp+100], ebx
-	mov	DWORD PTR _callStacks$222627[esp+104], ebx
-	mov	DWORD PTR _callStacks$222627[esp+108], ebx
+	mov	DWORD PTR _callStacks$222626[esp+100], ebx
+	mov	DWORD PTR _callStacks$222626[esp+104], ebx
+	mov	DWORD PTR _callStacks$222626[esp+108], ebx
 
 ; 76   : 					archive.saveDelta(memoryStream, callStacks);
 
-	lea	eax, DWORD PTR _callStacks$222627[esp+96]
+	lea	eax, DWORD PTR _callStacks$222626[esp+96]
 	push	eax
-	lea	ecx, DWORD PTR _memoryStream$222325[esp+100]
+	lea	ecx, DWORD PTR _memoryStream$222324[esp+100]
 	push	ecx
 	mov	ecx, ebp
 	mov	BYTE PTR __$EHRec$[esp+112], 1
@@ -70519,42 +70519,42 @@ $LL31@SyncPlots:
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+8596
 	mov	edx, DWORD PTR [ecx]
 	mov	edx, DWORD PTR [edx+340]
-	lea	eax, DWORD PTR _callStacks$222627[esp+96]
+	lea	eax, DWORD PTR _callStacks$222626[esp+96]
 	push	eax
-	lea	eax, DWORD PTR _memoryStream$222325[esp+100]
+	lea	eax, DWORD PTR _memoryStream$222324[esp+100]
 	push	eax
 	movzx	eax, WORD PTR [esi+2]
 	push	eax
 	movzx	eax, WORD PTR [esi]
 	push	eax
-	mov	eax, DWORD PTR _authoritativePlayer$222212[esp+112]
+	mov	eax, DWORD PTR _authoritativePlayer$222211[esp+112]
 	push	eax
 	call	edx
 
 ; 81   : #endif
 ; 82   : 				}
 
-	mov	eax, DWORD PTR _callStacks$222627[esp+100]
+	mov	eax, DWORD PTR _callStacks$222626[esp+100]
 	mov	BYTE PTR __$EHRec$[esp+104], bl
 	cmp	eax, ebx
 	je	SHORT $LN131@SyncPlots
-	mov	ecx, DWORD PTR __Cat$264863[esp+96]
+	mov	ecx, DWORD PTR __Cat$264862[esp+96]
 	push	ecx
-	mov	ecx, DWORD PTR _callStacks$222627[esp+108]
-	lea	edx, DWORD PTR _callStacks$222627[esp+100]
+	mov	ecx, DWORD PTR _callStacks$222626[esp+108]
+	lea	edx, DWORD PTR _callStacks$222626[esp+100]
 	push	edx
 	push	ecx
 	push	eax
 	call	??$_Destroy_range@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@std@@@std@@YAXPAU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@0@0AAV?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@0@U_Nonscalar_ptr_iterator_tag@0@@Z ; std::_Destroy_range<std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::basic_string<char,std::char_traits<char>,std::allocator<char> > > > >
-	mov	edx, DWORD PTR _callStacks$222627[esp+116]
+	mov	edx, DWORD PTR _callStacks$222626[esp+116]
 	push	edx
 	call	??3@YAXPAX@Z				; operator delete
 	add	esp, 20					; 00000014H
 $LN131@SyncPlots:
-	lea	ecx, DWORD PTR _memoryStream$222325[esp+96]
-	mov	DWORD PTR _callStacks$222627[esp+100], ebx
-	mov	DWORD PTR _callStacks$222627[esp+104], ebx
-	mov	DWORD PTR _callStacks$222627[esp+108], ebx
+	lea	ecx, DWORD PTR _memoryStream$222324[esp+96]
+	mov	DWORD PTR _callStacks$222626[esp+100], ebx
+	mov	DWORD PTR _callStacks$222626[esp+104], ebx
+	mov	DWORD PTR _callStacks$222626[esp+108], ebx
 	mov	DWORD PTR __$EHRec$[esp+104], -1
 	call	??1FMemoryStream@@UAE@XZ		; FMemoryStream::~FMemoryStream
 $LN4@SyncPlots:
@@ -70615,10 +70615,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?SyncPlots@FSerialization@@YAXXZ$0:
-	lea	ecx, DWORD PTR _memoryStream$222325[ebp]
+	lea	ecx, DWORD PTR _memoryStream$222324[ebp]
 	jmp	??1FMemoryStream@@UAE@XZ		; FMemoryStream::~FMemoryStream
 __unwindfunclet$?SyncPlots@FSerialization@@YAXXZ$1:
-	lea	ecx, DWORD PTR _callStacks$222627[ebp]
+	lea	ecx, DWORD PTR _callStacks$222626[ebp]
 	jmp	??1?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@QAE@XZ ; std::vector<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::basic_string<char,std::char_traits<char>,std::allocator<char> > > > >::~vector<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::basic_string<char,std::char_traits<char>,std::allocator<char> > > > >
 __ehhandler$?SyncPlots@FSerialization@@YAXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?SyncPlots@FSerialization@@YAXXZ
@@ -70629,7 +70629,7 @@ PUBLIC	??1?$map@IV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??1?$map@IV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@I@2@V?$allocator@U?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@@std@@QAE@XZ
 _TEXT	SEGMENT
-$T264991 = -4						; size = 4
+$T264990 = -4						; size = 4
 ??1?$map@IV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@I@2@V?$allocator@U?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@@std@@QAE@XZ PROC ; std::map<unsigned int,std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,std::basic_string<char,std::char_traits<char>,std::allocator<char> > > > >::~map<unsigned int,std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,std::basic_string<char,std::char_traits<char>,std::allocator<char> > > > >, COMDAT
 ; _this$ = ecx
 	push	ecx
@@ -70639,7 +70639,7 @@ $T264991 = -4						; size = 4
 	mov	ecx, DWORD PTR [eax]
 	push	eax
 	push	ecx
-	lea	eax, DWORD PTR $T264991[esp+16]
+	lea	eax, DWORD PTR $T264990[esp+16]
 	push	eax
 	mov	ecx, esi
 	call	?erase@?$_Tree@V?$_Tmap_traits@IV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@I@2@V?$allocator@U?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@0@Z ; std::_Tree<std::_Tmap_traits<unsigned int,std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,0> >::erase
@@ -70772,7 +70772,7 @@ text$x	ENDS
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?getVariableName@?$FAutoArchiveClassContainer@VCvPlot@@@@UBEPBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABVFAutoVariableBase@@@Z
 _TEXT	SEGMENT
-$T265529 = -4						; size = 4
+$T265528 = -4						; size = 4
 _key$ = 8						; size = 4
 _var$ = 8						; size = 4
 ?getVariableName@?$FAutoArchiveClassContainer@VCvPlot@@@@UBEPBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABVFAutoVariableBase@@@Z PROC ; FAutoArchiveClassContainer<CvPlot>::getVariableName, COMDAT
@@ -70818,7 +70818,7 @@ $LN57@getVariabl:
 
 	lea	eax, DWORD PTR _key$[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T265529[esp+16]
+	lea	ecx, DWORD PTR $T265528[esp+16]
 	push	ecx
 	mov	ecx, esi
 	call	?find@?$_Tree@V?$_Tmap_traits@IV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@I@2@V?$allocator@U?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@$0A@@std@@@std@@QAE?AViterator@12@ABI@Z ; std::_Tree<std::_Tmap_traits<unsigned int,std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,0> >::find
@@ -70859,7 +70859,7 @@ $LN59@getVariabl:
 _TEXT	ENDS
 ;	COMDAT ?setVariableName@?$FAutoArchiveClassContainer@VCvPlot@@@@UBEXABVFAutoVariableBase@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
 _TEXT	SEGMENT
-$T265689 = -4						; size = 4
+$T265688 = -4						; size = 4
 _offset$ = 8						; size = 4
 _var$ = 8						; size = 4
 _name$ = 12						; size = 4
@@ -70903,7 +70903,7 @@ $LN49@setVariabl:
 
 	lea	eax, DWORD PTR _offset$[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T265689[esp+16]
+	lea	ecx, DWORD PTR $T265688[esp+16]
 	push	ecx
 	mov	ecx, edi
 	call	?find@?$_Tree@V?$_Tmap_traits@IV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@I@2@V?$allocator@U?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@$0A@@std@@@std@@QAE?AViterator@12@ABI@Z ; std::_Tree<std::_Tmap_traits<unsigned int,std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,0> >::find
@@ -70964,14 +70964,14 @@ text$yc	SEGMENT
 text$yc	ENDS
 ;	COMDAT ??__FplotsToCheck@FSerialization@@YAXXZ
 text$yd	SEGMENT
-$T266241 = -4						; size = 4
+$T266239 = -4						; size = 4
 ??__FplotsToCheck@FSerialization@@YAXXZ PROC		; FSerialization::`dynamic atexit destructor for 'plotsToCheck'', COMDAT
 	push	ecx
 	mov	eax, DWORD PTR ?plotsToCheck@FSerialization@@3V?$set@PAVCvPlot@@U?$less@PAVCvPlot@@@std@@V?$allocator@PAVCvPlot@@@3@@std@@A+4
 	mov	ecx, DWORD PTR [eax]
 	push	eax
 	push	ecx
-	lea	eax, DWORD PTR $T266241[esp+12]
+	lea	eax, DWORD PTR $T266239[esp+12]
 	push	eax
 	mov	ecx, OFFSET ?plotsToCheck@FSerialization@@3V?$set@PAVCvPlot@@U?$less@PAVCvPlot@@@std@@V?$allocator@PAVCvPlot@@@3@@std@@A ; FSerialization::plotsToCheck
 	call	?erase@?$_Tree@V?$_Tset_traits@PAVCvPlot@@U?$less@PAVCvPlot@@@std@@V?$allocator@PAVCvPlot@@@3@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@0@Z ; std::_Tree<std::_Tset_traits<CvPlot *,std::less<CvPlot *>,std::allocator<CvPlot *>,0> >::erase
@@ -70988,14 +70988,14 @@ $T266241 = -4						; size = 4
 text$yd	ENDS
 ;	COMDAT ??__Fnames@?1??getNames@?$FAutoArchiveClassContainer@VCvPlot@@@@IBEAAV?$map@IV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@I@2@V?$allocator@U?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@@std@@XZ@YAXXZ
 text$yd	SEGMENT
-$T266408 = -4						; size = 4
+$T266407 = -4						; size = 4
 ??__Fnames@?1??getNames@?$FAutoArchiveClassContainer@VCvPlot@@@@IBEAAV?$map@IV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@I@2@V?$allocator@U?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@@std@@XZ@YAXXZ PROC ; `FAutoArchiveClassContainer<CvPlot>::getNames'::`2'::`dynamic atexit destructor for 'names'', COMDAT
 	push	ecx
 	mov	eax, DWORD PTR ?names@?1??getNames@?$FAutoArchiveClassContainer@VCvPlot@@@@IBEAAV?$map@IV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@I@2@V?$allocator@U?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@@std@@XZ@4V34@A+4
 	mov	ecx, DWORD PTR [eax]
 	push	eax
 	push	ecx
-	lea	eax, DWORD PTR $T266408[esp+12]
+	lea	eax, DWORD PTR $T266407[esp+12]
 	push	eax
 	mov	ecx, OFFSET ?names@?1??getNames@?$FAutoArchiveClassContainer@VCvPlot@@@@IBEAAV?$map@IV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@I@2@V?$allocator@U?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@@std@@XZ@4V34@A
 	call	?erase@?$_Tree@V?$_Tmap_traits@IV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@I@2@V?$allocator@U?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@$0A@@std@@@std@@QAE?AViterator@12@Vconst_iterator@12@0@Z ; std::_Tree<std::_Tmap_traits<unsigned int,std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::less<unsigned int>,std::allocator<std::pair<unsigned int const ,std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >,0> >::erase

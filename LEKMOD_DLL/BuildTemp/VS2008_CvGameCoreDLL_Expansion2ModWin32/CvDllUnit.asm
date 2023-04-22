@@ -10,10 +10,10 @@ INCLUDELIB MSVCRT
 INCLUDELIB OLDNAMES
 
 _DATA	SEGMENT
-_CIV5_XP2_DLL_VERSION DD FLAT:$SG217767
+_CIV5_XP2_DLL_VERSION DD FLAT:$SG217766
 _DATA	ENDS
 CONST	SEGMENT
-$SG217767 DB	'1.0.0', 00H
+$SG217766 DB	'1.0.0', 00H
 	ORG $+2
 _guidICvUnknown DD 0d89ba82fH
 	DW	09fa3H
@@ -656,7 +656,7 @@ xdata$x	ENDS
 ;	COMDAT ?GetPlot@CvDllUnit@@UBGPAVICvPlot1@@XZ
 _TEXT	SEGMENT
 __$EHRec$ = -12						; size = 12
-$T219560 = 8						; size = 4
+$T219559 = 8						; size = 4
 _this$ = 8						; size = 4
 ?GetPlot@CvDllUnit@@UBGPAVICvPlot1@@XZ PROC		; CvDllUnit::GetPlot, COMDAT
 
@@ -683,7 +683,7 @@ _this$ = 8						; size = 4
 	push	12					; 0000000cH
 	call	??2CvDllPlot@@SAPAXI@Z			; CvDllPlot::operator new
 	add	esp, 4
-	mov	DWORD PTR $T219560[esp+12], eax
+	mov	DWORD PTR $T219559[esp+12], eax
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	eax, eax
 	je	SHORT $LN5@GetPlot
@@ -709,7 +709,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetPlot@CvDllUnit@@UBGPAVICvPlot1@@XZ$0:
-	mov	eax, DWORD PTR $T219560[ebp-4]
+	mov	eax, DWORD PTR $T219559[ebp-4]
 	push	eax
 	call	??3CvDllPlot@@SAXPAX@Z			; CvDllPlot::operator delete
 	pop	ecx
@@ -820,7 +820,7 @@ __ehfuncinfo$?GetUnitInfo@CvDllUnit@@UBGPAVICvUnitInfo1@@XZ DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?GetUnitInfo@CvDllUnit@@UBGPAVICvUnitInfo1@@XZ
 _TEXT	SEGMENT
-$T219597 = -16						; size = 4
+$T219596 = -16						; size = 4
 __$EHRec$ = -12						; size = 12
 _this$ = 8						; size = 4
 ?GetUnitInfo@CvDllUnit@@UBGPAVICvUnitInfo1@@XZ PROC	; CvDllUnit::GetUnitInfo, COMDAT
@@ -841,7 +841,7 @@ _this$ = 8						; size = 4
 	call	??2CvDllUnitInfo@@SAPAXI@Z		; CvDllUnitInfo::operator new
 	mov	esi, eax
 	add	esp, 4
-	mov	DWORD PTR $T219597[esp+20], esi
+	mov	DWORD PTR $T219596[esp+20], esi
 	xor	eax, eax
 	mov	DWORD PTR __$EHRec$[esp+28], eax
 	cmp	esi, eax
@@ -865,7 +865,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetUnitInfo@CvDllUnit@@UBGPAVICvUnitInfo1@@XZ$0:
-	mov	eax, DWORD PTR $T219597[ebp]
+	mov	eax, DWORD PTR $T219596[ebp]
 	push	eax
 	call	??3CvDllUnitInfo@@SAXPAX@Z		; CvDllUnitInfo::operator delete
 	pop	ecx
@@ -913,7 +913,7 @@ xdata$x	ENDS
 ;	COMDAT ?GetHeadMissionData@CvDllUnit@@UBGPAVICvMissionData1@@XZ
 _TEXT	SEGMENT
 __$EHRec$ = -12						; size = 12
-$T219614 = 8						; size = 4
+$T219613 = 8						; size = 4
 _this$ = 8						; size = 4
 ?GetHeadMissionData@CvDllUnit@@UBGPAVICvMissionData1@@XZ PROC ; CvDllUnit::GetHeadMissionData, COMDAT
 
@@ -940,7 +940,7 @@ _this$ = 8						; size = 4
 	push	12					; 0000000cH
 	call	??2CvDllMissionData@@SAPAXI@Z		; CvDllMissionData::operator new
 	add	esp, 4
-	mov	DWORD PTR $T219614[esp+12], eax
+	mov	DWORD PTR $T219613[esp+12], eax
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	eax, eax
 	je	SHORT $LN5@GetHeadMis
@@ -966,7 +966,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetHeadMissionData@CvDllUnit@@UBGPAVICvMissionData1@@XZ$0:
-	mov	eax, DWORD PTR $T219614[ebp-4]
+	mov	eax, DWORD PTR $T219613[ebp-4]
 	push	eax
 	call	??3CvDllMissionData@@SAXPAX@Z		; CvDllMissionData::operator delete
 	pop	ecx
@@ -1560,12 +1560,12 @@ PUBLIC	?GetInterfaceId@ICvUnknown@@SG?AU_GUID@@XZ	; ICvUnknown::GetInterfaceId
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredllutil\include\cvdllinterfaces.h
 ;	COMDAT ?GetInterfaceId@ICvUnknown@@SG?AU_GUID@@XZ
 _TEXT	SEGMENT
-$T219707 = 8						; size = 4
+$T219706 = 8						; size = 4
 ?GetInterfaceId@ICvUnknown@@SG?AU_GUID@@XZ PROC		; ICvUnknown::GetInterfaceId, COMDAT
 
 ; 306  : 	static GUID DLLCALL GetInterfaceId(){ return guidICvUnknown; }
 
-	mov	eax, DWORD PTR $T219707[esp-4]
+	mov	eax, DWORD PTR $T219706[esp-4]
 	mov	ecx, DWORD PTR _guidICvUnknown
 	mov	edx, DWORD PTR _guidICvUnknown+4
 	mov	DWORD PTR [eax], ecx
@@ -1581,12 +1581,12 @@ PUBLIC	?GetInterfaceId@ICvUnit1@@SG?AU_GUID@@XZ	; ICvUnit1::GetInterfaceId
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?GetInterfaceId@ICvUnit1@@SG?AU_GUID@@XZ
 _TEXT	SEGMENT
-$T219711 = 8						; size = 4
+$T219710 = 8						; size = 4
 ?GetInterfaceId@ICvUnit1@@SG?AU_GUID@@XZ PROC		; ICvUnit1::GetInterfaceId, COMDAT
 
 ; 1711 : 	static GUID DLLCALL GetInterfaceId() { return guidICvUnit1; }
 
-	mov	eax, DWORD PTR $T219711[esp-4]
+	mov	eax, DWORD PTR $T219710[esp-4]
 	mov	ecx, DWORD PTR _guidICvUnit1
 	mov	edx, DWORD PTR _guidICvUnit1+4
 	mov	DWORD PTR [eax], ecx
@@ -1603,12 +1603,12 @@ PUBLIC	?GetInterfaceId@ICvUnit2@@SG?AU_GUID@@XZ	; ICvUnit2::GetInterfaceId
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredllutil\include\cvdllinterfaces2.h
 ;	COMDAT ?GetInterfaceId@ICvUnit2@@SG?AU_GUID@@XZ
 _TEXT	SEGMENT
-$T219715 = 8						; size = 4
+$T219714 = 8						; size = 4
 ?GetInterfaceId@ICvUnit2@@SG?AU_GUID@@XZ PROC		; ICvUnit2::GetInterfaceId, COMDAT
 
 ; 170  : 	static GUID DLLCALL GetInterfaceId() { return guidICvUnit2; }
 
-	mov	eax, DWORD PTR $T219715[esp-4]
+	mov	eax, DWORD PTR $T219714[esp-4]
 	mov	ecx, DWORD PTR _guidICvUnit2
 	mov	edx, DWORD PTR _guidICvUnit2+4
 	mov	DWORD PTR [eax], ecx
@@ -1759,9 +1759,9 @@ _TEXT	SEGMENT
 _TEXT	ENDS
 ;	COMDAT ?QueryInterface@CvDllUnit@@UAGPAXU_GUID@@@Z
 _TEXT	SEGMENT
-$T219741 = -16						; size = 16
-$T219739 = -16						; size = 16
-$T219737 = -16						; size = 16
+$T219740 = -16						; size = 16
+$T219738 = -16						; size = 16
+$T219736 = -16						; size = 16
 _this$ = 8						; size = 4
 _guidInterface$ = 12					; size = 16
 ?QueryInterface@CvDllUnit@@UAGPAXU_GUID@@@Z PROC	; CvDllUnit::QueryInterface, COMDAT
@@ -1777,15 +1777,15 @@ _guidInterface$ = 12					; size = 16
 	mov	ecx, DWORD PTR _guidICvUnknown+4
 	mov	edx, DWORD PTR _guidICvUnknown+8
 	mov	eax, DWORD PTR _guidICvUnknown
-	mov	DWORD PTR $T219737[esp+20], ecx
-	lea	ecx, DWORD PTR $T219737[esp+16]
-	mov	DWORD PTR $T219737[esp+24], edx
-	mov	DWORD PTR $T219737[esp+16], eax
+	mov	DWORD PTR $T219736[esp+20], ecx
+	lea	ecx, DWORD PTR $T219736[esp+16]
+	mov	DWORD PTR $T219736[esp+24], edx
+	mov	DWORD PTR $T219736[esp+16], eax
 	mov	eax, DWORD PTR _guidICvUnknown+12
 	push	ecx
 	lea	edx, DWORD PTR _guidInterface$[esp+16]
 	push	edx
-	mov	DWORD PTR $T219737[esp+36], eax
+	mov	DWORD PTR $T219736[esp+36], eax
 	call	_IsEqualGUID
 	add	esp, 8
 	test	eax, eax
@@ -1793,15 +1793,15 @@ _guidInterface$ = 12					; size = 16
 	mov	ecx, DWORD PTR _guidICvUnit1+4
 	mov	edx, DWORD PTR _guidICvUnit1+8
 	mov	eax, DWORD PTR _guidICvUnit1
-	mov	DWORD PTR $T219739[esp+20], ecx
-	lea	ecx, DWORD PTR $T219739[esp+16]
-	mov	DWORD PTR $T219739[esp+24], edx
-	mov	DWORD PTR $T219739[esp+16], eax
+	mov	DWORD PTR $T219738[esp+20], ecx
+	lea	ecx, DWORD PTR $T219738[esp+16]
+	mov	DWORD PTR $T219738[esp+24], edx
+	mov	DWORD PTR $T219738[esp+16], eax
 	mov	eax, DWORD PTR _guidICvUnit1+12
 	push	ecx
 	lea	edx, DWORD PTR _guidInterface$[esp+16]
 	push	edx
-	mov	DWORD PTR $T219739[esp+36], eax
+	mov	DWORD PTR $T219738[esp+36], eax
 	call	_IsEqualGUID
 	add	esp, 8
 	test	eax, eax
@@ -1809,15 +1809,15 @@ _guidInterface$ = 12					; size = 16
 	mov	ecx, DWORD PTR _guidICvUnit2+4
 	mov	edx, DWORD PTR _guidICvUnit2+8
 	mov	eax, DWORD PTR _guidICvUnit2
-	mov	DWORD PTR $T219741[esp+20], ecx
-	lea	ecx, DWORD PTR $T219741[esp+16]
-	mov	DWORD PTR $T219741[esp+24], edx
-	mov	DWORD PTR $T219741[esp+16], eax
+	mov	DWORD PTR $T219740[esp+20], ecx
+	lea	ecx, DWORD PTR $T219740[esp+16]
+	mov	DWORD PTR $T219740[esp+24], edx
+	mov	DWORD PTR $T219740[esp+16], eax
 	mov	eax, DWORD PTR _guidICvUnit2+12
 	push	ecx
 	lea	edx, DWORD PTR _guidInterface$[esp+16]
 	push	edx
-	mov	DWORD PTR $T219741[esp+36], eax
+	mov	DWORD PTR $T219740[esp+36], eax
 	call	_IsEqualGUID
 	add	esp, 8
 	test	eax, eax
@@ -1874,7 +1874,7 @@ EXTRN	?getName@CvUnit@@QBE?BVCvString@@XZ:PROC	; CvUnit::getName
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?GetName@CvDllUnit@@UBG?AVCvString@@XZ
 _TEXT	SEGMENT
-$T219781 = -4						; size = 4
+$T219780 = -4						; size = 4
 _this$ = 8						; size = 4
 ___$ReturnUdt$ = 12					; size = 4
 ?GetName@CvDllUnit@@UBG?AVCvString@@XZ PROC		; CvDllUnit::GetName, COMDAT
@@ -1890,7 +1890,7 @@ ___$ReturnUdt$ = 12					; size = 4
 	push	esi
 	mov	esi, DWORD PTR ___$ReturnUdt$[esp+4]
 	push	esi
-	mov	DWORD PTR $T219781[esp+12], 0
+	mov	DWORD PTR $T219780[esp+12], 0
 	call	?getName@CvUnit@@QBE?BVCvString@@XZ	; CvUnit::getName
 	mov	eax, esi
 	pop	esi

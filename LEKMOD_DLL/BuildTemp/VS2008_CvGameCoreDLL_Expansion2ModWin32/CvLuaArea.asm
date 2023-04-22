@@ -10,67 +10,67 @@ INCLUDELIB MSVCRT
 INCLUDELIB OLDNAMES
 
 CONST	SEGMENT
-$SG219087 DB	'IsNone', 00H
+$SG219086 DB	'IsNone', 00H
 	ORG $+1
-$SG219088 DB	'CalculateTotalBestNatureYield', 00H
+$SG219087 DB	'CalculateTotalBestNatureYield', 00H
 	ORG $+2
-$SG219089 DB	'CountCoastalLand', 00H
+$SG219088 DB	'CountCoastalLand', 00H
 	ORG $+3
-$SG219090 DB	'CountNumUniqueResourceTypes', 00H
-$SG219091 DB	'GetID', 00H
+$SG219089 DB	'CountNumUniqueResourceTypes', 00H
+$SG219090 DB	'GetID', 00H
 	ORG $+2
-$SG219092 DB	'GetNumTiles', 00H
-$SG219093 DB	'GetNumOwnedTiles', 00H
+$SG219091 DB	'GetNumTiles', 00H
+$SG219092 DB	'GetNumOwnedTiles', 00H
 	ORG $+3
-$SG219094 DB	'GetNumUnownedTiles', 00H
+$SG219093 DB	'GetNumUnownedTiles', 00H
 	ORG $+1
-$SG219095 DB	'GetNumRiverEdges', 00H
+$SG219094 DB	'GetNumRiverEdges', 00H
 	ORG $+3
-$SG219096 DB	'GetNumCities', 00H
+$SG219095 DB	'GetNumCities', 00H
 	ORG $+3
-$SG219097 DB	'GetNumUnits', 00H
-$SG219098 DB	'GetTotalPopulation', 00H
+$SG219096 DB	'GetNumUnits', 00H
+$SG219097 DB	'GetTotalPopulation', 00H
 	ORG $+1
-$SG219099 DB	'GetNumStartingPlots', 00H
-$SG219100 DB	'IsWater', 00H
-$SG219101 DB	'GetUnitsPerPlayer', 00H
+$SG219098 DB	'GetNumStartingPlots', 00H
+$SG219099 DB	'IsWater', 00H
+$SG219100 DB	'GetUnitsPerPlayer', 00H
 	ORG $+2
-$SG219102 DB	'GetCitiesPerPlayer', 00H
+$SG219101 DB	'GetCitiesPerPlayer', 00H
 	ORG $+1
-$SG219103 DB	'GetPopulationPerPlayer', 00H
+$SG219102 DB	'GetPopulationPerPlayer', 00H
 	ORG $+1
-$SG219104 DB	'GetFreeSpecialist', 00H
+$SG219103 DB	'GetFreeSpecialist', 00H
 	ORG $+2
-$SG219105 DB	'GetNumRevealedTiles', 00H
-$SG219106 DB	'GetNumUnrevealedTiles', 00H
+$SG219104 DB	'GetNumRevealedTiles', 00H
+$SG219105 DB	'GetNumUnrevealedTiles', 00H
 	ORG $+2
-$SG219107 DB	'GetTargetCity', 00H
+$SG219106 DB	'GetTargetCity', 00H
 	ORG $+2
-$SG219108 DB	'GetYieldRateModifier', 00H
+$SG219107 DB	'GetYieldRateModifier', 00H
 	ORG $+3
-$SG219109 DB	'GetNumResources', 00H
-$SG219110 DB	'GetNumTotalResources', 00H
+$SG219108 DB	'GetNumResources', 00H
+$SG219109 DB	'GetNumTotalResources', 00H
 	ORG $+3
-$SG219111 DB	'GetNumImprovements', 00H
+$SG219110 DB	'GetNumImprovements', 00H
 	ORG $+1
-$SG219117 DB	'Area', 00H
+$SG219116 DB	'Area', 00H
 	ORG $+3
-$SG219311 DB	'__instance', 00H
+$SG219310 DB	'__instance', 00H
 	ORG $+5
-$SG219317 DB	'Not a valid instance.  Either the instance is NULL or yo'
+$SG219316 DB	'Not a valid instance.  Either the instance is NULL or yo'
 	DB	'u used ''.'' instead of '':''.', 00H
 	ORG $+1
-$SG219325 DB	'Instance does not exist.', 00H
+$SG219324 DB	'Instance does not exist.', 00H
 	ORG $+3
-$SG219336 DB	'__instances', 00H
-$SG219337 DB	'__mode', 00H
+$SG219335 DB	'__instances', 00H
+$SG219336 DB	'__mode', 00H
 	ORG $+1
-$SG219338 DB	'v', 00H
+$SG219337 DB	'v', 00H
 	ORG $+2
-$SG219340 DB	'__instances', 00H
-$SG219343 DB	'__instance', 00H
+$SG219339 DB	'__instances', 00H
+$SG219342 DB	'__instance', 00H
 	ORG $+1
-$SG219344 DB	'__index', 00H
+$SG219343 DB	'__index', 00H
 CONST	ENDS
 PUBLIC	?GetTypeName@CvLuaArea@@SAPBDXZ			; CvLuaArea::GetTypeName
 ; Function compile flags: /Ogtpy
@@ -81,7 +81,7 @@ _TEXT	SEGMENT
 
 ; 61   : 	return "Area";
 
-	mov	eax, OFFSET $SG219117
+	mov	eax, OFFSET $SG219116
 
 ; 62   : }
 
@@ -100,7 +100,7 @@ _L$ = 8							; size = 4
 ; 165  : 	luaL_error(L, "Instance does not exist.");
 
 	mov	eax, DWORD PTR _L$[esp-4]
-	push	OFFSET $SG219325
+	push	OFFSET $SG219324
 	push	eax
 	call	_luaL_error
 	add	esp, 8
@@ -197,7 +197,7 @@ _pkType$ = 12						; size = 4
 ; 61   : 			//Create weak __instances table.
 ; 62   : 			lua_pushstring(L, "__instances");
 
-	push	OFFSET $SG219336
+	push	OFFSET $SG219335
 	push	esi
 	call	_lua_pushstring
 
@@ -219,13 +219,13 @@ _pkType$ = 12						; size = 4
 
 ; 67   : 			lua_pushstring(L, "__mode");
 
-	push	OFFSET $SG219337
+	push	OFFSET $SG219336
 	push	esi
 	call	_lua_pushstring
 
 ; 68   : 			lua_pushstring(L, "v");
 
-	push	OFFSET $SG219338
+	push	OFFSET $SG219337
 	push	esi
 	call	_lua_pushstring
 	add	esp, 68					; 00000044H
@@ -285,7 +285,7 @@ $LN7@Push:
 ; 81   : 
 ; 82   : 		lua_pushstring(L, "__instances");
 
-	push	OFFSET $SG219340
+	push	OFFSET $SG219339
 	push	esi
 	mov	ebx, eax
 	call	_lua_pushstring
@@ -351,7 +351,7 @@ $LN7@Push:
 
 ; 98   : 			lua_setfield(L, -2, "__instance");
 
-	push	OFFSET $SG219343
+	push	OFFSET $SG219342
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_setfield
@@ -366,7 +366,7 @@ $LN7@Push:
 
 ; 101  : 			lua_pushstring(L, "__index");
 
-	push	OFFSET $SG219344
+	push	OFFSET $SG219343
 	push	esi
 	call	_lua_pushstring
 
@@ -485,7 +485,7 @@ _L$ = 8							; size = 4
 ; 56   : 	DefaultHandleMissingInstance(L);
 
 	mov	eax, DWORD PTR _L$[esp-4]
-	push	OFFSET $SG219325
+	push	OFFSET $SG219324
 	push	eax
 	call	_luaL_error
 	add	esp, 8
@@ -539,7 +539,7 @@ _bErrorOnFail$ = 16					; size = 1
 ; 134  : 		lua_getfield(L, idx, "__instance");
 
 	mov	ecx, DWORD PTR _idx$[esp+12]
-	push	OFFSET $SG219311
+	push	OFFSET $SG219310
 	push	ecx
 	push	esi
 	call	_lua_getfield
@@ -600,7 +600,7 @@ $LN3@GetInstanc:
 
 ; 150  : 			luaL_error(L, "Not a valid instance.  Either the instance is NULL or you used '.' instead of ':'.");
 
-	push	OFFSET $SG219317
+	push	OFFSET $SG219316
 	push	esi
 	call	_luaL_error
 	add	esp, 8
@@ -608,7 +608,7 @@ $LN1@GetInstanc:
 
 ; 151  : 		Derived::HandleMissingInstance(L);
 
-	push	OFFSET $SG219325
+	push	OFFSET $SG219324
 	push	esi
 	call	_luaL_error
 	add	esp, 8
@@ -661,7 +661,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lIsNone
-	push	OFFSET $SG219311
+	push	OFFSET $SG219310
 	push	edi
 	push	esi
 	call	_lua_getfield
@@ -686,7 +686,7 @@ $LN5@lIsNone:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lIsNone
-	push	OFFSET $SG219325
+	push	OFFSET $SG219324
 	push	esi
 	call	_luaL_error
 	add	esp, 8
@@ -747,7 +747,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lCalculate
-	push	OFFSET $SG219311
+	push	OFFSET $SG219310
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -772,10 +772,10 @@ $LN5@lCalculate:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lCalculate
-	push	OFFSET $SG219317
+	push	OFFSET $SG219316
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG219325
+	push	OFFSET $SG219324
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -836,7 +836,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lCountCoas
-	push	OFFSET $SG219311
+	push	OFFSET $SG219310
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -861,10 +861,10 @@ $LN5@lCountCoas:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lCountCoas
-	push	OFFSET $SG219317
+	push	OFFSET $SG219316
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG219325
+	push	OFFSET $SG219324
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -925,7 +925,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lCountNumU
-	push	OFFSET $SG219311
+	push	OFFSET $SG219310
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -950,10 +950,10 @@ $LN5@lCountNumU:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lCountNumU
-	push	OFFSET $SG219317
+	push	OFFSET $SG219316
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG219325
+	push	OFFSET $SG219324
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -1013,7 +1013,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lGetID
-	push	OFFSET $SG219311
+	push	OFFSET $SG219310
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -1038,10 +1038,10 @@ $LN5@lGetID:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lGetID
-	push	OFFSET $SG219317
+	push	OFFSET $SG219316
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG219325
+	push	OFFSET $SG219324
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -1099,7 +1099,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lGetNumTil
-	push	OFFSET $SG219311
+	push	OFFSET $SG219310
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -1124,10 +1124,10 @@ $LN5@lGetNumTil:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lGetNumTil
-	push	OFFSET $SG219317
+	push	OFFSET $SG219316
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG219325
+	push	OFFSET $SG219324
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -1188,7 +1188,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lGetNumOwn
-	push	OFFSET $SG219311
+	push	OFFSET $SG219310
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -1213,10 +1213,10 @@ $LN5@lGetNumOwn:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lGetNumOwn
-	push	OFFSET $SG219317
+	push	OFFSET $SG219316
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG219325
+	push	OFFSET $SG219324
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -1277,7 +1277,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lGetNumUno
-	push	OFFSET $SG219311
+	push	OFFSET $SG219310
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -1302,10 +1302,10 @@ $LN5@lGetNumUno:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lGetNumUno
-	push	OFFSET $SG219317
+	push	OFFSET $SG219316
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG219325
+	push	OFFSET $SG219324
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -1366,7 +1366,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lGetNumRiv
-	push	OFFSET $SG219311
+	push	OFFSET $SG219310
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -1391,10 +1391,10 @@ $LN5@lGetNumRiv:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lGetNumRiv
-	push	OFFSET $SG219317
+	push	OFFSET $SG219316
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG219325
+	push	OFFSET $SG219324
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -1455,7 +1455,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lGetNumCit
-	push	OFFSET $SG219311
+	push	OFFSET $SG219310
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -1480,10 +1480,10 @@ $LN5@lGetNumCit:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lGetNumCit
-	push	OFFSET $SG219317
+	push	OFFSET $SG219316
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG219325
+	push	OFFSET $SG219324
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -1544,7 +1544,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lGetNumUni
-	push	OFFSET $SG219311
+	push	OFFSET $SG219310
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -1569,10 +1569,10 @@ $LN5@lGetNumUni:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lGetNumUni
-	push	OFFSET $SG219317
+	push	OFFSET $SG219316
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG219325
+	push	OFFSET $SG219324
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -1633,7 +1633,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lGetTotalP
-	push	OFFSET $SG219311
+	push	OFFSET $SG219310
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -1658,10 +1658,10 @@ $LN5@lGetTotalP:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lGetTotalP
-	push	OFFSET $SG219317
+	push	OFFSET $SG219316
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG219325
+	push	OFFSET $SG219324
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -1722,7 +1722,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lGetNumSta
-	push	OFFSET $SG219311
+	push	OFFSET $SG219310
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -1747,10 +1747,10 @@ $LN5@lGetNumSta:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lGetNumSta
-	push	OFFSET $SG219317
+	push	OFFSET $SG219316
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG219325
+	push	OFFSET $SG219324
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -1811,7 +1811,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lIsWater
-	push	OFFSET $SG219311
+	push	OFFSET $SG219310
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -1836,10 +1836,10 @@ $LN5@lIsWater:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lIsWater
-	push	OFFSET $SG219317
+	push	OFFSET $SG219316
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG219325
+	push	OFFSET $SG219324
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -1901,7 +1901,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lGetUnitsP
-	push	OFFSET $SG219311
+	push	OFFSET $SG219310
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -1926,10 +1926,10 @@ $LN5@lGetUnitsP:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lGetUnitsP
-	push	OFFSET $SG219317
+	push	OFFSET $SG219316
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG219325
+	push	OFFSET $SG219324
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -1998,7 +1998,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lGetCities
-	push	OFFSET $SG219311
+	push	OFFSET $SG219310
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -2023,10 +2023,10 @@ $LN5@lGetCities:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lGetCities
-	push	OFFSET $SG219317
+	push	OFFSET $SG219316
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG219325
+	push	OFFSET $SG219324
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -2095,7 +2095,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lGetPopula
-	push	OFFSET $SG219311
+	push	OFFSET $SG219310
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -2120,10 +2120,10 @@ $LN5@lGetPopula:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lGetPopula
-	push	OFFSET $SG219317
+	push	OFFSET $SG219316
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG219325
+	push	OFFSET $SG219324
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -2192,7 +2192,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lGetFreeSp
-	push	OFFSET $SG219311
+	push	OFFSET $SG219310
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -2217,10 +2217,10 @@ $LN5@lGetFreeSp:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lGetFreeSp
-	push	OFFSET $SG219317
+	push	OFFSET $SG219316
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG219325
+	push	OFFSET $SG219324
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -2289,7 +2289,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lGetNumRev
-	push	OFFSET $SG219311
+	push	OFFSET $SG219310
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -2314,10 +2314,10 @@ $LN5@lGetNumRev:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lGetNumRev
-	push	OFFSET $SG219317
+	push	OFFSET $SG219316
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG219325
+	push	OFFSET $SG219324
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -2386,7 +2386,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lGetNumUnr
-	push	OFFSET $SG219311
+	push	OFFSET $SG219310
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -2411,10 +2411,10 @@ $LN5@lGetNumUnr:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lGetNumUnr
-	push	OFFSET $SG219317
+	push	OFFSET $SG219316
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG219325
+	push	OFFSET $SG219324
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -2483,7 +2483,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lGetTarget
-	push	OFFSET $SG219311
+	push	OFFSET $SG219310
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -2508,10 +2508,10 @@ $LN5@lGetTarget:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lGetTarget
-	push	OFFSET $SG219317
+	push	OFFSET $SG219316
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG219325
+	push	OFFSET $SG219324
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -2580,7 +2580,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lGetYieldR
-	push	OFFSET $SG219311
+	push	OFFSET $SG219310
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -2605,10 +2605,10 @@ $LN5@lGetYieldR:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lGetYieldR
-	push	OFFSET $SG219317
+	push	OFFSET $SG219316
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG219325
+	push	OFFSET $SG219324
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -2685,7 +2685,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lGetNumRes
-	push	OFFSET $SG219311
+	push	OFFSET $SG219310
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -2710,10 +2710,10 @@ $LN5@lGetNumRes:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lGetNumRes
-	push	OFFSET $SG219317
+	push	OFFSET $SG219316
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG219325
+	push	OFFSET $SG219324
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -2782,7 +2782,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lGetNumTot
-	push	OFFSET $SG219311
+	push	OFFSET $SG219310
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -2807,10 +2807,10 @@ $LN5@lGetNumTot:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lGetNumTot
-	push	OFFSET $SG219317
+	push	OFFSET $SG219316
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG219325
+	push	OFFSET $SG219324
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -2871,7 +2871,7 @@ _L$ = 8							; size = 4
 	add	esp, 12					; 0000000cH
 	cmp	eax, 5
 	jne	SHORT $LN5@lGetNumImp
-	push	OFFSET $SG219311
+	push	OFFSET $SG219310
 	push	1
 	push	esi
 	call	_lua_getfield
@@ -2896,10 +2896,10 @@ $LN5@lGetNumImp:
 	add	esp, 8
 	test	bl, bl
 	je	SHORT $LN12@lGetNumImp
-	push	OFFSET $SG219317
+	push	OFFSET $SG219316
 	push	esi
 	call	_luaL_error
-	push	OFFSET $SG219325
+	push	OFFSET $SG219324
 	push	esi
 	call	_luaL_error
 	add	esp, 16					; 00000010H
@@ -2961,7 +2961,7 @@ _t$ = 12						; size = 4
 	push	esi
 	call	_lua_pushcclosure
 	mov	edi, DWORD PTR _t$[esp+16]
-	push	OFFSET $SG219087
+	push	OFFSET $SG219086
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -2973,7 +2973,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lCalculateTotalBestNatureYield@CvLuaArea@@KAHPAUlua_State@@@Z ; CvLuaArea::lCalculateTotalBestNatureYield
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219088
+	push	OFFSET $SG219087
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -2984,7 +2984,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lCountCoastalLand@CvLuaArea@@KAHPAUlua_State@@@Z ; CvLuaArea::lCountCoastalLand
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219089
+	push	OFFSET $SG219088
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -2996,7 +2996,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lCountNumUniqueResourceTypes@CvLuaArea@@KAHPAUlua_State@@@Z ; CvLuaArea::lCountNumUniqueResourceTypes
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219090
+	push	OFFSET $SG219089
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -3007,7 +3007,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetID@CvLuaArea@@KAHPAUlua_State@@@Z ; CvLuaArea::lGetID
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219091
+	push	OFFSET $SG219090
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -3018,7 +3018,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetNumTiles@CvLuaArea@@KAHPAUlua_State@@@Z ; CvLuaArea::lGetNumTiles
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219092
+	push	OFFSET $SG219091
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -3031,7 +3031,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetNumOwnedTiles@CvLuaArea@@KAHPAUlua_State@@@Z ; CvLuaArea::lGetNumOwnedTiles
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219093
+	push	OFFSET $SG219092
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -3042,7 +3042,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetNumUnownedTiles@CvLuaArea@@KAHPAUlua_State@@@Z ; CvLuaArea::lGetNumUnownedTiles
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219094
+	push	OFFSET $SG219093
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -3053,7 +3053,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetNumRiverEdges@CvLuaArea@@KAHPAUlua_State@@@Z ; CvLuaArea::lGetNumRiverEdges
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219095
+	push	OFFSET $SG219094
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -3065,7 +3065,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetNumCities@CvLuaArea@@KAHPAUlua_State@@@Z ; CvLuaArea::lGetNumCities
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219096
+	push	OFFSET $SG219095
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -3076,7 +3076,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetNumUnits@CvLuaArea@@KAHPAUlua_State@@@Z ; CvLuaArea::lGetNumUnits
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219097
+	push	OFFSET $SG219096
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -3087,7 +3087,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetTotalPopulation@CvLuaArea@@KAHPAUlua_State@@@Z ; CvLuaArea::lGetTotalPopulation
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219098
+	push	OFFSET $SG219097
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -3099,7 +3099,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetNumStartingPlots@CvLuaArea@@KAHPAUlua_State@@@Z ; CvLuaArea::lGetNumStartingPlots
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219099
+	push	OFFSET $SG219098
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -3110,7 +3110,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lIsWater@CvLuaArea@@KAHPAUlua_State@@@Z ; CvLuaArea::lIsWater
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219100
+	push	OFFSET $SG219099
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -3122,7 +3122,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetUnitsPerPlayer@CvLuaArea@@KAHPAUlua_State@@@Z ; CvLuaArea::lGetUnitsPerPlayer
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219101
+	push	OFFSET $SG219100
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -3134,7 +3134,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetCitiesPerPlayer@CvLuaArea@@KAHPAUlua_State@@@Z ; CvLuaArea::lGetCitiesPerPlayer
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219102
+	push	OFFSET $SG219101
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -3145,7 +3145,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetPopulationPerPlayer@CvLuaArea@@KAHPAUlua_State@@@Z ; CvLuaArea::lGetPopulationPerPlayer
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219103
+	push	OFFSET $SG219102
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -3156,7 +3156,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetFreeSpecialist@CvLuaArea@@KAHPAUlua_State@@@Z ; CvLuaArea::lGetFreeSpecialist
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219104
+	push	OFFSET $SG219103
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -3169,7 +3169,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetNumRevealedTiles@CvLuaArea@@KAHPAUlua_State@@@Z ; CvLuaArea::lGetNumRevealedTiles
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219105
+	push	OFFSET $SG219104
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -3180,7 +3180,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetNumUnrevealedTiles@CvLuaArea@@KAHPAUlua_State@@@Z ; CvLuaArea::lGetNumUnrevealedTiles
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219106
+	push	OFFSET $SG219105
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -3192,7 +3192,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetTargetCity@CvLuaArea@@KAHPAUlua_State@@@Z ; CvLuaArea::lGetTargetCity
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219107
+	push	OFFSET $SG219106
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -3204,7 +3204,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetYieldRateModifier@CvLuaArea@@KAHPAUlua_State@@@Z ; CvLuaArea::lGetYieldRateModifier
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219108
+	push	OFFSET $SG219107
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -3216,7 +3216,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetNumResources@CvLuaArea@@KAHPAUlua_State@@@Z ; CvLuaArea::lGetNumResources
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219109
+	push	OFFSET $SG219108
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -3227,7 +3227,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetNumTotalResources@CvLuaArea@@KAHPAUlua_State@@@Z ; CvLuaArea::lGetNumTotalResources
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219110
+	push	OFFSET $SG219109
 	push	edi
 	push	esi
 	call	_lua_setfield
@@ -3239,7 +3239,7 @@ _t$ = 12						; size = 4
 	push	OFFSET ?lGetNumImprovements@CvLuaArea@@KAHPAUlua_State@@@Z ; CvLuaArea::lGetNumImprovements
 	push	esi
 	call	_lua_pushcclosure
-	push	OFFSET $SG219111
+	push	OFFSET $SG219110
 	push	edi
 	push	esi
 	call	_lua_setfield

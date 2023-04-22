@@ -930,9 +930,7 @@ void CvGameReligions::FoundReligion(PlayerTypes ePlayer, ReligionTypes eReligion
 #ifdef NQ_ALLOW_RELIGION_ONE_SHOTS
 	kPlayer.DoReligionOneShots(eReligion);
 #endif
-#ifdef LEKMOD_REFORMATION_NOTIFICATION_MID_TURN
-	kPlayer.DoReformationNotification();
-#endif
+
 	// In case we have another prophet sitting around, make sure he's set to this religion
 	int iLoopUnit;
 	CvUnit* pLoopUnit;
@@ -1332,6 +1330,9 @@ void CvGameReligions::AddReformationBelief(PlayerTypes ePlayer, ReligionTypes eR
 
 #ifdef NQ_ALLOW_RELIGION_ONE_SHOTS
 	kPlayer.DoReligionOneShots(eReligion);
+#endif
+#ifdef LEKMOD_REFORMATION_NOTIFICATION_MID_TURN
+	kPlayer.DoReformationNotification();
 #endif
 
 	//Notify the masses

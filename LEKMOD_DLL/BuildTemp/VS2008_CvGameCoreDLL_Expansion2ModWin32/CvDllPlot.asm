@@ -10,10 +10,10 @@ INCLUDELIB MSVCRT
 INCLUDELIB OLDNAMES
 
 _DATA	SEGMENT
-_CIV5_XP2_DLL_VERSION DD FLAT:$SG217781
+_CIV5_XP2_DLL_VERSION DD FLAT:$SG217780
 _DATA	ENDS
 CONST	SEGMENT
-$SG217781 DB	'1.0.0', 00H
+$SG217780 DB	'1.0.0', 00H
 	ORG $+2
 _guidICvUnknown DD 0d89ba82fH
 	DW	09fa3H
@@ -886,7 +886,7 @@ xdata$x	ENDS
 ;	COMDAT ?GetWorkingCity@CvDllPlot@@UBGPAVICvCity1@@XZ
 _TEXT	SEGMENT
 __$EHRec$ = -12						; size = 12
-$T219631 = 8						; size = 4
+$T219630 = 8						; size = 4
 _this$ = 8						; size = 4
 ?GetWorkingCity@CvDllPlot@@UBGPAVICvCity1@@XZ PROC	; CvDllPlot::GetWorkingCity, COMDAT
 
@@ -913,7 +913,7 @@ _this$ = 8						; size = 4
 	push	12					; 0000000cH
 	call	??2CvDllCity@@SAPAXI@Z			; CvDllCity::operator new
 	add	esp, 4
-	mov	DWORD PTR $T219631[esp+12], eax
+	mov	DWORD PTR $T219630[esp+12], eax
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	eax, eax
 	je	SHORT $LN5@GetWorking
@@ -939,7 +939,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetWorkingCity@CvDllPlot@@UBGPAVICvCity1@@XZ$0:
-	mov	eax, DWORD PTR $T219631[ebp-4]
+	mov	eax, DWORD PTR $T219630[ebp-4]
 	push	eax
 	call	??3CvDllCity@@SAXPAX@Z			; CvDllCity::operator delete
 	pop	ecx
@@ -1076,7 +1076,7 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 __$EHRec$ = -12						; size = 12
 _this$ = 8						; size = 4
-$T219665 = 12						; size = 4
+$T219664 = 12						; size = 4
 _iIndex$ = 12						; size = 4
 ?GetUnitByIndex@CvDllPlot@@UBGPAVICvUnit1@@H@Z PROC	; CvDllPlot::GetUnitByIndex, COMDAT
 
@@ -1105,7 +1105,7 @@ _iIndex$ = 12						; size = 4
 	push	12					; 0000000cH
 	call	??2CvDllUnit@@SAPAXI@Z			; CvDllUnit::operator new
 	add	esp, 4
-	mov	DWORD PTR $T219665[esp+12], eax
+	mov	DWORD PTR $T219664[esp+12], eax
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	eax, eax
 	je	SHORT $LN5@GetUnitByI
@@ -1131,7 +1131,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetUnitByIndex@CvDllPlot@@UBGPAVICvUnit1@@H@Z$0:
-	mov	eax, DWORD PTR $T219665[ebp-4]
+	mov	eax, DWORD PTR $T219664[ebp-4]
 	push	eax
 	call	??3CvDllUnit@@SAXPAX@Z			; CvDllUnit::operator delete
 	pop	ecx
@@ -1388,12 +1388,12 @@ PUBLIC	?GetInterfaceId@ICvUnknown@@SG?AU_GUID@@XZ	; ICvUnknown::GetInterfaceId
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredllutil\include\cvdllinterfaces.h
 ;	COMDAT ?GetInterfaceId@ICvUnknown@@SG?AU_GUID@@XZ
 _TEXT	SEGMENT
-$T219714 = 8						; size = 4
+$T219713 = 8						; size = 4
 ?GetInterfaceId@ICvUnknown@@SG?AU_GUID@@XZ PROC		; ICvUnknown::GetInterfaceId, COMDAT
 
 ; 306  : 	static GUID DLLCALL GetInterfaceId(){ return guidICvUnknown; }
 
-	mov	eax, DWORD PTR $T219714[esp-4]
+	mov	eax, DWORD PTR $T219713[esp-4]
 	mov	ecx, DWORD PTR _guidICvUnknown
 	mov	edx, DWORD PTR _guidICvUnknown+4
 	mov	DWORD PTR [eax], ecx
@@ -1409,12 +1409,12 @@ PUBLIC	?GetInterfaceId@ICvPlot1@@SG?AU_GUID@@XZ	; ICvPlot1::GetInterfaceId
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?GetInterfaceId@ICvPlot1@@SG?AU_GUID@@XZ
 _TEXT	SEGMENT
-$T219718 = 8						; size = 4
+$T219717 = 8						; size = 4
 ?GetInterfaceId@ICvPlot1@@SG?AU_GUID@@XZ PROC		; ICvPlot1::GetInterfaceId, COMDAT
 
 ; 1355 : 	static GUID DLLCALL GetInterfaceId() { return guidICvPlot1; }
 
-	mov	eax, DWORD PTR $T219718[esp-4]
+	mov	eax, DWORD PTR $T219717[esp-4]
 	mov	ecx, DWORD PTR _guidICvPlot1
 	mov	edx, DWORD PTR _guidICvPlot1+4
 	mov	DWORD PTR [eax], ecx
@@ -1941,8 +1941,8 @@ _TEXT	SEGMENT
 _TEXT	ENDS
 ;	COMDAT ?QueryInterface@CvDllPlot@@UAGPAXU_GUID@@@Z
 _TEXT	SEGMENT
-$T219795 = -16						; size = 16
-$T219793 = -16						; size = 16
+$T219794 = -16						; size = 16
+$T219792 = -16						; size = 16
 _this$ = 8						; size = 4
 _guidInterface$ = 12					; size = 16
 ?QueryInterface@CvDllPlot@@UAGPAXU_GUID@@@Z PROC	; CvDllPlot::QueryInterface, COMDAT
@@ -1957,15 +1957,15 @@ _guidInterface$ = 12					; size = 16
 	mov	ecx, DWORD PTR _guidICvUnknown+4
 	mov	edx, DWORD PTR _guidICvUnknown+8
 	mov	eax, DWORD PTR _guidICvUnknown
-	mov	DWORD PTR $T219793[esp+20], ecx
-	lea	ecx, DWORD PTR $T219793[esp+16]
-	mov	DWORD PTR $T219793[esp+24], edx
-	mov	DWORD PTR $T219793[esp+16], eax
+	mov	DWORD PTR $T219792[esp+20], ecx
+	lea	ecx, DWORD PTR $T219792[esp+16]
+	mov	DWORD PTR $T219792[esp+24], edx
+	mov	DWORD PTR $T219792[esp+16], eax
 	mov	eax, DWORD PTR _guidICvUnknown+12
 	push	ecx
 	lea	edx, DWORD PTR _guidInterface$[esp+16]
 	push	edx
-	mov	DWORD PTR $T219793[esp+36], eax
+	mov	DWORD PTR $T219792[esp+36], eax
 	call	_IsEqualGUID
 	add	esp, 8
 	test	eax, eax
@@ -1973,15 +1973,15 @@ _guidInterface$ = 12					; size = 16
 	mov	ecx, DWORD PTR _guidICvPlot1+4
 	mov	edx, DWORD PTR _guidICvPlot1+8
 	mov	eax, DWORD PTR _guidICvPlot1
-	mov	DWORD PTR $T219795[esp+20], ecx
-	lea	ecx, DWORD PTR $T219795[esp+16]
-	mov	DWORD PTR $T219795[esp+24], edx
-	mov	DWORD PTR $T219795[esp+16], eax
+	mov	DWORD PTR $T219794[esp+20], ecx
+	lea	ecx, DWORD PTR $T219794[esp+16]
+	mov	DWORD PTR $T219794[esp+24], edx
+	mov	DWORD PTR $T219794[esp+16], eax
 	mov	eax, DWORD PTR _guidICvPlot1+12
 	push	ecx
 	lea	edx, DWORD PTR _guidInterface$[esp+16]
 	push	edx
-	mov	DWORD PTR $T219795[esp+36], eax
+	mov	DWORD PTR $T219794[esp+36], eax
 	call	_IsEqualGUID
 	add	esp, 8
 	test	eax, eax
@@ -2296,7 +2296,7 @@ xdata$x	ENDS
 ;	COMDAT ?GetPlotCity@CvDllPlot@@UBGPAVICvCity1@@XZ
 _TEXT	SEGMENT
 __$EHRec$ = -12						; size = 12
-$T219911 = 8						; size = 4
+$T219910 = 8						; size = 4
 _this$ = 8						; size = 4
 ?GetPlotCity@CvDllPlot@@UBGPAVICvCity1@@XZ PROC		; CvDllPlot::GetPlotCity, COMDAT
 
@@ -2333,7 +2333,7 @@ _this$ = 8						; size = 4
 	push	12					; 0000000cH
 	call	??2CvDllCity@@SAPAXI@Z			; CvDllCity::operator new
 	add	esp, 4
-	mov	DWORD PTR $T219911[esp+12], eax
+	mov	DWORD PTR $T219910[esp+12], eax
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	eax, eax
 	je	SHORT $LN5@GetPlotCit
@@ -2359,7 +2359,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetPlotCity@CvDllPlot@@UBGPAVICvCity1@@XZ$0:
-	mov	eax, DWORD PTR $T219911[ebp-4]
+	mov	eax, DWORD PTR $T219910[ebp-4]
 	push	eax
 	call	??3CvDllCity@@SAXPAX@Z			; CvDllCity::operator delete
 	pop	ecx
@@ -3061,9 +3061,9 @@ __ehfuncinfo$?GetCenterUnit@CvDllPlot@@UAGPAVICvUnit1@@XZ DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?GetCenterUnit@CvDllPlot@@UAGPAVICvUnit1@@XZ
 _TEXT	SEGMENT
-$T220225 = -20						; size = 8
+$T220224 = -20						; size = 8
 __$EHRec$ = -12						; size = 12
-$T220227 = 8						; size = 4
+$T220226 = 8						; size = 4
 _this$ = 8						; size = 4
 ?GetCenterUnit@CvDllPlot@@UAGPAVICvUnit1@@XZ PROC	; CvDllPlot::GetCenterUnit, COMDAT
 
@@ -3081,10 +3081,10 @@ _this$ = 8						; size = 4
 	mov	ecx, DWORD PTR [ecx+8]
 	sub	esp, 8
 	push	esi
-	lea	eax, DWORD PTR $T220225[esp+24]
+	lea	eax, DWORD PTR $T220224[esp+24]
 	push	eax
 	call	?getCenterUnit@CvPlot@@QAE?AV?$FObjectHandle@VCvUnit@@@@XZ ; CvPlot::getCenterUnit
-	mov	ecx, DWORD PTR $T220225[esp+24]
+	mov	ecx, DWORD PTR $T220224[esp+24]
 	mov	esi, DWORD PTR [eax]
 	test	ecx, ecx
 	je	SHORT $LN14@GetCenterU
@@ -3098,7 +3098,7 @@ $LN14@GetCenterU:
 	push	12					; 0000000cH
 	call	??2CvDllUnit@@SAPAXI@Z			; CvDllUnit::operator new
 	add	esp, 4
-	mov	DWORD PTR $T220227[esp+20], eax
+	mov	DWORD PTR $T220226[esp+20], eax
 	mov	DWORD PTR __$EHRec$[esp+32], 0
 	test	eax, eax
 	je	SHORT $LN5@GetCenterU
@@ -3124,7 +3124,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetCenterUnit@CvDllPlot@@UAGPAVICvUnit1@@XZ$1:
-	mov	eax, DWORD PTR $T220227[ebp-4]
+	mov	eax, DWORD PTR $T220226[ebp-4]
 	push	eax
 	call	??3CvDllUnit@@SAXPAX@Z			; CvDllUnit::operator delete
 	pop	ecx

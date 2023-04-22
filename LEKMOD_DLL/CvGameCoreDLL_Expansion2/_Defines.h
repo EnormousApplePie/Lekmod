@@ -895,7 +895,7 @@
 //added a civ requirement tag to the builds table
 #define LEKMOD_BUILD_CIV_REQ
 //Added a notification step mid-turn when you found a religion after having the reformation policy
-#define LEKMOD_REFORMATION_NOTIFICATION_MID_TURN
+//#define LEKMOD_REFORMATION_NOTIFICATION_MID_TURN
 
 
 

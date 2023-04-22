@@ -52,66 +52,66 @@ _BSS	SEGMENT
 _sg_wszTempMapName DW 0104H DUP (?)
 _BSS	ENDS
 CONST	SEGMENT
-$SG225141 DB	'Picking Random Unit Direction', 00H
-$SG225647 DB	00H
-$SG225724 DB	00H
-$SG225288 DB	'Setting up players...', 0aH, 00H
-$SG225726 DB	00H
-$SG225498 DB	'Setting up map...', 0aH, 00H
-$SG225755 DB	00H
-$SG225532 DB	'Calculating Areas...', 0aH, 00H
-$SG225757 DB	00H
-$SG225998 DB	00H
-$SG225533 DB	'Adding Scenario Elements...', 0aH, 00H
-$SG226029 DB	00H
+$SG225140 DB	'Picking Random Unit Direction', 00H
+$SG225646 DB	00H
+$SG225723 DB	00H
+$SG225287 DB	'Setting up players...', 0aH, 00H
+$SG225725 DB	00H
+$SG225497 DB	'Setting up map...', 0aH, 00H
+$SG225754 DB	00H
+$SG225531 DB	'Calculating Areas...', 0aH, 00H
+$SG225756 DB	00H
+$SG225997 DB	00H
+$SG225532 DB	'Adding Scenario Elements...', 0aH, 00H
+$SG226028 DB	00H
 	ORG $+2
-$SG225618 DB	'Map Load Success!', 0aH, 00H
+$SG225617 DB	'Map Load Success!', 0aH, 00H
 	ORG $+1
-$SG225692 DB	'MapModData', 00H
+$SG225691 DB	'MapModData', 00H
 	ORG $+1
-$SG225701 DB	'Globals', 00H
-$SG225728 DB	'Globals', 00H
-$SG225760 DB	'Plots', 00H
+$SG225700 DB	'Globals', 00H
+$SG225727 DB	'Globals', 00H
+$SG225759 DB	'Plots', 00H
 	ORG $+2
-$SG225795 DB	'Plots', 00H
+$SG225794 DB	'Plots', 00H
 	ORG $+2
-$SG225812 DB	'PostProcessMapScript', 00H
+$SG225811 DB	'PostProcessMapScript', 00H
 	ORG $+3
-$SG225824 DB	'PostProcessMap', 00H
+$SG225823 DB	'PostProcessMap', 00H
 	ORG $+1
-$SG225906 DB	'Select ID from Worlds where Type = ? LIMIT 1', 00H
+$SG225905 DB	'Select ID from Worlds where Type = ? LIMIT 1', 00H
 	ORG $+3
-$SG225914 DB	'Worlds', 00H
+$SG225913 DB	'Worlds', 00H
 	ORG $+1
-$SG226014 DB	'MapSize', 00H
-$SG226015 DB	'Name', 00H
+$SG226013 DB	'MapSize', 00H
+$SG226014 DB	'Name', 00H
 	ORG $+3
-$SG226016 DB	'Description', 00H
-$SG226017 DB	'PlayerCount', 00H
-$SG226018 DB	'CityStateCount', 00H
+$SG226015 DB	'Description', 00H
+$SG226016 DB	'PlayerCount', 00H
+$SG226017 DB	'CityStateCount', 00H
 	ORG $+1
-$SG226019 DB	'MaxTurns', 00H
+$SG226018 DB	'MaxTurns', 00H
 	ORG $+3
-$SG226020 DB	'StartEra', 00H
+$SG226019 DB	'StartEra', 00H
 	ORG $+3
-$SG226021 DB	'DefaultSpeed', 00H
+$SG226020 DB	'DefaultSpeed', 00H
 	ORG $+3
-$SG226023 DB	'VictoryTypes', 00H
+$SG226022 DB	'VictoryTypes', 00H
 	ORG $+3
-$SG226069 DB	'CivType', 00H
-$SG226070 DB	'Playable', 00H
+$SG226068 DB	'CivType', 00H
+$SG226069 DB	'Playable', 00H
 	ORG $+3
-$SG226071 DB	'DefaultHandicap', 00H
-$SG226084 DB	'WorldBuilderRandomItems.lua', 00H
-$SG226089 DB	'AddGoodies', 00H
+$SG226070 DB	'DefaultHandicap', 00H
+$SG226083 DB	'WorldBuilderRandomItems.lua', 00H
+$SG226088 DB	'AddGoodies', 00H
 	ORG $+1
-$SG226094 DB	'AddResourcesForWorldBuilderMap', 00H
+$SG226093 DB	'AddResourcesForWorldBuilderMap', 00H
 	ORG $+1
-$SG226105 DB	'WorldBuilderRandomItems.lua', 00H
-$SG226107 DB	'AddResourcesForWorldBuilderMap', 00H
+$SG226104 DB	'WorldBuilderRandomItems.lua', 00H
+$SG226106 DB	'AddResourcesForWorldBuilderMap', 00H
 	ORG $+1
-$SG226118 DB	'WorldBuilderRandomItems.lua', 00H
-$SG226120 DB	'AddGoodies', 00H
+$SG226117 DB	'WorldBuilderRandomItems.lua', 00H
+$SG226119 DB	'AddGoodies', 00H
 CONST	ENDS
 ;	COMDAT ?ByteCount@?$SerializableBitset@$0DAAAAA@@CvWorldBuilderMap@@0IB
 CONST	SEGMENT
@@ -1520,24 +1520,24 @@ EXTRN	_lua_gettop:PROC
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?LoadModData@CvWorldBuilderMapLoader@@SAHPAUlua_State@@@Z
 _TEXT	SEGMENT
-_bValue$225782 = -45					; size = 1
+_bValue$225781 = -45					; size = 1
 _uiFieldCount$ = -44					; size = 4
 tv619 = -40						; size = 4
-_x$225761 = -36						; size = 4
+_x$225760 = -36						; size = 4
 _uiGlobalsCount$ = -36					; size = 4
 _iTop$ = -32						; size = 4
-_y$225765 = -28						; size = 4
-_uiMapHeight$225759 = -24				; size = 4
-_uiMapWidth$225758 = -20				; size = 4
-_fValue$225745 = -20					; size = 4
-_fValue$225714 = -20					; size = 4
-_iFieldStart$225732 = -16				; size = 4
-_szMember$225791 = -12					; size = 4
-_iValue$225788 = -12					; size = 4
-_szField$225786 = -12					; size = 4
-_fValue$225784 = -12					; size = 4
-_kPlot$225769 = -8					; size = 8
-_kEntry$225699 = -8					; size = 8
+_y$225764 = -28						; size = 4
+_uiMapHeight$225758 = -24				; size = 4
+_uiMapWidth$225757 = -20				; size = 4
+_fValue$225744 = -20					; size = 4
+_fValue$225713 = -20					; size = 4
+_iFieldStart$225731 = -16				; size = 4
+_szMember$225790 = -12					; size = 4
+_iValue$225787 = -12					; size = 4
+_szField$225785 = -12					; size = 4
+_fValue$225783 = -12					; size = 4
+_kPlot$225768 = -8					; size = 8
+_kEntry$225698 = -8					; size = 8
 _L$ = 8							; size = 4
 ?LoadModData@CvWorldBuilderMapLoader@@SAHPAUlua_State@@@Z PROC ; CvWorldBuilderMapLoader::LoadModData, COMDAT
 
@@ -1572,7 +1572,7 @@ _L$ = 8							; size = 4
 ; 1530 : 
 ; 1531 : 	lua_getglobal(L, "MapModData");
 
-	push	OFFSET $SG225692
+	push	OFFSET $SG225691
 	mov	edi, eax
 	push	-10002					; ffffd8eeH
 	push	esi
@@ -1643,7 +1643,7 @@ $LN48@LoadModDat:
 ; 1546 : 	{
 ; 1547 : 		ModDataEntry kEntry = sg_kSave.m_kModData.GetMapDataEntry();
 
-	lea	eax, DWORD PTR _kEntry$225699[esp+64]
+	lea	eax, DWORD PTR _kEntry$225698[esp+64]
 	push	eax
 	mov	ecx, OFFSET _sg_kSave+2888
 	call	?GetMapDataEntry@CvWorldBuilderMapModData@@QAE?AVModDataEntry@@XZ ; CvWorldBuilderMapModData::GetMapDataEntry
@@ -1651,7 +1651,7 @@ $LN48@LoadModDat:
 ; 1548 : 
 ; 1549 : 		lua_pushstring(L, "Globals");
 
-	push	OFFSET $SG225701
+	push	OFFSET $SG225700
 	push	esi
 	call	_lua_pushstring
 
@@ -1702,7 +1702,7 @@ $LN41@LoadModDat:
 ; 1560 : 				const bool bValue = kEntry.GetFieldAsBool(uiField);
 
 	push	edi
-	lea	ecx, DWORD PTR _kEntry$225699[esp+68]
+	lea	ecx, DWORD PTR _kEntry$225698[esp+68]
 	call	?GetFieldAsBool@ModDataEntry@@QBE_NI@Z	; ModDataEntry::GetFieldAsBool
 
 ; 1561 : 				lua_pushboolean(L, bValue);
@@ -1724,13 +1724,13 @@ $LN40@LoadModDat:
 ; 1567 : 				const float fValue = kEntry.GetFieldAsFloat(uiField);
 
 	push	edi
-	lea	ecx, DWORD PTR _kEntry$225699[esp+68]
+	lea	ecx, DWORD PTR _kEntry$225698[esp+68]
 	call	?GetFieldAsFloat@ModDataEntry@@QBEMI@Z	; ModDataEntry::GetFieldAsFloat
-	fstp	DWORD PTR _fValue$225714[esp+64]
+	fstp	DWORD PTR _fValue$225713[esp+64]
 
 ; 1568 : 				lua_pushnumber(L, fValue);
 
-	fld	DWORD PTR _fValue$225714[esp+64]
+	fld	DWORD PTR _fValue$225713[esp+64]
 	sub	esp, 8
 	fstp	QWORD PTR [esp]
 	push	esi
@@ -1749,7 +1749,7 @@ $LN39@LoadModDat:
 ; 1574 : 				const char* szField = kEntry.GetFieldAsString(uiField);
 
 	push	edi
-	lea	ecx, DWORD PTR _kEntry$225699[esp+68]
+	lea	ecx, DWORD PTR _kEntry$225698[esp+68]
 	call	?GetFieldAsString@ModDataEntry@@QBEPBDI@Z ; ModDataEntry::GetFieldAsString
 
 ; 1575 : 				lua_pushstring(L, szField);
@@ -1783,7 +1783,7 @@ $LN38@LoadModDat:
 ; 1584 : 					int iValue = kEntry.GetFieldAsInt(uiField);
 
 	push	edi
-	lea	ecx, DWORD PTR _kEntry$225699[esp+68]
+	lea	ecx, DWORD PTR _kEntry$225698[esp+68]
 	call	?GetFieldAsInt@ModDataEntry@@QBEHI@Z	; ModDataEntry::GetFieldAsInt
 
 ; 1585 : 					const char* szMember = pkEnum->GetMember((uint)iValue);
@@ -1796,7 +1796,7 @@ $LN38@LoadModDat:
 
 	test	eax, eax
 	jne	SHORT $LN36@LoadModDat
-	mov	eax, OFFSET $SG225724
+	mov	eax, OFFSET $SG225723
 $LN36@LoadModDat:
 
 ; 1587 : 					lua_pushstring(L, szMember);
@@ -1812,7 +1812,7 @@ $LN37@LoadModDat:
 ; 1590 : 				{
 ; 1591 : 					lua_pushstring(L, "");
 
-	push	OFFSET $SG225726
+	push	OFFSET $SG225725
 $LN72@LoadModDat:
 	push	esi
 	call	_lua_pushstring
@@ -1856,7 +1856,7 @@ $LN47@LoadModDat:
 ; 1602 : 	{
 ; 1603 : 		lua_pushstring(L, "Globals");
 
-	push	OFFSET $SG225728
+	push	OFFSET $SG225727
 	push	esi
 	call	_lua_pushstring
 
@@ -1899,7 +1899,7 @@ $LN34@LoadModDat:
 ; 1613 : 		for(uint uiField = 0; uiField < uiFieldCount; ++uiField)
 
 	xor	edi, edi
-	mov	DWORD PTR _iFieldStart$225732[esp+64], eax
+	mov	DWORD PTR _iFieldStart$225731[esp+64], eax
 	test	ebx, ebx
 	jbe	$LN30@LoadModDat
 	npad	3
@@ -1960,11 +1960,11 @@ $LN26@LoadModDat:
 	push	edi
 	mov	ecx, OFFSET _sg_kSave+3436
 	call	?GetFieldDefaultAsFloat@ModType@@QBEMI@Z ; ModType::GetFieldDefaultAsFloat
-	fstp	DWORD PTR _fValue$225745[esp+64]
+	fstp	DWORD PTR _fValue$225744[esp+64]
 
 ; 1630 : 				lua_pushnumber(L, fValue);
 
-	fld	DWORD PTR _fValue$225745[esp+64]
+	fld	DWORD PTR _fValue$225744[esp+64]
 	sub	esp, 8
 	fstp	QWORD PTR [esp]
 	push	esi
@@ -2028,7 +2028,7 @@ $LN24@LoadModDat:
 
 	test	eax, eax
 	jne	SHORT $LN22@LoadModDat
-	mov	eax, OFFSET $SG225755
+	mov	eax, OFFSET $SG225754
 $LN22@LoadModDat:
 
 ; 1649 : 					lua_pushstring(L, szMember);
@@ -2044,7 +2044,7 @@ $LN23@LoadModDat:
 ; 1652 : 				{
 ; 1653 : 					lua_pushstring(L, "");
 
-	push	OFFSET $SG225757
+	push	OFFSET $SG225756
 $LN74@LoadModDat:
 	push	esi
 	call	_lua_pushstring
@@ -2075,10 +2075,10 @@ $LN30@LoadModDat:
 ; 1661 : 
 ; 1662 : 		lua_pushstring(L, "Plots");
 
-	push	OFFSET $SG225760
+	push	OFFSET $SG225759
 	push	esi
-	mov	DWORD PTR _uiMapWidth$225758[esp+72], ebx
-	mov	DWORD PTR _uiMapHeight$225759[esp+72], edi
+	mov	DWORD PTR _uiMapWidth$225757[esp+72], ebx
+	mov	DWORD PTR _uiMapHeight$225758[esp+72], edi
 	call	_lua_pushstring
 
 ; 1663 : 		lua_createtable(L, uiMapWidth, 1);
@@ -2091,7 +2091,7 @@ $LN30@LoadModDat:
 
 ; 1664 : 		for(uint x = 0; x < uiMapWidth; ++x)
 
-	mov	DWORD PTR _x$225761[esp+64], 0
+	mov	DWORD PTR _x$225760[esp+64], 0
 	test	ebx, ebx
 	jbe	$LN18@LoadModDat
 $LN20@LoadModDat:
@@ -2108,10 +2108,10 @@ $LN20@LoadModDat:
 
 	xor	ebx, ebx
 	add	esp, 12					; 0000000cH
-	mov	DWORD PTR _y$225765[esp+64], ebx
+	mov	DWORD PTR _y$225764[esp+64], ebx
 	test	edi, edi
 	jbe	$LN15@LoadModDat
-	mov	eax, DWORD PTR _x$225761[esp+64]
+	mov	eax, DWORD PTR _x$225760[esp+64]
 	mov	DWORD PTR tv619[esp+64], eax
 $LN17@LoadModDat:
 
@@ -2129,7 +2129,7 @@ $LN17@LoadModDat:
 	mov	edx, DWORD PTR tv619[esp+76]
 	add	esp, 12					; 0000000cH
 	push	edx
-	lea	eax, DWORD PTR _kPlot$225769[esp+68]
+	lea	eax, DWORD PTR _kPlot$225768[esp+68]
 	push	eax
 	mov	ecx, OFFSET _sg_kSave+2888
 	call	?GetPlotDataEntry@CvWorldBuilderMapModData@@QAE?AVModDataEntry@@I@Z ; CvWorldBuilderMapModData::GetPlotDataEntry
@@ -2143,14 +2143,14 @@ $LN17@LoadModDat:
 ; 1668 : 			{
 ; 1669 : 				lua_createtable(L, 0, uiFieldCount);
 
-	mov	ebx, DWORD PTR _iFieldStart$225732[esp+64]
+	mov	ebx, DWORD PTR _iFieldStart$225731[esp+64]
 $LL14@LoadModDat:
 
 ; 1672 : 				{
 ; 1673 : 					if(kPlot.IsFieldDefaultValue(uiField))
 
 	push	edi
-	lea	ecx, DWORD PTR _kPlot$225769[esp+68]
+	lea	ecx, DWORD PTR _kPlot$225768[esp+68]
 	call	?IsFieldDefaultValue@ModDataEntry@@QBE_NI@Z ; ModDataEntry::IsFieldDefaultValue
 	test	al, al
 	je	SHORT $LN11@LoadModDat
@@ -2193,19 +2193,19 @@ $LN7@LoadModDat:
 ; 1685 : 							const bool bValue = kPlot.GetFieldAsBool(uiField);
 
 	push	edi
-	lea	ecx, DWORD PTR _kPlot$225769[esp+68]
+	lea	ecx, DWORD PTR _kPlot$225768[esp+68]
 	call	?GetFieldAsBool@ModDataEntry@@QBE_NI@Z	; ModDataEntry::GetFieldAsBool
 
 ; 1686 : 							lua_pushvalue(L, iFieldStart + 2 * uiField);
 
 	push	ebx
 	push	esi
-	mov	BYTE PTR _bValue$225782[esp+72], al
+	mov	BYTE PTR _bValue$225781[esp+72], al
 	call	_lua_pushvalue
 
 ; 1687 : 							lua_pushboolean(L, bValue);
 
-	movzx	edx, BYTE PTR _bValue$225782[esp+72]
+	movzx	edx, BYTE PTR _bValue$225781[esp+72]
 	push	edx
 	push	esi
 	call	_lua_pushboolean
@@ -2223,9 +2223,9 @@ $LN6@LoadModDat:
 ; 1694 : 							const float fValue = kPlot.GetFieldAsFloat(uiField);
 
 	push	edi
-	lea	ecx, DWORD PTR _kPlot$225769[esp+68]
+	lea	ecx, DWORD PTR _kPlot$225768[esp+68]
 	call	?GetFieldAsFloat@ModDataEntry@@QBEMI@Z	; ModDataEntry::GetFieldAsFloat
-	fstp	DWORD PTR _fValue$225784[esp+64]
+	fstp	DWORD PTR _fValue$225783[esp+64]
 
 ; 1695 : 							lua_pushvalue(L, iFieldStart + 2 * uiField);
 
@@ -2235,7 +2235,7 @@ $LN6@LoadModDat:
 
 ; 1696 : 							lua_pushnumber(L, fValue);
 
-	fld	DWORD PTR _fValue$225784[esp+72]
+	fld	DWORD PTR _fValue$225783[esp+72]
 	fstp	QWORD PTR [esp]
 	push	esi
 	call	_lua_pushnumber
@@ -2259,19 +2259,19 @@ $LN5@LoadModDat:
 ; 1703 : 							const char* szField = kPlot.GetFieldAsString(uiField);
 
 	push	edi
-	lea	ecx, DWORD PTR _kPlot$225769[esp+68]
+	lea	ecx, DWORD PTR _kPlot$225768[esp+68]
 	call	?GetFieldAsString@ModDataEntry@@QBEPBDI@Z ; ModDataEntry::GetFieldAsString
 
 ; 1704 : 							lua_pushvalue(L, iFieldStart + 2 * uiField);
 
 	push	ebx
 	push	esi
-	mov	DWORD PTR _szField$225786[esp+72], eax
+	mov	DWORD PTR _szField$225785[esp+72], eax
 	call	_lua_pushvalue
 
 ; 1705 : 							lua_pushstring(L, szField);
 
-	mov	eax, DWORD PTR _szField$225786[esp+72]
+	mov	eax, DWORD PTR _szField$225785[esp+72]
 	push	eax
 
 ; 1706 : 							lua_rawset(L, -3);
@@ -2287,14 +2287,14 @@ $LN4@LoadModDat:
 ; 1712 : 							int iValue = kPlot.GetFieldAsInt(uiField);
 
 	push	edi
-	lea	ecx, DWORD PTR _kPlot$225769[esp+68]
+	lea	ecx, DWORD PTR _kPlot$225768[esp+68]
 	call	?GetFieldAsInt@ModDataEntry@@QBEHI@Z	; ModDataEntry::GetFieldAsInt
 
 ; 1713 : 							const ModEnum* pkEnum = kPlotDataType.GetFieldEnumType(uiField);
 
 	push	edi
 	mov	ecx, OFFSET _sg_kSave+3436
-	mov	DWORD PTR _iValue$225788[esp+68], eax
+	mov	DWORD PTR _iValue$225787[esp+68], eax
 	call	?GetFieldEnumType@ModType@@QBEPBVModEnum@@I@Z ; ModType::GetFieldEnumType
 
 ; 1714 : 							if(pkEnum != NULL)
@@ -2305,11 +2305,11 @@ $LN4@LoadModDat:
 ; 1715 : 							{
 ; 1716 : 								const char* szMember = pkEnum->GetMember((uint)iValue);
 
-	mov	ecx, DWORD PTR _iValue$225788[esp+64]
+	mov	ecx, DWORD PTR _iValue$225787[esp+64]
 	push	ecx
 	mov	ecx, eax
 	call	?GetMember@ModEnum@@QBEPBDI@Z		; ModEnum::GetMember
-	mov	DWORD PTR _szMember$225791[esp+64], eax
+	mov	DWORD PTR _szMember$225790[esp+64], eax
 
 ; 1717 : 								if(szMember != NULL)
 
@@ -2325,7 +2325,7 @@ $LN4@LoadModDat:
 
 ; 1720 : 									lua_pushstring(L, szMember);
 
-	mov	edx, DWORD PTR _szMember$225791[esp+72]
+	mov	edx, DWORD PTR _szMember$225790[esp+72]
 	push	edx
 $LN76@LoadModDat:
 	push	esi
@@ -2346,7 +2346,7 @@ $LN13@LoadModDat:
 
 ; 1671 : 				for(uint uiField = 0; uiField < uiFieldCount; ++uiField)
 
-	mov	ebx, DWORD PTR _y$225765[esp+64]
+	mov	ebx, DWORD PTR _y$225764[esp+64]
 $LN12@LoadModDat:
 
 ; 1722 : 								}
@@ -2362,32 +2362,32 @@ $LN12@LoadModDat:
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_rawseti
-	mov	eax, DWORD PTR _uiMapWidth$225758[esp+76]
+	mov	eax, DWORD PTR _uiMapWidth$225757[esp+76]
 	add	DWORD PTR tv619[esp+76], eax
 	inc	ebx
 	add	esp, 12					; 0000000cH
-	mov	DWORD PTR _y$225765[esp+64], ebx
-	cmp	ebx, DWORD PTR _uiMapHeight$225759[esp+64]
+	mov	DWORD PTR _y$225764[esp+64], ebx
+	cmp	ebx, DWORD PTR _uiMapHeight$225758[esp+64]
 	jb	$LN17@LoadModDat
 
 ; 1667 : 			for(uint y = 0; y < uiMapHeight; ++y)
 
-	mov	edi, DWORD PTR _uiMapHeight$225759[esp+64]
+	mov	edi, DWORD PTR _uiMapHeight$225758[esp+64]
 $LN15@LoadModDat:
 
 ; 1730 : 			}
 ; 1731 : 
 ; 1732 : 			lua_rawseti(L, -2, x);
 
-	mov	ebx, DWORD PTR _x$225761[esp+64]
+	mov	ebx, DWORD PTR _x$225760[esp+64]
 	push	ebx
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_rawseti
 	inc	ebx
 	add	esp, 12					; 0000000cH
-	mov	DWORD PTR _x$225761[esp+64], ebx
-	cmp	ebx, DWORD PTR _uiMapWidth$225758[esp+64]
+	mov	DWORD PTR _x$225760[esp+64], ebx
+	cmp	ebx, DWORD PTR _uiMapWidth$225757[esp+64]
 	jb	$LN20@LoadModDat
 $LN18@LoadModDat:
 
@@ -2411,7 +2411,7 @@ $LN33@LoadModDat:
 ; 1738 : 	{
 ; 1739 : 		lua_pushstring(L, "Plots");
 
-	push	OFFSET $SG225795
+	push	OFFSET $SG225794
 	push	esi
 	call	_lua_pushstring
 
@@ -3229,8 +3229,8 @@ __ehfuncinfo$?_Xran@?$bitset@$0BAA@@std@@ABEXXZ DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?_Xran@?$bitset@$0BAA@@std@@ABEXXZ
 _TEXT	SEGMENT
-$T227844 = -80						; size = 28
-$T227843 = -52						; size = 40
+$T227843 = -80						; size = 28
+$T227842 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ?_Xran@?$bitset@$0BAA@@std@@ABEXXZ PROC			; std::bitset<256>::_Xran, COMDAT
 ; _this$ = ecx
@@ -3247,22 +3247,22 @@ __$EHRec$ = -12						; size = 12
 ; 421  : 		_THROW(out_of_range, "invalid bitset<N> position");
 
 	push	OFFSET ??_C@_0BL@HMFHJKFH@invalid?5bitset?$DMN?$DO?5position?$AA@
-	lea	ecx, DWORD PTR $T227844[esp+84]
+	lea	ecx, DWORD PTR $T227843[esp+84]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T227843[esp+80]
+	lea	ecx, DWORD PTR $T227842[esp+80]
 	mov	DWORD PTR __$EHRec$[esp+88], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T227844[esp+80]
+	lea	eax, DWORD PTR $T227843[esp+80]
 	push	eax
-	lea	ecx, DWORD PTR $T227843[esp+96]
+	lea	ecx, DWORD PTR $T227842[esp+96]
 	mov	BYTE PTR __$EHRec$[esp+92], 1
-	mov	DWORD PTR $T227843[esp+84], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T227842[esp+84], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVout_of_range@std@@
-	lea	ecx, DWORD PTR $T227843[esp+84]
+	lea	ecx, DWORD PTR $T227842[esp+84]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+96], 0
-	mov	DWORD PTR $T227843[esp+88], OFFSET ??_7out_of_range@std@@6B@
+	mov	DWORD PTR $T227842[esp+88], OFFSET ??_7out_of_range@std@@6B@
 	call	__CxxThrowException@8
 $LN13@Xran:
 $LN12@Xran:
@@ -3271,10 +3271,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Xran@?$bitset@$0BAA@@std@@ABEXXZ$0:
-	lea	ecx, DWORD PTR $T227844[ebp]
+	lea	ecx, DWORD PTR $T227843[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Xran@?$bitset@$0BAA@@std@@ABEXXZ$2:
-	lea	ecx, DWORD PTR $T227843[ebp]
+	lea	ecx, DWORD PTR $T227842[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Xran@?$bitset@$0BAA@@std@@ABEXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?_Xran@?$bitset@$0BAA@@std@@ABEXXZ
@@ -3301,8 +3301,8 @@ __ehfuncinfo$?_Xran@?$bitset@$0CAA@@std@@ABEXXZ DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?_Xran@?$bitset@$0CAA@@std@@ABEXXZ
 _TEXT	SEGMENT
-$T227870 = -80						; size = 28
-$T227869 = -52						; size = 40
+$T227869 = -80						; size = 28
+$T227868 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ?_Xran@?$bitset@$0CAA@@std@@ABEXXZ PROC			; std::bitset<512>::_Xran, COMDAT
 ; _this$ = ecx
@@ -3319,22 +3319,22 @@ __$EHRec$ = -12						; size = 12
 ; 421  : 		_THROW(out_of_range, "invalid bitset<N> position");
 
 	push	OFFSET ??_C@_0BL@HMFHJKFH@invalid?5bitset?$DMN?$DO?5position?$AA@
-	lea	ecx, DWORD PTR $T227870[esp+84]
+	lea	ecx, DWORD PTR $T227869[esp+84]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T227869[esp+80]
+	lea	ecx, DWORD PTR $T227868[esp+80]
 	mov	DWORD PTR __$EHRec$[esp+88], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T227870[esp+80]
+	lea	eax, DWORD PTR $T227869[esp+80]
 	push	eax
-	lea	ecx, DWORD PTR $T227869[esp+96]
+	lea	ecx, DWORD PTR $T227868[esp+96]
 	mov	BYTE PTR __$EHRec$[esp+92], 1
-	mov	DWORD PTR $T227869[esp+84], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T227868[esp+84], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVout_of_range@std@@
-	lea	ecx, DWORD PTR $T227869[esp+84]
+	lea	ecx, DWORD PTR $T227868[esp+84]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+96], 0
-	mov	DWORD PTR $T227869[esp+88], OFFSET ??_7out_of_range@std@@6B@
+	mov	DWORD PTR $T227868[esp+88], OFFSET ??_7out_of_range@std@@6B@
 	call	__CxxThrowException@8
 $LN13@Xran@2:
 $LN12@Xran@2:
@@ -3343,10 +3343,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Xran@?$bitset@$0CAA@@std@@ABEXXZ$0:
-	lea	ecx, DWORD PTR $T227870[ebp]
+	lea	ecx, DWORD PTR $T227869[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Xran@?$bitset@$0CAA@@std@@ABEXXZ$2:
-	lea	ecx, DWORD PTR $T227869[ebp]
+	lea	ecx, DWORD PTR $T227868[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Xran@?$bitset@$0CAA@@std@@ABEXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?_Xran@?$bitset@$0CAA@@std@@ABEXXZ
@@ -4632,9 +4632,9 @@ __ehfuncinfo$?SetupGameOptions@CvWorldBuilderMapLoader@@SAXXZ DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?SetupGameOptions@CvWorldBuilderMapLoader@@SAXXZ
 _TEXT	SEGMENT
-_bValid$224846 = -44					; size = 1
-_bEnabled$224835 = -44					; size = 1
-$T228111 = -40						; size = 28
+_bValid$224845 = -44					; size = 1
+_bEnabled$224834 = -44					; size = 1
+$T228110 = -40						; size = 28
 __$EHRec$ = -12						; size = 12
 ?SetupGameOptions@CvWorldBuilderMapLoader@@SAXXZ PROC	; CvWorldBuilderMapLoader::SetupGameOptions, COMDAT
 
@@ -4693,8 +4693,8 @@ $LL8@SetupGameO:
 ; 285  : 			GC.getGame().setOption(szOption, bEnabled);
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
-	mov	BYTE PTR _bEnabled$224835[esp+56], al
-	mov	eax, DWORD PTR _bEnabled$224835[esp+56]
+	mov	BYTE PTR _bEnabled$224834[esp+56], al
+	mov	eax, DWORD PTR _bEnabled$224834[esp+56]
 	push	eax
 	push	edi
 	call	?setOption@CvGame@@QAEXPBD_N@Z		; CvGame::setOption
@@ -4744,11 +4744,11 @@ $LL4@SetupGameO:
 	push	eax
 	mov	ecx, OFFSET _sg_kSave+4016
 	call	?Contains@CvWorldBuilderMapTypeGroup@@QBE_NPBD@Z ; CvWorldBuilderMapTypeGroup::Contains
-	mov	BYTE PTR _bValid$224846[esp+56], al
+	mov	BYTE PTR _bValid$224845[esp+56], al
 
 ; 298  : 			GC.getGame().setVictoryValid(eVictoryType, bValid);
 
-	mov	ecx, DWORD PTR _bValid$224846[esp+56]
+	mov	ecx, DWORD PTR _bValid$224845[esp+56]
 	push	ecx
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
 	push	esi
@@ -4780,14 +4780,14 @@ $LN2@SetupGameO:
 ; 305  : 	CvPreGame::setGameSpeed(sg_kSave.GetDefaultGameSpeed());
 
 	push	OFFSET _sg_kSave+12236
-	lea	ecx, DWORD PTR $T228111[esp+60]
+	lea	ecx, DWORD PTR $T228110[esp+60]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T228111[esp+56]
+	lea	ecx, DWORD PTR $T228110[esp+56]
 	push	ecx
 	mov	DWORD PTR __$EHRec$[esp+68], 0
 	call	?setGameSpeed@CvPreGame@@YAXABVCvString@@@Z ; CvPreGame::setGameSpeed
 	add	esp, 4
-	lea	ecx, DWORD PTR $T228111[esp+56]
+	lea	ecx, DWORD PTR $T228110[esp+56]
 	mov	DWORD PTR __$EHRec$[esp+64], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -4804,7 +4804,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?SetupGameOptions@CvWorldBuilderMapLoader@@SAXXZ$0:
-	lea	ecx, DWORD PTR $T228111[ebp]
+	lea	ecx, DWORD PTR $T228110[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?SetupGameOptions@CvWorldBuilderMapLoader@@SAXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?SetupGameOptions@CvWorldBuilderMapLoader@@SAXXZ
@@ -4856,19 +4856,19 @@ __ehfuncinfo$?SetupPlayers@CvWorldBuilderMapLoader@@SAXXZ DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?SetupPlayers@CvWorldBuilderMapLoader@@SAXXZ
 _TEXT	SEGMENT
-$T228174 = -50						; size = 1
-$T228168 = -50						; size = 1
-$T228173 = -49						; size = 1
-$T228169 = -49						; size = 1
+$T228173 = -50						; size = 1
+$T228167 = -50						; size = 1
+$T228172 = -49						; size = 1
+$T228168 = -49						; size = 1
 tv204 = -48						; size = 4
 tv192 = -48						; size = 4
-_i$224922 = -48						; size = 4
-_i$224859 = -48						; size = 4
+_i$224921 = -48						; size = 4
+_i$224858 = -48						; size = 4
 _uiCityStateCount$ = -44				; size = 4
 _uiPlayerCount$ = -44					; size = 4
-$T228172 = -40						; size = 28
 $T228171 = -40						; size = 28
 $T228170 = -40						; size = 28
+$T228169 = -40						; size = 28
 __$EHRec$ = -12						; size = 12
 ?SetupPlayers@CvWorldBuilderMapLoader@@SAXXZ PROC	; CvWorldBuilderMapLoader::SetupPlayers, COMDAT
 
@@ -4888,12 +4888,12 @@ __$EHRec$ = -12						; size = 12
 ; 314  : 	const uint uiPlayerCount = std::min(sg_kSave.GetPlayerCount(), (byte)MAX_CIV_PLAYERS);
 
 	mov	al, BYTE PTR _sg_kSave+12316
-	mov	BYTE PTR $T228169[esp+52], al
+	mov	BYTE PTR $T228168[esp+52], al
 	cmp	al, 63					; 0000003fH
-	mov	BYTE PTR $T228168[esp+52], 63		; 0000003fH
-	lea	eax, DWORD PTR $T228168[esp+52]
+	mov	BYTE PTR $T228167[esp+52], 63		; 0000003fH
+	lea	eax, DWORD PTR $T228167[esp+52]
 	ja	SHORT $LN56@SetupPlaye
-	lea	eax, DWORD PTR $T228169[esp+52]
+	lea	eax, DWORD PTR $T228168[esp+52]
 $LN56@SetupPlaye:
 	movzx	eax, BYTE PTR [eax]
 	push	ebx
@@ -4904,7 +4904,7 @@ $LN56@SetupPlaye:
 
 ; 315  : 	for(uint i = 0; i < uiPlayerCount; ++i)
 
-	mov	DWORD PTR _i$224859[esp+68], 0
+	mov	DWORD PTR _i$224858[esp+68], 0
 	test	eax, eax
 	jbe	$LN43@SetupPlaye
 	npad	3
@@ -4915,7 +4915,7 @@ $LL157@SetupPlaye:
 ; 318  : 		const PlayerTypes ePlayer = (PlayerTypes)i;
 ; 319  : 		const SlotStatus eStatus = CvPreGame::slotStatus(ePlayer);
 
-	mov	eax, DWORD PTR _i$224859[esp+68]
+	mov	eax, DWORD PTR _i$224858[esp+68]
 	push	eax
 	call	?slotStatus@CvPreGame@@YA?AW4SlotStatus@@W4PlayerTypes@@@Z ; CvPreGame::slotStatus
 	mov	ebx, eax
@@ -4930,7 +4930,7 @@ $LL157@SetupPlaye:
 
 ; 321  : 			CvPreGame::setSlotStatus(ePlayer, SS_COMPUTER);
 
-	mov	ecx, DWORD PTR _i$224859[esp+68]
+	mov	ecx, DWORD PTR _i$224858[esp+68]
 	push	1
 	push	ecx
 	call	?setSlotStatus@CvPreGame@@YAXW4PlayerTypes@@W4SlotStatus@@@Z ; CvPreGame::setSlotStatus
@@ -4940,7 +4940,7 @@ $LN42@SetupPlaye:
 ; 322  : 
 ; 323  : 		const CvWorldBuilderMap::Player& kPlayer = sg_kSave.GetPlayer(i);
 
-	mov	al, BYTE PTR _i$224859[esp+68]
+	mov	al, BYTE PTR _i$224858[esp+68]
 	cmp	al, BYTE PTR _sg_kSave+12316
 	jae	SHORT $LN58@SetupPlaye
 	cmp	al, 32					; 00000020H
@@ -5037,7 +5037,7 @@ $LN39@SetupPlaye:
 ; 339  : 
 ; 340  : 		CvPreGame::setCivilization(ePlayer, eCivType);
 
-	mov	edx, DWORD PTR _i$224859[esp+68]
+	mov	edx, DWORD PTR _i$224858[esp+68]
 	push	edi
 	push	edx
 	call	?setCivilization@CvPreGame@@YAXW4PlayerTypes@@W4CivilizationTypes@@@Z ; CvPreGame::setCivilization
@@ -5128,7 +5128,7 @@ $LN35@SetupPlaye:
 ; 356  : 
 ; 357  : 		CvPreGame::setPlayerColor(ePlayer, eColorType);
 
-	mov	eax, DWORD PTR _i$224859[esp+68]
+	mov	eax, DWORD PTR _i$224858[esp+68]
 	push	edi
 	push	eax
 	call	?setPlayerColor@CvPreGame@@YAXW4PlayerTypes@@W4PlayerColorTypes@@@Z ; CvPreGame::setPlayerColor
@@ -5219,7 +5219,7 @@ $LN30@SetupPlaye:
 ; 376  : 			CvPreGame::setHandicap(ePlayer, eHandicap);
 
 	push	edi
-	mov	edi, DWORD PTR _i$224859[esp+72]
+	mov	edi, DWORD PTR _i$224858[esp+72]
 	push	edi
 	call	?setHandicap@CvPreGame@@YAXW4PlayerTypes@@W4HandicapTypes@@@Z ; CvPreGame::setHandicap
 	add	esp, 8
@@ -5239,13 +5239,13 @@ $LN158@SetupPlaye:
 ; 376  : 			CvPreGame::setHandicap(ePlayer, eHandicap);
 
 	push	edi
-	mov	edi, DWORD PTR _i$224859[esp+72]
+	mov	edi, DWORD PTR _i$224858[esp+72]
 	push	edi
 	call	?setHandicap@CvPreGame@@YAXW4PlayerTypes@@W4HandicapTypes@@@Z ; CvPreGame::setHandicap
 	add	esp, 8
 	jmp	SHORT $LN33@SetupPlaye
 $LN159@SetupPlaye:
-	mov	edi, DWORD PTR _i$224859[esp+68]
+	mov	edi, DWORD PTR _i$224858[esp+68]
 	or	ebx, -1
 $LN33@SetupPlaye:
 
@@ -5290,15 +5290,15 @@ $LL143@SetupPlaye:
 	mov	edx, OFFSET ??_C@_00CNPNBAHC@?$AA@
 $LN70@SetupPlaye:
 	push	edx
-	lea	ecx, DWORD PTR $T228170[esp+72]
+	lea	ecx, DWORD PTR $T228169[esp+72]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	edx, DWORD PTR $T228170[esp+68]
+	lea	edx, DWORD PTR $T228169[esp+68]
 	push	edx
 	push	edi
 	mov	DWORD PTR __$EHRec$[esp+84], 0
 	call	?setLeaderName@CvPreGame@@YAXW4PlayerTypes@@ABVCvString@@@Z ; CvPreGame::setLeaderName
 	add	esp, 8
-	lea	ecx, DWORD PTR $T228170[esp+68]
+	lea	ecx, DWORD PTR $T228169[esp+68]
 	mov	DWORD PTR __$EHRec$[esp+76], ebx
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 $LN160@SetupPlaye:
@@ -5331,15 +5331,15 @@ $LL144@SetupPlaye:
 	mov	eax, OFFSET ??_C@_00CNPNBAHC@?$AA@
 $LN78@SetupPlaye:
 	push	eax
-	lea	ecx, DWORD PTR $T228171[esp+72]
+	lea	ecx, DWORD PTR $T228170[esp+72]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	eax, DWORD PTR $T228171[esp+68]
+	lea	eax, DWORD PTR $T228170[esp+68]
 	push	eax
 	push	edi
 	mov	DWORD PTR __$EHRec$[esp+84], 1
 	call	?setCivilizationShortDescription@CvPreGame@@YAXW4PlayerTypes@@ABVCvString@@@Z ; CvPreGame::setCivilizationShortDescription
 	add	esp, 8
-	lea	ecx, DWORD PTR $T228171[esp+68]
+	lea	ecx, DWORD PTR $T228170[esp+68]
 	mov	DWORD PTR __$EHRec$[esp+76], ebx
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
@@ -5350,20 +5350,20 @@ $LN78@SetupPlaye:
 	mov	esi, OFFSET ??_C@_00CNPNBAHC@?$AA@
 $LN86@SetupPlaye:
 	push	esi
-	lea	ecx, DWORD PTR $T228172[esp+72]
+	lea	ecx, DWORD PTR $T228171[esp+72]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T228172[esp+68]
+	lea	ecx, DWORD PTR $T228171[esp+68]
 	push	ecx
 	push	edi
 	mov	DWORD PTR __$EHRec$[esp+84], 2
 	call	?setCivilizationDescription@CvPreGame@@YAXW4PlayerTypes@@ABVCvString@@@Z ; CvPreGame::setCivilizationDescription
 	add	esp, 8
-	lea	ecx, DWORD PTR $T228172[esp+68]
+	lea	ecx, DWORD PTR $T228171[esp+68]
 	mov	DWORD PTR __$EHRec$[esp+76], ebx
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 $LN44@SetupPlaye:
 	inc	edi
-	mov	DWORD PTR _i$224859[esp+68], edi
+	mov	DWORD PTR _i$224858[esp+68], edi
 	cmp	edi, DWORD PTR _uiPlayerCount$[esp+68]
 	jb	$LL157@SetupPlaye
 $LN43@SetupPlaye:
@@ -5424,12 +5424,12 @@ $LN161@SetupPlaye:
 ; 417  : 	const uint uiCityStateCount = std::min(sg_kSave.GetCityStateCount(), (byte)MAX_MINOR_CIVS);
 
 	mov	al, BYTE PTR _sg_kSave+12317
-	mov	BYTE PTR $T228174[esp+68], al
+	mov	BYTE PTR $T228173[esp+68], al
 	cmp	al, 41					; 00000029H
-	mov	BYTE PTR $T228173[esp+68], 41		; 00000029H
-	lea	eax, DWORD PTR $T228173[esp+68]
+	mov	BYTE PTR $T228172[esp+68], 41		; 00000029H
+	lea	eax, DWORD PTR $T228172[esp+68]
 	ja	SHORT $LN96@SetupPlaye
-	lea	eax, DWORD PTR $T228174[esp+68]
+	lea	eax, DWORD PTR $T228173[esp+68]
 $LN96@SetupPlaye:
 	movzx	esi, BYTE PTR [eax]
 	mov	DWORD PTR _uiCityStateCount$[esp+68], esi
@@ -5480,13 +5480,13 @@ $LN16@SetupPlaye:
 ; 430  : 	for(uint i = 0; i < uiCityStateCount; ++i)
 
 	xor	eax, eax
-	mov	DWORD PTR _i$224922[esp+68], eax
+	mov	DWORD PTR _i$224921[esp+68], eax
 	test	esi, esi
 	jbe	$LN13@SetupPlaye
 	jmp	SHORT $LN15@SetupPlaye
 	npad	9
 $LL163@SetupPlaye:
-	mov	eax, DWORD PTR _i$224922[esp+68]
+	mov	eax, DWORD PTR _i$224921[esp+68]
 $LN15@SetupPlaye:
 
 ; 431  : #endif
@@ -5797,10 +5797,10 @@ $LN2@SetupPlaye:
 	push	1
 	push	ebx
 	call	?setMinorCiv@CvPreGame@@YAXW4PlayerTypes@@_N@Z ; CvPreGame::setMinorCiv
-	mov	eax, DWORD PTR _i$224922[esp+100]
+	mov	eax, DWORD PTR _i$224921[esp+100]
 	inc	eax
 	add	esp, 32					; 00000020H
-	mov	DWORD PTR _i$224922[esp+68], eax
+	mov	DWORD PTR _i$224921[esp+68], eax
 	cmp	eax, DWORD PTR _uiCityStateCount$[esp+68]
 	jb	$LL163@SetupPlaye
 $LN13@SetupPlaye:
@@ -5820,13 +5820,13 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?SetupPlayers@CvWorldBuilderMapLoader@@SAXXZ$0:
-	lea	ecx, DWORD PTR $T228170[ebp]
+	lea	ecx, DWORD PTR $T228169[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?SetupPlayers@CvWorldBuilderMapLoader@@SAXXZ$1:
-	lea	ecx, DWORD PTR $T228171[ebp]
+	lea	ecx, DWORD PTR $T228170[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?SetupPlayers@CvWorldBuilderMapLoader@@SAXXZ$2:
-	lea	ecx, DWORD PTR $T228172[ebp]
+	lea	ecx, DWORD PTR $T228171[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?SetupPlayers@CvWorldBuilderMapLoader@@SAXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?SetupPlayers@CvWorldBuilderMapLoader@@SAXXZ
@@ -5841,8 +5841,8 @@ _TEXT	SEGMENT
 _uiGlobalsCount$ = -1060				; size = 4
 _iTop$ = -1056						; size = 4
 tv93 = -1052						; size = 4
-_kEntry$225804 = -1048					; size = 8
-_szMapScriptPath$225819 = -1040				; size = 1040
+_kEntry$225803 = -1048					; size = 8
+_szMapScriptPath$225818 = -1040				; size = 1040
 _L$ = 8							; size = 4
 ?RunPostProcessScript@CvWorldBuilderMapLoader@@SAHPAUlua_State@@@Z PROC ; CvWorldBuilderMapLoader::RunPostProcessScript, COMDAT
 
@@ -5890,7 +5890,7 @@ _L$ = 8							; size = 4
 ; 1764 : 	{
 ; 1765 : 		ModDataEntry kEntry = sg_kSave.m_kModData.GetMapDataEntry();
 
-	lea	eax, DWORD PTR _kEntry$225804[esp+1072]
+	lea	eax, DWORD PTR _kEntry$225803[esp+1072]
 	push	eax
 	mov	ecx, OFFSET _sg_kSave+2888
 	call	?GetMapDataEntry@CvWorldBuilderMapModData@@QAE?AVModDataEntry@@XZ ; CvWorldBuilderMapModData::GetMapDataEntry
@@ -5915,7 +5915,7 @@ $LL29@RunPostPro:
 
 	test	eax, eax
 	je	$LN11@RunPostPro
-	mov	ecx, OFFSET $SG225812
+	mov	ecx, OFFSET $SG225811
 $LL23@RunPostPro:
 	mov	dl, BYTE PTR [eax]
 	cmp	dl, BYTE PTR [ecx]
@@ -5952,7 +5952,7 @@ $LN26@RunPostPro:
 ; 1773 : 					const char* szLua = kEntry.GetFieldAsString(uiField);
 
 	push	ebx
-	lea	ecx, DWORD PTR _kEntry$225804[esp+1080]
+	lea	ecx, DWORD PTR _kEntry$225803[esp+1080]
 	call	?GetFieldAsString@ModDataEntry@@QBEPBDI@Z ; ModDataEntry::GetFieldAsString
 	mov	edi, eax
 
@@ -6004,10 +6004,10 @@ $LN7@RunPostPro:
 ; 1787 : 						char szMapScriptPath[1040] = {0};
 
 	push	1039					; 0000040fH
-	lea	ecx, DWORD PTR _szMapScriptPath$225819[esp+1081]
+	lea	ecx, DWORD PTR _szMapScriptPath$225818[esp+1081]
 	push	0
 	push	ecx
-	mov	BYTE PTR _szMapScriptPath$225819[esp+1088], 0
+	mov	BYTE PTR _szMapScriptPath$225818[esp+1088], 0
 	call	_memset
 
 ; 1788 : 						const bool bResult = gDLL->GetEvaluatedMapScriptPath(szLua, szMapScriptPath, 1040);
@@ -6017,7 +6017,7 @@ $LN7@RunPostPro:
 	mov	edx, DWORD PTR [edx+1036]
 	add	esp, 12					; 0000000cH
 	push	1040					; 00000410H
-	lea	ecx, DWORD PTR _szMapScriptPath$225819[esp+1080]
+	lea	ecx, DWORD PTR _szMapScriptPath$225818[esp+1080]
 	push	ecx
 	push	edi
 	push	eax
@@ -6032,7 +6032,7 @@ $LN7@RunPostPro:
 
 	mov	eax, DWORD PTR [esi]
 	mov	edx, DWORD PTR [eax+8]
-	lea	ecx, DWORD PTR _szMapScriptPath$225819[esp+1076]
+	lea	ecx, DWORD PTR _szMapScriptPath$225818[esp+1076]
 	push	ecx
 	push	ebp
 	mov	ecx, esi
@@ -6047,7 +6047,7 @@ $LN7@RunPostPro:
 ; 1797 : 						{
 ; 1798 : 							lua_getglobal(L, "PostProcessMap");
 
-	push	OFFSET $SG225824
+	push	OFFSET $SG225823
 	push	-10002					; ffffd8eeH
 	push	ebp
 	call	_lua_getfield
@@ -6409,12 +6409,12 @@ EXTRN	_luaL_checklstring:PROC
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?GetMapPlayers@CvWorldBuilderMapLoader@@SAHPAUlua_State@@@Z
 _TEXT	SEGMENT
-_kPlayer$226049 = -544					; size = 4
-_uiPlayer$226045 = -540					; size = 4
-_iHandicapCount$226044 = -536				; size = 4
-_eCivType$226050 = -532					; size = 4
-_iCivCount$226043 = -528				; size = 4
-_uiPlayerCount$226042 = -524				; size = 4
+_kPlayer$226048 = -544					; size = 4
+_uiPlayer$226044 = -540					; size = 4
+_iHandicapCount$226043 = -536				; size = 4
+_eCivType$226049 = -532					; size = 4
+_iCivCount$226042 = -528				; size = 4
+_uiPlayerCount$226041 = -524				; size = 4
 _wszMapFile$ = -520					; size = 520
 _L$ = 8							; size = 4
 ?GetMapPlayers@CvWorldBuilderMapLoader@@SAHPAUlua_State@@@Z PROC ; CvWorldBuilderMapLoader::GetMapPlayers, COMDAT
@@ -6541,13 +6541,13 @@ $LN13@GetMapPlay@2:
 ; 2187 : 		const int iCivCount = GC.getNumCivilizationInfos();
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	mov	DWORD PTR _uiPlayerCount$226042[esp+552], edi
+	mov	DWORD PTR _uiPlayerCount$226041[esp+552], edi
 	call	?getNumCivilizationInfos@CvGlobals@@QAEHXZ ; CvGlobals::getNumCivilizationInfos
 
 ; 2188 : 		const int iHandicapCount = GC.getNumHandicapInfos();
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	mov	DWORD PTR _iCivCount$226043[esp+552], eax
+	mov	DWORD PTR _iCivCount$226042[esp+552], eax
 	call	?getNumHandicapInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumHandicapInfos
 
 ; 2189 : 
@@ -6556,7 +6556,7 @@ $LN13@GetMapPlay@2:
 	push	0
 	push	edi
 	push	esi
-	mov	DWORD PTR _iHandicapCount$226044[esp+564], eax
+	mov	DWORD PTR _iHandicapCount$226043[esp+564], eax
 	call	_lua_createtable
 
 ; 2191 : #ifdef AUI_WARNING_FIXES
@@ -6566,7 +6566,7 @@ $LN13@GetMapPlay@2:
 
 	xor	eax, eax
 	add	esp, 12					; 0000000cH
-	mov	DWORD PTR _uiPlayer$226045[esp+552], eax
+	mov	DWORD PTR _uiPlayer$226044[esp+552], eax
 	test	edi, edi
 	jbe	$LN10@GetMapPlay@2
 	push	ebx
@@ -6574,7 +6574,7 @@ $LN13@GetMapPlay@2:
 	jmp	SHORT $LN12@GetMapPlay@2
 	npad	4
 $LL48@GetMapPlay@2:
-	mov	eax, DWORD PTR _uiPlayer$226045[esp+560]
+	mov	eax, DWORD PTR _uiPlayer$226044[esp+560]
 $LN12@GetMapPlay@2:
 
 ; 2195 : #endif
@@ -6588,11 +6588,11 @@ $LN12@GetMapPlay@2:
 	movzx	edi, al
 	imul	edi, 436				; 000001b4H
 	add	edi, OFFSET _sg_kTempMap+536608
-	mov	DWORD PTR _kPlayer$226049[esp+560], edi
+	mov	DWORD PTR _kPlayer$226048[esp+560], edi
 	jmp	SHORT $LN22@GetMapPlay@2
 $LN23@GetMapPlay@2:
-	mov	DWORD PTR _kPlayer$226049[esp+560], OFFSET ?sm_kErrorPlayer@CvWorldBuilderMap@@0UPlayer@1@A ; CvWorldBuilderMap::sm_kErrorPlayer
-	mov	edi, DWORD PTR _kPlayer$226049[esp+560]
+	mov	DWORD PTR _kPlayer$226048[esp+560], OFFSET ?sm_kErrorPlayer@CvWorldBuilderMap@@0UPlayer@1@A ; CvWorldBuilderMap::sm_kErrorPlayer
+	mov	edi, DWORD PTR _kPlayer$226048[esp+560]
 $LN22@GetMapPlay@2:
 
 ; 2198 : 
@@ -6600,8 +6600,8 @@ $LN22@GetMapPlay@2:
 ; 2200 : 			for(int iCiv = 0; iCiv < iCivCount; ++iCiv)
 
 	xor	ebp, ebp
-	cmp	DWORD PTR _iCivCount$226043[esp+560], ebp
-	mov	DWORD PTR _eCivType$226050[esp+560], -1
+	cmp	DWORD PTR _iCivCount$226042[esp+560], ebp
+	mov	DWORD PTR _eCivType$226049[esp+560], -1
 	jle	SHORT $LN7@GetMapPlay@2
 $LL9@GetMapPlay@2:
 
@@ -6640,7 +6640,7 @@ $LN41@GetMapPlay@2:
 	sbb	eax, eax
 	sbb	eax, -1
 $LN43@GetMapPlay@2:
-	mov	edi, DWORD PTR _kPlayer$226049[esp+560]
+	mov	edi, DWORD PTR _kPlayer$226048[esp+560]
 	test	eax, eax
 	je	SHORT $LN35@GetMapPlay@2
 $LN8@GetMapPlay@2:
@@ -6650,7 +6650,7 @@ $LN8@GetMapPlay@2:
 ; 2200 : 			for(int iCiv = 0; iCiv < iCivCount; ++iCiv)
 
 	inc	ebp
-	cmp	ebp, DWORD PTR _iCivCount$226043[esp+560]
+	cmp	ebp, DWORD PTR _iCivCount$226042[esp+560]
 	jl	SHORT $LL9@GetMapPlay@2
 
 ; 2216 : 				if(pkHandicap != NULL && strcmp(pkHandicap->GetType(), kPlayer.m_szHandicap) == 0)
@@ -6661,7 +6661,7 @@ $LN35@GetMapPlay@2:
 ; 2205 : 				{
 ; 2206 : 					eCivType = eCurrentCiv;
 
-	mov	DWORD PTR _eCivType$226050[esp+560], ebp
+	mov	DWORD PTR _eCivType$226049[esp+560], ebp
 $LN7@GetMapPlay@2:
 
 ; 2207 : 					break;
@@ -6675,7 +6675,7 @@ $LN7@GetMapPlay@2:
 ; 2212 : 			for(int iHandicap = 0; iHandicap < iHandicapCount; ++iHandicap)
 
 	xor	ebp, ebp
-	cmp	DWORD PTR _iHandicapCount$226044[esp+560], ebp
+	cmp	DWORD PTR _iHandicapCount$226043[esp+560], ebp
 	jle	SHORT $LN3@GetMapPlay@2
 	npad	6
 $LL5@GetMapPlay@2:
@@ -6715,7 +6715,7 @@ $LN45@GetMapPlay@2:
 	sbb	eax, eax
 	sbb	eax, -1
 $LN47@GetMapPlay@2:
-	mov	edi, DWORD PTR _kPlayer$226049[esp+560]
+	mov	edi, DWORD PTR _kPlayer$226048[esp+560]
 	test	eax, eax
 	je	SHORT $LN36@GetMapPlay@2
 $LN4@GetMapPlay@2:
@@ -6723,7 +6723,7 @@ $LN4@GetMapPlay@2:
 ; 2212 : 			for(int iHandicap = 0; iHandicap < iHandicapCount; ++iHandicap)
 
 	inc	ebp
-	cmp	ebp, DWORD PTR _iHandicapCount$226044[esp+560]
+	cmp	ebp, DWORD PTR _iHandicapCount$226043[esp+560]
 	jl	SHORT $LL5@GetMapPlay@2
 
 ; 2216 : 				if(pkHandicap != NULL && strcmp(pkHandicap->GetType(), kPlayer.m_szHandicap) == 0)
@@ -6751,13 +6751,13 @@ $LN3@GetMapPlay@2:
 ; 2224 : 
 ; 2225 : 			lua_pushstring(L, "CivType");
 
-	push	OFFSET $SG226069
+	push	OFFSET $SG226068
 	push	esi
 	call	_lua_pushstring
 
 ; 2226 : 			lua_pushinteger(L, eCivType);
 
-	mov	eax, DWORD PTR _eCivType$226050[esp+580]
+	mov	eax, DWORD PTR _eCivType$226049[esp+580]
 	push	eax
 	push	esi
 	call	_lua_pushinteger
@@ -6771,7 +6771,7 @@ $LN3@GetMapPlay@2:
 ; 2228 : 
 ; 2229 : 			lua_pushstring(L, "Playable");
 
-	push	OFFSET $SG226070
+	push	OFFSET $SG226069
 	push	esi
 	call	_lua_pushstring
 
@@ -6791,7 +6791,7 @@ $LN3@GetMapPlay@2:
 ; 2232 : 
 ; 2233 : 			lua_pushstring(L, "DefaultHandicap");
 
-	push	OFFSET $SG226071
+	push	OFFSET $SG226070
 	push	esi
 	call	_lua_pushstring
 	add	esp, 68					; 00000044H
@@ -6811,15 +6811,15 @@ $LN3@GetMapPlay@2:
 ; 2236 : 
 ; 2237 : 			lua_rawseti(L, -2, uiPlayer + 1);
 
-	mov	edi, DWORD PTR _uiPlayer$226045[esp+576]
+	mov	edi, DWORD PTR _uiPlayer$226044[esp+576]
 	inc	edi
 	push	edi
 	push	-2					; fffffffeH
 	push	esi
 	call	_lua_rawseti
 	add	esp, 28					; 0000001cH
-	mov	DWORD PTR _uiPlayer$226045[esp+560], edi
-	cmp	edi, DWORD PTR _uiPlayerCount$226042[esp+560]
+	mov	DWORD PTR _uiPlayer$226044[esp+560], edi
+	cmp	edi, DWORD PTR _uiPlayerCount$226041[esp+560]
 	jb	$LL48@GetMapPlay@2
 	pop	ebp
 	pop	ebx
@@ -6928,7 +6928,7 @@ $LN8@AddRandomI:
 
 	mov	edx, DWORD PTR [edi]
 	mov	eax, DWORD PTR [edx+8]
-	push	OFFSET $SG226084
+	push	OFFSET $SG226083
 	push	esi
 	mov	ecx, edi
 	call	eax
@@ -6949,7 +6949,7 @@ $LN8@AddRandomI:
 ; 2274 : 				const char* szGoodiesFunction = "AddGoodies";
 ; 2275 : 				lua_getglobal(L, szGoodiesFunction);
 
-	push	OFFSET $SG226089
+	push	OFFSET $SG226088
 	push	-10002					; ffffd8eeH
 	push	esi
 	call	_lua_getfield
@@ -6987,7 +6987,7 @@ $LN5@AddRandomI:
 ; 2284 : 				const char* szResourcesFunction = "AddResourcesForWorldBuilderMap";
 ; 2285 : 				lua_getglobal(L, szResourcesFunction);
 
-	push	OFFSET $SG226094
+	push	OFFSET $SG226093
 	push	-10002					; ffffd8eeH
 	push	esi
 	call	_lua_getfield
@@ -7092,7 +7092,7 @@ _L$ = 8							; size = 4
 
 	mov	eax, DWORD PTR [esi]
 	mov	edx, DWORD PTR [eax+8]
-	push	OFFSET $SG226105
+	push	OFFSET $SG226104
 	push	edi
 	mov	ecx, esi
 	call	edx
@@ -7106,7 +7106,7 @@ _L$ = 8							; size = 4
 ; 2315 : 		{
 ; 2316 : 			lua_getglobal(L, "AddResourcesForWorldBuilderMap");
 
-	push	OFFSET $SG226107
+	push	OFFSET $SG226106
 	push	-10002					; ffffd8eeH
 	push	edi
 	call	_lua_getfield
@@ -7209,7 +7209,7 @@ _L$ = 8							; size = 4
 
 	mov	eax, DWORD PTR [esi]
 	mov	edx, DWORD PTR [eax+8]
-	push	OFFSET $SG226118
+	push	OFFSET $SG226117
 	push	edi
 	mov	ecx, esi
 	call	edx
@@ -7223,7 +7223,7 @@ _L$ = 8							; size = 4
 ; 2345 : 		{
 ; 2346 : 			lua_getglobal(L, "AddGoodies");
 
-	push	OFFSET $SG226120
+	push	OFFSET $SG226119
 	push	-10002					; ffffd8eeH
 	push	edi
 	call	_lua_getfield
@@ -8386,15 +8386,15 @@ PUBLIC	?FindClosestCity@@YAPBVCvCity@@W4PlayerTypes@@ABVCvPlot@@@Z ; FindClosest
 ;	COMDAT ?FindClosestCity@@YAPBVCvCity@@W4PlayerTypes@@ABVCvPlot@@@Z
 _TEXT	SEGMENT
 _kMap$ = -44						; size = 4
-_iDist$225190 = -40					; size = 4
+_iDist$225189 = -40					; size = 4
 _iMapWidth$ = -36					; size = 4
-_iPlot$225260 = -32					; size = 4
-_iRow$225222 = -32					; size = 4
+_iPlot$225259 = -32					; size = 4
+_iRow$225221 = -32					; size = 4
 _iPlotY$ = -28						; size = 4
 _iPlotX$ = -24						; size = 4
 _iMapHeight$ = -20					; size = 4
 tv2043 = -16						; size = 4
-_iRowOffset$225221 = -16				; size = 4
+_iRowOffset$225220 = -16				; size = 4
 tv2037 = -12						; size = 4
 tv1381 = -12						; size = 4
 tv1545 = -8						; size = 4
@@ -8479,7 +8479,7 @@ $LN63@FindCloses:
 	mov	DWORD PTR _iPlotY$[esp+60], ebx
 	mov	DWORD PTR _iMapWidth$[esp+60], edx
 	mov	BYTE PTR _bWorldWrap$[esp+56], al
-	mov	DWORD PTR _iDist$225190[esp+60], ecx
+	mov	DWORD PTR _iDist$225189[esp+60], ecx
 $LL62@FindCloses:
 	cmp	ecx, DWORD PTR _iMapHeight$[esp+60]
 	jl	SHORT $LN59@FindCloses
@@ -8599,7 +8599,7 @@ $LN660@FindCloses:
 ; 912  : 
 ; 913  : 		if(iPlotX + iDist < iMapWidth)
 
-	mov	eax, DWORD PTR _iDist$225190[esp+60]
+	mov	eax, DWORD PTR _iDist$225189[esp+60]
 	mov	ecx, DWORD PTR _iPlotX$[esp+60]
 	add	eax, ecx
 	cmp	eax, DWORD PTR _iMapWidth$[esp+60]
@@ -8728,25 +8728,25 @@ $LN667@FindCloses:
 	neg	eax
 	sbb	eax, eax
 	neg	eax
-	mov	DWORD PTR _iRowOffset$225221[esp+60], eax
+	mov	DWORD PTR _iRowOffset$225220[esp+60], eax
 
 ; 931  : 		for(int iRow = 1; iRow < iDist; ++iRow)
 
 	mov	eax, 1
-	cmp	DWORD PTR _iDist$225190[esp+60], eax
-	mov	DWORD PTR _iRow$225222[esp+60], eax
+	cmp	DWORD PTR _iDist$225189[esp+60], eax
+	mov	DWORD PTR _iRow$225221[esp+60], eax
 	jle	$LN42@FindCloses
 	mov	ecx, eax
 	jmp	SHORT $LN44@FindCloses
 	npad	1
 $LL652@FindCloses:
-	mov	ecx, DWORD PTR _iRow$225222[esp+60]
+	mov	ecx, DWORD PTR _iRow$225221[esp+60]
 $LN44@FindCloses:
 
 ; 932  : 		{
 ; 933  : 			const int iRowWidth = (iDist * 2) - (iRow - 1);
 
-	mov	eax, DWORD PTR _iDist$225190[esp+60]
+	mov	eax, DWORD PTR _iDist$225189[esp+60]
 
 ; 934  : 
 ; 935  : 			{
@@ -8775,7 +8775,7 @@ $LN668@FindCloses:
 	mov	DWORD PTR tv1383[esp+60], eax
 	cmp	eax, 1
 	jne	SHORT $LN41@FindCloses
-	add	esi, DWORD PTR _iRowOffset$225221[esp+60]
+	add	esi, DWORD PTR _iRowOffset$225220[esp+60]
 $LN41@FindCloses:
 
 ; 939  : 
@@ -8803,7 +8803,7 @@ $LL38@FindCloses:
 ; 947  : 						while(iX < 0);
 
 	js	SHORT $LL38@FindCloses
-	mov	ecx, DWORD PTR _iRow$225222[esp+60]
+	mov	ecx, DWORD PTR _iRow$225221[esp+60]
 $LN626@FindCloses:
 
 ; 948  : 				}
@@ -8900,7 +8900,7 @@ $LN333@FindCloses:
 ; 958  : 
 ; 959  : 					if(iPlotY + iRow < iMapHeight)
 
-	mov	eax, DWORD PTR _iRow$225222[esp+60]
+	mov	eax, DWORD PTR _iRow$225221[esp+60]
 	mov	ecx, DWORD PTR _iPlotY$[esp+60]
 	add	ecx, eax
 	cmp	ecx, DWORD PTR _iMapHeight$[esp+60]
@@ -9003,7 +9003,7 @@ $LN656@FindCloses:
 	mov	eax, DWORD PTR _iPlotX$[esp+60]
 	lea	esi, DWORD PTR [edx+eax-1]
 	jne	SHORT $LN30@FindCloses
-	add	esi, DWORD PTR _iRowOffset$225221[esp+60]
+	add	esi, DWORD PTR _iRowOffset$225220[esp+60]
 $LN30@FindCloses:
 
 ; 972  : 
@@ -9040,7 +9040,7 @@ $LN625@FindCloses:
 ; 985  : 					if(iPlotY - iRow >= 0)
 
 	mov	ebx, DWORD PTR _iPlotY$[esp+60]
-	sub	ebx, DWORD PTR _iRow$225222[esp+60]
+	sub	ebx, DWORD PTR _iRow$225221[esp+60]
 	js	$LN435@FindCloses
 
 ; 986  : 					{
@@ -9127,7 +9127,7 @@ $LN435@FindCloses:
 ; 991  : 
 ; 992  : 					if(iPlotY + iRow < iMapHeight)
 
-	mov	edx, DWORD PTR _iRow$225222[esp+60]
+	mov	edx, DWORD PTR _iRow$225221[esp+60]
 	mov	eax, DWORD PTR _iPlotY$[esp+60]
 	lea	ecx, DWORD PTR [edx+eax]
 	cmp	ecx, DWORD PTR _iMapHeight$[esp+60]
@@ -9217,10 +9217,10 @@ $LN43@FindCloses:
 
 ; 931  : 		for(int iRow = 1; iRow < iDist; ++iRow)
 
-	mov	eax, DWORD PTR _iRow$225222[esp+60]
+	mov	eax, DWORD PTR _iRow$225221[esp+60]
 	inc	eax
-	cmp	eax, DWORD PTR _iDist$225190[esp+60]
-	mov	DWORD PTR _iRow$225222[esp+60], eax
+	cmp	eax, DWORD PTR _iDist$225189[esp+60]
+	mov	DWORD PTR _iRow$225221[esp+60], eax
 	jl	$LL652@FindCloses
 $LN42@FindCloses:
 
@@ -9234,16 +9234,16 @@ $LN42@FindCloses:
 ; 1003 : 		{
 ; 1004 : 			const int iRowWidth = iDist + 1;
 
-	mov	eax, DWORD PTR _iDist$225190[esp+60]
+	mov	eax, DWORD PTR _iDist$225189[esp+60]
 	inc	eax
 	mov	DWORD PTR tv1540[esp+60], eax
 
 ; 1005 : 			for(int iPlot = 0; iPlot < iRowWidth; ++iPlot)
 
-	mov	DWORD PTR _iPlot$225260[esp+60], 0
+	mov	DWORD PTR _iPlot$225259[esp+60], 0
 	test	eax, eax
 	jle	$LN61@FindCloses
-	mov	ecx, DWORD PTR _iDist$225190[esp+60]
+	mov	ecx, DWORD PTR _iDist$225189[esp+60]
 	and	ecx, -2147483647			; 80000001H
 	jns	SHORT $LN669@FindCloses
 	dec	ecx
@@ -9253,7 +9253,7 @@ $LN669@FindCloses:
 	mov	edi, DWORD PTR _iPlotX$[esp+60]
 	cdq
 	sub	eax, edx
-	mov	edx, DWORD PTR _iRowOffset$225221[esp+60]
+	mov	edx, DWORD PTR _iRowOffset$225220[esp+60]
 	sar	eax, 1
 	mov	esi, edi
 	sub	esi, eax
@@ -9350,7 +9350,7 @@ $LN5@FindCloses:
 ; 1033 : 				if(iPlotY - iDist >= 0)
 
 	mov	ebx, DWORD PTR _iPlotY$[esp+60]
-	sub	ebx, DWORD PTR _iDist$225190[esp+60]
+	sub	ebx, DWORD PTR _iDist$225189[esp+60]
 	js	$LN537@FindCloses
 
 ; 1034 : 				{
@@ -9437,7 +9437,7 @@ $LN537@FindCloses:
 ; 1039 : 
 ; 1040 : 				if(iPlotY + iDist < iMapHeight)
 
-	mov	eax, DWORD PTR _iDist$225190[esp+60]
+	mov	eax, DWORD PTR _iDist$225189[esp+60]
 	mov	ecx, DWORD PTR _iPlotY$[esp+60]
 	add	ecx, eax
 	cmp	ecx, DWORD PTR _iMapHeight$[esp+60]
@@ -9528,14 +9528,14 @@ $LN18@FindCloses:
 
 ; 1005 : 			for(int iPlot = 0; iPlot < iRowWidth; ++iPlot)
 
-	mov	ecx, DWORD PTR _iPlot$225260[esp+60]
+	mov	ecx, DWORD PTR _iPlot$225259[esp+60]
 	mov	esi, DWORD PTR tv2037[esp+60]
 	mov	eax, DWORD PTR tv1540[esp+60]
 	inc	DWORD PTR tv2043[esp+60]
 	inc	ecx
 	inc	esi
 	cmp	ecx, eax
-	mov	DWORD PTR _iPlot$225260[esp+60], ecx
+	mov	DWORD PTR _iPlot$225259[esp+60], ecx
 	mov	DWORD PTR tv2037[esp+60], esi
 	jl	$LL649@FindCloses
 $LN61@FindCloses:
@@ -9546,7 +9546,7 @@ $LN61@FindCloses:
 
 	mov	ebp, DWORD PTR _kMap$[esp+60]
 	mov	ebx, DWORD PTR _iPlotY$[esp+60]
-	mov	DWORD PTR _iDist$225190[esp+60], eax
+	mov	DWORD PTR _iDist$225189[esp+60], eax
 	mov	ecx, eax
 	jmp	$LL62@FindCloses
 $LN60@FindCloses:
@@ -9579,7 +9579,7 @@ EXTRN	?isWater@CvTerrainInfo@@QBE_NXZ:PROC		; CvTerrainInfo::isWater
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?ValidateCoast@CvWorldBuilderMapLoader@@SAXXZ
 _TEXT	SEGMENT
-_y$225861 = -20						; size = 4
+_y$225860 = -20						; size = 4
 _eCoast$ = -16						; size = 4
 _iNumTerrainTypes$ = -12				; size = 4
 _iMapWidth$ = -8					; size = 4
@@ -9625,7 +9625,7 @@ _iMapHeight$ = -4					; size = 4
 ; 1867 : 	for(int y = 0; y < iMapHeight; ++y)
 
 	xor	eax, eax
-	mov	DWORD PTR _y$225861[esp+32], eax
+	mov	DWORD PTR _y$225860[esp+32], eax
 	test	edi, edi
 	jle	$LN7@ValidateCo
 	push	ebx
@@ -9653,7 +9653,7 @@ $LL69@ValidateCo:
 	mov	eax, ebx
 	cdq
 	idiv	ecx
-	mov	eax, DWORD PTR _y$225861[esp+36]
+	mov	eax, DWORD PTR _y$225860[esp+36]
 	mov	esi, edx
 	add	esi, ecx
 	jmp	SHORT $LN34@ValidateCo
@@ -9663,7 +9663,7 @@ $LN32@ValidateCo:
 	mov	eax, ebx
 	cdq
 	idiv	ecx
-	mov	eax, DWORD PTR _y$225861[esp+36]
+	mov	eax, DWORD PTR _y$225860[esp+36]
 	mov	esi, edx
 	jmp	SHORT $LN34@ValidateCo
 $LN30@ValidateCo:
@@ -9676,7 +9676,7 @@ $LN34@ValidateCo:
 	jge	SHORT $LN42@ValidateCo
 	cdq
 	idiv	edi
-	mov	eax, DWORD PTR _y$225861[esp+36]
+	mov	eax, DWORD PTR _y$225860[esp+36]
 	add	edx, edi
 	jmp	SHORT $LN44@ValidateCo
 $LN42@ValidateCo:
@@ -9684,7 +9684,7 @@ $LN42@ValidateCo:
 	jl	SHORT $LN40@ValidateCo
 	cdq
 	idiv	edi
-	mov	eax, DWORD PTR _y$225861[esp+36]
+	mov	eax, DWORD PTR _y$225860[esp+36]
 	jmp	SHORT $LN44@ValidateCo
 $LN40@ValidateCo:
 	mov	edx, eax
@@ -9751,7 +9751,7 @@ $LN44@ValidateCo:
 	mov	ecx, esi
 	call	?setTerrainType@CvPlot@@QAEXW4TerrainTypes@@_N1@Z ; CvPlot::setTerrainType
 $LN65@ValidateCo:
-	mov	eax, DWORD PTR _y$225861[esp+36]
+	mov	eax, DWORD PTR _y$225860[esp+36]
 $LN5@ValidateCo:
 
 ; 1868 : 		for(int x = 0; x < iMapWidth; ++x)
@@ -9768,7 +9768,7 @@ $LN8@ValidateCo:
 
 	inc	eax
 	cmp	eax, edi
-	mov	DWORD PTR _y$225861[esp+36], eax
+	mov	DWORD PTR _y$225860[esp+36], eax
 	jl	$LL70@ValidateCo
 	pop	ebx
 $LN7@ValidateCo:
@@ -10438,7 +10438,7 @@ EXTRN	?GetTreasury@CvPlayer@@QBEPAVCvTreasury@@XZ:PROC ; CvPlayer::GetTreasury
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredll_expansion2\cvworldbuildermaploader.cpp
 ;	COMDAT ?SetPlayerInitialItems@@YAXAAVCvPlayer@@ABUPlayer@CvWorldBuilderMap@@@Z
 _TEXT	SEGMENT
-_kTeam$224994 = -4					; size = 4
+_kTeam$224993 = -4					; size = 4
 _iPolicyCount$ = -4					; size = 4
 _kGameplayPlayer$ = 8					; size = 4
 _kSavedPlayer$ = 12					; size = 4
@@ -10645,7 +10645,7 @@ $LN21@SetPlayerI:
 ; 567  : 		const int iEraCount = GC.getNumEraInfos();
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	mov	DWORD PTR _kTeam$224994[esp+20], eax
+	mov	DWORD PTR _kTeam$224993[esp+20], eax
 	call	?getNumEraInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumEraInfos
 	mov	edi, eax
 
@@ -10843,7 +10843,7 @@ $LL4@SetPlayerI:
 ; 592  : 					kTeam.setHasTech(eTech, true, kGameplayPlayer.GetID(), false, false);
 
 	mov	edx, DWORD PTR [ebx+44]
-	mov	ecx, DWORD PTR _kTeam$224994[esp+20]
+	mov	ecx, DWORD PTR _kTeam$224993[esp+20]
 	push	0
 	push	0
 	push	edx
@@ -10964,13 +10964,13 @@ EXTRN	?firstCity@CvPlayer@@QAEPAVCvCity@@PAH_N@Z:PROC	; CvPlayer::firstCity
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?SetInitialItems@CvWorldBuilderMapLoader@@SAX_N@Z
 _TEXT	SEGMENT
-$T230944 = -6						; size = 1
-$T230942 = -6						; size = 1
-$T230939 = -6						; size = 1
-$T230943 = -5						; size = 1
-$T230941 = -5						; size = 1
+$T230943 = -6						; size = 1
+$T230941 = -6						; size = 1
+$T230938 = -6						; size = 1
+$T230942 = -5						; size = 1
 $T230940 = -5						; size = 1
-_iLoop$225053 = -4					; size = 4
+$T230939 = -5						; size = 1
+_iLoop$225052 = -4					; size = 4
 _bFirstCall$ = 8					; size = 1
 ?SetInitialItems@CvWorldBuilderMapLoader@@SAX_N@Z PROC	; CvWorldBuilderMapLoader::SetInitialItems, COMDAT
 
@@ -10985,12 +10985,12 @@ _bFirstCall$ = 8					; size = 1
 ; 619  : 	const uint uiTeamCount = std::min(sg_kSave.GetTeamCount(), (byte)MAX_TEAMS);
 
 	mov	cl, BYTE PTR _sg_kSave+12318
-	mov	BYTE PTR $T230939[esp+8], 64		; 00000040H
-	mov	BYTE PTR $T230940[esp+8], cl
-	lea	eax, DWORD PTR $T230939[esp+8]
+	mov	BYTE PTR $T230938[esp+8], 64		; 00000040H
+	mov	BYTE PTR $T230939[esp+8], cl
+	lea	eax, DWORD PTR $T230938[esp+8]
 	cmp	cl, 64					; 00000040H
 	ja	SHORT $LN21@SetInitial
-	lea	eax, DWORD PTR $T230940[esp+8]
+	lea	eax, DWORD PTR $T230939[esp+8]
 $LN21@SetInitial:
 	push	ebx
 	push	esi
@@ -11053,12 +11053,12 @@ $LN11@SetInitial:
 ; 631  : 	const uint uiPlayerCount = std::min(sg_kSave.GetPlayerCount(), (byte)MAX_CIV_PLAYERS);
 
 	mov	cl, BYTE PTR _sg_kSave+12316
-	mov	BYTE PTR $T230941[esp+20], 63		; 0000003fH
-	mov	BYTE PTR $T230942[esp+20], cl
-	lea	eax, DWORD PTR $T230941[esp+20]
+	mov	BYTE PTR $T230940[esp+20], 63		; 0000003fH
+	mov	BYTE PTR $T230941[esp+20], cl
+	lea	eax, DWORD PTR $T230940[esp+20]
 	cmp	cl, 63					; 0000003fH
 	ja	SHORT $LN33@SetInitial
-	lea	eax, DWORD PTR $T230942[esp+20]
+	lea	eax, DWORD PTR $T230941[esp+20]
 $LN33@SetInitial:
 	push	ebp
 	movzx	ebp, BYTE PTR [eax]
@@ -11123,7 +11123,7 @@ $LN36@SetInitial:
 ; 644  : 			for(pLoopCity = kPlayer.firstCity(&iLoop); pLoopCity != NULL; pLoopCity = kPlayer.nextCity(&iLoop))
 
 	push	0
-	lea	eax, DWORD PTR _iLoop$225053[esp+28]
+	lea	eax, DWORD PTR _iLoop$225052[esp+28]
 	push	eax
 	mov	ecx, esi
 	call	?firstCity@CvPlayer@@QAEPAVCvCity@@PAH_N@Z ; CvPlayer::firstCity
@@ -11139,7 +11139,7 @@ $LL6@SetInitial:
 	mov	ecx, eax
 	call	?DoTurn@CvCityCitizens@@QAEXXZ		; CvCityCitizens::DoTurn
 	push	0
-	lea	ecx, DWORD PTR _iLoop$225053[esp+28]
+	lea	ecx, DWORD PTR _iLoop$225052[esp+28]
 	push	ecx
 	mov	ecx, esi
 	call	?nextCity@CvPlayer@@QAEPAVCvCity@@PAH_N@Z ; CvPlayer::nextCity
@@ -11195,13 +11195,13 @@ $LN8@SetInitial:
 ; 664  : 	const uint uiCityStateCount = std::min(sg_kSave.GetCityStateCount(), (byte)MAX_MINOR_CIVS);
 
 	mov	cl, BYTE PTR _sg_kSave+12317
-	mov	BYTE PTR $T230943[esp+24], 41		; 00000029H
-	mov	BYTE PTR $T230944[esp+24], cl
+	mov	BYTE PTR $T230942[esp+24], 41		; 00000029H
+	mov	BYTE PTR $T230943[esp+24], cl
 	pop	ebp
-	lea	eax, DWORD PTR $T230943[esp+20]
+	lea	eax, DWORD PTR $T230942[esp+20]
 	cmp	cl, 41					; 00000029H
 	ja	SHORT $LN45@SetInitial
-	lea	eax, DWORD PTR $T230944[esp+20]
+	lea	eax, DWORD PTR $T230943[esp+20]
 $LN45@SetInitial:
 	movzx	edi, BYTE PTR [eax]
 
@@ -11285,10 +11285,10 @@ EXTRN	__ftol2_sse_excpt:PROC
 ;	COMDAT ?SetupCity@@YAXABUCity@CvWorldBuilderMap@@HH@Z
 _TEXT	SEGMENT
 tv359 = -8						; size = 4
-$T231052 = -8						; size = 4
-_kPlayer$225091 = -4					; size = 4
-_fHitPoints$225099 = 8					; size = 4
-_iMaxHitPoints$225098 = 8				; size = 4
+$T231051 = -8						; size = 4
+_kPlayer$225090 = -4					; size = 4
+_fHitPoints$225098 = 8					; size = 4
+_iMaxHitPoints$225097 = 8				; size = 4
 _kSavedCity$ = 8					; size = 4
 _iPlotX$ = 12						; size = 4
 _iPlotY$ = 16						; size = 4
@@ -11330,7 +11330,7 @@ $LN45@SetupCity:
 	push	ecx
 	push	edx
 	mov	ecx, eax
-	mov	DWORD PTR _kPlayer$225091[esp+32], eax
+	mov	DWORD PTR _kPlayer$225090[esp+32], eax
 	call	?initCity@CvPlayer@@QAEPAVCvCity@@HH_N0@Z ; CvPlayer::initCity
 	mov	esi, eax
 
@@ -11431,22 +11431,22 @@ $LN8@SetupCity:
 	mov	edi, eax
 	mov	DWORD PTR tv359[esp+24], ecx
 	fild	DWORD PTR tv359[esp+24]
-	mov	DWORD PTR _iMaxHitPoints$225098[esp+20], edi
+	mov	DWORD PTR _iMaxHitPoints$225097[esp+20], edi
 	test	ecx, ecx
 	jge	SHORT $LN51@SetupCity
 	fadd	DWORD PTR __real@4f800000
 $LN51@SetupCity:
 	fdiv	DWORD PTR __real@47c35000
-	fstp	DWORD PTR $T231052[esp+24]
-	fild	DWORD PTR _iMaxHitPoints$225098[esp+20]
-	fmul	DWORD PTR $T231052[esp+24]
-	fstp	DWORD PTR _fHitPoints$225099[esp+20]
+	fstp	DWORD PTR $T231051[esp+24]
+	fild	DWORD PTR _iMaxHitPoints$225097[esp+20]
+	fmul	DWORD PTR $T231051[esp+24]
+	fstp	DWORD PTR _fHitPoints$225098[esp+20]
 
 ; 728  : 
 ; 729  : 				// Don't allow the city to be killed by a precision error
 ; 730  : 				int iHitPoints = (int)fHitPoints;
 
-	fld	DWORD PTR _fHitPoints$225099[esp+20]
+	fld	DWORD PTR _fHitPoints$225098[esp+20]
 	call	__ftol2_sse_excpt
 
 ; 731  : 				if(iHitPoints == 0 && kSavedCity.m_uiHealth != 0)
@@ -11530,7 +11530,7 @@ $LN46@SetupCity:
 ; 747  : 			}
 ; 748  : 			kPlayer.DoUpdateNextPolicyCost();
 
-	mov	ecx, DWORD PTR _kPlayer$225091[esp+24]
+	mov	ecx, DWORD PTR _kPlayer$225090[esp+24]
 	pop	edi
 	pop	ebx
 	pop	esi
@@ -11591,14 +11591,14 @@ EXTRN	?getUnitInfo@CvGlobals@@QAEPAVCvUnitEntry@@W4UnitTypes@@@Z:PROC ; CvGlobal
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?SetupUnit@@YAXABUUnit@CvWorldBuilderMap@@HH@Z
 _TEXT	SEGMENT
-$T231137 = -8						; size = 4
-$T231124 = -8						; size = 4
-_iMaxHitPoints$225152 = -8				; size = 4
+$T231136 = -8						; size = 4
+$T231123 = -8						; size = 4
+_iMaxHitPoints$225151 = -8				; size = 4
 tv547 = -4						; size = 4
-$T231144 = -4						; size = 4
-_fHitPoints$225153 = -4					; size = 4
-$T231157 = 8						; size = 4
-$T231085 = 8						; size = 4
+$T231143 = -4						; size = 4
+_fHitPoints$225152 = -4					; size = 4
+$T231156 = 8						; size = 4
+$T231084 = 8						; size = 4
 _kSavedUnit$ = 8					; size = 4
 _iPlotX$ = 12						; size = 4
 _iPlotY$ = 16						; size = 4
@@ -11759,7 +11759,7 @@ $LN15@SetupUnit:
 ; 801  : 		eFacing = (DirectionTypes)GC.getGame().getJonRandNum(NUM_DIRECTION_TYPES, "Picking Random Unit Direction");
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
-	push	OFFSET $SG225141
+	push	OFFSET $SG225140
 	push	6
 	call	?getJonRandNum@CvGame@@QAEHHPBD@Z	; CvGame::getJonRandNum
 $LN22@SetupUnit:
@@ -11821,7 +11821,7 @@ $LN22@SetupUnit:
 	push	0
 	add	edi, 152				; 00000098H
 	push	0
-	mov	DWORD PTR $T231124[esp+36], ecx
+	mov	DWORD PTR $T231123[esp+36], ecx
 	push	0
 	test	al, al
 	je	SHORT $LN11@SetupUnit
@@ -11836,7 +11836,7 @@ $LN11@SetupUnit:
 
 	call	?getMISSION_SLEEP@CvTypes@@YA?BW4MissionTypes@@XZ ; CvTypes::getMISSION_SLEEP
 $LN88@SetupUnit:
-	mov	edx, DWORD PTR $T231137[esp+40]
+	mov	edx, DWORD PTR $T231136[esp+40]
 	push	eax
 	mov	eax, DWORD PTR [edi]
 	push	edx
@@ -11902,22 +11902,22 @@ $LN85@SetupUnit:
 	mov	edi, eax
 	mov	DWORD PTR tv547[esp+24], ecx
 	fild	DWORD PTR tv547[esp+24]
-	mov	DWORD PTR _iMaxHitPoints$225152[esp+24], edi
+	mov	DWORD PTR _iMaxHitPoints$225151[esp+24], edi
 	test	ecx, ecx
 	jge	SHORT $LN86@SetupUnit
 	fadd	DWORD PTR __real@4f800000
 $LN86@SetupUnit:
 	fdiv	DWORD PTR __real@47c35000
-	fstp	DWORD PTR $T231144[esp+24]
-	fild	DWORD PTR _iMaxHitPoints$225152[esp+24]
-	fmul	DWORD PTR $T231144[esp+24]
-	fstp	DWORD PTR _fHitPoints$225153[esp+24]
+	fstp	DWORD PTR $T231143[esp+24]
+	fild	DWORD PTR _iMaxHitPoints$225151[esp+24]
+	fmul	DWORD PTR $T231143[esp+24]
+	fstp	DWORD PTR _fHitPoints$225152[esp+24]
 
 ; 832  : 
 ; 833  : 				// Don't allow the unit to be killed by a precision error
 ; 834  : 				int iHitPoints = (int)fHitPoints;
 
-	fld	DWORD PTR _fHitPoints$225153[esp+24]
+	fld	DWORD PTR _fHitPoints$225152[esp+24]
 	call	__ftol2_sse_excpt
 
 ; 835  : 				if(iHitPoints == 0 && kSavedUnit.m_uiHealth != 0)
@@ -11974,7 +11974,7 @@ $LN8@SetupUnit:
 ; 850  : 
 ; 851  : 			if(kSavedUnit.m_hCustomName.Valid())
 
-	mov	DWORD PTR $T231157[esp+20], eax
+	mov	DWORD PTR $T231156[esp+20], eax
 $LL6@SetupUnit:
 
 ; 845  : 			{
@@ -11998,7 +11998,7 @@ $LL6@SetupUnit:
 	push	edi
 	mov	ecx, esi
 	call	?setHasPromotion@CvUnit@@QAEXW4PromotionTypes@@_N@Z ; CvUnit::setHasPromotion
-	mov	eax, DWORD PTR $T231157[esp+20]
+	mov	eax, DWORD PTR $T231156[esp+20]
 $LN5@SetupUnit:
 	inc	edi
 	cmp	edi, ebp
@@ -12032,7 +12032,7 @@ $LN4@SetupUnit:
 ; 856  : 					pkGameplayUnit->setName(pkUnitName->m_szText);
 
 	sub	esp, 28					; 0000001cH
-	mov	DWORD PTR $T231085[esp+48], esp
+	mov	DWORD PTR $T231084[esp+48], esp
 	mov	ecx, esp
 	push	eax
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
@@ -12111,9 +12111,9 @@ xdata$x	ENDS
 ;	COMDAT ?GetWorldSizeType@CvWorldBuilderMapLoader@@SA?AW4WorldSizeTypes@@ABVCvWorldBuilderMap@@@Z
 _TEXT	SEGMENT
 _eWorldSize$ = -484					; size = 4
-_kWorldSize$225905 = -480				; size = 64
-_kWorldSizes$225913 = -416				; size = 64
-_kInfo$225918 = -352					; size = 340
+_kWorldSize$225904 = -480				; size = 64
+_kWorldSizes$225912 = -416				; size = 64
+_kInfo$225917 = -352					; size = 340
 __$EHRec$ = -12						; size = 12
 _kMap$ = 8						; size = 4
 ?GetWorldSizeType@CvWorldBuilderMapLoader@@SA?AW4WorldSizeTypes@@ABVCvWorldBuilderMap@@@Z PROC ; CvWorldBuilderMapLoader::GetWorldSizeType, COMDAT
@@ -12147,15 +12147,15 @@ _kMap$ = 8						; size = 4
 ; 1928 : 		Database::Results kWorldSize;
 
 	push	0
-	lea	ecx, DWORD PTR _kWorldSize$225905[esp+504]
+	lea	ecx, DWORD PTR _kWorldSize$225904[esp+504]
 	call	ebx
 
 ; 1929 : 		DB.Execute(kWorldSize, "Select ID from Worlds where Type = ? LIMIT 1");
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+912
 	push	ebp
-	push	OFFSET $SG225906
-	lea	eax, DWORD PTR _kWorldSize$225905[esp+508]
+	push	OFFSET $SG225905
+	lea	eax, DWORD PTR _kWorldSize$225904[esp+508]
 	push	eax
 	mov	DWORD PTR __$EHRec$[esp+520], 0
 	call	DWORD PTR __imp_?Execute@Connection@Database@@QBE_NAAVResults@2@PBDH@Z
@@ -12166,12 +12166,12 @@ _kMap$ = 8						; size = 4
 	push	1
 	push	esi
 	push	1
-	lea	ecx, DWORD PTR _kWorldSize$225905[esp+512]
+	lea	ecx, DWORD PTR _kWorldSize$225904[esp+512]
 	call	DWORD PTR __imp_?Bind@Results@Database@@QAE_NHPBD_N@Z
 
 ; 1932 : 		if(kWorldSize.Step())
 
-	lea	ecx, DWORD PTR _kWorldSize$225905[esp+500]
+	lea	ecx, DWORD PTR _kWorldSize$225904[esp+500]
 	call	DWORD PTR __imp_?Step@Results@Database@@QAE_NXZ
 	test	al, al
 	je	SHORT $LN5@GetWorldSi
@@ -12180,7 +12180,7 @@ _kMap$ = 8						; size = 4
 ; 1934 : 			eWorldSize = (WorldSizeTypes)kWorldSize.GetInt(0);
 
 	push	0
-	lea	ecx, DWORD PTR _kWorldSize$225905[esp+504]
+	lea	ecx, DWORD PTR _kWorldSize$225904[esp+504]
 	call	DWORD PTR __imp_?GetInt@Results@Database@@QAEHH@Z
 	mov	DWORD PTR _eWorldSize$[esp+500], eax
 	mov	ebp, eax
@@ -12189,7 +12189,7 @@ $LN5@GetWorldSi:
 ; 1935 : 		}
 ; 1936 : 	}
 
-	lea	ecx, DWORD PTR _kWorldSize$225905[esp+500]
+	lea	ecx, DWORD PTR _kWorldSize$225904[esp+500]
 	mov	DWORD PTR __$EHRec$[esp+508], -1
 	call	DWORD PTR __imp_??1Results@Database@@UAE@XZ
 
@@ -12212,15 +12212,15 @@ $LN31@GetWorldSi:
 ; 1943 : 		Database::Results kWorldSizes;
 
 	push	0
-	lea	ecx, DWORD PTR _kWorldSizes$225913[esp+504]
+	lea	ecx, DWORD PTR _kWorldSizes$225912[esp+504]
 	mov	ebp, eax
 	mov	edi, 64000				; 0000fa00H
 	call	ebx
 
 ; 1944 : 		DB.SelectAll(kWorldSizes, "Worlds");
 
-	push	OFFSET $SG225914
-	lea	ecx, DWORD PTR _kWorldSizes$225913[esp+504]
+	push	OFFSET $SG225913
+	lea	ecx, DWORD PTR _kWorldSizes$225912[esp+504]
 	push	ecx
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+912
 	mov	DWORD PTR __$EHRec$[esp+516], 1
@@ -12228,7 +12228,7 @@ $LN31@GetWorldSi:
 
 ; 1945 : 		while(kWorldSizes.Step())
 
-	lea	ecx, DWORD PTR _kWorldSizes$225913[esp+500]
+	lea	ecx, DWORD PTR _kWorldSizes$225912[esp+500]
 	call	DWORD PTR __imp_?Step@Results@Database@@QAE_NXZ
 	test	al, al
 	je	$LN2@GetWorldSi
@@ -12239,23 +12239,23 @@ $LL3@GetWorldSi:
 ; 1946 : 		{
 ; 1947 : 			CvWorldInfo kInfo;
 
-	lea	ecx, DWORD PTR _kInfo$225918[esp+500]
+	lea	ecx, DWORD PTR _kInfo$225917[esp+500]
 	call	??0CvWorldInfo@@QAE@XZ			; CvWorldInfo::CvWorldInfo
 
 ; 1948 : 			kInfo.CacheResult(kWorldSizes);
 
-	lea	edx, DWORD PTR _kWorldSizes$225913[esp+500]
+	lea	edx, DWORD PTR _kWorldSizes$225912[esp+500]
 	push	edx
-	lea	ecx, DWORD PTR _kInfo$225918[esp+504]
+	lea	ecx, DWORD PTR _kInfo$225917[esp+504]
 	mov	BYTE PTR __$EHRec$[esp+512], bl
 	call	?CacheResult@CvBaseInfo@@QAE_NAAVResults@Database@@@Z ; CvBaseInfo::CacheResult
 
 ; 1949 : 
 ; 1950 : 			int iSizeTypeArea = kInfo.getGridWidth() * kInfo.getGridHeight();
 
-	lea	ecx, DWORD PTR _kInfo$225918[esp+500]
+	lea	ecx, DWORD PTR _kInfo$225917[esp+500]
 	call	?getGridWidth@CvWorldInfo@@QBEHXZ	; CvWorldInfo::getGridWidth
-	lea	ecx, DWORD PTR _kInfo$225918[esp+500]
+	lea	ecx, DWORD PTR _kInfo$225917[esp+500]
 	mov	esi, eax
 	call	?getGridHeight@CvWorldInfo@@QBEHXZ	; CvWorldInfo::getGridHeight
 	imul	esi, eax
@@ -12280,17 +12280,17 @@ $LL3@GetWorldSi:
 
 ; 1955 : 				eWorldSize = (WorldSizeTypes)kInfo.GetID();
 
-	mov	eax, DWORD PTR _kInfo$225918[esp+504]
+	mov	eax, DWORD PTR _kInfo$225917[esp+504]
 	mov	DWORD PTR _eWorldSize$[esp+500], eax
 $LN22@GetWorldSi:
 
 ; 1956 : 			}
 ; 1957 : 		}
 
-	lea	ecx, DWORD PTR _kInfo$225918[esp+500]
+	lea	ecx, DWORD PTR _kInfo$225917[esp+500]
 	mov	BYTE PTR __$EHRec$[esp+508], 1
 	call	??1CvBaseInfo@@QAE@XZ
-	lea	ecx, DWORD PTR _kWorldSizes$225913[esp+500]
+	lea	ecx, DWORD PTR _kWorldSizes$225912[esp+500]
 	call	DWORD PTR __imp_?Step@Results@Database@@QAE_NXZ
 	test	al, al
 	jne	SHORT $LL3@GetWorldSi
@@ -12298,7 +12298,7 @@ $LN2@GetWorldSi:
 
 ; 1958 : 	}
 
-	lea	ecx, DWORD PTR _kWorldSizes$225913[esp+500]
+	lea	ecx, DWORD PTR _kWorldSizes$225912[esp+500]
 	mov	DWORD PTR __$EHRec$[esp+508], -1
 	call	DWORD PTR __imp_??1Results@Database@@UAE@XZ
 
@@ -12325,13 +12325,13 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetWorldSizeType@CvWorldBuilderMapLoader@@SA?AW4WorldSizeTypes@@ABVCvWorldBuilderMap@@@Z$0:
-	lea	ecx, DWORD PTR _kWorldSize$225905[ebp]
+	lea	ecx, DWORD PTR _kWorldSize$225904[ebp]
 	jmp	DWORD PTR __imp_??1Results@Database@@UAE@XZ
 __unwindfunclet$?GetWorldSizeType@CvWorldBuilderMapLoader@@SA?AW4WorldSizeTypes@@ABVCvWorldBuilderMap@@@Z$1:
-	lea	ecx, DWORD PTR _kWorldSizes$225913[ebp]
+	lea	ecx, DWORD PTR _kWorldSizes$225912[ebp]
 	jmp	DWORD PTR __imp_??1Results@Database@@UAE@XZ
 __unwindfunclet$?GetWorldSizeType@CvWorldBuilderMapLoader@@SA?AW4WorldSizeTypes@@ABVCvWorldBuilderMap@@@Z$2:
-	lea	ecx, DWORD PTR _kInfo$225918[ebp]
+	lea	ecx, DWORD PTR _kInfo$225917[ebp]
 	jmp	??1CvWorldInfo@@QAE@XZ
 __ehhandler$?GetWorldSizeType@CvWorldBuilderMapLoader@@SA?AW4WorldSizeTypes@@ABVCvWorldBuilderMap@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?GetWorldSizeType@CvWorldBuilderMapLoader@@SA?AW4WorldSizeTypes@@ABVCvWorldBuilderMap@@@Z
@@ -12355,11 +12355,11 @@ _TEXT	SEGMENT
 tv395 = -540						; size = 4
 tv392 = -540						; size = 4
 tv387 = -540						; size = 4
-_eWorldSize$225984 = -540				; size = 4
-_kPlayer$226003 = -536					; size = 4
-_szStartEra$225997 = -532				; size = 4
-_i$225999 = -528					; size = 4
-_eDefaultSpeed$225986 = -524				; size = 4
+_eWorldSize$225983 = -540				; size = 4
+_kPlayer$226002 = -536					; size = 4
+_szStartEra$225996 = -532				; size = 4
+_i$225998 = -528					; size = 4
+_eDefaultSpeed$225985 = -524				; size = 4
 _wszMapFile$ = -520					; size = 520
 _L$ = 8							; size = 4
 ?GetMapPreview@CvWorldBuilderMapLoader@@SAHPAUlua_State@@@Z PROC ; CvWorldBuilderMapLoader::GetMapPreview, COMDAT
@@ -12479,7 +12479,7 @@ $LN19@GetMapPrev:
 
 	push	OFFSET _sg_kTempMap
 	call	?GetWorldSizeType@CvWorldBuilderMapLoader@@SA?AW4WorldSizeTypes@@ABVCvWorldBuilderMap@@@Z ; CvWorldBuilderMapLoader::GetWorldSizeType
-	mov	DWORD PTR _eWorldSize$225984[esp+572], eax
+	mov	DWORD PTR _eWorldSize$225983[esp+572], eax
 
 ; 2058 : 
 ; 2059 : 		const char* szDefaultSpeed = sg_kTempMap.GetDefaultGameSpeed();
@@ -12494,7 +12494,7 @@ $LN19@GetMapPrev:
 ; 2064 : 		const int iSpeedCount = GC.getNumGameSpeedInfos();
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	mov	DWORD PTR _eDefaultSpeed$225986[esp+556], eax
+	mov	DWORD PTR _eDefaultSpeed$225985[esp+556], eax
 	call	?getNumGameSpeedInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumGameSpeedInfos
 	mov	ebp, eax
 
@@ -12564,7 +12564,7 @@ $LN60@GetMapPrev:
 ; 2071 : 			{
 ; 2072 : 				eDefaultSpeed = eSpeed;
 
-	mov	DWORD PTR _eDefaultSpeed$225986[esp+556], ebx
+	mov	DWORD PTR _eDefaultSpeed$225985[esp+556], ebx
 $LN16@GetMapPrev:
 
 ; 2073 : 				break;
@@ -12579,8 +12579,8 @@ $LN16@GetMapPrev:
 
 	mov	al, BYTE PTR _sg_kTempMap+12316
 	xor	ecx, ecx
-	mov	DWORD PTR _szStartEra$225997[esp+556], OFFSET $SG225998
-	mov	DWORD PTR _i$225999[esp+556], ecx
+	mov	DWORD PTR _szStartEra$225996[esp+556], OFFSET $SG225997
+	mov	DWORD PTR _i$225998[esp+556], ecx
 	test	al, al
 	jbe	$LN78@GetMapPrev
 $LL14@GetMapPrev:
@@ -12596,11 +12596,11 @@ $LL14@GetMapPrev:
 	movzx	edi, cl
 	imul	edi, 436				; 000001b4H
 	add	edi, OFFSET _sg_kTempMap+536608
-	mov	DWORD PTR _kPlayer$226003[esp+556], edi
+	mov	DWORD PTR _kPlayer$226002[esp+556], edi
 	jmp	SHORT $LN34@GetMapPrev
 $LN35@GetMapPrev:
-	mov	DWORD PTR _kPlayer$226003[esp+556], OFFSET ?sm_kErrorPlayer@CvWorldBuilderMap@@0UPlayer@1@A ; CvWorldBuilderMap::sm_kErrorPlayer
-	mov	edi, DWORD PTR _kPlayer$226003[esp+556]
+	mov	DWORD PTR _kPlayer$226002[esp+556], OFFSET ?sm_kErrorPlayer@CvWorldBuilderMap@@0UPlayer@1@A ; CvWorldBuilderMap::sm_kErrorPlayer
+	mov	edi, DWORD PTR _kPlayer$226002[esp+556]
 $LN34@GetMapPrev:
 
 ; 2085 : 			if(kPlayer.m_bPlayable)
@@ -12660,7 +12660,7 @@ $LN72@GetMapPrev:
 $LN74@GetMapPrev:
 	test	eax, eax
 	je	SHORT $LN61@GetMapPrev
-	mov	edi, DWORD PTR _kPlayer$226003[esp+556]
+	mov	edi, DWORD PTR _kPlayer$226002[esp+556]
 $LN9@GetMapPrev:
 
 ; 2086 : 			{
@@ -12677,12 +12677,12 @@ $LN9@GetMapPrev:
 	jl	SHORT $LL76@GetMapPrev
 $LN77@GetMapPrev:
 	mov	al, BYTE PTR _sg_kTempMap+12316
-	mov	ecx, DWORD PTR _i$225999[esp+556]
+	mov	ecx, DWORD PTR _i$225998[esp+556]
 $LN13@GetMapPrev:
 	movzx	edx, al
 	inc	ecx
 	cmp	ecx, edx
-	mov	DWORD PTR _i$225999[esp+556], ecx
+	mov	DWORD PTR _i$225998[esp+556], ecx
 	jl	$LL14@GetMapPrev
 
 ; 2073 : 				break;
@@ -12703,7 +12703,7 @@ $LN61@GetMapPrev:
 
 	mov	ecx, ebp
 	call	?GetText@CvBaseInfo@@QBEPBDXZ		; CvBaseInfo::GetText
-	mov	DWORD PTR _szStartEra$225997[esp+556], eax
+	mov	DWORD PTR _szStartEra$225996[esp+556], eax
 $LN78@GetMapPrev:
 
 ; 2104 : 					break;
@@ -12720,13 +12720,13 @@ $LN78@GetMapPrev:
 ; 2109 : 
 ; 2110 : 		lua_pushstring(L, "MapSize");
 
-	push	OFFSET $SG226014
+	push	OFFSET $SG226013
 	push	esi
 	call	_lua_pushstring
 
 ; 2111 : 		lua_pushinteger(L, eWorldSize);
 
-	mov	eax, DWORD PTR _eWorldSize$225984[esp+576]
+	mov	eax, DWORD PTR _eWorldSize$225983[esp+576]
 	push	eax
 	push	esi
 	call	_lua_pushinteger
@@ -12740,7 +12740,7 @@ $LN78@GetMapPrev:
 ; 2113 : 
 ; 2114 : 		lua_pushstring(L, "Name");
 
-	push	OFFSET $SG226015
+	push	OFFSET $SG226014
 	push	esi
 	call	_lua_pushstring
 
@@ -12760,7 +12760,7 @@ $LN78@GetMapPrev:
 ; 2117 : 
 ; 2118 : 		lua_pushstring(L, "Description");
 
-	push	OFFSET $SG226016
+	push	OFFSET $SG226015
 	push	esi
 	call	_lua_pushstring
 
@@ -12781,7 +12781,7 @@ $LN78@GetMapPrev:
 ; 2121 : 
 ; 2122 : 		lua_pushstring(L, "PlayerCount");
 
-	push	OFFSET $SG226017
+	push	OFFSET $SG226016
 	push	esi
 	call	_lua_pushstring
 
@@ -12804,7 +12804,7 @@ $LN78@GetMapPrev:
 ; 2125 : 
 ; 2126 : 		lua_pushstring(L, "CityStateCount");
 
-	push	OFFSET $SG226018
+	push	OFFSET $SG226017
 	push	esi
 	call	_lua_pushstring
 
@@ -12827,7 +12827,7 @@ $LN78@GetMapPrev:
 ; 2129 : 
 ; 2130 : 		lua_pushstring(L, "MaxTurns");
 
-	push	OFFSET $SG226019
+	push	OFFSET $SG226018
 	push	esi
 	call	_lua_pushstring
 
@@ -12853,13 +12853,13 @@ $LN80@GetMapPrev:
 ; 2133 : 
 ; 2134 : 		lua_pushstring(L, "StartEra");
 
-	push	OFFSET $SG226020
+	push	OFFSET $SG226019
 	push	esi
 	call	_lua_pushstring
 
 ; 2135 : 		lua_pushstring(L, szStartEra);
 
-	mov	eax, DWORD PTR _szStartEra$225997[esp+584]
+	mov	eax, DWORD PTR _szStartEra$225996[esp+584]
 	push	eax
 	push	esi
 	call	_lua_pushstring
@@ -12873,13 +12873,13 @@ $LN80@GetMapPrev:
 ; 2137 : 
 ; 2138 : 		lua_pushstring(L, "DefaultSpeed");
 
-	push	OFFSET $SG226021
+	push	OFFSET $SG226020
 	push	esi
 	call	_lua_pushstring
 
 ; 2139 : 		lua_pushinteger(L, eDefaultSpeed);
 
-	mov	ecx, DWORD PTR _eDefaultSpeed$225986[esp+608]
+	mov	ecx, DWORD PTR _eDefaultSpeed$225985[esp+608]
 	push	ecx
 	push	esi
 	call	_lua_pushinteger
@@ -12899,7 +12899,7 @@ $LN80@GetMapPrev:
 
 ; 2143 : 		lua_pushstring(L, "VictoryTypes");
 
-	push	OFFSET $SG226023
+	push	OFFSET $SG226022
 	push	esi
 	mov	ebx, eax
 	call	_lua_pushstring
@@ -12926,7 +12926,7 @@ $LL5@GetMapPrev:
 
 	push	edi
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	mov	ebp, OFFSET $SG226029
+	mov	ebp, OFFSET $SG226028
 	call	?getVictoryInfo@CvGlobals@@QAEPAVCvVictoryInfo@@W4VictoryTypes@@@Z ; CvGlobals::getVictoryInfo
 
 ; 2149 : 			if(pkInfo != NULL)
@@ -13101,18 +13101,18 @@ __ehfuncinfo$?InitMap@CvWorldBuilderMapLoader@@SA_NXZ DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?InitMap@CvWorldBuilderMapLoader@@SA_NXZ
 _TEXT	SEGMENT
-$T231340 = -78						; size = 1
-$T231338 = -78						; size = 1
-$T231335 = -78						; size = 1
-$T231339 = -77						; size = 1
-$T231337 = -77						; size = 1
+$T231339 = -78						; size = 1
+$T231337 = -78						; size = 1
+$T231334 = -78						; size = 1
+$T231338 = -77						; size = 1
 $T231336 = -77						; size = 1
+$T231335 = -77						; size = 1
 _kMap$ = -76						; size = 4
 _uiTeamCount$ = -72					; size = 4
-_i$225570 = -68						; size = 4
+_i$225569 = -68						; size = 4
 _uiMajorCivsPlaced$ = -68				; size = 4
 tv2595 = -64						; size = 4
-_kPlotData$225574 = -64					; size = 4
+_kPlotData$225573 = -64					; size = 4
 _uiMinorCivsPlaced$ = -64				; size = 4
 tv2699 = -60						; size = 4
 tv2564 = -60						; size = 4
@@ -13122,17 +13122,17 @@ _uiPlotCount$ = -56					; size = 4
 tv2677 = -52						; size = 4
 tv2585 = -52						; size = 4
 tv2537 = -52						; size = 4
-_iPlotY$225578 = -52					; size = 4
-_iPlotX$225577 = -48					; size = 4
+_iPlotY$225577 = -52					; size = 4
+_iPlotX$225576 = -48					; size = 4
 _uiCityStateCount$ = -48				; size = 4
-_kGameplayPlayer$225299 = -48				; size = 4
+_kGameplayPlayer$225298 = -48				; size = 4
 tv2715 = -44						; size = 4
 tv2686 = -44						; size = 4
 tv1781 = -44						; size = 4
-$T231812 = -44						; size = 1
-_uiCityState$225553 = -44				; size = 4
-_i$225307 = -44						; size = 4
-_i$225293 = -44						; size = 4
+$T231811 = -44						; size = 1
+_uiCityState$225552 = -44				; size = 4
+_i$225306 = -44						; size = 4
+_i$225292 = -44						; size = 4
 tv2727 = -40						; size = 4
 _uiPlayerCount$ = -40					; size = 4
 _kMinorCivs$ = -36					; size = 12
@@ -13165,7 +13165,7 @@ __$EHRec$ = -12						; size = 12
 ; 1061 : 
 ; 1062 : 	OutputDebugStringA("Setting up players...\n");
 
-	push	OFFSET $SG225288
+	push	OFFSET $SG225287
 	mov	DWORD PTR _kMap$[esp+100], ebp
 	call	DWORD PTR __imp__OutputDebugStringA@4
 
@@ -13177,12 +13177,12 @@ __$EHRec$ = -12						; size = 12
 ; 1068 : 	const uint uiPlayerCount = std::min(sg_kSave.GetPlayerCount(), (byte)MAX_CIV_PLAYERS);
 
 	mov	dl, BYTE PTR _sg_kSave+12316
-	mov	BYTE PTR $T231335[esp+96], 63		; 0000003fH
-	mov	BYTE PTR $T231336[esp+96], dl
-	lea	eax, DWORD PTR $T231335[esp+96]
+	mov	BYTE PTR $T231334[esp+96], 63		; 0000003fH
+	mov	BYTE PTR $T231335[esp+96], dl
+	lea	eax, DWORD PTR $T231334[esp+96]
 	cmp	dl, 63					; 0000003fH
 	ja	SHORT $LN96@InitMap
-	lea	eax, DWORD PTR $T231336[esp+96]
+	lea	eax, DWORD PTR $T231335[esp+96]
 $LN96@InitMap:
 	movzx	esi, BYTE PTR [eax]
 
@@ -13190,7 +13190,7 @@ $LN96@InitMap:
 
 	xor	ecx, ecx
 	mov	DWORD PTR _uiPlayerCount$[esp+96], esi
-	mov	DWORD PTR _i$225293[esp+96], ecx
+	mov	DWORD PTR _i$225292[esp+96], ecx
 	cmp	esi, ecx
 	jbe	$LN531@InitMap
 
@@ -13216,7 +13216,7 @@ $LN84@InitMap:
 	mov	eax, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	mov	edi, DWORD PTR tv2479[esp+96]
 	add	edi, eax
-	mov	DWORD PTR _kGameplayPlayer$225299[esp+96], edi
+	mov	DWORD PTR _kGameplayPlayer$225298[esp+96], edi
 
 ; 1074 : 		const CvWorldBuilderMap::Player& kSavedPlayer = sg_kSave.GetPlayer(i);
 
@@ -13311,15 +13311,15 @@ $LN109@InitMap:
 
 ; 1080 : 			kGameplayPlayer.setStartingPlot(pkStartingPlot);
 
-	mov	ecx, DWORD PTR _kGameplayPlayer$225299[esp+96]
+	mov	ecx, DWORD PTR _kGameplayPlayer$225298[esp+96]
 	push	esi
 	call	?setStartingPlot@CvPlayer@@QAEXPAVCvPlot@@@Z ; CvPlayer::setStartingPlot
-	mov	ecx, DWORD PTR _i$225293[esp+96]
+	mov	ecx, DWORD PTR _i$225292[esp+96]
 	mov	esi, DWORD PTR _uiPlayerCount$[esp+96]
 $LN83@InitMap:
 	add	DWORD PTR tv2479[esp+96], 63236		; 0000f704H
 	inc	ecx
-	mov	DWORD PTR _i$225293[esp+96], ecx
+	mov	DWORD PTR _i$225292[esp+96], ecx
 	cmp	ecx, esi
 	jb	$LL549@InitMap
 $LN531@InitMap:
@@ -13334,12 +13334,12 @@ $LN531@InitMap:
 ; 1088 : 	const uint uiCityStateCount = std::min(sg_kSave.GetCityStateCount(), (byte)MAX_MINOR_CIVS);
 
 	mov	dl, BYTE PTR _sg_kSave+12317
-	mov	BYTE PTR $T231337[esp+96], 41		; 00000029H
-	mov	BYTE PTR $T231338[esp+96], dl
-	lea	eax, DWORD PTR $T231337[esp+96]
+	mov	BYTE PTR $T231336[esp+96], 41		; 00000029H
+	mov	BYTE PTR $T231337[esp+96], dl
+	lea	eax, DWORD PTR $T231336[esp+96]
 	cmp	dl, 41					; 00000029H
 	ja	SHORT $LN150@InitMap
-	lea	eax, DWORD PTR $T231338[esp+96]
+	lea	eax, DWORD PTR $T231337[esp+96]
 $LN150@InitMap:
 	movzx	eax, BYTE PTR [eax]
 
@@ -13347,7 +13347,7 @@ $LN150@InitMap:
 
 	xor	ecx, ecx
 	mov	DWORD PTR _uiCityStateCount$[esp+96], eax
-	mov	DWORD PTR _i$225307[esp+96], ecx
+	mov	DWORD PTR _i$225306[esp+96], ecx
 	test	eax, eax
 	jbe	$LN78@InitMap
 
@@ -13475,11 +13475,11 @@ $LN163@InitMap:
 	push	esi
 	mov	ecx, ebp
 	call	?setStartingPlot@CvPlayer@@QAEXPAVCvPlot@@@Z ; CvPlayer::setStartingPlot
-	mov	ecx, DWORD PTR _i$225307[esp+96]
+	mov	ecx, DWORD PTR _i$225306[esp+96]
 $LN79@InitMap:
 	add	DWORD PTR tv2510[esp+96], 63236		; 0000f704H
 	inc	ecx
-	mov	DWORD PTR _i$225307[esp+96], ecx
+	mov	DWORD PTR _i$225306[esp+96], ecx
 	cmp	ecx, DWORD PTR _uiCityStateCount$[esp+96]
 	jb	$LL550@InitMap
 $LN78@InitMap:
@@ -13493,12 +13493,12 @@ $LN78@InitMap:
 ; 1107 : 	const uint uiTeamCount = std::min(sg_kSave.GetTeamCount(), (byte)MAX_TEAMS);
 
 	mov	al, BYTE PTR _sg_kSave+12318
-	mov	BYTE PTR $T231340[esp+96], al
+	mov	BYTE PTR $T231339[esp+96], al
 	cmp	al, 64					; 00000040H
-	mov	BYTE PTR $T231339[esp+96], 64		; 00000040H
-	lea	eax, DWORD PTR $T231339[esp+96]
+	mov	BYTE PTR $T231338[esp+96], 64		; 00000040H
+	lea	eax, DWORD PTR $T231338[esp+96]
 	ja	SHORT $LN204@InitMap
-	lea	eax, DWORD PTR $T231340[esp+96]
+	lea	eax, DWORD PTR $T231339[esp+96]
 $LN204@InitMap:
 	movzx	edx, BYTE PTR [eax]
 
@@ -13624,7 +13624,7 @@ $LN75@InitMap:
 ; 1139 : 
 ; 1140 : 	OutputDebugStringA("Setting up map...\n");
 
-	push	OFFSET $SG225498
+	push	OFFSET $SG225497
 	mov	DWORD PTR _uiMajorCivsPlaced$[esp+100], ebx
 	mov	DWORD PTR _uiMinorCivsPlaced$[esp+100], ebx
 	call	DWORD PTR __imp__OutputDebugStringA@4
@@ -13925,8 +13925,8 @@ $LN47@InitMap:
 ; 1213 : 		pkPlot->SetContinentType(kPlotData.GetContinentType());
 
 	mov	dl, BYTE PTR [edi+5]
-	mov	BYTE PTR $T231812[esp+96], dl
-	mov	eax, DWORD PTR $T231812[esp+96]
+	mov	BYTE PTR $T231811[esp+96], dl
+	mov	eax, DWORD PTR $T231811[esp+96]
 	push	eax
 	mov	ecx, esi
 	call	?SetContinentType@CvPlot@@QAEXD@Z	; CvPlot::SetContinentType
@@ -13943,7 +13943,7 @@ $LN68@InitMap:
 ; 1216 : 	OutputDebugStringA("Calculating Areas...\n");
 
 	mov	esi, DWORD PTR __imp__OutputDebugStringA@4
-	push	OFFSET $SG225532
+	push	OFFSET $SG225531
 	call	esi
 
 ; 1217 : 
@@ -13955,7 +13955,7 @@ $LN68@InitMap:
 ; 1219 : 
 ; 1220 : 	OutputDebugStringA("Adding Scenario Elements...\n");
 
-	push	OFFSET $SG225533
+	push	OFFSET $SG225532
 	call	esi
 
 ; 1221 : 
@@ -14253,7 +14253,7 @@ $LN547@InitMap:
 ; 1264 : 	for(uint uiCityState = 0; uiCityState < uiCityStateCount; ++uiCityState)
 
 	xor	eax, eax
-	mov	DWORD PTR _uiCityState$225553[esp+96], eax
+	mov	DWORD PTR _uiCityState$225552[esp+96], eax
 	cmp	DWORD PTR _uiCityStateCount$[esp+96], eax
 	jbe	$LN33@InitMap
 	mov	ebp, DWORD PTR _uiPlayerCount$[esp+96]
@@ -14345,10 +14345,10 @@ $LN34@InitMap:
 ; 1263 : 	// Init City State Relationships
 ; 1264 : 	for(uint uiCityState = 0; uiCityState < uiCityStateCount; ++uiCityState)
 
-	mov	eax, DWORD PTR _uiCityState$225553[esp+96]
+	mov	eax, DWORD PTR _uiCityState$225552[esp+96]
 	add	DWORD PTR tv2677[esp+96], 4
 	inc	eax
-	mov	DWORD PTR _uiCityState$225553[esp+96], eax
+	mov	DWORD PTR _uiCityState$225552[esp+96], eax
 	cmp	eax, DWORD PTR _uiCityStateCount$[esp+96]
 	jb	SHORT $LL35@InitMap
 $LN33@InitMap:
@@ -14363,7 +14363,7 @@ $LN33@InitMap:
 ; 1287 : 	for(uint i = 0; i < uiPlotCount; ++i)
 
 	xor	ecx, ecx
-	mov	DWORD PTR _i$225570[esp+96], ecx
+	mov	DWORD PTR _i$225569[esp+96], ecx
 	cmp	DWORD PTR _uiPlotCount$[esp+96], ecx
 	jbe	$LN536@InitMap
 	mov	DWORD PTR tv2686[esp+96], ecx
@@ -14415,7 +14415,7 @@ $LL541@InitMap:
 ; 1286 : 	// Scenario elements must come after areas have been calculated
 ; 1287 : 	for(uint i = 0; i < uiPlotCount; ++i)
 
-	mov	ecx, DWORD PTR _i$225570[esp+96]
+	mov	ecx, DWORD PTR _i$225569[esp+96]
 $LN26@InitMap:
 
 ; 1288 : 	{
@@ -14429,17 +14429,17 @@ $LN26@InitMap:
 	jae	SHORT $LN384@InitMap
 	mov	edx, DWORD PTR tv2699[esp+96]
 	add	edx, 262144				; 00040000H
-	mov	DWORD PTR _kPlotData$225574[esp+96], edx
+	mov	DWORD PTR _kPlotData$225573[esp+96], edx
 	jmp	SHORT $LN383@InitMap
 $LN384@InitMap:
-	mov	DWORD PTR _kPlotData$225574[esp+96], OFFSET ?sm_kErrorPlotScenarioData@CvWorldBuilderMap@@0UPlotScenarioData@1@A ; CvWorldBuilderMap::sm_kErrorPlotScenarioData
+	mov	DWORD PTR _kPlotData$225573[esp+96], OFFSET ?sm_kErrorPlotScenarioData@CvWorldBuilderMap@@0UPlotScenarioData@1@A ; CvWorldBuilderMap::sm_kErrorPlotScenarioData
 $LN383@InitMap:
 
 ; 1290 : 		CvPlot* pkPlot = kMap.plotByIndex(i);
 
 	test	ecx, ecx
 	jl	$LN25@InitMap
-	mov	ecx, DWORD PTR _i$225570[esp+96]
+	mov	ecx, DWORD PTR _i$225569[esp+96]
 	mov	edx, DWORD PTR _kMap$[esp+96]
 	cmp	ecx, DWORD PTR [edx+4028]
 	jge	$LN25@InitMap
@@ -14458,13 +14458,13 @@ $LN383@InitMap:
 
 	movsx	ecx, WORD PTR [ebp+2]
 	movsx	edx, WORD PTR [ebp]
-	mov	DWORD PTR _iPlotY$225578[esp+96], ecx
+	mov	DWORD PTR _iPlotY$225577[esp+96], ecx
 
 ; 1296 : 
 ; 1297 : 		const byte byNaturalWonder = sg_kSave.GetPlotData(i).GetNaturalWonderType();
 
-	mov	ecx, DWORD PTR _i$225570[esp+96]
-	mov	DWORD PTR _iPlotX$225577[esp+96], edx
+	mov	ecx, DWORD PTR _i$225569[esp+96]
+	mov	DWORD PTR _iPlotX$225576[esp+96], edx
 	cmp	ecx, eax
 	jae	SHORT $LN398@InitMap
 	mov	eax, DWORD PTR tv2699[esp+96]
@@ -14492,7 +14492,7 @@ $LN542@InitMap:
 ; 1300 : 
 ; 1301 : 		if(kPlotData.m_byImprovement != CvWorldBuilderMap::PlotScenarioData::InvalidImprovement)
 
-	mov	edi, DWORD PTR _kPlotData$225574[esp+96]
+	mov	edi, DWORD PTR _kPlotData$225573[esp+96]
 	mov	al, BYTE PTR [edi+5]
 	cmp	al, 255					; 000000ffH
 	je	SHORT $LN21@InitMap
@@ -14602,7 +14602,7 @@ $LN15@InitMap:
 	mov	ecx, ebp
 	call	?SetPlayerResponsibleForRoute@CvPlot@@QAEXW4PlayerTypes@@@Z ; CvPlot::SetPlayerResponsibleForRoute
 $LN543@InitMap:
-	mov	edi, DWORD PTR _kPlotData$225574[esp+96]
+	mov	edi, DWORD PTR _kPlotData$225573[esp+96]
 $LN533@InitMap:
 
 ; 1327 : 				}
@@ -14617,14 +14617,14 @@ $LN533@InitMap:
 ; 1333 : 		{
 ; 1334 : 			SetupCity(*pkCity, iPlotX, iPlotY);
 
-	mov	ebx, DWORD PTR _iPlotX$225577[esp+96]
+	mov	ebx, DWORD PTR _iPlotX$225576[esp+96]
 	cmp	eax, DWORD PTR _sg_kSave+2884
 	jae	SHORT $LN14@InitMap
 	imul	eax, 136				; 00000088H
 	add	eax, DWORD PTR _sg_kSave+2876
 	test	eax, eax
 	je	SHORT $LN14@InitMap
-	mov	ecx, DWORD PTR _iPlotY$225578[esp+96]
+	mov	ecx, DWORD PTR _iPlotY$225577[esp+96]
 	push	ecx
 	push	ebx
 	push	eax
@@ -14649,7 +14649,7 @@ $LN14@InitMap:
 
 	test	esi, esi
 	je	SHORT $LN534@InitMap
-	mov	edi, DWORD PTR _iPlotY$225578[esp+96]
+	mov	edi, DWORD PTR _iPlotY$225577[esp+96]
 	npad	1
 $LL425@InitMap:
 
@@ -14684,7 +14684,7 @@ $LL10@InitMap:
 ; 1348 : 			if(sg_kSave.GetVisibility(iPlotX, iPlotY, uiTeam))
 
 	mov	ecx, DWORD PTR _sg_kSave+12232
-	mov	eax, DWORD PTR _iPlotY$225578[esp+96]
+	mov	eax, DWORD PTR _iPlotY$225577[esp+96]
 	imul	ecx, edi
 	imul	ecx, esi
 	imul	eax, edi
@@ -14727,11 +14727,11 @@ $LN25@InitMap:
 ; 1286 : 	// Scenario elements must come after areas have been calculated
 ; 1287 : 	for(uint i = 0; i < uiPlotCount; ++i)
 
-	mov	eax, DWORD PTR _i$225570[esp+96]
+	mov	eax, DWORD PTR _i$225569[esp+96]
 	add	DWORD PTR tv2686[esp+96], 484		; 000001e4H
 	add	DWORD PTR tv2699[esp+96], 8
 	inc	eax
-	mov	DWORD PTR _i$225570[esp+96], eax
+	mov	DWORD PTR _i$225569[esp+96], eax
 	cmp	eax, DWORD PTR _uiPlotCount$[esp+96]
 	jb	$LL541@InitMap
 $LN536@InitMap:
@@ -14837,7 +14837,7 @@ $LN540@InitMap:
 ; 1370 : 
 ; 1371 : 	OutputDebugStringA("Map Load Success!\n");
 
-	push	OFFSET $SG225618
+	push	OFFSET $SG225617
 	call	DWORD PTR __imp__OutputDebugStringA@4
 
 ; 1372 : 
@@ -16333,14 +16333,14 @@ __ehfuncinfo$?Save@CvWorldBuilderMapLoader@@SA_NPB_WPBD@Z DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?Save@CvWorldBuilderMapLoader@@SA_NPB_WPBD@Z
 _TEXT	SEGMENT
-_sFilename$225629 = -1100				; size = 4
-_sFileTitle$225644 = -1096				; size = 4
+_sFilename$225628 = -1100				; size = 4
+_sFileTitle$225643 = -1096				; size = 4
 tv638 = -1092						; size = 4
 tv650 = -1088						; size = 4
 _uiPlotCount$ = -1084					; size = 4
 _kMap$ = -1080						; size = 4
-_FStringFixedBuffer_sFilename$225643 = -1076		; size = 532
-_FStringFixedBuffer_sFileTitle$225645 = -544		; size = 532
+_FStringFixedBuffer_sFilename$225642 = -1076		; size = 532
+_FStringFixedBuffer_sFileTitle$225644 = -544		; size = 532
 __$EHRec$ = -12						; size = 12
 _wszFilename$ = 8					; size = 4
 _szMapName$ = 12					; size = 4
@@ -16397,10 +16397,10 @@ _szMapName$ = 12					; size = 4
 
 	call	?FStringW_GetStringInitData@@YAPAUFStringWData@FStringW@@XZ ; FStringW_GetStringInitData
 	add	eax, 12					; 0000000cH
-	mov	DWORD PTR _sFilename$225629[esp+1112], eax
-	lea	eax, DWORD PTR _sFilename$225629[esp+1112]
+	mov	DWORD PTR _sFilename$225628[esp+1112], eax
+	lea	eax, DWORD PTR _sFilename$225628[esp+1112]
 	push	eax
-	lea	ecx, DWORD PTR _FStringFixedBuffer_sFilename$225643[esp+1116]
+	lea	ecx, DWORD PTR _FStringFixedBuffer_sFilename$225642[esp+1116]
 	mov	DWORD PTR __$EHRec$[esp+1124], ebp
 	call	??0?$FStringWFixedBuffer@$0BAE@@FStringW@@QAE@AAV1@@Z ; FStringW::FStringWFixedBuffer<260>::FStringWFixedBuffer<260>
 
@@ -16408,10 +16408,10 @@ _szMapName$ = 12					; size = 4
 
 	call	?FStringW_GetStringInitData@@YAPAUFStringWData@FStringW@@XZ ; FStringW_GetStringInitData
 	add	eax, 12					; 0000000cH
-	mov	DWORD PTR _sFileTitle$225644[esp+1112], eax
-	lea	ecx, DWORD PTR _sFileTitle$225644[esp+1112]
+	mov	DWORD PTR _sFileTitle$225643[esp+1112], eax
+	lea	ecx, DWORD PTR _sFileTitle$225643[esp+1112]
 	push	ecx
-	lea	ecx, DWORD PTR _FStringFixedBuffer_sFileTitle$225645[esp+1116]
+	lea	ecx, DWORD PTR _FStringFixedBuffer_sFileTitle$225644[esp+1116]
 	mov	BYTE PTR __$EHRec$[esp+1124], 1
 	call	??0?$FStringWFixedBuffer@$0BAE@@FStringW@@QAE@AAV1@@Z ; FStringW::FStringWFixedBuffer<260>::FStringWFixedBuffer<260>
 
@@ -16437,26 +16437,26 @@ $LN56@Save:
 	push	ebp
 	push	esi
 	push	eax
-	lea	ecx, DWORD PTR _sFilename$225629[esp+1124]
+	lea	ecx, DWORD PTR _sFilename$225628[esp+1124]
 	call	?Copy@FStringW@@QAEXHPB_WH@Z		; FStringW::Copy
 
 ; 1406 : 		sFilename.ExtractFileTitle(sFileTitle);
 
 	push	92					; 0000005cH
-	lea	edx, DWORD PTR _sFileTitle$225644[esp+1116]
+	lea	edx, DWORD PTR _sFileTitle$225643[esp+1116]
 	push	edx
-	lea	ecx, DWORD PTR _sFilename$225629[esp+1120]
+	lea	ecx, DWORD PTR _sFilename$225628[esp+1120]
 	call	?ExtractFileTitle@FStringW@@QBEXAAV1@_W@Z ; FStringW::ExtractFileTitle
 
 ; 1407 : 		sFileTitle.CopyToUTF8(&sg_kSave.m_sMapName);
 
 	push	OFFSET _sg_kSave+4008
-	lea	ecx, DWORD PTR _sFileTitle$225644[esp+1116]
+	lea	ecx, DWORD PTR _sFileTitle$225643[esp+1116]
 	call	?CopyToUTF8@FStringW@@QBEXPAVFStringA@@@Z ; FStringW::CopyToUTF8
 
 ; 1408 : 	}
 
-	mov	esi, DWORD PTR _sFileTitle$225644[esp+1112]
+	mov	esi, DWORD PTR _sFileTitle$225643[esp+1112]
 	add	esi, -12				; fffffff4H
 	mov	BYTE PTR __$EHRec$[esp+1120], 0
 	cmp	esi, ebp
@@ -16471,10 +16471,10 @@ $LN56@Save:
 	add	esp, 4
 $LN63@Save:
 	call	?FStringW_GetStringInitData@@YAPAUFStringWData@FStringW@@XZ ; FStringW_GetStringInitData
-	mov	esi, DWORD PTR _sFilename$225629[esp+1112]
+	mov	esi, DWORD PTR _sFilename$225628[esp+1112]
 	add	eax, 12					; 0000000cH
 	add	esi, -12				; fffffff4H
-	mov	DWORD PTR _sFileTitle$225644[esp+1112], eax
+	mov	DWORD PTR _sFileTitle$225643[esp+1112], eax
 	mov	DWORD PTR __$EHRec$[esp+1120], -1
 	cmp	esi, ebp
 	je	SHORT $LN76@Save
@@ -16489,7 +16489,7 @@ $LN63@Save:
 $LN76@Save:
 	call	?FStringW_GetStringInitData@@YAPAUFStringWData@FStringW@@XZ ; FStringW_GetStringInitData
 	add	eax, 12					; 0000000cH
-	mov	DWORD PTR _sFilename$225629[esp+1112], eax
+	mov	DWORD PTR _sFilename$225628[esp+1112], eax
 
 ; 1409 : 	else
 
@@ -16520,7 +16520,7 @@ $LN83@Save:
 ; 1414 : 	sg_kSave.m_sMapDescription = "";
 
 	push	ebp
-	push	OFFSET $SG225647
+	push	OFFSET $SG225646
 	push	ebp
 	mov	ecx, OFFSET _sg_kSave+4012
 	call	?Copy@FStringA@@QAEXHPBDH@Z		; FStringA::Copy
@@ -16910,10 +16910,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?Save@CvWorldBuilderMapLoader@@SA_NPB_WPBD@Z$0:
-	lea	ecx, DWORD PTR _sFilename$225629[ebp]
+	lea	ecx, DWORD PTR _sFilename$225628[ebp]
 	jmp	??1FStringW@@QAE@XZ			; FStringW::~FStringW
 __unwindfunclet$?Save@CvWorldBuilderMapLoader@@SA_NPB_WPBD@Z$1:
-	lea	ecx, DWORD PTR _sFileTitle$225644[ebp]
+	lea	ecx, DWORD PTR _sFileTitle$225643[ebp]
 	jmp	??1FStringW@@QAE@XZ			; FStringW::~FStringW
 __ehhandler$?Save@CvWorldBuilderMapLoader@@SA_NPB_WPBD@Z:
 	mov	eax, OFFSET __ehfuncinfo$?Save@CvWorldBuilderMapLoader@@SA_NPB_WPBD@Z

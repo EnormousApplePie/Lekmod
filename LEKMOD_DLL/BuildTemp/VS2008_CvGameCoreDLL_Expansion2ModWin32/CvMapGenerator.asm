@@ -10,41 +10,41 @@ INCLUDELIB MSVCRT
 INCLUDELIB OLDNAMES
 
 CONST	SEGMENT
-$SG217768 DB	'Map Script', 00H
+$SG217767 DB	'Map Script', 00H
 	ORG $+1
-$SG217787 DB	'SELECT * from Worlds where ID = ? LIMIT 1', 00H
+$SG217786 DB	'SELECT * from Worlds where ID = ? LIMIT 1', 00H
 	ORG $+2
-$SG217811 DB	'CvMapGenerator - GetMapInitData()', 00H
+$SG217810 DB	'CvMapGenerator - GetMapInitData()', 00H
 	ORG $+2
-$SG217814 DB	'GetMapInitData', 00H
+$SG217813 DB	'GetMapInitData', 00H
 	ORG $+1
-$SG217818 DB	'Width', 00H
+$SG217817 DB	'Width', 00H
 	ORG $+2
-$SG217820 DB	'Height', 00H
+$SG217819 DB	'Height', 00H
 	ORG $+1
-$SG217822 DB	'WrapX', 00H
+$SG217821 DB	'WrapX', 00H
 	ORG $+2
-$SG217824 DB	'WrapY', 00H
+$SG217823 DB	'WrapY', 00H
 	ORG $+2
-$SG217826 DB	'TopLatitude', 00H
-$SG217828 DB	'BottomLatitude', 00H
+$SG217825 DB	'TopLatitude', 00H
+$SG217827 DB	'BottomLatitude', 00H
 	ORG $+1
-$SG217835 DB	'CvMapGenerator - GetGameInitialItemsOverrides()', 00H
-$SG217838 DB	'GetGameInitialItemsOverrides', 00H
+$SG217834 DB	'CvMapGenerator - GetGameInitialItemsOverrides()', 00H
+$SG217837 DB	'GetGameInitialItemsOverrides', 00H
 	ORG $+3
-$SG217842 DB	'GrantInitialFreeTechsPerTeam', 00H
+$SG217841 DB	'GrantInitialFreeTechsPerTeam', 00H
 	ORG $+3
-$SG217853 DB	'GrantInitialGoldPerPlayer', 00H
+$SG217852 DB	'GrantInitialGoldPerPlayer', 00H
 	ORG $+2
-$SG217864 DB	'GrantInitialCulturePerPlayer', 00H
+$SG217863 DB	'GrantInitialCulturePerPlayer', 00H
 	ORG $+3
-$SG217875 DB	'ClearResearchQueuePerPlayer', 00H
-$SG217886 DB	'GrantInitialUnitsPerPlayer', 00H
+$SG217874 DB	'ClearResearchQueuePerPlayer', 00H
+$SG217885 DB	'GrantInitialUnitsPerPlayer', 00H
 	ORG $+1
-$SG217902 DB	'CvMapGenerator - GenerateRandomMap()', 00H
+$SG217901 DB	'CvMapGenerator - GenerateRandomMap()', 00H
 	ORG $+3
-$SG217905 DB	'GenerateMap', 00H
-$SG217907 DB	'Cannot find map script entry point GenerateMap()', 00H
+$SG217904 DB	'GenerateMap', 00H
+$SG217906 DB	'Cannot find map script entry point GenerateMap()', 00H
 CONST	ENDS
 PUBLIC	?pGetMapInitData@CvMapGenerator@@KAHPAUlua_State@@@Z ; CvMapGenerator::pGetMapInitData
 EXTRN	??1cvStopWatch@@QAE@XZ:PROC			; cvStopWatch::~cvStopWatch
@@ -98,7 +98,7 @@ _L$ = 8							; size = 4
 	push	ebx
 	push	ebx
 	push	ebx
-	push	OFFSET $SG217811
+	push	OFFSET $SG217810
 	lea	ecx, DWORD PTR _stopWatch$[esp+84]
 	call	??0cvStopWatch@@QAE@PBD0I_N1@Z		; cvStopWatch::cvStopWatch
 
@@ -114,7 +114,7 @@ _L$ = 8							; size = 4
 ; 108  : 	pArgs->bSuccess = false;
 ; 109  : 	lua_getglobal(L, "GetMapInitData");
 
-	push	OFFSET $SG217814
+	push	OFFSET $SG217813
 	mov	edi, eax
 	push	-10002					; ffffd8eeH
 	push	esi
@@ -167,7 +167,7 @@ _L$ = 8							; size = 4
 ; 116  : 		{
 ; 117  : 			lua_getfield(L, t, "Width");
 
-	push	OFFSET $SG217818
+	push	OFFSET $SG217817
 	push	ebx
 	push	esi
 	call	_lua_getfield
@@ -200,7 +200,7 @@ $LN6@pGetMapIni:
 ; 121  : 
 ; 122  : 			lua_getfield(L, t, "Height");
 
-	push	OFFSET $SG217820
+	push	OFFSET $SG217819
 	push	ebx
 	push	esi
 	call	_lua_getfield
@@ -233,7 +233,7 @@ $LN5@pGetMapIni:
 ; 126  : 
 ; 127  : 			lua_getfield(L, t, "WrapX");
 
-	push	OFFSET $SG217822
+	push	OFFSET $SG217821
 	push	ebx
 	push	esi
 	call	_lua_getfield
@@ -268,7 +268,7 @@ $LN4@pGetMapIni:
 ; 131  : 
 ; 132  : 			lua_getfield(L, t, "WrapY");
 
-	push	OFFSET $SG217824
+	push	OFFSET $SG217823
 	push	ebx
 	push	esi
 	call	_lua_getfield
@@ -297,7 +297,7 @@ $LN3@pGetMapIni:
 ; 135  : 
 ; 136  : 			lua_getfield(L, t, "TopLatitude");
 
-	push	OFFSET $SG217826
+	push	OFFSET $SG217825
 	push	ebx
 	push	esi
 	call	_lua_getfield
@@ -324,7 +324,7 @@ $LN2@pGetMapIni:
 ; 139  : 
 ; 140  : 			lua_getfield(L, t, "BottomLatitude");
 
-	push	OFFSET $SG217828
+	push	OFFSET $SG217827
 	push	ebx
 	push	esi
 	call	_lua_getfield
@@ -423,7 +423,7 @@ _L$ = 8							; size = 4
 	push	0
 	push	0
 	push	0
-	push	OFFSET $SG217902
+	push	OFFSET $SG217901
 	lea	ecx, DWORD PTR _stopWatch$[esp+80]
 	call	??0cvStopWatch@@QAE@PBD0I_N1@Z		; cvStopWatch::cvStopWatch
 
@@ -438,7 +438,7 @@ _L$ = 8							; size = 4
 ; 280  : 
 ; 281  : 	lua_getglobal(L, "GenerateMap");
 
-	push	OFFSET $SG217905
+	push	OFFSET $SG217904
 	push	-10002					; ffffd8eeH
 	push	esi
 	mov	edi, eax
@@ -455,7 +455,7 @@ _L$ = 8							; size = 4
 
 ; 283  : 		luaL_error(L, "Cannot find map script entry point GenerateMap()");
 
-	push	OFFSET $SG217907
+	push	OFFSET $SG217906
 	push	esi
 	call	_luaL_error
 	add	esp, 8
@@ -921,7 +921,7 @@ _szMapScriptName$ = 8					; size = 4
 
 	mov	eax, DWORD PTR [edi]
 	mov	edx, DWORD PTR [eax]
-	push	OFFSET $SG217768
+	push	OFFSET $SG217767
 	mov	ecx, edi
 	call	edx
 
@@ -1399,7 +1399,7 @@ _eWorldSize$ = 12					; size = 4
 ; 54   : 	db.Execute(kQuery, "SELECT * from Worlds where ID = ? LIMIT 1");
 
 	push	-1
-	push	OFFSET $SG217787
+	push	OFFSET $SG217786
 	lea	eax, DWORD PTR _kQuery$[esp+452]
 	push	eax
 	mov	ecx, esi
@@ -1544,7 +1544,7 @@ PUBLIC	??A?$vector@_NV?$allocator@_N@std@@@std@@QAE?AV?$_Vb_reference@IHV?$vecto
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??A?$vector@_NV?$allocator@_N@std@@@std@@QAE?AV?$_Vb_reference@IHV?$vector@_NV?$allocator@_N@std@@@std@@@1@I@Z
 _TEXT	SEGMENT
-__Tmp$218349 = -8					; size = 8
+__Tmp$218348 = -8					; size = 8
 ___$ReturnUdt$ = 8					; size = 4
 __Off$ = 12						; size = 4
 ??A?$vector@_NV?$allocator@_N@std@@@std@@QAE?AV?$_Vb_reference@IHV?$vector@_NV?$allocator@_N@std@@@std@@@1@I@Z PROC ; std::vector<bool,std::allocator<bool> >::operator[], COMDAT
@@ -1558,15 +1558,15 @@ __Off$ = 12						; size = 4
 
 	mov	ecx, DWORD PTR [ecx+8]
 	xor	eax, eax
-	mov	DWORD PTR __Tmp$218349[esp+12], eax
+	mov	DWORD PTR __Tmp$218348[esp+12], eax
 	mov	eax, DWORD PTR __Off$[esp+4]
-	mov	DWORD PTR __Tmp$218349[esp+8], ecx
+	mov	DWORD PTR __Tmp$218348[esp+8], ecx
 	push	eax
-	lea	ecx, DWORD PTR __Tmp$218349[esp+12]
+	lea	ecx, DWORD PTR __Tmp$218348[esp+12]
 	call	??Y?$_Vb_const_iterator@IHV?$vector@_NV?$allocator@_N@std@@@std@@@std@@QAEAAV01@H@Z ; std::_Vb_const_iterator<unsigned int,int,std::vector<bool,std::allocator<bool> > >::operator+=
 	mov	eax, DWORD PTR ___$ReturnUdt$[esp+4]
-	mov	ecx, DWORD PTR __Tmp$218349[esp+8]
-	mov	edx, DWORD PTR __Tmp$218349[esp+12]
+	mov	ecx, DWORD PTR __Tmp$218348[esp+8]
+	mov	edx, DWORD PTR __Tmp$218348[esp+12]
 	mov	DWORD PTR [eax], ecx
 	mov	DWORD PTR [eax+4], edx
 
@@ -1596,16 +1596,16 @@ __ehfuncinfo$?pGetGameInitialItemsOverrides@CvMapGenerator@@KAHPAUlua_State@@@Z 
 xdata$x	ENDS
 ;	COMDAT ?pGetGameInitialItemsOverrides@CvMapGenerator@@KAHPAUlua_State@@@Z
 _TEXT	SEGMENT
-_bOverride$217894 = -64					; size = 1
-_bOverride$217883 = -64					; size = 1
-_bOverride$217872 = -64					; size = 1
-_bOverride$217861 = -64					; size = 1
-_bOverride$217850 = -64					; size = 1
-$T218374 = -60						; size = 8
+_bOverride$217893 = -64					; size = 1
+_bOverride$217882 = -64					; size = 1
+_bOverride$217871 = -64					; size = 1
+_bOverride$217860 = -64					; size = 1
+_bOverride$217849 = -64					; size = 1
 $T218373 = -60						; size = 8
 $T218372 = -60						; size = 8
 $T218371 = -60						; size = 8
 $T218370 = -60						; size = 8
+$T218369 = -60						; size = 8
 _stopWatch$ = -52					; size = 40
 __$EHRec$ = -12						; size = 12
 _L$ = 8							; size = 4
@@ -1630,7 +1630,7 @@ _L$ = 8							; size = 4
 	push	ebx
 	push	ebx
 	push	ebx
-	push	OFFSET $SG217835
+	push	OFFSET $SG217834
 	lea	ecx, DWORD PTR _stopWatch$[esp+96]
 	call	??0cvStopWatch@@QAE@PBD0I_N1@Z		; cvStopWatch::cvStopWatch
 
@@ -1646,7 +1646,7 @@ _L$ = 8							; size = 4
 ; 156  : 	pArgs->bSuccess = false;
 ; 157  : 	lua_getglobal(L, "GetGameInitialItemsOverrides");
 
-	push	OFFSET $SG217838
+	push	OFFSET $SG217837
 	mov	ebp, eax
 	push	-10002					; ffffd8eeH
 	push	esi
@@ -1694,7 +1694,7 @@ _L$ = 8							; size = 4
 ; 165  : 			//Initial Free Techs per Team
 ; 166  : 			lua_getfield(L, t, "GrantInitialFreeTechsPerTeam");
 
-	push	OFFSET $SG217842
+	push	OFFSET $SG217841
 	push	ebx
 	push	esi
 	call	_lua_getfield
@@ -1756,7 +1756,7 @@ $LL24@pGetGameIn:
 	add	esp, 16					; 00000010H
 	test	eax, eax
 	setne	al
-	mov	BYTE PTR _bOverride$217850[esp+80], al
+	mov	BYTE PTR _bOverride$217849[esp+80], al
 
 ; 176  : 						if(eTeam >= 0 && eTeam < MAX_TEAMS)
 
@@ -1766,11 +1766,11 @@ $LL24@pGetGameIn:
 ; 177  : 						{
 ; 178  : 							pArgs->pkOverrides->GrantInitialFreeTechsPerTeam[eTeam] = bOverride;
 
-	mov	ecx, DWORD PTR _bOverride$217850[esp+80]
+	mov	ecx, DWORD PTR _bOverride$217849[esp+80]
 	push	ecx
 	mov	ecx, DWORD PTR [ebp+4]
 	push	edi
-	lea	edx, DWORD PTR $T218370[esp+88]
+	lea	edx, DWORD PTR $T218369[esp+88]
 	push	edx
 	call	??A?$vector@_NV?$allocator@_N@std@@@std@@QAE?AV?$_Vb_reference@IHV?$vector@_NV?$allocator@_N@std@@@std@@@1@I@Z ; std::vector<bool,std::allocator<bool> >::operator[]
 	mov	ecx, eax
@@ -1804,7 +1804,7 @@ $LN42@pGetGameIn:
 ; 186  : 			//Initial Gold per Player
 ; 187  : 			lua_getfield(L, t, "GrantInitialGoldPerPlayer");
 
-	push	OFFSET $SG217853
+	push	OFFSET $SG217852
 	push	ebx
 	push	esi
 	call	_lua_getfield
@@ -1866,7 +1866,7 @@ $LL19@pGetGameIn:
 	add	esp, 16					; 00000010H
 	test	eax, eax
 	setne	al
-	mov	BYTE PTR _bOverride$217861[esp+80], al
+	mov	BYTE PTR _bOverride$217860[esp+80], al
 
 ; 197  : 						if(ePlayer >= 0 && ePlayer < MAX_PLAYERS)
 
@@ -1876,11 +1876,11 @@ $LL19@pGetGameIn:
 ; 198  : 						{
 ; 199  : 							pArgs->pkOverrides->GrantInitialGoldPerPlayer[ePlayer] = bOverride;
 
-	mov	ecx, DWORD PTR _bOverride$217861[esp+80]
+	mov	ecx, DWORD PTR _bOverride$217860[esp+80]
 	push	ecx
 	mov	ecx, DWORD PTR [ebp+4]
 	push	edi
-	lea	edx, DWORD PTR $T218371[esp+88]
+	lea	edx, DWORD PTR $T218370[esp+88]
 	push	edx
 	add	ecx, 20					; 00000014H
 	call	??A?$vector@_NV?$allocator@_N@std@@@std@@QAE?AV?$_Vb_reference@IHV?$vector@_NV?$allocator@_N@std@@@std@@@1@I@Z ; std::vector<bool,std::allocator<bool> >::operator[]
@@ -1915,7 +1915,7 @@ $LN18@pGetGameIn:
 ; 207  : 			//Initial Culture per Player
 ; 208  : 			lua_getfield(L, t, "GrantInitialCulturePerPlayer");
 
-	push	OFFSET $SG217864
+	push	OFFSET $SG217863
 	push	ebx
 	push	esi
 	call	_lua_getfield
@@ -1978,7 +1978,7 @@ $LL14@pGetGameIn:
 	add	esp, 16					; 00000010H
 	test	eax, eax
 	setne	al
-	mov	BYTE PTR _bOverride$217872[esp+80], al
+	mov	BYTE PTR _bOverride$217871[esp+80], al
 
 ; 218  : 						if(ePlayer >= 0 && ePlayer < MAX_PLAYERS)
 
@@ -1988,11 +1988,11 @@ $LL14@pGetGameIn:
 ; 219  : 						{
 ; 220  : 							pArgs->pkOverrides->GrantInitialCulturePerPlayer[ePlayer] = bOverride;
 
-	mov	ecx, DWORD PTR _bOverride$217872[esp+80]
+	mov	ecx, DWORD PTR _bOverride$217871[esp+80]
 	push	ecx
 	mov	ecx, DWORD PTR [ebp+4]
 	push	edi
-	lea	edx, DWORD PTR $T218372[esp+88]
+	lea	edx, DWORD PTR $T218371[esp+88]
 	push	edx
 	add	ecx, 40					; 00000028H
 	call	??A?$vector@_NV?$allocator@_N@std@@@std@@QAE?AV?$_Vb_reference@IHV?$vector@_NV?$allocator@_N@std@@@std@@@1@I@Z ; std::vector<bool,std::allocator<bool> >::operator[]
@@ -2027,7 +2027,7 @@ $LN13@pGetGameIn:
 ; 228  : 			//Clear research queue per Player
 ; 229  : 			lua_getfield(L, t, "ClearResearchQueuePerPlayer");
 
-	push	OFFSET $SG217875
+	push	OFFSET $SG217874
 	push	ebx
 	push	esi
 	call	_lua_getfield
@@ -2089,7 +2089,7 @@ $LL9@pGetGameIn:
 	add	esp, 16					; 00000010H
 	test	eax, eax
 	setne	al
-	mov	BYTE PTR _bOverride$217883[esp+80], al
+	mov	BYTE PTR _bOverride$217882[esp+80], al
 
 ; 239  : 						if(ePlayer >= 0 && ePlayer < MAX_PLAYERS)
 
@@ -2099,11 +2099,11 @@ $LL9@pGetGameIn:
 ; 240  : 						{
 ; 241  : 							pArgs->pkOverrides->ClearResearchQueuePerPlayer[ePlayer] = bOverride;
 
-	mov	ecx, DWORD PTR _bOverride$217883[esp+80]
+	mov	ecx, DWORD PTR _bOverride$217882[esp+80]
 	push	ecx
 	mov	ecx, DWORD PTR [ebp+4]
 	push	edi
-	lea	edx, DWORD PTR $T218373[esp+88]
+	lea	edx, DWORD PTR $T218372[esp+88]
 	push	edx
 	add	ecx, 60					; 0000003cH
 	call	??A?$vector@_NV?$allocator@_N@std@@@std@@QAE?AV?$_Vb_reference@IHV?$vector@_NV?$allocator@_N@std@@@std@@@1@I@Z ; std::vector<bool,std::allocator<bool> >::operator[]
@@ -2138,7 +2138,7 @@ $LN8@pGetGameIn:
 ; 249  : 			//Initial Units per Player
 ; 250  : 			lua_getfield(L, t, "GrantInitialUnitsPerPlayer");
 
-	push	OFFSET $SG217886
+	push	OFFSET $SG217885
 	push	ebx
 	push	esi
 	call	_lua_getfield
@@ -2201,7 +2201,7 @@ $LL4@pGetGameIn:
 	add	esp, 16					; 00000010H
 	test	eax, eax
 	setne	al
-	mov	BYTE PTR _bOverride$217894[esp+80], al
+	mov	BYTE PTR _bOverride$217893[esp+80], al
 
 ; 260  : 						if(ePlayer >= 0 && ePlayer < MAX_PLAYERS)
 
@@ -2211,11 +2211,11 @@ $LL4@pGetGameIn:
 ; 261  : 						{
 ; 262  : 							pArgs->pkOverrides->GrantInitialUnitsPerPlayer[ePlayer] = bOverride;
 
-	mov	ecx, DWORD PTR _bOverride$217894[esp+80]
+	mov	ecx, DWORD PTR _bOverride$217893[esp+80]
 	push	ecx
 	mov	ecx, DWORD PTR [ebp+4]
 	push	edi
-	lea	edx, DWORD PTR $T218374[esp+88]
+	lea	edx, DWORD PTR $T218373[esp+88]
 	push	edx
 	add	ecx, 80					; 00000050H
 	call	??A?$vector@_NV?$allocator@_N@std@@@std@@QAE?AV?$_Vb_reference@IHV?$vector@_NV?$allocator@_N@std@@@std@@@1@I@Z ; std::vector<bool,std::allocator<bool> >::operator[]

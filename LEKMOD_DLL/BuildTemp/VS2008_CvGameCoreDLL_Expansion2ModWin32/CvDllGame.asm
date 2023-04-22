@@ -10,10 +10,10 @@ INCLUDELIB MSVCRT
 INCLUDELIB OLDNAMES
 
 _DATA	SEGMENT
-_CIV5_XP2_DLL_VERSION DD FLAT:$SG217857
+_CIV5_XP2_DLL_VERSION DD FLAT:$SG217856
 _DATA	ENDS
 CONST	SEGMENT
-$SG217857 DB	'1.0.0', 00H
+$SG217856 DB	'1.0.0', 00H
 	ORG $+2
 _guidICvUnknown DD 0d89ba82fH
 	DW	09fa3H
@@ -752,7 +752,7 @@ xdata$x	ENDS
 ;	COMDAT ?GetGameDeals@CvDllGame@@UAGPAVICvGameDeals1@@XZ
 _TEXT	SEGMENT
 __$EHRec$ = -12						; size = 12
-$T220336 = 8						; size = 4
+$T220335 = 8						; size = 4
 _this$ = 8						; size = 4
 ?GetGameDeals@CvDllGame@@UAGPAVICvGameDeals1@@XZ PROC	; CvDllGame::GetGameDeals, COMDAT
 
@@ -779,7 +779,7 @@ _this$ = 8						; size = 4
 	push	12					; 0000000cH
 	call	??2CvDllGameDeals@@SAPAXI@Z		; CvDllGameDeals::operator new
 	add	esp, 4
-	mov	DWORD PTR $T220336[esp+12], eax
+	mov	DWORD PTR $T220335[esp+12], eax
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	eax, eax
 	je	SHORT $LN5@GetGameDea
@@ -805,7 +805,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetGameDeals@CvDllGame@@UAGPAVICvGameDeals1@@XZ$0:
-	mov	eax, DWORD PTR $T220336[ebp-4]
+	mov	eax, DWORD PTR $T220335[ebp-4]
 	push	eax
 	call	??3CvDllGameDeals@@SAXPAX@Z		; CvDllGameDeals::operator delete
 	pop	ecx
@@ -892,7 +892,7 @@ __ehfuncinfo$?GetRandomNumberGenerator@CvDllGame@@UAGPAVICvRandom1@@XZ DD 019930
 xdata$x	ENDS
 ;	COMDAT ?GetRandomNumberGenerator@CvDllGame@@UAGPAVICvRandom1@@XZ
 _TEXT	SEGMENT
-$T220361 = -16						; size = 4
+$T220360 = -16						; size = 4
 __$EHRec$ = -12						; size = 12
 _this$ = 8						; size = 4
 ?GetRandomNumberGenerator@CvDllGame@@UAGPAVICvRandom1@@XZ PROC ; CvDllGame::GetRandomNumberGenerator, COMDAT
@@ -913,7 +913,7 @@ _this$ = 8						; size = 4
 	call	??2CvDllRandom@@SAPAXI@Z		; CvDllRandom::operator new
 	mov	esi, eax
 	add	esp, 4
-	mov	DWORD PTR $T220361[esp+20], esi
+	mov	DWORD PTR $T220360[esp+20], esi
 	xor	eax, eax
 	mov	DWORD PTR __$EHRec$[esp+28], eax
 	cmp	esi, eax
@@ -937,7 +937,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetRandomNumberGenerator@CvDllGame@@UAGPAVICvRandom1@@XZ$0:
-	mov	eax, DWORD PTR $T220361[ebp]
+	mov	eax, DWORD PTR $T220360[ebp]
 	push	eax
 	call	??3CvDllRandom@@SAXPAX@Z		; CvDllRandom::operator delete
 	pop	ecx
@@ -1070,7 +1070,7 @@ xdata$x	ENDS
 _TEXT	SEGMENT
 __$EHRec$ = -12						; size = 12
 _this$ = 8						; size = 4
-$T220392 = 12						; size = 4
+$T220391 = 12						; size = 4
 _pPlot$ = 12						; size = 4
 _iIndex$ = 16						; size = 4
 ?GetPlotUnit@CvDllGame@@UAGPAVICvUnit1@@PAVICvPlot1@@H@Z PROC ; CvDllGame::GetPlotUnit, COMDAT
@@ -1113,7 +1113,7 @@ $LN4@GetPlotUni:
 	push	12					; 0000000cH
 	call	??2CvDllUnit@@SAPAXI@Z			; CvDllUnit::operator new
 	add	esp, 4
-	mov	DWORD PTR $T220392[esp+12], eax
+	mov	DWORD PTR $T220391[esp+12], eax
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	eax, eax
 	je	SHORT $LN7@GetPlotUni
@@ -1139,7 +1139,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetPlotUnit@CvDllGame@@UAGPAVICvUnit1@@PAVICvPlot1@@H@Z$0:
-	mov	eax, DWORD PTR $T220392[ebp-4]
+	mov	eax, DWORD PTR $T220391[ebp-4]
 	push	eax
 	call	??3CvDllUnit@@SAXPAX@Z			; CvDllUnit::operator delete
 	pop	ecx
@@ -2390,12 +2390,12 @@ PUBLIC	?GetInterfaceId@ICvUnknown@@SG?AU_GUID@@XZ	; ICvUnknown::GetInterfaceId
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredllutil\include\cvdllinterfaces.h
 ;	COMDAT ?GetInterfaceId@ICvUnknown@@SG?AU_GUID@@XZ
 _TEXT	SEGMENT
-$T220595 = 8						; size = 4
+$T220594 = 8						; size = 4
 ?GetInterfaceId@ICvUnknown@@SG?AU_GUID@@XZ PROC		; ICvUnknown::GetInterfaceId, COMDAT
 
 ; 306  : 	static GUID DLLCALL GetInterfaceId(){ return guidICvUnknown; }
 
-	mov	eax, DWORD PTR $T220595[esp-4]
+	mov	eax, DWORD PTR $T220594[esp-4]
 	mov	ecx, DWORD PTR _guidICvUnknown
 	mov	edx, DWORD PTR _guidICvUnknown+4
 	mov	DWORD PTR [eax], ecx
@@ -2411,12 +2411,12 @@ PUBLIC	?GetInterfaceId@ICvGame1@@SG?AU_GUID@@XZ	; ICvGame1::GetInterfaceId
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?GetInterfaceId@ICvGame1@@SG?AU_GUID@@XZ
 _TEXT	SEGMENT
-$T220599 = 8						; size = 4
+$T220598 = 8						; size = 4
 ?GetInterfaceId@ICvGame1@@SG?AU_GUID@@XZ PROC		; ICvGame1::GetInterfaceId, COMDAT
 
 ; 982  : 	static GUID DLLCALL GetInterfaceId() { return guidICvGame1; }
 
-	mov	eax, DWORD PTR $T220599[esp-4]
+	mov	eax, DWORD PTR $T220598[esp-4]
 	mov	ecx, DWORD PTR _guidICvGame1
 	mov	edx, DWORD PTR _guidICvGame1+4
 	mov	DWORD PTR [eax], ecx
@@ -2433,12 +2433,12 @@ PUBLIC	?GetInterfaceId@ICvGame2@@SG?AU_GUID@@XZ	; ICvGame2::GetInterfaceId
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredllutil\include\cvdllinterfaces2.h
 ;	COMDAT ?GetInterfaceId@ICvGame2@@SG?AU_GUID@@XZ
 _TEXT	SEGMENT
-$T220603 = 8						; size = 4
+$T220602 = 8						; size = 4
 ?GetInterfaceId@ICvGame2@@SG?AU_GUID@@XZ PROC		; ICvGame2::GetInterfaceId, COMDAT
 
 ; 79   : 	static GUID DLLCALL GetInterfaceId() { return guidICvGame2; }
 
-	mov	eax, DWORD PTR $T220603[esp-4]
+	mov	eax, DWORD PTR $T220602[esp-4]
 	mov	ecx, DWORD PTR _guidICvGame2
 	mov	edx, DWORD PTR _guidICvGame2+4
 	mov	DWORD PTR [eax], ecx
@@ -2948,9 +2948,9 @@ $LN1@CvDllGame:
 _TEXT	ENDS
 ;	COMDAT ?QueryInterface@CvDllGame@@UAGPAXU_GUID@@@Z
 _TEXT	SEGMENT
-$T220651 = -16						; size = 16
-$T220649 = -16						; size = 16
-$T220647 = -16						; size = 16
+$T220650 = -16						; size = 16
+$T220648 = -16						; size = 16
+$T220646 = -16						; size = 16
 _this$ = 8						; size = 4
 _guidInterface$ = 12					; size = 16
 ?QueryInterface@CvDllGame@@UAGPAXU_GUID@@@Z PROC	; CvDllGame::QueryInterface, COMDAT
@@ -2966,15 +2966,15 @@ _guidInterface$ = 12					; size = 16
 	mov	ecx, DWORD PTR _guidICvUnknown+4
 	mov	edx, DWORD PTR _guidICvUnknown+8
 	mov	eax, DWORD PTR _guidICvUnknown
-	mov	DWORD PTR $T220647[esp+20], ecx
-	lea	ecx, DWORD PTR $T220647[esp+16]
-	mov	DWORD PTR $T220647[esp+24], edx
-	mov	DWORD PTR $T220647[esp+16], eax
+	mov	DWORD PTR $T220646[esp+20], ecx
+	lea	ecx, DWORD PTR $T220646[esp+16]
+	mov	DWORD PTR $T220646[esp+24], edx
+	mov	DWORD PTR $T220646[esp+16], eax
 	mov	eax, DWORD PTR _guidICvUnknown+12
 	push	ecx
 	lea	edx, DWORD PTR _guidInterface$[esp+16]
 	push	edx
-	mov	DWORD PTR $T220647[esp+36], eax
+	mov	DWORD PTR $T220646[esp+36], eax
 	call	_IsEqualGUID
 	add	esp, 8
 	test	eax, eax
@@ -2982,15 +2982,15 @@ _guidInterface$ = 12					; size = 16
 	mov	ecx, DWORD PTR _guidICvGame1+4
 	mov	edx, DWORD PTR _guidICvGame1+8
 	mov	eax, DWORD PTR _guidICvGame1
-	mov	DWORD PTR $T220649[esp+20], ecx
-	lea	ecx, DWORD PTR $T220649[esp+16]
-	mov	DWORD PTR $T220649[esp+24], edx
-	mov	DWORD PTR $T220649[esp+16], eax
+	mov	DWORD PTR $T220648[esp+20], ecx
+	lea	ecx, DWORD PTR $T220648[esp+16]
+	mov	DWORD PTR $T220648[esp+24], edx
+	mov	DWORD PTR $T220648[esp+16], eax
 	mov	eax, DWORD PTR _guidICvGame1+12
 	push	ecx
 	lea	edx, DWORD PTR _guidInterface$[esp+16]
 	push	edx
-	mov	DWORD PTR $T220649[esp+36], eax
+	mov	DWORD PTR $T220648[esp+36], eax
 	call	_IsEqualGUID
 	add	esp, 8
 	test	eax, eax
@@ -2998,15 +2998,15 @@ _guidInterface$ = 12					; size = 16
 	mov	ecx, DWORD PTR _guidICvGame2+4
 	mov	edx, DWORD PTR _guidICvGame2+8
 	mov	eax, DWORD PTR _guidICvGame2
-	mov	DWORD PTR $T220651[esp+20], ecx
-	lea	ecx, DWORD PTR $T220651[esp+16]
-	mov	DWORD PTR $T220651[esp+24], edx
-	mov	DWORD PTR $T220651[esp+16], eax
+	mov	DWORD PTR $T220650[esp+20], ecx
+	lea	ecx, DWORD PTR $T220650[esp+16]
+	mov	DWORD PTR $T220650[esp+24], edx
+	mov	DWORD PTR $T220650[esp+16], eax
 	mov	eax, DWORD PTR _guidICvGame2+12
 	push	ecx
 	lea	edx, DWORD PTR _guidInterface$[esp+16]
 	push	edx
-	mov	DWORD PTR $T220651[esp+36], eax
+	mov	DWORD PTR $T220650[esp+36], eax
 	call	_IsEqualGUID
 	add	esp, 8
 	test	eax, eax
@@ -3086,7 +3086,7 @@ __ehfuncinfo$?GetPlayer@CvDllGame@@UAGPAVICvPlayer1@@W4PlayerTypes@@@Z DD 019930
 xdata$x	ENDS
 ;	COMDAT ?GetPlayer@CvDllGame@@UAGPAVICvPlayer1@@W4PlayerTypes@@@Z
 _TEXT	SEGMENT
-$T220704 = -16						; size = 4
+$T220703 = -16						; size = 4
 __$EHRec$ = -12						; size = 12
 _this$ = 8						; size = 4
 _ePlayer$ = 12						; size = 4
@@ -3106,7 +3106,7 @@ _ePlayer$ = 12						; size = 4
 	push	12					; 0000000cH
 	call	??2CvDllPlayer@@SAPAXI@Z		; CvDllPlayer::operator new
 	add	esp, 4
-	mov	DWORD PTR $T220704[esp+16], eax
+	mov	DWORD PTR $T220703[esp+16], eax
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	eax, eax
 	je	SHORT $LN3@GetPlayer
@@ -3133,7 +3133,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetPlayer@CvDllGame@@UAGPAVICvPlayer1@@W4PlayerTypes@@@Z$0:
-	mov	eax, DWORD PTR $T220704[ebp]
+	mov	eax, DWORD PTR $T220703[ebp]
 	push	eax
 	call	??3CvDllPlayer@@SAXPAX@Z		; CvDllPlayer::operator delete
 	pop	ecx
@@ -3165,7 +3165,7 @@ __ehfuncinfo$?SetTimeStr@CvDllGame@@UAGXPADH_N@Z DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?SetTimeStr@CvDllGame@@UAGXPADH_N@Z
 _TEXT	SEGMENT
-_strString$219902 = -40					; size = 28
+_strString$219901 = -40					; size = 28
 __$EHRec$ = -12						; size = 12
 _this$ = 8						; size = 4
 _szString$ = 12						; size = 4
@@ -3193,7 +3193,7 @@ _bSave$ = 20						; size = 1
 ; 463  : 	{
 ; 464  : 		CvString strString;
 
-	lea	ecx, DWORD PTR _strString$219902[esp+48]
+	lea	ecx, DWORD PTR _strString$219901[esp+48]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 
 ; 465  : 		CvGameTextMgr::setDateStr(strString,
@@ -3218,7 +3218,7 @@ _bSave$ = 20						; size = 1
 	mov	eax, DWORD PTR _bSave$[esp+56]
 	push	eax
 	push	ecx
-	lea	edx, DWORD PTR _strString$219902[esp+68]
+	lea	edx, DWORD PTR _strString$219901[esp+68]
 	push	edx
 	call	?setDateStr@CvGameTextMgr@@SAXAAVCvString@@H_NW4CalendarTypes@@HW4GameSpeedTypes@@@Z ; CvGameTextMgr::setDateStr
 	add	esp, 24					; 00000018H
@@ -3226,7 +3226,7 @@ _bSave$ = 20						; size = 1
 ; 471  : 
 ; 472  : 		strcpy_s(szString, 256, strString.c_str());
 
-	lea	ecx, DWORD PTR _strString$219902[esp+48]
+	lea	ecx, DWORD PTR _strString$219901[esp+48]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	push	eax
 	push	256					; 00000100H
@@ -3236,7 +3236,7 @@ _bSave$ = 20						; size = 1
 
 ; 473  : 	}
 
-	lea	ecx, DWORD PTR _strString$219902[esp+48]
+	lea	ecx, DWORD PTR _strString$219901[esp+48]
 	mov	DWORD PTR __$EHRec$[esp+56], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 	pop	esi
@@ -3253,7 +3253,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?SetTimeStr@CvDllGame@@UAGXPADH_N@Z$0:
-	lea	ecx, DWORD PTR _strString$219902[ebp]
+	lea	ecx, DWORD PTR _strString$219901[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?SetTimeStr@CvDllGame@@UAGXPADH_N@Z:
 	mov	eax, OFFSET __ehfuncinfo$?SetTimeStr@CvDllGame@@UAGXPADH_N@Z
@@ -3280,7 +3280,7 @@ __ehfuncinfo$?GetGreatWorkAudio@CvDllGame@@UAG_NHPADH@Z DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?GetGreatWorkAudio@CvDllGame@@UAG_NHPADH@Z
 _TEXT	SEGMENT
-_audio$219967 = -40					; size = 28
+_audio$219966 = -40					; size = 28
 __$EHRec$ = -12						; size = 12
 _this$ = 8						; size = 4
 _GreatWorkIndex$ = 12					; size = 4
@@ -3339,7 +3339,7 @@ $LN4@GetGreatWo:
 ; 582  : 		const CvString audio = CultureHelpers::GetGreatWorkAudio(eType);
 
 	push	eax
-	lea	ecx, DWORD PTR _audio$219967[esp+48]
+	lea	ecx, DWORD PTR _audio$219966[esp+48]
 	push	ecx
 	call	?GetGreatWorkAudio@CultureHelpers@@YA?AVCvString@@W4GreatWorkType@@@Z ; CultureHelpers::GetGreatWorkAudio
 	add	esp, 8
@@ -3347,7 +3347,7 @@ $LN4@GetGreatWo:
 ; 583  : 
 ; 584  : 		if(audio.GetLength() <= length)
 
-	lea	ecx, DWORD PTR _audio$219967[esp+44]
+	lea	ecx, DWORD PTR _audio$219966[esp+44]
 	mov	DWORD PTR __$EHRec$[esp+52], 0
 	call	DWORD PTR __imp_?size@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEIXZ
 	mov	esi, DWORD PTR _length$[esp+40]
@@ -3357,7 +3357,7 @@ $LN4@GetGreatWo:
 ; 585  : 		{
 ; 586  : 			if(strcpy_s(strSound, length, audio.c_str()) == 0)
 
-	lea	ecx, DWORD PTR _audio$219967[esp+44]
+	lea	ecx, DWORD PTR _audio$219966[esp+44]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
 	mov	edx, DWORD PTR _strSound$[esp+40]
 	push	eax
@@ -3371,7 +3371,7 @@ $LN4@GetGreatWo:
 ; 587  : 			{
 ; 588  : 				return true;
 
-	lea	ecx, DWORD PTR _audio$219967[esp+44]
+	lea	ecx, DWORD PTR _audio$219966[esp+44]
 	mov	DWORD PTR __$EHRec$[esp+52], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 	mov	al, 1
@@ -3391,7 +3391,7 @@ $LN1@GetGreatWo:
 ; 590  : 		}
 ; 591  : 	}
 
-	lea	ecx, DWORD PTR _audio$219967[esp+44]
+	lea	ecx, DWORD PTR _audio$219966[esp+44]
 	mov	DWORD PTR __$EHRec$[esp+52], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 $LN3@GetGreatWo:
@@ -3410,7 +3410,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?GetGreatWorkAudio@CvDllGame@@UAG_NHPADH@Z$0:
-	lea	ecx, DWORD PTR _audio$219967[ebp]
+	lea	ecx, DWORD PTR _audio$219966[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __ehhandler$?GetGreatWorkAudio@CvDllGame@@UAG_NHPADH@Z:
 	mov	eax, OFFSET __ehfuncinfo$?GetGreatWorkAudio@CvDllGame@@UAG_NHPADH@Z

@@ -2621,8 +2621,8 @@ __ehfuncinfo$?_Xlen@?$vector@UVoteSelectionSubData@@V?$allocator@UVoteSelectionS
 xdata$x	ENDS
 ;	COMDAT ?_Xlen@?$vector@UVoteSelectionSubData@@V?$allocator@UVoteSelectionSubData@@@std@@@std@@KAXXZ
 _TEXT	SEGMENT
-$T219615 = -80						; size = 28
-$T219614 = -52						; size = 40
+$T219614 = -80						; size = 28
+$T219613 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ?_Xlen@?$vector@UVoteSelectionSubData@@V?$allocator@UVoteSelectionSubData@@@std@@@std@@KAXXZ PROC ; std::vector<VoteSelectionSubData,std::allocator<VoteSelectionSubData> >::_Xlen, COMDAT
 
@@ -2638,22 +2638,22 @@ __$EHRec$ = -12						; size = 12
 ; 1260 : 		_THROW(length_error, "vector<T> too long");
 
 	push	OFFSET ??_C@_0BD@OLBABOEK@vector?$DMT?$DO?5too?5long?$AA@
-	lea	ecx, DWORD PTR $T219615[esp+84]
+	lea	ecx, DWORD PTR $T219614[esp+84]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T219614[esp+80]
+	lea	ecx, DWORD PTR $T219613[esp+80]
 	mov	DWORD PTR __$EHRec$[esp+88], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T219615[esp+80]
+	lea	eax, DWORD PTR $T219614[esp+80]
 	push	eax
-	lea	ecx, DWORD PTR $T219614[esp+96]
+	lea	ecx, DWORD PTR $T219613[esp+96]
 	mov	BYTE PTR __$EHRec$[esp+92], 1
-	mov	DWORD PTR $T219614[esp+84], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T219613[esp+84], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVlength_error@std@@
-	lea	ecx, DWORD PTR $T219614[esp+84]
+	lea	ecx, DWORD PTR $T219613[esp+84]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+96], 0
-	mov	DWORD PTR $T219614[esp+88], OFFSET ??_7length_error@std@@6B@
+	mov	DWORD PTR $T219613[esp+88], OFFSET ??_7length_error@std@@6B@
 	call	__CxxThrowException@8
 $LN13@Xlen:
 $LN12@Xlen:
@@ -2662,10 +2662,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Xlen@?$vector@UVoteSelectionSubData@@V?$allocator@UVoteSelectionSubData@@@std@@@std@@KAXXZ$0:
-	lea	ecx, DWORD PTR $T219615[ebp]
+	lea	ecx, DWORD PTR $T219614[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Xlen@?$vector@UVoteSelectionSubData@@V?$allocator@UVoteSelectionSubData@@@std@@@std@@KAXXZ$2:
-	lea	ecx, DWORD PTR $T219614[ebp]
+	lea	ecx, DWORD PTR $T219613[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Xlen@?$vector@UVoteSelectionSubData@@V?$allocator@UVoteSelectionSubData@@@std@@@std@@KAXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?_Xlen@?$vector@UVoteSelectionSubData@@V?$allocator@UVoteSelectionSubData@@@std@@@std@@KAXXZ
@@ -2789,8 +2789,8 @@ __ehfuncinfo$?_Xlen@?$vector@HV?$allocator@H@std@@@std@@KAXXZ DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ?_Xlen@?$vector@HV?$allocator@H@std@@@std@@KAXXZ
 _TEXT	SEGMENT
-$T219659 = -80						; size = 28
-$T219658 = -52						; size = 40
+$T219658 = -80						; size = 28
+$T219657 = -52						; size = 40
 __$EHRec$ = -12						; size = 12
 ?_Xlen@?$vector@HV?$allocator@H@std@@@std@@KAXXZ PROC	; std::vector<int,std::allocator<int> >::_Xlen, COMDAT
 
@@ -2806,22 +2806,22 @@ __$EHRec$ = -12						; size = 12
 ; 1260 : 		_THROW(length_error, "vector<T> too long");
 
 	push	OFFSET ??_C@_0BD@OLBABOEK@vector?$DMT?$DO?5too?5long?$AA@
-	lea	ecx, DWORD PTR $T219659[esp+84]
+	lea	ecx, DWORD PTR $T219658[esp+84]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
-	lea	ecx, DWORD PTR $T219658[esp+80]
+	lea	ecx, DWORD PTR $T219657[esp+80]
 	mov	DWORD PTR __$EHRec$[esp+88], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@XZ
-	lea	eax, DWORD PTR $T219659[esp+80]
+	lea	eax, DWORD PTR $T219658[esp+80]
 	push	eax
-	lea	ecx, DWORD PTR $T219658[esp+96]
+	lea	ecx, DWORD PTR $T219657[esp+96]
 	mov	BYTE PTR __$EHRec$[esp+92], 1
-	mov	DWORD PTR $T219658[esp+84], OFFSET ??_7logic_error@std@@6B@
+	mov	DWORD PTR $T219657[esp+84], OFFSET ??_7logic_error@std@@6B@
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	push	OFFSET __TI3?AVlength_error@std@@
-	lea	ecx, DWORD PTR $T219658[esp+84]
+	lea	ecx, DWORD PTR $T219657[esp+84]
 	push	ecx
 	mov	BYTE PTR __$EHRec$[esp+96], 0
-	mov	DWORD PTR $T219658[esp+88], OFFSET ??_7length_error@std@@6B@
+	mov	DWORD PTR $T219657[esp+88], OFFSET ??_7length_error@std@@6B@
 	call	__CxxThrowException@8
 $LN13@Xlen@2:
 $LN12@Xlen@2:
@@ -2830,10 +2830,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Xlen@?$vector@HV?$allocator@H@std@@@std@@KAXXZ$0:
-	lea	ecx, DWORD PTR $T219659[ebp]
+	lea	ecx, DWORD PTR $T219658[ebp]
 	jmp	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 __unwindfunclet$?_Xlen@?$vector@HV?$allocator@H@std@@@std@@KAXXZ$2:
-	lea	ecx, DWORD PTR $T219658[ebp]
+	lea	ecx, DWORD PTR $T219657[ebp]
 	jmp	DWORD PTR __imp_??1exception@std@@UAE@XZ
 __ehhandler$?_Xlen@?$vector@HV?$allocator@H@std@@@std@@KAXXZ:
 	mov	eax, OFFSET __ehfuncinfo$?_Xlen@?$vector@HV?$allocator@H@std@@@std@@KAXXZ
@@ -2999,8 +2999,8 @@ __TI2?AVbad_alloc@std@@ DD 00H
 xdata$x	ENDS
 ;	COMDAT ??$_Allocate@UVoteSelectionSubData@@@std@@YAPAUVoteSelectionSubData@@IPAU1@@Z
 _TEXT	SEGMENT
-$T219702 = -12						; size = 12
-$T219706 = 8						; size = 4
+$T219701 = -12						; size = 12
+$T219705 = 8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ??$_Allocate@UVoteSelectionSubData@@@std@@YAPAUVoteSelectionSubData@@IPAU1@@Z PROC ; std::_Allocate<VoteSelectionSubData>, COMDAT
@@ -3042,15 +3042,15 @@ $LN3@Allocate:
 
 ; 40   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T219706[esp+8]
+	lea	eax, DWORD PTR $T219705[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T219702[esp+16]
-	mov	DWORD PTR $T219706[esp+12], 0
+	lea	ecx, DWORD PTR $T219701[esp+16]
+	mov	DWORD PTR $T219705[esp+12], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T219702[esp+16]
+	lea	ecx, DWORD PTR $T219701[esp+16]
 	push	ecx
-	mov	DWORD PTR $T219702[esp+20], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T219701[esp+20], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN9@Allocate:
 $LN8@Allocate:
@@ -3061,8 +3061,8 @@ PUBLIC	??$_Allocate@H@std@@YAPAHIPAH@Z			; std::_Allocate<int>
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Allocate@H@std@@YAPAHIPAH@Z
 _TEXT	SEGMENT
-$T219712 = -12						; size = 12
-$T219716 = 8						; size = 4
+$T219711 = -12						; size = 12
+$T219715 = 8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ??$_Allocate@H@std@@YAPAHIPAH@Z PROC			; std::_Allocate<int>, COMDAT
@@ -3104,15 +3104,15 @@ $LN3@Allocate@2:
 
 ; 40   : 		_THROW_NCEE(std::bad_alloc, NULL);
 
-	lea	eax, DWORD PTR $T219716[esp+8]
+	lea	eax, DWORD PTR $T219715[esp+8]
 	push	eax
-	lea	ecx, DWORD PTR $T219712[esp+16]
-	mov	DWORD PTR $T219716[esp+12], 0
+	lea	ecx, DWORD PTR $T219711[esp+16]
+	mov	DWORD PTR $T219715[esp+12], 0
 	call	DWORD PTR __imp_??0exception@std@@QAE@ABQBD@Z
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	ecx, DWORD PTR $T219712[esp+16]
+	lea	ecx, DWORD PTR $T219711[esp+16]
 	push	ecx
-	mov	DWORD PTR $T219712[esp+20], OFFSET ??_7bad_alloc@std@@6B@
+	mov	DWORD PTR $T219711[esp+20], OFFSET ??_7bad_alloc@std@@6B@
 	call	__CxxThrowException@8
 $LN9@Allocate@2:
 $LN8@Allocate@2:
@@ -3563,7 +3563,7 @@ PUBLIC	??0?$SerializeFromSequenceContainer@$$CBH$$CBV?$vector@HV?$allocator@H@st
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\fireplace\include\fireworks\fstlcontainerserialization.h
 ;	COMDAT ??0?$SerializeFromSequenceContainer@$$CBH$$CBV?$vector@HV?$allocator@H@std@@@std@@@@QAE@AAVFDataStream@@ABV?$vector@HV?$allocator@H@std@@@std@@@Z
 _TEXT	SEGMENT
-$T219779 = 8						; size = 4
+$T219778 = 8						; size = 4
 _saveTo$ = 8						; size = 4
 _container$ = 12					; size = 4
 ??0?$SerializeFromSequenceContainer@$$CBH$$CBV?$vector@HV?$allocator@H@std@@@std@@@@QAE@AAVFDataStream@@ABV?$vector@HV?$allocator@H@std@@@std@@@Z PROC ; SerializeFromSequenceContainer<int const ,std::vector<int,std::allocator<int> > const >::SerializeFromSequenceContainer<int const ,std::vector<int,std::allocator<int> > const >, COMDAT
@@ -3582,10 +3582,10 @@ _container$ = 12					; size = 4
 
 	mov	edx, DWORD PTR [eax+8]
 	sub	edx, DWORD PTR [eax+4]
-	lea	eax, DWORD PTR $T219779[esp]
+	lea	eax, DWORD PTR $T219778[esp]
 	sar	edx, 2
 	push	eax
-	mov	DWORD PTR $T219779[esp+4], edx
+	mov	DWORD PTR $T219778[esp+4], edx
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 
 ; 71   : 	}
@@ -4660,7 +4660,7 @@ PUBLIC	?setDamageMemberCount@CvCombatInfo@@QAEXH@Z	; CvCombatInfo::setDamageMemb
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?setDamageMemberCount@CvCombatInfo@@QAEXH@Z
 _TEXT	SEGMENT
-$T219963 = -4						; size = 4
+$T219962 = -4						; size = 4
 _iDamageMemberCount$ = 8				; size = 4
 ?setDamageMemberCount@CvCombatInfo@@QAEXH@Z PROC	; CvCombatInfo::setDamageMemberCount, COMDAT
 ; _this$ = ecx
@@ -4674,9 +4674,9 @@ _iDamageMemberCount$ = 8				; size = 4
 
 	mov	eax, 32					; 00000020H
 	cmp	DWORD PTR _iDamageMemberCount$[esp], eax
-	mov	DWORD PTR $T219963[esp+4], eax
+	mov	DWORD PTR $T219962[esp+4], eax
 	jle	SHORT $LN5@setDamageM
-	lea	eax, DWORD PTR $T219963[esp+4]
+	lea	eax, DWORD PTR $T219962[esp+4]
 	mov	eax, DWORD PTR [eax]
 	mov	DWORD PTR [ecx+216], eax
 
@@ -5385,7 +5385,7 @@ __ehfuncinfo$??$_Construct@UVoteSelectionSubData@@U1@@std@@YAXPAUVoteSelectionSu
 xdata$x	ENDS
 ;	COMDAT ??$_Construct@UVoteSelectionSubData@@U1@@std@@YAXPAUVoteSelectionSubData@@ABU1@@Z
 _TEXT	SEGMENT
-$T220154 = -16						; size = 4
+$T220153 = -16						; size = 4
 __$EHRec$ = -12						; size = 12
 __Vptr$ = 8						; size = 4
 __Ptr$ = 8						; size = 4
@@ -5408,7 +5408,7 @@ __Val$ = 12						; size = 4
 
 ; 52   : 	::new (_Vptr) _T1(_Val);
 
-	mov	DWORD PTR $T220154[esp+16], eax
+	mov	DWORD PTR $T220153[esp+16], eax
 	mov	DWORD PTR __$EHRec$[esp+24], 0
 	test	eax, eax
 	je	SHORT $LN3@Construct
@@ -5439,7 +5439,7 @@ text$x	SEGMENT
 __unwindfunclet$??$_Construct@UVoteSelectionSubData@@U1@@std@@YAXPAUVoteSelectionSubData@@ABU1@@Z$0:
 	mov	eax, DWORD PTR __Vptr$[ebp-4]
 	push	eax
-	mov	ecx, DWORD PTR $T220154[ebp]
+	mov	ecx, DWORD PTR $T220153[ebp]
 	push	ecx
 	call	??3@YAXPAX0@Z				; operator delete
 	add	esp, 8
@@ -5876,7 +5876,7 @@ PUBLIC	?write@VoteSelectionData@@QBEXAAVFDataStream@@@Z ; VoteSelectionData::wri
 ;	COMDAT ?write@VoteSelectionData@@QBEXAAVFDataStream@@@Z
 _TEXT	SEGMENT
 _uiVersion$ = -4					; size = 4
-$T220379 = 8						; size = 4
+$T220378 = 8						; size = 4
 _kStream$ = 8						; size = 4
 ?write@VoteSelectionData@@QBEXAAVFDataStream@@@Z PROC	; VoteSelectionData::write, COMDAT
 ; _this$ = ecx
@@ -5924,11 +5924,11 @@ _kStream$ = 8						; size = 4
 	mov	eax, edx
 	add	esp, 8
 	shr	eax, 31					; 0000001fH
-	lea	ecx, DWORD PTR $T220379[esp+12]
+	lea	ecx, DWORD PTR $T220378[esp+12]
 	add	eax, edx
 	push	ecx
 	mov	ecx, edi
-	mov	DWORD PTR $T220379[esp+16], eax
+	mov	DWORD PTR $T220378[esp+16], eax
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 
 ; 70   : 	for(std::vector<VoteSelectionSubData>::const_iterator it = aVoteOptions.begin(); it != aVoteOptions.end(); ++it)
@@ -6098,8 +6098,8 @@ PUBLIC	??$_Move_backward_opt@PAUVoteSelectionSubData@@PAU1@Urandom_access_iterat
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Move_backward_opt@PAUVoteSelectionSubData@@PAU1@Urandom_access_iterator_tag@std@@U_Undefined_move_tag@3@@std@@YAPAUVoteSelectionSubData@@PAU1@00Urandom_access_iterator_tag@0@U_Undefined_move_tag@0@U_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
-$T220479 = -4						; size = 1
-__Cat$220484 = -4					; size = 1
+$T220478 = -4						; size = 1
+__Cat$220483 = -4					; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
@@ -6116,9 +6116,9 @@ ___formal$ = 28						; size = 1
 ; 2754 : 		_First_dest_cat, _Ptr_cat(_First, _Dest), _Range_checked_iterator_tag());
 
 	mov	edx, DWORD PTR __First_dest_cat$[esp]
-	mov	BYTE PTR $T220479[esp+4], 0
-	mov	eax, DWORD PTR $T220479[esp+4]
-	mov	ecx, DWORD PTR __Cat$220484[esp+4]
+	mov	BYTE PTR $T220478[esp+4], 0
+	mov	eax, DWORD PTR $T220478[esp+4]
+	mov	ecx, DWORD PTR __Cat$220483[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -6240,7 +6240,7 @@ PUBLIC	??$?6H@@YAAAVFDataStream@@AAV0@ABV?$vector@HV?$allocator@H@std@@@std@@@Z 
 ;	COMDAT ??$?6H@@YAAAVFDataStream@@AAV0@ABV?$vector@HV?$allocator@H@std@@@std@@@Z
 _TEXT	SEGMENT
 _saveTo$ = 8						; size = 4
-$T220543 = 12						; size = 4
+$T220542 = 12						; size = 4
 _readFrom$ = 12						; size = 4
 ??$?6H@@YAAAVFDataStream@@AAV0@ABV?$vector@HV?$allocator@H@std@@@std@@@Z PROC ; operator<<<int>, COMDAT
 
@@ -6256,11 +6256,11 @@ _readFrom$ = 12						; size = 4
 	mov	eax, DWORD PTR [esi+8]
 	sub	eax, DWORD PTR [esi+4]
 	push	edi
-	lea	ecx, DWORD PTR $T220543[esp+8]
+	lea	ecx, DWORD PTR $T220542[esp+8]
 	sar	eax, 2
 	push	ecx
 	mov	ecx, ebx
-	mov	DWORD PTR $T220543[esp+12], eax
+	mov	DWORD PTR $T220542[esp+12], eax
 	call	?Write@FDataStream@@IAEXABI@Z		; FDataStream::Write
 	mov	edi, DWORD PTR [esi+8]
 	mov	esi, DWORD PTR [esi+4]
@@ -6511,11 +6511,11 @@ PUBLIC	??$_Unchecked_move_backward@PAUVoteSelectionSubData@@PAU1@@stdext@@YAPAUV
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Unchecked_move_backward@PAUVoteSelectionSubData@@PAU1@@stdext@@YAPAUVoteSelectionSubData@@PAU1@00@Z
 _TEXT	SEGMENT
-$T220810 = -4						; size = 1
+$T220809 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$220814 = 16					; size = 1
-$T220792 = 16						; size = 1
+__Cat$220813 = 16					; size = 1
+$T220791 = 16						; size = 1
 __Dest$ = 16						; size = 4
 ??$_Unchecked_move_backward@PAUVoteSelectionSubData@@PAU1@@stdext@@YAPAUVoteSelectionSubData@@PAU1@00@Z PROC ; stdext::_Unchecked_move_backward<VoteSelectionSubData *,VoteSelectionSubData *>, COMDAT
 
@@ -6526,10 +6526,10 @@ __Dest$ = 16						; size = 4
 ; 3695 : 		return (_STD _Move_backward_opt(_CHECKED_BASE(_First), _CHECKED_BASE(_Last), _Dest,
 ; 3696 : 			_STD _Iter_random(_First, _Dest), _STD _Move_cat(_Dest), _STD _Range_checked_iterator_tag()));
 
-	mov	ecx, DWORD PTR __Cat$220814[esp]
-	mov	edx, DWORD PTR $T220792[esp]
-	mov	BYTE PTR $T220810[esp+4], 0
-	mov	eax, DWORD PTR $T220810[esp+4]
+	mov	ecx, DWORD PTR __Cat$220813[esp]
+	mov	edx, DWORD PTR $T220791[esp]
+	mov	BYTE PTR $T220809[esp+4], 0
+	mov	eax, DWORD PTR $T220809[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -6579,11 +6579,11 @@ __ehfuncinfo$??$_Uninit_fill_n@PAUVoteSelectionSubData@@IU1@V?$allocator@UVoteSe
 xdata$x	ENDS
 ;	COMDAT ??$_Uninit_fill_n@PAUVoteSelectionSubData@@IU1@V?$allocator@UVoteSelectionSubData@@@std@@@std@@YAXPAUVoteSelectionSubData@@IABU1@AAV?$allocator@UVoteSelectionSubData@@@0@U_Nonscalar_ptr_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
-$T220866 = -24						; size = 4
+$T220865 = -24						; size = 4
 __Next$ = -20						; size = 4
 __$EHRec$ = -16						; size = 16
 __First$ = 8						; size = 4
-__Vptr$220863 = 12					; size = 4
+__Vptr$220862 = 12					; size = 4
 __Count$ = 12						; size = 4
 __Val$ = 16						; size = 4
 __Al$ = 20						; size = 4
@@ -6630,8 +6630,8 @@ $LL6@Uninit_fil:
 
 ; 404  : 		_Al.construct(_First, _Val);
 
-	mov	DWORD PTR __Vptr$220863[ebp], esi
-	mov	DWORD PTR $T220866[ebp], esi
+	mov	DWORD PTR __Vptr$220862[ebp], esi
+	mov	DWORD PTR $T220865[ebp], esi
 	mov	BYTE PTR __$EHRec$[ebp+12], 1
 	test	esi, esi
 	je	SHORT $LN18@Uninit_fil
@@ -6697,9 +6697,9 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$??$_Uninit_fill_n@PAUVoteSelectionSubData@@IU1@V?$allocator@UVoteSelectionSubData@@@std@@@std@@YAXPAUVoteSelectionSubData@@IABU1@AAV?$allocator@UVoteSelectionSubData@@@0@U_Nonscalar_ptr_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z$2:
-	mov	eax, DWORD PTR __Vptr$220863[ebp]
+	mov	eax, DWORD PTR __Vptr$220862[ebp]
 	push	eax
-	mov	ecx, DWORD PTR $T220866[ebp]
+	mov	ecx, DWORD PTR $T220865[ebp]
 	push	ecx
 	call	??3@YAXPAX0@Z				; operator delete
 	add	esp, 8
@@ -6741,10 +6741,10 @@ __ehfuncinfo$??$_Uninit_copy@PAUVoteSelectionSubData@@PAU1@V?$allocator@UVoteSel
 xdata$x	ENDS
 ;	COMDAT ??$_Uninit_copy@PAUVoteSelectionSubData@@PAU1@V?$allocator@UVoteSelectionSubData@@@std@@@std@@YAPAUVoteSelectionSubData@@PAU1@00AAV?$allocator@UVoteSelectionSubData@@@0@U_Nonscalar_ptr_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
-$T220976 = -24						; size = 4
+$T220975 = -24						; size = 4
 __Next$ = -20						; size = 4
 __$EHRec$ = -16						; size = 16
-__Vptr$220973 = 8					; size = 4
+__Vptr$220972 = 8					; size = 4
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
@@ -6791,8 +6791,8 @@ $LL6@Uninit_cop@2:
 
 ; 131  : 		_Al.construct(_Dest, *_First);
 
-	mov	DWORD PTR __Vptr$220973[ebp], esi
-	mov	DWORD PTR $T220976[ebp], esi
+	mov	DWORD PTR __Vptr$220972[ebp], esi
+	mov	DWORD PTR $T220975[ebp], esi
 	mov	BYTE PTR __$EHRec$[ebp+12], 1
 	cmp	esi, ebx
 	je	SHORT $LN18@Uninit_cop@2
@@ -6862,9 +6862,9 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$??$_Uninit_copy@PAUVoteSelectionSubData@@PAU1@V?$allocator@UVoteSelectionSubData@@@std@@@std@@YAPAUVoteSelectionSubData@@PAU1@00AAV?$allocator@UVoteSelectionSubData@@@0@U_Nonscalar_ptr_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z$2:
-	mov	eax, DWORD PTR __Vptr$220973[ebp]
+	mov	eax, DWORD PTR __Vptr$220972[ebp]
 	push	eax
-	mov	ecx, DWORD PTR $T220976[ebp]
+	mov	ecx, DWORD PTR $T220975[ebp]
 	push	ecx
 	call	??3@YAXPAX0@Z				; operator delete
 	add	esp, 8
@@ -7081,8 +7081,8 @@ PUBLIC	??$unchecked_uninitialized_fill_n@PAUVoteSelectionSubData@@IU1@V?$allocat
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$unchecked_uninitialized_fill_n@PAUVoteSelectionSubData@@IU1@V?$allocator@UVoteSelectionSubData@@@std@@@stdext@@YAXPAUVoteSelectionSubData@@IABU1@AAV?$allocator@UVoteSelectionSubData@@@std@@@Z
 _TEXT	SEGMENT
-$T221278 = -4						; size = 1
-__Cat$221283 = -4					; size = 1
+$T221277 = -4						; size = 1
+__Cat$221282 = -4					; size = 1
 __First$ = 8						; size = 4
 __Count$ = 12						; size = 4
 __Val$ = 16						; size = 4
@@ -7097,9 +7097,9 @@ __Al$ = 20						; size = 4
 ; 942  : 		_STD _Ptr_cat(_First, _First), _STD _Range_checked_iterator_tag());
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T221278[esp+4], 0
-	mov	eax, DWORD PTR $T221278[esp+4]
-	mov	ecx, DWORD PTR __Cat$221283[esp+4]
+	mov	BYTE PTR $T221277[esp+4], 0
+	mov	eax, DWORD PTR $T221277[esp+4]
+	mov	ecx, DWORD PTR __Cat$221282[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Val$[esp+4]
 	push	ecx
@@ -7121,8 +7121,8 @@ PUBLIC	??$unchecked_uninitialized_copy@PAUVoteSelectionSubData@@PAU1@V?$allocato
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$unchecked_uninitialized_copy@PAUVoteSelectionSubData@@PAU1@V?$allocator@UVoteSelectionSubData@@@std@@@stdext@@YAPAUVoteSelectionSubData@@PAU1@00AAV?$allocator@UVoteSelectionSubData@@@std@@@Z
 _TEXT	SEGMENT
-$T221287 = -4						; size = 1
-__Cat$221292 = -4					; size = 1
+$T221286 = -4						; size = 1
+__Cat$221291 = -4					; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
@@ -7138,9 +7138,9 @@ __Al$ = 20						; size = 4
 ; 822  : 		_STD _Ptr_cat(_First, _Dest), _STD _Range_checked_iterator_tag()));
 
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T221287[esp+4], 0
-	mov	eax, DWORD PTR $T221287[esp+4]
-	mov	ecx, DWORD PTR __Cat$221292[esp+4]
+	mov	BYTE PTR $T221286[esp+4], 0
+	mov	eax, DWORD PTR $T221286[esp+4]
+	mov	ecx, DWORD PTR __Cat$221291[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -7322,10 +7322,10 @@ PUBLIC	?_Ufill@?$vector@UVoteSelectionSubData@@V?$allocator@UVoteSelectionSubDat
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?_Ufill@?$vector@UVoteSelectionSubData@@V?$allocator@UVoteSelectionSubData@@@std@@@std@@IAEPAUVoteSelectionSubData@@PAU3@IABU3@@Z
 _TEXT	SEGMENT
-$T221689 = -4						; size = 1
+$T221688 = -4						; size = 1
 __Ptr$ = 8						; size = 4
 __Count$ = 12						; size = 4
-__Cat$221693 = 16					; size = 1
+__Cat$221692 = 16					; size = 1
 __Val$ = 16						; size = 4
 ?_Ufill@?$vector@UVoteSelectionSubData@@V?$allocator@UVoteSelectionSubData@@@std@@@std@@IAEPAUVoteSelectionSubData@@PAU3@IABU3@@Z PROC ; std::vector<VoteSelectionSubData,std::allocator<VoteSelectionSubData> >::_Ufill, COMDAT
 ; _this$ = ecx
@@ -7336,13 +7336,13 @@ __Val$ = 16						; size = 4
 
 ; 1254 : 		_STDEXT unchecked_uninitialized_fill_n(_Ptr, _Count, _Val, this->_Alval);
 
-	mov	edx, DWORD PTR __Cat$221693[esp]
+	mov	edx, DWORD PTR __Cat$221692[esp]
 	push	esi
 	mov	esi, DWORD PTR __Count$[esp+4]
 	push	edi
 	mov	edi, DWORD PTR __Ptr$[esp+8]
-	mov	BYTE PTR $T221689[esp+12], 0
-	mov	eax, DWORD PTR $T221689[esp+12]
+	mov	BYTE PTR $T221688[esp+12], 0
+	mov	eax, DWORD PTR $T221688[esp+12]
 	push	eax
 	mov	eax, DWORD PTR __Val$[esp+12]
 	push	edx
@@ -7372,10 +7372,10 @@ PUBLIC	??$_Uninit_move@PAUVoteSelectionSubData@@PAU1@V?$allocator@UVoteSelection
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ??$_Uninit_move@PAUVoteSelectionSubData@@PAU1@V?$allocator@UVoteSelectionSubData@@@std@@U_Undefined_move_tag@3@@std@@YAPAUVoteSelectionSubData@@PAU1@00AAV?$allocator@UVoteSelectionSubData@@@0@U_Undefined_move_tag@0@U_Range_checked_iterator_tag@0@@Z
 _TEXT	SEGMENT
-$T221706 = -4						; size = 1
+$T221705 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$221710 = 16					; size = 1
+__Cat$221709 = 16					; size = 1
 __Dest$ = 16						; size = 4
 __Al$ = 20						; size = 4
 ___formal$ = 24						; size = 1
@@ -7388,10 +7388,10 @@ ___formal$ = 28						; size = 1
 
 ; 207  : 	return (_STDEXT unchecked_uninitialized_copy(_First, _Last, _Dest, _Al));
 
-	mov	ecx, DWORD PTR __Cat$221710[esp]
+	mov	ecx, DWORD PTR __Cat$221709[esp]
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T221706[esp+4], 0
-	mov	eax, DWORD PTR $T221706[esp+4]
+	mov	BYTE PTR $T221705[esp+4], 0
+	mov	eax, DWORD PTR $T221705[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -7499,8 +7499,8 @@ _TEXT	SEGMENT
 __Capacity$ = -4					; size = 4
 __Where$ = 8						; size = 4
 __Count$ = 12						; size = 4
-__Tmp$215407 = 16					; size = 4
-__Tmp$215397 = 16					; size = 4
+__Tmp$215406 = 16					; size = 4
+__Tmp$215396 = 16					; size = 4
 __Val$ = 16						; size = 4
 ?_Insert_n@?$vector@HV?$allocator@H@std@@@std@@IAEXV?$_Vector_const_iterator@HV?$allocator@H@std@@@2@IABH@Z PROC ; std::vector<int,std::allocator<int> >::_Insert_n, COMDAT
 ; _this$ = ecx
@@ -7731,7 +7731,7 @@ $LN10@Insert_n:
 ; 1214 : 				_VEC_ITER_BASE(_Where) + _Count);	// copy suffix
 
 	lea	ebp, DWORD PTR [edi*4]
-	mov	DWORD PTR __Tmp$215397[esp+16], edx
+	mov	DWORD PTR __Tmp$215396[esp+16], edx
 	jae	SHORT $LN3@Insert_n
 	lea	ecx, DWORD PTR [eax+ebp]
 	push	ecx
@@ -7748,7 +7748,7 @@ $LN10@Insert_n:
 	mov	eax, DWORD PTR [esi+8]
 	mov	ecx, eax
 	sub	ecx, DWORD PTR __Where$[esp+16]
-	lea	edx, DWORD PTR __Tmp$215397[esp+16]
+	lea	edx, DWORD PTR __Tmp$215396[esp+16]
 	sar	ecx, 2
 	push	edx
 	sub	edi, ecx
@@ -7776,7 +7776,7 @@ $LN10@Insert_n:
 ; 1231 : 				_Tmp);	// insert up to old end
 
 	mov	eax, DWORD PTR __Where$[esp+16]
-	lea	edx, DWORD PTR __Tmp$215397[esp+16]
+	lea	edx, DWORD PTR __Tmp$215396[esp+16]
 	push	edx
 	sub	esi, ebp
 	push	esi
@@ -7831,7 +7831,7 @@ $LN3@Insert_n:
 ; 1248 : 				_Tmp);	// insert into hole
 
 	mov	eax, DWORD PTR __Where$[esp+28]
-	lea	ecx, DWORD PTR __Tmp$215407[esp+28]
+	lea	ecx, DWORD PTR __Tmp$215406[esp+28]
 	push	ecx
 	add	ebp, eax
 	push	ebp
@@ -7857,10 +7857,10 @@ PUBLIC	??$_Unchecked_uninitialized_move@PAUVoteSelectionSubData@@PAU1@V?$allocat
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\memory
 ;	COMDAT ??$_Unchecked_uninitialized_move@PAUVoteSelectionSubData@@PAU1@V?$allocator@UVoteSelectionSubData@@@std@@@stdext@@YAPAUVoteSelectionSubData@@PAU1@00AAV?$allocator@UVoteSelectionSubData@@@std@@@Z
 _TEXT	SEGMENT
-$T222028 = -4						; size = 1
+$T222027 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$222031 = 16					; size = 1
+__Cat$222030 = 16					; size = 1
 __Dest$ = 16						; size = 4
 __Al$ = 20						; size = 4
 ??$_Unchecked_uninitialized_move@PAUVoteSelectionSubData@@PAU1@V?$allocator@UVoteSelectionSubData@@@std@@@stdext@@YAPAUVoteSelectionSubData@@PAU1@00AAV?$allocator@UVoteSelectionSubData@@@std@@@Z PROC ; stdext::_Unchecked_uninitialized_move<VoteSelectionSubData *,VoteSelectionSubData *,std::allocator<VoteSelectionSubData> >, COMDAT
@@ -7873,10 +7873,10 @@ __Al$ = 20						; size = 4
 ; 863  : 		_CHECKED_BASE(_Last), _Dest, _Al,
 ; 864  : 		_STD _Move_cat(_Dest), _STD _Range_checked_iterator_tag()));
 
-	mov	ecx, DWORD PTR __Cat$222031[esp]
+	mov	ecx, DWORD PTR __Cat$222030[esp]
 	mov	edx, DWORD PTR __Al$[esp]
-	mov	BYTE PTR $T222028[esp+4], 0
-	mov	eax, DWORD PTR $T222028[esp+4]
+	mov	BYTE PTR $T222027[esp+4], 0
+	mov	eax, DWORD PTR $T222027[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -7954,10 +7954,10 @@ PUBLIC	??$_Umove@PAUVoteSelectionSubData@@@?$vector@UVoteSelectionSubData@@V?$al
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Umove@PAUVoteSelectionSubData@@@?$vector@UVoteSelectionSubData@@V?$allocator@UVoteSelectionSubData@@@std@@@std@@IAEPAUVoteSelectionSubData@@PAU2@00@Z
 _TEXT	SEGMENT
-$T222145 = -4						; size = 1
+$T222144 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
-__Cat$222148 = 16					; size = 1
+__Cat$222147 = 16					; size = 1
 __Ptr$ = 16						; size = 4
 ??$_Umove@PAUVoteSelectionSubData@@@?$vector@UVoteSelectionSubData@@V?$allocator@UVoteSelectionSubData@@@std@@@std@@IAEPAUVoteSelectionSubData@@PAU2@00@Z PROC ; std::vector<VoteSelectionSubData,std::allocator<VoteSelectionSubData> >::_Umove<VoteSelectionSubData *>, COMDAT
 ; _this$ = ecx
@@ -7970,9 +7970,9 @@ __Ptr$ = 16						; size = 4
 ; 1147 : 		return (_STDEXT _Unchecked_uninitialized_move(_First, _Last,
 ; 1148 : 			_Ptr, this->_Alval));
 
-	mov	edx, DWORD PTR __Cat$222148[esp]
-	mov	BYTE PTR $T222145[esp+4], 0
-	mov	eax, DWORD PTR $T222145[esp+4]
+	mov	edx, DWORD PTR __Cat$222147[esp]
+	mov	BYTE PTR $T222144[esp+4], 0
+	mov	eax, DWORD PTR $T222144[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Ptr$[esp+4]
 	push	edx
@@ -8107,20 +8107,20 @@ __unwindtable$?_Insert_n@?$vector@UVoteSelectionSubData@@V?$allocator@UVoteSelec
 xdata$x	ENDS
 ;	COMDAT ?_Insert_n@?$vector@UVoteSelectionSubData@@V?$allocator@UVoteSelectionSubData@@@std@@@std@@IAEXV?$_Vector_const_iterator@UVoteSelectionSubData@@V?$allocator@UVoteSelectionSubData@@@std@@@2@IABUVoteSelectionSubData@@@Z
 _TEXT	SEGMENT
-__Tmp$218481 = -120					; size = 44
-__Tmp$218471 = -76					; size = 44
+__Tmp$218480 = -120					; size = 44
+__Tmp$218470 = -76					; size = 44
 _this$ = -32						; size = 4
-__Whereoff$218457 = -28					; size = 4
-__Ncopied$218458 = -24					; size = 4
-__Newvec$218456 = -20					; size = 4
+__Whereoff$218456 = -28					; size = 4
+__Ncopied$218457 = -24					; size = 4
+__Newvec$218455 = -20					; size = 4
 __$EHRec$ = -16						; size = 16
-__Cat$222607 = 8					; size = 1
-__Cat$222535 = 8					; size = 1
+__Cat$222606 = 8					; size = 1
+__Cat$222534 = 8					; size = 1
 __Where$ = 8						; size = 4
 tv559 = 12						; size = 4
 __Count$ = 12						; size = 4
-$T222603 = 16						; size = 1
-$T222531 = 16						; size = 1
+$T222602 = 16						; size = 1
+$T222530 = 16						; size = 1
 __Val$ = 16						; size = 4
 ?_Insert_n@?$vector@UVoteSelectionSubData@@V?$allocator@UVoteSelectionSubData@@@std@@@std@@IAEXV?$_Vector_const_iterator@UVoteSelectionSubData@@V?$allocator@UVoteSelectionSubData@@@std@@@2@IABUVoteSelectionSubData@@@Z PROC ; std::vector<VoteSelectionSubData,std::allocator<VoteSelectionSubData> >::_Insert_n, COMDAT
 ; _this$ = ecx
@@ -8246,7 +8246,7 @@ $LN9@Insert_n@2:
 	mov	eax, edx
 	shr	eax, 31					; 0000001fH
 	add	eax, edx
-	mov	DWORD PTR __Whereoff$218457[ebp], eax
+	mov	DWORD PTR __Whereoff$218456[ebp], eax
 
 ; 1175 : 			int _Ncopied = 0;
 ; 1176 : 
@@ -8256,13 +8256,13 @@ $LN9@Insert_n@2:
 	imul	eax, 44					; 0000002cH
 	xor	edx, edx
 	add	esp, 8
-	mov	DWORD PTR __Ncopied$218458[ebp], edx
+	mov	DWORD PTR __Ncopied$218457[ebp], edx
 	mov	DWORD PTR __$EHRec$[ebp+12], edx
 	mov	edx, DWORD PTR __Val$[ebp]
 	push	edx
 	add	eax, ecx
 	push	edi
-	mov	DWORD PTR __Newvec$218456[ebp], ecx
+	mov	DWORD PTR __Newvec$218455[ebp], ecx
 	push	eax
 	mov	ecx, esi
 	call	?_Ufill@?$vector@UVoteSelectionSubData@@V?$allocator@UVoteSelectionSubData@@@std@@@std@@IAEPAUVoteSelectionSubData@@PAU3@IABU3@@Z ; std::vector<VoteSelectionSubData,std::allocator<VoteSelectionSubData> >::_Ufill
@@ -8271,42 +8271,42 @@ $LN9@Insert_n@2:
 ; 1180 : 			_Umove(this->_Myfirst, _VEC_ITER_BASE(_Where),
 ; 1181 : 				_Newvec);	// move prefix
 
-	mov	edx, DWORD PTR __Cat$222535[ebp]
+	mov	edx, DWORD PTR __Cat$222534[ebp]
 	mov	eax, DWORD PTR [esi+4]
-	mov	BYTE PTR $T222531[ebp], 0
-	mov	ecx, DWORD PTR $T222531[ebp]
+	mov	BYTE PTR $T222530[ebp], 0
+	mov	ecx, DWORD PTR $T222530[ebp]
 	push	ecx
-	mov	ecx, DWORD PTR __Newvec$218456[ebp]
+	mov	ecx, DWORD PTR __Newvec$218455[ebp]
 	push	edx
 	mov	edx, DWORD PTR __Where$[ebp]
 	push	esi
 	push	ecx
 	push	edx
 	push	eax
-	mov	DWORD PTR __Ncopied$218458[ebp], 1
+	mov	DWORD PTR __Ncopied$218457[ebp], 1
 	call	??$_Uninit_copy@PAUVoteSelectionSubData@@PAU1@V?$allocator@UVoteSelectionSubData@@@std@@@std@@YAPAUVoteSelectionSubData@@PAU1@00AAV?$allocator@UVoteSelectionSubData@@@0@U_Nonscalar_ptr_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z ; std::_Uninit_copy<VoteSelectionSubData *,VoteSelectionSubData *,std::allocator<VoteSelectionSubData> >
 
 ; 1182 : 			++_Ncopied;
 ; 1183 : 			_Umove(_VEC_ITER_BASE(_Where), this->_Mylast,
 ; 1184 : 				_Newvec + (_Whereoff + _Count));	// move suffix
 
-	mov	eax, DWORD PTR __Whereoff$218457[ebp]
+	mov	eax, DWORD PTR __Whereoff$218456[ebp]
 	mov	ecx, DWORD PTR [esi+8]
 	add	eax, edi
 	imul	eax, 44					; 0000002cH
-	add	eax, DWORD PTR __Newvec$218456[ebp]
+	add	eax, DWORD PTR __Newvec$218455[ebp]
 	add	esp, 24					; 00000018H
-	mov	BYTE PTR $T222603[ebp], 0
-	mov	edx, DWORD PTR $T222603[ebp]
+	mov	BYTE PTR $T222602[ebp], 0
+	mov	edx, DWORD PTR $T222602[ebp]
 	push	edx
-	mov	edx, DWORD PTR __Cat$222607[ebp]
+	mov	edx, DWORD PTR __Cat$222606[ebp]
 	push	edx
 	push	esi
 	push	eax
 	mov	eax, DWORD PTR __Where$[ebp]
 	push	ecx
 	push	eax
-	mov	DWORD PTR __Ncopied$218458[ebp], 2
+	mov	DWORD PTR __Ncopied$218457[ebp], 2
 	call	??$_Uninit_copy@PAUVoteSelectionSubData@@PAU1@V?$allocator@UVoteSelectionSubData@@@std@@@std@@YAPAUVoteSelectionSubData@@PAU1@00AAV?$allocator@UVoteSelectionSubData@@@0@U_Nonscalar_ptr_iterator_tag@0@U_Range_checked_iterator_tag@0@@Z ; std::_Uninit_copy<VoteSelectionSubData *,VoteSelectionSubData *,std::allocator<VoteSelectionSubData> >
 
 ; 1192 : 			_CATCH_END
@@ -8356,7 +8356,7 @@ $LN83@Insert_n@2:
 ; 1204 : 
 ; 1205 : 			_Myend = _Newvec + _Capacity;
 
-	mov	eax, DWORD PTR __Newvec$218456[ebp]
+	mov	eax, DWORD PTR __Newvec$218455[ebp]
 	imul	ebx, 44					; 0000002cH
 
 ; 1206 : 			_Mylast = _Newvec + _Count;
@@ -8386,13 +8386,13 @@ __catch$?_Insert_n@?$vector@UVoteSelectionSubData@@V?$allocator@UVoteSelectionSu
 ; 1185 : 			_CATCH_ALL
 ; 1186 : 			if (1 < _Ncopied)
 
-	mov	ebx, DWORD PTR __Ncopied$218458[ebp]
+	mov	ebx, DWORD PTR __Ncopied$218457[ebp]
 	cmp	ebx, 1
 
 ; 1187 : 				_Destroy(_Newvec, _Newvec + _Whereoff);
 
-	mov	esi, DWORD PTR __Whereoff$218457[ebp]
-	mov	edi, DWORD PTR __Newvec$218456[ebp]
+	mov	esi, DWORD PTR __Whereoff$218456[ebp]
+	mov	edi, DWORD PTR __Newvec$218455[ebp]
 	jle	SHORT $LN7@Insert_n@2
 	mov	ecx, esi
 	imul	ecx, 44					; 0000002cH
@@ -8454,7 +8454,7 @@ $LN10@Insert_n@2:
 
 	mov	edx, DWORD PTR __Val$[ebp]
 	push	edx
-	lea	ecx, DWORD PTR __Tmp$218471[ebp]
+	lea	ecx, DWORD PTR __Tmp$218470[ebp]
 	call	??0VoteSelectionSubData@@QAE@ABU0@@Z
 
 ; 1212 : 
@@ -8481,7 +8481,7 @@ $LN10@Insert_n@2:
 	mov	ecx, DWORD PTR [esi+8]
 	mov	edx, ecx
 	sub	edx, DWORD PTR __Where$[ebp]
-	lea	eax, DWORD PTR __Tmp$218471[ebp]
+	lea	eax, DWORD PTR __Tmp$218470[ebp]
 	push	eax
 	mov	eax, 780903145				; 2e8ba2e9H
 	imul	edx
@@ -8512,7 +8512,7 @@ $LN10@Insert_n@2:
 ; 1231 : 				_Tmp);	// insert up to old end
 
 	mov	edx, DWORD PTR __Where$[ebp]
-	lea	ecx, DWORD PTR __Tmp$218471[ebp]
+	lea	ecx, DWORD PTR __Tmp$218470[ebp]
 	push	ecx
 	sub	esi, ebx
 	push	esi
@@ -8523,7 +8523,7 @@ $LN10@Insert_n@2:
 
 ; 1232 : 			}
 
-	lea	ecx, DWORD PTR __Tmp$218471[ebp+16]
+	lea	ecx, DWORD PTR __Tmp$218470[ebp+16]
 
 ; 1233 : 		else
 
@@ -8557,7 +8557,7 @@ $LN3@Insert_n@2:
 
 	mov	eax, DWORD PTR __Val$[ebp]
 	push	eax
-	lea	ecx, DWORD PTR __Tmp$218481[ebp]
+	lea	ecx, DWORD PTR __Tmp$218480[ebp]
 	call	??0VoteSelectionSubData@@QAE@ABU0@@Z
 
 ; 1236 : 
@@ -8596,7 +8596,7 @@ $LN3@Insert_n@2:
 ; 1247 : 			std::fill(_VEC_ITER_BASE(_Where), _VEC_ITER_BASE(_Where) + _Count,
 ; 1248 : 				_Tmp);	// insert into hole
 
-	lea	eax, DWORD PTR __Tmp$218481[ebp]
+	lea	eax, DWORD PTR __Tmp$218480[ebp]
 	push	eax
 	mov	eax, DWORD PTR __Where$[ebp]
 	add	edi, eax
@@ -8607,7 +8607,7 @@ $LN3@Insert_n@2:
 
 ; 1249 : 			}
 
-	lea	ecx, DWORD PTR __Tmp$218481[ebp+16]
+	lea	ecx, DWORD PTR __Tmp$218480[ebp+16]
 $LN106@Insert_n@2:
 	mov	DWORD PTR __$EHRec$[ebp+12], -1
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
@@ -8628,10 +8628,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?_Insert_n@?$vector@UVoteSelectionSubData@@V?$allocator@UVoteSelectionSubData@@@std@@@std@@IAEXV?$_Vector_const_iterator@UVoteSelectionSubData@@V?$allocator@UVoteSelectionSubData@@@std@@@2@IABUVoteSelectionSubData@@@Z$4:
-	lea	ecx, DWORD PTR __Tmp$218471[ebp]
+	lea	ecx, DWORD PTR __Tmp$218470[ebp]
 	jmp	??1VoteSelectionSubData@@QAE@XZ
 __unwindfunclet$?_Insert_n@?$vector@UVoteSelectionSubData@@V?$allocator@UVoteSelectionSubData@@@std@@@std@@IAEXV?$_Vector_const_iterator@UVoteSelectionSubData@@V?$allocator@UVoteSelectionSubData@@@std@@@2@IABUVoteSelectionSubData@@@Z$5:
-	lea	ecx, DWORD PTR __Tmp$218481[ebp]
+	lea	ecx, DWORD PTR __Tmp$218480[ebp]
 	jmp	??1VoteSelectionSubData@@QAE@XZ
 __ehhandler$?_Insert_n@?$vector@UVoteSelectionSubData@@V?$allocator@UVoteSelectionSubData@@@std@@@std@@IAEXV?$_Vector_const_iterator@UVoteSelectionSubData@@V?$allocator@UVoteSelectionSubData@@@std@@@2@IABUVoteSelectionSubData@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?_Insert_n@?$vector@UVoteSelectionSubData@@V?$allocator@UVoteSelectionSubData@@@std@@@std@@IAEXV?$_Vector_const_iterator@UVoteSelectionSubData@@V?$allocator@UVoteSelectionSubData@@@std@@@2@IABUVoteSelectionSubData@@@Z
@@ -8643,7 +8643,7 @@ PUBLIC	??$SerializeToSequenceContainer@HV?$vector@HV?$allocator@H@std@@@std@@@@Y
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\fireplace\include\fireworks\fstlcontainerserialization.h
 ;	COMDAT ??$SerializeToSequenceContainer@HV?$vector@HV?$allocator@H@std@@@std@@@@YAXAAVFDataStream@@AAV?$vector@HV?$allocator@H@std@@@std@@@Z
 _TEXT	SEGMENT
-_v$214337 = -4						; size = 4
+_v$214336 = -4						; size = 4
 _loadFrom$ = 8						; size = 4
 _count$ = 12						; size = 4
 _container$ = 12					; size = 4
@@ -8703,7 +8703,7 @@ $LL117@SerializeT:
 ; 90   : 		ElementType v;
 ; 91   : 		loadFrom >> v;
 
-	lea	ecx, DWORD PTR _v$214337[esp+20]
+	lea	ecx, DWORD PTR _v$214336[esp+20]
 	push	ecx
 	mov	ecx, edi
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
@@ -8726,13 +8726,13 @@ $LN61@SerializeT:
 	sar	ebp, 2
 	cmp	ebp, eax
 	jae	SHORT $LN53@SerializeT
-	mov	edx, DWORD PTR _v$214337[esp+20]
+	mov	edx, DWORD PTR _v$214336[esp+20]
 	mov	DWORD PTR [ecx], edx
 	add	ecx, 4
 	mov	DWORD PTR [esi+8], ecx
 	jmp	SHORT $LN2@SerializeT
 $LN53@SerializeT:
-	lea	eax, DWORD PTR _v$214337[esp+20]
+	lea	eax, DWORD PTR _v$214336[esp+20]
 	push	eax
 	push	1
 	push	ecx
@@ -8910,9 +8910,9 @@ PUBLIC	?push_back@?$vector@UVoteSelectionSubData@@V?$allocator@UVoteSelectionSub
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\vector
 ;	COMDAT ?push_back@?$vector@UVoteSelectionSubData@@V?$allocator@UVoteSelectionSubData@@@std@@@std@@QAEXABUVoteSelectionSubData@@@Z
 _TEXT	SEGMENT
-$T223326 = -4						; size = 1
-__Cat$223330 = 8					; size = 1
-$T223297 = 8						; size = 4
+$T223325 = -4						; size = 1
+__Cat$223329 = 8					; size = 1
+$T223296 = 8						; size = 4
 __Val$ = 8						; size = 4
 ?push_back@?$vector@UVoteSelectionSubData@@V?$allocator@UVoteSelectionSubData@@@std@@@std@@QAEXABUVoteSelectionSubData@@@Z PROC ; std::vector<VoteSelectionSubData,std::allocator<VoteSelectionSubData> >::push_back, COMDAT
 ; _this$ = ecx
@@ -8964,10 +8964,10 @@ $LN10@push_back@2:
 ; 818  :  #else /* _HAS_ITERATOR_DEBUGGING */
 ; 819  : 			_Mylast = _Ufill(_Mylast, 1, _Val);
 
-	mov	edx, DWORD PTR __Cat$223330[esp+12]
+	mov	edx, DWORD PTR __Cat$223329[esp+12]
 	mov	eax, DWORD PTR __Val$[esp+12]
-	mov	BYTE PTR $T223326[esp+16], 0
-	mov	ecx, DWORD PTR $T223326[esp+16]
+	mov	BYTE PTR $T223325[esp+16], 0
+	mov	ecx, DWORD PTR $T223325[esp+16]
 	push	ecx
 	push	edx
 	push	esi
@@ -8996,7 +8996,7 @@ $LN2@push_back@2:
 	mov	ecx, DWORD PTR __Val$[esp+12]
 	push	ecx
 	push	edi
-	lea	edx, DWORD PTR $T223297[esp+20]
+	lea	edx, DWORD PTR $T223296[esp+20]
 	push	edx
 	mov	ecx, esi
 	call	?insert@?$vector@UVoteSelectionSubData@@V?$allocator@UVoteSelectionSubData@@@std@@@std@@QAE?AV?$_Vector_iterator@UVoteSelectionSubData@@V?$allocator@UVoteSelectionSubData@@@std@@@2@V?$_Vector_const_iterator@UVoteSelectionSubData@@V?$allocator@UVoteSelectionSubData@@@std@@@2@ABUVoteSelectionSubData@@@Z ; std::vector<VoteSelectionSubData,std::allocator<VoteSelectionSubData> >::insert
@@ -9029,7 +9029,7 @@ xdata$x	ENDS
 ;	COMDAT ?read@VoteSelectionData@@QAEXAAVFDataStream@@@Z
 _TEXT	SEGMENT
 _uiVersion$ = -60					; size = 4
-_kData$217775 = -56					; size = 44
+_kData$217774 = -56					; size = 44
 __$EHRec$ = -12						; size = 12
 _iSize$ = 8						; size = 4
 _kStream$ = 8						; size = 4
@@ -9097,16 +9097,16 @@ $LL3@read:
 ; 46   : 		VoteSelectionSubData kData;
 
 	push	OFFSET ??_C@_00CNPNBAHC@?$AA@
-	lea	ecx, DWORD PTR _kData$217775[esp+96]
-	mov	DWORD PTR _kData$217775[esp+80], edi
-	mov	DWORD PTR _kData$217775[esp+84], edi
-	mov	DWORD PTR _kData$217775[esp+88], edi
-	mov	DWORD PTR _kData$217775[esp+92], edi
+	lea	ecx, DWORD PTR _kData$217774[esp+96]
+	mov	DWORD PTR _kData$217774[esp+80], edi
+	mov	DWORD PTR _kData$217774[esp+84], edi
+	mov	DWORD PTR _kData$217774[esp+88], edi
+	mov	DWORD PTR _kData$217774[esp+92], edi
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 
 ; 47   : 		kStream >> kData.eVote;
 
-	lea	eax, DWORD PTR _kData$217775[esp+76]
+	lea	eax, DWORD PTR _kData$217774[esp+76]
 	push	eax
 	push	esi
 	mov	DWORD PTR __$EHRec$[esp+92], 0
@@ -9114,7 +9114,7 @@ $LL3@read:
 
 ; 48   : 		kStream >> kData.ePlayer;
 
-	lea	ecx, DWORD PTR _kData$217775[esp+88]
+	lea	ecx, DWORD PTR _kData$217774[esp+88]
 	push	ecx
 	push	esi
 	call	??5@YAAAVFDataStream@@AAV0@AAW4PlayerTypes@@@Z ; operator>>
@@ -9122,14 +9122,14 @@ $LL3@read:
 
 ; 49   : 		kStream >> kData.iCityId;
 
-	lea	edx, DWORD PTR _kData$217775[esp+84]
+	lea	edx, DWORD PTR _kData$217774[esp+84]
 	push	edx
 	mov	ecx, esi
 	call	?Read@FDataStream@@IAEXAAH@Z		; FDataStream::Read
 
 ; 50   : 		kStream >> kData.eOtherPlayer;
 
-	lea	eax, DWORD PTR _kData$217775[esp+88]
+	lea	eax, DWORD PTR _kData$217774[esp+88]
 	push	eax
 	push	esi
 	call	??5@YAAAVFDataStream@@AAV0@AAW4PlayerTypes@@@Z ; operator>>
@@ -9137,21 +9137,21 @@ $LL3@read:
 
 ; 51   : 		kStream >> kData.strText;
 
-	lea	ecx, DWORD PTR _kData$217775[esp+92]
+	lea	ecx, DWORD PTR _kData$217774[esp+92]
 	push	ecx
 	mov	ecx, esi
 	call	?Read@FDataStream@@IAEXAAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z ; FDataStream::Read
 
 ; 52   : 		aVoteOptions.push_back(kData);
 
-	lea	edx, DWORD PTR _kData$217775[esp+76]
+	lea	edx, DWORD PTR _kData$217774[esp+76]
 	push	edx
 	mov	ecx, ebp
 	call	?push_back@?$vector@UVoteSelectionSubData@@V?$allocator@UVoteSelectionSubData@@@std@@@std@@QAEXABUVoteSelectionSubData@@@Z ; std::vector<VoteSelectionSubData,std::allocator<VoteSelectionSubData> >::push_back
 
 ; 53   : 	}
 
-	lea	ecx, DWORD PTR _kData$217775[esp+92]
+	lea	ecx, DWORD PTR _kData$217774[esp+92]
 	mov	DWORD PTR __$EHRec$[esp+84], edi
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 	inc	ebx
@@ -9173,7 +9173,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?read@VoteSelectionData@@QAEXAAVFDataStream@@@Z$0:
-	lea	ecx, DWORD PTR _kData$217775[ebp]
+	lea	ecx, DWORD PTR _kData$217774[ebp]
 	jmp	??1VoteSelectionSubData@@QAE@XZ
 __ehhandler$?read@VoteSelectionData@@QAEXAAVFDataStream@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?read@VoteSelectionData@@QAEXAAVFDataStream@@@Z

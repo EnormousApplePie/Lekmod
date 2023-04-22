@@ -1057,7 +1057,7 @@ tv357 = -4						; size = 4
 _iX1$ = 8						; size = 4
 _iDX$ = 12						; size = 4
 _iY1$ = 12						; size = 4
-$T218907 = 16						; size = 4
+$T218906 = 16						; size = 4
 _iX2$ = 16						; size = 4
 _iY2$ = 20						; size = 4
 ?plotDistance@@YAHHHHH@Z PROC				; plotDistance, COMDAT
@@ -1106,18 +1106,18 @@ $LN18@plotDistan:
 	jle	SHORT $LN34@plotDistan
 	mov	ebx, ebp
 	sub	ebx, eax
-	mov	DWORD PTR $T218907[esp+24], ebx
+	mov	DWORD PTR $T218906[esp+24], ebx
 	jmp	SHORT $LN36@plotDistan
 $LN34@plotDistan:
 	neg	edx
 	cmp	ebp, edx
 	jge	SHORT $LN32@plotDistan
 	lea	ebx, DWORD PTR [eax+ebp]
-	mov	DWORD PTR $T218907[esp+24], ebx
+	mov	DWORD PTR $T218906[esp+24], ebx
 	jmp	SHORT $LN36@plotDistan
 $LN32@plotDistan:
 	mov	ebx, ebp
-	mov	DWORD PTR $T218907[esp+24], ebp
+	mov	DWORD PTR $T218906[esp+24], ebp
 $LN36@plotDistan:
 
 ; 148  : 	int iDY = abs(iWrappedDY);
@@ -1168,7 +1168,7 @@ $LN80@plotDistan:
 ; 154  : 	{
 ; 155  : 		iWrappedDX *= -1;  // change polarity
 
-	mov	ebx, DWORD PTR $T218907[esp+24]
+	mov	ebx, DWORD PTR $T218906[esp+24]
 	neg	eax
 	sbb	eax, eax
 	inc	eax
@@ -1177,7 +1177,7 @@ $LN80@plotDistan:
 	neg	ecx
 	jmp	SHORT $LN5@plotDistan
 $LN73@plotDistan:
-	mov	ebx, DWORD PTR $T218907[esp+24]
+	mov	ebx, DWORD PTR $T218906[esp+24]
 $LN5@plotDistan:
 
 ; 156  : 	}
@@ -2848,12 +2848,12 @@ xdata$x	ENDS
 ;	COMDAT ?Rebuild@CvUnitCycler@@QAEXPAVCvUnit@@@Z
 _TEXT	SEGMENT
 _iLoop$ = -32						; size = 4
-_iX$218201 = -28					; size = 4
-_iNumUnits$218195 = -24					; size = 4
-_pCurrentUnit$218194 = -20				; size = 8
+_iX$218200 = -28					; size = 4
+_iNumUnits$218194 = -24					; size = 4
+_pCurrentUnit$218193 = -20				; size = 8
 __$EHRec$ = -12						; size = 12
-_iY$218202 = 8						; size = 4
-_pSelectedUnit$218172 = 8				; size = 4
+_iY$218201 = 8						; size = 4
+_pSelectedUnit$218171 = 8				; size = 4
 _pkStartUnit$ = 8					; size = 4
 ?Rebuild@CvUnitCycler@@QAEXPAVCvUnit@@@Z PROC		; CvUnitCycler::Rebuild, COMDAT
 ; _this$ = ecx
@@ -2914,7 +2914,7 @@ $LN19@Rebuild:
 	mov	edx, DWORD PTR [eax+20]
 	call	edx
 	mov	ebx, eax
-	mov	DWORD PTR _pSelectedUnit$218172[esp+44], ebx
+	mov	DWORD PTR _pSelectedUnit$218171[esp+44], ebx
 
 ; 41   : 		pkStartUnit = GC.UnwrapUnitPointer(pSelectedUnit.get());
 
@@ -3072,8 +3072,8 @@ $LN138@Rebuild:
 
 	mov	ecx, esi
 	mov	DWORD PTR [edi+12], eax
-	mov	DWORD PTR _pCurrentUnit$218194[esp+48], esi
-	mov	BYTE PTR _pCurrentUnit$218194[esp+52], 0
+	mov	DWORD PTR _pCurrentUnit$218193[esp+48], esi
+	mov	BYTE PTR _pCurrentUnit$218193[esp+52], 0
 	call	?getDestructionNotification@CvUnit@@QAEAAU?$DestructionNotification@V?$FObjectHandle@VCvUnit@@@@@@XZ ; CvUnit::getDestructionNotification
 
 ; 76   : 		pCurrentUnit->SetCycleOrder(1);
@@ -3093,12 +3093,12 @@ $LN138@Rebuild:
 ; 80   : 		while(m_kNodeList.getLength() < iNumUnits)
 
 	cmp	DWORD PTR [edi+4], eax
-	mov	DWORD PTR _iNumUnits$218195[esp+48], eax
+	mov	DWORD PTR _iNumUnits$218194[esp+48], eax
 	jge	$LN2@Rebuild
 	jmp	SHORT $LN9@Rebuild
 	npad	6
 $LL133@Rebuild:
-	mov	esi, DWORD PTR _pCurrentUnit$218194[esp+48]
+	mov	esi, DWORD PTR _pCurrentUnit$218193[esp+48]
 $LN9@Rebuild:
 
 ; 81   : 		{
@@ -3121,8 +3121,8 @@ $LN9@Rebuild:
 	push	ecx
 	mov	ecx, DWORD PTR [edi+16]
 	mov	ebp, 2147483647				; 7fffffffH
-	mov	DWORD PTR _iX$218201[esp+56], edx
-	mov	DWORD PTR _iY$218202[esp+52], eax
+	mov	DWORD PTR _iX$218200[esp+56], edx
+	mov	DWORD PTR _iY$218201[esp+52], eax
 	call	?firstUnit@CvPlayer@@QAEPAVCvUnit@@PAH_N@Z ; CvPlayer::firstUnit
 	mov	esi, eax
 	test	esi, esi
@@ -3144,9 +3144,9 @@ $LL7@Rebuild:
 
 	mov	eax, DWORD PTR [esi+88]
 	mov	ecx, DWORD PTR [esi+76]
-	mov	edx, DWORD PTR _iY$218202[esp+44]
+	mov	edx, DWORD PTR _iY$218201[esp+44]
 	push	eax
-	mov	eax, DWORD PTR _iX$218201[esp+52]
+	mov	eax, DWORD PTR _iX$218200[esp+52]
 	push	ecx
 	push	edx
 	push	eax
@@ -3221,12 +3221,12 @@ $LN139@Rebuild:
 ; 109  : 				// Now have a new current unit
 ; 110  : 				pCurrentUnit = pBestUnit;
 
-	mov	ecx, DWORD PTR _pCurrentUnit$218194[esp+48]
+	mov	ecx, DWORD PTR _pCurrentUnit$218193[esp+48]
 	inc	DWORD PTR [edi+4]
 	mov	DWORD PTR [edi+12], eax
 	call	?getDestructionNotification@CvUnit@@QAEAAU?$DestructionNotification@V?$FObjectHandle@VCvUnit@@@@@@XZ ; CvUnit::getDestructionNotification
 	mov	ecx, ebx
-	mov	DWORD PTR _pCurrentUnit$218194[esp+48], ebx
+	mov	DWORD PTR _pCurrentUnit$218193[esp+48], ebx
 	call	?getDestructionNotification@CvUnit@@QAEAAU?$DestructionNotification@V?$FObjectHandle@VCvUnit@@@@@@XZ ; CvUnit::getDestructionNotification
 
 ; 111  : 				pCurrentUnit->SetCycleOrder(1);
@@ -3234,14 +3234,14 @@ $LN139@Rebuild:
 	push	1
 	mov	ecx, ebx
 	call	?SetCycleOrder@CvUnit@@QAEXH@Z		; CvUnit::SetCycleOrder
-	mov	eax, DWORD PTR _iNumUnits$218195[esp+48]
+	mov	eax, DWORD PTR _iNumUnits$218194[esp+48]
 	cmp	DWORD PTR [edi+4], eax
 	jl	$LL133@Rebuild
 $LN134@Rebuild:
 
 ; 80   : 		while(m_kNodeList.getLength() < iNumUnits)
 
-	mov	esi, DWORD PTR _pCurrentUnit$218194[esp+48]
+	mov	esi, DWORD PTR _pCurrentUnit$218193[esp+48]
 $LN2@Rebuild:
 
 ; 112  : 			}
@@ -3269,10 +3269,10 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$?Rebuild@CvUnitCycler@@QAEXPAVCvUnit@@@Z$0:
-	lea	ecx, DWORD PTR _pSelectedUnit$218172[ebp-4]
+	lea	ecx, DWORD PTR _pSelectedUnit$218171[ebp-4]
 	jmp	??1?$auto_ptr@VICvUnit1@@@std@@QAE@XZ	; std::auto_ptr<ICvUnit1>::~auto_ptr<ICvUnit1>
 __unwindfunclet$?Rebuild@CvUnitCycler@@QAEXPAVCvUnit@@@Z$1:
-	lea	ecx, DWORD PTR _pCurrentUnit$218194[ebp]
+	lea	ecx, DWORD PTR _pCurrentUnit$218193[ebp]
 	jmp	??1?$FObjectHandle@VCvUnit@@@@QAE@XZ	; FObjectHandle<CvUnit>::~FObjectHandle<CvUnit>
 __ehhandler$?Rebuild@CvUnitCycler@@QAEXPAVCvUnit@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?Rebuild@CvUnitCycler@@QAEXPAVCvUnit@@@Z

@@ -12,200 +12,200 @@ INCLUDELIB OLDNAMES
 PUBLIC	?NO_QUEST_DATA@CvMinorCivQuest@@2HB		; CvMinorCivQuest::NO_QUEST_DATA
 PUBLIC	?NO_TURN@CvMinorCivQuest@@2HB			; CvMinorCivQuest::NO_TURN
 CONST	SEGMENT
-$SG223842 DB	'TXT_KEY_BUILD_A_CITY_MCFLY_ECONOMIC', 00H
-$SG223844 DB	'TXT_KEY_BUILD_A_CITY_MCFLY_MILITARY', 00H
-$SG223846 DB	'TXT_KEY_BUILD_A_CITY_MCFLY_SCIENCE', 00H
+$SG223841 DB	'TXT_KEY_BUILD_A_CITY_MCFLY_ECONOMIC', 00H
+$SG223843 DB	'TXT_KEY_BUILD_A_CITY_MCFLY_MILITARY', 00H
+$SG223845 DB	'TXT_KEY_BUILD_A_CITY_MCFLY_SCIENCE', 00H
 	ORG $+1
-$SG223848 DB	'TXT_KEY_BUILD_A_CITY_MCFLY_FOREIGN', 00H
+$SG223847 DB	'TXT_KEY_BUILD_A_CITY_MCFLY_FOREIGN', 00H
 	ORG $+1
-$SG223914 DB	'FLAVOR_SCIENCE', 00H
+$SG223913 DB	'FLAVOR_SCIENCE', 00H
 	ORG $+1
-$SG223933 DB	'TXT_KEY_TECHSTRATEGY_CIV_BONUS_UNIT', 00H
-$SG223941 DB	'TXT_KEY_TECHSTRATEGY_CIV_BONUS_BUILDING', 00H
-$SG223949 DB	'TXT_KEY_TECHSTRATEGY_CIV_BONUS_IMPROVEMENT', 00H
+$SG223932 DB	'TXT_KEY_TECHSTRATEGY_CIV_BONUS_UNIT', 00H
+$SG223940 DB	'TXT_KEY_TECHSTRATEGY_CIV_BONUS_BUILDING', 00H
+$SG223948 DB	'TXT_KEY_TECHSTRATEGY_CIV_BONUS_IMPROVEMENT', 00H
 	ORG $+1
-$SG223957 DB	'TXT_KEY_TECHSTRATEGY_CIV_BONUS', 00H
+$SG223956 DB	'TXT_KEY_TECHSTRATEGY_CIV_BONUS', 00H
 	ORG $+1
-$SG223964 DB	'TXT_KEY_TECHSTRATEGY_RESOURCE', 00H
+$SG223963 DB	'TXT_KEY_TECHSTRATEGY_RESOURCE', 00H
 	ORG $+2
-$SG223991 DB	'TXT_KEY_SCIENCESTRATEGY_TECH_THAT_PROVIDES_SCIENCE_BUILD'
+$SG223990 DB	'TXT_KEY_SCIENCESTRATEGY_TECH_THAT_PROVIDES_SCIENCE_BUILD'
 	DB	'ING_3', 00H
 	ORG $+2
-$SG223998 DB	'TXT_KEY_SCIENCESTRATEGY_TECH_THAT_PROVIDES_SCIENCE_BUILD'
+$SG223997 DB	'TXT_KEY_SCIENCESTRATEGY_TECH_THAT_PROVIDES_SCIENCE_BUILD'
 	DB	'ING_2', 00H
 	ORG $+2
-$SG224004 DB	'TXT_KEY_SCIENCESTRATEGY_TECH_THAT_PROVIDES_SCIENCE_BUILD'
+$SG224003 DB	'TXT_KEY_SCIENCESTRATEGY_TECH_THAT_PROVIDES_SCIENCE_BUILD'
 	DB	'ING_1', 00H
 	ORG $+2
-$SG224045 DB	'TXT_KEY_SCIENCESTRATEGY_RESEARCH_MILITARY_UNITS', 00H
-$SG224052 DB	'TXT_KEY_SCIENCESTRATEGY_RESEARCH_MILITARY_BUILDING', 00H
+$SG224044 DB	'TXT_KEY_SCIENCESTRATEGY_RESEARCH_MILITARY_UNITS', 00H
+$SG224051 DB	'TXT_KEY_SCIENCESTRATEGY_RESEARCH_MILITARY_BUILDING', 00H
 	ORG $+1
-$SG224066 DB	'TXT_KEY_SCIENCESTRATEGY_INFO_DOING_POORLY', 00H
+$SG224065 DB	'TXT_KEY_SCIENCESTRATEGY_INFO_DOING_POORLY', 00H
 	ORG $+2
-$SG224070 DB	'TXT_KEY_SCIENCESTRATEGY_INFO_DOING_WELL', 00H
-$SG224073 DB	'TXT_KEY_SCIENCESTRATEGY_INFO', 00H
+$SG224069 DB	'TXT_KEY_SCIENCESTRATEGY_INFO_DOING_WELL', 00H
+$SG224072 DB	'TXT_KEY_SCIENCESTRATEGY_INFO', 00H
 	ORG $+3
-$SG224076 DB	'TXT_KEY_SCIENCESTRATEGY_BANKRUPT', 00H
+$SG224075 DB	'TXT_KEY_SCIENCESTRATEGY_BANKRUPT', 00H
 	ORG $+3
-$SG224104 DB	'TXT_KEY_DIPLOSTRATEGY_WARPROJECTION_DESTRUCTION_WAR', 00H
-$SG224110 DB	'TXT_KEY_DIPLOSTRATEGY_WARPROJECTION_DEFEAT_WAR', 00H
+$SG224103 DB	'TXT_KEY_DIPLOSTRATEGY_WARPROJECTION_DESTRUCTION_WAR', 00H
+$SG224109 DB	'TXT_KEY_DIPLOSTRATEGY_WARPROJECTION_DEFEAT_WAR', 00H
 	ORG $+1
-$SG224116 DB	'TXT_KEY_DIPLOSTRATEGY_WARPROJECTION_STALEMATE_WAR', 00H
+$SG224115 DB	'TXT_KEY_DIPLOSTRATEGY_WARPROJECTION_STALEMATE_WAR', 00H
 	ORG $+2
-$SG224122 DB	'TXT_KEY_DIPLOSTRATEGY_WARPROJECTION_GOOD_WAR', 00H
+$SG224121 DB	'TXT_KEY_DIPLOSTRATEGY_WARPROJECTION_GOOD_WAR', 00H
 	ORG $+3
-$SG224128 DB	'TXT_KEY_DIPLOSTRATEGY_WARPROJECTION_VERY_GOOD_WAR', 00H
+$SG224127 DB	'TXT_KEY_DIPLOSTRATEGY_WARPROJECTION_VERY_GOOD_WAR', 00H
 	ORG $+2
-$SG224139 DB	'TXT_KEY_DIPLOSTRATEGY_MILITARY_STRENGTH_COMPARED_TO_US_P'
+$SG224138 DB	'TXT_KEY_DIPLOSTRATEGY_MILITARY_STRENGTH_COMPARED_TO_US_P'
 	DB	'ATHETIC', 00H
-$SG224145 DB	'TXT_KEY_DIPLOSTRATEGY_MILITARY_STRENGTH_COMPARED_TO_US_W'
+$SG224144 DB	'TXT_KEY_DIPLOSTRATEGY_MILITARY_STRENGTH_COMPARED_TO_US_W'
 	DB	'EAK', 00H
-$SG224151 DB	'TXT_KEY_DIPLOSTRATEGY_MILITARY_STRENGTH_COMPARED_TO_US_P'
+$SG224150 DB	'TXT_KEY_DIPLOSTRATEGY_MILITARY_STRENGTH_COMPARED_TO_US_P'
 	DB	'OOR', 00H
-$SG224157 DB	'TXT_KEY_DIPLOSTRATEGY_MILITARY_STRENGTH_COMPARED_TO_US_A'
+$SG224156 DB	'TXT_KEY_DIPLOSTRATEGY_MILITARY_STRENGTH_COMPARED_TO_US_A'
 	DB	'VERAGE', 00H
 	ORG $+1
-$SG224163 DB	'TXT_KEY_DIPLOSTRATEGY_MILITARY_STRENGTH_COMPARED_TO_US_S'
+$SG224162 DB	'TXT_KEY_DIPLOSTRATEGY_MILITARY_STRENGTH_COMPARED_TO_US_S'
 	DB	'TRONG', 00H
 	ORG $+2
-$SG224169 DB	'TXT_KEY_DIPLOSTRATEGY_MILITARY_STRENGTH_COMPARED_TO_US_P'
+$SG224168 DB	'TXT_KEY_DIPLOSTRATEGY_MILITARY_STRENGTH_COMPARED_TO_US_P'
 	DB	'OWERFUL', 00H
-$SG224175 DB	'TXT_KEY_DIPLOSTRATEGY_MILITARY_STRENGTH_COMPARED_TO_US_I'
+$SG224174 DB	'TXT_KEY_DIPLOSTRATEGY_MILITARY_STRENGTH_COMPARED_TO_US_I'
 	DB	'MMENSE', 00H
 	ORG $+1
-$SG224189 DB	'TXT_KEY_DIPLOSTRATEGY_MILITARY_AGGRESSIVE_POSTURE_MEDIUM'
+$SG224188 DB	'TXT_KEY_DIPLOSTRATEGY_MILITARY_AGGRESSIVE_POSTURE_MEDIUM'
 	DB	00H
 	ORG $+3
-$SG224195 DB	'TXT_KEY_DIPLOSTRATEGY_MILITARY_AGGRESSIVE_POSTURE_HIGH', 00H
+$SG224194 DB	'TXT_KEY_DIPLOSTRATEGY_MILITARY_AGGRESSIVE_POSTURE_HIGH', 00H
 	ORG $+1
-$SG224201 DB	'TXT_KEY_DIPLOSTRATEGY_MILITARY_AGGRESSIVE_POSTURE_INCRED'
+$SG224200 DB	'TXT_KEY_DIPLOSTRATEGY_MILITARY_AGGRESSIVE_POSTURE_INCRED'
 	DB	'IBLE', 00H
 	ORG $+3
-$SG224215 DB	'TXT_KEY_DIPLOSTRATEGY_EXPANSION_AGGRESSIVE_POSTURE_MEDIU'
+$SG224214 DB	'TXT_KEY_DIPLOSTRATEGY_EXPANSION_AGGRESSIVE_POSTURE_MEDIU'
 	DB	'M', 00H
 	ORG $+2
-$SG224221 DB	'TXT_KEY_DIPLOSTRATEGY_EXPANSION_AGGRESSIVE_POSTURE_HIGH', 00H
-$SG224227 DB	'TXT_KEY_DIPLOSTRATEGY_EXPANSION_AGGRESSIVE_POSTURE_INCRE'
+$SG224220 DB	'TXT_KEY_DIPLOSTRATEGY_EXPANSION_AGGRESSIVE_POSTURE_HIGH', 00H
+$SG224226 DB	'TXT_KEY_DIPLOSTRATEGY_EXPANSION_AGGRESSIVE_POSTURE_INCRE'
 	DB	'DIBLE', 00H
 	ORG $+2
-$SG224239 DB	'TXT_KEY_DIPLOSTRATEGY_WARMONGER_THREAT_NONE', 00H
-$SG224245 DB	'TXT_KEY_DIPLOSTRATEGY_WARMONGER_THREAT_MINOR', 00H
+$SG224238 DB	'TXT_KEY_DIPLOSTRATEGY_WARMONGER_THREAT_NONE', 00H
+$SG224244 DB	'TXT_KEY_DIPLOSTRATEGY_WARMONGER_THREAT_MINOR', 00H
 	ORG $+3
-$SG224251 DB	'TXT_KEY_DIPLOSTRATEGY_WARMONGER_THREAT_MAJOR', 00H
+$SG224250 DB	'TXT_KEY_DIPLOSTRATEGY_WARMONGER_THREAT_MAJOR', 00H
 	ORG $+3
-$SG224257 DB	'TXT_KEY_DIPLOSTRATEGY_WARMONGER_THREAT_SEVERE', 00H
+$SG224256 DB	'TXT_KEY_DIPLOSTRATEGY_WARMONGER_THREAT_SEVERE', 00H
 	ORG $+2
-$SG224263 DB	'TXT_KEY_DIPLOSTRATEGY_WARMONGER_THREAT_CRITICAL', 00H
-$SG224293 DB	'TXT_KEY_DIPLOSTRATEGY_MINOR_CIV_DISPUTE_LEVEL_WEAK', 00H
+$SG224262 DB	'TXT_KEY_DIPLOSTRATEGY_WARMONGER_THREAT_CRITICAL', 00H
+$SG224292 DB	'TXT_KEY_DIPLOSTRATEGY_MINOR_CIV_DISPUTE_LEVEL_WEAK', 00H
 	ORG $+1
-$SG224304 DB	'TXT_KEY_DIPLOSTRATEGY_MINOR_CIV_DISPUTE_LEVEL_STRONG', 00H
+$SG224303 DB	'TXT_KEY_DIPLOSTRATEGY_MINOR_CIV_DISPUTE_LEVEL_STRONG', 00H
 	ORG $+3
-$SG224315 DB	'TXT_KEY_DIPLOSTRATEGY_MINOR_CIV_DISPUTE_LEVEL_FIERCE', 00H
+$SG224314 DB	'TXT_KEY_DIPLOSTRATEGY_MINOR_CIV_DISPUTE_LEVEL_FIERCE', 00H
 	ORG $+3
-$SG224364 DB	'TXT_KEY_FINANCESTRATEGY_BROKE_AND_GOING_DOWN_UNIT_MAINTE'
+$SG224363 DB	'TXT_KEY_FINANCESTRATEGY_BROKE_AND_GOING_DOWN_UNIT_MAINTE'
 	DB	'NANCE', 00H
 	ORG $+2
-$SG224367 DB	'TXT_KEY_FINANCESTRATEGY_BROKE_AND_GOING_DOWN_UNIT_SUPPLY'
+$SG224366 DB	'TXT_KEY_FINANCESTRATEGY_BROKE_AND_GOING_DOWN_UNIT_SUPPLY'
 	DB	00H
 	ORG $+7
-$SG224370 DB	'TXT_KEY_FINANCESTRATEGY_BROKE_AND_GOING_DOWN_BUILDING_MA'
+$SG224369 DB	'TXT_KEY_FINANCESTRATEGY_BROKE_AND_GOING_DOWN_BUILDING_MA'
 	DB	'INTENANCE', 00H
 	ORG $+2
-$SG224373 DB	'TXT_KEY_FINANCESTRATEGY_BROKE_AND_GOING_DOWN_DIPLOMACY', 00H
+$SG224372 DB	'TXT_KEY_FINANCESTRATEGY_BROKE_AND_GOING_DOWN_DIPLOMACY', 00H
 	ORG $+5
-$SG224376 DB	'TXT_KEY_FINANCESTRATEGY_BROKE_AND_GOING_DOWN_IMPROVEMENT'
+$SG224375 DB	'TXT_KEY_FINANCESTRATEGY_BROKE_AND_GOING_DOWN_IMPROVEMENT'
 	DB	'_MAINTENANCE', 00H
 	ORG $+3
-$SG224379 DB	'TXT_KEY_FINANCESTRATEGY_BROKE_AND_GOING_DOWN', 00H
+$SG224378 DB	'TXT_KEY_FINANCESTRATEGY_BROKE_AND_GOING_DOWN', 00H
 	ORG $+3
-$SG224387 DB	'TXT_KEY_FINANCESTRATEGY_BROKE_AND_GOING_UP_UNIT_MAINTENA'
+$SG224386 DB	'TXT_KEY_FINANCESTRATEGY_BROKE_AND_GOING_UP_UNIT_MAINTENA'
 	DB	'NCE', 00H
-$SG224390 DB	'TXT_KEY_FINANCESTRATEGY_BROKE_AND_GOING_UP_UNIT_SUPPLY', 00H
+$SG224389 DB	'TXT_KEY_FINANCESTRATEGY_BROKE_AND_GOING_UP_UNIT_SUPPLY', 00H
 	ORG $+5
-$SG224393 DB	'TXT_KEY_FINANCESTRATEGY_BROKE_AND_GOING_UP_BUILDING_MAIN'
+$SG224392 DB	'TXT_KEY_FINANCESTRATEGY_BROKE_AND_GOING_UP_BUILDING_MAIN'
 	DB	'TENANCE', 00H
-$SG224396 DB	'TXT_KEY_FINANCESTRATEGY_BROKE_AND_GOING_UP_IMPROVEMENT_M'
+$SG224395 DB	'TXT_KEY_FINANCESTRATEGY_BROKE_AND_GOING_UP_IMPROVEMENT_M'
 	DB	'AINTENANCE', 00H
 	ORG $+1
-$SG224399 DB	'TXT_KEY_FINANCESTRATEGY_BROKE_AND_GOING_UP_DIPLOMACY', 00H
+$SG224398 DB	'TXT_KEY_FINANCESTRATEGY_BROKE_AND_GOING_UP_DIPLOMACY', 00H
 	ORG $+3
-$SG224402 DB	'TXT_KEY_FINANCESTRATEGY_BROKE_AND_GOING_UP', 00H
+$SG224401 DB	'TXT_KEY_FINANCESTRATEGY_BROKE_AND_GOING_UP', 00H
 	ORG $+1
-$SG224412 DB	'TXT_KEY_FINANCESTRATEGY_GOING_BROKE_UNIT_MAINTENANCE', 00H
+$SG224411 DB	'TXT_KEY_FINANCESTRATEGY_GOING_BROKE_UNIT_MAINTENANCE', 00H
 	ORG $+3
-$SG224415 DB	'TXT_KEY_FINANCESTRATEGY_GOING_BROKE_UNIT_SUPPLY', 00H
-$SG224418 DB	'TXT_KEY_FINANCESTRATEGY_GOING_BROKE_BUILDING_MAINTENANCE'
+$SG224414 DB	'TXT_KEY_FINANCESTRATEGY_GOING_BROKE_UNIT_SUPPLY', 00H
+$SG224417 DB	'TXT_KEY_FINANCESTRATEGY_GOING_BROKE_BUILDING_MAINTENANCE'
 	DB	00H
 	ORG $+3
-$SG224421 DB	'TXT_KEY_FINANCESTRATEGY_GOING_BROKE_IMPROVEMENT_MAINTENA'
+$SG224420 DB	'TXT_KEY_FINANCESTRATEGY_GOING_BROKE_IMPROVEMENT_MAINTENA'
 	DB	'NCE', 00H
-$SG224424 DB	'TXT_KEY_FINANCESTRATEGY_GOING_BROKE_DIPLOMACY', 00H
+$SG224423 DB	'TXT_KEY_FINANCESTRATEGY_GOING_BROKE_DIPLOMACY', 00H
 	ORG $+2
-$SG224427 DB	'TXT_KEY_FINANCESTRATEGY_GOING_BROKE', 00H
-$SG224435 DB	'TXT_KEY_FINANCESTRATEGY_LOSING_MONEY_UNIT_MAINTENANCE', 00H
+$SG224426 DB	'TXT_KEY_FINANCESTRATEGY_GOING_BROKE', 00H
+$SG224434 DB	'TXT_KEY_FINANCESTRATEGY_LOSING_MONEY_UNIT_MAINTENANCE', 00H
 	ORG $+2
-$SG224438 DB	'TXT_KEY_FINANCESTRATEGY_LOSING_MONEY_UNIT_SUPPLY', 00H
+$SG224437 DB	'TXT_KEY_FINANCESTRATEGY_LOSING_MONEY_UNIT_SUPPLY', 00H
 	ORG $+3
-$SG224441 DB	'TXT_KEY_FINANCESTRATEGY_LOSING_MONEY_BUILDING_MAINTENANC'
+$SG224440 DB	'TXT_KEY_FINANCESTRATEGY_LOSING_MONEY_BUILDING_MAINTENANC'
 	DB	'E', 00H
 	ORG $+2
-$SG224444 DB	'TXT_KEY_FINANCESTRATEGY_LOSING_MONEY_IMPROVEMENT_MAINTEN'
+$SG224443 DB	'TXT_KEY_FINANCESTRATEGY_LOSING_MONEY_IMPROVEMENT_MAINTEN'
 	DB	'ANCE', 00H
 	ORG $+3
-$SG224447 DB	'TXT_KEY_FINANCESTRATEGY_LOSING_MONEY_DIPLOMACY', 00H
+$SG224446 DB	'TXT_KEY_FINANCESTRATEGY_LOSING_MONEY_DIPLOMACY', 00H
 	ORG $+1
-$SG224450 DB	'TXT_KEY_FINANCESTRATEGY_LOSING_MONEY', 00H
+$SG224449 DB	'TXT_KEY_FINANCESTRATEGY_LOSING_MONEY', 00H
 	ORG $+3
-$SG224459 DB	'TXT_KEY_FINANCESTRATEGY_MAKING_MONEY_UNIT_MAINTENANCE', 00H
+$SG224458 DB	'TXT_KEY_FINANCESTRATEGY_MAKING_MONEY_UNIT_MAINTENANCE', 00H
 	ORG $+2
-$SG224462 DB	'TXT_KEY_FINANCESTRATEGY_MAKING_MONEY_UNIT_SUPPLY', 00H
+$SG224461 DB	'TXT_KEY_FINANCESTRATEGY_MAKING_MONEY_UNIT_SUPPLY', 00H
 	ORG $+3
-$SG224465 DB	'TXT_KEY_FINANCESTRATEGY_MAKING_MONEY_BUILDING_MAINTENANC'
+$SG224464 DB	'TXT_KEY_FINANCESTRATEGY_MAKING_MONEY_BUILDING_MAINTENANC'
 	DB	'E', 00H
 	ORG $+2
-$SG224468 DB	'TXT_KEY_FINANCESTRATEGY_MAKING_MONEY_IMPROVEMENT_MAINTEN'
+$SG224467 DB	'TXT_KEY_FINANCESTRATEGY_MAKING_MONEY_IMPROVEMENT_MAINTEN'
 	DB	'ANCE', 00H
 	ORG $+3
-$SG224471 DB	'TXT_KEY_FINANCESTRATEGY_MAKING_MONEY_DIPLOMACY', 00H
+$SG224470 DB	'TXT_KEY_FINANCESTRATEGY_MAKING_MONEY_DIPLOMACY', 00H
 	ORG $+1
-$SG224474 DB	'TXT_KEY_FINANCESTRATEGY_MAKING_MONEY', 00H
+$SG224473 DB	'TXT_KEY_FINANCESTRATEGY_MAKING_MONEY', 00H
 	ORG $+3
-$SG224507 DB	'TXT_KEY_DIPLOSTRATEGY_LIBERATE_CITY_STATE', 00H
+$SG224506 DB	'TXT_KEY_DIPLOSTRATEGY_LIBERATE_CITY_STATE', 00H
 	ORG $+2
-$SG224517 DB	'TXT_KEY_DIPLOSTRATEGY_ALMOST_LOST_CITY_STATE_ALLY_WAR_WI'
+$SG224516 DB	'TXT_KEY_DIPLOSTRATEGY_ALMOST_LOST_CITY_STATE_ALLY_WAR_WI'
 	DB	'TH_MAJOR', 00H
 	ORG $+3
-$SG224522 DB	'TXT_KEY_DIPLOSTRATEGY_ALMOST_LOST_CITY_STATE_ALLY', 00H
+$SG224521 DB	'TXT_KEY_DIPLOSTRATEGY_ALMOST_LOST_CITY_STATE_ALLY', 00H
 	ORG $+2
-$SG224528 DB	'TXT_KEY_DIPLOSTRATEGY_ALMOST_LOST_CITY_STATE_FRIENDSHIP_'
+$SG224527 DB	'TXT_KEY_DIPLOSTRATEGY_ALMOST_LOST_CITY_STATE_FRIENDSHIP_'
 	DB	'WAR_WITH_MAJOR', 00H
 	ORG $+1
-$SG224533 DB	'TXT_KEY_DIPLOSTRATEGY_ALMOST_LOST_CITY_STATE_FRIENDSHIP', 00H
-$SG224538 DB	'TXT_KEY_DIPLOSTRATEGY_BEFRIEND_CITY_STATE_WAR_WITH_MAJOR'
+$SG224532 DB	'TXT_KEY_DIPLOSTRATEGY_ALMOST_LOST_CITY_STATE_FRIENDSHIP', 00H
+$SG224537 DB	'TXT_KEY_DIPLOSTRATEGY_BEFRIEND_CITY_STATE_WAR_WITH_MAJOR'
 	DB	00H
 	ORG $+3
-$SG224562 DB	'BUILDINGCLASS_LIBRARY', 00H
+$SG224561 DB	'BUILDINGCLASS_LIBRARY', 00H
 	ORG $+2
-$SG224564 DB	'BUILDINGCLASS_UNIVERSITY', 00H
+$SG224563 DB	'BUILDINGCLASS_UNIVERSITY', 00H
 	ORG $+3
-$SG224566 DB	'BUILDINGCLASS_PUBLIC_SCHOOL', 00H
-$SG224568 DB	'BUILDINGCLASS_LABORATORY', 00H
+$SG224565 DB	'BUILDINGCLASS_PUBLIC_SCHOOL', 00H
+$SG224567 DB	'BUILDINGCLASS_LABORATORY', 00H
 	ORG $+3
-$SG224593 DB	'TXT_KEY_SCIENCESTRATEGY_RESEARCH_BUILDING_IN_BIG_CITY', 00H
+$SG224592 DB	'TXT_KEY_SCIENCESTRATEGY_RESEARCH_BUILDING_IN_BIG_CITY', 00H
 	ORG $+2
-$SG224648 DB	'TXT_KEY_CITYIMPROVEMENTSTRATEGY_PLUG_UP_RESOURCES_HAVE_Z'
+$SG224647 DB	'TXT_KEY_CITYIMPROVEMENTSTRATEGY_PLUG_UP_RESOURCES_HAVE_Z'
 	DB	'ERO', 00H
-$SG224651 DB	'TXT_KEY_CITYIMPROVEMENTSTRATEGY_PLUG_UP_RESOURCES_HAVE_M'
+$SG224650 DB	'TXT_KEY_CITYIMPROVEMENTSTRATEGY_PLUG_UP_RESOURCES_HAVE_M'
 	DB	'ORE', 00H
-$SG224699 DB	'TXT_KEY_RESOURCESTRATEGY_TRADE_LUXURIES', 00H
-$SG224703 DB	'TXT_KEY_RESOURCESTRATEGY_TRADE_STRATEGIC', 00H
+$SG224698 DB	'TXT_KEY_RESOURCESTRATEGY_TRADE_LUXURIES', 00H
+$SG224702 DB	'TXT_KEY_RESOURCESTRATEGY_TRADE_STRATEGIC', 00H
 	ORG $+3
-$SG224731 DB	'TXT_KEY_BASESTRATEGY_NOTHING_TO_SAY_SCIENCE', 00H
-$SG224734 DB	'TXT_KEY_BASESTRATEGY_NOTHING_TO_SAY_ECONOMIC', 00H
+$SG224730 DB	'TXT_KEY_BASESTRATEGY_NOTHING_TO_SAY_SCIENCE', 00H
+$SG224733 DB	'TXT_KEY_BASESTRATEGY_NOTHING_TO_SAY_ECONOMIC', 00H
 	ORG $+3
-$SG224737 DB	'TXT_KEY_BASESTRATEGY_NOTHING_TO_SAY_MILITARY', 00H
+$SG224736 DB	'TXT_KEY_BASESTRATEGY_NOTHING_TO_SAY_MILITARY', 00H
 	ORG $+3
-$SG224740 DB	'TXT_KEY_BASESTRATEGY_NOTHING_TO_SAY_FOREIGN', 00H
+$SG224739 DB	'TXT_KEY_BASESTRATEGY_NOTHING_TO_SAY_FOREIGN', 00H
 CONST	ENDS
 ;	COMDAT ?NO_TURN@CvMinorCivQuest@@2HB
 CONST	SEGMENT
@@ -657,7 +657,7 @@ PUBLIC	??$swap@UCounsel@CvAdvisorCounsel@@@std@@YAXAAUCounsel@CvAdvisorCounsel@@
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\utility
 ;	COMDAT ??$swap@UCounsel@CvAdvisorCounsel@@@std@@YAXAAUCounsel@CvAdvisorCounsel@@0@Z
 _TEXT	SEGMENT
-__Tmp$225122 = -520					; size = 520
+__Tmp$225121 = -520					; size = 520
 __Left$ = 8						; size = 4
 __Right$ = 12						; size = 4
 ??$swap@UCounsel@CvAdvisorCounsel@@@std@@YAXAAUCounsel@CvAdvisorCounsel@@0@Z PROC ; std::swap<CvAdvisorCounsel::Counsel>, COMDAT
@@ -683,7 +683,7 @@ __Right$ = 12						; size = 4
 
 	mov	ecx, 130				; 00000082H
 	mov	esi, eax
-	lea	edi, DWORD PTR __Tmp$225122[esp+528]
+	lea	edi, DWORD PTR __Tmp$225121[esp+528]
 	rep movsd
 
 ; 21   : 
@@ -697,7 +697,7 @@ __Right$ = 12						; size = 4
 ; 23   : 		_Right = _Tmp;
 
 	mov	ecx, 130				; 00000082H
-	lea	esi, DWORD PTR __Tmp$225122[esp+528]
+	lea	esi, DWORD PTR __Tmp$225121[esp+528]
 	mov	edi, edx
 	rep movsd
 $LN1@swap:
@@ -1488,7 +1488,7 @@ PUBLIC	??$iter_swap@PAUCounsel@CvAdvisorCounsel@@PAU12@@std@@YAXPAUCounsel@CvAdv
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\algorithm
 ;	COMDAT ??$iter_swap@PAUCounsel@CvAdvisorCounsel@@PAU12@@std@@YAXPAUCounsel@CvAdvisorCounsel@@0@Z
 _TEXT	SEGMENT
-__Tmp$225732 = -520					; size = 520
+__Tmp$225731 = -520					; size = 520
 __Left$ = 8						; size = 4
 __Right$ = 12						; size = 4
 ??$iter_swap@PAUCounsel@CvAdvisorCounsel@@PAU12@@std@@YAXPAUCounsel@CvAdvisorCounsel@@0@Z PROC ; std::iter_swap<CvAdvisorCounsel::Counsel *,CvAdvisorCounsel::Counsel *>, COMDAT
@@ -1510,14 +1510,14 @@ __Right$ = 12						; size = 4
 	je	SHORT $LN3@iter_swap
 	mov	ecx, 130				; 00000082H
 	mov	esi, eax
-	lea	edi, DWORD PTR __Tmp$225732[esp+528]
+	lea	edi, DWORD PTR __Tmp$225731[esp+528]
 	rep movsd
 	mov	ecx, 130				; 00000082H
 	mov	esi, edx
 	mov	edi, eax
 	rep movsd
 	mov	ecx, 130				; 00000082H
-	lea	esi, DWORD PTR __Tmp$225732[esp+528]
+	lea	esi, DWORD PTR __Tmp$225731[esp+528]
 	mov	edi, edx
 	rep movsd
 $LN3@iter_swap:
@@ -1535,9 +1535,9 @@ PUBLIC	??$_Med3@PAUCounsel@CvAdvisorCounsel@@P6A_NU12@0@Z@std@@YAXPAUCounsel@CvA
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Med3@PAUCounsel@CvAdvisorCounsel@@P6A_NU12@0@Z@std@@YAXPAUCounsel@CvAdvisorCounsel@@00P6A_NU12@1@Z@Z
 _TEXT	SEGMENT
-__Tmp$225769 = -520					; size = 520
-__Tmp$225757 = -520					; size = 520
-__Tmp$225745 = -520					; size = 520
+__Tmp$225768 = -520					; size = 520
+__Tmp$225756 = -520					; size = 520
+__Tmp$225744 = -520					; size = 520
 __First$ = 8						; size = 4
 __Mid$ = 12						; size = 4
 __Last$ = 16						; size = 4
@@ -1579,14 +1579,14 @@ __Pred$ = 20						; size = 4
 	je	SHORT $LN8@Med3
 	mov	ecx, 130				; 00000082H
 	mov	esi, ebx
-	lea	edi, DWORD PTR __Tmp$225745[esp+536]
+	lea	edi, DWORD PTR __Tmp$225744[esp+536]
 	rep movsd
 	mov	ecx, 130				; 00000082H
 	mov	esi, eax
 	mov	edi, ebx
 	rep movsd
 	mov	ecx, 130				; 00000082H
-	lea	esi, DWORD PTR __Tmp$225745[esp+536]
+	lea	esi, DWORD PTR __Tmp$225744[esp+536]
 	mov	edi, eax
 	rep movsd
 $LN8@Med3:
@@ -1615,14 +1615,14 @@ $LN8@Med3:
 	je	SHORT $LN13@Med3
 	mov	ecx, 130				; 00000082H
 	mov	esi, eax
-	lea	edi, DWORD PTR __Tmp$225757[esp+536]
+	lea	edi, DWORD PTR __Tmp$225756[esp+536]
 	rep movsd
 	mov	ecx, 130				; 00000082H
 	mov	esi, ebx
 	mov	edi, eax
 	rep movsd
 	mov	ecx, 130				; 00000082H
-	lea	esi, DWORD PTR __Tmp$225757[esp+536]
+	lea	esi, DWORD PTR __Tmp$225756[esp+536]
 	mov	edi, ebx
 	rep movsd
 $LN13@Med3:
@@ -1651,14 +1651,14 @@ $LN13@Med3:
 	je	SHORT $LN18@Med3
 	mov	ecx, 130				; 00000082H
 	mov	esi, ebx
-	lea	edi, DWORD PTR __Tmp$225769[esp+536]
+	lea	edi, DWORD PTR __Tmp$225768[esp+536]
 	rep movsd
 	mov	ecx, 130				; 00000082H
 	mov	esi, eax
 	mov	edi, ebx
 	rep movsd
 	mov	ecx, 130				; 00000082H
-	lea	esi, DWORD PTR __Tmp$225769[esp+536]
+	lea	esi, DWORD PTR __Tmp$225768[esp+536]
 	mov	edi, eax
 	rep movsd
 $LN18@Med3:
@@ -1812,9 +1812,9 @@ PUBLIC	??$unchecked_copy_backward@PAUCounsel@CvAdvisorCounsel@@PAU12@@stdext@@YA
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\xutility
 ;	COMDAT ??$unchecked_copy_backward@PAUCounsel@CvAdvisorCounsel@@PAU12@@stdext@@YAPAUCounsel@CvAdvisorCounsel@@PAU12@00@Z
 _TEXT	SEGMENT
-$T225782 = -4						; size = 1
-__Cat$225788 = -4					; size = 1
-$T225784 = -4						; size = 1
+$T225781 = -4						; size = 1
+__Cat$225787 = -4					; size = 1
+$T225783 = -4						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Dest$ = 16						; size = 4
@@ -1827,10 +1827,10 @@ __Dest$ = 16						; size = 4
 ; 3637 : 		return (_STD _Copy_backward_opt(_CHECKED_BASE(_First), _CHECKED_BASE(_Last), _Dest,
 ; 3638 : 			_STD _Iter_random(_First, _Dest), _STD _Ptr_cat(_First, _Dest), _STD _Range_checked_iterator_tag()));
 
-	mov	BYTE PTR $T225782[esp+4], 0
-	mov	eax, DWORD PTR $T225782[esp+4]
-	mov	ecx, DWORD PTR __Cat$225788[esp+4]
-	mov	edx, DWORD PTR $T225784[esp+4]
+	mov	BYTE PTR $T225781[esp+4], 0
+	mov	eax, DWORD PTR $T225781[esp+4]
+	mov	ecx, DWORD PTR __Cat$225787[esp+4]
+	mov	edx, DWORD PTR $T225783[esp+4]
 	push	eax
 	mov	eax, DWORD PTR __Dest$[esp+4]
 	push	ecx
@@ -2470,12 +2470,12 @@ PUBLIC	??$_Insertion_sort1@PAUCounsel@CvAdvisorCounsel@@P6A_NU12@0@ZU12@@std@@YA
 ;	COMDAT ??$_Insertion_sort1@PAUCounsel@CvAdvisorCounsel@@P6A_NU12@0@ZU12@@std@@YAXPAUCounsel@CvAdvisorCounsel@@0P6A_NU12@1@Z0@Z
 _TEXT	SEGMENT
 tv203 = -536						; size = 4
-__Next1$225101 = -532					; size = 4
-$T225988 = -528						; size = 1
-__Cat$225993 = -528					; size = 1
-$T225990 = -528						; size = 1
-__Next$225097 = -524					; size = 4
-__Val$225102 = -520					; size = 520
+__Next1$225100 = -532					; size = 4
+$T225987 = -528						; size = 1
+__Cat$225992 = -528					; size = 1
+$T225989 = -528						; size = 1
+__Next$225096 = -524					; size = 4
+__Val$225101 = -520					; size = 520
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Pred$ = 16						; size = 4
@@ -2502,7 +2502,7 @@ ___formal$ = 20						; size = 4
 ; 3125 : 		for (_BidIt _Next = _First; ++_Next != _Last; )
 
 	lea	ebx, DWORD PTR [eax+520]
-	mov	DWORD PTR __Next$225097[esp+552], ebx
+	mov	DWORD PTR __Next$225096[esp+552], ebx
 	cmp	ebx, ecx
 	je	$LN6@Insertion_
 	lea	ecx, DWORD PTR [ebx-520]
@@ -2519,7 +2519,7 @@ $LN7@Insertion_:
 
 	mov	ecx, 130				; 00000082H
 	mov	esi, ebx
-	lea	edi, DWORD PTR __Val$225102[esp+552]
+	lea	edi, DWORD PTR __Val$225101[esp+552]
 	rep movsd
 
 ; 3129 : 
@@ -2534,7 +2534,7 @@ $LN7@Insertion_:
 	mov	ecx, 130				; 00000082H
 	mov	esi, ebx
 	mov	edi, esp
-	mov	DWORD PTR __Next1$225101[esp+1592], ebx
+	mov	DWORD PTR __Next1$225100[esp+1592], ebx
 	rep movsd
 	call	DWORD PTR __Pred$[ebp]
 	add	esp, 1040				; 00000410H
@@ -2545,10 +2545,10 @@ $LN7@Insertion_:
 ; 3132 : 				_STDEXT unchecked_copy_backward(_First, _Next, ++_Next1);
 
 	mov	edi, DWORD PTR __First$[ebp]
-	mov	BYTE PTR $T225988[esp+552], 0
-	mov	edx, DWORD PTR $T225988[esp+552]
-	mov	eax, DWORD PTR __Cat$225993[esp+552]
-	mov	ecx, DWORD PTR $T225990[esp+552]
+	mov	BYTE PTR $T225987[esp+552], 0
+	mov	edx, DWORD PTR $T225987[esp+552]
+	mov	eax, DWORD PTR __Cat$225992[esp+552]
+	mov	ecx, DWORD PTR $T225989[esp+552]
 	push	edx
 	mov	edx, DWORD PTR tv203[esp+556]
 	push	eax
@@ -2580,7 +2580,7 @@ $LN5@Insertion_:
 	rep movsd
 	sub	esp, 520				; 00000208H
 	mov	ecx, 130				; 00000082H
-	lea	esi, DWORD PTR __Val$225102[esp+1592]
+	lea	esi, DWORD PTR __Val$225101[esp+1592]
 	mov	edi, esp
 	rep movsd
 	call	DWORD PTR __Pred$[ebp]
@@ -2592,11 +2592,11 @@ $LL3@Insertion_:
 
 ; 3140 : 					*_Next1 = *_First1;	// move hole down
 
-	mov	edi, DWORD PTR __Next1$225101[esp+552]
+	mov	edi, DWORD PTR __Next1$225100[esp+552]
 	mov	esi, ebx
 	mov	ecx, 130				; 00000082H
 	rep movsd
-	mov	DWORD PTR __Next1$225101[esp+552], ebx
+	mov	DWORD PTR __Next1$225100[esp+552], ebx
 	sub	esp, 520				; 00000208H
 	sub	ebx, 520				; 00000208H
 	mov	edi, esp
@@ -2605,7 +2605,7 @@ $LL3@Insertion_:
 	rep movsd
 	sub	esp, 520				; 00000208H
 	mov	ecx, 130				; 00000082H
-	lea	esi, DWORD PTR __Val$225102[esp+1592]
+	lea	esi, DWORD PTR __Val$225101[esp+1592]
 	mov	edi, esp
 	rep movsd
 	call	DWORD PTR __Pred$[ebp]
@@ -2616,15 +2616,15 @@ $LN1@Insertion_:
 
 ; 3141 : 				*_Next1 = _Val;	// insert element in hole
 
-	mov	edi, DWORD PTR __Next1$225101[esp+552]
-	mov	ebx, DWORD PTR __Next$225097[esp+552]
+	mov	edi, DWORD PTR __Next1$225100[esp+552]
+	mov	ebx, DWORD PTR __Next$225096[esp+552]
 $LN21@Insertion_:
 	add	DWORD PTR tv203[esp+552], 520		; 00000208H
 	add	ebx, 520				; 00000208H
 	mov	ecx, 130				; 00000082H
-	lea	esi, DWORD PTR __Val$225102[esp+552]
+	lea	esi, DWORD PTR __Val$225101[esp+552]
 	rep movsd
-	mov	DWORD PTR __Next$225097[esp+552], ebx
+	mov	DWORD PTR __Next$225096[esp+552], ebx
 	cmp	ebx, DWORD PTR __Last$[ebp]
 	jne	$LL20@Insertion_
 $LN6@Insertion_:
@@ -2762,17 +2762,17 @@ _TEXT	SEGMENT
 __Plast$ = -3660					; size = 4
 tv403 = -3656						; size = 4
 tv233 = -3656						; size = 4
-$T226165 = -3656					; size = 4
+$T226164 = -3656					; size = 4
 __Gfirst$ = -3652					; size = 4
 __Glast$ = -3648					; size = 4
-$T226164 = -3644					; size = 4
-__Tmp$226119 = -3640					; size = 520
-__Tmp$226162 = -3120					; size = 520
-__Tmp$226176 = -2600					; size = 520
-__Tmp$226149 = -2080					; size = 520
-__Tmp$226189 = -1560					; size = 520
-__Tmp$226132 = -1040					; size = 520
-__Tmp$226203 = -520					; size = 520
+$T226163 = -3644					; size = 4
+__Tmp$226118 = -3640					; size = 520
+__Tmp$226161 = -3120					; size = 520
+__Tmp$226175 = -2600					; size = 520
+__Tmp$226148 = -2080					; size = 520
+__Tmp$226188 = -1560					; size = 520
+__Tmp$226131 = -1040					; size = 520
+__Tmp$226202 = -520					; size = 520
 ___$ReturnUdt$ = 8					; size = 4
 __First$ = 12						; size = 4
 __Last$ = 16						; size = 4
@@ -3011,14 +3011,14 @@ $LN21@Unguarded_:
 	je	SHORT $LN20@Unguarded_
 	mov	ecx, 130				; 00000082H
 	mov	esi, edx
-	lea	edi, DWORD PTR __Tmp$226119[esp+3672]
+	lea	edi, DWORD PTR __Tmp$226118[esp+3672]
 	rep movsd
 	mov	ecx, 130				; 00000082H
 	mov	esi, eax
 	mov	edi, edx
 	rep movsd
 	mov	ecx, 130				; 00000082H
-	lea	esi, DWORD PTR __Tmp$226119[esp+3672]
+	lea	esi, DWORD PTR __Tmp$226118[esp+3672]
 	mov	edi, eax
 	rep movsd
 	jmp	SHORT $LN20@Unguarded_
@@ -3094,14 +3094,14 @@ $LN14@Unguarded_:
 	je	SHORT $LN13@Unguarded_
 	mov	ecx, 130				; 00000082H
 	mov	esi, ebx
-	lea	edi, DWORD PTR __Tmp$226132[esp+3672]
+	lea	edi, DWORD PTR __Tmp$226131[esp+3672]
 	rep movsd
 	mov	ecx, 130				; 00000082H
 	mov	esi, eax
 	mov	edi, ebx
 	rep movsd
 	mov	ecx, 130				; 00000082H
-	lea	esi, DWORD PTR __Tmp$226132[esp+3672]
+	lea	esi, DWORD PTR __Tmp$226131[esp+3672]
 	mov	edi, eax
 	rep movsd
 	jmp	SHORT $LN13@Unguarded_
@@ -3145,14 +3145,14 @@ $LN74@Unguarded_:
 	je	SHORT $LN44@Unguarded_
 	mov	ecx, 130				; 00000082H
 	mov	esi, ebx
-	lea	edi, DWORD PTR __Tmp$226149[esp+3672]
+	lea	edi, DWORD PTR __Tmp$226148[esp+3672]
 	rep movsd
 	mov	ecx, 130				; 00000082H
 	mov	esi, edx
 	mov	edi, ebx
 	rep movsd
 	mov	ecx, 130				; 00000082H
-	lea	esi, DWORD PTR __Tmp$226149[esp+3672]
+	lea	esi, DWORD PTR __Tmp$226148[esp+3672]
 	mov	edi, edx
 	rep movsd
 $LN44@Unguarded_:
@@ -3166,21 +3166,21 @@ $LN44@Unguarded_:
 	add	eax, 520				; 00000208H
 	add	ebx, 520				; 00000208H
 	mov	DWORD PTR __Plast$[esp+3672], edx
-	mov	DWORD PTR $T226165[esp+3672], ecx
-	mov	DWORD PTR $T226164[esp+3672], esi
+	mov	DWORD PTR $T226164[esp+3672], ecx
+	mov	DWORD PTR $T226163[esp+3672], esi
 	mov	DWORD PTR __Gfirst$[esp+3672], eax
 	cmp	esi, ecx
 	je	$LL23@Unguarded_
 	mov	ecx, 130				; 00000082H
-	lea	edi, DWORD PTR __Tmp$226162[esp+3672]
+	lea	edi, DWORD PTR __Tmp$226161[esp+3672]
 	rep movsd
-	mov	esi, DWORD PTR $T226165[esp+3672]
+	mov	esi, DWORD PTR $T226164[esp+3672]
+	mov	edi, DWORD PTR $T226163[esp+3672]
+	mov	ecx, 130				; 00000082H
+	rep movsd
 	mov	edi, DWORD PTR $T226164[esp+3672]
 	mov	ecx, 130				; 00000082H
-	rep movsd
-	mov	edi, DWORD PTR $T226165[esp+3672]
-	mov	ecx, 130				; 00000082H
-	lea	esi, DWORD PTR __Tmp$226162[esp+3672]
+	lea	esi, DWORD PTR __Tmp$226161[esp+3672]
 	rep movsd
 	jmp	$LL23@Unguarded_
 $LN6@Unguarded_:
@@ -3201,14 +3201,14 @@ $LN6@Unguarded_:
 ; 3232 : 				std::iter_swap(_Glast, _Pfirst);
 
 	mov	ecx, 130				; 00000082H
-	lea	edi, DWORD PTR __Tmp$226176[esp+3672]
+	lea	edi, DWORD PTR __Tmp$226175[esp+3672]
 	rep movsd
 	mov	edi, DWORD PTR __Glast$[esp+3672]
 	mov	ecx, 130				; 00000082H
 	mov	esi, ebx
 	rep movsd
 	mov	ecx, 130				; 00000082H
-	lea	esi, DWORD PTR __Tmp$226176[esp+3672]
+	lea	esi, DWORD PTR __Tmp$226175[esp+3672]
 	mov	edi, ebx
 	rep movsd
 $LN54@Unguarded_:
@@ -3221,14 +3221,14 @@ $LN54@Unguarded_:
 	je	$LL23@Unguarded_
 	mov	ecx, 130				; 00000082H
 	mov	esi, ebx
-	lea	edi, DWORD PTR __Tmp$226189[esp+3672]
+	lea	edi, DWORD PTR __Tmp$226188[esp+3672]
 	rep movsd
 	mov	ecx, 130				; 00000082H
 	mov	esi, edx
 	mov	edi, ebx
 	rep movsd
 	mov	ecx, 130				; 00000082H
-	lea	esi, DWORD PTR __Tmp$226189[esp+3672]
+	lea	esi, DWORD PTR __Tmp$226188[esp+3672]
 	mov	edi, edx
 	rep movsd
 
@@ -3244,7 +3244,7 @@ $LN3@Unguarded_:
 	je	SHORT $LN64@Unguarded_
 	mov	ecx, 130				; 00000082H
 	mov	esi, eax
-	lea	edi, DWORD PTR __Tmp$226203[esp+3672]
+	lea	edi, DWORD PTR __Tmp$226202[esp+3672]
 	rep movsd
 	mov	esi, DWORD PTR __Glast$[esp+3672]
 	mov	ecx, 130				; 00000082H
@@ -3252,7 +3252,7 @@ $LN3@Unguarded_:
 	rep movsd
 	mov	edi, DWORD PTR __Glast$[esp+3672]
 	mov	ecx, 130				; 00000082H
-	lea	esi, DWORD PTR __Tmp$226203[esp+3672]
+	lea	esi, DWORD PTR __Tmp$226202[esp+3672]
 	rep movsd
 $LN64@Unguarded_:
 	add	eax, 520				; 00000208H
@@ -3419,7 +3419,7 @@ PUBLIC	?Init@CvAdvisorCounsel@@QAEXXZ			; CvAdvisorCounsel::Init
 ; File c:\users\enormousapplepie\documents\github\lekmod\lekmod_dll\cvgamecoredll_expansion2\cvadvisorcounsel.cpp
 ;	COMDAT ?Init@CvAdvisorCounsel@@QAEXXZ
 _TEXT	SEGMENT
-$T226281 = -4						; size = 4
+$T226280 = -4						; size = 4
 ?Init@CvAdvisorCounsel@@QAEXXZ PROC			; CvAdvisorCounsel::Init, COMDAT
 ; _this$ = ecx
 
@@ -3434,14 +3434,14 @@ $T226281 = -4						; size = 4
 	cmp	DWORD PTR [esi+8], 50			; 00000032H
 	push	edi
 	lea	edi, DWORD PTR [esi+8]
-	mov	DWORD PTR $T226281[esp+12], 50		; 00000032H
+	mov	DWORD PTR $T226280[esp+12], 50		; 00000032H
 	jae	SHORT $LN8@Init
 	push	50					; 00000032H
 	call	?GrowSize@?$FFastVector@UCounsel@CvAdvisorCounsel@@$00$0BCJ@$0A@UFDefaultFastVectorAllocator@?$BaseVector@UCounsel@CvAdvisorCounsel@@$00@@@@IAEXI@Z ; FFastVector<CvAdvisorCounsel::Counsel,1,297,0,BaseVector<CvAdvisorCounsel::Counsel,1>::FDefaultFastVectorAllocator>::GrowSize
 	cmp	DWORD PTR [edi], 50			; 00000032H
 	jb	SHORT $LN9@Init
 $LN8@Init:
-	lea	edi, DWORD PTR $T226281[esp+12]
+	lea	edi, DWORD PTR $T226280[esp+12]
 $LN9@Init:
 	mov	eax, DWORD PTR [edi]
 	pop	edi
@@ -3466,7 +3466,7 @@ PUBLIC	??$_Sort_heap@PAUCounsel@CvAdvisorCounsel@@P6A_NU12@0@Z@std@@YAXPAUCounse
 ; File c:\program files (x86)\microsoft visual studio 9.0\vc\include\algorithm
 ;	COMDAT ??$_Sort_heap@PAUCounsel@CvAdvisorCounsel@@P6A_NU12@0@Z@std@@YAXPAUCounsel@CvAdvisorCounsel@@0P6A_NU12@1@Z@Z
 _TEXT	SEGMENT
-$T226317 = -520						; size = 520
+$T226315 = -520						; size = 520
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __Pred$ = 16						; size = 4
@@ -3502,7 +3502,7 @@ $LN21@Sort_heap:
 	lea	eax, DWORD PTR [eax+ebx-520]
 	mov	esi, eax
 	mov	ecx, 130				; 00000082H
-	lea	edi, DWORD PTR $T226317[esp+536]
+	lea	edi, DWORD PTR $T226315[esp+536]
 	rep movsd
 	mov	esi, DWORD PTR __First$[ebp]
 	mov	edi, eax
@@ -3513,7 +3513,7 @@ $LN21@Sort_heap:
 	sub	esp, 520				; 00000208H
 	mov	edi, esp
 	mov	ecx, 130				; 00000082H
-	lea	esi, DWORD PTR $T226317[esp+1060]
+	lea	esi, DWORD PTR $T226315[esp+1060]
 	rep movsd
 	lea	ecx, DWORD PTR [ebx-520]
 	mov	eax, 2114445439				; 7e07e07fH
@@ -3568,7 +3568,7 @@ __ehfuncinfo$??0CvAdvisorCounsel@@QAE@XZ DD 019930522H
 xdata$x	ENDS
 ;	COMDAT ??0CvAdvisorCounsel@@QAE@XZ
 _TEXT	SEGMENT
-$T226372 = -20						; size = 4
+$T226371 = -20						; size = 4
 _this$ = -16						; size = 4
 __$EHRec$ = -12						; size = 12
 ??0CvAdvisorCounsel@@QAE@XZ PROC			; CvAdvisorCounsel::CvAdvisorCounsel, COMDAT
@@ -3596,11 +3596,11 @@ __$EHRec$ = -12						; size = 12
 
 	push	50					; 00000032H
 	mov	DWORD PTR __$EHRec$[esp+40], eax
-	mov	DWORD PTR $T226372[esp+32], 50		; 00000032H
+	mov	DWORD PTR $T226371[esp+32], 50		; 00000032H
 	call	?GrowSize@?$FFastVector@UCounsel@CvAdvisorCounsel@@$00$0BCJ@$0A@UFDefaultFastVectorAllocator@?$BaseVector@UCounsel@CvAdvisorCounsel@@$00@@@@IAEXI@Z ; FFastVector<CvAdvisorCounsel::Counsel,1,297,0,BaseVector<CvAdvisorCounsel::Counsel,1>::FDefaultFastVectorAllocator>::GrowSize
 	cmp	DWORD PTR [edi], 50			; 00000032H
 	jb	SHORT $LN21@CvAdvisorC
-	lea	edi, DWORD PTR $T226372[esp+28]
+	lea	edi, DWORD PTR $T226371[esp+28]
 $LN21@CvAdvisorC:
 	mov	eax, DWORD PTR [edi]
 	mov	ecx, esi
@@ -3649,7 +3649,7 @@ PUBLIC	??$_Sort@PAUCounsel@CvAdvisorCounsel@@HP6A_NU12@0@Z@std@@YAXPAUCounsel@Cv
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Sort@PAUCounsel@CvAdvisorCounsel@@HP6A_NU12@0@Z@std@@YAXPAUCounsel@CvAdvisorCounsel@@0HP6A_NU12@1@Z@Z
 _TEXT	SEGMENT
-__Mid$224890 = -8					; size = 8
+__Mid$224889 = -8					; size = 8
 __First$ = 8						; size = 4
 tv218 = 12						; size = 4
 __Last$ = 12						; size = 4
@@ -3692,7 +3692,7 @@ $LL7@Sort:
 	mov	eax, DWORD PTR __Pred$[esp+20]
 	push	eax
 	push	edi
-	lea	ecx, DWORD PTR __Mid$224890[esp+32]
+	lea	ecx, DWORD PTR __Mid$224889[esp+32]
 	push	ebx
 	push	ecx
 	call	??$_Unguarded_partition@PAUCounsel@CvAdvisorCounsel@@P6A_NU12@0@Z@std@@YA?AU?$pair@PAUCounsel@CvAdvisorCounsel@@PAU12@@0@PAUCounsel@CvAdvisorCounsel@@0P6A_NU23@1@Z@Z ; std::_Unguarded_partition<CvAdvisorCounsel::Counsel *,bool (__cdecl*)(CvAdvisorCounsel::Counsel,CvAdvisorCounsel::Counsel)>
@@ -3701,7 +3701,7 @@ $LL7@Sort:
 ; 3251 : 
 ; 3252 : 		if (_Mid.first - _First < _Last - _Mid.second)
 
-	mov	ebp, DWORD PTR __Mid$224890[esp+44]
+	mov	ebp, DWORD PTR __Mid$224889[esp+44]
 	mov	eax, esi
 	cdq
 	sub	eax, edx
@@ -3715,7 +3715,7 @@ $LL7@Sort:
 	sub	ecx, ebp
 	mov	eax, 2114445439				; 7e07e07fH
 	imul	ecx
-	mov	ecx, DWORD PTR __Mid$224890[esp+40]
+	mov	ecx, DWORD PTR __Mid$224889[esp+40]
 	sar	edx, 8
 	mov	eax, edx
 	shr	eax, 31					; 0000001fH
@@ -3737,7 +3737,7 @@ $LL7@Sort:
 ; 3254 : 			std::_Sort(_First, _Mid.first, _Ideal, _Pred);
 
 	mov	ecx, DWORD PTR __Pred$[esp+20]
-	mov	edx, DWORD PTR __Mid$224890[esp+24]
+	mov	edx, DWORD PTR __Mid$224889[esp+24]
 	push	ecx
 	push	esi
 	push	edx
@@ -3766,7 +3766,7 @@ $LN5@Sort:
 
 ; 3260 : 			_Last = _Mid.first;
 
-	mov	edi, DWORD PTR __Mid$224890[esp+40]
+	mov	edi, DWORD PTR __Mid$224889[esp+40]
 $LN27@Sort:
 	mov	ecx, edi
 	sub	ecx, ebx
@@ -4219,186 +4219,186 @@ xdata$x	ENDS
 ;	COMDAT ?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z
 _TEXT	SEGMENT
 _uiCounselIndex$ = -760					; size = 4
-$T227432 = -756						; size = 4
+$T227431 = -756						; size = 4
 _eTradableResource$ = -756				; size = 4
-_iMessageRating$224324 = -756				; size = 4
-_iPlayer$224268 = -756					; size = 4
-_i$224025 = -756					; size = 4
-_i$224009 = -756					; size = 4
-_iI$223973 = -756					; size = 4
-_i$223889 = -756					; size = 4
+_iMessageRating$224323 = -756				; size = 4
+_iPlayer$224267 = -756					; size = 4
+_i$224024 = -756					; size = 4
+_i$224008 = -756					; size = 4
+_iI$223972 = -756					; size = 4
+_i$223888 = -756					; size = 4
 tv7403 = -752						; size = 4
-$T228333 = -752						; size = 4
-_eResource$224610 = -752				; size = 4
-_uiLoop$224553 = -752					; size = 4
-_ui$224476 = -752					; size = 4
-_ui$224338 = -752					; size = 4
-_iMinorCiv$224312 = -752				; size = 4
-_iMinorCiv$224301 = -752				; size = 4
-_iMinorCiv$224290 = -752				; size = 4
-_iScience$224056 = -752					; size = 4
+$T228332 = -752						; size = 4
+_eResource$224609 = -752				; size = 4
+_uiLoop$224552 = -752					; size = 4
+_ui$224475 = -752					; size = 4
+_ui$224337 = -752					; size = 4
+_iMinorCiv$224311 = -752				; size = 4
+_iMinorCiv$224300 = -752				; size = 4
+_iMinorCiv$224289 = -752				; size = 4
+_iScience$224055 = -752					; size = 4
 _eRecommendedBuilding$ = -752				; size = 4
 _pLoopCity$ = -752					; size = 4
-_iStrategiesLoop$223870 = -752				; size = 4
+_iStrategiesLoop$223869 = -752				; size = 4
 tv7373 = -748						; size = 4
-_uiHighestCostCategory$224337 = -748			; size = 4
+_uiHighestCostCategory$224336 = -748			; size = 4
 _pDiplomacyAI$ = -748					; size = 4
 tv7557 = -744						; size = 4
-$T227684 = -744						; size = 4
-_j$224667 = -744					; size = 4
-_pPlot$224607 = -744					; size = 4
-_pBuildingEntry$224031 = -744				; size = 4
-_eBuilding3$223972 = -744				; size = 4
+$T227683 = -744						; size = 4
+_j$224666 = -744					; size = 4
+_pPlot$224606 = -744					; size = 4
+_pBuildingEntry$224030 = -744				; size = 4
+_eBuilding3$223971 = -744				; size = 4
 _pCityStrategyAI$ = -744				; size = 4
 _pMilitaryAI$ = -744					; size = 4
-_bProvidesExperience$224034 = -737			; size = 1
-_bUniquenessFound$223930 = -737				; size = 1
+_bProvidesExperience$224033 = -737			; size = 1
+_bUniquenessFound$223929 = -737				; size = 1
 tv7491 = -736						; size = 4
-_iPlayer$224078 = -736					; size = 4
-_pUnitEntry$224015 = -736				; size = 4
-_eBuilding1$223970 = -736				; size = 4
-$T226956 = -732						; size = 4
-$T226911 = -732						; size = 4
+_iPlayer$224077 = -736					; size = 4
+_pUnitEntry$224014 = -736				; size = 4
+_eBuilding1$223969 = -736				; size = 4
+$T226955 = -732						; size = 4
+$T226910 = -732						; size = 4
 _abAdvisorUsed$ = -732					; size = 4
-_ui$224603 = -732					; size = 4
+_ui$224602 = -732					; size = 4
 _pBiggestCity$ = -732					; size = 4
-_iMessageRating$224480 = -732				; size = 4
-_iGoldIncome$224327 = -732				; size = 4
-_eStatement$224289 = -732				; size = 4
-_iRatio$224058 = -732					; size = 4
+_iMessageRating$224479 = -732				; size = 4
+_iGoldIncome$224326 = -732				; size = 4
+_eStatement$224288 = -732				; size = 4
+_iRatio$224057 = -732					; size = 4
 _eMilitaryBuildingTech$ = -732				; size = 4
 tv6978 = -728						; size = 4
-_pTreasury$224326 = -728				; size = 4
-_eBuilding2$223971 = -728				; size = 4
+_pTreasury$224325 = -728				; size = 4
+_eBuilding2$223970 = -728				; size = 4
 tv6752 = -724						; size = 4
-$T227666 = -724						; size = 4
-$T227251 = -724						; size = 4
-_iNumMissions$224636 = -724				; size = 4
-_iCityIndex$224498 = -724				; size = 4
-_iGold$224328 = -724					; size = 4
-_eStatement$224311 = -724				; size = 4
-_eWarmongerThreat$224229 = -724				; size = 4
-_eExpansionAggressivePostureTypes$224203 = -724		; size = 4
-_eMilitaryAggressivePostureTypes$224177 = -724		; size = 4
-_eWarProjection$224093 = -724				; size = 4
-$T226474 = -724						; size = 4
-_iNumBuildingInfos$223969 = -724			; size = 4
+$T227665 = -724						; size = 4
+$T227250 = -724						; size = 4
+_iNumMissions$224635 = -724				; size = 4
+_iCityIndex$224497 = -724				; size = 4
+_iGold$224327 = -724					; size = 4
+_eStatement$224310 = -724				; size = 4
+_eWarmongerThreat$224228 = -724				; size = 4
+_eExpansionAggressivePostureTypes$224202 = -724		; size = 4
+_eMilitaryAggressivePostureTypes$224176 = -724		; size = 4
+_eWarProjection$224092 = -724				; size = 4
+$T226473 = -724						; size = 4
+_iNumBuildingInfos$223968 = -724			; size = 4
 tv7629 = -720						; size = 4
 tv7559 = -720						; size = 4
-$T226714 = -720						; size = 4
+$T226713 = -720						; size = 4
 _iNumOfResource$ = -720					; size = 4
 tv5440 = -716						; size = 4
 _eTargetPlayer$ = -712					; size = 4
-_iBuild$224615 = -712					; size = 4
-_iMessageRating$224272 = -712				; size = 4
-_iDomain$224035 = -712					; size = 4
-$T226473 = -712						; size = 4
-_pBuilding$223979 = -712				; size = 4
+_iBuild$224614 = -712					; size = 4
+_iMessageRating$224271 = -712				; size = 4
+_iDomain$224034 = -712					; size = 4
+$T226472 = -712						; size = 4
+_pBuilding$223978 = -712				; size = 4
 _this$ = -708						; size = 4
 _strLoc$ = -704						; size = 80
-$T226957 = -624						; size = 4
+$T226956 = -624						; size = 4
 _eRecommendedResource$ = -624				; size = 4
 _eMilitaryUnitTech$ = -624				; size = 4
-$T227188 = -620						; size = 4
-_pPlotUnitNode$224630 = -620				; size = 4
-_eStatement$224300 = -620				; size = 4
-_eMilitaryStrengthComparedToUs$224094 = -620		; size = 4
+$T227187 = -620						; size = 4
+_pPlotUnitNode$224629 = -620				; size = 4
+_eStatement$224299 = -620				; size = 4
+_eMilitaryStrengthComparedToUs$224093 = -620		; size = 4
 _pResourcePlot$ = -616					; size = 4
 _eRecommendedUnit$ = -616				; size = 4
 _aiPlots$ = -612					; size = 4
 _iMaxCombatValue$ = -612				; size = 4
 _iLoop$ = -608						; size = 4
 _eFlavorScience$ = -604					; size = 4
-$T226503 = -600						; size = 80
-$T226485 = -600						; size = 80
+$T226502 = -600						; size = 80
 $T226484 = -600						; size = 80
 $T226483 = -600						; size = 80
 $T226482 = -600						; size = 80
 $T226481 = -600						; size = 80
-$T226478 = -600						; size = 80
-$T226475 = -600						; size = 80
-$T226470 = -600						; size = 80
-$T226466 = -600						; size = 80
-$T226461 = -600						; size = 80
-$T226458 = -600						; size = 80
-$T226455 = -600						; size = 80
-$T226451 = -600						; size = 80
-$T226447 = -600						; size = 80
-$T226443 = -600						; size = 80
-$T226441 = -600						; size = 80
+$T226480 = -600						; size = 80
+$T226477 = -600						; size = 80
+$T226474 = -600						; size = 80
+$T226469 = -600						; size = 80
+$T226465 = -600						; size = 80
+$T226460 = -600						; size = 80
+$T226457 = -600						; size = 80
+$T226454 = -600						; size = 80
+$T226450 = -600						; size = 80
+$T226446 = -600						; size = 80
+$T226442 = -600						; size = 80
 $T226440 = -600						; size = 80
 $T226439 = -600						; size = 80
 $T226438 = -600						; size = 80
 $T226437 = -600						; size = 80
 $T226436 = -600						; size = 80
 $T226435 = -600						; size = 80
-$T226599 = -520						; size = 80
-$T226596 = -520						; size = 80
+$T226434 = -600						; size = 80
+$T226598 = -520						; size = 80
 $T226595 = -520						; size = 80
-$T226592 = -520						; size = 80
+$T226594 = -520						; size = 80
 $T226591 = -520						; size = 80
-$T226587 = -520						; size = 80
-$T226582 = -520						; size = 80
-$T226577 = -520						; size = 80
-$T226570 = -520						; size = 80
-$T226564 = -520						; size = 80
-$T226558 = -520						; size = 80
-$T226552 = -520						; size = 80
-$T226546 = -520						; size = 80
-$T226540 = -520						; size = 80
-$T226537 = -520						; size = 80
-$T226521 = -520						; size = 80
-$T226519 = -520						; size = 80
-$T226513 = -520						; size = 80
-$T226507 = -520						; size = 80
-$T226601 = -440						; size = 80
-$T226566 = -440						; size = 80
-$T226560 = -440						; size = 80
-$T226554 = -440						; size = 80
-$T226548 = -440						; size = 80
-$T226542 = -440						; size = 80
-$T226531 = -440						; size = 80
-$T226525 = -440						; size = 80
-$T226515 = -440						; size = 80
-$T226509 = -440						; size = 80
-$T226495 = -440						; size = 80
-$T226493 = -440						; size = 80
-$T226600 = -360						; size = 80
-$T226565 = -360						; size = 80
-$T226559 = -360						; size = 80
-$T226553 = -360						; size = 80
-$T226547 = -360						; size = 80
-$T226541 = -360						; size = 80
-$T226534 = -360						; size = 80
-$T226523 = -360						; size = 80
-$T226517 = -360						; size = 80
-$T226511 = -360						; size = 80
-$T226505 = -360						; size = 80
-_strBuildingClass$224552 = -280				; size = 28
-$T226602 = -252						; size = 80
-$T226567 = -252						; size = 80
-$T226561 = -252						; size = 80
-$T226555 = -252						; size = 80
-$T226549 = -252						; size = 80
-$T226543 = -252						; size = 80
-$T226527 = -252						; size = 80
-$T226497 = -252						; size = 80
-$T226491 = -252						; size = 80
-$T226568 = -172						; size = 80
-$T226562 = -172						; size = 80
-$T226556 = -172						; size = 80
-$T226550 = -172						; size = 80
-$T226544 = -172						; size = 80
-$T226529 = -172						; size = 80
-$T226499 = -172						; size = 80
-$T226489 = -172						; size = 80
-$T226569 = -92						; size = 80
-$T226563 = -92						; size = 80
-$T226557 = -92						; size = 80
-$T226551 = -92						; size = 80
-$T226545 = -92						; size = 80
-$T226501 = -92						; size = 80
-$T226487 = -92						; size = 80
+$T226590 = -520						; size = 80
+$T226586 = -520						; size = 80
+$T226581 = -520						; size = 80
+$T226576 = -520						; size = 80
+$T226569 = -520						; size = 80
+$T226563 = -520						; size = 80
+$T226557 = -520						; size = 80
+$T226551 = -520						; size = 80
+$T226545 = -520						; size = 80
+$T226539 = -520						; size = 80
+$T226536 = -520						; size = 80
+$T226520 = -520						; size = 80
+$T226518 = -520						; size = 80
+$T226512 = -520						; size = 80
+$T226506 = -520						; size = 80
+$T226600 = -440						; size = 80
+$T226565 = -440						; size = 80
+$T226559 = -440						; size = 80
+$T226553 = -440						; size = 80
+$T226547 = -440						; size = 80
+$T226541 = -440						; size = 80
+$T226530 = -440						; size = 80
+$T226524 = -440						; size = 80
+$T226514 = -440						; size = 80
+$T226508 = -440						; size = 80
+$T226494 = -440						; size = 80
+$T226492 = -440						; size = 80
+$T226599 = -360						; size = 80
+$T226564 = -360						; size = 80
+$T226558 = -360						; size = 80
+$T226552 = -360						; size = 80
+$T226546 = -360						; size = 80
+$T226540 = -360						; size = 80
+$T226533 = -360						; size = 80
+$T226522 = -360						; size = 80
+$T226516 = -360						; size = 80
+$T226510 = -360						; size = 80
+$T226504 = -360						; size = 80
+_strBuildingClass$224551 = -280				; size = 28
+$T226601 = -252						; size = 80
+$T226566 = -252						; size = 80
+$T226560 = -252						; size = 80
+$T226554 = -252						; size = 80
+$T226548 = -252						; size = 80
+$T226542 = -252						; size = 80
+$T226526 = -252						; size = 80
+$T226496 = -252						; size = 80
+$T226490 = -252						; size = 80
+$T226567 = -172						; size = 80
+$T226561 = -172						; size = 80
+$T226555 = -172						; size = 80
+$T226549 = -172						; size = 80
+$T226543 = -172						; size = 80
+$T226528 = -172						; size = 80
+$T226498 = -172						; size = 80
+$T226488 = -172						; size = 80
+$T226568 = -92						; size = 80
+$T226562 = -92						; size = 80
+$T226556 = -92						; size = 80
+$T226550 = -92						; size = 80
+$T226544 = -92						; size = 80
+$T226500 = -92						; size = 80
+$T226486 = -92						; size = 80
 __$EHRec$ = -12						; size = 12
 _ePlayer$ = 8						; size = 4
 ?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z PROC ; CvAdvisorCounsel::BuildCounselList, COMDAT
@@ -4436,10 +4436,10 @@ _ePlayer$ = 8						; size = 4
 	mov	ecx, DWORD PTR ?sr_TeamTypes@CvPreGame@@3ABV?$vector@W4TeamTypes@@V?$allocator@W4TeamTypes@@@std@@@std@@B ; CvPreGame::sr_TeamTypes
 	mov	edx, DWORD PTR [ecx+4]
 	mov	eax, DWORD PTR [edx+eax*4]
-	mov	DWORD PTR $T226714[esp+776], eax
+	mov	DWORD PTR $T226713[esp+776], eax
 	jmp	SHORT $LN485@BuildCouns
 $LN484@BuildCouns:
-	mov	DWORD PTR $T226714[esp+776], -1
+	mov	DWORD PTR $T226713[esp+776], -1
 $LN485@BuildCouns:
 
 ; 85   : 	uint uiCounselIndex = 0;
@@ -4467,8 +4467,8 @@ $LN485@BuildCouns:
 ; 91   : 		strLoc = Localization::Lookup("TXT_KEY_BUILD_A_CITY_MCFLY_ECONOMIC");
 
 	mov	ebx, DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
-	lea	edx, DWORD PTR $T226435[esp+776]
-	push	OFFSET $SG223842
+	lea	edx, DWORD PTR $T226434[esp+776]
+	push	OFFSET $SG223841
 	push	edx
 	call	ebx
 	add	esp, 8
@@ -4478,7 +4478,7 @@ $LN485@BuildCouns:
 	mov	BYTE PTR __$EHRec$[esp+788], 1
 	call	ebp
 	mov	edi, DWORD PTR __imp_??1String@Localization@@UAE@XZ
-	lea	ecx, DWORD PTR $T226435[esp+776]
+	lea	ecx, DWORD PTR $T226434[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	edi
 
@@ -4507,8 +4507,8 @@ $LN492@BuildCouns:
 ; 95   : 
 ; 96   : 		strLoc = Localization::Lookup("TXT_KEY_BUILD_A_CITY_MCFLY_MILITARY");
 
-	lea	eax, DWORD PTR $T226436[esp+776]
-	push	OFFSET $SG223844
+	lea	eax, DWORD PTR $T226435[esp+776]
+	push	OFFSET $SG223843
 	push	eax
 	call	ebx
 	add	esp, 8
@@ -4516,7 +4516,7 @@ $LN492@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 2
 	call	ebp
-	lea	ecx, DWORD PTR $T226436[esp+776]
+	lea	ecx, DWORD PTR $T226435[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	edi
 
@@ -4544,8 +4544,8 @@ $LN505@BuildCouns:
 ; 100  : 
 ; 101  : 		strLoc = Localization::Lookup("TXT_KEY_BUILD_A_CITY_MCFLY_SCIENCE");
 
-	lea	eax, DWORD PTR $T226437[esp+776]
-	push	OFFSET $SG223846
+	lea	eax, DWORD PTR $T226436[esp+776]
+	push	OFFSET $SG223845
 	push	eax
 	call	ebx
 	add	esp, 8
@@ -4553,7 +4553,7 @@ $LN505@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 3
 	call	ebp
-	lea	ecx, DWORD PTR $T226437[esp+776]
+	lea	ecx, DWORD PTR $T226436[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	edi
 
@@ -4581,8 +4581,8 @@ $LN518@BuildCouns:
 ; 105  : 
 ; 106  : 		strLoc = Localization::Lookup("TXT_KEY_BUILD_A_CITY_MCFLY_FOREIGN");
 
-	lea	eax, DWORD PTR $T226438[esp+776]
-	push	OFFSET $SG223848
+	lea	eax, DWORD PTR $T226437[esp+776]
+	push	OFFSET $SG223847
 	push	eax
 	call	ebx
 	add	esp, 8
@@ -4590,7 +4590,7 @@ $LN518@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 4
 	call	ebp
-	lea	ecx, DWORD PTR $T226438[esp+776]
+	lea	ecx, DWORD PTR $T226437[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	edi
 
@@ -4703,7 +4703,7 @@ $LL380@BuildCouns:
 	mov	ecx, edi
 	call	?GetAdvisorCounselText@CvEconomicAIStrategyXMLEntry@@QBEPBDXZ ; CvEconomicAIStrategyXMLEntry::GetAdvisorCounselText
 	push	eax
-	lea	edx, DWORD PTR $T226439[esp+780]
+	lea	edx, DWORD PTR $T226438[esp+780]
 	push	edx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
@@ -4711,7 +4711,7 @@ $LL380@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 5
 	call	DWORD PTR __imp_??4String@Localization@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T226439[esp+776]
+	lea	ecx, DWORD PTR $T226438[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 
@@ -4775,7 +4775,7 @@ $LN1384@BuildCouns:
 	xor	ebp, ebp
 	mov	ecx, eax
 	mov	DWORD PTR _pMilitaryAI$[esp+776], eax
-	mov	DWORD PTR _iStrategiesLoop$223870[esp+776], ebp
+	mov	DWORD PTR _iStrategiesLoop$223869[esp+776], ebp
 	call	?GetMilitaryAIStrategies@CvMilitaryAI@@QAEPAVCvMilitaryAIStrategyXMLEntries@@XZ ; CvMilitaryAI::GetMilitaryAIStrategies
 	mov	ecx, eax
 	call	?GetNumMilitaryAIStrategies@CvMilitaryAIStrategyXMLEntries@@QAEHXZ ; CvMilitaryAIStrategyXMLEntries::GetNumMilitaryAIStrategies
@@ -4827,7 +4827,7 @@ $LL374@BuildCouns:
 	mov	ecx, edi
 	call	?GetAdvisorCounselText@CvMilitaryAIStrategyXMLEntry@@QBEPBDXZ ; CvMilitaryAIStrategyXMLEntry::GetAdvisorCounselText
 	push	eax
-	lea	eax, DWORD PTR $T226440[esp+780]
+	lea	eax, DWORD PTR $T226439[esp+780]
 	push	eax
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
@@ -4835,7 +4835,7 @@ $LL374@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 6
 	call	DWORD PTR __imp_??4String@Localization@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T226440[esp+776]
+	lea	ecx, DWORD PTR $T226439[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 
@@ -4847,13 +4847,13 @@ $LL374@BuildCouns:
 	mov	ebp, eax
 	call	DWORD PTR __imp_?toUTF8@String@Localization@@QAEPBDXZ
 	mov	ecx, edi
-	mov	DWORD PTR $T226911[esp+776], eax
+	mov	DWORD PTR $T226910[esp+776], eax
 	call	?GetAdvisor@CvMilitaryAIStrategyXMLEntry@@QBE?AW4AdvisorTypes@@XZ ; CvMilitaryAIStrategyXMLEntry::GetAdvisor
 	mov	ecx, DWORD PTR _uiCounselIndex$[esp+776]
 	cmp	ecx, DWORD PTR [esi+4]
 	jae	SHORT $LN1498@BuildCouns
 	mov	edx, DWORD PTR [esi]
-	mov	ecx, DWORD PTR $T226911[esp+776]
+	mov	ecx, DWORD PTR $T226910[esp+776]
 	mov	DWORD PTR [ebx+edx], eax
 	mov	eax, DWORD PTR [esi]
 	push	ecx
@@ -4872,13 +4872,13 @@ $LL374@BuildCouns:
 
 	inc	DWORD PTR _uiCounselIndex$[esp+788]
 	mov	DWORD PTR [ebx+edx+516], ebp
-	mov	ebp, DWORD PTR _iStrategiesLoop$223870[esp+788]
+	mov	ebp, DWORD PTR _iStrategiesLoop$223869[esp+788]
 	add	esp, 12					; 0000000cH
 	add	ebx, 520				; 00000208H
 $LN373@BuildCouns:
 	mov	ecx, DWORD PTR _pMilitaryAI$[esp+776]
 	inc	ebp
-	mov	DWORD PTR _iStrategiesLoop$223870[esp+776], ebp
+	mov	DWORD PTR _iStrategiesLoop$223869[esp+776], ebp
 	call	?GetMilitaryAIStrategies@CvMilitaryAI@@QAEPAVCvMilitaryAIStrategyXMLEntries@@XZ ; CvMilitaryAI::GetMilitaryAIStrategies
 	mov	ecx, eax
 	call	?GetNumMilitaryAIStrategies@CvMilitaryAIStrategyXMLEntries@@QAEHXZ ; CvMilitaryAIStrategyXMLEntries::GetNumMilitaryAIStrategies
@@ -4920,7 +4920,7 @@ $LL367@BuildCouns:
 
 	mov	ecx, eax
 	mov	DWORD PTR _pCityStrategyAI$[esp+776], eax
-	mov	DWORD PTR _i$223889[esp+776], 0
+	mov	DWORD PTR _i$223888[esp+776], 0
 	call	?GetAICityStrategies@CvCityStrategyAI@@QAEPAVCvAICityStrategies@@XZ ; CvCityStrategyAI::GetAICityStrategies
 	mov	ecx, eax
 	call	?GetNumAICityStrategies@CvAICityStrategies@@QAEHXZ ; CvAICityStrategies::GetNumAICityStrategies
@@ -4935,7 +4935,7 @@ $LL364@BuildCouns:
 ; 178  : 			AICityStrategyTypes eStrategy = (AICityStrategyTypes)i;
 ; 179  : 			CvAICityStrategyEntry* pStrategy = pCityStrategyAI->GetAICityStrategies()->GetEntry(i);
 
-	mov	eax, DWORD PTR _i$223889[esp+776]
+	mov	eax, DWORD PTR _i$223888[esp+776]
 	mov	ecx, DWORD PTR _pCityStrategyAI$[esp+776]
 	push	eax
 	call	?GetAICityStrategies@CvCityStrategyAI@@QAEPAVCvAICityStrategies@@XZ ; CvCityStrategyAI::GetAICityStrategies
@@ -4944,7 +4944,7 @@ $LL364@BuildCouns:
 
 ; 180  : 			if(pCityStrategyAI->IsUsingCityStrategy(eStrategy))
 
-	mov	ecx, DWORD PTR _i$223889[esp+776]
+	mov	ecx, DWORD PTR _i$223888[esp+776]
 	push	ecx
 	mov	ecx, DWORD PTR _pCityStrategyAI$[esp+780]
 	mov	edi, eax
@@ -4967,7 +4967,7 @@ $LL364@BuildCouns:
 	mov	ecx, edi
 	call	?GetAdvisorCounselText@CvAICityStrategyEntry@@QBEPBDXZ ; CvAICityStrategyEntry::GetAdvisorCounselText
 	push	eax
-	lea	edx, DWORD PTR $T226441[esp+780]
+	lea	edx, DWORD PTR $T226440[esp+780]
 	push	edx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
@@ -4975,7 +4975,7 @@ $LL364@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 7
 	call	DWORD PTR __imp_??4String@Localization@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T226441[esp+776]
+	lea	ecx, DWORD PTR $T226440[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 
@@ -4992,16 +4992,16 @@ $LL364@BuildCouns:
 	mov	ecx, edi
 	call	?GetAdvisorCounselImportance@CvAICityStrategyEntry@@QBEHXZ ; CvAICityStrategyEntry::GetAdvisorCounselImportance
 	lea	ecx, DWORD PTR _strLoc$[esp+776]
-	mov	DWORD PTR $T226957[esp+776], eax
+	mov	DWORD PTR $T226956[esp+776], eax
 	call	DWORD PTR __imp_?toUTF8@String@Localization@@QAEPBDXZ
 	mov	ecx, edi
-	mov	DWORD PTR $T226956[esp+776], eax
+	mov	DWORD PTR $T226955[esp+776], eax
 	call	?GetAdvisor@CvAICityStrategyEntry@@QBE?AW4AdvisorTypes@@XZ ; CvAICityStrategyEntry::GetAdvisor
 	mov	ecx, DWORD PTR _uiCounselIndex$[esp+776]
 	cmp	ecx, DWORD PTR [esi+4]
 	jae	SHORT $LN366@BuildCouns
 	mov	edx, DWORD PTR [esi]
-	mov	ecx, DWORD PTR $T226956[esp+776]
+	mov	ecx, DWORD PTR $T226955[esp+776]
 	mov	DWORD PTR [edx+ebp], eax
 	mov	eax, DWORD PTR [esi]
 	push	ecx
@@ -5010,7 +5010,7 @@ $LL364@BuildCouns:
 	push	eax
 	call	DWORD PTR __imp__strcpy_s
 	mov	edx, DWORD PTR [esi]
-	mov	eax, DWORD PTR $T226957[esp+788]
+	mov	eax, DWORD PTR $T226956[esp+788]
 
 ; 188  : 					CvAssertMsg(bSuccess, "Unable to add counsel to list. Too many strategies running at once");
 ; 189  : 					if(!bSuccess)
@@ -5024,10 +5024,10 @@ $LL364@BuildCouns:
 	mov	DWORD PTR [edx+ebp+516], eax
 	add	ebp, 520				; 00000208H
 $LN363@BuildCouns:
-	mov	edi, DWORD PTR _i$223889[esp+776]
+	mov	edi, DWORD PTR _i$223888[esp+776]
 	mov	ecx, DWORD PTR _pCityStrategyAI$[esp+776]
 	inc	edi
-	mov	DWORD PTR _i$223889[esp+776], edi
+	mov	DWORD PTR _i$223888[esp+776], edi
 	call	?GetAICityStrategies@CvCityStrategyAI@@QAEPAVCvAICityStrategies@@XZ ; CvCityStrategyAI::GetAICityStrategies
 	mov	ecx, eax
 	call	?GetNumAICityStrategies@CvAICityStrategies@@QAEHXZ ; CvAICityStrategies::GetNumAICityStrategies
@@ -5081,7 +5081,7 @@ $LL358@BuildCouns:
 
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+1760
 	lea	eax, DWORD PTR [ecx+edi]
-	push	OFFSET $SG223914
+	push	OFFSET $SG223913
 	push	eax
 	call	DWORD PTR __imp_??$?8DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PBD@Z
 	add	esp, 8
@@ -5181,7 +5181,7 @@ $LL354@BuildCouns:
 
 	push	edi
 	mov	ecx, ebp
-	mov	BYTE PTR _bUniquenessFound$223930[esp+780], 0
+	mov	BYTE PTR _bUniquenessFound$223929[esp+780], 0
 	call	?GetCivTechUniqueUnit@CvPlayerTechs@@QBE?AW4UnitTypes@@W4TechTypes@@@Z ; CvPlayerTechs::GetCivTechUniqueUnit
 	cmp	eax, -1
 	je	$LN1482@BuildCouns
@@ -5189,8 +5189,8 @@ $LL354@BuildCouns:
 ; 232  : 				{
 ; 233  : 					strLoc = Localization::Lookup("TXT_KEY_TECHSTRATEGY_CIV_BONUS_UNIT");
 
-	lea	ecx, DWORD PTR $T226443[esp+776]
-	push	OFFSET $SG223933
+	lea	ecx, DWORD PTR $T226442[esp+776]
+	push	OFFSET $SG223932
 	push	ecx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
@@ -5198,7 +5198,7 @@ $LL354@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 8
 	call	DWORD PTR __imp_??4String@Localization@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T226443[esp+776]
+	lea	ecx, DWORD PTR $T226442[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 
@@ -5276,7 +5276,7 @@ $LL354@BuildCouns:
 
 ; 245  : 					bUniquenessFound = true;
 
-	mov	BYTE PTR _bUniquenessFound$223930[esp+776], 1
+	mov	BYTE PTR _bUniquenessFound$223929[esp+776], 1
 $LN1482@BuildCouns:
 
 ; 246  : 				}
@@ -5292,8 +5292,8 @@ $LN1482@BuildCouns:
 ; 249  : 				{
 ; 250  : 					strLoc = Localization::Lookup("TXT_KEY_TECHSTRATEGY_CIV_BONUS_BUILDING");
 
-	lea	edx, DWORD PTR $T226447[esp+776]
-	push	OFFSET $SG223941
+	lea	edx, DWORD PTR $T226446[esp+776]
+	push	OFFSET $SG223940
 	push	edx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
@@ -5301,7 +5301,7 @@ $LN1482@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 9
 	call	DWORD PTR __imp_??4String@Localization@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T226447[esp+776]
+	lea	ecx, DWORD PTR $T226446[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 
@@ -5378,7 +5378,7 @@ $LN1482@BuildCouns:
 
 ; 261  : 					bUniquenessFound = true;
 
-	mov	BYTE PTR _bUniquenessFound$223930[esp+776], 1
+	mov	BYTE PTR _bUniquenessFound$223929[esp+776], 1
 $LN347@BuildCouns:
 
 ; 262  : 				}
@@ -5394,8 +5394,8 @@ $LN347@BuildCouns:
 ; 265  : 				{
 ; 266  : 					strLoc = Localization::Lookup("TXT_KEY_TECHSTRATEGY_CIV_BONUS_IMPROVEMENT");
 
-	lea	edx, DWORD PTR $T226451[esp+776]
-	push	OFFSET $SG223949
+	lea	edx, DWORD PTR $T226450[esp+776]
+	push	OFFSET $SG223948
 	push	edx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
@@ -5403,7 +5403,7 @@ $LN347@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 10		; 0000000aH
 	call	DWORD PTR __imp_??4String@Localization@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T226451[esp+776]
+	lea	ecx, DWORD PTR $T226450[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 
@@ -5444,15 +5444,15 @@ $LN347@BuildCouns:
 
 	jmp	SHORT $LN1513@BuildCouns
 $LN345@BuildCouns:
-	cmp	BYTE PTR _bUniquenessFound$223930[esp+776], 0
+	cmp	BYTE PTR _bUniquenessFound$223929[esp+776], 0
 	jne	$LN1483@BuildCouns
 
 ; 281  : 				{
 ; 282  : 					// we don't have text for this
 ; 283  : 					strLoc = Localization::Lookup("TXT_KEY_TECHSTRATEGY_CIV_BONUS");
 
-	lea	edx, DWORD PTR $T226455[esp+776]
-	push	OFFSET $SG223957
+	lea	edx, DWORD PTR $T226454[esp+776]
+	push	OFFSET $SG223956
 	push	edx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
@@ -5460,7 +5460,7 @@ $LN345@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 11		; 0000000bH
 	call	DWORD PTR __imp_??4String@Localization@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T226455[esp+776]
+	lea	ecx, DWORD PTR $T226454[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 
@@ -5539,8 +5539,8 @@ $LN1483@BuildCouns:
 ; 299  : 				// say we need this for a special resource
 ; 300  : 				strLoc = Localization::Lookup("TXT_KEY_TECHSTRATEGY_RESOURCE");
 
-	lea	edx, DWORD PTR $T226458[esp+776]
-	push	OFFSET $SG223964
+	lea	edx, DWORD PTR $T226457[esp+776]
+	push	OFFSET $SG223963
 	push	edx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
@@ -5548,7 +5548,7 @@ $LN1483@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 12		; 0000000cH
 	call	DWORD PTR __imp_??4String@Localization@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T226458[esp+776]
+	lea	ecx, DWORD PTR $T226457[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 
@@ -5623,20 +5623,20 @@ $LN341@BuildCouns:
 ; 314  : 			BuildingTypes eBuilding1 = NO_BUILDING;
 
 	or	ecx, -1
-	mov	DWORD PTR _iNumBuildingInfos$223969[esp+776], eax
-	mov	DWORD PTR _eBuilding1$223970[esp+776], ecx
+	mov	DWORD PTR _iNumBuildingInfos$223968[esp+776], eax
+	mov	DWORD PTR _eBuilding1$223969[esp+776], ecx
 
 ; 315  : 			BuildingTypes eBuilding2 = NO_BUILDING;
 
-	mov	DWORD PTR _eBuilding2$223971[esp+776], ecx
+	mov	DWORD PTR _eBuilding2$223970[esp+776], ecx
 
 ; 316  : 			BuildingTypes eBuilding3 = NO_BUILDING;
 
-	mov	DWORD PTR _eBuilding3$223972[esp+776], ecx
+	mov	DWORD PTR _eBuilding3$223971[esp+776], ecx
 
 ; 317  : 			for(int iI = 0; iI < iNumBuildingInfos; iI++)
 
-	mov	DWORD PTR _iI$223973[esp+776], 0
+	mov	DWORD PTR _iI$223972[esp+776], 0
 	test	eax, eax
 	jle	$LN330@BuildCouns
 $LL339@BuildCouns:
@@ -5645,11 +5645,11 @@ $LL339@BuildCouns:
 ; 319  : 				BuildingTypes eBuilding = (BuildingTypes)iI;
 ; 320  : 				CvBuildingEntry* pBuilding = GC.getBuildingInfo(eBuilding);
 
-	mov	edx, DWORD PTR _iI$223973[esp+776]
+	mov	edx, DWORD PTR _iI$223972[esp+776]
 	push	edx
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getBuildingInfo@CvGlobals@@QAEPAVCvBuildingEntry@@W4BuildingTypes@@@Z ; CvGlobals::getBuildingInfo
-	mov	DWORD PTR _pBuilding$223979[esp+776], eax
+	mov	DWORD PTR _pBuilding$223978[esp+776], eax
 
 ; 321  : 				if(pBuilding && pBuilding->GetPrereqAndTech() == eTech && pBuilding->GetFlavorValue(eFlavorScience) > 0 && !GC.getGame().isBuildingClassMaxedOut((BuildingClassTypes)pBuilding->GetBuildingClassType()))
 
@@ -5660,17 +5660,17 @@ $LL339@BuildCouns:
 	cmp	eax, edi
 	jne	$LN1487@BuildCouns
 	mov	eax, DWORD PTR _eFlavorScience$[esp+776]
-	mov	ecx, DWORD PTR _pBuilding$223979[esp+776]
+	mov	ecx, DWORD PTR _pBuilding$223978[esp+776]
 	push	eax
 	call	?GetFlavorValue@CvBuildingEntry@@QBEHH@Z ; CvBuildingEntry::GetFlavorValue
 	test	eax, eax
 	jle	SHORT $LN1487@BuildCouns
 	mov	ecx, DWORD PTR ?gGlobals@@3VCvGlobals@@A+48
-	mov	DWORD PTR $T227188[esp+776], ecx
-	mov	ecx, DWORD PTR _pBuilding$223979[esp+776]
+	mov	DWORD PTR $T227187[esp+776], ecx
+	mov	ecx, DWORD PTR _pBuilding$223978[esp+776]
 	push	0
 	call	?GetBuildingClassType@CvBuildingEntry@@QBEHXZ ; CvBuildingEntry::GetBuildingClassType
-	mov	ecx, DWORD PTR $T227188[esp+780]
+	mov	ecx, DWORD PTR $T227187[esp+780]
 	push	eax
 	call	?isBuildingClassMaxedOut@CvGame@@QAE_NW4BuildingClassTypes@@H@Z ; CvGame::isBuildingClassMaxedOut
 	test	al, al
@@ -5680,42 +5680,42 @@ $LL339@BuildCouns:
 ; 323  : 					if(eBuilding1 == NO_BUILDING)
 
 	or	ecx, -1
-	cmp	DWORD PTR _eBuilding1$223970[esp+776], ecx
+	cmp	DWORD PTR _eBuilding1$223969[esp+776], ecx
 	jne	SHORT $LN335@BuildCouns
 
 ; 324  : 					{
 ; 325  : 						eBuilding1 = eBuilding;
 
-	mov	edx, DWORD PTR _iI$223973[esp+776]
-	mov	DWORD PTR _eBuilding1$223970[esp+776], edx
+	mov	edx, DWORD PTR _iI$223972[esp+776]
+	mov	DWORD PTR _eBuilding1$223969[esp+776], edx
 	jmp	SHORT $LN338@BuildCouns
 $LN335@BuildCouns:
 
 ; 326  : 					}
 ; 327  : 					else if(eBuilding2 == NO_BUILDING)
 
-	cmp	DWORD PTR _eBuilding2$223971[esp+776], ecx
+	cmp	DWORD PTR _eBuilding2$223970[esp+776], ecx
 	jne	SHORT $LN333@BuildCouns
 
 ; 328  : 					{
 ; 329  : 						eBuilding2 = eBuilding;
 
-	mov	eax, DWORD PTR _iI$223973[esp+776]
-	mov	DWORD PTR _eBuilding2$223971[esp+776], eax
+	mov	eax, DWORD PTR _iI$223972[esp+776]
+	mov	DWORD PTR _eBuilding2$223970[esp+776], eax
 	jmp	SHORT $LN338@BuildCouns
 $LN333@BuildCouns:
 
 ; 330  : 					}
 ; 331  : 					else if(eBuilding3 == NO_BUILDING)
 
-	cmp	DWORD PTR _eBuilding3$223972[esp+776], ecx
+	cmp	DWORD PTR _eBuilding3$223971[esp+776], ecx
 	jne	SHORT $LN338@BuildCouns
 
 ; 332  : 					{
 ; 333  : 						eBuilding3 = eBuilding;
 
-	mov	edx, DWORD PTR _iI$223973[esp+776]
-	mov	DWORD PTR _eBuilding3$223972[esp+776], edx
+	mov	edx, DWORD PTR _iI$223972[esp+776]
+	mov	DWORD PTR _eBuilding3$223971[esp+776], edx
 	jmp	SHORT $LN338@BuildCouns
 $LN1487@BuildCouns:
 
@@ -5727,10 +5727,10 @@ $LN338@BuildCouns:
 
 ; 317  : 			for(int iI = 0; iI < iNumBuildingInfos; iI++)
 
-	mov	eax, DWORD PTR _iI$223973[esp+776]
+	mov	eax, DWORD PTR _iI$223972[esp+776]
 	inc	eax
-	cmp	eax, DWORD PTR _iNumBuildingInfos$223969[esp+776]
-	mov	DWORD PTR _iI$223973[esp+776], eax
+	cmp	eax, DWORD PTR _iNumBuildingInfos$223968[esp+776]
+	mov	DWORD PTR _iI$223972[esp+776], eax
 	jl	$LL339@BuildCouns
 
 ; 334  : 					}
@@ -5739,26 +5739,26 @@ $LN338@BuildCouns:
 ; 337  : 
 ; 338  : 			if(eBuilding1 != NO_BUILDING)
 
-	cmp	DWORD PTR _eBuilding1$223970[esp+776], ecx
+	cmp	DWORD PTR _eBuilding1$223969[esp+776], ecx
 	je	$LN330@BuildCouns
 
 ; 339  : 			{
 ; 340  : 				if(eBuilding2 != NO_BUILDING)
 
-	cmp	DWORD PTR _eBuilding2$223971[esp+776], ecx
+	cmp	DWORD PTR _eBuilding2$223970[esp+776], ecx
 	je	$LN329@BuildCouns
 
 ; 341  : 				{
 ; 342  : 					if(eBuilding3 != NO_BUILDING)
 
-	cmp	DWORD PTR _eBuilding3$223972[esp+776], ecx
+	cmp	DWORD PTR _eBuilding3$223971[esp+776], ecx
 	je	$LN328@BuildCouns
 
 ; 343  : 					{
 ; 344  : 						strLoc = Localization::Lookup("TXT_KEY_SCIENCESTRATEGY_TECH_THAT_PROVIDES_SCIENCE_BUILDING_3");
 
-	lea	eax, DWORD PTR $T226461[esp+776]
-	push	OFFSET $SG223991
+	lea	eax, DWORD PTR $T226460[esp+776]
+	push	OFFSET $SG223990
 	push	eax
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
@@ -5766,7 +5766,7 @@ $LN338@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 13		; 0000000dH
 	call	DWORD PTR __imp_??4String@Localization@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T226461[esp+776]
+	lea	ecx, DWORD PTR $T226460[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 
@@ -5785,7 +5785,7 @@ $LN338@BuildCouns:
 
 ; 346  : 						strLoc << GC.getBuildingInfo(eBuilding1)->GetTextKey();
 
-	mov	ecx, DWORD PTR _eBuilding1$223970[esp+776]
+	mov	ecx, DWORD PTR _eBuilding1$223969[esp+776]
 	push	ecx
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getBuildingInfo@CvGlobals@@QAEPAVCvBuildingEntry@@W4BuildingTypes@@@Z ; CvGlobals::getBuildingInfo
@@ -5797,7 +5797,7 @@ $LN338@BuildCouns:
 
 ; 347  : 						strLoc << GC.getBuildingInfo(eBuilding2)->GetTextKey();
 
-	mov	edx, DWORD PTR _eBuilding2$223971[esp+776]
+	mov	edx, DWORD PTR _eBuilding2$223970[esp+776]
 	push	edx
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getBuildingInfo@CvGlobals@@QAEPAVCvBuildingEntry@@W4BuildingTypes@@@Z ; CvGlobals::getBuildingInfo
@@ -5809,7 +5809,7 @@ $LN338@BuildCouns:
 
 ; 348  : 						strLoc << GC.getBuildingInfo(eBuilding3)->GetTextKey();
 
-	mov	eax, DWORD PTR _eBuilding3$223972[esp+776]
+	mov	eax, DWORD PTR _eBuilding3$223971[esp+776]
 	push	eax
 
 ; 349  : 					}
@@ -5821,8 +5821,8 @@ $LN328@BuildCouns:
 ; 351  : 					{
 ; 352  : 						strLoc = Localization::Lookup("TXT_KEY_SCIENCESTRATEGY_TECH_THAT_PROVIDES_SCIENCE_BUILDING_2");
 
-	lea	ecx, DWORD PTR $T226466[esp+776]
-	push	OFFSET $SG223998
+	lea	ecx, DWORD PTR $T226465[esp+776]
+	push	OFFSET $SG223997
 	push	ecx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
@@ -5830,7 +5830,7 @@ $LN328@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 14		; 0000000eH
 	call	DWORD PTR __imp_??4String@Localization@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T226466[esp+776]
+	lea	ecx, DWORD PTR $T226465[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 
@@ -5849,7 +5849,7 @@ $LN328@BuildCouns:
 
 ; 354  : 						strLoc << GC.getBuildingInfo(eBuilding1)->GetTextKey();
 
-	mov	edx, DWORD PTR _eBuilding1$223970[esp+776]
+	mov	edx, DWORD PTR _eBuilding1$223969[esp+776]
 	push	edx
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getBuildingInfo@CvGlobals@@QAEPAVCvBuildingEntry@@W4BuildingTypes@@@Z ; CvGlobals::getBuildingInfo
@@ -5861,7 +5861,7 @@ $LN328@BuildCouns:
 
 ; 355  : 						strLoc << GC.getBuildingInfo(eBuilding2)->GetTextKey();
 
-	mov	eax, DWORD PTR _eBuilding2$223971[esp+776]
+	mov	eax, DWORD PTR _eBuilding2$223970[esp+776]
 	push	eax
 
 ; 356  : 					}
@@ -5874,8 +5874,8 @@ $LN329@BuildCouns:
 ; 359  : 				{
 ; 360  : 					strLoc = Localization::Lookup("TXT_KEY_SCIENCESTRATEGY_TECH_THAT_PROVIDES_SCIENCE_BUILDING_1");
 
-	lea	ecx, DWORD PTR $T226470[esp+776]
-	push	OFFSET $SG224004
+	lea	ecx, DWORD PTR $T226469[esp+776]
+	push	OFFSET $SG224003
 	push	ecx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
@@ -5883,7 +5883,7 @@ $LN329@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 15		; 0000000fH
 	call	DWORD PTR __imp_??4String@Localization@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T226470[esp+776]
+	lea	ecx, DWORD PTR $T226469[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 
@@ -5902,7 +5902,7 @@ $LN329@BuildCouns:
 
 ; 362  : 					strLoc << GC.getBuildingInfo(eBuilding1)->GetTextKey();
 
-	mov	edx, DWORD PTR _eBuilding1$223970[esp+776]
+	mov	edx, DWORD PTR _eBuilding1$223969[esp+776]
 	push	edx
 $LN1514@BuildCouns:
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
@@ -5956,7 +5956,7 @@ $LN330@BuildCouns:
 ; 377  : 			for(int i = 0; i < GC.getNumUnitInfos(); i++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	mov	DWORD PTR _i$224009[esp+776], 0
+	mov	DWORD PTR _i$224008[esp+776], 0
 	call	?getNumUnitInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumUnitInfos
 	test	eax, eax
 	jle	$LN322@BuildCouns
@@ -5968,11 +5968,11 @@ $LL324@BuildCouns:
 ; 380  : 				UnitTypes eUnitType = (UnitTypes)i;
 ; 381  : 				CvUnitEntry* pUnitEntry = GC.getUnitInfo(eUnitType);
 
-	mov	edx, DWORD PTR _i$224009[esp+776]
+	mov	edx, DWORD PTR _i$224008[esp+776]
 	push	edx
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getUnitInfo@CvGlobals@@QAEPAVCvUnitEntry@@W4UnitTypes@@@Z ; CvGlobals::getUnitInfo
-	mov	DWORD PTR _pUnitEntry$224015[esp+776], eax
+	mov	DWORD PTR _pUnitEntry$224014[esp+776], eax
 
 ; 382  : 				if(pUnitEntry)
 
@@ -5986,7 +5986,7 @@ $LL324@BuildCouns:
 	call	?GetPrereqAndTech@CvUnitEntry@@QBEHXZ	; CvUnitEntry::GetPrereqAndTech
 	cmp	eax, edi
 	jne	$LN323@BuildCouns
-	mov	ecx, DWORD PTR _pUnitEntry$224015[esp+776]
+	mov	ecx, DWORD PTR _pUnitEntry$224014[esp+776]
 	call	?GetUnitCombatType@CvUnitEntry@@QBEHXZ	; CvUnitEntry::GetUnitCombatType
 	cmp	eax, -1
 	je	$LN323@BuildCouns
@@ -5997,10 +5997,10 @@ $LL324@BuildCouns:
 	mov	eax, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	mov	ecx, DWORD PTR tv5440[esp+776]
 	add	ecx, eax
-	mov	DWORD PTR $T227251[esp+776], ecx
-	mov	ecx, DWORD PTR _pUnitEntry$224015[esp+776]
+	mov	DWORD PTR $T227250[esp+776], ecx
+	mov	ecx, DWORD PTR _pUnitEntry$224014[esp+776]
 	call	?GetUnitClassType@CvUnitEntry@@QBEHXZ	; CvUnitEntry::GetUnitClassType
-	mov	ecx, DWORD PTR $T227251[esp+776]
+	mov	ecx, DWORD PTR $T227250[esp+776]
 	push	eax
 	call	?getCivilizationInfo@CvPlayer@@QBEAAVCvCivilizationInfo@@XZ ; CvPlayer::getCivilizationInfo
 	mov	ecx, eax
@@ -6008,7 +6008,7 @@ $LL324@BuildCouns:
 
 ; 387  : 						if(eUnitType != eCivUnit)
 
-	cmp	DWORD PTR _i$224009[esp+776], eax
+	cmp	DWORD PTR _i$224008[esp+776], eax
 	jne	SHORT $LN323@BuildCouns
 
 ; 388  : 						{
@@ -6017,16 +6017,16 @@ $LL324@BuildCouns:
 ; 391  : 
 ; 392  : 						int iCombatValue = MAX(pUnitEntry->GetCombat(), pUnitEntry->GetRangedCombat());
 
-	mov	ecx, DWORD PTR _pUnitEntry$224015[esp+776]
+	mov	ecx, DWORD PTR _pUnitEntry$224014[esp+776]
 	call	?GetRangedCombat@CvUnitEntry@@QBEHXZ	; CvUnitEntry::GetRangedCombat
-	mov	ecx, DWORD PTR _pUnitEntry$224015[esp+776]
-	mov	DWORD PTR $T226473[esp+776], eax
+	mov	ecx, DWORD PTR _pUnitEntry$224014[esp+776]
+	mov	DWORD PTR $T226472[esp+776], eax
 	call	?GetCombat@CvUnitEntry@@QBEHXZ		; CvUnitEntry::GetCombat
-	cmp	eax, DWORD PTR $T226473[esp+776]
-	mov	DWORD PTR $T226474[esp+776], eax
-	lea	eax, DWORD PTR $T226473[esp+776]
+	cmp	eax, DWORD PTR $T226472[esp+776]
+	mov	DWORD PTR $T226473[esp+776], eax
+	lea	eax, DWORD PTR $T226472[esp+776]
 	jl	SHORT $LN730@BuildCouns
-	lea	eax, DWORD PTR $T226474[esp+776]
+	lea	eax, DWORD PTR $T226473[esp+776]
 $LN730@BuildCouns:
 	mov	eax, DWORD PTR [eax]
 
@@ -6042,7 +6042,7 @@ $LN730@BuildCouns:
 ; 398  : 						eMilitaryUnitTech = eTech;
 ; 399  : 						eRecommendedUnit = eUnitType;
 
-	mov	edx, DWORD PTR _i$224009[esp+776]
+	mov	edx, DWORD PTR _i$224008[esp+776]
 	mov	DWORD PTR _eMilitaryUnitTech$[esp+776], edi
 	mov	DWORD PTR _eRecommendedUnit$[esp+776], edx
 
@@ -6050,10 +6050,10 @@ $LN730@BuildCouns:
 
 	mov	DWORD PTR _iMaxCombatValue$[esp+776], eax
 $LN323@BuildCouns:
-	inc	DWORD PTR _i$224009[esp+776]
+	inc	DWORD PTR _i$224008[esp+776]
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getNumUnitInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumUnitInfos
-	cmp	DWORD PTR _i$224009[esp+776], eax
+	cmp	DWORD PTR _i$224008[esp+776], eax
 	jl	$LL324@BuildCouns
 $LN322@BuildCouns:
 
@@ -6067,7 +6067,7 @@ $LN322@BuildCouns:
 ; 408  : 			for(int i = 0; i < GC.getNumBuildingInfos(); i++)
 
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	mov	DWORD PTR _i$224025[esp+776], 0
+	mov	DWORD PTR _i$224024[esp+776], 0
 	call	?getNumBuildingInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumBuildingInfos
 	test	eax, eax
 	jle	$LN353@BuildCouns
@@ -6079,11 +6079,11 @@ $LL317@BuildCouns:
 ; 411  : 				BuildingTypes eBuildingType = (BuildingTypes)i;
 ; 412  : 				CvBuildingEntry* pBuildingEntry = GC.getBuildingInfo(eBuildingType);
 
-	mov	eax, DWORD PTR _i$224025[esp+776]
+	mov	eax, DWORD PTR _i$224024[esp+776]
 	push	eax
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getBuildingInfo@CvGlobals@@QAEPAVCvBuildingEntry@@W4BuildingTypes@@@Z ; CvGlobals::getBuildingInfo
-	mov	DWORD PTR _pBuildingEntry$224031[esp+776], eax
+	mov	DWORD PTR _pBuildingEntry$224030[esp+776], eax
 
 ; 413  : 				if(!pBuildingEntry || pBuildingEntry->GetPrereqAndTech() != eTech)
 
@@ -6100,20 +6100,20 @@ $LL317@BuildCouns:
 ; 417  : 
 ; 418  : 				bool bProvidesExperience = false;
 
-	mov	BYTE PTR _bProvidesExperience$224034[esp+776], 0
+	mov	BYTE PTR _bProvidesExperience$224033[esp+776], 0
 
 ; 419  : 				for(int iDomain = 0; iDomain < NUM_DOMAIN_TYPES; iDomain++)
 
-	mov	DWORD PTR _iDomain$224035[esp+776], 0
+	mov	DWORD PTR _iDomain$224034[esp+776], 0
 	npad	1
 $LL312@BuildCouns:
 
 ; 420  : 				{
 ; 421  : 					if(pBuildingEntry->GetDomainFreeExperience(iDomain) > 0)
 
-	mov	ecx, DWORD PTR _iDomain$224035[esp+776]
+	mov	ecx, DWORD PTR _iDomain$224034[esp+776]
 	push	ecx
-	mov	ecx, DWORD PTR _pBuildingEntry$224031[esp+780]
+	mov	ecx, DWORD PTR _pBuildingEntry$224030[esp+780]
 	call	?GetDomainFreeExperience@CvBuildingEntry@@QBEHH@Z ; CvBuildingEntry::GetDomainFreeExperience
 	test	eax, eax
 	jle	SHORT $LN311@BuildCouns
@@ -6121,15 +6121,15 @@ $LL312@BuildCouns:
 ; 422  : 					{
 ; 423  : 						bProvidesExperience = true;
 
-	mov	BYTE PTR _bProvidesExperience$224034[esp+776], 1
+	mov	BYTE PTR _bProvidesExperience$224033[esp+776], 1
 $LN311@BuildCouns:
 
 ; 419  : 				for(int iDomain = 0; iDomain < NUM_DOMAIN_TYPES; iDomain++)
 
-	mov	eax, DWORD PTR _iDomain$224035[esp+776]
+	mov	eax, DWORD PTR _iDomain$224034[esp+776]
 	inc	eax
 	cmp	eax, 5
-	mov	DWORD PTR _iDomain$224035[esp+776], eax
+	mov	DWORD PTR _iDomain$224034[esp+776], eax
 	jl	SHORT $LL312@BuildCouns
 
 ; 424  : 					}
@@ -6137,7 +6137,7 @@ $LN311@BuildCouns:
 ; 426  : 
 ; 427  : 				if(!bProvidesExperience)
 
-	cmp	BYTE PTR _bProvidesExperience$224034[esp+776], 0
+	cmp	BYTE PTR _bProvidesExperience$224033[esp+776], 0
 	je	SHORT $LN316@BuildCouns
 
 ; 428  : 				{
@@ -6147,14 +6147,14 @@ $LN311@BuildCouns:
 ; 432  : 				eMilitaryBuildingTech = eTech;
 ; 433  : 				eRecommendedBuilding = eBuildingType;
 
-	mov	edx, DWORD PTR _i$224025[esp+776]
+	mov	edx, DWORD PTR _i$224024[esp+776]
 	mov	DWORD PTR _eMilitaryBuildingTech$[esp+776], edi
 	mov	DWORD PTR _eRecommendedBuilding$[esp+776], edx
 $LN316@BuildCouns:
-	inc	DWORD PTR _i$224025[esp+776]
+	inc	DWORD PTR _i$224024[esp+776]
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
 	call	?getNumBuildingInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumBuildingInfos
-	cmp	DWORD PTR _i$224025[esp+776], eax
+	cmp	DWORD PTR _i$224024[esp+776], eax
 	jl	SHORT $LL317@BuildCouns
 $LN353@BuildCouns:
 
@@ -6198,8 +6198,8 @@ $LN1484@BuildCouns:
 ; 442  : 		{
 ; 443  : 			strLoc = Localization::Lookup("TXT_KEY_SCIENCESTRATEGY_RESEARCH_MILITARY_UNITS");
 
-	lea	eax, DWORD PTR $T226475[esp+776]
-	push	OFFSET $SG224045
+	lea	eax, DWORD PTR $T226474[esp+776]
+	push	OFFSET $SG224044
 	push	eax
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
@@ -6207,7 +6207,7 @@ $LN1484@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 16		; 00000010H
 	call	DWORD PTR __imp_??4String@Localization@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T226475[esp+776]
+	lea	ecx, DWORD PTR $T226474[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 
@@ -6292,8 +6292,8 @@ $LN1501@BuildCouns:
 ; 462  : 		{
 ; 463  : 			strLoc = Localization::Lookup("TXT_KEY_SCIENCESTRATEGY_RESEARCH_MILITARY_BUILDING");
 
-	lea	edx, DWORD PTR $T226478[esp+776]
-	push	OFFSET $SG224052
+	lea	edx, DWORD PTR $T226477[esp+776]
+	push	OFFSET $SG224051
 	push	edx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
@@ -6301,7 +6301,7 @@ $LN1501@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 17		; 00000011H
 	call	DWORD PTR __imp_??4String@Localization@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T226478[esp+776]
+	lea	ecx, DWORD PTR $T226477[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 
@@ -6380,13 +6380,13 @@ $LN1485@BuildCouns:
 	mov	edx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	mov	edi, eax
 	lea	ecx, DWORD PTR [edx+ebp]
-	mov	DWORD PTR _iScience$224056[esp+776], edi
+	mov	DWORD PTR _iScience$224055[esp+776], edi
 	call	?getTotalPopulation@CvPlayer@@QBEHXZ	; CvPlayer::getTotalPopulation
 	mov	ebp, eax
 
 ; 483  : 		int iRatio = 0;
 
-	mov	DWORD PTR _iRatio$224058[esp+776], 0
+	mov	DWORD PTR _iRatio$224057[esp+776], 0
 
 ; 484  : 		if(iPopulation > 0)
 
@@ -6400,7 +6400,7 @@ $LN1485@BuildCouns:
 	imul	eax, 100				; 00000064H
 	cdq
 	idiv	ebp
-	mov	DWORD PTR _iRatio$224058[esp+776], eax
+	mov	DWORD PTR _iRatio$224057[esp+776], eax
 $LN303@BuildCouns:
 
 ; 487  : 		}
@@ -6437,15 +6437,15 @@ $LN303@BuildCouns:
 ; 495  : 		{
 ; 496  : 			if(iRatio < 110)
 
-	mov	eax, DWORD PTR _iRatio$224058[esp+776]
+	mov	eax, DWORD PTR _iRatio$224057[esp+776]
 	cmp	eax, 110				; 0000006eH
 	jge	SHORT $LN301@BuildCouns
 
 ; 497  : 			{
 ; 498  : 				strLoc = Localization::Lookup("TXT_KEY_SCIENCESTRATEGY_INFO_DOING_POORLY");
 
-	lea	ecx, DWORD PTR $T226481[esp+776]
-	push	OFFSET $SG224066
+	lea	ecx, DWORD PTR $T226480[esp+776]
+	push	OFFSET $SG224065
 	push	ecx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
@@ -6453,13 +6453,13 @@ $LN303@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 18		; 00000012H
 	call	DWORD PTR __imp_??4String@Localization@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T226481[esp+776]
+	lea	ecx, DWORD PTR $T226480[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 
 ; 499  : 				strLoc << iScience;
 
-	mov	edx, DWORD PTR _iScience$224056[esp+776]
+	mov	edx, DWORD PTR _iScience$224055[esp+776]
 	push	edx
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	call	edi
@@ -6485,8 +6485,8 @@ $LN301@BuildCouns:
 ; 504  : 			{
 ; 505  : 				strLoc = Localization::Lookup("TXT_KEY_SCIENCESTRATEGY_INFO_DOING_WELL");
 
-	lea	eax, DWORD PTR $T226482[esp+776]
-	push	OFFSET $SG224070
+	lea	eax, DWORD PTR $T226481[esp+776]
+	push	OFFSET $SG224069
 	push	eax
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
@@ -6494,13 +6494,13 @@ $LN301@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 19		; 00000013H
 	call	DWORD PTR __imp_??4String@Localization@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T226482[esp+776]
+	lea	ecx, DWORD PTR $T226481[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 
 ; 506  : 				strLoc << iScience;
 
-	mov	ecx, DWORD PTR _iScience$224056[esp+776]
+	mov	ecx, DWORD PTR _iScience$224055[esp+776]
 	push	ecx
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	call	edi
@@ -6524,8 +6524,8 @@ $LN299@BuildCouns:
 ; 511  : 			{
 ; 512  : 				strLoc = Localization::Lookup("TXT_KEY_SCIENCESTRATEGY_INFO");
 
-	lea	edx, DWORD PTR $T226483[esp+776]
-	push	OFFSET $SG224073
+	lea	edx, DWORD PTR $T226482[esp+776]
+	push	OFFSET $SG224072
 	push	edx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
@@ -6533,13 +6533,13 @@ $LN299@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 20		; 00000014H
 	call	DWORD PTR __imp_??4String@Localization@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T226483[esp+776]
+	lea	ecx, DWORD PTR $T226482[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 
 ; 513  : 				strLoc << iScience;
 
-	mov	eax, DWORD PTR _iScience$224056[esp+776]
+	mov	eax, DWORD PTR _iScience$224055[esp+776]
 	push	eax
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	call	edi
@@ -6564,8 +6564,8 @@ $LN302@BuildCouns:
 ; 519  : 		{
 ; 520  : 			strLoc = Localization::Lookup("TXT_KEY_SCIENCESTRATEGY_BANKRUPT");
 
-	lea	ecx, DWORD PTR $T226484[esp+776]
-	push	OFFSET $SG224076
+	lea	ecx, DWORD PTR $T226483[esp+776]
+	push	OFFSET $SG224075
 	push	ecx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
@@ -6573,7 +6573,7 @@ $LN302@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 21		; 00000015H
 	call	DWORD PTR __imp_??4String@Localization@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T226484[esp+776]
+	lea	ecx, DWORD PTR $T226483[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 
@@ -6634,7 +6634,7 @@ $LN786@BuildCouns:
 	xor	ebp, ebp
 	imul	edi, 520				; 00000208H
 	mov	DWORD PTR _pDiplomacyAI$[esp+776], eax
-	mov	DWORD PTR _iPlayer$224078[esp+776], ebp
+	mov	DWORD PTR _iPlayer$224077[esp+776], ebp
 	mov	DWORD PTR tv7403[esp+776], edi
 	npad	12
 $LL1475@BuildCouns:
@@ -6673,10 +6673,10 @@ $LL1475@BuildCouns:
 	mov	edx, DWORD PTR ?sr_TeamTypes@CvPreGame@@3ABV?$vector@W4TeamTypes@@V?$allocator@W4TeamTypes@@@std@@@std@@B ; CvPreGame::sr_TeamTypes
 	mov	edx, DWORD PTR [edx+4]
 	mov	eax, DWORD PTR [edx+eax*4]
-	mov	DWORD PTR $T227432[esp+776], eax
+	mov	DWORD PTR $T227431[esp+776], eax
 	jmp	SHORT $LN811@BuildCouns
 $LN810@BuildCouns:
-	mov	DWORD PTR $T227432[esp+776], edi
+	mov	DWORD PTR $T227431[esp+776], edi
 $LN811@BuildCouns:
 
 ; 553  : 
@@ -6684,7 +6684,7 @@ $LN811@BuildCouns:
 ; 555  : 		if(eOtherPlayer == ePlayer)
 
 	mov	edx, DWORD PTR _ePlayer$[esp+772]
-	cmp	DWORD PTR _iPlayer$224078[esp+776], edx
+	cmp	DWORD PTR _iPlayer$224077[esp+776], edx
 	je	$LN295@BuildCouns
 
 ; 556  : 		{
@@ -6694,8 +6694,8 @@ $LN811@BuildCouns:
 ; 560  : 		// don't evaluate teammates
 ; 561  : 		if(eOtherTeam == eTeam)
 
-	mov	eax, DWORD PTR $T226714[esp+776]
-	cmp	DWORD PTR $T227432[esp+776], eax
+	mov	eax, DWORD PTR $T226713[esp+776]
+	cmp	DWORD PTR $T227431[esp+776], eax
 	je	$LN295@BuildCouns
 
 ; 562  : 		{
@@ -6717,7 +6717,7 @@ $LN811@BuildCouns:
 
 	mov	ecx, DWORD PTR ?m_aTeams@CvTeam@@1PAV1@A ; CvTeam::m_aTeams
 	imul	eax, 2984				; 00000ba8H
-	mov	edx, DWORD PTR $T227432[esp+776]
+	mov	edx, DWORD PTR $T227431[esp+776]
 	add	ecx, eax
 	push	edx
 	mov	DWORD PTR tv6978[esp+780], eax
@@ -6731,27 +6731,27 @@ $LN811@BuildCouns:
 ; 577  : 
 ; 578  : 		WarProjectionTypes eWarProjection = pDiplomacyAI->GetWarProjection(eOtherPlayer);
 
-	mov	eax, DWORD PTR _iPlayer$224078[esp+776]
+	mov	eax, DWORD PTR _iPlayer$224077[esp+776]
 	mov	ecx, DWORD PTR _pDiplomacyAI$[esp+776]
 	push	eax
 	call	?GetWarProjection@CvDiplomacyAI@@QBE?AW4WarProjectionTypes@@W4PlayerTypes@@@Z ; CvDiplomacyAI::GetWarProjection
 
 ; 579  : 		StrengthTypes eMilitaryStrengthComparedToUs = pDiplomacyAI->GetPlayerMilitaryStrengthComparedToUs(eOtherPlayer);
 
-	mov	ecx, DWORD PTR _iPlayer$224078[esp+776]
+	mov	ecx, DWORD PTR _iPlayer$224077[esp+776]
 	push	ecx
 	mov	ecx, DWORD PTR _pDiplomacyAI$[esp+780]
-	mov	DWORD PTR _eWarProjection$224093[esp+780], eax
+	mov	DWORD PTR _eWarProjection$224092[esp+780], eax
 	call	?GetPlayerMilitaryStrengthComparedToUs@CvDiplomacyAI@@QBE?AW4StrengthTypes@@W4PlayerTypes@@@Z ; CvDiplomacyAI::GetPlayerMilitaryStrengthComparedToUs
 
 ; 580  : 
 ; 581  : 		if(GET_TEAM(eTeam).isAtWar(eOtherTeam))
 
 	mov	edx, DWORD PTR ?m_aTeams@CvTeam@@1PAV1@A ; CvTeam::m_aTeams
-	mov	DWORD PTR _eMilitaryStrengthComparedToUs$224094[esp+776], eax
+	mov	DWORD PTR _eMilitaryStrengthComparedToUs$224093[esp+776], eax
 	mov	eax, DWORD PTR tv6978[esp+776]
 	lea	ecx, DWORD PTR [edx+eax]
-	mov	edx, DWORD PTR $T227432[esp+776]
+	mov	edx, DWORD PTR $T227431[esp+776]
 	push	edx
 	call	?isAtWar@CvTeam@@QBE_NW4TeamTypes@@@Z	; CvTeam::isAtWar
 	test	al, al
@@ -6760,7 +6760,7 @@ $LN811@BuildCouns:
 ; 582  : 		{
 ; 583  : 			switch(eWarProjection)
 
-	mov	eax, DWORD PTR _eWarProjection$224093[esp+776]
+	mov	eax, DWORD PTR _eWarProjection$224092[esp+776]
 	cmp	eax, 5
 	ja	$LN871@BuildCouns
 	jmp	DWORD PTR $LN1533@BuildCouns[eax*4]
@@ -6779,8 +6779,8 @@ $LN284@BuildCouns:
 ; 594  : 					eAdvisor = ADVISOR_MILITARY;
 ; 595  : 					strLoc = Localization::Lookup("TXT_KEY_DIPLOSTRATEGY_WARPROJECTION_DESTRUCTION_WAR");
 
-	lea	eax, DWORD PTR $T226485[esp+776]
-	push	OFFSET $SG224104
+	lea	eax, DWORD PTR $T226484[esp+776]
+	push	OFFSET $SG224103
 	push	eax
 	mov	esi, 99					; 00000063H
 	xor	edi, edi
@@ -6791,7 +6791,7 @@ $LN1517@BuildCouns:
 	push	eax
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	call	DWORD PTR __imp_??4String@Localization@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T226485[esp+776]
+	lea	ecx, DWORD PTR $T226484[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 
@@ -6833,8 +6833,8 @@ $LN282@BuildCouns:
 ; 623  : 					eAdvisor = ADVISOR_MILITARY;
 ; 624  : 					strLoc = Localization::Lookup("TXT_KEY_DIPLOSTRATEGY_WARPROJECTION_DEFEAT_WAR");
 
-	lea	edx, DWORD PTR $T226487[esp+776]
-	push	OFFSET $SG224110
+	lea	edx, DWORD PTR $T226486[esp+776]
+	push	OFFSET $SG224109
 	push	edx
 	mov	esi, 98					; 00000062H
 	xor	edi, edi
@@ -6844,7 +6844,7 @@ $LN282@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 23		; 00000017H
 	call	DWORD PTR __imp_??4String@Localization@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T226487[esp+776]
+	lea	ecx, DWORD PTR $T226486[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 
@@ -6888,8 +6888,8 @@ $LN280@BuildCouns:
 ; 654  : 					eAdvisor = ADVISOR_MILITARY;
 ; 655  : 					strLoc = Localization::Lookup("TXT_KEY_DIPLOSTRATEGY_WARPROJECTION_STALEMATE_WAR");
 
-	lea	ecx, DWORD PTR $T226489[esp+776]
-	push	OFFSET $SG224116
+	lea	ecx, DWORD PTR $T226488[esp+776]
+	push	OFFSET $SG224115
 	push	ecx
 	mov	esi, 97					; 00000061H
 	xor	edi, edi
@@ -6899,7 +6899,7 @@ $LN280@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 24		; 00000018H
 	call	DWORD PTR __imp_??4String@Localization@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T226489[esp+776]
+	lea	ecx, DWORD PTR $T226488[esp+776]
 
 ; 656  : 					strLoc << GET_PLAYER(eOtherPlayer).getCivilizationInfo().GetTextKey();
 ; 657  : 				}
@@ -6928,8 +6928,8 @@ $LN278@BuildCouns:
 ; 676  : 					eAdvisor = ADVISOR_MILITARY;
 ; 677  : 					strLoc = Localization::Lookup("TXT_KEY_DIPLOSTRATEGY_WARPROJECTION_GOOD_WAR");
 
-	lea	eax, DWORD PTR $T226491[esp+776]
-	push	OFFSET $SG224122
+	lea	eax, DWORD PTR $T226490[esp+776]
+	push	OFFSET $SG224121
 	push	eax
 	mov	esi, 96					; 00000060H
 	xor	edi, edi
@@ -6940,7 +6940,7 @@ $LN1518@BuildCouns:
 	push	eax
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	call	DWORD PTR __imp_??4String@Localization@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T226491[esp+776]
+	lea	ecx, DWORD PTR $T226490[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 
@@ -6983,8 +6983,8 @@ $LN276@BuildCouns:
 ; 706  : 					eAdvisor = ADVISOR_MILITARY;
 ; 707  : 					strLoc = Localization::Lookup("TXT_KEY_DIPLOSTRATEGY_WARPROJECTION_VERY_GOOD_WAR");
 
-	lea	edx, DWORD PTR $T226493[esp+776]
-	push	OFFSET $SG224128
+	lea	edx, DWORD PTR $T226492[esp+776]
+	push	OFFSET $SG224127
 	push	edx
 	mov	esi, 97					; 00000061H
 	xor	edi, edi
@@ -6994,7 +6994,7 @@ $LN276@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 26		; 0000001aH
 	call	DWORD PTR __imp_??4String@Localization@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T226493[esp+776]
+	lea	ecx, DWORD PTR $T226492[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 
@@ -7030,7 +7030,7 @@ $LN287@BuildCouns:
 ; 729  : 		{
 ; 730  : 			switch(eMilitaryStrengthComparedToUs)
 
-	mov	eax, DWORD PTR _eMilitaryStrengthComparedToUs$224094[esp+776]
+	mov	eax, DWORD PTR _eMilitaryStrengthComparedToUs$224093[esp+776]
 	cmp	eax, 6
 	ja	$LN871@BuildCouns
 	jmp	DWORD PTR $LN1534@BuildCouns[eax*4]
@@ -7046,8 +7046,8 @@ $LN271@BuildCouns:
 ; 738  : 					eAdvisor = ADVISOR_MILITARY;
 ; 739  : 					strLoc = Localization::Lookup("TXT_KEY_DIPLOSTRATEGY_MILITARY_STRENGTH_COMPARED_TO_US_PATHETIC");
 
-	lea	ecx, DWORD PTR $T226495[esp+776]
-	push	OFFSET $SG224139
+	lea	ecx, DWORD PTR $T226494[esp+776]
+	push	OFFSET $SG224138
 	push	ecx
 	mov	esi, 60					; 0000003cH
 	xor	edi, edi
@@ -7057,7 +7057,7 @@ $LN271@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 27		; 0000001bH
 	call	DWORD PTR __imp_??4String@Localization@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T226495[esp+776]
+	lea	ecx, DWORD PTR $T226494[esp+776]
 
 ; 740  : 					strLoc << GET_PLAYER(eOtherPlayer).getCivilizationInfo().GetTextKey();
 ; 741  : 				}
@@ -7076,8 +7076,8 @@ $LN269@BuildCouns:
 ; 750  : 					eAdvisor = ADVISOR_MILITARY;
 ; 751  : 					strLoc = Localization::Lookup("TXT_KEY_DIPLOSTRATEGY_MILITARY_STRENGTH_COMPARED_TO_US_WEAK");
 
-	lea	eax, DWORD PTR $T226497[esp+776]
-	push	OFFSET $SG224145
+	lea	eax, DWORD PTR $T226496[esp+776]
+	push	OFFSET $SG224144
 	push	eax
 	mov	esi, 50					; 00000032H
 	xor	edi, edi
@@ -7102,8 +7102,8 @@ $LN267@BuildCouns:
 ; 762  : 					eAdvisor = ADVISOR_MILITARY;
 ; 763  : 					strLoc = Localization::Lookup("TXT_KEY_DIPLOSTRATEGY_MILITARY_STRENGTH_COMPARED_TO_US_POOR");
 
-	lea	edx, DWORD PTR $T226499[esp+776]
-	push	OFFSET $SG224151
+	lea	edx, DWORD PTR $T226498[esp+776]
+	push	OFFSET $SG224150
 	push	edx
 	mov	esi, 45					; 0000002dH
 	xor	edi, edi
@@ -7113,7 +7113,7 @@ $LN267@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 29		; 0000001dH
 	call	DWORD PTR __imp_??4String@Localization@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T226499[esp+776]
+	lea	ecx, DWORD PTR $T226498[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 
@@ -7138,8 +7138,8 @@ $LN265@BuildCouns:
 ; 774  : 					eAdvisor = ADVISOR_MILITARY;
 ; 775  : 					strLoc = Localization::Lookup("TXT_KEY_DIPLOSTRATEGY_MILITARY_STRENGTH_COMPARED_TO_US_AVERAGE");
 
-	lea	ecx, DWORD PTR $T226501[esp+776]
-	push	OFFSET $SG224157
+	lea	ecx, DWORD PTR $T226500[esp+776]
+	push	OFFSET $SG224156
 	push	ecx
 	mov	esi, 40					; 00000028H
 	xor	edi, edi
@@ -7149,7 +7149,7 @@ $LN265@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 30		; 0000001eH
 	call	DWORD PTR __imp_??4String@Localization@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T226501[esp+776]
+	lea	ecx, DWORD PTR $T226500[esp+776]
 
 ; 776  : 					strLoc << GET_PLAYER(eOtherPlayer).getCivilizationInfo().GetTextKey();
 ; 777  : 				}
@@ -7168,8 +7168,8 @@ $LN263@BuildCouns:
 ; 786  : 					eAdvisor = ADVISOR_MILITARY;
 ; 787  : 					strLoc = Localization::Lookup("TXT_KEY_DIPLOSTRATEGY_MILITARY_STRENGTH_COMPARED_TO_US_STRONG");
 
-	lea	eax, DWORD PTR $T226503[esp+776]
-	push	OFFSET $SG224163
+	lea	eax, DWORD PTR $T226502[esp+776]
+	push	OFFSET $SG224162
 	push	eax
 	mov	esi, 45					; 0000002dH
 	xor	edi, edi
@@ -7194,8 +7194,8 @@ $LN261@BuildCouns:
 ; 798  : 					eAdvisor = ADVISOR_MILITARY;
 ; 799  : 					strLoc = Localization::Lookup("TXT_KEY_DIPLOSTRATEGY_MILITARY_STRENGTH_COMPARED_TO_US_POWERFUL");
 
-	lea	edx, DWORD PTR $T226505[esp+776]
-	push	OFFSET $SG224169
+	lea	edx, DWORD PTR $T226504[esp+776]
+	push	OFFSET $SG224168
 	push	edx
 	mov	esi, 80					; 00000050H
 	xor	edi, edi
@@ -7205,7 +7205,7 @@ $LN261@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 32		; 00000020H
 	call	DWORD PTR __imp_??4String@Localization@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T226505[esp+776]
+	lea	ecx, DWORD PTR $T226504[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 
@@ -7230,8 +7230,8 @@ $LN259@BuildCouns:
 ; 810  : 					eAdvisor = ADVISOR_MILITARY;
 ; 811  : 					strLoc = Localization::Lookup("TXT_KEY_DIPLOSTRATEGY_MILITARY_STRENGTH_COMPARED_TO_US_IMMENSE");
 
-	lea	ecx, DWORD PTR $T226507[esp+776]
-	push	OFFSET $SG224175
+	lea	ecx, DWORD PTR $T226506[esp+776]
+	push	OFFSET $SG224174
 	push	ecx
 	mov	esi, 90					; 0000005aH
 	xor	edi, edi
@@ -7241,7 +7241,7 @@ $LN259@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 33		; 00000021H
 	call	DWORD PTR __imp_??4String@Localization@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T226507[esp+776]
+	lea	ecx, DWORD PTR $T226506[esp+776]
 $LN1516@BuildCouns:
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
@@ -7268,7 +7268,7 @@ $LN871@BuildCouns:
 ; 819  : 		// look at get military posture
 ; 820  : 		AggressivePostureTypes eMilitaryAggressivePostureTypes = pDiplomacyAI->GetMilitaryAggressivePosture(eOtherPlayer);
 
-	mov	eax, DWORD PTR _iPlayer$224078[esp+776]
+	mov	eax, DWORD PTR _iPlayer$224077[esp+776]
 	mov	ecx, DWORD PTR _pDiplomacyAI$[esp+776]
 	push	eax
 	call	?GetMilitaryAggressivePosture@CvDiplomacyAI@@QBE?AW4AggressivePostureTypes@@W4PlayerTypes@@@Z ; CvDiplomacyAI::GetMilitaryAggressivePosture
@@ -7277,8 +7277,8 @@ $LN871@BuildCouns:
 
 	mov	ecx, DWORD PTR ?m_aTeams@CvTeam@@1PAV1@A ; CvTeam::m_aTeams
 	mov	edx, DWORD PTR tv6978[esp+776]
-	mov	DWORD PTR _eMilitaryAggressivePostureTypes$224177[esp+776], eax
-	mov	eax, DWORD PTR $T227432[esp+776]
+	mov	DWORD PTR _eMilitaryAggressivePostureTypes$224176[esp+776], eax
+	mov	eax, DWORD PTR $T227431[esp+776]
 	add	ecx, edx
 	push	eax
 	call	?isAtWar@CvTeam@@QBE_NW4TeamTypes@@@Z	; CvTeam::isAtWar
@@ -7288,7 +7288,7 @@ $LN871@BuildCouns:
 ; 822  : 		{
 ; 823  : 			switch(eMilitaryAggressivePostureTypes)
 
-	mov	eax, DWORD PTR _eMilitaryAggressivePostureTypes$224177[esp+776]
+	mov	eax, DWORD PTR _eMilitaryAggressivePostureTypes$224176[esp+776]
 	sub	eax, 2
 	je	$LN252@BuildCouns
 	sub	eax, 1
@@ -7309,8 +7309,8 @@ $LN871@BuildCouns:
 ; 859  : 					eAdvisor = ADVISOR_FOREIGN;
 ; 860  : 					strLoc = Localization::Lookup("TXT_KEY_DIPLOSTRATEGY_MILITARY_AGGRESSIVE_POSTURE_INCREDIBLE");
 
-	lea	ecx, DWORD PTR $T226513[esp+776]
-	push	OFFSET $SG224201
+	lea	ecx, DWORD PTR $T226512[esp+776]
+	push	OFFSET $SG224200
 	push	ecx
 	lea	esi, DWORD PTR [eax+90]
 	lea	edi, DWORD PTR [eax+2]
@@ -7320,7 +7320,7 @@ $LN871@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 36		; 00000024H
 	call	DWORD PTR __imp_??4String@Localization@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T226513[esp+776]
+	lea	ecx, DWORD PTR $T226512[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 
@@ -7352,8 +7352,8 @@ $LN250@BuildCouns:
 ; 847  : 					eAdvisor = ADVISOR_FOREIGN;
 ; 848  : 					strLoc = Localization::Lookup("TXT_KEY_DIPLOSTRATEGY_MILITARY_AGGRESSIVE_POSTURE_HIGH");
 
-	lea	eax, DWORD PTR $T226511[esp+776]
-	push	OFFSET $SG224195
+	lea	eax, DWORD PTR $T226510[esp+776]
+	push	OFFSET $SG224194
 	mov	esi, 75					; 0000004bH
 	push	eax
 	lea	edi, DWORD PTR [esi-73]
@@ -7363,7 +7363,7 @@ $LN250@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 35		; 00000023H
 	call	DWORD PTR __imp_??4String@Localization@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T226511[esp+776]
+	lea	ecx, DWORD PTR $T226510[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 
@@ -7397,8 +7397,8 @@ $LN252@BuildCouns:
 ; 835  : 					eAdvisor = ADVISOR_FOREIGN;
 ; 836  : 					strLoc = Localization::Lookup("TXT_KEY_DIPLOSTRATEGY_MILITARY_AGGRESSIVE_POSTURE_MEDIUM");
 
-	lea	edx, DWORD PTR $T226509[esp+776]
-	push	OFFSET $SG224189
+	lea	edx, DWORD PTR $T226508[esp+776]
+	push	OFFSET $SG224188
 	mov	esi, 51					; 00000033H
 	push	edx
 	lea	edi, DWORD PTR [esi-49]
@@ -7408,7 +7408,7 @@ $LN252@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 34		; 00000022H
 	call	DWORD PTR __imp_??4String@Localization@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T226509[esp+776]
+	lea	ecx, DWORD PTR $T226508[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 
@@ -7431,7 +7431,7 @@ $LN877@BuildCouns:
 ; 868  : 		// look at expansion aggressive posture
 ; 869  : 		AggressivePostureTypes eExpansionAggressivePostureTypes = pDiplomacyAI->GetExpansionAggressivePosture(eOtherPlayer);
 
-	mov	ecx, DWORD PTR _iPlayer$224078[esp+776]
+	mov	ecx, DWORD PTR _iPlayer$224077[esp+776]
 	push	ecx
 	mov	ecx, DWORD PTR _pDiplomacyAI$[esp+780]
 	call	?GetExpansionAggressivePosture@CvDiplomacyAI@@QBE?AW4AggressivePostureTypes@@W4PlayerTypes@@@Z ; CvDiplomacyAI::GetExpansionAggressivePosture
@@ -7439,10 +7439,10 @@ $LN877@BuildCouns:
 ; 870  : 		if(!GET_TEAM(eTeam).isAtWar(eOtherTeam))
 
 	mov	edx, DWORD PTR ?m_aTeams@CvTeam@@1PAV1@A ; CvTeam::m_aTeams
-	mov	DWORD PTR _eExpansionAggressivePostureTypes$224203[esp+776], eax
+	mov	DWORD PTR _eExpansionAggressivePostureTypes$224202[esp+776], eax
 	mov	eax, DWORD PTR tv6978[esp+776]
 	lea	ecx, DWORD PTR [edx+eax]
-	mov	edx, DWORD PTR $T227432[esp+776]
+	mov	edx, DWORD PTR $T227431[esp+776]
 	push	edx
 	call	?isAtWar@CvTeam@@QBE_NW4TeamTypes@@@Z	; CvTeam::isAtWar
 	test	al, al
@@ -7451,7 +7451,7 @@ $LN877@BuildCouns:
 ; 871  : 		{
 ; 872  : 			switch(eExpansionAggressivePostureTypes)
 
-	mov	eax, DWORD PTR _eExpansionAggressivePostureTypes$224203[esp+776]
+	mov	eax, DWORD PTR _eExpansionAggressivePostureTypes$224202[esp+776]
 	sub	eax, 2
 	je	$LN241@BuildCouns
 	sub	eax, 1
@@ -7478,8 +7478,8 @@ $LN877@BuildCouns:
 
 ; 909  : 					strLoc = Localization::Lookup("TXT_KEY_DIPLOSTRATEGY_EXPANSION_AGGRESSIVE_POSTURE_INCREDIBLE");
 
-	lea	eax, DWORD PTR $T226519[esp+776]
-	push	OFFSET $SG224227
+	lea	eax, DWORD PTR $T226518[esp+776]
+	push	OFFSET $SG224226
 	push	eax
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
@@ -7487,7 +7487,7 @@ $LN877@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 39		; 00000027H
 	call	DWORD PTR __imp_??4String@Localization@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T226519[esp+776]
+	lea	ecx, DWORD PTR $T226518[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 
@@ -7519,8 +7519,8 @@ $LN239@BuildCouns:
 ; 896  : 					eAdvisor = ADVISOR_FOREIGN;
 ; 897  : 					strLoc = Localization::Lookup("TXT_KEY_DIPLOSTRATEGY_EXPANSION_AGGRESSIVE_POSTURE_HIGH");
 
-	lea	edx, DWORD PTR $T226517[esp+776]
-	push	OFFSET $SG224221
+	lea	edx, DWORD PTR $T226516[esp+776]
+	push	OFFSET $SG224220
 	mov	esi, 65					; 00000041H
 	push	edx
 	lea	edi, DWORD PTR [esi-63]
@@ -7530,7 +7530,7 @@ $LN239@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 38		; 00000026H
 	call	DWORD PTR __imp_??4String@Localization@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T226517[esp+776]
+	lea	ecx, DWORD PTR $T226516[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 
@@ -7564,8 +7564,8 @@ $LN241@BuildCouns:
 ; 884  : 					eAdvisor = ADVISOR_FOREIGN;
 ; 885  : 					strLoc = Localization::Lookup("TXT_KEY_DIPLOSTRATEGY_EXPANSION_AGGRESSIVE_POSTURE_MEDIUM");
 
-	lea	ecx, DWORD PTR $T226515[esp+776]
-	push	OFFSET $SG224215
+	lea	ecx, DWORD PTR $T226514[esp+776]
+	push	OFFSET $SG224214
 	mov	esi, 41					; 00000029H
 	push	ecx
 	lea	edi, DWORD PTR [esi-39]
@@ -7575,7 +7575,7 @@ $LN241@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 37		; 00000025H
 	call	DWORD PTR __imp_??4String@Localization@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T226515[esp+776]
+	lea	ecx, DWORD PTR $T226514[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 
@@ -7597,7 +7597,7 @@ $LN891@BuildCouns:
 ; 916  : 
 ; 917  : 		ThreatTypes eWarmongerThreat = pDiplomacyAI->GetWarmongerThreat(eOtherPlayer);
 
-	mov	eax, DWORD PTR _iPlayer$224078[esp+776]
+	mov	eax, DWORD PTR _iPlayer$224077[esp+776]
 	mov	ecx, DWORD PTR _pDiplomacyAI$[esp+776]
 	push	eax
 	call	?GetWarmongerThreat@CvDiplomacyAI@@QBE?AW4ThreatTypes@@W4PlayerTypes@@@Z ; CvDiplomacyAI::GetWarmongerThreat
@@ -7606,8 +7606,8 @@ $LN891@BuildCouns:
 
 	mov	ecx, DWORD PTR ?m_aTeams@CvTeam@@1PAV1@A ; CvTeam::m_aTeams
 	mov	edx, DWORD PTR tv6978[esp+776]
-	mov	DWORD PTR _eWarmongerThreat$224229[esp+776], eax
-	mov	eax, DWORD PTR $T227432[esp+776]
+	mov	DWORD PTR _eWarmongerThreat$224228[esp+776], eax
+	mov	eax, DWORD PTR $T227431[esp+776]
 	add	ecx, edx
 	push	eax
 	call	?isAtWar@CvTeam@@QBE_NW4TeamTypes@@@Z	; CvTeam::isAtWar
@@ -7617,7 +7617,7 @@ $LN891@BuildCouns:
 ; 919  : 		{
 ; 920  : 			switch(eWarmongerThreat)
 
-	mov	eax, DWORD PTR _eWarmongerThreat$224229[esp+776]
+	mov	eax, DWORD PTR _eWarmongerThreat$224228[esp+776]
 	cmp	eax, 4
 	ja	$LN921@BuildCouns
 	jmp	DWORD PTR $LN1535@BuildCouns[eax*4]
@@ -7637,8 +7637,8 @@ $LN232@BuildCouns:
 ; 928  : 					eAdvisor = ADVISOR_FOREIGN;
 ; 929  : 					strLoc = Localization::Lookup("TXT_KEY_DIPLOSTRATEGY_WARMONGER_THREAT_NONE");
 
-	lea	ecx, DWORD PTR $T226521[esp+776]
-	push	OFFSET $SG224239
+	lea	ecx, DWORD PTR $T226520[esp+776]
+	push	OFFSET $SG224238
 	mov	esi, 20					; 00000014H
 	push	ecx
 	lea	edi, DWORD PTR [esi-18]
@@ -7648,7 +7648,7 @@ $LN232@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 40		; 00000028H
 	call	DWORD PTR __imp_??4String@Localization@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T226521[esp+776]
+	lea	ecx, DWORD PTR $T226520[esp+776]
 $LN1532@BuildCouns:
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
@@ -7685,8 +7685,8 @@ $LN230@BuildCouns:
 ; 940  : 					eAdvisor = ADVISOR_FOREIGN;
 ; 941  : 					strLoc = Localization::Lookup("TXT_KEY_DIPLOSTRATEGY_WARMONGER_THREAT_MINOR");
 
-	lea	eax, DWORD PTR $T226523[esp+776]
-	push	OFFSET $SG224245
+	lea	eax, DWORD PTR $T226522[esp+776]
+	push	OFFSET $SG224244
 	mov	esi, 25					; 00000019H
 	push	eax
 	lea	edi, DWORD PTR [esi-23]
@@ -7696,7 +7696,7 @@ $LN230@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 41		; 00000029H
 	call	DWORD PTR __imp_??4String@Localization@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T226523[esp+776]
+	lea	ecx, DWORD PTR $T226522[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 
@@ -7726,8 +7726,8 @@ $LN228@BuildCouns:
 ; 953  : 					eAdvisor = ADVISOR_FOREIGN;
 ; 954  : 					strLoc = Localization::Lookup("TXT_KEY_DIPLOSTRATEGY_WARMONGER_THREAT_MAJOR");
 
-	lea	edx, DWORD PTR $T226525[esp+776]
-	push	OFFSET $SG224251
+	lea	edx, DWORD PTR $T226524[esp+776]
+	push	OFFSET $SG224250
 	mov	esi, 30					; 0000001eH
 	push	edx
 	lea	edi, DWORD PTR [esi-28]
@@ -7737,7 +7737,7 @@ $LN228@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 42		; 0000002aH
 	call	DWORD PTR __imp_??4String@Localization@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T226525[esp+776]
+	lea	ecx, DWORD PTR $T226524[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 
@@ -7766,8 +7766,8 @@ $LN226@BuildCouns:
 ; 965  : 					eAdvisor = ADVISOR_FOREIGN;
 ; 966  : 					strLoc = Localization::Lookup("TXT_KEY_DIPLOSTRATEGY_WARMONGER_THREAT_SEVERE");
 
-	lea	ecx, DWORD PTR $T226527[esp+776]
-	push	OFFSET $SG224257
+	lea	ecx, DWORD PTR $T226526[esp+776]
+	push	OFFSET $SG224256
 	mov	esi, 60					; 0000003cH
 	push	ecx
 	lea	edi, DWORD PTR [esi-58]
@@ -7777,7 +7777,7 @@ $LN226@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 43		; 0000002bH
 	call	DWORD PTR __imp_??4String@Localization@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T226527[esp+776]
+	lea	ecx, DWORD PTR $T226526[esp+776]
 
 ; 967  : 					strLoc << GET_PLAYER(eOtherPlayer).getCivilizationInfo().GetTextKey();
 ; 968  : 				}
@@ -7800,8 +7800,8 @@ $LN224@BuildCouns:
 ; 977  : 					eAdvisor = ADVISOR_FOREIGN;
 ; 978  : 					strLoc = Localization::Lookup("TXT_KEY_DIPLOSTRATEGY_WARMONGER_THREAT_CRITICAL");
 
-	lea	eax, DWORD PTR $T226529[esp+776]
-	push	OFFSET $SG224263
+	lea	eax, DWORD PTR $T226528[esp+776]
+	push	OFFSET $SG224262
 	mov	esi, 80					; 00000050H
 	push	eax
 	lea	edi, DWORD PTR [esi-78]
@@ -7811,7 +7811,7 @@ $LN224@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 44		; 0000002cH
 	call	DWORD PTR __imp_??4String@Localization@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T226529[esp+776]
+	lea	ecx, DWORD PTR $T226528[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 
@@ -7852,7 +7852,7 @@ $LN1444@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+776]
 	call	DWORD PTR __imp_?toUTF8@String@Localization@@QAEPBDXZ
 	mov	edx, DWORD PTR _uiCounselIndex$[esp+776]
-	mov	DWORD PTR $T227666[esp+776], eax
+	mov	DWORD PTR $T227665[esp+776], eax
 	mov	eax, DWORD PTR _this$[esp+776]
 	cmp	edx, DWORD PTR [eax+4]
 	jae	SHORT $LN1467@BuildCouns
@@ -7860,7 +7860,7 @@ $LN1444@BuildCouns:
 	mov	edx, eax
 	mov	eax, DWORD PTR [edx]
 	mov	DWORD PTR [ecx+eax], edi
-	mov	eax, DWORD PTR $T227666[esp+776]
+	mov	eax, DWORD PTR $T227665[esp+776]
 	mov	edx, DWORD PTR [edx]
 	push	eax
 	lea	ecx, DWORD PTR [ecx+edx+4]
@@ -7884,7 +7884,7 @@ $LN1444@BuildCouns:
 	add	eax, 520				; 00000208H
 	mov	DWORD PTR tv7403[esp+776], eax
 $LN295@BuildCouns:
-	inc	DWORD PTR _iPlayer$224078[esp+776]
+	inc	DWORD PTR _iPlayer$224077[esp+776]
 	add	ebp, 63236				; 0000f704H
 	cmp	ebp, 1391192				; 00153a58H
 	jl	$LL1475@BuildCouns
@@ -7901,7 +7901,7 @@ $LN1467@BuildCouns:
 	mov	edi, DWORD PTR __imp_??1String@Localization@@UAE@XZ
 	xor	esi, esi
 	imul	eax, 520				; 00000208H
-	mov	DWORD PTR _iPlayer$224268[esp+776], esi
+	mov	DWORD PTR _iPlayer$224267[esp+776], esi
 	mov	DWORD PTR tv7491[esp+776], eax
 $LL1497@BuildCouns:
 
@@ -7920,17 +7920,17 @@ $LL1497@BuildCouns:
 	mov	edx, DWORD PTR ?sr_TeamTypes@CvPreGame@@3ABV?$vector@W4TeamTypes@@V?$allocator@W4TeamTypes@@@std@@@std@@B ; CvPreGame::sr_TeamTypes
 	mov	edx, DWORD PTR [edx+4]
 	mov	eax, DWORD PTR [edx+eax*4]
-	mov	DWORD PTR $T227684[esp+776], eax
+	mov	DWORD PTR $T227683[esp+776], eax
 	jmp	SHORT $LN943@BuildCouns
 $LN942@BuildCouns:
-	mov	DWORD PTR $T227684[esp+776], -1
+	mov	DWORD PTR $T227683[esp+776], -1
 $LN943@BuildCouns:
 
 ; 1007 : 
 ; 1008 : 		// don't evaluate yourself
 ; 1009 : 		if(eOtherPlayer == ePlayer)
 
-	mov	edx, DWORD PTR _iPlayer$224268[esp+776]
+	mov	edx, DWORD PTR _iPlayer$224267[esp+776]
 	cmp	edx, DWORD PTR _ePlayer$[esp+772]
 	je	$LN219@BuildCouns
 
@@ -7941,8 +7941,8 @@ $LN943@BuildCouns:
 ; 1014 : 		// don't evaluate teammates
 ; 1015 : 		if(eOtherTeam == eTeam)
 
-	mov	eax, DWORD PTR $T226714[esp+776]
-	cmp	DWORD PTR $T227684[esp+776], eax
+	mov	eax, DWORD PTR $T226713[esp+776]
+	cmp	DWORD PTR $T227683[esp+776], eax
 	je	$LN219@BuildCouns
 
 ; 1016 : 		{
@@ -7964,7 +7964,7 @@ $LN943@BuildCouns:
 
 	mov	ecx, DWORD PTR ?m_aTeams@CvTeam@@1PAV1@A ; CvTeam::m_aTeams
 	imul	eax, 2984				; 00000ba8H
-	mov	edx, DWORD PTR $T227684[esp+776]
+	mov	edx, DWORD PTR $T227683[esp+776]
 	add	ecx, eax
 	push	edx
 	mov	DWORD PTR tv6978[esp+780], eax
@@ -7979,7 +7979,7 @@ $LN943@BuildCouns:
 ; 1032 : 		if(GET_TEAM(eTeam).isAtWar(eOtherTeam))
 
 	mov	eax, DWORD PTR ?m_aTeams@CvTeam@@1PAV1@A ; CvTeam::m_aTeams
-	mov	edx, DWORD PTR $T227684[esp+776]
+	mov	edx, DWORD PTR $T227683[esp+776]
 	mov	ecx, DWORD PTR tv6978[esp+776]
 	add	ecx, eax
 	push	edx
@@ -7993,7 +7993,7 @@ $LN943@BuildCouns:
 ; 1036 : 
 ; 1037 : 		DisputeLevelTypes eMinorCivDisputeLevel = pDiplomacyAI->GetMinorCivDisputeLevel(eOtherPlayer);
 
-	mov	eax, DWORD PTR _iPlayer$224268[esp+776]
+	mov	eax, DWORD PTR _iPlayer$224267[esp+776]
 	mov	ecx, DWORD PTR _pDiplomacyAI$[esp+776]
 	push	eax
 	call	?GetMinorCivDisputeLevel@CvDiplomacyAI@@QBE?AW4DisputeLevelTypes@@W4PlayerTypes@@@Z ; CvDiplomacyAI::GetMinorCivDisputeLevel
@@ -8015,30 +8015,30 @@ $LN943@BuildCouns:
 ; 1090 : 			int iMinorCiv = NO_PLAYER;
 ; 1091 : 			pDiplomacyAI->DoMinorCivCompetitionStatement(eOtherPlayer, eStatement, iMinorCiv, true);
 
-	mov	eax, DWORD PTR _iPlayer$224268[esp+776]
+	mov	eax, DWORD PTR _iPlayer$224267[esp+776]
 	push	1
-	lea	ecx, DWORD PTR _iMinorCiv$224312[esp+780]
+	lea	ecx, DWORD PTR _iMinorCiv$224311[esp+780]
 	push	ecx
 	mov	ecx, DWORD PTR _pDiplomacyAI$[esp+784]
-	lea	edx, DWORD PTR _eStatement$224311[esp+784]
+	lea	edx, DWORD PTR _eStatement$224310[esp+784]
 	push	edx
 	push	eax
-	mov	DWORD PTR _iMessageRating$224272[esp+792], 40 ; 00000028H
-	mov	DWORD PTR _iMinorCiv$224312[esp+792], -1
+	mov	DWORD PTR _iMessageRating$224271[esp+792], 40 ; 00000028H
+	mov	DWORD PTR _iMinorCiv$224311[esp+792], -1
 	call	?DoMinorCivCompetitionStatement@CvDiplomacyAI@@QAEXW4PlayerTypes@@AAW4DiploStatementTypes@@AAH_N@Z ; CvDiplomacyAI::DoMinorCivCompetitionStatement
 
 ; 1092 : 
 ; 1093 : 			if(iMinorCiv != NO_PLAYER)
 
-	cmp	DWORD PTR _iMinorCiv$224312[esp+776], -1
+	cmp	DWORD PTR _iMinorCiv$224311[esp+776], -1
 	je	$LN219@BuildCouns
 
 ; 1094 : 			{
 ; 1095 : 				eAdvisor = ADVISOR_FOREIGN;
 ; 1096 : 				strLoc = Localization::Lookup("TXT_KEY_DIPLOSTRATEGY_MINOR_CIV_DISPUTE_LEVEL_FIERCE");
 
-	lea	ecx, DWORD PTR $T226537[esp+776]
-	push	OFFSET $SG224315
+	lea	ecx, DWORD PTR $T226536[esp+776]
+	push	OFFSET $SG224314
 	push	ecx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
@@ -8046,7 +8046,7 @@ $LN943@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 47		; 0000002fH
 	call	ebp
-	lea	ecx, DWORD PTR $T226537[esp+776]
+	lea	ecx, DWORD PTR $T226536[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	edi
 
@@ -8077,30 +8077,30 @@ $LN206@BuildCouns:
 ; 1069 : 			int iMinorCiv = NO_PLAYER;
 ; 1070 : 			pDiplomacyAI->DoMinorCivCompetitionStatement(eOtherPlayer, eStatement, iMinorCiv, true);
 
-	mov	edx, DWORD PTR _iPlayer$224268[esp+776]
+	mov	edx, DWORD PTR _iPlayer$224267[esp+776]
 	push	1
-	lea	eax, DWORD PTR _iMinorCiv$224301[esp+780]
+	lea	eax, DWORD PTR _iMinorCiv$224300[esp+780]
 	push	eax
-	lea	ecx, DWORD PTR _eStatement$224300[esp+784]
+	lea	ecx, DWORD PTR _eStatement$224299[esp+784]
 	push	ecx
 	mov	ecx, DWORD PTR _pDiplomacyAI$[esp+788]
 	push	edx
-	mov	DWORD PTR _iMessageRating$224272[esp+792], 30 ; 0000001eH
-	mov	DWORD PTR _iMinorCiv$224301[esp+792], -1
+	mov	DWORD PTR _iMessageRating$224271[esp+792], 30 ; 0000001eH
+	mov	DWORD PTR _iMinorCiv$224300[esp+792], -1
 	call	?DoMinorCivCompetitionStatement@CvDiplomacyAI@@QAEXW4PlayerTypes@@AAW4DiploStatementTypes@@AAH_N@Z ; CvDiplomacyAI::DoMinorCivCompetitionStatement
 
 ; 1071 : 
 ; 1072 : 			if(iMinorCiv != NO_PLAYER)
 
-	cmp	DWORD PTR _iMinorCiv$224301[esp+776], -1
+	cmp	DWORD PTR _iMinorCiv$224300[esp+776], -1
 	je	$LN219@BuildCouns
 
 ; 1073 : 			{
 ; 1074 : 				eAdvisor = ADVISOR_FOREIGN;
 ; 1075 : 				strLoc = Localization::Lookup("TXT_KEY_DIPLOSTRATEGY_MINOR_CIV_DISPUTE_LEVEL_STRONG");
 
-	lea	eax, DWORD PTR $T226534[esp+776]
-	push	OFFSET $SG224304
+	lea	eax, DWORD PTR $T226533[esp+776]
+	push	OFFSET $SG224303
 	push	eax
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
@@ -8108,7 +8108,7 @@ $LN206@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 46		; 0000002eH
 	call	ebp
-	lea	ecx, DWORD PTR $T226534[esp+776]
+	lea	ecx, DWORD PTR $T226533[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	edi
 
@@ -8142,30 +8142,30 @@ $LN209@BuildCouns:
 ; 1049 : 			int iMinorCiv = NO_PLAYER;
 ; 1050 : 			pDiplomacyAI->DoMinorCivCompetitionStatement(eOtherPlayer, eStatement, iMinorCiv, true);
 
-	mov	ecx, DWORD PTR _iPlayer$224268[esp+776]
+	mov	ecx, DWORD PTR _iPlayer$224267[esp+776]
 	push	1
-	lea	edx, DWORD PTR _iMinorCiv$224290[esp+780]
+	lea	edx, DWORD PTR _iMinorCiv$224289[esp+780]
 	push	edx
-	lea	eax, DWORD PTR _eStatement$224289[esp+784]
+	lea	eax, DWORD PTR _eStatement$224288[esp+784]
 	push	eax
 	push	ecx
 	mov	ecx, DWORD PTR _pDiplomacyAI$[esp+792]
-	mov	DWORD PTR _iMessageRating$224272[esp+792], 20 ; 00000014H
-	mov	DWORD PTR _iMinorCiv$224290[esp+792], -1
+	mov	DWORD PTR _iMessageRating$224271[esp+792], 20 ; 00000014H
+	mov	DWORD PTR _iMinorCiv$224289[esp+792], -1
 	call	?DoMinorCivCompetitionStatement@CvDiplomacyAI@@QAEXW4PlayerTypes@@AAW4DiploStatementTypes@@AAH_N@Z ; CvDiplomacyAI::DoMinorCivCompetitionStatement
 
 ; 1051 : 
 ; 1052 : 			if(iMinorCiv != NO_PLAYER)
 
-	cmp	DWORD PTR _iMinorCiv$224290[esp+776], -1
+	cmp	DWORD PTR _iMinorCiv$224289[esp+776], -1
 	je	$LN219@BuildCouns
 
 ; 1053 : 			{
 ; 1054 : 				eAdvisor = ADVISOR_FOREIGN;
 ; 1055 : 				strLoc = Localization::Lookup("TXT_KEY_DIPLOSTRATEGY_MINOR_CIV_DISPUTE_LEVEL_WEAK");
 
-	lea	edx, DWORD PTR $T226531[esp+776]
-	push	OFFSET $SG224293
+	lea	edx, DWORD PTR $T226530[esp+776]
+	push	OFFSET $SG224292
 	push	edx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
@@ -8173,7 +8173,7 @@ $LN209@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 45		; 0000002dH
 	call	ebp
-	lea	ecx, DWORD PTR $T226531[esp+776]
+	lea	ecx, DWORD PTR $T226530[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	edi
 
@@ -8193,7 +8193,7 @@ $LN1524@BuildCouns:
 ; 1058 : 
 ; 1059 : 				CvMinorCivInfo* pkMinorCivInfo = GC.getMinorCivInfo(GET_PLAYER((PlayerTypes)iMinorCiv).GetMinorCivAI()->GetMinorCivType());
 
-	mov	ecx, DWORD PTR _iMinorCiv$224290[esp+776]
+	mov	ecx, DWORD PTR _iMinorCiv$224289[esp+776]
 	imul	ecx, 63236				; 0000f704H
 	add	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	call	?GetMinorCivAI@CvPlayer@@QBEPAVCvMinorCivAI@@XZ ; CvPlayer::GetMinorCivAI
@@ -8243,7 +8243,7 @@ $LN1446@BuildCouns:
 	mov	eax, DWORD PTR _this$[esp+788]
 	mov	ecx, DWORD PTR [eax]
 	mov	eax, DWORD PTR tv7491[esp+788]
-	mov	edx, DWORD PTR _iMessageRating$224272[esp+788]
+	mov	edx, DWORD PTR _iMessageRating$224271[esp+788]
 
 ; 1111 : 			CvAssertMsg(bSuccess, "Unable to add counsel to list. Too many strategies running at once");
 ; 1112 : 			if(!bSuccess)
@@ -8258,7 +8258,7 @@ $LN1446@BuildCouns:
 	add	eax, 520				; 00000208H
 	mov	DWORD PTR tv7491[esp+776], eax
 $LN219@BuildCouns:
-	inc	DWORD PTR _iPlayer$224268[esp+776]
+	inc	DWORD PTR _iPlayer$224267[esp+776]
 	add	esi, 63236				; 0000f704H
 	cmp	esi, 1391192				; 00153a58H
 	jl	$LL1497@BuildCouns
@@ -8283,20 +8283,20 @@ $LN1469@BuildCouns:
 
 	mov	ecx, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	add	ecx, esi
-	mov	DWORD PTR _pTreasury$224326[esp+776], eax
+	mov	DWORD PTR _pTreasury$224325[esp+776], eax
 	call	?calculateGoldRate@CvPlayer@@QBEHXZ	; CvPlayer::calculateGoldRate
 
 ; 1127 : 		int iGold = pTreasury->GetGold();
 
-	mov	ecx, DWORD PTR _pTreasury$224326[esp+776]
-	mov	DWORD PTR _iGoldIncome$224327[esp+776], eax
+	mov	ecx, DWORD PTR _pTreasury$224325[esp+776]
+	mov	DWORD PTR _iGoldIncome$224326[esp+776], eax
 	call	?GetGold@CvTreasury@@QBEHXZ		; CvTreasury::GetGold
 
 ; 1128 : 
 ; 1129 : 		int iHighestCost = 0;
 
 	xor	esi, esi
-	mov	DWORD PTR _iGold$224328[esp+776], eax
+	mov	DWORD PTR _iGold$224327[esp+776], eax
 
 ; 1130 : 		enum
 ; 1131 : 		{
@@ -8309,19 +8309,19 @@ $LN1469@BuildCouns:
 ; 1138 : 		};
 ; 1139 : 		int uiHighestCostCategory = NUM_COSTS;
 
-	mov	DWORD PTR _uiHighestCostCategory$224337[esp+776], 5
+	mov	DWORD PTR _uiHighestCostCategory$224336[esp+776], 5
 
 ; 1140 : 
 ; 1141 : 		for(uint ui = 0; ui < NUM_COSTS; ui++)
 
-	mov	DWORD PTR _ui$224338[esp+776], esi
+	mov	DWORD PTR _ui$224337[esp+776], esi
 	npad	4
 $LL198@BuildCouns:
 
 ; 1142 : 		{
 ; 1143 : 			switch(ui)
 
-	mov	eax, DWORD PTR _ui$224338[esp+776]
+	mov	eax, DWORD PTR _ui$224337[esp+776]
 	cmp	eax, 4
 	ja	$LN197@BuildCouns
 	jmp	DWORD PTR $LN1536@BuildCouns[eax*4]
@@ -8331,7 +8331,7 @@ $LN193@BuildCouns:
 ; 1145 : 			case COST_UNIT_MAINTENANCE:
 ; 1146 : 				if(pTreasury->GetExpensePerTurnUnitMaintenance() > iHighestCost)
 
-	mov	edx, DWORD PTR _pTreasury$224326[esp+776]
+	mov	edx, DWORD PTR _pTreasury$224325[esp+776]
 	mov	eax, DWORD PTR [edx+16]
 	cmp	eax, esi
 	jle	$LN197@BuildCouns
@@ -8339,7 +8339,7 @@ $LN193@BuildCouns:
 ; 1147 : 				{
 ; 1148 : 					uiHighestCostCategory = ui;
 
-	mov	DWORD PTR _uiHighestCostCategory$224337[esp+776], 0
+	mov	DWORD PTR _uiHighestCostCategory$224336[esp+776], 0
 
 ; 1149 : 					iHighestCost = pTreasury->GetExpensePerTurnUnitMaintenance();
 
@@ -8354,7 +8354,7 @@ $LN191@BuildCouns:
 ; 1152 : 			case COST_UNIT_SUPPLY:
 ; 1153 : 				if(pTreasury->GetExpensePerTurnUnitSupply() > iHighestCost)
 
-	mov	eax, DWORD PTR _pTreasury$224326[esp+776]
+	mov	eax, DWORD PTR _pTreasury$224325[esp+776]
 	mov	eax, DWORD PTR [eax+20]
 	cmp	eax, esi
 	jle	SHORT $LN197@BuildCouns
@@ -8362,7 +8362,7 @@ $LN191@BuildCouns:
 ; 1154 : 				{
 ; 1155 : 					uiHighestCostCategory = ui;
 
-	mov	DWORD PTR _uiHighestCostCategory$224337[esp+776], 1
+	mov	DWORD PTR _uiHighestCostCategory$224336[esp+776], 1
 
 ; 1156 : 					iHighestCost = pTreasury->GetExpensePerTurnUnitSupply();
 
@@ -8377,7 +8377,7 @@ $LN189@BuildCouns:
 ; 1159 : 			case COST_BUILDING_MAINTENANCE:
 ; 1160 : 				if(pTreasury->GetBuildingGoldMaintenance() > iHighestCost)
 
-	mov	ecx, DWORD PTR _pTreasury$224326[esp+776]
+	mov	ecx, DWORD PTR _pTreasury$224325[esp+776]
 	call	?GetBuildingGoldMaintenance@CvTreasury@@QBEHXZ ; CvTreasury::GetBuildingGoldMaintenance
 	cmp	eax, esi
 	jle	SHORT $LN197@BuildCouns
@@ -8386,8 +8386,8 @@ $LN189@BuildCouns:
 ; 1162 : 					uiHighestCostCategory = ui;
 ; 1163 : 					iHighestCost = pTreasury->GetBuildingGoldMaintenance();
 
-	mov	ecx, DWORD PTR _pTreasury$224326[esp+776]
-	mov	DWORD PTR _uiHighestCostCategory$224337[esp+776], 2
+	mov	ecx, DWORD PTR _pTreasury$224325[esp+776]
+	mov	DWORD PTR _uiHighestCostCategory$224336[esp+776], 2
 	call	?GetBuildingGoldMaintenance@CvTreasury@@QBEHXZ ; CvTreasury::GetBuildingGoldMaintenance
 	mov	esi, eax
 
@@ -8400,7 +8400,7 @@ $LN187@BuildCouns:
 ; 1166 : 			case COST_IMPROVEMENT_MAINTENANCE:
 ; 1167 : 				if(pTreasury->GetImprovementGoldMaintenance() > iHighestCost)
 
-	mov	ecx, DWORD PTR _pTreasury$224326[esp+776]
+	mov	ecx, DWORD PTR _pTreasury$224325[esp+776]
 	call	?GetImprovementGoldMaintenance@CvTreasury@@QBEHXZ ; CvTreasury::GetImprovementGoldMaintenance
 	cmp	eax, esi
 	jle	SHORT $LN197@BuildCouns
@@ -8409,8 +8409,8 @@ $LN187@BuildCouns:
 ; 1169 : 					uiHighestCostCategory = ui;
 ; 1170 : 					iHighestCost = pTreasury->GetBuildingGoldMaintenance();
 
-	mov	ecx, DWORD PTR _pTreasury$224326[esp+776]
-	mov	DWORD PTR _uiHighestCostCategory$224337[esp+776], 3
+	mov	ecx, DWORD PTR _pTreasury$224325[esp+776]
+	mov	DWORD PTR _uiHighestCostCategory$224336[esp+776], 3
 	call	?GetBuildingGoldMaintenance@CvTreasury@@QBEHXZ ; CvTreasury::GetBuildingGoldMaintenance
 	mov	esi, eax
 
@@ -8423,7 +8423,7 @@ $LN185@BuildCouns:
 ; 1173 : 			case COST_DIPLOMACY:
 ; 1174 : 				if(pTreasury->GetGoldPerTurnFromDiplomacy() < -(iHighestCost))
 
-	mov	ecx, DWORD PTR _pTreasury$224326[esp+776]
+	mov	ecx, DWORD PTR _pTreasury$224325[esp+776]
 	call	?GetGoldPerTurnFromDiplomacy@CvTreasury@@QBEHXZ ; CvTreasury::GetGoldPerTurnFromDiplomacy
 	mov	ecx, esi
 	neg	ecx
@@ -8434,15 +8434,15 @@ $LN185@BuildCouns:
 ; 1176 : 					uiHighestCostCategory = ui;
 ; 1177 : 					iHighestCost = -(pTreasury->GetGoldPerTurnFromDiplomacy());
 
-	mov	ecx, DWORD PTR _pTreasury$224326[esp+776]
-	mov	DWORD PTR _uiHighestCostCategory$224337[esp+776], 4
+	mov	ecx, DWORD PTR _pTreasury$224325[esp+776]
+	mov	DWORD PTR _uiHighestCostCategory$224336[esp+776], 4
 	call	?GetGoldPerTurnFromDiplomacy@CvTreasury@@QBEHXZ ; CvTreasury::GetGoldPerTurnFromDiplomacy
 	mov	esi, eax
 	neg	esi
 $LN197@BuildCouns:
-	mov	eax, DWORD PTR _ui$224338[esp+776]
+	mov	eax, DWORD PTR _ui$224337[esp+776]
 	inc	eax
-	mov	DWORD PTR _ui$224338[esp+776], eax
+	mov	DWORD PTR _ui$224337[esp+776], eax
 	cmp	eax, 5
 	jb	$LL198@BuildCouns
 
@@ -8454,23 +8454,23 @@ $LN197@BuildCouns:
 ; 1183 : 
 ; 1184 : 		if(iGold <= 0)  // we're bankrupt
 
-	mov	ecx, DWORD PTR _iGold$224328[esp+776]
+	mov	ecx, DWORD PTR _iGold$224327[esp+776]
 	test	ecx, ecx
 	jg	$LN183@BuildCouns
 
 ; 1185 : 		{
 ; 1186 : 			if(iGoldIncome <= 0)
 
-	cmp	DWORD PTR _iGoldIncome$224327[esp+776], 0
+	cmp	DWORD PTR _iGoldIncome$224326[esp+776], 0
 
 ; 1187 : 			{
 ; 1188 : 				//    if our income is negative or zero
 ; 1189 : 				iMessageRating = 99;
 ; 1190 : 				switch(uiHighestCostCategory)
 
-	mov	eax, DWORD PTR _uiHighestCostCategory$224337[esp+776]
+	mov	eax, DWORD PTR _uiHighestCostCategory$224336[esp+776]
 	jg	$LN182@BuildCouns
-	mov	DWORD PTR _iMessageRating$224324[esp+776], 99 ; 00000063H
+	mov	DWORD PTR _iMessageRating$224323[esp+776], 99 ; 00000063H
 	cmp	eax, 4
 	ja	$LN174@BuildCouns
 	jmp	DWORD PTR $LN1537@BuildCouns[eax*4]
@@ -8480,8 +8480,8 @@ $LN179@BuildCouns:
 ; 1192 : 				case COST_UNIT_MAINTENANCE:
 ; 1193 : 					strLoc = Localization::Lookup("TXT_KEY_FINANCESTRATEGY_BROKE_AND_GOING_DOWN_UNIT_MAINTENANCE");
 
-	lea	edx, DWORD PTR $T226540[esp+776]
-	push	OFFSET $SG224364
+	lea	edx, DWORD PTR $T226539[esp+776]
+	push	OFFSET $SG224363
 	push	edx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
@@ -8489,7 +8489,7 @@ $LN179@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 48		; 00000030H
 	call	ebp
-	lea	ecx, DWORD PTR $T226540[esp+776]
+	lea	ecx, DWORD PTR $T226539[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	edi
 
@@ -8507,8 +8507,8 @@ $LN178@BuildCouns:
 ; 1196 : 				case COST_UNIT_SUPPLY:
 ; 1197 : 					strLoc = Localization::Lookup("TXT_KEY_FINANCESTRATEGY_BROKE_AND_GOING_DOWN_UNIT_SUPPLY");
 
-	lea	eax, DWORD PTR $T226541[esp+776]
-	push	OFFSET $SG224367
+	lea	eax, DWORD PTR $T226540[esp+776]
+	push	OFFSET $SG224366
 	push	eax
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
@@ -8516,7 +8516,7 @@ $LN178@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 49		; 00000031H
 	call	ebp
-	lea	ecx, DWORD PTR $T226541[esp+776]
+	lea	ecx, DWORD PTR $T226540[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	edi
 
@@ -8534,8 +8534,8 @@ $LN177@BuildCouns:
 ; 1200 : 				case COST_BUILDING_MAINTENANCE:
 ; 1201 : 					strLoc = Localization::Lookup("TXT_KEY_FINANCESTRATEGY_BROKE_AND_GOING_DOWN_BUILDING_MAINTENANCE");
 
-	lea	ecx, DWORD PTR $T226542[esp+776]
-	push	OFFSET $SG224370
+	lea	ecx, DWORD PTR $T226541[esp+776]
+	push	OFFSET $SG224369
 	push	ecx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
@@ -8543,7 +8543,7 @@ $LN177@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 50		; 00000032H
 	call	ebp
-	lea	ecx, DWORD PTR $T226542[esp+776]
+	lea	ecx, DWORD PTR $T226541[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	edi
 
@@ -8561,8 +8561,8 @@ $LN176@BuildCouns:
 ; 1204 : 				case COST_IMPROVEMENT_MAINTENANCE:
 ; 1205 : 					strLoc = Localization::Lookup("TXT_KEY_FINANCESTRATEGY_BROKE_AND_GOING_DOWN_DIPLOMACY");
 
-	lea	edx, DWORD PTR $T226543[esp+776]
-	push	OFFSET $SG224373
+	lea	edx, DWORD PTR $T226542[esp+776]
+	push	OFFSET $SG224372
 	push	edx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
@@ -8570,7 +8570,7 @@ $LN176@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 51		; 00000033H
 	call	ebp
-	lea	ecx, DWORD PTR $T226543[esp+776]
+	lea	ecx, DWORD PTR $T226542[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	edi
 
@@ -8588,8 +8588,8 @@ $LN175@BuildCouns:
 ; 1208 : 				case COST_DIPLOMACY:
 ; 1209 : 					strLoc = Localization::Lookup("TXT_KEY_FINANCESTRATEGY_BROKE_AND_GOING_DOWN_IMPROVEMENT_MAINTENANCE");
 
-	lea	eax, DWORD PTR $T226544[esp+776]
-	push	OFFSET $SG224376
+	lea	eax, DWORD PTR $T226543[esp+776]
+	push	OFFSET $SG224375
 	push	eax
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
@@ -8597,7 +8597,7 @@ $LN175@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 52		; 00000034H
 	call	ebp
-	lea	ecx, DWORD PTR $T226544[esp+776]
+	lea	ecx, DWORD PTR $T226543[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	edi
 
@@ -8615,8 +8615,8 @@ $LN174@BuildCouns:
 ; 1212 : 				default:
 ; 1213 : 					strLoc = Localization::Lookup("TXT_KEY_FINANCESTRATEGY_BROKE_AND_GOING_DOWN");
 
-	lea	ecx, DWORD PTR $T226545[esp+776]
-	push	OFFSET $SG224379
+	lea	ecx, DWORD PTR $T226544[esp+776]
+	push	OFFSET $SG224378
 	push	ecx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
@@ -8633,7 +8633,7 @@ $LN182@BuildCouns:
 ; 1218 : 			{
 ; 1219 : 				iMessageRating = 95;
 
-	mov	DWORD PTR _iMessageRating$224324[esp+776], 95 ; 0000005fH
+	mov	DWORD PTR _iMessageRating$224323[esp+776], 95 ; 0000005fH
 
 ; 1220 : 				switch(uiHighestCostCategory)
 
@@ -8646,8 +8646,8 @@ $LN170@BuildCouns:
 ; 1222 : 				case COST_UNIT_MAINTENANCE:
 ; 1223 : 					strLoc = Localization::Lookup("TXT_KEY_FINANCESTRATEGY_BROKE_AND_GOING_UP_UNIT_MAINTENANCE");
 
-	lea	edx, DWORD PTR $T226546[esp+776]
-	push	OFFSET $SG224387
+	lea	edx, DWORD PTR $T226545[esp+776]
+	push	OFFSET $SG224386
 	push	edx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
@@ -8655,7 +8655,7 @@ $LN170@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 54		; 00000036H
 	call	ebp
-	lea	ecx, DWORD PTR $T226546[esp+776]
+	lea	ecx, DWORD PTR $T226545[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	edi
 
@@ -8673,8 +8673,8 @@ $LN169@BuildCouns:
 ; 1226 : 				case COST_UNIT_SUPPLY:
 ; 1227 : 					strLoc = Localization::Lookup("TXT_KEY_FINANCESTRATEGY_BROKE_AND_GOING_UP_UNIT_SUPPLY");
 
-	lea	eax, DWORD PTR $T226547[esp+776]
-	push	OFFSET $SG224390
+	lea	eax, DWORD PTR $T226546[esp+776]
+	push	OFFSET $SG224389
 	push	eax
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
@@ -8682,7 +8682,7 @@ $LN169@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 55		; 00000037H
 	call	ebp
-	lea	ecx, DWORD PTR $T226547[esp+776]
+	lea	ecx, DWORD PTR $T226546[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	edi
 
@@ -8700,8 +8700,8 @@ $LN168@BuildCouns:
 ; 1230 : 				case COST_BUILDING_MAINTENANCE:
 ; 1231 : 					strLoc = Localization::Lookup("TXT_KEY_FINANCESTRATEGY_BROKE_AND_GOING_UP_BUILDING_MAINTENANCE");
 
-	lea	ecx, DWORD PTR $T226548[esp+776]
-	push	OFFSET $SG224393
+	lea	ecx, DWORD PTR $T226547[esp+776]
+	push	OFFSET $SG224392
 	push	ecx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
@@ -8709,7 +8709,7 @@ $LN168@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 56		; 00000038H
 	call	ebp
-	lea	ecx, DWORD PTR $T226548[esp+776]
+	lea	ecx, DWORD PTR $T226547[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	edi
 
@@ -8727,8 +8727,8 @@ $LN167@BuildCouns:
 ; 1234 : 				case COST_IMPROVEMENT_MAINTENANCE:
 ; 1235 : 					strLoc = Localization::Lookup("TXT_KEY_FINANCESTRATEGY_BROKE_AND_GOING_UP_IMPROVEMENT_MAINTENANCE");
 
-	lea	edx, DWORD PTR $T226549[esp+776]
-	push	OFFSET $SG224396
+	lea	edx, DWORD PTR $T226548[esp+776]
+	push	OFFSET $SG224395
 	push	edx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
@@ -8736,7 +8736,7 @@ $LN167@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 57		; 00000039H
 	call	ebp
-	lea	ecx, DWORD PTR $T226549[esp+776]
+	lea	ecx, DWORD PTR $T226548[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	edi
 
@@ -8754,8 +8754,8 @@ $LN166@BuildCouns:
 ; 1238 : 				case COST_DIPLOMACY:
 ; 1239 : 					strLoc = Localization::Lookup("TXT_KEY_FINANCESTRATEGY_BROKE_AND_GOING_UP_DIPLOMACY");
 
-	lea	eax, DWORD PTR $T226550[esp+776]
-	push	OFFSET $SG224399
+	lea	eax, DWORD PTR $T226549[esp+776]
+	push	OFFSET $SG224398
 	push	eax
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
@@ -8763,7 +8763,7 @@ $LN166@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 58		; 0000003aH
 	call	ebp
-	lea	ecx, DWORD PTR $T226550[esp+776]
+	lea	ecx, DWORD PTR $T226549[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	edi
 
@@ -8781,8 +8781,8 @@ $LN165@BuildCouns:
 ; 1242 : 				default:
 ; 1243 : 					strLoc = Localization::Lookup("TXT_KEY_FINANCESTRATEGY_BROKE_AND_GOING_UP");
 
-	lea	ecx, DWORD PTR $T226551[esp+776]
-	push	OFFSET $SG224402
+	lea	ecx, DWORD PTR $T226550[esp+776]
+	push	OFFSET $SG224401
 	push	ecx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
@@ -8800,7 +8800,7 @@ $LN183@BuildCouns:
 ; 1249 : 		{
 ; 1250 : 			if(iGoldIncome <= 0)
 
-	mov	eax, DWORD PTR _iGoldIncome$224327[esp+776]
+	mov	eax, DWORD PTR _iGoldIncome$224326[esp+776]
 	test	eax, eax
 	jg	$LN163@BuildCouns
 
@@ -8824,8 +8824,8 @@ $LN183@BuildCouns:
 ; 1255 : 					iMessageRating = 80;
 ; 1256 : 					switch(uiHighestCostCategory)
 
-	mov	eax, DWORD PTR _uiHighestCostCategory$224337[esp+776]
-	mov	DWORD PTR _iMessageRating$224324[esp+776], 80 ; 00000050H
+	mov	eax, DWORD PTR _uiHighestCostCategory$224336[esp+776]
+	mov	DWORD PTR _iMessageRating$224323[esp+776], 80 ; 00000050H
 	cmp	eax, 4
 	ja	$LN154@BuildCouns
 	jmp	DWORD PTR $LN1539@BuildCouns[eax*4]
@@ -8835,8 +8835,8 @@ $LN159@BuildCouns:
 ; 1258 : 					case COST_UNIT_MAINTENANCE:
 ; 1259 : 						strLoc = Localization::Lookup("TXT_KEY_FINANCESTRATEGY_GOING_BROKE_UNIT_MAINTENANCE");
 
-	lea	edx, DWORD PTR $T226552[esp+776]
-	push	OFFSET $SG224412
+	lea	edx, DWORD PTR $T226551[esp+776]
+	push	OFFSET $SG224411
 	push	edx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
@@ -8844,7 +8844,7 @@ $LN159@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 60		; 0000003cH
 	call	ebp
-	lea	ecx, DWORD PTR $T226552[esp+776]
+	lea	ecx, DWORD PTR $T226551[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	edi
 
@@ -8862,8 +8862,8 @@ $LN158@BuildCouns:
 ; 1262 : 					case COST_UNIT_SUPPLY:
 ; 1263 : 						strLoc = Localization::Lookup("TXT_KEY_FINANCESTRATEGY_GOING_BROKE_UNIT_SUPPLY");
 
-	lea	eax, DWORD PTR $T226553[esp+776]
-	push	OFFSET $SG224415
+	lea	eax, DWORD PTR $T226552[esp+776]
+	push	OFFSET $SG224414
 	push	eax
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
@@ -8871,7 +8871,7 @@ $LN158@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 61		; 0000003dH
 	call	ebp
-	lea	ecx, DWORD PTR $T226553[esp+776]
+	lea	ecx, DWORD PTR $T226552[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	edi
 
@@ -8889,8 +8889,8 @@ $LN157@BuildCouns:
 ; 1266 : 					case COST_BUILDING_MAINTENANCE:
 ; 1267 : 						strLoc = Localization::Lookup("TXT_KEY_FINANCESTRATEGY_GOING_BROKE_BUILDING_MAINTENANCE");
 
-	lea	ecx, DWORD PTR $T226554[esp+776]
-	push	OFFSET $SG224418
+	lea	ecx, DWORD PTR $T226553[esp+776]
+	push	OFFSET $SG224417
 	push	ecx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
@@ -8898,7 +8898,7 @@ $LN157@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 62		; 0000003eH
 	call	ebp
-	lea	ecx, DWORD PTR $T226554[esp+776]
+	lea	ecx, DWORD PTR $T226553[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	edi
 
@@ -8916,8 +8916,8 @@ $LN156@BuildCouns:
 ; 1270 : 					case COST_IMPROVEMENT_MAINTENANCE:
 ; 1271 : 						strLoc = Localization::Lookup("TXT_KEY_FINANCESTRATEGY_GOING_BROKE_IMPROVEMENT_MAINTENANCE");
 
-	lea	edx, DWORD PTR $T226555[esp+776]
-	push	OFFSET $SG224421
+	lea	edx, DWORD PTR $T226554[esp+776]
+	push	OFFSET $SG224420
 	push	edx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
@@ -8925,7 +8925,7 @@ $LN156@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 63		; 0000003fH
 	call	ebp
-	lea	ecx, DWORD PTR $T226555[esp+776]
+	lea	ecx, DWORD PTR $T226554[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	edi
 
@@ -8943,8 +8943,8 @@ $LN155@BuildCouns:
 ; 1274 : 					case COST_DIPLOMACY:
 ; 1275 : 						strLoc = Localization::Lookup("TXT_KEY_FINANCESTRATEGY_GOING_BROKE_DIPLOMACY");
 
-	lea	eax, DWORD PTR $T226556[esp+776]
-	push	OFFSET $SG224424
+	lea	eax, DWORD PTR $T226555[esp+776]
+	push	OFFSET $SG224423
 	push	eax
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
@@ -8952,7 +8952,7 @@ $LN155@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 64		; 00000040H
 	call	ebp
-	lea	ecx, DWORD PTR $T226556[esp+776]
+	lea	ecx, DWORD PTR $T226555[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	edi
 
@@ -8970,8 +8970,8 @@ $LN154@BuildCouns:
 ; 1278 : 					default:
 ; 1279 : 						strLoc = Localization::Lookup("TXT_KEY_FINANCESTRATEGY_GOING_BROKE");
 
-	lea	ecx, DWORD PTR $T226557[esp+776]
-	push	OFFSET $SG224427
+	lea	ecx, DWORD PTR $T226556[esp+776]
+	push	OFFSET $SG224426
 	push	ecx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
@@ -8989,8 +8989,8 @@ $LN1495@BuildCouns:
 ; 1285 : 					iMessageRating = 75;
 ; 1286 : 					switch(uiHighestCostCategory)
 
-	mov	eax, DWORD PTR _uiHighestCostCategory$224337[esp+776]
-	mov	DWORD PTR _iMessageRating$224324[esp+776], 75 ; 0000004bH
+	mov	eax, DWORD PTR _uiHighestCostCategory$224336[esp+776]
+	mov	DWORD PTR _iMessageRating$224323[esp+776], 75 ; 0000004bH
 	cmp	eax, 4
 	ja	$LN145@BuildCouns
 	jmp	DWORD PTR $LN1540@BuildCouns[eax*4]
@@ -9000,8 +9000,8 @@ $LN150@BuildCouns:
 ; 1288 : 					case COST_UNIT_MAINTENANCE:
 ; 1289 : 						strLoc = Localization::Lookup("TXT_KEY_FINANCESTRATEGY_LOSING_MONEY_UNIT_MAINTENANCE");
 
-	lea	edx, DWORD PTR $T226558[esp+776]
-	push	OFFSET $SG224435
+	lea	edx, DWORD PTR $T226557[esp+776]
+	push	OFFSET $SG224434
 	push	edx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
@@ -9009,7 +9009,7 @@ $LN150@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 66		; 00000042H
 	call	ebp
-	lea	ecx, DWORD PTR $T226558[esp+776]
+	lea	ecx, DWORD PTR $T226557[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	edi
 
@@ -9027,8 +9027,8 @@ $LN149@BuildCouns:
 ; 1292 : 					case COST_UNIT_SUPPLY:
 ; 1293 : 						strLoc = Localization::Lookup("TXT_KEY_FINANCESTRATEGY_LOSING_MONEY_UNIT_SUPPLY");
 
-	lea	eax, DWORD PTR $T226559[esp+776]
-	push	OFFSET $SG224438
+	lea	eax, DWORD PTR $T226558[esp+776]
+	push	OFFSET $SG224437
 	push	eax
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
@@ -9036,7 +9036,7 @@ $LN149@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 67		; 00000043H
 	call	ebp
-	lea	ecx, DWORD PTR $T226559[esp+776]
+	lea	ecx, DWORD PTR $T226558[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	edi
 
@@ -9054,8 +9054,8 @@ $LN148@BuildCouns:
 ; 1296 : 					case COST_BUILDING_MAINTENANCE:
 ; 1297 : 						strLoc = Localization::Lookup("TXT_KEY_FINANCESTRATEGY_LOSING_MONEY_BUILDING_MAINTENANCE");
 
-	lea	ecx, DWORD PTR $T226560[esp+776]
-	push	OFFSET $SG224441
+	lea	ecx, DWORD PTR $T226559[esp+776]
+	push	OFFSET $SG224440
 	push	ecx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
@@ -9063,7 +9063,7 @@ $LN148@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 68		; 00000044H
 	call	ebp
-	lea	ecx, DWORD PTR $T226560[esp+776]
+	lea	ecx, DWORD PTR $T226559[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	edi
 
@@ -9081,8 +9081,8 @@ $LN147@BuildCouns:
 ; 1300 : 					case COST_IMPROVEMENT_MAINTENANCE:
 ; 1301 : 						strLoc = Localization::Lookup("TXT_KEY_FINANCESTRATEGY_LOSING_MONEY_IMPROVEMENT_MAINTENANCE");
 
-	lea	edx, DWORD PTR $T226561[esp+776]
-	push	OFFSET $SG224444
+	lea	edx, DWORD PTR $T226560[esp+776]
+	push	OFFSET $SG224443
 	push	edx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
@@ -9090,7 +9090,7 @@ $LN147@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 69		; 00000045H
 	call	ebp
-	lea	ecx, DWORD PTR $T226561[esp+776]
+	lea	ecx, DWORD PTR $T226560[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	edi
 
@@ -9108,8 +9108,8 @@ $LN146@BuildCouns:
 ; 1304 : 					case COST_DIPLOMACY:
 ; 1305 : 						strLoc = Localization::Lookup("TXT_KEY_FINANCESTRATEGY_LOSING_MONEY_DIPLOMACY");
 
-	lea	eax, DWORD PTR $T226562[esp+776]
-	push	OFFSET $SG224447
+	lea	eax, DWORD PTR $T226561[esp+776]
+	push	OFFSET $SG224446
 	push	eax
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
@@ -9117,7 +9117,7 @@ $LN146@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 70		; 00000046H
 	call	ebp
-	lea	ecx, DWORD PTR $T226562[esp+776]
+	lea	ecx, DWORD PTR $T226561[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	edi
 
@@ -9135,8 +9135,8 @@ $LN145@BuildCouns:
 ; 1308 : 					default:
 ; 1309 : 						strLoc = Localization::Lookup("TXT_KEY_FINANCESTRATEGY_LOSING_MONEY");
 
-	lea	ecx, DWORD PTR $T226563[esp+776]
-	push	OFFSET $SG224450
+	lea	ecx, DWORD PTR $T226562[esp+776]
+	push	OFFSET $SG224449
 	push	ecx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
@@ -9159,8 +9159,8 @@ $LN163@BuildCouns:
 ; 1316 : 				iMessageRating = 20;
 ; 1317 : 				switch(uiHighestCostCategory)
 
-	mov	eax, DWORD PTR _uiHighestCostCategory$224337[esp+776]
-	mov	DWORD PTR _iMessageRating$224324[esp+776], 20 ; 00000014H
+	mov	eax, DWORD PTR _uiHighestCostCategory$224336[esp+776]
+	mov	DWORD PTR _iMessageRating$224323[esp+776], 20 ; 00000014H
 	cmp	eax, 4
 	ja	$LN135@BuildCouns
 	jmp	DWORD PTR $LN1541@BuildCouns[eax*4]
@@ -9170,8 +9170,8 @@ $LN140@BuildCouns:
 ; 1319 : 				case COST_UNIT_MAINTENANCE:
 ; 1320 : 					strLoc = Localization::Lookup("TXT_KEY_FINANCESTRATEGY_MAKING_MONEY_UNIT_MAINTENANCE");
 
-	lea	edx, DWORD PTR $T226564[esp+776]
-	push	OFFSET $SG224459
+	lea	edx, DWORD PTR $T226563[esp+776]
+	push	OFFSET $SG224458
 	push	edx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
@@ -9179,7 +9179,7 @@ $LN140@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 72		; 00000048H
 	call	ebp
-	lea	ecx, DWORD PTR $T226564[esp+776]
+	lea	ecx, DWORD PTR $T226563[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	edi
 
@@ -9197,8 +9197,8 @@ $LN139@BuildCouns:
 ; 1323 : 				case COST_UNIT_SUPPLY:
 ; 1324 : 					strLoc = Localization::Lookup("TXT_KEY_FINANCESTRATEGY_MAKING_MONEY_UNIT_SUPPLY");
 
-	lea	eax, DWORD PTR $T226565[esp+776]
-	push	OFFSET $SG224462
+	lea	eax, DWORD PTR $T226564[esp+776]
+	push	OFFSET $SG224461
 	push	eax
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
@@ -9206,7 +9206,7 @@ $LN139@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 73		; 00000049H
 	call	ebp
-	lea	ecx, DWORD PTR $T226565[esp+776]
+	lea	ecx, DWORD PTR $T226564[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	edi
 
@@ -9224,8 +9224,8 @@ $LN138@BuildCouns:
 ; 1327 : 				case COST_BUILDING_MAINTENANCE:
 ; 1328 : 					strLoc = Localization::Lookup("TXT_KEY_FINANCESTRATEGY_MAKING_MONEY_BUILDING_MAINTENANCE");
 
-	lea	ecx, DWORD PTR $T226566[esp+776]
-	push	OFFSET $SG224465
+	lea	ecx, DWORD PTR $T226565[esp+776]
+	push	OFFSET $SG224464
 	push	ecx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
@@ -9233,7 +9233,7 @@ $LN138@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 74		; 0000004aH
 	call	ebp
-	lea	ecx, DWORD PTR $T226566[esp+776]
+	lea	ecx, DWORD PTR $T226565[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	edi
 
@@ -9251,8 +9251,8 @@ $LN137@BuildCouns:
 ; 1331 : 				case COST_IMPROVEMENT_MAINTENANCE:
 ; 1332 : 					strLoc = Localization::Lookup("TXT_KEY_FINANCESTRATEGY_MAKING_MONEY_IMPROVEMENT_MAINTENANCE");
 
-	lea	edx, DWORD PTR $T226567[esp+776]
-	push	OFFSET $SG224468
+	lea	edx, DWORD PTR $T226566[esp+776]
+	push	OFFSET $SG224467
 	push	edx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
@@ -9260,7 +9260,7 @@ $LN137@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 75		; 0000004bH
 	call	ebp
-	lea	ecx, DWORD PTR $T226567[esp+776]
+	lea	ecx, DWORD PTR $T226566[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	edi
 
@@ -9278,8 +9278,8 @@ $LN136@BuildCouns:
 ; 1335 : 				case COST_DIPLOMACY:
 ; 1336 : 					strLoc = Localization::Lookup("TXT_KEY_FINANCESTRATEGY_MAKING_MONEY_DIPLOMACY");
 
-	lea	eax, DWORD PTR $T226568[esp+776]
-	push	OFFSET $SG224471
+	lea	eax, DWORD PTR $T226567[esp+776]
+	push	OFFSET $SG224470
 	push	eax
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
@@ -9287,7 +9287,7 @@ $LN136@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 76		; 0000004cH
 	call	ebp
-	lea	ecx, DWORD PTR $T226568[esp+776]
+	lea	ecx, DWORD PTR $T226567[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	edi
 
@@ -9305,8 +9305,8 @@ $LN135@BuildCouns:
 ; 1339 : 				default:
 ; 1340 : 					strLoc = Localization::Lookup("TXT_KEY_FINANCESTRATEGY_MAKING_MONEY");
 
-	lea	ecx, DWORD PTR $T226569[esp+776]
-	push	OFFSET $SG224474
+	lea	ecx, DWORD PTR $T226568[esp+776]
+	push	OFFSET $SG224473
 	push	ecx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
@@ -9315,7 +9315,7 @@ $LN1525@BuildCouns:
 	push	eax
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	call	ebp
-	lea	ecx, DWORD PTR $T226569[esp+776]
+	lea	ecx, DWORD PTR $T226568[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	edi
 $LN141@BuildCouns:
@@ -9358,7 +9358,7 @@ $LN141@BuildCouns:
 	call	DWORD PTR __imp__strcpy_s
 	mov	edx, DWORD PTR _this$[esp+788]
 	mov	eax, DWORD PTR [edx]
-	mov	ecx, DWORD PTR _iMessageRating$224324[esp+788]
+	mov	ecx, DWORD PTR _iMessageRating$224323[esp+788]
 	add	esp, 12					; 0000000cH
 	mov	DWORD PTR [esi+eax+516], ecx
 $LN1496@BuildCouns:
@@ -9375,12 +9375,12 @@ $LN1476@BuildCouns:
 ; 1360 : 	// finding minor civs that we are about to lose a friendship/ally status with
 ; 1361 : 	for(uint ui = MAX_MAJOR_CIVS; ui < MAX_CIV_PLAYERS; ui++)
 
-	mov	eax, DWORD PTR $T226714[esp+776]
+	mov	eax, DWORD PTR $T226713[esp+776]
 	imul	eax, 2984				; 00000ba8H
 	mov	DWORD PTR tv6978[esp+776], eax
 	mov	eax, DWORD PTR _uiCounselIndex$[esp+776]
 	imul	eax, 520				; 00000208H
-	mov	DWORD PTR _ui$224476[esp+776], 22	; 00000016H
+	mov	DWORD PTR _ui$224475[esp+776], 22	; 00000016H
 	mov	DWORD PTR tv7557[esp+776], eax
 	mov	DWORD PTR tv7559[esp+776], 1391192	; 00153a58H
 	jmp	SHORT $LN133@BuildCouns
@@ -9487,7 +9487,7 @@ $LL1470@BuildCouns:
 
 	mov	eax, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	push	0
-	lea	edx, DWORD PTR _iCityIndex$224498[esp+780]
+	lea	edx, DWORD PTR _iCityIndex$224497[esp+780]
 	lea	ecx, DWORD PTR [eax+ebp]
 	push	edx
 	call	?firstCity@CvPlayer@@QAEPAVCvCity@@PAH_N@Z ; CvPlayer::firstCity
@@ -9502,11 +9502,11 @@ $LL122@BuildCouns:
 
 	mov	ecx, edi
 	call	?getOriginalOwner@CvCity@@QBE?AW4PlayerTypes@@XZ ; CvCity::getOriginalOwner
-	cmp	eax, DWORD PTR _ui$224476[esp+776]
+	cmp	eax, DWORD PTR _ui$224475[esp+776]
 	je	SHORT $LN1396@BuildCouns
 	mov	eax, DWORD PTR ?m_aPlayers@CvPlayerAI@@1PAV1@A ; CvPlayerAI::m_aPlayers
 	push	0
-	lea	edx, DWORD PTR _iCityIndex$224498[esp+780]
+	lea	edx, DWORD PTR _iCityIndex$224497[esp+780]
 	lea	ecx, DWORD PTR [eax+ebp]
 	push	edx
 	call	?nextCity@CvPlayer@@QAEPAVCvCity@@PAH_N@Z ; CvPlayer::nextCity
@@ -9562,8 +9562,8 @@ $LN1435@BuildCouns:
 ; 1420 : 
 ; 1421 : 				strLoc = Localization::Lookup("TXT_KEY_DIPLOSTRATEGY_LIBERATE_CITY_STATE");
 
-	lea	edx, DWORD PTR $T226570[esp+776]
-	push	OFFSET $SG224507
+	lea	edx, DWORD PTR $T226569[esp+776]
+	push	OFFSET $SG224506
 	push	edx
 	mov	edi, eax
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
@@ -9572,7 +9572,7 @@ $LN1435@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 78		; 0000004eH
 	call	DWORD PTR __imp_??4String@Localization@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T226570[esp+776]
+	lea	ecx, DWORD PTR $T226569[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 
@@ -9746,10 +9746,10 @@ $LN128@BuildCouns:
 ; 1507 : 			{
 ; 1508 : 				strLoc = Localization::Lookup("TXT_KEY_DIPLOSTRATEGY_ALMOST_LOST_CITY_STATE_ALLY");
 
-	lea	edx, DWORD PTR $T226577[esp+776]
-	push	OFFSET $SG224522
+	lea	edx, DWORD PTR $T226576[esp+776]
+	push	OFFSET $SG224521
 	push	edx
-	mov	DWORD PTR _iMessageRating$224480[esp+784], 80 ; 00000050H
+	mov	DWORD PTR _iMessageRating$224479[esp+784], 80 ; 00000050H
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
 	mov	BYTE PTR __$EHRec$[esp+784], 80		; 00000050H
@@ -9844,10 +9844,10 @@ $LN116@BuildCouns:
 ; 1578 : 			{
 ; 1579 : 				strLoc = Localization::Lookup("TXT_KEY_DIPLOSTRATEGY_ALMOST_LOST_CITY_STATE_FRIENDSHIP");
 
-	lea	edx, DWORD PTR $T226582[esp+776]
-	push	OFFSET $SG224533
+	lea	edx, DWORD PTR $T226581[esp+776]
+	push	OFFSET $SG224532
 	push	edx
-	mov	DWORD PTR _iMessageRating$224480[esp+784], 60 ; 0000003cH
+	mov	DWORD PTR _iMessageRating$224479[esp+784], 60 ; 0000003cH
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
 	mov	BYTE PTR __$EHRec$[esp+784], 82		; 00000052H
@@ -9855,7 +9855,7 @@ $LN1526@BuildCouns:
 	push	eax
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	call	ebp
-	lea	ecx, DWORD PTR $T226582[esp+776]
+	lea	ecx, DWORD PTR $T226581[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	edi
 
@@ -9970,7 +9970,7 @@ $LN1526@BuildCouns:
 	push	ecx
 	call	DWORD PTR __imp__strcpy_s
 	mov	eax, DWORD PTR [edi]
-	mov	ecx, DWORD PTR _iMessageRating$224480[esp+788]
+	mov	ecx, DWORD PTR _iMessageRating$224479[esp+788]
 
 ; 1661 : 			CvAssertMsg(bSuccess, "Unable to add counsel to list. Too many strategies running at once");
 ; 1662 : 			if(!bSuccess)
@@ -9986,7 +9986,7 @@ $LN1526@BuildCouns:
 	mov	DWORD PTR tv7557[esp+776], esi
 $LN132@BuildCouns:
 	mov	eax, DWORD PTR tv7559[esp+776]
-	inc	DWORD PTR _ui$224476[esp+776]
+	inc	DWORD PTR _ui$224475[esp+776]
 	add	eax, 63236				; 0000f704H
 	mov	DWORD PTR tv7559[esp+776], eax
 	cmp	eax, 3983868				; 003cc9fcH
@@ -10055,13 +10055,13 @@ $LN103@BuildCouns:
 ; 1683 : 	{
 ; 1684 : 		CvString strBuildingClass;
 
-	lea	ecx, DWORD PTR _strBuildingClass$224552[esp+776]
+	lea	ecx, DWORD PTR _strBuildingClass$224551[esp+776]
 	call	DWORD PTR __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 	mov	BYTE PTR __$EHRec$[esp+784], 84		; 00000054H
 
 ; 1685 : 		for(uint uiLoop = 0; uiLoop < 4; uiLoop++)
 
-	mov	DWORD PTR _uiLoop$224553[esp+776], esi
+	mov	DWORD PTR _uiLoop$224552[esp+776], esi
 	npad	6
 $LL1510@BuildCouns:
 
@@ -10078,7 +10078,7 @@ $LN94@BuildCouns:
 ; 1690 : 			case 0:
 ; 1691 : 				strBuildingClass = "BUILDINGCLASS_LIBRARY";
 
-	push	OFFSET $SG224562
+	push	OFFSET $SG224561
 
 ; 1692 : 				break;
 
@@ -10088,7 +10088,7 @@ $LN93@BuildCouns:
 ; 1693 : 			case 1:
 ; 1694 : 				strBuildingClass = "BUILDINGCLASS_UNIVERSITY";
 
-	push	OFFSET $SG224564
+	push	OFFSET $SG224563
 
 ; 1695 : 				break;
 
@@ -10098,7 +10098,7 @@ $LN92@BuildCouns:
 ; 1696 : 			case 2:
 ; 1697 : 				strBuildingClass = "BUILDINGCLASS_PUBLIC_SCHOOL";
 
-	push	OFFSET $SG224566
+	push	OFFSET $SG224565
 
 ; 1698 : 				break;
 
@@ -10108,9 +10108,9 @@ $LN91@BuildCouns:
 ; 1699 : 			case 3:
 ; 1700 : 				strBuildingClass = "BUILDINGCLASS_LABORATORY";
 
-	push	OFFSET $SG224568
+	push	OFFSET $SG224567
 $LN1527@BuildCouns:
-	lea	ecx, DWORD PTR _strBuildingClass$224552[esp+780]
+	lea	ecx, DWORD PTR _strBuildingClass$224551[esp+780]
 	call	DWORD PTR __imp_?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBD@Z
 $LN1183@BuildCouns:
 
@@ -10157,7 +10157,7 @@ $LL90@BuildCouns:
 	call	?getBuildingClassInfo@CvGlobals@@QAEPAVCvBuildingClassInfo@@W4BuildingClassTypes@@@Z ; CvGlobals::getBuildingClassInfo
 	lea	ecx, DWORD PTR [eax+176]
 	call	DWORD PTR __imp_?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ
-	lea	ecx, DWORD PTR _strBuildingClass$224552[esp+776]
+	lea	ecx, DWORD PTR _strBuildingClass$224551[esp+776]
 	push	ecx
 	push	eax
 	call	DWORD PTR __imp_??$?8DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA_NPBDABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@@Z
@@ -10287,13 +10287,13 @@ $LN1401@BuildCouns:
 	cmp	esi, -1
 	jne	SHORT $LN1402@BuildCouns
 $LN1509@BuildCouns:
-	mov	esi, DWORD PTR _uiLoop$224553[esp+776]
+	mov	esi, DWORD PTR _uiLoop$224552[esp+776]
 $LN98@BuildCouns:
 
 ; 1685 : 		for(uint uiLoop = 0; uiLoop < 4; uiLoop++)
 
 	inc	esi
-	mov	DWORD PTR _uiLoop$224553[esp+776], esi
+	mov	DWORD PTR _uiLoop$224552[esp+776], esi
 	cmp	esi, 4
 	jb	$LL1510@BuildCouns
 
@@ -10309,8 +10309,8 @@ $LN1402@BuildCouns:
 ; 1754 : 
 ; 1755 : 				strLoc = Localization::Lookup("TXT_KEY_SCIENCESTRATEGY_RESEARCH_BUILDING_IN_BIG_CITY");
 
-	lea	edx, DWORD PTR $T226587[esp+776]
-	push	OFFSET $SG224593
+	lea	edx, DWORD PTR $T226586[esp+776]
+	push	OFFSET $SG224592
 	push	edx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
@@ -10318,7 +10318,7 @@ $LN1402@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 85		; 00000055H
 	call	DWORD PTR __imp_??4String@Localization@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T226587[esp+776]
+	lea	ecx, DWORD PTR $T226586[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 84		; 00000054H
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 
@@ -10392,7 +10392,7 @@ $LN1478@BuildCouns:
 ; 1770 : 		}
 ; 1771 : 	}
 
-	lea	ecx, DWORD PTR _strBuildingClass$224552[esp+776]
+	lea	ecx, DWORD PTR _strBuildingClass$224551[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	DWORD PTR __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
 $LN1479@BuildCouns:
@@ -10420,7 +10420,7 @@ $LN1479@BuildCouns:
 
 ; 1777 : 	for(uint ui = 0; ui < aiPlots.size(); ui++)
 
-	mov	DWORD PTR _ui$224603[esp+776], eax
+	mov	DWORD PTR _ui$224602[esp+776], eax
 	cmp	DWORD PTR [ebp+4], eax
 	jbe	$LN1480@BuildCouns
 $LL1507@BuildCouns:
@@ -10448,7 +10448,7 @@ $LL1507@BuildCouns:
 	jge	$LN75@BuildCouns
 	imul	eax, 484				; 000001e4H
 	add	eax, DWORD PTR [ecx+4068]
-	mov	DWORD PTR _pPlot$224607[esp+776], eax
+	mov	DWORD PTR _pPlot$224606[esp+776], eax
 
 ; 1787 : 		if(!pPlot)
 
@@ -10477,7 +10477,7 @@ $LN1234@BuildCouns:
 	mov	ecx, eax
 	call	?getResourceType@CvPlot@@QBE?AW4ResourceTypes@@W4TeamTypes@@@Z ; CvPlot::getResourceType
 	mov	esi, eax
-	mov	DWORD PTR _eResource$224610[esp+776], esi
+	mov	DWORD PTR _eResource$224609[esp+776], esi
 
 ; 1793 : 		if(eResource == NO_RESOURCE)
 
@@ -10527,14 +10527,14 @@ $LN69@BuildCouns:
 
 	xor	edi, edi
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	mov	DWORD PTR _iBuild$224615[esp+776], edi
+	mov	DWORD PTR _iBuild$224614[esp+776], edi
 	call	?getNumBuildInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumBuildInfos
 	test	eax, eax
 	jle	$LN75@BuildCouns
 	npad	8
 $LL1490@BuildCouns:
-	mov	esi, DWORD PTR _pPlot$224607[esp+776]
-	mov	ebp, DWORD PTR _eResource$224610[esp+776]
+	mov	esi, DWORD PTR _pPlot$224606[esp+776]
+	mov	ebp, DWORD PTR _eResource$224609[esp+776]
 
 ; 1807 : #endif
 ; 1808 : 				{
@@ -10642,7 +10642,7 @@ $LL59@BuildCouns:
 ; 1841 : 								if(pLoopUnit->getOwner() != ePlayer)
 
 	mov	eax, DWORD PTR [ebp+40]
-	mov	DWORD PTR _pPlotUnitNode$224630[esp+776], edi
+	mov	DWORD PTR _pPlotUnitNode$224629[esp+776], edi
 	cmp	eax, DWORD PTR _ePlayer$[esp+772]
 	jne	SHORT $LN1492@BuildCouns
 
@@ -10659,7 +10659,7 @@ $LL59@BuildCouns:
 ; 1848 : 								for(int i = 0; i < iNumMissions; i++)
 
 	xor	esi, esi
-	mov	DWORD PTR _iNumMissions$224636[esp+776], eax
+	mov	DWORD PTR _iNumMissions$224635[esp+776], eax
 	test	eax, eax
 	jle	SHORT $LN1492@BuildCouns
 	npad	2
@@ -10678,7 +10678,7 @@ $LL56@BuildCouns:
 	call	?getMISSION_BUILD@CvTypes@@YA?BW4MissionTypes@@XZ ; CvTypes::getMISSION_BUILD
 	cmp	DWORD PTR [edi], eax
 	jne	SHORT $LN55@BuildCouns
-	mov	ecx, DWORD PTR _iBuild$224615[esp+776]
+	mov	ecx, DWORD PTR _iBuild$224614[esp+776]
 	cmp	DWORD PTR [edi+4], ecx
 	je	SHORT $LN66@BuildCouns
 $LN55@BuildCouns:
@@ -10686,18 +10686,18 @@ $LN55@BuildCouns:
 ; 1848 : 								for(int i = 0; i < iNumMissions; i++)
 
 	inc	esi
-	cmp	esi, DWORD PTR _iNumMissions$224636[esp+776]
+	cmp	esi, DWORD PTR _iNumMissions$224635[esp+776]
 	jl	SHORT $LL56@BuildCouns
-	mov	edi, DWORD PTR _pPlotUnitNode$224630[esp+776]
+	mov	edi, DWORD PTR _pPlotUnitNode$224629[esp+776]
 $LN1492@BuildCouns:
 
 ; 1835 : 
 ; 1836 : 							while(pPlotUnitNode != NULL)
 
-	mov	esi, DWORD PTR _pPlot$224607[esp+776]
+	mov	esi, DWORD PTR _pPlot$224606[esp+776]
 	test	edi, edi
 	jne	SHORT $LL59@BuildCouns
-	mov	ebp, DWORD PTR _eResource$224610[esp+776]
+	mov	ebp, DWORD PTR _eResource$224609[esp+776]
 $LN1503@BuildCouns:
 
 ; 1852 : 									{
@@ -10729,10 +10729,10 @@ $LN1503@BuildCouns:
 	call	?getNumResourceTotal@CvPlayer@@QBEHW4ResourceTypes@@_N@Z ; CvPlayer::getNumResourceTotal
 	mov	DWORD PTR _iNumOfResource$[esp+776], eax
 $LN66@BuildCouns:
-	mov	edi, DWORD PTR _iBuild$224615[esp+776]
+	mov	edi, DWORD PTR _iBuild$224614[esp+776]
 	inc	edi
 	mov	ecx, OFFSET ?gGlobals@@3VCvGlobals@@A	; gGlobals
-	mov	DWORD PTR _iBuild$224615[esp+776], edi
+	mov	DWORD PTR _iBuild$224614[esp+776], edi
 	call	?getNumBuildInfos@CvGlobals@@QAEHXZ	; CvGlobals::getNumBuildInfos
 	cmp	edi, eax
 	jl	$LL1490@BuildCouns
@@ -10748,9 +10748,9 @@ $LN75@BuildCouns:
 
 ; 1777 : 	for(uint ui = 0; ui < aiPlots.size(); ui++)
 
-	mov	eax, DWORD PTR _ui$224603[esp+776]
+	mov	eax, DWORD PTR _ui$224602[esp+776]
 	inc	eax
-	mov	DWORD PTR _ui$224603[esp+776], eax
+	mov	DWORD PTR _ui$224602[esp+776], eax
 	cmp	eax, DWORD PTR [ebp+4]
 	jb	$LL1507@BuildCouns
 $LN1405@BuildCouns:
@@ -10778,8 +10778,8 @@ $LN1405@BuildCouns:
 ; 1881 : 		{
 ; 1882 : 			strLoc = Localization::Lookup("TXT_KEY_CITYIMPROVEMENTSTRATEGY_PLUG_UP_RESOURCES_HAVE_ZERO");
 
-	lea	ecx, DWORD PTR $T226591[esp+776]
-	push	OFFSET $SG224648
+	lea	ecx, DWORD PTR $T226590[esp+776]
+	push	OFFSET $SG224647
 	push	ecx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
@@ -10794,8 +10794,8 @@ $LN49@BuildCouns:
 ; 1885 : 		{
 ; 1886 : 			strLoc = Localization::Lookup("TXT_KEY_CITYIMPROVEMENTSTRATEGY_PLUG_UP_RESOURCES_HAVE_MORE");
 
-	lea	edx, DWORD PTR $T226592[esp+776]
-	push	OFFSET $SG224651
+	lea	edx, DWORD PTR $T226591[esp+776]
+	push	OFFSET $SG224650
 	push	edx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
@@ -10804,7 +10804,7 @@ $LN1528@BuildCouns:
 	push	eax
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	call	DWORD PTR __imp_??4String@Localization@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T226592[esp+776]
+	lea	ecx, DWORD PTR $T226591[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 
@@ -10883,10 +10883,10 @@ $LN1480@BuildCouns:
 	mov	ecx, DWORD PTR ?sr_TeamTypes@CvPreGame@@3ABV?$vector@W4TeamTypes@@V?$allocator@W4TeamTypes@@@std@@@std@@B ; CvPreGame::sr_TeamTypes
 	mov	edx, DWORD PTR [ecx+4]
 	mov	eax, DWORD PTR [edx+eax*4]
-	mov	DWORD PTR $T228333[esp+776], eax
+	mov	DWORD PTR $T228332[esp+776], eax
 	jmp	SHORT $LN1272@BuildCouns
 $LN1271@BuildCouns:
-	mov	DWORD PTR $T228333[esp+776], ecx
+	mov	DWORD PTR $T228332[esp+776], ecx
 $LN1272@BuildCouns:
 
 ; 1904 : #ifdef AUI_WARNING_FIXES
@@ -10955,7 +10955,7 @@ $LN43@BuildCouns:
 ; 1928 : 		for(int j = 0; j < MAX_MAJOR_CIVS; j++)
 
 	xor	eax, eax
-	mov	DWORD PTR _j$224667[esp+776], eax
+	mov	DWORD PTR _j$224666[esp+776], eax
 	mov	DWORD PTR tv7629[esp+776], eax
 	npad	4
 $LL41@BuildCouns:
@@ -10979,7 +10979,7 @@ $LN1285@BuildCouns:
 
 ; 1932 : 			if(ePlayerTeam == eOtherTeam || !GET_PLAYER(eOtherPlayer).isAlive())
 
-	cmp	DWORD PTR $T228333[esp+776], edi
+	cmp	DWORD PTR $T228332[esp+776], edi
 	je	$LN40@BuildCouns
 	mov	eax, DWORD PTR tv7629[esp+776]
 	cmp	BYTE PTR [eax+ecx+2256], 0
@@ -10992,7 +10992,7 @@ $LN1285@BuildCouns:
 ; 1937 : 			// if we haven't met or are at war
 ; 1938 : 			if(!GET_TEAM(ePlayerTeam).isHasMet(eOtherTeam) || GET_TEAM(ePlayerTeam).isAtWar(eOtherTeam))
 
-	mov	esi, DWORD PTR $T228333[esp+776]
+	mov	esi, DWORD PTR $T228332[esp+776]
 	mov	ecx, DWORD PTR ?m_aTeams@CvTeam@@1PAV1@A ; CvTeam::m_aTeams
 	imul	esi, 2984				; 00000ba8H
 	add	ecx, esi
@@ -11136,7 +11136,7 @@ $LN30@BuildCouns:
 ; 1981 : 						eTradableResource = eResource;
 ; 1982 : 						eTargetPlayer = eOtherPlayer;
 
-	mov	ecx, DWORD PTR _j$224667[esp+776]
+	mov	ecx, DWORD PTR _j$224666[esp+776]
 	mov	DWORD PTR _eTargetPlayer$[esp+776], ecx
 
 ; 1983 : 					}
@@ -11148,7 +11148,7 @@ $LN26@BuildCouns:
 
 ; 1988 : 					eTargetPlayer = eOtherPlayer;
 
-	mov	edx, DWORD PTR _j$224667[esp+776]
+	mov	edx, DWORD PTR _j$224666[esp+776]
 	mov	DWORD PTR _eTargetPlayer$[esp+776], edx
 $LN1529@BuildCouns:
 
@@ -11181,7 +11181,7 @@ $LN40@BuildCouns:
 ; 1928 : 		for(int j = 0; j < MAX_MAJOR_CIVS; j++)
 
 	mov	eax, DWORD PTR tv7629[esp+776]
-	inc	DWORD PTR _j$224667[esp+776]
+	inc	DWORD PTR _j$224666[esp+776]
 	add	eax, 63236				; 0000f704H
 	cmp	eax, 1391192				; 00153a58H
 	mov	DWORD PTR tv7629[esp+776], eax
@@ -11227,8 +11227,8 @@ $LN46@BuildCouns:
 ; 1998 : 		{
 ; 1999 : 			strLoc = Localization::Lookup("TXT_KEY_RESOURCESTRATEGY_TRADE_LUXURIES");
 
-	lea	eax, DWORD PTR $T226595[esp+776]
-	push	OFFSET $SG224699
+	lea	eax, DWORD PTR $T226594[esp+776]
+	push	OFFSET $SG224698
 	push	eax
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
@@ -11245,8 +11245,8 @@ $LN22@BuildCouns:
 ; 2002 : 		{
 ; 2003 : 			strLoc = Localization::Lookup("TXT_KEY_RESOURCESTRATEGY_TRADE_STRATEGIC");
 
-	lea	ecx, DWORD PTR $T226596[esp+776]
-	push	OFFSET $SG224703
+	lea	ecx, DWORD PTR $T226595[esp+776]
+	push	OFFSET $SG224702
 	push	ecx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
@@ -11255,7 +11255,7 @@ $LN1530@BuildCouns:
 	push	eax
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	call	DWORD PTR __imp_??4String@Localization@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T226596[esp+776]
+	lea	ecx, DWORD PTR $T226595[esp+776]
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 $LN20@BuildCouns:
@@ -11410,8 +11410,8 @@ $LN4@BuildCouns:
 ; 2046 : 			case ADVISOR_SCIENCE:
 ; 2047 : 				strLoc = Localization::Lookup("TXT_KEY_BASESTRATEGY_NOTHING_TO_SAY_SCIENCE");
 
-	lea	eax, DWORD PTR $T226599[esp+776]
-	push	OFFSET $SG224731
+	lea	eax, DWORD PTR $T226598[esp+776]
+	push	OFFSET $SG224730
 	push	eax
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
@@ -11419,7 +11419,7 @@ $LN4@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 90		; 0000005aH
 	call	DWORD PTR __imp_??4String@Localization@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T226599[esp+776]
+	lea	ecx, DWORD PTR $T226598[esp+776]
 
 ; 2048 : 				break;
 
@@ -11429,8 +11429,8 @@ $LN3@BuildCouns:
 ; 2049 : 			case ADVISOR_ECONOMIC:
 ; 2050 : 				strLoc = Localization::Lookup("TXT_KEY_BASESTRATEGY_NOTHING_TO_SAY_ECONOMIC");
 
-	lea	ecx, DWORD PTR $T226600[esp+776]
-	push	OFFSET $SG224734
+	lea	ecx, DWORD PTR $T226599[esp+776]
+	push	OFFSET $SG224733
 	push	ecx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
@@ -11438,7 +11438,7 @@ $LN3@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 91		; 0000005bH
 	call	DWORD PTR __imp_??4String@Localization@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T226600[esp+776]
+	lea	ecx, DWORD PTR $T226599[esp+776]
 
 ; 2051 : 				break;
 
@@ -11448,8 +11448,8 @@ $LN2@BuildCouns:
 ; 2052 : 			case ADVISOR_MILITARY:
 ; 2053 : 				strLoc = Localization::Lookup("TXT_KEY_BASESTRATEGY_NOTHING_TO_SAY_MILITARY");
 
-	lea	edx, DWORD PTR $T226601[esp+776]
-	push	OFFSET $SG224737
+	lea	edx, DWORD PTR $T226600[esp+776]
+	push	OFFSET $SG224736
 	push	edx
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
@@ -11457,7 +11457,7 @@ $LN2@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 92		; 0000005cH
 	call	DWORD PTR __imp_??4String@Localization@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T226601[esp+776]
+	lea	ecx, DWORD PTR $T226600[esp+776]
 
 ; 2054 : 				break;
 
@@ -11467,8 +11467,8 @@ $LN1@BuildCouns:
 ; 2055 : 			case ADVISOR_FOREIGN:
 ; 2056 : 				strLoc = Localization::Lookup("TXT_KEY_BASESTRATEGY_NOTHING_TO_SAY_FOREIGN");
 
-	lea	eax, DWORD PTR $T226602[esp+776]
-	push	OFFSET $SG224740
+	lea	eax, DWORD PTR $T226601[esp+776]
+	push	OFFSET $SG224739
 	push	eax
 	call	DWORD PTR __imp_?Lookup@Localization@@YA?AVString@1@PBD@Z
 	add	esp, 8
@@ -11476,7 +11476,7 @@ $LN1@BuildCouns:
 	lea	ecx, DWORD PTR _strLoc$[esp+780]
 	mov	BYTE PTR __$EHRec$[esp+788], 93		; 0000005dH
 	call	DWORD PTR __imp_??4String@Localization@@QAEAAV01@ABV01@@Z
-	lea	ecx, DWORD PTR $T226602[esp+776]
+	lea	ecx, DWORD PTR $T226601[esp+776]
 $LN1531@BuildCouns:
 	mov	BYTE PTR __$EHRec$[esp+784], 0
 	call	ebx
@@ -11635,274 +11635,274 @@ __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$0:
 	lea	ecx, DWORD PTR _strLoc$[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$1:
-	lea	ecx, DWORD PTR $T226435[ebp]
+	lea	ecx, DWORD PTR $T226434[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$2:
-	lea	ecx, DWORD PTR $T226436[ebp]
+	lea	ecx, DWORD PTR $T226435[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$3:
-	lea	ecx, DWORD PTR $T226437[ebp]
+	lea	ecx, DWORD PTR $T226436[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$4:
-	lea	ecx, DWORD PTR $T226438[ebp]
+	lea	ecx, DWORD PTR $T226437[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$5:
-	lea	ecx, DWORD PTR $T226439[ebp]
+	lea	ecx, DWORD PTR $T226438[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$6:
-	lea	ecx, DWORD PTR $T226440[ebp]
+	lea	ecx, DWORD PTR $T226439[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$7:
-	lea	ecx, DWORD PTR $T226441[ebp]
+	lea	ecx, DWORD PTR $T226440[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$8:
-	lea	ecx, DWORD PTR $T226443[ebp]
+	lea	ecx, DWORD PTR $T226442[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$9:
-	lea	ecx, DWORD PTR $T226447[ebp]
+	lea	ecx, DWORD PTR $T226446[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$10:
-	lea	ecx, DWORD PTR $T226451[ebp]
+	lea	ecx, DWORD PTR $T226450[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$11:
-	lea	ecx, DWORD PTR $T226455[ebp]
+	lea	ecx, DWORD PTR $T226454[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$12:
-	lea	ecx, DWORD PTR $T226458[ebp]
+	lea	ecx, DWORD PTR $T226457[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$13:
-	lea	ecx, DWORD PTR $T226461[ebp]
+	lea	ecx, DWORD PTR $T226460[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$14:
-	lea	ecx, DWORD PTR $T226466[ebp]
+	lea	ecx, DWORD PTR $T226465[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$15:
-	lea	ecx, DWORD PTR $T226470[ebp]
+	lea	ecx, DWORD PTR $T226469[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$16:
-	lea	ecx, DWORD PTR $T226475[ebp]
+	lea	ecx, DWORD PTR $T226474[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$17:
-	lea	ecx, DWORD PTR $T226478[ebp]
+	lea	ecx, DWORD PTR $T226477[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$18:
-	lea	ecx, DWORD PTR $T226481[ebp]
+	lea	ecx, DWORD PTR $T226480[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$19:
-	lea	ecx, DWORD PTR $T226482[ebp]
+	lea	ecx, DWORD PTR $T226481[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$20:
-	lea	ecx, DWORD PTR $T226483[ebp]
+	lea	ecx, DWORD PTR $T226482[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$21:
-	lea	ecx, DWORD PTR $T226484[ebp]
+	lea	ecx, DWORD PTR $T226483[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$22:
-	lea	ecx, DWORD PTR $T226485[ebp]
+	lea	ecx, DWORD PTR $T226484[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$23:
-	lea	ecx, DWORD PTR $T226487[ebp]
+	lea	ecx, DWORD PTR $T226486[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$24:
-	lea	ecx, DWORD PTR $T226489[ebp]
+	lea	ecx, DWORD PTR $T226488[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$25:
-	lea	ecx, DWORD PTR $T226491[ebp]
+	lea	ecx, DWORD PTR $T226490[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$26:
-	lea	ecx, DWORD PTR $T226493[ebp]
+	lea	ecx, DWORD PTR $T226492[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$27:
-	lea	ecx, DWORD PTR $T226495[ebp]
+	lea	ecx, DWORD PTR $T226494[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$28:
-	lea	ecx, DWORD PTR $T226497[ebp]
+	lea	ecx, DWORD PTR $T226496[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$29:
-	lea	ecx, DWORD PTR $T226499[ebp]
+	lea	ecx, DWORD PTR $T226498[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$30:
-	lea	ecx, DWORD PTR $T226501[ebp]
+	lea	ecx, DWORD PTR $T226500[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$31:
-	lea	ecx, DWORD PTR $T226503[ebp]
+	lea	ecx, DWORD PTR $T226502[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$32:
-	lea	ecx, DWORD PTR $T226505[ebp]
+	lea	ecx, DWORD PTR $T226504[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$33:
-	lea	ecx, DWORD PTR $T226507[ebp]
+	lea	ecx, DWORD PTR $T226506[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$36:
-	lea	ecx, DWORD PTR $T226513[ebp]
+	lea	ecx, DWORD PTR $T226512[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$35:
-	lea	ecx, DWORD PTR $T226511[ebp]
+	lea	ecx, DWORD PTR $T226510[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$34:
-	lea	ecx, DWORD PTR $T226509[ebp]
+	lea	ecx, DWORD PTR $T226508[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$39:
-	lea	ecx, DWORD PTR $T226519[ebp]
+	lea	ecx, DWORD PTR $T226518[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$38:
-	lea	ecx, DWORD PTR $T226517[ebp]
+	lea	ecx, DWORD PTR $T226516[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$37:
-	lea	ecx, DWORD PTR $T226515[ebp]
+	lea	ecx, DWORD PTR $T226514[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$40:
-	lea	ecx, DWORD PTR $T226521[ebp]
+	lea	ecx, DWORD PTR $T226520[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$41:
-	lea	ecx, DWORD PTR $T226523[ebp]
+	lea	ecx, DWORD PTR $T226522[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$42:
-	lea	ecx, DWORD PTR $T226525[ebp]
+	lea	ecx, DWORD PTR $T226524[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$43:
-	lea	ecx, DWORD PTR $T226527[ebp]
+	lea	ecx, DWORD PTR $T226526[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$44:
-	lea	ecx, DWORD PTR $T226529[ebp]
+	lea	ecx, DWORD PTR $T226528[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$47:
-	lea	ecx, DWORD PTR $T226537[ebp]
+	lea	ecx, DWORD PTR $T226536[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$46:
-	lea	ecx, DWORD PTR $T226534[ebp]
+	lea	ecx, DWORD PTR $T226533[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$45:
-	lea	ecx, DWORD PTR $T226531[ebp]
+	lea	ecx, DWORD PTR $T226530[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$48:
-	lea	ecx, DWORD PTR $T226540[ebp]
+	lea	ecx, DWORD PTR $T226539[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$49:
-	lea	ecx, DWORD PTR $T226541[ebp]
+	lea	ecx, DWORD PTR $T226540[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$50:
-	lea	ecx, DWORD PTR $T226542[ebp]
+	lea	ecx, DWORD PTR $T226541[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$51:
-	lea	ecx, DWORD PTR $T226543[ebp]
+	lea	ecx, DWORD PTR $T226542[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$52:
-	lea	ecx, DWORD PTR $T226544[ebp]
+	lea	ecx, DWORD PTR $T226543[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$53:
-	lea	ecx, DWORD PTR $T226545[ebp]
+	lea	ecx, DWORD PTR $T226544[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$54:
-	lea	ecx, DWORD PTR $T226546[ebp]
+	lea	ecx, DWORD PTR $T226545[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$55:
-	lea	ecx, DWORD PTR $T226547[ebp]
+	lea	ecx, DWORD PTR $T226546[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$56:
-	lea	ecx, DWORD PTR $T226548[ebp]
+	lea	ecx, DWORD PTR $T226547[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$57:
-	lea	ecx, DWORD PTR $T226549[ebp]
+	lea	ecx, DWORD PTR $T226548[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$58:
-	lea	ecx, DWORD PTR $T226550[ebp]
+	lea	ecx, DWORD PTR $T226549[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$59:
-	lea	ecx, DWORD PTR $T226551[ebp]
+	lea	ecx, DWORD PTR $T226550[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$60:
-	lea	ecx, DWORD PTR $T226552[ebp]
+	lea	ecx, DWORD PTR $T226551[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$61:
-	lea	ecx, DWORD PTR $T226553[ebp]
+	lea	ecx, DWORD PTR $T226552[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$62:
-	lea	ecx, DWORD PTR $T226554[ebp]
+	lea	ecx, DWORD PTR $T226553[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$63:
-	lea	ecx, DWORD PTR $T226555[ebp]
+	lea	ecx, DWORD PTR $T226554[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$64:
-	lea	ecx, DWORD PTR $T226556[ebp]
+	lea	ecx, DWORD PTR $T226555[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$65:
-	lea	ecx, DWORD PTR $T226557[ebp]
+	lea	ecx, DWORD PTR $T226556[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$66:
-	lea	ecx, DWORD PTR $T226558[ebp]
+	lea	ecx, DWORD PTR $T226557[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$67:
-	lea	ecx, DWORD PTR $T226559[ebp]
+	lea	ecx, DWORD PTR $T226558[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$68:
-	lea	ecx, DWORD PTR $T226560[ebp]
+	lea	ecx, DWORD PTR $T226559[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$69:
-	lea	ecx, DWORD PTR $T226561[ebp]
+	lea	ecx, DWORD PTR $T226560[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$70:
-	lea	ecx, DWORD PTR $T226562[ebp]
+	lea	ecx, DWORD PTR $T226561[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$71:
-	lea	ecx, DWORD PTR $T226563[ebp]
+	lea	ecx, DWORD PTR $T226562[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$72:
-	lea	ecx, DWORD PTR $T226564[ebp]
+	lea	ecx, DWORD PTR $T226563[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$73:
-	lea	ecx, DWORD PTR $T226565[ebp]
+	lea	ecx, DWORD PTR $T226564[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$74:
-	lea	ecx, DWORD PTR $T226566[ebp]
+	lea	ecx, DWORD PTR $T226565[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$75:
-	lea	ecx, DWORD PTR $T226567[ebp]
+	lea	ecx, DWORD PTR $T226566[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$76:
-	lea	ecx, DWORD PTR $T226568[ebp]
+	lea	ecx, DWORD PTR $T226567[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$77:
-	lea	ecx, DWORD PTR $T226569[ebp]
+	lea	ecx, DWORD PTR $T226568[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$78:
-	lea	ecx, DWORD PTR $T226570[ebp]
+	lea	ecx, DWORD PTR $T226569[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$80:
-	lea	ecx, DWORD PTR $T226577[ebp]
+	lea	ecx, DWORD PTR $T226576[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$82:
-	lea	ecx, DWORD PTR $T226582[ebp]
+	lea	ecx, DWORD PTR $T226581[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$84:
-	lea	ecx, DWORD PTR _strBuildingClass$224552[ebp]
+	lea	ecx, DWORD PTR _strBuildingClass$224551[ebp]
 	jmp	??1CvString@@QAE@XZ			; CvString::~CvString
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$85:
-	lea	ecx, DWORD PTR $T226587[ebp]
+	lea	ecx, DWORD PTR $T226586[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$86:
-	lea	ecx, DWORD PTR $T226591[ebp]
+	lea	ecx, DWORD PTR $T226590[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$87:
-	lea	ecx, DWORD PTR $T226592[ebp]
+	lea	ecx, DWORD PTR $T226591[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$88:
-	lea	ecx, DWORD PTR $T226595[ebp]
+	lea	ecx, DWORD PTR $T226594[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$89:
-	lea	ecx, DWORD PTR $T226596[ebp]
+	lea	ecx, DWORD PTR $T226595[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$90:
-	lea	ecx, DWORD PTR $T226599[ebp]
+	lea	ecx, DWORD PTR $T226598[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$91:
-	lea	ecx, DWORD PTR $T226600[ebp]
+	lea	ecx, DWORD PTR $T226599[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$92:
-	lea	ecx, DWORD PTR $T226601[ebp]
+	lea	ecx, DWORD PTR $T226600[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __unwindfunclet$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z$93:
-	lea	ecx, DWORD PTR $T226602[ebp]
+	lea	ecx, DWORD PTR $T226601[ebp]
 	jmp	DWORD PTR __imp_??1String@Localization@@UAE@XZ
 __ehhandler$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z:
 	mov	eax, OFFSET __ehfuncinfo$?BuildCounselList@CvAdvisorCounsel@@QAEXW4PlayerTypes@@@Z
