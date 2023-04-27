@@ -377,6 +377,14 @@ bool isPotentialEnemy(TeamTypes eOurTeam, TeamTypes eTheirTeam);
 CvCity* getCity(IDInfo city);
 CvUnit* getUnit(const IDInfo& unit);
 
+
+#ifdef MND_CLEAN_UTILS
+inline int AfterModifiers(int PercentagePoints, int intGameValue) {
+	return ((100 + PercentagePoints) * intGameValue) / 100;
+}
+#endif
+
+
 inline CvUnit* GetPlayerUnit(IDInfo& unit)
 {
 	if((unit.eOwner >= 0) && unit.eOwner < MAX_PLAYERS)

@@ -84,12 +84,6 @@ public:
 	int afterModifiersCityBuildingsDefense();
 #endif
 
-#ifdef MND_CLEAN_UTILS
-	//TODO:  Relocate function to global
-	inline int AfterModifiers(int PercentagePoints, int intGameValue) {
-		return ((100 + PercentagePoints) * intGameValue) / 100;
-	}
-#endif
 
 	bool isCitySelected();
 	bool canBeSelected() const;
