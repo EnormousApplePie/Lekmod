@@ -78,9 +78,10 @@ public:
 	void doTurn();
 #ifdef MND_RF_MIDCLEAN
 	void doTurn_rfDuplicate();
-	void doCityHPHealing_at_doTurn();
+
 #endif
-#ifdef MND_RF_MIDCLEAN
+#ifdef MND_ARCH_DOTURNCITYHP
+	void doCityHPHealing_at_doTurn();
 	int afterModifiersCityBuildingsDefense();
 #endif
 

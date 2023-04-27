@@ -932,8 +932,8 @@
 
 // Space for redundant code segments
 #define MND_RF_BLANK
-// Directive to ignore changes mid-refactor
-#define MND_RF_MIDCLEAN
+// Extract method : city hp healing per turn
+#define MND_ARCH_DOTURNCITYHP
 
 // Pure functions
 #define MND_CLEAN_UTILS

@@ -1819,6 +1819,7 @@ void CvCity::doResourceDemands()
 }
 #endif
 
+#ifndef MND_ARCH_DOTURNCITYHP
 //	--------------------------------------------------------------------------------
 void CvCity::doTurn()
 {
@@ -2079,8 +2080,9 @@ void CvCity::doTurn()
 		// XXX
 	}
 }
+#endif
 
-#ifdef MND_RF_MIDCLEAN
+#ifdef MND_ARCH_DOTURNCITYHP
 //	--------------------------------------------------------------------------------
 int CvCity::afterModifiersCityBuildingsDefense()
 {
@@ -2096,7 +2098,7 @@ int CvCity::afterModifiersCityBuildingsDefense()
 #endif
 
 
-#ifdef MND_RF_MIDCLEAN
+#ifdef MND_ARCH_DOTURNCITYHP
 //	--------------------------------------------------------------------------------
 void CvCity::doCityHPHealing_at_doTurn() {
 	if (getDamage() > 0)
@@ -2119,7 +2121,7 @@ void CvCity::doCityHPHealing_at_doTurn() {
 }
 
 //	--------------------------------------------------------------------------------
-void CvCity::doTurn_rfDuplicate()
+void CvCity::doTurn()
 {
 #ifdef AUI_PERF_LOGGING_FORMATTING_TWEAKS
 	AI_PERF_FORMAT("City-AI-perf.csv", ("CvCity::doTurn, Turn %03d, %s, %s", GC.getGame().getElapsedGameTurns(), GetPlayer()->getCivilizationShortDescription(), getName().c_str()));
@@ -2131,7 +2133,7 @@ void CvCity::doTurn_rfDuplicate()
 	CvPlot* pLoopPlot;
 	int iI;
 
-	doCityHPHealing_at_doTurn();  //extract method - doCityHPHealing@doTurn()
+	doCityHPHealing_at_doTurn();
 	setDrafted(false);
 	setMadeAttack(false);
 	GetCityBuildings()->SetSoldBuildingThisTurn(false);
