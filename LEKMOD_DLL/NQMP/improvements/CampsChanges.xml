@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2016-09-03 20:25:58 -->
+<GameData>
+
+	<!-- Camp now provides +1 Food from Furs, Truffles, and Ivory -->
+	<Improvement_ResourceType_Yields>
+		<Row>
+			<ImprovementType>IMPROVEMENT_CAMP</ImprovementType>
+			<ResourceType>RESOURCE_FUR</ResourceType>
+			<YieldType>YIELD_FOOD</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<ImprovementType>IMPROVEMENT_CAMP</ImprovementType>
+			<ResourceType>RESOURCE_TRUFFLES</ResourceType>
+			<YieldType>YIELD_FOOD</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<ImprovementType>IMPROVEMENT_CAMP</ImprovementType>
+			<ResourceType>RESOURCE_IVORY</ResourceType>
+			<YieldType>YIELD_FOOD</YieldType>
+			<Yield>1</Yield>
+		</Row>
+	</Improvement_ResourceType_Yields>
+
+</GameData>

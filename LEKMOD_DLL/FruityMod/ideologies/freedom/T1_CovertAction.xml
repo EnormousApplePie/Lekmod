@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2/14/2016 9:54:57 PM -->
+<GameData>
+	
+	<!-- T1 Covert Action building: Covert Ops HQ -->
+	<BuildingClasses>
+		<Row>
+			<Type>BUILDINGCLASS_T1_COVERT_ACTION</Type>
+			<DefaultBuilding>BUILDING_T1_COVERT_ACTION</DefaultBuilding>
+			<Description>TXT_KEY_BUILDING_T1_COVERT_ACTION_DESC</Description>
+		</Row>
+	</BuildingClasses>
+	<Buildings>
+		<Row>
+			<Type>BUILDING_T1_COVERT_ACTION</Type>
+			<BuildingClass>BUILDINGCLASS_T1_COVERT_ACTION</BuildingClass>
+			<Cost>-1</Cost>
+			<HurryCostModifier>-1</HurryCostModifier>
+			<NukeImmune>true</NukeImmune>
+			<ExtraSpies>1</ExtraSpies>
+			<Help>TXT_KEY_BUILDING_T1_COVERT_ACTION_STRATEGY</Help>
+			<Description>TXT_KEY_BUILDING_T1_COVERT_ACTION_DESC</Description>
+			<Civilopedia>TXT_KEY_BUILDING_T1_COVERT_ACTION_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_T1_COVERT_ACTION_STRATEGY</Strategy>
+			<ArtDefineTag>MONUMENT</ArtDefineTag>
+			<MinAreaSize>-1</MinAreaSize>
+			<IconAtlas>EXPANSION2_TECH_ATLAS</IconAtlas>
+			<PortraitIndex>0</PortraitIndex>
+			<NeverCapture>true</NeverCapture>
+		</Row>
+	</Buildings>
+	<Language_en_US>
+		<Row Tag="TXT_KEY_BUILDING_T1_COVERT_ACTION_DESC">
+			<Text>Covert Ops HQ</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_T1_COVERT_ACTION_PEDIA">
+			<Text>A Covert Ops HQ is automatically constructed in every city after you have adopted the Covert Actions tenet in the Freedom ideology.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_T1_COVERT_ACTION_STRATEGY">
+			<Text>Provides +1 Spy and doubles coup chance and influence change from coups.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Row Tag="TXT_KEY_BUILDING_T1_COVERT_ACTION_DESC">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Covert Ops HQ</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_T1_COVERT_ACTION_PEDIA">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]A Covert Ops HQ is automatically constructed in every city after you have adopted the Covert Actions tenet in the Freedom ideology.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_T1_COVERT_ACTION_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Provides +1 Spy and doubles coup chance and influence change from coups.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Row Tag="TXT_KEY_BUILDING_T1_COVERT_ACTION_DESC">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Covert Ops HQ</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_T1_COVERT_ACTION_PEDIA">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]A Covert Ops HQ is automatically constructed in every city after you have adopted the Covert Actions tenet in the Freedom ideology.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_T1_COVERT_ACTION_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Provides +1 Spy and doubles coup chance and influence change from coups.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Row Tag="TXT_KEY_BUILDING_T1_COVERT_ACTION_DESC">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Covert Ops HQ</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_T1_COVERT_ACTION_PEDIA">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]A Covert Ops HQ is automatically constructed in every city after you have adopted the Covert Actions tenet in the Freedom ideology.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_T1_COVERT_ACTION_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Provides +1 Spy and doubles coup chance and influence change from coups.</Text>
+		</Row>
+	</Language_RU_RU>
+
+	<!-- Covert Action tooltip -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_POLICY_COVERT_ACTION_HELP" />
+		<Row Tag="TXT_KEY_POLICY_COVERT_ACTION_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Covert Action[ENDCOLOR][NEWLINE]Chance of rigging election in City-States and influence change from doing so doubled. Gain 1 additional Spy.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_POLICY_COVERT_ACTION_HELP" />
+		<Row Tag="TXT_KEY_POLICY_COVERT_ACTION_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Covert Action[ENDCOLOR][NEWLINE]Chance of rigging election in City-States and influence change from doing so doubled. Gain 1 additional Spy.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_POLICY_COVERT_ACTION_HELP" />
+		<Row Tag="TXT_KEY_POLICY_COVERT_ACTION_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Covert Action[ENDCOLOR][NEWLINE]Chance of rigging election in City-States and influence change from doing so doubled. Gain 1 additional Spy.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_POLICY_COVERT_ACTION_HELP" />
+		<Row Tag="TXT_KEY_POLICY_COVERT_ACTION_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Covert Action[ENDCOLOR][NEWLINE]Chance of rigging election in City-States and influence change from doing so doubled. Gain 1 additional Spy.</Text>
+		</Row>
+	</Language_RU_RU>
+</GameData>

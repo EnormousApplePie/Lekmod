@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2/14/2016 11:32:38 PM -->
+<GameData>
+	
+	<!-- Cultural Revolution now gives +50% Tourism to civs with less happiness than you and a free Golden Age. -->
+	<Policies>
+		<Update>
+			<Set LessHappyTourismModifier="50" SharedIdeologyTourismModifier="0" GoldenAgeTurns="10" />
+			<Where Type="POLICY_CULTURAL_REVOLUTION" />
+		</Update>
+	</Policies>
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_POLICY_CULTURAL_REVOLUTION_HELP" />
+		<Row Tag="TXT_KEY_POLICY_CULTURAL_REVOLUTION_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Cultural Revolution[ENDCOLOR][NEWLINE]+50% Tourism [ICON_TOURISM] to civilizations that have less [ICON_HAPPINESS_1] Happiness. Also starts a [ICON_GOLDEN_AGE] Golden Age.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_POLICY_CULTURAL_REVOLUTION_HELP" />
+		<Row Tag="TXT_KEY_POLICY_CULTURAL_REVOLUTION_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Cultural Revolution[ENDCOLOR][NEWLINE]+50% Tourism [ICON_TOURISM] to civilizations that have less [ICON_HAPPINESS_1] Happiness. Also starts a [ICON_GOLDEN_AGE] Golden Age.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_POLICY_CULTURAL_REVOLUTION_HELP" />
+		<Row Tag="TXT_KEY_POLICY_CULTURAL_REVOLUTION_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Cultural Revolution[ENDCOLOR][NEWLINE]+50% Tourism [ICON_TOURISM] to civilizations that have less [ICON_HAPPINESS_1] Happiness. Also starts a [ICON_GOLDEN_AGE] Golden Age.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_POLICY_CULTURAL_REVOLUTION_HELP" />
+		<Row Tag="TXT_KEY_POLICY_CULTURAL_REVOLUTION_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Cultural Revolution[ENDCOLOR][NEWLINE]+50% Tourism [ICON_TOURISM] to civilizations that have less [ICON_HAPPINESS_1] Happiness. Also starts a [ICON_GOLDEN_AGE] Golden Age.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

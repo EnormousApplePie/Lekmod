@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2017-05-08 18:15:00 -->
+<GameData>
+	
+	<!-- No longer costs more than the Chariot Archer. -->
+	<Units>
+		<Update>
+			<Set Cost="56" />
+			<Where Type="UNIT_INDIAN_WARELEPHANT" />
+		</Update>
+	</Units>
+	
+</GameData>

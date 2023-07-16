@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2016-09-26 23:38:28 -->
+<GameData>
+
+	<!-- +1 Science per 3 Followers in foreign cities and religion spreads 30% further away --> 
+	<Beliefs>
+		<Update>
+			<Set SpyPressure="0" SpreadDistanceModifier="30" />
+			<Where Type="BELIEF_UNDERGROUND_SECT" />
+		</Update>
+	</Beliefs>
+	<Belief_YieldChangePerXForeignFollowers>
+		<Row>
+			<BeliefType>BELIEF_UNDERGROUND_SECT</BeliefType>
+			<YieldType>YIELD_SCIENCE</YieldType>
+			<ForeignFollowers>3</ForeignFollowers>
+		</Row>
+	</Belief_YieldChangePerXForeignFollowers>
+	
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_BELIEF_UNDERGROUND_SECT" />
+		<Row Tag="TXT_KEY_BELIEF_UNDERGROUND_SECT">
+			<Text>+1 [ICON_RESEARCH] Science for every 3 followers of this religion in other civilizations and religion spreads 30% further away</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_BELIEF_UNDERGROUND_SECT" />
+		<Row Tag="TXT_KEY_BELIEF_UNDERGROUND_SECT">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]+1 [ICON_RESEARCH] Science for every 3 followers of this religion in other civilizations and religion spreads 30% further away</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_BELIEF_UNDERGROUND_SECT" />
+		<Row Tag="TXT_KEY_BELIEF_UNDERGROUND_SECT">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]+1 [ICON_RESEARCH] Science for every 3 followers of this religion in other civilizations and religion spreads 30% further away</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_BELIEF_UNDERGROUND_SECT" />
+		<Row Tag="TXT_KEY_BELIEF_UNDERGROUND_SECT">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]+1 [ICON_RESEARCH] Science for every 3 followers of this religion in other civilizations and religion spreads 30% further away</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

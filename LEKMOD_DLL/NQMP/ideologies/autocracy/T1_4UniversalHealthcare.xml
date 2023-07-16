@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 3/22/2017 7:17:12 PM -->
+<GameData>
+
+	<!-- Universal Healthcare: Now also affects Guilds (in addition to National Wonders). -->
+	<Policy_BuildingClassHappiness>
+		<Row>
+			<PolicyType>POLICY_UNIVERSAL_HEALTHCARE_A</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_WRITERS_GUILD</BuildingClassType>
+			<Happiness>1</Happiness>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_UNIVERSAL_HEALTHCARE_A</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_ARTISTS_GUILD</BuildingClassType>
+			<Happiness>1</Happiness>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_UNIVERSAL_HEALTHCARE_A</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_MUSICIANS_GUILD</BuildingClassType>
+			<Happiness>1</Happiness>
+		</Row>
+	</Policy_BuildingClassHappiness>
+
+	<!-- localization -->
+	<!-- TXT_KEY_POLICY_UNIVERSAL_HEALTHCARE_HELP is updated in Order. -->
+
+</GameData>

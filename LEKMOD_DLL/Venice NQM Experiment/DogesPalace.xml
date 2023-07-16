@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 3/30/2015 10:09:18 PM -->
+<GameData>
+	<Buildings>
+		<Row>
+			<Type>BUILDING_PALACE_VENICE</Type>
+			<BuildingClass>BUILDINGCLASS_PALACE</BuildingClass>
+			<Cost>0</Cost>
+			<Help>TXT_KEY_BUILDING_PALACE_VENICE_HELP</Help>
+			<Description>TXT_KEY_BUILDING_PALACE_VENICE</Description>
+			<Civilopedia>TXT_KEY_CIV5_BUILDINGS_PALACE_TEXT</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_PALACE_VENICE_STRATEGY</Strategy>
+			<ArtDefineTag>PALACE</ArtDefineTag>
+			<Capital>true</Capital>
+			<NukeImmune>true</NukeImmune>
+			<SpecialistType>SPECIALIST_MERCHANT</SpecialistType>
+			<SpecialistCount>1</SpecialistCount>
+			<GreatPeopleRateChange>1</GreatPeopleRateChange>
+			<MinAreaSize>-1</MinAreaSize>
+			<Defense>250</Defense>
+			<ArtInfoCulturalVariation>true</ArtInfoCulturalVariation>
+			<DisplayPosition>32</DisplayPosition>
+			<GreatWorkSlotType>GREAT_WORK_SLOT_ART_ARTIFACT</GreatWorkSlotType>
+			<GreatWorkCount>1</GreatWorkCount>
+			<NeverCapture>true</NeverCapture>
+			<IconAtlas>BW_ATLAS_1</IconAtlas>
+			<PortraitIndex>19</PortraitIndex>
+		</Row>
+	</Buildings>
+	<Building_Flavors>
+		<Row>
+			<BuildingType>BUILDING_PALACE_VENICE</BuildingType>
+			<FlavorType>FLAVOR_GOLD</FlavorType>
+			<Flavor>10</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_PALACE_VENICE</BuildingType>
+			<FlavorType>FLAVOR_SCIENCE</FlavorType>
+			<Flavor>10</Flavor>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_PALACE_VENICE</BuildingType>
+			<FlavorType>FLAVOR_CULTURE</FlavorType>
+			<Flavor>10</Flavor>
+		</Row>
+	</Building_Flavors>
+	<Building_YieldChanges>
+		<Row>
+			<BuildingType>BUILDING_PALACE_VENICE</BuildingType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<Yield>3</Yield>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_PALACE_VENICE</BuildingType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>3</Yield>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_PALACE_VENICE</BuildingType>
+			<YieldType>YIELD_SCIENCE</YieldType>
+			<Yield>3</Yield>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_PALACE_VENICE</BuildingType>
+			<YieldType>YIELD_CULTURE</YieldType>
+			<Yield>1</Yield>
+		</Row>
+	</Building_YieldChanges>
+	<Civilization_BuildingClassOverrides>
+		<Row>
+			<CivilizationType>CIVILIZATION_VENICE</CivilizationType>
+			<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
+			<BuildingType>BUILDING_PALACE_VENICE</BuildingType>
+		</Row>
+	</Civilization_BuildingClassOverrides>
+	<Language_en_US>
+		<Row Tag="TXT_KEY_BUILDING_PALACE_VENICE">
+			<Text>Doge's Palace</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_PALACE_VENICE_HELP">
+			<Text>Indicates this City is the [ICON_CAPITAL] Capital of the empire. Contains 1 slot for a Great Work of Art. Contains 1 Merchant specialist slot.[NEWLINE][NEWLINE][ICON_CONNECTED] Connecting other Cities to the [ICON_CAPITAL] Capital by Road will produce additional [ICON_GOLD] Gold.[NEWLINE][NEWLINE]+3 [ICON_PRODUCTION] Production, +3 [ICON_RESEARCH] Science, +3 [ICON_GOLD] Gold, +1 Great Merchant point.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_PALACE_VENICE_STRATEGY">
+			<Text>The Doge's Palace automatically appears in the capital city of the empire. It provides a small amount of [ICON_RESEARCH] Science, [ICON_GOLD] Gold, [ICON_CULTURE] Culture, and Great Merchant points for free and has a Merchant specialist slot. If you connect other cities to the capital by road or harbor, you will create city connections which generate additional income. If your capital city is captured, your Doge's Palace will automatically be rebuilt in another city. If you subsequently retake your original capital, the Doge's Palace will move back to its original location.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Row Tag="TXT_KEY_BUILDING_PALACE_VENICE">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Doge's Palace</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_PALACE_VENICE_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Indicates this City is the [ICON_CAPITAL] Capital of the empire. Contains 1 slot for a Great Work of Art. Contains 1 Merchant specialist slot.[NEWLINE][NEWLINE][ICON_CONNECTED] Connecting other Cities to the [ICON_CAPITAL] Capital by Road will produce additional [ICON_GOLD] Gold.[NEWLINE][NEWLINE]+3 [ICON_PRODUCTION] Production, +3 [ICON_RESEARCH] Science, +3 [ICON_GOLD] Gold, +1 Great Merchant point.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_PALACE_VENICE_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]The Doge's Palace automatically appears in the capital city of the empire. It provides a small amount of [ICON_RESEARCH] Science, [ICON_GOLD] Gold, [ICON_CULTURE] Culture, and Great Merchant points for free and has a Merchant specialist slot. If you connect other cities to the capital by road or harbor, you will create city connections which generate additional income. If your capital city is captured, your Doge's Palace will automatically be rebuilt in another city. If you subsequently retake your original capital, the Doge's Palace will move back to its original location.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_ES_ES>
+		<Row Tag="TXT_KEY_BUILDING_PALACE_VENICE">
+			<Text>[COLOR_WARNING_TEXT](ES_ES text) [ENDCOLOR]Doge's Palace</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_PALACE_VENICE_HELP">
+			<Text>[COLOR_WARNING_TEXT](ES_ES text) [ENDCOLOR]Indicates this City is the [ICON_CAPITAL] Capital of the empire. Contains 1 slot for a Great Work of Art. Contains 1 Merchant specialist slot.[NEWLINE][NEWLINE][ICON_CONNECTED] Connecting other Cities to the [ICON_CAPITAL] Capital by Road will produce additional [ICON_GOLD] Gold.[NEWLINE][NEWLINE]+3 [ICON_PRODUCTION] Production, +3 [ICON_RESEARCH] Science, +3 [ICON_GOLD] Gold, +1 Great Merchant point.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_PALACE_VENICE_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](ES_ES text) [ENDCOLOR]The Doge's Palace automatically appears in the capital city of the empire. It provides a small amount of [ICON_RESEARCH] Science, [ICON_GOLD] Gold, [ICON_CULTURE] Culture, and Great Merchant points for free and has a Merchant specialist slot. If you connect other cities to the capital by road or harbor, you will create city connections which generate additional income. If your capital city is captured, your Doge's Palace will automatically be rebuilt in another city. If you subsequently retake your original capital, the Doge's Palace will move back to its original location.</Text>
+		</Row>
+	</Language_ES_ES>
+	<Language_FR_FR>
+		<Row Tag="TXT_KEY_BUILDING_PALACE_VENICE">
+			<Text>[COLOR_WARNING_TEXT](FR_FR text) [ENDCOLOR]Doge's Palace</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_PALACE_VENICE_HELP">
+			<Text>[COLOR_WARNING_TEXT](FR_FR text) [ENDCOLOR]Indicates this City is the [ICON_CAPITAL] Capital of the empire. Contains 1 slot for a Great Work of Art. Contains 1 Merchant specialist slot.[NEWLINE][NEWLINE][ICON_CONNECTED] Connecting other Cities to the [ICON_CAPITAL] Capital by Road will produce additional [ICON_GOLD] Gold.[NEWLINE][NEWLINE]+3 [ICON_PRODUCTION] Production, +3 [ICON_RESEARCH] Science, +3 [ICON_GOLD] Gold, +1 Great Merchant point.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_PALACE_VENICE_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](FR_FR text) [ENDCOLOR]The Doge's Palace automatically appears in the capital city of the empire. It provides a small amount of [ICON_RESEARCH] Science, [ICON_GOLD] Gold, [ICON_CULTURE] Culture, and Great Merchant points for free and has a Merchant specialist slot. If you connect other cities to the capital by road or harbor, you will create city connections which generate additional income. If your capital city is captured, your Doge's Palace will automatically be rebuilt in another city. If you subsequently retake your original capital, the Doge's Palace will move back to its original location.</Text>
+		</Row>
+	</Language_FR_FR>
+	<Language_PL_PL>
+		<Row Tag="TXT_KEY_BUILDING_PALACE_VENICE">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Doge's Palace</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_PALACE_VENICE_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Indicates this City is the [ICON_CAPITAL] Capital of the empire. Contains 1 slot for a Great Work of Art. Contains 1 Merchant specialist slot.[NEWLINE][NEWLINE][ICON_CONNECTED] Connecting other Cities to the [ICON_CAPITAL] Capital by Road will produce additional [ICON_GOLD] Gold.[NEWLINE][NEWLINE]+3 [ICON_PRODUCTION] Production, +3 [ICON_RESEARCH] Science, +3 [ICON_GOLD] Gold, +1 Great Merchant point.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_PALACE_VENICE_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]The Doge's Palace automatically appears in the capital city of the empire. It provides a small amount of [ICON_RESEARCH] Science, [ICON_GOLD] Gold, [ICON_CULTURE] Culture, and Great Merchant points for free and has a Merchant specialist slot. If you connect other cities to the capital by road or harbor, you will create city connections which generate additional income. If your capital city is captured, your Doge's Palace will automatically be rebuilt in another city. If you subsequently retake your original capital, the Doge's Palace will move back to its original location.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Row Tag="TXT_KEY_BUILDING_PALACE_VENICE">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Doge's Palace</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_PALACE_VENICE_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Indicates this City is the [ICON_CAPITAL] Capital of the empire. Contains 1 slot for a Great Work of Art. Contains 1 Merchant specialist slot.[NEWLINE][NEWLINE][ICON_CONNECTED] Connecting other Cities to the [ICON_CAPITAL] Capital by Road will produce additional [ICON_GOLD] Gold.[NEWLINE][NEWLINE]+3 [ICON_PRODUCTION] Production, +3 [ICON_RESEARCH] Science, +3 [ICON_GOLD] Gold, +1 Great Merchant point.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_PALACE_VENICE_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]The Doge's Palace automatically appears in the capital city of the empire. It provides a small amount of [ICON_RESEARCH] Science, [ICON_GOLD] Gold, [ICON_CULTURE] Culture, and Great Merchant points for free and has a Merchant specialist slot. If you connect other cities to the capital by road or harbor, you will create city connections which generate additional income. If your capital city is captured, your Doge's Palace will automatically be rebuilt in another city. If you subsequently retake your original capital, the Doge's Palace will move back to its original location.</Text>
+		</Row>
+	</Language_RU_RU>
+</GameData>

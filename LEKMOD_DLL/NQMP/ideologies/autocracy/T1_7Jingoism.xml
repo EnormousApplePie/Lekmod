@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 3/22/2017 7:17:12 PM -->
+<GameData>
+
+	<!-- Jingoism (replaces Clauswitz's Legacy): +15% Attack Strength in foreign territory during Golden Ages, and they last 25% longer. -->
+	<Policies>
+		<Update>
+			<Set Level="1" AttackBonusTurns="0" OneShot="false" GoldenAgeDurationMod="25" />
+			<Where Type="POLICY_NEW_ORDER" />
+		</Update>
+	</Policies>
+
+	<!-- new promotion -->
+	<UnitPromotions>
+		<Row>
+			<Type>PROMOTION_JINGOISM</Type>
+			<Description>TXT_KEY_PROMOTION_JINGOISM</Description>
+			<Help>TXT_KEY_PROMOTION_JINGOISM_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<OrderPriority>6</OrderPriority>
+			<PortraitIndex>59</PortraitIndex>
+			<IconAtlas>ABILITY_ATLAS</IconAtlas>
+			<PediaType>PEDIA_MELEE</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_JINGOISM</PediaEntry>
+			<CannotBeChosen>true</CannotBeChosen>
+			<GoldenAgeForeignAttackBonus>15</GoldenAgeForeignAttackBonus>
+		</Row>
+	</UnitPromotions>
+	<Policy_FreePromotions>
+		<Row>
+			<PolicyType>POLICY_NEW_ORDER</PolicyType>
+			<PromotionType>PROMOTION_JINGOISM</PromotionType>
+		</Row>
+	</Policy_FreePromotions>
+	<UnitPromotions_UnitCombats>
+		<Row>
+			<PromotionType>PROMOTION_JINGOISM</PromotionType>
+			<UnitCombatType>UNITCOMBAT_RECON</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_JINGOISM</PromotionType>
+			<UnitCombatType>UNITCOMBAT_ARCHER</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_JINGOISM</PromotionType>
+			<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_JINGOISM</PromotionType>
+			<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_JINGOISM</PromotionType>
+			<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_JINGOISM</PromotionType>
+			<UnitCombatType>UNITCOMBAT_GUN</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_JINGOISM</PromotionType>
+			<UnitCombatType>UNITCOMBAT_ARMOR</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_JINGOISM</PromotionType>
+			<UnitCombatType>UNITCOMBAT_HELICOPTER</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_JINGOISM</PromotionType>
+			<UnitCombatType>UNITCOMBAT_NAVALRANGED</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_JINGOISM</PromotionType>
+			<UnitCombatType>UNITCOMBAT_FIGHTER</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_JINGOISM</PromotionType>
+			<UnitCombatType>UNITCOMBAT_BOMBER</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_JINGOISM</PromotionType>
+			<UnitCombatType>UNITCOMBAT_NAVALMELEE</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_JINGOISM</PromotionType>
+			<UnitCombatType>UNITCOMBAT_SUBMARINE</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_JINGOISM</PromotionType>
+			<UnitCombatType>UNITCOMBAT_CARRIER</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_JINGOISM</PromotionType>
+			<UnitCombatType>UNITCOMBAT_PARADROPPER</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_JINGOISM</PromotionType>
+			<UnitCombatType>UNITCOMBAT_MOUNTED_RANGED</UnitCombatType>
+		</Row>
+	</UnitPromotions_UnitCombats>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_POLICY_NEW_ORDER" />
+		<Row Tag="TXT_KEY_POLICY_NEW_ORDER">
+			<Text>Jingoism</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_NEW_ORDER_HELP" />
+		<Row Tag="TXT_KEY_POLICY_NEW_ORDER_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Jingoism[ENDCOLOR][NEWLINE]+15% [ICON_STRENGTH] Attack Strength in foreign territory during [ICON_GOLDEN_AGE] Golden Ages, and they last 25% longer.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_JINGOISM">
+			<Text>Jingoism</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_JINGOISM_HELP">
+			<Text>+15% [ICON_STRENGTH] Attack Strength in foreign territory during Golden Ages.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_EUPANEL_GOLDEN_AGE_FOREIGN_ATTACK_BONUS">
+			<Text>Jingoism Attack Bonus</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_POLICY_NEW_ORDER" />
+		<Row Tag="TXT_KEY_POLICY_NEW_ORDER">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Jingoism</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_NEW_ORDER_HELP" />
+		<Row Tag="TXT_KEY_POLICY_NEW_ORDER_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Jingoism[ENDCOLOR][NEWLINE]+15% [ICON_STRENGTH] Attack Strength in foreign territory during [ICON_GOLDEN_AGE] Golden Ages, and they last 25% longer.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_JINGOISM">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Jingoism</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_JINGOISM_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]+15% [ICON_STRENGTH] Attack Strength in foreign territory during Golden Ages.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_EUPANEL_GOLDEN_AGE_FOREIGN_ATTACK_BONUS">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Jingoism Attack Bonus</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_POLICY_NEW_ORDER" />
+		<Row Tag="TXT_KEY_POLICY_NEW_ORDER">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Jingoism</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_NEW_ORDER_HELP" />
+		<Row Tag="TXT_KEY_POLICY_NEW_ORDER_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Jingoism[ENDCOLOR][NEWLINE]+15% [ICON_STRENGTH] Attack Strength in foreign territory during [ICON_GOLDEN_AGE] Golden Ages, and they last 25% longer.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_JINGOISM">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Jingoism</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_JINGOISM_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]+15% [ICON_STRENGTH] Attack Strength in foreign territory during Golden Ages.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_EUPANEL_GOLDEN_AGE_FOREIGN_ATTACK_BONUS">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Jingoism Attack Bonus</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_POLICY_NEW_ORDER" />
+		<Row Tag="TXT_KEY_POLICY_NEW_ORDER">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Jingoism</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_NEW_ORDER_HELP" />
+		<Row Tag="TXT_KEY_POLICY_NEW_ORDER_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Jingoism[ENDCOLOR][NEWLINE]+15% [ICON_STRENGTH] Attack Strength in foreign territory during [ICON_GOLDEN_AGE] Golden Ages, and they last 25% longer.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_JINGOISM">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Jingoism</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_JINGOISM_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]+15% [ICON_STRENGTH] Attack Strength in foreign territory during Golden Ages.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_EUPANEL_GOLDEN_AGE_FOREIGN_ATTACK_BONUS">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Jingoism Attack Bonus</Text>
+		</Row>
+	</Language_RU_RU>
+	
+</GameData>

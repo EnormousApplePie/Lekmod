@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2016-09-04 11:51:54 -->
+<GameData>
+
+	<LeagueSpecialSessions>
+		<Update>
+			<Set TurnsBetweenSessions="20" />
+			<Where Type="LEAGUE_SPECIAL_SESSION_START_WORLD_CONGRESS" />
+		</Update>
+		<Update>
+			<Set TurnsBetweenSessions="16" />
+			<Where Type="LEAGUE_SPECIAL_SESSION_WELCOME_CITY_STATES" />
+		</Update>
+		<Update>
+			<Set TurnsBetweenSessions="13" />
+			<Where Type="LEAGUE_SPECIAL_SESSION_LEADERSHIP_COUNCIL" />
+		</Update>
+		<Update>
+			<Set TurnsBetweenSessions="7" />
+			<Where Type="LEAGUE_SPECIAL_SESSION_START_UNITED_NATIONS" />
+		</Update>
+	</LeagueSpecialSessions>
+	
+</GameData>

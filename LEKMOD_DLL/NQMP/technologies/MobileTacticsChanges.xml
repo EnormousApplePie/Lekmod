@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2017-11-29 20:53:46 -->
+<GameData>
+	
+	<!-- Mech infantry now available at Advanced Ballistics (instead of Mobile Tactics). -->
+	<Units>
+		<Update>
+			<Set PrereqTech="TECH_ADVANCED_BALLISTICS" />
+			<Where Type="UNIT_MECHANIZED_INFANTRY" />
+		</Update>
+	</Units>
+
+	<!-- Remove Mobile Tactics from the game. Particle Physics no longer requires Mobile Tactics. -->
+	<Technology_Flavors>
+		<Delete TechType="TECH_MOBILE_TACTICS" />
+	</Technology_Flavors>
+	<Technology_PrereqTechs>
+		<Delete TechType="TECH_PARTICLE_PHYSICS" PrereqTech="TECH_MOBILE_TACTICS" />
+		<Delete TechType="TECH_MOBILE_TACTICS" />
+	</Technology_PrereqTechs>
+	<Technologies>
+		<Delete Type="TECH_MOBILE_TACTICS" />
+	</Technologies>
+
+</GameData>

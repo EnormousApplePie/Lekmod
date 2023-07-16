@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 3/29/2015 12:00:08 PM -->
+<GameData>
+
+	<!-- Create new unit type -->
+	<UnitCombatInfos>
+		<Row>
+			<Type>UNITCOMBAT_MOUNTED_RANGED</Type>
+			<Description>TXT_KEY_UNITCOMBAT_MOUNTED_RANGED</Description>
+		</Row>
+	</UnitCombatInfos>
+	<Language_en_US>
+		<Row Tag="TXT_KEY_UNITCOMBAT_MOUNTED_RANGED">
+			<Text>Mounted Ranged Units</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Row Tag="TXT_KEY_UNITCOMBAT_MOUNTED_RANGED">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Mounted Units</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Row Tag="TXT_KEY_UNITCOMBAT_MOUNTED_RANGED">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Mounted Units</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Row Tag="TXT_KEY_UNITCOMBAT_MOUNTED_RANGED">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Mounted Units</Text>
+		</Row>
+	</Language_RU_RU>
+
+	<!-- Update all Mounted Ranged units to the new type -->
+	<Units>
+		<Update>
+			<Set CombatClass="UNITCOMBAT_MOUNTED_RANGED" />
+			<Where Type="UNIT_CHARIOT_ARCHER" />
+		</Update>
+		<Update>
+			<Set CombatClass="UNITCOMBAT_MOUNTED_RANGED" />
+			<Where Type="UNIT_EGYPTIAN_WARCHARIOT" />
+		</Update>
+		<Update>
+			<Set CombatClass="UNITCOMBAT_MOUNTED_RANGED" />
+			<Where Type="UNIT_HUN_HORSE_ARCHER" />
+		</Update>
+		<Update>
+			<Set CombatClass="UNITCOMBAT_MOUNTED_RANGED" />
+			<Where Type="UNIT_INDIAN_WARELEPHANT" />
+		</Update>
+		<Update>
+			<Set CombatClass="UNITCOMBAT_MOUNTED_RANGED" />
+			<Where Type="UNIT_ARABIAN_CAMELARCHER" />
+		</Update>
+		<Update>
+			<Set CombatClass="UNITCOMBAT_MOUNTED_RANGED" Moves="4" />
+			<Where Type="UNIT_MONGOLIAN_KESHIK" />
+		</Update>
+	</Units>
+
+	<!-- Add Ranged promotion line to this unit type -->
+	<UnitPromotions_UnitCombats>
+		<Row>
+			<PromotionType>PROMOTION_EMBARKATION</PromotionType>
+			<UnitCombatType>UNITCOMBAT_MOUNTED_RANGED</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_DEFENSIVE_EMBARKATION</PromotionType>
+			<UnitCombatType>UNITCOMBAT_MOUNTED_RANGED</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_ALLWATER_EMBARKATION</PromotionType>
+			<UnitCombatType>UNITCOMBAT_MOUNTED_RANGED</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_INSTA_HEAL</PromotionType>
+			<UnitCombatType>UNITCOMBAT_MOUNTED_RANGED</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_ACCURACY_1</PromotionType>
+			<UnitCombatType>UNITCOMBAT_MOUNTED_RANGED</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_ACCURACY_2</PromotionType>
+			<UnitCombatType>UNITCOMBAT_MOUNTED_RANGED</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_ACCURACY_3</PromotionType>
+			<UnitCombatType>UNITCOMBAT_MOUNTED_RANGED</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_BARRAGE_1</PromotionType>
+			<UnitCombatType>UNITCOMBAT_MOUNTED_RANGED</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_BARRAGE_2</PromotionType>
+			<UnitCombatType>UNITCOMBAT_MOUNTED_RANGED</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_BARRAGE_3</PromotionType>
+			<UnitCombatType>UNITCOMBAT_MOUNTED_RANGED</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_COVER_1</PromotionType>
+			<UnitCombatType>UNITCOMBAT_MOUNTED_RANGED</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_COVER_2</PromotionType>
+			<UnitCombatType>UNITCOMBAT_MOUNTED_RANGED</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_MARCH</PromotionType>
+			<UnitCombatType>UNITCOMBAT_MOUNTED_RANGED</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_LOGISTICS</PromotionType>
+			<UnitCombatType>UNITCOMBAT_MOUNTED_RANGED</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_RANGE</PromotionType>
+			<UnitCombatType>UNITCOMBAT_MOUNTED_RANGED</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_MORALE</PromotionType>
+			<UnitCombatType>UNITCOMBAT_MOUNTED_RANGED</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_HIMEJI_CASTLE</PromotionType>
+			<UnitCombatType>UNITCOMBAT_MOUNTED_RANGED</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_NATIONALISM</PromotionType>
+			<UnitCombatType>UNITCOMBAT_MOUNTED_RANGED</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_FASTER_HEAL</PromotionType>
+			<UnitCombatType>UNITCOMBAT_MOUNTED_RANGED</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_ALTITUDE_TRAINING</PromotionType>
+			<UnitCombatType>UNITCOMBAT_MOUNTED_RANGED</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_HOMELAND_GUARDIAN_BOOGALOO</PromotionType>
+			<UnitCombatType>UNITCOMBAT_MOUNTED_RANGED</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_STATUE_ZEUS</PromotionType>
+			<UnitCombatType>UNITCOMBAT_MOUNTED_RANGED</UnitCombatType>
+		</Row>
+		<!-- This is the promotion from the Discipline policy in Honor -->
+		<Row>
+			<PromotionType>PROMOTION_ADJACENT_BONUS</PromotionType>
+			<UnitCombatType>UNITCOMBAT_MOUNTED_RANGED</UnitCombatType>
+		</Row>
+	</UnitPromotions_UnitCombats>
+
+	<!-- Apply VS-Mounted promotion effect -->
+	<!-- NOTE: Formation and Ambush are merged in /unit_promotions/MergeAmbushAndFormation.xml and loaded before this file. -->
+	<UnitPromotions_UnitCombatMods>
+		<Row>
+			<PromotionType>PROMOTION_FORMATION_1</PromotionType>
+			<UnitCombatType>UNITCOMBAT_MOUNTED_RANGED</UnitCombatType>
+			<Modifier>33</Modifier>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_FORMATION_2</PromotionType>
+			<UnitCombatType>UNITCOMBAT_MOUNTED_RANGED</UnitCombatType>
+			<Modifier>33</Modifier>
+		</Row>
+		<!-- Remove the two Ambush Formation promotion adjustments below if that promotion is removed from the game. -->
+		<Row>
+			<PromotionType>PROMOTION_AMBUSH_FORMATION_1</PromotionType>
+			<UnitCombatType>UNITCOMBAT_MOUNTED_RANGED</UnitCombatType>
+			<Modifier>33</Modifier>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_AMBUSH_FORMATION_2</PromotionType>
+			<UnitCombatType>UNITCOMBAT_MOUNTED_RANGED</UnitCombatType>
+			<Modifier>33</Modifier>
+		</Row>
+		<!-- End Ambush Formation promotions. -->
+		<Row>
+			<PromotionType>PROMOTION_ANTI_MOUNTED_I</PromotionType>
+			<UnitCombatType>UNITCOMBAT_MOUNTED_RANGED</UnitCombatType>
+			<Modifier>50</Modifier>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_ANTI_MOUNTED_II</PromotionType>
+			<UnitCombatType>UNITCOMBAT_MOUNTED_RANGED</UnitCombatType>
+			<Modifier>100</Modifier>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_MOUNTED_PENALTY</PromotionType>
+			<UnitCombatType>UNITCOMBAT_MOUNTED_RANGED</UnitCombatType>
+			<Modifier>-33</Modifier>
+		</Row>
+	</UnitPromotions_UnitCombatMods>
+	
+	<!-- Apply Temple of Artemis / Stables production modifier -->
+	<Building_UnitCombatProductionModifiers>
+		<Row>
+			<BuildingType>BUILDING_STABLE</BuildingType>
+			<UnitCombatType>UNITCOMBAT_MOUNTED_RANGED</UnitCombatType>
+			<Modifier>15</Modifier>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_DUCAL_STABLE</BuildingType>
+			<UnitCombatType>UNITCOMBAT_MOUNTED_RANGED</UnitCombatType>
+			<Modifier>15</Modifier>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_TEMPLE_ARTEMIS</BuildingType>
+			<UnitCombatType>UNITCOMBAT_MOUNTED_RANGED</UnitCombatType>
+			<Modifier>15</Modifier>
+		</Row>
+	</Building_UnitCombatProductionModifiers>
+
+	<!-- Apply Ducal Stable experience boost -->
+	<Building_UnitCombatFreeExperiences>
+		<Row>
+			<BuildingType>BUILDING_DUCAL_STABLE</BuildingType>
+			<UnitCombatType>UNITCOMBAT_MOUNTED_RANGED</UnitCombatType>
+			<Experience>15</Experience>
+		</Row>
+	</Building_UnitCombatFreeExperiences>
+
+	<!-- Apply American/Songhai/Shoshone/Mongol traits -->
+	<Trait_FreePromotionUnitCombats>
+		<Row>
+			<TraitType>TRAIT_RIVER_EXPANSION</TraitType>
+			<UnitCombatType>UNITCOMBAT_MOUNTED_RANGED</UnitCombatType>
+			<PromotionType>PROMOTION_SENTRY</PromotionType>
+		</Row>
+		<Row>
+			<TraitType>TRAIT_AMPHIB_WARLORD</TraitType>
+			<UnitCombatType>UNITCOMBAT_MOUNTED_RANGED</UnitCombatType>
+			<PromotionType>PROMOTION_AMPHIBIOUS</PromotionType>
+		</Row>
+		<Row>
+			<TraitType>TRAIT_AMPHIB_WARLORD</TraitType>
+			<UnitCombatType>UNITCOMBAT_MOUNTED_RANGED</UnitCombatType>
+			<PromotionType>PROMOTION_WAR_CANOES</PromotionType>
+		</Row>
+		<Row>
+			<TraitType>TRAIT_GREAT_EXPANSE</TraitType>
+			<UnitCombatType>UNITCOMBAT_MOUNTED_RANGED</UnitCombatType>
+			<PromotionType>PROMOTION_HOMELAND_GUARDIAN_BOOGALOO</PromotionType>
+		</Row>
+	</Trait_FreePromotionUnitCombats>
+	<Trait_MovesChangeUnitCombats>
+		<Row>
+			<TraitType>TRAIT_TERROR</TraitType>
+			<UnitCombatType>UNITCOMBAT_MOUNTED_RANGED</UnitCombatType>
+			<MovesChange>1</MovesChange>
+		</Row>
+	</Trait_MovesChangeUnitCombats>
+
+</GameData>

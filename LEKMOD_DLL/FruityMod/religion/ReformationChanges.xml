@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 6/13/2015 9:55:06 PM -->
+<GameData>
+
+	<!-- *** CHANGE EXISTING REFORMATION BELIEFS *** -->
+
+	<!-- To The Glory Of God: Old effect removed. Now provides +2 Faith from Specialists. -->
+	<Beliefs>
+		<Update>
+			<Set FaithPurchaseAllGreatPeople="false" />
+			<Where Type="BELIEF_TO_GLORY_OF_GOD" />
+		</Update>
+	</Beliefs>
+	<Belief_BuildingClassYieldChanges>
+		<Row>
+			<BeliefType>BELIEF_TO_GLORY_OF_GOD</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_GRAND_TEMPLE</BuildingClassType>
+			<YieldType>YIELD_FOOD</YieldType>
+			<YieldChange>5</YieldChange>
+		</Row>
+		<Row>
+			<BeliefType>BELIEF_TO_GLORY_OF_GOD</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_GRAND_TEMPLE</BuildingClassType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<YieldChange>5</YieldChange>
+		</Row>
+		<Row>
+			<BeliefType>BELIEF_TO_GLORY_OF_GOD</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_GRAND_TEMPLE</BuildingClassType>
+			<YieldType>YIELD_SCIENCE</YieldType>
+			<YieldChange>5</YieldChange>
+		</Row>
+		<Row>
+			<BeliefType>BELIEF_TO_GLORY_OF_GOD</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_GRAND_TEMPLE</BuildingClassType>
+			<YieldType>YIELD_CULTURE</YieldType>
+			<YieldChange>5</YieldChange>
+		</Row>
+		<Row>
+			<BeliefType>BELIEF_TO_GLORY_OF_GOD</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_GRAND_TEMPLE</BuildingClassType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<YieldChange>5</YieldChange>
+		</Row>
+		<Row>
+			<BeliefType>BELIEF_TO_GLORY_OF_GOD</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_GRAND_TEMPLE</BuildingClassType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<YieldChange>5</YieldChange>
+		</Row>
+	</Belief_BuildingClassYieldChanges>
+	<Belief_BuildingClassHappiness>
+		<Row>
+			<BeliefType>BELIEF_TO_GLORY_OF_GOD</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_GRAND_TEMPLE</BuildingClassType>
+			<Happiness>5</Happiness>
+		</Row>
+	</Belief_BuildingClassHappiness>
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_BELIEF_TO_GLORY_OF_GOD" />
+		<Row Tag="TXT_KEY_BELIEF_TO_GLORY_OF_GOD">
+			<Text>Grand Temple provides +5 [ICON_FOOD] Food, +5 [ICON_PRODUCTION] Production, +5 [ICON_RESEARCH] Science, +5 [ICON_CULTURE] Culture, +5 [ICON_GOLD] Gold, +5 [ICON_PEACE] Faith, and +5 [ICON_HAPPINESS_1] Happiness.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_BELIEF_TO_GLORY_OF_GOD" />
+		<Row Tag="TXT_KEY_BELIEF_TO_GLORY_OF_GOD">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Grand Temple provides +5 [ICON_FOOD] Food, +5 [ICON_PRODUCTION] Production, +5 [ICON_RESEARCH] Science, +5 [ICON_CULTURE] Culture, +5 [ICON_GOLD] Gold, +5 [ICON_PEACE] Faith, and +5 [ICON_HAPPINESS_1] Happiness.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_BELIEF_TO_GLORY_OF_GOD" />
+		<Row Tag="TXT_KEY_BELIEF_TO_GLORY_OF_GOD">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Grand Temple provides +5 [ICON_FOOD] Food, +5 [ICON_PRODUCTION] Production, +5 [ICON_RESEARCH] Science, +5 [ICON_CULTURE] Culture, +5 [ICON_GOLD] Gold, +5 [ICON_PEACE] Faith, and +5 [ICON_HAPPINESS_1] Happiness.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_BELIEF_TO_GLORY_OF_GOD" />
+		<Row Tag="TXT_KEY_BELIEF_TO_GLORY_OF_GOD">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Grand Temple provides +5 [ICON_FOOD] Food, +5 [ICON_PRODUCTION] Production, +5 [ICON_RESEARCH] Science, +5 [ICON_CULTURE] Culture, +5 [ICON_GOLD] Gold, +5 [ICON_PEACE] Faith, and +5 [ICON_HAPPINESS_1] Happiness.</Text>
+		</Row>
+	</Language_RU_RU>
+	
+	<!-- Underground Sect: Pressure from spies doubled, now also provides +1 Science per 5 followers in foreign cities -->
+	<Beliefs>
+		<Update>
+			<Set SpyPressure="10" />
+			<Where Type="BELIEF_UNDERGROUND_SECT" />
+		</Update>
+	</Beliefs>
+	<Belief_YieldChangePerXForeignFollowers>
+		<Row>
+			<BeliefType>BELIEF_UNDERGROUND_SECT</BeliefType>
+			<YieldType>YIELD_SCIENCE</YieldType>
+			<ForeignFollowers>3</ForeignFollowers>
+		</Row>
+	</Belief_YieldChangePerXForeignFollowers>
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_BELIEF_UNDERGROUND_SECT" />
+		<Row Tag="TXT_KEY_BELIEF_UNDERGROUND_SECT">
+			<Text>Your spies exert religious pressure on the cities they occupy and +1 [ICON_RESEARCH] Science for every 3 followers of this religion in other civilizations.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_BELIEF_UNDERGROUND_SECT" />
+		<Row Tag="TXT_KEY_BELIEF_UNDERGROUND_SECT">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Your spies exert religious pressure on the cities they occupy and +1 [ICON_RESEARCH] Science for every 3 followers of this religion in other civilizations.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_BELIEF_UNDERGROUND_SECT" />
+		<Row Tag="TXT_KEY_BELIEF_UNDERGROUND_SECT">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Your spies exert religious pressure on the cities they occupy and +1 [ICON_RESEARCH] Science for every 3 followers of this religion in other civilizations.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_BELIEF_UNDERGROUND_SECT" />
+		<Row Tag="TXT_KEY_BELIEF_UNDERGROUND_SECT">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Your spies exert religious pressure on the cities they occupy and +1 [ICON_RESEARCH] Science for every 3 followers of this religion in other civilizations.</Text>
+		</Row>
+	</Language_RU_RU>
+
+	
+	<!-- Unity of the Prophets: Now also provides +6 Faith from Holy Sites. -->
+	<Belief_ImprovementYieldChanges>
+		<Row>
+			<BeliefType>BELIEF_UNITY_OF_PROPHETS</BeliefType>
+			<ImprovementType>IMPROVEMENT_HOLY_SITE</ImprovementType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>6</Yield>
+		</Row>
+	</Belief_ImprovementYieldChanges>
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_BELIEF_UNITY_OF_PROPHETS" />
+		<Row Tag="TXT_KEY_BELIEF_UNITY_OF_PROPHETS">
+			<Text>Inquisitors and Prophets reduce this religion's presence by half (instead of eliminating it) and Holy Sites provide +6 [ICON_PEACE] Faith.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_BELIEF_UNITY_OF_PROPHETS" />
+		<Row Tag="TXT_KEY_BELIEF_UNITY_OF_PROPHETS">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Inquisitors and Prophets reduce this religion's presence by half (instead of eliminating it) and Holy Sites provide +6 [ICON_PEACE] Faith.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_BELIEF_UNITY_OF_PROPHETS" />
+		<Row Tag="TXT_KEY_BELIEF_UNITY_OF_PROPHETS">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Inquisitors and Prophets reduce this religion's presence by half (instead of eliminating it) and Holy Sites provide +6 [ICON_PEACE] Faith.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_BELIEF_UNITY_OF_PROPHETS" />
+		<Row Tag="TXT_KEY_BELIEF_UNITY_OF_PROPHETS">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Inquisitors and Prophets reduce this religion's presence by half (instead of eliminating it) and Holy Sites provide +6 [ICON_PEACE] Faith.</Text>
+		</Row>
+	</Language_RU_RU>
+
+	<!-- *** ADD NEW REFORMATION BELIEFS *** -->
+	
+</GameData>

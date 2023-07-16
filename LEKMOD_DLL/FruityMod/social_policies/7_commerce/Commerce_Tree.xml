@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 6/6/2015 4:51:27 PM -->
+<GameData>
+
+	<!-- 
+
+          *** FRUITY COMMERCE ***
+	 __________        ________________
+    |Bullionism|      |Entrepreneurship|
+          |     ___________|
+     _____|____|_      ____|____
+    |Mercantilism|    |Silk Road|
+          |     ___________|
+     _____|____|__     ____|__________________
+    |Protectionism|   |Agricultural Revolution|
+	
+	
+	Bullionism				= POLICY_TRADE_UNIONS
+	Silk Road				= POLICY_CARAVANS
+	Agricultural Revolution = POLICY_AGRICULTURAL_REVOLUTION (new policy)
+	
+	-->
+
+	<!-- positions & create POLICY_AGRICULTURAL_REVOLUTION -->
+	<Policies>
+		<Update>
+			<Set GridX="2" GridY="1" />
+			<Where Type="POLICY_TRADE_UNIONS" />
+		</Update>
+		<Update>
+			<Set GridX="4" GridY="1" />
+			<Where Type="POLICY_ENTREPRENEURSHIP" />
+		</Update>
+		<Update>
+			<Set GridX="2" GridY="2" />
+			<Where Type="POLICY_MERCANTILISM" />
+		</Update>
+		<Update>
+			<Set GridX="4" GridY="2" />
+			<Where Type="POLICY_CARAVANS" />
+		</Update>
+		<Update>
+			<Set GridX="2" GridY="3" />
+			<Where Type="POLICY_PROTECTIONISM" />
+		</Update>
+		<Row>
+			<Type>POLICY_AGRICULTURAL_REVOLUTION</Type>
+			<Description>TXT_KEY_POLICY_AGRICULTURAL_REVOLUTION</Description>
+			<Civilopedia>TXT_KEY_POLICY_AGRICULTURAL_REVOLUTION_TEXT</Civilopedia>
+			<Help>TXT_KEY_POLICY_AGRICULTURAL_REVOLUTION_HELP</Help>
+			<PolicyBranchType>POLICY_BRANCH_COMMERCE</PolicyBranchType>
+			<CultureCost>10</CultureCost>
+			<!--
+			<PortraitIndex>3</PortraitIndex>
+			<IconAtlas>POLICY_ATLAS_EXP2</IconAtlas>
+			<IconAtlasAchieved>POLICY_A_ATLAS_EXP2</IconAtlasAchieved>
+			-->
+			<GridX>4</GridX>
+			<GridY>3</GridY>
+		</Row>
+	</Policies>
+
+	<!-- prerequisites -->
+	<Policy_PrereqPolicies>
+		<Delete PolicyType="POLICY_ENTREPRENEURSHIP"	PrereqPolicy="POLICY_CARAVANS"			/>
+		<Delete PolicyType="POLICY_MERCANTILISM"		PrereqPolicy="POLICY_TRADE_UNIONS"		/>
+		<Delete PolicyType="POLICY_PROTECTIONISM"		PrereqPolicy="POLICY_MERCANTILISM"		/>
+		<Delete PolicyType="POLICY_PROTECTIONISM"		PrereqPolicy="POLICY_ENTREPRENEURSHIP"	/>
+		<Row>
+			<PolicyType>POLICY_MERCANTILISM</PolicyType>
+			<PrereqPolicy>POLICY_TRADE_UNIONS</PrereqPolicy>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_MERCANTILISM</PolicyType>
+			<PrereqPolicy>POLICY_ENTREPRENEURSHIP</PrereqPolicy>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_CARAVANS</PolicyType>
+			<PrereqPolicy>POLICY_ENTREPRENEURSHIP</PrereqPolicy>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_PROTECTIONISM</PolicyType>
+			<PrereqPolicy>POLICY_MERCANTILISM</PrereqPolicy>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_PROTECTIONISM</PolicyType>
+			<PrereqPolicy>POLICY_CARAVANS</PrereqPolicy>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_AGRICULTURAL_REVOLUTION</PolicyType>
+			<PrereqPolicy>POLICY_CARAVANS</PrereqPolicy>
+		</Row>
+	</Policy_PrereqPolicies>
+
+</GameData>
