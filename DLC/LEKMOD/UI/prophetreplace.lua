@@ -172,39 +172,6 @@ if tongaIsActive then
 Events.SequenceGameInitComplete.Add(TongaUA);
 end
 
--- Maurya UA
-
-local iCiv = GameInfoTypes["CIVILIZATION_MAURYA"]
-local bIsActive = JFD_IsCivilisationActive(iCiv)
-
--- from JFD
-function MauryaHeal(playerID, unitID, unitX, unitY)
-	local player = Players[playerID]
-	if player:GetCivilizationType() == GameInfoTypes["CIVILIZATION_MAURYA"] and player:IsAlive() then
-		local inFriendlyTerritory = false
-		local unit = player:GetUnitByID(unitID)
-		if ( not unit:IsDead() ) then
-			if unit:GetDomainType() == GameInfoTypes["DOMAIN_AIR"] then return end
-				if Map.GetPlot(unit:GetX(), unit:GetY()):GetOwner() == playerID then
-					inFriendlyTerritory = true
-				end
-		end
-		
-		if inFriendlyTerritory then
-			if not unit:IsHasPromotion(GameInfoTypes["PROMOTION_INSCRIPTIONS_HEAL"]) then
-				unit:SetHasPromotion(GameInfoTypes["PROMOTION_INSCRIPTIONS_HEAL"], true)
-			end
-		else
-			if unit:IsHasPromotion(GameInfoTypes["PROMOTION_INSCRIPTIONS_HEAL"]) then
-				unit:SetHasPromotion(GameInfoTypes["PROMOTION_INSCRIPTIONS_HEAL"], false)
-			end
-		end
-	end
-end
-if bIsActive then
-GameEvents.UnitSetXY.Add(MauryaHeal) 
-end
-
 -- Philippine ua
 local iCiv = GameInfoTypes["CIVILIZATION_PHILIPPINES"]
 local bIsActive = JFD_IsCivilisationActive(iCiv)
@@ -432,39 +399,6 @@ function ZabonahRouteGold(iPlayer)
 	end
 end
 
-
-local tClasses = {}
-tClasses[GameInfoTypes.UNITCLASS_CARGO_SHIP] = GameInfoTypes.UNITCLASS_CARGO_SHIP
-
-function DetectPlunder(iPlayer, iUnit)
-    local pPlayer = Players[iPlayer]
-    local pUnit = pPlayer:GetUnitByID(iUnit)
-    local iUnitClass = pUnit:GetUnitClassType()
-    
-	if pPlayer:GetCivilizationType() == GameInfoTypes["CIVILIZATION_UAE"] then
-		if tClasses[iUnitClass] ~= nil then
-			local pTeam = Teams[pPlayer:GetTeam()]
-			local pPlot = pUnit:GetPlot()
-			local iNumUnits = pPlot:GetNumUnits()
-			for iVal = 0,(iNumUnits - 1) do
-				local pLUnit = pPlot:GetUnit(iVal)
-				if pLUnit:GetCombatLimit() > 0 and pTeam:IsAtWar(pLUnit:GetTeam()) then
-					-- Being plundered, run function
-					QasimiPillageGold(Players[pLUnit:GetOwner()])
-					break
-				end
-			end
-		end
-	end
-function QasimiPillageGold(player)
-	local goldPillaged = 200
-	player:ChangeGold(goldPillaged)
-end
-    
-    return false
-end
-
-
 function UAEWonderBuilt(playerID, cityID, buildingID)
 local player = Players[playerID]
 if player:IsAlive() and player:GetCivilizationType() == GameInfoTypes["CIVILIZATION_UAE"] then 
@@ -681,24 +615,22 @@ function IsPersonExpended(iPlayer, iUnit)
 		print("found a civ")
         if pPlayer:GetCivilizationType() == GameInfoTypes["CIVILIZATION_BOLIVIA"] then
 			print("found Bolivia")
-			if (pPlayer:GetCurrentEra() == GameInfoTypes["ERA_RENAISSANCE"] or pPlayer:GetCurrentEra() == GameInfoTypes["ERA_INDUSTRIAL"] or pPlayer:GetCurrentEra() == GameInfoTypes["ERA_MODERN"] or pPlayer:GetCurrentEra() == GameInfoTypes["ERA_POSTMODERN"] or pPlayer:GetCurrentEra() == GameInfoTypes["ERA_FUTURE"]) then
-				local ArtUnitID = GameInfoTypes["UNIT_ARTIST"]
-				if (iUnit == ArtUnitID) then
-					print("found the Unit -> Artist")
-					pCity:SetNumRealBuilding(GameInfoTypes["BUILDING_BOLIVIA_TRAIT_PRODUCTION"], 1);
-					pCity:SetNumRealBuilding(GameInfoTypes["BUILDING_BOLIVIA_TRAIT_FOOD"], 0);
-					if pPlayer:IsHuman() and pPlayer:GetCivilizationType() == iCiv and Game.GetActivePlayer() == iPlayer then
-					Events.GameplayAlertMessage(Locale.ConvertTextKey("TXT_KEY_THP_BOLIVIA_BUTTON_TITLE_RIGHT"))
-					end
+			local ArtUnitID = GameInfoTypes["UNIT_ARTIST"]
+			if (iUnit == ArtUnitID) then
+				print("found the Unit -> Artist")
+				pCity:SetNumRealBuilding(GameInfoTypes["BUILDING_BOLIVIA_TRAIT_PRODUCTION"], 1);
+				pCity:SetNumRealBuilding(GameInfoTypes["BUILDING_BOLIVIA_TRAIT_FOOD"], 0);
+				if pPlayer:IsHuman() and pPlayer:GetCivilizationType() == iCiv and Game.GetActivePlayer() == iPlayer then
+				Events.GameplayAlertMessage(Locale.ConvertTextKey("TXT_KEY_THP_BOLIVIA_BUTTON_TITLE_RIGHT"))
 				end
-				local iWriter = GameInfoTypes["UNIT_WRITER"]
-				if (iUnit == iWriter) then
-					print("found the Unit -> Writer")
-					pCity:SetNumRealBuilding(GameInfoTypes["BUILDING_BOLIVIA_TRAIT_FOOD"], 1);
-					pCity:SetNumRealBuilding(GameInfoTypes["BUILDING_BOLIVIA_TRAIT_PRODUCTION"], 0);
-					if (pPlayer:IsHuman() and pPlayer:GetCivilizationType() == iCiv and Game.GetActivePlayer() == iPlayer) then
-					Events.GameplayAlertMessage(Locale.ConvertTextKey("TXT_KEY_THP_BOLIVIA_BUTTON_TITLE_LEFT"))
-					end
+			end
+			local iWriter = GameInfoTypes["UNIT_WRITER"]
+			if (iUnit == iWriter) then
+				print("found the Unit -> Writer")
+				pCity:SetNumRealBuilding(GameInfoTypes["BUILDING_BOLIVIA_TRAIT_FOOD"], 1);
+				pCity:SetNumRealBuilding(GameInfoTypes["BUILDING_BOLIVIA_TRAIT_PRODUCTION"], 0);
+				if (pPlayer:IsHuman() and pPlayer:GetCivilizationType() == iCiv and Game.GetActivePlayer() == iPlayer) then
+				Events.GameplayAlertMessage(Locale.ConvertTextKey("TXT_KEY_THP_BOLIVIA_BUTTON_TITLE_LEFT"))
 				end
 			end
 		end
@@ -2043,29 +1975,33 @@ local bIsActive = JFD_IsCivilisationActive(iCiv)
 function Italy_OnPolicyAdopted(playerID, policyID)
 
 	local player = Players[playerID]
+    local policy = GameInfo.Policies[policyID]
+    local policyBranch = GameInfo.PolicyBranchTypes[policy.PolicyBranchType]
 
 	if (player:GetCivilizationType() == GameInfoTypes["CIVILIZATION_ITALY"]) and (player:IsEverAlive()) then
-		if policyID == GameInfo.Policies["POLICY_HONOR_FINISHER"].ID or GameInfo.Policies["POLICY_PIETY_FINISHER"].ID
-		or GameInfo.Policies["POLICY_PATRONAGE_FINISHER"].ID or GameInfo.Policies["POLICY_COMMERCE_FINISHER"].ID or
-		GameInfo.Policies["POLICY_RATIONALISM_FINISHER"].ID or GameInfo.Policies["POLICY_EXPLORATION_FINISHER"].ID or
-		GameInfo.Policies["POLICY_AESTHETICS_FINISHER"].ID or GameInfo.Policies["POLICY_TRADITION_FINISHER"].ID or
-		GameInfo.Policies["POLICY_LIBERTY_FINISHER"].ID then
-			
-			local iGoldenageturns = 6 * GameInfo.GameSpeeds[Game.GetGameSpeedType()].GoldenAgePercent / 100;
-			--iGoldenagepoints should be 375, but adjusted for game speed
-			local iGoldenagepoints = 375 * GameInfo.GameSpeeds[Game.GetGameSpeedType()].GoldenAgePercent / 100
-			if player:IsGoldenAge() then
-				player:ChangeGoldenAgeTurns(iGoldenageturns)
-				if iGoldenageturns == 1 then
-					Events.GameplayAlertMessage("Your people become inspired by your political prowess! " .. iGoldenageturns .. " turn has been added to your [ICON_GOLDEN_AGE] Golden Age!")
-				else
-					Events.GameplayAlertMessage("Your people become inspired by your political prowess! " .. iGoldenageturns .. " turns have been added to your [ICON_GOLDEN_AGE] Golden Age!")
+		if policyBranch ~= nil then
+			if player:HasPolicy(policyID) then
+				if player:IsPolicyBranchFinished(policyBranch.ID) == true then 
+
+					--amount made for quick speed, but scales with other speeds.
+					local iGoldenageturns = 5 * (GameInfo.GameSpeeds[Game.GetGameSpeedType()].GoldenAgePercent / 100);
+					local iGoldenagepoints = 312.5 * (GameInfo.GameSpeeds[Game.GetGameSpeedType()].GoldenAgePercent / 100)
+					if Game.GetActivePlayer() == playerID then
+						if player:IsGoldenAge() then
+							player:ChangeGoldenAgeTurns(iGoldenageturns)
+							if iGoldenageturns == 1 then
+								Events.GameplayAlertMessage("Your people become inspired by your political prowess! " .. iGoldenageturns .. " turn has been added to your [ICON_GOLDEN_AGE] Golden Age!")
+							else
+								Events.GameplayAlertMessage("Your people become inspired by your political prowess! " .. iGoldenageturns .. " turns have been added to your [ICON_GOLDEN_AGE] Golden Age!")
+							end
+						else
+							player:ChangeGoldenAgeProgressMeter(iGoldenagepoints)
+							Events.GameplayAlertMessage("Your people become inspired by your political prowess! " .. iGoldenagepoints .. " [ICON_GOLDEN_AGE] Golden Age points have been added to your [ICON_GOLDEN_AGE] Golden Age progress!")
+						end
+					end
 				end
-			else
-				player:ChangeGoldenAgeProgressMeter(iGoldenagepoints)
-				Events.GameplayAlertMessage("Your people become inspired by your political prowess! " .. iGoldenagepoints .. " [ICON_GOLDEN_AGE] Golden Age points have been added to your [ICON_GOLDEN_AGE] Golden Age progress!")
 			end
-		end
+		end	
 	end
 end
 if bIsActive then
@@ -2510,22 +2446,16 @@ local bIsActive = JFD_IsCivilisationActive(iCiv)
 
 if (bIsActive and iCiv) then
 	function ColombiaCityCaptureGoldenAgePoints(iOldOwner, bIsCapital, iX, iY, iNewOwner, iPop, bConquest)
-		print("running colombia ga point function")
-		local player = Players[iNewOwner]
-		local pPlot = Map.GetPlot(iX, iY)
-		local pCity = pPlot:GetPlotCity()
-		local goldenAgePointBonus = 100
-		if (player:IsEverAlive() and player:GetCivilizationType() == GameInfoTypes["CIVILIZATION_COLOMBIA"]) then
-			player:ChangeGoldenAgeProgressMeter(goldenAgePointBonus)
-			if player:IsHuman() then
-				Events.AddPopupTextEvent(HexToWorld(ToHexFromGrid(Vector2(iX, iY))), Locale.ConvertTextKey("[COLOR_WHITE]+{1_Num}[ENDCOLOR] [ICON_GOLDEN_AGE]", goldenAgePointBonus), true)
-			end
+		local pPlayer = Players[iNewOwner]
+		if (pPlayer:GetCivilizationType() == iCiv) then
+			local iGoldenagepointsColombia = 125 * GameInfo.GameSpeeds[Game.GetGameSpeedType()].GoldenAgePercent / 100
+			pPlayer:ChangeGoldenAgeProgressMeter(iGoldenagepointsColombia)
 		end
 	end
     function ColombiaTrait(iPlayer)
         local player = Players[iPlayer];
 		local pCity = player:GetCapitalCity();
-        if (player:IsEverAlive()) then
+        if (player:IsEverAlive() and player:GetCivilizationType() == GameInfoTypes["CIVILIZATION_COLOMBIA"]) then
             if Teams[player:GetTeam()]:IsHasTech(GameInfoTypes["TECH_CHEMISTRY"]) then
 				if pCity:IsCapital() then
 					pCity:SetNumRealBuilding(GameInfoTypes["BUILDING_COLOMBIA_TRAIT"], 1);
@@ -2580,3 +2510,25 @@ end
 if bIsActive then
 	GameEvents.PlayerDoTurn.Add(PolynesiaUABugFix)
 end
+
+--=======================================================================================================================
+-- Great Prophet from City of God
+--=======================================================================================================================
+--call a game event for when a player adds a belief to their religion
+--GameEvents.PlayerAddedBelief.Add(function(iPlayer, iBelief)
+--	local playerID = Game.GetActivePlayer()
+--	local player = Players[playerID]
+--	local cityOfGodBeliefID = GameInfoTypes.BELIEF_CITY_OF_GOD
+--	local cityOfGodBuildingID = GameInfoTypes.BUILDING_TEMPLE
+--	local player = Players[playerID]
+--	if iBelief == cityOfGodBeliefID then
+--		-- The player has adopted the "City of God" Reformation belief
+--		-- Check if the player has already been awarded the dummy building
+--		if not player:GetBuildingClassCount(GameInfoTypes[GameInfo.Buildings[cityOfGodBuildingID].BuildingClass]) == 1 then
+--			-- The player has not yet been awarded the dummy building
+--			player:GetCapitalCity():SetNumRealBuilding(cityOfGodBuildingID, 1)
+--		end
+--	end
+--end)
+
+
