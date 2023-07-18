@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 5/4/2016 8:55:44 AM -->
+<GameData>
+
+	<!-- Janissaries now cost 20% less -->
+	<Units>
+		<Update>
+			<Set Cost="120" FaithCost="240" />
+			<Where Type="UNIT_OTTOMAN_JANISSARY" />
+		</Update>
+	</Units>
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_UNIT_HELP_JANISSARY" />
+		<Row Tag="TXT_KEY_UNIT_HELP_JANISSARY">
+			<Text>One of the first gunpowder units of the game. Only the Ottomans may build it. This Unit is cheaper to train, stronger on offense and heals when it kills an enemy, unlike the Musketman which it replaces.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_UNIT_HELP_JANISSARY" />
+		<Row Tag="TXT_KEY_UNIT_HELP_JANISSARY">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]One of the first gunpowder units of the game. Only the Ottomans may build it. This Unit is cheaper to train, stronger on offense and heals when it kills an enemy, unlike the Musketman which it replaces.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_UNIT_HELP_JANISSARY" />
+		<Row Tag="TXT_KEY_UNIT_HELP_JANISSARY">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]One of the first gunpowder units of the game. Only the Ottomans may build it. This Unit is cheaper to train, stronger on offense and heals when it kills an enemy, unlike the Musketman which it replaces.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_UNIT_HELP_JANISSARY" />
+		<Row Tag="TXT_KEY_UNIT_HELP_JANISSARY">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]One of the first gunpowder units of the game. Only the Ottomans may build it. This Unit is cheaper to train, stronger on offense and heals when it kills an enemy, unlike the Musketman which it replaces.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

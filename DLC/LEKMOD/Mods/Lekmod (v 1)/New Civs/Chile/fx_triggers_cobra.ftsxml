@@ -1,0 +1,530 @@
+<trigger_system type="FGrannyTimedTriggerSystem">
+  <event_tracks>
+    <event_track ec="1000">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Action"/>
+      <track id="5" name="Effect"/>
+    </event_track>
+    <event_track ec="1040">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Action"/>
+      <track id="5" name="Effect"/>
+    </event_track>
+    <event_track ec="1120">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Action"/>
+      <track id="5" name="Effect"/>
+    </event_track>
+    <event_track ec="1160">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Action"/>
+      <track id="5" name="Effect"/>
+    </event_track>
+    <event_track ec="1200">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Action"/>
+      <track id="5" name="Effect"/>
+    </event_track>
+    <event_track ec="1280">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Action"/>
+      <track id="5" name="Effect"/>
+    </event_track>
+    <event_track ec="1400">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Action"/>
+      <track id="5" name="Effect"/>
+    </event_track>
+    <event_track ec="1440">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Action"/>
+      <track id="5" name="Effect"/>
+    </event_track>
+    <event_track ec="1520">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Action"/>
+      <track id="5" name="Effect"/>
+    </event_track>
+    <event_track ec="1560">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Action"/>
+      <track id="5" name="Effect"/>
+    </event_track>
+    <event_track ec="1600">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Action"/>
+      <track id="5" name="Effect"/>
+    </event_track>
+    <event_track ec="1640">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Action"/>
+      <track id="5" name="Effect"/>
+    </event_track>
+    <event_track ec="1800">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Action"/>
+      <track id="5" name="Effect"/>
+    </event_track>
+    <event_track ec="2000">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Action"/>
+      <track id="5" name="Effect"/>
+    </event_track>
+    <event_track ec="2040">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Action"/>
+      <track id="5" name="Effect"/>
+    </event_track>
+    <event_track ec="2200">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Action"/>
+      <track id="5" name="Effect"/>
+    </event_track>
+    <event_track ec="1290">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Action"/>
+      <track id="5" name="Effect"/>
+    </event_track>
+    <event_track ec="1020">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Action"/>
+      <track id="5" name="Effect"/>
+    </event_track>
+    <event_track ec="1100">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Action"/>
+      <track id="5" name="Effect"/>
+    </event_track>
+    <event_track ec="1140">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Action"/>
+      <track id="5" name="Effect"/>
+    </event_track>
+    <event_track ec="1220">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Action"/>
+      <track id="5" name="Effect"/>
+    </event_track>
+    <event_track ec="1420">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Action"/>
+      <track id="5" name="Effect"/>
+    </event_track>
+    <event_track ec="1500">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Action"/>
+      <track id="5" name="Effect"/>
+    </event_track>
+    <event_track ec="1540">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Action"/>
+      <track id="5" name="Effect"/>
+    </event_track>
+    <event_track ec="1580">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Action"/>
+      <track id="5" name="Effect"/>
+    </event_track>
+    <event_track ec="1620">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Action"/>
+      <track id="5" name="Effect"/>
+    </event_track>
+    <event_track ec="2020">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Action"/>
+      <track id="5" name="Effect"/>
+    </event_track>
+    <event_track ec="2100">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Action"/>
+      <track id="5" name="Effect"/>
+    </event_track>
+    <event_track ec="2220">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Action"/>
+      <track id="5" name="Effect"/>
+    </event_track>
+    <event_track ec="1285">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Action"/>
+      <track id="5" name="Effect"/>
+    </event_track>
+    <event_track ec="1450">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Action"/>
+    </event_track>
+    <event_track ec="2440">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Action"/>
+    </event_track>
+    <event_track ec="1180">
+      <track id="1" name="Sound"/>
+      <track id="2" name="Effect"/>
+      <track id="3" name="Transfer"/>
+      <track id="4" name="Action"/>
+    </event_track>
+  </event_tracks>
+  <triggers>
+    <trigger type="FTimedTriggerAction" id="146" time="1.15414" duration="0" repeat="0" ec="1140" track="4" tier="0" action="1"/>
+    <trigger type="FTimedTriggerAction" id="82" time="2.91759" duration="0" repeat="0" ec="2100" track="4" tier="0" action="1"/>
+    <trigger type="FTimedTriggerAction" id="83" time="3.212" duration="0" repeat="0" ec="2100" track="4" tier="0" action="1"/>
+    <trigger type="FTimedTriggerAction" id="147" time="1.32331" duration="0" repeat="0" ec="1140" track="4" tier="0" action="1"/>
+    <trigger type="FTimedTriggerAction" id="73" time="2.89949" duration="0" repeat="0" ec="1100" track="4" tier="0" action="1"/>
+    <trigger type="FTimedTriggerAction" id="69" time="1.67407" duration="0" repeat="0" ec="1100" track="4" tier="0" action="1"/>
+    <trigger type="FTimedTriggerAction" id="151" time="2.76692" duration="0" repeat="0" ec="1140" track="4" tier="0" action="1"/>
+    <trigger type="FTimedTriggerAction" id="78" time="1.18315" duration="0" repeat="0" ec="2100" track="4" tier="0" action="1"/>
+    <trigger type="FTimedTriggerAction" id="165" time="5.19173" duration="0" repeat="0" ec="1160" track="4" tier="0" action="1"/>
+    <trigger type="FTimedTriggerAction" id="64" time="0.424202" duration="0" repeat="0" ec="1100" track="4" tier="0" action="1"/>
+    <trigger type="FTimedTriggerAction" id="156" time="3.79323" duration="0" repeat="0" ec="1140" track="4" tier="0" action="1"/>
+    <trigger type="FTimedTriggerAction" id="92" time="3.54074" duration="0" repeat="0" ec="1160" track="4" tier="0" action="1"/>
+    <trigger type="FTimedTriggerAction" id="169" time="7.01128" duration="0" repeat="0" ec="1160" track="4" tier="0" action="1"/>
+    <trigger type="FTimedTriggerAction" id="155" time="3.63534" duration="0" repeat="0" ec="1140" track="4" tier="0" action="1"/>
+    <trigger type="FTimedTriggerAction" id="164" time="5.3985" duration="0" repeat="0" ec="1160" track="4" tier="0" action="1"/>
+    <trigger type="FTimedTriggerAction" id="77" time="0.855697" duration="0" repeat="0" ec="2100" track="4" tier="0" action="1"/>
+    <trigger type="FTimedTriggerAction" id="86" time="4.56624" duration="0" repeat="0" ec="2100" track="4" tier="0" action="1"/>
+    <trigger type="FTimedTriggerAction" id="150" time="2.62782" duration="0" repeat="0" ec="1140" track="4" tier="0" action="1"/>
+    <trigger type="FTimedTriggerAction" id="65" time="0.602125" duration="0" repeat="0" ec="1100" track="4" tier="0" action="1"/>
+    <trigger type="FTimedTriggerAction" id="63" time="0.585916" duration="0" repeat="0" ec="2100" track="4" tier="0" action="1"/>
+    <trigger type="FTimedTriggerAction" id="149" time="1.67669" duration="0" repeat="0" ec="1140" track="4" tier="0" action="1"/>
+    <trigger type="FTimedTriggerAction" id="85" time="3.53507" duration="0" repeat="0" ec="2100" track="4" tier="0" action="1"/>
+    <trigger type="FTimedTriggerAction" id="71" time="2.45402" duration="0" repeat="0" ec="1100" track="4" tier="0" action="1"/>
+    <trigger type="FTimedTriggerAction" id="163" time="3.32853436" duration="0" repeat="0" ec="1160" track="4" tier="0" action="1"/>
+    <trigger type="FTimedTriggerAction" id="80" time="2.45995" duration="0" repeat="0" ec="2100" track="4" tier="0" action="1"/>
+    <trigger type="FTimedTriggerAction" id="154" time="3.43985" duration="0" repeat="0" ec="1140" track="4" tier="0" action="1"/>
+    <trigger type="FTimedTriggerAction" id="90" time="1.35072" duration="0" repeat="0" ec="1160" track="4" tier="0" action="1"/>
+    <trigger type="FTimedTriggerAction" id="144" time="0.327068" duration="0" repeat="0" ec="1140" track="4" tier="0" action="1"/>
+    <trigger type="FTimedTriggerAction" id="168" time="6.84211" duration="0" repeat="0" ec="1160" track="4" tier="0" action="1"/>
+    <trigger type="FTimedTriggerAction" id="159" time="2.44141173" duration="0" repeat="0" ec="1160" track="4" tier="0" action="1"/>
+    <trigger type="FTimedTriggerAction" id="93" time="5.62963" duration="0" repeat="0" ec="1160" track="4" tier="0" action="1"/>
+    <trigger type="FTimedTriggerAction" id="157" time="0.6941562" duration="0" repeat="0" ec="1160" track="4" tier="0" action="1"/>
+    <trigger type="FTimedTriggerAction" id="166" time="5.011792" duration="0" repeat="0" ec="1160" track="4" tier="0" action="1"/>
+    <trigger type="FTimedTriggerAction" id="143" time="0.191729" duration="0" repeat="0" ec="1140" track="4" tier="0" action="1"/>
+    <trigger type="FTimedTriggerAction" id="88" time="4.9791" duration="0" repeat="0" ec="2100" track="4" tier="0" action="1"/>
+    <trigger type="FTimedTriggerAction" id="152" time="2.88722" duration="0" repeat="0" ec="1140" track="4" tier="0" action="1"/>
+    <trigger type="FTimedTriggerAction" id="161" time="2.83835" duration="0" repeat="0" ec="1160" track="4" tier="0" action="1"/>
+    <trigger type="FTimedTriggerAction" id="68" time="1.51852" duration="0" repeat="0" ec="1100" track="4" tier="0" action="1"/>
+    <trigger type="FTimedTriggerAction" id="74" time="3.17191" duration="0" repeat="0" ec="1100" track="4" tier="0" action="1"/>
+    <trigger type="FTimedTriggerAction" id="138" time="0.109023" duration="0" repeat="0" ec="1140" track="4" tier="0" action="1"/>
+    <trigger type="FTimedTriggerAction" id="34" time="0.107918069" duration="0" repeat="0" ec="1100" track="4" tier="0" action="1"/>
+    <trigger type="FTimedTriggerAction" id="153" time="3.11654" duration="0" repeat="0" ec="1140" track="4" tier="0" action="1"/>
+    <trigger type="FTimedTriggerAction" id="89" time="1.0403173" duration="0" repeat="0" ec="1160" track="4" tier="0" action="1"/>
+    <trigger type="FTimedTriggerTransfer" id="217" time="4.53703642" duration="0" repeat="0" ec="1160" track="3" tier="0" refid="214" speed="0" tangent.x="0.0244559254" tangent.y="-0.981143057" tangent.z="-0.191729456"/>
+    <trigger type="FTimedTriggerTransfer" id="91" time="1.428115" duration="0" repeat="0" ec="1100" track="3" tier="0" refid="190" speed="0" tangent.x="-0.037577223" tangent.y="-0.988899" tangent.z="-0.1437589"/>
+    <trigger type="FTimedTriggerTransfer" id="277" time="1.908078" duration="0" repeat="0" ec="1180" track="3" tier="0" refid="282" speed="0" tangent.x="-0.000254473678" tangent.y="-0.9844668" tangent.z="-0.175570861"/>
+    <trigger type="FTimedTriggerAction" id="167" time="6.7594" duration="0" repeat="0" ec="1160" track="4" tier="0" action="1"/>
+    <trigger type="FTimedTriggerTransfer" id="276" time="1.7518518" duration="0" repeat="0" ec="1180" track="3" tier="0" refid="281" speed="0" tangent.x="-0.00196695048" tangent.y="-0.986239254" tangent.z="-0.165312737"/>
+    <trigger type="FTimedTriggerTransfer" id="275" time="1.575926" duration="0" repeat="0" ec="1180" track="3" tier="0" refid="280" speed="0" tangent.x="-0.00480815768" tangent.y="-0.9891084" tangent.z="-0.147110373"/>
+    <trigger type="FTimedTriggerTransfer" id="274" time="1.39545453" duration="0" repeat="0" ec="1180" track="3" tier="0" refid="279" speed="0" tangent.x="-0.007658885" tangent.y="-0.993817449" tangent.z="-0.110762015"/>
+    <trigger type="FTimedTriggerAction" id="234" time="0.585916" duration="0" repeat="0" ec="1180" track="4" tier="0" action="1"/>
+    <trigger type="FTimedTriggerAction" id="235" time="0.855697" duration="0" repeat="0" ec="1180" track="4" tier="0" action="1"/>
+    <trigger type="FTimedTriggerAction" id="236" time="1.18315" duration="0" repeat="0" ec="1180" track="4" tier="0" action="1"/>
+    <trigger type="FTimedTriggerAction" id="237" time="2.45995" duration="0" repeat="0" ec="1180" track="4" tier="0" action="1"/>
+    <trigger type="FTimedTriggerAction" id="67" time="1.27513" duration="0" repeat="0" ec="1100" track="4" tier="0" action="1"/>
+    <trigger type="FTimedTriggerAction" id="238" time="2.91759" duration="0" repeat="0" ec="1180" track="4" tier="0" action="1"/>
+    <trigger type="FTimedTriggerAction" id="239" time="3.212" duration="0" repeat="0" ec="1180" track="4" tier="0" action="1"/>
+    <trigger type="FTimedTriggerAction" id="240" time="3.38493" duration="0" repeat="0" ec="1180" track="4" tier="0" action="1"/>
+    <trigger type="FTimedTriggerAction" id="145" time="1.03759" duration="0" repeat="0" ec="1140" track="4" tier="0" action="1"/>
+    <trigger type="FTimedTriggerAction" id="241" time="3.53507" duration="0" repeat="0" ec="1180" track="4" tier="0" action="1"/>
+    <trigger type="FTimedTriggerAction" id="242" time="4.56624" duration="0" repeat="0" ec="1180" track="4" tier="0" action="1"/>
+    <trigger type="FTimedTriggerAction" id="72" time="2.62963" duration="0" repeat="0" ec="1100" track="4" tier="0" action="1"/>
+    <trigger type="FTimedTriggerAction" id="243" time="4.9791" duration="0" repeat="0" ec="1180" track="4" tier="0" action="1"/>
+    <trigger type="FTimedTriggerTransfer" id="191" time="1.23703706" duration="0" repeat="0" ec="1100" track="3" tier="0" refid="194" speed="0" tangent.x="0.08339167" tangent.y="0.9781213" tangent.z="0.190590352"/>
+    <trigger type="FTimedTriggerTransfer" id="87" time="0.235185191" duration="0" repeat="0" ec="1100" track="3" tier="0" refid="81" speed="0" tangent.x="-0.0283067543" tangent.y="-0.991040051" tangent.z="-0.130531073"/>
+    <trigger type="FTimedTriggerTransfer" id="197" time="0.194444448" duration="0" repeat="0" ec="1160" track="3" tier="0" refid="66" speed="0" tangent.x="0.05273417" tangent.y="-0.9946957" tangent.z="-0.08831466"/>
+    <trigger type="FTimedTriggerAction" id="148" time="1.58271" duration="0" repeat="0" ec="1140" track="4" tier="0" action="1"/>
+    <trigger type="FTimedTriggerAction" id="84" time="3.38493" duration="0" repeat="0" ec="2100" track="4" tier="0" action="1"/>
+    <trigger type="FTimedTriggerAction" id="70" time="2.24815" duration="0" repeat="0" ec="1100" track="4" tier="0" action="1"/>
+    <trigger type="FTimedTriggerTransfer" id="201" time="0.390740752" duration="0" repeat="0" ec="1160" track="3" tier="0" refid="202" speed="0" tangent.x="-0.0116326567" tangent.y="-0.9824767" tangent.z="-0.186022431"/>
+    <trigger type="FTimedTriggerTransfer" id="205" time="2.12962985" duration="0" repeat="0" ec="1160" track="3" tier="0" refid="208" speed="0" tangent.x="-0.0193700865" tangent.y="-0.9849673" tangent.z="-0.171651855"/>
+    <trigger type="FTimedTriggerTransfer" id="187" time="1.908078" duration="0" repeat="0" ec="2100" track="3" tier="0" refid="186" speed="0" tangent.x="-0.000254473678" tangent.y="-0.9844668" tangent.z="-0.175570861"/>
+    <trigger type="FTimedTriggerAction" id="75" time="3.3106" duration="0" repeat="0" ec="1100" track="4" tier="0" action="1"/>
+    <trigger type="FTimedTriggerTransfer" id="183" time="1.7518518" duration="0" repeat="0" ec="2100" track="3" tier="0" refid="182" speed="0" tangent.x="-0.00196695048" tangent.y="-0.986239254" tangent.z="-0.165312737"/>
+    <trigger type="FTimedTriggerTransfer" id="209" time="3.02222347" duration="0" repeat="0" ec="1160" track="3" tier="0" refid="198" speed="0" tangent.x="-0.00268722931" tangent.y="-0.97795105" tangent.z="-0.208816841"/>
+    <trigger type="FTimedTriggerTransfer" id="213" time="4.29074" duration="0" repeat="0" ec="1160" track="3" tier="0" refid="212" speed="0" tangent.x="0.0301490426" tangent.y="-0.9770544" tangent.z="-0.210845232"/>
+    <trigger type="FTimedTriggerTransfer" id="179" time="1.575926" duration="0" repeat="0" ec="2100" track="3" tier="0" refid="178" speed="0" tangent.x="-0.00480815768" tangent.y="-0.9891084" tangent.z="-0.147110373"/>
+    <trigger type="FTimedTriggerTransfer" id="175" time="1.39545453" duration="0" repeat="0" ec="2100" track="3" tier="0" refid="174" speed="0" tangent.x="-0.007658885" tangent.y="-0.993817449" tangent.z="-0.110762015"/>
+    <trigger type="FTimedTriggerEffect" id="44" time="0.477012" duration="0" repeat="0" ec="1200" track="5" tier="0" event="ART_DEF_VEFFECT_AIR_DEATH_01" bone="First propeller07"/>
+    <trigger type="FTimedTriggerEffect" id="111" time="2.81609" duration="0" repeat="0" ec="1200" track="5" tier="0" event="ART_DEF_VEFFECT_AIR_DEATH_02" bone="Airplane tail"/>
+    <trigger type="FTimedTriggerEffect" id="113" time="1.52299" duration="0" repeat="0" ec="2200" track="2" tier="0" event="ART_DEF_VEFFECT_AIR_DEATH_02" bone="Box02"/>
+    <trigger type="FTimedTriggerEffect" id="114" time="1.65517" duration="0" repeat="0" ec="2200" track="2" tier="0" event="ART_DEF_VEFFECT_AIR_DEATH_02" bone="Airplane tail"/>
+    <trigger type="FTimedTriggerEffect" id="60" time="0" duration="0" repeat="0" ec="1200" track="2" tier="0" event="ART_DEF_VEFFECT_AIR_DEATH_02" bone="Box02"/>
+    <trigger type="FTimedTriggerEffect" id="247" time="0" duration="13.34" repeat="0" ec="1160" track="2" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_AIRWAKE_$(BASETERRAIN)" bone="WORLD_center"/>
+    <trigger type="FTimedTriggerEffect" id="246" time="0" duration="13.34" repeat="0" ec="1140" track="2" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_AIRWAKE_$(BASETERRAIN)" bone="WORLD_center"/>
+    <trigger type="FTimedTriggerEffect" id="221" time="0" duration="13.34" repeat="0" ec="1000" track="5" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_AIRWAKE_$(BASETERRAIN)" bone="WORLD_center"/>
+    <trigger type="FTimedTriggerEffect" id="225" time="0" duration="13.34" repeat="0" ec="1020" track="5" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_AIRWAKE_$(BASETERRAIN)" bone="WORLD_center"/>
+    <trigger type="FTimedTriggerEffect" id="248" time="0" duration="13.34" repeat="0" ec="1180" track="2" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_AIRWAKE_$(BASETERRAIN)" bone="WORLD_center"/>
+    <trigger type="FTimedTriggerEffect" id="226" time="0" duration="13.34" repeat="0" ec="1040" track="5" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_AIRWAKE_$(BASETERRAIN)" bone="WORLD_center"/>
+    <trigger type="FTimedTriggerEffect" id="244" time="0" duration="13.34" repeat="0" ec="1100" track="2" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_AIRWAKE_$(BASETERRAIN)" bone="WORLD_center"/>
+    <trigger type="FTimedTriggerEffect" id="249" time="0" duration="1" repeat="0" ec="1280" track="2" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_AIRWAKE_$(BASETERRAIN)" bone="WORLD_center"/>
+    <trigger type="FTimedTriggerEffect" id="250" time="0" duration="13.34" repeat="0" ec="1285" track="5" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_AIRWAKE_$(BASETERRAIN)" bone="WORLD_center"/>
+    <trigger type="FTimedTriggerEffect" id="245" time="0" duration="13.34" repeat="0" ec="1120" track="5" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_AIRWAKE_$(BASETERRAIN)" bone="WORLD_center"/>
+    <trigger type="FTimedTriggerEffect" id="292" time="0" duration="13.34" repeat="0" ec="2000" track="5" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_AIRWAKE_$(BASETERRAIN)" bone="WORLD_center"/>
+    <trigger type="FTimedTriggerEffect" id="254" time="0" duration="13.34" repeat="0" ec="1440" track="5" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_AIRWAKE_$(BASETERRAIN)" bone="WORLD_center"/>
+    <trigger type="FTimedTriggerEffect" id="253" time="0" duration="13.34" repeat="0" ec="1420" track="5" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_AIRWAKE_$(BASETERRAIN)" bone="WORLD_center"/>
+    <trigger type="FTimedTriggerEffect" id="291" time="0" duration="13.34" repeat="0" ec="1800" track="5" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_AIRWAKE_$(BASETERRAIN)" bone="WORLD_center"/>
+    <trigger type="FTimedTriggerEffect" id="255" time="0" duration="13.34" repeat="0" ec="1450" track="2" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_AIRWAKE_$(BASETERRAIN)" bone="WORLD_center"/>
+    <trigger type="FTimedTriggerEffect" id="252" time="0" duration="13.34" repeat="0" ec="1400" track="5" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_AIRWAKE_$(BASETERRAIN)" bone="WORLD_center"/>
+    <trigger type="FTimedTriggerEffect" id="256" time="0" duration="13.34" repeat="0" ec="1500" track="5" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_AIRWAKE_$(BASETERRAIN)" bone="WORLD_center"/>
+    <trigger type="FTimedTriggerEffect" id="284" time="0" duration="13.34" repeat="0" ec="1520" track="5" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_AIRWAKE_$(BASETERRAIN)" bone="WORLD_center"/>
+    <trigger type="FTimedTriggerEffect" id="290" time="0" duration="13.34" repeat="0" ec="1640" track="5" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_AIRWAKE_$(BASETERRAIN)" bone="WORLD_center"/>
+    <trigger type="FTimedTriggerEffect" id="289" time="0" duration="13.34" repeat="0" ec="1620" track="5" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_AIRWAKE_$(BASETERRAIN)" bone="WORLD_center"/>
+    <trigger type="FTimedTriggerEffect" id="288" time="0" duration="13.34" repeat="0" ec="1600" track="5" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_AIRWAKE_$(BASETERRAIN)" bone="WORLD_center"/>
+    <trigger type="FTimedTriggerEffect" id="287" time="0" duration="13.34" repeat="0" ec="1580" track="5" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_AIRWAKE_$(BASETERRAIN)" bone="WORLD_center"/>
+    <trigger type="FTimedTriggerEffect" id="251" time="0" duration="13.34" repeat="0" ec="1290" track="5" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_AIRWAKE_$(BASETERRAIN)" bone="WORLD_center"/>
+    <trigger type="FTimedTriggerEffect" id="296" time="0" duration="13.34" repeat="0" ec="2440" track="2" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_AIRWAKE_$(BASETERRAIN)" bone="WORLD_center"/>
+    <trigger type="FTimedTriggerEffect" id="295" time="0" duration="13.34" repeat="0" ec="2100" track="2" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_AIRWAKE_$(BASETERRAIN)" bone="WORLD_center"/>
+    <trigger type="FTimedTriggerEffect" id="294" time="0" duration="13.34" repeat="0" ec="2040" track="5" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_AIRWAKE_$(BASETERRAIN)" bone="WORLD_center"/>
+    <trigger type="FTimedTriggerEffect" id="293" time="0" duration="13.34" repeat="0" ec="2020" track="5" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_AIRWAKE_$(BASETERRAIN)" bone="WORLD_center"/>
+    <trigger type="FTimedTriggerEffect" id="286" time="0" duration="13.34" repeat="0" ec="1560" track="5" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_AIRWAKE_$(BASETERRAIN)" bone="WORLD_center"/>
+    <trigger type="FTimedTriggerEffect" id="285" time="0" duration="13.34" repeat="0" ec="1540" track="5" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_AIRWAKE_$(BASETERRAIN)" bone="WORLD_center"/>
+    <trigger type="FTimedTriggerEffect" id="195" time="4.44629669" duration="0" repeat="0" ec="1160" track="2" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_LAUNCH_SMOKE" bone="fx_PROJECTILE_04C"/>
+    <trigger type="FTimedTriggerEffect" id="176" time="1.47592592" duration="0" repeat="0" ec="2100" track="2" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_LAUNCH_SMOKE" bone="fx_PROJECTILE_03C"/>
+    <trigger type="FTimedTriggerEffect" id="192" time="1.137037" duration="0" repeat="0" ec="1100" track="2" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_LAUNCH_SMOKE" bone="fx_PROJECTILE_01C"/>
+    <trigger type="FTimedTriggerEffect" id="180" time="1.64814818" duration="0" repeat="0" ec="2100" track="2" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_LAUNCH_SMOKE" bone="fx_PROJECTILE_01C"/>
+    <trigger type="FTimedTriggerEffect" id="199" time="0.118518516" duration="0" repeat="0" ec="1160" track="2" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_LAUNCH_SMOKE" bone="fx_PROJECTILE_03C"/>
+    <trigger type="FTimedTriggerEffect" id="172" time="1.28181815" duration="0" repeat="0" ec="2100" track="2" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_LAUNCH_SMOKE" bone="fx_PROJECTILE_02C"/>
+    <trigger type="FTimedTriggerEffect" id="203" time="0.314814925" duration="0" repeat="0" ec="1160" track="2" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_LAUNCH_SMOKE" bone="fx_PROJECTILE_02C"/>
+    <trigger type="FTimedTriggerEffect" id="188" time="1.3648144" duration="0" repeat="0" ec="1100" track="2" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_LAUNCH_SMOKE" bone="fx_PROJECTILE_03C"/>
+    <trigger type="FTimedTriggerEffect" id="76" time="0.162962958" duration="0" repeat="0" ec="1100" track="2" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_LAUNCH_SMOKE" bone="fx_PROJECTILE_04C"/>
+    <trigger type="FTimedTriggerEffect" id="206" time="2.05185127" duration="0" repeat="0" ec="1160" track="2" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_LAUNCH_SMOKE" bone="fx_PROJECTILE_04C"/>
+    <trigger type="FTimedTriggerEffect" id="184" time="1.82222223" duration="0" repeat="0" ec="2100" track="2" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_LAUNCH_SMOKE" bone="fx_PROJECTILE_04C"/>
+    <trigger type="FTimedTriggerEffect" id="259" time="1.28181815" duration="0" repeat="0" ec="1180" track="2" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_LAUNCH_SMOKE" bone="fx_PROJECTILE_02C"/>
+    <trigger type="FTimedTriggerEffect" id="211" time="2.95555425" duration="0" repeat="0" ec="1160" track="2" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_LAUNCH_SMOKE" bone="fx_PROJECTILE_01C"/>
+    <trigger type="FTimedTriggerEffect" id="261" time="1.47592592" duration="0" repeat="0" ec="1180" track="2" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_LAUNCH_SMOKE" bone="fx_PROJECTILE_03C"/>
+    <trigger type="FTimedTriggerEffect" id="263" time="1.64259279" duration="0" repeat="0" ec="1180" track="2" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_LAUNCH_SMOKE" bone="fx_PROJECTILE_01C"/>
+    <trigger type="FTimedTriggerEffect" id="215" time="4.22222137" duration="0" repeat="0" ec="1160" track="2" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_LAUNCH_SMOKE" bone="fx_PROJECTILE_02C"/>
+    <trigger type="FTimedTriggerEffect" id="265" time="1.82222223" duration="0" repeat="0" ec="1180" track="2" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_LAUNCH_SMOKE" bone="fx_PROJECTILE_04C"/>
+    <trigger type="FTimedTriggerEffect" id="103" time="4.70627" duration="1" repeat="0" ec="1160" track="5" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_MACHINE_GUN_MUZZLE" bone="fx_MachineGunC"/>
+    <trigger type="FTimedTriggerEffect" id="278" time="0.334052" duration="1.15" repeat="0" ec="1180" track="2" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_MACHINE_GUN_MUZZLE" bone="fx_MachineGunC"/>
+    <trigger type="FTimedTriggerEffect" id="100" time="0.940724" duration="0.8" repeat="0" ec="1140" track="5" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_MACHINE_GUN_MUZZLE" bone="fx_MachineGunC"/>
+    <trigger type="FTimedTriggerEffect" id="104" time="2.36171" duration="1.15" repeat="0" ec="2100" track="5" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_MACHINE_GUN_MUZZLE" bone="fx_MachineGunC"/>
+    <trigger type="FTimedTriggerEffect" id="94" time="0" duration="0.7" repeat="0" ec="1100" track="5" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_MACHINE_GUN_MUZZLE" bone="fx_MachineGunC"/>
+    <trigger type="FTimedTriggerEffect" id="105" time="4.40877" duration="0.6" repeat="0" ec="2100" track="5" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_MACHINE_GUN_MUZZLE" bone="fx_MachineGunC"/>
+    <trigger type="FTimedTriggerEffect" id="283" time="2.36171" duration="1.15" repeat="0" ec="1180" track="2" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_MACHINE_GUN_MUZZLE" bone="fx_MachineGunC"/>
+    <trigger type="FTimedTriggerEffect" id="101" time="2.46818" duration="1.5" repeat="0" ec="1140" track="5" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_MACHINE_GUN_MUZZLE" bone="fx_MachineGunC"/>
+    <trigger type="FTimedTriggerEffect" id="95" time="0.00185185" duration="0.5" repeat="0" ec="1140" track="5" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_MACHINE_GUN_MUZZLE" bone="fx_MachineGunC"/>
+    <trigger type="FTimedTriggerEffect" id="102" time="2.07104754" duration="1.4" repeat="0" ec="1160" track="5" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_MACHINE_GUN_MUZZLE" bone="fx_MachineGunC"/>
+    <trigger type="FTimedTriggerEffect" id="98" time="1.17273" duration="0.45" repeat="0" ec="1100" track="5" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_MACHINE_GUN_MUZZLE" bone="fx_MachineGunC"/>
+    <trigger type="FTimedTriggerEffect" id="96" time="0.247126" duration="1.1" repeat="0" ec="1160" track="5" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_MACHINE_GUN_MUZZLE" bone="fx_MachineGunC"/>
+    <trigger type="FTimedTriggerEffect" id="99" time="2.16478" duration="1.1" repeat="0" ec="1100" track="5" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_MACHINE_GUN_MUZZLE" bone="fx_MachineGunC"/>
+    <trigger type="FTimedTriggerEffect" id="109" time="6.68391" duration="0.4" repeat="0" ec="1160" track="5" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_MACHINE_GUN_MUZZLE" bone="fx_MachineGunC"/>
+    <trigger type="FTimedTriggerEffect" id="97" time="0.334052" duration="1.15" repeat="0" ec="2100" track="5" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_MACHINE_GUN_MUZZLE" bone="fx_MachineGunC"/>
+    <trigger type="FTimedTriggerEffect" id="182" time="1.64865685" duration="0.12" repeat="0" ec="2100" track="5" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_ROCKET_PROJECTILE" bone="fx_PROJECTILE_01C"/>
+    <trigger type="FTimedTriggerEffect" id="178" time="1.48518515" duration="0.11" repeat="0" ec="2100" track="5" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_ROCKET_PROJECTILE" bone="fx_PROJECTILE_03C"/>
+    <trigger type="FTimedTriggerEffect" id="186" time="1.825926" duration="0.11" repeat="0" ec="2100" track="5" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_ROCKET_PROJECTILE" bone="fx_PROJECTILE_04C"/>
+    <trigger type="FTimedTriggerEffect" id="81" time="0.170370355" duration="0.08" repeat="0" ec="1100" track="5" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_ROCKET_PROJECTILE" bone="fx_PROJECTILE_04C"/>
+    <trigger type="FTimedTriggerEffect" id="279" time="1.2863636" duration="0.14" repeat="0" ec="1180" track="2" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_ROCKET_PROJECTILE" bone="fx_PROJECTILE_02C"/>
+    <trigger type="FTimedTriggerEffect" id="190" time="1.37037" duration="0.08" repeat="0" ec="1100" track="5" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_ROCKET_PROJECTILE" bone="fx_PROJECTILE_03C"/>
+    <trigger type="FTimedTriggerEffect" id="280" time="1.48518515" duration="0.12" repeat="0" ec="1180" track="2" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_ROCKET_PROJECTILE" bone="fx_PROJECTILE_03C"/>
+    <trigger type="FTimedTriggerEffect" id="281" time="1.64865685" duration="0.12" repeat="0" ec="1180" track="2" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_ROCKET_PROJECTILE" bone="fx_PROJECTILE_01C"/>
+    <trigger type="FTimedTriggerEffect" id="194" time="1.14259255" duration="0.11" repeat="0" ec="1100" track="5" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_ROCKET_PROJECTILE" bone="fx_PROJECTILE_01C"/>
+    <trigger type="FTimedTriggerEffect" id="66" time="0.12777777" duration="0.09" repeat="0" ec="1160" track="5" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_ROCKET_PROJECTILE" bone="fx_PROJECTILE_02C"/>
+    <trigger type="FTimedTriggerEffect" id="214" time="4.44691372" duration="0.12" repeat="0" ec="1160" track="5" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_ROCKET_PROJECTILE" bone="fx_PROJECTILE_04C"/>
+    <trigger type="FTimedTriggerEffect" id="198" time="2.968518" duration="0.085" repeat="0" ec="1160" track="5" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_ROCKET_PROJECTILE" bone="fx_PROJECTILE_01C"/>
+    <trigger type="FTimedTriggerEffect" id="202" time="0.322222233" duration="0.09" repeat="0" ec="1160" track="5" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_ROCKET_PROJECTILE" bone="fx_PROJECTILE_02C"/>
+    <trigger type="FTimedTriggerEffect" id="212" time="4.22643375" duration="0.09" repeat="0" ec="1160" track="5" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_ROCKET_PROJECTILE" bone="fx_PROJECTILE_02C"/>
+    <trigger type="FTimedTriggerEffect" id="208" time="2.06481385" duration="0.095" repeat="0" ec="1160" track="5" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_ROCKET_PROJECTILE" bone="fx_PROJECTILE_04C"/>
+    <trigger type="FTimedTriggerEffect" id="174" time="1.2863636" duration="0.12" repeat="0" ec="2100" track="5" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_ROCKET_PROJECTILE" bone="fx_PROJECTILE_02C"/>
+    <trigger type="FTimedTriggerEffect" id="282" time="1.825926" duration="0.11" repeat="0" ec="1180" track="2" tier="0" event="ART_DEF_VEFFECT_GUNSHIP_ROCKET_PROJECTILE" bone="fx_PROJECTILE_04C"/>
+    <trigger type="FTimedTriggerEffect" id="54" time="0" duration="12.67" repeat="0" ec="2020" track="5" tier="0" event="ART_DEF_VEFFECT_HELICOPTERGUNSHIP_BLADES_01" bone="First propeller07"/>
+    <trigger type="FTimedTriggerEffect" id="50" time="0" duration="13.3333" repeat="0" ec="2000" track="5" tier="0" event="ART_DEF_VEFFECT_HELICOPTERGUNSHIP_BLADES_01" bone="First propeller07"/>
+    <trigger type="FTimedTriggerEffect" id="28" time="0" duration="1" repeat="0" ec="1290" track="5" tier="0" event="ART_DEF_VEFFECT_HELICOPTERGUNSHIP_BLADES_01" bone="First propeller07"/>
+    <trigger type="FTimedTriggerEffect" id="24" time="0" duration="4.67" repeat="0" ec="1800" track="5" tier="0" event="ART_DEF_VEFFECT_HELICOPTERGUNSHIP_BLADES_01" bone="First propeller07"/>
+    <trigger type="FTimedTriggerEffect" id="30" time="0" duration="12.67" repeat="0" ec="1020" track="5" tier="0" event="ART_DEF_VEFFECT_HELICOPTERGUNSHIP_BLADES_01" bone="First propeller07"/>
+    <trigger type="FTimedTriggerEffect" id="52" time="0" duration="12.67" repeat="0" ec="2040" track="5" tier="0" event="ART_DEF_VEFFECT_HELICOPTERGUNSHIP_BLADES_01" bone="First propeller07"/>
+    <trigger type="FTimedTriggerEffect" id="14" time="0" duration="1" repeat="0" ec="1280" track="5" tier="0" event="ART_DEF_VEFFECT_HELICOPTERGUNSHIP_BLADES_01" bone="First propeller07"/>
+    <trigger type="FTimedTriggerEffect" id="158" time="0" duration="2" repeat="0" ec="2440" track="2" tier="0" event="ART_DEF_VEFFECT_HELICOPTERGUNSHIP_BLADES_01" bone="First propeller07"/>
+    <trigger type="FTimedTriggerEffect" id="10" time="0" duration="12.68" repeat="0" ec="1040" track="5" tier="0" event="ART_DEF_VEFFECT_HELICOPTERGUNSHIP_BLADES_01" bone="First propeller07"/>
+    <trigger type="FTimedTriggerEffect" id="110" time="0.00375939859" duration="5.66667" repeat="0" ec="2100" track="2" tier="0" event="ART_DEF_VEFFECT_HELICOPTERGUNSHIP_BLADES_01" bone="First propeller07"/>
+    <trigger type="FTimedTriggerEffect" id="33" time="0" duration="12.1" repeat="0" ec="1450" track="2" tier="0" event="ART_DEF_VEFFECT_HELICOPTERGUNSHIP_BLADES_01" bone="First propeller07"/>
+    <trigger type="FTimedTriggerEffect" id="26" time="0" duration="1.9" repeat="0" ec="2200" track="5" tier="0" event="ART_DEF_VEFFECT_HELICOPTERGUNSHIP_BLADES_01" bone="First propeller07"/>
+    <trigger type="FTimedTriggerEffect" id="107" time="0" duration="4" repeat="0" ec="1140" track="2" tier="0" event="ART_DEF_VEFFECT_HELICOPTERGUNSHIP_BLADES_01" bone="First propeller07"/>
+    <trigger type="FTimedTriggerEffect" id="20" time="0" duration="0.67" repeat="0" ec="1600" track="5" tier="0" event="ART_DEF_VEFFECT_HELICOPTERGUNSHIP_BLADES_01" bone="First propeller07"/>
+    <trigger type="FTimedTriggerEffect" id="48" time="0" duration="8.67" repeat="0" ec="1285" track="5" tier="0" event="ART_DEF_VEFFECT_HELICOPTERGUNSHIP_BLADES_01" bone="First propeller07"/>
+    <trigger type="FTimedTriggerEffect" id="18" time="0" duration="12.1" repeat="0" ec="1520" track="5" tier="0" event="ART_DEF_VEFFECT_HELICOPTERGUNSHIP_BLADES_01" bone="First propeller07"/>
+    <trigger type="FTimedTriggerEffect" id="1" time="0.00185185182" duration="13.34" repeat="0" ec="1000" track="2" tier="0" event="ART_DEF_VEFFECT_HELICOPTERGUNSHIP_BLADES_01" bone="First propeller07"/>
+    <trigger type="FTimedTriggerEffect" id="56" time="0" duration="0.67" repeat="0" ec="1560" track="5" tier="0" event="ART_DEF_VEFFECT_HELICOPTERGUNSHIP_BLADES_01" bone="First propeller07"/>
+    <trigger type="FTimedTriggerEffect" id="42" time="0" duration="12" repeat="0" ec="1620" track="5" tier="0" event="ART_DEF_VEFFECT_HELICOPTERGUNSHIP_BLADES_01" bone="First propeller07"/>
+    <trigger type="FTimedTriggerEffect" id="257" time="0.00375939859" duration="5.66667" repeat="0" ec="1180" track="2" tier="0" event="ART_DEF_VEFFECT_HELICOPTERGUNSHIP_BLADES_01" bone="First propeller07"/>
+    <trigger type="FTimedTriggerEffect" id="22" time="0" duration="0.67" repeat="0" ec="1640" track="5" tier="0" event="ART_DEF_VEFFECT_HELICOPTERGUNSHIP_BLADES_01" bone="First propeller07"/>
+    <trigger type="FTimedTriggerEffect" id="7" time="0" duration="7.33333" repeat="0" ec="1160" track="2" tier="0" event="ART_DEF_VEFFECT_HELICOPTERGUNSHIP_BLADES_01" bone="First propeller07"/>
+    <trigger type="FTimedTriggerEffect" id="106" time="0" duration="4" repeat="0" ec="1100" track="2" tier="0" event="ART_DEF_VEFFECT_HELICOPTERGUNSHIP_BLADES_01" bone="First propeller07"/>
+    <trigger type="FTimedTriggerEffect" id="12" time="0" duration="3.3" repeat="0" ec="1200" track="5" tier="0" event="ART_DEF_VEFFECT_HELICOPTERGUNSHIP_BLADES_01" bone="First propeller07"/>
+    <trigger type="FTimedTriggerEffect" id="38" time="0" duration="13.3333" repeat="0" ec="1500" track="5" tier="0" event="ART_DEF_VEFFECT_HELICOPTERGUNSHIP_BLADES_01" bone="First propeller07"/>
+    <trigger type="FTimedTriggerEffect" id="36" time="0" duration="1" repeat="0" ec="1420" track="5" tier="0" event="ART_DEF_VEFFECT_HELICOPTERGUNSHIP_BLADES_01" bone="First propeller07"/>
+    <trigger type="FTimedTriggerEffect" id="58" time="0" duration="0.676" repeat="0" ec="1580" track="5" tier="0" event="ART_DEF_VEFFECT_HELICOPTERGUNSHIP_BLADES_01" bone="First propeller07"/>
+    <trigger type="FTimedTriggerEffect" id="16" time="0" duration="7.3333" repeat="0" ec="1400" track="5" tier="0" event="ART_DEF_VEFFECT_HELICOPTERGUNSHIP_BLADES_01" bone="First propeller07"/>
+    <trigger type="FTimedTriggerEffect" id="3" time="0" duration="2" repeat="0" ec="1440" track="5" tier="0" event="ART_DEF_VEFFECT_HELICOPTERGUNSHIP_BLADES_01" bone="First propeller07"/>
+    <trigger type="FTimedTriggerEffect" id="6" time="0" duration="7.33333" repeat="0" ec="1120" track="2" tier="0" event="ART_DEF_VEFFECT_HELICOPTERGUNSHIP_BLADES_01" bone="First propeller07"/>
+    <trigger type="FTimedTriggerEffect" id="40" time="0" duration="0.676" repeat="0" ec="1540" track="5" tier="0" event="ART_DEF_VEFFECT_HELICOPTERGUNSHIP_BLADES_01" bone="First propeller07"/>
+    <trigger type="FTimedTriggerEffect" id="29" time="0" duration="12.67" repeat="0" ec="1020" track="2" tier="0" event="ART_DEF_VEFFECT_HELICOPTERGUNSHIP_BLADES_02" bone="Box02"/>
+    <trigger type="FTimedTriggerEffect" id="25" time="0" duration="2.8" repeat="0" ec="2200" track="2" tier="0" event="ART_DEF_VEFFECT_HELICOPTERGUNSHIP_BLADES_02" bone="Box02"/>
+    <trigger type="FTimedTriggerEffect" id="43" time="0" duration="5.67" repeat="0" ec="2100" track="2" tier="0" event="ART_DEF_VEFFECT_HELICOPTERGUNSHIP_BLADES_02" bone="Box02"/>
+    <trigger type="FTimedTriggerEffect" id="39" time="0" duration="0.676" repeat="0" ec="1540" track="2" tier="0" event="ART_DEF_VEFFECT_HELICOPTERGUNSHIP_BLADES_02" bone="Box02"/>
+    <trigger type="FTimedTriggerEffect" id="2" time="0" duration="13.34" repeat="0" ec="1000" track="5" tier="0" event="ART_DEF_VEFFECT_HELICOPTERGUNSHIP_BLADES_02" bone="Box02"/>
+    <trigger type="FTimedTriggerEffect" id="49" time="0" duration="13.3333" repeat="0" ec="2000" track="2" tier="0" event="ART_DEF_VEFFECT_HELICOPTERGUNSHIP_BLADES_02" bone="Box02"/>
+    <trigger type="FTimedTriggerEffect" id="57" time="0" duration="0.676" repeat="0" ec="1580" track="2" tier="0" event="ART_DEF_VEFFECT_HELICOPTERGUNSHIP_BLADES_02" bone="Box02"/>
+    <trigger type="FTimedTriggerEffect" id="123" time="0" duration="12.1" repeat="0" ec="1450" track="2" tier="0" event="ART_DEF_VEFFECT_HELICOPTERGUNSHIP_BLADES_02" bone="Box02"/>
+    <trigger type="FTimedTriggerEffect" id="162" time="0" duration="2.8" repeat="0" ec="2440" track="2" tier="0" event="ART_DEF_VEFFECT_HELICOPTERGUNSHIP_BLADES_02" bone="Box02"/>
+    <trigger type="FTimedTriggerEffect" id="53" time="0" duration="12.67" repeat="0" ec="2020" track="2" tier="0" event="ART_DEF_VEFFECT_HELICOPTERGUNSHIP_BLADES_02" bone="Box02"/>
+    <trigger type="FTimedTriggerEffect" id="108" time="0" duration="7.33333" repeat="0" ec="1160" track="2" tier="0" event="ART_DEF_VEFFECT_HELICOPTERGUNSHIP_BLADES_02" bone="Box02"/>
+    <trigger type="FTimedTriggerEffect" id="35" time="0" duration="1" repeat="0" ec="1420" track="2" tier="0" event="ART_DEF_VEFFECT_HELICOPTERGUNSHIP_BLADES_02" bone="Box02"/>
+    <trigger type="FTimedTriggerEffect" id="17" time="0" duration="12.1" repeat="0" ec="1520" track="2" tier="0" event="ART_DEF_VEFFECT_HELICOPTERGUNSHIP_BLADES_02" bone="Box02"/>
+    <trigger type="FTimedTriggerEffect" id="258" time="0" duration="5.67" repeat="0" ec="1180" track="2" tier="0" event="ART_DEF_VEFFECT_HELICOPTERGUNSHIP_BLADES_02" bone="Box02"/>
+    <trigger type="FTimedTriggerEffect" id="21" time="0" duration="0.67" repeat="0" ec="1640" track="2" tier="0" event="ART_DEF_VEFFECT_HELICOPTERGUNSHIP_BLADES_02" bone="Box02"/>
+    <trigger type="FTimedTriggerEffect" id="41" time="0" duration="12" repeat="0" ec="1620" track="2" tier="0" event="ART_DEF_VEFFECT_HELICOPTERGUNSHIP_BLADES_02" bone="Box02"/>
+    <trigger type="FTimedTriggerEffect" id="37" time="0" duration="13.3333" repeat="0" ec="1500" track="2" tier="0" event="ART_DEF_VEFFECT_HELICOPTERGUNSHIP_BLADES_02" bone="Box02"/>
+    <trigger type="FTimedTriggerEffect" id="55" time="0" duration="0.67" repeat="0" ec="1560" track="2" tier="0" event="ART_DEF_VEFFECT_HELICOPTERGUNSHIP_BLADES_02" bone="Box02"/>
+    <trigger type="FTimedTriggerEffect" id="23" time="0" duration="4.67" repeat="0" ec="1800" track="2" tier="0" event="ART_DEF_VEFFECT_HELICOPTERGUNSHIP_BLADES_02" bone="Box02"/>
+    <trigger type="FTimedTriggerEffect" id="5" time="0" duration="2" repeat="0" ec="1440" track="2" tier="0" event="ART_DEF_VEFFECT_HELICOPTERGUNSHIP_BLADES_02" bone="Box02"/>
+    <trigger type="FTimedTriggerEffect" id="27" time="0" duration="1" repeat="0" ec="1290" track="2" tier="0" event="ART_DEF_VEFFECT_HELICOPTERGUNSHIP_BLADES_02" bone="Box02"/>
+    <trigger type="FTimedTriggerEffect" id="51" time="0" duration="12.67" repeat="0" ec="2040" track="2" tier="0" event="ART_DEF_VEFFECT_HELICOPTERGUNSHIP_BLADES_02" bone="Box02"/>
+    <trigger type="FTimedTriggerEffect" id="9" time="0" duration="12.68" repeat="0" ec="1040" track="2" tier="0" event="ART_DEF_VEFFECT_HELICOPTERGUNSHIP_BLADES_02" bone="Box02"/>
+    <trigger type="FTimedTriggerEffect" id="13" time="0" duration="1" repeat="0" ec="1280" track="2" tier="0" event="ART_DEF_VEFFECT_HELICOPTERGUNSHIP_BLADES_02" bone="Box02"/>
+    <trigger type="FTimedTriggerEffect" id="19" time="0" duration="0.67" repeat="0" ec="1600" track="2" tier="0" event="ART_DEF_VEFFECT_HELICOPTERGUNSHIP_BLADES_02" bone="Box02"/>
+    <trigger type="FTimedTriggerEffect" id="59" time="0" duration="4" repeat="0" ec="1140" track="2" tier="0" event="ART_DEF_VEFFECT_HELICOPTERGUNSHIP_BLADES_02" bone="Box02"/>
+    <trigger type="FTimedTriggerEffect" id="47" time="0" duration="8.67" repeat="0" ec="1285" track="2" tier="0" event="ART_DEF_VEFFECT_HELICOPTERGUNSHIP_BLADES_02" bone="Box02"/>
+    <trigger type="FTimedTriggerEffect" id="4" time="0" duration="7.33333" repeat="0" ec="1120" track="5" tier="0" event="ART_DEF_VEFFECT_HELICOPTERGUNSHIP_BLADES_02" bone="Box02"/>
+    <trigger type="FTimedTriggerEffect" id="15" time="0" duration="7.33333" repeat="0" ec="1400" track="2" tier="0" event="ART_DEF_VEFFECT_HELICOPTERGUNSHIP_BLADES_02" bone="Box02"/>
+    <trigger type="FTimedTriggerEffect" id="31" time="0" duration="4" repeat="0" ec="1100" track="2" tier="0" event="ART_DEF_VEFFECT_HELICOPTERGUNSHIP_BLADES_02" bone="Box02"/>
+    <trigger type="FTimedTriggerEffect" id="185" time="1.88888884" duration="0" repeat="0" ec="2100" track="2" tier="0" event="ART_DEF_VEFFECT_MECH_LAUNCH_SMOKE_FRONT" bone="fx_PROJECTILE_04C"/>
+    <trigger type="FTimedTriggerEffect" id="79" time="0.205555558" duration="0" repeat="0" ec="1100" track="2" tier="0" event="ART_DEF_VEFFECT_MECH_LAUNCH_SMOKE_FRONT" bone="fx_PROJECTILE_04C"/>
+    <trigger type="FTimedTriggerEffect" id="181" time="1.70925927" duration="0" repeat="0" ec="2100" track="2" tier="0" event="ART_DEF_VEFFECT_MECH_LAUNCH_SMOKE_FRONT" bone="fx_PROJECTILE_01C"/>
+    <trigger type="FTimedTriggerEffect" id="189" time="1.4203701" duration="0" repeat="0" ec="1100" track="2" tier="0" event="ART_DEF_VEFFECT_MECH_LAUNCH_SMOKE_FRONT" bone="fx_PROJECTILE_03C"/>
+    <trigger type="FTimedTriggerEffect" id="177" time="1.52222228" duration="0" repeat="0" ec="2100" track="2" tier="0" event="ART_DEF_VEFFECT_MECH_LAUNCH_SMOKE_FRONT" bone="fx_PROJECTILE_03C"/>
+    <trigger type="FTimedTriggerEffect" id="173" time="1.3304677" duration="0" repeat="0" ec="2100" track="2" tier="0" event="ART_DEF_VEFFECT_MECH_LAUNCH_SMOKE_FRONT" bone="fx_PROJECTILE_02C"/>
+    <trigger type="FTimedTriggerEffect" id="193" time="1.17777777" duration="0" repeat="0" ec="1100" track="2" tier="0" event="ART_DEF_VEFFECT_MECH_LAUNCH_SMOKE_FRONT" bone="fx_PROJECTILE_01C"/>
+    <trigger type="FTimedTriggerEffect" id="260" time="1.3304677" duration="0" repeat="0" ec="1180" track="2" tier="0" event="ART_DEF_VEFFECT_MECH_LAUNCH_SMOKE_FRONT" bone="fx_PROJECTILE_02C"/>
+    <trigger type="FTimedTriggerEffect" id="196" time="4.512456" duration="0" repeat="0" ec="1160" track="2" tier="0" event="ART_DEF_VEFFECT_MECH_LAUNCH_SMOKE_FRONT" bone="fx_PROJECTILE_04C"/>
+    <trigger type="FTimedTriggerEffect" id="262" time="1.52222228" duration="0" repeat="0" ec="1180" track="2" tier="0" event="ART_DEF_VEFFECT_MECH_LAUNCH_SMOKE_FRONT" bone="fx_PROJECTILE_03C"/>
+    <trigger type="FTimedTriggerEffect" id="200" time="0.162962973" duration="0" repeat="0" ec="1160" track="2" tier="0" event="ART_DEF_VEFFECT_MECH_LAUNCH_SMOKE_FRONT" bone="fx_PROJECTILE_03C"/>
+    <trigger type="FTimedTriggerEffect" id="264" time="1.70925927" duration="0" repeat="0" ec="1180" track="2" tier="0" event="ART_DEF_VEFFECT_MECH_LAUNCH_SMOKE_FRONT" bone="fx_PROJECTILE_01C"/>
+    <trigger type="FTimedTriggerEffect" id="266" time="1.88888884" duration="0" repeat="0" ec="1180" track="2" tier="0" event="ART_DEF_VEFFECT_MECH_LAUNCH_SMOKE_FRONT" bone="fx_PROJECTILE_04C"/>
+    <trigger type="FTimedTriggerEffect" id="204" time="0.3648149" duration="0" repeat="0" ec="1160" track="2" tier="0" event="ART_DEF_VEFFECT_MECH_LAUNCH_SMOKE_FRONT" bone="fx_PROJECTILE_02C"/>
+    <trigger type="FTimedTriggerEffect" id="207" time="2.10925937" duration="0" repeat="0" ec="1160" track="2" tier="0" event="ART_DEF_VEFFECT_MECH_LAUNCH_SMOKE_FRONT" bone="fx_PROJECTILE_04C"/>
+    <trigger type="FTimedTriggerEffect" id="210" time="3.00925922" duration="0" repeat="0" ec="1160" track="2" tier="0" event="ART_DEF_VEFFECT_MECH_LAUNCH_SMOKE_FRONT" bone="fx_PROJECTILE_01C"/>
+    <trigger type="FTimedTriggerEffect" id="216" time="4.281483" duration="0" repeat="0" ec="1160" track="2" tier="0" event="ART_DEF_VEFFECT_MECH_LAUNCH_SMOKE_FRONT" bone="fx_PROJECTILE_02C"/>
+    <trigger type="FTimedTriggerEffect" id="115" time="1.91379" duration="0" repeat="0" ec="2200" track="2" tier="0" event="ART_DEF_VEFFECT_TANK_DEATH_01" bone="base"/>
+    <trigger type="FTimedTriggerEffect" id="112" time="3.41379" duration="0" repeat="0" ec="1200" track="5" tier="0" event="ART_DEF_VEFFECT_TANK_DEATH_01" bone="base"/>
+    <trigger type="FTimedTriggerEffect" id="8" time="0.632184" duration="5.1" repeat="0" ec="1200" track="5" tier="0" event="ART_DEF_VEFFECT_TRAIL_PLANE_DEATH_01" bone="First propeller07"/>
+    <trigger type="FTimedTriggerEffect" id="32" time="0" duration="5.66667" repeat="0" ec="1200" track="2" tier="0" event="ART_DEF_VEFFECT_TRAIL_PLANE_DEATH_02" bone="Box02"/>
+    <trigger type="FTimedTriggerSound" id="129" time="0.0261969" duration="0" repeat="0" ec="1200" track="1" tier="-1" event="AS3D_UNIT_HELICOPTER_GUNSHIP_CRASH_ALARM" bone=""/>
+    <trigger type="FTimedTriggerSound" id="141" time="0.00654525" duration="0" repeat="0" ec="2200" track="1" tier="-1" event="AS3D_UNIT_HELICOPTER_GUNSHIP_CRASH_ALARM_B" bone=""/>
+    <trigger type="FTimedTriggerSound" id="142" time="1.52607" duration="0" repeat="0" ec="2200" track="1" tier="-1" event="AS3D_UNIT_HELICOPTER_GUNSHIP_EXPLODE" bone=""/>
+    <trigger type="FTimedTriggerSound" id="132" time="3.04641" duration="0" repeat="0" ec="1200" track="1" tier="-1" event="AS3D_UNIT_HELICOPTER_GUNSHIP_EXPLODE" bone=""/>
+    <trigger type="FTimedTriggerSound" id="11" time="0.0214544" duration="0" repeat="0" ec="1100" track="1" tier="-1" event="AS3D_UNIT_HELICOPTER_GUNSHIP_HELICOPTER_ATTACK_HOVER" bone=""/>
+    <trigger type="FTimedTriggerSound" id="267" time="0.00816326" duration="0" repeat="0" ec="1180" track="1" tier="-1" event="AS3D_UNIT_HELICOPTER_GUNSHIP_HELICOPTER_ATTACK_HOVER" bone=""/>
+    <trigger type="FTimedTriggerSound" id="137" time="0.00816326" duration="0" repeat="0" ec="2100" track="1" tier="-1" event="AS3D_UNIT_HELICOPTER_GUNSHIP_HELICOPTER_ATTACK_HOVER" bone=""/>
+    <trigger type="FTimedTriggerSound" id="62" time="0.0201445" duration="0" repeat="0" ec="1140" track="1" tier="-1" event="AS3D_UNIT_HELICOPTER_GUNSHIP_HELICOPTER_ATTACK_HOVER" bone=""/>
+    <trigger type="FTimedTriggerSound" id="126" time="3.21951" duration="0" repeat="0" ec="1160" track="1" tier="-1" event="AS3D_UNIT_HELICOPTER_GUNSHIP_HELICOPTER_ATTACK_HOVER" bone=""/>
+    <trigger type="FTimedTriggerSound" id="121" time="0" duration="0" repeat="0" ec="1160" track="1" tier="-1" event="AS3D_UNIT_HELICOPTER_GUNSHIP_HELICOPTER_ATTACK_HOVER" bone=""/>
+    <trigger type="FTimedTriggerSound" id="128" time="0.0731707" duration="0" repeat="0" ec="1200" track="1" tier="-1" event="AS3D_UNIT_HELICOPTER_GUNSHIP_HELICOPTER_DEATH_A" bone=""/>
+    <trigger type="FTimedTriggerSound" id="297" time="9.313226E-09" duration="7.33" repeat="0" ec="1120" track="1" tier="-1" event="AS3D_UNIT_HELICOPTER_GUNSHIP_HELICOPTER_RUN_LOOP" bone=""/>
+    <trigger type="FTimedTriggerSound" id="227" time="9.313226E-09" duration="7.33" repeat="0" ec="1400" track="1" tier="-1" event="AS3D_UNIT_HELICOPTER_GUNSHIP_HELICOPTER_RUN_LOOP" bone=""/>
+    <trigger type="FTimedTriggerSound" id="131" time="0" duration="0" repeat="0" ec="1440" track="1" tier="-1" event="AS3D_UNIT_HELICOPTER_GUNSHIP_HELICOPTER_STOP_RUN" bone=""/>
+    <trigger type="FTimedTriggerSound" id="299" time="0" duration="0" repeat="0" ec="1600" track="1" tier="-1" event="AS3D_UNIT_HELICOPTER_GUNSHIP_HELICOPTER_STOP_RUN" bone=""/>
+    <trigger type="FTimedTriggerSound" id="300" time="0" duration="0" repeat="0" ec="1280" track="1" tier="-1" event="AS3D_UNIT_HELICOPTER_GUNSHIP_HELICOPTER_STOP_RUN" bone=""/>
+    <trigger type="FTimedTriggerSound" id="233" time="0" duration="0" repeat="0" ec="2440" track="1" tier="-1" event="AS3D_UNIT_HELICOPTER_GUNSHIP_HELICOPTER_STOP_RUN" bone=""/>
+    <trigger type="FTimedTriggerSound" id="140" time="0.00313034" duration="0" repeat="0" ec="2200" track="1" tier="-1" event="AS3D_UNIT_HELICOPTER_GUNSHIP_HG_DEATH_B" bone=""/>
+    <trigger type="FTimedTriggerSound" id="133" time="0.00737982" duration="0" repeat="0" ec="1800" track="1" tier="-1" event="AS3D_UNIT_HELICOPTER_GUNSHIP_HG_VICTORY" bone=""/>
+    <trigger type="FTimedTriggerSound" id="171" time="0" duration="0" repeat="0" ec="2200" track="1" tier="-1" event="AS3D_UNIT_HELICOPTER_GUNSHIP_IMPACT_$(WEAPON)" bone=""/>
+    <trigger type="FTimedTriggerSound" id="170" time="0" duration="0" repeat="0" ec="1200" track="1" tier="-1" event="AS3D_UNIT_HELICOPTER_GUNSHIP_IMPACT_$(WEAPON)" bone=""/>
+    <trigger type="FTimedTriggerSound" id="160" time="0.164814815" duration="0" repeat="0" ec="1100" track="1" tier="-1" event="AS3D_UNIT_HELICOPTER_GUNSHIP_JET_MISSILE_LAUNCH" bone=""/>
+    <trigger type="FTimedTriggerSound" id="122" time="0.108976" duration="0" repeat="0" ec="1160" track="1" tier="-1" event="AS3D_UNIT_HELICOPTER_GUNSHIP_JET_MISSILE_LAUNCH" bone=""/>
+    <trigger type="FTimedTriggerSound" id="228" time="1.272" duration="0" repeat="0" ec="2100" track="1" tier="-1" event="AS3D_UNIT_HELICOPTER_GUNSHIP_JET_MISSILE_LAUNCH" bone=""/>
+    <trigger type="FTimedTriggerSound" id="269" time="1.272" duration="0" repeat="0" ec="1180" track="1" tier="-1" event="AS3D_UNIT_HELICOPTER_GUNSHIP_JET_MISSILE_LAUNCH" bone=""/>
+    <trigger type="FTimedTriggerSound" id="231" time="1.472" duration="0" repeat="0" ec="2100" track="1" tier="-1" event="AS3D_UNIT_HELICOPTER_GUNSHIP_MECH_ROCKET" bone=""/>
+    <trigger type="FTimedTriggerSound" id="230" time="1.82799971" duration="0" repeat="0" ec="2100" track="1" tier="-1" event="AS3D_UNIT_HELICOPTER_GUNSHIP_MECH_ROCKET" bone=""/>
+    <trigger type="FTimedTriggerSound" id="229" time="1.65199959" duration="0" repeat="0" ec="2100" track="1" tier="-1" event="AS3D_UNIT_HELICOPTER_GUNSHIP_MECH_ROCKET" bone=""/>
+    <trigger type="FTimedTriggerSound" id="270" time="1.472" duration="0" repeat="0" ec="1180" track="1" tier="-1" event="AS3D_UNIT_HELICOPTER_GUNSHIP_MECH_ROCKET" bone=""/>
+    <trigger type="FTimedTriggerSound" id="271" time="1.65199959" duration="0" repeat="0" ec="1180" track="1" tier="-1" event="AS3D_UNIT_HELICOPTER_GUNSHIP_MECH_ROCKET" bone=""/>
+    <trigger type="FTimedTriggerSound" id="272" time="1.82799971" duration="0" repeat="0" ec="1180" track="1" tier="-1" event="AS3D_UNIT_HELICOPTER_GUNSHIP_MECH_ROCKET" bone=""/>
+    <trigger type="FTimedTriggerSound" id="219" time="1.35311115" duration="0" repeat="0" ec="1100" track="1" tier="-1" event="AS3D_UNIT_HELICOPTER_GUNSHIP_MECH_ROCKET" bone=""/>
+    <trigger type="FTimedTriggerSound" id="218" time="1.13888872" duration="0" repeat="0" ec="1100" track="1" tier="-1" event="AS3D_UNIT_HELICOPTER_GUNSHIP_MECH_ROCKET" bone=""/>
+    <trigger type="FTimedTriggerSound" id="220" time="0.299999982" duration="0" repeat="0" ec="1160" track="1" tier="-1" event="AS3D_UNIT_HELICOPTER_GUNSHIP_MECH_ROCKET" bone=""/>
+    <trigger type="FTimedTriggerSound" id="223" time="4.43599939" duration="0" repeat="0" ec="1160" track="1" tier="-1" event="AS3D_UNIT_HELICOPTER_GUNSHIP_MECH_ROCKET" bone=""/>
+    <trigger type="FTimedTriggerSound" id="222" time="2.932" duration="0" repeat="0" ec="1160" track="1" tier="-1" event="AS3D_UNIT_HELICOPTER_GUNSHIP_MECH_ROCKET" bone=""/>
+    <trigger type="FTimedTriggerSound" id="124" time="4.21936941" duration="0" repeat="0" ec="1160" track="1" tier="-1" event="AS3D_UNIT_HELICOPTER_GUNSHIP_MECH_ROCKET" bone=""/>
+    <trigger type="FTimedTriggerSound" id="136" time="4.27755" duration="0" repeat="0" ec="2100" track="1" tier="-1" event="AS3D_UNIT_HELICOPTER_GUNSHIP_MINI_GUN" bone=""/>
+    <trigger type="FTimedTriggerSound" id="119" time="0.724074" duration="0" repeat="0" ec="1140" track="1" tier="-1" event="AS3D_UNIT_HELICOPTER_GUNSHIP_MINI_GUN" bone=""/>
+    <trigger type="FTimedTriggerSound" id="61" time="3" duration="0" repeat="0" ec="1100" track="1" tier="-1" event="AS3D_UNIT_HELICOPTER_GUNSHIP_MINI_GUN" bone=""/>
+    <trigger type="FTimedTriggerSound" id="125" time="6.34146" duration="0" repeat="0" ec="1160" track="1" tier="-1" event="AS3D_UNIT_HELICOPTER_GUNSHIP_MINI_GUN" bone=""/>
+    <trigger type="FTimedTriggerSound" id="134" time="0.195918" duration="0" repeat="0" ec="2100" track="1" tier="-1" event="AS3D_UNIT_HELICOPTER_GUNSHIP_MINI_GUN" bone=""/>
+    <trigger type="FTimedTriggerSound" id="120" time="2.248" duration="0" repeat="0" ec="1140" track="1" tier="-1" event="AS3D_UNIT_HELICOPTER_GUNSHIP_MINI_GUN" bone=""/>
+    <trigger type="FTimedTriggerSound" id="46" time="1.99259" duration="0" repeat="0" ec="1100" track="1" tier="-1" event="AS3D_UNIT_HELICOPTER_GUNSHIP_MINI_GUN" bone=""/>
+    <trigger type="FTimedTriggerSound" id="268" time="0.195918" duration="0" repeat="0" ec="1180" track="1" tier="-1" event="AS3D_UNIT_HELICOPTER_GUNSHIP_MINI_GUN" bone=""/>
+    <trigger type="FTimedTriggerSound" id="135" time="2.23673" duration="0" repeat="0" ec="2100" track="1" tier="-1" event="AS3D_UNIT_HELICOPTER_GUNSHIP_MINI_GUN" bone=""/>
+    <trigger type="FTimedTriggerSound" id="45" time="1.0018518" duration="0" repeat="0" ec="1100" track="1" tier="-1" event="AS3D_UNIT_HELICOPTER_GUNSHIP_MINI_GUN" bone=""/>
+    <trigger type="FTimedTriggerSound" id="224" time="4.152" duration="0" repeat="0" ec="1160" track="1" tier="-1" event="AS3D_UNIT_HELICOPTER_GUNSHIP_MINI_GUN" bone=""/>
+    <trigger type="FTimedTriggerSound" id="273" time="2.23673" duration="0" repeat="0" ec="1180" track="1" tier="-1" event="AS3D_UNIT_HELICOPTER_GUNSHIP_MINI_GUN" bone=""/>
+    <trigger type="FTimedTriggerSound" id="127" time="0.0169444457" duration="0" repeat="0" ec="1200" track="1" tier="-1" event="AS3D_UNIT_HELICOPTER_GUNSHIP_ROCKET_ARTILLERY_HIT_EXPLO" bone=""/>
+    <trigger type="FTimedTriggerSound" id="232" time="1.53537071" duration="0" repeat="0" ec="2200" track="1" tier="-1" event="AS3D_UNIT_HELICOPTER_GUNSHIP_TAIL_ROTOR" bone=""/>
+    <trigger type="FTimedTriggerSound" id="139" time="0.09680498" duration="0" repeat="0" ec="2200" track="1" tier="-1" event="AS3D_UNIT_HELICOPTER_GUNSHIP_TANK_HIT_B" bone=""/>
+    <trigger type="FTimedTriggerSound" id="130" time="2.87927" duration="0" repeat="0" ec="1200" track="1" tier="-1" event="AS3D_UNIT_HELICOPTER_GUNSHIP_TANK_HIT_B" bone=""/>
+  </triggers>
+</trigger_system>

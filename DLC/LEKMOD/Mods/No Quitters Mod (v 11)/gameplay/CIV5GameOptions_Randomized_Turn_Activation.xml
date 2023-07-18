@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<!-- Table data -->
+	<GameOptions>
+		<Row>
+			<Type>GAMEOPTION_SIMULTANEOUS_PLAYER_TURN_ACTIVATION_ORDER_RANDOMIZED</Type>
+			<Description>TXT_KEY_GAME_OPTION_SIMULTANEOUS_PLAYER_TURN_ACTIVATION_ORDER_RANDOMIZED</Description>
+			<Help>TXT_KEY_GAME_OPTION_SIMULTANEOUS_PLAYER_TURN_ACTIVATION_ORDER_RANDOMIZED_HELP</Help>
+			<SupportsSinglePlayer>false</SupportsSinglePlayer>
+		</Row>
+	</GameOptions>
+	<Language_en_US>
+		<Row Tag="TXT_KEY_GAME_OPTION_SIMULTANEOUS_PLAYER_TURN_ACTIVATION_ORDER_RANDOMIZED">
+			<Text>Randomized Player Activation Order</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_SIMULTANEOUS_PLAYER_TURN_ACTIVATION_ORDER_RANDOMIZED_HELP">
+			<Text>Players in simultaneous mode are activated in a random order every turn. For example, this means if two players would finish a wonder on the same turn, the player who ends up getting the wonder is randomized from the two instead of always going to the player with the higher slot.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Row Tag="TXT_KEY_GAME_OPTION_SIMULTANEOUS_PLAYER_TURN_ACTIVATION_ORDER_RANDOMIZED">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Randomized Player Activation Order</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_SIMULTANEOUS_PLAYER_TURN_ACTIVATION_ORDER_RANDOMIZED_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Players in simultaneous mode are activated in a random order every turn. For example, this means if two players would finish a wonder on the same turn, the player who ends up getting the wonder is randomized from the two instead of always going to the player with the higher slot.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_ES_ES>
+		<Row Tag="TXT_KEY_GAME_OPTION_SIMULTANEOUS_PLAYER_TURN_ACTIVATION_ORDER_RANDOMIZED">
+			<Text>[COLOR_WARNING_TEXT](ES_ES text) [ENDCOLOR]Randomized Player Activation Order</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_SIMULTANEOUS_PLAYER_TURN_ACTIVATION_ORDER_RANDOMIZED_HELP">
+			<Text>[COLOR_WARNING_TEXT](ES_ES text) [ENDCOLOR]Players in simultaneous mode are activated in a random order every turn. For example, this means if two players would finish a wonder on the same turn, the player who ends up getting the wonder is randomized from the two instead of always going to the player with the higher slot.</Text>
+		</Row>
+	</Language_ES_ES>
+	<Language_FR_FR>
+		<Row Tag="TXT_KEY_GAME_OPTION_SIMULTANEOUS_PLAYER_TURN_ACTIVATION_ORDER_RANDOMIZED">
+			<Text>[COLOR_WARNING_TEXT](FR_FR text) [ENDCOLOR]Randomized Player Activation Order</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_SIMULTANEOUS_PLAYER_TURN_ACTIVATION_ORDER_RANDOMIZED_HELP">
+			<Text>[COLOR_WARNING_TEXT](FR_FR text) [ENDCOLOR]Players in simultaneous mode are activated in a random order every turn. For example, this means if two players would finish a wonder on the same turn, the player who ends up getting the wonder is randomized from the two instead of always going to the player with the higher slot.</Text>
+		</Row>
+	</Language_FR_FR>
+	<Language_PL_PL>
+		<Row Tag="TXT_KEY_GAME_OPTION_SIMULTANEOUS_PLAYER_TURN_ACTIVATION_ORDER_RANDOMIZED">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Randomized Player Activation Order</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_SIMULTANEOUS_PLAYER_TURN_ACTIVATION_ORDER_RANDOMIZED_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Players in simultaneous mode are activated in a random order every turn. For example, this means if two players would finish a wonder on the same turn, the player who ends up getting the wonder is randomized from the two instead of always going to the player with the higher slot.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Row Tag="TXT_KEY_GAME_OPTION_SIMULTANEOUS_PLAYER_TURN_ACTIVATION_ORDER_RANDOMIZED">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Randomized Player Activation Order</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_SIMULTANEOUS_PLAYER_TURN_ACTIVATION_ORDER_RANDOMIZED_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Players in simultaneous mode are activated in a random order every turn. For example, this means if two players would finish a wonder on the same turn, the player who ends up getting the wonder is randomized from the two instead of always going to the player with the higher slot.</Text>
+		</Row>
+	</Language_RU_RU>
+</GameData>

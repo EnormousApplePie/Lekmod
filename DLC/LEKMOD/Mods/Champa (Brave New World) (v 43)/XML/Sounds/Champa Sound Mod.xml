@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by Tomatekh -->
+<GameData>
+	<Audio_Sounds>
+		<Row>
+			<SoundID>SND_LEADER_MUSIC_CHAMPA_PO_BINASUOR_MOD_PEACE</SoundID>
+			<Filename>CheBongNgaPeace</Filename>
+			<LoadType>DynamicResident</LoadType>
+		</Row>
+		<Row>
+			<SoundID>SND_LEADER_MUSIC_CHAMPA_PO_BINASUOR_MOD_WAR</SoundID>
+			<Filename>CheBongNgaWar</Filename>
+			<LoadType>DynamicResident</LoadType>
+		</Row>
+		<Row>
+			<SoundID>SND_DOM_SPEECH_CHAMPA_MOD</SoundID>
+			<Filename>CheBongNgaDoM</Filename>
+			<LoadType>DynamicResident</LoadType>
+		</Row>
+	</Audio_Sounds>
+	<Audio_2DSounds>
+		<Row>
+			<ScriptID>AS2D_LEADER_MUSIC_CHAMPA_PO_BINASUOR_MOD_PEACE</ScriptID>
+			<SoundID>SND_LEADER_MUSIC_CHAMPA_PO_BINASUOR_MOD_PEACE</SoundID>
+			<SoundType>GAME_MUSIC</SoundType>
+			<MinVolume>75</MinVolume>
+			<MaxVolume>75</MaxVolume>
+			<IsMusic>true</IsMusic>
+		</Row>
+		<Row>
+			<ScriptID>AS2D_LEADER_MUSIC_CHAMPA_PO_BINASUOR_MOD_WAR</ScriptID>
+			<SoundID>SND_LEADER_MUSIC_CHAMPA_PO_BINASUOR_MOD_WAR</SoundID>
+			<SoundType>GAME_MUSIC</SoundType>
+			<MinVolume>75</MinVolume>
+			<MaxVolume>75</MaxVolume>
+			<IsMusic>true</IsMusic>
+		</Row>
+		<Row>
+			<ScriptID>AS2D_AMBIENCE_LEADER_CHAMPA_PO_BINASUOR_MOD_AMBIENCE</ScriptID>
+			<SoundID>SND_AMBIENCE_DESERT_DESERT_SAND</SoundID>
+			<SoundType>GAME_SFX</SoundType>
+			<Looping>true</Looping>
+			<MinVolume>25</MinVolume>
+			<MaxVolume>25</MaxVolume>
+		</Row>
+		<Row>
+			<ScriptID>AS2D_DOM_SPEECH_CHAMPA_MOD</ScriptID>
+			<SoundID>SND_DOM_SPEECH_CHAMPA_MOD</SoundID>
+			<SoundType>GAME_SPEECH</SoundType>
+			<MinVolume>90</MinVolume>
+			<MaxVolume>90</MaxVolume>
+		</Row>
+	</Audio_2DSounds>
+</GameData>

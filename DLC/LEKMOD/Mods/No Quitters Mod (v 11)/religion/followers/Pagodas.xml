@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2016-09-25 05:44:53 -->
+<GameData>
+
+	<!-- May use Faith to purchase Pagodas (+1 Faith / +1 Culture / 10% of Food is retained on citizen growth) -->
+	<Buildings>
+		<Update>
+			<Set FoodKept="10" Happiness="1" Help="TXT_KEY_BUILDING_PAGODA_HELP" />
+			<Where Type="BUILDING_PAGODA" />
+		</Update>
+	</Buildings>
+	<Building_YieldChanges>
+		<Update>
+			<Set Yield="1" />
+			<Where BuildingType="BUILDING_PAGODA" YieldType="YIELD_CULTURE" />
+		</Update>
+	</Building_YieldChanges>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_BELIEF_PAGODAS" />
+		<Row Tag="TXT_KEY_BELIEF_PAGODAS">
+			<Text>Use 130 [ICON_PEACE] Faith to purchase Pagodas (+1 [ICON_HAPPINESS_1] Happiness, +1 [ICON_CULTURE] Culture, 10% of [ICON_FOOD] Food is carried over after a new [ICON_CITIZEN] Citizen is born)</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_PAGODA_HELP">
+			<Text>10% of [ICON_FOOD] Food is carried over after a new [ICON_CITIZEN] Citizen is born</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_BELIEF_PAGODAS" />
+		<Row Tag="TXT_KEY_BELIEF_PAGODAS">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Use [ICON_PEACE] Faith to purchase Pagodas (+1 [ICON_PEACE] Faith, +1 [ICON_CULTURE] Culture, 10% of [ICON_FOOD] Food is carried over after a new [ICON_CITIZEN] Citizen is born)</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_PAGODA_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]10% of [ICON_FOOD] Food is carried over after a new [ICON_CITIZEN] Citizen is born</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_BELIEF_PAGODAS" />
+		<Row Tag="TXT_KEY_BELIEF_PAGODAS">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Use [ICON_PEACE] Faith to purchase Pagodas (+1 [ICON_PEACE] Faith, +1 [ICON_CULTURE] Culture, 10% of [ICON_FOOD] Food is carried over after a new [ICON_CITIZEN] Citizen is born)</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_PAGODA_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]10% of [ICON_FOOD] Food is carried over after a new [ICON_CITIZEN] Citizen is born</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_BELIEF_PAGODAS" />
+		<Row Tag="TXT_KEY_BELIEF_PAGODAS">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Use [ICON_PEACE] Faith to purchase Pagodas (+1 [ICON_PEACE] Faith, +1 [ICON_CULTURE] Culture, 10% of [ICON_FOOD] Food is carried over after a new [ICON_CITIZEN] Citizen is born)</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_PAGODA_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]10% of [ICON_FOOD] Food is carried over after a new [ICON_CITIZEN] Citizen is born</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

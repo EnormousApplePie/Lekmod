@@ -1,0 +1,14 @@
+<Asset>
+  <Mesh file="PL_MED_Town4.gr2" source="Max" />
+  <Texture file="MED_Town_Decal_H.dds" source="Max" />
+  <Texture file="MED_Town_Decal_S.dds" source="Max" />
+  <Texture file="PL_MED_Town.dds" source="Max" />
+  <Texture file="PL_MED_Town_Decal_D.dds" source="Max" />
+  <Texture file="PL_MED_Town_SREF.dds" source="Max" />
+  <Texture file="Generic_Grey_8.dds" source="Max" />
+  <DecisionTree file="StaticLandmarkDecisionTree.ddtxml" source="Tool" />
+  <BoneUsage>
+    <Bone name="FX_PillagedSmoke" />
+  </BoneUsage>
+  <TimedTrigger file="FX_Triggers_PL_MED_Town.ftsxml" source="Tool" model="PL_buildings06" state="0,1,2,3" />
+</Asset>

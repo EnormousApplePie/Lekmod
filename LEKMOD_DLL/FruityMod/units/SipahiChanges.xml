@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 5/4/2016 8:55:44 AM -->
+<GameData>
+
+	<!-- Sipahi now cost 20% less and are available at Gunpowder -->
+	<Units>
+		<Update>
+			<Set Cost="148" FaithCost="196" PrereqTech="TECH_GUNPOWDER" />
+			<Where Type="UNIT_OTTOMAN_SIPAHI" />
+		</Update>
+	</Units>
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_UNIT_HELP_SIPAHI" />
+		<Row Tag="TXT_KEY_UNIT_HELP_SIPAHI">
+			<Text>Mounted Unit specialized in defeating enemy Mounted Units. May only be built by the Ottomans. This Unit is faster, cheaper to train, available earlier, and can see further than the Lancer, which it replaces.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_UNIT_HELP_SIPAHI" />
+		<Row Tag="TXT_KEY_UNIT_HELP_SIPAHI">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Mounted Unit specialized in defeating enemy Mounted Units. May only be built by the Ottomans. This Unit is faster, cheaper to train, available earlier, and can see further than the Lancer, which it replaces.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_UNIT_HELP_SIPAHI" />
+		<Row Tag="TXT_KEY_UNIT_HELP_SIPAHI">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Mounted Unit specialized in defeating enemy Mounted Units. May only be built by the Ottomans. This Unit is faster, cheaper to train, available earlier, and can see further than the Lancer, which it replaces.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_UNIT_HELP_SIPAHI" />
+		<Row Tag="TXT_KEY_UNIT_HELP_SIPAHI">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Mounted Unit specialized in defeating enemy Mounted Units. May only be built by the Ottomans. This Unit is faster, cheaper to train, available earlier, and can see further than the Lancer, which it replaces.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

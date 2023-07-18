@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 3/30/2015 10:14:12 PM -->
+<GameData>
+	
+	<!-- Remove Research Agreements -->
+	<Technologies>
+		<Update>
+			<Set ResearchAgreementTradingAllowed="false" />
+			<Where Type="TECH_EDUCATION" />
+		</Update>
+	</Technologies>
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_DIPLO_RESCH_AGREEMENT_NO_TECH" />
+		<Row Tag="TXT_KEY_DIPLO_RESCH_AGREEMENT_NO_TECH">
+			<Text>[NEWLINE][NEWLINE]Research Agreements are disabled in NQ games.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_DIPLO_RESCH_AGREEMENT_NO_TECH" />
+		<Row Tag="TXT_KEY_DIPLO_RESCH_AGREEMENT_NO_TECH">
+			<Text>[NEWLINE][NEWLINE](DE_DE text) Research Agreements are disabled in NQ games.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_DIPLO_RESCH_AGREEMENT_NO_TECH" />
+		<Row Tag="TXT_KEY_DIPLO_RESCH_AGREEMENT_NO_TECH">
+			<Text>[NEWLINE][NEWLINE](PL_PL text) Research Agreements are disabled in NQ games.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_DIPLO_RESCH_AGREEMENT_NO_TECH" />
+		<Row Tag="TXT_KEY_DIPLO_RESCH_AGREEMENT_NO_TECH">
+			<Text>[NEWLINE][NEWLINE](RU_RU text) Research Agreements are disabled in NQ games.</Text>
+		</Row>
+	</Language_RU_RU>
+	
+</GameData>

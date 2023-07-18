@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2016-09-24 14:15:24 -->
+<GameData>
+
+	<!-- +1 Faith from Horses, Deer, Bison, Ivory, and Furs. -->
+	<Beliefs>
+		<Row>
+			<Type>BELIEF_SPIRIT_ANIMALS</Type>
+			<Description>TXT_KEY_BELIEF_SPIRIT_ANIMALS</Description>
+			<ShortDescription>TXT_KEY_BELIEF_SPIRIT_ANIMALS_SHORT</ShortDescription>
+			<Pantheon>true</Pantheon>
+		</Row>
+	</Beliefs>
+	<Belief_ResourceYieldChanges>
+		<Row>
+			<BeliefType>BELIEF_SPIRIT_ANIMALS</BeliefType>
+			<ResourceType>RESOURCE_HORSE</ResourceType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BeliefType>BELIEF_SPIRIT_ANIMALS</BeliefType>
+			<ResourceType>RESOURCE_DEER</ResourceType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BeliefType>BELIEF_SPIRIT_ANIMALS</BeliefType>
+			<ResourceType>RESOURCE_BISON</ResourceType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>1</Yield>
+		</Row>
+	</Belief_ResourceYieldChanges>
+	<Language_en_US>
+		<Row Tag="TXT_KEY_BELIEF_SPIRIT_ANIMALS">
+			<Text>+1 [ICON_PEACE] Faith for each Horse, Deer and Bison</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BELIEF_SPIRIT_ANIMALS_SHORT">
+			<Text>Spirit Animals</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Row Tag="TXT_KEY_BELIEF_SPIRIT_ANIMALS">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]+1 [ICON_PEACE] Faith for each Horse, Deer, Ivory, Fur, and Bison</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BELIEF_SPIRIT_ANIMALS_SHORT">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Spirit Animals</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Row Tag="TXT_KEY_BELIEF_SPIRIT_ANIMALS">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]+1 [ICON_PEACE] Faith for each Horse, Deer, Ivory, Fur, and Bison</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BELIEF_SPIRIT_ANIMALS_SHORT">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Spirit Animals</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Row Tag="TXT_KEY_BELIEF_SPIRIT_ANIMALS">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]+1 [ICON_PEACE] Faith for each Horse, Deer, Ivory, Fur, and Bison</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BELIEF_SPIRIT_ANIMALS_SHORT">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Spirit Animals</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 12/20/2013 1:01:45 AM -->
+<GameData>
+	<Defines>
+		
+		<!-- Base Defines Stuff -->
+		<Update>
+			<!-- 15 was a bit too high for this value, 5 affords the AI a lot more flexibility -->
+			<Set Value="5" />
+			<Where Name="AI_ATTEMPT_RUSH_OVER_X_TURNS_TO_BUILD" />
+		</Update>
+		<Update>
+			<!-- 15 is enough to push the AI to max out tech branching just to get its unique; 5 wasn't enough -->
+			<Set Value="15" />
+			<Where Name="TECH_PRIORITY_UNIQUE_ITEM" />
+		</Update>
+		<!-- This one actually can both add and subtract from flavor, so it actually ranges from -2 to 2;
+			It gets applied at half effect on each era advance as well. -->
+		<Update>
+			<Set Value="2" />
+			<Where Name="FLAVOR_RANDOMIZATION_RANGE" />
+		</Update>
+		<!-- Since DLL code divides by personalities often, allowing them to be 0 is a bad, bad idea -->
+		<Update>
+			<Set Value="1" />
+			<Where Name="PERSONALITY_FLAVOR_MIN_VALUE" />
+		</Update>
+		
+		<!-- Grand Strategy Stuff -->
+		<!-- Default AI is very schizophrenic with Grand Strategies, following 3 values help them focus a bit more -->
+		<Update>
+			<Set Value="20" />
+			<Where Name="AI_GRAND_STRATEGY_NUM_TURNS_STRATEGY_MUST_BE_ACTIVE" />
+		</Update>
+		<Update>
+			<!-- Random values are given to all grand strategies during a reroll; values range from 0-X, where X is value below -->
+			<Set Value="13" />
+			<Where Name="AI_GS_RAND_ROLL" />
+		</Update>
+		<Update>
+			<Set Value="50" />
+			<Where Name="AI_GRAND_STRATEGY_CURRENT_STRATEGY_WEIGHT" />
+		</Update>
+		<!-- AI no longer forced to adopt non-ideal GS simply because they think others are going for it -->
+		<Update>
+			<Set Value="10" />
+			<Where Name="AI_GRAND_STRATEGY_OTHER_PLAYERS_GS_MULTIPLIER" />
+		</Update>
+		<Update>
+			<Set Value="20" />
+			<Where Name="AI_GRAND_STRATEGY_CONQUEST_AT_WAR_WEIGHT" />
+		</Update>
+		<Update>
+			<Set Value="40" />
+			<Where Name="AI_GS_CONQUEST_NOBODY_MET_FIRST_TURN" />
+		</Update>
+		<Update>
+			<Set Value="-100" />
+			<Where Name="AI_GRAND_STRATEGY_CONQUEST_NOBODY_MET_WEIGHT" />
+		</Update>
+		<Update>
+			<!-- Better safe than sorry. -->
+			<Set Value="125" />
+			<Where Name="AI_GRAND_STRATEGY_CONQUEST_POWER_RATIO_MULTIPLIER" />
+		</Update>
+		<Update>
+			<Set Value="20" />
+			<Where Name="AI_GRAND_STRATEGY_CONQUEST_WEIGHT_PER_MAJOR_CONQUERED" />
+		</Update>
+		<!-- Culture is defensive and can be used for policies, while Tourism is offensive and is only used for victory -->
+		<Update>
+			<Set Value="50" />
+			<Where Name="AI_GS_CULTURE_RATIO_MULTIPLIER" />
+		</Update>
+		<Update>
+			<Set Value="100" />
+			<Where Name="AI_GS_TOURISM_RATIO_MULTIPLIER" />
+		</Update>
+		
+		<!-- Economic AI Stuff -->
+		<Update>
+			<!-- Increased to 30000 to account for higher settler yield multipliers -->
+			<Set Value="20000" />
+			<Where Name="AI_STRATEGY_MINIMUM_SETTLE_FERTILITY" />
+		</Update>
+		<Update>
+			<!-- Lowered from 8, since tall > wide in Civ5 early on; however, this number gets reduced on the DLL side -->
+			<Set Value="7" />
+			<Where Name="AI_STRATEGY_EARLY_EXPANSION_NUM_CITIES_LIMIT" />
+		</Update>
+		<Update>
+			<!-- Was 50% before, making the AI miss out on possible good city spots, especially for colonization -->
+			<Set Value="80" />
+			<Where Name="AI_STRATEGY_AREA_IS_FULL_PERCENT" />
+		</Update>
+		<Update>
+			<!-- Was 25 before, making the AI miss out on possible good city spots just because there might be cities nearby -->
+			<Set Value="19" />
+			<Where Name="AI_STRATEGY_EARLY_EXPANSION_NUM_UNOWNED_TILES_REQUIRED" />
+		</Update>
+		<Update>
+			<!-- Now equal to luxury resource plot bonus -->
+			<Set Value="80" />
+			<Where Name="AI_PLOT_VALUE_STRATEGIC_RESOURCE" />
+		</Update>
+		<Update>
+			<Set Value="8" />
+			<Where Name="AI_PLOT_VALUE_FIERCE_DISPUTE" />
+		</Update>
+		<Update>
+			<Set Value="250" />
+			<Where Name="AI_GOLD_PRIORITY_MINIMUM_PLOT_BUY_VALUE" />
+		</Update>
+		<Update>
+			<!-- AI will more readily buy plots -->
+			<Set Value="500" />
+			<Where Name="AI_GOLD_BALANCE_TO_HALVE_PLOT_BUY_MINIMUM" />
+		</Update>
+		<!-- AI is more likely to spend money to upgrade now -->
+		<Update>
+			<Set Value="200" />
+			<Where Name="AI_GOLD_PRIORITY_UPGRADE_BASE" />
+		</Update>
+		<Update>
+			<!-- Now equal to luxury resource plot bonus -->
+			<Set Value="50" />
+			<Where Name="AI_GOLD_PRIORITY_DIPLOMACY_BASE" />
+		</Update>
+		<Update>
+			<!-- No idea why this was so high by default, spending gold on defensive buildings seems like a waste unless
+				it's an emergency -->
+			<Set Value="250" />
+			<Where Name="AI_GOLD_PRIORITY_DEFENSIVE_BUILDING" />
+		</Update>
+		
+		<!-- Builder Tasking Stuff -->
+		<!-- Values were increased for more granularity, and also to stop the AI from overvaluing cultural improvements -->
+		<Update>
+			<Set Value="6" />
+			<Where Name="BUILDER_TASKING_PLOT_EVAL_MULTIPLIER_FOOD" />
+		</Update>
+		<Update>
+			<Set Value="6" />
+			<Where Name="BUILDER_TASKING_PLOT_EVAL_MULTIPLIER_PRODUCTION" />
+		</Update>
+		<Update>
+			<Set Value="3" />
+			<Where Name="BUILDER_TASKING_PLOT_EVAL_MULTIPLIER_GOLD" />
+		</Update>
+		<Update>
+			<Set Value="4" />
+			<Where Name="BUILDER_TASKING_PLOT_EVAL_MULTIPLIER_SCIENCE" />
+		</Update>
+		<Update>
+			<Set Value="4" />
+			<Where Name="BUILDER_TASKING_PLOT_EVAL_MULTIPLIER_CULTURE" />
+		</Update>
+		
+		<!-- Military AI Stuff -->
+		<!-- Weights increase exponentially with threat instead of pseudolinearly -->
+		<Update>
+			<Set Value="9" />
+			<Where Name="AI_MILITARY_THREAT_WEIGHT_SEVERE" />
+		</Update>
+		<Update>
+			<Set Value="27" />
+			<Where Name="AI_MILITARY_THREAT_WEIGHT_CRITICAL" />
+		</Update>
+		<Update>
+			<!-- 1.5 means the AI will have a "free" unit on patrol between two cities; this really helps against barbarians -->
+			<Set Value="1.5" />
+			<Where Name="AI_STRATEGY_DEFEND_MY_LANDS_UNITS_PER_CITY" />
+		</Update>
+		
+		<!-- City Specialization Stuff -->
+		<Update>
+			<!-- This seems to be drastically low, but it doesn't actually hurt the AI (worst case is that end turns are bit slower)
+				In fact, this pretty much means the AI reevaluates city spec after completing its current production, which improves
+				AI flexibility. -->
+			<Set Value="4" />
+			<Where Name="AI_CITY_SPECIALIZATION_REEVALUATION_INTERVAL" />
+		</Update>
+		<Update>
+			<Set Value="-25" />
+			<Where Name="AI_CITY_SPECIALIZATION_FOOD_WEIGHT_NUM_CITIES" />
+		</Update>
+		<Update>
+			<Set Value="1" />
+			<Where Name="AI_CITY_SPECIALIZATION_PRODUCTION_WEIGHT_NEXT_WONDER" />
+		</Update>
+		<Update>
+			<Set Value="40" />
+			<Where Name="AI_CITY_SPECIALIZATION_SCIENCE_WEIGHT_FLAVOR_SCIENCE" />
+		</Update>
+		<Update>
+			<Set Value="40" />
+			<Where Name="AI_CITY_SPECIALIZATION_SCIENCE_WEIGHT_FLAVOR_SPACESHIP" />
+		</Update>
+		
+		<!-- AI City Strategy Stuff -->
+		<Update>
+			<Set Value="6" />
+			<Where Name="AI_CITYSTRATEGY_MEDIUM_CITY_POP_THRESHOLD" />
+		</Update>
+		<Update>
+			<Set Value="15" />
+			<Where Name="AI_CITYSTRATEGY_LARGE_CITY_POP_THRESHOLD" />
+		</Update>
+		<Update>
+			<!-- This was 0 by default, often resulting in perpetual bankruptcy -->
+			<Set Value="0.5" />
+			<Where Name="AI_CITYSTRATEGY_YIELD_DEFICIENT_GOLD" />
+		</Update>
+		
+		<!-- Citizen Management Stuff -->
+		<!-- Updated yields to for better citizen automation -->
+		<Update>
+			<Set Value="20" /> <!-- Note: Excess food gets reduced by half to 10 if city is not growth focus -->
+			<Where Name="AI_CITIZEN_VALUE_FOOD" /> 
+		</Update>
+		<Update>
+			<Set Value="16" />
+			<Where Name="AI_CITIZEN_VALUE_PRODUCTION" />
+		</Update>
+		<Update>
+			<Set Value="5" />
+			<Where Name="AI_CITIZEN_VALUE_GOLD" />
+		</Update>
+		<Update>
+			<Set Value="11" />
+			<Where Name="AI_CITIZEN_VALUE_SCIENCE" />
+		</Update>
+		<Update>
+			<Set Value="10" />
+			<Where Name="AI_CITIZEN_VALUE_CULTURE" />
+		</Update>
+		<Update>
+			<Set Value="9" />
+			<Where Name="AI_CITIZEN_VALUE_FAITH" />
+		</Update>
+		
+		<!-- Operation AI Defines-->
+		<!-- The AI's armies are grouped into "operations", so these settings help it focus its army groups a bit more -->
+		<Update>
+			<Set Value="6" />
+			<Where Name="AI_OPERATIONAL_CITY_ATTACK_DEPLOY_RANGE" />
+		</Update>
+		<Update>
+			<Set Value="3" />
+			<Where Name="AI_OPERATIONAL_PILLAGE_ENEMY_DEPLOY_RANGE" />
+		</Update>
+		<Update>
+			<Set Value="25" />
+			<Where Name="AI_OPERATIONAL_PERCENT_DANGER_FOR_FORWARD_MUSTER" />
+		</Update>
+		<Update>
+			<Set Value="6" />
+			<Where Name="AI_OPERATIONAL_MAX_RECRUIT_TURNS_DEFAULT" />
+		</Update>
+		<Update>
+			<Set Value="12" />
+			<Where Name="AI_OPERATIONAL_MAX_RECRUIT_TURNS_ENEMY_TERRITORY" />
+		</Update>
+		
+		<!-- Tactical Analysis Map Stuff-->
+		<Update>
+			<!-- Increased granularity -->
+			<Set Value="20" />
+			<Where Name="AI_TACTICAL_MAP_UNIT_STRENGTH_MULTIPLIER" />
+		</Update>
+		<Update>
+			<!-- 40% is a lot more indicative of dominance than the default 25% -->
+			<Set Value="40" />
+			<Where Name="AI_TACTICAL_MAP_DOMINANCE_PERCENTAGE" />
+		</Update>
+		
+		<!-- Tactical AI Stuff-->
+		<Update>
+			<!-- Lower randomness factor when determining tactical moves -->
+			<Set Value="3" />
+			<Where Name="AI_TACTICAL_MOVE_PRIORITY_RANDOMNESS" />
+		</Update>
+		<Update>
+			<Set Value="11" />
+			<Where Name="AI_TACTICAL_BARBARIAN_PRIORITY_CAPTURE_CITY" />
+		</Update>
+		
+		<!-- Homeland AI Stuff-->
+		<Update>
+			<!-- Lower randomness factor when determining tactical moves -->
+			<Set Value="5" />
+			<Where Name="AI_HOMELAND_MOVE_PRIORITY_RANDOMNESS" />
+		</Update>
+		<Update>
+			<!-- AI should want to upgrade units, no matter where they are -->
+			<Set Value="10" />
+			<Where Name="AI_HOMELAND_MAX_UPGRADE_MOVE_TURNS" />
+		</Update>
+		<Update>
+			<!-- AI is less likely to send troops for defense who are too far away -->
+			<Set Value="3" />
+			<Where Name="AI_HOMELAND_MAX_DEFENSIVE_MOVE_TURNS" />
+		</Update>
+		
+		<!-- Diplo AI Stuff-->
+		<Update>
+			<Set Value="9" />
+			<Where Name="AI_DIPLO_LAND_DISPUTE_WEIGHT_FIERCE" />
+		</Update>
+		
+		<!-- Danger Value Stuff -->
+		<!-- Danger values were quite wonky before, this makes them a lot more logical -->
+		<Update>
+			<Set Value="0.4" />
+			<Where Name="AI_DANGER_MAJOR_APPROACH_DECEPTIVE" />
+		</Update>
+		<Update>
+			<Set Value="0.8" />
+			<Where Name="AI_DANGER_MAJOR_APPROACH_HOSTILE" />
+		</Update>
+		<Update>
+			<Set Value="0.8" />
+			<Where Name="AI_DANGER_MINOR_APPROACH_BULLY" />
+		</Update>
+		
+		<!-- Religion -->
+		<!-- These constants are slightly different now with DLL tweaks -->
+		<Update>
+			<Set Value="3" />
+			<Where Name="RELIGION_BELIEF_SCORE_UNOWNED_PLOT_MULTIPLIER" />
+		</Update>
+		<Update>
+			<Set Value="5" />
+			<Where Name="RELIGION_BELIEF_SCORE_OWNED_PLOT_MULTIPLIER" />
+		</Update>
+		<Update>
+			<Set Value="8" />
+			<Where Name="RELIGION_BELIEF_SCORE_WORKED_PLOT_MULTIPLIER" />
+		</Update>
+		<Update>
+			<!-- Set to equal worked plot multiplier -->
+			<Set Value="8" />
+			<Where Name="RELIGION_BELIEF_SCORE_CITY_MULTIPLIER" />
+		</Update>
+		<Update>
+			<!-- 10 was a bit ridiculous -->
+			<Set Value="8" />
+			<Where Name="RELIGION_MISSIONARY_RANGE_IN_TURNS" />
+		</Update>
+		
+		<!-- City annex -->
+		<!-- AI is lot more likely to leave as puppet, because puppets are fairly powerful -->
+		<Update>
+			<Set Value="0.4" />
+			<Where Name="NORMAL_ANNEX" />
+		</Update>
+		<Update>
+			<Set Value="0.8" />
+			<Where Name="AGGRESSIVE_ANNEX" />
+		</Update>
+		
+		<!--Ideology Choice-->
+		<!-- Makes sure the AI doesn't disregard ideologies on the slightest priority advantage -->
+		<Update>
+			<Set Value="50" />
+			<Where Name="IDEOLOGY_PERCENT_CLEAR_VICTORY_PREF" />
+		</Update>
+		<!-- Following 4 mean that diplomatic relations also define ideologies, not just the other way around -->
+		<Update>
+			<Set Value="20" />
+			<Where Name="IDEOLOGY_SCORE_HOSTILE" />
+		</Update>
+		<Update>
+			<Set Value="10" />
+			<Where Name="IDEOLOGY_SCORE_GUARDED" />
+		</Update>
+		<Update>
+			<Set Value="10" />
+			<Where Name="IDEOLOGY_SCORE_AFRAID" />
+		</Update>
+		<Update>
+			<Set Value="20" />
+			<Where Name="IDEOLOGY_SCORE_FRIENDLY" />
+		</Update>
+		<!-- Makes sure the AI is actually likely to voluntarily switch ideologies if it suits their goals -->
+		<Update>
+			<Set Value="5" />
+			<Where Name="IDEOLOGY_SCORE_HAPPINESS" />
+		</Update>
+		<Update>
+			<Set Value="40" />
+			<Where Name="IDEOLOGY_SCORE_PER_FREE_TENET" />
+		</Update>
+		<Update>
+			<Set Value="400" />
+			<Where Name="IDEOLOGY_SCORE_GRAND_STRATS" />
+		</Update>
+	</Defines>
+</GameData>

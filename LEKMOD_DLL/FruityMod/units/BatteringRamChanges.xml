@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 7/14/2015 10:25:31 PM -->
+<GameData>
+
+	<!-- Battering Ram now replaces Catapult instead of Spearman. Still available at Bronze Working. -->
+	<Units>
+		<Update>
+			<Set Class="UNITCLASS_CATAPULT" />
+			<Where Type="UNIT_HUN_BATTERING_RAM" />
+		</Update>
+	</Units>
+	<Civilization_UnitClassOverrides>
+		<Update>
+			<Set UnitClassType="UNITCLASS_CATAPULT" />
+			<Where UnitType="UNIT_HUN_BATTERING_RAM" />
+		</Update>
+	</Civilization_UnitClassOverrides>
+	
+</GameData>

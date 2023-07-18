@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2016-09-24 14:15:24 -->
+<GameData>
+
+	<!-- +1 Happiness from Shrines. -->
+	<Beliefs>
+		<Row>
+			<Type>BELIEF_VISION_QUESTS</Type>
+			<Description>TXT_KEY_BELIEF_VISION_QUESTS</Description>
+			<ShortDescription>TXT_KEY_BELIEF_VISION_QUESTS_SHORT</ShortDescription>
+			<Pantheon>true</Pantheon>
+		</Row>
+	</Beliefs>
+	<Belief_BuildingClassHappiness>
+		<Row>
+			<BeliefType>BELIEF_VISION_QUESTS</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_SHRINE</BuildingClassType>
+			<Happiness>1</Happiness>
+		</Row>
+	</Belief_BuildingClassHappiness>
+	
+	<!-- localization -->
+	<Language_en_US>
+		<Row Tag="TXT_KEY_BELIEF_VISION_QUESTS">
+			<Text>+1 [ICON_HAPPINESS_1] Happiness from Shrines</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BELIEF_VISION_QUESTS_SHORT">
+			<Text>Vision Quests</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Row Tag="TXT_KEY_BELIEF_VISION_QUESTS">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]+1 [ICON_HAPPINESS_1] Happiness from Shrines</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BELIEF_VISION_QUESTS_SHORT">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Vision Quests</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Row Tag="TXT_KEY_BELIEF_VISION_QUESTS">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]+1 [ICON_HAPPINESS_1] Happiness from Shrines</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BELIEF_VISION_QUESTS_SHORT">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Vision Quests</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Row Tag="TXT_KEY_BELIEF_VISION_QUESTS">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]+1 [ICON_HAPPINESS_1] Happiness from Shrines</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BELIEF_VISION_QUESTS_SHORT">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Vision Quests</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

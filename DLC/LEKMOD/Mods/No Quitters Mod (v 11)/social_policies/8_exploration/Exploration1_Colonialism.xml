@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 6/6/2015 4:51:27 PM -->
+<GameData>
+
+	<!-- Colonialism (previously called Merchant Navy) -->
+	<Policies>
+		<Update>
+			<Set PortraitIndex="8" ExtraTerritoryClaim="6" />
+			<Where Type="POLICY_MERCHANT_NAVY" />
+		</Update>
+	</Policies>
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_POLICY_MERCHANT_NAVY" />
+		<Row Tag="TXT_KEY_POLICY_MERCHANT_NAVY">
+			<Text>Colonialism</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_MERCHANT_NAVY_HELP" />
+		<Row Tag="TXT_KEY_POLICY_MERCHANT_NAVY_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Colonialism[ENDCOLOR][NEWLINE]Newly founded cities start with 2 extra [ICON_CITIZEN] Population, a free Worker, 6 additional tiles claimed, and a Governor's Mansion which provides 2 [ICON_HAPPINESS_1] Happiness.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_MERCHANTNAVY_TEXT" />
+		<Row Tag="TXT_KEY_POLICY_MERCHANTNAVY_TEXT">
+			<Text>[COLOR_POSITIVE_TEXT]Source: Wikipedia (https://en.wikipedia.org/wiki/Colonialism)[ENDCOLOR][NEWLINE][NEWLINE]Colonialism is the establishment, exploitation, maintenance, acquisition, and expansion of colony in one territory by a political power from another territory. It is a set of unequal relationships between the colonial power and the colony and often between the colonists and the indigenous population.[NEWLINE][NEWLINE]The European colonial period was the era from the 16th century to the mid-20th century when several European powers established colonies in Asia, Africa, and the Americas. At first the countries followed mercantilist policies designed to strengthen the home economy at the expense of rivals, so the colonies were usually allowed to trade only with the mother country. By the mid-19th century, however, the powerful British Empire gave up mercantilism and trade restrictions and introduced the principle of free trade, with few restrictions or tariffs.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_POLICY_MERCHANT_NAVY" />
+		<Row Tag="TXT_KEY_POLICY_MERCHANT_NAVY">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Colonialism</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_MERCHANT_NAVY_HELP" />
+		<Row Tag="TXT_KEY_POLICY_MERCHANT_NAVY_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Colonialism[ENDCOLOR][NEWLINE]Newly founded cities start with 2 extra [ICON_CITIZEN] Population, a free Worker, 6 additional tiles claimed, and a Governor's Mansion which provides 2 [ICON_HAPPINESS_1] Happiness.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_MERCHANTNAVY_TEXT" />
+		<Row Tag="TXT_KEY_POLICY_MERCHANTNAVY_TEXT">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Source: Wikipedia (https://en.wikipedia.org/wiki/Colonialism)[ENDCOLOR][NEWLINE][NEWLINE]Colonialism is the establishment, exploitation, maintenance, acquisition, and expansion of colony in one territory by a political power from another territory. It is a set of unequal relationships between the colonial power and the colony and often between the colonists and the indigenous population.[NEWLINE][NEWLINE]The European colonial period was the era from the 16th century to the mid-20th century when several European powers established colonies in Asia, Africa, and the Americas. At first the countries followed mercantilist policies designed to strengthen the home economy at the expense of rivals, so the colonies were usually allowed to trade only with the mother country. By the mid-19th century, however, the powerful British Empire gave up mercantilism and trade restrictions and introduced the principle of free trade, with few restrictions or tariffs.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_POLICY_MERCHANT_NAVY" />
+		<Row Tag="TXT_KEY_POLICY_MERCHANT_NAVY">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Colonialism</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_MERCHANT_NAVY_HELP" />
+		<Row Tag="TXT_KEY_POLICY_MERCHANT_NAVY_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Colonialism[ENDCOLOR][NEWLINE]Newly founded cities start with 2 extra [ICON_CITIZEN] Population, a free Worker, 6 additional tiles claimed, and a Governor's Mansion which provides 2 [ICON_HAPPINESS_1] Happiness.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_MERCHANTNAVY_TEXT" />
+		<Row Tag="TXT_KEY_POLICY_MERCHANTNAVY_TEXT">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Source: Wikipedia (https://en.wikipedia.org/wiki/Colonialism)[ENDCOLOR][NEWLINE][NEWLINE]Colonialism is the establishment, exploitation, maintenance, acquisition, and expansion of colony in one territory by a political power from another territory. It is a set of unequal relationships between the colonial power and the colony and often between the colonists and the indigenous population.[NEWLINE][NEWLINE]The European colonial period was the era from the 16th century to the mid-20th century when several European powers established colonies in Asia, Africa, and the Americas. At first the countries followed mercantilist policies designed to strengthen the home economy at the expense of rivals, so the colonies were usually allowed to trade only with the mother country. By the mid-19th century, however, the powerful British Empire gave up mercantilism and trade restrictions and introduced the principle of free trade, with few restrictions or tariffs.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_POLICY_MERCHANT_NAVY" />
+		<Row Tag="TXT_KEY_POLICY_MERCHANT_NAVY">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Colonialism</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_MERCHANT_NAVY_HELP" />
+		<Row Tag="TXT_KEY_POLICY_MERCHANT_NAVY_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Colonialism[ENDCOLOR][NEWLINE]Newly founded cities start with 2 extra [ICON_CITIZEN] Population, a free Worker, 6 additional tiles claimed, and a Governor's Mansion which provides 2 [ICON_HAPPINESS_1] Happiness.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_MERCHANTNAVY_TEXT" />
+		<Row Tag="TXT_KEY_POLICY_MERCHANTNAVY_TEXT">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Source: Wikipedia (https://en.wikipedia.org/wiki/Colonialism)[ENDCOLOR][NEWLINE][NEWLINE]Colonialism is the establishment, exploitation, maintenance, acquisition, and expansion of colony in one territory by a political power from another territory. It is a set of unequal relationships between the colonial power and the colony and often between the colonists and the indigenous population.[NEWLINE][NEWLINE]The European colonial period was the era from the 16th century to the mid-20th century when several European powers established colonies in Asia, Africa, and the Americas. At first the countries followed mercantilist policies designed to strengthen the home economy at the expense of rivals, so the colonies were usually allowed to trade only with the mother country. By the mid-19th century, however, the powerful British Empire gave up mercantilism and trade restrictions and introduced the principle of free trade, with few restrictions or tariffs.</Text>
+		</Row>
+	</Language_RU_RU>
+	
+
+	<!-- Remove old bonuses -->
+	<Policy_BuildingClassCultureChanges>
+		<Delete PolicyType="POLICY_MERCHANT_NAVY" BuildingClassType="BUILDINGCLASS_NATIONAL_TREASURY" />
+	</Policy_BuildingClassCultureChanges>
+	<Policy_BuildingClassYieldChanges>
+		<Delete PolicyType="POLICY_MERCHANT_NAVY" BuildingClassType="BUILDINGCLASS_LIGHTHOUSE" YieldType="YIELD_GOLD" />
+		<Delete PolicyType="POLICY_MERCHANT_NAVY" BuildingClassType="BUILDINGCLASS_HARBOR" YieldType="YIELD_GOLD" />
+		<Delete PolicyType="POLICY_MERCHANT_NAVY" BuildingClassType="BUILDINGCLASS_SEAPORT" YieldType="YIELD_GOLD" />
+		<Delete PolicyType="POLICY_MERCHANT_NAVY" BuildingClassType="BUILDINGCLASS_NATIONAL_TREASURY" YieldType="YIELD_PRODUCTION" />
+	</Policy_BuildingClassYieldChanges>
+	
+	<!-- Add new bonuses with Governor's Mansion -->
+	<Policies>
+		<Update>
+			<Set NewCityExtraPopulation="2" />
+			<Where Type="POLICY_MERCHANT_NAVY" />
+		</Update>
+	</Policies>
+	<BuildingClasses>
+		<Row>
+			<Type>BUILDINGCLASS_GOVERNORS_MANSION</Type>
+			<DefaultBuilding>BUILDING_GOVERNORS_MANSION</DefaultBuilding>
+			<Description>TXT_KEY_BUILDING_GOVERNORS_MANSION_DESC</Description>
+		</Row>
+	</BuildingClasses>
+	<Buildings>
+		<Row>
+			<Type>BUILDING_GOVERNORS_MANSION</Type>
+			<BuildingClass>BUILDINGCLASS_GOVERNORS_MANSION</BuildingClass>
+			<Cost>-1</Cost>
+			<NukeImmune>true</NukeImmune>
+			<Help>TXT_KEY_BUILDING_GOVERNORS_MANSION_STRATEGY</Help>
+			<Description>TXT_KEY_BUILDING_GOVERNORS_MANSION_DESC</Description>
+			<Civilopedia>TXT_KEY_BUILDING_GOVERNORS_MANSION_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_GOVERNORS_MANSION_STRATEGY</Strategy>
+			<ArtDefineTag>MONUMENT</ArtDefineTag>
+			<MinAreaSize>-1</MinAreaSize>
+			<IconAtlas>BW_ATLAS_1</IconAtlas>
+			<PortraitIndex>52</PortraitIndex>
+			<Happiness>2</Happiness>
+		</Row>
+	</Buildings>
+	<Building_FreeUnits>
+		<Row>
+			<BuildingType>BUILDING_GOVERNORS_MANSION</BuildingType>
+			<UnitType>UNIT_WORKER</UnitType>
+			<NumUnits>1</NumUnits>
+		</Row>
+	</Building_FreeUnits>
+	<Language_en_US>
+		<Row Tag="TXT_KEY_BUILDING_GOVERNORS_MANSION_DESC">
+			<Text>Governor's Mansion</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_GOVERNORS_MANSION_PEDIA">
+			<Text>A Governor's Mansion is automatically constructed in every newly founded city after you have adopted the Colonialism social policy.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_GOVERNORS_MANSION_STRATEGY">
+			<Text>Founding a new city when you have adopted Colonialism will give that city an additional 2 [ICON_CITIZEN] Population and 2 [ICON_HAPPINESS_1] Happiness as well as a Free Worker. The city will also claim 6 additional nearby tiles.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Row Tag="TXT_KEY_BUILDING_GOVERNORS_MANSION_DESC">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Governor's Mansion</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_GOVERNORS_MANSION_PEDIA">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]A Governor's Mansion is automatically constructed in every newly founded city after you have adopted the Colonialism social policy.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_GOVERNORS_MANSION_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Founding a new city when you have adopted Colonialism will give that city an additional 2 [ICON_CITIZEN] Population and 2 [ICON_HAPPINESS_1] Happiness as well as a Free Worker. The city will also claim 6 additional nearby tiles.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Row Tag="TXT_KEY_BUILDING_GOVERNORS_MANSION_DESC">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Governor's Mansion</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_GOVERNORS_MANSION_PEDIA">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]A Governor's Mansion is automatically constructed in every newly founded city after you have adopted the Colonialism social policy.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_GOVERNORS_MANSION_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Founding a new city when you have adopted Colonialism will give that city an additional 2 [ICON_CITIZEN] Population and 2 [ICON_HAPPINESS_1] Happiness as well as a Free Worker. The city will also claim 6 additional nearby tiles.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Row Tag="TXT_KEY_BUILDING_GOVERNORS_MANSION_DESC">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Governor's Mansion</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_GOVERNORS_MANSION_PEDIA">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]A Governor's Mansion is automatically constructed in every newly founded city after you have adopted the Colonialism social policy.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_GOVERNORS_MANSION_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Founding a new city when you have adopted Colonialism will give that city an additional 2 [ICON_CITIZEN] Population and 2 [ICON_HAPPINESS_1] Happiness as well as a Free Worker. The city will also claim 6 additional nearby tiles.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

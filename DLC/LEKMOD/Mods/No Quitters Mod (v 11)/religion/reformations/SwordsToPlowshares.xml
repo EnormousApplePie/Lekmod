@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2016-09-26 23:38:28 -->
+<GameData>
+
+	<!-- +1 [ICON_FOOD] Food and +25% [ICON_FOOD] Growth (excess Food) in all cities. -->
+	<Beliefs>
+		<Update>
+			<Set Follower="false" Reformation="true" CityGrowthModifier="15" RequiresPeace="false" />
+			<Where Type="BELIEF_SWORD_PLOWSHARES" />
+		</Update>
+	</Beliefs>
+	<Belief_CityYieldChanges>
+		<Row>
+			<BeliefType>BELIEF_SWORD_PLOWSHARES</BeliefType>
+			<YieldType>YIELD_FOOD</YieldType>
+			<Yield>1</Yield>
+		</Row>
+	</Belief_CityYieldChanges>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_BELIEF_SWORD_PLOWSHARES" />
+		<Row Tag="TXT_KEY_BELIEF_SWORD_PLOWSHARES">
+			<Text>+1 [ICON_FOOD] Food and +15% [ICON_FOOD] Growth (excess Food) in all cities</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_BELIEF_SWORD_PLOWSHARES" />
+		<Row Tag="TXT_KEY_BELIEF_SWORD_PLOWSHARES">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]+1 [ICON_FOOD] Food and +25% [ICON_FOOD] Growth (excess Food) in all cities</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_BELIEF_SWORD_PLOWSHARES" />
+		<Row Tag="TXT_KEY_BELIEF_SWORD_PLOWSHARES">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]+1 [ICON_FOOD] Food and +25% [ICON_FOOD] Growth (excess Food) in all cities</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_BELIEF_SWORD_PLOWSHARES" />
+		<Row Tag="TXT_KEY_BELIEF_SWORD_PLOWSHARES">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]+1 [ICON_FOOD] Food and +25% [ICON_FOOD] Growth (excess Food) in all cities</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

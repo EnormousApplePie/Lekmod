@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 3/22/2017 7:09:06 PM -->
+<GameData>
+
+	<!-- Free Trade (NEW POLICY): +8% Gold in all Cities for each City State trading partner in the Empire. -->
+	<Policies>
+		<Row>
+			<Type>POLICY_FREE_TRADE</Type>
+			<Description>TXT_KEY_POLICY_FREE_TRADE</Description>
+			<Civilopedia>TXT_KEY_POLICY_FREE_TRADE_TEXT</Civilopedia>
+			<Help>TXT_KEY_POLICY_FREE_TRADE_HELP</Help>
+			<PolicyBranchType>POLICY_BRANCH_FREEDOM</PolicyBranchType>
+			<CultureCost>10</CultureCost>
+			<Level>1</Level>
+			<PortraitIndex>11</PortraitIndex>
+			<IconAtlas>POLICY_ATLAS_EXP2</IconAtlas>
+			<IconAtlasAchieved>POLICY_A_ATLAS_EXP2</IconAtlasAchieved>
+		</Row>
+	</Policies>
+	<Policy_Flavors>
+		<Row>
+			<PolicyType>POLICY_FREE_TRADE</PolicyType>
+			<FlavorType>FLAVOR_GOLD</FlavorType>
+			<Flavor>25</Flavor>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_FREE_TRADE</PolicyType>
+			<FlavorType>FLAVOR_DIPLOMACY</FlavorType>
+			<Flavor>10</Flavor>
+		</Row>
+	</Policy_Flavors>
+
+	<!-- Free Trade dummy building -->
+	<BuildingClasses>
+		<Row>
+			<Type>DUMMY_BUILDINGCLASS_T1_FREE_TRADE</Type>
+			<DefaultBuilding>DUMMY_BUILDING_T1_FREE_TRADE</DefaultBuilding>
+			<Description>Free Trade Dummy BuildingClass</Description>
+		</Row>
+	</BuildingClasses>
+	<Buildings>
+		<Row>
+			<Type>DUMMY_BUILDING_T1_FREE_TRADE</Type>
+			<BuildingClass>DUMMY_BUILDINGCLASS_T1_FREE_TRADE</BuildingClass>
+			<Description>Free Trade Dummy Building</Description>
+			<GreatWorkCount>-1</GreatWorkCount>
+			<Cost>-1</Cost>
+			<FaithCost>-1</FaithCost>
+			<PrereqTech>NULL</PrereqTech>
+			<NeverCapture>true</NeverCapture>
+			<!-- Gameplay Effects below -->
+			<CityStateTradeRouteGoldModifier>8</CityStateTradeRouteGoldModifier>
+		</Row>
+	</Buildings>
+	
+	<!-- localization -->
+	<Language_en_US>
+		<Row Tag="TXT_KEY_POLICY_FREE_TRADE">
+			<Text>Free Trade</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POLICY_FREE_TRADE_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Free Trade[ENDCOLOR][NEWLINE]+8% [ICON_GOLD] Gold in all Cities for each City State trading partner in the Empire.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POLICY_FREE_TRADE_TEXT">
+			<Text>[COLOR_POSITIVE_TEXT]Source: Wikipedia (https://en.wikipedia.org/wiki/Free_trade)[ENDCOLOR][NEWLINE][NEWLINE]Free trade is a policy followed by some international markets in which countries' governments do not restrict imports from, or exports to, other countries. Free trade is exemplified by the European Economic Area and the Mercosur, which have established open markets. Most nations are today members of the World Trade Organization (WTO) multilateral trade agreements. However, most governments still impose some protectionist policies that are intended to support local employment, such as applying tariffs to imports or subsidies to exports. Governments may also restrict free trade to limit exports of natural resources. Other barriers that may hinder trade include import quotas, taxes, and non-tariff barriers, such as regulatory legislation.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GOLDMOD_YIELD_PER_MINOR_TRADE_ROUTE">
+			<Text>[NEWLINE][ICON_BULLET]Modifier for Free Trade tenet: {1_Num}%</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Row Tag="TXT_KEY_POLICY_FREE_TRADE">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Free Trade</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POLICY_FREE_TRADE_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Free Trade[ENDCOLOR][NEWLINE]+8% [ICON_GOLD] Gold in all Cities for each City State trading partner in the Empire.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POLICY_FREE_TRADE_TEXT">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Source: Wikipedia (https://en.wikipedia.org/wiki/Free_trade)[ENDCOLOR][NEWLINE][NEWLINE]Free trade is a policy followed by some international markets in which countries' governments do not restrict imports from, or exports to, other countries. Free trade is exemplified by the European Economic Area and the Mercosur, which have established open markets. Most nations are today members of the World Trade Organization (WTO) multilateral trade agreements. However, most governments still impose some protectionist policies that are intended to support local employment, such as applying tariffs to imports or subsidies to exports. Governments may also restrict free trade to limit exports of natural resources. Other barriers that may hinder trade include import quotas, taxes, and non-tariff barriers, such as regulatory legislation.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GOLDMOD_YIELD_PER_MINOR_TRADE_ROUTE">
+			<Text>[NEWLINE][ICON_BULLET]Modifier for Free Trade tenet: {1_Num}%</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Row Tag="TXT_KEY_POLICY_FREE_TRADE">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Free Trade</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POLICY_FREE_TRADE_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Free Trade[ENDCOLOR][NEWLINE]+8% [ICON_GOLD] Gold in all Cities for each City State trading partner in the Empire.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POLICY_FREE_TRADE_TEXT">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Source: Wikipedia (https://en.wikipedia.org/wiki/Free_trade)[ENDCOLOR][NEWLINE][NEWLINE]Free trade is a policy followed by some international markets in which countries' governments do not restrict imports from, or exports to, other countries. Free trade is exemplified by the European Economic Area and the Mercosur, which have established open markets. Most nations are today members of the World Trade Organization (WTO) multilateral trade agreements. However, most governments still impose some protectionist policies that are intended to support local employment, such as applying tariffs to imports or subsidies to exports. Governments may also restrict free trade to limit exports of natural resources. Other barriers that may hinder trade include import quotas, taxes, and non-tariff barriers, such as regulatory legislation.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GOLDMOD_YIELD_PER_MINOR_TRADE_ROUTE">
+			<Text>[NEWLINE][ICON_BULLET]Modifier for Free Trade tenet: {1_Num}%</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Row Tag="TXT_KEY_POLICY_FREE_TRADE">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Free Trade</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POLICY_FREE_TRADE_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Free Trade[ENDCOLOR][NEWLINE]+8% [ICON_GOLD] Gold in all Cities for each City State trading partner in the Empire.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POLICY_FREE_TRADE_TEXT">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Source: Wikipedia (https://en.wikipedia.org/wiki/Free_trade)[ENDCOLOR][NEWLINE][NEWLINE]Free trade is a policy followed by some international markets in which countries' governments do not restrict imports from, or exports to, other countries. Free trade is exemplified by the European Economic Area and the Mercosur, which have established open markets. Most nations are today members of the World Trade Organization (WTO) multilateral trade agreements. However, most governments still impose some protectionist policies that are intended to support local employment, such as applying tariffs to imports or subsidies to exports. Governments may also restrict free trade to limit exports of natural resources. Other barriers that may hinder trade include import quotas, taxes, and non-tariff barriers, such as regulatory legislation.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GOLDMOD_YIELD_PER_MINOR_TRADE_ROUTE">
+			<Text>[NEWLINE][ICON_BULLET]Modifier for Free Trade tenet: {1_Num}%</Text>
+		</Row>
+	</Language_RU_RU>
+		
+</GameData>

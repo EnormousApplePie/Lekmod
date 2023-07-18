@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 6/6/2015 4:51:27 PM -->
+<GameData>
+
+	<!-- Treasure Fleets: +1 Food, +1 Production, and +1 Gold from all Coast and Ocean tiles. -->
+	<Policies>
+		<Update>
+			<Set SeaTradeRouteGoldChange="0" />
+			<Where Type="POLICY_TREASURE_FLEETS" />
+		</Update>
+	</Policies>
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_POLICY_TREASURE_FLEETS_HELP" />
+		<Row Tag="TXT_KEY_POLICY_TREASURE_FLEETS_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Treasure Fleets[ENDCOLOR][NEWLINE]+1 [ICON_FOOD] Food, +1 [ICON_PRODUCTION] Production, and +1 [ICON_GOLD] Gold from Coast and Ocean tiles without sea resources.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_POLICY_TREASURE_FLEETS_HELP" />
+		<Row Tag="TXT_KEY_POLICY_TREASURE_FLEETS_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Treasure Fleets[ENDCOLOR][NEWLINE]+1 [ICON_FOOD] Food, +1 [ICON_PRODUCTION] Production, and +1 [ICON_GOLD] Gold from Coast and Ocean tiles without sea resources.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_POLICY_TREASURE_FLEETS_HELP" />
+		<Row Tag="TXT_KEY_POLICY_TREASURE_FLEETS_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Treasure Fleets[ENDCOLOR][NEWLINE]+1 [ICON_FOOD] Food, +1 [ICON_PRODUCTION] Production, and +1 [ICON_GOLD] Gold from Coast and Ocean tiles without sea resources.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_POLICY_TREASURE_FLEETS_HELP" />
+		<Row Tag="TXT_KEY_POLICY_TREASURE_FLEETS_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Treasure Fleets[ENDCOLOR][NEWLINE]+1 [ICON_FOOD] Food, +1 [ICON_PRODUCTION] Production, and +1 [ICON_GOLD] Gold from Coast and Ocean tiles without sea resources.</Text>
+		</Row>
+	</Language_RU_RU>
+
+	<!-- Treasury building -->
+	<BuildingClasses>
+		<Row>
+			<Type>BUILDINGCLASS_TREASURE_FLEETS</Type>
+			<DefaultBuilding>BUILDING_TREASURE_FLEETS</DefaultBuilding>
+			<Description>TXT_KEY_BUILDING_TREASURE_FLEETS_DESC</Description>
+		</Row>
+	</BuildingClasses>
+	<Buildings>
+		<Row>
+			<Type>BUILDING_TREASURE_FLEETS</Type>
+			<BuildingClass>BUILDINGCLASS_TREASURE_FLEETS</BuildingClass>
+			<Cost>-1</Cost>
+			<HurryCostModifier>-1</HurryCostModifier>
+			<NukeImmune>true</NukeImmune>
+			<Help>TXT_KEY_BUILDING_TREASURE_FLEETS_STRATEGY</Help>
+			<Description>TXT_KEY_BUILDING_TREASURE_FLEETS_DESC</Description>
+			<Civilopedia>TXT_KEY_BUILDING_TREASURE_FLEETS_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_TREASURE_FLEETS_STRATEGY</Strategy>
+			<ArtDefineTag>MONUMENT</ArtDefineTag>
+			<MinAreaSize>-1</MinAreaSize>
+			<IconAtlas>TECH_ATLAS_1</IconAtlas>
+			<PortraitIndex>13</PortraitIndex>
+			<NeverCapture>true</NeverCapture>
+		</Row>
+	</Buildings>
+	<Building_SeaPlotYieldChanges>
+		<Row>
+			<BuildingType>BUILDING_TREASURE_FLEETS</BuildingType>
+			<YieldType>YIELD_FOOD</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_TREASURE_FLEETS</BuildingType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_TREASURE_FLEETS</BuildingType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<Yield>1</Yield>
+		</Row>
+	</Building_SeaPlotYieldChanges>
+	<Building_SeaResourceYieldChanges>
+		<Row>
+			<BuildingType>BUILDING_TREASURE_FLEETS</BuildingType>
+			<YieldType>YIELD_FOOD</YieldType>
+			<Yield>-1</Yield>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_TREASURE_FLEETS</BuildingType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>-1</Yield>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_TREASURE_FLEETS</BuildingType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<Yield>-1</Yield>
+		</Row>
+	</Building_SeaResourceYieldChanges>
+	<Language_en_US>
+		<Row Tag="TXT_KEY_BUILDING_TREASURE_FLEETS_DESC">
+			<Text>Warehouse</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_TREASURE_FLEETS_PEDIA">
+			<Text>A Warehouse is automatically constructed in every city after you have adopted the Treasure Fleets social policy.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_TREASURE_FLEETS_STRATEGY">
+			<Text>Provides +1 [ICON_FOOD] Food, +1 [ICON_PRODUCTION] Production, and +1 [ICON_GOLD] Gold from all Coast and Ocean tiles without sea resources.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Row Tag="TXT_KEY_BUILDING_TREASURE_FLEETS_DESC">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Warehouse</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_TREASURE_FLEETS_PEDIA">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]A Warehouse is automatically constructed in every city after you have adopted the Treasure Fleets social policy.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_TREASURE_FLEETS_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Provides +1 [ICON_FOOD] Food, +1 [ICON_PRODUCTION] Production, and +1 [ICON_GOLD] Gold from all Coast and Ocean tiles without sea resources.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Row Tag="TXT_KEY_BUILDING_TREASURE_FLEETS_DESC">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Warehouse</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_TREASURE_FLEETS_PEDIA">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]A Warehouse is automatically constructed in every city after you have adopted the Treasure Fleets social policy.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_TREASURE_FLEETS_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Provides +1 [ICON_FOOD] Food, +1 [ICON_PRODUCTION] Production, and +1 [ICON_GOLD] Gold from all Coast and Ocean tiles without sea resources.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Row Tag="TXT_KEY_BUILDING_TREASURE_FLEETS_DESC">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Warehouse</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_TREASURE_FLEETS_PEDIA">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]A Warehouse is automatically constructed in every city after you have adopted the Treasure Fleets social policy.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_TREASURE_FLEETS_STRATEGY">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Provides +1 [ICON_FOOD] Food, +1 [ICON_PRODUCTION] Production, and +1 [ICON_GOLD] Gold from all Coast and Ocean tiles without sea resources.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

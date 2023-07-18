@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 7/3/2012 7:20:09 PM -->
+<GameData>
+	<IconFontTextures>
+		<Row>
+			<IconFontTexture>ICON_FONT_TEXTURE_MANUTARA</IconFontTexture>
+			<IconFontTextureFile>Manutara_fonticon</IconFontTextureFile>
+		</Row>
+	</IconFontTextures>
+	<IconFontMapping>
+		<Row>
+			<IconName>ICON_RES_MANUTARA</IconName>
+			<IconFontTexture>ICON_FONT_TEXTURE_MANUTARA</IconFontTexture>
+			<IconMapping>1</IconMapping>
+		</Row>
+	</IconFontMapping>
+</GameData>

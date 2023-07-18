@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2016-09-23 22:48:02 -->
+<GameData>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_BUILDING_OXFORD_UNIVERSITY" />
+		<Row Tag="TXT_KEY_BUILDING_OXFORD_UNIVERSITY">
+			<Text>Oxford University [COLOR_CYAN]*[ENDCOLOR]</Text>
+			<Gender>neuter:the</Gender>
+		</Row>
+		<Delete Tag="TXT_KEY_BUILDING_OXFORD_UNIVERSITY_HELP" />
+		<Row Tag="TXT_KEY_BUILDING_OXFORD_UNIVERSITY_HELP">
+			<Text>[COLOR_CYAN]* National Wonder (each player may build one)[ENDCOLOR][NEWLINE][NEWLINE]1 Free Technology. Contains 2 slots for Great Works of Writing.[NEWLINE][NEWLINE]Must have built a University in all Cities. The cost goes up the more cities there are in the empire.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_BUILDING_OXFORD_UNIVERSITY" />
+		<Row Tag="TXT_KEY_BUILDING_OXFORD_UNIVERSITY">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Oxford University [COLOR_CYAN]*[ENDCOLOR]</Text>
+			<Gender>neuter:the</Gender>
+		</Row>
+		<Delete Tag="TXT_KEY_BUILDING_OXFORD_UNIVERSITY_HELP" />
+		<Row Tag="TXT_KEY_BUILDING_OXFORD_UNIVERSITY_HELP">
+			<Text>[COLOR_CYAN]* National Wonder (each player may build one)[ENDCOLOR][NEWLINE][NEWLINE][COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]1 Free Technology. Contains 2 slots for Great Works of Writing.[NEWLINE][NEWLINE]Must have built a University in all Cities. The cost goes up the more cities there are in the empire.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_BUILDING_OXFORD_UNIVERSITY" />
+		<Row Tag="TXT_KEY_BUILDING_OXFORD_UNIVERSITY">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Oxford University [COLOR_CYAN]*[ENDCOLOR]</Text>
+			<Gender>neuter:the</Gender>
+		</Row>
+		<Delete Tag="TXT_KEY_BUILDING_OXFORD_UNIVERSITY_HELP" />
+		<Row Tag="TXT_KEY_BUILDING_OXFORD_UNIVERSITY_HELP">
+			<Text>[COLOR_CYAN]* National Wonder (each player may build one)[ENDCOLOR][NEWLINE][NEWLINE][COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]1 Free Technology. Contains 2 slots for Great Works of Writing.[NEWLINE][NEWLINE]Must have built a University in all Cities. The cost goes up the more cities there are in the empire.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_BUILDING_OXFORD_UNIVERSITY" />
+		<Row Tag="TXT_KEY_BUILDING_OXFORD_UNIVERSITY">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Oxford University [COLOR_CYAN]*[ENDCOLOR]</Text>
+			<Gender>neuter:the</Gender>
+		</Row>
+		<Delete Tag="TXT_KEY_BUILDING_OXFORD_UNIVERSITY_HELP" />
+		<Row Tag="TXT_KEY_BUILDING_OXFORD_UNIVERSITY_HELP">
+			<Text>[COLOR_CYAN]* National Wonder (each player may build one)[ENDCOLOR][NEWLINE][NEWLINE][COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]1 Free Technology. Contains 2 slots for Great Works of Writing.[NEWLINE][NEWLINE]Must have built a University in all Cities. The cost goes up the more cities there are in the empire.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

@@ -1,0 +1,39 @@
+<Asset>
+	<Mesh file="comparsa_drummer.gr2"/>
+	<Animation file="GreatArtist_Early_Drummer_IdleA.gr2" ec="1000, 1040, 1020, 2000, 2040, 2020"/>
+	<Animation file="GreatArtist_Early_Drummer_Run.gr2" ec="1400"/>
+	<Animation file="GreatArtist_Early_Drummer_Stop_Run.gr2" ec="1440"/>
+	<Animation file="GreatArtist_Early_Drummer_Activate.gr2" ec="1990"/>
+	<Animation file="GreatArtist_Early_Drummer_Activate_Idle.gr2" ec="1995"/>
+	<Animation file="GreatArtist_Early_Drummer_DeathA.gr2" ec="1200"/>
+	<Animation file="GreatArtist_Early_Drummer_DeathA_Idle.gr2" ec="1220"/>
+	<Animation file="GreatArtist_Early_Drummer_Fortify.gr2" ec="1500"/>
+	<Animation file="GreatArtist_Early_Drummer_Fortify_Idle.gr2" ec="1520"/>
+	<Animation file="GreatArtist_Early_Drummer_Fortify_Idle_Trans_IdleA.gr2" ec="1580"/>
+	<Animation file="GreatArtist_Early_Drummer_Bombard_Defense.gr2" ec="1280"/>
+	<Animation file="GreatArtist_Early_Drummer_Bombard_Defense_Idle.gr2" ec="1285"/>
+	<Animation file="GreatArtist_Early_Drummer_Bombard_Defense_Idle_Trans_IdleA.gr2" ec="1290"/>
+	<Texture file="GreatArtist_Part2_DIFF.dds"/>
+	<Texture file="GreatArtist_Part2_SREF.dds"/>
+	<Texture file="Unit_Environment_Dull.dds"/>
+	<Texture file="Unit_Environment_Sharp.dds"/>
+	<Texture file="Unit_Irradiance.dds"/>
+	<TimedTrigger file="FX_Triggers_GreatArtist_Early_Drummer.ftsxml"/>
+	<StateMachine file="CIVILIAN_STATE_01.fsmxml"/>
+	<AnimGraph file="LEAVE_BOMBARD_DEFEND_TRANS_IDLE_A_GRAPH.dge"/>
+	<AnimGraph file="CIVILIAN_ACTIVATE_CAPTURED.dge"/>
+	<AnimGraph file="CIVILIAN_ENTER_BOMBARD_DEFEND.dge"/>
+	<AnimGraph file="LEAVE_FORTIFY_TO_IDLE_A.dge"/>
+	<AnimGraph file="FORTIFY_GRAPH.dge"/>
+	<AnimGraph file="ENTER_SLEEP_CIVILIAN.dge"/>
+	<AnimGraph file="BOMBARD_DEFEND_LOOP_GRAPH.dge"/>
+	<AnimGraph file="IDLE_OFFSET_CONTINUE_TRUE_GRAPH.dge"/>
+	<AnimGraph file="IDLE_GRAPH.dge"/>
+	<AnimGraph file="FIDGETS_GRAPH.dge"/>
+	<AnimGraph file="TRANSITIONS_FOR_IDLES.dge"/>
+	<AnimGraph file="RUN_START_CIVILIAN.dge"/>
+	<AnimGraph file="STOP_RUNNING_CIVILIAN.dge"/>
+	<AnimGraph file="RUNNING_LOOP_GRAPH.dge"/>
+	<AnimGraph file="CIVILIAN_DEATH_FINAL.dge"/>
+</Asset>
+

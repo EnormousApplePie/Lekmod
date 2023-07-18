@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mod id="a70b4ba7-74de-405c-bb3f-6c9369f29218" version="17">
+  <Properties>
+    <Name>JFD's The Kingdom of Prussia</Name>
+    <Teaser>Adds the [COLOR_POSITIVE_TEXT]The Kingdom of Prussia[ENDCOLOR] with Frederick the Great to the game.</Teaser>
+    <Description>See CivFanatics or Steam Workshop for full details.</Description>
+    <Authors>JFD, Janboruta</Authors>
+    <SpecialThanks>SuperWaffle247</SpecialThanks>
+    <HideSetupGame>0</HideSetupGame>
+    <Homepage>http://forums.civfanatics.com/showthread.php?t=474393</Homepage>
+    <AffectsSavedGames>1</AffectsSavedGames>
+    <MinCompatibleSaveVersion>0</MinCompatibleSaveVersion>
+    <SupportsSinglePlayer>1</SupportsSinglePlayer>
+    <SupportsMultiplayer>1</SupportsMultiplayer>
+    <SupportsHotSeat>1</SupportsHotSeat>
+    <SupportsMac>1</SupportsMac>
+    <ReloadAudioSystem>1</ReloadAudioSystem>
+    <ReloadLandmarkSystem>0</ReloadLandmarkSystem>
+    <ReloadStrategicViewSystem>1</ReloadStrategicViewSystem>
+    <ReloadUnitSystem>1</ReloadUnitSystem>
+  </Properties>
+  <Dependencies>
+    <Dlc id="6DA07636-4123-4018-B643-6575B4EC336B" minversion="0" maxversion="999" />
+  </Dependencies>
+  <References>
+    <Mod id="7fdd72a5-d4ae-441c-bc4e-2e3d2a26cff4" minversion="0" maxversion="999" title="Ethnic Units" />
+    <Mod id="36e88483-48fe-4545-b85f-bafc50dde315" minversion="0" maxversion="999" title="Yet (not) Another Earth Maps Pack" />
+    <Mod id="1f941088-b185-4159-865c-472df81247b2" minversion="0" maxversion="999" title="Events and Decisions" />
+    <Mod id="d60c32bd-6826-4ca3-8161-2e37ebab5883" minversion="0" maxversion="999" title="Protestant Denominations" />
+    <Mod id="2f0b6cd7-3bf5-4197-96f6-96c00787ef18" minversion="0" maxversion="999" title="Christianity Merge" />
+    <Mod id="e576894a-ed2b-4033-be14-ed1c8ceb81d3" minversion="0" maxversion="999" title="Map Labels" />
+    <Mod id="6010e6f6-918e-48b8-9332-d60783bd8fb5" minversion="0" maxversion="999" title="Historical Religions Complete" />
+    <Mod id="8670da15-d435-44ea-9758-7438cb321411" minversion="0" maxversion="999" title="R.E.D. Modpack" />
+    <Mod id="31a31d1c-b9d7-45e1-842c-23232d66cd47" minversion="0" maxversion="999" title="JFD's Cultural Diversity (Core)" />
+    <Mod id="8411a7a8-dad3-4622-a18e-fcc18324c799" minversion="0" maxversion="999" title="Community Balance Patch" />
+    <Mod id="ce8aa614-7ef7-4a45-a179-5329869e8d6d" minversion="0" maxversion="999" title="Enlightenment Era" />
+    <Mod id="a19351c5-c0b3-4b07-8695-4affaa199949" minversion="0" maxversion="999" title="JFD’s and Pouakai’s Mercenaries" />
+    <Mod id="10e9728f-d61c-4317-be4f-7d52d6bae6f4" minversion="0" maxversion="999" title="JFD’s Cities in Development" />
+    <Mod id="8411a7a8-dad3-4622-a18e-fcc18324c799" minversion="0" maxversion="999" title="Community Balance Patch" />
+    <Mod id="eea66053-7579-481a-bb8d-2f3959b59974" minversion="0" maxversion="999" title="JFD’s Rise to Power" />
+  </References>
+  <Blocks />
+  <Files>
+    <File md5="218F2D1FE66E14EDC7C344D17B549106" import="1">Art/Diplomacy/Janboruta_Frederick_Diplo.dds</File>
+    <File md5="00E987B8F36F3FD3AB2FEB3157D08996" import="1">Art/Diplomacy/Janboruta_Frederick_Scene.xml</File>
+    <File md5="AFBB85190C238A827A048955E777715D" import="1">Art/Graphics/Deaths Head Hussar/gerca1.dds</File>
+    <File md5="CBDB87A1FD40A2C98C2901CA659EC0D7" import="1">Art/Graphics/Deaths Head Hussar/gerca1.fxsxml</File>
+    <File md5="8D72694B6D7DF52A474D54C3F99892BF" import="1">Art/Graphics/Deaths Head Hussar/gerca1.gr2</File>
+    <File md5="B4368DA9F08B170EC66AC2EF3904BCE7" import="1">Art/Graphics/Deaths Head Hussar/gerca1_sref.dds</File>
+    <File md5="C6C6ADFFEC42654B5E4B6708524236E6" import="1">Art/Graphics/Deaths Head Hussar/sv_DeathsHead.dds</File>
+    <File md5="CAE91739FF61F06562479630F7443808" import="1">Art/Graphics/Prussian Landwehr/civ5_gerrm.fxsxml</File>
+    <File md5="ED2B1EF70B371A8A4A7DE255878194D8" import="1">Art/Graphics/Prussian Landwehr/civ5_gerrm.gr2</File>
+    <File md5="57A2B8F6F32007C79660DC46F29E6301" import="1">Art/Graphics/Prussian Landwehr/gerrm2.dds</File>
+    <File md5="057737AE97D7CC785C0DA9E27774EBDA" import="1">Art/Graphics/Prussian Landwehr/gerrm_2.dds</File>
+    <File md5="5171F3A79FF313BCFA217E78CB21F133" import="1">Art/Graphics/Prussian Landwehr/gerrm_diff.dds</File>
+    <File md5="482600047D1AE44EAF13E5FB06CA5EE7" import="1">Art/Graphics/Prussian Landwehr/gerrm_sref.dds</File>
+    <File md5="B94508FEF702283731AB4D1C4C72D673" import="1">Art/Graphics/Prussian Landwehr/sv_Landwehr.dds</File>
+    <File md5="19C9D241758CCAE558B23902D3E42A61" import="1">Art/Icon Atlas/JFD_PrussiaAlphaAtlas_128.dds</File>
+    <File md5="F99A4EA5861ECD4622BA25E506F7783A" import="1">Art/Icon Atlas/JFD_PrussiaAlphaAtlas_16.dds</File>
+    <File md5="532C19160F8CA7F8ED12C01C46962795" import="1">Art/Icon Atlas/JFD_PrussiaAlphaAtlas_24.dds</File>
+    <File md5="4F01CF1C30495CE62E47F36DBF572CC9" import="1">Art/Icon Atlas/JFD_PrussiaAlphaAtlas_32.dds</File>
+    <File md5="F65C189C674F13B1A06D82F1FC922F21" import="1">Art/Icon Atlas/JFD_PrussiaAlphaAtlas_45.dds</File>
+    <File md5="CA9942951D1C2F123B103FBA6CE6BF32" import="1">Art/Icon Atlas/JFD_PrussiaAlphaAtlas_48.dds</File>
+    <File md5="A8D6BAC278AF5C97DB9AB9B33F79AB41" import="1">Art/Icon Atlas/JFD_PrussiaAlphaAtlas_64.dds</File>
+    <File md5="569F47C36E04DBDC393666537FF131D4" import="1">Art/Icon Atlas/JFD_PrussiaAlphaAtlas_80.dds</File>
+    <File md5="1DC13AC3155EC938A26A441E5A848E75" import="1">Art/Icon Atlas/JFD_PrussiaAtlas_128.dds</File>
+    <File md5="E5D60B9D5F627BEFD3A6F93498A30718" import="1">Art/Icon Atlas/JFD_PrussiaAtlas_256.dds</File>
+    <File md5="A74517F4D8AF8CF25643A17A57E4048E" import="1">Art/Icon Atlas/JFD_PrussiaAtlas_32.dds</File>
+    <File md5="F2C380FE62B266C5BA4846EEB3A9C9C1" import="1">Art/Icon Atlas/JFD_PrussiaAtlas_45.dds</File>
+    <File md5="E4DB16B5CDECB710224B48C7A5D67929" import="1">Art/Icon Atlas/JFD_PrussiaAtlas_64.dds</File>
+    <File md5="05FB961E8B81FEC40CB9F82550DB9252" import="1">Art/Icon Atlas/JFD_PrussiaAtlas_80.dds</File>
+    <File md5="21CDCEED7D81983A502F1C20ED00BC57" import="1">Art/Icon Atlas/Tomatekh_PromotionAtlas_256.dds</File>
+    <File md5="4515CFD32CBCA5FD9B31BA7E74BDF85D" import="1">Art/Icon Atlas/Tomatekh_PromotionAtlas_32.dds</File>
+    <File md5="2D64910169FF17FBFD6D2CFAAAADE518" import="1">Art/Icon Atlas/Tomatekh_PromotionAtlas_45.dds</File>
+    <File md5="D2E665F6B269588CF10F19FE789271C9" import="1">Art/Icon Atlas/Tomatekh_PromotionAtlas_64.dds</File>
+    <File md5="BF62EE5FD505A4A179D9E63E7612E1A3" import="1">Art/Icon Atlas/Unit_DeathsHead_Flag_32.dds</File>
+    <File md5="1D73E8331618E66367BC224136CB9F71" import="1">Art/Icon Atlas/Unit_Landwehr_Flag_32.dds</File>
+    <File md5="49FB281CE3A726CC7B20161B20281442" import="1">Art/Images/DefeatScreenLatePrussia.dds</File>
+    <File md5="CB25742C668058ECCE54EF61BB81C77D" import="1">Art/Images/DefeatScreenMidPrussia.dds</File>
+    <File md5="3BBE3C396D7967863BD9443B876428A8" import="1">Art/Images/Event_Prussia_Clausewitz.dds</File>
+    <File md5="B7AFCB3C6AB599BCCD1B41EA6770FBE4" import="1">Art/Images/Event_Prussia_PotatoWar.dds</File>
+    <File md5="6C03666BBC6B596BE9B2EE833460B3EE" import="1">Art/Map/Janboruta_Frederick_DOM.dds</File>
+    <File md5="660AAE5DD6B0CF2464EFF24E54A6E1EA" import="1">Art/Map/Janboruta_MapPrussia512.dds</File>
+    <File md5="E7E75931F35094EB2ADB2DEBD6EAFC88" import="1">Audio/Frederick_Peace.mp3</File>
+    <File md5="76A7E8C8643E40BF030986FD69EA8EBB" import="1">Audio/Frederick_War.mp3</File>
+    <File md5="6580B1A95835B312C335B1A052C2861A" import="0">Core/Prussia_ArtDefines.sql</File>
+    <File md5="5CE92F8133B13CA3D5B8A98DC76F9946" import="0">Core/Prussia_GameDefines.sql</File>
+    <File md5="0A9BB65B6B1E1DA099A3F286C2657D1D" import="0">Core/Prussia_GameDefines_Diplomacy.sql</File>
+    <File md5="202C7D917645592EC58B3073B9AF2EE7" import="0">Core/Prussia_GameDefines_ModSupport.sql</File>
+    <File md5="18B01AEEBBFF4FCD55C37169635746AF" import="0">Core/Prussia_GameText.xml</File>
+    <File md5="29DB537AF43F2E38F63C48F0649E8ADE" import="0">Core/Prussia_GameText_Diplomacy.xml</File>
+    <File md5="85127229810DAB97CAC564FAE802A21D" import="0">Core/Prussia_GameText_ModSupport.xml</File>
+    <File md5="3665EA7314EC7714D3F5520365D7702A" import="0">DeleteMissingReferences.xml</File>
+    <File md5="B2AA22C7D1281F4C7A4DD3FAD37BCB41" import="1">Lua/JFD_Prussia_Decisions.lua</File>
+    <File md5="566F139B4028AEBE8B4BEDF786394767" import="1">Lua/JFD_Prussia_Events.lua</File>
+    <File md5="A2643D647986AD0E7091A4E617A1A03D" import="0">Lua/JFD_Prussia_Functions.lua</File>
+    <File md5="5690A1B2ACA2729FD9D55156E232AB1A" import="1">Lua/Utilities/PlotIterators.lua</File>
+    <File md5="6C1418DE83F0714E2B52527C72767C22" import="0">RandomSupport.txt</File>
+  </Files>
+  <Actions>
+    <OnModActivated>
+      <UpdateDatabase>Core/Prussia_ArtDefines.sql</UpdateDatabase>
+      <UpdateDatabase>Core/Prussia_GameDefines.sql</UpdateDatabase>
+      <UpdateDatabase>Core/Prussia_GameDefines_Diplomacy.sql</UpdateDatabase>
+      <UpdateDatabase>Core/Prussia_GameDefines_ModSupport.sql</UpdateDatabase>
+      <UpdateDatabase>Core/Prussia_GameText.xml</UpdateDatabase>
+      <UpdateDatabase>Core/Prussia_GameText_Diplomacy.xml</UpdateDatabase>
+      <UpdateDatabase>Core/Prussia_GameText_ModSupport.xml</UpdateDatabase>
+    </OnModActivated>
+  </Actions>
+  <EntryPoints>
+    <EntryPoint type="InGameUIAddin" file="Lua/JFD_Prussia_Functions.lua">
+      <Name>JFD_PrussiaFunctions</Name>
+      <Description>
+      </Description>
+    </EntryPoint>
+  </EntryPoints>
+</Mod>

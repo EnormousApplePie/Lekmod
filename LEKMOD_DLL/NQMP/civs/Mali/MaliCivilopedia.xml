@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 5/12/2017 3:17:47 PM -->
+<GameData>
+
+	<Language_en_US>
+		<Row Tag="TXT_KEY_CIV5_MALI_TITLE">
+			<Text>Mali</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_MALI_HEADING_1">
+			<Text>Credits</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_MALI_TEXT_1">
+			<Text>All information was gathered from Civilization 4 and Wikipedia:[NEWLINE][NEWLINE][COLOR_POSITIVE_TEXT]https://en.wikipedia.org/wiki/Mali_Empire [ENDCOLOR][NEWLINE][COLOR_POSITIVE_TEXT]https://en.wikipedia.org/wiki/Mali [ENDCOLOR][NEWLINE][COLOR_POSITIVE_TEXT]https://en.wikipedia.org/wiki/Musa_I_of_Mali [ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_MALI_HEADING_2">
+			<Text>History</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_MALI_TEXT_2">
+			<Text>The Mali Empire, also historically referred to as the Manden Kurufaba, sometimes shortened simply to Manden, was an empire in West Africa from c. 1230 to c. 1610. The empire was founded by Sundiata Keita and became renowned for the wealth of its rulers, especially Musa Keita. The Manding languages were spoken in the empire. It was one of the largest empires in West Africa and profoundly influenced the culture of West Africa through the spread of its language, laws and customs.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_MALI_HEADING_3">
+			<Text>Climate and Terrain</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_MALI_TEXT_3">
+			<Text>Mali lies in the torrid zone and is among the hottest countries in the world. The thermal equator, which matches the hottest spots year-round on the planet based on the mean daily annual temperature, crosses the country. Most of Mali receives negligible rainfall and droughts are very frequent. Late June to early December is the rainy season in the southernmost area. During this time, flooding of the Niger River is common, creating the Inner Niger Delta. The vast northern desert part of Mali has a hot desert climate with long, extremely hot summers and scarce rainfall which decreases northwards. The central area has a hot semi-arid climate with very high temperatures year-round, a long, intense dry season and a brief, irregular rainy season. The little southern band possesses a tropical wet and dry climate, very high temperatures year-round with a dry season and a rainy season.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_MALI_HEADING_4">
+			<Text>Early History</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_MALI_TEXT_4">
+			<Text>Once one of the great centres of Islamic culture and wealth, Mali (which is among the continent's most ancient states outside of North Africa) owes much of its reputation to its situation as a major trading center and to the tax that is levied on its trans-Saharan route. The Mali Empire was located on the Mandinka plateau in West Africa, located in the southern part of the modern Republic of Mali. It was founded by Sundiata Keita, a Mandinka who led a revolt against the Soso Kingdom which had dominated the area. Sundiata's life is commemorated in the Epic of Sundiata, a poem of the Mandinka people. It is said that after his victory over the Soso, Sundiata Keita converted to Islam as a gesture of goodwill to the Islamic traders who brought his country wealth. After defeating the Soso, Sundiata pursued an expansionist policy, and soon the Empire covered not only modern Mali, but also extended west to the ocean across what is now Senegal. During war, the Mali often fought as "skirmishers" - soldiers who fanned out in loose formation to protect the main force's flanks or front. The Mali skirmishers were lightly-armed archers in that force, famed for their courage and their marksmanship.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_MALI_HEADING_5">
+			<Text>Mansa Musa</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_MALI_TEXT_5">
+			<Text>The Mali Empire reached its zenith under the rule of Mansa Musa (1312-1337) in the early 14th century. Previously, it had been part of the empire of Ghana, which flourished between the seventh and 11th centuries based on the trade of gold from the interior for salt from the coastal regions. Mansa Musa made a famous pilgrimage to Mecca in 1324 laden with gold and slaves to proclaim Mali's prosperity and power. It is said that he lavished so much wealth along his route that the price of gold was depressed for years afterwards. During Mansa Musa's rule Muslim scholarship reached new heights in Mali, and such cities as Timbuktu and Djenné (Jenne) became important centers of trade, learning, and culture.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_MALI_HEADING_6">
+			<Text>Decline</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_MALI_TEXT_6">
+			<Text>After the decline of the Mali Empire, the territory became part of the Songhai Empire, which occupied an area covering parts of modern-day Guinea, Burkina Faso, Senegal, Mali, Mauritania, Niger, and Nigeria. Songhai was brought to an end and its territory usurped by the Moroccan invasion of 1591. With the decline of the trans-Saharan trading routes in favor of naval commerce, the area enjoyed little strategic importance and was divided into small kingdoms for the next two centuries until the arrival of French colonists. Mali was absorbed into French West Africa in 1895. In 1960, together with what is now Senegal, it achieved independence as the Federation of Mali, although Senegal seceded after a few weeks.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_MALI_FACTOID_HEADING">
+			<Text>Factoids</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_MALI_FACTOID_TEXT">
+			<Text>Musa was a devout Muslim, and his pilgrimage to Mecca made him well-known across northern Africa and the Middle East. His procession reportedly included 60,000 men, including 12,000 slaves who each carried 4 lb (1.8 kg) of gold bars and heralds dressed in silks who bore gold staffs, organized horses, and handled bags. Musa gave the gold to the poor he met along his route. Musa not only gave to the cities he passed on the way to Mecca, including Cairo and Medina, but also traded gold for souvenirs. It was reported that he built a mosque every Friday. But Musa's generous actions inadvertently devastated the economy of the regions through which he passed. In the cities of Cairo, Medina, and Mecca, the sudden influx of gold devalued the metal for the next decade. Prices on goods and wares greatly inflated. To rectify the gold market, on his way back from Mecca, Musa borrowed all the gold he could carry from money-lenders in Cairo, at high interest. This is the only time recorded in history that one man directly controlled the price of gold in the Mediterranean.</Text>
+		</Row>
+	</Language_en_US>
+	
+</GameData>

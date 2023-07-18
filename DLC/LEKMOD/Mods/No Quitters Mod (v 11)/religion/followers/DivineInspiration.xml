@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 1016-09-15 05:44:53 -->
+<GameData>
+
+	<!-- +1 Faith from Wonders (including National) -->
+	<Belief_YieldChangeWorldWonder>
+		<Row>
+			<BeliefType>BELIEF_DIVINE_INSPIRATION</BeliefType>
+			<YieldType>YIELD_CULTURE</YieldType>
+			<Yield>1</Yield>
+		</Row>
+	</Belief_YieldChangeWorldWonder>
+	<Belief_YieldChangeNaturalWonder>
+		<Row>
+			<BeliefType>BELIEF_DIVINE_INSPIRATION</BeliefType>
+			<YieldType>YIELD_CULTURE</YieldType>
+			<Yield>1</Yield>
+		</Row>
+	</Belief_YieldChangeNaturalWonder>
+	<Belief_YieldChangeNaturalWonder>
+		<Row>
+			<BeliefType>BELIEF_DIVINE_INSPIRATION</BeliefType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>1</Yield>
+		</Row>
+	</Belief_YieldChangeNaturalWonder>	
+	<Belief_BuildingClassYieldChanges>
+		<!-- Circus Maximus -->
+		<Row>
+			<BeliefType>BELIEF_DIVINE_INSPIRATION</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_CIRCUS_MAXIMUS</BuildingClassType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<YieldChange>1</YieldChange>
+		</Row>
+		<!-- East India Company -->
+		<Row>
+			<BeliefType>BELIEF_DIVINE_INSPIRATION</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_NATIONAL_TREASURY</BuildingClassType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<YieldChange>1</YieldChange>
+		</Row>
+		<!-- Grand Temple -->
+		<Row>
+			<BeliefType>BELIEF_DIVINE_INSPIRATION</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_GRAND_TEMPLE</BuildingClassType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<YieldChange>1</YieldChange>
+		</Row>
+		<!-- Hermitage -->
+		<Row>
+			<BeliefType>BELIEF_DIVINE_INSPIRATION</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_HERMITAGE</BuildingClassType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<YieldChange>1</YieldChange>
+		</Row>
+		<!-- Heroic Epic -->
+		<Row>
+			<BeliefType>BELIEF_DIVINE_INSPIRATION</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_HEROIC_EPIC</BuildingClassType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<YieldChange>1</YieldChange>
+		</Row>
+		<!-- Ironworks -->
+		<Row>
+			<BeliefType>BELIEF_DIVINE_INSPIRATION</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_IRONWORKS</BuildingClassType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<YieldChange>1</YieldChange>
+		</Row>
+		<!-- National College -->
+		<Row>
+			<BeliefType>BELIEF_DIVINE_INSPIRATION</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_NATIONAL_COLLEGE</BuildingClassType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<YieldChange>1</YieldChange>
+		</Row>
+		<!-- National Epic -->
+		<Row>
+			<BeliefType>BELIEF_DIVINE_INSPIRATION</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_NATIONAL_EPIC</BuildingClassType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<YieldChange>1</YieldChange>
+		</Row>
+		<!-- National Intelligence Agency -->
+		<Row>
+			<BeliefType>BELIEF_DIVINE_INSPIRATION</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_INTELLIGENCE_AGENCY</BuildingClassType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<YieldChange>1</YieldChange>
+		</Row>
+		<!-- National Visitor Center -->
+		<Row>
+			<BeliefType>BELIEF_DIVINE_INSPIRATION</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_TOURIST_CENTER</BuildingClassType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<YieldChange>1</YieldChange>
+		</Row>
+		<!-- Oxford University -->
+		<Row>
+			<BeliefType>BELIEF_DIVINE_INSPIRATION</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_OXFORD_UNIVERSITY</BuildingClassType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<YieldChange>1</YieldChange>
+		</Row>
+		<!-- Circus Maximus -->
+		<Row>
+			<BeliefType>BELIEF_DIVINE_INSPIRATION</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_CIRCUS_MAXIMUS</BuildingClassType>
+			<YieldType>YIELD_CULTURE</YieldType>
+			<YieldChange>1</YieldChange>
+		</Row>
+		<!-- East India Company -->
+		<Row>
+			<BeliefType>BELIEF_DIVINE_INSPIRATION</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_NATIONAL_TREASURY</BuildingClassType>
+			<YieldType>YIELD_CULTURE</YieldType>
+			<YieldChange>1</YieldChange>
+		</Row>
+		<!-- Grand Temple -->
+		<Row>
+			<BeliefType>BELIEF_DIVINE_INSPIRATION</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_GRAND_TEMPLE</BuildingClassType>
+			<YieldType>YIELD_CULTURE</YieldType>
+			<YieldChange>1</YieldChange>
+		</Row>
+		<!-- Hermitage -->
+		<Row>
+			<BeliefType>BELIEF_DIVINE_INSPIRATION</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_HERMITAGE</BuildingClassType>
+			<YieldType>YIELD_CULTURE</YieldType>
+			<YieldChange>1</YieldChange>
+		</Row>
+		<!-- Heroic Epic -->
+		<Row>
+			<BeliefType>BELIEF_DIVINE_INSPIRATION</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_HEROIC_EPIC</BuildingClassType>
+			<YieldType>YIELD_CULTURE</YieldType>
+			<YieldChange>1</YieldChange>
+		</Row>
+		<!-- Ironworks -->
+		<Row>
+			<BeliefType>BELIEF_DIVINE_INSPIRATION</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_IRONWORKS</BuildingClassType>
+			<YieldType>YIELD_CULTURE</YieldType>
+			<YieldChange>1</YieldChange>
+		</Row>
+		<!-- National College -->
+		<Row>
+			<BeliefType>BELIEF_DIVINE_INSPIRATION</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_NATIONAL_COLLEGE</BuildingClassType>
+			<YieldType>YIELD_CULTURE</YieldType>
+			<YieldChange>1</YieldChange>
+		</Row>
+		<!-- National Epic -->
+		<Row>
+			<BeliefType>BELIEF_DIVINE_INSPIRATION</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_NATIONAL_EPIC</BuildingClassType>
+			<YieldType>YIELD_CULTURE</YieldType>
+			<YieldChange>1</YieldChange>
+		</Row>
+		<!-- National Intelligence Agency -->
+		<Row>
+			<BeliefType>BELIEF_DIVINE_INSPIRATION</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_INTELLIGENCE_AGENCY</BuildingClassType>
+			<YieldType>YIELD_CULTURE</YieldType>
+			<YieldChange>1</YieldChange>
+		</Row>
+		<!-- National Visitor Center -->
+		<Row>
+			<BeliefType>BELIEF_DIVINE_INSPIRATION</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_TOURIST_CENTER</BuildingClassType>
+			<YieldType>YIELD_CULTURE</YieldType>
+			<YieldChange>1</YieldChange>
+		</Row>
+		<!-- Oxford University -->
+		<Row>
+			<BeliefType>BELIEF_DIVINE_INSPIRATION</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_OXFORD_UNIVERSITY</BuildingClassType>
+			<YieldType>YIELD_CULTURE</YieldType>
+			<YieldChange>1</YieldChange>
+		</Row>
+	</Belief_BuildingClassYieldChanges>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_BELIEF_DIVINE_INSPIRATION" />
+		<Row Tag="TXT_KEY_BELIEF_DIVINE_INSPIRATION">
+			<Text>+1 [ICON_PEACE] Faith and +1 [ICON_CULTURE] Culture from National, Natural and World Wonders</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_BELIEF_DIVINE_INSPIRATION" />
+		<Row Tag="TXT_KEY_BELIEF_DIVINE_INSPIRATION">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]+1 [ICON_PEACE] Faith from National and World Wonders</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_BELIEF_DIVINE_INSPIRATION" />
+		<Row Tag="TXT_KEY_BELIEF_DIVINE_INSPIRATION">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]+1 [ICON_PEACE] Faith from National and World Wonders</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_BELIEF_DIVINE_INSPIRATION" />
+		<Row Tag="TXT_KEY_BELIEF_DIVINE_INSPIRATION">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]+1 [ICON_PEACE] Faith from National and World Wonders</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

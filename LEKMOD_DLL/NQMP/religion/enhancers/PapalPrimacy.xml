@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2016-09-28 15:13:42 -->
+<GameData>
+
+	<!-- +4 Faith per turn for each City State following this Religion and Religion spreads twice as fast to friendly City States -->
+	<Beliefs>
+		<Update>
+			<Set Enhancer="true" Founder="false" CityStateMinimumInfluence="0" FaithPerCityStateThisReligion="4" FriendlyCityStateSpreadModifier="100" />
+			<Where Type="BELIEF_PAPAL_PRIMACY" />
+		</Update>
+	</Beliefs>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_BELIEF_PAPAL_PRIMACY" />
+		<Row Tag="TXT_KEY_BELIEF_PAPAL_PRIMACY">
+			<Text>+4 [ICON_PEACE] Faith per turn for each City State following this Religion and Religion spreads twice as fast to friendly City States</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_BELIEF_PAPAL_PRIMACY" />
+		<Row Tag="TXT_KEY_BELIEF_PAPAL_PRIMACY">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]+4 [ICON_PEACE] Faith per turn for each City State following this Religion and Religion spreads twice as fast to friendly City States</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_BELIEF_PAPAL_PRIMACY" />
+		<Row Tag="TXT_KEY_BELIEF_PAPAL_PRIMACY">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]+4 [ICON_PEACE] Faith per turn for each City State following this Religion and Religion spreads twice as fast to friendly City States</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_BELIEF_PAPAL_PRIMACY" />
+		<Row Tag="TXT_KEY_BELIEF_PAPAL_PRIMACY">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]+4 [ICON_PEACE] Faith per turn for each City State following this Religion and Religion spreads twice as fast to friendly City States</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

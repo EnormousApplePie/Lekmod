@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2016-09-25 05:44:53 -->
+<GameData>
+
+	<!-- +4 Faith from Holy Sites and Inquisitors and Prophets reduce this religion's presence by half (instead of eliminating it) -->
+	<Beliefs>
+		<Update>
+			<Set Reformation="false" Enhancer="true" />
+			<Where Type="BELIEF_UNITY_OF_PROPHETS" />
+		</Update>
+	</Beliefs>
+	<Belief_ImprovementYieldChanges>
+		<Row>
+			<BeliefType>BELIEF_UNITY_OF_PROPHETS</BeliefType>
+			<ImprovementType>IMPROVEMENT_HOLY_SITE</ImprovementType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>6</Yield>
+		</Row>
+		<Row>
+			<BeliefType>BELIEF_UNITY_OF_PROPHETS</BeliefType>
+			<ImprovementType>IMPROVEMENT_HOLY_SITE</ImprovementType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>1</Yield>
+		</Row>
+	</Belief_ImprovementYieldChanges>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_BELIEF_UNITY_OF_PROPHETS" />
+		<Row Tag="TXT_KEY_BELIEF_UNITY_OF_PROPHETS">
+			<Text>+6 [ICON_PEACE] Faith and +1 [ICON_PRODUCTION] Production from Holy Sites, and Inquisitors and Prophets reduce this religion's presence by half (instead of eliminating it)</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_BELIEF_UNITY_OF_PROPHETS" />
+		<Row Tag="TXT_KEY_BELIEF_UNITY_OF_PROPHETS">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]+4 [ICON_PEACE] Faith from Holy Sites, and Inquisitors and Prophets reduce this religion's presence by half (instead of eliminating it)</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_BELIEF_UNITY_OF_PROPHETS" />
+		<Row Tag="TXT_KEY_BELIEF_UNITY_OF_PROPHETS">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]+4 [ICON_PEACE] Faith from Holy Sites, and Inquisitors and Prophets reduce this religion's presence by half (instead of eliminating it)</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_BELIEF_UNITY_OF_PROPHETS" />
+		<Row Tag="TXT_KEY_BELIEF_UNITY_OF_PROPHETS">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]+4 [ICON_PEACE] Faith from Holy Sites, and Inquisitors and Prophets reduce this religion's presence by half (instead of eliminating it)</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

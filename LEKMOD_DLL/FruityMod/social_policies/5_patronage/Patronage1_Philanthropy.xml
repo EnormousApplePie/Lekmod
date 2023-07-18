@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 6/2/2015 11:21:06 PM -->
+<GameData>
+	
+	<!-- Philanthropy now merges the benefits of old Consultes and old Philanthropy together. -->
+	<Policies>
+		<Update>
+			<Set MinorFriendshipMinimum="20" />
+			<Where Type="POLICY_PHILANTHROPY" />
+		</Update>
+	</Policies>
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_POLICY_PHILANTHROPY_HELP" />
+		<Row Tag="TXT_KEY_POLICY_PHILANTHROPY_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Philanthropy[ENDCOLOR][NEWLINE][ICON_GOLD] Gold gifts to City-States produce 25% more [ICON_INFLUENCE] Influence. Resting point for [ICON_INFLUENCE] Influence with all City-States is increased by 20.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_POLICY_PHILANTHROPY_HELP" />
+		<Row Tag="TXT_KEY_POLICY_PHILANTHROPY_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Philanthropy[ENDCOLOR][NEWLINE][ICON_GOLD] Gold gifts to City-States produce 25% more [ICON_INFLUENCE] Influence. Resting point for [ICON_INFLUENCE] Influence with all City-States is increased by 20.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_POLICY_PHILANTHROPY_HELP" />
+		<Row Tag="TXT_KEY_POLICY_PHILANTHROPY_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Philanthropy[ENDCOLOR][NEWLINE][ICON_GOLD] Gold gifts to City-States produce 25% more [ICON_INFLUENCE] Influence. Resting point for [ICON_INFLUENCE] Influence with all City-States is increased by 20.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_POLICY_PHILANTHROPY_HELP" />
+		<Row Tag="TXT_KEY_POLICY_PHILANTHROPY_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Philanthropy[ENDCOLOR][NEWLINE][ICON_GOLD] Gold gifts to City-States produce 25% more [ICON_INFLUENCE] Influence. Resting point for [ICON_INFLUENCE] Influence with all City-States is increased by 20.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

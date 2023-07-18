@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 3/22/2017 7:08:52 PM -->
+<GameData>
+
+	<!-- Covert Action: +2 Spies and doubles both chance of rigging election in City-States and Influence change from doing so. -->
+	<Policies>
+		<Update>
+			<Set Level="1" NumExtraSpies="2" OneShot="true" />
+			<Where Type="POLICY_COVERT_ACTION" />
+		</Update>
+	</Policies>
+
+	<!-- Covert Action tooltip -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_POLICY_COVERT_ACTION_HELP" />
+		<Row Tag="TXT_KEY_POLICY_COVERT_ACTION_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Covert Action[ENDCOLOR][NEWLINE]+2 Spies and doubles both chance of rigging election in City-States and [ICON_INFLUENCE] Influence change from doing so.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_POLICY_COVERT_ACTION_HELP" />
+		<Row Tag="TXT_KEY_POLICY_COVERT_ACTION_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Covert Action[ENDCOLOR][NEWLINE]+2 Spies and doubles both chance of rigging election in City-States and [ICON_INFLUENCE] Influence change from doing so.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_POLICY_COVERT_ACTION_HELP" />
+		<Row Tag="TXT_KEY_POLICY_COVERT_ACTION_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Covert Action[ENDCOLOR][NEWLINE]+2 Spies and doubles both chance of rigging election in City-States and [ICON_INFLUENCE] Influence change from doing so.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_POLICY_COVERT_ACTION_HELP" />
+		<Row Tag="TXT_KEY_POLICY_COVERT_ACTION_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Covert Action[ENDCOLOR][NEWLINE]+2 Spies and doubles both chance of rigging election in City-States and [ICON_INFLUENCE] Influence change from doing so.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by HellBlazer on 17/7/2015 15:00 -->
+<GameData>
+	
+	<!-- Reduce Happines to 6 (down from 10) -->
+	<Features>
+		<Update>
+			<Where Type="FEATURE_FOUNTAIN_YOUTH"/>
+			<Set InBorderHappiness="6"/>
+		</Update>
+	</Features>
+
+	<!-- Increase spawn rate to 5 (up from 1) -->
+	<Natural_Wonder_Placement>
+		<Update>
+			<Where NaturalWonderType="FEATURE_FOUNTAIN_YOUTH"/>
+			<Set OccurrenceFrequency="5"/>
+		</Update>
+	</Natural_Wonder_Placement>
+	
+</GameData>

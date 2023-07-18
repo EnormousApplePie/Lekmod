@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by Tomatekh -->
+<UnitArtInfos>
+	<UnitArtInfo>
+		<Type>ART_DEF_UNIT_U_CHAM_SIEGE_ELEPHANT</Type>
+		<Formation>ChariotElephant</Formation>
+		<DamageStates>1</DamageStates>
+		<UnitMemberArt>
+			<MemberType>ART_DEF_UNIT_MEMBER_U_CHAM_SIEGE_ELEPHANT</MemberType>
+			<MemberCount>2</MemberCount>
+		</UnitMemberArt>
+	</UnitArtInfo>
+</UnitArtInfos>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 6/9/2015 11:34:48 PM -->
+<GameData>
+
+	<!-- MILITARY CASTE -->
+	<Policies>
+		<Update>
+			<Set GarrisonFreeMaintenance="true" ProductionFromGarrison="0" />
+			<Where Type="POLICY_MILITARY_CASTE" />
+		</Update>
+	</Policies>
+	<Policy_BuildingClassHappiness>
+		<Row>
+			<PolicyType>POLICY_MILITARY_CASTE</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_COURTHOUSE</BuildingClassType>
+			<Happiness>2</Happiness>
+		</Row>
+	</Policy_BuildingClassHappiness>
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_POLICY_MILITARY_CASTE_HELP" />
+		<Row Tag="TXT_KEY_POLICY_MILITARY_CASTE_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Military Caste[ENDCOLOR][NEWLINE]Garrisoned units cost no maintenance and provide the city with +1 [ICON_HAPPINESS_1] Happiness and +2 [ICON_CULTURE] Culture. Courthouses provide +2 [ICON_HAPPINESS_1] Happiness.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_POLICY_MILITARY_CASTE_HELP" />
+		<Row Tag="TXT_KEY_POLICY_MILITARY_CASTE_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Military Caste[ENDCOLOR][NEWLINE]Garrisoned units cost no maintenance and provide the city with +1 [ICON_HAPPINESS_1] Happiness and +2 [ICON_CULTURE] Culture. Courthouses provide +2 [ICON_HAPPINESS_1] Happiness.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_POLICY_MILITARY_CASTE_HELP" />
+		<Row Tag="TXT_KEY_POLICY_MILITARY_CASTE_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Military Caste[ENDCOLOR][NEWLINE]Garrisoned units cost no maintenance and provide the city with +1 [ICON_HAPPINESS_1] Happiness and +2 [ICON_CULTURE] Culture. Courthouses provide +2 [ICON_HAPPINESS_1] Happiness.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_POLICY_MILITARY_CASTE_HELP" />
+		<Row Tag="TXT_KEY_POLICY_MILITARY_CASTE_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Military Caste[ENDCOLOR][NEWLINE]Garrisoned units cost no maintenance and provide the city with +1 [ICON_HAPPINESS_1] Happiness and +2 [ICON_CULTURE] Culture. Courthouses provide +2 [ICON_HAPPINESS_1] Happiness.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

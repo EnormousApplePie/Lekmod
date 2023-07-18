@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 12/14/2014 12:39:46 AM -->
+<GameData>
+	<DeleteMissingReferences table="Buildings" column="Type"/>
+	<DeleteMissingReferences table="Policies" column="Type"/>
+</GameData>

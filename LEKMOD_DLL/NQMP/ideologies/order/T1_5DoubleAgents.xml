@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2017-02-12 15:59:12 -->
+<GameData>
+	
+	<!-- Double Agents: Now also provides +2 Spies. -->
+	<Policies>
+		<Update>
+			<Set Level="1" NumExtraSpies="2" OneShot="true" />
+			<Where Type="POLICY_DOUBLE_AGENTS" />
+		</Update>
+	</Policies>
+	
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_POLICY_DOUBLE_AGENTS_HELP" />
+		<Row Tag="TXT_KEY_POLICY_DOUBLE_AGENTS_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Double Agents[ENDCOLOR][NEWLINE]+2 Spies and Spies are twice as likely to kill enemy Spies when stationed in your Cities.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_POLICY_DOUBLE_AGENTS_HELP" />
+		<Row Tag="TXT_KEY_POLICY_DOUBLE_AGENTS_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Double Agents[ENDCOLOR][NEWLINE]+2 Spies and Spies are twice as likely to kill enemy Spies when stationed in your Cities.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_POLICY_DOUBLE_AGENTS_HELP" />
+		<Row Tag="TXT_KEY_POLICY_DOUBLE_AGENTS_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Double Agents[ENDCOLOR][NEWLINE]+2 Spies and Spies are twice as likely to kill enemy Spies when stationed in your Cities.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_POLICY_DOUBLE_AGENTS_HELP" />
+		<Row Tag="TXT_KEY_POLICY_DOUBLE_AGENTS_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Double Agents[ENDCOLOR][NEWLINE]+2 Spies and Spies are twice as likely to kill enemy Spies when stationed in your Cities.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

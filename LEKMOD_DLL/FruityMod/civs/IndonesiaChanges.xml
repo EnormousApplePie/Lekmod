@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 5/4/2016 10:23:50 AM -->
+<GameData>
+
+	<!-- Spice Islanders no longer requires cities founded on other continents (Capital still won't count). -->
+	<Traits>
+		<Update>
+			<Set UniqueLuxuryRequiresNewArea="false" />
+			<Where Type="TRAIT_SPICE" />
+		</Update>
+	</Traits>
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_TRAIT_SPICE" />
+		<Row Tag="TXT_KEY_TRAIT_SPICE">
+			<Text>The first 3 coastal cities founded after the Capital each provide 2 unique Luxury Resources (and can never be razed).</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_TRAIT_SPICE" />
+		<Row Tag="TXT_KEY_TRAIT_SPICE">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]The first 3 coastal cities founded after the Capital each provide 2 unique Luxury Resources (and can never be razed).</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_TRAIT_SPICE" />
+		<Row Tag="TXT_KEY_TRAIT_SPICE">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]The first 3 coastal cities founded after the Capital each provide 2 unique Luxury Resources (and can never be razed).</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_TRAIT_SPICE" />
+		<Row Tag="TXT_KEY_TRAIT_SPICE">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]The first 3 coastal cities founded after the Capital each provide 2 unique Luxury Resources (and can never be razed).</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

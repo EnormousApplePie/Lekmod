@@ -1,0 +1,9 @@
+<Asset>
+  <Mesh file="MED_Town2.gr2" source="Max" />
+  <Texture file="MED_Town_DIFF.dds" source="Max" />
+  <Texture file="MED_Town_Decal_DIFF.dds" source="Max" />
+  <Texture file="MED_Town_Decal_H.dds" source="Max" />
+  <Texture file="MED_Town_Decal_S.dds" source="Max" />
+  <Texture file="MED_Town_SREF.dds" source="Max" />
+  <Texture file="Generic_Grey_8.dds" source="Max" />
+</Asset>

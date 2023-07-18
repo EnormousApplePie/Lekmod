@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2016-09-24 14:15:24 -->
+<GameData>
+
+	<!-- +1 Food, +1 Production, +1 Gold, +1 Culture, +1 Faith, and +1 Science in the Capital. -->
+	<Belief_BuildingClassYieldChanges>
+		<Row>
+			<BeliefType>BELIEF_GOD_KING</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
+			<YieldType>YIELD_FOOD</YieldType>
+			<YieldChange>1</YieldChange>
+		</Row>
+	</Belief_BuildingClassYieldChanges>
+	
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_BELIEF_GOD_KING" />
+		<Row Tag="TXT_KEY_BELIEF_GOD_KING">
+			<Text>Palace provides +1 each of [ICON_FOOD] Food, [ICON_PRODUCTION] Production, [ICON_GOLD] Gold, [ICON_CULTURE] Culture, [ICON_RESEARCH] Science, and [ICON_PEACE] Faith</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_BELIEF_GOD_KING" />
+		<Row Tag="TXT_KEY_BELIEF_GOD_KING">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Palace provides +1 each of [ICON_FOOD] Food, [ICON_PRODUCTION] Production, [ICON_GOLD] Gold, [ICON_CULTURE] Culture, [ICON_RESEARCH] Science, and [ICON_PEACE] Faith</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_BELIEF_GOD_KING" />
+		<Row Tag="TXT_KEY_BELIEF_GOD_KING">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Palace provides +1 each of [ICON_FOOD] Food, [ICON_PRODUCTION] Production, [ICON_GOLD] Gold, [ICON_CULTURE] Culture, [ICON_RESEARCH] Science, and [ICON_PEACE] Faith</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_BELIEF_GOD_KING" />
+		<Row Tag="TXT_KEY_BELIEF_GOD_KING">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Palace provides +1 each of [ICON_FOOD] Food, [ICON_PRODUCTION] Production, [ICON_GOLD] Gold, [ICON_CULTURE] Culture, [ICON_RESEARCH] Science, and [ICON_PEACE] Faith</Text>
+		</Row>
+	</Language_RU_RU>
+
+
+
+</GameData>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2/15/2016 7:59:53 PM -->
+<GameData>
+
+	<Traits>
+		<Update>
+			<Set SeaTradeRoutesArePlunderImmune="true" />
+			<Where Type="TRAIT_PHOENICIAN_HERITAGE" />
+		</Update>
+	</Traits>
+
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_TRAIT_PHOENICIAN_HERITAGE" />
+		<Row Tag="TXT_KEY_TRAIT_PHOENICIAN_HERITAGE">
+			<Text>All coastal Cities get a free Harbor. Your Cargo Ships cannot be plundered. Units may cross mountains, taking 50 HP damage if they end a turn on a mountain.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_MISSION_PLUNDER_TRADE_ROUTE_DISABLED_HELP" />
+		<Row Tag="TXT_KEY_MISSION_PLUNDER_TRADE_ROUTE_DISABLED_HELP">
+			<Text>You must be at war against the trade route owner to plunder this unit.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_MISSION_PLUNDER_TRADE_ROUTE_DISABLED_BY_OPPOSING_TRAIT_HELP">
+			<Text>Your opponent's unique ability prevents this unit from being plundered.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_TRAIT_PHOENICIAN_HERITAGE" />
+		<Row Tag="TXT_KEY_TRAIT_PHOENICIAN_HERITAGE">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]All coastal Cities get a free Harbor. Your Cargo Ships cannot be plundered. Units may cross mountains, taking 50 HP damage if they end a turn on a mountain.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_MISSION_PLUNDER_TRADE_ROUTE_DISABLED_HELP" />
+		<Row Tag="TXT_KEY_MISSION_PLUNDER_TRADE_ROUTE_DISABLED_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]You must be at war against the trade route owner to plunder this unit.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_MISSION_PLUNDER_TRADE_ROUTE_DISABLED_BY_OPPOSING_TRAIT_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Your opponent's unique ability prevents this unit from being plundered.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_TRAIT_PHOENICIAN_HERITAGE" />
+		<Row Tag="TXT_KEY_TRAIT_PHOENICIAN_HERITAGE">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]All coastal Cities get a free Harbor. Your Cargo Ships cannot be plundered. Units may cross mountains, taking 50 HP damage if they end a turn on a mountain.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_MISSION_PLUNDER_TRADE_ROUTE_DISABLED_HELP" />
+		<Row Tag="TXT_KEY_MISSION_PLUNDER_TRADE_ROUTE_DISABLED_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]You must be at war against the trade route owner to plunder this unit.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_MISSION_PLUNDER_TRADE_ROUTE_DISABLED_BY_OPPOSING_TRAIT_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Your opponent's unique ability prevents this unit from being plundered.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_TRAIT_PHOENICIAN_HERITAGE" />
+		<Row Tag="TXT_KEY_TRAIT_PHOENICIAN_HERITAGE">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]All coastal Cities get a free Harbor. Your Cargo Ships cannot be plundered. Units may cross mountains, taking 50 HP damage if they end a turn on a mountain.</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_MISSION_PLUNDER_TRADE_ROUTE_DISABLED_HELP" />
+		<Row Tag="TXT_KEY_MISSION_PLUNDER_TRADE_ROUTE_DISABLED_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]You must be at war against the trade route owner to plunder this unit.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_MISSION_PLUNDER_TRADE_ROUTE_DISABLED_BY_OPPOSING_TRAIT_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Your opponent's unique ability prevents this unit from being plundered.</Text>
+		</Row>
+	</Language_RU_RU>
+
+
+</GameData>

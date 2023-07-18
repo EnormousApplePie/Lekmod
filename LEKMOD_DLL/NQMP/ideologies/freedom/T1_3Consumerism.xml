@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 3/22/2017 7:08:50 PM -->
+<GameData>
+
+	<!-- Consumerism (replaces Creative Expression): Trade Missions (Great Merchants) provide 50% of Gold gained as Tourism with all known Civilizations. -->
+	<Policies>
+		<Update>
+			<Set Level="1" TourismFromTradeMissions="50" />
+			<Where Type="POLICY_CREATIVE_EXPRESSION" />
+		</Update>
+	</Policies>
+	<Policy_GreatWorkYieldChanges>
+		<Delete PolicyType="POLICY_CREATIVE_EXPRESSION" />
+	</Policy_GreatWorkYieldChanges>
+
+	<!-- localization -->
+	<Language_en_US>
+		<Delete Tag="TXT_KEY_POLICY_CREATIVE_EXPRESSION" />
+		<Row Tag="TXT_KEY_POLICY_CREATIVE_EXPRESSION">
+			<Text>Consumerism</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_CREATIVE_EXPRESSION_HELP" />
+		<Row Tag="TXT_KEY_POLICY_CREATIVE_EXPRESSION_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Consumerism[ENDCOLOR][NEWLINE]Trade Missions (Great Merchants) provide 50% of [ICON_GOLD] Gold gained as global [ICON_TOURISM] Tourism.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_DE_DE>
+		<Delete Tag="TXT_KEY_POLICY_CREATIVE_EXPRESSION" />
+		<Row Tag="TXT_KEY_POLICY_CREATIVE_EXPRESSION">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR]Consumerism</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_CREATIVE_EXPRESSION_HELP" />
+		<Row Tag="TXT_KEY_POLICY_CREATIVE_EXPRESSION_HELP">
+			<Text>[COLOR_WARNING_TEXT](DE_DE text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Consumerism[ENDCOLOR][NEWLINE]Trade Missions (Great Merchants) provide 50% of [ICON_GOLD] Gold gained as global [ICON_TOURISM] Tourism.</Text>
+		</Row>
+	</Language_DE_DE>
+	<Language_PL_PL>
+		<Delete Tag="TXT_KEY_POLICY_CREATIVE_EXPRESSION" />
+		<Row Tag="TXT_KEY_POLICY_CREATIVE_EXPRESSION">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR]Consumerism</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_CREATIVE_EXPRESSION_HELP" />
+		<Row Tag="TXT_KEY_POLICY_CREATIVE_EXPRESSION_HELP">
+			<Text>[COLOR_WARNING_TEXT](PL_PL text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Consumerism[ENDCOLOR][NEWLINE]Trade Missions (Great Merchants) provide 50% of [ICON_GOLD] Gold gained as global [ICON_TOURISM] Tourism.</Text>
+		</Row>
+	</Language_PL_PL>
+	<Language_RU_RU>
+		<Delete Tag="TXT_KEY_POLICY_CREATIVE_EXPRESSION" />
+		<Row Tag="TXT_KEY_POLICY_CREATIVE_EXPRESSION">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR]Consumerism</Text>
+		</Row>
+		<Delete Tag="TXT_KEY_POLICY_CREATIVE_EXPRESSION_HELP" />
+		<Row Tag="TXT_KEY_POLICY_CREATIVE_EXPRESSION_HELP">
+			<Text>[COLOR_WARNING_TEXT](RU_RU text) [ENDCOLOR][COLOR_POSITIVE_TEXT]Consumerism[ENDCOLOR][NEWLINE]Trade Missions (Great Merchants) provide 50% of [ICON_GOLD] Gold gained as global [ICON_TOURISM] Tourism.</Text>
+		</Row>
+	</Language_RU_RU>
+
+</GameData>

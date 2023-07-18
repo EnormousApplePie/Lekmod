@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 3/30/2015 10:14:12 PM -->
+<GameData>
+	
+	<Yields>
+		<Update>
+			<Set MinCityOnHillsAdjust="-1" MinCity="3" />
+			<Where Type="YIELD_FOOD" />
+		</Update>
+	</Yields>
+	
+</GameData>
