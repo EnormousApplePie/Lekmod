@@ -1,5 +1,5 @@
 /*	-------------------------------------------------------------------------------------------------------
-	© 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
+	Â© 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
 	Sid Meier's Civilization V, Civ, Civilization, 2K Games, Firaxis Games, Take-Two Interactive Software 
 	and their respective logos are all trademarks of Take-Two interactive Software, Inc.  
 	All other marks and trademarks are the property of their respective owners.  
@@ -350,6 +350,7 @@ CvPlayer::CvPlayer() :
 	, m_iGarrisonFreeMaintenanceCount(0)
 	, m_iNumCitiesFreeAestheticsSchools(0) // NQMP GJS - add support for NumCitiesFreeAestheticsSchools
 	, m_iNumCitiesFreePietyGardens(0)
+	, m_iNumCitiesFreeTraditionAqueduct(0) // Loupgarou - (bug)Free Tradition Aqueducts on Finisher
 	, m_iNumCitiesFreeWalls(0) // NQMP GJS - New Oligarchy add support for NumCitiesFreeWalls
 	, m_iNumCitiesFreeCultureBuilding(0)
 	, m_iNumCitiesFreeFoodBuilding(0)
@@ -1049,6 +1050,7 @@ void CvPlayer::uninit()
 	m_iGarrisonFreeMaintenanceCount = 0;
 	m_iNumCitiesFreeAestheticsSchools = 0; // NQMP GJS - add support for NumCitiesFreeAestheticsSchools
 	m_iNumCitiesFreePietyGardens = 0;
+	m_iNumCitiesFreeTraditionAqueduct = 0; // Loupgarou - (bug)Free Tradition Aqueducts on Finisher
 	m_iNumCitiesFreeWalls = 0; // NQMP GJS - New Oligarchy add support for NumCitiesFreeWalls
 	m_iNumCitiesFreeCultureBuilding = 0;
 	m_iNumCitiesFreeFoodBuilding = 0;
@@ -7456,6 +7458,18 @@ void CvPlayer::AwardFreeBuildings(CvCity* pCity)
 		}
 		ChangeNumCitiesFreePietyGardens(-1);
 	}
+	// Loupgarou - (bug)Free Tradition Aqueducts on Finisher
+	int iNumFreeTraditionAqueduct = GetNumCitiesFreeTraditionAqueduct();
+	if (iNumFreeTraditionAqueduct > 0)
+	{
+		BuildingTypes eTraditionAqueduct = pCity->ChooseFreeAqueductBuilding();
+		if (eTraditionAqueduct != NO_BUILDING)
+		{
+			pCity->GetCityBuildings()->SetNumFreeBuilding(eTraditionAqueduct, 0);
+			pCity->GetCityBuildings()->SetNumFreeBuilding(eTraditionAqueduct, 1);
+		}
+		ChangeNumCitiesFreeTraditionAqueduct(-1);
+	}
 	// NQMP GJS - add support for NumCitiesFreeAestheticsSchools
 	int iNumFreeAestheticsSchools = GetNumCitiesFreeAestheticsSchools();
 	if (iNumFreeAestheticsSchools > 0)
@@ -11138,6 +11152,12 @@ int CvPlayer::GetNumCitiesFreePietyGardens() const
 	return m_iNumCitiesFreePietyGardens;
 }
 
+/// Cities remaining to get free Aqueduct
+int CvPlayer::GetNumCitiesFreeTraditionAqueduct() const
+{
+	return m_iNumCitiesFreeTraditionAqueduct;
+}
+
 // NQMP GJS - add support for NumCitiesFreeAestheticsSchools
 //	--------------------------------------------------------------------------------
 
@@ -11171,6 +11191,14 @@ void CvPlayer::ChangeNumCitiesFreePietyGardens(int iChange)
 {
 	if(iChange != 0)
 		m_iNumCitiesFreePietyGardens += iChange;
+}
+
+//	--------------------------------------------------------------------------------
+/// Changes number of cities remaining to get (bug)free Tradition Aqueducts
+void CvPlayer::ChangeNumCitiesFreeTraditionAqueduct(int iChange)
+{
+	if (iChange != 0)
+		m_iNumCitiesFreeTraditionAqueduct += iChange;
 }
 
 //	--------------------------------------------------------------------------------
@@ -23999,6 +24027,7 @@ void CvPlayer::processPolicies(PolicyTypes ePolicy, int iChange)
 	// How many cities get free buildings?
 	int iNumCitiesFreeAestheticsSchools = pPolicy->GetNumCitiesFreeAestheticsSchools(); // NQMP GJS - add support for NumCitiesFreeAestheticsSchools
 	int iNumCitiesFreePietyGardens = pPolicy->GetNumCitiesFreePietyGardens();
+	int iNumCitiesFreeTraditionAqueduct = pPolicy->GetNumCitiesFreeTraditionAqueduct();  // Loupgarou - (bug)Free Tradition Aqueducts on Finisher
 	int iNumCitiesFreeWalls = pPolicy->GetNumCitiesFreeWalls(); // NQMP GJS - New Oligarchy add support for NumCitiesFreeWalls
 	int iNumCitiesFreeCultureBuilding = pPolicy->GetNumCitiesFreeCultureBuilding();
 	int iNumCitiesFreeFoodBuilding = pPolicy->GetNumCitiesFreeFoodBuilding();
@@ -24023,6 +24052,23 @@ void CvPlayer::processPolicies(PolicyTypes ePolicy, int iChange)
 				}
 			}
 			iNumCitiesFreePietyGardens--;
+		}
+		// Loupgarou - add support for (bug)Free Tradition Aqueduct on Finisher
+
+		if (iNumCitiesFreeTraditionAqueduct > 0)
+		{
+			BuildingTypes eTraditionAqueduct = pLoopCity->ChooseFreeAqueductBuilding();
+			if (eTraditionAqueduct != NO_BUILDING)
+			{
+				pLoopCity->GetCityBuildings()->SetNumRealBuilding(eTraditionAqueduct, 0);
+				pLoopCity->GetCityBuildings()->SetNumFreeBuilding(eTraditionAqueduct, 1);
+				if (pLoopCity->getFirstBuildingOrder(eTraditionAqueduct) == 0)
+				{
+					pLoopCity->clearOrderQueue();
+					pLoopCity->chooseProduction();
+				}
+			}
+			iNumCitiesFreeTraditionAqueduct--;
 		}
 		// NQMP GJS - add support for NumCitiesFreeAestheticsSchools
 		if(iNumCitiesFreeAestheticsSchools > 0)
@@ -24214,6 +24260,7 @@ void CvPlayer::processPolicies(PolicyTypes ePolicy, int iChange)
 	// Store off number of newly built cities that will get a free building
 	ChangeNumCitiesFreeAestheticsSchools(iNumCitiesFreeAestheticsSchools); // NQMP GJS - add support for NumCitiesFreeAestheticsSchools
 	ChangeNumCitiesFreePietyGardens(iNumCitiesFreePietyGardens);
+	ChangeNumCitiesFreeTraditionAqueduct(iNumCitiesFreeTraditionAqueduct); // Loupgarou - (bug)Free Tradition Aqueducts on Finisher
 	ChangeNumCitiesFreeWalls(iNumCitiesFreeWalls); // NQMP GJS - New Oligarchy add support for NumCitiesFreeWalls
 	ChangeNumCitiesFreeCultureBuilding(iNumCitiesFreeCultureBuilding);
 	ChangeNumCitiesFreeFoodBuilding(iNumCitiesFreeFoodBuilding);
@@ -25074,6 +25121,7 @@ void CvPlayer::Read(FDataStream& kStream)
 	kStream >> m_iGarrisonedCityRangeStrikeModifier;
 	kStream >> m_iNumCitiesFreeAestheticsSchools; // NQMP GJS - add support for NumCitiesFreeAestheticsSchools
 	kStream >> m_iNumCitiesFreePietyGardens;
+	kStream >> m_iNumCitiesFreeTraditionAqueduct; // Loupgarou - (bug)Free Tradition Aqueducts on Finisher
 	kStream >> m_iNumCitiesFreeWalls; // NQMP GJS - New Oligarchy add support for NumCitiesFreeWalls
 	kStream >> m_iNumCitiesFreeCultureBuilding;
 	kStream >> m_iNumCitiesFreeFoodBuilding;
@@ -25629,6 +25677,7 @@ void CvPlayer::Write(FDataStream& kStream) const
 	kStream << m_iGarrisonedCityRangeStrikeModifier;
 	kStream << m_iNumCitiesFreeAestheticsSchools; // NQMP GJS - add support for NumCitiesFreeAestheticsSchools
 	kStream << m_iNumCitiesFreePietyGardens;
+	kStream << m_iNumCitiesFreeTraditionAqueduct; // Loupgarou - (bug)Free Tradition Aqueducts on Finisher
 	kStream << m_iNumCitiesFreeWalls; // NQMP GJS - New Oligarchy add support for NumCitiesFreeWalls
 	kStream << m_iNumCitiesFreeCultureBuilding;
 	kStream << m_iNumCitiesFreeFoodBuilding;
