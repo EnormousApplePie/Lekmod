@@ -1,5 +1,5 @@
 /*	-------------------------------------------------------------------------------------------------------
-	© 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
+	Â© 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
 	Sid Meier's Civilization V, Civ, Civilization, 2K Games, Firaxis Games, Take-Two Interactive Software 
 	and their respective logos are all trademarks of Take-Two interactive Software, Inc.  
 	All other marks and trademarks are the property of their respective owners.  
@@ -231,6 +231,7 @@ CvPolicyEntry::CvPolicyEntry(void):
 #endif
 	m_iNumCitiesFreeAestheticsSchools(0), // NQMP GJS - add support for NumCitiesFreeAestheticsSchools
 	m_iNumCitiesFreePietyGardens(0),
+	m_iNumCitiesFreeTraditionAqueduct(0), // Loupgarou - (bug)Free Tradition Aqueducts on Finisher
 	m_iNumCitiesFreeWalls(0), // NQMP GJS - New Oligarchy add support for NumCitiesFreeWalls
 	m_iNumCitiesFreeCultureBuilding(0),
 	m_iNumCitiesFreeFoodBuilding(0),
@@ -454,6 +455,7 @@ bool CvPolicyEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility&
 #endif
 	m_iNumCitiesFreeAestheticsSchools = kResults.GetInt("NumCitiesFreeAestheticsSchools"); // NQMP GJS - add support for NumCitiesFreeAestheticsSchools
 	m_iNumCitiesFreePietyGardens = kResults.GetInt("NumCitiesFreePietyGardens");
+	m_iNumCitiesFreeTraditionAqueduct = kResults.GetInt("NumCitiesFreeTraditionAqueduct"); // Loupgarou - (bug)Free Tradition Aqueducts on Finisher
 	m_iNumCitiesFreeWalls = kResults.GetInt("NumCitiesFreeWalls"); // NQMP GJS - New Oligarchy add support for NumCitiesFreeWalls
 	m_iNumCitiesFreeCultureBuilding = kResults.GetInt("NumCitiesFreeCultureBuilding");
 	m_iNumCitiesFreeFoodBuilding = kResults.GetInt("NumCitiesFreeFoodBuilding");
@@ -1808,6 +1810,12 @@ int CvPolicyEntry::GetNumCitiesFreeAestheticsSchools() const
 int CvPolicyEntry::GetNumCitiesFreePietyGardens() const
 {
 	return m_iNumCitiesFreePietyGardens;
+}
+
+/// Loupgarou - add support for (bug)Free Tradition Aqueduct on Finisher
+int CvPolicyEntry::GetNumCitiesFreeTraditionAqueduct() const
+{
+	return m_iNumCitiesFreeTraditionAqueduct;
 }
 
 // NQMP GJS - New Oligarchy add support for NumCitiesFreeWalls
