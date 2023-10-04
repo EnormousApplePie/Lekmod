@@ -1,5 +1,5 @@
 /*	-------------------------------------------------------------------------------------------------------
-	© 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
+	Â© 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
 	Sid Meier's Civilization V, Civ, Civilization, 2K Games, Firaxis Games, Take-Two Interactive Software 
 	and their respective logos are all trademarks of Take-Two interactive Software, Inc.  
 	All other marks and trademarks are the property of their respective owners.  
@@ -219,6 +219,7 @@ public:
 #endif
 	int GetNumCitiesFreeAestheticsSchools() const; // NQMP GJS - add support for NumCitiesFreeAestheticsSchools
 	int GetNumCitiesFreePietyGardens() const; // LEKMOD - Piety Gardens
+	int GetNumCitiesFreeTraditionAqueduct() const; // Loupgarou - add support for (bug)Free Tradition Aqueduct on Finisher
 	int GetNumCitiesFreeWalls() const; // NQMP GJS - New Oligarchy add support for NumCitiesFreeWalls
 	int GetNumCitiesFreeCultureBuilding() const;
 	int GetNumCitiesFreeFoodBuilding() const;
@@ -503,6 +504,7 @@ private:
 #endif
 	int m_iNumCitiesFreeAestheticsSchools; // NQMP GJS - add support for NumCitiesFreeAestheticsSchools
 	int m_iNumCitiesFreePietyGardens;
+	int m_iNumCitiesFreeTraditionAqueduct; // Loupgarou - (bug)Free Tradition Aqueducts on Finisher
 	int m_iNumCitiesFreeWalls; // NQMP GJS - New Oligarchy add support for NumCitiesFreeWalls
 	int m_iNumCitiesFreeCultureBuilding;
 	int m_iNumCitiesFreeFoodBuilding;
