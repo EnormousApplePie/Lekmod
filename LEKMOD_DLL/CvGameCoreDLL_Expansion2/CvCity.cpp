@@ -1,5 +1,5 @@
 /*	-------------------------------------------------------------------------------------------------------
-	© 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
+	Â© 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
 	Sid Meier's Civilization V, Civ, Civilization, 2K Games, Firaxis Games, Take-Two Interactive Software 
 	and their respective logos are all trademarks of Take-Two interactive Software, Inc.  
 	All other marks and trademarks are the property of their respective owners.  
@@ -10255,7 +10255,6 @@ void CvCity::SetIgnoreCityForHappiness(bool bValue)
 	m_bIgnoreCityForHappiness = bValue;
 }
 
-
 /// Find the gardens ~EAP
 //	--------------------------------------------------------------------------------
 BuildingTypes CvCity::ChooseFreeGardenBuilding() const
@@ -10270,6 +10269,28 @@ BuildingTypes CvCity::ChooseFreeGardenBuilding() const
 		const BuildingClassTypes eBuildingClass = static_cast<BuildingClassTypes>(iI);
 		CvBuildingClassInfo* pkBuildingClassInfo = GC.getBuildingClassInfo(eBuildingClass);
 		if (pkBuildingClassInfo && pkBuildingClassInfo->GetType() == strGardenBuildingClass)
+		{
+			return (BuildingTypes)getCivilizationInfo().getCivilizationBuildings(iI);
+		}
+	}
+
+	return NO_BUILDING;
+}
+/// Loupgarou - add support for (bug)Free Tradition Aqueduct on Finisher
+//---------------------------------------------------------------------------------
+/// Find the Aqueduct ~EAP ft. Loupgarou (kek)
+BuildingTypes CvCity::ChooseFreeAqueductBuilding() const
+{
+	CvString strAqueductBuildingClass = "BUILDINGCLASS_AQUEDUCT";
+#ifdef AUI_WARNING_FIXES
+	for (uint iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
+#else
+	for (int iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
+#endif
+	{
+		const BuildingClassTypes eBuildingClass = static_cast<BuildingClassTypes>(iI);
+		CvBuildingClassInfo* pkBuildingClassInfo = GC.getBuildingClassInfo(eBuildingClass);
+		if (pkBuildingClassInfo && pkBuildingClassInfo->GetType() == strAqueductBuildingClass)
 		{
 			return (BuildingTypes)getCivilizationInfo().getCivilizationBuildings(iI);
 		}
