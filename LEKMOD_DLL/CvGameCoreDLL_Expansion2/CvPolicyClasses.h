@@ -214,6 +214,10 @@ public:
 	int GetNumExtraBranches() const;
 	int GetHappinessToCulture() const;
 	int GetHappinessToScience() const;
+#ifdef NQ_SPREAD_MODIFIER_OWNED_CITIES
+	int GetReligionSpreadModifierFriendly() const;
+	int GetReligionSpreadModifierForeign() const;
+#endif
 #ifdef NQ_GOLD_TO_SCIENCE_FROM_POLICIES
 	int GetGoldToScience() const;
 #endif
@@ -498,6 +502,10 @@ private:
 	int m_iBarbarianCombatBonus;
 	int m_iHappinessToCulture;
 	int m_iHappinessToScience;
+#ifdef NQ_SPREAD_MODIFIER_OWNED_CITIES
+	int m_iSpreadModifierOwnedCities;
+	int m_iSpreadModifierUnownedCities;
+#endif
 #ifdef NQ_GOLD_TO_SCIENCE_FROM_POLICIES
 	int m_iGoldToScience;
 #endif
@@ -635,7 +643,6 @@ private:
 	bool m_bDelayWhenNoCulture;
 	bool m_bDelayWhenNoCityStates;
 	bool m_bDelayWhenNoScience;
-
 	// Arrays
 	int* m_piPolicyBranchDisables;
 };
@@ -767,6 +774,10 @@ enum PolicyModifierType
 #endif
 #ifdef NQ_COUP_CHANCE_MODIFIER_FROM_POLICIES
 	POLICYMOD_COUP_CHANCE_MODIFIER,
+#endif
+#ifdef NQ_SPREAD_MODIFIER_OWNED_CITIES
+    POLICYMOD_SPREAD_MODIFIER_OWNED_CITIES,
+	POLICYMOD_SPREAD_MODIFIER_OTHER_CITIES,
 #endif
     POLICYMOD_SHARED_RELIGION_TOURISM_MODIFIER,
     POLICYMOD_TRADE_ROUTE_TOURISM_MODIFIER,

@@ -74,6 +74,9 @@ CvPromotionEntry::CvPromotionEntry():
 	m_iGreatGeneralModifier(0),
 	m_bGreatGeneralReceivesMovement(false),
 	m_bEmbarkedUnitReceivesMovement(false), // NQMP GJS - Danish Longship
+#ifdef LEKMOD_LONGSHIP_ALL_PROMO
+	m_bLandUnitReceivesMovement(false),
+#endif
 #ifdef NQ_ART_OF_WAR_PROMOTION
 	m_iGreatGeneralOnOrAdjacentConfersMovement(0),
 #endif
@@ -316,6 +319,9 @@ bool CvPromotionEntry::CacheResults(Database::Results& kResults, CvDatabaseUtili
 	m_iGreatGeneralModifier = kResults.GetInt("GreatGeneralModifier");
 	m_bGreatGeneralReceivesMovement = kResults.GetBool("GreatGeneralReceivesMovement");
 	m_bEmbarkedUnitReceivesMovement = kResults.GetBool("EmbarkedUnitReceivesMovement"); // NQMP GJS - Danish Longship
+#ifdef LEKMOD_LONGSHIP_ALL_PROMO
+	m_bLandUnitReceivesMovement = kResults.GetBool("LandUnitReceivesMovement"); //LEKMOD - Same longship promo for land civilian units
+#endif
 #ifdef NQ_ART_OF_WAR_PROMOTION
 	m_iGreatGeneralOnOrAdjacentConfersMovement = kResults.GetInt("GreatGeneralOnOrAdjacentConfersMovement");
 #endif
@@ -1078,6 +1084,13 @@ bool CvPromotionEntry::IsEmbarkedUnitReceivesMovement() const
 	return m_bEmbarkedUnitReceivesMovement;
 }
 // NQMP GJS - Danish Longship END
+#ifdef LEKMOD_LONGSHIP_ALL_PROMO
+bool CvPromotionEntry::IsLandUnitReceivesMovement() const
+{
+	return m_bLandUnitReceivesMovement;
+}
+#endif
+
 
 #ifdef NQ_ART_OF_WAR_PROMOTION
 /// Accessor: Does this Promotion grant bonus movement when starting turn on or adjacent to great general?

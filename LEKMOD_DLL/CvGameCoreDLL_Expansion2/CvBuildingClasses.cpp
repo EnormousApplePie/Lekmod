@@ -1436,7 +1436,6 @@ int CvBuildingEntry::GetReligiousPressureModifier() const
 {
 	return m_iReligiousPressureModifier;
 }
-
 /// Modifier to chance of espionage against this city
 int CvBuildingEntry::GetEspionageModifier() const
 {

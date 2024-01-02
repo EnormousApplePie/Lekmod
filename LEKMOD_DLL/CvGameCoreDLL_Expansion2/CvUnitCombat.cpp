@@ -137,7 +137,20 @@ void CvUnitCombat::GenerateMeleeCombatInfo(CvUnit& kAttacker, CvUnit* pkDefender
 		int iExperience = /*5*/ GC.getEXPERIENCE_ATTACKING_CITY_MELEE();
 
 		pkCombatInfo->setExperience(BATTLE_UNIT_ATTACKER, iExperience);
+		
+#ifdef LEKMOD_AI_XP_CAP
+		int iMaxExperience;
+		if (GC.getGame().isOption("GAMEOPTION_AI_XP_CAP"))
+		{
+			iMaxExperience = (!GET_PLAYER(pkCity->getOwner()).isHuman()) ? 30 : MAX_INT;
+		}
+		else
+		{
+			iMaxExperience = (GET_PLAYER(pkCity->getOwner()).isMinorCiv()) ? 30 : MAX_INT; // NQMP GJS - cap XP from fighting CS to 30
+		}
+#else
 		int iMaxExperience = (GET_PLAYER(pkCity->getOwner()).isMinorCiv()) ? 30 : MAX_INT; // NQMP GJS - cap XP from fighting CS to 30
+#endif
 		pkCombatInfo->setMaxExperienceAllowed(BATTLE_UNIT_ATTACKER, iMaxExperience);
 		pkCombatInfo->setInBorders(BATTLE_UNIT_ATTACKER, plot.getOwner() == pkCity->getOwner());
 #ifdef NQ_NO_GG_POINTS_FROM_CS_OR_BARBS
@@ -698,7 +711,19 @@ void CvUnitCombat::GenerateRangedCombatInfo(CvUnit& kAttacker, CvUnit* pkDefende
 
 		if(pCity->isBarbarian())
 			bBarbarian = true;
+		
+#ifdef LEKMOD_AI_XP_CAP
+		if (GC.getGame().isOption("GAMEOPTION_AI_XP_CAP"))
+		{
+			iMaxXP = (!GET_PLAYER(pCity->getOwner()).isHuman()) ? 30 : 1000;
+		}
+		else
+		{
+			iMaxXP = (GET_PLAYER(pCity->getOwner()).isMinorCiv()) ? 30 : 1000; // NQMP GJS - cap XP from fighting CS to 30
+		}
+#else
 		iMaxXP = (GET_PLAYER(pCity->getOwner()).isMinorCiv()) ? 30 : 1000; // NQMP GJS - cap XP from fighting CS to 30
+#endif
 
 		iDamage = kAttacker.GetRangeCombatDamage(/*pDefender*/ NULL, pCity, /*bIncludeRand*/ true);
 
@@ -899,7 +924,20 @@ void CvUnitCombat::GenerateRangedCombatInfo(CvCity& kAttacker, CvUnit* pkDefende
 
 	int iExperience = /*2*/ GC.getEXPERIENCE_DEFENDING_UNIT_RANGED();
 	pkCombatInfo->setExperience(BATTLE_UNIT_DEFENDER, iExperience);
+#ifdef LEKMOD_AI_XP_CAP
+	int iMaxExperience;
+	if (GC.getGame().isOption("GAMEOPTION_AI_XP_CAP"))
+	{
+		iMaxExperience = (!GET_PLAYER(kAttacker.getOwner()).isHuman()) ? 30 : MAX_INT;
+	}
+	else
+	{
+		iMaxExperience = (GET_PLAYER(kAttacker.getOwner()).isMinorCiv()) ? 30 : MAX_INT; // NQMP GJS - cap XP from fighting CS to 30
+	}
+#else
 	int iMaxExperience = (GET_PLAYER(kAttacker.getOwner()).isMinorCiv()) ? 30 : MAX_INT; // NQMP GJS - cap XP from fighting CS to 30
+#endif
+	
 	pkCombatInfo->setMaxExperienceAllowed(BATTLE_UNIT_DEFENDER, iMaxExperience);
 	pkCombatInfo->setInBorders(BATTLE_UNIT_DEFENDER, plot.getOwner() == kAttacker.getOwner());
 #ifdef NQ_NO_GG_POINTS_FROM_CS_OR_BARBS
@@ -1620,8 +1658,19 @@ void CvUnitCombat::GenerateAirCombatInfo(CvUnit& kAttacker, CvUnit* pkDefender, 
 
 		if(pCity->isBarbarian())
 			bBarbarian = true;
+		
+#ifdef LEKMOD_AI_XP_CAP
+		if (GC.getGame().isOption("GAMEOPTION_AI_XP_CAP"))
+		{
+			iMaxXP = (!GET_PLAYER(pCity->getOwner()).isHuman()) ? 30 : 1000;
+		}
+		else
+		{
+			iMaxXP = (GET_PLAYER(pCity->getOwner()).isMinorCiv()) ? 30 : 1000; // NQMP GJS - cap XP from fighting CS to 30
+		}
+#else
 		iMaxXP = (GET_PLAYER(pCity->getOwner()).isMinorCiv()) ? 30 : 1000; // NQMP GJS - cap XP from fighting CS to 30
-
+#endif
 		iAttackerDamageInflicted = kAttacker.GetAirCombatDamage(/*pUnit*/ NULL, pCity, /*bIncludeRand*/ true, iInterceptionDamage);
 
 		// Cities can't be knocked to less than 1 HP
@@ -1721,8 +1770,28 @@ void CvUnitCombat::ResolveAirUnitVsCombat(const CvCombatInfo& kCombatInfo, uint 
 	CvAssert_Debug(pkAttacker);
 
 	// Interception?
+#ifdef LEKMOD_100_EVASIION_FIX
 	int iInterceptionDamage = kCombatInfo.getDamageInflicted(BATTLE_UNIT_INTERCEPTOR);
-	if(iInterceptionDamage > 0)
+	CvUnit* pInterceptor = kCombatInfo.getUnit(BATTLE_UNIT_INTERCEPTOR);
+	if (iInterceptionDamage > 0) {
+		iDefenderDamageInflicted += iInterceptionDamage;
+		CvAssert_Debug(pInterceptor);
+		if (pInterceptor)
+		{
+			pInterceptor->setMadeInterception(true);
+			pInterceptor->setCombatUnit(NULL);
+			pInterceptor->changeExperience(
+				kCombatInfo.getExperience(BATTLE_UNIT_INTERCEPTOR),
+				kCombatInfo.getMaxExperienceAllowed(BATTLE_UNIT_INTERCEPTOR),
+				true,
+				kCombatInfo.getInBorders(BATTLE_UNIT_INTERCEPTOR),
+				kCombatInfo.getUpdateGlobal(BATTLE_UNIT_INTERCEPTOR));
+		}
+	}
+	
+#else
+	int iInterceptionDamage = kCombatInfo.getDamageInflicted(BATTLE_UNIT_INTERCEPTOR);
+	if (iInterceptionDamage > 0)
 		iDefenderDamageInflicted += iInterceptionDamage;
 
 	CvUnit* pInterceptor = kCombatInfo.getUnit(BATTLE_UNIT_INTERCEPTOR);
@@ -1738,7 +1807,7 @@ void CvUnitCombat::ResolveAirUnitVsCombat(const CvCombatInfo& kCombatInfo, uint 
 			kCombatInfo.getInBorders(BATTLE_UNIT_INTERCEPTOR),
 			kCombatInfo.getUpdateGlobal(BATTLE_UNIT_INTERCEPTOR));
 	}
-
+#endif
 	CvPlot* pkTargetPlot = kCombatInfo.getPlot();
 	CvAssert_Debug(pkTargetPlot);
 
