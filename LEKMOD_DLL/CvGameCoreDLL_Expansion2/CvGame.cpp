@@ -407,10 +407,6 @@ void CvGame::init(HandicapTypes eHandicap)
 	m_bArchaeologyTriggered = false;
 	CvGoodyHuts::Reset();
 
-#ifdef GAME_ALLOW_ONLY_ONE_UNIT_MOVE_ON_TURN_LOADING
-	setMPOrderedMoveOnTurnLoading(false);
-#endif
-
 #ifdef AUI_GAME_BETTER_HYBRID_MODE
 	m_iCurrentTurnOrderActive = 0;
 	m_iLastTurnOrderID = 0;
@@ -419,7 +415,12 @@ void CvGame::init(HandicapTypes eHandicap)
 	m_aiMaxTurnLengths.reserve(MAX_TEAMS);
 #endif
 #endif
-
+#ifdef GAME_ALLOW_ONLY_ONE_UNIT_MOVE_ON_TURN_LOADING
+	if (GC.getGame().isOption("GAMEOPTION_FIRSTMOVE"))
+	{
+		setMPOrderedMoveOnTurnLoading(false);
+	}
+#endif
 	doUpdateCacheOnTurn();
 }
 
@@ -1741,6 +1742,22 @@ void CvGame::CheckPlayerTurnDeactivate()
 
 					if(bAutoMovesComplete)
 					{
+#ifdef AUTOSAVE_END_OF_TURN
+						int iFirstAlivePlayer = -1;
+						for (int iJ = 0; iJ < MAX_PLAYERS; iJ++)  // find first alive player index (assume there is atleast one)
+						{
+							CvPlayer& kItPlayer = GET_PLAYER((PlayerTypes)iJ);
+							if (kItPlayer.isAlive() && kItPlayer.isHuman())
+							{
+								iFirstAlivePlayer = iJ;
+								break;
+							}
+						}
+						if (iI == iFirstAlivePlayer)  // save just before first player deactivation
+						{
+							gDLL->AutoSave(false, true);
+						}
+#endif
 						kPlayer.setTurnActive(false);
 
 						// Activate the next player
@@ -2837,40 +2854,48 @@ void CvGame::selectionListGameNetMessage(int eMessage, int iData2, int iData3, i
 		if(pkSelectedUnit->getOwner() == getActivePlayer() && !pSelectedUnit->IsBusy())
 		{
 #ifdef GAME_ALLOW_ONLY_ONE_UNIT_MOVE_ON_TURN_LOADING
-			if (isGameMultiPlayer() && (GC.getGame().isOption("GAMEOPTION_FIRSTMOVE_FIX")))
-			{
-				float t1;
-				float t2;
-				GetTurnTimerData(t1, t2);
-
-				bool bAllComplete = true;  // replace gDLL->HasReceivedTurnAllComplete as it breaks after hj
-				for (uint i = 0; i < MAX_CIV_PLAYERS; i++)
+			if (GC.getGame().isOption("GAMEOPTION_FIRSTMOVE"))
+			{	
+				if (isGameMultiPlayer())
 				{
-					CvPlayerAI& kPlayer = GET_PLAYER((PlayerTypes)i);
-					if (kPlayer.isHuman() && kPlayer.isAlive()) {
-						if (!gDLL->HasReceivedTurnComplete((PlayerTypes)i))
-							bAllComplete = false;
-					}
-				}
+					float t1;
+					float t2;
+					GetTurnTimerData(t1, t2);
 
-				// both is true means turn is about to end
-				// both is false means turn just started
-				if (bAllComplete == getHasReceivedFirstMission()) {
-					if (isMPOrderedMoveOnTurnLoading()) {
-						//SLOG("--- subsequent move order REJECTED %f %f", t1, t2);
-						//SLOG("HasReceivedTurnAllComplete %d bAllComplete %d getHasReceivedFirstMission %d", gDLL->HasReceivedTurnAllComplete(getActivePlayer()) ? 1 : 0, bAllComplete ? 1 : 0, getHasReceivedFirstMission() ? 1 : 0);
-						return;
+					bool bAllComplete = true;  // replace gDLL->HasReceivedTurnAllComplete as it breaks after hj
+					for (uint i = 0; i < MAX_CIV_PLAYERS; i++)
+					{
+						CvPlayerAI& kPlayer = GET_PLAYER((PlayerTypes)i);
+						if (kPlayer.isHuman() && kPlayer.isAlive()) {
+							if (!gDLL->HasReceivedTurnComplete((PlayerTypes)i))
+								bAllComplete = false;
+						}
 					}
-					else {
-						//SLOG("--- first move order");
-						setMPOrderedMoveOnTurnLoading(true);
-					}
-				}
 
-				//SLOG("%f %f selectionListGameNetMessage player: %d eMessage: %d", t1, t2, (int)getActivePlayer(), eMessage);
-				//SLOG("HasReceivedTurnAllComplete: %d bAllComplete: %d", gDLL->HasReceivedTurnAllComplete(getActivePlayer()) ? 1 : 0, bAllComplete ? 1 : 0);
+					// both is true means turn is about to end
+					// both is false means turn just started
+					if (bAllComplete == getHasReceivedFirstMission()) {
+
+						CvPlayerAI& kPlayer = GET_PLAYER(getActivePlayer());
+						TeamTypes eTeam = kPlayer.getTeam();
+						if (GET_TEAM(kPlayer.getTeam()).isAtWarWithHumans())
+						{
+							if (isMPOrderedMoveOnTurnLoading()) {
+								//SLOG("--- subsequent move order REJECTED %f %f", t1, t2);
+								//SLOG("HasReceivedTurnAllComplete %d bAllComplete %d getHasReceivedFirstMission %d", gDLL->HasReceivedTurnAllComplete(getActivePlayer()) ? 1 : 0, bAllComplete ? 1 : 0, getHasReceivedFirstMission() ? 1 : 0);
+								return;
+							}
+							else {
+								//SLOG("--- first move order");
+								setMPOrderedMoveOnTurnLoading(true);
+							}
+						}
+					}
+
+					//SLOG("%f %f selectionListGameNetMessage player: %d eMessage: %d", t1, t2, (int)getActivePlayer(), eMessage);
+					//SLOG("HasReceivedTurnAllComplete: %d bAllComplete: %d", gDLL->HasReceivedTurnAllComplete(getActivePlayer()) ? 1 : 0, bAllComplete ? 1 : 0);
+				}
 			}
-
 #endif
 			if(eMessage == GAMEMESSAGE_DO_COMMAND)
 			{
@@ -2882,41 +2907,13 @@ void CvGame::selectionListGameNetMessage(int eMessage, int iData2, int iData3, i
 				{
 					MissionTypes eMission = (MissionTypes)iData2;
 					CvPlot* pPlot = GC.getMap().plot(iData3, iData4);
-#ifdef GAME_ALLOW_ONLY_ONE_UNIT_MOVE_ON_TURN_LOADING
-					bool bTurnActive = GET_PLAYER(getActivePlayer()).isTurnActive();
-					bool bAllAICivsProcessedThisTurn = gDLL->allAICivsProcessedThisTurn();
-					if (bTurnActive && bAllAICivsProcessedThisTurn && isMPOrderedMoveOnTurnLoading())
-					{
-						setMPOrderedMoveOnTurnLoading(false);  // Turn has already started; reset value
-					}
-#endif
 					if(pPlot && pkSelectedUnit->CanSwapWithUnitHere(*pPlot) && eMission != CvTypes::getMISSION_ROUTE_TO())
 					{
-#ifdef GAME_ALLOW_ONLY_ONE_UNIT_MOVE_ON_TURN_LOADING
-						// DLLUI->AddMessage(0, CvPreGame::activePlayer(), true, GC.getEVENT_MESSAGE_TIME(), GetLocalizedText("isTurnActive: {1_Num}, allAICivsProcessedThisTurn: {2_Num}", bTurnActive, bAllAICivsProcessedThisTurn));
-						if (!isGameMultiPlayer() || !isMPOrderedMoveOnTurnLoading())  // First move allowed, all the following blocked
-						{
-#endif
 						gDLL->sendSwapUnits(pkSelectedUnit->GetID(), ((MissionTypes)iData2), iData3, iData4, iFlags, bShift);
-#ifdef GAME_ALLOW_ONLY_ONE_UNIT_MOVE_ON_TURN_LOADING
-							if (!bTurnActive || !bAllAICivsProcessedThisTurn || !isMPOrderedMoveOnTurnLoading())
-								setMPOrderedMoveOnTurnLoading(true);
-						}
-#endif
 					}
 					else
 					{
-#ifdef GAME_ALLOW_ONLY_ONE_UNIT_MOVE_ON_TURN_LOADING
-						// DLLUI->AddMessage(0, CvPreGame::activePlayer(), true, GC.getEVENT_MESSAGE_TIME(), GetLocalizedText("isTurnActive: {1_Num}, allAICivsProcessedThisTurn: {2_Num}", bTurnActive, bAllAICivsProcessedThisTurn));
-						if (!isGameMultiPlayer() || !isMPOrderedMoveOnTurnLoading())  // First move allowed, all the following blocked
-						{
-#endif
 						gDLL->sendPushMission(pkSelectedUnit->GetID(), ((MissionTypes)iData2), iData3, iData4, iFlags, bShift);
-#ifdef GAME_ALLOW_ONLY_ONE_UNIT_MOVE_ON_TURN_LOADING
-							if (!bTurnActive || !bAllAICivsProcessedThisTurn || !isMPOrderedMoveOnTurnLoading())
-								setMPOrderedMoveOnTurnLoading(true);
-						}
-#endif
 					}
 				}
 				else
@@ -2926,23 +2923,7 @@ void CvGame::selectionListGameNetMessage(int eMessage, int iData2, int iData3, i
 			}
 			else if((eMessage == GAMEMESSAGE_SWAP_UNITS))
 			{
-#ifdef GAME_ALLOW_ONLY_ONE_UNIT_MOVE_ON_TURN_LOADING
-				bool bTurnActive = GET_PLAYER(getActivePlayer()).isTurnActive();
-				bool bAllAICivsProcessedThisTurn = gDLL->allAICivsProcessedThisTurn();
-				if (bTurnActive && bAllAICivsProcessedThisTurn && isMPOrderedMoveOnTurnLoading())
-				{
-					setMPOrderedMoveOnTurnLoading(false);  // Turn has already started; reset value
-				}
-				// DLLUI->AddMessage(0, CvPreGame::activePlayer(), true, GC.getEVENT_MESSAGE_TIME(), GetLocalizedText("isTurnActive: {1_Num}, allAICivsProcessedThisTurn: {2_Num}", bTurnActive, bAllAICivsProcessedThisTurn));
-				if (!isGameMultiPlayer() || !isMPOrderedMoveOnTurnLoading())  // First move allowed, all the following blocked
-				{
-#endif
 					gDLL->sendSwapUnits(pkSelectedUnit->GetID(), ((MissionTypes)iData2), iData3, iData4, iFlags, bShift);
-#ifdef GAME_ALLOW_ONLY_ONE_UNIT_MOVE_ON_TURN_LOADING
-					if (!bTurnActive || !bAllAICivsProcessedThisTurn || !isMPOrderedMoveOnTurnLoading())
-						setMPOrderedMoveOnTurnLoading(true);
-				}
-#endif
 			}
 			else
 			{
@@ -2971,6 +2952,54 @@ void CvGame::selectedCitiesGameNetMessage(int eMessage, int iData2, int iData3, 
 		{
 			if(pSelectedCity->getOwner() == getActivePlayer())
 			{
+#ifdef GAME_ALLOW_ONLY_ONE_UNIT_MOVE_ON_TURN_LOADING
+				if (GC.getGame().isOption("GAMEOPTION_FIRSTMOVE"))
+				{
+					if ((eMessage == GAMEMESSAGE_DO_TASK) && (iData2 == TASK_RANGED_ATTACK))
+					{
+						if (isGameMultiPlayer())
+						{
+							float t1;
+							float t2;
+							GetTurnTimerData(t1, t2);
+
+							bool bAllComplete = true;  // replace gDLL->HasReceivedTurnAllComplete as it breaks after hj
+							for (uint i = 0; i < MAX_CIV_PLAYERS; i++)
+							{
+								CvPlayerAI& kPlayer = GET_PLAYER((PlayerTypes)i);
+								if (kPlayer.isHuman() && kPlayer.isAlive()) {
+									if (!gDLL->HasReceivedTurnComplete((PlayerTypes)i))
+										bAllComplete = false;
+								}
+								
+							}
+
+							// both is true means turn is about to end
+							// both is false means turn just started
+							if (bAllComplete == getHasReceivedFirstMission()) {
+
+								CvPlayerAI& kPlayer = GET_PLAYER(getActivePlayer());
+								TeamTypes eTeam = kPlayer.getTeam();
+								if (GET_TEAM(kPlayer.getTeam()).isAtWarWithHumans()) 
+								{
+									if (isMPOrderedMoveOnTurnLoading()) {
+										//SLOG("--- subsequent move order REJECTED %f %f", t1, t2);
+										//SLOG("HasReceivedTurnAllComplete %d bAllComplete %d getHasReceivedFirstMission %d", gDLL->HasReceivedTurnAllComplete(getActivePlayer()) ? 1 : 0, bAllComplete ? 1 : 0, getHasReceivedFirstMission() ? 1 : 0);
+										return;
+									}
+									else {
+										//SLOG("--- first move order");
+										setMPOrderedMoveOnTurnLoading(true);
+									}
+								}
+							}
+
+							//SLOG("%f %f selectionListGameNetMessage player: %d eMessage: %d", t1, t2, (int)getActivePlayer(), eMessage);
+							//SLOG("HasReceivedTurnAllComplete: %d bAllComplete: %d", gDLL->HasReceivedTurnAllComplete(getActivePlayer()) ? 1 : 0, bAllComplete ? 1 : 0);
+						}
+					}
+				}
+#endif
 				switch(eMessage)
 				{
 				case GAMEMESSAGE_PUSH_ORDER:
@@ -5557,10 +5586,7 @@ void CvGame::setTimeElapsed(float fNewValue)
 {
 	m_fTimeElapsed = fNewValue;
 }
-
-
 #endif
-
 #ifdef GAME_ALLOW_ONLY_ONE_UNIT_MOVE_ON_TURN_LOADING
 //	--------------------------------------------------------------------------------
 bool CvGame::isMPOrderedMoveOnTurnLoading() const
@@ -5576,8 +5602,21 @@ void CvGame::setMPOrderedMoveOnTurnLoading(bool bNewValue)
 }
 
 
-#endif
+//	--------------------------------------------------------------------------------
+bool CvGame::getHasReceivedFirstMission()
+{
+	return m_bReceivedFirstMission;
+}
 
+
+//	--------------------------------------------------------------------------------
+void CvGame::setHasReceivedFirstMission(bool bNewValue)
+{
+	m_bReceivedFirstMission = bNewValue;
+}
+
+
+#endif
 //	--------------------------------------------------------------------------------
 bool CvGame::isScoreDirty() const
 {
@@ -8188,7 +8227,7 @@ void CvGame::doTurn()
 	int iLoopPlayer;
 	int iI;
 
-	if(getAIAutoPlay())
+	if (getAIAutoPlay())
 	{
 		gDLL->AutoSave(false);
 	}
@@ -8223,9 +8262,9 @@ void CvGame::doTurn()
 	m_kGameDeals.DoTurn();
 #endif
 
-	for(iI = 0; iI < MAX_TEAMS; iI++)
+	for (iI = 0; iI < MAX_TEAMS; iI++)
 	{
-		if(GET_TEAM((TeamTypes)iI).isAlive())
+		if (GET_TEAM((TeamTypes)iI).isAlive())
 		{
 			GET_TEAM((TeamTypes)iI).doTurn();
 		}
@@ -8247,9 +8286,9 @@ void CvGame::doTurn()
 #endif
 	{
 #endif
-	CvBarbarians::DoCamps();
+		CvBarbarians::DoCamps();
 
-	CvBarbarians::DoUnits();
+		CvBarbarians::DoUnits();
 #ifdef AUI_GAME_FIX_MULTIPLAYER_BARBARIANS_SPAWN_AFTER_MOVING
 	}
 #endif
@@ -8274,16 +8313,21 @@ void CvGame::doTurn()
 	GC.GetEngineUserInterface()->setHasMovedUnit(false);
 #endif
 
-	if(getAIAutoPlay() > 0)
+	if (getAIAutoPlay() > 0)
 	{
 		changeAIAutoPlay(-1);
 
-		if(getAIAutoPlay() == 0)
+		if (getAIAutoPlay() == 0)
 		{
 			ReviveActivePlayer();
 		}
 	}
-
+#ifdef GAME_ALLOW_ONLY_ONE_UNIT_MOVE_ON_TURN_LOADING
+	if (GC.getGame().isOption("GAMEOPTION_FIRSTMOVE"))
+	{
+		setHasReceivedFirstMission(false);
+	}
+#endif
 	incrementGameTurn();
 	incrementElapsedGameTurns();
 
@@ -8412,12 +8456,12 @@ void CvGame::doTurn()
 	}
 
 	LogGameState();
-
+#ifndef AUTOSAVE_END_OF_TURN
 	if(isNetworkMultiPlayer())
 	{//autosave after doing a turn
 		gDLL->AutoSave(false);
 	}
-
+#endif
 	gDLL->PublishNewGameTurn(getGameTurn());
 }
 

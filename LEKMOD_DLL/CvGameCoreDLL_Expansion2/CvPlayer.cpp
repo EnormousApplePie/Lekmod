@@ -2155,7 +2155,7 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bGift)
 #endif
 #ifdef NQ_SPOILS_OF_WAR
 			// Will this be the first time we have owned this city? And was it not a city state?
-	//if(GC.getGame().isOption("GAMEOPTION_SPOILS_OF_WAR")) // Here we check for the Spoils of War Game option to be enabled
+	//if(GC.getGame().isOption("GAMEOPTION_SPOILS_OF_WAR"))
 	//{
 		// make sure we don't get techs from puppeted cities or cities we've already owned or city-states
 		
@@ -5116,9 +5116,9 @@ void CvPlayer::DoUnitReset()
 		}
 #ifdef LEKMOD_LONGSHIP_ALL_PROMO
 		// NQMP GJS - Danish Longship BEGIN
-		if (pLoopUnit->isEmbarked() || !pLoopUnit->isEmbarked() && pLoopUnit->getDomainType() == DOMAIN_LAND)
+		if (pLoopUnit->isEmbarked())
 		{
-
+			
 			int newValue = pLoopUnit->GetEmbarkedUnitStackMovement();
 			if (newValue > pLoopUnit->maxMoves())
 			{
@@ -5127,6 +5127,15 @@ void CvPlayer::DoUnitReset()
 
 		}
 		// NQMP GJS - Danish Longship END
+		//now also go over land civilian units
+		else if (pLoopUnit->getDomainType() == DOMAIN_LAND && !pLoopUnit->IsCombatUnit())
+		{
+			int newValue = pLoopUnit->GetLandUnitStackMovement();
+			if (newValue > pLoopUnit->maxMoves())
+			{
+				pLoopUnit->setMoves(newValue);
+			}
+		}
 #else
 		// NQMP GJS - Danish Longship BEGIN
 		if (pLoopUnit->isEmbarked())
@@ -11870,8 +11879,9 @@ void CvPlayer::DoTechFromCityConquer(CvCity* pConqueredCity)
 			//check if we have a game option enabled
 			if (GC.getGame().isOption("GAMEOPTION_SPOILS_OF_WAR"))
 			{
-				// Lekmod Edit: Spoils of War. Awards only a % of the cost of the tech depending on ERA, editable in the XML global defines.
+				// Lekmod Edit: Spoils of War. Awards only a % of the cost of the tech depending on ERA,  not yet editable in the XML global defines.
 				int iCost = GetPlayerTechs()->GetResearchCost(eFreeTech) * 100;
+				int iMaxCost = GetPlayerTechs()->GetResearchCost(eFreeTech);
 				int iPercentage = 0;
 				//fetch the era the tech is in
 				CvTechEntry* pInfo = GC.getTechInfo(eFreeTech);
@@ -11894,13 +11904,13 @@ void CvPlayer::DoTechFromCityConquer(CvCity* pConqueredCity)
 					iPercentage = 100; // GC.getSPOILS_OF_WAR_INDUSTRIAL();
 					break;
 				case 5:
-					iPercentage = 75; // GC.getSPOILS_OF_WAR_MODERN();
+					iPercentage = 90; // GC.getSPOILS_OF_WAR_MODERN();
 					break;
 				case 6:
-					iPercentage = 50; // GC.getSPOILS_OF_WAR_ATOMIC();
+					iPercentage = 60; // GC.getSPOILS_OF_WAR_ATOMIC();
 					break;
 				case 7:
-					iPercentage = 25; // GC.getSPOILS_OF_WAR_FUTURE();
+					iPercentage = 30; // GC.getSPOILS_OF_WAR_FUTURE();
 					break;
 				}
 				if (iPercentage > 0 && iPercentage <= 100)
@@ -11921,9 +11931,9 @@ void CvPlayer::DoTechFromCityConquer(CvCity* pConqueredCity)
 				else if (iCost != 0)
 				{
 					//if the research progress is greater than the cost, give the tech and set the progress to 0.
-					if (GET_TEAM(getTeam()).GetTeamTechs()->GetResearchProgress(eFreeTech) >= iCost)
+					if ((GET_TEAM(getTeam()).GetTeamTechs()->GetResearchProgress(eFreeTech) + iCost) > iMaxCost)
 					{
-						//GET_TEAM(getTeam()).GetTeamTechs()->SetResearchProgress(eFreeTech, 0, GetID());
+						GET_TEAM(getTeam()).GetTeamTechs()->SetResearchProgress(eFreeTech, 0, GetID());
 						GET_TEAM(getTeam()).setHasTech(eFreeTech, true, GetID(), true, true);
 						GET_TEAM(getTeam()).GetTeamTechs()->SetNoTradeTech(eFreeTech, true);
 					}
@@ -12876,12 +12886,55 @@ int CvPlayer::GetHappinessFromResources() const
 #endif
 	{
 		eResource = (ResourceTypes) iResourceLoop;
+#ifdef LEKMOD_SIAM_TRAIT_HAPPINESS
 
+		int iTraitModifier = GetPlayerTraits()->GetCityStateBonusModifier();
 		iBaseHappiness = GetHappinessFromLuxury(eResource);
-		if(iBaseHappiness)
+		if (iBaseHappiness)
 		{
 			// Resource bonus from Minors, and this is a Luxury we're getting from one (Policies, etc.)
-			if(IsMinorResourceBonus() && getResourceFromMinors(eResource) > 0)
+
+			// Added a check for a trait modifier, so we dont stack % bonuses
+			if (iTraitModifier != 0 && getResourceFromMinors(eResource) > 0)
+			{
+				if (IsMinorResourceBonus())
+				{
+					//if we both have a policy and trait effect add them together, but only if the resource is a minor resource (such as jewelry)
+					if (GC.getResourceInfo(eResource)->isOnlyMinorCivs())
+					{
+						iBaseHappiness *= ((iTraitModifier) + GC.getMINOR_POLICY_RESOURCE_HAPPINESS_MULTIPLIER());
+						iBaseHappiness /= 100;
+					}
+					else
+					{
+						iBaseHappiness *= GC.getMINOR_POLICY_RESOURCE_HAPPINESS_MULTIPLIER();
+						iBaseHappiness /= 100;
+					}
+				}
+				else if (GC.getResourceInfo(eResource)->isOnlyMinorCivs())
+				{
+					iBaseHappiness *= (iTraitModifier + 100);
+					iBaseHappiness /= 100;
+				}
+			}
+			else
+			{
+				if (IsMinorResourceBonus() && getResourceFromMinors(eResource) > 0)
+				{
+					iBaseHappiness *= /*150*/ GC.getMINOR_POLICY_RESOURCE_HAPPINESS_MULTIPLIER();
+					iBaseHappiness /= 100;
+				}
+			}
+
+			iTotalHappiness += iBaseHappiness;
+			iTotalHappiness += GetExtraHappinessPerLuxury();
+		}
+#else
+		iBaseHappiness = GetHappinessFromLuxury(eResource);
+		if (iBaseHappiness)
+		{
+			// Resource bonus from Minors, and this is a Luxury we're getting from one (Policies, etc.)
+			if (IsMinorResourceBonus() && getResourceFromMinors(eResource) > 0)
 			{
 				iBaseHappiness *= /*150*/ GC.getMINOR_POLICY_RESOURCE_HAPPINESS_MULTIPLIER();
 				iBaseHappiness /= 100;
@@ -12890,6 +12943,7 @@ int CvPlayer::GetHappinessFromResources() const
 			iTotalHappiness += iBaseHappiness;
 			iTotalHappiness += GetExtraHappinessPerLuxury();
 		}
+#endif
 	}
 
 	// Happiness bonus for multiple Resource types
@@ -18224,6 +18278,15 @@ void CvPlayer::setTurnActiveForPbem(bool bActive)
 //	--------------------------------------------------------------------------------
 void CvPlayer::setTurnActive(bool bNewValue, bool bDoTurn)
 {
+#ifdef GAME_ALLOW_ONLY_ONE_UNIT_MOVE_ON_TURN_LOADING
+	float t1;
+	float t2;
+	GC.getGame().GetTurnTimerData(t1, t2);
+	if (isHuman() && isAlive())
+	{
+		//SLOG("%f %f setTurnActive player: %d bNewValue: %d bDoTurn: %d", t1, t2, GetID(), bNewValue ? 1 : 0, bDoTurn ? 1 : 0);
+	}
+#endif
 	if(isTurnActive() != bNewValue)
 	{
 		m_bTurnActive = bNewValue;
@@ -25403,6 +25466,15 @@ void CvPlayer::Read(FDataStream& kStream)
 		m_pDiplomacyRequests->Init(GetID());
 		//m_pDiplomacyRequests->Read(kStream);
 	}
+
+#ifdef AUTOSAVE_FIX_PREVENT_TURN_SKIP
+
+	if (CvPreGame::gameType() == GAME_NETWORK_MULTIPLAYER && m_bAlive)
+	{
+		// Set active turn for actual players, not the AI!
+		m_bEndTurn = false;
+	}
+#endif
 
 	if(m_bTurnActive)
 		GC.getGame().changeNumGameTurnActive(1, std::string("setTurnActive() [loading save game] for player ") + getName());

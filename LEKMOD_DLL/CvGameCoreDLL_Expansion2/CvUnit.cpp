@@ -11331,10 +11331,10 @@ int CvUnit::maxMoves() const
 	}
 #ifdef LEKMOD_LONGSHIP_ALL_PROMO
 	// NQMP GJS - Danish Longship BEGIN
-	else if (isEmbarked() || (!isEmbarked() && getDomainType() == DOMAIN_LAND))
+	/*else if (isEmbarked())
 	{
 		return GetEmbarkedUnitStackMovement();
-	}
+	}*/
 	// NQMP GJS - Danish Longship END
 #else
 	// NQMP GJS - Danish Longship BEGIN
@@ -12982,11 +12982,20 @@ int CvUnit::GetAirCombatDamage(const CvUnit* pDefender, CvCity* pCity, bool bInc
 	// Unit is Defender
 	if(pCity == NULL)
 	{
-		// Use Ranged combat value for defender, UNLESS it's a boat
-		if(pDefender->GetMaxRangedCombatStrength(this, /*pCity*/ NULL, false, /*bForRangedAttack*/ false) > 0 && !pDefender->getDomainType() == DOMAIN_SEA)
+
+#ifdef LEKMOD_SPEARTHROW_FIX
+		// Use Ranged combat value for defender, UNLESS it's a boat or a spearthrow unit (zulu UU or Vietcong)
+		if (pDefender->GetMaxRangedCombatStrength(this, /*pCity*/ NULL, false, /*bForRangedAttack*/ false) > 0 && !pDefender->getDomainType() == DOMAIN_SEA && !pDefender->isRangedSupportFire())
 		{
 			iDefenderStrength = pDefender->GetMaxRangedCombatStrength(this, /*pCity*/ NULL, false, /*bForRangedAttack*/ false);
 		}
+#else
+		// Use Ranged combat value for defender, UNLESS it's a boat
+		if (pDefender->GetMaxRangedCombatStrength(this, /*pCity*/ NULL, false, /*bForRangedAttack*/ false) > 0 && !pDefender->getDomainType() == DOMAIN_SEA)
+		{
+			iDefenderStrength = pDefender->GetMaxRangedCombatStrength(this, /*pCity*/ NULL, false, /*bForRangedAttack*/ false);
+		}
+#endif
 		else
 		{
 			iDefenderStrength = pDefender->GetMaxDefenseStrength(pDefender->plot(), this, /*bFromRangedAttack*/ true);
@@ -16501,8 +16510,14 @@ void CvUnit::changeExperience(int iChange, int iMax, bool bFromCombat, bool bInB
 		}
 
 		// Unit XP mod
+#ifdef LEKMOD_EXCLUDE_AIR_EXP_BONUS
+		if (getDomainType() != DOMAIN_AIR)
+		{
+			iUnitExperience += (iChange * kPlayer.getExpModifier()) / 100;
+		}
+#else
 		iUnitExperience += (iChange * kPlayer.getExpModifier()) / 100;
-
+#endif
 		// Great General & Unit XP mod in borders
 		if (bInBorders && getDomainType() == DOMAIN_LAND)
 		{
@@ -17965,18 +17980,6 @@ int CvUnit::GetEmbarkedUnitStackMovement() const
 							break;
 						//}
 					}
-#ifdef LEKMOD_LONGSHIP_ALL_PROMO
-					// Give movement to land unit?
-					if (pLoopUnit->IsLandUnitReceivesMovement())
-					{
-						//Same domain
-						if(pLoopUnit->getDomainType() == getDomainType())
-						{
-						iRtnValue = pLoopUnit->maxMoves();
-						break;
-						}
-					}
-#endif
 				}
 			}
 		}
@@ -17985,6 +17988,49 @@ int CvUnit::GetEmbarkedUnitStackMovement() const
 	return iRtnValue;
 }
 // NQMP GJS - Danish Longship END
+#ifdef LEKMOD_LONGSHIP_ALL_PROMO
+//	--------------------------------------------------------------------------------
+int CvUnit::GetLandUnitStackMovement() const
+{
+	int iRtnValue = baseMoves() * GC.getMOVE_DENOMINATOR();
+
+	CvPlot* pLoopPlot = plot();
+	IDInfo* pUnitNode;
+	CvUnit* pLoopUnit;
+
+	if (pLoopPlot != NULL)
+	{
+		// If there are Units here, loop through them
+		if (pLoopPlot->getNumUnits() > 0)
+		{
+			pUnitNode = pLoopPlot->headUnitNode();
+
+			while (pUnitNode != NULL)
+			{
+				pLoopUnit = ::getUnit(*pUnitNode);
+				pUnitNode = pLoopPlot->nextUnitNode(pUnitNode);
+
+				if (pLoopUnit)
+				{
+					// Give movement to land unit?
+					if (pLoopUnit->IsLandUnitReceivesMovement())
+					{
+						//Same domain
+						if (pLoopUnit->getDomainType() == getDomainType())
+						{
+							iRtnValue = pLoopUnit->maxMoves();
+							break;
+						}
+					}
+
+				}
+			}
+		}
+	}
+
+	return iRtnValue;
+}
+#endif
 
 //	--------------------------------------------------------------------------------
 int CvUnit::GetReverseGreatGeneralModifier()const
@@ -20011,10 +20057,10 @@ void CvUnit::setHasPromotion(PromotionTypes eIndex, bool bNewValue)
 		ChangeGreatAdmiralCount(thisPromotion.IsGreatAdmiral() ? iChange: 0);
 		changeGreatGeneralModifier(thisPromotion.GetGreatGeneralModifier() * iChange);
 		ChangeGreatGeneralReceivesMovementCount(thisPromotion.IsGreatGeneralReceivesMovement() ? iChange: 0);
-#ifdef LEKMOD_LONGSHIP_ALL_PROMO
-		ChangeLandUnitReceivesMovementCount(thisPromotion.IsLandUnitReceivesMovement() ? iChange: 0);
-#endif
 		ChangeEmbarkedUnitReceivesMovementCount(thisPromotion.IsEmbarkedUnitReceivesMovement() ? iChange : 0); // NQMP GJS - Danish Longship
+#ifdef LEKMOD_LONGSHIP_ALL_PROMO
+		ChangeLandUnitReceivesMovementCount(thisPromotion.IsLandUnitReceivesMovement() ? iChange : 0);
+#endif
 #ifdef NQ_ART_OF_WAR_PROMOTION
 		ChangeGreatGeneralOnOrAdjacentConfersMovement(thisPromotion.GetGreatGeneralOnOrAdjacentConfersMovement() * iChange);
 #endif

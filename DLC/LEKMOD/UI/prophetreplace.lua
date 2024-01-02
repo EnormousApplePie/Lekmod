@@ -786,8 +786,8 @@ local bIsActive = JFD_IsCivilisationActive(iCiv)
      
 function GiveBonus(nzPlayer, oPlayer)
 	print("[GiveBonus] A meeting bonus has been granted")
-        local rewardCulture = 8
-        local rewardScience = 16
+        local rewardCulture = 6
+        local rewardScience = 12
         local rewardGold = 40
         local rewardFaith = 10
 	local random = GetRandom(1, 4)
@@ -989,35 +989,23 @@ if JFD_IsCivilisationActive(iCiv) then
 	print("Aksum is in this game")
 end
 
--- Aksum UA function 
-function GetTradeRoutesNumberAksum(player, city)
-	print("working: aksum 1")
-	local tradeRoutes = player:GetTradeRoutes()
-	local numRoutesAksum = 0
-	for i, v in ipairs(tradeRoutes) do
-		local originatingCity = v.FromCity
-		if (originatingCity == city) then
-			numRoutesAksum = numRoutesAksum + 1
-		end
-	end
-	
-	return numRoutesAksum
-end
-
-
-local buildingTraitAksumID = GameInfoTypes["BUILDING_AKSUM_TRAIT"]
-function AksumTrait(playerID)
-	print("working: aksum 2")
-	local player = Players[playerID]
-    if player:IsEverAlive() and player:GetCivilizationType() == civilissationID then 
-		for city in player:Cities() do
-			city:SetNumRealBuilding(buildingTraitAksumID, math.min(GetTradeRoutesNumberAksum(player, city), 1)) -- it does!
-		end
-	end
+-- Aksum UA function (new)
+function AllCitiesFollowReligionOnFound(ePlayer, iCity, eReligion)
+    print("working: aksum 1")
+    local player = Players[ePlayer]
+    if player:GetCivilizationType() == GameInfoTypes["CIVILIZATION_AKSUM"] then
+        print("working: aksum 2")
+        for iCity in player:Cities() do
+            if (not iCity:IsHolyCityForReligion(eReligion)) then
+                print("aksum: adopting religion in city")
+                iCity:AdoptReligionFully(eReligion)
+            end        
+        end
+    end
 end
 
 if bIsActive then
-	GameEvents.PlayerDoTurn.Add(AksumTrait)
+	GameEvents.ReligionFounded.Add(AllCitiesFollowReligionOnFound)
 end
 
 -- Kilwa UA 
@@ -1283,8 +1271,6 @@ end
 -------------------- DUMMY POLICIES ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-
-
 -- Tonga dummy policy
 
 local iCiv = GameInfoTypes["CIVILIZATION_TONGA"]
@@ -1309,24 +1295,22 @@ if bIsActive then
 Events.SequenceGameInitComplete.Add(DummyPolicy)
 end
 
+-- Aksum dummy policy
 
-
--- Manchuria dummy policy
-
-local iCiv = GameInfoTypes["CIVILIZATION_MANCHURIA"]
+local iCiv = GameInfoTypes["CIVILIZATION_AKSUM"]
 local bIsActive = JFD_IsCivilisationActive(iCiv)
 
-print("dummy policy loaded - Manchuria")
+print("dummy policy loaded - Aksum")
 function DummyPolicy(player)
-	print("working - Manchuria")
+	print("working - Aksum")
 	for playerID, player in pairs(Players) do
 		local player = Players[playerID];
-		if player:GetCivilizationType() == GameInfoTypes["CIVILIZATION_MANCHURIA"] then
-			if not player:HasPolicy(GameInfoTypes["POLICY_DUMMY_MANCHURIA"]) then
+		if player:GetCivilizationType() == GameInfoTypes["CIVILIZATION_AKSUM"] then
+			if not player:HasPolicy(GameInfoTypes["POLICY_DUMMY_AKSUM"]) then
 				
 				player:SetNumFreePolicies(1)
 				player:SetNumFreePolicies(0)
-				player:SetHasPolicy(GameInfoTypes["POLICY_DUMMY_MANCHURIA"], true)	
+				player:SetHasPolicy(GameInfoTypes["POLICY_DUMMY_AKSUM"], true)	
 			end
 		end
 	end 
@@ -1334,6 +1318,56 @@ end
 if bIsActive then
 Events.SequenceGameInitComplete.Add(DummyPolicy)
 end
+
+-- England dummy policy
+
+local iCiv = GameInfoTypes["CIVILIZATION_ENGLAND"]
+local bIsActive = JFD_IsCivilisationActive(iCiv)
+
+print("dummy policy loaded - England")
+function DummyPolicy(player)
+	print("working - England")
+	for playerID, player in pairs(Players) do
+		local player = Players[playerID];
+		if player:GetCivilizationType() == GameInfoTypes["CIVILIZATION_ENGLAND"] then
+			if not player:HasPolicy(GameInfoTypes["POLICY_DUMMY_ENGLAND"]) then
+				
+				player:SetNumFreePolicies(1)
+				player:SetNumFreePolicies(0)
+				player:SetHasPolicy(GameInfoTypes["POLICY_DUMMY_ENGLAND"], true)	
+			end
+		end
+	end 
+end
+if bIsActive then
+Events.SequenceGameInitComplete.Add(DummyPolicy)
+end
+
+
+
+-- Manchuria dummy policy
+
+--local iCiv = GameInfoTypes["CIVILIZATION_MANCHURIA"]
+--local bIsActive = JFD_IsCivilisationActive(iCiv)
+
+--print("dummy policy loaded - Manchuria")
+--function DummyPolicy(player)
+	--print("working - Manchuria")
+	--for playerID, player in pairs(Players) do
+	--	local player = Players[playerID];
+	--	if player:GetCivilizationType() == GameInfoTypes["CIVILIZATION_MANCHURIA"] then
+	--		if not player:HasPolicy(GameInfoTypes["POLICY_DUMMY_MANCHURIA"]) then
+	--			
+	--			player:SetNumFreePolicies(1)
+	--			player:SetNumFreePolicies(0)
+	--			player:SetHasPolicy(GameInfoTypes["POLICY_DUMMY_MANCHURIA"], true)	
+	--		end
+	--	end
+	--end 
+--end
+--if bIsActive then
+--Events.SequenceGameInitComplete.Add(DummyPolicy)
+--end
 
 -- Mysore dummy Policy
 local iCiv = GameInfoTypes["CIVILIZATION_MYSORE"]
@@ -1687,41 +1721,6 @@ if bIsActive then
 Events.SequenceGameInitComplete.Add(DummyPolicy)
 end
 
--- Akkad_Laputtu
--- Author: Tomatekh
--- DateCreated: 6/22/2015 6:11:46 PM
---------------------------------------------------------------
-
-local Laputtu = GameInfoTypes.UNIT_LITE_AKKAD_LAPUTTU;
-local Pyramids = GameInfoTypes.BUILDINGCLASS_PYRAMID;
-
-function AkkadOverseer(iPlayer)
-	local pPlayer = Players[iPlayer];
-	local pTeam = pPlayer:GetTeam();
-	if (pPlayer:IsAlive()) then
-		for pUnit in pPlayer:Units() do
-			if (pUnit:GetUnitType() == Laputtu) then
-				if not pUnit:IsEmbarked() then 
-					local uPlot = pUnit:GetPlot();
-					local WorkBonus = 100;
-					if pPlayer:GetBuildingClassCount(Pyramids) >= 1 then
-						WorkBonus = 125;
-					end
-					for pBuildInfo in GameInfo.Builds() do
-						local BuildTurns = uPlot:GetBuildTurnsLeft(pBuildInfo.ID, 0, 0);
-						local BuildProgress = uPlot:GetBuildProgress(pBuildInfo.ID)
-						if (BuildTurns >= 1) and (BuildProgress > WorkBonus) then
-							uPlot:ChangeBuildProgress(pBuildInfo.ID, WorkBonus, pTeam)
-						end
-					end
-				end
-			end
-		end
-	end
-end
-GameEvents.PlayerDoTurn.Add(AkkadOverseer)
-
-
 -- AKKAD UA --
 
 include("PlotIterators")
@@ -1790,26 +1789,11 @@ function liteGreatGeneralBonusAgainstCities(playerID, unitID, unitX, unitY)
 end
 
 
---_________________________________________________________________________________________________________________________________________________________________________________________________________
---GREAT GENERAL POINTS FROM IMPROVEMENTS
---_________________________________________________________________________________________________________________________________________________________________________________________________________
-function liteGreatGeneralPointsfromImproving(playerID, plotX, plotY, improvementID) 
-	local player = Players[playerID]
-	if improvementID then
-		if player:GetCivilizationType() == civilizationID then
-			local plot = Map.GetPlot(plotX, plotY)
-			local city = plot:GetWorkingCity()
-			if city and city:IsOccupied() then
-				player:ChangeCombatExperience(greatGeneralPoints)
-			end
-		end
-	end
-end
+
 
 if bIsActive then
 GameEvents.PlayerDoTurn.Add(liteGreatGeneralBonusReset)
 GameEvents.UnitSetXY.Add(liteGreatGeneralBonusAgainstCities)
-GameEvents.BuildFinished.Add(liteGreatGeneralPointsfromImproving)
 end
 --_________________________________________________________________________________________________________________________________________________________________________________________________________
 
@@ -2037,6 +2021,9 @@ function Honor_OnPolicyAdopted(playerID, policyID)
 end
 GameEvents.PlayerAdoptPolicy.Add(Honor_OnPolicyAdopted)
 
+--================
+-- Huey Teocalli
+--================
 local lakeWonder = GameInfoTypes["BUILDING_LAKE_WONDER"]
 
 function LakeWonderRequireLake(playerID, cityID, buildingType)
@@ -2066,6 +2053,10 @@ function LakeWonderRequireLake(playerID, cityID, buildingType)
 end
 
 GameEvents.CityCanConstruct.Add(LakeWonderRequireLake);
+
+--================
+-- Workboat for AI
+--================
 
 local workBoat = GameInfoTypes["UNIT_WORKBOAT"]
 
@@ -2174,12 +2165,24 @@ function GeorgiaGAMove(playerID, unitID, x, y)
 	GeorgiaGA(playerID);
 end
 
+function GeorgiaDisallowFaithBuildings(playerID, cityID, buildingType)
+	local player = Players[playerID];
+	if player:GetCivilizationType() == civGeorgia then
+		if buildingType == GameInfoTypes["BUILDING_CATHEDRAL"] or buildingType == GameInfoTypes["BUILDING_MOSQUE"] or buildingType == GameInfoTypes["BUILDING_PAGODA"] or buildingType == GameInfoTypes["BUILDING_GURDWARA"] or buildingType == GameInfoTypes["BUILDING_SYNAGOGUE"] or buildingType == GameInfoTypes["BUILDING_VIHARA"] or buildingType == GameInfoTypes["BUILDING_MANDIR"] then
+			return false;
+		end
+	end
+	return true;
+end
+
 if georgiaIsActive then
 GameEvents.PlayerDoTurn.Add(GeorgiaGA);
 GameEvents.PlayerDoTurn.Add(GeorgiaUA);
 GameEvents.CityConvertsReligion.Add(GeorgiaUAOnConvert);
 Events.SequenceGameInitComplete.Add(GeorgiaDummyPolicy);
 GameEvents.UnitSetXY.Add(GeorgiaGAMove);
+GameEvents.CityCanConstruct.Add(GeorgiaDisallowFaithBuildings);
+
 end
 
 
@@ -2510,25 +2513,113 @@ end
 if bIsActive then
 	GameEvents.PlayerDoTurn.Add(PolynesiaUABugFix)
 end
+-- =======================================================================================================================
+-- Mexico UA, search for 10 tiles around settler and reveal city-states
+-- =======================================================================================================================
+local civMexico = GameInfoTypes["CIVILIZATION_MEXICO"]
+local bIsActive = JFD_IsCivilisationActive(civMexico)
+function MexicoDiscovery(playerID)
+	
+	local player = Players[playerID]
+	local iTeam = player:GetTeam()
+	
+	-- Iterate to find cities from the starting plot
+	local startPlot = player:GetStartingPlot()
+	for pAdjacentPlot in PlotAreaSweepIterator(startPlot, 10, SECTOR_NORTH, DIRECTION_CLOCKWISE, DIRECTION_OUTWARDS, CENTRE_EXCLUDE) do
+		local pCity = pAdjacentPlot:GetPlotCity()
+		if pCity then
+			--get the owner of the city tile
+			local cityOwner = Players[pCity:GetOwner()]
+			if cityOwner:IsMinorCiv() and (not(pCity:IsRevealed(iTeam))) then
+				pAdjacentPlot:SetRevealed(iTeam, true);
+			end
+		end
+	end
+end
+
+function MexicoUA(playerID)
+	-- get the amount of passed turns in the game
+	local turn = Game.GetElapsedGameTurns()
+	if turn > 2 then
+		return
+	end
+	print("Mexico UA fired")
+	for playerID, player in pairs(Players) do
+		local player = Players[playerID];
+		if player:GetCivilizationType() == civMexico then
+			print("Mexico UA fired 2")
+			MexicoDiscovery(playerID);
+		end
+	end
+end
+
+if bIsActive then
+	GameEvents.PlayerDoTurn.Add(MexicoUA);
+end
 
 --=======================================================================================================================
--- Great Prophet from City of God
+-- Papal States UA
 --=======================================================================================================================
---call a game event for when a player adds a belief to their religion
---GameEvents.PlayerAddedBelief.Add(function(iPlayer, iBelief)
---	local playerID = Game.GetActivePlayer()
---	local player = Players[playerID]
---	local cityOfGodBeliefID = GameInfoTypes.BELIEF_CITY_OF_GOD
---	local cityOfGodBuildingID = GameInfoTypes.BUILDING_TEMPLE
---	local player = Players[playerID]
---	if iBelief == cityOfGodBeliefID then
---		-- The player has adopted the "City of God" Reformation belief
---		-- Check if the player has already been awarded the dummy building
---		if not player:GetBuildingClassCount(GameInfoTypes[GameInfo.Buildings[cityOfGodBuildingID].BuildingClass]) == 1 then
---			-- The player has not yet been awarded the dummy building
---			player:GetCapitalCity():SetNumRealBuilding(cityOfGodBuildingID, 1)
---		end
---	end
---end)
+local iCiv = GameInfoTypes["CIVILIZATION_VATICAN"]
+local bIsActive = JFD_IsCivilisationActive(iCiv)
+local iVaticanReligion;
+function VaticanUAonFound(ePlayer, eReligion)
+	--get the player
+	local player = Players[ePlayer];
+	--are we iciv and did we just found the religion?
+	if (player:GetCivilizationType() == iCiv) then
+		--loop through our cities
+		for iCity in player:Cities() do
+			if (iCity:IsHolyCityForReligion(eReligion)) then
+				--vatican founded this relgion, store it
+				iVaticanReligion = eReligion;
+			end        
+		end
+	end
+end
 
+function fetchVaticanRelgion(ePlayer, eReligion)
+	local player = Players[ePlayer];
+	if player:GetCivilizationType() == iCiv then
+		for iCity in player:Cities() do
+			if (iCity:IsHolyCityForReligion(eReligion)) then
+				--vatican founded this relgion, store it
+				iVaticanReligion = eReligion;
+			end        
+		end
+	end
+	return iVaticanReligion;
+end
 
+function VaticanUACourthouse(ePlayer, eReligion)
+	local player = Players[ePlayer];
+	if (player:GetCivilizationType() == iCiv) then
+		print(eReligion);
+		fetchVaticanRelgion(ePlayer, eReligion);
+		print(iVaticanReligion);
+		for pCity in player:Cities() do
+			if (pCity:IsOccupied() or pCity:IsPuppet()) then
+				if pCity:GetReligiousMajority() == iVaticanReligion then
+					pCity:SetNumRealBuilding(GameInfoTypes["BUILDING_COURTHOUSE"], 1);
+				end
+			end
+		end
+	end
+end
+
+function VaticanUACourthouseCapture(eOldOwner, bCapital, iX, iY, eNewOwner, iPop, bConquest)
+	local player = Players[eNewOwner];
+	if (player:GetCivilizationType() == iCiv) then
+		local pCity = Map.GetPlot(iX, iY):GetPlotCity();
+		if pCity:GetReligiousMajority() == iVaticanReligion then
+			pCity:SetNumRealBuilding(GameInfoTypes["BUILDING_COURTHOUSE"], 1);
+		end
+	end
+end
+	
+	
+if bIsActive then
+	GameEvents.CityConvertsReligion.Add(VaticanUACourthouse);
+	GameEvents.CityCaptureComplete.Add(VaticanUACourthouseCapture);
+	GameEvents.ReligionFounded.Add(VaticanUAonFound);
+end

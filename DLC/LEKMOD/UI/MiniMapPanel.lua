@@ -1,3 +1,4 @@
+
 ----------------------------------------------------------------        
 ----------------------------------------------------------------        
 include( "InstanceManager" );
@@ -6,8 +7,18 @@ local g_LegendIM = InstanceManager:new( "LegendKey", "Item", Controls.LegendStac
 local g_Overlays = GetStrategicViewOverlays();
 local g_IconModes = GetStrategicViewIconSettings();
 
+----------------------------------------------------------------
+----------------------------------------------------------------
+
+--add lekmoddata for remembering stratview and streamer panel
+
+if LekmodData == nil then
+	LekmodData = Modding.OpenUserData("LekmodData", 1);
+end
+
 ----------------------------------------------------------------        
-----------------------------------------------------------------        
+----------------------------------------------------------------
+
 function OnMinimapInfo( uiHandle, width, height, paddingX )
     Controls.Minimap:SetTextureHandle( uiHandle );
     Controls.Minimap:SetSizeVal( width, height );
@@ -23,7 +34,10 @@ end
 Controls.Minimap:RegisterCallback( Mouse.eLClick, OnMinimapClick );
 
 ----------------------------------------------------------------        
-----------------------------------------------------------------        
+----------------------------------------------------------------
+-- save strat view defaults
+local bEnabledStratView = LekmodData.GetValue("bEnabledStratView") or 0;  
+
 function OnStrategicView()
 	local bIsObserver = PreGame.GetSlotStatus( Game.GetActivePlayer() ) == SlotStatus.SS_OBSERVER;
 	if (bIsObserver) then
@@ -42,6 +56,12 @@ function OnStrategicView()
 		ToggleStrategicView();
 	end		
 end
+function EnableStratViewOnLoad()
+	if (bEnabledStratView == 1) then
+		OnStrategicView();
+	end
+end
+Events.SequenceGameInitComplete.Add(EnableStratViewOnLoad);
 Controls.StrategicViewButton:RegisterCallback( Mouse.eLClick, OnStrategicView );
 
 ----------------------------------------------------------------        
@@ -60,13 +80,16 @@ end
 ----------------------------------------------------------------        
 ----------------------------------------------------------------        
 function OnStrategicViewStateChanged(bStrategicView)
+	
 	if bStrategicView then
+		LekmodData.SetValue("bEnabledStratView", 1);
 		Controls.ShowResources:SetDisabled( true );
 		Controls.ShowResources:SetAlpha( 0.5 );
 		Controls.StrategicViewButton:SetTexture( "assets/UI/Art/Icons/MainWorldButton.dds" );
 		Controls.StrategicMO:SetTexture( "assets/UI/Art/Icons/MainWorldButton.dds" );
 		Controls.StrategicHL:SetTexture( "assets/UI/Art/Icons/MainWorldButtonHL.dds" );
 	else
+		LekmodData.SetValue("bEnabledStratView", 0);
 		Controls.ShowGrid:SetCheck(OptionsManager.GetGridOn());
 		Controls.ShowResources:SetDisabled( false );
 		Controls.ShowResources:SetAlpha( 1.0 );
@@ -602,7 +625,17 @@ function UpdateStreamerView()
 	Controls.StreamerBeliefs2Text:SetText(strReligion2Text);
 end
 
-function OnStreamerViewShow()	
+
+
+local bEnabledStreamerPanel = LekmodData.GetValue("bEnabledStreamerPanel") or 0;
+
+function OnStreamerViewShow()
+	--set the value in the database
+	LekmodData.SetValue("bEnabledStreamerPanel", 1);
+
+	
+	print(bEnabledStreamerPanel);
+	print("OnStreamerViewShow");
     UpdateStreamerView();
 	Controls.StreamerPanel:SetHide(false);
 	Controls.StreamerViewButtonOpen:SetHide(true);
@@ -610,12 +643,24 @@ function OnStreamerViewShow()
 end
 Controls.StreamerViewButtonOpen:RegisterCallback( Mouse.eLClick, OnStreamerViewShow );
 
-function OnStreamerViewHide()	
+function OnStreamerViewHide()
+	LekmodData.SetValue("bEnabledStreamerPanel", 0);
+	print(bEnabledStreamerPanel);
 	Controls.StreamerPanel:SetHide(true);
 	Controls.StreamerViewButtonOpen:SetHide(false);
 	Controls.StreamerViewButtonClose:SetHide(true);
 end
 Controls.StreamerViewButtonClose:RegisterCallback( Mouse.eLClick, OnStreamerViewHide );
+
+function onGameLoadStreamerPanel()
+	print("onGameLoadStreamerPanel");
+	if (bEnabledStreamerPanel == 1) then
+		OnStreamerViewShow();
+	else
+		OnStreamerViewHide();
+	end
+end
+Events.SequenceGameInitComplete.Add(onGameLoadStreamerPanel);
 
 GameEvents.PlayerAdoptPolicyBranch.Add(UpdateStreamerView);
 GameEvents.PlayerAdoptPolicy.Add(UpdateStreamerView);

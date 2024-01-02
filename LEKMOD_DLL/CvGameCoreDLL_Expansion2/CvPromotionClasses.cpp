@@ -320,7 +320,7 @@ bool CvPromotionEntry::CacheResults(Database::Results& kResults, CvDatabaseUtili
 	m_bGreatGeneralReceivesMovement = kResults.GetBool("GreatGeneralReceivesMovement");
 	m_bEmbarkedUnitReceivesMovement = kResults.GetBool("EmbarkedUnitReceivesMovement"); // NQMP GJS - Danish Longship
 #ifdef LEKMOD_LONGSHIP_ALL_PROMO
-	m_bLandUnitReceivesMovement = kResults.GetBool("LandUnitReceivesMovement");
+	m_bLandUnitReceivesMovement = kResults.GetBool("LandUnitReceivesMovement"); //LEKMOD - Same longship promo for land civilian units
 #endif
 #ifdef NQ_ART_OF_WAR_PROMOTION
 	m_iGreatGeneralOnOrAdjacentConfersMovement = kResults.GetInt("GreatGeneralOnOrAdjacentConfersMovement");
