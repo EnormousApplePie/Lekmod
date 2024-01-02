@@ -101,6 +101,9 @@ public:
 	int  GetGreatGeneralModifier() const;
 	bool IsGreatGeneralReceivesMovement() const;
 	bool IsEmbarkedUnitReceivesMovement() const; // NQMP GJS - Danish Longship
+#ifdef LEKMOD_LONGSHIP_ALL_PROMO
+	bool IsLandUnitReceivesMovement() const;
+#endif
 #ifdef NQ_ART_OF_WAR_PROMOTION
 	int GetGreatGeneralOnOrAdjacentConfersMovement() const;
 #endif
@@ -302,6 +305,9 @@ protected:
 	int m_iGreatGeneralModifier;
 	bool m_bGreatGeneralReceivesMovement;
 	bool m_bEmbarkedUnitReceivesMovement; // NQMP GJS - Danish Longship
+#ifdef LEKMOD_LONGSHIP_ALL_PROMO
+	bool m_bLandUnitReceivesMovement;
+#endif
 #ifdef NQ_ART_OF_WAR_PROMOTION
 	int m_iGreatGeneralOnOrAdjacentConfersMovement;
 #endif

@@ -7101,10 +7101,19 @@ int CvMinorCivAI::GetCurrentHappinessFlatBonus(PlayerTypes ePlayer)
 		return 0;
 
 	int iAmount = 0;
+	
 	if(IsAllies(ePlayer))
 		iAmount += GetHappinessFlatAlliesBonus(ePlayer);
 	if(IsFriends(ePlayer))
 		iAmount += GetHappinessFlatFriendshipBonus(ePlayer);
+#ifdef LEKMOD_SIAM_TRAIT_HAPPINESS
+	int iModifier = GET_PLAYER(ePlayer).GetPlayerTraits()->GetCityStateBonusModifier();
+	if (iModifier > 0)
+	{
+		iAmount *= (iModifier + 100);
+		iAmount /= 100;
+	}
+#endif
 	return iAmount;
 }
 
@@ -7216,6 +7225,15 @@ int CvMinorCivAI::GetCurrentHappinessPerLuxuryBonus(PlayerTypes ePlayer)
 		iAmount += GetHappinessPerLuxuryAlliesBonus(ePlayer);
 	if(IsFriends(ePlayer))
 		iAmount += GetHappinessPerLuxuryFriendshipBonus(ePlayer);
+
+#ifdef LEKMOD_SIAM_TRAIT_HAPPINESS
+	int iModifier = GET_PLAYER(ePlayer).GetPlayerTraits()->GetCityStateBonusModifier();
+	if (iModifier > 0)
+	{
+		iAmount *= (iModifier + 100);
+		iAmount /= 100;
+	}
+#endif
 	return iAmount;
 }
 
@@ -7769,7 +7787,7 @@ int CvMinorCivAI::GetSpawnBaseTurns(PlayerTypes ePlayer)
 		return 0;
 
 	int iNumTurns = /*19*/ GC.getFRIENDS_BASE_TURNS_UNIT_SPAWN() * 100;
-
+	
 	// If relations are at allied level then reduce spawn counter
 	if(IsAllies(ePlayer))
 		iNumTurns += /*-3*/ (GC.getALLIES_EXTRA_TURNS_UNIT_SPAWN() * 100);
@@ -7790,7 +7808,18 @@ int CvMinorCivAI::GetSpawnBaseTurns(PlayerTypes ePlayer)
 		}
 	}
 
+#ifdef LEKMOD_SIAM_TRAIT_MILITARY_UNIT
+	int iModifier = kPlayer.GetPlayerTraits()->GetCityStateBonusModifier();
+	
+	if (iModifier != 0)
+	{
+		iNumTurns *= 100;
+		iNumTurns /= (100 + iModifier);
+	}
+
+#endif
 	return iNumTurns / 100;
+	
 }
 
 /// What is the average number of turns between unit spawns?
@@ -8993,10 +9022,15 @@ int CvMinorCivAI::GetFriendshipFromUnitGift(PlayerTypes eFromPlayer, bool bGreat
 	if (bGreatPerson)
 	{
 		int iGPInfluence = kFromPlayer.GetPlayerTraits()->GetGreatPersonGiftInfluence();
+#ifdef LEKMOD_GOLD_FROM_GIFTING_GP_TRAIT
+		//give the player double the gold of the influence they gain from gifting a great person
+		int iGoldtoGift = (kFromPlayer.GetPlayerTraits()->GetGreatPersonGiftInfluence()) * 2 ;
+		kFromPlayer.GetTreasury()->ChangeGold(iGoldtoGift);
 		if (iGPInfluence > 0)
 		{
 			iInfluence += iGPInfluence;
 		}
+#endif
 	}
 	else
 	{

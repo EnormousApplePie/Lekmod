@@ -2266,17 +2266,26 @@ int CvGameReligions::GetAdjacentCityReligiousPressure (ReligionTypes eReligion, 
 #ifdef NQ_SPREAD_MODIFIER_OWNED_CITIES
 		// modifier if this religion spreads to cities owned by founder or not owned by founder
 		int iOwnedCityModifier = 0;
+		int iOwnedCityModifierPolicy = 0;
+		CvPlayer& kPlayer = GET_PLAYER(pReligion->m_eFounder);
 		if (pToCity->getOwner() == pReligion->m_eFounder)
-		{
+		{	
 			iOwnedCityModifier = pReligion->m_Beliefs.GetSpreadModifierOwnedCities();
+			iOwnedCityModifierPolicy = kPlayer.GetPlayerPolicies()->GetNumericModifier(POLICYMOD_SPREAD_MODIFIER_OWNED_CITIES);
 		}
 		else
 		{
 			iOwnedCityModifier = pReligion->m_Beliefs.GetSpreadModifierUnownedCities();
+			iOwnedCityModifierPolicy = kPlayer.GetPlayerPolicies()->GetNumericModifier(POLICYMOD_SPREAD_MODIFIER_OTHER_CITIES);
 		}
 		if (iOwnedCityModifier != 0)
 		{
 			iPressure *= (100 + iOwnedCityModifier);
+			iPressure /= 100;
+		}
+		else if (iOwnedCityModifierPolicy != 0)
+		{
+			iPressure *= (100 + iOwnedCityModifierPolicy);
 			iPressure /= 100;
 		}
 #endif

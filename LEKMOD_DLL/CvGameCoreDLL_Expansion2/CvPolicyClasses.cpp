@@ -229,6 +229,10 @@ CvPolicyEntry::CvPolicyEntry(void):
 #ifdef NQ_GOLD_TO_SCIENCE_FROM_POLICIES
 	m_iGoldToScience(0),
 #endif
+#ifdef NQ_SPREAD_MODIFIER_OWNED_CITIES
+	m_iSpreadModifierOwnedCities(0),
+	m_iSpreadModifierUnownedCities(0),
+#endif
 	m_iNumCitiesFreeAestheticsSchools(0), // NQMP GJS - add support for NumCitiesFreeAestheticsSchools
 	m_iNumCitiesFreePietyGardens(0),
 	m_iNumCitiesFreeWalls(0), // NQMP GJS - New Oligarchy add support for NumCitiesFreeWalls
@@ -570,7 +574,10 @@ bool CvPolicyEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility&
 #ifdef NQ_ALLOW_PUPPET_PURCHASING_FROM_POLICIES
 	m_bAllowPuppetPurchasing = kResults.GetBool("AllowPuppetPurchasing");
 #endif
-
+#ifdef NQ_SPREAD_MODIFIER_OWNED_CITIES
+	m_iSpreadModifierOwnedCities = kResults.GetInt("SpreadModifierOwnedCities");
+	m_iSpreadModifierUnownedCities = kResults.GetInt("SpreadModifierUnownedCities");
+#endif
 	m_bEnablesSSPartPurchase = kResults.GetBool("EnablesSSPartPurchase");
 	m_bAbleToAnnexCityStates = kResults.GetBool("AbleToAnnexCityStates");
 	m_bOneShot = kResults.GetBool("OneShot");
@@ -1782,6 +1789,19 @@ int CvPolicyEntry::GetHappinessToCulture() const
 {
 	return m_iHappinessToCulture;
 }
+
+#ifdef NQ_SPREAD_MODIFIER_OWNED_CITIES
+/// Foreign/Friendly City religion spread modifier
+int CvPolicyEntry::GetReligionSpreadModifierFriendly() const
+{
+	return m_iSpreadModifierOwnedCities;
+}
+/// Foreign/Friendly City religion spread modifier
+int CvPolicyEntry::GetReligionSpreadModifierForeign() const
+{
+	return m_iSpreadModifierUnownedCities;
+}
+#endif;
 
 /// Excess Happiness converted into Science
 int CvPolicyEntry::GetHappinessToScience() const
@@ -3244,6 +3264,14 @@ int CvPlayerPolicies::GetNumericModifier(PolicyModifierType eType)
 #ifdef NQ_COUP_CHANCE_MODIFIER_FROM_POLICIES
 			case POLICYMOD_COUP_CHANCE_MODIFIER:
 				rtnValue += m_pPolicies->GetPolicyEntry(i)->GetCoupChanceModifier();
+				break;
+#endif
+#ifdef NQ_SPREAD_MODIFIER_OWNED_CITIES
+			case POLICYMOD_SPREAD_MODIFIER_OWNED_CITIES:
+				rtnValue += m_pPolicies->GetPolicyEntry(i)->GetReligionSpreadModifierFriendly();
+				break;
+			case POLICYMOD_SPREAD_MODIFIER_OTHER_CITIES:
+				rtnValue += m_pPolicies->GetPolicyEntry(i)->GetReligionSpreadModifierForeign();
 				break;
 #endif
 			case POLICYMOD_SHARED_RELIGION_TOURISM_MODIFIER:

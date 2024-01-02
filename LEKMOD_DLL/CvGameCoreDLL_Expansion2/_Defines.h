@@ -723,8 +723,7 @@
 #define NQ_EXTRA_TRADE_ROUTES_FROM_BELIEF
 // faith per foreign trade route
 #define NQ_FAITH_PER_FOREIGN_TRADE_ROUTE
-// religious pressure modifier to your cities vs cities that aren't yours
-#define NQ_SPREAD_MODIFIER_OWNED_CITIES
+
 // faith per turn for city states that follow this religion
 #define NQ_FAITH_PER_CITY_STATE_THIS_RELIGION
 // cheating so that sacred sites applies both tourism and gold
@@ -894,6 +893,25 @@
 #define LEKMOD_WATER_IMPROVEMENT_FIX
 //added a civ requirement tag to the builds table
 #define LEKMOD_BUILD_CIV_REQ
+//new longship-transfer-movement promotion applying to land units
+#define LEKMOD_LONGSHIP_ALL_PROMO
+// religious pressure modifier to your cities vs cities that aren't yours (from NQ, expanded to include in policy effects, not just beliefs)
+#define NQ_SPREAD_MODIFIER_OWNED_CITIES
+// CS yield bonus from SIAM trait now applies to mercantile. It is only applied to the flat happiness bonus and their special luxuries (not all luxuries).
+#define LEKMOD_SIAM_TRAIT_HAPPINESS
+// CS military spawn time now also reduced based on trait input
+#define LEKMOD_SIAM_TRAIT_MILITARY_UNIT
+// The sweden influence gained from gifting Great people now also gains the player gold equal to twice the influence gained
+#define LEKMOD_GOLD_FROM_GIFTING_GP_TRAIT
+// Fixed an issue where Spearthrow units (eg. Zulu UU) would be destroyed by air units for no reason
+#define LEKMOD_SPEARTHROW_FIX
+// Air units are now exluded from the global xp modifier in policies
+#define LEKMOD_EXCLUDE_AIR_EXP_BONUS
+// Cap XP gained from any AI to 30 using a game option
+#define LEKMOD_AI_XP_CAP
+// Interception is now only triggered if the damage is greater than 0 (prevents 100 evasion units from triggering interception even though they don't do anything)
+#define LEKMOD_100_EVASIION_FIX
+
 //Added a notification step mid-turn when you found a religion after having the reformation policy
 //#define LEKMOD_REFORMATION_NOTIFICATION_MID_TURN
 
@@ -938,11 +956,11 @@
 #define CAN_SET_INTERCEPT_HALF_TIMER
 /// New DP: Acts as a peace treaty for 10 turns, can be sent in deals like normal, allowing for a non-agression pact to be enforced by the game.
 #define NEW_DEFENSIVE_PACT
-///AI Peace treaty amout is 5
+///AI Peace treaty amount is 5
 #define AI_PEACE_TURNS
 /// Embarked Civilians act as a workboat: Instantly get killed, no experience earned for the kill and Barbarians do not shoot them
 #define NO_EMBARKED_CIVILIAN_DEFENSE
-/// AI can no longer be allies with City-States (game option)
+/// AI can no longer buy to be allies with City-States (game option)
 #define NO_AI_ALLYING_CS
 // Fixed a bug related to Aqueduct duping when finishing tradition
 #define AQUEDUCT_FIX
@@ -978,10 +996,17 @@
 #define INVISIBILITY_OF_NUCLEAR_MISSILESS_ON_SUBMARINES
 //Water tiles are now considered for scoring
 //#define INCLUDE_WATER_IN_LAND_SCORE
+// -------------------------
+// ## Autosave fixes ##
+// -------------------------
+// Autosave at the end of each turn
+#define AUTOSAVE_END_OF_TURN
+// Autosaves no longer skip turns
+#define AUTOSAVE_FIX_PREVENT_TURN_SKIP
 
 //Firstmove fix, still allowing 1 move on turn load. Immos version of LEKMOD_FIRSTMOVE_FIX
 
-//#define GAME_ALLOW_ONLY_ONE_UNIT_MOVE_ON_TURN_LOADING
+#define GAME_ALLOW_ONLY_ONE_UNIT_MOVE_ON_TURN_LOADING
 
 //Multiplayer voting system, putting the irr,scrap and cc votes into the game with UI.
 /*MP VOTING SYSTEM START*/

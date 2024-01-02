@@ -381,8 +381,7 @@ function OnReadyCheck( bChecked )
 	CheckGameAutoStart();	
 	ShowHideSaveButton();	
 end
---run the .bat file to get the uncommented version of the line below. In case of an ERROR, uncomment the line below manually
---Controls.LocalReadyCheck:RegisterCheckHandler( OnReadyCheck );
+Controls.LocalReadyCheck:RegisterCheckHandler( OnReadyCheck );
 
 
 -------------------------------------------------
